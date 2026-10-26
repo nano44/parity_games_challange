@@ -6,3 +6,8 @@ BEST step 6539 fit (0, 0, 0, 4, 0) t 38s
 BEST step 7571 fit (0, 0, 0, 5, 0) t 51s
 BEST step 8708 fit (0, 0, 0, 6, 0) t 69s
 BEST step 21919 fit (0, 0, 0, 7, 0) t 274s
+BEST step 47924 fit (0, 0, 0, 8, 0) t 722s
+BEST step 56140 fit (0, 0, 0, 9, 0) t 866s
+BEST step 59008 fit (0, 0, 0, 10, 0) t 928s
+BEST step 65696 fit (0, 0, 0, 11, 0) t 1085s
+END steps 69834 best (0, 0, 0, 11, 0) n 24 inside-gaps checked 0 UNK 0 -> results/honclimb/ff_n24.pg

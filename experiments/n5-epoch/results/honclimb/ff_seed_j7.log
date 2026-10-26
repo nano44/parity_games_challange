@@ -1,0 +1,17 @@
+START fit (1, 1, 1, 1, 5) n 32
+BEST step 302 fit (1, 1, 1, 1, 6) t 21s
+BEST step 410 fit (1, 1, 1, 1, 7) t 40s
+BEST step 613 fit (1, 1, 1, 1, 8) t 73s
+BEST step 988 fit (1, 2, 2, 2, 6) t 120s
+BEST step 1009 fit (1, 2, 2, 2, 7) t 121s
+BEST step 2210 fit (1, 3, 3, 3, 7) t 188s
+BEST step 3337 fit (1, 4, 4, 4, 7) t 269s
+BEST step 5286 fit (1, 5, 5, 5, 7) t 349s
+BEST step 7203 fit (1, 5, 5, 5, 8) t 415s
+BEST step 19263 fit (1, 5, 5, 5, 9) t 883s
+BEST step 21228 fit (1, 5, 5, 5, 10) t 950s
+BEST step 21916 fit (1, 5, 5, 5, 11) t 989s
+BEST step 24271 fit (1, 5, 5, 5, 12) t 1103s
+BEST step 24656 fit (1, 5, 5, 5, 13) t 1139s
+BEST step 25352 fit (1, 5, 5, 5, 14) t 1180s
+END steps 25781 best (1, 5, 5, 5, 14) n 32 inside-gaps checked 16791 UNK 0 -> results/honclimb/ff_seed_j7.pg

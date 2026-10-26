@@ -1,0 +1,21 @@
+START fit (0, 0, 0, 0, 0) n 32
+BEST step 2077 fit (0, 0, 0, 1, 0) t 16s
+BEST step 2301 fit (0, 0, 0, 2, 0) t 20s
+BEST step 2960 fit (0, 0, 0, 3, 0) t 35s
+BEST step 3223 fit (0, 0, 0, 4, 0) t 41s
+BEST step 3381 fit (0, 0, 0, 5, 0) t 45s
+BEST step 3840 fit (0, 0, 0, 6, 0) t 58s
+BEST step 5512 fit (0, 0, 0, 7, 0) t 113s
+BEST step 7846 fit (0, 0, 0, 8, 0) t 188s
+BEST step 8612 fit (0, 0, 0, 9, 0) t 217s
+BEST step 9926 fit (0, 0, 0, 10, 0) t 270s
+BEST step 10087 fit (0, 0, 0, 11, 0) t 277s
+BEST step 13819 fit (0, 0, 0, 12, 0) t 431s
+BEST step 15173 fit (0, 0, 0, 13, 0) t 485s
+BEST step 16996 fit (0, 0, 0, 14, 0) t 548s
+BEST step 19629 fit (0, 0, 0, 15, 0) t 646s
+BEST step 20466 fit (0, 0, 0, 16, 0) t 683s
+BEST step 25125 fit (0, 0, 0, 17, 0) t 926s
+BEST step 26778 fit (0, 0, 0, 18, 0) t 1013s
+BEST step 27845 fit (0, 0, 0, 19, 0) t 1071s
+END steps 30360 best (0, 0, 0, 19, 0) n 32 inside-gaps checked 0 UNK 0 -> results/honclimb/ff_n32.pg
