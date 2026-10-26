@@ -41,6 +41,9 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   Lemma 6.1, 6.2, Thm 6.14 (I^loc ≥ 2^n on G_n), §8, Thm 8.4 (I^glo ≥ 2^n on H_n).
   [STV] Schewe-Trivedi-Varghese arXiv 1501.06484 (PDF sha1 4fbbea66): §4, §4.1 (Min fixes j top positions in 2j steps; lane ceases).
   Finding: S4a = I^glo with Odd frozen to τ; on switchbestexp τ(CC(i)) changes once per bit; bits toggle ≤ 3 times. Tools frcyc.py, frcyc2.py.
+- Box 53: R86 docs/red/R86-simultaneous-gadget.md: obstruction PROVED from R15 (c)/(d): τ changes per run ≤ Π_q deg(q) ≤ Δ^k, so
+  a τ-counter needs k = ω(1); τ-alternation at q needs another Odd choice vertex in q's reach (dual-frame class). DATA: N5 on dual(mkpp)
+  gives phases = iterations = K + 7 (linear). dualrun.py; pins pp_K12_n161_dual (f967a43d), pp_K48_n449_dual (c764dd64).
 - (superseded) RESUME POINT (successor 20, 11:03Z): waiting for the Lead's pick. Nothing running. Tools: experiments/red/rec0/ (REC-0, epochs),
   experiments/red/usplit/ (mkusplit, mkusplit2, mkpairoc, mkgrow, mkpp, mkrho; usplit20 checker; show.py), h3_19 (PAIROC counter, LC2 FAIL).
 - LC2 climbs (ANALYSER=h3, lc2_slack) from pairoc_n58 / n90: best slack 0 (equality), no kill (in flight at 10:5xZ).
