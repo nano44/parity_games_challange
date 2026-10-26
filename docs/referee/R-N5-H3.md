@@ -96,3 +96,69 @@ state, L = max(max_S M_D, −1): COARSE_L(W) constant from k_0 + n − 1; non-va
 - H3-N2: P^c_L case B1 (x on c′'s cycle): one sentence that the σ̂-cycle is simple (π's part on c′'s cycle and the arc c′ → x are disjoint
   because x ∉ π).
 - H3-N3: DATA.
+
+## Addendum A (2026-10-26T05:58Z by date -u; (Opus 5.5, D15)): the index in FRZ-U_H3 / CR-D (the Lead's 05:54Z question), and frz2_n24
+- What the proof gives. CR-D's proof applies P^c_L at j = n − 1, which needs the state k_0 + n − 1 to lie in S, and concludes COARSE(Ω_t) =
+  COARSE(Ω_{k_0+n−1}) for every t ∈ S with t ≥ k_0 + n − 1. So the freeze starts at the state k_0 + n − 1, reached after n − 1 transitions:
+  the 0-BASED (n − 1)-th state (the n-th state counted from 1). The statement has content only when S has at least n + 1 states (k_0, …,
+  k_0 + n − 1 and one more); on a run of exactly n states it says nothing. The packet's §0 phrase "constant from the run's (n − 1)-th state
+  on" is correct in the 0-based reading, which matches §5 and §6's "from state k_0 + n − 1 on".
+- The 1-based reading (constant from k_0 + n − 2, so a run of n states would already show a freeze) is NOT given by this proof: P^c_L at j =
+  n − 2 covers only simple paths of ≤ n − 2 edges, and a W-play can follow a simple path of n − 1 edges (through every vertex) to a W-cycle
+  node with a self-loop. I do not sign the 1-based reading. I did not find a counterexample to it either (below).
+- Correction to my §6 table: its "FRZ non-vacuous" column counted runs of ≥ n states. Recounted with the proof's reading (≥ n + 1 states):
+  lib41 3 runs (not 4; one lib41 run has exactly n states), frz1_n24 2 runs; all 0 failures. My probe now counts FRZ_nonvacuous for
+  ≥ n + 1 states and, separately, FRZ1B: runs with ≥ n states where COARSE_L(W) changes from k_0 + n − 2 to k_0 + n − 1.
+- frz2_n24 (experiments/n5-exhaustive/instances/frz2_n24.pg, sha1 25db3330…, with its .start; L-COMP): run with the given start pair, S3 and
+  6 random pairs, together with frz1_n24: 0 failures of BP, TCC, C2H3, WMG, FRZ; FRZ1B checked on 4 runs of these two files and on 4 lib41 runs:
+  0 changes from k_0 + n − 2 to k_0 + n − 1. Under the proof's reading, frz2_n24's n-state run makes FRZ-U_H3 vacuous; it is consistent with
+  the stronger reading, which stays unproved. (h3_logs/frz12_n24_rs6.txt, h3_logs/lib41_rs4.txt re-run.)
+- Verdicts unchanged: FRZ-U_H3 and CR-D SIGNED as stated (0-based). Note H3-N4 for the fixes file: say "from state k_0 + n − 1 (after n − 1
+  transitions; content needs ≥ n + 1 states)" in §0's table.
+
+## §C. Comparison with REFEREE-2 (REFEREE successor 12; written 2026-10-26T06:09Z by date -u; (Opus 5.5, D15))
+- Routing: the Lead's message of 06:06Z (Lead's stamp). Objects: this report (7c2d9b49 + Addendum A ead5fdb3; unchanged) and
+  docs/referee-2/R2-N5-H3.md (referee-2 5b251bed, successor 14), opened after both were pushed. Same pinned text (sha1 680e4528…). I have not
+  opened R2-N5-NC (withdrawn packet).
+
+### C.1 Verdicts side by side
+| § | statement | REFEREE | REFEREE-2 | joint |
+| --- | --- | --- | --- | --- |
+| §2 | G_D-NC (b′) under (NC) | SIGNED | SIGN (N-H3-2) | signed |
+| §3 | TC-CLASS | SIGNED | SIGN | signed |
+| §4 | C2-H3 under (h3_D) | SIGNED | SIGN (N-H3-3) | signed |
+| §5 | WM-G | SIGNED (H3-N1) | SIGN | signed |
+| §5 | P^c_L, CR-D | SIGNED (H3-N2) | SIGN (N-H3-4) | signed |
+| §6 | FRZ-U_H3 | SIGNED (0-based index, Addendum A) | SIGN (N-H3-5; its data read the freeze "from the (n − 1)-th state", 1 state past n − 1: the 0-based reading) | signed, 0-based |
+| §7, §8 | READING, DATA | not signed | not signed | not signed |
+No disagreement; no gap in either report.
+
+### C.2 Joint note map
+| REFEREE | REFEREE-2 | relation | joint status |
+| --- | --- | --- | --- |
+| H3-N2 (P^c_L B1, x on c′'s cycle: the σ̂-cycle is simple because π and the arc c′ → x are disjoint, x ∉ π) | N-H3-4 (same: "π meets the old arc only at c′") | SAME | fixes file: one line |
+| §1 ((NC) replaces R55's one use of (h_D)) | N-H3-2 (same) | SAME | — |
+| §3 (C2-H3: the lasso fact; no (h_D), no (NC)) | N-H3-3 (same) | SAME | — |
+| header (R55 / R17 quotes verbatim by script; (C1)-(C4) and R55 (b)'s proof "verbatim up to joined bullet lines, checked by eye") | N-H3-1 (same joined bullets; ALSO the (C1)-(C4) quote drops P-N5-FB-box7's parentheticals "(Definition.)" and "(Σ ±2^rank is injective on sets)" without "…") | ACCEPTED; the dropped parentheticals were MISSED by my by-eye check | fixes file: wording |
+| H3-N1 (WM-G rests on SPEC's requirement that S1 returns the arena optimum; 1E-N3) | — (R2: "my Runner computes exactly that") | ADDITIONAL from us; no conflict | landing note |
+| H3-N4 (Addendum A: FRZ-U_H3 is 0-based, content needs ≥ n + 1 states; 1-based reading unproved) | N-H3-5's data use the same reading ("1 state past n − 1") | SAME reading; the author agrees (L-SI 2d021429) | fixes file: state the index |
+| H3-N3 (DATA: freeze non-vacuous on 3 lib41 + 2 frz1_n24 runs, (NC) regime) | N-H3-5 (freeze on frz1_n24, pftheta34_n32 in the (h_D) regime; FIRST freeze in the ¬(NC) / ¬(h_D) regime on a constructed union pft34_h3u_P32, decoupled) | R2 went further (new regime); I re-ran its witness (below) | DATA |
+
+### C.3 Data cross-checks on my engine (this §C)
+- R2's witness pft34_h3u_P32 (copied as input into scratch/h3_inputs/: .pg sha1 6032b40b…, its start file pft34_h3u_P32_t33.start sha1
+  fd98c687… renamed to .start), S3 + its start: 74 (h3_D) states, ALL with ¬(NC); C2-H3 2,516 checks; FRZ non-vacuous (≥ n + 1 states) on 2
+  runs; FRZ1B (the stronger 1-based reading) no change; 0 failures (h3_logs/r2_witness_pft34.txt). So the freeze in the ¬(NC) regime is
+  confirmed on two engines (with R2's stated limit: the cycling disagreement vertex is decoupled from the freezing part).
+- pftheta34_n32 (experiments/red/so/instances/, R2's natural (h_D) freeze), S3: FRZ non-vacuous on 1 run, 0 failures
+  (h3_logs/pftheta34_s3.txt).
+| item | REFEREE | REFEREE-2 | agree? |
+| --- | --- | --- | --- |
+| C2-H3 at (h3_D) ∧ ¬(NC) | 5,773 states (my sets) + 74 (witness) | 201,701 checks (+ 254 witness) | YES (0 failures) |
+| TC-CLASS terminal changes | 588, all inside one class | 1,664, all inside one class | YES |
+| freeze, (h_D)/(NC) regime | lib41 3 runs, frz1_n24 2, pftheta34 1 | frz1_n24, pftheta34_n32, lib41 4, 𝒞^1O files 5 | YES |
+| freeze, ¬(NC) regime | R2's witness: 2 runs | witness: 1 run | YES (constructed only) |
+| mutation | L = M_D − 1: 76,353 | c2l 7,251 (lib41) etc.; b0, pc1, crd1 bite | YES |
+
+### C.4 Joint state
+- All to-sign items signed by both; FRZ-U_H3 in the 0-based reading (freeze from state k_0 + n − 1).
+- Fixes file: H3-N2 = N-H3-4 (B1 simplicity line); N-H3-1 (quote wording); H3-N4 (index wording); landing note H3-N1.

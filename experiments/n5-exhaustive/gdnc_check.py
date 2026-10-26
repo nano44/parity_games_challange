@@ -16,6 +16,8 @@ Checks (every state of every run):
        at every state of S: for every L with max(max_S M_D, -1) <= L <= n - 1 (and L = BOT if max_S M_D = BOT), COARSE_L(W) is constant
        on S from its (n-1)-th state on, read 1-based: the 0-based states S[n-2], S[n-1], ... all have equal COARSE_L(W); a check
        needs S to have at least n states (n - 1 transitions), else it is vacuous (counted).
+  C2H3 P-N5-H3 §4 (sha1 680e4528): at every (h3_D) state, (NC) or not: COARSE_L(Xi) = COARSE_L(W) for max(M_D, -1) <= L <= n - 1.
+  FRZH3 P-N5-H3 §6: runs with (h3_D) at every state (no (NC)); freeze from state k0 + n - 1 (0-based, the packet's formula).
   MUT  mutation control (MUT=1): b' checked at every state WITHOUT (NC); failures counted, not violations.
 Usage: gdnc_check.py rand N NMIN NMAX KMIN KMAX SEED | inst FILE.pg [STARTS] | files LIST.txt [STARTS]   (each game: canonical start + one random start pair)"""
 import os
@@ -31,6 +33,7 @@ import cls_check as CC  # noqa: E402
 
 BOT, INF, lev, coarse = F.BOT, F.INF, F.lev, F.coarse
 MUT = os.environ.get("MUT") == "1"
+PH3 = {}   # longest FRZ-U_H3 run of the last check_run (for climbs)
 
 
 def lasso(f, v):
@@ -90,6 +93,12 @@ def check_state(g, E, S, c, bad, name):
     hD = all(not ((set(lasso(f, u)[0][1:] + lasso(f, u)[1]) - {u}) & S["D"]) and not on_own_cycle(f, u)
              for u in S["D"] for f in (S["Hf"], S["Wf"]))     # (h_D): no revisit of D after leaving u
     c["states_NC_not_hD"] += S["NC"] and not hD; S["hD"] = hD
+    if S["h3"]:   # C2-H3 (P-N5-H3 §4, sha1 680e4528): (h3_D) alone; L from max(M_D, -1) to n - 1
+        c["states_h3"] += 1; c["states_h3_not_NC"] += not S["NC"]
+        for L in range(max(S["MD"], -1), n):
+            c["C2H3_checks"] += 1; c["C2H3_checks_not_NC"] += not S["NC"]
+            if any(coarse(S["Xi"][v], L) != coarse(S["W"][v], L) for v in range(n)):
+                bad(f"{name} C2-H3 L={L} MD={S['MD']} NC={S['NC']}")
     if MUT:
         check_bprime(g, E, S, c, bad, name, tag="MUT")
     if not S["NC"]:
@@ -148,6 +157,38 @@ def check_run(g, s, t, c, mx, bad, name):
         else:
             c["FRZ_runs_too_short(vacuous)"] += 1
         k = j
+    # FRZ-U_H3 (P-N5-H3 §6): runs with (h3_D) at every state; COARSE_L(W) constant from state k0 + n - 1 on (0-based, the packet's
+    # formula; needs >= n + 1 states), L from max(max_S M_D, -1) to n - 1. The 1-based base k0 + n - 2 is tested as INFO only.
+    good3 = [A[j]["h3"] for j in range(len(A))]
+    ok3 = [not fbs[j] and A[j]["lam"] == A[j + 1]["lam"] and states[j][1] == states[j + 1][1] and good3[j] and good3[j + 1] for j in range(T)]
+    k = 0; best3 = 0; best3n = 0
+    while k < T:
+        if not ok3[k]:
+            k += 1; continue
+        j = k
+        while j < T and ok3[j]:
+            j += 1
+        Sx = list(range(k, j + 1)); c["FRZH3_runs"] += 1; best3 = max(best3, len(Sx))
+        if any(not A[x]["NC"] for x in Sx): best3n = max(best3n, len(Sx))
+        mD = max(max(A[x]["MD"] for x in Sx), -1)
+        for base, tag in ((n - 1, "FRZH3"), (n - 2, "FRZH3_1based_info")):
+            if len(Sx) <= base + 1:
+                continue
+            tail = Sx[base:]; c[tag + "_checked_runs"] += 1
+            if tag == "FRZH3":
+                c["FRZH3_checked_states_not_NC"] += sum(1 for x in Sx if not A[x]["NC"])
+                c["FRZH3_checked_states_NC_not_hD"] += sum(1 for x in Sx if A[x]["NC"] and not A[x]["hD"])
+            for L in range(mD, n):
+                c[tag + "_checks"] += 1
+                ref = [coarse(A[tail[0]]["W"][v], L) for v in range(n)]
+                if any([coarse(A[x]["W"][v], L) for v in range(n)] != ref for x in tail):
+                    if tag == "FRZH3": bad(f"{name} FRZ-U_H3 run [{k},{j}] L={L}")
+                    else: c["FRZH3_1based_info_moves"] += 1
+        k = j
+    mx["max_FRZH3_run_states"] = max(mx["max_FRZH3_run_states"], best3)
+    mx["max_FRZH3_run_minus_n"] = max(mx["max_FRZH3_run_minus_n"], best3 - n)
+    PH3["best"] = best3; PH3["best_notNC"] = best3n
+    mx["max_FRZH3_run_with_notNC_states"] = max(mx["max_FRZH3_run_with_notNC_states"], best3n)
     mx["max_FRZ_run_states"] = max(mx["max_FRZ_run_states"], best)
     mx["max_FRZ_run_minus_(n-1)"] = max(mx["max_FRZ_run_minus_(n-1)"], best - (n - 1))
     return best
@@ -205,6 +246,14 @@ def main():
             g = F.lpg.parse("".join(l for l in open(path) if not l.lstrip().startswith("%")))
             rng = random.Random(7); E, Ed = F.Engine(g), F.Engine(F.n5.dual(g)); nm = os.path.basename(path)
             check_run(g, list(E.initial("best")), list(Ed.initial("best")), c, mx, bad, nm + ":canon")
+            if os.path.exists(path[:-3] + ".start"):   # a pinned start pair (SIGMA0 / TAU0 lines), vertices it omits keep the canonical choice
+                s, t = list(E.initial("best")), list(Ed.initial("best"))
+                for line in open(path[:-3] + ".start"):
+                    q = line.split()
+                    if q and q[0] in ("SIGMA0", "TAU0"):
+                        for x in q[1:]:
+                            v, w = map(int, x.split(":")); (s if q[0] == "SIGMA0" else t)[v] = w
+                check_run(g, s, t, c, mx, bad, nm + ":startfile"); c["startfile_runs"] += 1
             for r in range(int(sys.argv[3]) if len(sys.argv) > 3 else 0):
                 s, t = rand_start(g, rng); check_run(g, s, t, c, mx, bad, f"{nm}:rand{r}")
             c["files"] += 1
