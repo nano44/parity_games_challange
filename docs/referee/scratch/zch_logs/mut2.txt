@@ -1,0 +1,62 @@
+CCP_chk 9024
+CID_chk 521530
+CSH_chk 19381
+MAX_D 61
+PM_FAIL 394
+PSI_FAIL 430
+RUNS 2610
+SA_FAIL 1271
+SA_chk 33309
+SUM_CYC 1434
+SUM_ZC 257
+SUM_ZCH 487
+TIE_FAIL 183
+ZCF_chk 806
+ZCF_fall 90
+ZC_chk 29793
+ZK_CEVEN 291
+ZK_ODDC 5
+ZK_TIE 191
+ZK_chk 3020
+skip_big 270
+EX ('PSI', '../R-N5-L2/droplen_cex_n12.pg/0', 1, 2)
+EX ('PSI', '../R-N5-L2/droplen_cex_n12.pg/0', 2, 2)
+EX ('PSI', '../R-N5-L2/droplen_cex_n12.pg/0', 3, 2)
+EX ('PSI', '../R-N5-L2/droplen_cex_n12.pg/0', 4, 2)
+EX ('PSI', '../R-N5-L2/droplen_cex_n12.pg/2', 2, 2)
+EX ('PSI', '../R-N5-L2/droplen_cex_n12.pg/2', 3, 2)
+EX ('PSI', '../R-N5-L2/droplen_cex_n12.pg/2', 4, 2)
+EX ('PSI', '../R-N5-L2/droplen_cex_n12.pg/2', 5, 2)
+EX ('PSI', '../R-N5-LP/df_cex.pg/0', 1, 7)
+EX ('PSI', '../R-N5-LP/df_cex.pg/0', 2, 7)
+EX ('TIE', '../R-N5-LP/df_cex.pg/0', 0, 7)
+EX ('SA', '../R-N5-LP/df_cex.pg/1', 0, 7, 1, 7, (-512, -2), (-512, -3))
+EX ('PM', '../R-N5-LP/df_cex.pg/1', 0, 7, 1)
+EX ('PSI', '../R-N5-LP/df_cex.pg/1', 3, 7)
+EX ('PSI', '../R-N5-LP/df_cex.pg/2', 1, 7)
+EX ('TIE', '../R-N5-LP/df_cex.pg/2', 0, 7)
+EX ('SA', '../R-N5-NEB/band_base_cex.pg/0', 1, 18, 19, 18, (-65536, 3), (-65536, 2))
+EX ('PM', '../R-N5-NEB/band_base_cex.pg/0', 1, 18, 19)
+EX ('SA', '../R-N5-NEB/band_base_cex.pg/0', 4, 21, 19, 21, (0, 9), (0, 7))
+EX ('SA', '../R-N5-NEB/band_base_cex.pg/0', 5, 21, 19, 21, (0, 7), (0, 6))
+EX ('PM', '../R-N5-NEB/band_base_cex.pg/0', 4, 21, 19)
+EX ('PSI', '../R-N5-NEB/band_base_cex.pg/0', 6, 21)
+EX ('TIE', '../R-N5-NEB/band_base_cex.pg/0', 5, 21)
+EX ('SA', '../R-N5-NEB/band_base_cex.pg/1', 4, 21, 19, 21, (0, 10), (0, 6))
+EX ('PM', '../R-N5-NEB/band_base_cex.pg/1', 4, 21, 19)
+EX ('PSI', '../R-N5-NEB/band_base_cex.pg/1', 5, 21)
+EX ('TIE', '../R-N5-NEB/band_base_cex.pg/1', 4, 21)
+EX ('SA', '../R-N5-NEB/band_base_cex.pg/2', 5, 21, 19, 21, (0, 8), (0, 6))
+EX ('PM', '../R-N5-NEB/band_base_cex.pg/2', 5, 21, 19)
+EX ('SA', 'flip_inputs/rootc_lit_n5.pg/1', 0, 4, 3, 2, (16, -1), (16, -2))
+EX ('TIE', 'flip_inputs/rootc_lit_n5.pg/1', 0, 4)
+EX ('SA', 'h3_inputs/pft34_h3u_P32.pg/0', 5, 1, 0, 1, (-4831838208, 10), (-4831838208, 9))
+EX ('SA', 'h3_inputs/pft34_h3u_P32.pg/0', 7, 1, 0, 1, (-4362076160, 7), (-4362076160, 6))
+EX ('SA', 'h3_inputs/pft34_h3u_P32.pg/0', 9, 1, 0, 1, (-4328521728, 9), (-4328521728, 8))
+EX ('SA', 'h3_inputs/pft34_h3u_P32.pg/0', 10, 1, 0, 1, (-4328521728, 8), (-4328521728, 7))
+EX ('SA', 'h3_inputs/pft34_h3u_P32.pg/0', 11, 1, 0, 1, (-4328521728, 7), (-4328521728, 6))
+EX ('SA', 'h3_inputs/pft34_h3u_P32.pg/0', 12, 1, 0, 1, (-4328521728, 6), (-4328521728, 5))
+EX ('SA', 'h3_inputs/pft34_h3u_P32.pg/0', 14, 1, 0, 1, (-4294967296, 5), (-4294967296, 3))
+EX ('SA', 'h3_inputs/pft34_h3u_P32.pg/0', 16, 1, 0, 1, (-4093640704, 19), (-4093640704, 18))
+EX ('SA', 'h3_inputs/pft34_h3u_P32.pg/0', 18, 1, 0, 1, (-4026531840, 16), (-4026531840, 15))
+EXIT 0

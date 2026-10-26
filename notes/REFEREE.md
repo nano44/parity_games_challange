@@ -16,6 +16,7 @@ before your own report is pushed and the Lead gives the §C word; re-list in the
 | P-N5-EPC (9f48ded7), first | R-N5-EPC.md a52feb43 (+ nep76 58fd9535) | cd4795f8 vs R2 62b72f6e | all SIGNED, no gap; FB-C' stands without FBC-N3's route |
 | P-N5-ROOT (d3788bc0) + addendum (af1c7ad4), first | R-N5-ROOT.md 619fccf2 | PENDING (REFEREE-2 reviews after EPC) | all SIGNED, no gap; FREEZE-G (b) freeze + (c) on proof alone |
 | P-N5-OFFMONO (d9705ac6), first | R-N5-OFFMONO.md 04a563d3 | PENDING | all SIGNED, no gap; N4: hypothesis never needed in data |
+| P-N5-OFFMONO-add (5911aba8), first | R-N5-OFFMONO-add.md c2a97189 | PENDING (with OFFMONO) | all SIGNED, no gap; ZC cut sound, never needed in data (OFFADD-N2 conjecture) |
 ### IN FLIGHT: none. QUEUE (Lead 17:02Z): P-N5-GCX (sha1 5a91bebb…), then P-N5-RESTRICT (48c63a8e…); §Cs for ROOT and OFFMONO on the Lead's word.
 ### NEEDS: Lead routes notes (FBC-N1..N4, CHOSEN-N1..N5, EPC-N1..N4, ROOT-N1..N5, ADD-N1..N2, OFFMONO-N1..N4) to the lanes' fixes files.
 ### Things only I know

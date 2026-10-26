@@ -1,0 +1,38 @@
+   late ../../../experiments/red/so/instances/so_th_n32.pg w 31 pos 31 z 0 inQ False mc 1 runlen 33 M -52690944 -> 14417920 len 9 -> 7 c 5 par_c 0
+   late ../../../experiments/red/so/instances/so_th_n32.pg w 31 pos 31 z 1 inQ False mc 1 runlen 33 M -59768832 -> 7340032 len 9 -> 7 c 5 par_c 0
+   late ../../../experiments/red/so/instances/so_th_n32.pg w 31 pos 31 z 2 inQ False mc 1 runlen 33 M -50331648 -> 16777216 len 6 -> 4 c 5 par_c 0
+   late ../../../experiments/red/so/instances/so_th_n32.pg w 31 pos 31 z 3 inQ True mc 1 runlen 33 M -50331648 -> 16777216 len 5 -> 3 c 5 par_c 0
+   late ../../../experiments/red/so/instances/so_th_n32.pg w 31 pos 31 z 4 inQ False mc 1 runlen 33 M -59768832 -> 7340032 len 8 -> 6 c 5 par_c 0
+   late ../../../experiments/red/so/instances/so_th_n32.pg w 31 pos 31 z 6 inQ False mc 1 runlen 33 M -52690944 -> 14417920 len 12 -> 10 c 5 par_c 0
+   late ../../../experiments/red/so/instances/so_th_n32.pg w 31 pos 31 z 7 inQ False mc 1 runlen 33 M -52690944 -> 14417920 len 11 -> 9 c 5 par_c 0
+   late ../../../experiments/red/so/instances/so_th_n32.pg w 31 pos 31 z 8 inQ False mc 1 runlen 33 M -67108864 -> 7340032 len 4 -> 9 c 5 par_c 0
+   late ../../../experiments/red/so/instances/so_th_n32.pg w 31 pos 32 z 9 inQ False mc 1 runlen 33 M -67108864 -> -58720256 len 3 -> 4 c 5 par_c 0
+   late ../../../experiments/red/so/instances/so_th_n32.pg w 31 pos 31 z 10 inQ False mc 1 runlen 33 M -52690944 -> 14417920 len 8 -> 6 c 5 par_c 0
+   late ../../../experiments/red/so/instances/so_th_n32.pg w 31 pos 31 z 11 inQ False mc 1 runlen 33 M -54525952 -> 12582912 len 7 -> 5 c 5 par_c 0
+   late ../../../experiments/red/so/instances/so_th_n32.pg w 31 pos 31 z 12 inQ False mc 1 runlen 33 M -52690944 -> 14417920 len 11 -> 9 c 5 par_c 0
+   late ../../../experiments/red/so/instances/so_th_n32.pg w 31 pos 31 z 13 inQ False mc 1 runlen 33 M -58720256 -> 8388608 len 7 -> 5 c 5 par_c 0
+   late ../../../experiments/red/so/instances/so_th_n32.pg w 31 pos 32 z 14 inQ False mc 1 runlen 33 M 0 -> 16777216 len 2 -> 3 c 5 par_c 0
+   late ../../../experiments/red/so/instances/so_th_n32.pg w 31 pos 31 z 15 inQ False mc 1 runlen 33 M -52690944 -> 14417920 len 10 -> 8 c 5 par_c 0
+   late ../../../experiments/red/so/instances/so_th_n32.pg w 31 pos 31 z 16 inQ False mc 1 runlen 33 M -52690944 -> 14417920 len 9 -> 7 c 5 par_c 0
+   late ../../../experiments/red/so/instances/so_th_n32.pg w 31 pos 32 z 17 inQ False mc 1 runlen 33 M 0 -> 16777216 len 1 -> 2 c 5 par_c 0
+   late ../../../experiments/red/so/instances/so_th_n32.pg w 31 pos 31 z 18 inQ False mc 1 runlen 33 M -49807360 -> 17301504 len 7 -> 5 c 5 par_c 0
+   late ../../../experiments/red/so/instances/so_th_n32.pg w 31 pos 31 z 19 inQ False mc 1 runlen 33 M -184025088 -> -116916224 len 8 -> 6 c 5 par_c 0
+   late ../../../experiments/red/so/instances/so_th_n32.pg w 31 pos 31 z 20 inQ False mc 1 runlen 33 M -59768832 -> 7340032 len 10 -> 8 c 5 par_c 0
+   late ../../../experiments/red/so/instances/so_th_n32.pg w 31 pos 31 z 21 inQ False mc 1 runlen 33 M -50331648 -> 16777216 len 6 -> 4 c 5 par_c 0
+   late ../../../experiments/red/so/instances/so_th_n32.pg w 31 pos 31 z 22 inQ False mc 1 runlen 33 M -52690944 -> 14417920 len 10 -> 8 c 5 par_c 0
+   late ../../../experiments/red/so/instances/so_th_n32.pg w 31 pos 32 z 23 inQ False mc 1 runlen 33 M -2147483648 -> -2140143616 len 1 -> 6 c 5 par_c 0
+   late ../../../experiments/red/so/instances/so_th_n32.pg w 31 pos 31 z 24 inQ False mc 1 runlen 33 M -50593792 -> 16515072 len 7 -> 5 c 5 par_c 0
+   late ../../../experiments/red/so/instances/so_th_n32.pg w 31 pos 31 z 25 inQ False mc 1 runlen 33 M -50331648 -> 16777216 len 6 -> 4 c 5 par_c 0
+   late ../../../experiments/red/so/instances/so_th_n32.pg w 31 pos 31 z 26 inQ False mc 1 runlen 33 M -318767104 -> -251658240 len 6 -> 4 c 5 par_c 0
+   late ../../../experiments/red/so/instances/so_th_n32.pg w 31 pos 31 z 27 inQ False mc 1 runlen 33 M -83886080 -> -16777216 len 7 -> 5 c 5 par_c 0
+   late ../../../experiments/red/so/instances/so_th_n32.pg w 31 pos 31 z 28 inQ False mc 1 runlen 33 M -83886080 -> -16777216 len 8 -> 6 c 5 par_c 0
+   late ../../../experiments/red/so/instances/so_th_n32.pg w 31 pos 31 z 29 inQ False mc 1 runlen 33 M -52690944 -> 14417920 len 10 -> 8 c 5 par_c 0
+   late ../../../experiments/red/so/instances/so_th_n32.pg w 31 pos 31 z 30 inQ False mc 1 runlen 33 M -589561856 -> -522452992 len 9 -> 7 c 5 par_c 0
+   late ../../../experiments/red/so/instances/so_th_n32.pg w 31 pos 31 z 31 inQ False mc 1 runlen 33 M -1133510656 -> -1066401792 len 11 -> 9 c 5 par_c 0
+FRZ_A_V 31 FRZ_D_V 1 KCH 403 LASTM_minus_w 1 MCH 266 max_KCH 33 max_KCH_Q 33 max_MCH 21 max_MCH_Q 20 phases 2 runs 2
+  top (MCH KCH runlen w inQ n name): 21 31 33 31 False 32 ../../../experiments/red/so/instances/so_th_n32.pg
+  top (MCH KCH runlen w inQ n name): 20 33 33 31 True 32 ../../../experiments/red/so/instances/so_th_n32.pg
+  top (MCH KCH runlen w inQ n name): 17 25 33 31 False 32 ../../../experiments/red/so/instances/so_th_n32.pg
+  top (MCH KCH runlen w inQ n name): 14 22 33 31 False 32 ../../../experiments/red/so/instances/so_th_n32.pg
+  top (MCH KCH runlen w inQ n name): 14 21 33 31 False 32 ../../../experiments/red/so/instances/so_th_n32.pg
+  top (MCH KCH runlen w inQ n name): 12 18 33 31 False 32 ../../../experiments/red/so/instances/so_th_n32.pg

@@ -1,5 +1,57 @@
 # Handover check: REFEREE
 
+## successor 16 (2026-10-26T18:20Z by date -u; Opus 5.5 under D15, label "(Opus 5.5, D15)"; predecessor successor 15, handover 9e19887f)
+Measured from the repository at the time of writing, not recalled.
+
+### 1. Branch, head, distance to trunk
+- Branch `claude/referee`. Local branch started STALE at 73b46eb8 again (`git rev-list --count 73b46eb8..9e19887f` = 3322).
+  `git fetch origin claude/vibrant-johnson-nxvvxo claude/referee`; `git merge --ff-only origin/claude/referee`: HEAD = 9e19887f
+  (`git merge-base --is-ancestor 9e19887f HEAD` true).
+- Trunk `claude/vibrant-johnson-nxvvxo` at 449b6df2 ("Lead: R73 (EPC) draft; ..."). Before merging, 9e19887f was 3 ahead / 19 behind trunk
+  (merge-base 547ac5a9). The 3 ahead: OFFMONO-add report (c2a97189), its trunk merge (0aae9e6e), and the HANDOVER table (9e19887f).
+- Merged trunk with `git merge` (merge commit 5e905310): 4 ahead / 0 behind before this file's commit.
+- Oink: scripts/setup_oink.sh built 8fbf0a7 into tools/oink/build, exit 0 ("oink built at 8fbf0a7").
+
+### 2. Open work and next step
+- Handover "IN FLIGHT: none" checked: R-N5-ROOT.md, R-N5-OFFMONO.md, R-N5-OFFMONO-add.md exist in docs/referee/ (reports 619fccf2, 04a563d3,
+  c2a97189); none has a §C yet.
+- Queue (Lead brief to successor 16), each after "go":
+  (1) §Cs vs REFEREE-2 for ROOT (+ addendum), OFFMONO, OFFMONO-add, each on the Lead's word, written as successor (said in each §C). Next: wait;
+      REFEREE-2 17 has not reported on them (`ls docs/referee-2 | grep -ic "root\|offmono"` = 0 at this fetch). I open no docs/referee-2/ file
+      on them before the word.
+  (2) P-N5-OFFMONO-add2: not yet frozen (`ls docs/new | grep -i offmono` shows only P-N5-OFFMONO-box49.md and P-N5-OFFMONO-add-box49.md).
+      Next: wait for L-NEW 29's freeze and the Lead's pin; then FT-COUNT, FT-CONST, CHAIN-COUNT'', code-level PF-CHOICE / TIE-CHARGE against si.py.
+  (3) P-N5-GCX, docs/si/P-N5-GCX-box21.md, sha1 5a91bebbc34f14be147da38adc1a6202407c70c2 (re-measured on the tree and at pin 02240121: match;
+      02240121 ancestor of HEAD). Next: sign or not MIG-SPLIT, UL-RED (conditional on CONJECTURE UL_G), ABS-HEIGHT, ABS-TIE, LOC in the abstract
+      model; note UL_C killed by L-RED 22 (docs/red/R91-ulc-reader.md, present) and the pure-C-interval identification as a READING on FREEZE-A (b).
+      Report docs/referee/R-N5-GCX.md.
+  (4) P-N5-RESTRICT, docs/new/P-N5-RESTRICT-box48.md, sha1 48c63a8e45c0288678805195a91f9c00ee703da9 (re-measured on the tree: match). Next: review;
+      flag its §4 first READING as true but uninformative (|Q| = 5/5/3 for nep90/nep76/long121). Report docs/referee/R-N5-RESTRICT.md.
+  Own engine (docs/referee/scratch/rl_engine.py, `python3 -I`, no lane imports); every parenthetical inside a signed statement is its own claim.
+  No docs/referee-2/ GCX or RESTRICT file exists at this fetch (`ls docs/referee-2 | grep -ic "gcx\|restrict"` = 0).
+- Handover NEEDS (not mine; Lead routes): FBC / CHOSEN / EPC / ROOT / ADD / OFFMONO notes to the lanes' fixes files.
+
+### 3. docs/GAPS.md rows relevant to me (trunk 449b6df2)
+- REFEREE owns no row. The row my packets feed: G-N5-TIME (l.11), major, owner "L-NEW (L-LIT T22; referees later)", **open**; last UPDATE
+  16:30Z: R72 (P-N5-CHOSEN; CHECKER C81) landed. RESULTS runs to R72 (`grep -n "^### R7" docs/RESULTS.md`: R70, R71, R72); R73 (EPC) at CHECKER C82.
+- Other open rows (not mine): GAP-A, GAP-C (blocker), G-S5-6, G-NEST (major), G-N1-LB (minor). G-N5-TERM closed.
+
+### 4. Three owner rulings that most constrain me (verbatim, docs/DECISIONS.md), with DECISIONS-INDEX status
+1. D1 (index l.5: **active**; DECISIONS.md l.7-8):
+   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+   > Never downgrade the referee to save money.
+2. D15 (index l.26: **active**; DECISIONS.md l.278):
+   > q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it
+3. D18 (index l.32: **active**; DECISIONS.md l.333):
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+
+### 5. One trap that bit this lane, and the check that prevents it
+- Trap (successors 5-16): the container starts stale at 73b46eb8 (3322 behind the handover SHA this time). Check: fetch, fast-forward,
+  `git merge-base --is-ancestor <handover SHA> HEAD` before any work (done above).
+- Content trap (successor 14, FLIP): a parenthetical inside a signed statement was not checked and became joint gap G-FLIP-3, found only by
+  REFEREE-2. Check: list every parenthetical and every "by (x)" inside each statement to be signed as its own numbered claim, and check each
+  by proof and by probe before signing. Process trap (successor 15): `pkill -f <probe>` killed my own shell (exit 144): kill by pid only.
+
 ## successor 15 (2026-10-26T13:31Z by date -u; Opus 5.5 under D15, label "(Opus 5.5, D15)"; predecessor successor 14, handover 502f55dc)
 Measured from the repository at the time of writing, not recalled.
 
