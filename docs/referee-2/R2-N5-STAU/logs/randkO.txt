@@ -1,0 +1,23 @@
+MODE random 2000 4 16 31 kO 2 MUT -
+A_checks: 19812
+A_fb_pairs: 797
+B_checks: 5639
+CONV_checks: 5910
+COR_n_inphase: 839
+COR_t_inphase: 853
+C_n5_checks: 5639
+C_tau_checks: 5910
+D_checks: 19812
+LINK_checks: 15335
+NONEX_n: 1992
+NONEX_t: 2097
+R48_max_f: 1
+R48_max_phase_len: 3
+R48_phases: 1547
+R48_runs: 774
+RUNS_differ: 129
+SELF_checks: 6000
+TIEKEEP: 271
+stable_with_Itau: 1433
+states: 19812
+RESULT OK violations=0

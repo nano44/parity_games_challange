@@ -1,0 +1,55 @@
+MODE random 1500 5 16 41 kO 2 MUT sig
+A_checks: 15422
+A_fb_pairs: 497
+B_checks: 4431
+CONV_checks: 4651
+COR_n_inphase: 736
+COR_t_inphase: 763
+C_n5_checks: 4431
+C_tau_checks: 4651
+D_checks: 15422
+LINK_checks: 11901
+NONEX_n: 1488
+NONEX_t: 1558
+R48_max_f: 1
+R48_max_phase_len: 2
+R48_phases: 999
+R48_runs: 501
+RUNS_differ: 106
+SELF_checks: 4500
+TIEKEEP: 220
+VIOLATIONS: 48
+V_C: 48
+stable_with_Itau: 1130
+states: 15422
+VIOLATION C: random41:627#2@0 (tau): not the Sigma-transition
+VIOLATION C: random41:627#2@0 (n5): not the Sigma-transition
+VIOLATION C: random41:627#2@0: tau-stable but N5^tau next != Sigma
+VIOLATION C: random41:627#2^t@0 (tau): not the Sigma-transition
+VIOLATION C: random41:627#2^t@0 (n5): not the Sigma-transition
+VIOLATION C: random41:627#2^t@0: tau-stable but N5^tau next != Sigma
+VIOLATION C: random41:833#0@1 (tau): not the Sigma-transition
+VIOLATION C: random41:833#0@1 (n5): not the Sigma-transition
+VIOLATION C: random41:833#0@1: tau-stable but N5^tau next != Sigma
+VIOLATION C: random41:833#0^t@1 (tau): not the Sigma-transition
+VIOLATION C: random41:833#0^t@1 (n5): not the Sigma-transition
+VIOLATION C: random41:833#0^t@1: tau-stable but N5^tau next != Sigma
+VIOLATION C: random41:833#1@2 (tau): not the Sigma-transition
+VIOLATION C: random41:833#1@2 (n5): not the Sigma-transition
+VIOLATION C: random41:833#1@2: tau-stable but N5^tau next != Sigma
+VIOLATION C: random41:833#1^t@2 (tau): not the Sigma-transition
+VIOLATION C: random41:833#1^t@2 (n5): not the Sigma-transition
+VIOLATION C: random41:833#1^t@2: tau-stable but N5^tau next != Sigma
+VIOLATION C: random41:833#2@1 (tau): not the Sigma-transition
+VIOLATION C: random41:833#2@1 (n5): not the Sigma-transition
+VIOLATION C: random41:833#2@1: tau-stable but N5^tau next != Sigma
+VIOLATION C: random41:833#2^t@1 (tau): not the Sigma-transition
+VIOLATION C: random41:833#2^t@1 (n5): not the Sigma-transition
+VIOLATION C: random41:833#2^t@1: tau-stable but N5^tau next != Sigma
+VIOLATION C: random41:993#0@2 (tau): not the Sigma-transition
+VIOLATION C: random41:993#0@2 (n5): not the Sigma-transition
+VIOLATION C: random41:993#0@2: tau-stable but N5^tau next != Sigma
+VIOLATION C: random41:993#0^t@2 (tau): not the Sigma-transition
+VIOLATION C: random41:993#0^t@2 (n5): not the Sigma-transition
+VIOLATION C: random41:993#0^t@2: tau-stable but N5^tau next != Sigma
+RESULT FAIL violations=48
