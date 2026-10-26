@@ -1,0 +1,1 @@
+FBW_V_nothon 14, WDROP 166, fallbacks 205, fb_at_honest 39, fb_at_nothonest 166, runs 537 FIRST [('experiments/n5-exhaustive/instances/b5_o11.pg', False, 7, 6, 5)]
