@@ -351,3 +351,41 @@ changes at transitions with its chosen option in E at both ends.
 - READING: the relays' ROUTE events are bounded per G-interval; what is unbounded is the number of intervals, i.e. the changes of the gates'
   offsets (ρ at the gates) and the gate-region gains (ping-pong entries), together with fallbacks and A-gains. The open count is the same
   one as in §6-§8, now stated per gate: how often a D-direct gate's offset or region can be reset inside one fallback-free run.
+
+## 10. The per-gate reset count (Lead's 15:02Z item): charges in data, one dead charge, Corollary RESET-PIECE (PROVED), what stays open
+Written 2026-10-26T15:11Z (date -u). Script experiments/si/root/resets.py; logs root/logs/resets_*.txt.
+### 10.1 DATA: the resets of a D-direct gate inside fallback-free runs, and their charges
+At an in-phase S4a transition with u ∈ DD_t, a RESET of u is: LEAVE (u ∉ DD_{t+1}), DELTA_U (Δ(u) changes with M(σ̄ u) changing, i.e. u's own
+path weight), DELTA_T (Δ(u) changes via M(τ u) only), RGAIN (R_u gains), AGAIN (A gains). Charges at the same transition: ROOT (Ξ of the class
+root r changes, u ≠ r), SELF (Ξ(u) changes), PING (an Even vertex outside R_u(t) switches into R_u(t)), FLIP (some Odd choice vertex of the class
+changes its chosen exit). ONLYSELF: no charge but SELF.
+| set | resets (root / relays) | root DELTA_U (ONLYSELF) | root RGAIN (with PING) | relay DELTA_U (with ROOT) | relay LEAVE (ONLYSELF) | R_u gains from A / from another gate's region | max resets of one gate in one run |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| nep90 phase@4 | 76 / 21 | 63 (32) | 22 (17) | 7 (7) | 10 (8) | 72 / 14 | 13 |
+| nep76 phase@9 | (86 in all) | 51 (13) | 25 (17) | 10 (10) | 13 (0) | 54 / 12 | 12 |
+| lib2o (KMIN 2), S3 + 4 | 186 / 89 | 21 (15) | 136 (136) | 7 | 33 | 275 / 1 | 18 |
+| lib41 (KMIN 2), S3 + 4 | 175 / 173 | 18 (13) | 110 (110) | 11 | 80 | 253 / 29 | 18 |
+- Relay offset resets on the long instances are all at a root ρ event (7 / 7, 10 / 10): copies, CHOSEN's mechanism.
+- Root region gains carry a ping-pong entry in every library case (136 / 136, 110 / 110) and in 17 of 22 / 17 of 25 on nep90 / nep76; the
+  rest are merges from another gate's region (with FLIP or SELF).
+- DEAD CHARGE (recorded in docs/si/DEAD.md "DEAD box 20"): "every reset of the root's offset is charged to a ping-pong entry or a FLIP event at the
+  same transition" is FALSE: nep90 phase@4 has 32 of 63 root offset resets with no charge but the root's own ρ (nep76: 13 of 51). They are the
+  Bellman-Ford cascade events of the direct region (§1, note §28.2's PATH triggers), i.e. FREEZE-A (c) events inside pieces.
+### 10.2 Corollary RESET-PIECE (PROVED, every game)
+Let [s, e] satisfy FREEZE-A's hypothesis (§3), L_A := |A_s| − 1, and u ∈ DD_t for every t ∈ [s, e]. Then inside [s, e]:
+- (i) Δ(u) changes at ≤ L_A + deg(u) − 1 transitions;
+- (ii) the transitions at which R_u gains a vertex coming from A number ≤ |A_s|;
+- (iii) the transitions at which R_u gains a vertex coming from another gate's region are NOT bounded here (OPEN; data: 14 / 12 vertices on
+  nep90 / nep76, 29 on lib41).
+Proof. (i) At most L_A transitions lie before s + L_A. For t ≥ s + L_A: τ(u), σ̄_t(u) ∈ A_t, so M_t(τ u) = M_{s+L_A}(τ u) (FREEZE-A (b)), and
+M_t(σ̄_t u) = M_t(u) − wt(u) ((Aκ); u is on no honest cycle) with M_t(u) ∈ V_u (FREEZE-A (c)) non-decreasing: Δ(u) takes ≤ deg(u) values
+there, in non-increasing order, and changes ≤ deg(u) − 1 times. (ii) A is non-increasing on [s, e], so a vertex leaves A at most once; each such
+transition is counted once. □
+- So inside a FREEZE-A piece the resets of a D-direct gate are polynomial except the cross-gate migrations (iii). Together with ROOT-PIECE
+  (pieces ≤ f + G_c + 1) the per-gate reset count per phase is ≤ (f + G_c + 1)·(2|U| + deg(u) + X_u), X_u := the cross-gate migrations into
+  R_u: a REDUCTION to f, G_c and X_u.
+### 10.3 Status, labels
+- PROVED (lane): RESET-PIECE (i), (ii). DATA: §10.1. DEAD: the PING / FLIP charge for root offset resets (nep90 phase@4, 32 of 63).
+- OPEN: G_c (A-gains: relay D-leaves and unsplit exits), X_u (cross-gate migrations into a gate region), f. The three lines the Lead named
+  (relay changes per fallback-free run, NCONF_{≥2}, R⁰_{≥2}) all reduce, through ROOT-PIECE, FREEZE-G and RESET-PIECE, to G_c and X_u per
+  fallback-free run; no bound on either is proved here.

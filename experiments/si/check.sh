@@ -167,3 +167,7 @@ if git cat-file -e a7c141b8 && git cat-file -e 3732ab55; then
 else
   echo "root (packet P-N5-ROOT-add-box20 quotes): NOT RUN (source commits not in this clone)"
 fi
+# note §10 / DEAD box 20: on nep90 the root has 63 offset resets, 32 with no charge but its own rho.
+o=$(python3 -I root/resets.py --one $N90)
+for k in "R_DELTA_U=63 " "R_DELTA_U_ONLYSELF=32 " "max_resets_run=13 "; do grep -q "$k" <<<"$o"; done
+echo "root (per-gate resets on nep90; the dead PING/FLIP charge reproduces): PASS"
