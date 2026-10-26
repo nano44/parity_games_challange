@@ -1559,3 +1559,4 @@
   - Merged l-new fe3b0527 / b2b88ea9: set-form lemmas G_D (a)-(c2), F1°_D, Wo_D, all every game; HP replaces FO; RT's block narrowed to the fine order between different terminals below M_D (Δ-RT, OPEN). Signpost DATA: N5 is ~linear in N on switchallexp, switchbestexp and counter_*.
   - Merged l-red d3e8b47e: R74, post-freeze KIND-MONO still vacuous (1.86 M start-pair evaluations), with a construction target.
   - L-NEW 22 and L-RED 18 PARKED. Created L-NEW successor 23 (session_011WFfFqRNrU1a8LQwbwazZN): packet P-N5-GD, then Route Δ. Created L-RED successor 19 (session_017GDW2Qywsw52DKHPD8kAM6): adversary on P-N5-1O, then DUAL / MIRROR.
+- 01:04Z: Merged l-new d489672f (L-NEW 23 check 5/5, GO: P-N5-GD then Route Δ) and l-red 56c75abd (L-RED 19 check 5/5, GO: adversary on 1O, then DUAL / MIRROR).
