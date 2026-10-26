@@ -1,0 +1,37 @@
+ASM_chk 5187
+DEAD_ex 1
+DEAD_nonflat 2
+DEAD_notlast 1
+DREM_chk 5187
+EPC_chk 198
+FBCP_chk 5187
+FBR_chk 292
+MAX_NCONF 14
+MAX_NEP 20
+MAX_V_C 3
+MAX_XBIG 1
+MAX_XDIR 2
+PHASES 5187
+PH_LEV 198
+PH_TRIVIAL 4989
+RET_A 0
+RET_B 25
+RET_R0 62
+RET_chk 1248
+RET_chk_otherC 129
+RUNS 1413
+SATB_chk 398
+SATFB1_chk 368
+SATFB_FAIL 1
+SATFB_chk 100
+SATW_chk 297
+SUM_NCONF 368
+SUM_NCONF2 33
+SUM_NEP 455
+SUM_R0 62
+SUM_R0GE2 0
+VIS_chk 368
+skip_big 670
+EX ('SATFB', '../../../experiments/new/instances/n5adv/best_n16_seed16.pg/0', 8, 'mut3')
+EX ('DEAD', '../../../experiments/new/instances/n5adv/best_n16_seed16.pg/0', 1, 10, 8, False)
+EXIT 0

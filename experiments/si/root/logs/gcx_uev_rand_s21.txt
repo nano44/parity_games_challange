@@ -1,0 +1,1 @@
+G_max=4 G_sum=107 UR_in=2 cint=1248 cint_len_max=3 cint_long=3 cint_pure=1144 gcv=403 gcv_DLEAVE=291 gcv_SWITCH=112 rho_max=3 runs=1071

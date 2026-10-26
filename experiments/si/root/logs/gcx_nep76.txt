@@ -1,0 +1,27 @@
+    U event k=6 CUT edge=(35,1)
+    U event k=8 CUT edge=(34,23)
+    U event k=8 CUT edge=(36,0)
+  ../n5-epoch/instances/nep76_n40.pg phase@9 run[0,10] c=11 |U|=40 |Qc|=5 G=2 gcv=2 Xmax=2 Xsum=2 X={0: 2} rho_root=9
+    U event k=12 CUT edge=(17,0)
+  ../n5-epoch/instances/nep76_n40.pg phase@9 run[11,18] c=11 |U|=40 |Qc|=5 G=0 gcv=0 Xmax=0 Xsum=0 X={} rho_root=7
+    U event k=24 CUT edge=(17,0)
+    U event k=30 CUT edge=(23,0)
+  ../n5-epoch/instances/nep76_n40.pg phase@9 run[19,34] c=11 |U|=40 |Qc|=5 G=2 gcv=2 Xmax=1 Xsum=1 X={0: 1} rho_root=12
+    U event k=36 CUT edge=(23,0)
+    U event k=38 CUT edge=(2,37)
+    U event k=45 CUT edge=(34,23)
+    U event k=45 CUT edge=(36,0)
+  ../n5-epoch/instances/nep76_n40.pg phase@9 run[35,47] c=11 |U|=40 |Qc|=5 G=2 gcv=3 Xmax=3 Xsum=3 X={0: 3} rho_root=11
+    U event k=49 CUT edge=(17,0)
+  ../n5-epoch/instances/nep76_n40.pg phase@9 run[48,55] c=11 |U|=40 |Qc|=5 G=0 gcv=0 Xmax=0 Xsum=0 X={} rho_root=7
+    U event k=61 CUT edge=(17,0)
+    U event k=67 CUT edge=(23,0)
+  ../n5-epoch/instances/nep76_n40.pg phase@9 run[56,71] c=11 |U|=40 |Qc|=5 G=2 gcv=2 Xmax=1 Xsum=1 X={0: 1} rho_root=12
+    U event k=73 CUT edge=(23,0)
+    U event k=74 CUT edge=(18,1)
+    U event k=74 CUT edge=(35,1)
+    U event k=76 CUT edge=(5,18)
+    U event k=76 CUT edge=(28,1)
+    U event k=76 CUT edge=(29,35)
+  ../n5-epoch/instances/nep76_n40.pg phase@9 run[72,78] c=11 |U|=40 |Qc|=5 G=1 gcv=36 Xmax=1 Xsum=1 X={0: 1} rho_root=5
+G_max=2 G_sum=9 UR_cut=19 X_max=3 X_sum=8 cint=70 cint_len_max=1 cint_pure=20 gcv=45 gcv_DLEAVE=45 rho_max=12 runs=7 xt_LEFT=8 xv=12 xv_SRC_LEFT=12 xv_SRC_ND=12

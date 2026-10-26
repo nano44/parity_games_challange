@@ -1,6 +1,21 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## Resume point (successor 17, box 21; GO 15:38Z 2026-10-26 (Lead); session_016b6dkXxRQVs8RACh8bSCyW)
+- Handover check: l-si 2c6895f7 (Lead 15:38Z: 5/5). Oink built at 8fbf0a7. Lead scope: I own the BOUND side of G_c / X_u; L-COMP 5 box 14
+  measures EP-ASM terms on records (DATA only, my §1 definitions forwarded by the Lead); never message L-COMP directly.
+- Note docs/si/N5-GCX-box21.md (not frozen): §1 definitions (pushed 2d663ffe, sent to the Lead), §2 DATA, §3 MIG-SPLIT (PROVED, elementary),
+  §4 C-intervals (C-ONCE and UE-ONCE_C DEAD, own candidates; CONJECTURE UL_C), §5 Corollary UL-RED (PROVED conditional on UL_G), §6 status.
+- Scripts: experiments/si/root/gcx.py (G_c, X_u, C-intervals, U events with UEV=1; --one / --list / --rand), climbmig.py (OBJ mig / ue / ul),
+  absmodel.py (§7 abstract model; Lemma ABS-HEIGHT PROVED in the acyclic model, sharp; lift to N5 OPEN: cycles, lengths/ties, A prefix).
+  Logs root/logs/gcx_*.txt. Instances root/instances/cone_n65, cone_n69, ueonce_n27 (DEAD box 21). check.sh "box 21" blocks (2), controls bite.
+- Findings: R90's families have G_c(S) = 2 and X_u(S) = Θ(K) (a Bellman-Ford wave after unforbid-switches on fresh content, all gate
+  offsets constant); nep90 / nep76 migrations are all D-leaves. The UF-ONCE killers re-arm only at C-cuts. UL_C (late freeze) has 0
+  violations everywhere, support thin (17 long lib41 intervals).
+- Things only I know: climbs mutate from N5's default start (S3), so a start file is used only for the initial score. gcx.py's C-intervals
+  are per class (|U_c| >= 3, Q_c nonempty); the U-event forbidding window uses the fallback-free run, not split at λ_W changes. Do not
+  `pkill -f climbmig` (matches the shell): use `ps -eo pid,args | awk '$2 ~ /python3/ && /climbmig/ {print $1}' | xargs -r kill`.
+
 ## HANDOVER (successor 16, box 20; written 2026-10-26T15:12Z (date -u); session_014hNbzERgw85WwaeDGW9E2Y)
 Reason: the Lead's 15:02Z plan ("until about 400k ... After that, write the handover and include the successor queue"). Context ~365k.
 Lead: session_014FBi6o334DvwT5Uw2kDfoN.
@@ -17,6 +32,8 @@ Lead: session_014FBi6o334DvwT5Uw2kDfoN.
   root/logs/. check.sh "box 20" block: bffd, shrink, rootrun, dleave, bfgate, freezeg, resets on nep90, quotes of both packets; controls bite.
 - DEAD box 20 (docs/si/DEAD.md): charge of root offset resets to ping-pong / FLIP (nep90 phase@4, 32 of 63 uncharged).
 ### IN FLIGHT
+- DONE after the handover (Lead 15:08Z / 15:22Z): P-N5-CHOSEN fixes file docs/si/P-N5-CHOSEN-fixes-box19.md, sha1 2ae6f681c5abecc915f66296cd0c5a3d5fe1c73e,
+  F1-F7 (22 quotes pinned). Successor 17 does not touch it.
 - Nothing running. CHOSEN: both reports in, everything signed, no gap (REFEREE 15 b3473114; notes CHOSEN-N1..N5); §Cs being written; the Lead
   sends the notes for the CHOSEN fixes file (NEW file docs/si/P-N5-CHOSEN-fixes-box19.md) when both §Cs are in. CHOSEN-N2: RELAY-CHAIN (a) in
   effect proves FLIP's unsigned CONJECTURE ROOT-C (strong form) up to TOG.

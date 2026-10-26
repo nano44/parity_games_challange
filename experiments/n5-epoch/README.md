@@ -141,3 +141,34 @@ C^3O (N_ep) / C^4O (lend) with S3 start. Seeded (padded with Even self-loops to 
   growth of ρ_q is NOT driven by relay cycles; it is driven by how often the root's exit routes change.
 - lib41 with my starts (`rhotab.py 2 7 --rows 10 --list ../new/box41/lib41.txt`, results/rho/lib41_s3r2.txt): 1,152 phases with ≥ 1 transition,
   max ρ_q: 51 (1O), 10 (classes with ≥ 2 Odd choice vertices); CYCG 96 phases, CYC2 87.
+
+## Box 14 (Lead 14:08Z; L-NEW 27, docs/new/N5-NCONF-box48.md): NCONF, NCONF_{≥2} and fallback-free returns per phase
+Code: `nconf.py` (own counter from N5-NCONF §0, §2; L-NEW's box48/nconf.py not imported), climb fitnesses `nconf2` / `ret02` in climb.py,
+jobs `nconf_jobs.txt` run by `runjobs.sh nconf_jobs.txt`. Definitions: NCONF = distinct σ̄|Q of the phase; NCONF_{≥2} = those with |D_C| ≥ 2;
+RET0 = returns (consecutive C-epochs) with no in-phase fallback source in [s_i, s_{i+1}); R0 = RET0 returns with LEV_C(s_i) ≤ n − 2 (LEV in H_C,
+honff.lev with Odd fixed to σ̄ at s_i; --lev); subscript 2 = |D_C| ≥ 2. Checks VIS and EP-C (L-NEW-proved): 0 violations everywhere.
+- Cross-check: nep90_n40 with its start: N_ep 90, NCONF 48, max V_C 6, REV 42, R0 = 2 (= L-NEW §1/§3 exactly); nep76_n40: 76, 40, 5.
+- Extremes (`nconf.py 0 0 --lev --rows 10 --list extremes_all.txt`, results/nconf/extremes_lev.txt), longest phase:
+| instance | n | \|Q\| | N_ep | NCONF | NCONF_{≥2} | max V_C | RET0 (≥2) | R0 (≥2) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| nep94_n48 | 48 | 9 | 94 | **94** | **93** | 1 | 0 (0) | 0 (0) |
+| nep92_n40 | 40 | 6 | 92 | 53 | 46 | 4 | 2 (2) | 2 (2) |
+| nep90_n40 | 40 | 5 | 90 | 48 | 38 | 6 | 2 (2) | 2 (2) |
+| nep76_n40 | 40 | 5 | 76 | 40 | 36 | 5 | 0 (0) | 0 (0) |
+| nep56_n32 | 32 | 2 | 56 | 42 | 30 | 3 | 5 (4) | 5 (4) |
+| lev_l_x / rise_thin51 / so_th_n32 / nep24_n20 (1O) | 32 / 40 / 32 / 20 | 1 | 50 / 53 / 31 / 24 | 14 / 15 / 18 / 14 | 0 | 10 / 6 / 5 / 3 | 17 / 4 / 13 / 10 | same |
+| rho3_253_n32 | 32 | 12 | 25 | 24 | 23 | 2 | 0 | 0 |
+- NCONF > n: nep94_n48 (94 = 1.96 n; all 94 epochs distinct configurations, 93 with |D| ≥ 2), nep92_n40 (53), nep90_n40 (48).
+- lib41 n ≤ 64, S3 + 2 random, seed 7 (`nconf.py 2 7 --list results/honff/lib41_le64.txt`, no --lev): 5,377 phases, max NCONF 23 (pft35_n48),
+  max NCONF_{≥2} 5, RET0 642 in all, RET0_{≥2} 0.
+- Climbs (10 s × n per climb, 2 repeats; fresh = random C^4O with S3; seeded = nep90_n40 padded): best (primary, secondary) per repeat:
+| fitness | n 16 / 24 / 32 / 40 / 48 / 64, fresh | n 40 / 48 / 64, seeded nep90 |
+| --- | --- | --- |
+| max NCONF_{≥2} | 13 / 16 / 17 / 18 / 10 / 18 | 56 / 61 / 61 |
+| max RET0_{≥2} | 3 / 3 / 2 / 2 / 2 / 2 | 12 / 14 / 14 |
+  Steps: fresh 6,000-25,000, seeded ~1,200-1,700 (budget-limited). Pinned (pin.py OK): ret14_n48 (e10657efdaf6cfeeec5b499afff9803bdd2382fd; R0_{≥2}
+  = 14 exact, N_ep 50, NCONF 27), ret14_n64 (fccbb2cff17b43704c87d84dbaa474ebc357e530; R0_{≥2} 14, N_ep 55), ret12_n40
+  (92ed524915553e2a4c9ffc8232f2b2a7f962fbda; R0_{≥2} 12), nconf61_n48 (92bae23873fbcfa8d62ef137747f2feaa9bfefd8; NCONF_{≥2} 61). In each, RET0 = R0
+  (no return at saturated LEV_C).
+- READING: NCONF_{≥2} is not ≤ n (93 at n 48); R0_{≥2} grows from 2 (nep90) to 14 under seeded climbing at n 40-64. Neither series separates a
+  growth law (fresh climbs stay ≤ 18 / ≤ 3 with no trend in n).

@@ -29,6 +29,14 @@ def score(g, s, t, fit):
     C.analyse(g, "climb", states, fbs, S)
     if C.VIOL:
         return (10 ** 9, 0), S   # a violation of a landed statement: stop and report
+    if fit in ("nconf2", "ret02"):   # box 14: max NCONF_{>=2} / max RET0_{>=2} over phases (nconf.py, no LEV)
+        import nconf as NC
+        SG, A, ph = NC.phases(g, states, fbs)
+        best = (0, 0)
+        for a_, b_ in ph:
+            r, _ = NC.phase_stats(g, states, fbs, SG, A, a_, b_)
+            best = max(best, (r["NCONF2"], r["RET0_2"]) if fit == "nconf2" else (r["RET0_2"], r["NCONF2"]))
+        return best, S
     if fit == "nep":
         return (S.mx["max_N_ep"], S.c["epochs"]), S
     v = S.top.get("len_D2", (-1, ""))[0] if S.c["epochs_D2"] else -1
@@ -69,7 +77,7 @@ def s3(g):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("fit", choices=["nep", "lend2"]); ap.add_argument("n", type=int); ap.add_argument("k", type=int)
+    ap.add_argument("fit", choices=["nep", "lend2", "nconf2", "ret02"]); ap.add_argument("n", type=int); ap.add_argument("k", type=int)
     ap.add_argument("seed", type=int); ap.add_argument("--secs", type=float, default=600); ap.add_argument("--steps", type=int, default=10 ** 9)
     ap.add_argument("--seed-pg"); ap.add_argument("--out", required=True)
     a = ap.parse_args(); rng = random.Random(a.seed)
