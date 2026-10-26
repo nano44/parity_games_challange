@@ -90,3 +90,39 @@ Checks on every run: GDA (R55 (a) frames), SPLITR, RSTICK, SNPA, SNPB, SNPC and 
   "at most once" is "never", and §2 (c) sharpens to X_D ≤ f + X_SN^D. Optional; the packet's forms are true.
 - N-XEP-2: the "With ALT" inequality is signed conditional on FBK's ALT; its last clause (charged to R56 (f)'s quantity) is a READING.
 - DATA: the packet's §5 crossing counts are reproduced exactly; X_SN^pre carries most inside-epoch crossings; EPOCH (b)'s term is unreached.
+
+## §C. Comparison with REFEREE's R-N5-XEP (REFEREE successor 12; referee 62f4bd2c, on trunk 5db6da07). REFEREE-2 successor 14, 2026-10-26 06:0xZ (date -u)
+Signature: (Opus 5.5, D15). I wrote §1-§6 above (fd43a69f, in origin/claude/referee-2 since 05:33Z); R-N5-XEP was opened at 06:0xZ.
+
+### C.1 Verdicts
+| statement | REFEREE | REFEREE-2 | agree |
+| --- | --- | --- | --- |
+| R-STICK_D | SIGNED (XEP-N1) | SIGN (N-XEP-1) | yes |
+| SN-PREFIX_D (a)-(c) | SIGNED ((c) loose) | SIGN ((c) loose) | yes |
+| D-EPOCH | SIGNED | SIGN | yes |
+| X-EP and its ALT form | SIGNED (a reduction; residual OPEN) | SIGN (cond. EPOCH (b)); ALT line as an inequality, its last clause a READING (N-XEP-2) | yes |
+| §5 | not signed; qc_toggle re-run | not signed | yes |
+No gap on either side.
+
+### C.2 Joint note map
+| REFEREE | REFEREE-2 | result |
+| --- | --- | --- |
+| XEP-N1: split ⇒ ∈ R_D (G_D (a)); no S4a crossing has only split changers; X_D ≤ f + X_SN^D; the n² term per epoch in X-EP can be dropped | N-XEP-1 (same; I did not state the X-EP consequence) | identical, found independently; REFEREE's extension to X-EP's n² term ACCEPTED (it follows: the "≤ n per run" term in X-EP's pre-freeze case is 0) |
+| XEP-N2: WM (R23 (g)) is game-general (proof P-N5-Z §8: R18 (d) S (c) "⇒" + σ_k in the arena) | §1 (same, via N5-X-box4 §8 and RESULTS l. 1134) | identical |
+| — | N-XEP-2: the ALT line's clause "charged to the quantity that also bounds fallbacks (R56 (f))" is a READING (R56 (f) bounds f by ρ only) | stands (REFEREE signs the inequality, says nothing on the clause; no conflict) |
+| XEP-N3 (DATA: EPOCH (b)'s term vacuous) | §5 (same) | identical |
+Nothing open.
+
+### C.3 Data comparison
+| | REFEREE (xep_probe.py) | REFEREE-2 (xep_check.py) |
+| --- | --- | --- |
+| lib41 from S3: crossings | 3,222 = 1,269 boundary + 1,953 inside; 0 after freeze; 1,833 X_SN^pre; 120 all-split, all at fallbacks | 3,222 = 1,269 + 1,953; 0 after freeze; 1,833 X_SN^pre; 120 without an unsplit changer (all within the 686 fallback crossings; X_D ≤ f + X_SN^D holds) |
+| R-STICK_D on lib41 S3 | 14,253 (= the packet's) | (same run set; checks counted per vertex, not compared) |
+| random starts | yes | yes |
+| violations | 0 | 0 |
+Two engines reproduce the packet's §5 counts exactly.
+
+### C.4 Result
+Both referees SIGN R-STICK_D, SN-PREFIX_D (a)-(c), D-EPOCH and X-EP (conditional on EPOCH (b); ALT form conditional on FBK's ALT), with no
+gap. For the fixes file: XEP-N1 = N-XEP-1 (optional sharpening, including dropping X-EP's n² term), XEP-N2 (WM's class, a landing note),
+N-XEP-2 (the ALT clause is a READING). DATA: XEP-N3. A reduction; X_SN^pre OPEN; G-N5-TIME stays OPEN. (Opus 5.5, D15)
