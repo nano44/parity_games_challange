@@ -1,0 +1,32 @@
+ADD_chk 144277
+FB_chk 3
+FC_chk 3
+FLIPS 3
+LOCAL_chk 76133
+MINW_chk 29150
+MINW_walks 76957
+N1 0
+N2 0
+N3 3
+N3L_chk 1
+N3L_eq 1
+NC_chk 3
+PHASES 9646
+REAL_ex 3
+REAL_nonc 1632
+RELAY 62
+RHO_TRANS 251
+RHO_oncycle 16
+ROOT2_chk 251
+ROOTC_chk 843
+ROOT_chk 358
+ROUTE 313
+RR_chk 62
+RUNS 3000
+SF_chk 76
+STAT_chk 604
+TRANS 1102
+EX ('REAL_nonc', 'rand11/1', 0, 14, 3, 2)
+EX ('REAL_nonc', 'rand11/1', 0, 14, 11, 1)
+EX ('REAL_nonc', 'rand11/1', 1, 14, 3, 2)
+exit 0

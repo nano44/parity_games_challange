@@ -1,0 +1,80 @@
+MODE start ../../../experiments/red/n5inj/instances/frz40.pg ../../../experiments/red/n5inj/instances/frz40.start MUT - WALKMAX 16
+ENGXI_checks: 91
+FL_N1: 136
+FL_N2: 49
+FL_N3: 3
+FL_b_checks: 3
+FL_c_checks: 3
+FL_flips: 139
+RC_static: 39
+ROOT_static: 39
+RR_events: 34
+RR_relay: 13
+RR_route: 21
+ST_intervals: 21
+ST_states: 70
+phases: 5
+rho_events: 34
+rho_transitions: 20
+runs: 1
+states: 91
+transitions: 71
+RESULT OK violations=0
+MODE start ../../../experiments/si/rund/instances/pp_K12_n161.pg ../../../experiments/si/rund/instances/pp_K12_n161.start MUT - WALKMAX 16
+ENGXI_checks: 20
+FL_N3: 60
+FL_b_checks: 60
+FL_c_checks: 60
+FL_flips: 60
+N3L_checks: 60
+RC_static: 5
+ROOT_static: 5
+RR_events: 31
+RR_relay: 13
+RR_route: 18
+ST_intervals: 2
+ST_states: 7
+phases: 1
+rho_events: 31
+rho_transitions: 14
+runs: 1
+states: 20
+transitions: 19
+RESULT OK violations=0
+MODE start ../../../experiments/red/usplit/instances/pp_K48_n449.pg ../../../experiments/red/usplit/instances/pp_K48_n449.start MUT - WALKMAX 16
+ENGXI_checks: 56
+FL_N3: 672
+FL_b_checks: 672
+FL_c_checks: 672
+FL_flips: 672
+N3L_checks: 672
+RC_static: 5
+ROOT_static: 5
+RR_events: 103
+RR_relay: 49
+RR_route: 54
+ST_intervals: 2
+ST_states: 7
+phases: 1
+rho_events: 103
+rho_transitions: 50
+runs: 1
+states: 56
+transitions: 55
+RESULT OK violations=0
+MODE start ../../../experiments/red/so/instances/so_th_n32.pg MUT - WALKMAX 16
+ENGXI_checks: 37
+RC_LIT: 1
+ROOT_static: 1
+RR_events: 33
+RR_route: 33
+ST_intervals: 1
+ST_states: 2
+phases: 2
+rho_events: 33
+rho_transitions: 33
+runs: 1
+states: 37
+transitions: 34
+RC_LIT_example: (1, 'so_th_n32.pg@33 class 5 q [3]')
+RESULT OK violations=0

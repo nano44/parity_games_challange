@@ -1,0 +1,21 @@
+MODE start ../../../experiments/si/rund/instances/pp_K12_n161.pg ../../../experiments/si/rund/instances/pp_K12_n161.start MUT lev WALKMAX 16
+ENGXI_checks: 20
+FL_N3: 60
+FL_b_checks: 60
+FL_c_checks: 60
+FL_flips: 60
+N3L_checks: 60
+RC_static: 5
+ROOT_static: 5
+RR_events: 31
+RR_relay: 13
+RR_route: 18
+ST_intervals: 2
+ST_states: 7
+phases: 1
+rho_events: 31
+rho_transitions: 14
+runs: 1
+states: 20
+transitions: 19
+RESULT OK violations=0
