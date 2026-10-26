@@ -1,0 +1,10 @@
+START fit (38, 2) n 48
+BEST step 1 fit (41, 1) t 1s
+BEST step 41 fit (46, 1) t 19s
+BEST step 191 fit (47, 1) t 77s
+BEST step 331 fit (48, 1) t 140s
+BEST step 622 fit (50, 1) t 243s
+BEST step 641 fit (51, 1) t 250s
+BEST step 861 fit (52, 1) t 333s
+BEST step 1240 fit (53, 1) t 480s
+END steps 1243 best (53, 1) n 48 -> results/b14/scale/nconf2_seed90_n48_r1.pg

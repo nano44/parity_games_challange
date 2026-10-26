@@ -224,3 +224,24 @@ if git cat-file -e 7d87f9be; then
 else
   echo "root (packet P-N5-GCX-box21 quotes): NOT RUN (source commit not in this clone)"
 fi
+# box 22 (docs/si/N5-EXIT-box22.md): exit changes on nep90_n40. Lemmas MONO-REF, PUSH, EXIT-RHO, DEPTH, EXIT-RED: 0 violations; sum EXIT = 53
+# (= L-NEW's PARCHG), every value push is P1UP and DOWN; controls MRMUT=1 (reference off the play) and PUSHMUT=1 (rise demanded of p2) bite.
+o=$(MR=1 python3 -I root/exitx.py --one ../red/rec0/instances/nep90_n40.pg rund/instances/nep90_n40.start)
+for k in "EXIT_sum=53 " "EXIT_max=18 " "chv_P1UP=13 " "chv_DOWN=13 " "n_alldown=18 " "n_other=22 " "mr_checks=4609 " "EXITX PASS"; do grep -q "$k" <<<"$o"; done
+if grep -q "_V=\|chv_UP=" <<<"$o"; then echo "exitx: violation on nep90"; exit 1; fi
+MR=1 MRMUT=1 python3 -I root/exitx.py --one ../red/rec0/instances/nep90_n40.pg rund/instances/nep90_n40.start | grep -q "MR_V="
+PUSHMUT=1 python3 -I root/exitx.py --one ../red/rec0/instances/nep90_n40.pg rund/instances/nep90_n40.start | grep -q "PUSH_V=16 "
+echo "root (exitx on nep90: MONO-REF, PUSH, EXIT-RHO, DEPTH hold, EXIT 53 / 18; controls MRMUT, PUSHMUT bite): PASS"
+# box 22 (docs/si/N5-ABSCYC-box22.md): Theorem ABS-DEPTH in the cyclic model (play final from step d*(v), the depth in the final forest) on
+# 2,844 random games (GEN held in all); the tie instance (GEN fails, vertex 2 past d*) reproduces; control MUT=1 (d* - 1) bites.
+o=$(python3 -I root/absdepth.py 1000 4,5,6 1); grep -q "runs=2844 runs_nogen=0 steps_gt_maxfinaldepth=0" <<<"$o"; grep -q "ABSDEPTH PASS" <<<"$o"
+python3 -I root/absdepth.py --tie | grep -q "TIE REPRODUCED"
+MUT=1 python3 -I root/absdepth.py 1000 4,5,6 1 | grep -q "DEPTH_V=1938 "
+echo "root (absdepth: ABS-DEPTH on 2,844 cyclic-model runs; tie instance; control bites): PASS"
+# box 22 §8 (docs/si/N5-EXIT-box22.md): the Even side on nep90_n40. C-cuts by kind; no late Even switch in a pure C-interval; Lemma
+# E-ONEWAY (no return of an Even vertex to a successor left by a nested switch) on 11 windows; control E1MUT=1 (window conditions dropped) bites.
+o=$(python3 -I root/evenside.py --one ../red/rec0/instances/nep90_n40.pg rund/instances/nep90_n40.start)
+for k in "E1_chk=11 " "cut_AG=15 " "cut_DCH=19 " "cut_OSB=38 " "EXIT_at_cut=31 " "EXIT_in=2 "; do grep -q "$k" <<<"$o"; done
+if grep -q "E1_V\|PURELATE" <<<"$o"; then echo "evenside: violation on nep90"; exit 1; fi
+E1MUT=1 python3 -I root/evenside.py --one ../red/rec0/instances/nep90_n40.pg rund/instances/nep90_n40.start | grep -q "E1_V=10 "
+echo "root (evenside on nep90: cuts AG 15 / DCH 19 / OSB 38, exits at cuts 31 of 33, E-ONEWAY holds; control bites): PASS"

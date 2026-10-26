@@ -102,3 +102,32 @@ largest inside index is |U| − 1 − 7. That is L-SI's own figure in N5-GCX §4
   - GCI-LEN implies UL_G, so Corollary UL-RED would become a bound in K(S) alone.
   - Known: GCI-LEN holds when D = ∅ (§3's argument, applied per class).
   - The data maximum is n − 3.
+
+## 6. UL_G re-use attempts (Lead 17:31Z, (a), time-boxed): no kill; the exact obstruction (PROVED steps marked; READING otherwise)
+Written ~17:4xZ (date -u). The target is a global C-interval longer than n − 1 that contains a gate, i.e. a causal chain re-using vertices.
+The strongest design I found is TWO WAVES ON ONE CHAIN.
+- The design:
+  - Wave 1 runs backward through a gate-free chain v_1 … v_L inside A, from a top G1 at v_1, for L − 1 steps.
+  - A W-trap at a witness ω reads wave 1's arrival at v_{L−1} through a gate β's τ. Its release injects Ξ-content into v_L (via γ, ω).
+  - Wave 2 then runs forward over the SAME chain (edges v_i → v_{i+1}), for another L − 1 steps.
+  - A reader (as in §2) placed at v_1 would give a U event at index ≈ 2L at n ≈ L + 10. Here is why it cannot work:
+- (O1) GATE INEQUALITY (PROVED, one line). At every state and every u ∈ D: Ξ(σ̄ u) ⊴ Ξ(τ u) ⊴ W(τ u).
+  - The first inequality: σ̄ is Odd's best response.
+  - The second: Fact FZ / (F1), Ξ ⊴ W pointwise.
+  - So a W-trap that reads a structure R through a gate's τ can carry, behind the gate, Ξ-content of at most W(R) at every earlier state
+    of the interval (while u ∈ D, which a global C-interval keeps).
+  - If R is low until the trigger (that is what makes the trigger late), the Ξ-content behind the gate is low. The injected Ξ-content must
+    then sit BEFORE the gate, on the vertices of the trapped option's own path. That is how the reader of §2 works: r2's weight.
+- (O2) RANK ARGUMENT (PROVED for the lexicographic weight order). Let the trapped option ω_1 carry the bonus vertex B (Ξ-content) and read
+  R (W). Let the incumbent ω_0 hold the trap.
+  - W(ω_0) ≻ W(ω_1) before the trigger and W(ω_1) ≻ W(ω_0) after, where the trigger adds wave 1's top G1 to W(R).
+  - So the top vertex separating W(ω_0) from W(ω_1) must rank strictly between B and G1. In particular rank(B) < rank(G1).
+  - Wave 2 starts from B's level, so it cannot beat wave 1's routes, which carry G1. The chain is never reused.
+- (O3) LENGTH VERSION (READING). With equal weights and length as the separator, the incumbent's W-path must be longer than the trapped
+  option's early path by about the length the trigger adds. That costs a fresh tail of vertices of that length, so it gains nothing.
+- (i) σ̄ leapfrogs between two non-τ successors at a gate (D constant): Ξ(u) is Odd's minimum over the σ̄-candidates. It rises only when
+  the minimum rises, so it adds no time, and (O1) still bounds every candidate by W(τ u).
+- (ii) Ties and lengths: (O3). In a gate-free class, lengths are already inside the §3 bound (value iteration on (weight, length)).
+- Conclusion (READING, to the design lanes with GCI-LEN): every injection of new Ξ-content late in a global C-interval costs vertices
+  that rank between the trigger's increment and the content. That is the "one fresh vertex per causal step" of §5, here made exact for
+  the trigger step. The best instance stays reader_L (index L at n = 2L + 16).

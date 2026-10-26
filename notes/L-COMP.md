@@ -12,7 +12,15 @@ Handover check 1a8a4628 (Lead: 5/5). Box 12 GO 07:57Z. Code + tables: experiment
 ### Box 12 add-on HON-FF DONE (15bcfa06). Box 13 DONE (growth law; rho_q table): see experiments/n5-epoch/README.md "Box 13".
 - Scaling climbs: fresh exponents <= 0.5, seeded ~1.2-1.3 (seed-dominated; steps fall with n); budget doubling at n 32: lend still rising (82).
 - rhotab.py = L-SI relay.py counts exactly on lib41; N_ep records have acyclic star relay graphs (root q = 0 ROUTE-only).
-### IN FLIGHT: nothing. NEEDS: next box from the Lead. Context ~400k at box 13 end.
+### Box 14 (NCONF add-on 6f782d57; EP-ASM box GO 15:04Z) DONE: README "Box 14" (both sections). Item (5) FREEZE-G NOT RUN.
+### IN FLIGHT: nothing (no background jobs). NEEDS: next box from the Lead. HANDOVER: this session parks at ~480k (Lead: handover ~600k).
+### Things only I know (successor 5, box 13-14)
+- climb.py fitnesses: nep, lend2, nconf2, ret02, gdl; --fixk keeps |Q|; seeds padded with Even self-loops. runjobs.sh JOBS (env P = parallelism).
+- Wall-clock budgets: steps per climb fall with n (n 64 seeded ~1,000-2,000 steps); compare steps before reading a trend.
+- fit.py parses END lines of *.log in a dir; family = <fit>_<fresh|seed|seed90|k5>_n<N>_r<R>.
+- epc.py's "runs" counter in b14 outputs mixed game runs and fallback-free runs (fixed to ff_runs afterwards; ff runs = phases + f).
+- honff.lev(g, SG, Xi, lam, oddmap): oddmap = tau gives LEV in G_tau, = sigma-bar gives LEV_C in H_C.
+- rhotab.py reproduces L-SI relay.py exactly with --lsi-starts 4 --nmax 48 --kmin 1 (random.Random(path) starts).
 ### Things only I know (successor 5)
 - n5b.run has an fbtrace hook (fallback flag per transition), no effect on the run.
 - lib41.txt contains games up to n 492 (not n <= 64).

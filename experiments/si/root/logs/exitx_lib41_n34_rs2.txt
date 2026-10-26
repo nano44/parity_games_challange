@@ -1,0 +1,3 @@
+CHR=29 CHV=35 CYC=5 CYCp_c=445 DJ_c=15 ESW_max_per_vertex=14 ESW_sum=11516 ESW_trans=6475 EXIT_max=3 EXIT_sum=120 NEX_max=3 N_ex=60 PEM_eq_ret=16 PEM_rise_in=2306 PEM_rise_ret=7 RET=11 RR_c=2523 RT=51 chr_DISJ=8 chr_DOWN=5 chr_UP=16 chv_DISJ=10 chv_DOWN=25 chv_P1UP=35 classes=681 depth_max=3 depth_sum=46 down_per_other_x100_max=100 ev_DISJ=27 ev_DOWN=2208 ev_DOWN_newpathfixed=1733 ev_UP=3313 ev_same=5887 len_max=83 mr_checks=224811 mr_rise=43953 mr_skip_cyc=3461 n_alldown=16 n_other=44 phases=715 push_checks=98 push_m_is_c=35 push_m_is_p1=0 ratio_x100_max=100 rho_tie=3 root_CHR=11 root_OFF=12 root_RT=12 rt_DISJ=8 rt_DOWN=10 rt_UP=33 rt_onpath=51
+EXITX PASS
+rc 0

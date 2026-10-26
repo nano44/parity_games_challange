@@ -1,0 +1,18 @@
+START fit (0, 1) n 24
+BEST step 3548 fit (0, 2) t 18s
+BEST step 3982 fit (0, 3) t 22s
+BEST step 4124 fit (0, 4) t 24s
+BEST step 4163 fit (0, 5) t 25s
+BEST step 5851 fit (0, 6) t 50s
+BEST step 6565 fit (0, 7) t 60s
+BEST step 6620 fit (0, 8) t 62s
+BEST step 6658 fit (1, 4) t 62s
+BEST step 6674 fit (1, 5) t 63s
+BEST step 6932 fit (1, 6) t 67s
+BEST step 8130 fit (1, 7) t 84s
+BEST step 9244 fit (1, 8) t 101s
+BEST step 10465 fit (1, 9) t 123s
+BEST step 10498 fit (2, 8) t 123s
+BEST step 11892 fit (2, 9) t 150s
+BEST step 15311 fit (2, 10) t 221s
+END steps 16158 best (2, 10) n 24 -> results/b14/scale/ret02_k5_n24_r2.pg

@@ -1,0 +1,13 @@
+START fit (82, 3) n 32
+BEST step 2062 fit (83, 3) t 259s
+BEST step 7536 fit (85, 3) t 995s
+BEST step 8120 fit (86, 3) t 1073s
+BEST step 8421 fit (87, 3) t 1117s
+BEST step 9226 fit (89, 3) t 1219s
+BEST step 12926 fit (90, 3) t 1751s
+BEST step 25915 fit (91, 3) t 3627s
+BEST step 26809 fit (92, 3) t 3762s
+BEST step 26947 fit (93, 3) t 3783s
+BEST step 27484 fit (94, 3) t 3863s
+BEST step 44370 fit (95, 3) t 6156s
+END steps 55226 best (95, 3) n 32 -> results/b14/dbl_lend82_n32_b7680.pg

@@ -1,0 +1,12 @@
+START fit (0, 0) n 16
+BEST step 12 fit (1, 0) t 0s
+BEST step 6256 fit (2, 0) t 21s
+BEST step 8256 fit (3, 0) t 33s
+BEST step 9669 fit (4, 0) t 41s
+BEST step 10165 fit (5, 0) t 43s
+BEST step 11297 fit (6, 0) t 51s
+BEST step 13720 fit (7, 0) t 69s
+BEST step 14840 fit (8, 0) t 79s
+BEST step 16898 fit (9, 0) t 98s
+BEST step 18809 fit (10, 0) t 120s
+END steps 22770 best (10, 0) n 16 -> results/b14/scale/nconf2_k5_n16_r1.pg
