@@ -322,7 +322,7 @@ Proof.
   - v = 22 leaves u1 for u2 because u1's route holds the odd s1: a rise at level 20, s1's rank.
   - It comes back when the delay chain delivers the route through h without s1: a rise at level 19 < 20.
   - Trace logs/trace_incdown_n23.txt: states 0-3 are one phase and one stretch_D (D = {4, 12}, gates unchanged, c = 0, (h3_D), no
-    fallback). lvl.py prints `INC ('instances/incdown_n23.pg', 0, 3, 22, [20, 19])`. The count form holds there (2 changes, 2 levels).
+    fallback). lvl.py prints `VIOLATION ('INC', 'instances/incdown_n23.pg', 0, 3, 22, [20, 19])`. The count form holds there (2 changes, 2 levels).
 - Mechanism: a return can be paid by REMOVING a high odd vertex and winning at a lower level. So rise levels at offset changes need not
   increase. Variants mkinc.py m LG, with (m, LG) = (2, 5), (2, 6), (3, 5), (3, 6), give the same.
 ### DATA for the count form (lvl.py; LC_V counts violations)
