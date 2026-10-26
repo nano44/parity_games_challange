@@ -1,0 +1,1 @@
+games=43 phases=129 runs=173 trans=201 TC=2 TCMAX=1 TCV=1 states=374 D2=182 HD=235 H3D=314 ROUTEW_n=182 ROUTEW_V=0

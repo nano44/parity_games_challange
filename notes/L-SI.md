@@ -28,7 +28,12 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   - The lemmas' κ sums are ARITHMETIC: a vertex on the path and in P(Ξ(q)) counts twice. A checker composing values by set union
     (S1's ⊕) reports false PFZ violations (60 on fts_best24.pg).
   - FBRED HAT-FREEZE (c)'s wording is "play avoids Q∖{c}"; DIR uses only the prefix to c, via (a) plus (SP′).
-- NEXT: P-N5-1E fixes on the Lead's word; the 𝒞^2O T-per-phase question (R50 analogue) if the Lead routes it.
+- 04:04Z Lead: (1) P-N5-2T DRAFT docs/si/P-N5-2T-box16.md (l-si 8481bce1; freeze on the Lead's word when R56 = FBRED lands; cite FBRED
+  11b15455, fixes 05c24943). (2) T per phase on 𝒞^2O: audit note docs/si/N5-2O-T-box16.md. LEN is the first failing link (as succ. 10 found).
+  W-frame ROUTE-2 makes (¬h-route) one-sided. T needs X_D, TC-SWITCH, the (¬h-route) FRZ-U / KIND-MONO cases, and per-gate SO / WC.
+  DATA tcsw.py: terminal changes ≤ 9 per run; (h_D) fails at 37 % (lib2o) and 63 % (lib41 frontier) of states.
+  X_D (R-STICK_D): NOT started, per the Lead.
+- NEXT: freeze P-N5-2T on the Lead's word (re-check FBRED's landed R56 text first); P-N5-1E fixes after both reports.
 
 ## HANDOVER (successor 10, box 15; written 2026-10-26 01:05Z (date -u); session_01PBqfsNWMhTPn7yNJ8C18HP)
 Reason: context past the Lead's ~450k line. The session's remaining-token figure fell by ~575k since the start (it is not exposed directly).
