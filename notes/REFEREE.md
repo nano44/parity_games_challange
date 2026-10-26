@@ -24,7 +24,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 - DONE: FBK §C 0e4ba6ee (joint gap FBK-1 = G-FBK-1; missed N-FBK-1, N-FBK-2). XEP R-N5-XEP.md 62f4bd2c (all SIGNED; XEP-N1 sharpening:
   split => in R_D, no all-split crossing inside S4a runs; XEP-N2 WM game-general via P-N5-Z §8 + R55's S (c) confirmation).
 - P-N5-NC (2036e7c8) WITHDRAWN by the Lead (05:30Z): do not review. Replacement P-N5-H3 will come with a pin.
-- NEXT: XEP §C when R2 reports; P-N5-H3 when pinned.
+- DONE: H3 R-N5-H3.md 7c2d9b49 (all SIGNED; H3-N1..N3) + Addendum A ead5fdb3 (FRZ-U_H3 index 0-based: freeze from k0+n-1, content needs
+  >= n+1 states; 1-based reading unproved, unrefuted on 8 runs; frz2_n24 run); XEP §C ead5fdb3 vs R2 fd43a69f (N-XEP-2 accepted).
+- Do NOT open docs/referee-2/R2-N5-NC* (R2 reviewed withdrawn NC) unless the Lead says; H3 §C is vs R2's H3 report when it comes.
+- NEXT: H3 §C when R2 reports; Lead's next packet.
 - TRAP (new): fbred_probe.main skips n > 64 silently (counter skip_big); say so when comparing maxima.
 
 ## HANDOVER (successor 11 -> successor 12), written 2026-10-26T03:13Z by date -u, context ~635k (Opus 5.5 under D15; label "(Opus 5.5, D15)")

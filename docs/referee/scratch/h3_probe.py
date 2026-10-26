@@ -111,12 +111,17 @@ def run_check(g, start, cnt, name):
         for R in runs:
             cnt["FRZ_runs"] += 1
             cnt["max_run_transitions"] = max(cnt["max_run_transitions"], len(R) - 1)
-            if len(R) - 1 < n - 1: continue
-            cnt["FRZ_nonvacuous"] += 1
             L = max(max(st[s]["MD"] for s in R), -1)
-            base = [coarse(st[R[n - 1]]["W"][v], L) for v in range(n)]
+            cw = lambda s: [coarse(st[s]["W"][v], L) for v in range(n)]
+            if len(R) >= n and n >= 2:
+                # the stronger (1-based) reading: no coarse change at the transition into state k0 + n - 1 (R[n-1] from R[n-2])
+                cnt["FRZ1B_chk"] += 1
+                if cw(R[n - 2]) != cw(R[n - 1]): cnt["FRZ1B_violated"] += 1; EX.append(("FRZ1B", name, R[0], len(R), n))
+            if len(R) < n + 1: continue          # the proof's reading: freeze from state k0 + n - 1; content needs >= n + 1 states
+            cnt["FRZ_nonvacuous"] += 1
+            base = cw(R[n - 1])
             for s in R[n - 1:]:
-                if [coarse(st[s]["W"][v], L) for v in range(n)] != base: fail(cnt, "FRZ", name, s)
+                if cw(s) != base: fail(cnt, "FRZ", name, s)
 
 
 def main(a):
