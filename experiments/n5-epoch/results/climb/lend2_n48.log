@@ -20,3 +20,12 @@ BEST step 1964 fit (8, 5) t 107s
 BEST step 2265 fit (8, 6) t 132s
 BEST step 2960 fit (9, 6) t 189s
 BEST step 4684 fit (9, 7) t 322s
+BEST step 5151 fit (9, 8) t 360s
+BEST step 5616 fit (10, 8) t 408s
+BEST step 5977 fit (10, 9) t 451s
+BEST step 7683 fit (11, 9) t 648s
+BEST step 8561 fit (11, 10) t 734s
+BEST step 9116 fit (12, 4) t 792s
+BEST step 9463 fit (14, 4) t 820s
+BEST step 9912 fit (15, 4) t 855s
+END steps 10438 best (15, 4) n 48 -> results/climb/lend2_n48.pg

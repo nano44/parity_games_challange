@@ -2,3 +2,8 @@ START fit (50, 51) n 32
 BEST step 1779 fit (51, 52) t 177s
 BEST step 3400 fit (51, 53) t 320s
 BEST step 3578 fit (52, 53) t 336s
+BEST step 3946 fit (53, 54) t 367s
+BEST step 5751 fit (54, 55) t 529s
+BEST step 7499 fit (55, 56) t 685s
+BEST step 12296 fit (56, 57) t 1121s
+END steps 13201 best (56, 57) n 32 -> results/climb/nep_seed_levlx.pg

@@ -18,3 +18,20 @@ BEST step 2030 fit (6, 21) t 16s
 BEST step 3069 fit (6, 22) t 32s
 BEST step 3095 fit (6, 23) t 32s
 BEST step 3830 fit (6, 24) t 43s
+BEST step 4664 fit (6, 25) t 57s
+BEST step 4798 fit (6, 26) t 59s
+BEST step 4902 fit (6, 27) t 61s
+BEST step 5011 fit (7, 27) t 63s
+BEST step 5350 fit (7, 28) t 69s
+BEST step 5490 fit (7, 29) t 71s
+BEST step 5492 fit (7, 30) t 71s
+BEST step 5999 fit (7, 31) t 82s
+BEST step 6255 fit (7, 32) t 87s
+BEST step 7208 fit (7, 33) t 106s
+BEST step 15709 fit (7, 34) t 286s
+BEST step 18760 fit (7, 35) t 347s
+BEST step 19450 fit (7, 36) t 362s
+BEST step 19974 fit (7, 37) t 374s
+BEST step 22380 fit (8, 36) t 427s
+BEST step 23189 fit (8, 37) t 444s
+END steps 30488 best (8, 37) n 16 -> results/climb/nep_n16.pg

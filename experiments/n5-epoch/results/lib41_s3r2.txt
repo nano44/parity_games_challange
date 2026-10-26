@@ -36,6 +36,7 @@ max_xsnpre_D0: 0
 max_xsnpre_D1: 69
 max_xsnpre_D2: 12
 top EP0_len_minus_(n+m): -7 | experiments/attr/instances/psolq_min_n3_m4_4.pg[S3] phase#0 states[0,0] epoch 0 states[0,0] len=0 n=3 m=4
+top EP0_len_over_(n+m): 0.2857142857142857 | experiments/red/n5inj/instances/blockph_bp32.pg[S3] phase#1 states[1,31] epoch 0 states[1,31] len=30 n=36 m=69
 top N_ep: 50 | experiments/si/orlens/instances/lev_l_x.pg[S3] phase#1 states[1,56] n=32 rho=51 tie=0 nc=0 cyc=0 |Q|=1
 top N_ep_over_n: 1.5625 | experiments/si/orlens/instances/lev_l_x.pg[S3] phase#1 states[1,56] N_ep=50 n=32 rho=51 tie=0 nc=0 cyc=0
 top len_D0: 56 | experiments/red/xing/instances/x32_rand64.pg[S3] phase#0 states[0,56] epoch 0 states[0,56] |D|=0 n=64 m=237
