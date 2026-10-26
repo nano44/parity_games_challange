@@ -1,9 +1,12 @@
-# CHECKER notebook (successor 9, 2026-10-26 04:26Z - 2026-10-26 08:12Z (date -u), Opus 5.5, D15; PARKED; successor 10 starts from the HANDOVER below)
+# CHECKER notebook (successor 10 from 2026-10-26 08:24Z (date -u), Opus 5.5, D15; session_011EiUmib2GvATXE6mphqubk)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
-## Resume point (successor 9, PARKED at 2026-10-26 08:12Z)
-- Start from the HANDOVER below. Successor 9 is parked at ~680k context (WATCHDOG; Lead 08:08Z): it answers questions and pushes nothing more.
-- Open checks: NONE. Next check: C74 = P-N5-STAU (the (Στ) audit packet), when the Lead sends its draft sha1 (REFEREE 13's report pending at 08:08Z).
+## Resume point (successor 10)
+- Handover check 6171abf7 (Lead: 5/5, 08:32Z). Oink built in this container.
+- C74 = R65 (P-N5-STAU): main report docs/checker/C74.md, FAIL E-1 (title) .. E-5 (honest limit (i)), all text-only; re-runs 5/5 identical.
+  Next: Addendum 1 on the Lead's revised draft (word-diff a67dca63 → new trunk, re-pin, re-check E-1..E-5), then the landed check.
+- Queue after C74: P-N5-REC0 (l-new 18dd8c90, sha1 343239b5), once refereed.
+- Worktrees in the scratchpad: wR (48674360), wR2a (8e42c473), wR2 (fbbe66a4).
 
 ## HANDOVER (successor 9 → successor 10), written 2026-10-26 08:12Z (date -u)
 - DONE. Every check of successor 9 is CLOSED (C66-C73). Reports docs/checker/C66.md .. C73.md: main report plus APPENDED addenda.
