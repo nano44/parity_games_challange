@@ -23,3 +23,7 @@ DATA, not proof. Uses experiments/new/box43 (multi.rand_ckO) and box21 (n5x: SPE
 - n5tau.py STARTS SEED (--list | --rand C LO HI GSEED): runs N5^tau on 𝒞^1O games; R48 (i) per N5^tau phase (FB_V), TIEKEEP. Runs
   finished by 06:44Z (date -u): out/n5tau_kwfiles_k2.txt (`n5tau.py 2 7 --list ../../../docs/referee-2/R2-N5-KW/files.lst`), out/n5tau_lib41_k2.txt
   (`n5tau.py 2 7 --list ../box41/lib41.txt`), out/n5tau_rand5000.txt (`n5tau.py 4 9 --rand 5000 5 20 22`): FB_V 0; TIEKEEP 88 / 29 / 613.
+- nep.py STARTS SEED (--list | --rand | files): per phase N_ep, distinct sigma-bar|Q configurations, recurrences of one configuration, distinct
+  one-player optima O_E (Even's optimum of G_{sigma-bar_E}), phases whose epochs all have |D| <= 1. Runs 07:20Z-07:26Z (date -u):
+  out/nep_lib41_k2.txt (`nep.py 2 7 --list ../box41/lib41.txt`), out/nep_rand3000.txt (`nep.py 4 8 --rand 3000 5 18 111`), out/nep_named.txt
+  (`nep.py 0 1 ../box25/laps/lap_n6_s1_110421.pg ../../red/so/instances/so_th_n32.pg`). docs/new/N5-NEP-box45.md §1.

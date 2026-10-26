@@ -23,6 +23,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   d0c6b44b: n5tau.py (N5^τ on 𝒞^1O: R48 (i) holds; TIEKEEP non-vacuous). bcca6c83 / a198c9b9: N5-EPR §9 (Στ) audit: Στ-STEP PROVED; 66 chain
   files, every S4b use DEF/FIX/END/HYP/R15/VAL; conclusion (Στ) holds as enumerated (READING). Reported 07:03Z. L-COMP has the engine route.
 - For the EPR fixes file (when its turn comes): "never exercised" holds only for §5's samples (div_n8); §9 audit as (Στ)'s premise check.
+- 5d14c991: P-N5-EPR-fixes-box45 (sha1 5af1fde6…, FROZEN; EPR-1 = G-EPR-1: REPRO's one-phase clause false at y′, + 1 in EP-k / EP-1).
+  010bfdae: packet P-N5-STAU-box45 (sha1 7446d9a9…, FROZEN; Στ-STEP to sign, §2 audit table to check; for the fresh referees after EPR lands).
+- N_ep (Lead item (3)): docs/new/N5-NEP-box45.md: NO bound by distinct optima (so_th_n32: 31 epochs, 1 optimum) nor by distinct configurations
+  (recurrences up to 10, lev_l_x); the longest phases (50, 31 epochs) have only |D| ≤ 1 epochs. CONJECTURE REC (per-configuration recurrences
+  poly) ⇒ such phases poly with EP-0/EP-1. OPEN, even for C = τ|Q; obstacle: S4a progress is in W (drops at fallbacks), exit steps.
 
 ## Box 44 log (successor 23, session_011WFfFqRNrU1a8LQwbwazZN; handover check d489672f; GO 01:05Z, Lead's stamp)
 - Merged trunk 1c23106b (2d28236b). Oink NOT built (not needed so far).
