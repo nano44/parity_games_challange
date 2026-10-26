@@ -1,3 +1,66 @@
+# Handover check: L-SI (successor 19, written 2026-10-26T18:50Z by date -u; LANE-RESTART step 3; Opus 5.5, D18/L40)
+Every answer below was measured in this container; the commands are given. Predecessor: successor 18, session_01DKVF647UmtYFEEQNiRgoH2.
+Its handover is notes/L-SI.md "## HANDOVER (successor 18, box 22)" (l-si 196c7e8c).
+
+## 1. Branch, head, distance to trunk
+- Branch `claude/l-si`. The clone was stale again: local HEAD 0d48da26 ("up to date" per git status, before any fetch);
+  `git fetch origin claude/l-si claude/vibrant-johnson-nxvvxo` → origin/claude/l-si 196c7e8c; `git merge --ff-only` → HEAD 196c7e8c.
+- Trunk `origin/claude/vibrant-johnson-nxvvxo` = d5ad0929 (Lead: R73 draft rev. per C82 E-1, N-1; pin P-N5-DEPTH (549c7fb7); merges; log).
+  - Before merging: `git rev-list --left-right --count HEAD...trunk` → 1 ahead / 72 behind; merge-base 2201aa2d (the P-N5-DEPTH packet commit).
+  - `git merge --no-ff` of trunk d5ad0929 (no rebase) → merge commit 33b7f51d; then 2 ahead / 0 behind. This file is the next commit;
+    the pushed SHA goes to the Lead.
+
+## 2. Open work and the next step of each (nothing running: fresh container; Oink in §6)
+Frozen (`sha1sum`, equal to the handover's values; never edited): docs/si/P-N5-DEPTH-box22.md 549c7fb72d767293b6bf2ae5bbbb8809084df707
+(pinned on trunk d5ad0929); docs/si/P-N5-GCX-box21.md 5a91bebb…; docs/si/P-N5-ROOT-box20.md d3788bc0…; docs/si/P-N5-ROOT-add-box20.md af1c7ad4…;
+L-NEW's docs/new/P-N5-OFFMONO-box49.md d9705ac6… (read only). `ls docs/si | grep -E 'ROOT-fixes|GCX-fixes|DEPTH-fixes'` → none.
+Referee reports at trunk: docs/referee/R-N5-ROOT.md, R-N5-OFFMONO.md, R-N5-OFFMONO-add.md; docs/referee-2/ has none for ROOT / GCX / DEPTH / OFFMONO.
+docs/new/N5-ALTLIT-box49.md (L-NEW 29's full-text read of 1106.0778 / 1008.0530) not on trunk yet.
+- (1) MAIN after "go" (brief queue 1): ALTERNATION (docs/si/N5-EXIT-box22.md §9) together with (G1) (N5-GCILEN §7). ALT_c(S) := transitions of a
+  fallback-free run where σ̄ changes at a gate of class c with D ∩ U_c or a D-direct offset changing; target ≤ poly(n, k). (G1) data: 444 of 1,924
+  global C-intervals on lib41 contain σ̄ changes, up to 21 in one (so_sorl_n32), lengths ≤ n − 3. L-RED 22: EXIT_x ≤ phase length, so a fixed-k kill
+  needs ω(n) phases (records ≈ 2.3-3.3n).
+  Next step: re-read N5-EXIT §8-§9 and GCILEN §6-§7; instrument so_sorl_n32 (staticdepth.py GCI=1) to classify each in-interval σ̄ change by the
+  value push that drives it (GATE-PUSH / PUSH form) and test a charging of each Odd gate change to a fresh event (a strict rise of an offset
+  off(p; m) that cannot recur before a cut, or a vertex first entering D / U_c); a potential if the charging holds on lib41 and the long
+  instances, else the obstruction with its instance in DEAD. Read docs/new/N5-ALTLIT-box49.md when it lands; cite only what it opens.
+- (2) Gap (iv), impure C-intervals: OPEN, not started; instances pp_K48_n449 (95 gate σ̄ changes in one C-interval) and reader_L (R91;
+  files only on l-red 1e851da4, sha1 31644312 / c9f3c948 / cb6b7c76). Next step: staticdepth.py on both, split each impure interval at its
+  σ̄ changes and see whether STATIC-DEPTH's d*-argument survives on the pieces.
+- (3) STANDBY: referee repairs in NEW files, in order P-N5-ROOT + addendum (docs/si/P-N5-ROOT-fixes-box20.md; REFEREE's R-N5-ROOT exists,
+  REFEREE-2's not yet), then P-N5-GCX (docs/si/P-N5-GCX-fixes-box21.md; record UL_C DEAD with R91 reader_L10/20/40 and C-ONCE_X DEAD with R93
+  cxmig_k4_n54 a3893ea4, k8_n82 4fa6ee8f, k16_n138 9f29476d, l-red 18624c0b), then P-N5-DEPTH (docs/si/P-N5-DEPTH-fixes-box22.md); each when
+  both reports and §Cs exist and the Lead routes it; quotes via experiments/si/rund/quotecheck.py, pinned in check.sh with a --mut control.
+
+## 3. docs/GAPS.md rows I own
+- None (`git show trunk:docs/GAPS.md | awk -F'|' '$4 ~ /L-SI/'` → empty).
+- I work under G-N5-TIME (l.11): major, owner L-NEW, status open; last update 16:30Z (R72, P-N5-CHOSEN, CHECKER C81): ROUTE_c, CYC_c, TOG_c
+  and the time to (H) not bounded. RESULTS ends at R72 (`grep -o '^### R[0-9]*' docs/RESULTS.md | tail -1`); R73 is a Lead draft (trunk d5ad0929).
+
+## 4. The three owner rulings that constrain me most (verbatim from docs/DECISIONS.md at trunk; status from docs/DECISIONS-INDEX.md)
+- D18 (DECISIONS.md l.333; index l.32: active): "Focus on N5 and work toward proving it. Explore novel approaches, especially by
+  connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions
+  where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and
+  open problems."
+  - Lead reading L40 (index l.33: active): L-SI is the OR/MDP lens on N5; labels PROVED / CONJECTURE / OPEN (+ DATA / READING per brief).
+- D1 (index l.5: active; DECISIONS.md l.6-7, full text docs/decisions/D001-launch-brief.md): "Never publish, post, email, submit or
+  contact anyone outside the fleet. Anything external is my decision." / "A claimed polynomial algorithm is far more likely to be
+  wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below."
+- D16 (DECISIONS.md l.300; index l.28: active): "Then keep working as I told you to"
+
+## 5. One trap that bit this lane before, and the check that prevents it
+- Trap (every restart, again here): the container starts on a stale clone. git status says "up to date with origin/claude/l-si" because
+  the remote-tracking ref is stale too (here 0d48da26 vs real origin 196c7e8c: 0d48da26 is box 14's end, 9 handovers old). Working from it
+  would redo or overwrite pushed work.
+  - Check: `git fetch origin claude/l-si claude/vibrant-johnson-nxvvxo` before reading any file, `git merge --ff-only origin/claude/l-si`,
+    then `git rev-parse HEAD origin/claude/l-si` equal; re-fetch before every push (scripts/push.sh refuses a non-fast-forward anyway).
+- Still live: frozen files (sha1sum before touching docs/si/P-*); `pkill -f` / `pgrep -f` with a script name kills the own shell (box 20, 21);
+  module-name clashes on sys.path (`ls experiments/*/*/<name>.py` first; helpers in root/common.py); Lead messages arrive 10-25 min late
+  (ReadNotifications before every report); never `git add -A`; never pipe scripts/push.sh; stamp from date -u; «» only around verbatim quotes.
+
+## 6. Oink
+- scripts/setup_oink.sh → "oink built at 8fbf0a7" (tc, tc+, counter_*, rngame present), exit 0.
+
 # Handover check: L-SI (successor 18, written 2026-10-26T17:05Z by date -u; LANE-RESTART step 3; Opus 5.5, D18/L40)
 Every answer below was measured in this container; the commands are given. Predecessor: successor 17, session_016b6dkXxRQVs8RACh8bSCyW.
 Its handover is notes/L-SI.md "## HANDOVER (successor 17, box 21)" (l-si 9509a6f7).
