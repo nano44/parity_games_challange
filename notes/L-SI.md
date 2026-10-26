@@ -18,6 +18,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
 - GO (q) (Lead 14:53Z): note §9 Theorem FREEZE-G (W-frame freeze on A ∪ R_u with Δ(u) constant) and Corollary RELAY-PIECE lane-PROVED;
   (a) 95k checks lib41, control bites; (b), (c) VACUOUS (no long G-interval). REFEREE 15 signed CHOSEN, no gap (notes CHOSEN-N1..N5 come
   after REFEREE-2 17). GATE-SHIFT + (q) go into a P-N5-ROOT ADDENDUM packet (new file) at box end / handover.
+- ADDENDUM P-N5-ROOT-add-box20 (GATE-SHIFT, FREEZE-G, RELAY-PIECE; 11 quotes pinned), sha1 af1c7ad4581cce4a9830b4ed01e2370d26ef850b, FROZEN (Lead 15:02Z).
+  Repairs go in a NEW file. Next (Lead 15:02Z, until ~400k): per-gate reset count (Δ(u) / R_u resets per fallback-free run) charged to ρ_r,
+  ping-pong entries or R69 FLIP N1/N2/N3; then the handover with the successor queue.
 - Things only I know: shrink.py's MUT (freeze from s) does not bite on lib2o (thin there); bites on lib41. The name shrink.py clashes with
   experiments/new/box21/shrink.py on sys.path: common helpers live in root/common.py (first_D moved there). wplay() in common.py is my own
   (σ, τ)-play valuation, cross-checked against box21/h1.py wvals by bffd.py (WPLAY_V).

@@ -159,3 +159,11 @@ echo "root (GATE-LAG on nep90: 188 / 948 naive failures; GATE-SHIFT (a), (b) hol
 o=$(python3 -I root/freezeg.py --one $N90)
 for k in "ga_checks=2531 " "intervals=22" "FREEZEG PASS"; do grep -q "$k" <<<"$o"; done
 echo "root (FREEZE-G (a) on nep90): PASS"
+# packet P-N5-ROOT-add-box20 (addendum): 11 quotes verbatim; shifted control fails.
+if git cat-file -e a7c141b8 && git cat-file -e 3732ab55; then
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-ROOT-add-box20.md | grep -q "quotes=11 bad=0"
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-ROOT-add-box20.md --mut | grep -q "QUOTES FAIL"
+  echo "root (packet P-N5-ROOT-add-box20: 11 quotes verbatim; shifted control fails): PASS"
+else
+  echo "root (packet P-N5-ROOT-add-box20 quotes): NOT RUN (source commits not in this clone)"
+fi
