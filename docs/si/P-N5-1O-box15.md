@@ -1,6 +1,7 @@
 # Referee packet P-N5-1O: N5 solves one-Odd-choice parity games in polynomial time (iterations, bit cost per iteration, output correctness) — a subclass result, not a TARGET.md claim
 Author: L-SI successor 10 (Opus 5.5; D15, D18, L37, L40), session_01PBqfsNWMhTPn7yNJ8C18HP. Written at the Lead's request of 23:40Z
-(Lead's stamp). DRAFT until the Lead says RESULTS R50 (P-N5-KW) has landed; FROZEN once its sha1 is reported. Stamp: the commit (date -u).
+(Lead's stamp); frozen at the Lead's GO of 00:41Z, after RESULTS R50 (P-N5-KW) landed at trunk f41fcf0a (checker a58dcd3a). FROZEN: repairs
+go to a NEW fixes file. Stamp: the commit (date -u).
 - Labels (D18 / L40): PROVED (L-SI 10, from landed results only) / READING / DATA. D1: wrong until checked.
 - Scope: the candidate N5 (SPEC S1-S5, docs/new/N5-ssi-global.md) on 𝒞^1O, the games in which exactly one Odd vertex o has out-degree > 1.
   𝒞^1O is polynomial by other means (e.g. Odd has ≤ d_o positional strategies), so the value here is the METHOD. This is NOT a TARGET.md
@@ -23,7 +24,7 @@ Author: L-SI successor 10 (Opus 5.5; D15, D18, L37, L40), session_01PBqfsNWMhTPn
 | R15 (c), (d) | (c) "≺ is a strict partial order on strategies and every non-empty switch of improvements goes strictly up in ≺"; (d) "every iteration applies Switch_I with ∅ ≠ I ⊆ Iσ to Even's σ (on G) and/or with ∅ ≠ I ⊆ Iτ to Odd's τ (on G^d), and changes at least one of them … Hence no (σ, τ) state repeats and N5 terminates" | every game | any (SPEC) |
 | R47 (b) Φ-1O | "(a) along any N5 run τ changes at most d − 1 times …; (b) a run has at most n(n − 1) + d phases" (d := deg(o); phase := maximal run with (λ, τ) constant) | 𝒞^1O | any run |
 | R48 (i) FB-POLY | "with f the number of in-phase Even S4c fallbacks of a phase of N5 on 𝒞^1O, (a) if o ≠ c_θ, … f ≤ 1 + (|U| − 2)(|succ(o) ∩ Û| + |U|) ≤ 1 + (n − 2)(2n − 1); (b) if |U| = 2, f ≤ 1; (c) if o = c_θ, f ≤ |U|" | 𝒞^1O, every phase | any |
-| R50 Corollary PHASE (P-N5-KW §8 with fixes) | "Let a phase on 𝒞^1O have f fallback transitions. Then its transitions number T ≤ (m − n + 1)(T_rel + 1)", with T_rel ≤ S_o + N_Ξ, N_Ξ ≤ f + (N_st − 1) + (X + 1)(n − 1) + (N_st + f)·3Δn⁴, N_st ≤ 1 + X + Θ + W_ch, and X, Θ, S_o, W_ch bounded by landed R30 (c), R34 (e), (f), R27 (g), R24 (e), R22 (a) as listed there; CONDITIONAL on f only | 𝒞^1O, every phase | any |
+| R50 (h) Corollary PHASE | "(h) Corollary PHASE (CONDITIONAL on f only): a phase on 𝒞^1O with f fallback transitions has T ≤ (m − n + 1)(T_rel + 1) transitions, with T_rel ≤ S_o + N_Ξ, N_Ξ ≤ f + (N_st − 1) + (X + 1)(n − 1) + (N_st + f)·3Δn⁴, N_st ≤ 1 + X + Θ + W_ch and the landed bounds on X (R30 (c), R34 (e), (f)), Θ and S_o (R27 (g)) and W_ch (R24 (e), F1°); so T = O(m·Δ·d_o·n⁹·(f + n²))." (P-N5-KW §8 with fixes c65f4c1e: KW-N1, W_ch via R24 (e) on every ¬H2 interval) | 𝒞^1O, every phase | any (R-N5-START) |
 | R36 (c) Lemma P1 | "if σ is a positional Even strategy of a one-player game H with no improving edge (no Even edge (x, y) with V_σ(y) ▷ V_σ(σ(x))), then V_σ(v) ⊵ V_{σ′}(v) for every positional Even strategy σ′ and every vertex v" (one-player: every non-Even vertex has one successor; V_σ the play valuation) | any one-player game | — |
 | R21 (a) Lemma XW | "Ξ_k ⊴ W_k pointwise at every state (Odd's best reply σ̄_k is pointwise optimal in G_{σ_k})" | 𝒞^1O | any |
 - SPEC (docs/new/N5-ssi-global.md) is the object, not a cited result: S1 (valuations and the procedure, with Q1-Q4 and FIX 2-4), S2, S3, S4,
@@ -33,7 +34,7 @@ Author: L-SI successor 10 (Opus 5.5; D15, D18, L37, L40), session_01PBqfsNWMhTPn
 Statement. Let G ∈ 𝒞^1O with n vertices, m edges, d_o := deg(o), Δ := max out-degree. From any start pair (SPEC S3: "Start (unless a start
 pair is given)"; the S3 start included), N5 stops after at most
     ITER ≤ (n(n − 1) + d_o)·(T* + 1)
-iterations, where T* is R50's bound with f := F := 2n² and the landed bounds of R50's chain:
+iterations, where T* is R50 (h)'s bound with f := F := 2n² and the landed bounds of R50 (h)'s chain:
     T_H := n² + 2n − 1;  X_SN := 13(d_o + 1)n³(F + 1 + T_H) + T_H;  X := (F + 1)(n − 1) + F + X_SN;
     Θ := (n − 1) + n(X + 1) + X;  S_o := d_o(Θ + 1);  W_ch := (F + X + 1)n²;  N_st := 1 + X + Θ + W_ch;
     N_Ξ := F + N_st + (X + 1)(n − 1) + (N_st + F)·3Δn⁴;  T* := (m − n + 1)(S_o + N_Ξ + 1).
@@ -42,8 +43,8 @@ Proof.
 1. Every iteration is a transition: it changes σ or τ (R15 (d)). So ITER is the number of transitions of the run; it is finite (R15 (d)).
 2. The states split into at most n(n − 1) + d_o phases (R47 (b)). A transition either has both ends in one phase, or ends a phase; the
    latter number ≤ (#phases − 1).
-3. In each phase, f ≤ max(1 + (n − 2)(2n − 1), |U|, 1) ≤ 2n² = F (R48 (i) (a)-(c); |U| ≤ n). Every bound in R50's chain is non-decreasing
-   in f, so the phase has ≤ T* transitions (R50).
+3. In each phase, f ≤ max(1 + (n − 2)(2n − 1), |U|, 1) ≤ 2n² = F (R48 (i) (a)-(c); |U| ≤ n). Every bound in R50 (h)'s chain is non-decreasing
+   in f, so the phase has ≤ T* transitions (R50 (h)).
 4. So ITER ≤ (#phases)·T* + (#phases − 1) ≤ (n(n − 1) + d_o)(T* + 1).
 5. Orders: X_SN, X = O(d_o n⁵); Θ, S_o = O(d_o² n⁶) ⊆ O(d_o n⁷); W_ch, N_st = O(d_o n⁷); N_Ξ = O(Δ d_o n¹¹); T* = O(m Δ d_o n¹¹); times
    O(n²) phases. With d_o, Δ ≤ n and m ≤ n², O(n¹⁸). □
@@ -164,7 +165,7 @@ total is O(ITER · n³(n + m)) = poly(n + m) word operations on O(log(n + m))-bi
 | 1 exact pseudocode and one implementation | done: SPEC (docs/new/N5-ssi-global.md), experiments/new/n5.py on si.py |
 | 2 agreement with Zielonka (10,000 random games, hard families), growth plotted | done for N5 on general games (L-NEW STEP-2 report, R15 "Gauntlet"); the 𝒞^1O runs are a subset. Second implementation: L-COMP (in progress per R15) |
 | 3 barrier statement, L-LIT sign-off | done for N5 (L-LIT T20, with caveats, per R15); not specific to 𝒞^1O |
-| 4 correctness and running-time proofs, double-refereed | running time: this packet + landed R15, R47, R48, R50; correctness: Lemma OUT (this packet). Lean: NOT done (needed only for an M4 claim; not applicable) |
+| 4 correctness and running-time proofs, double-refereed | running time: this packet + landed R15, R47 (b), R48 (i), R50 (h); correctness: Lemma OUT (this packet). Lean: NOT done (needed only for an M4 claim; not applicable) |
 | 5 CHECKER on the exact commit, owner told | after the referees |
 - Honest limits:
   - The start-freeness of the R32 / R33 chain under X-SN-PHASE rests on REFEREE's structure-level reading (R-N5-START §2 caveat, quoted in
