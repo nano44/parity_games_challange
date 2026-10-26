@@ -28,6 +28,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - N_ep (Lead item (3)): docs/new/N5-NEP-box45.md: NO bound by distinct optima (so_th_n32: 31 epochs, 1 optimum) nor by distinct configurations
   (recurrences up to 10, lev_l_x); the longest phases (50, 31 epochs) have only |D| ≤ 1 epochs. CONJECTURE REC (per-configuration recurrences
   poly) ⇒ such phases poly with EP-0/EP-1. OPEN, even for C = τ|Q; obstacle: S4a progress is in W (drops at fallbacks), exit steps.
+- Lead 07:36Z: R64 (EPR) LANDED; GO REC (D = ∅ first, then climbs). N5-NEP §5 Lemma REC-0 (lane PROVED): D = ∅ epochs per phase ≤
+  (f+1)(n+1) + 4n(n−1) + 1 (W-level = R17 Lemma P step inside the all-unsplit prefix of each fallback-free run; saturation W = B ⇒ Ξ frozen on
+  [t, t*], R15 (d)). Reduction to f, not f-free. rec0.py 0 violations; climbs: no N_0 beyond 5.
 
 ## Box 44 log (successor 23, session_011WFfFqRNrU1a8LQwbwazZN; handover check d489672f; GO 01:05Z, Lead's stamp)
 - Merged trunk 1c23106b (2d28236b). Oink NOT built (not needed so far).
@@ -380,35 +383,40 @@ Every answer measured from the repository; commands named.
    fetched ref, so the pin cannot be checked yet; I checked the packet by sha1 (cbea0739…) against my own commit 1afccb51 instead.
    (iii) The container clock is slow vs the Lead's stamp (07:50 vs 07:53): stamp only from date -u, never ahead of it.
 
-## Resume point (overwritten at handover, LANE-RESTART step 1; successor 23, box 44, written 2026-10-26 05:03Z by date -u)
-Successor 23 (Opus 5.5, D14/D18, L40), session_011WFfFqRNrU1a8LQwbwazZN. Handover check d489672f. ~615k context at writing (Lead's mark ~600k).
+## Resume point (overwritten at handover, LANE-RESTART step 1; successor 24, box 45, written 2026-10-26 08:09Z by date -u)
+Successor 24 (Opus 5.5, D14/D18, L40), session_01DR27cGCEhPvHHVxiYXCfaz. Handover check 2c299e9a (5/5). ~520k context at writing.
 ### DONE (all pushed with scripts/push.sh; sha1s reported = frozen)
-- Packets FROZEN: P-N5-GD-box43 (205c9ed7, b898ff82; LANDED as R55) + fixes P-N5-GD-fixes-box44 (b93f6c7d, dfa6dd2b); P-N5-FBRED-box44
-  (3732ab55, 11b15455; LANDED as R56) + fixes P-N5-FBRED-fixes-box44 (2742f3e9, 05c24943); P-N5-VILB-box44 (999e73f4, 872d4400; in review);
-  P-N5-ACCEL-box44 (e9eaaaaf, 301f0be0; in review); P-N5-FBK-box44 (9dd499d3, afd7c65a; pinned trunk 5d723af6, behind P-N5-2T) + fixes
-  P-N5-FBK-fixes-box44 (399e8ec6, 79ad8597: verbatim PFZ-q / DIR). Fixes files P-N5-NH-fixes-box43 (7c499640) and P-N5-DUAL-fixes-box43
-  (5d08d0fd) at 478dd6e1. P-N5-XEP-box44 (a4fa94b0, sha1 237dd5eb31f60f19ef70099dc9351532e88b56f8: R-STICK_D, SN-PREFIX_D (a)-(c),
-  D-EPOCH, X-EP; cites ACCEL 301f0be0 EPOCH (b) and FBK afd7c65a ALT; queues after FBK).
-- Working docs: docs/new/N5-DELTA-box44.md (Route Δ: LAM_D, C_D, CR_D, FBL_D, FBF_D (CT-FREE), XA_D, PIECE_D |D| = 1; Δ-RT-F FALSE,
-  rtf_cex_inj n 11); docs/new/N5-FBF-box44.md §1-§14 (FB-POLY set form; FB-RED; TV; ρ-POLY stalls; VI-LB; ACCEL; EPOCH; ALT; FB-kT;
-  R-STICK_D, SN-PREFIX_D; D-EPOCH, X-EP; random-start data). Tools experiments/new/box44 (README lists every run).
+- Fixes files FROZEN: P-N5-VILB-fixes-box44 (1c344659, 56da789e), P-N5-ACCEL-fixes-box44 (1c344659, 46ef9474), P-N5-FBK-fixes2-box44 (2cf61061,
+  c6c45691), P-N5-XEP-fixes-box44 (2c02b015, 639a7098), P-N5-EPR-fixes-box45 (5d14c991, 5af1fde6).
+- Packets FROZEN: P-N5-EPR-box45 (08abd9cb, 8fecca79; LANDED as RESULTS R64 at trunk 71c4e31a): RESTRICT_E, REPRO (with EPR-1 "+ 1"), EP-0, EP-k,
+  EP-1 ⇐ (Στ). P-N5-STAU-box45 (010bfdae, 7446d9a9; with REFEREE 13 / REFEREE-2 15): Lemma Στ-STEP to sign, the (Στ) audit table to check
+  (L-COMP's citeclosure.py, l-comp c4fef4b0, measured the same closure). P-N5-REC0-box45 (18dd8c90, 343239b5; next for the referees; L-RED 20
+  attacks it): Lemma REC-0, D = ∅ epochs per phase ≤ (f+1)(n+1) + 4n(n−1) + 1, with question Q-R17 for the referees.
+- Working docs: docs/new/N5-EPR-box45.md (§1-§9: restriction, DIV instance div_n8, TIE-CYC CONJECTURE, n5tau data, (Στ) audit),
+  docs/new/N5-NEP-box45.md (§1-§5: N_ep not bounded by distinct optima/configurations (so_th_n32, lev_l_x); CONJECTURE REC; climbs; REC-0).
+  Tools experiments/new/box45 (README lists every run): eprestrict, itcheck, divsearch, divshow, n5tau, nep, recclimb, rec0.
 ### IN FLIGHT
-- Nothing running. (a) XEP packet: done (above). (b), (c): decided by the Lead, see ROUTING INHERITED. Successor 23 PARKED at the head
-  that carries this line.
-- Referee queue (Lead's): P-N5-2T (L-SI) → P-N5-FBK; VILB → ACCEL (REFEREE-2 first). Fixes files come when their §Cs are in (Lead's go).
-### ROUTING INHERITED (Lead 05:00Z / 05:05Z / 05:10Z, Lead's stamps; added 05:16Z by date -u)
-- X_SN^pre stays with L-NEW, for epochs with |D| = 1: port R19-R20 (and check R21-R34) per epoch with o := u (N5-DELTA-box44 §7 route; D-EPOCH:
-  D, σ̄ fixed inside an epoch, the other Odd choice vertices have σ̄ = τ). If most transfer, epochs with |D| ≤ 1 are bounded by the 𝒞^1O
-  machinery and the open core shrinks to epochs with |D| ≥ 2 (Δ-RT). L-SI's Lemma G_D-NC (l-si b92f84d4, §6: R55's (h_D) weakened to "no
-  D-vertex on its own cycle") may help.
-- L-SI keeps (¬h-cyc) per gate and FRZ-U on 𝒞^2O (do not duplicate; ask through the Lead if a lemma is needed).
-- FBK fixes file docs/new/P-N5-FBK-fixes2-box44.md (or the next free name; P-N5-FBK-fixes-box44.md is already the verbatim-quote file):
-  REFEREE-2 d4cc40d9 G-FBK-1 (Corollary FB-kO's whole-run "O(n^{2k+1})" is false at k = 1; repair O(n^{max(k+3, 2k+1)}), since phases
-  ≤ n(n − 1) + n^k), notes N-FBK-1..4, plus REFEREE 12's notes; ON THE LEAD'S WORD, after REFEREE 12's FBK report and both §Cs.
-### NEXT (successor 24)
-- Read the Lead's latest message (ReadNotifications) before anything; answer the five questions; then the Lead's choice among (a)-(c).
-- Open counts on the frontier, as they now stand: ρ (Ξ-changes at Odd choice vertices per phase; fallbacks, epochs and value levels all
-  reduce to it: FB-RED, ALT, EPOCH); X_SN^pre (crossings); T per phase given f (L-SI); phases are polynomial only for fixed k (Φ-kO).
+- Nothing running. Waiting on referees (STAU, then REC0) and the Lead.
+### NEXT (successor 25), in the Lead's order (08:03Z)
+1. (c) Extend REC-0 to configurations with |D| = 1 (σ̄|Q differs from τ|Q at one u). Idea: the honest frame is H_C = G_{σ̄_C}, the W-frame G_τ;
+   they differ only at u. In a C-epoch, S4a optimises against τ, not in H_C, so the Lemma-P level must be carried in a frame where S4a IS
+   switch-best: try W restricted to the part of G that does not meet u (F_D, where Ξ = W by R55 (a)), plus the route form through u (G_D (b)).
+   Configurations with |D| ≤ 1 number ≤ m, so REC for them + EP-0/EP-1 bounds every phase whose epochs all have |D| ≤ 1 (the longest phases in
+   data are of that kind: 50 and 31 epochs).
+2. (b) The f-free version of REC-0 via a permanent Ξ-level (single-state D = ∅ epochs are the obstacle: their exit step raises W, not Ξ).
+- Open counts as they stand: ρ / N_ep (epochs; ALT charges them to Ξ-rises at Q); epochs with |D| ≥ 2; f per phase on general games.
+
+## Things only I know (successor 24)
+- The restriction trick: on an epoch, cut every Odd vertex outside D to τ and each u ∈ D to {τ(u), σ̄_E(u)}. Ξ, W, Iσ, S4a, S4c are literally
+  equal on G and G′_E (Lemma S (a) both ways for Ξ; the rest are the same graphs). Only S4b's tie-break differs (div_n8), hence N5^τ.
+- Tie states (in-phase, (u, σ̄(u)) ∈ Iτ for all u ∈ D) force W = Ξ (TIE-W); in all data u is then its own cycle node (TIE-CYC, 148/148).
+- The epoch's last transition can leave the restricted run's phase (EPR-1): RESTRICT_E (i) needs σ̄_k = σ̄_E, false at y + 1. Every per-epoch bound
+  carries "+ 1".
+- RESULTS citation closure: a regex over the RESULTS entries; R48's entry does NOT cite R49 (my first grep hit the next heading). The closure of
+  R48/R50 is R15, R17, R18, R19-R34, R38, R39, R42, R44, R45, R48, R50 (R47 only in R50's not-signed reading).
+- For REC-type counts, W is the frame where S4a is switch-best ONLY at D = ∅ states; elsewhere S4a is the W-optimum over Ξ-gated edges.
+  Use Ξ for permanent progress (R15 (a)), W for progress inside fallback-free all-unsplit prefixes (WM + SN-PREFIX_D (a)).
+- Timestamps: I mis-guessed run times twice and fixed them; always take date -u in the same command that writes the stamp.
 
 ## Things only I know (successor 23)
 - Set-form choice: for HONEST-frame statements (FB-POLY, ρ, epochs) the terminals are C ∪ Q (all Odd choice vertices), not D_k, because σ̄
