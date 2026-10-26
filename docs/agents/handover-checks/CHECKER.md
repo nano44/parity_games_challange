@@ -184,3 +184,44 @@ handover 55e3fb05 + 4dcdd7e9 (notes/CHECKER.md "## HANDOVER (successor 8 → suc
   (successor 8, 04:23:18Z, after its handover): "CHECKER C65 Add. 1: R56 landed at eb81356c (only N-1, N-2 changes); C65 CLOSED". So C65
   is CLOSED by successor 8, not open. Merged with --no-ff (no rebase). Open work is now R57 = C66 only. I will re-measure Add. 1's four
   points independently after "go" if the Lead wants it (cheap: landed.py), else go straight to C66.
+
+## Handover check (successor 10)
+Written 2026-10-26 08:25Z (date -u). CHECKER successor 10 (Opus 5.5, D15), this session (session_011EiUmib2GvATXE6mphqubk). Predecessor: successor 9,
+session_01PuVfnWPKpY138kyUwPuukh, handover 2615d89e (notes/CHECKER.md "## HANDOVER (successor 9 → successor 10)"). Every answer measured
+from the repository; commands named.
+
+### 1. Branch, head, ahead/behind trunk
+- Clone started stale again: local claude/checker = 52a1e489 with "up to date". `git fetch origin`; `git merge --ff-only origin/claude/checker`
+  → HEAD = origin/claude/checker = 2615d89e (successor 9's handover, 08:12:59Z).
+- Trunk = claude/vibrant-johnson-nxvvxo, head 565b8a8d (Lead 08:17:50Z: "merge checker (C71/C73 closed) and l-red; L-RED 20 check 5/5, GO").
+  Before merging: `git rev-list --left-right --count 2615d89e...trunk` = 1 ahead (2615d89e), 320 behind; merge-base 088a50ba
+  (successor 9's closing addenda). 2615d89e is NOT on trunk (`merge-base --is-ancestor`: no).
+- `git merge --no-ff trunk` (no rebase) = 4e3e671e → 2 ahead, 0 behind. This file's commit makes 3 ahead, 0 behind.
+
+### 2. Open work and the next step of each
+- C66-C73 CLOSED (R57-R64 landed; table in the handover; L-1 fixed by the Lead's merge e1eabcd0). Counter: next check C74.
+- C74 = P-N5-STAU (packet docs/new/P-N5-STAU-box45.md, sha1 7446d9a9 at HEAD, `sha1sum`): not started. NOW l.50: REFEREE-2 succ. 15
+  report 8e42c473 (all SIGN, no gap; N-STAU-1..4), its §C waits for REFEREE 13's report; NOW l.44: REFEREE 13 on P-N5-STAU.
+  Next: wait for the Lead's RESULTS draft sha1 (both reports and both §Cs in), then the six-step method → docs/checker/C74.md; at landing,
+  the landed-check recipe (landed2.py) plus `merge-base --is-ancestor <checker sha> <landing commit>` (Lead rule 07:57Z).
+- Oink: built with scripts/setup_oink.sh in this container (exit 0; "oink built at 8fbf0a7"; tools/oink/build/oink present).
+
+### 3. docs/GAPS.md rows I own
+- `awk -F'|' '$4 ~ /CHECKER/' docs/GAPS.md`: none. Landing side: G-N5-TIME (major, L-NEW (L-LIT T22; referees later), open, l.11);
+  a STAU landing appends to it: old row minus " |" a prefix of the new one, status open, other rows equal.
+
+### 4. The three owner rulings that most constrain me, verbatim (docs/DECISIONS.md, `grep -n -F`), with index status
+- D1 (l.7; DECISIONS-INDEX l.5 "active"): "A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim,
+  including the fleet's own, as wrong until it passes the gauntlet below."
+- D15 (l.278; index l.26 "active", Lead reading L37 l.27): "q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it"
+- D18 (l.333; index l.32 "active", Lead reading L40 l.33): "Focus on N5 and work toward proving it. Explore novel approaches, especially by
+  connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where
+  needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems."
+- For the gate: nothing lands stronger than both signatures (D1); label "(Opus 5.5, D15)"; PROVED / CONJECTURE / OPEN / FALSE exact (L40).
+
+### 5. One trap, and the check that prevents it
+- Trap (successor 9, C71 E-3): honest limits in a draft went stale because a referee appended an addendum after the draft was written.
+  Check: before every report and addendum, `git log <draft pin>..<trunk> -- docs/referee*/R*-N5-<X>.md` (and fetch the referee and
+  referee-2 heads); any new report commit is read in full before the verdict.
+- Also carried: stale clone with "up to date" (caught again here: 52a1e489); addenda appended only (`cat >>`, then
+  `git diff HEAD -- docs/checker/C74.md | grep -c '^-[^-]' || true` = 0); stamps from `date -u`; merge-before-landing ancestor test.
