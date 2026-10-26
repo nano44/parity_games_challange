@@ -1,0 +1,8 @@
+# gateret.py --list experiments/new/box41/lib41.txt (NMAX=48, RS=2), 2026-10-26T19:17:17Z
+EXC_run_gates=78 EXC_run_max_plus1000=1017 MAXCH_run=35 RET_gci=4 RET_gci_in=4 RET_phase=920 RET_phase_AG=37 RET_phase_DCH=6 RET_phase_OSB=565 RET_phase_in=312 RET_run=558 RET_run_AG=32 RET_run_DCH=5 RET_run_OSB=302 RET_run_in=219 gch_AG=293 gch_DCH=68 gch_DDSET=3 gch_OSB=1270 gch_in=700 lambdaW_moves=233 rise_L=24 rise_M=2310 runs=1177 trans_AG=322 trans_DCH=58 trans_DDSET=8 trans_OSB=1270 trans_OVAL=262 trans_in=6455 y2_strictly_below_y1=2323
+EXAMPLE ('EXC', 'experiments/new/box35/instances/pf_best_3621.pg', 4, 5, 0, 31, 15)
+EXAMPLE ('EXC', 'experiments/red/so/instances/pftheta_cex_n32.pg', 3, 4, 0, 33, 17)
+EXAMPLE ('EXC', 'experiments/red/so/instances/pftheta34_n32.pg', 4, 5, 0, 34, 19)
+EXAMPLE ('EXC', 'experiments/new/box35/instances/pf_best_3623.pg', 4, 6, 0, 33, 21)
+EXAMPLE ('EXC', 'experiments/si/orlens/instances/lev_l_x.pg', 1, 1, 0, 25, 14)
+EXAMPLE ('EXC', 'experiments/new/box28/instances/w24b_thc24_final.pg', 1, 1, 19, 14, 4)

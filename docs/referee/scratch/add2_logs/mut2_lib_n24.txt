@@ -1,0 +1,63 @@
+AF_chk 134576
+CC2_chk 3859
+FTC_A_FAIL 1157
+FTC_chk 6823
+FTC_k_FAIL 1485
+FTC_off_FAIL 330
+FTZ_MAX 7
+FT_chk 1485
+MAX_FT 20
+PF_chk 8729
+PF_tied 568
+RUNS 1869
+SA2_chk 12799
+SA2_cycle_chk 2224
+SUM_CYC 956
+SUM_FT 1696
+SUM_ZC 198
+SUM_ZC2 125
+TC_STRICT 141
+TC_TIE 8
+TC_chk 6501
+ZC2F_chk 361
+skip_big 548
+EX ('FTC_k', '../R-N5-L2/droplen_cex_n12.pg/0', 0, 2)
+EX ('FTC_k', '../R-N5-L2/droplen_cex_n12.pg/1', 1, 2)
+EX ('FTC_k', '../R-N5-LP/df_cex.pg/0', 0, 7)
+EX ('FTC_off', '../R-N5-LP/df_cex.pg/0', 0, 7, 4)
+EX ('FTC_k', '../R-N5-LP/df_cex.pg/1', 0, 7)
+EX ('FTC_k', '../R-N5-LP/df_cex.pg/2', 0, 7)
+EX ('FTC_off', '../R-N5-LP/df_cex.pg/2', 0, 7, 8)
+EX ('FTC_off', '../R-N5-LP/df_cex.pg/2', 0, 7, 5)
+EX ('FTC_off', '../R-N5-LP/df_cex.pg/2', 0, 7, 4)
+EX ('FTC_A', '../R-N5-NEB/band_base_cex.pg/0', 2, 18)
+EX ('FTC_k', '../R-N5-NEB/band_base_cex.pg/0', 4, 21)
+EX ('FTC_k', '../R-N5-NEB/band_base_cex.pg/0', 5, 21)
+EX ('FTC_off', '../R-N5-NEB/band_base_cex.pg/0', 5, 21, 11)
+EX ('FTC_k', '../R-N5-NEB/band_base_cex.pg/1', 4, 21)
+EX ('FTC_off', '../R-N5-NEB/band_base_cex.pg/1', 4, 21, 23)
+EX ('FTC_off', '../R-N5-NEB/band_base_cex.pg/1', 4, 21, 11)
+EX ('FTC_A', '../R-N5-NEB/band_base_cex.pg/2', 1, 19)
+EX ('FTC_k', '../R-N5-NEB/band_base_cex.pg/2', 1, 19)
+EX ('FTC_k', '../R-N5-NEB/band_base_cex.pg/2', 5, 21)
+EX ('FTC_A', 'epr_inputs/lamend_D0.pg/0', 1, 1)
+EX ('FTC_k', 'epr_inputs/lamend_D0.pg/0', 1, 1)
+EX ('FTC_off', 'epr_inputs/lamend_D0.pg/0', 1, 1, 3)
+EX ('FTC_off', 'epr_inputs/lamend_D0.pg/0', 1, 1, 0)
+EX ('FTC_k', 'epr_inputs/lamend_D1.pg/0', 0, 3)
+EX ('FTC_off', 'epr_inputs/lamend_D1.pg/0', 0, 3, 1)
+EX ('FTC_k', 'flip_inputs/rootc_lit_n5.pg/0', 0, 4)
+EX ('FTC_off', 'flip_inputs/rootc_lit_n5.pg/0', 0, 4, 1)
+EX ('FTC_k', 'flip_inputs/rootc_lit_n5.pg/0', 1, 4)
+EX ('FTC_k', 'flip_inputs/rootc_lit_n5.pg/2', 0, 4)
+EX ('FTC_off', 'flip_inputs/rootc_lit_n5.pg/2', 0, 4, 1)
+EX ('FTC_k', 'flip_inputs/rootc_lit_n5.pg/3', 1, 4)
+EX ('FTC_k', 'hon_logs/climb_n11_k2.pg/0', 1, 2)
+EX ('FTC_k', 'hon_logs/climb_n11_k2.pg/0', 2, 2)
+EX ('FTC_k', 'hon_logs/climb_n11_k2.pg/1', 2, 2)
+EX ('FTC_k', 'hon_logs/climb_n11_k2.pg/1', 3, 2)
+EX ('FTC_A', 'hon_logs/climb_n12_k3.pg/0', 1, 2)
+EX ('FTC_k', 'hon_logs/climb_n12_k3.pg/0', 1, 2)
+EX ('FTC_A', 'hon_logs/climb_n12_k3.pg/0', 2, 2)
+EX ('FTC_k', 'hon_logs/climb_n12_k3.pg/0', 2, 2)
+EX ('FTC_A', 'hon_logs/climb_n12_k3.pg/0', 3, 2)
