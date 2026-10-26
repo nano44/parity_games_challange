@@ -1,0 +1,19 @@
+MODE start ../../../experiments/n5-exhaustive/instances/frz1_n24.pg ../../../experiments/n5-exhaustive/instances/frz1_n24.start MUT - PATHCAP 9
+BP_checks: 207
+C2H_checks: 296
+FRZ_freeze_checks: 1
+FRZ_freeze_checks_D_nonempty: 1
+FRZ_runs: 3
+TCC_checks: 207
+WMG_transitions: 28
+ff_runs: 4
+phases: 3
+runs: 1
+states: 32
+states_NC: 32
+states_h3: 31
+states_hD: 32
+FRZ_freeze_D_nonempty_example: (1, 'frz1_n24.pg#start@7 n 24')
+FRZ_run_minus_(n-1): (1, 'frz1_n24.pg#start')
+max_ff_run_transitions: (24, 'frz1_n24.pg#start')
+RESULT OK violations=0

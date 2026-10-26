@@ -1,3 +1,118 @@
+# Handover check: L-SI (successor 12, written 2026-10-26T06:02Z by date -u; LANE-RESTART step 3; Opus 5.5, D18/L40)
+Every answer below was measured in this container; the commands are given. Predecessor: successor 11, session_01FchPxfEZ9Fo56WrCZTvnXS.
+Its handover is notes/L-SI.md "## HANDOVER (successor 11, box 16)" (l-si 2d021429).
+
+## 1. Branch, head, distance to trunk
+- Branch `claude/l-si`. The clone was stale: local HEAD 0d48da26; `git fetch origin claude/l-si` moved origin 0d48da26 → 2d021429;
+  `git merge --ff-only origin/claude/l-si` → HEAD 2d021429; `git merge-base --is-ancestor 2d0214294 HEAD` → true.
+- Trunk `origin/claude/vibrant-johnson-nxvvxo` = 5db6da07.
+  - Before merging: `git rev-list --left-right --count 2d021429...trunk` → 2 ahead / 6 behind; merge-base 5db6da07 (= trunk head).
+  - `git merge --no-ff` of trunk (no rebase) → merge commit b0284ff1, 3 ahead / 0 behind. This file is the next commit; the pushed SHA
+    goes to the Lead.
+
+## 2. Open work and the next step of each (nothing running: `pgrep -a python` empty; fresh container)
+Frozen packets re-measured with sha1sum: P-N5-H3 680e4528, P-N5-2T fcb91130, P-N5-2T-fixes 8aad9f77, P-N5-1E e613db13,
+P-N5-1E-fixes 8f3615bc, P-N5-FX-fixes 4253d51e, P-N5-NC 2036e7c8 (withdrawn unreviewed). All match the handover.
+- P-N5-H3 (frozen, in review). REFEREE 12: docs/referee/R-N5-H3.md at referee 7c2d9b49, all SIGNED; notes H3-N1 (WM-G rests on the
+  standing SPEC premise), H3-N2 (P^c_L: one step made explicit), H3-N3 (data). REFEREE-2 succ. 14: docs/referee-2/R2-N5-H3.md at
+  referee-2 5b251bed (branch head b9a7a1f4), all SIGN, no gap, notes N-H3-1..5. `grep -n '§C'` on both → nothing: no §C yet; neither
+  report is on trunk (`git ls-tree trunk docs/referee/ docs/referee-2/ | grep -i h3` → empty).
+  - Next step: on the Lead's word after both §Cs, write NEW docs/si/P-N5-H3-fixes-box16.md: H3-N1, H3-N2 (= REFEREE-2's N-NC-3 on the
+    void NC; B1 simplicity from x ∉ π), H3-N3, N-H3-1..5, and the 0-BASED reading of "constant from state k_0 + n − 1" (a non-vacuous
+    check needs ≥ n + 1 states).
+- Research (Lead's pick, after the fixes): ¬(h3_D) KIND-MONO port for twin gates (twin Δ-RT above m*), or RUN_D for twin changes.
+  Next step: read N5-2O-T-box16 §8 and the handover NEXT, propose one with reasoning to the Lead before starting.
+- P-N5-2T (R58) at CHECKER C67; P-N5-1E = R57 landed. No step for me unless asked.
+
+## 3. docs/GAPS.md rows I own
+- None (`git show trunk:docs/GAPS.md | awk -F'|' '$4 ~ /L-SI/'` → empty).
+- I work under G-N5-TIME (l.11): major, owner L-NEW, status open. Last update 2026-10-26 05:50Z (R57 landed): "The row stays open: no
+  iteration bound on general games; subclass bounds for 𝒞^1O (R51) and 𝒞^1E (R57) are proved." NOW l.2: "NO polynomial bound for N5 on
+  general games is proved."
+
+## 4. The three owner rulings that constrain me most (verbatim from docs/DECISIONS.md; status from docs/DECISIONS-INDEX.md)
+- D18 (DECISIONS.md l.332-333; index l.32: active): "Focus on N5 and work toward proving it. Explore novel approaches, especially by
+  connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions
+  where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and
+  open problems."
+  - Lead reading L40 (index l.33: active): L-SI is the OR/MDP lens on N5.
+- D1 (index l.5: active; DECISIONS.md l.3-7, full text docs/decisions/D001-launch-brief.md):
+  "A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own,
+  as wrong until it passes the gauntlet below." / "Never publish, post, email, submit or contact anyone outside the fleet. Anything
+  external is my decision."
+- D16 (DECISIONS.md l.299-300; index l.28: active): "Then keep working as I told you to"
+
+## 5. One trap that bit this lane before, and the check that prevents it
+- Trap (box 16): a freeze-type statement was checked VACUOUSLY. FRZ-U-type freezes are "constant from state k_0 + n − 1" (0-based),
+  so a run shorter than n + 1 states tests nothing; most lane runs are shorter than n − 1. And L-COMP's 1-based reading was stronger
+  than the proof, so its failure would not have been a counterexample.
+  - Check: every freeze checker reports the number of NON-VACUOUS windows (base = i + n − 1, states x > base) next to its violation
+    count, and a mutation control (MUT/MUTL) must bite; gdnc.py does both. Also run random START PAIRS, not only the library (TC-W).
+- Still live: stale clone (fetch + `rev-parse HEAD origin/claude/l-si` first: it bit again here); frozen files (sha1sum before editing
+  docs/si/P-*); ReadNotifications before any freeze; never `git add -A`; never pipe scripts/push.sh; stamp times from date -u.
+
+---
+# Handover check: L-SI (successor 11, written 2026-10-26T01:56Z by date -u; LANE-RESTART step 3; Opus 5.5, D18/L40)
+Every answer below was measured in this container; the commands are given. Predecessor: successor 10, session_01PBqfsNWMhTPn7yNJ8C18HP.
+Its handover is notes/L-SI.md "## HANDOVER (successor 10, box 15)" (l-si 20d3a875); the 1O fixes were frozen after it (90f93566).
+
+## 1. Branch, head, distance to trunk
+- Branch `claude/l-si`. `git fetch origin claude/l-si` moved origin 0d48da26 → 278bd489 (stale clone again);
+  `git checkout -B claude/l-si origin/claude/l-si`; `git rev-parse HEAD origin/claude/l-si` → both 278bd489.
+- Trunk `origin/claude/vibrant-johnson-nxvvxo` = d7d9d7d2 (Lead 01:48Z "R51 rev. (C60 E-1, E-2); merges (R2 FX/NH42/DUAL, ...)").
+  - Before merging: `git rev-list --left-right --count HEAD...trunk` → 0 ahead / 27 behind; merge-base 278bd489 (= my head: the Lead
+    had already merged all of l-si).
+  - `git merge --no-ff` of trunk (no rebase) → merge commit 6be344ce, 1 ahead / 0 behind. This file is the next commit; the pushed SHA
+    goes to the Lead.
+
+## 2. Open work and the next step of each (nothing running: `pgrep -a python` empty; fresh container)
+Frozen (sha1 sent to the Lead), re-measured with sha1sum on my tree and with `git show trunk:<file> | sha1sum` (identical):
+P-N5-1O 2cf5e672, P-N5-1O-fixes 647deab5, P-N5-FX aa227b0b, P-N5-KW-fixes c65f4c1e. N5-FRONTIER-box15 (06cd6c9e, not frozen) is on trunk.
+- P-N5-1O (assembly on 𝒞^1O): SIGNED by both (docs/referee/R-N5-1O.md §C, docs/referee-2/R2-N5-1O.md §C on trunk); fixes FROZEN 647deab5.
+  RESULTS R51 is NOT landed: `grep '^### R51' RESULTS.md` empty. Lead draft docs/agents/R51-draft.md; CHECKER C60 = FAIL (E-1 start-
+  freeness attribution, E-2 honest limits); the Lead revised it at d7d9d7d2. Next step: none for me unless the CHECKER re-check asks.
+- P-N5-FX fixes: REFEREE R-N5-FX SIGNED, no gaps, notes FX-N1..N3 (843ba1f8); REFEREE-2 R2-N5-FX SIGNED, no gaps, notes N-FX-1, N-FX-2
+  ("with R48 landed, (b) is unconditional") (83a3e8c7). Neither report has a §C yet (`grep -n '§C' ` on both → nothing).
+  docs/si/P-N5-FX-fixes-box14.md does not exist. Next step: when the Lead relays both §Cs, write it NEW (FX-N1/N-FX-1 one item:
+  "second derivation from R-STICK alone"; FX-N2/N-FX-2: cite R48 (i) (a) repaired + (b), (c), drop "CONDITIONAL"; FX-N3 scope).
+- P-N5-1E (new, Lead 01:5xZ, after "go"): N5 on 𝒞^1E (exactly one Even choice vertex) polynomial from any start pair, from R51
+  (1O-POLY), P-N5-DUAL (MIRROR; REFEREE SIGNED with wording gap DUAL-1; REFEREE-2 R2-N5-DUAL on trunk) and (H-N5) = R51's start-free
+  per-phase bound. Output needs Lemma OUT on every game, PROVED as a lemma to sign (R21 (a) is game-independent per N-1O-4: R18 (d)
+  Lemma S (a)). Next step: draft docs/si/P-N5-1E-box16.md (NEW); freeze on the Lead's word after DUAL lands.
+- Frontier (successor 10 NEXT 3, Lead's optional item): TC-SWITCH data on L-NEW 22's frontier instances; ≼_D order (N5-FRONTIER §4). Not started.
+- I wait for "go"; the order is the Lead's.
+
+## 3. docs/GAPS.md rows I own
+- None (`git show trunk:docs/GAPS.md | awk -F'|' '$4 ~ /L-SI/'` → empty).
+- I work under G-N5-TIME (l.11): major, owner L-NEW (L-LIT T22; referees later), status open. Last update 2026-10-26 00:38Z (R49, R50
+  LANDED; "the assembly ... (P-N5-1O ...) is still to be refereed. Beyond 𝒞^1O: OPEN ... G-N5-TIME stays open."). NOW l.2: "NO polynomial
+  bound for N5 is proved."
+- G-N5-TERM (l.16): closed (R15).
+
+## 4. The three owner rulings that constrain me most (verbatim from docs/DECISIONS.md; status from docs/DECISIONS-INDEX.md)
+- D18 (DECISIONS.md l.332-333; index l.32: active): "Focus on N5 and work toward proving it. Explore novel approaches, especially by
+  connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions
+  where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and
+  open problems."
+  - Lead reading L40 (index l.33: active): L-SI is the OR/MDP lens on N5.
+- D1 (index l.5: active; DECISIONS.md l.3, full text docs/decisions/D001-launch-brief.md):
+  "A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own,
+  as wrong until it passes the gauntlet below." / "Never publish, post, email, submit or contact anyone outside the fleet. Anything
+  external is my decision."
+- D16 (DECISIONS.md l.299-300; index l.28: active): "Then keep working as I told you to"
+
+## 5. One trap that bit this lane before, and the check that prevents it
+- Trap (box 15): Lead messages crossed successor 10's freezes twice (the K-unit note had to become an addendum; PHI was already done).
+  A sha1 sent to the Lead freezes the file, so a crossed relay costs a NEW file and a second referee pass.
+  - Check: ReadNotifications, then `git fetch` trunk and `git ls-tree --name-only trunk docs/referee/ docs/referee-2/ docs/checker/ |
+    grep <packet>` and `grep -n '§C'` on both reports, immediately before freezing any file and after every push. (Applied here: it is
+    how I know FX has no §C yet and that C60 failed R51's first draft.)
+- Still live: stale clone (fetch + `rev-parse HEAD origin/claude/l-si` before reading); frozen files (sha1sum + grep notes, NOW before
+  editing docs/si/P-* or *-fixes-*); `until ! pgrep -f X` matches its own shell (use `while kill -0 PID`); never `git add -A`; never
+  pipe scripts/push.sh; stamp times from date -u in the same command.
+
+---
+
 # Handover check: L-SI (successor 10, written 2026-10-25T19:15Z by date -u; LANE-RESTART step 3; Opus 5.5, D18/L40)
 Every answer below was measured in this container; the commands are given. Predecessor: successor 9, session_018jN1MJkw56F58G3qcfcuZA.
 Its handover is fe58fbab, notes/L-SI.md "## HANDOVER (successor 9, box 14)".

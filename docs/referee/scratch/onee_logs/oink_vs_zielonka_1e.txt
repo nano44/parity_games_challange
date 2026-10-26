@@ -1,0 +1,8 @@
+experiments/attr/instances/dtr_fig1.pg n 3 oink_vertices 3 AGREE
+experiments/n5-exhaustive/instances/n4_thch_0.pg n 4 oink_vertices 4 AGREE
+experiments/red/instances/claimF_bit_cf2.pg n 7 oink_vertices 7 AGREE
+experiments/red/instances/claimF_len_cf1.pg n 6 oink_vertices 6 AGREE
+experiments/red/k4b/gad5.pg n 5 oink_vertices 5 AGREE
+experiments/red/tpp/instances/tpp_viol_n22.pg n 22 oink_vertices 22 AGREE
+experiments/si/instances/red_cf1.pg n 6 oink_vertices 6 AGREE
+experiments/si/instances/red_cf2.pg n 7 oink_vertices 7 AGREE

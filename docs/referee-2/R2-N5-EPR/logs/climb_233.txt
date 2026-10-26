@@ -1,0 +1,17 @@
+MODE climb 1500 5 9 233 climb/div_233 MUT -
+EP0_checks: 11145
+LAMEND_checks: 289
+LAMEND_differs: 84
+LAMEND_differs_D0: 32
+LAMEND_differs_D1: 35
+LAM_checks: 28779
+REP_steps: 695
+RIII_checks: 695
+RII_checks: 695
+RIV_checks: 175
+RI_checks: 28779
+epochs: 28373
+phases: 28084
+runs: 9000
+climb_best: (2, 'climb/div_233')
+RESULT OK violations=0

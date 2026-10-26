@@ -1,0 +1,47 @@
+MODE files ../../../experiments/new/box41/lib41.txt 1 MUT gda
+F1D_intervals: 5563
+GDB_vertices: 54194
+GDC1_pairs: 490158
+GDC2_levels: 25015
+VIOLATIONS: 6999
+V_GDA: 6999
+WOD_checks: 4421
+runs: 412
+states: 8889
+states_D_ge2: 1297
+states_D_nonempty: 7090
+states_MD_ge0: 4266
+states_hD: 6543
+states_hD_h3D: 6310
+max_F1D_changes: (55, 'experiments/red/xing/instances/x32_rand64.pg#0')
+VIOLATION GDA: docs/referee/R-N5-L2/exitdrop_n3.pg#0@0: v 0
+VIOLATION GDA: experiments/m2/counterexamples/ce1_8v_shrunk.pg#0@0: v 0
+VIOLATION GDA: experiments/m2/counterexamples/strat_s2_12v.pg#0@0: v 1
+VIOLATION GDA: experiments/n5-exhaustive/canonA_1.pg#0@0: v 2
+VIOLATION GDA: experiments/n5-exhaustive/canonA_1.pg#0@3: v 12
+VIOLATION GDA: experiments/n5-exhaustive/instances/b4_cyc6_0.pg#0@1: v 1
+VIOLATION GDA: experiments/n5-exhaustive/instances/b4_cyc6_1.pg#0@0: v 1
+VIOLATION GDA: experiments/n5-exhaustive/instances/b4_n4all_cyc3_0.pg#0@1: v 0
+VIOLATION GDA: experiments/n5-exhaustive/instances/b4_theta_n7.pg#0@0: v 6
+VIOLATION GDA: experiments/n5-exhaustive/instances/b5_n5_cyc4_0.pg#0@2: v 0
+VIOLATION GDA: experiments/n5-exhaustive/instances/b5_o11.pg#0@0: v 8
+VIOLATION GDA: experiments/n5-exhaustive/instances/b5_o11.pg#0@1: v 8
+VIOLATION GDA: experiments/n5-exhaustive/instances/b5_o11.pg#0@2: v 8
+VIOLATION GDA: experiments/n5-exhaustive/instances/b5_o11.pg#0@3: v 8
+VIOLATION GDA: experiments/n5-exhaustive/instances/b5_o11.pg#0@4: v 8
+VIOLATION GDA: experiments/n5-exhaustive/instances/b5_o11.pg#0@5: v 7
+VIOLATION GDA: experiments/n5-exhaustive/instances/b5_o11.pg#0@6: v 7
+VIOLATION GDA: experiments/n5-exhaustive/instances/b5_o11.pg#0@7: v 0
+VIOLATION GDA: experiments/n5-exhaustive/instances/b5_o11.pg#0@8: v 9
+VIOLATION GDA: experiments/n5-exhaustive/instances/b5_o11.pg#0@9: v 9
+VIOLATION GDA: experiments/n5-exhaustive/instances/b5_o11.pg#0@10: v 7
+VIOLATION GDA: experiments/n5-exhaustive/instances/b5_o11.pg#0@11: v 7
+VIOLATION GDA: experiments/n5-exhaustive/instances/b5_os_n12.pg#0@0: v 8
+VIOLATION GDA: experiments/n5-exhaustive/instances/b5_os_n12.pg#0@1: v 8
+VIOLATION GDA: experiments/n5-exhaustive/instances/b5_os_n12.pg#0@2: v 8
+VIOLATION GDA: experiments/n5-exhaustive/instances/b5_os_n12.pg#0@3: v 8
+VIOLATION GDA: experiments/n5-exhaustive/instances/b5_os_n12.pg#0@4: v 8
+VIOLATION GDA: experiments/n5-exhaustive/instances/b5_os_n12.pg#0@5: v 8
+VIOLATION GDA: experiments/n5-exhaustive/instances/b5_os_n12.pg#0@6: v 7
+VIOLATION GDA: experiments/n5-exhaustive/instances/b5_os_n12.pg#0@7: v 7
+RESULT FAIL violations=6999

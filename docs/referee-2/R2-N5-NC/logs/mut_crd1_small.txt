@@ -1,0 +1,55 @@
+MODE random 20000 2 5 193 kO 3 MUT crd1 PATHCAP 9
+BP_checks: 6772
+BP_checks_NC_not_hD: 609
+C1P_checks: 726
+C2P_checks: 445661
+CRD_freeze_checks: 18374
+CRD_freeze_checks_D_nonempty: 1807
+FRZ_freeze_checks: 458
+FRZ_runs: 76788
+PCL_checks: 1568071
+PCL_runs: 386807
+VIOLATIONS: 66
+V_CRD: 66
+WMG_transitions: 3880
+ff_runs: 110432
+phases: 108729
+runs: 60000
+states: 114312
+states_NC: 81998
+states_NC_not_hD: 261
+states_hD: 81737
+CRD_run_minus_(n-1): (0, 'random193:7#3')
+FRZ_run_minus_(n-1): (0, 'random193:7#3')
+max_ff_run_transitions: (2, 'random193:2#3')
+VIOLATION CRD: random193:1677#2@2: L -1
+VIOLATION CRD: random193:1677#2@2: L 0
+VIOLATION CRD: random193:1677#2@2: L 1
+VIOLATION CRD: random193:1677#2@2: L 2
+VIOLATION CRD: random193:4799#2@2: L -1
+VIOLATION CRD: random193:4799#2@2: L 0
+VIOLATION CRD: random193:4799#2@2: L 1
+VIOLATION CRD: random193:6970#3@2: L -1
+VIOLATION CRD: random193:6970#3@2: L 0
+VIOLATION CRD: random193:6970#3@2: L 1
+VIOLATION CRD: random193:6970#3@2: L 2
+VIOLATION CRD: random193:7455#1@2: L -1
+VIOLATION CRD: random193:7455#1@2: L 0
+VIOLATION CRD: random193:7455#1@2: L 1
+VIOLATION CRD: random193:8377#1@2: L -1
+VIOLATION CRD: random193:8377#1@2: L 0
+VIOLATION CRD: random193:8377#1@2: L 1
+VIOLATION CRD: random193:8377#1@2: L 2
+VIOLATION CRD: random193:8377#1@2: L 3
+VIOLATION CRD: random193:8377#2@2: L -1
+VIOLATION CRD: random193:8377#2@2: L 0
+VIOLATION CRD: random193:8377#2@2: L 1
+VIOLATION CRD: random193:8377#2@2: L 2
+VIOLATION CRD: random193:8377#2@2: L 3
+VIOLATION CRD: random193:8743#1@2: L -1
+VIOLATION CRD: random193:8743#1@2: L 0
+VIOLATION CRD: random193:8765#3@3: L -1
+VIOLATION CRD: random193:8765#3@3: L 0
+VIOLATION CRD: random193:9554#2@4: L -1
+VIOLATION CRD: random193:9554#2@4: L 0
+RESULT FAIL violations=66

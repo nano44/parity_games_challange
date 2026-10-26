@@ -1,0 +1,12 @@
+MODE files ../R2-N5-2T/lib2o_noref.lst 3 MUT - UCAP 13
+ALT_clean_strict: 64
+NEP_checks: 370
+ROUTEK_checks: 1334
+classes_skipped_UCAP: 126
+phases: 370
+runs: 123
+SATK_closeness: (-5, 'experiments/new/box43/instances/ret2_n7.pg#0@0 c 6 q 3 p 1 |U_c| 6')
+max_depth: (1, 'experiments/alg/instances/dtl_pertop31_n18.pg#0@0 m_c 2')
+max_epochs: (8, 'experiments/new/box44/instances/fb17_n32.pg#0')
+max_m_c: (2, 'docs/referee-2/R2-N5-FBW/climb/fbw_a_best.pg#1')
+RESULT OK violations=0

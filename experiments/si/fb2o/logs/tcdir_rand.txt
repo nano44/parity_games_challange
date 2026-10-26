@@ -1,0 +1,1 @@
+dchange=4 changes=4 same_stretch=0 toW=0 toX=0 toWX=0 againstW=0 tieW=0

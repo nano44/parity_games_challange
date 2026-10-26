@@ -1,0 +1,14 @@
+MODE files ../R2-N5-KW/files.lst 2 MUT -
+F1D_intervals: 10746
+GDB_vertices: 108344
+GDC1_pairs: 994543
+GDC2_levels: 48541
+WOD_checks: 8420
+runs: 1006
+states: 17733
+states_D_nonempty: 12378
+states_MD_ge0: 8205
+states_hD: 14708
+states_hD_h3D: 14097
+max_F1D_changes: (55, 'experiments/red/xing/instances/x32_rand64.pg#0')
+RESULT OK violations=0

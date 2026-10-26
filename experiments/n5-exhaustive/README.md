@@ -257,7 +257,8 @@ Phase key = the checkers' (lambda_Xi, tau). Validated on epsseg_cex_n48 (= sn_ch
 | n 5 subset quarter 1 (box 7 class, index = 0 mod 4) | 17,193,152 | 0 | 1 | 0 | 2 | 1 | 0 | 3 | 2 | 2 |
 | n 5 subset quarter 2 (index = 1 mod 4) | 17,191,424 | 0 | 1 | 0 | 2 | 1 | 1 | 3 | 2 | 2 |
 | n 5 subset quarter 3 (index = 2 mod 4) | 17,189,248 | 0 | 1 | 0 | 2 | 1 | 0 | 3 | 2 | 2 |
-BOX8ROW
+| n 5 subset quarter 4 (index = 3 mod 4) | 17,190,976 | 0 | 1 | 0 | 2 | 1 | 1 | 3 | 2 | 2 |
+| n 5 subset, all 4 quarters | 68,764,800 | 0 | 1 | 0 | 2 | 1 | 1 | 3 | 2 | 2 |
 
 | box8 (REFEREE probes, canonical start only) | runs | FAIL counters | max J | max K | max X | max eps | max rho | max T |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -265,7 +266,8 @@ BOX8ROW
 | n 5 subset quarter 1 | 17,193,152 | 0 (OGP_viol 1,476 = the refuted OG', counted by cls_probe, not a failure) | 1 | 0 | 2 | 1 | 0 | 3 |
 | n 5 subset quarter 2 | 17,191,424 | 0 (OGP_viol 1,186, info) | 1 | 0 | 2 | 1 | 1 | 3 |
 | n 5 subset quarter 3 | 17,189,248 | 0 (OGP_viol 1,484, info) | 1 | 0 | 2 | 1 | 0 | 3 |
-BOX8PROW
+| n 5 subset quarter 4 | 17,190,976 | 0 (OGP_viol 1,184, info) | 1 | 0 | 2 | 1 | 1 | 3 |
+| n 5 subset, all 4 quarters | 68,764,800 | 0 (OGP_viol 5,330, info) | 1 | 0 | 2 | 1 | 1 | 3 |
 
 Teeth (n 4 canonical, REFEREE-2 counters): U-loc 780,352 checks; OE 139,566 off-crossing transitions (16 crossings with O > E); OX 188,320
 phases (16 non-tame, all crossings, J = X); CN 120,082; TRANSFER 4,752; H3H2 6,818,268 states; LEAVE (H1) 17,344; CHOICE 80,027;
@@ -287,3 +289,55 @@ R-STICK 232; LEAVE 235,934; crossings after prefix 398; ABS-COUNT' 952 (all tigh
 fallbacks, all theta = w), WK, ABS-L.
 Teeth (n 5 quarter 3): U-loc 6,719,810; OE 844,228; non-tame 448 (all crossings); CN 552,284; TRANSFER 26,118; OFFGATE 11,982; NL 1,614;
 R-STICK 182; LEAVE 200,550; crossings after prefix 308; ABS-COUNT' 448 (all tight). Still VACUOUS: CLS1 / FBL / CLU (60,402, all theta = w), WK, ABS-L.
+Whole n 5 subset (box 8 complete): U-loc 27,923,460; OE 3,513,826 off-crossing; OX 5,390,884 phases (3,004 non-tame, all crossings);
+CN 2,294,936; TRANSFER 109,152; OFFGATE 48,236; NL 7,016 (j, L) checks; R-STICK 816; LEAVE (H1) 875,260; crossings after an SN prefix
+1,456 (max 1 per run); OR / ABS-COUNT' 3,004 (all tight). VACUOUS on the whole box 8 data (n 4 and n 5): CLS1 / FBL / CLU (244,892 n 5 scope
+fallbacks, all theta = w; CLS1 checks 0), WK (0 wakes), ABS-L (0 intervals). Readings (DATA, exact on these classes): 0 violations of
+R28 (U-loc, OE, OX), R29 (TRANSFER, CN, OFFGATE, NL) and R30 in landing (OR, TC-SPLIT, R-STICK, SN-PREFIX, H3H2, LEAVE, ABS-COUNT,
+CHOICE, H1-DROP, H1-KEEP, ABS-COUNT') through n 5; per phase J <= 1, K = 0, X <= 3, X_SN <= 2, REL <= 3 (REL <= 2 at n 5); no growth n 4 -> n 5.
+
+## Box 9 / 9b (Lead GO 2026-10-26 01:53Z, 05:05Z, 05:30Z): climbs that make vacuous checks non-vacuous; G_D-NC, C2-H3, FRZ-U_H3
+Labels (L40): DATA. Every scored climb run is checked by the named checkers; a violation stops the climb and is saved.
+- climb9.py (REFEREE-2 oe/cls/sn/h1_check unmodified, re_climb.mutate): WK climbs 4 x 20,000 steps, 0 violations; WK non-vacuous on the
+  so_k2_n32 lineage: 9,020 WK checks pass (other lineages: every wake changes W at a or z). Instances (check_instance OK):
+  instances/wk1_n32 (sha1 aed01b51..., WK from a pinned random start) and instances/wk2_n32 (sha1 628ebe07..., WK from the canonical start).
+  CLS1 small-n climbs n 6/8/10/12 x 20,000: no in-scope THR fallback (CLS1/FBL/CLU stay vacuous at n <= 12; they fire at n ~ 32 in
+  REFEREE-2's climbs). ABS-L climbs from REFEREE-2 gt_a/gt_b_best, ccl_fb2_n32, fb32_inr2_final: ABS-L intervals up to 83, 0 theta-changes
+  above L (ABS-L's count trivially 0).
+- gdnc_check.py (own, from docs/si/N5-2O-T-box16.md §6 and P-N5-H3, sha1 680e4528; run + valuations from REFEREE-2's fb_check):
+  G_D-NC (b', c1', c2') at (NC) states; C2-H3 at EVERY (h3_D) state, L = max(M_D, -1) .. n - 1; FRZ-U_H3 on fallback-free in-phase runs with
+  (h3_D) throughout. Mutation control MUT=1 (b' without (NC)) fails (73,044 / 220,039 on the frontier): the hypothesis has bite.
+  Library frontier (431 files, n <= 64, >= 2 Odd choice vertices, canonical + 3 random starts + pinned .start): b' 35,249, c1' 284,286,
+  C2-H3 151,611 (10,487 at not-(NC) states); random C^kO (k 2-4, n 5-20): 100,000 + 50,000 runs, C2-H3 / c2' > 2.2M checks; 0 violations.
+- FRZ-U_H3 INDEXING (author's answer, L-SI l-si 2d021429; P-N5-H3 §5-§6 formula "from k_0 + n - 1 on"): 0-BASED, constant on S[n-1], S[n], ...;
+  a non-vacuous check needs a run of >= n + 1 states. gdnc_check's FRZH3 uses this base; its 1-based base (S[n-2] on) is a STRONGER form,
+  tested as INFO only: a failure of it is NOT a counterexample.
+  FRZ instances (frz_climb.py; check_instance OK; all checks pass):
+  | instance | sha1 | run states (n = 24) | (NC) and not (h_D) states in the run | tests the statement as proved |
+  | --- | --- | --- | --- | --- |
+  | instances/frz1_n24 (canonical) | aad1bce6... | 25 | 0 (all (h_D)) | yes |
+  | instances/frz2_n24 (canonical) | 25db3330... | 24 | 16 | NO: n states, tests only the stronger 1-based form |
+  | instances/frz3_n24 (pinned start) | 5a26b3e3... | 25 | 14 | yes |
+  L-SI's gdnc.py agrees on all three (frz2: FRZ_n 0 under its 0-based base). Not yet tested by any freeze: a run of >= n + 1 states with
+  not-(NC) states (H3's new regime).
+- Box 9b end (2026-10-26 06:4xZ): FIT=h3n climbs (only not-(NC) states score; 40,000 steps from tcwult2_against_n8 and tcw_against_n12)
+  plateau at an (h3_D) run of 6 states containing a not-(NC) state (n 8 / 12; n + 1 needed): FRZ-U_H3's not-(NC) case stays VACUOUS.
+  DATA (6,000 random C^kO runs, k 2-4, n 5-16): at 530 (h3_D) and not-(NC) states with a successor, tau changes at the next transition in
+  422 (80%), a fallback follows in 31, and the run stays in the same phase in only 36 (7%). READING (not proved): a gate on its own cycle
+  with sigmabar(u) != tau(u) is usually switched by Odd at once, ending the phase; this is why long freeze runs through not-(NC) states
+  are hard to find. FIT=h3 climb (seed 601, from frz3_n24): only (NC) and not (h_D) states (22 in 2 checked runs), 0 violations.
+  ABS-L climbs done (4 x 15,000 steps): 0 violations; 1,268,127 ABS-L intervals, CLS1 1,351,034 checks (1,268,127 case r > L), CLU
+  1,753,459; 0 theta-changes above L, so ABS-L's absorption count is always 0 (vacuous in substance).
+
+## Box 11 item 2 (Lead 07:15Z): L-SI box-17 OFFSET / TWIN-GAP (docs/si/N5-RUND-box17.md §5), independent check (rund_check.py)
+Own code from the note's text (L-SI's experiments/si/rund/ not opened) on gdnc_check.state_info; S = every maximal fallback-free in-phase run
+with (h3_D) throughout. Checked: OFFSET (a) lambda_Xi = lambda_W and monotone s^Xi, s^W; (b) Delta(v) in {0, delta(u(v))} by case; (c) ranks of
+the gates' symmetric differences in [l_S, L*], offsets multiples of 2^l_S, all 0 when U_S is empty; TWIN-GAP (i), (ii) (0-based base
+k_0 + n - 1), (iii). Mutation control RUND_MUT=b (offset sign flipped) fails 33 times on 3,000 random C^2O: OFFb has bite. DATA:
+| set | runs | S runs (U_S nonempty) | OFFb checks | TGi checks | max B | max N_v | late changes (TGii) | violations |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| random C^2O, n 5-20, 2 x 40,000 games x (canonical + random start), seeds 61/62 | 160,000 | 22,058 (707) | 662,235 | 1,408 | 17 | 2 | 0 | 0 |
+| random C^3O / C^4O, same sizes, seeds 63/64 | 160,000 | 14,823 (638) | 450,547 | 1,372 | 16 | 2 | 0 | 0 |
+| library frontier (431 files, canonical + 3 random) | 1,724 | 736 (419) | 141,890 | 4,769 | 59 | 8 | 0 | 0 |
+| frz1-3_n24 + notnc1-8, canonical + 30 random each | 341 | 237 (63) | - | 1,187 | 19 | 7 | 0 | 0 |
+TWIN-GAP (ii) is VACUOUS in all data: no offset change lies at a state >= k_0 + n - 1 (the same shortness of runs as FRZ-U_H3's data).

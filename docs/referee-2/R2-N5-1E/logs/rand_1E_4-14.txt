@@ -1,0 +1,16 @@
+MODE random 6000 4 14 91 1E MUT -
+C1E_runs: 6000
+O2_ok: 6000
+O3_runs: 5983
+O3_skipped: 17
+O3_strats: 654815
+O3b_runs: 6000
+O3b_strats: 14980
+O4_ok: 6000
+O5_ok: 6000
+REW0_stops: 553
+iterations: 6945
+runs: 6000
+stops: 6000
+C1E_max_iter: (6, '1E91:41')
+RESULT OK violations=0

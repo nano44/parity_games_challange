@@ -1,0 +1,18 @@
+MODE files ../../../experiments/new/box41/lib41.txt 2 MUT - UCAP 13
+DIR_checks: 2
+DIRbr_cycle: 2
+FB2W_checks: 2
+PFZQ_checks: 12458
+ROUTE_checks: 144
+YB_checks: 875
+classes_2term: 223
+classes_skipped_UCAP: 4118
+phases: 4813
+phases_2T: 2210
+runs: 824
+FB2W_max_count: (1, 'experiments/red/xing/instances/x31_nh_r20.pg#0')
+SAT_closeness: (-2, 'experiments/red/carry/instances/fall4_n116.pg#0@2 c 96 q 105 |U_c| 3')
+SAT_closeness_all_classes: (-2, 'experiments/red/carry/instances/fall4_n116.pg#0@2 c 96 q 105 |U_c| 3')
+max_f: (33, 'experiments/si/xing/instances/ccl_w48_n48.pg#0')
+max_f_in_phase_with_2term_class: (14, 'experiments/red/n5inj/instances/returns_rt64.pg#0')
+RESULT OK violations=0

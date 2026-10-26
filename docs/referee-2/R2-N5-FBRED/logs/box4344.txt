@@ -1,0 +1,12 @@
+MODE files box4344.lst 5 MUT -
+PFZ_checks: 527
+YF_checks: 2002
+phases: 294
+runs: 50
+FEX_closeness: (-9, 'experiments/new/box44/instances/rtf_cex.pg#0')
+max_f: (17, 'experiments/new/box44/instances/fb17_n32.pg#0')
+max_f_minus_n: (-6, 'experiments/new/box43/instances/retf_n6.pg#0')
+max_j_minus_n_with_S: (-9, 'experiments/new/box44/instances/rtf_cex.pg#0')
+max_j_with_S: (17, 'experiments/new/box44/instances/fb17_n32.pg#0')
+max_rho: (36, 'experiments/new/box43/instances/dch16_n44.pg#0')
+RESULT OK violations=0

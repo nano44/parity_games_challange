@@ -174,3 +174,60 @@ Iteration tables: docs/si/RESULTS.md (generated); raw logs experiments/si/out/ (
     (experiments/si/needb5/s3.txt; REFEREE §C.3; RESULTS R43 limit (iii)).
   - Weak, because SPEC allows any start pair, and a run from S3 passes through states that are themselves start pairs. So the S3 form
     restricts only which (σ, τ) are reachable. No current bound needs it.
+
+## DEAD box 16 (L-SI successor 11, 2026-10-26T04:37Z by date -u): TC-W, "a terminal change moves to the gate with the larger W" (own conjecture, never sent as a lemma)
+- Statement killed (three forms, all on 𝒞^2O with |D_k| = 2 and D_k unchanged at the transition): at an in-phase S4a transition k → k+1
+  at which v ∈ R_D switches its gate u → u′, W_k(u′) ▷ W_k(u). The three forms:
+  - (first gate) u(v) is the first D-vertex on v's W-play;
+  - (ultimate gate) the first W-direct D-vertex;
+  - (ultimate gate, gate structure fixed, v ∉ D_k).
+- Obstruction (mechanism): S4a takes Even's pointwise W-optimum of its arena. A route to a gate with a lower W(u′) wins when its own path
+  part is better, e.g. shorter at an even cycle node, or through a higher even vertex. So W(v) rises while the gate's value falls. No
+  fixed order of the gates by W (or by Ξ) is respected.
+- Instances (experiments/si/fb2o/instances/, checked by experiments/si/fb2o/tcdir.py; logs/tcdir_*.txt):
+  - tcw_against_n12.pg (sha1 90b9651c…, S3 start): first-gate form. v = 5 switches from gate 2 (the even W-cycle node, W = (2, ∅, 0)) to
+    gate 3, which routes through 2 (W = (2, ∅, 3)). The ultimate gate is unchanged, so this kills only the first form.
+  - tcwult2_against_n8.pg (sha1 c2cceba0…) with tcwult2_against_n8.start.json (sha1 4a123025…): all three forms. v = 1 switches from
+    gate 0 to gate 4 at transition 0, against both W and Ξ.
+    gatev=0 D2=1 dchange=4 changes=5 same_stretch=1 toW=0 toX=0 toWX=0 againstW=1 tieW=0
+AGAINST_W ('experiments/si/fb2o/instances/tcwult2_against_n8.pg', 0, 1, 0, 4, -1)
+    → "againstW=1" (also with ULT=1).
+- Frequency (random 𝒞^2O, 150,000 games, n 5-12, seed 9; tcdir.py --rand with K=2):
+  - first-gate form: 21 of 94 qualifying changes go against W;
+  - ultimate form with structure fixed: 5 of 21.
+  - On the library (lib41's frontier games), the first-gate form held 47 / 47 with D fixed. Only random start pairs exposed it.
+- Consequence for TC-SWITCH (docs/si/N5-2O-T-box16.md §4.2): a per-vertex count of terminal changes cannot come from an order on the
+  gates. The natural monotone quantity at a terminal change is W(v) itself (WM), and bounding its changes per run is Theorem RUN's job.
+  So TC-SWITCH is no easier than RUN_D on two gates.
+
+## DEAD box 17 (L-SI successor 12, 2026-10-26T06:5xZ by date -u): "every twin change strictly raises COARSE_L(W(v)) at the twin level" (own plan, sent to the Lead 06:23Z as a planned lemma; never stated as proved)
+- Statement killed: at an in-phase S4a transition k → k+1 at which v changes its first gate u → u′ (u_k(v) ≠ u_{k+1}(v)) with λ_W(v)
+  unchanged and D_k = D_{k+1}, COARSE_L(W_{k+1}(v)) ≻ COARSE_L(W_k(v)) at L = top(P(W(u)) Δ P(W(u′))).
+- Obstruction: W(v) can change ONLY IN LENGTH (same cycle node, same path set). Then no coarse value changes at any L ≥ −1. WM-G gives
+  W_{k+1}(v) ⊵ W_k(v) and nothing more.
+- Instance: experiments/si/rund/instances/lenonly_n8.pg (sha1 725c2766a5b9e9011d200e3ba1a3d81aac8e144b), S3 start. At transition 1 → 2,
+  v = 2 switches gate 6 → 4 with D constant; W(2) = (4, ∅, 4) → (4, ∅, 3). Check: `python3 -I experiments/si/rund/rund.py --one
+  experiments/si/rund/instances/lenonly_n8.pg` prints `LENONLY ('…lenonly_n8.pg', 1, 2, 6, 4, (4, 0, 4), (4, 0, 3))`
+  (also in experiments/si/check.sh).
+- Found in random 𝒞^2O (`K=2 rund.py --rand 3000 5 12 41`, games #321 and #933, both S3 starts).
+- Replacement: the offset count, Theorem TWIN-GAP (docs/si/N5-RUND-box17.md §5), which counts the changes of v's offset Δ(v) = s^W − s^Ξ
+  by the rise of two monotone integer scores, not by coarse values.
+
+## DEAD box 17b (L-SI successor 12, 2026-10-26T07:1xZ by date -u): CONJECTURE OFFSET-ONCE (docs/si/N5-RUND-box17.md §6 (R2), §10)
+- Statement killed: inside one stretch_D (D_k, R_D and the gates' values Ξ(u), W(u) constant) of a fallback-free in-phase run with
+  (h3_D), no vertex's offset Δ(v) = w(P(W v)) − w(P(Ξ v)) returns to a value it has left.
+- Obstruction: monotonicity of s^Ξ, s^W allows a return whenever the route to the first gate gains ≥ |δ_A − δ_B| in between. A delay
+  chain on that route (one Even switch per transition, as S4a propagates) delivers the gain late: v leaves u1 for u2, then comes back.
+- Instance: experiments/si/rund/instances/offret_n23.pg (sha1 8fdfc38d0e11c4217c39700ca202d00c5740e80b) with offret_n23.start (sha1
+  634dbc59d3ad9a73bdd931cf7579c8e841d0128e). States 0-3: D = {4, 12}, τ = (2, 10), the gates' values unchanged, c = 0, (h3_D), no
+  fallback. v = 22: offset 131204 → 264200 → 131204. `python3 -I experiments/si/rund/gap.py --one …offret_n23.pg …offret_n23.start`
+  prints `RETURN ('…offret_n23.pg', 0, 3, 22, [131204, 264200, 264200, 131204])` (also in experiments/si/check.sh).
+- Family: mkalt.py K → K − 1 offset changes of one vertex in one stretch_D at n = Θ(K²) (K = 10: 9 at n = 182, offalt_K10.pg, sha1
+  b03fe313…).
+
+## DEAD box 17c (L-SI successor 12, 2026-10-26T07:3xZ by date -u): the strong ("levels only increase") form of CONJECTURE LEVEL-COUNT
+- Statement killed: inside one stretch_D with (h3_D), the rise level of v at successive offset changes strictly increases.
+- Obstruction: a return can be paid by removing a high ODD vertex from the old route, winning at a lower level.
+- Instance: experiments/si/rund/instances/incdown_n23.pg (sha1 18a5d000…) with incdown_n23.start (sha1 634dbc59…; built by mkinc.py 2 4).
+  v = 22: offset-change levels [20, 19]. Pinned in experiments/si/check.sh (lvl.py prints VIOLATION ('INC', …, 0, 3, 22, [20, 19])).
+- The count form (|OC(v)| ≤ |RL(v)|) is NOT killed: CONJECTURE (docs/si/N5-RUND-box17.md §12).

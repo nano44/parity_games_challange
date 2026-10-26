@@ -1,0 +1,1 @@
+states=95928 D2=9939 twin=6158 twin_noh3=4039 above=1013 below=3026 cw_above_c=2336

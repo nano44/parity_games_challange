@@ -1,0 +1,2 @@
+seed 11 n 24: best (fallbacks in one phase, phase length) = (4, 31) -> /home/user/parity_games_challange/experiments/si/fb2o/instances/climb_s11_n24_f4.pg
+seed 12 n 24: best (fallbacks in one phase, phase length) = (12, 22) -> /home/user/parity_games_challange/experiments/si/fb2o/instances/climb_s12_n24_f12.pg

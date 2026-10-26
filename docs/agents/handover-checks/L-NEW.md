@@ -270,3 +270,94 @@ Nothing running of mine. Oink NOT built (`tools/oink/build` absent): `scripts/se
   match the intent. Carried: stale container (fetch + rev-parse equality); `git status --porcelain` empty before
   `scripts/push.sh > file 2>&1; echo $?`; `git rev-parse HEAD origin/claude/l-new` equal after; read notifications whenever the
   notice appears; scratchpad, not $TMPDIR; kill by pid only.
+
+## Successor 23 (Opus 5.5; written 2026-10-26 00:59Z by date -u)
+
+### 1. Branch, head, ahead/behind trunk (claude/vibrant-johnson-nxvvxo)
+- Branch claude/l-new. `git fetch origin claude/l-new` (clone was 2,230 behind) → `git checkout -B claude/l-new origin/claude/l-new`
+  → `git rev-parse HEAD origin/claude/l-new` both b2b88ea9 (successor 22's last commit "lib41 data for Wo_D and G_D (c2)").
+- Trunk head 1c23106b ("Lead: merge REFEREE-2 13 check (GO); NOW; log", 00:53:35Z). Before merging: `git rev-list --left-right
+  --count HEAD...trunk` = **3 ahead / 141 behind**, merge-base 8e18cfd3 (unmerged: fe3b0527, 7e0fd91f, b2b88ea9; box 43 Route Δ).
+- `git merge --no-ff` trunk (no conflicts, no rebase) → 2d28236b: 4 ahead / 0 behind; 5 ahead after this commit.
+
+### 2. Open work and the next step of each
+Nothing running of mine. Oink NOT built (`tools/oink/build` absent): `scripts/setup_oink.sh` before any run that needs it.
+- **(1) Packet P-N5-GD-box43** (Lead 01:0xZ, waits for "go"): new frozen docs/new/P-N5-GD-box43.md from docs/new/N5-MULTI-box43.md
+  §4.4-4.5: Lemma G_D (a), (b), (c1), (c2), Lemma F1°_D, Lemma Wo_D, every game, hypotheses (h_D), (h3_D) explicit. Conjecture Δ1 and
+  Δ-RT NOT for signature (stated as CONJECTURE / OPEN only). Next: re-read §4.4 proofs line by line against the landed citations
+  (R17, R20, R21 ...), re-run experiments/new/box43/f1d.py, write, freeze, report sha1.
+- **(2) Route Δ** after (1): port R20's coarse machinery (C, FBL, FBF, CR, XA) with u* → M_D and "θ, w constant" → "Ξ(u), W(u)
+  constant for u ∈ D_k"; then Δ-RT (fine route order for different terminals below M_D); then Δ1.
+- **(3) Fixes files**, each on the Lead's go: docs/new/P-N5-DUAL-fixes-box43.md (DUAL-1 wording: "agree on states 0..j; the first
+  possible difference is at j + 1"; REFEREE-2 13's items; START status line from docs/referee/R-N5-START.md 4e440bd5, R50 now
+  LANDED) after REFEREE-2 13's report and both §Cs; docs/new/P-N5-NH-fixes-box43.md after both NH42 reports and §Cs. State now
+  (NOW 00:38Z): DUAL and NH42 REFEREE-signed; REFEREE-2 13 order P-N5-1O → FX → NH42 → DUAL, so neither is ready.
+- Not routed: G-N1-LB.
+
+### 3. docs/GAPS.md rows I own (trunk 1c23106b, `grep -n L-NEW docs/GAPS.md`)
+- **G-N5-TIME** (l.11): major; "L-NEW (L-LIT T22; referees later)"; **open**. Update 00:38Z: R49 (NEEDB) and R50 (KW) landed;
+  every count in the 𝒞^1O chain is landed; the assembly P-N5-1O is to be refereed. "Beyond 𝒞^1O: OPEN (frontier 𝒞^(≥2E,≥2O) holds
+  every known exponential-SI family)."
+- **G-N1-LB** (l.10): minor; "L-NEW (optional; not routed)"; **open**.
+- **G-N5-TERM** (l.16): major; "L-NEW (L-COMP checks runs)"; **closed** (RESULTS R15).
+
+### 4. Three owner rulings that most constrain me (verbatim, trunk docs/DECISIONS.md), with DECISIONS-INDEX status
+1. D18 (DECISIONS l.332-333; INDEX l.32 **active**; Lead reading L40, INDEX l.33 active):
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+2. D14 (l.244-246; INDEX l.22 **active**; Lead reading L35, l.23 active):
+   > D
+   > You know it can also test prveiously not tested approaches, it can come up with it own as well
+3. D16 (l.299-300; INDEX l.28 **active**; Lead reading L38, l.29 active):
+   > Then keep working as I told you to
+
+### 5. One trap, and the check that prevents it
+- **Trap** (successor 22, box 43): a stray `git checkout <trunk> --` (meant to fetch files) detached HEAD; a commit there would not
+  have reached claude/l-new. Restored before any push, tree clean.
+- **Check**: `git branch --show-current` = claude/l-new after any checkout, and `git rev-parse HEAD origin/claude/l-new` equal
+  after every push. Carried: stale clone (fetch + rev-parse equality at start; done above); `git status --porcelain` empty before
+  `scripts/push.sh > file 2>&1; echo $?`; read notifications whenever the notice appears; scratchpad, not $TMPDIR; kill by pid
+  only (never pkill -f); one "Resume point" heading in the notebook after any overwrite.
+
+## Successor 24 (Opus 5.5; written 2026-10-26 05:26Z by date -u)
+Predecessor: successor 23, session_011WFfFqRNrU1a8LQwbwazZN, parked at l-new 43e0bd81 (resume point; packet head a4fa94b0).
+
+### 1. Branch, head, ahead/behind trunk (claude/vibrant-johnson-nxvvxo)
+- Branch claude/l-new. STALE container again: local HEAD 5961101a (successor 6). `git fetch origin claude/l-new` → origin head
+  43e0bd81; `git merge --ff-only origin/claude/l-new` → HEAD 43e0bd81; `git merge-base --is-ancestor a4fa94b0 HEAD` true.
+- Trunk head 8460897d ("Lead: pin P-N5-XEP; merges (REFEREE §Cs); log", 05:19:39Z). Before merging: `git rev-list --left-right
+  --count 43e0bd81...trunk` = **1 ahead / 64 behind**, merge-base a4fa94b0 (unmerged: 43e0bd81, the resume-point commit).
+- `git merge --no-ff` trunk (no conflicts, no rebase) → b43b7c3c: 2 ahead / 0 behind; 3 ahead after this commit.
+
+### 2. Open work and the next step of each
+Nothing running. Oink NOT built (`tools/oink/build` absent): `scripts/setup_oink.sh` before any run that needs it.
+- **(a) Fixes files** (Lead 05:20Z brief; both referees signed VILB and ACCEL, both §Cs in): NEW docs/new/P-N5-VILB-fixes-box44.md
+  (VILB-N1 = N-VILB-1, N-VILB-2, VILB-N2 DATA tight at round j) and NEW docs/new/P-N5-ACCEL-fixes-box44.md (N-ACC-2 per-class freeze,
+  ACCEL-N1 = N-ACC-1, ACCEL-N2 (EPOCH (b), R57 when landed), ACCEL-N3 = N-ACC-3). Neither file exists (checked). Packets re-measured:
+  P-N5-VILB sha1 872d4400…, P-N5-ACCEL sha1 301f0be0…, P-N5-XEP sha1 237dd5eb… (pinned on trunk 8460897d). Next: read REFEREE
+  dcb1451c / a19cdff7 / 09b5dbf5 (+906247c6) and REFEREE-2 f0e82d8a / 5ad79417, write, freeze, report sha1s.
+- **(b) Research**: X_SN^pre for epochs with |D| = 1: port R19-R34 per epoch with o := u (N5-DELTA-box44 §7, N5-FBF §13 D-EPOCH);
+  read L-SI's Lemma G_D-NC (P-N5-NC, sha1 2036e7c8).
+- **Queued on the Lead's word**: FBK fixes2 (REFEREE-2 G-FBK-1, N-FBK-1..4, REFEREE 12's notes) after REFEREE 12's FBK report and §Cs.
+- Not routed: G-N1-LB.
+
+### 3. docs/GAPS.md rows I own (trunk 8460897d, `grep -n L-NEW docs/GAPS.md`)
+- **G-N5-TIME** (l.11): major; "L-NEW (L-LIT T22; referees later)"; **open**. Last update 04:15Z: R56 (FB-RED) landed; 𝒞^1O part
+  closed by R51; general games OPEN.
+- **G-N1-LB** (l.10): minor; "L-NEW (optional; not routed)"; **open**.
+- **G-N5-TERM** (l.16): major; "L-NEW (L-COMP checks runs)"; **closed** (RESULTS R15).
+
+### 4. Three owner rulings that most constrain me (verbatim, trunk docs/DECISIONS.md), with DECISIONS-INDEX status
+1. D18 (DECISIONS l.332-333; INDEX l.32 **active**; Lead reading L40, l.33 active):
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+2. D14 (l.244-246; INDEX l.22 **active**; Lead reading L35, l.23 active):
+   > D
+   > You know it can also test prveiously not tested approaches, it can come up with it own as well
+3. D16 (l.299-300; INDEX l.28 **active**; Lead reading L38, l.29 active):
+   > Then keep working as I told you to
+
+### 5. One trap, and the check that prevents it
+- **Trap** (successor 23, box 44): a checker counted same-terminal FBL edges at states without (h3_D), producing false violations;
+  a lemma's hypotheses must be in the checker's guard, not only in the text.
+- **Check**: every checker asserts each hypothesis of the lemma it tests before counting a violation, and a reported violation is
+  re-checked by hand on the instance before it is called a counterexample. Carried: stale container (caught again above: fetch +
+  is-ancestor a4fa94b0); `scripts/push.sh > file 2>&1; echo $?`; ReadNotifications before acting on a request that may be done.

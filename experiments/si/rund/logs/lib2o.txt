@@ -1,0 +1,9 @@
+LW_known=1 dch=3 h3run=1 lw_ge_LW=0 lw_gt_LW=0 lw_le_Ls=1 post=0 runs=37 runs_h3=32 runs_long=0 tc=3 trans=201 twin=3 w_lenonly=0 wsame=1
+HIST {('dch', 'set'): 2, ('dch', 'wsame'): 1}
+MAX twin per run [2, ('experiments/new/box21/instances/fts_ph16.pg', 0, 11, 16)]
+MAX twin per vertex per run [1, ('experiments/new/box21/instances/fts_ph16.pg', 0, 11, 16)]
+RUND PASS
+
+real	0m0.374s
+user	0m0.221s
+sys	0m0.030s

@@ -1,0 +1,1 @@
+{'WOD_without_hD_chk': 66, 'MD_ge0_states': 85, 'GC2_at_MD-1_fires': 85}

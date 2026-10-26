@@ -1,0 +1,14 @@
+CNO_chk                    60
+EXS_chk                    989
+FBR_chk                    110021
+YF_chk                     41580
+fb_total                   1049
+games                      367
+late_fallbacks             0
+max_f                      33
+max_rho                    51
+phases                     5393
+runs                       1101
+skip_big                   45
+FAILS 0
+EXIT 0

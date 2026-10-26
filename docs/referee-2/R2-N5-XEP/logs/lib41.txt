@@ -1,0 +1,24 @@
+MODE files ../../../experiments/new/box41/lib41.txt 3 MUT -
+DEP_checks: 12397
+GDA_checks: 587874
+REC_XSN_D: 5455
+REC_XSN_pre: 2838
+REC_cross_after_epoch_freeze: 0
+REC_cross_at_fallback: 991
+REC_cross_epoch_boundary: 2617
+REC_cross_inside_epoch: 3016
+REC_crossings: 5633
+RSTICK_checks: 28676
+RSTICK_transitions: 11338
+SNPA_checks: 66945
+SNPB_checks: 16590
+SNPC_checks: 7136
+SPLITR_checks: 253719
+XEP_checks: 7136
+phases: 7136
+runs: 1236
+SNPB_max_changes_after_prefix: (0, 'experiments/n5-exhaustive/instances/b4_cyc6_0.pg#0')
+max_N_ep: (50, 'experiments/si/orlens/instances/lev_l_x.pg#0')
+max_X_D: (99, 'experiments/red/so/instances/xsn91_n48.pg#0')
+max_epoch_fallbacks_minus_(n-1): (-1, 'experiments/n5-exhaustive/instances/n3all_maxph_0.pg#1')
+RESULT OK violations=0

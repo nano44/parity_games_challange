@@ -1,5 +1,91 @@
 # Handover check: REFEREE
 
+## successor 13 (2026-10-26T07:33Z by date -u; Opus 5.5 under D15, label "(Opus 5.5, D15)"; predecessor successor 12, handover 010924c7)
+Measured from the repository at the time of writing, not recalled.
+
+### 1. Branch, head, distance to trunk
+- Branch `claude/referee`. Local branch started STALE at 73b46eb8 again (`git rev-list --count 73b46eb8..010924c7` = 2629).
+  `git fetch origin`; `git merge --ff-only origin/claude/referee`: HEAD = origin/claude/referee = 010924c7 (`git merge-base --is-ancestor
+  010924c7 HEAD` true).
+- Trunk `claude/vibrant-johnson-nxvvxo` at ca0a4e97 ("Lead: land R61 (FBK, C70 761bcc73) then R63 (XEP, C72 a42e44f8); R62 rev. (C71 E-3);
+  pin P-N5-STAU; ..."). Before merging: 0 ahead / 61 behind (010924c7 is already an ancestor of trunk via bbb6b80c; merge-base = 010924c7).
+- Merged trunk with `git merge --no-ff` (e4f5eee1): 1 ahead / 0 behind before this file's commit.
+- Oink: scripts/setup_oink.sh built 8fbf0a7 into tools/oink/build, exit 0.
+
+### 2. Open work and next step (notebook "HANDOVER (successor 12 -> successor 13)", checked against the tree)
+- IN FLIGHT: none (handover says so; every §C in its DONE table exists in docs/referee/).
+- New, from the Lead's brief (07:31Z): P-N5-STAU (L-NEW succ. 24), docs/new/P-N5-STAU-box45.md, sha1 7446d9a9..., frozen at l-new 010bfdae,
+  pin trunk ca0a4e97. Next, after "go": check the sha1, review §1 Lemma Στ-STEP (a)-(d) + corollary (sign or not), CHECK the §2 audit table
+  and answer its two audit questions ((1) is the §2.1 list the whole citation chain of R48 (i) and R50 (h); (2) does any proof use S4b's
+  output implicitly beyond its value); §3/§4 not signed. Write docs/referee/R-N5-STAU.md; no docs/referee-2/ file on STAU before it is pushed.
+- Not mine but pending at the lanes (handover NEEDS): fixes files FBK-1/N-FBK-1/2, EPR-1/EPR-N1, H3 notes, 2T notes, ACC-2, 1E-N1.
+
+### 3. docs/GAPS.md rows relevant to me (trunk ca0a4e97)
+- REFEREE owns no row. The row my packets feed: G-N5-TIME (l.11), major, owner L-NEW ("referees later"), **open**; last UPDATE 07:25Z:
+  R61 (FBK) and R63 (XEP) landed; "N_ep / ρ and X_SN^pre OPEN; general games OPEN."
+- G-FBK-1 and G-EPR-1 are gap labels inside RESULTS (R61 l.3108-3151; R64 draft), not GAPS rows. Other open rows (not mine): GAP-A, GAP-C,
+  G-S5-6, G-NEST, G-N1-LB. G-N5-TERM closed.
+
+### 4. Three owner rulings that most constrain me (verbatim, docs/DECISIONS.md), with DECISIONS-INDEX status
+1. D1 (index: **active**; DECISIONS.md l.7-8):
+   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+   > Never downgrade the referee to save money.
+2. D15 (index: **active**; DECISIONS.md l.278):
+   > q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it
+3. D18 (index: **active**; DECISIONS.md l.333):
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+
+### 5. One trap that bit this lane, and the check that prevents it
+- Trap (successors 5-13): the container starts stale at 73b46eb8 (2629 behind the handover SHA). Check: `git fetch origin`, fast-forward,
+  `git merge-base --is-ancestor <handover SHA> HEAD` before any work.
+- Content trap for this packet type (successor 12's misses N-2T-1, N-H3-1, N-FBK-1/2): quotes and "landed premise" lists checked by eye.
+  Check: verify every quoted parenthetical and every cited RESULTS letter by script against the cited file.
+
+## successor 12 (2026-10-26T03:25Z by date -u; Opus 5.5 under D15, label "(Opus 5.5, D15)"; predecessor successor 11, handover 76a02311)
+Measured from the repository at the time of writing, not recalled.
+
+### 1. Branch, head, distance to trunk
+- Branch `claude/referee`. Local branch started STALE at 73b46eb8 again (`git rev-list --count 73b46eb8..76a02311` = 2316).
+  `git fetch origin`; `git merge --ff-only origin/claude/referee`: HEAD = origin/claude/referee = 76a02311 (checked with
+  `git merge-base --is-ancestor` and `git rev-list --left-right --count`, 0/0).
+- Trunk = remote HEAD `claude/vibrant-johnson-nxvvxo` (`git ls-remote --symref origin HEAD`) at e54d8a48 ("Lead: land R53 (P-N5-NH-box42)
+  and R54 (P-N5-DUAL) ..."). Before merging: 3 ahead / 3 behind trunk, merge-base c3f6f2bf (the FBRED pin). The 3 ahead: 59b070c2
+  (trunk merge), 1feff548 (R-N5-FBRED), 76a02311 (handover). The 3 behind: 1e163a67, c8ded866, e54d8a48 (Lead).
+- Merged trunk with `git merge --no-ff` (f7a93dc3): 4 ahead / 0 behind before this file's commit.
+- Oink: scripts/setup_oink.sh built 8fbf0a7 into tools/oink/build, exit 0.
+
+### 2. Open work and next step (notebook "HANDOVER (successor 11 -> successor 12)", checked against the tree)
+- §C on P-N5-FBRED. My lane's report docs/referee/R-N5-FBRED.md (1feff548, by successor 11; sections Verdicts, §1-§5, no §C:
+  `grep -n "§C"` finds none). REFEREE-2's report: commit 814ac456 on origin/claude/referee-2 (not yet on trunk; I have not opened it).
+  Packet docs/new/P-N5-FBRED-box44.md, sha1 11b15455f70d439c93a48d7e82fcdc14ef73854d (re-measured, matches). Next, after "go": read the
+  packet and the report's §2 port table, then R2-N5-FBRED, then append "§C. Comparison with REFEREE-2" (verdict table, joint map
+  FBRED-N1, N2 vs N-FBRED-1..4, data), saying where I only accept successor 11's reading.
+- P-N5-1E (L-SI): docs/si/P-N5-1E-box16.md is on trunk; no pin received from the Lead. Next: wait for the pin; start after FBRED §C.
+- Nothing else open (handover DONE table: every earlier §C written).
+
+### 3. docs/GAPS.md rows relevant to me (trunk e54d8a48)
+- REFEREE owns no row. The row my packets feed: G-N5-TIME (l.11), major, owner L-NEW (L-LIT T22; "referees later"), **open**. Last
+  UPDATE 03:19Z: R53 (P-N5-NH-box42) and R54 (P-N5-DUAL) LANDED [refereed-only]; 𝒞^1O part closed by R51; "The 𝒞^1E iteration bound
+  O(n¹⁷) is a READING (N-DUAL-3) until P-N5-1E is signed and landed. General games OPEN."
+- Other open rows (not mine): GAP-A, GAP-C, G-S5-6 (L-ALG), G-NEST (L-RED), G-N1-LB (L-NEW). G-N5-TERM (l.16) closed (R15).
+
+### 4. Three owner rulings that most constrain me (verbatim, docs/DECISIONS.md), with DECISIONS-INDEX status
+1. D1 (index l.5: **active**; DECISIONS.md l.7-8):
+   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+   > Never downgrade the referee to save money.
+2. D15 (index l.26: **active**; DECISIONS.md l.278):
+   > q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it
+3. D18 (index l.32: **active**; DECISIONS.md l.333):
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+
+### 5. One trap that bit this lane, and the check that prevents it
+- Trap (again now, successors 5-12): the container starts stale at 73b46eb8, 2316 commits behind origin/claude/referee. Check:
+  `git fetch origin` then `git merge-base --is-ancestor 76a02311 HEAD` / `rev-list --left-right --count HEAD...origin/claude/referee`
+  = 0/0 before any work.
+- Content trap (successor 10, FBP-1 / FBP-2): proofs silently assuming the generic case. Check: test self-loop at o, o = c_θ, |U| = 2
+  in every bound, and report my own count for every "vacuous" hypothesis with the file set.
+- Process trap (successor 11): `grep -v "^EX"` also hid counters named EXS_*; filter with "^EX (".
+
 ## successor 11 (2026-10-25T21:00Z by date -u; Opus 5.5 under D15/L37, label "(Opus 5.5, D15)"; predecessor successor 10, handover 1c6c3448)
 Measured from the repository at the time of writing, not recalled.
 

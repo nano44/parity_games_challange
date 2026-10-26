@@ -1,0 +1,92 @@
+MODE files ../../../experiments/new/box41/lib41.txt 1 MUT plain
+C1E_runs: 8
+DUAL1_ok: 397
+MIRC_ok: 253
+REC_plain_differs_at_j+1: 15
+VIOLATIONS: 15
+V_DUAL1: 15
+iterations: 8477
+k_0: 9
+k_1: 253
+k_10: 5
+k_100: 1
+k_107: 1
+k_108: 1
+k_11: 9
+k_12: 9
+k_13: 5
+k_135: 1
+k_14: 2
+k_15: 3
+k_16: 10
+k_164: 1
+k_165: 1
+k_17: 4
+k_18: 3
+k_19: 3
+k_198: 1
+k_2: 5
+k_20: 3
+k_21: 2
+k_23: 2
+k_233: 1
+k_24: 3
+k_25: 2
+k_26: 1
+k_28: 1
+k_29: 1
+k_3: 4
+k_30: 1
+k_32: 4
+k_33: 2
+k_35: 2
+k_36: 2
+k_38: 1
+k_39: 1
+k_4: 3
+k_40: 1
+k_44: 2
+k_48: 1
+k_5: 6
+k_51: 1
+k_54: 2
+k_55: 1
+k_56: 1
+k_57: 1
+k_58: 1
+k_59: 1
+k_6: 3
+k_60: 1
+k_62: 1
+k_63: 1
+k_64: 1
+k_65: 1
+k_7: 4
+k_75: 5
+k_77: 1
+k_8: 3
+k_84: 1
+k_9: 9
+runs: 412
+runs_with_two_sided_fb: 15
+two_sided_fbs: 54
+C1E_max_sigma_changes_over_bound: (1.0, 'experiments/n5-exhaustive/instances/n4_thch_0.pg#0')
+max_distinct_tau: (38, 'experiments/red/n5inj/instances/wide_h16.pg#0')
+max_dual_phases: (116, 'experiments/red/so/instances/xsn91_n48.pg#0')
+max_phases: (48, 'experiments/red/n5/instances/sym_h16_s1.pg#0')
+VIOLATION DUAL1: experiments/new/box21/instances/oneodd_c16.pg#0: N5 on G is not the mirror of N5^OF on G^d (lengths 37, 38)
+VIOLATION DUAL1: experiments/new/box21/instances/oneodd_c24.pg#0: N5 on G is not the mirror of N5^OF on G^d (lengths 45, 44)
+VIOLATION DUAL1: experiments/new/box29/instances/u1_n32.pg#0: N5 on G is not the mirror of N5^OF on G^d (lengths 17, 18)
+VIOLATION DUAL1: experiments/new/box31/instances/u1flat_best_n32.pg#0: N5 on G is not the mirror of N5^OF on G^d (lengths 11, 11)
+VIOLATION DUAL1: experiments/red/ctxp/instances/margin1_mc5.pg#0: N5 on G is not the mirror of N5^OF on G^d (lengths 13, 10)
+VIOLATION DUAL1: experiments/red/n5/instances/sym_h12_s1.pg#0: N5 on G is not the mirror of N5^OF on G^d (lengths 35, 35)
+VIOLATION DUAL1: experiments/red/n5/instances/sym_h8_s1.pg#0: N5 on G is not the mirror of N5^OF on G^d (lengths 26, 26)
+VIOLATION DUAL1: experiments/red/n5inj/instances/elimn_cex_n48.pg#0: N5 on G is not the mirror of N5^OF on G^d (lengths 93, 94)
+VIOLATION DUAL1: experiments/red/n5inj/instances/phase2_pk32.pg#0: N5 on G is not the mirror of N5^OF on G^d (lengths 57, 44)
+VIOLATION DUAL1: experiments/red/n5inj/instances/returns_rt32.pg#0: N5 on G is not the mirror of N5^OF on G^d (lengths 58, 45)
+VIOLATION DUAL1: experiments/red/n5inj/instances/returns_rt64.pg#0: N5 on G is not the mirror of N5^OF on G^d (lengths 91, 91)
+VIOLATION DUAL1: experiments/red/so/instances/exitr_cex_n48.pg#0: N5 on G is not the mirror of N5^OF on G^d (lengths 23, 24)
+VIOLATION DUAL1: experiments/red/tcpert/instances/tcS8_N9.pg#0: N5 on G is not the mirror of N5^OF on G^d (lengths 37, 40)
+VIOLATION DUAL1: experiments/red/xing/instances/u1t_cex_n32.pg#0: N5 on G is not the mirror of N5^OF on G^d (lengths 13, 14)
+VIOLATION DUAL1: experiments/si/orlens/instances/s_elim24_final.pg#0: N5 on G is not the mirror of N5^OF on G^d (lengths 67, 67)
+RESULT FAIL violations=15

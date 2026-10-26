@@ -1,0 +1,12 @@
+H3=526 H3_notNC=23 C2H_n=18323 C2H_notNC=719 C2H_V=2504 FRZ_runs=57 FRZ_n=0 FRZ_V=0 states=1039 D2=224 hD=389 NC=603 NC_not_hD=214 B_n=3229 B_V=0 C2_n=17604 C2_V=0
+VIOLATION ('C2H', 'experiments/red/carry/instances/cm_mdrop_both_n28.pg', 3, 2)
+VIOLATION ('C2H', 'experiments/red/carry/instances/ctx11_n40.pg', 7, 9)
+VIOLATION ('C2H', 'experiments/red/carry/instances/ctx12_n40.pg', 6, 26)
+VIOLATION ('C2H', 'experiments/red/carry/instances/ctx12_n40.pg', 7, 14)
+VIOLATION ('C2H', 'experiments/red/carry/instances/ctx13_n40.pg', 5, 14)
+VIOLATION ('C2H', 'experiments/red/carry/instances/ctx13_n40.pg', 8, 2)
+VIOLATION ('C2H', 'experiments/red/carry/instances/ctx13_n40.pg', 8, 14)
+VIOLATION ('C2H', 'experiments/red/carry/instances/ctx13_n40.pg', 9, 2)
+VIOLATION ('C2H', 'experiments/red/carry/instances/ctx13_n40.pg', 9, 14)
+VIOLATION ('C2H', 'experiments/red/carry/instances/ctx13_n40.pg', 10, 2)
+GDNC FAIL

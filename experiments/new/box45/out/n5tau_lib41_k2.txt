@@ -1,0 +1,1 @@
+games 253: runs 759, phases 3164, TIEKEEP 29, TIEPH 16, FB_V 0, FMAX 33, LMAX 112, LMAX_n 48

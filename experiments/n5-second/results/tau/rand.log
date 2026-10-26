@@ -1,0 +1,1 @@
+{"counts": {"runs": 20000, "transitions": 39780, "S4b_tau_keeps": 597, "runs_diverged(N5tau != SPEC)": 382, "runs_with_keeps": 423, "phases": 7634}, "maxima": {"max_f_phase": 1}, "KW_viol": 0, "FBP_viol": 0, "PHASE_checked": 50508, "nviol": 0}

@@ -1,0 +1,50 @@
+ALT_changes                28
+ALT_strict                 28
+NEP_chk                    20
+ROUTE_chk                  450
+SATK_FAIL                  37
+SATK_chk                   37
+SATK_g                     37
+games                      4
+max_depth                  1
+max_epochs                 8
+phases                     20
+FAILS 37
+EX ( ('SATK', 'docs/referee-2/R2-N5-2T/instances/fb17_g4_P66.pg', 8, 34, 33)
+EX ( ('SATK', 'docs/referee-2/R2-N5-2T/instances/fb17_g4_P66.pg', 9, 34, 33)
+EX ( ('SATK', 'docs/referee-2/R2-N5-2T/instances/fb17_g4_P66.pg', 10, 34, 33)
+EX ( ('SATK', 'docs/referee-2/R2-N5-2T/instances/fb17_g4_P66.pg', 11, 34, 33)
+EX ( ('SATK', 'docs/referee-2/R2-N5-2T/instances/fb17_g4_P66.pg', 12, 34, 33)
+EX ( ('SATK', 'docs/referee-2/R2-N5-2T/instances/fb17_g4_P66.pg', 13, 34, 33)
+EX ( ('SATK', 'docs/referee-2/R2-N5-2T/instances/fb17_g4_P66.pg', 14, 34, 33)
+EX ( ('SATK', 'docs/referee-2/R2-N5-2T/instances/fb17_g4_P66.pg', 15, 34, 33)
+EX ( ('SATK', 'docs/referee-2/R2-N5-2T/instances/fb17_g4_P66.pg', 16, 34, 33)
+EX ( ('SATK', 'docs/referee-2/R2-N5-2T/instances/fb17_g4_P66.pg', 17, 34, 33)
+EX ( ('SATK', 'docs/referee-2/R2-N5-2T/instances/fb17_g4_P66.pg', 18, 34, 33)
+EX ( ('SATK', 'docs/referee-2/R2-N5-2T/instances/fb17_g4_P66.pg', 19, 34, 33)
+EX ( ('SATK', 'docs/referee-2/R2-N5-2T/instances/fb17_g4_P66.pg', 20, 34, 33)
+EX ( ('SATK', 'docs/referee-2/R2-N5-2T/instances/fb17_g4_P66.pg', 21, 34, 33)
+EX ( ('SATK', 'docs/referee-2/R2-N5-2T/instances/fb17_g4_P66.pg', 22, 34, 33)
+EX ( ('SATK', 'docs/referee-2/R2-N5-2T/instances/fb17_g4_P66.pg', 23, 34, 33)
+EX ( ('SATK', 'docs/referee-2/R2-N5-2T/instances/fb17_g4_P66.pg', 24, 34, 33)
+EX ( ('SATK', 'docs/referee-2/R2-N5-2T/instances/fb17_g4_P66.pg', 25, 34, 33)
+EX ( ('SATK', 'docs/referee-2/R2-N5-2T/instances/fb17_g4_P66.pg', 26, 34, 33)
+EX ( ('SATK', 'docs/referee-2/R2-N5-2T/instances/fb17_g4_P66.pg', 27, 34, 33)
+EX ( ('SATK', 'docs/referee-2/R2-N5-2T/instances/fb17_g5_P66.pg', 11, 36, 34)
+EX ( ('SATK', 'docs/referee-2/R2-N5-2T/instances/fb17_g5_P66.pg', 12, 36, 34)
+EX ( ('SATK', 'docs/referee-2/R2-N5-2T/instances/fb17_g5_P66.pg', 13, 36, 34)
+EX ( ('SATK', 'docs/referee-2/R2-N5-2T/instances/fb17_g5_P66.pg', 14, 36, 34)
+EX ( ('SATK', 'docs/referee-2/R2-N5-2T/instances/fb17_g5_P66.pg', 15, 36, 34)
+EX ( ('SATK', 'docs/referee-2/R2-N5-2T/instances/fb17_g5_P66.pg', 16, 36, 34)
+EX ( ('SATK', 'docs/referee-2/R2-N5-2T/instances/fb17_g5_P66.pg', 17, 36, 34)
+EX ( ('SATK', 'docs/referee-2/R2-N5-2T/instances/fb17_g5_P66.pg', 18, 36, 34)
+EX ( ('SATK', 'docs/referee-2/R2-N5-2T/instances/fb17_g5_P66.pg', 19, 36, 34)
+EX ( ('SATK', 'docs/referee-2/R2-N5-2T/instances/fb17_g5_P66.pg', 20, 36, 34)
+EX ( ('SATK', 'docs/referee-2/R2-N5-2T/instances/fb17_g5_P66.pg', 21, 36, 34)
+EX ( ('SATK', 'docs/referee-2/R2-N5-2T/instances/fb17_g5_P66.pg', 22, 36, 34)
+EX ( ('SATK', 'docs/referee-2/R2-N5-2T/instances/fb17_g5_P66.pg', 23, 36, 34)
+EX ( ('SATK', 'docs/referee-2/R2-N5-2T/instances/fb17_g5_P66.pg', 24, 36, 34)
+EX ( ('SATK', 'docs/referee-2/R2-N5-2T/instances/fb17_g5_P66.pg', 25, 36, 34)
+EX ( ('SATK', 'docs/referee-2/R2-N5-2T/instances/fb17_g5_P66.pg', 26, 36, 34)
+EX ( ('SATK', 'docs/referee-2/R2-N5-2T/instances/fb17_g5_P66.pg', 27, 36, 34)
+exit 0

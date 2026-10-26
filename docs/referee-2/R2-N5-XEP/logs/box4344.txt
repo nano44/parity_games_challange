@@ -1,0 +1,24 @@
+MODE files ../R2-N5-FBRED/box4344.lst 6 MUT -
+DEP_checks: 294
+GDA_checks: 12415
+REC_XSN_D: 106
+REC_XSN_pre: 60
+REC_cross_after_epoch_freeze: 0
+REC_cross_at_fallback: 35
+REC_cross_epoch_boundary: 46
+REC_cross_inside_epoch: 60
+REC_crossings: 106
+RSTICK_checks: 290
+RSTICK_transitions: 246
+SNPA_checks: 1621
+SNPB_checks: 89
+SNPC_checks: 328
+SPLITR_checks: 1392
+XEP_checks: 328
+phases: 328
+runs: 60
+SNPB_max_changes_after_prefix: (0, 'experiments/new/box44/instances/fb17_n32.pg#0')
+max_N_ep: (17, 'experiments/new/box43/instances/dch16_n44.pg#0')
+max_X_D: (27, 'experiments/new/box43/instances/dch16_n44.pg#0')
+max_epoch_fallbacks_minus_(n-1): (-5, 'experiments/new/box43/instances/retf_n6.pg#0')
+RESULT OK violations=0
