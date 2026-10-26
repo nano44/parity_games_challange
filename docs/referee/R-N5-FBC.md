@@ -157,3 +157,7 @@ Verdicts identical. Joint gap map: EMPTY (neither referee found a gap).
 Both own engines, 0 failures of every signed check (mine: 36,720 runs, 3,394 FB-RISE_C checks; REFEREE-2: 2,294 exact checks, 32·10⁶ Case A
 checks); both reproduce the packet's figures (fr39_q4_n48: 39 / 7 / 24; farrise25_n32: 25 unsaturated); both τ-frame controls bite (mine 79,
 REFEREE-2 14,399). Nothing open between the referees on FBC.
+- ERRATUM (2026-10-26T15:27Z by date -u, after the Lead's LEAD-N1 of 15:10Z; the §C text above is left as written). The §C "Data" line's
+  "mine: 36,720 runs, 3,394 FB-RISE_C checks" is an arithmetic slip. The §4 table is right: 35,720 runs (3,297 + 2,421 + 15,000 + 15,000 + 2),
+  2,794 in-phase fallbacks checked exactly by FB-RISE_C (630 + 801 + 597 + 727 + 39), out of 3,384 in-phase fallbacks in those runs (the n ≤ 34
+  row's other 590 sit in 115 phases over the path budget). The same two figures were wrong in my 14:10Z message to the Lead.
