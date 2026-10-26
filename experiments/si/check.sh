@@ -252,3 +252,12 @@ o=$(GCI=1 python3 -I root/staticdepth.py --one ../new/box48/instances/long121_n4
 grep -q "checked=27 " <<<"$o"; grep -q "gci=29 " <<<"$o"; grep -q "STATICDEPTH PASS" <<<"$o"
 MUT=1 python3 -I root/staticdepth.py --one ../n5-exhaustive/instances/b6_xs_n24.pg | grep -q "SETTLE_V=21 "
 echo "root (staticdepth: STATIC-DEPTH tight on b6_xs_n24, holds on long121 incl. global C-intervals; control bites): PASS"
+# P-N5-DEPTH-box22 packet: 12 quotes verbatim (SPEC, RESULTS, FBPOLY at trunk 982f5c62; RESULTS at 58061d91; GCX at 02240121; R91 at l-red
+# 54de3f2f); shifted control fails.
+if git cat-file -e 982f5c629 && git cat-file -e 58061d91 && git cat-file -e 02240121 && git cat-file -e 54de3f2f; then
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-DEPTH-box22.md | grep -q "quotes=12 bad=0"
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-DEPTH-box22.md --mut | grep -q "QUOTES FAIL"
+  echo "root (packet P-N5-DEPTH-box22: 12 quotes verbatim; shifted control fails): PASS"
+else
+  echo "root (packet P-N5-DEPTH-box22 quotes): NOT RUN (a source commit is not in this clone)"
+fi
