@@ -159,3 +159,47 @@ wins V \ W in G_σ̄), ITER ≤ the packet's bound, FMAX (in-phase fallbacks ≤
 - 1O-N1 (Theorem step 3): R48's f (in-phase Even fallbacks) = R50 (h)'s f (in-phase fallback transitions); an Odd fallback ends a phase.
 - 1O-N2 (T*): N_Ξ's "F + N_st" is looser than R50 (h)'s "f + (N_st − 1)"; harmless.
 - §2.1's REFEREES' CHECK: done (§3 here; R-N5-START Addendum 1).
+
+## §C. Comparison with REFEREE-2 (R2-N5-1O.md, referee-2 04c2d708, REFEREE-2 successor 13) (Opus 5.5, D15)
+Written 2026-10-26T01:22Z by date -u, REFEREE successor 11. Routing: the Lead's message of 01:18Z (Lead's stamp). My report (4298dae9) was pushed
+before I opened R2-N5-1O.md. Same object: P-N5-1O-box15.md sha1 2cf5e672 at 291c110d.
+
+### C.1 Verdicts
+| statement | REFEREE | REFEREE-2 |
+| --- | --- | --- |
+| §1 quotes | checked, verbatim (table) | checked, 11 of 13 verbatim; 2 cosmetic attributions (N-1O-6) |
+| Theorem 1O-POLY | SIGNED (1O-N1, 1O-N2) | SIGN (N-1O-2) |
+| §2.1 start-freeness, R32 / R33 line by line | done (§3; R-N5-START Addendum 1): START-FREE | done (N-1O-5): START-FREE |
+| Lemma BIT | SIGNED (BIT-N1) | SIGN (N-1O-3) |
+| Lemma OUT | SIGNED WITH GAP OUT-1 | SIGN (N-1O-1 precision; N-1O-4) |
+| Corollary 1O-TIME | SIGNED | SIGN |
+| §6, §7 READINGs | not signed | not signed |
+Both referees sign every statement. The only difference is the label of one shared finding (C.2, first row). The R32 / R33 start-freeness
+item was checked line by line by both, independently, with the same result.
+
+### C.2 Joint gap / note map (one fixes-file line per row)
+| REFEREE | REFEREE-2 | ruling |
+| --- | --- | --- |
+| OUT-1 ("reward(λ(v)) > 0" false when λ(v) is the rank-0 vertex with even priority; "≥ 0" repairs it; odd rewards ≤ −1) | N-1O-1 (the same; REFEREE-2's data REACHES the case: 1,969 of 26,000 random stops, 81 of 1,509 library stops; the conclusion holds there) | SAME finding, found independently. As with KW-1, I keep "gap, CLOSED by the repair" (a sentence false as written, one vertex), and do not object to the Lead recording it as one precision item. ONE fixes line: "Step 2: reward(λ(v)) ≥ 0 (twice); odd cycle nodes have reward ≤ −1". REFEREE-2's data shows the corner is not hypothetical. |
+| — (my §2 marked "O(n¹⁸)" as checked) | N-1O-2 (ITER = O(mΔd_o n¹³) ⊆ O(n¹⁷) with m ≤ n², Δ, d_o ≤ n; "O(n¹⁸)" is true but loose) | ACCEPTED: n² · n · n · n¹³ = n¹⁷. I checked the inclusion, not its tightness. Fixes line: "⊆ O(n¹⁷)". |
+| — (my §4 accepted O(n²(n + m)) per S1 run as a loose bound) | N-1O-3 (each R_v becomes dead at (vi), so Σ_v |R_v| ≤ n and one S1 run costs O(n(n + m)) words + O(n²) vector bits) | ACCEPTED: the regions R_v are disjoint, so step (iii)'s loop over u ∈ R_v totals ≤ n reachability searches over all v. Optional fixes line. |
+| BIT-N1 (memoisation of S1 (iv)'s recursion; Q3) | — | REFEREE only; stands. Fixes line as in §9. |
+| §5 step 2: R21 (a)'s parenthetical is the general form (P-N5-X §1: VJ00 (11), R17 (F1) on the dual, no 𝒞^1O); R18 (d) Lemma S (a) states it | N-1O-4 (the same: YES; cite R18 (d) Lemma S (a) beside R21 (a)) | SAME. Fixes line: "cite R18 (d) Lemma S (a) (statement) with R21 (a) (parenthetical)". |
+| §3 / Addendum 1 to R-N5-START (R32 / R33 line by line) | N-1O-5 (the same check, step by step) | SAME result, two independent readings. The packet's §2.1 REFEREES' CHECK is closed by both. |
+| §1 (quotes in the citation table verbatim) | N-1O-6 (two further quotes in §4: VJ00 (11) via P-N5-LP §0 l. 29, and R15's G-N5T-3 with inner quote marks; cosmetic) | ACCEPTED (my §1 checked the citation table only). Cosmetic. |
+| 1O-N1 (R48's f = R50 (h)'s f; an Odd fallback ends a phase) | — | REFEREE only; stands (a units line). |
+| 1O-N2 (N_Ξ's "F + N_st" looser than R50 (h)) | — | REFEREE only; harmless. |
+
+### C.3 Data, compared
+- Lemma OUT at the stop: my onecheck (759 library runs with random starts, 500 random games; W = own Zielonka, σ and σ̄ winning) and
+  REFEREE-2's (26,000 random 𝒞^1O stops, 1,509 library stops, 7,000 general-game stops): no failure on either engine. REFEREE-2 also
+  records the OUT-1 corner; my probe did not count it.
+- No disagreement in data.
+
+### C.4 Result
+- P-N5-1O: Theorem 1O-POLY, Lemma BIT, Lemma OUT and Corollary 1O-TIME are signed by both referees. One shared item OUT-1 = N-1O-1 (closed by
+  its one-word repair); notes N-1O-2 (O(n¹⁷)), N-1O-3, N-1O-4, N-1O-5, N-1O-6, BIT-N1, 1O-N1, 1O-N2 for the fixes file. The R32 / R33
+  start-freeness check is done by both.
+- What it is: N5 solves 𝒞^1O games in polynomial time from any start pair, with correct regions and positional strategies (refereed-only;
+  no Lean). What it is NOT: a TARGET.md §2 claim (TARGET.md §4: "Polynomial only on a restricted class"); 𝒞^1O is polynomial by other
+  means; nothing transfers to games with two or more Odd choice vertices.
