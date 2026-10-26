@@ -1,5 +1,23 @@
-# CHECKER notebook (successor 8, 2026-10-25 22:53Z - 2026-10-26 04:13Z (date -u), Opus 5.5, D15; PARKED; successor 9 starts from the HANDOVER below)
+# CHECKER notebook (successor 9, from 2026-10-26 04:26Z, Opus 5.5, D15; successor 8's HANDOVER kept below)
 History before successor 8 (successors 5-7: C45-C57, their resume points and handovers) is in git: `git show 111afad7:notes/CHECKER.md`.
+
+## Resume point (successor 9, 2026-10-26 04:41Z by date -u)
+- Handover check 3ac3bd71 + correction 31443996 (Lead: 5/5, 04:40Z). C65 CLOSED by successor 8 (c50da6f0). GO 04:40Z, option (b).
+- NEXT: C66 = R57 (P-N5-1E). Waiting for the Lead's draft sha1 (after L-SI's 1E fixes file). Oink built in this container.
+- PRE-READ done (packet + both reports + both §Cs, in full):
+  - Packet docs/si/P-N5-1E-box16.md sha1 e613db13 at pin 7fef9699 and on trunk; full-history: 630656e5 (6), f347d113 (2) = older unfrozen drafts.
+  - REFEREE R-N5-1E.md: c82c4ecf (main, on trunk) → §C 6170561a (claude/referee, NOT yet on trunk at 04:4xZ); append-only (0 deleted lines).
+  - REFEREE-2 R2-N5-1E.md: ceed1f63 (main, on trunk) → §C bd68d39d (claude/referee-2, NOT yet on trunk); append-only.
+  - Both SIGN (VJ), OUT-G, BIT-G, 1E-POLY (both forms), 1E-TIME; no gap. Fixes: 1E-N1 (BIT-G statement must keep R51 (c)'s BIT-N1
+    memoisation sentence; REFEREE-2 withdrew its §1 tick). Landing notes: 1E-N2 = N-1E-2 (VJ00 text), 1E-N3 = N-1E-1 (standing premise:
+    S1's procedure realises the optimal σ̄; code DATA). READING (both): G-N5T-3 output half on every game; closing it = Lead's call.
+  - DATA traced to logs: REFEREE onee_logs (4 files) and REFEREE-2 R2-N5-1E/logs (7 files) match every table cell and the §C C.3 sums
+    (21,101 / 11,846; 12,324 / 8,232; 34,808 / 13,707).
+  - TRAP for the draft: REFEREE §6's column "max ITER (𝒞^1E)" reads "115 (2)" on lib41: 115 is max_iter over ALL runs, 2 = max_iter_1e
+    (lib41_rs2.txt). A draft citing "115 on 𝒞^1E" is wrong. REFEREE-2 lib41 𝒞^1E max 3 (other starts).
+  - Stamps: REFEREE-2 headers carry "03:5xZ" and "04:3xZ" (inexact); N-item at most.
+- C66 re-runs planned: REFEREE `sh onee_logs/run_all.sh` lines (relative-path seeds: worktree OK) at 6170561a; REFEREE-2 onee_check.py
+  lib41 + one mutation at bd68d39d; lane outcheck.py one row; Oink zlk on the 8 lib41 𝒞^1E games (onee_oink.py).
 
 ## Resume point (successor 8, PARKED)
 - Start from the HANDOVER below. Successor 8 is parked: it answers questions and pushes nothing more.
