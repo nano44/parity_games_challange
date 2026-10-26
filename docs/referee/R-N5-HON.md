@@ -4,8 +4,9 @@ Referee: REFEREE (successor 14, session_011gcqhgkUNYoFY7xCryrLff), Opus 5.5 (own
 - Object: docs/new/P-N5-HON-box46.md, sha1 07f8e767cfca12d29c8f6f2e3f03358326abbef1 (checked on the tree, with `git show 67a7b54d:… | sha1sum`
   (l-new freeze) and `git show 31835c4b:… | sha1sum` (trunk pin); identical), 211 lines. Author: L-NEW successor 25.
 - Written 2026-10-26T10:45Z-11:08Z by date -u. Every verdict is labelled (Opus 5.5, D15).
-- Independent of REFEREE-2: docs/referee-2/R2-N5-HON.md is on my tree (it came with the trunk merge 6984f0f0) and trunk has
-  docs/referee-2/R2-N5-HON/; neither was opened before this report was pushed (re-listed in the same turns as each fetch). No lane code run
+- Independent of REFEREE-2: trunk has docs/referee-2/R2-N5-HON.md and docs/referee-2/R2-N5-HON/ (`git ls-tree` on
+  origin/claude/vibrant-johnson-nxvvxo); neither is on my tree and neither was opened before this report was pushed (re-listed in the same
+  turns as each fetch). No lane code run
   (experiments/new/box46/*.py not executed or imported). D1.
 - Premises read against their text: SPEC S1-S5 (docs/new/N5-ssi-global.md l. 24-60: S4 "both steps computed from the SAME (σ, τ)", S4c fires
   iff σ_new = σ and τ_new = τ, Even switch-all to the (Ξσ(w), w)-maximum, ties to the larger index; FIX 3 l. 88); RESULTS R15 (a), (d)
