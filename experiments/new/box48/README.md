@@ -42,3 +42,10 @@ transitions, |Q| 3; out/nconf_long121.txt, out/retfb_long121.txt.
   0; V_Kx (opposite length sign) and MUT=1 (p off q's play) are controls. out/offmono2_lib41_n34_k2.txt, _MUT.txt, out/offmono2_long7.txt.
 - cyc.py STARTS SEED (--list FILE | files) [--start F]: CYC_c per phase, c's cycle changes ZCH split STRICT / TIE / c-only (N5-KPOLY §8);
   ZCH_OTHER_V must be 0. out/cyc_lib41_n34_k2.txt, out/cyc_long7.txt, out/cyc_long2.txt.
+- zch.py STARTS SEED (--list FILE | files) [--start F]: packet addendum P-N5-OFFMONO-add-box49 (successor 29): Remark Z-CONST (ZC_V), Lemma
+  ZCH-COUNT (STRICT / TIE / CEVEN / ODDC split; PSI_V, CEVEN_V, STRICT_V, ZB_V, OTHER) and Corollary CHAIN-COUNT′ with cut ZC = ZCH ∩ CYC (PM_V,
+  CC_V sum form, CCD_V stated form); all must be 0. Controls MUT=1 (no ZC cut; did not bite on lib41), MUT=2 (opposite length sign; bites),
+  MUT=3 (no EXIT cut; bites). out/zch_lib41_n34_MUT{0,1,2,3}.txt (`2 7 --list ../box41/lib41.txt --nmax 34`), out/zch_long7.txt (`0 1 --start S G`
+  on nep90_n40 (../../red/rec0/instances, start ../../si/rund/instances), nep76_n40 (../../n5-epoch/instances), long121_n40 (../../red/n3/instances),
+  out/qpcclimb/best_qpc_{nep90_n40_s51,nep76_n40_s52,long121_n40_s53}, out/qpcclimb/scale/snap_n80_s62, each with its .start).
+  out/quotecheck_offmono_add.txt: 16 quotes, 0 missing.

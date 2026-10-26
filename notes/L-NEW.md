@@ -975,6 +975,9 @@ Successor 28 (Opus 5.5, D14/D18, L40), session_01Dg8L3iN3G8HVzEVoGgCE1Y. Handove
   S2, G-1OA-6), R19 (a)/(d), R21 (a)/(c)/(e), R23 (b) (ACT), R33 (a)/(b), R34 (a)/(e), R38 (a)-(f), R39 (a)-(g), R40 title; P-N5-RE-box26.md
   §1 ((h)) and §4 (Lemma RE proof); docs/referee/R-N5-NEB.md (40adbf1c, §C 46a80300); docs/referee-2/R2-N5-NEB.md (a4516df9, §C a769ff54);
   docs/referee/R-N5-PFZ.md (8595343); docs/referee-2/R2-N5-PFZ.md (37e55fd) notes.
+- (box 49, successor 29) Opened for P-N5-OFFMONO-add-box49: RESULTS l. 1825 (R38 (a) KEY), 2840, 2851 (R56), 3103-3132 (R61 (b), (c), (f) tie_q /
+  cyc_q), 3768-3769 (R72 (SW)); P-N5-FBPOLY-box41 l. 88-97 ((Aκ), (A0κ), (M1κ), (M2κ)); P-N5-FBRED-box44 l. 49-50; P-N5-OFFMONO-box49 §0-§2;
+  N5-KPOLY-box49 §8 at 331f0337. All quotes checked: out/quotecheck_offmono_add.txt (16, 0 missing).
 
 ## Dead ends
 - (box 47, successor 26, 11:13Z) CONJECTURE XD-1 (≤ 1 X_dir per {u, u′}-run): FALSE on experiments/new/box47/instances/pp2_n19.pg (sha1 97b5b132…),
@@ -1270,3 +1273,9 @@ Successor 28 (Opus 5.5, D14/D18, L40), session_01Dg8L3iN3G8HVzEVoGgCE1Y. Handove
   CHAIN-SUM, CHAIN-COUNT; 12 quotes vs 58061d91). offmono2.py: 0 violations in 15,741 checks; controls bite. Fixed in draft: CHAIN-COUNT pieces
   must also be cut at CYC transitions. Sources opened: SPEC l. 30-31, 56-57; RESULTS l. 803-804, 2840, 2851, 2858, 3123, 3768-3769; FBRED l. 49-50;
   FBPOLY l. 93-97.
+
+## Successor 29 log (Opus 5.5, D14/D18, L40; session in docs/agents/handover-checks/L-NEW.md "Successor 29")
+- 17:23Z: handover check 366fd235 (push rc 0); Lead GO 17:24Z (5/5): item 2 first; EPC fixes after REFEREE-2's §C (REFEREE's §C cd4795f8 in).
+- 17:4xZ: addendum P-N5-OFFMONO-add-box49 FROZEN (Z-CONST with par/offset parts, (CYC-ID), (CYC-SHAPE); CHAIN-COUNT′ with cut ZC = ZCH ∩ CYC
+  (sharper than KPOLY's ZCH and OFFMONO's CYC; both follow); ZCH-COUNT ≤ (n − 1)|U_c| + TIE + ODDC with TIE requiring N ≠ ∅). zch.py 0 violations
+  (lib41 n ≤ 34: 746 phases, ZCH 133 = 50 + 3 + 79 + 1, CYC 432, ZC 59; 7 long instances: ZCH 0); MUT=2/3 bite, MUT=1 does not (reported).
