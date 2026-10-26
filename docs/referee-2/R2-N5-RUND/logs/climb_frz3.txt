@@ -1,0 +1,7 @@
+seed score 106
+it 103 score 107
+it 108 score 207
+it 137 score 208
+it 1382 score 209
+it 1428 score 210
+final 210

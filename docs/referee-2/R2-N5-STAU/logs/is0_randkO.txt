@@ -1,0 +1,1 @@
+MODE random 2000 4 16 31 kO 2 {'states': 19812, 'IS0_DIV': 76, 'IS0_DIV_diff_next': 1}

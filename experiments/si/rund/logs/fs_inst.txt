@@ -1,0 +1,47 @@
+== ../../n5-exhaustive/instances/frz1_n24.pg ../../n5-exhaustive/instances/frz1_n24.start
+RUN ../../n5-exhaustive/instances/frz1_n24.pg k0=2 len=4 edges_forbidden=2 persistent=2
+  U []
+RUN ../../n5-exhaustive/instances/frz1_n24.pg k0=7 len=24 edges_forbidden=9 persistent=0
+  U [(14, (0, 12)), (14, (17, 6)), (22, (1, 23)), (22, (5, 23)), (22, (8, 23)), (22, (14, 23)), (22, (22, 10))]
+L=-1 MUT=0 U=7 changes=59 charged=39 forb_gate_a_in_F=67 forbidden_edges=11 forbidden_pairs=67 max_KF=16 max_U_per_vertex=1 max_U_run=7 max_changes_per_vertex=5 max_charged_edges_per_vertex=2 max_charged_per_vertex=4 max_forb_states_per_edge=15 max_last_forb_rel=15 max_pers_count=4 max_runlen=24 max_span=14 max_span_minus_n=0 persistent_edges=2 runs=2 states=30 switches=44 window=20
+SCHED PASS
+== ../../n5-exhaustive/instances/frz2_n24.pg ../../n5-exhaustive/instances/frz2_n24.start
+RUN ../../n5-exhaustive/instances/frz2_n24.pg k0=2 len=23 edges_forbidden=12 persistent=0
+  U [(9, (0, 12)), (16, (1, 23)), (16, (5, 23)), (16, (8, 23)), (16, (22, 10))]
+L=-1 MUT=0 U=5 changes=55 charged=39 forb_gate_a_in_F=84 forb_gate_diff=5 forbidden_edges=12 forbidden_pairs=89 max_KF=15 max_U_per_vertex=1 max_U_run=5 max_changes_per_vertex=5 max_charged_edges_per_vertex=3 max_charged_per_vertex=4 max_forb_states_per_edge=15 max_last_forb_rel=14 max_runlen=23 max_span=14 max_span_minus_n=0 persistent_edges=0 runs=1 states=24 switches=36 window=16
+SCHED PASS
+== ../../n5-exhaustive/instances/frz3_n24.pg ../../n5-exhaustive/instances/frz3_n24.start
+RUN ../../n5-exhaustive/instances/frz3_n24.pg k0=2 len=24 edges_forbidden=12 persistent=0
+  U [(10, (0, 12)), (10, (6, 10)), (18, (1, 23)), (18, (5, 23)), (18, (8, 23)), (18, (22, 10))]
+L=-1 MUT=0 U=6 changes=56 charged=40 forb_gate_a_in_F=93 forbidden_edges=12 forbidden_pairs=93 max_KF=17 max_U_per_vertex=1 max_U_run=6 max_changes_per_vertex=5 max_charged_edges_per_vertex=3 max_charged_per_vertex=3 max_forb_states_per_edge=17 max_last_forb_rel=16 max_runlen=24 max_span=16 max_span_minus_n=0 persistent_edges=0 runs=1 states=25 switches=38 window=16
+SCHED PASS
+== ../../red/so/instances/pftheta34_n32.pg
+RUN ../../red/so/instances/pftheta34_n32.pg k0=5 len=34 edges_forbidden=14 persistent=0
+  U [(16, (8, 0)), (21, (15, 4)), (36, (11, 6)), (36, (12, 31)), (36, (14, 26)), (38, (16, 8)), (38, (28, 4))]
+L=-1 MUT=0 LASTFORB_GT_N1=1 U=7 changes=84 charged=28 forb_gate_a_in_F=144 forbidden_edges=14 forbidden_pairs=144 max_KF=33 max_U_per_vertex=1 max_U_run=7 max_changes_per_vertex=7 max_charged_edges_per_vertex=1 max_charged_per_vertex=1 max_forb_states_per_edge=29 max_last_forb_rel=32 max_runlen=34 max_span=28 max_span_minus_n=0 persistent_edges=0 runs=1 states=35 switches=74 window=56
+SCHED PASS
+== ../../red/h3/instances/lcount_n23.pg ../../red/h3/instances/lcount_n23.start
+RUN ../../red/h3/instances/lcount_n23.pg k0=0 len=4 edges_forbidden=0 persistent=0
+  U []
+L=-1 MUT=0 U=0 changes=15 forbidden_edges=0 forbidden_pairs=0 max_U_run=0 max_changes_per_vertex=2 max_charged_edges_per_vertex=0 max_charged_per_vertex=0 persistent_edges=0 runs=1 states=5 switches=10 window=15
+SCHED PASS
+== ../../red/h3/instances/lcount2_n23.pg ../../red/h3/instances/lcount2_n23.start
+RUN ../../red/h3/instances/lcount2_n23.pg k0=1 len=3 edges_forbidden=2 persistent=2
+  U []
+L=-1 MUT=0 U=0 changes=18 forb_gate_diff=6 forbidden_edges=2 forbidden_pairs=6 max_KF=3 max_U_run=0 max_changes_per_vertex=2 max_charged_edges_per_vertex=0 max_charged_per_vertex=0 max_forb_states_per_edge=3 max_last_forb_rel=2 max_pers_count=3 max_runlen=3 max_span=2 max_span_minus_n=0 persistent_edges=2 runs=1 states=4 switches=10 window=18
+SCHED PASS
+== instances/offret_n23.pg instances/offret_n23.start
+RUN instances/offret_n23.pg k0=0 len=4 edges_forbidden=0 persistent=0
+  U []
+L=-1 MUT=0 U=0 changes=14 forbidden_edges=0 forbidden_pairs=0 max_U_run=0 max_changes_per_vertex=2 max_charged_edges_per_vertex=0 max_charged_per_vertex=0 persistent_edges=0 runs=1 states=5 switches=12 window=14
+SCHED PASS
+== instances/incdown_n23.pg instances/incdown_n23.start
+RUN instances/incdown_n23.pg k0=0 len=4 edges_forbidden=0 persistent=0
+  U []
+L=-1 MUT=0 U=0 changes=14 forbidden_edges=0 forbidden_pairs=0 max_U_run=0 max_changes_per_vertex=2 max_charged_edges_per_vertex=0 max_charged_per_vertex=0 persistent_edges=0 runs=1 states=5 switches=12 window=14
+SCHED PASS
+== instances/offalt_K10.pg instances/offalt_K10.start
+RUN instances/offalt_K10.pg k0=0 len=24 edges_forbidden=0 persistent=0
+  U []
+L=-1 MUT=0 U=0 changes=180 forbidden_edges=0 forbidden_pairs=0 max_U_run=0 max_changes_per_vertex=10 max_charged_edges_per_vertex=0 max_charged_per_vertex=0 persistent_edges=0 runs=1 states=25 switches=177 window=180
+SCHED PASS

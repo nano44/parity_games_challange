@@ -1,0 +1,30 @@
+B_chk 35438
+C1N_chk 35438
+C1_chk 36271
+C2_chk 36271
+DIFF_IS0 17
+DIFF_TS 833
+D_chk 62777
+R48_maxf 1
+R48_phases 46404
+RUNS 20000
+SIGLAM 25997
+STATES 62777
+TIEKEEP_inphase 89
+EX ('DIFF_IS0 (info)', 'c1o264/tau/0', 0, 's', [6, None, None, None, None, None, 5, None, None, None, None, None], 't', [None, 0, 4, 2, 5, 9, None, 5, 7, 6, 3, 8], 'N5->', [None, 0, 4, 2, 5, 11, None, 5, 7, 6, 3, 8], 'N5tau->', [None, 0, 4, 2, 5, 10, None, 5, 7, 6, 3, 8])
+EX ('DIFF_IS0 (info)', 'c1o264/n5/0', 0, 's', [6, None, None, None, None, None, 5, None, None, None, None, None], 't', [None, 0, 4, 2, 5, 9, None, 5, 7, 6, 3, 8], 'N5->', [None, 0, 4, 2, 5, 11, None, 5, 7, 6, 3, 8], 'N5tau->', [None, 0, 4, 2, 5, 10, None, 5, 7, 6, 3, 8])
+EX ('DIFF_IS0 (info)', 'c1o373/tau/0', 1, 's', [9, None, None, None, 7, None, None, None, None, 3, 6], 't', [None, 8, 7, 10, None, 9, 0, 8, 5, None, None], 'N5->', [None, 8, 7, 10, None, 9, 7, 8, 5, None, None], 'N5tau->', [None, 8, 7, 10, None, 9, 2, 8, 5, None, None])
+EX ('DIFF_IS0 (info)', 'c1o373/n5/0', 1, 's', [9, None, None, None, 7, None, None, None, None, 3, 6], 't', [None, 8, 7, 10, None, 9, 0, 8, 5, None, None], 'N5->', [None, 8, 7, 10, None, 9, 7, 8, 5, None, None], 'N5tau->', [None, 8, 7, 10, None, 9, 2, 8, 5, None, None])
+EX ('DIFF_IS0 (info)', 'c1o373/tau/1', 1, 's', [9, None, None, None, 7, None, None, None, None, 3, 6], 't', [None, 8, 7, 10, None, 9, 0, 8, 5, None, None], 'N5->', [None, 8, 7, 10, None, 9, 7, 8, 5, None, None], 'N5tau->', [None, 8, 7, 10, None, 9, 2, 8, 5, None, None])
+EX ('DIFF_IS0 (info)', 'c1o373/n5/1', 1, 's', [9, None, None, None, 7, None, None, None, None, 3, 6], 't', [None, 8, 7, 10, None, 9, 0, 8, 5, None, None], 'N5->', [None, 8, 7, 10, None, 9, 7, 8, 5, None, None], 'N5tau->', [None, 8, 7, 10, None, 9, 2, 8, 5, None, None])
+EX ('DIFF_IS0 (info)', 'c1o373/tau/3', 1, 's', [9, None, None, None, 7, None, None, None, None, 3, 6], 't', [None, 8, 7, 10, None, 9, 0, 8, 5, None, None], 'N5->', [None, 8, 7, 10, None, 9, 7, 8, 5, None, None], 'N5tau->', [None, 8, 7, 10, None, 9, 2, 8, 5, None, None])
+EX ('DIFF_IS0 (info)', 'c1o373/n5/3', 1, 's', [9, None, None, None, 7, None, None, None, None, 3, 6], 't', [None, 8, 7, 10, None, 9, 0, 8, 5, None, None], 'N5->', [None, 8, 7, 10, None, 9, 7, 8, 5, None, None], 'N5tau->', [None, 8, 7, 10, None, 9, 2, 8, 5, None, None])
+EX ('DIFF_IS0 (info)', 'c1o410/tau/1', 1, 's', [3, None, None, 4, 6, None, None], 't', [None, 1, 6, None, None, 0, 2], 'N5->', [None, 1, 6, None, None, 0, 3], 'N5tau->', [None, 1, 6, None, None, 0, 0])
+EX ('DIFF_IS0 (info)', 'c1o410/n5/1', 1, 's', [3, None, None, 4, 6, None, None], 't', [None, 1, 6, None, None, 0, 2], 'N5->', [None, 1, 6, None, None, 0, 3], 'N5tau->', [None, 1, 6, None, None, 0, 0])
+EX ('DIFF_IS0 (info)', 'c1o2569/tau/1', 1, 's', [1, None, None, 0, 2], 't', [None, 2, 1, None, None], 'N5->', [None, 3, 1, None, None], 'N5tau->', [None, 4, 1, None, None])
+EX ('DIFF_IS0 (info)', 'c1o2569/n5/1', 1, 's', [1, None, None, 0, 2], 't', [None, 2, 1, None, None], 'N5->', [None, 3, 1, None, None], 'N5tau->', [None, 4, 1, None, None])
+EX ('DIFF_IS0 (info)', 'c1o2569/tau/3', 1, 's', [1, None, None, 0, 2], 't', [None, 2, 1, None, None], 'N5->', [None, 3, 1, None, None], 'N5tau->', [None, 4, 1, None, None])
+EX ('DIFF_IS0 (info)', 'c1o2569/n5/3', 1, 's', [1, None, None, 0, 2], 't', [None, 2, 1, None, None], 'N5->', [None, 3, 1, None, None], 'N5tau->', [None, 4, 1, None, None])
+EX ('DIFF_IS0 (info)', 'c1o2682/tau/2', 2, 's', [None, 9, None, None, None, None, 0, None, 0, None, None, 1], 't', [5, None, 3, 1, 5, 9, None, 11, None, 1, 8, None], 'N5->', [5, None, 3, 1, 5, 9, None, 11, None, 6, 8, None], 'N5tau->', [5, None, 3, 1, 5, 9, None, 11, None, 7, 8, None])
+EX ('DIFF_IS0 (info)', 'c1o4994/tau/3', 2, 's', [None, 8, 0, None, 5, 9, 7, None, 5, None], 't', [9, None, None, 5, None, None, None, 2, None, 0], 'N5->', [9, None, None, 5, None, None, None, 2, None, 4], 'N5tau->', [9, None, None, 5, None, None, None, 2, None, 6])
+EX ('DIFF_IS0 (info)', 'c1o4994/n5/3', 2, 's', [None, 8, 0, None, 5, 9, 7, None, 5, None], 't', [9, None, None, 5, None, None, None, 2, None, 0], 'N5->', [9, None, None, 5, None, None, None, 2, None, 4], 'N5tau->', [9, None, None, 5, None, None, None, 2, None, 6])

@@ -1,6 +1,23 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 5, session_017XFY64b42Hkc6fmeUEzwek, Opus 5.5) -- box 12 (epoch census) DONE 2026-10-26
+Handover check 1a8a4628 (Lead: 5/5). Box 12 GO 07:57Z. Code + tables: experiments/n5-epoch/ (README.md has every command and number).
+### DONE
+- census.py (n5b SPEC engine, own definitions pinned to RESULTS R60/R61/R63/R64): N_ep, ρ, ALT classes, |D_E|, len(E), X_SN^pre; falsification
+  tests EP0/ALT/NEP/XEP/SPLIT/EPOCH/MONO/D-EPOCH with mutation controls. 0 violations on named (60 runs), lib41 (1,236), random C^kO (100,000),
+  exhaustive C^2O n 4 all starts (3,538,944), C^2O n 5 every 10th (10.8M).
+- Climbs (climbs.sh): N_ep 76 at n 40 (nep76_n40, seeded rise_thin51), 56 at n 32; |D| >= 2 epoch len 55 at n 32 (lend55_n32, |D| 4), 47 (|D| 2).
+  All pinned with pin.py (n5.py = n5b states, Oink zlk, verify.py).
+### IN FLIGHT: nothing. NEEDS: next box from the Lead.
+### Things only I know (successor 5)
+- n5b.run has an fbtrace hook (fallback flag per transition), no effect on the run.
+- lib41.txt contains games up to n 492 (not n <= 64).
+- climb.py mutates the start pair too; replay with census.py FILE.pg:FILE.start (the .start is SIGMA0/TAU0).
+- check_instance.py's analyse assumes C^1O; use experiments/n5-epoch/pin.py for k >= 2.
+- Background watchers using `until ... ; do sleep` hit the 10-min foreground limit; run them with run_in_background.
+
+
 ## Resume point (successor 4, session_01AiLCefKYn3CkbJsYJtY5aR, Opus 5.5) -- HANDOVER after box 11 (2026-10-26 07:3xZ by date -u)
 Handover check cd3b5ff7 (5/5). Boxes run: 7 completion, 8, 9, 9b, 10, 11 + N5 step-2 diff. Last push: see git log (box 11 1d2f29d7 + this).
 ### DONE (all pushed on claude/l-comp; every number is DATA unless labelled)

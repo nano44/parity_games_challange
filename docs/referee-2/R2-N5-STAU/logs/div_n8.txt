@@ -1,0 +1,15 @@
+MODE start ../../../experiments/new/box45/instances/div_n8.pg ../R2-N5-EPR/instances/div_n8_conv.start MUT -
+A_checks: 4
+A_fb_pairs: 2
+B_checks: 2
+CONV_checks: 2
+COR_n_inphase: 1
+COR_t_inphase: 1
+C_n5_checks: 2
+C_tau_checks: 2
+D_checks: 4
+LINK_checks: 4
+SELF_checks: 1
+stable_with_Itau: 2
+states: 4
+RESULT OK violations=0

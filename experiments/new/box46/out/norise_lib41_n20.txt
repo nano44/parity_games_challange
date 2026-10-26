@@ -1,0 +1,23 @@
+== experiments/si/orlens/instances/thclimb_n12_s11.pg start False phase [2,17] D=[1] u->10 tau(u)=11 gap 2->6 LEV 1->1
+   state 2: D=[1] sigma-bar(D)=[10] switched=[]
+   state 3: D=[1] sigma-bar(D)=[2] switched=[0, 3, 6, 8, 10]
+   state 4: D=[1] sigma-bar(D)=[3] switched=[0, 2]
+   state 5: D=[1] sigma-bar(D)=[2] switched=[3]
+   state 6: D=[1] sigma-bar(D)=[10] switched=[2]
+   violating H_C path at x1 (len 2): [8, 11, 5]; Xi(x)=(5, 2160, 5)
+== experiments/si/orlens/instances/thclimb_n12_s11.pg start False phase [2,17] D=[1] u->2 tau(u)=11 gap 3->5 LEV 1->1
+   state 3: D=[1] sigma-bar(D)=[2] switched=[]
+   state 4: D=[1] sigma-bar(D)=[3] switched=[0, 2]
+   state 5: D=[1] sigma-bar(D)=[2] switched=[3]
+   violating H_C path at x1 (len 2): [8, 11, 5]; Xi(x)=(5, 2160, 6)
+== experiments/si/orlens/instances/thclimb_n12_s11.pg start False phase [2,17] D=[1] u->7 tau(u)=11 gap 7->9 LEV 1->1
+   state 7: D=[1] sigma-bar(D)=[7] switched=[]
+   state 8: D=[1] sigma-bar(D)=[9] switched=[7]
+   state 9: D=[1] sigma-bar(D)=[7] switched=[9]
+   violating H_C path at x1 (len 2): [8, 11, 5]; Xi(x)=(5, 1776, 9)
+== experiments/si/orlens/instances/thclimb_n12_s11.pg start True phase [1,16] D=[1] u->7 tau(u)=11 gap 6->8 LEV 1->1
+   state 6: D=[1] sigma-bar(D)=[7] switched=[]
+   state 7: D=[1] sigma-bar(D)=[9] switched=[7]
+   state 8: D=[1] sigma-bar(D)=[7] switched=[9]
+   violating H_C path at x1 (len 2): [8, 11, 5]; Xi(x)=(5, 1776, 9)
+NORISE 4

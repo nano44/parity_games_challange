@@ -1,3 +1,113 @@
+# Handover check: L-SI (successor 14, written 2026-10-26T10:08Z by date -u; LANE-RESTART step 3; Opus 5.5, D18/L40)
+Every answer below was measured in this container; the commands are given. Predecessor: successor 13, session_018EgSbDTYEVHqL882sCoX7u.
+Its handover is notes/L-SI.md "## HANDOVER (successor 13, box 17 cont.)" (l-si ca90fe74).
+
+## 1. Branch, head, distance to trunk
+- Branch `claude/l-si`. The clone was stale again: local HEAD 0d48da26; `git fetch origin claude/l-si` → origin ca90fe74;
+  `git merge --ff-only origin/claude/l-si` → HEAD ca90fe74 (`git rev-parse HEAD origin/claude/l-si` equal).
+- Trunk `origin/claude/vibrant-johnson-nxvvxo` = c69e199e (Lead: log; R65 landed at f7308227).
+  - Before merging: `git rev-list --left-right --count HEAD...trunk` → 2 ahead / 7 behind; merge-base 4ff4e1a4.
+  - `git merge --no-ff` of trunk c69e199e (no rebase) → merge commit bef09595; then 3 ahead / 0 behind. This file is the next commit; the
+    pushed SHA goes to the Lead.
+
+## 2. Open work and the next step of each (nothing running: `pgrep -a python` empty; fresh container)
+Frozen: `sha1sum docs/si/P-N5-RUND-box17.md` → 71e198f359cbb321fc0c15e6c28676d4dd046d52 = the handover's value. Not edited, never will be.
+- (1) STANDBY: RUND fixes file docs/si/P-N5-RUND-fixes-box17.md (repairs only), when both referees' RUND notes reach me via the Lead.
+  None has arrived (no referee RUND file on trunk named in NOW; RUND is third in REFEREE 13's queue after STAU, REC0).
+- (2) STANDBY: dead-end records if L-RED kills U-SPLIT, UF-ONCE or PAIR-OC (`grep -i "U-SPLIT\|UF-ONCE\|PAIR-OC" docs/*.md` → none on
+  trunk docs). Next step when a kill arrives: reproduce it, record DEAD with instance + obstruction, state the replacement (§18 recursion).
+- (3) ACTIVE after "go": the ρ / N_ep line from the L-SI side. Question: a bound on ρ_q per phase in classes with ≥ 2 Odd choice
+  vertices. Known (note §20-§21): boundaries ≤ ρ + (epochs − 1) + WG (PROVED, immediate); ruler-pattern level reuse at gates
+  (pftheta34 is 𝒞^1O, bounded by R51, not evidence; frz40, 4 Odd choice vertices, ρ_q = 10 < n). First step: ρ_q tables per phase and
+  per class on the ≥ 2-Odd-choice corpus (lib41 KMIN=2, frz*, L-RED climbs), with the per-q ruler trace, to see whether the ruler can
+  nest across two Odd choice vertices; then a statement (CONJECTURE or proof attempt). Coordination: L-NEW 25 holds N_ep from the epoch
+  side (P-N5-HON, REC-1), L-COMP 5 the epoch census: I ask the Lead before any count that overlaps those.
+- (4) Older OPEN: (R1), (R2), (R3) ¬(h3_D), twin Δ-RT for |D| ≥ 2 epochs. Packet P-N5-USPLIT only on the Lead's word.
+
+## 3. docs/GAPS.md rows I own
+- None (`git show trunk:docs/GAPS.md | awk -F'|' '$4 ~ /L-SI/'` → empty).
+- I work under G-N5-TIME (l.11): major, owner L-NEW, status open; last update 09:56Z (R65, P-N5-STAU): "N_ep / ρ and epochs with
+  |D_E| ≥ 2 OPEN; general games OPEN." NOW l.2: "NO polynomial bound for N5 on general games is proved."
+
+## 4. The three owner rulings that constrain me most (verbatim from docs/DECISIONS.md at trunk; status from docs/DECISIONS-INDEX.md)
+- D18 (DECISIONS.md l.332-333; index l.32: active): "Focus on N5 and work toward proving it. Explore novel approaches, especially by
+  connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions
+  where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and
+  open problems."
+  - Lead reading L40 (index l.33: active): L-SI is the OR/MDP lens on N5; labels PROVED / CONJECTURE / OPEN.
+- D1 (index l.5: active; DECISIONS.md l.3, full text docs/decisions/D001-launch-brief.md): "Never publish, post, email, submit or
+  contact anyone outside the fleet. Anything external is my decision." / "A claimed polynomial algorithm is far more likely to be
+  wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below."
+- D16 (DECISIONS.md l.299-300; index l.28: active): "Then keep working as I told you to"
+
+## 5. One trap that bit this lane before, and the check that prevents it
+- Trap (box 17, successor 13 §21): citing an instance as blow-up evidence when its class is already bounded. pftheta34's long gate
+  phase (ρ_0 > n, ruler pattern) looked like ρ evidence, but pftheta34 is 𝒞^1O, so R51 bounds it.
+  - Check: every ρ / N_ep table first prints the instance's class (number of Odd choice vertices per honest class, 𝒞^1O / 𝒞^1E flag);
+    𝒞^1O / 𝒞^1E rows are reported apart and never counted as evidence for ≥ 2-Odd-choice behaviour.
+- Still live: stale clone (bit again here: fetch + `git rev-parse HEAD origin/claude/l-si` first, re-fetch before the first push);
+  frozen files (sha1sum before touching docs/si/P-*); never `git add -A`; never pipe scripts/push.sh; stamp from date -u.
+
+---
+# Handover check: L-SI (successor 13, written 2026-10-26T07:50Z by date -u; LANE-RESTART step 3; Opus 5.5, D18/L40)
+Every answer below was measured in this container; the commands are given. Predecessor: successor 12, session_01HYh7NTpb8ZcvdYpgAJiDgy.
+Its handover is notes/L-SI.md "## HANDOVER (successor 12, box 17)" with its "UPDATE 07:4xZ" and "NEXT" (l-si ac80b594), plus its final push 0b025b91.
+
+## 1. Branch, head, distance to trunk
+- Branch `claude/l-si`. The clone was stale AGAIN: local HEAD 0d48da26; `git fetch origin claude/l-si` → origin ac80b594;
+  `git merge --ff-only origin/claude/l-si` → HEAD ac80b594 (`git rev-parse HEAD origin/claude/l-si` equal).
+- Trunk `origin/claude/vibrant-johnson-nxvvxo` = c6b763f1 at first fetch, 177b3dbb at the second (the brief's "c6b763f1 or later").
+  - Before merging: `git rev-list --left-right --count HEAD...trunk` → 4 ahead / 136 behind; merge-base 47e409bf.
+  - `git merge --no-ff` of trunk c6b763f1 (no rebase) → merge commit 1e71b666. My first push was rejected: successor 12 had pushed
+    0b025b91 (handover final: Lead 07:36Z queue, box 17 dead ends in the notebook) after my fetch. Merged it (--no-ff, no rebase).
+  - Trunk then moved to 177b3dbb (Lead: R62 landed); merged it too (--no-ff). Now `git rev-list --left-right --count HEAD...trunk`
+    → 9 ahead / 0 behind (before this file's commit). This file is the next commit; the pushed SHA goes to the Lead.
+- R62 / R64: at c6b763f1 RESULTS had R64 but not R62 (NOW said "At CHECKER: R62"); at 177b3dbb R62 (P-N5-H3; CHECKER C71) is in
+  RESULTS and GAPS G-N5-TIME has "UPDATE 07:47Z: RESULTS R62 ... LANDED". Both are on trunk now, as the brief says.
+- Queue per the notebook's added "Queue (Lead 07:36Z)" (0b025b91): 1. restricted Lemma P / LEVEL-COUNT; 2. twin Δ-RT for |D| ≥ 2
+  epochs. Successor 12 agreed: 1 first. That matches the brief's STEP 2.
+
+## 2. Open work and the next step of each (nothing running: `pgrep -a python` empty; fresh container)
+Frozen packets: sha1sum of docs/si/P-N5-*.md matches the handover (P-N5-H3 680e4528, P-N5-H3-fixes 5666b4a5, 2T fcb91130 / 8aad9f77,
+1E e613db13 / 8f3615bc, FX-fixes 4253d51e, NC 2036e7c8 withdrawn). None is edited.
+- (a) Restricted Lemma P, note docs/si/N5-RUND-box17.md §13 (NOT frozen). PROVED (unrefereed): Lemma P^c_ok, Corollary FRZ-OK. DATA
+  (okfrz.py): content on pftheta34_n32 (14 frozen full values), coverage 2/24 on frz1_n24 and frz3_n24. Stopping point: "OK on S" is too
+  strict. Next step: DATA per run and edge = the last state at which each forbidden edge is forbidden, on the three long (h3_D) runs
+  (extend okfrz.py in experiments/si/rund/); then P^c_ok restarted at that state (the P^c_L induction can start at any state of S);
+  where an edge stays forbidden while x's play uses it, state the remaining count as N_split in per-vertex form (§11).
+- (b) LEVEL-COUNT (count form) is a CONJECTURE (§12; strong form INC DEAD, incdown_n23). Next: attack it via the dynamics, after (a).
+  L-RED is running the adversary on it (Lead 07:20Z): I do not duplicate climbs.
+- (c) Packet P-N5-RUND-box17 (PIECE_D, SPLIT-RED, TWIN-GAP, OFFSET, MERGE-B, CR-REL from §4, §5, §11, with data tables): a NEW frozen
+  file, ONLY on the Lead's word (Lead 07:09Z: fresh referees; "a slightly later, fuller packet is fine").
+- OPEN items named in the note: (R1) offset-preserving terminal changes, (R2) offset changes per vertex per stretch_D (≥ Θ(√n) by mkalt,
+  ≤ (n − 1) + 2^{B+1}), (R3) ¬(h3_D), (R4) epochs / stretch_D boundaries. L-COMP runs an independent OFFSET / TWIN-GAP checker.
+
+## 3. docs/GAPS.md rows I own
+- None (`git show trunk:docs/GAPS.md | awk -F'|' '$4 ~ /L-SI/'` → empty).
+- I work under G-N5-TIME (l.11): major, owner L-NEW, status open; updates 07:36Z (R64) and 07:47Z (R62) landed; R64 text: "(Στ) itself (P-N5-STAU, in review),
+  N_ep / ρ and |D_E| ≥ 2 epochs OPEN; general games OPEN." NOW l.2: "NO polynomial bound for N5 on general games is proved."
+
+## 4. The three owner rulings that constrain me most (verbatim from docs/DECISIONS.md at trunk; status from docs/DECISIONS-INDEX.md)
+- D18 (DECISIONS.md l.333; index l.32: active): "Focus on N5 and work toward proving it. Explore novel approaches, especially by
+  connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions
+  where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and
+  open problems."
+  - Lead reading L40 (index l.33: active): L-SI is the OR/MDP lens on N5; labels PROVED / CONJECTURE / OPEN.
+- D1 (index l.5: active; DECISIONS.md l.6-7, full text docs/decisions/D001-launch-brief.md): "Never publish, post, email, submit or
+  contact anyone outside the fleet. Anything external is my decision." / "A claimed polynomial algorithm is far more likely to be
+  wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below."
+- D16 (DECISIONS.md l.300; index l.28: active): "Then keep working as I told you to"
+
+## 5. One trap that bit this lane before, and the check that prevents it
+- Trap (box 17): a freeze statement that is non-vacuous can still be CONTENT-FREE: every known non-vacuous coarse freeze had L = top rank
+  (rel.py "content" 0), so it froze nothing a reader cares about. Also (box 16) freezes "constant from state k_0 + n − 1" are vacuous on
+  runs with ≤ n states.
+  - Check: every freeze checker reports non-vacuous windows AND a "with content" column (non-empty path part, okfrz.py), next to the
+    violation count; a mutation control (MUT=1 / MUT=2) must bite before a 0 counts as evidence.
+- Still live: stale clone (bit again here: fetch + `git rev-parse HEAD origin/claude/l-si` first); frozen files (sha1sum before touching
+  docs/si/P-*); never `git add -A`; never pipe scripts/push.sh; never `pkill -f` a pattern in my own command; stamp from date -u.
+
+---
 # Handover check: L-SI (successor 12, written 2026-10-26T06:02Z by date -u; LANE-RESTART step 3; Opus 5.5, D18/L40)
 Every answer below was measured in this container; the commands are given. Predecessor: successor 11, session_01FchPxfEZ9Fo56WrCZTvnXS.
 Its handover is notes/L-SI.md "## HANDOVER (successor 11, box 16)" (l-si 2d021429).

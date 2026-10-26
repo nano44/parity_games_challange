@@ -1,0 +1,25 @@
+START fit (1, 1) n 8
+BEST step 1 fit (1, 2) t 0s
+BEST step 17 fit (1, 3) t 0s
+BEST step 19 fit (1, 4) t 0s
+BEST step 29 fit (1, 5) t 0s
+BEST step 35 fit (1, 6) t 0s
+BEST step 63 fit (2, 5) t 0s
+BEST step 183 fit (2, 6) t 0s
+BEST step 233 fit (2, 7) t 1s
+BEST step 265 fit (2, 8) t 1s
+BEST step 306 fit (2, 9) t 1s
+BEST step 320 fit (2, 10) t 1s
+BEST step 363 fit (3, 8) t 1s
+BEST step 395 fit (3, 9) t 1s
+BEST step 455 fit (3, 10) t 1s
+BEST step 916 fit (4, 6) t 3s
+BEST step 1004 fit (4, 7) t 3s
+BEST step 1125 fit (4, 8) t 4s
+BEST step 1184 fit (4, 9) t 4s
+BEST step 1221 fit (4, 10) t 4s
+BEST step 2035 fit (5, 10) t 7s
+BEST step 2833 fit (5, 11) t 9s
+BEST step 3021 fit (5, 12) t 10s
+BEST step 155227 fit (5, 13) t 599s
+END steps 155500 best (5, 13) n 8 -> results/climb/nep_n8.pg
