@@ -1603,3 +1603,4 @@
   - Asked both referees for §C GD.
   - REFEREE-2 pre-read: Lemma OUT has no 𝒞^1O step. Cosmetic note: the 1O fixes file says "REFEREE-2 successor 12" for R2-N5-1O; it should be 13.
   - Next: R53 (NH42) and R54 (DUAL) drafts.
+- 02:43Z: R53 draft (P-N5-NH-box42, Theorem NH as a reduction; fixes 7c499640) and R54 draft (P-N5-DUAL: DUAL with the DUAL-1 repair, MIRROR (a), (b) implication, (c), Φ-kO, ENDGAME; fixes 5d08d0fd; 𝒞^1E bound a READING) written in docs/agents/; to CHECKER as C62, C63 (queued behind C61).
