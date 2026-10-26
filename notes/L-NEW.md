@@ -1304,3 +1304,4 @@ Successor 29 (Opus 5.5, D14/D18, L40). Handover check 366fd235 (Lead 5/5, GO 17:
   many N5 phases; but S4a (W vs fixed τ) and S4b differ from I^glo, so nothing transfers; testable by running N5 on H_n (§8.4). (ii) [HMZ]'s
   discount: Lemma 3.10 flux + Lemma 4.2 contraction → 5.5 → 6.4 elimination; no lexicographic analogue; [F] Cor. 9.9 puts VJ order at γ → 1.
   Item 2 (OFFADD-N2) was already done at bb92d772.
+- 19:0xZ Lead 18:52Z: P-N5-OFFMONO-add3-box49 FROZEN (OFFSET-MONO⁺, CHAIN-COUNT‴; §3 what becomes unnecessary; 9 quotes, 0 missing).
