@@ -36,10 +36,10 @@ Source ported: docs/new/P-N5-FBPOLY-box41.md (= RESULTS R48, landed; its fixes f
 | κ-PFZ (§1) | SURVIVES per terminal | for each q ∈ Q ∩ U_c: paths of G_c^q to q, on Q_c-runs (κ(q) constant) | "z Odd (z ≠ o) ⇒ forced": true in G_c^q |
 | κ-Y-FORM (§1) | SURVIVES per terminal (repaired Y) | Y^q_t := {y ∈ succ(q) ∩ U_c : y's honest play avoids q}; at states where q is on no honest cycle: κ(q) = κwt(q) + min_{Y^q} κ(y) | "every other Odd vertex is forced" made y's (σ, τ′)-play its honest play; with τ′ := σ̄_t except τ′(q) := y this holds by definition (the ledger's repair, N5-MULTI §2) |
 | EXIT-SWITCH (§2) | SURVIVES, several terminals | per class: some u ∈ S_c has a target whose k-play meets T ∩ U_c before u; e ∈ T ∩ U_c | "Odd w ≠ o forced, so next_{k+1}(w) = next_k(w)" for non-terminal w: non-terminal Odd vertices have out-degree 1 by definition of Q |
-| FREEZE-EXIT (§3) | SURVIVES per class | g_j with j ≥ |U_c| − 1, i-th fallback of its Q_c-run with i ≥ |U_c| − 1 ⇒ S_c = ∅ | none beyond the three above |
+| FREEZE-EXIT (§3) | SURVIVES per class | g_j with j ≥ |U_c|, i-th fallback of its Q_c-run with i ≥ |U_c| ⇒ S_c = ∅ (conservative indices; FBP's |U| − 1 form not needed) | none beyond the three above |
 | CN-ONLY (§4) | SURVIVES (new proof of one case) | a fallback with S = ∅ is CN-LAST; ≤ 1 per phase | (1) used (HP) + FBL-N (ii) to make switched y ∉ U cycle nodes: with T ⊇ C, S = ∅ gives it directly. (2), case "meets o first": replaced by "meets some q ∈ Q first" (§2.3) |
 | THETA-AFTER (§5) | FAILS as proved | — | Y ⊆ F ∩ U was frozen by HAT-FREEZE (c) because Y's plays avoid o, the only terminal; with several terminals y ∈ Y^q may route through another q′ ∈ Q, whose value is not frozen. Obstruction §3; DATA §4 |
-| FB-POLY (§6) | REDUCED | f ≤ 1 + (n − 2)(2 + ρ) (Theorem FB-RED, §2.4) | THETA-AFTER replaced by the count ρ |
+| FB-POLY (§6) | REDUCED | f ≤ 1 + (n − 1)(2 + ρ) (Theorem FB-RED, §2.4) | THETA-AFTER replaced by the count ρ |
 
 ## 2. Proofs of the set-form steps (PROVED, every game)
 Each proof is the FBP proof with the substitutions of the table. Only the changed lines are written out.
@@ -163,7 +163,7 @@ of Θ). Then for every z ∈ U_c ∖ T:
 κ_t(z) = V_z(κ(Q)) := max( κopt_c(z), max_{q ∈ Q ∩ U_c, q ≠ c} [κopt^q(z) + κ_Θ(q)] ),
 with κopt^q(z) := max{κwt_c(p ∖ {q}) : p a simple path of G_c^q from z to q} (max over an empty set omitted).
 Proof. "≥": every simple path of G_c or G_c^q has ≤ |U_c| − 1 edges; κ-HAT-FREEZE (a) at t > g_{|U_c|−1} gives κ_t(z) ≥ κopt_c(z);
-κ-PFZ at t > f^Θ_{|U_c|−1} (Θ lies inside the q-run, so its fallbacks are fallbacks of that run) gives κ_t(z) ≥ κopt^q(z) + κ_Θ(q).
+κ-PFZ at t > f^Θ_{|U_c|−1} (Θ lies inside a Q_c-run, so its fallbacks are fallbacks of that run) gives κ_t(z) ≥ κopt^q(z) + κ_Θ(q).
 "≤": z's honest play at t up to its first vertex e of T ∩ U_c is a simple path ((SP′)) whose Odd vertices before e are forced; if
 e = c it is a path of G_c and (Aκ) gives κ_t(z) ≤ κopt_c(z); if e = q it is a path of G_c^q and κ_t(z) = κwt_c(path ∖ {q}) + κ_t(q)
 ≤ κopt^q(z) + κ_Θ(q). ∎

@@ -23,7 +23,13 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   κ-Y-FORM per terminal, EXIT-SWITCH, FREEZE-EXIT (conservative indices), CN-ONLY (new proof of the q-case). FAILS as proved:
   THETA-AFTER (Y^q routes through other terminals; no instance). Theorem FB-RED: f ≤ 1 + (n − 1)(2 + ρ), ρ = Ξ-changes at Odd
   choice vertices per phase. Data fbf.py / fbclimb.py: 0 violations; frontier FMAX 17 at n 32 (fb17_n32.pg), 21 at n 64.
-- NEXT: report (i) to the Lead; then CONJECTURE ρ-POLY (nested freeze) or as directed. (3) on the go.
+- Reported (i) 02:10Z. Lead 02:21Z: R51 landed; GO fixes NH42 + DUAL; then ρ-POLY; packet FB-RED alone if ρ stalls.
+- 478dd6e1: P-N5-NH-fixes-box43 (sha1 7c499640…), P-N5-DUAL-fixes-box43 (sha1 5d08d0fd…), FROZEN, reported 02:30Z. The referees'
+  §C commits (5fc234ba, 78db369b, 253fe5c5) were NOT on trunk 249ad7e3; cited by branch SHA, told the Lead.
+- ρ-POLY: FB-RED late form + Lemma TV PROVED; nested freeze stalls (short late Q-runs; path-sum value sets = value iteration on a
+  terminal game). Data: no phase ever reaches n fallbacks (late regime vacuous). 6019ab17.
+- Packet docs/new/P-N5-FBRED-box44.md (FB-RED alone, FROZEN at push).
+- NEXT: report the packet sha1; then as directed.
 
 ## Box 43 log (successor 22; handover check 5/5 (b4f064b4); GO 21:55Z, Lead's stamp)
 - Merged trunk c4d18621. Oink built (8fbf0a7). Notebook duplicate block (from 6a1b0e95) removed in b4f064b4.
