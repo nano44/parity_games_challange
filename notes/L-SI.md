@@ -18,6 +18,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
 - 1. docs/si/P-N5-RUND-fixes-box17.md (repairs only; 36 quotes checked by rund/quotecheck.py, --mut control fails; pinned). 2. DEAD 18b
   (U-SPLIT, usplit_rd_s3_n27), 18c (PAIR-OC, pairoc_n58; LC2 survives), reproduced with sched.py / lvl2.py, instances copied (same sha1)
   from l-red 64182fe1 (NOT on trunk at 10:5xZ), pinned.
+- 3. note §23 (frzrho.py): Lemma STATIC (PROVED, immediate: on a ρ-free interval σ̄ is fixed on all Odd vertices, so I is "improve in G_σ̄,
+  choose by G_τ" on two fixed one-player games); SPLIT-RED applies to I. CONJECTURE FRZ-RHO (Ξ on Reach(Q) freezes within n − 1
+  transitions of a ρ-free interval): 0 violations, tightest xsn29_n32 27/31. Proof stops at the W-guided arena choice on R_D (the
+  forbidden-edge regime). Even proved, FRZ-RHO leaves the loop open (ρT ≤ T_exit): the target is ρ itself (relay cycles).
 - Things only I know: relay.py's per-q exit paths stop at Q ∪ {c} (class form, §22.4); ROOT's Q-exit paths stop only at Q or a repeat
   (global form, §22.3). rho_transitions = class_event_transitions on lib41: every ρ-transition there touches one class only.
 
