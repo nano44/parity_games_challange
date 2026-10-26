@@ -1167,3 +1167,61 @@ Proof.
 - READING: the map in §27.1. The per-piece bound P for m_c ≥ 2 is the |D_E| ≥ 2 S4a core plus N_ep (both OPEN), not a port.
 - DATA: §27.2 (nep90 / nep76: 42 / 32 epochs, mostly |D| ≥ 2); TV-END is thin.
 - OPEN: ρ_q for m_c ≥ 2; equivalently, at the level of the landed reductions, N_ep and the |D_E| ≥ 2 epochs.
+
+## 28. Item (c) (Lead's GO 13:13Z): what changes the epoch between consecutive epochs, against R61 (e) ALT's causes (DATA, READING)
+Written 2026-10-26T13:1xZ (date -u), successor 15. New scripts rund/epcause.py, rund/trigger.py; logs epcause_*.txt, trigger_nep*.txt.
+Epochs as in R61: maximal runs of the phase with σ̄|Q constant. (§27.2's "D changes + 1" undercounts them: σ̄ can change with D the same.)
+### 28.1 Epoch boundaries by ALT's cause (epcause.py)
+At every boundary, each q whose σ̄(q) changes is classified as:
+- CYC: λ(q) = q;
+- NC (non-clean): q is on an honest cycle at t or t + 1, or y2's play at t passes q;
+- STRICT: clean, with κ(q) rising;
+- TIE: clean, with κ(q) unchanged.
+
+STRICT changes are split further into ROUTE / RELAY at q. ALT_V counts clean changes with κ falling: 0 everywhere. The control MUT=1
+(the comparison reversed) bites on nep90.
+
+| set | boundaries | with a ρ event | residual (only TIE / NC / CYC) | STRICT (ROUTE / RELAY) | TIE | NC | CYC | max per phase |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| nep90_n40, phase@4 (91 transitions) | 89 | 89 | 0 | 119 (107 / 12) | 0 | 0 | 0 | 89 |
+| nep76_n40, phase@9 (78 transitions) | 75 | 75 | 0 | 111 (94 / 17) | 0 | 0 | 0 | 75 |
+| lib41 (KMIN = 1), S3 + 4 random starts | 4,854 | 4,596 | 283 (258 without ρ) | 4,698 (4,616 / 82) | 255 | 60 | 2 | 49 |
+| lib2o, S3 + 4 random starts | 92 | 92 | 0 | 101 (96 / 5) | 0 | 0 | 0 | 7 |
+| pp_K12_n161 / frz40 | 14 / 10 | 14 / 10 | 0 / 0 | 18 (7 / 11) / 10 (9 / 1) | 0 | 11 / 0 | 0 | 14 / 7 |
+- So, on these sets, R61 (f)'s residual terms (tie_q + nc_q + cyc_q) are ≤ 6 % of the boundaries (lib41) and 0 on the long-ρ instances.
+  N_ep − 1 is essentially the number of ρ-transitions. A σ̄ change is almost always a clean strict rise caused by a ROUTE change at q
+  itself (4,616 of 4,698 on lib41). Explaining the epochs means explaining the ROUTE events.
+- On nep90 and nep76, nearly EVERY transition of the long phase is an epoch boundary (89 of 91, 75 of 78). The epochs are single
+  transitions, so "epoch length" plays no role there.
+### 28.2 What triggers the root's ROUTE events (trigger.py; nep90 phase@4, root q = 0, c = 11)
+For each Even switch x: σ(x) → z on q's chosen class exit path, k0 is the last earlier state at which (x, z) was not improving. The TRIGGER
+is what changed at k0 → k0 + 1:
+- SELF: x itself moved;
+- PATH: z's class exit path or exit changed, i.e. a switch downstream of z;
+- TERM: z's exit terminal (≠ c) changed κ;
+- START: (x, z) was improving since the phase start.
+
+| instance | switches on the root's chosen path | at S4a / at fallbacks | PATH | TERM (z's exit: 0 / 1 / 6) | START | z exits at c / at a terminal |
+| --- | --- | --- | --- | --- | --- | --- |
+| nep90 (ρ_0 = 72) | 89 | 89 / 0 | 70 | 16 (11 / 3 / 2) | 3 | 70 / 19 |
+| nep76 (ρ_0 = 62) | 83 | 83 / 0 | 73 | 9 (6 / 3 / 0) | 1 | 40 / 43 |
+- No switch on the root's chosen path happens at a fallback. They are all S4a steps, so this is the S4a side of §27.1.
+- Propagation is by S4a CASCADES along paths to c (PATH: 70 / 73). A switch downstream makes an upstream option improving.
+- Re-thaw is SELF-FEEDBACK through the root: in 17 of the 25 TERM triggers the target z exits at the root 0 itself, and the others exit at
+  1 or 6, which are relays of 0 (relay graph §26.3: 1 → 0, 6 → 0, 1).
+  - A rise of κ(0) makes an Even vertex on 0's own chosen path prefer an edge into 0, e.g. nep90 t = 13, 35, 42, 58, 80: x = 36, 31 → 0.
+  - Such a switch cannot leave 0's choice as it is: 0's play would cycle without c, which would leave the phase. So it comes with a
+    σ̄(0) change, i.e. a new epoch and a new rise.
+  - This is the 𝒞^1O feedback loop around one gate o (SELF-FREE's remark, §22.4: "Even re-routing towards o when o's value rises").
+- READING. The long-ρ phases of nep76 / nep90 are, in their mechanism, ONE-GATE dynamics around the root (S4a cascades plus self-feedback
+  through 0 and its relays). They are not cross-terminal relay cycles. They differ from 𝒞^1O, where R51 makes this polynomial, in one
+  respect: the other terminals 1, 6, 8, 17 (37) are W-gates too (D ⊋ {0}, §27.2). So Even's S4a choice on 0's paths is made in a W frame
+  that differs from Ξ at several gates, which is the |D_E| ≥ 2 regime of R50 FRZ-U's single-gate argument.
+- What would close it (a target, not a statement here): a version of R50 FRZ-U / Theorem RUN for a root r of an acyclic relay DAG whose
+  extra W-gates are r's relays, i.e. vertices whose Ξ is a shift of κ(r) (R61 (b) SAT-k). The one structural fact in hand is SAT-k plus
+  CHOSEN: a relay's value is a fixed shift of its chosen exit's value within an epoch. Whether FRZ-U's Claim P^c survives gates whose
+  values are shifts of the root's is OPEN. This is where I would start the next box.
+### 28.3 Status, labels
+- DATA: §28.1 (N_ep − 1 ≈ ρ-transitions; ALT residuals ≤ 6 % / 0); §28.2 (root switches: all S4a, cascades plus self-feedback).
+- READING: nep76 / nep90 are one-gate dynamics with extra W-gates that are the root's relays.
+- OPEN: ρ_q for m_c ≥ 2; the FRZ-U analogue for a root with relay W-gates (the proposed next target).
