@@ -1,0 +1,2 @@
+  ../red/usplit/instances/pp_K48_n449.pg phase@0 run[0,55] c=0 |U|=449 |Qc|=6 G=2 gcv=218 Xmax=49 Xsum=98 X={122: 49, 63: 49} rho_root=50
+G_max=2 G_sum=2 X_max=49 X_sum=98 cint=3 cint_len_max=53 cint_migt=49 cint_pure=1 gcv=218 gcv_DLEAVE=218 mig_per_vertex_max=1 rho_max=50 runs=1 xt_NONE=98 xv=196 xv_SRC_DD=196 xv_SRC_STAY=196
