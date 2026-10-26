@@ -1,0 +1,705 @@
+MODE start ../../../experiments/n5-exhaustive/instances/frz1_n24.pg ../../../experiments/n5-exhaustive/instances/frz1_n24.start MUT - PATHCAP 9 LALL 12 RANDP 3
+CHG_changes: 189
+CHG_charged: 120
+CHG_window: 69
+CHU_U_events: 28
+CHU_checks: 37200
+CRREL_freeze_checks: 1
+CRREL_freeze_checks_D_nonempty: 1
+CRREL_subruns: 6
+ENGXI_checks: 32
+FRZS_checks: 17441
+FRZS_content: 7612
+FZP_checks: 32
+FZ_checks: 251
+KF_states_Lm1: 21
+MERGE_checks: 669
+OFFa_transitions: 28
+OFFb_checks: 720
+OFFc_checks: 21
+P1_brute_states: 30
+P1_brute_strategies: 120
+P2_brute_strategies: 7751
+P2_brute_transitions: 28
+PDa_aligned_states: 8
+PDa_brute_arenas: 8
+PDa_brute_strategies: 54
+PDb_blocks: 1
+PSCH_clean_checks: 7743
+SPR_runs: 2
+TG_changes: 2820
+TG_subruns: 310
+TGii_rise_checks: 24
+TGii_rise_nonzero: 2
+UNF_checks: 172
+ff_runs: 2
+ff_transitions: 28
+forbidden_pairstates_Lm1: 69
+h3_runs: 2
+h3_transitions: 28
+ii_runs: 2
+ii_transitions: 28
+runs: 1
+states: 32
+CHU_max_U_per_run: (7, 'frz1_n24.pg#start@7 L -1 n 24')
+CHU_max_U_per_vertex: (1, 'frz1_n24.pg#start@7 L -1')
+PDb_max_block: (8, 'frz1_n24.pg#start@23 n 24 m_tau 60')
+SPR_max_ratio_x1000: (16, 'frz1_n24.pg#start@7 T 24 Nsplit 16 n 24')
+TG_max_B: (19, 'frz1_n24.pg#start@7 n 24')
+TG_max_Nv: (2, 'frz1_n24.pg#start@7 v 0 B 19 n 24')
+TGii_max_rise_over_cap_x1000: (1, 'frz1_n24.pg#start@7..31 v 2')
+max_ff_run_transitions: (24, 'frz1_n24.pg#start@7 n 24')
+max_h3_run_transitions: (24, 'frz1_n24.pg#start@7 n 24')
+RESULT OK violations=0
+MODE start ../../../experiments/n5-exhaustive/instances/frz2_n24.pg ../../../experiments/n5-exhaustive/instances/frz2_n24.start MUT - PATHCAP 9 LALL 12 RANDP 3
+CHG_changes: 181
+CHG_charged: 120
+CHG_window: 61
+CHU_U_events: 19
+CHU_checks: 33120
+CRREL_subruns: 5
+ENGXI_checks: 26
+FRZS_checks: 14726
+FRZS_content: 6460
+FZP_checks: 26
+FZ_checks: 287
+KF_states_Lm1: 15
+MERGE_checks: 516
+OFFa_transitions: 23
+OFFb_checks: 576
+OFFc_checks: 36
+P1_brute_states: 24
+P1_brute_strategies: 432
+P2_brute_strategies: 148
+P2_brute_transitions: 23
+PDa_aligned_states: 8
+PDa_brute_arenas: 8
+PDa_brute_strategies: 66
+PDb_blocks: 1
+PSCH_clean_checks: 7243
+SPR_runs: 1
+TG_changes: 6947
+TG_subruns: 276
+UNF_checks: 187
+ff_runs: 1
+ff_transitions: 23
+forbidden_pairstates_Lm1: 89
+h3_runs: 1
+h3_transitions: 23
+ii_runs: 1
+ii_transitions: 23
+runs: 1
+states: 26
+CHU_max_U_per_run: (5, 'frz2_n24.pg#start@2 L -1 n 24')
+CHU_max_U_per_vertex: (1, 'frz2_n24.pg#start@2 L -1')
+PDb_max_block: (8, 'frz2_n24.pg#start@17 n 24 m_tau 55')
+SPR_max_ratio_x1000: (17, 'frz2_n24.pg#start@2 T 23 Nsplit 15 n 24')
+TG_max_B: (16, 'frz2_n24.pg#start@2 n 24')
+TG_max_Nv: (6, 'frz2_n24.pg#start@2 v 23 B 16 n 24')
+max_ff_run_transitions: (23, 'frz2_n24.pg#start@2 n 24')
+max_h3_run_transitions: (23, 'frz2_n24.pg#start@2 n 24')
+RESULT OK violations=0
+MODE start ../../../experiments/n5-exhaustive/instances/frz3_n24.pg ../../../experiments/n5-exhaustive/instances/frz3_n24.start MUT - PATHCAP 9 LALL 12 RANDP 3
+CHG_changes: 181
+CHG_charged: 122
+CHG_window: 59
+CHU_U_events: 21
+CHU_checks: 36000
+CRREL_freeze_checks: 1
+CRREL_freeze_checks_D_nonempty: 1
+CRREL_subruns: 5
+ENGXI_checks: 27
+FRZS_checks: 17311
+FRZS_content: 7953
+FZP_checks: 27
+FZ_checks: 304
+KF_states_Lm1: 17
+MERGE_checks: 543
+OFFa_transitions: 24
+OFFb_checks: 600
+OFFc_checks: 32
+P1_brute_states: 25
+P1_brute_strategies: 675
+P2_brute_strategies: 142
+P2_brute_transitions: 24
+PDa_aligned_states: 7
+PDa_brute_arenas: 7
+PDa_brute_strategies: 38
+PDb_blocks: 1
+PSCH_clean_checks: 8045
+SPR_runs: 1
+TG_changes: 3636
+TG_subruns: 300
+TGii_rise_checks: 24
+TGii_rise_nonzero: 3
+UNF_checks: 179
+ff_runs: 1
+ff_transitions: 24
+forbidden_pairstates_Lm1: 93
+h3_runs: 1
+h3_transitions: 24
+ii_runs: 1
+ii_transitions: 24
+runs: 1
+states: 27
+CHU_max_U_per_run: (6, 'frz3_n24.pg#start@2 L -1 n 24')
+CHU_max_U_per_vertex: (1, 'frz3_n24.pg#start@2 L -1')
+PDb_max_block: (7, 'frz3_n24.pg#start@19 n 24 m_tau 59')
+SPR_max_ratio_x1000: (14, 'frz3_n24.pg#start@2 T 24 Nsplit 17 n 24')
+TG_max_B: (17, 'frz3_n24.pg#start@2 n 24')
+TG_max_Nv: (8, 'frz3_n24.pg#start@2 v 23 B 17 n 24')
+TGii_max_rise_over_cap_x1000: (0, 'frz3_n24.pg#start@2..26 v 2')
+max_ff_run_transitions: (24, 'frz3_n24.pg#start@2 n 24')
+max_h3_run_transitions: (24, 'frz3_n24.pg#start@2 n 24')
+RESULT OK violations=0
+MODE start ../../../experiments/red/so/instances/pftheta34_n32.pg ../R2-N5-H3/instances/pftheta34_n32_S3.start MUT - PATHCAP 9 LALL 12 RANDP 3
+CHG_changes: 279
+CHG_charged: 85
+CHG_window: 194
+CHU_U_events: 22
+CHU_checks: 95200
+CRREL_freeze_checks: 1
+CRREL_freeze_checks_D_nonempty: 1
+CRREL_subruns: 5
+ENGXI_checks: 40
+FRZS_checks: 47248
+FRZS_content: 22428
+FZP_checks: 40
+FZ_checks: 451
+KF_states_Lm1: 33
+MERGE_checks: 1052
+OFFa_transitions: 34
+OFFb_checks: 1120
+OFFc_checks: 34
+P1_brute_states: 35
+P1_brute_strategies: 665
+P2_brute_strategies: 524
+P2_brute_transitions: 34
+PDa_aligned_states: 1
+PDa_brute_arenas: 1
+PDa_brute_strategies: 20
+PDb_blocks: 1
+PSCH_clean_checks: 15479
+SPR_runs: 1
+TG_changes: 16764
+TG_subruns: 595
+TG_tail_changes: 113
+TGii_rise_checks: 192
+TGii_rise_nonzero: 117
+UNF_checks: 85
+ff_runs: 1
+ff_transitions: 34
+forbidden_pairstates_Lm1: 144
+h3_runs: 1
+h3_transitions: 34
+ii_runs: 1
+ii_transitions: 34
+runs: 1
+states: 40
+CHU_max_U_per_run: (7, 'pftheta34_n32.pg#start@5 L -1 n 32')
+CHU_max_U_per_vertex: (1, 'pftheta34_n32.pg#start@5 L -1')
+PDb_max_block: (1, 'pftheta34_n32.pg#start@38 n 32 m_tau 82')
+SPR_max_ratio_x1000: (7, 'pftheta34_n32.pg#start@5 T 34 Nsplit 33 n 32')
+TG_max_B: (8, 'pftheta34_n32.pg#start@5 n 32')
+TG_max_Nv: (10, 'pftheta34_n32.pg#start@5 v 0 B 8 n 32')
+TG_max_tail: (2, 'pftheta34_n32.pg#start@5..38 v 11 bound 511')
+TGii_max_rise_over_cap_x1000: (132, 'pftheta34_n32.pg#start@5..37 v 11')
+max_ff_run_transitions: (34, 'pftheta34_n32.pg#start@5 n 32')
+max_h3_run_transitions: (34, 'pftheta34_n32.pg#start@5 n 32')
+RESULT OK violations=0
+MODE start ../R2-N5-H3/instances/pft34_h3u_P32.pg ../R2-N5-H3/instances/pft34_h3u_P32_t33.start MUT - PATHCAP 9 LALL 12 RANDP 3
+CHG_changes: 252
+CHG_charged: 84
+CHG_window: 168
+CHU_U_events: 21
+CHU_checks: 80920
+CRREL_freeze_checks: 1
+CRREL_freeze_checks_D_nonempty: 1
+CRREL_subruns: 4
+ENGXI_checks: 40
+FRZS_checks: 42708
+FRZS_content: 16617
+FZP_checks: 40
+FZ_checks: 432
+KF_states_Lm1: 33
+MERGE_checks: 1087
+OFFa_transitions: 34
+OFFb_checks: 1190
+OFFc_checks: 69
+P1_brute_states: 35
+P1_brute_strategies: 1330
+P2_brute_strategies: 524
+P2_brute_transitions: 34
+PDa_aligned_states: 1
+PDa_brute_arenas: 1
+PDa_brute_strategies: 20
+PDb_blocks: 1
+PSCH_clean_checks: 12509
+SPR_runs: 1
+TG_changes: 16764
+TG_subruns: 595
+TGii_rise_checks: 34
+TGii_rise_nonzero: 2
+UNF_checks: 84
+ff_runs: 1
+ff_transitions: 34
+forbidden_pairstates_Lm1: 144
+h3_runs: 1
+h3_transitions: 34
+ii_runs: 1
+ii_transitions: 34
+runs: 1
+states: 40
+CHU_max_U_per_run: (7, 'pft34_h3u_P32.pg#start@5 L -1 n 34')
+CHU_max_U_per_vertex: (1, 'pft34_h3u_P32.pg#start@5 L -1')
+PDb_max_block: (1, 'pft34_h3u_P32.pg#start@38 n 34 m_tau 84')
+SPR_max_ratio_x1000: (7, 'pft34_h3u_P32.pg#start@5 T 34 Nsplit 33 n 34')
+TG_max_B: (8, 'pft34_h3u_P32.pg#start@5 n 34')
+TG_max_Nv: (10, 'pft34_h3u_P32.pg#start@5 v 0 B 8 n 34')
+TGii_max_rise_over_cap_x1000: (15, 'pft34_h3u_P32.pg#start@5..39 v 16')
+max_ff_run_transitions: (34, 'pft34_h3u_P32.pg#start@5 n 34')
+max_h3_run_transitions: (34, 'pft34_h3u_P32.pg#start@5 n 34')
+RESULT OK violations=0
+MODE start ../../../experiments/red/h3/instances/lcount_n23.pg ../../../experiments/red/h3/instances/lcount_n23.start MUT - PATHCAP 9 LALL 12 RANDP 3
+CHG_changes: 45
+CHG_window: 45
+CHU_U_events: 0
+CHU_checks: 920
+CRREL_subruns: 4
+ENGXI_checks: 6
+FRZS_checks: 244
+FZP_checks: 6
+KF_states_Lm1: 0
+MERGE_checks: 101
+OFFa_transitions: 4
+OFFb_checks: 115
+OFFc_checks: 14
+P1_brute_states: 5
+P1_brute_strategies: 80
+P2_brute_strategies: 316
+P2_brute_transitions: 4
+PSCH_clean_checks: 162
+SPR_runs: 1
+TG_changes: 126
+TG_subruns: 10
+ff_runs: 1
+ff_transitions: 4
+forbidden_pairstates_Lm1: 0
+h3_runs: 1
+h3_transitions: 4
+ii_runs: 1
+ii_transitions: 4
+runs: 1
+states: 6
+CHU_max_U_per_run: (0, 'lcount_n23.pg#start@0 L -1 n 23')
+SPR_max_ratio_x1000: (10, 'lcount_n23.pg#start@0 T 4 Nsplit 4 n 23')
+TG_max_B: (4, 'lcount_n23.pg#start@0 n 23')
+TG_max_Nv: (4, 'lcount_n23.pg#start@0 v 1 B 4 n 23')
+max_ff_run_transitions: (4, 'lcount_n23.pg#start@0 n 23')
+max_h3_run_transitions: (4, 'lcount_n23.pg#start@0 n 23')
+RESULT OK violations=0
+MODE start ../../../experiments/red/h3/instances/lcount2_n23.pg ../../../experiments/red/h3/instances/lcount2_n23.start MUT - PATHCAP 9 LALL 12 RANDP 3
+CHG_changes: 74
+CHG_window: 74
+CHU_U_events: 0
+CHU_checks: 690
+CRREL_subruns: 5
+ENGXI_checks: 7
+FRZS_checks: 155
+FZP_checks: 7
+FZ_checks: 18
+KF_states_Lm1: 3
+MERGE_checks: 84
+OFFa_transitions: 3
+OFFb_checks: 92
+OFFc_checks: 8
+P1_brute_states: 4
+P1_brute_strategies: 144
+P2_brute_strategies: 176
+P2_brute_transitions: 3
+PSCH_clean_checks: 106
+SPR_runs: 1
+TG_changes: 66
+TG_subruns: 6
+ff_runs: 1
+ff_transitions: 3
+forbidden_pairstates_Lm1: 6
+h3_runs: 1
+h3_transitions: 3
+ii_runs: 1
+ii_transitions: 3
+runs: 1
+states: 7
+CHU_max_U_per_run: (0, 'lcount2_n23.pg#start@1 L -1 n 23')
+SPR_max_ratio_x1000: (10, 'lcount2_n23.pg#start@1 T 3 Nsplit 3 n 23')
+TG_max_B: (1, 'lcount2_n23.pg#start@1 n 23')
+TG_max_Nv: (3, 'lcount2_n23.pg#start@1 v 12 B 1 n 23')
+max_ff_run_transitions: (3, 'lcount2_n23.pg#start@1 n 23')
+max_h3_run_transitions: (3, 'lcount2_n23.pg#start@1 n 23')
+RESULT OK violations=0
+MODE start ../../../experiments/si/rund/instances/offret_n23.pg ../../../experiments/si/rund/instances/offret_n23.start MUT - PATHCAP 9 LALL 12 RANDP 3
+CHG_changes: 61
+CHG_window: 61
+CHU_U_events: 0
+CHU_checks: 1150
+CRREL_subruns: 5
+ENGXI_checks: 5
+FRZS_checks: 615
+FRZS_content: 81
+FZP_checks: 5
+KF_states_Lm1: 0
+MERGE_checks: 102
+OFFa_transitions: 4
+OFFb_checks: 115
+OFFc_checks: 8
+P1_brute_states: 5
+P1_brute_strategies: 20
+P2_brute_strategies: 36
+P2_brute_transitions: 4
+PDa_aligned_states: 4
+PDa_brute_arenas: 4
+PDa_brute_strategies: 36
+PDb_blocks: 1
+PSCH_clean_checks: 513
+SPR_runs: 1
+TG_changes: 42
+TG_subruns: 10
+ff_runs: 1
+ff_transitions: 4
+forbidden_pairstates_Lm1: 0
+h3_runs: 1
+h3_transitions: 4
+ii_runs: 1
+ii_transitions: 4
+runs: 1
+states: 5
+CHU_max_U_per_run: (0, 'offret_n23.pg#start@0 L -1 n 23')
+PDb_max_block: (4, 'offret_n23.pg#start@0 n 23 m_tau 34')
+SPR_max_ratio_x1000: (68, 'offret_n23.pg#start@0 T 4 Nsplit 0 n 23')
+TG_max_B: (17, 'offret_n23.pg#start@0 n 23')
+TG_max_Nv: (3, 'offret_n23.pg#start@0 v 22 B 17 n 23')
+max_ff_run_transitions: (4, 'offret_n23.pg#start@0 n 23')
+max_h3_run_transitions: (4, 'offret_n23.pg#start@0 n 23')
+RESULT OK violations=0
+MODE start ../../../experiments/si/rund/instances/incdown_n23.pg ../../../experiments/si/rund/instances/incdown_n23.start MUT - PATHCAP 9 LALL 12 RANDP 3
+CHG_changes: 61
+CHG_window: 61
+CHU_U_events: 0
+CHU_checks: 1150
+CRREL_subruns: 5
+ENGXI_checks: 5
+FRZS_checks: 615
+FRZS_content: 81
+FZP_checks: 5
+KF_states_Lm1: 0
+MERGE_checks: 102
+OFFa_transitions: 4
+OFFb_checks: 115
+OFFc_checks: 8
+P1_brute_states: 5
+P1_brute_strategies: 20
+P2_brute_strategies: 36
+P2_brute_transitions: 4
+PDa_aligned_states: 4
+PDa_brute_arenas: 4
+PDa_brute_strategies: 36
+PDb_blocks: 1
+PSCH_clean_checks: 515
+SPR_runs: 1
+TG_changes: 42
+TG_subruns: 10
+ff_runs: 1
+ff_transitions: 4
+forbidden_pairstates_Lm1: 0
+h3_runs: 1
+h3_transitions: 4
+ii_runs: 1
+ii_transitions: 4
+runs: 1
+states: 5
+CHU_max_U_per_run: (0, 'incdown_n23.pg#start@0 L -1 n 23')
+PDb_max_block: (4, 'incdown_n23.pg#start@0 n 23 m_tau 34')
+SPR_max_ratio_x1000: (68, 'incdown_n23.pg#start@0 T 4 Nsplit 0 n 23')
+TG_max_B: (16, 'incdown_n23.pg#start@0 n 23')
+TG_max_Nv: (3, 'incdown_n23.pg#start@0 v 22 B 16 n 23')
+max_ff_run_transitions: (4, 'incdown_n23.pg#start@0 n 23')
+max_h3_run_transitions: (4, 'incdown_n23.pg#start@0 n 23')
+RESULT OK violations=0
+MODE start ../../../experiments/si/rund/instances/offalt_K10.pg ../../../experiments/si/rund/instances/offalt_K10.start MUT - PATHCAP 9 LALL 12 RANDP 3
+CHG_changes: 745
+CHG_window: 745
+CHU_U_events: 0
+CHU_checks: 273000
+CRREL_subruns: 5
+ENGXI_checks: 25
+FRZS_checks: 153450
+FRZS_content: 93787
+FZP_checks: 25
+KF_states_Lm1: 0
+MERGE_checks: 4477
+OFFa_transitions: 24
+OFFb_checks: 4550
+OFFc_checks: 48
+P1_brute_states: 25
+P1_brute_strategies: 100
+P2_brute_strategies: 22520
+P2_brute_transitions: 24
+PDa_aligned_states: 24
+PDa_brute_arenas: 24
+PDa_brute_strategies: 22520
+PDb_blocks: 1
+PSCH_clean_checks: 49483
+SPR_runs: 1
+TG_changes: 4194
+TG_subruns: 300
+ff_runs: 1
+ff_transitions: 24
+forbidden_pairstates_Lm1: 0
+h3_runs: 1
+h3_transitions: 24
+ii_runs: 1
+ii_transitions: 24
+runs: 1
+states: 25
+CHU_max_U_per_run: (0, 'offalt_K10.pg#start@0 L -1 n 182')
+PDb_max_block: (24, 'offalt_K10.pg#start@0 n 182 m_tau 351')
+SPR_max_ratio_x1000: (44, 'offalt_K10.pg#start@0 T 24 Nsplit 0 n 182')
+TG_max_B: (167, 'offalt_K10.pg#start@0 n 182')
+TG_max_Nv: (10, 'offalt_K10.pg#start@0 v 181 B 167 n 182')
+max_ff_run_transitions: (24, 'offalt_K10.pg#start@0 n 182')
+max_h3_run_transitions: (24, 'offalt_K10.pg#start@0 n 182')
+RESULT OK violations=0
+MODE start ../../../experiments/si/rund/instances/off_s22_n24.pg ../../../experiments/si/rund/instances/off_s22_n24.start MUT - PATHCAP 9 LALL 12 RANDP 3
+CHG_changes: 136
+CHG_charged: 47
+CHG_window: 89
+CHU_U_events: 14
+CHU_checks: 12888
+CRREL_subruns: 5
+ENGXI_checks: 21
+FRZS_checks: 6362
+FRZS_content: 2385
+FZP_checks: 21
+FZ_checks: 247
+KF_states_Lm1: 16
+MERGE_checks: 321
+OFFa_transitions: 14
+OFFb_checks: 360
+OFFc_checks: 24
+P1_brute_states: 18
+P1_brute_strategies: 486
+P2_brute_strategies: 202
+P2_brute_transitions: 14
+PDa_aligned_states: 1
+PDa_brute_arenas: 1
+PDa_brute_strategies: 2
+PDb_blocks: 1
+PSCH_clean_checks: 3358
+SPR_runs: 1
+TG_changes: 1048
+TG_subruns: 105
+UNF_checks: 51
+ff_runs: 2
+ff_transitions: 16
+forbidden_pairstates_Lm1: 79
+h3_runs: 1
+h3_transitions: 14
+ii_runs: 2
+ii_transitions: 16
+runs: 1
+states: 21
+CHU_max_U_per_run: (4, 'off_s22_n24.pg#start@6 L -1 n 24')
+CHU_max_U_per_vertex: (1, 'off_s22_n24.pg#start@6 L -1')
+PDb_max_block: (1, 'off_s22_n24.pg#start@19 n 24 m_tau 59')
+SPR_max_ratio_x1000: (11, 'off_s22_n24.pg#start@6 T 14 Nsplit 13 n 24')
+TG_max_B: (17, 'off_s22_n24.pg#start@6 n 24')
+TG_max_Nv: (6, 'off_s22_n24.pg#start@6 v 23 B 17 n 24')
+max_ff_run_transitions: (14, 'off_s22_n24.pg#start@6 n 24')
+max_h3_run_transitions: (14, 'off_s22_n24.pg#start@6 n 24')
+RESULT OK violations=0
+MODE start ../../../experiments/si/rund/instances/lenonly_n8.pg MUT - PATHCAP 9 LALL 12 RANDP 3
+CHU_U_events: 0
+CHU_checks: 72
+CRREL_subruns: 9
+ENGXI_checks: 3
+FRZS_checks: 45
+FZP_checks: 3
+KF_states_Lm1: 0
+MERGE_checks: 14
+OFFa_transitions: 1
+OFFb_checks: 16
+OFFc_checks: 4
+P1_brute_states: 2
+P1_brute_strategies: 12
+P2_brute_strategies: 2
+P2_brute_transitions: 1
+PDa_aligned_states: 1
+PDa_brute_arenas: 1
+PDa_brute_strategies: 2
+PDb_blocks: 1
+PSCH_clean_checks: 36
+SPR_runs: 1
+TG_subruns: 1
+ff_runs: 1
+ff_transitions: 1
+forbidden_pairstates_Lm1: 0
+h3_runs: 1
+h3_transitions: 1
+ii_runs: 1
+ii_transitions: 1
+runs: 1
+states: 3
+CHU_max_U_per_run: (0, 'lenonly_n8.pg#S3@1 L -1 n 8')
+PDb_max_block: (1, 'lenonly_n8.pg#S3@1 n 8 m_tau 16')
+SPR_max_ratio_x1000: (38, 'lenonly_n8.pg#S3@1 T 1 Nsplit 0 n 8')
+max_ff_run_transitions: (1, 'lenonly_n8.pg#S3@1 n 8')
+max_h3_run_transitions: (1, 'lenonly_n8.pg#S3@1 n 8')
+RESULT OK violations=0
+MODE start ../../../experiments/si/rund/instances/off_s21_n24.pg MUT - PATHCAP 9 LALL 12 RANDP 3
+CHG_changes: 175
+CHG_charged: 122
+CHG_window: 53
+CHU_U_events: 21
+CHU_checks: 33240
+CRREL_subruns: 6
+ENGXI_checks: 27
+FRZS_checks: 15640
+FRZS_content: 6992
+FZP_checks: 27
+FZ_checks: 339
+KF_states_Lm1: 18
+MERGE_checks: 566
+OFFa_transitions: 24
+OFFb_checks: 624
+OFFc_checks: 32
+P1_brute_states: 26
+P1_brute_strategies: 702
+P2_brute_strategies: 262
+P2_brute_transitions: 24
+PDa_aligned_states: 7
+PDa_brute_arenas: 7
+PDa_brute_strategies: 38
+PDb_blocks: 1
+PSCH_clean_checks: 7482
+SPR_runs: 2
+TG_changes: 3271
+TG_subruns: 277
+UNF_checks: 179
+ff_runs: 2
+ff_transitions: 24
+forbidden_pairstates_Lm1: 101
+h3_runs: 2
+h3_transitions: 24
+ii_runs: 2
+ii_transitions: 24
+runs: 1
+states: 27
+CHU_max_U_per_run: (6, 'off_s21_n24.pg#S3@3 L -1 n 24')
+CHU_max_U_per_vertex: (1, 'off_s21_n24.pg#S3@3 L -1')
+PDb_max_block: (7, 'off_s21_n24.pg#S3@19 n 24 m_tau 59')
+SPR_max_ratio_x1000: (15, 'off_s21_n24.pg#S3@3 T 23 Nsplit 16 n 24')
+TG_max_B: (17, 'off_s21_n24.pg#S3@3 n 24')
+TG_max_Nv: (7, 'off_s21_n24.pg#S3@3 v 23 B 17 n 24')
+max_ff_run_transitions: (23, 'off_s21_n24.pg#S3@3 n 24')
+max_h3_run_transitions: (23, 'off_s21_n24.pg#S3@3 n 24')
+RESULT OK violations=0
+MODE start ../../../experiments/si/rund/instances/off_s23_n24.pg MUT - PATHCAP 9 LALL 12 RANDP 3
+CHG_changes: 175
+CHG_charged: 122
+CHG_window: 53
+CHU_U_events: 21
+CHU_checks: 33240
+CRREL_subruns: 6
+ENGXI_checks: 27
+FRZS_checks: 15640
+FRZS_content: 6992
+FZP_checks: 27
+FZ_checks: 339
+KF_states_Lm1: 18
+MERGE_checks: 566
+OFFa_transitions: 24
+OFFb_checks: 624
+OFFc_checks: 32
+P1_brute_states: 26
+P1_brute_strategies: 702
+P2_brute_strategies: 262
+P2_brute_transitions: 24
+PDa_aligned_states: 7
+PDa_brute_arenas: 7
+PDa_brute_strategies: 38
+PDb_blocks: 1
+PSCH_clean_checks: 7465
+SPR_runs: 2
+TG_changes: 3271
+TG_subruns: 277
+UNF_checks: 179
+ff_runs: 2
+ff_transitions: 24
+forbidden_pairstates_Lm1: 101
+h3_runs: 2
+h3_transitions: 24
+ii_runs: 2
+ii_transitions: 24
+runs: 1
+states: 27
+CHU_max_U_per_run: (6, 'off_s23_n24.pg#S3@3 L -1 n 24')
+CHU_max_U_per_vertex: (1, 'off_s23_n24.pg#S3@3 L -1')
+PDb_max_block: (7, 'off_s23_n24.pg#S3@19 n 24 m_tau 59')
+SPR_max_ratio_x1000: (15, 'off_s23_n24.pg#S3@3 T 23 Nsplit 16 n 24')
+TG_max_B: (17, 'off_s23_n24.pg#S3@3 n 24')
+TG_max_Nv: (7, 'off_s23_n24.pg#S3@3 v 23 B 17 n 24')
+max_ff_run_transitions: (23, 'off_s23_n24.pg#S3@3 n 24')
+max_h3_run_transitions: (23, 'off_s23_n24.pg#S3@3 n 24')
+RESULT OK violations=0
+MODE start ../../../experiments/si/rund/instances/off_s24_n40.pg MUT - PATHCAP 9 LALL 12 RANDP 3
+CHG_changes: 460
+CHG_window: 460
+CHU_U_events: 27
+CHU_checks: 66920
+CRREL_subruns: 10
+ENGXI_checks: 91
+FRZS_checks: 25802
+FRZS_content: 3677
+FZP_checks: 91
+FZ_checks: 1373
+KF_states_Lm1: 70
+MERGE_checks: 1623
+OFFa_transitions: 39
+OFFb_checks: 1760
+OFFc_checks: 93
+P1_brute_states: 76
+P1_brute_strategies: 2432
+P2_brute_strategies: 8828
+P2_brute_transitions: 67
+PDa_aligned_states: 4
+PDa_brute_arenas: 4
+PDa_brute_strategies: 16
+PDb_blocks: 1
+PSCH_clean_checks: 10177
+SPR_runs: 5
+TG_changes: 2010
+TG_subruns: 209
+ff_runs: 9
+ff_transitions: 67
+forbidden_pairstates_Lm1: 384
+h3_runs: 5
+h3_transitions: 39
+ii_runs: 9
+ii_transitions: 66
+runs: 1
+states: 91
+CHU_max_U_per_run: (2, 'off_s24_n40.pg#S3@27 L -1 n 40')
+CHU_max_U_per_vertex: (1, 'off_s24_n40.pg#S3@27 L -1')
+PDb_max_block: (4, 'off_s24_n40.pg#S3@86 n 40 m_tau 91')
+SPR_max_ratio_x1000: (12, 'off_s24_n40.pg#S3@83 T 7 Nsplit 3 n 40')
+TG_max_B: (14, 'off_s24_n40.pg#S3@44 n 40')
+TG_max_Nv: (5, 'off_s24_n40.pg#S3@44 v 27 B 14 n 40')
+max_ff_run_transitions: (15, 'off_s24_n40.pg#S3@1 n 40')
+max_h3_run_transitions: (14, 'off_s24_n40.pg#S3@44 n 40')
+RESULT OK violations=0
+MODE start ../../../experiments/si/rund/instances/tw_s1_n10.pg MUT - PATHCAP 9 LALL 12 RANDP 3
+ENGXI_checks: 1
+FZP_checks: 1
+runs: 1
+states: 1
+RESULT OK violations=0

@@ -1,0 +1,20 @@
+UF_ONCE_FAIL experiments/red/n5inj/instances/phase2_pk48.pg#1 n 48 k 2 max_per_vertex 2
+UF_ONCE_FAIL experiments/red/n5inj/instances/theta_tp32.pg#1 n 32 k 1 max_per_vertex 2
+UF_ONCE_FAIL experiments/red/so/instances/njb_reabs65_n48.pg#2 n 48 k 1 max_per_vertex 2
+UF_ONCE_FAIL experiments/red/so/instances/pft40_n40.pg#0 n 40 k 1 max_per_vertex 2
+UF_ONCE_FAIL experiments/red/so/instances/so_th_n32.pg#0 n 32 k 1 max_per_vertex 3
+UF_ONCE_FAIL experiments/red/so/instances/so_th_n32.pg#1 n 32 k 1 max_per_vertex 2
+UF_ONCE_FAIL experiments/red/so/instances/xsn91_n48.pg#0 n 48 k 1 max_per_vertex 2
+UF_ONCE_FAIL experiments/red/xing/instances/fbref_cex_n32.pg#1 n 32 k 1 max_per_vertex 2
+UF_ONCE_FAIL experiments/si/orlens/instances/lev_l_n28.pg#0 n 28 k 1 max_per_vertex 2
+UF_ONCE_FAIL experiments/si/orlens/instances/lev_l_n28.pg#1 n 28 k 1 max_per_vertex 2
+UF_ONCE_FAIL experiments/si/orlens/instances/lev_l_n28.pg#2 n 28 k 1 max_per_vertex 2
+UF_ONCE_FAIL experiments/si/xing/instances/zcl_cu_n24.pg#0 n 24 k 1 max_per_vertex 2
+UF_ONCE_FAIL experiments/si/xing/instances/zcl_cu_n24.pg#2 n 24 k 1 max_per_vertex 2
+UF_ONCE_FAIL experiments/si/xing/instances/zcl_cu_n48.pg#0 n 48 k 1 max_per_vertex 2
+UF_ONCE_FAIL experiments/si/xing/instances/zcl_cu_n48.pg#2 n 48 k 1 max_per_vertex 2
+UF_ONCE_FAIL experiments/si/xing/instances/zcl_fb1_n32.pg#2 n 32 k 1 max_per_vertex 2
+UF_ONCE_FAIL experiments/si/xing/instances/zcl_rx_n48.pg#0 n 48 k 1 max_per_vertex 2
+UF_ONCE_FAIL experiments/si/xing/instances/zcl_rx_n48.pg#1 n 48 k 1 max_per_vertex 2
+UF_ONCE_FAIL experiments/si/xing/instances/zcl_rx_n48.pg#2 n 48 k 1 max_per_vertex 2
+pairs 1230 UF-ONCE failures 19 by k (1 = one Odd choice, 2 = >= 2): [pairs, failures] {1: [753, 18], 2: [450, 1], 0: [27, 0]}
