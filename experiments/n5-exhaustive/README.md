@@ -295,3 +295,28 @@ CN 2,294,936; TRANSFER 109,152; OFFGATE 48,236; NL 7,016 (j, L) checks; R-STICK 
 fallbacks, all theta = w; CLS1 checks 0), WK (0 wakes), ABS-L (0 intervals). Readings (DATA, exact on these classes): 0 violations of
 R28 (U-loc, OE, OX), R29 (TRANSFER, CN, OFFGATE, NL) and R30 in landing (OR, TC-SPLIT, R-STICK, SN-PREFIX, H3H2, LEAVE, ABS-COUNT,
 CHOICE, H1-DROP, H1-KEEP, ABS-COUNT') through n 5; per phase J <= 1, K = 0, X <= 3, X_SN <= 2, REL <= 3 (REL <= 2 at n 5); no growth n 4 -> n 5.
+
+## Box 9 / 9b (Lead GO 2026-10-26 01:53Z, 05:05Z, 05:30Z): climbs that make vacuous checks non-vacuous; G_D-NC, C2-H3, FRZ-U_H3
+Labels (L40): DATA. Every scored climb run is checked by the named checkers; a violation stops the climb and is saved.
+- climb9.py (REFEREE-2 oe/cls/sn/h1_check unmodified, re_climb.mutate): WK climbs 4 x 20,000 steps, 0 violations; WK non-vacuous on the
+  so_k2_n32 lineage: 9,020 WK checks pass (other lineages: every wake changes W at a or z). Instances (check_instance OK):
+  instances/wk1_n32 (sha1 aed01b51..., WK from a pinned random start) and instances/wk2_n32 (sha1 628ebe07..., WK from the canonical start).
+  CLS1 small-n climbs n 6/8/10/12 x 20,000: no in-scope THR fallback (CLS1/FBL/CLU stay vacuous at n <= 12; they fire at n ~ 32 in
+  REFEREE-2's climbs). ABS-L climbs from REFEREE-2 gt_a/gt_b_best, ccl_fb2_n32, fb32_inr2_final: ABS-L intervals up to 83, 0 theta-changes
+  above L (ABS-L's count trivially 0).
+- gdnc_check.py (own, from docs/si/N5-2O-T-box16.md §6 and P-N5-H3, sha1 680e4528; run + valuations from REFEREE-2's fb_check):
+  G_D-NC (b', c1', c2') at (NC) states; C2-H3 at EVERY (h3_D) state, L = max(M_D, -1) .. n - 1; FRZ-U_H3 on fallback-free in-phase runs with
+  (h3_D) throughout. Mutation control MUT=1 (b' without (NC)) fails (73,044 / 220,039 on the frontier): the hypothesis has bite.
+  Library frontier (431 files, n <= 64, >= 2 Odd choice vertices, canonical + 3 random starts + pinned .start): b' 35,249, c1' 284,286,
+  C2-H3 151,611 (10,487 at not-(NC) states); random C^kO (k 2-4, n 5-20): 100,000 + 50,000 runs, C2-H3 / c2' > 2.2M checks; 0 violations.
+- FRZ-U_H3 INDEXING (author's answer, L-SI l-si 2d021429; P-N5-H3 §5-§6 formula "from k_0 + n - 1 on"): 0-BASED, constant on S[n-1], S[n], ...;
+  a non-vacuous check needs a run of >= n + 1 states. gdnc_check's FRZH3 uses this base; its 1-based base (S[n-2] on) is a STRONGER form,
+  tested as INFO only: a failure of it is NOT a counterexample.
+  FRZ instances (frz_climb.py; check_instance OK; all checks pass):
+  | instance | sha1 | run states (n = 24) | (NC) and not (h_D) states in the run | tests the statement as proved |
+  | --- | --- | --- | --- | --- |
+  | instances/frz1_n24 (canonical) | aad1bce6... | 25 | 0 (all (h_D)) | yes |
+  | instances/frz2_n24 (canonical) | 25db3330... | 24 | 16 | NO: n states, tests only the stronger 1-based form |
+  | instances/frz3_n24 (pinned start) | 5a26b3e3... | 25 | 14 | yes |
+  L-SI's gdnc.py agrees on all three (frz2: FRZ_n 0 under its 0-based base). Not yet tested by any freeze: a run of >= n + 1 states with
+  not-(NC) states (H3's new regime).

@@ -1,1 +1,3 @@
 start 3240 n 24
+679 76250 FRZ_checks 1 seed 1280
+4216 81250 FRZ_checks 1 seed 4817

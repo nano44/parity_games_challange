@@ -1,0 +1,4 @@
+start 300 n 12
+109 400 FRZ_checks 0 seed 811
+185 500 FRZ_checks 0 seed 887
+5818 600 FRZ_checks 0 seed 6520
