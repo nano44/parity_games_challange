@@ -13,3 +13,6 @@ DATA, not proof. Uses experiments/new/box43 (multi, n5x via box21, f1d.hD). Run 
 - instances/rtf_cex.pg (sha1 2203e77f…, shrunk from rtclimb seed 13) and rtf_cex_inj.pg (sha1 9b55eee6…, rank-equivalent, injective
   priorities): refute CONJECTURE Δ-RT-F (N5-DELTA-box44.md §8). instances/rtdis_k4_n24.pg (sha1 00529ed5…): climb seed 12 best.
   N5 outputs on all three: Oink verify OK, regions = Oink --zlk, harness verify.py OK.
+- rtclimb.py --obj sw seeds 21-24 (01:35Z-01:40Z): best DIFFSW 0 (k 2, n ≤ 12), 8 (k 3, n 20), 0 (k 4, n 30), 21 (k 4, n 40).
+  swphase.py FILE...: per-phase in-phase fallbacks and cross-terminal switches. instances/sw21_n40.pg (seed 24 best): one fallback
+  switches 21 vertices across terminals; N5 output: Oink verify OK, regions = Oink --zlk, harness verify.py OK.

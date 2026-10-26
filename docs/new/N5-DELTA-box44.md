@@ -161,6 +161,15 @@ Both are excluded for same-terminal pairs by G_D (c1); RTREV1 = 0 in all data (�
   ≤ poly(n). DATA: largest climbed (experiments/new/box44/instances/rtdis_k4_n24.pg, n 24, k = 4 Odd choice vertices, sha1 00529ed5…; N5 output verified as for
   rtf_cex_inj): 12 states with a reverse
   disagreement, 6 with a forward one, 10 cross-terminal fallback switches, over the whole run (not per stretch).
+- Δ-RT-C, fallback side reduced (PROVED, trivial; DATA on the rest). Count "cross-terminal fallback switches" (crd.py DIFFSW). By
+  definition they occur only at in-phase fallbacks, and one fallback switches each vertex at most once; so the transitions carrying
+  one are at most the in-phase fallbacks, with at most n switched vertices each. At S4a steps W never drops (R20's Lemma W, (F1)),
+  whatever the terminals: an S4a switch along an edge that was a forward disagreement at k is NOT excluded (S4a switches several
+  vertices at once), but it costs no W-value. The fallback face of Δ-RT-C is therefore a frontier fallback count per phase (the
+  frontier analogue of R48 FB-POLY; OPEN). DATA (swphase.py): experiments/new/box44/instances/sw21_n40.pg (n 40, 4 Odd choice
+  vertices, sha1 in README; climbed by rtclimb.py --obj sw seed 24; N5 output verified as for rtf_cex_inj): ONE in-phase fallback
+  switches 21 vertices across terminals; max in-phase fallbacks per phase in all climbed games: 4 (rtdis_k4_n24). The S4a face
+  (forward and reverse disagreements at S4a states, which break PIECE) is not reduced by this.
 - (Δ-RT-W) the weighting idea of the previous version (a potential monotone at fallbacks "if Δ-RT-F holds") is void with Δ-RT-F false.
   What remains (PROVED pieces, READING as a route): S4a steps never lower W (R20's Lemma W, (F1)), so W drops only at fallback
   transitions; there, F_D-sourced switches are W-flat (FBL_D (a)) and every R_D-sourced switch (a leave or a cross-terminal edge) is
