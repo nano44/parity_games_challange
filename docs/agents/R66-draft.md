@@ -1,10 +1,10 @@
-# Draft RESULTS R66 (Lead, 2026-10-26 10:17Z by date -u; both reports and both §Cs filled; fixes file PENDING) — to CHECKER C75
+# Draft RESULTS R66 (Lead, 2026-10-26 10:17Z by date -u; both reports and both §Cs filled; fixes file filled 10:33Z by date -u) — to CHECKER C75
 
 ### R66 [refereed-only] N5 on EVERY game: in every phase, the epochs in which Odd's best reply agrees with τ (D = ∅) number at most (f + 1)(n + 1) + 4n(n − 1) + 1, with f the phase's in-phase fallbacks (Lemma REC-0), so the in-phase transitions out of such epochs number at most that times n + m (Corollary, via RESULTS R64 (c) EP-0) (2026-10-26) — a REDUCTION of the D = ∅ part of the epoch count to f (not free of f; not M3, not a step-4 pass, not a TARGET.md claim; epochs with D ≠ ∅ are not bounded here; G-N5-TIME stays open), CHECKER PASS (docs/checker/C75.md, checker PENDING)
 - Object (packet P-N5-REC0, added at l-new 18dd8c90, pinned trunk 64506ecf, unchanged during review): docs/new/P-N5-REC0-box45.md, sha1
   343239b54a35d2701d076805674ef77aa7a21f7d (L-NEW successor 24, Opus 5.5). The referees' notes are collected by the lane in
-  docs/new/P-N5-REC0-fixes-box45.md (FIXES PENDING: l-new SHA and sha1 to be filled, L-NEW successor 25); repairs only, no signed statement
-  changes.
+  docs/new/P-N5-REC0-fixes-box45.md (l-new ec0105e2, sha1 f35b26f369d4ea92e794d24791142f8f864f68a7, L-NEW successor 25: REC0-N1..N3,
+  N-REC0-1, N-REC0-2, the full Q-R17 input list); on trunk; repairs only, no signed statement changes.
   Setting (every game): N5 = SPEC S1-S5 (FIX 1-4, Q1-Q4); state k = (σ_k, τ_k); σ̄_k; Ξ_k; W_k := V_{σ_k,τ_k} (σ_k's valuation in G_τ); λ, λ_W;
   phases as in RESULTS R38 (a); f := the in-phase S4c fallbacks of a phase; Q := the Odd vertices of out-degree ≥ 2; an EPOCH is a maximal run of
   a phase with σ̄|Q constant, D_E := {q ∈ Q : σ̄_E(q) ≠ τ(q)}. A state is D = ∅ if σ̄_k|Q = τ|Q (then σ̄_k = τ and Ξ_k = W_k), ALL-UNSPLIT if
