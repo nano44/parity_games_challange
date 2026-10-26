@@ -27,6 +27,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   κ_t2(q2) ⪰ κ_t1(q2) + wt(C); (b) p1 intact at t2 ⇒ the cycle is Odd-unattractive; (c) ⇒ strict rise ≥ wt(C) ≻ 0. Necessary
   condition N1 (old path broken) ∨ N2 (paths meet) ∨ N3 (strict rise). frz40's flip = N1 via two fallbacks; mkpp's = N3. flipck.py
   0 violations (frz40, lib41, pp_K12, pp_K48); reversed control bites. OPEN: a level argument for N3.
+- 11:27Z Lead GO (i) as last box, then freeze P-N5-FLIP-box18, then handover. note §25: Lemma N3-LEVEL PROVED (flip with p1 ∩ p2 = ∅,
+  top h of C even above c, p2 intact at t1 if h ∈ p2 ⇒ q2's path set changes at a rank ≥ rank(h)); sharp (leanT_N6 equality, MUT=2
+  bites); 0 violations on mkpp pins, lib41. Packet docs/si/P-N5-FLIP-box18.md written (10 quotes checked; pinned).
 - Things only I know: relay.py's per-q exit paths stop at Q ∪ {c} (class form, §22.4); ROOT's Q-exit paths stop only at Q or a repeat
   (global form, §22.3). rho_transitions = class_event_transitions on lib41: every ρ-transition there touches one class only.
 

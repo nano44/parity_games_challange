@@ -925,3 +925,45 @@ y1 := σ̄_{t1}(q1), p2 := p_{t2}(q2), and C := the closed walk q1 · p1 · q2 �
 - DATA: FLIPCOST, FLIP1 0 violations (frz40, lib41, both mkpp pins); BROKEN / INTACT split as tabled. frz40's flip is N1 (via two
   fallbacks); mkpp's are N3.
 - CONJECTURE (not stated as a target): none new. ρ_q for m_c ≥ 2 stays OPEN.
+
+## 25. Lemma N3-LEVEL (Lead's GO (i), 11:27Z; PROVED, every game, P1): an intact flip forces a rise of q2 at a level ≥ top(C)
+Written 2026-10-26T11:3xZ (date -u), successor 14. Setting and names as §24.2. X_s := P(Ξ_s q2), the path set (vertices above c before c on
+q2's honest play at s); "lev" := the top rank of X_{t1} Δ X_{t2} (−1 if equal).
+### Statement
+Let (q1, q2, t1 < t2) be a flip with p1 ∩ p2 = ∅. Let h be the highest-ranked vertex of C = q1·p1·q2·p2, and assume rank(h) > rank(c)
+and h even. Both hold when p1 is intact at t2, by FLIP (c). If h ∈ p2, assume also that p2 is intact at t1. Then lev ≥ rank(h): q2's
+path set changes between t1 and t2 at a rank ≥ rank(h).
+### Proof
+Two facts used throughout.
+- (no cycle) A vertex's honest play at s reaches c. So if q's play at s meets a vertex from which the plays at s lead back to q
+  before c, that is a contradiction.
+- (decomposition) X_{t2} = {q2} ∪ p2 ∪ P(Ξ_{t2} q1), and P(Ξ_{t1} q1) = {q1} ∪ p1 ∪ X_{t1} (disjoint unions, above c; §22.4 (iii)). Every
+  vertex of C has rank ≤ rank(h). So above rank(h): X_{t2} agrees with P(Ξ_{t2} q1), and X_{t1} with P(Ξ_{t1} q1).
+- Case h = q1. q1 ∈ X_{t2}, since q2's play at t2 runs along p2 to q1. If q1 ∈ X_{t1}, then q2's play at t1 meets q1 before c, and q1's
+  play at t1 runs along p1 back to q2: a contradiction (no cycle). So lev ≥ rank(q1).
+- Case h ∈ p2. h ∈ X_{t2}. If h ∈ X_{t1}, then q2's play at t1 meets h, and from h follows p2 (intact at t1) to q1, then p1 to q2: a
+  contradiction. So lev ≥ rank(h).
+- Case h ∈ p1. h ∉ X_{t1} (else q2's play at t1 meets h and p1 leads back to q2). If h ∈ P(Ξ_{t2} q1), then h ∈ X_{t2}, so lev ≥ rank(h).
+  Otherwise P(Ξ_{t1} q1) ∋ h and P(Ξ_{t2} q1) ∌ h, so these two sets differ; let L′ be their top differing rank, L′ ≥ rank(h). Ξ(q1) is
+  non-decreasing on the phase (R15 (a), (d) via (VJ), P1) with the same cycle node, so the set with the larger signed weight is
+  P(Ξ_{t2} q1). At L′ = rank(h) the difference would be h ∈ P(Ξ_{t1} q1) with h even, which makes P(Ξ_{t1} q1) the heavier set: a
+  contradiction. So L′ > rank(h). By the decomposition, X_{t1} and X_{t2} differ at L′, and lev ≥ L′ > rank(h).
+- Case h = q2. q2 ∈ P(Ξ_{t1} q1) (q1's play at t1 reaches q2 along p1). q2 ∉ P(Ξ_{t2} q1), else q1's play at t2 meets q2 and p2 leads
+  back to q1. So the two sets differ at rank(h) or above. As in the previous case, L′ = rank(h) contradicts monotonicity (h even), so
+  L′ > rank(h) and lev > rank(h). □
+### Remarks
+- The bound is sharp. leanT_N6 (L-RED, experiments/red/tcpert/instances/leanT_N6.pg, sha1 f037844a…) from flipck's random starts has
+  three flips with h ∈ p2 and lev = rank(h) exactly (42, 44, 42). The strict control (MUT=2: lev > rank h) fails there, and the
+  lemma's 0 violations are not slack. In the h = q1 and h ∈ p1 cases (q2 case too) the proof gives lev > rank(h) whenever the
+  P(Ξ q1) route is taken.
+- DATA (flipck.py N3LEV_V = 0): flips with both paths intact at both times and disjoint, pp_K12_n161 15, pp_K48_n449 51, lib41
+  (S3 + 4 random starts) 12 (top in p2: 5, q1: 6, q2: 1); MUT=2 bites on lib41 (3 equalities, leanT_N6) and is pinned there.
+- What it gives (READING): each N3 flip (q1 → q2 then q2 → q1, paths intact) is a change of q2's path set at a level ≥ top(C), where C is
+  an Odd-unattractive cycle with an EVEN top above c. With RULER-type counting per level (between two changes of a path set at the same
+  level there is one at a higher level, which held in all data, §20), the number of N3 flips of a pair is bounded by the ruler count above
+  rank(top(C)): 2^{#ranks ≥ top(C)}. That is polynomial only if top(C) is within O(log n) of the class's top rank. Not a polynomial bound in
+  general; the mkpp flips have cycles with top e_i (even, relevant) and grow linearly. A super-polynomial N3 family therefore needs relay
+  cycles whose tops sit LOW in the class, with high-level changes re-used in a ruler pattern above them. That is the counterexample shape
+  for L-RED.
+### Status
+PROVED (lane, unrefereed): N3-LEVEL. DATA: as above, tight. In packet P-N5-FLIP-box18 §6.
