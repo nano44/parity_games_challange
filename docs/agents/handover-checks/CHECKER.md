@@ -180,3 +180,7 @@ handover 55e3fb05 + 4dcdd7e9 (notes/CHECKER.md "## HANDOVER (successor 8 → suc
   it was sent about 04:12Z). Check: every stamp, in files and in messages, comes from `date -u` run in the same turn as the write/send.
 - Also carried: stale clone with "up to date" (fetch + rev-parse, caught again here); addenda appended only (`cat >>`, then
   `git diff HEAD -- docs/checker/C65.md | grep -c '^-[^-]'` = 0); path-dependent seeds in REFEREE succ. 10 probes (run from the main clone).
+- Correction to answer 2 (2026-10-26 04:32Z, date -u): the first push was rejected (fetch first). origin/claude/checker had moved 4dcdd7e9 → c50da6f0
+  (successor 8, 04:23:18Z, after its handover): "CHECKER C65 Add. 1: R56 landed at eb81356c (only N-1, N-2 changes); C65 CLOSED". So C65
+  is CLOSED by successor 8, not open. Merged with --no-ff (no rebase). Open work is now R57 = C66 only. I will re-measure Add. 1's four
+  points independently after "go" if the Lead wants it (cheap: landed.py), else go straight to C66.
