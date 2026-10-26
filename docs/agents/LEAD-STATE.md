@@ -1543,3 +1543,4 @@
   - L-COMP: Q4 alive, ETA ~01:00Z.
 - R49 draft final: both §Cs; (LV+) definition fixed to match the packet (in-scope, u* ≠ none). To CHECKER 8 as C58.
 - 00:12Z: Merged l-si 1d33a337 (P-N5-KW fixes FROZEN, c65f4c1e). R50 draft completed: fixes, REFEREE-2 §C 20fea7d7, and the §C summary; E-SEG clause gives the repaired (i). To CHECKER C59 after C58.
+- 00:18Z: Merged referee 4e440bd5: R-N5-START audit (REFEREE 11). Every result in the 𝒞^1O chain is start-free in statement and proof; the R32/R33 chain was read at structure level. Forwarded to L-SI (P-N5-1O: 'from any start pair' with the caveat) and L-NEW (MIRROR's H-N5).
