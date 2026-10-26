@@ -1,0 +1,51 @@
+CTRL_jplus1_bites          61814
+FBR_chk                    75911
+VILB_FAIL                  46067
+VILB_chk                   288314
+VILB_finite                82033
+VILB_tight                 25368
+games                      367
+max_f                      33
+phases                     1737
+skip_big                   45
+FAILS 46067
+EX ( ('VILB', 'experiments/n5-exhaustive/instances/b4_n5_other_0.pg', 2, 0, 1)
+EX ( ('VILB', 'experiments/n5-exhaustive/instances/b5_os_n14.pg', 20, 7, 6)
+EX ( ('VILB', 'experiments/n5-exhaustive/instances/b5_os_n16.pg', 23, 7, 6)
+EX ( ('VILB', 'experiments/n5-exhaustive/instances/b5_os_n16.pg', 24, 7, 7)
+EX ( ('VILB', 'experiments/n5-exhaustive/instances/b5_os_n20.pg', 28, 7, 6)
+EX ( ('VILB', 'experiments/n5-exhaustive/instances/b5_os_n20.pg', 29, 7, 6)
+EX ( ('VILB', 'experiments/n5-exhaustive/instances/b5_os_n20.pg', 30, 7, 6)
+EX ( ('VILB', 'experiments/n5-exhaustive/instances/b5_os_n20.pg', 31, 7, 6)
+EX ( ('VILB', 'experiments/n5-exhaustive/instances/b5_os_n20.pg', 32, 7, 7)
+EX ( ('VILB', 'experiments/n5-exhaustive/instances/b5_os_n24.pg', 43, 7, 6)
+EX ( ('VILB', 'experiments/n5-exhaustive/instances/b5_os_n24.pg', 44, 7, 6)
+EX ( ('VILB', 'experiments/n5-exhaustive/instances/b5_os_n24.pg', 45, 7, 6)
+EX ( ('VILB', 'experiments/n5-exhaustive/instances/b5_os_n24.pg', 46, 7, 6)
+EX ( ('VILB', 'experiments/n5-exhaustive/instances/b5_os_n24.pg', 47, 7, 6)
+EX ( ('VILB', 'experiments/n5-exhaustive/instances/b5_os_n24.pg', 48, 7, 6)
+EX ( ('VILB', 'experiments/n5-exhaustive/instances/b5_os_n24.pg', 49, 7, 7)
+EX ( ('VILB', 'experiments/n5-exhaustive/instances/b5_os_n28.pg', 53, 7, 7)
+EX ( ('VILB', 'experiments/n5-exhaustive/instances/b5_os_n28.pg', 54, 7, 7)
+EX ( ('VILB', 'experiments/n5-exhaustive/instances/b5_os_n28.pg', 55, 7, 7)
+EX ( ('VILB', 'experiments/n5-exhaustive/instances/b5_os_n28.pg', 56, 7, 7)
+EX ( ('VILB', 'experiments/n5-exhaustive/instances/b5_os_n28.pg', 57, 7, 7)
+EX ( ('VILB', 'experiments/n5-exhaustive/instances/b5_os_n28.pg', 58, 7, 7)
+EX ( ('VILB', 'experiments/n5-exhaustive/instances/b5_os_n28.pg', 59, 7, 7)
+EX ( ('VILB', 'experiments/n5-exhaustive/instances/b5_os_n28.pg', 60, 7, 8)
+EX ( ('VILB', 'experiments/n5-exhaustive/instances/b5_os_n32.pg', 59, 7, 7)
+EX ( ('VILB', 'experiments/n5-exhaustive/instances/b5_os_n32.pg', 60, 7, 7)
+EX ( ('VILB', 'experiments/n5-exhaustive/instances/b5_os_n32.pg', 61, 7, 7)
+EX ( ('VILB', 'experiments/n5-exhaustive/instances/b5_os_n32.pg', 62, 7, 7)
+EX ( ('VILB', 'experiments/n5-exhaustive/instances/b5_os_n32.pg', 63, 7, 7)
+EX ( ('VILB', 'experiments/n5-exhaustive/instances/b5_os_n32.pg', 64, 7, 7)
+EX ( ('VILB', 'experiments/n5-exhaustive/instances/b5_os_n32.pg', 65, 7, 7)
+EX ( ('VILB', 'experiments/n5-exhaustive/instances/b5_os_n32.pg', 66, 7, 7)
+EX ( ('VILB', 'experiments/n5-exhaustive/instances/b5_os_n32.pg', 67, 7, 8)
+EX ( ('VILB', 'experiments/n5-exhaustive/instances/b5_os_n40.pg', 66, 7, 7)
+EX ( ('VILB', 'experiments/n5-exhaustive/instances/b5_os_n40.pg', 67, 7, 7)
+EX ( ('VILB', 'experiments/n5-exhaustive/instances/b5_os_n40.pg', 68, 7, 7)
+EX ( ('VILB', 'experiments/n5-exhaustive/instances/b5_os_n40.pg', 69, 7, 8)
+EX ( ('VILB', 'experiments/n5-exhaustive/instances/b5_os_n40.pg', 69, 11, 8)
+EX ( ('VILB', 'experiments/n5-exhaustive/instances/b5_os_n40.pg', 70, 7, 8)
+EX ( ('VILB', 'experiments/n5-exhaustive/instances/b5_os_n40.pg', 70, 11, 8)

@@ -1,0 +1,10 @@
+CTRL_jplus1_bites          1216
+FBR_chk                    110021
+VILB_chk                   602116
+VILB_finite                105188
+VILB_tight                 61861
+games                      367
+max_f                      33
+phases                     5393
+skip_big                   45
+FAILS 0
