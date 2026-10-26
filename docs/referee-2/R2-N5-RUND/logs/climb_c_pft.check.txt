@@ -1,0 +1,55 @@
+MODE start climb/c_pft.pg climb/c_pft.start MUT - PATHCAP 9 LALL 12 RANDP 3
+CHG_changes: 285
+CHG_charged: 88
+CHG_window: 197
+CHU_U_events: 36
+CHU_checks: 101568
+CRREL_freeze_checks: 1
+CRREL_freeze_checks_D_nonempty: 1
+CRREL_subruns: 5
+ENGXI_checks: 45
+FRZS_checks: 50884
+FRZS_content: 24456
+FZP_checks: 45
+FZ_checks: 1046
+KF_states_Lm1: 38
+MERGE_checks: 1077
+OFFa_transitions: 35
+OFFb_checks: 1152
+OFFc_checks: 54
+P1_brute_states: 40
+P1_brute_strategies: 1600
+P2_brute_strategies: 995
+P2_brute_transitions: 38
+PDa_aligned_states: 1
+PDa_brute_arenas: 1
+PDa_brute_strategies: 32
+PDb_blocks: 1
+PSCH_clean_checks: 14100
+SPR_runs: 1
+TG_changes: 15326
+TG_subruns: 630
+TG_tail_changes: 266
+TGii_rise_checks: 320
+TGii_rise_nonzero: 222
+UNF_checks: 88
+ff_runs: 2
+ff_transitions: 38
+forbidden_pairstates_Lm1: 325
+h3_runs: 1
+h3_transitions: 35
+ii_runs: 2
+ii_transitions: 38
+runs: 1
+states: 45
+CHU_max_U_per_run: (11, 'c_pft.pg#start@9 L -1 n 32')
+CHU_max_U_per_vertex: (3, 'c_pft.pg#start@9 L -1')
+PDb_max_block: (1, 'c_pft.pg#start@43 n 32 m_tau 106')
+SPR_max_ratio_x1000: (6, 'c_pft.pg#start@9 T 35 Nsplit 34 n 32')
+TG_max_B: (8, 'c_pft.pg#start@9 n 32')
+TG_max_Nv: (10, 'c_pft.pg#start@9 v 0 B 8 n 32')
+TG_max_tail: (2, 'c_pft.pg#start@9..43 v 0 bound 511')
+TGii_max_rise_over_cap_x1000: (160, 'c_pft.pg#start@9..41 v 18')
+max_ff_run_transitions: (35, 'c_pft.pg#start@9 n 32')
+max_h3_run_transitions: (35, 'c_pft.pg#start@9 n 32')
+RESULT OK violations=0

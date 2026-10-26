@@ -1,0 +1,88 @@
+MODE start ../../../experiments/red/so/instances/pftheta34_n32.pg ../R2-N5-H3/instances/pftheta34_n32_S3.start MUT shift PATHCAP 9 LALL 12 RANDP 3
+CHG_changes: 279
+CHG_charged: 85
+CHG_window: 194
+CHU_U_events: 22
+CHU_checks: 95200
+CRREL_freeze_checks: 1
+CRREL_freeze_checks_D_nonempty: 1
+CRREL_subruns: 5
+ENGXI_checks: 40
+FRZS_checks: 48332
+FRZS_content: 671
+FZP_checks: 40
+FZ_checks: 451
+KF_states_Lm1: 33
+MERGE_checks: 1052
+OFFa_transitions: 34
+OFFb_checks: 1120
+OFFc_checks: 34
+P1_brute_states: 35
+P1_brute_strategies: 665
+P2_brute_strategies: 524
+P2_brute_transitions: 34
+PDa_aligned_states: 1
+PDa_brute_arenas: 1
+PDa_brute_strategies: 20
+PDb_blocks: 1
+PSCH_clean_checks: 15581
+SPR_runs: 1
+TG_changes: 16764
+TG_subruns: 595
+TG_tail_changes: 113
+TGii_rise_checks: 192
+TGii_rise_nonzero: 117
+UNF_checks: 85
+VIOLATIONS: 733
+V_FRZS: 671
+V_PSCH: 62
+ff_runs: 1
+ff_transitions: 34
+forbidden_pairstates_Lm1: 144
+h3_runs: 1
+h3_transitions: 34
+ii_runs: 1
+ii_transitions: 34
+runs: 1
+states: 40
+CHU_max_U_per_run: (7, 'pftheta34_n32.pg#start@5 L -1 n 32')
+CHU_max_U_per_vertex: (1, 'pftheta34_n32.pg#start@5 L -1')
+PDb_max_block: (1, 'pftheta34_n32.pg#start@38 n 32 m_tau 82')
+SPR_max_ratio_x1000: (7, 'pftheta34_n32.pg#start@5 T 34 Nsplit 33 n 32')
+TG_max_B: (8, 'pftheta34_n32.pg#start@5 n 32')
+TG_max_Nv: (10, 'pftheta34_n32.pg#start@5 v 0 B 8 n 32')
+TG_max_tail: (2, 'pftheta34_n32.pg#start@5..38 v 11 bound 511')
+TGii_max_rise_over_cap_x1000: (132, 'pftheta34_n32.pg#start@5..37 v 11')
+max_ff_run_transitions: (34, 'pftheta34_n32.pg#start@5 n 32')
+max_h3_run_transitions: (34, 'pftheta34_n32.pg#start@5 n 32')
+VIOLATION PSCH: pftheta34_n32.pg#start@16: L -1 x 8 r (8, 0, 17, 1)
+VIOLATION PSCH: pftheta34_n32.pg#start@17: L -1 x 4 r (4, 8, 0, 17, 1)
+VIOLATION PSCH: pftheta34_n32.pg#start@21: L -1 x 15 r (15, 4, 8, 0, 17, 1)
+VIOLATION PSCH: pftheta34_n32.pg#start@22: L -1 x 27 r (27, 15, 4, 8, 0, 17, 1)
+VIOLATION PSCH: pftheta34_n32.pg#start@23: L -1 x 26 r (26, 27, 15, 4, 8, 0, 17, 1)
+VIOLATION PSCH: pftheta34_n32.pg#start@24: L -1 x 21 r (21, 26, 27, 15, 4, 8, 0, 17, 1)
+VIOLATION PSCH: pftheta34_n32.pg#start@25: L -1 x 7 r (7, 21, 26, 27, 15, 4, 8, 0, 17, 1)
+VIOLATION PSCH: pftheta34_n32.pg#start@26: L -1 x 3 r (3, 7, 21, 26, 27, 15, 4, 8, 0, 17, 1)
+VIOLATION PSCH: pftheta34_n32.pg#start@26: L -1 x 20 r (20, 7, 21, 26, 27, 15, 4, 8, 0, 17, 1)
+VIOLATION PSCH: pftheta34_n32.pg#start@27: L -1 x 19 r (19, 20, 7, 21, 26, 27, 15, 4, 8, 0, 17, 1)
+VIOLATION PSCH: pftheta34_n32.pg#start@28: L -1 x 29 r (29, 19, 20, 7, 21, 26, 27, 15, 4, 8, 0, 17, 1)
+VIOLATION PSCH: pftheta34_n32.pg#start@29: L -1 x 6 r (6, 29, 19, 20, 7, 21, 26, 27, 15, 4, 8, 0, 17, 1)
+VIOLATION PSCH: pftheta34_n32.pg#start@29: L -1 x 31 r (31, 29, 19, 20, 7, 21, 26, 27, 15, 4, 8, 0, 17, 1)
+VIOLATION PSCH: pftheta34_n32.pg#start@30: L -1 x 5 r (5, 6, 29, 19, 20, 7, 21, 26, 27, 15, 4, 8, 0, 17, 1)
+VIOLATION PSCH: pftheta34_n32.pg#start@36: L -1 x 11 r (11, 6, 29, 19, 20, 7, 21, 26, 27, 15, 4, 8, 0, 17, 1)
+VIOLATION PSCH: pftheta34_n32.pg#start@36: L -1 x 12 r (12, 31, 29, 19, 20, 7, 21, 26, 27, 15, 4, 8, 0, 17, 1)
+VIOLATION PSCH: pftheta34_n32.pg#start@36: L -1 x 14 r (14, 26, 27, 15, 4, 8, 0, 17, 1)
+VIOLATION PSCH: pftheta34_n32.pg#start@37: L -1 x 23 r (23, 11, 6, 29, 19, 20, 7, 21, 26, 27, 15, 4, 8, 0, 17, 1)
+VIOLATION PSCH: pftheta34_n32.pg#start@38: L -1 x 16 r (16, 8, 0, 17, 1)
+VIOLATION PSCH: pftheta34_n32.pg#start@38: L -1 x 28 r (28, 4, 8, 0, 17, 1)
+VIOLATION FRZS: pftheta34_n32.pg#start: L -1 x 8 [16, 17]
+VIOLATION FRZS: pftheta34_n32.pg#start: L -1 x 4 [17, 18]
+VIOLATION FRZS: pftheta34_n32.pg#start: L -1 x 8 [16, 18]
+VIOLATION FRZS: pftheta34_n32.pg#start: L -1 x 4 [17, 19]
+VIOLATION FRZS: pftheta34_n32.pg#start: L -1 x 8 [16, 19]
+VIOLATION FRZS: pftheta34_n32.pg#start: L -1 x 4 [17, 20]
+VIOLATION FRZS: pftheta34_n32.pg#start: L -1 x 8 [16, 20]
+VIOLATION FRZS: pftheta34_n32.pg#start: L -1 x 4 [17, 21]
+VIOLATION FRZS: pftheta34_n32.pg#start: L -1 x 8 [16, 21]
+VIOLATION FRZS: pftheta34_n32.pg#start: L -1 x 4 [17, 22]
+RESULT FAIL violations=733
