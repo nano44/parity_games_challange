@@ -1,0 +1,2 @@
+NOPT=401 runs=8523 runs_nogen=0 steps_gt_maxfinaldepth=0 steps_max=4 vertices=42573
+ABSDEPTH PASS

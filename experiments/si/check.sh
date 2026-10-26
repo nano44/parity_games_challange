@@ -232,3 +232,9 @@ if grep -q "_V=\|chv_UP=" <<<"$o"; then echo "exitx: violation on nep90"; exit 1
 MR=1 MRMUT=1 python3 -I root/exitx.py --one ../red/rec0/instances/nep90_n40.pg rund/instances/nep90_n40.start | grep -q "MR_V="
 PUSHMUT=1 python3 -I root/exitx.py --one ../red/rec0/instances/nep90_n40.pg rund/instances/nep90_n40.start | grep -q "PUSH_V=16 "
 echo "root (exitx on nep90: MONO-REF, PUSH, EXIT-RHO, DEPTH hold, EXIT 53 / 18; controls MRMUT, PUSHMUT bite): PASS"
+# box 22 (docs/si/N5-ABSCYC-box22.md): Theorem ABS-DEPTH in the cyclic model (play final from step d*(v), the depth in the final forest) on
+# 2,844 random games (GEN held in all); the tie instance (GEN fails, vertex 2 past d*) reproduces; control MUT=1 (d* - 1) bites.
+o=$(python3 -I root/absdepth.py 1000 4,5,6 1); grep -q "runs=2844 runs_nogen=0 steps_gt_maxfinaldepth=0" <<<"$o"; grep -q "ABSDEPTH PASS" <<<"$o"
+python3 -I root/absdepth.py --tie | grep -q "TIE REPRODUCED"
+MUT=1 python3 -I root/absdepth.py 1000 4,5,6 1 | grep -q "DEPTH_V=1938 "
+echo "root (absdepth: ABS-DEPTH on 2,844 cyclic-model runs; tie instance; control bites): PASS"
