@@ -529,3 +529,7 @@ are cut by fallbacks and λ_W changes, counted elsewhere).
   libraries and the long runs; the constructions have none.
 - What a counterexample needs: one Even y that is W-tempted by a gated z (z's route meets D, Fact FZ), is blocked by Ξ, is later
   allowed and switches, and then again for a second gated z″ within the same run. No proof attempt yet. Suggested L-RED target.
+### CORRECTION to §11's READING (successor 13)
+- §11 says the typical forbidden edge has σ(x) ∈ R_D and z ∈ F_D, "W prefers z and Ξ does not". By Fact FZ that pattern cannot be
+  forbidden: z ∈ F_D gives Ξ(z) = W(z) ≻ W(σx) ⊵ Ξ(σx). The data (sched.py gate classes) has σ(x) ∈ F_D and z gated. The READING is
+  withdrawn; no PROVED item used it. Packet P-N5-RUND-box17 §4 carries the correction.
