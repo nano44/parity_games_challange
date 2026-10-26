@@ -1,0 +1,13 @@
+Q_AGAIN=26 Q_AGAIN_FLIP=10 Q_AGAIN_NONE=9 Q_AGAIN_ONLYSELF=10 Q_AGAIN_PING=2 Q_AGAIN_ROOT=13 Q_AGAIN_SELF=4 Q_DELTA_T=2 Q_DELTA_T_NONE=2 Q_DELTA_T_ONLYSELF=2 Q_DELTA_U=11 Q_DELTA_U_FLIP=5 Q_DELTA_U_ONLYSELF=4 Q_DELTA_U_PING=2 Q_DELTA_U_ROOT=5 Q_DELTA_U_SELF=11 Q_LEAVE=80 Q_LEAVE_FLIP=62 Q_LEAVE_ONLYSELF=4 Q_LEAVE_PING=22 Q_LEAVE_ROOT=68 Q_LEAVE_SELF=79 Q_RGAIN=62 Q_RGAIN_FLIP=14 Q_RGAIN_PING=59 Q_RGAIN_ROOT=16 Q_RGAIN_SELF=3 R_AGAIN=9 R_AGAIN_FLIP=2 R_AGAIN_NONE=6 R_AGAIN_ONLYSELF=7 R_AGAIN_SELF=3 R_DELTA_U=18 R_DELTA_U_FLIP=3 R_DELTA_U_ONLYSELF=13 R_DELTA_U_PING=3 R_DELTA_U_SELF=18 R_LEAVE=43 R_LEAVE_FLIP=27 R_LEAVE_NONE=1 R_LEAVE_ONLYSELF=5 R_LEAVE_PING=18 R_LEAVE_SELF=42 R_RGAIN=110 R_RGAIN_FLIP=9 R_RGAIN_PING=110 R_RGAIN_SELF=4 isroot_False=173 isroot_True=175 max_resets_run=18 resets=348 rgain_from_A=253 rgain_from_U_other_gate=29
+NONE-EXAMPLE (game, phase, t, u, kind, u is root) ('experiments/red/carry/instances/ctx13_n40.pg', 8, 3, 11, 'DELTA_T', False)
+NONE-EXAMPLE (game, phase, t, u, kind, u is root) ('experiments/red/carry/instances/ctx13_n40.pg rs', 6, 2, 11, 'DELTA_T', False)
+NONE-EXAMPLE (game, phase, t, u, kind, u is root) ('experiments/red/carry/instances/h4_compound2x2_n44.pg', 7, 0, 10, 'AGAIN', False)
+NONE-EXAMPLE (game, phase, t, u, kind, u is root) ('experiments/red/n5inj/instances/elimn_cex_n48.pg', 2, 49, 31, 'AGAIN', True)
+NONE-EXAMPLE (game, phase, t, u, kind, u is root) ('experiments/red/n5inj/instances/elimn_cex_n48.pg', 2, 50, 31, 'LEAVE', True)
+NONE-EXAMPLE (game, phase, t, u, kind, u is root) ('experiments/red/n5inj/instances/elimn_cex_n48.pg rs', 3, 1, 14, 'AGAIN', False)
+NONE-EXAMPLE (game, phase, t, u, kind, u is root) ('experiments/red/n5inj/instances/elimn_cex_n48.pg rs', 4, 0, 14, 'AGAIN', False)
+NONE-EXAMPLE (game, phase, t, u, kind, u is root) ('experiments/red/n5inj/instances/elimn_cex_n48.pg rs', 2, 0, 14, 'AGAIN', False)
+NONE-EXAMPLE (game, phase, t, u, kind, u is root) ('experiments/red/n5inj/instances/frz40.pg', 44, 31, 27, 'AGAIN', True)
+NONE-EXAMPLE (game, phase, t, u, kind, u is root) ('experiments/red/n5inj/instances/frz40.pg', 44, 32, 27, 'AGAIN', True)
+NONE-EXAMPLE (game, phase, t, u, kind, u is root) ('experiments/red/n5inj/instances/frz40.pg', 44, 31, 26, 'AGAIN', False)
+NONE-EXAMPLE (game, phase, t, u, kind, u is root) ('experiments/red/n5inj/instances/frz40.pg', 44, 32, 26, 'AGAIN', False)

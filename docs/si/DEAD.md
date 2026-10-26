@@ -276,3 +276,14 @@ AGAINST_W ('experiments/si/fb2o/instances/tcwult2_against_n8.pg', 0, 1, 0, 4, -1
   pairoc_n58.start (sha1 2f5630e98f5484e5c901ad45ae1bd752a5a7a4a8). `python3 -I experiments/si/rund/lvl2.py --one <pg> <start>` prints
   `VIOLATION ('PAIROC', …, 0, 3, 57, [(0, 47, 52, True), (1, 48, 51, True), (2, 47, 49, True)])`: v = 57, W rises at 47, 48, 47 (pinned).
 - Survivor: CONJECTURE LC2 holds there (|OC| 3 ≤ |SL| 5: SL = {(W, 47), (W, 48), (X, 49), (X, 51), (X, 52)}; no LC2 violation, pinned).
+
+## DEAD box 20 (L-SI successor 16, 2026-10-26T15:11Z by date -u): the charge "root offset resets → ping-pong entries or FLIP events"
+- Statement killed (a candidate charge, Lead's 15:02Z item, never claimed): every change of the root's gate offset Δ(r) = M(τ r) − M(σ̄ r) at an
+  in-phase S4a transition with r a D-direct gate coincides with a ping-pong entry into r's gate region or a change of some class terminal's
+  chosen exit (R69 FLIP-type event).
+- Obstruction: the changes are the root's own Bellman-Ford cascade events (a downstream switch in the direct region raises the root's best
+  option; note §28.2 PATH triggers), with no entry into the gate region and no chosen-exit change at that transition.
+- Instance: nep90_n40 (experiments/red/rec0/instances/nep90_n40.pg + experiments/si/rund/instances/nep90_n40.start), phase@4, root 0: 32 of 63
+  root offset resets have no charge but ρ at the root (`python3 -I experiments/si/root/resets.py --one <pg> <start>` prints
+  R_DELTA_U=63 and R_DELTA_U_ONLYSELF=32; pinned). nep76_n40 phase@9: 13 of 51.
+- Survivor: these events lie inside FREEZE-A pieces and are bounded there (FREEZE-A (c), RESET-PIECE (i)).

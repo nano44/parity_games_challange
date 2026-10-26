@@ -1,0 +1,11 @@
+Q_AGAIN=7 Q_AGAIN_FLIP=3 Q_AGAIN_NONE=4 Q_AGAIN_ONLYSELF=4 Q_AGAIN_ROOT=3 Q_AGAIN_SELF=3 Q_DELTA_U=7 Q_DELTA_U_FLIP=7 Q_DELTA_U_ROOT=7 Q_DELTA_U_SELF=7 Q_LEAVE=10 Q_LEAVE_FLIP=2 Q_LEAVE_ONLYSELF=8 Q_LEAVE_ROOT=2 Q_LEAVE_SELF=10 R_AGAIN=14 R_AGAIN_FLIP=6 R_AGAIN_NONE=6 R_AGAIN_ONLYSELF=6 R_AGAIN_PING=4 R_AGAIN_SELF=6 R_DELTA_U=63 R_DELTA_U_FLIP=29 R_DELTA_U_ONLYSELF=32 R_DELTA_U_PING=14 R_DELTA_U_SELF=63 R_LEAVE=1 R_LEAVE_PING=1 R_LEAVE_SELF=1 R_RGAIN=22 R_RGAIN_FLIP=18 R_RGAIN_PING=17 R_RGAIN_SELF=18 isroot_False=21 isroot_True=76 max_resets_run=13 resets=97 rgain_from_A=72 rgain_from_U_other_gate=14
+NONE-EXAMPLE (game, phase, t, u, kind, u is root) ('../../red/rec0/instances/nep90_n40.pg', 4, 5, 0, 'AGAIN', True)
+NONE-EXAMPLE (game, phase, t, u, kind, u is root) ('../../red/rec0/instances/nep90_n40.pg', 4, 31, 0, 'AGAIN', True)
+NONE-EXAMPLE (game, phase, t, u, kind, u is root) ('../../red/rec0/instances/nep90_n40.pg', 4, 33, 0, 'AGAIN', True)
+NONE-EXAMPLE (game, phase, t, u, kind, u is root) ('../../red/rec0/instances/nep90_n40.pg', 4, 50, 0, 'AGAIN', True)
+NONE-EXAMPLE (game, phase, t, u, kind, u is root) ('../../red/rec0/instances/nep90_n40.pg', 4, 76, 0, 'AGAIN', True)
+NONE-EXAMPLE (game, phase, t, u, kind, u is root) ('../../red/rec0/instances/nep90_n40.pg', 4, 78, 0, 'AGAIN', True)
+NONE-EXAMPLE (game, phase, t, u, kind, u is root) ('../../red/rec0/instances/nep90_n40.pg', 4, 5, 8, 'AGAIN', False)
+NONE-EXAMPLE (game, phase, t, u, kind, u is root) ('../../red/rec0/instances/nep90_n40.pg', 4, 31, 8, 'AGAIN', False)
+NONE-EXAMPLE (game, phase, t, u, kind, u is root) ('../../red/rec0/instances/nep90_n40.pg', 4, 50, 8, 'AGAIN', False)
+NONE-EXAMPLE (game, phase, t, u, kind, u is root) ('../../red/rec0/instances/nep90_n40.pg', 4, 76, 8, 'AGAIN', False)
