@@ -1,0 +1,60 @@
+MODE random 20000 2 6 193 kO 3 MUT c2l PATHCAP 9
+BP_checks: 10092
+BP_checks_NC_not_hD: 1365
+C2H_checks: 555302
+C2H_checks_not_NC: 60279
+CRD_freeze_checks: 1049
+FRZ_freeze_checks: 349
+FRZ_runs: 87275
+PCL_checks: 2076110
+PCL_runs: 438237
+TCC_checks: 125314
+TCC_terminal_changes: 30
+VIOLATIONS: 2058
+V_C2H: 2058
+WMG_transitions: 4360
+ff_runs: 115887
+phases: 114216
+runs: 60000
+states: 120247
+states_NC: 84001
+states_NC_not_hD: 526
+states_h3: 91624
+states_h3_not_NC: 9716
+states_h3_not_hD: 10051
+states_hD: 83475
+CRD_run_minus_(n-1): (0, 'random193:62#1')
+FRZ_run_minus_(n-1): (0, 'random193:62#1')
+FRZ_run_with_notHD_state_minus_(n-1): (-1, 'random193:30#1')
+max_ff_run_transitions: (2, 'random193:13#3')
+VIOLATION C2H: random193:4#3@0: L 2 MD 3
+VIOLATION C2H: random193:49#2@1: L 1 MD 2
+VIOLATION C2H: random193:49#3@0: L 4 MD 5
+VIOLATION C2H: random193:59#3@0: L 2 MD 3
+VIOLATION C2H: random193:107#3@0: L 2 MD 3
+VIOLATION C2H: random193:131#1@0: L 2 MD 3
+VIOLATION C2H: random193:136#2@0: L 4 MD 5
+VIOLATION C2H: random193:143#1@0: L 1 MD 2
+VIOLATION C2H: random193:166#2@0: L 2 MD 3
+VIOLATION C2H: random193:166#3@0: L 2 MD 3
+VIOLATION C2H: random193:170#1@0: L 3 MD 4
+VIOLATION C2H: random193:171#3@0: L 4 MD 5
+VIOLATION C2H: random193:173#1@1: L 3 MD 4
+VIOLATION C2H: random193:177#1@0: L 2 MD 3
+VIOLATION C2H: random193:177#2@0: L 4 MD 5
+VIOLATION C2H: random193:177#2@1: L 2 MD 3
+VIOLATION C2H: random193:177#3@1: L 2 MD 3
+VIOLATION C2H: random193:196#1@0: L 2 MD 3
+VIOLATION C2H: random193:236#2@0: L 3 MD 4
+VIOLATION C2H: random193:242#2@0: L 4 MD 5
+VIOLATION C2H: random193:250#2@0: L 2 MD 3
+VIOLATION C2H: random193:257#3@1: L 4 MD 5
+VIOLATION C2H: random193:259#3@0: L 4 MD 5
+VIOLATION C2H: random193:260#3@0: L 3 MD 4
+VIOLATION C2H: random193:262#1@0: L 4 MD 5
+VIOLATION C2H: random193:267#2@0: L 4 MD 5
+VIOLATION C2H: random193:286#1@0: L 4 MD 5
+VIOLATION C2H: random193:286#2@0: L 4 MD 5
+VIOLATION C2H: random193:292#2@0: L 4 MD 5
+VIOLATION C2H: random193:306#1@0: L 1 MD 2
+RESULT FAIL violations=2058

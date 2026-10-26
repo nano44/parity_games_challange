@@ -1,0 +1,56 @@
+MODE start instances/pft34_h3u_P32.pg instances/pft34_h3u_P32_t33.start MUT c2l PATHCAP 9
+C2H_checks: 288
+C2H_checks_not_NC: 288
+FRZ_freeze_checks: 1
+FRZ_freeze_checks_D_nonempty: 1
+FRZ_freeze_checks_not_NC: 1
+FRZ_freeze_checks_not_hD: 1
+FRZ_runs: 3
+TCC_checks: 404
+VIOLATIONS: 34
+V_C2H: 34
+WMG_transitions: 34
+ff_runs: 6
+phases: 5
+runs: 1
+states: 40
+states_h3: 37
+states_h3_not_NC: 37
+states_h3_not_hD: 37
+FRZ_freeze_D_nonempty_example: (1, 'pft34_h3u_P32.pg#start@5 n 34')
+FRZ_freeze_not_NC_example: (1, 'pft34_h3u_P32.pg#start@5 n 34')
+FRZ_freeze_not_hD_example: (1, 'pft34_h3u_P32.pg#start@5 n 34')
+FRZ_run_minus_(n-1): (1, 'pft34_h3u_P32.pg#start')
+FRZ_run_with_notHD_state_minus_(n-1): (1, 'pft34_h3u_P32.pg#start')
+max_ff_run_transitions: (34, 'pft34_h3u_P32.pg#start')
+VIOLATION C2H: pft34_h3u_P32.pg#start@4: L 31 MD 32
+VIOLATION C2H: pft34_h3u_P32.pg#start@5: L 31 MD 32
+VIOLATION C2H: pft34_h3u_P32.pg#start@6: L 31 MD 32
+VIOLATION C2H: pft34_h3u_P32.pg#start@7: L 31 MD 32
+VIOLATION C2H: pft34_h3u_P32.pg#start@8: L 31 MD 32
+VIOLATION C2H: pft34_h3u_P32.pg#start@9: L 31 MD 32
+VIOLATION C2H: pft34_h3u_P32.pg#start@10: L 31 MD 32
+VIOLATION C2H: pft34_h3u_P32.pg#start@11: L 31 MD 32
+VIOLATION C2H: pft34_h3u_P32.pg#start@12: L 31 MD 32
+VIOLATION C2H: pft34_h3u_P32.pg#start@13: L 31 MD 32
+VIOLATION C2H: pft34_h3u_P32.pg#start@14: L 31 MD 32
+VIOLATION C2H: pft34_h3u_P32.pg#start@15: L 31 MD 32
+VIOLATION C2H: pft34_h3u_P32.pg#start@16: L 29 MD 30
+VIOLATION C2H: pft34_h3u_P32.pg#start@17: L 29 MD 30
+VIOLATION C2H: pft34_h3u_P32.pg#start@18: L 29 MD 30
+VIOLATION C2H: pft34_h3u_P32.pg#start@19: L 29 MD 30
+VIOLATION C2H: pft34_h3u_P32.pg#start@20: L 29 MD 30
+VIOLATION C2H: pft34_h3u_P32.pg#start@21: L 29 MD 30
+VIOLATION C2H: pft34_h3u_P32.pg#start@22: L 29 MD 30
+VIOLATION C2H: pft34_h3u_P32.pg#start@23: L 29 MD 30
+VIOLATION C2H: pft34_h3u_P32.pg#start@24: L 29 MD 30
+VIOLATION C2H: pft34_h3u_P32.pg#start@25: L 29 MD 30
+VIOLATION C2H: pft34_h3u_P32.pg#start@26: L 29 MD 30
+VIOLATION C2H: pft34_h3u_P32.pg#start@27: L 29 MD 30
+VIOLATION C2H: pft34_h3u_P32.pg#start@28: L 29 MD 30
+VIOLATION C2H: pft34_h3u_P32.pg#start@29: L 29 MD 30
+VIOLATION C2H: pft34_h3u_P32.pg#start@30: L 29 MD 30
+VIOLATION C2H: pft34_h3u_P32.pg#start@31: L 29 MD 30
+VIOLATION C2H: pft34_h3u_P32.pg#start@32: L 29 MD 30
+VIOLATION C2H: pft34_h3u_P32.pg#start@33: L 29 MD 30
+RESULT FAIL violations=34

@@ -1,0 +1,27 @@
+MODE climb 3000 3 7 211 climb/frz_211 MUT - PATHCAP 9
+BP_checks: 10475
+BP_checks_NC_not_hD: 913
+C2H_checks: 290983
+C2H_checks_not_NC: 167639
+FRZ_runs: 24320
+PCL_checks: 1801688
+PCL_runs: 185814
+TCC_checks: 157574
+TCC_terminal_changes: 141
+WMG_transitions: 9293
+ff_runs: 28919
+phases: 28803
+runs: 12000
+states: 38212
+states_NC: 16080
+states_NC_not_hD: 309
+states_h3: 33599
+states_h3_not_NC: 18634
+states_h3_not_hD: 18914
+states_hD: 15771
+CRD_run_minus_(n-1): (-2, 'climb211:2616:1')
+FRZ_run_minus_(n-1): (-2, 'climb211:2616:1')
+FRZ_run_with_notHD_state_minus_(n-1): (-3, 'climb211:461:1')
+climb_best: (-3, 'climb/frz_211')
+max_ff_run_transitions: (4, 'climb211:2616:1')
+RESULT OK violations=0
