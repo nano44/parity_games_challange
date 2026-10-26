@@ -210,3 +210,12 @@ Opened only after my report was pushed (7a02a1f2, 10:08Z) and on the Lead's word
 - No disagreement. Joint gap map for the signed items: EMPTY. Notes to the lane (union): RUND-N1 = N-RUND-2, RUND-N2, RUND-N3, RUND-N4,
   N-RUND-1, N-RUND-3..7. Outside the signed items: UF-ONCE is false on two engines; §7's route to |U(S)| ≤ n_E needs another argument.
 - My verdicts are unchanged. REFEREE-2 successor 16 (Opus 5.5, D15).
+- Addendum to §C (10:38Z, date -u), answering the Lead's 10:34Z points:
+  - Correction: REFEREE's §C commit is 62a1a01d (the text I read and compared, on origin/claude/referee); "981307c9" in the §C header above
+    is wrong (that commit has no §C). The comparison is unchanged.
+  - Confirmed, point by point: all 14 signed, joint gap map empty; REFEREE accepts N-RUND-1 (P2), N-RUND-3, -4, -5; RUND-N3 and RUND-N4 are
+    REFEREE-only notes, which I ACCEPT; UF-ONCE reproduced by REFEREE on so_th_n32.
+  - CHARGE-U on the so_th_n32 sub-run (states 1..22, the run REFEREE's probe skips): re-run on my checker
+    (R2-N5-RUND/logs/so_th_n32_S3.txt): 0 violations, 29,696 CHARGE-U checks. Honest limit: that run has 21 transitions < n − 1 = 31, so
+    every one of its 302 COARSE_L(W) changes is a WINDOW change and CHARGE-U holds there through its n − 1 window term alone; the witness
+    refutes UF-ONCE but does not stress CHARGE-U's U-term. The U-term is exercised elsewhere (charged changes 15,314 over my sets, §5.2).

@@ -1,0 +1,46 @@
+MODE start ../../../experiments/red/so/instances/so_th_n32.pg MUT - PATHCAP 9 LALL 12 RANDP 3
+CHG_changes: 302
+CHG_window: 302
+CHU_U_events: 18
+CHU_checks: 29696
+CRREL_subruns: 11
+ENGXI_checks: 37
+FRZS_checks: 12012
+FRZS_content: 7660
+FZP_checks: 37
+FZ_checks: 51
+KF_states_Lm1: 7
+MERGE_checks: 730
+OFFa_transitions: 22
+OFFb_checks: 768
+OFFc_checks: 18
+P1_brute_states: 36
+P1_brute_strategies: 648
+P2_brute_strategies: 9297
+P2_brute_transitions: 34
+PDa_aligned_states: 15
+PDa_brute_arenas: 15
+PDa_brute_strategies: 244
+PDb_blocks: 4
+PSCH_clean_checks: 6633
+SPR_runs: 2
+TG_changes: 6673
+TG_subruns: 232
+ff_runs: 2
+ff_transitions: 34
+forbidden_pairstates_Lm1: 17
+h3_runs: 2
+h3_transitions: 22
+ii_runs: 2
+ii_transitions: 22
+runs: 1
+states: 37
+CHU_max_U_per_run: (6, 'so_th_n32.pg#S3@1 L -1 n 32')
+CHU_max_U_per_vertex: (3, 'so_th_n32.pg#S3@1 L -1')
+PDb_max_block: (7, 'so_th_n32.pg#S3@15 n 32 m_tau 107')
+SPR_max_ratio_x1000: (14, 'so_th_n32.pg#S3@1 T 21 Nsplit 8 n 32')
+TG_max_B: (13, 'so_th_n32.pg#S3@1 n 32')
+TG_max_Nv: (15, 'so_th_n32.pg#S3@1 v 3 B 13 n 32')
+max_ff_run_transitions: (33, 'so_th_n32.pg#S3@1 n 32')
+max_h3_run_transitions: (21, 'so_th_n32.pg#S3@1 n 32')
+RESULT OK violations=0
