@@ -1248,3 +1248,8 @@ Successor 27 (Opus 5.5, D14/D18, L40), session_01Eb3V637FARpmtRkvarA5Jx. Handove
   changes carry the count (PARCHG ≫ RISE); §4 Davenport-Schinzel view needs pairwise swaps, swaps 11-22 (not closed; DS source NOT opened);
   §5 other fields READING only. Sources opened: R61 (c) l. 3122-3123, §5 l. 3134; R56 (a) l. 2851, (d) l. 2858; P-N5-CHOSEN l. 81 (sha1 764cfbb3).
   Trap: pkill pattern inside the same bash -c string killed my shell (exit 144) again; launch and kill in separate calls.
+- 16:50Z (date -u): Lead 16:41Z (a)/(b) on ENTRY. (a) closed stronger: OFFSET-MONO holds with no ENTRY hypothesis (λ constant ⇒ offsets defined for
+  all of q's new path; Case L by Odd's optimality, κwt(Z) ⪰ 0 from SPEC S1's reward order). Packet P-N5-OFFMONO-box49 FROZEN (OFFSET-MONO,
+  CHAIN-SUM, CHAIN-COUNT; 12 quotes vs 58061d91). offmono2.py: 0 violations in 15,741 checks; controls bite. Fixed in draft: CHAIN-COUNT pieces
+  must also be cut at CYC transitions. Sources opened: SPEC l. 30-31, 56-57; RESULTS l. 803-804, 2840, 2851, 2858, 3123, 3768-3769; FBRED l. 49-50;
+  FBPOLY l. 93-97.

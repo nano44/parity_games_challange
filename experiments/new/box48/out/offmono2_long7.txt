@@ -1,0 +1,7 @@
+nep90_n40: V_Kx 8 checks 455 parent_changed_checks 28 phases 1 | MUT: V_Kc 150 V_Kx 146 V_M 136 checks 455 parent_changed_checks 198 phases 1
+nep76_n40: V_Kx 11 checks 390 parent_changed_checks 42 phases 1 | MUT: V_Kc 186 V_Kx 168 V_M 156 checks 390 parent_changed_checks 203 phases 1
+long121_n40: LOOP 2 V_Kx 1 checks 363 parent_changed_checks 26 phases 1 | MUT: LOOP 2 V_Kc 71 V_Kx 71 V_M 71 checks 363 parent_changed_checks 129 phases 1
+best_qpc_nep90_n40_s51: LOOP 6 V_Kx 9 checks 1311 parent_changed_checks 110 phases 2 | MUT: LOOP 6 V_Kc 536 V_Kx 518 V_M 509 checks 1311 parent_changed_checks 589 phases 2
+best_qpc_nep76_n40_s52: V_Kx 5 checks 1134 parent_changed_checks 57 phases 1 | MUT: V_Kc 398 V_Kx 355 V_M 344 checks 1134 parent_changed_checks 509 phases 1
+best_qpc_long121_n40_s53: LOOP 1 checks 1270 parent_changed_checks 68 phases 1 | MUT: LOOP 1 V_Kc 182 V_Kx 182 V_M 182 checks 1270 parent_changed_checks 567 phases 1
+snap_n80_s62: LOOP 9 V_Kx 7 checks 3600 parent_changed_checks 177 phases 1 | MUT: LOOP 9 V_Kc 1771 V_Kx 1584 V_M 1576 checks 3600 parent_changed_checks 2229 phases 1

@@ -133,3 +133,15 @@ Proof.
 - (2) A real ENTRY instance, to test OFFSET-MONO's content (no ENTRY occurred in data).
 - (3) Pairwise option swaps per phase (§4).
 - (4) The n-scaling of QP_c on long phases beyond n = 80 (§0, DATA only).
+
+## 7. (a) closes: OFFSET-MONO without the ENTRY hypotheses; packet P-N5-OFFMONO-box49 (PROVED; DATA; Lead's routing of 16:41Z; written 16:5xZ by date -u)
+- The lemma of §2 holds with NO region hypothesis: at every in-phase transition, for q ∈ Q, q ≠ c, on no honest cycle at t, with p := q's routing
+  vertex at t + 1 (par_{t+1}(q), or c), κ_{t+1}(q) − κ_{t+1}(p) ⪰ κ_t(q) − κ_t(p) in κ = (M, s_c·ℓ). Step 1 never needed (E2) (λ is constant on the
+  phase, so every vertex of q's new path is in U_c and its t-offset to p is defined whether or not its t-play met p); Step 2's remaining case
+  (y2's t-play passes q, "Case L") closes by Odd's optimality (Lemma S (a)) on the cycle Z = q → … → q: κwt_c(Z) ⪰ 0. So ENTRY is irrelevant and R61's
+  odometer reset is impossible at every level on no honest cycle. §2's (E1)-(E2) form is superseded.
+- Corollaries CHAIN-SUM (a κ change of q is a sum of non-negative level rises along its (t+1)-chain) and CHAIN-COUNT (per vertex, κ changes ≤
+  |CYC_c| + Σ_x D·(|EXIT_x| + |CYC_c| + 1) when offsets take ≤ D values on fixed-exit pieces). Answer to the Lead's question: the product over chain
+  levels is gone; the exit changes EXIT_x (and CYC) take its place, so polynomial in n and k follows exactly when exits per phase are polynomial.
+- Full statements, proofs, premises, quotes and data: docs/new/P-N5-OFFMONO-box49.md (frozen at this push). DATA (offmono2.py): 0 violations in
+  15,741 checks (lib41 n ≤ 34 and seven long instances incl. the n = 80 climb), 25 Case L checks, 590 parent-changed checks; controls bite.
