@@ -280,3 +280,12 @@ o=$(python3 -I root/fresh.py --one ../red/so/instances/post31_n48.pg); if grep -
 FMUT=1 python3 -I root/fresh.py --one ../red/so/instances/post31_n48.pg | grep -q "NOFRESH3_gci_gch=1 "
 o=$(python3 -I root/mrise.py --one orlens/instances/lev_l_sc.pg); grep -q "MULT_run=7 " <<<"$o"; if grep -q "WRONG" <<<"$o"; then echo "mrise: Xi fall"; exit 1; fi
 echo "root (box 23 ALT: GATE-ONEWAY, FRESH3, TOP-ONCE dead with instances; FRESH3 holds on post31, control bites): PASS"
+# P-N5-ROOT-fixes-box20 (repairs to P-N5-ROOT d3788bc0 + addendum af1c7ad4): 36 quotes verbatim (packets at ced5cf27 / 829003b2, FLIP at
+# 7ea3d8cf, REFEREE 619fccf2 / 65f55427, REFEREE-2 3febbfaf / f5381a5c); shifted control fails.
+if git cat-file -e ced5cf27 && git cat-file -e 829003b2 && git cat-file -e 7ea3d8cf && git cat-file -e 619fccf2 && git cat-file -e 65f55427 && git cat-file -e 3febbfaf && git cat-file -e f5381a5c; then
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-ROOT-fixes-box20.md | grep -q "quotes=36 bad=0"
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-ROOT-fixes-box20.md --mut | grep -q "QUOTES FAIL"
+  echo "root (P-N5-ROOT fixes: 36 quotes verbatim; shifted control fails): PASS"
+else
+  echo "root (P-N5-ROOT fixes quotes): NOT RUN (a source commit is not in this clone)"
+fi

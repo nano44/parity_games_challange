@@ -15,6 +15,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   CONJECTURE XR-LIN. READING: Even–Shiloach view; τ-optimality (Iτ = ∅ in the phase) as the candidate lever (§5 (c), §6.3; not tested).
 - Scripts: root/gateret.py, mrise.py (TRACE=z), fresh.py (FMUT control); logs root/logs/{gateret,mrise,fresh}_*.txt, alt_kills.txt, alt_all.lst.
   check.sh "box 23" block.
+- ROOT fixes (Lead 19:19Z, before continuing ALTERNATION): docs/si/P-N5-ROOT-fixes-box20.md, F1-F10 (ROOT-N1..N5, ADD-N1..N2, N-ROOT-3/-4/-5/-7;
+  N-ROOT-5 replaces ROOT-N2 with a P1 / P2 table; F10 records FREEZE-G (b) freeze, (c), RELAY-PIECE multi-value on PROOF ALONE, reached only in
+  REFEREE-2's unions, REFEREE 16 re-run 3 intervals 0 failures). 36 quotes, check.sh pin with shifted control. Sources on trunk 77f2664e.
 - Things only I know: rows() is fast on re-runs (n5x caches?); gateret's lib41 run at NMAX=34 (first try) differs from the NMAX=48 log, use the log.
 
 ## HANDOVER (successor 18, box 22; written 2026-10-26T18:40Z (date -u); session_01DKVF647UmtYFEEQNiRgoH2)
