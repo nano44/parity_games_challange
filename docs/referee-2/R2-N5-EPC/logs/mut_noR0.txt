@@ -1,0 +1,30 @@
+MODE files ../R2-N5-STAU/lib41_noref.lst 1 MUT noR0 BUDGET 400000
+ASM_N2_checks: 2244
+ASM_checks: 2332
+C_checked: 336
+C_deep: 172
+C_nothing_to_check: 2494
+ENGXI_checks: 8882
+EPC_phases: 2244
+EVEN_checks: 1105
+FBCp_checks: 142
+ISE_checks: 26
+R0_total: 76
+REM_checks: 2332
+RETFB_checks: 5205
+RETFB_checks_other_config: 2575
+SATFB_checks: 12
+UNK_C: 481
+VIS_R0: 96
+VIS_a: 0
+VIS_b: 96
+VIS_checks: 336
+VIS_returns: 192
+phases: 2332
+runs: 410
+states: 8882
+max_NCONF: (23, 'experiments/red/so/instances/pft35_n48.pg#0@2 n 48 N_ep 39')
+max_Nep: (50, 'experiments/si/orlens/instances/lev_l_x.pg#0@1 n 32 NCONF 14')
+max_V_C: (10, 'experiments/red/xing/instances/j4_n40.pg#0@3 n 40')
+max_sat_src_per_C: (1, 'experiments/n5-exhaustive/instances/b4_n5_other_0.pg#0@0')
+RESULT OK violations=0
