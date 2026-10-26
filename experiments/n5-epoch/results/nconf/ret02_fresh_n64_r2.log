@@ -1,0 +1,18 @@
+START fit (0, 1) n 64
+BEST step 86 fit (0, 2) t 2s
+BEST step 1627 fit (0, 3) t 46s
+BEST step 1873 fit (0, 5) t 59s
+BEST step 3298 fit (0, 6) t 146s
+BEST step 3349 fit (0, 7) t 151s
+BEST step 3570 fit (0, 8) t 168s
+BEST step 3630 fit (0, 9) t 173s
+BEST step 4057 fit (1, 5) t 205s
+BEST step 4076 fit (1, 8) t 207s
+BEST step 4124 fit (1, 9) t 211s
+BEST step 4743 fit (1, 10) t 268s
+BEST step 6614 fit (1, 11) t 486s
+BEST step 6676 fit (1, 12) t 494s
+BEST step 6746 fit (2, 12) t 505s
+BEST step 6820 fit (2, 13) t 515s
+BEST step 7108 fit (2, 14) t 553s
+END steps 7748 best (2, 14) n 64 -> results/nconf/ret02_fresh_n64_r2.pg

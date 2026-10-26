@@ -1,0 +1,11 @@
+START fit (1, 0) n 48
+BEST step 452 fit (2, 0) t 8s
+BEST step 1211 fit (3, 0) t 23s
+BEST step 1793 fit (4, 0) t 40s
+BEST step 2079 fit (5, 0) t 51s
+BEST step 2833 fit (6, 0) t 86s
+BEST step 5938 fit (7, 0) t 217s
+BEST step 6959 fit (8, 0) t 262s
+BEST step 7171 fit (9, 0) t 270s
+BEST step 7413 fit (10, 0) t 281s
+END steps 11351 best (10, 0) n 48 -> results/nconf/nconf2_fresh_n48_r2.pg

@@ -1233,3 +1233,9 @@ Successor 27 (Opus 5.5, D14/D18, L40), session_01Eb3V637FARpmtRkvarA5Jx. Handove
   (P3) τ ∈ H + Even lists intact are used); §9's CONJECTURE RESTRICT_{u|J} now an instance; new instance G^P (used-edge game of a phase).
   DATA phrestrict.py: long3 0/0 (QP 5/5/3), liball n ≤ 34 1,031 phases 0/0, MUT bites (XI 514, REP 292). Sources: R64 at RESULTS l. 3206
   (opened), P-N5-EPR §1-§2 (opened), R68 (f) (opened).
+- 15:40Z (date -u): Lead 15:38Z: freeze RESTRICT_H as a packet; item 3 moved to L-SI 17 (session_016b6dkXxRQVs8RACh8bSCyW; do not duplicate; L-SI 16
+  parked with RESET-PIECE, PING/FLIP charge DEAD); my next design item: QP (Odd vertices with ≥ 2 edges in G^P). Packet P-N5-RESTRICT-box48 FROZEN
+  (quotes 8 missing 0 vs P-N5-EPR at 08abd9cb). Trunk 9bbd86e4 merged (91a69007).
+- 15:52Z (date -u): QP (N5-NCONF §11). QP = |∪D_k| (elementary). Library: long phases have small QP (len ≥ 60: ≤ 3) but selection bias (|Q| = 1).
+  Climbs weak (O fixed by climb.mutate). DUNION: k copies of nep90 = one 91-transition phase with QP 5k at n 40k, so QP is the wrong parameter;
+  QP_c (per class) proposed; OPEN. Trap: climb.mutate never changes the Odd choice set; QP ≤ |O| by design.

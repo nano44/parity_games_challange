@@ -1,0 +1,2 @@
+  ../red/usplit/instances/gate_K16_n197.pg phase@0 run[0,23] c=0 |U|=197 |Qc|=5 G=2 gcv=94 Xmax=18 Xsum=35 X={58: 17, 31: 18} rho_root=15
+G_max=2 G_sum=2 X_max=18 X_sum=35 cint=17 cint_len_max=3 cint_migt=4 cint_pure=10 gcv=94 gcv_DLEAVE=94 mig_per_vertex_max=1 rho_max=15 runs=1 xt_LEFT=7 xt_NONE=28 xv=105 xv_SRC_DD=73 xv_SRC_LEFT=32 xv_SRC_ND=32 xv_SRC_STAY=73
