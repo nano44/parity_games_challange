@@ -156,7 +156,21 @@ def main(a):
     for name, g in gs:
         if g.n > maxn: cnt["skip_big"] += 1; continue
         cnt["games"] += 1
-        for i, st in enumerate([RE.best_reward_start(g)] + [D.rand_start(g, random.Random(name + str(i))) for i in range(nr)]):
+        starts = [RE.best_reward_start(g)] + [D.rand_start(g, random.Random(name + str(i))) for i in range(nr)]
+        sf = os.path.join(P.ROOT, name[:-3] + ".start") if name.endswith(".pg") else ""
+        if sf and os.path.exists(sf):  # a given start pair (SIGMA0 / TAU0 lines, v:w); omitted vertices keep the S3 choice
+            b0 = RE.best_reward_start(g); s0, t0 = list(b0[0]), list(b0[1])
+            for l in open(sf):
+                p_ = l.split()
+                if p_ and p_[0] in ("sigma", "tau"):  # list format: "sigma [a, -1, ...]"
+                    vals = [int(x) for x in l.split("[", 1)[1].rsplit("]", 1)[0].split(",")]
+                    for v, w in enumerate(vals):
+                        if w >= 0: (s0 if p_[0] == "sigma" else t0)[v] = w
+                if p_ and p_[0] in ("SIGMA0", "TAU0"):
+                    for vw in p_[1:]:
+                        v, w = map(int, vw.split(":")); (s0 if p_[0] == "SIGMA0" else t0)[v] = w
+            starts.append((s0, t0)); cnt["given_starts"] += 1
+        for i, st in enumerate(starts):
             try: run_check(g, st, cnt, name + ("@r%d" % i if i else ""))
             except RuntimeError: cnt["maxit"] += 1
     for k in sorted(cnt): print("%-26s %d" % (k, cnt[k]))

@@ -7,6 +7,13 @@ successors); an owner flip; a start entry. Usage: climbfr19.py OBJ seed secs QMI
 import sys, os, json, random, time, tempfile
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 import fbr19, pg
+if os.environ.get('ANALYSER') == 'h3':
+    sys.path.insert(0, os.path.join(HERE, '..', 'h3')); import h3_19
+    class _A:
+        @staticmethod
+        def analyse(g, st, mode, tmp, oink, cap=5000):
+            r = h3_19.analyse(g, st, cap); r.update(Q=sum(1 for v in range(g.n) if g.owner[v] == 1 and len(set(g.succ[v])) > 1), fmax=0, rho_at=0, late=0, Nlate=0); return r
+    fbr19 = _A
 obj, seed, secs, QMIN, out, sj = sys.argv[1], int(sys.argv[2]), float(sys.argv[3]), int(sys.argv[4]), sys.argv[5], sys.argv[6]
 rng = random.Random(seed); tmp = tempfile.mkdtemp()
 j = json.load(open(sj)); n = len(j["prio"])

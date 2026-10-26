@@ -1,0 +1,20 @@
+DIV                        0
+EXITLAM                    2
+EXITLAM_D0                 1
+EXITLAM_D1                 1
+EXIT_chk                   2
+REP_chk                    15
+R_chk                      15
+epochs                     15
+epochs_D0                  7
+epochs_D1                  7
+epochs_D2                  1
+games                      2
+given_starts               2
+max_len_D0                 1
+max_len_D1                 1
+max_len_D2                 0
+phases                     13
+FAILS 0
+EX ( ('EXITLAM', 'docs/referee/scratch/epr_inputs/lamend_D0.pg@r1', 1, 1, 0)
+EX ( ('EXITLAM', 'docs/referee/scratch/epr_inputs/lamend_D1.pg@r1', 0, 0, 1)
