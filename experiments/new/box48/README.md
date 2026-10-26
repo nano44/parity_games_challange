@@ -49,3 +49,12 @@ transitions, |Q| 3; out/nconf_long121.txt, out/retfb_long121.txt.
   on nep90_n40 (../../red/rec0/instances, start ../../si/rund/instances), nep76_n40 (../../n5-epoch/instances), long121_n40 (../../red/n3/instances),
   out/qpcclimb/best_qpc_{nep90_n40_s51,nep76_n40_s52,long121_n40_s53}, out/qpcclimb/scale/snap_n80_s62, each with its .start).
   out/quotecheck_offmono_add.txt: 16 quotes, 0 missing.
+- ft.py (as zch.py) [MUT]: N5-KPOLY §11: Lemma FT-COUNT (FTB_V), Remark FT-CONST (OC_V), Corollary CHAIN-COUNT″ (PM_V, CC_V, CCD_V) with cut
+  CYC ∩ FT (MUT=0) or CYC ∩ ZCH ∩ FT (MUT=5); all must be 0. MUT=1 (no cut), MUT=4 (one cut transition dropped) do not bite on lib41.
+  out/ft_lib41_n34_MUT{0,1,4,5}.txt, out/ft_long7.txt, out/ft_long7_MUT5.txt (instances as zch.py).
+- tie.py STARTS SEED (--list FILE | files) [VERB=1] [MUT]: TIE / ODDC events (P-N5-OFFMONO-add §3) and N5-KPOLY §11's Lemma PF-CHOICE (CHAR_V),
+  Corollary TIE-CHARGE (FT_V), FT-COUNT (FTB_V); all must be 0. Controls MUT=1/2/3 (wrong tie-breaks; CHAR_V bites). out/tie_lib41_n34_k2.txt
+  (VERB), out/tie2_lib41_n34_k2.txt, out/tie2_lib41_MUT{1,2,3}.txt.
+- tieclimb.py NMAX STEPS SEED OBJ OUTDIR --seed G [--start S]: climbs ODDC_c / TIE_c per phase (OBJ oddc / tie / both), checking tie.charcheck on
+  every scored game. out/tieclimb/ (oddc_s1, s2 from box31 u3ev_n16; tie_s3, s4 from red/kl klcount_n16; 3,000 steps, n ≤ 24).
+- out/quotecheck_epc_fixes.txt: docs/new/P-N5-EPC-fixes-box48.md against cd4795f8 REFEREE (§C), c4975512 REFEREE-2 (§C), 81ab0b72 packet: 41 quotes, 0 missing.

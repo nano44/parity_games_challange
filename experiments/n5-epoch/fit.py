@@ -35,7 +35,7 @@ fam = defaultdict(lambda: defaultdict(dict)); dbl = defaultdict(dict); steps = {
 for p in glob.glob(os.path.join(D, "*.log")):
     b = os.path.basename(p)[:-4]
     v, st = best(p)
-    m = re.match(r"(nep|lend)_(fresh|seed)_n(\d+)_r(\d+)$", b)
+    m = re.match(r"(nep|lend|nconf2|ret02|gdl)_(fresh|seed|seed90|k5)_n(\d+)_r(\d+)$", b)
     if m:
         fam[f"{m.group(1)}_{m.group(2)}"][int(m.group(3))][int(m.group(4))] = v; steps[b] = st; continue
     m = re.match(r"dbl_(nep|lend)_n(\d+)_b(\d+)$", b)

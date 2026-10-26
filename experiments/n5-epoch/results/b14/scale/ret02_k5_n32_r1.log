@@ -1,0 +1,7 @@
+START fit (0, 1) n 32
+BEST step 2265 fit (0, 2) t 22s
+BEST step 2495 fit (0, 3) t 24s
+BEST step 2514 fit (1, 2) t 24s
+BEST step 5214 fit (1, 3) t 49s
+BEST step 6255 fit (2, 2) t 59s
+END steps 32444 best (2, 2) n 32 -> results/b14/scale/ret02_k5_n32_r1.pg

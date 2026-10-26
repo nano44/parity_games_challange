@@ -202,3 +202,49 @@ q's CHOSEN option only (par(q) = the exit of σ̄(q), which is CHOSEN's chosen e
 Remark Z-CONST, Corollary CHAIN-COUNT′ and Lemma ZCH-COUNT are restated with full proofs there; that addendum governs. Differences (its §5):
 the cut set is ZC_c = ZCH_c ∩ CYC_c (KPOLY's ZCH_c form follows); TIE requires N ≠ ∅; the bound is (n − 1)|U_c| + TIE_c + ODDC_c. DATA zch.py: 0
 violations on lib41 n ≤ 34 (746 phases, 133 cycle changes: STRICT 50, TIE 3, CEVEN 79, ODDC 1) and seven long instances; sign and exit controls bite.
+
+## 11. The cycle part of the count is polynomial without TIE_c / ODDC_c (PROVED, every game; DATA; queue item 3 (a); written 17:48Z by date -u)
+Setting as P-N5-OFFMONO-box49 §0 and P-N5-OFFMONO-add-box49 §0 (both frozen; not edited). F := {(0, s_c·ℓ) : 1 ≤ ℓ ≤ n − 1}; A_t := {z ∈ U_c ∖ {c} :
+P(Ξ_t z) = ∅} (the path-free vertices of the class). By (INJ) (R56 (a)), for z ∈ U_c ∖ {c}: z ∈ A_t ⇔ κ_t(z) ∈ F (M = 0 ⇔ P = ∅; ℓ ≥ 1 as z ≠ c).
+FT_c := the in-phase transitions of P at which some z ∈ U_c ∖ {c} has κ_t(z) ≠ κ_{t+1}(z) with κ_t(z) ∈ F or κ_{t+1}(z) ∈ F (an F-touching change).
+- Lemma FT-COUNT (PROVED, elementary). |FT_c| ≤ 2(n − 1)(|U_c| − 1). Proof: charge each FT transition to one z with an F-touching change. κ(z) is
+  non-decreasing on P ((M2κ)), so each value of F is left at most once and entered at most once: z takes at most 2|F| = 2(n − 1) charges. □
+- Remark FT-CONST (PROVED, elementary). At a transition not in FT_c: A_t = A_{t+1}, κ_t = κ_{t+1} on A_t ∪ {c}, and for x ∈ Z_t(c), x ≠ c, and
+  p := par_{t+1}(x): off_{t+1}(x; p) = off_t(x; p). Proof: z ∈ A_t has κ_t(z) ∈ F, so (no F-touching change) κ_{t+1}(z) = κ_t(z) ∈ F, z ∈ A_{t+1};
+  symmetrically; κ(c) = (0, 0) (A0κ). x ∈ A_t by (CYC-SHAPE), so x ∈ A_{t+1}; p lies on x's honest play at t + 1 (a suffix of a path-free play) or
+  p = c, so p ∈ A_{t+1} ∪ {c} = A_t ∪ {c}; both κ-values are unchanged. □ No tie-break of SPEC S1 is used.
+- Corollary CHAIN-COUNT″ (PROVED). P-N5-OFFMONO-add-box49 §2 (CHAIN-COUNT′, both forms) holds with ZC_c replaced by ZC″_c := CYC_c ∩ ZCH_c ∩ FT_c,
+  and |ZC″_c| ≤ min(|ZC_c|, 2(n − 1)(|U_c| − 1)). Proof: only Step A changes. At a transition not in ZC″_c and a level x on an honest cycle at t
+  (x ∈ Z_t(c) by (CYC-ID), so the transition is in CYC_c): it is not in ZCH_c (Remark Z-CONST: equality) or not in FT_c (Remark FT-CONST: equality).
+  Off-cycle levels: Lemma OFFSET-MONO. The rest of the proof is CHAIN-COUNT′'s word for word. □
+  So per phase and class, for every q ∈ Q ∩ U_c ∖ {c}: (κ(q)-changes) ≤ 2(n − 1)(|U_c| − 1) + Σ_x D·(|EXIT_x| + 2(n − 1)(|U_c| − 1) + 1). The cycle
+  part is polynomial UNCONDITIONALLY; TIE_c and ODDC_c are no longer needed on this route. What remains: EXIT_x per phase (L-SI 18) and D.
+- Lemma PF-CHOICE (PROVED from SPEC S1's procedure, as implemented in si.py Engine.evaluate l. 78-205; a reading of exact tie-breaks, so
+  referees should check it against the code). For an Odd x ∈ A_t: σ̄_t(x) is the argmin over y ∈ succ(x) ∩ (A_t ∪ {c}) of (κ_t(y), tb_t(y)), where
+  tb(y) := y's index if c is even, and the index sequence of y's honest path read from c (empty for c) if c is odd. Proof sketch: (i) path-free
+  ⇒ rank(x) < rank(c) (a vertex of rank > rank(c) carries its own bit). (ii) In S1 (iii)'s restricted graph, x keeps exactly its edges to
+  path-free successors in R = U_c (and to c): at an Even-liked u, x ∈ M (else x would get bit u), so restrict(x, M) cuts exactly the edges to
+  vertices outside M, which get bit u; a path-free y is in M and kept; at an Odd-liked u, x ∉ M, and any edge x → y with y ∈ M still present
+  would put x into M (reach(u, c) runs over predecessors), so such edges are already cut; x's edges are never touched there. (iii) c even:
+  longest path, first strict maximum in increasing index order: the least-index y maximising ℓ(y), i.e. minimising κ(y) = (0, −ℓ(y)). (iv) c
+  odd: BFS over predecessors in increasing index order; path-free vertices are discovered only from path-free vertices, so within a layer they
+  are ordered by (position of their BFS parent, index), i.e. by the lexicographic order of tb; the BFS parent is the earliest-ordered
+  successor at distance ℓ − 1, i.e. the argmin of (κ, tb). □
+- Corollary TIE-CHARGE (PROVED from PF-CHOICE). At a transition not in FT_c, next_{t+1} = next_t on A_t. Proof: A and κ on A ∪ {c} are unchanged
+  (FT-CONST); an Even z ∈ A switching would raise κ(z) strictly (addendum §3, (SW) + (M1κ) + (M2κ)), an F-touching change; for Odd z, induction
+  on ℓ: the κ-minimal options of z have ℓ = ℓ(z) − 1, their tb is fixed by next on smaller ℓ (induction), so the argmin of PF-CHOICE is the same. □
+  So every STRICT and every TIE transition is in FT_c: STRICT_c + TIE_c ≤ 2(n − 1)(|U_c| − 1). ODDC_c (c's own stack-DFS choice, S1 (v)) is NOT
+  bounded by this: c's DFS runs over all alive vertices of rank < rank(c), including non-path-free vertices of U_c whose Even switches are not
+  F-touching. ODDC_c stays OPEN, and by CHAIN-COUNT″ it is not needed.
+- DATA (experiments/new/box48/ft.py, tie.py, tieclimb.py; out/ft_*.txt, out/tie2_*.txt, out/tieclimb/):
+  - ft.py (FT-COUNT: FTB_V; FT-CONST: OC_V; CHAIN-COUNT″: PM_V, CC_V, CCD_V): lib41 n ≤ 34, S3 + 2, seed 7: FT 1,102, max per phase and class 29;
+    CYC 432; cut CYC ∩ FT (MUT=0) 270 transitions, cut CYC ∩ ZCH ∩ FT (MUT=5, the stated ZC″) 42 (against ZC = CYC ∩ ZCH 59 in the addendum);
+    every check 0 in both. Seven long instances (MUT=0 and MUT=5): FT ≤ 6, ZC″ 0, all checks 0. Controls
+    MUT=1 (no cut) and MUT=4 (one cut transition dropped) do not bite here, as in the addendum's MUT=1: the cut is needed by the proof, not shown
+    necessary by data.
+  - tie.py (PF-CHOICE: CHAR_V; TIE-CHARGE: FT_V; FT-COUNT: FTB_V): lib41: 2,523 characterisation checks, CHAR_V 0, FT_V 0 (1,102 transitions with
+    an A or next change on A, all F-touching), FTB_V 0. Controls bite: MUT=1 (index tie-break for both parities) CHAR_V 1, MUT=2 (path-sequence
+    tie-break for both) 55, MUT=3 (reversed index) 182. Events: the 3 TIEs (klcount_n16 / n18) all have c odd, v on Z_t(c), the old option's κ
+    strictly up, the new option tied at t; the ODDC (u3ev_n16) has the old option's M rising to 8192.
+  - tieclimb.py (4 climbs × 3,000 steps from u3ev_n16 / klcount_n16, n ≤ 24, objectives ODDC / TIE): best ODDC_c 1, best TIE_c 1 per phase and class;
+    292,764 characterisation checks on climbed games, CHAR_V / FT_V / FTB_V 0.

@@ -978,6 +978,8 @@ Successor 28 (Opus 5.5, D14/D18, L40), session_01Dg8L3iN3G8HVzEVoGgCE1Y. Handove
 - (box 49, successor 29) Opened for P-N5-OFFMONO-add-box49: RESULTS l. 1825 (R38 (a) KEY), 2840, 2851 (R56), 3103-3132 (R61 (b), (c), (f) tie_q /
   cyc_q), 3768-3769 (R72 (SW)); P-N5-FBPOLY-box41 l. 88-97 ((Aκ), (A0κ), (M1κ), (M2κ)); P-N5-FBRED-box44 l. 49-50; P-N5-OFFMONO-box49 §0-§2;
   N5-KPOLY-box49 §8 at 331f0337. All quotes checked: out/quotecheck_offmono_add.txt (16, 0 missing).
+  KPOLY §11: SPEC docs/new/N5-ssi-global.md l. 26-43 (S1 (i)-(vi)) and experiments/si/si.py Engine.evaluate l. 78-205 (restrict, longest, BFS,
+  the Odd cycle node's stack DFS) opened at 366fd235.
 
 ## Dead ends
 - (box 47, successor 26, 11:13Z) CONJECTURE XD-1 (≤ 1 X_dir per {u, u′}-run): FALSE on experiments/new/box47/instances/pp2_n19.pg (sha1 97b5b132…),
@@ -1279,3 +1281,12 @@ Successor 28 (Opus 5.5, D14/D18, L40), session_01Dg8L3iN3G8HVzEVoGgCE1Y. Handove
 - 17:4xZ: addendum P-N5-OFFMONO-add-box49 FROZEN (Z-CONST with par/offset parts, (CYC-ID), (CYC-SHAPE); CHAIN-COUNT′ with cut ZC = ZCH ∩ CYC
   (sharper than KPOLY's ZCH and OFFMONO's CYC; both follow); ZCH-COUNT ≤ (n − 1)|U_c| + TIE + ODDC with TIE requiring N ≠ ∅). zch.py 0 violations
   (lib41 n ≤ 34: 746 phases, ZCH 133 = 50 + 3 + 79 + 1, CYC 432, ZC 59; 7 long instances: ZCH 0); MUT=2/3 bite, MUT=1 does not (reported).
+- 18:1xZ: KPOLY §11 (item 3 (a)): Lemma FT-COUNT (F-touching κ changes ≤ 2(n − 1)(|U_c| − 1), elementary from (M2κ)), Remark FT-CONST
+  (outside FT, κ constant on the path-free set, so on-cycle offsets constant; no SPEC tie-break used), Corollary CHAIN-COUNT″ (cut
+  CYC ∩ ZCH ∩ FT): the cycle part is polynomial unconditionally; TIE/ODDC not needed. Bonus: PF-CHOICE (SPEC S1 tie-breaks; si.py l. 78-205
+  opened) ⇒ TIE-CHARGE ⇒ STRICT + TIE ≤ 2(n − 1)(|U_c| − 1); ODDC stays OPEN (stack DFS over non-path-free vertices). DATA ft.py / tie.py /
+  tieclimb.py all 0; tie-break controls bite; climbs reach TIE 1, ODDC 1 only.
+- 17:39Z Lead: both EPC §Cs in (REFEREE cd4795f8, REFEREE-2 c4975512). P-N5-EPC-fixes-box48 FROZEN: repairs R1 = EPC-N1 (LEV_C ≥ 0), R2 = EPC-N2
+  (RET-FB induction), R3 = EPC-N3 + N-EPC-6 (EP-ASM a reduction), R4 = N-EPC-1 (pin wording), R5 = N-EPC-2 (D_C), R6 = N-EPC-3 (citation);
+  remarks N-EPC-4, EPC-N4 = N-EPC-5; §5 DATA: non-flat saturated fallbacks 5/236, 11/178 (REFEREE) vs named-only (REFEREE-2), per REFEREE §C.
+  41 quotes, 0 missing. Opened: both referee files at their §C commits in full; packet at 81ab0b72.
