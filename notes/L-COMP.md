@@ -1,33 +1,37 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point (successor 4, session_01AiLCefKYn3CkbJsYJtY5aR, Opus 5.5; box 7 completion + box 8; 2026-10-25 by date -u)
-Handover check cd3b5ff7 (5/5, Lead GO 04:56Z). Container started 679 behind its own branch (caught); Oink built 05:0xZ.
-### DONE (successor 4)
-- Box 7 COMPLETE (4633d132): box7.py + box7w.py on the whole n 5 subset (68,764,800 runs): 0 violations; J <= 1, Z <= 1, K = 0, S_o <= 1,
-  E <= 1, K_W <= 2. README "Box 7".
-- Box 8 (box8.py, 37aad6dc): n 4 canonical (f82d6ef9), n 4 all starts (ade1fc57), n 5 Q1 (3c82c884), Q2 (a8eb0099), Q3 (71241b4a):
-  0 violations everywhere; max J 1, K 0, X <= 3, rho <= 1, T <= 3, X_SN <= 2, REL <= 3. README "Box 8" (rows BOX8ROW / BOX8PROW markers).
-  VACUOUS throughout: CLS1 / FBL / CLU (all scope fallbacks theta = w), WK (K = 0), ABS-L.
-- Box 8 COMPLETE (n 5 Q4 00:54Z): whole n 5 subset 68,764,800 runs, 0 violations (REFEREE-2 and REFEREE probes); max J 1, K 0, X 2,
-  rho 1, T 3, X_SN 2, REL 2. README "Box 8" has the all-quarters rows and readings.
-- N5 gauntlet step 2 completed (45def408, a47b3fa3): n5b SPEC = n5.py state by state on 22,810 runs (library, 2k corpus, 20k C^1O)
-  plus box 43/44 frontier (9 canonical + 450 random starts). experiments/n5-second/seqdiff.py.
-### Box 9 (Lead GO 01:53Z; 05:05Z adds the G_D-NC / FRZ-U_D frontier work)
-- WK climbs done (52e326aa): 9,020 WK checks pass (so32 lineage); instances wk1_n32 (random start), wk2_n32 (canonical start).
-- CLS1 small-n climbs n 6/8/10/12 (20,000 steps each) done: best fitness 0.44 everywhere = no in-scope THR fallback (CLS1 still
-  vacuous at n <= 12 under this climb); CLS1 non-vacuous only at n ~ 32 (REFEREE-2 climbs, library).
-- IN FLIGHT (05:05Z): ABS-L climbs absl_{gta,gtb,ccl,fb32} (pids 21962-21965, runner run9d.sh), 15,000 steps, ETA ~07:00Z;
-  so far ABSL_intervals up to 83 but 0 theta-changes above L (ABS-L's count stays trivially 0).
-- NEXT: (1) checker for L-SI Lemma G_D-NC (l-si b92f84d4, docs/si/N5-2O-T-box16.md §6: (b'), (c2') at (NC) states) on random
-  C^kO games k = 2..4 from random start pairs; (2) FRZ-U_D climb (fallback-free in-phase run, (NC) and (h3_D) throughout,
-  COARSE_L(W) moving after state n - 1).
-- Trap (05:2xZ Oct 25): `pkill -f` killed my own shell (exit 144). Kill by pid only.
-### Things only I know (box 8)
-- box8 wraps oe_check.phase / sn_check.phase (module attribute rebinding; files unchanged): per-phase K/J/eps/rho = deltas of the
-  checker's own counters; X_SN = delta of PREFIX_crossings_in_prefix; REL recomputed with sn_check's formula (non-fallback transitions).
-- REFEREE probes (oe/cls/sn_probe) trace from the canonical start only: run only when start is None.
-- ~2.2 ms per run (n 4); n 5 quarter ~10 core-h.
+## Resume point (successor 4, session_01AiLCefKYn3CkbJsYJtY5aR, Opus 5.5) -- HANDOVER after box 11 (2026-10-26 07:3xZ by date -u)
+Handover check cd3b5ff7 (5/5). Boxes run: 7 completion, 8, 9, 9b, 10, 11 + N5 step-2 diff. Last push: see git log (box 11 1d2f29d7 + this).
+### DONE (all pushed on claude/l-comp; every number is DATA unless labelled)
+- Box 7 complete (4633d132): box7.py + box7w.py on the whole n 5 subset (68,764,800 runs), 0 violations; J <= 1, Z <= 1, K = 0, S_o <= 1.
+- Box 8 complete (758d02ef): box8.py = REFEREE-2 oe/cls/sn/h1_check (start pair) + REFEREE probes (canonical) on n 4 / n 4 all starts /
+  n 5 subset: 0 violations; max J 1, K 0, X <= 3, X_SN <= 2, REL <= 3; VACUOUS: CLS1/FBL/CLU, WK, ABS-L.
+- N5 gauntlet step 2 closed (45def408, a47b3fa3): experiments/n5-second/seqdiff.py; n5b SPEC = n5.py state by state on 22,810 runs +
+  box 43/44 frontier 459 runs.
+- Box 9 (52e326aa..589dc66c): climb9.py; WK non-vacuous (9,020 checks pass; wk1_n32, wk2_n32); CLS1 small-n climbs n 6-12 vacuous;
+  ABS-L climbs: 0 theta-changes above L.
+- Box 9b (86193e62..589dc66c): gdnc_check.py (G_D-NC b'/c1'/c2', C2-H3, FRZ-U_H3), frz_climb.py; FRZ instances frz1/frz3_n24 test FRZ-U_H3
+  as proved, frz2_n24 only the stronger 1-based form (author: 0-based); not-(NC) case of FRZ-U_H3 VACUOUS (tau changes after 80% of
+  not-(NC) states).
+- Box 10 (95f35638, 16c960b5): instances/notnc/ (8 pinned (h3_D) and not-(NC) in-phase states); n5tau.py + tau_check.py: N5^tau on 26,573
+  runs, 0 violations of R48 (i), R50 (h), R51 (a) via REFEREE-2 fbpoly_check / kw_check unmodified; N5^tau != SPEC on 497 runs.
+- Box 11 (c4fef4b0, 1d2f29d7): citeclosure.py: RESULTS closure of R48, R50 = L-NEW's §9.2 list exactly; rund_check.py: OFFSET (a)-(c),
+  TWIN-GAP (i)-(iii) 0 violations on 322,065 runs, TWIN-GAP (ii) vacuous.
+### IN FLIGHT: nothing (no background jobs). NEEDS: none open from the Lead; next box to be routed.
+### Things only I know (successor 4)
+- Runners live in the scratchpad (lost with the container); every command is in the README sections / script headers.
+- gdnc_check.state_info is the shared state machinery for gdnc_check, frz_climb, rund_check (D_k, u(v), pi_v, NC, h3, M_D, h_D).
+- REFEREE-2 checkers expect FULL strategy lists with the non-own entries CONSTANT along a run (out_check compares whole tau lists);
+  tau_check.full() fills them with succ(v)[0]. My first version used one combined list and produced 3 fake "fallback changes tau" FAILs.
+- .start formats differ by lane: SIGMA0/TAU0 v:w (mine, L-NEW), bare v:w pairs (L-SI si/instances), 'sigma [list]' / 'tau [list]'
+  (L-NEW box45). seqdiff.readstart handles the first two.
+- L-NEW's DIV is measured on the restricted game G'_E of an epoch, not on G: div_n8 diverges only on its G'_E (results/tau/divE_n8.pg).
+- citeclosure.py: lane report numbers collide with RESULTS numbers (L-RED R73, docs/red/R72-, OUT-R1, NEB-R1, P-N5-NH (R1)); filters
+  are in TOK / LANE; R1/R2 hits left are DATA/SIG-only labels.
+- climb best files are overwritten on equal fitness; the logged seed is the last STRICT improvement: replay with score(g, seed) may not
+  reproduce; search many random starts on the best instead (done for frz3/frz4).
+- Never `pkill -f` (killed my own shell twice); kill by pid. scripts/push.sh can take 10+ min under full CPU load.
 
 ## Resume point (successor 3, box 7, 2026-10-25 by date -u) -- HANDOVER
 ### DONE box 7 (Lead GO 23:2xZ; amended 00:28Z: (c) via L-RED u23x.py; 00:33Z: NO-WAKE false, table K and S_o instead)

@@ -1,4 +1,53 @@
-# Handover check: L-RED successor 19 (Opus 5.5, D14/D15/D18; LANE-RESTART step 3; written 2026-10-26 01:00Z by date -u)
+# Handover check: L-RED successor 20 (Opus 5.5, D14/D15/D18; LANE-RESTART step 3; written 2026-10-26 08:06Z by date -u)
+Every answer is measured from the repository (commands named), not recalled. Predecessor: successor 19
+(session_017GDW2Qywsw52DKHPD8kAM6), handover = notebook "Successor 19 HANDOVER" + RESUME POINT at l-red 6c06792c.
+Successor 19's answers follow below this section.
+
+## 1. Branch, head, distance to trunk
+- Branch `claude/l-red`. `git fetch origin claude/l-red claude/vibrant-johnson-nxvvxo` (08:03Z) moved origin/claude/l-red
+  0d0b67a1..6c06792c (stale clone); `git merge --ff-only origin/claude/l-red`; `git rev-parse HEAD` -> 6c06792cbd9d25783a336ad62c4307064b5ee304.
+- Trunk `claude/vibrant-johnson-nxvvxo` = 0f5ff835. `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo`
+  -> 2 ahead / 521 behind at 6c06792c; merge-base 743e4281. The 2 ahead: 6769a735 (R78 LEVEL-COUNT kill + HANDOVER) and 6c06792c
+  (lcount2_n23 pin + notebook); not yet on trunk.
+- Trunk merged into the lane with `git merge --no-ff` (8665e57c; no rebase, amend or force-push): 3 ahead / 0 behind before this commit.
+
+## 2. Open work and the next step of each
+Nothing in flight: the predecessor's jobs ended with its container (`ps -eo pid,args | grep python3`: no lane job). tools/oink/build
+absent; scripts/setup_oink.sh started 08:04Z (needed before any kill is Oink-checked). Kill pins re-measured: lcount_n23.pg f86125a0,
+lcount2_n23.pg dd9847c6 (experiments/red/h3/instances/, with .start / .start.json), matching the notebook and R78.
+Planned work after "go" (D18, N5; Lead brief), in order:
+- (a) Long epochs / many epochs (unbounded parts after RESULTS R63 X-EP and R64 EP-0 / EP-k / EP-1 under (Στ)). Next: add N_ep per phase
+  and len(E) for epochs with |D_E| ≥ 2 as objectives in climbfr19 (ANALYSER fbr19 already reports EPOCH / N_ep 80 record), seed from
+  R76 pins (lev74_n40, fr39_q4_n48) and lcount_n23; climb for extremes and kills, not distributions (L-COMP 5 box 12 does the census).
+  Attack L-NEW's REC-0 (docs/new/N5-NEP-box45.md §5, l-new 40659d50): #(D = ∅ epochs per phase) ≤ (f + 1)(n + 1) + 4n(n − 1) + 1.
+  Next: read §5 at that SHA, write an exact counter from its definitions, check every run, climb on count − bound.
+- (b) √n growth target (R78 §3, mkalt family): offset changes per vertex per stretch_D beyond √n; trigger from the other score
+  (W versus Ξ timing as in lcount_n23).
+- (c) Old resume list: R74 §2.5 construction; FB-CAP |U| ≥ 3 (fcap3 never > 0); beta2 cascade (maxbeta 2, never 3).
+
+## 3. docs/GAPS.md rows I own
+- G-NEST (major; owner "L-RED (attacks + proof attempts); L-ALG successor if any"), status **open** (trunk docs/GAPS.md line 9).
+  Its DTL line is paused under D18 (Lead reading L40).
+- Attacked, not owned: G-N5-TIME (major, owner L-NEW, **open**, line 11): N5 makes polynomially many iterations; items (a)-(c) feed it.
+  GAP-A, GAP-C (owner "L-ALG (L-RED attacks)", open, lines 6-7; DTL paused).
+
+## 4. The three owner rulings that most constrain me (verbatim), with their DECISIONS-INDEX status
+1. D18 (trunk docs/DECISIONS.md line 333), status **active** (DECISIONS-INDEX line 32):
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+2. D1 (docs/DECISIONS.md line 7), status **active** (DECISIONS-INDEX line 5):
+   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+3. D14 (docs/DECISIONS.md lines 245-246), status **active** (DECISIONS-INDEX line 22):
+   > D
+   > You know it can also test prveiously not tested approaches, it can come up with it own as well
+
+## 5. One trap that bit this lane, and the check that now prevents it
+- Trap (successor 19, twice): killing climbers with `ps | grep [c]limb... | kill` (or `pkill -f`) killed the lane's own shell (exit 144:
+  the pattern is in its own command line), and a heredoc inside the killed shell was never written. Check now: print
+  `ps -eo pid,args` first, kill only an explicit pid list, then confirm with `ls` that every file the step should have written exists.
+- Also caught at this restart: stale clone (origin moved 0d0b67a1..6c06792c on fetch), by fetch + ff-merge + `rev-parse HEAD`.
+  Related (successor 19): climbfr19 writes a _FAIL_ json per failing candidate; demote dead checks (LEVEL-COUNT now) to counters first.
+
+## Successor 19 section (superseded): L-RED successor 19 (Opus 5.5, D14/D15/D18; LANE-RESTART step 3; written 2026-10-26 01:00Z by date -u)
 Every answer is measured from the repository (commands named), not recalled. Predecessor: successor 18
 (session_01D6HqejxBahRiMjurWjAtzT), handover = R74 + notebook RESUME POINT at l-red d3e8b47e.
 Successor 18's answers follow below this section.

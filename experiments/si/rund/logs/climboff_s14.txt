@@ -1,0 +1,1 @@
+seed 14 n 20: best max offset changes per vertex per stretch segment = 0, total 0 -> /home/user/parity_games_challange/experiments/si/rund/instances/off_s14_n20

@@ -1,0 +1,63 @@
+DIV                        0
+EXITLAM                    403
+EXITLAM_D0                 143
+EXITLAM_D1                 240
+EXITLAM_D2                 6
+EXITLAM_D3                 14
+EXIT_chk                   3358
+R4_chk                     75
+REP_chk                    8751
+R_chk                      17477
+epochs                     8751
+epochs_D0                  2053
+epochs_D1                  5045
+epochs_D2                  295
+epochs_D3                  1358
+games                      367
+max_len_D0                 56
+max_len_D1                 92
+max_len_D2                 28
+max_len_D3                 18
+phases                     5393
+skip_big                   45
+FAILS 0
+EX ( ('EXITLAM', 'experiments/n5-exhaustive/instances/b4_cyc6_0.pg', 0, 0, 0)
+EX ( ('EXITLAM', 'experiments/n5-exhaustive/instances/b4_cyc6_0.pg@r1', 0, 2, 0)
+EX ( ('EXITLAM', 'experiments/n5-exhaustive/instances/b4_cyc6_0.pg@r2', 0, 1, 0)
+EX ( ('EXITLAM', 'experiments/n5-exhaustive/instances/b4_n4all_cyc3_0.pg', 0, 0, 0)
+EX ( ('EXITLAM', 'experiments/n5-exhaustive/instances/b5_n5_cyc4_0.pg', 0, 1, 0)
+EX ( ('EXITLAM', 'experiments/n5-exhaustive/instances/b5_n5_cyc4_0.pg@r1', 0, 0, 0)
+EX ( ('EXITLAM', 'experiments/n5-exhaustive/instances/b5_n5_cyc4_0.pg@r2', 0, 0, 0)
+EX ( ('EXITLAM', 'experiments/n5-exhaustive/instances/b6_xl2_n32.pg@r2', 19, 22, 0)
+EX ( ('EXITLAM', 'experiments/n5-exhaustive/instances/b6_xl_n32.pg@r1', 22, 25, 0)
+EX ( ('EXITLAM', 'experiments/n5-exhaustive/instances/b6_xl_n32.pg@r2', 8, 11, 0)
+EX ( ('EXITLAM', 'experiments/n5-exhaustive/instances/b6_xl_n40.pg@r2', 18, 20, 0)
+EX ( ('EXITLAM', 'experiments/n5-exhaustive/instances/b6_xl_n48.pg@r1', 28, 30, 0)
+EX ( ('EXITLAM', 'experiments/n5-exhaustive/instances/b6_xl_n48.pg@r2', 14, 16, 0)
+EX ( ('EXITLAM', 'experiments/n5-exhaustive/instances/b6_xw_n32.pg@r1', 30, 33, 0)
+EX ( ('EXITLAM', 'experiments/n5-exhaustive/instances/b6_xw_n32.pg@r2', 20, 23, 0)
+EX ( ('EXITLAM', 'experiments/n5-exhaustive/instances/b6_xw_n56.pg@r2', 29, 32, 0)
+EX ( ('EXITLAM', 'experiments/n5-exhaustive/instances/n4_thch_0.pg', 0, 0, 0)
+EX ( ('EXITLAM', 'experiments/n5-exhaustive/instances/n4all_thch_0.pg', 0, 0, 0)
+EX ( ('EXITLAM', 'experiments/new/box21/instances/fts_best16.pg@r1', 10, 11, 0)
+EX ( ('EXITLAM', 'experiments/new/box22/instances/i1hn_fts_best16.pg@r1', 0, 4, 0)
+EX ( ('EXITLAM', 'experiments/new/box25/instances/sc32.pg@r1', 13, 13, 0)
+EX ( ('EXITLAM', 'experiments/new/box25/instances/sc32.pg@r2', 13, 13, 0)
+EX ( ('EXITLAM', 'experiments/new/box25/thetare_n.pg@r1', 2, 3, 0)
+EX ( ('EXITLAM', 'experiments/new/box28/instances/oc24_s4_final.pg@r1', 5, 13, 0)
+EX ( ('EXITLAM', 'experiments/new/box28/instances/x32_sc32_1309s.pg@r2', 12, 16, 0)
+EX ( ('EXITLAM', 'experiments/new/box28/instances/x32_sc32_1309s.pg@r2', 18, 21, 0)
+EX ( ('EXITLAM', 'experiments/new/box28/instances/x32_sc32_final.pg@r1', 14, 17, 0)
+EX ( ('EXITLAM', 'experiments/new/box28/instances/x32_sc32_final.pg@r2', 14, 17, 0)
+EX ( ('EXITLAM', 'experiments/new/box28/instances/x48_rt48_final.pg@r2', 2, 19, 0)
+EX ( ('EXITLAM', 'experiments/new/box31/instances/nr_u23_n32.pg', 9, 9, 0)
+EX ( ('EXITLAM', 'experiments/new/box31/instances/u3ev_n16.pg', 0, 0, 1)
+EX ( ('EXITLAM', 'experiments/new/box32/instances/kwm_cex_n24.pg', 3, 3, 1)
+EX ( ('EXITLAM', 'experiments/new/box32/instances/kwm_cex_n24.pg', 4, 4, 1)
+EX ( ('EXITLAM', 'experiments/new/box32/instances/kwm_cex_n24.pg@r2', 1, 1, 1)
+EX ( ('EXITLAM', 'experiments/new/box32/instances/kwm_cex_n24.pg@r2', 2, 3, 1)
+EX ( ('EXITLAM', 'experiments/new/box32/instances/kwm_cex_n24.pg@r2', 4, 4, 1)
+EX ( ('EXITLAM', 'experiments/new/box35/instances/pf_best_3621.pg@r1', 24, 24, 0)
+EX ( ('EXITLAM', 'experiments/new/box35/instances/pf_best_3622.pg@r1', 16, 16, 0)
+EX ( ('EXITLAM', 'experiments/new/box35/instances/pf_best_3622.pg@r2', 14, 14, 1)
+EX ( ('EXITLAM', 'experiments/new/box35/instances/pf_best_3623.pg@r1', 10, 10, 0)

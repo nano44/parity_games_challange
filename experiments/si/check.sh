@@ -29,3 +29,13 @@ if [ -f instances/pinned.txt ]; then
   done < instances/pinned.txt
   echo "pinned instances: PASS"
 fi
+# box 17 (RUN_D): OFFSET / TWIN-GAP checks on lib2o, and the DEAD strict-raise instance reproduces its length-only twin change
+python3 -I rund/gap.py --list fb2o/lib2o.txt 2 | grep -q "GAP PASS"
+python3 -I rund/rund.py --one rund/instances/lenonly_n8.pg | grep -q "LENONLY ('rund/instances/lenonly_n8.pg', 1, 2, 6, 4"
+echo "rund (gap lib2o, lenonly_n8): PASS"
+python3 -I rund/gap.py --one rund/instances/offret_n23.pg rund/instances/offret_n23.start | grep -q "RETURN ('rund/instances/offret_n23.pg', 0, 3, 22, \[131204, 264200, 264200, 131204\])"
+echo "rund (OFFSET-ONCE counterexample offret_n23): PASS"
+python3 -I rund/piece.py --list fb2o/lib2o.txt 2 | grep -q "PIECE PASS"
+echo "rund (PIECE_D / SPLIT-RED on lib2o): PASS"
+python3 -I rund/lvl.py --one rund/instances/incdown_n23.pg rund/instances/incdown_n23.start | grep -q "('INC', 'rund/instances/incdown_n23.pg', 0, 3, 22, \[20, 19\])"
+echo "rund (INC counterexample incdown_n23): PASS"

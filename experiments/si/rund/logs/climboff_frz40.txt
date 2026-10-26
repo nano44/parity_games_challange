@@ -1,0 +1,1 @@
+seed 24 n 40: best max offset changes per vertex per stretch segment = 1, in-stretch total 6, all offset changes 173 -> /home/user/parity_games_challange/experiments/si/rund/instances/off_s24_n40

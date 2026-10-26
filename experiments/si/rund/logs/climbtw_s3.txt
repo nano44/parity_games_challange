@@ -1,0 +1,1 @@
+seed 3 n 12: best twin changes per run = 1, all twin 1, run length 1 -> /home/user/parity_games_challange/experiments/si/rund/instances/tw_s3_n12

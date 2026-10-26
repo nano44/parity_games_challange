@@ -1,0 +1,22 @@
+BP_chk                     122925
+C2H3_chk                   718471
+FRZ1B_chk                  4
+FRZ_content_runs           0
+FRZ_nonvacuous             3
+FRZ_runs                   5947
+TCC_chk                    237961
+TC_changes                 416
+WMG_chk                    612745
+games                      367
+given_starts               29
+max_run_transitions        55
+phases                     9143
+skip_big                   45
+states                     27454
+states_h3                  20519
+states_h3_notNC            338
+FAILS 0
+EX ( ('FRZRUN', 'experiments/red/so/instances/pftheta34_n32.pg', 5, 35, 32, 'L', 31, 'toprank', 31, 'values_with_vertex_above_L', 0)
+EX ( ('FRZRUN', 'experiments/red/so/instances/pftheta_cex_n32.pg', 4, 35, 32, 'L', 31, 'toprank', 31, 'values_with_vertex_above_L', 0)
+EX ( ('FRZRUN', 'experiments/si/orlens/instances/thclimb_n16_s12.pg', 1, 17, 16, 'L', 15, 'toprank', 15, 'values_with_vertex_above_L', 0)
+done

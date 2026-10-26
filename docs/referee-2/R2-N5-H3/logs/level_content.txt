@@ -1,0 +1,4 @@
+pft34_h3u_P32.pg run 5..39 n 34 L 32 top-rank 33 W-path-set vertices above L: 0
+frz1_n24.pg run 7..31 n 24 L 23 top-rank 23 W-path-set vertices above L: 0
+frz3_n24.pg run 2..26 n 24 L 23 top-rank 23 W-path-set vertices above L: 0
+pftheta34_n32.pg run 5..39 n 32 L 31 top-rank 31 W-path-set vertices above L: 0

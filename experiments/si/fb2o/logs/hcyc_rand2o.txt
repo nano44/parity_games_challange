@@ -1,0 +1,1 @@
+D2=9939 W_both_diff=654 W_both_same=500 W_diff_tops_distinct=654 W_on0=4121 W_on1=4664 X_both_diff=714 X_both_same=854 X_on0=3296 X_on1=5075 diffXi_class=2017 sameXi_class=7922

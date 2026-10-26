@@ -1,0 +1,20 @@
+MODE files ../R2-N5-2T/lib2o_noref.lst 4 MUT - PATHCAP 9
+BP_checks: 4279
+BP_checks_NC_not_hD: 2260
+C1P_checks: 19430
+C2P_checks: 9215
+FRZ_runs: 348
+PCL_checks: 5526
+PCL_runs: 782
+WMG_transitions: 596
+ff_runs: 583
+phases: 485
+runs: 164
+states: 1179
+states_NC: 993
+states_NC_not_hD: 197
+states_hD: 796
+CRD_run_minus_(n-1): (-3, 'experiments/attr/instances/psolc_partial_n5-8_K60000_s2_1_n4_m6.pg#0')
+FRZ_run_minus_(n-1): (-3, 'experiments/attr/instances/psolc_partial_n5-8_K60000_s2_1_n4_m6.pg#0')
+max_ff_run_transitions: (20, 'experiments/new/box21/instances/fts_best24.pg#0')
+RESULT OK violations=0

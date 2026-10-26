@@ -1,0 +1,30 @@
+MODE files ../../../experiments/new/box41/lib41.txt 3 MUT - PATHCAP 9
+BP_checks: 103287
+BP_checks_NC_not_hD: 17232
+C2H_checks: 295749
+C2H_checks_not_NC: 10130
+FRZ_freeze_checks: 3
+FRZ_freeze_checks_D_nonempty: 3
+FRZ_runs: 3863
+FRZ_vacuous_runs_exactly_n_states: 1
+PCL_checks: 11570
+PCL_runs: 1429
+TCC_checks: 406938
+TCC_terminal_changes: 1237
+WMG_transitions: 11247
+ff_runs: 8304
+phases: 7195
+runs: 1236
+states: 19551
+states_NC: 14228
+states_NC_not_hD: 642
+states_h3: 13628
+states_h3_not_NC: 236
+states_h3_not_hD: 655
+states_hD: 13586
+CRD_run_minus_(n-1): (-1, 'experiments/n5-exhaustive/instances/n4all_thch_0.pg#1')
+FRZ_freeze_D_nonempty_example: (3, 'experiments/red/so/instances/pftheta34_n32.pg#0@5 n 32')
+FRZ_run_minus_(n-1): (3, 'experiments/red/so/instances/pftheta34_n32.pg#0')
+FRZ_run_with_notHD_state_minus_(n-1): (-2, 'docs/referee/R-N5-L2/exitdrop_n3.pg#0')
+max_ff_run_transitions: (55, 'experiments/red/xing/instances/x32_rand64.pg#0')
+RESULT OK violations=0

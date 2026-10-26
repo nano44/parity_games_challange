@@ -3,7 +3,28 @@ History before successor 8 (successors 5-7: C45-C57, their resume points and han
 
 ## Resume point (successor 9, 2026-10-26 04:41Z by date -u)
 - Handover check 3ac3bd71 + correction 31443996 (Lead: 5/5, 04:40Z). C65 CLOSED by successor 8 (c50da6f0). GO 04:40Z, option (b).
-- NEXT: C66 = R57 (P-N5-1E). Waiting for the Lead's draft sha1 (after L-SI's 1E fixes file). Oink built in this container.
+- C66 = R57 (P-N5-1E) main report docs/checker/C66.md (05:27Z): FAIL on E-1 (title states the §6 READING), E-2 (concurrence drops
+  'under the standing premise 1E-N3'); N-1..N-6 optional. Re-runs 6/7 IDENTICAL; REFEREE-2 sbar mutation not reproducible (hash seed, N-4).
+  Add. 1 33aa8b3a PASS (rev. 8ae7e00e at 28cda46b); Add. 2 93a25f09: R57 LANDED at 5db6da07 PASS. C66 CLOSED.
+- C67 = R58 (P-N5-2T) draft 81b78368 at 62a292df: main report docs/checker/C67.md, FAIL on E-1 (REFEREE-2 successor 13 → 14, twice);
+  N-1..N-4. Re-runs: REFEREE-2 run_all 26/26, REFEREE 3/3, lane 2/2 IDENTICAL. Add. 1 36d6f3e8 PASS (rev. 61a238a8 at 210334bb). NEXT: landing.
+- C68 = R59 (P-N5-VILB) da345a7b @ c18076c9: PASS (bccaa3fa + table fix cf48d915), N-1..N-4. C69 = R60 (P-N5-ACCEL) 6c1d2f03 @ c18076c9:
+  PASS (81f75721), N-1..N-3. Landed: R58 6984ebef (C67 Add. 2 11ef5c85), R59+R60 a3b1cff3 (C68/C69 Add. 1 b1901a15). CLOSED.
+- C70 = R61 (FBK) f152744e @ 94d797a7: FAIL E-1 (title 'epochs reduce to ρ' = the unsigned ALT reading), 98278e40. C71 = R62 (H3)
+  0e5436f0 @ 94d797a7: FAIL E-1 (L-COMP random 62,761 / 6,520 untraceable; committed 1,131,485 / 115,640 at 785c38d3), E-2 (REFEREE TC 588 → 528).
+  Re-runs IDENTICAL (R2 FBK 13/13, H3 22/22; REFEREE logs reproduce at the commit that wrote them: frz1 at 7c2d9b49).
+  C71 Add. 1 ab9fa27d: R62 rev. 09be6ea6 (limit (iii), rel.py re-run: content 0 on 4 games); E-1, E-2 still open.
+- C72 = R63 (XEP) 4c01107b @ 1df79fec: PASS text; PRECONDITION R61 lands first (cites R61 (e)-(f)). N-1..N-3.
+- C70 Add. 1 761bcc73: R61 rev. 5a799473 PASS. C71 Add. 2 761bcc73: R62 rev. 838fb8d2, E-1/E-2 closed, NEW E-3 (limits stale after
+  referee addenda e18b4370 / 9a5692ad; pftheta34 is L-RED's). C73 = R64 (EPR) b5bef23a @ acee4a3e: PASS, no notes; PRECONDITION R61 → R63 → R64.
+  Next check C74.
+- Landed: R61+R63 ca0a4e97 (C70 Add. 2, C72 Add. 1, 2a5da1ac); R64 71c4e31a (C73 Add. 1, 4d5cc377); R62 177b3dbb (C71 Add. 4,
+  69d699e2); all texts PASS. L-1 FIXED: Lead merged claude/checker at e1eabcd0 (07:53Z,
+  reached origin after my fetch); C71, C73 CLOSED. Rule: merge claude/checker before or with every landing.
+- PARKED LIGHT until P-N5-STAU (C74) has both §Cs (Lead 07:52Z: about an hour).
+- TRAP (new): REFEREE run_all.sh files that glob instance DIRECTORIES (vilb, accel) do not reproduce at a later trunk when a lane adds a
+  file (qc_toggle.pg): re-run at the REPORT commit. And never put a shell pipe '|' inside a markdown table cell.
+- landed.py is in the scratchpad tools/ (lost with the container; listing in the HANDOVER below).
 - PRE-READ done (packet + both reports + both §Cs, in full):
   - Packet docs/si/P-N5-1E-box16.md sha1 e613db13 at pin 7fef9699 and on trunk; full-history: 630656e5 (6), f347d113 (2) = older unfrozen drafts.
   - REFEREE R-N5-1E.md: c82c4ecf (main, on trunk) → §C 6170561a (claude/referee, NOT yet on trunk at 04:4xZ); append-only (0 deleted lines).

@@ -5,7 +5,7 @@ import sys, os, json, random
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 import fbr19, pg
 seed, R, NMAX, out, files = int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), sys.argv[4], sys.argv[5:]
-rng = random.Random(seed); best = {}; fails = {}; runs = used = 0; tot = dict(sg=0, acc=0, route2=0, racyc=0, dirh=0, dirc=0, sath=0, satc=0)
+rng = random.Random(seed); best = {}; fails = {}; runs = used = 0; tot = dict(altc=0, alts=0, altt=0, altn=0, altcyc=0, sg=0, acc=0, route2=0, racyc=0, dirh=0, dirc=0, sath=0, satc=0)
 for f in files:
     try: g = pg.parse("".join(l for l in open(f) if not l.lstrip().startswith("%")))
     except Exception: continue
@@ -15,7 +15,7 @@ for f in files:
         st = None if k == 0 else [rng.choice(g.succ[v]) for v in range(g.n)]
         try: r = fbr19.analyse(g, st, cap=5000)
         except Exception as e: print("ERR", f, e); continue
-        runs += 1; tot["sg"] += r["sg_checks"]; tot["acc"] += r["acc_checks"]; tot["route2"] += r["route2_checks"]; tot["racyc"] += r["routeacyc_checks"]; tot["dirh"] += r["dir_hits"]; tot["dirc"] += r["dir_checks"]; tot["sath"] += r["sat_hits"]; tot["satc"] += r["sat_checks"]; r["levels_n"] = r["levels"] / g.n; r["Nep_n"] = r["Nep"] / g.n
+        runs += 1; tot["sg"] += r["sg_checks"]; tot["acc"] += r["acc_checks"]; tot["route2"] += r["route2_checks"]; tot["racyc"] += r["routeacyc_checks"]; tot["dirh"] += r["dir_hits"]; tot["dirc"] += r["dir_checks"]; tot["sath"] += r["sat_hits"]; tot["altc"] += r["alt_changes"]; tot["alts"] += r["alt_clean_strict"]; tot["altt"] += r["alt_clean_tie"]; tot["altn"] += r["alt_nonclean"]; tot["altcyc"] += r["alt_cyc"]; tot["satc"] += r["sat_checks"]; r["levels_n"] = r["levels"] / g.n; r["Nep_n"] = r["Nep"] / g.n
         for x in r["fails"]:
             fails[x.split()[0]] = fails.get(x.split()[0], 0) + 1
             if fails[x.split()[0]] <= 3: print("FAIL", f, x, st, flush=True); json.dump(dict(file=f, start=st, r=r), open(f"{out}_FAIL_{x.split()[0]}.json", "w"))

@@ -6,6 +6,7 @@ no vertex of D_k lies on its own honest cycle or on its own W-cycle. At every st
   C2  (NC) and (h3_D) => COARSE_L(Xi(v)) = COARSE_L(W(v)) for every v, at L = max(M_D, -1)
   FRZ (NC) and (h3_D) at every state of a fallback-free run S inside a phase, L := max(max_S M_D, -1): COARSE_L(W) is constant on S
       from its (n-1)-th state on (successor 10's CR-D with (NC) for (h_D))
+  C2H (H3ONLY=1) (h3_D) ALONE => COARSE_L(Xi(v)) = COARSE_L(W(v)) for every v, at L = max(M_D, -1) (Lemma C2-H3, N5-2O-T §7)
 Counts the states with (h_D) and with (NC), so the gain of the weaker hypothesis is visible. MUT=1 drops (NC) from B (control: must fail).
 Usage: gdnc.py --list FILE [KMIN] | --rand COUNT NLO NHI SEED  (K=2 env: C^2O only; odd #: S3 start, even #: random start pair)"""
 import sys, os, random
@@ -14,7 +15,9 @@ sys.path.insert(0, os.path.join(ROOT, "experiments", "new", "box21")); sys.path.
 from n5x import step, start_pair, Engine, dual, load
 from tcdir import lasso, wval
 MUT = os.environ.get("MUT") == "1"
-C = dict(FRZ_runs=0, FRZ_n=0, FRZ_V=0, states=0, D2=0, hD=0, NC=0, NC_not_hD=0, B_n=0, B_V=0, C2_n=0, C2_V=0)
+H3ONLY = os.environ.get("H3ONLY") == "1"
+MUTL = os.environ.get("MUTL") == "1"   # also check (c2) under (h3_D) ALONE (no (NC), no (h_D)): C2H
+C = dict(H3=0, H3_notNC=0, C2H_n=0, C2H_notNC=0, C2H_V=0, FRZ_runs=0, FRZ_n=0, FRZ_V=0, states=0, D2=0, hD=0, NC=0, NC_not_hD=0, B_n=0, B_V=0, C2_n=0, C2_V=0)
 VIOL = []
 
 def lev(E, x, y):
@@ -53,6 +56,12 @@ def check(g, name, start=None):
         h3 = all(vs[u][0] == W[u][0] for u in D)
         M = max([lev(E, vs[u], W[u]) for u in D], default=-2) if h3 else 10 ** 9
         rows.append(dict(key=(tuple(x[0] for x in vs), tuple(t)), hyp=nc and h3, M=M, W=W, fb=r[4] if r else 0))
+        C["H3"] += h3; C["H3_notNC"] += h3 and not nc
+        if H3ONLY and h3:
+            L3 = max(M - 1, -1) if MUTL else max(M, -1)   # MUTL=1: one level below M_D (control: must fail)
+            for v in range(g.n):
+                C["C2H_n"] += 1; C["C2H_notNC"] += not nc
+                if coarse(vs[v], L3) != coarse(W[v], L3): C["C2H_V"] += 1; VIOL.append(("C2H", name, k, v))
         if nc and h3:
             L = max(M, -1)
             for v in range(g.n):
