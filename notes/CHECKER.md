@@ -9,7 +9,10 @@ History before successor 8 (successors 5-7: C45-C57, their resume points and han
 - C67 = R58 (P-N5-2T) draft 81b78368 at 62a292df: main report docs/checker/C67.md, FAIL on E-1 (REFEREE-2 successor 13 → 14, twice);
   N-1..N-4. Re-runs: REFEREE-2 run_all 26/26, REFEREE 3/3, lane 2/2 IDENTICAL. Add. 1 36d6f3e8 PASS (rev. 61a238a8 at 210334bb). NEXT: landing.
 - C68 = R59 (P-N5-VILB) da345a7b @ c18076c9: PASS (bccaa3fa + table fix cf48d915), N-1..N-4. C69 = R60 (P-N5-ACCEL) 6c1d2f03 @ c18076c9:
-  PASS (81f75721), N-1..N-3. NEXT: landed checks of R58, R59, R60. Next check C70.
+  PASS (81f75721), N-1..N-3. Landed: R58 6984ebef (C67 Add. 2 11ef5c85), R59+R60 a3b1cff3 (C68/C69 Add. 1 b1901a15). CLOSED.
+- C70 = R61 (FBK) f152744e @ 94d797a7: FAIL E-1 (title 'epochs reduce to ρ' = the unsigned ALT reading), 98278e40. C71 = R62 (H3)
+  0e5436f0 @ 94d797a7: FAIL E-1 (L-COMP random 62,761 / 6,520 untraceable; committed 1,131,485 / 115,640 at 785c38d3), E-2 (REFEREE TC 588 → 528).
+  Re-runs IDENTICAL (R2 FBK 13/13, H3 22/22; REFEREE logs reproduce at the commit that wrote them: frz1 at 7c2d9b49). Next check C72.
 - TRAP (new): REFEREE run_all.sh files that glob instance DIRECTORIES (vilb, accel) do not reproduce at a later trunk when a lane adds a
   file (qc_toggle.pg): re-run at the REPORT commit. And never put a shell pipe '|' inside a markdown table cell.
 - landed.py is in the scratchpad tools/ (lost with the container; listing in the HANDOVER below).
