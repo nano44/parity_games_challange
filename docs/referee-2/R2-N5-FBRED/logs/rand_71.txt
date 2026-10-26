@@ -1,0 +1,14 @@
+MODE random 20000 4 12 71 MUT -
+HATc_checks: 97
+PFZ_checks: 284653
+TV_checks: 97
+YF_checks: 91789
+phases: 49548
+runs: 20000
+FEX_closeness: (-7, 'random71:8551')
+max_f: (1, 'random71:13')
+max_f_minus_n: (-3, 'random71:2605')
+max_j_minus_n_with_S: (-7, 'random71:8551')
+max_j_with_S: (1, 'random71:8551')
+max_rho: (5, 'random71:9948')
+RESULT OK violations=0
