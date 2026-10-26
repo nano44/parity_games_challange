@@ -1,0 +1,1 @@
+D2=14 dchange=77 changes=91 same_stretch=14 toW=14 toX=14 toWX=14 againstW=0 tieW=0
