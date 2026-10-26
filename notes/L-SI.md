@@ -17,7 +17,25 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   - Lemma DUAL's SECOND sentence (DUAL-1) is not used; only the first sentence and MIRROR (a)-(c).
   - The parameter form of 1E-POLY re-runs MIRROR (b), (c)'s per-game proofs with L := T*(n, m, Δ, d_e). The uniform form is MIRROR as signed.
   - (VJ) for ANY pointwise-optimal σ̄: Θσσ̄′ = Ωσ, so S1's tie-breaks do not matter.
-- NEXT: P-N5-1E referee items → NEW docs/si/P-N5-1E-fixes-box16.md. Optional: frontier TC-SWITCH data.
+- 03:38Z Lead: P-N5-1E pinned trunk 7fef9699 (REFEREE-2 now; REFEREE succ. 12 later). Fixes file only on the Lead's word, after both.
+- 03:38Z Lead task: 𝒞^2O, is ρ per phase polynomial? Lane note docs/si/N5-2O-box16.md (NOT frozen):
+  - PROVED (unrefereed; conditional on FBRED): PFZ-q (κ-PFZ needs only its own terminal constant), ROUTE-2, DIR, SAT-2,
+    Theorem FB-2T (N_late ≤ 12n² under (2T): ≤ 2 terminals per class), Corollary FB-2O (f ≤ 1 + (n−1)(1+12n²) on 𝒞^2O).
+  - ρ itself: OPEN; it is not needed for f.
+  - Still OPEN for 𝒞^2O polynomial: X and T per phase (R50 (h) analogue).
+  - DATA experiments/si/fb2o/ (fb2o.py arithmetic κ; climb2o.py; lib2o.txt = 43 repo games with exactly 2 Odd choice vertices).
+- Things only I know (box 16):
+  - The lemmas' κ sums are ARITHMETIC: a vertex on the path and in P(Ξ(q)) counts twice. A checker composing values by set union
+    (S1's ⊕) reports false PFZ violations (60 on fts_best24.pg).
+  - FBRED HAT-FREEZE (c)'s wording is "play avoids Q∖{c}"; DIR uses only the prefix to c, via (a) plus (SP′).
+- 04:04Z Lead: (1) P-N5-2T DRAFT docs/si/P-N5-2T-box16.md (l-si 8481bce1; freeze on the Lead's word when R56 = FBRED lands; cite FBRED
+  11b15455, fixes 05c24943). (2) T per phase on 𝒞^2O: audit note docs/si/N5-2O-T-box16.md. LEN is the first failing link (as succ. 10 found).
+  W-frame ROUTE-2 makes (¬h-route) one-sided. T needs X_D, TC-SWITCH, the (¬h-route) FRZ-U / KIND-MONO cases, and per-gate SO / WC.
+  DATA tcsw.py: terminal changes ≤ 9 per run; (h_D) fails at 37 % (lib2o) and 63 % (lib41 frontier) of states.
+  X_D (R-STICK_D): NOT started, per the Lead.
+- 04:19Z Lead: R56 (FBRED) LANDED at trunk eb81356c; P-N5-2T FROZEN (R56 quotes script-checked; sha1 and commit in the Lead message).
+  L-NEW's P-N5-FBK will cite PFZ-q and DIR by this sha1. R-STICK_D goes to L-NEW: do not start it.
+- NEXT: T per phase on 𝒞^2O given f (N5-2O-T-box16 §4: TC-SWITCH on two gates, (¬h-route) FRZ-U); P-N5-1E fixes after both reports.
 
 ## HANDOVER (successor 10, box 15; written 2026-10-26 01:05Z (date -u); session_01PBqfsNWMhTPn7yNJ8C18HP)
 Reason: context past the Lead's ~450k line. The session's remaining-token figure fell by ~575k since the start (it is not exposed directly).

@@ -1,0 +1,6 @@
+seed 1 n 7: best (fallbacks in one phase, phase length) = (1, 5) -> /home/user/parity_games_challange/experiments/si/fb2o/instances/climb_s1_n7_f1.pg
+seed 2 n 8: best (fallbacks in one phase, phase length) = (1, 5) -> /home/user/parity_games_challange/experiments/si/fb2o/instances/climb_s2_n8_f1.pg
+seed 3 n 9: best (fallbacks in one phase, phase length) = (1, 5) -> /home/user/parity_games_challange/experiments/si/fb2o/instances/climb_s3_n9_f1.pg
+seed 4 n 10: best (fallbacks in one phase, phase length) = (1, 6) -> /home/user/parity_games_challange/experiments/si/fb2o/instances/climb_s4_n10_f1.pg
+seed 5 n 11: best (fallbacks in one phase, phase length) = (1, 8) -> /home/user/parity_games_challange/experiments/si/fb2o/instances/climb_s5_n11_f1.pg
+seed 6 n 12: best (fallbacks in one phase, phase length) = (1, 7) -> /home/user/parity_games_challange/experiments/si/fb2o/instances/climb_s6_n12_f1.pg

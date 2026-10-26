@@ -1,0 +1,12 @@
+seed 21 n 10: best (hyp objective) = (1, 1) -> /home/user/parity_games_challange/experiments/si/fb2o/instances/climb_s21_n10_hyp1.pg
+seed 22 n 4: best (hyp objective) = (0, 1) -> /home/user/parity_games_challange/experiments/si/fb2o/instances/climb_s22_n4_hyp0.pg
+seed 23 n 4: best (hyp objective) = (0, 1) -> /home/user/parity_games_challange/experiments/si/fb2o/instances/climb_s23_n4_hyp0.pg
+seed 24 n 11: best (hyp objective) = (1, 1) -> /home/user/parity_games_challange/experiments/si/fb2o/instances/climb_s24_n11_hyp1.pg
+seed 25 n 18: best (hyp objective) = (1, 1) -> /home/user/parity_games_challange/experiments/si/fb2o/instances/climb_s25_n18_hyp1.pg
+seed 26 n 7: best (hyp objective) = (1, 1) -> /home/user/parity_games_challange/experiments/si/fb2o/instances/climb_s26_n7_hyp1.pg
+seed 27 n 8: best (hyp objective) = (0, 0) -> /home/user/parity_games_challange/experiments/si/fb2o/instances/climb_s27_n8_hyp0.pg
+seed 28 n 8: best (hyp objective) = (0, 0) -> /home/user/parity_games_challange/experiments/si/fb2o/instances/climb_s28_n8_hyp0.pg
+seed 29 n 11: best (hyp objective) = (0, 1) -> /home/user/parity_games_challange/experiments/si/fb2o/instances/climb_s29_n11_hyp0.pg
+seed 30 n 7: best (hyp objective) = (0, 1) -> /home/user/parity_games_challange/experiments/si/fb2o/instances/climb_s30_n7_hyp0.pg
+seed 31 n 7: best (hyp objective) = (0, 1) -> /home/user/parity_games_challange/experiments/si/fb2o/instances/climb_s31_n7_hyp0.pg
+seed 32 n 7: best (hyp objective) = (1, 1) -> /home/user/parity_games_challange/experiments/si/fb2o/instances/climb_s32_n7_hyp1.pg
