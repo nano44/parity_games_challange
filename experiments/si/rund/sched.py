@@ -104,6 +104,12 @@ def ustruct(g, E, name, rows, F, i, j, k, e):
     C["U_cls_" + ("up" if up else "boundary" if bd else "OTHER")] += 1
     if not up and not bd: VIOL.append(("U_OTHER", name, i, k, e))
     C["U_upk_noboundary"] += upk and not any(skey(kk) != skey(f) for kk in range(f, k + 1))
+    C["U_x_up%d_bd%d_upk%d" % (up, bd, upk)] += 1
+    if not bd:
+        C["U_nb_offz_f>offz_k1"] += off(E, rows[f], z) > off(E, rows[k + 1], z)
+        C["U_nb_offa_k>offa_f"] += off(E, rows[k], a_k) > off(E, rows[f], a_f)
+        print(f"  NB k={k - i} f={f - i} y={y} z={z} a_f={a_f} a_k={a_k} off_y {d0}->{d1} off_z f/k/k+1 {off(E, rows[f], z)}/{off(E, rows[k], z)}/{off(E, rows[k + 1], z)}"
+              f" off_a f/k {off(E, rows[f], a_f)}/{off(E, rows[k], a_k)} lam_y={rows[k]['W'][y][0]}")
     print(f"  USTRUCT {name} k0={i} k={k - i} f={f - i} y={y} z={z} a_f={a_f}({G(f, a_f)}) a_k={a_k}({G(k, a_k)}) z@f={G(f, z)} z@k={G(k, z)}"
           f" y@k+1={G(k + 1, y)} D_f={sorted(rows[f]['D'])} D_k={sorted(rows[k]['D'])} y_forbidden_later={later[:3]}")
 
