@@ -1,0 +1,26 @@
+MODE random 2000 6 16 1842 4 3 MUT - BUDGET 3000000
+ASM_N2_checks: 15883
+ASM_checks: 15883
+C_checked: 15935
+ENGXI_checks: 16576
+EPC_phases: 15883
+EVEN_checks: 153
+FBCp_checks: 153
+ISE_checks: 152
+R0_total: 0
+REM_checks: 15883
+RETFB_checks: 153
+SATFB_checks: 152
+VIS_R0: 0
+VIS_a: 0
+VIS_b: 0
+VIS_checks: 15935
+VIS_returns: 0
+phases: 15883
+runs: 6000
+states: 16576
+max_NCONF: (2, 'random1842:98#1@1 n 16 N_ep 2')
+max_Nep: (2, 'random1842:98#1@1 n 16 NCONF 2')
+max_V_C: (1, 'random1842:0#0@0 n 8')
+max_sat_src_per_C: (1, 'random1842:46#2@1')
+RESULT OK violations=0
