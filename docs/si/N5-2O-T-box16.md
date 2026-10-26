@@ -86,3 +86,20 @@ fallback-free run of each phase it counts terminal changes: transitions at which
    other's plus a fixed path when both are constant on a stretch_D, so L_D is the top of that path's κ-difference. That makes the
    two-gate case an ordering of two values, not of |D_k|. Not attempted.
 3. (¬h-route) FRZ-U: the routed gate behaves like a vertex of the direct gate's class with a constant route. Sketch only.
+
+## 5. Update (box 16, after the Lead's 04:19Z GO): the gate-order route to TC-SWITCH is DEAD
+- I tested the candidate of §4.2 and of N5-FRONTIER §4 ("a terminal change moves up a fixed order ≼_D of the gates, e.g. by W") on
+  𝒞^2O, with own scripts experiments/si/fb2o/tcdir.py and climbtc.py.
+- Library: with D_k fixed, 47 / 47 terminal changes went to the gate with the larger W (lib41's frontier games; logs/tcdir_lib41.txt).
+- Random start pairs: FALSE. In 150,000 random 𝒞^2O games, 21 of 94 two-gate changes with D fixed go to the gate with the SMALLER W,
+  some also against Ξ (logs/tcdir_rand2o_150k.txt). This persists when the gate is taken as the first W-direct gate, the gate structure is
+  fixed, and v ∉ D_k: 5 of 21 (logs/tcdir_rand2o_150k_ult.txt).
+- Instance (all three forms): experiments/si/fb2o/instances/tcwult2_against_n8.pg with its .start.json (n 8). Full record:
+  docs/si/DEAD.md, "DEAD box 16".
+- Mechanism: S4a takes Even's pointwise W-optimum of its arena, so a route to a lower-valued gate wins when its path part is better.
+- Consequence: TC-SWITCH cannot be closed by a gate order. A terminal change is a W-rise (or a tie) at v, so counting terminal changes
+  per run is as hard as counting W-changes on R_D per run, which is RUN_D itself.
+- READING: the R50 chain's per-class structure (FRZ-U, LEN, KIND-MONO per class) does not reduce the two-gate case to the one-gate case
+  by cutting at terminal changes. A different potential is needed: one that orders (path, gate) pairs jointly, as W does, but with a
+  polynomial range. OPEN.
+

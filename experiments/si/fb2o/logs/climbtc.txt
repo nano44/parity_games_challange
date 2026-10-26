@@ -1,0 +1,8 @@
+seed 1 n 9: best D-fixed two-gate terminal changes = 4, against-W 0
+seed 2 n 10: best D-fixed two-gate terminal changes = 0, against-W 0
+seed 3 n 11: best D-fixed two-gate terminal changes = 0, against-W 0
+seed 4 n 12: best D-fixed two-gate terminal changes = 0, against-W 0
+seed 5 n 13: best D-fixed two-gate terminal changes = 0, against-W 0
+seed 6 n 14: best D-fixed two-gate terminal changes = 0, against-W 0
+seed 7 n 15: best D-fixed two-gate terminal changes = 0, against-W 0
+seed 8 n 16: best D-fixed two-gate terminal changes = 0, against-W 0
