@@ -1,0 +1,4 @@
+brk_transitions_N1fb=28 flips=4 flips_N1fb=4 max_brk=7 max_flips_phase=4 onsets=1 onsets_N1fb=1 phases=1 phases_with_flips=1
+GAPS {}
+TOP onsets/flips/len/rho/n (1, 4, 78, 177, 40, '../n5-epoch/instances/nep76_n40.pg', 9)
+FLIPCLS PASS

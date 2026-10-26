@@ -1,0 +1,4 @@
+brk_transitions_N1fb=48 brk_transitions_N1sw=10 flips=20 flips_N1fb=7 flips_N1sw=10 flips_N3=3 max_brk=9 max_flips_phase=20 max_gap_N3=2 onsets=2 onsets_N1fb=1 onsets_N1sw=1 phases=5 phases_with_flips=1
+GAPS {('N3', 2): 3}
+TOP onsets/flips/len/rho/n (2, 20, 35, 21, 40, '../red/n5inj/instances/frz40.pg', 44)
+FLIPCLS PASS
