@@ -1,0 +1,11 @@
+START fit (38, 2) n 40
+BEST step 11 fit (41, 1) t 3s
+BEST step 87 fit (48, 1) t 20s
+BEST step 170 fit (49, 1) t 37s
+BEST step 1069 fit (51, 1) t 231s
+BEST step 1181 fit (52, 2) t 254s
+BEST step 1262 fit (53, 2) t 272s
+BEST step 1330 fit (71, 2) t 289s
+BEST step 1436 fit (72, 2) t 318s
+BEST step 1521 fit (74, 2) t 349s
+END steps 1736 best (74, 2) n 40 -> results/b14/scale/nconf2_seed90_n40_r2.pg
