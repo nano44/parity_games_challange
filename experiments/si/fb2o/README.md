@@ -9,3 +9,4 @@
 - climbtc.py: climb for two-gate terminal changes (found none against W; random start pairs did).
 - instances/: tcw_against_n12.pg (first-gate form), tcwult2_against_n8.pg + .start.json (all three forms). inst4344.txt, tcw.txt: input lists.
 - gdnc.py: Lemma G_D-NC (b′), (c2′) and Corollary FRZ-U_D (docs/si/N5-2O-T-box16.md §6); MUT=1 control; logs gdnc_*.txt.
+- hcyc.py: cycle configurations of the two gates per frame; whether they share the honest class (N5-2O-T §7). gdnc.py H3ONLY=1: Lemma C2-H3; MUTL=1 control.

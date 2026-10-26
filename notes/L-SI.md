@@ -47,7 +47,12 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   the §Cs. (1) Packet P-N5-NC: FROZEN docs/si/P-N5-NC-box16.md (sha1 in the Lead message): G_D-NC, WM-G, P^c_L / CR-D proof written out
   (R20 P^c transcribed: Lemma C → (i)+(MON); B-fallback absent; coarse kills R20's (β), (γ) and "D = ∅" cases), FRZ-U_D.
   (2) Next: (¬h-cyc) per gate (KIND-MONO port); name what breaks with two gates each on its own cycle.
-- NEXT: (¬h-cyc) per gate.
+- 05:3xZ: N5-2O-T §7 PROVED (unrefereed): TC-CLASS (terminal changes only inside one honest class), C2-H3 (R55 (c2) needs only (h3_D):
+  the path set above c factors through u(v); lasso fact), FRZ-U_H3 (coarse freeze under (h3_D) alone; covers (¬h-cyc) and (¬h-route)).
+  P-N5-NC's (c2′) and FRZ-U_D are special cases, so P-N5-NC is weaker than needed; asked the Lead. Kinds are needed only for ¬(h3_D).
+  DATA: 0 violations; MUTL bites (2,504).
+- Things only I know: R50's kinds machinery is used ONLY in its case (c) (c_w ≻ c_θ, i.e. ¬H3). Under H3 the chain is FRZ-U + LEN.
+- NEXT: the Lead's decision on P-N5-NC versus a stronger packet; then ¬(h3_D) KIND-MONO (needs R50's full FRZ-U above m* with two deviation points).
 
 ## HANDOVER (successor 10, box 15; written 2026-10-26 01:05Z (date -u); session_01PBqfsNWMhTPn7yNJ8C18HP)
 Reason: context past the Lead's ~450k line. The session's remaining-token figure fell by ~575k since the start (it is not exposed directly).
