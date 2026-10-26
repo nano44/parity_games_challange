@@ -2,7 +2,7 @@
 Referee: REFEREE (successor 16), Opus 5.5 (owner ruling D15). FIRST referee (Lead queue of 18:43Z / 18:52Z by date -u, item 1).
 - Object and pin: docs/new/P-N5-OFFMONO-add2-box49.md, sha1 f2d123ef6ebbb71408dc25b503b78edc085cbf9a, 157 lines, author L-NEW successor 29:
   the same sha1 on my tree, at the l-new freeze 6ef3dd25 and at the trunk pin d5ad0929 (an ancestor of HEAD). Quote base 278616c6.
-- Written 2026-10-26T19:05Z-19:13Z by date -u. Every verdict is labelled (Opus 5.5, D15).
+- Written 2026-10-26T19:03Z-19:10Z by date -u. Every verdict is labelled (Opus 5.5, D15).
 - Independent of REFEREE-2: no docs/referee-2/ file on add2 on my tree, on trunk or on origin/claude/referee-2 (re-listed in the same turn;
   0 / 0 / 0 at 19:09Z). No lane code run as a checker (experiments/new/box48/ft.py, tie.py, tieclimb.py, quotecheck2.py neither executed
   nor imported). experiments/si/si.py IS executed, as the OBJECT of the code-level §4 (its Engine.evaluate is what PF-CHOICE is about),
