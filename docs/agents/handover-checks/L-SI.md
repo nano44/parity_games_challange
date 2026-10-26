@@ -1,17 +1,20 @@
 # Handover check: L-SI (successor 13, written 2026-10-26T07:50Z by date -u; LANE-RESTART step 3; Opus 5.5, D18/L40)
 Every answer below was measured in this container; the commands are given. Predecessor: successor 12, session_01HYh7NTpb8ZcvdYpgAJiDgy.
-Its handover is notes/L-SI.md "## HANDOVER (successor 12, box 17)" with its "UPDATE 07:4xZ" and "NEXT" (l-si ac80b594).
+Its handover is notes/L-SI.md "## HANDOVER (successor 12, box 17)" with its "UPDATE 07:4xZ" and "NEXT" (l-si ac80b594), plus its final push 0b025b91.
 
 ## 1. Branch, head, distance to trunk
 - Branch `claude/l-si`. The clone was stale AGAIN: local HEAD 0d48da26; `git fetch origin claude/l-si` → origin ac80b594;
   `git merge --ff-only origin/claude/l-si` → HEAD ac80b594 (`git rev-parse HEAD origin/claude/l-si` equal).
-- Trunk `origin/claude/vibrant-johnson-nxvvxo` = c6b763f1 (fetched; the brief's "c6b763f1 or later").
+- Trunk `origin/claude/vibrant-johnson-nxvvxo` = c6b763f1 at first fetch, 177b3dbb at the second (the brief's "c6b763f1 or later").
   - Before merging: `git rev-list --left-right --count HEAD...trunk` → 4 ahead / 136 behind; merge-base 47e409bf.
-  - `git merge --no-ff` of trunk (no rebase) → merge commit 1e71b666, 5 ahead / 0 behind. This file is the next commit; the pushed
-    SHA goes to the Lead.
-- Discrepancy found while measuring: the brief says R62 (H3) is on trunk. At trunk c6b763f1, `git show trunk:docs/RESULTS.md | grep -c R62`
-  → 0 (headers jump R61 → R63 → R64), and NOW l.2 says "At CHECKER: R62 (H3), R64 (EPR)" although R64 is in RESULTS. So R64 is landed;
-  R62 is NOT yet in RESULTS at c6b763f1 (Lead: please confirm which is current).
+  - `git merge --no-ff` of trunk c6b763f1 (no rebase) → merge commit 1e71b666. My first push was rejected: successor 12 had pushed
+    0b025b91 (handover final: Lead 07:36Z queue, box 17 dead ends in the notebook) after my fetch. Merged it (--no-ff, no rebase).
+  - Trunk then moved to 177b3dbb (Lead: R62 landed); merged it too (--no-ff). Now `git rev-list --left-right --count HEAD...trunk`
+    → 9 ahead / 0 behind (before this file's commit). This file is the next commit; the pushed SHA goes to the Lead.
+- R62 / R64: at c6b763f1 RESULTS had R64 but not R62 (NOW said "At CHECKER: R62"); at 177b3dbb R62 (P-N5-H3; CHECKER C71) is in
+  RESULTS and GAPS G-N5-TIME has "UPDATE 07:47Z: RESULTS R62 ... LANDED". Both are on trunk now, as the brief says.
+- Queue per the notebook's added "Queue (Lead 07:36Z)" (0b025b91): 1. restricted Lemma P / LEVEL-COUNT; 2. twin Δ-RT for |D| ≥ 2
+  epochs. Successor 12 agreed: 1 first. That matches the brief's STEP 2.
 
 ## 2. Open work and the next step of each (nothing running: `pgrep -a python` empty; fresh container)
 Frozen packets: sha1sum of docs/si/P-N5-*.md matches the handover (P-N5-H3 680e4528, P-N5-H3-fixes 5666b4a5, 2T fcb91130 / 8aad9f77,
@@ -30,7 +33,7 @@ Frozen packets: sha1sum of docs/si/P-N5-*.md matches the handover (P-N5-H3 680e4
 
 ## 3. docs/GAPS.md rows I own
 - None (`git show trunk:docs/GAPS.md | awk -F'|' '$4 ~ /L-SI/'` → empty).
-- I work under G-N5-TIME (l.11): major, owner L-NEW, status open; last update 07:36Z (R64 landed): "(Στ) itself (P-N5-STAU, in review),
+- I work under G-N5-TIME (l.11): major, owner L-NEW, status open; updates 07:36Z (R64) and 07:47Z (R62) landed; R64 text: "(Στ) itself (P-N5-STAU, in review),
   N_ep / ρ and |D_E| ≥ 2 epochs OPEN; general games OPEN." NOW l.2: "NO polynomial bound for N5 on general games is proved."
 
 ## 4. The three owner rulings that constrain me most (verbatim from docs/DECISIONS.md at trunk; status from docs/DECISIONS-INDEX.md)
