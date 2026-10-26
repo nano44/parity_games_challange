@@ -1,0 +1,14 @@
+MODE climb 3000 4 7 112 climb/ep_112 MUT -
+ACC_phases: 29761
+EPa_checks: 252049
+EPa_class_freeze_checks: 12284
+SG_checks: 1360
+VILB_checks: 252049
+phases: 29761
+runs: 12000
+climb_best_epoch_fb_minus_n1: (-5, 'climb/ep_112')
+max_K: (18, 'climb112:1579:0')
+max_epoch_fb_minus_n1: (-5, 'climb112:4:0')
+max_epochs: (2, 'climb112:37:2')
+max_f: (1, 'climb112:4:0')
+RESULT OK violations=0

@@ -1,0 +1,14 @@
+MODE files box4344.lst 5 MUT -
+ACC_phases: 74
+EPa_checks: 719
+EPa_class_freeze_checks: 17
+REC_phases_with_sbarQ_repeat: 6
+SG_checks: 480
+VILB_checks: 14727
+phases: 272
+runs: 50
+max_K: (5, 'experiments/new/box44/instances/rtf_cex.pg#0')
+max_epoch_fb_minus_n1: (-5, 'experiments/new/box43/instances/retf_n6.pg#0')
+max_epochs: (17, 'experiments/new/box43/instances/dch16_n44.pg#0')
+max_f: (17, 'experiments/new/box44/instances/fb17_n32.pg#0')
+RESULT OK violations=0

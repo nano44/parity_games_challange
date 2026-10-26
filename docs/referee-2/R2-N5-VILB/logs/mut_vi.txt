@@ -1,0 +1,46 @@
+MODE files ../../../experiments/new/box41/lib41.txt 1 MUT vi
+ACC_phases: 112
+EPa_checks: 1397
+EPa_class_freeze_checks: 30
+REC_phases_with_sbarQ_repeat: 91
+SG_checks: 12653
+VILB_checks: 415657
+VIOLATIONS: 774
+V_VILB: 774
+phases: 2335
+runs: 412
+max_K: (22, 'experiments/n5-exhaustive/instances/b4_cyc6_0.pg#0')
+max_epoch_fb_minus_n1: (-2, 'docs/referee/R-N5-L2/exitdrop_n3.pg#0')
+max_epochs: (50, 'experiments/si/orlens/instances/lev_l_x.pg#0')
+max_f: (33, 'experiments/si/xing/instances/ccl_w48_n48.pg#0')
+VIOLATION VILB: experiments/n5-exhaustive/canonA_0.pg#0@0: z 3 c 4 j 1
+VIOLATION VILB: experiments/n5-exhaustive/instances/b5_os_n12.pg#0@17: z 10 c 0 j 1
+VIOLATION VILB: experiments/n5-exhaustive/instances/b5_os_n14.pg#0@21: z 10 c 0 j 1
+VIOLATION VILB: experiments/n5-exhaustive/instances/b5_os_n16.pg#0@25: z 10 c 0 j 1
+VIOLATION VILB: experiments/n5-exhaustive/instances/b5_os_n20.pg#0@33: z 10 c 0 j 1
+VIOLATION VILB: experiments/n5-exhaustive/instances/b5_os_n28.pg#0@0: z 1 c 21 j 1
+VIOLATION VILB: experiments/n5-exhaustive/instances/b5_os_n28.pg#0@0: z 25 c 21 j 1
+VIOLATION VILB: experiments/n5-exhaustive/instances/b5_os_n40.pg#0@0: z 9 c 21 j 1
+VIOLATION VILB: experiments/n5-exhaustive/instances/b5_os_n40.pg#0@1: z 9 c 21 j 1
+VIOLATION VILB: experiments/n5-exhaustive/instances/b5_os_n40.pg#0@2: z 9 c 21 j 1
+VIOLATION VILB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@1: z 5 c 30 j 1
+VIOLATION VILB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@2: z 5 c 30 j 1
+VIOLATION VILB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@4: z 23 c 11 j 1
+VIOLATION VILB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@5: z 23 c 11 j 1
+VIOLATION VILB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@6: z 23 c 11 j 1
+VIOLATION VILB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@7: z 23 c 11 j 1
+VIOLATION VILB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@8: z 23 c 11 j 1
+VIOLATION VILB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@9: z 23 c 11 j 1
+VIOLATION VILB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@10: z 23 c 11 j 1
+VIOLATION VILB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@11: z 23 c 11 j 1
+VIOLATION VILB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@12: z 23 c 11 j 1
+VIOLATION VILB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@13: z 23 c 11 j 1
+VIOLATION VILB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@14: z 23 c 11 j 1
+VIOLATION VILB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@15: z 23 c 11 j 1
+VIOLATION VILB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@16: z 23 c 11 j 1
+VIOLATION VILB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@17: z 23 c 11 j 1
+VIOLATION VILB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@18: z 23 c 11 j 1
+VIOLATION VILB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@19: z 3 c 11 j 2
+VIOLATION VILB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@19: z 13 c 11 j 2
+VIOLATION VILB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@20: z 13 c 11 j 2
+RESULT FAIL violations=774

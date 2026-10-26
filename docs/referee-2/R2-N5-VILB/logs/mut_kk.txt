@@ -1,0 +1,46 @@
+MODE files ../../../experiments/new/box41/lib41.txt 1 MUT kk
+ACC_phases: 112
+EPa_checks: 1397
+EPa_class_freeze_checks: 30
+REC_phases_with_sbarQ_repeat: 91
+SG_checks: 12653
+VILB_checks: 415657
+VIOLATIONS: 61
+V_ACCb: 61
+phases: 2335
+runs: 412
+max_K: (22, 'experiments/n5-exhaustive/instances/b4_cyc6_0.pg#0')
+max_epoch_fb_minus_n1: (-2, 'docs/referee/R-N5-L2/exitdrop_n3.pg#0')
+max_epochs: (50, 'experiments/si/orlens/instances/lev_l_x.pg#0')
+max_f: (33, 'experiments/si/xing/instances/ccl_w48_n48.pg#0')
+VIOLATION ACCb: docs/referee/R-N5-L2/exitdrop_n3.pg#0: switching transitions 0 > N_K 1
+VIOLATION ACCb: docs/referee/R-N5-L2/exitdrop_n3.pg#0: switching transitions 0 > N_K 0
+VIOLATION ACCb: experiments/attr/instances/dtr_fig1.pg#0: switching transitions 0 > N_K 0
+VIOLATION ACCb: experiments/attr/instances/dtr_fig1.pg#0: switching transitions 0 > N_K 0
+VIOLATION ACCb: experiments/attr/instances/psolq_min_n3_m4_4.pg#0: switching transitions 0 > N_K 0
+VIOLATION ACCb: experiments/attr/instances/psolq_min_n3_m4_5.pg#0: switching transitions 0 > N_K 0
+VIOLATION ACCb: experiments/attr/instances/psolq_min_n3_m4_6.pg#0: switching transitions 0 > N_K 0
+VIOLATION ACCb: experiments/attr/instances/psolq_min_n3_m4_7.pg#0: switching transitions 0 > N_K 0
+VIOLATION ACCb: experiments/harness/bench/hkp_fig4b.pg#0: switching transitions 0 > N_K 0
+VIOLATION ACCb: experiments/m2/counterexamples/ce1_4v.pg#0: switching transitions 0 > N_K 0
+VIOLATION ACCb: experiments/m2/counterexamples/ce1_8v_shrunk.pg#0: switching transitions 0 > N_K 0
+VIOLATION ACCb: experiments/m2/counterexamples/ce1_8v_shrunk.pg#0: switching transitions 0 > N_K 0
+VIOLATION ACCb: experiments/n5-exhaustive/instances/b4_n5_other_0.pg#0: switching transitions 1 > N_K 2
+VIOLATION ACCb: experiments/n5-exhaustive/instances/n3all_maxph_0.pg#0: switching transitions 0 > N_K 1
+VIOLATION ACCb: experiments/n5-exhaustive/instances/n3all_maxph_1.pg#0: switching transitions 0 > N_K 1
+VIOLATION ACCb: experiments/n5-exhaustive/instances/n3all_maxph_2.pg#0: switching transitions 0 > N_K 1
+VIOLATION ACCb: experiments/n5-exhaustive/instances/n4_maxph_0.pg#0: switching transitions 0 > N_K 1
+VIOLATION ACCb: experiments/n5-exhaustive/instances/n4_maxph_1.pg#0: switching transitions 0 > N_K 1
+VIOLATION ACCb: experiments/n5-exhaustive/instances/n4_maxph_1.pg#0: switching transitions 1 > N_K 1
+VIOLATION ACCb: experiments/n5-exhaustive/instances/n4_thch_0.pg#0: switching transitions 1 > N_K 1
+VIOLATION ACCb: experiments/n5-exhaustive/instances/n4_thch_0.pg#0: switching transitions 0 > N_K 1
+VIOLATION ACCb: experiments/n5-exhaustive/instances/n4all_maxph_0.pg#0: switching transitions 0 > N_K 0
+VIOLATION ACCb: experiments/n5-exhaustive/instances/n4all_maxph_1.pg#0: switching transitions 0 > N_K 0
+VIOLATION ACCb: experiments/n5-exhaustive/instances/n5s_maxph_0.pg#0: switching transitions 1 > N_K 1
+VIOLATION ACCb: experiments/n5-exhaustive/instances/n5s_maxph_0.pg#0: switching transitions 0 > N_K 1
+VIOLATION ACCb: experiments/new/box21/instances/h1_hand.pg#0: switching transitions 0 > N_K 0
+VIOLATION ACCb: experiments/new/box21/instances/h1_hand.pg#0: switching transitions 0 > N_K 0
+VIOLATION ACCb: experiments/new/box22/instances/cyc4.pg#0: switching transitions 0 > N_K 0
+VIOLATION ACCb: experiments/new/box22/instances/i1_min.pg#0: switching transitions 0 > N_K 0
+VIOLATION ACCb: experiments/new/box22/instances/i1_min.pg#0: switching transitions 2 > N_K 3
+RESULT FAIL violations=61
