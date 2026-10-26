@@ -62,3 +62,13 @@ Retired roster rows moved verbatim out of docs/NOW.md to keep it within the 150-
 | REFEREE-2 (succ. 9, Opus) | session_0163ejRshYhYxVW2CD2XUEB2 | claude/referee-2 | opus-5-5 | high | PARKED 16:18Z Oct 25 (date -u) at ~390k: OUT, ENT, NEB, LV, PFZ signed; §Cs OUT/ENT/NEB/LV (a769ff5); handover 937535e | Never downgrade the referee; D15/L37 |
 | L-RED (succ. 17, Opus) | session_01DJB52MMkzsddv3hXsMpos5 | claude/l-red | opus-5-5 | high | PARKED 19:37Z Oct 25 (date -u) at ~450k: box 41 DONE (R71 + §7 addendum e63003b: no kill of FB-CAP, FB-POLY, FB-PHASE, FX, INTO; first FB-CAP equality at |U| = 4) | D1/D14/D15/L37 |
 | L-NEW (succ. 20, Opus) | session_018pjn8Y8JRES3YuFDUCAJgM | claude/l-new | opus-5-5 | high | PARKED 19:32Z Oct 25 (date -u) at ~390k: box 41 DONE (P-N5-FBPOLY de244dcd, PFZ fixes 3f55bc88, RHO fixes cc4e8540; N5-XOUT, N5-MAP); handover a3efded | D14/D15/D18/L37 |
+
+## Moved 08:27Z Oct 26 (date -u)
+| Role | Session id | Branch | Model | Effort | State | Reason |
+| --- | --- | --- | --- | --- | --- | --- |
+| L-SI (succ. 8, Opus) | session_013kZp65x9TKU9AqPZdMYGpm | claude/l-si | opus-5-5 | high | PARKED 18:09Z Oct 25 (date -u) at ~394k: box 13 DONE (LV fixes b75ab1fc, LV2 fixes f76fd1d1, P-N5-NEEDB 7471aef3; A2* closed; GATE-ABOVE, NONE-LAST FALSE); handover e683a4c | D14/D15/D18/L37 |
+| L-SI (succ. 9, Opus) | session_018jN1MJkw56F58G3qcfcuZA | claude/l-si | opus-5-5 | high | PARKED 19:12Z Oct 25 (date -u) at ~440k: box 14 DONE (N5-LEDGER, ledger v2, FB-PHASE (lane cross-check), P-N5-PHI 35e79ec1, P-N5-FX aa227b0b); handover fe58fba | D14/D15/D18/L37 |
+| REFEREE (succ. 8, Opus) | session_01YRPeH49wEXXq7vW5qK35Gz | claude/referee | opus-5-5 | high | PARKED 14:38Z Oct 25 (date -u) at ~510k: RL, P1, SCOPE, OUT (§C a8b8ef3), ENT (§C d6b8aef: R36 lifts (P)) all converged; handover 4efa2a6 | Never downgrade the referee; D15/L37 |
+| REFEREE (succ. 9, Opus) | session_01VsZYJ8FiTSj5Kazk715ZP7 | claude/referee | opus-5-5 | high | PARKED 16:37Z Oct 25 (date -u) at ~490k: NEB 40adbf1, LV 8054da2 (+§C 46a8030), PFZ 8595343 (+main §C 4859e63), LV2 b454ca3 (+addendum 46a8030); handover 4859e63 | D15/L37 |
+| REFEREE-2 (succ. 10, Opus) | session_012VrKctzqedu9x1gVAMchV7 | claude/referee-2 | opus-5-5 | high | PARKED 18:09Z Oct 25 (date -u) at ~390k: LV2 a551deb, PFZ-ext §X 78896bf (G-PFX-1), RHO 269ae45, block witness f2209fa; handover cd3b7cd | D15/L37 |
+| REFEREE-2 (succ. 11, Opus) | session_01VrcXfBuNYKJ3uBUc7ETARQ | claude/referee-2 | opus-5-5 | high | PARKED 20:2xZ Oct 25 (date -u) at ~420k: PHI b621f9a, FBPOLY 2fef7c4a, NHN 04b5c1fd (+§C a41f2c13), PFZ C.5 ea5cc217 (BRK-POLY′ (i) unconditional); handover a41f2c13 | D15/L37 |
