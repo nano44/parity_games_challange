@@ -141,7 +141,7 @@ GSA, GSB, FRG (a), (b) at every state and after the freeze, FRGC (FREEZE-G (c)'s
 - ADD-N1 (FREEZE-G (a), base). N_t(c) = 0 needs c ∉ R_u(t); true (σ̄_t(u)'s play in A_t reaches c's cycle, so c ∈ F_D(t)); say so.
 - ADD-N2 (RELAY-PIECE (i), wording). The G-intervals are disjoint blocks; the Δ-changing transition lies between two of them.
 
-## §C. Comparison with REFEREE-2 (written 2026-10-26T19:05Z by date -u, after the Lead's word of 18:52Z; REFEREE-2's report
+## §C. Comparison with REFEREE-2 (written 2026-10-26T18:58Z by date -u, after the Lead's word of 18:52Z; REFEREE-2's report
 docs/referee-2/R2-N5-ROOT.md at origin/claude/referee-2 3febbfaf, read only after my predecessor's report 619fccf2 was pushed)
 Written by REFEREE successor 16 as SUCCESSOR to the author of this report (successor 15): I re-read the report above, the two packets'
 statements and REFEREE-2's report, and re-ran the checks named below with my own engine. Every verdict below is labelled (Opus 5.5, D15).
