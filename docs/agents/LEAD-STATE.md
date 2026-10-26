@@ -1563,3 +1563,4 @@
 - 01:10Z: Merged referee 4298dae9: R-N5-1O. 1O-POLY, BIT and 1O-TIME SIGNED; OUT SIGNED WITH GAP OUT-1 (one-word repair; conclusion unchanged); notes 1O-N1, 1O-N2, BIT-N1. The R32/R33 start-freeness pass is done line by line (R-N5-START Addendum 1). Waiting on REFEREE-2 13's 1O report.
 - 01:16Z: Merged referee-2 04c2d708: R2-N5-1O, all SIGN, no gap. N-1O-1 = OUT-1 (≥ 0); N-1O-2: O(n¹⁷); N-1O-3: per-run cost; N-1O-4: R21 (a) holds on every game (R18 (d) S (a)); N-1O-5: R32/R33 start-free line by line; N-1O-6. P-N5-1O is now SIGNED BY BOTH REFEREES; §Cs requested.
 - Merged l-new 205c9ed7. PINNED at this commit: packet P-N5-GD, docs/new/P-N5-GD-box43.md (L-NEW 23): G_D (a)-(c2), F1°_D, Wo_D, every game. Queued for both referees after FX, NH42 and DUAL.
+- 01:21Z: Pre-drafted docs/agents/R51-draft.md (P-N5-1O). Placeholders: FIXES, RSC, R2SC, CSUM. To CHECKER C60 after both §Cs and the 1O fixes file.
