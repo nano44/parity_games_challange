@@ -1,0 +1,62 @@
+MODE files ../R2-N5-STAU/lib41_noref.lst 1 MUT nonC BUDGET 400000
+ASM_N2_checks: 2244
+ASM_checks: 2332
+C_checked: 336
+C_deep: 172
+C_nothing_to_check: 2494
+ENGXI_checks: 8882
+EPC_phases: 2244
+EVEN_checks: 1105
+FBCp_checks: 142
+ISE_checks: 26
+R0_total: 76
+REM_checks: 2332
+RETFB_checks: 25667
+RETFB_checks_other_config: 21162
+SATFB_checks: 12
+UNK_C: 481
+VIOLATIONS: 11424
+VIS_R0: 96
+VIS_a: 0
+VIS_b: 96
+VIS_checks: 336
+VIS_returns: 192
+V_RETFB: 11424
+phases: 2332
+runs: 410
+states: 8882
+max_NCONF: (23, 'experiments/red/so/instances/pft35_n48.pg#0@2 n 48 N_ep 39')
+max_Nep: (50, 'experiments/si/orlens/instances/lev_l_x.pg#0@1 n 32 NCONF 14')
+max_V_C: (10, 'experiments/red/xing/instances/j4_n40.pg#0@3 n 40')
+max_sat_src_per_C: (1, 'experiments/n5-exhaustive/instances/b4_n5_other_0.pg#0@0')
+VIOLATION RETFB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@18->19 C (11,): LEV_C 0 -> 0
+VIOLATION RETFB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@18->20 C (11,): LEV_C 0 -> 0
+VIOLATION RETFB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@18->21 C (11,): LEV_C 0 -> 0
+VIOLATION RETFB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@18->22 C (11,): LEV_C 0 -> 0
+VIOLATION RETFB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@18->23 C (11,): LEV_C 0 -> 0
+VIOLATION RETFB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@18->24 C (11,): LEV_C 0 -> 0
+VIOLATION RETFB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@18->25 C (11,): LEV_C 0 -> 0
+VIOLATION RETFB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@18->26 C (11,): LEV_C 0 -> 0
+VIOLATION RETFB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@18->27 C (11,): LEV_C 0 -> 0
+VIOLATION RETFB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@18->28 C (11,): LEV_C 0 -> 0
+VIOLATION RETFB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@18->29 C (11,): LEV_C 0 -> 0
+VIOLATION RETFB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@18->30 C (11,): LEV_C 0 -> 0
+VIOLATION RETFB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@18->31 C (11,): LEV_C 0 -> 0
+VIOLATION RETFB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@18->32 C (11,): LEV_C 0 -> 0
+VIOLATION RETFB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@18->33 C (11,): LEV_C 0 -> 0
+VIOLATION RETFB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@18->34 C (11,): LEV_C 0 -> 0
+VIOLATION RETFB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@18->35 C (11,): LEV_C 0 -> 0
+VIOLATION RETFB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@18->36 C (11,): LEV_C 0 -> 0
+VIOLATION RETFB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@18->37 C (11,): LEV_C 0 -> 0
+VIOLATION RETFB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@18->38 C (11,): LEV_C 0 -> 0
+VIOLATION RETFB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@18->39 C (11,): LEV_C 0 -> 0
+VIOLATION RETFB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@18->40 C (11,): LEV_C 0 -> 0
+VIOLATION RETFB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@18->41 C (11,): LEV_C 0 -> 0
+VIOLATION RETFB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@18->42 C (11,): LEV_C 0 -> 0
+VIOLATION RETFB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@18->43 C (11,): LEV_C 0 -> 0
+VIOLATION RETFB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@18->44 C (11,): LEV_C 0 -> 0
+VIOLATION RETFB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@18->45 C (11,): LEV_C 0 -> 0
+VIOLATION RETFB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@18->46 C (11,): LEV_C 0 -> 0
+VIOLATION RETFB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@18->47 C (11,): LEV_C 0 -> 0
+VIOLATION RETFB: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@18->48 C (11,): LEV_C 0 -> 0
+RESULT FAIL violations=11424

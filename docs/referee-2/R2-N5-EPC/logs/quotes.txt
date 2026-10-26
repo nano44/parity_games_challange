@@ -1,0 +1,23 @@
+FOUND docs/new/N5-ssi-global.md:47-47 | Iσ = {(v, w) : owner(v) = Even, w ≠ σ(v), Ξσ(w) strictly better than Ξσ(σ(v))}
+FOUND docs/new/N5-ssi-global.md:53-53 | Else σ_new = σ.
+FOUND docs/new/N5-ssi-global.md:56-57 | for every Even v with an improving edge set σ_new(v) = the w with (v, w) ∈ Iσ maximising (Ξσ(w), w) (best valu
+FOUND docs/new/N5-ssi-global.md:59-59 | S5 Stop when Iσ = Iτ = ∅.
+FOUND docs/new/N5-ssi-global.md:88-88 | In a fallback iteration with Iσ ≠ ∅ only σ changes (τ_new = τ)
+FOUND docs/new/N5-ssi-global.md:88-88 | Odd falls back only if Iσ = ∅.
+FOUND docs/RESULTS.md:631-631 | Lemma A: for any non-empty unambiguous set I of improvements of σ (VJ00 §4.4), Ωσ ⊴ Ω_{Switch_I(σ)}.
+FOUND docs/new/N5-phase-bound-box10.md:20-21 | (V1) if x is not its own cycle node then Ω_ρ(x) = x ⊕ Ω_ρ(ρ(x)) and the ρ-path from ρ(x) to λ(x) avoids x.
+FOUND docs/new/N5-phase-bound-box10.md:21-21 | (V2) PREFIX MONOTONICITY: if a ⪯ b are values whose paths both avoid x (or whose cycle nodes differ), then x ⊕
+FOUND docs/new/P-N5-HONFF-box47.md:56-56 | Lemma P's Case A (A1 if λ(x) ≠ x, A2 if λ(x) = x) with Ω := Ξ_t, ρ := σ_t (Q-A) gives
+FOUND docs/new/P-N5-HONFF-box47.md:58-58 | Then x is switched, σ_{t+1}(x) = z* := z*(x), and Ξ_t(z*) ⪰ Ξ_t(z) ⪰ value(r′)
+FOUND docs/new/P-N5-HONFF-box47.md:85-85 | each number at most 4n² − 3n
+FOUND docs/new/P-N5-HONFF-box47.md:88-88 | the |D_k| = 1 states, and the epochs with |D_E| = 1, number at most (1 + 4n² − 3n + X_dir + X_big)·(T*_Q + 2)
+FOUND docs/new/P-N5-HON-box46.md:106-106 | so S4a returns σ_{h+1}; then S4b changes τ, or S4c fires for Odd (Iσ = ∅, FIX 3) and changes τ, or N5 stops.
+FOUND docs/RESULTS.md:3213-3213 | An EPOCH is a maximal run E = (x, …, y) of a phase on which σ̄|Q is constant
+FOUND docs/RESULTS.md:3079-3079 | (c) f ≤ 1 + n·N_ep.
+FOUND docs/RESULTS.md:3085-3085 | σ̄|Q REPEATS inside a phase
+FOUND docs/RESULTS.md:3526-3527 | X_dir := the in-phase transitions with |D_k| = |D_{k+1}| = 1 and D_k ≠ D_{k+1}; X_big := those with |D_k| ≥ 2 
+FOUND docs/referee/R-N5-FBC.md:70-70 | Per phase P and configuration C, at most one in-phase fallback has a saturated C-state source.
+FOUND docs/referee/R-N5-FBC.md:77-78 | So RESULTS R38 (f) CN-LAST applies: t + 1 is the last state of P.
+FOUND docs/si/N5-RUND-box17.md:1124-1124 | an upper proxy for R63's epochs
+FOUND docs/new/N5-FB-box47.md:116-116 | a fallback at a saturated C-state is flat and ends the phase
+quotes 22 found 22 missing 0
