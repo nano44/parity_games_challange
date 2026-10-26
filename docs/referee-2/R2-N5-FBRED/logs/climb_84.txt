@@ -1,0 +1,15 @@
+MODE climb 4000 4 8 84 climb/late_84 MUT -
+HATc_checks: 585
+PFZ_checks: 111421
+TV_checks: 585
+YF_checks: 36736
+phases: 36065
+runs: 16000
+FEX_closeness: (-5, 'climb84:3421:0')
+climb_best_fmax_minus_n: (-5, 'climb/late_84')
+max_f: (1, 'climb84:94:0')
+max_f_minus_n: (-5, 'climb84:94:0')
+max_j_minus_n_with_S: (-5, 'climb84:3421:0')
+max_j_with_S: (1, 'climb84:3421:0')
+max_rho: (3, 'climb84:1947:0')
+RESULT OK violations=0

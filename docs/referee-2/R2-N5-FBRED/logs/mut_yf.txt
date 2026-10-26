@@ -1,0 +1,44 @@
+MODE files ../../../experiments/new/box41/lib41.txt 1 MUT yf
+PFZ_checks: 802
+VIOLATIONS: 56436
+V_YF: 56436
+YF_checks: 69074
+phases: 2335
+runs: 412
+FEX_closeness: (-4, 'experiments/new/box25/instances/wd16_s2.pg#0')
+max_f: (33, 'experiments/si/xing/instances/ccl_w48_n48.pg#0')
+max_f_minus_n: (-3, 'docs/referee/R-N5-L2/exitdrop_n3.pg#0')
+max_j_minus_n_with_S: (-4, 'experiments/new/box25/instances/wd16_s2.pg#0')
+max_j_with_S: (33, 'experiments/si/xing/instances/ccl_w48_n48.pg#0')
+max_rho: (160, 'experiments/red/tcpert/instances/leanT_N32.pg#0')
+VIOLATION YF: docs/referee/R-N5-L2/droplen_cex_n12.pg#0@1: q 0
+VIOLATION YF: docs/referee/R-N5-L2/droplen_cex_n12.pg#0@3: q 0
+VIOLATION YF: experiments/n5-exhaustive/canonA_0.pg#0@0: q 13
+VIOLATION YF: experiments/n5-exhaustive/canonA_0.pg#0@1: q 13
+VIOLATION YF: experiments/n5-exhaustive/canonA_0.pg#0@2: q 13
+VIOLATION YF: experiments/n5-exhaustive/canonA_0.pg#0@3: q 13
+VIOLATION YF: experiments/n5-exhaustive/canonA_1.pg#0@0: q 13
+VIOLATION YF: experiments/n5-exhaustive/canonA_1.pg#0@1: q 13
+VIOLATION YF: experiments/n5-exhaustive/canonA_1.pg#0@2: q 13
+VIOLATION YF: experiments/n5-exhaustive/canonA_1.pg#0@3: q 13
+VIOLATION YF: experiments/n5-exhaustive/canonA_1.pg#0@4: q 13
+VIOLATION YF: experiments/n5-exhaustive/instances/b4_cyc6_0.pg#0@0: q 6
+VIOLATION YF: experiments/n5-exhaustive/instances/b4_cyc6_1.pg#0@0: q 1
+VIOLATION YF: experiments/n5-exhaustive/instances/b4_cyc6_1.pg#0@1: q 1
+VIOLATION YF: experiments/n5-exhaustive/instances/b4_cyc6_1.pg#0@2: q 1
+VIOLATION YF: experiments/n5-exhaustive/instances/b4_cyc6_1.pg#0@3: q 1
+VIOLATION YF: experiments/n5-exhaustive/instances/b4_cyc6_1.pg#0@4: q 1
+VIOLATION YF: experiments/n5-exhaustive/instances/b4_n4all_cyc3_0.pg#0@0: q 3
+VIOLATION YF: experiments/n5-exhaustive/instances/b4_n5_other_0.pg#0@1: q 0
+VIOLATION YF: experiments/n5-exhaustive/instances/b5_n5_cyc4_0.pg#0@0: q 3
+VIOLATION YF: experiments/n5-exhaustive/instances/b5_n5_cyc4_0.pg#0@1: q 3
+VIOLATION YF: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@3: q 0
+VIOLATION YF: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@4: q 0
+VIOLATION YF: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@5: q 0
+VIOLATION YF: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@6: q 0
+VIOLATION YF: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@7: q 0
+VIOLATION YF: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@8: q 0
+VIOLATION YF: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@9: q 0
+VIOLATION YF: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@10: q 0
+VIOLATION YF: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@11: q 0
+RESULT FAIL violations=56436

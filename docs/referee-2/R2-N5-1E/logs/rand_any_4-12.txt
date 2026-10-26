@@ -1,0 +1,17 @@
+MODE random 4000 4 12 93 kO MUT -
+C1E_runs: 716
+O2_ok: 4000
+O3_runs: 3999
+O3_skipped: 1
+O3_strats: 157336
+O3b_runs: 3999
+O3b_skipped: 1
+O3b_strats: 161844
+O4_ok: 4000
+O5_ok: 4000
+REW0_stops: 429
+iterations: 5227
+runs: 4000
+stops: 4000
+C1E_max_iter: (3, 'kO93:191')
+RESULT OK violations=0

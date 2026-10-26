@@ -92,3 +92,68 @@ The packet's own §4 table agrees with this diff row by row.
 - FBRED-N1: "the i-th fallback of its Q_c-run / Q-run" counts the fallback k → k+1 in the run containing k (FBP's convention).
 - FBRED-N2: DATA (vacuity of the late regime).
 - §1: Lemma S (a) is game-general (proof VJ00 (11) / R17 (F1) on the one-player G_σ); a landing note may record it against R18 (d).
+
+## §C. Comparison with REFEREE-2 (REFEREE successor 12, session_01KNDBjZvPFLaNjEdCmEWBcN; written 2026-10-26T03:40Z-03:41Z by date -u; (Opus 5.5, D15))
+- Routing: the Lead's GO of 03:41Z (Lead's stamp), item (a).
+- Objects: this report (1feff548, by successor 11; §1-§5 above unchanged) and REFEREE-2's docs/referee-2/R2-N5-FBRED.md at
+  origin/claude/referee-2 814ac456 (successor 13; not yet on trunk when I read it). Packet sha1 11b15455f70d439c93a48d7e82fcdc14ef73854d
+  re-measured (`sha1sum docs/new/P-N5-FBRED-box44.md`, = pin c3f6f2bf). Both reports were written independently (each says so; 1feff548
+  at 03:07Z, 814ac456 at 03:08Z). I read R2's report after this report was pushed.
+
+### C.1 What I checked myself, and what I only accept from successor 11
+I did not write §1-§5. Before comparing I read the packet (all 178 lines), FBP (docs/new/P-N5-FBPOLY-box41.md) §0.3-§4, and RESULTS R18 (d).
+- Re-checked by me against FBP's text, line by line: the port of (Aκ) (no double count with c for c_θ) and (SP′); κ-FB-ROUND (FBP §1; S4c's rule
+  and λ constant on the phase are class-free); κ-HAT-FREEZE (a) (Odd vertices of G_c other than c are not in Q, so forced); κ-PFZ (FBP's range
+  z ∈ U ∖ {c_θ} contains o, so its base case j = 0 is z = o; see N-FBRED-1); κ-Y-FORM "≥" and "≤" (τ′ = σ̄_t[q ↦ y]); EXIT-SWITCH (the one
+  changed sentence: non-terminal Odd vertices have out-degree 1; σ̄ changes only at vertices of Q ⊆ T); FREEZE-EXIT_D (both cases, conservative
+  indices); CN-ONLY_D (1) and (2), both cases (first T-vertex y; first T-vertex q ∈ Q ∩ U_y: π on y's k+1 cycle with top y, wt_y = 0 on π,
+  M_{k+1}(q) = 0, (M2κ), gate, (A0κ)), and (3) = FBP §4 (3) verbatim; Theorem FB-RED's count (some S_c ≠ ∅ since every non-terminal v has
+  λ(v) ∈ C; index in the Q-run ≤ index in the Q_c-run ≤ |U_c| − 1; ≤ 1 + ρ Q-runs); the late form; Lemma TV. I agree with every verdict.
+- Accepted from successor 11's reading without re-deriving: κ-HAT-FREEZE (b), (c) beyond checking that (b)'s hypothesis replaces (HP); the
+  claim that the packet's §4 step table matches FBP row by row for the rows I did not list above ((YB), (HP)). Lemma S (a) on every game:
+  I checked the landed text (RESULTS R18 (d): "(VJ00 (11) on G and on G^d)"; box 21 §2.2 (a): "VJ00 (11) ... R17 (F1)"), which has no class
+  step; I did not open VJ00 (BRICS RS-00-48) itself, and accept the citation as both referees and the landed R18 read it.
+- FBRED-N1 (indexing by source state): checked; κ-PFZ's step "k + 1 ≤ t, Θ consecutive, so k + 1 ∈ Θ" needs exactly this convention.
+
+### C.2 Verdicts side by side
+| § | statement | REFEREE (1feff548) | REFEREE-2 (814ac456) | joint |
+| --- | --- | --- | --- | --- |
+| §1.1 | (Aκ), (A0κ), (M1κ), (M2κ), (INJ), (SP′); κ-FB-ROUND_D | SIGNED | SIGN | signed |
+| §1.2 | κ-HAT-FREEZE_D (a)-(c) | SIGNED | SIGN | signed |
+| §1.2 | κ-PFZ_D | SIGNED (base at x = q seen in §2 table, not flagged) | SIGN, N-FBRED-1 | signed; wording N-FBRED-1 |
+| §1.2 | κ-Y-FORM_D | SIGNED (Lemma S (a) game-general, §1) | SIGN, N-FBRED-2, N-FBRED-3 | signed; wording N-FBRED-2 |
+| §2 | EXIT-SWITCH_D | SIGNED | SIGN | signed |
+| §2 | FREEZE-EXIT_D | SIGNED | SIGN | signed |
+| §2 | CN-ONLY_D | SIGNED | SIGN | signed |
+| §3.1 | Theorem FB-RED | SIGNED AS A REDUCTION | SIGN (as a reduction in ρ), N-FBRED-4 | signed as a reduction in ρ |
+| §3.2 | late form | SIGNED AS A REDUCTION | SIGN, N-FBRED-4 | signed as a reduction in ρ_late |
+| §3.3 | Lemma TV | SIGNED | SIGN | signed |
+| §4-§6 | step table, THETA-AFTER / ρ-POLY, data | not signed; §4 agrees with own diff | not signed; §4 agrees with own diff | not signed; THETA-AFTER fails as proved (both); ρ-POLY CONJECTURE |
+No disagreement. Neither report has a gap; neither has a NOT SIGNED statement. Both: not a TARGET.md claim; G-N5-TIME stays OPEN.
+
+### C.3 Joint gap / note map
+| REFEREE | REFEREE-2 | relation | joint status |
+| --- | --- | --- | --- |
+| — | N-FBRED-1 (κ-PFZ_D range: the induction passes through z = q, outside "z ∈ U_c ∖ T") | ACCEPTED. Confirmed: FBP's κ-PFZ ranges over z ∈ U ∖ {c_θ} (contains o) with base z = o; the packet's range drops q, so its j = 0 case is empty and the step at x = q uses an unstated (trivial) instance. Our §2 table wrote "base trivial (the step at x = q is κ_t(q) ≥ κ_t(q))" but did not flag it: a miss of wording, not of substance. | fixes file: state κ-PFZ_D for z ∈ (U_c ∖ T) ∪ {q} |
+| — | N-FBRED-2 (Y^q_t defined only in §4, a not-to-sign table) | ACCEPTED; MISSED by us. Confirmed with `grep -n "Y\^q"`: the only definition is packet l.131 (§4 table); §1.2 (l.62-63) uses Y^q_t undefined. Our §2 table quoted the §4 definition without flagging it. | fixes file: move the definition into §1.2 or §0 |
+| §1 (Lemma S (a) on every game) | N-FBRED-3 | SAME (both CONFIRMED; consistent with N-1O-4, N-GD-2, R-N5-1O §5) | landing note against R18 (d) |
+| FBRED-N1 (a fallback is indexed in the run of its SOURCE state) | — (R2 uses the same convention implicitly: §2 "k ∈ Θ_c and k > f^{Θ_c}_{|U_c|−1}"; §3 "k's index in its Q_c-run") | ADDITIONAL note from us; R2's text reads the same way, so no conflict | fixes file: one line |
+| FBRED-N2 (vacuity: late regime, FEX, TV never reached) | N-FBRED-4 (same; plus 4 climbs aimed at it, best f − n = −4) | SAME. R2 went further with climbs; neither reached j ≥ n. | DATA note: FB-RED's third bullet, late form and TV rest on their proofs only |
+
+### C.4 Data
+| item | REFEREE (§4 + this §C) | REFEREE-2 §5 | agree? |
+| --- | --- | --- | --- |
+| lib41, S3 + 2 random starts | 1,101 runs (367 games, n ≤ 64), 5,393 phases, max f 33, max ρ 51, 0 failures; + this §C: the 45 games with n > 64 (n 67-492), 135 runs, 1,834 phases, max f 1, max ρ 218 (tcL_N10, n 350, my random start 1), 0 failures | 1,236 runs (412 games), 7,193 phases, max f 33 (ccl_w48_n48), max ρ 194 (tcL_N8#2), 0 violations | YES. Max f 33 on the same game. The ρ difference was the n ≤ 64 skip in fbred_probe.main and different random starts; at R2's start pair for tcL_N8 #2 (replayed: random.Random(5151) over lib41 with R2's reader's successor order, scratch/fbred_r2start.py) my engine gives max ρ 194, max f 1, 0 failures: exact agreement. |
+| box-43/44 instances | 50 runs, max f 17 (fb17_n32) | 50 runs, max f 17 (fb17_n32) | YES |
+| random games | 1,200 runs, 1-4 Odd choice vertices, max f 1 | 20,000 runs 𝒞^kO, max f 1 | YES (shape) |
+| extra | — | 503 𝒞^1O files × 2: max f 37 (dirty_a_best); exhaustive HAT / PFZ / TV for n ≤ 11; mutation controls (yf, cno bite; fex, red do not) | not re-run by me |
+| late regime (j ≥ n) | never reached | never reached (max f − n = −2; climbs −4 at best) | YES (vacuous in both data sets) |
+- Commands (my tools, scratch/, own engine): `RANDSTARTS=2 python3 -I fbred_big.py $(cat fbred_logs/big_files.txt)` →
+  fbred_logs/lib41_big_rs2.txt; `python3 fbred_r2start.py experiments/red/tcpert/instances/tcL_N8.pg 2` → "max_f=1 max_rho=194 phases=26".
+  Seeds: random starts seeded by the file path RELATIVE to the repo root (fbred_probe convention), so the runs reproduce from any worktree.
+
+### C.5 Joint state (for the Lead and CHECKER)
+- Every to-sign statement is signed by both referees; FB-RED and its late form as a REDUCTION in ρ (ρ unbounded; CONJECTURE ρ-POLY OPEN).
+- No gap. Wording items for the fixes file: N-FBRED-1 (κ-PFZ_D range), N-FBRED-2 (define Y^q_t in §1.2), FBRED-N1 (source-state index).
+- Landing note: Lemma S (a) is game-general (N-FBRED-3 = our §1).
+- DATA: the regime where FB-RED's ρ term matters (a fallback g_j with j ≥ n) is reached by no sample or climb of either referee.

@@ -20,6 +20,11 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
   Odd-first flag; DU_MUT=plain|phi|endg all bite); reproduces lane's lib41 15 runs / 54 two-sided fallbacks. R-N5-DUAL.md NOT opened before push.
 - P-N5-GD (b898ff82 @ 3c6f6c16): R2-N5-GD.md all SIGN, no gap; N-GD-1 (R18 (d) Lemma S (c) quoted as iff; only => landed/used),
   N-GD-2 (premise class confirmed, each proof read). Tool R2-N5-GD/gd_check.py (GD_MUT=gda|c2|wo bite, f1 not). No REFEREE GD file at 01:43Z.
+- §C GD 6e12b2bc (identical). P-N5-FBRED (11b15455 @ c3f6f2bf): R2-N5-FBRED.md all SIGN, no gap; N-FBRED-1..4 (PFZ range, Y^q
+  definition, Lemma S (a) every game CONFIRMED, late regime j >= n NOT reached: data max f-n = -2, climbs -4). Tool R2-N5-FBRED/fbred_check.py.
+- §C FBRED a4a642b6 (identical). P-N5-1E (e613db13 @ 7fef9699): R2-N5-1E.md all SIGN, no gap; N-1E-1..5. VJ00 PDF opened
+  (brics.dk, sha256 485a12de = R15's): §2, §4.3, §5.2 (11) quotes verified. Tool R2-N5-1E/onee_check.py. R-N5-1E* not opened before push.
+- Done (was next): P-N5-1E; checks (i) R18 (d) S (a) cited, (ii) '>= 0' repair, (iii) MIRROR (b)+(c) with L(n) = T*(n,n^2,n,n).
 - Queue after NH42 (done): DUAL (done) (a51f7c30 @ df073cb5), then GD (docs/new/P-N5-GD-box43.md b898ff82 @ 3c6f6c16).
 - Sources (via landed RESULTS, not re-opened): VJ00 BRICS RS-00-48 (sha256 485a12de…, RESULTS R15 object line), p. 16 (11) as quoted in
   P-N5-LP §0 l. 29.
