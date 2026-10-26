@@ -112,3 +112,46 @@ mine: R2-N5-EPR/instances/div_n8_conv.start). On my engine: DIV_states 1 at stat
 epoch, so premise (Στ) IS exercised there; RESTRICT_E (i)-(iv) (RIV 1 check), REPRO (N5^τ keeps τ and reproduces N5 on G) and the one-phase
 clause on E's own states hold; 0 failures (logs/div_n8.txt). §4 of my report ("DIV > 0 NOT FOUND") stands for my own searches only; the
 lane's instance supersedes it. Verdicts unchanged (EP-1 is an implication; G-EPR-1 is about y′, unrelated). (Opus 5.5, D15)
+
+## §C. Comparison with REFEREE's R-N5-EPR (REFEREE successor 12; referee 3def3e11). REFEREE-2 successor 14, 2026-10-26 06:5xZ (date -u)
+Signature: (Opus 5.5, D15). I wrote §1-§6 and Addendum A above (796b4d36, 9a5692ad; in origin/claude/referee-2 since 06:46Z); R-N5-EPR was
+opened at 06:5xZ.
+
+### C.1 Verdicts
+| statement | REFEREE | REFEREE-2 | agree |
+| --- | --- | --- | --- |
+| RESTRICT_E (i)-(iv) | SIGNED | SIGN | yes |
+| REPRO: state sequence and fallback types | SIGNED | SIGN | yes |
+| REPRO's "one phase" clause at y′ | GAP EPR-1 (false for y′ = y + 1) | GAP G-EPR-1 (same) | yes: the SAME gap, found independently |
+| EP-0 | SIGNED (EPR-N1 proof wording) | SIGN (proof needs the exit case) | yes |
+| EP-k | SIGNED WITH GAP EPR-1 (+ 1) | sum SIGN; second part with + 1 | yes |
+| EP-1 (implication) | SIGNED WITH GAP EPR-1 (T*(G′_E) + 1) | SIGN with T*(G′_E) + 1 | yes |
+| X_SN^pre(E) ≤ len(E) | SIGNED | SIGN | yes |
+| §4-§6 | not signed | not signed | yes |
+One joint gap, EPR-1 = G-EPR-1, with the same repair (REPRO: states x..y in one N5^τ phase, the last transition may leave it; EP-k, EP-1: + 1).
+
+### C.2 Joint note map
+| REFEREE | REFEREE-2 | result |
+| --- | --- | --- |
+| EPR-1, counterexample fb17_n32.pg (sha1 398e23e2) from S3, epoch (26), D_E = {11}, λ′ at 27 ≠ λ_27 | G-EPR-1, counterexamples lamend_D0.pg (n 5, D_E = ∅) and lamend_D1.pg (n 7) | identical gap, independent witnesses. I re-ran REFEREE's: on my engine fb17_n32 from S3 has exactly one LAMEND, at state 27 after epoch (26..26), \|D_E\| = 1, len 1 — the same |
+| EPR-N1: EP-0's proof wording (the last transition may leave the λ-phase; n + m already allows it) | §3 (same: fallback-last or exit case) | identical |
+| standing premise (S1 returns an optimal counterstrategy), as 1E-N3 | N-EPR-1 | identical |
+| (Στ)'s list: complete for EP-1 by construction (catch-all "their own landed chains"), hence as strong as "the whole 𝒞^1O per-phase chain holds for N5^τ" | §3: the list matches R51 (a)'s per-phase citations | ACCEPTED as the sharper reading; no conflict |
+| DIV = 0 in its data (Lead asked it to run div_n8) | DIV = 0 in my searches; Addendum A: L-NEW's div_n8 reproduced on my engine (DIV 1 at state 0, \|D_E\| = 1), all checks hold | agree; (Στ) is exercised only on the lane's constructed div_n8 so far |
+
+### C.3 Data comparison
+| | REFEREE (epr_probe.py) | REFEREE-2 (epr_check.py) |
+| --- | --- | --- |
+| runs / epochs | 16,156 / 52,631 | 38,834 / 108,348 |
+| RESTRICT_E (i) state checks | 64,331 | 136,523 |
+| LAMEND (λ′ at y + 1 ≠ λ) / in-phase epoch ends | 491 / 3,791 (lib41 403 / 3,358) | 1,063 / 8,436 (lib41 396 / 3,420) |
+| longest epochs (\|D_E\| = 0 / 1) | 56 / 92 | 56 / 92 |
+| DIV | 0 | 0 (+ div_n8: 1) |
+| violations of the signed parts | 0 | 0 |
+(lib41's slight difference, 403 vs 396 exits of 3,358 vs 3,420, comes from different random start pairs; both count S3 + 2 random.)
+
+### C.4 Result
+Both referees SIGN RESTRICT_E (i)-(iv), REPRO's reproduction, EP-0, the EP-k sum and X_SN^pre(E) ≤ len(E); EP-k's second part and EP-1 (as an
+implication from (Στ)) with the joint gap EPR-1 = G-EPR-1 repaired by "+ 1"; REPRO's one-phase clause holds for x..y only. For the fixes file:
+the EPR-1 repairs (three lines), EPR-N1 (EP-0 proof wording); landing note: the standing SPEC premise; (Στ) is a catch-all premise, exercised
+only on the constructed div_n8. G-N5-TIME stays OPEN. (Opus 5.5, D15)
