@@ -105,3 +105,51 @@ the packet's extra t > g_{w_c} NOT imposed, counted as SATK_g), ALT (every in-ph
 - FBK-N1: SAT-k's hypothesis t > g_{w_c} is unused (optional).
 - FBK-N2: ALT's "≥" is (M2κ); the clean clause "no honest cycle at t + 1" is unused (optional).
 - FBK-N3: DATA.
+
+## §C. Comparison with REFEREE-2 (REFEREE successor 12; written 2026-10-26T05:25Z by date -u; (Opus 5.5, D15))
+- Routing: the FBK report pattern (§C after both reports; the Lead's 05:05Z note that REFEREE-2's FBK report was pushed). Objects: this
+  report (c7fa8d5e; §1-§7 above unchanged) and docs/referee-2/R2-N5-FBK.md with its Addendum A (referee-2 5ad79417 on origin/claude/referee-2,
+  successor 14), opened after c7fa8d5e was pushed. Same pinned text (sha1 afd7c65a…) and fixes file (79ad8597).
+
+### C.1 Verdicts side by side
+| § | statement | REFEREE (c7fa8d5e) | REFEREE-2 (R2-N5-FBK + Addendum A) | joint |
+| --- | --- | --- | --- | --- |
+| §1 | ROUTE-k | SIGNED | SIGN | signed |
+| §2 | SAT-k | SIGNED (FBK-N1) | SIGN (N-FBK-4) | signed (cond. 2T PFZ-q) |
+| §3 | Theorem FB-kT | SIGNED | SIGN (N-FBK-2) | signed (cond. R56, 2T) |
+| §3 | FB-kO per phase | SIGNED | SIGN | signed |
+| §3 | FB-kO whole-run sentence | SIGNED WITH GAP FBK-1 (false as derived at k = 1) | SIGN for k ≥ 2 only; G-FBK-1 | SAME GAP, found independently; repairs equivalent |
+| §4 | ALT, N_ep corollary | SIGNED (FBK-N2) | SIGN (N-FBK-3) | signed |
+| fixes | quotes of 2T | verbatim (script) | verbatim (script, Addendum A) | checked by both |
+No disagreement. One joint gap, FBK-1 = G-FBK-1.
+
+### C.2 Joint gap / note map
+| REFEREE | REFEREE-2 | relation | joint status |
+| --- | --- | --- | --- |
+| FBK-1 (whole run (n(n − 1) + n^k)·O(n^{k+1}) is O(n⁴) at k = 1; repair "O(n^{k+1}(n² + n^k))") | G-FBK-1 (same; repair "O(n^{max(k+3, 2k+1)})") | SAME gap; the two repairs are the same bound | fixes file: either wording |
+| FBK-N1 (SAT-k's t > g_{w_c} unused) | N-FBK-4 (same) | SAME | optional |
+| FBK-N2 (ALT's "≥" is (M2κ); "no cycle at t + 1" unused) | N-FBK-3 (same first half) | SAME (our second half is extra) | optional |
+| — | N-FBK-1 (§0 lists "(YB as used there)" under R56 (a); R56 (a) has no (YB): it is P-N5-2T's (YB_q), used only through DIR) | ACCEPTED; MISSED by us. Confirmed: FBK l.18 vs R56 (a)'s list (Aκ), (A0κ), (M1κ), (M2κ), (INJ), (SP′) | fixes file: cite (YB_q) as P-N5-2T §2 |
+| — | N-FBK-2 (FB-kT step 1 needs (INJ), not listed in FBK §0) | ACCEPTED; MISSED by us (my §3 step 1 took the 2T argument, which names (INJ)). Confirmed: FBK §0's R56 (a) list omits (INJ) | fixes file: add (INJ) |
+| §1 premise note (DIR for any m_c; my R-N5-2T 2T-N2) | "Inherited gaps: NONE … PFZ-q and DIR … hold for any m_c" | SAME | — |
+| FBK-N3 (DATA: SAT-k met only on constructed witnesses; late regime unreached) | §5 (same; SAT-k met at depth 1 and 2 on unions; controls satk0, shift bite) | SAME; R2 went further (depth 2). Cross-checked below | DATA |
+
+### C.3 Data cross-checks on my engine (this §C)
+- R2's depth-2 witness docs/referee-2/R2-N5-FBK/instances/fb17_k3_P66.pg (sha1 712645de, checked; n 42, so PATHN 50): SATK 26 checks, max
+  routing depth 2, 0 failures — the same 26 as R2's row (13 / 13). With R2's 2T witnesses (37), SAT-k is now exercised on two engines at depth
+  1 and 2. (fbk_logs/r2_k3_witness_s3.txt)
+- ALT from the S3 start on ALL of lib41 (n ≤ 64: fbk_logs/lib41_s3only.txt; the 45 games with n > 64: fbk_logs/lib41_big_s3only.txt, MAXN
+  1000): clean strict 1,714 + 196 = 1,910; clean ties 75 + 0 = 75; non-clean 19 + 46 = 65 — exactly the packet's §5.2 counts and R2's
+  reproduction (1,910 / 75 / 65; the one cycle-node change is not in my ALT_changes counter). Max routing depth 118 (tcL_N12), the same as
+  R2's. 0 failures.
+| item | REFEREE | REFEREE-2 | agree? |
+| --- | --- | --- | --- |
+| ALT on lib41, S3 | 1,910 / 75 / 65 | 1,910 / 75 / 65 (/ 1 cycle node) | YES, exactly |
+| ROUTE-k max depth | 118 (S3, big games) | 118 (tcL_N12, 233 terminals) | YES |
+| SAT-k | 37 (2T witnesses) + 26 (k3 witness) | 76 + 58 (unions) + 26 (k3 witness) | YES (26 = 26) |
+| FB-kT late regime | never reached | never reached | YES |
+
+### C.4 Joint state (for the Lead and CHECKER)
+- All to-sign items signed by both, conditional on R56 and P-N5-2T's PFZ-q, DIR; the whole-run sentence of FB-kO with the joint gap FBK-1 =
+  G-FBK-1 (true for k ≥ 2; O(n⁴) at k = 1).
+- Fixes file: FBK-1 repair; N-FBK-1 ((YB_q) is 2T's); N-FBK-2 (add (INJ)); optional FBK-N1 = N-FBK-4, FBK-N2 ⊇ N-FBK-3.

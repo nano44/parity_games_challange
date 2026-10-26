@@ -149,7 +149,7 @@ def main(a):
     else:
         gs = [(os.path.relpath(f, P.ROOT), RE.parse(f)) for f in (RP.lib() if a == ["lib"] else a)]
     for name, g in gs:
-        if g.n > 64: cnt["skip_big"] += 1; continue
+        if g.n > int(os.environ.get("MAXN", "64")): cnt["skip_big"] += 1; continue
         cnt["games"] += 1
         for i, st in enumerate([RE.best_reward_start(g)] + [D.rand_start(g, random.Random(name + str(i))) for i in range(nr)]):
             try: run_check(g, st, cnt, name + ("@r%d" % i if i else ""))
