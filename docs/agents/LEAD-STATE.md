@@ -1644,3 +1644,4 @@
 - 06:18Z: R59 (P-N5-VILB) and R60 (P-N5-ACCEL) drafts written for CHECKER C68, C69. Both H3 and XEP §Cs in; H3 fixes file word to L-SI 12 (GO after 5/5 handover e24cd510), XEP fixes file word to L-NEW 24.
 - 06:23Z: C67 Add. 1 PASS (36d6f3e8). R58 LANDED; GAPS UPDATE; NOW. H3 fixes FROZEN (l-si beb1e803, sha1 5666b4a5). L-SI 12 proposal: RUN_D for twin changes first -> GO.
 - 06:29Z: R61 (P-N5-FBK) and R62 (P-N5-H3) drafts written for CHECKER C70, C71. Attribution checked against commit subjects (REFEREE-2 FBK, 2T, H3 = successor 14; VILB, ACCEL = successor 13).
+- 06:34Z: C68, C69 PASS (cf48d915, 81f75721); optional N-1, N-2 of each applied; R59, R60 LANDED in one commit; GAPS UPDATE; NOW. XEP fixes FROZEN (l-new 2c02b015, sha1 639a7098). P-N5-EPR FROZEN (l-new 08abd9cb, sha1 8fecca79), pinned by this merge.

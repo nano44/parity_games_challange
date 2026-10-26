@@ -1,4 +1,4 @@
-# Draft RESULTS R59 (Lead, 2026-10-26 06:17Z by date -u; both §Cs and the fixes file filled) — to CHECKER C68
+# Draft RESULTS R59 (Lead, 2026-10-26 06:17Z by date -u; both §Cs and the fixes file filled) (rev. 2026-10-26 06:34Z: C68 N-1, N-2) — to CHECKER C68 — LANDED in RESULTS Results 2026-10-26 06:34Z (CHECKER C68 cf48d915 PASS), after R58
 
 ### R59 [refereed-only] N5 on EVERY game: after j in-phase fallbacks, the honest κ-values of every honest class are at least the j-step value of that class's min-max reachability game (Lemma VI-LB), i.e. every in-phase fallback is at least one round of value iteration on it (2026-10-26) — a LOWER bound on progress (no count of fallbacks, S4a steps, crossings or phases; not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C68.md, checker PENDING)
 - Object (packet P-N5-VILB, added at l-new 999e73f4, pinned trunk e7febdc2, unchanged during review): docs/new/P-N5-VILB-box44.md, sha1
@@ -26,15 +26,15 @@
   §3 Algorithm 1, Theorem 1 item 4: value iteration on min-cost reachability games is pseudo-polynomial, exponential with 2^rank
   weights; source opened by the lane, sha256 in notes/L-NEW.md) and the obstruction shape (Figure 2(a) mirrored into U_c). The
   obstruction did not materialise: built as N5 games, the gadget collapses to ≤ 1 iteration and 0 fallbacks from every start pair (L-RED
-  docs/red/R76, l-red 2207620f, instances bghm_k1_gap6_A, bghm_k3_gap4_A; DATA), and the lane's Lemma ACCEL (RESULTS-pending P-N5-ACCEL)
-  explains why (positional simple-path values).
+  docs/red/R76, l-red 2207620f, instances bghm_k1_gap6_A, bghm_k3_gap4_A; DATA), a READING consistent with the lane's Lemma ACCEL (RESULTS R60;
+  positional simple-path values; R76 §2).
 - Honest limits: (i) A LOWER bound only: it bounds no count of anything, and it does not make f polynomial. (ii) The regime where it
   could force a count (many fallbacks in one phase) is not reached in any data (max 33 in-phase fallbacks in lib41, 37 in REFEREE-2's
   𝒞^1O files; never ≥ n).
 - Data (DATA, not proof; VILB-N2): REFEREE (successor 12, own vilb_probe.py): 7,151 runs, 20,531 phases, 777,048 VI-LB checks, tight at
   61,861 of 105,188 finite lib41 checks (59 %), 0 failures; mutation oddmax (Odd maximises) fails 46,067 times. REFEREE-2 (successor 13,
   own va_check.py): 70,288 runs (incl. 47,996 climb runs), 161,847 phases, 2,677,247 VI-LB checks, 0 violations; the control "one round
-  too many" (Val^{≤j+1}) fails 774 times on lib41, so the bound is attained at round j.
+  too many" (Val^{≤j+1}) fails 774 times on lib41, so the bound is attained at round j in data.
 - Signatures: REFEREE docs/referee/R-N5-VILB.md (referee dcb1451c, successor 12; §C 09b5dbf5): §1 and VI-LB SIGNED; notes VILB-N1, VILB-N2;
   no gap. REFEREE-2 docs/referee-2/R2-N5-VILB.md (referee-2 f0e82d8a, successor 13; §C 5ad79417, successor 14): all SIGN; notes N-VILB-1,
   N-VILB-2; no gap. §C (both): verdicts identical; joint gap map empty; VILB-N1 = N-VILB-1; the Odd step = N-VILB-2; nothing open.
