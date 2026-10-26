@@ -117,8 +117,8 @@ Under (h3_D) on a run S (every terminal change is a twin change, §1):
     several gates. OPEN.
 - (R2) OFFSET-CHANGING terminal changes: bounded by TWIN-GAP, but by 2^{B+1}, exponential in the band width. OPEN: a polynomial bound
   (a narrow band, or a count finer than the score range).
-  - CONJECTURE OFFSET-ONCE: inside one stretch_D of S (D, R_D and the gates' two values constant), no vertex's offset returns to a value
-    it has left. With it, offset changes per vertex per stretch_D are ≤ |D|, and (R2) reduces to stretch_D boundaries (ρ and W(q) changes,
+  - CONJECTURE OFFSET-ONCE (DEAD at 07:1xZ, §10): inside one stretch_D of S (D, R_D and the gates' two values constant), no vertex's
+    offset returns to a value it has left. With it, offset changes per vertex per stretch_D are ≤ |D|, and (R2) reduces to stretch_D boundaries (ρ and W(q) changes,
     N5-2O-T §2).
   - Status: DATA only (§7: 0 returns). Climbs against it found nothing (§7). An earlier "return" on frz3_n24 from a random start was at
     a non-(h3_D) run with R_D changing: outside the conjecture's hypothesis.
@@ -164,7 +164,7 @@ Under (h3_D) on a run S (every terminal change is a twin change, §1):
 - PROVED (L-SI 12, unrefereed, every game): CR-REL; OFFSET (a)-(c); MERGE-B; TWIN-GAP (i)-(iii) and its Corollary.
 - DEAD: the strict-raise lemma (§2, lenonly_n8).
 - DATA FINDING: the known non-vacuous freezes are content-free (§3).
-- CONJECTURE: OFFSET-ONCE.
+- DEAD: CONJECTURE OFFSET-ONCE (§10, offret_n23; family mkalt.py: K − 1 offset changes of one vertex in one stretch_D at n = Θ(K²)).
 - OPEN: (R1) the per-offset-class RUN; (R2) a polynomial bound on offset changes; (R3); (R4).
 - READING: RUN_D sits inside EPR epochs. Under (h3_D) every terminal change is a twin change. TWIN-GAP's exponent is the band width B.
 
@@ -198,3 +198,47 @@ Tools: experiments/si/rund/below.py (per-transition trace of a long run), pv.py 
   forced-switch lemma yet. σ̄(u) ≠ τ(u) says σ̄(u) is Odd's better reply against σ (Ξ frame), while S4b switches τ(u) by Odd's DUAL
   valuation (Even's best reply to τ). For u on its own W-cycle with (h3_D), both of u's successors lead to the same cycle node, so the dual
   comparison is decided by path sets, which the hypothesis does not fix. Not attempted further; a separate item if wanted.
+
+## 10. OFFSET-ONCE is FALSE (Lead's pick 06:56Z: "Attack OFFSET-ONCE, with a proof attempt first"; DEAD, with instances)
+### The proof attempt, and where it stops
+- Inside a stretch_D the gates' two values are constant by definition, so every gate offset δ(u) is constant. (The Lead's question
+  "can δ(u) move both ways inside a stretch_D?" has the answer no.) Offsets take the ≤ |D| + 1 values {0} ∪ {δ(u) : u ∈ D}.
+- A return A → B → A of v needs only, writing x_t := w(κ_v) at the three states: x_2 ≥ x_1 + max(a_A − a_B, b_A − b_B) and
+  x_3 ≥ x_2 + max(a_B − a_A, b_B − b_A). Here a_g, b_g are the gate parts of s^Ξ, s^W. That is, the route to A must gain
+  ≥ |δ_A − δ_B| between the two visits. Monotonicity (WM-G, (SG)) allows exactly that, so it gives no contradiction.
+- A proof would need the dynamics to forbid the route to A from improving after v left it. A delay chain on that route does the
+  opposite, and that is the counterexample.
+### The instance (DATA, verified trace; experiments/si/rund/mkret.py 2 4)
+- experiments/si/rund/instances/offret_n23.pg (sha1 8fdfc38d…) with offret_n23.start (sha1 634dbc59…), 23 vertices:
+  - two twin gates u1 = 4, u2 = 12 (Odd; τ → a_i = 2, 10; honest reply → b_i = 3, 11);
+  - behind each b_i, a delay chain e_i → w → … → g_i (g_i a high even vertex on a path to c = 0). Even's escape reaches e_i only after 4
+    steps. So σ̄(u_i) = b_i ≠ τ(u_i) stays, and Odd's dual valuation (Even's best reply to τ) never wants b_i, so τ is constant;
+  - v = 22 with successors 20 (a delay chain 20 → 21 → h = 18 → u1) and 19 (→ u2).
+- N5 trace (gap.py, and trace.py: logs/trace_offret_n23.txt):
+  - states 0-3 are ONE phase and ONE stretch_D: D = {4, 12}, τ = (2, 10), the gates' values unchanged, every cycle node c = 0,
+    (h3_D) holds, and there is no fallback;
+  - v goes route-to-u1 (offset 131204) → route-to-u2 (264200, at step 0) → route-to-u1 (131204, at step 2, when h = 18 arrives);
+  - `RETURN ('instances/offret_n23.pg', 0, 3, 22, [131204, 264200, 264200, 131204])`; all other checks PASS. Pinned in
+    experiments/si/check.sh.
+### A family (DATA): K − 1 offset changes of one vertex inside one stretch_D
+- mkalt.py K LG: improvement j = 1..K sits on side (j mod 2) + 1, a separate delay chain of length 2j to a high even vertex h_j (ranks
+  increasing in j). v switches sides each time the next h_j arrives.
+
+  | K | n | offset changes of v in one stretch_D | RETURNs | all twin changes offset-changing |
+  | --- | --- | --- | --- | --- |
+  | 3 | 49 | 2 | 1 | yes |
+  | 4 | 62 | 3 | 2 | yes |
+  | 6 | 94 | 5 | 4 | yes |
+  | 8 | 134 | 7 | 6 | yes |
+  | 10 | 182 (instances/offalt_K10.pg, sha1 b03fe313…) | 9 | 8 | yes (9 / 9) |
+
+- n = Θ(K²) (separate chains), so this family gives Θ(√n) offset changes per vertex per stretch_D: polynomial, but no |D|-type bound.
+- A linear-size variant (mkalt2.py, one tapped delay line per side) FAILS to separate the arrivals: once an edge into the line is
+  improving, S4a's arena optimum takes the whole improved line in one step (max 1 change at every K). Recorded as a failed construction,
+  not as evidence.
+### What this changes
+- (R2) stays OPEN, with a sharper target: offset changes per vertex per stretch_D are not O(|D|). They are ≥ Θ(√n) on this family and
+  ≤ (n − 1) + 2^{B+1} by TWIN-GAP. The family's band is wide (B = 167 at K = 10), so TWIN-GAP is far from tight here.
+- The mechanism is delay chains on routes. Each return is paid by a fresh higher even vertex reaching the route, i.e. by a W-change
+  at level > the previous one. CONJECTURE (new, to test): offset changes of v per stretch_D ≤ the number of distinct levels at which
+  s^W(v) or s^Ξ(v) rises (≤ n). Not attempted yet.
