@@ -17,6 +17,8 @@ Lead: session_014FBi6o334DvwT5Uw2kDfoN.
   root/logs/. check.sh "box 20" block: bffd, shrink, rootrun, dleave, bfgate, freezeg, resets on nep90, quotes of both packets; controls bite.
 - DEAD box 20 (docs/si/DEAD.md): charge of root offset resets to ping-pong / FLIP (nep90 phase@4, 32 of 63 uncharged).
 ### IN FLIGHT
+- DONE after the handover (Lead 15:08Z / 15:22Z): P-N5-CHOSEN fixes file docs/si/P-N5-CHOSEN-fixes-box19.md, sha1 2ae6f681c5abecc915f66296cd0c5a3d5fe1c73e,
+  F1-F7 (22 quotes pinned). Successor 17 does not touch it.
 - Nothing running. CHOSEN: both reports in, everything signed, no gap (REFEREE 15 b3473114; notes CHOSEN-N1..N5); §Cs being written; the Lead
   sends the notes for the CHOSEN fixes file (NEW file docs/si/P-N5-CHOSEN-fixes-box19.md) when both §Cs are in. CHOSEN-N2: RELAY-CHAIN (a) in
   effect proves FLIP's unsigned CONJECTURE ROOT-C (strong form) up to TOG.
