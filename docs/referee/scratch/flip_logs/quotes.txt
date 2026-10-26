@@ -1,0 +1,11 @@
+PASS docs/RESULTS.md@6f9451e3:2839-2841 for c ∈ C the honest class U_c := λ^{-1}(c). κ_t(z) := (signed weight 
+PASS docs/RESULTS.md@6f9451e3:1825-1826 (a) Remark KEY (every game): λ_U is a function of τ alone, so on every
+PASS docs/RESULTS.md@6f9451e3:2907-2907 (a) Premise (VJ), on every game: for every positional σ and every posi
+PASS docs/RESULTS.md@6f9451e3:2915-2916 that S1's procedure realises an optimal σ̄ is VJ00 §6 plus SPEC confor
+PASS docs/RESULTS.md@6f9451e3:3278-3279 WM-G rests on the standing SPEC premise that S1 returns the arena opti
+PASS docs/RESULTS.md@6f9451e3:631-631 (a) Lemma A: for any non-empty unambiguous set I of improvements of σ 
+PASS docs/RESULTS.md@6f9451e3:640-640 (d) N5: every iteration applies Switch_I with ∅ ≠ I ⊆ Iσ to Even's σ (
+PASS docs/RESULTS.md@6f9451e3:2858-2859 (d) κ-Y-FORM_D (per q ∈ Q ∩ U_c, q ≠ c, at a state t where q lies on n
+PASS docs/RESULTS.md@6f9451e3:3118-3118 (a) Lemma ROUTE-k: the relation q → par_t(q) has no cycle
+PASS docs/RESULTS.md@6f9451e3:3128-3130 call the change CLEAN if q lies on no honest cycle at t and at t + 1 a
+QUOTES 10 FAILED 0
