@@ -1,0 +1,2 @@
+cuts=13720 intervals=2471 max_last=35 max_len=44 max_tex=24 max_xich=24 trans=9623
+FRZRHO PASS

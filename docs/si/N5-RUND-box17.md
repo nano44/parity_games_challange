@@ -793,3 +793,56 @@ monotone processes:
   would give ρ_q ≤ a product over relay-graph paths (FB-kT style, polynomial for bounded m_c), but (b) fails in data (28 phases); (c) a
   potential that counts relay cycles. Nothing here bounds N_ep. READING: the hard core of ρ for m_c ≥ 2 is the re-thaw loop (O2) through
   relay cycles.
+
+## 23. FRZ-type route freeze between ρ-transitions (Lead's item 3, 10:42Z): a static reduction (PROVED), CONJECTURE FRZ-RHO (DATA), where a proof stops
+Written 2026-10-26T10:5xZ (date -u), successor 14. frzrho.py (new); logs frzrho_lib41_rs4.txt, frzrho_lib2o_rs4.txt.
+### 23.1 Setting
+A ρ-FREE INTERVAL I: a maximal run of consecutive in-phase transitions with no fallback, and Ξ|Q and σ̄|Q constant (no ρ event, no tie,
+no epoch boundary). Reach_k(Q) as in §22.2.
+### 23.2 Lemma STATIC (PROVED, every game; standing premise 1E-N3, P1 and P2)
+On I, σ̄_k is the same strategy σ̄_I on ALL Odd vertices (on Q by the cut, elsewhere forced), and τ_k = τ_I (phase). Hence, for every
+state k of I: Ξ_k is the valuation of σ_k in the fixed one-player game G_{σ̄_I} (P1: Ξ_k is the optimal reply's value, and σ̄_k = σ̄_I);
+W_k is the valuation of σ_k in the fixed one-player game G_{τ_I}; Iσ_k is the improving set of σ_k in G_{σ̄_I}; and σ_{k+1} is Even's
+pointwise optimum, in G_{τ_I}, of the arena {σ_k(v)} ∪ Iσ_k(v) (P2). So I is a run of the two-game rule "improve in G_{σ̄_I}, choose by
+G_{τ_I}" on two FIXED one-player games. Every switch at an Even vertex v strictly raises Ξ(v) (VJ00 Lemma 5.7 strict form, RESULTS R15 (a),
+(b); a length-only cycle-node switch keeps the value but still changes the play). By ROOT (§22.3), the Q-exit paths change at most at
+the transitions where some Even vertex of Reach(Q) switches. □ (Immediate from the definitions. It says the epoch / ρ cut leaves a static
+pair of games, so whatever freezes inside I is a statement about that rule alone.)
+- Corollary (from RESULTS-to-be R-RUND §4 SPLIT-RED, signed by both referees in P-N5-RUND, applied to I as the run S): under (h3_D) on I,
+  |I| ≤ N_split(I) + (N_split(I) + 1)(n + m − 1). So I's length reduces to its split transitions; aligned stretches are switch-best blocks of
+  G_{τ_I} (PIECE_D).
+### 23.3 CONJECTURE FRZ-RHO (DATA)
+On every ρ-free interval I, Ξ on Reach(Q) changes only at transitions whose index from I's first state is < n − 1.
+- DATA (frzrho.py; FRZ_RHO_V = 0 everywhere):
+
+| set | ρ-free intervals | transitions in them | max length | max index of a Reach(Q) Ξ-change | max Q-exit changes in one interval |
+| --- | --- | --- | --- | --- | --- |
+| lib41 (KMIN = 1), S3 + 4 random starts | 2,471 | 9,623 | 44 | 35 | 24 |
+| lib2o, S3 + 4 random starts | 164 | 564 | 11 | 9 | 4 |
+| frz40 (+ .start) / frz3_n24 (+ .start) | 21 / 5 | 49 / 14 | 6 / 6 | 5 / 2 | 2 / 1 |
+| pftheta34_n32 / so_th_n32 / nep76_n40 | 0 / 1 / 1 | 0 / 1 / 1 | – / 1 / 1 | – / 0 / 0 | – / 0 / 1 |
+| usplit_rd_s3_n27 / pairoc_n58 | 1 / 1 | 2 / 3 | 2 / 3 | 0 / −1 | 0 / 0 |
+
+  Closest to the bound: xsn29_n32 (lib41), last change at index 27 of a 29-transition interval, n − 1 = 31 (ratio 0.87); tr20_s4 16 of 19;
+  xc24 19 of 23; b6_xs_n40 32 of 39. pftheta34's whole phase is ρ-transitions (34 of 35), so FRZ-RHO is vacuous there.
+- The U-SPLIT kill's U event (usplit_rd_s3_n27, k = 1) lies inside a ρ-free interval with NO Ξ change on Reach(Q). U events and
+  FRZ-RHO are about different vertex sets.
+### 23.4 Proof attempt: where it stops (READING)
+- With switch-best for Ξ (R17), FRZ-RHO would follow from Lemma P's Bellman-Ford induction on G_{σ̄_I} with Q as sinks of fixed value
+  (≤ n − 1 value-changing steps). N5's rule differs in two ways, and both are live inside I:
+  (a) the arena choice is by G_{τ_I}: a vertex with a Ξ-improving edge may keep its edge (W prefers it), so "every improvable vertex
+      improves" fails and the BF induction has no step;
+  (b) a vertex may take a Ξ-improving but not Ξ-best edge (W-best among improving ones) and later move again, so one vertex can make
+      several Ξ-increasing moves in I.
+  On F_D (plays avoiding D) Ξ = W, the two orders agree, and the BF step holds there (PIECE_D). The obstruction lives on R_D, where the
+  W-play passes a gate u ∈ D with τ_I(u) ≠ σ̄_I(u). That is the split / forbidden-edge regime of §5-§6: CHARGE-U bounds W-changes by
+  U events, and U-SPLIT / UF-ONCE (both DEAD) were the attempts to bound U.
+- So FRZ-RHO is OPEN, and a proof needs a BF step for the two-game rule on R_D. The candidate is Lemma P^c_sch's schedule restricted to
+  Reach(Q) with fixed terminals. It gives a coarse freeze except at forbidden edges, and the content-free problem of R62 (f) is not solved.
+- What FRZ-RHO would buy (READING, with ROOT): T_exit ≤ (n − 1)·(1 + ρT + tieT + f) per phase, the (O2) half of §22.5's loop. It does not
+  break the loop: ρT ≤ T_exit (ROOT) still allows ρT to grow. So even a proof of FRZ-RHO leaves ρ OPEN, and the target stays the ρ side
+  (relay cycles, §22.5).
+### 23.5 Status, labels
+- PROVED (lane, unrefereed): Lemma STATIC (immediate). Corollary via SPLIT-RED (signed, not yet landed).
+- CONJECTURE FRZ-RHO: DATA (0 violations; max index 35 < n − 1; tightest ratio 0.87).
+- OPEN: a proof of FRZ-RHO (the BF step for "improve in G_σ̄, choose by G_τ" on R_D), and ρ_q for m_c ≥ 2 (§22).
