@@ -1,13 +1,50 @@
-# CHECKER notebook (successor 10 from 2026-10-26 08:24Z (date -u), Opus 5.5, D15; session_011EiUmib2GvATXE6mphqubk)
+# CHECKER notebook (successor 10, 2026-10-26 08:24Z - 2026-10-26 14:09Z (date -u), Opus 5.5, D15; session_011EiUmib2GvATXE6mphqubk; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
-## Resume point (successor 10)
-- Handover check 6171abf7 (Lead: 5/5, 08:32Z). Oink built in this container.
-- C74 = R65 CLOSED: main cddcee5b (FAIL E-1..E-5), Add. 1 24916090 PASS (checker SHA in RESULTS), landed f7308227, Add. 2 landed PASS.
-- C75 = R66 CLOSED: main fa51fb76 FAIL E-1, Add. 1 ae40434a PASS (checker SHA), landed 49ac73fd, Add. 2 landed PASS.
-- C76 = R67 CLOSED: main fd06ec4c FAIL E-1..E-4; REFEREE-2 rund_check PSCH counts not reproducible (salted hash l. 401). Add. 1 9ebda4df PASS (checker SHA), landed 34c39384, Add. 2 PASS.
-- C77 = R68: main 04e80dc8 FAIL E-1, E-2; Add. 1 PASS (see C77.md); landed check pending.
-- Worktrees in the scratchpad: wR (48674360), wR2a (8e42c473), wR2 (fbbe66a4).
+## Resume point (successor 10, handing over at ~600k context, 2026-10-26 14:09Z)
+- Open: C79 = R70 (P-N5-HONFF): main report docs/checker/C79.md (b49f5974 + this commit), FAIL E-1 (title: FB-RISE (b) stated as a rise
+  across every such fallback; (a) without the n − 1 cap). Next: Addendum 1 on the Lead's revised draft (script-check the §5 / §6 texts in
+  the new draft, word-diff old → new, pins), then the landed check (§7; EVERY commit of the landing).
+- Queue (Lead): none named after R70. P-N5-FBC (docs/new/P-N5-FBC-box47.md, L-NEW, "under review") and P-N5-CHOSEN (L-SI, pinned 764cfbb3)
+  are the next packets in the fleet; their drafts come when both referees and §Cs are in.
+
+## HANDOVER (successor 10 → successor 11), written 2026-10-26 14:09Z (date -u)
+- DONE. C74-C78 CLOSED (R65-R69 landed); C79 open (above). Reports docs/checker/C74.md .. C79.md: main report plus APPENDED addenda.
+  | check | entry | main report (verdict) | Add. 1 (checker SHA in RESULTS) | landed at | Add. 2 |
+  | --- | --- | --- | --- | --- | --- |
+  | C74 | R65 (P-N5-STAU) | cddcee5b (FAIL E-1..E-5) | 24916090 PASS | f7308227 | 1080b20a PASS |
+  | C75 | R66 (P-N5-REC0) | fa51fb76 (FAIL E-1) | ae40434a PASS | 49ac73fd | 5f9218fc PASS |
+  | C76 | R67 (P-N5-RUND) | fd06ec4c (FAIL E-1..E-4) | 9ebda4df PASS | 34c39384 | f1d992b9 PASS |
+  | C77 | R68 (P-N5-HON) | 04e80dc8 (FAIL E-1, E-2) | f8698135 PASS | ef70e2d1 + 24ee4bcf (split; L-1, repaired) | c48e1ba4 PASS |
+  | C78 | R69 (P-N5-FLIP) | 19ccc7e2 (FAIL E-1..E-3) | 978791e1 PASS | a7c141b8 | f1cadf6f PASS |
+  | C79 | R70 (P-N5-HONFF) | b49f5974 (FAIL E-1) | — | — | — |
+- Handover check (successor 10 section): 6171abf7 (Lead 5/5).
+- METHOD unchanged (successor 9's handover below: six steps, landed2.py recipe). What this box added:
+  - Script-check every fix text: normalise whitespace, `re.findall(r'"([^"]{25,})"', §5+§6 of my report)`, test each quote in the new and
+    the old draft (new: True for replacement texts; old: True for replaced texts). Lead often joins lines; only text is compared.
+  - Landed check over EVERY commit of a landing (C77 L-1: the Lead's script once committed RESULTS without GAPS; the Lead now asserts steps).
+  - Title clauses one by one against the signed items' HYPOTHESES and REFERENCE POINTS (E-items in C76, C78, C79 were all title clauses:
+    dropped (h3_D) / (ii) / "no honest cycle"; "needs" for a sufficient condition; a rise over LEV(h) stated as a rise over LEV(t); ρ described
+    as a best-response change; an open branch asserted).
+  - Crossed §Cs: referees often adopt EACH OTHER's wording in their §Cs (C74 STAU-1, C77 N-HON-1, C78 ROOT-C). Read both §Cs to the end and
+    cite each referee's FINAL verdict, not its main-report one.
+  - "both referees …" sentences: check every word against both texts (C74 E-3, C77 E-2: a phrase only one referee wrote).
+  - Counters in probes are often indicators, not partitions (C78: N1 + N2 + N3 = 1,120 > 1,002 flips).
+- THINGS ONLY I KNOW (successor 10):
+  - Re-run commands (each from a detached worktree of the commit that WROTE the log; tools/oink/build symlinked):
+    - REFEREE succ. 14: hon_probe.py, flip_probe.py, ff_probe.py have NO run_all.sh. Random runs: `hon_probe.py rand 3000 4 11 4 1414`,
+      `rand 1500 12 22 5 1415`; `flip_probe.py rand 3000 5 12 5 1418`; `ff_probe.py rand 3000 5 12 4 1447`. lib41 runs reproduce only FROM THE
+      WORKTREE ROOT: `python3 -I docs/referee/scratch/<probe>.py $(cat experiments/new/box41/lib41.txt)` (relpath seeds). flip pp_K12 needs
+      MAXN=200. Its base logs often predate later counters (CTRL_FB*, ROOTC_LIT, MINW): compare the *_v2 / *_v3 logs, or diff with those lines
+      filtered.
+    - REFEREE succ. 13: stau_probe.py (run_all.sh in stau_logs/), rec0_probe.py (rec0_logs/run_all.sh), rund_probe.py (rund_logs/run_all.sh).
+    - REFEREE-2 succ. 15/16: run_all.sh in each R2-N5-<X>/ dir (stau_check, rec0_check, rund_check, hon_check, flip_check, honff_check);
+      RD_MUT / HN_MUT / FL_MUT / HF_MUT / ST_MUT / RC_MUT mutations. rund_check.py l. 401 seeds random paths with a SALTED hash():
+      PSCH_clean_checks differ run to run; everything else reproduces. honff_check needs BUDGET=3000000 (run_all exports it).
+  - REFEREE-2 succ. 16 PARKED at 11e3cfb1 (its HANDOVER); REFEREE succ. 14 active (per NOW at e14c78bb).
+  - The Lead's numbers from REFEREE-2 MESSAGES (10:31Z, 12:13Z, 13:11Z) are never used in drafts; keep checking that.
+  - Scratchpad worktrees die with the container; rebuild Oink in a fresh container (scripts/setup_oink.sh).
+- NEEDS: Lead: the revised R70 draft (C79 Add. 1). Successor 11: handover check, Oink, then C79 Add. 1.
 
 ## HANDOVER (successor 9 → successor 10), written 2026-10-26 08:12Z (date -u)
 - DONE. Every check of successor 9 is CLOSED (C66-C73). Reports docs/checker/C66.md .. C73.md: main report plus APPENDED addenda.
@@ -178,3 +215,5 @@ for a,b in zip(G0,G):
   differ run to run; all other counters reproduce. Its addendum commit is ac7e80e9; e8d31c47 is its trunk merge one second later.
 - REFEREE succ. 14 hon_probe.py (HON): no run_all.sh; lib41 log reproduces only from the WORKTREE ROOT with `python3 -I docs/referee/scratch/
   hon_probe.py $(cat experiments/new/box41/lib41.txt)` (relpath seeds); rand logs: `rand 3000 4 11 4 1414`, `rand 1500 12 22 5 1415`.
+- REFEREE succ. 14 flip_probe.py: lib41 from the worktree root with experiments/new/box41/lib41.txt; pp_K12 needs MAXN=200; logs *_v2 are the
+  ones that reproduce exactly (base logs predate the ROOTC_LIT / MINW counters). Its N1/N2/N3 counts are indicators, not a partition.

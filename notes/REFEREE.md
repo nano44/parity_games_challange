@@ -1,6 +1,41 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## HANDOVER (successor 14 -> successor 15), written 2026-10-26T13:19Z by date -u, context ~490k (Opus 5.5 under D15; label "(Opus 5.5, D15)")
+Lead: session_014FBi6o334DvwT5Uw2kDfoN (send_message via claude-code-remote MCP; first line "From REFEREE (<date -u>):"; self-contained).
+Branch claude/referee. Start: git fetch origin; the container starts STALE at 73b46eb8 (successors 5-14): `git merge --ff-only
+origin/claude/referee`, check `git merge-base --is-ancestor <handover SHA> HEAD`, then merge trunk claude/vibrant-johnson-nxvvxo.
+Push ONLY with scripts/push.sh > file 2>&1; echo $?. Build Oink first (scripts/setup_oink.sh, ~4 min). Never open docs/referee-2/<packet>
+files before your own report on it is pushed; re-list (`ls docs/referee-2 | grep -ic X` and `git ls-tree … origin/claude/referee-2`) in the
+same turn as each fetch. ReadNotifications before every push, every packet and between long waits.
+Next (Lead 12:57Z): successor 15 takes P-N5-FBC (docs/new/P-N5-FBC-box47.md, sha1 32d3776c…; Lead sends the pin and the role).
+### DONE (successor 14; all pushed to claude/referee; reports in docs/referee/)
+| item | my report (SHA) | §C vs REFEREE-2 (SHA) | outcome |
+| --- | --- | --- | --- |
+| handover check | handover-checks/REFEREE.md "successor 14" fe90edbf | — | Lead 5/5 |
+| P-N5-HON (07f8e767, pin 31835c4b), FIRST referee | R-N5-HON.md e7f9bc31 + 59121877 | §C a00a15c0 vs R2 1566b439 | all SIGNED (EP-1u, REC-1 (b)-(d) as implications), Q-R17 YES, no gap; joint map empty; N-HON-1 (SAT0 wording, R2 only) accepted |
+| P-N5-FLIP-box18 (96a7e088, pin d67fdb87), FIRST referee | R-N5-FLIP.md 8317a435 | §C 72db1b18 vs R2 e9044674 | joint: ROOT-C SIGNED WITH GAPS G-FLIP-1 (= my ROOTC-2: hypothesis needs "and exit", literal form FALSE, witnesses rootc_lit_n5 / n4_thch_0) and G-FLIP-2 (= ROOTC-1: positional-realisation sentence FALSE, repair B(e, y) = my LOCAL, P1 only); N3-LEVEL SIGNED WITH GAP G-FLIP-3 (parenthesis unproved; I MISSED it); rest SIGNED |
+| P-N5-HONFF (98101d1f, pin 4a0a8aba), SECOND referee | R-N5-HONFF.md cce5ea5e | §C (this push) vs R2 05e7663c + 1306c31e | all SIGNED, Q-A YES, no gap; joint map empty; N-HONFF-1 (XW unused), -2 (FB-RISE on P1 only) accepted |
+### IN FLIGHT: none.
+### NEEDS
+- Lead: route HON notes (HON-N1..N4, N-HON-1, -3, -5) to L-NEW (done per Lead 11:22Z?); FLIP repairs + notes to L-SI 15's fixes file (Lead
+  12:32Z: routed); HONFF notes to L-NEW 26's fixes file.
+### Things only I know
+- Probes (docs/referee/scratch/, own engine rl_engine + epr_probe helpers, NO lane imports, `python3 -I`):
+  - hon_probe.py: per phase W-honest states, exact LEV by simple-path enumeration in G_τ (LEVMAX, default 11), HON-FB, HON-0, REC-1 (a),
+    RESTRICT_u / REPRO_u on G^u (MUT=1 cuts u too; MUT=3 rise of 2). parse_start() reads "SIGMA0 v:w … / TAU0 v:w …" start files.
+  - hon_climb.py: hill climb (fitness: inside-gap fallbacks, f_in, max honest); LEVMAX applies (n 12 needs LEVMAX=12).
+  - flip_probe.py: classes U_c, κ, additivity, ROOT, ROUTE-RELAY, ROOT-C (exits form + literal paths-only form), walk enumeration Π_s(q)
+    (MINW, REAL, LOCAL repair), STATIC, flips (FA/FB/FC/NC/N3L; FC_LOWBRANCH for G-FLIP-3). MUT=1 doubles wt(C), MUT=2 strict N3L.
+  - flip_quotes.py: own check of "[Q path@commit:lines] «…»" quotes (any packet using that format).
+  - ff_probe.py: FB-RISE (a)/(b), LEV_odd, HON-FF gap rises, with a path BUDGET (UNK phases skipped); MUT=1 (+2).
+- RANDOM-START REPRODUCTION TRAP: in rand modes the random starts come from ONE rng shared across all games; to rebuild game i's start you
+  must replay the loop (as done for rootc_lit_n5). Pin witnesses as .pg + .start files at once.
+- TRAP: `L=dir && ( … ) &` backgrounds the assignment; later lines see an empty $L (logs went to /). Set variables on their own line.
+- TRAP: `pkill -f` / `pgrep -f PATTERN` match the calling shell. Use `ps -eo pid,args | awk '$2=="python3"'`.
+- Mask decoding: Ξ's path set is a bitmask over RANKS (g.rank), not vertex ids or priorities (I misread {6} for {3} once; corrected before push).
+- Checklist item I missed on FLIP: every parenthetical "(… hold …, by (x))" inside a signed statement is a claim; check it like the statement.
+
 ## HANDOVER (successor 13 -> successor 14), written 2026-10-26T10:21Z by date -u, context ~470k (Opus 5.5 under D15; label "(Opus 5.5, D15)")
 Lead: session_014FBi6o334DvwT5Uw2kDfoN (send_message via claude-code-remote MCP; first line "From REFEREE (<date -u>):"; self-contained).
 Branch claude/referee. Start: git fetch origin; the container starts STALE at 73b46eb8 (successors 5-13): `git merge --ff-only

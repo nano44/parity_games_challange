@@ -1,0 +1,104 @@
+MODE start ../../../experiments/red/xing/instances/j10_n24.pg MUT - BUDGET 3000000
+ENGXI_checks: 26
+FB_after_honest_nonhonest: 1
+FB_at_nonhonest: 1
+FB_fallbacks: 1
+FB_odd_binds: 1
+FBb_checks: 1
+HFF_gaps: 2
+HFF_gaps_inside_fallback: 1
+HFF_gaps_with_fallback: 1
+LEV_phases: 1
+QA_checks: 462167
+R1FF_phases: 2
+phases: 2
+runs: 1
+states: 26
+HFF_max_honest: (3, 'j10_n24.pg@1 n 24 f 1')
+RESULT OK violations=0
+MODE start ../../../experiments/red/xing/instances/j7_n32.pg MUT - BUDGET 3000000
+ENGXI_checks: 51
+R1FF_phases: 3
+UNK_phases: 2
+phases: 3
+runs: 1
+states: 51
+HFF_max_honest: (3, 'j7_n32.pg@48 n 32 f 0')
+RESULT OK violations=0
+MODE start ../../../experiments/red/xing/instances/j8_n32.pg MUT - BUDGET 3000000
+ENGXI_checks: 55
+R1FF_phases: 3
+UNK_phases: 2
+phases: 3
+runs: 1
+states: 55
+HFF_max_honest: (4, 'j8_n32.pg@1 n 32 f 2')
+RESULT OK violations=0
+MODE start ../../../experiments/n5-epoch/instances/ffin12_n32.pg ../../../experiments/n5-epoch/instances/ffin12_n32.start MUT - BUDGET 3000000
+ENGXI_checks: 34
+R1FF_phases: 3
+UNK_phases: 2
+phases: 3
+runs: 1
+states: 34
+HFF_max_honest: (9, 'ffin12_n32.pg@25 n 32 f 1')
+RESULT OK violations=0
+MODE start ../../../experiments/n5-epoch/instances/ffin5_n32.pg ../../../experiments/n5-epoch/instances/ffin5_n32.start MUT - BUDGET 3000000
+ENGXI_checks: 24
+FB_after_honest_nonhonest: 5
+FB_at_nonhonest: 5
+FB_fallbacks: 6
+FB_odd_binds: 6
+FBb_checks: 18
+HFF_gaps: 9
+HFF_gaps_inside_fallback: 1
+HFF_gaps_with_fallback: 1
+LEV_phases: 2
+QA_checks: 1941326
+R1FF_phases: 6
+phases: 6
+runs: 1
+states: 24
+HFF_max_honest: (9, 'ffin5_n32.pg@14 n 32 f 1')
+RESULT OK violations=0
+MODE start ../../../experiments/n5-epoch/instances/ffin4_n24.pg ../../../experiments/n5-epoch/instances/ffin4_n24.start MUT - BUDGET 3000000
+ENGXI_checks: 21
+FB_after_honest_nonhonest: 4
+FB_at_nonhonest: 4
+FB_fallbacks: 4
+FB_odd_binds: 4
+FBb_checks: 20
+HFF_gaps: 12
+HFF_gaps_inside_fallback: 1
+HFF_gaps_with_fallback: 1
+LEV_phases: 1
+QA_checks: 585040
+R1FF_phases: 2
+phases: 2
+runs: 1
+states: 21
+HFF_max_honest: (13, 'ffin4_n24.pg@1 n 24 f 4')
+RESULT OK violations=0
+MODE start ../../../experiments/n5-exhaustive/instances/b5_o11.pg MUT - BUDGET 3000000
+ENGXI_checks: 13
+FB_at_nonhonest: 3
+FB_fallbacks: 3
+LEV_phases: 1
+QA_checks: 242
+R1FF_phases: 2
+phases: 2
+runs: 1
+states: 13
+HFF_max_honest: (1, 'b5_o11.pg@12 n 10 f 0')
+RESULT OK violations=0
+MODE start ../../../experiments/new/box46/instances/immp_cex_n11.pg ../../../experiments/new/box46/instances/immp_cex_n11.start MUT - BUDGET 3000000
+ENGXI_checks: 3
+HFF_gaps: 1
+LEV_phases: 1
+QA_checks: 37
+R1FF_phases: 1
+phases: 1
+runs: 1
+states: 3
+HFF_max_honest: (2, 'immp_cex_n11.pg@0 n 11 f 0')
+RESULT OK violations=0

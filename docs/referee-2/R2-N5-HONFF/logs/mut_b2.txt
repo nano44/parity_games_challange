@@ -1,0 +1,22 @@
+MODE files ../R2-N5-STAU/lib41_noref.lst 1 MUT b2 BUDGET 3000000
+ENGXI_checks: 8882
+FB_after_honest_nonhonest: 1
+FB_at_nonhonest: 256
+FB_fallbacks: 270
+FB_odd_binds: 166
+FBb_checks: 68
+HFF_gaps: 585
+HFF_gaps_inside_fallback: 1
+HFF_gaps_with_fallback: 1
+LEV_phases: 160
+QA_checks: 133001617
+R1FF_phases: 2332
+UNK_phases: 113
+VIOLATIONS: 1
+V_FBb: 1
+phases: 2332
+runs: 410
+states: 8882
+HFF_max_honest: (57, 'experiments/red/xing/instances/x32_rand64.pg#0@0 n 64 f 1')
+VIOLATION FBb: experiments/red/xing/instances/j10_n24.pg#0@9: h 1 LEV(h) 1 LEV(t+1) 2
+RESULT FAIL violations=1

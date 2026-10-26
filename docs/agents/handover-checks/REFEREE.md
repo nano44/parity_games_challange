@@ -1,5 +1,53 @@
 # Handover check: REFEREE
 
+## successor 15 (2026-10-26T13:31Z by date -u; Opus 5.5 under D15, label "(Opus 5.5, D15)"; predecessor successor 14, handover 502f55dc)
+Measured from the repository at the time of writing, not recalled.
+
+### 1. Branch, head, distance to trunk
+- Branch `claude/referee`. Local branch started STALE at 73b46eb8 again (`git rev-list --count 73b46eb8..502f55dc` = 3027).
+  `git fetch origin`; `git merge --ff-only origin/claude/referee`: HEAD = 502f55dc (`git merge-base --is-ancestor 502f55dc HEAD` true).
+- Trunk `claude/vibrant-johnson-nxvvxo` at 16b330d9 ("Lead: C78 revision sent; NOW; log"). Before merging, 502f55dc was 2 ahead / 47
+  behind trunk (merge-base cce5ea5e, my predecessor's HONFF report). The 2 ahead: HONFF §C (e7db1ab4) and the successor-14 HANDOVER (502f55dc).
+- Merged trunk with `git merge` (merge commit cfcc6a83): 3 ahead / 0 behind before this file's commit.
+- Oink: scripts/setup_oink.sh built 8fbf0a7 into tools/oink/build, exit 0.
+
+### 2. Open work and next step
+- Handover "IN FLIGHT: none" checked: R-N5-HON, R-N5-FLIP, R-N5-HONFF exist in docs/referee/ with their §C sections.
+- New (Lead brief to successor 15), both as FIRST referee (REFEREE-2 successor 17 in parallel):
+  (1) P-N5-FBC, docs/new/P-N5-FBC-box47.md, sha1 32d3776cf4090fb15c1d0cb4c8b4f59276f64e21 (re-measured on the tree, at l-new 1f8d6d7d and
+      at pin de02d37e: match; de02d37e ancestor of HEAD). Next, after "go": sign or not FB-RISE_C, SAT_C, Theorem FB-C, Corollaries (a)-(d);
+      check the header claim that (a)'s N_ep form and (d) are weaker than landed R60 (c) EPOCH; it rests on P-N5-HONFF Q-A (YES by both).
+      Report docs/referee/R-N5-FBC.md.
+  (2) P-N5-CHOSEN, docs/si/P-N5-CHOSEN-box19.md, sha1 764cfbb331a1aaefa819a01d64ee6b7cfbbd7316 (re-measured on the tree, at l-si b7189738
+      and at pin 9196c318: match; 9196c318 ancestor of HEAD). Next: sign or not CHOSEN, RELAY-CHAIN (a), (b), TV-END. Report
+      docs/referee/R-N5-CHOSEN.md.
+  Own engine for both; check every parenthetical inside a signed statement; no docs/referee-2/ file on FBC or CHOSEN opened before my report
+  is pushed (none on the tree or trunk at this fetch: `ls docs/referee-2 | grep -ic "fbc\|chosen"` = 0).
+- Handover NEEDS (not mine; Lead routes): HON / FLIP / HONFF notes to the lanes' fixes files.
+
+### 3. docs/GAPS.md rows relevant to me (trunk 16b330d9)
+- REFEREE owns no row. The row my packets feed: G-N5-TIME (l.11), major, owner "L-NEW (L-LIT T22; referees later)", **open**; last UPDATE
+  12:47Z: R68 (P-N5-HON; CHECKER C77) landed (W-honest states per phase ≤ f + 4n² − 3n; HON-0; RESTRICT_u, REPRO_u; REC-1 (a); EP-1u and
+  REC-1 (b)-(d) as implications from (Στ)). RESULTS runs to R68 (`grep -n "^### R6[5-9]" docs/RESULTS.md`: R65..R68; R69 at CHECKER C78,
+  revised per docs/NOW.md l.85).
+- Other open rows (not mine): GAP-A, GAP-C, G-S5-6, G-NEST, G-N1-LB. G-N5-TERM closed.
+
+### 4. Three owner rulings that most constrain me (verbatim, docs/DECISIONS.md), with DECISIONS-INDEX status
+1. D1 (index l.5: **active**; DECISIONS.md l.7-8):
+   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+   > Never downgrade the referee to save money.
+2. D15 (index l.26: **active**; DECISIONS.md l.278):
+   > q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it
+3. D18 (index l.32: **active**; DECISIONS.md l.333):
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+
+### 5. One trap that bit this lane, and the check that prevents it
+- Trap (successors 5-15): the container starts stale at 73b46eb8 (3027 behind the handover SHA this time). Check: `git fetch origin`,
+  fast-forward, `git merge-base --is-ancestor <handover SHA> HEAD` before any work.
+- Content trap (successor 14, FLIP): a parenthetical inside a signed statement (N3-LEVEL's "(… hold …)") was not checked and became joint
+  gap G-FLIP-3 found only by REFEREE-2. Check: list every parenthetical and every "by (x)" inside each statement to be signed as its own
+  numbered claim in the report, and check each (by proof and by probe) before signing.
+
 ## successor 14 (2026-10-26T10:29Z by date -u; Opus 5.5 under D15, label "(Opus 5.5, D15)"; predecessor successor 13, handover 62a1a01d)
 Measured from the repository at the time of writing, not recalled.
 

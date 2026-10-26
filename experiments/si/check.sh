@@ -96,6 +96,12 @@ MUT=1 python3 -I rund/chosen.py --one ../red/rec0/instances/nep90_n40.pg rund/in
 o=$(UP=2 python3 -I rund/quiet.py --one ../red/rec0/instances/nep90_n40.pg rund/instances/nep90_n40.start)
 for k in "max_rho_q=72 " "quiet_max=12 " "rho_q_total=292 " "QUIET PASS"; do grep -q "$k" <<<"$o"; done
 echo "rund (flip classes on frz40; CHOSEN / RELAY-CHAIN and chosen-terminal pieces on nep90_n40; MUT=1 bites): PASS"
+# note §28: epoch boundaries on nep90 are all clean strict sigma-bar changes (89 boundaries, 119 STRICT, 0 residual); MUT=1 (ALT reversed) bites.
+o=$(python3 -I rund/epcause.py --one ../red/rec0/instances/nep90_n40.pg rund/instances/nep90_n40.start)
+for k in "boundaries=89 " "boundaries_rho=89 " "chg_STRICT=119 " "strict_ROUTE=107" "EPCAUSE PASS"; do grep -q "$k" <<<"$o"; done
+if grep -q "chg_TIE\|chg_NC\|boundaries_residual" <<<"$o"; then echo "unexpected residual on nep90"; exit 1; fi
+MUT=1 python3 -I rund/epcause.py --one ../red/rec0/instances/nep90_n40.pg rund/instances/nep90_n40.start | grep -q "EPCAUSE FAIL"
+echo "rund (epoch causes on nep90: all clean strict; MUT=1 bites): PASS"
 # P-N5-RUND fixes file: every «quote» verbatim at its tagged commit and lines; the shifted-lines control (--mut) must fail.
 if git cat-file -e 62a1a01d && git cat-file -e e8d31c47 && git cat-file -e 762b7243 && git cat-file -e f1d2cf09 && git cat-file -e 6f9451e3; then
   python3 -I rund/quotecheck.py ../../docs/si/P-N5-RUND-fixes-box17.md | grep -q "QUOTES PASS"
@@ -104,6 +110,31 @@ if git cat-file -e 62a1a01d && git cat-file -e e8d31c47 && git cat-file -e 762b7
   python3 -I rund/quotecheck.py ../../docs/si/P-N5-FLIP-box18.md | grep -q "QUOTES PASS"
   python3 -I rund/quotecheck.py ../../docs/si/P-N5-FLIP-box18.md --mut | grep -q "QUOTES FAIL"
   echo "rund (packet P-N5-FLIP-box18: all quotes verbatim; shifted control fails): PASS"
+  if git cat-file -e 72db1b18 && git cat-file -e 75b8b52a; then
+    python3 -I rund/quotecheck.py ../../docs/si/P-N5-FLIP-fixes-box18.md | grep -q "quotes=23 bad=0"
+    python3 -I rund/quotecheck.py ../../docs/si/P-N5-FLIP-fixes-box18.md --mut | grep -q "QUOTES FAIL"
+    echo "rund (P-N5-FLIP fixes file: 23 quotes verbatim; shifted control fails): PASS"
+    python3 -I rund/quotecheck.py ../../docs/si/P-N5-CHOSEN-box19.md | grep -q "quotes=9 bad=0"
+    python3 -I rund/quotecheck.py ../../docs/si/P-N5-CHOSEN-box19.md --mut | grep -q "QUOTES FAIL"
+    echo "rund (packet P-N5-CHOSEN-box19: 9 quotes verbatim; shifted control fails): PASS"
+  else
+    echo "rund (P-N5-FLIP fixes file quotes): NOT RUN (referee commits 72db1b18 / 75b8b52a not in this clone)"
+  fi
 else
   echo "rund (RUND fixes file quotes): NOT RUN (source commits not in this clone; fetch claude/referee, claude/referee-2)"
 fi
+# box 20 (docs/si/N5-ROOT-box20.md): BF-F_D at every S4a step of nep90 (MUT=1, equality flagged, bites); FREEZE-A (a) on its pieces and on
+# lib2o (MUT2=1, one edge too many, bites on lib2o); ROOT-PIECE on nep90: 22 cuts = 7 fallbacks + 15 D-leaves, every piece within its bound
+# (MUT=1, bound 2, bites).
+N90="../red/rec0/instances/nep90_n40.pg rund/instances/nep90_n40.start"
+o=$(python3 -I root/bffd.py --one $N90)
+for k in "checks=7827 " "BFFD PASS"; do grep -q "$k" <<<"$o"; done
+MUT=1 python3 -I root/bffd.py --one $N90 | grep -q "BFFD FAIL"
+o=$(python3 -I root/shrink.py --one $N90)
+for k in "IN_DLEAVE=53 " "pieces=20 " "SHRINK PASS"; do grep -q "$k" <<<"$o"; done
+if grep -q "IN_SWITCH\|SPLIT_IN" <<<"$o"; then echo "unexpected switch / split entry on nep90"; exit 1; fi
+RS=4 MUT2=1 python3 -I root/shrink.py --list fb2o/lib2o.txt 1 | grep -q "SHRINK FAIL"
+o=$(python3 -I root/rootrun.py $N90)
+for k in "cuts=22 (fb 7, DLEAVE 15, SWITCH 0)" "ROOTRUN_V=0 "; do grep -q "$k" <<<"$o"; done
+MUT=1 python3 -I root/rootrun.py $N90 | grep -q "ROOTRUN_V=10 "
+echo "root (BF-F_D, FREEZE-A pieces, ROOT-PIECE on nep90; three controls bite): PASS"

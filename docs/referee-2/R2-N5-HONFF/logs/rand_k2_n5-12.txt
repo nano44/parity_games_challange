@@ -1,0 +1,15 @@
+MODE random 3000 5 12 1641 2 3 MUT - BUDGET 3000000
+ENGXI_checks: 21090
+FB_at_nonhonest: 1
+FB_fallbacks: 292
+FB_odd_binds: 292
+FBb_checks: 332
+HFF_gaps: 860
+LEV_phases: 1148
+QA_checks: 27787
+R1FF_phases: 19765
+phases: 19765
+runs: 9000
+states: 21090
+HFF_max_honest: (4, 'random1641:370#2@1 n 9 f 1')
+RESULT OK violations=0

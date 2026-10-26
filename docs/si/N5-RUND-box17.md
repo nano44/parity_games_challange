@@ -1099,3 +1099,129 @@ y*'s class exit path at k, and let e be its exit (the first vertex of Q_c ∪ {c
 - CONJECTURE QUIET-n: FALSE as stated (one-terminal classes, pftheta34_n32); not pursued.
 - OPEN: the per-piece ROUTE count for m_c ≥ 2 (a port of the 𝒞^1O count); flips per phase; f per phase (L-NEW 26). ρ_q for m_c ≥ 2 stays
   OPEN.
+- CORRECTION (12:4xZ, after both referees' P-N5-FLIP reports). §24.1 ROOT-C as written here is FALSE. The hypothesis must say "class exit path
+  AND EXIT" and the consequence "a class exit path or exit". The (≤) step "each walk is a positional Odd play with cycle node c" is false.
+  Both are repaired in docs/si/P-N5-FLIP-fixes-box18.md R1 / R2 (REFEREE-2's B(e, y), REFEREE's LOCAL). §25 N3-LEVEL's parenthesis
+  "(both hold when p1 is intact at t2, by (c))" is unproved (G-FLIP-3, R3): (c) gives a disjunction. §26 is unaffected (see the fixes
+  file's last section).
+
+## 27. Item (2)(a): which steps of the 𝒞^1O count use one Odd choice vertex (READING, DATA), and Lemma TV-END (PROVED)
+Written 2026-10-26T12:5xZ (date -u), successor 15. New script rund/tvend.py; logs tvend_m{0,1}_*.txt; a D-set trace (scratch, numbers below).
+### 27.1 The map (READING, from the landed texts)
+The 𝒞^1O per-phase count (R51) has two sides.
+- FALLBACK side: R44 FB-ROUND, R45 HAT-FREEZE / RHO-TAIL, R48 κ-FB-ROUND / κ-HAT-FREEZE / κ-PFZ / κ-Y-FORM / EXIT-SWITCH / FREEZE-EXIT.
+  This side is ALREADY PORTED to every game by RESULTS R56 (a)-(g): κ-FB-ROUND_D, κ-HAT-FREEZE_D, κ-PFZ_D, κ-Y-FORM_D, EXIT-SWITCH_D,
+  FREEZE-EXIT_D, and Lemma TV, the terminal-value freeze after |U_c| − 1 fallbacks of the phase and of a Q_c-run. L-NEW 26's FB-RISE
+  (P-N5-HONFF) is the same mechanism in the Ξ frame. Nothing here needs m_c = 1. With several terminals, the freeze restarts at every
+  terminal value change: that is R56's reduction f ≤ 1 + (n − 1)(2 + ρ).
+- S4a side: R50 (FRZ-U, KIND-MONO, CASC-B, Theorem RUN, Corollary PHASE: "T per phase given f") and R45 (d)-(f) BF-F / FREEZE-F at HN
+  states. This side DOES use m_c = 1. Its stretches are defined by R = R_k ∋ o, θ, w; kinds A / B are defined against c_w; FRZ-U's Claim
+  P^c is over a single gate. In general-game terms (R55 G_D, R62, R64), that is an epoch with D = {o}, i.e. |D_E| = 1. RESULTS R64 (e)
+  EP-1 with R65 already lands exactly that part on every game: |D_E| = 1 epochs have len(E) = O(m·Δ·n¹¹).
+- So the "per-piece bound P" of §26.3 (iv) is NOT a port of the 𝒞^1O count. Its fallback half is landed (R56). Its S4a half is the
+  |D_E| ≥ 2 core (Δ-RT, FRZ-RHO §23, the RUND line §5-§19), together with the epoch count N_ep. Both are OPEN on G-N5-TIME.
+### 27.2 DATA: the long-ρ phases are many short multi-gate epochs
+D_k := the Odd vertices with σ̄_k ≠ τ_k. Epochs are counted as D changes + 1, which is an upper proxy for R63's epochs.
+| instance | phase length | epochs | |D| over the phase's states (count) | fallbacks |
+| --- | --- | --- | --- | --- |
+| nep90_n40 (+ start) | 91 | 42 | 0: 2, 1: 15, 2: 20, 3: 26, 4: 19, 5: 10 | 7 |
+| nep76_n40 (+ .start) | 78 | 32 | 0: 2, 1: 4, 2: 17, 3: 42, 4: 14 | 6 |
+The root 0 of §26.3 is in D at every state except the last. Epochs are about 2 transitions long. So on these instances ρ_q > n comes with
+N_ep ≈ phase length / 2. Neither the length of one epoch nor the per-piece count is the issue; the number of epochs is. That is the
+N_ep / ρ circularity of R63 / §20, not a new obstruction.
+### 27.3 Lemma TV-END (PROVED, every game; P1 via R15 (SG) and R56 (g))
+Setting: a phase, an honest class c, T := Q ∪ {c}, and a Q_c-run Θ (R56's setting line). Let t ∈ Θ be a state at which every
+z ∈ U_c ∖ T has κ_t(z) = TV_Θ(z) := max(κopt_c(z), max_{q ∈ Q_c} κopt^q(z) + κ_Θ(q)). By R56 (g) Lemma TV this holds at every t
+after |U_c| − 1 fallbacks of the phase and of a Q-RUN (all of Q constant; contained in a Q_c-run). CORRECTION 13:0xZ: an earlier wording
+said "of Θ" (the Q_c-run); R56 (g) is stated for Q-runs. tvend.py triggers on the Q_c-run count, a heuristic trigger; see P-N5-CHOSEN §5.
+Statement. Then no Even vertex of U_c ∖ T switches at any in-phase transition t → t+1. Moreover t + 1 ∈ Θ and the hypothesis holds at
+t + 1. Hence, from t to the end of the phase, class c is frozen: no switch in U_c ∖ T and no ρ event in the class, and Θ lasts to the phase
+end.
+Proof.
+- (i) Let x ∈ U_c ∖ T be Even, switching at t → t+1 (in-phase) to z := σ_{t+1}(x). The switch is to an edge improving at t (S4a's arena
+  and S4c both take Iσ_t(x)), so Ξ_t(z) ▷ Ξ_t(σ_t x). λ_{t+1}(x) = c and x ≠ c, so λ(z) = c. Within the class this is
+  κ_t(z) ≻ κ_t(σ_t x), so κwt_c(x) + κ_t(z) ≻ κwt_c(x) + κ_t(σ_t x) = κ_t(x), by additivity on x's honest play.
+- (ii) Let p be z's honest play at t up to its first vertex e ∈ T (its exit; p avoids T).
+  - If x ∉ p, then x·p is a simple path of G_c (e = c) or G_c^e (e ∈ Q_c). By additivity, κwt_c(x) + κ_t(z) = κwt_c(x·p) + κ_Θ(e) ⪯
+    TV_Θ(x) = κ_t(x) (κ_t(e) = κ_Θ(e) on Θ). That contradicts (i).
+  - The same holds if z = e ∈ T: the path is x·e.
+- (iii) So every switching x ∈ S := {Even switching vertices of U_c ∖ T} has x on z(x)'s honest play at t, before that play's exit. Follow
+  x's play at t + 1:
+  - it goes x, z(x), then along the t-play from z(x) (old edges at vertices that do not switch) until the first vertex of S, which exists
+    and comes before any vertex of T, because x itself is on that stretch;
+  - there it continues with that vertex's new edge, and so on.
+  This play never meets T. Odd vertices on these stretches are forced (non-terminal), and terminals do not occur before the exit. So the
+  play never reaches c, and λ_{t+1}(x) ≠ c, against in-phase. So S = ∅.
+- (iv) With no switch in U_c ∖ T, every class exit path and exit of class c is the same at t and t + 1: their vertices are non-terminal,
+  Even and non-switching, or forced Odd. By ROOT-C in its signed form (P-N5-FLIP-fixes-box18 R1), κ is constant on Q_c, so t + 1 ∈ Θ.
+  κ_{t+1}(z) for z ∈ U_c ∖ T is the value of the same exit path plus the same terminal value, so the hypothesis holds at t + 1.
+  Induction. □
+- What it adds to R56: FREEZE-EXIT_D says the late FALLBACKS switch nothing in the class. TV-END says no in-phase transition does
+  (S4a included), and the freeze is permanent within the phase. It does not bound ρ: ρ events happen before the class freezes, in Q_c-runs
+  with fewer than |U_c| − 1 fallbacks, which is where S4a steps act.
+- DATA (tvend.py; TVEND_V = 0). It is THIN, in the same way as R56's vacuity: lib41 (KMIN = 1, S3 + 4) reaches the freeze in 20 classes,
+  all with |Q_c| ≤ 1, with 39 frozen transitions; lib2o has 4 classes and 0 frozen transitions; nep90 and frz40 have none. The control
+  MUT=1 (phase fallbacks only, without the Q_c-run condition) does not bite on these sets (reported as such).
+### 27.4 Status, labels
+- PROVED (lane, unrefereed): Lemma TV-END.
+- READING: the map in §27.1. The per-piece bound P for m_c ≥ 2 is the |D_E| ≥ 2 S4a core plus N_ep (both OPEN), not a port.
+- DATA: §27.2 (nep90 / nep76: 42 / 32 epochs, mostly |D| ≥ 2); TV-END is thin.
+- OPEN: ρ_q for m_c ≥ 2; equivalently, at the level of the landed reductions, N_ep and the |D_E| ≥ 2 epochs.
+
+## 28. Item (c) (Lead's GO 13:13Z): what changes the epoch between consecutive epochs, against R61 (e) ALT's causes (DATA, READING)
+Written 2026-10-26T13:1xZ (date -u), successor 15. New scripts rund/epcause.py, rund/trigger.py; logs epcause_*.txt, trigger_nep*.txt.
+Epochs as in R61: maximal runs of the phase with σ̄|Q constant. (§27.2's "D changes + 1" undercounts them: σ̄ can change with D the same.)
+### 28.1 Epoch boundaries by ALT's cause (epcause.py)
+At every boundary, each q whose σ̄(q) changes is classified as:
+- CYC: λ(q) = q;
+- NC (non-clean): q is on an honest cycle at t or t + 1, or y2's play at t passes q;
+- STRICT: clean, with κ(q) rising;
+- TIE: clean, with κ(q) unchanged.
+
+STRICT changes are split further into ROUTE / RELAY at q. ALT_V counts clean changes with κ falling: 0 everywhere. The control MUT=1
+(the comparison reversed) bites on nep90.
+
+| set | boundaries | with a ρ event | residual (only TIE / NC / CYC) | STRICT (ROUTE / RELAY) | TIE | NC | CYC | max per phase |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| nep90_n40, phase@4 (91 transitions) | 89 | 89 | 0 | 119 (107 / 12) | 0 | 0 | 0 | 89 |
+| nep76_n40, phase@9 (78 transitions) | 75 | 75 | 0 | 111 (94 / 17) | 0 | 0 | 0 | 75 |
+| lib41 (KMIN = 1), S3 + 4 random starts | 4,854 | 4,596 | 283 (258 without ρ) | 4,698 (4,616 / 82) | 255 | 60 | 2 | 49 |
+| lib2o, S3 + 4 random starts | 92 | 92 | 0 | 101 (96 / 5) | 0 | 0 | 0 | 7 |
+| pp_K12_n161 / frz40 | 14 / 10 | 14 / 10 | 0 / 0 | 18 (7 / 11) / 10 (9 / 1) | 0 | 11 / 0 | 0 | 14 / 7 |
+- So, on these sets, R61 (f)'s residual terms (tie_q + nc_q + cyc_q) are ≤ 6 % of the boundaries (lib41) and 0 on the long-ρ instances.
+  N_ep − 1 is essentially the number of ρ-transitions. A σ̄ change is almost always a clean strict rise caused by a ROUTE change at q
+  itself (4,616 of 4,698 on lib41). Explaining the epochs means explaining the ROUTE events.
+- On nep90 and nep76, nearly EVERY transition of the long phase is an epoch boundary (89 of 91, 75 of 78). The epochs are single
+  transitions, so "epoch length" plays no role there.
+### 28.2 What triggers the root's ROUTE events (trigger.py; nep90 phase@4, root q = 0, c = 11)
+For each Even switch x: σ(x) → z on q's chosen class exit path, k0 is the last earlier state at which (x, z) was not improving. The TRIGGER
+is what changed at k0 → k0 + 1:
+- SELF: x itself moved;
+- PATH: z's class exit path or exit changed, i.e. a switch downstream of z;
+- TERM: z's exit terminal (≠ c) changed κ;
+- START: (x, z) was improving since the phase start.
+
+| instance | switches on the root's chosen path | at S4a / at fallbacks | PATH | TERM (z's exit: 0 / 1 / 6) | START | z exits at c / at a terminal |
+| --- | --- | --- | --- | --- | --- | --- |
+| nep90 (ρ_0 = 72) | 89 | 89 / 0 | 70 | 16 (11 / 3 / 2) | 3 | 70 / 19 |
+| nep76 (ρ_0 = 62) | 83 | 83 / 0 | 73 | 9 (6 / 3 / 0) | 1 | 40 / 43 |
+- No switch on the root's chosen path happens at a fallback. They are all S4a steps, so this is the S4a side of §27.1.
+- Propagation is by S4a CASCADES along paths to c (PATH: 70 / 73). A switch downstream makes an upstream option improving.
+- Re-thaw is SELF-FEEDBACK through the root: in 17 of the 25 TERM triggers the target z exits at the root 0 itself, and the others exit at
+  1 or 6, which are relays of 0 (relay graph §26.3: 1 → 0, 6 → 0, 1).
+  - A rise of κ(0) makes an Even vertex on 0's own chosen path prefer an edge into 0, e.g. nep90 t = 13, 35, 42, 58, 80: x = 36, 31 → 0.
+  - Such a switch cannot leave 0's choice as it is: 0's play would cycle without c, which would leave the phase. So it comes with a
+    σ̄(0) change, i.e. a new epoch and a new rise.
+  - This is the 𝒞^1O feedback loop around one gate o (SELF-FREE's remark, §22.4: "Even re-routing towards o when o's value rises").
+- READING. The long-ρ phases of nep76 / nep90 are, in their mechanism, ONE-GATE dynamics around the root (S4a cascades plus self-feedback
+  through 0 and its relays). They are not cross-terminal relay cycles. They differ from 𝒞^1O, where R51 makes this polynomial, in one
+  respect: the other terminals 1, 6, 8, 17 (37) are W-gates too (D ⊋ {0}, §27.2). So Even's S4a choice on 0's paths is made in a W frame
+  that differs from Ξ at several gates, which is the |D_E| ≥ 2 regime of R50 FRZ-U's single-gate argument.
+- What would close it (a target, not a statement here): a version of R50 FRZ-U / Theorem RUN for a root r of an acyclic relay DAG whose
+  extra W-gates are r's relays, i.e. vertices whose Ξ is a shift of κ(r) (R61 (b) SAT-k). The one structural fact in hand is SAT-k plus
+  CHOSEN: a relay's value is a fixed shift of its chosen exit's value within an epoch. Whether FRZ-U's Claim P^c survives gates whose
+  values are shifts of the root's is OPEN. This is where I would start the next box.
+### 28.3 Status, labels
+- DATA: §28.1 (N_ep − 1 ≈ ρ-transitions; ALT residuals ≤ 6 % / 0); §28.2 (root switches: all S4a, cascades plus self-feedback).
+- READING: nep76 / nep90 are one-gate dynamics with extra W-gates that are the root's relays.
+- OPEN: ρ_q for m_c ≥ 2; the FRZ-U analogue for a root with relay W-gates (the proposed next target).

@@ -1,0 +1,7 @@
+IN=53 IN_DLEAVE=53 bfa_checks=2740 bfa_eq=429 pieces=20 runs=8 runs_mono=1
+TOP IN/runlen (37, 6, '../../red/rec0/instances/nep90_n40.pg', 4)
+TOP IN/runlen (4, 14, '../../red/rec0/instances/nep90_n40.pg', 4)
+TOP IN/runlen (4, 13, '../../red/rec0/instances/nep90_n40.pg', 4)
+TOP IN/runlen (4, 13, '../../red/rec0/instances/nep90_n40.pg', 4)
+TOP IN/runlen (2, 12, '../../red/rec0/instances/nep90_n40.pg', 4)
+SHRINK PASS

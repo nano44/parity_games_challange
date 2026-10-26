@@ -32,3 +32,6 @@
   UP=2 the chosen exit par_k(q). QUIET_V tests CONJECTURE QUIET-n (FALSE on one-terminal classes). Logs quiet_up*_*.txt.
 - chosen.py (note §26.2): Lemma CHOSEN / Corollary RELAY-CHAIN (CHOSEN_V, CHAIN_V, TOG, max_chain); MUT=1 (next state's choice) must fail.
 - instances/nep90_n40.start: L-RED's rec0/instances/nep90_n40.start.json in .start format (game read in place, sha1 7348271a…).
+- tvend.py (note §27.3): Lemma TV-END (after R56 (g)'s freeze no Even of the class switches until the phase end); TVEND_V; thin data.
+- epcause.py (note §28.1): every epoch boundary's σ̄ changes by R61 (e) ALT cause (CYC / NC / STRICT (ROUTE / RELAY) / TIE); ALT_V; MUT=1 bites.
+- trigger.py (note §28.2): for the phase's top-ρ vertex, every Even switch on its chosen exit path traced to its trigger (SELF / PATH / TERM / START).
