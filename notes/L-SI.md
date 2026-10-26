@@ -8,6 +8,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
 - Done (note §26): flip classes (N2 never; <= 2 onsets/phase outside mkpp; mkpp all N3b, GAP 25 / 61, linear); Lemma CHOSEN and Corollary
   RELAY-CHAIN PROVED (relays cost a factor |Q_c|; rho_c <= |Q_c|(ROUTE + CYC + TOG)); nep76 / nep90 have rho_q 62 / 72 > n with ACYCLIC relay
   graphs: long ROUTE runs at root 0 (<= 12 per fallback-free chosen-terminal piece), copied down. QUIET-n FALSE on 1-terminal classes.
+- 12:3xZ-13:0xZ: P-N5-FLIP fixes file (b5d3d321, sha1 93a65e1b; 23 quotes). (2)(a) note §27 (109776d4): fallback side of 𝒞^1O = R56 (landed);
+  S4a side = |D_E| >= 2 core + N_ep (OPEN); nep90/nep76 42/32 epochs; Lemma TV-END (thin data). Packet P-N5-CHOSEN-box19 (CHOSEN,
+  RELAY-CHAIN, TV-END; Lead 12:37Z "packet them ... at your box end or handover"). R56 (g) TV is for Q-RUNS (all Q constant), not Q_c-runs.
 - Things only I know: quiet.py UP modes differ only in the cut rule; lib41 KMIN=1 includes every game (|Q_c| = 1 classes give the 34-35
   pieces); rows of lib41 / lib2o / frz40 / leanT overlap (frz40, leanT_N6 in lib41; 3 games in both libs). nep90's start is a json
   "start" list over ALL vertices (I converted it). check.sh now takes ~2m10s (was < 2 min in its header).
