@@ -1,0 +1,116 @@
+{
+ "counts": {
+  "clean_strict": 14568,
+  "crossings": 47618,
+  "cyc": 15154,
+  "epochs": 17202720,
+  "epochs_D0": 10695408,
+  "epochs_D1": 5584300,
+  "epochs_D2": 923012,
+  "fallbacks_in_phase": 143748,
+  "games": 10800000,
+  "in_phase_transitions": 501112,
+  "len_sum_D0": 436978,
+  "len_sum_D1": 62248,
+  "len_sum_D2": 1886,
+  "nc": 1984,
+  "phases": 17167692,
+  "phases_Nep_ge2": 35028,
+  "phases_single_state": 16678272,
+  "rho": 29360,
+  "runs": 10800000,
+  "tie": 4278,
+  "transitions": 6868804,
+  "xsnpre": 13636,
+  "xsnpre_sum_D0": 0,
+  "xsnpre_sum_D1": 13028,
+  "xsnpre_sum_D2": 608
+ },
+ "len_hist": {
+  "0": {
+   "0": 10269394,
+   "1": 415098,
+   "2": 10868,
+   "3": 48
+  },
+  "1": {
+   "0": 5522392,
+   "1": 61568,
+   "2": 340
+  },
+  "2": {
+   "0": 921126,
+   "1": 1886
+  }
+ },
+ "maxima": {
+  "max_N_ep": 2,
+  "max_XD_phase": 2,
+  "max_absD": 2,
+  "max_len_D0": 3,
+  "max_len_D0_minus_(n+m)": -12,
+  "max_len_D1": 2,
+  "max_len_D2": 1,
+  "max_phase_in_transitions": 3,
+  "max_residual_phase(tie+nc+cyc)": 2,
+  "max_rho_phase": 2,
+  "max_xsnpre_D0": 0,
+  "max_xsnpre_D1": 2,
+  "max_xsnpre_D2": 1
+ },
+ "n_violations": 0,
+ "nep_hist": {
+  "1": 17132664,
+  "2": 35028
+ },
+ "options": {
+  "all_starts": false,
+  "every": 10,
+  "fam": "2O",
+  "jobs": 3,
+  "n": 5,
+  "offset": 0,
+  "out": "results/exh_2O_n5_S3_every10.json"
+ },
+ "secs": 1936.0,
+ "tasks_done": "32/32",
+ "top": {
+  "EP0_len_minus_(n+m)": [
+   -12,
+   "2On5 prio=[0, 2, 4, 6, 7] owner=[1, 1, 0, 0, 0] succ=[[0, 1], [0, 1], [0], [0], [0]] start=S3 phase#0 states[0,0] epoch 0 states[0,0] len=0 n=5 m=7"
+  ],
+  "EP0_len_over_(n+m)": [
+   0.2,
+   "2On5 prio=[0, 2, 3, 5, 7] owner=[1, 0, 1, 0, 0] succ=[[0, 4], [2, 3], [0, 1], [0, 2], [0, 2]] start=S3 phase#0 states[0,3] epoch 0 states[0,3] len=3 n=5 m=10"
+  ],
+  "N_ep": [
+   2,
+   "2On5 prio=[0, 2, 4, 6, 7] owner=[1, 0, 1, 0, 0] succ=[[3, 4], [0, 4], [0, 1], [3], [3]] start=S3 phase#0 states[0,1] n=5 rho=1 tie=0 nc=0 cyc=0 |Q|=2"
+  ],
+  "N_ep_over_n": [
+   0.4,
+   "2On5 prio=[0, 2, 4, 6, 7] owner=[1, 0, 1, 0, 0] succ=[[3, 4], [0, 4], [0, 1], [3], [3]] start=S3 phase#0 states[0,1] N_ep=2 n=5 rho=1 tie=0 nc=0 cyc=0"
+  ],
+  "len_D0": [
+   3,
+   "2On5 prio=[0, 2, 3, 5, 7] owner=[1, 0, 1, 0, 0] succ=[[0, 4], [2, 3], [0, 1], [0, 2], [0, 2]] start=S3 phase#0 states[0,3] epoch 0 states[0,3] |D|=0 n=5 m=10"
+  ],
+  "len_D1": [
+   2,
+   "2On5 prio=[0, 2, 4, 6, 7] owner=[0, 0, 0, 1, 1] succ=[[2, 3], [0, 2], [3], [0, 4], [0, 1]] start=S3 phase#0 states[0,2] epoch 0 states[0,1] |D|=1 n=5 m=9"
+  ],
+  "len_D2": [
+   1,
+   "2On5 prio=[0, 2, 4, 6, 7] owner=[0, 1, 0, 0, 1] succ=[[2, 3], [1, 3], [0, 1], [4], [0, 1]] start=S3 phase#0 states[0,1] epoch 0 states[0,1] |D|=2 n=5 m=9"
+  ],
+  "len_D2_over_n": [
+   0.2,
+   "2On5 prio=[0, 2, 4, 6, 7] owner=[0, 1, 0, 0, 1] succ=[[2, 3], [1, 3], [0, 1], [4], [0, 1]] start=S3 phase#0 states[0,1] epoch 0 len=1 |D|=2 n=5"
+  ],
+  "slack_NEP_min(neg)": [
+   0,
+   "2On5 prio=[0, 2, 4, 6, 7] owner=[1, 0, 1, 0, 0] succ=[[3, 4], [0, 4], [0, 1], [3], [3]] start=S3 phase#0 states[0,1] N_ep=2 bound=2"
+  ]
+ },
+ "violations": []
+}
