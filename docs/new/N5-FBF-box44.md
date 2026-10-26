@@ -354,6 +354,42 @@ For τ, Corollary Φ-kO uses "no τ repeats along a run" (R15 on G^d). The analo
 Reading (DATA): EPOCH (a)/(b) are vacuous in the data (no epoch reaches n − 1 fallbacks); EPOCH (c) holds everywhere. Epochs and σ̄
 repeats are frequent on 𝒞^1O, where N5 is polynomial anyway (R51).
 
+## 10. (3) A potential for N_ep (Lead 03:39Z; written 03:47Z by date -u)
+### 10.1 Lemma ALT (PROVED, every game): Odd's alternations raise Ξ at q, except at ties and in two named cases
+Let t → t+1 be an in-phase transition, q ∈ Q ∩ U_c with q ≠ c, and σ̄_{t+1}(q) ≠ σ̄_t(q) =: y1, y2 := σ̄_{t+1}(q). Call the change CLEAN if
+q lies on no honest cycle at t and at t+1 (H1_q at both) and y2's honest play at t avoids q. Then for a CLEAN change:
+κ_{t+1}(q) ≥ κ_t(q), with equality only if κ_t(y2) = κ_t(y1) and κ_{t+1}(y2) = κ_t(y2) (a TIE at t).
+Proof. κ-Y-FORM_D (P-N5-FBRED §1.2) at t + 1 (H1_q): κ_{t+1}(q) = κwt_c(q) + κ_{t+1}(y2), y2 ∈ U_c. (M2κ): κ_{t+1}(y2) ≥ κ_t(y2). y2 ∈ Y^q_t
+(clean), so κ-Y-FORM_D at t (H1_q) gives κ_t(y2) ≥ min_{Y^q_t} κ_t = κ_t(y1) = κ_t(q) − κwt_c(q). Equality throughout is the tie. ∎
+Corollary. N_ep ≤ 1 + Σ_{q ∈ Q} (ρ_q + tie_q + nc_q + cyc_q), where per phase ρ_q counts transitions changing Ξ(q), tie_q the clean ties,
+nc_q the non-clean changes, cyc_q the changes at q with λ(q) = q (an epoch ends only at a transition where some σ̄(q), q ∈ Q, changes).
+### 10.2 The three candidate potentials (the Lead's list), evaluated
+- (Ξ on the successors of Q, lexicographic): non-decreasing (R15 (a)), so it is a potential, but its number of values is the product of
+  the successors' level counts; nothing smaller follows. An alternation y1 → y2 → y1 at q needs κ(y1) to rise past κ(y2) and then κ(y2)
+  past κ(y1): two non-decreasing sequences with values in finite sets K, K′ cross at most |K| + |K′| − 2 times, and no better bound
+  follows from monotonicity alone. MONO plus positional simple-path values give exactly that, i.e. crossings ≤ levels (ACCEL (a)); they do
+  NOT give "each ordered pair swaps at most once per phase" (READING; no proof, and lap_n6_s1_110421 has a swap and a swap back in one
+  phase). "At most once per epoch" is true but empty: a swap of σ̄(q) ends the epoch by definition.
+- (R15's potential on G_σ's Odd side): R15's (Ω, φ) potential orders strategies of the IMPROVING player; σ̄_t is Odd's best response to
+  σ_t, not an improving sequence of Odd's, and Odd's own valuation Ω_τ is constant on a phase (τ fixed). There is no Odd-side quantity
+  that the SPEC makes monotone besides L_σ = Ξ itself (R18 (d) Lemma S (b): L non-decreasing). So this candidate reduces to the next.
+- (honest values at Q, which change only through Even switches): this is the one that works, and ALT makes it exact: up to ties and the
+  two non-clean cases, every alternation is a strict rise of Ξ(q). So N_ep is ρ (FB-RED's quantity) plus residuals.
+### 10.3 Verdict on (3)
+- PROVED: N_ep ≤ 1 + ρ + (ties) + (non-clean) + (cycle-node changes) (ALT). So EPOCH (c) and FB-RED count the same thing, honest-value
+  changes at Odd choice vertices inside a phase; there is no independent potential for Odd's alternations.
+- OPEN: ρ (Ξ-levels at Q per phase), and the residuals (ties: a potential on the S1 tie-break, unlikely to be the obstruction; non-clean:
+  q joining or leaving c's honest cycle, or y2 routed through q at t).
+- So the one-phase counter question reduces, by ACCEL + EPOCH + ALT, to: can Ξ(q), q ∈ Q, take super-polynomially many values in one
+  phase? (= ρ-POLY, §6.)
+### 10.4 DATA (experiments/new/box44/altcheck.py; canonical S3 start)
+| sample | σ̄(q) changes in-phase | CLEAN: strict / tie | NONCLEAN: ¬H1_q / y2 through q | λ(q) = q | ALT viol. |
+| --- | --- | --- | --- | --- | --- |
+| lib41 (412 runs) | 2,051 | 1,910 / 75 | 9 / 56 | 1 | 0 |
+| box43 + box44 instances + lap_n6 (11) | 36 | 35 / 1 | 0 / 0 | 0 | 0 |
+| `--rand 2000 5 20 91` | 33 | 24 / 2 | 4 / 1 | 2 | 0 |
+Reading (DATA): 93% of Odd's in-phase alternations strictly raise Ξ(q); ties and non-clean changes are a few percent.
+
 ## 5. How a fallbacks-per-phase bound combines with the phase count (READING)
 - Phases. Lemma Φ (R47 (a), every game): λ changes ≤ n(n − 1); Corollary Φ-kO (P-N5-DUAL, N5-MULTI §1.4): distinct τ's ≤ ∏_{q∈Q}
   deg(q), so phases ≤ n(n − 1) + ∏_q deg(q). On 𝒞^kO with k fixed that is ≤ n(n − 1) + n^k, polynomial; for k growing with n it is

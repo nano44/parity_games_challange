@@ -44,7 +44,12 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - Route (a) chosen. N5-FBF §9: Lemma EPOCH (PROVED): within a σ̄|Q-epoch Ξ freezes after n − 1 fallbacks (one-player Bellman + (SG)),
   post-freeze ≤ 4n(n − 1) + 1 transitions (R15 (d)); f ≤ 1 + n·N_ep. σ̄|Q repeats inside a phase (DATA, instance lap_n6_s1_110421.pg,
   σ̄(2) = 0, 4, 0), so N_ep ≤ ∏deg FAILS as a route. OPEN: pre-freeze S4a runs, N_ep. epoch.py.
-- NEXT: report; candidate packet ACCEL + EPOCH (small) if the Lead wants; then as directed.
+- 916aa2b3 reported 03:32Z. Lead 03:39Z: packet ACCEL + EPOCH; then (3) N_ep potential; (2) pre-freeze S4a is L-SI's.
+- e9eaaaaf: P-N5-ACCEL FROZEN (sha1 301f0be0…), reported 03:45Z.
+- (3): N5-FBF §10: Lemma ALT (PROVED): a clean σ̄(q) alternation raises Ξ(q) strictly unless tied; N_ep ≤ 1 + ρ + ties + non-clean +
+  cycle-node changes. The Lead's three candidate potentials reduce to ρ; crossings of monotone sequences ≤ levels, no "once per phase".
+  Verdict: no independent potential; one-phase counter ⇔ ρ-POLY. altcheck.py: 0 violations, 93% strict.
+- NEXT: report; then as directed.
 
 ## Box 43 log (successor 22; handover check 5/5 (b4f064b4); GO 21:55Z, Lead's stamp)
 - Merged trunk c4d18621. Oink built (8fbf0a7). Notebook duplicate block (from 6a1b0e95) removed in b4f064b4.
