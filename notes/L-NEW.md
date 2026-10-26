@@ -49,6 +49,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - (3): N5-FBF §10: Lemma ALT (PROVED): a clean σ̄(q) alternation raises Ξ(q) strictly unless tied; N_ep ≤ 1 + ρ + ties + non-clean +
   cycle-node changes. The Lead's three candidate potentials reduce to ρ; crossings of monotone sequences ≤ levels, no "once per phase".
   Verdict: no independent potential; one-phase counter ⇔ ρ-POLY. altcheck.py: 0 violations, 93% strict.
+- a77693d1 (§10 ALT) reported 03:52Z; 2742f3e9 FBRED fixes FROZEN (sha1 05c24943…) 03:59Z (R56 at CHECKER C65 per Lead 04:04Z).
+- Lead 04:04Z: generalise L-SI's FB-2T (l-si 67fd31d9, docs/si/N5-2O-box16.md, read) to any number of terminals, non-nested if possible.
+- N5-FBF §11: ROUTE-k (routing acyclic, depth ≤ m − 1), SAT-k (exact via the actual parent), Theorem FB-kT: N_late ≤ 1 + Σ_q (V_q − 1),
+  V_q ≤ Σ_h D((m−1)D)^h: polynomial for bounded terminals per class; 𝒞^kO fixed k: f = O(n^{k+1}). Outer sum is a sum; per-terminal
+  count is nested. Model obstruction: the lemmas used admit D^{depth} values (in-block shift rises), so a pure sum needs a new ingredient.
 - NEXT: report; then as directed.
 
 ## Box 43 log (successor 22; handover check 5/5 (b4f064b4); GO 21:55Z, Lead's stamp)

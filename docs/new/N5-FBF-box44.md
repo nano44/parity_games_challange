@@ -390,6 +390,70 @@ nc_q the non-clean changes, cyc_q the changes at q with λ(q) = q (an epoch ends
 | `--rand 2000 5 20 91` | 33 | 24 / 2 | 4 / 1 | 2 | 0 |
 Reading (DATA): 93% of Odd's in-phase alternations strictly raise Ξ(q); ties and non-clean changes are a few percent.
 
+## 11. FB-2T for any number of terminals per class (Lead 04:04Z; after L-SI 11's docs/si/N5-2O-box16.md at l-si 67fd31d9, read-only; written 04:07Z by date -u)
+Notation as L-SI's note §0 (= FBRED §0): Q_c := (Q ∩ U_c) ∖ {c}, m_c := |Q_c|, w_c := |U_c| − 1, d_q := |succ(q) ∩ U_c|, DIRECT, A_q (|A_q| ≤
+d_q + w_c), PFZ-q (q-runs), DIR (L-SI §3, PROVED there). Late fallbacks i = 1, 2, … with source states k_1 < k_2 < … (index j ≥ n);
+x_i(q) := κ_{k_i}(q). Conditional on P-N5-FBRED (its late form, κ-HAT-FREEZE_D (a), κ-FB-ROUND), as L-SI's note is. All labels PROVED =
+L-NEW 23, unrefereed; L-SI's lemmas are cited from its lane note (unrefereed).
+### 11.1 Lemma ROUTE-k (PROVED, every game)
+At every state t of a phase and in every class, let par_t(q) := the first vertex of Q_c ∖ {q} on q's honest play before c, for q ∈ Q_c not
+direct (par_t(q) undefined if q is direct). Then the relation q → par_t(q) has no cycle; so every chain ends at a direct terminal, and the
+DEPTH of q (the length of its chain) is ≤ m_c − 1.
+Proof. If q → par(q) = p, q's play from its visit of p on is p's play (positional). A chain q = p_0 → p_1 → … → p_r = q would put p_1, …,
+p_r on q's play in this order, so q's play would revisit q; then q lies on its own play's cycle, whose top is c, and q's play visits c
+before revisiting q only if c precedes p_1, against "p_1 before c". So q is on its own honest cycle, which makes q direct: contradiction. □
+(L-SI's ROUTE-2 is the case m_c = 2.)
+### 11.2 Lemma SAT-k (PROVED, every game)
+Let t > g_{w_c} be a state, q ∈ Q_c not direct at t, p := par_t(q), Θ_p the p-run containing t, and t > f^{Θ_p}_{w_c}. Then
+κ_t(q) ∈ S_{q,p} + κ_t(p), with S_{q,p} := {κwt_c(q) + κopt^p(y) : y ∈ succ(q) ∩ U_c ∖ T, κopt^p(y) defined} ∪ {κwt_c(q) : p ∈ succ(q)};
+|S_{q,p}| ≤ d_q.
+Proof. y := σ̄_t(q) = next_t(q) ∈ U_c, κ_t(q) = κwt_c(q) + κ_t(y) ((Aκ)); y's play is the rest of q's, so it avoids q and its first terminal
+is p. If y = p, done. Otherwise y ∉ T (its first terminal is p, and y ≠ c because p comes before c). "≤": the prefix of y's play up to p is
+a simple path ((SP′)) avoiding T ∖ {p}, with Even edges σ_t's and forced Odd vertices: a path of G_c^p, so κ_t(y) = κwt_c(prefix ∖ {p}) +
+κ_t(p) ≤ κopt^p(y) + κ_t(p). "≥": PFZ-q (L-SI §1) at t > f^{Θ_p}_{w_c} (paths of G_c^p have ≤ w_c edges): κ_t(y) ≥ κopt^p(y) + κ_t(p). □
+(It is L-SI's SAT-2 with the parent named by the actual route, which removes the max over targets.)
+### 11.3 Theorem FB-kT (PROVED, every game; CONDITIONAL on P-N5-FBRED, like FB-2T)
+In every phase, with D_c := max_{q ∈ Q_c} d_q + w_c (≤ 2n):
+  N_late ≤ 1 + Σ_c Σ_{q ∈ Q_c} (V_q − 1), and V_q ≤ Σ_{h=0}^{m_c − 1} D_c·((m_c − 1)·D_c)^h ≤ m_c·D_c·((m_c − 1)·D_c)^{m_c − 1},
+where V_q := the number of distinct values x_i(q) over the late fallbacks. Hence f ≤ 1 + (n − 1)(1 + N_late) (FBRED late form) is
+POLYNOMIAL whenever every class has a bounded number of terminals; on 𝒞^kO (k fixed, so m_c ≤ k): N_late ≤ 1 + k²·(2n)·(2(k − 1)n)^{k−1}
+= O(n^k) and f = O(n^{k+1}) per phase. (k = 2 gives O(n³), L-SI's FB-2O, with a different constant.)
+Proof.
+1. (Outer sum.) Two late fallbacks lie in one Q-run iff their tuples x are equal (L-SI FB-2T step 1, (M2κ)). The tuple sequence is
+   coordinatewise non-decreasing, so each change of tuple raises at least one coordinate to a value it never had before; hence
+   #distinct tuples ≤ 1 + Σ_q (V_q − 1).
+2. (Values by depth.) Let V_{q,h} := #distinct x_i(q) over the indices i at which q has depth h (at k_i).
+   - h = 0 (q direct at k_i; k_i > g_{n−1} ≥ g_{w_c}): x_i(q) ∈ A_q by DIR; V_{q,0} ≤ |A_q| ≤ D_c.
+   - h ≥ 1: let p := par_{k_i}(q), of depth h − 1 at k_i. Group the indices by (p, α := x_i(p)). For fixed p, the indices with x(p) = α are
+     consecutive (monotone) and their source states lie in one p-run Θ (equal values with (M2κ) force constancy in between); every
+     index of the group after the first w_c indices WITH x(p) = α has k_i > f^Θ_{w_c} (those earlier indices are fallbacks of Θ with
+     earlier source states), so SAT-k gives x_i(q) ∈ S_{q,p} + α. So the group contributes ≤ w_c + d_q ≤ D_c values. The α's that occur
+     are values of x(p) at indices where p has depth h − 1, at most V_{p,h−1} of them. So V_{q,h} ≤ Σ_{p ∈ Q_c ∖ {q}} D_c·V_{p,h−1}.
+   - Induction: V_{·,h} ≤ D_c·((m_c − 1)·D_c)^h (max over terminals), and h ≤ m_c − 1 (ROUTE-k).
+3. V_q ≤ Σ_h V_{q,h}; combine with 1 and FBRED's late form. □
+### 11.4 Why this is nested, and what a SUM bound would need (READING + model obstruction)
+- The nesting is in step 2: per value α of the parent, the child may take up to d_q values (one per shift in S_{q,p}). Step 1 already sums
+  over terminals; only the per-terminal value count V_q is a product over depth.
+- MODEL OBSTRUCTION (PROVED as a statement about the lemmas, not about N5): the constraints used (ROUTE-k, DIR, SAT-k, (M2κ), the
+  w_c-saturation rule) are satisfied by abstract tuple sequences with ∏ over a chain of d_q·|A_root| distinct values: take a chain q_1 (direct,
+  values α_1 < … < α_a in A) ← q_2 ← … ← q_h with shift sets S_r = {s_{r,1} < … < s_{r,d}} spread so that s_{r,d} + (any value of the parent)
+  < s_{r,1} + (the parent's next value); list the tuples lexicographically (parent value first, then shifts), w_c filler indices per new
+  parent value; every coordinate is non-decreasing and every saturated index satisfies SAT-k. So NO sum bound follows from these lemmas
+  alone; a sum bound must use more of N5. The candidate extra ingredient (OPEN): Odd's MIN at q (κ-Y-FORM_D) together with saturation —
+  with the parent's value fixed and saturated, the shift s = κwt(q) + κopt^p(σ̄(q)) can rise only if Odd's argmin y changes, and the
+  successors routed through p have FROZEN values κopt^p(y) + α; so inside an α-block, x(q) can change only when a successor of q changes
+  its route (an Even switch on y's play, moving its first terminal). If each successor changed its first terminal O(1) times per block,
+  the per-block count would be O(d_q) but the product would remain; a sum needs "x(q) changes only when x(par) changes", i.e. no
+  in-block rises, which the model shows is not implied. OPEN; no N5 instance either way.
+- DATA: none new. The late regime (j ≥ n) is vacuous in every sample and climb (FBRED fixes N-FBRED-4: max f − n = −2 / −4); FB-kT, like
+  FB-2T and FB-RED's late form, rests on its proof. ROUTE-k is statewise and could be checked; not run.
+### 11.5 With the phase count (READING)
+On 𝒞^kO (k fixed): phases ≤ n(n − 1) + ∏ deg(q) ≤ n(n − 1) + n^k (RESULTS R54 (e) Φ-kO), f = O(n^{k+1}) per phase (FB-kT, conditional on
+FBRED), so in-phase fallbacks over a run are O(n^{2k+1}). Still missing for N5 polynomial on 𝒞^kO, k ≥ 2 (each OPEN): (i) crossings per
+phase (R30 (c) / R34 (f) on 𝒞^1O; needs R-STICK in set form, L-SI §5); (ii) transitions per phase given f (R50 (h) on 𝒞^1O; blocked on the
+frontier at LEN / Δ-RT, N5-DELTA-box44 §8, L-SI N5-FRONTIER-box15 §3); (iii) BIT and OUT beyond 𝒞^1O (R51's Lemmas BIT, OUT; OUT's proof
+is game-general per REFEREE §C on DUAL, BIT is game-free) — READING.
+
 ## 5. How a fallbacks-per-phase bound combines with the phase count (READING)
 - Phases. Lemma Φ (R47 (a), every game): λ changes ≤ n(n − 1); Corollary Φ-kO (P-N5-DUAL, N5-MULTI §1.4): distinct τ's ≤ ∏_{q∈Q}
   deg(q), so phases ≤ n(n − 1) + ∏_q deg(q). On 𝒞^kO with k fixed that is ≤ n(n − 1) + n^k, polynomial; for k growing with n it is
