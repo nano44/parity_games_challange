@@ -1,0 +1,6 @@
+dchg=58 fac_n=12095 max_B=7 max_dchg=2 max_ratio=95.0 max_seg_dchg=0 max_tot_per_v=2 runs=948 runs_h3=923 seg_dchg=0 stretch_segs=824 stretch_segs_noh3=2 trans_v=10803 twin=3 twin_dpres=3
+TOP ('dchg', 1, 'rand seed 62 #578', 0, 1, 1, 5, 'range/gamma', 1.0)
+TOP ('dchg', 2, 'rand seed 62 #1548', 2, 4, 7, 11, 'range/gamma', 3.78)
+BHIST [(1, 9), (2, 4), (3, 2), (4, 4), (5, 2), (6, 2), (7, 1)]
+GAP PASS
+done

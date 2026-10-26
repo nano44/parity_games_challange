@@ -1,0 +1,5 @@
+LW_known=3 dch=5 h3run=7 lw_ge_LW=2 lw_gt_LW=0 lw_le_Ls=7 post=0 runs=419 runs_h3=403 runs_long=0 tc=10 trans=442 twin=7 w_lenonly=5 wmoving=3 wsame=1
+HIST {('D=', 'len'): 2, ('dch', 'len'): 3, ('dch', 'set'): 1, ('dch', 'wsame'): 1}
+MAX twin per run [1, ('rand seed 41 #321', 1, 2, 8)]
+MAX twin per vertex per run [1, ('rand seed 41 #321', 1, 2, 8)]
+RUND PASS

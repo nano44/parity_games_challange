@@ -1,0 +1,19 @@
+MODE files ../R2-N5-2T/lib2o_noref.lst 4 MUT -
+EP0_checks: 219
+LAMEND_checks: 68
+LAMEND_differs: 22
+LAMEND_differs_D0: 9
+LAMEND_differs_D1: 13
+LAM_checks: 1061
+REP_steps: 584
+RIII_checks: 584
+RII_checks: 584
+RI_checks: 1061
+epochs: 545
+phases: 477
+runs: 164
+LAMEND_example: (1, 'experiments/new/box21/instances/fts_ph16.pg#0@11 |D| 1 len 1 n 16')
+max_len_by_D0: (10, 'experiments/new/box21/instances/fts_best24.pg#0')
+max_len_by_D1: (32, 'experiments/new/box21/instances/fts_best24.pg#0')
+max_len_by_D2: (23, 'experiments/red/n5inj/instances/phase2_pk32.pg#0')
+RESULT OK violations=0

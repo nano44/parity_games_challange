@@ -1,0 +1,7 @@
+DnonE=1771 FRZ_n=10 Lr_fin=1780 Lr_gt_Md=0 Lr_lt_Md=338 Md_fin=1601 XIC=16344 XIC_post=12 hyp=1694 hyp_full=740 hyp_notH3=93 ii=1906 nonvac=4 nonvac_Lr_lt_Md=0 nonvac_content=0 nonvac_full=0 nonvac_notH3=0 runs=2308
+NONVAC ('experiments/red/so/instances/pftheta34_n32.pg', 5, 39, 32, 31, 31, False, 34, 3, 'content', 0)
+NONVAC ('experiments/red/so/instances/pftheta34_n32.pg rs', 6, 40, 32, 31, 31, False, 34, 3, 'content', 0)
+NONVAC ('experiments/red/so/instances/pftheta_cex_n32.pg', 4, 38, 32, 31, 31, False, 34, 3, 'content', 0)
+NONVAC ('experiments/si/orlens/instances/thclimb_n16_s12.pg', 1, 17, 16, 15, 15, False, 16, 1, 'content', 0)
+REL PASS
+done

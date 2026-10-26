@@ -1,0 +1,4 @@
+RETURN=1 dchg=10 fac_n=32 max_B=17 max_dchg=3 max_ratio=16.983659034785525 max_seg_dchg=2 max_tot_per_v=3 runs=1 runs_h3=1 seg_dchg=2 stretch_segs=1 trans_v=92 twin=2 twin_dchg=2
+BHIST [(17, 1)]
+RETURN ('instances/offret_n23.pg', 0, 3, 22, [131204, 264200, 264200, 131204])
+GAP PASS
