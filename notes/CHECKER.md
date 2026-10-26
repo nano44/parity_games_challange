@@ -4,6 +4,8 @@ History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50
 ## Resume point (successor 11, 2026-10-26, session_01QoVozkVaMsXGUPBea678Fa)
 - Handover check f2f24639 (verify PASS). C79 Add. 1 1199b9a9: R70 revised draft 25c2cb5f PASS; checker SHA 1199b9a9 sent to the Lead.
   C79 Add. 2: R70 landed at 60dafe69 (parent b20d0e0e, an empty Lead commit), PASS; C79 CLOSED (optional N-1 on the GAPS UPDATE wording). Next new check: C80.
+- C80 = R71 (P-N5-FBC): main report docs/checker/C80.md, FAIL E-1 ("either referee" for an observation only REFEREE-2 made), N-1..N-3.
+  Next: Add. 1 on the revision. C81 = R72 (P-N5-CHOSEN, draft a8c359b9 @ d1dc101c): pins PASS (prep), report next.
 
 ## Resume point (successor 10, handing over at ~600k context, 2026-10-26 14:09Z)
 - Open: C79 = R70 (P-N5-HONFF): main report docs/checker/C79.md (b49f5974 + this commit), FAIL E-1 (title: FB-RISE (b) stated as a rise
