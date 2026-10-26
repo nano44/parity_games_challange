@@ -12,7 +12,9 @@ Branch claude/referee-2, merged with trunk (--no-ff) before every push. REFEREE-
 | P-N5-EPC | docs/new/P-N5-EPC-box48.md 9f48ded7 (file sha1; l-new 81ab0b72) | 62b72f6e; §C c4975512 | all SIGN, EP-ASM 2nd term implication; FB-C′ stands without FBC-N3; DEAD guess reproduced (rho3_253_n32 starts 5, 7); N-EPC-1..6; §C identical with REFEREE 15 (a52feb43 + 58fd9535) |
 | P-N5-ROOT + add | docs/si/P-N5-ROOT-box20.md d3788bc0, docs/si/P-N5-ROOT-add-box20.md af1c7ad4 | 3febbfaf | all SIGN, no gap; DL-SPLIT condition met (R72); N-ROOT-1..7; FREEZE-G (b), (c) / RELAY-PIECE multi-interval rest on proof alone (union games, §2 of the report). §C NOT written yet (no word; REFEREE 15's ROOT report exists, REFEREE 16 writes its §C) |
 ### IN FLIGHT
-- ROOT §C: waiting for the Lead's word. Then: read docs/referee/R-N5-ROOT.md (only after the word), append "§C" to docs/referee-2/R2-N5-ROOT.md.
+- None. ROOT §C written on the Lead's word (18:52Z): identical with REFEREE 15 (619fccf2), map empty (commit in the push after the handover).
+- Lead 18:52Z: OFFMONO is to be reviewed WITH add (5911aba8), add2 (f2d123ef) AND add3 (OFFSET-MONO⁺, CHAIN-COUNT‴; L-NEW 29 freezes it, the
+  Lead sends its sha1) as one unit if convenient: add3 makes add/add2's cycle cuts unnecessary for the count, their lemmas stay true.
 ### NEXT (Lead 18:43Z queue, all pinned on trunk d5ad0929)
 1. P-N5-OFFMONO (d9705ac6) + add (5911aba8) + add2 (f2d123ef, docs/new/P-N5-OFFMONO-add2-box49.md; its §4 is code-level against si.py).
 2. P-N5-GCX (5a91bebb): L-RED R91 (UL_C) and R93 (C-ONCE_X) killed conjectures in it; no to-sign item.
