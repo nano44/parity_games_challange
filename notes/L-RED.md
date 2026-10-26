@@ -24,6 +24,9 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   no phase with f ≥ n (best f − n = −2); BGHM gadget collapses (≤ 1 iteration from every start; exact σ̄); Friedmann from τ*: 0 fallbacks
   (S4a does it). Tools experiments/red/fbr/ (fbr19 exact checker of FBRED / ACCEL / EPOCH / FB-2T; climbfr19; libfr19; bghm19; fried19;
   shrinkep19). Pins fr39_q4_n48, rho144_n32, lev74_n40, lev56_n48, bghm_k1_gap6_A, bghm_k3_gap4_A.
+- R76 §8 addendum: ALT 0 FAIL (8,260 changes); SAT-2 exercised (68 in sat68_n20); ρ3 84 / 253 / 293 / 666 at n 16 / 32 / 40 / 48 (≈ n², ≤ ITER·|Q|); f ≤ 14.
+- RESUME POINT (successor 19, 05:35Z): nothing running. Next: two-wave construction (two anchors, one chain, τ hiding σ̄ at each wave);
+  item (3) resume list (R74 §2.5, FB-CAP |U| ≥ 3 with f39_n48 seed, beta2 cascade).
 - Trap: climbfr19's BEST log line and best json disagreed once (cl_rise_81); pin numbers only from re-runs.
 - (superseded) RESUME POINT: nothing running. Next: item (3) resume list: FB-CAP climber with hard constraints
   |U| ≥ 3, f ≥ 2 seeded from f39_n48 (+ fbcap_eq_u4_n11); R74 §2.5 construction; beta2 cascade; phase-count climb toward R47 (b).
