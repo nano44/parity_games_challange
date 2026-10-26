@@ -296,3 +296,44 @@ Proof. λ_W is constant on S (P-N5-H3 §6, (ii)). The maximal blocks of transiti
 - N_split per run. Since the forbidden edges are persistent and structural (R_D → F_D across an offset gap), the natural next statement
   is Lemma P restricted to paths whose edges are never forbidden on S. That is a per-offset-class P^c (R50 FRZ-U's "paths inside R to o"
   with the offset class for R). Then one counts the transitions not covered by it. Not attempted yet.
+
+## 12. CONJECTURE LEVEL-COUNT (Lead's GO 07:20Z): tests, a dead strong form, and the step a proof would need
+Notation: inside one stretch_D segment of a run with (h3_D), for v with constant cycle nodes, OC(v) := the transitions at which Δ(v)
+changes, and RL(v) := the RISE LEVELS of v. A rise level is the top rank of P_k Δ P_{k+1} at a transition where s^W(v) or s^Ξ(v) rises.
+- CONJECTURE LEVEL-COUNT (count form): |OC(v)| ≤ |RL(v)| (≤ n).
+- Strong form INC ("levels only increase"): the rise level at successive offset changes of v strictly increases. It would give the count
+  form at once.
+### Lemma RULER (PROVED, elementary; WM-G / (SG) give exactly this and no more)
+For one score (s^W(v), or s^Ξ(v)) along a run on which v's cycle node is constant, two rises at the same level r are separated by a rise at
+a level > r.
+Proof.
+- A rise at level r flips the membership of rank r in the path set in the weight-increasing direction: an even r is added, or an odd r
+  is removed. Every lower rank may change.
+- A second rise at level r needs r flipped back in between. The transition doing that changes the set at level ≥ r.
+- At exactly r it would be a fall, against monotonicity (WM-G for W, (SG) for Ξ). So its level is > r, and it rises. □
+- Hence the rises of one score form a ruler sequence on the levels RL(v): |rises| ≤ 2^{|RL(v)|} − 1. By TWIN-GAP (i) each offset change
+  is a rise of one score, so |OC(v)| ≤ 2·(2^{|RL(v)|} − 1). That is all monotonicity gives.
+- The step the count form needs and RULER does not give: no level is used by two offset changes of v (two returns cannot reuse a level
+  with only a higher rise in between). Neither WM-G nor (SG) gives it. A proof must use the dynamics (S4a's arena and the delay
+  structure), not monotonicity.
+### DEAD: the strong form INC (instance)
+- experiments/si/rund/instances/incdown_n23.pg (sha1 18a5d000…) with incdown_n23.start (sha1 634dbc59…). Built by mkinc.py 2 4, which is
+  mkret.py with the safe exit s1 of the u1 route made a HIGH ODD vertex (3901 > h = 3800 > y2 = 3600).
+  - v = 22 leaves u1 for u2 because u1's route holds the odd s1: a rise at level 20, s1's rank.
+  - It comes back when the delay chain delivers the route through h without s1: a rise at level 19 < 20.
+  - Trace logs/trace_incdown_n23.txt: states 0-3 are one phase and one stretch_D (D = {4, 12}, gates unchanged, c = 0, (h3_D), no
+    fallback). lvl.py prints `INC ('instances/incdown_n23.pg', 0, 3, 22, [20, 19])`. The count form holds there (2 changes, 2 levels).
+- Mechanism: a return can be paid by REMOVING a high odd vertex and winning at a lower level. So rise levels at offset changes need not
+  increase. Variants mkinc.py m LG, with (m, LG) = (2, 5), (2, 6), (3, 5), (3, 6), give the same.
+### DATA for the count form (lvl.py; LC_V counts violations)
+| set | stretch_D segments | vertices with an offset change | max offset changes of one vertex in one segment | LC_V |
+| --- | --- | --- | --- | --- |
+| lib41 (≥ 2 Odd choices, n ≤ 48), S3 + 2 random starts | 138 | 12 | 1 | 0 |
+| random 𝒞^2O, 6,000, n 5-14, seed 62 | 824 | 0 | 0 | 0 |
+| offret_n23 / incdown_n23 | 1 / 1 | 1 / 1 | 2 / 2 | 0 / 0 |
+| mkalt K = 4, 8, 10 | 1 each | 1 each | 3, 7, 9 | 0 |
+- Natural data never has two offset changes of one vertex in one stretch_D. The count form is tested only on constructions, so it is
+  weakly supported: CONJECTURE, DATA on the constructions only.
+- Suggested attack for L-RED: combine mkalt's alternation with mkinc's odd-removal returns, so that a vertex alternates sides with rise
+  levels a, b, a, … (b > a). That is the pattern RULER allows and the count form forbids. Breaking it needs routes that reuse vertices
+  across time (positional routes at one time are disjoint after they diverge, but not across times).

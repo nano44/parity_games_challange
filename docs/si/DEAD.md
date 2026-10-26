@@ -224,3 +224,10 @@ AGAINST_W ('experiments/si/fb2o/instances/tcwult2_against_n8.pg', 0, 1, 0, 4, -1
   prints `RETURN ('…offret_n23.pg', 0, 3, 22, [131204, 264200, 264200, 131204])` (also in experiments/si/check.sh).
 - Family: mkalt.py K → K − 1 offset changes of one vertex in one stretch_D at n = Θ(K²) (K = 10: 9 at n = 182, offalt_K10.pg, sha1
   b03fe313…).
+
+## DEAD box 17c (L-SI successor 12, 2026-10-26T07:3xZ by date -u): the strong ("levels only increase") form of CONJECTURE LEVEL-COUNT
+- Statement killed: inside one stretch_D with (h3_D), the rise level of v at successive offset changes strictly increases.
+- Obstruction: a return can be paid by removing a high ODD vertex from the old route, winning at a lower level.
+- Instance: experiments/si/rund/instances/incdown_n23.pg (sha1 18a5d000…) with incdown_n23.start (sha1 634dbc59…; built by mkinc.py 2 4).
+  v = 22: offset-change levels [20, 19]. Pinned in experiments/si/check.sh (lvl.py prints INC (…, 0, 3, 22, [20, 19])).
+- The count form (|OC(v)| ≤ |RL(v)|) is NOT killed: CONJECTURE (docs/si/N5-RUND-box17.md §12).
