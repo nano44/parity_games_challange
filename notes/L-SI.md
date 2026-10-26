@@ -12,6 +12,12 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
 - Item 2 (FINAL-EACH / gap (i)): note docs/si/N5-ABSCYC-box22.md. Theorem ABS-DEPTH PROVED (cyclic model, under GEN): play final from step d*(v)
   (depth in the FINAL forest), so ≤ max d* ≤ n steps; induction on the final forest + N-MONO + MONO-SUCC. Without GEN false per vertex
   (absdepth.py --tie, n = 3); step bound held in all data (CONJECTURE ABS-DEPTH-TIE). FINAL-EACH not needed; kept as CONJECTURE.
+- Even side (Lead 17:47Z): N5-EXIT §8. E-ONEWAY proved (conditional); reduces to the classic count (ALTERNATION): pure C-intervals quiet after
+  < 2n (reading), cuts mostly Odd gate changes. evenside.py.
+- GCI-LEN (L-RED R91 §5): note docs/si/N5-GCILEN-box22.md. Theorem STATIC-DEPTH PROVED (landed premises): σ̄-constant interval + (H3) common
+  constant cycles + (H4) acyclic end-state dependency graph H_b + GEN_W ⇒ settled from d*(v), length ≤ max d* ≤ n − 1; PURE-END ⇒ (H4).
+  Corollary GCI-LEN-ρF. Sharp (b6_xs: length = d* = n − 3). Open: (G1) σ̄ changes inside a GCI (pp), (G2) (H3), (G3) (H4) impure (reader_L),
+  (G4) W-ties. staticdepth.py (GCI=1 mode = global C-intervals). reader_L files: scratch copies from l-red 1e851da4 (sha1 match R91).
 - Things only I know: exitx.py's UP/DOWN/DISJ: UP tested first (p1 on p2's (t+1)-play), DOWN = p2 on p1's t-play. RR_c is ~ phase length
   (EXIT-RED vacuous). NO-UP's hypothesis never occurs in data (vacuous check); EXIT-RHO's tie case occurs (rho_tie 2-3). climbexit.py from random
   C^kO seeds at n 12 is useless (phases ≤ 3); seed it with long instances instead.

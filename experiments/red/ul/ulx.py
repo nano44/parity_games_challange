@@ -140,7 +140,12 @@ def phase(g, E, R, i, j, Q, name):
                 A = U - MEET[k]; DU = D[k] & U
                 DD = {u for u in DU if R[k]["sb"][u] in A and R[k]["t"][u] in A}
                 off = {u: E.weight(R[k]["vs"][R[k]["t"][u]][1]) - E.weight(R[k]["vs"][R[k]["sb"][u]][1]) for u in DD}
-                st[k] = (A, DU, off)
+                fd = {}
+                for z in U - A:
+                    x, seen = z, set()
+                    while x not in seen and x not in D[k]: seen.add(x); x = R[k]["wn"][x]
+                    fd[z] = x if x in D[k] else None
+                st[k] = (A, DU, off, fd)
             a = s0
             for k in range(s0, e0 + 1):
                 ok = k < e0 and st[k + 1][0] <= st[k][0] and st[k + 1][1] == st[k][1] and st[k + 1][2] == st[k][2]
@@ -150,6 +155,14 @@ def phase(g, E, R, i, j, Q, name):
 
 def cint(g, R, name, i, c, U, big, a, b, st, UE):
     C["cint"] += 1; L = b - a; thr = len(U) - 1
+    perx = Counter()                                         # C-ONCE_X: X-migrations per vertex inside this C-interval
+    for k in range(a, b):
+        A0, _, off0, fd0 = st[k]; _, _, off1, fd1 = st[k + 1]
+        for z, u in fd1.items():
+            if u is not None and u in off0 and u in off1 and z not in A0 and fd0.get(z) != u: perx[z] += 1
+    if perx:
+        m = max(perx.values()); mx("XMIG_PER_VERTEX", m, (name, "phase@%d" % i, "c=%d" % c, "cint=[%d,%d]" % (a - i, b - i), {z: v for z, v in perx.items() if v == m}))
+        if m >= 2: C["C_ONCE_X_VIOL"] += 1
     pure = st[a][1] == set(st[a][2]); lamW = all(R[k]["lamW"] == R[a]["lamW"] for k in range(a, b + 1))
     info = (name, "phase@%d" % i, "c=%d" % c, "|U|=%d" % len(U), "cint=[%d,%d]" % (a - i, b - i), "pure" if pure else "impure",
             "|A_a|=%d" % len(st[a][0]), "|DcapU|=%d" % len(st[a][1]), "DD=%d" % len(st[a][2]), "lamW_const" if lamW else "lamW_moves",
