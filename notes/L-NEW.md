@@ -1331,3 +1331,4 @@ Successor 29 (Opus 5.5, D14/D18, L40), session_01NiWP12P8PXMiCBMBQxs3rM. Handove
   discount: Lemma 3.10 flux + Lemma 4.2 contraction → 5.5 → 6.4 elimination; no lexicographic analogue; [F] Cor. 9.9 puts VJ order at γ → 1.
   Item 2 (OFFADD-N2) was already done at bb92d772.
 - 19:0xZ Lead 18:52Z: P-N5-OFFMONO-add3-box49 FROZEN (OFFSET-MONO⁺, CHAIN-COUNT‴; §3 what becomes unnecessary; 9 quotes, 0 missing).
+- 19:2xZ Lead 19:04Z: N5-ALTLIT §5 (CONJECTURE ELIM / ELIM_Q, OPEN NO-LEAPFROG; E-ONEWAY's (W3) removed by OFFSET-MONO⁺ (READING), (W2) = the real window).
