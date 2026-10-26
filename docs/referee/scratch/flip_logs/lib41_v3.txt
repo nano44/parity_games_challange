@@ -1,0 +1,38 @@
+ADD_chk 529303
+FB_chk 20
+FC_chk 20
+FLIPS 1002
+LOCAL_chk 244183
+MINW_chk 19397
+MINW_walks 96080
+N1 982
+N2 98
+N3 40
+N3L_chk 12
+N3L_eq 3
+NC_chk 1002
+PHASES 5365
+REAL_ex 3
+REAL_nonc 2422
+RELAY 356
+RHO_TRANS 3786
+RHO_oncycle 26
+ROOT2_chk 3786
+ROOTC_LIT_chk 30
+ROOTC_LIT_viol 26
+ROOTC_chk 7036
+ROOT_chk 7026
+ROUTE 3943
+RR_chk 356
+RUNS 1101
+SF_chk 3497
+STAT_chk 1767
+TRANS 12093
+skip_big 45
+EX ('ROOTC_LIT', 'experiments/n5-exhaustive/instances/n4_thch_0.pg/0', 0, 1, [((0, 2), ([2], 1), ([2], 0))])
+EX ('ROOTC_LIT', 'experiments/n5-exhaustive/instances/n4_thch_0.pg/1', 0, 1, [((0, 2), ([2], 1), ([2], 0))])
+EX ('ROOTC_LIT', 'experiments/n5-exhaustive/instances/n4_thch_0.pg/2', 0, 1, [((0, 2), ([2], 1), ([2], 0))])
+EX ('REAL_nonc', 'experiments/new/box28/instances/fb32_inr2_final.pg/0', 2, 1, 0, 1)
+EX ('REAL_nonc', 'experiments/new/box28/instances/fb32_inr2_final.pg/0', 3, 1, 0, 1)
+EX ('REAL_nonc', 'experiments/new/box28/instances/fb32_inr2_final.pg/0', 4, 1, 0, 1)
+exit 0
