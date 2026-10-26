@@ -7,3 +7,6 @@ DATA, not proof. Uses experiments/new/box43 (multi.rand_ckO) and box21 (n5x: SPE
   - out/rand3000.txt: `eprestrict.py 4 8 --rand 3000 5 18 111`.
   - out/lib41_mut.txt: `EPR_MUT=1 eprestrict.py 0 7 --list ../box41/lib41.txt` (mutation bites: XI_V 2,788, REP_V 1,615).
   All three: XI_V, OPT_V, REP_V, EP0_V = 0 (unmutated), DIV = 0.
+- itcheck.py STARTS SEED (--list FILE | --rand ...): in-phase states with (u, sigma-bar(u)) in I_tau (IT1), |D| = 1 among them, and W = Xi
+  there (Lemma TIE-W). Runs 06:10Z-06:12Z: out/itcheck_lib41_k2.txt (`itcheck.py 2 7 --list ../box41/lib41.txt`), out/itcheck_rand3000.txt
+  (`itcheck.py 4 8 --rand 3000 5 18 111`): IT1 65 (|D| = 1: 0) and 25 (|D| = 1: 7, all with W = Xi).
