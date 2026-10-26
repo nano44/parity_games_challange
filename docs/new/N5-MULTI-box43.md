@@ -139,6 +139,26 @@ return at n ≤ 4 is an own-cycle-node switch. Files: experiments/new/box43/resu
 The k = 2 phase of 13 (n 16) is a Bellman-Ford chain: λ ≡ 0 after τ settles, one length switch per step (≤ n − 1). No growth faster
 than linear in n was found in any measure; T stays far below 2^k − 1 for k ≥ 3. lib41's 135 frontier games (hard families: tc, tc+,
 counter_*; |D_k| up to 106): D_k changes at most 5 times inside a phase (𝒞^1O games of lib41: 10). DATA only; small n.
+### 3.3b Route Δ climbs from lib41 frontier seeds (Lead 22:48Z; DATA, 22:55-23:28Z by date -u)
+Seeded climbs (climb.py --seed; cl7: size may grow to NMAX, ~15k-20k steps; cl8: size fixed at the seed's, 12k steps):
+| seed (n) | objective | seed value | best | at n | best / n |
+| --- | --- | --- | --- | --- | --- |
+| mei_h4 (35) | TJ | 2 (Mei start) / 3 (S3) | 31 | 40 | 0.78 |
+| wide_h16 (32) | TJ | 16 | 30 | 40 | 0.75 |
+| sym_h8_s1 (16) | TJ | 3 | 13 | 24 | 0.54 |
+| mei_h2 (19), fixed size | TJ | 1 | 17 | 19 | 0.89 |
+| mei_h4 (35), fixed size | TJ | 3 | 17 | 34 | 0.50 |
+| mei_h8 (67), fixed size | TJ | 7 | 26 | 67 | 0.39 |
+| frz40 (40) | D-changes / phase | 5 | 16 | 44 | 0.36 |
+| frz40 (40), fixed size | D-changes / phase | 5 | 14 | 40 | 0.35 |
+Every value found is at most n, and under equal budgets best / n FALLS with n (0.89, 0.50, 0.39). No growth instance. Kept (n5.py +
+check_sol2.py "zielonka(oink zlk) OK strategies verified"):
+- instances/tj17_n19.pg (sha1 32baf05f8c56cbe86714609657f5e6a2aaf1094f; frontier, k 6; n5.py 22 iterations, 0 fallbacks): ONE joint
+  λ-run with 17 τ-changing transitions (on 𝒞^1O at most d − 1 in the whole run).
+- instances/dch16_n44.pg (sha1 f24a6418e571ac11432404ca6f93b1539e0f750f; frontier, k 4; n5.py 57 iterations, 4 fallbacks): one phase
+  of 44 transitions (= n) in which D_k changes 16 times (R_D 27 times), τ constant.
+Reading: Δ2 (D-changes per phase ≤ poly(n)) has no counter-evidence; the long phase of dch16_n44 is a test case for Δ1.
+
 ### 3.4 Open in this section
 Whether n 5 has a RETN or TX instance (n 5 is too large for exhaustive enumeration in Python here); a growing family. Both
 mechanisms seen (stale-σ simultaneity; Odd-internal improvement after Even stops) give one extra τ-change per instance; no

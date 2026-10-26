@@ -20,3 +20,7 @@ All outputs are DATA. Engine: box21/n5x.py step (= SPEC S1-S5; n5x.trace(check=T
   mirror.py --rand 3000 4 14 11: 0 violations. dblfb.py --list lib41: 781 fallbacks, 54 two-sided (15 runs).
   dset.py --list lib41: 1O maxD 1, D-changes/phase 10; frontier (135 runs) maxD 106, D-changes/phase 5.
 - results/: exh2 tables (n 3 canonical / all starts, n 4 canonical (+ RETN), n 4 frontier).
+- famcount.py: choice vertices per player in the hard families (results/famcount_N2_4_8.txt).
+- instances/tj17_n19.pg (sha1 32baf05f…): frontier, one joint lambda-run with 17 tau-changes; n5.py 22/0; Oink zlk OK.
+- instances/dch16_n44.pg (sha1 f24a6418…): frontier, one phase of 44 transitions with 16 D_k changes; n5.py 57/4; Oink zlk OK.
+  Both from seeded climbs (climb.py --seed experiments/red/mei/instances/mei_h2.pg, ../red/n5inj/instances/frz40.pg).

@@ -102,3 +102,33 @@ Targets (Lead 21:00Z):
 - CASC-B's TB-even prefix under A1 re-routing: either a construction that enters the regime (a W-flat, kind-stable U3 transition with
   a kind-B switch), or a referee reading.
 - A post-freeze kind change (KIND-MONO / DIR content): no instance from any search.
+
+## 7. Addendum (22:52Z-23:32Z, date -u; Lead 21:46Z items 2 and 5)
+- Theorem RUN (L-SI §6): the max over fallback-free runs of (Ξ-changes on R) / (Δ·|R|⁴) is:
+  - 0.0011 on lib41 (S3; longest run 40, max 40 Ξ-changing transitions);
+  - 0.0123 on 2,879,100 more random runs (seed 45, n 6-18, S3 + 3 random starts).
+  - Against |R|²: 0.16 (lib41), 0.22 (random); a climb on this ratio (kw_n24 seed, 52,040 evaluations to its best) reached 0.11.
+  - Far below the bound. Since L-SI's LEN gives ≤ (r − 1)² in the m* = c_θ case, the r² ratio is the sharper probe.
+- That random run (seed 45): 0 FAIL. It also reached three bounds and regimes:
+  - FRZ-U margin 0, the bound attained again (from S3 or a start pair);
+  - CW-INT margin 0;
+  - the CASC-B regime, ONCE: 1 kind-B switch at a W-flat, kind-stable U3 / U23 transition, with slack −2 (step index = |π_v| − 4).
+    So §0's "CASC-B never reached" holds for lib41 and the first random run only. Not pinned: the saver keeps failures only.
+- KIND-MONO (post-freeze), with a climb on the longest post-freeze part of a U3 / U23 c_w ≻ c_θ run:
+  - from kc18_n24: post-freeze parts up to 17 transitions, 0 kind changes there (344,652 evaluations);
+  - from kt6_n58: no U3 / U23 c_w ≻ c_θ run (580,029 evaluations).
+  - From kchain4 (the first km climb): no such run either.
+  So the post-freeze kind-change regime stays VACUOUS, even with long post-freeze runs present.
+- PAR: 838,491 more states with c_w ≻ c_θ, all with c_w even.
+
+## 8. Addendum (23:40Z, date -u; Lead 23:22Z): REFEREE 11's CASC-B witness
+- kw18.py on docs/referee/scratch/kw_logs/cascb_witness.pg (sha1 3bda89ced249b28823a3c275eec5d01a18d502e9), SPEC S3:
+  - CASCB_switches 1 with slack −1. The kind-B switch happens at step 0 of its W-flat, kind-stable run, against the bound |π_v| − 2.
+  - Stretch type U23. c_θ = o (θ = (2, ∅, 0)). w = (14, ∅, 2), so c_w = 14, which is even and above c_θ.
+  - DIR_wflat 1, 0 FAIL.
+  - So my checker SEES the regime. This is case (a): R73 §0's "0 everywhere" is a statement about my corpus and climbs, and those never
+    reached it. lib41 does not contain this file.
+  - The U3x filter is "¬H2, c_w ≠ o, rank(c_w) > rank(c_θ)"; it does not exclude c_θ = o.
+- Rows that change: none. §0's wording "0 everywhere" is corrected to "0 in lib41, the first random run and the climbs". §7 already
+  reports one occurrence in the second random run (slack −2), and this file is a second, at slack −1. CASC-B is tested on these two
+  instances and holds on both.

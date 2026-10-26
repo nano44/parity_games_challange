@@ -49,7 +49,7 @@
 - Honest limits: (i) SUBCLASS 𝒞^1O, inside a phase; Corollary PHASE is conditional on f. (ii) Thin data: KIND-MONO is VACUOUS after the
   freeze in all data (REFEREE: 0 post-freeze kind changes in 2.46 M post-freeze U3 / U23 transitions; L-RED R73; both lanes); W-ONCE has 2
   checks on REFEREE's engine; CASC-B's hypothesis is exercised on REFEREE's engine (Addendum 1, cascb_witness.pg, within its bound) and 10 times in
-  REFEREE-2's climbs (its bound reached with slack 0), never in L-RED's R73 data (being re-checked); the c_w-odd branches are empty by PAR. (iii) FRZ-U's index |R| − 1 and CW-INT's deg(c_w) − 1 are attained in
+  REFEREE-2's climbs (its bound reached with slack 0), and once in L-RED's R73 §7 random runs (l-red db07e8e4, slack −2, not pinned); the c_w-odd branches are empty by PAR. (iii) FRZ-U's index |R| − 1 and CW-INT's deg(c_w) − 1 are attained in
   data (L-RED R73: frzu_tight_n14, cw11_n24).
 - Data (DATA, not proof; one Odd choice vertex asserted on every game): REFEREE (own kw_probe.py, kw_climb.py on rl_engine): library 253
   games × 4 starts and climbs (2.24 M evaluations): Corollary PHASE inequalities 2.77 M phases, H-PATH 21.9 M vertex-states, PAR 5.1 M
@@ -60,7 +60,7 @@
   (N-KW-5; index r − 1 = 47 never exceeded); mutations frz0 and par fire, casc does not on saved data. L-RED successor 18
   (docs/red/R73-*.md, l-red 896aea76; own kw18 tools): lib41 and 4,267,132 random runs, 0 FAIL; PAR 0 odd cases in 1.24 M qualifying
   states. Lane (kwcheck.py, kwclimb.py): ~13 M states, 0 failures.
-- Signatures: REFEREE docs/referee/R-N5-KW.md (referee 56ac6538, successor 11; Addendum 1 1d6cbf32; §C RSC-PENDING): W-ONCE, Facts A0 / A /
+- Signatures: REFEREE docs/referee/R-N5-KW.md (referee 56ac6538, successor 11; Addendum 1 1d6cbf32; §C a6e50742 + stamp fix 776281ac): W-ONCE, Facts A0 / A /
   B, FRZ-U, LEN, PAR, H-PATH, KIND-MONO, CASC-B, CW-INT, RUN, KW-S, PHASE SIGNED; E-SEG SIGNED WITH GAP KW-1 (one-line repair); notes
   KW-N1..N5. REFEREE-2 docs/referee-2/R2-N5-KW.md (referee-2 8a47fd92, successor 12; §C R2SC-PENDING): all SIGN, no gap; notes N-KW-1..6.
   §C (both): CSUM-PENDING.
