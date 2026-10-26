@@ -1,7 +1,21 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point (successor 11), updated 2026-10-25T22:44Z by date -u (Opus 5.5, D15; session_01VH2ckvgGP9CGkb8Suno5f1)
+## Resume point (successor 11), updated 2026-10-26T02:00Z by date -u (Opus 5.5, D15; session_01VH2ckvgGP9CGkb8Suno5f1)
+- ALL QUEUED WORK DONE. Nothing in flight. Waiting for the Lead's next item.
+| packet | my report | §C vs REFEREE-2 |
+| --- | --- | --- |
+| P-N5-NEEDB | (succ. 10) 008ad8ab | 7dbd5118 (R2 ef433d32; N-NEEDB-5 confirmed: "THR => M >= 0" FALSE as stated) |
+| P-N5-KW (R50) | 56ac6538 + Add. 1 1d6cbf32 | a6e50742 (R2 8a47fd92; KW-1 = N-KW-3) |
+| P-N5-DUAL | cdb187c7 | 78db369b (R2 73c2b4a1; DUAL-1 = N-DUAL-1; N-DUAL-3 READING O(n^17) on C^1E) |
+| P-N5-1O | 4298dae9 | e785b8e1 (R2 04c2d708; OUT-1 = N-1O-1; N-1O-2 O(n^17)) |
+| P-N5-FX | (succ. 10) 843ba1f8 | 9f736349 (R2 83a3e8c7; (b) unconditional with R48; o = c_theta branch from R2) |
+| P-N5-NH-box42 | (succ. 10) a47f8540 | 5fc234ba (R2 d2142087) |
+| R-N5-START audit | 4e440bd5 + Add. 1 (4298dae9): every C^1O-chain result start-free, read in full | — |
+- Tools added: kw_probe/kw_climb/kw_cascb_find (kw_logs/), dual_probe/dual_climb (dual_logs/), needb5_check, onecheck (one_logs/).
+- Possible next: a Lemma OUT on every game packet (proof has no C^1O step, per R-N5-1O §5 and R-N5-DUAL §C N-DUAL-3).
+
+### (earlier, 22:44Z)
 - DONE: §C NEEDB (7dbd5118) vs R2 ef433d32: identical, no gaps; N-NEEDB-5 CONFIRMED ("THR => M >= 0" FALSE as stated, block_9501 from
   its start pair; scratch/needb5_check.py); N-NEEDB-4 witness start pair invalid for witness_xg_12004.pg, XG 0 in 2,000 random starts.
 - DONE: P-N5-KW (pin d9291be0; packet sha1 c0b0111f, addendum 8d6bfb3c): docs/referee/R-N5-KW.md: all SIGNED except E-SEG SIGNED WITH

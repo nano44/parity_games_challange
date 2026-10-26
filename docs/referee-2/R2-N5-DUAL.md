@@ -106,3 +106,28 @@ dual phases 116 (xsn91_n48.pg); MIRROR (a)'s σ-change bound d_e − 1 is attain
 - N-DUAL-2 (§2 table): rows used by the 𝒞^1O chain are covered by R-N5-START (+ Addendum 1) and R2-N5-1O §3; other rows unchecked here.
 - N-DUAL-3 (READING): with P-N5-1O signed, (H-N5) holds with L(n) = T*(n, n², n, n), so MIRROR gives an O(n¹⁷) iteration bound on 𝒞^1E
   (to be packeted; output correctness there is a separate step).
+
+## §C (2026-10-26 01:5xZ by date -u; REFEREE-2 successor 13, Opus 5.5, D15): comparison with REFEREE's R-N5-DUAL
+Read after my report was pushed (73c2b4a1, on trunk d7d9d7d2): docs/referee/R-N5-DUAL.md (sha1 fbbb4d92…, REFEREE successor 11). Lead 01:52Z.
+| statement | REFEREE | REFEREE-2 | same? |
+| --- | --- | --- | --- |
+| DUAL, first sentence | SIGNED | SIGN | yes |
+| DUAL, second sentence | SIGNED WITH GAP DUAL-1 (wording) | SIGN, N-DUAL-1 (the same wording point) | yes in substance (C.1) |
+| MIRROR (a) | SIGNED | SIGN | yes |
+| MIRROR (b) | SIGNED as an implication | SIGN as an implication | yes |
+| MIRROR (c) | SIGNED | SIGN | yes |
+| Φ-kO | SIGNED | SIGN | yes |
+| ENDGAME | SIGNED | SIGN | yes |
+| §2 table | READING checked, rows spot-checked, no proof audit | partly checked (N-DUAL-2) | yes (C.2) |
+- C.1 Joint gap map: DUAL-1 = N-DUAL-1, found independently, same repair ("agree on states 0, …, j; the first possible difference is at state
+  j + 1"). I ACCEPT REFEREE's grading as a wording gap closed by that one line; the second sentence is then signed by both.
+- C.2 §2 table / (H-N5). REFEREE (23:05Z-23:30Z) left the proof-by-proof start audit open and called (H-N5) "the open 𝒞^1O per-phase
+  question". Since then: R-N5-START + Addendum 1 (REFEREE) and my R2-N5-1O §3 audited, line by line, every row the 𝒞^1O chain uses, and
+  P-N5-1O (Theorem 1O-POLY, signed by both, R2-N5-1O §C) bounds every phase from every state by T*. So (H-N5) holds with L(n) =
+  T*(n, n², n, n) (my N-DUAL-3, READING; the Lead is routing it as an assembly packet). The rows the chain does not use stay unaudited
+  in both reports. No disagreement: REFEREE's text predates P-N5-1O.
+- C.3 Data: both independent engines reproduce the packet's two-sided-fallback figures (REFEREE: 14 runs / 51 on the 367 lib41 files with
+  n ≤ 64; mine: 15 / 54 on all 412 files, = the packet's), first plain-mirror difference exactly at j + 1 in every such run, prefix property
+  (MOFC / MIRC) on every sampled state; REFEREE's climbs (135,671 runs with two-sided fallbacks) cover my thin spot (66 library runs).
+  REFEREE also tested Ω + 2 invariance directly (OM2); I did not — accepted as additional evidence.
+- C.4 Result: verdicts identical in substance; joint gap list DUAL-1 = N-DUAL-1 (closed by the one-line repair). Nothing open.

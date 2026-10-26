@@ -115,3 +115,31 @@ PHIK (distinct τ's ≤ ∏ deg(o_i), phases ≤ n(n − 1) + ∏ deg(o_i), and 
 
 ## 8. Notes for the fixes file
 - DUAL-1: second sentence of Lemma DUAL: "agree on states 0, …, j; the first possible difference is at state j + 1".
+
+## §C. Comparison with REFEREE-2 (R2-N5-DUAL.md, referee-2 73c2b4a1, REFEREE-2 successor 13) (Opus 5.5, D15)
+Written 2026-10-26T01:55Z by date -u, REFEREE successor 11. Routing: the Lead's message of 01:52Z (Lead's stamp). My report (cdb187c7) was pushed
+before I opened R2-N5-DUAL.md.
+### C.1 Verdicts
+| statement | REFEREE | REFEREE-2 |
+| --- | --- | --- |
+| Lemma DUAL, first sentence | SIGNED | SIGN |
+| Lemma DUAL, second sentence | SIGNED WITH GAP DUAL-1 (wording) | SIGN (N-DUAL-1, wording) |
+| MIRROR (a), (c) | SIGNED | SIGN |
+| MIRROR (b) | SIGNED as an implication | SIGN as an implication (N-DUAL-3) |
+| Φ-kO, ENDGAME | SIGNED | SIGN |
+| §2 table | READING checked; statements spot-checked; proofs not audited (my §6) | partly checked (N-DUAL-2) |
+| §3 | not signed | not signed |
+Both sign everything. The one difference is the label of the shared wording item DUAL-1 = N-DUAL-1 (C.2).
+### C.2 Joint note map
+| REFEREE | REFEREE-2 | ruling |
+| --- | --- | --- |
+| DUAL-1 (second sentence states two agreement points; correct: agree on 0..j, first possible difference at j + 1) | N-DUAL-1 (the same) | SAME, found independently. It is wording (the proof is right and the sentence's "i.e." clause is the right one); I do not object to the precision label. One fixes line. |
+| §6 (table: rows unaudited when I wrote it) | N-DUAL-2 (rows used by the 𝒞^1O chain are covered by R-N5-START + Addendum 1 and R2-N5-1O §3; other rows unchecked) | ACCEPTED, and it updates my §6: since then I audited the 𝒞^1O chain's rows in full (R-N5-START, Addendum 1). Rows outside that chain stay unaudited by me. MIRROR does not need them once (H-N5) is taken from P-N5-1O. |
+| — | N-DUAL-3 (READING: with P-N5-1O, (H-N5) holds with L(n) = T*(n, n², n, n) = O(n¹⁵); MIRROR (b), (c) give O(n¹⁷) iterations on 𝒞^1E from every start pair; output correctness would need Lemma OUT beyond 𝒞^1O) | AGREED as a READING. Checked: T* is non-decreasing in m, d_o, Δ (R-N5-1O §2), so L(n) bounds the first phase from every state of every 𝒞^1O game on n vertices, including G^d; (n(n − 1) + d_e)(L + 1) = O(n² · n¹⁵). On output: Lemma OUT's proof uses R36 (c) (every one-player game) and R21 (a)'s parenthetical, whose proof is game-general (R-N5-1O §5, §C N-1O-4), and SPEC definitions; I see no 𝒞^1O step in it. So the 𝒞^1E assembly needs (i) Lemma OUT stated and signed on every game, (ii) Lemma BIT (game-free). Not signed here; for the Lead to packet. |
+### C.3 Data
+REFEREE-2: 824 lib41 runs (33 with two-sided fallbacks, all first differing at j + 1), 1,006 𝒞^1O library runs, 6,000 random games incl.
+2,000 𝒞^1E; 0 violations. Mine (§5): 390,158 climb runs with 297,779 two-sided fallbacks, all first differing at j + 1; 0 failures. No
+disagreement.
+### C.4 Result
+P-N5-DUAL signed by both; DUAL-1 = N-DUAL-1 (wording). With P-N5-1O, the 𝒞^1E iteration bound O(n¹⁷) is a READING awaiting its own packet,
+together with Lemma OUT on every game.

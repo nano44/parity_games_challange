@@ -64,3 +64,20 @@ third of the bounds (max ratio 0.660). The bounds are therefore not tested near 
 ## 5. Honest limits
 - The cited R30 (c) and R34 (f) were not re-proved here (landed, both referees). FB-PHASE (lane cross-check) not read.
 - Data stay far from the bounds (≤ 0.66 of FX (a)); the slack is a property of the bound, not a check of tightness.
+
+## §C (2026-10-26 01:5xZ by date -u; REFEREE-2 successor 13, Opus 5.5, D15): comparison with REFEREE's R-N5-FX
+Read after my report was pushed (83a3e8c7, on trunk d7d9d7d2): docs/referee/R-N5-FX.md (sha1 d270ed61…, REFEREE successor 10). Lead 01:52Z.
+| statement | REFEREE | REFEREE-2 | same? |
+| --- | --- | --- | --- |
+| FX (a) | SIGNED (FX-N1: weaker than landed R30 (c)) | SIGN (N-FX-1: the same) | yes |
+| FX (b) | SIGNED, conditional on FB-POLY with the FBP-1 repair (FX-N2) | SIGN, unconditional now that R48 has landed (N-FX-2: repaired form; o = c_θ case) | yes (C.2) |
+| §2, §3 | not signed (FX-N3 scope) | not signed | yes |
+- C.1 Joint gap map: empty. FX-N1 = N-FX-1 (found independently, same comparison: weaker by (n − 1)·X_SN). FX-N2 = N-FX-2's first half
+  (F* needs FB-POLY's repaired end bound). My N-FX-2 adds the o = c_θ case (f ≤ |U| ≤ n ≤ F* for n ≥ 3; f ≤ 1 for n = 2), which REFEREE's
+  report does not mention; it holds, so it is a wording addition, not a disagreement. FX-N3 (scope of §2 READINGs) accepted.
+- C.2 (b)'s condition: REFEREE wrote at 19:52Z-20:13Z, when FB-POLY was in review. It has since landed as RESULTS R48 with FBP-1 / FBP-2
+  repaired (both referees' §C), so both signatures of (b) are now unconditional. FX-N1's suggestion (cite R30 (c); (b)'s constant improves)
+  is what P-N5-1O does.
+- C.3 Data: REFEREE's (L) 990 phases, X 3,661, max 100 (S3); mine 6,282 library phases (S3 + random), max X 100 on the same file
+  (xsn91_n48); both 0 failures; both note the bounds are far from reached.
+- C.4 Result: verdicts identical; nothing open. Fixes-file lines (optional): FX-N1 = N-FX-1; FX-N2 = N-FX-2 (with the o = c_θ sentence).
