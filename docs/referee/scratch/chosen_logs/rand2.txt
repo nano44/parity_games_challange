@@ -1,0 +1,27 @@
+CHAIN_END_CYC 12
+CHAIN_END_ROUTE 163
+CHAIN_MAXLEN 5
+CHAIN_chk 175
+CHO_chk 175
+CNTB_chk 580
+CTRL_switch_nonH 3100
+EV_CYC 36
+EV_RELAY 175
+EV_ROUTE 780
+H_states 58279
+H_states_Qc2 24773
+PHASES 49289
+RUNS 15000
+TOG_ex 3
+TOG_seen 8
+TOG_with_rho_at_e 8
+TVE_Qc0 921
+TVE_Qc1 268
+TVE_Qc2 159
+TVE_Qc3 522
+TVE_chk 1870
+TVG_chk 82
+EX ('TOG', 'rand493/1', 1, 4, 15, 6, True)
+EX ('TOG', 'rand493/3', 2, 4, 15, 6, True)
+EX ('TOG', 'rand997/2', 2, 9, 16, 0, True)
+EXIT 0
