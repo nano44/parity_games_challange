@@ -1,0 +1,7 @@
+it 9 excess -5
+it 57 excess -4
+it 115 excess -3
+it 208 excess -2
+it 1953 excess -1
+done best -1
+EXIT 0
