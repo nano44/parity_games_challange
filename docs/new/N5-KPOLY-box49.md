@@ -248,3 +248,68 @@ FT_c := the in-phase transitions of P at which some z ∈ U_c ∖ {c} has κ_t(z
     strictly up, the new option tied at t; the ODDC (u3ev_n16) has the old option's M rising to 8192.
   - tieclimb.py (4 climbs × 3,000 steps from u3ev_n16 / klcount_n16, n ≤ 24, objectives ODDC / TIE): best ODDC_c 1, best TIE_c 1 per phase and class;
     292,764 characterisation checks on climbed games, CHAR_V / FT_V / FTB_V 0.
+
+## 12. Queue item 3 (b): §9 (a)'s recursion, measured; where the count really sits (READING; DATA; one DEAD guess; written 18:09Z by date -u)
+- (i) PROVED (elementary, a re-reading of P-N5-OFFMONO-add §2's sum form): the κ(q)-count needs NO recursion over the chain. By CHAIN-COUNT″'s
+  sum form, κ(q)-changes ≤ |ZC″_c| + Σ_{x ∈ Q_c} OR(x), OR(x) := the transitions at which off(x; par_{t+1}(x)) rises strictly (each κ(q)-change
+  is charged to one level x of its chain and one transition, injectively in the transition). The sum is ADDITIVE over levels and the same
+  for every q. §9 (a)'s recursion appears only if OR(x) is bounded THROUGH R61 (b) SAT-k, whose window is per p-run (one early segment per
+  κ(p)-change); that recursion, OR(x) ≤ A_x + E·(κ(p)-changes + 1) with κ(p)-changes ≤ |ZC″| + Σ_{x′ above x} OR(x′), is exponential in the
+  depth for every E ≥ 1 (OR(x_h) ~ (1 + E)^h). So it does NOT close linearly by itself; the way out is to bound OR(x) directly. ANSWER to (b): no.
+- (ii) DATA (experiments/new/box48/orun.py; out/orun_lib41_n34_k2.txt, out/orun_long7.txt): per x-piece (cut EXIT_x ∪ ZC″) and p-run inside it.
+  - R61 (b)'s late window is NEVER entered: LR = 0 (no strict offset rise after the w_c-th fallback of its p-run) in all 1,466 p-runs of lib41
+    n ≤ 34 (S3 + 2, seed 7) and all p-runs of the seven long instances (nep90, nep76, long121, three climbed n-40 games, the n-80 snap). Every
+    rise is EARLY. SAT-k's |S| ≤ d_x therefore bounds nothing that happens in these runs.
+  - The rises sit at DIRECT levels (p = c, off(x; c) = κ(x)): lib41 2,282 of 2,300 rises (relayed levels: 18, at most 2 per p-run); nep90 95 / 99;
+    long121 35 / 40; the n-80 snap 186 / 191; exception nep76 36 / 76 (relayed max 15 in one p-run). One p-run of a direct level carries up to
+    51 rises (lev_l_x n 32, d_x 14, no fallback AT a rising transition), so "≤ d_x values per p-run" (HA) fails 102 times on lib41.
+  - So the open quantity behind D is the number of κ-changes of DIRECT terminals inside a phase, mostly inside fallback-free runs (RESULTS R58
+    (d) DIR bounds a direct terminal's κ only after the phase's w_c-th fallback, a window these phases also rarely reach).
+- (iii) DEAD (successor 29's guess FRZ_c, a general-game form of RESULTS R50 (c) FRZ-U): "in a fallback-free run of a phase, M(κ(z)) is
+  constant for every z ∈ U_c ∖ {c} from the run's (|U_c| − 1)-th transition on". Killed by experiments/red/so/instances/so_th_n32.pg (L-RED; sha1
+  ae9126ad1bf963114bdd56b6e50c8c1cc571779e) from the S3 start: 31 late M-changes (out/frz_so_th_n32_S3.txt), one at a direct Odd choice vertex
+  (z = 3, c = 5 even, w = 31, at position 31 of a 33-transition run, M −50331648 → 16777216). Same on pftheta_cex_n32 (53) and
+  thclimb_n16_s12 (12). All violations on lib41 (frz.py: 128, 5 at direct terminals) are in classes with ONE Odd choice vertex, at positions w to
+  w + 2. Obstruction: R50 (c) freezes the route ABOVE m* (the more relevant of c_θ and the W-frame's c_w), not above c; between c and c_w the
+  path set may still move. The seven long instances have 0 late M-changes. OPEN: the right general-game frame (an m*_c per class).
+- (iv) So the route to G-N5-TIME through OFFMONO + CHAIN-COUNT″ now needs, per phase: EXIT_x (L-SI 18), OR(x) at relayed levels (small in
+  data) and the κ-changes of direct terminals (the bulk). The last is the multi-class analogue of what R50 / R51 settle on 𝒞^1O.
+- (Successor 29) §11 is frozen, with full proofs and the code-level part separated, as docs/new/P-N5-OFFMONO-add2-box49.md; that addendum governs.
+
+## 13. Record: QP_c on long phases (§0 and N5-NCONF §12 OPEN (1)) is answered by L-RED's R92 (DATA, not mine; written 18:24Z by date -u)
+docs/red/R92-qpc-ladder.md (l-red 1e851da4, L-RED successor 22; opened, §1-§2): the LADDER family (experiments/red/ul/mkladder.py k [ent]), n = 3k + 12,
+one phase with no fallback. D0 form: QP_c = k + 2 = D0, phase length k + 1; ENT form: QP_c = k, ENT = k − 1, N_ep = NCONF = k. One class (one
+Bellman-Ford clock read by every gate), so not disjoint copies. Counted with this lane's qp.py unmodified; phrestrict.py (RESTRICT_H) holds,
+its MUT=1 bites. So QP_c grows LINEARLY in n within one class, on phases of length ≈ n/3: not a long-phase growth law, and RESTRICT_H is a
+reduction, not a size bound (Lead's reading of 18:03Z). §0's DATA (QP_c 36 at n 80) is consistent with it.
+
+## 14. REFEREE's OFFADD-N2 closes: OFFSET-MONO needs no honest-cycle hypothesis, so CHAIN-COUNT needs no cut but EXIT (PROVED, every game; DATA; Lead's note of 18:25Z; written 18:34Z by date -u)
+Setting and notation as P-N5-OFFMONO-box49 §0-§1 (frozen; not edited). REFEREE 15's addendum report (docs/referee/R-N5-OFFMONO-add.md, c2a97189;
+opened at c2a97189, l. 40-44 and 58-60) states this as OFFADD-N2, a CONJECTURE candidate, with 0 failures in 4,006 + 1,371 checks; its
+OFFMONO-N4 found that dropping the hypothesis never bites at 4,006 cycle levels.
+- Lemma OFFSET-MONO⁺ (PROVED). OFFSET-MONO holds for every q ∈ Q ∩ U_c, q ≠ c, at every in-phase transition, with no hypothesis on honest
+  cycles: off_{t+1}(q; p) ⪰ off_t(q; p) for p := par_{t+1}(q).
+  Proof. If q is on no honest cycle at t: OFFSET-MONO. Let q ∈ Z_t(c) (add1 (CYC-ID)). Step 1 of OFFMONO's proof (the path π from y2 := σ̄_{t+1}(q)
+  to p, backwards induction with (Aκ) at t + 1, (SW), (M1κ)) never uses q's position at t, so off_{t+1}(q; p) ⪰ κwt_c(q) + κ_t(y2) − κ_t(p).
+  By (Aκ) at t (q ≠ c), off_t(q; p) = κwt_c(q) + κ_t(y1) − κ_t(p), y1 := σ̄_t(q). It remains to show κ_t(y2) ⪰ κ_t(y1). y2 ∈ U_c (on q's t+1 play,
+  λ constant), so y2's honest play at t reaches c's cycle Z_t(c), which contains q; so it meets q, either before c or not.
+  - Case L1 (y2's t-play meets q before c). Exactly OFFMONO's Case L: ζ := that play up to q, Z := q → ζ → q avoids c, κ_t(y2) = κwt_c(Z) +
+    κ_t(y1), and κwt_c(Z) ⪰ (0, 0) by Lemma S (a) and S1's reward order; that argument does not use q's position.
+  - Case L2 (y2's t-play meets c before q). Let τ″ := σ̄_t with q's choice replaced by y2, and V″ := V_{σ_t,τ″}. Under (σ_t, τ″) the play from q
+    is q → y2 → (y2's t-play up to c) → (Z_t(c) from c up to q) → q: y2's t-play up to c avoids q (Case L2) and Z_t(c) from c to q uses only
+    vertices whose choice is unchanged. Its cycle consists of q, y2's t-path to c, and the arc of Z_t(c) from c to q; the latter has ranks
+    ≤ rank(c) (c is the top of Z_t(c)). Lemma S (a) (RESULTS R18 (d), every game by R57 (a), Ξ_t optimal under 1E-N3): Ξ_t(q) ⊴ V″(q).
+    - If P(Ξ_t y2) ≠ ∅: the top u* of the new cycle is the top of P(Ξ_t y2), rank(u*) > rank(c). S1's order compares rewards first and
+      rewards are injective, so reward(u*) > reward(c); an odd u* of rank > rank(c) has reward −p′(u*) < min(p′(c), −p′(c)) ≤ reward(c), so u* is
+      even, and M_t(y2) = wt_c(P(Ξ_t y2)) > 0 (the top power dominates). κ_t(y1) has M = 0 (y1 lies on Z_t(c) or is c; add1 (CYC-SHAPE)), so
+      κ_t(y2) ≻ κ_t(y1).
+    - If P(Ξ_t y2) = ∅: the new cycle's top is c, and V″(q) = (c, ∅, 1 + ℓ_t(y2)) = q ⊕ Ξ_t(y2) (rank(q) < rank(c), q path-free). Ξ_t(q) ⊴ V″(q)
+      with equal cycle nodes is κ_t(q) ⪯ κwt_c(q) + κ_t(y2) by (M1κ), i.e. κ_t(y1) ⪯ κ_t(y2) with (Aκ). □
+- Corollary CHAIN-COUNT‴ (PROVED). For a run J of in-phase transitions and the class c, with x-pieces cut at EXIT_x ONLY: for every
+  q ∈ Q ∩ U_c ∖ {c}, κ(q)-changes in J ≤ Σ_{x ∈ Q ∩ U_c ∖ {c}} (|EXIT_x| + Σ_π (v_x(π) − 1)) ≤ Σ_x D·(|EXIT_x| + 1). Proof: CHAIN-SUM with every
+  term ⪰ (0, 0) by OFFSET-MONO⁺; add1 §2's charging with an empty cut set. □ So the CYC / ZCH / FT machinery of add1 and add2 is not needed
+  for the count; their lemmas stay true (and FT-COUNT, PF-CHOICE stand on their own).
+- DATA (experiments/new/box48/offmono3.py = offmono2.py with the hypothesis dropped; out/offmono3_lib41_n34_k2.txt, _MUT.txt, out/offmono3_long7.txt):
+  lib41 n ≤ 34, S3 + 2, seed 7: 7,689 checks, 471 with q on an honest cycle at t (all Case L2; L1 never occurs), V_Kc 0, V_M 0. Controls bite
+  at on-cycle checks too: opposite length sign V_Kx_ONCYC 25; MUT=1 (p off q's play) V_Kc_ONCYC 51. Seven long instances: 0 violations (2
+  on-cycle checks). This also explains why the no-cut controls of add1 (MUT=1) and add2 (MUT=1, MUT=4) never bit.

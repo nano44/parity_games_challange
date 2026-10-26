@@ -1,0 +1,8 @@
+SETTLE_V=272 acyc_b=439 acyc_fail=11 checked=296 cyc_const=296 dstar_max=22 genw_fail=23 intervals=450 len_max=21 len_minus_n1_max_plus1000=998 pure_b=308 pure_but_cycles_move=14
+EXAMPLE ('SETTLE', 'experiments/n5-exhaustive/canonA_0.pg', 0, 3, 3, 0, 1)
+EXAMPLE ('SETTLE', 'experiments/n5-exhaustive/canonA_0.pg', 0, 3, 7, 1, 2)
+EXAMPLE ('SETTLE', 'experiments/n5-exhaustive/canonA_0.pg', 0, 3, 13, 1, 2)
+EXAMPLE ('SETTLE', 'experiments/n5-exhaustive/canonA_0.pg', 0, 3, 14, 1, 2)
+EXAMPLE ('SETTLE', 'experiments/n5-exhaustive/canonA_1.pg rs', 3, 4, 6, 3, 1)
+EXAMPLE ('SETTLE', 'experiments/n5-exhaustive/instances/b5_os_n14.pg', 21, 22, 10, 21, 1)
+STATICDEPTH FAIL

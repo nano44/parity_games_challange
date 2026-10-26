@@ -1,0 +1,10 @@
+C_cuts: 569
+S: 160
+U_in_gcint: 40
+gcint: 112
+gcint_gated: 105
+runs: 12
+max G_IDX_SLACK: -31 | experiments/n5-epoch/instances/nep56_n32.pg[start] interval[13,15] k'=13 edge=(8, 7) n=32
+max G_LEN_SLACK_free: -30 | experiments/n5-epoch/instances/nep56_n32.pg[start] interval[56,57] n=32 len=1 |D|=0
+max G_LEN_SLACK_gated: -17 | experiments/n5-epoch/instances/lend107_n32.pg[start] interval[94,108] n=32 len=14 |D|=3
+RESULT OK violations=0

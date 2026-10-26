@@ -445,25 +445,20 @@ Every answer measured from the repository; commands named.
    fetched ref, so the pin cannot be checked yet; I checked the packet by sha1 (cbea0739…) against my own commit 1afccb51 instead.
    (iii) The container clock is slow vs the Lead's stamp (07:50 vs 07:53): stamp only from date -u, never ahead of it.
 
-## Resume point (overwritten at handover, LANE-RESTART step 1; successor 28, box 49, FINAL, written 2026-10-26 17:07Z by date -u)
-Successor 28 (Opus 5.5, D14/D18, L40), session_01Dg8L3iN3G8HVzEVoGgCE1Y. Handover check 9dbaf71f (5/5, Lead 15:16Z). ~475k context at parking.
+## Resume point (overwritten at handover, LANE-RESTART step 1; successor 29, box 49, IN PROGRESS, updated 18:2xZ by date -u)
+Successor 29 (Opus 5.5, D14/D18, L40). Handover check 366fd235 (Lead 5/5, GO 17:24Z).
 ### DONE (all pushed with scripts/push.sh, rc 0, VERIFY PASS; SHAs reported to the Lead)
-- P-N5-FBC-fixes-box47 FROZEN (c2691e46, sha1 1347222c…): repairs R1-R6 from both FBC reports + §Cs; FBC-N3 = P-N5-EPC §3 (not a repair); 45 quotes.
-- N5-NCONF-box48 §10 (RESTRICT_H), §11 (QP; DUNION), §12 (QP_c climbs).
-- Packet P-N5-RESTRICT-box48 FROZEN (7e56744a, sha1 48c63a8e…): RESTRICT_H, REPRO_H, instances G′_E, G^u, G^{u|J}, G^P. Correction for its fixes
-  file (Lead logged it, verbatim into the referee brief): §4's first READING is uninformative on nep90/nep76/long121 (|Q| = 5/5/3 themselves).
-- docs/new/N5-KPOLY-box49.md §0-§9 (working doc): QP_c scaling (36 at n 80); R61's exponent located; OFFSET-MONO; exit changes; DS view (needs
-  pair-swap bounds, swaps 11-22); other fields (READING); §8 Z-CONST, CHAIN-COUNT′, Lemma ZCH-COUNT PROVED; §9 term-by-term note.
-- Packet P-N5-OFFMONO-box49 FROZEN (1f816370, sha1 d9705ac6…; PINNED by the Lead's trunk merge after 16:56Z): OFFSET-MONO (no ENTRY hypothesis),
-  CHAIN-SUM, CHAIN-COUNT; 12 quotes vs 58061d91. Referee queue (Lead 16:56Z): EPC → ROOT + addendum → OFFMONO → GCX (L-SI 17) → RESTRICT.
+- P-N5-OFFMONO-add-box49 FROZEN (b2a78eb1, sha1 5911aba8…; PINNED by the Lead): Z-CONST, CHAIN-COUNT′ (cut ZCH ∩ CYC), ZCH-COUNT; zch.py.
+- P-N5-EPC-fixes-box48 FROZEN (c6a5d467, sha1 174aedd5…; Lead pinning): R1-R6, remarks, §5 DATA note; 41 quotes.
+- P-N5-OFFMONO-add2-box49 FROZEN (6ef3dd25, sha1 f2d123ef…): FT-COUNT, FT-CONST, CHAIN-COUNT″ (cut CYC ∩ ZCH ∩ FT ≤ 2(n − 1)(|U_c| − 1)); §4
+  code-level PF-CHOICE / TIE-CHARGE vs si.py; ft.py, tie.py, tieclimb.py. Reviewed with OFFMONO + add1.
+- N5-KPOLY §10-§13: pointers; §11 (= add2); §12 item 3 (b): no linear closure via SAT-k (recursion exponential in depth), sum form additive;
+  SAT-k late window never entered in data; bulk of offset rises at DIRECT levels (= D, L-SI 18's side); FRZ_c DEAD (so_th_n32); §13 R92 record.
 ### IN FLIGHT
-- Nothing running (pgrep -fa "[p]ython3": none of mine).
-### NEXT (successor 29)
-1. Fixes files when referee notes arrive: P-N5-EPC-fixes-box48 (REFEREE's report a52feb43 in, EPC-N1..N4; wait for REFEREE-2's report AND both §Cs —
-   Lead: do not start from REFEREE's notes alone), then P-N5-OFFMONO-fixes, P-N5-RESTRICT-fixes (carry the §4 correction). Template:
-   P-N5-FBC-fixes-box47.md; experiments/new/box48/quotecheck2.py with REV:FILE at each §C commit.
-2. KPOLY OPEN items (Lead's routing 16:56Z; L-SI 17 owns EXIT_x per phase, do not duplicate): TIE_c and ODDC_c per phase (KPOLY §8, the only
-   unbounded part of the cycle changes); KPOLY §9 (a)'s recursion (early p-run segments charged to κ(p)-changes: does it close linearly?).
+- Nothing running.
+### NEXT
+1. Fixes files for OFFMONO (+ add1 + add2) and RESTRICT after their reviews (RESTRICT carries successor 28's §4 correction).
+2. Ask the Lead for a direction: EXIT_x and D are L-SI 18's; §12's direct-terminal finding was relayed to it via the Lead.
 3. Not routed: G-N1-LB.
 
 ## Things only I know (successor 28)
@@ -1290,3 +1285,10 @@ Successor 28 (Opus 5.5, D14/D18, L40), session_01Dg8L3iN3G8HVzEVoGgCE1Y. Handove
   (RET-FB induction), R3 = EPC-N3 + N-EPC-6 (EP-ASM a reduction), R4 = N-EPC-1 (pin wording), R5 = N-EPC-2 (D_C), R6 = N-EPC-3 (citation);
   remarks N-EPC-4, EPC-N4 = N-EPC-5; §5 DATA: non-flat saturated fallbacks 5/236, 11/178 (REFEREE) vs named-only (REFEREE-2), per REFEREE §C.
   41 quotes, 0 missing. Opened: both referee files at their §C commits in full; packet at 81ab0b72.
+- 18:3xZ: item 3 (b) → KPOLY §12: no linear closure via SAT-k (recursion exponential in depth for any E ≥ 1); sum form is additive, so bound
+  OR(x) directly. DATA orun.py: SAT-k late window never entered (LR 0), rises at direct levels (2,282/2,300). FRZ_c DEAD (so_th_n32).
+- 18:2xZ Lead 18:08Z: freeze §11 as add2. P-N5-OFFMONO-add2-box49 FROZEN (FT-COUNT, FT-CONST, CHAIN-COUNT″; §4 PF-CHOICE / TIE-CHARGE code-level
+  vs si.py e688b963 l. 78-205; §5 supersession; 23 quotes, 0 missing). Opened si.py l. 78-205 and SPEC l. 33-44 again at 278616c6.
+- 18:4xZ Lead 18:25Z note → KPOLY §14: OFFADD-N2 PROVED (OFFSET-MONO⁺; on-cycle q: Case L1 = OFFMONO's Case L, Case L2 by Lemma S on the
+  cycle through c); CHAIN-COUNT‴ cuts at EXIT only. offmono3.py 0 violations (471 on-cycle checks, all L2). Opened REFEREE
+  R-N5-OFFMONO-add.md at c2a97189 (l. 20-60). Fixes file for OFFMONO waits for REFEREE-2 + both §Cs (Lead 18:25Z).

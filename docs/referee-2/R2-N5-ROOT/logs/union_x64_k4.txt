@@ -1,0 +1,41 @@
+MODE unionsearch ../../../experiments/red/xing/instances/x32_rand64.pg 3000 6 14 4 7101 MUT - BUDGET 100000
+BFF_checks: 860178
+DLS_A: 71
+DLS_A_clean: 42
+DLS_A_nonclean: 29
+DLS_B: 5
+DLS_case_i: 1
+DLS_case_ii: 42
+DLS_case_iii: 4
+DLS_entering: 76
+DLS_gains: 30
+ENGXI_checks: 171102
+FA_beyond_freeze: 232215
+FA_pieces: 272529
+FAa_checks: 40609601
+FAb_checks: 40609601
+FAc_checks: 18036840
+FG_beyond_active: 1
+FG_beyond_freeze: 4839
+FG_beyond_freeze_Ru_ge2: 1296
+FG_beyond_switch_in_class: 5
+FG_intervals: 7278
+FGa_checks: 1416792
+FGb_checks: 1416792
+FGb_const_checks: 16056178
+FGc_checks: 421799
+GSa_checks: 12056
+GSb_checks: 1415
+RLP_beyond: 5015
+RLP_beyond_switch_in_class: 5
+RLP_runs: 7278
+RLPi_checks: 5121
+RLPii_checks: 18705
+RP_checks: 46002
+classes: 12874
+phases: 8415
+runs: 3000
+states: 171102
+union_hits: 5
+RP_max_rho: (1, 'union7101:420@0 q 71 f 0 G_c 0 |U| 13')
+RESULT OK violations=0

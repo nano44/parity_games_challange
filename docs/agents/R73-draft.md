@@ -1,4 +1,4 @@
-# Draft RESULTS R73 (Lead, 2026-10-26 18:10Z by date -u; both reports, both §Cs and the fixes file filled) — to CHECKER C82
+# Draft RESULTS R73 (Lead, 2026-10-26 18:10Z by date -u; both reports, both §Cs and the fixes file filled) — to CHECKER C82 (rev. 2026-10-26 18:41Z by date -u: C82 E-1, N-1) — LANDED in RESULTS Results 2026-10-26 18:58Z (CHECKER C82 Add. 1 c785690c PASS), after R72
 
 ### R73 [refereed-only] N5 on EVERY game: after an in-phase fallback, every configuration C finds its honest level LEV_C at least min(LEV_C(t) + 1, n − 1) at each of its later C-states (Lemma RET-FB), so a configuration has at most 2n² − n epochs per phase besides its fallback-free returns R⁰_C (Corollary VIS) and N_ep ≤ NCONF·(2n² − n) + R⁰ (Theorem EP-C); a fallback from a saturated C-state ends the phase or is followed by no further C-state of the phase (Lemma SAT-FB), so at most one saturated fallback per configuration and f ≤ n·|𝒞_f(P)| per phase (Corollary SAT-FB1, Theorem FB-C′); and N_ep ≤ (4n² − 3n) + N_1 + NCONF_{≥2}·(2n² − n) + R⁰_{≥2}, with N_1 bounded only as an implication from (Στ) (Corollary EP-ASM) (2026-10-26) — a REDUCTION of the epoch count N_ep to four open quantities X_dir, X_big, NCONF_{≥2}, R⁰_{≥2} (none bounded here; not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C82.md, checker PENDING)
 - Object (packet P-N5-EPC, added at l-new 81ab0b72, pinned trunk e57ba8cb, quote base f4562054, unchanged during review):
@@ -17,8 +17,7 @@
   S4b, S4c, S5, FIX 3; the standing premise 1E-N3 (P1) with RESULTS R57 (a) (VJ); RESULTS R15 (a), (d) ((MON)); R17 (a) (V1), (V2), R17 (b)
   Lemma P's Case A with Ω := Ξ_t (RESULTS R70's Q-A, YES by both); R38 (a); R64 (the epoch); RESULTS R70 (FB-RISE (a)'s items 2-3,
   HON-0-FF (b), REC-1-FF (c)); RESULTS R68 (X_dir, X_big, T*_Q, (Στ)); RESULTS R71 (a), (b) (FB-RISE_C, SAT_C). The packet's §1 restates
-  FB-RISE_C and SAT_C with their proofs; both referees signed the restatement as identical to RESULTS R71 (a), (b), and it is not re-landed
-  here. SAT-FB's last step reads S4a / S4b / S4c / S5 and FIX 3 directly; the packet's citation of R68's HON-FB (iv) is a cross-reference only
+  FB-RISE_C and SAT_C with their proofs; both referees signed the restatement: FB-RISE_C as identical to RESULTS R71 (a), and SAT_C as R71 (b) without its 4n(n − 1) window (which VIS (a) takes from R15 (d) through R57 (a)); R71 (a), (b) already hold it, so it is not re-landed here. SAT-FB's last step reads S4a / S4b / S4c / S5 and FIX 3 directly; the packet's citation of R68's HON-FB (iv) is a cross-reference only
   (fixes R6 = N-EPC-3, both referees):
   (a) Lemma RET-FB: if t → t + 1 is an in-phase S4c fallback of P, then for EVERY configuration C and every C-state s ≥ t + 1 of P,
       LEV_C(s) ≥ min(LEV_C(t) + 1, n − 1). The induction is on |r| at the fixed C-state s, and only its Odd branch calls the hypothesis
@@ -49,7 +48,7 @@
   178 (n ≤ 34) in its library, REFEREE-2 none in its library (0 of 43) but 25 of 25 on its named instances; the instance lists differ (DATA,
   fixes §5; both §Cs).
 - Data (DATA, not proof): REFEREE (successor 15, own epc_probe.py, exact LEV_C for every configuration visited, with a path budget; lane code
-  not run): 20,753 runs (the library at n ≤ 20 and n ≤ 34, 3,000 random games with ≤ 8 Odd choice vertices, rho3_253_n32 at 32 starts, and
+  not run): 20,753 runs (the sum of its §6 rows, 20,752, and the nep76_n40 run of its addendum: the library at n ≤ 20 and n ≤ 34, 3,000 random games with ≤ 8 Odd choice vertices, rho3_253_n32 at 32 starts, and
   long121_n40, nep90_n40, nep76_n40 at depth cap 16); RET-FB checked at every later C-state for every configuration; 0 failures of every
   check; reproduces long121 (N_ep 37, NCONF 14), nep90 (90, 48), nep76 (76, 40); mutations MUT=1 (RET-FB + 2) 247 + 82 on long121, MUT=2 (RET-FB
   at non-C states) 251, MUT=3 (the DEAD guess) 1 + 7 failures. REFEREE-2 (successor 17, own epc_check.py with a deep mode; lane code not run):

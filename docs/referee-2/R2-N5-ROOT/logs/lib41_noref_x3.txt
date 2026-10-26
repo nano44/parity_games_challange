@@ -1,0 +1,35 @@
+MODE files ../R2-N5-STAU/lib41_noref.lst 3 MUT - BUDGET 200000
+BFF_checks: 922585
+DLS_A: 6295
+DLS_A_clean: 6039
+DLS_A_nonclean: 256
+DLS_B: 224
+DLS_case_i: 556
+DLS_case_ii: 5552
+DLS_case_iii: 423
+DLS_entering: 6519
+DLS_gains: 530
+ENGXI_checks: 19460
+FA_UNK: 7350
+FA_beyond_freeze: 869
+FA_pieces: 25737
+FAa_checks: 631681
+FAb_checks: 631681
+FAc_checks: 3662
+FG_UNK: 5024
+FG_intervals: 9902
+FGa_checks: 280283
+FGb_checks: 280283
+GSa_checks: 89736
+GSb_checks: 169309
+RLP_beyond: 45
+RLP_runs: 9902
+RLPi_checks: 52
+RLPii_checks: 272
+RP_checks: 234521
+classes: 12730
+phases: 7245
+runs: 1230
+states: 19460
+RP_max_rho: (37, 'experiments/new/box35/instances/pf_best_3622.pg#0@4 q 0 f 4 G_c 1 |U| 40')
+RESULT OK violations=0

@@ -1,0 +1,13 @@
+START fit (-1000000, -1000000) n 32
+BEST step 2 fit (-23, -1000000) t 0s
+BEST step 475 fit (-22, -1000000) t 13s
+BEST step 581 fit (-21, -1000000) t 16s
+BEST step 817 fit (-20, -1000000) t 23s
+BEST step 847 fit (-19, -1000000) t 24s
+BEST step 1975 fit (-18, -1000000) t 61s
+BEST step 3251 fit (-17, -1000000) t 106s
+BEST step 9601 fit (-16, -1000000) t 342s
+BEST step 13266 fit (-15, -1000000) t 513s
+BEST step 14303 fit (-14, -1000000) t 559s
+BEST step 19758 fit (-13, -1000000) t 788s
+END steps 22065 best (-13, -1000000) n 32 -> results/b15/climb/ulg_seedb6_n32_r2.pg

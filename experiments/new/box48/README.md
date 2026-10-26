@@ -58,3 +58,9 @@ transitions, |Q| 3; out/nconf_long121.txt, out/retfb_long121.txt.
 - tieclimb.py NMAX STEPS SEED OBJ OUTDIR --seed G [--start S]: climbs ODDC_c / TIE_c per phase (OBJ oddc / tie / both), checking tie.charcheck on
   every scored game. out/tieclimb/ (oddc_s1, s2 from box31 u3ev_n16; tie_s3, s4 from red/kl klcount_n16; 3,000 steps, n ≤ 24).
 - out/quotecheck_epc_fixes.txt: docs/new/P-N5-EPC-fixes-box48.md against cd4795f8 REFEREE (§C), c4975512 REFEREE-2 (§C), 81ab0b72 packet: 41 quotes, 0 missing.
+- orun.py (as zch.py): offsets inside p-runs of x-pieces (cut EXIT_x ∪ ZC″): hypotheses HA-HE, DIR / REL split (N5-KPOLY §12 (ii)).
+  out/orun_lib41_n34_k2.txt, out/orun_long7.txt.
+- frz.py (as zch.py) [VERB=1]: the DEAD guess FRZ_c (M(κ) frozen after |U_c| − 1 transitions of a fallback-free run; N5-KPOLY §12 (iii)).
+  out/frz_lib41_n34_k2.txt, out/frz_long7.txt, out/frz_so_th_n32_S3.txt (`0 1 ../../red/so/instances/so_th_n32.pg`, the kill).
+- offmono3.py (as offmono2.py): OFFSET-MONO⁺ (N5-KPOLY §14; REFEREE OFFADD-N2), hypothesis "q on no honest cycle at t" dropped; ONCYC / L1 / L2
+  split. out/offmono3_lib41_n34_k2.txt, _MUT.txt, out/offmono3_long7.txt.

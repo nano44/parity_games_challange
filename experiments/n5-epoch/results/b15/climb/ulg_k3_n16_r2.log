@@ -1,0 +1,8 @@
+START fit (-1000000, -1000000) n 16
+BEST step 1 fit (-14, -1000000) t 0s
+BEST step 1248 fit (-13, -1000000) t 6s
+BEST step 1267 fit (-12, -1000000) t 6s
+BEST step 2027 fit (-11, -1000000) t 11s
+BEST step 5590 fit (-10, -1000000) t 34s
+BEST step 12902 fit (-9, -1000000) t 84s
+END steps 78873 best (-9, -1000000) n 16 -> results/b15/climb/ulg_k3_n16_r2.pg

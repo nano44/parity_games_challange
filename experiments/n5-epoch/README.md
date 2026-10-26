@@ -211,3 +211,21 @@ phases + f (4,305 + 713 = 5,018 on lib41 n ≤ 40, so 882 game runs).
 75 / 77 at n 24 / 32 / 40 / 48 / 64 (max ρ_q / n 0.88 / 1.66 / 1.80 / 1.56 / 1.20); the max is the ROUTE root q = 0 in 9 of the 12 runs at n ≥ 32,
 and a pure-RELAY vertex (q 58: 77 relays) in one n-64 run; fresh family: max ρ_q ≤ 12 (≤ 0.46 n). No growth beyond the seed.
 ### (5) FREEZE-G resets per D-direct gate: NOT RUN (context budget; handover).
+
+## Box 15 (Lead 15:54Z → retargeted 16:22Z, 17:08Z, 17:31Z): UL_G and GCI-LEN (P-N5-GCX §1, §3, §5; L-RED R91 §5)
+C-ONCE (L-SI, killed by cone_n65 / cone_n69) and UL_C (L-RED, killed by reader_L) were DEAD before this box ran: no climb was run against
+them by me (0 found, budget 0). Code: `ulg.py` (own; gcx.py / ulx.py references only): runs S (fallback-free, λ_W constant), A_t(c), D_t, DD_t,
+Δ_t(u) (signed weight w(P) = Σ ε(v) 2^rank(v), READING), global C-intervals (maximal runs of transitions with A non-increasing for every c, D, DD
+and Δ constant), U events (switches into an edge forbidden at level −1 in the previous n − 1 states of S), UL_G (index < n − 1) and GCI-LEN
+(length ≤ n − 1, DATA). Climb fitness `ulg` (climb.py): max G_LEN_SLACK over GATED intervals; jobs b15_jobs.txt (runjobs.sh, P = 4).
+- Cross-check: b6_xs_n24 (S3): gate-free global C-interval [0, 21], length 21 = n − 3, G_LEN_SLACK −2 = L-RED R91 §5.
+- Records (`ulg.py 0 0 --list records15.txt`): 12 runs, 112 global C-intervals (105 gated), 40 U events inside; UL_G 0 violations;
+  max gated G_LEN_SLACK −17 (lend107_n32, length 14, |D| 3); max G_IDX_SLACK −31.
+- lib41 n ≤ 64, S3 + 2 random, seed 7 (`ulg.py 2 7 --nmax 64 --list ../new/box41/lib41.txt`): 1,101 runs, 1,986 global C-intervals (1,450 gated),
+  800 U events inside; UL_G 0 violations; max G_IDX_SLACK −10 (thetare_n); max G_LEN_SLACK gate-free −2 (b6_xs_n24), gated −4 (rtt16, length 11).
+- Climbs on gated G_LEN_SLACK (fresh C^3O 600 s; seeded b6_xs_n24 900 s; 2 repeats): fresh n 12 / 16 / 24 / 32: −2, −2 / −7, −9 / −16, −13 /
+  −24, −25; seeded b6 n 24: −6, −3; n 32: −24, −13. No slack ≥ 0 on a gated game. Pinned (pin.py OK): gci2_n12
+  (67b6e166049f3316b10c7c655c1082a334b281a0; gated interval [0, 9], length 9 = n − 3, |D| 1), gci3_n24 (05b980fb85a6d8ff95e5a6d15b64e9ebb8311d65;
+  [1, 21], length 20 = n − 4, |D| 1).
+- READING: gated global C-intervals stay below n − 1 in every sample and climb (best n − 3); GCI-LEN and UL_G: 0 failures. Not run: the
+  lend82 doubling beyond box 14 (3,840 / 7,680 s done there: 107 / 95).

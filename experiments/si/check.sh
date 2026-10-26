@@ -245,3 +245,19 @@ for k in "E1_chk=11 " "cut_AG=15 " "cut_DCH=19 " "cut_OSB=38 " "EXIT_at_cut=31 "
 if grep -q "E1_V\|PURELATE" <<<"$o"; then echo "evenside: violation on nep90"; exit 1; fi
 E1MUT=1 python3 -I root/evenside.py --one ../red/rec0/instances/nep90_n40.pg rund/instances/nep90_n40.start | grep -q "E1_V=10 "
 echo "root (evenside on nep90: cuts AG 15 / DCH 19 / OSB 38, exits at cuts 31 of 33, E-ONEWAY holds; control bites): PASS"
+# box 22 (docs/si/N5-GCILEN-box22.md): Theorem STATIC-DEPTH (sigma-bar constant, (H3), (H4), GEN_W: settled from d*(v), length <= max d*):
+# tight on b6_xs_n24 (length 21 = max d*), holds on long121 (28 intervals, global C-intervals too); control MUT=1 (d* - 1) bites.
+o=$(python3 -I root/staticdepth.py --one ../n5-exhaustive/instances/b6_xs_n24.pg); grep -q "dstar_max=21 intervals=1 len_max=21 " <<<"$o"; grep -q "STATICDEPTH PASS" <<<"$o"
+o=$(GCI=1 python3 -I root/staticdepth.py --one ../new/box48/instances/long121_n40.pg ../new/box48/instances/long121_n40.start)
+grep -q "checked=27 " <<<"$o"; grep -q "gci=29 " <<<"$o"; grep -q "STATICDEPTH PASS" <<<"$o"
+MUT=1 python3 -I root/staticdepth.py --one ../n5-exhaustive/instances/b6_xs_n24.pg | grep -q "SETTLE_V=21 "
+echo "root (staticdepth: STATIC-DEPTH tight on b6_xs_n24, holds on long121 incl. global C-intervals; control bites): PASS"
+# P-N5-DEPTH-box22 packet: 12 quotes verbatim (SPEC, RESULTS, FBPOLY at trunk 982f5c62; RESULTS at 58061d91; GCX at 02240121; R91 at l-red
+# 54de3f2f); shifted control fails.
+if git cat-file -e 982f5c629 && git cat-file -e 58061d91 && git cat-file -e 02240121 && git cat-file -e 54de3f2f; then
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-DEPTH-box22.md | grep -q "quotes=12 bad=0"
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-DEPTH-box22.md --mut | grep -q "QUOTES FAIL"
+  echo "root (packet P-N5-DEPTH-box22: 12 quotes verbatim; shifted control fails): PASS"
+else
+  echo "root (packet P-N5-DEPTH-box22 quotes): NOT RUN (a source commit is not in this clone)"
+fi

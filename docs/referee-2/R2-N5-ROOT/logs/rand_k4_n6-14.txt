@@ -1,0 +1,30 @@
+MODE random 2000 6 14 1932 4 3 MUT - BUDGET 200000
+BFF_checks: 4303
+DLS_A: 199
+DLS_A_clean: 64
+DLS_A_nonclean: 135
+DLS_B: 11
+DLS_case_i: 5
+DLS_case_ii: 59
+DLS_case_iii: 8
+DLS_entering: 210
+DLS_gains: 52
+ENGXI_checks: 16425
+FA_beyond_freeze: 40
+FA_pieces: 25410
+FAa_checks: 114175
+FAb_checks: 114175
+FAc_checks: 1033
+FG_intervals: 2564
+FGa_checks: 21866
+FGb_checks: 21866
+GSa_checks: 4006
+GSb_checks: 53
+RLP_runs: 2564
+RP_checks: 84870
+classes: 24385
+phases: 15672
+runs: 6000
+states: 16425
+RP_max_rho: (1, 'random1932:16#1@1 q 1 f 0 G_c 0 |U| 10')
+RESULT OK violations=0
