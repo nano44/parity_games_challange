@@ -34,7 +34,13 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - CHOICE (D18, Lead 02:47Z item 2; 02:54Z by date -u): (b), the cross-field VI angle. Reason: (a)'s nested bottom-up freeze needs the
   terminal routing to stabilise, which I cannot prove (gap 1 of N5-FBF §6.3); an (a) "lemma" would be conditional on exactly the open
   point. (b) can be made precise with an opened source and a PROVED bridge (Lemma VI-LB). Result: N5-FBF §7.
-- NEXT: report (b); then as directed.
+- bca23df8 (b) reported 02:58Z. Lead 03:07Z: packet VI-LB; L-RED gets the gadget; me: converse side (SI vs VI, ACCEL).
+- 999e73f4: P-N5-VILB FROZEN (sha1 872d4400…), reported 03:10Z.
+- N5-FBF §8: (i) a fallback = one switch-all-best VJ00 SI step on G (honest frame); not an SI step on Γ_c. (ii) [BGHM] reports SI
+  exponential on BV's LSP Fig. 2 instance where VI is linear (appendix pp. 16-17; [1], [9] not opened). (iii) Lemma ACCEL (PROVED):
+  κ_t(z) ∈ K_c(z) (simple-path values), (SG) strict gains ⇒ switching transitions ≤ Σ(|K| − 1), f ≤ 1 + N_K; the BGHM gadget collapses
+  (positional values, no cycle accumulation). Remaining obstruction: a counter inside ONE phase. sgcheck.py: (SG) 13,346 checks, 0 viol.
+- NEXT: report; then as directed.
 
 ## Box 43 log (successor 22; handover check 5/5 (b4f064b4); GO 21:55Z, Lead's stamp)
 - Merged trunk c4d18621. Oink built (8fbf0a7). Notebook duplicate block (from 6a1b0e95) removed in b4f064b4.

@@ -23,3 +23,5 @@ DATA, not proof. Uses experiments/new/box43 (multi, n5x via box21, f1d.hD). Run 
   regions = Oink --zlk, harness verify.py).
 - fbf.py: + FB-RED late form (REDL), N_late, ρ_late. fbclimb.py --obj rho (seeds 91-97, 02:31Z-02:33Z): max ρ per phase 6-32, N_late 0
   everywhere (no phase reaches n fallbacks). N5-FBF-box44.md §6.
+- sgcheck.py (03:11Z-03:12Z): (SG) strict gain at every switched non-cycle-node Even vertex in-phase; lib41 12,653 checks, instances
+  263, --rand 2000 5 20 71 430: 0 violations; max switching transitions per phase 112, max κ-levels per vertex per phase 52 (lib41).

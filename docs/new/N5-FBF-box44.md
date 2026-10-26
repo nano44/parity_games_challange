@@ -241,6 +241,60 @@ operator F (x_i = Val^{≤i}, i-step min-cost-reachability value), Theorem 1 ite
 - Verdict for (b): no known polynomial value-iteration bound applies (the opened one is pseudo-polynomial, exponential with 2^rank
   weights); VI-LB (PROVED) makes each fallback a VI round on Γ_c; the freeze at the VI fixed point (κ_t ≤ Val_c) is OPEN.
 
+## 8. The converse side: why N5 can beat value iteration (Lead 03:07Z; written 03:13Z by date -u)
+### 8.1 (i) Is a fallback (plus the S4a block after it) a strategy-improvement step?
+- On G, in the honest frame: YES, exactly (PROVED, from the SPEC). Ξ_k is σ_k's valuation against Odd's best response σ̄_k (S1). S4c
+  switches EVERY Even vertex with an improving edge (S2: strictly better Ξ_k-value than its current successor) to the improving successor
+  of best (Ξ_k, index) key. That is one switch-all, best-improvement ("greedy all-switches") step of Vöge-Jurdziński strategy
+  improvement for Even on G, R15 (a) gives its monotonicity. The S4a steps in between are further improvements (each switches along gate
+  edges; R15 (a)), computed as Even's one-player optimum against the fixed τ (R18 (d) Lemma S (c), "⇒" form), not against σ̄.
+- On Γ_c: NOT literally. Γ_c's minimiser may avoid c (payoff −∞ for Even), so Odd's best response in Γ_c can differ from σ̄_k, which
+  is Odd's best response in G (avoiding c there means another cycle node, which σ̄_k rejected). Γ_c is a lower-bound device (VI-LB),
+  not a model of N5's dynamics.
+### 8.2 (ii) What is known about SI vs VI on these games (source opened: [BGHM], arXiv:1407.5030v4)
+- [BGHM] §1: for total-payoff games "the best algorithm to compute the values runs in exponential time [9], and consists in iteratively
+  improving strategies" ([9] = Gawlitza-Seidl, not opened by me); [BGHM] give the first pseudo-polynomial algorithm, by value iteration.
+- [BGHM] appendix (the comparison with Björklund-Vorobyov's longest-shortest-path problem, printed pp. 16-17): the strategy iteration
+  algorithm of [1] (Björklund-Vorobyov, not opened by me) needs 2^n iterations on "the LSP instance presented in Fig. 2 of [1], with
+  2n + 1 vertices but a biggest weight W exponential in n", which their value iteration solves in time linear in n; conversely
+  [BGHM] Figure 2(a) needs 2W VI iterations.
+- READING: neither paradigm dominates on min-cost reachability / total-payoff games; both have exponential worst cases with exponential
+  weights. No polynomial bound for either is known to me with 2^rank weights.
+### 8.3 (iii) Lemma ACCEL (PROVED, every game): N5's switches are paid by simple-path value levels, not by VI rounds
+For c ∈ C and z ∈ U_c let K_c(z) := {κwt_c(p ∖ {c}) : p a simple path of G[U_c] from z to c} (all edges of G inside U_c; Odd choice
+vertices included). Then in every phase:
+- (a) κ_t(z) ∈ K_c(z) at every state t, for every z ∈ U_c;
+- (b) the in-phase transitions at which some Even vertex z with λ(z) ≠ z switches number at most N_K := Σ_{c} Σ_{Even z ∈ U_c ∖ {c}}
+  (|K_c(z)| − 1);
+- (c) f ≤ 1 + N_K.
+Proof. (a) z's honest play up to c is a simple path of G[U_c] ((SP′), via (Aκ) it stays in U_c), and (Aκ) along it gives κ_t(z) =
+κwt_c(path ∖ {c}). (b) At an in-phase transition L → L+1, a switched Even y with λ_L(y) ≠ y gains strictly: Ξ_{L+1}(y) ▷ Ξ_L(y)
+(RESULTS R19 (d), key step (SG), signed "on all games, not only 𝒞^1O"; the switch is along a gate edge at S4a and at S4c). With (M1κ),
+κ_{L+1}(y) > κ_L(y). By (M2κ) κ(y) never decreases in the phase, and by (a) it moves in the finite set K_c(y); so y switches at ≤
+|K_c(y)| − 1 transitions; charge each transition to one such y. (c) A fallback with S = ∅ is at most one (CN-ONLY_D, P-N5-FBRED §2);
+a fallback with S ≠ ∅ switches an Even y ∉ T, so λ(y) ≠ y (y ∉ C), and is counted in (b). ∎
+- The gadget collapses (PROVED as an instance of (b)): in the mirrored [BGHM] Figure 2(a) gadget (§7.3), an Even vertex v2 and an Odd
+  vertex v1 on a 2-cycle with exits, each of v1, v2 has ≤ 2 simple paths to c through the gadget, so |K(v)| ≤ 2 for the gadget's own
+  choices, and v2 switches at most once per phase. VI-LB's iterates climb by walking the 2-cycle repeatedly; N5's values never do (a
+  repeated cycle would be an honest cycle without c, i.e. a λ-change). So the 2^{R+1−r} VI rounds are not N5 rounds: N5's escape
+  mechanism is POSITIONAL values (simple paths) plus STRICT gain at every non-cycle-node switch. This answers L-RED's routed target in
+  the negative for the bare gadget (READING; L-RED may test it).
+- What ACCEL does NOT give: a polynomial bound. |K_c(z)| can be exponential (distinct subsets of high-rank vertices on simple paths).
+  ACCEL is the honest-frame analogue of "SI terminates after at most #valuations steps"; it bounds switching transitions by value
+  levels, not by n^O(1). Transitions that switch only cycle nodes are not counted by (b).
+- The obstruction that remains (OPEN, instance-style): a phase in which some vertex's honest value climbs MONOTONICALLY through
+  exponentially many simple-path values of U_c, one or a few per transition, without λ or τ changing. That is a binary-counter
+  structure inside ONE phase (Friedmann's lower bounds for strategy improvement count across many λ-phases; N5 is about linear on his
+  families, N5-MULTI §4.5, DATA). VI-type gadgets (cycle accumulation) cannot produce it, by ACCEL (a).
+### 8.4 DATA (experiments/new/box44/sgcheck.py; canonical S3 start)
+| sample | in-phase transitions | (SG) checks / viol. | max switching transitions in one phase | max distinct κ-values of one vertex in one phase |
+| --- | --- | --- | --- | --- |
+| lib41 (412 runs) | 6,554 | 12,653 / 0 | 112 | 52 |
+| box43 + box44 instances (10) | 105 | 263 / 0 | 44 | 17 |
+| `--rand 2000 5 20 71` | 382 | 430 / 0 | 3 | 3 |
+Reading (DATA): the per-vertex value levels actually used in a phase stay small (≤ 52 on lib41, games up to n 492); nothing in the data
+approaches an exponential climb inside one phase.
+
 ## 5. How a fallbacks-per-phase bound combines with the phase count (READING)
 - Phases. Lemma Φ (R47 (a), every game): λ changes ≤ n(n − 1); Corollary Φ-kO (P-N5-DUAL, N5-MULTI §1.4): distinct τ's ≤ ∏_{q∈Q}
   deg(q), so phases ≤ n(n − 1) + ∏_q deg(q). On 𝒞^kO with k fixed that is ≤ n(n − 1) + n^k, polynomial; for k growing with n it is
