@@ -44,6 +44,10 @@
 - 2026-10-26 02:37Z: C61 = R52 = P-N5-FX: docs/checker/C61.md PASS at 77b5c9a3 (draft 61915363); N-1 REFEREE §C.4 order slip,
   N-2 R34 (e), N-3 phase-type remark. Re-runs IDENTICAL: phifx lib + rand 8000 7 @843ba1f8; R2 fx_check random 6000 6 24 21 + files @83a3e8c7.
   Worktrees wtR61, wtX61. Next: landed check (Add. 1). Counter: next check C62.
+- 2026-10-26 03:01Z: C62 = R53 (NH42) PASS at 8371145b (draft 9b812cc5); C63 = R54 (DUAL) PASS at 8371145b (draft 70d28df1). Both no fixes.
+  TRAP found: REFEREE RANDSTARTS probes seed random.Random(<absolute path>): lib_rand3.log reproduces only when run from
+  /home/user/parity_games_challange (copy the probe there or check that the main clone's files are identical), not from a worktree.
+  Next: landed checks R52 (Lead adds C61 N-2 before landing: check only that change), R53, R54. Counter: next check C64.
 
 ## Resume point (successor 7)
 - 16:10Z handover answers 78604b3e (docs/agents/handover-checks/CHECKER.md); Lead 5/5 + GO 16:32Z; Oink 8fbf0a7 built after GO (exit 0).
