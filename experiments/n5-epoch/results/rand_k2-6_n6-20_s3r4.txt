@@ -1,0 +1,51 @@
+clean_strict: 1319
+crossings: 1656
+cyc: 83
+epochs: 264602
+epochs_D0: 107043
+epochs_D1: 67662
+epochs_D2: 89897
+fallbacks_in_phase: 2159
+in_phase_transitions: 13168
+len_sum_D0: 10922
+len_sum_D1: 1900
+len_sum_D2: 346
+nc: 188
+phases: 263090
+phases_Nep_ge2: 1498
+phases_single_state: 250786
+rho: 3835
+runs: 100000
+tie: 199
+transitions: 176258
+xsnpre: 242
+xsnpre_sum_D0: 0
+xsnpre_sum_D1: 204
+xsnpre_sum_D2: 38
+max_N_ep: 3
+max_XD_phase: 3
+max_absD: 6
+max_len_D0: 4
+max_len_D0_minus_(n+m): -14
+max_len_D1: 3
+max_len_D2: 2
+max_phase_in_transitions: 4
+max_residual_phase(tie+nc+cyc): 3
+max_rho_phase: 6
+max_xsnpre_D0: 0
+max_xsnpre_D1: 2
+max_xsnpre_D2: 1
+top EP0_len_minus_(n+m): -14 | rand121_715_n6_k2[R1] phase#0 states[0,1] epoch 0 states[0,1] len=1 n=6 m=9
+top EP0_len_over_(n+m): 0.125 | rand121_471_n10_k2[R1] phase#1 states[1,5] epoch 0 states[1,4] len=4 n=10 m=22
+top N_ep: 3 | rand121_13_n11_k4[R3] phase#0 states[0,2] n=11 rho=2 tie=0 nc=0 cyc=0 |Q|=4
+top N_ep_over_n: 0.3333333333333333 | rand121_1416_n6_k3[S3] phase#1 states[1,2] N_ep=2 n=6 rho=1 tie=0 nc=0 cyc=0
+top len_D0: 4 | rand121_471_n10_k2[R1] phase#1 states[1,5] epoch 0 states[1,4] |D|=0 n=10 m=22
+top len_D1: 3 | rand121_106_n11_k2[R2] phase#0 states[0,3] epoch 0 states[0,3] |D|=1 n=11 m=18
+top len_D2: 2 | rand121_184_n11_k3[R0] phase#0 states[0,2] epoch 0 states[0,2] |D|=2 n=11 m=20
+top len_D2_over_n: 0.18181818181818182 | rand121_184_n11_k3[R0] phase#0 states[0,2] epoch 0 len=2 |D|=2 n=11
+top slack_NEP_min(neg): 0 | rand121_13_n11_k4[R3] phase#0 states[0,2] N_ep=3 bound=3
+len_hist |D|=0: 0:96799 1:9601 2:610 3:31 4:2
+len_hist |D|=1: 0:65848 1:1731 2:80 3:3
+len_hist |D|>=2: 0:89558 1:332 2:7
+nep_hist: 1:261592 2:1484 3:14
+RESULT OK violations=0

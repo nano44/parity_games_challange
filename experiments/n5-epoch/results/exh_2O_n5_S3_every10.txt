@@ -1,0 +1,3 @@
+task 1/32 games 337500 runs 337500 viol 0 188s
+task 2/32 games 675000 runs 675000 viol 0 192s
+task 3/32 games 1012500 runs 1012500 viol 0 192s

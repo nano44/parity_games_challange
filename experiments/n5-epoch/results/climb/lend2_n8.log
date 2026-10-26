@@ -1,0 +1,10 @@
+START fit (0, 1) n 8
+BEST step 92 fit (0, 2) t 0s
+BEST step 142 fit (1, 2) t 0s
+BEST step 256 fit (1, 3) t 1s
+BEST step 269 fit (2, 2) t 1s
+BEST step 862 fit (2, 3) t 2s
+BEST step 980 fit (2, 4) t 2s
+BEST step 1030 fit (3, 3) t 2s
+BEST step 1202 fit (4, 3) t 2s
+BEST step 2645 fit (5, 2) t 6s
