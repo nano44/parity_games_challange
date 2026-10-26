@@ -1,0 +1,21 @@
+== ../../red/so/instances/pftheta34_n32.pg
+RHO_GT_N ../../red/so/instances/pftheta34_n32.pg 4 0 34 32
+  Q ../../red/so/instances/pftheta34_n32.pg phase@4 len=35 q=0 rho=34 n=32 events=[(1, -1, 'CLEAN', True), (2, 28, 'CLEAN', True), (3, -1, 'CLEAN', True), (4, 25, 'CLEAN', True), (5, -1, 'CLEAN', True), (6, -1, 'CLEAN', True), (7, -1, 'CLEAN', True), (8, -1, 'CLEAN', True), (9, 24, 'CLEAN', True), (10, -1, 'CLEAN', True), (11, 31, 'CLEAN', True), (12, -1, 'CLEAN', True), (13, 25, 'CLEAN', True), (14, -1, 'CLEAN', True), (15, -1, 'CLEAN', True), (16, 27, 'CLEAN', True), (17, -1, 'CLEAN', True), (18, -1, 'CLEAN', True), (19, 25, 'CLEAN', True), (20, -1, 'CLEAN', True), (21, -1, 'CLEAN', True), (22, -1, 'CLEAN', True), (23, -1, 'CLEAN', True), (24, 24, 'CLEAN', True), (25, -1, 'CLEAN', True), (26, -1, 'CLEAN', True), (27, -1, 'CLEAN', True), (28, -1, 'CLEAN', True), (29, -1, 'CLEAN', True), (30, -1, 'CLEAN', True), (31, 28, 'CLEAN', True), (32, -1, 'CLEAN', True), (33, 29, 'CLEAN', True), (34, -1, 'CLEAN', False)]
+RHO_GT_N=1 max_phase=35 max_reuse=3 max_rho_q=34 phases=1 q_phase=1 q_with_reuse=1 rho=34 rho_CLEAN=34 rho_gate=33 trans=35
+POT PASS
+== ../../n5-exhaustive/instances/frz1_n24.pg ../../n5-exhaustive/instances/frz1_n24.start
+  Q ../../n5-exhaustive/instances/frz1_n24.pg phase@2 len=29 q=11 rho=4 n=24 events=[(21, 22, 'SB', False), (24, 19, 'SB', False), (26, 7, 'SB', False), (28, 15, 'SB', False)]
+max_phase=29 max_reuse=1 max_rho_q=4 phases=1 q_phase=2 q_with_reuse=0 rho=6 rho_CLEAN=1 rho_SB=5 rho_gate=1 trans=29
+POT PASS
+== ../../n5-exhaustive/instances/frz2_n24.pg ../../n5-exhaustive/instances/frz2_n24.start
+  Q ../../n5-exhaustive/instances/frz2_n24.pg phase@1 len=24 q=4 rho=6 n=24 events=[(0, 16, 'CLEAN', True), (2, 15, 'CLEAN', False), (6, 23, 'CLEAN', False), (15, 20, 'CLEAN', True), (16, 22, 'NONCLEAN', False), (21, 21, 'SB', False)]
+  Q ../../n5-exhaustive/instances/frz2_n24.pg phase@1 len=24 q=12 rho=3 n=24 events=[(7, 23, 'SB', True), (15, 20, 'SB', True), (16, 18, 'CLEAN', False)]
+  Q ../../n5-exhaustive/instances/frz2_n24.pg phase@1 len=24 q=23 rho=6 n=24 events=[(0, 19, 'CLEAN', False), (7, 23, 'CLEAN', False), (13, 19, 'CLEAN', False), (14, 22, 'CLEAN', False), (15, 20, 'SB', False), (16, 18, 'SB', False)]
+max_phase=24 max_reuse=2 max_rho_q=6 phases=1 q_phase=3 q_with_reuse=1 rho=15 rho_CLEAN=9 rho_NONCLEAN=1 rho_SB=5 rho_gate=4 trans=24
+POT PASS
+== ../../n5-exhaustive/instances/frz3_n24.pg ../../n5-exhaustive/instances/frz3_n24.start
+  Q ../../n5-exhaustive/instances/frz3_n24.pg phase@2 len=24 q=11 rho=3 n=24 events=[(17, 22, 'SB', False), (21, 21, 'SB', False), (23, 7, 'SB', False)]
+  Q ../../n5-exhaustive/instances/frz3_n24.pg phase@2 len=24 q=12 rho=3 n=24 events=[(0, 19, 'SB', True), (7, 23, 'SB', True), (16, 20, 'CLEAN', False)]
+  Q ../../n5-exhaustive/instances/frz3_n24.pg phase@2 len=24 q=23 rho=7 n=24 events=[(0, 19, 'SB', True), (7, 22, 'CLEAN', True), (9, 23, 'SB', True), (13, 18, 'CLEAN', False), (14, 13, 'CLEAN', False), (15, 22, 'CLEAN', False), (16, 20, 'SB', False)]
+max_phase=24 max_reuse=2 max_rho_q=7 phases=1 q_phase=3 q_with_reuse=1 rho=13 rho_CLEAN=5 rho_SB=8 rho_gate=5 trans=24
+POT PASS

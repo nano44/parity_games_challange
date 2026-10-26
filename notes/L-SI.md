@@ -25,6 +25,15 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   U-up again; nothing forbids it). Lemma OFFUP PROVED (forbidden edges point to strictly higher offsets when λ_Ξ = λ_W at both ends).
   CONJECTURE U-SPLIT (every U event raises y's offset or straddles a stretch_D boundary; DATA 118/118) ⇒ |U| ≤ Σ N_y^↑ + n·n_E·B(S),
   i.e. N_split per vertex reduces to (R2) + (R4). Proof gap: z's class can drop between f and k + 1.
+- 09:08Z Lead GO: U-SPLIT proof attempt. Result (note §18): stops. 112/118 U events straddle a boundary; the no-boundary case has 6
+  events only. Obstruction: z's route can leave its gate for an F_D route better in both frames inside a stretch_D; then y's U event goes
+  offset 0 → 0 with no boundary (explicit numeric scenario; not built; not DEAD). Switching to (R4) per Lead.
+- (R4) (note §19): DATA (bnd.py): pftheta34 has a boundary at EVERY transition (gate 0's Ξ changes 33 times; W(0) never). Lemma GATE-XI
+  PROVED (gate Ξ-changes come from σ̄ changes or from Ξ/W changes of σ̄(u); attributed 216/216). READING: U → boundaries → W-changes → U is
+  circular; no polynomial count from §14-§19 as they stand. OPEN: a dropping potential or an injective CHARGE-U.
+- 09:31Z Lead GO (a) potentials. Result (note §20, pot.py): XI boundaries ARE ρ events, DCH boundaries are epoch boundaries (R63), so
+  B ≤ ρ + epochs + WG: the §19 circularity is the ρ / N_ep problem. pftheta34: gate 0 has 34 CLEAN ALT changes in one phase (ρ_0 > n),
+  path-set levels in a RULER pattern (25 thrice): the four candidate potentials are monotone but exponential-range; none closes.
 - Things only I know: python3 -I drops the script dir from sys.path (lvl2.py inserts it to import lvl). sched.py runs on every λ_W-constant
   fallback-free in-phase run, not only (h3_D) runs (okfrz.py needs (h3_D) everywhere).
 

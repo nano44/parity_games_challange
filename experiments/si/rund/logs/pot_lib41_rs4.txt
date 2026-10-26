@@ -1,0 +1,2 @@
+max_phase=54 max_reuse=2 max_rho_q=10 phases=236 q_phase=749 q_with_reuse=9 rho=1047 rho_CLEAN=339 rho_NONCLEAN=31 rho_SB=677 rho_gate=254 sbar_change_no_xi_change=8 trans=1238
+POT PASS

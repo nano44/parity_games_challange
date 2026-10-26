@@ -1,0 +1,2 @@
+L=-1 MUT=0 bd=81 bd_DCH=74 bd_WG=3 bd_WG_only=0 bd_XI=9 bd_XI_only=6 max_bd_run=2 max_trans_run=4 max_w_changes_gate=1 max_xi_changes_gate=1 runs=641 trans=726
+SCHED PASS
