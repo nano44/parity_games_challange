@@ -251,6 +251,9 @@ Proof.
   climber never produced a gap with an inside fallback. immclimb (IMM, seeds 61-63): IMM failures found at once (§4 (iii)); immclimb --prime
   (IMM′ first, seeds 71-74, 𝒞^2O-𝒞^4O, n ≤ 14-22, 3,000-4,000 steps): best (IMM′ failures, IMM failures, honest-to-dishonest steps) = (0, 1, 3),
   (0, 1, 4), (0, 2, 2), (0, 3, 4): no IMM′ failure.
+- xdir.py (every direct switch {u} → {u′}; out/xdir_rand3000.txt, out/xdir_lib41_k2.txt): random sample 15, ALL at state k ≤ 2 of their run (10 at
+  k = 0, 4 at k = 1, 1 at k = 2; random start pairs); lib41 1, experiments/red/carry/instances/ctx13_n40.pg (S3, k = 10, u 14 → 11, no fallback).
+  In every case Ξ(u) rises to W(u) at k + 1 (σ̄(u) returns to τ(u)). Reading (DATA only): X_dir looks like a start-up transient; no bound.
 - Reading of the data: X_dir and X_big are rare (≤ 1% of interval entries); most {u}-intervals start the phase; the per-phase number of
   {u}-intervals of one u is ≤ 6. Nothing here bounds X_dir or X_big.
 
