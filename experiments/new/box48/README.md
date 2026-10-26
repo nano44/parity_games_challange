@@ -62,3 +62,5 @@ transitions, |Q| 3; out/nconf_long121.txt, out/retfb_long121.txt.
   out/orun_lib41_n34_k2.txt, out/orun_long7.txt.
 - frz.py (as zch.py) [VERB=1]: the DEAD guess FRZ_c (M(κ) frozen after |U_c| − 1 transitions of a fallback-free run; N5-KPOLY §12 (iii)).
   out/frz_lib41_n34_k2.txt, out/frz_long7.txt, out/frz_so_th_n32_S3.txt (`0 1 ../../red/so/instances/so_th_n32.pg`, the kill).
+- offmono3.py (as offmono2.py): OFFSET-MONO⁺ (N5-KPOLY §14; REFEREE OFFADD-N2), hypothesis "q on no honest cycle at t" dropped; ONCYC / L1 / L2
+  split. out/offmono3_lib41_n34_k2.txt, _MUT.txt, out/offmono3_long7.txt.
