@@ -1,0 +1,55 @@
+MODE random 300 5 16 41 kO 2 MUT keep
+A_checks: 3780
+A_fb_pairs: 45
+B_checks: 653
+CONV_checks: 693
+COR_n_inphase: 141
+COR_t_inphase: 351
+C_n5_checks: 653
+C_tau_checks: 2267
+D_checks: 3780
+LINK_checks: 3266
+NONEX_n: 300
+NONEX_t: 752
+R48_max_f: 1
+R48_max_phase_len: 2
+R48_phases: 225
+R48_runs: 105
+RUNS_differ: 603
+SELF_checks: 900
+TIEKEEP: 1614
+VIOLATIONS: 1574
+V_C: 1574
+stable_with_Itau: 179
+states: 3780
+VIOLATION C: random41:0#1@0 (tau): keeps tau but not tau-stable
+VIOLATION C: random41:0#1^t@0 (tau): keeps tau but not tau-stable
+VIOLATION C: random41:0#1^t@1 (tau): keeps tau but not tau-stable
+VIOLATION C: random41:0#2@0 (tau): keeps tau but not tau-stable
+VIOLATION C: random41:0#2^t@0 (tau): keeps tau but not tau-stable
+VIOLATION C: random41:0#2^t@1 (tau): keeps tau but not tau-stable
+VIOLATION C: random41:1#0@0 (tau): keeps tau but not tau-stable
+VIOLATION C: random41:1#0@1 (tau): keeps tau but not tau-stable
+VIOLATION C: random41:1#0^t@0 (tau): keeps tau but not tau-stable
+VIOLATION C: random41:1#0^t@1 (tau): keeps tau but not tau-stable
+VIOLATION C: random41:1#0^t@2 (tau): keeps tau but not tau-stable
+VIOLATION C: random41:1#1@0 (tau): keeps tau but not tau-stable
+VIOLATION C: random41:1#1@1 (tau): keeps tau but not tau-stable
+VIOLATION C: random41:1#1^t@0 (tau): keeps tau but not tau-stable
+VIOLATION C: random41:1#1^t@1 (tau): keeps tau but not tau-stable
+VIOLATION C: random41:1#2@0 (tau): keeps tau but not tau-stable
+VIOLATION C: random41:1#2@1 (tau): keeps tau but not tau-stable
+VIOLATION C: random41:1#2^t@0 (tau): keeps tau but not tau-stable
+VIOLATION C: random41:1#2^t@1 (tau): keeps tau but not tau-stable
+VIOLATION C: random41:2#1@0 (tau): keeps tau but not tau-stable
+VIOLATION C: random41:2#1^t@0 (tau): keeps tau but not tau-stable
+VIOLATION C: random41:2#2@0 (tau): keeps tau but not tau-stable
+VIOLATION C: random41:2#2^t@0 (tau): keeps tau but not tau-stable
+VIOLATION C: random41:3#2@0 (tau): keeps tau but not tau-stable
+VIOLATION C: random41:3#2^t@0 (tau): keeps tau but not tau-stable
+VIOLATION C: random41:4#0@1 (tau): keeps tau but not tau-stable
+VIOLATION C: random41:4#0^t@1 (tau): keeps tau but not tau-stable
+VIOLATION C: random41:4#1@1 (tau): keeps tau but not tau-stable
+VIOLATION C: random41:4#1^t@1 (tau): keeps tau but not tau-stable
+VIOLATION C: random41:5#2@0 (tau): keeps tau but not tau-stable
+RESULT FAIL violations=1574
