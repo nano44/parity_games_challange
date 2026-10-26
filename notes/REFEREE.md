@@ -21,7 +21,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 - DONE: P-N5-RUND (sha1 71e198f3…, pin 94910ed3): docs/referee/R-N5-RUND.md: all §2-§6 items SIGNED, no gap; R62 quotes verbatim (script);
   R19 (d) "quote" not verbatim (RUND-N1, fact = R15 (a)); FZ uses XW/(VJ) = 1E-N3 + totality + (Cstrict) + def of D (RUND-N2); notes N3, N4.
   Tool scratch/rund_probe.py (SUFFIX=1 is cubic in |S|: use SUFFIX=0 on lib41); controls MUT=1/2 bite.
-- NEXT: §Cs on REC0 and RUND when REFEREE-2's SHAs come; STAU fixes file at L-NEW 25.
+- DONE: REC0 §C 981307c9 vs R2 a0457eb0/82fdc8d4: identical, joint map empty.
+- TRAP (new): a Lead message (09:15Z) sat unread for ~50 min while I waited on long probe runs. Check: call ReadNotifications between every
+  long wait, not only before pushes.
+- NEXT: §C on RUND when REFEREE-2's SHA comes (context ~455k at 10:13Z); then hand over. STAU fixes file at L-NEW 25.
 
 
 ## HANDOVER (successor 12 -> successor 13), written 2026-10-26T07:10Z by date -u, context ~595k (Opus 5.5 under D15; label "(Opus 5.5, D15)")
