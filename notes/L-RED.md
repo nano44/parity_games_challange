@@ -38,6 +38,24 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
      - R74 §2.5 construction;
      - FB-CAP |U| ≥ 3: the fcap3 climb is never > 0;
      - beta2 cascade: maxbeta 2, never 3.
+- Climb recipe that found the LEVEL-COUNT kills (cl_171 → lcount2_n23, cl_172 → lcount_n23; about 16-18 min, 245-281 k evaluations):
+  `ANALYSER=h3 python3 experiments/red/fbr/climbfr19.py "(lc_slack*1000+lc_maxchg) if lc_checks else -10**9" <seed> 2400 2 <OUT> <seed.json>`
+  - seed.json = L-SI's offret_n23.pg plus its .start, converted to {prio, owner, succ, start} (successor sets as lists; start a
+    per-vertex vector); QMIN = 2.
+  - lc_slack := max over stretch_D segments and vertices of |OC(v)| − |RL(v)|. A kill is lc_slack ≥ 1 (score ≥ 1000).
+  - The climb mutates priorities, successor sets, owners and start entries. Every improvement is re-run; pin from re-runs only.
+  - Seeds 171 and 172 both hit slack 1 within about 15 min. The mkalt K = 4 seed (173) stayed at −1.
+- Sources opened this session (all fleet-internal, read at the SHA given):
+  - docs/si/P-N5-1O-box15.md 2cf5e672; docs/new/P-N5-DUAL-box43.md a51f7c30;
+  - docs/new/P-N5-FBRED-box44.md 11b15455; docs/new/N5-FBF-box44.md (l-new bca23df8, 6800a4b7, 916aa2b3, a77693d1);
+  - docs/si/N5-2O-box16.md (l-si 67fd31d9); docs/si/P-N5-H3-box16.md 680e4528; docs/new/P-N5-XEP-box44.md 237dd5eb;
+  - docs/si/N5-RUND-box17.md (l-si d61b3cf0, ac80b594); RESULTS R15, R21, R27, R30, R34, R36, R47, R48, R50.
+  - No external source was cited by me. BGHM arXiv:1407.5030 was read only through L-NEW's §7 quote.
+- Dead ends (mine; each with its instance):
+  - two-wave single-chain restart: additivity obstruction, twowave_L16 (R76 §9);
+  - "τ fixed and optimal ⇒ N5 is VJ switch-all": refuted by Friedmann families with 0 fallbacks (R76 §3);
+  - the BGHM gadget as a fallback pump: bghm_k*_A (R76 §2);
+  - vertex deletion to an epoch with n − 1 fallbacks: stalled at gap −6 (shrinkep19, R76 §4).
 - Things only I know:
   - Never `ps … | grep <pattern> | kill`: the pattern is in my own shell's command line and kills the shell (exit 144). Print the pids
     first, then kill them explicitly. A heredoc inside a killed shell is never written.

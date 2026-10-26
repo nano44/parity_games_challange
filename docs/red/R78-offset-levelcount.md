@@ -27,7 +27,10 @@ Targets: L-SI's lane note docs/si/N5-RUND-box17.md (l-si d61b3cf0 → ac80b594):
     - L-SI's gap.py --one: the same offset sequence [0, 262144, 0, 786432] for vertex 1, states 0-3.
     Two engines agree (mine, via o1_19.trace, and L-SI's n5x step), and n5.py reproduces the iteration count.
   - How found: climbfr19.py (ANALYSER=h3) on (offset changes − rise levels) per vertex per stretch_D, seeded from L-SI's offret_n23 with
-    its start. Seed 172 found it; seed 171 found a sibling at n 23 (v = 12, 16, 20, levels [20, 21]; not pinned).
+    its start. Seed 172 found it. Seed 171 found a sibling, pinned as
+    experiments/red/h3/instances/lcount2_n23.pg (sha1 dd9847c6b19cb9f44af73bcc23de7ca2aca9a14c; start.json ac8f9f1e; n5.py --start:
+    6 iterations, 0 fallbacks; zlk OK, strategies verified). In it, v = 12, 16 and 20 each have 3 offset changes in states 1..4 with
+    RL = {20, 21}; the pay levels are [20, 20, 21].
 - OFFSET-ONCE (already refuted by L-SI, offret_n23): my engine reproduces L-SI's return on offret_n23 (v = 22: 131204 → 264200 → 131204,
   states 0-3). My own OFFSET-ONCE climbs (from frz40 and off_s22_n24) also found returns on this engine. Smallest pinned:
   offret_l19_n24.pg (sha1 17b41245fb87e8e2638912ea78112a3751321cd8; zlk OK, strategies verified). I do not claim it was found first.
