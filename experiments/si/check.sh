@@ -224,3 +224,11 @@ if git cat-file -e 7d87f9be; then
 else
   echo "root (packet P-N5-GCX-box21 quotes): NOT RUN (source commit not in this clone)"
 fi
+# box 22 (docs/si/N5-EXIT-box22.md): exit changes on nep90_n40. Lemmas MONO-REF, PUSH, EXIT-RHO, DEPTH, EXIT-RED: 0 violations; sum EXIT = 53
+# (= L-NEW's PARCHG), every value push is P1UP and DOWN; controls MRMUT=1 (reference off the play) and PUSHMUT=1 (rise demanded of p2) bite.
+o=$(MR=1 python3 -I root/exitx.py --one ../red/rec0/instances/nep90_n40.pg rund/instances/nep90_n40.start)
+for k in "EXIT_sum=53 " "EXIT_max=18 " "chv_P1UP=13 " "chv_DOWN=13 " "n_alldown=18 " "n_other=22 " "mr_checks=4609 " "EXITX PASS"; do grep -q "$k" <<<"$o"; done
+if grep -q "_V=\|chv_UP=" <<<"$o"; then echo "exitx: violation on nep90"; exit 1; fi
+MR=1 MRMUT=1 python3 -I root/exitx.py --one ../red/rec0/instances/nep90_n40.pg rund/instances/nep90_n40.start | grep -q "MR_V="
+PUSHMUT=1 python3 -I root/exitx.py --one ../red/rec0/instances/nep90_n40.pg rund/instances/nep90_n40.start | grep -q "PUSH_V=16 "
+echo "root (exitx on nep90: MONO-REF, PUSH, EXIT-RHO, DEPTH hold, EXIT 53 / 18; controls MRMUT, PUSHMUT bite): PASS"
