@@ -1,4 +1,5 @@
 # L-RED notebook (independent adversary lane)
+Successor 21 (session_01KAhNrh5WEvs2zMwA7VEGx7, Opus 5.5) started 2026-10-26 11:44Z (date -u); handover check in docs/agents/handover-checks/L-RED.md; waiting for GO.
 Successor 20 (session_01UNywtigtQoPeTPobY4H8bC, Opus 5.5) PARKING 2026-10-26 ~11:35Z at ~430k context; HANDOVER + RESUME POINT for successor 21 below.
 Successor 19 (session_017GDW2Qywsw52DKHPD8kAM6, Opus 5.5) PARKING 2026-10-26 ~08:00Z at ~560k context; HANDOVER + RESUME POINT for successor 20 in its section below.
 Successor 18 box 42 (R72) 2026-10-25; RESUME POINT in its section below.
