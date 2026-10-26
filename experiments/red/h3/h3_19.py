@@ -42,7 +42,7 @@ def analyse(g, start=None, cap=5000):
     n = g.n; S, FB, E = O.trace(g, start, "n5", cap)
     ev = [E.evaluate(s) for s, _ in S]; Xi = [X for X, _ in ev]; SB = [B for _, B in ev]
     r = dict(n=n, ITER=len(FB), states=0, h3_states=0, c2_checks=0, tcc_checks=0, wmg_checks=0, frz_runs=0, frz_nonvac=0,
-             frz_longest=0, frz_gap=-10 ** 9, frz_move_gap=-10 ** 9, frz_moves=0, fails=[])
+             frz_longest=0, frz_gap=-10 ** 9, frz_move_gap=-10 ** 9, frz_moves=0, rstick_checks=0, snp_checks=0, crossings=0, xsn_pre_ep=0, xsn_pre_run=0, xep_slack=-10 ** 9, fails=[])
     lamX = [tuple(x[0] for x in X) for X in Xi]
     W, lamW, D, U, MD, H3 = [], [], [], [], [], []
     for k, (sig, tau) in enumerate(S):
@@ -74,6 +74,47 @@ def analyse(g, start=None, cap=5000):
             if not FB[k]:
                 r["wmg_checks"] += 1
                 if any(E.key(W[k + 1][v]) < E.key(W[k][v]) for v in range(n)): r["fails"].append(f"WMG k={k}")
+        # ---- P-N5-XEP (docs/new/P-N5-XEP-box44.md, sha1 237dd5eb): R-STICK_D, SN-PREFIX_D (a), crossings, X_SN^pre, X-EP bound
+        RD = [{v for v in range(n) if U[k][v] is not None} for k in range(len(S))]
+        split = lambda k, v: lamW[k][v] != lamX[k][v]
+        Q = [v for v in range(n) if g.owner[v] == 1 and len(set(g.succ[v])) > 1]
+        for k in range(a, b):
+            if FB[k]: continue
+            for v in RD[k]:
+                if split(k, v):
+                    r["rstick_checks"] += 1
+                    if v not in RD[k + 1]: r["fails"].append(f"RSTICK k={k} v={v}")
+        # SN-PREFIX_D (a): within each S4a run, unsplit states of v form a prefix
+        k = a
+        while k < b:
+            k0 = k
+            while k < b and not FB[k]: k += 1
+            for v in range(n):
+                r["snp_checks"] += 1; seen_split = False
+                for t in range(k0, k + 1):
+                    if split(t, v): seen_split = True
+                    elif seen_split: r["fails"].append(f"SNPREFIX v={v} t={t}"); break
+            k += 1
+        epid = [0] * (b - a + 1)
+        for k in range(a + 1, b + 1): epid[k - a] = epid[k - a - 1] + (tuple(SB[k][q] for q in Q) != tuple(SB[k - 1][q] for q in Q))
+        Nep = epid[-1] + 1; XD = 0; xpre = {}
+        for k in range(a, b):
+            if RD[k] == RD[k + 1]: continue
+            XD += 1; r["crossings"] += 1
+            e = epid[k - a]
+            if epid[k + 1 - a] != e: continue
+            efb = [t for t in range(a, b) if FB[t] and epid[t - a] == e]
+            if len(efb) >= n - 1 and k > efb[n - 2]: continue
+            if any(not split(k, v) and ((v in RD[k]) != (v in RD[k + 1])) for v in range(n)):
+                xpre[e] = xpre.get(e, 0) + 1
+                run0 = k
+                while run0 > a and not FB[run0 - 1] and epid[run0 - 1 - a] == e: run0 -= 1
+                xpre[(e, run0)] = xpre.get((e, run0), 0) + 1
+        pe = max([v for kk, v in xpre.items() if not isinstance(kk, tuple)] + [0]); pr = max([v for kk, v in xpre.items() if isinstance(kk, tuple)] + [0])
+        r["xsn_pre_ep"] = max(r["xsn_pre_ep"], pe); r["xsn_pre_run"] = max(r["xsn_pre_run"], pr)
+        bound = (Nep - 1) + Nep * (n * n + n + 4 * n * (n - 1)) + sum(v for kk, v in xpre.items() if not isinstance(kk, tuple))
+        r["xep_slack"] = max(r["xep_slack"], XD - bound)
+        if XD > bound: r["fails"].append(f"XEP XD={XD} bound={bound}")
         # maximal fallback-free runs of states inside [a, b] with (h3_D) at every state
         k = a
         while k <= b:
@@ -103,7 +144,7 @@ if __name__ == "__main__" and sys.argv[1] == "file":
 
 def libmain(seed, R, nmax, files):
     import random
-    rng = random.Random(seed); tot = {}; fails = {}; best = {}; runs = 0
+    rng = random.Random(seed); tot = {}; fails = {}; best = {}; bst = {}; runs = 0
     for f in files:
         try: g = pg.parse("".join(l for l in open(f) if not l.lstrip().startswith("%")))
         except Exception: continue
@@ -111,12 +152,13 @@ def libmain(seed, R, nmax, files):
         for k in range(R + 1):
             st = None if k == 0 else [rng.choice(g.succ[v]) for v in range(g.n)]
             r = analyse(g, st); runs += 1
-            for kk in ("states", "h3_states", "c2_checks", "tcc_checks", "wmg_checks", "frz_runs", "frz_nonvac", "frz_moves"): tot[kk] = tot.get(kk, 0) + r[kk]
+            for kk in ("states", "h3_states", "c2_checks", "tcc_checks", "wmg_checks", "frz_runs", "frz_nonvac", "frz_moves", "rstick_checks", "snp_checks", "crossings"): tot[kk] = tot.get(kk, 0) + r[kk]
             for x in r["fails"]:
                 fails[x.split()[0]] = fails.get(x.split()[0], 0) + 1
                 if fails[x.split()[0]] <= 3: print("FAIL", f, x, st, flush=True)
-            for kk in ("frz_longest", "frz_gap", "frz_move_gap"):
-                if kk not in best or r[kk] > best[kk][0]: best[kk] = (r[kk], os.path.basename(f), st is None)
+            for kk in ("frz_longest", "frz_gap", "frz_move_gap", "xsn_pre_ep", "xsn_pre_run", "xep_slack"):
+                if kk not in best or r[kk] > best[kk][0]: best[kk] = (r[kk], os.path.basename(f), st is None); bst[kk] = dict(file=f, start=st)
+    json.dump(bst, open(os.environ.get("H3BEST", "/dev/null"), "w"))
     print("RUNS", runs, "TOT", tot, "FAILS", fails, "BEST", best, flush=True)
 
 def randmain(seed, count, nmin, nmax, kmax):
@@ -128,11 +170,11 @@ def randmain(seed, count, nmin, nmax, kmax):
         for o in rng.sample(range(n), rng.randint(2, kmax)): owner[o] = 1; succ[o] = sorted(set(rng.sample(range(n), rng.randint(2, max(2, n // 2)))))
         g = pg.Game(prio, owner, succ); st = None if i % 2 == 0 else [rng.choice(g.succ[v]) for v in range(n)]
         r = analyse(g, st)
-        for kk in ("states", "h3_states", "c2_checks", "tcc_checks", "wmg_checks", "frz_runs", "frz_nonvac", "frz_moves"): tot[kk] = tot.get(kk, 0) + r[kk]
+        for kk in ("states", "h3_states", "c2_checks", "tcc_checks", "wmg_checks", "frz_runs", "frz_nonvac", "frz_moves", "rstick_checks", "snp_checks", "crossings"): tot[kk] = tot.get(kk, 0) + r[kk]
         for x in r["fails"]:
             fails[x.split()[0]] = fails.get(x.split()[0], 0) + 1
             if fails[x.split()[0]] <= 3: print("FAIL", x, json.dumps(dict(prio=prio, owner=owner, succ=succ, start=st)), flush=True)
-        for kk in ("frz_longest", "frz_gap", "frz_move_gap"):
+        for kk in ("frz_longest", "frz_gap", "frz_move_gap", "xsn_pre_ep", "xsn_pre_run", "xep_slack"):
             if kk not in best or r[kk] > best[kk]: best[kk] = r[kk]
     print("RAND", count, "TOT", tot, "FAILS", fails, "BEST", best, flush=True)
 
