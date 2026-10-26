@@ -1,1 +1,4 @@
 start 2000 n 24
+1031 14000 FRZ_checks 2 seed 1432
+1115 16000 FRZ_checks 2 seed 1516
+Terminated

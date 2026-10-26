@@ -5,6 +5,7 @@ is actually tested. Every scored run is fully checked by gdnc_check.check_run (b
 Fitness (own): 1000 * (longest qualifying run in states - (n - 1)) + 10 * FRZ_checks + longest qualifying run, max over the canonical start
 and 3 seeded random start pairs. Mutation (own): keeps n and at least 2 Odd vertices with out-degree >= 2.
 FIT=nh (env): 10000 * (states with not (h_D) in checked runs) + 2000 * (states with |D_k| >= 2 in checked runs) + min(fitness, 2000).
+FIT=nh2: the nh terms count only if the longest qualifying run has >= n + 1 states; + 3000 * min(longest - (n - 1), 3).
 Usage: frz_climb.py steps seed OUTPREFIX INIT.pg"""
 import os
 import random
@@ -60,6 +61,8 @@ def score(g, seed):
     f = 1000 * (best - (g.n - 1)) + 10 * c["FRZ_checks"] + best
     if FIT == "nh":   # aim at the (NC)-only case: qualifying runs that contain (NC) and not (h_D) states, or two gates in D
         f = 10000 * c["FRZ_checked_states_not_hD"] + 2000 * c["FRZ_checked_states_D_ge2"] + min(f, 2000)
+    if FIT == "nh2":  # as nh, but the checked run must reach n + 1 states (non-vacuous also under the 0-based reading of "(n-1)-th")
+        f = (10000 * c["FRZ_checked_states_not_hD"] + 2000 * c["FRZ_checked_states_D_ge2"]) * (best >= g.n + 1) + 3000 * min(best - (g.n - 1), 3) + 10 * best
     return f, c, viol, starts
 
 

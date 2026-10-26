@@ -5,3 +5,7 @@ start -1979 n 24
 1703 2035 FRZ_checks 1 seed 2004
 1797 2045 FRZ_checks 2 seed 2098
 5549 2055 FRZ_checks 3 seed 5850
+11049 3036 FRZ_checks 1 seed 11350
+11097 3046 FRZ_checks 2 seed 11398
+11295 3056 FRZ_checks 3 seed 11596
+11733 3066 FRZ_checks 4 seed 12034
