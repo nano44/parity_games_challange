@@ -1,0 +1,58 @@
+MODE files ../R2-N5-KW/files.lst 1 spec MUT sw
+VIOLATIONS: 943
+V_SW: 943
+cls_P3: 209
+cls_U1: 600
+cls_U2: 161
+cls_U23: 94
+cls_U3: 237
+other_stretches: 1301
+phases: 2030
+phases_with_O: 192
+runs: 503
+sum_O: 1309
+transitions: 10730
+O_over_NHa_x1e6: (147, 'experiments/n5-exhaustive/instances/b4_n4all_cyc3_0.pg#0')
+max_E_broad: (15, 'experiments/new/box32/instances/kwm_cex_n24.pg#0')
+max_E_narrow: (15, 'experiments/new/box32/instances/kwm_cex_n24.pg#0')
+max_KW: (25, 'experiments/red/xing/instances/kw25_n32.pg#0')
+max_NR_P3: (9, 'experiments/new/box31/instances/p3long_n14.pg#0')
+max_NR_U1: (12, 'docs/referee-2/R2-N5-U1/climb/c_u1n32_best.pg#0')
+max_NR_U2: (25, 'experiments/red/xing/instances/kw25_n32.pg#0')
+max_NR_U23: (13, 'experiments/new/box29/out/op20_r.pg#0')
+max_NR_U3: (14, 'experiments/new/box32/instances/kwm_cex_n24.pg#0')
+max_O: (77, 'experiments/n5-exhaustive/instances/b5_os_n40.pg#0')
+max_T: (112, 'experiments/red/so/instances/xsn91_n48.pg#0')
+max_X: (100, 'experiments/red/so/instances/xsn91_n48.pg#0')
+max_fO: (12, 'experiments/new/box25/instances/wd16_s2.pg#0')
+VIOLATION SW: docs/referee-2/R2-N5-1OA/logs/fl_n16_y4.pg#0: Xi/W change on R without switch on R at 0
+VIOLATION SW: docs/referee-2/R2-N5-1OA/logs/rel_g16_y4.pg#0: Xi/W change on R without switch on R at 0
+VIOLATION SW: docs/referee-2/R2-N5-1OA/logs/rel_g16_y4.pg#0: Xi/W change on R without switch on R at 14
+VIOLATION SW: docs/referee-2/R2-N5-ENT/climb/best_blk_9204.pg#0: Xi/W change on R without switch on R at 2
+VIOLATION SW: docs/referee-2/R2-N5-ENT/climb/best_rise_9203.pg#0: Xi/W change on R without switch on R at 2
+VIOLATION SW: docs/referee-2/R2-N5-FB/climb/ccl_best.pg#0: Xi/W change on R without switch on R at 3
+VIOLATION SW: docs/referee-2/R2-N5-FRZ/climb/best_block_11.pg#0: Xi/W change on R without switch on R at 6
+VIOLATION SW: docs/referee-2/R2-N5-FRZ/climb/best_block_13.pg#0: Xi/W change on R without switch on R at 6
+VIOLATION SW: docs/referee-2/R2-N5-FRZ/climb/best_block_13.pg#0: Xi/W change on R without switch on R at 7
+VIOLATION SW: docs/referee-2/R2-N5-FRZ/climb/best_block_13.pg#0: Xi/W change on R without switch on R at 8
+VIOLATION SW: docs/referee-2/R2-N5-FRZ/climb/best_block_13.pg#0: Xi/W change on R without switch on R at 19
+VIOLATION SW: docs/referee-2/R2-N5-FRZ/climb/best_block_13.pg#0: Xi/W change on R without switch on R at 46
+VIOLATION SW: docs/referee-2/R2-N5-FRZ/climb/best_fb_31.pg#0: Xi/W change on R without switch on R at 43
+VIOLATION SW: docs/referee-2/R2-N5-FRZ/climb/best_fb_31.pg#0: Xi/W change on R without switch on R at 44
+VIOLATION SW: docs/referee-2/R2-N5-FRZ/climb/best_fb_31.pg#0: Xi/W change on R without switch on R at 45
+VIOLATION SW: docs/referee-2/R2-N5-FRZ/climb/best_fb_31.pg#0: Xi/W change on R without switch on R at 46
+VIOLATION SW: docs/referee-2/R2-N5-FRZ/climb/best_fb_31.pg#0: Xi/W change on R without switch on R at 78
+VIOLATION SW: docs/referee-2/R2-N5-FRZ/climb/best_fb_32.pg#0: Xi/W change on R without switch on R at 44
+VIOLATION SW: docs/referee-2/R2-N5-FRZ/climb/best_fb_32.pg#0: Xi/W change on R without switch on R at 45
+VIOLATION SW: docs/referee-2/R2-N5-FRZ/climb/best_leave_41.pg#0: Xi/W change on R without switch on R at 6
+VIOLATION SW: docs/referee-2/R2-N5-FRZ/climb/best_leave_41.pg#0: Xi/W change on R without switch on R at 73
+VIOLATION SW: docs/referee-2/R2-N5-FRZ/climb/best_leave_43.pg#0: Xi/W change on R without switch on R at 46
+VIOLATION SW: docs/referee-2/R2-N5-FRZ/climb/best_leave_43.pg#0: Xi/W change on R without switch on R at 47
+VIOLATION SW: docs/referee-2/R2-N5-FRZ/climb/best_leave_43.pg#0: Xi/W change on R without switch on R at 48
+VIOLATION SW: docs/referee-2/R2-N5-FRZ/climb/best_leave_43.pg#0: Xi/W change on R without switch on R at 78
+VIOLATION SW: docs/referee-2/R2-N5-FRZ/climb/best_leave_43.pg#0: Xi/W change on R without switch on R at 81
+VIOLATION SW: docs/referee-2/R2-N5-FRZ/climb/best_low_21.pg#0: Xi/W change on R without switch on R at 2
+VIOLATION SW: docs/referee-2/R2-N5-L2/climb/best_frz_52.pg#0: Xi/W change on R without switch on R at 0
+VIOLATION SW: docs/referee-2/R2-N5-L2/climb/best_frz_52.pg#0: Xi/W change on R without switch on R at 3
+VIOLATION SW: docs/referee-2/R2-N5-L2/climb/best_frz_52.pg#0: Xi/W change on R without switch on R at 6
+RESULT FAIL violations=943

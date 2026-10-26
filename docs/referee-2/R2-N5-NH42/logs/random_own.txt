@@ -1,0 +1,26 @@
+MODE random 3000 6 16 4214 own MUT -
+cls_P3: 344
+cls_U1: 561
+cls_U2: 219
+cls_U23: 197
+cls_U3: 223
+other_stretches: 1544
+phases: 7212
+phases_with_O: 20
+runs: 3000
+sum_O: 20
+transitions: 5134
+O_over_NHa_x1e6: (18, 'random4214:922')
+max_E_broad: (0, 'random4214:0')
+max_E_narrow: (0, 'random4214:0')
+max_KW: (0, 'random4214:0')
+max_NR_P3: (0, 'random4214:4')
+max_NR_U1: (0, 'random4214:12')
+max_NR_U2: (0, 'random4214:8')
+max_NR_U23: (0, 'random4214:19')
+max_NR_U3: (0, 'random4214:26')
+max_O: (1, 'random4214:128')
+max_T: (3, 'random4214:1654')
+max_X: (2, 'random4214:12')
+max_fO: (1, 'random4214:1344')
+RESULT OK violations=0
