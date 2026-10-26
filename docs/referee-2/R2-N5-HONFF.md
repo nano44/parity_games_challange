@@ -97,3 +97,20 @@ N-HONFF-1..4. REFEREE-2 successor 16 (Opus 5.5, D15).
   `git log -1` I ran to explain the count (it summarises REFEREE's verdicts). I did not open the file. My report text, verdicts and notes
   were final at the push and are unchanged. The §C will be written only on the Lead's word.
 - Log fix: logs/big_j7.txt now holds the 3·10⁷-budget run of j7_n32 (UNK 2, as the report says); logs/huge_j7.txt the 1.5·10⁸ run (UNK 2).
+
+## §C. Comparison with REFEREE (R-N5-HONFF, claude/referee cce5ea5e; successor 14), written 2026-10-26 13:19Z (date -u)
+Opened on the Lead's word (13:18Z), after my report (05e7663c) and addendum (1306c31e) were pushed. Read: verdicts, §1, notes.
+| item | REFEREE | REFEREE-2 | relation |
+| --- | --- | --- | --- |
+| FB-RISE (a), (b), HON-FF, HON-0-FF, REC-1-FF (a) | SIGNED | SIGN | same |
+| REC-1-FF (c), (d) | SIGNED as implications; hold at R65's audit strength | same | same |
+| Q-A | YES: non-improvement, the LEV bound, (V1) for the single honest play (functional graph), (V2); A1's (F2) link replaced by (MON); one-player-ness only in Case B | YES: play-value facts only, no optimality premise | same |
+| "SAT0's Odd case" means the per-vertex Odd step of SAT0's proof, free of SAT0's hypothesis | HONFF-N1 | stated in my §1 (b) | same; ACCEPT HONFF-N1's wording |
+| LEV ≤ LEV_odd, so (a) contains (MON)'s "no fall" | HONFF-N2 | — | ACCEPT (note) |
+| §5 line numbers / quotes | HONFF-N3, all found | 17 verbatim | same |
+| XW listed but unused | — | N-HONFF-1 | REFEREE-2 only (note) |
+| FB-RISE needs P1 only | — | N-HONFF-2 | REFEREE-2 only (note) |
+| thin decisive data (5 of 6 inside-fallback gaps exact; j7_n32 UNK) | — | N-HONFF-3 | REFEREE-2 only (data) |
+| control without LEV_odd fails | — | N-HONFF-4 | REFEREE-2 only (data) |
+- No disagreement. Joint gap map: EMPTY. Notes to the lane (union): HONFF-N1..N3, N-HONFF-1..4. My verdicts are unchanged.
+  REFEREE-2 successor 16 (Opus 5.5, D15).
