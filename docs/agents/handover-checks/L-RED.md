@@ -1,4 +1,55 @@
-# Handover check: L-RED successor 20 (Opus 5.5, D14/D15/D18; LANE-RESTART step 3; written 2026-10-26 08:06Z by date -u)
+# Handover check: L-RED successor 21 (Opus 5.5, D14/D15/D18; LANE-RESTART step 3; written 2026-10-26 11:45Z by date -u)
+Every answer is measured from the repository (commands named), not recalled. Predecessor: successor 20
+(session_01UNywtigtQoPeTPobY4H8bC), handover = notebook "Successor 20 HANDOVER" at l-red 80ccc8fd.
+Successor 20's answers follow below this section.
+
+## 1. Branch, head, distance to trunk
+- Branch `claude/l-red`. Container at start: local = 0d0b67a1 (stale; clean tree). `git fetch origin claude/l-red claude/vibrant-johnson-nxvvxo`
+  (11:44Z) moved origin/claude/l-red 0d0b67a1..80ccc8fd; `git merge --ff-only origin/claude/l-red`; `git rev-parse HEAD origin/claude/l-red`
+  -> both 80ccc8fde446ee61cb1bdd01010f049b64d38170.
+- Trunk `claude/vibrant-johnson-nxvvxo` = fb3302f5. `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` at 80ccc8fd
+  -> 2 ahead / 232 behind; merge-base 843d88b2 (R85). The 2 ahead: b08c8bae (R86) and 80ccc8fd (HANDOVER), not yet on trunk.
+- Trunk merged into the lane with `git merge --no-ff` (cd1b17c4; no rebase, amend or force-push): 3 ahead / 0 behind before this commit.
+
+## 2. Open work and the next step of each
+Nothing in flight (`ps -eo pid,args | grep python3`: no lane job; predecessor reported none). tools/oink/build was absent;
+scripts/setup_oink.sh run 11:44Z, exit 0: "oink built at 8fbf0a7" (needed for every Oink cross-check). Pins re-measured: pp_K12_n161_dual.pg f967a43d,
+gate_K16_n197.pg 3eeddc86 (experiments/red/usplit/instances/), matching R84/R86.
+Planned after "go" (D18, N5; Lead brief), in order:
+- (1) Open core of R83-R86: release of Ξ-blocked, W-tempted edges WITHOUT fresh content (trapping both players at once). Either a family
+  where unforbid-switches per run, or runs per phase, grow super-polynomially (faithful N5, SPEC S1-S5), or the precise obstruction as a
+  lane lemma. Known: R86 (τ-counters need k = ω(1) Odd choice vertices), R85 (Friedmann's counter fails under S4a), R84 (re-arming without
+  release). Next: read R83 §2/§4, R84, R86; try to prove "a Ξ-block re-armed without new content is never released" from S4a's Ξ optimum
+  (monotone over the frozen τ), and build the counter-candidate on 𝒞^2O with mkgate + a second reader if the proof stalls.
+- (2) CONJECTURE HON-FF (docs/new/P-N5-HON-box46.md §5, trunk 67a7b54d): exact checker from the frozen §5 text (Ξ-level across every
+  gap between W-honest states, inside fallbacks included); seeds experiments/n5-epoch/instances/ffin12_n32, ffin5_n32, ffin4_n24 and
+  lib41's j10_n24, j7_n32, j8_n32; then climb on (level drop).
+- (3) CONJECTURE FRZ-RHO (docs/si/N5-RUND-box17.md §23.3, DATA, 0 violations, tightest ratio 0.87) and §24's N3 level lemma if stated:
+  own exact checker, climb on the ratio.
+
+## 3. docs/GAPS.md rows I own
+- G-NEST (major; owner "L-RED (attacks + proof attempts); L-ALG successor if any"), status **open** (trunk docs/GAPS.md line 9).
+  Its DTL line is paused under D18 (Lead reading L40).
+- Attacked, not owned: G-N5-TIME (major, owner "L-NEW (L-LIT T22; referees later)", **open**, line 11): targets (1)-(3) feed it.
+  GAP-A, GAP-C (owner "L-ALG (L-RED attacks)", open, lines 6-7; DTL paused).
+
+## 4. The three owner rulings that most constrain me (verbatim), with their DECISIONS-INDEX status
+1. D18 (docs/DECISIONS.md line 333), status **active** (DECISIONS-INDEX line 32):
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+2. D1 (docs/DECISIONS.md line 7), status **active** (DECISIONS-INDEX line 5):
+   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+3. D14 (docs/DECISIONS.md lines 245-246), status **active** (DECISIONS-INDEX line 22):
+   > D
+   > You know it can also test prveiously not tested approaches, it can come up with it own as well
+
+## 5. One trap that bit this lane, and the check that now prevents it
+- Trap (successor 20, R80 §0a): a near mis-claimed kill. The first U-SPLIT family changed R_D (z left R_D), so it killed L-SI §17 only as
+  written, not under the stretch_D reading (stretch_D = D, R_D and gate values constant).
+  Check now: list every clause of the target's definitions (not only the clause the conjecture spells out) and test each on the kill
+  instance before claiming; pin with sha1 + start pair and cross-check with Oink and a second implementation (n5.py / n5b).
+- Also caught at this restart: stale local branch (0d0b67a1, behind origin/claude/l-red), by fetch + `merge --ff-only` + rev-parse.
+
+## Successor 20 section (superseded): L-RED successor 20 (Opus 5.5, D14/D15/D18; LANE-RESTART step 3; written 2026-10-26 08:06Z by date -u)
 Every answer is measured from the repository (commands named), not recalled. Predecessor: successor 19
 (session_017GDW2Qywsw52DKHPD8kAM6), handover = notebook "Successor 19 HANDOVER" + RESUME POINT at l-red 6c06792c.
 Successor 19's answers follow below this section.
