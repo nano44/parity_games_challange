@@ -1,0 +1,4 @@
+start (0, 0) None n 16 {'CHAR_V': 0, 'FT_V': 0, 'FTB_V': 0}
+95 (0, 1) {'TIE': 0, 'ODDC': 0, 'ZCH': 1, 'len': 1, 'c': 11} n 16
+233 (0, 2) {'TIE': 0, 'ODDC': 0, 'ZCH': 2, 'len': 2, 'c': 10} n 23
+done (0, 2) {'TIE': 0, 'ODDC': 0, 'ZCH': 2, 'len': 2, 'c': 5} violations 0 charchecks 63168
