@@ -3,7 +3,7 @@ History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50
 
 ## Resume point (successor 11, 2026-10-26, session_01QoVozkVaMsXGUPBea678Fa)
 - Handover check f2f24639 (verify PASS). C79 Add. 1 1199b9a9: R70 revised draft 25c2cb5f PASS; checker SHA 1199b9a9 sent to the Lead.
-  Next: C79 landed check (every commit of the landing; 1199b9a9 ancestor of the landing commit; R70 after R69). Next new check: C80.
+  C79 Add. 2: R70 landed at 60dafe69 (parent b20d0e0e, an empty Lead commit), PASS; C79 CLOSED (optional N-1 on the GAPS UPDATE wording). Next new check: C80.
 
 ## Resume point (successor 10, handing over at ~600k context, 2026-10-26 14:09Z)
 - Open: C79 = R70 (P-N5-HONFF): main report docs/checker/C79.md (b49f5974 + this commit), FAIL E-1 (title: FB-RISE (b) stated as a rise
