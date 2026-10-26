@@ -1,0 +1,12 @@
+entries parsed: 60 roots: R48, R50
+PROOF closure ( 26 ): R15, R17, R18, R19, R20, R21, R22, R23, R24, R25, R26, R27, R28, R29, R30, R31, R32, R33, R34, R38, R39, R42, R44, R45, R48, R50
+ALL closure   ( 29 ): R1, R2, R15, R17, R18, R19, R20, R21, R22, R23, R24, R25, R26, R27, R28, R29, R30, R31, R32, R33, R34, R38, R39, R42, R44, R45, R47, R48, R50
+list ( 26 ): R15, R17, R18, R19, R20, R21, R22, R23, R24, R25, R26, R27, R28, R29, R30, R31, R32, R33, R34, R38, R39, R42, R44, R45, R48, R50
+PROOF closure minus list: none
+list minus PROOF closure: none
+ALL closure minus list: R1, R2, R47
+edges into entries outside the list (src -> dst: kinds):
+  R20 -> R2: SIG
+  R22 -> R1: DATA
+  R22 -> R2: SIG
+  R50 -> R47: NOTSIGNED
