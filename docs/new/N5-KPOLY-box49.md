@@ -274,3 +274,4 @@ FT_c := the in-phase transitions of P at which some z ∈ U_c ∖ {c} has κ_t(z
   path set may still move. The seven long instances have 0 late M-changes. OPEN: the right general-game frame (an m*_c per class).
 - (iv) So the route to G-N5-TIME through OFFMONO + CHAIN-COUNT″ now needs, per phase: EXIT_x (L-SI 18), OR(x) at relayed levels (small in
   data) and the κ-changes of direct terminals (the bulk). The last is the multi-class analogue of what R50 / R51 settle on 𝒞^1O.
+- (Successor 29) §11 is frozen, with full proofs and the code-level part separated, as docs/new/P-N5-OFFMONO-add2-box49.md; that addendum governs.

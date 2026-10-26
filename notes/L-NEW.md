@@ -1297,3 +1297,5 @@ Successor 28 (Opus 5.5, D14/D18, L40), session_01Dg8L3iN3G8HVzEVoGgCE1Y. Handove
   41 quotes, 0 missing. Opened: both referee files at their §C commits in full; packet at 81ab0b72.
 - 18:3xZ: item 3 (b) → KPOLY §12: no linear closure via SAT-k (recursion exponential in depth for any E ≥ 1); sum form is additive, so bound
   OR(x) directly. DATA orun.py: SAT-k late window never entered (LR 0), rises at direct levels (2,282/2,300). FRZ_c DEAD (so_th_n32).
+- 18:2xZ Lead 18:08Z: freeze §11 as add2. P-N5-OFFMONO-add2-box49 FROZEN (FT-COUNT, FT-CONST, CHAIN-COUNT″; §4 PF-CHOICE / TIE-CHARGE code-level
+  vs si.py e688b963 l. 78-205; §5 supersession; 23 quotes, 0 missing). Opened si.py l. 78-205 and SPEC l. 33-44 again at 278616c6.
