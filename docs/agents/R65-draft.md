@@ -1,6 +1,6 @@
-# Draft RESULTS R65 (Lead, 2026-10-26 09:02Z by date -u; both reports and both §Cs filled; fixes file filled 09:20Z by date -u) — to CHECKER C74
+# Draft RESULTS R65 (Lead, 2026-10-26 09:02Z by date -u; both reports and both §Cs filled; fixes file filled 09:20Z by date -u) — to CHECKER C74 (rev. 2026-10-26 09:41Z: C74 E-1..E-5, N-1..N-4)
 
-### R65 [refereed-only] N5 and its keep-τ-on-ties variant N5^τ compute the same state functions and make the same τ-keeping transitions from τ-stable states, so a per-phase proof for N5 transfers to N5^τ unless it uses more than the Σ-transition, τ fixed, τ-stability, the shared state functions, the phase-end facts and R15 (c), (d) (Lemma Στ-STEP, transfer clause); both referees audited the per-phase chain behind RESULTS R48 (i) and R50 (h) and found it complete and free of any use of S4b's output, so premise (Στ) of RESULTS R64 (e) is confirmed by referee audit and EP-1 holds without it: an epoch with one disagreement vertex has len(E) ≤ T*(G′_E) + 1 = O(m·Δ·n¹¹) (2026-10-26) — a transfer lemma plus an audit for N5 (not M3, not a step-4 pass, not a TARGET.md claim; the number of epochs and epochs with |D_E| ≥ 2 are not bounded; G-N5-TIME stays open), CHECKER PASS (docs/checker/C74.md, checker PENDING)
+### R65 [refereed-only] N5 and its keep-τ-on-ties variant N5^τ compute the same state functions, every τ-keeping transition of either is the Σ-transition from a τ-stable state (N5's are those among N5^τ's at which SPEC's S4b returns τ), so a per-phase proof for N5 transfers to N5^τ unless it uses more than the Σ-transition, τ fixed, τ-stability, the shared state functions, the phase-end facts and R15 (c), (d) (Lemma Στ-STEP, transfer clause); both referees audited the per-phase chain behind RESULTS R48 (i) and R50 (h) (CHECKED, not signed) and found the packet's file list complete with completions and no implicit use of S4b's output, so, at the strength of that audit, premise (Στ) of RESULTS R64 (e) holds and EP-1 holds without it: an epoch with one disagreement vertex has len(E) ≤ T*(G′_E) + 1 = O(m·Δ·n¹¹) (2026-10-26) — a transfer lemma plus an audit for N5 (not M3, not a step-4 pass, not a TARGET.md claim; the number of epochs and epochs with |D_E| ≥ 2 are not bounded; G-N5-TIME stays open), CHECKER PASS (docs/checker/C74.md, checker PENDING)
 - Object (packet P-N5-STAU, added at l-new 010bfdae, pinned trunk ca0a4e97, unchanged during review): docs/new/P-N5-STAU-box45.md, sha1
   7446d9a9e198ffa5073e0d43823d753b6aa46b3b (L-NEW successor 24, Opus 5.5). The referees' notes are collected by the lane in
   docs/new/P-N5-STAU-fixes-box45.md (l-new ee95661f, sha1 42d7b04c7e00bee1a95241b52edf2e7a67004f33, L-NEW successor 25: STAU-1 with
@@ -22,7 +22,8 @@
   (e) Corollary, transfer clause: a per-phase proof for N5 transfers to N5^τ unless it uses, at an in-phase transition, more than the
       Σ-transition, τ fixed, τ-stability, the shared state functions ((a)), the phase-end facts "Iσ = ∅ ⇒ τ changes or the run stops" ((c))
       and R15 (c), (d) ((d)). SIGNED by both.
-      The Corollary's sentences 1-2 are SIGNED WITH GAP STAU-1 (joint; minor, wording) and read with REFEREE's repair, checked by REFEREE-2:
+      The Corollary's sentences 1-2 are SIGNED WITH GAP STAU-1 (minor, wording):
+      sentence 2 by both, sentence 1 by REFEREE-2 (REFEREE: a note, §C.2); both read with REFEREE's repair, checked by REFEREE-2:
       "The τ-keeping transitions of N5^τ are exactly the Σ-transitions from τ-stable states; N5's are those among them at which SPEC's S4b
       returns τ; the in-phase ones are the τ-keeping ones with λ unchanged." and "N5 and N5^τ make different transitions only (i) at a
       τ-stable state where SPEC's S4b returns a value-equal τ′ ≠ τ (N5 leaves the phase, N5^τ need not), and (ii) at a state with Iσ = ∅
@@ -37,32 +38,36 @@
       the packet's list. Completions, none on a proof path that uses S4b: four entry-named files outside the packet's 66 (the SPEC,
       docs/lit/T21-VJ00-check, N5-brchanges-box11, docs/red/R58-n5-width §9 = R18 (a); STAU-N2 = REFEREE-2 §2.1 (i)); referee-written proof
       steps on the chain (X-1 / TF for R21 (i), CAP-1 for R25, TB-1 and N-U1-3 for R24; REFEREE-2, missed by REFEREE's scan of docs/referee*,
-      then checked by it); table rows "R17 Lemma P / Theorem PH on τ-fixed segments as runs on G_τ" and "Lemma S (b)", both "yes" (REFEREE-2).
+      then checked by it by search (§C l. 150)); table rows "R17 Lemma P / Theorem PH on τ-fixed segments as runs on G_τ" and "Lemma S (b)", both "yes" (REFEREE-2).
       Detail: REFEREE called N5-1Oacyc-box24 "not on the chain"; REFEREE-2 shows it is (cited as a proof step by P-N5-X, P-N5-XA, P-N5-NH),
       and the packet lists it; no effect on either answer.
   (g) Audit (2), "does any proof in that chain use S4b's OUTPUT implicitly?": NO (both). Own searches wider than the packet's (REFEREE
-      108 + 172 hits, including SPEC's ASCII H′; REFEREE-2 323 hits plus two further passes), all hits read in context; every tie-break used
+      108 + 172 hits, including SPEC's ASCII H' (14 hits, none S4b's arena); REFEREE-2 323 hits plus two further passes), all hits read in context; every tie-break used
       is S4a's (Lemma TB) or σ̄'s.
-  (h) Consequence (by (e) with (f), (g); both referees state it): premise (Στ) of RESULTS R64 (e) holds, so RESULTS R64 (e) EP-1 holds without
+  (h) Consequence (by RESULTS R64 (e) with (e), (f), (g); AUDIT strength, not signed: REFEREE states it
+      on REFEREE-2's confirmation, l. 28 and §C.3; REFEREE-2 states (Στ) as a READING, §4, and leaves EP-1 to the Lead and CHECKER; CHECKER C74
+      checked the deduction): premise (Στ) of RESULTS R64 (e) holds, so RESULTS R64 (e) EP-1 holds without
       premise: every epoch E with D_E = {u} has len(E) ≤ T*(G′_E) + 1 = O(m·Δ·n¹¹), and, by R64 (f), X_SN^pre(E) ≤ len(E) there.
 - Not signed (packet §3, §4): the data; the conclusion line (READING), replaced by (h). The Corollary's sentences as written (STAU-1).
 - Honest limits: (i) (h) rests on an audit: both referees read the closure's proofs by search plus targeted reading, not every line of
-  the 66 files (10,307 lines, REFEREE's scope note); a missed implicit use of S4b's output would void (h) for the entry containing it.
+  the 66 files (10,307 lines, REFEREE's scope note); a missed implicit use of S4b's output would void (h) for the entry containing it. REFEREE-2 answers (1) YES "as far as I can
+  determine" (l. 73); neither referee audited the ~40 lane working texts that packets name as sources, on the ground that each packet is
+  self-contained and governs (REFEREE-2 l. 74-77); REFEREE checked the referee-written steps (ii-a)-(ii-d) by search only (§C l. 150).
   (ii) It bounds |D_E| = 1 epochs only. The number of epochs per phase (N_ep), and epochs with |D_E| ≥ 2, are not bounded here; with R63 and
   R64 these are the open parts of the per-phase count. (iii) (h) is per epoch; no per-phase, per-run or running-time bound on any class
   follows from this entry alone.
 - Data (DATA, not proof): REFEREE (successor 13, own stau_probe.py; lane code not run): 0 failures of (b), (c), (c) for N5, (c) converse,
   (d), DIFF_OTHER, "in-phase = Σ", and R48 (i) on N5^τ phases, on 20,000 random games, 5,000 random 𝒞^1O and lib41 (45 files with n > 64
   skipped); lib41 max f 33; DIFF_IS0 44 (all at Iσ = ∅), DIFF_TS 4,761. REFEREE-2 (successor 15, own stau_check.py; lane code not run):
-  122,512 states over 503 files (lib41, 3,000 random 𝒞^1O, 2,000 random general games, div_n8), 0 violations of (a)-(d), the converse and
+  122,512 states over its 503 𝒞^1O files, lib41 (410 files, 45 with n > 64 skipped), 3,000 random 𝒞^1O, 2,000 random general games and div_n8, 0 violations of (a)-(d), the converse and
   the corollary inclusion; LINK 45,490 checks, 0; R48 (i) on N5^τ phases max f 37, phase length 112; mutants keep / sig caught (1,574 / 48);
-  L-COMP's 6 pinned instances (l-comp 16c960b5): 0 violations, keep counts equal to its own at step level; is0_c1o264 reproduced (is0_count.py:
+  L-COMP's 6 pinned instances (l-comp 16c960b5): 0 violations, keep counts equal to its own at step level (report l. 131-133; logs/lcomp_pinned.txt holds the transition-level counts); is0_c1o264 reproduced (is0_count.py:
   86 random 𝒞^1O + 76 random general states of that case, of which 3 + 1 lead to different successors).
 - Signatures: REFEREE docs/referee/R-N5-STAU.md (referee 48674360, §C 3a999280, successor 13): Στ-STEP (a)-(d) SIGNED; transfer clause
-  SIGNED; sentences 1-2 SIGNED WITH GAP STAU-1; §2 CHECKED, (1) YES, (2) NO; notes STAU-N1..N3. REFEREE-2 docs/referee-2/R2-N5-STAU.md
+  SIGNED; sentences 1-2 SIGNED WITH GAP STAU-1 (§C.2: narrowed to sentence 2; sentence 1 a note, = N-STAU-1); §2 CHECKED, (1) YES, (2) NO; notes STAU-N1..N3. REFEREE-2 docs/referee-2/R2-N5-STAU.md
   (referee-2 8e42c473, §C fbbe66a4, successor 15): (a)-(d) SIGN; Corollary SIGN, in its §C SIGN WITH GAP STAU-1 (it missed sentence 2,
   reproduced is0_c1o264); §2 CHECKED, (1) YES, (2) NO; notes N-STAU-1..4. §C (both): no verdict disagreement; joint gap STAU-1 (wording),
-  closed by REFEREE's repair text in the fixes file; STAU-N1 = N-STAU-3; STAU-N2 = REFEREE-2 §2.1 (i); N-STAU-2, N-STAU-4 and the
-  referee-written steps accepted by REFEREE; box24 detail as in (f); nothing open of substance.
+  closed by REFEREE's repair text in the fixes file (REFEREE C.3: open until that line exists; written at l-new ee95661f); STAU-N1 = N-STAU-3; STAU-N2 = REFEREE-2 §2.1 (i); N-STAU-2, N-STAU-4 and the
+  referee-written steps accepted by REFEREE; box24 detail as in (f); STAU-N3 accepted by REFEREE-2 (C.4); nothing open of substance (REFEREE-2 C.6).
 - TARGET.md diff: not a claim of TARGET.md section 1 or §2 (a transfer lemma, an audit, and a per-epoch consequence; no running-time
   bound). GAPS G-N5-TIME: open.

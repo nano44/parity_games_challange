@@ -1,6 +1,41 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## HANDOVER (successor 15, session_01VJosSHA8jpworMYkRKh9T4, Opus 5.5 under D15; written 2026-10-26 09:2xZ by date -u; context ~415k)
+Branch claude/referee-2, merged with trunk (--no-ff) before every push. REFEREE-2 owns no docs/GAPS.md rows. PARKED after this push (Lead 09:21Z,
+option (b)): successor 16 takes P-N5-RUND (docs/si/P-N5-RUND-box17.md, sha1 71e198f3 verified @ 94910ed3; 211 lines, 12 items in §2-§6).
+### DONE (every report docs/referee-2/<name>.md; every verdict "(Opus 5.5, D15)"; every push via scripts/push.sh, exit 0, VERIFY PASS)
+| item | object (sha1) @ pin | SHA(s) | outcome |
+| --- | --- | --- | --- |
+| handover check | — | 1a584eaa | Lead 5/5 (07:48Z) |
+| P-N5-STAU | docs/new/P-N5-STAU-box45.md 7446d9a9 @ ca0a4e97 | 8e42c473; §C fbbe66a4 | Στ-STEP (a)-(d), transfer clause SIGN; Corollary sentences 1-2 SIGN WITH GAP STAU-1 (wording; sentence 2 missed by me, REFEREE's witness is0_c1o264 reproduced; closed by REFEREE's repair text, routed to L-NEW); audit (1) YES with completions (R58 §9 unused; referee-written proof steps X-1/TF, CAP-1, TB-1, N-U1-3), (2) NO; box24 IS on the chain (my disagreement with REFEREE, detail only) |
+| P-N5-REC0 | docs/new/P-N5-REC0-box45.md 343239b5 @ 64506ecf | a0457eb0 + correction 82fdc8d4; §C 1ff6c484 | REC-0 + Corollary SIGN, no gap; Q-R17 YES (+ (V1), (V2), u cycle node at k); joint gap map empty |
+### IN FLIGHT
+- None. P-N5-RUND NOT started; docs/referee/ RUND NOT opened.
+### NEEDS
+- Lead: route STAU-1's repair text + the §2.1 audit-list completions + N-STAU-2..4 to L-NEW's fixes file for P-N5-STAU; REC0 notes (REC0-N1..N3,
+  N-REC0-1, -2) to L-NEW's fixes file for P-N5-REC0.
+### Things only I know
+- Engines / checkers (all on L-SI's experiments/si/si.py, read-only; run with python3 from the tool's directory):
+  - The SPEC loop: R2-N5-DUAL/dual_check.Runner (succ. 13; N5 states + fallback flags; odd_first flag = N5^OF). Use it as the N5 reference.
+  - One-step N5 / N5^τ: R2-N5-EPR/epr_check.step(g, sg, tu, keep_tau) (succ. 14) returns (ns, nt, fb, info) with info: vs, tf (σ̄), Is, It,
+    s4a, s4b_spec (SPEC's S4b output), tau_opt (τ value-optimal in H′), s4b. W in G_τ: epr_check.Wvals.
+  - R2-N5-STAU/stau_check.py: §1 (a)-(d), converse, corollary inclusion (COR/NONEX), LINK, TIEKEEP, R48 (i) on N5^τ phases; SELF vs Runner;
+    mutants ST_MUT=keep|sig. is0_count.py (Iσ = ∅ divergence, STAU-1 (ii)). cmp_lcomp.py (L-COMP pinned instances, lcomp_pinned/).
+    audit/: closure.py, edges.py, files.py, audit_grep.py, run_audit.sh (regenerates RESULTS_pin.md + pin/ from git; pin/ gitignored).
+  - R2-N5-REC0/rec0_check.py: phases/epochs/D = ∅/all-unsplit/runs from §0 definitions; exact LEVELS by simple-path enumeration in G_τ
+    (n <= LEVELMAX = 11); B, saturation t, t*, kinds (i)-(iii); mutants RC_MUT=step2|full|nosat.
+  - Inputs: R2-N5-KW/files.lst (my 503 𝒞^1O files); R2-N5-STAU/lib41_noref.lst (lib41 minus docs/referee games, for independence).
+  - Starts: S3 via Engine(g).initial("best") / Engine(dual(g)).initial("best"); random via rng.choice(succ). .start format "SIGMA0 v:w ..." /
+    "TAU0 v:w ..." (stau_check.py start mode reads it).
+- Independence-listing lesson (bit me at REC0, corrected in 82fdc8d4): REFEREE writes in parallel, so "no file listed" goes stale. Before writing
+  an independence line, run `git fetch origin claude/referee` and `git ls-tree --name-only -r origin/claude/referee docs/referee/ | grep -i <pkt>`
+  in the same turn, and report the count; never assert it from an earlier listing.
+- STAU lesson: when my own data shows a divergence case (L-COMP's step-level keeps at Iσ = ∅), test it against EVERY sentence of the statement
+  to sign, not only against the counts. I missed STAU-1 (ii) that way.
+- Thin-data spots: REC0's non-trivial level steps are rare (291 of 4,485 STEP1 checks); kind-(iii) ≤ 1 per run in all data (both referees).
+- Oink built in this container (tools/oink/build); a new container must run scripts/setup_oink.sh before pushing so the smoke step runs.
+
 ## Resume point 1 (successor 15, session_01VJosSHA8jpworMYkRKh9T4, Opus 5.5 under D15; 2026-10-26 08:0xZ by date -u)
 - Handover check 1a584eaa (Lead 5/5, GO 07:48Z). Oink built (scripts/setup_oink.sh, exit 0).
 - DONE: R2-N5-STAU (P-N5-STAU 7446d9a9 @ ca0a4e97): Στ-STEP (a)-(d) + Corollary SIGN, no gap; §2 CHECKED: (1) YES with completions
