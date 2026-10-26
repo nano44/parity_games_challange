@@ -16,3 +16,9 @@ DATA, not proof. Uses box43 (multi: rand_ckO, SPEC N5 step), box21 (n5x.readstar
   before it (RETFB_V must be 0; MUT=1 uses t := s − 1, must bite) and Corollary VIS (VIS_V must be 0); R0 against REV. out/retfb_*.txt.
 - satfb.py (usage as vislev.py): every fallback from a saturated C-state (LEV_C = n − 1): FLAT, LAST, T1C, switches at own cycle nodes (SW_OWNCN),
   closing a cycle through x (SW_THRU); Lemma SAT-FB. out/satfb_*.txt.
+- r0shape.py STARTS SEED --list FILE [--nmax N]: the fallback-free returns: |U| (vertices whose σ̄ changes in the stretch), max |D|, |D_C|, and per
+  phase NCONF2 (distinct configurations with |D_C| ≥ 2). out/r0shape_liball_n40_k2.txt.
+Instances: long121_n40.pg + .start (L-RED 21, l-red dee85909 experiments/red/n3/instances, copied; sha1 c667c085… / d750664a…): one phase of 121
+transitions, |Q| 3; out/nconf_long121.txt, out/retfb_long121.txt.
+- ncclimb.py K NMAX STEPS SEED OUTDIR [--seed FILE.pg]: climb on (max NCONF_{≥2} in one phase, max N_ep^{≥2}) from the S3 start. Random seeds stay
+  trivial (out/ncclimb_k*_s*.txt: best (4, 4)); seeded from nep90 / nep76 (S3 scores (10, 10)): out/ncclimb_nep*_s*.txt, best games in out/climb/.

@@ -15,6 +15,7 @@ sha1 98101d1f…; Lemma FB-RISE, question Q-A).
 | §2 | Corollary VIS: a configuration has at most 2n² − n + R⁰_C epochs in a phase, R⁰_C := its returns with no fallback in between and LEV_C unsaturated | PROVED |
 | §2 | Theorem EP-C: N_ep(P) ≤ NCONF(P)·(2n² − n) + R⁰(P), and R⁰(P) ≤ Σ_S REV(S) over the ≤ f + 1 fallback-free runs S of P | PROVED (a reduction) |
 | §3 | data: RET-FB, VIS; at most one saturated epoch per configuration (SAT-1); NCONF ≤ n except nep90 | DATA / CONJECTURE |
+| §6 | Corollary EP-ASM: N_ep ≤ (4n² − 3n) + (1 + 4n² − 3n + X_dir + X_big)(T*_Q + 2) + NCONF_{≥2}·(2n² − n) + R⁰_{≥2}: the epoch count reduces to X_dir, X_big, the multi-gate configurations NCONF_{≥2} and their fallback-free returns R⁰_{≥2} | PROVED as an assembly (N_1 term an IMPLICATION from (Στ)) |
 | §5 | Lemma SAT-FB: a fallback from a saturated C-state is the phase's last transition, or C never recurs; so at most one saturated fallback per configuration, and Theorem FB-C′: f ≤ n·|𝒞_f(P)| (was |𝒞_f(P)|·(4n² − 3n)); FB-C′ implies RESULTS R60 (c) EPOCH | PROVED (every game) |
 | §4 | what is open | OPEN / READING |
 
@@ -106,7 +107,10 @@ starts of the same configuration inside S, and a configuration with V′ epoch s
   LEV_DROP_V 0; 15 phases UNK (level budget). nep90 with its start (out/vislev_nep90.txt): 42 returns, 40 rises, 2 stalls (the short c16 → c17 →
   c16 bounces at states 20 → 22 and 65 → 67, no fallback); every lap return rises. SAT_VIS_max = 1: no configuration had two epochs at saturated
   LEV_C (CONJECTURE SAT-1 below).
-- retfb.py (Lemma RET-FB at every epoch start against the last fallback before it; Corollary VIS): see §3.1 (runs in progress at 13:3xZ).
+- retfb.py (Lemma RET-FB at every epoch start against the last fallback before it; Corollary VIS). liball n ≤ 34, S3 + 2, seed 7, budget 3·10⁶
+  (out/retfb_liball_n34_k2.txt): 776 checks, RETFB_V 0, VIS_V 0 (93 phases UNK, skipped); returns: R⁰ 466 of REV 742 (63%). nep90 with its start
+  (out/retfb_nep90.txt): 75 checks, RETFB_V 0, R⁰ = 2 of REV 42: EP-C charges 40 of nep90's 42 returns to LEV_C. nep76 with its start: UNK at
+  budget 3·10⁷. Control MUT=1 (t := s − 1, any transition; liball S3 only, out/retfb_liball_n34_MUT.txt): RETFB_V 346 of 1,236: bites.
 - CONJECTURE SAT-1. Once LEV_C = n − 1 at a C-state of P, P has no later C-epoch. (Data: SAT_VIS_max 1 over liball n ≤ 34. SAT_C only gives a
   window of 4n(n − 1) states, during which Ξ is constant.) If true, Corollary VIS improves to V_C ≤ n + R⁰_C and EP-C to N_ep ≤ n·NCONF + R⁰.
 
@@ -145,5 +149,37 @@ Proof. Theorem FB-C's proof with SAT-FB1 for the saturated fallbacks of each C: 
   R15 (b)), and σ̄|Q must change through a tie of S1's counterstrategy. Not excluded here.
 - DATA (satfb.py; flags as in its docstring): random 3,000 𝒞^kO (n 5-18, gseed 111, S3 + 4 starts, seed 8; out/satfb_rand3000.txt): 546
   saturated fallbacks, all FLAT, LAST and with t + 1 a C-state; all 549 switches at own cycle nodes, closing a cycle through x. lib41 n ≤ 16: 20,
-  the same. liball n ≤ 34: out/satfb_liball_n34_k2.txt (§3.1).
+  the same. liball n ≤ 34, S3 + 2, seed 7 (out/satfb_liball_n34_k2.txt): 68 saturated fallbacks; 12 NONFLAT, 8 NOT LAST, every one of the 12 with
+  t + 1 not a C-state and the switch at a vertex that is not its own cycle node (cond_stuck_symsi3_YE n 32, gapb_dup_n20, rho3_253_n32); up to 3
+  in one phase. The same three instances with 12 random starts, seed 3 (out/satfb_nonflat3_k12.txt): 22 saturated fallbacks, all NONFLAT, 18 NOT
+  LAST, up to 9 in one phase, SATFB_V 0 (the lemma's disjunction holds), SATFB1_V 0 (one per configuration). Re-run of liball with the direct
+  SATFB_V / SATFB1_V counters: out/satfb_liball_n34_k2_v2.txt.
+- DEAD (successor 26's guess, N5-FB-box47 §5: "a fallback at a saturated C-state is flat and ends the phase"): rho3_253_n32
+  (experiments/red/fbr/instances, L-RED), random start: phase [3, 11] has saturated fallbacks at 8, 9, 10, none flat, the first two not last;
+  each leaves its configuration for good. SAT-FB's disjunction is the right form: per phase there can be several saturated fallbacks, at most
+  one per configuration.
+
+## 6. Assembly of the epoch count (Corollary EP-ASM; written 14:1xZ by date -u)
+Split the epochs of a phase P by |D_E| (D_E := {q ∈ Q : σ̄_E(q) ≠ τ(q)}, a function of the epoch's configuration): N_ep = N_0 + N_1 + N_{≥2}.
+- N_0 ≤ 4n² − 3n: Corollary HON-0-FF (b) (P-N5-HONFF §2; signed by both referees, no gap; fixes file P-N5-HONFF-fixes-box47).
+- N_1 ≤ (1 + 4n² − 3n + X_dir + X_big)·(T*_Q + 2): Corollary REC-1-FF (c) (same packet; an IMPLICATION from (Στ), signed as such; holds at
+  RESULTS R65's audit strength). X_dir, X_big, T*_Q as in RESULTS R68.
+- N_{≥2} ≤ NCONF_{≥2}(P)·(2n² − n) + R⁰_{≥2}(P): Corollary VIS summed over the configurations C of P with |D_C| ≥ 2 (NCONF_{≥2} of them),
+  R⁰_{≥2} := Σ_{|D_C| ≥ 2} R⁰_C (returns to multi-gate configurations with no fallback in between, LEV_C unsaturated). PROVED (lane, §2).
+Corollary EP-ASM. N_ep(P) ≤ (4n² − 3n) + (1 + 4n² − 3n + X_dir + X_big)·(T*_Q + 2) + NCONF_{≥2}(P)·(2n² − n) + R⁰_{≥2}(P) (the second term as
+an implication from (Στ)). □
+- READING. With RESULTS R64 (transitions per phase = Σ over epochs of their lengths, epoch lengths bounded on |D_E| ≤ 1 by EP-0 / EP-1) and Theorem
+  FB-C′, G-N5-TIME's per-phase count now rests on: X_dir, X_big (R68's open terms), NCONF_{≥2} (how many distinct multi-gate configurations a phase
+  visits), R⁰_{≥2} (fallback-free returns to them), and the lengths of |D_E| ≥ 2 epochs (the "|D_E| ≥ 2 S4a core", L-SI §27). The ρ count of
+  RESULTS R61 (f) is not needed in this route.
+- DATA for the multi-gate terms (r0shape.py, liball n ≤ 40, S3 + 2, seed 7; out/r0shape_liball_n40_k2.txt): of the 616 fallback-free returns
+  (no LEV_C filter, so an upper count for R⁰), 583 go to configurations with |D_C| ≤ 1 (44 with D_C = ∅, 539 with |D_C| = 1) and 33 to |D_C| ≥ 2
+  (28 / 3 / 1 / 1 for |D_C| = 2 / 3 / 4 / 5); 610 change σ̄ at one vertex only. NCONF_{≥2} per phase: 0 in 4,929 phases, 1 in 2,539, ≥ 2 in 103, max
+  35. So on the library R⁰_{≥2} is small and NCONF_{≥2} carries the multi-gate epochs.
+- DATA, the multi-gate split on the three long phases (each from its own start; inline script, numbers re-derivable with nconf.py's rows):
+  nep90 NCONF_{≥2} 38, NCONF_{≤1} 10, N_ep^{≥2} 74 (deg on Q 18, 3, 2, 3, 3: Σ 29, Π 972); nep76 36 / 4 / 71 (15, 4, 5, 5, 2); long121 12 / 2 / 35
+  (5, 3, 4). So NCONF_{≥2} can exceed Σ_q deg(q) (nep90: 38 > 29): the configurations combine choices at several vertices, and N_ep^{≥2} ≈ 2·NCONF_{≥2}
+  (the laps).
+- DATA, long121_n40 (L-RED 21, from its start; out/nconf_long121.txt, out/retfb_long121.txt): one phase, L 121, N_ep 37, NCONF 14, VIS 7, f 8,
+  |𝒞_f| 5; two laps again (block 2 3 5 6 7 8 6 8 9 3 5 6 11 twice); RET-FB 36 checks, 0 violations; R⁰ = 3 of REV 23.
 

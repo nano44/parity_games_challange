@@ -1,0 +1,14 @@
+SATFB experiments/new/esc/instances/cond_stuck_symsi3_YE.pg n=32 S3 phase [13,18] t=13 flat=False last=False t1c=False sw=[12] owncn=[False]
+SATFB experiments/new/esc/instances/cond_stuck_symsi3_YE.pg n=32 S3 phase [13,18] t=15 flat=False last=False t1c=False sw=[12] owncn=[False]
+SATFB experiments/red/carry/instances/gapb_dup_n20.pg n=20 start phase [2,4] t=3 flat=False last=True t1c=False sw=[9] owncn=[False]
+SATFB experiments/red/fbr/instances/rho3_253_n32.pg n=32 start phase [3,11] t=8 flat=False last=False t1c=False sw=[21] owncn=[False]
+SATFB experiments/red/fbr/instances/rho3_253_n32.pg n=32 start phase [3,11] t=9 flat=False last=False t1c=False sw=[14] owncn=[False]
+SATFB experiments/red/fbr/instances/rho3_253_n32.pg n=32 start phase [3,11] t=10 flat=False last=True t1c=False sw=[1] owncn=[False]
+SATFB experiments/red/fbr/instances/rho3_253_n32.pg n=32 start phase [12,16] t=13 flat=False last=False t1c=False sw=[20] owncn=[False]
+SATFB experiments/red/fbr/instances/rho3_253_n32.pg n=32 start phase [12,16] t=14 flat=False last=False t1c=False sw=[13] owncn=[False]
+SATFB experiments/red/fbr/instances/rho3_253_n32.pg n=32 start phase [12,16] t=15 flat=False last=True t1c=False sw=[5] owncn=[False]
+SATFB experiments/red/fbr/instances/rho3_253_n32.pg n=32 start phase [18,23] t=18 flat=False last=False t1c=False sw=[27] owncn=[False]
+SATFB experiments/red/fbr/instances/rho3_253_n32.pg n=32 start phase [18,23] t=19 flat=False last=False t1c=False sw=[29] owncn=[False]
+SATFB experiments/red/fbr/instances/rho3_253_n32.pg n=32 start phase [18,23] t=22 flat=False last=True t1c=False sw=[22] owncn=[False]
+FLAT 56 LAST 60 NONFLAT 12 NOTLAST 8 SATFB 68 SW 68 SW_NOTCN 12 SW_OWNCN 56 SW_THRU 68 T1C 56 T1_NOT_C 12 UNK_phases 17 runs 1527
+SATFB_per_phase_max 3 ('experiments/red/fbr/instances/rho3_253_n32.pg', 32)

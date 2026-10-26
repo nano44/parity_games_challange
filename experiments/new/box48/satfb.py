@@ -2,7 +2,8 @@
 """Box 48 DATA for FB-C's saturated term (docs/new/N5-NCONF-box48.md §5): at every in-phase S4c fallback t -> t+1 whose source t is a C-state with
 LEV_C(t) = n - 1 (Xi_t = B_C), record: FLAT (Xi_{t+1} = Xi_t), LAST (t+1 is the phase's last state), T1C (t+1 is a C-state), and for every switched
 Even x: OWNCN (lambda(x) = x), THRU (z* = sigma_{t+1}(x) has its honest play at t through x). Per phase: SATFB (count), SATFB_max per phase.
-CONJECTURE SAT-FB: every saturated fallback is FLAT and LAST (so at most one per phase). Usage as box48/vislev.py."""
+Lemma SAT-FB (PROVED): LAST, or no C-state after t in the phase: SATFB_V must be 0; Corollary SAT-FB1: SATFB1_V (two saturated fallbacks from
+one C in one phase) must be 0. The stronger "FLAT and LAST" (successor 26's guess) is DEAD (NONFLAT > 0 on liball). Usage as box48/vislev.py."""
 import sys, os, random
 HERE = os.path.dirname(os.path.abspath(__file__))
 for p in ("../box46", "../box43", "../box21"): sys.path.insert(0, os.path.join(HERE, p))
@@ -36,12 +37,17 @@ def thru(g, row, z, x):
         seen.add(y); y = row["s"][y] if g.owner[y] == 0 else row["sb"][y]
     return False
 def phase(g, E, rows, a, b, budget, nm, start):
-    n = g.n; lam = rows[a]["lam"]; cnt = 0
+    n = g.n; lam = rows[a]["lam"]; cnt = 0; satc = {}
     for t in range(a, b):
         if not rows[t]["fb"]: continue
         sb = rows[t]["sb"]; frame = [[sb[v]] if g.owner[v] == 1 else list(g.succ[v]) for v in range(n)]
         if wlev(E, g, frame, rows[t]["xi"], lam, budget) < n - 1: continue
-        cnt += 1; inc("SATFB")
+        cnt += 1; inc("SATFB"); cf = rows[t]["conf"]
+        if cf in satc: inc("SATFB1_V")
+        satc[cf] = t
+        if t + 1 != b and any(rows[k]["conf"] == cf for k in range(t + 1, b + 1)):
+            inc("SATFB_V")
+            if VERB: print(f"SATFB_V {nm} n={n} phase [{a},{b}] t={t}", flush=True)
         flat = rows[t + 1]["xi"] == rows[t]["xi"]; last = (t + 1 == b); t1c = rows[t + 1]["conf"] == rows[t]["conf"]
         inc("FLAT" if flat else "NONFLAT"); inc("LAST" if last else "NOTLAST"); inc("T1C" if t1c else "T1_NOT_C")
         sw = [x for x in range(n) if g.owner[x] == 0 and rows[t]["s"][x] != rows[t + 1]["s"][x]]
