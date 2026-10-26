@@ -2,7 +2,8 @@
 """L-SI box 16: DATA for TC-SWITCH (docs/si/N5-2O-T-box16.md §4.2). At every terminal change of an N5 run (an S4a transition k -> k+1
 inside a phase at which some v in R_D at both states changes u(v), the first D-vertex on its (sigma, tau)-play), it records the old
 gate u, the new gate u', and the S1 order (Engine.key, Even's view) of Xi_k(u) vs Xi_k(u'), of W_k(u) vs W_k(u'), and whether D_k, R_D,
-Xi(D), W(D) are unchanged (same stretch_D). Changes with D_k != D_{k+1} (with ULT=1 also: the set of W-direct gates changes) are counted apart (dchange) and not compared;
+Xi(D), W(D) are unchanged (same stretch_D). twinW / diffW: whether v's W-cycle node is unchanged across the change (= lambda_W,k(old gate) = lambda_W,k+1(new gate), TC-CLASS); TCCN_V: a non-twin change that does NOT raise the reward
+of v's W-cycle node (Lemma TC-CN predicts 0). Changes with D_k != D_{k+1} (with ULT=1 also: the set of W-direct gates changes) are counted apart (dchange) and not compared;
 changes at a vertex v in D_k itself are counted apart (gatev). Reports how often the change goes to the gate with the larger W, larger Xi, or larger
 (W, Xi) pair, and the contradicting cases. Usage: tcdir.py --one GAME START.json | --list FILE [KMIN] | --rand COUNT NLO NHI SEED (random C^kO, k in {2,2,3,4}, multi.py's generator; odd #: S3 start, even #: random start pair)"""
 import sys, os
@@ -22,7 +23,7 @@ def wval(E, nx, v):
         if E.rank[x] > E.rank[c]: P |= E.bit[x]
     return (c, P, j)
 
-S = dict(TCCLASS_V=0, gatev=0, D2=0, dchange=0, changes=0, same_stretch=0, toW=0, toX=0, toWX=0, againstW=0, tieW=0)
+S = dict(TCCN_V=0, twinW=0, diffW=0, TCCLASS_V=0, gatev=0, D2=0, dchange=0, changes=0, same_stretch=0, toW=0, toX=0, toWX=0, againstW=0, tieW=0)
 CASES = []
 
 def check(g, name, start=None):
@@ -40,7 +41,8 @@ def check(g, name, start=None):
             pl, _ = lasso(wn, v)
             uu[v] = next((x for x in pl if (x in dirD if ULT else x in D)), None)
         W = {u: wval(E, wn, u) for u in D}
-        rows.append(dict(t=tuple(t), lam=tuple(x[0] for x in vs), vs=vs, D=D, dirD=frozenset(dirD), uu=uu, W=W, fb=r[4] if r else 0))
+        Wc = [wval(E, wn, v)[0] for v in range(g.n)]
+        rows.append(dict(t=tuple(t), lam=tuple(x[0] for x in vs), vs=vs, D=D, dirD=frozenset(dirD), uu=uu, W=W, Wc=Wc, fb=r[4] if r else 0))
         if r is None: break
         s, t = r[0], r[1]
     for k in range(len(rows) - 1):
@@ -57,6 +59,11 @@ def check(g, name, start=None):
             if v in r0["D"]: S["gatev"] += 1; continue
             S["D2"] += len(r0["D"]) == 2
             S["TCCLASS_V"] += r0["vs"][a][0] != r0["vs"][b][0] or r1["vs"][a][0] != r1["vs"][b][0]
+            twin = r0["Wc"][v] == r1["Wc"][v]       # v's W-cycle node unchanged: lambda_W,k(a) = lambda_W,k+1(b) (TC-CLASS)
+            S["twinW"] += twin; S["diffW"] += not twin
+            if not twin:     # TC-CN: the change then moves v's W-cycle node, strictly up in reward (WM-G)
+                c0, c1 = r0["Wc"][v], r1["Wc"][v]
+                S["TCCN_V"] += not (c0 != c1 and E.rew[c1] > E.rew[c0])
             kw = (E.key(r0["W"][b]) > E.key(r0["W"][a])) - (E.key(r0["W"][b]) < E.key(r0["W"][a]))
             kx = (E.key(r0["vs"][b]) > E.key(r0["vs"][a])) - (E.key(r0["vs"][b]) < E.key(r0["vs"][a]))
             S["toW"] += kw > 0; S["againstW"] += kw < 0; S["tieW"] += kw == 0; S["toX"] += kx > 0

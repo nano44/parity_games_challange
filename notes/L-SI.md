@@ -54,7 +54,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
 - Things only I know: R50's kinds machinery is used ONLY in its case (c) (c_w ≻ c_θ, i.e. ¬H3). Under H3 the chain is FRZ-U + LEN.
 - 05:30Z Lead: (1) P-N5-2T fixes FROZEN 8aad9f77 (l-si 35c8eee9). (2) P-N5-NC WITHDRAWN unreviewed (option A); P-N5-H3 FROZEN
   docs/si/P-N5-H3-box16.md (sha1 in the Lead message): G_D-NC (b′), TC-CLASS, C2-H3, WM-G, P^c_L / CR-D, FRZ-U_H3.
-- NEXT: (3) the ¬(h3_D) KIND-MONO port with two deviation points.
+- 05:5xZ: N5-2O-T §8: W-CN, TC-CN PROVED. Terminal changes per run reduce to TWIN changes (same honest and W-cycle node). KIND-MONO
+  obstruction: twin Δ-RT levels above m* (83 % of ¬(h3_D) twin states on the lib41 frontier, 25 % random). km2 is vacuous. KIND-MONO with
+  two deviation points stays OPEN.
+- NEXT: the Lead's pick. Context is past ~650k: plan the handover (successor 12).
 
 ## HANDOVER (successor 10, box 15; written 2026-10-26 01:05Z (date -u); session_01PBqfsNWMhTPn7yNJ8C18HP)
 Reason: context past the Lead's ~450k line. The session's remaining-token figure fell by ~575k since the start (it is not exposed directly).

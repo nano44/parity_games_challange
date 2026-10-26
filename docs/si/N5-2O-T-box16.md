@@ -237,3 +237,57 @@ Proof. Lemma CR-D (P-N5-NC §3):
   - honest frame: no gate 3,296; one gate 5,075; both on one cycle 854; both on different cycles 714.
 - (h3_D) fails at 24 % of the random 𝒞^2O states and at 49 % of the lib41 frontier states. That is the KIND-MONO territory, still open.
 
+## 8. ¬(h3_D) KIND-MONO with two deviation points (Lead's item (3), 05:30Z): what reduces, and what breaks
+### Lemma W-CN (PROVED, every game)
+Statement. Along a run of consecutive S4a transitions inside a phase, the reward of λ_W(v) is non-decreasing for every v. Hence λ_W(v) changes
+at most n − 1 times per vertex per run.
+Proof. WM-G (P-N5-H3 §5): W_{k+1}(v) ⊵ W_k(v). The S1 order compares cycle-node rewards first, so reward(λ_W,k+1(v)) ≥ reward(λ_W,k(v)),
+strictly if the cycle node changes (rewards are injective). There are at most n distinct rewards. □
+### Corollary TC-CN (PROVED, every game)
+Statement. Inside a run S as above, call a terminal change of v at k → k+1 (u_k(v) ≠ u_{k+1}(v)) W-MOVING if λ_W,k+1(v) ≠ λ_W,k(v), and
+TWIN otherwise. Then:
+- (a) the W-moving terminal changes of S number at most n(n − 1) in all, at most n − 1 per vertex;
+- (b) at a twin change, the old and the new gate have the same honest cycle node and, across the transition, the same W-cycle node:
+  λ_Ξ(u_k(v)) = λ_Ξ(u_{k+1}(v)), and λ_W,k(u_k(v)) = λ_W,k+1(u_{k+1}(v)).
+Proof. (a) is W-CN. (b): TC-CLASS (P-N5-H3 §3) gives λ_Ξ(v) = λ_Ξ(u(v)) and λ_W(v) = λ_W(u(v)) at each state, and λ_Ξ is constant on the
+phase. □
+- So TC-SWITCH (terminal changes per run) reduces to TWIN changes. Their gates sit in one honest class and share their W-cycle node.
+- DATA (tcdir.py; TCCN_V = a W-moving change that does not raise the reward of λ_W(v)): 0 violations.
+  - Random 𝒞^2O, 150,000 games: 69 twin and 25 W-moving changes.
+  - lib41 frontier: 32 twin, 15 W-moving.
+  - Random 𝒞^kO, 30,000 games: 16 twin, 0 W-moving.
+  - TC-W's dead-end instance (DEAD box 16) is a twin change.
+### What KIND-MONO needs, and where it breaks (READING)
+- R50's KIND-MONO (𝒞^1O, case (c): ¬H2, c_w ≠ o, c_w ≻ c_θ) needs:
+  - FRZ-U's κ-freeze above m* = c_w;
+  - H-PATH (c_w ∈ P(Ξ(v)) iff v is of kind A, i.e. c_w ∈ π_v);
+  - PAR (c_w even).
+- PAR ports per gate (PAR_D, N5-FRONTIER §2).
+- FRZ-U's freeze above m* rests on Fact B: two R-vertices are ordered the same way in both frames above m*. On 𝒞^1O this holds because
+  every route ends at o with common constant parts C_Ξ, C_W.
+- Two twin gates u, u′ in one honest class, with ¬(h3_D) (c_w ≠ c):
+  - Within one terminal class (routes to the same gate), Fact B holds per terminal, as on 𝒞^1O.
+  - ACROSS the twins: Ξ(y) = π_y ⊕ Ξ(u) versus Ξ(z) = π_z ⊕ Ξ(u′), with the same cycle node c; and W(y) = π_y ⊕ W(u) versus
+    W(z) = π_z ⊕ W(u′), with the same cycle node c_w. The verdicts agree above max(rank m*, L_X, L_W), where
+    L_X := top(P(Ξ(u)) Δ P(Ξ(u′))) and L_W := top(P(W(u)) Δ P(W(u′))).
+  - If max(L_X, L_W) > rank(m*), Fact B fails across the twins above m*. FRZ-U's Case B then cannot turn a κ-gain into a gate edge, and
+    the kind bit c_w lies BELOW the cross-terminal disagreement level, so KIND-MONO's "c_w is the top difference" step fails.
+  - That is the exact obstruction for two deviation points under ¬(h3_D): the Δ-RT levels of the twin pair lie above the kind bit.
+  - When max(L_X, L_W) ≤ rank(m*), the 𝒞^1O argument has its Fact B above m*. The port is then plausible but NOT checked line by line
+    here (FRZ-U's B2 / B3 use C_W's two arcs with one deviation point on them, and with twins there are two).
+- DATA (twin.py), at two-gate states whose gates are twins with ¬(h3_D):
+
+  | set | twin states | ¬(h3_D) twin | above m* | below m* | c_w above c |
+  | --- | --- | --- | --- | --- | --- |
+  | lib41 frontier | 190 | 48 | 40 | 8 | 26 |
+  | random 𝒞^2O, 40,000 (seed 31) | 6,158 | 4,039 | 1,013 | 3,026 | 2,336 |
+
+  - "above m*" is max(L_X, L_W) > rank(m*): there the obstruction is present. It is 83 % on the lib41 frontier and 25 % in random games.
+- km2.py (FRZ-U's set-form freeze test on such runs): VACUOUS. The runs are shorter than |R_D| − 1, so the data neither confirm nor
+  refute the freeze in this configuration.
+- Status:
+  - PROVED: W-CN, TC-CN.
+  - READING: the obstruction above.
+  - OPEN: KIND-MONO with two deviation points. It needs a Δ-RT bound for twin gates, i.e. an ordering of the twins' terminal values that
+    both frames respect above the kind bit.
+
