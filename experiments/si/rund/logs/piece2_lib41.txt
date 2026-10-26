@@ -1,0 +1,9 @@
+edges_offset=2118 extra_states=230 forb_states=287 max_T=23 max_block=11 max_forb_run=14 max_split_run=14 runs=119 runs_with_forb=54 runs_with_split=56 split_states=290 trans=469
+TOP ('experiments/red/n5inj/instances/elimn_cex_n48.pg', 62, 70, 48, 'T', 8, 'split', 8, 'maxD', 1)
+TOP ('experiments/red/n5inj/instances/elimn_cex_n48.pg', 78, 92, 48, 'T', 14, 'split', 5, 'maxD', 1)
+TOP ('experiments/red/n5inj/instances/frz40.pg', 44, 58, 40, 'T', 14, 'split', 14, 'maxD', 4)
+TOP ('experiments/red/n5inj/instances/frz40.pg rs', 42, 56, 40, 'T', 14, 'split', 14, 'maxD', 4)
+TOP ('experiments/red/n5inj/instances/phase2_pk32.pg rs', 9, 31, 32, 'T', 22, 'split', 12, 'maxD', 1)
+TOP ('experiments/red/n5inj/instances/returns_rt32.pg rs', 13, 36, 32, 'T', 23, 'split', 12, 'maxD', 1)
+PIECE PASS
+done
