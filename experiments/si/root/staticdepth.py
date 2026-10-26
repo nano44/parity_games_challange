@@ -64,7 +64,14 @@ def run(g, name, start=None):
                             C["gci_len_minus_n1_max_plus1000"] = max(C["gci_len_minus_n1_max_plus1000"], 1000 + ln - (n - 1))
                             if ln > n - 1: C["GCI_N1_V"] += 1; EX.append(("GCI", name, a, k, n))
                             if all(R[m]["sb"] == R[a]["sb"] for m in range(a, k + 1)): C["gci_sbconst"] += 1; interval(g, E, R, a, k, n, name)
-                            else: C["gci_sbchg"] += 1; C["gci_sbchg_len_max"] = max(C["gci_sbchg_len_max"], ln)
+                            else:
+                                C["gci_sbchg"] += 1; C["gci_sbchg_len_max"] = max(C["gci_sbchg_len_max"], ln)
+                                nch = sum(R[m]["sb"] != R[m + 1]["sb"] for m in range(a, k))          # (G1): sigma-bar changes inside
+                                C["gci_sbchg_count_max"] = max(C["gci_sbchg_count_max"], nch); C["gci_sbchg_count_sum"] += nch
+                                pieces = [m for m in range(a, k) if R[m]["sb"] != R[m + 1]["sb"]]
+                                bnd = [a] + [m + 1 for m in pieces] + [k + 1]
+                                C["gci_piece_len_max"] = max(C["gci_piece_len_max"], max(bnd[x + 1] - bnd[x] - 1 for x in range(len(bnd) - 1)))
+                                if nch >= 4: EX.append(("G1", name, a, k, ln, nch, n))
                         a = k + 1
                 continue
             a = s
@@ -141,7 +148,7 @@ def main():
                 run(g, f + " rs", ({v: rng.choice(g.succ[v]) for v in range(g.n) if g.owner[v] == 0},
                                    {v: rng.choice(g.succ[v]) for v in range(g.n) if g.owner[v] == 1}))
     print(" ".join(f"{k}={v}" for k, v in sorted(C.items())))
-    for x in [e for e in EX if e[0] != "TIGHT"][:6] + [e for e in EX if e[0] == "TIGHT"][:3] + sorted([e for e in EX if e[0] == "GATES"], key=lambda e: -e[4])[:3]: print("EXAMPLE", x)
+    for x in [e for e in EX if e[0] != "TIGHT"][:6] + [e for e in EX if e[0] == "TIGHT"][:3] + sorted([e for e in EX if e[0] == "GATES"], key=lambda e: -e[4])[:3] + sorted([e for e in EX if e[0] == "G1"], key=lambda e: -e[5])[:3]: print("EXAMPLE", x)
     print("STATICDEPTH PASS" if not any(k in C for k in ("SETTLE_V", "LEN_V", "N1_V", "GCI_N1_V")) else "STATICDEPTH FAIL")
 
 if __name__ == "__main__":
