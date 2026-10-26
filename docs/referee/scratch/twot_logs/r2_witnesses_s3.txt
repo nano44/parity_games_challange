@@ -1,0 +1,10 @@
+DIR_chk                    93
+PFZ_chk                    180826
+ROUTE_chk                  210
+SAT_chk                    108
+YB_chk                     60
+games                      4
+phases                     20
+phases_2T                  20
+FAILS 0
+exit 0
