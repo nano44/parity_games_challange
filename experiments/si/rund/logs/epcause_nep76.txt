@@ -1,0 +1,3 @@
+boundaries=75 boundaries_fb=4 boundaries_rho=75 chg_STRICT=111 max_boundaries_phase=75 phases_with_boundaries=1 strict_RELAY=17 strict_ROUTE=94
+TOP boundaries/residual/len/n (75, 0, 78, 40, '../n5-epoch/instances/nep76_n40.pg', 9)
+EPCAUSE PASS

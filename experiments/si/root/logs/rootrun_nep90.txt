@@ -1,0 +1,22 @@
+phase@4 len=91 r=0 c=11 |U|=40 deg(r)=18 rho_r=72 cuts=22 (fb 7, DLEAVE 15, SWITCH 0)
+  piece [1,2] len=1 ended_by=DLEAVE |A_s|=32 rhoP_r=1 rho_r=1 bound=48
+  piece [3,5] len=2 ended_by=DLEAVE |A_s|=30 rhoP_r=2 rho_r=2 bound=46
+  piece [6,8] len=2 ended_by=DLEAVE |A_s|=28 rhoP_r=2 rho_r=2 bound=44
+  piece [9,14] len=5 ended_by=fb |A_s|=28 rhoP_r=3 rho_r=5 bound=44
+  piece [15,17] len=2 ended_by=DLEAVE |A_s|=29 rhoP_r=2 rho_r=2 bound=45
+  piece [18,25] len=7 ended_by=fb |A_s|=28 rhoP_r=6 rho_r=7 bound=44
+  piece [26,31] len=5 ended_by=DLEAVE |A_s|=32 rhoP_r=3 rho_r=4 bound=48
+  piece [32,33] len=1 ended_by=DLEAVE |A_s|=34 rhoP_r=1 rho_r=1 bound=50
+  piece [34,38] len=4 ended_by=DLEAVE |A_s|=35 rhoP_r=4 rho_r=4 bound=51
+  piece [40,46] len=6 ended_by=fb |A_s|=38 rhoP_r=6 rho_r=6 bound=54
+  piece [47,50] len=3 ended_by=DLEAVE |A_s|=32 rhoP_r=2 rho_r=2 bound=48
+  piece [51,53] len=2 ended_by=DLEAVE |A_s|=33 rhoP_r=2 rho_r=2 bound=49
+  piece [54,59] len=5 ended_by=fb |A_s|=33 rhoP_r=3 rho_r=5 bound=49
+  piece [60,62] len=2 ended_by=DLEAVE |A_s|=33 rhoP_r=2 rho_r=2 bound=49
+  piece [63,70] len=7 ended_by=fb |A_s|=32 rhoP_r=6 rho_r=7 bound=48
+  piece [71,76] len=5 ended_by=DLEAVE |A_s|=34 rhoP_r=3 rho_r=4 bound=50
+  piece [77,78] len=1 ended_by=DLEAVE |A_s|=36 rhoP_r=1 rho_r=1 bound=52
+  piece [79,83] len=4 ended_by=DLEAVE |A_s|=37 rhoP_r=4 rho_r=4 bound=53
+  piece [85,89] len=4 ended_by=DLEAVE |A_s|=38 rhoP_r=4 rho_r=4 bound=54
+  piece [90,91] len=1 ended_by=end |A_s|=40 rhoP_r=0 rho_r=0 bound=56
+ROOTRUN_V=0 rho_in_pieces=65

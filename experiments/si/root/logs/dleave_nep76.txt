@@ -1,0 +1,3 @@
+enters=18 leave_COPY=6 leave_OWN=15 leave_e1_c=11 leave_e1_other=2 leave_e1_root=8 leave_ev_RELAY=6 leave_ev_ROUTE=15 leave_fb=2 leave_noroot=6 leave_rootrho=15 leave_s4a=19 leave_tau_direct=10 leave_tau_via_term=11 leaves=21 max_leaves_u=8 x_fb_OWN_e1t=2 x_s4a_COPY_e1t=6 x_s4a_OWN_e1c=11 x_s4a_OWN_e1t=2 y_RELAY_COPY=6 y_ROUTE_OWN=15
+TOP leaves/len (21, 78, '../../n5-epoch/instances/nep76_n40.pg', 9)
+DLEAVE PASS

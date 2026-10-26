@@ -1,0 +1,15 @@
+BFA_V=410 IN=9085 IN_DLEAVE=8802 IN_SWITCH=283 bfa_checks=444719 bfa_eq=224930 bfa_unk=65 long_pieces=347 pieces=2845 runs=2166 runs_mono=1574
+TOP IN/runlen (49, 28, 'experiments/si/xing/instances/zcl_rx_n48.pg', 2)
+TOP IN/runlen (46, 34, 'experiments/new/box35/instances/pf_best_3623.pg', 4)
+TOP IN/runlen (46, 22, 'experiments/red/xing/instances/x31_cu48.pg', 4)
+TOP IN/runlen (46, 20, 'experiments/red/xing/instances/x31_cu48.pg rs', 3)
+TOP IN/runlen (46, 18, 'experiments/new/box35/instances/pf_best_3623.pg rs', 4)
+VIOLATION ('BFA', 'experiments/n5-exhaustive/canonA_0.pg', 3, 1, -1024, -19616)
+VIOLATION ('BFA', 'experiments/n5-exhaustive/canonA_0.pg', 7, 2, -1024, -16800)
+VIOLATION ('BFA', 'experiments/n5-exhaustive/canonA_1.pg rs', 0, 1, -16384, -19136)
+VIOLATION ('BFA', 'experiments/n5-exhaustive/canonA_1.pg rs', 6, 1, 128, -2688)
+VIOLATION ('BFA', 'experiments/n5-exhaustive/instances/b5_os_n28.pg', 1, 1, -8388608, -37748480)
+VIOLATION ('BFA', 'experiments/n5-exhaustive/instances/b5_os_n28.pg', 25, 1, -1048576, -30408448)
+VIOLATION ('BFA', 'experiments/n5-exhaustive/instances/b5_os_n40.pg', 9, 1, -2097152, -274342215680)
+VIOLATION ('BFA', 'experiments/n5-exhaustive/instances/b6_xs_n24.pg', 9, 1, 0, -4194304)
+SHRINK FAIL

@@ -1,0 +1,7 @@
+IN=9085 IN_DLEAVE=8802 IN_SWITCH=283 bfa_checks=444719 bfa_eq=193765 long_pieces=347 pieces=2845 runs=2166 runs_mono=1574
+TOP IN/runlen (49, 28, 'experiments/si/xing/instances/zcl_rx_n48.pg', 2)
+TOP IN/runlen (46, 34, 'experiments/new/box35/instances/pf_best_3623.pg', 4)
+TOP IN/runlen (46, 22, 'experiments/red/xing/instances/x31_cu48.pg', 4)
+TOP IN/runlen (46, 20, 'experiments/red/xing/instances/x31_cu48.pg rs', 3)
+TOP IN/runlen (46, 18, 'experiments/new/box35/instances/pf_best_3623.pg rs', 4)
+SHRINK PASS

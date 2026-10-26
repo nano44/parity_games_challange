@@ -1,0 +1,13 @@
+0s it 1 T 0 iters 3 n 16
+0s it 10 T 1 iters 6 n 16
+1s it 393 T 2 iters 11 n 16
+1s it 458 T 3 iters 10 n 16
+2s it 885 T 4 iters 9 n 16
+3s it 986 T 5 iters 13 n 16
+5s it 1693 T 6 iters 16 n 16
+7s it 2461 T 7 iters 20 n 16
+7s it 2470 T 8 iters 16 n 16
+7s it 2477 T 10 iters 18 n 16
+14s it 4573 T 11 iters 20 n 16
+15s it 4921 T 12 iters 23 n 16
+144s it 31647 T 13 iters 32 n 16

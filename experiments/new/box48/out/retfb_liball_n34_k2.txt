@@ -1,0 +1,2 @@
+UNK_phases 93 checked 776 runs 1527 sum_R0 466 sum_REV 742
+R0_max 17 ('docs/referee-2/R2-N5-H3/instances/pft34_h3u_P32.pg', 34) REV_max 33 ('experiments/red/xing/instances/x31_rx32.pg', 32) REV_minus_R0_max 20 ('experiments/red/xing/instances/x31_rx32.pg', 32)

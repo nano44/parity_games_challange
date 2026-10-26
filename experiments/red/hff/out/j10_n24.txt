@@ -1,0 +1,2 @@
+fb=1 fb_after_honest=1 gaps=2 gaps_with_fb=1 odd_binds=1 phases=2
+HFFX PASS

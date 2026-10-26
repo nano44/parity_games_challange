@@ -1,0 +1,51 @@
+CORA_chk 5163
+CORC_chk 3261
+F 294
+FBC_FAIL 15
+FBC_chk 294
+FB_SAT 107
+FB_XI_FLAT 105
+FLATLAST_FAIL 8
+MAX_CF 3
+MAX_F_PHASE 11
+MAX_RHO_FBPH 20
+MAX_SAT_C 3
+MAX_UNS_C 11
+MONO_chk 223
+ODDC_chk 1060
+PHASES 5163
+PH_FB 164
+REAL_chk 7797
+RUNS 1413
+SATB_chk 292
+SATW_chk 184
+SAT_RETURN 97
+SUM_CF 167
+SUM_CONF_FB 223
+SUM_EP_FB 254
+THM_chk 223
+skip_big 669
+EX ('FLATLAST', 'hon_logs/climb_n9_k3.pg/0', 1)
+EX ('FLATLAST', 'hon_logs/climb_n9_k3.pg/0', 2)
+EX ('FLATLAST', 'hon_logs/climb_n9_k3.pg/1', 2)
+EX ('FLATLAST', 'hon_logs/climb_n9_k3.pg/2', 4)
+EX ('FLATLAST', 'hon_logs/climb_n9_k3.pg/2', 5)
+EX ('FLATLAST', '../../../experiments/n5-exhaustive/instances/b4_nohlen5_0.pg/1', 3)
+EX ('FBC', '../../../experiments/n5-exhaustive/instances/b5_o11.pg/0', 4, (2,), 2, 2)
+EX ('FBC', '../../../experiments/n5-exhaustive/instances/b5_os_n12.pg/0', 12, (2,), 5, 5)
+EX ('FBC', '../../../experiments/n5-exhaustive/instances/b5_os_n12.pg/2', 4, (2,), 5, 5)
+EX ('FBC', '../../../experiments/n5-exhaustive/instances/b5_os_n14.pg/0', 16, (2,), 7, 7)
+EX ('FBC', '../../../experiments/n5-exhaustive/instances/b5_os_n16.pg/0', 19, (2,), 7, 7)
+EX ('FBC', '../../../experiments/n5-exhaustive/instances/b5_os_n20.pg/0', 24, (2,), 7, 7)
+EX ('FLATLAST', '../../../experiments/n5-exhaustive/results/box9/cls_n10_best.pg/1', 1)
+EX ('FLATLAST', '../../../experiments/n5-exhaustive/results/box9/cls_n6_best.pg/2', 1)
+EX ('FBC', '../../../experiments/new/box37/instances/rfroz_cex_n16.pg/0', 3, (12,), 0, 0)
+EX ('FBC', '../../../experiments/new/box37/instances/rfroz_cex_n16.pg/0', 4, (12,), 0, 0)
+EX ('FBC', '../../../experiments/new/box40/out/nhc_fbrestart_cex_n12_11.pg/0', 1, (3,), 1, 1)
+EX ('FBC', '../../../experiments/new/instances/n5lock/lock_n12_seed212.pg/0', 5, (11, 1, 0, 7, 2, 6), 1, 1)
+EX ('FBC', '../../../experiments/new/instances/seg10/seg_r16b.pg/2', 3, (2, 15, 13, 12, 9, 14, 12, 10), 0, 0)
+EX ('FBC', '../../../experiments/new/instances/seg10/seg_r20_s204.pg/0', 8, (13, 19, 10, 11, 18, 16), 3, 3)
+EX ('FBC', '../../../experiments/red/xing/instances/j5_n16.pg/1', 4, (4,), 1, 1)
+EX ('FBC', '../../../experiments/si/kw15/climb/best_kind3_1541.pg/1', 1, (11,), 0, 0)
+EX ('FBC', '../../../experiments/si/orlens/instances/thclimb_n12_s11.pg/0', 9, (7,), 1, 1)
+EXIT 0
