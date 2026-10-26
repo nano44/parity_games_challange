@@ -186,3 +186,38 @@ one (games with no pointwise optimum are skipped: NOPT).
   candidate is induction on the set of PLAY-CONSTANT vertices, which is closed under play-successor, and showing it grows by ≥ 1 per step.
   Not done.
 - CONJECTURE ABS-CYC: in the cyclic model the run reaches its fixed point within n steps (DATA above).
+
+## 9. Gap (i): the naive settling order fails (obstruction, instance); FINAL-EACH (DATA); gap (ii) closes in the acyclic model (Lemma ABS-TIE, PROVED)
+Written 2026-10-26T16:43Z (date -u). Lead's GO 16:34Z: gap (i); on failure record the obstruction and move to (ii) / (iii).
+- Lemma LOC (PROVED, cyclic model; the local form of §7's step). If σ_{t+2}(v) ≠ σ_{t+1}(v), then some successor y of v has M_t(y) ≠ M_{t+1}(y),
+  or N_{t+1}(y) ≠ N_{t+2}(y), or changes VIABILITY for v (its play avoids v under σ_{t+1} but not σ_{t+2}, or the reverse). Proof: v's
+  choice is an N-maximiser over its viable arena successors (a W-optimal valid strategy cannot route v into a play through v), and §7's
+  shrinking-arena argument applies verbatim to the viable successors. □
+- The acyclic proof picks, at a transition k, the most DOWNSTREAM changer v (no changer reachable from v). Nothing reachable from v changes
+  later (minimal counterexample plus LOC), so v's change at k is final. Steps are ≤ n because every transition then holds some vertex's
+  final change. With cycles, "reachable" is useless (one strongly connected component), and its play analogue is FALSE:
+  - DEAD (naive cyclic lift, own, never claimed): "a changer at k whose new play contains no other changer at k (a DEEPEST changer) has
+    made its final change". Instance (experiments/si/root/abscyc.py --deep, pinned): non-terminals 0, 1, 2 with succ(0) = succ(1) =
+    {2, t3, t4}, succ(2) = {0, 1, t3}; w = (2, −8, 0); terminals t3: (h, T) = (51, 101), t4: (2, 29); start σ = (2, t4, 1). Transition 0:
+    all three change (0 → t3, 1 → t3, 2 → 0). Vertex 1 is deepest (its new play is 1 → t3), but it changes again at transition 1 (1 → 2).
+    At time 0 its successor 2 was not viable (2's play ran through 1, M(2) = −6), and 2 changed in the same transition (M(2) becomes 53 > 51).
+  - Obstruction: changes on the plays of NON-chosen successors (not viable now, viable next step) are invisible to "deepest". This is gap
+    (i) exactly, and the shape L-RED 22 is aiming at: a viable-successor set changing on a cycle.
+- DATA (abscyc.py --final, pinned for n = 5). FINAL-EACH: every transition with a change holds some vertex's FINAL change. 0 violations in
+  9,894 transitions (n = 4, 5, 6; 3,000 random cyclic games each) and 13,095 more (n = 4-6, scratch). Also "some deepest changer is final"
+  had 0 failures, while "every deepest changer is final" failed 416 times. Value-based rules (largest / smallest M or N, shortest play) all
+  fail somewhere. FINAL-EACH implies ABS-CYC (≤ n steps). CONJECTURE FINAL-EACH; no proof.
+- Gap (ii), lengths: Ξ compares (M, s_c·ℓ) lexicographically, a total order compatible with appending a vertex. §7's proof uses only that
+  (comparisons of successor values plus monotonicity), so ABS-HEIGHT holds with (M, length) values unchanged.
+- Gap (ii), ties. Lemma ABS-TIE (PROVED, acyclic model): with ANY deterministic tie-breaking among W-maximisers (a function of the arena, the
+  values and the current choice), the run is fixed after at most D := max over paths of Σ deg(v) ≤ m steps.
+  Proof. Settled from t ⇒ every later change of v goes to a y in the arena, so M(σ v) strictly rises and the arena strictly shrinks. Its
+  N-maximum stays attained, so there are ≤ deg(v) − 1 changes after the first step. A step without change repeats the same inputs, so the
+  changes are consecutive and v is constant from t + deg(v). Induct on the DAG. □
+  DATA (absmodel.py SMALL=1 TIEMAX=1, values in {−2..2} so ties are frequent, ties broken to the LARGEST successor, not the current):
+  10,000 random DAGs (n = 6, 10), never ≥ n steps; 3 climbs (n = 6, 20,000 mutations) reach exactly 6. So in data ties cost nothing over
+  the height; the proved bound is D.
+- Gap (iii), the prefix: the model starts once A has frozen (FREEZE-A (b): ≤ |A_a| − 1 steps). A-vertices that leave A later are ordinary
+  model vertices; τ(u), σ̄(u) stay in A for u ∈ DD (C-interval), so the gate exits are constants from then on. No new gap there.
+- Status: (ii) and (iii) close in the acyclic model; (i) is OPEN, with the obstruction above and CONJECTURE FINAL-EACH as the target;
+  (iv) impure intervals not attempted.
