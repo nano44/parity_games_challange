@@ -22,6 +22,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   choose by G_τ" on two fixed one-player games); SPLIT-RED applies to I. CONJECTURE FRZ-RHO (Ξ on Reach(Q) freezes within n − 1
   transitions of a ρ-free interval): 0 violations, tightest xsn29_n32 27/31. Proof stops at the W-guided arena choice on R_D (the
   forbidden-edge regime). Even proved, FRZ-RHO leaves the loop open (ρT ≤ T_exit): the target is ρ itself (relay cycles).
+- 11:13Z Lead GO (a): ROOT-C proof + relay-flip necessary condition; L-RED R83 mkpp (relay 2-cycle Θ(n) times per phase, linear).
+  note §24: ROOT-C PROVED (κ on Q_c = min over c-reaching walks built from class exit paths); Lemma FLIP PROVED: (a) FLIP-COST
+  κ_t2(q2) ⪰ κ_t1(q2) + wt(C); (b) p1 intact at t2 ⇒ the cycle is Odd-unattractive; (c) ⇒ strict rise ≥ wt(C) ≻ 0. Necessary
+  condition N1 (old path broken) ∨ N2 (paths meet) ∨ N3 (strict rise). frz40's flip = N1 via two fallbacks; mkpp's = N3. flipck.py
+  0 violations (frz40, lib41, pp_K12, pp_K48); reversed control bites. OPEN: a level argument for N3.
 - Things only I know: relay.py's per-q exit paths stop at Q ∪ {c} (class form, §22.4); ROOT's Q-exit paths stop only at Q or a repeat
   (global form, §22.3). rho_transitions = class_event_transitions on lib41: every ρ-transition there touches one class only.
 
