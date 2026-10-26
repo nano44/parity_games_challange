@@ -27,7 +27,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 - DONE: H3 R-N5-H3.md 7c2d9b49 (all SIGNED; H3-N1..N3) + Addendum A ead5fdb3 (FRZ-U_H3 index 0-based: freeze from k0+n-1, content needs
   >= n+1 states; 1-based reading unproved, unrefuted on 8 runs; frz2_n24 run); XEP §C ead5fdb3 vs R2 fd43a69f (N-XEP-2 accepted).
 - Do NOT open docs/referee-2/R2-N5-NC* (R2 reviewed withdrawn NC) unless the Lead says; H3 §C is vs R2's H3 report when it comes.
-- NEXT: H3 §C when R2 reports; Lead's next packet.
+- DONE: H3 §C 6b17eb58; H3 Addendum B e18b4370 (all 7 observed freezes content-free by level: L = max_S M_D has no path-set vertex above it).
+- DONE: EPR R-N5-EPR.md 3def3e11 (GAP EPR-1: REPRO's one-phase clause false at y' = y+1, fb17_n32 epoch 26; EP-k, EP-1 need +1), Addendum A
+  e18b4370 (div_n8: DIV 1), §C a0858144 vs R2 796b4d36 (same gap G-EPR-1; lamend_D0/D1 reproduced).
+- TRAP (new): R2 instance files may exist only on origin/claude/referee-2 commits, not trunk: use `git show <sha>:path`.
+- NEXT: Lead's next pin.
 - TRAP (new): fbred_probe.main skips n > 64 silently (counter skip_big); say so when comparing maxima.
 
 ## HANDOVER (successor 11 -> successor 12), written 2026-10-26T03:13Z by date -u, context ~635k (Opus 5.5 under D15; label "(Opus 5.5, D15)")
