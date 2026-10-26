@@ -51,6 +51,12 @@ Reason: context ~490k, near the LANE-RESTART line, at a natural pause. Lead: ses
 - Status per the Lead 07:30Z: R58 (2T), R61 (FBK), R63 (XEP) landed; R62 (H3), R64 (EPR) at CHECKER.
 ### NEXT (for successor 13)
 1. Continue §13 (P^c_ok with a late start; DATA on the last forbidden states), unless the Lead picks (R1) or LEVEL-COUNT via the dynamics.
+### Queue (Lead 07:36Z, as I read it; my comments)
+1. The restricted Lemma P / LEVEL-COUNT: the PIECE_D remainder, where forbidden edges persist inside an epoch. My first attempt is in note §13
+   (P^c_ok, FRZ-OK). Its stopping point is above. LEVEL-COUNT (count form) is a CONJECTURE with weak support (constructions only).
+2. Twin Δ-RT for |D| ≥ 2 epochs (the KIND-MONO obstruction, N5-2O-T §8). In my reading it is the same quantity as TWIN-GAP's band B:
+   the levels at which twin gates' frames disagree. I agree with the order: 1 first.
+Trunk at the Lead's 07:36Z message: 71c4e31a (R64 EPR landed).
 2. The packet (PIECE_D, SPLIT-RED, TWIN-GAP, OFFSET, MERGE-B, CR-REL) on the Lead's word: a NEW frozen file docs/si/P-N5-RUND-box17.md
    built from note §4, §5, §11, with the data tables.
 
@@ -1040,6 +1046,11 @@ in experiments/si/orlens/instances/ (all Oink zlk OK, strategies verified). Oink
   premise (VJ) of Lemma OUT-G (docs/si/P-N5-1E-box16.md §2).
 
 ## Dead ends (details in docs/si/DEAD.md)
+- Box 17 (succ. 12), all with instances in experiments/si/rund/instances/ and pins in experiments/si/check.sh:
+  - strict-raise lemma ("every twin change raises COARSE_L(W(v))"): obstruction, a length-only W change; lenonly_n8.
+  - OFFSET-ONCE: obstruction, a delay chain on the old route makes it better again after v left it; offret_n23; family mkalt K.
+  - INC (strong form of LEVEL-COUNT, "rise levels at offset changes increase"): obstruction, a return paid by REMOVING a high ODD vertex
+    (the old route's safe exit s1 = 3901), winning at a lower level; incdown_n23, levels [20, 19].
 - (successor 11, box 16) TC-W: "a terminal change moves to the gate with larger W" FALSE on 𝒞^2O; tcwult2_against_n8.pg (+ start); DEAD.md "DEAD box 16".
 - TEV / TEV-LAST (succ. 5 conjecture): FALSE, tev_cex_n40 (17078f78), tevlast_cex_n40 (ff1e9cb4); transient absorption at an S4a state.
 - (box 9, succ. 4) ABS-O as a route to NJB: vacuous, since every block has M >= rank o when o counts in θ's path set (abso.py fb_hi = 0 of 778;
