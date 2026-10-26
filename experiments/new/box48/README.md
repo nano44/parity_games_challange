@@ -12,3 +12,7 @@ DATA, not proof. Uses box43 (multi: rand_ckO, SPEC N5 step), box21 (n5x.readstar
   (LEV_C equal and < n − 1 at two consecutive C-epochs; CONJECTURE VIS-RISE says 0), LEV_DROP_V (must be 0, LEV_C non-decreasing), XI_EQ.
 - quotecheck2.py FIXES.md REV1:FILE1 [REV2:FILE2 ...]: box47/quotecheck.py with a revision per source (the two referee §Cs sit on different branches).
   out/quotecheck_honff_fixes.txt (docs/new/P-N5-HONFF-fixes-box47.md against e7db1ab4 REFEREE, 11e3cfb1 REFEREE-2, 2fca63b8 packet): 45 quotes, 0 missing.
+- retfb.py STARTS SEED (--list FILE | files) [--nmax N] [--budget B] [--start F]: Lemma RET-FB at every epoch start against the last fallback
+  before it (RETFB_V must be 0; MUT=1 uses t := s − 1, must bite) and Corollary VIS (VIS_V must be 0); R0 against REV. out/retfb_*.txt.
+- satfb.py (usage as vislev.py): every fallback from a saturated C-state (LEV_C = n − 1): FLAT, LAST, T1C, switches at own cycle nodes (SW_OWNCN),
+  closing a cycle through x (SW_THRU); Lemma SAT-FB. out/satfb_*.txt.
