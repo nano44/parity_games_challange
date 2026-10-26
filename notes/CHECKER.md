@@ -6,7 +6,7 @@
 - C58 = R49 (P-N5-NEEDB) PREP, written 23:00Z (date -u); the final draft waits for REFEREE-2 12's §C (draft l.54 "R2SC-PENDING").
   Pins (--full-history --all; trunk 2cd3c9eb): packet docs/si/P-N5-NEEDB-box13.md 7471aef3 (one version, 3ea0f5f9); fixes
   docs/si/P-N5-NEEDB-fixes-box13.md 0e5f24af (one version, 863ca636); REFEREE R-N5-NEEDB.md 008ad8ab (0c642f44) → §C 7dbd5118 (74fd8cb6):
-  append only (+61, 0 removed); REFEREE-2 R2-N5-NEEDB.md ef433d32 (38e73ce9) → Addendum A 1a9a0407 (a7e4c14b): +25, 4 REMOVED lines
+  append only (+61, 0 removed); REFEREE-2 R2-N5-NEEDB.md ef433d32 (a7e4c14b) → Addendum A 1a9a0407 (38e73ce9) [sha1s corrected 00:1xZ, C58 N-2]: +25, 4 REMOVED lines
   (§1 N-NEEDB-4 witness/repro sentence and §6 (LV+) "its start pair" → "a VALID start pair", both marked "corrected in Addendum A"); no
   verdict change. 1a9a0407 NOT on trunk yet (claude/referee-2 70a7aa5f). All other cited commits ancestors of trunk. Draft versions so far:
   063ecc73 86c2797d, a4bf4050 e8415438, 2cd3c9eb ba37f1d1.
@@ -17,6 +17,17 @@
   block_9501.txt pair (σ0 9 2 9 1 0 5 2 8 3 5 7, τ0 9 2 9 1 0 5 2 5 0 5 3) = saved.txt IDENTICAL (state 1: fb, (h), THR, r = 10, M = −1,
   gates (10,1) (10,3) (10,8) β); from the S3 pair (Engine.initial("best") on g and its dual) = s3.txt IDENTICAL (4 states, no such state).
   Draft wording to check at C58: (iii) "witness saved, not reproduced by REFEREE, N-NEEDB-4" vs R2 Addendum A (now reproducible).
+- C58 = R49 = P-N5-NEEDB. 2026-10-26 00:11Z docs/checker/C58.md FAIL at 6021ea55 (draft e6ccd4bb): E-1 RISE SETTING drops "Between k0 and
+  j there is no fallback" (both referees use it in the reduction); E-2 RISE-DROP / GATE-ABOVE / FEED "recorded in RESULTS R40-R43": not in
+  RESULTS (DEAD.md box 13 only); E-3 disclosure "two lines reporting REFEREE's verdict … changed nothing" vs R2 "two lines that report on
+  REFEREE's R-N5-NEEDB … changed no verdict or note". N-1 DEAD box 15, N-2 my sha1 swap, N-3 random climbs, N-4 REFEREE 1,817 vs 1,818.
+  (a)-(e), (LV+), data, pins PASS. Re-runs EXACT: needb5 repro saved/S3; REFEREE needb5_check, ownstart, lib @7dbd5118; R2 needb_check
+  #67 own/spec/rand, xg_witness @1a9a0407. Worktrees wtR58 = 7dbd5118, wtX58 = 1a9a0407. Next: Add. 1 on the revision (APPEND).
+- C59 = R50 = P-N5-KW. 2026-10-26 00:23Z docs/checker/C59.md FAIL at c14064fd (draft ce2b4861): E-1 CW-INT drops "¬H2, c_w ≠ o";
+  E-2 limit (ii) mixes REFEREE-2's slack (bound − step) and L-RED's (step − bound: "slack −2"); E-3 limit (ii) omits CW-INT / E-SEG
+  post-freeze vacuity and REFEREE-2's 571 W-ONCE checks. Points (1)-(4), (6) PASS. Re-runs: REFEREE kw_probe lib (+1 later counter line),
+  lib RANDSTARTS=3 IDENTICAL, cascb_witness CASCB 1 @1d6cbf32; R2 kw_check #406 kw_n48 3/3 IDENTICAL, cascb_witness spec reproduced
+  @8a47fd92; L-RED kw18 frzu_tight_n14 margin 0, cw11_n24 CW-INT margin 0 @c14064fd. Worktrees wtR59, wtX59, wt59. Next: Add. 1 (APPEND).
 
 ## Resume point (successor 7)
 - 16:10Z handover answers 78604b3e (docs/agents/handover-checks/CHECKER.md); Lead 5/5 + GO 16:32Z; Oink 8fbf0a7 built after GO (exit 0).
