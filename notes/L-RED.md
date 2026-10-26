@@ -29,6 +29,9 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - Box 49: R82 docs/red/R82-linear-offset-changes.md: (b) DONE — mkgrow gives K offset changes of one vertex in one stretch_D at
   n = 8K + 53 (linear; mkalt √n). Ξ-blocked routes unblocked by taps on ONE shared line per side; c high so fillers are irrelevant.
   Pins grow_K12_n149 (71521dd5), grow_K40_n373 (42f21793); lvl2 max_oc 40; Oink OK. Also K U events of one vertex per run.
+- Box 50 (Lead 10:42Z: re-thaw loop, relay cycles): R83 docs/red/R83-relay-cycles-linear.md. mkpp: relay 2-cycle q1 <-> q2 used
+  K/2 times in ONE phase; N_ep = K+3, ρ_q = K+2, n = 8K+65 (K 6..48); exponent 1; pins pp_K12_n161 (8808ba5d), pp_K48_n449 (a161569d).
+  READING: relays change Ξ(q) not W(q) (τ fixed), so they reach Even only via gating; super-poly needs re-armable Ξ-gates.
 - LC2 climbs (ANALYSER=h3, lc2_slack) from pairoc_n58 / n90: best slack 0 (equality), no kill (in flight at 10:5xZ).
 - (b) started: ANALYSER=h3 climbfr19 on lc_maxchg from lcount_n23: stuck at 3 changes (219 k evaluations). Next box.
 
