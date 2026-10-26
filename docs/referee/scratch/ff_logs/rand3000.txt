@@ -1,0 +1,11 @@
+FBR_chk 326
+FB_nonhonest 2
+GAPR_chk 141
+GEN_chk 286
+H0FF_chk 21587
+HFF_chk 21587
+MAX_HONEST 5
+PHASES 21587
+R1FF_chk 21587
+RUNS 9000
+exit 0

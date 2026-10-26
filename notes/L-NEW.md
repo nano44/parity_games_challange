@@ -12,8 +12,13 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - (2) HON-FF: docs/new/N5-HONFF-box47.md (written 11:31Z by date -u). Lemma FB-RISE (PROVED): an in-phase S4c fallback is a Bellman-Ford step for
   Ξ at Even vertices (Lemma P Case A with Ω = Ξ; Case B needs only Ξ_t(z*) ⪰ Ξ_t(z) and MON); Odd vertices are one level ahead at a W-honest state
   (SAT0 Odd case). So LEV(t+1) ≥ min(LEV(h)+1, n−1). Theorem HON-FF (PROVED): W-honest states ≤ 4n² − 3n per phase, no f. HON-0-FF, REC-1-FF.
-  Replaces both uses of the fallback-free hypothesis (REFEREE 14's HON-N3). DATA: GEN_V 0 (300 fallbacks), FBRISE_V 0 (25), control bites (CTRL_T).
+  Replaces both uses of the fallback-free hypothesis (REFEREE 14's HON-N3). DATA: GEN_V 0 (1,028 checks), FBRISE_V 0 (31), control bites (CTRL_T).
+- (3) P-N5-HON-fixes-box46 FROZEN (0238b1cb, sha1 54985acf…; 46 quotes checked by box47/quotecheck.py). Packet P-N5-HONFF-box47 FROZEN
+  (2fca63b8, sha1 98101d1f…; Q-A for the referees: Case A with Ω := Ξ). Sent to the Lead 12:01Z. Status at 12:02Z: waiting for the next item.
 
+- (4) f per phase (Lead 12:08Z): docs/new/N5-FB-box47.md (fc8b88c4). τ-frame split f ≤ (n−1) + #OB + #SAT (PROVED); ρ/epoch charge of OB DEAD
+  (s4c8_n13; Ξ rises between G_τ path values). Lemma FB-RISE_C (honest frame H_C, Odd term never binds) and Theorem FB-C: f ≤ |𝒞_f|(4n² − 3n)
+  (PROVED). Corollaries: Δ^k(4n²−3n) on 𝒞^kO; (1+m)(4n²−3n) when all |D| ≤ 1. Saturated term ≤ 1 in data, 4n(n−1)+1 proved. Sent 12:23Z.
 ## Box 46 log (successor 25, session_01VsRSLkbPLhXCWoMbJMCW2r; handover check 04cedc7c (5/5, Lead 08:32Z); GO 08:32Z, Lead's stamp)
 - Container stale at 5961101a again; ff to 230334e4; trunk 565b8a8d merged (64a811ba). Oink built (scripts/setup_oink.sh rc 0, 8fbf0a7).
 - (c) REC for |D_E| = 1: docs/new/N5-REC1-box46.md. Tools experiments/new/box46 (levels, norise, dint, hon, hon2, fbin).
@@ -422,31 +427,38 @@ Every answer measured from the repository; commands named.
    fetched ref, so the pin cannot be checked yet; I checked the packet by sha1 (cbea0739…) against my own commit 1afccb51 instead.
    (iii) The container clock is slow vs the Lead's stamp (07:50 vs 07:53): stamp only from date -u, never ahead of it.
 
-## Resume point (overwritten at handover, LANE-RESTART step 1; successor 25, box 46, FINAL, written 2026-10-26 10:32Z by date -u)
-Successor 25 (Opus 5.5, D14/D18, L40), session_01VsRSLkbPLhXCWoMbJMCW2r. Handover check 04cedc7c (5/5, Lead 08:32Z). ~480k context at parking.
+## Resume point (overwritten at handover, LANE-RESTART step 1; successor 26, box 47, FINAL, written 2026-10-26 12:40Z by date -u)
+Successor 26 (Opus 5.5, D14/D18, L40), session_01NkLhWhNtcThjnCotjLUvvF. Handover check 8a018742 (5/5, Lead 10:57Z). ~400k context at parking.
 ### DONE (all pushed with scripts/push.sh, rc 0; sha1s reported to the Lead)
-- Fixes files FROZEN: P-N5-STAU-fixes-box45 (ee95661f, sha1 42d7b04c…; R65 landed f7308227), P-N5-REC0-fixes-box45 (ec0105e2, sha1 f35b26f3…; no
-  gap; last input for R66 before CHECKER).
-- Packet FROZEN: P-N5-HON-box46 (67a7b54d, sha1 07f8e767cfca12d29c8f6f2e3f03358326abbef1; pinned by the Lead; REFEREE 14 and REFEREE-2 16 on it).
-  EP-1u and REC-1 (b)-(d) are written as implications from (Στ); R65 has since landed, the referees are told (Lead); do not edit the packet.
-- Working doc docs/new/N5-REC1-box46.md (§0-§6, DEAD §4 (i)-(v), DATA §5 incl. X_dir); tools experiments/new/box46 (README; also xdir.py, xclimb.py,
-  instances immfail_n14, immp_cex_n11 (+ .start), xdir2_n17).
+- X_dir (docs/new/N5-XDIR-box47.md, 3d2136fd): RESTRICT_U/REPRO_U (any U ⊆ Q), Lemma STAY, ROOT_v, CHOICE, XD-CAUSE, XD-ρ (lane-PROVED); 𝒞^2O ledger
+  (READING); XD-1 DEAD (pp2_n19); "no X_dir after an honest state" DEAD (xdhon_n13); σ̄ not carried by restriction (DATA, sbmis_n12).
+- HON-FF proved (docs/new/N5-HONFF-box47.md, 385a5534): Lemma FB-RISE, Theorem HON-FF (W-honest states ≤ 4n² − 3n, no f).
+- P-N5-HON-fixes-box46 FROZEN (0238b1cb, sha1 54985acf…; in R68 at CHECKER C77).
+- Packet P-N5-HONFF-box47 FROZEN (2fca63b8, sha1 98101d1f…; pinned trunk 4a0a8aba; referees on it now; question Q-A: Lemma P Case A with Ω := Ξ).
+- f per phase (docs/new/N5-FB-box47.md, fc8b88c4 + correction 1f8d6d7d's parent): τ-frame split, ρ/epoch charge DEAD (s4c8_n13), Lemma FB-RISE_C,
+  SAT_C, Theorem FB-C f ≤ |𝒞_f|(4n² − 3n). CORRECTION: R60 (c) EPOCH (landed) already has f ≤ 1 + n·N_ep; FB-C's new content is per DISTINCT
+  configuration over the whole phase.
+- Packet P-N5-FBC-box47 FROZEN (1f8d6d7d, sha1 32d3776cf4090fb15c1d0cb4c8b4f59276f64e21); referee queue: HONFF, then FBC.
 ### IN FLIGHT
-- Nothing running. Relayed by the Lead (not opened by me): L-RED 20's R79 (l-red 3dee2e54) found no kill of REC-0 in 8.17M runs, max N_0 = 6;
-  L-COMP 5 box 12 at l-comp cf441de1 (IMM′ / HON-FF add-ons were routed there; IMM′ is already DEAD, see §4 (v)).
-### NEXT (successor 26), the Lead's queue (10:28Z)
-1. X_dir, proof side: a direct switch {u} → {u′} is exact on the 2-Odd-choice game G^{u,u′} (cut Odd v ∉ {u, u′} to τ(v); RESTRICT_E's proof
-   applies to every state with D ⊆ {u, u′}). State what a 𝒞^2O per-phase transition count would need (R58 gives only f = O(n³) there). DATA:
-   N5-REC1 §5 (xdir.py, xclimb.py: ≤ 2 per phase, mostly at run starts; xdir2_n17 has a chain {3} → {1} → {2}).
-2. HON-FF (N5-REC1 §6, P-N5-HON §5): gaps with a fallback at a non-honest state; only 3 exist (j10_n24, j7_n32, j8_n32).
-3. The P-N5-HON fixes file when both HON reports arrive (Lead's word). BRIEF: file docs/new/P-N5-HON-fixes-box46.md, repairs only; do not
-   touch the packet (sha1 07f8e767cfca12d29c8f6f2e3f03358326abbef1). Sources: REFEREE-2 16, docs/referee-2/R2-N5-HON.md (report 1566b439, Lead
-   10:34Z: all items SIGN, implications as stated, §2 confirmed, notes N-HON-1..5; N-HON-1 = SAT0's Odd-case parenthesis, with replacement text
-   in its report); REFEREE 14 (report pending) and both §Cs. Template: P-N5-STAU-fixes-box45.md / P-N5-REC0-fixes-box45.md (verdicts, gaps with
-   the referees' repair text verbatim, notes, data). Quote verbatim with file:line from trunk and check every quote by script (normalise
-   whitespace, test substring). Also record: R65 landed (f7308227), so EP-1u / REC-1 (b)-(d) now rest on a landed (Στ) — a fixes-file remark,
-   not a statement change. Freeze, push, send the Lead the sha1 and SHA.
+- Nothing running. Referees on P-N5-HONFF; P-N5-FBC queued after it. Both rest on Q-A (if Q-A is "no", FB-RISE and FB-RISE_C fall together).
+### NEXT (successor 27), the Lead's queue (12:32Z)
+1. Distinct configurations σ̄|Q per phase on general games (the configuration side of N_ep). Tools: box47/fbconf.py prints NCONF; data so far: max 7
+   per phase (fr39_q4_n48 with L-RED's start), 257 configurations against 1,399 epochs at n ≤ 34.
+2. A better saturated term for FB-C (data: ≤ 1 saturated fallback per configuration; proved 4n(n − 1) + 1). Obstacle: in H_C, Ξ = B_C does not
+   exclude an improving gate closing a cycle with a better top (λ-cycle nodes only bound B_C); need an in-phase contradiction as in HON-FB.
+3. Fixes files for P-N5-HONFF and P-N5-FBC when the referee notes arrive (template P-N5-HON-fixes-box46.md; quotes via box47/quotecheck.py).
 - Not routed: G-N1-LB.
+
+## Things only I know (successor 26)
+- The honest frame is the right frame for fallbacks: S4c is "switch each improving Even vertex to its Ξ-best gate", which in the frame H_C of the
+  source's configuration is exactly Lemma P's relaxation at every vertex (Odd vertices follow their H_C edge, so (V1)/(V2) give them +1). In the
+  τ-frame the Odd term binds whenever a D vertex undercuts its τ-path, and then Ξ can rise strictly between path values (invisible).
+- Before stating a corollary, grep RESULTS for the same quantity (I missed R60 (c) EPOCH f ≤ 1 + n·N_ep until the packet's quote pass).
+- quotecheck.py checks curly-quoted text; never put a curly-quoted result line inside the checked file (it checks itself), and avoid “…”.
+- pkill -f / pgrep -f with a pattern that occurs in your own shell command kills that shell (exit 144): use the "[p]ython3 name" trick.
+- fr39_q4_n48 has no fallback phase from S3; use instances/fr39_q4_n48.start (L-RED's n5py_start).
+- L-COMP 5's HON-FF data (l-comp 15bcfa06, experiments/n5-epoch/README.md "Add-on") and pinned gaps ffin12_n32 / ffin5_n32 / ffin4_n24 are read
+  with `git show 15bcfa06:…`; do not edit their files.
 
 ## Things only I know (successor 25)
 - The W-honest states (Ξ = W) are the bridge between the two frames: there S4a is G_τ's switch-best (Lemma P applies), and Ξ's level can be read

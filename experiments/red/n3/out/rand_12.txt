@@ -1,0 +1,2 @@
+eq=284 flipcost_checks=1031 flips=1031 games=820133 gap_max=22 hyp=526 hyp_bothintact=216 hyp_fail_p2intact=88 hyp_fail_top=411 hyp_p1=24 hyp_p1broken=22 hyp_p2=37 hyp_q1=336 hyp_q2=129 n2_overlap=6 phases=2767308 sg_checks=3608850
+N3X PASS

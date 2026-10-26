@@ -251,6 +251,8 @@ def phase(g, st, a, b, lam, Q, cnt, name):
                     w = max(cyc, key=lambda u: g.rank[u])
                     if not g.rew[w] > g.rew[c]: fail(cnt, "FB", name, t1, t2)
                     if disj:
+                        hh = max(Cw, key=lambda u: g.rank[u])
+                        if g.rank[hh] < g.rank[c]: cnt["FC_LOWBRANCH"] += 1  # G-FLIP-3: (c)'s second alternative (C below an odd c)
                         cnt["FC_chk"] += 1
                         if set(cyc) != set(Cw) or not wC > (0, 0) or not k2 > k1: fail(cnt, "FC", name, t1, t2)
                 n1, n2 = not intact1, not disj

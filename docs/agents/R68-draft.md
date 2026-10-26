@@ -1,4 +1,4 @@
-# Draft RESULTS R68 (Lead, 2026-10-26 11:38Z by date -u; both reports and both §Cs filled; fixes file filled 12:03Z by date -u) — to CHECKER C77
+# Draft RESULTS R68 (Lead, 2026-10-26 11:38Z by date -u; both reports and both §Cs filled; fixes file filled 12:03Z by date -u) — to CHECKER C77 (rev. 2026-10-26 12:28Z: C77 E-1, E-2, N-1..N-5) — LANDED in RESULTS Results 2026-10-26 12:42Z (CHECKER C77 Add. 1 f8698135 PASS), after R67
 
 ### R68 [refereed-only] N5 on EVERY game: in every phase the W-honest states (Ξ = W) number at most f + 4n² − 3n (Lemma HON), a fallback at a W-honest state is flat and ends the phase at a saturated W-honest state (SAT0, HON-FB), so f may be replaced by the in-gap fallbacks f_in (HON′), and the D = ∅ states, the D = ∅ epochs and their transitions number at most f_in + 4n² − 3n (HON-0, which implies RESULTS R66's bound); a run with D ⊆ {u} is an N5^τ run on the one-Odd-choice game G^u (RESTRICT_u, REPRO_u), and the {u}-intervals of a phase number at most 1 + f_in + 4n² − 3n + X_dir + X_big (REC-1 (a)); as IMPLICATIONS from premise (Στ), u-runs have length ≤ T*(G^u) + 1 (EP-1u) and the |D| = 1 states of a phase are bounded by REC-1 (b)-(d) (2026-10-26) — partial step-4 lemmas for N5 beyond one Odd choice vertex (reductions to f_in, X_dir and X_big; not free of f; not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C77.md, checker PENDING)
 - Object (packet P-N5-HON, added at l-new 67a7b54d, pinned trunk 31835c4b, unchanged during review): docs/new/P-N5-HON-box46.md, sha1
@@ -25,10 +25,10 @@
   (c) Lemma HON-FB: a fallback h → h + 1 at a W-honest state h is flat (values unchanged), leaves no W-improving edge, and lands on a
       W-honest, saturated state that is the phase's last ((i)-(iv)).
   (d) Corollary HON′: the W-honest states of a phase number at most f_in + 4n² − 3n.
-  (e) Corollary HON-0: (a) the D = ∅ states, (b) N_0, the epochs with D_E = ∅, and (c) the in-phase transitions out of D = ∅ states each
+  (e) Corollary HON-0: (a) the D = ∅ states, (b) N_0, the epochs with D_E = ∅, and (c) the in-phase transitions whose source lies in a D = ∅ epoch each
       number at most f_in + 4n² − 3n. Relation to RESULTS R66 (REC-0), both confirmed by both referees: HON-0 (b) implies R66 (a) strictly,
       since (f + 1)(n + 1) + 4n(n − 1) + 1 − (f + 4n² − 3n) = f·n + 2 > 0 and f_in ≤ f, and HON-0 (c) implies R66 (b) without the factor n + m;
-      neither proof uses the other, nor SN-PREFIX_D nor EP-0, but the premise sets overlap: XW is in both chains (HON-N1, REFEREE), so the
+      HON's proof uses neither REC-0, SN-PREFIX_D nor EP-0, and REC-0's proof does not use HON (REFEREE §2, by script; REFEREE-2 §2), but the premise sets overlap: XW is in both chains (HON-N1, REFEREE), so the
       packet's "HON-FB adds XW" is inexact.
   (f) Lemma RESTRICT_u: for every state k with D_k ⊆ {u}, RESULTS R64 (a) (i)-(iv) hold with G′_E replaced by G^u. Corollary REPRO_u: N5^τ on
       G^u from (σ_x, τ) reproduces a u-run J = (x, …, y) of N5 on G state by state, with the same fallback types, through y′ := x + len(J), in
@@ -37,17 +37,16 @@
   (h) IMPLICATIONS from (Στ) (signed as implications, as the packet states them): Corollary EP-1u: every u-run J has len(J) ≤ T*(G^u) + 1.
       Theorem REC-1: (b) every {u}-interval has at most T*(G^u) + 2 states; (c) the states with |D_k| = 1, and the epochs with |D_E| = 1, number
       at most (1 + f_in + 4n² − 3n + X_dir + X_big)·(T*_Q + 2); (d) if every state of the phase has |D_k| ≤ 1, then X_big = 0 and the phase has
-      at most (f_in + 4n² − 3n) + (1 + f_in + 4n² − 3n + X_dir)·(T*_Q + 2) states. Both referees note that (Στ) is the premise of RESULTS R64
-      (e) word for word, so (h) holds at RESULTS R65's audit strength (N-HON-4).
+      at most (f_in + 4n² − 3n) + (1 + f_in + 4n² − 3n + X_dir)·(T*_Q + 2) states. Both referees note that (h) holds at RESULTS R65's audit strength, not signed in that form (REFEREE's verdict line; REFEREE-2 §0 and N-HON-4: (Στ) as used here is RESULTS R64 (e)'s premise word for word).
   Q-R17 (as in RESULTS R66 (c)), answered YES by both in HON's own use, with REFEREE's three-use list, accepted by REFEREE-2: Lemma HON's
   step 1 uses the full step at a W-honest state h, the absence of a cycle-node change coming from the sandwich W_h ⊴ W_{h+1} ⊴ W_{h′} (WM
-  along a fallback-free gap); SAT0 uses Case A at one state, without (F2); HON-FB (i) uses the B1/B2 outcome list (re-derived by REFEREE).
+  along a fallback-free gap); SAT0 uses Case A at one state, without (F2); HON-FB (i) uses the B1/B2 outcome list (re-derived by both: REFEREE §2, REFEREE-2 §2).
 - Not signed (packet §5, §6): CONJECTURE HON-FF (the level rises across every gap between W-honest states, fallbacks included; it would give
   W-honest states ≤ 4n² − 3n per phase, free of f), OPEN; its three DEAD routes, recorded in the packet with instances: IMM (immfail_n14, sha1
   db3fc2ca), IMM′ (immp_cex_n11, sha1 1dd7f585, and exitr_cex_n16), FB-WLEV (b5_o11, sha1 db4fe55a); also DEAD there as context: the
   permanent Ξ-level in H_C for |D_C| = 1 (thclimb_n12_s11) and "no in-phase fallback at a W-honest state" (b4_n5_other_0, replaced by
   HON-FB); the data. L-COMP successor 5's later add-on (l-comp 15bcfa06; DATA, not a referee check) finds 0 HON-FF failures with exact LEV
-  and pins three more inside-fallback gaps (up to 12 fallbacks in one gap, ffin12_n32).
+  and pins three more inside-fallback gaps (up to 12 fallbacks in one gap, ffin12_n32). L-NEW successor 26's later packet P-N5-HONFF (docs/new/P-N5-HONFF-box47.md, sha1 98101d1f, pinned at 4a0a8aba) claims a proof of HON-FF; it is unrefereed and not part of this entry.
 - Honest limits: (i) Reductions: f_in, X_dir and X_big are not bounded here, and (h) needs T*(G^u), which is polynomial but very large (R51 (a)).
   (ii) HON-FF would remove f_in; an HON-FF proof must replace both uses of the fallback-free hypothesis, the rise and the sandwich (HON-N3,
   REFEREE). (iii) Thin data where the proofs are subtle (N-HON-5): in-gap fallbacks occur in 9 phases (16 fallbacks) of REFEREE-2's library
@@ -64,7 +63,6 @@
 - Signatures: REFEREE docs/referee/R-N5-HON.md (referee e7f9bc31, independence-line correction 59121877, §C a00a15c0, successor 14): all
   §1-§4 items SIGNED, (h) as implications, no gap; §2 claims TRUE; notes HON-N1..N4. REFEREE-2 docs/referee-2/R2-N5-HON.md (referee-2
   1566b439, §C 7f8bafdc, successor 16): all SIGN, (h) as implications, no gap; notes N-HON-1..5. §C (both): verdicts identical item by item;
-  N-HON-1 settled as a note (REFEREE-2 withdrew "false", which applied only to the infinite play); HON-N1, HON-N2, HON-N3 accepted by
-  REFEREE-2; N-HON-1, N-HON-3 accepted by REFEREE; N-HON-2, N-HON-4, N-HON-5 match REFEREE's report in substance; joint gap map empty;
-  nothing open. Both signatures are under the standing SPEC premise 1E-N3 (P1, P2) (N-HON-3).
+  N-HON-1 settled as a note (both read the parenthesis as "z's path to its cycle node avoids x"; it is false only of z's infinite play, REFEREE C.2; REFEREE-2 withdrew "false"); HON-N1, HON-N2, HON-N3 accepted by
+  REFEREE-2; N-HON-1, N-HON-3 accepted by REFEREE; N-HON-2, N-HON-4, N-HON-5 match REFEREE's report in substance; joint gap map empty; nothing open on the signed items (HON-FF stays OPEN). Both signatures are under the standing SPEC premise 1E-N3 (P1, P2) (N-HON-3).
 - TARGET.md diff: not a claim of TARGET.md section 1 or §2 (per-phase reductions; no running-time bound). GAPS G-N5-TIME: open.

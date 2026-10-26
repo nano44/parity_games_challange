@@ -1,0 +1,18 @@
+PASS [('docs/new/N5-ssi-global.md', 54)] FALLBACK, if σ_new = σ and τ_new = τ: if Iσ ≠ ∅, for every Even v with
+PASS [('docs/new/N5-ssi-global.md', 85)] In a fallback iteration with Iσ ≠ ∅ only σ changes (τ_new = τ)
+PASS [('docs/new/N5-ssi-global.md', 85)] Odd falls back only if Iσ = ∅.
+PASS [('docs/RESULTS.md', 628)] Lemma A: for any non-empty unambiguous set I of improvements of σ (VJ0
+PASS [('docs/RESULTS.md', 637)] N5: every iteration applies Switch_I with ∅ ≠ I ⊆ Iσ to Even's σ (on G
+PASS [('docs/new/P-N5-HON-box46.md', 53)] LEV is non-decreasing along P: Ξ_{k+1} ⊵ Ξ_k (R15 (a))
+PASS [('docs/new/N5-phase-bound-box10.md', 18)] (V1) if x is not its own cycle node then Ω_ρ(x) = x ⊕ Ω_ρ(ρ(x)) and th
+PASS [('docs/new/N5-phase-bound-box10.md', 18)] (V2) PREFIX MONOTONICITY: if a ⪯ b are values whose paths both avoid x
+PASS [('docs/new/N5-phase-bound-box10.md', 29)] Case A: (x, z) ∉ I_k, i.e. Ω_k(z) ⪯ Ω_k(ρ_k(x)). So value(r') ⪯ Ω_k(ρ_
+PASS [('docs/new/N5-phase-bound-box10.md', 30)] A1: x is not its own cycle node.
+PASS [('docs/new/N5-phase-bound-box10.md', 33)] A2: x = λ_k(x) (its own cycle node), so Ω_k(x) = (x, ∅, 0).
+PASS [('docs/new/P-N5-HON-box46.md', 82)] Lemma P's Case A (A1, A2), which uses only this inequality, the induct
+PASS [('docs/referee/R-N5-HON.md', 66)] the packet's "uses only this inequality, the induction hypothesis, (V1
+PASS [('docs/new/P-N5-HON-box46.md', 83)] If x is not its own W-cycle node, W_k(x) = x ⊕ W_k(z) ⪰ x ⊕ value(r′) 
+PASS [('docs/referee-2/R2-N5-HON.md', 139)] keep N-HON-1 as a wording note ("z's path to its cycle node avoids x")
+PASS [('docs/new/P-N5-HON-box46.md', 85)] W_k(z) ⪰ value(r′) then forces x better than c, so W_k(x) ≻ value(r).
+PASS [('docs/referee/R-N5-HON.md', 167)] so a proof of HON-FF has to replace both, not only the first.
+QUOTES 17 FAILED 0

@@ -85,6 +85,17 @@ o=$(RS=4 python3 -I rund/flipck.py --list rund/instances/leanT_N6_list.txt 1)
 grep -q "FLIP PASS" <<<"$o"; grep -q "both_intact=4 " <<<"$o"
 MUT=2 RS=4 python3 -I rund/flipck.py --list rund/instances/leanT_N6_list.txt 1 | grep -q "VIOLATION ('N3LEV', 'experiments/red/tcpert/instances/leanT_N6.pg rs', 5, 21, 22, 5, 6, 42, 'p2', 42)"
 echo "rund (N3-LEVEL on leanT_N6, tight; MUT=2 bites): PASS"
+# note §26: flip classes on frz40 (onsets: one N1 by fallback, one N1 by ordinary switch); Lemma CHOSEN / Corollary RELAY-CHAIN on L-RED's
+# nep90_n40 (rho_q up to 72 at n = 40; root 0's pieces between chosen-terminal events <= 12); the MUT=1 control (next state's choice) bites.
+o=$(python3 -I rund/flipcls.py --one ../red/n5inj/instances/frz40.pg ../red/n5inj/instances/frz40.start)
+for k in "onsets=2 " "onsets_N1fb=1 " "onsets_N1sw=1 " "flips_N3=3 " "FLIPCLS PASS"; do grep -q "$k" <<<"$o"; done
+o=$(python3 -I rund/chosen.py --one ../red/rec0/instances/nep90_n40.pg rund/instances/nep90_n40.start)
+for k in "RELAY=139 " "ROUTE=153 " "max_chain=2" "CHOSEN PASS"; do grep -q "$k" <<<"$o"; done
+if grep -q "TOG=" <<<"$o"; then echo "unexpected TOG on nep90"; exit 1; fi
+MUT=1 python3 -I rund/chosen.py --one ../red/rec0/instances/nep90_n40.pg rund/instances/nep90_n40.start | grep -q "CHOSEN FAIL"
+o=$(UP=2 python3 -I rund/quiet.py --one ../red/rec0/instances/nep90_n40.pg rund/instances/nep90_n40.start)
+for k in "max_rho_q=72 " "quiet_max=12 " "rho_q_total=292 " "QUIET PASS"; do grep -q "$k" <<<"$o"; done
+echo "rund (flip classes on frz40; CHOSEN / RELAY-CHAIN and chosen-terminal pieces on nep90_n40; MUT=1 bites): PASS"
 # P-N5-RUND fixes file: every «quote» verbatim at its tagged commit and lines; the shifted-lines control (--mut) must fail.
 if git cat-file -e 62a1a01d && git cat-file -e e8d31c47 && git cat-file -e 762b7243 && git cat-file -e f1d2cf09 && git cat-file -e 6f9451e3; then
   python3 -I rund/quotecheck.py ../../docs/si/P-N5-RUND-fixes-box17.md | grep -q "QUOTES PASS"
@@ -93,6 +104,13 @@ if git cat-file -e 62a1a01d && git cat-file -e e8d31c47 && git cat-file -e 762b7
   python3 -I rund/quotecheck.py ../../docs/si/P-N5-FLIP-box18.md | grep -q "QUOTES PASS"
   python3 -I rund/quotecheck.py ../../docs/si/P-N5-FLIP-box18.md --mut | grep -q "QUOTES FAIL"
   echo "rund (packet P-N5-FLIP-box18: all quotes verbatim; shifted control fails): PASS"
+  if git cat-file -e 72db1b18 && git cat-file -e 75b8b52a; then
+    python3 -I rund/quotecheck.py ../../docs/si/P-N5-FLIP-fixes-box18.md | grep -q "quotes=23 bad=0"
+    python3 -I rund/quotecheck.py ../../docs/si/P-N5-FLIP-fixes-box18.md --mut | grep -q "QUOTES FAIL"
+    echo "rund (P-N5-FLIP fixes file: 23 quotes verbatim; shifted control fails): PASS"
+  else
+    echo "rund (P-N5-FLIP fixes file quotes): NOT RUN (referee commits 72db1b18 / 75b8b52a not in this clone)"
+  fi
 else
   echo "rund (RUND fixes file quotes): NOT RUN (source commits not in this clone; fetch claude/referee, claude/referee-2)"
 fi
