@@ -1,0 +1,7 @@
+EP0_chk 2089
+MAX_N0 5
+MAX_N0_per_f1x100 500
+PHASES 5338
+REC0_chk 5338
+RUNS 1101
+skip_big 45
