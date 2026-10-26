@@ -1,0 +1,8 @@
+fb_at_honest: 3
+gaps_at_h: 3
+gaps_free: 18
+honest_states: 184
+max_honest_per_phase: 3
+phases: 1841
+runs: 135
+RESULT OK violations=0

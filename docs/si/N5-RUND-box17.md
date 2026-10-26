@@ -846,3 +846,124 @@ On every ρ-free interval I, Ξ on Reach(Q) changes only at transitions whose in
 - PROVED (lane, unrefereed): Lemma STATIC (immediate). Corollary via SPLIT-RED (signed, not yet landed).
 - CONJECTURE FRZ-RHO: DATA (0 violations; max index 35 < n − 1; tightest ratio 0.87).
 - OPEN: a proof of FRZ-RHO (the BF step for "improve in G_σ̄, choose by G_τ" on R_D), and ρ_q for m_c ≥ 2 (§22).
+
+## 24. Relay cycles (Lead's GO (a), 11:13Z): Lemma ROOT-C (PROVED, the per-class form), Lemma FLIP (PROVED, a necessary condition at every relay flip), traces
+Written 2026-10-26T11:1xZ (date -u), successor 14. flip.py (phase trace), flipck.py (new); logs flip_frz40_p44.txt, flip_frz40.txt,
+flip_pp_K12.txt, flip_lib41_rs4.txt. Setting as §22.2 (one phase, class U_c, Q_c, κ; standing premise P1).
+### 24.1 Lemma ROOT-C (PROVED, every game; the per-class form of ROOT)
+For q′ ∈ Q_c and y ∈ succ(q′) ∩ U_c, the CLASS EXIT PATH of y at s is y's honest play at s up to its first vertex in Q_c ∪ {c} (§22.4). If at
+an in-phase transition t → t+1 every class exit path of every q′ ∈ Q_c is the same at t and t + 1, then κ_t(q) = κ_{t+1}(q) for every
+q ∈ Q_c. So every transition with a ρ event in the class changes a class exit path of the SAME class.
+Proof. Fix s ∈ {t, t+1} and q ∈ Q_c. Let Π_s(q) be the set of walks q = e_0, y_0, (exit path of y_0), e_1, y_1, …, e_j = c with e_i ∈ Q_c
+distinct, y_i ∈ succ(e_i) ∩ U_c, and e_{i+1} the exit of y_i at s. The class exit paths contain no Odd choice vertex and are followed by
+σ_s and forced Odd edges. So each walk in Π_s(q) reaches c without repeating a vertex. (A repeated vertex v would have the same successor
+both times, so the walk would cycle without reaching c.) Hence each walk is the play from q of a positional Odd strategy in G_{σ_s}
+(choose y_i at e_i). That play has cycle node c, and its κ is the walk's weight up to c.
+(≤) σ̄_s is pointwise optimal (P1), so Ξ_s(q) ⊴ the valuation of each such play. Both have cycle node c (λ_s(q) = c in the phase), so
+κ_s(q) ⪯ κ(walk) for every walk in Π_s(q).
+(≥) The optimal play from q at s stays in U_c. Every vertex on it has the same optimal play suffix, hence λ = c. It is the walk of
+σ̄_s's choices, so it lies in Π_s(q).
+So κ_s(q) = min over Π_s(q). Π_t(q) = Π_{t+1}(q), because exit paths are equal, U_c is fixed in the phase and the weights are fixed. □
+- The data form tested in §22 (ALLRELAY_T = 0: a ROUTE or CYC event at a terminal WITH an event) is stronger. It stays DATA. ROOT-C
+  allows the changed exit path to belong to a terminal whose own κ does not change.
+- ROOT-C makes the relay graph's cost local. A relay event at q1 in class c sits on a transition where some Even vertex of a class-c exit
+  path switches.
+### 24.2 Lemma FLIP (PROVED, every game, P1): a necessary condition at a relay flip
+For q ∈ Q_c ∖ {c} let par_s(q) be the exit of σ̄_s(q)'s class exit path p_s(q) when that exit is a terminal of Q_c other than q (R61's
+par_t, with its path). A FLIP is (q1, q2, t1 < t2) in one phase with par_{t1}(q1) = q2 and par_{t2}(q2) = q1. Write p1 := p_{t1}(q1),
+y1 := σ̄_{t1}(q1), p2 := p_{t2}(q2), and C := the closed walk q1 · p1 · q2 · p2 (back to q1).
+- (a) FLIP-COST: κ_{t2}(q2) ⪰ κ_{t1}(q2) + wt(C), with wt(C) := Σ_{v ∈ C} κwt_c(v) (with multiplicity) in the first coordinate and
+  s_c·|C| in the second.
+  Proof. Additivity (§22.4 (iii)): κ_{t1}(q1) = κwt(q1) + κwt(p1) + κ_{t1}(q2), and κ_{t2}(q2) = κwt(q2) + κwt(p2) + κ_{t2}(q1). Also
+  κ_{t2}(q1) ⪰ κ_{t1}(q1): Ξ is non-decreasing at every transition of the phase (RESULTS R15 (a), (d), via (VJ) under P1; fallbacks
+  included), and within the class Ξ's order is κ's. Substitute. □
+- (b) FLIP-1: if p1 is INTACT at t2 (every vertex of p1 has the same successor at t2 as at t1), then the cycle Z reached from q1 in
+  G_{σ_{t2}} under σ̄′ := σ̄_{t2} with σ̄′(q1) := y1 is not Odd-attractive. Its node w satisfies rew(w) > rew(c), i.e. Even prefers w to c.
+  Proof. From q1 the σ̄′-play follows y1, p1 (intact) to q2, then σ̄_{t2}(q2)'s exit path p2 back to q1. So it never reaches c, and its
+  cycle Z avoids c. By P1, Ξ_{t2}(q1) ⊴ the valuation of that play. Ξ_{t2}(q1) has cycle node c and the play has node w ≠ c. VJ00's order
+  compares cycle nodes first, and rew is injective, so rew(c) < rew(w). □
+- (c) Corollary: if p1 is intact at t2 and p1 ∩ p2 = ∅, then Z = C, and C is Odd-unattractive. Either its top vertex is even and ranked
+  above c, so the weight of C is > 0, or its top is below c and c is odd, so the weight is 0 and the length term s_c·|C| = +|C| > 0. In
+  both cases wt(C) ≻ 0, and by (a) κ(q2) rises STRICTLY between t1 and t2, by at least wt(C).
+- NECESSARY CONDITION at a flip (from (a)-(c)): one of
+  - (N1) BROKEN: an Even vertex of q1's old exit path p1 switched between t1 and t2 (a class-c exit-path change, as in ROOT-C);
+  - (N2) p1 ∩ p2 ≠ ∅;
+  - (N3) INTACT: κ(q2) rises strictly between t1 and t2, by at least the weight of an Odd-unattractive cycle C through q1 and q2.
+- DATA (flipck.py: FLIPCOST_V = 0, FLIP1_V = 0 everywhere; the control MUT=1, the reversed inequality, fails on frz40 and pp_K12_n161):
+
+| set | flip states (onsets) | BROKEN (onsets) | INTACT (onsets) | INTACT with κ(q2) rise |
+| --- | --- | --- | --- | --- |
+| frz40 (+ .start) | 20 (2) | 17 (2) | 3 (0) | 3 |
+| lib41 (KMIN = 1), S3 + 4 random starts | 152 (23) | 129 (11) | 23 (12) | 23 |
+| L-RED R83 pp_K12_n161 (sha1 8808ba5d, + .start eb95d52b) | 15 (11) | 0 | 15 (11) | 15 |
+| L-RED R83 pp_K48_n449 (sha1 a161569d, + .start) | 51 (47) | 0 | 51 (47) | 51 |
+
+### 24.3 The frz40 flip, vertex by vertex (phase at state 44, 35 transitions; class c = 30, Q_c = {0, 11, 26, 27}, all in D)
+- t = 0: Even 9 switches 38 → 0, on 26's exit path from 29. 26: ROUTE (29's exit 30 → 0). 11 RELAYS 26 (σ̄(11) = 4, and 4's and 24's
+  exit is 26: par(11) = 26). 27 and 0 relay 11.
+- t = 8, 10, 13: Even 4 and 24 switch on 11's own exit paths; 11 ROUTE and 27 RELAY each time (27's σ̄ = 11 is a terminal).
+- t = 14 (fallback): 24's exit becomes 0. t = 17 (fallback): Even 4 and 5 switch, and 4's exit becomes 0. From here par(11) ≠ 26: p1 is
+  BROKEN (N1).
+- t = 28: Even 9 switches 0 → 35, and 29's exit becomes 11. t = 30: Even 15 switches on 11's path from 4; 11 ROUTE (σ̄(11) 4 → 31,
+  path-set level 39). 26 RELAYS 11 (σ̄(26) = 29, exit 11), the flip; 27 relays 11.
+- So the flip was paid by (N1): two FALLBACK transitions (t = 14, 17) re-routed 11's successors away from 26, and an S4a switch of Even 9
+  (t = 28) routed 26's successor into 11. In mkpp (R83) all flips are (N3): the relay edges e1 → q2 and e2 → q1 are fixed, and each flip
+  is paid by a strict κ rise of the receiving terminal (the leapfrogging risers vA, vB).
+### 24.4 What this gives and what it does not (READING)
+- A flip is never free. (N1) costs an exit-path switch in the class, which ROOT-C charges anyway. (N3) costs a strict κ rise at q2 of at
+  least wt(C), where C is an Odd-unattractive cycle. So a super-polynomial number of flips needs super-polynomially many class exit-path
+  switches (N1), or a super-polynomial chain of strict κ rises (N3). Neither is excluded. (N3)'s rise lower bound wt(C) can be as small
+  as 1 in weight (or 1 in length), so it gives no level information by itself. This matches L-RED's R83 reading: super-polynomial ρ needs
+  super-polynomially many unforbid-switches per run, runs per phase, or ties / length-only switches.
+- OPEN: a potential that charges (N3) flips. A candidate is Σ over ordered pairs (q1, q2) of the number of distinct Odd-unattractive
+  cycles through q1, q2 that have been "spent". It is exponential in general (cycles), so it needs a level argument: e.g. "the rise forced
+  in (N3) is at a level ≥ the top of C when both paths are intact at both times". That is not proved. Sketch: if top(C) ∈ p2 ∪ {q2}, it
+  is in P_{t2}(q2), and the intact-p2-at-t1 case keeps it out of P_{t1}(q2). The mixed cases are not done.
+### 24.5 Status, labels
+- PROVED (lane, unrefereed): ROOT-C (per-class ROOT), FLIP (a) FLIP-COST, (b) FLIP-1, (c) Corollary, and the necessary condition
+  N1 ∨ N2 ∨ N3.
+- DATA: FLIPCOST, FLIP1 0 violations (frz40, lib41, both mkpp pins); BROKEN / INTACT split as tabled. frz40's flip is N1 (via two
+  fallbacks); mkpp's are N3.
+- CONJECTURE (not stated as a target): none new. ρ_q for m_c ≥ 2 stays OPEN.
+
+## 25. Lemma N3-LEVEL (Lead's GO (i), 11:27Z; PROVED, every game, P1): an intact flip forces a rise of q2 at a level ≥ top(C)
+Written 2026-10-26T11:3xZ (date -u), successor 14. Setting and names as §24.2. X_s := P(Ξ_s q2), the path set (vertices above c before c on
+q2's honest play at s); "lev" := the top rank of X_{t1} Δ X_{t2} (−1 if equal).
+### Statement
+Let (q1, q2, t1 < t2) be a flip with p1 ∩ p2 = ∅. Let h be the highest-ranked vertex of C = q1·p1·q2·p2, and assume rank(h) > rank(c)
+and h even. Both hold when p1 is intact at t2, by FLIP (c). If h ∈ p2, assume also that p2 is intact at t1. Then lev ≥ rank(h): q2's
+path set changes between t1 and t2 at a rank ≥ rank(h).
+### Proof
+Two facts used throughout.
+- (no cycle) A vertex's honest play at s reaches c. So if q's play at s meets a vertex from which the plays at s lead back to q
+  before c, that is a contradiction.
+- (decomposition) X_{t2} = {q2} ∪ p2 ∪ P(Ξ_{t2} q1), and P(Ξ_{t1} q1) = {q1} ∪ p1 ∪ X_{t1} (disjoint unions, above c; §22.4 (iii)). Every
+  vertex of C has rank ≤ rank(h). So above rank(h): X_{t2} agrees with P(Ξ_{t2} q1), and X_{t1} with P(Ξ_{t1} q1).
+- Case h = q1. q1 ∈ X_{t2}, since q2's play at t2 runs along p2 to q1. If q1 ∈ X_{t1}, then q2's play at t1 meets q1 before c, and q1's
+  play at t1 runs along p1 back to q2: a contradiction (no cycle). So lev ≥ rank(q1).
+- Case h ∈ p2. h ∈ X_{t2}. If h ∈ X_{t1}, then q2's play at t1 meets h, and from h follows p2 (intact at t1) to q1, then p1 to q2: a
+  contradiction. So lev ≥ rank(h).
+- Case h ∈ p1. h ∉ X_{t1} (else q2's play at t1 meets h and p1 leads back to q2). If h ∈ P(Ξ_{t2} q1), then h ∈ X_{t2}, so lev ≥ rank(h).
+  Otherwise P(Ξ_{t1} q1) ∋ h and P(Ξ_{t2} q1) ∌ h, so these two sets differ; let L′ be their top differing rank, L′ ≥ rank(h). Ξ(q1) is
+  non-decreasing on the phase (R15 (a), (d) via (VJ), P1) with the same cycle node, so the set with the larger signed weight is
+  P(Ξ_{t2} q1). At L′ = rank(h) the difference would be h ∈ P(Ξ_{t1} q1) with h even, which makes P(Ξ_{t1} q1) the heavier set: a
+  contradiction. So L′ > rank(h). By the decomposition, X_{t1} and X_{t2} differ at L′, and lev ≥ L′ > rank(h).
+- Case h = q2. q2 ∈ P(Ξ_{t1} q1) (q1's play at t1 reaches q2 along p1). q2 ∉ P(Ξ_{t2} q1), else q1's play at t2 meets q2 and p2 leads
+  back to q1. So the two sets differ at rank(h) or above. As in the previous case, L′ = rank(h) contradicts monotonicity (h even), so
+  L′ > rank(h) and lev > rank(h). □
+### Remarks
+- The bound is sharp. leanT_N6 (L-RED, experiments/red/tcpert/instances/leanT_N6.pg, sha1 f037844a…) from flipck's random starts has
+  three flips with h ∈ p2 and lev = rank(h) exactly (42, 44, 42). The strict control (MUT=2: lev > rank h) fails there, and the
+  lemma's 0 violations are not slack. In the h = q1 and h ∈ p1 cases (q2 case too) the proof gives lev > rank(h) whenever the
+  P(Ξ q1) route is taken.
+- DATA (flipck.py N3LEV_V = 0): flips with both paths intact at both times and disjoint, pp_K12_n161 15, pp_K48_n449 51, lib41
+  (S3 + 4 random starts) 12 (top in p2: 5, q1: 6, q2: 1); MUT=2 bites on lib41 (3 equalities, leanT_N6) and is pinned there.
+- What it gives (READING): each N3 flip (q1 → q2 then q2 → q1, paths intact) is a change of q2's path set at a level ≥ top(C), where C is
+  an Odd-unattractive cycle with an EVEN top above c. With RULER-type counting per level (between two changes of a path set at the same
+  level there is one at a higher level, which held in all data, §20), the number of N3 flips of a pair is bounded by the ruler count above
+  rank(top(C)): 2^{#ranks ≥ top(C)}. That is polynomial only if top(C) is within O(log n) of the class's top rank. Not a polynomial bound in
+  general; the mkpp flips have cycles with top e_i (even, relevant) and grow linearly. A super-polynomial N3 family therefore needs relay
+  cycles whose tops sit LOW in the class, with high-level changes re-used in a ruler pattern above them. That is the counterexample shape
+  for L-RED.
+### Status
+PROVED (lane, unrefereed): N3-LEVEL. DATA: as above, tight. In packet P-N5-FLIP-box18 §6.

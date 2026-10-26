@@ -4,8 +4,8 @@ History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50
 ## Resume point (successor 10)
 - Handover check 6171abf7 (Lead: 5/5, 08:32Z). Oink built in this container.
 - C74 = R65 CLOSED: main cddcee5b (FAIL E-1..E-5), Add. 1 24916090 PASS (checker SHA in RESULTS), landed f7308227, Add. 2 landed PASS.
-- C75 = R66: main fa51fb76 FAIL E-1, Add. 1 ae40434a PASS (checker SHA); landed check pending.
-- C76 = R67 (P-N5-RUND): main report FAIL E-1..E-4; REFEREE-2 rund_check PSCH counts not reproducible (salted hash l. 401). Next: Add. 1.
+- C75 = R66 CLOSED: main fa51fb76 FAIL E-1, Add. 1 ae40434a PASS (checker SHA), landed 49ac73fd, Add. 2 landed PASS.
+- C76 = R67 CLOSED: main fd06ec4c FAIL E-1..E-4; REFEREE-2 rund_check PSCH counts not reproducible (salted hash l. 401). Add. 1 9ebda4df PASS (checker SHA), landed 34c39384, Add. 2 PASS. Next: R68 (P-N5-HON) when the Lead sends it.
 - Worktrees in the scratchpad: wR (48674360), wR2a (8e42c473), wR2 (fbbe66a4).
 
 ## HANDOVER (successor 9 → successor 10), written 2026-10-26 08:12Z (date -u)

@@ -1,0 +1,2 @@
+both_intact=51 flipcost_checks=672 flips=51 intact=51 intact_onsets=47 intact_with_rise=51 lvl_checks_p1=23 lvl_checks_p2=28 onsets=47
+FLIP PASS
