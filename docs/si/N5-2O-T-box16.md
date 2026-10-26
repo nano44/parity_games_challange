@@ -18,9 +18,17 @@ Written 2026-10-26 04:2xZ onward (date -u; the stamp is the commit). LANE NOTE: 
 - On 𝒞^2O, (h_D) can fail in two ways:
   - (¬h-cyc): a gate lies on its own honest or W cycle. This is the 1O case ¬H1 / ¬H2, per gate.
   - (¬h-route), NEW: one gate's play visits the other gate.
-- Lemma ROUTE-2 (P-N5-2T §3) holds in each frame. In the W frame its proof is the same with the W-play: of two gates, at every state at
-  least one is W-direct (on its own W-cycle, or its W-play never meets the other gate). So (¬h-route) is ONE-SIDED at every state: one
-  gate routes through the other, and never both. (PROVED: the argument of P-N5-2T §3 uses only that plays are positional lassos.)
+- Lemma ROUTE-2W (PROVED, every game; the W-frame form of P-N5-2T's ROUTE-2).
+  - Statement: let u ≠ u′ be Odd vertices at a state k. Call u W-DIRECT if u lies on its own W-cycle (the cycle of its (σ_k, τ_k)-play),
+    or its W-play never visits u′; likewise for u′. Then u or u′ is W-direct.
+  - Proof:
+    - Suppose u is not W-direct: u is not on its own W-cycle, and its W-play visits u′.
+    - The W-play is positional (σ_k at Even vertices, τ_k at Odd ones), so from its first visit of u′ on, u's W-play is u′'s W-play.
+    - If u′'s W-play visited u, then u's W-play would visit u a second time, so u would lie on its own W-cycle. That is excluded.
+    - So u′'s W-play never visits u, and u′ is W-direct. □
+  - The same proof with the honest play (σ_k, σ̄_k) is the honest-frame form. With u, u′ the two gates of D_k it says that (¬h-route) is
+    ONE-SIDED in each frame at every state: one gate may route through the other, never both.
+  - DATA (§3): 0 violations at all 406 two-gate states checked (lib2o and lib41 frontier, tcsw.py).
 - STRETCH_D: a maximal run of states of a phase with D_k, R_D, and Ξ(u), W(u) (u ∈ D_k) constant. This is the 1O stretch (R, θ, w
   constant), with every gate's two values in place of θ, w.
 
@@ -86,3 +94,20 @@ fallback-free run of each phase it counts terminal changes: transitions at which
    other's plus a fixed path when both are constant on a stretch_D, so L_D is the top of that path's κ-difference. That makes the
    two-gate case an ordering of two values, not of |D_k|. Not attempted.
 3. (¬h-route) FRZ-U: the routed gate behaves like a vertex of the direct gate's class with a constant route. Sketch only.
+
+## 5. Update (box 16, after the Lead's 04:19Z GO): the gate-order route to TC-SWITCH is DEAD
+- I tested the candidate of §4.2 and of N5-FRONTIER §4 ("a terminal change moves up a fixed order ≼_D of the gates, e.g. by W") on
+  𝒞^2O, with own scripts experiments/si/fb2o/tcdir.py and climbtc.py.
+- Library: with D_k fixed, 47 / 47 terminal changes went to the gate with the larger W (lib41's frontier games; logs/tcdir_lib41.txt).
+- Random start pairs: FALSE. In 150,000 random 𝒞^2O games, 21 of 94 two-gate changes with D fixed go to the gate with the SMALLER W,
+  some also against Ξ (logs/tcdir_rand2o_150k.txt). This persists when the gate is taken as the first W-direct gate, the gate structure is
+  fixed, and v ∉ D_k: 5 of 21 (logs/tcdir_rand2o_150k_ult.txt).
+- Instance (all three forms): experiments/si/fb2o/instances/tcwult2_against_n8.pg with its .start.json (n 8). Full record:
+  docs/si/DEAD.md, "DEAD box 16".
+- Mechanism: S4a takes Even's pointwise W-optimum of its arena, so a route to a lower-valued gate wins when its path part is better.
+- Consequence: TC-SWITCH cannot be closed by a gate order. A terminal change is a W-rise (or a tie) at v, so counting terminal changes
+  per run is as hard as counting W-changes on R_D per run, which is RUN_D itself.
+- READING: the R50 chain's per-class structure (FRZ-U, LEN, KIND-MONO per class) does not reduce the two-gate case to the one-gate case
+  by cutting at terminal changes. A different potential is needed: one that orders (path, gate) pairs jointly, as W does, but with a
+  polynomial range. OPEN.
+

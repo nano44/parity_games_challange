@@ -1,0 +1,1 @@
+dchange=11 changes=58 same_stretch=39 toW=47 toX=38 toWX=47 againstW=0 tieW=0
