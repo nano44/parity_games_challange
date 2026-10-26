@@ -1,4 +1,4 @@
-# Handover check: L-SI (successor 17, written 2026-10-26T15:26Z by date -u; LANE-RESTART step 3; Opus 5.5, D18/L40)
+# Handover check: L-SI (successor 17, written 2026-10-26T15:25Z by date -u; LANE-RESTART step 3; Opus 5.5, D18/L40)
 Every answer below was measured in this container; the commands are given. Predecessor: successor 16, session_014hNbzERgw85WwaeDGW9E2Y.
 Its handover is notes/L-SI.md "## HANDOVER (successor 16, box 20)" (l-si c1efeb1d).
 
