@@ -22,7 +22,16 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   Lead 20:15Z ask (loop_4102 seed climbs) superseded by 21:00Z; not done.
 - Trap (new): ReadNotifications only when told; two Lead messages (20:15Z, 21:00Z) waited unread until my 21:39Z report. Check
   notifications at each report.
-- RESUME POINT (for successor 19 or the next box; 2026-10-25 ~22:50Z, date -u): nothing running. Open: CASC-B regime construction; post-freeze kind change; FB-CAP; beta2.
+- BOX 44 (Lead 22:56Z, 23:07Z, 23:22Z): R73 §8 (cascb_witness seen, case (a)); R74 (post-freeze kind change not found; READING §2:
+  needs a late BAND trigger of a kind-A length cascade; kmpst18.py start-pair climbs). DUAL / MIRROR NOT STARTED (context).
+- RESUME POINT (for successor 19; 2026-10-26 ~00:30Z, date -u): nothing running.
+  - Next (Lead's box 44 order): (2) P-N5-DUAL (docs/new/P-N5-DUAL-box43.md, sha1 a51f7c30, trunk df073cb5): check Lemma DUAL on our
+    engine (N5 on G from (σ0, τ0) = mirror of N5^OF on G^d from (τ0, σ0)); hunt a 𝒞^1O phase from a non-S3 start or under Odd-first ties
+    exceeding landed per-phase bounds. Tools: experiments/red/fbx/fbx18.py and experiments/red/kw/kw18.py both take --start.
+  - Then: R74 §2.5 construction (post-freeze kind change); FB-CAP |U| ≥ 3; beta2 cascade (never started).
+  - Tools: fbx18 (FBPOLY/FX exact), kw18 (KW notes, own W), k18 (K), climbers kwclimb18 / kmpst18 / kclimb18; random drivers
+    rfbx18 / kwst18. Engine matches L-NEW lib41 counts exactly (R73 §0).
+  - Read notifications at every wait: the Lead's messages queue silently.
 - (superseded) RESUME POINT (2026-10-25 ~21:35Z, date -u): nothing running. Open: (a) FB-CAP |U| ≥ 3 (n 6 random ×
   all starts clean, 20.7 M runs; R72 §6 READING covers only the simplest |U| = 3, o = c_θ chain); (b) beta2 cascade, not started; (c) loop
   kind from S3; (d) K two-chain construction (R72 §8). Pins: experiments/red/fbx/instances/ (exsw_loop_n15 + start, kt6_n58).
