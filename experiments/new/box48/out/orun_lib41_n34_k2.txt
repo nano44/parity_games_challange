@@ -1,0 +1,9 @@
+ER 2300 HA 102 HB 319 HC 102 HC_DIR 102 HD 77 HE 0 KP 142 LR 0 OR 2300 RFB 1 RR 2300 RR_DIR 2282 RR_REL 18 max_ER 51 max_OR 51 max_RR 51 max_RR_DIR 51 max_RR_REL 2 max_VR 52 phases 746 pieces 1324 pruns 1466 pruns_DIR 784 pruns_REL 682
+  top (RR ER LR RFB VR d_x len w n name): 51 51 0 0 52 14 56 31 32 experiments/si/orlens/instances/lev_l_x.pg
+  top (RR ER LR RFB VR d_x len w n name): 49 49 0 0 50 15 54 31 32 experiments/red/xing/instances/x31_rx32.pg
+  top (RR ER LR RFB VR d_x len w n name): 45 45 0 0 46 15 47 31 32 experiments/si/orlens/instances/lev_l_sc.pg
+  top (RR ER LR RFB VR d_x len w n name): 43 43 0 0 44 18 45 31 32 experiments/new/box25/instances/sc32.pg
+  top (RR ER LR RFB VR d_x len w n name): 43 43 0 0 44 11 50 31 32 experiments/si/orlens/instances/run_x_inr2.pg
+  top (RR ER LR RFB VR d_x len w n name): 40 40 0 0 41 14 42 31 32 experiments/red/xing/instances/x31_cu32.pg
+  top (RR ER LR RFB VR d_x len w n name): 38 38 0 0 39 15 40 31 32 experiments/red/xing/instances/x31_cu32i.pg
+  top (RR ER LR RFB VR d_x len w n name): 35 35 0 0 36 10 39 31 32 experiments/si/orlens/instances/s_tp32_final.pg
