@@ -214,3 +214,22 @@ Tools newconf.py, rootrel.py (out/rootrel_newconf.txt); each instance from its o
   a fixed R inside S, false on pft34, or (ii) a charge of such repeats to a ρ event at a relay. OPEN. The relay changes are L-RED 21's "relay
   D-leaves" (17 on long121, R89) and L-SI 16's "relays acting as second direct roots" (P-N5-ROOT): the two counts this route would need.
 
+## 9. The frozen-side u-run restriction (CONJECTURE with DATA; READING; Lead's word 14:58Z; written 15:0xZ by date -u)
+Setting. A FROZEN-SIDE u-STRETCH J = (x, …, y) of a phase P: a maximal run on which σ̄ is constant on Q ∖ {u} (only u's best reply changes).
+D⁻ := {v ∈ Q ∖ {u} : σ̄_J(v) ≠ τ(v)}. G^{u|J}: G with every Odd v ∈ D⁻ cut to {τ(v), σ̄_J(v)}, every other Odd v ≠ u cut to τ(v), and u keeping all
+its edges. If D⁻ = ∅, J is a u-run and G^{u|J} = G^u (RESULTS R68 (f)); the new case is D⁻ ≠ ∅ (§7: the single-vertex fallback-free returns).
+- CONJECTURE RESTRICT_{u|J}. For k ∈ J, RESULTS R64 (a) (i)-(iv) hold with G′_E replaced by G^{u|J}; hence N5^τ on G^{u|J} from (σ_x, τ) reproduces J
+  state by state with the same fallback types (as R64 (b) with EPR-1).
+- READING (why it should hold; not a proof). (i) holds as in R64: σ̄_k and τ are strategies of G^{u|J} (σ̄_k(v) = σ̄_J(v) on D⁻, = τ(v) elsewhere off
+  u, and u keeps every edge), Odd's options only shrink, and S1's counterstrategy is optimal (1E-N3); so Ξ′_k = Ξ_k and W′_k = W_k. Items (ii)-(iv)
+  in R64's proof use the same two facts (τ and σ̄_k survive the cut; Odd edges only shrink), as in R68 (f) for G^u and in box 47's RESTRICT_U; I
+  have not re-derived them for this cut.
+- DATA (fsrestrict.py; XI_V = Ξ on G^{u|J} differs at a state of J, REP_V = N5^τ on G^{u|J} fails to reproduce σ, τ and the fallback type):
+  liball n ≤ 34, S3 + 2, seed 7 (out/fsrestrict_liball_n34_k2.txt): 437 stretches, 362 covered by R68 u-runs, 75 frozen-side (244 epochs, max
+  |D⁻| 9, max 35 epochs in one stretch), XI_V 0, REP_V 0. nep90 / nep76 / long121 from their starts (out/fsrestrict_long3.txt): 25 / 21 / 12
+  frozen-side stretches, 0 / 0 / 0. Control MUT=1 (v ∈ D⁻ cut to τ(v) only): liball S3 XI_V 27, REP_V 16 of 31; nep90 25 / 11, nep76 21 / 8, long121
+  12 / 12 (bites). Blind spot: pft34's D⁻ = {32} has two choices with the same top cycle, so the control cannot bite there.
+- What it would give (READING). A frozen-side stretch is one N5^τ phase piece on G^{u|J}, a game with one full Odd choice vertex u and |D⁻| Odd
+  vertices of out-degree 2 whose best reply is fixed (≠ τ) on the piece. It does NOT reduce to 𝒞^1O: S4a's arena and W need τ(v) at v ∈ D⁻, so v
+  cannot be cut to σ̄_J(v) alone. A bound on such pieces would need a 𝒞^1O-type count (R51) that tolerates fixed two-way gates. OPEN.
+

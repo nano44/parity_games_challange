@@ -1,0 +1,6 @@
+../../red/rec0/instances/nep90_n40.pg --start ../../si/rund/instances/nep90_n40.start: covered_by_R68_urun 4 frozen_side 25 frozen_side_epochs 65 max_Dminus 4 max_fs_epochs 5 stretch_epochs 77 stretches 29
+MUT: REP_V 11 XI_V 25 covered_by_R68_urun 4 frozen_side 25 frozen_side_epochs 65 max_Dminus 4 max_fs_epochs 5 stretch_epochs 77 stretches 29
+../../n5-epoch/instances/nep76_n40.pg --start ../../n5-epoch/instances/nep76_n40.start: covered_by_R68_urun 1 frozen_side 21 frozen_side_epochs 54 max_Dminus 3 max_fs_epochs 4 stretch_epochs 57 stretches 22
+MUT: REP_V 8 XI_V 21 covered_by_R68_urun 1 frozen_side 21 frozen_side_epochs 54 max_Dminus 3 max_fs_epochs 4 stretch_epochs 57 stretches 22
+instances/long121_n40.pg --start instances/long121_n40.start: covered_by_R68_urun 1 frozen_side 12 frozen_side_epochs 29 max_Dminus 2 max_fs_epochs 4 stretch_epochs 31 stretches 13
+MUT: REP_V 12 XI_V 12 covered_by_R68_urun 1 frozen_side 12 frozen_side_epochs 29 max_Dminus 2 max_fs_epochs 4 stretch_epochs 31 stretches 13
