@@ -1,0 +1,69 @@
+MODE files ../R2-N5-STAU/lib41_noref.lst 1 MUT next BUDGET 300000
+CH_checks: 1899
+CH_source_event: 1755
+ENGXI_checks: 8882
+EV_CYC: 12
+EV_RELAY: 1899
+EV_ROUTE: 2152
+EV_x: 0
+KADD_checks: 415591
+KORD_checks: 121038
+RC_chains: 1859
+RC_end_C: 203
+RC_end_ROUTE: 1263
+RC_end_TOG: 393
+RCa_checks: 2060
+RCb_checks: 245
+TVG_checks: 8
+TV_H_reached: 2168
+TV_H_reached_Qc_ge2: 537
+TV_H_reached_before_end: 106
+TV_UNK_classes: 362
+TV_classes: 3523
+TV_transitions: 369
+TV_transitions_Qc_ge1: 53
+TV_transitions_Qc_ge1_choice: 22
+TV_transitions_Qc_ge2: 7
+VIOLATIONS: 740
+V_CH: 104
+V_CH_c: 40
+V_RC_end: 203
+V_RC_tog: 393
+phases: 2332
+runs: 410
+states: 8882
+RC_longest: (46, 'experiments/red/tcpert/instances/tcL_N12.pg#0@36 |Q_c| 144')
+RCb_max_rho_class_phase: (160, 'experiments/red/tcpert/instances/leanT_N32.pg#0@27 |Q_c| 64 ROUTE 5 CYC 0 TOG 0')
+TV_H_max_Qc: (144, 'experiments/red/tcpert/instances/tcL_N12.pg#0@37 n 492')
+TV_frozen_span: (27, 'experiments/si/orlens/instances/inr2_n32.pg#0@5 |Q_c| 0')
+VIOLATION RC_tog: experiments/red/carry/instances/ctx12_n40.pg#0@6
+VIOLATION RC_tog: experiments/red/carry/instances/ctx12_n40.pg#0@6
+VIOLATION CH: experiments/red/carry/instances/ctx12_n40.pg#0@6: q 15 e 1 no event, no TOG
+VIOLATION RC_tog: experiments/red/carry/instances/ctx12_n40.pg#0@6
+VIOLATION RC_end: experiments/red/carry/instances/spp19_stable_n30.pg#0@5: C chain [14, 15]
+VIOLATION CH_c: experiments/red/carry/instances/spp19_stable_n30.pg#0@5: q 15 chosen exit is c
+VIOLATION CH_c: experiments/red/carry/instances/spp19_stable_n30.pg#0@5: q 28 chosen exit is c
+VIOLATION CH: experiments/red/n5/instances/dl_4_4.pg#0@0: q 3 e 5 no event, no TOG
+VIOLATION RC_tog: experiments/red/n5/instances/dl_4_4.pg#0@0
+VIOLATION RC_tog: experiments/red/n5/instances/dl_4_4.pg#0@3
+VIOLATION RC_tog: experiments/red/n5/instances/dl_4_4.pg#0@3
+VIOLATION RC_tog: experiments/red/n5/instances/dl_4_4.pg#0@3
+VIOLATION RC_tog: experiments/red/n5/instances/dl_4_4.pg#0@3
+VIOLATION RC_tog: experiments/red/n5/instances/dl_4_4.pg#0@3
+VIOLATION CH: experiments/red/n5/instances/dl_4_4.pg#0@3: q 7 e 41 no event, no TOG
+VIOLATION RC_tog: experiments/red/n5/instances/dl_4_4.pg#0@3
+VIOLATION RC_tog: experiments/red/n5/instances/dl_4_4.pg#0@3
+VIOLATION RC_tog: experiments/red/n5/instances/dl_4_4.pg#0@3
+VIOLATION RC_tog: experiments/red/n5/instances/dl_4_4.pg#0@3
+VIOLATION RC_tog: experiments/red/n5/instances/dl_4_4.pg#0@3
+VIOLATION RC_tog: experiments/red/n5/instances/dl_4_4.pg#0@3
+VIOLATION RC_tog: experiments/red/n5/instances/dl_4_4.pg#0@3
+VIOLATION RC_tog: experiments/red/n5/instances/dl_4_4.pg#0@3
+VIOLATION RC_tog: experiments/red/n5/instances/dl_4_4.pg#0@3
+VIOLATION RC_tog: experiments/red/n5/instances/dl_4_4.pg#0@3
+VIOLATION CH: experiments/red/n5/instances/dl_4_4.pg#0@6: q 1 e 3 no event, no TOG
+VIOLATION RC_tog: experiments/red/n5/instances/dl_4_4.pg#0@6
+VIOLATION CH: experiments/red/n5/instances/dl_4_4.pg#0@6: q 15 e 3 no event, no TOG
+VIOLATION RC_tog: experiments/red/n5/instances/dl_4_4.pg#0@6
+VIOLATION CH: experiments/red/n5/instances/dl_4_4.pg#0@6: q 16 e 3 no event, no TOG
+RESULT FAIL violations=740

@@ -1,0 +1,463 @@
+MODE start ../../../experiments/red/so/instances/s4c8_n13.pg MUT - BUDGET 3000000
+COR_phases: 3
+CORc_phases: 3
+C_checked: 1
+C_states: 11
+Cf_total: 1
+ENGXI_checks: 13
+FBC_fallbacks: 8
+FBC_rise_needed: 8
+FBC_sat: 0
+FBC_unsat: 8
+Nep_total_fbphases: 1
+QAC_checks: 2413
+SATC_eq_checks: 1
+SATC_window_checks: 1
+XIB_checks: 11
+f_total: 8
+phases: 3
+phases_with_fallback: 1
+rho_total_fbphases: 1
+runs: 1
+states: 13
+visited_total_fbphases: 1
+max_Cf_phase: (1, 's4c8_n13.pg@1 n 13 f 8')
+max_Nep_over_Cf: (1.0, 's4c8_n13.pg@1 n 13 N_ep 1 |Cf| 1 visited 1')
+max_f_phase: (8, 's4c8_n13.pg@1 n 13 |Cf| 1 N_ep 1')
+max_rho_over_nCf: (0.07692307692307693, 's4c8_n13.pg@1 n 13 rho 1 |Cf| 1 f 8')
+max_sat_per_C: (0, 's4c8_n13.pg@1 n 13')
+max_sat_window: (0, 's4c8_n13.pg@11 n 13')
+max_unsat_per_C: (8, 's4c8_n13.pg@1 n 13')
+RESULT OK violations=0
+MODE start ../../../experiments/red/xing/instances/j5_n16.pg MUT - BUDGET 3000000
+COR_phases: 7
+CORc_phases: 7
+C_checked: 1
+C_states: 15
+Cf_total: 1
+ENGXI_checks: 31
+FBC_fallbacks: 3
+FBC_rise_needed: 3
+FBC_sat: 0
+FBC_unsat: 3
+Nep_total_fbphases: 8
+QAC_checks: 4194
+SATC_eq_checks: 1
+SATC_window_checks: 1
+XIB_checks: 15
+f_total: 3
+phases: 7
+phases_with_fallback: 1
+rho_total_fbphases: 7
+runs: 1
+states: 31
+visited_total_fbphases: 7
+max_Cf_phase: (1, 'j5_n16.pg@6 n 16 f 3')
+max_Nep_over_Cf: (8.0, 'j5_n16.pg@6 n 16 N_ep 8 |Cf| 1 visited 7')
+max_f_phase: (3, 'j5_n16.pg@6 n 16 |Cf| 1 N_ep 8')
+max_rho_over_nCf: (0.4375, 'j5_n16.pg@6 n 16 rho 7 |Cf| 1 f 3')
+max_sat_per_C: (0, 'j5_n16.pg@6 n 16')
+max_sat_window: (0, 'j5_n16.pg@24 n 16')
+max_unsat_per_C: (3, 'j5_n16.pg@6 n 16')
+RESULT OK violations=0
+MODE start ../../../experiments/red/xing/instances/j10_n24.pg MUT - BUDGET 3000000
+COR_phases: 2
+CORc_phases: 2
+C_checked: 1
+C_states: 6
+Cf_total: 1
+ENGXI_checks: 26
+FBC_fallbacks: 1
+FBC_rise_needed: 1
+FBC_sat: 0
+FBC_unsat: 1
+Nep_total_fbphases: 18
+QAC_checks: 8558
+SATC_eq_checks: 1
+SATC_window_checks: 1
+XIB_checks: 6
+f_total: 1
+phases: 2
+phases_with_fallback: 1
+rho_total_fbphases: 17
+runs: 1
+states: 26
+visited_total_fbphases: 12
+max_Cf_phase: (1, 'j10_n24.pg@1 n 24 f 1')
+max_Nep_over_Cf: (18.0, 'j10_n24.pg@1 n 24 N_ep 18 |Cf| 1 visited 12')
+max_f_phase: (1, 'j10_n24.pg@1 n 24 |Cf| 1 N_ep 18')
+max_rho_over_nCf: (0.7083333333333334, 'j10_n24.pg@1 n 24 rho 17 |Cf| 1 f 1')
+max_sat_per_C: (0, 'j10_n24.pg@1 n 24')
+max_sat_window: (0, 'j10_n24.pg@19 n 24')
+max_unsat_per_C: (1, 'j10_n24.pg@1 n 24')
+RESULT OK violations=0
+MODE start ../../../experiments/red/xing/instances/j7_n32.pg MUT - BUDGET 3000000
+COR_phases: 3
+CORc_phases: 3
+Cf_total: 1
+DEEP_C: 1
+DEEP_FBC_checks: 1
+DEEP_ODDC_checks: 15
+DEEP_fallbacks: 1
+DEEP_unsat: 1
+ENGXI_checks: 51
+Nep_total_fbphases: 14
+UNK_C: 1
+UNK_C_fallbacks: 1
+f_total: 1
+phases: 3
+phases_with_fallback: 1
+rho_total_fbphases: 15
+runs: 1
+states: 51
+visited_total_fbphases: 9
+DEEP_max_D: (9, 'j7_n32.pg@1 n 32')
+max_Cf_phase: (1, 'j7_n32.pg@1 n 32 f 1')
+max_Nep_over_Cf: (14.0, 'j7_n32.pg@1 n 32 N_ep 14 |Cf| 1 visited 9')
+max_f_phase: (1, 'j7_n32.pg@1 n 32 |Cf| 1 N_ep 14')
+max_rho_over_nCf: (0.46875, 'j7_n32.pg@1 n 32 rho 15 |Cf| 1 f 1')
+max_unsat_per_C: (1, 'j7_n32.pg@1 n 32 (deep)')
+RESULT OK violations=0
+MODE start ../../../experiments/red/xing/instances/j8_n32.pg MUT - BUDGET 3000000
+COR_phases: 3
+CORc_phases: 3
+Cf_total: 1
+DEEP_C: 1
+DEEP_FBC_checks: 2
+DEEP_ODDC_checks: 13
+DEEP_fallbacks: 2
+DEEP_unsat: 2
+ENGXI_checks: 55
+Nep_total_fbphases: 17
+UNK_C: 1
+UNK_C_fallbacks: 2
+f_total: 2
+phases: 3
+phases_with_fallback: 1
+rho_total_fbphases: 19
+runs: 1
+states: 55
+visited_total_fbphases: 11
+DEEP_max_D: (11, 'j8_n32.pg@1 n 32')
+max_Cf_phase: (1, 'j8_n32.pg@1 n 32 f 2')
+max_Nep_over_Cf: (17.0, 'j8_n32.pg@1 n 32 N_ep 17 |Cf| 1 visited 11')
+max_f_phase: (2, 'j8_n32.pg@1 n 32 |Cf| 1 N_ep 17')
+max_rho_over_nCf: (0.59375, 'j8_n32.pg@1 n 32 rho 19 |Cf| 1 f 2')
+max_unsat_per_C: (2, 'j8_n32.pg@1 n 32 (deep)')
+RESULT OK violations=0
+MODE start ../../../experiments/red/so/instances/farrise25_n32.pg MUT - BUDGET 3000000
+COR_phases: 7
+CORc_phases: 7
+C_checked: 1
+C_states: 27
+Cf_total: 1
+ENGXI_checks: 36
+FBC_fallbacks: 25
+FBC_rise_needed: 25
+FBC_sat: 0
+FBC_unsat: 25
+Nep_total_fbphases: 2
+QAC_checks: 1306905
+SATC_eq_checks: 1
+SATC_window_checks: 1
+XIB_checks: 27
+f_total: 25
+phases: 7
+phases_with_fallback: 1
+rho_total_fbphases: 2
+runs: 1
+states: 36
+visited_total_fbphases: 2
+max_Cf_phase: (1, 'farrise25_n32.pg@7 n 32 f 25')
+max_Nep_over_Cf: (2.0, 'farrise25_n32.pg@7 n 32 N_ep 2 |Cf| 1 visited 2')
+max_f_phase: (25, 'farrise25_n32.pg@7 n 32 |Cf| 1 N_ep 2')
+max_rho_over_nCf: (0.0625, 'farrise25_n32.pg@7 n 32 rho 2 |Cf| 1 f 25')
+max_sat_per_C: (0, 'farrise25_n32.pg@7 n 32')
+max_sat_window: (0, 'farrise25_n32.pg@33 n 32')
+max_unsat_per_C: (25, 'farrise25_n32.pg@7 n 32')
+RESULT OK violations=0
+MODE start ../../../experiments/si/xing/instances/zcl_rx_n32.pg MUT - BUDGET 3000000
+COR_phases: 5
+CORc_phases: 5
+Cf_total: 4
+DEEP_C: 1
+DEEP_FBC_checks: 5
+DEEP_ODDC_checks: 12
+DEEP_UNK_C: 3
+DEEP_UNK_fallbacks: 8
+DEEP_fallbacks: 5
+DEEP_unsat: 5
+ENGXI_checks: 67
+Nep_total_fbphases: 24
+UNK_C: 4
+UNK_C_fallbacks: 13
+f_total: 13
+phases: 5
+phases_with_fallback: 1
+rho_total_fbphases: 24
+runs: 1
+states: 67
+visited_total_fbphases: 10
+DEEP_max_D: (12, 'zcl_rx_n32.pg@3 n 32')
+max_Cf_phase: (4, 'zcl_rx_n32.pg@3 n 32 f 13')
+max_Nep_over_Cf: (6.0, 'zcl_rx_n32.pg@3 n 32 N_ep 24 |Cf| 4 visited 10')
+max_f_phase: (13, 'zcl_rx_n32.pg@3 n 32 |Cf| 4 N_ep 24')
+max_rho_over_nCf: (0.1875, 'zcl_rx_n32.pg@3 n 32 rho 24 |Cf| 4 f 13')
+max_unsat_per_C: (5, 'zcl_rx_n32.pg@3 n 32 (deep)')
+RESULT OK violations=0
+MODE start ../../../experiments/new/box25/instances/wd16_s2.pg MUT - BUDGET 3000000
+COR_phases: 6
+CORc_phases: 6
+C_checked: 2
+C_states: 15
+Cf_total: 2
+ENGXI_checks: 20
+FBC_fallbacks: 13
+FBC_rise_needed: 13
+FBC_sat: 0
+FBC_unsat: 13
+Nep_total_fbphases: 2
+QAC_checks: 10930
+SATC_eq_checks: 1
+SATC_window_checks: 1
+XIB_checks: 15
+f_total: 13
+phases: 6
+phases_with_fallback: 2
+rho_total_fbphases: 0
+runs: 1
+states: 20
+visited_total_fbphases: 2
+max_Cf_phase: (1, 'wd16_s2.pg@3 n 16 f 1')
+max_Nep_over_Cf: (1.0, 'wd16_s2.pg@3 n 16 N_ep 1 |Cf| 1 visited 1')
+max_f_phase: (12, 'wd16_s2.pg@6 n 16 |Cf| 1 N_ep 1')
+max_rho_over_nCf: (0.0, 'wd16_s2.pg@3 n 16 rho 0 |Cf| 1 f 1')
+max_sat_per_C: (0, 'wd16_s2.pg@3 n 16')
+max_sat_window: (0, 'wd16_s2.pg@18 n 16')
+max_unsat_per_C: (12, 'wd16_s2.pg@6 n 16')
+RESULT OK violations=0
+MODE start ../../../experiments/new/box25/laps/lap_n6_s1_110421.pg MUT - BUDGET 3000000
+COR_phases: 1
+CORc_phases: 1
+ENGXI_checks: 3
+phases: 1
+runs: 1
+states: 3
+RESULT OK violations=0
+MODE start ../../../experiments/si/orlens/instances/lev_l_x.pg MUT - BUDGET 3000000
+COR_phases: 2
+CORc_phases: 2
+Cf_total: 3
+DEEP_C: 2
+DEEP_FBC_checks: 2
+DEEP_ODDC_checks: 7
+DEEP_UNK_C: 1
+DEEP_UNK_fallbacks: 1
+DEEP_fallbacks: 2
+DEEP_unsat: 2
+ENGXI_checks: 57
+Nep_total_fbphases: 50
+UNK_C: 3
+UNK_C_fallbacks: 3
+f_total: 3
+phases: 2
+phases_with_fallback: 1
+rho_total_fbphases: 51
+runs: 1
+states: 57
+visited_total_fbphases: 14
+DEEP_max_D: (3, 'lev_l_x.pg@1 n 32')
+max_Cf_phase: (3, 'lev_l_x.pg@1 n 32 f 3')
+max_Nep_over_Cf: (16.666666666666668, 'lev_l_x.pg@1 n 32 N_ep 50 |Cf| 3 visited 14')
+max_f_phase: (3, 'lev_l_x.pg@1 n 32 |Cf| 3 N_ep 50')
+max_rho_over_nCf: (0.53125, 'lev_l_x.pg@1 n 32 rho 51 |Cf| 3 f 3')
+max_unsat_per_C: (1, 'lev_l_x.pg@1 n 32 (deep)')
+RESULT OK violations=0
+MODE start ../../../experiments/red/so/instances/rise_thin51_n40.pg MUT - BUDGET 3000000
+COR_phases: 9
+CORc_phases: 9
+Cf_total: 3
+DEEP_C: 2
+DEEP_FBC_checks: 4
+DEEP_ODDC_checks: 11
+DEEP_UNK_C: 1
+DEEP_UNK_fallbacks: 2
+DEEP_fallbacks: 4
+DEEP_unsat: 4
+ENGXI_checks: 79
+Nep_total_fbphases: 53
+UNK_C: 3
+UNK_C_fallbacks: 6
+f_total: 6
+phases: 9
+phases_with_fallback: 1
+rho_total_fbphases: 60
+runs: 1
+states: 79
+visited_total_fbphases: 15
+DEEP_max_D: (9, 'rise_thin51_n40.pg@9 n 40')
+max_Cf_phase: (3, 'rise_thin51_n40.pg@9 n 40 f 6')
+max_Nep_over_Cf: (17.666666666666668, 'rise_thin51_n40.pg@9 n 40 N_ep 53 |Cf| 3 visited 15')
+max_f_phase: (6, 'rise_thin51_n40.pg@9 n 40 |Cf| 3 N_ep 53')
+max_rho_over_nCf: (0.5, 'rise_thin51_n40.pg@9 n 40 rho 60 |Cf| 3 f 6')
+max_unsat_per_C: (2, 'rise_thin51_n40.pg@9 n 40 (deep)')
+RESULT OK violations=0
+MODE start ../../../experiments/n5-exhaustive/instances/b5_o11.pg MUT - BUDGET 3000000
+COR_phases: 2
+CORc_phases: 2
+C_checked: 1
+C_states: 12
+Cf_total: 1
+ENGXI_checks: 13
+FBC_fallbacks: 3
+FBC_rise_needed: 3
+FBC_sat: 0
+FBC_unsat: 3
+Nep_total_fbphases: 1
+QAC_checks: 98
+SATC_eq_checks: 1
+SATC_window_checks: 1
+XIB_checks: 12
+f_total: 3
+phases: 2
+phases_with_fallback: 1
+rho_total_fbphases: 1
+runs: 1
+states: 13
+visited_total_fbphases: 1
+max_Cf_phase: (1, 'b5_o11.pg@0 n 10 f 3')
+max_Nep_over_Cf: (1.0, 'b5_o11.pg@0 n 10 N_ep 1 |Cf| 1 visited 1')
+max_f_phase: (3, 'b5_o11.pg@0 n 10 |Cf| 1 N_ep 1')
+max_rho_over_nCf: (0.1, 'b5_o11.pg@0 n 10 rho 1 |Cf| 1 f 3')
+max_sat_per_C: (0, 'b5_o11.pg@0 n 10')
+max_sat_window: (0, 'b5_o11.pg@11 n 10')
+max_unsat_per_C: (3, 'b5_o11.pg@0 n 10')
+RESULT OK violations=0
+MODE start ../../../experiments/n5-epoch/instances/ffin12_n32.pg ../../../experiments/n5-epoch/instances/ffin12_n32.start MUT - BUDGET 3000000
+COR_phases: 3
+CORc_phases: 2
+Cf_total: 3
+DEEP_C: 1
+DEEP_FBC_checks: 1
+DEEP_ODDC_checks: 1
+DEEP_UNK_C: 2
+DEEP_UNK_fallbacks: 12
+DEEP_fallbacks: 1
+DEEP_unsat: 1
+ENGXI_checks: 34
+Nep_total_fbphases: 8
+UNK_C: 3
+UNK_C_fallbacks: 13
+f_total: 13
+phases: 3
+phases_with_fallback: 2
+rho_total_fbphases: 36
+runs: 1
+states: 34
+visited_total_fbphases: 6
+DEEP_max_D: (9, 'ffin12_n32.pg@1 n 32')
+max_Cf_phase: (2, 'ffin12_n32.pg@1 n 32 f 12')
+max_Nep_over_Cf: (3.5, 'ffin12_n32.pg@1 n 32 N_ep 7 |Cf| 2 visited 5')
+max_f_phase: (12, 'ffin12_n32.pg@1 n 32 |Cf| 2 N_ep 7')
+max_rho_over_nCf: (0.546875, 'ffin12_n32.pg@1 n 32 rho 35 |Cf| 2 f 12')
+max_unsat_per_C: (1, 'ffin12_n32.pg@1 n 32 (deep)')
+RESULT OK violations=0
+MODE start ../../../experiments/n5-epoch/instances/ffin5_n32.pg ../../../experiments/n5-epoch/instances/ffin5_n32.start MUT - BUDGET 3000000
+COR_phases: 6
+CORc_phases: 4
+C_checked: 2
+C_states: 17
+Cf_total: 2
+ENGXI_checks: 24
+FBC_fallbacks: 6
+FBC_rise_needed: 5
+FBC_sat: 1
+FBC_unsat: 5
+Nep_total_fbphases: 4
+QAC_checks: 442705
+SATC_eq_checks: 3
+SATC_window_checks: 2
+XIB_checks: 17
+f_total: 6
+phases: 6
+phases_with_fallback: 2
+rho_total_fbphases: 3
+runs: 1
+states: 24
+visited_total_fbphases: 3
+max_Cf_phase: (1, 'ffin5_n32.pg@2 n 32 f 5')
+max_Nep_over_Cf: (3.0, 'ffin5_n32.pg@2 n 32 N_ep 3 |Cf| 1 visited 2')
+max_f_phase: (5, 'ffin5_n32.pg@2 n 32 |Cf| 1 N_ep 3')
+max_rho_over_nCf: (0.09375, 'ffin5_n32.pg@2 n 32 rho 3 |Cf| 1 f 5')
+max_sat_per_C: (1, 'ffin5_n32.pg@14 n 32')
+max_sat_window: (1, 'ffin5_n32.pg@21 n 32')
+max_unsat_per_C: (5, 'ffin5_n32.pg@2 n 32')
+RESULT OK violations=0
+MODE start ../../../experiments/n5-epoch/instances/ffin4_n24.pg ../../../experiments/n5-epoch/instances/ffin4_n24.start MUT - BUDGET 3000000
+COR_phases: 2
+C_checked: 2
+C_states: 7
+Cf_total: 2
+ENGXI_checks: 21
+FBC_fallbacks: 4
+FBC_rise_needed: 4
+FBC_sat: 0
+FBC_target_not_C: 2
+FBC_unsat: 4
+Nep_total_fbphases: 5
+QAC_checks: 91292
+SATC_eq_checks: 1
+SATC_window_checks: 1
+XIB_checks: 7
+f_total: 4
+phases: 2
+phases_with_fallback: 1
+rho_total_fbphases: 14
+runs: 1
+states: 21
+visited_total_fbphases: 3
+max_Cf_phase: (2, 'ffin4_n24.pg@1 n 24 f 4')
+max_Nep_over_Cf: (2.5, 'ffin4_n24.pg@1 n 24 N_ep 5 |Cf| 2 visited 3')
+max_f_phase: (4, 'ffin4_n24.pg@1 n 24 |Cf| 2 N_ep 5')
+max_rho_over_nCf: (0.2916666666666667, 'ffin4_n24.pg@1 n 24 rho 14 |Cf| 2 f 4')
+max_sat_per_C: (0, 'ffin4_n24.pg@1 n 24')
+max_sat_window: (0, 'ffin4_n24.pg@12 n 24')
+max_unsat_per_C: (3, 'ffin4_n24.pg@1 n 24')
+RESULT OK violations=0
+MODE start ../../../experiments/new/box46/instances/immp_cex_n11.pg ../../../experiments/new/box46/instances/immp_cex_n11.start MUT - BUDGET 3000000
+COR_phases: 1
+CORc_phases: 1
+ENGXI_checks: 3
+phases: 1
+runs: 1
+states: 3
+RESULT OK violations=0
+MODE start ../../../experiments/red/fbr/instances/fr39_q4_n48.pg ../../../experiments/new/box47/instances/fr39_q4_n48.start MUT - BUDGET 30000000
+COR_phases: 2
+CORc_phases: 1
+C_checked: 7
+C_states: 48
+Cf_total: 7
+ENGXI_checks: 50
+FBC_fallbacks: 39
+FBC_rise_needed: 39
+FBC_sat: 0
+FBC_target_not_C: 7
+FBC_unsat: 39
+Nep_total_fbphases: 11
+QAC_checks: 2623536
+XIB_checks: 48
+f_total: 39
+phases: 2
+phases_with_fallback: 1
+rho_total_fbphases: 35
+runs: 1
+states: 50
+visited_total_fbphases: 8
+max_Cf_phase: (7, 'fr39_q4_n48.pg@0 n 48 f 39')
+max_Nep_over_Cf: (1.5714285714285714, 'fr39_q4_n48.pg@0 n 48 N_ep 11 |Cf| 7 visited 8')
+max_f_phase: (39, 'fr39_q4_n48.pg@0 n 48 |Cf| 7 N_ep 11')
+max_rho_over_nCf: (0.10416666666666667, 'fr39_q4_n48.pg@0 n 48 rho 35 |Cf| 7 f 39')
+max_sat_per_C: (0, 'fr39_q4_n48.pg@0 n 48')
+max_unsat_per_C: (24, 'fr39_q4_n48.pg@0 n 48')
+RESULT OK violations=0

@@ -1,0 +1,29 @@
+MODE start ../../../experiments/si/xing/instances/zcl_rx_n32.pg MUT - BUDGET 30000000
+COR_phases: 5
+CORc_phases: 5
+Cf_total: 4
+DEEP_C: 3
+DEEP_FBC_checks: 9
+DEEP_ODDC_checks: 31
+DEEP_UNK_C: 1
+DEEP_UNK_fallbacks: 4
+DEEP_fallbacks: 9
+DEEP_unsat: 9
+ENGXI_checks: 67
+Nep_total_fbphases: 24
+UNK_C: 4
+UNK_C_fallbacks: 13
+f_total: 13
+phases: 5
+phases_with_fallback: 1
+rho_total_fbphases: 24
+runs: 1
+states: 67
+visited_total_fbphases: 10
+DEEP_max_D: (18, 'zcl_rx_n32.pg@3 n 32')
+max_Cf_phase: (4, 'zcl_rx_n32.pg@3 n 32 f 13')
+max_Nep_over_Cf: (6.0, 'zcl_rx_n32.pg@3 n 32 N_ep 24 |Cf| 4 visited 10')
+max_f_phase: (13, 'zcl_rx_n32.pg@3 n 32 |Cf| 4 N_ep 24')
+max_rho_over_nCf: (0.1875, 'zcl_rx_n32.pg@3 n 32 rho 24 |Cf| 4 f 13')
+max_unsat_per_C: (5, 'zcl_rx_n32.pg@3 n 32 (deep)')
+RESULT OK violations=0
