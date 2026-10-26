@@ -1,0 +1,2 @@
+L=-1 MUT=0 changes=1646 charged=37 forbidden_edges=568 forbidden_pairs=2138 gen_clean=31636 gen_clean_content=27724 max_changes_per_vertex=6 max_charged_edges_per_vertex=1 max_charged_per_vertex=1 max_forb_states_per_edge=14 max_last_forb_rel=13 persistent_edges=472 runs=156 states=812 window=1609
+SCHED PASS

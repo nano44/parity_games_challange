@@ -231,3 +231,14 @@ AGAINST_W ('experiments/si/fb2o/instances/tcwult2_against_n8.pg', 0, 1, 0, 4, -1
 - Instance: experiments/si/rund/instances/incdown_n23.pg (sha1 18a5d000…) with incdown_n23.start (sha1 634dbc59…; built by mkinc.py 2 4).
   v = 22: offset-change levels [20, 19]. Pinned in experiments/si/check.sh (lvl.py prints VIOLATION ('INC', …, 0, 3, 22, [20, 19])).
 - The count form (|OC(v)| ≤ |RL(v)|) is NOT killed: CONJECTURE (docs/si/N5-RUND-box17.md §12).
+
+## DEAD box 17d (L-RED kill, reproduced by L-SI successor 13, 2026-10-26T08:1xZ by date -u): CONJECTURE LEVEL-COUNT, count form
+- Statement killed: inside one stretch_D segment with (h3_D) (fallback-free, one phase), |OC(v)| ≤ |RL(v)| for every v with constant
+  cycle nodes (OC: offset changes; RL: the set of rise levels of s^W and s^Ξ together). docs/si/N5-RUND-box17.md §12.
+- Obstruction: a lag between the two scores. W rises at level a (offset changes), then Ξ rises at the same a (offset changes back): two
+  offset changes, one level. RULER (per score) holds.
+- Instances (L-RED, experiments/red/h3/instances/): lcount_n23.pg (sha1 f86125a08f0e3b0caf3d825cb48e6dcdc0ee3b04) + lcount_n23.start,
+  v = 1, OC 3, RL {18, 21}; lcount2_n23.pg (sha1 dd9847c6b19cb9f44af73bcc23de7ca2aca9a14c) + .start, v = 12, 16, 20, OC 3, RL {20, 21}.
+  `python3 -I experiments/si/rund/lvl.py --one <pg> <start>` prints `VIOLATION ('LC', …, 0, 3, 1, 3, [18, 21])` (pinned in
+  experiments/si/check.sh).
+- Replacement: CONJECTURE LC2 (|OC| ≤ |(score, level) pairs|) and PAIR-OC (note §15), both 0 violations on these instances and all data.
