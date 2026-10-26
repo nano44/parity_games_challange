@@ -1,9 +1,10 @@
-# Draft RESULTS R56 (Lead, 2026-10-26 03:54Z by date -u; both §Cs filled; fixes file FIXES-PENDING) — to CHECKER C65
+# Draft RESULTS R56 (Lead, 2026-10-26 03:54Z by date -u; both §Cs filled; fixes file filled 04:00Z) — to CHECKER C65
 
 ### R56 [refereed-only] N5 on EVERY game: in-phase fallbacks per phase are at most 1 + (n − 1)(2 + ρ), ρ := the Ξ-changes at Odd choice vertices in the phase, and at most 1 + (n − 1) + (n − 1)·N_late counting only Q-runs that hold a late fallback (Theorem FB-RED, both forms, signed as a REDUCTION in ρ), with the set-form κ lemmas of RESULTS R48 and the terminal-value freeze (Lemma TV) (2026-10-26) — partial step-4 lemmas for N5 beyond one Odd choice vertex (not M3, not a step-4 pass, not a TARGET.md claim; ρ is not bounded, CONJECTURE ρ-POLY OPEN; G-N5-TIME stays open for general games), CHECKER PASS (docs/checker/C65.md, checker PENDING)
 - Object (packet P-N5-FBRED, added at l-new 3732ab55, pinned trunk c3f6f2bf, unchanged during review): docs/new/P-N5-FBRED-box44.md, sha1
   11b15455f70d439c93a48d7e82fcdc14ef73854d (L-NEW successor 23, Opus 5.5); a port of RESULTS R48 (P-N5-FBPOLY, "FBP") to every game. The
-  referees' notes are collected by the lane in docs/new/P-N5-FBRED-fixes-box44.md (FIXES-PENDING); repairs only.
+  referees' notes are collected by the lane in docs/new/P-N5-FBRED-fixes-box44.md (l-new 2742f3e9, sha1 05c249433431f7e147272ad689c0a7815b7a5b71, L-NEW successor 23:
+  N-FBRED-1, N-FBRED-2, FBRED-N1, N-FBRED-3, N-FBRED-4 = FBRED-N2, the signed scope); on trunk; repairs only, no signed statement changes.
   Setting (every game; no hypothesis on the class, (h_D), (h3_D), H1, τ or c_w): N5 = SPEC S1-S5 of docs/new/N5-ssi-global.md; phases as
   in RESULTS R38 (a) KEY; g_1 < g_2 < … the in-phase (Even S4c) fallbacks of a phase. Q := the Odd vertices of out-degree ≥ 2; C := the
   honest cycle nodes of the phase; T := C ∪ Q (terminals); for c ∈ C the honest class U_c := λ^{-1}(c). κ_t(z) := (signed weight of
