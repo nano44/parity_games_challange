@@ -284,3 +284,34 @@ for every Odd v, τ(v) ∈ succ_H(v) and σ̄_k(v) ∈ succ_H(v) for every k ∈
 - Labels. PROVED (L-NEW 28, unrefereed): RESTRICT_H, REPRO_H (a port of signed R64 (a), (b); each step is cited above). Consequently §9's
   RESTRICT_{u|J} is PROVED as an instance; §9's DATA stand as consistency checks. DATA: phrestrict.py. READING: "what it gives". OPEN: any bound
   on QP or XDEG per phase; a count of N5^τ phases on games with QP Odd choice vertices (R51 covers QP = 1 under (Στ)).
+
+## 11. QP, the Odd choice vertices of the used-edge game G^P (PROVED (elementary), DATA, READING, OPEN; Lead's routing of 15:38Z; written 15:5xZ by date -u)
+Successor 28. Packet P-N5-RESTRICT-box48 (frozen at l-new 7e56744a, sha1 48c63a8e…) §2 defines G^P and QP(P) := #{Odd v : |succ_{G^P}(v)| ≥ 2}.
+Tools: experiments/new/box48/qp.py (survey), qpclimb.py (climb), dunion.py (disjoint copies); outputs out/qp_*.txt, out/qpclimb/.
+- Remark QP-D (PROVED, elementary). QP(P) = |⋃_{k ∈ P} D_k|: v has ≥ 2 edges in G^P iff σ̄_k(v) ≠ τ(v) for some k ∈ P. So QP = D0 + ENT, D0 := |D_x| at
+  the phase's first state, ENT := the vertices that first enter D later in P. (qp.py asserts the identity at every phase.) An epoch boundary can
+  add several vertices to D at once, so ENT is not bounded by N_ep − 1; only ENT ≤ |Q| − D0.
+- DATA, library (out/qp_liball_n48_k2.txt; liball n ≤ 48, S3 + 2 random, seed 7): large QP occurs only in SHORT phases (max QP 16 in a 1-transition
+  phase, ctx7_n30, all of it D0). Long phases have small QP: len ≥ 10: 481 phases, max QP 8; len ≥ 30: 128 phases, max QP 8; len ≥ 60: 27 phases,
+  max QP 3 (the 60+ phases are almost all on |Q| = 1 games: selection bias, the library was built around 𝒞^1O). Random 𝒞^kO with k ≈ 0.4n
+  (n 10-40, 300 games, S3 + 2): every phase with QP ≥ 4 has 1 transition (scratch run; same shape).
+- DATA, climbs (qpclimb.py, score (min(QP, QT), len) of one phase from S3; climb.mutate keeps the Odd choice set O fixed, so QP ≤ |O|):
+  random seeds: QT 4 (|O| 6, n ≤ 24) best len 8 with QP 6; QT 6 (|O| 8, n ≤ 32) best len 13 with QP 8 (stopped at step ≥ 2,587 to free a CPU);
+  QT 8 (|O| 10) len 0. Seeds nep90 / nep76 / long121 (from S3, where their phases are short): best len 18 / 32 / 47 with QP 5 / 5 / 3 = |Q|.
+  So no climb found a long phase with many disagreeing Odd vertices; the climbs are weak (S3 starts; O fixed), and this is not evidence of a bound.
+- DUNION (DATA; READING for the mechanism). k disjoint copies of nep90 with copied start (dunion.py: copy i shifts vertices by 40i and priorities by
+  an even offset, so parity and the order inside a copy are kept): ONE phase of 91 transitions, N_ep 90, NCONF 48 (unchanged), QP = 5k at n = 40k
+  (k = 2, 3, 4; out/qp_dunion.txt; instances/du/nep90x{2,3,4}.pg sha1 b66f7b15 / 7198f9f7 / 9fadc61a). READING: N5 acts on the copies in lockstep
+  (each copy's values and improving sets depend only on that copy; checked here as data, not proved from SPEC's S1 procedure). So QP GROWS LINEARLY
+  IN n AT FIXED PHASE LENGTH: QP alone is the wrong parameter, and "every phase is an N5^τ phase on a game with QP Odd choice vertices" gives
+  nothing when QP is large for this trivial reason.
+- The refinement the union suggests: QP_c := max over cycle nodes c of |⋃_k D_k ∩ λ^{-1}(c)| (per class). nep90: QP_c 5, one class; nep90 × 4:
+  QP_c 5, four classes. Library: len ≥ 30, max QP_c 8; len ≥ 60, max QP_c 3.
+- OPEN. (1) Whether long phases need classes with many disagreeing Odd vertices: a construction with QP_c growing in n on long phases, or a bound
+  on QP_c. (2) A per-class decomposition of N5's phase (S4a is one global arena; classes share Even edges that cross between them), which is what
+  would make the per-class count usable. (3) The climbs above do not test (1); a climb that adds Odd choice vertices (O not fixed) and starts from
+  long-phase start pairs is the next data step.
+- Labels. PROVED (elementary): Remark QP-D. DATA: library, climbs, DUNION. READING: lockstep, "QP is the wrong parameter". OPEN: (1)-(3).
+- CORRECTION to §10's READING (2) and to frozen P-N5-RESTRICT §4's first READING (for its fixes file; the packet is not edited): nep90, nep76 and
+  long121 have |Q| = 5, 5, 3 themselves (qp.py: QP = |Q| on their long phases), so "their long phases live on G^P with QP = 5 / 5 / 3" is true but
+  removes nothing there; the reduction G → G^P is informative only where QP < |Q|. No signed or to-sign statement is affected.
