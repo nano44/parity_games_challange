@@ -61,7 +61,7 @@ LEV(t + 1) ≥ min(LEV(t) + 1, LEV_odd(t), n − 1) ≥ min(L + 1, n − 1). □
   step is not (it optimises W over the Ξ-gated arena), which is why IMM and IMM′ are false (N5-REC1 §4 (iii), (v)). Odd vertices cannot be
   relaxed by Even's move; at a W-honest state they are already one step ahead (SAT0), and Ξ keeps that.
 - What the general form does NOT give: a rise at every fallback. When LEV_odd(t) ≤ LEV(t) (an Odd vertex of D undercuts its τ-path), a
-  fallback need not raise LEV. DATA §3: this happens (79 of 269 non-honest fallbacks), always with LEV_odd(t) ≤ LEV(t).
+  fallback need not raise LEV. DATA §3: this happens (636 of 1,028 checks of non-honest fallbacks), always with LEV_odd(t) ≤ LEV(t) where the budget allowed it.
 
 ## 2. Theorem HON-FF and corollaries (PROVED, every game)
 Theorem HON-FF. In every phase P of N5 on every game, the W-honest states of P number at most 4n² − 3n.
