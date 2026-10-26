@@ -189,3 +189,30 @@ Labels per L40: DATA / READING. Nothing here proves a bound. Every game class, u
   | rho666_n48.pg | babb5d1acd46a687bd46149211b9bae104776e37 | 74, 9 |
   | sat4_n20.pg | 9e31236ca2c877a3caac428ee171a8b2b5aa40e5 | 10, 4 |
   | sat68_n20.pg | 5385e138401aa157104cfd9d96792940ec4efe1f | 28, 4 |
+
+## 9. The two-wave construction (Lead 05:44Z GO): built, and it collapses to one wave by an additivity obstruction (READING + DATA)
+Goal: f ≥ n in one phase (N_late > 0). By EPOCH (c) this needs ≥ 2 epochs carrying long waves, i.e. a σ̄(q) change between two waves
+over the SAME vertices. Re-anchoring the same end of a chain re-propagates instantly through the existing pointers, so the second wave
+must run in the reverse direction from a new anchor at the far end.
+- Design (experiments/red/fbr/twowave19.py):
+  - one honest class with cycle node c;
+  - chain z_1..z_L (Even, odd priorities, so negative weights), every z_i with edges to {E, z_{i−1}, z_{i+1}};
+  - exit E carries the top odd priority N;
+  - left anchor A (even) and right anchor q (Odd choice): x1 = H (even, above B) → z_L reads the chain end; x2 = B (even, above A) → c;
+  - start: every z_i → E, σ̄(q) = x1.
+  Intended run: wave 1 left → right; z_L's rise flips σ̄(q) to x2; then wave 2 right → left. That would give f or T ≈ 2L at n ≈ L + 6.
+- Obstruction (READING; additivity of simple-path weights, ACCEL (a)). With routes written as weight sums:
+  - (i) z_L → q not improving before wave 1 needs wt(q) + wt(x1-route) + wt(z_L) < 0, because Ξ(q) = that sum + Ξ(z_L's current route);
+  - (ii) the trigger after wave 1 needs x1 > x2;
+  - (iii) wave 2 at z_L needs wt(z_L) + wt(q) + x2 > V(z_L).
+  (ii) and (iii) give wt(x1-route) + wt(q) + wt(z_L) > 0, against (i).
+  So a terminal whose trigger reads the chain end and whose new value feeds that end cannot wait for the wave to finish. The same
+  argument applies at either end. A wave restart needs an INDEPENDENT clock, i.e. another long wave on other vertices, and then
+  f ≲ (sum of the waves' lengths) < n. This is not a proof that f < n: several terminals with min/max interleavings are not covered.
+- DATA (fbr19, Oink): L = 4, 8, 16, variants with H even ("base") and H odd ("flip").
+  - Every run has ITER = L, 0 fallbacks, ≤ 3 levels per vertex, 0 FAIL.
+  - Trace (L = 8, base): at step 0 S4a switches z_1 → A AND z_8 → q, and σ̄(q) flips to B at once. That is (i) failing as predicted.
+    The two waves meet in the middle at step 3, and wave 2 then overrides wave 1's half (steps 4-7).
+  - All steps are S4a steps. Here τ does not hide σ̄, so the fallback form of the wave would need, in addition, S4a blind at each step.
+  - Pinned: experiments/red/fbr/instances/twowave_L16.pg (sha1 below) with twowave_L16.start.json.
+  - twowave_L16.pg sha1 98ced6ed40a975e3dc3eb3cfccb36bb3348aab7c, n 22: ITER 16, f 0, levels 3; Oink zlk OK, strategies verified.

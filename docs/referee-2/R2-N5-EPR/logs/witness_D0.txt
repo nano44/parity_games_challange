@@ -1,0 +1,17 @@
+MODE start instances/lamend_D0.pg instances/lamend_D0.start MUT -
+EP0_checks: 2
+LAMEND_checks: 1
+LAMEND_differs: 1
+LAMEND_differs_D0: 1
+LAM_checks: 4
+REP_steps: 1
+RIII_checks: 1
+RII_checks: 1
+RI_checks: 4
+epochs: 4
+phases: 3
+runs: 1
+LAMEND_example: (0, 'lamend_D0.pg#start@2 |D| 0 len 1 n 5')
+max_len_by_D0: (1, 'lamend_D0.pg#start')
+max_len_by_D1: (0, 'lamend_D0.pg#start')
+RESULT OK violations=0

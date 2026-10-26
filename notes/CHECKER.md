@@ -5,7 +5,19 @@ History before successor 8 (successors 5-7: C45-C57, their resume points and han
 - Handover check 3ac3bd71 + correction 31443996 (Lead: 5/5, 04:40Z). C65 CLOSED by successor 8 (c50da6f0). GO 04:40Z, option (b).
 - C66 = R57 (P-N5-1E) main report docs/checker/C66.md (05:27Z): FAIL on E-1 (title states the §6 READING), E-2 (concurrence drops
   'under the standing premise 1E-N3'); N-1..N-6 optional. Re-runs 6/7 IDENTICAL; REFEREE-2 sbar mutation not reproducible (hash seed, N-4).
-  NEXT: Addendum 1 on the revised draft (word-diff vs 9e89a88b), then the landed check. Counter: next check C67.
+  Add. 1 33aa8b3a PASS (rev. 8ae7e00e at 28cda46b); Add. 2 93a25f09: R57 LANDED at 5db6da07 PASS. C66 CLOSED.
+- C67 = R58 (P-N5-2T) draft 81b78368 at 62a292df: main report docs/checker/C67.md, FAIL on E-1 (REFEREE-2 successor 13 → 14, twice);
+  N-1..N-4. Re-runs: REFEREE-2 run_all 26/26, REFEREE 3/3, lane 2/2 IDENTICAL. Add. 1 36d6f3e8 PASS (rev. 61a238a8 at 210334bb). NEXT: landing.
+- C68 = R59 (P-N5-VILB) da345a7b @ c18076c9: PASS (bccaa3fa + table fix cf48d915), N-1..N-4. C69 = R60 (P-N5-ACCEL) 6c1d2f03 @ c18076c9:
+  PASS (81f75721), N-1..N-3. Landed: R58 6984ebef (C67 Add. 2 11ef5c85), R59+R60 a3b1cff3 (C68/C69 Add. 1 b1901a15). CLOSED.
+- C70 = R61 (FBK) f152744e @ 94d797a7: FAIL E-1 (title 'epochs reduce to ρ' = the unsigned ALT reading), 98278e40. C71 = R62 (H3)
+  0e5436f0 @ 94d797a7: FAIL E-1 (L-COMP random 62,761 / 6,520 untraceable; committed 1,131,485 / 115,640 at 785c38d3), E-2 (REFEREE TC 588 → 528).
+  Re-runs IDENTICAL (R2 FBK 13/13, H3 22/22; REFEREE logs reproduce at the commit that wrote them: frz1 at 7c2d9b49).
+  C71 Add. 1 ab9fa27d: R62 rev. 09be6ea6 (limit (iii), rel.py re-run: content 0 on 4 games); E-1, E-2 still open.
+- C72 = R63 (XEP) 4c01107b @ 1df79fec: PASS text; PRECONDITION R61 lands first (cites R61 (e)-(f)). N-1..N-3. Next check C73.
+- TRAP (new): REFEREE run_all.sh files that glob instance DIRECTORIES (vilb, accel) do not reproduce at a later trunk when a lane adds a
+  file (qc_toggle.pg): re-run at the REPORT commit. And never put a shell pipe '|' inside a markdown table cell.
+- landed.py is in the scratchpad tools/ (lost with the container; listing in the HANDOVER below).
 - PRE-READ done (packet + both reports + both §Cs, in full):
   - Packet docs/si/P-N5-1E-box16.md sha1 e613db13 at pin 7fef9699 and on trunk; full-history: 630656e5 (6), f347d113 (2) = older unfrozen drafts.
   - REFEREE R-N5-1E.md: c82c4ecf (main, on trunk) → §C 6170561a (claude/referee, NOT yet on trunk at 04:4xZ); append-only (0 deleted lines).

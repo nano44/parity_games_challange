@@ -1,0 +1,56 @@
+MODE files ../../../experiments/new/box41/lib41.txt 1 MUT d1
+EP0_checks: 661
+LAMEND_checks: 260
+LAMEND_differs: 35
+LAMEND_differs_D0: 25
+LAMEND_differs_D1: 6
+LAM_checks: 3109
+REP_steps: 3093
+RIII_checks: 3093
+RII_checks: 3093
+RI_checks: 8231
+VIOLATIONS: 10475
+V_LAM: 811
+V_REP: 1615
+V_RI: 6403
+V_RII: 1646
+epochs: 3511
+phases: 1737
+runs: 367
+skipped_n_gt_cap: 45
+LAMEND_example: (3, 'experiments/red/n5inj/instances/wide_h16.pg#0@27 |D| 3 len 1 n 32')
+max_len_by_D0: (56, 'experiments/red/xing/instances/x32_rand64.pg#0')
+max_len_by_D1: (92, 'experiments/red/n5inj/instances/returns_ph64.pg#0')
+max_len_by_D2: (23, 'experiments/red/n5inj/instances/phase2_pk32.pg#0')
+max_len_by_D3: (18, 'experiments/red/n5inj/instances/elimn_cex_n48.pg#0')
+VIOLATION RI: docs/referee/R-N5-L2/exitdrop_n3.pg#0@0: D [0]
+VIOLATION LAM: docs/referee/R-N5-L2/exitdrop_n3.pg#0@0
+VIOLATION RI: experiments/m2/counterexamples/ce1_8v_shrunk.pg#0@0: D [7]
+VIOLATION LAM: experiments/m2/counterexamples/ce1_8v_shrunk.pg#0@0
+VIOLATION RI: experiments/m2/counterexamples/strat_s2_12v.pg#0@0: D [1]
+VIOLATION LAM: experiments/m2/counterexamples/strat_s2_12v.pg#0@0
+VIOLATION RI: experiments/n5-exhaustive/canonA_1.pg#0@0: D [13]
+VIOLATION RI: experiments/n5-exhaustive/canonA_1.pg#0@3: D [13]
+VIOLATION RI: experiments/n5-exhaustive/instances/b4_cyc6_0.pg#0@1: D [6]
+VIOLATION LAM: experiments/n5-exhaustive/instances/b4_cyc6_0.pg#0@1
+VIOLATION RI: experiments/n5-exhaustive/instances/b4_cyc6_1.pg#0@0: D [1]
+VIOLATION RII: experiments/n5-exhaustive/instances/b4_cyc6_1.pg#0@0
+VIOLATION RI: experiments/n5-exhaustive/instances/b4_n4all_cyc3_0.pg#0@1: D [3]
+VIOLATION LAM: experiments/n5-exhaustive/instances/b4_n4all_cyc3_0.pg#0@1
+VIOLATION RI: experiments/n5-exhaustive/instances/b4_theta_n7.pg#0@0: D [6]
+VIOLATION LAM: experiments/n5-exhaustive/instances/b4_theta_n7.pg#0@0
+VIOLATION RI: experiments/n5-exhaustive/instances/b5_n5_cyc4_0.pg#0@2: D [3]
+VIOLATION LAM: experiments/n5-exhaustive/instances/b5_n5_cyc4_0.pg#0@2
+VIOLATION RI: experiments/n5-exhaustive/instances/b5_o11.pg#0@0: D [7]
+VIOLATION RI: experiments/n5-exhaustive/instances/b5_o11.pg#0@1: D [7]
+VIOLATION RI: experiments/n5-exhaustive/instances/b5_o11.pg#0@2: D [7]
+VIOLATION RI: experiments/n5-exhaustive/instances/b5_o11.pg#0@3: D [7]
+VIOLATION RI: experiments/n5-exhaustive/instances/b5_o11.pg#0@4: D [7]
+VIOLATION RI: experiments/n5-exhaustive/instances/b5_o11.pg#0@5: D [7]
+VIOLATION RI: experiments/n5-exhaustive/instances/b5_o11.pg#0@6: D [7]
+VIOLATION RI: experiments/n5-exhaustive/instances/b5_o11.pg#0@7: D [7]
+VIOLATION RI: experiments/n5-exhaustive/instances/b5_o11.pg#0@8: D [7]
+VIOLATION RI: experiments/n5-exhaustive/instances/b5_o11.pg#0@9: D [7]
+VIOLATION RI: experiments/n5-exhaustive/instances/b5_o11.pg#0@10: D [7]
+VIOLATION RI: experiments/n5-exhaustive/instances/b5_o11.pg#0@11: D [7]
+RESULT FAIL violations=10475

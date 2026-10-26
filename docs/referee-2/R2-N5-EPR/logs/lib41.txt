@@ -1,0 +1,22 @@
+MODE files ../../../experiments/new/box41/lib41.txt 3 MUT -
+EP0_checks: 2034
+LAMEND_checks: 3420
+LAMEND_differs: 396
+LAMEND_differs_D0: 140
+LAMEND_differs_D1: 238
+LAM_checks: 17522
+REP_steps: 12172
+RIII_checks: 12172
+RII_checks: 12172
+RIV_checks: 81
+RI_checks: 17522
+epochs: 8770
+phases: 5350
+runs: 1101
+skipped_n_gt_cap: 45
+LAMEND_example: (8, 'experiments/red/sgrow/instances/s20_n20.pg#1@4 |D| 8 len 1 n 20')
+max_len_by_D0: (56, 'experiments/red/xing/instances/x32_rand64.pg#0')
+max_len_by_D1: (92, 'experiments/red/n5inj/instances/returns_ph64.pg#0')
+max_len_by_D2: (28, 'experiments/red/n5inj/instances/returns_rt32.pg#1')
+max_len_by_D3: (18, 'experiments/red/n5inj/instances/elimn_cex_n48.pg#0')
+RESULT OK violations=0

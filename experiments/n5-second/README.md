@@ -107,3 +107,23 @@ start pair. DATA (exact on the listed inputs):
 Total 22,810 runs, 0 differences, 0 timeouts, 0 errors. The first library pass had 1 difference and 1 error, both harness-side:
 dlmm_ML_L6.start is in L-SI's bare 'v:w' format (my reader parsed nothing) and fbh_drop9.start is partial (n5b needs every vertex);
 fixed in seqdiff.py's reader (not in n5b), after which both are equal. Results: results/seqdiff/{lib,corpus2k,c1o10k}.json.
+
+## N5^tau and premise (Sigma-tau) of P-N5-EPR (box 10 item 1; Lead 2026-10-26 06:48Z)
+n5tau.py: N5^tau from the text of docs/new/P-N5-EPR-box45.md §0 (sha1 8fecca79), on n5b.py SPEC mode; only S4b changes ("keep tau when it is
+value-optimal against sigma in S4b's arena H'"); sanity assert: SPEC's S4b output = tau implies V_{sigma,tau} = S1's valuation on H' (never
+fired). tau_check.py feeds the N5^tau state sequence through REFEREE-2's out_check.analyse into REFEREE-2's checkers, UNMODIFIED:
+fbpoly_check.check_run (R48 (i) FB-POLY and its sub-lemmas) and kw_check.check_run (R50 (h) Corollary PHASE chain and the R50 lemmas);
+plus the R51 (a) form f <= 1 + (n-2)(2n-1) per N5^tau phase. Pipeline validated: with n5b SPEC traces it reproduces REFEREE-2's own spec
+mode exactly (300 random C^1O runs: state sequences and every kw_check counter equal). DATA (exact on the listed runs):
+| corpus | runs | N5^tau != SPEC (runs) | S4b^tau keeps | phases (PHASE + FB-POLY checked) | violations |
+| --- | --- | --- | --- | --- | --- |
+| C^1O library (327 files, n <= 64), S3 + 3 random starts | 1,308 | 30 | 128 | 5,822 | 0 |
+| random C^1O (re_check.rand_game, 5,000 games, n 4-30, seed 20261030), S3 + 3 random | 20,000 | 382 | 597 | 50,508 | 0 |
+| G'_E of every |D_E| = 1 epoch of random C^kO runs (k 2-4, n 5-18, 2 x 4,000 games, seeds 11/12), epoch start | 5,261 | 82 | 171 | 10,368 | 0 |
+| div_n8's G'_E (results/tau/divE_n8.pg; L-NEW's DIV instance), S3 + 3 random | 4 | 3 | 7 | 11 | 0 |
+Totals: 26,573 runs, 66,709 phases, 0 violations of R48 (i), R50 (h), R51 (a)'s f-form; FB-POLY sub-lemma checks: AK 1,456,588, KY 62,507 states,
+KH (a)/(b)/(c) 1,574 / 86,870 / 25, KP 30,948, EXIT 1,895 fallbacks, CN 1,156, TA 1,819 phases (fbpoly_check skipped its exact KH (c) DFS on
+27,155 phases with large U: its own limit, recorded). Max in-phase fallbacks per N5^tau phase: 37 (library). N5^tau diverges from SPEC on
+1.9% of random runs (S4b^tau keeps tau at a tie). Pinned diverging instances (results/tau/, .start = the run's start pair; N5^tau's regions =
+Oink zlk and its strategies pass verify.py): tau_rand1_n16 / tau_rand2_n16 (sha1 71a27911..., two starts), tau_ep11_n15 (625399cb...),
+tau_ep12_n15 (1360afbc...), tau_lib1_n32 (7535a99c...), tau_lib2_n32 (4f45bbec...); keeps 6 / 5 / 3 / 3 / 13 / 13.
