@@ -21,3 +21,5 @@ DATA, not proof. Uses experiments/new/box43 (multi, n5x via box21, f1d.hD). Run 
 - fbclimb.py seeded runs 71-75 and --obj ta runs 81-84 (02:00Z-02:05Z): table in N5-FBF-box44.md §4. instances/fb17_n32.pg (sha1
   398e23e2…): 17 in-phase fallbacks in one phase, frontier (2 Odd, 23 Even choice vertices); N5 output verified (Oink verify,
   regions = Oink --zlk, harness verify.py).
+- fbf.py: + FB-RED late form (REDL), N_late, ρ_late. fbclimb.py --obj rho (seeds 91-97, 02:31Z-02:33Z): max ρ per phase 6-32, N_late 0
+  everywhere (no phase reaches n fallbacks). N5-FBF-box44.md §6.

@@ -11,12 +11,14 @@ At a fallback, S := switched vertices not in T; S_c := S n U_c. Per phase it rec
   TA       per class c and q in Q n U_c (q != c): Xi(q)-changes at transitions t -> t+1 with t > g_{|U_c|-2} (phase with >= |U_c| - 2
            fallbacks) vs deg_{U_c}(q) + |U_c| - 2 (the 1O THETA-AFTER bound, per terminal; a violation is an instance against the
            per-terminal form; TA_V counts them, TA_n the checks)
+  REDL     late form: f <= 1 + (n - 1) + (n - 1) * NLATE, NLATE := Q-runs holding a fallback g_j with j >= n (viol. REDL_V);
+           RHOLATE := max Xi(q)-changes (all q in Q) after g_{n-1} in a phase
 Usage: fbf.py --list FILE | --rand COUNT NLO NHI SEED | files...   [--show] prints each TA violation"""
 import sys, os, random
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, os.path.join(HERE, "..", "box43")); sys.path.insert(0, HERE)
 from multi import rand_ckO, pg
 from n5x import load, step, start_pair, Engine, dual
-C = dict(phases=0, FMAX=0, FMAX_n=0, CNO=0, CNO_V=0, EXS=0, EXS_V=0, FEX=0, FEX_V=0, RED_V=0, TA_n=0, TA_V=0, RHOMAX=0)
+C = dict(phases=0, FMAX=0, FMAX_n=0, CNO=0, CNO_V=0, EXS=0, EXS_V=0, FEX=0, FEX_V=0, RED_V=0, TA_n=0, TA_V=0, RHOMAX=0, NLATE=0, REDL_V=0, RHOLATE=0)
 SHOW = "--show" in sys.argv
 
 def check(g, name="", cap=4000):
@@ -42,6 +44,17 @@ def phase(g, rows, a, b, Q, name):
     if f > C["FMAX"] or (f == C["FMAX"] and n < C["FMAX_n"]): C["FMAX"], C["FMAX_n"] = f, n
     rho = sum(1 for k in range(a, b) for q in Q if rows[k]["vs"][q] != rows[k + 1]["vs"][q]); C["RHOMAX"] = max(C["RHOMAX"], rho)
     if f > 1 + (n - 2) * (2 + rho): C["RED_V"] += 1
+    late = [k for jj, k in enumerate(fbs, 1) if jj >= n]
+    runs = set()
+    for k in late:
+        rs = k
+        while rs > a and all(rows[rs - 1]["vs"][q] == rows[k]["vs"][q] for q in Q): rs -= 1
+        runs.add(rs)
+    C["NLATE"] = max(C["NLATE"], len(runs))
+    if f > 1 + (n - 1) + (n - 1) * len(runs): C["REDL_V"] += 1
+    if len(fbs) >= n - 1:
+        st = fbs[n - 2] + 1 if n - 2 < len(fbs) else b
+        C["RHOLATE"] = max(C["RHOLATE"], sum(1 for k in range(st, b) for q in Q if rows[k]["vs"][q] != rows[k + 1]["vs"][q]))
     nempty = 0
     for jdx, k in enumerate(fbs, 1):
         S = [v for v in range(n) if g.owner[v] == 0 and rows[k + 1]["s"][v] != rows[k]["s"][v] and v not in T]
