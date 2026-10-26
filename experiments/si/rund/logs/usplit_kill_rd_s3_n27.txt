@@ -1,0 +1,20 @@
+RUN rund/instances/usplit_rd_s3_n27.pg k0=0 len=4 edges_forbidden=1 persistent=0
+  EDGE (26, 25) first=0 last=0 count=1 
+  NB k=1 f=0 y=26 z=25 a_f=20 a_k=20 off_y 0->0 off_z f/k/k+1 6291456/0/0 off_a f/k 0/0 lam_y=0
+  USTRUCT rund/instances/usplit_rd_s3_n27.pg k0=0 k=1 f=0 y=26 z=25 a_f=20(g14) a_k=20(g14) z@f=g5 z@k=g14 y@k+1=g14 D_f=[5, 14] D_k=[5, 14] y_forbidden_later=[]
+  U [(1, (26, 25))]
+  VERTEX 4 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 6 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 7 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 8 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 12 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 13 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 15 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 16 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 17 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 18 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 25 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 26 {'changes': 1, 'window': 1} charged_edges=[]
+L=-1 MUT=0 U=1 U_D_changed=0 U_a_changed=0 U_cls_OTHER=1 U_from_F=0 U_nb_offa_k>offa_f=0 U_nb_offz_f>offz_k1=1 U_offset_down=0 U_offset_same=1 U_offset_up=0 U_offset_up_at_k=0 U_upk_noboundary=0 U_x_up0_bd0_upk0=1 U_xi_a_rose=0 U_xi_z_rose=1 U_y_forbidden_later=0 U_y_gated_after=1 changes=12 forb_gate_diff=1 forbidden_edges=1 forbidden_pairs=1 max_KF=1 max_U_per_vertex=1 max_U_run=1 max_changes_per_vertex=1 max_charged_edges_per_vertex=0 max_charged_per_vertex=0 max_forb_states_per_edge=1 max_last_forb_rel=0 max_runlen=4 max_span=0 max_span_minus_n=0 offup_checked=1 persistent_edges=0 runs=1 states=5 switches=9 window=12
+VIOLATION ('U_OTHER', 'rund/instances/usplit_rd_s3_n27.pg', 0, 1, (26, 25))
+SCHED FAIL

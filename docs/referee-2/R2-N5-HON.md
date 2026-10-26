@@ -129,3 +129,23 @@ Lemma HON, Lemma SAT0, Lemma HON-FB (i)-(iv), Corollary HON′, Corollary HON-0 
 EPR-1), Theorem REC-1 (a): SIGN, on every game, under the standing SPEC premise 1E-N3 (P1, P2). Corollary EP-1u and Theorem REC-1 (b)-(d):
 SIGN as IMPLICATIONS from (Στ) (which holds at R65's audit strength). The §2 relation to REC-0: both claims CONFIRMED. Q-R17: YES. No gap;
 notes N-HON-1..5. REFEREE-2 successor 16 (Opus 5.5, D15).
+
+## §C. Comparison with REFEREE (R-N5-HON, claude/referee 59121877 = report e7f9bc31 + independence-line correction; successor 14), written 2026-10-26 11:24Z (date -u)
+Opened only after my report was pushed (1566b439, 10:29Z) and on the Lead's word (11:22Z). Read in full.
+| item | REFEREE | REFEREE-2 | relation |
+| --- | --- | --- | --- |
+| HON, SAT0, HON-FB (i)-(iv), HON′, HON-0 (a)-(c), RESTRICT_u, REPRO_u, REC-1 (a) | SIGNED | SIGN | same |
+| EP-1u, REC-1 (b)-(d) | SIGNED as implications; hold at R65's audit strength | same (N-HON-4) | same |
+| §2 claim 1 (HON-0 ⇒ REC-0, difference f·n + 2) | TRUE | CONFIRMED | same |
+| §2 claim 2 (proofs independent) | TRUE as "neither proof uses the other"; premise sets overlap, XW is in REC-0's chain too (HON-N1) | CONFIRMED (neither cites the other) | same verdict; ACCEPT HON-N1: the packet's "HON-FB adds XW" is inexact, REC-0's chain has XW through SN-PREFIX_D (a) |
+| Q-R17 | YES, three uses (step 1; SAT0's Case A without (F2); HON-FB (i)'s B1/B2 list) | YES for step 1 (N-HON-2); SAT0 and HON-FB (i) re-derived by me in §2 | same; REFEREE's three-use list is the more complete statement, ACCEPTED |
+| N-HON-1 (SAT0's Odd case, "(r′ and z's play avoid x)") | correct as written: when x is on its own cycle below the top, the arc from z = τ(x) to the top avoids x | I called the parenthesis false (z's infinite play passes x) and repaired it with A1's sentence | SETTLED as a NOTE, not a gap: REFEREE is right that the PATH from z to its cycle node, which is all (V1)/(V2) read, avoids x (x is the last vertex before z on the cycle, so z reaches the top first). My objection holds only for the infinite play; I WITHDRAW the word "false" and keep N-HON-1 as a wording note ("z's path to its cycle node avoids x") |
+| HON-N2 (context line "REC-0 … expected to land" stale; REC-0 signed by both, RESULTS draft R66) | mine | — | ACCEPTED |
+| HON-N3 (fallback-free hypothesis used twice: Lemma P step and the sandwich; HON-FF must replace both) | mine | — | ACCEPTED (my §2 uses both but did not flag it for HON-FF) |
+| N-HON-3 (premise list complete; P1 / P2 entry points) | premises read item by item | mine | same in substance |
+| N-HON-5 / HON-N4 (data) | 0 failures; lib41 at LEVMAX 20 for n ≤ 20 (one inside-gap fallback with LEV, rose); climbs; max 57 honest states | 0 violations; exact LEV n ≤ 11; max 57 honest states; mutation hon does not bite | same; REFEREE's LEVMAX-20 run thins my N-HON-5 point less than I stated (1 inside-gap case with exact LEV exists) |
+| controls | MUT=1 (G^u cut at u), MUT=3 (rise 2) bite | ru, s1, fb4, r1 bite | same |
+| EPR-1-type exits of u-runs | 51 / 244 (lib41) leave the N5^τ phase | REPRO_u's λ′ = λ checked on J only | consistent |
+- No disagreement on any verdict. Joint gap map: EMPTY. Notes to the lane (union): N-HON-1 (wording, settled), HON-N1, HON-N2, HON-N3, N-HON-2
+  (Q-R17, with REFEREE's three uses), N-HON-3, N-HON-4 (R65), N-HON-5 / HON-N4 (data).
+- My verdicts are unchanged. REFEREE-2 successor 16 (Opus 5.5, D15).

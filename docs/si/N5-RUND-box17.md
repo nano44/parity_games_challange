@@ -522,7 +522,7 @@ used by ≤ n − 1 values of s. □
 | lcount_n23, lcount2_n23, offret_n23, incdown_n23, offalt_K10 | 1 each | 4-25 | 10-177 | 0 | 0 | – |
 
 ### CONJECTURE UF-ONCE (DATA; replaces FS as the target)
-- UPDATE (successor 14, 10:3xZ): UF-ONCE is DEAD (REFEREE-2 16, R2-N5-RUND §4; reproduced, §22.1). The data below skipped 𝒞^1O games.
+- UPDATE (successor 14, 10:3xZ): UF-ONCE is DEAD; U-SPLIT (§17) and PAIR-OC (§15) are DEAD too (L-RED R80, R81; DEAD 18b, 18c) (REFEREE-2 16, R2-N5-RUND §4; reproduced, §22.1). The data below skipped 𝒞^1O games.
 In every run S, every Even vertex makes at most one unforbid-switch: |{(k′, e) ∈ U(S) : e leaves y}| ≤ 1 for every Even y. Then |U(S)| ≤ n_E and,
 by CHARGE-U, every vertex's full-resolution coarse W value changes ≤ (n − 1)(n_E + 1) times per run (a polynomial per run; runs per phase
 are cut by fallbacks and λ_W changes, counted elsewhere).
@@ -793,3 +793,135 @@ monotone processes:
   would give ρ_q ≤ a product over relay-graph paths (FB-kT style, polynomial for bounded m_c), but (b) fails in data (28 phases); (c) a
   potential that counts relay cycles. Nothing here bounds N_ep. READING: the hard core of ρ for m_c ≥ 2 is the re-thaw loop (O2) through
   relay cycles.
+
+## 23. FRZ-type route freeze between ρ-transitions (Lead's item 3, 10:42Z): a static reduction (PROVED), CONJECTURE FRZ-RHO (DATA), where a proof stops
+Written 2026-10-26T10:5xZ (date -u), successor 14. frzrho.py (new); logs frzrho_lib41_rs4.txt, frzrho_lib2o_rs4.txt.
+### 23.1 Setting
+A ρ-FREE INTERVAL I: a maximal run of consecutive in-phase transitions with no fallback, and Ξ|Q and σ̄|Q constant (no ρ event, no tie,
+no epoch boundary). Reach_k(Q) as in §22.2.
+### 23.2 Lemma STATIC (PROVED, every game; standing premise 1E-N3, P1 and P2)
+On I, σ̄_k is the same strategy σ̄_I on ALL Odd vertices (on Q by the cut, elsewhere forced), and τ_k = τ_I (phase). Hence, for every
+state k of I: Ξ_k is the valuation of σ_k in the fixed one-player game G_{σ̄_I} (P1: Ξ_k is the optimal reply's value, and σ̄_k = σ̄_I);
+W_k is the valuation of σ_k in the fixed one-player game G_{τ_I}; Iσ_k is the improving set of σ_k in G_{σ̄_I}; and σ_{k+1} is Even's
+pointwise optimum, in G_{τ_I}, of the arena {σ_k(v)} ∪ Iσ_k(v) (P2). So I is a run of the two-game rule "improve in G_{σ̄_I}, choose by
+G_{τ_I}" on two FIXED one-player games. Every switch at an Even vertex v strictly raises Ξ(v) (VJ00 Lemma 5.7 strict form, RESULTS R15 (a),
+(b); a length-only cycle-node switch keeps the value but still changes the play). By ROOT (§22.3), the Q-exit paths change at most at
+the transitions where some Even vertex of Reach(Q) switches. □ (Immediate from the definitions. It says the epoch / ρ cut leaves a static
+pair of games, so whatever freezes inside I is a statement about that rule alone.)
+- Corollary (from RESULTS-to-be R-RUND §4 SPLIT-RED, signed by both referees in P-N5-RUND, applied to I as the run S): under (h3_D) on I,
+  |I| ≤ N_split(I) + (N_split(I) + 1)(n + m − 1). So I's length reduces to its split transitions; aligned stretches are switch-best blocks of
+  G_{τ_I} (PIECE_D).
+### 23.3 CONJECTURE FRZ-RHO (DATA)
+On every ρ-free interval I, Ξ on Reach(Q) changes only at transitions whose index from I's first state is < n − 1.
+- DATA (frzrho.py; FRZ_RHO_V = 0 everywhere):
+
+| set | ρ-free intervals | transitions in them | max length | max index of a Reach(Q) Ξ-change | max Q-exit changes in one interval |
+| --- | --- | --- | --- | --- | --- |
+| lib41 (KMIN = 1), S3 + 4 random starts | 2,471 | 9,623 | 44 | 35 | 24 |
+| lib2o, S3 + 4 random starts | 164 | 564 | 11 | 9 | 4 |
+| frz40 (+ .start) / frz3_n24 (+ .start) | 21 / 5 | 49 / 14 | 6 / 6 | 5 / 2 | 2 / 1 |
+| pftheta34_n32 / so_th_n32 / nep76_n40 | 0 / 1 / 1 | 0 / 1 / 1 | – / 1 / 1 | – / 0 / 0 | – / 0 / 1 |
+| usplit_rd_s3_n27 / pairoc_n58 | 1 / 1 | 2 / 3 | 2 / 3 | 0 / −1 | 0 / 0 |
+
+  Closest to the bound: xsn29_n32 (lib41), last change at index 27 of a 29-transition interval, n − 1 = 31 (ratio 0.87); tr20_s4 16 of 19;
+  xc24 19 of 23; b6_xs_n40 32 of 39. pftheta34's whole phase is ρ-transitions (34 of 35), so FRZ-RHO is vacuous there.
+- The U-SPLIT kill's U event (usplit_rd_s3_n27, k = 1) lies inside a ρ-free interval with NO Ξ change on Reach(Q). U events and
+  FRZ-RHO are about different vertex sets.
+### 23.4 Proof attempt: where it stops (READING)
+- With switch-best for Ξ (R17), FRZ-RHO would follow from Lemma P's Bellman-Ford induction on G_{σ̄_I} with Q as sinks of fixed value
+  (≤ n − 1 value-changing steps). N5's rule differs in two ways, and both are live inside I:
+  (a) the arena choice is by G_{τ_I}: a vertex with a Ξ-improving edge may keep its edge (W prefers it), so "every improvable vertex
+      improves" fails and the BF induction has no step;
+  (b) a vertex may take a Ξ-improving but not Ξ-best edge (W-best among improving ones) and later move again, so one vertex can make
+      several Ξ-increasing moves in I.
+  On F_D (plays avoiding D) Ξ = W, the two orders agree, and the BF step holds there (PIECE_D). The obstruction lives on R_D, where the
+  W-play passes a gate u ∈ D with τ_I(u) ≠ σ̄_I(u). That is the split / forbidden-edge regime of §5-§6: CHARGE-U bounds W-changes by
+  U events, and U-SPLIT / UF-ONCE (both DEAD) were the attempts to bound U.
+- So FRZ-RHO is OPEN, and a proof needs a BF step for the two-game rule on R_D. The candidate is Lemma P^c_sch's schedule restricted to
+  Reach(Q) with fixed terminals. It gives a coarse freeze except at forbidden edges, and the content-free problem of R62 (f) is not solved.
+- What FRZ-RHO would buy (READING, with ROOT): T_exit ≤ (n − 1)·(1 + ρT + tieT + f) per phase, the (O2) half of §22.5's loop. It does not
+  break the loop: ρT ≤ T_exit (ROOT) still allows ρT to grow. So even a proof of FRZ-RHO leaves ρ OPEN, and the target stays the ρ side
+  (relay cycles, §22.5).
+### 23.5 Status, labels
+- PROVED (lane, unrefereed): Lemma STATIC (immediate). Corollary via SPLIT-RED (signed, not yet landed).
+- CONJECTURE FRZ-RHO: DATA (0 violations; max index 35 < n − 1; tightest ratio 0.87).
+- OPEN: a proof of FRZ-RHO (the BF step for "improve in G_σ̄, choose by G_τ" on R_D), and ρ_q for m_c ≥ 2 (§22).
+
+## 24. Relay cycles (Lead's GO (a), 11:13Z): Lemma ROOT-C (PROVED, the per-class form), Lemma FLIP (PROVED, a necessary condition at every relay flip), traces
+Written 2026-10-26T11:1xZ (date -u), successor 14. flip.py (phase trace), flipck.py (new); logs flip_frz40_p44.txt, flip_frz40.txt,
+flip_pp_K12.txt, flip_lib41_rs4.txt. Setting as §22.2 (one phase, class U_c, Q_c, κ; standing premise P1).
+### 24.1 Lemma ROOT-C (PROVED, every game; the per-class form of ROOT)
+For q′ ∈ Q_c and y ∈ succ(q′) ∩ U_c, the CLASS EXIT PATH of y at s is y's honest play at s up to its first vertex in Q_c ∪ {c} (§22.4). If at
+an in-phase transition t → t+1 every class exit path of every q′ ∈ Q_c is the same at t and t + 1, then κ_t(q) = κ_{t+1}(q) for every
+q ∈ Q_c. So every transition with a ρ event in the class changes a class exit path of the SAME class.
+Proof. Fix s ∈ {t, t+1} and q ∈ Q_c. Let Π_s(q) be the set of walks q = e_0, y_0, (exit path of y_0), e_1, y_1, …, e_j = c with e_i ∈ Q_c
+distinct, y_i ∈ succ(e_i) ∩ U_c, and e_{i+1} the exit of y_i at s. The class exit paths contain no Odd choice vertex and are followed by
+σ_s and forced Odd edges. So each walk in Π_s(q) reaches c without repeating a vertex. (A repeated vertex v would have the same successor
+both times, so the walk would cycle without reaching c.) Hence each walk is the play from q of a positional Odd strategy in G_{σ_s}
+(choose y_i at e_i). That play has cycle node c, and its κ is the walk's weight up to c.
+(≤) σ̄_s is pointwise optimal (P1), so Ξ_s(q) ⊴ the valuation of each such play. Both have cycle node c (λ_s(q) = c in the phase), so
+κ_s(q) ⪯ κ(walk) for every walk in Π_s(q).
+(≥) The optimal play from q at s stays in U_c. Every vertex on it has the same optimal play suffix, hence λ = c. It is the walk of
+σ̄_s's choices, so it lies in Π_s(q).
+So κ_s(q) = min over Π_s(q). Π_t(q) = Π_{t+1}(q), because exit paths are equal, U_c is fixed in the phase and the weights are fixed. □
+- The data form tested in §22 (ALLRELAY_T = 0: a ROUTE or CYC event at a terminal WITH an event) is stronger. It stays DATA. ROOT-C
+  allows the changed exit path to belong to a terminal whose own κ does not change.
+- ROOT-C makes the relay graph's cost local. A relay event at q1 in class c sits on a transition where some Even vertex of a class-c exit
+  path switches.
+### 24.2 Lemma FLIP (PROVED, every game, P1): a necessary condition at a relay flip
+For q ∈ Q_c ∖ {c} let par_s(q) be the exit of σ̄_s(q)'s class exit path p_s(q) when that exit is a terminal of Q_c other than q (R61's
+par_t, with its path). A FLIP is (q1, q2, t1 < t2) in one phase with par_{t1}(q1) = q2 and par_{t2}(q2) = q1. Write p1 := p_{t1}(q1),
+y1 := σ̄_{t1}(q1), p2 := p_{t2}(q2), and C := the closed walk q1 · p1 · q2 · p2 (back to q1).
+- (a) FLIP-COST: κ_{t2}(q2) ⪰ κ_{t1}(q2) + wt(C), with wt(C) := Σ_{v ∈ C} κwt_c(v) (with multiplicity) in the first coordinate and
+  s_c·|C| in the second.
+  Proof. Additivity (§22.4 (iii)): κ_{t1}(q1) = κwt(q1) + κwt(p1) + κ_{t1}(q2), and κ_{t2}(q2) = κwt(q2) + κwt(p2) + κ_{t2}(q1). Also
+  κ_{t2}(q1) ⪰ κ_{t1}(q1): Ξ is non-decreasing at every transition of the phase (RESULTS R15 (a), (d), via (VJ) under P1; fallbacks
+  included), and within the class Ξ's order is κ's. Substitute. □
+- (b) FLIP-1: if p1 is INTACT at t2 (every vertex of p1 has the same successor at t2 as at t1), then the cycle Z reached from q1 in
+  G_{σ_{t2}} under σ̄′ := σ̄_{t2} with σ̄′(q1) := y1 is not Odd-attractive. Its node w satisfies rew(w) > rew(c), i.e. Even prefers w to c.
+  Proof. From q1 the σ̄′-play follows y1, p1 (intact) to q2, then σ̄_{t2}(q2)'s exit path p2 back to q1. So it never reaches c, and its
+  cycle Z avoids c. By P1, Ξ_{t2}(q1) ⊴ the valuation of that play. Ξ_{t2}(q1) has cycle node c and the play has node w ≠ c. VJ00's order
+  compares cycle nodes first, and rew is injective, so rew(c) < rew(w). □
+- (c) Corollary: if p1 is intact at t2 and p1 ∩ p2 = ∅, then Z = C, and C is Odd-unattractive. Either its top vertex is even and ranked
+  above c, so the weight of C is > 0, or its top is below c and c is odd, so the weight is 0 and the length term s_c·|C| = +|C| > 0. In
+  both cases wt(C) ≻ 0, and by (a) κ(q2) rises STRICTLY between t1 and t2, by at least wt(C).
+- NECESSARY CONDITION at a flip (from (a)-(c)): one of
+  - (N1) BROKEN: an Even vertex of q1's old exit path p1 switched between t1 and t2 (a class-c exit-path change, as in ROOT-C);
+  - (N2) p1 ∩ p2 ≠ ∅;
+  - (N3) INTACT: κ(q2) rises strictly between t1 and t2, by at least the weight of an Odd-unattractive cycle C through q1 and q2.
+- DATA (flipck.py: FLIPCOST_V = 0, FLIP1_V = 0 everywhere; the control MUT=1, the reversed inequality, fails on frz40 and pp_K12_n161):
+
+| set | flip states (onsets) | BROKEN (onsets) | INTACT (onsets) | INTACT with κ(q2) rise |
+| --- | --- | --- | --- | --- |
+| frz40 (+ .start) | 20 (2) | 17 (2) | 3 (0) | 3 |
+| lib41 (KMIN = 1), S3 + 4 random starts | 152 (23) | 129 (11) | 23 (12) | 23 |
+| L-RED R83 pp_K12_n161 (sha1 8808ba5d, + .start eb95d52b) | 15 (11) | 0 | 15 (11) | 15 |
+| L-RED R83 pp_K48_n449 (sha1 a161569d, + .start) | 51 (47) | 0 | 51 (47) | 51 |
+
+### 24.3 The frz40 flip, vertex by vertex (phase at state 44, 35 transitions; class c = 30, Q_c = {0, 11, 26, 27}, all in D)
+- t = 0: Even 9 switches 38 → 0, on 26's exit path from 29. 26: ROUTE (29's exit 30 → 0). 11 RELAYS 26 (σ̄(11) = 4, and 4's and 24's
+  exit is 26: par(11) = 26). 27 and 0 relay 11.
+- t = 8, 10, 13: Even 4 and 24 switch on 11's own exit paths; 11 ROUTE and 27 RELAY each time (27's σ̄ = 11 is a terminal).
+- t = 14 (fallback): 24's exit becomes 0. t = 17 (fallback): Even 4 and 5 switch, and 4's exit becomes 0. From here par(11) ≠ 26: p1 is
+  BROKEN (N1).
+- t = 28: Even 9 switches 0 → 35, and 29's exit becomes 11. t = 30: Even 15 switches on 11's path from 4; 11 ROUTE (σ̄(11) 4 → 31,
+  path-set level 39). 26 RELAYS 11 (σ̄(26) = 29, exit 11), the flip; 27 relays 11.
+- So the flip was paid by (N1): two FALLBACK transitions (t = 14, 17) re-routed 11's successors away from 26, and an S4a switch of Even 9
+  (t = 28) routed 26's successor into 11. In mkpp (R83) all flips are (N3): the relay edges e1 → q2 and e2 → q1 are fixed, and each flip
+  is paid by a strict κ rise of the receiving terminal (the leapfrogging risers vA, vB).
+### 24.4 What this gives and what it does not (READING)
+- A flip is never free. (N1) costs an exit-path switch in the class, which ROOT-C charges anyway. (N3) costs a strict κ rise at q2 of at
+  least wt(C), where C is an Odd-unattractive cycle. So a super-polynomial number of flips needs super-polynomially many class exit-path
+  switches (N1), or a super-polynomial chain of strict κ rises (N3). Neither is excluded. (N3)'s rise lower bound wt(C) can be as small
+  as 1 in weight (or 1 in length), so it gives no level information by itself. This matches L-RED's R83 reading: super-polynomial ρ needs
+  super-polynomially many unforbid-switches per run, runs per phase, or ties / length-only switches.
+- OPEN: a potential that charges (N3) flips. A candidate is Σ over ordered pairs (q1, q2) of the number of distinct Odd-unattractive
+  cycles through q1, q2 that have been "spent". It is exponential in general (cycles), so it needs a level argument: e.g. "the rise forced
+  in (N3) is at a level ≥ the top of C when both paths are intact at both times". That is not proved. Sketch: if top(C) ∈ p2 ∪ {q2}, it
+  is in P_{t2}(q2), and the intact-p2-at-t1 case keeps it out of P_{t1}(q2). The mixed cases are not done.
+### 24.5 Status, labels
+- PROVED (lane, unrefereed): ROOT-C (per-class ROOT), FLIP (a) FLIP-COST, (b) FLIP-1, (c) Corollary, and the necessary condition
+  N1 ∨ N2 ∨ N3.
+- DATA: FLIPCOST, FLIP1 0 violations (frz40, lib41, both mkpp pins); BROKEN / INTACT split as tabled. frz40's flip is N1 (via two
+  fallbacks); mkpp's are N3.
+- CONJECTURE (not stated as a target): none new. ρ_q for m_c ≥ 2 stays OPEN.

@@ -1,0 +1,9 @@
+gaps_free: 62
+gaps_free_UNK: 8
+honest_states: 162
+imm_UNK: 8
+imm_steps: 69
+max_honest_per_phase: 16
+phases: 249
+runs: 60
+RESULT OK violations=0

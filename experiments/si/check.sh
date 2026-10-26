@@ -62,3 +62,28 @@ o=$(python3 -I rund/relay.py --one ../red/n5inj/instances/frz40.pg ../red/n5inj/
 grep -q "RELAY PASS" <<<"$o"; grep -q "CYC2 ('../red/n5inj/instances/frz40.pg', 44, {0: \[11\], 11: \[26\], 26: \[11\], 27: \[11\]})" <<<"$o"
 MUT=1 python3 -I rund/relay.py --one ../red/n5inj/instances/frz40.pg ../red/n5inj/instances/frz40.start | grep -q "RELAY FAIL"
 echo "rund (ROOT, ROUTE-RELAY on frz40; mutual relay 11 <-> 26 in one phase; MUT=1 bites): PASS"
+# U-SPLIT DEAD (L-RED R80, usplit_rd_s3_n27, S3 start) and PAIR-OC DEAD (L-RED R81, pairoc_n58); LC2 survives on pairoc_n58.
+o=$(NOGEN=1 USTRUCT=1 python3 -I rund/sched.py --one rund/instances/usplit_rd_s3_n27.pg -v)
+[ "$(grep -c '^VIOLATION' <<<"$o")" = 1 ]; grep -q "VIOLATION ('U_OTHER', 'rund/instances/usplit_rd_s3_n27.pg', 0, 1, (26, 25))" <<<"$o"
+grep -q "NB k=1 f=0 y=26 z=25 a_f=20 a_k=20 off_y 0->0" <<<"$o"
+o=$(python3 -I rund/lvl2.py --one rund/instances/pairoc_n58.pg rund/instances/pairoc_n58.start)
+grep -q "VIOLATION ('PAIROC', 'rund/instances/pairoc_n58.pg', 0, 3, 57, \[(0, 47, 52, True), (1, 48, 51, True), (2, 47, 49, True)\])" <<<"$o"
+if grep -q "^VIOLATION ('LC2'" <<<"$o"; then echo "LC2 violated on pairoc_n58"; exit 1; fi
+echo "rund (U-SPLIT DEAD usplit_rd_s3_n27 y=26 z=25 off 0->0; PAIR-OC DEAD pairoc_n58 v=57; LC2 holds there): PASS"
+# note §23: CONJECTURE FRZ-RHO on frz40 (21 rho-free intervals, max length 6, last change at index 5 < n - 1).
+python3 -I rund/frzrho.py --one ../red/n5inj/instances/frz40.pg ../red/n5inj/instances/frz40.start | grep -q "cuts=41 intervals=21 max_last=5 max_len=6 max_tex=2 max_xich=2 trans=49"
+echo "rund (FRZ-RHO data on frz40): PASS"
+# note §24: Lemma FLIP on frz40 (17 broken / 3 intact flip states) and L-RED's pp_K12_n161 (15 intact); reversed control fails.
+python3 -I rund/flipck.py --one ../red/n5inj/instances/frz40.pg ../red/n5inj/instances/frz40.start | grep -q "broken=17 broken_onsets=2 flipcost_checks=139 flips=20 intact=3 intact_onsets=0 intact_with_rise=3 onsets=2"
+o=$(python3 -I rund/flipck.py --one rund/instances/pp_K12_n161.pg rund/instances/pp_K12_n161.start)
+grep -q "FLIP PASS" <<<"$o"; grep -q "flips=15 intact=15 intact_onsets=11 intact_with_rise=15 onsets=11" <<<"$o"
+MUT=1 python3 -I rund/flipck.py --one rund/instances/pp_K12_n161.pg rund/instances/pp_K12_n161.start | grep -q "FLIP FAIL"
+echo "rund (FLIP on frz40 and pp_K12_n161; MUT=1 bites): PASS"
+# P-N5-RUND fixes file: every «quote» verbatim at its tagged commit and lines; the shifted-lines control (--mut) must fail.
+if git cat-file -e 62a1a01d && git cat-file -e e8d31c47 && git cat-file -e 762b7243 && git cat-file -e f1d2cf09; then
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-RUND-fixes-box17.md | grep -q "QUOTES PASS"
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-RUND-fixes-box17.md --mut | grep -q "QUOTES FAIL"
+  echo "rund (RUND fixes file: all quotes verbatim; shifted control fails): PASS"
+else
+  echo "rund (RUND fixes file quotes): NOT RUN (source commits not in this clone; fetch claude/referee, claude/referee-2)"
+fi

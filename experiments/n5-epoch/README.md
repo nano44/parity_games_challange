@@ -62,3 +62,35 @@ Command: `climbs.sh 1..4` (each line `climb.py FIT N K SEED --secs S [--seed-pg 
 - Every pinned instance: census 0 violations; reproduce with `python3 census.py 0 0 instances/NAME.pg:instances/NAME.start`.
 - Reading of (c) (READING, not a claim): random starts stay small (N_ep ≤ 13, len ≤ 27 at n ≤ 48); the large values come only from seeding with
   lane instances, and grow with budget (lev_l_x 50 → 56, rise_thin51 53 → 76; |D| ≥ 2 epochs 18 / 23 → 55 / 47). No growth law is claimed.
+
+## Add-on (Lead 09:46Z / 10:06Z): CONJECTURE HON-FF (L-NEW 25, docs/new/N5-REC1-box46.md §1a on claude/l-new), IMM / IMM' as validation
+Code: `honff.py` (own checker from the doc's §0, §1, §1a, §4; L-NEW's imm.py / hon2.py / ffclimb.py not opened), `levcheck.py` (LEV prune
+cross-check), `honclimb.py` + `honclimbs.sh` (climb). LEV = largest j ≤ n − 1 with Ξ_k ⪰ value(r) for every simple G_τ-path r with ≤ j edges to
+a cycle node of λ; computed as (shortest beating simple path) − 1: BFS for other cycle nodes, DFS with length pruning and an exact
+optimistic-completion prune for c = λ(x); budget 2·10⁶ expansions per state, over budget = UNK (never a pass).
+- LEV prune check (`levcheck.py 3000 5`): 7,597 states, prune = no prune = brute force (n ≤ 9): 0 mismatches.
+- Validation (DATA): immfail_n14 (db3fc2ca, S3): IMM fails at h = 0 and h = 2 (LEV 3 → 3), both with h + 1 last in its phase, so IMM' holds there;
+  immp_cex_n11 (1dd7f585, its start): IMM' FAILS at h = 0 (LEV 1 → 1); exitr_cex_n16: IMM' FAILS on 15 of 40 random starts (`honff.py 40 7 FILE`);
+  j10_n24 / j7_n32 / j8_n32 (S3): inside-fallback gaps 1 → 24 (fallback 9, LEV 1 → 4), 1 → 46 (22, 0 → 19), 3 → 50 (22, 29; 2 → 9) = L-NEW §5.
+  Copies of L-NEW's instances: instances/immfail_n14.pg, immp_cex_n11.pg/.start (sha1 equal to l-new's).
+| sample (command) | runs | phases | W-honest states | gaps: fallback-free / fallback at h (HON-FB) / fallback inside | UNK gaps | HON-FF failures | HON / HON-FB violations | IMM fails (IMM' fails) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| named.txt, S3/start + 3 random, seed 12 (`honff.py 3 12 --list named.txt`) | 60 | 249 | 162 | 62 / 0 / 0 | 8 / 0 / 0 | 0 | 0 / 0 | 0 (0) |
+| lib41 n ≤ 64 (367 games), S3 + 2 random, seed 7 (`honff.py 2 7 --list results/honff/lib41_le64.txt`) | 1,101 | 5,377 | 5,607 | 3,380 / 56 / 3 | 789 / 16 / 0 | 0 | 0 / 0 | 5 (3: exitr_cex_n16 R1, so_th_n32 R0, j8_n32 S3) |
+| lib41 n > 64 (45 games), --fb-only (`honff.py 2 7 --fb-only --list results/honff/lib41_gt64.txt`) | 135 | 1,841 | 184 | 18 / 3 / 0 | — | 0 | 0 / 0 | not run |
+| 20,000 random C^kO, k 2-6, n 6-20, S3 + 4 random, seed 8 (`honff.py 4 8 --rand 20000 6 20 2 6 121`) | 100,000 | 263,090 | 135,044 | 9,529 / 2,136 / 0 | 0 | 0 | 0 / 0 | 13 (0) |
+- The lib41 n ≤ 64 row reproduces L-NEW's hon.py counts exactly (1,101 runs, 5,377 phases, FBH 56, 3,380 fallback-free pairs).
+- Climbs (`honclimbs.sh A`, `B`; 1,200 s each; fitness (inside-fallback gaps, inside fallbacks, shaping terms); every individual with an
+  inside-fallback gap is checked for HON-FF with exact LEV):
+| climb | n | best (gaps, inside fallbacks, ...) | inside-fallback gaps checked along the climb (UNK) | HON-FF failures |
+| --- | --- | --- | --- | --- |
+| random C^3O, seed 21 / C^3O seed 24 / C^4O seed 26 | 16 / 24 / 32 | (0, 0, 0, 13, 0) / (0, 0, 0, 11, 0) / (0, 0, 0, 19, 0) | 0 | 0 |
+| seeded j10_n24, seed 22 | 24 | (1, 4, ...) | 20,815 (0) | 0 |
+| seeded j7_n32, seed 25 | 32 | (1, 5, ...) | 16,791 (0) | 0 |
+| seeded j8_n32, seed 23 | 32 | (1, 12, ...) | 8,639 (2) | 0 |
+  Pinned (pin.py: n5.py = n5b states, Oink zlk, verify.py OK): ffin12_n32 (6bae375bc1814acb60e59719cf93aea4b98a54ad): gap 6 → 23 with 12 inside
+  fallbacks, LEV 6 → 31 (saturated); ffin5_n32 (d20ea0f2892701ea5fc9f650e9ab4f1eb0ec71fc): gap 3 → 12, 5 inside fallbacks, LEV 4 → 31;
+  ffin4_n24 (e1c4043c284125ad572736498efeda7bbbac6e4d): gap 5 → 13, 4 inside fallbacks, LEV 4 → 6.
+- Reading (READING): random climbs never produce an inside-fallback gap (as L-NEW's ffclimb); seeded climbs grow the number of fallbacks inside
+  one gap (1 → 4, 5, 12), and in every gap seen the level rises, often to saturation (n − 1). HON-FF: 0 failures; the support is now 6 + the
+  climbs' 46,245 checked gap instances (near-duplicates along three climbs, not independent).

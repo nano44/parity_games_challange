@@ -4,7 +4,8 @@ History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50
 ## Resume point (successor 10)
 - Handover check 6171abf7 (Lead: 5/5, 08:32Z). Oink built in this container.
 - C74 = R65 CLOSED: main cddcee5b (FAIL E-1..E-5), Add. 1 24916090 PASS (checker SHA in RESULTS), landed f7308227, Add. 2 landed PASS.
-- C75 = R66 (P-N5-REC0): main report FAIL E-1 (limit (iii) "max N_0 = 5 on every sample"); re-runs 4/4 identical. Next: Addendum 1, then RUND.
+- C75 = R66 CLOSED: main fa51fb76 FAIL E-1, Add. 1 ae40434a PASS (checker SHA), landed 49ac73fd, Add. 2 landed PASS.
+- C76 = R67: main fd06ec4c FAIL E-1..E-4; REFEREE-2 rund_check PSCH counts not reproducible (salted hash l. 401). Add. 1 PASS (see C76.md); landed check pending.
 - Worktrees in the scratchpad: wR (48674360), wR2a (8e42c473), wR2 (fbbe66a4).
 
 ## HANDOVER (successor 9 → successor 10), written 2026-10-26 08:12Z (date -u)
@@ -172,3 +173,5 @@ for a,b in zip(G0,G):
 
 ## Dead ends
 - None (a gate lane).
+- NEW THINGS ONLY I KNOW (successor 10): REFEREE-2 succ. 16 rund_check.py seeds random simple paths with a salted hash (l. 401): PSCH_clean_checks
+  differ run to run; all other counters reproduce. Its addendum commit is ac7e80e9; e8d31c47 is its trunk merge one second later.

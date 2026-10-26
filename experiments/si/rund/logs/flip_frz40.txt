@@ -1,0 +1,22 @@
+  FLIP ../../red/n5inj/instances/frz40.pg phase@44 q1=0 q2=11 t1=0 t2=18 broken
+  FLIP ../../red/n5inj/instances/frz40.pg phase@44 q1=0 q2=11 t1=0 t2=19 broken
+  FLIP ../../red/n5inj/instances/frz40.pg phase@44 q1=0 q2=11 t1=0 t2=20 broken
+  FLIP ../../red/n5inj/instances/frz40.pg phase@44 q1=0 q2=11 t1=0 t2=21 broken
+  FLIP ../../red/n5inj/instances/frz40.pg phase@44 q1=0 q2=11 t1=0 t2=22 broken
+  FLIP ../../red/n5inj/instances/frz40.pg phase@44 q1=0 q2=11 t1=0 t2=23 broken
+  FLIP ../../red/n5inj/instances/frz40.pg phase@44 q1=0 q2=11 t1=0 t2=24 broken
+  FLIP ../../red/n5inj/instances/frz40.pg phase@44 q1=0 q2=11 t1=0 t2=25 broken
+  FLIP ../../red/n5inj/instances/frz40.pg phase@44 q1=0 q2=11 t1=0 t2=26 broken
+  FLIP ../../red/n5inj/instances/frz40.pg phase@44 q1=0 q2=11 t1=0 t2=27 broken
+  FLIP ../../red/n5inj/instances/frz40.pg phase@44 q1=0 q2=11 t1=0 t2=28 INTACT
+  FLIP ../../red/n5inj/instances/frz40.pg phase@44 q1=0 q2=11 t1=0 t2=29 INTACT
+  FLIP ../../red/n5inj/instances/frz40.pg phase@44 q1=11 q2=26 t1=17 t2=29 broken
+  FLIP ../../red/n5inj/instances/frz40.pg phase@44 q1=0 q2=11 t1=0 t2=30 INTACT
+  FLIP ../../red/n5inj/instances/frz40.pg phase@44 q1=11 q2=26 t1=17 t2=30 broken
+  FLIP ../../red/n5inj/instances/frz40.pg phase@44 q1=11 q2=26 t1=17 t2=31 broken
+  FLIP ../../red/n5inj/instances/frz40.pg phase@44 q1=11 q2=26 t1=17 t2=32 broken
+  FLIP ../../red/n5inj/instances/frz40.pg phase@44 q1=11 q2=26 t1=17 t2=33 broken
+  FLIP ../../red/n5inj/instances/frz40.pg phase@44 q1=11 q2=26 t1=17 t2=34 broken
+  FLIP ../../red/n5inj/instances/frz40.pg phase@44 q1=11 q2=26 t1=17 t2=35 broken
+broken=17 broken_onsets=2 flipcost_checks=139 flips=20 intact=3 intact_onsets=0 intact_with_rise=3 onsets=2
+FLIP PASS
