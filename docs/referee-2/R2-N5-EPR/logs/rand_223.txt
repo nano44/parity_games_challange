@@ -1,0 +1,21 @@
+MODE random 10000 4 12 223 3 MUT -
+EP0_checks: 35450
+LAMEND_checks: 409
+LAMEND_differs: 83
+LAMEND_differs_D0: 62
+LAMEND_differs_D1: 17
+LAM_checks: 78459
+REP_steps: 4392
+RIII_checks: 4392
+RII_checks: 4392
+RIV_checks: 23
+RI_checks: 78459
+epochs: 74476
+phases: 74067
+runs: 30000
+LAMEND_example: (3, 'random223:8579#3@3 |D| 3 len 2 n 12')
+max_len_by_D0: (4, 'random223:4530#2')
+max_len_by_D1: (2, 'random223:10#1')
+max_len_by_D2: (3, 'random223:8197#3')
+max_len_by_D3: (2, 'random223:8579#3')
+RESULT OK violations=0

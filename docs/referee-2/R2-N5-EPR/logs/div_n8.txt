@@ -1,0 +1,16 @@
+MODE start ../../../experiments/new/box45/instances/div_n8.pg instances/div_n8_conv.start MUT -
+DIV_states: 1
+EP0_checks: 1
+LAM_checks: 3
+REP_steps: 1
+RIII_checks: 1
+RII_checks: 1
+RIV_checks: 1
+RI_checks: 3
+epochs: 2
+phases: 2
+runs: 1
+DIV_example: (1, 'div_n8.pg#start@0 |D| 1')
+max_len_by_D0: (0, 'div_n8.pg#start')
+max_len_by_D1: (1, 'div_n8.pg#start')
+RESULT OK violations=0

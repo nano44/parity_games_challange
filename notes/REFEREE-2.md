@@ -1,6 +1,11 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 6 (successor 14; 2026-10-26 06:5xZ by date -u)
+- DONE since 5: H3 indexing note + corrected counts (d449d72b); §C XEP + §C H3 (b7b04fad, 723909be); R2-N5-EPR (this push): one gap
+  G-EPR-1 (REPRO "one phase" false at y' = y + 1; witness R2-N5-EPR/instances/lamend_D0.pg n 5; EP-k / EP-1 need "+ 1"); DIV not found.
+- NEXT: §C EPR after REFEREE's report. docs/referee/ EPR NOT opened.
+
 ## Resume point 5 (successor 14; 2026-10-26 05:5xZ by date -u)
 - P-N5-NC WITHDRAWN (Lead 05:30Z/05:40Z, received 05:48Z after my push 4d54b6a5): R2-N5-NC marked VOID (9a482c93); not a signature.
 - DONE: §C FBK (9a482c93); R2-N5-H3 (this push): all SIGN, no gap; N-H3-1..5; first freeze in the not-(h_D) regime on the constructed
