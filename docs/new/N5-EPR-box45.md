@@ -157,3 +157,14 @@ Reading (DATA): 81% of lib41's epochs have |D| ≤ 1 (7,099 of 8,727), and they 
 - Observation (CONJECTURE TIE-CYC, DATA only): at every tie state where it was recorded (148 of 148, seeds 11, 13, 14, 15; both DIV
   states included), u is its own honest cycle node (λ(u) = u, Ξ(u) =
   (u, ∅, 0)). Not proved; I see no reason in the definitions (Ξ(x) = Ξ(τ u) with U(x) ◁ U(τ u) is not contradictory when u is off its cycle).
+
+## 8. N5^τ on 𝒞^1O: the R48 (i) bound in data (DATA for (Στ); experiments/new/box45/n5tau.py; added 06:44Z by date -u)
+- n5tau.py runs N5^τ itself (not N5) on 𝒞^1O games and checks R48 (i) (f ≤ 1 + (n − 2)(2n − 1)) on every N5^τ phase; TIEKEEP counts the
+  iterations where N5^τ keeps τ although SPEC's S4b would move it (so the N5^τ run differs from the N5 run from there on).
+| sample | runs | phases | TIEKEEP (phases with one) | R48 (i) violations | max f per phase | max phase length (n) |
+| --- | --- | --- | --- | --- | --- | --- |
+| REFEREE-2's 503 𝒞^1O files (R2-N5-KW/files.lst), S3 + 2 random, seed 7 | 1,509 | 6,256 | 88 (46) | 0 | 37 | 112 (48) |
+| lib41's 𝒞^1O games (253), S3 + 2 random, seed 7 | 759 | 3,164 | 29 (16) | 0 | 33 | 112 (48) |
+| 5,000 random 𝒞^1O, n 5-20, games seed 22, S3 + 4 random, seed 9 | 25,000 | 61,452 | 613 (560) | 0 | 1 | 5 (15) |
+- Reading (DATA): N5^τ and N5 do differ on 𝒞^1O runs (the variant is exercised), and the N5^τ phases stay within R48 (i), with the same
+  maxima as N5 in R51's data (f 37, phase length 112). Data for (Στ), not a proof of it.

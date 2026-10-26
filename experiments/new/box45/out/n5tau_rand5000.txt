@@ -1,0 +1,1 @@
+games 5000: runs 25000, phases 61452, TIEKEEP 613, TIEPH 560, FB_V 0, FMAX 1, LMAX 5, LMAX_n 15
