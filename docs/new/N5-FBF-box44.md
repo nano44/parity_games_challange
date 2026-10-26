@@ -546,6 +546,16 @@ Sum: (N_ep − 1) + Σ_E [(4n(n − 1) + 1) + (n − 1) + n·n + X_SN^pre(E)]. �
 Reading (DATA): 39% of lib41's crossings are at epoch boundaries (now charged to N_ep); no epoch ever reaches its freeze; X_SN^pre is the
 remaining bulk (57%).
 
+## 14. DATA addendum: random start pairs (Lead 04:54Z, after L-SI's tcwult2_against_n8; run 04:58Z by date -u)
+Every PROVED statement of this doc, N5-DELTA-box44 and the packets P-N5-ACCEL / P-N5-FBK is per phase and start-free; until now the lane's
+checks used SPEC S3's start only. experiments/new/box44/randstarts.py re-runs rstick.py, altcheck.py, epoch.py, sgcheck.py, fbf.py, crd.py
+with start pairs drawn uniformly from the successor lists.
+| sample | violations of PROVED statements (R-STICK_D, SN-PREFIX_D, X-bound, ALT, EPOCH (c), (SG), CN-ONLY_D, EXIT-SWITCH_D, FREEZE-EXIT_D, FB-RED + late form, LAM_D, CR_D, C_D, FBL_D) | context |
+| --- | --- | --- |
+| lib41 (n ≤ 64) × 3 random starts (seed 7) | 0 | 5,461 phases; crossings 3,637 (2,006 at epoch boundaries, 1,537 X_SN^pre); σ̄(q) changes 2,542 (2,408 strict, 111 ties); max N_ep 31 (n 48), σ̄|Q repeats in 147 phases; max f per phase 23 (n 32); (SG) 15,349 checks; one cross-terminal fallback switch (DIFFSW 1) |
+| 1,500 random 𝒞^kO games (n 5-18) × 5 random starts (seed 8, games seed 111) | 0 | 21,010 phases; crossings 247 (192 at epoch boundaries); σ̄(q) changes 225; Odd-choice cycle node at an X_SN^D crossing: 63 |
+Reading (DATA): random starts reproduce the S3-start picture; no proved statement fails; the late regime (j ≥ n) is still never reached.
+
 ## 5. How a fallbacks-per-phase bound combines with the phase count (READING)
 - Phases. Lemma Φ (R47 (a), every game): λ changes ≤ n(n − 1); Corollary Φ-kO (P-N5-DUAL, N5-MULTI §1.4): distinct τ's ≤ ∏_{q∈Q}
   deg(q), so phases ≤ n(n − 1) + ∏_q deg(q). On 𝒞^kO with k fixed that is ≤ n(n − 1) + n^k, polynomial; for k growing with n it is
