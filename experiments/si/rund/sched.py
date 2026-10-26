@@ -12,6 +12,7 @@ FS_SPAN_V: an edge forbidden at k and again at some k' >= k + n (CONJECTURE FS);
 UNF_V: a charged change with no switch event into a charged edge after its forbidden state (PROVED impossible, note §16);
   UF_ONCE_V: an Even vertex with two U events in one run (CONJECTURE UF-ONCE); U_GT_NE: |U| > #Even (count only).
   U: switch events into an edge forbidden within the previous n - 1 states; SWITCH_INTO_FORB_V: a switch into an edge forbidden at that state (impossible).
+OFFUP_V: a forbidden (x, z) with equal cycle nodes in both frames at z and sigma(x) but offset(z) <= offset(sigma x) (PROVED impossible, §17).
 FZ_EQ_V: a forbidden (x, z) with Xi(z) = W(z) (PROVED impossible, note §16); forb_gate_*: gate classes of z and a = sigma(x) (first D-vertex on the W-play).
 MUT=1: schedule shifted by one (edge i at k-i); MUT=2: forbidden-ness ignored (CR-D without (i)). Usage: sched.py --one GAME [START] [-v] | --list FILE [KMIN] | --rand COUNT NLO NHI SEED (env K) (env RS random start pairs, NMAX)"""
 import sys, os, random
@@ -55,9 +56,16 @@ def forb(g, E, R):
             if z != a and ck(E, R["W"][z]) > ck(E, R["W"][a]) and not E.key(R["vs"][z]) > E.key(R["vs"][a]):
                 out.add((x, z))
                 if tuple(R["vs"][z]) == tuple(R["W"][z]): C["FZ_EQ_V"] += 1; VIOL.append(("FZ_EQ", x, z))
+                if R["vs"][z][0] == R["W"][z][0] and R["vs"][a][0] == R["W"][a][0]:
+                    if not off(E, R, z) > off(E, R, a): C["OFFUP_V"] += 1; VIOL.append(("OFFUP", x, z))
+                    else: C["offup_checked"] += 1
+                else: C["offup_cn_split"] += 1
                 gz, ga = gate(R, z), gate(R, a)
                 C["forb_gate_" + ("z_in_F" if gz is None else "a_in_F" if ga is None else "same" if gz == ga else "diff")] += 1
     return out
+
+def off(E, R, v):
+    return E.weight(R["W"][v][1]) - E.weight(R["vs"][v][1])
 
 def gate(R, v):
     return next((y for y in lasso(R["wn"], v)[0] if y in R["D"]), None)
@@ -75,6 +83,29 @@ def dirty(g, F, R, r, k, i0):
         st = k - q if MUT == "1" else k - 1 - q
         if MUT != "2" and st in F and (r[q], r[q + 1]) in F[st]: bad.append((q, (r[q], r[q + 1]), st))
     return bad or None
+
+def ustruct(g, E, name, rows, F, i, j, k, e):
+    """Structure of one unforbid-switch (k, e = (y, z)); f = the last state < k at which e is forbidden."""
+    y, z = e; f = max(ff for ff in range(max(i, k - g.n + 1), k) if e in F[ff]); a_f, a_k = rows[f]["s"][y], rows[k]["s"][y]
+    G = lambda kk, v: "F" if gate(rows[kk], v) is None else "g%d" % gate(rows[kk], v)
+    later = [kk for kk in range(k + 1, j) if any(x == y for x, _ in F[kk])]
+    C["U_y_forbidden_later"] += bool(later); C["U_y_gated_after"] += gate(rows[k + 1], y) is not None
+    C["U_from_F"] += gate(rows[k], a_k) is None
+    C["U_xi_z_rose"] += E.key(rows[k]["vs"][z]) > E.key(rows[f]["vs"][z]); C["U_a_changed"] += a_f != a_k
+    C["U_xi_a_rose"] += E.key(rows[k]["vs"][a_k]) > E.key(rows[f]["vs"][a_f])
+    C["U_D_changed"] += rows[k]["D"] != rows[f]["D"]
+    d0, d1 = off(E, rows[k], y), off(E, rows[k + 1], y)
+    C["U_offset_up"] += d1 > d0; C["U_offset_same"] += d1 == d0; C["U_offset_down"] += d1 < d0
+    upk = off(E, rows[k], z) > off(E, rows[k], a_k)
+    C["U_offset_up_at_k"] += upk
+    skey = lambda kk: (frozenset(rows[kk]["D"]), tuple((u, tuple(rows[kk]["vs"][u]), tuple(rows[kk]["W"][u])) for u in sorted(rows[kk]["D"])))
+    bd = any(skey(kk) != skey(f) for kk in range(f, k + 2))
+    up = d1 > d0
+    C["U_cls_" + ("up" if up else "boundary" if bd else "OTHER")] += 1
+    if not up and not bd: VIOL.append(("U_OTHER", name, i, k, e))
+    C["U_upk_noboundary"] += upk and not any(skey(kk) != skey(f) for kk in range(f, k + 1))
+    print(f"  USTRUCT {name} k0={i} k={k - i} f={f - i} y={y} z={z} a_f={a_f}({G(f, a_f)}) a_k={a_k}({G(k, a_k)}) z@f={G(f, z)} z@k={G(k, z)}"
+          f" y@k+1={G(k + 1, y)} D_f={sorted(rows[f]['D'])} D_k={sorted(rows[k]['D'])} y_forbidden_later={later[:3]}")
 
 def run(g, E, name, rows, i, j):
     C["runs"] += 1; C["states"] += j - i + 1
@@ -117,7 +148,9 @@ def run(g, E, name, rows, i, j):
             if g.owner[x] != 0 or rows[k]["s"][x] == rows[k + 1]["s"][x]: continue
             sw += 1; e = (x, rows[k + 1]["s"][x])
             if e in F[k]: C["SWITCH_INTO_FORB_V"] += 1; VIOL.append(("SWITCH_INTO_FORB", name, k, e))
-            if any(e in F[f] for f in range(max(i, k - g.n + 1), k)): U.add((k, e))
+            if any(e in F[f] for f in range(max(i, k - g.n + 1), k)):
+                U.add((k, e))
+                if os.environ.get("USTRUCT") == "1": ustruct(g, E, name, rows, F, i, j, k, e)
     C["switches"] += sw; C["U"] += len(U); C["max_U_run"] = max(C["max_U_run"], len(U))
     Ux = Counter(e[0] for _, e in U)
     if Ux:
