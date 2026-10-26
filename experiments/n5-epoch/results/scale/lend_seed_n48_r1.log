@@ -1,0 +1,4 @@
+START fit (55, 3) n 48
+BEST step 1089 fit (56, 3) t 162s
+BEST step 4026 fit (57, 3) t 668s
+END steps 4355 best (57, 3) n 48 -> results/scale/lend_seed_n48_r1.pg

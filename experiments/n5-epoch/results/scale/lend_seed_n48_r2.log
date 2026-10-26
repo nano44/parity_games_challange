@@ -1,0 +1,19 @@
+START fit (55, 3) n 48
+BEST step 1762 fit (56, 3) t 261s
+BEST step 2112 fit (57, 3) t 316s
+BEST step 2482 fit (58, 3) t 380s
+BEST step 2574 fit (59, 3) t 398s
+BEST step 2576 fit (60, 3) t 398s
+BEST step 2651 fit (62, 3) t 411s
+BEST step 2672 fit (63, 3) t 415s
+BEST step 2678 fit (64, 3) t 416s
+BEST step 2743 fit (65, 3) t 429s
+BEST step 2907 fit (66, 3) t 462s
+BEST step 3275 fit (67, 3) t 535s
+BEST step 3302 fit (68, 3) t 541s
+BEST step 3432 fit (69, 3) t 570s
+BEST step 3445 fit (70, 3) t 573s
+BEST step 3453 fit (71, 3) t 575s
+BEST step 3531 fit (72, 3) t 593s
+BEST step 4122 fit (72, 4) t 718s
+END steps 4133 best (72, 4) n 48 -> results/scale/lend_seed_n48_r2.pg

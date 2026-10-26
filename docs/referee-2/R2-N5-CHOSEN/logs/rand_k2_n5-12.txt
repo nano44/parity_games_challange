@@ -1,0 +1,34 @@
+MODE random 3000 5 12 1951 2 3 MUT - BUDGET 300000
+CH_TOG: 2
+CH_TOG_with_event: 2
+CH_checks: 16
+CH_source_event: 16
+ENGXI_checks: 21058
+EV_CYC: 17
+EV_RELAY: 16
+EV_ROUTE: 222
+EV_x: 0
+KADD_checks: 182266
+KORD_checks: 688526
+RC_chains: 16
+RC_end_CYC: 1
+RC_end_ROUTE: 15
+RCa_checks: 211
+RCb_checks: 209
+TVG_checks: 36
+TV_H_reached: 23481
+TV_H_reached_Qc_ge2: 7012
+TV_H_reached_before_end: 563
+TV_classes: 27531
+TV_transitions: 575
+TV_transitions_Qc_ge1: 368
+TV_transitions_Qc_ge1_choice: 239
+TV_transitions_Qc_ge2: 273
+phases: 19792
+runs: 9000
+states: 21058
+RC_longest: (1, 'random1951:363#2@0 |Q_c| 2')
+RCb_max_rho_class_phase: (3, 'random1951:2619#1@1 |Q_c| 2 ROUTE 2 CYC 0 TOG 0')
+TV_H_max_Qc: (2, 'random1951:1#0@0 n 5')
+TV_frozen_span: (2, 'random1951:376#1@0 |Q_c| 2')
+RESULT OK violations=0

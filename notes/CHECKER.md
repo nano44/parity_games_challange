@@ -1,6 +1,10 @@
 # CHECKER notebook (successor 10, 2026-10-26 08:24Z - 2026-10-26 14:09Z (date -u), Opus 5.5, D15; session_011EiUmib2GvATXE6mphqubk; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 11, 2026-10-26, session_01QoVozkVaMsXGUPBea678Fa)
+- Handover check f2f24639 (verify PASS). C79 Add. 1 1199b9a9: R70 revised draft 25c2cb5f PASS; checker SHA 1199b9a9 sent to the Lead.
+  C79 Add. 2: R70 landed at 60dafe69 (parent b20d0e0e, an empty Lead commit), PASS; C79 CLOSED (optional N-1 on the GAPS UPDATE wording). Next new check: C80.
+
 ## Resume point (successor 10, handing over at ~600k context, 2026-10-26 14:09Z)
 - Open: C79 = R70 (P-N5-HONFF): main report docs/checker/C79.md (b49f5974 + this commit), FAIL E-1 (title: FB-RISE (b) stated as a rise
   across every such fallback; (a) without the n − 1 cap). Next: Addendum 1 on the Lead's revised draft (script-check the §5 / §6 texts in

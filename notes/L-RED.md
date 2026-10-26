@@ -24,6 +24,12 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   shortest-path network; Even vertices ping-pong between the gate (S4a, W) and Xi-best (fallback). Climbs do not scale (T 125 at n 48).
   2-copy composition (compose.py) T 54 vs 41: not multiplicative.
 - Box 55 (2): hffx.py (own exact LEV, DFS + BFS pruning): ffin4_n24, ffin5_n32, j10_n24 PASS; FB-RISE / HON-FF proofs re-derived, no gap.
+- Box 55 addendum (R88 §5, 72f3b764): FB-C quantities on pins (f 8/8/6/6; distinct fallback configs 5/4/2/2; max per config <= 4);
+  IMPLICATION (FB-C under review): fixed-k super-poly phase needs a super-poly FALLBACK-FREE run. Pins core41_n40, comp54_n80.
+- Box 56: R89 docs/red/R89-fallback-free-runs.md (70d02edd): R_max 14/27/49/34/22 at n 16/24/32/40/48; best run49_n32 (8fcaeac5, C^1O);
+  N_split ~ |S|; U(S) <= 18; ROOT-PIECE cuts (cuts.py) no violation; FB-C climb best 10 per config. Tools rstat.py, cuts.py, fbconf.py.
+- RESUME POINT (if handover): (2) HON-FF independent check running on L-NEW's 735-file list + lib41, n <= 24, RS 4 (hffx.py,
+  logs in scratchpad: summarise into docs/red/R90 when done); MUT=1 control still to run; then the Lead's next pick.
 - Trap (successor 21): message header times were ESTIMATED (one in the future: "13:50Z" at 13:43Z); corrected to the Lead 13:43Z.
   Check: take every header from `date -u` in the same command batch as the send.
 - Trap: running jobs writing logs inside the repo keep the tree dirty (stop hook); write live logs to the scratchpad, commit summaries.

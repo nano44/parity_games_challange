@@ -1,0 +1,78 @@
+# box 13 scaling climbs: budget 15 s x n (fresh and seeded, 3 repeats), budget doubling at n 32; run: scale.sh
+climb.py nep 32 1 2420 --secs 1920 --seed-pg instances/nep56_n32.pg:instances/nep56_n32.start --out results/scale/dbl_nep_n32_b1920
+climb.py lend2 32 1 2520 --secs 1920 --seed-pg instances/lend55_n32.pg:instances/lend55_n32.start --out results/scale/dbl_lend_n32_b1920
+climb.py nep 64 3 741 --secs 960 --out results/scale/nep_fresh_n64_r1
+climb.py lend2 64 4 841 --secs 960 --out results/scale/lend_fresh_n64_r1
+climb.py nep 64 1 941 --secs 960 --seed-pg ../../experiments/red/rec0/instances/nep90_n40.pg:../../experiments/red/rec0/instances/nep90_n40.start.json --out results/scale/nep_seed_n64_r1
+climb.py lend2 64 1 1041 --secs 960 --seed-pg instances/lend55_n32.pg:instances/lend55_n32.start --out results/scale/lend_seed_n64_r1
+climb.py nep 64 3 742 --secs 960 --out results/scale/nep_fresh_n64_r2
+climb.py lend2 64 4 842 --secs 960 --out results/scale/lend_fresh_n64_r2
+climb.py nep 64 1 942 --secs 960 --seed-pg ../../experiments/red/rec0/instances/nep90_n40.pg:../../experiments/red/rec0/instances/nep90_n40.start.json --out results/scale/nep_seed_n64_r2
+climb.py lend2 64 1 1042 --secs 960 --seed-pg instances/lend55_n32.pg:instances/lend55_n32.start --out results/scale/lend_seed_n64_r2
+climb.py nep 64 3 743 --secs 960 --out results/scale/nep_fresh_n64_r3
+climb.py lend2 64 4 843 --secs 960 --out results/scale/lend_fresh_n64_r3
+climb.py nep 64 1 943 --secs 960 --seed-pg ../../experiments/red/rec0/instances/nep90_n40.pg:../../experiments/red/rec0/instances/nep90_n40.start.json --out results/scale/nep_seed_n64_r3
+climb.py lend2 64 1 1043 --secs 960 --seed-pg instances/lend55_n32.pg:instances/lend55_n32.start --out results/scale/lend_seed_n64_r3
+climb.py nep 32 1 1460 --secs 960 --seed-pg instances/nep56_n32.pg:instances/nep56_n32.start --out results/scale/dbl_nep_n32_b960
+climb.py lend2 32 1 1560 --secs 960 --seed-pg instances/lend55_n32.pg:instances/lend55_n32.start --out results/scale/dbl_lend_n32_b960
+climb.py nep 48 3 581 --secs 720 --out results/scale/nep_fresh_n48_r1
+climb.py lend2 48 4 681 --secs 720 --out results/scale/lend_fresh_n48_r1
+climb.py nep 48 1 781 --secs 720 --seed-pg ../../experiments/red/rec0/instances/nep90_n40.pg:../../experiments/red/rec0/instances/nep90_n40.start.json --out results/scale/nep_seed_n48_r1
+climb.py lend2 48 1 881 --secs 720 --seed-pg instances/lend55_n32.pg:instances/lend55_n32.start --out results/scale/lend_seed_n48_r1
+climb.py nep 48 3 582 --secs 720 --out results/scale/nep_fresh_n48_r2
+climb.py lend2 48 4 682 --secs 720 --out results/scale/lend_fresh_n48_r2
+climb.py nep 48 1 782 --secs 720 --seed-pg ../../experiments/red/rec0/instances/nep90_n40.pg:../../experiments/red/rec0/instances/nep90_n40.start.json --out results/scale/nep_seed_n48_r2
+climb.py lend2 48 1 882 --secs 720 --seed-pg instances/lend55_n32.pg:instances/lend55_n32.start --out results/scale/lend_seed_n48_r2
+climb.py nep 48 3 583 --secs 720 --out results/scale/nep_fresh_n48_r3
+climb.py lend2 48 4 683 --secs 720 --out results/scale/lend_fresh_n48_r3
+climb.py nep 48 1 783 --secs 720 --seed-pg ../../experiments/red/rec0/instances/nep90_n40.pg:../../experiments/red/rec0/instances/nep90_n40.start.json --out results/scale/nep_seed_n48_r3
+climb.py lend2 48 1 883 --secs 720 --seed-pg instances/lend55_n32.pg:instances/lend55_n32.start --out results/scale/lend_seed_n48_r3
+climb.py nep 40 3 501 --secs 600 --out results/scale/nep_fresh_n40_r1
+climb.py lend2 40 4 601 --secs 600 --out results/scale/lend_fresh_n40_r1
+climb.py nep 40 1 701 --secs 600 --seed-pg ../../experiments/red/rec0/instances/nep90_n40.pg:../../experiments/red/rec0/instances/nep90_n40.start.json --out results/scale/nep_seed_n40_r1
+climb.py lend2 40 1 801 --secs 600 --seed-pg instances/lend55_n32.pg:instances/lend55_n32.start --out results/scale/lend_seed_n40_r1
+climb.py nep 40 3 502 --secs 600 --out results/scale/nep_fresh_n40_r2
+climb.py lend2 40 4 602 --secs 600 --out results/scale/lend_fresh_n40_r2
+climb.py nep 40 1 702 --secs 600 --seed-pg ../../experiments/red/rec0/instances/nep90_n40.pg:../../experiments/red/rec0/instances/nep90_n40.start.json --out results/scale/nep_seed_n40_r2
+climb.py lend2 40 1 802 --secs 600 --seed-pg instances/lend55_n32.pg:instances/lend55_n32.start --out results/scale/lend_seed_n40_r2
+climb.py nep 40 3 503 --secs 600 --out results/scale/nep_fresh_n40_r3
+climb.py lend2 40 4 603 --secs 600 --out results/scale/lend_fresh_n40_r3
+climb.py nep 40 1 703 --secs 600 --seed-pg ../../experiments/red/rec0/instances/nep90_n40.pg:../../experiments/red/rec0/instances/nep90_n40.start.json --out results/scale/nep_seed_n40_r3
+climb.py lend2 40 1 803 --secs 600 --seed-pg instances/lend55_n32.pg:instances/lend55_n32.start --out results/scale/lend_seed_n40_r3
+climb.py nep 32 3 421 --secs 480 --out results/scale/nep_fresh_n32_r1
+climb.py lend2 32 4 521 --secs 480 --out results/scale/lend_fresh_n32_r1
+climb.py nep 32 1 621 --secs 480 --seed-pg instances/nep56_n32.pg:instances/nep56_n32.start --out results/scale/nep_seed_n32_r1
+climb.py lend2 32 1 721 --secs 480 --seed-pg instances/lend55_n32.pg:instances/lend55_n32.start --out results/scale/lend_seed_n32_r1
+climb.py nep 32 3 422 --secs 480 --out results/scale/nep_fresh_n32_r2
+climb.py lend2 32 4 522 --secs 480 --out results/scale/lend_fresh_n32_r2
+climb.py nep 32 1 622 --secs 480 --seed-pg instances/nep56_n32.pg:instances/nep56_n32.start --out results/scale/nep_seed_n32_r2
+climb.py lend2 32 1 722 --secs 480 --seed-pg instances/lend55_n32.pg:instances/lend55_n32.start --out results/scale/lend_seed_n32_r2
+climb.py nep 32 3 423 --secs 480 --out results/scale/nep_fresh_n32_r3
+climb.py lend2 32 4 523 --secs 480 --out results/scale/lend_fresh_n32_r3
+climb.py nep 32 1 623 --secs 480 --seed-pg instances/nep56_n32.pg:instances/nep56_n32.start --out results/scale/nep_seed_n32_r3
+climb.py lend2 32 1 723 --secs 480 --seed-pg instances/lend55_n32.pg:instances/lend55_n32.start --out results/scale/lend_seed_n32_r3
+climb.py nep 32 1 980 --secs 480 --seed-pg instances/nep56_n32.pg:instances/nep56_n32.start --out results/scale/dbl_nep_n32_b480
+climb.py lend2 32 1 1080 --secs 480 --seed-pg instances/lend55_n32.pg:instances/lend55_n32.start --out results/scale/dbl_lend_n32_b480
+climb.py nep 24 3 341 --secs 360 --out results/scale/nep_fresh_n24_r1
+climb.py lend2 24 4 441 --secs 360 --out results/scale/lend_fresh_n24_r1
+climb.py nep 24 1 541 --secs 360 --seed-pg ../../experiments/red/rec0/instances/nep24_n20.pg:../../experiments/red/rec0/instances/nep24_n20.start.json --out results/scale/nep_seed_n24_r1
+climb.py lend2 24 1 641 --secs 360 --seed-pg instances/lend27_n24.pg:instances/lend27_n24.start --out results/scale/lend_seed_n24_r1
+climb.py nep 24 3 342 --secs 360 --out results/scale/nep_fresh_n24_r2
+climb.py lend2 24 4 442 --secs 360 --out results/scale/lend_fresh_n24_r2
+climb.py nep 24 1 542 --secs 360 --seed-pg ../../experiments/red/rec0/instances/nep24_n20.pg:../../experiments/red/rec0/instances/nep24_n20.start.json --out results/scale/nep_seed_n24_r2
+climb.py lend2 24 1 642 --secs 360 --seed-pg instances/lend27_n24.pg:instances/lend27_n24.start --out results/scale/lend_seed_n24_r2
+climb.py nep 24 3 343 --secs 360 --out results/scale/nep_fresh_n24_r3
+climb.py lend2 24 4 443 --secs 360 --out results/scale/lend_fresh_n24_r3
+climb.py nep 24 1 543 --secs 360 --seed-pg ../../experiments/red/rec0/instances/nep24_n20.pg:../../experiments/red/rec0/instances/nep24_n20.start.json --out results/scale/nep_seed_n24_r3
+climb.py lend2 24 1 643 --secs 360 --seed-pg instances/lend27_n24.pg:instances/lend27_n24.start --out results/scale/lend_seed_n24_r3
+climb.py nep 16 3 261 --secs 240 --out results/scale/nep_fresh_n16_r1
+climb.py lend2 16 4 361 --secs 240 --out results/scale/lend_fresh_n16_r1
+climb.py lend2 16 1 561 --secs 240 --seed-pg instances/lend13_n16.pg:instances/lend13_n16.start --out results/scale/lend_seed_n16_r1
+climb.py nep 16 3 262 --secs 240 --out results/scale/nep_fresh_n16_r2
+climb.py lend2 16 4 362 --secs 240 --out results/scale/lend_fresh_n16_r2
+climb.py lend2 16 1 562 --secs 240 --seed-pg instances/lend13_n16.pg:instances/lend13_n16.start --out results/scale/lend_seed_n16_r2
+climb.py nep 16 3 263 --secs 240 --out results/scale/nep_fresh_n16_r3
+climb.py lend2 16 4 363 --secs 240 --out results/scale/lend_fresh_n16_r3
+climb.py lend2 16 1 563 --secs 240 --seed-pg instances/lend13_n16.pg:instances/lend13_n16.start --out results/scale/lend_seed_n16_r3
+climb.py nep 32 1 740 --secs 240 --seed-pg instances/nep56_n32.pg:instances/nep56_n32.start --out results/scale/dbl_nep_n32_b240
+climb.py lend2 32 1 840 --secs 240 --seed-pg instances/lend55_n32.pg:instances/lend55_n32.start --out results/scale/dbl_lend_n32_b240

@@ -1,0 +1,8 @@
+START fit (56, 57) n 32
+BEST step 464 fit (57, 58) t 42s
+BEST step 980 fit (57, 59) t 90s
+BEST step 1293 fit (58, 59) t 120s
+BEST step 6657 fit (59, 60) t 651s
+BEST step 8752 fit (60, 61) t 871s
+BEST step 9393 fit (62, 63) t 942s
+END steps 9533 best (62, 63) n 32 -> results/scale/dbl_nep_n32_b960.pg

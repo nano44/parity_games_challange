@@ -184,3 +184,100 @@ FREEZE-A's hypothesis. In a piece, transitions before s + L number ≤ L ≤ |U|
   - f per phase on general games (L-NEW), and the root's non-D-direct states (on nep76 the root routes through a relay for 6 + 6 transitions).
 - Labels. PROVED (lane, unrefereed): BF-F_D, FREEZE-A, ROOT-PIECE. DATA: §1's W(r) / R_r / split columns, §5. READING: §1's map and its
   consequence, §4's last remark, §5's last item, §6's first item. OPEN: G_c, the relays' ROUTE events, f.
+
+## 7. The D-leaves G_c (Lead's NEXT (a), 14:25Z): data first, a decomposition, no bound (DATA, PROVED (elementary), READING, OPEN)
+Written 2026-10-26T14:28Z (date -u). Script experiments/si/root/dleave.py; logs root/logs/dleave_*.txt.
+A D-LEAVE at u is an in-phase transition t → t+1 with u ∈ D_t ∖ D_{t+1} (σ̄_{t+1}(u) = τ(u) ≠ σ̄_t(u)); a D-ENTER is the reverse. Every S4a
+A-gain of type DLEAVE contains a D-leave. Per leave: y1 := σ̄_t(u) and its exit e1 (first vertex of Q_c ∪ {c} on y1's play at t); τ(u) and its
+exit e2; COPY if e1 ≠ c and e1 has a ρ event at t → t+1 (CHOSEN's mechanism: the relay follows its chosen exit), OWN otherwise.
+### 7.1 DATA
+| set | leaves | at fallbacks | S4a, OWN, e1 = c (u "D-direct") | S4a, COPY | S4a, OWN, e1 a terminal | root ρ at the same transition | max leaves of one u per phase |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| nep90 phase@4 | 26 | 6 | 15 | 5 | 0 | 10 | 9 |
+| nep76 phase@9 | 21 | 2 | 11 | 6 | 2 | 15 | 8 |
+| lib41 (KMIN 2), S3 + 4 | 148 | 4 | 55 | 41 | 48 | 141 | 2 |
+| lib2o, S3 + 4 | 39 | 0 | 32 | 3 | 4 | 37 | 2 |
+- Leaves ≤ enters + 1 per vertex and phase (checked: LV_GT_EN_V = 0, a consistency check).
+- Outside nep90 / nep76 a vertex leaves D at most twice per phase. On the two long instances the relays 1, 6, 8, 17 (37) leave 4-9 times each.
+- The commonest S4a leave (15 of 20 on nep90, 55 of 144 on lib41) is by a relay that is momentarily D-DIRECT: its chosen option and τ(u)'s
+  option both exit at c, and Odd's best reply switches between two direct options (nep90: u = 6 between 38 and 25, u = 8 between 36 / 14 and
+  30). The relay is then a second root of the class, with its own direct ROUTE events.
+- So the Lead's first question has a negative answer in data: on nep90, 15 of the 20 S4a leaves are not copies of a root event (no ρ at the root
+  at that transition in 16 of the 26 leaves).
+### 7.2 Decomposition (PROVED, elementary; from landed lemmas). SUPERSEDED by packet P-N5-ROOT-box20 §5 Lemma DL-SPLIT (clean changes, TOG
+alternative at e1, as in Lemma CHOSEN); case (ii) below is stated there with its proof.
+For an S4a D-leave at u at t → t+1, with u on no honest cycle at t and t + 1:
+- (i) COPY: e1 ≠ c and κ(e1) changes at t → t+1. Then the transition carries a ROUTE, CYC or TOG event of the class (Corollary RELAY-CHAIN,
+  note §26.2, from e1's event).
+- (ii) OWN with u's class exit paths and exits unchanged: then every option value of u is κwt(path) + κ(exit) with the same paths, exits other
+  than e1 can only rise (in-phase monotonicity), y1's value is unchanged, so y1 stays a minimiser and σ̄ changes only between tied minimisers:
+  the change is a TIE in the sense of RESULTS R61 (e). DATA (dleave.py, y_* counters): a RELAY leave is always a COPY (RELAY-and-OWN: 0 on
+  nep90, nep76, lib41, lib2o), so case (ii) never occurred.
+- (iii) otherwise u has a ROUTE event at t → t+1.
+So every S4a D-leave transition carries a ROUTE / CYC / TOG event of its class or a tie; at fallbacks, at most |Q_c| leaves per fallback.
+Hence G_c ≤ SWITCH-gains + f·|Q_c| + #(S4a transitions with a class ROUTE / CYC / TOG event or a tie at a leaving vertex).
+### 7.3 READING: why this does not close, and what would
+- With ROOT-PIECE this is self-referential: ρ_r ≤ (f + G_c + 1)·B and G_c ≤ f·|Q_c| + (ROUTE / CYC / TOG transitions) + SW, and the ROUTE
+  events are ρ again. Nothing here bounds the product; nep90's 26 leaves are 15 D-direct own routes of relays + 5 copies + 6 at fallbacks.
+- What the D-direct leaves are: two "roots" of one class whose own direct routes interleave. In FREEZE-A each one alone freezes in a piece, but a
+  leave of one cuts the other's piece. A joint statement would need FREEZE-A on a region that does NOT lose its freeze at a D-leave of a
+  D-direct terminal u. At such a leave the vertices gated at u keep their W-play (σ, τ unchanged by the leave itself) and their Ξ rises to W;
+  so the cut is harmless in the W frame, and the obstruction is again Fact B across gates (§1): a W-frame Bellman-Ford step needs the Ξ-order of
+  two options (it decides the arena) to agree with their W-order, which fails when one option is gated at u and the other is not.
+- OPEN: a count of D-direct own leaves (two interleaving direct roots), a count of COPY leaves beyond "≤ |Q_c| × root events", and the
+  SWITCH gains. CONJECTURE: none stated (data outside nep90 / nep76 is too small: ≤ 2 leaves per vertex per phase).
+
+## 8. GO (x) (Lead 14:40Z): FREEZE-A on A ∪ {D-direct gates} FAILS in its naive form; the obstruction is the gate offset (Lemma GATE-SHIFT, PROVED; DATA; counterexample shape GATE-LAG for L-RED)
+Written 2026-10-26T14:45Z (date -u). Script experiments/si/root/bfgate.py; logs root/logs/bfgate_*.txt; scratch probe for §8.2's grouping.
+### 8.1 Setting
+DD_t := {u ∈ D_t ∩ U : σ̄_t(u) ∈ A_t and τ(u) ∈ A_t} (D-DIRECT GATES: both continuations direct). B_t := A_t ∪ {z ∈ U : the first D_t-vertex of
+z's (σ_t, τ)-play lies in DD_t}. For u ∈ DD_t, its OFFSET Δ_t(u) := M_t(τ u) − M_t(σ̄_t u).
+### 8.2 DATA: the naive extension fails, at the root's own gate region
+- BFG (BF-F_D's inequality M_{t+1}(z) ≥ wt(z) + M_t(x) at Even z ∈ (B_t ∖ A_t) ∩ B_{t+1}, x ∈ succ(z) ∩ U):
+  | set | checks | failures | cuts (fallbacks + A-gains) | cuts (fallbacks + B-gains) | long B-pieces, freeze failures |
+  | --- | --- | --- | --- | --- | --- |
+  | nep90 phase@4 | 948 | 188 | 22 | 18 | 0, – |
+  | nep76 phase@9 | 639 | 138 | 15 | 25 | 0, – |
+  | lib2o, S3 + 4 | 7,425 | 387 | 117 | 89 | 4, 0 |
+  | lib41 (KMIN 2), S3 + 4 | 8,448 | 568 | 213 | 163 | 26, 0 |
+- nep90, grouped (scratch probe): ALL 188 failures are in the gate region of the ROOT 0 itself (0 ∈ DD at those states), every one at an edge
+  (z, x) that is Ξ-improving at t with x ∈ A_t that z does not take because W_t(σ_t z) ▷ W_t(x). The gap level of the root (top rank of
+  P(Ξ(0)) Δ P(W(0))) is 36-39 at n = 40 at the failing states. The gate region of the D-direct relay 6: 24 checks, 0 failures.
+- So B is not a better region: it loses the Bellman-Ford step exactly where the root's W-value runs ahead of its Ξ-value (the ping-pong of §1),
+  and on nep76 it even has more cuts than A (25 > 15).
+### 8.3 Lemma GATE-SHIFT (PROVED, every game)
+Statement. Fix a phase and class c, U := U_c.
+- (a) At a state t, for z ∈ U whose first D_t-vertex u := u(z) lies in DD_t: W_t(z) has cycle node c, and M_t(z) = MW_t(z) − Δ_t(u), with
+  Δ_t(u) ≥ 0.
+- (b) At an in-phase S4a transition t → t+1, for Even z ∈ U, z ≠ c, whose first D_{t+1}-vertex u lies in DD_{t+1}, and every successor x ∈ U of z
+  whose (σ_t, τ)-play avoids z: MW_{t+1}(z) ≥ wt(z) + M_t(x); hence M_{t+1}(z) ≥ wt(z) + M_t(x) − Δ_{t+1}(u).
+Proof.
+- (a) Let π be z's (σ_t, τ)-path before u. Its Odd vertices are not in D_t, so σ̄_t = τ there, and z's honest play is π, u, then σ̄_t(u)'s play; z's
+  W-play is π, u, then τ(u)'s play. Both continuations lie in A_t ⊆ F_D(t), hence avoid D_t and are disjoint from π (π's vertices lie in R_D(t))
+  and avoid u. τ(u)'s play is its honest play and W = Ξ there (G_D (a)), with cycle node c. So both plays are lassos ending on c's cycle, z is on
+  neither cycle, and summing wt over distinct vertices (as in §2 (ii)): M_t(z) = wt(π) + wt(u) + M_t(σ̄_t u) and MW_t(z) = wt(π) + wt(u) +
+  M_t(τ u). τ(u)'s play avoids D_t ∋ u, so τ(u) ∈ Y^u_t; u is on no honest cycle (σ̄_t(u)'s play avoids u), so by κ-Y-FORM_D the minimum of κ
+  over Y^u_t is attained at σ̄_t(u), and κ compares M first: M_t(σ̄_t u) ≤ M_t(τ u). So Δ_t(u) ≥ 0 and the identity holds.
+- (b) By (a) at t + 1, W_{t+1}(z) has cycle node c and M_{t+1}(z) = MW_{t+1}(z) − Δ_{t+1}(u); it remains to show MW_{t+1}(z) ≥ wt(z) + M_t(x).
+  - If M_t(x) ≤ M_t(σ_t z): (Aκ) and XW give wt(z) + M_t(x) ≤ M_t(z) ≤ MW_t(z) when W_t(z) has cycle node c (XW: Ξ_t(z) ⊴ W_t(z); if the cycle
+    nodes differed, reward(λ(W_t z)) > reward(c)); and WM-G (RESULTS R62 (d): W never drops at an in-phase S4a step) gives W_{t+1}(z) ⊵ W_t(z).
+    If W_t(z) had a cycle node of larger reward, W_{t+1}(z) ⊵ W_t(z) would contradict λ(W_{t+1} z) = c; so MW_{t+1}(z) ≥ MW_t(z) ≥ wt(z) +
+    M_t(x) by (M1κ).
+  - Otherwise (z, x) ∈ Iσ_t, σ″ := σ_t[z ↦ x] lies in the arena H_t, and §2 (i)'s argument applies verbatim with W_{t+1}(z) in place of Ξ_{t+1}(z)
+    (it used only that W_{t+1}(z) has cycle node c): MW_{t+1}(z) ≥ wt(z) + MW_t(x) ≥ wt(z) + M_t(x). □
+- DATA (bfgate.py, GS_A_V / GS_B_V): (a) 684 / 404 / 4,366 / 5,420 checks and (b) 943 / 661 / 5,868 / 7,044 checks on nep90 / nep76 /
+  lib2o / lib41 (S3 + 4, KMIN 2), 0 failures. The control is BFG itself, i.e. (b) with Δ := 0: it fails 188 / 138 / 387 / 568 times (§8.2).
+- So inside a D-direct gate region the honest Bellman-Ford step holds up to the gate's offset Δ(u), and the W-step holds exactly. A FREEZE on B
+  would need Δ constant on the piece; after A's freeze (FREEZE-A (b)) Δ(u) takes ≤ deg(u) values (both terms are frozen values of A-vertices),
+  but in a piece that has not yet frozen, Δ(u) moves with every root ρ event.
+### 8.4 The obstruction, named (READING; counterexample SHAPE GATE-LAG for L-RED, not a counterexample to any statement of N5)
+GATE-LAG: a D-direct gate u with a large offset Δ(u) (its W-continuation τ(u) beats Odd's best reply σ̄(u) at a high level), an Even z in u's
+gate region, and a Ξ-improving direct option x of z with M(x) − M(σ z) < Δ(u). S4a keeps z on the gate (W-best), so Ξ(z) lags its direct
+Bellman-Ford value by up to Δ(u). The lag is released when Δ(u) shrinks (σ̄(u) rises: a ρ event at u) or u leaves D; a fallback (Ξ-best) also
+releases it and moves z off the gate. This is §1's ping-pong in Bellman-Ford terms, and it is where "Fact B across gates" fails: z's two
+options sit behind different gates (u and none), and their Ξ- and W-orders disagree by exactly Δ(u). nep90 phase@4: u = 0 (the root),
+gap level rank 36-39 of 40, 188 lagging (z, x) pairs over the phase (z ∈ {12, 23, 34, 36, …}).
+- What a proof would need: a bound on how often Δ(u) changes inside a piece, i.e. on ρ at u itself. For the root that is the quantity we
+  started from. For relays (small offsets in data: gate 6 on nep90, 0 lags), GATE-SHIFT (b) would give a freeze on their gate regions once
+  their offsets are constant, but the relays' D-leaves are not where the cuts come from on nep90 alone (§7.1: they are 15 of 26 leaves).
+- Labels: PROVED (lane): GATE-SHIFT (a), (b). DATA: §8.2. READING: §8.4. OPEN: a freeze on any region that contains the root's gate region.

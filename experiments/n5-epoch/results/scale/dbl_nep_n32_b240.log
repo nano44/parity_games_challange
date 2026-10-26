@@ -1,0 +1,3 @@
+START fit (56, 57) n 32
+BEST step 2579 fit (56, 58) t 231s
+END steps 2664 best (56, 58) n 32 -> results/scale/dbl_nep_n32_b240.pg
