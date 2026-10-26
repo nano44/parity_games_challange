@@ -24,3 +24,5 @@ transitions, |Q| 3; out/nconf_long121.txt, out/retfb_long121.txt.
   trivial (out/ncclimb_k*_s*.txt: best (4, 4)); seeded from nep90 / nep76 (S3 scores (10, 10)): out/ncclimb_nep*_s*.txt, best games in out/climb/.
 - newconf.py GAME [START] / rootrel.py GAME [START]: new configurations of the longest phase (NEWPAIR / RECOMB); root × relay split (root = most
   changing vertex of Q, R = σ̄ on the rest) with each R's root sequence. out/rootrel_newconf.txt (nep90, nep76, long121 with starts; pft34 S3).
+- fsrestrict.py STARTS SEED (--list FILE | files) [--nmax N] [--start F]: the frozen-side u-run restriction G^{u|J} (N5-NCONF §9): XI_V, REP_V must be
+  0; MUT=1 must bite. out/fsrestrict_liball_n34_k2.txt, out/fsrestrict_liball_n34_MUT.txt, out/fsrestrict_long3.txt.

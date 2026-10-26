@@ -445,27 +445,38 @@ Every answer measured from the repository; commands named.
    fetched ref, so the pin cannot be checked yet; I checked the packet by sha1 (cbea0739…) against my own commit 1afccb51 instead.
    (iii) The container clock is slow vs the Lead's stamp (07:50 vs 07:53): stamp only from date -u, never ahead of it.
 
-## Resume point (overwritten at handover, LANE-RESTART step 1; successor 26, box 47, FINAL, written 2026-10-26 12:40Z by date -u)
-Successor 26 (Opus 5.5, D14/D18, L40), session_01NkLhWhNtcThjnCotjLUvvF. Handover check 8a018742 (5/5, Lead 10:57Z). ~400k context at parking.
-### DONE (all pushed with scripts/push.sh, rc 0; sha1s reported to the Lead)
-- X_dir (docs/new/N5-XDIR-box47.md, 3d2136fd): RESTRICT_U/REPRO_U (any U ⊆ Q), Lemma STAY, ROOT_v, CHOICE, XD-CAUSE, XD-ρ (lane-PROVED); 𝒞^2O ledger
-  (READING); XD-1 DEAD (pp2_n19); "no X_dir after an honest state" DEAD (xdhon_n13); σ̄ not carried by restriction (DATA, sbmis_n12).
-- HON-FF proved (docs/new/N5-HONFF-box47.md, 385a5534): Lemma FB-RISE, Theorem HON-FF (W-honest states ≤ 4n² − 3n, no f).
-- P-N5-HON-fixes-box46 FROZEN (0238b1cb, sha1 54985acf…; in R68 at CHECKER C77).
-- Packet P-N5-HONFF-box47 FROZEN (2fca63b8, sha1 98101d1f…; pinned trunk 4a0a8aba; referees on it now; question Q-A: Lemma P Case A with Ω := Ξ).
-- f per phase (docs/new/N5-FB-box47.md, fc8b88c4 + correction 1f8d6d7d's parent): τ-frame split, ρ/epoch charge DEAD (s4c8_n13), Lemma FB-RISE_C,
-  SAT_C, Theorem FB-C f ≤ |𝒞_f|(4n² − 3n). CORRECTION: R60 (c) EPOCH (landed) already has f ≤ 1 + n·N_ep; FB-C's new content is per DISTINCT
-  configuration over the whole phase.
-- Packet P-N5-FBC-box47 FROZEN (1f8d6d7d, sha1 32d3776cf4090fb15c1d0cb4c8b4f59276f64e21); referee queue: HONFF, then FBC.
+## Resume point (overwritten at handover, LANE-RESTART step 1; successor 27, box 48, FINAL, written 2026-10-26 15:01Z by date -u)
+Successor 27 (Opus 5.5, D14/D18, L40), session_01Eb3V637FARpmtRkvarA5Jx. Handover check 6ef1a695 (5/5, Lead 13:13Z). ~430k context at parking.
+### DONE (all pushed with scripts/push.sh, rc 0, VERIFY PASS; sha1s reported to the Lead)
+- P-N5-HONFF-fixes-box47 FROZEN (b2dcf365, sha1 ccc520dd…): both reports + §Cs (read on claude/referee e7db1ab4 and claude/referee-2 11e3cfb1),
+  7 notes, independence addendum; 45 quotes by experiments/new/box48/quotecheck2.py (REV:FILE sources).
+- docs/new/N5-NCONF-box48.md (working doc §1-§9): N_ep vs NCONF, laps, RET-FB, VIS, EP-C, SAT-FB, FB-C′, EP-ASM, R⁰ shape, root × relay, frozen-side.
+- Packet P-N5-EPC-box48 FROZEN (81ab0b72, sha1 9f48ded742d7f44bbf82ae8ec9e0e88c46457700; pin trunk f4562054; now PINNED on trunk by the Lead):
+  FB-RISE_C + SAT_C restated, RET-FB, VIS, EP-C, SAT-FB, SAT-FB1, FB-C′ (f ≤ n·|𝒞_f|), EP-ASM; FBC-N3 (REFEREE 15) as a referee note; 24 quotes.
+- Frozen-side u-run restriction (N5-NCONF §9): CONJECTURE RESTRICT_{u|J} with DATA (fsrestrict.py; 0 violations, controls bite).
 ### IN FLIGHT
-- Nothing running. Referees on P-N5-HONFF; P-N5-FBC queued after it. Both rest on Q-A (if Q-A is "no", FB-RISE and FB-RISE_C fall together).
-### NEXT (successor 27), the Lead's queue (12:32Z)
-1. Distinct configurations σ̄|Q per phase on general games (the configuration side of N_ep). Tools: box47/fbconf.py prints NCONF; data so far: max 7
-   per phase (fr39_q4_n48 with L-RED's start), 257 configurations against 1,399 epochs at n ≤ 34.
-2. A better saturated term for FB-C (data: ≤ 1 saturated fallback per configuration; proved 4n(n − 1) + 1). Obstacle: in H_C, Ξ = B_C does not
-   exclude an improving gate closing a cycle with a better top (λ-cycle nodes only bound B_C); need an in-phase contradiction as in HON-FB.
-3. Fixes files for P-N5-HONFF and P-N5-FBC when the referee notes arrive (template P-N5-HON-fixes-box46.md; quotes via box47/quotecheck.py).
+- Nothing running at parking (check `pgrep -fa "[p]ython3"`). Referee queue (Lead 14:47Z): FBC and CHOSEN in review, then EPC, then ROOT (L-SI 16).
+### NEXT (successor 28), the Lead's queue (14:58Z)
+1. Fixes files: P-N5-FBC-fixes-box47 when REFEREE-2 17's FBC report and both §Cs are in (notes so far, REFEREE 15 0addfc5f: FBC-N1 D_k / EPOCH /
+   N_ep defined in P-N5-HON §0 / R60 / R61; FBC-N2 cite R57 (a) for SAT_C (2)'s use of R15 (d); FBC-N3 = P-N5-EPC §3, say so; FBC-N4 "incomparable
+   with R56" witnessed one way only). Then P-N5-EPC-fixes-box48 when EPC's reports arrive. Template: P-N5-HONFF-fixes-box47.md; quotecheck2.py.
+2. Candidate route (OPEN, N5-NCONF §8): NCONF_{≥2}(S) ≤ (relay changes in S + 1)·deg(r) on a fallback-free run S, if L-SI 16's relay-only freeze
+   lands (the Lead paired L-SI 16 / L-RED 21 on "relay changes per fallback-free run").
+3. NCONF_{≥2} structure (root sweep × relay toggles; new configurations only in lap 1; pft34's single-root fallback-free laps).
 - Not routed: G-N1-LB.
+
+## Things only I know (successor 27)
+- RET-FB's whole point: S4c's relaxation of Even vertices is frame-free (FB-RISE items 2-3 use only G's edge and the bound on Ξ_t(z)), so one
+  fallback lifts LEV_C for EVERY configuration C; Odd vertices catch up at the next C-state, by induction on path length. That is why laps
+  restarted through a fallback are paid for.
+- SAT-FB in one line: SAT_C (2) makes Ξ flat up to any later C-state; a flat fallback leaves Iσ = ∅ (z* is the Ξ-maximum); the phase ends. No R15 (b)
+  or R38 (f) needed (REFEREE 15's FBC-N3 route uses them).
+- The official epoch is σ̄|Q constant (R63/R64), not D constant; "D changes + 1" is a LOWER bound. nep90 / nep76 are named after N_ep 90 / 76.
+- The fixes-file quote checker must read referee files at the commit holding their §C when trunk lags: box48/quotecheck2.py takes REV:FILE.
+- Python f-strings swallow "{≥2}": write handover text through a quoted heredoc.
+- pft34_h3u_P32's D-vertex 32 has two choices with the same top cycle (32 self-loop, 32→33→32): mutation controls that cut it are blind there.
+- Background runs: `( … &)` survives; wait with Bash run_in_background + an until-loop, or Monitor. push.sh takes 3-8 min when CPUs are busy.
+- The first push of a session hit a transient GitHub "remote rejected … fatal error in commit_refs_rules"; a plain retry via push.sh worked.
 
 ## Things only I know (successor 26)
 - The honest frame is the right frame for fallbacks: S4c is "switch each improving Even vertex to its Ξ-best gate", which in the frame H_C of the
