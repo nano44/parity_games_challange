@@ -246,6 +246,10 @@ python3 -I ul/mkreader.py 6 "$t/rd6.pg" > /dev/null && out=$(python3 -I ul/ulx.p
 [[ "$(sha1sum ul/instances/ladderent_k12_n48.pg | cut -c1-12)" == "56986308e2ae" ]] || { echo "ladderent_k12 sha1 changed"; exit 1; }
 out=$(python3 -I ../new/box48/qp.py 1 7 ul/instances/ladderent_k12_n48.pg --start ul/instances/ladderent_k12_n48.start | grep -A1 "^longest" | tail -1)
 [[ "$out" == "   14 48 14 3 11 12 12 14 12 12 2 "* ]] || { echo "ladderent_k12 qp drifted: $out"; exit 1; }
+# R93 (successor 22): C-ONCE_X kill pinned (x X-migrates 4 times in one pure C-interval)
+[[ "$(sha1sum ul/instances/cxmig_k4_n54.pg | cut -c1-12)" == "a3893ea4fd89" ]] || { echo "cxmig_k4 sha1 changed"; exit 1; }
+out=$(python3 -I ul/ulx.py --one ul/instances/cxmig_k4_n54.pg ul/instances/cxmig_k4_n54.start | grep "^MAX XMIG_PER_VERTEX")
+[[ "$out" == "MAX XMIG_PER_VERTEX 4 "* ]] || { echo "cxmig_k4 drifted: $out"; exit 1; }
 TMPDIR="$t" python3 correspond.py 2 3 4 5 6 > "$t/corr.log" || { cat "$t/corr.log"; exit 1; }
 python3 xcheck.py --games 150 --nmax 7 --seed 7 > "$t/x.log" || { cat "$t/x.log"; exit 1; }
 echo "red check: r2_check PASS (R11), bsolo 4 = 4 tangles/7 iterations (R10); dtl_flipflop F8 = 36/1/5 (R9), Claim P/Q 0 violations; zadeh_lb N2 = 43 (no fixed order, R7); fhz_padded 2 S7 = 16 (R5 kill);  friedmann_Gn 2 S7 = 15; fhz lockstep3/relation/export OK; gated_bland 6 = 63 MSF iterations (regions = Zielonka, strategies verified); Claim F instances; MSF == Bland N<=6; $(tail -1 "$t/x.log")"

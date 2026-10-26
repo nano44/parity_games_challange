@@ -26,6 +26,9 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   and a rank argument (O2); GCI-LEN proposed (Lead routed it to L-SI 18). Pure UL_C: class dynamics closed in a pure interval (READING).
 - Box 60: R92 docs/red/R92-qpc-ladder.md. QP_c linear on long phases in ONE class: mkladder.py (D0: QP_c = k + 2; ENT: gates enter D one
   per tick, ENT = k - 1, N_ep = NCONF = k); pins ladder{d0,ent}_k{12,24,48}; n5 = n5b, Oink OK; L-NEW qp.py / phrestrict.py agree.
+- Box 61: R93 docs/red/R93-conce-x-ladder.md. C-ONCE_X DEAD: mkcx.py, direct-gate ladder (exits h_j, h'_j both read chain vertex w_j, so
+  offsets constant; tau Odd-optimal via an escape into a slower chain C2); x X-migrates k times in ONE PURE C-interval; pins cxmig_k{4,8,16};
+  n5 = n5b, Oink OK; gcx.py agrees; ulx.py XMIG_PER_VERTEX (MUT control on nep90 reproduces L-SI's 1, 26, 28).
 
 ## Successor 21 HANDOVER (written 2026-10-26 ~15:25Z, date -u; ~455k context; for successor 22)
 - DONE (all pushed to claude/l-red; every pin has sha1 + full start pair, n5.py = n5b --mode spec, check_sol2 Oink "OK strategies verified"):
