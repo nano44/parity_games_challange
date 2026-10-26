@@ -12,6 +12,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - b15856e8: packet docs/new/P-N5-DUAL-box43.md (sha1 a51f7c30…, FROZEN): DUAL, MIRROR (implication, (H-OF) explicit), Φ-kO, ENDGAME;
   §2 start / N5^OF table (to check). Reported 22:53Z. Pitfall: a stray `git checkout <trunk> --` detached HEAD (restored, tree clean).
 - Seeded climbs (cl7): wide_h16 (TJ), sym_h8 (TJ), frz40 (Dch), mei_h4 (TJ). Mei family from both starts: N5 linear (it = h − 1 ... h + 1).
+- Lead 23:02Z: DUAL pinned at trunk df073cb5. 85969a3b: hard families' choice counts (only counter_ortl 𝒞^1O, counter_qpt one-player;
+  Friedmann's switchallexp / switchbestexp frontier with N Odd choice vertices of degree 2); ledger roots on the dual side.
+- 5c01a8ee: Route Δ climbs: no growth (fixed-size TJ / n 0.89, 0.50, 0.39 at n 19, 34, 67); instances tj17_n19, dch16_n44. Reported
+  23:33Z; asked for the next direction ((a) prove Δ1 for G (a), F1° set form; (b) C++ engine climbs; (c) stop). Container restarted
+  ~23:2xZ: scratchpad logs survived, background sleeps lost.
 
 ## Box 42 log (successor 21, session_01YJHHx1t8hvqkDnKzMU2Lfa; handover check 5/5 (419308f1); GO 19:48Z, Lead's stamp)
 - Merged trunk 6d78b8f4. Oink built (8fbf0a7).
