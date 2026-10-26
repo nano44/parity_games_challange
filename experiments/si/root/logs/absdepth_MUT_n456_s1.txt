@@ -1,0 +1,2 @@
+DEPTH_V=1938 NDEPTH_V=1938 NOPT=121 runs=2844 runs_nogen=0 steps_gt_maxfinaldepth=0 steps_max=4 vertices=14217
+ABSDEPTH FAIL
