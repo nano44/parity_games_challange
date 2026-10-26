@@ -1,0 +1,26 @@
+MODE random 3000 6 22 1771 4 3 MUT - BUDGET 1
+COR_phases: 24793
+CORc_phases: 16252
+Cf_total: 283
+DEEP_UNK_C: 283
+DEEP_UNK_fallbacks: 283
+ENGXI_checks: 26333
+FLATLAST_checks: 278
+N3_below_epoch: 283
+N3_below_r56: 283
+N3_phases: 283
+Nep_total_fbphases: 289
+UNK_C: 283
+UNK_C_fallbacks: 283
+f_total: 283
+phases: 24793
+phases_with_fallback: 283
+rho_total_fbphases: 12
+runs: 9000
+states: 26333
+visited_total_fbphases: 289
+max_Cf_phase: (1, 'random1771:3#0@1 n 20 f 1')
+max_Nep_over_Cf: (2.0, 'random1771:553#2@1 n 16 N_ep 2 |Cf| 1 visited 2')
+max_f_phase: (1, 'random1771:3#0@1 n 20 |Cf| 1 N_ep 1')
+max_rho_over_nCf: (0.18181818181818182, 'random1771:2007#2@1 n 11 rho 2 |Cf| 1 f 1')
+RESULT OK violations=0
