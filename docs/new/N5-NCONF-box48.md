@@ -172,5 +172,10 @@ an implication from (Στ)). □
   FB-C′, G-N5-TIME's per-phase count now rests on: X_dir, X_big (R68's open terms), NCONF_{≥2} (how many distinct multi-gate configurations a phase
   visits), R⁰_{≥2} (fallback-free returns to them), and the lengths of |D_E| ≥ 2 epochs (the "|D_E| ≥ 2 S4a core", L-SI §27). The ρ count of
   RESULTS R61 (f) is not needed in this route.
-- DATA for the multi-gate terms: r0shape.py (out/r0shape_liball_n40_k2.txt); long121_n40 (§3.2).
+- DATA for the multi-gate terms (r0shape.py, liball n ≤ 40, S3 + 2, seed 7; out/r0shape_liball_n40_k2.txt): of the 616 fallback-free returns
+  (no LEV_C filter, so an upper count for R⁰), 583 go to configurations with |D_C| ≤ 1 (44 with D_C = ∅, 539 with |D_C| = 1) and 33 to |D_C| ≥ 2
+  (28 / 3 / 1 / 1 for |D_C| = 2 / 3 / 4 / 5); 610 change σ̄ at one vertex only. NCONF_{≥2} per phase: 0 in 4,929 phases, 1 in 2,539, ≥ 2 in 103, max
+  35. So on the library R⁰_{≥2} is small and NCONF_{≥2} carries the multi-gate epochs.
+- DATA, long121_n40 (L-RED 21, from its start; out/nconf_long121.txt, out/retfb_long121.txt): one phase, L 121, N_ep 37, NCONF 14, VIS 7, f 8,
+  |𝒞_f| 5; two laps again (block 2 3 5 6 7 8 6 8 9 3 5 6 11 twice); RET-FB 36 checks, 0 violations; R⁰ = 3 of REV 23.
 
