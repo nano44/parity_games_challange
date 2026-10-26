@@ -3,9 +3,10 @@ BP_checks: 103287
 BP_checks_NC_not_hD: 17232
 C2H_checks: 295749
 C2H_checks_not_NC: 10130
-FRZ_freeze_checks: 4
-FRZ_freeze_checks_D_nonempty: 4
+FRZ_freeze_checks: 3
+FRZ_freeze_checks_D_nonempty: 3
 FRZ_runs: 3863
+FRZ_vacuous_runs_exactly_n_states: 1
 PCL_checks: 11570
 PCL_runs: 1429
 TCC_checks: 406938

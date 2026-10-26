@@ -2,9 +2,10 @@ MODE files ../R2-N5-KW/files.lst 3 MUT - PATHCAP 9
 BP_checks: 140366
 C2H_checks: 345845
 C2H_checks_not_NC: 9689
-FRZ_freeze_checks: 5
-FRZ_freeze_checks_D_nonempty: 5
+FRZ_freeze_checks: 3
+FRZ_freeze_checks_D_nonempty: 3
 FRZ_runs: 5974
+FRZ_vacuous_runs_exactly_n_states: 2
 PCL_checks: 24127
 PCL_runs: 2667
 TCC_checks: 200112

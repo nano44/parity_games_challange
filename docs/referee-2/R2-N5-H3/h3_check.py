@@ -183,7 +183,8 @@ def check_ffrun(ctx, I, states, a, b, st, name):
         L = int(max(max(I[k]["MD"] for k in range(a, b + 1)), -1))
         if not all(cond(k, L) for k in range(a, b + 1)): st.bad("FRZi", f"{name}@{a}: (i) fails")
         if len(set(lamW)) != 1: st.bad("FRZii", f"{name}@{a}: (ii) fails")
-        if b - a >= n - 1:
+        if b - a == n - 1: st.inc("FRZ_vacuous_runs_exactly_n_states")
+        if b - a >= n:          # non-vacuous: >= n + 1 states, i.e. at least two states at or after k_0 + n - 1 (0-based)
             st.inc("FRZ_freeze_checks")
             if any(I[k]["D"] for k in range(a, b + 1)):
                 st.inc("FRZ_freeze_checks_D_nonempty"); st.mxr("FRZ_freeze_D_nonempty_example", (b - a - (n - 1), f"{name}@{a} n {n}"))
@@ -216,7 +217,8 @@ def check_ffrun(ctx, I, states, a, b, st, name):
                     st.inc("PCL_checks")
                     if bx is not None and ctx.ckey(W[x], L) < bx: st.bad("PCL", f"{name}@{k + j}: x {x} L {L} j {j}")
             frz = 1 if MUT == "crd1" else n - 1
-            if e - k >= frz:
+            if e - k == frz: st.inc("CRD_vacuous_subruns")
+            if e - k >= frz + 1:
                 st.inc("CRD_freeze_checks")
                 if any(I[t]["D"] for t in range(k, e + 1)): st.inc("CRD_freeze_checks_D_nonempty")
                 ref = [ctx.ckey(I[k + frz]["w"][v], L) for v in range(n)]
