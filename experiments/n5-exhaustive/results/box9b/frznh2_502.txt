@@ -1,1 +1,5 @@
 start 6250 n 24
+943 13260 FRZ_checks 2 seed 1445
+1062 22250 FRZ_checks 1 seed 1564
+1203 38250 FRZ_checks 2 seed 1705
+2146 54250 FRZ_checks 3 seed 2648
