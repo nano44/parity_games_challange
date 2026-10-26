@@ -1,0 +1,34 @@
+MODE files ../R2-N5-KW/files.lst 2 MUT - BUDGET 200000
+BFF_checks: 869853
+DLS_A: 5696
+DLS_A_clean: 5228
+DLS_A_nonclean: 468
+DLS_B: 265
+DLS_case_ii: 5228
+DLS_case_iii: 97
+DLS_entering: 5961
+DLS_gains: 529
+ENGXI_checks: 17807
+FA_UNK: 6954
+FA_beyond_freeze: 1320
+FA_pieces: 22399
+FAa_checks: 555846
+FAb_checks: 555846
+FAc_checks: 5435
+FG_UNK: 5255
+FG_intervals: 9048
+FGa_checks: 156188
+FGb_checks: 156188
+GSa_checks: 107009
+GSb_checks: 201611
+RLP_beyond: 138
+RLP_runs: 9048
+RLPi_checks: 152
+RLPii_checks: 383
+RP_checks: 13973
+classes: 7717
+phases: 4137
+runs: 1006
+states: 17807
+RP_max_rho: (60, 'experiments/red/so/instances/rise_thin51_n40.pg#0@9 q 0 f 6 G_c 1 |U| 40')
+RESULT OK violations=0

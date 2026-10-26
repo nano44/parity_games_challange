@@ -128,6 +128,8 @@ def phase(g, E, R, i, j, Q, name):
                 lw = all(R[x]["lamW"] == R[a]["lamW"] for x in range(a, k + 1))
                 ginfo = (name, "phase@%d" % i, "gcint=[%d,%d]" % (a - i, k - i), "n=%d" % n, "lamW_const" if lw else "lamW_moves")
                 C["gcint"] += 1; mx("G_LEN_SLACK", (k - a) - (n - 1), ginfo)
+                sbc = sum(1 for x in range(a, k) if R[x]["sb"] != R[x + 1]["sb"])     # (G1): transitions inside with a sigma-bar change
+                if sbc: C["gcint_sbchg"] += 1; mx("G_LEN_SLACK_SB", (k - a) - (n - 1), ginfo + ("sbchg=%d" % sbc,))
                 for (kk, y, z) in UE:
                     if a <= kk < k:
                         C["G_U_in"] += 1; mx("G_IDX_SLACK", (kk - a) - (n - 1), ginfo + ("k'=%d" % (kk - i), (y, z)))
@@ -140,7 +142,12 @@ def phase(g, E, R, i, j, Q, name):
                 A = U - MEET[k]; DU = D[k] & U
                 DD = {u for u in DU if R[k]["sb"][u] in A and R[k]["t"][u] in A}
                 off = {u: E.weight(R[k]["vs"][R[k]["t"][u]][1]) - E.weight(R[k]["vs"][R[k]["sb"][u]][1]) for u in DD}
-                st[k] = (A, DU, off)
+                fd = {}
+                for z in U - A:
+                    x, seen = z, set()
+                    while x not in seen and x not in D[k]: seen.add(x); x = R[k]["wn"][x]
+                    fd[z] = x if x in D[k] else None
+                st[k] = (A, DU, off, fd)
             a = s0
             for k in range(s0, e0 + 1):
                 ok = k < e0 and st[k + 1][0] <= st[k][0] and st[k + 1][1] == st[k][1] and st[k + 1][2] == st[k][2]
@@ -150,10 +157,24 @@ def phase(g, E, R, i, j, Q, name):
 
 def cint(g, R, name, i, c, U, big, a, b, st, UE):
     C["cint"] += 1; L = b - a; thr = len(U) - 1
+    perx = Counter()                                         # C-ONCE_X: X-migrations per vertex inside this C-interval
+    for k in range(a, b):
+        A0, _, off0, fd0 = st[k]; _, _, off1, fd1 = st[k + 1]
+        for z, u in fd1.items():
+            if u is not None and u in off0 and u in off1 and z not in A0 and fd0.get(z) != u: perx[z] += 1
+    if perx:
+        m = max(perx.values()); mx("XMIG_PER_VERTEX", m, (name, "phase@%d" % i, "c=%d" % c, "cint=[%d,%d]" % (a - i, b - i), {z: v for z, v in perx.items() if v == m}))
+        if m >= 2: C["C_ONCE_X_VIOL"] += 1
     pure = st[a][1] == set(st[a][2]); lamW = all(R[k]["lamW"] == R[a]["lamW"] for k in range(a, b + 1))
     info = (name, "phase@%d" % i, "c=%d" % c, "|U|=%d" % len(U), "cint=[%d,%d]" % (a - i, b - i), "pure" if pure else "impure",
             "|A_a|=%d" % len(st[a][0]), "|DcapU|=%d" % len(st[a][1]), "DD=%d" % len(st[a][2]), "lamW_const" if lamW else "lamW_moves",
             "BIG" if big else "small", "xgate=%d" % sum(1 for u in st[a][1] if R[a]["t"][u] not in U))
+    if pure and L > 0:                                       # ABS-DEPTH reading (N5-ABSCYC §4): no switch in U at index >= (|A_a| - 1) + |U|
+        sw = [k - a for k in range(a, b) if any(g.owner[v] == 0 and R[k]["s"][v] != R[k + 1]["s"][v] for v in U)]
+        if sw:
+            mx("PURE_SW_SLACK", sw[-1] - (len(st[a][0]) - 1 + len(U)), info + ("last switch idx %d" % sw[-1],))
+            mx("PURE_SW_2N", sw[-1] - 2 * g.n, info + ("last switch idx %d" % sw[-1],))
+            if sw[-1] >= len(st[a][0]) - 1 + len(U): C["PURE_LATE_VIOL"] += 1
     mx("LEN_SLACK" + ("" if big else "_small"), L - thr, info)
     if L >= thr: C["cint_long" + ("" if big else "_small")] += 1
     ins = [(k, y, z) for (k, y, z) in UE if y in U and a <= k < b]

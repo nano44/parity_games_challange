@@ -1,0 +1,7 @@
+FRZ_A_V 128 FRZ_D_V 5 KCH 33873 LASTM_minus_w 2 MCH 26388 max_KCH 34 max_KCH_Q 34 max_MCH 21 max_MCH_Q 20 phases 746 runs 1243
+  top (MCH KCH runlen w inQ n name): 21 31 33 31 False 32 experiments/red/so/instances/so_th_n32.pg
+  top (MCH KCH runlen w inQ n name): 20 33 33 31 True 32 experiments/red/so/instances/so_th_n32.pg
+  top (MCH KCH runlen w inQ n name): 20 20 20 23 True 24 experiments/new/box25/instances/sc24.pg
+  top (MCH KCH runlen w inQ n name): 20 20 20 23 False 24 experiments/new/box25/instances/sc24.pg
+  top (MCH KCH runlen w inQ n name): 19 23 23 31 True 32 experiments/si/orlens/instances/lev_l_sc.pg
+  top (MCH KCH runlen w inQ n name): 19 23 23 31 False 32 experiments/si/orlens/instances/lev_l_sc.pg

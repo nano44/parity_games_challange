@@ -1,0 +1,3 @@
+acyc_b=698 acyc_fail=2 checked=563 cyc_const=563 dstar_max=10 intervals=700 len_max=3 len_minus_n1_max_plus1000=995 pure_b=646 pure_but_cycles_move=84
+STATICDEPTH PASS
+rc 0

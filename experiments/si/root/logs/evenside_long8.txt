@@ -1,0 +1,30 @@
+== red/rec0/instances/nep90_n40.pg si/rund/instances/nep90_n40.start
+E1_chk=11 ESW_in=13 EXIT_at_cut=31 EXIT_in=2 K_max=12 K_sum=74 LASTSW_max=0 SBG_at_cut=102 SBG_in=8 SB_at_cut=102 SB_in=8 cut_AG=15 cut_DCH=19 cut_DDSET=2 cut_OSB=38 lastsw_minus_U_max_plus1000=960 pure_lastsw_max=0 runs=8 sw_in_impure=7 sw_in_pure=3 trans_at_cut=74 trans_in=10
+== E1MUT
+E1_V=10
+== n5-epoch/instances/nep76_n40.pg n5-epoch/instances/nep76_n40.start
+E1_chk=9 ESW_in=9 EXIT_at_cut=40 EXIT_in=0 K_max=13 K_sum=63 LASTSW_max=0 SBG_at_cut=99 SBG_in=8 SB_at_cut=99 SB_in=8 cut_AG=9 cut_DCH=20 cut_DDSET=10 cut_OSB=24 lastsw_minus_U_max_plus1000=960 pure_lastsw_max=0 runs=7 sw_in_impure=8 sw_in_pure=1 trans_at_cut=63 trans_in=9
+== E1MUT
+E1_V=16
+== new/box48/instances/long121_n40.pg new/box48/instances/long121_n40.start
+E1_chk=14 ESW_in=91 EXIT_at_cut=23 EXIT_in=8 K_max=10 K_sum=53 LASTSW_max=5 SBG_at_cut=39 SBG_in=2 SB_at_cut=39 SB_in=2 cut_AG=17 cut_DCH=4 cut_DDSET=11 cut_OSB=13 cut_OVAL=8 lastsw_minus_U_max_plus1000=965 pure_lastsw_max=5 runs=9 sw_in_impure=35 sw_in_pure=25 trans_at_cut=53 trans_in=60
+== E1MUT
+E1_V=7
+== new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.pg new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.start
+E1_chk=13 ESW_in=16 EXIT_at_cut=59 EXIT_in=3 K_max=12 K_sum=74 LASTSW_max=1 SBG_at_cut=218 SBG_in=2 SB_at_cut=218 SB_in=2 cut_AG=30 cut_DCH=26 cut_DDSET=4 cut_OSB=10 cut_OVAL=4 lastsw_minus_U_max_plus1000=937 pure_lastsw_max=1 runs=8 sw_in_impure=11 sw_in_pure=5 trans_at_cut=74 trans_in=16
+== E1MUT
+E1_V=7
+== new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.pg new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.start
+E1_chk=12 ESW_in=12 EXIT_at_cut=55 EXIT_in=0 K_max=15 K_sum=69 LASTSW_max=0 SBG_at_cut=263 SBG_in=0 SB_at_cut=263 SB_in=0 cut_AG=31 cut_DCH=18 cut_DDSET=6 cut_OSB=14 lastsw_minus_U_max_plus1000=936 pure_lastsw_max=0 runs=7 sw_in_impure=8 sw_in_pure=3 trans_at_cut=69 trans_in=11
+== E1MUT
+E1_V=22
+== new/box48/out/qpcclimb/scale/snap_n80_s62.pg new/box48/out/qpcclimb/scale/snap_n80_s62.start
+E1_chk=11 ESW_in=19 EXIT_at_cut=63 EXIT_in=3 K_max=14 K_sum=77 LASTSW_max=3 SBG_at_cut=256 SBG_in=3 SB_at_cut=256 SB_in=3 cut_AG=34 cut_DCH=22 cut_DDSET=7 cut_OSB=10 cut_OVAL=4 lastsw_minus_U_max_plus1000=923 pure_lastsw_max=0 runs=8 sw_in_impure=15 sw_in_pure=1 trans_at_cut=77 trans_in=16
+== E1MUT
+E1_V=11
+== red/usplit/instances/pp_K48_n449.pg red/usplit/instances/pp_K48_n449.start
+E1_chk=46 ESW_in=406 EXIT_at_cut=1 EXIT_in=48 K_max=2 K_sum=2 LASTSW_max=52 SBG_at_cut=6 SBG_in=95 SB_at_cut=6 SB_in=95 cut_AG=2 lastsw_minus_U_max_plus1000=603 runs=1 sw_in_impure=53 trans_at_cut=2 trans_in=53
+== E1MUT
+== red/usplit/instances/gate_K16_n197.pg red/usplit/instances/gate_K16_n197.start
+E1_chk=13 ESW_in=40 EXIT_at_cut=14 EXIT_in=0 K_max=16 K_sum=16 LASTSW_max=2 SBG_at_cut=18 SBG_in=0 SB_at_cut=18 SB_in=0 cut_AG=2 cut_DCH=14 lastsw_minus_U_max_plus1000=805 pure_lastsw_max=2 runs=1 sw_in_impure=2 sw_in_pure=5 trans_at_cut=16 trans_in=7
+== E1MUT

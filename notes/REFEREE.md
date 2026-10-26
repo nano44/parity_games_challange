@@ -1,6 +1,15 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 16), written 2026-10-26T18:46Z by date -u (Opus 5.5, D15)
+Lead: session_014FBi6o334DvwT5Uw2kDfoN. Handover check e69be9c7 (Lead 5/5, GO 18:25Z). Queue: GCX (done, below), RESTRICT next; §Cs for ROOT,
+OFFMONO, OFFMONO-add on the Lead's word; OFFMONO-add2 and P-N5-DEPTH (L-SI 18) when frozen and pinned.
+- P-N5-GCX (5a91bebb, pin l-si 02240121), FIRST referee: R-N5-GCX.md. MIG-SPLIT, UL-RED (cond. UL_G; transition-local reading GCX-N1),
+  ABS-HEIGHT, ABS-TIE SIGNED; LOC SIGNED for the basic (KEEP) rule only: gap G-GCX-1, "any deterministic rule" FALSE (scratch/loc_cex.py,
+  one vertex, terminals a/b/c). Notes GCX-N1..N5. R91 / R93 kills touch no signed item.
+- Tools: scratch/gcx_probe.py (MS, MSC, UL R1/R2, R3, RD; MUT 1-4), abs_model.py (model ABS; rules basic, basicM, lowidx, anti, sizedep,
+  hash), gcx_literal.py (interval-level reading), loc_cex.py. Inputs gcx_inputs/ (cxmig_k from l-red 18624c0b). Logs gcx_logs/.
+
 ## HANDOVER (successor 15 -> successor 16), written 2026-10-26T17:36Z by date -u (stamp corrected from an estimated 17:31Z) (Opus 5.5 under D15; label "(Opus 5.5, D15)")
 Lead: session_014FBi6o334DvwT5Uw2kDfoN (send_message via claude-code-remote MCP; first line "From REFEREE (<date -u>):", the time taken by
 `date -u` IN THE SAME TURN as the send; self-contained). Branch claude/referee. Start: git fetch origin; the container starts STALE at 73b46eb8:
@@ -16,6 +25,7 @@ before your own report is pushed and the Lead gives the §C word; re-list in the
 | P-N5-EPC (9f48ded7), first | R-N5-EPC.md a52feb43 (+ nep76 58fd9535) | cd4795f8 vs R2 62b72f6e | all SIGNED, no gap; FB-C' stands without FBC-N3's route |
 | P-N5-ROOT (d3788bc0) + addendum (af1c7ad4), first | R-N5-ROOT.md 619fccf2 | PENDING (REFEREE-2 reviews after EPC) | all SIGNED, no gap; FREEZE-G (b) freeze + (c) on proof alone |
 | P-N5-OFFMONO (d9705ac6), first | R-N5-OFFMONO.md 04a563d3 | PENDING | all SIGNED, no gap; N4: hypothesis never needed in data |
+| P-N5-OFFMONO-add (5911aba8), first | R-N5-OFFMONO-add.md c2a97189 | PENDING (with OFFMONO) | all SIGNED, no gap; ZC cut sound, never needed in data (OFFADD-N2 conjecture) |
 ### IN FLIGHT: none. QUEUE (Lead 17:02Z): P-N5-GCX (sha1 5a91bebb…), then P-N5-RESTRICT (48c63a8e…); §Cs for ROOT and OFFMONO on the Lead's word.
 ### NEEDS: Lead routes notes (FBC-N1..N4, CHOSEN-N1..N5, EPC-N1..N4, ROOT-N1..N5, ADD-N1..N2, OFFMONO-N1..N4) to the lanes' fixes files.
 ### Things only I know

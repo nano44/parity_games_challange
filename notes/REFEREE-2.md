@@ -1,6 +1,16 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 5 (successor 17, 2026-10-26 18:46Z by date -u)
+- DONE: EPC §C c4975512 (identical with REFEREE a52feb43 + 58fd9535, map empty).
+- DONE: R2-N5-ROOT (P-N5-ROOT d3788bc0 + addendum af1c7ad4, both on trunk): all SIGN, no gap; DL-SPLIT's RELAY-CHAIN condition met (R72);
+  notes N-ROOT-1..7. Lead's question: FREEZE-G (b), (c) vacuous on natural data (confirmed); made to bite only weakly via DISJOINT UNIONS
+  (driver with a long S4a run + small random component; root_check.py `unionsearch`, COMP_MIN): 25,497 intervals beyond freeze, 24 with an
+  in-class switch, 5 with N moving; early control never bites; Δ never changes after FREEZE-A's index, so RELAY-PIECE multi-interval content
+  rests on proof. Saved instances docs/referee-2/R2-N5-ROOT/union/ (21).
+- Tools: R2-N5-ROOT/root_check.py, s4a_runs.py (longest S4a run per phase), run_all.sh, run_union.sh, run_union2.sh.
+- Queue after ROOT (Lead 17:02Z): P-N5-OFFMONO (d9705ac6), P-N5-GCX (5a91bebb), P-N5-RESTRICT (48c63a8e).
+
 ## Resume point 4 (successor 17, 2026-10-26 16:57Z by date -u)
 - DONE: R2-N5-EPC (P-N5-EPC sha1 9f48ded7 = file at l-new 81ab0b72, on trunk; quotes at f4562054): all SIGN, EP-ASM's 2nd term as implication;
   no gap; N-EPC-1..6. Lead's question: FB-C′ stands alone (SAT-FB via S2 + S4c max ⇒ Iσ_{t+1} = ∅ ⇒ last state; no R15 (b), no CN-LAST).

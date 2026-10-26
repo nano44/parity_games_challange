@@ -1,0 +1,24 @@
+OK   278616c6:docs/new/N5-ssi-global.md:33-33 | Vöge-Jurdziński's procedure exactly as si.py Engine.evaluate (lines 78-205)
+OK   278616c6:docs/new/N5-ssi-global.md:33-33 | σ̄ is computed by Vöge-Jurdziński's procedure exactly as si.py Engine.evaluate
+OK   278616c6:docs/new/N5-ssi-global.md:41-41 | first strict maximum wins
+OK   278616c6:docs/new/N5-ssi-global.md:42-42 | first discovery sets Odd's choice
+OK   278616c6:docs/new/N5-ssi-global.md:44-44 | Successor and predecessor lists are in increasing index order.
+OK   278616c6:experiments/si/si.py:136-136 | if self.par[u] == 0: # Even likes u: Odd avoids it where it can
+OK   278616c6:experiments/si/si.py:137-137 | M = reach(v, u)
+OK   278616c6:experiments/si/si.py:145-145 | M = reach(u, v)
+OK   278616c6:experiments/si/si.py:165-165 | if d > best:
+OK   278616c6:experiments/si/si.py:172-172 | else: # odd cycle: shortest path (BFS over preds from v)
+OK   278616c6:experiments/si/si.py:178-178 | if y not in dist:
+OK   278616c6:experiments/si/si.py:197-197 | val[x] = (v, path[x], dist[x])
+OK   278616c6:docs/RESULTS.md:1825-1825 278616c6:docs/new/P-N5-OFFMONO-add-box49.md:150-150 | λ_U is a function of τ alone, so on every run of states with τ constant it is constant
+OK   278616c6:docs/RESULTS.md:2840-2840 278616c6:docs/new/P-N5-OFFMONO-add-box49.md:151-151 | s_c := +1 if Ω(c) is odd, −1 if even
+OK   278616c6:docs/RESULTS.md:2851-2851 278616c6:docs/new/P-N5-OFFMONO-add-box49.md:151-151 | Facts (Aκ), (A0κ), (M1κ), (M2κ), (INJ), (SP′) per honest class
+OK   278616c6:docs/RESULTS.md:3768-3769 278616c6:docs/new/P-N5-OFFMONO-add-box49.md:152-152 | (SW): every Even switch of N5 is to an edge of Iσ
+OK   278616c6:docs/new/P-N5-FBPOLY-box41.md:97-97 278616c6:docs/new/P-N5-OFFMONO-add-box49.md:154-154 | (M2κ) For z ∈ U and every in-phase transition t → t+1: κ_t(z) ≤ κ_{t+1}(z).
+OK   278616c6:docs/new/P-N5-FBPOLY-box41.md:98-98 | The signed weight is injective on vertex sets
+OK   278616c6:docs/new/P-N5-OFFMONO-add-box49.md:53-53 | Remark Z-CONST (PROVED, every game)
+OK   278616c6:docs/new/P-N5-OFFMONO-add-box49.md:61-61 | Corollary CHAIN-COUNT′ (PROVED, every game)
+OK   278616c6:docs/new/P-N5-OFFMONO-add-box49.md:83-83 | Lemma ZCH-COUNT (PROVED, every game)
+OK   278616c6:docs/new/P-N5-OFFMONO-add-box49.md:45-45 | Fact (CYC-ID) (PROVED, elementary)
+OK   278616c6:docs/new/P-N5-OFFMONO-add-box49.md:48-48 | Fact (CYC-SHAPE) (PROVED, elementary)
+quotes 23 missing 0

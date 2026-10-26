@@ -1,0 +1,34 @@
+MODE files lib2o_noref.lst 5 MUT - BUDGET 200000
+BFF_checks: 35193
+DLS_A: 319
+DLS_A_clean: 319
+DLS_B: 7
+DLS_case_i: 6
+DLS_case_ii: 317
+DLS_case_iii: 2
+DLS_entering: 326
+DLS_gains: 35
+ENGXI_checks: 1395
+FA_UNK: 193
+FA_beyond_freeze: 31
+FA_pieces: 1759
+FAa_checks: 59731
+FAb_checks: 59731
+FAc_checks: 134
+FG_UNK: 104
+FG_intervals: 871
+FGa_checks: 46390
+FGb_checks: 46390
+GSa_checks: 4776
+GSb_checks: 5598
+RLP_beyond: 3
+RLP_runs: 871
+RLPi_checks: 4
+RLPii_checks: 4
+RP_checks: 2364
+classes: 924
+phases: 594
+runs: 205
+states: 1395
+RP_max_rho: (5, 'experiments/new/box21/instances/fts_best24.pg#0@1 q 11 f 3 G_c 1 |U| 24')
+RESULT OK violations=0
