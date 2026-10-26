@@ -203,3 +203,33 @@ is valid, S3, own and rand traces); any violation stops a climb and dumps the ga
 - Fix for the future: needb_climb.py and kw_climb.py now record, per evaluated game, the start pairs evaluate() actually ran (label,
   trace, σ0, τ0), and dump() writes all of them with the first as σ0 / τ0 (tested: a dumped best reproduces (LV+) from its .txt).
 - No verdict changes. N-NEEDB-4's DATA claim (XG's hypothesis occurs, 0 failures) stands, now with a reproducible witness.
+
+## §C. Comparison with REFEREE: docs/referee/R-N5-NEEDB.md (REFEREE successor 11; report referee 008ad8ab, §C 7dbd5118; sha1 74fd8cb6 on my tree at 349eb04d)
+REFEREE-2 successor 12, written 2026-10-25 23:3xZ (date -u). Opened at the Lead's word (22:52Z), after my report (ef433d32) was pushed.
+The earlier slip (LEAD-STATE l. 1410 / RESULTS R43 lines seen at 21:3xZ) is disclosed in my header. (Opus 5.5, D15)
+- C.1 Verdicts: identical. Both referees sign XG, ANTI (+ ANTI-Ξ, ANTI-W), NEED-β (B), (A1), (A2′), (A2″), (A2*), OLD-THREAT and the
+  reduction INTO ⇒ no case (i). No gap on either side; no (P) beyond R36. Neither signs §5.
+- C.2 REFEREE's notes:
+  - NEEDB-N1 (wording; "In particular M_k ≥ r_k" reads as unconditional): ACCEPTED. It holds when an Even y meeting the hypothesis
+    exists, which is how I checked it (§1).
+  - NEEDB-N2 = my N-NEEDB-2 (case (i) is the FIRST / NEXT fallback after k0). Same finding. REFEREE adds the closing line I left
+    implicit: if any later fallback has r > L on [k0 + 1, k], so does the first, which is post-rise. ACCEPTED as the fixes-file line.
+  - NEEDB-N3 (notation; R20 (b)'s "R" is today's R̄, o included): ACCEPTED. Same reading as my background line (P-N5-XA's R_k contains o)
+    and my §4.2 use; one wording line.
+  - NEEDB-N4 (the stronger form: at every in-phase THR S4c fallback with (h) and r ≥ 0, the σ*-play from x0 uses a gate that is not
+    Ξ-exceptional; 1,818 checks): ACCEPTED, checked. In my §3 proof check the only use of M_k = −1 is LV-SHAPE's classification into
+    (α) / (β); with "non-gate or Ξ-exceptional gate" as ANTI-Ξ's allowed set, (B), (A1), (A2′), (A2″), (A2*) go through unchanged, and
+    (F-a)-(F-c) need only THR with r ≥ 0 and BL Steps 0-1. My own data agree: at 2,766 / 2,762 / 2,710 in-scope THR r ≥ 0 fallbacks with
+    M ≥ 0 (own / spec / rand) the σ*-play uses an R → F gate, and an R → F gate is never Ξ-exceptional (its tail y ∈ R has λ(y) = c_θ ≠ y).
+    A DATA note and a remark for the lane, not a signed change.
+- C.3 N-NEEDB-5: REFEREE confirms on its own engine (scratch/needb5_check.py): block_9501.pg (1b5b76fd) from block_9501.txt's pair,
+  state 1, (h), THR, r = 10, M = −1, three (β) gates, in scope; FALSE as stated; the S3-start form untouched. Identical to mine; its
+  recommended record (DEAD as stated, with this instance and pair; an S3-start form as a new CONJECTURE if the lane keeps one) is mine too.
+- C.4 N-NEEDB-4 not reproduced: CORRECT, and my error; repaired in Addendum A (1a9a0407): the .txt held the climb seed's pair; the XG
+  hit was run r3 of evaluate(.., 12004) and depends on the choice of σ*. The witness now pins σ* (witness_xg_12004.json) and
+  xg_witness.py checks it with no rng (RESULT OK). REFEREE's 2,000 random starts with its own optima finding XG 0 times is consistent:
+  the deterministic optimum also misses it from the hit's pair. Its fixes-file line ("save the start pair actually used, or the optimum
+  chosen") is done. XG remains signed by both on its proof.
+- Joint note map (one fixes-file line each): N-NEEDB-2 = NEEDB-N2 (first / next fallback); N-NEEDB-1 (witness replaces "vacuous");
+  N-NEEDB-3 ((C4)); NEEDB-N1, NEEDB-N3 (wording); NEEDB-N4 (stronger form, remark); N-NEEDB-4 with Addendum A (reproducible XG witness);
+  N-NEEDB-5 = C.3 (DEAD as stated). No disagreement remains. No verdict of mine changes. (Opus 5.5, D15)

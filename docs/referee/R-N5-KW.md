@@ -251,3 +251,51 @@ VACUOUS or THIN in my data (the statements rest on their proofs, checked above):
   number of distinct games is not measured). The discrepancy with L-RED's 0 may be engine or corpus; I did not run L-RED's code. Worth
   a re-run of this file on REFEREE-2's tracer and L-RED's checker.
 - KIND-MONO stays vacuous after the freeze in my data (§12).
+
+## §C. Comparison with REFEREE-2 (R2-N5-KW.md, referee-2 8a47fd92, REFEREE-2 successor 12) (Opus 5.5, D15)
+Written 2026-10-25T23:36Z by date -u, REFEREE successor 11. Routing: the Lead's message of 23:28Z (Lead's stamp). My report (56ac6538)
+and Addendum 1 (1d6cbf32) were pushed before I opened R2-N5-KW.md. Same objects: packet sha1 c0b0111f, addendum sha1 8d6bfb3c.
+
+### C.1 Verdicts
+| statement | REFEREE | REFEREE-2 |
+| --- | --- | --- |
+| W-ONCE, W-ONCE′ | SIGNED | SIGN (N-KW-1 citation) |
+| Facts A0, A, B | SIGNED | SIGN |
+| FRZ-U | SIGNED | SIGN (N-KW-5 DATA) |
+| LEN | SIGNED (KW-N2 wording) | SIGN |
+| PAR, H-PATH, KIND-MONO, CASC-B | SIGNED | SIGN |
+| CW-INT | SIGNED | SIGN (N-KW-2 wording) |
+| E-SEG | SIGNED WITH GAP KW-1 | SIGN (N-KW-3 precision) |
+| Theorem RUN | SIGNED (KW-N3) | SIGN (N-KW-4) |
+| KW-S | SIGNED (KW-N4) | SIGN (N-KW-6) |
+| PHASE (conditional on f) | SIGNED (KW-N1) | SIGN |
+| §8 READINGs, §9-§11 | not signed | not signed |
+Both referees sign every statement. The only difference is the label of one shared finding (C.2, first row). Neither referee found a
+false statement or a hole a definition cannot close.
+
+### C.2 Joint gap / note map (one fixes-file line per row)
+| REFEREE | REFEREE-2 | ruling |
+| --- | --- | --- |
+| KW-1 (E-SEG (i) counts N_B over all kind-B-switch transitions, but CASC-B bounds only those outside kind-change transitions; true bound e + (e+1)(r−2); repair: N_cut := union count) | N-KW-3 (the same: (i) as literally counted is off by e(Q); N_cut as the union count keeps (ii)-(iv)) | SAME finding, found independently. The question the Lead asks, gap or precision: (i) as WRITTEN is a bound the proof does not give (with R2's own remark that post-freeze every kind change is B → A and so contains a kind-B switch, the literal count can exceed (e+1)(r−2) whenever e ≥ 1 and the parts are full). Nothing downstream uses (i) in its literal form, and the repair is a definition. I keep the label "gap, CLOSED by the definitional repair" so the record says (i) was false as written; I do not object to the Lead recording it as one precision-level item. Either way ONE item, one fixes line: "N_cut(Q) := #transitions of Q with a kind change or a kind-B switch (counted once); N_B(Q) := those without a kind change; (i) N_B ≤ (e+1)(r−2); (ii) N_cut ≤ (e+1)(r−1) − 1". |
+| KW-N3 (RUN (b) negative at r = 1) | N-KW-4 (the same; seen on s_elim24_final.pg) | SAME (my probe tripped on the same file, kw_logs/lib_rs3.txt first run). Fixes line: "max(0, ·), or ≤ r³". |
+| KW-N4 ((E) explicit per run: ≤ (r−1) + (Δr+1)(r−1)²) | N-KW-6 (≤ (r−1) + r²(Δr+1)) | SAME; both bounds are valid (Σ_Q (e(Q)+1) ≤ (r−1)², so mine is the sharper form of the same sum). Fixes line: either. |
+| KW-N5 (DATA: the "freeze delay 1" line measures runs that reach k0 + r − 1 (kwcheck.py l. 60-68); over all runs κ changes up to run step 40 on kw_n48, r = 48) | N-KW-5 (DATA: up to step 39 on kw_n48; ≥ 2 in 91 of 503 files) | SAME observation; 39 vs 40 is index convention (REFEREE-2 counts the transition index, I count states after k0). My explanation of the lane's measure is checked against its script, and on my engine the lane's measure gives 1 (FRZD_postrun_max). Fixes line: "largest delay 1 over runs that reach k0 + |R| − 1; over all runs up to r − 1 (kw_n48: 40)". |
+| KW-N1 (PHASE's W_ch split is not per interval; R24 WC covers every ¬H2 interval) | stated in R2 §8 ("it covers c_w = o too"), no note number | SAME reading. Fixes line as in my §13. |
+| — | N-KW-1 (W-ONCE's "S4a result is the pointwise optimum" is R18 (d) Lemma S (c) with R17 (F1)) | ACCEPTED (citation). R18 (d) states Lemma S (c) for S4a steps (checked in RESULTS R18 (d)); R17 (F1) alone, as the packet's dependency table states it, already suffices for my reading. Harmless. |
+| — | N-KW-2 (CW-INT: σ(c_w) may be o when A2 = ∅; o has no kind; Ξ(o) = θ constant) | ACCEPTED. My §7 missed it: step 1's "σ(c_w) is kind B" needs "kind B or o". The proof goes through with θ as o's constant value. Fixes line: "kind B or o". |
+| KW-N2 (LEN's length range: the whole length to the cycle node, in [1, r − 1]) | — | REFEREE only; wording. Stands. |
+
+### C.3 Data, compared
+- CASC-B's hypothesis: both engines exercise it (my Addendum 1 witness kw_logs/cascb_witness.pg, slack 1; REFEREE-2's 10 cases with slack
+  0, two saved witnesses with slack 1). So the bound is reached (slack 0, REFEREE-2) and holds. L-RED R73's "never reached" (Lead 22:56Z)
+  is contradicted by both referees.
+- W-ONCE's hypothesis: thin on my engine (2 checks); REFEREE-2's climbs reach it 571 times, 0 violations. Complementary.
+- KIND-MONO and CW-INT after the freeze, and E-SEG after f0: vacuous on both engines (and in the lane's and L-RED's data). They rest on
+  their proofs, which both referees checked line by line.
+- No disagreement in data.
+
+### C.4 Result
+- P-N5-KW: every statement to sign is signed by both referees. One shared item KW-1 = N-KW-3 (E-SEG (i)'s count; closed by a definition,
+  nothing downstream changes); notes KW-N1, KW-N2, KW-N3 = N-KW-4, KW-N4 = N-KW-6, KW-N5 = N-KW-5, N-KW-1, N-KW-2 for the fixes file.
+- Not a running-time bound for N5, not a TARGET.md claim, not a step-4 pass. Corollary PHASE is conditional on f; with P-N5-FBPOLY (R48)
+  and P-N5-PHI (R47) landed, the §8 assembly is a READING for CHECKER. G-N5-TIME stays OPEN until then.

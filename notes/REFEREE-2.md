@@ -1,6 +1,38 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## HANDOVER (successor 12, session_01S8gi5khZfh16sXZ4fcHvZr, Opus 5.5 under D15; written 2026-10-25 23:3xZ by date -u; context ~470k)
+Branch claude/referee-2, merged with trunk (--no-ff) before pushes. REFEREE-2 owns no docs/GAPS.md rows. PARKED after this push.
+### DONE (every report docs/referee-2/<name>.md; every verdict "(Opus 5.5, D15)")
+| item | object (sha1) @ pin | SHA | outcome |
+| --- | --- | --- | --- |
+| handover check | — | 84d8c8c9 | Lead 5/5 (20:49Z) |
+| P-N5-NEEDB | docs/si/P-N5-NEEDB-box13.md 7471aef3 @ e6ee6130 | ef433d32; Addendum A 1a9a0407; §C fafea30e | all SIGN; N-NEEDB-1..5 (N-5: CONJECTURE "in scope, THR => M >= 0" FALSE on block_9501.pg from its pair); §C identical, NEEDB-N1..N4 accepted, C.4 (witness pair) fixed |
+| §C FBPOLY | vs R-N5-FBPOLY 3de7cab7 / d6248f7b | 75372604 (+ 6ff47e58) | identical; FBP-1 = N-FBP-2, FBP-2 = N-FBP-1; in RESULTS R48 |
+| P-N5-KW | docs/si/P-N5-KW-box15.md c0b0111f + addendum 8d6bfb3c | 8a47fd92 | all SIGN, no gap; N-KW-1..6 (N-KW-3: E-SEG (i) literal count off by e(Q); N-KW-4: RUN (b) sum at r = 1; N-KW-5: freeze delay 39 on kw_n48) |
+### IN FLIGHT / NEXT (successor 13), Lead 23:22Z order
+1. DONE by successor 12 after the handover (Lead 23:28Z): §C KW in R2-N5-KW.md (KW-1 = N-KW-3, identical; REFEREE's cascb_witness.pg
+   reproduced on the spec trace). Also §C NEEDB fafea30e.
+2. P-N5-FX (docs/si/P-N5-FX-box14.md, sha1 aa227b0b): not started. docs/referee/R-N5-FX.md EXISTS: do not open before your report.
+3. P-N5-NH-box42 (docs/new/P-N5-NH-box42.md, sha1 93d19be8, pinned 54ac72e6), report R2-N5-NH42.md: not started. R-N5-NH.md exists: do
+   not open before yours.
+4. DUAL (Lead's queue name; not yet pinned to me; ask the Lead for the object).
+### Things only I know
+- Tools added: R2-N5-NEEDB/ (needb_check.py: XG, ANTI (anti mode for random one-player games), NEEDB at (LV+), OLD-THREAT/FZt, CASEI;
+  NB_MUT=nob|anti|otc|otf|xg|b0; needb_climb.py lv|rise; xg_witness.py (rng-free)); R2-N5-KW/ (kw_check.py: all P-N5-KW items and
+  PHASE inequalities; KW_MUT=frz0|casc|par; kw_climb.py kw|casc). Both climbs' dump() now saves the pairs evaluate() ran (Addendum A).
+- totals.py (both dirs) takes maxima for max_* keys; before the fix it summed them (the KW draft saw fake maxima 3150 / 745).
+- (LV+) is reachable only from block_9501's lineage with its start pair (climbs 12001/12004); random seeds reach neither (LV+) nor rises.
+- KW: post-freeze kind changes / c_w switches unreached in batch + 160k climb evaluations; CASC-B reached slack 0 (unsaved) and slack 1
+  (witness_cascb_13011/13012.pg, reproducible only via the climb's evaluate()).
+- Traps this session:
+  - The predecessor pushed twice after its handover (2173b54f, f8cb3ef3): fetch + `git log HEAD..origin/claude/referee-2` before push.sh.
+  - A repo-wide grep (docs notes) printed LEAD-STATE / RESULTS lines about REFEREE's unreported verdict. Grep only the packet's own dirs.
+  - A climb's .txt must hold a start pair VALID on the dumped game (C.4). Witnesses depending on a random optimum must pin σ*.
+  - `kill` by a pattern that also occurs in the command's own text (heredoc) kills the calling shell (exit 144). Write scripts with Write.
+  - A checker edit while a batch runs: keep checks unchanged, add only RECORD counters.
+- Oink was built in this container (20:2xZ); a fresh one must run scripts/setup_oink.sh (~3 min).
+
 ## Resume point (successor 12, session_01S8gi5khZfh16sXZ4fcHvZr, Opus 5.5 under D15; 2026-10-25 21:5xZ by date -u)
 - Handover check 84d8c8c9 (Lead 5/5, GO 20:49Z). Queue: NEEDB -> §C FBPOLY (REFEREE §C d6248f7b on trunk) -> FX (aa227b0b) -> NH42 (93d19be8,
   report R2-N5-NH42.md). §C PHI done by succ. 11 (f8cb3ef3).

@@ -1532,3 +1532,25 @@
   - Routed: REFEREE-2 (§C NEEDB first, then KW, then handover if > ~470k); L-RED (re-run REFEREE's cascb_witness.pg on kw18; R73 discrepancy); L-COMP (status nudge).
   - R49 draft updated for Addendum A.
 - 23:28Z: Merged referee-2 8a47fd92 (R2-N5-KW: all SIGN, no gap, N-KW-1..6) and l-com de0ca760 (Q4 78/160 alive). Asked both referees for §C KW, and REFEREE-2 also for §C NEEDB. Pre-drafted docs/agents/R50-draft.md (P-N5-KW + addendum; placeholders FIXES / RSC / R2SC / CSUM). PLAN: after R50 lands, a short assembly packet (𝒞^1O polynomial iteration bound from R47 + R48 + R50 + per-iteration bit cost), refereed like any packet.
+- 23:36Z: Merged l-red db07e8e4 (R73 §7: RUN ratio ≤ 0.0123 of Δr⁴; CASC-B regime reached once in random runs; post-freeze KIND-MONO still vacuous with long post-freeze runs; PAR 838k more states). R50 draft updated.
+- 23:46Z: Merged referee a6e50742 + 776281ac: §C KW. Both referees sign every statement; KW-1 = N-KW-3 is one finding, closed by definition; N-KW-1 and N-KW-2 accepted; CASC-B exercised on both engines (slack 0 reached by REFEREE-2). R50 draft updated. KW fixes now wait only on REFEREE-2's §C KW.
+- 2026-10-26 00:01Z: Read 9 notifications.
+  - REFEREE-2 12 PARKED. §C NEEDB fafea30e; §C KW 20fea7d7 (KW-1 = N-KW-3, joint gap closed by the one-line repair); handover dd79fb25. Created REFEREE-2 successor 13 (session_01Hjrye27AzEi22tE6LHsM4Y): FX, NH42, DUAL.
+  - REFEREE 11: R-N5-DUAL cdb187c7. DUAL first sentence, MIRROR (a), (c), Φ-kO and ENDGAME SIGNED; DUAL's second sentence SIGNED WITH GAP DUAL-1 (wording); MIRROR (b) signed as an implication only. The start-pair audit of R17-R48 proofs is NOT done.
+  - L-SI f4cb4bc3: drafts of the KW fixes file and P-N5-1O. 1O-POLY: ITER ≤ (n(n−1) + d_o)(T* + 1) = O(m·Δ·d_o·n¹³). Lemma BIT: bit cost per iteration O(n³(n + m)). Lemma OUT: S5 output correct on 𝒞^1O, closing G-N5T-3.
+  - L-RED: the CASC-B discrepancy is case (a): its corpus lacked the file, and R73's "0 everywhere" was too strong; no row changes (c45b888b).
+  - L-NEW: Route Δ shows no growth (5c01a8ee; tj17_n19, dch16_n44 as DATA).
+  - L-COMP: Q4 alive, ETA ~01:00Z.
+- R49 draft final: both §Cs; (LV+) definition fixed to match the packet (in-scope, u* ≠ none). To CHECKER 8 as C58.
+- 00:12Z: Merged l-si 1d33a337 (P-N5-KW fixes FROZEN, c65f4c1e). R50 draft completed: fixes, REFEREE-2 §C 20fea7d7, and the §C summary; E-SEG clause gives the repaired (i). To CHECKER C59 after C58.
+- 00:18Z: Merged referee 4e440bd5: R-N5-START audit (REFEREE 11). Every result in the 𝒞^1O chain is start-free in statement and proof; the R32/R33 chain was read at structure level. Forwarded to L-SI (P-N5-1O: 'from any start pair' with the caveat) and L-NEW (MIRROR's H-N5).
+- 00:29Z: Merged checker 4f617e9e (C58 FAIL: R49, three E-items, wording against signed text: the rise-setting clause, a false RESULTS citation, the disclosure wording) and dc29ee23 (C59 FAIL: R50, CW-INT setting dropped, slack conventions, limit (ii) incomplete). Applied all E-items verbatim per CHECKER's text, plus optional N-1, N-3 (C58) and N-1..N-4 (C59). Revised R49 sha1 6a9ce799, R50 sha1 64cbc92f. Lesson again: diff every setting clause against the packet.
+- 00:38Z: Merged checker a58dcd3a (C58 + C59 Addendum 1 PASS). LANDED R49 (P-N5-NEEDB, lines 2432-2492) and R50 (P-N5-KW, lines 2494-2565), checker a58dcd3a, both cmp OK. GAPS line 11 UPDATE: every count in the 𝒞^1O chain is landed; the assembly P-N5-1O comes next. GO to L-SI to freeze P-N5-1O.
+- 2026-10-26 00:48Z: Merged l-si 058e5aee. PINNED at this commit: packet P-N5-1O, docs/si/P-N5-1O-box15.md, sha1 2cf5e67262d31712976fb882175f5080cc3dc4ec, 184 lines, L-SI 10. Contents:
+  - Theorem 1O-POLY: from any start pair, ITER ≤ (n(n−1)+d_o)(T*+1) = O(m·Δ·d_o·n¹³).
+  - Lemma BIT: O(n³(n+m)) word operations per iteration.
+  - Lemma OUT: S5's output is correct on 𝒞^1O.
+  - Corollary 1O-TIME.
+  - Citations: R15, R21 (a), R36 (c), R47 (b), R48 (i), R50 (h), and the R-N5-START audit.
+  - Routing: TOP PRIORITY for both referees. REFEREE 11 now. REFEREE-2 13 first after its handover check, ahead of FX, NH42 and DUAL.
+- 00:53Z: Merged referee-2 a0940b45 (REFEREE-2 13 handover check 5/5 at 00:06Z; my watcher had missed it). GO with P-N5-1O first, then FX, NH42, DUAL.
