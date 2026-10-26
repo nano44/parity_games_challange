@@ -15,7 +15,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
 - 23:41Z: P-N5-KW SIGNED by both (REFEREE 56ac6538 + Add. 1d6cbf32, KW-1 one-line gap; REFEREE-2 8a47fd92). DRAFTS at l-si f4cb4bc3 (not
   frozen): docs/si/P-N5-KW-fixes-box15.md (freeze on Lead go after both §Cs; add §C items), docs/si/P-N5-1O-box15.md (assembly packet;
   freeze after Lead says R50 landed; replace 'R50' wording with the landed entry text).
-- NEXT: KW fixes freeze; P-N5-1O freeze. FX fixes (REFEREE signed R-N5-FX 843ba1f8; REFEREE-2 next) → NEW docs/si/P-N5-FX-fixes-box14.md.
+- 00:12Z: docs/si/P-N5-KW-fixes-box15.md FROZEN c65f4c1e (l-si 1d33a337). R50 (P-N5-KW) and R49 (NEEDB) LANDED at trunk f41fcf0a.
+- 00:49Z: docs/si/P-N5-1O-box15.md FROZEN 2cf5e672 (l-si 058e5aee): Theorem 1O-POLY (any start; audit R-N5-START 4e440bd5), Lemma BIT,
+  Lemma OUT (closes G-N5T-3 on 𝒞^1O from R36 (c) + R21 (a)), Corollary 1O-TIME. Sent to Lead for pin/route.
+- NEXT: P-N5-1O referee items → NEW docs/si/P-N5-1O-fixes-box15.md. FX fixes when routed. FX fixes (REFEREE signed R-N5-FX 843ba1f8; REFEREE-2 next) → NEW docs/si/P-N5-FX-fixes-box14.md.
 - DATA: experiments/si/kw15/kwcheck.py (library + extras), kwclimb.py (random, climbs kind / wonce / long); logs in kw15/logs/.
 
 ## Cross-read of L-NEW 21's docs/new/N5-KW-box42.md (v3, l-new b9ee6918, on trunk) against my N5-KW-box15 (5ebbb3b6); written 21:01Z (date -u)

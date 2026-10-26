@@ -1,0 +1,98 @@
+== random (1O)
+O2_ok: 26000
+O3_runs: 26000
+O3_strats: 65347
+O3b_runs: 22355
+O3b_skipped: 3645
+O3b_strats: 6628532
+O4_ok: 26000
+O5_ok: 26000
+REW0_stops: 1969
+iterations: 38033
+phases: 56359
+phases_with_fb: 943
+runs: 26000
+stops: 26000
+f_over_R48: (1.0, 'random1:6')
+iter_over_bound: (1.0058339569159285e-11, 'random1:1244')
+max_f: (1.0, 'random1:6')
+max_phase_len: (4.0, 'random5:691')
+max_phases: (8.0, 'random6:1505')
+phases_over_bound: (0.2857142857142857, 'random4:3945')
+logs/random_1.txt: RESULT OK violations=0
+logs/random_2.txt: RESULT OK violations=0
+logs/random_3.txt: RESULT OK violations=0
+logs/random_4.txt: RESULT OK violations=0
+logs/random_5_n12-30.txt: RESULT OK violations=0
+logs/random_6_n12-30.txt: RESULT OK violations=0
+== general
+O2_ok: 7000
+O3_runs: 7000
+O3_strats: 207620
+O3b_runs: 7000
+O3b_strats: 116234
+O4_ok: 7000
+O5_ok: 7000
+REW0_stops: 821
+iterations: 8822
+runs: 7000
+stops: 7000
+logs/general_1.txt: RESULT OK violations=0
+logs/general_2.txt: RESULT OK violations=0
+logs/general_3_n6-11.txt: RESULT OK violations=0
+== files
+O2_ok: 1509
+O3_runs: 1509
+O3_strats: 8391
+O3b_runs: 429
+O3b_skipped: 1080
+O3b_strats: 159015
+O4_ok: 1509
+O5_ok: 1509
+REW0_stops: 81
+iterations: 23105
+phases: 6209
+phases_with_fb: 436
+runs: 1509
+stops: 1509
+f_over_R48: (1.0, 'docs/referee-2/R2-N5-LP/instances/df_cex.pg#0')
+iter_over_bound: (3.5037691032306337e-10, 'experiments/attr/instances/dtr_fig1.pg#2')
+max_f: (37.0, 'docs/referee-2/R2-N5-FBW/climb/dirty_a_best.pg#1')
+max_phase_len: (112.0, 'experiments/red/so/instances/xsn91_n48.pg#0')
+max_phases: (29.0, 'experiments/red/n5inj/instances/block_bk32.pg#0')
+phases_over_bound: (0.375, 'experiments/attr/instances/dtr_fig1.pg#2')
+logs/files_kw.txt: RESULT OK violations=0
+== mutations
+O2_ok: 1792
+O3_runs: 2000
+O3_strats: 5030
+O3b_runs: 1995
+O3b_skipped: 5
+O3b_strats: 201465
+O4_ok: 1469
+O5_ok: 1407
+REW0_stops: 219
+VIOLATIONS: 24731
+V_FB: 7
+V_O2: 208
+V_O3b: 22959
+V_O4: 531
+V_O5: 738
+V_O6: 249
+V_PHI: 39
+iterations: 2330
+phases: 3940
+phases_with_fb: 85
+runs: 2000
+stops: 2000
+f_over_R48: (1.0, 'random7:36')
+iter_over_bound: (7.543754676603891e-12, 'random7:122')
+max_f: (1.0, 'random7:12')
+max_phase_len: (2.0, 'random7:37')
+max_phases: (5.0, 'random7:233')
+phases_over_bound: (2.0, 'random7:275')
+logs/mut_early.txt: RESULT FAIL violations=21783
+logs/mut_fb.txt: RESULT FAIL violations=7
+logs/mut_flip.txt: RESULT FAIL violations=1078
+logs/mut_phi.txt: RESULT FAIL violations=39
+logs/mut_sbar.txt: RESULT FAIL violations=1824

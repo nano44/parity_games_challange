@@ -1,0 +1,57 @@
+MODE random 400 4 12 7 MUT sbar
+O2_ok: 192
+O3_runs: 400
+O3_strats: 1006
+O3b_runs: 399
+O3b_skipped: 1
+O3b_strats: 40293
+O4_ok: 400
+O5_ok: 340
+REW0_stops: 57
+VIOLATIONS: 1824
+V_O2: 208
+V_O3b: 1510
+V_O5: 60
+V_O6: 46
+iterations: 466
+phases: 788
+phases_with_fb: 17
+runs: 400
+stops: 400
+f_over_R48: (1.0, 'random7:36')
+iter_over_bound: (7.543754676603891e-12, 'random7:122')
+max_f: (1, 'random7:12')
+max_phase_len: (2, 'random7:37')
+max_phases: (5, 'random7:233')
+phases_over_bound: (0.2, 'random7:29')
+VIOLATION O2: random7:0: v=1 play (0, frozenset({1, 2, 3, 4, 6, 8}), 6) != Xi (6, frozenset(), 3)
+VIOLATION O2: random7:3: v=0 play (1, frozenset(), 1) != Xi (3, frozenset(), 1)
+VIOLATION O5: random7:3: sbar loses from V\W (even cycle at 1)
+VIOLATION O2: random7:4: v=1 play (1, frozenset(), 0) != Xi (4, frozenset({1, 2}), 2)
+VIOLATION O3b: random7:4: sigma' (2, 5, 4) beats sigma at 0
+VIOLATION O3b: random7:4: sigma' (4, 5, 4) beats sigma at 2
+VIOLATION O2: random7:5: v=5 play (3, frozenset({5}), 1) != Xi (5, frozenset(), 0)
+VIOLATION O2: random7:8: v=1 play (3, frozenset(), 1) != Xi (0, frozenset({1}), 1)
+VIOLATION O2: random7:9: v=1 play (2, frozenset(), 1) != Xi (1, frozenset(), 0)
+VIOLATION O5: random7:9: sbar loses from V\W (even cycle at 2)
+VIOLATION O6: random7:9: sbar-play enters W at 1
+VIOLATION O2: random7:10: v=6 play (9, frozenset(), 4) != Xi (4, frozenset(), 2)
+VIOLATION O2: random7:11: v=1 play (1, frozenset(), 0) != Xi (8, frozenset(), 6)
+VIOLATION O5: random7:11: sbar loses from V\W (even cycle at 1)
+VIOLATION O2: random7:14: v=2 play (0, frozenset(), 3) != Xi (2, frozenset(), 0)
+VIOLATION O2: random7:17: v=6 play (3, frozenset(), 3) != Xi (3, frozenset(), 4)
+VIOLATION O2: random7:19: v=2 play (1, frozenset(), 3) != Xi (1, frozenset(), 5)
+VIOLATION O2: random7:20: v=0 play (7, frozenset(), 1) != Xi (7, frozenset(), 2)
+VIOLATION O2: random7:23: v=5 play (0, frozenset({8}), 3) != Xi (0, frozenset({8}), 4)
+VIOLATION O2: random7:24: v=5 play (6, frozenset({5}), 1) != Xi (5, frozenset(), 0)
+VIOLATION O2: random7:25: v=0 play (3, frozenset({0}), 1) != Xi (4, frozenset(), 2)
+VIOLATION O2: random7:26: v=0 play (9, frozenset(), 2) != Xi (9, frozenset(), 3)
+VIOLATION O2: random7:27: v=4 play (0, frozenset(), 2) != Xi (0, frozenset({7}), 4)
+VIOLATION O2: random7:28: v=1 play (1, frozenset(), 0) != Xi (2, frozenset(), 1)
+VIOLATION O5: random7:28: sbar loses from V\W (even cycle at 1)
+VIOLATION O2: random7:31: v=0 play (3, frozenset(), 1) != Xi (0, frozenset(), 0)
+VIOLATION O2: random7:32: v=0 play (7, frozenset(), 5) != Xi (0, frozenset(), 0)
+VIOLATION O3b: random7:32: sigma' (5, 0, 3, 6, 3, 1) beats sigma at 2
+VIOLATION O3b: random7:32: sigma' (5, 0, 3, 6, 3, 3) beats sigma at 2
+VIOLATION O3b: random7:32: sigma' (5, 0, 5, 6, 3, 1) beats sigma at 2
+RESULT FAIL violations=1824
