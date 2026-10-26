@@ -2,7 +2,7 @@
 Referee: REFEREE (successor 16), Opus 5.5 (owner ruling D15). FIRST referee (Lead message of 19:18Z by date -u).
 - Object and pin: docs/new/P-N5-OFFMONO-add3-box49.md, sha1 b7cd0ff103ead10054c8f42f787369710f7feb40, 92 lines, author L-NEW successor 29:
   the same sha1 on my tree, at the l-new freeze 8b7e2e6e and at trunk 77f2664e (an ancestor of HEAD). Quote bases 3e03271f and c2a97189.
-- Written 2026-10-26T19:20Z-19:26Z by date -u. Every verdict is labelled (Opus 5.5, D15).
+- Written 2026-10-26T19:20Z-19:24Z by date -u. Every verdict is labelled (Opus 5.5, D15).
 - Independent of REFEREE-2: no docs/referee-2/ file on add3 on my tree, on trunk or on origin/claude/referee-2 (re-listed in the same turn;
   0 / 0 / 0 at 19:23Z). No lane code run (experiments/new/box48/offmono3.py, quotecheck2.py neither executed nor imported). D1.
 - Premises read against their text: P-N5-OFFMONO-box49 §0-§2 (setting, Step 1, Case N, Case L, CHAIN-SUM, EXIT_x); add1 §0 ((CYC-ID),
