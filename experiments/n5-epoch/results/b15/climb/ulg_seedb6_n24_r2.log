@@ -1,0 +1,21 @@
+START fit (-1000000, -1000000) n 24
+BEST step 9 fit (-22, -1000000) t 0s
+BEST step 11 fit (-19, -1000000) t 0s
+BEST step 14 fit (-19, -23) t 0s
+BEST step 55 fit (-18, -23) t 1s
+BEST step 709 fit (-17, -23) t 14s
+BEST step 884 fit (-16, -1000000) t 18s
+BEST step 987 fit (-15, -1000000) t 20s
+BEST step 2385 fit (-14, -1000000) t 50s
+BEST step 2451 fit (-13, -1000000) t 52s
+BEST step 2696 fit (-12, -1000000) t 58s
+BEST step 2725 fit (-11, -1000000) t 59s
+BEST step 3969 fit (-10, -1000000) t 89s
+BEST step 4324 fit (-9, -1000000) t 102s
+BEST step 5985 fit (-8, -1000000) t 153s
+BEST step 8190 fit (-7, -1000000) t 221s
+BEST step 17647 fit (-6, -1000000) t 505s
+BEST step 18010 fit (-5, -1000000) t 516s
+BEST step 18312 fit (-4, -1000000) t 525s
+BEST step 19171 fit (-3, -1000000) t 553s
+END steps 28971 best (-3, -1000000) n 24 -> results/b15/climb/ulg_seedb6_n24_r2.pg

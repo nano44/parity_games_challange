@@ -1,0 +1,68 @@
+MODE files ../R2-N5-STAU/lib41_noref.lst 1 MUT gs0 BUDGET 200000
+BFF_checks: 453316
+DLS_A: 2354
+DLS_A_clean: 2205
+DLS_A_nonclean: 149
+DLS_B: 127
+DLS_case_i: 310
+DLS_case_ii: 1953
+DLS_case_iii: 163
+DLS_entering: 2481
+DLS_gains: 198
+ENGXI_checks: 8882
+FA_UNK: 3327
+FA_beyond_freeze: 522
+FA_pieces: 10962
+FAa_checks: 346155
+FAb_checks: 346155
+FAc_checks: 2220
+FG_UNK: 2836
+FG_intervals: 5556
+FGa_checks: 181630
+FGb_checks: 181630
+GSa_checks: 57165
+GSb_checks: 113160
+RLP_beyond: 31
+RLP_beyond_switch_in_class: 31
+RLP_runs: 5556
+RLPi_checks: 36
+RLPii_checks: 160
+RP_checks: 75655
+VIOLATIONS: 9469
+V_GSb_M: 9469
+classes: 4013
+phases: 2332
+runs: 410
+states: 8882
+RP_max_rho: (37, 'experiments/new/box35/instances/pf_best_3622.pg#0@4 q 0 f 4 G_c 1 |U| 40')
+VIOLATION GSb_M: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@4 v 5 x 9
+VIOLATION GSb_M: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@4 v 16 x 29
+VIOLATION GSb_M: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@4 v 23 x 9
+VIOLATION GSb_M: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@4 v 23 x 11
+VIOLATION GSb_M: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@5 v 5 x 9
+VIOLATION GSb_M: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@5 v 16 x 29
+VIOLATION GSb_M: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@5 v 23 x 9
+VIOLATION GSb_M: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@5 v 23 x 11
+VIOLATION GSb_M: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@6 v 5 x 9
+VIOLATION GSb_M: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@6 v 16 x 29
+VIOLATION GSb_M: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@6 v 23 x 9
+VIOLATION GSb_M: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@6 v 23 x 11
+VIOLATION GSb_M: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@7 v 5 x 9
+VIOLATION GSb_M: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@7 v 16 x 29
+VIOLATION GSb_M: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@7 v 23 x 9
+VIOLATION GSb_M: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@7 v 23 x 11
+VIOLATION GSb_M: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@8 v 5 x 9
+VIOLATION GSb_M: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@8 v 16 x 29
+VIOLATION GSb_M: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@8 v 23 x 9
+VIOLATION GSb_M: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@8 v 23 x 11
+VIOLATION GSb_M: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@9 v 5 x 9
+VIOLATION GSb_M: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@9 v 16 x 29
+VIOLATION GSb_M: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@9 v 23 x 9
+VIOLATION GSb_M: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@9 v 23 x 11
+VIOLATION GSb_M: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@10 v 5 x 9
+VIOLATION GSb_M: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@10 v 16 x 29
+VIOLATION GSb_M: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@10 v 23 x 9
+VIOLATION GSb_M: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@10 v 23 x 11
+VIOLATION GSb_M: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@11 v 5 x 9
+VIOLATION GSb_M: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@11 v 16 x 29
+RESULT FAIL violations=9469

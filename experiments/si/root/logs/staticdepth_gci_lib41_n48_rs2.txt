@@ -1,3 +1,18 @@
-acyc_b=1420 acyc_fail=60 checked=1188 cyc_const=1189 dstar_max=44 gci=1924 gci_len_max=44 gci_len_minus_n1_max_plus1000=998 gci_sbchg=444 gci_sbchg_len_max=40 gci_sbconst=1480 intervals=1480 len_max=44 len_minus_n1_max_plus1000=998 pure_b=1198 pure_but_cycles_move=35
+acyc_b=1420 acyc_fail=60 checked=1188 checked_gates=726 cyc_const=1189 dstar_max=44 gates_len_max=25 gates_len_minus_n1_max_plus1000=996 gci=1924 gci_len_max=44 gci_len_minus_n1_max_plus1000=998 gci_piece_len_max=21 gci_sbchg=444 gci_sbchg_count_max=21 gci_sbchg_count_sum=1095 gci_sbchg_len_max=40 gci_sbconst=1480 intervals=1480 len_max=44 len_minus_n1_max_plus1000=998 pure_b=1198 pure_but_cycles_move=35 slack_min_plus1000=1000 tight=26
+EXAMPLE ('GATES', 'experiments/n5-exhaustive/instances/b6_xl_n40.pg', 4, 17, 13, 21, 40, 1)
+EXAMPLE ('GATES', 'experiments/n5-exhaustive/instances/b6_xl_n40.pg', 25, 40, 15, 21, 40, 1)
+EXAMPLE ('GATES', 'experiments/n5-exhaustive/instances/b6_xl_n48.pg', 4, 15, 11, 23, 48, 1)
+EXAMPLE ('GATES', 'experiments/n5-exhaustive/instances/b6_xl_n48.pg', 26, 37, 11, 23, 48, 1)
+EXAMPLE ('GATES', 'experiments/n5-exhaustive/instances/b6_xw_n48.pg', 6, 16, 10, 22, 48, 1)
+EXAMPLE ('GATES', 'experiments/n5-exhaustive/instances/b6_xw_n48.pg', 26, 36, 10, 22, 48, 1)
+EXAMPLE ('TIGHT', 'experiments/n5-exhaustive/instances/b6_xs_n24.pg', 0, 21, 21, 24)
+EXAMPLE ('TIGHT', 'experiments/n5-exhaustive/instances/b6_xs_n32.pg', 0, 29, 29, 32)
+EXAMPLE ('TIGHT', 'experiments/n5-exhaustive/instances/b6_xs_n40.pg', 0, 36, 36, 40)
+EXAMPLE ('GATES', 'experiments/red/xing/instances/x32_waves48.pg', 4, 29, 25, 29, 48, 1)
+EXAMPLE ('GATES', 'experiments/red/xing/instances/x32_waves48.pg', 44, 69, 25, 37, 48, 1)
+EXAMPLE ('GATES', 'experiments/new/box28/instances/x48_rt48_final.pg', 63, 83, 20, 32, 48, 1)
+EXAMPLE ('G1', 'experiments/red/so/instances/so_sorl_n32.pg', 0, 21, 21, 21, 32)
+EXAMPLE ('G1', 'experiments/red/so/instances/so_tie15_n32.pg', 1, 19, 18, 17, 32)
+EXAMPLE ('G1', 'experiments/red/so/instances/so_tie15_n32.pg rs', 3, 22, 19, 17, 32)
 STATICDEPTH PASS
 rc 0

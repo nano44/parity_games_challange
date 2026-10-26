@@ -1,0 +1,19 @@
+MAX_GCI_len_minus_n1_R1 -2
+MAX_GCI_len_minus_n1_R2 -2
+MAX_K_R1 1
+MAX_K_R2 1
+MAX_U 0
+RD_pure_ints 1
+RUNS 1200
+RUNS_S 185
+RUN_STATES 3195
+ULG_inside_R1 0
+ULG_inside_R2 0
+UL_runs 183
+UL_skip_not_ii 2
+ULa_chk_R1 183
+ULa_chk_R2 183
+ULb_chk_R1 2013
+ULb_chk_R2 2013
+U_events 0
+done

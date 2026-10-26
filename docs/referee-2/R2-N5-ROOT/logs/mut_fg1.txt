@@ -1,0 +1,58 @@
+MODE files ../R2-N5-STAU/lib41_noref.lst 1 MUT fg1 BUDGET 200000
+BFF_checks: 453316
+DLS_A: 2354
+DLS_A_clean: 2205
+DLS_A_nonclean: 149
+DLS_B: 127
+DLS_case_i: 310
+DLS_case_ii: 1953
+DLS_case_iii: 163
+DLS_entering: 2481
+DLS_gains: 198
+ENGXI_checks: 8882
+FA_UNK: 3327
+FA_beyond_freeze: 522
+FA_pieces: 10962
+FAa_checks: 346155
+FAb_checks: 346155
+FAc_checks: 2220
+FG_UNK: 2836
+FG_intervals: 5556
+FGa_checks: 181630
+FGb_checks: 181630
+GSa_checks: 57165
+GSb_checks: 113160
+RLP_beyond: 31
+RLP_beyond_switch_in_class: 31
+RLP_runs: 5556
+RLPi_checks: 36
+RLPii_checks: 160
+RP_checks: 75655
+VIOLATIONS: 20
+V_FGa: 20
+classes: 4013
+phases: 2332
+runs: 410
+states: 8882
+RP_max_rho: (37, 'experiments/new/box35/instances/pf_best_3622.pg#0@4 q 0 f 4 G_c 1 |U| 40')
+VIOLATION FGa: experiments/n5-exhaustive/instances/b6_xw_n40.pg#0@0 z 5 s 0 u 0
+VIOLATION FGa: experiments/n5-exhaustive/instances/b6_xw_n40.pg#0@0 z 17 s 0 u 0
+VIOLATION FGa: experiments/new/box25/instances/rtt16.pg#0@0 z 15 s 0 u 13
+VIOLATION FGa: experiments/new/box34/instances/onedrop_cex_n32.pg#0@0 z 12 s 0 u 27
+VIOLATION FGa: experiments/new/box35/instances/onerun_cex_n32.pg#0@0 z 24 s 0 u 27
+VIOLATION FGa: experiments/red/carry/instances/ctx11_n40.pg#0@5 z 10 s 5 u 25
+VIOLATION FGa: experiments/red/carry/instances/ctx11_n40.pg#0@5 z 18 s 5 u 25
+VIOLATION FGa: experiments/red/carry/instances/ctx11_n40.pg#0@5 z 22 s 5 u 25
+VIOLATION FGa: experiments/red/carry/instances/ctx11_n40.pg#0@5 z 23 s 5 u 25
+VIOLATION FGa: experiments/red/carry/instances/h4_compound2x2_n44.pg#0@4 z 22 s 4 u 10
+VIOLATION FGa: experiments/red/carry/instances/h4_compound2x2_n44.pg#0@4 z 22 s 4 u 11
+VIOLATION FGa: experiments/red/carry/instances/h4_compound2x2_n44.pg#0@4 z 22 s 4 u 26
+VIOLATION FGa: experiments/red/carry/instances/h4_compound2x2_n44.pg#0@4 z 22 s 4 u 41
+VIOLATION FGa: experiments/red/so/instances/epsseg_cex_n16.pg#0@0 z 10 s 0 u 9
+VIOLATION FGa: experiments/red/so/instances/so_j19_n48.pg#0@0 z 30 s 0 u 0
+VIOLATION FGa: experiments/red/so/instances/so_tie13_n24.pg#0@0 z 3 s 0 u 0
+VIOLATION FGa: experiments/red/so/instances/so_tie13_n24.pg#0@1 z 18 s 0 u 0
+VIOLATION FGa: experiments/red/xing/instances/x31_ru24.pg#0@1 z 5 s 1 u 18
+VIOLATION FGa: experiments/red/xing/instances/x31_ru24.pg#0@1 z 10 s 1 u 18
+VIOLATION FGa: experiments/si/xing/instances/zcl_cu_n24.pg#0@1 z 22 s 1 u 18
+RESULT FAIL violations=20

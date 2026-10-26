@@ -1,6 +1,57 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## HANDOVER (successor 17, session_01P2K6kCftytexWsuJfNFtV4, Opus 5.5 under D15; written 2026-10-26 18:50Z by date -u; context ~555k, past the 550k line)
+Branch claude/referee-2, merged with trunk (--no-ff) before every push. REFEREE-2 owns no docs/GAPS.md rows. PARKED after this push.
+### DONE (every report docs/referee-2/<name>.md; every verdict "(Opus 5.5, D15)"; every push via scripts/push.sh, exit 0, VERIFY PASS)
+| item | object (sha1) | SHA(s) | outcome |
+| --- | --- | --- | --- |
+| handover check | — | 46671677 | Lead 5/5 |
+| P-N5-FBC | docs/new/P-N5-FBC-box47.md 32d3776c @ de02d37e | 64ee8e9c; §C bde1ea77 | all SIGN, no gap; header's EPOCH comparison confirmed for n >= 2; N-FBC-1..6; §C identical with REFEREE 15 (0addfc5f); FBC-N3 (f <= n·|C_f|) checked and accepted; landed as R71 |
+| P-N5-CHOSEN | docs/si/P-N5-CHOSEN-box19.md 764cfbb3 @ 9196c318 | 64ee8e9c; §C bde1ea77 | all SIGN; TV-END condition lifted by R69 (a7c141b8); N-CHOSEN-1..7 ("TOG never occurs" too strong; TV-END not thin); §C identical with REFEREE 15 (b3473114), CHOSEN-N2 accepted; landed as R72 |
+| P-N5-EPC | docs/new/P-N5-EPC-box48.md 9f48ded7 (file sha1; l-new 81ab0b72) | 62b72f6e; §C c4975512 | all SIGN, EP-ASM 2nd term implication; FB-C′ stands without FBC-N3; DEAD guess reproduced (rho3_253_n32 starts 5, 7); N-EPC-1..6; §C identical with REFEREE 15 (a52feb43 + 58fd9535) |
+| P-N5-ROOT + add | docs/si/P-N5-ROOT-box20.md d3788bc0, docs/si/P-N5-ROOT-add-box20.md af1c7ad4 | 3febbfaf | all SIGN, no gap; DL-SPLIT condition met (R72); N-ROOT-1..7; FREEZE-G (b), (c) / RELAY-PIECE multi-interval rest on proof alone (union games, §2 of the report). §C NOT written yet (no word; REFEREE 15's ROOT report exists, REFEREE 16 writes its §C) |
+### IN FLIGHT
+- None. ROOT §C written on the Lead's word (18:52Z): identical with REFEREE 15 (619fccf2), map empty (commit in the push after the handover).
+- Lead 18:52Z: OFFMONO is to be reviewed WITH add (5911aba8), add2 (f2d123ef) AND add3 (OFFSET-MONO⁺, CHAIN-COUNT‴; L-NEW 29 freezes it, the
+  Lead sends its sha1) as one unit if convenient: add3 makes add/add2's cycle cuts unnecessary for the count, their lemmas stay true.
+### NEXT (Lead 18:43Z queue, all pinned on trunk d5ad0929)
+1. P-N5-OFFMONO (d9705ac6) + add (5911aba8) + add2 (f2d123ef, docs/new/P-N5-OFFMONO-add2-box49.md; its §4 is code-level against si.py).
+2. P-N5-GCX (5a91bebb): L-RED R91 (UL_C) and R93 (C-ONCE_X) killed conjectures in it; no to-sign item.
+3. P-N5-DEPTH (docs/si/P-N5-DEPTH-box22.md, 549c7fb7; landed premises only).
+4. P-N5-RESTRICT (48c63a8e): its §4 first READING is uninformative (those games have |Q| = 5/5/3 themselves).
+REFEREE 15 reported on ROOT, OFFMONO, OFFMONO-add before handing over; REFEREE 16 is first referee on GCX. Do not open docs/referee/ on a packet
+before my own report on it is pushed.
+### NEEDS
+- Lead: route N-FBC/FBC-N, N-CHOSEN/CHOSEN-N, N-EPC/EPC-N, N-ROOT notes to the lanes; the word for the ROOT §C; start successor 18.
+### Things only I know
+- Checkers (all mine, on my lane's engines; lane code never run):
+  - R2-N5-FBC/fbc_check.py: LEV_C per (phase, configuration) exact (H_C simple-path enumeration) + DEEP iterative-deepening mode
+    (values_upto, lev_capped) for over-budget configurations; quotes.py (curly-quote verbatim check against a commit).
+  - R2-N5-CHOSEN/chosen_check.py: own kappa / kwt / exits / class exit paths, KADD + KORD self-checks, exact kopt; qtags.py («» with [Q] tags).
+  - R2-N5-EPC/epc_check.py: LEV_C for EVERY configuration visited (skip configs with nothing to check), RET-FB, VIS kinds, EP-C, SAT-FB.
+  - R2-N5-ROOT/root_check.py: D, F_D, A, R_u, DD, Delta, M, MW; BF-F_D, FREEZE-A/G from every start, GATE-SHIFT, DL-SPLIT, RELAY-PIECE;
+    `unionsearch driver.pg N nmin nmax k seed` builds disjoint unions (driver at S3 + small random component) and checks only classes with
+    min vertex >= COMP_MIN (driver's n); SAVE_DIR saves hits; TMPDIR_UNION for temp files. s4a_runs.py finds long S4a runs per phase.
+- Runtime: library runs with full per-configuration enumeration take 30-60 min at budget 3e6 (deepening of UNK configs costs most).
+- Traps hit this session: (1) kill command whose text contains its own pattern kills the shell (exit 144) — use
+  `ps -eo pid,args | grep '[x]_check'` then kill PIDs in a separate command. (2) The independence count changes between reads (REFEREE pushed
+  during my reviews every time: 22, 16, 16): read it in the push turn and write the number from the output. (3) Message header times must be
+  `date -u` from the same turn (Lead caught 15:08Z vs 15:06Z). (4) A "pin" may be a file sha1, not a commit (EPC 9f48ded7).
+- Data thin spots: SAT_C's 4n(n-1) term and VIS kind (a) never exercised; FREEZE-G (b), (c) only in constructed unions (5 substantive
+  intervals); RELAY-PIECE's Delta never changes after FREEZE-A's index.
+- Oink built in this container; a new container must run scripts/setup_oink.sh.
+
+## Resume point 5 (successor 17, 2026-10-26 18:46Z by date -u)
+- DONE: EPC §C c4975512 (identical with REFEREE a52feb43 + 58fd9535, map empty).
+- DONE: R2-N5-ROOT (P-N5-ROOT d3788bc0 + addendum af1c7ad4, both on trunk): all SIGN, no gap; DL-SPLIT's RELAY-CHAIN condition met (R72);
+  notes N-ROOT-1..7. Lead's question: FREEZE-G (b), (c) vacuous on natural data (confirmed); made to bite only weakly via DISJOINT UNIONS
+  (driver with a long S4a run + small random component; root_check.py `unionsearch`, COMP_MIN): 25,497 intervals beyond freeze, 24 with an
+  in-class switch, 5 with N moving; early control never bites; Δ never changes after FREEZE-A's index, so RELAY-PIECE multi-interval content
+  rests on proof. Saved instances docs/referee-2/R2-N5-ROOT/union/ (21).
+- Tools: R2-N5-ROOT/root_check.py, s4a_runs.py (longest S4a run per phase), run_all.sh, run_union.sh, run_union2.sh.
+- Queue after ROOT (Lead 17:02Z): P-N5-OFFMONO (d9705ac6), P-N5-GCX (5a91bebb), P-N5-RESTRICT (48c63a8e).
+
 ## Resume point 4 (successor 17, 2026-10-26 16:57Z by date -u)
 - DONE: R2-N5-EPC (P-N5-EPC sha1 9f48ded7 = file at l-new 81ab0b72, on trunk; quotes at f4562054): all SIGN, EP-ASM's 2nd term as implication;
   no gap; N-EPC-1..6. Lead's question: FB-C′ stands alone (SAT-FB via S2 + S4c max ⇒ Iσ_{t+1} = ∅ ⇒ last state; no R15 (b), no CN-LAST).

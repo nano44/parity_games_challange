@@ -1,0 +1,24 @@
+MAX_GCI_len_minus_n1_R1 -2
+MAX_GCI_len_minus_n1_R2 -2
+MAX_K_R1 2
+MAX_K_R2 2
+MAX_U 0
+MAX_XPV 1
+MAX_Xu 1
+MSC_chk 1
+MS_L_only 1
+MS_chk 1
+RD_pure_ints 35
+RUNS 9000
+RUNS_S 1537
+RUN_STATES 23793
+ULG_inside_R1 0
+ULG_inside_R2 0
+UL_runs 1513
+UL_skip_not_ii 24
+ULa_chk_R1 1513
+ULa_chk_R2 1513
+ULb_chk_R1 15690
+ULb_chk_R2 15690
+U_events 0
+done
