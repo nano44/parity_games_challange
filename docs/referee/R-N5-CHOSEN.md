@@ -113,7 +113,10 @@ R56 (g), sanity). Starts: S3 and random start pairs (lane instances: their start
   my check tests the lemma at every such non-final state: 4,356 checks in the library and random rows, 2,145 of them in classes with |Q_c| ≥ 1, 0 failures.
 - Mutations (each bites; random 1,500 games, seed 251, S3 + 4 random): MUT=1 (CHOSEN with σ̄_{t+1}(q), the lane's control): CHO fails 5
   times, CHAIN 3 times; MUT=2 ((H) read with TV′ := κopt_c only, the q-terms dropped): TVE fails 24 times.
-- A library batch at n ≤ 40 (S3 + 2 random) is still running at the push; its result goes into the §C.
+- Added after the first push (14:55Z by date -u): the library batch at n ≤ 40 (870 files, S3 + 2 random): 2,610 runs, 13,699 phases,
+  ρ events 6,364 / 2,027 / 99 (ROUTE / RELAY / CYC), 2,027 CHOSEN checks (TOG alternative 162, with a ρ event at e), chains max 11, ends
+  2,015 ROUTE / 12 CYC / 0 TOG, 15,560 (H) states, 1,485 TV-END checks (486 with |Q_c| ≥ 1), TVG 76, 668 classes over the TV budget;
+  0 failures (scratch/chosen_logs/lib40.txt).
 ## 6. Notes (none blocks a signature)
 - CHOSEN-N1 (wording, §2 first bullet). κ_t(q) = κwt_c(q) + κ_t(y*) is the play decomposition (no half of R56 (d) needed); the step that
   needs optimality is R56 (d)'s "≤" half at t + 1 (Lemma S (a), every game). Relabel the parenthetical.
