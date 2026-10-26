@@ -16,7 +16,8 @@
       Odd fallback ends a phase (1O-N1).
   (b) Start-freeness: every result the chain cites is start-free in statement and proof (statewise facts, per-transition facts, and
       inductions whose base is the first state of the window they bound): docs/referee/R-N5-START.md (referee 4e440bd5), with the R32 /
-      R33 chain under X-SN-PHASE read line by line in its Addendum 1 (REFEREE, with this review) and by REFEREE-2 (N-1O-5).
+      R33 chain under X-SN-PHASE read line by line in its Addendum 1 (REFEREE, with this review) and by REFEREE-2 (N-1O-5), and
+      R34 (b)-(e) line by line in REFEREE-2's §C.
   (c) Lemma BIT: with valuations stored as (a vertex, an n-bit path-set vector indexed by rank, a length ≤ n), compared by cycle-node
       reward, then the top differing bit, then length (SPEC S1, Q1), one N5 iteration and the final output step cost O(n³(n + m)) word
       operations on O(log(n + m))-bit words and O(n)-bit vectors; no big integers. The longest-path recursion of S1 (iv) is memoised, with the
@@ -43,9 +44,11 @@
   Ξσ, W = W_E, both strategies win against every enumerated positional counter-strategy), 0 violations; ITER, f, phases and phase
   lengths within the bounds on 1,509 library runs (max f 37, max phase length 112, max 29 phases); all mutation controls bite. The
   bound is far above every observed count.
-- Signatures: REFEREE docs/referee/R-N5-1O.md (referee 4298dae9, successor 11; §C RSC-PENDING): 1O-POLY, BIT, 1O-TIME SIGNED; OUT SIGNED
+- Signatures: REFEREE docs/referee/R-N5-1O.md (referee 4298dae9, successor 11; §C e785b8e1): 1O-POLY, BIT, 1O-TIME SIGNED; OUT SIGNED
   WITH GAP OUT-1 (one-word repair); notes 1O-N1, 1O-N2, BIT-N1; R-N5-START Addendum 1 (R32 / R33 line by line). REFEREE-2
-  docs/referee-2/R2-N5-1O.md (referee-2 04c2d708, successor 13; §C R2SC-PENDING): all SIGN, no gap; notes N-1O-1..6. §C (both): CSUM-PENDING.
+  docs/referee-2/R2-N5-1O.md (referee-2 04c2d708, successor 13; §C 3312144c): all SIGN, no gap; notes N-1O-1..6. §C (both): verdicts identical in substance; joint gap map one row, OUT-1 =
+  N-1O-1, closed by the repair; 1O-N1, 1O-N2, BIT-N1 and N-1O-2, N-1O-3, N-1O-4, N-1O-6 accepted across; REFEREE-2's §C adds a line-by-line
+  pass over R34 (b)-(e), so the R32 / R33 / R34 chain is read in full jointly. No disagreement remains.
 - TARGET.md diff: not a claim of TARGET.md §2 (restricted class; TARGET.md §4, first bullet). Its objects match TARGET.md §1 (winning
   regions against history-dependent strategies; positional strategies output) and §3 (word RAM, bit cost). GAPS G-N5-TIME: open for general
   games; its 𝒞^1O part is closed by this entry.
