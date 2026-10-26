@@ -242,3 +242,57 @@ Tools: experiments/si/rund/below.py (per-transition trace of a long run), pv.py 
 - The mechanism is delay chains on routes. Each return is paid by a fresh higher even vertex reaching the route, i.e. by a W-change
   at level > the previous one. CONJECTURE (new, to test): offset changes of v per stretch_D ≤ the number of distinct levels at which
   s^W(v) or s^Ξ(v) rises (≤ n). Not attempted yet.
+
+## 11. Lemma PIECE_D and Corollary SPLIT-RED (PROVED, every game; Lead's GO 07:09Z), and the split-state count (DATA)
+Setting. S: a fallback-free run inside one phase of N5 on any game (τ constant, so G_τ is one fixed one-player game). At a state k ∈ S an
+Even edge (x, z), z ≠ a := σ_k(x), is SPLIT if it is improving in exactly one frame: [Ξ_k(z) ▷ Ξ_k(a)] ≠ [W_k(z) ▷ W_k(a)]. The state k is
+ALIGNED if it has no split edge. N_split(S) := the number of transitions of S whose source state is not aligned.
+### Lemma PIECE_D
+- (a) At an aligned state k, Iσ_k equals the improving set of σ_k in the one-player game G_τ, and the S4a step k → k+1 is a switch-best
+  step of G_τ from σ_k (RESULTS R17's rule, for SPEC's pointwise-optimal choice).
+- (b) If every transition of a block B of consecutive transitions of S has an aligned source and λ_W is constant on B, then B has fewer
+  than n + m transitions (m := the number of edges).
+Proof.
+- (a) SPEC S2 gives Iσ_k = {(x, z) : Ξ_k(z) ▷ Ξ_k(σ_k x)}. In G_τ every Odd vertex has out-degree 1, so S1's valuation of σ_k on G_τ is the
+  play valuation W_k, and G_τ's improving set is {(x, z) : W_k(z) ▷ W_k(σ_k x)} (R17's setting, VJ00 §4.4 eq. (2)). Alignment makes the
+  two sets equal.
+  - S4a takes σ_{k+1} := Even's pointwise optimum in the arena H_k of G_τ, in which Even's x may use {σ_k(x)} ∪ Iσ_k(x). That is R17's
+    switch-best arena on G_τ.
+  - R17 (d) holds for every pointwise-optimal choice.
+- (b) By (a), B is a run of switch-best on G_τ started at its first state. λ_W is G_τ's cycle-node map, so B lies in one λ-phase of that
+  run. R17 (c) (Theorem PH: a λ-phase has fewer than n + m steps) bounds |B|. □
+### Corollary SPLIT-RED
+Under (h3_D) at every state of S: |S| ≤ N_split(S) + (N_split(S) + 1)·(n + m − 1).
+Proof. λ_W is constant on S (P-N5-H3 §6, (ii)). The maximal blocks of transitions with aligned sources number ≤ N_split + 1, each with
+< n + m transitions by PIECE_D (b). The other transitions number N_split. □
+- This is a two-gate (indeed any-gate) form of RESULTS R19 (f) PIECE. Where R19 (f) has (h) and a route game with o's frozen continuation,
+  here "aligned" is the exact condition under which N5's Even step IS switch-best on G_τ.
+- On the OFFSET-ONCE counterexamples (§10) every state is aligned: offret_n23 (4 transitions) and offalt_K10 (24 transitions) are single
+  aligned blocks. Their offset returns are inside one switch-best λ-phase, which R17 bounds.
+### What a split edge is (by MERGE-B; READING with DATA)
+- Under (h3_D), different cycle nodes compare by reward in both frames, so a split edge joins z and a with one cycle node. If Δ(z) ≠ Δ(a)
+  it is an OFFSET split; if Δ(z) = Δ(a) the path sets compare alike (MERGE-B) and lengths decide, a LENGTH split.
+- FORBIDDEN edges, improving in W but not in Ξ, are the ones that matter for R17's Lemma P (its Case B needs only "W-improving ⇒ in the
+  arena"). EXTRA edges, the other direction, only enlarge the arena. In the data every split state has a forbidden edge.
+### DATA (piece.py; checks ARENA_V (our Ξ-improving set vs G_τ's at aligned states), BLOCK_V (R17's bound per aligned block), RED_V
+(SPLIT-RED); SPEC_MISMATCH (our Ξ-improving set vs n5x's Is) also 0; MUT=1 (block bound 2) fails on frz1_n24)
+
+| set ((h3_D) runs only) | runs | transitions | split sources (forbidden / extra) | max per run | max aligned block | split edges: offset / length |
+| --- | --- | --- | --- | --- | --- | --- |
+| lib41 (≥ 2 Odd choices, n ≤ 48), S3 + 2 random starts | 119 | 469 | 290 (287 / 230) | 14 | 11 | 2,118 / 0 |
+| lib2o, S3 | 32 | 127 | 106 (106 / 93) | 11 | 10 | 933 / 0 |
+| random 𝒞^2O, 6,000, n 5-14, seed 62 | 923 | 991 | 5 (2 / 3) | 2 | 3 | 3 / 2 |
+| random 𝒞^kO, 6,000, n 5-14, seed 63 | 733 | 789 | 5 (3 / 3) | 1 | 3 | 0 / 7 |
+| frz1_n24 (its .start) | 2 | 28 | 20 (20 / 18) | 16 | 8 | 129 / 0 |
+| frz3_n24 (its .start) | 1 | 24 | 17 | 17 | 7 | 101 / 0 |
+| offret_n23, offalt_K10 (their .start) | 1 + 1 | 4 + 24 | 0 | 0 | 4, 24 | — |
+| L-COMP's notnc1-8 (l-comp 95f35638, their .start) | 8 | 8 | 0 | 0 | 1 | — |
+
+- 0 violations everywhere. On the library and on the long runs, split states are the MAJORITY of transitions (290 of 469; 17 of 24 on
+  frz3_n24), all of them offset splits with a forbidden edge. So SPLIT-RED is correct but its remainder N_split is not small in data.
+- Typical forbidden edge (frz1_n24, below.py): x ∈ R_D with a := σ(x) ∈ R_D and z ∈ F_D. The gate's Ξ value holds the top vertex
+  (rank 23) and its W value does not, so W prefers z and Ξ does not. These edges stay forbidden for the whole stretch_D.
+### What is left (OPEN)
+- N_split per run. Since the forbidden edges are persistent and structural (R_D → F_D across an offset gap), the natural next statement
+  is Lemma P restricted to paths whose edges are never forbidden on S. That is a per-offset-class P^c (R50 FRZ-U's "paths inside R to o"
+  with the offset class for R). Then one counts the transitions not covered by it. Not attempted yet.

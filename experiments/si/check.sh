@@ -35,3 +35,5 @@ python3 -I rund/rund.py --one rund/instances/lenonly_n8.pg | grep -q "LENONLY ('
 echo "rund (gap lib2o, lenonly_n8): PASS"
 python3 -I rund/gap.py --one rund/instances/offret_n23.pg rund/instances/offret_n23.start | grep -q "RETURN ('rund/instances/offret_n23.pg', 0, 3, 22, \[131204, 264200, 264200, 131204\])"
 echo "rund (OFFSET-ONCE counterexample offret_n23): PASS"
+python3 -I rund/piece.py --list fb2o/lib2o.txt 2 | grep -q "PIECE PASS"
+echo "rund (PIECE_D / SPLIT-RED on lib2o): PASS"

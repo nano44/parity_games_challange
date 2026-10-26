@@ -1,0 +1,9 @@
+edges_length=2 edges_offset=3 extra_states=3 forb_states=2 max_T=3 max_block=3 max_forb_run=2 max_split_run=2 runs=923 runs_with_forb=1 runs_with_split=4 split_states=5 trans=991
+TOP ('rand seed 62 #672', 0, 2, 11, 'T', 2, 'split', 0, 'maxD', 0)
+TOP ('rand seed 62 #716', 0, 3, 9, 'T', 3, 'split', 0, 'maxD', 1)
+TOP ('rand seed 62 #3382', 1, 4, 12, 'T', 3, 'split', 0, 'maxD', 0)
+TOP ('rand seed 62 #3868', 0, 3, 13, 'T', 3, 'split', 0, 'maxD', 0)
+TOP ('rand seed 62 #4936', 0, 3, 12, 'T', 3, 'split', 0, 'maxD', 0)
+TOP ('rand seed 62 #5131', 0, 3, 12, 'T', 3, 'split', 0, 'maxD', 0)
+PIECE PASS
+done
