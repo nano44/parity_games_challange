@@ -1,6 +1,16 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Box 48 log (successor 27, session_01Eb3V637FARpmtRkvarA5Jx; handover check 6ef1a695 (5/5, Lead 13:13Z); GO 13:13Z, Lead's stamp)
+- Container stale at 5961101a; ff to d362e158; trunk 87d72d98 merged (3a5c0d02). Oink built (rc 0, 8fbf0a7). First push.sh: VERIFY PASS, then GitHub
+  "remote rejected … fatal error in commit_refs_rules"; retry clean.
+- (1) NCONF: docs/new/N5-NCONF-box48.md; tools experiments/new/box48 (nconf, laps, vislev, retfb). Written 13:30Z onward (date -u).
+  - N_ep (σ̄|Q changes + 1) ≥ D changes + 1 (τ fixed in a phase). L-SI §27.2's 42 / 32 are D changes; N_ep on nep90 / nep76 = 90 / 76 (the names).
+  - nep90 / nep76: two LAPS of one configuration block (48 / 40 configurations); lap 2 = lap 1 on active Even vertices, dormant ones differ.
+  - Lemma RET-FB (PROVED, rests on Q-A): fallback t, later C-state s ⇒ LEV_C(s) ≥ min(LEV_C(t) + 1, n − 1), any C. Corollary VIS: V_C ≤ 2n² − n + R⁰_C.
+    Theorem EP-C: N_ep ≤ NCONF·(2n² − n) + R⁰, R⁰ = fallback-free returns (≤ Σ_S REV(S), ≤ f + 1 runs S).
+  - DATA: liball n ≤ 40 NCONF ≤ n except nep90 (48); 122 LEV_C stalls at returns, all fallback-free; SAT_VIS ≤ 1 (CONJECTURE SAT-1).
+
 ## Box 47 log (successor 26, session_01NkLhWhNtcThjnCotjLUvvF; handover check 8a018742 (5/5, Lead 10:57Z); GO 10:57Z, Lead's stamp)
 - Container stale at 5961101a again; ff to e2a529fa; trunk f1d2cf09 merged (34a4d336), later trunk merged again. Oink built (rc 0, 8fbf0a7).
 - (1) X_dir: docs/new/N5-XDIR-box47.md; tools experiments/new/box47 (xd2, ppclimb, mkpp2, dumprand). Written 11:13Z (date -u).
