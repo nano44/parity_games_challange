@@ -1,0 +1,13 @@
+# box 15: climbs on G_LEN_SLACK over gated global C-intervals (ulg fitness); fresh C^3O 600 s, seeded b6_xs_n24 900 s
+climb.py ulg 12 3 1621 --secs 600 --out results/b15/climb/ulg_k3_n12_r1
+climb.py ulg 12 3 1622 --secs 600 --out results/b15/climb/ulg_k3_n12_r2
+climb.py ulg 16 3 1661 --secs 600 --out results/b15/climb/ulg_k3_n16_r1
+climb.py ulg 16 3 1662 --secs 600 --out results/b15/climb/ulg_k3_n16_r2
+climb.py ulg 24 1 1841 --secs 900 --seed-pg ../n5-exhaustive/instances/b6_xs_n24.pg --out results/b15/climb/ulg_seedb6_n24_r1
+climb.py ulg 24 1 1842 --secs 900 --seed-pg ../n5-exhaustive/instances/b6_xs_n24.pg --out results/b15/climb/ulg_seedb6_n24_r2
+climb.py ulg 24 3 1741 --secs 600 --out results/b15/climb/ulg_k3_n24_r1
+climb.py ulg 24 3 1742 --secs 600 --out results/b15/climb/ulg_k3_n24_r2
+climb.py ulg 32 1 1921 --secs 900 --seed-pg ../n5-exhaustive/instances/b6_xs_n24.pg --out results/b15/climb/ulg_seedb6_n32_r1
+climb.py ulg 32 1 1922 --secs 900 --seed-pg ../n5-exhaustive/instances/b6_xs_n24.pg --out results/b15/climb/ulg_seedb6_n32_r2
+climb.py ulg 32 3 1821 --secs 600 --out results/b15/climb/ulg_k3_n32_r1
+climb.py ulg 32 3 1822 --secs 600 --out results/b15/climb/ulg_k3_n32_r2
