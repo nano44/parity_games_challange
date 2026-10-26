@@ -109,6 +109,16 @@ Iσ = ∅. So the next state is (σ_{k+1}, τ). □
 - DATA: (Στ) is never exercised: in every epoch of every sample, SPEC's own S4b on G′_E returns τ (DIV = 0, §5), so on these runs N5^τ on
   G′_E is SPEC's N5 on G′_E. A proof that DIV = 0 always would remove (Στ); I do not have one (a tie at u between τ(u) and σ̄_E(u) in S1's
   procedure on H′ is not excluded; it forces W_k = Ξ_k at that state, since then σ̄_E is a strategy of H′_G, which is all I can derive).
+- Lemma TIE-W (PROVED, every game; added 06:10Z by date -u). Let k → k+1 be in-phase, and suppose (u, σ̄_k(u)) ∈ Iτ_k for every u ∈ D_k
+  (for |D_k| = 1: Iτ′_k ≠ ∅ on G′_E). Then W_k = Ξ_k.
+  Proof. Every edge of σ̄_k lies in S4b's arena H′_G (off D_k, σ̄_k = τ; on D_k, by hypothesis). S4b's output on G is τ (in-phase, as in
+  RESTRICT_E (iv)), an optimal counterstrategy on H′_G (Lemma S (a)), so W_k = V_{σ_k,τ} ⊴ V_{σ_k,σ̄_k} = Ξ_k; and Ξ_k ⊴ W_k (Lemma S (a) on G). □
+  So on G′_E with |D_E| = 1, SPEC's S4b can differ from S4b^τ only at states with W_k = Ξ_k. On G′_E, S4b's arena at such a state is
+  exactly the graph on which S1 computes Ξ′ (u keeps both edges, every other Odd vertex is forced), so SPEC's S4b output is S1's own
+  counterstrategy σ̄′ on G′_E; DIV means σ̄′(u) = σ̄_E(u) there. Not excluded by anything I can prove.
+- DATA (experiments/new/box45/itcheck.py; out/itcheck_*.txt): in-phase states with D ≠ ∅ and some (u, σ̄(u)) ∈ Iτ: lib41 × 3 starts 65 of
+  8,608 (none with |D| = 1); 3,000 random × 5 starts 25 of 671, 7 with |D| = 1, all 7 with W = Ξ (TIE-W), and at none of them does SPEC's
+  S4b on G′_E move τ (DIV = 0).
 
 ## 5. DATA (experiments/new/box45/eprestrict.py; DATA, not proof)
 Checks per epoch: XI_V (RESTRICT_E (i) at every state), OPT_V (RESTRICT_E (iv) at every in-phase transition), REP_V (REPRO: N5^τ on G′_E
