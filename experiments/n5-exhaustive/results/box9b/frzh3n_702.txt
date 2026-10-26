@@ -2,3 +2,5 @@ start 300 n 12
 109 400 FRZ_checks 0 seed 811
 185 500 FRZ_checks 0 seed 887
 5818 600 FRZ_checks 0 seed 6520
+TOTALS {'C2H3_checks': 6082101, 'C2H3_checks_not_NC': 3633117, 'FRZH3_runs': 94126, 'FRZ_runs': 33127, 'FRZ_runs_too_short(vacuous)': 33127, "b'_checks": 237713, "c1'_checks": 559059, "c2'_checks": 2595597, 'runs': 155080, 'states': 607982, 'states_D_ge2': 134607, 'states_NC': 230800, 'states_NC_h3': 213027, 'states_NC_not_hD': 13151, 'states_h3': 494367, 'states_h3_not_NC': 281340, 'transitions': 452902}
+RESULT OK best 600

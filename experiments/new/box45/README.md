@@ -10,3 +10,13 @@ DATA, not proof. Uses experiments/new/box43 (multi.rand_ckO) and box21 (n5x: SPE
 - itcheck.py STARTS SEED (--list FILE | --rand ...): in-phase states with (u, sigma-bar(u)) in I_tau (IT1), |D| = 1 among them, and W = Xi
   there (Lemma TIE-W). Runs 06:10Z-06:12Z: out/itcheck_lib41_k2.txt (`itcheck.py 2 7 --list ../box41/lib41.txt`), out/itcheck_rand3000.txt
   (`itcheck.py 4 8 --rand 3000 5 18 111`): IT1 65 (|D| = 1: 0) and 25 (|D| = 1: 7, all with W = Xi).
+- divsearch.py COUNT NLO NHI K SEED STARTS: random 𝒞^KO games, random start pairs; counts in-phase tie states with D = {u} and
+  (u, sigma-bar(u)) in I_tau (tie1; W = Xi there by TIE-W) and DIV (SPEC's own S4b on G'_E moves tau there). Runs 06:36Z-06:45Z
+  (date -u), out/divsearch_*.txt: 40000 4 8 2 11 (tie1 64, DIV 0), 40000 4 10 3 12 (34, 0), 20000 6 14 2 13 (35, DIV 1),
+  20000 6 14 3 14 (32, 0); earlier 4 small runs (seeds 1-4): tie1 8, DIV 0. out/divsearch2_*.txt (06:33Z-06:36Z by date -u): seeds 11, 13, 14
+  re-run with tie1_cyc / DIV_cyc, plus 20000 8 16 2 15 (tie1 17, DIV 1): tie1_cyc = tie1 in all four (148 of 148), DIV_cyc = DIV.
+- instances/div_n8.pg (sha1 4ed57ef2c1c92ee526ccd2683ae7c28b1caf5bfa) with start pair instances/div_n8.start (the state itself): the
+  first DIV instance (seed 13). divshow.py prints it (out/divshow_n8.txt): N5 on G, first transition in-phase (S4a, sigma(6): 7 -> 0),
+  Q = {3, 7}, D = {3}, Xi(3) = (3, {}, 0) (u is its own cycle node), W = Xi; on G'_E SPEC's S4b moves tau(3): 5 -> 7 (S1's
+  counterstrategy on G'_E picks 7 at the cycle node), N5^tau keeps tau. So N5 and N5^tau on G'_E DO differ on some epochs: premise
+  (Sigma-tau) is exercised there (it is not exercised in the samples of P-N5-EPR §5).
