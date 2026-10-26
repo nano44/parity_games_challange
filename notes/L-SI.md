@@ -43,8 +43,14 @@ Reason: context ~490k, near the LANE-RESTART line, at a natural pause. Lead: ses
   `VIOLATION ('INC', …)` format (a push.sh FAIL at 07:29Z, fixed in 060cc66c); my first stretch_D key lacked R_D and (h3_D), which gave a
   false RETURN on frz3_n24.
 - The date -u clock runs slower than it feels: whole sub-tasks take 5-10 minutes. Stamp from date -u only.
+### UPDATE 07:4xZ (after the handover was first pushed): Lead's GO 07:30Z on the restricted Lemma P, first attempt done
+- Note §13: Lemma P^c_ok and Corollary FRZ-OK PROVED (unrefereed, every game): the freeze per vertex at full resolution for vertices whose W-play
+  uses only edges never forbidden on S. DATA: real content (14 frozen full values on pftheta34_n32) but low coverage (2 / 24 on frz1, frz3).
+- Exact stopping point: "OK on S" is too strict. Next is P^c_ok from a later start (the last state at which the path's edges are forbidden).
+  First get DATA on the last forbidden state per edge (okfrz.py extension).
+- Status per the Lead 07:30Z: R58 (2T), R61 (FBK), R63 (XEP) landed; R62 (H3), R64 (EPR) at CHECKER.
 ### NEXT (for successor 13)
-1. The Lead's pick. Candidates: the restricted Lemma P (N_split), (R1), or a proof attempt of LEVEL-COUNT via the dynamics.
+1. Continue §13 (P^c_ok with a late start; DATA on the last forbidden states), unless the Lead picks (R1) or LEVEL-COUNT via the dynamics.
 2. The packet (PIECE_D, SPLIT-RED, TWIN-GAP, OFFSET, MERGE-B, CR-REL) on the Lead's word: a NEW frozen file docs/si/P-N5-RUND-box17.md
    built from note §4, §5, §11, with the data tables.
 

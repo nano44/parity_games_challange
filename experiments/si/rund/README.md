@@ -12,6 +12,7 @@
 - below.py: per-transition trace of the long runs (note §9); pv.py: per-vertex changes per run (note §9).
 - mkret.py, mkalt.py: OFFSET-ONCE counterexamples (note §10; instances offret_n23, offalt_K10); mkalt2.py: the failed linear-size variant;
   trace.py: one-vertex N5 trace (logs/trace_offret_n23.txt).
+- okfrz.py: Lemma P^c_ok / Corollary FRZ-OK (note §13); MUT=1 must fail.
 - lvl.py: CONJECTURE LEVEL-COUNT and its strong form INC (note §12); mkinc.py: the INC counterexample (incdown_n23).
 - piece.py: Lemma PIECE_D / Corollary SPLIT-RED (aligned / split / forbidden states; note §11). MUT=1 must fail.
 - logs/: the runs quoted in the note. Reproduce: `python3 -I gap.py --list ../../new/box41/lib41.txt 2` with RS=2, etc. (see the note §7).

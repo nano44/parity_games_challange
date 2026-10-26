@@ -1,0 +1,15 @@
+== ../../n5-exhaustive/instances/frz1_n24.pg ../../n5-exhaustive/instances/frz1_n24.start
+L=-1 content=1 covered=2 forbidden_edges=9 pairs=24 runs=1
+OKFRZ PASS
+MUT=1:
+OKFRZ FAIL
+== ../../n5-exhaustive/instances/frz3_n24.pg ../../n5-exhaustive/instances/frz3_n24.start
+L=-1 content=1 covered=2 forbidden_edges=12 pairs=24 runs=1
+OKFRZ PASS
+MUT=1:
+OKFRZ FAIL
+== ../../red/so/instances/pftheta34_n32.pg
+L=-1 content=14 covered=17 forbidden_edges=14 pairs=96 runs=1
+OKFRZ PASS
+MUT=1:
+OKFRZ FAIL

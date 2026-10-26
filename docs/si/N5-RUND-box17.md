@@ -337,3 +337,40 @@ Proof.
 - Suggested attack for L-RED: combine mkalt's alternation with mkinc's odd-removal returns, so that a vertex alternates sides with rise
   levels a, b, a, … (b > a). That is the pattern RULER allows and the count form forbids. Breaking it needs routes that reuse vertices
   across time (positional routes at one time are disjoint after they diverge, but not across times).
+
+## 13. The restricted Lemma P (Lead's GO 07:30Z, first attempt): Lemma P^c_ok and Corollary FRZ-OK (PROVED, every game) and DATA
+Setting. S: a fallback-free run inside one phase on which CR-D's (ii) holds (λ_W constant; e.g. (h3_D) at every state, P-N5-H3 §6).
+Level −1 ≤ L < ∞, COARSE := COARSE_L. An Even edge (x, z) is FORBIDDEN AT k (at level L) if z ≠ a := σ_k(x),
+COARSE(W_k(z)) ≻ COARSE(W_k(a)) and not Ξ_k(z) ▷ Ξ_k(a). It is OK ON S if it is forbidden at no state of S.
+### Lemma P^c_ok
+For every j with k_0 + j ∈ S, every x, and every simple path r of G_τ from x to a vertex u with λ_W(u) = u, with ≤ j edges, ALL OF
+WHOSE EVEN EDGES ARE OK ON S: Ω^c_{k_0+j}(x) ⪰ COARSE(value(r)).
+Proof. P^c_L's proof (P-N5-H3 §5) verbatim, with (i) used only where it is used there:
+- In Case B at the first edge (x, z) of r, at state k, (i) is used to turn Ω^c_k(z) ≻ Ω^c_k(a) into Ξ_k(z) ▷ Ξ_k(σ_k x). That is exactly
+  "(x, z) is not forbidden at k". The edge is OK, so the step holds.
+- The induction hypothesis is applied to the suffix r′, whose Even edges are OK too.
+- Cases A, B1 and B2 use only (ii), WM-G and (F1). □
+### Corollary FRZ-OK
+For every t ∈ S with t ≥ k_0 + n − 1 and every x whose W-play prefix at t (to its cycle node) uses only OK Even edges:
+COARSE(W_t(x)) = COARSE(W_{k_0+n−1}(x)).
+Proof. As CR-D's proof. That prefix is a simple path r_t of G_τ with ≤ n − 1 edges to λ_W(x), constant by (ii), and its Even edges are
+OK. Then P^c_ok at j = n − 1 and (MON) from k_0 + n − 1 to t give two inequalities, and (C3) makes them an equality. □
+- This is CR-REL with the edge order transfer required only on the edges the lower bound uses. FRZ-OK freezes vertex by vertex, at
+  full resolution (L = −1) if wanted, where CR-D / FRZ-U_H3 freeze globally at L ≥ max M_D (content-free in data, §3).
+### DATA (okfrz.py, L = −1; logs/okfrz_long.txt; the three long (h3_D) runs; MUT=1, freeze from k_0 + 1, fails on all three)
+
+| instance | pairs (t, x), t ≥ k_0 + n − 1 | covered (play uses only OK edges) | covered with content (non-empty path part) | edges forbidden somewhere on S | FRZOK_V |
+| --- | --- | --- | --- | --- | --- |
+| frz1_n24 (.start) | 24 | 2 | 1 | 9 | 0 |
+| frz3_n24 (.start) | 24 | 2 | 1 | 12 | 0 |
+| pftheta34_n32 (S3) | 96 | 17 | 14 | 14 | 0 |
+
+- FRZ-OK has CONTENT where FRZ-U_H3 has none: 14 frozen full values with non-empty path parts on pftheta34_n32.
+- Coverage is low: most W-plays use an edge that was forbidden at SOME state of the run (9-14 such edges per run).
+### Where this stops (exact state for successor 13)
+- "OK on S" is too strict: an edge forbidden only early in S blocks the lower bound for the whole run.
+- Next statement to try, P^c_ok(t): with "OK on [k_0 + j′, …]", i.e. edges not forbidden after some state. The induction in P^c_L can start
+  at any state of S, so the lower bound restarts at the last forbidden state of the path's edges. If edges stop being forbidden after
+  ≤ p(n) transitions, the freeze holds from there. DATA needed first: per run and edge, the last state at which it is forbidden.
+- If, instead, some edge stays forbidden through the whole run while x's play uses it, x is not covered. Then the count needed is how
+  often x's value can change while its play uses a persistently forbidden edge. That is the N_split question of §11 in per-vertex form.
