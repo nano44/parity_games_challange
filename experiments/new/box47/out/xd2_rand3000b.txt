@@ -1,0 +1,23 @@
+rand113 n 21 rand phase [1,2] k 1 u 18->13 same 1 hb 1 rho_u 1 rho_u' 1 tie 1 via 0 fb 0 a2u 00 sch 1 dir(k: u u', k+1: u u') d-dd
+rand334 n 23 rand phase [1,2] k 1 u 8->9 same 1 hb 0 rho_u 1 rho_u' 1 tie 0 via 0 fb 0 a2u 11 sch 1 dir(k: u u', k+1: u u') d-dd
+rand489 n 20 rand phase [1,3] k 1 u 6->2 same 1 hb 0 rho_u 1 rho_u' 1 tie 0 via 0 fb 0 a2u 11 sch 1 dir(k: u u', k+1: u u') d-dd
+rand891 n 23 rand phase [1,3] k 1 u 4->13 same 1 hb 0 rho_u 1 rho_u' 1 tie 0 via 0 fb 0 a2u 10 sch 1 dir(k: u u', k+1: u u') d-d-
+rand891 n 23 rand phase [0,3] k 1 u 4->13 same 1 hb 0 rho_u 1 rho_u' 1 tie 0 via 0 fb 0 a2u 10 sch 1 dir(k: u u', k+1: u u') d-d-
+rand965 n 12 rand phase [0,1] k 0 u 11->8 same 1 hb 1 rho_u 0 rho_u' 1 tie 0 via 0 fb 0 a2u 11 sch 1 dir(k: u u', k+1: u u') dddd
+rand1126 n 24 S3 phase [0,1] k 0 u 9->7 same 1 hb 0 rho_u 1 rho_u' 1 tie 0 via 0 fb 0 a2u 11 sch 1 dir(k: u u', k+1: u u') --d-
+rand1462 n 20 rand phase [2,3] k 2 u 6->9 same 1 hb 0 rho_u 1 rho_u' 1 tie 0 via 0 fb 0 a2u 00 sch 1 dir(k: u u', k+1: u u') -ddd
+rand1701 n 24 rand phase [1,2] k 1 u 6->15 same 1 hb 1 rho_u 0 rho_u' 0 tie 1 via 0 fb 0 a2u 11 sch 1 dir(k: u u', k+1: u u') dddd
+rand1742 n 12 rand phase [0,1] k 0 u 6->1 same 1 hb 0 rho_u 1 rho_u' 1 tie 0 via 0 fb 0 a2u 01 sch 1 dir(k: u u', k+1: u u') dddd
+rand1841 n 13 S3 phase [0,1] k 0 u 12->1 same 1 hb 1 rho_u 0 rho_u' 1 tie 1 via 0 fb 0 a2u 01 sch 1 dir(k: u u', k+1: u u') dddd
+rand1865 n 14 S3 phase [0,1] k 0 u 8->4 same 1 hb 0 rho_u 1 rho_u' 1 tie 0 via 1 fb 0 a2u 00 sch 1 dir(k: u u', k+1: u u') dd-d
+rand1865 n 14 rand phase [1,2] k 1 u 8->4 same 1 hb 0 rho_u 1 rho_u' 1 tie 0 via 1 fb 0 a2u 00 sch 1 dir(k: u u', k+1: u u') dd-d
+rand1927 n 15 rand phase [0,1] k 0 u 12->14 same 1 hb 0 rho_u 1 rho_u' 1 tie 0 via 0 fb 0 a2u 01 sch 1 dir(k: u u', k+1: u u') --d-
+rand2020 n 19 rand phase [1,3] k 1 u 13->2 same 1 hb 0 rho_u 1 rho_u' 1 tie 0 via 0 fb 0 a2u 11 sch 1 dir(k: u u', k+1: u u') d-dd
+rand2103 n 10 rand phase [0,1] k 0 u 7->3 same 1 hb 0 rho_u 1 rho_u' 1 tie 0 via 0 fb 0 a2u 01 sch 1 dir(k: u u', k+1: u u') ddd-
+rand2219 n 24 rand phase [1,4] k 1 u 15->9 same 1 hb 0 rho_u 1 rho_u' 1 tie 0 via 0 fb 0 a2u 00 sch 1 dir(k: u u', k+1: u u') dddd
+rand2338 n 24 rand phase [4,5] k 4 u 18->5 same 1 hb 0 rho_u 1 rho_u' 1 tie 0 via 0 fb 0 a2u 01 sch 1 dir(k: u u', k+1: u u') dd-d
+rand2338 n 24 rand phase [1,2] k 1 u 18->5 same 1 hb 0 rho_u 1 rho_u' 1 tie 0 via 0 fb 0 a2u 01 sch 1 dir(k: u u', k+1: u u') -d-d
+rand2685 n 10 rand phase [0,1] k 0 u 4->8 same 1 hb 0 rho_u 1 rho_u' 1 tie 0 via 0 fb 0 a2u 00 sch 1 dir(k: u u', k+1: u u') dddd
+rand2808 n 11 rand phase [2,3] k 2 u 10->7 same 1 hb 0 rho_u 1 rho_u' 1 tie 0 via 0 fb 0 a2u 01 sch 1 dir(k: u u', k+1: u u') -dd-
+rand2927 n 17 rand phase [0,1] k 0 u 10->13 same 1 hb 0 rho_u 1 rho_u' 1 tie 0 via 0 fb 0 a2u 00 sch 1 dir(k: u u', k+1: u u') dddd
+A2U 8 A2U1 13 DIR_--d- 2 DIR_-d-d 1 DIR_-dd- 1 DIR_-ddd 1 DIR_d-d- 2 DIR_d-dd 4 DIR_dd-d 3 DIR_ddd- 1 DIR_dddd 7 FB 0 HB 4 POS0 21 POSMAX 1 REP_V 0 RHO_U 19 RHO_U2 21 SAME 22 SB_V 0 SCH 22 TIE_U 3 URUNS 141 URUN_D2 3 URUN_LEN 3 URUN_XDIR 1 VIA 2 XDIR 22 XDIR_PH 1 XI_V 0 phases 42777 runs 15000

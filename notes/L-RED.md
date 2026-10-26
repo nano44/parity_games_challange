@@ -34,7 +34,14 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   READING: relays change Ξ(q) not W(q) (τ fixed), so they reach Even only via gating; super-poly needs re-armable Ξ-gates.
 - Box 50b: R83 §4 addendum + mkrho.py: re-armable line works in one phase, but ρ_q ≤ T and my T ≲ n; event-driven re-triggering
   closes a cycle through the risers. Sent 11:02Z; asked Lead: gate re-entry test (recommended) vs LC2 vs (c).
-- RESUME POINT (successor 20, 11:03Z): waiting for the Lead's pick. Nothing running. Tools: experiments/red/rec0/ (REC-0, epochs),
+- Box 51 (Lead 11:13Z GO): R84 docs/red/R84-gate-reentry.md: mkgate: a gate toggles D K−2 times in one phase (driven by risers disjoint
+  from readers); a reader edge re-blocked K/2−1 times, never released. Pins gate_K16_n197 (3eeddc86), gate_K64_n581 (a93c7c8b). gatecount.py.
+- Box 52: R85 docs/red/R85-friedmann-under-s4a.md. SOURCES OPENED (pdftotext of the arXiv PDFs, read in this session):
+  [F] Friedmann LMCS 7(3:19) 2011, arXiv 1106.0778 (PDF sha1 a63a9293): §4 (I^loc, I^glo = optimum in arena A_{G,σ}), §6.1 Table 1,
+  Lemma 6.1, 6.2, Thm 6.14 (I^loc ≥ 2^n on G_n), §8, Thm 8.4 (I^glo ≥ 2^n on H_n).
+  [STV] Schewe-Trivedi-Varghese arXiv 1501.06484 (PDF sha1 4fbbea66): §4, §4.1 (Min fixes j top positions in 2j steps; lane ceases).
+  Finding: S4a = I^glo with Odd frozen to τ; on switchbestexp τ(CC(i)) changes once per bit; bits toggle ≤ 3 times. Tools frcyc.py, frcyc2.py.
+- (superseded) RESUME POINT (successor 20, 11:03Z): waiting for the Lead's pick. Nothing running. Tools: experiments/red/rec0/ (REC-0, epochs),
   experiments/red/usplit/ (mkusplit, mkusplit2, mkpairoc, mkgrow, mkpp, mkrho; usplit20 checker; show.py), h3_19 (PAIROC counter, LC2 FAIL).
 - LC2 climbs (ANALYSER=h3, lc2_slack) from pairoc_n58 / n90: best slack 0 (equality), no kill (in flight at 10:5xZ).
 - (b) started: ANALYSER=h3 climbfr19 on lc_maxchg from lcount_n23: stuck at 3 changes (219 k evaluations). Next box.

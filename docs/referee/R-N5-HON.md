@@ -170,3 +170,43 @@ seed), plus the packet's start file where given.
   (FB-WLEV is DEAD, b5_o11), so a proof of HON-FF has to replace both, not only the first.
 - HON-N4 (§6 DATA, comparison only). My lib41 run (different random starts) agrees with the packet on the maximum of 57 W-honest states in a
   phase; my f_in total is 9 against the packet's 4 (3 gaps), which is expected with other random starts.
+
+## §C. Comparison with REFEREE-2 (R2-N5-HON, claude/referee-2 1566b439, docs/referee-2/R2-N5-HON.md sha1 a2e7e384…), written 2026-10-26T11:23Z by date -u
+Opened only after my report was pushed (59121877) and the Lead's message of 11:22Z (Lead's stamp). REFEREE-2's report was written at 10:27Z
+with 0 HON files on origin/claude/referee (its independence line).
+### C.1 Verdicts, item by item
+| item | REFEREE (59121877) | REFEREE-2 (1566b439) | |
+| --- | --- | --- | --- |
+| HON, SAT0, HON-FB (i)-(iv), HON′, HON-0 (a)-(c) | SIGNED | SIGN | same |
+| RESTRICT_u, REPRO_u (EPR-1 built in) | SIGNED | SIGN | same |
+| EP-1u, REC-1 (b)-(d) | SIGNED as implications from (Στ); hold at R65's audit strength | the same (its §0, N-HON-4) | same |
+| REC-1 (a) | SIGNED | SIGN | same |
+| HON-0 ⇒ REC-0 (inequality, corollary; difference f·n + 2) | TRUE, strictly | CONFIRMED | same |
+| proofs independent | TRUE (neither cites the other, SN-PREFIX_D or EP-0; premise sets overlap, HON-N1) | CONFIRMED (none of REC-0, SN-PREFIX_D, EP-0 cited) | same |
+| Q-R17 in HON's use | YES (three uses listed, §5) | YES (N-HON-2: step 1's list) | same; my list adds the SAT0 and HON-FB (i) uses, its list names (MON) |
+| §5, §6 | not signed | not reviewed | same |
+No verdict disagreement. Both referees: no gap.
+### C.2 Notes
+| note | REFEREE | REFEREE-2 | outcome |
+| --- | --- | --- | --- |
+| SAT0 Odd case: "(r′ and z's play avoid x)" false when x lies on its own W-cycle below its top | — (my §2 used the true fact "the arc from z to the top avoids x" but did not flag the packet's wording) | N-HON-1 | REFEREE-2 only; ACCEPTED. On my reading: z's infinite play does pass x, so the parenthesis is false as written; (V1) needs only that z's path to its first visit of the cycle node avoids x, which holds (x comes after the top on the cycle), and x is below the top so it enters no path set. Conclusion unchanged. Its suggested text is fine; equivalent: "r′ and z's path to its cycle node avoid x". |
+| Q-R17 item list | §5 | N-HON-2 | same |
+| standing premise 1E-N3 in its two forms (P1 via R15 (a), (d), XW, Lemma S (a) in RESTRICT_u (i); P2 via S (c), WM) | not named in my signature line | N-HON-3 | REFEREE-2 only; ACCEPTED: my signatures are under the same standing premise (as every N5 entry since R57); I add it here |
+| R65 audit strength | verdict-table line | N-HON-4 | same |
+| data thin (f_in, exact LEV, HON bound far from attained; EP-1u / REC-1 (b)-(d) tested structurally only) | partly (§6: HON-FF untested beyond the packet's sample; LEV coverage) | N-HON-5 (also: its mutation "drop the saturated tail" does not bite) | same in substance; ACCEPTED in full. My data agree: max 57 W-honest states per phase, far below f + 4n² − 3n |
+| "HON-FB adds XW": XW is in REC-0's chain too | HON-N1 | — | REFEREE only (wording; independence unaffected) |
+| context line "REC-0 in the referee queue" stale | HON-N2 | — | REFEREE only (wording) |
+| fallback-free hypothesis used twice (rise and sandwich): HON-FF must replace both | HON-N3 | — (its step-1 text uses both, unflagged) | REFEREE only (remark) |
+| §6 comparison (57 honest states agree; f_in differs with starts) | HON-N4 | §4.2 last line (57 agrees) | same |
+### C.3 Data comparison (both own engines, both 0 violations)
+- lib41: mine 1,101 runs / 5,365 phases / 20,473 RESTRICT_u checks; REFEREE-2 1,230 runs (lib41 minus referee games, 3 starts) / 7,173 phases /
+  17,274 RESTRICT_u checks. Both: longest reproduced u-run 112 transitions (xsn91_n48 on REFEREE-2's side), max N_0 5, max W-honest 57.
+  f_in: mine 9 fallbacks (S3 + 2 random starts), REFEREE-2 6 in 4 phases (lib41) and 16 in 9 over its library sets.
+- Mutations: both referees' "G^u cut at u" controls bite (mine RU1 55 / RU2 46 / REPU 15 on the named instances; REFEREE-2 5,722 / 585 /
+  214); both "rise of 2" controls bite (mine 5 of 70; REFEREE-2 4). REFEREE-2's fb4 (HON-FB (iv) negated) bites 26×; my FB1 / FB2 controls
+  at non-honest fallbacks bite (5 on j-instances, 142 on lib41 n ≤ 20). Its r1 (REC-1 (a) without "1 +" and the D = ∅ term) bites; I did not
+  run that one.
+### C.4 Joint gap map
+EMPTY. Joint notes for L-NEW 25's fixes file: N-HON-1 (SAT0 wording), N-HON-3 (name 1E-N3 in the signature line), N-HON-5 / HON-N3 (thin
+data; HON-FF must replace both uses of fallback-freeness), HON-N1 (XW in both chains), HON-N2 (stale context line). Verdicts as in C.1,
+both (Opus 5.5, D15).
