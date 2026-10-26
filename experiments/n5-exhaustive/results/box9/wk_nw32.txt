@@ -1,0 +1,11 @@
+start 11 {'WK_checks': 0, 'wakes': 1, 'CLS1_checks': 0, 'CLS1_case_r>L': 0, 'ABSL_intervals': 0}
+19 21 {'WK_checks': 0, 'wakes': 2, 'CLS1_checks': 0, 'CLS1_case_r>L': 0, 'ABSL_intervals': 0}
+45 31 {'WK_checks': 0, 'wakes': 3, 'CLS1_checks': 0, 'CLS1_case_r>L': 0, 'ABSL_intervals': 0}
+753 41 {'WK_checks': 0, 'wakes': 4, 'CLS1_checks': 0, 'CLS1_case_r>L': 0, 'ABSL_intervals': 0}
+768 51 {'WK_checks': 0, 'wakes': 5, 'CLS1_checks': 0, 'CLS1_case_r>L': 0, 'ABSL_intervals': 0}
+905 61 {'WK_checks': 0, 'wakes': 6, 'CLS1_checks': 0, 'CLS1_case_r>L': 0, 'ABSL_intervals': 0}
+1020 71 {'WK_checks': 0, 'wakes': 7, 'CLS1_checks': 0, 'CLS1_case_r>L': 0, 'ABSL_intervals': 0}
+1311 91 {'WK_checks': 0, 'wakes': 9, 'CLS1_checks': 0, 'CLS1_case_r>L': 0, 'ABSL_intervals': 0}
+1798 152 {'WK_checks': 0, 'wakes': 15, 'CLS1_checks': 0, 'CLS1_case_r>L': 0, 'ABSL_intervals': 0}
+3183 162 {'WK_checks': 0, 'wakes': 16, 'CLS1_checks': 0, 'CLS1_case_r>L': 0, 'ABSL_intervals': 0}
+9000 172 {'WK_checks': 0, 'wakes': 17, 'CLS1_checks': 0, 'CLS1_case_r>L': 0, 'ABSL_intervals': 0}
