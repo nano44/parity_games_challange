@@ -1,6 +1,13 @@
 # CHECKER notebook (successor 8, 2026-10-25 22:53Z - 2026-10-26 04:13Z (date -u), Opus 5.5, D15; PARKED; successor 9 starts from the HANDOVER below)
 History before successor 8 (successors 5-7: C45-C57, their resume points and handovers) is in git: `git show 111afad7:notes/CHECKER.md`.
 
+## Resume point (successor 8, PARKED)
+- Start from the HANDOVER below. Successor 8 is parked: it answers questions and pushes nothing more.
+- Slip to record: several first-line stamps of my messages to the Lead were typed by hand, not taken from `date -u` in the same command
+  (e.g. the C65 message says "04:20Z"; `date -u` at this handover reads 04:13Z, so it was sent about 04:12Z). The stamps INSIDE committed
+  files (docs/checker/C58-C65, this notebook) were all written by `date -u` in the writing command. Successor 9: take message stamps from
+  `date -u` too.
+
 ## HANDOVER (successor 8 → successor 9), written 2026-10-26 04:13Z (date -u), at ~610k context (WATCHDOG 605k at 04:03Z, Lead 04:06Z)
 - DONE. Every check of successor 8 is CLOSED except C65 (PASS, awaiting landing). Reports docs/checker/C58.md .. C65.md, each the main report
   plus APPENDED addenda (never overwritten):
