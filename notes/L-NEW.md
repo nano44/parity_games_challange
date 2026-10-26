@@ -17,8 +17,19 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - Reported acc2ee62 at 01:25Z. Then: CONJECTURE Δ-RT-F FALSE (rtclimb + shrinksw → instances/rtf_cex_inj.pg, n 11, sha1 9b55eee6…;
   k = 1: S4c switches 3: 5 → 10 across terminals 1 → 0 with a W-loss; Oink/verify checked). PIECE_D for |D| = 1 (§7b, port).
   Reverse disagreements (W-improving, not in Iσ) named as the PIECE blocker. Checker bug fixed (same-terminal check needs (h3_D)).
-- NEXT: Δ-RT-C (count of cross-terminal fallback switches / disagreements per D-stretch): growth climbs; a W-potential argument
-  charging W-losses to cross-terminal switches. (3) on the go.
+- 77f64e00 correction (W drops at fallbacks, leaves too); f5200580 Δ-RT-C fallback face = in-phase fallbacks (sw21_n40).
+- Lead 01:53Z GO (i): frontier FB-POLY. docs/new/N5-FBF-box44.md: terminals T = C ∪ Q (cycle nodes + ALL Odd choice vertices; not
+  D_k, since σ̄ moves at every Odd choice vertex), per honest class U_c. Survive: facts, κ-FB-ROUND, κ-HAT-FREEZE (set form), κ-PFZ and
+  κ-Y-FORM per terminal, EXIT-SWITCH, FREEZE-EXIT (conservative indices), CN-ONLY (new proof of the q-case). FAILS as proved:
+  THETA-AFTER (Y^q routes through other terminals; no instance). Theorem FB-RED: f ≤ 1 + (n − 1)(2 + ρ), ρ = Ξ-changes at Odd
+  choice vertices per phase. Data fbf.py / fbclimb.py: 0 violations; frontier FMAX 17 at n 32 (fb17_n32.pg), 21 at n 64.
+- Reported (i) 02:10Z. Lead 02:21Z: R51 landed; GO fixes NH42 + DUAL; then ρ-POLY; packet FB-RED alone if ρ stalls.
+- 478dd6e1: P-N5-NH-fixes-box43 (sha1 7c499640…), P-N5-DUAL-fixes-box43 (sha1 5d08d0fd…), FROZEN, reported 02:30Z. The referees'
+  §C commits (5fc234ba, 78db369b, 253fe5c5) were NOT on trunk 249ad7e3; cited by branch SHA, told the Lead.
+- ρ-POLY: FB-RED late form + Lemma TV PROVED; nested freeze stalls (short late Q-runs; path-sum value sets = value iteration on a
+  terminal game). Data: no phase ever reaches n fallbacks (late regime vacuous). 6019ab17.
+- Packet docs/new/P-N5-FBRED-box44.md (FB-RED alone, FROZEN at push).
+- NEXT: report the packet sha1; then as directed.
 
 ## Box 43 log (successor 22; handover check 5/5 (b4f064b4); GO 21:55Z, Lead's stamp)
 - Merged trunk c4d18621. Oink built (8fbf0a7). Notebook duplicate block (from 6a1b0e95) removed in b4f064b4.

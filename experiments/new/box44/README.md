@@ -16,3 +16,10 @@ DATA, not proof. Uses experiments/new/box43 (multi, n5x via box21, f1d.hD). Run 
 - rtclimb.py --obj sw seeds 21-24 (01:35Z-01:40Z): best DIFFSW 0 (k 2, n ≤ 12), 8 (k 3, n 20), 0 (k 4, n 30), 21 (k 4, n 40).
   swphase.py FILE...: per-phase in-phase fallbacks and cross-terminal switches. instances/sw21_n40.pg (seed 24 best): one fallback
   switches 21 vertices across terminals; N5 output: Oink verify OK, regions = Oink --zlk, harness verify.py OK.
+- fbf.py: frontier FB-POLY checks (CN-ONLY_D, EXIT-SWITCH_D, FREEZE-EXIT_D, FB-RED, per-terminal THETA-AFTER "TA"), FMAX per phase.
+  fbclimb.py: climbs FMAX (or --obj ta: TA violations). docs/new/N5-FBF-box44.md §4. Runs from 01:56Z.
+- fbclimb.py seeded runs 71-75 and --obj ta runs 81-84 (02:00Z-02:05Z): table in N5-FBF-box44.md §4. instances/fb17_n32.pg (sha1
+  398e23e2…): 17 in-phase fallbacks in one phase, frontier (2 Odd, 23 Even choice vertices); N5 output verified (Oink verify,
+  regions = Oink --zlk, harness verify.py).
+- fbf.py: + FB-RED late form (REDL), N_late, ρ_late. fbclimb.py --obj rho (seeds 91-97, 02:31Z-02:33Z): max ρ per phase 6-32, N_late 0
+  everywhere (no phase reaches n fallbacks). N5-FBF-box44.md §6.
