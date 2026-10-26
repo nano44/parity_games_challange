@@ -1,0 +1,50 @@
+MODE random 500 4 12 94 1E MUT early
+C1E_runs: 500
+O2_ok: 500
+O3_runs: 500
+O3_strats: 33561
+O3b_runs: 500
+O3b_strats: 1251
+O4_ok: 434
+O5_ok: 428
+REW0_stops: 48
+VIOLATIONS: 396
+V_O3b: 240
+V_O4: 66
+V_O5: 72
+V_O6: 18
+iterations: 521
+runs: 500
+stops: 500
+C1E_max_iter: (5, '1E94:135')
+VIOLATION O3b: 1E94:1: sigma' (2, 3, 0, 9) beats sigma at 0
+VIOLATION O3b: 1E94:1: sigma' (3, 3, 0, 9) beats sigma at 0
+VIOLATION O5: 1E94:1: sbar loses from V\W (even cycle at 2)
+VIOLATION O3b: 1E94:3: sigma' (3, 1, 1) beats sigma at 0
+VIOLATION O3b: 1E94:5: sigma' (4, 4, 1) beats sigma at 1
+VIOLATION O3b: 1E94:6: sigma' (1, 8, 5, 0) beats sigma at 1
+VIOLATION O3b: 1E94:7: sigma' (5, 5, 7) beats sigma at 7
+VIOLATION O3b: 1E94:8: sigma' (2, 0) beats sigma at 2
+VIOLATION O4: 1E94:8: W [] != W_E [2]
+VIOLATION O5: 1E94:8: sbar loses from V\W (even cycle at 2)
+VIOLATION O3b: 1E94:11: sigma' (3, 2) beats sigma at 2
+VIOLATION O4: 1E94:11: W [] != W_E [2, 3, 4, 5]
+VIOLATION O5: 1E94:11: sbar loses from V\W (even cycle at 4)
+VIOLATION O3b: 1E94:12: sigma' (0, 1, 5, 4, 7, 2, 1) beats sigma at 5
+VIOLATION O4: 1E94:12: W [] != W_E [5]
+VIOLATION O5: 1E94:12: sbar loses from V\W (even cycle at 5)
+VIOLATION O3b: 1E94:13: sigma' (0, 9, 1, 1, 1, 1) beats sigma at 8
+VIOLATION O3b: 1E94:20: sigma' (1, 2, 3) beats sigma at 0
+VIOLATION O4: 1E94:20: W [3] != W_E [0, 1, 2, 3, 4, 5]
+VIOLATION O5: 1E94:20: sbar loses from V\W (even cycle at 3)
+VIOLATION O6: 1E94:20: sbar-play enters W at 4
+VIOLATION O3b: 1E94:21: sigma' (3, 1, 0) beats sigma at 1
+VIOLATION O3b: 1E94:22: sigma' (7, 5, 0, 3) beats sigma at 5
+VIOLATION O3b: 1E94:25: sigma' (0, 1, 3) beats sigma at 1
+VIOLATION O4: 1E94:25: W [] != W_E [1]
+VIOLATION O5: 1E94:25: sbar loses from V\W (even cycle at 1)
+VIOLATION O3b: 1E94:29: sigma' (4, 0, 7) beats sigma at 2
+VIOLATION O3b: 1E94:31: sigma' (3, 7, 2, 3, 7, 3, 5) beats sigma at 1
+VIOLATION O3b: 1E94:31: sigma' (3, 7, 2, 3, 9, 3, 5) beats sigma at 1
+VIOLATION O3b: 1E94:35: sigma' (2, 0) beats sigma at 1
+RESULT FAIL violations=396

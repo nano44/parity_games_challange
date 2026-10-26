@@ -1,0 +1,50 @@
+MODE random 500 4 12 94 1E MUT sbar
+C1E_runs: 500
+O2_ok: 104
+O3_runs: 500
+O3_strats: 33561
+O3b_runs: 500
+O3b_strats: 1251
+O4_ok: 500
+O5_ok: 306
+REW0_stops: 55
+VIOLATIONS: 793
+V_O2: 396
+V_O3b: 115
+V_O5: 194
+V_O6: 88
+iterations: 521
+runs: 500
+stops: 500
+C1E_max_iter: (5, '1E94:135')
+VIOLATION O2: 1E94:0: v=7 play (3, frozenset({0, 4, 7}), 5) != Xi (7, frozenset(), 0)
+VIOLATION O2: 1E94:1: v=0 play (2, frozenset(), 1) != Xi (8, frozenset({2}), 5)
+VIOLATION O5: 1E94:1: sbar loses from V\W (even cycle at 2)
+VIOLATION O2: 1E94:2: v=0 play (5, frozenset({0}), 3) != Xi (3, frozenset(), 1)
+VIOLATION O3b: 1E94:2: sigma' (5, 5, 3) beats sigma at 8
+VIOLATION O5: 1E94:2: sbar loses from V\W (even cycle at 4)
+VIOLATION O2: 1E94:3: v=0 play (4, frozenset(), 2) != Xi (1, frozenset({4, 7}), 4)
+VIOLATION O3b: 1E94:3: sigma' (7, 1, 1) beats sigma at 0
+VIOLATION O5: 1E94:3: sbar loses from V\W (even cycle at 4)
+VIOLATION O2: 1E94:4: v=0 play (4, frozenset(), 2) != Xi (3, frozenset(), 1)
+VIOLATION O5: 1E94:4: sbar loses from V\W (even cycle at 4)
+VIOLATION O6: 1E94:4: sbar-play enters W at 3
+VIOLATION O2: 1E94:5: v=0 play (4, frozenset(), 2) != Xi (0, frozenset(), 0)
+VIOLATION O2: 1E94:6: v=0 play (1, frozenset({0}), 1) != Xi (0, frozenset(), 0)
+VIOLATION O2: 1E94:7: v=0 play (4, frozenset({2, 5}), 3) != Xi (4, frozenset({2, 5}), 4)
+VIOLATION O2: 1E94:8: v=0 play (2, frozenset({0}), 1) != Xi (0, frozenset(), 0)
+VIOLATION O3b: 1E94:8: sigma' (1, 0) beats sigma at 0
+VIOLATION O5: 1E94:8: sbar loses from V\W (even cycle at 1)
+VIOLATION O6: 1E94:8: sbar-play enters W at 0
+VIOLATION O2: 1E94:9: v=0 play (5, frozenset(), 3) != Xi (5, frozenset(), 2)
+VIOLATION O3b: 1E94:9: sigma' (3, 5, 7, 7, 1) beats sigma at 8
+VIOLATION O5: 1E94:9: sbar loses from V\W (even cycle at 1)
+VIOLATION O2: 1E94:11: v=0 play (4, frozenset({0, 5}), 4) != Xi (0, frozenset(), 0)
+VIOLATION O5: 1E94:11: sbar loses from V\W (even cycle at 4)
+VIOLATION O6: 1E94:11: sbar-play enters W at 0
+VIOLATION O2: 1E94:12: v=0 play (7, frozenset({0, 1, 4, 6}), 5) != Xi (7, frozenset({0, 1, 4, 6, 9}), 6)
+VIOLATION O2: 1E94:13: v=3 play (0, frozenset({9, 3, 5, 6}), 5) != Xi (5, frozenset(), 2)
+VIOLATION O2: 1E94:14: v=2 play (3, frozenset(), 1) != Xi (1, frozenset(), 1)
+VIOLATION O5: 1E94:14: sbar loses from V\W (even cycle at 3)
+VIOLATION O2: 1E94:15: v=2 play (4, frozenset({2}), 3) != Xi (4, frozenset({2}), 2)
+RESULT FAIL violations=793
