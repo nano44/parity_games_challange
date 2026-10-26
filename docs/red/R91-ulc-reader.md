@@ -104,7 +104,7 @@ largest inside index is |U| − 1 − 7. That is L-SI's own figure in N5-GCX §4
   - The data maximum is n − 3.
 
 ## 6. UL_G re-use attempts (Lead 17:31Z, (a), time-boxed): no kill; the exact obstruction (PROVED steps marked; READING otherwise)
-Written ~18:0xZ (date -u). The target is a global C-interval longer than n − 1 that contains a gate, i.e. a causal chain re-using vertices.
+Written ~17:4xZ (date -u). The target is a global C-interval longer than n − 1 that contains a gate, i.e. a causal chain re-using vertices.
 The strongest design I found is TWO WAVES ON ONE CHAIN.
 - The design:
   - Wave 1 runs backward through a gate-free chain v_1 … v_L inside A, from a top G1 at v_1, for L − 1 steps.

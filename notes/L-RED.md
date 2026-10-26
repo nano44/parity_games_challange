@@ -21,6 +21,11 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   W-traps (Xi-improving but W-worse edges) keep a class alive; S4a anticipates (z moves in the same step as v_1). The 2-cycle gate
   {h, u} cannot be both Even-non-improving and Odd-non-improving (rank case analysis), so gates need sigma-bar = the cycle node.
 - Abstract cyclic model (L-SI abscyc.py) climbs at n = 5: best exactly 5 (4 seeds); pure gap (i) looks capped at n.
+- Lead 17:08Z: UL_G first. R91 §5-§6 (54de3f2f, 41ca4615): global checker; lib41 UL_G 0, best global length n - 3 (gate-free b6_xs_n24);
+  re-use attempts (two waves on one chain; sigma-bar leapfrog; lengths) blocked by the gate inequality Xi(sb u) <= Xi(tau u) <= W(tau u) (O1)
+  and a rank argument (O2); GCI-LEN proposed (Lead routed it to L-SI 18). Pure UL_C: class dynamics closed in a pure interval (READING).
+- Box 60: R92 docs/red/R92-qpc-ladder.md. QP_c linear on long phases in ONE class: mkladder.py (D0: QP_c = k + 2; ENT: gates enter D one
+  per tick, ENT = k - 1, N_ep = NCONF = k); pins ladder{d0,ent}_k{12,24,48}; n5 = n5b, Oink OK; L-NEW qp.py / phrestrict.py agree.
 
 ## Successor 21 HANDOVER (written 2026-10-26 ~15:25Z, date -u; ~455k context; for successor 22)
 - DONE (all pushed to claude/l-red; every pin has sha1 + full start pair, n5.py = n5b --mode spec, check_sol2 Oink "OK strategies verified"):
