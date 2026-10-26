@@ -22,7 +22,7 @@ def wval(E, nx, v):
         if E.rank[x] > E.rank[c]: P |= E.bit[x]
     return (c, P, j)
 
-S = dict(gatev=0, D2=0, dchange=0, changes=0, same_stretch=0, toW=0, toX=0, toWX=0, againstW=0, tieW=0)
+S = dict(TCCLASS_V=0, gatev=0, D2=0, dchange=0, changes=0, same_stretch=0, toW=0, toX=0, toWX=0, againstW=0, tieW=0)
 CASES = []
 
 def check(g, name, start=None):
@@ -56,6 +56,7 @@ def check(g, name, start=None):
             if b not in r0["D"] or r0["D"] != r1["D"] or (ULT and r0["dirD"] != r1["dirD"]): S["dchange"] += 1; continue
             if v in r0["D"]: S["gatev"] += 1; continue
             S["D2"] += len(r0["D"]) == 2
+            S["TCCLASS_V"] += r0["vs"][a][0] != r0["vs"][b][0] or r1["vs"][a][0] != r1["vs"][b][0]
             kw = (E.key(r0["W"][b]) > E.key(r0["W"][a])) - (E.key(r0["W"][b]) < E.key(r0["W"][a]))
             kx = (E.key(r0["vs"][b]) > E.key(r0["vs"][a])) - (E.key(r0["vs"][b]) < E.key(r0["vs"][a]))
             S["toW"] += kw > 0; S["againstW"] += kw < 0; S["tieW"] += kw == 0; S["toX"] += kx > 0

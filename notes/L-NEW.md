@@ -359,14 +359,24 @@ Successor 23 (Opus 5.5, D14/D18, L40), session_011WFfFqRNrU1a8LQwbwazZN. Handove
   (3732ab55, 11b15455; LANDED as R56) + fixes P-N5-FBRED-fixes-box44 (2742f3e9, 05c24943); P-N5-VILB-box44 (999e73f4, 872d4400; in review);
   P-N5-ACCEL-box44 (e9eaaaaf, 301f0be0; in review); P-N5-FBK-box44 (9dd499d3, afd7c65a; pinned trunk 5d723af6, behind P-N5-2T) + fixes
   P-N5-FBK-fixes-box44 (399e8ec6, 79ad8597: verbatim PFZ-q / DIR). Fixes files P-N5-NH-fixes-box43 (7c499640) and P-N5-DUAL-fixes-box43
-  (5d08d0fd) at 478dd6e1.
+  (5d08d0fd) at 478dd6e1. P-N5-XEP-box44 (a4fa94b0, sha1 237dd5eb31f60f19ef70099dc9351532e88b56f8: R-STICK_D, SN-PREFIX_D (a)-(c),
+  D-EPOCH, X-EP; cites ACCEL 301f0be0 EPOCH (b) and FBK afd7c65a ALT; queues after FBK).
 - Working docs: docs/new/N5-DELTA-box44.md (Route Δ: LAM_D, C_D, CR_D, FBL_D, FBF_D (CT-FREE), XA_D, PIECE_D |D| = 1; Δ-RT-F FALSE,
   rtf_cex_inj n 11); docs/new/N5-FBF-box44.md §1-§14 (FB-POLY set form; FB-RED; TV; ρ-POLY stalls; VI-LB; ACCEL; EPOCH; ALT; FB-kT;
   R-STICK_D, SN-PREFIX_D; D-EPOCH, X-EP; random-start data). Tools experiments/new/box44 (README lists every run).
 ### IN FLIGHT
-- Nothing running. Waiting for the Lead on: (a) packet R-STICK_D + SN-PREFIX_D + D-EPOCH + X-EP (N5-FBF §12-§13); (b) whether X_SN^pre
-  (unsplit crossings inside fixed-frame S4a runs of an epoch) goes to L-SI with T per phase; (c) next direction.
+- Nothing running. (a) XEP packet: done (above). (b), (c): decided by the Lead, see ROUTING INHERITED. Successor 23 PARKED at the head
+  that carries this line.
 - Referee queue (Lead's): P-N5-2T (L-SI) → P-N5-FBK; VILB → ACCEL (REFEREE-2 first). Fixes files come when their §Cs are in (Lead's go).
+### ROUTING INHERITED (Lead 05:00Z / 05:05Z / 05:10Z, Lead's stamps; added 05:16Z by date -u)
+- X_SN^pre stays with L-NEW, for epochs with |D| = 1: port R19-R20 (and check R21-R34) per epoch with o := u (N5-DELTA-box44 §7 route; D-EPOCH:
+  D, σ̄ fixed inside an epoch, the other Odd choice vertices have σ̄ = τ). If most transfer, epochs with |D| ≤ 1 are bounded by the 𝒞^1O
+  machinery and the open core shrinks to epochs with |D| ≥ 2 (Δ-RT). L-SI's Lemma G_D-NC (l-si b92f84d4, §6: R55's (h_D) weakened to "no
+  D-vertex on its own cycle") may help.
+- L-SI keeps (¬h-cyc) per gate and FRZ-U on 𝒞^2O (do not duplicate; ask through the Lead if a lemma is needed).
+- FBK fixes file docs/new/P-N5-FBK-fixes2-box44.md (or the next free name; P-N5-FBK-fixes-box44.md is already the verbatim-quote file):
+  REFEREE-2 d4cc40d9 G-FBK-1 (Corollary FB-kO's whole-run "O(n^{2k+1})" is false at k = 1; repair O(n^{max(k+3, 2k+1)}), since phases
+  ≤ n(n − 1) + n^k), notes N-FBK-1..4, plus REFEREE 12's notes; ON THE LEAD'S WORD, after REFEREE 12's FBK report and both §Cs.
 ### NEXT (successor 24)
 - Read the Lead's latest message (ReadNotifications) before anything; answer the five questions; then the Lead's choice among (a)-(c).
 - Open counts on the frontier, as they now stand: ρ (Ξ-changes at Odd choice vertices per phase; fallbacks, epochs and value levels all
