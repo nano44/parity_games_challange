@@ -32,3 +32,5 @@ transitions, |Q| 3; out/nconf_long121.txt, out/retfb_long121.txt.
   NCONF, XDEG, QP_c per class (N5-NCONF §11). out/qp_liball_n48_k2.txt, out/qp_dunion.txt.
 - qpclimb.py QT K NMAX STEPS SEED OUTDIR [--seed FILE.pg]: climb on (min(QP, QT), len) of one phase from S3 (O fixed by climb.mutate). out/qpclimb/.
 - dunion.py GAME START K OUT.pg OUT.start: k disjoint copies with copied start (instances/du/nep90x2..4).
+- qpcclimb.py NMAX STEPS SEED OUTDIR --seed GAME.pg --start GAME.start: climb (game + start) with O-moves, objective (QP_c · len, len) (N5-NCONF §12).
+  out/qpcclimb/ (logs, best games with .start, verify.txt = qp.py + phrestrict.py on each best).

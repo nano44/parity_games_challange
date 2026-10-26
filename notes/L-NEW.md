@@ -1239,3 +1239,6 @@ Successor 27 (Opus 5.5, D14/D18, L40), session_01Eb3V637FARpmtRkvarA5Jx. Handove
 - 15:52Z (date -u): QP (N5-NCONF §11). QP = |∪D_k| (elementary). Library: long phases have small QP (len ≥ 60: ≤ 3) but selection bias (|Q| = 1).
   Climbs weak (O fixed by climb.mutate). DUNION: k copies of nep90 = one 91-transition phase with QP 5k at n 40k, so QP is the wrong parameter;
   QP_c (per class) proposed; OPEN. Trap: climb.mutate never changes the Odd choice set; QP ≤ |O| by design.
+- 16:13Z (date -u): §12. qpcclimb (O-moves, long-phase starts): QP_c 13 / 14 / 10 in one class on phases 99 / 81 / 127 at n 48 (from nep90 / nep76 /
+  long121); RESTRICT_H holds on them (phrestrict 0/0). QP_c is not small on long phases. R63 reading: nothing landed bounds D0 or ENT.
+  Lead 16:01Z: EPC REFEREE report a52feb43 in (EPC-N1..N4); REFEREE-2 pending; do not start EPC fixes before both §Cs.
