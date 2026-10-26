@@ -1,0 +1,4 @@
+start 44 {'WK_checks': 0, 'wakes': 0, 'CLS1_checks': 47, 'CLS1_case_r>L': 44, 'ABSL_intervals': 44}
+2 51 {'WK_checks': 0, 'wakes': 0, 'CLS1_checks': 57, 'CLS1_case_r>L': 51, 'ABSL_intervals': 51}
+10 55 {'WK_checks': 0, 'wakes': 0, 'CLS1_checks': 64, 'CLS1_case_r>L': 55, 'ABSL_intervals': 55}
+12 76 {'WK_checks': 0, 'wakes': 0, 'CLS1_checks': 87, 'CLS1_case_r>L': 76, 'ABSL_intervals': 76}

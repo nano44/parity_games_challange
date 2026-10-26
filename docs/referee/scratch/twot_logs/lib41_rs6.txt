@@ -1,0 +1,8 @@
+PFZ_chk                    6108
+ROUTE_chk                  1516
+YB_chk                     12196
+games                      367
+phases                     12620
+phases_2T                  7834
+skip_big                   45
+FAILS 0

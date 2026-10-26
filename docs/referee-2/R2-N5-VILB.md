@@ -53,3 +53,42 @@ packet says, nothing in data has many fallbacks in one phase (max 37); the gadge
 - N-VILB-1: Γ_c's −∞ convention and the j-step recursion agree; empty successor sets never occur inside a class.
 - N-VILB-2: the Odd step uses (Aκ) at t only (σ̄_t(z) ∈ succ(z) ∩ U_c), so VI-LB treats every Odd vertex as a minimiser; this is the two-player
   strengthening of R48's κ-HAT-FREEZE (a).
+
+## §C. Comparison with REFEREE's R-N5-VILB (REFEREE successor 12; referee dcb1451c, on trunk a2b77a9a). REFEREE-2 successor 14, 2026-10-26 05:0xZ (date -u)
+Signature: (Opus 5.5, D15). Written by successor 14, who did not write §1-§4 above (successor 13 did). Independence held: this report
+(f0e82d8a) was in origin/claude/referee-2 from 04:0xZ; R-N5-VILB was opened at 05:0xZ.
+- Re-checked by successor 14 itself (04:2xZ pre-read, notebook resume point): VI-LB's induction (Even step at k = g_j > g_{j−1} with
+  (M2κ) to t; Odd step by (Aκ) at t; base κ_t(c) = (0, 0)) and κ-FB-ROUND's two cases. Accepted from successor 13 without redoing: that S4c
+  (FIX 3) moves every gate source to its best-key gate target (as in R48 / R2-N5-FBRED), and §3's data.
+
+### C.1 Verdicts
+| statement | REFEREE | REFEREE-2 | agree |
+| --- | --- | --- | --- |
+| §1 (Aκ), (M1κ), (M2κ), κ-FB-ROUND | SIGNED | SIGN | yes |
+| §2 Lemma VI-LB | SIGNED | SIGN | yes |
+| §2 relation to κ-HAT-FREEZE (a) | agreed as READING | correct READING | yes |
+| §3, §4 | not signed; §3 agreed | not signed; §3 accurate | yes |
+No NOT SIGNED item and no gap on either side.
+
+### C.2 Joint note map
+| REFEREE | REFEREE-2 | result |
+| --- | --- | --- |
+| VILB-N1: the empty-max / empty-min conventions never fire for z ∈ U_c ∖ {c} ((Aκ)) | N-VILB-1 (same, plus: Γ_c's −∞ convention and the j-step recursion agree) | identical |
+| (Odd step: (Aκ) at t only, forced and choice Odd alike, "the class hypothesis: none") | N-VILB-2 | identical in substance |
+| VILB-N2 (DATA): VI-LB exercised at every j up to 33, tight at 59% of finite lib41 checks; oddmax mutation bites (46,067) | §3: tight at the j-th round (the j + 1 control fails 774 times on lib41 S3); max 37 fallbacks in a phase | agree: two engines, VI-LB exercised and tight, mutations bite |
+| READING: VI-LB implies κ-HAT-FREEZE (a) (deleting Odd choice vertices only lowers Even's value) | §2: the same READING | identical; REFEREE's one-line reason is correct |
+Nothing open.
+
+### C.3 Data comparison
+| | REFEREE (vilb_probe.py) | REFEREE-2 (va_check.py) |
+| --- | --- | --- |
+| runs / phases | 7,151 / 20,531 | 70,288 / 161,847 (incl. 47,996 climb runs) |
+| VI-LB checks | 777,048 | 2,677,247 |
+| max in-phase fallbacks in a phase | 33 (lib41) | 37 (my 503 𝒞^1O files) |
+| mutation controls | oddmax 46,067 failures | vi (j + 1) 774 failures |
+| violations | 0 | 0 |
+Both: the regime where VI-LB could force a count (many fallbacks in one phase, §4's gadget) is not reached.
+
+### C.4 Result
+Both referees SIGN §1 and Lemma VI-LB on every game, with no gap. For the fixes file: VILB-N1 = N-VILB-1 (optional wording). DATA:
+VILB-N2 / §3. A LOWER bound on progress only; no count, no running time; G-N5-TIME stays OPEN. (Opus 5.5, D15)
