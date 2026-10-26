@@ -1,0 +1,7 @@
+START fit (24, 24) n 24
+BEST step 161 fit (25, 25) t 4s
+BEST step 1033 fit (25, 26) t 28s
+BEST step 2521 fit (26, 27) t 74s
+BEST step 6478 fit (26, 28) t 194s
+BEST step 6497 fit (27, 28) t 194s
+END steps 12084 best (27, 28) n 24 -> results/scale/nep_seed_n24_r3.pg

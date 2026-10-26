@@ -12,6 +12,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
 - NEXT (a) (Lead 14:25Z): G_c. Note §7: data (dleave.py) + Lemma DL-SPLIT (decomposition, self-referential with ROOT-PIECE; no bound).
   PACKET P-N5-ROOT-box20 (BF-F_D, FREEZE-A, ROOT-PIECE, DL-SPLIT; 9 quotes pinned), sha1 d3788bc0ce0e3da2d54298c58e227e437242419a, FROZEN. Repairs go in a NEW file
   docs/si/P-N5-ROOT-fixes-box20.md.
+- GO (x) (Lead 14:40Z; P-N5-ROOT pinned on trunk b20d0e0e, queue FBC, CHOSEN, EPC, ROOT): note §8. Naive FREEZE on B = A ∪ {D-direct gate
+  regions} FAILS (nep90 188 / 948 BF checks, all in the ROOT's own gate region, Ξ-improving edges kept by W). Lemma GATE-SHIFT (a), (b)
+  lane-PROVED: M = MW − Δ(u) on a D-direct gate region; Ξ-BF holds up to the offset Δ(u). Obstruction named GATE-LAG (shape for L-RED).
 - Things only I know: shrink.py's MUT (freeze from s) does not bite on lib2o (thin there); bites on lib41. The name shrink.py clashes with
   experiments/new/box21/shrink.py on sys.path: common helpers live in root/common.py (first_D moved there). wplay() in common.py is my own
   (σ, τ)-play valuation, cross-checked against box21/h1.py wvals by bffd.py (WPLAY_V).

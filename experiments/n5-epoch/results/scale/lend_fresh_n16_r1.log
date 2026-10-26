@@ -1,0 +1,37 @@
+START fit (-1, 1) n 16
+BEST step 12 fit (0, 1) t 0s
+BEST step 82 fit (0, 2) t 0s
+BEST step 281 fit (1, 2) t 1s
+BEST step 414 fit (1, 3) t 1s
+BEST step 506 fit (1, 4) t 2s
+BEST step 623 fit (2, 2) t 3s
+BEST step 740 fit (2, 4) t 4s
+BEST step 744 fit (2, 5) t 4s
+BEST step 913 fit (3, 2) t 5s
+BEST step 922 fit (3, 3) t 5s
+BEST step 1462 fit (4, 3) t 9s
+BEST step 1840 fit (4, 4) t 11s
+BEST step 1974 fit (4, 5) t 13s
+BEST step 3060 fit (4, 6) t 23s
+BEST step 3200 fit (4, 7) t 25s
+BEST step 3684 fit (5, 5) t 31s
+BEST step 3759 fit (6, 3) t 32s
+BEST step 3820 fit (7, 3) t 32s
+BEST step 3980 fit (8, 3) t 34s
+BEST step 4004 fit (8, 4) t 34s
+BEST step 4086 fit (9, 2) t 35s
+BEST step 5024 fit (10, 2) t 46s
+BEST step 5278 fit (11, 2) t 49s
+BEST step 5356 fit (11, 3) t 50s
+BEST step 5429 fit (12, 2) t 51s
+BEST step 5437 fit (13, 2) t 51s
+BEST step 5744 fit (14, 2) t 55s
+BEST step 6287 fit (16, 2) t 62s
+BEST step 7142 fit (17, 2) t 76s
+BEST step 7795 fit (18, 2) t 86s
+BEST step 9192 fit (18, 3) t 111s
+BEST step 10087 fit (19, 3) t 127s
+BEST step 11069 fit (20, 3) t 143s
+BEST step 11330 fit (21, 3) t 147s
+BEST step 16610 fit (21, 4) t 239s
+END steps 16653 best (21, 4) n 16 -> results/scale/lend_fresh_n16_r1.pg

@@ -1,0 +1,29 @@
+CHAIN_END_CYC 20
+CHAIN_END_ROUTE 658
+CHAIN_MAXLEN 11
+CHAIN_chk 678
+CHO_chk 678
+CNTB_chk 811
+CTRL_switch_nonH 8332
+EV_CYC 92
+EV_RELAY 678
+EV_ROUTE 2482
+H_states 12361
+H_states_Qc2 4038
+PHASES 12115
+RUNS 2960
+TOG_ex 3
+TOG_seen 59
+TOG_with_rho_at_e 59
+TVE_Qc0 403
+TVE_Qc1 253
+TVE_Qc2 1
+TVE_Qc3 131
+TVE_chk 788
+TVG_chk 38
+TV_UNK 110
+skip_big 548
+EX ('TOG', '../../../experiments/alg/instances/climbs_1016/c_best_s34.pg/3', 3, 1, 5, 8, True)
+EX ('TOG', '../../../experiments/alg/instances/climbs_1016/c_best_s34.pg/4', 10, 1, 5, 8, True)
+EX ('TOG', '../../../experiments/alg/instances/climbs_1016/c_best_s34.pg/4', 11, 1, 8, 16, True)
+EXIT 0

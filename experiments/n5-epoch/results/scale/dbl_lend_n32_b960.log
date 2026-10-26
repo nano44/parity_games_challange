@@ -1,0 +1,9 @@
+START fit (55, 3) n 32
+BEST step 3236 fit (56, 3) t 290s
+BEST step 3636 fit (57, 3) t 328s
+BEST step 5526 fit (58, 3) t 510s
+BEST step 5887 fit (59, 3) t 547s
+BEST step 6785 fit (60, 3) t 633s
+BEST step 7495 fit (61, 3) t 701s
+BEST step 10122 fit (62, 3) t 958s
+END steps 10145 best (62, 3) n 32 -> results/scale/dbl_lend_n32_b960.pg

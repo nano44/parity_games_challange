@@ -150,3 +150,8 @@ o=$(python3 -I root/dleave.py --one $N90)
 for k in "leaves=26 " "y_ROUTE_OWN=21" "DLEAVE PASS"; do grep -q "$k" <<<"$o"; done
 if grep -q "y_RELAY_OWN" <<<"$o"; then echo "unexpected RELAY-and-OWN leave on nep90"; exit 1; fi
 echo "root (D-leaves on nep90: 26, no RELAY-and-OWN): PASS"
+# note §8: the naive FREEZE on A u {D-direct gates} fails on nep90 (188 of 948 Bellman-Ford checks in the root's gate region).
+o=$(python3 -I root/bfgate.py --one $N90)
+for k in "BFG_fail=188 " "bfg_checks=948 " "cutsA=22 " "cutsB=18 " "gs_a_checks=684 " "gs_b_checks=943"; do grep -q "$k" <<<"$o"; done
+if grep -q "GS_A_V\|GS_B_V" <<<"$o"; then echo "GATE-SHIFT violated on nep90"; exit 1; fi
+echo "root (GATE-LAG on nep90: 188 / 948 naive failures; GATE-SHIFT (a), (b) hold): PASS"

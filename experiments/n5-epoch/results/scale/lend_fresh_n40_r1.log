@@ -1,0 +1,25 @@
+START fit (0, 1) n 40
+BEST step 42 fit (0, 2) t 0s
+BEST step 132 fit (1, 2) t 1s
+BEST step 242 fit (1, 3) t 3s
+BEST step 296 fit (2, 2) t 3s
+BEST step 491 fit (2, 3) t 6s
+BEST step 630 fit (2, 4) t 8s
+BEST step 765 fit (3, 2) t 10s
+BEST step 982 fit (4, 2) t 14s
+BEST step 1734 fit (7, 1) t 28s
+BEST step 1739 fit (8, 1) t 28s
+BEST step 1832 fit (9, 1) t 31s
+BEST step 2108 fit (10, 1) t 37s
+BEST step 2448 fit (11, 1) t 47s
+BEST step 2530 fit (12, 1) t 50s
+BEST step 3404 fit (13, 2) t 83s
+BEST step 3477 fit (14, 2) t 86s
+BEST step 7652 fit (15, 2) t 248s
+BEST step 9181 fit (15, 3) t 309s
+BEST step 9217 fit (16, 2) t 311s
+BEST step 15752 fit (16, 3) t 539s
+BEST step 15907 fit (17, 2) t 544s
+BEST step 15946 fit (17, 3) t 545s
+BEST step 16351 fit (18, 2) t 561s
+END steps 17350 best (18, 2) n 40 -> results/scale/lend_fresh_n40_r1.pg

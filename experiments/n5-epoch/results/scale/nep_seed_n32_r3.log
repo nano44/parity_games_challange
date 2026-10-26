@@ -1,0 +1,5 @@
+START fit (56, 57) n 32
+BEST step 580 fit (57, 58) t 51s
+BEST step 3946 fit (58, 59) t 356s
+BEST step 4215 fit (59, 60) t 381s
+END steps 5239 best (59, 60) n 32 -> results/scale/nep_seed_n32_r3.pg

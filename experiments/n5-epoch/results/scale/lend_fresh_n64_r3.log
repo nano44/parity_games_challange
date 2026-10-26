@@ -1,0 +1,29 @@
+START fit (0, 1) n 64
+BEST step 102 fit (0, 2) t 2s
+BEST step 110 fit (1, 3) t 2s
+BEST step 132 fit (1, 4) t 2s
+BEST step 154 fit (2, 3) t 3s
+BEST step 773 fit (2, 4) t 21s
+BEST step 921 fit (3, 4) t 26s
+BEST step 956 fit (4, 3) t 27s
+BEST step 1263 fit (5, 2) t 39s
+BEST step 1822 fit (5, 4) t 66s
+BEST step 1977 fit (7, 3) t 75s
+BEST step 2089 fit (8, 2) t 81s
+BEST step 2881 fit (9, 2) t 121s
+BEST step 3258 fit (9, 3) t 144s
+BEST step 3975 fit (10, 2) t 190s
+BEST step 4164 fit (12, 3) t 201s
+BEST step 4333 fit (13, 3) t 216s
+BEST step 4509 fit (13, 4) t 231s
+BEST step 4579 fit (14, 4) t 237s
+BEST step 4704 fit (15, 1) t 248s
+BEST step 4727 fit (16, 2) t 250s
+BEST step 4789 fit (17, 1) t 256s
+BEST step 4971 fit (17, 2) t 273s
+BEST step 5083 fit (18, 2) t 284s
+BEST step 5469 fit (19, 2) t 322s
+BEST step 6516 fit (20, 2) t 423s
+BEST step 10153 fit (20, 3) t 811s
+BEST step 10267 fit (21, 2) t 822s
+END steps 11954 best (21, 2) n 64 -> results/scale/lend_fresh_n64_r3.pg

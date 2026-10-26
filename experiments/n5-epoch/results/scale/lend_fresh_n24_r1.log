@@ -1,0 +1,32 @@
+START fit (-1, 1) n 24
+BEST step 14 fit (0, 1) t 0s
+BEST step 354 fit (1, 2) t 1s
+BEST step 361 fit (2, 2) t 2s
+BEST step 728 fit (2, 3) t 5s
+BEST step 998 fit (2, 4) t 7s
+BEST step 1004 fit (3, 4) t 7s
+BEST step 1015 fit (3, 5) t 8s
+BEST step 1051 fit (6, 4) t 8s
+BEST step 1096 fit (7, 3) t 9s
+BEST step 1126 fit (8, 3) t 9s
+BEST step 1348 fit (8, 4) t 12s
+BEST step 1406 fit (9, 3) t 13s
+BEST step 1689 fit (10, 3) t 18s
+BEST step 1929 fit (11, 1) t 21s
+BEST step 1970 fit (12, 1) t 22s
+BEST step 1993 fit (12, 2) t 23s
+BEST step 2008 fit (13, 1) t 23s
+BEST step 2022 fit (13, 2) t 23s
+BEST step 2220 fit (14, 2) t 27s
+BEST step 2536 fit (15, 2) t 34s
+BEST step 4651 fit (16, 2) t 87s
+BEST step 4697 fit (17, 2) t 88s
+BEST step 4705 fit (18, 2) t 88s
+BEST step 4856 fit (19, 2) t 92s
+BEST step 5527 fit (20, 2) t 113s
+BEST step 5984 fit (21, 2) t 129s
+BEST step 6789 fit (22, 2) t 154s
+BEST step 6853 fit (23, 2) t 156s
+BEST step 7682 fit (24, 2) t 182s
+BEST step 10984 fit (25, 2) t 293s
+END steps 12866 best (25, 2) n 24 -> results/scale/lend_fresh_n24_r1.pg

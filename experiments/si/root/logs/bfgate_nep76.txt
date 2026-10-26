@@ -1,0 +1,7 @@
+BFG_fail=138 bfg_checks=639 cutsA=15 cutsB=25 gs_a_checks=404 gs_b_checks=661
+EXAMPLE (game, phase, t, z, x, gate(z), gate(x), sigma(z) t, t+1) ('../../n5-epoch/instances/nep76_n40.pg', 9, 1, 12, 15, 0, None, 23, 23)
+EXAMPLE (game, phase, t, z, x, gate(z), gate(x), sigma(z) t, t+1) ('../../n5-epoch/instances/nep76_n40.pg', 9, 1, 23, 2, 0, None, 0, 0)
+EXAMPLE (game, phase, t, z, x, gate(z), gate(x), sigma(z) t, t+1) ('../../n5-epoch/instances/nep76_n40.pg', 9, 2, 12, 15, 0, None, 23, 23)
+EXAMPLE (game, phase, t, z, x, gate(z), gate(x), sigma(z) t, t+1) ('../../n5-epoch/instances/nep76_n40.pg', 9, 2, 23, 2, 0, None, 0, 0)
+EXAMPLE (game, phase, t, z, x, gate(z), gate(x), sigma(z) t, t+1) ('../../n5-epoch/instances/nep76_n40.pg', 9, 3, 12, 15, 0, None, 23, 23)
+EXAMPLE (game, phase, t, z, x, gate(z), gate(x), sigma(z) t, t+1) ('../../n5-epoch/instances/nep76_n40.pg', 9, 3, 23, 2, 0, None, 0, 0)

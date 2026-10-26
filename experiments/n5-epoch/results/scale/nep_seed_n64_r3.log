@@ -1,0 +1,8 @@
+START fit (90, 94) n 64
+BEST step 67 fit (91, 96) t 28s
+BEST step 468 fit (91, 97) t 206s
+BEST step 553 fit (91, 98) t 251s
+BEST step 1372 fit (91, 100) t 720s
+BEST step 1418 fit (91, 101) t 744s
+BEST step 1760 fit (91, 102) t 954s
+END steps 1769 best (91, 102) n 64 -> results/scale/nep_seed_n64_r3.pg
