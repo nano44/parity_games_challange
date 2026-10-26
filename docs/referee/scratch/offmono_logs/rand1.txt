@@ -1,0 +1,11 @@
+CC_chk 8398
+CS_chk 9233
+MAX_D 3
+MAX_KCHG 2
+OM_caseL 4
+OM_chk 7619
+OM_parent_changed 330
+PHASES 3607
+RUNS 15000
+STEP1_chk 9966
+EXIT 0
