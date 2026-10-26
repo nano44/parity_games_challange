@@ -12,7 +12,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - (2) HON-FF: docs/new/N5-HONFF-box47.md (written 11:31Z by date -u). Lemma FB-RISE (PROVED): an in-phase S4c fallback is a Bellman-Ford step for
   Ξ at Even vertices (Lemma P Case A with Ω = Ξ; Case B needs only Ξ_t(z*) ⪰ Ξ_t(z) and MON); Odd vertices are one level ahead at a W-honest state
   (SAT0 Odd case). So LEV(t+1) ≥ min(LEV(h)+1, n−1). Theorem HON-FF (PROVED): W-honest states ≤ 4n² − 3n per phase, no f. HON-0-FF, REC-1-FF.
-  Replaces both uses of the fallback-free hypothesis (REFEREE 14's HON-N3). DATA: GEN_V 0 (300 fallbacks), FBRISE_V 0 (25), control bites (CTRL_T).
+  Replaces both uses of the fallback-free hypothesis (REFEREE 14's HON-N3). DATA: GEN_V 0 (1,028 checks), FBRISE_V 0 (31), control bites (CTRL_T).
+- (3) P-N5-HON-fixes-box46 FROZEN (0238b1cb, sha1 54985acf…; 46 quotes checked by box47/quotecheck.py). Packet P-N5-HONFF-box47 FROZEN
+  (2fca63b8, sha1 98101d1f…; Q-A for the referees: Case A with Ω := Ξ). Sent to the Lead 12:01Z. Status at 12:02Z: waiting for the next item.
 
 ## Box 46 log (successor 25, session_01VsRSLkbPLhXCWoMbJMCW2r; handover check 04cedc7c (5/5, Lead 08:32Z); GO 08:32Z, Lead's stamp)
 - Container stale at 5961101a again; ff to 230334e4; trunk 565b8a8d merged (64a811ba). Oink built (scripts/setup_oink.sh rc 0, 8fbf0a7).
