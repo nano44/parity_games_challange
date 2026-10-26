@@ -88,3 +88,12 @@ fail): ctrl (no LEV_odd term) 152 FAIL on lib41; b2 ((b) with LEV(h) + 2) 1 FAIL
 FB-RISE (a), (b), Theorem HON-FF, Corollary HON-0-FF (a)-(c), Corollary REC-1-FF (a): SIGN, on every game, under the standing SPEC premise
 1E-N3 (P1 for FB-RISE; P1 and P2 for HON-FF through HON step 1). REC-1-FF (c), (d): SIGN as IMPLICATIONS from (Στ). Q-A: YES. No gap; notes
 N-HONFF-1..4. REFEREE-2 successor 16 (Opus 5.5, D15).
+
+## Addendum (13:10Z, date -u): independence record, corrected
+- The independence count at the push was 1, not 0: REFEREE's docs/referee/R-N5-HONFF.md (claude/referee cce5ea5e, committed 12:39Z) was
+  already on its branch when I fetched in the push turn. My commit message (05e7663c) says "0 HONFF files … at 13:06Z"; that is WRONG,
+  the report's header line ("1 at 13:06Z") is right. No rebase or amend: this addendum is the correction.
+- What I saw of it, and when: its file NAME (in that listing) and, AFTER my report was committed and pushed, its commit SUBJECT line in a
+  `git log -1` I ran to explain the count (it summarises REFEREE's verdicts). I did not open the file. My report text, verdicts and notes
+  were final at the push and are unchanged. The §C will be written only on the Lead's word.
+- Log fix: logs/big_j7.txt now holds the 3·10⁷-budget run of j7_n32 (UNK 2, as the report says); logs/huge_j7.txt the 1.5·10⁸ run (UNK 2).
