@@ -171,3 +171,11 @@ fi
 o=$(python3 -I root/resets.py --one $N90)
 for k in "R_DELTA_U=63 " "R_DELTA_U_ONLYSELF=32 " "max_resets_run=13 "; do grep -q "$k" <<<"$o"; done
 echo "root (per-gate resets on nep90; the dead PING/FLIP charge reproduces): PASS"
+# P-N5-CHOSEN fixes file: 22 quotes verbatim at the referees' commits; shifted control fails.
+if git cat-file -e b3473114 && git cat-file -e d08011be && git cat-file -e aab45be6 && git cat-file -e bde1ea77; then
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-CHOSEN-fixes-box19.md | grep -q "quotes=22 bad=0"
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-CHOSEN-fixes-box19.md --mut | grep -q "QUOTES FAIL"
+  echo "rund (P-N5-CHOSEN fixes file: 22 quotes verbatim; shifted control fails): PASS"
+else
+  echo "rund (P-N5-CHOSEN fixes file quotes): NOT RUN (referee commits not in this clone)"
+fi

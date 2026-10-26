@@ -26,3 +26,5 @@ transitions, |Q| 3; out/nconf_long121.txt, out/retfb_long121.txt.
   changing vertex of Q, R = σ̄ on the rest) with each R's root sequence. out/rootrel_newconf.txt (nep90, nep76, long121 with starts; pft34 S3).
 - fsrestrict.py STARTS SEED (--list FILE | files) [--nmax N] [--start F]: the frozen-side u-run restriction G^{u|J} (N5-NCONF §9): XI_V, REP_V must be
   0; MUT=1 must bite. out/fsrestrict_liball_n34_k2.txt, out/fsrestrict_liball_n34_MUT.txt, out/fsrestrict_long3.txt.
+- phrestrict.py STARTS SEED (--list FILE | files) [--nmax N] [--start F]: Lemma RESTRICT_H on the used-edge game G^P of each phase (N5-NCONF §10):
+  XI_V, REP_V must be 0; MUT=1 must bite. out/phrestrict_long3.txt, out/phrestrict_liball_n34_k2.txt, out/phrestrict_liball_n34_MUT.txt.

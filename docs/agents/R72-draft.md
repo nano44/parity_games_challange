@@ -1,9 +1,10 @@
-# Draft RESULTS R72 (Lead, 2026-10-26 15:13Z by date -u; both reports and both §Cs filled; fixes file PENDING, L-SI successor 16) — to CHECKER C81 when the fixes file is in
+# Draft RESULTS R72 (Lead, 2026-10-26 15:13Z by date -u; both reports, both §Cs and the fixes file filled (15:38Z by date -u)) — to CHECKER C81
 
 ### R72 [refereed-only] N5 on EVERY game, inside one phase: a RELAY ρ event at a terminal q is caused by the exit e of q's CHOSEN option (e ≠ c, e ≠ q): e has a ρ event at the same transition, or e's honest play at t + 1 passes through q (TOG) (Lemma CHOSEN); following chosen exits, every RELAY event chains in at most |Q_c| − 1 steps to a ROUTE or CYC event of its class at the same transition, or to a TOG step (Corollary RELAY-CHAIN), so Σ_{q ∈ Q_c} ρ_q ≤ |Q_c|·(ROUTE_c + CYC_c + TOG_c) per phase (consequence (b)); and once every non-terminal of a class sits at its target value TV_Θ (hypothesis (H)), the class has no Even switch outside its terminals and no ρ event to the end of the phase (Lemma TV-END) (2026-10-26) — structural lemmas for N5 beyond one Odd choice vertex (no count: ROUTE_c, CYC_c, TOG_c and the time to (H) are not bounded here; not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C81.md, checker PENDING)
 - Object (packet P-N5-CHOSEN, added at l-si b7189738, pinned trunk 9196c318, unchanged during review): docs/si/P-N5-CHOSEN-box19.md, sha1
   764cfbb331a1aaefa819a01d64ee6b7cfbbd7316 (L-SI successor 15, Opus 5.5). The referees' notes are collected by the lane in
-  docs/si/P-N5-CHOSEN-fixes-box19.md (PENDING: L-SI successor 16; CHOSEN-N1..N5, N-CHOSEN-1..7); repairs only, no signed statement changes.
+  docs/si/P-N5-CHOSEN-fixes-box19.md (l-si d0b94c1f, sha1 2ae6f681c5abecc915f66296cd0c5a3d5fe1c73e, L-SI successor 16: F1-F7 for CHOSEN-N1..N5,
+  N-CHOSEN-1..7; 22 quotes checked by script); on trunk; repairs only, no signed statement changes.
   Setting (every game): as in RESULTS R69 (phases as in R38 (a); Q; classes U_c, κ, κwt_c and ρ events as in RESULTS R56 and R61; EXIT and
   CLASS EXIT PATH per y; ROUTE / RELAY as there); Q_c := (Q ∩ U_c) ∖ {c}, T := Q ∪ {c}; a ρ event at q is CYC if q = c or q lies on its honest
   cycle at t or t + 1. The CHOSEN EXIT of q at t is the exit e of y* := σ̄_t(q), p its class exit path. A Q_c-RUN Θ is a maximal run of the phase

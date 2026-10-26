@@ -1228,3 +1228,8 @@ Successor 27 (Opus 5.5, D14/D18, L40), session_01Eb3V637FARpmtRkvarA5Jx. Handove
   FBC-N3 = P-N5-EPC §3, not a repair; N-FBC-6 superseded). Sources opened: R-N5-FBC.md at claude/referee d08011be, R2-N5-FBC.md at
   claude/referee-2 bde1ea77, packet at 1f8d6d7d, P-N5-HON l. 44 and RESULTS l. 2907, 3065-3068 at trunk 10b5b144, EPC at 81ab0b72.
   quotecheck2.py: quotes 45 missing 0 (experiments/new/box48/out/quotecheck_fbc_fixes.txt).
+- 15:25Z (date -u): queue item 3 read (L-SI N5-ROOT-box20 §1-§9 at l-si 04894bb9; open count = gate offset / region resets per fallback-free run,
+  L-SI 16's to hand over). Item 4: N5-NCONF §10 Lemma RESTRICT_H / REPRO_H PROVED (port of R64 (a), (b): only (P1) Odd edges ⊆ G's, (P2) σ̄_k ∈ H,
+  (P3) τ ∈ H + Even lists intact are used); §9's CONJECTURE RESTRICT_{u|J} now an instance; new instance G^P (used-edge game of a phase).
+  DATA phrestrict.py: long3 0/0 (QP 5/5/3), liball n ≤ 34 1,031 phases 0/0, MUT bites (XI 514, REP 292). Sources: R64 at RESULTS l. 3206
+  (opened), P-N5-EPR §1-§2 (opened), R68 (f) (opened).

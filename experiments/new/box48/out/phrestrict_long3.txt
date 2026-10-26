@@ -1,0 +1,6 @@
+../../red/rec0/instances/nep90_n40.pg --start ../../si/rund/instances/nep90_n40.start: max_QP 5 max_XDEG 22 phase_transitions 91 phases 1 phases_QP_ge2 1 transitions_QP_ge2 91
+MUT: XI_V 1 max_QP 5 max_XDEG 22 mutated 1 phase_transitions 91 phases 1 phases_QP_ge2 1 transitions_QP_ge2 91
+../../n5-epoch/instances/nep76_n40.pg --start ../../n5-epoch/instances/nep76_n40.start: max_QP 5 max_XDEG 24 phase_transitions 78 phases 1 phases_QP_ge2 1 transitions_QP_ge2 78
+MUT: REP_V 1 XI_V 1 max_QP 5 max_XDEG 24 mutated 1 phase_transitions 78 phases 1 phases_QP_ge2 1 transitions_QP_ge2 78
+instances/long121_n40.pg --start instances/long121_n40.start: max_QP 3 max_XDEG 8 phase_transitions 121 phases 1 phases_QP_ge2 1 transitions_QP_ge2 121
+MUT: REP_V 1 XI_V 1 max_QP 3 max_XDEG 8 mutated 1 phase_transitions 121 phases 1 phases_QP_ge2 1 transitions_QP_ge2 121
