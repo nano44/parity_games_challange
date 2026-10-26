@@ -1,6 +1,6 @@
-# Draft RESULTS R57 (Lead, 2026-10-26 04:44Z by date -u; both §Cs filled; fixes file filled 04:50Z) — to CHECKER C66
+# Draft RESULTS R57 (Lead, 2026-10-26 04:44Z by date -u; both §Cs filled; fixes file filled 04:50Z) (rev. 2026-10-26 05:34Z: C66 E-1, E-2, N-1, N-2, N-3) — to CHECKER C66 — LANDED in RESULTS Results 2026-10-26 05:50Z (CHECKER C66 603b6220 + Addendum 1 33aa8b3a PASS), after R56
 
-### R57 [refereed-only] N5's output at its stop is correct on EVERY parity game (Lemma OUT-G), each iteration costs polynomially many bit operations on every game (Lemma BIT-G), and N5 solves one-Even-choice games in polynomial time from any start pair: at most (n(n − 1) + d_e)(T*(n, m, Δ, d_e) + 1) = O(m·Δ·d_e·n¹³) ⊆ O(n¹⁷) iterations (Theorem 1E-POLY; Corollary 1E-TIME) (2026-10-26) — the correctness half of gauntlet step 4 for N5 on every game (OUT-G, BIT-G), and a SUBCLASS time result (𝒞^1E, polynomial by other means; TARGET.md §4 first bullet): not a TARGET.md §2 claim, not M4; G-N5-TIME stays open for general games, CHECKER PASS (docs/checker/C66.md, checker PENDING)
+### R57 [refereed-only] N5's output at its stop is correct on EVERY parity game (Lemma OUT-G), each iteration costs polynomially many bit operations on every game (Lemma BIT-G), and N5 solves one-Even-choice games in polynomial time from any start pair: at most (n(n − 1) + d_e)(T*(n, m, Δ, d_e) + 1) = O(m·Δ·d_e·n¹³) ⊆ O(n¹⁷) iterations (Theorem 1E-POLY; Corollary 1E-TIME) (2026-10-26) — output correctness (OUT-G) and per-iteration bit cost (BIT-G) of N5 on every game, under the standing SPEC premise 1E-N3 (not a step-4 pass: no iteration bound on general games), and a SUBCLASS time result (𝒞^1E, polynomial by other means; TARGET.md §4 first bullet): not a TARGET.md §2 claim, not M4; G-N5-TIME stays open for general games, CHECKER PASS (docs/checker/C66.md, checker PENDING)
 - Object (packet P-N5-1E, added at l-si adb721b5, pinned trunk 7fef9699, unchanged during review): docs/si/P-N5-1E-box16.md, sha1
   e613db131d3871c038f53fcb4e009c33f47ca20e (L-SI successor 11, Opus 5.5). The referees' notes are collected by the lane in
   docs/si/P-N5-1E-fixes-box16.md (l-si f5d62bba, sha1 8f3615bcfcb7e8810a2847207ad3986febec83dd, L-SI successor 11: 1E-N1,
@@ -11,8 +11,9 @@
   counterstrategy σ̄; Iσ: SPEC S2's Even improving set. T* is RESULTS R50 (h)'s per-phase bound as used in RESULTS R51 (a). Cost model:
   TARGET.md §3 (word RAM with O(log(n + m))-bit words; longer numbers cost their bit length).
 - Claims signed (both referees "(Opus 5.5, D15)", L37); no item uses (P); every cited premise is LANDED (RESULTS R15 (c), (d), R18 (d)
-  Lemma S (a), R21 (a), R36 (c), R51 (a), (c), (d), R54 (a)-(d)); R18 (d) Lemma S (a), R21 (a)'s parenthetical and R36 (c) have
-  game-general proofs (one-player G_σ̄ / G_σ on every game; RESULTS R51 (d) N-1O-4, R55, R56), confirmed again by both referees here:
+  Lemma S (a), R21 (a), R36 (c), R51 (a), (b), (c), (d), R54 (a)-(d)); R18 (d) Lemma S (a), R21 (a)'s parenthetical and R36 (c)
+  have game-general proofs (one-player G_σ̄ / G_σ on every game; RESULTS R51 (d) N-1O-4, R55, R56), a reading of their proofs
+  confirmed again by both referees here, not a re-signature of those entries:
   (a) Premise (VJ), on every game: for every positional σ and every positional Odd strategy τ′, Ξσ(v) ⊴ V_{σ,τ′}(v) at every v; read from
       VJ00 (BRICS RS-00-48) §4.3 (Ωσ as the minimum over all plays consistent with σ) and §5.2 (Prop. 5.1, Lemma 5.2, (11)), every finite
       game graph (§2), checked by both referees against the PDF (sha256 485a12de…) (1E-N2 = N-1E-2).
@@ -40,7 +41,8 @@
       cost (TARGET.md §3); the class test costs O(n + m).
 - Not signed (packet §6, §7): the READING on G-N5T-3 (RESULTS R15 (iii): output correctness rested on VJ00 Lemma 5.8 '1 ⇒ 2', which uses
   VJ00's unproved Lemma 5.9 and Prop. 5.10): with OUT-G signed, its premises are VJ00 (11) and R36 (c), not Lemma 5.8, 5.9 or Prop. 5.10;
-  both referees concur that the output half of G-N5T-3 is thereby removed on every game (N-1E-5, REFEREE §C). This is recorded as a Lead
+  both referees concur that the output half of G-N5T-3 is thereby removed on every game, under the standing premise 1E-N3 (S1's
+  procedure realises an optimal σ̄; code DATA, G-N5T-1) (N-1E-5, REFEREE §C C.4). This is recorded as a Lead
   reading in GAPS, not as a signed statement. Also not signed: the gauntlet table for 𝒞^1E, the scope reading, the frontier remark, the
   data.
 - Honest limits: (i) The time bound is for a SUBCLASS that is polynomial by other means (Even has ≤ d_e positional strategies, each leaving
@@ -62,4 +64,4 @@
 - TARGET.md diff: OUT-G and BIT-G are statements about N5 on every game (correctness at the stop; cost per iteration); they are not a
   TARGET.md §2 claim, which needs a polynomial bound on iterations for every game. 1E-POLY / 1E-TIME are for a restricted class (TARGET.md
   §4, first bullet). Objects match TARGET.md §1 (winning regions against history-dependent strategies; positional strategies output) and §3
-  (bit cost). GAPS G-N5-TIME: open for general games; 𝒞^1O (R51) and 𝒞^1E (this entry) parts closed.
+  (bit cost). GAPS G-N5-TIME: the row stays open (general games); subclass bounds for 𝒞^1O (R51) and 𝒞^1E (this entry) are proved.

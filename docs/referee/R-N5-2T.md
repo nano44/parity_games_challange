@@ -111,3 +111,40 @@ Path checks for n ≤ PATHN (14 by default). Mutation TWOT_MUT=1: PFZ with j + 1
 - 2T-N2: DIR holds for any number of terminals (its proof uses only "direct"); optional remark.
 - 2T-N3: FB-2T step 3 counts distinct pair values; optional wording.
 - 2T-N4: DATA (thin: DIR checked a few dozen times, SAT-2 and FB-2T never; they rest on their proofs, as the packet says).
+
+## §C. Comparison with REFEREE-2 (REFEREE successor 12; written 2026-10-26T05:06Z by date -u; (Opus 5.5, D15))
+- Routing: the Lead's message of 04:59Z (Lead's stamp). Objects: this report (7055b4a5; §1-§7 above unchanged) and
+  docs/referee-2/R2-N5-2T.md (referee-2 8f43432b + stamp fix 416334cc, successor 14), opened after 7055b4a5 was pushed. Same pinned text
+  (sha1 fcb91130…).
+
+### C.1 Verdicts side by side
+| § | statement | REFEREE (7055b4a5) | REFEREE-2 (8f43432b) | joint |
+| --- | --- | --- | --- | --- |
+| §2 | (YB_q) | SIGNED | SIGN (N-2T-2) | signed |
+| §2 | PFZ-q | SIGNED | SIGN cond. R56 (N-2T-3) | signed (cond. R56) |
+| §3 | ROUTE-2 | SIGNED | SIGN | signed |
+| §4 | DIR | SIGNED (2T-N2) | SIGN cond. R56 | signed (cond. R56) |
+| §4 | SAT-2 | SIGNED | SIGN cond. R56 (N-2T-6) | signed (cond. R56) |
+| §5 | Theorem FB-2T | SIGNED (2T-N3) | SIGN cond. R56 (N-2T-5) | signed (cond. R56) |
+| §5 | Corollary FB-2O | SIGNED (2T-N1) | SIGN cond. R56 (N-2T-4) | signed (cond. R56) |
+| §5 | remarks after □ (R54 (e) product; THETA-AFTER) | R54 (e) remark checked as a valid upper bound | not signed; R54 (e) remark checked; THETA-AFTER not checked | not signed |
+| §6, §7 | READING, DATA | not signed | not signed | not signed |
+No disagreement; no gap in either report.
+
+### C.2 Joint note map
+| REFEREE | REFEREE-2 | relation | joint status |
+| --- | --- | --- | --- |
+| 2T-N1 (FB-2O omits "both cycle nodes", N_late ≤ 1) | N-2T-4 (same) | SAME | fixes file |
+| 2T-N3 (FB-2T step 3 counts distinct pair values) | N-2T-5 (same; also: saturation via f^Θ is conservative) | SAME | wording |
+| §2 ((YB_q) proved here, not in FBRED's signed text) | N-2T-2 (same) | SAME | — |
+| §2 (PFZ-q reads κ of a terminal only at q, on states of Θ) | N-2T-3 (same) | SAME | — |
+| 2T-N2 (DIR's proof never uses \|Q_c\| ≤ 2) | — | ADDITIONAL from us; no conflict (FBK uses DIR in exactly that general form) | optional remark |
+| §1 ("R56 quotes verbatim") | N-2T-1 (the κ-FB-ROUND parenthetical "FBP §1 verbatim with U_c, c" is FBRED §1.1's text, l.52, not R56's landed "(FBP §0.3, §1 with c for c_θ)") | ACCEPTED; MISSED by us. Confirmed: packet l.64-66 heads it "R56 (a), (b) lemmas used", and the phrase occurs in docs/new/P-N5-FBRED-box44.md l.52, not in docs/RESULTS.md. Same lemma; wording only | fixes file: cite "FBRED §1.1" for that quote |
+| 2T-N4 (DATA: DIR 65 checks; SAT-2 and FB-2T never reached) | N-2T-6 (natural data never meet SAT-2 either, best −2; CONSTRUCTED disjoint unions box-43/44 ⊎ small gadgets meet it: 648 SAT checks, every proof branch, 0 violations; mutations show saturation and α are needed; FB-2T's late count never reached) | R2 went further. I RE-RAN R2's four saved witnesses (docs/referee-2/R2-N5-2T/instances/fb17_g{3,4,5,5c}_P66.pg, sha1 4f83da32, 477872f9, aca9f9d4, 5398f9d7 checked) on MY engine and probe (twot_probe.py, PATHN 40, S3): 20 phases, DIR 93 checks, SAT-2 108 checks, PFZ 180,826, 0 failures — the same DIR and SAT counts as R2's row "instances/ (4 saved witnesses)". So SAT-2's hypothesis is now met and checked on two independent engines. | DATA: SAT-2 exercised (constructed instances); FB-2T's late regime unreached in all data |
+- Reproduce my witness re-run (from docs/referee/scratch): `PATHN=40 python3 -I twot_probe.py ../../../docs/referee-2/R2-N5-2T/instances/*.pg`
+  → twot_logs/r2_witnesses_s3.txt.
+
+### C.3 Joint state (for the Lead and CHECKER)
+- Every to-sign item signed by both referees, conditional on R56 (landed). No gap.
+- Fixes file: 2T-N1 = N-2T-4 (case list), N-2T-1 (quote provenance); wording: 2T-N3 = N-2T-5; optional: 2T-N2.
+- DATA: SAT-2 exercised only on constructed unions (both engines agree); FB-2T / FB-2O's late regime never reached; they rest on their proofs.

@@ -165,3 +165,129 @@ hold. On every fallback-free run inside a phase with (NC) ∧ (h3_D) throughout,
 - FRZ-U_D's freeze is VACUOUS in all data: no fallback-free run with the hypotheses lasts n − 1 transitions (0 checks). It rests on CR-D's
   proof. For L-RED: a run of ≥ n transitions under (NC) ∧ (h3_D) is what a check needs, from random start pairs.
 
+## 7. (¬h-cyc) per gate (Lead's item (2), 05:05Z): the coarse freeze needs only (h3_D); kinds are needed only for ¬(h3_D)
+### Lemma TC-CLASS (PROVED, every game)
+Statement. At every state k and for every v ∈ R_D: λ_Ξ(v) = λ_Ξ(u(v)) and λ_W(v) = λ_W(u(v)). Hence, inside a phase, a terminal change
+u_k(v) ≠ u_{k+1}(v) happens only between two vertices of D with the same honest cycle node, namely λ_Ξ(v).
+Proof.
+- Both plays from v follow π_v to u(v) (HP_D), and then continue as u(v)'s play in their frame (plays are positional). So v's play and
+  u(v)'s play end in the same cycle in each frame.
+- λ_Ξ is constant on a phase, so λ_Ξ(u_k(v)) = λ_Ξ(v) = λ_Ξ(u_{k+1}(v)). □
+- Consequence on 𝒞^2O: if q1 and q2 have different honest cycle nodes at a state, each honest class holds at most one of them, and no
+  vertex can move between them. The two-gate obstruction (Δ-RT, terminal changes, TC-W's dead end) lives only inside ONE honest class
+  holding both gates.
+- DATA: 0 cross-class terminal changes (tcdir.py TCCLASS_V, 150,000 random 𝒞^2O and lib41). The gates share their honest class at
+  7,922 / 9,939 random 𝒞^2O two-gate states, 216 / 224 lib41, 180 / 182 lib2o (hcyc.py). So the hard case is the common one.
+### Lemma C2-H3 (PROVED, every game): R55's coarse agreement (c2) needs only (h3_D)
+Statement. Let (h3_D) hold at k and let L satisfy M_D ≤ L < ∞, L ≥ −1. Then COARSE_L(Ξ_k(v)) = COARSE_L(W_k(v)) for every v ∈ V.
+No (h_D) and no (NC) is assumed.
+Proof.
+- v ∈ F_D: Ξ_k(v) = W_k(v) (R55 (a)).
+- v ∈ R_D: let u := u(v) and c := λ_Ξ(u) = λ_W(u), by (h3_D). By TC-CLASS, c is v's cycle node in both frames. For a frame F, let P_F(v)
+  be the vertices of v's F-play before its first visit of c, ranked above c (the path set of its value).
+- Lasso fact: c lies on the cycle of v's F-play, and every vertex of a lasso's cycle is visited before the first repetition. So the
+  prefix of the play up to the first visit of c repeats no vertex.
+- Case c ∈ π_v: both plays follow π_v up to c, so P_Ξ(v) = P_W(v), and the coarse values are equal (COARSE_L ignores lengths).
+- Case c ∉ π_v: v's F-play is π_v, then u's F-play, and c is first visited inside u's F-play. The prefix before c is π_v followed by Q_F,
+  the prefix of u's F-play before c. Q_F ∩ π_v = ∅, by the lasso fact (a vertex of π_v in Q_F would be repeated before c). So
+  P_F(v) = (π_v ∩ V_{>c}) ⊔ P_F(u).
+- lev(Ξ_k(u), W_k(u)) ≤ M_D ≤ L. By (C2), COARSE_L(Ξ_k(u)) = COARSE_L(W_k(u)), so P_Ξ(u) ∩ V_{>L} = P_W(u) ∩ V_{>L}. Hence
+  COARSE_L(Ξ_k(v)) = (c, ((π_v ∩ V_{>c}) ⊔ P_Ξ(u)) ∩ V_{>L}) = COARSE_L(W_k(v)). □
+- This contains G_D-NC (c2′) (P-N5-NC §2) and R55 (c2) as special cases. R55's proof went through the exact factorisation (b), which needs
+  (h_D) (or (NC)). The coarse statement does not need it: the path set above c factors through u(v) whatever the play does after c.
+### Corollary FRZ-U_H3 (PROVED, every game; strengthens P-N5-NC's FRZ-U_D)
+Statement. Let S be a run of consecutive S4a transitions inside one phase, with (h3_D) at every state of S, and let L satisfy
+max_S M_D ≤ L < ∞, L ≥ −1. Then COARSE_L(W) = COARSE_L(Ξ) on V at every state of S, and it is constant from state k_0 + n − 1 on.
+Proof. Lemma CR-D (P-N5-NC §3):
+- (i) is C2-H3;
+- (ii): λ_W = λ_Ξ on V by TC-CLASS and (h3_D) on R_D, and by R55 (a) on F_D. λ_Ξ is constant on the phase. □
+- Scope: every game; any configuration of the disagreement vertices on their cycles. (¬h-cyc) and (¬h-route) are both covered. Only
+  (h3_D) is needed.
+### What this does to the (¬h-cyc) item, and what breaks with two gates each on its own cycle (READING)
+- On 𝒞^1O, R50 uses kinds (H-PATH, KIND-MONO, CASC-B, CW-INT) exactly in case (c): ¬H2, c_w ≠ o and c_w ≻ c_θ. That case has c_w ≠ c_θ,
+  so H3 fails. Under H3, R50 uses only FRZ-U and LEN (Theorem RUN (a), (b)). So in set form:
+  - under (h3_D): the coarse freeze holds for every cycle configuration (FRZ-U_H3). What remains is LEN below M_D, i.e. the fine order
+    of routes inside one honest class with two gates (Δ-RT; TC-W is dead).
+  - under ¬(h3_D) at a gate u (λ_Ξ(u) ≠ λ_W(u)): R50's case (c), per gate. PAR_D gives λ_W(u) even when λ_W(u) ≻ λ_Ξ(u)
+    (N5-FRONTIER §2). The kind of v ∈ R_D with u(v) = u is "λ_W(u) ∈ π_v". That is where the KIND-MONO port is needed.
+- Two gates each on its own W-cycle:
+  - Different W-cycles: the cycles are disjoint, so they have different cycle nodes. Under (h3_D) the gates then have different honest
+    cycle nodes, so they lie in different honest classes. By TC-CLASS they never exchange vertices. Each class is a one-gate (1O-like)
+    class: nothing breaks.
+  - The same W-cycle C with cycle node c_w: going along C from either gate, exactly one of them (the LEAD ℓ) reaches c_w before the
+    other (the TRAIL t). In the W frame, W(t) = (C-arc from t to ℓ) ⊕ W(ℓ). So the W frame is R50's ¬H2 structure C_W = o → A1 → c_w → A2
+    → o with o := ℓ and t ∈ A2.
+    - The honest frame deviates at t as well as at ℓ. Under (h3_D) this costs nothing coarse (C2-H3).
+    - What breaks is fine: inside the one class, vertices route to t or to ℓ, and the honest comparison of π_y ⊕ Ξ(t) with π_z ⊕ Ξ(ℓ)
+      need not match the W comparison below M_D (Δ-RT). This is the LEN failure again, now with t on A2.
+    - Under ¬(h3_D), the kind bit is c_w (as on 𝒞^1O). With t ∈ A2, every vertex routed to t is of kind B (its path to ℓ runs along A2,
+      after c_w). So the kinds are those of R50 with o := ℓ. KIND-MONO's proof also needs FRZ-U's freeze above m* = c_w, and that
+      freeze is proved only coarse above M_D, which is ∞ under ¬(h3_D). So KIND-MONO does not port as it stands. The full (κ, above
+      m*) FRZ-U of R50 would have to be ported with two deviation points on C_W. Not done.
+### DATA (experiments/si/fb2o/gdnc.py with H3ONLY=1, hcyc.py, tcdir.py; logs gdnc_h3_*.txt, hcyc_*.txt)
+| set | states | (h3_D) | (h3_D) ∧ ¬(NC) | C2-H3 checks / viol. | of which at ¬(NC) states |
+| --- | --- | --- | --- | --- | --- |
+| lib2o.txt | 374 | 314 | 3 | 7,972 / 0 | 38 |
+| lib41 frontier | 1,039 | 526 | 23 | 18,323 / 0 | 719 |
+| random 𝒞^2O, 40,000 games (seed 31) | 95,928 | 72,780 | 7,658 | 637,911 / 0 | 64,478 |
+| random 𝒞^kO, 20,000 games (seed 32) | 50,804 | 36,271 | 4,124 | 358,424 / 0 | 38,753 |
+- Mutation control (MUTL=1: one level below M_D) on lib41: 2,504 violations. The level M_D is sharp in data.
+- Cycle configurations at two-gate states (hcyc.py), random 𝒞^2O:
+  - W frame: no gate on its own cycle 4,121; one gate 4,664; both on one cycle 500; both on different cycles 654.
+  - honest frame: no gate 3,296; one gate 5,075; both on one cycle 854; both on different cycles 714.
+- (h3_D) fails at 24 % of the random 𝒞^2O states and at 49 % of the lib41 frontier states. That is the KIND-MONO territory, still open.
+
+## 8. ¬(h3_D) KIND-MONO with two deviation points (Lead's item (3), 05:30Z): what reduces, and what breaks
+### Lemma W-CN (PROVED, every game)
+Statement. Along a run of consecutive S4a transitions inside a phase, the reward of λ_W(v) is non-decreasing for every v. Hence λ_W(v) changes
+at most n − 1 times per vertex per run.
+Proof. WM-G (P-N5-H3 §5): W_{k+1}(v) ⊵ W_k(v). The S1 order compares cycle-node rewards first, so reward(λ_W,k+1(v)) ≥ reward(λ_W,k(v)),
+strictly if the cycle node changes (rewards are injective). There are at most n distinct rewards. □
+### Corollary TC-CN (PROVED, every game)
+Statement. Inside a run S as above, call a terminal change of v at k → k+1 (u_k(v) ≠ u_{k+1}(v)) W-MOVING if λ_W,k+1(v) ≠ λ_W,k(v), and
+TWIN otherwise. Then:
+- (a) the W-moving terminal changes of S number at most n(n − 1) in all, at most n − 1 per vertex;
+- (b) at a twin change, the old and the new gate have the same honest cycle node and, across the transition, the same W-cycle node:
+  λ_Ξ(u_k(v)) = λ_Ξ(u_{k+1}(v)), and λ_W,k(u_k(v)) = λ_W,k+1(u_{k+1}(v)).
+Proof. (a) is W-CN. (b): TC-CLASS (P-N5-H3 §3) gives λ_Ξ(v) = λ_Ξ(u(v)) and λ_W(v) = λ_W(u(v)) at each state, and λ_Ξ is constant on the
+phase. □
+- So TC-SWITCH (terminal changes per run) reduces to TWIN changes. Their gates sit in one honest class and share their W-cycle node.
+- DATA (tcdir.py; TCCN_V = a W-moving change that does not raise the reward of λ_W(v)): 0 violations.
+  - Random 𝒞^2O, 150,000 games: 69 twin and 25 W-moving changes.
+  - lib41 frontier: 32 twin, 15 W-moving.
+  - Random 𝒞^kO, 30,000 games: 16 twin, 0 W-moving.
+  - TC-W's dead-end instance (DEAD box 16) is a twin change.
+### What KIND-MONO needs, and where it breaks (READING)
+- R50's KIND-MONO (𝒞^1O, case (c): ¬H2, c_w ≠ o, c_w ≻ c_θ) needs:
+  - FRZ-U's κ-freeze above m* = c_w;
+  - H-PATH (c_w ∈ P(Ξ(v)) iff v is of kind A, i.e. c_w ∈ π_v);
+  - PAR (c_w even).
+- PAR ports per gate (PAR_D, N5-FRONTIER §2).
+- FRZ-U's freeze above m* rests on Fact B: two R-vertices are ordered the same way in both frames above m*. On 𝒞^1O this holds because
+  every route ends at o with common constant parts C_Ξ, C_W.
+- Two twin gates u, u′ in one honest class, with ¬(h3_D) (c_w ≠ c):
+  - Within one terminal class (routes to the same gate), Fact B holds per terminal, as on 𝒞^1O.
+  - ACROSS the twins: Ξ(y) = π_y ⊕ Ξ(u) versus Ξ(z) = π_z ⊕ Ξ(u′), with the same cycle node c; and W(y) = π_y ⊕ W(u) versus
+    W(z) = π_z ⊕ W(u′), with the same cycle node c_w. The verdicts agree above max(rank m*, L_X, L_W), where
+    L_X := top(P(Ξ(u)) Δ P(Ξ(u′))) and L_W := top(P(W(u)) Δ P(W(u′))).
+  - If max(L_X, L_W) > rank(m*), Fact B fails across the twins above m*. FRZ-U's Case B then cannot turn a κ-gain into a gate edge, and
+    the kind bit c_w lies BELOW the cross-terminal disagreement level, so KIND-MONO's "c_w is the top difference" step fails.
+  - That is the exact obstruction for two deviation points under ¬(h3_D): the Δ-RT levels of the twin pair lie above the kind bit.
+  - When max(L_X, L_W) ≤ rank(m*), the 𝒞^1O argument has its Fact B above m*. The port is then plausible but NOT checked line by line
+    here (FRZ-U's B2 / B3 use C_W's two arcs with one deviation point on them, and with twins there are two).
+- DATA (twin.py), at two-gate states whose gates are twins with ¬(h3_D):
+
+  | set | twin states | ¬(h3_D) twin | above m* | below m* | c_w above c |
+  | --- | --- | --- | --- | --- | --- |
+  | lib41 frontier | 190 | 48 | 40 | 8 | 26 |
+  | random 𝒞^2O, 40,000 (seed 31) | 6,158 | 4,039 | 1,013 | 3,026 | 2,336 |
+
+  - "above m*" is max(L_X, L_W) > rank(m*): there the obstruction is present. It is 83 % on the lib41 frontier and 25 % in random games.
+- km2.py (FRZ-U's set-form freeze test on such runs): VACUOUS. The runs are shorter than |R_D| − 1, so the data neither confirm nor
+  refute the freeze in this configuration.
+- Status:
+  - PROVED: W-CN, TC-CN.
+  - READING: the obstruction above.
+  - OPEN: KIND-MONO with two deviation points. It needs a Δ-RT bound for twin gates, i.e. an ordering of the twins' terminal values that
+    both frames respect above the kind bit.
+

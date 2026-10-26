@@ -1,0 +1,1 @@
+D2=224 W_both_diff=6 W_diff_tops_distinct=6 W_on0=165 W_on1=53 X_both_same=11 X_on0=198 X_on1=15 diffXi_class=8 sameXi_class=216

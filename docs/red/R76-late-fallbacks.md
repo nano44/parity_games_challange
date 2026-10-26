@@ -107,7 +107,8 @@ Labels per L40: DATA / READING. Nothing here proves a bound. Every game class, u
 - f39_n48 (R75 §5, 𝒞^1O, start pair): its 39-fallback phase is a Bellman-Ford wave.
   - Each fallback switches exactly one Even vertex onto the vertex switched at the previous fallback: a path grows from vertex 16 over
     37 vertices.
-  - S4a takes none of these steps: they improve against σ̄ but not against τ (o = c_θ).
+  - S4a takes none of these steps: they improve against σ̄ but not against τ. The phase has c_θ ≠ o, |U| = 48, τ(o) = o, σ̄(o) = 4
+    (corrected 05:50Z; R75 §7).
   - It is one epoch with 39 fallbacks. EPOCH (a)'s freeze needs n − 1 = 47; vertex deletion gets to n 46 (gap −6), and further
     deletions break the wave (shrinkep19).
 - Frontier versions keep one wave per class: fr39_q4_n48 (|Q| 4, f 39, ρ 35).
@@ -154,3 +155,37 @@ Labels per L40: DATA / READING. Nothing here proves a bound. Every game class, u
 - A deliberate two-wave construction is not attempted. It needs two anchors at opposite ends of one honest chain whose values rise
   alternately with λ and τ fixed, plus S4a stuck for every step: a τ hiding σ̄-improvements at each wave.
 - One-phase counter: no instance. Levels per vertex per phase stay ≤ 1.9·n in all data (74 at n 40).
+
+## 8. Addendum (05:35Z, date -u): Lemma ALT, SAT-2 exercised, ρ growth, last climbs
+- Lemma ALT (l-new a77693d1, §10.1) and its corollary N_ep ≤ 1 + Σ_q (ρ_q + tie_q + nc_q + cyc_q): exact checks added to fbr19.
+  - Per in-phase σ̄(q) change: clean (q on no honest cycle at t and t + 1, and y2's honest play at t avoids q) ⇒ κ_{t+1}(q) ≥ κ_t(q),
+    with equality only at a tie.
+  - Library (665 files × 6 starts, seed 12): 8,260 changes: 7,778 clean strict, 336 clean ties, 142 non-clean, 4 cycle-node.
+    0 ALT violations, 0 corollary violations.
+  - Calibration: lap_n6 (2 changes, both strict, N_ep 3) and lev_l_x (49 strict, N_ep 50) match §10.4's description.
+  - Note (DATA): on dense multi-terminal classes the residuals are not small. rho3_253_n32 has 17 non-clean of 51 changes (33 %),
+    against about 3 % in lib41.
+- SAT-2: exercised for the first time, 0 violations in every case below:
+  - library seed 12: 4 hits in h4_def2ctx_n20 from a start pair; pinned as sat4_n20;
+  - a climb on the hit count: 68 hits (sat68_n20);
+  - DIR: 14 library checks and 68 in sat68_n20.
+- ρ restricted to classes with ≥ 3 terminals (best per climb, so climb-limited; DATA):
+  | n | ρ3 | ρ3 / n | \|Q\| in the class | ITER | f in that phase | pin |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | 16 | 84 | 5.3 | 10 | 13 | 3 | rho84_n16 |
+  | 32 | 253 | 7.9 | 12 | 35 | 14 | rho3_253_n32 |
+  | 40 | 293 | 7.3 | 6 | 95 | 7 | nep80_n40 (also N_ep 80) |
+  | 48 | 666 | 13.9 | 16 | 74 | 9 | rho666_n48 |
+  READING: ρ grows roughly like n² here, but it is bounded by ITER·|Q|. Large ρ comes from many terminals changing at the same
+  transition, not from more transitions. Fallbacks do not follow: f ≤ 14 in every one of these phases. No sign of super-polynomial
+  ρ; nothing bounds it either (ρ-POLY stays OPEN).
+- Last climbs: f − n with ≥ 3 terminals stayed at −9 (n 48); N_late stayed 0.
+- Pins added (experiments/red/fbr/instances/; each checked with n5.py --start + check_sol2: zlk OK, strategies verified):
+  | file | sha1 | n5.py --start (ITER, fallback) |
+  | --- | --- | --- |
+  | rho3_253_n32.pg | cb394789f98a00dbae04877521bfeafbc03bbc92 | 35, 15 |
+  | nep80_n40.pg | c65b6137a62e95a7852c191e59e1cae75a1eb8a2 | 95, 8 |
+  | rho84_n16.pg | a9e78139a98bae4f518201816012e1de111e6312 | 13, 4 |
+  | rho666_n48.pg | babb5d1acd46a687bd46149211b9bae104776e37 | 74, 9 |
+  | sat4_n20.pg | 9e31236ca2c877a3caac428ee171a8b2b5aa40e5 | 10, 4 |
+  | sat68_n20.pg | 5385e138401aa157104cfd9d96792940ec4efe1f | 28, 4 |
