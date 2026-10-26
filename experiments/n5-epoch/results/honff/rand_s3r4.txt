@@ -1,0 +1,23 @@
+IMM-FAIL rand121_3523_n15_k4[R1] phase[1,2] h=1 LEV 1->1 h+1 last-in-phase=True h+1 honest=False
+IMM-FAIL rand121_5964_n19_k4[R1] phase[2,3] h=2 LEV 3->3 h+1 last-in-phase=True h+1 honest=False
+IMM-FAIL rand121_6243_n17_k2[R3] phase[1,2] h=1 LEV 4->4 h+1 last-in-phase=True h+1 honest=False
+IMM-FAIL rand121_9341_n20_k4[R2] phase[1,2] h=1 LEV 0->0 h+1 last-in-phase=True h+1 honest=False
+IMM-FAIL rand121_12520_n18_k4[S3] phase[0,1] h=0 LEV 2->2 h+1 last-in-phase=True h+1 honest=False
+IMM-FAIL rand121_12782_n18_k2[R0] phase[0,1] h=0 LEV 0->0 h+1 last-in-phase=True h+1 honest=False
+IMM-FAIL rand121_14210_n15_k5[R2] phase[1,2] h=1 LEV 1->1 h+1 last-in-phase=True h+1 honest=False
+IMM-FAIL rand121_15282_n18_k6[S3] phase[1,2] h=1 LEV 0->0 h+1 last-in-phase=True h+1 honest=False
+IMM-FAIL rand121_16948_n18_k6[R2] phase[2,3] h=2 LEV 0->0 h+1 last-in-phase=True h+1 honest=False
+IMM-FAIL rand121_18179_n20_k3[R2] phase[1,2] h=1 LEV 1->1 h+1 last-in-phase=True h+1 honest=False
+IMM-FAIL rand121_19438_n10_k2[R1] phase[0,1] h=0 LEV 0->0 h+1 last-in-phase=True h+1 honest=False
+IMM-FAIL rand121_19729_n12_k3[R0] phase[0,1] h=0 LEV 0->0 h+1 last-in-phase=True h+1 honest=False
+IMM-FAIL rand121_19879_n15_k5[R3] phase[1,2] h=1 LEV 0->0 h+1 last-in-phase=True h+1 honest=False
+IMM_fail: 13
+fb_at_honest: 2136
+gaps_at_h: 2136
+gaps_free: 9529
+honest_states: 135044
+imm_steps: 10108
+max_honest_per_phase: 4
+phases: 263090
+runs: 100000
+RESULT OK violations=0
