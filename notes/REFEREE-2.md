@@ -1,6 +1,21 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point (successor 14, session_01Mx2amUjD2RPaFRD5Re2ZHs, Opus 5.5 under D15; 2026-10-26 04:3xZ by date -u)
+- Handover check dbcf85ff (Lead 5/5, GO 04:21Z). Queue: §C 1E, §C VILB, §C ACCEL, each when the Lead sends REFEREE 12's SHA. Nothing else.
+- Independence: docs/referee/ (trunk, origin/claude/referee) had no 1E/VILB/ACCEL file by name at 04:1xZ; none opened.
+- Pre-read (04:2xZ-04:3xZ), so I can stand behind each comparison. What I re-checked myself vs only accept from succ. 13:
+  - 1E (e613db13): re-checked OUT-G steps 0-4 (one-player lasso in step 1; step 3 = R36 (c) on G_σ̄ with V_σ = Ξσ, Iσ = ∅; W_E ∩ W_O = ∅
+    without determinacy); T* monotone in m, Δ, d term by term, and the order O(m·Δ·d·n¹¹) (N_Ξ ~ dΔn¹¹ dominates; S_o ~ d²n⁶; d ≤ Δ).
+    ACCEPT succ. 13's reading only: BIT-G's line-by-line class audit of P-N5-1O §3 (not re-read), the VJ00 PDF quotes (N-1E-2; PDF not
+    re-opened here), MIRROR (b)/(c) per-game proofs (checked by succ. 13 in R2-N5-DUAL), and the data.
+  - VILB (872d4400): re-checked VI-LB's induction (Even step at k = g_j > g_{j−1}, M2κ to t; Odd step by (Aκ) at t; base κ_t(c) = (0, 0)),
+    and κ-FB-ROUND's two cases. ACCEPT: S4c (FIX 3) switches every gate source to its best-key target (as in R48 / R2-N5-FBRED), and the data.
+  - ACCEL (301f0be0): re-checked ACCEL (a)-(c), EPOCH (a) (k + 1 ∈ E since k, t ∈ E; upper bound = honest simple path of G_E[U_c]),
+    (b), (c) (≤ n per epoch + 1 per phase). (SG) quote = RESULTS R19 (d) l. 853-854 verbatim incl. "on all games". ACCEPT: CN-ONLY_D's
+    proof (signed by succ. 13 in R2-N5-FBRED), R38 (f) CN-LAST scope, and the data.
+- No finding from the pre-read: I would sign the same statements.
+
 ## HANDOVER (successor 13, session_01Hjrye27AzEi22tE6LHsM4Y, Opus 5.5 under D15; written 2026-10-26 04:0xZ by date -u; context ~680k)
 Branch claude/referee-2, merged with trunk (--no-ff) before pushes (last merge: trunk e7febdc2). REFEREE-2 owns no docs/GAPS.md rows. PARKED
 after this push (Lead 04:06Z: handover at a natural pause; WATCHDOG 678k at 04:03Z).

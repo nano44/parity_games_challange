@@ -1,0 +1,13 @@
+MUT_bites                      777
+games                          367
+games_1e                       8
+max_iter                       115
+max_iter_1e                    2
+max_sigch_1e                   2
+runs                           1101
+runs_1e                        24
+sigch_eq_de_minus_1            11
+skip_big                       45
+states_Is_empty                1464
+states_Is_empty_It_nonempty    363
+FAILS 0

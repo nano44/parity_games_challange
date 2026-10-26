@@ -276,3 +276,45 @@ Measured from the repository at the time of writing (commands named), not recall
   R2 report on that packet is in `git log origin/claude/referee-2 -- docs/referee-2/`. Merge outputs list file names (seen:
   dual_probe.py name only) — names are fine, contents are not.
 - Standing check (bit successors 9-12): `git fetch origin claude/referee-2 && git log HEAD..origin/claude/referee-2` before every push.sh.
+
+## successor 14 (2026-10-26T04:1xZ by date -u; Opus 5.5 under D15/L37; predecessor successor 13 session_01Hjrye27AzEi22tE6LHsM4Y, handover 3e5bc009 + merge e931730c)
+Measured from the repository at the time of writing (commands named), not recalled.
+
+### 1. Branch, head, distance to trunk
+- Branch `claude/referee-2`. Local branch at container start was STALE: HEAD 77f9cf71 (R2-N5-1OA §C2);
+  `git merge-base --is-ancestor e931730c HEAD` -> no. After `git fetch origin` and `git merge --ff-only origin/claude/referee-2`:
+  HEAD = origin/claude/referee-2 = e931730c (is-ancestor -> yes).
+- Trunk claude/vibrant-johnson-nxvvxo at 5e5fe3dc. Before my merge: 4 ahead (a28b0955 merge, f0e82d8a R2-N5-VILB/ACCEL,
+  3e5bc009 handover, e931730c merge), 1 behind. ceed1f63 (R2-N5-1E) is on trunk; f0e82d8a is NOT (is-ancestor -> no).
+- `git merge --no-ff origin/claude/vibrant-johnson-nxvvxo` -> 039be605 (no conflict). `git rev-list --left-right --count
+  HEAD...origin/claude/vibrant-johnson-nxvvxo` -> 5 ahead, 0 behind; merge-base 5e5fe3dc. This file's commit adds one.
+
+### 2. Open work and next step of each
+Nothing in flight. Three §Cs, each blocked on REFEREE successor 12's report landing (Lead sends the SHA):
+- §C 1E: object docs/si/P-N5-1E-box16.md, `sha1sum` -> e613db13 (= report's); my side R2-N5-1E (ceed1f63, on trunk).
+- §C VILB: docs/new/P-N5-VILB-box44.md, sha1 872d4400 (= report's); my side R2-N5-VILB (f0e82d8a, on my branch, reaches trunk with this push's merge).
+- §C ACCEL: docs/new/P-N5-ACCEL-box44.md, sha1 301f0be0 (= report's); my side R2-N5-ACCEL (f0e82d8a).
+- Independence state: `git ls-tree --name-only` of docs/referee/ on trunk and on origin/claude/referee, filtered for 1E|VILB|ACCEL -> empty.
+  None opened. Next step of each, after the SHA: read packet + predecessor's report enough to stand behind it (say where I only accept
+  its reading), then open docs/referee/R-N5-<X>.md, append "## §C" (verdict table, joint gap map, data comparison), push, send SHA.
+- Oink not built in this container (tools/oink/build absent); scripts/setup_oink.sh before any zlk cross-check.
+
+### 3. docs/GAPS.md rows I own
+- None (`awk` over the tables: owners are L-ALG, L-RED, L-NEW, L-STRUCT; no REFEREE-2). The open row these packets sit under:
+  G-N5-TIME | major | L-NEW (L-LIT T22; referees later) | open (docs/GAPS.md:11).
+
+### 4. Three owner rulings that most constrain me (verbatim), with DECISIONS-INDEX status
+1. D1 (index row 5: active), docs/DECISIONS.md:7-8:
+   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+   > Never downgrade the referee to save money.
+2. D15 (index: active; Lead reading L37 active: signatures "(Opus 5.5, D15)"), docs/DECISIONS.md:278:
+   > q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it
+3. D18 (index: active; Lead reading L40 active: labels PROVED / CONJECTURE / OPEN), docs/DECISIONS.md:333:
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+
+### 5. One trap that bit this lane, and the check that prevents it
+- Trap (succ. 12, R2-N5-NEEDB independence slip): a repo-wide grep printed LEAD-STATE / RESULTS lines on REFEREE's verdict before
+  REFEREE-2's own report. Check: before a §C I list docs/referee/ by NAME only (`git ls-tree --name-only`), grep only the packet's own
+  dirs, and open R-N5-<X>.md only after `git log origin/claude/referee-2 -- docs/referee-2/R2-N5-<X>.md` shows my report pushed.
+- It bit again this session in its other form: the container started stale (77f9cf71, without e931730c); caught by fetch +
+  `git merge-base --is-ancestor e931730c HEAD` before any edit.
