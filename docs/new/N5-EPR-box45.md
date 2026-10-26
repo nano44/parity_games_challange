@@ -139,3 +139,21 @@ Reading (DATA): 81% of lib41's epochs have |D| ≤ 1 (7,099 of 8,727), and they 
 - Nothing for epochs with |D| ≥ 2: they are phases of N5^τ on 𝒞^kO (k = |D| ≥ 2, binary Odd choices), the open frontier.
 - EP-1 is CONDITIONAL on (Στ). EP-0 and RESTRICT_E, REPRO, EP-k are not.
 - Phases: Φ-kO (R54) gives ≤ n(n − 1) + ∏ deg(o_i) phases, exponential in the number of Odd choice vertices; not addressed here.
+
+## 7. DIV occurs: premise (Στ) is exercised on some epochs (DATA; added 06:37Z by date -u, after packet P-N5-EPR froze at 08abd9cb)
+- experiments/new/box45/divsearch.py searches random 𝒞^kO games (k 2-3, n 4-16) from random start pairs for in-phase tie states (D = {u},
+  (u, σ̄(u)) ∈ Iτ, so W = Ξ by TIE-W) and for DIV (SPEC's own S4b on G′_E moves τ there). Distinct game seeds 1-4, 11-15 (154,000 games,
+  5 random start pairs each; outputs out/divsearch_*.txt, out/divsearch2_*.txt, the latter re-running seeds 11, 13, 14 with the cycle-node
+  counter and adding seed 15): 190 tie states, DIV 2 (seed 13: k 2, n 6-14; seed 15: k 2, n 8-16).
+- Instance experiments/new/box45/instances/div_n8.pg (n 8, Q = {3, 7}; sha1 4ed57ef2c1c92ee526ccd2683ae7c28b1caf5bfa) with the start pair
+  instances/div_n8.start (sha1 604a98e0…; the tie state itself, allowed since everything is start-free). N5 on G: the first transition is in-phase
+  (S4a, σ(6): 7 → 0), D = {3}, Ξ(3) = (3, ∅, 0) (u is its own cycle node), W = Ξ; Iτ = {(3, 0), (3, 7)}; on G, S4b keeps τ(3) = 5. On G′_E
+  (3 keeps {5, 7}), Ξ′ = Ξ and S1's counterstrategy picks 7 at 3, so SPEC's S4b moves τ(3): 5 → 7 and SPEC N5 on G′_E LEAVES the phase, while
+  N5^τ keeps τ (divshow.py, out/divshow_n8.txt). Engine: experiments/new/box21/n5x.py (SPEC step); Oink not built, nothing here needs a
+  solver (one transition is compared).
+- So the variant N5^τ in REPRO is NEEDED (SPEC N5 on G′_E does not reproduce every epoch), and EP-1 genuinely rests on (Στ) for such epochs.
+  The packet's statements are unaffected (EP-1 is an implication; §5's "DIV = 0" is about its listed samples, which is still true), but
+  its sentence "premise (Στ) is NEVER EXERCISED" holds only for those samples. For the fixes file.
+- Observation (CONJECTURE TIE-CYC, DATA only): at every tie state where it was recorded (148 of 148, seeds 11, 13, 14, 15; both DIV
+  states included), u is its own honest cycle node (λ(u) = u, Ξ(u) =
+  (u, ∅, 0)). Not proved; I see no reason in the definitions (Ξ(x) = Ξ(τ u) with U(x) ◁ U(τ u) is not contradictory when u is off its cycle).

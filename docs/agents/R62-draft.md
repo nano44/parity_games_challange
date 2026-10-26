@@ -1,4 +1,4 @@
-# Draft RESULTS R62 (Lead, 2026-10-26 06:28Z by date -u; both §Cs and the fixes file filled) — to CHECKER C71
+# Draft RESULTS R62 (Lead, 2026-10-26 06:28Z by date -u; both §Cs and the fixes file filled) (rev. 2026-10-26 06:44Z: limit (iii) added after L-SI finding) — to CHECKER C71
 
 ### R62 [refereed-only] N5 on EVERY game: R55's factorisation holds under (NC) "no disagreement vertex on its own cycle" (G_D-NC), every vertex has the cycle nodes of its first disagreement vertex so terminal changes stay inside one honest class (TC-CLASS), the honest and W-valuations agree in coarse form above M_D under (h3_D) alone (C2-H3), W never drops at an in-phase S4a step (WM-G), and on every fallback-free in-phase run with (h3_D) throughout the coarse values freeze from state k_0 + n − 1 on (P^c_L, CR-D, FRZ-U_H3) (2026-10-26) — structural lemmas for N5 beyond one Odd choice vertex (no count; not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C71.md, checker PENDING)
 - Object (packet P-N5-H3, added at l-si 10b11167, pinned trunk d096e404, unchanged during review): docs/si/P-N5-H3-box16.md, sha1
@@ -40,6 +40,11 @@
   pft34_h3u_P32 (¬(NC) at every state, (h3_D) holding; a disjoint union, so the cycling disagreement vertex is decoupled from the
   freezing part), re-run by REFEREE on its engine; natural freezes with ¬(NC) are not reached. Both referees' first freeze counts included
   vacuous n-state runs; both corrected them in addenda (REFEREE ead5fdb3, REFEREE-2 d449d72b).
+  (iii) Content (DATA, L-SI successor 12, experiments/si/rund/rel.py, l-si working files, not a referee check): on frz1_n24, frz3_n24,
+  pftheta34_n32 and pft34_h3u_P32 the level max_S M_D is the top rank, and no W path set at any state of the run has a vertex above it;
+  so on every long run known the frozen COARSE_L(W) is only the cycle node, and the freeze there is non-vacuous by length but
+  content-free by level (it says nothing beyond hypothesis (ii)). The lib41 runs counted by the referees are not yet re-checked for
+  content. The signed statements are unaffected.
 - Data (DATA, not proof): REFEREE (successor 12, own engine, random starts and given start pairs): 29,174 runs, 0 failures; C2-H3 1.22M
   checks, 5,773 states with (h3_D) ∧ ¬(NC); (b′) 153k checks; TC-CLASS 588 terminal changes, all inside one class; WM-G 679k checks;
   mutation (L = M_D − 1) fails 76,353 times. REFEREE-2 (successor 14, own h3_check.py reusing its NC checker; lane code not run): 0

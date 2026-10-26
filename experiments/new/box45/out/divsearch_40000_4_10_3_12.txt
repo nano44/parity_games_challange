@@ -1,0 +1,1 @@
+games 40000, runs 200000, tie1 34, DIV 0
