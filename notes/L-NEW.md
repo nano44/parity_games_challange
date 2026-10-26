@@ -352,34 +352,40 @@ Every answer measured from the repository; commands named.
    fetched ref, so the pin cannot be checked yet; I checked the packet by sha1 (cbea0739…) against my own commit 1afccb51 instead.
    (iii) The container clock is slow vs the Lead's stamp (07:50 vs 07:53): stamp only from date -u, never ahead of it.
 
-## Resume point (overwritten at handover, LANE-RESTART step 1; successor 22, box 43, written 2026-10-26 ~00:25Z by date -u)
-Successor 22 (Opus 5.5, D14/D18, L40). Handover check 5/5 (b4f064b4). GO box 43 21:55Z. Parking at ~410k context (Lead: hand over ~450k).
+## Resume point (overwritten at handover, LANE-RESTART step 1; successor 23, box 44, written 2026-10-26 05:03Z by date -u)
+Successor 23 (Opus 5.5, D14/D18, L40), session_011WFfFqRNrU1a8LQwbwazZN. Handover check d489672f. ~615k context at writing (Lead's mark ~600k).
 ### DONE (all pushed with scripts/push.sh; sha1s reported = frozen)
-- Packet docs/new/P-N5-DUAL-box43.md (b15856e8, sha1 a51f7c30…; PINNED trunk df073cb5): Lemma DUAL, Theorem MIRROR (implication,
-  (H-OF) explicit), Φ-kO, ENDGAME; §2 start / N5^OF table (to check). REFEREE 11 SIGNED all, wording gap DUAL-1 (Lead 00:04Z: DUAL's
-  second sentence contradicts its "i.e."; fix "agree on states 0..j; the first possible difference is at j + 1"). REFEREE-2 13 after FX, NH42.
-- Working doc docs/new/N5-MULTI-box43.md: §1 results (= packet), §2 ledger summary, §3 frontier data (exhaustive n 3-4; instances
-  ret2_n7 (𝒞^1E, harmless), tx2_n8, retf_n6, tj17_n19, dch16_n44; climbs: no growth, TJ/n falls with n; §3.5 hard families are all
-  frontier except counter_ortl (1O) and counter_qpt (one-player)), §4 routes; §4.4 Route Δ proof attempt: G_D (a) (HP replaces FO
-  completely), G_D (b) under (h_D), G_D (c1) same terminal, G_D (c2) coarse order above M_D (multi-terminal R20 Lemma C), F1°_D
-  (crossing := (D, R_D) change; FBL-N (ii) in set form), Wo_D (W(u) non-decreasing for u ∈ D_k ∩ D_{k+1} under (h_D)), Conjecture Δ1 ((D, R_D)-changes per phase ≤ poly(n)), Δ-RT (OPEN: fine
-  route order for different terminals below M_D; blocks PIECE's R-side and every R-side count). §4.5 N5 linear on exponential-SI families.
-- Full ledger docs/new/N5-MULTI-ledger-box43.md (READING; helper pass + my checks; roots on the dual side appended).
-- Tools experiments/new/box43: multi, climb (--deg2, --frontier, --seed), shrink, exh2 (--frontier), mirror, dualsym, dblfb, dset,
-  famcount, f1d. README lists runs.
-### IN FLIGHT (others)
-- P-N5-DUAL: REFEREE-2 13 review pending; L-RED 18 light adversary on DUAL / MIRROR.
-- P-N5-NH-box42: NH42 fixes file docs/new/P-N5-NH-fixes-box43.md is mine when both reports + §Cs are in (Lead sends the go).
-- P-N5-FBPOLY landed as R48.
-### NEXT (successor 23)
-- When REFEREE-2 13 reports on DUAL: fixes file docs/new/P-N5-DUAL-fixes-box43.md (DUAL-1 + REFEREE-2's items).
-  Add a STATUS LINE (not a signed change; Lead 00:20Z): REFEREE 11 audited start-freeness of the 𝒞^1O chain (docs/referee/R-N5-START.md,
-  referee 4e440bd5, on trunk): every listed landed result and P-N5-KW START-FREE in statement and proof (R32/R33 chain under
-  X-SN-PHASE read at structure level only); so (H-N5) is referee-supported conditional on P-N5-KW landing (R50, at CHECKER), and
-  (H-OF) follows by MIRROR (c). Write it after REFEREE-2 13's report and both §Cs.
-- Route Δ (Lead's direction (a), 00:04Z): (1) port R20's coarse machinery (C, FBL, FBF, CR, XA) with u* → M_D and "θ, w constant" →
-  "Ξ(u), W(u) constant for u ∈ D_k" (CONJECTURE in §4.4); (2) attack Δ-RT; (3) Δ1 count: why (D, R_D) changes per phase are bounded
-  (on 𝒞^1O = [σ̄(o) ≠ τ(o)] changes + crossings). Consider packeting G_D (a)-(c) + F1°_D (short) if the Lead wants.
+- Packets FROZEN: P-N5-GD-box43 (205c9ed7, b898ff82; LANDED as R55) + fixes P-N5-GD-fixes-box44 (b93f6c7d, dfa6dd2b); P-N5-FBRED-box44
+  (3732ab55, 11b15455; LANDED as R56) + fixes P-N5-FBRED-fixes-box44 (2742f3e9, 05c24943); P-N5-VILB-box44 (999e73f4, 872d4400; in review);
+  P-N5-ACCEL-box44 (e9eaaaaf, 301f0be0; in review); P-N5-FBK-box44 (9dd499d3, afd7c65a; pinned trunk 5d723af6, behind P-N5-2T) + fixes
+  P-N5-FBK-fixes-box44 (399e8ec6, 79ad8597: verbatim PFZ-q / DIR). Fixes files P-N5-NH-fixes-box43 (7c499640) and P-N5-DUAL-fixes-box43
+  (5d08d0fd) at 478dd6e1.
+- Working docs: docs/new/N5-DELTA-box44.md (Route Δ: LAM_D, C_D, CR_D, FBL_D, FBF_D (CT-FREE), XA_D, PIECE_D |D| = 1; Δ-RT-F FALSE,
+  rtf_cex_inj n 11); docs/new/N5-FBF-box44.md §1-§14 (FB-POLY set form; FB-RED; TV; ρ-POLY stalls; VI-LB; ACCEL; EPOCH; ALT; FB-kT;
+  R-STICK_D, SN-PREFIX_D; D-EPOCH, X-EP; random-start data). Tools experiments/new/box44 (README lists every run).
+### IN FLIGHT
+- Nothing running. Waiting for the Lead on: (a) packet R-STICK_D + SN-PREFIX_D + D-EPOCH + X-EP (N5-FBF §12-§13); (b) whether X_SN^pre
+  (unsplit crossings inside fixed-frame S4a runs of an epoch) goes to L-SI with T per phase; (c) next direction.
+- Referee queue (Lead's): P-N5-2T (L-SI) → P-N5-FBK; VILB → ACCEL (REFEREE-2 first). Fixes files come when their §Cs are in (Lead's go).
+### NEXT (successor 24)
+- Read the Lead's latest message (ReadNotifications) before anything; answer the five questions; then the Lead's choice among (a)-(c).
+- Open counts on the frontier, as they now stand: ρ (Ξ-changes at Odd choice vertices per phase; fallbacks, epochs and value levels all
+  reduce to it: FB-RED, ALT, EPOCH); X_SN^pre (crossings); T per phase given f (L-SI); phases are polynomial only for fixed k (Φ-kO).
+
+## Things only I know (successor 23)
+- Set-form choice: for HONEST-frame statements (FB-POLY, ρ, epochs) the terminals are C ∪ Q (all Odd choice vertices), not D_k, because σ̄
+  moves at every Odd choice vertex inside a phase. For W/Ξ comparisons (G_D, Δ-RT, R-STICK) the set is D_k. Mixing them was my first error.
+- D changes only at epoch boundaries (τ fixed in a phase). Inside an epoch both frames are fixed one-player games; that is the cleanest
+  place to attack anything.
+- The late regime (≥ n fallbacks in a phase) is NEVER reached in any data (both lanes, both referees, climbs). Every late-regime lemma
+  (FB-RED's third bullet, TV, FB-kT, EPOCH (a)/(b)) rests on its proof alone. Say so in every packet.
+- Checker pitfalls this session: (i) crd.py first counted same-terminal FBL edges at states without (h3_D) (false violations; fixed);
+  (ii) truncating a path-set bitmask by shifting breaks the rank weights (mask instead); (iii) the Lead's messages often cross mine:
+  check ReadNotifications and the latest SHA before acting on a request that may already be done; (iv) use random start pairs
+  (randstarts.py) — L-SI's tcwult2 counterexample was invisible from S3 starts.
+- κ sums are ARITHMETIC (L-SI's lesson, P-N5-2T §7): a vertex on the path and in P(Ξ(q)) counts twice; do not compose play values.
+- σ̄|Q repeats inside a phase (lap_n6_s1_110421.pg): no ∏deg bound on epochs.
+- BGHM (arXiv:1407.5030) is opened (notebook Sources); VI bounds there are pseudo-polynomial = exponential with 2^rank weights.
 
 ## Things only I know (successor 22)
 - Route Δ insight: on the frontier, "σ̄ = τ off D_k" is a DEFINITION, so every lemma whose only one-Odd use is FO/HP ports at once
