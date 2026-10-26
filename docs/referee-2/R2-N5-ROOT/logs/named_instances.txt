@@ -1,0 +1,114 @@
+MODE start ../../../experiments/red/rec0/instances/nep90_n40.pg ../../../experiments/si/rund/instances/nep90_n40.start MUT - BUDGET 200000
+BFF_checks: 7827
+DLS_A: 53
+DLS_A_clean: 53
+DLS_case_i: 5
+DLS_case_ii: 49
+DLS_entering: 53
+DLS_gains: 15
+ENGXI_checks: 96
+FA_UNK: 73
+FA_pieces: 100
+FAa_checks: 977
+FAb_checks: 977
+FG_UNK: 137
+FG_intervals: 161
+FGa_checks: 945
+FGb_checks: 945
+GSa_checks: 684
+GSb_checks: 943
+RLP_runs: 161
+RP_checks: 35
+classes: 9
+phases: 5
+runs: 1
+states: 96
+RP_max_rho: (64, 'nep90_n40.pg@4 q 0 f 7 G_c 15 |U| 40')
+RESULT OK violations=0
+MODE start ../../../experiments/n5-epoch/instances/nep76_n40.pg ../../../experiments/n5-epoch/instances/nep76_n40.start MUT - BUDGET 200000
+BFF_checks: 8701
+DLS_A: 45
+DLS_A_clean: 45
+DLS_case_i: 6
+DLS_case_ii: 39
+DLS_entering: 45
+DLS_gains: 9
+ENGXI_checks: 88
+FA_UNK: 76
+FA_pieces: 104
+FAa_checks: 250
+FAb_checks: 250
+FG_UNK: 135
+FG_intervals: 136
+FGa_checks: 28
+FGb_checks: 28
+GSa_checks: 404
+GSb_checks: 661
+RLP_runs: 136
+RP_checks: 50
+classes: 26
+phases: 10
+runs: 1
+states: 88
+RP_max_rho: (51, 'nep76_n40.pg@9 q 0 f 6 G_c 9 |U| 40')
+RESULT OK violations=0
+MODE start ../../../experiments/red/n5inj/instances/frz40.pg ../../../experiments/red/n5inj/instances/frz40.start MUT - BUDGET 200000
+BFF_checks: 2275
+DLS_A: 21
+DLS_A_clean: 21
+DLS_B: 7
+DLS_case_i: 3
+DLS_case_ii: 18
+DLS_case_iii: 3
+DLS_entering: 28
+DLS_gains: 6
+ENGXI_checks: 91
+FA_UNK: 10
+FA_beyond_freeze: 23
+FA_pieces: 124
+FAa_checks: 5335
+FAb_checks: 5335
+FAc_checks: 330
+FG_UNK: 6
+FG_intervals: 58
+FGa_checks: 4051
+FGb_checks: 4051
+GSa_checks: 445
+GSb_checks: 760
+RLP_runs: 58
+RP_checks: 120
+classes: 41
+phases: 20
+runs: 1
+states: 91
+RP_max_rho: (1, 'frz40.pg@44 q 11 f 3 G_c 5 |U| 40')
+RESULT OK violations=0
+MODE start ../../../experiments/new/box48/instances/long121_n40.pg ../../../experiments/new/box48/instances/long121_n40.start MUT - BUDGET 200000
+BFF_checks: 9018
+DLS_A: 50
+DLS_A_clean: 45
+DLS_A_nonclean: 5
+DLS_B: 14
+DLS_case_i: 26
+DLS_case_ii: 19
+DLS_entering: 64
+DLS_gains: 17
+ENGXI_checks: 123
+FA_UNK: 64
+FA_pieces: 124
+FAa_checks: 4002
+FAb_checks: 4002
+FG_UNK: 104
+FG_intervals: 189
+FGa_checks: 4823
+FGb_checks: 4823
+GSa_checks: 886
+GSb_checks: 1690
+RLP_runs: 189
+RP_checks: 8
+classes: 3
+phases: 2
+runs: 1
+states: 123
+RP_max_rho: (28, 'long121_n40.pg@1 q 0 f 8 G_c 17 |U| 40')
+RESULT OK violations=0
