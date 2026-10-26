@@ -33,7 +33,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   W-frame ROUTE-2 makes (¬h-route) one-sided. T needs X_D, TC-SWITCH, the (¬h-route) FRZ-U / KIND-MONO cases, and per-gate SO / WC.
   DATA tcsw.py: terminal changes ≤ 9 per run; (h_D) fails at 37 % (lib2o) and 63 % (lib41 frontier) of states.
   X_D (R-STICK_D): NOT started, per the Lead.
-- NEXT: freeze P-N5-2T on the Lead's word (re-check FBRED's landed R56 text first); P-N5-1E fixes after both reports.
+- 04:19Z Lead: R56 (FBRED) LANDED at trunk eb81356c; P-N5-2T FROZEN (R56 quotes script-checked; sha1 and commit in the Lead message).
+  L-NEW's P-N5-FBK will cite PFZ-q and DIR by this sha1. R-STICK_D goes to L-NEW: do not start it.
+- NEXT: T per phase on 𝒞^2O given f (N5-2O-T-box16 §4: TC-SWITCH on two gates, (¬h-route) FRZ-U); P-N5-1E fixes after both reports.
 
 ## HANDOVER (successor 10, box 15; written 2026-10-26 01:05Z (date -u); session_01PBqfsNWMhTPn7yNJ8C18HP)
 Reason: context past the Lead's ~450k line. The session's remaining-token figure fell by ~575k since the start (it is not exposed directly).

@@ -1,11 +1,13 @@
 # Referee packet P-N5-2T: with at most two Odd choice vertices per honest class, the Q-runs holding a late fallback number O(n²), so a phase has O(n³) in-phase fallbacks; on 𝒞^2O this holds in every phase (Theorem FB-2T, Corollary FB-2O)
 Author: L-SI successor 11 (Opus 5.5; D15, D18, L37, L40), session_01FchPxfEZ9Fo56WrCZTvnXS. Written at the Lead's request of 04:04Z
-(Lead's stamp). DRAFT: not frozen. It is frozen on the Lead's word when RESULTS R56 (P-N5-FBRED) lands. Repairs after the freeze go to
-a NEW fixes file. Stamp: the commit (date -u). Source: docs/si/N5-2O-box16.md (lane note; this packet governs).
+(Lead's stamp). FROZEN at the Lead's freeze word of 04:19Z (Lead's stamp), after RESULTS R56 (P-N5-FBRED) landed at trunk eb81356c
+(CHECKER C65, checker b911ecce). Repairs go to a NEW fixes file. Stamp: the commit (date -u). Source: docs/si/N5-2O-box16.md (lane note; this packet governs).
 - Labels (D18 / L40): PROVED (L-SI 11, unrefereed) / READING / DATA. D1: wrong until checked.
-- CONDITIONAL: every statement rests on P-N5-FBRED (docs/new/P-N5-FBRED-box44.md, sha1 11b15455f70d439c93a48d7e82fcdc14ef73854d,
-  l-new 3732ab55; fixes docs/new/P-N5-FBRED-fixes-box44.md, sha1 05c249433431f7e147272ad689c0a7815b7a5b71, l-new 2742f3e9). Both referees
-  signed it with no gap; it is at CHECKER as C65 (R56).
+- CONDITIONAL on RESULTS R56: every statement rests on R56 (packet P-N5-FBRED, docs/new/P-N5-FBRED-box44.md, sha1
+  11b15455f70d439c93a48d7e82fcdc14ef73854d, l-new 3732ab55; fixes docs/new/P-N5-FBRED-fixes-box44.md, sha1
+  05c249433431f7e147272ad689c0a7815b7a5b71, l-new 2742f3e9), LANDED at trunk eb81356c. R56 is quoted from its landed text below.
+- Citation form (for packets that cite this one, e.g. L-NEW's P-N5-FBK): PFZ-q (§2) and DIR (§4) are to be cited exactly as stated
+  there, by this file's sha1.
 - Scope:
   - Every statement is about one phase of the candidate N5 (SPEC S1-S5 with FIX 1-4, docs/new/N5-ssi-global.md), on ANY game.
   - Theorem FB-2T is for phases in which every honest class holds at most two Odd choice vertices besides its cycle node. Every phase
@@ -52,19 +54,24 @@ a NEW fixes file. Stamp: the commit (date -u). Source: docs/si/N5-2O-box16.md (l
     Q_c.
   - d_q := |succ(q) ∩ U_c|; w_c := |U_c| − 1; Cyc_c := {(0, s_c·ℓ) : 1 ≤ ℓ ≤ |U_c| − 1}.
   - Hypothesis (2T) for a phase: |Q_c| ≤ 2 for every class.
-- FBRED §1.1 facts used, signed on every game ("FBP §0.3 with c for c_θ"):
+- RESULTS R56 (a), facts used, signed on every game: "Facts (Aκ), (A0κ), (M1κ), (M2κ), (INJ), (SP′) per honest class, and
+  κ-FB-ROUND_D (FBP §0.3, §1 with c for c_θ)". As stated in the packet (FBRED §1.1, "FBP §0.3 with c for c_θ"):
   - (Aκ): for z ∈ U_c ∖ {c}, next_t(z) ∈ U_c and κ_t(z) = κwt_c(z) + κ_t(next_t z), with next_t := σ_t at Even vertices and σ̄_t at
     Odd ones;
   - (M2κ): κ_t(z) ≤ κ_{t+1}(z) at every in-phase transition;
   - (INJ): the signed weight is injective on vertex sets;
   - (SP′): "the prefix of z's honest play up to its first visit of T ∩ U_c is simple, since c ∈ T lies on the cycle".
-- FBRED §1.1-§1.2 lemmas used:
+- R56 (a), (b) lemmas used (R56 (b) quoted from the landed text):
   - κ-FB-ROUND: at an in-phase Even fallback k → k+1, for every Even v ∈ U_c ∖ {c} and every successor x ∈ U_c of v,
     κ_{k+1}(v) ≥ κwt_c(v) + κ_k(x) ("FBP §1 verbatim with U_c, c");
   - κ-HAT-FREEZE_D (a): "for t > g_j, z ∈ U_c ∖ (Q ∖ {c}) and every simple path p of G_c from z to c with ≤ j edges, κ_t(z) ≥
     κwt_c(p ∖ {c})".
-- FBRED §3.2, Theorem FB-RED late form (PROVED, every game), quoted: "f ≤ 1 + (n − 1) + (n − 1)·N_late, with N_late := the number of
-  Q-runs of the phase holding a fallback g_j, j ≥ n."
+- R56 (c), κ-PFZ_D, quoted from the landed text: "(per q ∈ Q ∩ U_c, q ≠ c, Θ a Q_c-run): for t ∈ Θ after the j-th fallback of Θ and every
+  simple path p of G_c^q from z to q with ≤ j edges, κ_t(z) ≥ κwt_c(p ∖ {q}) + κ_t(q); stated for z ∈ (U_c ∖ T) ∪ {q}". PFZ-q (§2)
+  re-proves it on q-runs.
+- R56 (f), Theorem FB-RED late form, quoted from the landed text: "f ≤ 1 + (n − 1) + (n − 1)·N_late, with N_late := the Q-runs of the
+  phase holding a fallback g_j, j ≥ n". It is signed as a REDUCTION in ρ. FB-2T bounds N_late, so FB-RED's late form plus FB-2T gives
+  an unconditional bound on f under (2T).
 
 ## 2. (YB_q) and Lemma PFZ-q (PROVED, every game)
 ### (YB_q)
@@ -144,9 +151,9 @@ Proof.
         ≤ |U_c| − 1 edges; t ∈ Θ, t > f^Θ_{|U_c|−1}).
     - κ_t(y) is at most the defined bound of its own route and at least every defined bound. So κ_t(y) = β_y(κ_Θ(q)). □
 
-## 5. Theorem FB-2T and Corollary FB-2O (PROVED, every game; CONDITIONAL on P-N5-FBRED)
+## 5. Theorem FB-2T and Corollary FB-2O (PROVED, every game; CONDITIONAL on RESULTS R56)
 ### Theorem FB-2T
-Statement. In a phase with (2T), let N_late be FBRED §3.2's count. Then
+Statement. In a phase with (2T), let N_late be R56 (f)'s count. Then
     N_late ≤ 1 + Σ_c (N_c − 1), the sum over classes with Q_c ≠ ∅, where
 - for Q_c = {q}: N_c := |A_q| ≤ d_q + w_c;
 - for Q_c = {q, q′}: N_c := |A_q|·(w_c + max_α |V_{q′}(α)|) + |A_{q′}|·(w_c + max_α |V_q(α)|) ≤ 2(d + w_c)(d + 2w_c), with
@@ -172,11 +179,11 @@ Proof.
 ### Corollary FB-2O
 Statement. On 𝒞^2O (exactly two Odd choice vertices q1, q2), every phase of every N5 run, from every start pair, satisfies
     f ≤ 1 + (n − 1)(1 + N_late) ≤ 1 + (n − 1)(1 + 12n²) = O(n³).
-Proof. Every phase satisfies (2T), since |Q| = 2. FB-RED's late form gives f ≤ 1 + (n − 1)(1 + N_late). Cases for N_late:
+Proof. Every phase satisfies (2T), since |Q| = 2. FB-RED's late form (R56 (f)) gives f ≤ 1 + (n − 1)(1 + N_late). Cases for N_late:
 - q1, q2 are the two terminals of one class: N_late ≤ N_c ≤ 2(n + n − 1)(n + 2n − 2) = 12n² − 14n + 4 < 12n² (d ≤ n, w_c ≤ n − 1);
 - they are terminals of two classes: N_late ≤ 1 + (|A_{q1}| − 1) + (|A_{q2}| − 1) ≤ 4n;
 - one of them is the cycle node of its class: its κ is constant, and N_late ≤ |A_q| ≤ 2n − 1 for the other.
-Start-freeness: FBRED's statements are per phase of any run. (YB_q), ROUTE-2 and DIR are statewise. PFZ-q and SAT-2 are inductions
+Start-freeness: R56's statements are per phase of any run. (YB_q), ROUTE-2 and DIR are statewise. PFZ-q and SAT-2 are inductions
 inside a q-run, with base its first state. Nothing uses the start pair or the history before the phase. □
 - With RESULTS R54 (e) (Φ-kO: at most n(n − 1) + d_{q1}·d_{q2} phases), a run on 𝒞^2O has O(n² · d_{q1} d_{q2} · n³) in-phase fallbacks.
   This is a count of fallbacks, not of iterations.
