@@ -122,3 +122,31 @@ ROOT, ROUTE-RELAY, SELF-FREE, STATIC, FLIP (a), (b), (c), the necessary conditio
 include exits; the literal form is false, n4_thch_0) and G-FLIP-2 (proof step false, best_tog_83; repaired above, P1 only). N3-LEVEL: SIGN
 WITH GAP G-FLIP-3 (parenthesis unproved; lemma correct under its hypotheses). Premise split complete (STATIC over-complete). Quotes verbatim.
 REFEREE-2 successor 16 (Opus 5.5, D15).
+
+## §C. Comparison with REFEREE (R-N5-FLIP, claude/referee 8317a435; successor 14), written 2026-10-26 12:19Z (date -u)
+Opened only after my report was pushed (e9044674, 12:12Z) and on the Lead's word (12:17Z). Read in full.
+| item | REFEREE | REFEREE-2 | relation |
+| --- | --- | --- | --- |
+| ROOT, ROUTE-RELAY, SELF-FREE, STATIC, FLIP (a)-(c), NEC | SIGNED | SIGN | same |
+| quotes (10) | verbatim, own script; each line range in the named entry | verbatim, own script | same |
+| ROOT-C statement | ROOTC-2: literal form FALSE (NOT SIGNED as written), witnesses rootc_lit_n5 and n4_thch_0; signed in the form "path AND exit" | G-FLIP-1: literal form false, witness n4_thch_0; repair "path and exit" | SAME finding (both found n4_thch_0 independently). I adopt REFEREE's wording of the verdict: as written NOT SIGNED; corrected form SIGNED WITH GAPS |
+| ROOT-C proof (≤) | ROOTC-1: positional-realisation sentence false; witness leanT_N6 state 3; repair LOCAL κ_s(e) ⪯ κwt(e) + κ_s(y) for every y ∈ succ(e) ∩ U_c, three cases, then induction; 462k checks | G-FLIP-2: same false sentence; witness best_tog_83 state 1; repair B(e, y) with the exit e′ ≠ e, same three-case split, then induction | SAME gap. The repairs are EQUIVALENT: by additivity κwt(e) + κwt(p_y) + κ_s(e′) = κwt(e) + κ_s(y) when y's exit e′ ≠ e, so B(e, y) is LOCAL restricted to those y; LOCAL also covers y whose play meets e (its case (2)), which the induction never needs (walk exits are distinct). Same cases: (1) y's play avoids e; (2) it meets e before c (a cycle missing c, wt ≻ 0 by FLIP (c)'s split); (3) e on c's cycle, top above c even. Both P1 only. I accept LOCAL as the cleaner statement for the fixes file |
+| N3-LEVEL | SIGNED, no gap | SIGN WITH GAP G-FLIP-3 (the parenthesis "both hold when p1 is intact at t2, by (c)") | DIFFERENCE in classification only; see below |
+| STATIC premises | P1, P2 complete | P2 only used (N-FLIP-1) | same substance; N-FLIP-1 is a note (over-complete list) |
+| ROUTE-RELAY premise line should name R56 (d) | FLIP-N1 | my verdict table names R56 (d) | same; ACCEPT FLIP-N1 |
+| walk-simplicity sentence loose | FLIP-N2 | read as correct (deterministic continuation to a repeated exit) | ACCEPT FLIP-N2 (note) |
+| ROOT does not need "in-phase" | FLIP-N3 | "fallbacks included" only | ACCEPT FLIP-N3 |
+| N3-LEVEL decomposition "restricted above c" | FLIP-N4 | read so | ACCEPT FLIP-N4 |
+| data | 0 failures (corrected ROOT-C); MINW 105k, LOCAL 462k; MUT=1/2 bite, leanT_N6's three equalities reproduced | 0 failures; RC_MIN 10,993; RC_LIT 129; mutations bite; leanT_N6 had no multi-state phase from my starts | same; REFEREE reproduces the packet's leanT_N6 sharpness pin, which I could not |
+G-FLIP-3, settled. REFEREE's own §6 (c) analysis states the split exactly: rew(h) > rew(c) gives "rank(h) > rank(c) forces h even" OR
+"rank(h) < rank(c) forces c odd". So (c) yields a disjunction, and the packet's parenthesis "(both hold when p1 is intact at t2, by (c))"
+does not follow from (c). Neither referee has a witness for the second alternative (my data: 0 of 908 intact disjoint flips), so the
+parenthesis is UNPROVED, not shown false. The lemma's hypotheses state the first alternative explicitly, so N3-LEVEL's conclusion is
+correct, and REFEREE's SIGNED is right about the lemma. I keep G-FLIP-3 as a minor WORDING gap of the parenthesis only (an unproved
+assertion inside a signed statement), not of the lemma; it is closed by deleting the parenthesis or replacing it by the disjunction. If
+the Lead prefers, it can be logged as a note: nothing downstream uses it.
+- Joint gap map: ROOTC-2 = G-FLIP-1 (ROOT-C statement; both; literal form false); ROOTC-1 = G-FLIP-2 (ROOT-C proof step; both; closed by
+  the equivalent repairs LOCAL / B(e, y), P1 only); G-FLIP-3 (N3-LEVEL parenthesis; REFEREE-2 only; wording, lemma unaffected). Notes (union):
+  FLIP-N1..N4, N-FLIP-1..4. No disagreement on any signed lemma.
+- My verdicts are unchanged, except that I adopt REFEREE's wording for ROOT-C: as written NOT SIGNED (false), corrected form ("path and
+  exit") SIGNED WITH GAP ROOTC-1 = G-FLIP-2 closed. REFEREE-2 successor 16 (Opus 5.5, D15).
