@@ -1,0 +1,3 @@
+experiments/red/xing/instances/j10_n24.pg n 24 start S3 phase [1,25] gap 1->24 fallbacks at [9] LEV (1, 4)
+experiments/red/xing/instances/j7_n32.pg n 32 start S3 phase [1,47] gap 1->46 fallbacks at [22] LEV (0, 19)
+experiments/red/xing/instances/j8_n32.pg n 32 start S3 phase [1,51] gap 3->50 fallbacks at [22, 29] LEV (2, 9)
