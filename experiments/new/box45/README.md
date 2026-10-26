@@ -27,3 +27,6 @@ DATA, not proof. Uses experiments/new/box43 (multi.rand_ckO) and box21 (n5x: SPE
   one-player optima O_E (Even's optimum of G_{sigma-bar_E}), phases whose epochs all have |D| <= 1. Runs 07:20Z-07:26Z (date -u):
   out/nep_lib41_k2.txt (`nep.py 2 7 --list ../box41/lib41.txt`), out/nep_rand3000.txt (`nep.py 4 8 --rand 3000 5 18 111`), out/nep_named.txt
   (`nep.py 0 1 ../box25/laps/lap_n6_s1_110421.pg ../../red/so/instances/so_th_n32.pg`). docs/new/N5-NEP-box45.md §1.
+- recclimb.py K NMAX STEPS SEED OUTDIR [--seed FILE] [--d0]: climbs on (max recurrences of one configuration, max N_ep) via nep.py. Runs
+  07:34Z-07:38Z (date -u): out/recclimb_k2_n12_s31.txt, out/recclimb_k3_n16_s32.txt, out/recclimb0_k2_n12_s33.txt (--d0),
+  out/recclimb_seed_so.txt (seed so_th_n32); best games in out/climb/. Table in docs/new/N5-NEP-box45.md §4.
