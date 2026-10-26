@@ -1,4 +1,4 @@
-# Draft RESULTS R52 (Lead, 2026-10-26 02:30Z by date -u; fixes filled 02:30Z) (rev. 2026-10-26 02:59Z: C61 N-2) — to CHECKER C61 — LANDED in RESULTS Results 2026-10-26 02:56Z (CHECKER C61 22e8a23b PASS), after R51
+# Draft RESULTS R52 (Lead, 2026-10-26 02:30Z by date -u; fixes filled 02:30Z) (rev. 2026-10-26 ~02:55Z: C61 N-2; stamp corrected 03:02Z, the first stamp was not from date -u) — to CHECKER C61 — LANDED in RESULTS Results 2026-10-26 02:56Z (CHECKER C61 22e8a23b PASS), after R51
 
 ### R52 [refereed-only] N5 on one-Odd-choice games: crossings per phase are at most n·(f + X_SN) + n − 1 in every phase type (Corollary FX (a)), hence O(d_o·n⁶) with R48's fallback bound (FX (b)) (2026-10-26) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open for general games), CHECKER PASS (docs/checker/C61.md, checker PENDING)
 - Object (packet P-N5-FX, added at l-si fe58fbab, pinned trunk 02ad3f88, unchanged during review): docs/si/P-N5-FX-box14.md, sha1

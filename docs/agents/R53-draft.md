@@ -1,4 +1,4 @@
-# Draft RESULTS R53 (Lead, 2026-10-26 02:50Z by date -u; both §Cs and the fixes file filled) — to CHECKER C62
+# Draft RESULTS R53 (Lead, 2026-10-26 ~02:42Z, before commit 8371145b at 02:43:14Z; stamp corrected 03:02Z, the first stamp was not from date -u; both §Cs and the fixes file filled) — to CHECKER C62
 
 ### R53 [refereed-only] N5 on one-Odd-choice games: inside one phase, the OTHER-touching transitions and all transitions are bounded by explicit polynomials in four per-phase counts X, f^O, K_W and E (Theorem NH: O ≤ 11n⁷(1 + X + f^O) + 8n³(K_W + E), T ≤ 156n¹¹(1 + X + f^O) + 104n⁷(K_W + E)), with Lemmas SW, ST, CL, STR-COUNT and NR (2026-10-26) — a REDUCTION signed as an implication (partial step-4 lemmas for N5; not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open for general games), CHECKER PASS (docs/checker/C62.md, checker PENDING)
 - Object (packet P-N5-NH-box42, added at l-new 44088266, pinned trunk 54ac72e6, unchanged during review): docs/new/P-N5-NH-box42.md, sha1
