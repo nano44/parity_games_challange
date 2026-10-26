@@ -1,0 +1,12 @@
+START fit (0, 0, 0, 0, 0) n 16
+BEST step 1640 fit (0, 0, 0, 2, 0) t 5s
+BEST step 2558 fit (0, 0, 0, 3, 0) t 11s
+BEST step 3578 fit (0, 0, 0, 4, 0) t 19s
+BEST step 3629 fit (0, 0, 0, 5, 0) t 20s
+BEST step 4204 fit (0, 0, 0, 6, 0) t 25s
+BEST step 4334 fit (0, 0, 0, 7, 0) t 26s
+BEST step 6560 fit (0, 0, 0, 8, 0) t 49s
+BEST step 6865 fit (0, 0, 0, 9, 0) t 51s
+BEST step 7304 fit (0, 0, 0, 10, 0) t 56s
+BEST step 9129 fit (0, 0, 0, 11, 0) t 76s
+BEST step 13384 fit (0, 0, 0, 12, 0) t 127s
