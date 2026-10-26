@@ -1,0 +1,1 @@
+FBGAP_AT_H 546, gaps 2984, runs 15000

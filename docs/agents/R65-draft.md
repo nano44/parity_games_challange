@@ -1,9 +1,10 @@
-# Draft RESULTS R65 (Lead, 2026-10-26 09:02Z by date -u; both reports and both §Cs filled; fixes file PENDING) — to CHECKER C74
+# Draft RESULTS R65 (Lead, 2026-10-26 09:02Z by date -u; both reports and both §Cs filled; fixes file filled 09:20Z by date -u) — to CHECKER C74
 
 ### R65 [refereed-only] N5 and its keep-τ-on-ties variant N5^τ compute the same state functions and make the same τ-keeping transitions from τ-stable states, so a per-phase proof for N5 transfers to N5^τ unless it uses more than the Σ-transition, τ fixed, τ-stability, the shared state functions, the phase-end facts and R15 (c), (d) (Lemma Στ-STEP, transfer clause); both referees audited the per-phase chain behind RESULTS R48 (i) and R50 (h) and found it complete and free of any use of S4b's output, so premise (Στ) of RESULTS R64 (e) is confirmed by referee audit and EP-1 holds without it: an epoch with one disagreement vertex has len(E) ≤ T*(G′_E) + 1 = O(m·Δ·n¹¹) (2026-10-26) — a transfer lemma plus an audit for N5 (not M3, not a step-4 pass, not a TARGET.md claim; the number of epochs and epochs with |D_E| ≥ 2 are not bounded; G-N5-TIME stays open), CHECKER PASS (docs/checker/C74.md, checker PENDING)
 - Object (packet P-N5-STAU, added at l-new 010bfdae, pinned trunk ca0a4e97, unchanged during review): docs/new/P-N5-STAU-box45.md, sha1
   7446d9a9e198ffa5073e0d43823d753b6aa46b3b (L-NEW successor 24, Opus 5.5). The referees' notes are collected by the lane in
-  docs/new/P-N5-STAU-fixes-box45.md (FIXES PENDING: l-new SHA and sha1 to be filled, L-NEW successor 25); repairs only, no signed statement
+  docs/new/P-N5-STAU-fixes-box45.md (l-new ee95661f, sha1 42d7b04c7e00bee1a95241b52edf2e7a67004f33, L-NEW successor 25: STAU-1 with
+  REFEREE's two repair lines verbatim, N-STAU-2..4, STAU-N1..N3, audit-list completions, box24); on trunk; repairs only, no signed statement
   changes.
   Setting (every game): as in RESULTS R64 (N5 = SPEC S1-S5 with FIX 1-4, Q1-Q4; N5^τ := N5 with S4b replaced by S4b^τ: if Iτ ≠ ∅ and τ is
   value-optimal against σ in S4b's arena H′, keep τ, otherwise SPEC's S4b). σ_a := S4a's output; Σ(σ, τ) := σ_a if σ_a ≠ σ, else S4c's Even
