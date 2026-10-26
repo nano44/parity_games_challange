@@ -1,0 +1,57 @@
+BP_chk                     89841
+C2H3_FAIL                  76353
+C2H3_chk                   263140
+FRZ_nonvacuous             4
+FRZ_runs                   3755
+TCC_chk                    162194
+TC_changes                 265
+WMG_chk                    407406
+games                      367
+given_starts               29
+max_run_transitions        55
+phases                     5504
+skip_big                   45
+states                     17800
+states_h3                  13382
+states_h3_notNC            201
+FAILS 76353
+EX ( ('C2H3', 'experiments/n5-exhaustive/canonA_1.pg', 0, 2, 13)
+EX ( ('C2H3', 'experiments/n5-exhaustive/canonA_1.pg', 0, 3, 13)
+EX ( ('C2H3', 'experiments/n5-exhaustive/canonA_1.pg', 0, 4, 13)
+EX ( ('C2H3', 'experiments/n5-exhaustive/canonA_1.pg', 0, 5, 13)
+EX ( ('C2H3', 'experiments/n5-exhaustive/canonA_1.pg', 0, 8, 13)
+EX ( ('C2H3', 'experiments/n5-exhaustive/canonA_1.pg', 0, 10, 13)
+EX ( ('C2H3', 'experiments/n5-exhaustive/canonA_1.pg', 0, 12, 13)
+EX ( ('C2H3', 'experiments/n5-exhaustive/canonA_1.pg', 0, 13, 13)
+EX ( ('C2H3', 'experiments/n5-exhaustive/canonA_1.pg', 3, 12, 13)
+EX ( ('C2H3', 'experiments/n5-exhaustive/canonA_1.pg', 3, 13, 13)
+EX ( ('C2H3', 'experiments/n5-exhaustive/canonA_1.pg@r1', 2, 2, 11)
+EX ( ('C2H3', 'experiments/n5-exhaustive/canonA_1.pg@r1', 2, 3, 11)
+EX ( ('C2H3', 'experiments/n5-exhaustive/canonA_1.pg@r1', 2, 4, 11)
+EX ( ('C2H3', 'experiments/n5-exhaustive/canonA_1.pg@r1', 2, 5, 11)
+EX ( ('C2H3', 'experiments/n5-exhaustive/canonA_1.pg@r1', 2, 8, 11)
+EX ( ('C2H3', 'experiments/n5-exhaustive/canonA_1.pg@r1', 2, 12, 11)
+EX ( ('C2H3', 'experiments/n5-exhaustive/canonA_1.pg@r1', 2, 13, 11)
+EX ( ('C2H3', 'experiments/n5-exhaustive/canonA_1.pg@r2', 0, 12, 9)
+EX ( ('C2H3', 'experiments/n5-exhaustive/canonA_1.pg@r2', 0, 13, 9)
+EX ( ('C2H3', 'experiments/n5-exhaustive/canonA_1.pg@r2', 1, 4, 13)
+EX ( ('C2H3', 'experiments/n5-exhaustive/canonA_1.pg@r2', 1, 12, 13)
+EX ( ('C2H3', 'experiments/n5-exhaustive/canonA_1.pg@r2', 1, 13, 13)
+EX ( ('C2H3', 'experiments/n5-exhaustive/instances/b4_cyc6_1.pg', 0, 1, 10)
+EX ( ('C2H3', 'experiments/n5-exhaustive/instances/b4_cyc6_1.pg@r1', 1, 1, 8)
+EX ( ('C2H3', 'experiments/n5-exhaustive/instances/b4_cyc6_1.pg@r2', 1, 0, 8)
+EX ( ('C2H3', 'experiments/n5-exhaustive/instances/b4_cyc6_1.pg@r2', 1, 1, 8)
+EX ( ('C2H3', 'experiments/n5-exhaustive/instances/b6_xl2_n32.pg', 4, 0, 30)
+EX ( ('C2H3', 'experiments/n5-exhaustive/instances/b6_xl2_n32.pg', 4, 5, 30)
+EX ( ('C2H3', 'experiments/n5-exhaustive/instances/b6_xl2_n32.pg', 4, 6, 30)
+EX ( ('C2H3', 'experiments/n5-exhaustive/instances/b6_xl2_n32.pg', 4, 8, 30)
+EX ( ('C2H3', 'experiments/n5-exhaustive/instances/b6_xl2_n32.pg', 4, 16, 30)
+EX ( ('C2H3', 'experiments/n5-exhaustive/instances/b6_xl2_n32.pg', 4, 22, 30)
+EX ( ('C2H3', 'experiments/n5-exhaustive/instances/b6_xl2_n32.pg', 4, 23, 30)
+EX ( ('C2H3', 'experiments/n5-exhaustive/instances/b6_xl2_n32.pg', 4, 26, 30)
+EX ( ('C2H3', 'experiments/n5-exhaustive/instances/b6_xl2_n32.pg', 5, 0, 30)
+EX ( ('C2H3', 'experiments/n5-exhaustive/instances/b6_xl2_n32.pg', 5, 5, 30)
+EX ( ('C2H3', 'experiments/n5-exhaustive/instances/b6_xl2_n32.pg', 5, 6, 30)
+EX ( ('C2H3', 'experiments/n5-exhaustive/instances/b6_xl2_n32.pg', 5, 8, 30)
+EX ( ('C2H3', 'experiments/n5-exhaustive/instances/b6_xl2_n32.pg', 5, 16, 30)
+EX ( ('C2H3', 'experiments/n5-exhaustive/instances/b6_xl2_n32.pg', 5, 22, 30)

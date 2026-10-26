@@ -1,0 +1,13 @@
+BP_chk                     10710
+C2H3_chk                   245436
+FRZ_runs                   26172
+TCC_chk                    76490
+TC_changes                 37
+WMG_chk                    18110
+games                      5000
+max_run_transitions        4
+phases                     37294
+states                     39805
+states_h3                  28025
+states_h3_notNC            2971
+FAILS 0
