@@ -162,8 +162,11 @@ Both are excluded for same-terminal pairs by G_D (c1); RTREV1 = 0 in all data (�
   rtf_cex_inj): 12 states with a reverse
   disagreement, 6 with a forward one, 10 cross-terminal fallback switches, over the whole run (not per stretch).
 - (Δ-RT-W) the weighting idea of the previous version (a potential monotone at fallbacks "if Δ-RT-F holds") is void with Δ-RT-F false.
-  What remains: S4a steps never lower W (R20's Lemma W, (F1)); the W-losses come only from cross-terminal fallback switches. A count
-  of those (per D-stretch) would give a W-potential argument; no bound is known.
+  What remains (PROVED pieces, READING as a route): S4a steps never lower W (R20's Lemma W, (F1)), so W drops only at fallback
+  transitions; there, F_D-sourced switches are W-flat (FBL_D (a)) and every R_D-sourced switch (a leave or a cross-terminal edge) is
+  W-non-improving (FBL_D (b)), so both kinds can lower W. A W-potential argument therefore needs a frontier bound on fallbacks per
+  phase (R48 FB-POLY is 𝒞^1O-only; ledger verdict FI) times a bound on the loss per fallback; cross-terminal switches are not the
+  only W-losses. (Correction 01:36Z of my 01:35Z message to the Lead, which said they were.)
 
 ## 9. Data (DATA, not proof): experiments/new/box44/crd.py, rtdump.py, fbldump.py, rtclimb.py, shrinksw.py
 crd.py checks LAM_D, CR_D (per maximal (h_D) ∧ (h3_D) run of a phase, L := max(−1, max M_D); latest coarse change index ≤ n − 2),
