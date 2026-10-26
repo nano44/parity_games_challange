@@ -16,6 +16,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - (3) P-N5-HON-fixes-box46 FROZEN (0238b1cb, sha1 54985acf…; 46 quotes checked by box47/quotecheck.py). Packet P-N5-HONFF-box47 FROZEN
   (2fca63b8, sha1 98101d1f…; Q-A for the referees: Case A with Ω := Ξ). Sent to the Lead 12:01Z. Status at 12:02Z: waiting for the next item.
 
+- (4) f per phase (Lead 12:08Z): docs/new/N5-FB-box47.md (fc8b88c4). τ-frame split f ≤ (n−1) + #OB + #SAT (PROVED); ρ/epoch charge of OB DEAD
+  (s4c8_n13; Ξ rises between G_τ path values). Lemma FB-RISE_C (honest frame H_C, Odd term never binds) and Theorem FB-C: f ≤ |𝒞_f|(4n² − 3n)
+  (PROVED). Corollaries: Δ^k(4n²−3n) on 𝒞^kO; (1+m)(4n²−3n) when all |D| ≤ 1. Saturated term ≤ 1 in data, 4n(n−1)+1 proved. Sent 12:23Z.
 ## Box 46 log (successor 25, session_01VsRSLkbPLhXCWoMbJMCW2r; handover check 04cedc7c (5/5, Lead 08:32Z); GO 08:32Z, Lead's stamp)
 - Container stale at 5961101a again; ff to 230334e4; trunk 565b8a8d merged (64a811ba). Oink built (scripts/setup_oink.sh rc 0, 8fbf0a7).
 - (c) REC for |D_E| = 1: docs/new/N5-REC1-box46.md. Tools experiments/new/box46 (levels, norise, dint, hon, hon2, fbin).
