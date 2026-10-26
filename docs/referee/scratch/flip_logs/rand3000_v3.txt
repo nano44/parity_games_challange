@@ -1,0 +1,37 @@
+ADD_chk 107981
+FB_chk 3
+FC_chk 3
+FLIPS 3
+LOCAL_chk 144627
+MINW_chk 57333
+MINW_walks 150201
+N1 0
+N2 0
+N3 3
+N3L_chk 3
+N3L_eq 2
+NC_chk 3
+PHASES 22979
+REAL_ex 3
+REAL_nonc 4093
+RELAY 43
+RHO_TRANS 187
+RHO_oncycle 17
+ROOT2_chk 187
+ROOTC_LIT_chk 73
+ROOTC_LIT_viol 23
+ROOTC_chk 808
+ROOT_chk 288
+ROUTE 206
+RR_chk 43
+RUNS 9000
+SF_chk 73
+STAT_chk 740
+TRANS 1284
+EX ('REAL_nonc', 'rand2/0', 0, 0, 2, 1)
+EX ('REAL_nonc', 'rand2/0', 0, 0, 7, 1)
+EX ('REAL_nonc', 'rand2/0', 1, 0, 2, 1)
+EX ('ROOTC_LIT', 'rand62/2', 0, 0, [((1, 4), ([4], 0), ([4], 3)), ((2, 4), ([4], 0), ([4], 3))])
+EX ('ROOTC_LIT', 'rand94/2', 1, 4, [((1, 3), ([3, 6], 4), ([3, 6], 5)), ((2, 3), ([3, 6], 4), ([3, 6], 5))])
+EX ('ROOTC_LIT', 'rand106/2', 0, 8, [((2, 1), ([1, 5, 0], 8), ([1, 5, 0], 3)), ((3, 1), ([1, 5, 0], 8), ([1, 5, 0], 3))])
+exit 0

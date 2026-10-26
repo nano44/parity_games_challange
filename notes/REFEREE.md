@@ -41,7 +41,11 @@ Next (Lead 10:17Z): successor 14 takes P-N5-HON as the SECOND referee (Lead send
   implications from (Στ); HON-0 ⇒ REC-0 TRUE (difference f·n + 2); independence TRUE (neither proof uses the other; premises overlap, HON-N1);
   Q-R17 YES (three uses). No gap; notes HON-N1..N4. Tools scratch/hon_probe.py (MUT=1/3 controls bite; IMM′ reproduced), scratch/hon_climb.py.
 - TRAP (new): `L=dir && ( ... ) &` backgrounds the assignment too; later lines see an empty $L (logs went to /). Set vars on their own line.
-- NEXT: §C against REFEREE-2's R2-N5-HON (on the tree, not yet opened) when the Lead says.
+- FLIP (P-N5-FLIP-box18, sha1 96a7e088…, pin d67fdb87; first referee, GO 11:58Z): docs/referee/R-N5-FLIP.md. ROOT, ROUTE-RELAY, SELF-FREE,
+  STATIC, FLIP (a)-(c), N1∨N2∨N3, N3-LEVEL SIGNED. ROOT-C as written FALSE (ROOTC-2: hypothesis needs "and exit"; witness
+  scratch/flip_inputs/rootc_lit_n5.pg + n4_thch_0 S3); corrected form SIGNED WITH proof gap ROOTC-1 (walk ≠ positional play with cycle node c,
+  leanT_N6 S3 state 3) closed by my LOCAL repair. Notes FLIP-N1..N4. Tool scratch/flip_probe.py, scratch/flip_quotes.py (own quote check).
+- NEXT: §C on HON done (a00a15c0); §C on FLIP when REFEREE-2 16 reports.
 
 ## Resume point (successor 13), written 2026-10-26T08:38Z by date -u (Opus 5.5, D15; session_01Nzrjhmm1pgUnEvdgjCBhTv)
 - Handover check 7af27658: Lead 5/5, GO 07:48Z (Lead stamp).

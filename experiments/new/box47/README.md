@@ -23,3 +23,7 @@ node; = --rand 3000 5 18 111 game 1132).
 - ffclimb2.py NMAX STEPS SEED OUTDIR --seed FILE.pg [--budget B]: climb against FB-RISE / HON-FF (fitness HONFF_V, DEEP, XI-EARLY failures, after-honest
   fallbacks). Seeded j10_n24, seeds 111/112, 1,500 steps: (0, 0, 0, 1) both (out/ffclimb2_j10_s*.txt).
 - fbph.py STARTS SEED --list FILE [--nmax N]: max in-phase fallbacks per phase (liball n ≤ 64, S3 + 2 random, seed 7: 38 at n = 48, fr39_q4_n48).
+- fbcount.py / fbpot.py / fbconf.py (docs/new/N5-FB-box47.md): the τ-frame split of the fallbacks (NB / OB / SAT) and the failed ρ / epoch charge
+  (fbcount: OB_NORHO, CHARGE_V); per-vertex G_τ-levels at fallbacks (fbpot: POT_FLAT, XIFLAT); Theorem FB-C in the honest frame H_C (fbconf: FBC_V,
+  NSC_V, LEVC_MONO_V must be 0). out/fbconf_liball_n34.txt, out/fbconf_fr39.txt, out/fbconf_rand3000.txt. instances/fr39_q4_n48.start = the
+  "n5py_start" lines of experiments/red/fbr/instances/fr39_q4_n48.start.json (L-RED), copied.
