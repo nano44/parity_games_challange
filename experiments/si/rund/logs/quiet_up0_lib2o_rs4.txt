@@ -1,0 +1,13 @@
+events_in_pieces_ge2=96 max_quiet_over_n_pct_Qcge2=20 max_rho_q=7 max_rho_q_Qcge2=7 q_phases=91 quiet_max=5 quiet_max_Qcge2=5 rho_q_total=246 splits_fb=120 splits_other=207
+TOP quiet_max/rho_q/len/|Q_c|/n (5, 5, 42, 2, 24, 'experiments/new/box21/instances/fts_best24.pg', 1, 11)
+TOP quiet_max/rho_q/len/|Q_c|/n (5, 5, 31, 2, 24, 'experiments/new/box21/instances/fts_best24.pg rs', 7, 11)
+TOP quiet_max/rho_q/len/|Q_c|/n (4, 4, 9, 2, 24, 'experiments/new/box21/instances/fts_best24.pg rs', 16, 11)
+TOP quiet_max/rho_q/len/|Q_c|/n (4, 4, 9, 2, 24, 'experiments/new/box21/instances/fts_best24.pg rs', 14, 11)
+TOP quiet_max/rho_q/len/|Q_c|/n (4, 4, 6, 2, 24, 'experiments/new/box21/instances/fts_best24.pg rs', 7, 11)
+TOP quiet_max/rho_q/len/|Q_c|/n (3, 7, 25, 2, 32, 'experiments/new/box44/instances/fb17_n32.pg', 2, 23)
+TOP(|Q_c|>=2) quiet_max/rho_q/len/|Q_c|/n (5, 5, 42, 2, 24, 'experiments/new/box21/instances/fts_best24.pg', 1, 11)
+TOP(|Q_c|>=2) quiet_max/rho_q/len/|Q_c|/n (5, 5, 31, 2, 24, 'experiments/new/box21/instances/fts_best24.pg rs', 7, 11)
+TOP(|Q_c|>=2) quiet_max/rho_q/len/|Q_c|/n (4, 4, 9, 2, 24, 'experiments/new/box21/instances/fts_best24.pg rs', 16, 11)
+TOP(|Q_c|>=2) quiet_max/rho_q/len/|Q_c|/n (4, 4, 9, 2, 24, 'experiments/new/box21/instances/fts_best24.pg rs', 14, 11)
+QUIET PASS
+rc 0

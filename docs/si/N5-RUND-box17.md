@@ -967,3 +967,203 @@ Two facts used throughout.
   for L-RED.
 ### Status
 PROVED (lane, unrefereed): N3-LEVEL. DATA: as above, tight. In packet P-N5-FLIP-box18 §6.
+
+## 26. Box 19 (successor 15, Lead's GO 12:13Z, item (2)): which charge carries the flips (DATA); Lemma CHOSEN and Corollary RELAY-CHAIN (PROVED); where ρ_q is large (DATA, READING)
+Written 2026-10-26T12:3xZ (date -u), successor 15. New scripts in experiments/si/rund/: flipcls.py, quiet.py, chosen.py. Logs: flipcls_*.txt,
+quiet_up{0,1,2}_*.txt, chosen_*.txt. Setting as §22.2 and §24.2: one phase, class U_c, Q_c, κ, standing premise P1. New start file
+rund/instances/nep90_n40.start (sha1 12b4eb64…) is L-RED's experiments/red/rec0/instances/nep90_n40.start.json in .start format. The game
+is L-RED's nep90_n40.pg (sha1 7348271a…), read in place. nep76_n40.pg (sha1 796ca133…) and its .start (1f63c579…) are read from
+experiments/n5-epoch/instances/.
+### 26.1 The four flip classes (DATA, flipcls.py)
+Each flip (q1, q2, t1 < t2) of §24.2, with the latest t1 before t2, goes in exactly one class:
+- N1fb: p1 is broken at t2, and a FALLBACK transition in [t1, t2) changes a vertex of p1.
+- N1sw: p1 is broken, and only ordinary S4a steps change it.
+- N2: p1 is intact at t2 and meets p2.
+- N3: p1 is intact and disjoint from p2. N3b is the sub-case where p2 is also intact at t1, i.e. the hypothesis of N3-LEVEL.
+
+For N3, GAP := (the top rank in U_c at t1) − rank(top C), L-RED 21's measure. The counts are flip ONSETS (t2 starts a run with
+par(q2) = q1). Flip STATES are in the logs.
+
+| set | phases | onsets | N1fb | N1sw | N2 | N3 (of which N3b) | max onsets / phase | N3 GAPs |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| lib41 (KMIN = 1), S3 + 4 random starts | 1,601 | 23 | 6 | 5 | 0 | 12 (8) | 2 | 2-22 |
+| lib2o, S3 + 4 random starts | 75 | 22 | 9 | 8 | 0 | 5 (0) | 2 | 2 |
+| frz40 (+ .start) | 5 | 2 | 1 | 1 | 0 | 0 (flip states 3) | 2 | 2 |
+| nep76_n40 (+ .start) | 1 | 1 | 1 | 0 | 0 | 0 | 1 | – |
+| nep90_n40 (+ start) | 1 | 1 | 1 | 0 | 0 | 0 | 1 | – |
+| L-RED R83 pp_K12_n161 / pp_K48_n449 | 1 / 1 | 11 / 47 | 0 | 0 | 0 | 11 / 47 (all N3b) | 11 / 47 | 25 / 61 |
+| leanT_N6 (RS = 4) | 2 | 3 | 0 | 0 | 0 | 3 (3) | 2 | 3, 5 |
+
+- N2 never occurs.
+- Rows overlap: frz40 and leanT_N6 are in lib41, and 3 games are in both lib41 and lib2o. So the shares are given per set, not pooled.
+- Outside mkpp a phase has at most 2 flip onsets.
+- Flips are broken (N1) in 11 of 23 onsets on lib41 (6 of the 11 by a fallback), 17 of 22 on lib2o (9 by a fallback), and in the single
+  onset of each of nep76 and nep90 (by a fallback).
+- The only family whose flips grow is mkpp. Its flips are all N3b with LARGE gaps (25 at K = 12, 61 at K = 48), which matches L-RED 21:
+  levels are fresh per flip. With N3-LEVEL, each such flip costs a change of q2's path set at a fresh level ≥ rank(top C). This is linear,
+  and no ruler is needed.
+- So the question "which charge carries the load" has two answers.
+  - On natural and random runs it is N1, with fallback breaks (L-NEW 26's f count via FB-RISE) and ordinary-switch breaks about equal.
+  - On the one growing family it is N3 with fresh levels.
+  - Neither one is a source of large ρ_q. Flip counts stay ≤ 2 per phase except on mkpp, which is linear.
+### 26.2 Lemma CHOSEN (PROVED, every game, P1) and Corollary RELAY-CHAIN (PROVED)
+Setting: a phase, a class c, a transition k → k+1, q ∈ Q_c with a ρ event (Ξ_k(q) ≠ Ξ_{k+1}(q)), q ≠ c and q on no honest cycle at k
+and k + 1. The event is RELAY (§22.4): every class exit path of q, and its exit, is the same at k and k + 1. Let y* := σ̄_k(q), let p be
+y*'s class exit path at k, and let e be its exit (the first vertex of Q_c ∪ {c} on y*'s play at k).
+- Lemma CHOSEN: e ≠ c, and either κ_k(e) ≠ κ_{k+1}(e) (e has a ρ event at k → k+1), or e's honest play at k + 1 passes through q (TOG).
+  Proof.
+  - y* ∈ U_c, since q's optimal play enters it and λ(q) = c. y*'s play at k avoids q, because q is on no honest cycle at k. So
+    y* ∈ Y^q_k. By RESULTS R56 (d) κ-Y-FORM_D at k (q on no honest cycle) and the optimality of σ̄_k (P1), the minimum is attained at
+    y*: κ_k(q) = κwt_c(q) + κ_k(y*).
+  - Additivity (§22.4 (iii)): κ_s(y*) = κwt_c(p) + κ_s(e) for s = k, k + 1. This holds because p is the same at both times, by RELAY.
+  - Suppose e = c, or e's play at k + 1 avoids q and κ_{k+1}(e) = κ_k(e). (κ(c) is constant in the phase.)
+    - y*'s play at k + 1 is p followed by e's play, and p avoids q (exit paths stop at Q_c ∋ q). If e = c, c's play is c's cycle, which
+      avoids q because q is on no honest cycle at k + 1. So y* ∈ Y^q_{k+1}, and κ_{k+1}(y*) = κ_k(y*).
+    - R56 (d) at k + 1 gives κ_{k+1}(q) ⪯ κwt_c(q) + κ_{k+1}(y*) = κ_k(q).
+    - Ξ is non-decreasing at every vertex in the phase (RESULTS R15 (a), (d) via (VJ), P1, as in §24.2 (a)), and inside the class Ξ's
+      order is κ's. So κ_{k+1}(q) ⪰ κ_k(q), hence κ_{k+1}(q) = κ_k(q) and Ξ_{k+1}(q) = Ξ_k(q). That contradicts the event. □
+  - CHOSEN sharpens ROUTE-RELAY (§22.4): the source is the exit of the CHOSEN option, not just some exit. The reason is that κ(q) is a
+    minimum of non-decreasing option values, so it can rise only when the option attaining it rises.
+- Corollary RELAY-CHAIN (the strong, data form of ROOT-C, §22.4 / §24.1; was DATA, now PROVED up to TOG):
+  - Statement: from a RELAY event at q at k, set e_0 := q and let e_{i+1} be the chosen exit of e_i at k. Repeat while e_{i+1} has a RELAY
+    event at k. The chain stops, after at most |Q_c| − 1 steps, at one of three things at the same transition: a ROUTE event, a CYC event
+    (a terminal with an event lying on its honest cycle at k or k + 1), or a TOG step.
+  - Proof.
+    - Each step exists by CHOSEN.
+    - All e_i lie on e_0's honest play at k. e_i's play is its exit path to e_{i+1}, followed by e_{i+1}'s play.
+    - If e_i = e_j with i < j, then e_i's own play at k returns to e_i, so e_i is on its honest cycle at k. Then its event is CYC, not
+      RELAY, and the chain would have stopped at e_i. □
+  - Consequences, per phase and class:
+    - Every transition with a ρ event in the class carries a ROUTE, CYC or TOG event of that class.
+    - ρ_c := Σ_{q ∈ Q_c} ρ_q ≤ |Q_c| · (ROUTE_c + CYC_c + TOG_c), counting events.
+    - A ROUTE event at q needs an Even vertex on a class exit path of q to switch at k: if the paths are equal, the exits are equal.
+  - In short: relays cost a factor |Q_c| and nothing more. ρ for m_c ≥ 2 is a count of ROUTE events (class exit-path switches), CYC
+    events and TOG steps.
+- DATA (chosen.py; CHOSEN_V = CHAIN_V = 0; TOG = 0 everywhere). The control MUT=1 (σ̄_{k+1}(q)'s exit instead of σ̄_k(q)'s) fails on
+  nep90, nep76, frz40 and pp_K12.
+
+| set | ROUTE | RELAY | CYC | longest chain |
+| --- | --- | --- | --- | --- |
+| lib41 (KMIN = 1), S3 + 4 | 5,660 | 427 | 42 | 11 |
+| lib2o, S3 + 4 | 202 | 44 | 0 | 1 |
+| nep90_n40 / nep76_n40 | 153 / 129 | 139 / 48 | 0 / 0 | 2 / 2 |
+| frz40 / pp_K12_n161 / pp_K48_n449 | 21 / 18 / 54 | 13 / 13 / 49 | 0 | 2 / 2 / 2 |
+
+### 26.3 Where ρ_q is large: chains, not cycles (DATA, READING)
+- The largest per-phase ρ_q seen by the lane is on n = 40 games with |Q_c| = 5, from their given starts:
+  - nep90_n40: phase of 91 transitions, ρ_q = 72 / 70 / 64 / 55 / 31;
+  - nep76_n40: 78 transitions, 62 / 47 / 41 / 22 / 5.
+
+  Both are above n. Their relay graphs (relay.py) are ACYCLIC with sink 0: nep90 {1: [0], 6: [0, 1], 8: [0, 1], 17: [0, 1]}, nep76
+  {1: [0], 6: [0, 1], 8: [0, 1], 37: [1]}. Each has one flip onset (N1fb). Vertex 0's events are all ROUTE (72 / 62). Vertex 17 in nep90
+  relays 60 times: it copies 0. So these phases are NOT relay cycles (§22.5 (O2)). They are long runs of ROUTE events at the root, copied
+  down an acyclic relay DAG, i.e. RELAY-CHAIN's factor |Q_c|.
+- Pieces (quiet.py). Cut the phase at fallbacks and at ρ events of other class terminals. Which terminals cut:
+  - UP=0: any other terminal.
+  - UP=1: the exits of q's class exit paths.
+  - UP=2: only q's chosen exit par_k(q), the terminal CHOSEN makes relevant.
+
+  The maximum number of q's events in one piece:
+
+| set | UP=0 | UP=1 | UP=2 | classes with |Q_c| = 1 (same in all modes) |
+| --- | --- | --- | --- | --- |
+| lib41 (KMIN = 1), S3 + 4, |Q_c| ≥ 2 | 3 | 6 | 6 | 35 (pft35_n48; pftheta34_n32: 34 > n − 1) |
+| lib2o, S3 + 4 (all |Q_c| ≥ 2) | 5 | 5 | 5 | – |
+| nep90_n40 / nep76_n40 | 4 / 3 | 10 / 12 | 12 / 12 | – |
+
+  With UP=2, the root 0 of nep90 has pieces [12, 10, 10, 6, 9, 10, 10, 3, 2], cut only at its 8 fallbacks. In nep76 they are
+  [8, 7, 12, 11, 7, 12, 5]. In both, the root's ROUTE events between fallbacks number ≤ 12 < n. nep76's trace shows the ruler shape
+  (§20, §21): σ̄(0) cycles through the same sequence of choices twice (transitions 3-38 and 40-75), with path-set levels re-used below
+  top-level changes (ranks 35-39) and many length-only events.
+- CONJECTURE QUIET-n (q's events per piece ≤ n − 1) is FALSE as a general statement, on one-terminal classes only: pftheta34_n32 has 34
+  events in one piece at n = 32. That case is 𝒞^1O, bounded polynomially by R51 but not by n − 1. On |Q_c| ≥ 2 the maximum is 12 at
+  n = 40. It is not a target: the right per-piece statement is the 𝒞^1O count, not n − 1.
+- READING (Lead to weigh), labelled:
+  - (i) PROVED reduction (RELAY-CHAIN): ρ per class ≤ |Q_c| · (ROUTE + CYC + TOG).
+  - (ii) DATA: on the long-ρ phases the ROUTE events sit at a root whose chosen exit is c, between fallbacks. That is the 𝒞^1O situation
+    with c as the only relevant terminal (SELF-FREE's situation, §22.4), plus the other terminals' moves as cuts.
+  - (iii) So the open count for m_c ≥ 2 is ROUTE events of a terminal between consecutive changes of its chosen terminal's value and
+    fallbacks: a "𝒞^1O piece". The recursion ρ_q ≤ P·(1 + f + ρ_{par(q)}) along the chosen-exit relation is well-founded when that
+    relation is acyclic over the phase, giving depth ≤ m_c − 1 and an FB-kT-style product, polynomial for bounded m_c. Flips are exactly
+    the 2-cycles of that relation over time. They occur ≤ 2 per phase outside mkpp, and linearly in mkpp.
+  - (iv) What is not proved:
+    - the per-piece bound P (it needs the 𝒞^1O machinery, R45 / R48 / R50, ported to a piece of a multi-terminal class with a constant
+      chosen terminal; the ports use one Odd choice vertex in several places, so it is a real port, not a citation);
+    - f per phase on general games (L-NEW 26);
+    - the number of flips per phase, i.e. of chosen-exit cycles over time (N1 needs an exit-path switch, N3 a fresh level, by N3-LEVEL;
+      no polynomial count yet).
+### 26.4 Status, labels
+- PROVED (lane, unrefereed): Lemma CHOSEN; Corollary RELAY-CHAIN (the data form of ROOT-C, up to TOG, which never occurred).
+- DATA: the flip classes (§26.1); RELAY-CHAIN's counts; pieces under three cut rules (§26.3); nep76 / nep90 have ρ_q > n with acyclic relay
+  graphs.
+- CONJECTURE QUIET-n: FALSE as stated (one-terminal classes, pftheta34_n32); not pursued.
+- OPEN: the per-piece ROUTE count for m_c ≥ 2 (a port of the 𝒞^1O count); flips per phase; f per phase (L-NEW 26). ρ_q for m_c ≥ 2 stays
+  OPEN.
+- CORRECTION (12:4xZ, after both referees' P-N5-FLIP reports). §24.1 ROOT-C as written here is FALSE. The hypothesis must say "class exit path
+  AND EXIT" and the consequence "a class exit path or exit". The (≤) step "each walk is a positional Odd play with cycle node c" is false.
+  Both are repaired in docs/si/P-N5-FLIP-fixes-box18.md R1 / R2 (REFEREE-2's B(e, y), REFEREE's LOCAL). §25 N3-LEVEL's parenthesis
+  "(both hold when p1 is intact at t2, by (c))" is unproved (G-FLIP-3, R3): (c) gives a disjunction. §26 is unaffected (see the fixes
+  file's last section).
+
+## 27. Item (2)(a): which steps of the 𝒞^1O count use one Odd choice vertex (READING, DATA), and Lemma TV-END (PROVED)
+Written 2026-10-26T12:5xZ (date -u), successor 15. New script rund/tvend.py; logs tvend_m{0,1}_*.txt; a D-set trace (scratch, numbers below).
+### 27.1 The map (READING, from the landed texts)
+The 𝒞^1O per-phase count (R51) has two sides.
+- FALLBACK side: R44 FB-ROUND, R45 HAT-FREEZE / RHO-TAIL, R48 κ-FB-ROUND / κ-HAT-FREEZE / κ-PFZ / κ-Y-FORM / EXIT-SWITCH / FREEZE-EXIT.
+  This side is ALREADY PORTED to every game by RESULTS R56 (a)-(g): κ-FB-ROUND_D, κ-HAT-FREEZE_D, κ-PFZ_D, κ-Y-FORM_D, EXIT-SWITCH_D,
+  FREEZE-EXIT_D, and Lemma TV, the terminal-value freeze after |U_c| − 1 fallbacks of the phase and of a Q_c-run. L-NEW 26's FB-RISE
+  (P-N5-HONFF) is the same mechanism in the Ξ frame. Nothing here needs m_c = 1. With several terminals, the freeze restarts at every
+  terminal value change: that is R56's reduction f ≤ 1 + (n − 1)(2 + ρ).
+- S4a side: R50 (FRZ-U, KIND-MONO, CASC-B, Theorem RUN, Corollary PHASE: "T per phase given f") and R45 (d)-(f) BF-F / FREEZE-F at HN
+  states. This side DOES use m_c = 1. Its stretches are defined by R = R_k ∋ o, θ, w; kinds A / B are defined against c_w; FRZ-U's Claim
+  P^c is over a single gate. In general-game terms (R55 G_D, R62, R64), that is an epoch with D = {o}, i.e. |D_E| = 1. RESULTS R64 (e)
+  EP-1 with R65 already lands exactly that part on every game: |D_E| = 1 epochs have len(E) = O(m·Δ·n¹¹).
+- So the "per-piece bound P" of §26.3 (iv) is NOT a port of the 𝒞^1O count. Its fallback half is landed (R56). Its S4a half is the
+  |D_E| ≥ 2 core (Δ-RT, FRZ-RHO §23, the RUND line §5-§19), together with the epoch count N_ep. Both are OPEN on G-N5-TIME.
+### 27.2 DATA: the long-ρ phases are many short multi-gate epochs
+D_k := the Odd vertices with σ̄_k ≠ τ_k. Epochs are counted as D changes + 1, which is an upper proxy for R63's epochs.
+| instance | phase length | epochs | |D| over the phase's states (count) | fallbacks |
+| --- | --- | --- | --- | --- |
+| nep90_n40 (+ start) | 91 | 42 | 0: 2, 1: 15, 2: 20, 3: 26, 4: 19, 5: 10 | 7 |
+| nep76_n40 (+ .start) | 78 | 32 | 0: 2, 1: 4, 2: 17, 3: 42, 4: 14 | 6 |
+The root 0 of §26.3 is in D at every state except the last. Epochs are about 2 transitions long. So on these instances ρ_q > n comes with
+N_ep ≈ phase length / 2. Neither the length of one epoch nor the per-piece count is the issue; the number of epochs is. That is the
+N_ep / ρ circularity of R63 / §20, not a new obstruction.
+### 27.3 Lemma TV-END (PROVED, every game; P1 via R15 (SG) and R56 (g))
+Setting: a phase, an honest class c, T := Q ∪ {c}, and a Q_c-run Θ (R56's setting line). Let t ∈ Θ be a state at which every
+z ∈ U_c ∖ T has κ_t(z) = TV_Θ(z) := max(κopt_c(z), max_{q ∈ Q_c} κopt^q(z) + κ_Θ(q)). By R56 (g) Lemma TV this holds at every t
+after |U_c| − 1 fallbacks of the phase and of a Q-RUN (all of Q constant; contained in a Q_c-run). CORRECTION 13:0xZ: an earlier wording
+said "of Θ" (the Q_c-run); R56 (g) is stated for Q-runs. tvend.py triggers on the Q_c-run count, a heuristic trigger; see P-N5-CHOSEN §5.
+Statement. Then no Even vertex of U_c ∖ T switches at any in-phase transition t → t+1. Moreover t + 1 ∈ Θ and the hypothesis holds at
+t + 1. Hence, from t to the end of the phase, class c is frozen: no switch in U_c ∖ T and no ρ event in the class, and Θ lasts to the phase
+end.
+Proof.
+- (i) Let x ∈ U_c ∖ T be Even, switching at t → t+1 (in-phase) to z := σ_{t+1}(x). The switch is to an edge improving at t (S4a's arena
+  and S4c both take Iσ_t(x)), so Ξ_t(z) ▷ Ξ_t(σ_t x). λ_{t+1}(x) = c and x ≠ c, so λ(z) = c. Within the class this is
+  κ_t(z) ≻ κ_t(σ_t x), so κwt_c(x) + κ_t(z) ≻ κwt_c(x) + κ_t(σ_t x) = κ_t(x), by additivity on x's honest play.
+- (ii) Let p be z's honest play at t up to its first vertex e ∈ T (its exit; p avoids T).
+  - If x ∉ p, then x·p is a simple path of G_c (e = c) or G_c^e (e ∈ Q_c). By additivity, κwt_c(x) + κ_t(z) = κwt_c(x·p) + κ_Θ(e) ⪯
+    TV_Θ(x) = κ_t(x) (κ_t(e) = κ_Θ(e) on Θ). That contradicts (i).
+  - The same holds if z = e ∈ T: the path is x·e.
+- (iii) So every switching x ∈ S := {Even switching vertices of U_c ∖ T} has x on z(x)'s honest play at t, before that play's exit. Follow
+  x's play at t + 1:
+  - it goes x, z(x), then along the t-play from z(x) (old edges at vertices that do not switch) until the first vertex of S, which exists
+    and comes before any vertex of T, because x itself is on that stretch;
+  - there it continues with that vertex's new edge, and so on.
+  This play never meets T. Odd vertices on these stretches are forced (non-terminal), and terminals do not occur before the exit. So the
+  play never reaches c, and λ_{t+1}(x) ≠ c, against in-phase. So S = ∅.
+- (iv) With no switch in U_c ∖ T, every class exit path and exit of class c is the same at t and t + 1: their vertices are non-terminal,
+  Even and non-switching, or forced Odd. By ROOT-C in its signed form (P-N5-FLIP-fixes-box18 R1), κ is constant on Q_c, so t + 1 ∈ Θ.
+  κ_{t+1}(z) for z ∈ U_c ∖ T is the value of the same exit path plus the same terminal value, so the hypothesis holds at t + 1.
+  Induction. □
+- What it adds to R56: FREEZE-EXIT_D says the late FALLBACKS switch nothing in the class. TV-END says no in-phase transition does
+  (S4a included), and the freeze is permanent within the phase. It does not bound ρ: ρ events happen before the class freezes, in Q_c-runs
+  with fewer than |U_c| − 1 fallbacks, which is where S4a steps act.
+- DATA (tvend.py; TVEND_V = 0). It is THIN, in the same way as R56's vacuity: lib41 (KMIN = 1, S3 + 4) reaches the freeze in 20 classes,
+  all with |Q_c| ≤ 1, with 39 frozen transitions; lib2o has 4 classes and 0 frozen transitions; nep90 and frz40 have none. The control
+  MUT=1 (phase fallbacks only, without the Q_c-run condition) does not bite on these sets (reported as such).
+### 27.4 Status, labels
+- PROVED (lane, unrefereed): Lemma TV-END.
+- READING: the map in §27.1. The per-piece bound P for m_c ≥ 2 is the |D_E| ≥ 2 S4a core plus N_ep (both OPEN), not a port.
+- DATA: §27.2 (nep90 / nep76: 42 / 32 epochs, mostly |D| ≥ 2); TV-END is thin.
+- OPEN: ρ_q for m_c ≥ 2; equivalently, at the level of the landed reductions, N_ep and the |D_E| ≥ 2 epochs.

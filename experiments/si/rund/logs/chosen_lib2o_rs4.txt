@@ -1,0 +1,3 @@
+RELAY=44 ROUTE=202 max_chain=1
+CHOSEN PASS
+rc 0

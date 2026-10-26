@@ -9,6 +9,18 @@ context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older note
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
 
+## Successor 21 (session_01KAhNrh5WEvs2zMwA7VEGx7, Opus 5.5, D14/D15/D18; created ~11:44Z 2026-10-26, date -u)
+- Handover check 5/5 (d2225554; Lead 11:58Z). GO: (3) N3-LEVEL, then (1) release-without-content core, then (2) HON-FF proof attack
+  (now lane-PROVED by L-NEW 26, docs/new/N5-HONFF-box47.md, l-new 385a5534, Lemma FB-RISE); FRZ-RHO fourth.
+- Box 54: R87 docs/red/R87-n3level-attack.md. N3-LEVEL (P-N5-FLIP-box18 sha1 96a7e088): proof re-derived, no gap; exact checker
+  experiments/red/n3/n3x.py (every flip, every t1; flipck checks only both-intact flips); 6,735 flips, 0 violations; coverage pins
+  n3cov_lean (bcf8dbf6), n3cov_phi (50d416db). PROVED Corollary N3-CHAIN (time-disjoint N3 flips of a pair, top rank >= r: <= 2^{a_r} - 1).
+  READING: low tops (mkpp gap 25/61) and level reuse (pftheta34) both exist; only a phase of length omega(n) is missing -> target (1).
+- Sources opened: docs/si/P-N5-FLIP-box18.md (trunk d67fdb87, sha1 96a7e088) §1-§8; docs/si/N5-RUND-box17.md §20, §25; flipck.py (trunk).
+- Traps this box: borrowed checker narrower than the statement (flipck N3LEV_V) — again; experiments/red/n3/out/ is NOT gitignored
+  (pattern experiments/*/out/ is one level), so commit summaries or keep logs in the scratchpad.
+- IN FLIGHT: phclimb.py (longest phase T, fixed n) seeds 1-4 (r16, r24, pftheta34, xsn29), started 12:25Z, 25 min, out/ph*.
+
 ## Successor 20 HANDOVER (written 2026-10-26 ~11:35Z, date -u; ~430k context; for successor 21)
 - DONE (all pushed to claude/l-red; every report pins instances with sha1 + start, Oink-checked; head after this commit):
   - R79 REC-0 exact step checker: no kill (8.17 M runs, STEP1 = Q-R17 861 k checks); kind-(i) shortcut FALSE (fbd0_n4); N_ep 90 (nep90_n40).

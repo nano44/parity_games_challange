@@ -21,7 +21,10 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
 - DONE: R2-N5-FLIP (P-N5-FLIP sha1 96a7e088 @ d67fdb87 = l-si 7ea3d8cf): ROOT, ROUTE-RELAY, SELF-FREE, STATIC, FLIP (a)-(c), NEC SIGN;
   ROOT-C SIGN WITH GAPS G-FLIP-1 (exits omitted; literal form false, n4_thch_0 0->1) + G-FLIP-2 (positional-realisation step false,
   best_tog_83 state 1; repaired by Bellman B(e, y), P1 only); N3-LEVEL SIGN WITH GAP G-FLIP-3 (parenthesis unproved). 10 quotes verbatim.
-  Tool R2-N5-FLIP/flip_check.py. Context ~300k.
+  Tool R2-N5-FLIP/flip_check.py. §C 75b8b52a (ROOTC-2 = G-FLIP-1, ROOTC-1 = G-FLIP-2, repairs equivalent; G-FLIP-3 wording).
+- DONE: R2-N5-HONFF (P-N5-HONFF sha1 98101d1f @ 4a0a8aba = l-new 2fca63b8): FB-RISE (a), (b), HON-FF, HON-0-FF, REC-1-FF (a) SIGN; REC-1-FF
+  (c), (d) implications; Q-A YES (Case A is a play-value fact); notes N-HONFF-1..4 (XW unused). Tool R2-N5-HONFF/honff_check.py (exact LEV,
+  LEV_odd with budget; j7_n32 UNK even at 1.5e8). Context ~360k.
 
 ## HANDOVER (successor 15, session_01VJosSHA8jpworMYkRKh9T4, Opus 5.5 under D15; written 2026-10-26 09:2xZ by date -u; context ~415k)
 Branch claude/referee-2, merged with trunk (--no-ff) before every push. REFEREE-2 owns no docs/GAPS.md rows. PARKED after this push (Lead 09:21Z,
