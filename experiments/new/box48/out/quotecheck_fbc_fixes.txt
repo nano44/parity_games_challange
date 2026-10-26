@@ -1,0 +1,46 @@
+OK   d08011be:docs/referee/R-N5-FBC.md:29-29 | SIGNED (the inequality; the comparison sentences after it are READINGS, note FBC-N4)
+OK   d08011be:docs/referee/R-N5-FBC.md:30-30 d08011be:docs/referee/R-N5-FBC.md:143-143 d08011be:docs/referee/R-N5-FBC.md:143-143 | CONFIRMED for n ≥ 2
+OK   d08011be:docs/referee/R-N5-FBC.md:32-32 | No gap. Notes FBC-N1..N4.
+OK   bde1ea77:docs/referee-2/R2-N5-FBC.md:30-30 | No gap. Notes N-FBC-1..6 (§3).
+OK   bde1ea77:docs/referee-2/R2-N5-FBC.md:129-130 | SIGN, on every game, under the standing SPEC premise 1E-N3 (in form P1, through (MON)) and
+OK   d08011be:docs/referee/R-N5-FBC.md:145-145 | Verdicts identical. Joint gap map: EMPTY (neither referee found a gap).
+OK   bde1ea77:docs/referee-2/R2-N5-FBC.md:161-161 | No disagreement on any signed item. Joint gap map: EMPTY.
+OK   bde1ea77:docs/referee-2/R2-N5-FBC.md:161-162 | FBC-N1..N4, N-FBC-1, N-FBC-2, N-FBC-4 (N-FBC-3 ⊆ FBC-N1; N-FBC-5, N-FBC-6 superseded by FB
+OK   1f8d6d7d:docs/new/P-N5-FBC-box47.md:39-39 | As P-N5-HONFF §0 (state k, σ̄_k, Ξ_k, λ, phase P, in-phase, value(r)).
+OK   d08011be:docs/referee/R-N5-FBC.md:126-127 | D_k (used in (c), §3) and EPOCH / N_ep (used in (a), (d)) are defined in P-N5-HON §0 (l. 4
+OK   bde1ea77:docs/referee-2/R2-N5-FBC.md:93-93 | Add D to the imported list.
+OK   d08011be:docs/referee/R-N5-FBC.md:91-91 bde1ea77:docs/referee-2/R2-N5-FBC.md:93-93 10b5b144:docs/new/P-N5-HON-box46.md:44-44 | D_k := {q ∈ Q : σ̄_k(q) ≠ τ(q)}
+OK   10b5b144:docs/RESULTS.md:3065-3066 | An EPOCH: a maximal run E of consecutive states of a phase on which σ̄_t|Q is constant
+OK   10b5b144:docs/RESULTS.md:3067-3068 | N_ep := the epochs of the phase
+OK   1f8d6d7d:docs/new/P-N5-FBC-box47.md:32-33 | RESULTS R15 (d)'s "at most 4n(n−1) consecutive N5 iterations leave both Ωσ and Ωτ unchange
+OK   d08011be:docs/referee/R-N5-FBC.md:128-129 | SAT_C (2) applies R15 (d) to Ξ; the bridge is R57 (a) (VJ) under 1E-N3 (as in R60's premis
+OK   bde1ea77:docs/referee-2/R2-N5-FBC.md:142-142 | ACCEPT FBC-N2 (citation note)
+OK   10b5b144:docs/RESULTS.md:2907-2907 | Premise (VJ), on every game: for every positional σ and every positional Odd strategy τ′, 
+OK   d08011be:docs/referee/R-N5-FBC.md:150-150 bde1ea77:docs/referee-2/R2-N5-FBC.md:21-21 | (MON) = R15 (a), (d) via (VJ) under P1
+OK   1f8d6d7d:docs/new/P-N5-FBC-box47.md:71-71 | with values in {0, …, n − 2} there are at most n − 1 of them.
+OK   bde1ea77:docs/referee-2/R2-N5-FBC.md:86-88 | The unsaturated count "with values in {0, …, n − 2} there are at most n − 1 of them" needs
+OK   d08011be:docs/referee/R-N5-FBC.md:39-39 | LEV_C(k) ≥ 0 at every state (j = 0: x = u a cycle node of λ, Ξ_k(u) = (u, ∅, 0))
+OK   d08011be:docs/referee/R-N5-FBC.md:154-154 | ACCEPTED (I checked the fact but did not flag that the packet omits it)
+OK   bde1ea77:docs/referee-2/R2-N5-FBC.md:89-90 | FB-RISE_C's Even case uses only LEV_C's definition at t, S4c, Case A, (MON), (V1), (V2): i
+OK   d08011be:docs/referee/R-N5-FBC.md:49-49 | The Odd case does not use the fallback at all: it holds at EVERY C-state
+OK   d08011be:docs/referee/R-N5-FBC.md:155-155 | the two remarks are complementary (Odd case: any C-state, no fallback; Even case: any stat
+OK   1f8d6d7d:docs/new/P-N5-FBC-box47.md:13-13 | Its Corollary (a) in the N_ep form, and Corollary (d), are WEAKER than EPOCH (c)
+OK   d08011be:docs/referee/R-N5-FBC.md:99-100 | At n = 1 the only vertex has a self-loop only, Iσ = ∅, f = 0, and both forms are trivial.
+OK   bde1ea77:docs/referee-2/R2-N5-FBC.md:96-96 | True for n ≥ 2, false at n = 1 (vacuously). Either say "for n ≥ 2" or ignore; it changes n
+OK   bde1ea77:docs/referee-2/R2-N5-FBC.md:140-140 | ACCEPT REFEREE's sharper n = 1 line
+OK   1f8d6d7d:docs/new/P-N5-FBC-box47.md:10-10 | It is INCOMPARABLE with RESULTS R56
+OK   1f8d6d7d:docs/new/P-N5-FBC-box47.md:89-89 | The two are incomparable in general.
+OK   d08011be:docs/referee/R-N5-FBC.md:132-132 | (d)'s "incomparable in general" with R56 is witnessed in one direction only (§3); the head
+OK   bde1ea77:docs/referee-2/R2-N5-FBC.md:82-82 | R56 (f) (f ≤ 1 + (n − 1)(2 + ρ)) and FB-C are incomparable as FORMULAS (different quantiti
+OK   bde1ea77:docs/referee-2/R2-N5-FBC.md:144-144 | ACCEPT FBC-N4's wording ("witnessed in one direction only")
+OK   d08011be:docs/referee/R-N5-FBC.md:70-70 81ab0b72:docs/new/P-N5-EPC-box48.md:176-177 | Per phase P and configuration C, at most one in-phase fallback has a saturated C-state sou
+OK   bde1ea77:docs/referee-2/R2-N5-FBC.md:152-152 | CORRECT. So f ≤ n·\|𝒞_f(P)\|.
+OK   bde1ea77:docs/referee-2/R2-N5-FBC.md:159-160 | FBC-N3 is a referee strengthening, not a statement of the packet: for the lane to take up 
+OK   81ab0b72:docs/new/P-N5-EPC-box48.md:105-105 | Corollary SAT-FB1. For every phase P and configuration C, at most one in-phase fallback of
+OK   81ab0b72:docs/new/P-N5-EPC-box48.md:108-108 | Theorem FB-C′. In every phase P of N5 on every game, f ≤ n·|𝒞_f(P)|.
+OK   bde1ea77:docs/referee-2/R2-N5-FBC.md:101-102 | SAT_C's 4n(n − 1) + 1 term is untested
+OK   bde1ea77:docs/referee-2/R2-N5-FBC.md:155-156 | "≤ 1 saturated per configuration" is a theorem, which is why the control could not bite
+OK   bde1ea77:docs/referee-2/R2-N5-FBC.md:156-156 | n·\|𝒞_f\| ≤ n·N_ep < 1 + n·N_ep
+OK   d08011be:docs/referee/R-N5-FBC.md:120-121 | 39 in-phase fallbacks in one phase, 7 configurations at fallback sources, max 24 unsaturat
+OK   bde1ea77:docs/referee-2/R2-N5-FBC.md:118-118 | unsaturated sources of one configuration 25
+quotes 45 missing 0

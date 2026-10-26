@@ -1,0 +1,13 @@
+START fit (0, 0) n 40
+BEST step 5 fit (0, 2) t 0s
+BEST step 47 fit (0, 3) t 1s
+BEST step 91 fit (0, 4) t 1s
+BEST step 681 fit (0, 5) t 18s
+BEST step 1004 fit (0, 6) t 29s
+BEST step 1058 fit (1, 5) t 31s
+BEST step 3867 fit (1, 6) t 147s
+BEST step 3948 fit (1, 7) t 151s
+BEST step 5294 fit (2, 6) t 221s
+BEST step 5646 fit (2, 8) t 242s
+BEST step 6033 fit (2, 9) t 267s
+END steps 7963 best (2, 9) n 40 -> results/nconf/ret02_fresh_n40_r1.pg

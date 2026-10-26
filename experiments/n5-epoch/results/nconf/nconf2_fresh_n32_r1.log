@@ -1,0 +1,8 @@
+START fit (1, 0) n 32
+BEST step 290 fit (2, 0) t 3s
+BEST step 546 fit (3, 0) t 7s
+BEST step 848 fit (4, 0) t 13s
+BEST step 949 fit (5, 0) t 15s
+BEST step 1709 fit (6, 0) t 31s
+BEST step 11497 fit (7, 0) t 254s
+END steps 14345 best (7, 0) n 32 -> results/nconf/nconf2_fresh_n32_r1.pg

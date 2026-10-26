@@ -1,0 +1,44 @@
+ASM_chk 7
+DEAD_ex 4
+DEAD_nonflat 8
+DEAD_notlast 7
+DREM_chk 7
+EPC_chk 1
+FBCP_chk 7
+FBR_chk 14
+MAX_NCONF 24
+MAX_NEP 25
+MAX_V_C 2
+MAX_XBIG 1
+MAX_XDIR 0
+PHASES 7
+PH_LEV 1
+PH_TRIVIAL 6
+RET_A 0
+RET_B 1
+RET_R0 0
+RET_chk 150
+RET_chk_otherC 147
+RUNS 1
+SATB_chk 12
+SATFB1_chk 24
+SATFB_FAIL 7
+SATFB_chk 8
+SATW_chk 12
+SUM_NCONF 24
+SUM_NCONF2 23
+SUM_NEP 25
+SUM_R0 0
+SUM_R0GE2 0
+VIS_chk 24
+EX ('SATFB', '../../../experiments/red/fbr/instances/rho3_253_n32.pg/0', 25, 'mut3')
+EX ('DEAD', '../../../experiments/red/fbr/instances/rho3_253_n32.pg/0', 5, 33, 25, False)
+EX ('SATFB', '../../../experiments/red/fbr/instances/rho3_253_n32.pg/0', 24, 'mut3')
+EX ('DEAD', '../../../experiments/red/fbr/instances/rho3_253_n32.pg/0', 5, 33, 24, False)
+EX ('SATFB', '../../../experiments/red/fbr/instances/rho3_253_n32.pg/0', 19, 'mut3')
+EX ('DEAD', '../../../experiments/red/fbr/instances/rho3_253_n32.pg/0', 5, 33, 19, False)
+EX ('SATFB', '../../../experiments/red/fbr/instances/rho3_253_n32.pg/0', 20, 'mut3')
+EX ('DEAD', '../../../experiments/red/fbr/instances/rho3_253_n32.pg/0', 5, 33, 20, False)
+EX ('SATFB', '../../../experiments/red/fbr/instances/rho3_253_n32.pg/0', 16, 'mut3')
+EX ('SATFB', '../../../experiments/red/fbr/instances/rho3_253_n32.pg/0', 21, 'mut3')
+EX ('SATFB', '../../../experiments/red/fbr/instances/rho3_253_n32.pg/0', 23, 'mut3')

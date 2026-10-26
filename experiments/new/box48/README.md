@@ -26,3 +26,17 @@ transitions, |Q| 3; out/nconf_long121.txt, out/retfb_long121.txt.
   changing vertex of Q, R = σ̄ on the rest) with each R's root sequence. out/rootrel_newconf.txt (nep90, nep76, long121 with starts; pft34 S3).
 - fsrestrict.py STARTS SEED (--list FILE | files) [--nmax N] [--start F]: the frozen-side u-run restriction G^{u|J} (N5-NCONF §9): XI_V, REP_V must be
   0; MUT=1 must bite. out/fsrestrict_liball_n34_k2.txt, out/fsrestrict_liball_n34_MUT.txt, out/fsrestrict_long3.txt.
+- phrestrict.py STARTS SEED (--list FILE | files) [--nmax N] [--start F]: Lemma RESTRICT_H on the used-edge game G^P of each phase (N5-NCONF §10):
+  XI_V, REP_V must be 0; MUT=1 must bite. out/phrestrict_long3.txt, out/phrestrict_liball_n34_k2.txt, out/phrestrict_liball_n34_MUT.txt.
+- qp.py STARTS SEED (--list FILE | --rand C LO HI GSEED KFRAC | files) [--nmax N] [--start F]: QP = |union of D_k| per phase (asserted), D0, ENT, N_ep,
+  NCONF, XDEG, QP_c per class (N5-NCONF §11). out/qp_liball_n48_k2.txt, out/qp_dunion.txt.
+- qpclimb.py QT K NMAX STEPS SEED OUTDIR [--seed FILE.pg]: climb on (min(QP, QT), len) of one phase from S3 (O fixed by climb.mutate). out/qpclimb/.
+- dunion.py GAME START K OUT.pg OUT.start: k disjoint copies with copied start (instances/du/nep90x2..4).
+- qpcclimb.py NMAX STEPS SEED OUTDIR --seed GAME.pg --start GAME.start: climb (game + start) with O-moves, objective (QP_c · len, len) (N5-NCONF §12).
+  out/qpcclimb/ (logs, best games with .start, verify.txt = qp.py + phrestrict.py on each best).
+- reset.py STARTS SEED (--list FILE | files) [--start F]: offsets to the routing parent, RESET / ENTRY / RISE / PARCHG / CHAIN_V (N5-KPOLY-box49 §2);
+  MUT=1, MUT=2 controls. out/reset_lib41_n34_k2.txt, out/reset_long6.txt.
+- swaps.py STARTS SEED (--list FILE | files) [--start F]: pairwise order swaps of an Odd choice vertex's options per phase (N5-KPOLY §4).
+  out/swaps_long4.txt.
+- offmono2.py STARTS SEED (--list FILE | files) [--start F]: Lemma OFFSET-MONO (packet P-N5-OFFMONO-box49) with p := par_{t+1}(q): V_Kc, V_M must be
+  0; V_Kx (opposite length sign) and MUT=1 (p off q's play) are controls. out/offmono2_lib41_n34_k2.txt, _MUT.txt, out/offmono2_long7.txt.

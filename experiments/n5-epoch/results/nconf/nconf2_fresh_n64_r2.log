@@ -1,0 +1,16 @@
+START fit (1, 0) n 64
+BEST step 86 fit (2, 0) t 2s
+BEST step 1627 fit (3, 0) t 53s
+BEST step 1873 fit (5, 0) t 67s
+BEST step 3298 fit (6, 0) t 154s
+BEST step 3349 fit (7, 0) t 158s
+BEST step 3570 fit (8, 0) t 176s
+BEST step 3630 fit (9, 0) t 181s
+BEST step 4124 fit (10, 0) t 220s
+BEST step 4130 fit (10, 1) t 220s
+BEST step 4419 fit (11, 0) t 244s
+BEST step 5250 fit (12, 0) t 316s
+BEST step 5770 fit (13, 0) t 365s
+BEST step 7407 fit (14, 0) t 533s
+BEST step 7979 fit (15, 0) t 597s
+END steps 8313 best (15, 0) n 64 -> results/nconf/nconf2_fresh_n64_r2.pg

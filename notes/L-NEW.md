@@ -1221,3 +1221,35 @@ Successor 27 (Opus 5.5, D14/D18, L40), session_01Eb3V637FARpmtRkvarA5Jx. Handove
   seeded ones refuted SB1 within minutes (11 at n = 10). Seed from structure whenever a "≤ f(n)" conjecture rests on climbs.
 - (succ. 3) Lemma NR (σ and τ never return; R15 (c)+(d)) kills every N5-following argument that needs a reply to come back.
 - (succ. 3) A worker restart can kill push.sh mid-run (exit 137): check `git rev-parse HEAD origin/claude/l-new` and re-run push.sh.
+
+## Successor 28 log (Opus 5.5, D14/D18, L40; session_01Dg8L3iN3G8HVzEVoGgCE1Y)
+- Handover check 9dbaf71f (Lead 15:16Z: 5/5, GO). Oink built (8fbf0a7).
+- 15:17Z (date -u): P-N5-FBC-fixes-box47.md written (repairs R1-R6 = FBC-N1/N-FBC-3, FBC-N2, N-FBC-1, N-FBC-2, n = 1 line/N-FBC-4, FBC-N4/N-FBC-5;
+  FBC-N3 = P-N5-EPC §3, not a repair; N-FBC-6 superseded). Sources opened: R-N5-FBC.md at claude/referee d08011be, R2-N5-FBC.md at
+  claude/referee-2 bde1ea77, packet at 1f8d6d7d, P-N5-HON l. 44 and RESULTS l. 2907, 3065-3068 at trunk 10b5b144, EPC at 81ab0b72.
+  quotecheck2.py: quotes 45 missing 0 (experiments/new/box48/out/quotecheck_fbc_fixes.txt).
+- 15:25Z (date -u): queue item 3 read (L-SI N5-ROOT-box20 §1-§9 at l-si 04894bb9; open count = gate offset / region resets per fallback-free run,
+  L-SI 16's to hand over). Item 4: N5-NCONF §10 Lemma RESTRICT_H / REPRO_H PROVED (port of R64 (a), (b): only (P1) Odd edges ⊆ G's, (P2) σ̄_k ∈ H,
+  (P3) τ ∈ H + Even lists intact are used); §9's CONJECTURE RESTRICT_{u|J} now an instance; new instance G^P (used-edge game of a phase).
+  DATA phrestrict.py: long3 0/0 (QP 5/5/3), liball n ≤ 34 1,031 phases 0/0, MUT bites (XI 514, REP 292). Sources: R64 at RESULTS l. 3206
+  (opened), P-N5-EPR §1-§2 (opened), R68 (f) (opened).
+- 15:40Z (date -u): Lead 15:38Z: freeze RESTRICT_H as a packet; item 3 moved to L-SI 17 (session_016b6dkXxRQVs8RACh8bSCyW; do not duplicate; L-SI 16
+  parked with RESET-PIECE, PING/FLIP charge DEAD); my next design item: QP (Odd vertices with ≥ 2 edges in G^P). Packet P-N5-RESTRICT-box48 FROZEN
+  (quotes 8 missing 0 vs P-N5-EPR at 08abd9cb). Trunk 9bbd86e4 merged (91a69007).
+- 15:52Z (date -u): QP (N5-NCONF §11). QP = |∪D_k| (elementary). Library: long phases have small QP (len ≥ 60: ≤ 3) but selection bias (|Q| = 1).
+  Climbs weak (O fixed by climb.mutate). DUNION: k copies of nep90 = one 91-transition phase with QP 5k at n 40k, so QP is the wrong parameter;
+  QP_c (per class) proposed; OPEN. Trap: climb.mutate never changes the Odd choice set; QP ≤ |O| by design.
+- 16:13Z (date -u): §12. qpcclimb (O-moves, long-phase starts): QP_c 13 / 14 / 10 in one class on phases 99 / 81 / 127 at n 48 (from nep90 / nep76 /
+  long121); RESTRICT_H holds on them (phrestrict 0/0). QP_c is not small on long phases. R63 reading: nothing landed bounds D0 or ENT.
+  Lead 16:01Z: EPC REFEREE report a52feb43 in (EPC-N1..N4); REFEREE-2 pending; do not start EPC fixes before both §Cs.
+- 16:32Z (date -u): Lead 16:24Z: scaling = short DATA step; main effort (2) count polynomial in n and k. docs/new/N5-KPOLY-box49.md: §0 QP_c 24 / 24 /
+  36 at n 64 / 64 / 80 (climbs; verify.txt); §1 R61's product = SAT-k iterated (odometer); CHOSEN RELAY-CHAIN (b) + R56 (f) already linear in k
+  given ROUTE (READING); §2 Lemma OFFSET-MONO PROVED (reset needs an ENTRY); DATA 0 resets / 0 entries (lib41, 6 long), controls bite; §3 exit
+  changes carry the count (PARCHG ≫ RISE); §4 Davenport-Schinzel view needs pairwise swaps, swaps 11-22 (not closed; DS source NOT opened);
+  §5 other fields READING only. Sources opened: R61 (c) l. 3122-3123, §5 l. 3134; R56 (a) l. 2851, (d) l. 2858; P-N5-CHOSEN l. 81 (sha1 764cfbb3).
+  Trap: pkill pattern inside the same bash -c string killed my shell (exit 144) again; launch and kill in separate calls.
+- 16:50Z (date -u): Lead 16:41Z (a)/(b) on ENTRY. (a) closed stronger: OFFSET-MONO holds with no ENTRY hypothesis (λ constant ⇒ offsets defined for
+  all of q's new path; Case L by Odd's optimality, κwt(Z) ⪰ 0 from SPEC S1's reward order). Packet P-N5-OFFMONO-box49 FROZEN (OFFSET-MONO,
+  CHAIN-SUM, CHAIN-COUNT; 12 quotes vs 58061d91). offmono2.py: 0 violations in 15,741 checks; controls bite. Fixed in draft: CHAIN-COUNT pieces
+  must also be cut at CYC transitions. Sources opened: SPEC l. 30-31, 56-57; RESULTS l. 803-804, 2840, 2851, 2858, 3123, 3768-3769; FBRED l. 49-50;
+  FBPOLY l. 93-97.

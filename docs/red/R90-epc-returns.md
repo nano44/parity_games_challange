@@ -43,3 +43,38 @@ multi-gate return has Ξ_{s_i} ≠ Ξ_{s_{i+1}}, so the counts are exact.
 
 ## 3. Tools
 experiments/red/n3/epc.py (N_ep, NCONF, NCONF_{≥2}, fallback-free returns, exact R⁰_{≥2} lower count via SAT_C (2), REV); phclimb.py FIT=E.
+
+## 4. ADDENDUM (written 15:20Z, date -u): final climbs, and GATE-LAG (L-SI 16 §8, l-si d842ca95; Lead 14:53Z)
+- FIT=E climbs (30 min; fitness = fallback-free returns to |D_C| ≥ 2 configurations in one phase), final: n 40 from long121: **22**
+  (phase of 71 epochs); n 80 from comp54: 18; n 24 from ffin4: 10; n 40 from run34: 7. Pin of the n 40 best:
+
+| file (experiments/red/n3/instances/) | sha1 (.pg) | .start sha1 | n | Q | iterations / fb | phase T | f | N_ep | NCONF / NCONF_{≥2} | R⁰_{≥2} (exact) | longest ff run |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| ret22_n40.pg | 690ab6ffe754bcc906d9e1258c6cdc2e70f56845 | 1f9a50e8 | 40 | 5 | 94 / 7 | 83 | 6 | 60 | 18 / 16 | 22 | 19 |
+| lag11_n40.pg | 5e4e71e385de92b2d83fc3c1adb33d18a2c3c5a6 | 5fe84b8b | 40 | 15 | 23 / 2 | 14 | 0 | 9 | 7 / 7 | 2 | 14 |
+  Both: n5.py = n5b --mode spec (94 / 7; 23 / 2); check_sol2 "zielonka(oink zlk) OK strategies verified".
+- GATE-LAG (lag.py, written from §8.1 / §8.4: DD_t = D-direct gates, Δ_t(u) = M_t(τ u) − M_t(σ̄_t u), a lag = an Even z behind u ∈ DD with a
+  Ξ-improving direct option x ∈ A, not taken, M(x) − M(σ z) < Δ(u)):
+  - long121: Δ(0) of the root NEVER rises inside a fallback-free run (0 re-raises; 28 drops), and is re-armed only across fallbacks;
+    339 lags over the phase, 0-59 per run. core41: the same (0 re-raises, 18 drops, 45 lags). mkpp / mkgate: no D-direct gate at all.
+  - run34_n40: 1 re-raise each at two gates, 6 lags. The lagclimb.py climb (fitness = re-raises of one gate in one fallback-free run)
+    reaches 11 (lag11_n40, gate 34, a 14-transition fallback-free phase) but with 0 lags there: the offset moves with every ρ event at
+    the gate without any Even vertex lagging behind it. A climb from long121 reached 7.
+  - READING: on the instances where lags occur (long121 family), the offset is re-raised only by fallbacks, which is FB-C-bounded at fixed
+    k. Re-raises inside a run exist, but in the data they do not come with lags. The combination the Lead asked for (many re-raises in one
+    fallback-free run, each re-arming lags) was not found. Next climb objective if continued: lags × re-raises inside one run.
+
+## 5. ADDENDUM (written 16:00Z, date -u; Lead 15:38Z): lags × re-raises inside one fallback-free run; QP of the used-edge game (RESTRICT_H)
+- Fitness (lagclimb.py, lag.py): max over (fallback-free run, D-direct gate u) of min(re-raises of Δ(u) in the run, lags behind u in the run).
+  Four 20-min climbs from run34_n40, long121_n40, nep90_n40, ret22_n40: best **10** (from run34); the other three stayed at 0.
+- QP := Odd vertices with ≥ 2 edges in the used-edge game G^P of the phase (L-NEW 28, RESTRICT_H, docs/new/N5-NCONF-box48.md §10,
+  l-new 7b5876d8): long121 QP 3 (= L-NEW's), run34 phase@15 QP 7, lag11 QP 6, lagx10 QP 5.
+
+| file (experiments/red/n3/instances/) | sha1 (.pg) | .start sha1 | n | |Q| / QP | iterations / fb | phase T | longest ff run | re-raises / lags (that run, gate 10) | U(S) | R⁰_{≥2} |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| lagx10_n40.pg | 7258717c0256667b28353cc52a3c1704d07f03f5 | 23d1dafc | 40 | 11 / 5 | 17 / 1 | 13 | 11 | 10 / 10 | 0 | 0 |
+  n5.py = n5b --mode spec (17 / 1); check_sol2 "zielonka(oink zlk) OK strategies verified".
+- READING: re-raising a gate offset WITH lags behind it, one per S4a step, inside one fallback-free run, exists (lagx10: 10 of each in an
+  11-step run). But the run stays short (11 < n = 40; whole phase 13), with U(S) = 0 and no fallback-free return. So in the data the
+  GATE-LAG re-arming costs one step each and does not lengthen the run beyond ~n; no growth at fixed QP was found. This is the last
+  climb of successor 21; the target stays OPEN.
