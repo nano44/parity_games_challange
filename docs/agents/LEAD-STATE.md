@@ -1572,3 +1572,10 @@
   - Merged l-si: itergrowth DATA (max ITER 115 at n 48, ~linear), N5-FRONTIER-box15 (CR-D′), handover 20d3a875. L-SI 10 is at handover.
   - Merged l-new 7999d0b1 / f5200580: Δ-RT-F FALSE (rtf_cex_inj.pg, n 11); PIECE_D on |D| = 1; the Δ-RT fallback side reduces to a frontier fallbacks-per-phase count.
   - Merged l-comp 758d02ef: box 8 complete, 0 violations through n 5; CLS1/FBL/CLU/WK vacuous.
+- 01:53Z: Routing:
+  - CHECKER: C60 Addendum 1 (R51 rev. 175947e8).
+  - REFEREE 11 and REFEREE-2 13: §Cs on FX, NH42 and DUAL, then REFEREE-2 continues with GD.
+  - Created L-SI successor 11 (session_01FchPxfEZ9Fo56WrCZTvnXS): the FX fixes file, then the P-N5-1E assembly with Lemma OUT on every game.
+  - L-NEW 23: frontier fallbacks-per-phase (FB-POLY set form).
+  - L-COMP: box 9 climbs; first, the status of N5's independent second implementation (gauntlet step 2), which outranks the climbs if it is not done.
+- 02:18Z: Merged checker 231c8fe6 (C60 Addendum 1 PASS). LANDED R51 (P-N5-1O), RESULTS lines 2567-2624, checker 231c8fe6, cmp OK. GAPS line 11 UPDATE uses CHECKER's C60 §6 text: the 𝒞^1O part of G-N5-TIME is CLOSED; status stays open for general games.
