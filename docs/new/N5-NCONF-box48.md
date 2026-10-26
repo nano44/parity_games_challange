@@ -186,3 +186,31 @@ an implication from (Στ)). □
 - DATA, long121_n40 (L-RED 21, from its start; out/nconf_long121.txt, out/retfb_long121.txt): one phase, L 121, N_ep 37, NCONF 14, VIS 7, f 8,
   |𝒞_f| 5; two laps again (block 2 3 5 6 7 8 6 8 9 3 5 6 11 twice); RET-FB 36 checks, 0 violations; R⁰ = 3 of REV 23.
 
+## 7. After the freeze of P-N5-EPC (14:42Z): the 33 multi-gate fallback-free returns (DATA, READING; written 14:5xZ by date -u)
+- r0shape.py with R0V=1 (out/r0shape_r02_list.txt): of the 33 fallback-free returns to configurations with |D_C| ≥ 2 in liball n ≤ 40, 29 change
+  σ̄ at ONE vertex on the whole stretch (18 of them in pft34_h3u_P32: D = {0, 32} constant, σ̄(32) constant, σ̄(0) moving among 0's 19 successors);
+  4 change it at 2-3 vertices (lev74_n40, nep80_n40 ×2, nep87_n40; all L-RED instances from random starts).
+- READING. A single-vertex stretch is not covered by R68's u-runs (D ⊄ {u}). Cutting every Odd v ≠ u to σ̄(v) keeps Ξ (σ̄ stays a best reply in the
+  cut game) but not S4a's arena, which uses τ(v) at Odd v; R64's cut ({τ(v), σ̄(v)} at v ∈ D) keeps N5^τ but leaves |D| Odd choice vertices. So a
+  "frozen-side u-run" lemma would need a new restriction. OPEN.
+
+## 8. Item (b): what makes a new multi-gate configuration inside a lap (DATA, READING; Lead's GO 14:47Z; written 14:5xZ by date -u)
+Tools newconf.py, rootrel.py (out/rootrel_newconf.txt); each instance from its own start.
+- New configurations appear only in lap 1. NEWPAIR (contains a pair (q, σ̄(q)) unseen earlier in the phase) against RECOMB (all pairs seen, a new
+  combination): nep90 18 / 30 (27 pairs seen, Σ_q deg 29), nep76 20 / 20 (29 pairs, Σ deg 31), long121 7 / 7 (11 pairs, Σ deg 12), pft34 17 / 0. A
+  RECOMB boundary changes one vertex in 25 of 30 cases on nep90, mostly the root 0.
+- ROOT × RELAY. Let r be the vertex of Q whose σ̄ changes most often (r = 0 on all four: 66 of nep90's 89 boundaries, 57 of nep76's 75, 19 of
+  long121's 36) and R := σ̄ on Q ∖ {r} (the relay sub-configuration). nep90 has 16 distinct R, nep76 19, long121 7. Inside one lap, for a fixed R,
+  the root's values do not repeat on nep90 / nep76, and lap 2 replays each R's root sequence in the same order (nep90, R = 6: 20 24 19 31 13 23 |
+  20 24 19 31 13 23 | 2 26 5 11). The root sweeps its successors in a common order across R (on nep90 20, 24, 19, 31, 13, 23, … recur in this
+  order under different R): a sweep through the root's successors by rising value, interleaved with relay toggles. So NCONF ≈ (root sweep length)
+  × (relay toggles), sparse: nep90 has 48 configurations against 17 root values × 16 relay sub-configurations.
+- Not general: on pft34 (R constant, σ̄(32) never moves) the root repeats inside fallback-free stretches (21 26 21 7 20 three times in one
+  phase with f = 1): fallback-free laps of a single root exist; they are the bulk of R⁰_{≥2} (§7) and are single-vertex.
+- READING (a route, not a proof). Within one relay sub-configuration and one lap the root behaves like an Odd vertex sweeping a monotone race
+  (σ̄(r) = the argmin of Ξ over succ(r), with Ξ non-decreasing); a return of the root under the same R needs an earlier successor's value to fall
+  back below the current one relative to the others, which happens on pft34 through self-feedback via the root (L-SI 15's "self-feedback
+  through 0"). A bound of the form NCONF_{≥2}(S) ≤ (relay changes in S + 1)·deg(r) on a fallback-free run S would need (i) no root repeat under
+  a fixed R inside S, false on pft34, or (ii) a charge of such repeats to a ρ event at a relay. OPEN. The relay changes are L-RED 21's "relay
+  D-leaves" (17 on long121, R89) and L-SI 16's "relays acting as second direct roots" (P-N5-ROOT): the two counts this route would need.
+
