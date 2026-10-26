@@ -393,3 +393,8 @@ Answered from trunk 449b6df2 (2026-10-26 18:10Z; NOW.md header 16:30Z), RESULTS 
 
 ## 2026-10-26T18:26Z Lead report (18:25Z, summary)
 R73 (P-N5-EPC) at CHECKER C82, both referees signed, no gap: f ≤ n·|C_f| per phase; reduces epoch count to X_dir, X_big, NCONF_≥2, R⁰_≥2 (OPEN). In review: P-N5-ROOT+add, P-N5-OFFMONO+add (REFEREE signed; REFEREE-2 pending); GCX, RESTRICT queued. L-RED kills (pinned, Oink-checked): UL_C (R91), C-ONCE_X (R93); R92 disagreeing Odd vertices per class linear in n. L-SI STATIC-DEPTH lane-proved, unrefereed; remaining hard count ALTERNATION. Lead reading: super-poly needs phases of length ω(n) at fixed k; records ~2.3n-3.3n. G-N5-TIME OPEN.
+
+## 2026-10-26T19:29Z owner message (verbatim)
+> I feel like we are slowly getting somewhere no?
+
+Answered from the record (RESULTS R51-R73, Lead report 18:25Z). Relayed to the Lead.
