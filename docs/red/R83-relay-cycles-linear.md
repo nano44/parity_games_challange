@@ -72,3 +72,27 @@ at least a growth exponent over ≥ 4 sizes. Labels per L40. DATA, READING. Ever
 - mkpp.py (generator; the pins are byte-identical to `mkpp.py 12 18` and `mkpp.py 48 54`, cmp).
 - rec0_20.py (N_ep, Oink), show.py.
 - L-SI's relay.py was run read-only from a detached worktree of origin/claude/l-si at 24a70938.
+
+## 4. ADDENDUM (Lead 10:52Z target: ρ_q > n in ONE phase on a class with m_c ≥ 2): why my devices stop at ρ_q ≤ phase length ≲ n (READING, DATA)
+- Trivially ρ_q ≤ T, the number of in-phase transitions: q's Ξ changes at most once per transition. So ρ_q > n needs a phase LONGER than n.
+- mkrho.py (experiments/red/usplit/; DATA) adds to mkpp ONE re-armable delay line m_1 … m_L between the two risers, read by an Odd q at
+  every position:
+  - m_i → {z_i, m_{i+1}}, with exit lengths increasing in i;
+  - when vA overtakes vB, a wave runs down the line and Odd's best response at q follows it, so Ξ(q) changes at every wave step;
+  - when vB overtakes vA, all of the line switches back to its exits at once (re-armed).
+  The line does re-arm inside one phase, as designed. But mkgrow's risers rise one per iteration, so the waves are cut short:
+  `mkrho.py 6 5 12` gives n 119, ITER 13, ρ_q 11, one phase, 0 fallbacks.
+- Spacing the rises L apart with mkgrow's taps costs a timing line of length about K·L. So T ≈ K·L ≲ n again, and ρ_q ≤ T stays linear.
+- What would beat it is EVENT-DRIVEN re-triggering: rise j + 1 unblocked by the completion of wave j, so one line is traversed K times at
+  O(1) vertices per rise. I tried two forms:
+  - a trigger w_{j+1} that switches into the line head when its value passes a threshold T_{j+1};
+  - a gate whose b-branch reads the line.
+  Both put the line (whose end is the riser) on the route of the riser's own next option. That closes a cycle riser → x_{j+1} → w_{j+1}
+  → line → riser, or, with the partner riser, a 2-cycle vA → … → vB → … → vA. Any unblocking of a route needs a ROUTE change of that
+  route (or a gate change on it), and a route that reads a riser's value passes through the riser.
+- So, in my toolkit, feedback closes a cycle. The super-linear phase needs feedback that does not pass through the risers. Two
+  candidates:
+  - gates whose σ̄ flips are driven by a chain disjoint from the risers;
+  - Even-controlled cycles in Friedmann's style, which the class structure (every honest cycle in U_c is c's cycle) forbids inside one
+    class, but not across classes.
+  Neither is built. Open.
