@@ -13,9 +13,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
   memoisation sentence), 1E-N2 ((VJ) confirmed), 1E-N3 (standing premise: S1's procedure realises SPEC's optimal σ̄), 1E-N4 (OUT-G at
   34,808 Iσ = ∅ states, 13,707 with Iτ ≠ ∅). Tools scratch/onee_probe.py, onee_oink.py; logs scratch/onee_logs/ (run_all.sh).
 - DONE: P-N5-1E §C vs R2 ceed1f63: identical verdicts, no gap; 1E-N1 ours alone (R2 missed the dropped memo sentence); N-1E-3 closed by us.
-- NEXT (Lead 04:30Z): (2) P-N5-VILB docs/new/P-N5-VILB-box44.md sha1 872d4400…, pin e7febdc2 (sign §1 facts + κ-FB-ROUND, §2 VI-LB);
-  (3) P-N5-ACCEL docs/new/P-N5-ACCEL-box44.md sha1 301f0be0…, pin e7febdc2 (sign §2 ACCEL (a)-(c), §3 EPOCH (a)-(c); check R19 (d) (SG));
-  (4) P-N5-2T docs/si/P-N5-2T-box16.md sha1 fcb91130…, pin cbb3b738 (conditional on R56). No docs/referee-2/ VILB/ACCEL/2T before own report.
+- DONE (Lead 04:30Z list): VILB R-N5-VILB.md dcb1451c (all SIGNED; VILB-N1, N2); ACCEL R-N5-ACCEL.md a19cdff7 (all SIGNED; ACCEL-N1..N3,
+  (SG) re-derived in-phase); 2T R-N5-2T.md (written 04:50Z-04:58Z; all SIGNED conditional on R56; 2T-N1 FB-2O omits both-cycle-node case,
+  2T-N2 DIR needs no |Q_c| <= 2, 2T-N3 distinct pair values, 2T-N4 DIR 65 checks, SAT-2 / FB-2T never reached). Tools vilb_probe, accel_probe,
+  twot_probe (+ logs dirs).
+- NEXT: §Cs on VILB, ACCEL (R2 f0e82d8a, files on my tree, open only now that my reports are pushed) and 2T when R2 reports; the Lead routes.
 - TRAP (new): fbred_probe.main skips n > 64 silently (counter skip_big); say so when comparing maxima.
 
 ## HANDOVER (successor 11 -> successor 12), written 2026-10-26T03:13Z by date -u, context ~635k (Opus 5.5 under D15; label "(Opus 5.5, D15)")

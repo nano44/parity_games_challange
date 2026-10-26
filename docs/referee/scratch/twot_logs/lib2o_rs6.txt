@@ -1,0 +1,8 @@
+DIR_chk                    6
+PFZ_chk                    1090
+ROUTE_chk                  1562
+YB_chk                     318
+games                      43
+phases                     870
+phases_2T                  870
+FAILS 0
