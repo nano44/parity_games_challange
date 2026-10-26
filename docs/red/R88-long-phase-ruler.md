@@ -64,3 +64,37 @@ Path-set change levels of Ξ(q) in long121's phase (32 / 33 / 40 changes at q = 
 phlen.py (longest phase; reads .start and .start.json), phclimb.py (FIT=T longest phase, FIT=F in-phase fallbacks), pad.py (padding),
 fullstart.py (full start pair as start_pair builds it, needed by n5b), shrink.py (edge-deletion core with T ≥ threshold), gsp.py (random
 gated-shortest-path family).
+
+## 5. ADDENDUM (written 13:49Z, date -u; Lead 13:28Z and 13:44Z asks): fallback configurations (FB-C), epochs, runs, and what nesting needs
+New pins (experiments/red/n3/instances/; n5.py = n5b --mode spec; check_sol2 "zielonka(oink zlk) OK strategies verified" on both):
+| file | sha1 (.pg) | .start sha1 | n | Q | iterations / fb | longest phase |
+| --- | --- | --- | --- | --- | --- | --- |
+| core41_n40.pg (shrink2.py core of long90_k2, ruler kept) | 59d4ff82a9301751f5b4f0c7748785ccb9af0b62 | 41d60df5 | 40 | 2 | 42 / 6 | 41 |
+| comp54_n80.pg (compose.py: two cores, tail of one remapped into the other) | 16c640081c106f58af9d2c50c5ebd4568fa3f2ad | 35dee2db | 80 | 4 | 55 / 6 | 54 |
+
+### 5.1 FB-C quantities (fbconf.py; L-NEW 26's Theorem FB-C: f per phase ≤ #distinct σ̄|Q at fallback sources · (4n² − 3n))
+| instance | phase T | f | distinct σ̄|Q at fallback sources | max fallbacks per configuration | Π deg(q) | 4n² − 3n |
+| --- | --- | --- | --- | --- | --- | --- |
+| long121_n40 | 121 | 8 | 5 | 2 | 60 | 6,280 |
+| long90_k2_n40 | 90 | 8 | 4 | 3 | 8 | 6,280 |
+| core41_n40 | 41 | 6 | 2 | 4 | 8 | 6,280 |
+| comp54_n80 | 54 | 6 | 2 | 4 | 64 | 25,360 |
+- FB-C is far from tight here; no tension with it.
+- Epochs inside the phase (σ̄|Q constant runs): long121 37 epochs over 14 distinct configurations, one configuration visited 7 times;
+  long90_k2 20 epochs over 5 configurations, max 7 visits. So configurations DO repeat inside one phase (the re-run revisits them).
+- Fallback-free runs inside the phase: long121 [4, 17, 13, 17, 11, 15, 13, 17, 6] (max 17); long90_k2 max 13; core41 max 7; comp54 max 12.
+  The long phases are (f + 1) short runs; the ping-pong is fallback-driven (S4a to the gate, fallback back).
+
+### 5.2 What nesting needs (IMPLICATION from FB-C, which is under review, plus READING)
+- IMPLICATION (if FB-C holds; FB-C itself is L-NEW 26's, not mine): in a phase, f ≤ Π_{q∈Q} deg(q) · (4n² − 3n) ≤ Δ^k (4n² − 3n), and the
+  phase is f + 1 fallback-free runs, so T ≤ (Δ^k (4n² − 3n) + 1) · R_max, R_max := the longest fallback-free run of the phase.
+  - So on 𝒞^kO (k fixed) a super-polynomial phase needs a super-polynomial FALLBACK-FREE run (route (i) of R83 §2), or FB-C false.
+  - A fallback-driven ruler like long121's (each re-run costs fallbacks) can nest to depth d only with d ≲ log(#configurations) =
+    O(k log Δ): k must grow with d. At fixed k, fallback-driven nesting stays polynomial.
+- Re-trigger from inside a block (Lead's first question): NOT observed. In all four instances the re-run is triggered by a top drop
+  that happens in an S4a run (t18-19, t24 in core41), and the block itself contains no drop that re-runs a sub-block. The 2-copy
+  composition, where the outer copy's exits read vertices of the inner copy, gives T 54 vs 41: the copies run nearly in lockstep, not
+  multiplicatively. The 20-minute climb from comp54 is reported below when it ends.
+- n cost per level: one level costs the whole core (n = 40 incl. ~10 sub-sink vertices; 67 edges after shrinking). With a second level
+  not yet built, the per-level cost is unknown; the composition is 2 × 40.
+- Each top drop at q = 0 is a ρ event, ROUTE-driven (L-SI 15 §26); N3-CHAIN (R87) does not apply to it (no flip).
