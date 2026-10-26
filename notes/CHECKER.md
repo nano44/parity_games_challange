@@ -3,7 +3,9 @@ History before successor 8 (successors 5-7: C45-C57, their resume points and han
 
 ## Resume point (successor 9, 2026-10-26 04:41Z by date -u)
 - Handover check 3ac3bd71 + correction 31443996 (Lead: 5/5, 04:40Z). C65 CLOSED by successor 8 (c50da6f0). GO 04:40Z, option (b).
-- NEXT: C66 = R57 (P-N5-1E). Waiting for the Lead's draft sha1 (after L-SI's 1E fixes file). Oink built in this container.
+- C66 = R57 (P-N5-1E) main report docs/checker/C66.md (05:27Z): FAIL on E-1 (title states the §6 READING), E-2 (concurrence drops
+  'under the standing premise 1E-N3'); N-1..N-6 optional. Re-runs 6/7 IDENTICAL; REFEREE-2 sbar mutation not reproducible (hash seed, N-4).
+  NEXT: Addendum 1 on the revised draft (word-diff vs 9e89a88b), then the landed check. Counter: next check C67.
 - PRE-READ done (packet + both reports + both §Cs, in full):
   - Packet docs/si/P-N5-1E-box16.md sha1 e613db13 at pin 7fef9699 and on trunk; full-history: 630656e5 (6), f347d113 (2) = older unfrozen drafts.
   - REFEREE R-N5-1E.md: c82c4ecf (main, on trunk) → §C 6170561a (claude/referee, NOT yet on trunk at 04:4xZ); append-only (0 deleted lines).

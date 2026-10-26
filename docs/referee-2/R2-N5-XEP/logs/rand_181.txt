@@ -1,0 +1,24 @@
+MODE random 10000 4 12 181 2 MUT -
+DEP_checks: 3057
+GDA_checks: 310394
+REC_XSN_D: 351
+REC_XSN_pre: 60
+REC_cross_after_epoch_freeze: 0
+REC_cross_at_fallback: 12
+REC_cross_epoch_boundary: 291
+REC_cross_inside_epoch: 60
+REC_crossings: 351
+RSTICK_checks: 111
+RSTICK_transitions: 2398
+SNPA_checks: 19484
+SNPB_checks: 546
+SNPC_checks: 49449
+SPLITR_checks: 82860
+XEP_checks: 49449
+phases: 49449
+runs: 20000
+SNPB_max_changes_after_prefix: (0, 'random181:313#2')
+max_N_ep: (3, 'random181:1776#1')
+max_X_D: (2, 'random181:957#1')
+max_epoch_fallbacks_minus_(n-1): (-2, 'random181:341#1')
+RESULT OK violations=0
