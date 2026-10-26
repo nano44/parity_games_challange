@@ -10,4 +10,6 @@
   --rand stream.
 - instances/: lenonly_n8.pg (DEAD box 17, sha1 725c2766…); climb outputs tw_*, off_* (best games, not counterexamples).
 - below.py: per-transition trace of the long runs (note §9); pv.py: per-vertex changes per run (note §9).
+- mkret.py, mkalt.py: OFFSET-ONCE counterexamples (note §10; instances offret_n23, offalt_K10); mkalt2.py: the failed linear-size variant;
+  trace.py: one-vertex N5 trace (logs/trace_offret_n23.txt).
 - logs/: the runs quoted in the note. Reproduce: `python3 -I gap.py --list ../../new/box41/lib41.txt 2` with RS=2, etc. (see the note §7).
