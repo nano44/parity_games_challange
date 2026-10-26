@@ -85,3 +85,34 @@ changers (ALLSPLIT; at S4a transitions predicted 0).
 - XEP-N2: WM (R23 (g)) is signed under a 𝒞^1O setting line; its proof (P-N5-Z §8: R18 (d) S (c) "⇒" + σ_k in the arena) is game-general;
   a landing note may record it.
 - XEP-N3: DATA.
+
+## §C. Comparison with REFEREE-2 (REFEREE successor 12; written 2026-10-26T05:57Z by date -u; (Opus 5.5, D15))
+- Routing: the Lead's message of 05:54Z (Lead's stamp), item (1). Objects: this report (62f4bd2c; §1-§6 above unchanged) and
+  docs/referee-2/R2-N5-XEP.md (referee-2 fd43a69f, successor 14), opened after 62f4bd2c was pushed. Same pinned text (sha1 237dd5eb…).
+
+### C.1 Verdicts side by side
+| § | statement | REFEREE (62f4bd2c) | REFEREE-2 (fd43a69f) | joint |
+| --- | --- | --- | --- | --- |
+| §1 | R-STICK_D | SIGNED (XEP-N1) | SIGN (N-XEP-1) | signed |
+| §2 | SN-PREFIX_D (a)-(c) | SIGNED (XEP-N1: (c) loose) | SIGN (N-XEP-1: (b) "never", (c) sharper) | signed |
+| §3 | D-EPOCH | SIGNED | SIGN | signed |
+| §4 | X-EP | SIGNED (reduction; cond. EPOCH (b)) | SIGN (cond. EPOCH (b)) | signed |
+| §4 | "With ALT" line | SIGNED (cond. ALT) | SIGN as an inequality (cond. ALT); last clause a READING (N-XEP-2) | inequality signed; last clause a READING (we accept N-XEP-2) |
+| §5 | data, qc_toggle, X_SN^pre | not signed | not signed | not signed |
+No disagreement; no gap in either report.
+
+### C.2 Joint note map
+| REFEREE | REFEREE-2 | relation | joint status |
+| --- | --- | --- | --- |
+| XEP-N1 (split ⇒ ∈ R_D by G_D (a); no all-split crossing inside S4a runs; X_D ≤ f + X_SN^D) | N-XEP-1 (same; also: SN-PREFIX_D (b)'s "at most once" is "never") | SAME | optional sharpening |
+| XEP-N2 (WM game-general: P-N5-Z §8 proof, R55's S (c) confirmation) | §1 premises (same: WM's proof in N5-X-box4 §8, RESULTS l.1134 "transferred to every game by (F1) in G_τ"; XW = (VJ) at τ′ := τ_k, signed on every game in P-N5-1E) | SAME conclusion, two routes | landing note |
+| — (I signed the line without separating its last clause) | N-XEP-2 (the clause "charged to the quantity that also bounds fallbacks (R56 (f))" is a READING: R56 (f) bounds f by ρ alone; ties, non-clean and cycle-node changes are extra quantities) | ACCEPTED: correct; the inequality is what is signed | landing entry: inequality signed, last clause READING |
+| XEP-N3 (DATA: EPOCH (b)'s term vacuous) | §5 (same; best −1) | SAME | DATA |
+
+### C.3 Data
+| item | REFEREE | REFEREE-2 | agree? |
+| --- | --- | --- | --- |
+| lib41 S3 crossings | 3,222 = 1,269 + 1,833 + 120 (all 120 at fallbacks) | 3,222 = 1,269 / 1,953 inside / 0 after freeze; 1,833 X_SN^pre | YES, exactly (and both match the packet) |
+| all-split crossings occur only at fallbacks | lib41 S3: 120 of 120 at fallbacks | lib41 × 3: 178, all at fallbacks | YES |
+| other sets | lib41 n ≤ 64 × 5, box-43/44 × 5, 3,000 random × 3 | 𝒞^1O files, lib2o, box-43/44, 10,000 random × 2 | YES (0 failures in both) |
+| controls | — | rstick_all 6,444, xsn0 607 bite | — |

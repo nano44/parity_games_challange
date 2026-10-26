@@ -96,3 +96,22 @@ state, L = max(max_S M_D, −1): COARSE_L(W) constant from k_0 + n − 1; non-va
 - H3-N2: P^c_L case B1 (x on c′'s cycle): one sentence that the σ̂-cycle is simple (π's part on c′'s cycle and the arc c′ → x are disjoint
   because x ∉ π).
 - H3-N3: DATA.
+
+## Addendum A (2026-10-26T05:58Z by date -u; (Opus 5.5, D15)): the index in FRZ-U_H3 / CR-D (the Lead's 05:54Z question), and frz2_n24
+- What the proof gives. CR-D's proof applies P^c_L at j = n − 1, which needs the state k_0 + n − 1 to lie in S, and concludes COARSE(Ω_t) =
+  COARSE(Ω_{k_0+n−1}) for every t ∈ S with t ≥ k_0 + n − 1. So the freeze starts at the state k_0 + n − 1, reached after n − 1 transitions:
+  the 0-BASED (n − 1)-th state (the n-th state counted from 1). The statement has content only when S has at least n + 1 states (k_0, …,
+  k_0 + n − 1 and one more); on a run of exactly n states it says nothing. The packet's §0 phrase "constant from the run's (n − 1)-th state
+  on" is correct in the 0-based reading, which matches §5 and §6's "from state k_0 + n − 1 on".
+- The 1-based reading (constant from k_0 + n − 2, so a run of n states would already show a freeze) is NOT given by this proof: P^c_L at j =
+  n − 2 covers only simple paths of ≤ n − 2 edges, and a W-play can follow a simple path of n − 1 edges (through every vertex) to a W-cycle
+  node with a self-loop. I do not sign the 1-based reading. I did not find a counterexample to it either (below).
+- Correction to my §6 table: its "FRZ non-vacuous" column counted runs of ≥ n states. Recounted with the proof's reading (≥ n + 1 states):
+  lib41 3 runs (not 4; one lib41 run has exactly n states), frz1_n24 2 runs; all 0 failures. My probe now counts FRZ_nonvacuous for
+  ≥ n + 1 states and, separately, FRZ1B: runs with ≥ n states where COARSE_L(W) changes from k_0 + n − 2 to k_0 + n − 1.
+- frz2_n24 (experiments/n5-exhaustive/instances/frz2_n24.pg, sha1 25db3330…, with its .start; L-COMP): run with the given start pair, S3 and
+  6 random pairs, together with frz1_n24: 0 failures of BP, TCC, C2H3, WMG, FRZ; FRZ1B checked on 4 runs of these two files and on 4 lib41 runs:
+  0 changes from k_0 + n − 2 to k_0 + n − 1. Under the proof's reading, frz2_n24's n-state run makes FRZ-U_H3 vacuous; it is consistent with
+  the stronger reading, which stays unproved. (h3_logs/frz12_n24_rs6.txt, h3_logs/lib41_rs4.txt re-run.)
+- Verdicts unchanged: FRZ-U_H3 and CR-D SIGNED as stated (0-based). Note H3-N4 for the fixes file: say "from state k_0 + n − 1 (after n − 1
+  transitions; content needs ≥ n + 1 states)" in §0's table.
