@@ -1,4 +1,4 @@
-# Draft RESULTS R55 (Lead, 2026-10-26 03:03Z by date -u; both §Cs and the fixes file filled) — to CHECKER C64
+# Draft RESULTS R55 (Lead, 2026-10-26 03:03Z by date -u; both §Cs and the fixes file filled) (rev. 2026-10-26 03:35Z: C64 E-1, CHECKER's suggested text) — to CHECKER C64 — LANDED in RESULTS Results 2026-10-26 03:45Z (CHECKER C64 0c1969e7 PASS after E-1), after R54
 
 ### R55 [refereed-only] N5 on EVERY game: with the disagreement set D_k := {Odd u : σ̄_k(u) ≠ τ_k(u)} in place of o, the honest and the W-valuation agree off the D-region (G_D (a)), factor through the first D-vertex under (h_D) (G_D (b)) and agree in coarse form above M_D under (h_D) ∧ (h3_D) (G_D (c1), (c2)); Ξ changes on F_D at most max(0, |F_D| − 1) times per D-crossing-free interval (F1°_D); W(u) does not drop at u ∈ D_k ∩ D_{k+1} under (h_D) (Wo_D) (2026-10-26) — structural lemmas for N5 beyond one Odd choice vertex (not M3, not a step-4 pass, not a TARGET.md claim; nothing here bounds N5's running time on any class; G-N5-TIME stays open for general games), CHECKER PASS (docs/checker/C64.md, checker PENDING)
 - Object (packet P-N5-GD, added at l-new 205c9ed7, pinned trunk 3c6f6c16, unchanged during review): docs/new/P-N5-GD-box43.md, sha1
@@ -13,10 +13,11 @@
   every u ∈ D_k, neither the honest play nor the W-play from u visits D_k after leaving u. (h3_D) at k: λ_Ξ(u) = λ_W(u) for every u ∈ D_k.
   lev, COARSE_L, (C2), (C4) as in RESULTS R25; M_D := max over u ∈ D_k of lev(Ξ_k(u), W_k(u)), ⊥ if D_k = ∅. On 𝒞^1O with D_k = {o}:
   R_D = R, F_D = F, (h_D) = H1 ∧ H2, (h3_D) = H3.
-- Claims signed (both referees "(Opus 5.5, D15)", L37); no item uses (P); premises LANDED: RESULTS R15 (a), R17 (a)-(c), R18 (c) flat
-  case, R18 (d) Lemma S (c) in its landed "⇒" form, R21 (a) XW, R21 (c) FBL-N (i), R25 (C2), (C4), R38 (a). Each is signed under a
-  𝒞^1O setting line; both referees read each proof and CONFIRM that it uses no one-Odd step (R17 and R18's flat case are one-player
-  statements, applied to G_τ, its arenas and 𝓕, which are one-player on every game; XW is VJ00 (11) on G_σ). R21 (c) FBL-N (ii) and
+- Claims signed (both referees "(Opus 5.5, D15)", L37); no item uses (P); premises LANDED: RESULTS R15 (a) and R38 (a) (both landed
+  for every game); R17 (a)-(c), R18 (c) flat case, R18 (d) Lemma S (c) in its landed "⇒" form, R21 (a) XW, R21 (c) FBL-N (i), each
+  signed under a 𝒞^1O setting line, whose proofs both referees read and CONFIRM use no one-Odd step (R17 and R18's flat case are
+  one-player statements, applied to G_τ, its arenas and 𝓕, which are one-player on every game; XW is VJ00 (11) on G_σ); and R25 (C2),
+  (C4), facts about lev and COARSE_L on values. R21 (c) FBL-N (ii) and
   R22 (a) step 1 DO have a one-Odd step; the packet does not cite them and re-proves both in set form (F1°_D steps 1 and 4) (premise-class
   note; N-GD-2 + REFEREE §1; fixes):
   (a) Lemma G_D (a) (no hypothesis): for every state k and every v ∈ F_D, Ξ_k(v) = W_k(v).

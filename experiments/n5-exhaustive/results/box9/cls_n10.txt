@@ -1,0 +1,4 @@
+start 0.0 {'WK_checks': 0, 'wakes': 0, 'CLS1_checks': 0, 'CLS1_case_r>L': 0, 'ABSL_intervals': 0}
+163 0.22 {'WK_checks': 0, 'wakes': 0, 'CLS1_checks': 0, 'CLS1_case_r>L': 0, 'ABSL_intervals': 0}
+168 0.33000000000000007 {'WK_checks': 0, 'wakes': 0, 'CLS1_checks': 0, 'CLS1_case_r>L': 0, 'ABSL_intervals': 0}
+450 0.44 {'WK_checks': 0, 'wakes': 0, 'CLS1_checks': 0, 'CLS1_case_r>L': 0, 'ABSL_intervals': 0}
