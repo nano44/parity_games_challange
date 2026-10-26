@@ -303,3 +303,14 @@ AGAINST_W ('experiments/si/fb2o/instances/tcwult2_against_n8.pg', 0, 1, 0, 4, -1
     experiments/si/xing/instances/zcl_cu_n48.pg with a random start (edge (16, 20), C-interval [7, 23]).
 - Survivor: CONJECTURE UL_C (no U event at index ≥ |U_c| − 1 of its C-interval): 0 violations on everything above, the UF-ONCE killers and the
   libraries with KMIN 1; the killers' repeated U events on one edge all sit at C-cuts.
+
+## DEAD box 21b (L-SI successor 17, 2026-10-26T16:48Z by date -u): the naive cyclic settling order (own; note docs/si/N5-GCX-box21.md §9)
+- Statement killed (never claimed): in the cyclic abstract model (§8), a changer at transition k whose new play contains no other changer at k
+  (a DEEPEST changer) has made its final change. It was the candidate for lifting §7's "most downstream changer is final" to cycles.
+- Obstruction: changes on the plays of non-chosen successors. A successor that is not viable at k (its play runs through v) can change at k
+  and become viable and better at k + 1.
+- Instance: experiments/si/root/abscyc.py DEEP (`python3 -I root/abscyc.py --deep` from experiments/si prints DEEP REPRODUCED; pinned):
+  non-terminals 0, 1, 2; succ(0) = succ(1) = {2, t3, t4}, succ(2) = {0, 1, t3}; w = (2, −8, 0); t3: (h, T) = (51, 101), t4: (2, 29); start
+  (2, t4, 1); vertex 1 is deepest at transition 0 and changes again at transition 1.
+- Survivor: CONJECTURE FINAL-EACH (every transition holds some vertex's final change; 0 violations in 22,989 transitions), which implies
+  ≤ n steps.

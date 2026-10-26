@@ -216,3 +216,11 @@ o=$(SMALL=1 TIEMAX=1 python3 -I root/absmodel.py --rand 3000 8 3); grep -q "game
 if grep -q "DSUM_V\|MONO_V" <<<"$o"; then exit 1; fi
 SMALL=1 TIEMAX=1 ABSMUT=1 python3 -I root/absmodel.py --climb 3000 5 1 | grep -q "over_height="
 echo "root (abscyc obstruction instance, FINAL-EACH; absmodel ABS-TIE with ties broken away from the current choice; control fires): PASS"
+# P-N5-GCX-box21 packet: 5 quotes verbatim at trunk 7d87f9be; shifted control fails.
+if git cat-file -e 7d87f9be; then
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-GCX-box21.md | grep -q "quotes=5 bad=0"
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-GCX-box21.md --mut | grep -q "QUOTES FAIL"
+  echo "root (packet P-N5-GCX-box21: 5 quotes verbatim; shifted control fails): PASS"
+else
+  echo "root (packet P-N5-GCX-box21 quotes): NOT RUN (source commit not in this clone)"
+fi
