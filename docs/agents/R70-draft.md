@@ -1,6 +1,6 @@
-# Draft RESULTS R70 (Lead, 2026-10-26 13:50Z by date -u; both reports, both §Cs and the fixes file filled) — to CHECKER C79
+# Draft RESULTS R70 (Lead, 2026-10-26 13:50Z by date -u; both reports, both §Cs and the fixes file filled) — to CHECKER C79 (rev. 2026-10-26 14:14Z: C79 E-1, N-1..N-3)
 
-### R70 [refereed-only] N5 on EVERY game: an in-phase fallback is a Bellman-Ford step of the honest valuation, so the level LEV rises across it unless an Odd vertex's own level binds (Lemma FB-RISE (a)), and across every fallback after a W-honest state (FB-RISE (b)); hence in every phase the W-honest states number at most 4n² − 3n (Theorem HON-FF), with no fallback term, and so do the D = ∅ states, the D = ∅ epochs and the transitions out of them (HON-0-FF), and the {u}-intervals of a phase number at most 1 + (4n² − 3n) + X_dir + X_big (REC-1-FF (a)); as IMPLICATIONS from premise (Στ), the |D| = 1 part of a phase is bounded by REC-1-FF (c), (d) (2026-10-26) — partial step-4 lemmas for N5 beyond one Odd choice vertex (the D = ∅ part of every phase is free of f; f itself, X_dir, X_big and |D| ≥ 2 epochs are not bounded here; not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C79.md, checker PENDING)
+### R70 [refereed-only] N5 on EVERY game: an in-phase fallback is a Bellman-Ford step of the honest valuation, so across it the level LEV reaches min(LEV + 1, LEV_odd, n − 1), a rise unless an Odd vertex's own level binds or LEV is saturated (Lemma FB-RISE (a)), and after a W-honest state h it reaches min(LEV(h) + 1, n − 1) (FB-RISE (b)); hence in every phase the W-honest states number at most 4n² − 3n (Theorem HON-FF), with no fallback term, and so do the D = ∅ states, the D = ∅ epochs and the in-phase transitions whose source lies in a D = ∅ epoch (HON-0-FF), and the {u}-intervals of a phase number at most 1 + (4n² − 3n) + X_dir + X_big (REC-1-FF (a)); as IMPLICATIONS from premise (Στ), the |D| = 1 part of a phase is bounded by REC-1-FF (c), (d) (2026-10-26) — partial step-4 lemmas for N5 beyond one Odd choice vertex (the D = ∅ part of every phase is free of f; f itself, X_dir, X_big and |D| ≥ 2 epochs are not bounded here; not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C79.md, checker PENDING)
 - Object (packet P-N5-HONFF, added at l-new 2fca63b8, pinned trunk 4a0a8aba, unchanged during review): docs/new/P-N5-HONFF-box47.md, sha1
   98101d1fe723a570f3c79085b929a456ebb7dff5 (L-NEW successor 26, Opus 5.5). The referees' notes are collected by the lane in
   docs/new/P-N5-HONFF-fixes-box47.md (l-new b2dcf365, sha1 ccc520dd83c9086b57a2417c1cdcede44e7b7865, L-NEW successor 27: HONFF-N1..N3,
@@ -34,12 +34,12 @@
   after the packet, P-N5-FBC, under review, bounds f by distinct configurations; not part of this entry). (ii) (e) needs T*(G^u), polynomial
   but very large (RESULTS R51 (a)). (iii) Thin decisive data (N-HONFF-3, both referees): exact LEV was reached on 5 of the 6 known gaps
   with a fallback inside (j7_n32 stays over budget on both engines, REFEREE-2 even at 1.5·10⁸ paths per phase); REFEREE verified 10 inside
-  fallbacks exactly, with 7 phases over budget. The "no Odd term" control fails, always where LEV_odd binds (both referees), so the Odd term
+  fallbacks exactly, with 7 phases over budget. The "no Odd term" control fails, always where LEV_odd binds (both referees; "always where LEV_odd binds" is REFEREE's observation), so the Odd term
   in (a) is needed.
 - Data (DATA, not proof): REFEREE (successor 14, own ff_probe; lane code not run): 0 failures in 23,129 phases (the packet's six
   inside-gap instances with their starts, lib41 n ≤ 20, random games n 5-12, 9,000 runs); max 18 W-honest states in a phase; the "+2"
   mutation bites (5). REFEREE-2 (successor 16, own honff_check.py; lane code not run): 0 violations; FB-RISE (a) exercised at 1,642
-  in-phase fallbacks (1,084 at non-honest states) in its sets (its report §4); Case A checked pointwise 661M+ times, 0 failures; mutations
+  in-phase fallbacks (1,084 at non-honest states) in its sets (overlapping sets; its report §4); Case A checked pointwise 661M+ times, 0 failures; mutations
   ctrl and b2 bite (b2 once).
 - Signatures: REFEREE docs/referee/R-N5-HONFF.md (referee cce5ea5e, §C e7db1ab4, successor 14): all SIGNED, (e) as implications, no gap;
   Q-A YES; notes HONFF-N1..N3. REFEREE-2 docs/referee-2/R2-N5-HONFF.md (referee-2 05e7663c, independence addendum 1306c31e, §C 11e3cfb1,
