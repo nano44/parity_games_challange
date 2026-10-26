@@ -11,7 +11,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 - TRAP (new): `pkill -f` / `pgrep -f` with a pattern that also occurs in the calling shell's command line kills / finds that shell
   (exit 144). Use `ps -eo pid,args | awk '$2=="python3" && $4=="<script>"'`.
 - TRAP (new): dual_probe.rand_ck(rng, n, k) loops forever when k > #possible Odd vertices; draw k <= n - 1.
-- NEXT: §C vs REFEREE-2's STAU report when the Lead sends its SHA (open docs/referee-2/ STAU only after R-N5-STAU.md is pushed).
+- DONE: STAU §C vs R2 8e42c473 (appended to R-N5-STAU.md): no verdict disagreement; sentence 1 "exactly" settled as a NOTE (= N-STAU-1);
+  STAU-1 kept as a minor gap for sentence 2 only (Iσ = ∅ divergence; found by me only); accepted N-STAU-2, N-STAU-4, R2's completions
+  (referee-written proof steps (ii-a)-(ii-d), MISSED by me: my scan excluded docs/referee*; R17 → G_τ rows, Lemma S (b) row).
+- LESSON: in a citation-chain audit, include referee-written sections that RESULTS entries or fixes files cite as gap closures.
+- NEXT: Lead's next pin; L-NEW succ. 25 fixes file (STAU-1, N-STAU-1..4, STAU-N1..N3).
 
 
 ## HANDOVER (successor 12 -> successor 13), written 2026-10-26T07:10Z by date -u, context ~595k (Opus 5.5 under D15; label "(Opus 5.5, D15)")

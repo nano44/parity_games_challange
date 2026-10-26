@@ -142,3 +142,61 @@ phase (in-phase fallbacks f ≤ 1 + (n − 2)(2n − 1)) and "every in-phase N5^
   under the key (λ_Ξ, λ_U, τ) (P-N5-SN-box33 l. 35) and λ_U is constant when τ is.
 
 DONE (REFEREE successor 13, (Opus 5.5, D15)).
+
+## §C. Comparison with REFEREE-2 (R2-N5-STAU, claude/referee-2 8e42c473, successor 15), written 2026-10-26T08:44Z-08:46Z by date -u
+- Opened only after my report was pushed (48674360, 08:43Z) and on the Lead's word (08:44Z). Read in full.
+- Re-run on my engine: REFEREE-2's N-STAU-1 witness instances/nonex_min.pg (sha1 cd2c60f7…, start SIGMA0 1:2 3:3, TAU0 0:1 2:0; copied to
+  scratch/stau_inputs/r2/): τ-stable, Iσ = {(1,3)}, Iτ = {(0,0)}, τ value-optimal; N5^τ takes Σ, keeps τ, and λ_Ξ goes [1,1,1,3] → [0,3,0,3] ✓.
+- Their completions (ii-a)-(ii-d) (referee-written proof steps cited by RESULTS R21, R24, R25): I checked them by search, not line by line.
+  docs/referee/R-N5-X (no hit), R-N5-FB (H′ = a functional graph of (T); τ′ := σ̄[v → u], a quantifier; l. 168 = END), R-N5-U1 (no hit),
+  R-N5-OE l. 80-86 (as FB); docs/referee-2/R2-N5-X l. 37 (FIX: "τ is constant in a phase, so S4b and the Odd fallback do not occur"),
+  R2-N5-FB (functional-graph H′), R2-N5-U1 (no hit). No use of S4b's output ✓.
+
+### C.1 Item by item
+| item | REFEREE (mine) | REFEREE-2 | relation |
+| --- | --- | --- | --- |
+| §1 (a)-(d) | SIGNED | SIGN | same |
+| (d): R15 (a) transfers too | STAU-N1 | N-STAU-3 | same |
+| (b), (c): "SPEC's output τ is value-optimal" rests on 1E-N3 (τ attains S1's valuation), not on Lemma S (a) alone | used both in my proof of (b), (c), but did not flag the packet's citation | N-STAU-2 | found by REFEREE-2; ACCEPTED (citation) |
+| Corollary sentence 1, "exactly" | STAU-1 part (i) | N-STAU-1 (witness nonex_min, reproduced) | same finding; SETTLED AS A NOTE (below) |
+| Corollary sentence 2, "They differ only in WHEN a phase ends: at a τ-stable state …" | STAU-1 part (ii): FALSE as written (they also differ at Iσ = ∅ states; witness is0_c1o264) | not raised as a defect of the Corollary; its N-STAU-4 / L-COMP comparison records the same mechanism in data (step-level keeps at Iσ = ∅, followed by an Odd fallback) | found by REFEREE only; gap vs note settled below |
+| Corollary transfer clause | SIGNED | SIGN | same |
+| §3 TIEKEEP: step level vs transition level | — (my counts are state-level DIFF_TS / DIFF_IS0 and transition-level TIEKEEP_inphase; not raised as a packet note) | N-STAU-4 | found by REFEREE-2; ACCEPTED (definition) |
+| Audit (1) | YES | YES, with completions | same answer |
+| (1): docs/red/R58-n5-width.md §9 (R18 (a)) omitted, unused | STAU-N2 (with SPEC, T21, brchanges: not on the chain) | §2.1 (i) (same classification of the others as remarks) | same |
+| (1): referee-written proof steps (ii-a)-(ii-d) cited by RESULTS as gap closures | MISSED (my file scan excluded docs/referee*) | §2.1 (ii) | found by REFEREE-2; ACCEPTED, checked by search above |
+| (1): extra table rows (R17 Lemma P / PH transfers to G_τ segments; R18 (d) Lemma S (b); R15 (a) citations) | R15 (a) only (STAU-N1); Lemma S (b) argued in my §1 reading, not as a row | §2.3 | found by REFEREE-2 (R17 rows, Lemma S (b) row); ACCEPTED, all FIX / R15 kind |
+| Audit (2) | NO | NO | same |
+| (2): wider search than the lane | ASCII H' (14 hits), S1's procedure, tie-breaks (all S4a's or σ̄'s) | 323 hits, three passes | same conclusion, independent term lists |
+| phase key (λ_Ξ, λ_U, τ) = (λ_Ξ, τ) | STAU-N3 | §2.2 last bullet | same |
+| Data | 0 failures (random 20,000; random 𝒞^1O 5,000; lib41), lib41 max f 33 | 0 violations (503 files f ≤ 37, lib41 f ≤ 33, random), mutations fail as they must | same; lib41 maxima agree |
+- No disagreement on any verdict of (a)-(d), on the transfer clause, or on either audit answer.
+
+### C.2 Gap or note (the Lead's question)
+- Sentence 1 ("exactly"): a NOTE. Read as "are Σ-transitions from τ-stable states" (an inclusion) it is true, and the transfer clause uses only
+  the inclusion. I withdraw part (i) of STAU-1 as a gap and accept REFEREE-2's N-STAU-1 classification.
+- Sentence 2 ("differ only … at a τ-stable state"): I keep it as a minor GAP, renamed STAU-1 (now this sentence only).
+  - Reason: it is a mathematical claim under the label PROVED, and it is FALSE as written. Case (ii), a state with Iσ = ∅ where τ is
+    value-optimal in H′ and SPEC's S4b returns τ′ ≠ τ, makes N5 and N5^τ go to different states. Witness is0_c1o264 (canonical start); 44
+    occurrences in my samples, 17 of them on 𝒞^1O. Under D1 a false sentence that the packet asks us to sign is not a wording note.
+  - Weight: minor. No downstream statement uses it. The transfer clause, §2, (Στ) and EP-1 concern τ-keeping (in-phase) transitions, and
+    case (ii) is a phase-ending transition in both runs. Repair, one line (as in my §1): "N5 and N5^τ make different transitions only (i) at
+    a τ-stable state where SPEC's S4b returns a value-equal τ′ ≠ τ, and (ii) at a state with Iσ = ∅ where SPEC's S4b returns a value-equal
+    τ′ ≠ τ (both leave the phase; N5^τ by Odd's fallback)."
+  - REFEREE-2 did not examine this sentence as a claim, so this is not a disagreement but a finding by one referee. REFEREE-2's §C can confirm
+    it on is0_c1o264 (scratch/stau_inputs/is0_c1o264.pg, sha1 b0006099…).
+
+### C.3 Joint gap map
+| id | statement | status |
+| --- | --- | --- |
+| STAU-1 (REFEREE) | Corollary sentence 2 "differ only in WHEN a phase ends: at a τ-stable state …" false as written (Iσ = ∅ case) | OPEN (minor, wording; one-line repair above; no downstream effect). Closes with the L-NEW fixes line |
+| N-STAU-1 = old STAU-1 (i) | "exactly" → inclusion | note (fixes line) |
+| N-STAU-2 | cite 1E-N3 for "SPEC's output is value-optimal" | note (citation) |
+| N-STAU-3 = STAU-N1 | R15 (a) also transfers | note |
+| N-STAU-4 | TIEKEEP count level | note (definition) |
+| STAU-N2 + R2 §2.1 (i), (ii), §2.3 | the file list and table rows to add: R58-n5-width §9 (unused); referee-written steps (ii-a)-(ii-d); rows R17 → G_τ, Lemma S (b), R15 (a) | completions (all "yes"); no effect on the answers |
+| STAU-N3 | cite R38 (a) KEY for the phase key | note |
+- NOT "nothing open": STAU-1 is open until the fixes line exists. It does not affect (Στ): both referees answer audit (1) YES and (2) NO, and
+  both sign (a)-(d) and the transfer clause, which is all that (Στ) and P-N5-EPR's EP-1 use.
+- Lessons (mine): proof steps written by referees and cited by RESULTS are part of a chain; my file scan dropped docs/referee*. Next audit:
+  include docs/referee*/ sections named in RESULTS entries or fixes files.
