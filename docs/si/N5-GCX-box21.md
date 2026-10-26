@@ -124,7 +124,7 @@ on S with (a). □
 - Not covered (as in R83 §2): length-only W changes and W-tie switches.
 
 ## 6. Status, labels, what is open
-- PROVED (lane, unrefereed): MIG-SPLIT (§3); UL-RED (§5) CONDITIONAL on UL_G.
+- PROVED (lane, unrefereed): MIG-SPLIT (§3); UL-RED (§5) CONDITIONAL on UL_G; ABS-HEIGHT (§7) in the acyclic abstract model only.
 - DATA: §2 (G_c constant, X_u linear on R90's families; mechanisms), §4.
 - DEAD (own candidates, recorded in docs/si/DEAD.md "DEAD box 21"): C-ONCE (cone_n65, cone_n69), UE-ONCE_C (ueonce_n27).
 - CONJECTURE: UL_C / UL_G (§4, §5); C-ONCE_X (weak, §4).
@@ -135,3 +135,38 @@ on S with (a). □
   moves at almost every step), so UL-RED gives nothing new there, and ROOT-PIECE with f + G_c remains the bound for the root.
 - OPEN: a proof of UL_C (FREEZE-G with several gates of constant offset; the step that fails is Fact B across gates, N5-ROOT §1 / §8.4);
   G_c per fallback-free run; K(S).
+
+## 7. The core of UL_C in an abstract model: Lemma ABS-HEIGHT (PROVED in the model), sharp (DATA); what the lift to N5 needs (OPEN)
+Written 2026-10-26T16:16Z (date -u). Script experiments/si/root/absmodel.py (pinned).
+- Why a model. In a PURE C-interval (D ∩ U_c = DD_c) every vertex of U_c is in A or in a D-direct gate region. FREEZE-A (b) freezes M on A
+  after |A_a| − 1 steps; then τ(u), σ̄(u) ∈ A have frozen values for each gate u, so the gate's honest exit h_u := wt(u) + M(σ̄ u) and its W
+  exit T_u := wt(u) + M(τ u) = h_u + Δ(u) are constants. From then on the S4a dynamics on U_c is: Even vertices choose successors, Odd
+  non-D vertices follow τ, plays end at c or at a gate; M (honest) and N (W) are path weights plus h or T of the end; the S4a arena at v is
+  {σ(v)} ∪ {y : Ξ(y) ▷ Ξ(σ v)} (honest-improving edges, SPEC S4a); σ′ is W-optimal in the arena.
+- ABS (the model, acyclic case). A DAG on non-terminals, terminals with constants h ≤ T, vertex weights; strategy s; M, N as above; step:
+  Al(v) = {s(v)} ∪ {y : M(y) > M(s(v))}, s′ = a W-optimal strategy over arena edges (ties keep s(v)).
+- Lemma ABS-HEIGHT (PROVED, in ABS). The run reaches a fixed point after at most height(DAG) ≤ n steps.
+  Proof. Call v SETTLED from step t if M and N of every successor of v (and the arena-optimal values the DP uses) are constant from state t on.
+  Then s_{t+2}(v) = s_{t+1}(v): let y1 := s_{t+1}(v), the N-maximiser over Al_t(v). If y1 = s_t(v), then Al_{t+1}(v) = Al_t(v) (the M-values
+  are unchanged) and y1 stays the maximiser (ties keep it). Otherwise M(y1) > M(s_t v), so Al_{t+1}(v) = {y1} ∪ {y : M(y) > M(y1)} ⊆ Al_t(v),
+  and y1, the maximiser over the larger set with unchanged N-values, stays a maximiser. So v's choice, hence its M and N, is constant from
+  t + 1 on. A vertex whose successors are all terminals is settled from state 0; by induction in reverse topological order, a vertex of
+  height h is constant from state h on. □
+  - Also in the model: M and N are non-decreasing (policy improvement on honest-improving edges; the current choice is in the arena).
+    absmodel.py checks both (MONO_V = 0).
+- DATA (absmodel.py): 9,000 random DAGs (n = 6, 10, 16; 2-4 terminals): at most 3 / 4 / 5 steps, never ≥ n. Hill-climbs on the number of steps
+  (20,000-60,000 mutations; n = 5, 6, 7, 8; 11 climbs): best = n exactly every time (n = 12: 11). So the bound is SHARP: a Bellman-Ford chain.
+  HEIGHT_V = 0 everywhere; the control (height − 1) fires.
+- READING. In the model, constant gate structure means no re-arming: every change is a Bellman-Ford wave and dies within the height. This
+  is UL_C's mechanism, and it is why the UF-ONCE killers can re-arm only at C-cuts.
+- What the lift to N5 needs (OPEN; each item is a real gap):
+  - (i) cycles: G_c has cycles, so "reverse topological order" is not available. A W-optimal arena strategy never closes a cycle in a
+    λ_W-constant run (the cycle's top would beat or lose to c; §2 (ii)'s argument), but which successors are VIABLE for v (their play
+    avoids v) changes over time, and the settling induction needs a well-founded order on (vertex, time).
+  - (ii) lengths and ties: Ξ compares (M, length); S4a's tie-breaking is the engine's, not "keep the current choice". Length-only changes
+    and W-tie switches are outside the model, as in CHARGE-U.
+  - (iii) the prefix before A freezes (≤ |A_a| − 1 steps; FREEZE-A (b)) and A-vertices leaving A inside the interval (the ping-pong
+    entries; allowed in a C-interval). In the model they are ordinary non-terminals whose current play ends at c.
+  - (iv) impure C-intervals (a non-direct gate: its exit values are not constants).
+  If (i)-(iii) close, the N5 form would be: in a pure C-interval, no switch other than length / tie switches at index ≥ |A_a| − 1 + |U_c|.
+  That is weaker than UL_C's index |U_c| − 1, and it is what Corollary UL-RED needs, with n − 1 replaced by 2n.

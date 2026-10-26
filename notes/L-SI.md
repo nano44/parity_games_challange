@@ -6,7 +6,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   measures EP-ASM terms on records (DATA only, my §1 definitions forwarded by the Lead); never message L-COMP directly.
 - Note docs/si/N5-GCX-box21.md (not frozen): §1 definitions (pushed 2d663ffe, sent to the Lead), §2 DATA, §3 MIG-SPLIT (PROVED, elementary),
   §4 C-intervals (C-ONCE and UE-ONCE_C DEAD, own candidates; CONJECTURE UL_C), §5 Corollary UL-RED (PROVED conditional on UL_G), §6 status.
-- Scripts: experiments/si/root/gcx.py (G_c, X_u, C-intervals, U events with UEV=1; --one / --list / --rand), climbmig.py (OBJ mig / ue / ul).
+- Scripts: experiments/si/root/gcx.py (G_c, X_u, C-intervals, U events with UEV=1; --one / --list / --rand), climbmig.py (OBJ mig / ue / ul),
+  absmodel.py (§7 abstract model; Lemma ABS-HEIGHT PROVED in the acyclic model, sharp; lift to N5 OPEN: cycles, lengths/ties, A prefix).
   Logs root/logs/gcx_*.txt. Instances root/instances/cone_n65, cone_n69, ueonce_n27 (DEAD box 21). check.sh "box 21" blocks (2), controls bite.
 - Findings: R90's families have G_c(S) = 2 and X_u(S) = Θ(K) (a Bellman-Ford wave after unforbid-switches on fresh content, all gate
   offsets constant); nep90 / nep76 migrations are all D-leaves. The UF-ONCE killers re-arm only at C-cuts. UL_C (late freeze) has 0

@@ -200,3 +200,10 @@ UEV=1 ULMUT=1 python3 -I root/gcx.py --one $SO | grep -q "UL_C=8 "
 python3 -I root/gcx.py --one root/instances/cone_n65.pg | grep -q "MIG2_cint=1 "
 UEV=1 python3 -I root/gcx.py --one root/instances/ueonce_n27.pg | grep -q "UE2_Cr=1 "
 echo "root (gcx: UL_C on so_th_n32, control fires; DEAD C-ONCE broad (cone_n65) and UE-ONCE_C (ueonce_n27) reproduce): PASS"
+# box 21 §7: the abstract model ABS (acyclic): Lemma ABS-HEIGHT (steps <= DAG height) on 3,000 random games and a climbed one that reaches
+# n steps; control ABSMUT=1 (height - 1) must fire.
+python3 -I root/absmodel.py --rand 3000 10 1 | grep -q "games=3000 steps_ge_n=0 steps_gt_n=0 max_steps 4"
+o=$(python3 -I root/absmodel.py --climb 3000 5 1); grep -q "best steps 5 " <<<"$o"
+if grep -q "HEIGHT_V\|MONO_V" <<<"$o"; then exit 1; fi
+ABSMUT=1 python3 -I root/absmodel.py --climb 3000 5 1 | grep -q "HEIGHT_V="
+echo "root (absmodel: ABS-HEIGHT on random and climbed DAGs, sharp at n = 5; control fires): PASS"
