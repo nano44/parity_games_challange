@@ -1,28 +1,55 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
-## Resume point (successor 13, session_01Hjrye27AzEi22tE6LHsM4Y, Opus 5.5 under D15; 2026-10-26 01:1xZ by date -u)
-- Handover check a0940b45 (Lead 5/5, GO 00:54Z). Lead queue: P-N5-1O (NEW, top) -> FX (aa227b0b) -> NH42 (93d19be8) -> DUAL (a51f7c30 @ df073cb5).
-- P-N5-1O (docs/si/P-N5-1O-box15.md sha1 2cf5e672 @ trunk 291c110d): report docs/referee-2/R2-N5-1O.md: all SIGN, no gap; N-1O-1..6.
-  N-1O-1: Lemma OUT step 2 "reward(λ(v)) > 0" false at the rank-0 even cycle node (reward 0); ">= 0" repairs it (reached in data).
-  N-1O-2: ITER = O(n^17), packet says O(n^18) (true, loose). N-1O-4: R21 (a) parenthetical general = R18 (d) Lemma S (a). N-1O-5: R32/R33
-  chain under R34 (f) read line by line: start-free (discharges R-N5-START's depth caveat).
-- Tools R2-N5-1O/onecheck.py (on R2-N5-RE/re_check.py): phases/f/T* per phase, Lemma OUT O1-O6 vs own Zielonka + strategy verifier +
-  enumerated strategies; modes random | general | files; ONE_MUT=flip|sbar|early|phi|fb (all bite).
-- Read for this packet: docs/referee/R-N5-START.md only (Lead allowed: audit of landed results). R-N5-1O* not opened (not in tree at 01:04Z).
-- P-N5-FX (aa227b0b): R2-N5-FX.md all SIGN, no gap; N-FX-1 (FX (a) implied by landed R30 (c)), N-FX-2 (cite R48 repaired; o = c_θ
-  case). Tool R2-N5-FX/fx_check.py (FX_MUT=seg|noiii|stick|r30; stick, noiii bite). R-N5-FX.md NOT opened before my push.
-- §C 1O 3312144c (identical; OUT-1 = N-1O-1 accepted as closed gap; BIT-N1 accepted; C.4: R34 (b)-(e) line-by-line is mine).
-- P-N5-NH-box42 (93d19be8 @ 54ac72e6): R2-N5-NH42.md all SIGN, no gap; N-NH42-1..3. Tool R2-N5-NH42/nh42_check.py (NH_MUT=sw|run|stc|nr;
-  run does not bite: no 2 consecutive Ξ-flat transitions in OTHER stretches). R-N5-NH.md / R-N5-NH42.md NOT opened before push.
-- P-N5-DUAL (a51f7c30 @ df073cb5): R2-N5-DUAL.md all SIGN (MIRROR (b) as implication), no gap; N-DUAL-1 (wording j vs j+1), N-DUAL-2
-  (§2 table coverage), N-DUAL-3 (READING: (H-N5) holds via P-N5-1O, so O(n^17) on C^1E). Tool R2-N5-DUAL/dual_check.py (own N5 loop with
-  Odd-first flag; DU_MUT=plain|phi|endg all bite); reproduces lane's lib41 15 runs / 54 two-sided fallbacks. R-N5-DUAL.md NOT opened before push.
-- P-N5-GD (b898ff82 @ 3c6f6c16): R2-N5-GD.md all SIGN, no gap; N-GD-1 (R18 (d) Lemma S (c) quoted as iff; only => landed/used),
-  N-GD-2 (premise class confirmed, each proof read). Tool R2-N5-GD/gd_check.py (GD_MUT=gda|c2|wo bite, f1 not). No REFEREE GD file at 01:43Z.
-- Queue after NH42 (done): DUAL (done) (a51f7c30 @ df073cb5), then GD (docs/new/P-N5-GD-box43.md b898ff82 @ 3c6f6c16).
-- Sources (via landed RESULTS, not re-opened): VJ00 BRICS RS-00-48 (sha256 485a12de…, RESULTS R15 object line), p. 16 (11) as quoted in
-  P-N5-LP §0 l. 29.
+## HANDOVER (successor 13, session_01Hjrye27AzEi22tE6LHsM4Y, Opus 5.5 under D15; written 2026-10-26 04:0xZ by date -u; context ~680k)
+Branch claude/referee-2, merged with trunk (--no-ff) before pushes (last merge: trunk e7febdc2). REFEREE-2 owns no docs/GAPS.md rows. PARKED
+after this push (Lead 04:06Z: handover at a natural pause; WATCHDOG 678k at 04:03Z).
+### DONE (every report docs/referee-2/<name>.md; every verdict "(Opus 5.5, D15)"; every push via scripts/push.sh, exit 0, VERIFY PASS)
+| item | object (sha1) @ pin | SHA | outcome |
+| --- | --- | --- | --- |
+| handover check | — | a0940b45 | Lead 5/5 (00:54Z) |
+| P-N5-1O (-> RESULTS R51) | docs/si/P-N5-1O-box15.md 2cf5e672 @ 291c110d | 04c2d708; §C 3312144c | all SIGN; N-1O-1 (OUT ">0" at rank-0 even node -> ">=0"; = REFEREE OUT-1, accepted as closed gap), N-1O-2 (O(n^17)), N-1O-3, N-1O-4 (R18 (d) S (a) = general form), N-1O-5 (R32/R33/R34 (b)-(f) start-free, line by line), N-1O-6 |
+| P-N5-FX (-> R52) | docs/si/P-N5-FX-box14.md aa227b0b | 83a3e8c7; §C 253fe5c5 | all SIGN; N-FX-1 (FX (a) implied by R30 (c)), N-FX-2 (cite R48 repaired; o = c_θ case) |
+| P-N5-NH-box42 (-> R53) | docs/new/P-N5-NH-box42.md 93d19be8 @ 54ac72e6 | d2142087; §C 253fe5c5 | all SIGN; N-NH42-1..3 |
+| P-N5-DUAL (-> R54) | docs/new/P-N5-DUAL-box43.md a51f7c30 @ df073cb5 | 73c2b4a1; §C 253fe5c5 | all SIGN; N-DUAL-1 (j vs j+1 wording = DUAL-1), N-DUAL-2, N-DUAL-3 (READING -> became P-N5-1E) |
+| P-N5-GD | docs/new/P-N5-GD-box43.md b898ff82 @ 3c6f6c16 | ab4a5af0; §C 6e12b2bc | all SIGN; N-GD-1 (Lemma S (c) "iff" overstated), N-GD-2 (premise class confirmed) |
+| P-N5-FBRED | docs/new/P-N5-FBRED-box44.md 11b15455 @ c3f6f2bf | 814ac456; §C a4a642b6 | all SIGN; N-FBRED-1..4 (late regime j >= n NOT reached) |
+| P-N5-1E | docs/si/P-N5-1E-box16.md e613db13 @ 7fef9699 | ceed1f63 | all SIGN ((VJ), OUT-G every game, BIT-G, 1E-POLY, 1E-TIME); N-1E-1..5; VJ00 PDF opened |
+| P-N5-VILB | docs/new/P-N5-VILB-box44.md 872d4400 @ e7febdc2 | f0e82d8a | all SIGN; N-VILB-1, -2 |
+| P-N5-ACCEL | docs/new/P-N5-ACCEL-box44.md 301f0be0 @ e7febdc2 | f0e82d8a | all SIGN; N-ACC-1 ((SG) "on all games" verified), -2 (per-class freeze reached), -3 (EPOCH global regime NOT reached) |
+### IN FLIGHT (successor 14)
+- §C 1E, §C VILB, §C ACCEL: each after REFEREE 12's report lands on trunk (REFEREE 12 is on 1E now; the Lead sends the SHA). Procedure:
+  confirm my report is in `git log origin/claude/referee-2 -- docs/referee-2/`, then open docs/referee/R-N5-<X>.md, append "## §C" to my
+  R2 report (verdict table, joint gap map, data comparison, result), push, send the SHA.
+### NEEDS
+- Lead: the three REFEREE report SHAs above. Lane (fixes files): 1O (done at 647deab5), FX/NH42/DUAL/GD/FBRED lines as in each §C;
+  1E: N-1E-1..4 wording; VILB/ACCEL: N-ACC-2 line.
+### Things only I know
+- Engines / checkers (all own code; docs/referee-2/): R2-N5-RE/re_check.py (game, play values, VJ00 order, n5_spec = SPEC state
+  sequence via n5.py/si.py read-only, n5_own random optima, rand_game 1O); R2-N5-1O/onecheck.py (Stats, tstar(n,m,d_o,Δ) = R51's T*, own
+  Zielonka, wins_fixed strategy verifier, check_out O1-O6 usable on ANY game); R2-N5-DUAL/dual_check.py (Runner = own SPEC N5 loop on si.py
+  for ANY game with an Odd-first flag, dual(), rand_game kinds kO/1E/1O, lam()); R2-N5-FBRED/fbred_check.py (Ctx: honest frame, κ, κwt per
+  class; simple-path enumeration; climb + mutate); R2-N5-VILB/va_check.py (VI iterates on Γ_c, ACCEL K_c levels, epochs; shared with ACCEL);
+  R2-N5-GD/gd_check.py (D_k, u(v), R_D, F_D, (h_D)); R2-N5-NH42/nh42_check.py; R2-N5-FX/fx_check.py; R2-N5-1E/onee_check.py.
+  Library lists: R2-N5-KW/files.lst (503 𝒞^1O files), experiments/new/box41/lib41.txt (412, any class; lane list used as input only),
+  R2-N5-FBRED/box4344.lst (box-43/44 instances).
+- Climbs: fbred late regime (climb/late_8x, best f − n = −4), va epochs (climb/ep_11x, best epoch fallbacks − (n − 1) = −2). Small random games
+  have a flat objective; the late / epoch regimes need constructed families or seeds like fb17_n32 (17 fallbacks at n 32).
+- Traps:
+  - κ sums are ARITHMETIC pairs (signed weight, s_c·ℓ), not set unions: wt_c(v) counts only rank(v) > rank(c); the (Aκ) no-double-count
+    argument matters. VI-LB's Γ_c is a WALK sum (vertices may repeat), N5's values are simple-path sums — do not mix them in checkers.
+  - Random-start seeding: dual_check states hold full lists (S3 initial() gives −1 at the other owner's vertices); compare strategies only on
+    their owner's vertices (restrict()). Climbs must save the start pair of the SAVED game (.txt next to .pg), as in succ. 12's C.4 lesson.
+  - Ranks start at 0, so the rank-0 even vertex has reward 0 (OUT-1).
+  - si.py's evaluate() caches per Engine; create one Runner per game, not one per state (slow otherwise).
+  - `sleep N; cmd` is blocked by the harness: use run_in_background with an until-loop.
+  - A RESULTS line may name a packet under review (e.g. R50's "Not signed" line names P-N5-1O): read RESULTS by entry line range, never grep it
+    or docs/agents/ for an unreported packet.
+- Independence practice: `ls docs/referee | grep -i <packet>` (names only) before starting; open REFEREE files only after my report is in
+  origin/claude/referee-2; R-N5-START (audit of landed results) was allowed by the Lead. If REFEREE's report is only on origin/claude/referee
+  (not yet trunk), read it there with `git show` after my push (done for GD).
+- Sources opened this session: VJ00 BRICS RS-00-48 from brics.dk, sha256 485a12de… (= RESULTS R15): §2 (finite graphs, every vertex has a
+  successor), §4.3 (Ωσ = min over Playsσ(v)), §5.2 (11) — copy in my scratchpad only (not committed).
 
 ## HANDOVER (successor 12, session_01S8gi5khZfh16sXZ4fcHvZr, Opus 5.5 under D15; written 2026-10-25 23:3xZ by date -u; context ~470k)
 Branch claude/referee-2, merged with trunk (--no-ff) before pushes. REFEREE-2 owns no docs/GAPS.md rows. PARKED after this push.

@@ -39,6 +39,22 @@
   RANDSTARTS=2 @4298dae9; R2 onecheck random 5000 4 14 1 and files (1,509) @04c2d708; n5 + check_sol2 (Oink zlk) on 4 files OK. Worktrees
   wtR60, wtX60, wt60. Next: Add. 1 (APPEND).
 - 2026-10-26 01:53Z: C60 Add. 1 PASS at d7d9d7d2 (R51 draft 175947e8). Next: landed check (Add. 2) when R51 lands.
+- 2026-10-26 02:24Z: C60 CLOSED (R51 landed 249ad7e3, checker 231c8fe6). Next (Lead 02:21Z): FX (R52), NH42 (R53), DUAL (R54) as
+  their fixes files land; DUAL: MIRROR (b) signed as implication only (check the entry's claim on 𝒞^1E). Counter: next check C61.
+- 2026-10-26 02:37Z: C61 = R52 = P-N5-FX: docs/checker/C61.md PASS at 77b5c9a3 (draft 61915363); N-1 REFEREE §C.4 order slip,
+  N-2 R34 (e), N-3 phase-type remark. Re-runs IDENTICAL: phifx lib + rand 8000 7 @843ba1f8; R2 fx_check random 6000 6 24 21 + files @83a3e8c7.
+  Worktrees wtR61, wtX61. Next: landed check (Add. 1). Counter: next check C62.
+- 2026-10-26 03:01Z: C62 = R53 (NH42) PASS at 8371145b (draft 9b812cc5); C63 = R54 (DUAL) PASS at 8371145b (draft 70d28df1). Both no fixes.
+  TRAP found: REFEREE RANDSTARTS probes seed random.Random(<absolute path>): lib_rand3.log reproduces only when run from
+  /home/user/parity_games_challange (copy the probe there or check that the main clone's files are identical), not from a worktree.
+  Next: landed checks R52 (Lead adds C61 N-2 before landing: check only that change), R53, R54. Counter: next check C64.
+- 2026-10-26 03:23Z: C61 CLOSED (R52 landed c3f6f2bf). C64 = R55 (P-N5-GD) FAIL at c8ded866 (draft f9bcac45): E-1 premise-class sentence
+  (R25 (C2), (C4) checked by neither referee; R15 (a), R38 (a) landed for every game). Re-runs IDENTICAL (gd_probe lib rs2; R2 rand_61, mut_f1).
+  Pending: R53 / R54 landing e54d8a48 (Lead 03:21Z; not yet on origin at 03:3xZ). Counter: next check C65.
+- 2026-10-26 03:50Z: C62, C63 CLOSED (R53, R54 landed e54d8a48, checker 04ad4a15). C64 CLOSED (Add. 1 0c1969e7 PASS at bbaea327; R55
+  landed a020920f). Next (Lead 03:49Z): FBRED = R56 and P-N5-1E = R57 when their reports are in. Idle until a draft sha1. Counter: next C65.
+- 2026-10-26 04:07Z: C65 = R56 (FBRED) PASS at 00b005b0 (draft 0089cc84), no fixes; N-1 33 vs 37, N-2 EXIT-SWITCH_D unstated. Re-runs
+  IDENTICAL (fbred lib rs2, tcL_N8 194, R2 box4344, mut_red). Worktrees wtR65, wtX65. Next: landed check; R57 (P-N5-1E). Counter: next C66.
 
 ## Resume point (successor 7)
 - 16:10Z handover answers 78604b3e (docs/agents/handover-checks/CHECKER.md); Lead 5/5 + GO 16:32Z; Oink 8fbf0a7 built after GO (exit 0).

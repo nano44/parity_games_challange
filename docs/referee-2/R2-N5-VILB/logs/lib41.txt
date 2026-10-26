@@ -1,0 +1,14 @@
+MODE files ../../../experiments/new/box41/lib41.txt 3 MUT -
+ACC_phases: 349
+EPa_checks: 3938
+EPa_class_freeze_checks: 81
+REC_phases_with_sbarQ_repeat: 203
+SG_checks: 23201
+VILB_checks: 986781
+phases: 7168
+runs: 1236
+max_K: (22, 'experiments/n5-exhaustive/instances/b4_cyc6_0.pg#0')
+max_epoch_fb_minus_n1: (-1, 'experiments/n5-exhaustive/instances/n3all_maxph_0.pg#1')
+max_epochs: (50, 'experiments/si/orlens/instances/lev_l_x.pg#0')
+max_f: (33, 'experiments/si/xing/instances/ccl_w48_n48.pg#0')
+RESULT OK violations=0

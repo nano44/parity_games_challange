@@ -12,3 +12,4 @@ results/box7/*.partial.json
 results/box7/*.log
 results/box8/*.partial.json
 results/box8/*.log
+results/box9/*.txt.partial

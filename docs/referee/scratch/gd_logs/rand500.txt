@@ -1,0 +1,13 @@
+F1D_chk                      4110
+F1D_trs                      216
+GA_chk                       31138
+GB_chk                       1101
+GC1_chk                      558
+GC2_chk                      37476
+WOD_chk                      36
+games                        500
+runs                         1500
+states_D_nonempty            2364
+states_hD                    2580
+states_hD_h3                 398
+FAILS 0

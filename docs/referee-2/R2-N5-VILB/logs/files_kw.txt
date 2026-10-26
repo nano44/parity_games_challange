@@ -1,0 +1,14 @@
+MODE files ../R2-N5-KW/files.lst 2 MUT -
+ACC_phases: 463
+EPa_checks: 5708
+EPa_class_freeze_checks: 129
+REC_phases_with_sbarQ_repeat: 187
+SG_checks: 25063
+VILB_checks: 579061
+phases: 4121
+runs: 1006
+max_K: (53, 'docs/referee-2/R2-N5-SCOPE/climb/best_scope_91.pg#0')
+max_epoch_fb_minus_n1: (-1, 'experiments/n5-exhaustive/instances/n3all_maxph_0.pg#1')
+max_epochs: (53, 'experiments/red/so/instances/rise_thin51_n40.pg#0')
+max_f: (37, 'experiments/red/so/instances/rise_fb38_n48.pg#0')
+RESULT OK violations=0
