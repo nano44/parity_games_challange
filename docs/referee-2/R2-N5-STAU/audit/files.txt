@@ -1,0 +1,26 @@
+R15 docs/lit/T21-VJ00-check.md docs/new/G-N5-TERM-reading.md docs/new/N5-ssi-global.md experiments/harness/verify.py experiments/new/n5.py
+R17 docs/new/N5-brchanges-box11.md docs/new/N5-phase-bound-box10.md docs/new/N5-ssi-global.md experiments/new/n5.py
+R18 docs/new/N5-1Oacyc-box24.md docs/new/N5-ssi-global.md docs/new/N5-time-box21.md docs/red/R58-n5-width.md
+R19 docs/new/N5-ssi-global.md docs/new/N5-xing-box27.md docs/new/P-N5-RE-box26.md
+R20 docs/new/P-N5-XA-box27.md docs/new/P-N5-XA-fixes-box28.md
+R21 docs/agents/R19-note-X1.md docs/new/P-N5-X-box28.md docs/new/P-N5-X-fixes-box29.md experiments/n5-exhaustive/instances/b5_o11.pg
+R22 docs/new/P-N5-NH-box30.md docs/new/P-N5-NH-fixes-box30.md
+R23 docs/si/P-N5-Z-box5.md docs/si/P-N5-Z-fixes-box5.md
+R24 docs/new/P-N5-U1-box31.md docs/new/P-N5-U1-fixes-box31.md
+R25 docs/new/N5-ssi-global.md docs/si/P-N5-FB-box7.md docs/si/P-N5-FB-fixes-box7.md docs/si/P-N5-FB-fixes2-box7.md experiments/red/xing/instances
+R26 docs/new/P-N5-U23-box31.md docs/new/P-N5-U23-fixes-box31.md experiments/red/xing/instances/u2flat_n32.pg
+R27 docs/new/N5-L-box32.md docs/new/N5-ssi-global.md docs/new/P-N5-LP-box32.md docs/new/P-N5-LP-fixes-box32.md docs/new/P-N5-SO-box32.md docs/new/P-N5-SO-fixes-box32.md docs/si/N5-C-box8.md experiments/new/box32/instances/nowake_cex_n32.pg
+R28 docs/new/P-N5-OE-box32.md docs/new/P-N5-OE-fixes-box32.md
+R29 docs/si/P-N5-CLS-box8.md docs/si/P-N5-CLS-fixes-box8.md docs/si/P-N5-CLS-fixes2-box8.md experiments/red/xing/instances/x31_re24.pg experiments/si/coarse/run_cls.sh
+R30 docs/new/P-N5-SN-box33.md docs/new/P-N5-SN-fixes-box33.md experiments/red/so/instances/
+R31 docs/si/P-N5-FBW-box9.md docs/si/P-N5-FBW-fixes-box9.md
+R32 docs/new/P-N5-FRZ-box34.md docs/new/P-N5-FRZ-fixes-box34.md docs/new/P-N5-FRZ-fixes2-box34.md
+R33 docs/new/P-N5-L2-box34.md docs/new/P-N5-L2-fixes-box34.md docs/new/P-N5-L2-fixes2-box34.md experiments/new/box34/instances/onedrop_cex_n32.pg experiments/new/box34/instances/oneh_cex_n32.pg experiments/new/box35/instances/fbrestart_cex_n12.pg experiments/new/box35/instances/onerun_cex_n32.pg
+R34 docs/new/P-N5-TOG-box35.md docs/new/P-N5-TOG-fixes-box35.md docs/new/P-N5-TOG-fixes2-box35.md experiments/n5-exhaustive/instances/b4_cyc6_0.pg experiments/red/so/instances/so_sor5_n24.pg
+R38 docs/new/P-N5-SCOPE-box36.md docs/new/P-N5-SCOPE-fixes-box36.md experiments/new/box25/instances/wd16_s2.pg experiments/red/so/instances/pftheta_cex_n32.pg
+R39 docs/new/P-N5-OUT-box37.md docs/new/P-N5-OUT-fixes-box37.md experiments/new/box37/instances/rfroz_cex_n16.pg experiments/new/box38/instances/nebc_cex_n14.pg experiments/new/box38/instances/tauw_A_cex_n24.pg
+R42 docs/new/P-N5-NEB-box38.md docs/new/P-N5-NEB-fixes-box38.md experiments/new/box38/instances/tauw_A_cex_n24.pg
+R44 docs/new/N5-RW-box39.md docs/new/P-N5-PFZ-box39.md docs/new/P-N5-PFZ-ext-box39.md docs/new/P-N5-PFZ-fixes-box39.md
+R45 docs/new/N5-RW-box39.md docs/new/P-N5-RHO-box40.md docs/new/P-N5-RHO-fixes-box40.md
+R48 docs/new/P-N5-FBPOLY-box41.md docs/new/P-N5-FBPOLY-fixes-box41.md docs/red/R72-fx-fbpoly-k.md experiments/red/fbx/instances/exsw_loop_n15.pg
+R50 docs/new/N5-KW-box42.md docs/red/R73-*.md docs/si/N5-KW-box15.md docs/si/P-N5-KW-addendum-box15.md docs/si/P-N5-KW-box15.md docs/si/P-N5-KW-fixes-box15.md

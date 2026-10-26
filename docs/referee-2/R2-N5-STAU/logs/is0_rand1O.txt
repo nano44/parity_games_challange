@@ -1,0 +1,1 @@
+MODE random 3000 5 20 22 1O 2 {'states': 25002, 'IS0_DIV': 86, 'IS0_DIV_diff_next': 3}

@@ -1,0 +1,37 @@
+MODE files ../R2-N5-KW/files.lst 2 MUT - LEVMAX 11 RUMAX 3
+ENGXI_checks: 17862
+FB_cases: 61
+H0_phases: 4157
+HON_phases: 4157
+R1_d_phases: 4157
+R1_entries_D0: 203
+R1_entries_big: 0
+R1_entries_dir: 0
+R1_entries_start: 2438
+R1_intervals: 2641
+R1_phases: 4157
+RP_runs: 4157
+RU_checks: 17862
+RU_iv_checks: 1422
+S0_checks: 687
+S1_gaps: 3133
+S1_rise_checks_unsat: 72
+S1_step_checks: 73
+S2_checks: 262
+S3_phases: 239
+SAT0_states: 1125
+f_in_phases: 5
+f_in_total: 10
+gaps_fallback_at_h: 61
+gaps_with_fallback: 67
+phases: 4157
+runs: 1006
+states: 17862
+H0_max_D0_states: (57, 'experiments/red/xing/instances/x32_rand64.pg#0@0 n 64')
+H0_max_N0: (5, 'experiments/new/box28/instances/w24b_thc24_final.pg#0@1 n 24')
+HON_max_honest: (57, 'experiments/red/xing/instances/x32_rand64.pg#0@0 n 64 f 1 f_in 0')
+R1_max_interval_states: (111, 'experiments/red/so/instances/xsn91_n48.pg#0@3 u 0')
+R1_max_intervals: (6, 'experiments/red/so/instances/so_th_n32.pg#0@1 n 32')
+RP_max_len: (112, 'experiments/red/so/instances/xsn91_n48.pg#0@3 u 0 n 48')
+S3_max_span: (1, 'docs/referee-2/R2-N5-FB/climb/nofe_best.pg#0@1 n 8')
+RESULT OK violations=0

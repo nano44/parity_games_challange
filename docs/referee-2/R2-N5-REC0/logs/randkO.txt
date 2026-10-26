@@ -1,0 +1,18 @@
+MODE random 5000 4 11 51 kO 3 MUT - LEVELMAX 11
+BASE_checks: 33597
+BOUND_checks: 45557
+EP0_checks: 23512
+KIND_phases: 45557
+PREFIX_checks: 46092
+SAT_phases: 19705
+STEP1_checks: 1675
+STEP1_nonsat: 75
+STEP1_strict: 1513
+STEP2_checks: 1973
+UB_checks: 33597
+max_N0: 2
+max_N0_per_f1: 2.0
+max_kind_iii_per_run: 1
+phases: 45557
+runs: 20000
+RESULT OK violations=0

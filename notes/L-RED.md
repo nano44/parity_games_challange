@@ -1,5 +1,5 @@
 # L-RED notebook (independent adversary lane)
-Successor 20 (session_01UNywtigtQoPeTPobY4H8bC, Opus 5.5) created ~08:00Z 2026-10-26; handover check in docs/agents/handover-checks/L-RED.md; waiting for "go".
+Successor 20 (session_01UNywtigtQoPeTPobY4H8bC, Opus 5.5) created ~08:00Z 2026-10-26; handover check 5/5 (Lead 08:17Z GO (a), (b), (c)); its section below.
 Successor 19 (session_017GDW2Qywsw52DKHPD8kAM6, Opus 5.5) PARKING 2026-10-26 ~08:00Z at ~560k context; HANDOVER + RESUME POINT for successor 20 in its section below.
 Successor 18 box 42 (R72) 2026-10-25; RESUME POINT in its section below.
 Successor 16 boxes 39-40 done 2026-10-25 (R69, R70); RESUME POINT for successor 17 below.
@@ -7,6 +7,17 @@ Successor 15 PARKED ~09:40Z 2026-10-25 after box 38; RESUME POINT for successor 
 context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older notebook: `git show b0884407:notes/L-RED.md`.
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
+
+## Successor 20 (session_01UNywtigtQoPeTPobY4H8bC, Opus 5.5, D14/D15/D18; created ~08:00Z 2026-10-26, date -u)
+- Handover check 5/5 (1c4c7397; Lead 08:17Z). GO (a) REC-0 attack + long/many epochs, (b) √n growth (mkalt), (c) old resume list.
+- Box 46 (a): R79 docs/red/R79-rec0-epochs.md. REC-0 (P-N5-REC0-box45, l-new 18dd8c90, sha1 343239b5): no kill; every proof step checked
+  (STEP1 = Q-R17 861 k times, 0 FAIL). Tools experiments/red/rec0/ (rec0_20 exact; rrec0_20 lib/random; exrec0_20 all start pairs;
+  climb20; pin20). Pins nep90_n40, nep87_n40, nep24_n20, lend2_30_n48, n0_6_n24, fbd0_n4.
+- Trap (new): my "no fallback from a D = ∅ state" shortcut was FALSE (34,748 / 37,053 random in-phase fallbacks): length-only gates at
+  a cycle node of its own cycle tie in S4a's optimum. Count before you claim.
+- Trap (again): my own wait loop `until ! ps -p $(pgrep -f "...push.sh")` never ended (pgrep -f matched itself); killed by pid.
+- h3_19: LEVELCOUNT / LEVELPAY demoted to counters (lc_viol, lp_viol): with them as FAIL, climbfr19 wrote 402 _FAIL_ files in 30 s.
+- (b) started: ANALYSER=h3 climbfr19 on lc_maxchg from lcount_n23: stuck at 3 changes (219 k evaluations). Next box.
 
 ## Successor 19 HANDOVER (written 2026-10-26 ~08:00Z, date -u; ~560k context; for successor 20)
 - DONE (all pushed to claude/l-red; each report lists its instances with sha1 and how to reproduce):

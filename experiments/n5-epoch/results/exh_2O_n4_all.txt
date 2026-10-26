@@ -1,0 +1,67 @@
+task 1/16 games 21600 runs 221184 viol 0 117s
+task 2/16 games 43200 runs 442368 viol 0 119s
+task 3/16 games 64800 runs 663552 viol 0 121s
+task 4/16 games 86400 runs 884736 viol 0 226s
+task 5/16 games 108000 runs 1105920 viol 0 232s
+task 6/16 games 129600 runs 1327104 viol 0 234s
+task 7/16 games 151200 runs 1548288 viol 0 342s
+task 8/16 games 172800 runs 1769472 viol 0 342s
+task 9/16 games 194400 runs 1990656 viol 0 350s
+task 10/16 games 216000 runs 2211840 viol 0 456s
+task 11/16 games 237600 runs 2433024 viol 0 461s
+task 12/16 games 259200 runs 2654208 viol 0 462s
+task 13/16 games 280800 runs 2875392 viol 0 580s
+task 14/16 games 302400 runs 3096576 viol 0 581s
+task 15/16 games 324000 runs 3317760 viol 0 584s
+task 16/16 games 345600 runs 3538944 viol 0 687s
+clean_strict: 12512
+crossings: 27492
+cyc: 9640
+epochs: 7315568
+epochs_D0: 3767202
+epochs_D1: 2605482
+epochs_D2: 942884
+fallbacks_in_phase: 124724
+games: 345600
+in_phase_transitions: 335074
+len_sum_D0: 302064
+len_sum_D1: 30888
+len_sum_D2: 2122
+nc: 3152
+phases: 7287738
+phases_Nep_ge2: 27830
+phases_single_state: 6965644
+rho: 27122
+runs: 3538944
+tie: 4068
+transitions: 4083868
+xsnpre: 988
+xsnpre_sum_D0: 0
+xsnpre_sum_D1: 856
+xsnpre_sum_D2: 132
+max_N_ep: 2
+max_XD_phase: 2
+max_absD: 2
+max_len_D0: 2
+max_len_D0_minus_(n+m): -10
+max_len_D1: 2
+max_len_D2: 1
+max_phase_in_transitions: 2
+max_residual_phase(tie+nc+cyc): 2
+max_rho_phase: 2
+max_xsnpre_D0: 0
+max_xsnpre_D1: 1
+max_xsnpre_D2: 1
+top EP0_len_minus_(n+m): -10 | 2On4 prio=[0, 2, 4, 5] owner=[1, 1, 0, 0] succ=[[0, 1], [0, 1], [0], [0]] start=([-1, -1, 0, 0], [0, 0, -1, -1]) phase#0 states[0,0] epoch 0 states[0,0] len=0 n=4 m=6
+top N_ep: 2 | 2On4 prio=[0, 2, 4, 5] owner=[1, 0, 1, 0] succ=[[1, 2], [0, 3], [0, 3], [0]] start=([-1, 3, -1, 0], [1, -1, 3, -1]) phase#0 states[0,1] n=4 rho=0 tie=0 nc=1 cyc=0 |Q|=2
+top N_ep_over_n: 0.5 | 2On4 prio=[0, 2, 4, 5] owner=[1, 0, 1, 0] succ=[[1, 2], [0, 3], [0, 3], [0]] start=([-1, 3, -1, 0], [1, -1, 3, -1]) phase#0 states[0,1] N_ep=2 n=4 rho=0 tie=0 nc=1 cyc=0
+top len_D0: 2 | 2On4 prio=[0, 2, 4, 5] owner=[1, 1, 0, 0] succ=[[0, 1], [0, 3], [0, 1], [0, 1]] start=([-1, -1, 1, 1], [1, 0, -1, -1]) phase#1 states[1,3] epoch 0 states[1,3] |D|=0 n=4 m=8
+top len_D1: 2 | 2On4 prio=[0, 2, 4, 5] owner=[1, 0, 0, 1] succ=[[0, 3], [0, 3], [0, 1], [1, 2]] start=([-1, 3, 0, -1], [3, -1, -1, 1]) phase#0 states[0,2] epoch 0 states[0,1] |D|=1 n=4 m=8
+top len_D2: 1 | 2On4 prio=[0, 2, 4, 5] owner=[1, 1, 0, 0] succ=[[1, 2], [1, 3], [0, 3], [0]] start=([-1, -1, 3, 0], [2, 1, -1, -1]) phase#0 states[0,1] epoch 0 states[0,1] |D|=2 n=4 m=7
+top len_D2_over_n: 0.25 | 2On4 prio=[0, 2, 4, 5] owner=[1, 1, 0, 0] succ=[[1, 2], [1, 3], [0, 3], [0]] start=([-1, -1, 3, 0], [2, 1, -1, -1]) phase#0 states[0,1] epoch 0 len=1 |D|=2 n=4
+top slack_NEP_min(neg): 0 | 2On4 prio=[0, 2, 4, 5] owner=[1, 0, 1, 0] succ=[[1, 2], [0, 3], [0, 3], [0]] start=([-1, 3, -1, 0], [1, -1, 3, -1]) phase#0 states[0,1] N_ep=2 bound=2
+len_hist |D|=0: 0:3476812 1:278716 2:11674
+len_hist |D|=1: 0:2574742 1:30592 2:148
+len_hist |D|>=2: 0:940762 1:2122
+nep_hist: 1:7259908 2:27830
+RESULT OK violations=0

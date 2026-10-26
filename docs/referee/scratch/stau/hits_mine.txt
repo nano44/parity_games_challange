@@ -1,0 +1,108 @@
+new__G-N5-TERM-reading.md:83:- Iσ / Iτ in n5.py are VJ00's improvements: SPEC S1/S2, si.py key = VJ00's ⊴ (Q1: path sets by MaxDiff; lengths as in §4.2).
+new__G-N5-TERM-reading.md:85:- Iσ and Ξσ are functions of σ ALONE (Ωσ minimises over all of Odd's plays), and Iτ, Ξτ of τ alone. τ only selects WHICH subset
+new__G-N5-TERM-reading.md:91:step 4 question). Consecutive flat iterations (neither Ωσ nor Ωτ changes) number at most 4n(n − 1). Each length satisfies 0 ≤ k ≤ n − 1, so
+new__N5-1Oacyc-box24.md:14:  - Iσ is Even's set of improving edges (S2). Iτ is Odd's, on the dual game G^d.
+new__N5-1Oacyc-box24.md:15:  - An iteration is one pass of S4 with Iσ ∪ Iτ ≠ ∅.
+new__N5-1Oacyc-box24.md:26:- A transition k → k+1 of an N5 run is PURE if σ_{k+1}|X = σ_k|X and τ_{k+1} = τ_k.
+new__N5-1Oacyc-box24.md:42:  - Hence τ changes at most d − 1 times.
+new__N5-1Oacyc-box24.md:99:  - Then Ξ(a) ◁ Ξ(b), so U_τ(a) ◁ U_τ(b): a is strictly better for Odd than b in Odd's honest order. So (o, a) ∈ Iτ (S2 on G^d).
+new__N5-1Oacyc-box24.md:100:  - Then S4b runs. It computes Odd's optimal counterstrategy τ' in the arena where o may use {b} ∪ Iτ(o) and Even is fixed to σ_k.
+new__N5-1Oacyc-box24.md:101:  - Pointwise optimality (F1 on the dual) gives the value at o under τ' ⊴ o ⊕ Ξ(a) ◁ o ⊕ Ξ(b). Hence τ'(o) ≠ b, and S4b changes τ.
+new__N5-1Oacyc-box24.md:103:  - So τ_{k+1} ≠ τ_k, and the transition is not pure. This is a contradiction.
+new__N5-1Oacyc-box24.md:119:- S4b on G returned τ unchanged, since the transition is pure. On G_τ, Odd has no choice, so Iτ = ∅ and S4b is void.
+new__N5-1Oacyc-box24.md:120:- S4c fires on G iff S4a returns σ_k and S4b returns τ_k, i.e. iff S4a returns σ_k (S4b did). On G_τ it fires iff S4a returns σ_k.
+new__N5-1Oacyc-box24.md:122:- Iσ_k ≠ ∅. Otherwise S4c would have fallen back on Odd, or S4b would have moved τ.
+new__N5-phase-bound-box10.md:86:switch-best (N5-K9-Pstrict-counter.md §5); N5's fallback fires only when the arena optimum returns σ unchanged although Iσ ≠ ∅, which by the
+new__N5-time-box21.md:11:  - (ALT) Alternation: Odd's τ changes polynomially often.
+new__N5-time-box21.md:77:- Odd's step is symmetric: τ_{k+1} minimises V_{σ_k,·} over Odd's arena.
+new__N5-time-box21.md:99:(a) If τ_{k+1} = τ_k, then σ_{k+1} = F_{τ_k}(σ_k).
+new__N5-time-box21.md:102:- If Iσ = ∅, the iteration needs Iτ ≠ ∅. Then either S4b changes τ, or S4c falls back on Odd and changes τ. Either way
+new__N5-time-box21.md:103:  τ_{k+1} ≠ τ_k.
+new__N5-time-box21.md:107:(c) If τ_0 is honest-optimal (Iτ_0 = ∅), then τ never changes (Iτ depends on τ alone, S2 on G^d), and the N5 run IS the F_{τ_0}
+new__N5-time-box21.md:119:- every fallback step has W_{k+1} ⊴ W_k pointwise. A fallback fires only when the VJ procedure returns σ_k as the arena optimum,
+new__N5-time-box21.md:141:  - τ*(o) = t6; Iτ* = ∅, checked.
+new__N5-time-box21.md:155:- The start pair is (σ_0 = best-reward, τ* = the final τ of the plain N5 run); Iτ* = ∅, so Odd never moves.
+new__N5-time-box21.md:168:- O1 (no lapping) and O2's formal core (Iτ is a function of τ alone) are PROVED facts (R15, S2).
+new__N5-time-box21.md:187:  (Iτ_0 = ∅), so by Theorem B (c) the canonical run IS the frozen run, and τ never changes.
+new__N5-time-box21.md:251:| instance | n | iterations | θ-changes | (w or λ)-changes | Odd moves | longest (θ, w, τ, λ)-stretch |
+new__N5-time-box21.md:334:  - The coupling is only through the selection (Lemma S (c)): Odd's step is a gated best reply to σ_k.
+new__N5-time-box21.md:337:    V_{σ_k,τ_k} is not monotone: Even's and Odd's steps pull it in opposite directions in the same iteration.
+new__N5-xing-box27.md:60:- The fallback fires only when the S4a arena optimum is σ itself. By (F1) σ is then pointwise optimal in the arena, so no gate edge is
+new__P-N5-FBPOLY-box41.md:34:- N5's step (SPEC S4): S4a is Even's arena step (σ_{k+1} = Even's arena optimum against τ); S4b Odd's; S4c, the FALLBACK, applies when
+new__P-N5-FBPOLY-box41.md:46:  both ends in the phase; then λ_{k+1} = λ_k and τ_{k+1} = τ_k, so it is an S4a step or an Even S4c fallback (an Odd fallback changes τ).
+new__P-N5-FBPOLY-box41.md:68:| FBL-N (ii) | at an S4c fallback with τ unchanged, every gate (x, z) with x ∈ F_k has x = λ_W(x) and λ_W(z) = x | RESULTS R21 (c) | LANDED |
+new__P-N5-FBPOLY-box41.md:248:  - An Odd fallback changes τ and ends the phase (SPEC S4c, FIX 3), so f counts all fallbacks inside a phase.
+new__P-N5-FRZ-box34.md:48:    - (b) FBL step 1: an in-phase S4c fallback happens only when S4a returned σ_k.
+new__P-N5-LP-box32.md:14:- N5 and its SPEC: docs/new/N5-ssi-global.md (S1 valuations and Engine.evaluate, S2 improving edges, S4a / S4b / S4c, FIX 2-4); code
+new__P-N5-LP-box32.md:33:  (σ_{k+1}(y) ∈ {σ_k(y)} ∪ Iσ_k(y)); every N5 iteration changes σ or τ (SPEC S4: if S4a and S4b change nothing, the S4c fallback switches
+new__P-N5-LP-box32.md:34:  at least one vertex, since Iσ ∪ Iτ ≠ ∅); R17 (F1) the S4a result is a one-player optimum of its arena
+new__P-N5-LP-box32.md:131:- σ_{k+1} is a maximum strategy of the one-player arena H_k against τ (SPEC S4a; R17 (F1)), whose valuation is W_{k+1} (Odd's moves are
+new__P-N5-NEB-box38.md:34:  - S4a is Even's arena step and S4b Odd's.
+new__P-N5-NEB-box38.md:36:    and τ is unchanged.
+new__P-N5-NEB-box38.md:89:| FBL-N | at an S4c fallback with τ unchanged: (i) Even's, σ_k a pointwise arena optimum in G_τ; (ii) a gate (x, z) with x ∈ F_k has x = λ_W(x), λ_W(z) = x; (iii) under ¬H2, no gate from F_k to R_k | RESULT
+new__P-N5-NEB-box38.md:91:| ACT (i) | at a transition with τ unchanged, if R̄ gains a vertex, some switched Even s ∈ F_k with σ_{k+1}(s) ∈ R̄_k enters | RESULTS R23 (b) | LANDED |
+new__P-N5-NEB-fixes-box38.md:32:  - at the Even fallback a → a+1 with τ unchanged, σ_a is a pointwise arena optimum in G_τ (FBL-N (i), RESULTS R21 (c));
+new__P-N5-NH-box30.md:25:  - R15 (a) (Ξ non-decreasing) and (d) (≤ 4n(n − 1) consecutive iterations leave Ωσ and Ωτ unchanged).
+new__P-N5-OUT-box37.md:43:  - S4a is Even's arena step, S4b Odd's.
+new__P-N5-OUT-box37.md:45:    ties to the larger index (τ unchanged); otherwise Odd does the same on Iτ.
+new__P-N5-OUT-box37.md:46:  - S5 stops when Iσ = Iτ = ∅.
+new__P-N5-OUT-box37.md:82:| FBL-N | at an S4c fallback with τ unchanged: (i) it is Even's and σ_k is a pointwise arena optimum in G_τ; (ii) every gate edge (x, z) with x ∈ F_k has x = λ_W(x) and λ_W(z) = x; (iii) if H2 fails, no gate
+new__P-N5-OUT-box37.md:84:| ACT (i) | at a transition with τ unchanged, if R̄ gains a vertex, some switched Even s ∈ F_k with σ_{k+1}(s) ∈ R̄_k enters | RESULTS R23 (b) | LANDED |
+new__P-N5-OUT-box37.md:110:  fallback is Even's (an Odd fallback changes τ and leaves the phase).
+new__P-N5-OUT-fixes-box37.md:24:  - At the Even fallback a → a+1 with τ unchanged, σ_a is a pointwise arena optimum in G_τ (FBL-N (i), RESULTS R21 (c)).
+new__P-N5-PFZ-box39.md:33:    (v, w) ∈ Iσ maximising (Ξσ(w), w), ties to the larger index; τ unchanged.
+new__P-N5-PFZ-box39.md:67:| FBL-N (ii), (iii) | at an S4c fallback with τ unchanged: every gate (x, z) with x ∈ F_k has x = λ_W(x) and λ_W(z) = x; under ¬H2 no gate goes from F_k to R_k | RESULTS R21 (c) | LANDED |
+new__P-N5-PFZ-box39.md:68:| ACT (i) | at a transition with τ unchanged, if R̄ gains a vertex, some switched Even s ∈ F_k with σ_{k+1}(s) ∈ R̄_k enters | RESULTS R23 (b) | LANDED |
+new__P-N5-RE-box26.md:12:  - S4b: the symmetric Odd step;
+new__P-N5-RE-box26.md:13:  - S4c: if σ' = σ and τ' = τ, a switch-all ("fallback") on Iσ, or on Iτ if Iσ = ∅.
+new__P-N5-RE-box26.md:51:Statement. Let k → k+1 be an N5 transition with τ_{k+1} = τ_k and (h) at k and at k+1. Then w_{k+1} ⊵ w_k.
+new__P-N5-RE-box26.md:58:Statement. Let k → k+1 lie in one joint λ-phase, with τ_{k+1} = τ_k, θ_{k+1} = θ_k =: θ, and (h) at k and at k+1. If
+new__P-N5-RHO-box40.md:40:- In a phase, every transition has τ unchanged, so it is an S4a step (σ_{k+1} = Even's arena optimum against τ, SPEC S4a; S4b leaves τ
+new__P-N5-RHO-box40.md:41:  unchanged) or an Even S4c fallback (an Odd fallback changes τ, SPEC S4c and FIX 3).
+new__P-N5-SCOPE-box36.md:25:  - S4a is Even's arena step and S4b Odd's.
+new__P-N5-SCOPE-box36.md:27:    ties go to the larger index (FIX 3: τ unchanged). Otherwise Odd does the same on Iτ.
+new__P-N5-SCOPE-box36.md:28:  - S5: stop when Iσ = Iτ = ∅.
+new__P-N5-SCOPE-box36.md:91:  | §6 Lemma CN-LAST | SPEC S4c / S4a / S4b / S5, (F) (P-N5-TOG §0), S (a), R15 (a) |
+new__P-N5-SCOPE-box36.md:204:  - Iτ_{k+1} = ∅: N5 stops (S5).
+new__P-N5-SCOPE-box36.md:205:  - S4b returns a new τ: τ changes.
+new__P-N5-SCOPE-box36.md:206:  - S4b returns τ unchanged: σ is unchanged too, so the S4c fallback runs. It is Odd's, since Iσ = ∅, and sets τ(v) to an improving
+new__P-N5-SCOPE-box36.md:207:    target: τ changes.
+new__P-N5-SN-box33.md:35:- Phase keys: R19-R25 are signed under the key (λ_Ξ, λ_U, τ). Lemma G and XW are statewise; WM uses only τ_{k+1} = τ_k at an S4a step
+new__P-N5-SN-fixes-box33.md:12:| §0 WM phase-key transfer | VALID (P-N5-Z §8 uses only τ_{k+1} = τ_k and the S4a optimum, statewise; R18 Lemma S (c)) | §1 |
+new__P-N5-SN-fixes-box33.md:19:- Add to §0 "Phase keys": WM (R23 (g)) transfers: its proof (P-N5-Z §8) uses only τ_{k+1} = τ_k and that σ_{k+1} is the S4a optimum of
+new__P-N5-TOG-box35.md:18:  at S4a by the arena; at S4c the fallback sets σ(v) to an Iσ-target; at an Odd fallback σ is unchanged.
+new__P-N5-TOG-box35.md:104:- H1 ∧ ¬H2 at k: by H2-STICK the transition is not S4a. τ is constant in a phase, so it is not an Odd fallback. So it is an Even S4c
+new__P-N5-U1-box31.md:13:- N5 and its SPEC: docs/new/N5-ssi-global.md (S1 valuations and Engine.evaluate, S2 improving edges, S4a/S4b/S4c, FIX 2, FIX 4;
+new__P-N5-U1-box31.md:16:- Phase: a joint λ-phase with τ fixed (P-N5-X-box28.md §0, RESULTS R21). Inside a phase S4b returns τ, so a transition is either a
+new__P-N5-U1-fixes-box31.md:171:    1. Inside a phase the fallback is Even's (SPEC S4c; FIX 3: τ_{k+1} = τ). It sets σ_{k+1}(v) to an edge of I_σ at every Even
+new__P-N5-U23-box31.md:22:  - Inside a phase every non-fallback transition is an S4a step: S4b returns τ.
+new__P-N5-X-box28.md:13:- N5: docs/new/N5-ssi-global.md SPEC S1-S5 (S4a arena step against τ; S4b; S4c fallback = switch-all on Iσ, each vertex to its best
+new__P-N5-X-box28.md:14:  gate edge by (Ξ-key, index); on Iτ if Iσ = ∅). Iσ_k ("the gate") := Even's Ξ_k-improving edges.
+new__P-N5-X-box28.md:21:  - R15 (d): at most 4n(n − 1) consecutive iterations leave both Ωσ and Ωτ unchanged.
+new__P-N5-X-box28.md:64:- S4c step k → k+1: Even's, since τ is fixed and τ_{k+1} = τ_k (S4c switches Odd only if Iσ_k = ∅, and then τ changes).
+new__P-N5-X-box28.md:76:Let k → k+1 be an S4c fallback with τ_{k+1} = τ_k. Then:
+new__P-N5-X-box28.md:170:7. A value-preserving transition leaves Ωσ = Ξ unchanged, and Ωτ unchanged because τ is fixed. So R15 (d) bounds runs of them by
+new__P-N5-XA-box27.md:13:  - S4b: Odd's symmetric step;
+new__P-N5-XA-box27.md:14:  - S4c: if σ' = σ and τ' = τ, a switch-all (the fallback) on Iσ, each vertex to its best edge by (Ξ-key, index); on Iτ if Iσ = ∅.
+new__P-N5-XA-fixes-box28.md:49:  z's route above c empty, and (o, σ̄(o)) ∉ Iτ. Then the switched edge (c, z) with z ∈ R_k \ R_{k+1} is neither a leave nor a flat F → F
+new__P-N5-XA-fixes-box28.md:140:- **N-XA-3** (R15 (d)). R15 (d) (RESULTS "### R15"): "at most 4n(n−1) consecutive N5 iterations leave both Ωσ and Ωτ unchanged".
+new__P-N5-XA-fixes-box28.md:143:    A value-preserving transition leaves Ωσ = Ξ and Ωτ unchanged, so R15 (d) applies directly.
+si__P-N5-CLS-box8.md:17:- PHASE: a joint λ-phase with τ constant (R21 setting). Inside a phase λ_{k+1} = λ_k and τ_{k+1} = τ_k.
+si__P-N5-CLS-fixes-box8.md:10:   - Reason: with no gate (Iσ_k = ∅), σ is unchanged (R15 (d)). A transition then requires Iτ_k ≠ ∅, and τ changes, through S4b or
+si__P-N5-CLS-fixes-box8.md:11:     Odd's fallback. That leaves the phase.
+si__P-N5-CLS-fixes2-box8.md:10:| 1 | CLS-1 | §3 (and §5) | part 1: M_k ≥ −1 at every in-phase transition (no gate ⇒ σ unchanged ⇒ τ changes ⇒ the phase is left) |
+si__P-N5-FB-box7.md:20:  - S4c (fallback): it happens iff S4a returns σ_k and S4b returns τ_k. If Iσ_k ≠ ∅, EVERY Even vertex with an Iσ_k edge switches to
+si__P-N5-FB-box7.md:21:    its best one, by (Ξ_k-key, larger index); τ is unchanged (SPEC FIX 3). n5.py lines `if Is:` / `for v in {v for v, _ in Is}: ns[v]
+si__P-N5-FB-box7.md:45:  - R21 (c) Lemma FBL-N (i): at an S4c fallback with τ unchanged, the fallback is Even's.
+si__P-N5-FB-box7.md:149:  - The fallback is Even's (τ unchanged in a phase; R21 (c) FBL-N (i)), so Iσ_i ≠ ∅ and M ≠ ⊥. M < ∞ by NOINF.
+si__P-N5-FB-fixes2-box7.md:25:  - S4c with Iσ_k = ∅ is Odd's fallback. It switches at least one Odd vertex to an Iτ_k edge ≠ τ_k(v), so τ_{k+1} ≠ τ_k.
+si__P-N5-FB-fixes2-box7.md:27:  - By SPEC FIX 3, τ_{k+1} = τ_k at an Even fallback.
+si__P-N5-FB-fixes2-box7.md:32:- WM on every game. Take an in-phase transition that is not an S4c fallback; τ is unchanged, since the phase fixes τ.
+si__P-N5-FBW-box9.md:17:- N5 and its steps S4a (arena step), S4b, S4c (fallback): as specified in docs/new/N5-ssi-global.md (SPEC S1-S5; RESULTS R15).
+si__P-N5-FBW-box9.md:18:  - An S4c fallback fires exactly when S4a returns σ_k and S4b returns τ_k. Even switches if Iσ_k ≠ ∅, otherwise Odd.
+si__P-N5-KW-box15.md:48:  by R38 KEY). τ is constant in a phase. If S4a leaves σ unchanged and S4b leaves τ unchanged, the S4c fallback is Even's, because
+si__P-N5-Z-box5.md:25:  - S4c: fallback. It happens iff S4a returns σ_k and S4b (Odd's step) returns τ_k. Then every Even vertex with an Iσ edge switches to
+si__P-N5-Z-box5.md:38:- Fact (F0), elementary: if a vertex u ≠ o keeps its edge at k → k+1 and τ_{k+1} = τ_k, then u ∈ R̄_k ⟺ its successor ∈ R̄_k. The
+si__P-N5-Z-box5.md:48:  - R21 (c) Lemma FBL-N (i): at an S4c fallback with τ unchanged, the fallback is Even's and σ_k is a pointwise arena optimum in G_τ.
+si__P-N5-Z-box5.md:57:Let k → k+1 be a transition with τ_{k+1} = τ_k, and let S be the set of Even vertices v with σ_{k+1}(v) ≠ σ_k(v).
+si__P-N5-Z-box5.md:171:- τ_{k+1} = τ_k (phase). σ_{k+1} is S4a's choice. By R18 (d) Lemma S (c) it maximises V_{·, τ_k} pointwise over the arena.

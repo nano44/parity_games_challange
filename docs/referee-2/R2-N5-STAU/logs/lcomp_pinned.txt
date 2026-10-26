@@ -1,0 +1,6 @@
+tau_ep11_n15 n 15 N5tau_len 3 keeps_along_N5tau 2 RUNS_differ 1 R48_max_f None violations 0
+tau_ep12_n15 n 15 N5tau_len 3 keeps_along_N5tau 2 RUNS_differ 1 R48_max_f None violations 0
+tau_lib1_n32 n 32 N5tau_len 31 keeps_along_N5tau 13 RUNS_differ 1 R48_max_f 1 violations 0
+tau_lib2_n32 n 32 N5tau_len 16 keeps_along_N5tau 13 RUNS_differ 1 R48_max_f None violations 0
+tau_rand1_n16 n 16 N5tau_len 6 keeps_along_N5tau 5 RUNS_differ 1 R48_max_f None violations 0
+tau_rand2_n16 n 16 N5tau_len 5 keeps_along_N5tau 4 RUNS_differ 1 R48_max_f None violations 0

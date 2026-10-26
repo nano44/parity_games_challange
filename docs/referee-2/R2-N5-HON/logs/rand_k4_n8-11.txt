@@ -1,0 +1,37 @@
+MODE random 1500 8 11 1623 4 3 MUT - LEVMAX 11 RUMAX 3
+ENGXI_checks: 12289
+FB_cases: 159
+H0_phases: 11736
+HON_phases: 11736
+R1_Xbig: 2
+R1_Xdir: 3
+R1_d_phases: 7802
+R1_entries_D0: 16
+R1_entries_big: 2
+R1_entries_dir: 3
+R1_entries_start: 3071
+R1_intervals: 3092
+R1_phases: 11736
+RP_runs: 17358
+RU_checks: 18750
+RU_iv_checks: 34
+S0_checks: 12289
+S1_gaps: 346
+S1_rise_checks_unsat: 334
+S1_step_checks: 346
+S2_checks: 5193
+S3_phases: 5022
+SAT0_states: 6834
+gaps_fallback_at_h: 159
+gaps_with_fallback: 159
+phases: 11736
+runs: 4500
+states: 12289
+H0_max_D0_states: (4, 'random1623:1326#1@1 n 8')
+H0_max_N0: (1, 'random1623:0#0@0 n 9')
+HON_max_honest: (4, 'random1623:1326#1@1 n 8 f 1 f_in 0')
+R1_max_interval_states: (3, 'random1623:424#0@0 u 2')
+R1_max_intervals: (2, 'random1623:361#2@1 n 9')
+RP_max_len: (3, 'random1623:1326#1@1 u 0 n 8')
+S3_max_span: (2, 'random1623:717#2@0 n 8')
+RESULT OK violations=0

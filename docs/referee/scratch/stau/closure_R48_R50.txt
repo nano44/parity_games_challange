@@ -1,0 +1,94 @@
+CLOSURE 29 R1 R2 R15 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 R32 R33 R34 R38 R39 R42 R44 R45 R47 R48 R50
+R1 -> 
+R2 -> 
+R15 -> 
+R17 -> R15
+R18 -> R15 R17
+R19 -> R15 R17 R21
+R20 -> R2 R15 R17 R19
+R21 -> R15 R19 R20
+R22 -> R2 R19 R20 R21
+R23 -> R21 R22
+R24 -> R15 R22
+R25 -> R15 R23
+R26 -> R15 R22 R24 R25
+R27 -> R15 R19 R22 R23 R24 R25 R26
+R28 -> R15 R22 R23 R24 R25 R26 R27
+R29 -> R23 R25
+R30 -> R23 R24 R27 R29
+R31 -> R18 R25 R29 R30
+R32 -> R20 R25 R29 R30 R31
+R33 -> R32
+R34 -> R15 R30 R32 R33
+R38 -> R28 R33 R34
+R39 -> R1 R17 R21 R23 R34 R38
+R42 -> R1 R17 R21 R23 R34 R38 R39
+R44 -> R39 R42
+R45 -> R34 R39 R42 R44
+R47 -> R15 R18 R21 R23 R25 R27 R28 R38
+R48 -> R38 R39 R44 R45
+R50 -> R15 R17 R18 R19 R20 R21 R22 R23 R24 R26 R27 R30 R34 R38 R47 R48 R73
+--- excluded
+R1 | doc-name | R2 | (referee 9bf5301); REFEREE-2 OK,   docs/referee-2/R2-L4.md §7 (referee-2
+R1 | doc-name | R2 | 1-report.md (checker 62cf1c4). - Gaps (union, see R2-L4.md §7): CDFJLP T
+R15 | doc-name | R2 | y flat switch (113/113). REFEREE-2 docs/referee-2/R2-N5T/vjbf.py (all-pl
+R15 | doc-name | R2 | N2 closed;   G-N1 DATA). REFEREE-2 docs/referee-2/R2-N5T.md (referee-2 0
+R17 | label (Rk) | R15 | na optimum or S4c), DATA not proof. (iv) G-N5T-3 (R15) untouched: the out
+R17 | doc-name | R2 |  SIGNED WITH GAPS G1-G9. REFEREE-2 docs/referee-2/R2-N5-1P.md   (referee
+R18 | doc-name | R58 | 1OA, signed object = trunk d78e54f): (A) docs/red/R58-n5-width.md §9, Pro
+R18 | label (Rk) | R17 |  d)·(B + 1) iterations, B := (n² − n + 1)(n + m) (R17). Proof: Lemma 1, a
+R18 | L-RED item | R58 | s DATA remark "every block ≤ |Y|" is FALSE (L-RED R58 §10:   block_bk20 n
+R18 | doc-name | R2 | 2, G-1OA-6 (first half). REFEREE-2 docs/referee-2/R2-N5-1OA.md (referee-
+R19 | doc-name | R2 | RE-3 (τ constant per interval) and withdrew it in R2-N5-RE §A (Lemma RE'
+R19 | doc-name | R2 |  closed, P-2 wording). REFEREE-2   docs/referee-2/R2-N5-RE.md (referee-2
+R19 | doc-name | R2 | ULTS R21 (i) (REFEREE R-N5-X X-1 / §C3, REFEREE-2 R2-N5-X Lemma TF / §C.
+R20 | doc-name | R2 |  = Ξ and W unchanged). REFEREE-2   docs/referee-2/R2-N5-XA.md (referee-2
+R21 | doc-name | R19 | ation of R19 (f) (landed text frozen; docs/agents/R19-note-X1.md): R19 (f
+R21 | doc-name | R2 | R_k, (h) at k suffices). REFEREE-2 docs/referee-2/R2-N5-X.md (referee-2 
+R22 | label (Rk) | R1 | h OTHER states), 39,250 TC state checks, 151,926 (R1) checks, 0 violatio
+R22 | doc-name | R2 | remark should cite (SG). REFEREE-2 docs/referee-2/R2-N5-NH.md   (referee
+R22 | L-RED item | R63 | its σ-path is fixed only from transition 1; L-RED R63 §1b also shows own-
+R23 | doc-name | R19 | ossing transitions (R changes) are the same as in R19-R22. - Claims signe
+R23 | doc-name | R2 | ; §C: no disagreement.   REFEREE-2 docs/referee-2/R2-N5-Z.md (referee-2 
+R24 | doc-name | R2 | .3); §6 READING correct. REFEREE-2 docs/referee-2/R2-N5-U1.md (referee-2
+R25 | doc-name | R2 | ommended), L ≥ M_k OPEN. REFEREE-2 docs/referee-2/R2-N5-FB.md (referee-2
+R26 | label (Rk) | R1 | ith three new steps (levels constant via P-N5-NH (R1), W half; honest va
+R26 | doc-name | R2 | EADING correct with R-1. REFEREE-2 docs/referee-2/R2-N5-U23.md (referee-
+R27 | doc-name | R21 |  changes. On 𝒞^1O: R, F, crossing, c_θ, c_w as in R21-R26; S_o := #transi
+R27 | label (Rk) | R25 | (o); X := #crossings; J := #non-tame transitions (R25); d_o := |succ(o)|.
+R27 | doc-name | R2 | ase proof, re-checked and adopted by REFEREE-2 in R2-N5-FB §C.3: SO-1, c
+R27 | doc-name | R2 | n 11, sha1 a128663e…, o = 1) and   docs/referee-2/R2-N5-LP/instances/df_
+R27 | doc-name | R2 | XJ SIGNED WITH GAP XJ-1. REFEREE-2 docs/referee-2/R2-N5-LP.md (referee-2
+R28 | doc-name | R2 |     REFEREE's case proof, adopted by REFEREE-2 in R2-N5-FB §C.3; OE-2, c
+R28 | doc-name | R2 |  by REFEREE, accepted. REFEREE-2   docs/referee-2/R2-N5-OE.md (referee-2
+R29 | doc-name | R19 | ^1O, R, R̄ := R ∪ {o}, F, (h), EQ / THR, u* as in R19-R23. SCOPE RUN: a m
+R29 | doc-name | R2 |  k1 (no F → R and no R → R gate edge; R-N5-XA §3, R2-N5-XA §2), not "a s
+R29 | doc-name | R2 | ; OG′ FALSE   confirmed. REFEREE-2 docs/referee-2/R2-N5-CLS.md (referee-
+R30 | doc-name | R2 | xt, signed by both referees in addenda (REFEREE-2 R2-N5-SN §B, REFEREE R
+R30 | doc-name | R27 |  of the file is a record.   Setting as in RESULTS R27-R29 (𝒞^1O; phase wi
+R30 | label (Rk) | R27 | RE FALSE (b6_xl_n48); (KW-M) and   NO-WAKE FALSE (R27). - Honest limits: 
+R30 | doc-name | R2 | KEEP, ABS-COUNT′ SIGNED. REFEREE-2 docs/referee-2/R2-N5-SN.md (referee-2
+R30 | label (Rk) | R29 |  f); SN-3, N-SN-1 (wording); ABS-L unconditional (R29). - TARGET.md diff:
+R31 | doc-name | R27 | e reviewed text).   Setting as in RESULTS R25 and R27-R30 (gates, gate le
+R31 | doc-name | R2 | WITH GAP FBW-2 (closed). REFEREE-2 docs/referee-2/R2-N5-FBW.md (referee-
+R32 | doc-name | R27 | nk; repairs only.   Setting as in RESULTS R25 and R27-R31 (COARSE_L, (C1)
+R32 | doc-name | R2 | , ℓ) transition checks). REFEREE-2 docs/referee-2/R2-N5-FRZ.md (referee-
+R33 | doc-name | R30 | h on trunk; repairs only.   Setting as in RESULTS R30-R32 (𝒞^1O; phase wi
+R33 | doc-name | R2 | GAP   L2-2; both closed. REFEREE-2 docs/referee-2/R2-N5-L2.md (referee-2
+R34 | doc-name | R30 | h on trunk; repairs only.   Setting as in RESULTS R30-R33 (𝒞^1O; phase wi
+R34 | doc-name | R2 | S TOG-1, TOG-2 (closed). REFEREE-2 docs/referee-2/R2-N5-TOG.md (referee-
+R38 | doc-name | R28 | ; on trunk; repairs only.   Setting as in RESULTS R28-R34 (phase; R, F; H
+R38 | doc-name | R2 | CN-LAST SIGNED; no gaps. REFEREE-2 docs/referee-2/R2-N5-SCOPE.md (refere
+R39 | doc-name | R2 | OUT-R1, OUT-N1; no gaps. REFEREE-2 docs/referee-2/R2-N5-OUT.md   (refere
+R42 | doc-name | R2 | N1..N5, NEB-B1; no gaps. REFEREE-2 docs/referee-2/R2-N5-NEB.md (referee-
+R44 | doc-name | R2 | xt §C; notes PFZ-N1..N3. REFEREE-2 docs/referee-2/R2-N5-PFZ.md (referee-
+R45 | doc-name | R2 | tes RHO-N1..N3; no gaps. REFEREE-2 docs/referee-2/R2-N5-RHO.md   (refere
+R47 | doc-name | R2 | PHI-N1, PHI-N2; no gaps. REFEREE-2 docs/referee-2/R2-N5-PHI.md (referee-
+R48 | doc-name | R2 | witched vertices, N-FBP-4: witness docs/referee-2/R2-N5-FBPOLY/climb/loo
+R48 | L-RED item | R71 | -2: 1,484 batch logs and 1.92 M climb runs; L-RED R71), so FREEZE-EXIT, T
+R48 | doc-name | R72 | om runs, 0 failures. L-RED successor 18 (docs/red/R72-fx-fbpoly-k.md, l-r
+R48 | doc-name | R2 | a gap; notes FBP-N1..N4. REFEREE-2 docs/referee-2/R2-N5-FBPOLY.md (refer
+R50 | L-RED item | R73 |  U23 transitions with c_w ≻ c_θ; REFEREE-2; L-RED R73; both lanes), so KI
+R50 | L-RED item | R73 | -INT's deg(c_w) − 1 are attained in   data (L-RED R73: frzu_tight_n14, cw
+R50 | doc-name | R73 | not on saved data. L-RED successor 18   (docs/red/R73-*.md, l-red 896aea7
+R50 | doc-name | R2 | air); notes   KW-N1..N5. REFEREE-2 docs/referee-2/R2-N5-KW.md (referee-2

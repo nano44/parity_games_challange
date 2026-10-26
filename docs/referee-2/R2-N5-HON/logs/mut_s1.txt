@@ -1,0 +1,45 @@
+MODE files ../R2-N5-STAU/lib41_noref.lst 1 MUT s1 LEVMAX 11 RUMAX 3
+ENGXI_checks: 8882
+FB_cases: 26
+H0_phases: 2332
+HON_phases: 2332
+R1_Xbig: 7
+R1_Xdir: 1
+R1_d_phases: 1274
+R1_entries_D0: 54
+R1_entries_big: 7
+R1_entries_dir: 1
+R1_entries_start: 719
+R1_intervals: 781
+R1_phases: 2332
+RP_runs: 1611
+RU_checks: 7989
+RU_iv_checks: 207
+S0_checks: 177
+S1_gaps: 1122
+S1_rise_checks_unsat: 16
+S1_step_checks: 16
+S2_checks: 68
+S3_phases: 63
+SAT0_states: 568
+VIOLATIONS: 4
+V_S1_step: 4
+f_in_phases: 3
+f_in_total: 4
+gaps_fallback_at_h: 26
+gaps_with_fallback: 29
+phases: 2332
+runs: 410
+states: 8882
+H0_max_D0_states: (57, 'experiments/red/xing/instances/x32_rand64.pg#0@0 n 64')
+H0_max_N0: (5, 'experiments/new/box28/instances/w24b_thc24_final.pg#0@1 n 24')
+HON_max_honest: (57, 'experiments/red/xing/instances/x32_rand64.pg#0@0 n 64 f 1 f_in 0')
+R1_max_interval_states: (111, 'experiments/red/so/instances/xsn91_n48.pg#0@3 u 0')
+R1_max_intervals: (6, 'experiments/red/so/instances/so_th_n32.pg#0@1 n 32')
+RP_max_len: (112, 'experiments/red/so/instances/xsn91_n48.pg#0@3 u 0 n 48')
+S3_max_span: (1, 'experiments/n5-exhaustive/instances/b4_n5_other_0.pg#0@0 n 5')
+VIOLATION S1_step: experiments/n5-exhaustive/instances/nh_n8.pg#0@1: W_(h+1) below B_(LEV+1) (LEV 5)
+VIOLATION S1_step: experiments/n5-exhaustive/instances/thetaA_canon_n8.pg#0@0: W_(h+1) below B_(LEV+1) (LEV 1)
+VIOLATION S1_step: experiments/new/box22/instances/n9_i2.pg#0@0: W_(h+1) below B_(LEV+1) (LEV 2)
+VIOLATION S1_step: experiments/new/box25/laps/lap_n6_s1_110421.pg#0@0: W_(h+1) below B_(LEV+1) (LEV 0)
+RESULT FAIL violations=4

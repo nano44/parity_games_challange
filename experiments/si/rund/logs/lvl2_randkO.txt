@@ -1,0 +1,2 @@
+max_rises_any=4 segs=648 v_with_rise=434
+LVL PASS
