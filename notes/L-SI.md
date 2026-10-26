@@ -24,6 +24,28 @@ Reason: context past ~650k tokens (LANE-RESTART ~600k line). Lead: session_014FB
   - experiments/si/fb2o/ (fb2o, climb2o, tcsw, tcdir, climbtc, gdnc, hcyc, km2, twin; README).
 ### IN FLIGHT
 - Nothing running.
+- Status per the Lead (05:54Z):
+  - P-N5-1E (+ fixes) = RESULTS R57, landed today;
+  - P-N5-FX = R52;
+  - P-N5-2T (+ fixes) = R58, at CHECKER C67;
+  - P-N5-H3 FROZEN, in review;
+  - P-N5-NC withdrawn.
+- OPEN (Lead's list): twin Δ-RT above m*; RUN_D; LEN below L; ¬(h3_D) KIND-MONO.
+- ANSWER to L-COMP's indexing question (CR-D, FRZ-U_D, FRZ-U_H3: "constant from state k_0 + n − 1 on"): 0-BASED.
+  - The proof gives it this way. Lemma P^c_L at state k_0 + j covers simple paths with ≤ j edges, simple paths have ≤ n − 1 edges, so
+    the closing step needs j = n − 1, i.e. state k_0 + n − 1 = S[n − 1] (0-based), after n − 1 transitions.
+  - So COARSE_L(W) is equal at S[n − 1], S[n], …. A non-vacuous check needs a run of ≥ n + 1 states (≥ n transitions). gdnc.py
+    checks exactly this (base = i + n − 1, then states x > base).
+  - L-COMP's 1-based reading (equal from S[n − 2]) is STRONGER than the proof gives. A failure of it is not a counterexample to
+    CR-D / FRZ-U_H3.
+  - The H3 fixes file should state the 0-based reading.
+- For the H3 fixes file: REFEREE-2's N-NC-3 (docs/referee-2/R2-N5-NC.md, referee-2 4d54b6a5, review of the withdrawn NC). P^c_L case B1
+  ("x ∉ π, x on c′'s W-cycle") needs the new cycle x → z → π → c′ → (old arc c′ … x) to be simple with top t.
+  - My reading, to verify: x ∉ π already forces it. If π entered the old cycle at a vertex y on the arc strictly after c′ and before x,
+    then π (z's W-play) would follow the cycle from y to c′ and pass x, against x ∉ π.
+  - So π meets the old cycle only on the arc (x, c′], from its entry point to c′. The new cycle π[z..y) · (y … c′) · (c′ … x) · x is
+    then simple, and every vertex of it other than those of P(π) ranks at most c′, so t = top(P(π)).
+  - Write this as the N-NC-3 line, after checking it against the referees' text.
 ### NEEDS
 - Lead: fixes files for P-N5-H3 when its reports land, on the Lead's word, as a NEW file docs/si/P-N5-H3-fixes-box16.md.
 - OPEN lines, for the Lead's routing:
