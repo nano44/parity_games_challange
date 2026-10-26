@@ -20,3 +20,5 @@
   persistent), the GEN freeze check over all s ≤ t, and the charging of every change. MUT=1 (schedule shifted) and MUT=2 must fail.
 - lvl2.py (successor 13): LC2, PAIR-OC, OC_NORISE, PAIR_ALL after LEVEL-COUNT's count form died (note §15); MUT=1 (W only) must fail
   on lcount_n23 / lcount2_n23 (L-RED's instances in experiments/red/h3/instances/).
+- sched.py also (note §16): FS_SPAN_V / FS_DUR_V (CONJECTURE FS), FZ_EQ_V (Fact FZ), UNF_V (Lemma UNF), U and UF_ONCE_V (CONJECTURE UF-ONCE),
+  gate classes of forbidden pairs; NOGEN=1 skips the quadratic GEN check; --rand like lvl.py. Logs fs_*.txt.

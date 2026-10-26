@@ -150,3 +150,77 @@ Nothing here bounds N5's running time on any class beyond 𝒞^1O; G-N5-TIME sta
 ## Signature
 REFEREE-2 (successor 15, Opus 5.5, D15): Lemma Στ-STEP (a), (b), (c), (d) SIGN; Corollary SIGN (wording N-STAU-1). §2 table CHECKED:
 audit question (1) YES with the completions above; audit question (2) NO. No gap. §3, §4 not signed.
+
+## §C. Comparison with REFEREE's R-N5-STAU (claude/referee 48674360, successor 13; read after my report 8e42c473 was pushed). Written 2026-10-26 08:4xZ onward by date -u (Opus 5.5, D15)
+### C.1 Verdicts, item by item
+| item | REFEREE | REFEREE-2 (8e42c473) | outcome |
+| --- | --- | --- | --- |
+| §1 (a), (b), (c) | SIGNED | SIGN | same |
+| §1 (d) | SIGNED, note STAU-N1 (R15 (a) too) | SIGN, note N-STAU-3 (R15 (a) too) | same; STAU-N1 = N-STAU-3, found by both |
+| Corollary, transfer clause | SIGNED | SIGN | same |
+| Corollary, sentence 1 ("exactly") | SIGNED WITH GAP STAU-1 (i) | note N-STAU-1 (inclusion only; witness nonex_min.pg) | same defect, found by both; REFEREE graded it a gap, I a note. Settled in C.2: GAP |
+| Corollary, sentence 2 ("differ only in WHEN a phase ends") | SIGNED WITH GAP STAU-1 (ii): also differ at Iσ = ∅; witness is0_c1o264 | SIGN (missed) | found by REFEREE only; I accept it (C.2) |
+| §2 audit (1) | YES, with four entry-named files omitted, none on the chain | YES, with completions: R58 §9 (unused) + referee-written proof steps (ii-a)-(ii-d) | same answer; the completions differ (C.3) |
+| §2 audit (2) | NO | NO | same |
+| §3, §4 | not signed | not signed | same |
+### C.2 STAU-1: gap or note? A GAP (wording), closed by REFEREE's two one-line repairs
+- Sentence 2 is FALSE as written, and I missed it. Reproduced on my engine (R2-N5-STAU/instances/is0_c1o264_referee.pg, copied from REFEREE's
+  scratch, sha1 b0006099 = REFEREE's): at the canonical start Iσ = ∅, Iτ = {(5,1), (5,10), (5,11)}, τ(5) = 9 value-optimal in H′, SPEC's S4b
+  returns τ(5) = 11 (N5 goes there, no fallback); N5^τ keeps τ in S4b^τ and Odd's switch-all sets τ(5) = 10. Different successor states, so
+  the runs differ from a state that is not τ-stable. My own data had this case and I did not connect it to sentence 2: in the L-COMP
+  reconciliation (§3) the step-level keeps at Iσ = ∅ are exactly it. Count on my inputs (is0_count.py, logs/is0_*.txt; state visits of both
+  runs with Iσ = ∅, Iτ ≠ ∅, τ value-optimal, SPEC's output ≠ τ): random 𝒞^1O 86, random general 76, my 503 files 0. The successor states
+  differ at only 3 and 1 of them: on these games Odd's switch-all usually picks the same τ′ as SPEC's S4b. So case (ii) is a state where
+  the transitions CAN differ.
+- Sentence 1 is false as written (my N-STAU-1 = REFEREE's STAU-1 (i); REFEREE adds the N5 direction: at a τ-stable state N5 may move τ, so for
+  N5 even the τ-keeping set is a proper subset of the Σ-transitions from τ-stable states; correct).
+- Grade. Both sentences are part of the statement to sign, and both are false as written. That is a gap of the "wording" kind with a
+  one-line repair, not a note. A note is for a correct statement that is badly cited or worded. I withdraw "note" for N-STAU-1 and sign the
+  Corollary's sentences 1-2 WITH GAP STAU-1, as REFEREE does. The transfer clause stays signed without gap: it uses only the inclusion
+  "in-phase ⇒ Σ-transition from a τ-stable state", and case (ii) is a phase-ending transition in both runs. (Στ) and §2 are unaffected.
+- REFEREE's repair text, checked:
+  - "The τ-keeping transitions of N5^τ are exactly the Σ-transitions from τ-stable states; N5's are those among them at which SPEC's S4b
+    returns τ; the in-phase ones are the τ-keeping ones with λ unchanged." ✓ by §1 (c) and its converse ("SPEC's S4b returns τ" includes
+    Iτ = ∅, where τ_new = τ by S4b's "Else").
+  - "N5 and N5^τ make different transitions only (i) at a τ-stable state where SPEC's S4b returns a value-equal τ′ ≠ τ …, and (ii) at a state
+    with Iσ = ∅ where SPEC's S4b returns a value-equal τ′ ≠ τ (both leave the phase, N5^τ by Odd's fallback)." ✓ and the list is complete:
+    the transitions can differ only where S4b^τ's output ≠ SPEC's, i.e. Iτ ≠ ∅, τ value-optimal, SPEC's output ≠ τ; then Iσ ≠ ∅ is (i) and
+    Iσ = ∅ is (ii). τ′ is value-optimal too, so "value-equal" is right. Precision (optional): in (ii) the two successor states may still
+    coincide (my counts above).
+### C.3 Audit question (1): same answer, different completions
+- RESULTS closure: identical sets, the same false tokens excluded (R2-…, (R1)/OUT-R1/NEB-R1, L-RED R58/R63/R71-R73, R47 in R50's reading).
+- Omitted entry-named files: REFEREE lists four (SPEC, T21, N5-brchanges-box11, R58 §9); I list the same four (the first three as premise /
+  remark mentions, R58 §9 as the one omitted object). Same; = STAU-N2.
+- Referee-written proof steps (my (ii-a)-(ii-d): X-1 / Lemma TF, CAP-1, TB-1 / G-TB-1, the N-U1-3 closure): found by me only. They are signed
+  closures inside chain items (RESULTS R21 (i), R25, R24) and do not sit in the 66 files. REFEREE's answer covers the lane documents; it does
+  not discuss them. Neither of us finds an S4b use in them. I keep them as completions of the list (no effect on the answer).
+- One point of detail where I DISAGREE: REFEREE calls N5-1Oacyc-box24 (R18 (c)) "not on the signed chain, harmless over-inclusion". R18 (c)'s
+  flat-case analysis (box 24 §3 Step 2 case (b), B1/B2) is cited as a proof step in the chain: P-N5-X l. 23, 65-66, 83, 94, 100 (R21),
+  P-N5-XA l. 28 and its fixes l. 35 (R20), P-N5-NH l. 27 (R22), P-N5-X-fixes l. 33. So box 24 is on the chain and the packet is right to list
+  it (its rows R18 box24 l. 99-103, 119-122 are then needed too; both hold). Agreed with REFEREE that docs/si/N5-KW-box15.md and
+  docs/new/N5-KW-box42.md are not-signed lane proofs (R50 "Not signed"), listed harmlessly. No effect on either answer.
+### C.4 Notes
+| REFEREE | REFEREE-2 | outcome |
+| --- | --- | --- |
+| STAU-N1 (R15 (a) in (d)) | N-STAU-3 | same |
+| STAU-N2 (four omitted entry-named files) | §2.1 (i) and the premise/remark list | same |
+| STAU-N3 (cite R38 (a) KEY for the phase key) | §2.2 last bullet (KEY checked; not raised as a note) | same substance; I accept STAU-N3 as a note |
+| (b): "Lemma S (a) on H′ + standing premise" | N-STAU-2 (it is 1E-N3 that makes τ attain the valuation) | same substance (REFEREE's proof cites both); N-STAU-2 is a citation precision for the packet's text, which cites Lemma S (a) only |
+| — | N-STAU-4 (TIEKEEP: step vs transition level) | mine only; also explains C.2's counts |
+| — | completions (ii-a)-(ii-d) | mine only (C.3) |
+### C.5 Data
+- Both: 0 failures of (b), (c), (c) for N5, the converse, (d), and R48 (i) on N5^τ phases. lib41 max f 33 on N5^τ phases in both (independent
+  engines, same 45 files with n > 64 skipped). REFEREE's NONEX-type count (25,997 visits) and mine (3,514 on the 503 files, more on the random
+  samples) both confirm STAU-1 (i). REFEREE's DIFF_IS0 (27 + 17, transitions that differ at Iσ = ∅) matches the kind of my diff_next counts
+  (3 + 1 on other samples); REFEREE's samples (k ≤ 4 Odd choice vertices, n 3-10) are not mine, so counts are not compared.
+### C.6 Joint gap map
+| id | REFEREE | REFEREE-2 | kind | status |
+| --- | --- | --- | --- | --- |
+| STAU-1 (i) | STAU-1 sentence 1 | N-STAU-1 (upgraded to gap here) | wording (Corollary, sentence 1 false as written) | closed by REFEREE's repair text (C.2), both accept; to be written into a fixes file |
+| STAU-1 (ii) | STAU-1 sentence 2 (witness is0_c1o264) | missed; accepted and reproduced here | wording (Corollary, sentence 2 false as written) | closed by REFEREE's repair text (C.2), both accept; to be written into a fixes file |
+| audit list | STAU-N2 | §2.1 completions | completeness of §2.1's file list | not a gap: answers unaffected; add R58 §9 (unused), the referee-written proof steps, the §2.3 rows |
+Nothing open of substance: (a)-(d) and the transfer clause are signed by both without gap; the Corollary's sentences 1-2 are signed by both
+WITH GAP STAU-1, closed by the agreed one-line repairs once they are in a fixes file; both answer the audit questions (1) YES, (2) NO.
+### C.7 Final verdicts (Opus 5.5, D15)
+Lemma Στ-STEP (a), (b), (c), (d) SIGN; Corollary transfer clause SIGN; Corollary sentences 1-2 SIGN WITH GAP STAU-1 (wording, closed by the
+repairs of C.2); §2 CHECKED: (1) YES (with the completions of §2.1 / C.3), (2) NO. Notes N-STAU-2, -3 (= STAU-N1), -4, STAU-N3 accepted.
