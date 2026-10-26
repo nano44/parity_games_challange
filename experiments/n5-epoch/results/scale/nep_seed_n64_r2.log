@@ -1,0 +1,3 @@
+START fit (90, 94) n 64
+BEST step 725 fit (90, 96) t 356s
+END steps 1753 best (90, 96) n 64 -> results/scale/nep_seed_n64_r2.pg

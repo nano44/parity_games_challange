@@ -1,0 +1,3 @@
+START fit (55, 3) n 32
+BEST step 3006 fit (56, 3) t 255s
+END steps 5454 best (56, 3) n 32 -> results/scale/lend_seed_n32_r3.pg

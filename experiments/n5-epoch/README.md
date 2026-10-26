@@ -94,3 +94,50 @@ optimistic-completion prune for c = λ(x); budget 2·10⁶ expansions per state,
 - Reading (READING): random climbs never produce an inside-fallback gap (as L-NEW's ffclimb); seeded climbs grow the number of fallbacks inside
   one gap (1 → 4, 5, 12), and in every gap seen the level rises, often to saturation (n − 1). HON-FF: 0 failures; the support is now 6 + the
   climbs' 46,245 checked gap instances (near-duplicates along three climbs, not independent).
+
+## Box 13 (Lead GO 10:11Z; seeds 10:23Z; relay column 10:42Z): growth law of N_ep and of |D| >= 2 epoch lengths; rho_q per phase
+### (1) Scaling climbs (DATA; `scale.sh` runs every line of `scale_jobs.txt`, 4 at a time; `python3 fit.py` -> results/scale/fit.txt)
+Budget = 15 s × n per climb (wall clock, 4 climbs on 4 cores), n ∈ {16, 24, 32, 40, 48, 64}, 3 repeats (seeds 100+10n+r etc.). Fresh: random
+C^3O (N_ep) / C^4O (lend) with S3 start. Seeded (padded with Even self-loops to n): N_ep from nep24_n20 (n 24), nep56_n32 (32), L-RED's nep90_n40
+(40, 48, 64); lend from lend13_n16 (16), lend27_n24 (24), lend55_n32 (32-64). Exponent b: least squares of log(max) on log(n).
+| family | n 16 / 24 / 32 / 40 / 48 / 64: max over 3 repeats | max/n at n 64 | b over per-n maxima | b per repeat (spread) |
+| --- | --- | --- | --- | --- |
+| N_ep, fresh | 10 / 13 / 7 / 12 / 14 / 22 | 0.34 | 0.47 | -0.10, 0.41, 0.30 |
+| N_ep, seeded | — / 27 / 63 / 92 / 94 / 91 | 1.42 (2.30 at n 40) | 1.21 | 1.25, 1.27, 1.23 |
+| len(E), \|D_E\| ≥ 2, fresh | 21 / 26 / 39 / 19 / 32 / 21 | 0.33 | 0.02 | -0.35, -0.11, 0.13 |
+| len(E), \|D_E\| ≥ 2, seeded | 13 / 29 / 63 / 71 / 72 / 71 | 1.11 (1.97 at n 32) | 1.29 | 1.17, 1.30, 1.23 |
+- Steps per climb FALL with n (seeded n 64: ~1,700 (N_ep) / ~3,700 (lend) steps vs ~5,000-28,000 at n ≤ 32; a step's cost grows with n), and
+  the seeded values at n ≥ 40 are the seed's value plus a few (nep90 → 91-94; lend55 → 63-72). So the seeded exponents (~1.2-1.3) measure
+  the SEEDS' sizes, not a growth law; the fresh exponents (≤ 0.5) say random climbs at this budget find nothing growing. READING: the data do
+  not separate polynomial from super-polynomial; no value above 2.6 n was found (max/n² falls with n in every family).
+- Budget doubling at n 32 (seeded): N_ep 240 / 480 / 960 / 1,920 s → 56 / 57 / 62 / 59 (from nep56: still ~1.8-1.9 n, not rising
+  clearly); |D| ≥ 2 len → 58 / 63 / 62 / 82 (still rising at 1,920 s: 82 = 2.56 n).
+- Pinned (pin.py OK: n5.py = n5b states, Oink zlk, verify.py): lend82_n32 (34dedec67b5e379c61d9def40f2d97391d249bd4; epoch len 82, |D| 3,
+  X_SN^pre 38), nep94_n48 (3859c268caa9a1f755268c08442876c533c2cda7; N_ep 94), nep92_n40 (ce224ec31e56e18103290d4aac81a9f225f76bfc; N_ep 92 =
+  2.30 n), lend72_n48 (2ecc531682eb02aa56961ff3c66330140ee70ef5; len 72, |D| 3), lend39f_n32 (f7053a7cace6f30e1ef0708193a0534e9df8326c; fresh,
+  len 39), nep22f_n64 (d98de59fb84821bafc15128fd928c70ea6c71f1d; fresh, N_ep 22). Census on each: 0 violations.
+### (2) rho_q per q per phase (`rhotab.py`; results/rho/*.txt): class first on every row
+- rhotab.py reimplements the logic of L-SI's experiments/si/rund/relay.py (read, not imported). Cross-check: lib41 with L-SI's start pairs
+  (`rhotab.py 0 0 --lsi-starts 4 --nmax 48 --kmin 1 --list ../new/box41/lib41.txt`) gives exactly L-SI's relay_lib41_rs4.txt counts: 1,601 phases,
+  5,437 rho transitions, ROUTE_one 5,042, ROUTE_multi 618, RELAY_multi 427, CYC_OR_ONCYCLE 42, 107 phases with relays, CYCG 28, CYC2 23.
+  0 violations of ROOT / R_EMPTY / ONE_RELAY.
+- Extremes (`rhotab.py 0 0 --rows 2 --list extremes.txt`, `--rows 3 --list extremes13.txt`), longest phase of each; ρ_q as total(Route/reLay/Cyc):
+| instance | class | \|Q\| | kq per class | N_ep | ρ | ρ_q | relay graph cycle |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| nep94_n48 | 9O | 9 | 11:9 | 94 | 429 | 0:75(R75), 1:67(R32/L35), 44:66(R19/L47), 45:65(R29/L36), 6:52, ... | CYCG 1 (1 ↔ 6) |
+| nep92_n40 | 6O | 6 | 11:6 | 92 | 333 | 0:72(R72), 1:64(R39/L25), 25:55, 17:53, 6:51, 8:38 | 0 (all relays toward 0, 1) |
+| nep90_n40 (L-RED) | 5O | 5 | 11:5 | 90 | 292 | 0:72(R72), 1:64(R23/L41), 17:70(R10/L60), 6:55, 8:31 | 0 |
+| nep76_n40 | 5O | 5 | 11:5 | 76 | 177 | 0:62(R62), 8:47, 1:41, 6:22, 37:5 | 0 |
+| nep56_n32 | 2O | 2 | 30:2 | 56 | 91 | 0:48(R48), 20:43(R18/L25) | 0 |
+| lev_l_x / rise_thin51 / so_th_n32 / nep24_n20 | 1O | 1 | 1 | 50 / 53 / 31 / 24 | 51 / 60 / 33 / 21 | all ROUTE | — |
+| rho3_253_n32 (L-RED) | 12O | 12 | 24:12 | 25 | 253 | 11 terminals with 20-26 each, mostly RELAY | 1 (2-cycles) |
+| lend82_n32 | 3O | 3 | 6:3 | 3 | 11 | 12:4, 19:4(R1/L3), 11:3 | 0 |
+| lend2_30_n48 (L-RED) | 14O | 14 | 11:14 | 2 | 64 | 14 terminals with 3-5 each, mostly RELAY | 1 |
+- 𝒞^1O rows (lev_l_x, rise_thin51, so_th_n32, nep24_n20, lap_n6): every ρ event ROUTE, as L-SI's ONE_RELAY lemma says. No 𝒞^1E game among the
+  extremes (1E rows: lib41 has 7 phases with ρ ≤ 1).
+- READING on L-SI's question: the N_ep records are driven by a ROUTE-only root terminal (q = 0: 72-75 route events per phase) that the other
+  terminals copy by RELAY; their relay graphs are acyclic stars toward the root (nep76, nep90, nep92), and nep94's one 2-cycle (1 ↔ 6) is not
+  what makes it long. Relay cycles appear on the ρ-dense, few-epoch phases (rho3_253: ρ 253 with N_ep 25; lend2_30). So in this data the
+  growth of ρ_q is NOT driven by relay cycles; it is driven by how often the root's exit routes change.
+- lib41 with my starts (`rhotab.py 2 7 --rows 10 --list ../new/box41/lib41.txt`, results/rho/lib41_s3r2.txt): 1,152 phases with ≥ 1 transition,
+  max ρ_q: 51 (1O), 10 (classes with ≥ 2 Odd choice vertices); CYCG 96 phases, CYC2 87.

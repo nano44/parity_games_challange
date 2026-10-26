@@ -1,0 +1,7 @@
+START fit (27, 3) n 24
+BEST step 289 fit (27, 4) t 11s
+BEST step 4044 fit (28, 3) t 155s
+BEST step 6312 fit (28, 4) t 249s
+BEST step 6435 fit (28, 5) t 254s
+BEST step 7167 fit (28, 6) t 283s
+END steps 9105 best (28, 6) n 24 -> results/scale/lend_seed_n24_r2.pg

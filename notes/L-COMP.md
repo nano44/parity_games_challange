@@ -9,7 +9,10 @@ Handover check 1a8a4628 (Lead: 5/5). Box 12 GO 07:57Z. Code + tables: experiment
   exhaustive C^2O n 4 all starts (3,538,944), C^2O n 5 every 10th (10.8M).
 - Climbs (climbs.sh): N_ep 76 at n 40 (nep76_n40, seeded rise_thin51), 56 at n 32; |D| >= 2 epoch len 55 at n 32 (lend55_n32, |D| 4), 47 (|D| 2).
   All pinned with pin.py (n5.py = n5b states, Oink zlk, verify.py).
-### IN FLIGHT: nothing. NEEDS: next box from the Lead.
+### Box 12 add-on HON-FF DONE (15bcfa06). Box 13 DONE (growth law; rho_q table): see experiments/n5-epoch/README.md "Box 13".
+- Scaling climbs: fresh exponents <= 0.5, seeded ~1.2-1.3 (seed-dominated; steps fall with n); budget doubling at n 32: lend still rising (82).
+- rhotab.py = L-SI relay.py counts exactly on lib41; N_ep records have acyclic star relay graphs (root q = 0 ROUTE-only).
+### IN FLIGHT: nothing. NEEDS: next box from the Lead. Context ~400k at box 13 end.
 ### Things only I know (successor 5)
 - n5b.run has an fbtrace hook (fallback flag per transition), no effect on the run.
 - lib41.txt contains games up to n 492 (not n <= 64).
