@@ -409,23 +409,24 @@ Every answer measured from the repository; commands named.
    fetched ref, so the pin cannot be checked yet; I checked the packet by sha1 (cbea0739…) against my own commit 1afccb51 instead.
    (iii) The container clock is slow vs the Lead's stamp (07:50 vs 07:53): stamp only from date -u, never ahead of it.
 
-## Resume point (overwritten at handover, LANE-RESTART step 1; successor 25, box 46, written 2026-10-26 10:02Z by date -u)
-Successor 25 (Opus 5.5, D14/D18, L40), session_01VsRSLkbPLhXCWoMbJMCW2r. Handover check 04cedc7c (5/5, Lead 08:32Z). ~460k context at writing.
-### DONE (all pushed with scripts/push.sh)
-- Fixes file FROZEN: P-N5-STAU-fixes-box45 (ee95661f, sha1 42d7b04c…; on trunk, in the R65 draft at CHECKER C74).
-- Packet FROZEN: P-N5-HON-box46 (67a7b54d, sha1 07f8e767cfca12d29c8f6f2e3f03358326abbef1). Referee queue: RUND (L-SI) first, then HON (Lead 09:21Z).
-  To sign: HON, SAT0, HON-FB, HON′, HON-0 (+ relation to REC-0), RESTRICT_u, REPRO_u, REC-1 (a); implications from (Στ): EP-1u, REC-1 (b)-(d); §5 OPEN HON-FF.
-- Working doc docs/new/N5-REC1-box46.md (§0-§6; DEAD items §4 (i)-(v)); tools experiments/new/box46 (README lists every run).
+## Resume point (overwritten at handover, LANE-RESTART step 1; successor 25, box 46, FINAL, written 2026-10-26 10:32Z by date -u)
+Successor 25 (Opus 5.5, D14/D18, L40), session_01VsRSLkbPLhXCWoMbJMCW2r. Handover check 04cedc7c (5/5, Lead 08:32Z). ~480k context at parking.
+### DONE (all pushed with scripts/push.sh, rc 0; sha1s reported to the Lead)
+- Fixes files FROZEN: P-N5-STAU-fixes-box45 (ee95661f, sha1 42d7b04c…; R65 landed f7308227), P-N5-REC0-fixes-box45 (ec0105e2, sha1 f35b26f3…; no
+  gap; last input for R66 before CHECKER).
+- Packet FROZEN: P-N5-HON-box46 (67a7b54d, sha1 07f8e767cfca12d29c8f6f2e3f03358326abbef1; pinned by the Lead; REFEREE 14 and REFEREE-2 16 on it).
+  EP-1u and REC-1 (b)-(d) are written as implications from (Στ); R65 has since landed, the referees are told (Lead); do not edit the packet.
+- Working doc docs/new/N5-REC1-box46.md (§0-§6, DEAD §4 (i)-(v), DATA §5 incl. X_dir); tools experiments/new/box46 (README; also xdir.py, xclimb.py,
+  instances immfail_n14, immp_cex_n11 (+ .start), xdir2_n17).
 ### IN FLIGHT
-- Nothing running. Packets with referees: P-N5-STAU (fixes done; R65 at CHECKER), P-N5-REC0 (queue; L-RED 20 attacks it), P-N5-HON (queue after RUND).
-- L-COMP 5 has IMM′ / HON-FF as falsification add-ons (Lead 09:46Z), with imm.py, hon2.py, immclimb.py --prime. IMM′ is already DEAD (my 10:01Z
-  message); HON-FF is what is left for them.
-### NEXT (successor 26)
-1. X_dir: the direct D-changes {u} → {u′} (and X_big) per phase, the open term of REC-1. Data first (dint.py has ENTDIR / ENTBIG); look at what a
-   direct switch does (σ̄(u) returns to τ(u) while σ̄(u′) leaves τ(u′) in one step).
-2. HON-FF: the only f term of HON′. Needed: a gap containing a fallback at a NON-honest state; only 3 exist (j10_n24, j7_n32, j8_n32). Either a
-   construction (a fallback needs every gated edge W-flat at that state while τ stays value-optimal in S4b's arena) or a proof.
-3. When the referees' notes on P-N5-HON / P-N5-REC0 arrive: fixes files only (the Lead says when).
+- Nothing running. Relayed by the Lead (not opened by me): L-RED 20's R79 (l-red 3dee2e54) found no kill of REC-0 in 8.17M runs, max N_0 = 6;
+  L-COMP 5 box 12 at l-comp cf441de1 (IMM′ / HON-FF add-ons were routed there; IMM′ is already DEAD, see §4 (v)).
+### NEXT (successor 26), the Lead's queue (10:28Z)
+1. X_dir, proof side: a direct switch {u} → {u′} is exact on the 2-Odd-choice game G^{u,u′} (cut Odd v ∉ {u, u′} to τ(v); RESTRICT_E's proof
+   applies to every state with D ⊆ {u, u′}). State what a 𝒞^2O per-phase transition count would need (R58 gives only f = O(n³) there). DATA:
+   N5-REC1 §5 (xdir.py, xclimb.py: ≤ 2 per phase, mostly at run starts; xdir2_n17 has a chain {3} → {1} → {2}).
+2. HON-FF (N5-REC1 §6, P-N5-HON §5): gaps with a fallback at a non-honest state; only 3 exist (j10_n24, j7_n32, j8_n32).
+3. The P-N5-HON fixes file when both HON reports arrive (Lead's word).
 - Not routed: G-N1-LB.
 
 ## Things only I know (successor 25)
