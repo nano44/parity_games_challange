@@ -1,4 +1,56 @@
-# Handover check: L-RED successor 21 (Opus 5.5, D14/D15/D18; LANE-RESTART step 3; written 2026-10-26 11:45Z by date -u)
+# Handover check: L-RED successor 22 (Opus 5.5, D14/D15/D18; LANE-RESTART step 3; written 2026-10-26 16:16Z by date -u)
+Every answer is measured from the repository (commands named), not recalled. Predecessor: successor 21
+(session_01KAhNrh5WEvs2zMwA7VEGx7), handover = notebook "Successor 21 HANDOVER" + addendum at l-red 1dbe6d9f.
+Successor 21's answers follow below this section.
+
+## 1. Branch, head, distance to trunk
+- Branch `claude/l-red`. Container at start: local = 0d0b67a1 (stale; clean tree). `git fetch origin claude/l-red claude/vibrant-johnson-nxvvxo`
+  (16:15Z) moved origin/claude/l-red 0d0b67a1..1dbe6d9f; `git merge --ff-only origin/claude/l-red`; `git rev-parse HEAD origin/claude/l-red`
+  -> both 1dbe6d9f9aa40a69b1e68b1d7ecb628ca03b3b0b.
+- Trunk `claude/vibrant-johnson-nxvvxo` = 5fcabb2a. `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` at 1dbe6d9f
+  -> 0 ahead / 229 behind; merge-base = 1dbe6d9f (the lane head is already on trunk).
+- Trunk brought in with `git merge --ff-only origin/claude/vibrant-johnson-nxvvxo` (fast-forward, no merge commit; no rebase, amend or
+  force-push): HEAD = 5fcabb2a, 0 ahead / 0 behind before this file's commit (1 ahead after it).
+
+## 2. Open work and the next step of each
+Nothing in flight (`ps -eo pid,args | grep python3`: no lane job; predecessor's IN FLIGHT: none). tools/oink/build was absent;
+scripts/setup_oink.sh run 16:15Z, exit 0: "oink built at 8fbf0a7". Pins re-measured (`sha1sum`): experiments/red/n3/instances/
+lagx10_n40.pg 7258717c, long121_n40.pg c667c085, matching the HANDOVER.
+Planned after "go" (D18, N5; Lead brief), in order:
+- (1) C-ONCE (L-SI 17, docs/si/N5-GCX-box21.md). Measured at l-si f984baa0 (§4): L-SI has ALREADY recorded C-ONCE DEAD on its own
+  instances cone_n65 (3e95fca9) and cone_n69 (dd03ba78), Bellman-Ford staggering between NON-direct gates (DD empty). Survivor:
+  C-ONCE_X (migrations INTO a D-direct gate at most once per vertex per C-interval), DATA only; L-SI itself expects it to die.
+  Next: ask the Lead which form is the live target (C-ONCE_X and the "index >= |U| - 1" clause); own exact checker from the frozen §4 text
+  (not gcx.py alone); then a CONSTRUCTION: transfer cone_n65's staggering onto two D-direct gates (equal and different offsets) so a vertex
+  enters a D-direct gate region twice inside one C-interval; Oink cross-check; no overlap with L-COMP 5's climbs.
+- (2) QP_c long-phase side (docs/new/N5-NCONF-box48.md §11, l-new b9a6568f): a long-phase family with QP_c growing in n (not disjoint
+  copies). Next: compute QP_c on long121 / long90_k2 / lagx10, then build/climb on QP_c at fixed class.
+- (3) Returns without fresh content inside one fallback-free run (R89 §3, R90 §2/§5): hand-built ruler-content mkgate variant (ii).
+
+## 3. docs/GAPS.md rows I own
+- G-NEST (major; owner "L-RED (attacks + proof attempts); L-ALG successor if any"), status **open** (trunk 5fcabb2a docs/GAPS.md line 9).
+  Its DTL line is paused under D18 (Lead reading L40).
+- Attacked, not owned: G-N5-TIME (major, owner L-NEW, **open**, line 11): N5 makes polynomially many iterations; every target in §2
+  feeds it. GAP-A, GAP-C (L-ALG, open, lines 6-7; DTL paused).
+
+## 4. The three owner rulings that most constrain me (verbatim), with their DECISIONS-INDEX status
+1. D18 (trunk docs/DECISIONS.md line 333), status **active** (DECISIONS-INDEX line 32):
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+2. D1 (docs/DECISIONS.md line 7), status **active** (DECISIONS-INDEX line 5):
+   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+3. D14 (docs/DECISIONS.md lines 245-246), status **active** (DECISIONS-INDEX line 22):
+   > D
+   > You know it can also test prveiously not tested approaches, it can come up with it own as well
+
+## 5. One trap that bit this lane, and the check that now prevents it
+- Trap (successor 16 and again successor 21, box 54): a borrowed checker narrower than its statement (L-SI threv.py stopped at the next
+  fallback; flipck checked only both-intact flips), so its "0 violations" could not refute the frozen statement.
+  Check now: write my own exact checker from the frozen text (for C-ONCE: from N5-GCX §4's C-interval definition, every transition of
+  every fallback-free run), list each window/threshold of any borrowed checker (gcx.py) against the text, and count a kill only with a
+  faithful N5 run (n5b --mode spec), sha1 + full start pair, and an Oink check_sol2 cross-check.
+- Also caught at this restart: stale clone (0d0b67a1, 1dbe6d9f on origin), by fetch + `merge --ff-only` + `rev-parse HEAD == origin/claude/l-red`.
+
+## Successor 21 section (superseded): L-RED successor 21 (Opus 5.5, D14/D15/D18; LANE-RESTART step 3; written 2026-10-26 11:45Z by date -u)
 Every answer is measured from the repository (commands named), not recalled. Predecessor: successor 20
 (session_01UNywtigtQoPeTPobY4H8bC), handover = notebook "Successor 20 HANDOVER" at l-red 80ccc8fd.
 Successor 20's answers follow below this section.

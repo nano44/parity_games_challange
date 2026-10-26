@@ -287,3 +287,40 @@ AGAINST_W ('experiments/si/fb2o/instances/tcwult2_against_n8.pg', 0, 1, 0, 4, -1
   root offset resets have no charge but ρ at the root (`python3 -I experiments/si/root/resets.py --one <pg> <start>` prints
   R_DELTA_U=63 and R_DELTA_U_ONLYSELF=32; pinned). nep76_n40 phase@9: 13 of 51.
 - Survivor: these events lie inside FREEZE-A pieces and are bounded there (FREEZE-A (c), RESET-PIECE (i)).
+
+## DEAD box 21 (L-SI successor 17, 2026-10-26T16:06Z by date -u): own candidates C-ONCE and UE-ONCE_C (never claimed; note docs/si/N5-GCX-box21.md §4)
+- Statements killed: (C-ONCE) inside a C-interval (A_c non-increasing, D ∩ U_c constant, every D-direct gate offset constant) no vertex
+  migrates twice between gate regions; (UE-ONCE_C) inside a C-interval every Even edge is unforbid-switched (CHARGE-U's U event) at most once.
+- Obstruction (both): Bellman-Ford staggering inside the first |U| − 1 states of the interval. A short route through one gate is taken
+  first, a longer better route through another gate arrives later, and the vertex (or the edge's tail) moves again.
+- Instances (N5 via experiments/new/box21/n5x.py, read-only; SPEC S3 start; climbed by experiments/si/root/climbmig.py):
+  - experiments/si/root/instances/cone_n65.pg (sha1 3e95fca9088f6a52cdf16325fe06933296ed357e): phase@1, class 8, C-interval [0, 4], vertices 2,
+    14, 20, 26, 29, 30, 44, 59 migrate twice between the non-direct gates 12 and 64. `python3 -I root/gcx.py --one <pg>` (from experiments/si)
+    prints MIG2_cint=1 (pinned). cone_n69.pg (sha1 dd03ba782ca821491ad5c54303ab61def7c7aff1): one interval of 19 transitions, up to 3
+    migrations per vertex (gates 20, 29, 35).
+  - experiments/si/root/instances/ueonce_n27.pg (sha1 c90d5ab8569a93bba3389002e0c85bb64bb0c214): phase@1, C-interval [1, 10], edge (10, 23)
+    has U events at k = 1 and k = 5. `UEV=1 python3 -I root/gcx.py --one <pg>` prints UE2_Cr=1 (pinned). Also lib41
+    experiments/si/xing/instances/zcl_cu_n48.pg with a random start (edge (16, 20), C-interval [7, 23]).
+- Survivor: CONJECTURE UL_C (no U event at index ≥ |U_c| − 1 of its C-interval): 0 violations on everything above, the UF-ONCE killers and the
+  libraries with KMIN 1; the killers' repeated U events on one edge all sit at C-cuts.
+
+## DEAD box 21b (L-SI successor 17, 2026-10-26T16:48Z by date -u): the naive cyclic settling order (own; note docs/si/N5-GCX-box21.md §9)
+- Statement killed (never claimed): in the cyclic abstract model (§8), a changer at transition k whose new play contains no other changer at k
+  (a DEEPEST changer) has made its final change. It was the candidate for lifting §7's "most downstream changer is final" to cycles.
+- Obstruction: changes on the plays of non-chosen successors. A successor that is not viable at k (its play runs through v) can change at k
+  and become viable and better at k + 1.
+- Instance: experiments/si/root/abscyc.py DEEP (`python3 -I root/abscyc.py --deep` from experiments/si prints DEEP REPRODUCED; pinned):
+  non-terminals 0, 1, 2; succ(0) = succ(1) = {2, t3, t4}, succ(2) = {0, 1, t3}; w = (2, −8, 0); t3: (h, T) = (51, 101), t4: (2, 29); start
+  (2, t4, 1); vertex 1 is deepest at transition 0 and changes again at transition 1.
+- Survivor: CONJECTURE FINAL-EACH (every transition holds some vertex's final change; 0 violations in 22,989 transitions), which implies
+  ≤ n steps.
+
+## DEAD box 22 (L-SI successor 18, 2026-10-26T17:40Z by date -u): PER-EXIT-MONO (own candidate; note docs/si/N5-EXIT-box22.md §5)
+- Statement killed (never claimed): for x ∈ Q_c and an exit p, off(x; p) = κ(x) − κ(p), read at the states where par(x) = p, never falls over the
+  whole phase, including when x returns to p after leaving it. Inside one x-piece this is OFFSET-MONO (P-N5-OFFMONO). The candidate would
+  have bounded same-exit offset rises per (x, p) over the phase instead of per piece, which is where CHAIN-COUNT's D·(EXIT_x + …) factor comes from.
+- Obstruction: while x routes elsewhere, κ(p) can rise more than κ(x). x's options towards p are then not chosen, and nothing ties their
+  offsets to κ(x). On return the offset can be lower.
+- Instance: nep90_n40 at its start (experiments/red/rec0/instances/nep90_n40.pg, experiments/si/rund/instances/nep90_n40.start):
+  exitx.py counter PEM_drop_ret = 6 (of 45 returns). Also 5 / 4 / 8 / 7 / 10 drops on nep76, long121 and L-NEW's three climbs
+  (experiments/si/root/logs/exitx_long10.txt).

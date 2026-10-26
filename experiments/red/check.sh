@@ -236,6 +236,12 @@ out=$(python3 -I n3/n3x.py --one usplit/instances/pp_K12_n161.pg | head -1)
 [[ "$out" == *"hyp=60 "* ]] || { echo "n3x pp_K12 drifted: $out"; exit 1; }
 python3 -I n3/n3x.py --one n3/instances/n3cov_lean.pg n3/instances/n3cov_lean.start | grep -q "N3X PASS" || { echo "n3x n3cov_lean: not PASS"; exit 1; }
 MUT=1 python3 -I n3/n3x.py --one n3/instances/n3cov_lean.pg n3/instances/n3cov_lean.start | grep -q "N3X FAIL" || { echo "n3x strict control did not fail"; exit 1; }
+# R91 (successor 22): UL_C reader kill pinned (sha1, U event index L = 10 > |U| - 1 = 7); lib-free control: L = 6 gives no violation
+[[ "$(sha1sum ul/instances/reader_L10_n36.pg | cut -c1-12)" == "316443126793" ]] || { echo "reader_L10 sha1 changed"; exit 1; }
+out=$(python3 -I ul/ulx.py --one ul/instances/reader_L10_n36.pg ul/instances/reader_L10_n36.start | head -1)
+[[ "$out" == *" UL_C_VIOL=1 "* ]] || { echo "ulx reader_L10 drifted: $out"; exit 1; }
+python3 -I ul/mkreader.py 6 "$t/rd6.pg" > /dev/null && out=$(python3 -I ul/ulx.py --one "$t/rd6.pg" "$t/rd6.start" | head -1)
+[[ "$out" != *"UL_C_VIOL"* ]] || { echo "ulx control L=6 fired: $out"; exit 1; }
 TMPDIR="$t" python3 correspond.py 2 3 4 5 6 > "$t/corr.log" || { cat "$t/corr.log"; exit 1; }
 python3 xcheck.py --games 150 --nmax 7 --seed 7 > "$t/x.log" || { cat "$t/x.log"; exit 1; }
 echo "red check: r2_check PASS (R11), bsolo 4 = 4 tangles/7 iterations (R10); dtl_flipflop F8 = 36/1/5 (R9), Claim P/Q 0 violations; zadeh_lb N2 = 43 (no fixed order, R7); fhz_padded 2 S7 = 16 (R5 kill);  friedmann_Gn 2 S7 = 15; fhz lockstep3/relation/export OK; gated_bland 6 = 63 MSF iterations (regions = Zielonka, strategies verified); Claim F instances; MSF == Bland N<=6; $(tail -1 "$t/x.log")"

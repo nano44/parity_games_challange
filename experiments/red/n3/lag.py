@@ -33,13 +33,14 @@ def analyse(g, st, out=print):
                   r = rows[k]; A = {v for v in U if r["FD"][v]}
                   return {u: r["M"][r["tau"][u]] - r["M"][r["nxt"][u]] for u in r["D"] & U if r["nxt"][u] in A and r["tau"][u] in A}, A
               dd = [DD(k) for k in range(i, j + 1)]
-              raises, drops, lags, runs, cur, runr = {}, {}, 0, [], [0, 0, 0], {}
+              raises, drops, lags, runs, cur, runr, runl = {}, {}, 0, [], [0, 0, 0], {}, {}
               for k in range(i, j):
                   d0, A0 = dd[k - i]; d1, _ = dd[k + 1 - i]; r = rows[k]
-                  if r["fb"]: runs.append(tuple(cur)); cur = [0, 0, 0]; runr = {}; continue
+                  if r["fb"]:
+                    runs.append(tuple(cur)); cur = [0, 0, 0]; best = max([best] + [min(runr[x], runl.get(x, 0)) for x in runr]); runr = {}; runl = {}; continue
                   for u in d0:
                       if u in d1:
-                          if d1[u] > d0[u]: raises[u] = raises.get(u, 0) + 1; cur[0] += 1; runr[u] = runr.get(u, 0) + 1; best = max(best, runr[u])
+                          if d1[u] > d0[u]: raises[u] = raises.get(u, 0) + 1; cur[0] += 1; runr[u] = runr.get(u, 0) + 1
                           elif d1[u] < d0[u]: drops[u] = drops.get(u, 0) + 1; cur[1] += 1
                   for z in U:
                       if g.owner[z] != 0 or z == c: continue
@@ -48,13 +49,14 @@ def analyse(g, st, out=print):
                       a = r["nxt"][z]
                       for x in set(g.succ[z]):
                           if x in A0 and x != rows[k + 1]["nxt"][z] and E.key(r["vs"][x]) > E.key(r["vs"][a]) and r["M"][x] - r["M"][a] < d0[u]:
-                              lags += 1; cur[2] += 1
-              runs.append(tuple(cur))
-              out(f"phase@{i} c={c} T={j-i} f={sum(rows[k]['fb'] for k in range(i, j))} re-raises per gate {raises} drops {drops} lags {lags} "
+                              lags += 1; cur[2] += 1; runl[u] = runl.get(u, 0) + 1
+              runs.append(tuple(cur)); best = max([best] + [min(runr[x], runl.get(x, 0)) for x in runr])
+              QP = sum(1 for v in range(n) if g.owner[v] == 1 and len({rows[i]['tau'][v]} | {rows[k]['nxt'][v] for k in range(i, j + 1)}) >= 2)
+              out(f"phase@{i} c={c} QP={QP} T={j-i} f={sum(rows[k]['fb'] for k in range(i, j))} re-raises per gate {raises} drops {drops} lags {lags} "
                     f"per fallback-free run (raises, drops, lags) {runs}")
       i = j + 1
 
   return best
 if __name__ == "__main__":
   g = n3x.load(sys.argv[1]); st = n3x.readstart(sys.argv[2]) if len(sys.argv) > 2 else None
-  print("max re-raises of one gate in one fallback-free run:", analyse(g, st))
+  print("max over (fallback-free run, gate) of min(re-raises, lags behind that gate):", analyse(g, st))

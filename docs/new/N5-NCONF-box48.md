@@ -284,3 +284,60 @@ for every Odd v, τ(v) ∈ succ_H(v) and σ̄_k(v) ∈ succ_H(v) for every k ∈
 - Labels. PROVED (L-NEW 28, unrefereed): RESTRICT_H, REPRO_H (a port of signed R64 (a), (b); each step is cited above). Consequently §9's
   RESTRICT_{u|J} is PROVED as an instance; §9's DATA stand as consistency checks. DATA: phrestrict.py. READING: "what it gives". OPEN: any bound
   on QP or XDEG per phase; a count of N5^τ phases on games with QP Odd choice vertices (R51 covers QP = 1 under (Στ)).
+
+## 11. QP, the Odd choice vertices of the used-edge game G^P (PROVED (elementary), DATA, READING, OPEN; Lead's routing of 15:38Z; written 15:5xZ by date -u)
+Successor 28. Packet P-N5-RESTRICT-box48 (frozen at l-new 7e56744a, sha1 48c63a8e…) §2 defines G^P and QP(P) := #{Odd v : |succ_{G^P}(v)| ≥ 2}.
+Tools: experiments/new/box48/qp.py (survey), qpclimb.py (climb), dunion.py (disjoint copies); outputs out/qp_*.txt, out/qpclimb/.
+- Remark QP-D (PROVED, elementary). QP(P) = |⋃_{k ∈ P} D_k|: v has ≥ 2 edges in G^P iff σ̄_k(v) ≠ τ(v) for some k ∈ P. So QP = D0 + ENT, D0 := |D_x| at
+  the phase's first state, ENT := the vertices that first enter D later in P. (qp.py asserts the identity at every phase.) An epoch boundary can
+  add several vertices to D at once, so ENT is not bounded by N_ep − 1; only ENT ≤ |Q| − D0.
+- DATA, library (out/qp_liball_n48_k2.txt; liball n ≤ 48, S3 + 2 random, seed 7): large QP occurs only in SHORT phases (max QP 16 in a 1-transition
+  phase, ctx7_n30, all of it D0). Long phases have small QP: len ≥ 10: 481 phases, max QP 8; len ≥ 30: 128 phases, max QP 8; len ≥ 60: 27 phases,
+  max QP 3 (the 60+ phases are almost all on |Q| = 1 games: selection bias, the library was built around 𝒞^1O). Random 𝒞^kO with k ≈ 0.4n
+  (n 10-40, 300 games, S3 + 2): every phase with QP ≥ 4 has 1 transition (scratch run; same shape).
+- DATA, climbs (qpclimb.py, score (min(QP, QT), len) of one phase from S3; climb.mutate keeps the Odd choice set O fixed, so QP ≤ |O|):
+  random seeds: QT 4 (|O| 6, n ≤ 24) best len 8 with QP 6; QT 6 (|O| 8, n ≤ 32) best len 13 with QP 8 (stopped at step ≥ 2,587 to free a CPU);
+  QT 8 (|O| 10) len 0. Seeds nep90 / nep76 / long121 (from S3, where their phases are short): best len 18 / 32 / 47 with QP 5 / 5 / 3 = |Q|.
+  So no climb found a long phase with many disagreeing Odd vertices; the climbs are weak (S3 starts; O fixed), and this is not evidence of a bound.
+- DUNION (DATA; READING for the mechanism). k disjoint copies of nep90 with copied start (dunion.py: copy i shifts vertices by 40i and priorities by
+  an even offset, so parity and the order inside a copy are kept): ONE phase of 91 transitions, N_ep 90, NCONF 48 (unchanged), QP = 5k at n = 40k
+  (k = 2, 3, 4; out/qp_dunion.txt; instances/du/nep90x{2,3,4}.pg sha1 b66f7b15 / 7198f9f7 / 9fadc61a). READING: N5 acts on the copies in lockstep
+  (each copy's values and improving sets depend only on that copy; checked here as data, not proved from SPEC's S1 procedure). So QP GROWS LINEARLY
+  IN n AT FIXED PHASE LENGTH: QP alone is the wrong parameter, and "every phase is an N5^τ phase on a game with QP Odd choice vertices" gives
+  nothing when QP is large for this trivial reason.
+- The refinement the union suggests: QP_c := max over cycle nodes c of |⋃_k D_k ∩ λ^{-1}(c)| (per class). nep90: QP_c 5, one class; nep90 × 4:
+  QP_c 5, four classes. Library: len ≥ 30, max QP_c 8; len ≥ 60, max QP_c 3.
+- OPEN. (1) Whether long phases need classes with many disagreeing Odd vertices: a construction with QP_c growing in n on long phases, or a bound
+  on QP_c. (2) A per-class decomposition of N5's phase (S4a is one global arena; classes share Even edges that cross between them), which is what
+  would make the per-class count usable. (3) The climbs above do not test (1); a climb that adds Odd choice vertices (O not fixed) and starts from
+  long-phase start pairs is the next data step.
+- Labels. PROVED (elementary): Remark QP-D. DATA: library, climbs, DUNION. READING: lockstep, "QP is the wrong parameter". OPEN: (1)-(3).
+- CORRECTION to §10's READING (2) and to frozen P-N5-RESTRICT §4's first READING (for its fixes file; the packet is not edited): nep90, nep76 and
+  long121 have |Q| = 5, 5, 3 themselves (qp.py: QP = |Q| on their long phases), so "their long phases live on G^P with QP = 5 / 5 / 3" is true but
+  removes nothing there; the reduction G → G^P is informative only where QP < |Q|. No signed or to-sign statement is affected.
+
+## 12. QP_c on long phases: the climb that moves Odd choice vertices, and the R63 reading (DATA, READING, OPEN; Lead's GO 16:01Z; written 16:1xZ by date -u)
+Successor 28. Tool experiments/new/box48/qpcclimb.py (sha1 b6e0737d…): genome = game + start pair, seeded from a long-phase instance and its .start;
+mutations: box43 climb.mutate (O fixed) with probability 0.85, an O-move (a forced Odd vertex gains an edge and becomes an Odd choice vertex, or an
+Odd choice vertex is cut to its start edge) with 0.15; objective max over phases of (QP_c · len, len). n ≤ 48, 3,000 steps each.
+- DATA (out/qpcclimb/log_*.txt; each best game re-checked with qp.py and phrestrict.py, out/qpcclimb/verify.txt):
+  | seed (its start) | seed: QP_c, len | best: n, |Q|, QP_c (classes), D0, ENT, N_ep, NCONF, len | RESTRICT_H on the best (XI_V, REP_V) | best game sha1 / start sha1 |
+  | --- | --- | --- | --- | --- |
+  | nep90_n40, seed 51 | 5, 91 | 48, 13, 13 (1), 7, 6, 84, 82, 99 | 0, 0 | 180e8af5 / ac16f911 |
+  | nep76_n40, seed 52 | 5, 78 | 48, 14, 14 (1), 10, 4, 46, 41, 81 | 0, 0 | ae540870 / 6b153deb |
+  | long121_n40, seed 53 | 3, 121 | 48, 10, 10 (1), 5, 5, 54, 44, 127 | 0, 0 | 77f5b23a / 96641f67 |
+  So at n = 48 a phase of 81-127 transitions can have 10-14 disagreeing Odd vertices IN ONE CLASS (every Odd choice vertex of the game disagrees
+  with τ at some state of the phase; QP_c = QP = |Q|), with NCONF close to N_ep (82 of 84 on the nep90 descendant). The climbs raised QP_c from
+  5 / 5 / 3 to 13 / 14 / 10 without shortening the phase.
+- READING. QP_c is not small on long phases: the per-class refinement of §11 does not by itself make the used-edge game a "few Odd choices" game.
+  The data are one size (n = 48); they do not show how the maximum QP_c on long phases scales with n (a climb at n = 64, 80 would). Together with
+  §11's DUNION: neither QP nor QP_c is a bounded parameter on long phases in the data, and RESTRICT_H's value is as a reduction tool (it lets a
+  count be proved on 𝒞^kO-type games with k = QP), not as a size bound.
+- R63 reading (READING; RESULTS R63 opened at docs/RESULTS.md "### R63"). (c) D-EPOCH: D is constant on each epoch and changes only at epoch
+  boundaries. (a) R-STICK_D and (b) SN-PREFIX_D concern R_D (the vertices whose (σ, τ)-play meets D), not D itself. RESULTS R61 (e) ALT charges a
+  clean change of σ̄ at q to a strict rise of κ(q). None of these bounds D0 (the disagreement at the phase start) or ENT (vertices entering D later):
+  a vertex enters D when τ(q)'s option stops being Odd's best reply, i.e. when Ξ of τ(q)'s side rises past another option, and nothing landed limits
+  how many distinct q do this in one phase. The data above (ENT 4-6 at n = 48 on long phases, D0 5-10) say both terms are used.
+- OPEN. (1) Scaling of max QP_c on long phases with n. (2) A count on N5^τ phases of 𝒞^kO games polynomial in n and in k (not n^k): with RESTRICT_H
+  this would bound every phase; R61's f = O(n^{k+1}) is exponential in k, and the climbs say k ≈ |Q| on long phases.
+- Labels. DATA: the table. READING: the two READING items. OPEN: (1), (2).

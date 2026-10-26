@@ -1,0 +1,72 @@
+BFF_chk 65374
+DLS_A 646
+DLS_A_nonclean 161
+DLS_B 16
+DLS_chk 662
+DLS_i 29
+DLS_ii 456
+DLS_iii_tie 16
+DLS_iii_tog 22
+FRA_UNK 7
+FRA_a_chk 37840
+FRA_b_chk 37840
+FRA_c_chk 231
+FRA_pieces 1253
+FRA_pieces_pastfreeze 146
+FRGC_chk 765
+FRGX_max_excess -3
+FRG_a_chk 8579
+FRG_b_chk 8579
+FRG_intervals 501
+GSA_chk 2328
+GSB_FAIL 181
+GSB_chk 3355
+MAX_RHOPQ 14
+PHASES 5187
+RLPX_nonvacuous 1
+RLP_chk 1
+RLP_runs 445
+RPC_chk 2718
+RUNS 1413
+skip_big 669
+EX ('GSB', '../../../experiments/n5-epoch/instances/immfail_n14.pg/0', 2, 2, 4, 9)
+EX ('GSB', '../../../experiments/n5-epoch/instances/immp_cex_n11.pg/1', 0, 0, 1, 7)
+EX ('GSB', '../../../experiments/new/box21/instances/fts_best16.pg/0', 2, 11, 0, 9)
+EX ('GSB', '../../../experiments/new/box21/instances/fts_best16.pg/0', 2, 11, 7, 10)
+EX ('GSB', '../../../experiments/new/box21/instances/fts_best16.pg/0', 3, 11, 0, 9)
+EX ('GSB', '../../../experiments/new/box21/instances/fts_best16.pg/0', 3, 11, 7, 10)
+EX ('GSB', '../../../experiments/new/box21/instances/fts_best16.pg/0', 4, 11, 0, 9)
+EX ('GSB', '../../../experiments/new/box21/instances/fts_best16.pg/0', 4, 11, 7, 10)
+EX ('GSB', '../../../experiments/new/box21/instances/fts_best16.pg/0', 5, 11, 0, 9)
+EX ('GSB', '../../../experiments/new/box21/instances/fts_best16.pg/0', 5, 11, 7, 10)
+EX ('GSB', '../../../experiments/new/box21/instances/fts_best16.pg/0', 6, 11, 0, 9)
+EX ('GSB', '../../../experiments/new/box21/instances/fts_best16.pg/0', 6, 11, 3, 4)
+EX ('GSB', '../../../experiments/new/box21/instances/fts_best16.pg/0', 6, 11, 7, 10)
+EX ('GSB', '../../../experiments/new/box21/instances/fts_best16.pg/0', 7, 11, 0, 9)
+EX ('GSB', '../../../experiments/new/box21/instances/fts_best16.pg/0', 7, 11, 3, 4)
+EX ('GSB', '../../../experiments/new/box21/instances/fts_best16.pg/0', 7, 11, 7, 10)
+EX ('GSB', '../../../experiments/new/box21/instances/fts_best16.pg/0', 9, 11, 13, 3)
+EX ('GSB', '../../../experiments/new/box21/instances/fts_best16.pg/0', 9, 11, 13, 7)
+EX ('GSB', '../../../experiments/new/box21/instances/fts_best16.pg/0', 10, 11, 13, 3)
+EX ('GSB', '../../../experiments/new/box21/instances/fts_best16.pg/0', 10, 11, 13, 7)
+EX ('GSB', '../../../experiments/new/box21/instances/fts_best16.pg/0', 11, 11, 13, 3)
+EX ('GSB', '../../../experiments/new/box21/instances/fts_best16.pg/0', 11, 11, 13, 7)
+EX ('GSB', '../../../experiments/new/box21/instances/fts_best16.pg/0', 12, 11, 13, 3)
+EX ('GSB', '../../../experiments/new/box21/instances/fts_best16.pg/0', 12, 11, 13, 7)
+EX ('GSB', '../../../experiments/new/box21/instances/fts_best16.pg/0', 13, 11, 13, 3)
+EX ('GSB', '../../../experiments/new/box21/instances/fts_best16.pg/0', 13, 11, 13, 7)
+EX ('GSB', '../../../experiments/new/box21/instances/fts_best16.pg/0', 14, 11, 13, 3)
+EX ('GSB', '../../../experiments/new/box21/instances/fts_best16.pg/0', 14, 11, 13, 7)
+EX ('GSB', '../../../experiments/new/box21/instances/fts_best16.pg/2', 2, 11, 0, 9)
+EX ('GSB', '../../../experiments/new/box21/instances/fts_best16.pg/2', 2, 11, 7, 10)
+EX ('GSB', '../../../experiments/new/box21/instances/fts_best16.pg/2', 3, 11, 0, 9)
+EX ('GSB', '../../../experiments/new/box21/instances/fts_best16.pg/2', 3, 11, 7, 10)
+EX ('GSB', '../../../experiments/new/box21/instances/fts_best16.pg/2', 4, 11, 0, 9)
+EX ('GSB', '../../../experiments/new/box21/instances/fts_best16.pg/2', 4, 11, 7, 10)
+EX ('GSB', '../../../experiments/new/box21/instances/fts_best16.pg/2', 5, 11, 0, 9)
+EX ('GSB', '../../../experiments/new/box21/instances/fts_best16.pg/2', 5, 11, 3, 4)
+EX ('GSB', '../../../experiments/new/box21/instances/fts_best16.pg/2', 5, 11, 7, 10)
+EX ('GSB', '../../../experiments/new/box21/instances/fts_best16.pg/2', 6, 11, 0, 9)
+EX ('GSB', '../../../experiments/new/box21/instances/fts_best16.pg/2', 6, 11, 3, 4)
+EX ('GSB', '../../../experiments/new/box21/instances/fts_best16.pg/2', 6, 11, 7, 10)
+EXIT 0
