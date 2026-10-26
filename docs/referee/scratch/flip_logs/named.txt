@@ -1,0 +1,29 @@
+ADD_chk 22571
+FB_chk 16
+FC_chk 16
+FLIPS 560
+LOCAL_chk 7872
+MINW_chk 2760
+MINW_walks 7954
+N1 544
+N2 196
+N3 56
+N3L_chk 4
+N3L_eq 3
+NC_chk 560
+PHASES 276
+REAL_ex 3
+REAL_nonc 33
+RELAY 80
+RHO_TRANS 117
+ROOT2_chk 117
+ROOTC_chk 206
+ROOT_chk 206
+ROUTE 130
+RR_chk 80
+RUNS 26
+STAT_chk 120
+TRANS 378
+EX ('REAL_nonc', 'experiments/red/tcpert/instances/leanT_N6.pg/0', 3, 7, 4, 6)
+EX ('REAL_nonc', 'experiments/red/tcpert/instances/leanT_N6.pg/2', 4, 7, 4, 4)
+EX ('REAL_nonc', 'experiments/red/tcpert/instances/leanT_N6.pg/3', 4, 7, 4, 2)

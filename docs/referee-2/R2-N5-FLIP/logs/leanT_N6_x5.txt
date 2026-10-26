@@ -1,0 +1,5 @@
+MODE files logs/leanT.lst 5 MUT - WALKMAX 16
+ENGXI_checks: 33
+runs: 5
+states: 33
+RESULT OK violations=0

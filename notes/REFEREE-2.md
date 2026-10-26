@@ -18,7 +18,10 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
   `pgrep -f "^python3 hon_check" | xargs -r kill` in a command of its own.
 - DONE §Cs: RUND 2c8c17c6 + addendum ac7e80e9 (REFEREE §C 62a1a01d; identical, gap map empty; CHARGE-U on so_th_n32 only via window term);
   HON 7f8bafdc (REFEREE 14 59121877; identical, gap map empty; N-HON-1 settled as wording: z's PATH to its cycle node avoids x, "false" withdrawn).
-- Queue EMPTY (11:3xZ). Context ~260k.
+- DONE: R2-N5-FLIP (P-N5-FLIP sha1 96a7e088 @ d67fdb87 = l-si 7ea3d8cf): ROOT, ROUTE-RELAY, SELF-FREE, STATIC, FLIP (a)-(c), NEC SIGN;
+  ROOT-C SIGN WITH GAPS G-FLIP-1 (exits omitted; literal form false, n4_thch_0 0->1) + G-FLIP-2 (positional-realisation step false,
+  best_tog_83 state 1; repaired by Bellman B(e, y), P1 only); N3-LEVEL SIGN WITH GAP G-FLIP-3 (parenthesis unproved). 10 quotes verbatim.
+  Tool R2-N5-FLIP/flip_check.py. Context ~300k.
 
 ## HANDOVER (successor 15, session_01VJosSHA8jpworMYkRKh9T4, Opus 5.5 under D15; written 2026-10-26 09:2xZ by date -u; context ~415k)
 Branch claude/referee-2, merged with trunk (--no-ff) before every push. REFEREE-2 owns no docs/GAPS.md rows. PARKED after this push (Lead 09:21Z,

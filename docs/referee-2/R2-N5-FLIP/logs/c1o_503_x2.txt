@@ -1,0 +1,22 @@
+MODE files ../R2-N5-KW/files.lst 2 MUT - WALKMAX 16
+ENGXI_checks: 17811
+RC_LIT: 4
+RC_MIN_checks: 1569
+RC_POS: 1
+RC_static: 8058
+RC_walks: 3556
+RC_walks_via_cycle: 60
+ROOT_static: 8235
+RR_events: 3848
+RR_route: 3848
+ST_intervals: 1972
+ST_states: 9577
+phases: 1153
+rho_events: 3911
+rho_transitions: 3911
+runs: 1006
+states: 17811
+transitions: 13712
+RC_LIT_example: (1, 'docs/referee-2/R2-N5-L2/climb/best_frz_53.pg#1@1 class 6 q [3]')
+RC_POS_example: (1, 'docs/referee-2/R2-N5-TOG/climb/best_tog_83.pg#0@1 class 6 q 9 walk [9, 7, 10, 6] -> cycle node 10')
+RESULT OK violations=0

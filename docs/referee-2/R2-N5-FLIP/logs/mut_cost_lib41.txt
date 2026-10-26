@@ -1,0 +1,64 @@
+MODE files ../R2-N5-STAU/lib41_noref.lst 1 MUT cost WALKMAX 16
+ENGXI_checks: 8882
+FL_N1: 665
+FL_N2: 49
+FL_N3: 63
+FL_b_checks: 63
+FL_c_checks: 63
+FL_flips: 728
+N3L_checks: 60
+N3L_equal: 27
+RC_LIT: 30
+RC_MIN_checks: 605
+RC_POS: 28
+RC_static: 3775
+RC_walks: 1623
+RC_walks_via_cycle: 60
+ROOT_static: 3807
+RR_events: 4051
+RR_relay: 1899
+RR_route: 2152
+ST_intervals: 898
+ST_states: 4609
+VIOLATIONS: 70
+V_FLa: 40
+V_NEC: 30
+phases: 417
+rho_events: 4063
+rho_transitions: 2060
+runs: 410
+states: 8882
+transitions: 6550
+RC_LIT_example: (1, 'experiments/n5-exhaustive/instances/n4_thch_0.pg#0@0 class 1 q [0]')
+RC_POS_example: (1, 'experiments/red/kl/instances/klcount_n16.pg#0@2 class 10 q 0 walk [0, 4, 9, 11, 6, 14, 1, 3, 10] -> cycle node 14')
+VIOLATION FLa: experiments/red/n5inj/instances/frz40.pg#0: flip (0, 11, 44, 62)
+VIOLATION FLa: experiments/red/n5inj/instances/frz40.pg#0: flip (0, 11, 44, 63)
+VIOLATION FLa: experiments/red/n5inj/instances/frz40.pg#0: flip (0, 11, 44, 64)
+VIOLATION FLa: experiments/red/n5inj/instances/frz40.pg#0: flip (0, 11, 44, 65)
+VIOLATION FLa: experiments/red/n5inj/instances/frz40.pg#0: flip (0, 11, 44, 66)
+VIOLATION FLa: experiments/red/n5inj/instances/frz40.pg#0: flip (0, 11, 44, 67)
+VIOLATION FLa: experiments/red/n5inj/instances/frz40.pg#0: flip (0, 11, 44, 68)
+VIOLATION FLa: experiments/red/n5inj/instances/frz40.pg#0: flip (0, 11, 44, 69)
+VIOLATION FLa: experiments/red/n5inj/instances/frz40.pg#0: flip (0, 11, 44, 70)
+VIOLATION FLa: experiments/red/n5inj/instances/frz40.pg#0: flip (0, 11, 44, 71)
+VIOLATION FLa: experiments/red/n5inj/instances/frz40.pg#0: flip (0, 11, 44, 72)
+VIOLATION NEC: experiments/red/n5inj/instances/frz40.pg#0: flip (0, 11, 44, 72)
+VIOLATION FLa: experiments/red/n5inj/instances/frz40.pg#0: flip (0, 11, 44, 73)
+VIOLATION NEC: experiments/red/n5inj/instances/frz40.pg#0: flip (0, 11, 44, 73)
+VIOLATION FLa: experiments/red/n5inj/instances/frz40.pg#0: flip (0, 11, 44, 74)
+VIOLATION NEC: experiments/red/n5inj/instances/frz40.pg#0: flip (0, 11, 44, 74)
+VIOLATION FLa: experiments/red/tcpert/instances/leanT_N12.pg#0: flip (37, 38, 11, 12)
+VIOLATION NEC: experiments/red/tcpert/instances/leanT_N12.pg#0: flip (37, 38, 11, 12)
+VIOLATION FLa: experiments/red/tcpert/instances/leanT_N24.pg#0: flip (73, 74, 18, 22)
+VIOLATION NEC: experiments/red/tcpert/instances/leanT_N24.pg#0: flip (73, 74, 18, 22)
+VIOLATION FLa: experiments/red/tcpert/instances/leanT_N24.pg#0: flip (74, 76, 18, 21)
+VIOLATION NEC: experiments/red/tcpert/instances/leanT_N24.pg#0: flip (74, 76, 18, 21)
+VIOLATION FLa: experiments/red/tcpert/instances/leanT_N24.pg#0: flip (76, 78, 18, 20)
+VIOLATION NEC: experiments/red/tcpert/instances/leanT_N24.pg#0: flip (76, 78, 18, 20)
+VIOLATION FLa: experiments/red/tcpert/instances/leanT_N24.pg#0: flip (78, 83, 18, 19)
+VIOLATION NEC: experiments/red/tcpert/instances/leanT_N24.pg#0: flip (78, 83, 18, 19)
+VIOLATION FLa: experiments/red/tcpert/instances/leanT_N24.pg#0: flip (73, 74, 19, 22)
+VIOLATION NEC: experiments/red/tcpert/instances/leanT_N24.pg#0: flip (73, 74, 19, 22)
+VIOLATION FLa: experiments/red/tcpert/instances/leanT_N24.pg#0: flip (74, 76, 19, 21)
+VIOLATION NEC: experiments/red/tcpert/instances/leanT_N24.pg#0: flip (74, 76, 19, 21)
+RESULT FAIL violations=70
