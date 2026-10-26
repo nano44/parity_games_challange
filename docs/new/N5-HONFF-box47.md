@@ -13,7 +13,7 @@ Builds on docs/new/N5-REC1-box46.md §0, §1, §1a (Lemma HON, SAT0, HON-FB, HON
 | Theorem HON-FF | the W-honest states of a phase number at most 4n² − 3n: no f term | PROVED (every game); was CONJECTURE HON-FF |
 | Corollary HON-0-FF | D = ∅ states, N_0, and in-phase transitions out of D = ∅ epochs are each ≤ 4n² − 3n per phase | PROVED (every game) |
 | Corollary REC-1-FF | REC-1 (a)-(d) with f deleted: {u}-intervals ≤ 1 + 4n² − 3n + X_dir + X_big; (d) with f deleted | (a) PROVED; (b)-(d) IMPLICATIONS from (Στ), as REC-1 |
-| data | FB-RISE (general): 0 failures; its control (no Odd term) fails 79 times, always where the Odd term binds | DATA |
+| data | FB-RISE general form: 0 failures in 1,028 checks of non-honest fallbacks (samples overlap); honest form: 0 in 31; the control (no Odd term) fails 636 times, always where the Odd term binds | DATA |
 
 ## 0. Setting (every game)
 As docs/new/N5-REC1-box46.md §0: N5 = SPEC S1-S5 (FIX 1-4, Q1-Q4); state k = (σ_k, τ_k), σ̄_k, Ξ_k = V_{σ_k,σ̄_k}, W_k = V_{σ_k,τ_k}; a phase P =
@@ -98,12 +98,13 @@ honest form fails (must be 0); XI_AT = LEV(t) ≥ LEV(h) + 1 already at t; DEEP 
 | random 3,000 𝒞^kO (n 5-18, gseed 111), S3 + 4 random, seed 8 | 15,000 | 7 | 0 | 4 | 4 | 0 | — | — | — | 0 |
 | random 3,000 𝒞^kO (n 6-24, gseed 222), S3 + 4 random, seed 9 | 15,000 | 3 | 0 | 2 | 2 | 0 | — | — | — | 0 |
 | L-COMP 5's pinned gaps (l-comp 15bcfa06, experiments/n5-epoch/instances): ffin12_n32 (sha1 6bae375b…), ffin5_n32 (d20ea0f2…), ffin4_n24 (e1c4043c…), each with its .start, budget 3·10⁷ | 3 | 21 | 0 | 20 | 20 | 21 | 0 | 21 | 0 | 0 |
-| experiments/red/xing/instances j10_n24, j7_n32, j8_n32, S3 (GEN not yet in the script for this row) | 3 | 4 | — | — | — | 4 | 0 | 4 | 0 | 0 |
-- Library runs at n ≤ 34 (lib41 and the 735-file list, exact LEV, budget 3·10⁶) are running at this commit; their rows will be added.
+| experiments/red/xing/instances j10_n24, j7_n32, j8_n32, S3, budget 3·10⁷ | 3 | 4 | 0 | 4 | 4 | 4 | 0 | 4 | 0 | 0 |
+| the 735-file list, n ≤ 34, S3 + 2 random, seed 6, budget 3·10⁶ (UNK 15 phases skipped) | 1,527 | 724 | 0 | 527 | 526 (+1 UNK) | 3 | 0 | 3 | 0 | 0 |
+| lib41 (experiments/new/box41/lib41.txt), n ≤ 34, S3 + 2 random, seed 7, budget 3·10⁶ (UNK 14; GEN not in the script for this row) | 816 | 560 | — | 402 | — | 3 | 0 | 3 | 0 | 0 |
 - On the three known gaps with an inside fallback (experiments/red/xing/instances/j10_n24, j7_n32, j8_n32, S3; budget 3·10⁷ for n = 32): 4
   fallbacks, FBRISE_V 0, and XI_AT 4 (the Ξ-level had already reached LEV(h) + 1 before each fallback).
-- Reading: the control fails often (CTRL_T 79), and only where the Odd term binds (GEN_ODDBIND 79 on n ≤ 20), so the checker can see a failed
-  rise; the general form never fails.
+- Reading: the control fails often (CTRL_T 636 of 1,028), and only where the Odd term binds (GEN_ODDBIND; the one CTRL_T case without it hit
+  the budget before LEV_odd was computed), so the checker sees a failed rise when there is one; the general form never fails.
 
 ## 4. What is left, and what this changes
 - f itself per phase on general games (RESULTS R56: ρ) is NOT bounded by this: a fallback raises LEV only when LEV_odd(t) > LEV(t), i.e.
