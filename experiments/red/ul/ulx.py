@@ -167,6 +167,12 @@ def cint(g, R, name, i, c, U, big, a, b, st, UE):
     info = (name, "phase@%d" % i, "c=%d" % c, "|U|=%d" % len(U), "cint=[%d,%d]" % (a - i, b - i), "pure" if pure else "impure",
             "|A_a|=%d" % len(st[a][0]), "|DcapU|=%d" % len(st[a][1]), "DD=%d" % len(st[a][2]), "lamW_const" if lamW else "lamW_moves",
             "BIG" if big else "small", "xgate=%d" % sum(1 for u in st[a][1] if R[a]["t"][u] not in U))
+    if pure and L > 0:                                       # ABS-DEPTH reading (N5-ABSCYC §4): no switch in U at index >= (|A_a| - 1) + |U|
+        sw = [k - a for k in range(a, b) if any(g.owner[v] == 0 and R[k]["s"][v] != R[k + 1]["s"][v] for v in U)]
+        if sw:
+            mx("PURE_SW_SLACK", sw[-1] - (len(st[a][0]) - 1 + len(U)), info + ("last switch idx %d" % sw[-1],))
+            mx("PURE_SW_2N", sw[-1] - 2 * g.n, info + ("last switch idx %d" % sw[-1],))
+            if sw[-1] >= len(st[a][0]) - 1 + len(U): C["PURE_LATE_VIOL"] += 1
     mx("LEN_SLACK" + ("" if big else "_small"), L - thr, info)
     if L >= thr: C["cint_long" + ("" if big else "_small")] += 1
     ins = [(k, y, z) for (k, y, z) in UE if y in U and a <= k < b]
