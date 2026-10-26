@@ -213,7 +213,7 @@ AGAINST_W ('experiments/si/fb2o/instances/tcwult2_against_n8.pg', 0, 1, 0, 4, -1
 - Replacement: the offset count, Theorem TWIN-GAP (docs/si/N5-RUND-box17.md §5), which counts the changes of v's offset Δ(v) = s^W − s^Ξ
   by the rise of two monotone integer scores, not by coarse values.
 
-## DEAD box 17b (L-SI successor 12, 2026-10-26T07:2xZ by date -u): CONJECTURE OFFSET-ONCE (docs/si/N5-RUND-box17.md §6 (R2), §10)
+## DEAD box 17b (L-SI successor 12, 2026-10-26T07:1xZ by date -u): CONJECTURE OFFSET-ONCE (docs/si/N5-RUND-box17.md §6 (R2), §10)
 - Statement killed: inside one stretch_D (D_k, R_D and the gates' values Ξ(u), W(u) constant) of a fallback-free in-phase run with
   (h3_D), no vertex's offset Δ(v) = w(P(W v)) − w(P(Ξ v)) returns to a value it has left.
 - Obstruction: monotonicity of s^Ξ, s^W allows a return whenever the route to the first gate gains ≥ |δ_A − δ_B| in between. A delay

@@ -117,7 +117,7 @@ Under (h3_D) on a run S (every terminal change is a twin change, §1):
     several gates. OPEN.
 - (R2) OFFSET-CHANGING terminal changes: bounded by TWIN-GAP, but by 2^{B+1}, exponential in the band width. OPEN: a polynomial bound
   (a narrow band, or a count finer than the score range).
-  - CONJECTURE OFFSET-ONCE (DEAD at 07:2xZ, §10): inside one stretch_D of S (D, R_D and the gates' two values constant), no vertex's
+  - CONJECTURE OFFSET-ONCE (DEAD at 07:1xZ, §10): inside one stretch_D of S (D, R_D and the gates' two values constant), no vertex's
     offset returns to a value it has left. With it, offset changes per vertex per stretch_D are ≤ |D|, and (R2) reduces to stretch_D boundaries (ρ and W(q) changes,
     N5-2O-T §2).
   - Status: DATA only (§7: 0 returns). Climbs against it found nothing (§7). An earlier "return" on frz3_n24 from a random start was at
