@@ -142,3 +142,11 @@ stretches, FREEZE-A (b) for the prefix, and a push lemma for the σ̄ changes le
   ties really can break the per-vertex statement in the model.
   DATA: GEN_W failed in 23 lib41 intervals, and STATIC-DEPTH's conclusion held in every one of them. CONJECTURE STATIC-DEPTH-TIE: the
   length bound max d* holds without GEN_W under SPEC's tie rules.
+
+## 7. (G1) DATA: σ̄ changes inside global C-intervals (written 18:40Z by date -u; staticdepth.py GCI=1, logs/staticdepth_gci_lib41_n48_rs2.txt)
+- lib41 (n ≤ 48, S3 + 2): 444 of 1,924 global C-intervals have σ̄ changes inside, 1,095 changes in all. At most 21 in one interval: so_sorl_n32
+  (experiments/red/so/instances), global C-interval [0, 21] at n = 32, where σ̄ changes at EVERY transition. so_tie15_n32 has 17 changes in
+  length 18. The longest σ̄-constant piece inside such an interval is 21. pp_K12_n161: 12 changes in its length-17 interval, pieces ≤ 3.
+- So on (G1) intervals STATIC-DEPTH bounds nothing (its pieces are trivial). The lengths still respect n − 1 (21 < 31). What would be
+  needed (OPEN): each σ̄ change at a gate inside the interval is a value push (BEST + (M2κ): the abandoned option's κ rises strictly, ties
+  aside, as in GATE-PUSH). A bound would charge those rises to fresh vertices, as in R91 §6's (O1)/(O2).
