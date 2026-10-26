@@ -1,0 +1,4 @@
+START fit (55, 3) n 32
+BEST step 506 fit (56, 3) t 43s
+BEST step 1171 fit (57, 3) t 115s
+BEST step 2046 fit (58, 3) t 198s
