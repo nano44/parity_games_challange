@@ -120,3 +120,15 @@ Targets (Lead 21:00Z):
   - From kchain4 (the first km climb): no such run either.
   So the post-freeze kind-change regime stays VACUOUS, even with long post-freeze runs present.
 - PAR: 838,491 more states with c_w ≻ c_θ, all with c_w even.
+
+## 8. Addendum (23:40Z, date -u; Lead 23:22Z): REFEREE 11's CASC-B witness
+- kw18.py on docs/referee/scratch/kw_logs/cascb_witness.pg (sha1 3bda89ced249b28823a3c275eec5d01a18d502e9), SPEC S3:
+  - CASCB_switches 1 with slack −1. The kind-B switch happens at step 0 of its W-flat, kind-stable run, against the bound |π_v| − 2.
+  - Stretch type U23. c_θ = o (θ = (2, ∅, 0)). w = (14, ∅, 2), so c_w = 14, which is even and above c_θ.
+  - DIR_wflat 1, 0 FAIL.
+  - So my checker SEES the regime. This is case (a): R73 §0's "0 everywhere" is a statement about my corpus and climbs, and those never
+    reached it. lib41 does not contain this file.
+  - The U3x filter is "¬H2, c_w ≠ o, rank(c_w) > rank(c_θ)"; it does not exclude c_θ = o.
+- Rows that change: none. §0's wording "0 everywhere" is corrected to "0 in lib41, the first random run and the climbs". §7 already
+  reports one occurrence in the second random run (slack −2), and this file is a second, at slack −1. CASC-B is tested on these two
+  instances and holds on both.
