@@ -884,6 +884,8 @@ Successor 24 (Opus 5.5, D14/D18, L40), session_01DR27cGCEhPvHHVxiYXCfaz. Handove
   133 of 453 fallback-free gaps between consecutive C-epochs (lib41, n ≤ 34). Instance experiments/si/orlens/instances/thclimb_n12_s11.pg
   (sha1 e3b47b6e…), S3 start, phase [2, 17], D = {1} throughout; C = (u → 10) at states 2 and 6, LEV_C 1 → 1. Obstruction: S4a optimises
   against τ(u) = 11, not against σ̄_C(u); inside one {u}-interval σ̄(u) moves 10 → 2 → 3 → 2 → 10. Replaced by EP-1u (u-runs on G^u).
+- (box 46, successor 25, ~09:45Z) CONJECTURE FB-WLEV ("a fallback never lowers the W-level", the W-carry route to HON-FF): FALSE.
+  experiments/n5-exhaustive/instances/b5_o11.pg (sha1 db4fe55a…), S3, fallback 7 → 8, WLEV 6 → 5 (14 of 166 non-honest fallbacks, lib41 n ≤ 24).
 - (box 46, successor 25, ~09:30Z) CONJECTURE IMM ("Ξ-level rises at once after an S4a step from a W-honest state"): FALSE.
   experiments/new/box46/instances/immfail_n14.pg (sha1 db3fc2ca2ef4…), S3, h = 0 (LEV 3 → 3; split) and h = 2 (3 → 3; unsplit); both h + 1 are the
   last state of their phase. Obstruction: S4a's W-best target leads to an Odd vertex where the honest reply deviates from τ (σ̄(0) = 2 ≠ τ(0) = 4).

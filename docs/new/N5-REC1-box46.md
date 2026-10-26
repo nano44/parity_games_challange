@@ -187,6 +187,13 @@ Proof.
   the next transition leaves the phase), and HON-FF holds on the game (hon2.py: 2 gaps, both rise). Refined CONJECTURE IMM′ (would imply
   HON-FF): IMM holds whenever h + 1 is not the last state of its phase; climbs below.
 
+(iv) CONJECTURE FB-WLEV, "an in-phase fallback never lowers the W-level" (WLEV: W_k ⪰ value(r) for simple G_τ-paths r with ≤ j edges to cycle
+  nodes of the phase's λ), 09:45Z, the W-carry route to HON-FF. FALSE: fbwlev.py, lib41 n ≤ 24, 14 of the 166 fallbacks at non-honest states
+  lower it (none of the 39 at honest states, as HON-FB says). First: experiments/n5-exhaustive/instances/b5_o11.pg (sha1
+  db4fe55a650236dfe1bc5030f0ca123c75754764), S3, fallback 7 → 8, WLEV 6 → 5. On the same run the Ξ-level itself climbs through the non-honest
+  stretch (LEV 3, 4, 4, 5, 5, 6, 9 at states 5-11; gaptrace.py) and the next honest state 12 has LEV 9: HON-FF holds there, not by carrying W.
+  So a proof of HON-FF cannot go through W alone; IMM′ (a rise in Ξ itself) is the remaining route.
+
 ## 5. DATA (not proof; experiments/new/box46/, run from that directory; outputs in out/)
 - hon.py (Lemma HON): HON_V = |H| > f + 4n² − 3n; WMC_V = the WM chain W_{h′} ⊵ W_{h+1} fails on a fallback-free gap between consecutive W-honest
   states; D0NOTHON_V = a D = ∅ state that is not W-honest; FBH_V (§4 (ii)).
