@@ -1,0 +1,17 @@
+START fit (0, 1) n 24
+BEST step 405 fit (0, 2) t 2s
+BEST step 1101 fit (1, 2) t 6s
+BEST step 1151 fit (1, 3) t 7s
+BEST step 1229 fit (1, 4) t 7s
+BEST step 1598 fit (2, 4) t 11s
+BEST step 1737 fit (3, 4) t 12s
+BEST step 2263 fit (3, 6) t 18s
+BEST step 2866 fit (4, 6) t 25s
+BEST step 3883 fit (4, 7) t 40s
+BEST step 4813 fit (4, 8) t 55s
+BEST step 4842 fit (5, 8) t 55s
+BEST step 5452 fit (6, 8) t 65s
+BEST step 8506 fit (6, 9) t 116s
+BEST step 9422 fit (7, 9) t 131s
+BEST step 11779 fit (8, 9) t 170s
+END steps 16005 best (8, 9) n 24 -> results/b14/scale/gdl_k5_n24_r1.pg

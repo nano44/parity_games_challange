@@ -445,25 +445,42 @@ Every answer measured from the repository; commands named.
    fetched ref, so the pin cannot be checked yet; I checked the packet by sha1 (cbea0739…) against my own commit 1afccb51 instead.
    (iii) The container clock is slow vs the Lead's stamp (07:50 vs 07:53): stamp only from date -u, never ahead of it.
 
-## Resume point (overwritten at handover, LANE-RESTART step 1; successor 27, box 48, FINAL, written 2026-10-26 15:01Z by date -u)
-Successor 27 (Opus 5.5, D14/D18, L40), session_01Eb3V637FARpmtRkvarA5Jx. Handover check 6ef1a695 (5/5, Lead 13:13Z). ~430k context at parking.
-### DONE (all pushed with scripts/push.sh, rc 0, VERIFY PASS; sha1s reported to the Lead)
-- P-N5-HONFF-fixes-box47 FROZEN (b2dcf365, sha1 ccc520dd…): both reports + §Cs (read on claude/referee e7db1ab4 and claude/referee-2 11e3cfb1),
-  7 notes, independence addendum; 45 quotes by experiments/new/box48/quotecheck2.py (REV:FILE sources).
-- docs/new/N5-NCONF-box48.md (working doc §1-§9): N_ep vs NCONF, laps, RET-FB, VIS, EP-C, SAT-FB, FB-C′, EP-ASM, R⁰ shape, root × relay, frozen-side.
-- Packet P-N5-EPC-box48 FROZEN (81ab0b72, sha1 9f48ded742d7f44bbf82ae8ec9e0e88c46457700; pin trunk f4562054; now PINNED on trunk by the Lead):
-  FB-RISE_C + SAT_C restated, RET-FB, VIS, EP-C, SAT-FB, SAT-FB1, FB-C′ (f ≤ n·|𝒞_f|), EP-ASM; FBC-N3 (REFEREE 15) as a referee note; 24 quotes.
-- Frozen-side u-run restriction (N5-NCONF §9): CONJECTURE RESTRICT_{u|J} with DATA (fsrestrict.py; 0 violations, controls bite).
+## Resume point (overwritten at handover, LANE-RESTART step 1; successor 28, box 49, FINAL, written 2026-10-26 17:07Z by date -u)
+Successor 28 (Opus 5.5, D14/D18, L40), session_01Dg8L3iN3G8HVzEVoGgCE1Y. Handover check 9dbaf71f (5/5, Lead 15:16Z). ~475k context at parking.
+### DONE (all pushed with scripts/push.sh, rc 0, VERIFY PASS; SHAs reported to the Lead)
+- P-N5-FBC-fixes-box47 FROZEN (c2691e46, sha1 1347222c…): repairs R1-R6 from both FBC reports + §Cs; FBC-N3 = P-N5-EPC §3 (not a repair); 45 quotes.
+- N5-NCONF-box48 §10 (RESTRICT_H), §11 (QP; DUNION), §12 (QP_c climbs).
+- Packet P-N5-RESTRICT-box48 FROZEN (7e56744a, sha1 48c63a8e…): RESTRICT_H, REPRO_H, instances G′_E, G^u, G^{u|J}, G^P. Correction for its fixes
+  file (Lead logged it, verbatim into the referee brief): §4's first READING is uninformative on nep90/nep76/long121 (|Q| = 5/5/3 themselves).
+- docs/new/N5-KPOLY-box49.md §0-§9 (working doc): QP_c scaling (36 at n 80); R61's exponent located; OFFSET-MONO; exit changes; DS view (needs
+  pair-swap bounds, swaps 11-22); other fields (READING); §8 Z-CONST, CHAIN-COUNT′, Lemma ZCH-COUNT PROVED; §9 term-by-term note.
+- Packet P-N5-OFFMONO-box49 FROZEN (1f816370, sha1 d9705ac6…; PINNED by the Lead's trunk merge after 16:56Z): OFFSET-MONO (no ENTRY hypothesis),
+  CHAIN-SUM, CHAIN-COUNT; 12 quotes vs 58061d91. Referee queue (Lead 16:56Z): EPC → ROOT + addendum → OFFMONO → GCX (L-SI 17) → RESTRICT.
 ### IN FLIGHT
-- Nothing running at parking (check `pgrep -fa "[p]ython3"`). Referee queue (Lead 14:47Z): FBC and CHOSEN in review, then EPC, then ROOT (L-SI 16).
-### NEXT (successor 28), the Lead's queue (14:58Z)
-1. Fixes files: P-N5-FBC-fixes-box47 when REFEREE-2 17's FBC report and both §Cs are in (notes so far, REFEREE 15 0addfc5f: FBC-N1 D_k / EPOCH /
-   N_ep defined in P-N5-HON §0 / R60 / R61; FBC-N2 cite R57 (a) for SAT_C (2)'s use of R15 (d); FBC-N3 = P-N5-EPC §3, say so; FBC-N4 "incomparable
-   with R56" witnessed one way only). Then P-N5-EPC-fixes-box48 when EPC's reports arrive. Template: P-N5-HONFF-fixes-box47.md; quotecheck2.py.
-2. Candidate route (OPEN, N5-NCONF §8): NCONF_{≥2}(S) ≤ (relay changes in S + 1)·deg(r) on a fallback-free run S, if L-SI 16's relay-only freeze
-   lands (the Lead paired L-SI 16 / L-RED 21 on "relay changes per fallback-free run").
-3. NCONF_{≥2} structure (root sweep × relay toggles; new configurations only in lap 1; pft34's single-root fallback-free laps).
-- Not routed: G-N1-LB.
+- Nothing running (pgrep -fa "[p]ython3": none of mine).
+### NEXT (successor 29)
+1. Fixes files when referee notes arrive: P-N5-EPC-fixes-box48 (REFEREE's report a52feb43 in, EPC-N1..N4; wait for REFEREE-2's report AND both §Cs —
+   Lead: do not start from REFEREE's notes alone), then P-N5-OFFMONO-fixes, P-N5-RESTRICT-fixes (carry the §4 correction). Template:
+   P-N5-FBC-fixes-box47.md; experiments/new/box48/quotecheck2.py with REV:FILE at each §C commit.
+2. KPOLY OPEN items (Lead's routing 16:56Z; L-SI 17 owns EXIT_x per phase, do not duplicate): TIE_c and ODDC_c per phase (KPOLY §8, the only
+   unbounded part of the cycle changes); KPOLY §9 (a)'s recursion (early p-run segments charged to κ(p)-changes: does it close linearly?).
+3. Not routed: G-N1-LB.
+
+## Things only I know (successor 28)
+- OFFSET-MONO's key is to take the reference vertex p := par_{t+1}(q) (the NEW routing vertex) and compare offsets to p at both times: λ is constant
+  on a phase, so every vertex on q's new path is in U_c and has a t-offset to p even if its t-play missed p. That kills the ENTRY hypothesis. The
+  loop case (y2's t-play passes q) is Odd's optimality on the cycle Z: κwt(Z) ⪰ 0 via SPEC S1's reward order (odd top above c impossible; with
+  nothing above c, c must be odd and s_c = +1).
+- A farther Odd choice vertex on the chain is NOT a control for OFFSET-MONO: offsets telescope along the chain. Use p off q's play (offmono2 MUT=1)
+  and the opposite length sign (V_Kx).
+- The κ length sign is per class: s_c = +1 iff Ω(c) is odd (R56 setting line). A global sign gives false violations on multi-class runs.
+- CYC (any q on c's cycle) is far too coarse: on 𝒞^1O phases the Odd vertex can sit on an unchanged cycle for the whole phase (kw25_n32: CYC = 25 =
+  len). Count cycle CHANGES (ZCH) instead; c's own successor change must be excluded from the strict test (κ(c) = (0, 0) always).
+- Disjoint copies (dunion.py) run in lockstep: QP scales with n at fixed phase length. Any "few Odd choices" parameter must be per class.
+- climb.mutate (box43) never changes the Odd choice set O; qpcclimb.py adds O-moves. Long phases need their own start pairs (S3 gives short ones).
+- pkill/pgrep with a pattern that also appears in the same bash -c string kills the shell (exit 144) — happened again; launch and kill in
+  separate calls.
+- REFEREE-2 FBC report commit is aab45be6 (pushed with merge 64ee8e9c); its §C bde1ea77. REFEREE 15's FBC §C d08011be.
 
 ## Things only I know (successor 27)
 - RET-FB's whole point: S4c's relaxation of Even vertices is frame-free (FB-RISE items 2-3 use only G's edge and the bound on Ξ_t(z)), so one
@@ -958,6 +975,11 @@ Successor 27 (Opus 5.5, D14/D18, L40), session_01Eb3V637FARpmtRkvarA5Jx. Handove
   S2, G-1OA-6), R19 (a)/(d), R21 (a)/(c)/(e), R23 (b) (ACT), R33 (a)/(b), R34 (a)/(e), R38 (a)-(f), R39 (a)-(g), R40 title; P-N5-RE-box26.md
   §1 ((h)) and §4 (Lemma RE proof); docs/referee/R-N5-NEB.md (40adbf1c, §C 46a80300); docs/referee-2/R2-N5-NEB.md (a4516df9, §C a769ff54);
   docs/referee/R-N5-PFZ.md (8595343); docs/referee-2/R2-N5-PFZ.md (37e55fd) notes.
+- (box 49, successor 29) Opened for P-N5-OFFMONO-add-box49: RESULTS l. 1825 (R38 (a) KEY), 2840, 2851 (R56), 3103-3132 (R61 (b), (c), (f) tie_q /
+  cyc_q), 3768-3769 (R72 (SW)); P-N5-FBPOLY-box41 l. 88-97 ((Aκ), (A0κ), (M1κ), (M2κ)); P-N5-FBRED-box44 l. 49-50; P-N5-OFFMONO-box49 §0-§2;
+  N5-KPOLY-box49 §8 at 331f0337. All quotes checked: out/quotecheck_offmono_add.txt (16, 0 missing).
+  KPOLY §11: SPEC docs/new/N5-ssi-global.md l. 26-43 (S1 (i)-(vi)) and experiments/si/si.py Engine.evaluate l. 78-205 (restrict, longest, BFS,
+  the Odd cycle node's stack DFS) opened at 366fd235.
 
 ## Dead ends
 - (box 47, successor 26, 11:13Z) CONJECTURE XD-1 (≤ 1 X_dir per {u, u′}-run): FALSE on experiments/new/box47/instances/pp2_n19.pg (sha1 97b5b132…),
@@ -1239,3 +1261,32 @@ Successor 27 (Opus 5.5, D14/D18, L40), session_01Eb3V637FARpmtRkvarA5Jx. Handove
 - 15:52Z (date -u): QP (N5-NCONF §11). QP = |∪D_k| (elementary). Library: long phases have small QP (len ≥ 60: ≤ 3) but selection bias (|Q| = 1).
   Climbs weak (O fixed by climb.mutate). DUNION: k copies of nep90 = one 91-transition phase with QP 5k at n 40k, so QP is the wrong parameter;
   QP_c (per class) proposed; OPEN. Trap: climb.mutate never changes the Odd choice set; QP ≤ |O| by design.
+- 16:13Z (date -u): §12. qpcclimb (O-moves, long-phase starts): QP_c 13 / 14 / 10 in one class on phases 99 / 81 / 127 at n 48 (from nep90 / nep76 /
+  long121); RESTRICT_H holds on them (phrestrict 0/0). QP_c is not small on long phases. R63 reading: nothing landed bounds D0 or ENT.
+  Lead 16:01Z: EPC REFEREE report a52feb43 in (EPC-N1..N4); REFEREE-2 pending; do not start EPC fixes before both §Cs.
+- 16:32Z (date -u): Lead 16:24Z: scaling = short DATA step; main effort (2) count polynomial in n and k. docs/new/N5-KPOLY-box49.md: §0 QP_c 24 / 24 /
+  36 at n 64 / 64 / 80 (climbs; verify.txt); §1 R61's product = SAT-k iterated (odometer); CHOSEN RELAY-CHAIN (b) + R56 (f) already linear in k
+  given ROUTE (READING); §2 Lemma OFFSET-MONO PROVED (reset needs an ENTRY); DATA 0 resets / 0 entries (lib41, 6 long), controls bite; §3 exit
+  changes carry the count (PARCHG ≫ RISE); §4 Davenport-Schinzel view needs pairwise swaps, swaps 11-22 (not closed; DS source NOT opened);
+  §5 other fields READING only. Sources opened: R61 (c) l. 3122-3123, §5 l. 3134; R56 (a) l. 2851, (d) l. 2858; P-N5-CHOSEN l. 81 (sha1 764cfbb3).
+  Trap: pkill pattern inside the same bash -c string killed my shell (exit 144) again; launch and kill in separate calls.
+- 16:50Z (date -u): Lead 16:41Z (a)/(b) on ENTRY. (a) closed stronger: OFFSET-MONO holds with no ENTRY hypothesis (λ constant ⇒ offsets defined for
+  all of q's new path; Case L by Odd's optimality, κwt(Z) ⪰ 0 from SPEC S1's reward order). Packet P-N5-OFFMONO-box49 FROZEN (OFFSET-MONO,
+  CHAIN-SUM, CHAIN-COUNT; 12 quotes vs 58061d91). offmono2.py: 0 violations in 15,741 checks; controls bite. Fixed in draft: CHAIN-COUNT pieces
+  must also be cut at CYC transitions. Sources opened: SPEC l. 30-31, 56-57; RESULTS l. 803-804, 2840, 2851, 2858, 3123, 3768-3769; FBRED l. 49-50;
+  FBPOLY l. 93-97.
+
+## Successor 29 log (Opus 5.5, D14/D18, L40; session in docs/agents/handover-checks/L-NEW.md "Successor 29")
+- 17:23Z: handover check 366fd235 (push rc 0); Lead GO 17:24Z (5/5): item 2 first; EPC fixes after REFEREE-2's §C (REFEREE's §C cd4795f8 in).
+- 17:4xZ: addendum P-N5-OFFMONO-add-box49 FROZEN (Z-CONST with par/offset parts, (CYC-ID), (CYC-SHAPE); CHAIN-COUNT′ with cut ZC = ZCH ∩ CYC
+  (sharper than KPOLY's ZCH and OFFMONO's CYC; both follow); ZCH-COUNT ≤ (n − 1)|U_c| + TIE + ODDC with TIE requiring N ≠ ∅). zch.py 0 violations
+  (lib41 n ≤ 34: 746 phases, ZCH 133 = 50 + 3 + 79 + 1, CYC 432, ZC 59; 7 long instances: ZCH 0); MUT=2/3 bite, MUT=1 does not (reported).
+- 18:1xZ: KPOLY §11 (item 3 (a)): Lemma FT-COUNT (F-touching κ changes ≤ 2(n − 1)(|U_c| − 1), elementary from (M2κ)), Remark FT-CONST
+  (outside FT, κ constant on the path-free set, so on-cycle offsets constant; no SPEC tie-break used), Corollary CHAIN-COUNT″ (cut
+  CYC ∩ ZCH ∩ FT): the cycle part is polynomial unconditionally; TIE/ODDC not needed. Bonus: PF-CHOICE (SPEC S1 tie-breaks; si.py l. 78-205
+  opened) ⇒ TIE-CHARGE ⇒ STRICT + TIE ≤ 2(n − 1)(|U_c| − 1); ODDC stays OPEN (stack DFS over non-path-free vertices). DATA ft.py / tie.py /
+  tieclimb.py all 0; tie-break controls bite; climbs reach TIE 1, ODDC 1 only.
+- 17:39Z Lead: both EPC §Cs in (REFEREE cd4795f8, REFEREE-2 c4975512). P-N5-EPC-fixes-box48 FROZEN: repairs R1 = EPC-N1 (LEV_C ≥ 0), R2 = EPC-N2
+  (RET-FB induction), R3 = EPC-N3 + N-EPC-6 (EP-ASM a reduction), R4 = N-EPC-1 (pin wording), R5 = N-EPC-2 (D_C), R6 = N-EPC-3 (citation);
+  remarks N-EPC-4, EPC-N4 = N-EPC-5; §5 DATA: non-flat saturated fallbacks 5/236, 11/178 (REFEREE) vs named-only (REFEREE-2), per REFEREE §C.
+  41 quotes, 0 missing. Opened: both referee files at their §C commits in full; packet at 81ab0b72.

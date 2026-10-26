@@ -1,0 +1,7 @@
+START fit (1, 0) n 40
+BEST step 1418 fit (2, 0) t 13s
+BEST step 1617 fit (3, 0) t 16s
+BEST step 1814 fit (4, 0) t 18s
+BEST step 1947 fit (5, 0) t 20s
+BEST step 20100 fit (6, 0) t 286s
+END steps 26859 best (6, 0) n 40 -> results/b14/scale/nconf2_k5_n40_r2.pg

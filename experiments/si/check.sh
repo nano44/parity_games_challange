@@ -188,4 +188,60 @@ MUT=1 python3 -I root/gcx.py --one $N90 | grep -q "MIG2_cint=4 "
 o=$(python3 -I root/gcx.py --one ../red/usplit/instances/pp_K12_n161.pg ../red/usplit/instances/pp_K12_n161.start)
 for k in "G_max=2 " "X_max=13 " "cint_migt=13 " "mig_per_vertex_max=1 "; do grep -q "$k" <<<"$o"; done
 if grep -q "MIG2_cint\|MIG_LATE" <<<"$o"; then exit 1; fi
-echo "root (gcx: G_c, X_u on nep90 and pp_K12; C-ONCE holds, whole-run control bites): PASS"
+echo "root (gcx: G_c, X_u on nep90 and pp_K12; no double migration inside a C-interval there, whole-run control bites): PASS"
+# box 21 §4: U events by C-interval on the UF-ONCE killer so_th_n32 (8 inside, 6 at cuts, none late: CONJECTURE UL_C); control ULMUT=1
+# (threshold 0) must fire. DEAD instances: cone_n65 (a vertex migrates twice inside a C-interval without D-direct gates), ueonce_n27 (an
+# edge unforbid-switched twice inside one C-interval).
+SO="../red/so/instances/so_th_n32.pg rund/instances/so_th_n32_s0.start"
+o=$(UEV=1 python3 -I root/gcx.py --one $SO)
+for k in "UR_cut=6 " "UR_in=8 "; do grep -q "$k" <<<"$o"; done
+if grep -q "UL_C=\|UE2_Cr=" <<<"$o"; then exit 1; fi
+UEV=1 ULMUT=1 python3 -I root/gcx.py --one $SO | grep -q "UL_C=8 "
+python3 -I root/gcx.py --one root/instances/cone_n65.pg | grep -q "MIG2_cint=1 "
+UEV=1 python3 -I root/gcx.py --one root/instances/ueonce_n27.pg | grep -q "UE2_Cr=1 "
+echo "root (gcx: UL_C on so_th_n32, control fires; DEAD C-ONCE broad (cone_n65) and UE-ONCE_C (ueonce_n27) reproduce): PASS"
+# box 21 §7: the abstract model ABS (acyclic): Lemma ABS-HEIGHT (steps <= DAG height) on 3,000 random games and a climbed one that reaches
+# n steps; control ABSMUT=1 (height - 1) must fire.
+python3 -I root/absmodel.py --rand 3000 10 1 | grep -q "games=3000 steps_ge_n=0 steps_gt_n=0 max_steps 4"
+o=$(python3 -I root/absmodel.py --climb 3000 5 1); grep -q "best steps 5 " <<<"$o"
+if grep -q "HEIGHT_V\|MONO_V" <<<"$o"; then exit 1; fi
+ABSMUT=1 python3 -I root/absmodel.py --climb 3000 5 1 | grep -q "HEIGHT_V="
+echo "root (absmodel: ABS-HEIGHT on random and climbed DAGs, sharp at n = 5; control fires): PASS"
+# box 21 §9: the cyclic-lift obstruction instance reproduces; FINAL-EACH holds on 3,000 random cyclic games (n = 5); with W-ties broken away
+# from the current choice (SMALL=1 TIEMAX=1), Lemma ABS-TIE's bound holds on random DAGs.
+python3 -I root/abscyc.py --deep | grep -q "DEEP REPRODUCED"
+o=$(python3 -I root/abscyc.py --final 3000 5 5); grep -q "trans=3296" <<<"$o"
+if grep -q "FINAL_EACH_V\|DEEP_ANY_V" <<<"$o"; then exit 1; fi
+o=$(SMALL=1 TIEMAX=1 python3 -I root/absmodel.py --rand 3000 8 3); grep -q "games=3000" <<<"$o"
+if grep -q "DSUM_V\|MONO_V" <<<"$o"; then exit 1; fi
+SMALL=1 TIEMAX=1 ABSMUT=1 python3 -I root/absmodel.py --climb 3000 5 1 | grep -q "over_height="
+echo "root (abscyc obstruction instance, FINAL-EACH; absmodel ABS-TIE with ties broken away from the current choice; control fires): PASS"
+# P-N5-GCX-box21 packet: 5 quotes verbatim at trunk 7d87f9be; shifted control fails.
+if git cat-file -e 7d87f9be; then
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-GCX-box21.md | grep -q "quotes=5 bad=0"
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-GCX-box21.md --mut | grep -q "QUOTES FAIL"
+  echo "root (packet P-N5-GCX-box21: 5 quotes verbatim; shifted control fails): PASS"
+else
+  echo "root (packet P-N5-GCX-box21 quotes): NOT RUN (source commit not in this clone)"
+fi
+# box 22 (docs/si/N5-EXIT-box22.md): exit changes on nep90_n40. Lemmas MONO-REF, PUSH, EXIT-RHO, DEPTH, EXIT-RED: 0 violations; sum EXIT = 53
+# (= L-NEW's PARCHG), every value push is P1UP and DOWN; controls MRMUT=1 (reference off the play) and PUSHMUT=1 (rise demanded of p2) bite.
+o=$(MR=1 python3 -I root/exitx.py --one ../red/rec0/instances/nep90_n40.pg rund/instances/nep90_n40.start)
+for k in "EXIT_sum=53 " "EXIT_max=18 " "chv_P1UP=13 " "chv_DOWN=13 " "n_alldown=18 " "n_other=22 " "mr_checks=4609 " "EXITX PASS"; do grep -q "$k" <<<"$o"; done
+if grep -q "_V=\|chv_UP=" <<<"$o"; then echo "exitx: violation on nep90"; exit 1; fi
+MR=1 MRMUT=1 python3 -I root/exitx.py --one ../red/rec0/instances/nep90_n40.pg rund/instances/nep90_n40.start | grep -q "MR_V="
+PUSHMUT=1 python3 -I root/exitx.py --one ../red/rec0/instances/nep90_n40.pg rund/instances/nep90_n40.start | grep -q "PUSH_V=16 "
+echo "root (exitx on nep90: MONO-REF, PUSH, EXIT-RHO, DEPTH hold, EXIT 53 / 18; controls MRMUT, PUSHMUT bite): PASS"
+# box 22 (docs/si/N5-ABSCYC-box22.md): Theorem ABS-DEPTH in the cyclic model (play final from step d*(v), the depth in the final forest) on
+# 2,844 random games (GEN held in all); the tie instance (GEN fails, vertex 2 past d*) reproduces; control MUT=1 (d* - 1) bites.
+o=$(python3 -I root/absdepth.py 1000 4,5,6 1); grep -q "runs=2844 runs_nogen=0 steps_gt_maxfinaldepth=0" <<<"$o"; grep -q "ABSDEPTH PASS" <<<"$o"
+python3 -I root/absdepth.py --tie | grep -q "TIE REPRODUCED"
+MUT=1 python3 -I root/absdepth.py 1000 4,5,6 1 | grep -q "DEPTH_V=1938 "
+echo "root (absdepth: ABS-DEPTH on 2,844 cyclic-model runs; tie instance; control bites): PASS"
+# box 22 §8 (docs/si/N5-EXIT-box22.md): the Even side on nep90_n40. C-cuts by kind; no late Even switch in a pure C-interval; Lemma
+# E-ONEWAY (no return of an Even vertex to a successor left by a nested switch) on 11 windows; control E1MUT=1 (window conditions dropped) bites.
+o=$(python3 -I root/evenside.py --one ../red/rec0/instances/nep90_n40.pg rund/instances/nep90_n40.start)
+for k in "E1_chk=11 " "cut_AG=15 " "cut_DCH=19 " "cut_OSB=38 " "EXIT_at_cut=31 " "EXIT_in=2 "; do grep -q "$k" <<<"$o"; done
+if grep -q "E1_V\|PURELATE" <<<"$o"; then echo "evenside: violation on nep90"; exit 1; fi
+E1MUT=1 python3 -I root/evenside.py --one ../red/rec0/instances/nep90_n40.pg rund/instances/nep90_n40.start | grep -q "E1_V=10 "
+echo "root (evenside on nep90: cuts AG 15 / DCH 19 / OSB 38, exits at cuts 31 of 33, E-ONEWAY holds; control bites): PASS"

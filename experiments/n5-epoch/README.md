@@ -172,3 +172,42 @@ honff.lev with Odd fixed to σ̄ at s_i; --lev); subscript 2 = |D_C| ≥ 2. Chec
   (no return at saturated LEV_C).
 - READING: NCONF_{≥2} is not ≤ n (93 at n 48); R0_{≥2} grows from 2 (nep90) to 14 under seeded climbing at n 40-64. Neither series separates a
   growth law (fresh climbs stay ≤ 18 / ≤ 3 with no trend in n).
+
+## Box 14 (Lead GO 15:04Z): EP-ASM terms (P-N5-EPC §4, pinned 9f48ded7), scaling at fixed k, lend82 doubling, ρ_q vs n
+Code: `epc.py` (own; per phase N_ep, N_0, N_1, N_{≥2}, NCONF_{≥2}, exact R0_{≥2}, f, fallback-free runs with RELCH (relay sub-configuration
+changes, root r = most-changing vertex of Q) and RDLEAVE, G_DLEAVE (the D-leave part of L-SI's G_c; SWITCH gains not measured); checks EPASM in
+the Lead's form N_ep ≤ (4n² − 3n) + N_1 + NCONF_{≥2}(2n² − n) + R0_{≥2}, HON0 (N_0 ≤ 4n² − 3n), VIS2). NOTE: the counter "runs" in
+results/b14/records.txt and lib41_n40_s3r2.txt summed game runs and fallback-free runs (fixed afterwards as "ff_runs"); fallback-free runs =
+phases + f (4,305 + 713 = 5,018 on lib41 n ≤ 40, so 882 game runs).
+### (1) Records (`epc.py 0 0 --rows 10 --list records14.txt`, results/b14/records.txt), longest phase:
+| instance (sha1) | n | \|Q\| | N_ep | N_0 / N_1 / N_{≥2} | NCONF_{≥2} | R0_{≥2} | f | fallback-free runs: RELCH per run | G_DLEAVE | EP-ASM slack |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| nep90_n40 (7348271a) | 40 | 5 | 90 | 1 / 15 / 74 | 38 | 2 | 7 | 8: 7,5,5,3,4,5,5,0 | 24 | 126,287 |
+| nep76_n40 (from box 12) | 40 | 5 | 76 | 1 / 4 / 71 | 36 | 0 | 6 | 7: 6,4,8,8,4,8,3 | 19 | 119,968 |
+| nep92_n40 (ce224ec3) | 40 | 6 | 92 | 1 / 9 / 82 | 46 | 2 | 7 | 8: 11,8,5,3,7,8,5,2 | 29 | 151,559 |
+| nep94_n48 (3859c268) | 48 | 9 | 94 | 0 / 1 / 93 | 93 | 0 | 7 | 8: 10,6,9,5,7,6,8,3 | 30 | 433,059 |
+| long121_n40 (c667c085, L-RED) | 40 | 3 | 37 | 1 / 1 / 35 | 12 | 3 | 8 | 9: 0,3,6,1,2,1,4,1,2 | 6 | 44,167 |
+| ret14_n48 (e10657ef) | 48 | 5 | 50 | 0 / 0 / 50 | 27 | 14 | 4 | 5: 7,7,11,7,2 | 16 | 132,156 |
+| ret14_n64 (fccbb2cf) | 64 | 13 | 55 | 1 / 1 / 53 | 38 | 14 | 4 | 5: 7,10,6,10,5 | 24 | 325,016 |
+| nconf61_n48 (92bae238) | 48 | 9 | 63 | 0 / 1 / 62 | 61 | 1 | 5 | 6: 11,5,6,6,7,4 | 24 | 287,171 |
+| lend82_n32 (34dedec6) | 32 | 3 | 3 | — | — | — | 10 (max f) | — | — | ≥ 3,999 |
+- 0 violations of EPASM / HON0 / VIS2 on every phase (55 phases); min slack EPASM 3,999 (a 1-state phase), VIS2 0 (trivial). The would-be
+  bound NCONF_{≥2}(S) ≤ (RELCH(S) + 1)·deg(r) (N5-NCONF §5 route; DATA only) holds on every run (WB_FAIL 0).
+- lib41 n ≤ 40, S3 + 2 random, seed 7 (`epc.py 2 7 --nmax 40 --rows 20 --list ../new/box41/lib41.txt`): 4,305 phases, N_ep 6,825 = 1,701 + 3,923 +
+  1,201, NCONF_{≥2} 1,199, R0_{≥2} 0, f 713, max NCONF_{≥2} 5, max G_DLEAVE 5, 0 violations, min EPASM slack 26.
+### (2) Fixed-k scaling climbs (|Q| = 5 kept by `climb.py --fixk`; 10 s × n; 2 repeats; `runjobs.sh b14_jobs.txt` with P=3;
+`fit.py results/b14/scale` → results/b14/scale/fit.txt). Max over repeats at n 16/24/32/40/48/64 (fresh C^5O) and n 40/48/64 (seeded nep90):
+| quantity | fresh | b (fresh) | seeded nep90 | b (seeded) |
+| --- | --- | --- | --- | --- |
+| NCONF_{≥2} | 10 / 14 / 13 / 6 / 5 / 9 | −0.42 | 74 / 53 / 56 | −0.52 |
+| RET0_{≥2} | 3 / 3 / 5 / 3 / 2 / 3 | −0.14 | 16 / 10 / 10 | −0.91 |
+| G_DLEAVE | 10 / 8 / 7 / 7 / 5 / 5 | −0.52 | 43 / 41 / 30 | −0.79 |
+- max/n² falls with n in every row. Seeded climbs are budget-limited (800-2,300 steps at n ≥ 40, falling with n), so their decline is partly
+  budget. READING: at fixed k = 5 nothing grows with n under these budgets; no growth law separable.
+### (3) lend82 budget doubling at n 32 (`climb.py lend2 32 1 SEED --secs B --seed-pg instances/lend82_n32...`, results/b14/dbl_*):
+3,840 s (seed 4740): len **107** (|D| 3, X_SN^pre 40) — pinned lend107_n32 (ab4c9811b311e303e5d41a9e923766a4b3fdae33; pin.py OK);
+7,680 s (seed 8580): 95. With box 13 (240 → 1,920 s: 58, 63, 62, 82): still rising, 107 = 3.34 n; seed-dependent at fixed budget.
+### (4) ρ_q vs n (results/b14/rho_vs_n.md, rhotab on every box-13 N_ep climb best): seeded family (nep24/56/90 seeds): max ρ_q 21 / 53 / 72 /
+75 / 77 at n 24 / 32 / 40 / 48 / 64 (max ρ_q / n 0.88 / 1.66 / 1.80 / 1.56 / 1.20); the max is the ROUTE root q = 0 in 9 of the 12 runs at n ≥ 32,
+and a pure-RELAY vertex (q 58: 77 relays) in one n-64 run; fresh family: max ρ_q ≤ 12 (≤ 0.46 n). No growth beyond the seed.
+### (5) FREEZE-G resets per D-direct gate: NOT RUN (context budget; handover).

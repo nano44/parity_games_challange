@@ -32,3 +32,29 @@ transitions, |Q| 3; out/nconf_long121.txt, out/retfb_long121.txt.
   NCONF, XDEG, QP_c per class (N5-NCONF §11). out/qp_liball_n48_k2.txt, out/qp_dunion.txt.
 - qpclimb.py QT K NMAX STEPS SEED OUTDIR [--seed FILE.pg]: climb on (min(QP, QT), len) of one phase from S3 (O fixed by climb.mutate). out/qpclimb/.
 - dunion.py GAME START K OUT.pg OUT.start: k disjoint copies with copied start (instances/du/nep90x2..4).
+- qpcclimb.py NMAX STEPS SEED OUTDIR --seed GAME.pg --start GAME.start: climb (game + start) with O-moves, objective (QP_c · len, len) (N5-NCONF §12).
+  out/qpcclimb/ (logs, best games with .start, verify.txt = qp.py + phrestrict.py on each best).
+- reset.py STARTS SEED (--list FILE | files) [--start F]: offsets to the routing parent, RESET / ENTRY / RISE / PARCHG / CHAIN_V (N5-KPOLY-box49 §2);
+  MUT=1, MUT=2 controls. out/reset_lib41_n34_k2.txt, out/reset_long6.txt.
+- swaps.py STARTS SEED (--list FILE | files) [--start F]: pairwise order swaps of an Odd choice vertex's options per phase (N5-KPOLY §4).
+  out/swaps_long4.txt.
+- offmono2.py STARTS SEED (--list FILE | files) [--start F]: Lemma OFFSET-MONO (packet P-N5-OFFMONO-box49) with p := par_{t+1}(q): V_Kc, V_M must be
+  0; V_Kx (opposite length sign) and MUT=1 (p off q's play) are controls. out/offmono2_lib41_n34_k2.txt, _MUT.txt, out/offmono2_long7.txt.
+- cyc.py STARTS SEED (--list FILE | files) [--start F]: CYC_c per phase, c's cycle changes ZCH split STRICT / TIE / c-only (N5-KPOLY §8);
+  ZCH_OTHER_V must be 0. out/cyc_lib41_n34_k2.txt, out/cyc_long7.txt, out/cyc_long2.txt.
+- zch.py STARTS SEED (--list FILE | files) [--start F]: packet addendum P-N5-OFFMONO-add-box49 (successor 29): Remark Z-CONST (ZC_V), Lemma
+  ZCH-COUNT (STRICT / TIE / CEVEN / ODDC split; PSI_V, CEVEN_V, STRICT_V, ZB_V, OTHER) and Corollary CHAIN-COUNT′ with cut ZC = ZCH ∩ CYC (PM_V,
+  CC_V sum form, CCD_V stated form); all must be 0. Controls MUT=1 (no ZC cut; did not bite on lib41), MUT=2 (opposite length sign; bites),
+  MUT=3 (no EXIT cut; bites). out/zch_lib41_n34_MUT{0,1,2,3}.txt (`2 7 --list ../box41/lib41.txt --nmax 34`), out/zch_long7.txt (`0 1 --start S G`
+  on nep90_n40 (../../red/rec0/instances, start ../../si/rund/instances), nep76_n40 (../../n5-epoch/instances), long121_n40 (../../red/n3/instances),
+  out/qpcclimb/best_qpc_{nep90_n40_s51,nep76_n40_s52,long121_n40_s53}, out/qpcclimb/scale/snap_n80_s62, each with its .start).
+  out/quotecheck_offmono_add.txt: 16 quotes, 0 missing.
+- ft.py (as zch.py) [MUT]: N5-KPOLY §11: Lemma FT-COUNT (FTB_V), Remark FT-CONST (OC_V), Corollary CHAIN-COUNT″ (PM_V, CC_V, CCD_V) with cut
+  CYC ∩ FT (MUT=0) or CYC ∩ ZCH ∩ FT (MUT=5); all must be 0. MUT=1 (no cut), MUT=4 (one cut transition dropped) do not bite on lib41.
+  out/ft_lib41_n34_MUT{0,1,4,5}.txt, out/ft_long7.txt, out/ft_long7_MUT5.txt (instances as zch.py).
+- tie.py STARTS SEED (--list FILE | files) [VERB=1] [MUT]: TIE / ODDC events (P-N5-OFFMONO-add §3) and N5-KPOLY §11's Lemma PF-CHOICE (CHAR_V),
+  Corollary TIE-CHARGE (FT_V), FT-COUNT (FTB_V); all must be 0. Controls MUT=1/2/3 (wrong tie-breaks; CHAR_V bites). out/tie_lib41_n34_k2.txt
+  (VERB), out/tie2_lib41_n34_k2.txt, out/tie2_lib41_MUT{1,2,3}.txt.
+- tieclimb.py NMAX STEPS SEED OBJ OUTDIR --seed G [--start S]: climbs ODDC_c / TIE_c per phase (OBJ oddc / tie / both), checking tie.charcheck on
+  every scored game. out/tieclimb/ (oddc_s1, s2 from box31 u3ev_n16; tie_s3, s4 from red/kl klcount_n16; 3,000 steps, n ≤ 24).
+- out/quotecheck_epc_fixes.txt: docs/new/P-N5-EPC-fixes-box48.md against cd4795f8 REFEREE (§C), c4975512 REFEREE-2 (§C), 81ab0b72 packet: 41 quotes, 0 missing.

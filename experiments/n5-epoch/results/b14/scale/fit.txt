@@ -1,0 +1,57 @@
+== gdl_k5  (value = max over phases of the fitness: gdl = G_DLEAVE, nconf2 = NCONF_{>=2}, ret02 = RET0_{>=2}; |Q| = 5 fixed; budget 10 s x n)
+| n | repeats (best each) | max | max/n | max/n^2 | steps (r1/r2/r3) |
+| --- | --- | --- | --- | --- | --- |
+| 16 | 10, 9 | 10 | 0.625 | 0.0391 | 14566/21357 |
+| 24 | 8, 6 | 8 | 0.333 | 0.0139 | 16005/29148 |
+| 32 | 7, 5 | 7 | 0.219 | 0.0068 | 12750/24448 |
+| 40 | 7, 5 | 7 | 0.175 | 0.0044 | 9775/26976 |
+| 48 | 5, 5 | 5 | 0.104 | 0.0022 | 22091/29167 |
+| 64 | 5, 5 | 5 | 0.078 | 0.0012 | 18654/17203 |
+exponent b (log max = a + b log n): over per-n maxima -0.52; per repeat -0.52, -0.41, nan (spread -0.52..-0.41); all points -0.46
+
+== gdl_seed90  (value = max over phases of the fitness: gdl = G_DLEAVE, nconf2 = NCONF_{>=2}, ret02 = RET0_{>=2}; |Q| = 5 fixed; budget 10 s x n)
+| n | repeats (best each) | max | max/n | max/n^2 | steps (r1/r2/r3) |
+| --- | --- | --- | --- | --- | --- |
+| 40 | 43, 35 | 43 | 1.075 | 0.0269 | 1341/1274 |
+| 48 | 41, 28 | 41 | 0.854 | 0.0178 | 1143/1212 |
+| 64 | 24, 30 | 30 | 0.469 | 0.0073 | 798/862 |
+exponent b (log max = a + b log n): over per-n maxima -0.79; per repeat -1.30, -0.28, nan (spread -1.30..-0.28); all points -0.79
+
+== nconf2_k5  (value = max over phases of the fitness: gdl = G_DLEAVE, nconf2 = NCONF_{>=2}, ret02 = RET0_{>=2}; |Q| = 5 fixed; budget 10 s x n)
+| n | repeats (best each) | max | max/n | max/n^2 | steps (r1/r2/r3) |
+| --- | --- | --- | --- | --- | --- |
+| 16 | 10, 6 | 10 | 0.625 | 0.0391 | 22770/30171 |
+| 24 | 6, 14 | 14 | 0.583 | 0.0243 | 24839/14885 |
+| 32 | 5, 13 | 13 | 0.406 | 0.0127 | 34675/16562 |
+| 40 | 5, 6 | 6 | 0.150 | 0.0037 | 31648/26859 |
+| 48 | 5, 5 | 5 | 0.104 | 0.0022 | 23840/21167 |
+| 64 | 9, 6 | 9 | 0.141 | 0.0022 | 8531/18789 |
+exponent b (log max = a + b log n): over per-n maxima -0.42; per repeat -0.17, -0.32, nan (spread -0.32..-0.17); all points -0.25
+
+== nconf2_seed90  (value = max over phases of the fitness: gdl = G_DLEAVE, nconf2 = NCONF_{>=2}, ret02 = RET0_{>=2}; |Q| = 5 fixed; budget 10 s x n)
+| n | repeats (best each) | max | max/n | max/n^2 | steps (r1/r2/r3) |
+| --- | --- | --- | --- | --- | --- |
+| 40 | 58, 74 | 74 | 1.850 | 0.0462 | 1608/1736 |
+| 48 | 53, 53 | 53 | 1.104 | 0.0230 | 1243/1262 |
+| 64 | 56, 49 | 56 | 0.875 | 0.0137 | 880/1044 |
+exponent b (log max = a + b log n): over per-n maxima -0.52; per repeat -0.05, -0.82, nan (spread -0.82..-0.05); all points -0.44
+
+== ret02_k5  (value = max over phases of the fitness: gdl = G_DLEAVE, nconf2 = NCONF_{>=2}, ret02 = RET0_{>=2}; |Q| = 5 fixed; budget 10 s x n)
+| n | repeats (best each) | max | max/n | max/n^2 | steps (r1/r2/r3) |
+| --- | --- | --- | --- | --- | --- |
+| 16 | 3, 2 | 3 | 0.188 | 0.0117 | 23757/36889 |
+| 24 | 3, 2 | 3 | 0.125 | 0.0052 | 31628/16158 |
+| 32 | 2, 5 | 5 | 0.156 | 0.0049 | 32444/18733 |
+| 40 | 3, 3 | 3 | 0.075 | 0.0019 | 26947/27489 |
+| 48 | 2, 2 | 2 | 0.042 | 0.0009 | 22843/20173 |
+| 64 | 3, 2 | 3 | 0.047 | 0.0007 | 9511/21346 |
+exponent b (log max = a + b log n): over per-n maxima -0.14; per repeat -0.10, 0.01, nan (spread -0.10..0.01); all points -0.04
+
+== ret02_seed90  (value = max over phases of the fitness: gdl = G_DLEAVE, nconf2 = NCONF_{>=2}, ret02 = RET0_{>=2}; |Q| = 5 fixed; budget 10 s x n)
+| n | repeats (best each) | max | max/n | max/n^2 | steps (r1/r2/r3) |
+| --- | --- | --- | --- | --- | --- |
+| 40 | 8, 16 | 16 | 0.400 | 0.0100 | 2255/1397 |
+| 48 | 10, 7 | 10 | 0.208 | 0.0043 | 1382/6074 |
+| 64 | 4, 10 | 10 | 0.156 | 0.0024 | 1759/1135 |
+exponent b (log max = a + b log n): over per-n maxima -0.91; per repeat -1.63, -0.80, nan (spread -1.63..-0.80); all points -1.21
+
