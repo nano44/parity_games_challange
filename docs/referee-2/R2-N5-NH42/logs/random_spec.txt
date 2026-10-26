@@ -1,0 +1,26 @@
+MODE random 4000 6 16 4213 spec MUT -
+cls_P3: 494
+cls_U1: 665
+cls_U2: 329
+cls_U23: 274
+cls_U3: 275
+other_stretches: 2037
+phases: 9668
+phases_with_O: 26
+runs: 4000
+sum_O: 26
+transitions: 6940
+O_over_NHa_x1e6: (18, 'random4213:63')
+max_E_broad: (0, 'random4213:0')
+max_E_narrow: (0, 'random4213:0')
+max_KW: (1, 'random4213:1406')
+max_NR_P3: (0, 'random4213:0')
+max_NR_U1: (0, 'random4213:1')
+max_NR_U2: (1, 'random4213:1406')
+max_NR_U23: (0, 'random4213:4')
+max_NR_U3: (0, 'random4213:15')
+max_O: (1, 'random4213:63')
+max_T: (3, 'random4213:290')
+max_X: (3, 'random4213:290')
+max_fO: (1, 'random4213:587')
+RESULT OK violations=0
