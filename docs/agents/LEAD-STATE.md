@@ -1542,3 +1542,14 @@
   - L-NEW: Route Δ shows no growth (5c01a8ee; tj17_n19, dch16_n44 as DATA).
   - L-COMP: Q4 alive, ETA ~01:00Z.
 - R49 draft final: both §Cs; (LV+) definition fixed to match the packet (in-scope, u* ≠ none). To CHECKER 8 as C58.
+- 00:12Z: Merged l-si 1d33a337 (P-N5-KW fixes FROZEN, c65f4c1e). R50 draft completed: fixes, REFEREE-2 §C 20fea7d7, and the §C summary; E-SEG clause gives the repaired (i). To CHECKER C59 after C58.
+- 00:18Z: Merged referee 4e440bd5: R-N5-START audit (REFEREE 11). Every result in the 𝒞^1O chain is start-free in statement and proof; the R32/R33 chain was read at structure level. Forwarded to L-SI (P-N5-1O: 'from any start pair' with the caveat) and L-NEW (MIRROR's H-N5).
+- 00:29Z: Merged checker 4f617e9e (C58 FAIL: R49, three E-items, wording against signed text: the rise-setting clause, a false RESULTS citation, the disclosure wording) and dc29ee23 (C59 FAIL: R50, CW-INT setting dropped, slack conventions, limit (ii) incomplete). Applied all E-items verbatim per CHECKER's text, plus optional N-1, N-3 (C58) and N-1..N-4 (C59). Revised R49 sha1 6a9ce799, R50 sha1 64cbc92f. Lesson again: diff every setting clause against the packet.
+- 00:38Z: Merged checker a58dcd3a (C58 + C59 Addendum 1 PASS). LANDED R49 (P-N5-NEEDB, lines 2432-2492) and R50 (P-N5-KW, lines 2494-2565), checker a58dcd3a, both cmp OK. GAPS line 11 UPDATE: every count in the 𝒞^1O chain is landed; the assembly P-N5-1O comes next. GO to L-SI to freeze P-N5-1O.
+- 2026-10-26 00:48Z: Merged l-si 058e5aee. PINNED at this commit: packet P-N5-1O, docs/si/P-N5-1O-box15.md, sha1 2cf5e67262d31712976fb882175f5080cc3dc4ec, 184 lines, L-SI 10. Contents:
+  - Theorem 1O-POLY: from any start pair, ITER ≤ (n(n−1)+d_o)(T*+1) = O(m·Δ·d_o·n¹³).
+  - Lemma BIT: O(n³(n+m)) word operations per iteration.
+  - Lemma OUT: S5's output is correct on 𝒞^1O.
+  - Corollary 1O-TIME.
+  - Citations: R15, R21 (a), R36 (c), R47 (b), R48 (i), R50 (h), and the R-N5-START audit.
+  - Routing: TOP PRIORITY for both referees. REFEREE 11 now. REFEREE-2 13 first after its handover check, ahead of FX, NH42 and DUAL.
