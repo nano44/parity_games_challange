@@ -6,6 +6,8 @@ par_t1(q1) = q2 and par_t2(q2) = q1. Checks (Lemma FLIP, note §24; both PROVED 
               ranks above c only; length |C|), compared as (weight, s_c * length) lexicographically.
   FLIP1_V     p_t1(q1) still INTACT at t2 (sigma-bar_t1(q1) still a successor, every vertex of the path has the same successor at t2) and
               the cycle reached from q1 at t2 with sigma-bar(q1) := sigma-bar_t1(q1) has a node w with rew[w] <= rew[c] (Odd-attractive).
+  N3LEV_V     (Lemma N3-LEVEL, note §25) both paths intact at both times, p1, p2 disjoint: the path-set level of q2's change between t1
+              and t2 is >= rank(top(C)). MUT=2 demands > (control).
 Reports flips, intact / broken (latest t1), and the rise of q2 at broken flips. MUT=1: the reversed inequality key_t1 >= key_t2 + wt(C) (control; must fail).
 ONSETS: flips whose t2 is the first state of a run with par(q2) = q1.
 Usage: flipck.py --one GAME [START] [-v] | --list FILE [KMIN] (env RS, NMAX)"""
@@ -75,6 +77,16 @@ def phase(g, E, name, rows, i, j, Q, Qs):
             if E.rew[w] <= E.rew[c]: C["FLIP1_V"] += 1; VIOL.append(("FLIP1", name, i, q1, q2, t1, t2, w, c))
             k1 = E.key(rows[t1]["vs"][q2]); k2 = E.key(rows[t2]["vs"][q2])
             C["intact_with_rise"] += k2 > k1
+            _, y2, p2 = P[(t2, q2)]; A1 = rows[t1]["nxt"]
+            both = y2 in g.succ[q2] and all(A1[v] == B[v] for v in p2) and not (set(p1) & set(p2))
+            if both:
+                C["both_intact"] += 1; h = max([q1, *p1, q2, *p2], key=lambda v: E.rank[v])
+                lev = (rows[t1]["vs"][q2][1] ^ rows[t2]["vs"][q2][1]).bit_length() - 1
+                pos = "q2" if h == q2 else "q1" if h == q1 else "p1" if h in p1 else "p2"
+                C["lvl_checks_" + pos] += 1
+                if lev < E.rank[h] + (1 if os.environ.get("MUT") == "2" else 0):
+                    C["N3LEV_V_" + pos] += 1; VIOL.append(("N3LEV", name, i, q1, q2, t1, t2, h, pos, lev))
+                    if VERB: print(f"  LVL {name} phase@{i} q1={q1} q2={q2} t1={t1 - i} t2={t2 - i} top={h}({pos}) rank={E.rank[h]} lev={lev} c={c}")
         else:
             C["broken"] += 1; C["broken_onsets"] += onset
         if VERB: print(f"  FLIP {name} phase@{i} q1={q1} q2={q2} t1={t1 - i} t2={t2 - i} {'INTACT' if intact else 'broken'}")
