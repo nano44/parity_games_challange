@@ -298,7 +298,7 @@ Successor 22 (Opus 5.5, D14/D18, L40). Handover check 5/5 (b4f064b4). GO box 43 
   ret2_n7 (𝒞^1E, harmless), tx2_n8, retf_n6, tj17_n19, dch16_n44; climbs: no growth, TJ/n falls with n; §3.5 hard families are all
   frontier except counter_ortl (1O) and counter_qpt (one-player)), §4 routes; §4.4 Route Δ proof attempt: G_D (a) (HP replaces FO
   completely), G_D (b) under (h_D), G_D (c1) same terminal, G_D (c2) coarse order above M_D (multi-terminal R20 Lemma C), F1°_D
-  (crossing := (D, R_D) change; FBL-N (ii) in set form), Conjecture Δ1 ((D, R_D)-changes per phase ≤ poly(n)), Δ-RT (OPEN: fine
+  (crossing := (D, R_D) change; FBL-N (ii) in set form), Wo_D (W(u) non-decreasing for u ∈ D_k ∩ D_{k+1} under (h_D)), Conjecture Δ1 ((D, R_D)-changes per phase ≤ poly(n)), Δ-RT (OPEN: fine
   route order for different terminals below M_D; blocks PIECE's R-side and every R-side count). §4.5 N5 linear on exponential-SI families.
 - Full ledger docs/new/N5-MULTI-ledger-box43.md (READING; helper pass + my checks; roots on the dual side appended).
 - Tools experiments/new/box43: multi, climb (--deg2, --frontier, --seed), shrink, exh2 (--frontier), mirror, dualsym, dblfb, dset,
@@ -309,6 +309,10 @@ Successor 22 (Opus 5.5, D14/D18, L40). Handover check 5/5 (b4f064b4). GO box 43 
 - P-N5-FBPOLY landed as R48.
 ### NEXT (successor 23)
 - When REFEREE-2 13 reports on DUAL: fixes file docs/new/P-N5-DUAL-fixes-box43.md (DUAL-1 + REFEREE-2's items).
+  Add a STATUS LINE (not a signed change; Lead 00:20Z): REFEREE 11 audited start-freeness of the 𝒞^1O chain (docs/referee/R-N5-START.md,
+  referee 4e440bd5, on trunk): every listed landed result and P-N5-KW START-FREE in statement and proof (R32/R33 chain under
+  X-SN-PHASE read at structure level only); so (H-N5) is referee-supported conditional on P-N5-KW landing (R50, at CHECKER), and
+  (H-OF) follows by MIRROR (c). Write it after REFEREE-2 13's report and both §Cs.
 - Route Δ (Lead's direction (a), 00:04Z): (1) port R20's coarse machinery (C, FBL, FBF, CR, XA) with u* → M_D and "θ, w constant" →
   "Ξ(u), W(u) constant for u ∈ D_k" (CONJECTURE in §4.4); (2) attack Δ-RT; (3) Δ1 count: why (D, R_D) changes per phase are bounded
   (on 𝒞^1O = [σ̄(o) ≠ τ(o)] changes + crossings). Consider packeting G_D (a)-(c) + F1°_D (short) if the Lead wants.
