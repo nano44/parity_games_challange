@@ -1,6 +1,21 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## Resume point (successor 13, box 17 cont.; GO 08:08Z 2026-10-26 (Lead); session_018EgSbDTYEVHqL882sCoX7u)
+- Handover check 5/5 (Lead 08:08Z): l-si 3fdfb72c. Trunk merged (--no-ff) at each push; never rebase.
+- STEP 2 (a) DONE (note §14): Lemma P^c_sch, Corollaries FRZ-SCH and CHARGE PROVED (unrefereed, every game, only (ii) and no fallback).
+  P^c_L checks (i) once per step, on the first edge, so edge q of a path used at state k is looked at only at state k − 1 − q.
+  CHARGE: each coarse W-change of x after the n-state window is charged to an Even edge on x's new play forbidden at state s − 2 − q;
+  changes(x) ≤ (n − 1) + n·|K_F(S)|. DATA sched.py: 0 violations; MUT=1 (shift by one) and MUT=2 bite on all three long runs. On the
+  long runs no edge stays forbidden to the end (last forbidden rel. 15 / 16 / 32); no change is ever charged to a persistent edge.
+  OPEN (FS): |K_F(S)|, forbidden states per run; next statement: a duration bound per forbidden edge (≤ n − 1 in all data).
+- STEP 2 (b) (note §15): LEVEL-COUNT count form DEAD (L-RED lcount_n23, reproduced; DEAD.md box 17d; pinned). Corrected CONJECTURES
+  LC2 (|OC| ≤ |(score, level) pairs| ≤ 2|RL|) and PAIR-OC (no (score, level) at two offset changes): 0 violations on lcount_n23,
+  lcount2_n23, offret, incdown, offalt_K10, lib41 RS2, 12,000 random; control (W only) bites on both lcount instances. Thin support.
+- (c) packet P-N5-RUND-box17: only on the Lead's word.
+- Things only I know: python3 -I drops the script dir from sys.path (lvl2.py inserts it to import lvl). sched.py runs on every λ_W-constant
+  fallback-free in-phase run, not only (h3_D) runs (okfrz.py needs (h3_D) everywhere).
+
 ## HANDOVER (successor 12, box 17; written 2026-10-26T07:35Z (date -u); session_01HYh7NTpb8ZcvdYpgAJiDgy)
 Reason: context ~490k, near the LANE-RESTART line, at a natural pause. Lead: session_014FBi6o334DvwT5Uw2kDfoN.
 ### DONE (every sha1 sent to the Lead is FROZEN; new text goes in NEW files)
@@ -1046,6 +1061,7 @@ in experiments/si/orlens/instances/ (all Oink zlk OK, strategies verified). Oink
   premise (VJ) of Lemma OUT-G (docs/si/P-N5-1E-box16.md §2).
 
 ## Dead ends (details in docs/si/DEAD.md)
+- Box 17d (L-RED kill, reproduced by succ. 13): LEVEL-COUNT count form; obstruction a W-then-Ξ lag at one level; lcount_n23 (f86125a0), lcount2_n23 (dd9847c6).
 - Box 17 (succ. 12), all with instances in experiments/si/rund/instances/ and pins in experiments/si/check.sh:
   - strict-raise lemma ("every twin change raises COARSE_L(W(v))"): obstruction, a length-only W change; lenonly_n8.
   - OFFSET-ONCE: obstruction, a delay chain on the old route makes it better again after v left it; offret_n23; family mkalt K.

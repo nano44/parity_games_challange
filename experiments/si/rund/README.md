@@ -16,3 +16,7 @@
 - lvl.py: CONJECTURE LEVEL-COUNT and its strong form INC (note §12); mkinc.py: the INC counterexample (incdown_n23).
 - piece.py: Lemma PIECE_D / Corollary SPLIT-RED (aligned / split / forbidden states; note §11). MUT=1 must fail.
 - logs/: the runs quoted in the note. Reproduce: `python3 -I gap.py --list ../../new/box41/lib41.txt 2` with RS=2, etc. (see the note §7).
+- sched.py (successor 13): Lemma P^c_sch / Corollary FRZ-SCH / Corollary CHARGE (note §14): per-edge forbidden states (first, last,
+  persistent), the GEN freeze check over all s ≤ t, and the charging of every change. MUT=1 (schedule shifted) and MUT=2 must fail.
+- lvl2.py (successor 13): LC2, PAIR-OC, OC_NORISE, PAIR_ALL after LEVEL-COUNT's count form died (note §15); MUT=1 (W only) must fail
+  on lcount_n23 / lcount2_n23 (L-RED's instances in experiments/red/h3/instances/).
