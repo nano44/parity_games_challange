@@ -6,13 +6,15 @@ G_tau; lambda := honest cycle-node map; a vertex v is SPLIT at k if lambda_W(v) 
   X     crossings := in-phase transitions with R_D(s) != R_D(s+1); XSN := those at which some UNSPLIT vertex (at s) changes membership;
         bound X <= (f + 1) * n + f + XSN                                                             (Corollary; viol. XB_V)
   QC    XSN transitions at which a membership-changing unsplit vertex has an Odd-choice honest cycle node (TOGGLE's failure point)
+  XEB   crossings at epoch boundaries (sigma-bar|Q changes; D can change only there); XIN inside an epoch; XIN_post inside an epoch after
+        its (n-1)-th fallback (EPOCH (b)); XIN_SN inside an epoch before its freeze with an unsplit vertex changing membership
 Usage: rstick.py --list FILE | --rand C LO HI SEED | files"""
 import sys, os, random
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, os.path.join(HERE, "..", "box43")); sys.path.insert(0, HERE)
 from multi import rand_ckO, pg
 from n5x import load, step, start_pair, Engine, dual
 from dset import meets
-C = dict(phases=0, RS_n=0, RS_V=0, SP_V=0, XMAX=0, XSNMAX=0, XSN_tot=0, X_tot=0, XB_V=0, QC=0, XSN_front=0)
+C = dict(phases=0, RS_n=0, RS_V=0, SP_V=0, XMAX=0, XSNMAX=0, XSN_tot=0, X_tot=0, XB_V=0, QC=0, XSN_front=0, XEB=0, XIN=0, XIN_post=0, XIN_SN=0)
 def check(g, cap=4000):
     E, Ed = Engine(g), Engine(dual(g)); s, t = start_pair(g, E, Ed, None); rows = []
     Q = {v for v in range(g.n) if g.owner[v] == 1 and len(g.succ[v]) >= 2}
@@ -23,7 +25,7 @@ def check(g, cap=4000):
         W, _ = Engine(gt).evaluate(tuple(s[v] if g.owner[v] == 0 else -1 for v in range(g.n)))
         lam = tuple(x[0] for x in vs); split = {v for v in range(g.n) if W[v][0] != lam[v]}
         r = step(g, E, Ed, s, t)
-        rows.append((lam, tuple(t), R, split, r[4] if r else 0))
+        rows.append((lam, tuple(t), R, split, r[4] if r else 0, tuple(sb[q] for q in sorted(Q))))
         if r is None: break
         s, t = r[0], r[1]
     i = 0
@@ -39,6 +41,14 @@ def check(g, cap=4000):
                         C["RS_n"] += 1; C["RS_V"] += v not in b[2]
                     if v not in b[3]: C["SP_V"] += 1
             if a[2] != b[2]:
+                if a[5] != b[5]: C["XEB"] += 1
+                else:
+                    C["XIN"] += 1
+                    ep0 = k
+                    while ep0 > i and rows[ep0 - 1][5] == a[5]: ep0 -= 1
+                    nfb = sum(1 for kk in range(ep0, k) if rows[kk][4])
+                    if nfb >= g.n - 1: C["XIN_post"] += 1
+                    elif any(v not in a[3] for v in a[2] ^ b[2]): C["XIN_SN"] += 1
                 X += 1; chg = a[2] ^ b[2]; uns = [v for v in chg if v not in a[3]]
                 if uns:
                     XSN += 1

@@ -508,6 +508,44 @@ On 𝒞^1O, X_SN is bounded by R34 (f) X-SN-PHASE, via R33 (g) X-RUN′ ⇐ R32 
 Reading (DATA): nearly all crossings are X_SN^D (unsplit vertices), as on 𝒞^1O; post-prefix crossings are rare. The bound of 12.2 (c)
 therefore moves almost nothing into proved territory in practice; the work is in X_SN^D.
 
+## 13. X_SN^D with Odd-choice cycle nodes: charging to epochs (Lead 04:40Z; written 04:49Z by date -u)
+### 13.1 Fact D-EPOCH (PROVED, every game)
+On a phase, τ is constant, so D_s = {u ∈ Q : σ̄_s(u) ≠ τ(u)} changes only where σ̄|Q changes, i.e. only at epoch boundaries (P-N5-ACCEL §0).
+On an epoch E, D and σ̄ are constant (in particular σ̄(c) is constant for an Odd-choice cycle node c); the honest frame is the one-player
+game G_E and the W-frame the one-player game G_τ, and they differ exactly at the vertices of D.
+- Consequence for TOGGLE's failure point (§12.3, qc_toggle.pg): the configuration "c ∈ Q, σ̄(c) moves" can change only at an epoch
+  boundary; inside an epoch an Odd-choice cycle node behaves like a forced vertex (its honest edge is σ̄_E(c), fixed).
+### 13.2 Lemma X-EP (PROVED, every game)
+For every phase, with N_ep its epochs and f its in-phase fallbacks:
+X_D ≤ (N_ep − 1) + N_ep·(n² + n + 4n(n − 1)) + Σ_E X_SN^pre(E),
+where X_SN^pre(E) := the crossings with both ends in E, before E's (n − 1)-th fallback, at which some vertex unsplit at the source changes
+R_D-membership. With ALT (P-N5-FBK §4): N_ep ≤ 1 + Σ_q (ρ_q + tie_q + nc_q + cyc_q).
+Proof. Crossing transitions are of three kinds.
+- At an epoch boundary (σ̄|Q changes): at most N_ep − 1.
+- Inside an epoch E, after its (n − 1)-th fallback: by EPOCH (b) (P-N5-ACCEL §3) E has at most 4n(n − 1) + 1 transitions there.
+- Inside E, before that: these lie in ≤ n − 1 fallback transitions and ≤ n runs of consecutive S4a transitions (split by those fallbacks).
+  In each S4a run, a crossing at which every membership-changing vertex is split is counted by SN-PREFIX_D (b) (§12.2): each split
+  vertex enters at most once and never leaves, so ≤ n such crossings per run; the rest are X_SN^pre(E).
+Sum: (N_ep − 1) + Σ_E [(4n(n − 1) + 1) + (n − 1) + n·n + X_SN^pre(E)]. □
+- So: crossings per phase = O(n²)·(1 + ρ + ties + non-clean + cycle-node changes) + Σ_E X_SN^pre(E). The epoch-boundary part, which is
+  where Odd-choice cycle nodes act, is now charged to the same quantity as fallbacks (FB-RED's ρ, via ALT); that is the Lead's target
+  shape for that part.
+### 13.3 What is left: X_SN^pre (OPEN)
+- X_SN^pre(E) lives inside one S4a run of one epoch: D, σ̄ and τ are all fixed, the two frames are two FIXED one-player games (G_E for Ξ,
+  G_τ for W, differing on D), and N5's steps there are gated W-optima (S4a). Unsplit vertices (λ_W(v) = λ(v)) may leave and re-enter R_D.
+- This is the same ground as "transitions per phase given f" (pre-freeze S4a runs; L-SI's item), restricted to crossings. On 𝒞^1O the
+  corresponding count is the within-run part of R32 (e) X-RUN with σ̄(o) fixed. Its set form needs the route order between terminals (Δ-RT,
+  N5-DELTA-box44 §8) when |D| ≥ 2; with |D| = 1 the R19-R20 machinery ports (N5-DELTA-box44 §7, PIECE_D, XA_D).
+- No instance against a polynomial bound; in data the residual is the bulk (13.4).
+### 13.4 DATA (experiments/new/box44/rstick.py, extended; canonical S3 start)
+| sample | crossings | at epoch boundaries | inside epochs | of which after the epoch freeze | inside, pre-freeze, unsplit (X_SN^pre) |
+| --- | --- | --- | --- | --- | --- |
+| lib41 (412 runs) | 3,222 | 1,269 | 1,953 | 0 | 1,833 |
+| box43 + box44 instances (11) | 55 | 18 | 37 | 0 | 37 |
+| `--rand 2000 5 20 101` | 50 | 41 | 9 | 0 | 9 |
+Reading (DATA): 39% of lib41's crossings are at epoch boundaries (now charged to N_ep); no epoch ever reaches its freeze; X_SN^pre is the
+remaining bulk (57%).
+
 ## 5. How a fallbacks-per-phase bound combines with the phase count (READING)
 - Phases. Lemma Φ (R47 (a), every game): λ changes ≤ n(n − 1); Corollary Φ-kO (P-N5-DUAL, N5-MULTI §1.4): distinct τ's ≤ ∏_{q∈Q}
   deg(q), so phases ≤ n(n − 1) + ∏_q deg(q). On 𝒞^kO with k fixed that is ≤ n(n − 1) + n^k, polynomial; for k growing with n it is
