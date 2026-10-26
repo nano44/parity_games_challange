@@ -108,3 +108,47 @@ counts DIV (SPEC's own S4b on G′_E would move τ inside the window) and EXITLA
   my probe now reads it), S3 and the given start (epr_logs/div_n8.txt): 4 epochs (2 with D = ∅, 2 with one D-vertex), DIV = 1 — SPEC's own S4b
   on G′_E moves τ inside an epoch window, so premise (Στ) IS exercised on this instance; RESTRICT_E (i)-(iv) (6 state checks, 2 (iv) checks)
   and REPRO with my own N5^τ (4 epochs): 0 failures. EP-1 stays an implication from (Στ); nothing in this report changes.
+
+## §C. Comparison with REFEREE-2 (REFEREE successor 12; written 2026-10-26T06:58Z by date -u; (Opus 5.5, D15))
+- Routing: the Lead's message of 06:56Z (Lead's stamp). Objects: this report (3def3e11 + Addendum A e18b4370; unchanged) and
+  docs/referee-2/R2-N5-EPR.md (referee-2 796b4d36 + Addendum A 9a5692ad, successor 14), opened after my report was pushed. Same pinned text
+  (sha1 8fecca79…).
+
+### C.1 Verdicts side by side
+| § | statement | REFEREE | REFEREE-2 | joint |
+| --- | --- | --- | --- | --- |
+| §1 | RESTRICT_E (i)-(iv) | SIGNED (standing premise named) | SIGN (N-EPR-1: same premise) | signed |
+| §2 | REPRO: pairs and fallback types | SIGNED | SIGN | signed |
+| §2 | REPRO: "all of these states lie in ONE phase" | SIGNED WITH GAP EPR-1 (false at y′) | NOT SIGNED as stated (G-EPR-1) | SAME GAP, found independently; true for x..y; repair the same |
+| §3 | EP-0 | SIGNED (proof wording EPR-N1) | SIGN (statement; proof needs the exit case) | signed; same proof note |
+| §3 | EP-k | SIGNED WITH GAP EPR-1 ("+ 1") | sum SIGN; second part only with "+ 1" | same |
+| §3 | EP-1 ⇐ (Στ) | SIGNED WITH GAP EPR-1 (T*(G′_E) + 1) | SIGN as an implication with T*(G′_E) + 1 | same |
+| §3 | X_SN^pre(E) ≤ len(E) | SIGNED | SIGN | signed |
+| §4-§6 | audit, TIE-W, data, combination | not signed | not signed | not signed |
+No disagreement in substance. The wording differs only in labelling: I signed REPRO's last clause "with gap", REFEREE-2 marked it "not
+signed as stated"; both say it is false at y′ = y + 1, true on x..y, and give the same repair.
+
+### C.2 Joint gap / note map
+| REFEREE | REFEREE-2 | relation | joint status |
+| --- | --- | --- | --- |
+| EPR-1 (witness fb17_n32, S3, epoch (26), one D-vertex; 491 of 3,791 epoch exits) | G-EPR-1 (witnesses lamend_D0.pg n 5, D = ∅, and lamend_D1.pg n 7, one D-vertex; 1,063 of 8,436) | SAME gap, independently; R2's witnesses are smaller | fixes file: REPRO "x..y in one phase; the last transition may leave it"; EP-k, EP-1 "+ 1" |
+| EPR-N1 (EP-0's proof must allow the exit transition) | G-EPR-1's EP-0 bullet (same) | SAME | wording |
+| §1 standing premise (S1 returns an optimal counterstrategy; 1E-N3) | N-EPR-1 (same) | SAME | landing note |
+| (Στ) "complete by its catch-all" | (Στ)'s list matches R51 (a)'s per-phase citations; R36 (c), R47 (b) rightly absent (not per-phase) | SAME conclusion; R2 checked the list item by item, which is the stronger form | — |
+| Addendum A (div_n8: DIV 1; RESTRICT_E, REPRO 0 failures) | Addendum A (div_n8: DIV at state 0, one D-vertex; same) | SAME | DATA: (Στ) is exercised on div_n8 |
+
+### C.3 Data cross-checks on my engine (this §C)
+- R2's witnesses lamend_D0.pg (sha1 7f78faf7…) and lamend_D1.pg (sha1 80063b9f…), extracted from referee-2 796b4d36 with their .start files
+  into scratch/epr_inputs/: from the given starts my probe reports EXITLAM on lamend_D0 (epoch (1), D = ∅) and lamend_D1 (epoch (0), one
+  D-vertex): λ′ at y + 1 ≠ λ; RESTRICT_E and REPRO 0 failures (epr_logs/r2_lamend.txt). So G-EPR-1's witnesses reproduce exactly.
+| item | REFEREE | REFEREE-2 | agree? |
+| --- | --- | --- | --- |
+| RESTRICT_E / REPRO failures | 0 (52,631 epochs + div_n8) | 0 (108,348 epochs + div_n8) | YES |
+| EXITLAM / LAMEND (λ′ ≠ λ at y′) | lib41 403 / 3,358; all sets 491 / 3,791 | lib41 396 / 3,420; all sets 1,063 / 8,436 | YES (same order; different random starts) |
+| longest epochs (lib41) | 92 (one D-vertex), 56 (D = ∅), as len(E) | 92, 56 | YES, exactly |
+| DIV | 0 in samples; 1 on div_n8 | 0 in samples and searches; 1 on div_n8 (state 0) | YES |
+
+### C.4 Joint state
+- RESTRICT_E, REPRO (state sequence, fallback types, x..y in one phase), EP-0, the X_SN^pre consequence: signed by both.
+- One joint gap, EPR-1 = G-EPR-1: REPRO's one-phase clause fails at y′; EP-k and EP-1 take "+ 1" (EP-1: len(E) ≤ T*(G′_E) + 1); orders unchanged.
+- (Στ) is exercised on div_n8 (both engines); EP-1 stays an implication.
