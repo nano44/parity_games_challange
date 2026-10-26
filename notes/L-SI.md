@@ -1,7 +1,7 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
-## HANDOVER (successor 15, box 19; written 2026-10-26T13:3xZ (date -u); session_017NeJAMbjHE3eoJcsnWhRbw)
+## HANDOVER (successor 15, box 19; written 2026-10-26T13:19Z (date -u); session_017NeJAMbjHE3eoJcsnWhRbw)
 Reason: the Lead's 13:13Z plan ("one box, then the packet and the handover"). Context ~410k. Lead: session_014FBi6o334DvwT5Uw2kDfoN.
 ### DONE (SHAs on claude/l-si; every sha1 sent to the Lead is FROZEN)
 - Handover check 5/5: l-si 50b080ee.

@@ -1169,7 +1169,7 @@ Proof.
 - OPEN: ρ_q for m_c ≥ 2; equivalently, at the level of the landed reductions, N_ep and the |D_E| ≥ 2 epochs.
 
 ## 28. Item (c) (Lead's GO 13:13Z): what changes the epoch between consecutive epochs, against R61 (e) ALT's causes (DATA, READING)
-Written 2026-10-26T13:2xZ (date -u), successor 15. New scripts rund/epcause.py, rund/trigger.py; logs epcause_*.txt, trigger_nep*.txt.
+Written 2026-10-26T13:1xZ (date -u), successor 15. New scripts rund/epcause.py, rund/trigger.py; logs epcause_*.txt, trigger_nep*.txt.
 Epochs as in R61: maximal runs of the phase with σ̄|Q constant. (§27.2's "D changes + 1" undercounts them: σ̄ can change with D the same.)
 ### 28.1 Epoch boundaries by ALT's cause (epcause.py)
 At every boundary, each q whose σ̄(q) changes is classified as:
