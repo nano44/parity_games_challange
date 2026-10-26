@@ -1561,3 +1561,5 @@
   - L-NEW 22 and L-RED 18 PARKED. Created L-NEW successor 23 (session_011WFfFqRNrU1a8LQwbwazZN): packet P-N5-GD, then Route Δ. Created L-RED successor 19 (session_017GDW2Qywsw52DKHPD8kAM6): adversary on P-N5-1O, then DUAL / MIRROR.
 - 01:04Z: Merged l-new d489672f (L-NEW 23 check 5/5, GO: P-N5-GD then Route Δ) and l-red 56c75abd (L-RED 19 check 5/5, GO: adversary on 1O, then DUAL / MIRROR).
 - 01:10Z: Merged referee 4298dae9: R-N5-1O. 1O-POLY, BIT and 1O-TIME SIGNED; OUT SIGNED WITH GAP OUT-1 (one-word repair; conclusion unchanged); notes 1O-N1, 1O-N2, BIT-N1. The R32/R33 start-freeness pass is done line by line (R-N5-START Addendum 1). Waiting on REFEREE-2 13's 1O report.
+- 01:16Z: Merged referee-2 04c2d708: R2-N5-1O, all SIGN, no gap. N-1O-1 = OUT-1 (≥ 0); N-1O-2: O(n¹⁷); N-1O-3: per-run cost; N-1O-4: R21 (a) holds on every game (R18 (d) S (a)); N-1O-5: R32/R33 start-free line by line; N-1O-6. P-N5-1O is now SIGNED BY BOTH REFEREES; §Cs requested.
+- Merged l-new 205c9ed7. PINNED at this commit: packet P-N5-GD, docs/new/P-N5-GD-box43.md (L-NEW 23): G_D (a)-(c2), F1°_D, Wo_D, every game. Queued for both referees after FX, NH42 and DUAL.
