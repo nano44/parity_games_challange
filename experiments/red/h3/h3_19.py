@@ -42,7 +42,7 @@ def analyse(g, start=None, cap=5000):
     n = g.n; S, FB, E = O.trace(g, start, "n5", cap)
     ev = [E.evaluate(s) for s, _ in S]; Xi = [X for X, _ in ev]; SB = [B for _, B in ev]
     r = dict(n=n, ITER=len(FB), states=0, h3_states=0, c2_checks=0, tcc_checks=0, wmg_checks=0, frz_runs=0, frz_nonvac=0,
-             frz_longest=0, frz_gap=-10 ** 9, frz_move_gap=-10 ** 9, frz_moves=0, rstick_checks=0, snp_checks=0, crossings=0, xsn_pre_ep=0, xsn_pre_run=0, xep_slack=-10 ** 9, fails=[])
+             frz_longest=0, frz_gap=-10 ** 9, frz_move_gap=-10 ** 9, frz_moves=0, off_stretches=0, off_changes=0, off_maxpv=0, off_returns=0, off_inrun_maxpv=0, rstick_checks=0, frz_content=0, frz_L=[], snp_checks=0, crossings=0, xsn_pre_ep=0, xsn_pre_run=0, xep_slack=-10 ** 9, fails=[])
     lamX = [tuple(x[0] for x in X) for X in Xi]
     W, lamW, D, U, MD, H3 = [], [], [], [], [], []
     for k, (sig, tau) in enumerate(S):
@@ -126,8 +126,29 @@ def analyse(g, start=None, cap=5000):
             for t in range(k0, k1):
                 if any(coarse(W[t + 1][v], L) != coarse(W[t][v], L) for v in range(n)): last = t + 1 - k0; r["frz_moves"] += 1
             if last is not None: r["frz_move_gap"] = max(r["frz_move_gap"], last - (n - 1))
+            # ---- CONJECTURE OFFSET-ONCE (docs/si/N5-RUND-box17.md §5-§6, l-si d61b3cf0): stretch_D = maximal sub-run of this run with
+            # D, R_D and every gate's (Ξ(u), W(u)) constant; Δ(v) = w(P(W(v))) − w(P(Ξ(v))); a RETURN = Δ(v) back to a value it left
+            off = lambda t, v: E.weight(W[t][v][1]) - E.weight(Xi[t][v][1])
+            sig = lambda t: (frozenset(D[t]), frozenset(v for v in range(n) if U[t][v] is not None), tuple(sorted((u, tuple(Xi[t][u]), tuple(W[t][u])) for u in D[t])))
+            t = k0; runchg = {}
+            while t <= k1:
+                s0 = t
+                while t + 1 <= k1 and sig(t + 1) == sig(s0): t += 1
+                r["off_stretches"] += 1
+                for v in range(n):
+                    seq = [off(x, v) for x in range(s0, t + 1)]; left = set(); chg = 0
+                    for i in range(1, len(seq)):
+                        if seq[i] != seq[i - 1]:
+                            chg += 1; left.add(seq[i - 1])
+                            if seq[i] in left: r["off_returns"] += 1; r["fails"].append(f"OFFSET_RETURN v={v} states {s0}..{t} seq={seq}")
+                    r["off_changes"] += chg; r["off_maxpv"] = max(r["off_maxpv"], chg)
+                t += 1
+            for v in range(n): runchg[v] = sum(1 for x in range(k0, k1) if off(x + 1, v) != off(x, v))
+            r["off_inrun_maxpv"] = max([r["off_inrun_maxpv"]] + list(runchg.values()))
             r["frz_runs"] += 1; r["frz_longest"] = max(r["frz_longest"], length); r["frz_gap"] = max(r["frz_gap"], length - n)
-            if length >= n:
+            if length >= n + 1:                     # non-vacuous: a state after k0 + n − 1 exists (L-SI's convention, N5-RUND §3)
+                r["frz_L"].append((k0, length, L, max((W[t][v][1] >> (L + 1)).bit_length() for t in range(k0, k1 + 1) for v in range(n)) if L >= 0 else -1))
+                if any(coarse(W[t][v], L)[1] for t in range(k0, k1 + 1) for v in range(n)): r["frz_content"] += 1
                 r["frz_nonvac"] += 1; ref = [coarse(W[k0 + n - 1][v], L) for v in range(n)]
                 for t in range(k0 + n - 1, k1 + 1):
                     if [coarse(W[t][v], L) != ref[v] for v in range(n)].count(True): r["fails"].append(f"FRZ k0={k0} t={t} L={L}"); break
@@ -152,11 +173,12 @@ def libmain(seed, R, nmax, files):
         for k in range(R + 1):
             st = None if k == 0 else [rng.choice(g.succ[v]) for v in range(g.n)]
             r = analyse(g, st); runs += 1
-            for kk in ("states", "h3_states", "c2_checks", "tcc_checks", "wmg_checks", "frz_runs", "frz_nonvac", "frz_moves", "rstick_checks", "snp_checks", "crossings"): tot[kk] = tot.get(kk, 0) + r[kk]
+            if r["frz_nonvac"]: print("NONVAC", os.path.basename(f), "S3" if st is None else json.dumps(st), r["n"], r["frz_L"], "content", r["frz_content"], "Dsizes", r.get("dmax"), flush=True)
+            for kk in ("states", "h3_states", "c2_checks", "tcc_checks", "wmg_checks", "frz_runs", "frz_nonvac", "frz_moves", "frz_content", "off_stretches", "off_changes", "off_returns", "rstick_checks", "snp_checks", "crossings"): tot[kk] = tot.get(kk, 0) + r[kk]
             for x in r["fails"]:
                 fails[x.split()[0]] = fails.get(x.split()[0], 0) + 1
                 if fails[x.split()[0]] <= 3: print("FAIL", f, x, st, flush=True)
-            for kk in ("frz_longest", "frz_gap", "frz_move_gap", "xsn_pre_ep", "xsn_pre_run", "xep_slack"):
+            for kk in ("frz_longest", "frz_gap", "frz_move_gap", "xsn_pre_ep", "xsn_pre_run", "xep_slack", "off_maxpv", "off_inrun_maxpv"):
                 if kk not in best or r[kk] > best[kk][0]: best[kk] = (r[kk], os.path.basename(f), st is None); bst[kk] = dict(file=f, start=st)
     json.dump(bst, open(os.environ.get("H3BEST", "/dev/null"), "w"))
     print("RUNS", runs, "TOT", tot, "FAILS", fails, "BEST", best, flush=True)
@@ -170,11 +192,11 @@ def randmain(seed, count, nmin, nmax, kmax):
         for o in rng.sample(range(n), rng.randint(2, kmax)): owner[o] = 1; succ[o] = sorted(set(rng.sample(range(n), rng.randint(2, max(2, n // 2)))))
         g = pg.Game(prio, owner, succ); st = None if i % 2 == 0 else [rng.choice(g.succ[v]) for v in range(n)]
         r = analyse(g, st)
-        for kk in ("states", "h3_states", "c2_checks", "tcc_checks", "wmg_checks", "frz_runs", "frz_nonvac", "frz_moves", "rstick_checks", "snp_checks", "crossings"): tot[kk] = tot.get(kk, 0) + r[kk]
+        for kk in ("states", "h3_states", "c2_checks", "tcc_checks", "wmg_checks", "frz_runs", "frz_nonvac", "frz_moves", "frz_content", "off_stretches", "off_changes", "off_returns", "rstick_checks", "snp_checks", "crossings"): tot[kk] = tot.get(kk, 0) + r[kk]
         for x in r["fails"]:
             fails[x.split()[0]] = fails.get(x.split()[0], 0) + 1
             if fails[x.split()[0]] <= 3: print("FAIL", x, json.dumps(dict(prio=prio, owner=owner, succ=succ, start=st)), flush=True)
-        for kk in ("frz_longest", "frz_gap", "frz_move_gap", "xsn_pre_ep", "xsn_pre_run", "xep_slack"):
+        for kk in ("frz_longest", "frz_gap", "frz_move_gap", "xsn_pre_ep", "xsn_pre_run", "xep_slack", "off_maxpv", "off_inrun_maxpv"):
             if kk not in best or r[kk] > best[kk]: best[kk] = r[kk]
     print("RAND", count, "TOT", tot, "FAILS", fails, "BEST", best, flush=True)
 
