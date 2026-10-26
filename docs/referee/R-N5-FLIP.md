@@ -142,3 +142,67 @@ All checks: own engine, 0 failures of every signed item (ROOT-C in its corrected
 - FLIP-N3 (§2): ROOT's hypothesis "in-phase" is not used; the lemma holds at every transition.
 - FLIP-N4 (§6 N3-LEVEL): the decomposition "X_{t2} = {q2} ∪ p2 ∪ P(Ξ_{t2} q1)" should read "the vertices of {q2} ∪ p2 above c, ⊔ P(Ξ_{t2} q1)";
   the packet's parenthesis "(disjoint, above c; …)" says so, but only after the formula.
+
+## §C. Comparison with REFEREE-2 (R2-N5-FLIP, claude/referee-2 e9044674, docs/referee-2/R2-N5-FLIP.md sha1 7b691f21…), written 2026-10-26T12:19Z by date -u
+Opened only after my report was pushed (8317a435) and the Lead's message of 12:17Z (Lead's stamp). REFEREE-2 wrote at 12:10Z with 0 FLIP
+files on origin/claude/referee (its independence line).
+### C.1 Verdicts, item by item
+| item | REFEREE (8317a435) | REFEREE-2 (e9044674) | |
+| --- | --- | --- | --- |
+| ROOT, ROUTE-RELAY, SELF-FREE, FLIP (a), (b), (c), N1 ∨ N2 ∨ N3 | SIGNED | SIGN | same |
+| STATIC | SIGNED (P1, P2 listed) | SIGN, N-FLIP-1: only P2 is used | same verdict; N-FLIP-1 ACCEPTED (my §5 also calls the P1 sentence a remark: "Ξ_k is the play value by definition") |
+| ROOT-C | as written NOT SIGNED (FALSE, ROOTC-2); corrected form ("path and exit") SIGNED WITH proof gap ROOTC-1, closed by my repair | SIGN WITH GAPS G-FLIP-1 (statement; literal form FALSE) and G-FLIP-2 (proof step FALSE; repaired) | same substance: both say the literal statement is false and the "path and exit" form is proved after a repair; the difference is only the label (mine splits "as written" and "corrected"); I accept REFEREE-2's single line "SIGN WITH GAPS G-FLIP-1, G-FLIP-2" as the joint verdict, reading G-FLIP-1 as "the signed statement is the exits form" |
+| N3-LEVEL | SIGNED (no gap) | SIGN WITH GAP G-FLIP-3 (the parenthesis "(both hold when p1 is intact at t2, by (c))" does not follow from (c)) | REFEREE-2 only; ACCEPTED, I MISSED it (C.3). Joint: SIGN WITH GAP G-FLIP-3 (minor; the lemma under its explicit hypotheses is correct) |
+| quotes | 10/10 (own script, entries attributed) | 10/10 VERBATIM (own script) | same |
+| premise lists | complete; FLIP-N1 (name R56 (d)) | complete, STATIC over-complete (N-FLIP-1); R56 (d)'s "≤" = Lemma S (a) | same |
+### C.2 The ROOT-C gaps and the two repairs
+- ROOTC-2 = G-FLIP-1 (same gap). Witnesses: REFEREE-2 n4_thch_0 from S3 (sha1 77018c63…); mine the same instance and state (my first lib41
+  example, report §4) plus the hand-checked rootc_lit_n5 (+ start). Counts differ only by unit and starts (REFEREE-2: transitions; mine:
+  (transition, class) cases). Joint repair: "class exit path AND EXIT" in the hypothesis and "changes a class exit path or exit" in the
+  consequence (both referees, word for word the same fix).
+- ROOTC-1 = G-FLIP-2 (same gap). Witnesses: REFEREE-2 best_tog_83 (sha1 01788acf…, S3, state 1, q = 9 on c's cycle); mine leanT_N6 (S3,
+  state 3, q = 4 on c's cycle [7, 4]). Same mechanism: the walk leaves c's honest cycle at a Q_c vertex on it, and the positional
+  realisation closes a cycle with an even top above c.
+- The two repairs are THE SAME INEQUALITY in two forms. Mine, LOCAL(e, y): κ_s(e) ⪯ κwt(e) + κ_s(y). REFEREE-2's B(e, y): κ_s(e) ⪯ κwt(e) +
+  κwt(p_y) + κ_s(e′) for exit e′ ≠ e. By additivity κ_s(y) = κwt(p_y) + κ_s(e′) (y's play is p_y then e′'s play), so B = LOCAL for every y
+  whose exit is not e, which is every step of a walk in Π_s(q) (the e_i are distinct). The case splits match: my (1) "y's play avoids e" /
+  (2) "meets e before c" / (3) "reaches c first, e on c's cycle" are REFEREE-2's (1) / (2, before c) / (2, after c, node c or not). Both use
+  P1 only, both conclude by backward induction along the walk with κ_s(c) = (0, 0). I re-read REFEREE-2's case (2) against mine: its
+  "the right side equals κ_s(e) + wt(Z)" is my κwt(e) + κ_s(y) = κwt(Z) + κ_s(e); its "after c" case is my (3). EACH SUFFICES.
+- Which text for the fixes file: B(e, y) (REFEREE-2's form), because it is stated on the walk's own steps (e, p_y, e′) and slots into the
+  packet's (≤) line without the extra additivity step; my LOCAL may be added as a one-line remark (it is B before additivity, and also covers
+  y with exit e, which no walk uses). Either text closes the gap; there is no disagreement.
+### C.3 G-FLIP-3 (settled)
+- I re-read §6: N3-LEVEL's hypotheses state "rank(h) > rank(c) and h even" explicitly; the parenthesis then claims "(both hold when p1 is
+  intact at t2, by (c))". (c) proves rew(h) > rew(c), which splits into (rank h > rank c, h even) OR (rank h < rank c, c odd) — my own §6
+  derivation of (c) states exactly this disjunction, and I did not carry it to the parenthesis. So the parenthesis is UNPROVED; REFEREE-2 is
+  right. It is not shown FALSE: no flip with p1 intact, p1 ∩ p2 = ∅ and C below an odd c occurs in REFEREE-2's 908 cases, nor in mine
+  (FC_LOWBRANCH = 0 of 83: lib41 20, random seed 1420 3, pp_K12 60; logs flip_logs/*_v3.txt). Verdict: N3-LEVEL SIGNED WITH GAP G-FLIP-3 (minor, a remark in parentheses; the lemma's conclusion under its
+  stated hypotheses is unaffected). Joint repair: REFEREE-2's sentence "(by (c), when p1 is intact at t2 either this holds or C lies below
+  an odd c; the lemma treats the former)".
+### C.4 Notes
+| note | REFEREE | REFEREE-2 | outcome |
+| --- | --- | --- | --- |
+| STATIC uses P2 only | (§5 remark) | N-FLIP-1 | same in substance; accepted |
+| quotes verbatim | §0 | N-FLIP-2 | same |
+| class exit paths defined per y, independent of §3's "no honest cycle" qualifier | — | N-FLIP-3 | REFEREE-2 only; agreed (my probe computes them that way) |
+| data thin where the gaps sit | — (my data rows) | N-FLIP-4 | REFEREE-2 only; agreed (equality lev = rank(h) is common in its data, 80; mine 3 + 4 + 1) |
+| ROUTE-RELAY should name R56 (d) | FLIP-N1 | (in its premise column) | same |
+| walk-simplicity sentence loose | FLIP-N2 | "CORRECT" | REFEREE only (wording; no disagreement on correctness) |
+| ROOT does not need "in-phase" | FLIP-N3 | "fallbacks included" | REFEREE only (remark) |
+| N3-LEVEL decomposition wording | FLIP-N4 | "restricted to V_{>c}" | same reading; REFEREE only as a note |
+### C.5 Data comparison (both own engines, 0 violations of every signed check, ROOT-C in the exits form)
+- lib41: mine 1,101 runs / 1,002 flips (982 N1 / 98 N2 / 40 N3) / 12 N3-LEVEL checks; REFEREE-2 1,230 runs / 883 flips (716 / 49 / 167) /
+  164 checks (its pp/frz set adds 871 flips). Differences come from starts (S3 + 2 random each, different seeds; REFEREE-2 excludes referee
+  games). Both: N3-LEVEL equality occurs (sharp); both strict-mutation controls bite; both "2·wt(C)" controls bite.
+- ROOT-C: both find the literal form failing in data (REFEREE-2 80 lib41 transitions; mine 26 lib41 cases), the exits form never; both find
+  non-realisable walks common (REFEREE-2 RC_POS 60 / 1 / 410; mine REAL 2,422 / 3,504 / 1,632, counting walks) and the min formula always true.
+### C.6 Joint gap map
+| joint gap | REFEREE | REFEREE-2 | severity / status |
+| --- | --- | --- | --- |
+| G-FLIP-1 (ROOT-C statement omits exits; literal form FALSE) | ROOTC-2 | G-FLIP-1 | minor (wording, but a false statement as written); repair: "path and exit" in hypothesis and consequence; signed in that form |
+| G-FLIP-2 (ROOT-C (≤): positional-realisation sentence FALSE) | ROOTC-1 | G-FLIP-2 | minor; CLOSED by the referee repair B(e, y) (= LOCAL); P1 only |
+| G-FLIP-3 (N3-LEVEL parenthesis unproved) | missed (accepted here) | G-FLIP-3 | minor; repair: REFEREE-2's sentence; no witness either way |
+Joint verdicts: ROOT, ROUTE-RELAY, SELF-FREE, STATIC, FLIP (a)-(c), N1 ∨ N2 ∨ N3 SIGNED; ROOT-C SIGNED WITH GAPS G-FLIP-1, G-FLIP-2 (in
+the exits form, with the repair); N3-LEVEL SIGNED WITH GAP G-FLIP-3. Notes for L-SI 15's fixes file: N-FLIP-1..4, FLIP-N1..N4. Both
+(Opus 5.5, D15).
