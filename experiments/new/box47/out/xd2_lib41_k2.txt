@@ -1,0 +1,2 @@
+experiments/red/carry/instances/ctx13_n40.pg n 40 S3 phase [8,13] k 10 u 14->11 same 1 hb 0 rho_u 1 rho_u' 1 tie 0 via 0 fb 0 a2u 00 sch 1 dir(k: u u', k+1: u u') ---d
+A2U 0 A2U1 0 DIR_---d 1 FB 0 HB 0 POS0 0 POSMAX 2 REP_V 0 RHO_U 1 RHO_U2 1 SAME 1 SB_V 0 SCH 1 TIE_U 0 URUNS 40 URUN_D2 38 URUN_LEN 51 URUN_XDIR 1 VIA 0 XDIR 1 XDIR_PH 1 XI_V 0 phases 5377 runs 1101
