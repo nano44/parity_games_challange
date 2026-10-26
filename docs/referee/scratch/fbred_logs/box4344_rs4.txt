@@ -1,0 +1,12 @@
+EXS_chk                    64
+FBR_chk                    4968
+YF_chk                     1754
+fb_total                   64
+games                      10
+late_fallbacks             0
+max_f                      17
+max_rho                    36
+phases                     281
+runs                       50
+FAILS 0
+EXIT 0
