@@ -1,0 +1,24 @@
+MODE files lib41_noref.lst 3 MUT -
+A_checks: 32477
+A_fb_pairs: 2371
+B_checks: 27986
+CONV_checks: 28039
+COR_n_inphase: 12090
+COR_t_inphase: 11943
+C_n5_checks: 27986
+C_tau_checks: 28039
+D_checks: 32477
+LINK_checks: 9574
+NONEX_n: 1982
+NONEX_t: 2003
+R48_max_f: 33
+R48_max_phase_len: 112
+R48_phases: 3079
+R48_runs: 753
+RUNS_differ: 21
+SELF_checks: 1095
+TIEKEEP: 53
+skipped_n_gt_cap: 45
+stable_with_Itau: 5136
+states: 32477
+RESULT OK violations=0
