@@ -22,3 +22,5 @@ Instances: long121_n40.pg + .start (L-RED 21, l-red dee85909 experiments/red/n3/
 transitions, |Q| 3; out/nconf_long121.txt, out/retfb_long121.txt.
 - ncclimb.py K NMAX STEPS SEED OUTDIR [--seed FILE.pg]: climb on (max NCONF_{≥2} in one phase, max N_ep^{≥2}) from the S3 start. Random seeds stay
   trivial (out/ncclimb_k*_s*.txt: best (4, 4)); seeded from nep90 / nep76 (S3 scores (10, 10)): out/ncclimb_nep*_s*.txt, best games in out/climb/.
+- newconf.py GAME [START] / rootrel.py GAME [START]: new configurations of the longest phase (NEWPAIR / RECOMB); root × relay split (root = most
+  changing vertex of Q, R = σ̄ on the rest) with each R's root sequence. out/rootrel_newconf.txt (nep90, nep76, long121 with starts; pft34 S3).
