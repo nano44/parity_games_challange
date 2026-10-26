@@ -1,10 +1,10 @@
-# Draft RESULTS R68 (Lead, 2026-10-26 11:38Z by date -u; both reports and both §Cs filled; fixes file PENDING) — to CHECKER C77
+# Draft RESULTS R68 (Lead, 2026-10-26 11:38Z by date -u; both reports and both §Cs filled; fixes file filled 12:03Z by date -u) — to CHECKER C77
 
 ### R68 [refereed-only] N5 on EVERY game: in every phase the W-honest states (Ξ = W) number at most f + 4n² − 3n (Lemma HON), a fallback at a W-honest state is flat and ends the phase at a saturated W-honest state (SAT0, HON-FB), so f may be replaced by the in-gap fallbacks f_in (HON′), and the D = ∅ states, the D = ∅ epochs and their transitions number at most f_in + 4n² − 3n (HON-0, which implies RESULTS R66's bound); a run with D ⊆ {u} is an N5^τ run on the one-Odd-choice game G^u (RESTRICT_u, REPRO_u), and the {u}-intervals of a phase number at most 1 + f_in + 4n² − 3n + X_dir + X_big (REC-1 (a)); as IMPLICATIONS from premise (Στ), u-runs have length ≤ T*(G^u) + 1 (EP-1u) and the |D| = 1 states of a phase are bounded by REC-1 (b)-(d) (2026-10-26) — partial step-4 lemmas for N5 beyond one Odd choice vertex (reductions to f_in, X_dir and X_big; not free of f; not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C77.md, checker PENDING)
 - Object (packet P-N5-HON, added at l-new 67a7b54d, pinned trunk 31835c4b, unchanged during review): docs/new/P-N5-HON-box46.md, sha1
   07f8e767cfca12d29c8f6f2e3f03358326abbef1 (L-NEW successor 25, Opus 5.5). The referees' notes are collected by the lane in
-  docs/new/P-N5-HON-fixes-box46.md (FIXES PENDING: l-new SHA and sha1 to be filled, L-NEW successor 26); repairs only, no signed statement
-  changes.
+  docs/new/P-N5-HON-fixes-box46.md (l-new 0238b1cb, sha1 54985acfbfb0feb0e8bb3b04d882df78eaf72f1b, L-NEW successor 26: N-HON-1..5,
+  HON-N1..N4, 46 quotes checked by script); on trunk; repairs only, no signed statement changes.
   Setting (every game): N5 = SPEC S1-S5 (FIX 1-4, Q1-Q4); state k = (σ_k, τ_k); σ̄_k; Ξ_k; W_k := V_{σ_k,τ_k} in G_τ; λ, λ_W; phases as in
   RESULTS R38 (a); f := the in-phase S4c fallbacks of a phase; Q, D_k, epochs as in RESULTS R64. A state is W-HONEST if Ξ_k = W_k pointwise
   (every D = ∅ state is); LEV(k) := the largest j ≤ n − 1 with Ξ_k(x) ⪰ value(r) for every x and every simple path r of G_τ with ≤ j edges to a
@@ -66,5 +66,5 @@
   1566b439, §C 7f8bafdc, successor 16): all SIGN, (h) as implications, no gap; notes N-HON-1..5. §C (both): verdicts identical item by item;
   N-HON-1 settled as a note (REFEREE-2 withdrew "false", which applied only to the infinite play); HON-N1, HON-N2, HON-N3 accepted by
   REFEREE-2; N-HON-1, N-HON-3 accepted by REFEREE; N-HON-2, N-HON-4, N-HON-5 match REFEREE's report in substance; joint gap map empty;
-  nothing open.
+  nothing open. Both signatures are under the standing SPEC premise 1E-N3 (P1, P2) (N-HON-3).
 - TARGET.md diff: not a claim of TARGET.md section 1 or §2 (per-phase reductions; no running-time bound). GAPS G-N5-TIME: open.
