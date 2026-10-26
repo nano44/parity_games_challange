@@ -76,3 +76,29 @@ largest inside index is |U| − 1 − 7. That is L-SI's own figure in N5-GCX §4
 - docs/si/N5-RUND-box17.md: §13 (FORBIDDEN AT k), §16 (CHARGE-U, U(S)).
 - docs/new/N5-ssi-global.md: SPEC S1-S5 and FIX 1-4.
 - experiments/si/root/gcx.py and common.py, plus abscyc.py (l-si; reference only).
+
+## 5. UL_G (Lead 17:08Z: first): global data and why the reader does not reach it (DATA, READING; written ~17:4xZ)
+- Checker: ulx.py now also computes GLOBAL C-intervals, from the frozen packet text (P-N5-GCX-box21.md, trunk sha1 5a91bebb, §1 / §3).
+  Over every class at once, A is non-increasing, D is constant, and DD with its offsets is constant (strict reading: the DD dict must be
+  equal). The threshold is n − 1. Each interval also reports whether λ_W is constant.
+- DATA:
+  - lib41 (S3 + 2 random starts, n ≤ 64): UL_G_VIOL = 0. The best is G_IDX_SLACK −7 (j5_n16 rs) and G_LEN_SLACK −2 (b6_xs_n24, global
+    C-interval [0, 21] at n = 24).
+  - b6_xs_n24 is gate-free (D = ∅ throughout) and has no U events. It is a Bellman-Ford wave through 21 of its 23 Even vertices, so the
+    D ∩ U = ∅ bound of §3 governs it.
+  - L-RED pins: run49_n32's longest global C-interval is 17 at n = 32, although the run is 49 long (cut 4 times).
+  - reader_L: the global C-interval is [0, L + 1] at n = 2L + 16.
+- READING (not a lemma). Every mechanism I can build spends at least one fresh vertex per time step of a causal chain:
+  - a BF clock spends one chain vertex per step;
+  - a reader's W-trap release adds one step per reader vertex;
+  - a ladder (one Even vertex with k gated rungs reading k clock positions) makes k switches, but only at the clock's k tick times;
+  - a mutual loop (x's switch raises Ξ of q, which r reads by Ξ; r's switch raises W, which x reads through a gate's τ) re-uses x and r,
+    but each round needs a fresh Ξ-higher rung for both.
+  The reason: options that read the SAME dynamic vertex keep a static W order, and options read through the same gate keep a static
+  W − Ξ order. So every flip needs its own vertex. A W-reading loop closes a W-cycle (λ_W moves), and a Ξ-reading loop closes a Ξ-cycle.
+- So UL_G needs a global C-interval longer than n − 1 with a gate. Equivalently, a causal chain that re-uses vertices faster than it
+  spends fresh ones. I have not found one.
+- Candidate lemma to PROVE instead (OPEN): GCI-LEN. Every global C-interval of a λ_W-constant fallback-free run has length ≤ n − 1.
+  - GCI-LEN implies UL_G, so Corollary UL-RED would become a bound in K(S) alone.
+  - Known: GCI-LEN holds when D = ∅ (§3's argument, applied per class).
+  - The data maximum is n − 3.

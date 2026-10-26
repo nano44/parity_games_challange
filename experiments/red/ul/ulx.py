@@ -112,6 +112,27 @@ def phase(g, E, R, i, j, Q, name):
                 z = R[k + 1]["s"][y]
                 if z != R[k]["s"][y] and any((y, z) in F[f] for f in range(max(s0, k - n + 1), k)): UE.append((k, y, z))
         C["U_events"] += len(UE)
+        gst = {}                                              # GLOBAL C-intervals (UL_G, §5): every class at once; threshold n - 1
+        for k in range(s0, e0 + 1):
+            A = set(range(n)) - MEET[k]; DD = {}
+            for u in D[k]:
+                cu = R[k]["lam"][u]
+                if R[k]["sb"][u] in A and R[k]["t"][u] in A and R[k]["lam"][R[k]["sb"][u]] == cu and R[k]["lam"][R[k]["t"][u]] == cu:
+                    DD[u] = E.weight(R[k]["vs"][R[k]["t"][u]][1]) - E.weight(R[k]["vs"][R[k]["sb"][u]][1])
+            gst[k] = (A, D[k], DD)
+        a = s0
+        for k in range(s0, e0 + 1):
+            ok = k < e0 and gst[k + 1][0] <= gst[k][0] and gst[k + 1][1] == gst[k][1] and gst[k + 1][2] == gst[k][2]
+            if MUT and k < e0: ok = True
+            if not ok:
+                lw = all(R[x]["lamW"] == R[a]["lamW"] for x in range(a, k + 1))
+                ginfo = (name, "phase@%d" % i, "gcint=[%d,%d]" % (a - i, k - i), "n=%d" % n, "lamW_const" if lw else "lamW_moves")
+                C["gcint"] += 1; mx("G_LEN_SLACK", (k - a) - (n - 1), ginfo)
+                for (kk, y, z) in UE:
+                    if a <= kk < k:
+                        C["G_U_in"] += 1; mx("G_IDX_SLACK", (kk - a) - (n - 1), ginfo + ("k'=%d" % (kk - i), (y, z)))
+                        if kk - a >= (0 if MUT else n - 1): C["UL_G_VIOL"] += 1; EX.append(("UL_G", ginfo, kk - i, (y, z)))
+                a = k + 1
         for c, U in cls.items():
             big = len(U) >= 3 and bool((Q & U) - {c})
             st = {}
