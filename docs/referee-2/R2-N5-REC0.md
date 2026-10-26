@@ -2,7 +2,8 @@
 - Object: docs/new/P-N5-REC0-box45.md, `git show 64506ecf:docs/new/P-N5-REC0-box45.md | sha1sum` -> 343239b54a35d2701d076805674ef77aa7a21f7d (= the
   Lead's), frozen at l-new 18dd8c90, pinned trunk 64506ecf. Brief (Lead 09:02Z): sign or not §1 (Lemma REC-0 and its transition corollary via
   EP-0); answer QUESTION Q-R17 explicitly; §2 READING and §3 DATA not signed; own engine; no docs/referee/ on REC0 before this push.
-- Independence: docs/referee/ not opened on REC0 (no REC0 file listed there by name at my fetch). Lane code (experiments/new/box45/rec0.py,
+- Independence: docs/referee/ not opened on REC0. Correction after push a0457eb0: a name-only listing (`git ls-tree --name-only`) at 09:11Z shows 7
+  REC0-named files on origin/claude/referee (0 on trunk); I read none of them; my earlier wording "no REC0 file listed" was not checked. Lane code (experiments/new/box45/rec0.py,
   recclimb.py) not run or imported.
 - Context at writing: about 400k tokens (this session since 07:31Z; STAU review and §C before this packet).
 - Premises read at their text: SPEC S1-S5, FIX 1-4; R17 (b) Lemma P and (F1)/(F2) (docs/new/N5-phase-bound-box10.md §1-§2, at 64506ecf);
