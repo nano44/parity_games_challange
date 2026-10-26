@@ -1,0 +1,1 @@
+MODE files ../R2-N5-KW/files.lst 3 {'states': 45217, 'IS0_DIV': 0, 'IS0_DIV_diff_next': 0}
