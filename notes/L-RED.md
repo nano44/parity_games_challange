@@ -28,6 +28,9 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - RESUME POINT (ask the Lead first): the live target is a fallback-free run with super-polynomially many returns to a multi-gate
   configuration WITHOUT fresh content (R89 §3, R90 §2): (i) climb objective lags x re-raises inside one fallback-free run (GATE-LAG),
   (ii) a hand-built mkgate variant whose leapfrog content is reused (ruler) rather than fresh, (iii) FB-C attack is hopeless (10 vs 4n^2).
+  - ADDENDUM 16:0xZ (Lead 15:38Z GO): (i) done: lags x re-raises climb (lag.py fitness min(re-raises, lags) per ff run and gate) best 10
+    (lagx10_n40, 7258717c, QP 5) in an 11-step run: re-arming exists but the run stays < n; R90 §5. Report QP (RESTRICT_H used-edge game,
+    L-NEW 28 §10) for every instance; long121 QP 3. Remaining: (ii) the hand-built ruler-content mkgate variant; or growth at fixed QP.
 - Sources opened this session: docs/si/P-N5-FLIP-box18.md (sha1 96a7e088) §1-§8; docs/si/N5-RUND-box17.md §20, §25, §26 (l-si 58e39098);
   docs/new/N5-HONFF-box47.md (sha1 544ae76a); docs/new/P-N5-HON-box46.md §1-§2; docs/si/N5-ROOT-box20.md §0, §4, §8 (l-si 21ce0034,
   d842ca95); docs/new/P-N5-EPC-box48.md (l-new, sha1 9f48ded7); RESULTS R67 (definitions of split, aligned, forbidden, U(S)).
