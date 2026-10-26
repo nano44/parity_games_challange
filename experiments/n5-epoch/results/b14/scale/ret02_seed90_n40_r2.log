@@ -1,0 +1,21 @@
+START fit (2, 38) n 40
+BEST step 19 fit (3, 34) t 5s
+BEST step 31 fit (3, 35) t 8s
+BEST step 87 fit (3, 43) t 24s
+BEST step 114 fit (4, 42) t 32s
+BEST step 196 fit (4, 46) t 54s
+BEST step 475 fit (4, 47) t 134s
+BEST step 487 fit (4, 48) t 138s
+BEST step 549 fit (6, 46) t 154s
+BEST step 603 fit (8, 42) t 170s
+BEST step 671 fit (9, 38) t 190s
+BEST step 685 fit (10, 37) t 192s
+BEST step 910 fit (10, 38) t 253s
+BEST step 997 fit (10, 39) t 279s
+BEST step 1147 fit (12, 35) t 325s
+BEST step 1202 fit (13, 34) t 339s
+BEST step 1259 fit (14, 28) t 357s
+BEST step 1267 fit (14, 29) t 360s
+BEST step 1294 fit (15, 29) t 371s
+BEST step 1392 fit (16, 29) t 399s
+END steps 1397 best (16, 29) n 40 -> results/b14/scale/ret02_seed90_n40_r2.pg

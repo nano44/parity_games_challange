@@ -1,0 +1,1 @@
+E1_chk=648 ESW_in=6697 EXIT_at_cut=35 EXIT_in=17 K_max=19 K_sum=1605 LASTSW_max=28 SBG_at_cut=1419 SBG_in=763 SB_at_cut=1419 SB_in=763 cut_AG=304 cut_DCH=169 cut_DDSET=14 cut_OSB=942 cut_OVAL=176 lastsw_minus_U_max_plus1000=996 pure_lastsw_max=28 runs=921 sw_in_impure=800 sw_in_pure=3425 trans_at_cut=1605 trans_in=4322

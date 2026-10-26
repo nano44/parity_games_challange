@@ -1,0 +1,31 @@
+ROW experiments/red/rec0/instances/nep90_n40.pg[start] phase[4,95] n=40 |Q|=5 N_ep=90 N_0=1 N_1=15 N_2=74 NCONF2=38 R0_2=2 f=7 runs=8 root=0 RELCH/run=[7, 5, 5, 3, 4, 5, 5, 0] G_DLEAVE=24 WB_FAIL=0 UNK=0 EPASM_slack=126287
+ROW experiments/n5-epoch/instances/nep76_n40.pg[start] phase[9,87] n=40 |Q|=5 N_ep=76 N_0=1 N_1=4 N_2=71 NCONF2=36 R0_2=0 f=6 runs=7 root=0 RELCH/run=[6, 4, 8, 8, 4, 8, 3] G_DLEAVE=19 WB_FAIL=0 UNK=0 EPASM_slack=119968
+ROW experiments/n5-epoch/instances/nep92_n40.pg[start] phase[6,98] n=40 |Q|=6 N_ep=92 N_0=1 N_1=9 N_2=82 NCONF2=46 R0_2=2 f=7 runs=8 root=0 RELCH/run=[11, 8, 5, 3, 7, 8, 5, 2] G_DLEAVE=29 WB_FAIL=0 UNK=0 EPASM_slack=151559
+ROW experiments/n5-epoch/instances/nep94_n48.pg[start] phase[4,97] n=48 |Q|=9 N_ep=94 N_0=0 N_1=1 N_2=93 NCONF2=93 R0_2=0 f=7 runs=8 root=0 RELCH/run=[10, 6, 9, 5, 7, 6, 8, 3] G_DLEAVE=30 WB_FAIL=0 UNK=0 EPASM_slack=433059
+ROW experiments/red/n3/instances/long121_n40.pg[start] phase[1,122] n=40 |Q|=3 N_ep=37 N_0=1 N_1=1 N_2=35 NCONF2=12 R0_2=3 f=8 runs=9 root=0 RELCH/run=[0, 3, 6, 1, 2, 1, 4, 1, 2] G_DLEAVE=6 WB_FAIL=0 UNK=0 EPASM_slack=44167
+ROW experiments/n5-epoch/instances/ret14_n48.pg[start] phase[4,58] n=48 |Q|=5 N_ep=50 N_0=0 N_1=0 N_2=50 NCONF2=27 R0_2=14 f=4 runs=5 root=0 RELCH/run=[7, 7, 11, 7, 2] G_DLEAVE=16 WB_FAIL=0 UNK=0 EPASM_slack=132156
+ROW experiments/n5-epoch/instances/ret14_n64.pg[start] phase[6,65] n=64 |Q|=13 N_ep=55 N_0=1 N_1=1 N_2=53 NCONF2=38 R0_2=14 f=4 runs=5 root=0 RELCH/run=[7, 10, 6, 10, 5] G_DLEAVE=24 WB_FAIL=0 UNK=0 EPASM_slack=325016
+ROW experiments/n5-epoch/instances/nconf61_n48.pg[start] phase[7,71] n=48 |Q|=9 N_ep=63 N_0=0 N_1=1 N_2=62 NCONF2=61 R0_2=1 f=5 runs=6 root=0 RELCH/run=[11, 5, 6, 6, 7, 4] G_DLEAVE=24 WB_FAIL=0 UNK=0 EPASM_slack=287171
+G_DLEAVE: 173
+NCONF2: 389
+N_0: 9
+N_1: 39
+N_2: 558
+N_ep: 606
+R0_2: 36
+UNK: 0
+WB_FAIL: 0
+f: 58
+phases: 55
+runs: 122
+max_G_DLEAVE: 30 | experiments/n5-epoch/instances/nep94_n48.pg[start] phase[4,97] n=48 |Q|=9
+max_NCONF2: 93 | experiments/n5-epoch/instances/nep94_n48.pg[start] phase[4,97] n=48 |Q|=9
+max_N_ep: 94 | experiments/n5-epoch/instances/nep94_n48.pg[start] phase[4,97] n=48 |Q|=9
+max_R0_2: 14 | experiments/n5-epoch/instances/ret14_n48.pg[start] phase[4,58] n=48 |Q|=5
+max_f: 10 | experiments/n5-epoch/instances/lend82_n32.pg[start] phase[2,85] n=32 |Q|=3
+max_maxRDLEAVE_run: 6 | experiments/red/rec0/instances/nep90_n40.pg[start] phase[4,95] n=40 |Q|=5
+max_maxRELCH_run: 11 | experiments/n5-epoch/instances/nep92_n40.pg[start] phase[6,98] n=40 |Q|=6
+minslack_EPASM: 3999 | experiments/n5-epoch/instances/lend82_n32.pg[start] phase[87,87] n=32 N_ep=1
+minslack_HON0: 3999 | experiments/n5-epoch/instances/lend82_n32.pg[start] phase[87,87] n=32 N_ep=1
+minslack_VIS2: 0 | experiments/red/rec0/instances/nep90_n40.pg[start] phase[1,1] n=40 N_ep=1
+RESULT OK violations=0

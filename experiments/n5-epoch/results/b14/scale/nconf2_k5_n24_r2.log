@@ -1,0 +1,15 @@
+START fit (1, 0) n 24
+BEST step 3548 fit (2, 0) t 18s
+BEST step 3982 fit (3, 0) t 22s
+BEST step 4124 fit (4, 0) t 24s
+BEST step 4163 fit (5, 0) t 25s
+BEST step 5851 fit (6, 0) t 51s
+BEST step 6565 fit (7, 0) t 62s
+BEST step 6620 fit (8, 0) t 63s
+BEST step 7713 fit (9, 0) t 82s
+BEST step 7904 fit (10, 0) t 85s
+BEST step 8969 fit (11, 0) t 104s
+BEST step 12728 fit (12, 0) t 188s
+BEST step 12863 fit (13, 0) t 192s
+BEST step 13281 fit (14, 0) t 201s
+END steps 14885 best (14, 0) n 24 -> results/b14/scale/nconf2_k5_n24_r2.pg

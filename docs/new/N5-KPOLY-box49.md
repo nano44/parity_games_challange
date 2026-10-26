@@ -145,3 +145,140 @@ Proof.
   levels is gone; the exit changes EXIT_x (and CYC) take its place, so polynomial in n and k follows exactly when exits per phase are polynomial.
 - Full statements, proofs, premises, quotes and data: docs/new/P-N5-OFFMONO-box49.md (frozen at this push). DATA (offmono2.py): 0 violations in
   15,741 checks (lib41 n ≤ 34 and seven long instances incl. the n = 80 climb), 25 Case L checks, 590 parent-changed checks; controls bite.
+
+## 8. CYC_c refined to cycle changes, and the cycle changes counted (PROVED, every game; DATA; Lead's routing of 16:56Z; written 17:01Z by date -u)
+Setting as P-N5-OFFMONO-box49 §0 (frozen, sha1 d9705ac6…; not edited). Z_t(c) := c's honest cycle at t as a sequence from c (the honest play from c
+up to its return). ZCH_c := the in-phase transitions of a run J with Z_t(c) ≠ Z_{t+1}(c).
+- Remark Z-CONST (PROVED, elementary). If Z_t(c) = Z_{t+1}(c), then for every x on it, κ_t(x) = κ_{t+1}(x) (a valuation is a function of the play),
+  and for x ∈ Q on it, par_t(x) = par_{t+1}(x) and off(x; par(x)) is unchanged. So in OFFSET-MONO's corollaries the CYC transitions at which c's
+  cycle does not change contribute nothing.
+- Corollary CHAIN-COUNT′ (PROVED). P-N5-OFFMONO's CHAIN-COUNT holds with CYC_c replaced by ZCH_c (x-pieces cut at EXIT_x ∪ ZCH_c): on a piece,
+  either x is on no honest cycle at the source (OFFSET-MONO) or x lies on c's unchanged cycle (Z-CONST, offset constant). The proof is otherwise
+  CHAIN-COUNT's, with CHAIN-SUM's terms at unchanged-cycle levels equal to (0, 0).
+- Lemma ZCH-COUNT (PROVED, every game). In a phase P and class c: ZCH_c ≤ (n − 1)·(|U_c| − 1) + n + TIE_c + ODDC_c, where TIE_c := the cycle
+  changes at which every vertex v ≠ c of Z_{t+1}(c) with next_{t+1}(v) ≠ next_t(v) is Odd with κ_{t+1}(v) = κ_t(v), and ODDC_c := the cycle changes
+  at which c ∈ Q and σ̄(c) changes and no other vertex qualifies.
+  Proof. Let t → t + 1 change c's cycle and let N := {v ∈ Z_{t+1}(c), v ≠ c : next_{t+1}(v) ≠ next_t(v)}.
+  - Every vertex of Z_{t+1}(c) other than c has κ_{t+1} = (0, s_c·ℓ) with 1 ≤ ℓ ≤ n − 1 (its play to c runs along the cycle, all below c in rank,
+    so the path set is empty).
+  - If some v ∈ N has κ_{t+1}(v) ≻ κ_t(v) (STRICT): charge the transition to v. κ(v) is non-decreasing on P ((M2κ)), so the transitions at which
+    κ(v) rises strictly TO a value (0, s_c·ℓ), ℓ ∈ [1, n − 1], are at most n − 1. Over v ∈ U_c ∖ {c}: ≤ (n − 1)(|U_c| − 1).
+  - Every Even v ∈ N is STRICT: by (SW), (v, x′) ∈ Iσ_t with x′ := next_{t+1}(v), so κ_t(x′) ≻ κ_t(next_t v) ((M1κ); both in U_c), and κ_{t+1}(v) =
+    κwt_c(v) + κ_{t+1}(x′) ⪰ κwt_c(v) + κ_t(x′) ≻ κ_t(v) ((Aκ), (M2κ)). So a non-STRICT change has N consisting of Odd vertices with unchanged κ
+    (TIE_c) or N = ∅, i.e. only c's own successor changed.
+  - N = ∅ and c Even: let ψ_t := κ_t(next_t c). next_t(c) lies on c's cycle, so ψ_t = (0, s_c·ℓ) with 0 ≤ ℓ ≤ n − 1. ψ is non-decreasing on P: where
+    next(c) is unchanged by (M2κ); where c switches, by (SW) and (M1κ) as for v above, strictly. So such transitions number ≤ n − 1 ≤ n.
+  - N = ∅ and c Odd (c ∈ Q, σ̄(c) changes): ODDC_c. □
+- So the CYC part of the remaining count is polynomial except for TIE_c and ODDC_c (Odd vertices re-routing on c's cycle with unchanged κ, and the
+  cycle node's own Odd choice; these are R61 (f)'s tie_q and cyc_q kinds). OPEN: TIE_c, ODDC_c per phase.
+- DATA (experiments/new/box48/cyc.py; out/cyc_lib41_n34_k2.txt, out/cyc_long7.txt, out/cyc_long2.txt): lib41 n ≤ 34, S3 + 2, 746 phases, 6,752
+  transitions: CYC (old sense, any q on c's cycle) sums to 457 and reaches 25 = a whole phase (kw25_n32: the Odd choice vertex sits on an unchanged
+  cycle all phase, Z-CONST's case); cycle changes: STRICT 50, TIE 3, c-only 80 (c Even 85 / c Odd 1 moves of c in all, some together with STRICT),
+  ZCH_OTHER_V 0; max ZCH per phase 6. nep90, nep76, long121 and the four climbed games: c's cycle never changes (ZCH 0); old-sense CYC 0 except 2 on
+  the n-48 nep90 descendant.
+
+## 9. Note: the term-by-term matches the Lead asked for (READING; elementary facts marked; not a packet)
+(a) R61 (b) SAT-k against CHAIN-COUNT's "≤ D values on every x-piece". NOT an exact match. SAT-k (RESULTS l. 3119-3121) gives κ_t(x) ∈ S_{x,p} + κ_t(p),
+|S_{x,p}| ≤ d_x, only at states t later than the w_c-th fallback of the p-run Θ_p containing t (and t > g_{w_c}, which FBK-N1 says is unused). A
+p-run ends whenever κ(p) changes, so inside one x-piece (p fixed) the states are partitioned by p's runs, and at the EARLY states of each p-run
+(before its w_c-th fallback) SAT-k says nothing. OFFSET-MONO still makes off(x; p) non-decreasing across the whole piece, so the LATE states of
+the piece carry at most d_x distinct offsets in total (PROVED, elementary: a monotone sequence whose late terms lie in a d_x-set), but the early
+states can carry other values in between. So CHAIN-COUNT applies with D = d_x to the late states only, and its count of κ(q)-changes then needs,
+in addition, the transitions at early states of some level's p-run: one early segment per p-run, i.e. per change of κ(p). That re-introduces
+a dependence on the PARENT's change count (a recursion, not yet a product, since each early segment is charged once to a change of κ(p), not to
+each value). Whether that recursion closes linearly (each κ(p)-change is itself a counted event of the same class) is the next step; I have
+not done it. R61's own V_q counts values at late FALLBACKS only, which avoids early segments by construction.
+(b) RESULTS R72's ROUTE / RELAY against EXIT ∪ same-exit offset rises. NOT the same partition. R72: a ρ event at q (q on no honest cycle at t,
+t + 1) is ROUTE if SOME successor y ∈ succ(q) ∩ U_c changes its class exit path or exit, RELAY otherwise (P-N5-CHOSEN l. 25-27). Mine look at
+q's CHOSEN option only (par(q) = the exit of σ̄(q), which is CHOSEN's chosen exit). Two elementary facts:
+- (b1) (PROVED, elementary, up to ties) a same-exit offset rise at q (par fixed, off(q; p) strictly up) is a ROUTE event: if no successor's class
+  exit path or exit changed, both chosen options y1, y2 exit at p with fixed paths, their offsets to p are fixed, κ-Y-FORM_D at t picked the
+  smaller (y1), so at t + 1 Odd's minimum is again y1 unless the two offsets tie; so off(q; p) cannot rise. Ties excepted.
+- (b2) an EXIT change at q can be a RELAY event: q switches between two options with unchanged paths and different exits because the exits'
+  values moved (the ping-pong of N5-NCONF §8 / P-N5-ROOT). So EXIT ⊄ ROUTE; R72 charges those to the chosen exit's own ρ event (CHOSEN), mine
+  counts them as EXIT_q. The two decompositions are complementary, not nested; neither yields a new statement here.
+
+## 10. Pointer (successor 29): §8 is frozen as docs/new/P-N5-OFFMONO-add-box49.md
+Remark Z-CONST, Corollary CHAIN-COUNT′ and Lemma ZCH-COUNT are restated with full proofs there; that addendum governs. Differences (its §5):
+the cut set is ZC_c = ZCH_c ∩ CYC_c (KPOLY's ZCH_c form follows); TIE requires N ≠ ∅; the bound is (n − 1)|U_c| + TIE_c + ODDC_c. DATA zch.py: 0
+violations on lib41 n ≤ 34 (746 phases, 133 cycle changes: STRICT 50, TIE 3, CEVEN 79, ODDC 1) and seven long instances; sign and exit controls bite.
+
+## 11. The cycle part of the count is polynomial without TIE_c / ODDC_c (PROVED, every game; DATA; queue item 3 (a); written 17:48Z by date -u)
+Setting as P-N5-OFFMONO-box49 §0 and P-N5-OFFMONO-add-box49 §0 (both frozen; not edited). F := {(0, s_c·ℓ) : 1 ≤ ℓ ≤ n − 1}; A_t := {z ∈ U_c ∖ {c} :
+P(Ξ_t z) = ∅} (the path-free vertices of the class). By (INJ) (R56 (a)), for z ∈ U_c ∖ {c}: z ∈ A_t ⇔ κ_t(z) ∈ F (M = 0 ⇔ P = ∅; ℓ ≥ 1 as z ≠ c).
+FT_c := the in-phase transitions of P at which some z ∈ U_c ∖ {c} has κ_t(z) ≠ κ_{t+1}(z) with κ_t(z) ∈ F or κ_{t+1}(z) ∈ F (an F-touching change).
+- Lemma FT-COUNT (PROVED, elementary). |FT_c| ≤ 2(n − 1)(|U_c| − 1). Proof: charge each FT transition to one z with an F-touching change. κ(z) is
+  non-decreasing on P ((M2κ)), so each value of F is left at most once and entered at most once: z takes at most 2|F| = 2(n − 1) charges. □
+- Remark FT-CONST (PROVED, elementary). At a transition not in FT_c: A_t = A_{t+1}, κ_t = κ_{t+1} on A_t ∪ {c}, and for x ∈ Z_t(c), x ≠ c, and
+  p := par_{t+1}(x): off_{t+1}(x; p) = off_t(x; p). Proof: z ∈ A_t has κ_t(z) ∈ F, so (no F-touching change) κ_{t+1}(z) = κ_t(z) ∈ F, z ∈ A_{t+1};
+  symmetrically; κ(c) = (0, 0) (A0κ). x ∈ A_t by (CYC-SHAPE), so x ∈ A_{t+1}; p lies on x's honest play at t + 1 (a suffix of a path-free play) or
+  p = c, so p ∈ A_{t+1} ∪ {c} = A_t ∪ {c}; both κ-values are unchanged. □ No tie-break of SPEC S1 is used.
+- Corollary CHAIN-COUNT″ (PROVED). P-N5-OFFMONO-add-box49 §2 (CHAIN-COUNT′, both forms) holds with ZC_c replaced by ZC″_c := CYC_c ∩ ZCH_c ∩ FT_c,
+  and |ZC″_c| ≤ min(|ZC_c|, 2(n − 1)(|U_c| − 1)). Proof: only Step A changes. At a transition not in ZC″_c and a level x on an honest cycle at t
+  (x ∈ Z_t(c) by (CYC-ID), so the transition is in CYC_c): it is not in ZCH_c (Remark Z-CONST: equality) or not in FT_c (Remark FT-CONST: equality).
+  Off-cycle levels: Lemma OFFSET-MONO. The rest of the proof is CHAIN-COUNT′'s word for word. □
+  So per phase and class, for every q ∈ Q ∩ U_c ∖ {c}: (κ(q)-changes) ≤ 2(n − 1)(|U_c| − 1) + Σ_x D·(|EXIT_x| + 2(n − 1)(|U_c| − 1) + 1). The cycle
+  part is polynomial UNCONDITIONALLY; TIE_c and ODDC_c are no longer needed on this route. What remains: EXIT_x per phase (L-SI 18) and D.
+- Lemma PF-CHOICE (PROVED from SPEC S1's procedure, as implemented in si.py Engine.evaluate l. 78-205; a reading of exact tie-breaks, so
+  referees should check it against the code). For an Odd x ∈ A_t: σ̄_t(x) is the argmin over y ∈ succ(x) ∩ (A_t ∪ {c}) of (κ_t(y), tb_t(y)), where
+  tb(y) := y's index if c is even, and the index sequence of y's honest path read from c (empty for c) if c is odd. Proof sketch: (i) path-free
+  ⇒ rank(x) < rank(c) (a vertex of rank > rank(c) carries its own bit). (ii) In S1 (iii)'s restricted graph, x keeps exactly its edges to
+  path-free successors in R = U_c (and to c): at an Even-liked u, x ∈ M (else x would get bit u), so restrict(x, M) cuts exactly the edges to
+  vertices outside M, which get bit u; a path-free y is in M and kept; at an Odd-liked u, x ∉ M, and any edge x → y with y ∈ M still present
+  would put x into M (reach(u, c) runs over predecessors), so such edges are already cut; x's edges are never touched there. (iii) c even:
+  longest path, first strict maximum in increasing index order: the least-index y maximising ℓ(y), i.e. minimising κ(y) = (0, −ℓ(y)). (iv) c
+  odd: BFS over predecessors in increasing index order; path-free vertices are discovered only from path-free vertices, so within a layer they
+  are ordered by (position of their BFS parent, index), i.e. by the lexicographic order of tb; the BFS parent is the earliest-ordered
+  successor at distance ℓ − 1, i.e. the argmin of (κ, tb). □
+- Corollary TIE-CHARGE (PROVED from PF-CHOICE). At a transition not in FT_c, next_{t+1} = next_t on A_t. Proof: A and κ on A ∪ {c} are unchanged
+  (FT-CONST); an Even z ∈ A switching would raise κ(z) strictly (addendum §3, (SW) + (M1κ) + (M2κ)), an F-touching change; for Odd z, induction
+  on ℓ: the κ-minimal options of z have ℓ = ℓ(z) − 1, their tb is fixed by next on smaller ℓ (induction), so the argmin of PF-CHOICE is the same. □
+  So every STRICT and every TIE transition is in FT_c: STRICT_c + TIE_c ≤ 2(n − 1)(|U_c| − 1). ODDC_c (c's own stack-DFS choice, S1 (v)) is NOT
+  bounded by this: c's DFS runs over all alive vertices of rank < rank(c), including non-path-free vertices of U_c whose Even switches are not
+  F-touching. ODDC_c stays OPEN, and by CHAIN-COUNT″ it is not needed.
+- DATA (experiments/new/box48/ft.py, tie.py, tieclimb.py; out/ft_*.txt, out/tie2_*.txt, out/tieclimb/):
+  - ft.py (FT-COUNT: FTB_V; FT-CONST: OC_V; CHAIN-COUNT″: PM_V, CC_V, CCD_V): lib41 n ≤ 34, S3 + 2, seed 7: FT 1,102, max per phase and class 29;
+    CYC 432; cut CYC ∩ FT (MUT=0) 270 transitions, cut CYC ∩ ZCH ∩ FT (MUT=5, the stated ZC″) 42 (against ZC = CYC ∩ ZCH 59 in the addendum);
+    every check 0 in both. Seven long instances (MUT=0 and MUT=5): FT ≤ 6, ZC″ 0, all checks 0. Controls
+    MUT=1 (no cut) and MUT=4 (one cut transition dropped) do not bite here, as in the addendum's MUT=1: the cut is needed by the proof, not shown
+    necessary by data.
+  - tie.py (PF-CHOICE: CHAR_V; TIE-CHARGE: FT_V; FT-COUNT: FTB_V): lib41: 2,523 characterisation checks, CHAR_V 0, FT_V 0 (1,102 transitions with
+    an A or next change on A, all F-touching), FTB_V 0. Controls bite: MUT=1 (index tie-break for both parities) CHAR_V 1, MUT=2 (path-sequence
+    tie-break for both) 55, MUT=3 (reversed index) 182. Events: the 3 TIEs (klcount_n16 / n18) all have c odd, v on Z_t(c), the old option's κ
+    strictly up, the new option tied at t; the ODDC (u3ev_n16) has the old option's M rising to 8192.
+  - tieclimb.py (4 climbs × 3,000 steps from u3ev_n16 / klcount_n16, n ≤ 24, objectives ODDC / TIE): best ODDC_c 1, best TIE_c 1 per phase and class;
+    292,764 characterisation checks on climbed games, CHAR_V / FT_V / FTB_V 0.
+
+## 12. Queue item 3 (b): §9 (a)'s recursion, measured; where the count really sits (READING; DATA; one DEAD guess; written 18:09Z by date -u)
+- (i) PROVED (elementary, a re-reading of P-N5-OFFMONO-add §2's sum form): the κ(q)-count needs NO recursion over the chain. By CHAIN-COUNT″'s
+  sum form, κ(q)-changes ≤ |ZC″_c| + Σ_{x ∈ Q_c} OR(x), OR(x) := the transitions at which off(x; par_{t+1}(x)) rises strictly (each κ(q)-change
+  is charged to one level x of its chain and one transition, injectively in the transition). The sum is ADDITIVE over levels and the same
+  for every q. §9 (a)'s recursion appears only if OR(x) is bounded THROUGH R61 (b) SAT-k, whose window is per p-run (one early segment per
+  κ(p)-change); that recursion, OR(x) ≤ A_x + E·(κ(p)-changes + 1) with κ(p)-changes ≤ |ZC″| + Σ_{x′ above x} OR(x′), is exponential in the
+  depth for every E ≥ 1 (OR(x_h) ~ (1 + E)^h). So it does NOT close linearly by itself; the way out is to bound OR(x) directly. ANSWER to (b): no.
+- (ii) DATA (experiments/new/box48/orun.py; out/orun_lib41_n34_k2.txt, out/orun_long7.txt): per x-piece (cut EXIT_x ∪ ZC″) and p-run inside it.
+  - R61 (b)'s late window is NEVER entered: LR = 0 (no strict offset rise after the w_c-th fallback of its p-run) in all 1,466 p-runs of lib41
+    n ≤ 34 (S3 + 2, seed 7) and all p-runs of the seven long instances (nep90, nep76, long121, three climbed n-40 games, the n-80 snap). Every
+    rise is EARLY. SAT-k's |S| ≤ d_x therefore bounds nothing that happens in these runs.
+  - The rises sit at DIRECT levels (p = c, off(x; c) = κ(x)): lib41 2,282 of 2,300 rises (relayed levels: 18, at most 2 per p-run); nep90 95 / 99;
+    long121 35 / 40; the n-80 snap 186 / 191; exception nep76 36 / 76 (relayed max 15 in one p-run). One p-run of a direct level carries up to
+    51 rises (lev_l_x n 32, d_x 14, no fallback AT a rising transition), so "≤ d_x values per p-run" (HA) fails 102 times on lib41.
+  - So the open quantity behind D is the number of κ-changes of DIRECT terminals inside a phase, mostly inside fallback-free runs (RESULTS R58
+    (d) DIR bounds a direct terminal's κ only after the phase's w_c-th fallback, a window these phases also rarely reach).
+- (iii) DEAD (successor 29's guess FRZ_c, a general-game form of RESULTS R50 (c) FRZ-U): "in a fallback-free run of a phase, M(κ(z)) is
+  constant for every z ∈ U_c ∖ {c} from the run's (|U_c| − 1)-th transition on". Killed by experiments/red/so/instances/so_th_n32.pg (L-RED; sha1
+  ae9126ad1bf963114bdd56b6e50c8c1cc571779e) from the S3 start: 31 late M-changes (out/frz_so_th_n32_S3.txt), one at a direct Odd choice vertex
+  (z = 3, c = 5 even, w = 31, at position 31 of a 33-transition run, M −50331648 → 16777216). Same on pftheta_cex_n32 (53) and
+  thclimb_n16_s12 (12). All violations on lib41 (frz.py: 128, 5 at direct terminals) are in classes with ONE Odd choice vertex, at positions w to
+  w + 2. Obstruction: R50 (c) freezes the route ABOVE m* (the more relevant of c_θ and the W-frame's c_w), not above c; between c and c_w the
+  path set may still move. The seven long instances have 0 late M-changes. OPEN: the right general-game frame (an m*_c per class).
+- (iv) So the route to G-N5-TIME through OFFMONO + CHAIN-COUNT″ now needs, per phase: EXIT_x (L-SI 18), OR(x) at relayed levels (small in
+  data) and the κ-changes of direct terminals (the bulk). The last is the multi-class analogue of what R50 / R51 settle on 𝒞^1O.
+- (Successor 29) §11 is frozen, with full proofs and the code-level part separated, as docs/new/P-N5-OFFMONO-add2-box49.md; that addendum governs.
+
+## 13. Record: QP_c on long phases (§0 and N5-NCONF §12 OPEN (1)) is answered by L-RED's R92 (DATA, not mine; written 18:24Z by date -u)
+docs/red/R92-qpc-ladder.md (l-red 1e851da4, L-RED successor 22; opened, §1-§2): the LADDER family (experiments/red/ul/mkladder.py k [ent]), n = 3k + 12,
+one phase with no fallback. D0 form: QP_c = k + 2 = D0, phase length k + 1; ENT form: QP_c = k, ENT = k − 1, N_ep = NCONF = k. One class (one
+Bellman-Ford clock read by every gate), so not disjoint copies. Counted with this lane's qp.py unmodified; phrestrict.py (RESTRICT_H) holds,
+its MUT=1 bites. So QP_c grows LINEARLY in n within one class, on phases of length ≈ n/3: not a long-phase growth law, and RESTRICT_H is a
+reduction, not a size bound (Lead's reading of 18:03Z). §0's DATA (QP_c 36 at n 80) is consistent with it.

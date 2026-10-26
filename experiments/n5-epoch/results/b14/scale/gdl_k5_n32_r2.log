@@ -1,0 +1,9 @@
+START fit (0, 1) n 32
+BEST step 603 fit (1, 2) t 4s
+BEST step 816 fit (2, 3) t 5s
+BEST step 1973 fit (2, 4) t 16s
+BEST step 2178 fit (3, 4) t 18s
+BEST step 4769 fit (3, 5) t 45s
+BEST step 4993 fit (4, 5) t 47s
+BEST step 15088 fit (5, 6) t 173s
+END steps 24448 best (5, 6) n 32 -> results/b14/scale/gdl_k5_n32_r2.pg

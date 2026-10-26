@@ -1,0 +1,63 @@
+nep90_n40: ER 99 HA 4 HB 11 HC 4 HC_DIR 4 HD 4 HE 0 KP 140 LR 0 OR 99 RFB 4 RR 99 RR_DIR 95 RR_REL 4 max_ER 68 max_OR 68 max_RR 68 max_RR_DIR 68 max_RR_REL 1 max_VR 69 phases 1 pieces 43 pruns 183 pruns_DIR 20 pruns_REL 163
+  top (RR ER LR RFB VR d_x len w n name): 68 68 0 0 69 18 87 39 40 /home/user/parity_games_challange/experiments/red/rec0/instances/nep90_n40.pg
+  top (RR ER LR RFB VR d_x len w n name): 7 7 0 0 8 2 14 39 40 /home/user/parity_games_challange/experiments/red/rec0/instances/nep90_n40.pg
+  top (RR ER LR RFB VR d_x len w n name): 5 5 0 0 6 3 17 39 40 /home/user/parity_games_challange/experiments/red/rec0/instances/nep90_n40.pg
+  top (RR ER LR RFB VR d_x len w n name): 3 3 0 0 4 2 12 39 40 /home/user/parity_games_challange/experiments/red/rec0/instances/nep90_n40.pg
+  top (RR ER LR RFB VR d_x len w n name): 2 2 0 0 3 18 4 39 40 /home/user/parity_games_challange/experiments/red/rec0/instances/nep90_n40.pg
+  top (RR ER LR RFB VR d_x len w n name): 2 2 0 0 3 3 18 39 40 /home/user/parity_games_challange/experiments/red/rec0/instances/nep90_n40.pg
+  top (RR ER LR RFB VR d_x len w n name): 2 2 0 0 3 3 18 39 40 /home/user/parity_games_challange/experiments/red/rec0/instances/nep90_n40.pg
+  top (RR ER LR RFB VR d_x len w n name): 2 2 0 0 3 3 18 39 40 /home/user/parity_games_challange/experiments/red/rec0/instances/nep90_n40.pg
+nep76_n40: ER 76 HA 3 HB 15 HC 3 HC_DIR 1 HC_REL 2 HD 0 HE 0 KP 41 LR 0 OR 76 RFB 0 RR 76 RR_DIR 36 RR_REL 40 max_ER 15 max_OR 15 max_RR 15 max_RR_DIR 11 max_RR_REL 15 max_VR 16 phases 1 pieces 51 pruns 92 pruns_DIR 20 pruns_REL 72
+  top (RR ER LR RFB VR d_x len w n name): 15 15 0 0 16 15 18 39 40 /home/user/parity_games_challange/experiments/n5-epoch/instances/nep76_n40.pg
+  top (RR ER LR RFB VR d_x len w n name): 15 15 0 0 16 15 18 39 40 /home/user/parity_games_challange/experiments/n5-epoch/instances/nep76_n40.pg
+  top (RR ER LR RFB VR d_x len w n name): 11 11 0 0 12 15 17 39 40 /home/user/parity_games_challange/experiments/n5-epoch/instances/nep76_n40.pg
+  top (RR ER LR RFB VR d_x len w n name): 11 11 0 0 12 15 17 39 40 /home/user/parity_games_challange/experiments/n5-epoch/instances/nep76_n40.pg
+  top (RR ER LR RFB VR d_x len w n name): 2 2 0 0 3 15 5 39 40 /home/user/parity_games_challange/experiments/n5-epoch/instances/nep76_n40.pg
+  top (RR ER LR RFB VR d_x len w n name): 2 2 0 0 3 5 9 39 40 /home/user/parity_games_challange/experiments/n5-epoch/instances/nep76_n40.pg
+  top (RR ER LR RFB VR d_x len w n name): 2 2 0 0 3 5 9 39 40 /home/user/parity_games_challange/experiments/n5-epoch/instances/nep76_n40.pg
+  top (RR ER LR RFB VR d_x len w n name): 2 2 0 0 3 5 6 39 40 /home/user/parity_games_challange/experiments/n5-epoch/instances/nep76_n40.pg
+long121_n40: ER 40 HA 2 HB 15 HC 2 HC_DIR 2 HD 2 HE 0 KP 29 LR 0 OR 41 RFB 0 RR 40 RR_DIR 35 RR_REL 5 max_ER 10 max_OR 10 max_RR 10 max_RR_DIR 10 max_RR_REL 1 max_VR 11 phases 1 pieces 43 pruns 72 pruns_DIR 18 pruns_REL 54
+  top (RR ER LR RFB VR d_x len w n name): 10 10 0 0 11 5 46 39 40 /home/user/parity_games_challange/experiments/red/n3/instances/long121_n40.pg
+  top (RR ER LR RFB VR d_x len w n name): 10 10 0 0 11 5 46 39 40 /home/user/parity_games_challange/experiments/red/n3/instances/long121_n40.pg
+  top (RR ER LR RFB VR d_x len w n name): 3 3 0 0 4 5 11 39 40 /home/user/parity_games_challange/experiments/red/n3/instances/long121_n40.pg
+  top (RR ER LR RFB VR d_x len w n name): 2 2 0 0 3 5 6 39 40 /home/user/parity_games_challange/experiments/red/n3/instances/long121_n40.pg
+  top (RR ER LR RFB VR d_x len w n name): 2 2 0 0 3 3 9 39 40 /home/user/parity_games_challange/experiments/red/n3/instances/long121_n40.pg
+  top (RR ER LR RFB VR d_x len w n name): 2 2 0 0 3 3 9 39 40 /home/user/parity_games_challange/experiments/red/n3/instances/long121_n40.pg
+  top (RR ER LR RFB VR d_x len w n name): 1 1 0 0 2 5 3 39 40 /home/user/parity_games_challange/experiments/red/n3/instances/long121_n40.pg
+  top (RR ER LR RFB VR d_x len w n name): 1 1 0 0 2 4 16 39 40 /home/user/parity_games_challange/experiments/red/n3/instances/long121_n40.pg
+best_qpc_nep90_n40_s51: ER 120 HA 10 HB 32 HC 10 HC_DIR 10 HD 8 HE 0 KP 267 LR 0 OR 120 RFB 0 RR 120 RR_DIR 118 RR_REL 2 max_ER 14 max_OR 14 max_RR 14 max_RR_DIR 14 max_RR_REL 1 max_VR 15 phases 2 pieces 131 pruns 398 pruns_DIR 51 pruns_REL 347
+  top (RR ER LR RFB VR d_x len w n name): 14 14 0 0 15 4 43 47 48 out/qpcclimb/best_qpc_nep90_n40_s51.pg
+  top (RR ER LR RFB VR d_x len w n name): 10 10 0 0 11 4 38 47 48 out/qpcclimb/best_qpc_nep90_n40_s51.pg
+  top (RR ER LR RFB VR d_x len w n name): 10 10 0 0 11 2 49 47 48 out/qpcclimb/best_qpc_nep90_n40_s51.pg
+  top (RR ER LR RFB VR d_x len w n name): 9 9 0 0 10 16 14 47 48 out/qpcclimb/best_qpc_nep90_n40_s51.pg
+  top (RR ER LR RFB VR d_x len w n name): 7 7 0 0 8 16 12 47 48 out/qpcclimb/best_qpc_nep90_n40_s51.pg
+  top (RR ER LR RFB VR d_x len w n name): 6 6 0 0 7 2 28 47 48 out/qpcclimb/best_qpc_nep90_n40_s51.pg
+  top (RR ER LR RFB VR d_x len w n name): 6 6 0 0 7 2 14 47 48 out/qpcclimb/best_qpc_nep90_n40_s51.pg
+  top (RR ER LR RFB VR d_x len w n name): 5 5 0 0 6 16 9 47 48 out/qpcclimb/best_qpc_nep90_n40_s51.pg
+best_qpc_nep76_n40_s52: ER 90 HA 9 HB 23 HC 9 HC_DIR 9 HD 8 HE 0 KP 140 LR 0 OR 91 RFB 2 RR 90 RR_DIR 82 RR_REL 8 max_ER 12 max_OR 12 max_RR 12 max_RR_DIR 12 max_RR_REL 2 max_VR 13 phases 1 pieces 75 pruns 215 pruns_DIR 29 pruns_REL 186
+  top (RR ER LR RFB VR d_x len w n name): 12 12 0 0 13 13 22 47 48 out/qpcclimb/best_qpc_nep76_n40_s52.pg
+  top (RR ER LR RFB VR d_x len w n name): 11 11 0 0 12 13 22 47 48 out/qpcclimb/best_qpc_nep76_n40_s52.pg
+  top (RR ER LR RFB VR d_x len w n name): 6 6 0 0 7 13 14 47 48 out/qpcclimb/best_qpc_nep76_n40_s52.pg
+  top (RR ER LR RFB VR d_x len w n name): 6 6 0 0 7 3 29 47 48 out/qpcclimb/best_qpc_nep76_n40_s52.pg
+  top (RR ER LR RFB VR d_x len w n name): 5 5 0 0 6 3 29 47 48 out/qpcclimb/best_qpc_nep76_n40_s52.pg
+  top (RR ER LR RFB VR d_x len w n name): 5 5 0 0 6 3 20 47 48 out/qpcclimb/best_qpc_nep76_n40_s52.pg
+  top (RR ER LR RFB VR d_x len w n name): 5 5 0 0 6 2 35 47 48 out/qpcclimb/best_qpc_nep76_n40_s52.pg
+  top (RR ER LR RFB VR d_x len w n name): 5 5 0 0 6 2 34 47 48 out/qpcclimb/best_qpc_nep76_n40_s52.pg
+best_qpc_long121_n40_s53: ER 84 HA 10 HB 16 HC 10 HC_DIR 10 HD 6 HE 0 KP 98 LR 0 OR 87 RFB 0 RR 84 RR_DIR 81 RR_REL 3 max_ER 21 max_OR 21 max_RR 21 max_RR_DIR 21 max_RR_REL 1 max_VR 22 phases 1 pieces 97 pruns 195 pruns_DIR 31 pruns_REL 164
+  top (RR ER LR RFB VR d_x len w n name): 21 21 0 0 22 4 106 47 48 out/qpcclimb/best_qpc_long121_n40_s53.pg
+  top (RR ER LR RFB VR d_x len w n name): 19 19 0 0 20 2 106 47 48 out/qpcclimb/best_qpc_long121_n40_s53.pg
+  top (RR ER LR RFB VR d_x len w n name): 6 6 0 0 7 2 28 47 48 out/qpcclimb/best_qpc_long121_n40_s53.pg
+  top (RR ER LR RFB VR d_x len w n name): 5 5 0 0 6 3 22 47 48 out/qpcclimb/best_qpc_long121_n40_s53.pg
+  top (RR ER LR RFB VR d_x len w n name): 4 4 0 0 5 3 12 47 48 out/qpcclimb/best_qpc_long121_n40_s53.pg
+  top (RR ER LR RFB VR d_x len w n name): 4 4 0 0 5 3 12 47 48 out/qpcclimb/best_qpc_long121_n40_s53.pg
+  top (RR ER LR RFB VR d_x len w n name): 2 2 0 0 3 4 14 47 48 out/qpcclimb/best_qpc_long121_n40_s53.pg
+  top (RR ER LR RFB VR d_x len w n name): 2 2 0 0 3 3 80 47 48 out/qpcclimb/best_qpc_long121_n40_s53.pg
+snap_n80_s62: ER 191 HA 21 HB 38 HC 21 HC_DIR 21 HD 17 HE 0 KP 733 LR 0 OR 193 RFB 4 RR 191 RR_DIR 186 RR_REL 5 max_ER 15 max_OR 15 max_RR 15 max_RR_DIR 15 max_RR_REL 1 max_VR 16 phases 1 pieces 240 pruns 973 pruns_DIR 85 pruns_REL 888
+  top (RR ER LR RFB VR d_x len w n name): 15 15 0 0 16 17 23 79 80 out/qpcclimb/scale/snap_n80_s62.pg
+  top (RR ER LR RFB VR d_x len w n name): 15 15 0 0 16 17 23 79 80 out/qpcclimb/scale/snap_n80_s62.pg
+  top (RR ER LR RFB VR d_x len w n name): 12 12 0 0 13 2 44 79 80 out/qpcclimb/scale/snap_n80_s62.pg
+  top (RR ER LR RFB VR d_x len w n name): 10 10 0 0 11 2 50 79 80 out/qpcclimb/scale/snap_n80_s62.pg
+  top (RR ER LR RFB VR d_x len w n name): 8 8 0 0 9 2 50 79 80 out/qpcclimb/scale/snap_n80_s62.pg
+  top (RR ER LR RFB VR d_x len w n name): 7 7 0 0 8 4 42 79 80 out/qpcclimb/scale/snap_n80_s62.pg
+  top (RR ER LR RFB VR d_x len w n name): 7 7 0 0 8 2 54 79 80 out/qpcclimb/scale/snap_n80_s62.pg
+  top (RR ER LR RFB VR d_x len w n name): 6 6 0 0 7 17 11 79 80 out/qpcclimb/scale/snap_n80_s62.pg

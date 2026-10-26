@@ -553,3 +553,51 @@ P-N5-FBC-box47 32d3776cf4090fb15c1d0cb4c8b4f59276f64e21.
   merge trunk with --no-ff before reading anything as truth; re-measure frozen packets by sha1sum. Carried: referee files read at the commit
   holding their §C (REV:FILE) when trunk lags; per-epoch counts carry "+ 1" (G-EPR-1); `scripts/push.sh > file 2>&1; echo $?`;
   "[p]ython3 name" in pgrep/pkill; ReadNotifications before acting; date -u in the same command that writes a stamp.
+
+## Successor 29 (Opus 5.5; written 2026-10-26T17:17Z by date -u)
+Predecessor: successor 28, session_01Dg8L3iN3G8HVzEVoGgCE1Y, parked at l-new 083354a2 (FINAL resume point + Things only I know).
+
+### 1. Branch, head, ahead/behind trunk (claude/vibrant-johnson-nxvvxo)
+- Branch claude/l-new. STALE container again: local HEAD 5961101a (successor 6) with `git status` "up to date" (stale remote-tracking ref).
+  `git fetch origin claude/l-new claude/vibrant-johnson-nxvvxo`; `git merge --ff-only origin/claude/l-new` → HEAD 083354a2.
+- Trunk head a5bc809f ("Lead: R91 UL_C kill logged and routed; hourly sweep 17:10Z; merges; NOW; log", 17:08:58Z). Before merging:
+  `git rev-list --left-right --count HEAD...trunk` = **2 ahead / 16 behind**, merge-base 1f816370 (unmerged: 331f0337 KPOLY §8/§9, 083354a2 handover).
+- `git merge --no-ff` trunk (no conflicts, no rebase) → e77d3c79: 3 ahead / 0 behind; 4 ahead after this commit.
+
+### 2. Open work and the next step of each
+Nothing running (`pgrep -fa "[p]ython3"`: none of mine). Oink was NOT built (tools/oink/build absent); `scripts/setup_oink.sh` run in this step:
+rc 0, "oink built at 8fbf0a7" (oink, verify, tc, tc+, counter_*, rngame present). Frozen packets re-measured by sha1sum: P-N5-OFFMONO-box49
+d9705ac6cede9849d68bf9b8d0fc5c54ab6fc3c4, P-N5-EPC-box48 9f48ded742d7f44bbf82ae8ec9e0e88c46457700, P-N5-RESTRICT-box48 48c63a8e45c0288678805195a91f9c00ee703da9.
+- **(1) P-N5-EPC-fixes-box48** (repairs only). On trunk: docs/referee/R-N5-EPC.md (report a52feb43 + data addendum 58fd9535; EPC-N1..N4),
+  docs/referee-2/R2-N5-EPC.md (report 62b72f6e; N-EPC-1..6). Both §Cs asked at 17:02Z, not yet in. Next step: wait for the Lead's word that
+  both §Cs are in; then build on the P-N5-FBC-fixes-box47 template, quotes checked by experiments/new/box48/quotecheck2.py (REV:FILE at each §C commit).
+- **(2) P-N5-OFFMONO-add-box49** (addendum, to be reviewed with OFFMONO): Remark Z-CONST, Corollary CHAIN-COUNT′, Lemma ZCH-COUNT from KPOLY §8
+  (l-new 331f0337). Next step (after "go"): write it with exact premises naming LANDED entries, P-N5-OFFMONO items cited by name, DATA (cyc.py)
+  labelled, READING separate, quotes checked; freeze and report the sha1.
+- **(3) KPOLY OPEN items**: (a) TIE_c / ODDC_c per phase (R61's tie / cyc kinds); (b) KPOLY §9 (a)'s recursion on the parent's change count —
+  does it close linearly? EXIT_x per phase is L-SI 18's; not duplicated. Next step: measure TIE_c / ODDC_c per phase on the cyc.py corpus, then try a bound.
+- **(4) Fixes files for OFFMONO (+ addendum) and RESTRICT** after their reviews; RESTRICT's carries successor 28's §4 correction
+  (§4's first READING is uninformative on nep90/nep76/long121, |Q| = 5/5/3). Next step: none until the reports.
+- Not routed: G-N1-LB.
+
+### 3. docs/GAPS.md rows I own (merged HEAD e77d3c79 = trunk a5bc809f + l-new, `grep -n L-NEW docs/GAPS.md`)
+- **G-N5-TIME** (l.11): major; "L-NEW (L-LIT T22; referees later)"; **open**. Latest landings recorded there: R70 (HONFF), R71 (FBC), R72 (CHOSEN).
+- **G-N1-LB** (l.10): minor; "L-NEW (optional; not routed)"; **open**.
+- **G-N5-TERM** (l.16): major; "L-NEW (L-COMP checks runs)"; **closed** (RESULTS R15).
+
+### 4. Three owner rulings that most constrain me (verbatim, docs/DECISIONS.md), with DECISIONS-INDEX status
+1. D18 (DECISIONS l.333; INDEX l.32 **active**; Lead reading L40, l.33 active):
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+2. D14 (l.245-246; INDEX l.22 **active**; Lead reading L35, l.23 active):
+   > D
+   > You know it can also test prveiously not tested approaches, it can come up with it own as well
+3. D16 (l.300; INDEX l.28 **active**; Lead reading L38, l.29 active):
+   > Then keep working as I told you to
+
+### 5. One trap, and the check that prevents it
+- **Trap**: the stale container, every restart (again here: local 5961101a, 3,000+ commits old, while `git status` said "up to date").
+  Acting on it would mean editing a stale notebook and missing KPOLY §8/§9, the OFFMONO freeze and R71/R72.
+- **Check**: fetch both branches explicitly, `git merge --ff-only origin/claude/l-new`, `git rev-list --left-right --count` against trunk,
+  merge trunk with --no-ff before reading anything as truth; re-measure frozen packets by sha1sum. Carried: κ length sign per class (s_c = +1
+  iff Ω(c) odd; a global sign fakes violations); referee files read at their §C commit (REV:FILE) when trunk lags; per-epoch counts carry "+ 1";
+  `scripts/push.sh > file 2>&1; echo $?`; "[p]ython3 name" in pgrep/pkill, launched and killed in separate calls; ReadNotifications before acting.

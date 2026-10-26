@@ -1,0 +1,67 @@
+== red/rec0/instances/nep90_n40.pg si/rund/instances/nep90_n40.start
+acyc_b=2 checked=2 cyc_const=2 dstar_max=22 intervals=2 len_max=1 len_minus_n1_max_plus1000=962 pure_b=1
+STATICDEPTH PASS
+== GCI
+acyc_b=2 checked=2 cyc_const=2 dstar_max=22 gci=10 gci_len_max=1 gci_len_minus_n1_max_plus1000=962 gci_sbchg=8 gci_sbchg_len_max=1 gci_sbconst=2 intervals=2 len_max=1 len_minus_n1_max_plus1000=962 pure_b=1
+STATICDEPTH PASS
+== n5-epoch/instances/nep76_n40.pg n5-epoch/instances/nep76_n40.start
+acyc_b=1 checked=1 cyc_const=1 dstar_max=21 intervals=1 len_max=1 len_minus_n1_max_plus1000=962 pure_b=1
+STATICDEPTH PASS
+== GCI
+acyc_b=1 checked=1 cyc_const=1 dstar_max=21 gci=9 gci_len_max=1 gci_len_minus_n1_max_plus1000=962 gci_sbchg=8 gci_sbchg_len_max=1 gci_sbconst=1 intervals=1 len_max=1 len_minus_n1_max_plus1000=962 pure_b=1
+STATICDEPTH PASS
+== new/box48/instances/long121_n40.pg new/box48/instances/long121_n40.start
+acyc_b=28 checked=28 cyc_const=28 dstar_max=27 intervals=28 len_max=6 len_minus_n1_max_plus1000=967 pure_b=8
+STATICDEPTH PASS
+== GCI
+acyc_b=27 checked=27 cyc_const=27 dstar_max=27 gci=29 gci_len_max=6 gci_len_minus_n1_max_plus1000=967 gci_sbchg=2 gci_sbchg_len_max=6 gci_sbconst=27 intervals=27 len_max=6 len_minus_n1_max_plus1000=967 pure_b=7
+STATICDEPTH PASS
+== new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.pg new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.start
+acyc_b=19 checked=19 cyc_const=19 dstar_max=24 intervals=19 len_max=2 len_minus_n1_max_plus1000=939 pure_b=7
+STATICDEPTH PASS
+== GCI
+acyc_b=12 checked=12 cyc_const=12 dstar_max=24 gci=14 gci_len_max=2 gci_len_minus_n1_max_plus1000=939 gci_sbchg=2 gci_sbchg_len_max=2 gci_sbconst=12 intervals=12 len_max=1 len_minus_n1_max_plus1000=938 pure_b=3
+STATICDEPTH PASS
+== new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.pg new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.start
+acyc_b=11 checked=11 cyc_const=11 dstar_max=24 intervals=11 len_max=1 len_minus_n1_max_plus1000=938 pure_b=3
+STATICDEPTH PASS
+== GCI
+acyc_b=11 checked=11 cyc_const=11 dstar_max=24 gci=11 gci_len_max=1 gci_len_minus_n1_max_plus1000=938 gci_sbconst=11 intervals=11 len_max=1 len_minus_n1_max_plus1000=938 pure_b=3
+STATICDEPTH PASS
+== new/box48/out/qpcclimb/scale/snap_n80_s62.pg new/box48/out/qpcclimb/scale/snap_n80_s62.start
+acyc_b=13 acyc_fail=1 checked=13 cyc_const=14 dstar_max=25 intervals=14 len_max=4 len_minus_n1_max_plus1000=925 pure_b=1
+STATICDEPTH PASS
+== GCI
+acyc_b=9 checked=9 cyc_const=9 dstar_max=25 gci=12 gci_len_max=4 gci_len_minus_n1_max_plus1000=925 gci_sbchg=3 gci_sbchg_len_max=2 gci_sbconst=9 intervals=9 len_max=4 len_minus_n1_max_plus1000=925 pure_b=1
+STATICDEPTH PASS
+== red/usplit/instances/pp_K12_n161.pg red/usplit/instances/pp_K12_n161.start
+acyc_b=2 checked=2 cyc_const=2 dstar_max=21 intervals=2 len_max=3 len_minus_n1_max_plus1000=843 pure_b=0
+STATICDEPTH PASS
+== GCI
+gci=1 gci_len_max=17 gci_len_minus_n1_max_plus1000=857 gci_sbchg=1 gci_sbchg_len_max=17
+STATICDEPTH PASS
+== red/usplit/instances/gate_K16_n197.pg red/usplit/instances/gate_K16_n197.start
+acyc_b=3 checked=3 cyc_const=3 dstar_max=27 intervals=3 len_max=3 len_minus_n1_max_plus1000=807 pure_b=2
+STATICDEPTH PASS
+== GCI
+acyc_b=3 checked=3 cyc_const=3 dstar_max=27 gci=3 gci_len_max=3 gci_len_minus_n1_max_plus1000=807 gci_sbconst=3 intervals=3 len_max=3 len_minus_n1_max_plus1000=807 pure_b=2
+STATICDEPTH PASS
+== /tmp/claude-0/-home-user-parity-games-challange/6822c6f3-2acb-56a2-b058-d29353e9490e/scratchpad/red_ul/reader_L10_n36.pg /tmp/claude-0/-home-user-parity-games-challange/6822c6f3-2acb-56a2-b058-d29353e9490e/scratchpad/red_ul/reader_L10_n36.start
+acyc_b=1 acyc_fail=1 checked=1 cyc_const=1 dstar_max=16 intervals=2 len_max=11 len_minus_n1_max_plus1000=976 pure_b=1
+STATICDEPTH PASS
+== GCI
+acyc_b=1 acyc_fail=1 checked=1 cyc_const=1 dstar_max=16 gci=2 gci_len_max=11 gci_len_minus_n1_max_plus1000=976 gci_sbconst=2 intervals=2 len_max=11 len_minus_n1_max_plus1000=976 pure_b=1
+STATICDEPTH PASS
+== /tmp/claude-0/-home-user-parity-games-challange/6822c6f3-2acb-56a2-b058-d29353e9490e/scratchpad/red_ul/reader_L20_n56.pg /tmp/claude-0/-home-user-parity-games-challange/6822c6f3-2acb-56a2-b058-d29353e9490e/scratchpad/red_ul/reader_L20_n56.start
+acyc_b=1 acyc_fail=1 checked=1 cyc_const=1 dstar_max=26 intervals=2 len_max=21 len_minus_n1_max_plus1000=966 pure_b=1
+STATICDEPTH PASS
+== GCI
+acyc_b=1 acyc_fail=1 checked=1 cyc_const=1 dstar_max=26 gci=2 gci_len_max=21 gci_len_minus_n1_max_plus1000=966 gci_sbconst=2 intervals=2 len_max=21 len_minus_n1_max_plus1000=966 pure_b=1
+STATICDEPTH PASS
+== /tmp/claude-0/-home-user-parity-games-challange/6822c6f3-2acb-56a2-b058-d29353e9490e/scratchpad/red_ul/reader_L40_n96.pg /tmp/claude-0/-home-user-parity-games-challange/6822c6f3-2acb-56a2-b058-d29353e9490e/scratchpad/red_ul/reader_L40_n96.start
+acyc_b=1 acyc_fail=1 checked=1 cyc_const=1 dstar_max=46 intervals=2 len_max=41 len_minus_n1_max_plus1000=946 pure_b=1
+STATICDEPTH PASS
+== GCI
+acyc_b=1 acyc_fail=1 checked=1 cyc_const=1 dstar_max=46 gci=2 gci_len_max=41 gci_len_minus_n1_max_plus1000=946 gci_sbconst=2 intervals=2 len_max=41 len_minus_n1_max_plus1000=946 pure_b=1
+STATICDEPTH PASS
+rc 0
