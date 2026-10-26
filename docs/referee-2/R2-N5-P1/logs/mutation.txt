@@ -1,0 +1,2 @@
+mutation 1 (flipped odd rule): Lemma B mismatches 20
+mutation 2 (coarse 'improving', lengths dropped): strategies with no coarse-improving edge that are not optimal 13466

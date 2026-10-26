@@ -1,0 +1,17 @@
+A0_checks: 684
+FACTB_pairs: 2780
+KWS_stretches: 69
+PAR_states_cw_above_cth: 3
+PHASE_checked: 8
+phases: 8
+runs: 3
+states: 69
+states_checked: 69
+stretches: 69
+max_KW_per_stretch: 0
+max_T_per_phase: 21
+max_Trel_per_phase: 21
+max_f_per_phase: 0
+max_stretches_per_phase: 22
+RESULT OK violations=0
+experiments/red/so/instances/xrun21_n24.pg exit 0

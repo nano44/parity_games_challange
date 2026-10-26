@@ -1,0 +1,8 @@
+experiments/n5-exhaustive/instances/b6_xl2_n32.pg  44
+experiments/n5-exhaustive/instances/b6_xl2_n32.pg --rand 42
+experiments/n5-exhaustive/instances/b6_xl_n32.pg  42
+experiments/n5-exhaustive/instances/b6_xl_n32.pg --rand 21
+experiments/n5-exhaustive/instances/b6_xl_n40.pg  32
+experiments/n5-exhaustive/instances/b6_xl_n40.pg --rand 24
+experiments/n5-exhaustive/instances/b6_xl_n48.pg  38
+experiments/n5-exhaustive/instances/b6_xl_n48.pg --rand 35

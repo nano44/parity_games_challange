@@ -1,0 +1,23 @@
+## climbs (4 x 1200 s; own + rand traces; sums over all evaluations)
+  BF: 253292
+  FZ: 3381651
+  NJBA_intervals_r_gt_M: 122272
+  RB: 179506
+  RECORD_no_rise_threat_meets_Ev: 2384
+  RECORD_rise_after_fallback_with_r_gt_L: 26665
+  RECORD_rise_with_no_next_fallback_in_S: 26665
+  SIGMA_pairs: 134200
+  SIGMA_with_M_k=L: 122272
+  SIGMA_without_rise: 134200
+  WALK: 313814
+  WALK_c_low_tail: 299987
+  blocks: 42461
+  climb_evaluations: 15509
+  intervals: 123553
+  intervals_r_le_M_from_start: 1281
+  runs: 62036
+  scope_runs: 58120
+  states: 783271
+  max_D_M: 0
+  max_block_size: 17
+  max_fallbacks_ge0_per_scope_run: 17

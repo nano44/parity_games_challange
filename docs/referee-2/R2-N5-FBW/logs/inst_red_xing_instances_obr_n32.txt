@@ -1,0 +1,12 @@
+CLS2_EQ: 3
+CLS2_fallbacks: 3
+FBWS_fallbacks: 3
+FBW_case_b: 3
+FBW_gates: 10
+FBW_l>delta: 3
+POPT_single_switch_checks: 118
+even_fallbacks: 4
+runs: 3
+scope_runs: 3
+transitions: 35
+RESULT OK violations=0

@@ -1,0 +1,10 @@
+blocks: 1
+blocks_with_r<=M_somewhere (PL (c) hypothesis fails; PL (c') covers): 1
+fallbacks: 1
+runs: 3
+scope_fallbacks: 1
+scope_runs: 2
+transitions: 47
+max_D_M: 0
+max_block_N: 1
+RESULT OK violations=0

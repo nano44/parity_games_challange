@@ -1,0 +1,1 @@
+TOTAL {'fb': 3, 'ev_size': 3, 'states': 70, 'thr_ev': 3, 'post_rise': 64}

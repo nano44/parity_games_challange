@@ -3,7 +3,11 @@
 Fitness = (max J in one phase, total in-phase J, in-phase fallbacks); with JMODE=REL, (#in-scope non-tame transitions whose argmin was
 released into D at an earlier fallback of the same scope run, J_in, releases into D) (dpot.py; the part of Corollary JD paid by releases). o-cyclic 𝒞^1O only (one Odd choice vertex, asserted; mutation
 operator and o-cyclicity test from experiments/new/box21/climb_fix.py and box25/pureY.py, read-only, as in xing/clclimb.py).
-Usage: [JMODE=REL|CLS|CLS2|RF] jclimb.py seed secs OUT seed.pg      (writes OUT.pg on every improvement; re-verify bests with xing/reverify.sh)"""
+Box 9: JMODE=HEQ (FBW violations; in-scope u* = none / EQ fallbacks; Even fallbacks), JMODE=REP (reltrace.py violations;
+tail repeats + θ-changes above M inside a level-M block; block fallbacks).
+JMODE=NORF (norf.py violations + fallbacks after a rise; states checked after a rise; rises).
+JMODE=MINSET (NJB violations = Mn emptied inside a block; Mn absorptions + intervals reaching |Mn| = 1; intervals).
+Usage: [JMODE=REL|CLS|CLS2|RF|HEQ|REP|NORF|MINSET] jclimb.py seed secs OUT seed.pg      (writes OUT.pg on every improvement; re-verify bests with xing/reverify.sh)"""
 import sys, os, random, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from tame import *
@@ -11,6 +15,10 @@ from dpot import scan_d
 from clscope import scan_c
 from cls2 import scan2
 from rfinv import scan_r
+from fbw import scan_w
+from reltrace import scan_rel
+from norf import scan_n
+from minset import scan_m
 MODE = os.environ.get("JMODE", "J")   # J: (max J per phase, J, fb); REL: (#jumps paid by a release (REL-NJ failures), J_in, releases)
 sys.path.insert(0, os.path.join(ROOT, "experiments/new/box21")); sys.path.insert(0, os.path.join(ROOT, "experiments/new/box25"))
 from climb_fix import mutate
@@ -32,6 +40,20 @@ def fit(G):
             c, _ = scan_c(g, "climb"); r, _ = scan_r(g, "climb")
             v = c["mono_viol"] + c["perlevel_viol"] + r.get("RF_viol", 0) + r.get("FF_viol", 0) + r.get("F_viol", 0) + r.get("LEAVE_viol", 0)
             return (v, min(r.get("highRbar", 0), 20) + 5 * min(r.get("leave_ar", 0), 4), c["fb"])
+        if MODE == "HEQ":
+            c, _ = scan_w(g, "climb")
+            v = c.get("a_viol", 0) + c.get("b_viol", 0) + c.get("W_viol", 0) + c.get("premise_fail", 0) + c.get("scope_viol", 0)
+            return (v, 5 * c.get("scope_THR0", 0) + c.get("scope_EQ", 0), c.get("fbE", 0))
+        if MODE == "REP":
+            c, _ = scan_rel(g, "climb")
+            v = sum(c.get(k, 0) for k in ("absl_viol", "rela_viol", "flat_viol", "onerise_viol", "consec_viol"))
+            return (v, max(c.get("max_rep", 0) - 1, 0) + c.get("blk_A", 0), c.get("blk_fb", 0))
+        if MODE == "NORF":
+            c, _ = scan_n(g, "climb")
+            return (c.get("old_viol", 0) + c.get("new_viol", 0) + c.get("fb_after_rise", 0), c.get("chk", 0), c.get("rises", 0))
+        if MODE == "MINSET":
+            c, _ = scan_m(g, "climb")
+            return (c.get("njb_viol", 0) + c.get("minset_c_mismatch", 0), 5 * c.get("absorbed", 0) + c.get("min_le1", 0), c.get("intervals", 0))
         if MODE == "REL":
             c, _ = scan_d(g)
             return (c["relnj_viol"], c["J_in"], c["rel_fb"])

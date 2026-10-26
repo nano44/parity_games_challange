@@ -1,0 +1,17 @@
+CN_cases                       21
+EX_kind_ct                     1509
+EX_kind_o                      28
+FBCAP_excess_max_U12           0
+FBCAP_excess_max_U3plus        -1
+KH_chk                         531
+KP_chk                         331
+SU_nonempty                    639
+TA_changes_max                 0
+TA_phases                      25
+f_max                          33
+fallbacks                      660
+games                          253
+phases                         990
+phases_c_eq_o_U2               4
+skip_not_c1o                   159
+FAILS 0

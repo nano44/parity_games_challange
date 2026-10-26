@@ -1,0 +1,11 @@
+## climbs (4 x 1200 s; own + rand traces; sums over all evaluations)
+  RECORD_inscope_fallbacks_EQ_M=-1: 613
+  RECORD_inscope_fallbacks_THR_r=-1_M=-1: 173371
+  RECORD_inscope_fallbacks_THR_r>=0_M>=0: 449812
+  SHAPE_alpha: 209
+  SHAPE_beta: 1037532
+  SHAPE_gamma: 2
+  SHAPE_gates: 1037743
+  climb_evaluations: 212652
+  runs: 850608
+  states: 4097234

@@ -1,0 +1,8 @@
+HN_stretches: 179
+OUT1_phases: 30
+bases_caseB_cw!=o_tau!=o: 1
+runs: 2000
+states: 6564
+max_LR_S: 0
+max_breaks_per_stretch: 0
+RESULT OK violations=0

@@ -1,0 +1,19 @@
+H2S_steps: 5
+H3C_H2_states: 19
+H3C_phases_with_h: 3
+RC_notH1_pairs: 10
+RC_notH1_states: 13
+STEP1'_H3_states: 19
+STEP2'_checks: 416
+XR'_runs: 3
+fallbacks: 2
+phases: 9
+runs: 3
+transitions: 49
+HI_max_theta_changes_on_I: 0
+ONE-DROP_max_drops_per_phase (sec.8, no claim): 0
+ONE-H_max_h_runs_per_phase (sec.8, no claim): 1
+XR'_max_C: 7
+XR'_max_REL_Q: 0
+XR'_max_toggles_t_Q: 0
+RESULT OK violations=0

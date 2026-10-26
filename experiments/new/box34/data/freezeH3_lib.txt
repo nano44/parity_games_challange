@@ -1,0 +1,4 @@
+X2_intervals 26
+freeze_state_checks 3532
+freezes 183
+max_theta_vals (2, 4, 'b6_xl2_n32.pg', 28)

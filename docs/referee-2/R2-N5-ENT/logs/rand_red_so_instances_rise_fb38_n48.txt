@@ -1,0 +1,10 @@
+blocks: 4
+intervals: 57
+intervals_r_le_M_from_start: 57
+runs: 3
+scope_runs: 4
+states: 140
+max_D_M: 0
+max_block_size: 34
+max_fallbacks_ge0_per_scope_run: 37
+RESULT OK violations=0

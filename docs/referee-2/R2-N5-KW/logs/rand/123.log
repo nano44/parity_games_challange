@@ -1,0 +1,15 @@
+A0_checks: 22
+KWS_stretches: 8
+PHASE_checked: 3
+phases: 3
+runs: 3
+states: 8
+states_checked: 8
+stretches: 8
+max_KW_per_stretch: 0
+max_T_per_phase: 2
+max_Trel_per_phase: 1
+max_f_per_phase: 0
+max_stretches_per_phase: 3
+RESULT OK violations=0
+docs/referee-2/R2-N5-SN/climb/drop_a_best.pg exit 0

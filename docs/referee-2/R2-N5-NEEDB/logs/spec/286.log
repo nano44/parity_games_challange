@@ -1,0 +1,16 @@
+ANTIW_blocked_edges: 305
+ANTI_W_checks: 44
+ANTI_W_exceptional_used: 1
+ANTI_W_with_exceptional_edges: 1
+ANTI_Xi_checks: 44
+ANTI_Xi_exceptional_used: 1
+ANTI_Xi_with_exceptional_edges: 3
+RECORD_M>=0_P_uses_R_to_F_gate: 16
+RECORD_inscope_THR_r>=0_M>=0: 16
+THR_inphase_fallbacks: 16
+THR_optima_tested: 21
+XG_R_to_F_optimal_edges: 39
+runs: 4
+states: 146
+RESULT OK violations=0
+experiments/new/box28/out/fbp48_rt48.pg exit 0

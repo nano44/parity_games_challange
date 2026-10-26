@@ -1,0 +1,2 @@
+TOTAL {'EVG_checks': 26049, 'SG_checks': 47147}
+exit 0

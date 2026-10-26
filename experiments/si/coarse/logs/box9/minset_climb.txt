@@ -1,0 +1,1 @@
+TOTAL {'intervals': 46, 'start_sum': 218, 'min_le1': 33, 'absorbed': 56}

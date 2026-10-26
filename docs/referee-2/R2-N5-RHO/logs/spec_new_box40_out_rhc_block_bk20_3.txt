@@ -1,0 +1,13 @@
+HAT_a: 2
+HAT_b: 22
+HAT_c: 2
+RECORD_phases_past_hat_freeze_U>=3_with_H1: 2
+RECORD_phases_skipped_large_U: 1
+TAIL_phases: 2
+YFORM_a: 12
+phases: 8
+runs: 3
+states: 12
+max_TAIL_changes: 0
+max_U_past_hat_freeze: 3
+RESULT OK violations=0

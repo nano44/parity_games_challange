@@ -1,0 +1,47 @@
+MODE files ../../../experiments/new/box41/lib41.txt 1 MUT c2
+F1D_intervals: 5563
+GDB_vertices: 54194
+GDC1_pairs: 490158
+GDC2_levels: 14515
+VIOLATIONS: 4266
+V_GDC2: 4266
+WOD_checks: 4421
+runs: 412
+states: 8889
+states_D_ge2: 1297
+states_D_nonempty: 7090
+states_MD_ge0: 4266
+states_hD: 6543
+states_hD_h3D: 6310
+max_F1D_changes: (55, 'experiments/red/xing/instances/x32_rand64.pg#0')
+VIOLATION GDC2: experiments/n5-exhaustive/canonA_1.pg#0@0: L 13 (M_D 14)
+VIOLATION GDC2: experiments/n5-exhaustive/canonA_1.pg#0@3: L 13 (M_D 14)
+VIOLATION GDC2: experiments/n5-exhaustive/instances/b4_cyc6_1.pg#0@0: L 10 (M_D 11)
+VIOLATION GDC2: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@4: L 30 (M_D 31)
+VIOLATION GDC2: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@5: L 30 (M_D 31)
+VIOLATION GDC2: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@6: L 30 (M_D 31)
+VIOLATION GDC2: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@7: L 30 (M_D 31)
+VIOLATION GDC2: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@8: L 30 (M_D 31)
+VIOLATION GDC2: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@9: L 30 (M_D 31)
+VIOLATION GDC2: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@10: L 30 (M_D 31)
+VIOLATION GDC2: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@11: L 30 (M_D 31)
+VIOLATION GDC2: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@12: L 30 (M_D 31)
+VIOLATION GDC2: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@13: L 30 (M_D 31)
+VIOLATION GDC2: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@14: L 30 (M_D 31)
+VIOLATION GDC2: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@15: L 30 (M_D 31)
+VIOLATION GDC2: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@16: L 30 (M_D 31)
+VIOLATION GDC2: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@17: L 30 (M_D 31)
+VIOLATION GDC2: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@18: L 30 (M_D 31)
+VIOLATION GDC2: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@19: L 30 (M_D 31)
+VIOLATION GDC2: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@20: L 30 (M_D 31)
+VIOLATION GDC2: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@21: L 30 (M_D 31)
+VIOLATION GDC2: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@22: L 30 (M_D 31)
+VIOLATION GDC2: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@23: L 29 (M_D 30)
+VIOLATION GDC2: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@24: L 29 (M_D 30)
+VIOLATION GDC2: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@25: L 29 (M_D 30)
+VIOLATION GDC2: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@26: L 29 (M_D 30)
+VIOLATION GDC2: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@27: L 29 (M_D 30)
+VIOLATION GDC2: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@28: L 29 (M_D 30)
+VIOLATION GDC2: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@29: L 29 (M_D 30)
+VIOLATION GDC2: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@30: L 29 (M_D 30)
+RESULT FAIL violations=4266

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """L-SI box 7: DATA check of Lemma MONO (docs/si/N5-C-box7.md §2). For every transition j -> j+1 of an N5 run:
-  M_j  = max level of a gate edge (Ξ_j-improving Even edge) at j, lev(Ξ_j(σ_j y), Ξ_j(z)) (99 = cycle nodes differ, -1 length only);
+  M_j  = max level of a gate edge (Ξ_j-improving Even edge) at j, lev(Ξ_j(σ_j y), Ξ_j(z)) (INF = cycle nodes differ, -1 length only;
+  box 9: INF was 99, which misread ranks >= 99 at n >= 100);
   NC_j = every cycle of the (σ_{j+1}, σ̄_j)-graph has its top vertex (largest rank) a cycle node of the (σ_j, σ̄_j)-graph.
 Checks: NC_j  =>  COARSE_{M_j}(Ω_{σ_{j+1}, σ̄_j}) = COARSE_{M_j}(Ξ_j) = COARSE_{M_j}(Ξ_{j+1}) pointwise, and M_{j+1} <= M_j.
 Also: NC fails exactly when COARSE(Ω_{σ_{j+1}, σ̄_j}) differs (the converse half of COARSE-SI), and, on one-Odd-choice games, every
@@ -13,14 +14,16 @@ sys.path.insert(0, os.path.join(ROOT, "experiments/harness"))
 import pg, n5
 from si import Engine
 
+INF = 10 ** 6      # the level ∞ (cycle nodes differ); above every rank
+
 def lev(a, b):
-    if a[0] != b[0]: return 99
+    if a[0] != b[0]: return INF
     d = a[1] ^ b[1]
     if not d: return -1 if a[2] != b[2] else -2
     return d.bit_length() - 1
 
 def coarse(val, L):
-    if L >= 99: return ()
+    if L >= INF: return ()
     return (val[0], val[1] >> (L + 1)) if L >= -1 else (val[0], val[1], val[2])
 
 def states(g, start=None):
@@ -100,7 +103,7 @@ def scan(g, start=None, oc=None):
             if M1 > M: c["viol_M"] += 1; ex.append(("M", j, M, M1))
         else:
             c["ncfail"] += 1
-            if eqV and M < 99: c["viol_conv"] += 1; ex.append(("conv", j))
+            if eqV and M < INF: c["viol_conv"] += 1; ex.append(("conv", j))
             if oc is not None and a["Xi"] is not None:
                 same_phase = [x[0] for x in a["Xi"]] == [x[0] for x in b["Xi"]] and a["t"] == b["t"]
                 if same_phase:

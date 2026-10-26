@@ -1,0 +1,15 @@
+ex_seq ('j4_n40.pg', 3, [('T', 'OVT', 20), ('T', 'OVT', 36), ('T', 'VAL', 32), ('F', 39), ('T', 'OVT', 23), ('T', 'OVT', 30), ('T', 'OVT', -1), ('T', 'OVT', 39), ('T', 'OVT', 30), ('T', 'OVT', 20), ('T', 'OVT', 36), ('T', 'OVT', 20), ('T', 'VAL', 30), ('F', 38), ('T', 'OVT', -1), ('T', 'OVT', 20), ('T', 'OVT', -1), ('T', 'VAL', 32), ('F', 38), ('T', 'OVT', 30), ('T', 'OVT', 38), ('T', 'OVT', 24), ('T', 'OVT', 36), ('T', 'OVT', 20), ('T', 'VAL', 30), ('T', 'ABS', -1), ('T', 'ABS', 20), ('T', 'ABS', -1), ('F', 37), ('T', 'OVT', 29), ('T', 'OVT', 27), ('T', 'ABS', 37), ('T', 'OVT', 36), ('T', 'OVT', 20), ('T', 'VAL', 30), ('T', 'ABS', -1), ('T', 'ABS', 20), ('T', 'ABS', -1), ('T', 'ABS', 33), ('T', 'ABS', 34), ('T', 'ABS', 35)])
+max_fallbacks_per_scope_run (37, 48, 'cl9_rep_b.pg', 5)
+max_post_fb_theta_changes_per_scope_run (34, 40, 'j4_n40.pg', 3)
+scope_runs 200
+th_ABS_post_eq 37
+th_ABS_post_gt 49
+th_ABS_post_lt 427
+th_ABS_pre 286
+th_OVT_post_eq 43
+th_OVT_post_lt 259
+th_OVT_pre 228
+th_VAL_post_eq 82
+th_VAL_post_lt 60
+th_VAL_pre 36
+th_at_S4a 1507

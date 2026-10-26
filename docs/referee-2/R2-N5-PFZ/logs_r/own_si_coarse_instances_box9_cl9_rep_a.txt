@@ -1,0 +1,18 @@
+FACT_A_states: 93
+FBR_checks: 3960
+FBR_fallbacks: 33
+PFZR_Q_walks: 93
+PFZR_epochs: 16
+PFZ_b_runs: 3
+PFZ_skipped_large_U: 13
+TLEN_epochs: 16
+TLEN_theta_changes: 0
+runs: 3
+states: 93
+theta_runs: 16
+max_PFZR_refined_excess_plus_1000: 998
+max_PFZR_slack_thetaLEN_minus_refined: 8
+max_TLEN_theta_changes_in_epoch: 0
+max_fallbacks_in_theta_run: 33
+max_fallbacks_minus_U_plus_1_U>=3: 0
+RESULT OK violations=0

@@ -1,0 +1,9 @@
+HN_stretches 113
+HN_tauo_o 37
+HN_tauo_other 76
+max_epochs (2, 10, 1, 0, True, 'experiments/n5-exhaustive/instances/b5_o11.pg', 0)
+max_theta_changes_HN (13, 48, 1, False, 'experiments/red/so/instances/epsseg_cex_n48.pg', 12)
+max_vertex_reentries (1, 12, 2, True, 'experiments/n5-exhaustive/instances/b5_os_n12.pg', 0)
+max_w_changes_HN (0, 3, 1, False, 'docs/referee/R-N5-L2/exitdrop_n3.pg', 0)
+sep_theta 11
+skipped_not_C1O 159

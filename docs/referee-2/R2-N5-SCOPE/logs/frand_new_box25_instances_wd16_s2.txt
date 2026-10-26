@@ -1,0 +1,25 @@
+CLS_H1_notH2: 31
+CNL_control_noncycle_tail (i)=False (ii)=False (iii)=True: 1
+CNL_level-1_Even_fallbacks: 1
+KEY_tau_const_transitions: 46
+NH1_caseA: 0
+NH1_caseB: 0
+NH1_fallbacks: 0
+RCONST_notH1_states: 5
+SCOPE_case1: 0
+SCOPE_case2: 0
+SCOPE_scope_runs: 0
+fallbacks: 34
+phases: 7
+runs: 3
+transitions: 46
+max_NH1_fallbacks_per_phase: 0
+max_WCH_per_crossing_free_interval: 0
+max_WCH_per_phase: 0
+max_caseA_fallbacks_per_notH1_run: 0
+max_fallbacks_per_crossing_free_run: 0
+max_h_runs_per_phase: 0
+max_out_of_SN_fallbacks_per_phase: 12
+max_scope_case2_per_phase: 0
+max_scope_runs_per_phase: 0
+RESULT OK violations=0

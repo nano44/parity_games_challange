@@ -1,0 +1,24 @@
+A0_checks: 928
+FACTB_pairs: 6015
+FRZU_checks: 14
+HPATH_checks: 86
+KWS_stretches: 80
+LEN_runs_after_f0: 2
+PAR_states_cw_above_cth: 4
+PHASE_checked: 15
+RUNS_runs: 5
+RUN_case_a: 5
+phases: 15
+runs: 3
+states: 90
+states_checked: 90
+stretches: 80
+max_KW_per_stretch: 0
+max_RUN_ratio_case_a_x1000: 0
+max_T_per_phase: 38
+max_Trel_per_phase: 38
+max_f_per_phase: 2
+max_freeze_delay: 0
+max_stretches_per_phase: 39
+RESULT OK violations=0
+experiments/si/orlens/instances/s_tp32_final.pg exit 0

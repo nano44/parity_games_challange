@@ -1,0 +1,7 @@
+EQEND_fallbacks_after: 0
+EQEND_runs_with_eq: 6
+MERGE_window_gates: 45
+fallbacks: 0
+runs: 3
+transitions: 100
+RESULT OK violations=0

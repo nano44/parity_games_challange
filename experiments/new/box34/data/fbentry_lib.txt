@@ -1,0 +1,9 @@
+blocks 349
+fb_evict_eq 484
+fb_evict_lt 3281
+max_fb_per_block (33, 48, 'ccl_w48_n48.pg', 3, 47)
+max_reentry_one_vertex_block (4, 48, 'b6_xw_n48.pg', 23, 39)
+max_total_fb_reentries_block (95, 56, 'b6_xw_n56.pg', 22, 45)
+reentry_after_fb 1149
+reentry_after_s4a 54
+b6_xw_n56 sha1 d48a2688ced01c45bba060a30d5ac305c720a33b

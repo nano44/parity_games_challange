@@ -1,0 +1,36 @@
+FRZ'_a_checks 5255
+FRZ'_b_checks 5255
+FRZ'_freezes 286
+GP_H3_notH1_states 5309
+GP_c=o 2762
+GP_c_first 23308
+GP_o_first 27440
+H2S_restart_by_fallback (sec.8 open (2), no claim) 1
+H2S_steps 1245
+H3C_H2_states 22326
+H3C_phases_with_h 3564
+HI_drops 148
+PC'_windows_with_notH1 2374
+PC_checks_exhaustive 10592
+PC_checks_sampled 29671
+PC_windows 2374
+RC_notH1_pairs 3567
+RC_notH1_states 6128
+STEP1'_H3_states 26943
+STEP2'_checks 315028
+XR'_notH1_runs 2371
+XR'_runs 6224
+XR'_runs_with_notH1_in_P 2371
+XR'_runs_with_toggle 396
+fallbacks 2445
+phases 5816
+runs 27444
+transitions 56223
+MAX HI_max_theta_changes_on_I 3
+MAX ONE-DROP_max_drops_per_phase (sec.8, no claim) 1
+MAX ONE-H_max_h_runs_per_phase (sec.8, no claim) 1
+MAX PC_max_window_len_over_n_x100 87
+MAX XR'_max_C 55
+MAX XR'_max_REL_Q 12
+MAX XR'_max_toggles_t_Q 1
+RESULTS {'OK': 476}

@@ -1,0 +1,8 @@
+blocks: 1
+runs: 3
+scope_runs: 5
+states: 84
+max_D_M: 0
+max_block_size: 1
+max_fallbacks_ge0_per_scope_run: 1
+RESULT OK violations=0

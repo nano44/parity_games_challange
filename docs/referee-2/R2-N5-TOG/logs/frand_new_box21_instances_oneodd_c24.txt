@@ -1,0 +1,15 @@
+LMONO_transitions: 50
+XSN_crossings: 36
+XSN_crossings_at_transition_leaving_SN_prefix: 0
+fallbacks: 5
+phases: 10
+phases_c=o: 4
+runs: 3
+transitions: 95
+max_X_SN_per_phase: 12
+max_Z_changes_per_phase: 0
+max_drops_per_phase: 0
+max_h_runs_per_phase: 1
+max_sigma(c)_changes_per_phase: 0
+max_toggles_per_phase: 0
+RESULT OK violations=0

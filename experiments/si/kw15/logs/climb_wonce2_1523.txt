@@ -1,0 +1,26 @@
+climb FIT=wonce2 seed=1523 n=12 iterations=205883 improvements=7 best_fitness=147
+BEST counters: {'WONCE checks': 6, 'Xi-flat S4a transitions': 9, 'traces': 3, 'transitions': 11}
+BEST maxima: {}
+TOTAL AGREE states                              68239
+TOTAL FRZ state checks                          3840
+TOTAL WONCE checks                              607319
+TOTAL Xi-flat S4a transitions                   990227
+TOTAL climb evaluations                         201977
+TOTAL cw>cth notH2 runs (any length)            1
+TOTAL post-freeze runs                          5940
+TOTAL runs                                      33432
+TOTAL runs cth>=cw H2 H1                        14933
+TOTAL runs cth>=cw H2 notH1                     1
+TOTAL runs cth>=cw notH2 notH1                  18497
+TOTAL runs cw>cth notH2 notH1                   1
+TOTAL runs shorter than freeze                  27492
+TOTAL traces                                    605931
+TOTAL transitions                               1644063
+TOTALMAX max W-changes on R / run               3
+TOTALMAX max Xi-changes on R / run              3
+TOTALMAX max cw>cth notH2 run length            1
+TOTALMAX max kappa-freeze delay (t - k0)        0
+TOTALMAX max kappa-freeze delay / (|Rbar|-1)    0
+TOTALMAX max post-freeze length                 4
+TOTALMAX max run length                         4
+KWCLIMB PASS

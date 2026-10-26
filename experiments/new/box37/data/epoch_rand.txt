@@ -1,0 +1,8 @@
+HN_stretches 1331
+HN_tauo_o 201
+HN_tauo_other 1130
+max_epochs (1, 8, 0, 0, False, 'rand3702_1', 0)
+max_theta_changes_HN (1, 10, 1, False, 'rand3702_662', 1)
+max_vertex_reentries (0, 8, 1, False, 'rand3702_1', 0)
+max_w_changes_HN (0, 8, 1, False, 'rand3702_1', 0)
+done-rand 0

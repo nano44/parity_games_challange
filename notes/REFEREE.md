@@ -1,6 +1,388 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 11), updated 2026-10-25T22:44Z by date -u (Opus 5.5, D15; session_01VH2ckvgGP9CGkb8Suno5f1)
+- DONE: §C NEEDB (7dbd5118) vs R2 ef433d32: identical, no gaps; N-NEEDB-5 CONFIRMED ("THR => M >= 0" FALSE as stated, block_9501 from
+  its start pair; scratch/needb5_check.py); N-NEEDB-4 witness start pair invalid for witness_xg_12004.pg, XG 0 in 2,000 random starts.
+- DONE: P-N5-KW (pin d9291be0; packet sha1 c0b0111f, addendum 8d6bfb3c): docs/referee/R-N5-KW.md: all SIGNED except E-SEG SIGNED WITH
+  GAP KW-1 (N_B / N_cut miss kind-B switches at kind-change transitions; repair N_cut := #cut transitions; nothing downstream changes);
+  notes KW-N1..N5. FRZ-U self-contained; CASC-B safe (R26 step 2 already allows A1 re-routing; c_w moves only A2). KIND-MONO vacuous
+  (0 post-freeze kind changes in 2.46M post-freeze U3/U23 transitions); W-ONCE thin (2 checks; Xi-flat S4a rare on my engine).
+- DONE: R-N5-KW Addendum 1 (1d6cbf32): CASC-B's hypothesis exercised (kw_logs/cascb_witness.pg), against L-RED R73's "never reached".
+- DONE: P-N5-DUAL (df073cb5, sha1 a51f7c30): docs/referee/R-N5-DUAL.md: all SIGNED; DUAL-1 (wording of DUAL's 2nd sentence: first
+  possible difference at j + 1). MIRROR (b) only as an implication from (H-OF). §2 table: statements spot-checked, proofs NOT audited.
+  Tools dual_probe.py (run5 with odd_first), dual_climb.py; logs dual_logs/ (0 failures; 297,779 two-sided fallbacks in climbs).
+- DONE: §C KW (a6e50742, stamp 776281ac) vs R2 8a47fd92: all signed by both; KW-1 = N-KW-3 one item; N-KW-1, N-KW-2 accepted.
+- DONE: R-N5-START audit (4e440bd5): every listed C^1O result start-free (statement + proof); R32/R33 chain read at structure level.
+- NEXT (2026-10-26 00:10Z): §Cs FX, NH42, DUAL when REFEREE-2 succ. 13 reports (Lead sends SHAs). NOT before.
+- (old) NEXT: §C KW after R2's report (do not open R2-N5-KW* before mine is pushed — it now is, once this commit is pushed); §C FX, NH42.
+
+### (earlier, 21:29Z)
+- Handover check 6c22a63c: Lead 5/5, GO (Lead stamp 21:22Z). Trunk merged at 0c02a09b (trunk e4c76bf7).
+- Queue: §Cs NEEDB -> FX -> NH42 when REFEREE-2 succ. 12 pushes each report and the Lead sends the SHA (none on trunk at e4c76bf7;
+  not opened). Then P-N5-KW (L-SI 10, from docs/si/N5-KW-box15.md sha1 5ebbb3b6..., with L-NEW 21 additions); wait for the pin.
+- K prep (not a report; no verdict until the packet is pinned):
+  - Read box15 §1-§10 and premises R20 (d), R21 (a), R22 (a), R23 (g), R24, R26 (incl. P-N5-U23-box31 §1-§2 proof text), R27 (a), (d), (g),
+    R19 (d) (SG: every N5 transition, a switched Even y with λ(y) ≠ y gains strictly).
+  - First pass, my own re-derivation: W-ONCE, Fact A, Fact B, FRZ-U (P^c cases A, B1-B3, final step), LEN ranges, KIND-MONO, CW-INT,
+    CASC-B (R26 (c) step 2 uses only "kinds constant" + §1 step 4; kind-B keys share the prefix (A1 reversed, o) at each step) all
+    hold as far as I see. To redo carefully on the pinned text: B1's x ∉ C_W case under H2; E-SEG summation; Corollary PHASE's
+    stretch/run counts (N_st + f runs); (K_W) for m* = c_θ (W-ONCE′ + F1° per run).
+  - Data-claim mismatch to raise: box15 §10 says "Largest actual freeze delay: 1 transition". My kw_probe: κ changes as late as step 40
+    of a 40-transition run (experiments/red/xing/instances/kw_n48.pg, r = 48; also kw25_n32 25, block_bk32 21): within the bound
+    r − 1, but not "1". Probably a different measure; ask what it is.
+  - Tool scratch/kw_probe.py (WONCE, FA, FB, MON, FRZ, LEN, KIND, CWINT, CASCB, RUN; corner counters). Library: 253 C^1O games,
+    424 runs, 0 failures; WONCE only 2 checks (thin), u3 runs 20. Logs scratch/kw_logs/.
+  - Climbs (kw_climb.py, 1500 s each; seeds 11, 12 from kw_logs/u3_starts.txt, 13 random n 8-20): 1.6M evals, 0 failures;
+    CW-INT 375,424 c_w switches, CASC-B 687,039 kind-B switches, FRZ 5.48M post-freeze state checks. STILL VACUOUS in my data:
+    post-freeze kind changes (KIND-MONO) 0, WONCE 2 checks (library only). lib RANDSTARTS=3: 965 runs, 0 failures.
+    Next on the pinned packet: a climb that targets Xi-flat S4a pairs and post-freeze kind changes directly.
+
+## HANDOVER (successor 10 -> successor 11), written 2026-10-25T20:48Z by date -u, context ~575k (Opus 5.5 under D15; label "(Opus 5.5, D15)")
+Lead: session_014FBi6o334DvwT5Uw2kDfoN (send_message via claude-code-remote MCP; first line "From REFEREE (<date -u>):"; self-contained).
+Branch claude/referee. Start: git fetch origin; trunk = remote HEAD claude/vibrant-johnson-nxvvxo; CHECK HEAD == origin/claude/referee
+(the container started stale at 73b46eb8 for successors 5-10); fast-forward, then merge trunk --no-ff. Push ONLY with
+scripts/push.sh > file 2>&1; echo $?. Build Oink first (scripts/setup_oink.sh). Never read docs/referee-2/R2-<packet> before your own
+report on that packet is pushed. ReadNotifications before every push and every new packet.
+### DONE (successor 10; all pushed, all merged to trunk by the Lead up to 4f94b452)
+| packet | report | my verdicts | §C |
+| --- | --- | --- | --- |
+| handover check | handover-checks/REFEREE.md "successor 10" (7c984663) | Lead 5/5 | — |
+| P-N5-RHO (cd5df65c, pin c814455) | R-N5-RHO.md 59278313 | all SIGNED; RHO-N1..N3 (RHO-N2: τ(o) = o cite R34 (e), not R39 (f)(c) case A) | 06d6e6db vs R2 269ae45a: identical; R2 missed RHO-N2 |
+| P-N5-PFZ-ext §C | R-N5-PFZ.md §C-ext ed8bc207 vs R2 78896bfc | PFZ-1 = G-PFX-1; my re-derived repair proves (i); R2 later accepted it (R2-N5-PFZ §C, C.2) | done |
+| P-N5-LV2 §C | R-N5-LV2.md §C ed8bc207 vs R2 a551debf | identical; beta2_n11 (bdea2a23) N = 2 none fallbacks refutes R2's candidate conjecture | done |
+| P-N5-NHN (da7d09ec, pin 0bb175d) | R-N5-NHN.md 9bb3f79d | all SIGNED; NHN-N1..N3 | 41b93026 vs R2 04b5c1fd: identical |
+| P-N5-NEEDB (7471aef3, pin e6ee613) | R-N5-NEEDB.md 008ad8ab | all SIGNED, no gaps; NEEDB-N1..N4 ((LV+) once on R2 block_9501.pg) | PENDING (R2 succ. 12) |
+| P-N5-FBPOLY (de244dcd, pin 42d8c3a9) | R-N5-FBPOLY.md 3de7cab7 | all SIGNED; GAPS FBP-1 (deg_U(o) self-loop), FBP-2 ((b) at o = c_θ), repairs; FREEZE-EXIT/THETA-AFTER regime unreached | d6248f7b vs R2 2fef7c4a: same findings (= N-FBP-2/1), repairs stand; N-FBP-4 loop witness re-run |
+| P-N5-PHI (35e79ec1, pin 02ad3f88) | R-N5-PHI.md 843ba1f8 | SIGNED; S1/S2 answer | 37608e06 vs R2 b621f9a: identical |
+| P-N5-FX (aa227b0b, pin 02ad3f88) | R-N5-FX.md 843ba1f8 | SIGNED, (b) conditional on FBPOLY (+FBP-1 for F*); FX-N1 (weaker than R30 (c) SN-PREFIX) | PENDING |
+| P-N5-NH-box42 (93d19be8, pin 54ac72e6) | R-N5-NH42.md a47f8540 | all SIGNED, no gaps; NH42-N1..N3; lane counts reproduced exactly | PENDING |
+### IN FLIGHT / NEXT
+- §Cs on NEEDB, FX, NH42: each waits for REFEREE-2 successor 12 (order NEEDB → §C FBPOLY → FX → NH42); the Lead sends each SHA.
+  Write each §C in the matching docs/referee/R-N5-*.md: verdict comparison, joint gap map, accept/reject notes.
+- Likely next packet: "K packet" (L-SI / L-NEW cross-read in progress).
+### Tools (docs/referee/scratch/, own code on rl_engine.py, NO lane imports; `python3 -I`; env START="s;t", RANDSTARTS=N where supported)
+- rho_probe.py (+ lib() = 412-file list), rho_climb.py; nhn_probe.py, nhn_climb.py; needb_probe.py; fbpoly_probe.py, fbpoly_climb.py;
+  phifx_probe.py (incl. general random games); nh42_probe.py. Logs in scratch/<name>_logs/.
+### Things only I know
+- My engine reproduces the lane's library counts exactly for RHO, NHN, FBPOLY, NH42 (independent SPEC implementation agrees).
+- Unreached in anyone's data: FREEZE-EXIT / THETA-AFTER (f ≥ |U| − 1 at |U| ≥ 3; climbs plateau at f = |U| − 2), T0-PIN, FREEZE-F (b),
+  XG's hypothesis, NEED-β A2″/A2*, post-freeze |U| ≥ 4.
+- EXIT-SWITCH loop kind is common from random starts (loop_4102.pg: 24 of 59 switched vertices), absent at canonical library starts.
+### Traps and lessons (keep)
+- NEVER pkill -f in the same shell (killed my own wait loop again at ~20:13Z, exit 144). Bash `sleep` loops: keep each call < 600 s.
+- A "( ... ) &" launched after a `cd` inside a compound command may not start: check its log file exists.
+- Trunk merges the Lead names may not yet be on origin: read peers' files at the named referee-2 SHA (git fetch origin brings them).
+- Corner cases to test in every bound: self-loop at o, o = c_θ, |U| = 2 (FBP-1, FBP-2).
+
+## Resume point (successor 10), written 2026-10-25T17:41Z by date -u (Opus 5.5, D15; session_01J4kmfDqtZdanh3RSCxChyD)
+- Handover check 7c984663/b5887e61: Lead 5/5, GO (16:49Z Lead stamp).
+- P-N5-RHO (pin c814455, sha1 cd5df65c…): docs/referee/R-N5-RHO.md: all SIGNED (HN-POLY conditional on PFZ-ext BRK-POLY′ (i′), (ii)),
+  no gaps; notes RHO-N1 (o = c_θ with |U| ≥ 2, 89 phases), RHO-N2 (τ(o) = o line: cite R34 (e) + HN = H1, case B too), RHO-N3 (data).
+  Tools scratch/rho_probe.py, rho_climb.py (tail / ffb); logs scratch/rho_logs/. Thin: RHO-TAIL change past freeze, |U| ≥ 4 past
+  freeze, FREEZE-F (b) (vacuous in lib and 5.95M ffb candidates).
+- DONE: PFZ-ext §C-ext vs R2 78896bfc (PFZ-1 = G-PFX-1; repair proves (i) as stated; joint form (i′) + 2n − 2 until R2 signs repair);
+  LV2 §C vs R2 a551debf (identical; beta2_n11 N = 2 none fallbacks, refutes R2's candidate conjecture). Commit ed8bc207.
+- DONE: P-N5-NHN (trunk 0bb175d, sha1 da7d09ec…): docs/referee/R-N5-NHN.md: all SIGNED (T0-PIN, NHN-BOUND conditional on RHO's
+  HAT-FREEZE; HN-POLY-ALL conditional on PFZ, PFZ-ext (i′)/(ii), RHO), no gaps; NHN-N1 (τ(o) = o: R39 (f)(c) case A only, §5 (b)'s
+  own argument covers it), NHN-N2 ("there" in §6), NHN-N3 (T0-PIN vacuous: lib + 1.88M climb candidates). Tools nhn_probe.py,
+  nhn_climb.py; logs scratch/nhn_logs/.
+- DONE: RHO §C vs R2 269ae45a (identical; RHO-N2 missed by R2) 06d6e6db.
+- DONE: P-N5-NEEDB (e6ee613, sha1 7471aef3…): docs/referee/R-N5-NEEDB.md: all SIGNED, no gaps; NEEDB-N1 (XG "in particular"),
+  N2 (case (i) k = first fallback after k0), N3 (FBL R = today's R̄), N4 (general form: at every THR fb with r ≥ 0 the σ*-play from x0
+  uses a non-exceptional gate; 1,818 checks, 0 failures). (LV+) occurs once: R2's block_9501.pg at its start pair (gate (10, 8)).
+  Tool needb_probe.py (START=, RANDSTARTS= env); logs scratch/needb_logs/.
+- DONE: P-N5-FBPOLY (42d8c3a9, sha1 de244dcd…): docs/referee/R-N5-FBPOLY.md: all SIGNED; GAP FBP-1 ((a)'s final bound: deg_U(o) ≤ n − 1
+  fails with a self-loop at o; repair |succ(o) ∩ Û|), GAP FBP-2 ((b)'s proof assumes o ≠ c_θ; repair: v cannot switch in U = {o, v});
+  FREEZE-EXIT / THETA-AFTER regime unreached (3.82M climb candidates, best −1). Tools fbpoly_probe.py, fbpoly_climb.py.
+- DONE: P-N5-PHI (R-N5-PHI: all SIGNED; S1 untouched, S2 = the citation of R15 (a), (d) on G^d + Lemma R, not open math) and P-N5-FX
+  (R-N5-FX: SIGNED, (b) conditional on FBPOLY (+ FBP-1 repair for F*); FX-N1: (a) weaker than landed R30 (c) SN-PREFIX). Tool phifx_probe.py.
+- DONE: FBPOLY §C vs R2 2fef7c4a (d6248f7b; FBP-1/2 = N-FBP-2/1, repairs stand; N-FBP-4 loop witness re-run), NHN §C vs R2 04b5c1fd.
+- DONE: PHI §C vs R2 b621f9a (identical). P-N5-NH-box42 (54ac72e6, sha1 93d19be8): R-N5-NH42.md all SIGNED, no gaps; notes NH42-N1..N3;
+  my engine reproduces the lane's library K_W / E / class counts exactly. Tool nh42_probe.py.
+- NEXT: §Cs for NEEDB, FX, NH42 after REFEREE-2's reports and the Lead's SHAs. NHN / NEEDB §Cs after R2's reports (do not open R2-N5-{NHN,NEEDB,FBPOLY,PHI,FX}* before).
+
+## HANDOVER (successor 9 -> successor 10), written 2026-10-25T16:35Z by date -u, context ~490k (Opus 5.5 under D15; label "(Opus 5.5, D15)")
+Lead: session_014FBi6o334DvwT5Uw2kDfoN (send_message via claude-code-remote MCP; first line "From REFEREE (<date -u>):"; self-contained).
+Branch claude/referee. Start: git fetch origin; trunk = remote HEAD claude/vibrant-johnson-nxvvxo (`git ls-remote --symref origin HEAD`);
+CHECK HEAD == origin/claude/referee (the container started stale at 73b46eb8 for successors 5-9, 1505 behind for me); fast-forward, then
+merge trunk --no-ff. Push ONLY with scripts/push.sh > file 2>&1; echo $?. Build Oink first (scripts/setup_oink.sh). Never read
+docs/referee-2/R2-<packet> before your own report on that packet is pushed. READ NOTIFICATIONS AT EVERY PUSH: Lead messages queue up
+while you work (I read the 15:34Z / 15:41Z / 15:59Z messages late and did LV before PFZ).
+### DONE (successor 9; all pushed, head after this commit)
+| packet | report | my verdicts | §C / state |
+| --- | --- | --- | --- |
+| handover check | docs/agents/handover-checks/REFEREE.md "successor 9" (0d3a61a1) | Lead 5/5 | — |
+| P-N5-NEB (ba15e51f, pin 314d220) | R-N5-NEB.md 40adbf1c | §1-§7 all SIGNED, no gaps; notes NEB-R1, N1-N5; NEB-B1: BAND FALSE in the rises form, the gates form later (tauw_A state 13) and the gates form at the base (R-N5-NEB/band_base_cex.pg sha1 468edac8, Lead re-ran OK) | §C 46a80300 vs R2 a4516df9: identical, gap map empty; N-NEB-2 MISSED by me |
+| P-N5-LV (d0d797f0, pin 601df6e) | R-N5-LV.md 8054da2f | all SIGNED (CN-LAST discharged by R38); notes LV-N1..N3 | §C 46a80300 vs R2 b1038bea: same substance, gap map empty; N-LV-1 MISSED by me; N-LV-3 (u* = none reachable) re-run on my engine; NL= FALSE line (nleq_cex_n48 e72e4034) confirmed, not to sign |
+| P-N5-PFZ (3c617e06, pin 283bcb6) + ext (b3702b1b, pin c61ecc4) | R-N5-PFZ.md 85953433 | all SIGNED, except ext BRK-POLY′ (i): SIGNED WITH GAP PFZ-1 (true, but the proof misses the ρ_S P-changing θ-changes; my repair: refined θ-LEN ≤ |A_low| − [o low], and ρ ≥ 1 ⇒ a high u ≠ o in U); notes PFZ-N1..N3 | main-packet §C (this commit) vs R2 37e55fde: identical, gap map empty. EXT §C PENDING: REFEREE-2 10 reviews ext |
+| P-N5-LV2 (3b23a41f, pin 283bcb6) | R-N5-LV2.md b454ca32 + addendum 46a80300 | all SIGNED with the stated conditions, no gaps; note LV2-N1 (CYC-EV citation); addendum: the none part is non-empty (FLAT-ALL^none 351k checks OK; LV-NONE with N ≥ 2 never seen) | §C PENDING: after REFEREE-2 10's report |
+### IN FLIGHT / NEXT
+- Wait for the Lead's word on REFEREE-2 10's final SHAs for P-N5-PFZ-ext and P-N5-LV2. Then write:
+  - the ext §C in R-N5-PFZ.md (central: does R2 find PFZ-1? check my repair against theirs);
+  - the LV2 §C in R-N5-LV2.md.
+- Nothing else is open.
+### Tools (docs/referee/scratch/, own code on rl_engine.py, NO lane imports; `python3 -I`)
+- neb_probe.py (+ rand mode), neb_climb.py (C^1O-preserving mutate(), write()), band_find.py (env BANDKEY).
+- lv_probe.py, lv_climb.py, lvn_climb.py (u* = none climb); lv2_probe.py (STALE / EV-G / SAND / SCOPE-FB / FLAT-ALL^none).
+- pfz_probe.py (θ-runs and P-epochs; env UMAX for exact DFS), pfz_climb.py.
+- Logs: docs/referee/R-N5-{NEB,LV,PFZ,LV2}/ and scratch/{neb,lv,lvn,pfz}_logs/.
+### Things only I know
+- Random C^1O games never reach HN fallbacks or level −1 settings; mutation climbs from counterexample seeds do (NEB: 1.34M mutants hit
+  every hypothesis).
+- The |U| ≥ 3 post-freeze regime (PFZ) was not reached by me or by REFEREE-2 (both climbs plateau one fallback short or at |U| = 2).
+- PFZ-1's repair argument, in full, is in R-N5-PFZ.md §7. The lane may instead state (i′) with (iii)'s constant 2n − 2.
+- P-N5-NEB §9's base totals (13 / 6 / 34 / 27) come from an unnamed input set; the stated command gives 75 / 9 / 4 / 20 / 8.
+- LV setting with r ≥ 0 (FLAT-ALL_{−1}, PL_{−1}, LV-PL, ENT-X_{−1}, LV-PL′'s block) never occurred anywhere; r = −1 occurs (R2 witness
+  docs/referee-2/R2-N5-LV/climb/best_lv_9401.pg).
+### Traps and lessons (keep)
+- Clone starts stale; trunk is the remote HEAD branch, not main.
+- Lead messages arrive mid-work: call ReadNotifications before each push and before starting the next packet.
+- Lesson N-ENT-2 holds: count every hypothesis's occurrences, and say which are vacuous. A later climb (R2's) can overturn "vacuous":
+  say "vacuous in MY data", with the file set.
+- Check where an epoch-count proof puts the boundary transitions (PFZ-1): a θ-change at a P(θ) change is still a θ-change.
+- A file under its final name on a peer branch can be a draft: compare only against the SHA the Lead names.
+
+## HANDOVER (successor 8 -> successor 9), written 2026-10-25T13:11Z by date -u, context ~510k (Opus 5.5 under D15; label "(Opus 5.5, D15)")
+Lead: session_014FBi6o334DvwT5Uw2kDfoN (send_message via claude-code-remote MCP; first line "From REFEREE (<date -u>):"; self-contained).
+Branch claude/referee. Start: git fetch origin; trunk = remote HEAD claude/vibrant-johnson-nxvvxo (`git ls-remote --symref origin HEAD`);
+CHECK HEAD == origin/claude/referee (container started stale at 73b46eb8 for successors 5-8); ff, then merge trunk --no-ff. Push ONLY
+with scripts/push.sh > file 2>&1; echo $?. Build Oink first (scripts/setup_oink.sh, ~2 min). Never read docs/referee-2/R2-<packet>
+before your own report is pushed.
+### DONE (successor 8; all pushed)
+| packet | report | my verdicts | §C / state |
+| --- | --- | --- | --- |
+| handover check | "Handover check (successor 8)" below (9c3a8655) | Lead 5/5 | — |
+| P-N5-RL (0a3c70cb, pin 2fb698d) | R-N5-RL.md b7419da0, §8.1 257c3d81, A1 38863849, §C 5f52510b, A2 d104aac2 | BL-FORM, BL (a)(d), CONF-MONO SIGNED; BL (b)(c)(e), FREE-FREEZE, EV (RL-4), EV+ COND (P); EQ-END COND CN-LAST; MERGE WITH RL-2 (ℓ = ∞); TEV-RED NOT SIGNED as stated (RL-1 cycle case; RL-3 wording) -> A2: fixes ac027458 + CYC-EV close RL-1..4; restricted TEV-RED + Consequence COND (P) | §C vs R2 30dc5f54: labels differ on MERGE (RL-2 kept; R2 ruling on ℓ = ∞ requested) and TEV-RED (same substance); N-RL-3 MISSED by me |
+| P-N5-SCOPE §C | R-N5-SCOPE.md §C (257c3d81) vs R2 6d6e4bcf | no verdict differs; N-SC-1, N-SC-4 MISSED by my lane | done |
+| P-N5-P1 (b98ca794, pin 48a8a4c) | R-N5-P1.md 58a5b734, §C 5f52510b | Lemma B, M, P1 (+P1′), §4 SIGNED, no gaps | §C vs R2 e036e4c5: identical; N-P1-1 wording |
+| P-N5-OUT (9f032e61, pin 719ce66) | R-N5-OUT.md fa086876 | all SIGNED, no gaps (OUT-R1, OUT-N1 notes) | §C a8b8ef3e vs R2 dfcaae67: identical; N-OUT-1..4 accepted (N-OUT-1 and N-OUT-2's CASE-B-LEN part MISSED by me) |
+| P-N5-ENT (4fd22be7, pin 765e893) | R-N5-ENT.md 55a3f6fb | FZ, BF, RB, WALK, CYC-EV, TEV-FB SIGNED; ENT-X, NJB-A, D1, PL-S″ COND (P) -> lifted by R36; no gaps | §C d6b8aef9 vs R2 b7df84b8: identical; N-ENT-1..3 accepted (N-ENT-2 'vacuous' overstatement MISSED by me) |
+### IN FLIGHT / NEXT
+- Nothing open. RL (R37), P1 (R36), SCOPE, OUT and ENT all converged with REFEREE-2 (RL-2 accepted by R2 at 88571b0).
+- PARKED by the Lead's plan (13:35Z): successor 9 starts from this table and the Lead's next brief.
+- Lesson (N-ENT-2): do not copy a packet's "vacuous in data" line; check which hypotheses actually occur.
+### Tools (docs/referee/scratch/, own code, NO lane imports (Lead 11:36Z rule); `python3 -I`; logs scratch/rl_logs/)
+- rl_engine.py: own N5 from the SPEC text (S1 VJ procedure, S2-S5, FIX 1-4). Reproduces rl_a/b/c counts; regions = Oink zlk on 309/309
+  (rl_oink.py). rl_probe.py: RL checks + states() (R̄, F, H1-H3, r, M, phase key, scope runs) — reuse it.
+- p1_probe.py (P1, exhaustive strategies), cyc_probe.py (FZ/BF/RB/WALK/CYC on (Σ) pairs), out_probe.py (SPLIT, F-FLAT, FREEZE-STEP,
+  EPOCH, NO-ENTRY-A INV, CASE-B-LEN), rl_climb.py.
+### Traps and lessons (keep)
+- Clone starts stale; trunk is not `main` but the remote HEAD branch.
+- A file under its final name on a peer branch can be a DRAFT (R2-N5-SCOPE 1f8a9109): wait for the Lead's FINAL SHA.
+- Peers' stamps are not my clock (Lead 11:46Z message arrived 11:42Z by date -u).
+- "ℓ ≥ −1" with ∞ among level values includes ∞: test the top value of every range (RL-2).
+- "The last X vertex on the play" is ambiguous on a lasso: check the cycle (RL-1).
+- "before e" vs "up to and including e": check whether e itself can be in the counted set (RL-3; realised on tevlast_cex_n40).
+- Proofs valid at fallback states may fail at S4a states (RB uses M_k ≤ L; tevlast_cex_n40 t = 7).
+- Bash: never pkill -f / pgrep -f with the pattern in the same shell; Bash `sleep` is blocked: use until-loops.
+
+## Resume point (successor 8), written 2026-10-25T12:02Z by date -u (Opus 5.5, D15; session_01YRPeH49wEXXq7vW5qK35Gz)
+- Handover check 9c3a8655: Lead 5/5 (11:46Z Lead stamp; GO R-N5-RL).
+- P-N5-RL (pin 2fb698d, sha1 0a3c70cb...): docs/referee/R-N5-RL.md.
+  - BL-FORM, R-SAME, BL (a) (d), CONF-MONO: SIGNED.
+  - BL (b) (c) (e), FREE-FREEZE, EV (with RL-4), EV+: SIGNED CONDITIONAL ON (P).
+  - EQ-END: SIGNED CONDITIONAL ON CN-LAST.
+  - MERGE: WITH RL-2 (level ∞ window gates: (c) has no common vertex; inr2_n32 state 0 gate (6, 29)).
+  - TEV-RED: NOT SIGNED as stated (RL-1: an Ev vertex on the cycle of x_t's play is not excluded). TEV-RED′ SIGNED CONDITIONAL ON (P),
+    with RL-3 ("before e" -> "up to and including e").
+- Tools (own engine, NO lane imports; Lead 11:36Z rule): scratch/rl_engine.py (SPEC S1-S5 from the text), rl_probe.py,
+  rl_oink.py (regions vs Oink zlk, 309/309), rl_climb.py; logs scratch/rl_logs/.
+- DONE: climbs (0 hits) -> §8.1; SCOPE §C written against R2 FINAL 6d6e4bcf (no verdict differs; N-SC-1, N-SC-4 MISSED by my lane, notes).
+- P-N5-P1 (pin 48a8a4c, sha1 b98ca794...): docs/referee/R-N5-P1.md: Lemma B, Lemma M, Lemma P1 (+ P1'), §4 match all SIGNED, no gaps;
+  §5 reading corrected for TEV-RED (RL-1). Tool scratch/p1_probe.py (exhaustive strategies, n <= 13; 0 violations, control bites).
+- DONE: RL §C vs R2 30dc5f54 (MERGE: RL-2 kept; TEV-RED: same substance, NOT SIGNED kept; N-RL-3 MISSED by me), P1 §C vs R2 e036e4c5 (identical).
+- NEXT: CYC-EV / RL fixes when routed (check it covers every t in (k0, k]).
+- Lesson: "ℓ ≥ −1" with ∞ among the level values silently includes the infinite level; test the top value of every range.
+- Lesson: "the last X vertex on the play" is ambiguous on a lasso: check the cycle.
+
+## Handover check (successor 8), written 2026-10-25T11:33Z by date -u (Opus 5.5 under D15; session_01YRPeH49wEXXq7vW5qK35Gz)
+1. Branch, head, distance to trunk. Commands: `git status`; `git fetch origin`; `git ls-remote --symref origin HEAD` (trunk =
+   claude/vibrant-johnson-nxvvxo at 2fb698da); `git rev-parse HEAD origin/claude/referee <trunk>`;
+   `git rev-list --left-right --count HEAD...<ref>`; `git merge --ff-only origin/claude/referee`; `git merge --no-ff <trunk>`.
+   - Local claude/referee started STALE at 73b46eb8 (0 ahead / 1254 behind origin/claude/referee 560ff4c4; 1283 behind trunk).
+   - Fast-forwarded to 560ff4c4 (successor 7's handover): then 0 ahead / 29 behind trunk 2fb698da.
+   - Merged trunk with --no-ff: d0a950fd, 1 ahead / 0 behind before this commit; 2 ahead / 0 behind after it.
+   - Packet object: `git show 2fb698d:docs/si/P-N5-RL-box10.md | sha1sum` = 0a3c70cbf873b2e011a5a00be54d38926f7861f1 (matches the brief;
+     same on origin/claude/l-si, last touched there at 01d69ac3).
+   - Oink: scripts/setup_oink.sh built 8fbf0a7 into tools/oink/build, exit 0.
+2. Open work and next step (successor 7 HANDOVER above; Lead brief 11:36Z):
+   - P-N5-SCOPE §C: my report R-N5-SCOPE.md (fb6089b / 560ff4c) all SIGNED, no gaps. `git ls-tree --name-only origin/claude/referee-2
+     docs/referee-2/` shows R2-N5-SCOPE.md exists, but head 1f8a9109 calls it a "draft ... climbs pending" (names and commit subject only;
+     contents not read). Next: wait for the Lead's word that the final R2-N5-SCOPE exists; then §C in docs/referee/R-N5-SCOPE.md.
+   - P-N5-RL (after GO): docs/si/P-N5-RL-box10.md (sha1 0a3c70cb…, pin 2fb698d, L-SI succ. 5). Next: read packet §0 (P), RESULTS R18
+     and R25-R35, SPEC; own probe docs/referee/scratch/rl_probe.py (asserts exactly one Odd vertex of out-degree > 1); check that each
+     "conditional" label is exact (conditions used but not declared = gaps); report docs/referee/R-N5-RL.md. No R2-N5-RL read before.
+3. GAPS rows (`grep -n G-N5-TIME docs/GAPS.md`): G-N5-TIME | major | owner L-NEW (L-LIT T22; referees later) | **open** | N5 SSI-GLOBAL
+   makes polynomially many iterations (gauntlet step 4). Latest UPDATE 11:18Z: R34 (P-N5-TOG) LANDED; "Open as before; in review:
+   P-N5-NJB (CHECKER), P-N5-SCOPE (both referees)". Related, closed: G-N5-TERM (R15).
+4. Owner rulings verbatim (`grep -n -F` in docs/DECISIONS.md) with DECISIONS-INDEX status (`grep -nE "^\| *D(1|15|18) *\|"`):
+   - D1 (index: **active**, 2026-10-14; DECISIONS.md l.7): "A claimed polynomial algorithm is far more likely to be wrong than right.
+     Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below."
+   - D15 (index: **active**, 2026-10-22; l.278): "q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous,
+     reason about it"
+   - D18 (index: **active**, 2026-10-24; l.333): "Focus on N5 and work toward proving it. Explore novel approaches, especially by
+     connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions
+     where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and
+     open problems."
+5. Trap found: a DRAFT of the second referee's report already sits on origin/claude/referee-2 under the final file name
+   (docs/referee-2/R2-N5-SCOPE.md, head 1f8a9109 "draft ... climbs pending"). "The file exists" is not "the report is final": a §C
+   written against it could compare with verdicts that change. I wait for the Lead's word and pin the R2 SHA I compare against.
+   Also again: the clone started stale (73b46eb8, 1254 behind origin/claude/referee); and trunk is not `main` but the remote HEAD
+   claude/vibrant-johnson-nxvvxo (`git ls-remote --symref origin HEAD`).
+
+## HANDOVER (successor 7 -> successor 8), written 2026-10-25T11:09Z by date -u (stamp corrected from an estimated 11:10Z), context ~530k by the Lead's WATCHDOG (Opus 5.5 under D15; label "(Opus 5.5, D15)")
+Lead: session_014FBi6o334DvwT5Uw2kDfoN (send_message via claude-code-remote MCP; first line "From REFEREE (<date -u>):"; self-contained).
+Branch claude/referee. Start: git fetch origin claude/referee claude/vibrant-johnson-nxvvxo; CHECK HEAD == origin/claude/referee (the
+container started stale at 73b46eb8 for successors 5, 6, 7); merge trunk with a normal merge. Push ONLY with scripts/push.sh > file 2>&1;
+echo $?. Build Oink first (scripts/setup_oink.sh). Never read docs/referee-2/R2-<packet> before your own report is pushed.
+### DONE (successor 7; all pushed; every report has §C unless noted)
+| packet | report | my verdicts | §C / state |
+| --- | --- | --- | --- |
+| handover check | notes/REFEREE.md "Handover check (successor 7)" (3e86cb10) | 5/5 | — |
+| P-N5-L2 (R33 landed) | R-N5-L2.md 7626354e (+524d93f5 climbs, d3ccb9cd fixes check) | all SIGNED; L2-1 (τ(o) = o wording), L2-2 (H1-INT (b) phase exits, exitdrop_n3); FINDING DROP-LEN FALSE (droplen_cex_n12) | §C ce241061 (4 rows, no verdict differs) |
+| P-N5-FRZ (R32) | predecessor's R-N5-FRZ.md; my §C 1f13a6f9 + C.6 9ad6bfba | N-FRZ-1 MISSED by my lane, accepted; BLOCK vacuous in all data | converged |
+| P-N5-NJB (R35 waits on L-SI fixes2) | R-N5-NJB.md 524d93f5 | MINSET NJB-1 wording; G-NJB-1 MISSED by me (literal (c) = NJB); ENT-SHAPE (5) NOT SIGNED, (5′) SIGNED (NJB-2) | §C 5e85c706 + C.7 49dc13bf: converged, REFEREE-2 withdrew N-NJB-1 |
+| P-N5-TOG (R34 at CHECKER) | R-N5-TOG.md fff6e624 | all SIGNED; X-SN-PHASE WITH TOG-1 (crossing out of the SN prefix; slack), TOG-2 (§11 → §7) | §C 49dc13bf (2 rows); fixes f15b58dd + fixes2 698539a9 consistent |
+| P-N5-SCOPE (pin 8998ee6, sha1 c3f5ed37) | R-N5-SCOPE.md (this commit) | all SIGNED, no gaps | §C OPEN: when REFEREE-2 successor 8's R2-N5-SCOPE exists |
+### IN FLIGHT / NEXT
+- SCOPE §C (Lead will say when R2-N5-SCOPE exists). My climbs scope_climb.py seeds 91/92 finished: 0 failures over 766,585 candidates,
+  maxima (3, 0, 3) / (4, 0, 4); recorded in R-N5-SCOPE §8.
+- Nothing else open on my side. CHECKER N-2 (R-N5-TOG l.9 cited the L2 §C as 5e85c706; it is ce241061) fixed in this commit.
+### Tools (docs/referee/scratch/, own code; every probe asserts exactly one Odd choice vertex where 𝒞^1O is meant; own trace = n5.run)
+l2_probe.py (L2 checks), l2_pc.py (P^c_ℓ path enumeration, NEG=1 control), l2_exitdrop.py, l2_climb.py (frz|tog|h2s), l2_oink.py (N5 regions
+vs Oink --zlk -v), njb_probe.py (RDROP, PL (c′), MINSET, NORF, ENTP pattern), tog_probe.py + tog_climb.py, scope_probe.py (KEY, WCH, SC,
+FBI, NH1, CN-LAST; `gen` = general games) + scope_climb.py; frz_probe.py has §C counters (BLOCK_S4a_leaves, LEAVE_h_afterF, XRUN_*).
+### Traps and lessons (keep)
+- Stale local branch at start; peers' stamps are not my clock (Lead 08:07Z vs my 08:04Z); order by git, stamp by date -u at the moment
+  of writing. I estimated two §C stamps and one notebook stamp and had to correct them: run date -u right before the header.
+- An "iff" whose one side is forced nonempty by a sibling clause is a disguised conjecture (G-NJB-1); data on it is vacuous.
+- "At some S4a step in (k0, k)": check where the vertex is AT k0; fallback evictions sit at the boundary (NJB-2).
+- "In a phase" clauses about k and k+1: test phase-exit transitions (L2-2).
+- Accounting with "both ends in P" versus counts "at states of P": the boundary transition recurs (FRZ-3, TOG-1).
+- Check SHAs you cite against git log (I cited the NJB §C SHA for the L2 §C: CHECKER N-2).
+- Random 𝒞^1O games are nearly vacuous for freezes, blocks, dirty intervals; name the thin spots; library + climbs carry the evidence.
+- Bash: never pkill -f / pgrep -f with the pattern in the same shell.
+
+## Resume point (successor 7), written 2026-10-25T09:07Z by date -u (stamp corrected from 09:05Z) (Opus 5.5, D15; session_01TWT1diK1Z9x2eK56iBVbZu)
+- Handover check 3e86cb10 (Lead 5/5, 08:20Z).
+- P-N5-L2 (pin 04b3f48, sha1 cbea0739…): docs/referee/R-N5-L2.md (7626354e; climb addendum 524d93f5).
+  - H3-CONST, G′, R-CONST SIGNED. FREEZE′ and X-RUN′ SIGNED on premise P-N5-FRZ.
+  - H2-STICK WITH L2-1 (τ(o) = o wording; 400 of 520 library cases). H1-INT WITH L2-2 (pre-drop clause only in-phase; exitdrop_n3.pg).
+  - FINDING: §8 DROP-LEN and its per-run form FALSE (droplen_cex_n12.pg: two drops in one fallback-free run, θ constant).
+  - Thin: FREEZE′'s new case is unexercised (climbs reach n−2 / n−1, never n).
+  - Tools: scratch/l2_probe.py, l2_pc.py (P^c_ℓ by path enumeration, NEG=1 control), l2_exitdrop.py, l2_climb.py (frz|tog|h2s),
+    l2_oink.py.
+- P-N5-FRZ §C (1f13a6f9, C.6 9ad6bfba) vs R2-N5-FRZ 20a73ca/f546b43c:
+  - No verdict differs. N-FRZ-1 (ARENA two routes, one base) MISSED by my lane, accepted. N-FRZ-4 accepted.
+  - BLOCK vacuous in all data (0 leaves in 30 runs; 0 at 2,410 (h) S4a transitions after freezes). Post-F(⊥) and segment −1 unexercised.
+  - Joint label PROVED, pending CHECKER.
+- P-N5-NJB (pin a7d85b3, sha1 f43a8823…): docs/referee/R-N5-NJB.md (524d93f5).
+  - RDROP, PL (c′), PL-S′, NO-RF-OLD + Cor., ENT-SHAPE (1)-(4) SIGNED. MINSET WITH NJB-1 ("absorbed" = "entered R").
+  - ENT-SHAPE (5) NOT SIGNED as stated: NJB-2, the level-L rise of z may sit at the fallback k0 (z ∈ R_{k0} evicted). Seen
+    locally 1,159× in the library, hand-checked on cycelim_cex_n32 fb 15. (5′) signed.
+  - Tool: scratch/njb_probe.py. D_M = 0 everywhere (thin).
+- §Cs (09:45-09:46Z): L2 §C ce241061 (earlier written as 5e85c706 = NJB §C; corrected) (no verdict differs; L2-2 REFEREE-only; N-L2-2 via Lemma X-RUN° accepted). NJB §C 5e85c706: G-NJB-1
+  MISSED by me (literal MINSET (c) = NJB; survivor form signed); ENT-SHAPE (5) VERDICT DIFFERS (N-NJB-1 assumes z ∈ F_{k0}; literal (5)
+  NOT SIGNED by me, (5′) signed); REFEREE-2 ruling requested. Stamps first estimated, corrected 0363a7be.
+- P-N5-TOG (pin d3daae1, sha1 7dfda8c8…): docs/referee/R-N5-TOG.md fff6e624. All SIGNED; X-SN-PHASE WITH TOG-1 (X_SN counts the crossing
+  out of the SN prefix; slack) and TOG-2 (§11 → §7). Tools scratch/tog_probe.py, tog_climb.py. NEXT: TOG §C when R2-N5-TOG exists.
+- Lesson: an "iff" whose one side is forced by a sibling clause (Mn_{t+1} ≠ ∅ by (a)) is a disguised conjecture; data on it is vacuous.
+- Lesson: never estimate a stamp; run date -u right before writing the header.
+- NEXT: §C for L2 and NJB when the R2 reports exist; L-NEW / L-SI fixes files.
+- Lessons:
+  - A lemma that says "at some S4a step in (k0, k)" must exclude the boundary fallback transition. Check where the vertex is AT k0 (NJB-2).
+  - "in a phase" clauses about a state k and k+1: test phase-exit transitions (L2-2).
+  - Packet words defined in §0 (absorption) used loosely later (NJB-1).
+
+## Handover check (successor 7), written 2026-10-25T08:12Z by date -u (Opus 5.5 under D15; session_01TWT1diK1Z9x2eK56iBVbZu)
+1. Branch, head, distance to trunk. Commands: `git fetch origin claude/referee claude/vibrant-johnson-nxvvxo`; `git status -sb`;
+   `git merge --ff-only origin/claude/referee`; `git merge --no-edit origin/claude/vibrant-johnson-nxvvxo`; `git rev-parse --short=8 <ref>`;
+   `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo`.
+   - Local claude/referee started STALE at 73b46eb8, 1002 behind origin/claude/referee. Fast-forwarded to 451b2922 (predecessor's handover).
+   - Merged trunk 5071ce71 with a merge commit: head 6b665e27 before this commit; 2 ahead / 0 behind trunk (the handover commit + the merge).
+     After this commit: 3 ahead / 0 behind.
+2. Open work and next step (from the successor-6 HANDOVER section above and the Lead's 08:07Z brief; `grep -n "^## " notes/REFEREE.md`):
+   - P-N5-FRZ §C (task 2): waits for REFEREE-2 successor 7's R2-N5-FRZ. `git fetch origin claude/referee-2`: head de9ff970 (handover merge,
+     pin check 25fda0f); no R2-N5-FRZ file name under docs/referee-2/ (names listed only; contents not read). Next: the Lead's word, then §C in
+     docs/referee/R-N5-FRZ.md (every differing verdict + joint gap map).
+   - P-N5-L2 (task 1, after GO): object docs/new/P-N5-L2-box34.md at pin 04b3f48. `git show 04b3f48:docs/new/P-N5-L2-box34.md | sha1sum` =
+     cbea07392521bcdfbce137ba361bb581f9df11d7 (matches the brief; same on trunk 5071ce71). Statements §1-§7 (H3-CONST, H2-STICK, G′, FREEZE′,
+     R-CONST, H1-INT, X-RUN′); §8 not to sign. Next: own probe on scratch/frz_probe.py + sn_probe.py (one-Odd-chooser assertion), packet
+     instances oneh_cex_n32 / onedrop_cex_n32, library, random, climbs; report docs/referee/R-N5-L2.md.
+   - P-N5-NJB (task 3): docs/si/P-N5-NJB-box9.md, pin a7d85b3, sha1 f43a8823… (not yet verified by me). Next: after L2.
+   - Oink: built by scripts/setup_oink.sh at 8fbf0a7 into tools/oink/build (exit 0).
+3. GAPS rows relevant to me (`git show origin/claude/vibrant-johnson-nxvvxo:docs/GAPS.md | grep G-N5-TIME`):
+   - G-N5-TIME | major | owner L-NEW (L-LIT T22; referees later) | **open** | N5 SSI-GLOBAL makes polynomially many iterations (gauntlet
+     step 4, running time). The referees' part: each lane packet toward it (R15-R30 landed; P-N5-FRZ signed by me, R2 pending; P-N5-L2,
+     P-N5-NJB queued). P-N5-L2 itself says "G-N5-TIME stays OPEN". Related, closed: G-N5-TERM (closed by R15).
+4. Owner rulings, verbatim (`git show origin/claude/vibrant-johnson-nxvvxo:docs/DECISIONS.md`), with DECISIONS-INDEX status
+   (`grep -E "^\| *D(1|15|18) " docs/DECISIONS-INDEX.md`):
+   - D1 (index: **active**, 2026-10-14): "A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim,
+     including the fleet's own, as wrong until it passes the gauntlet below." and "Never downgrade the referee to save money."
+   - D15 (index: **active**, 2026-10-22): "q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it"
+     (Lead reading L37 (1): referees on Opus 5.5; signatures labelled "(Opus 5.5, D15)").
+   - D18 (index: **active**, 2026-10-24): "Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas
+     from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state
+     them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems."
+5. Trap found: clocks disagree across sessions. The Lead's brief is stamped 08:07Z, but my first `date -u` after receiving it read
+   08:04:24Z, and the predecessor's handover (stamped 08:04Z) reached origin only after that. A peer's stamp is not my clock: every
+   time in my files comes from `date -u` at writing, and ordering questions are settled by commit order (git log), not by stamps.
+   Also confirmed again: the container starts on a stale local branch (73b46eb8, 1002 behind); check HEAD == origin/claude/referee first.
+   Also: the playbook puts handover checks in docs/agents/handover-checks/ (a Lead-only path where successors 5-6 wrote); the Lead's
+   brief puts this one here in notes/REFEREE.md, and I followed the brief.
+
+## HANDOVER (successor 6 -> successor 7), written 2026-10-25T08:04Z by date -u, context ~570k (Opus 5.5 under D15; label "(Opus 5.5, D15)")
+Lead: session_014FBi6o334DvwT5Uw2kDfoN (send_message via claude-code-remote MCP; first line "From REFEREE (<date -u>):").
+Branch claude/referee. Start: git fetch origin claude/referee claude/vibrant-johnson-nxvvxo; check HEAD == origin/claude/referee (stale
+containers happened at every restart); merge trunk with a normal merge. Push ONLY with scripts/push.sh > file 2>&1; echo $?.
+Build Oink first (scripts/setup_oink.sh, ~1-2 min). Never read docs/referee-2/ for a packet before your own report is pushed.
+Objects not yet on trunk: read from origin/claude/<lane> by SHA (happened 3 times: l-new fixes, l-red instances, referee-2 report).
+### DONE (successor 6; all pushed; every report with §C unless noted)
+| packet | report | verdicts | §C |
+|---|---|---|---|
+| handover check | docs/agents/handover-checks/REFEREE.md (109721d3) | 5/5 | — |
+| P-N5-OE (R28) | R-N5-OE.md 5e98e33c | U-loc, OE (OE-1..3 wording/closed), OX signed | 84748819 (= R2; N-OE-3 phase key MISSED by me) |
+| P-N5-CLS (R29) | R-N5-CLS.md a0b92ecd | all signed; CLS-1..4 wording/closed; OG′ FALSE confirmed | 8af63475 (CLS-3 = G-CLS-1, R2's form adopted) |
+| P-N5-SN (R30) | R-N5-SN.md 59a886d1 (+addenda 58dd6e86, 2f465ff1) | all signed; SN-1 ABS-COUNT d_o−1 form unproved (proved d_o+REL); fixes §2b H1-DROP/H1-KEEP/ABS-COUNT′ SIGNED (closes SN-1 except O_k = −1) | 3d49e0af (SN-1/2 = G-SN-1 (a)/(b)) |
+| P-N5-FBW | R-N5-FBW.md 9a94dc7b | P-OPT VALID; all signed; FBW-1 (H1 not H2), FBW-2 (STRETCH k ≤ e) | a04615b5 (FBW-2 = N-FBW-1; FBW-1 kept against R2's text) |
+| P-N5-FRZ | R-N5-FRZ.md 3a520ce7 (+Addendum 3171efc7: fixes l-new 1dc42ba close FRZ-1..3) | all signed; FRZ-1 (γ omitted again), FRZ-2, FRZ-3 (REL_Q boundary transition) | IN FLIGHT |
+### IN FLIGHT
+- FRZ §C: needs R2-N5-FRZ from REFEREE-2 successor 7 (session_01CE1xQNfGUgtJg9A7SWAkuE); the Lead will say when it exists. Compare against
+  R-N5-FRZ.md verdict table + addendum; joint gap map, one fixes-file line per row.
+### NEXT (in this order; Lead 08:06Z)
+1. P-N5-L2: docs/new/P-N5-L2-box34.md, sha1 cbea0739…, pinned trunk 04b3f48 (L-NEW 14). FREEZE′ and X-RUN′ rest on P-N5-FRZ (my R-N5-FRZ).
+2. P-N5-NJB: docs/si/P-N5-NJB-box9.md, sha1 f43a8823…, pinned trunk a7d85b3 (L-SI 4). NJB was a CONJECTURE in P-N5-FBW §6 (D_M = 0 in all data).
+### Tools (docs/referee/scratch/; all assert exactly one Odd choice vertex where 𝒞^1O is meant; own N5 trace u1_probe.trace = n5.run)
+- oe_probe.py (U-loc/OE/OX; lib|rand|randb), cls_probe.py (CLS: C5-C7, TRANSFER, OFFGATE, CN, NL, CLS1; fine phase key), sn_probe.py
+  (OR, TC-SPLIT, R-STICK, SN-PREFIX, H3H2, LEAVE, ABS-COUNT/′, WK, ABS-L, H1-DROP/KEEP), absc_climb.py (FIT=h1drop), fbw_probe.py (P-OPT
+  single-switch + control, FBW, FBW-S, CLS2, FLAT-ALL, STRETCH, PL), frz_probe.py (NL-MF, Fact 0, ARENA, Steps 1-2, FREEZE, RATCHET, BLOCK,
+  X-RUN, SUB). 'lib' = every experiments/**/*.pg in 𝒞^1O with n ≤ 64 (252 files at 83bf81a1).
+- Phase keys: SN/OE/FRZ packets use (λ_Ξ, τ); scope runs / CLS / FBW use (λ_Ξ, λ_U, τ). Check every citation's signed key (WM, NL transfer fine).
+### Traps and lessons (keep)
+- Stale local branch at start; objects referenced "on trunk" may not be merged yet: fetch the lane branch and check the SHA.
+- Stamp times from date -u at writing (I slipped once, fixed in 696b08ce).
+- Counting proofs "ends ≤ B": check the END state satisfies B's hypothesis (SN-1).
+- A lemma signed for a TRANSITION inside a run: check both ends are inside (CLS-3 = G-CLS-1).
+- "Including the repaired cases X": check the text actually carries each repair (FRZ-1, XA-3 (γ) omitted twice).
+- Count tails as vertices, not gates (my first STRETCH check double-counted).
+- "λ(o) ≠ o" is not "o off a cycle"; minimiser (CAP-1) and DF-trap checks at own cycle nodes for every minimiser / VJ00 5.8 step.
+- Cycle through a switched own cycle node: the honest cycle; o is excluded by H1, not H2 (FBW-1).
+- Random 𝒞^1O games are nearly vacuous for crossings, freezes (no n-state (h) windows), wakes, dirty intervals: name the thin spots.
+- Bash: never pkill -f/pgrep -f with the pattern in the same shell (kills the tool shell); kill PIDs from ps.
+
+## Resume point (successor 6): P-N5-FRZ (Lead 05:58Z; pin 25fda0f; docs/new/P-N5-FRZ-box34.md sha1 39df373c…; L-NEW succ. 14)
+- docs/referee/R-N5-FRZ.md (from 06:16Z by date -u): all SIGNED; P^c_ℓ WITH FRZ-1 ((γ) omitted again = R20 XA-3), FRZ-2 (B-fallback B1
+  own-cycle-node x: strictness by cycle node, not (V2)); X-RUN WITH FRZ-3 (REL_Q misses the transition leaving P; bound survives by slack).
+  Tool scratch/frz_probe.py. Random games give no FREEZE windows (library only). NEXT: §C for FBW and FRZ when R2 reports exist.
+- Lesson: when a packet says "including the repaired cases X", check the text actually carries each repair (FRZ-1).
+
+## Resume point (successor 6): P-N5-FBW (GO 05:53Z Lead stamp; pin e69772b; docs/si/P-N5-FBW-box9.md sha1 88337bd6…; L-SI succ. 4)
+- docs/referee/R-N5-FBW.md (from 06:01Z by date -u): P-OPT VALID (G-1OA-6 is about S4c's installed σ_{k+1}; P-OPT uses S4a's output at k = σ_k);
+  FBW, FBW-S, CLS2, STRETCH, PL-S SIGNED; FLAT-ALL WITH FBW-1 (H1 not H2 for the cycle-node cycle); PL WITH FBW-2 (STRETCH k ≤ e for f_N).
+  D_M = 0 everywhere (PL (b)/(c) unexercised). Tool scratch/fbw_probe.py (POPT single-switch check + control). NEXT: P-N5-FRZ (L-NEW 14), then §Cs.
+- Lesson: count tails as vertices, not gates (my first STRETCH check double-counted a tail with two level-M gates).
+
 ## Resume point (successor 6): P-N5-SN (GO 03:42Z Lead stamp; pin 2c70ef6; docs/new/P-N5-SN-box33.md sha1 340d4f29…; L-NEW succ. 13)
 - docs/referee/R-N5-SN.md (from 03:55Z by date -u): OR, TC-SPLIT, R-STICK, SN-PREFIX, H3H2, WK, ABS-L (premise = R29, signed by both) SIGNED;
   LEAVE WITH SN-3 (r=⊥ wording); ABS-COUNT WITH SN-1 (proof's "ends ≤ d_o−1" needs H1 at run end; proved d_o + REL; (d_o−1) form OPEN, 0 cex,

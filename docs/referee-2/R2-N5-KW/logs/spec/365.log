@@ -1,0 +1,17 @@
+A0_checks: 1805
+FACTB_pairs: 3132
+KWS_stretches: 95
+PAR_states_cw_above_cth: 4
+PHASE_checked: 21
+phases: 21
+runs: 3
+states: 95
+states_checked: 95
+stretches: 95
+max_KW_per_stretch: 0
+max_T_per_phase: 34
+max_Trel_per_phase: 34
+max_f_per_phase: 1
+max_stretches_per_phase: 35
+RESULT OK violations=0
+experiments/red/so/instances/nleq33_n48.pg exit 0

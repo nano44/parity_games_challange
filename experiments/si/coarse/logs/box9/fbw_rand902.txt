@@ -1,0 +1,1 @@
+TOTAL {'fbE': 105, 'gates': 118, 'b_chk': 118, 'W_chk': 118, 'above_gap': 118, 'scope_EQ': 5}

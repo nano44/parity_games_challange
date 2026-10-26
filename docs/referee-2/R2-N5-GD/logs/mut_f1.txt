@@ -1,0 +1,15 @@
+MODE files ../../../experiments/new/box41/lib41.txt 1 MUT f1
+F1D_intervals: 5563
+GDB_vertices: 54194
+GDC1_pairs: 490158
+GDC2_levels: 25015
+WOD_checks: 4421
+runs: 412
+states: 8889
+states_D_ge2: 1297
+states_D_nonempty: 7090
+states_MD_ge0: 4266
+states_hD: 6543
+states_hD_h3D: 6310
+max_F1D_changes: (55, 'experiments/red/xing/instances/x32_rand64.pg#0')
+RESULT OK violations=0

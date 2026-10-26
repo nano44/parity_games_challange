@@ -1,0 +1,7 @@
+TRACE rand
+STEPK_gate_edges: 14
+inphase_fallbacks: 2
+runs: 3
+states: 113
+max_fallbacks_per_crossing_free_run: 0
+RESULT OK violations=0

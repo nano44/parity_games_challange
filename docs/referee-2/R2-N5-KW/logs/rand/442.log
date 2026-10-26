@@ -1,0 +1,21 @@
+A0_checks: 771
+FACTB_pairs: 3773
+KWS_stretches: 64
+PAR_states_cw_above_cth: 6
+PHASE_checked: 21
+RUNS_runs: 3
+RUN_case_a: 3
+phases: 21
+runs: 3
+states: 67
+states_checked: 67
+stretches: 64
+max_KW_per_stretch: 1
+max_RUN_ratio_case_a_x1000: 4
+max_T_per_phase: 19
+max_Trel_per_phase: 19
+max_f_per_phase: 15
+max_freeze_delay: 1
+max_stretches_per_phase: 19
+RESULT OK violations=0
+experiments/si/coarse/instances/cls_rel_lev.pg exit 0

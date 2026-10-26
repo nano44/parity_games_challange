@@ -1,0 +1,6 @@
+fallbacks: 1
+phases: 1
+phases_c=o: 1
+runs: 3
+transitions: 10
+RESULT OK violations=0

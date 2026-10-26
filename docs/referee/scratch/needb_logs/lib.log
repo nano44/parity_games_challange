@@ -1,0 +1,15 @@
+FAC_chk                        528
+INTO_states                    6
+NB_case_A1                     254
+NB_case_A2p                    54
+NB_case_B                      220
+NB_chk                         528
+OT_chk                         153
+OT_states                      36
+THR_fb_r_ge0                   528
+games                          253
+rises                          30
+scope_runs                     206
+skip_not_c1o                   159
+FAILS 0
+exit 0

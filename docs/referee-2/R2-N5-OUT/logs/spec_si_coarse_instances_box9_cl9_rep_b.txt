@@ -1,0 +1,7 @@
+TRACE spec
+STEPK_gate_edges: 113
+inphase_fallbacks: 110
+runs: 3
+states: 136
+max_fallbacks_per_crossing_free_run: 0
+RESULT OK violations=0

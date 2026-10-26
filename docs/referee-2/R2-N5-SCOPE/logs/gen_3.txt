@@ -1,0 +1,8 @@
+CNL_control_noncycle_tail (i)=False (ii)=False (iii)=False: 1
+CNL_hyp_followed_by_stop: 73
+CNL_hypothesis_cases: 73
+CNL_level-1_Even_fallbacks: 74
+gen_fallbacks: 78
+gen_runs: 10000
+gen_transitions: 13553
+RESULT OK violations=0

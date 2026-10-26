@@ -1,0 +1,15 @@
+CASEB_chk                4
+FFLAT_chk                22
+FREEZE_chk               15
+NOENT_runs               13
+NOENT_states             92
+SPLIT_a_chk              6
+SPLIT_b_chk              22
+breaks                   1
+fb_in_stretch            22
+fb_in_stretch_crossing   22
+games                    3
+stretches                8
+tauoo_stretch_A          4
+tauoo_stretch_B          1
+FAILS 0

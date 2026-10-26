@@ -1,0 +1,5 @@
+KEY_tau_const_transitions: 5
+fallbacks: 0
+runs: 3
+transitions: 8
+RESULT OK violations=0

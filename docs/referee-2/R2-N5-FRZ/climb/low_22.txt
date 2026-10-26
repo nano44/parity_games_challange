@@ -1,0 +1,47 @@
+climb FIT=low seed=22 n=24 iterations=5088 improvements=1 best_fitness=21.6
+BEST-INSTANCE counters: {'ARENA_W_improving_edges': 535, 'ARENA_steps': 68, 'ARENA_steps_with_withheld': 57, 'ARENA_withheld': 379, 'FACT0_states': 80, 'FREEZE_F_level_>=0': 2, 'FREEZE_a_after_theta_change': 2, 'FREEZE_a_checks': 2, 'FREEZE_b_checks': 2, 'FREEZE_levels_with_F': 2, 'NLMF_h_S4a_steps': 68, 'NLMF_r_gt_MF': 39, 'NLMF_r_gt_MF_with_MF=bot (NL at L=bot)': 36, 'PC_checks_sampled': 2270, 'PC_windows': 16, 'RATCHET_a_checks': 4, 'RATCHET_b_checks': 2, 'STEP1_states': 80, 'STEP2_checks': 364, 'SUB_subruns_rho>=-1': 11, 'XRUN_crossings_in_P': 60, 'XRUN_runs': 7, 'XRUN_runs_H1_P': 7, 'fallbacks': 2, 'phases': 5, 'runs': 4, 'transitions': 79}
+BEST-INSTANCE maxima: {'PC_max_window_len_over_n_x100': 108, 'RATCHET_b_max_theta_values': 1, 'RATCHET_c_max_runs': 1, 'XRUN_max_P_len': 16, 'XRUN_max_crossings_in_P': 14, 'XRUN_max_pre_crossings': 14, 'max_consecutive_h_over_n_x100': 108, 'max_phase_states': 26}
+ARENA_W_improving_edges: 1012995
+ARENA_steps: 144602
+ARENA_steps_with_withheld: 112108
+ARENA_withheld: 663071
+FACT0_states: 187918
+FREEZE_F_level_>=0: 1358
+FREEZE_a_after_theta_change: 479
+FREEZE_a_checks: 1032
+FREEZE_b_checks: 1032
+FREEZE_levels_with_F: 1358
+NLMF_h_S4a_steps: 144602
+NLMF_h_S4a_steps_with_leave: 3941
+NLMF_r_gt_MF: 62333
+NLMF_r_gt_MF_with_MF=bot (NL at L=bot): 54569
+PC_checks_sampled: 4062601
+PC_windows: 46955
+RATCHET_a_checks: 2390
+RATCHET_b_checks: 1358
+STEP1_states: 187918
+STEP2_checks: 874473
+SUB_subruns_rho>=-1: 31218
+XRUN_crossings_in_P: 120878
+XRUN_runs: 24012
+XRUN_runs_H1_P: 22876
+XRUN_runs_P_not_all_H1: 155
+climb_evaluations: 5088
+climb_runs: 20352
+fallbacks: 3751
+phases: 21200
+runs: 20352
+transitions: 205811
+PC_max_window_len_over_n_x100: 108
+RATCHET_b_max_theta_changes: 0
+RATCHET_b_max_theta_values: 1
+RATCHET_b_max_w_changes: 0
+RATCHET_c_max_runs: 1
+SUB_max_reentries: 0
+XRUN_max_P_len: 19
+XRUN_max_REL_Q: 10
+XRUN_max_crossings_in_P: 15
+XRUN_max_pre_crossings: 15
+max_consecutive_h_over_n_x100: 108
+max_phase_states: 26
+RESULT OK violations=0

@@ -13,6 +13,9 @@ Checked (counters):
   EXITR    ε-transition: x0 in R_t for t in [k+1, next fallback transition index] (or the phase's last state)   [CONJECTURE]
   ORX      each exit absorbed at most once per fallback-free segment (ε-transitions)
   TCS      θ-change: lev(θ_k,θ_{k+1}) <= E_k, or ε and = O_k
+  REL      (box 38) exit releases per phase: (k, x) with k a non-fallback transition, x in succ(o) minus {o}, x in R_k but not R_{k+1}
+  NJB      (box 38, L-SI CONJECTURE) no COARSE_M change at a non-fallback transition strictly inside a level-M block (M >= 0) of
+           consecutive in-scope fallbacks of a scope run;  FLATALL  none at f_1 .. f_{N-1} (FLAT-ALL (iii))
   ABSL_i/ii/iii/cnt  Lemma ABS-L on scope runs (CLS §0), consecutive fallbacks k0 < k in S, L = M_{k0}, r_j > L on [k0+1, k]
 Usage: sox2.py game.pg ..."""
 import sys, os
@@ -68,6 +71,18 @@ def analyse(g, cap=5000):
         cth = lam[a][o]; cw = [Wv[k][o][0] for k in range(N)]
         X = sum(R[k] != R[k + 1] for k in range(a, b + 1)); f = sum(FB[a:b + 1])
         XSN = sum(R[k] != R[k + 1] and not FB[k] and cw[k] == cth for k in range(a, b + 1))
+        REL = sum(1 for k in range(a, b + 1) if not FB[k] for x in set(g.succ[o]) if x != o and x in R[k] and x not in R[k + 1])
+        epsx = {}
+        for k in range(a, b + 1):
+            Ek, Ok = EO(k)
+            if Ok != BOT and Ok > Ek: epsx.setdefault(k, sb[k][o])
+        absorbed = set(); RELe = 0
+        for k in range(a, b + 1):
+            if k in epsx and epsx[k] in R[k + 1]: absorbed.add(epsx[k])
+            for x in list(absorbed):
+                if x not in R[k + 1]:
+                    absorbed.discard(x)
+                    if not FB[k]: RELe += 1
         if X > (f + 1) * (n - 1) + f + XSN: bad("XSN", a)
         eo = {k: EO(k) for k in range(a, b + 1)}
         # R-STICK
@@ -77,7 +92,7 @@ def analyse(g, cap=5000):
                 if Wv[k][x][0] != Xi[k][x][0] and x not in R[k + 1]: bad("RSTICK", k)
             if cw[k] != cth and not R[k] <= R[k + 1]: bad("RSTICK2", k)
         # SN-PREFIX on maximal fallback-free runs
-        k = a; maxpost = 0; runs = []
+        k = a; maxpost = 0; maxpre = 0; runs = []
         while k <= b:
             if FB[k]: k += 1; continue
             j = k
@@ -86,6 +101,8 @@ def analyse(g, cap=5000):
             p = 0
             while p < len(eq) and eq[p]: p += 1
             if any(eq[p:]): bad("PREFIX", k)
+            pre = sum(R[s] != R[s + 1] for s in st[:p] if s < st[-1])
+            maxpre = max(maxpre, pre)
             post = 0
             for s in st[p:-1]:
                 if not R[s] <= R[s + 1]: bad("PREFR", s)
@@ -118,12 +135,41 @@ def analyse(g, cap=5000):
         maxseg = max((len(v) for v in seg.values()), default=0)
         # ABS-L on scope runs
         scope = [H1[k] and H2[k] and cw[k] == cth and H2[k + 1] and Wv[k + 1][o] == Wv[k][o] for k in range(a, b + 1)]
-        k = a; absl_checked = 0
+        k = a; absl_checked = 0; nblocks = 0; blockfb = 0; nrel = 0; reabs_ = 0; minmn = 10 ** 9; mnabs = 0; soleabs = 0
         while k <= b:
             if not scope[k - a]: k += 1; continue
             j = k
             while j + 1 <= b and scope[j + 1 - a]: j += 1
             fbs = [t for t in range(k, j + 1) if FB[t]]
+            # box 38: CONJECTURE NJB (L-SI docs/si/N5-C-box9.md §3): level-M blocks of consecutive in-scope fallbacks, M >= 0
+            Mf = {t: M(t) for t in fbs}; bi = 0
+            while bi < len(fbs):
+                bj = bi
+                while bj + 1 < len(fbs) and Mf[fbs[bj + 1]] == Mf[fbs[bi]]: bj += 1
+                Mb = Mf[fbs[bi]]
+                if Mb >= 0 and bj > bi:
+                    f1, fN = fbs[bi], fbs[bj]; nblocks += 1; blockfb = max(blockfb, bj - bi + 1)
+                    for t in range(f1, fN):
+                        ch = any(sox.coarse(Xi[t + 1][v], Mb) != sox.coarse(Xi[t][v], Mb) for v in range(n))
+                        if t == f1 or FB[t]:
+                            if ch: bad("FLATALL", t)
+                        elif ch: bad("NJB", t)
+                    for t in range(f1 + 1, fN + 1):  # MINSET guide (P-N5-NJB §2): Mn_t = free exits whose o ⊕ Ξ has θ's COARSE_M
+                        th = sox.coarse(Xi[t][o], Mb)  # (min over states f1+1 .. fN as minset.py; absorptions at non-fallback t < fN)
+                        Mn = [x for x in set(g.succ[o]) if x != o and x not in R[t] and sox.coarse(E.extend(o, Xi[t][x]), Mb) == th]
+                        minmn = min(minmn, len(Mn))
+                        if FB[t] or t == fN: continue
+                        ab = [x for x in Mn if x in R[t + 1]]
+                        mnabs += len(ab)
+                        if len(Mn) == 1 and ab: soleabs += 1
+                    rel = set()
+                    for t in fbs[bi:bj]:
+                        rel |= {x for x in set(g.succ[o]) if x != o and x in R[t] and x not in R[t + 1]}
+                        nrel += len({x for x in set(g.succ[o]) if x != o and x in R[t] and x not in R[t + 1]})
+                    for t in range(f1, fN):
+                        for x in rel:
+                            if x not in R[t] and x in R[t + 1] and not FB[t]: reabs_ += 1
+                bi = bj + 1
             for k0, k1 in zip(fbs, fbs[1:]):
                 L = M(k0)
                 if not all(lev(Xi[t][o], Wv[t][o]) > L for t in range(k0 + 1, k1 + 1)): continue
@@ -136,8 +182,8 @@ def analyse(g, cap=5000):
                     if any(x0 not in R[u] for u in range(t + 1, k1 + 1)): bad("ABSL_iii", t)
                 if cnt > d_o - 1: bad("ABSL_cnt", k0)
             k = j + 1
-        rows.append(dict(a=a, b=b, T=b - a + 1, X=X, XSN=XSN, f=f, eps=len(eps), epsSN=epsSN, maxseg=maxseg, maxpost=maxpost,
-                         absl=absl_checked, d_o=d_o))
+        rows.append(dict(a=a, b=b, T=b - a + 1, X=X, XSN=XSN, REL=REL, RELe=RELe, f=f, eps=len(eps), epsSN=epsSN, maxseg=maxseg, maxpost=maxpost, maxpre=maxpre,
+                         absl=absl_checked, d_o=d_o, nblocks=nblocks, blockfb=blockfb, blkrel=nrel, reabs=reabs_, minmn=minmn, mnabs=mnabs, soleabs=soleabs))
     return dict(n=n, o=o, it=len(FB), fb=sum(FB), rows=rows, C=C, ex=ex)
 
 if __name__ == "__main__":
@@ -146,7 +192,7 @@ if __name__ == "__main__":
         g = sox.load(f)
         if len(sox.oddchoice(g)) != 1: print(os.path.basename(f), "SKIP not C^1O"); continue
         r = analyse(g); rs = r["rows"]
-        m = {k: max((x[k] for x in rs), default=0) for k in ("X", "XSN", "f", "eps", "epsSN", "maxseg", "maxpost", "absl")}
+        m = {k: max((x[k] for x in rs), default=0) for k in ("X", "XSN", "REL", "RELe", "f", "eps", "epsSN", "maxseg", "maxpost", "maxpre", "absl", "nblocks", "blockfb", "blkrel", "reabs", "mnabs", "soleabs")}
         for k, v in m.items():
             if v > mx.get(k, (0,))[0]: mx[k] = (v, os.path.basename(f))
         print(os.path.basename(f), f"n {r['n']} o {r['o']} it {r['it']} fb {r['fb']} phases {len(rs)} max", m, "FAILS", r["C"] or 0, r["ex"] or "", flush=True)

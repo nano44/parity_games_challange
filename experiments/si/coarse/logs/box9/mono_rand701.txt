@@ -1,0 +1,1 @@
+random 701 1500 {'tr': 1693, 'nc': 1239, 'ncfail': 454, 'viol_coarse': 0, 'viol_M': 0, 'viol_conv': 0, 'ncfail_inphase': 0, 'ncfail_inphase_no_o': 0, 'Mdown': 934, 'Mup': 46} []

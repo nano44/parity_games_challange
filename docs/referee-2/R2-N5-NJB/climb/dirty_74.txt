@@ -1,0 +1,15 @@
+climb FIT=dirty seed=74 n=48 iterations=381 improvements=3 best_fitness=372.0
+BEST-INSTANCE counters: {'MINSET_d_fallbacks': 143, 'blocks': 4, "blocks_with_r<=M_somewhere (PL (c) hypothesis fails; PL (c') covers)": 4, 'fallbacks': 148, 'runs': 4, 'scope_fallbacks': 147, 'scope_runs': 4, 'transitions': 178}
+BEST-INSTANCE maxima: {'max_block_N': 37}
+MINSET_d_fallbacks: 26550
+blocks: 899
+blocks_with_r<=M_somewhere (PL (c) hypothesis fails; PL (c') covers): 899
+climb_evaluations: 381
+fallbacks: 27722
+runs: 1524
+scope_fallbacks: 27449
+scope_runs: 1742
+transitions: 47469
+max_D_M: 0
+max_block_N: 37
+RESULT OK violations=0

@@ -1,0 +1,8 @@
+ANTI_W_checks: 53
+ANTI_W_with_exceptional_edges: 1
+ANTI_Xi_checks: 53
+ANTI_Xi_with_exceptional_edges: 1
+runs: 4
+states: 140
+RESULT OK violations=0
+experiments/red/n5inj/instances/theta_tp40.pg exit 0

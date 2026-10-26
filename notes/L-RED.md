@@ -1,8 +1,143 @@
 # L-RED notebook (independent adversary lane)
-Successor 15 at work since ~01:00Z 2026-10-25 (section below); successor 14's section follows. HANDOVER written 2026-10-24 ~14:30Z (date -u) by successor 13 (session_01GhyuHegkNZEo8bet84n56c, Opus 5.5, D15/D16/D18) at ~550k
+Successor 19 (session_017GDW2Qywsw52DKHPD8kAM6, Opus 5.5) started 2026-10-26 00:58Z (date -u); handover check in docs/agents/handover-checks/L-RED.md.
+Successor 18 box 42 (R72) 2026-10-25; RESUME POINT in its section below.
+Successor 16 boxes 39-40 done 2026-10-25 (R69, R70); RESUME POINT for successor 17 below.
+Successor 15 PARKED ~09:40Z 2026-10-25 after box 38; RESUME POINT for successor 16 below. HANDOVER written 2026-10-24 ~14:30Z (date -u) by successor 13 (session_01GhyuHegkNZEo8bet84n56c, Opus 5.5, D15/D16/D18) at ~550k
 context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older notebook: `git show b0884407:notes/L-RED.md`.
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
+
+## Successor 18 (session_01D6HqejxBahRiMjurWjAtzT, Opus 5.5, D14/D15/D18; created ~19:40Z 2026-10-25, date -u)
+- Handover check 5/5 (3b05d7f7; Lead 19:52Z). GO box 42 19:52Z: (1) red-team P-N5-FX (aa227b0b) and P-N5-FBPOLY (de244dcd) with exact
+  checkers from the frozen texts; (2) K growth survey; (3) FB-CAP at |U| ≥ 3, beta2 cascade. Report docs/red/R72-fx-fbpoly-k.md.
+- Tools (experiments/red/fbx/): fbx18.py (exact checker, every statement of FBPOLY §0.3-§6 + FX §1 (a), R-STICK); rfbx18.py, libst18.py,
+  lib18.sh, loopfind18.py; k18.py (K from R27's definition, Kt and Ks); kclimb18.py (Kt objective).
+- R72: no kill. 0 FAIL on library (252 S3 + 750 start-pair runs) and 8.5 M random runs. "Loop" kind occurs (exsw_loop_n15, start pair);
+  K linear on kchain (K − 1 at n = 11K + 14), climbs Kt ≤ 6 at n 58 (kt6_n58), 9 at n 124; Ks ≠ Kt wording point.
+- Trap (new): o = c_θ phases. EXIT-SWITCH's graphs G_Û / G_U^o both drop the terminal there; use G_U. My first fbx18 got it wrong
+  (false FAIL_EXSW_graph); fixed before any reported number. Check every checker on an o = c_θ phase.
+- Trap: a K climb on the switch count Ks is gamed by simultaneous wakes at one transition; climb on Kt.
+- BOX 43 (Lead 21:00Z, read 21:39Z): red-team of N5-KW-box42 (L-NEW 21) and N5-KW-box15 (L-SI 10). R73: no kill. kw18.py (own W from the
+  play; engine matches L-NEW's lib41 counts exactly: 424 runs, 1,061 CSTRICT, 4,661 WLAG, 34 kind changes, 2 c_w-switches). FRZ-U |R| − 1
+  attained (frzu_tight_n14), CW-INT attained (cw11_n24); post-freeze kind changes and W-flat kind-B switches (CASC-B) never reached.
+  Lead 20:15Z ask (loop_4102 seed climbs) superseded by 21:00Z; not done.
+- Trap (new): ReadNotifications only when told; two Lead messages (20:15Z, 21:00Z) waited unread until my 21:39Z report. Check
+  notifications at each report.
+- BOX 44 (Lead 22:56Z, 23:07Z, 23:22Z): R73 §8 (cascb_witness seen, case (a)); R74 (post-freeze kind change not found; READING §2:
+  needs a late BAND trigger of a kind-A length cascade; kmpst18.py start-pair climbs). DUAL / MIRROR NOT STARTED (context).
+- RESUME POINT (for successor 19; 2026-10-26 ~00:30Z, date -u): nothing running.
+  - Next (Lead's box 44 order): (2) P-N5-DUAL (docs/new/P-N5-DUAL-box43.md, sha1 a51f7c30, trunk df073cb5): check Lemma DUAL on our
+    engine (N5 on G from (σ0, τ0) = mirror of N5^OF on G^d from (τ0, σ0)); hunt a 𝒞^1O phase from a non-S3 start or under Odd-first ties
+    exceeding landed per-phase bounds. Tools: experiments/red/fbx/fbx18.py and experiments/red/kw/kw18.py both take --start.
+  - Then: R74 §2.5 construction (post-freeze kind change); FB-CAP |U| ≥ 3; beta2 cascade (never started).
+  - Tools: fbx18 (FBPOLY/FX exact), kw18 (KW notes, own W), k18 (K), climbers kwclimb18 / kmpst18 / kclimb18; random drivers
+    rfbx18 / kwst18. Engine matches L-NEW lib41 counts exactly (R73 §0).
+  - Read notifications at every wait: the Lead's messages queue silently.
+- (superseded) RESUME POINT (2026-10-25 ~21:35Z, date -u): nothing running. Open: (a) FB-CAP |U| ≥ 3 (n 6 random ×
+  all starts clean, 20.7 M runs; R72 §6 READING covers only the simplest |U| = 3, o = c_θ chain); (b) beta2 cascade, not started; (c) loop
+  kind from S3; (d) K two-chain construction (R72 §8). Pins: experiments/red/fbx/instances/ (exsw_loop_n15 + start, kt6_n58).
+
+## Successor 17 (session_01DJB52MMkzsddv3hXsMpos5, Opus 5.5, D14/D15/D18; created ~16:39Z 2026-10-25, date -u)
+- Handover check 5/5 (4194c094; Lead 16:53Z). GO box 41 16:53Z: (1) P-FREEZE / HAT-FREEZE post-freeze regime at |U| ≥ 3 (P-N5-PFZ
+  3c617e06, P-N5-RHO cd5df65c); (2) NHN post-freeze EV2 ends (docs/new/N5-NHN-box40.md 81302f57); (3) LV2 only if (1), (2) stall.
+- Tools (experiments/red/frz/): pfz17.py exact checker (P-FREEZE a-c, LEN-TAIL, NO-CROSS-A, Y-FORM, HAT-FREEZE a-c, RHO-TAIL, NHN;
+  regime counters with NONTRIVIAL = some vertex below Mopt at the run/phase start); climb17.py; shrink17.py (fast trace-only score);
+  rs17.py / rsu17.py (random); exfz17.py (exhaustive, ex16 enumeration, all start pairs); fbwho.py (who switches at a fallback).
+- pfz17 reproduces L-NEW's §8 (C) counts on box40/out exactly (YF 25, HFa 22, HFc 10). Their 5 post-hat phases at |U| = 3 are TRIVIAL.
+- Mechanisms: cycle-node pump (Ξ-improving, W-neutral switch at a cycle node outside U; rhc_block_bk20_3 vertex 8): at most one per
+  activity episode. Eviction chain (njb_reabs65_n48 fallbacks 43-67: one R vertex of U evicted per fallback; R values (c,{o,10}) <
+  F values (c,∅) < W values (c,{o})). Chain vertices are all in U, so f stays below |U| − 1.
+- R71 (docs/red/R71-freeze-regime-into.md): no kill. Post-freeze regimes at |U| ≥ 3 unreached (max f − (|U|−1) = −1 at |U| = 3, f = 1);
+  CONJECTURE FB-CAP (in-phase Even fallbacks ≤ max(1, |U| − 2)) holds in all data; INTO 67/67 library + seeds 51/51, climbs min gates
+  into R̄ = 1. INTO wording note: gate-free last post-rise state.
+- RESUME POINT (for successor 18; written by successor 17, 2026-10-25 ~19:35Z, date -u):
+  - Box 41 ended with no kill. R71 §0-§6 (pushed 8e429a89, merged to trunk) plus §7 addendum (FB-POLY / FB-PHASE / FX checks, n 5
+    start-pair FB-CAP search).
+  - Still running in the container (logs in experiments/red/frz/out/, gitignored; lost with the container):
+    - fbcap17 rand 5 (fb5r2) and exh 4 (fb4x2);
+    - fbpclimb17 × 4 (fp_b2, fp_b2s, fx_os40, fx_b2s);
+    - shrink17 × 2 (g2_os40, g2_beta2).
+  - Open targets:
+    - (a) FB-CAP kill: a phase with ≥ |U| − 1 Even fallbacks at |U| ≥ 3. Best: equality at |U| = 4 (fbcap_eq_u4_n11).
+    - (b) the beta2 cascade climb (Lead 18:16Z): ≥ 3 r = −1 fallbacks in one scope run. Not started.
+    - (c) FX slack 0 (fx2_n11 at −2), and THETA-AFTER slack 0 (−1 so far).
+    - (d) FREEZE-EXIT: needs (a) first.
+  - Tools: pfz17 (PFZ / RHO / NHN), fbpoly17 (FBPOLY / FBPHASE / FX), fbcap17 (fast search), into17 (INTO), and climbers climb17,
+    shrink17 (KIND / UMIN / GMIN), fbpclimb17 (OBJ=fx, START=1), intoclimb17.
+  - Traps (new):
+    - (1) Excess objectives collapse to |U| = 3. Use GMIN ≥ 2 and UMIN ≥ 4.
+    - (2) awk argv fields differ between "ps -eo pid,args" and "ps -eo args"; check before kill.
+    - (3) Monitors on chatty logs get suppressed; filter to hits / FAIL / FINAL only.
+- Traps this box: pkill -f killed my shell again (exit 144); background jobs launched with & inside a short call died; part 3 of the
+  library survey hit its 1800 s timeout with buffered output (lost).
+
+## Handover check (successor 16)
+Successor 16 = session_014kwWmBLu9B31iceFsng38k (Opus 5.5, D14/D15/D18/L37). Brief from Lead 09:46Z 2026-10-25. Check at 09:45Z (date -u).
+1. Branch / head / trunk distance. Commands: `git fetch origin claude/l-red claude/vibrant-johnson-nxvvxo`; `git merge --ff-only
+   origin/claude/l-red`; `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo`; `git merge-base`.
+   - Branch claude/l-red, head 57c685df (successor 15's RESUME POINT commit). The fresh clone sat at 0d0b67a1, 1188 behind.
+   - vs trunk claude/vibrant-johnson-nxvvxo: 1 ahead (57c685df), 82 behind; merge-base 0fe4d801.
+2. Open work (notebook RESUME POINT for successor 16; `ls experiments/red/so/`): nothing in flight. Next steps:
+   - box 39 (Lead 09:46Z): PF-THETA linear form (docs/new/N5-DROP-box35.md §8, trunk only, read with `git show`) first;
+   - then RISE-LAST (R68; event = sox3.py rfb0), XSN-RUN (R68), P-N5-TOG RESTARTS if time remains.
+   - Tools in experiments/red/so/ (sox*.py, soclimb*.py, vrun.sh); vrun.sh needs Oink: scripts/setup_oink.sh started 09:45Z.
+3. GAPS rows (`git show origin/claude/vibrant-johnson-nxvvxo:docs/GAPS.md | grep -n N5`): G-N5-TIME (major, open, L-NEW owner;
+   N5 makes polynomially many iterations; every lemma I attack feeds it). G-N5-TERM closed. GAP-A / GAP-C / G-NEST name L-RED as
+   attacker but are paused under D18/L40 (A_DTL line).
+4. Owner rulings verbatim (`git show <trunk>:docs/DECISIONS.md | sed -n ...`), status from `grep '^| D1[48]* ' docs/DECISIONS-INDEX.md`:
+   - D1 (active): "A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the
+     fleet's own, as wrong until it passes the gauntlet below."
+   - D14 (active): "D" / "You know it can also test prveiously not tested approaches, it can come up with it own as well"
+   - D18 (active): "Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of
+     mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them
+     briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems."
+5. Trap found: the target text is not on my branch. docs/new/N5-DROP-box35.md and P-N5-TOG-box35.md exist only on trunk
+   (l-red is 82 behind), so `cat` fails; read them by `git show origin/claude/vibrant-johnson-nxvvxo:<path>`. Also: tools/oink/build
+   is absent in a new container, so vrun.sh fails until scripts/setup_oink.sh has run.
+
+## Successor 16 (session_014kwWmBLu9B31iceFsng38k, Opus 5.5, D14/D15/D18/L37; created ~09:44Z 2026-10-25, date -u)
+- Handover check 5/5 (922406ce; Lead 09:55Z). GO box 39 at 09:55Z with a split: successor 15 kept PF-THETA; I took RISE-LAST, XSN-RUN,
+  RESTARTS, then TEV (Lead 11:14Z) and N5-TEV-box11 / P-N5-ENT (Lead 12:34Z, 12:54Z). Report: docs/red/R69-rise-xsn-tev.md.
+- KILLS (Lead re-ran both, 12:34Z: "TEV / TEV-LAST are confirmed refuted"):
+  - TEV as written: tev_cex_n40 (17078f78). It needs intervening fallbacks.
+  - TEV-LAST (k0 = the last fallback before t): tevlast_cex_n40 (ff1e9cb4). One fallback; L-SI's own threv.py agrees.
+  - TEV-RED (1), (2), (4) hold there (its benign case). Wording: TEV-RED (3) "before e" should read "up to and including e".
+- NO KILL: RISE-LAST, XSN-RUN, RESTARTS (+ H3-CONST, H2-STICK, RCLASS); N5-TEV-box11 FZ / BF / RB / WALK on 498 (Σ) pairs.
+  - CYC-EV (rise form) and TEV-FB are vacuous: no (Σ) pair has a rise, which is RISE-LAST again.
+- XSN-RUN margin 1 at n 10 (xrun8_n10; the 8 includes the exit crossing). Everywhere else ≤ n − 3 with the exit crossing excluded.
+- G-TOG-1: 26 exit crossings on the SPEC trace (≤ 1 per phase). REFEREE-2's b6_xl2_n32 example does not match the SPEC trace.
+- Tools (experiments/red/so/):
+  - rx16.py: RESTARTS / H3-CONST / H2-STICK / XSN-RUN / RISE / TEV / TEVLAST / TEVCONF.
+  - tevx16.py: N5-TEV-box11 in (Σ).
+  - tevred16.py: TEV-RED (1)-(4) at one hit.
+  - pfx.py: PF-THETA cross-check.
+  - climb16.py modes: rise / rise2 / tev / tevl / conf / tx / xrun / rst. pfclimb16.py is unused.
+  - data16/: library outputs.
+
+- BOX 40 (GO 13:36Z; docs/red/R70-exh-nleq-lv.md). ex16.py exhaustive runs:
+  - n 4 all starts, full space: 83,607,552 runs;
+  - n 5 canonical subset: 81,000,000 games.
+  - Every target is VACUOUS there: no fallback pair in a scope run, no in-scope THR fallback. The events start near n 11.
+  - KILL: NL= (nleq_cex_n48, e72e4034; Lead-confirmed 15:52Z). The leave 40 → 9 at r = L is a bypass to a free vertex.
+  - DATA: two (β)-fallbacks in one scope run (beta2_n11); LV-NONE / SCOPE-FB far from their bounds.
+  - REFEREE-2's "no fallback after a rise" survives 1.5 M far-climb evaluations.
+  - Tools: ex16 / rnd16 / nleq16 / lv16; climb16 modes far / nleq / lv / lvn.
+
+## RESUME POINT (for successor 17; written by successor 16, 2026-10-25, date -u)
+- Nothing in flight after R69. All scratch logs are in the container only; the verified bests are in experiments/red/so/instances/.
+- Open targets, none started:
+  - (a) A (Σ) pair with a COARSE_L(θ) rise (it must end at a fallback with M_k < L by TEV-FB). It would hit RISE-LAST and test P-N5-ENT.
+    The tx and conf climbs found none.
+  - (b) XSN-RUN at n ≤ 12 by exhaustive or random search, aimed at n − 1 (best: n − 2 at n 10). Exhaustive is infeasible past n 5 (R70 §3).
+  - (d) NJB's straddle after NL= fell (R70 §4). (β)-fallback counts per scope run (R70 §5: 2 seen). The "no fallback after a rise" claim
+    (R70 §6). All exhaustive tables at n ≤ 5 are vacuous; search at n ≥ 11.
+  - (c) TEV-RED (5)'s configuration (TEVCONF): none seen. The TEV-LAST failures are all benign case (4).
+- Traps (new):
+  - (1) Two sessions on one branch: merge origin before each push, use distinct file names.
+  - (2) Borrowed checkers narrower than the statement: threv.py stops at the next fallback.
+  - (3) Degenerate maxima (the rst slack climb).
+  - (4) Background jobs inside one Bash call die with it (they need their own run_in_background); waiters on killed climbs never end.
+  - (5) Stamp messages from date -u only (a "10:1xZ" guess was wrong).
 
 ## Successor 15 (session_01M37vBg9T7zDX5aiPyPWPG7, Opus 5.5, D15/D18; created ~01:00Z 2026-10-25, date -u)
 - Handover check 5/5 (0743d2e6). GO box 36 at 01:22Z (Lead): adversary on P-N5-SO (deb5ee44) and P-N5-LP §4 (d2c8121a + fixes).
@@ -20,9 +155,57 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
     - TH is far from tight.
   - READING: SO's tie-break key is a function of the H-path alone in si.py (longest-path mode: ascending ids; BFS mode:
     length-lex order of root-first id sequences). ⊕ strictness at the first switching vertex p holds because p is in neither value.
+- BOX 37 (GO 03:13Z; docs/red/R67-exitr-attack.md): adversary on L-NEW box 33 (N5-K-box33.md §2/§8/§9 at l-new fb157c31).
+  - CONJECTURE EXIT-R FALSE (exitr_cex_n16 / n48); its consequence ε_H1 <= (d_o-1)(f+1) FALSE (epsseg_cex_n16: 6 > 5;
+    epsseg_cex_n48: 17 > 16); ORX (EPS=1) FALSE.
+  - Confirmed by L-NEW's own orx.py, run from a worktree of l-new fb157c31: EPS=1 python3 orx.py <pg> in experiments/new/box33.
+  - R-STICK, SN-PREFIX, OR, TC-SPLIT, ABS-L: 0 failures.
+  - My CONJECTURE (J-SEG): J <= (d_o-1)(f+1), at equality on 3 instances.
+  - Tools: sox2.py, soclimb2.py (exr / seg / small / jb / xsn / post).
+  - vrun.sh runs n5b with --mode spec (the default orig mode is L-COMP's A5 tie-break and differs; R66 §7 correction).
+- BOX 38 (GO 05:18Z; docs/red/R68-xsn-njb-ent.md). NO KILL.
+  - X_SN is linear: ≤ 0.83n per fallback-free run. My CONJECTURE XSN-RUN: ≤ n − 1 per run.
+  - NJB / ENT / MINSET / TOGGLE: 0 failures.
+  - My CONJECTURE RISE-LAST: no COARSE_L(θ) rise between in-scope fallbacks of one scope run; rfb0 = 0 on 257 files and every climb.
+  - Tools:
+    - sox2.py: REL, RELe, NJB blocks, Mn, maxpre.
+    - sox3.py: NO-RF-OLD, ENT.
+    - sox4.py: TOGGLE.
+    - soclimb2.py modes xsnf / jbf / rel / njb / xrun / mn; soclimb3.py (ENT); soclimb4.py (TOGGLE).
+  - Trap 2 again: the mn fitness traded absorptions for |Mn| = 1.
+  - Trap: sox's min |Mn| first skipped fallback states. minset.py includes the state of the next fallback; aligned.
 - Next (if routed): K growth (hand-built wake chain, U1 pieces); X per phase (the remaining open core with K).
 - Trap (box 36): the j fitness J − S_o reached a degenerate 0 (J = S_o = 0); fixed by counting only phases with J >= 1 (trap 2 again).
 - Trap (box 36): killing by `ps | awk $12..` failed (the column was wrong). Use `ps -eo pid,etimes,args` and kill the pid itself.
+
+- Successor 15, box 39 (Lead 09:42Z): PF-THETA linear form FALSE (pftheta34_n32: 34 > 32; docs/red/R69a-pftheta.md); parked for good ~10:35Z.
+
+## RESUME POINT (for successor 16; written by successor 15, 2026-10-25 ~09:40Z, date -u)
+- Successor 15 = session_01M37vBg9T7zDX5aiPyPWPG7 (Opus 5.5). Boxes 36-38. PARKED after box 38 (Lead 09:34Z). Nothing in flight.
+- Reports in docs/red/:
+  - R66: P-N5-SO / LP §4: no kill. SO's d_o-term is used; J = S_o is attained.
+  - R67: EXIT-R, its consequence and ORX (EPS=1) are FALSE (exitr_cex_n16 / n48, epsseg_cex_n16 / n48). R30 lemmas: 0 failures.
+  - R68: X_SN is linear. NJB / ENT / MINSET / TOGGLE: 0 failures. CONJECTURES XSN-RUN and RISE-LAST.
+- Next box (Lead 09:34Z), for the successor: an adversary on RISE-LAST, XSN-RUN and PF-THETA (L-NEW).
+  - RISE-LAST is with L-SI succ. 5 for a proof attempt.
+  - Exact RISE-LAST event = sox3.py rfb0: a COARSE_L(θ) change at an S4a step strictly between consecutive in-scope fallbacks of one
+    scope run.
+- Tools: experiments/red/so/ (all written from the source texts; traces asserted equal to n5.run).
+  - sox.py: SO / TH / J / K.
+  - sox2.py: R30 lemmas, EXIT-R, REL / RELe, NJB blocks, Mn, maxpre.
+  - sox3.py: NO-RF-OLD, ENT, rfb0 / gap.
+  - sox4.py: L-MONO, Z-COUNT, TOGGLE.
+  - Climbers: soclimb.py (tie / sor / j / k / th), soclimb2.py (exr / seg / small / jb / jbf / xsnf / rel / njb / xrun / mn / xsn /
+    post), soclimb3.py (ENT), soclimb4.py (TOGGLE).
+  - vrun.sh: sha1, 𝒞^1O, n5 + n5b --mode spec, check_sol2. Run scripts/setup_oink.sh first in a new container.
+  - Library list: python3 experiments/new/box32/c1o_list.py 64.
+- Traps:
+  - (1) n5b's default --mode orig differs from SPEC ties; always use --mode spec.
+  - (2) Degenerate maxima keep recurring (J = S_o = 0; |Mn| = 1 with no absorptions). Put the substantive key before the cheap one.
+  - (3) Check a borrowed checker's ranges (minset.py includes the state of the next fallback).
+  - (4) Kill climbs by pid from `ps -eo pid,etimes,args`.
+  - (5) Seeds on other lanes' branches: `git show origin/<branch>:<path> > scratch`.
+  - (6) Foreground sleep is blocked. Use a background until-loop with a deadline.
 
 ## RESUME POINT (for successor 15; written by successor 14, 2026-10-24 ~23:45Z, date -u)
 - Successor 14 = session_01DYUCLfp4LkaCnY7moyVLAa (Opus 5.5). Boxes 31-35. Parks after box 35 (Lead 23:37Z).

@@ -1,0 +1,4 @@
+runs: 3
+scope_runs: 1
+transitions: 26
+RESULT OK violations=0

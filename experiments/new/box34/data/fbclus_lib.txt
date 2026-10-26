@@ -1,0 +1,12 @@
+CL1_FAIL 47
+TH_FAIL 184
+TH_checked 290
+after_cluster_other 301
+after_cluster_theta_at_M 93
+clusters 414
+ex_cl1 ('b6_xl_n48.pg', 3, [43, 42, 41, 40, 40, 38, 36, 35, 35])
+ex_th ('b6_xl_n48.pg', [63], [65], 40)
+max_cluster_size (22, 32, 'ccl_fbx_n32.pg')
+max_clusters_one_level (9, 48, 'x48_rt48_final.pg', 2)
+max_clusters_per_scope_run (15, 48, 'fbp48_rt48.pg', 2)
+scope_runs_with_fb 124

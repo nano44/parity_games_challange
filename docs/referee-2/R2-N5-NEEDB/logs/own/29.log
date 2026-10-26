@@ -1,0 +1,16 @@
+ANTIW_blocked_edges: 837
+ANTI_W_checks: 43
+ANTI_W_exceptional_used: 5
+ANTI_W_with_exceptional_edges: 5
+ANTI_Xi_checks: 43
+ANTI_Xi_exceptional_used: 5
+ANTI_Xi_with_exceptional_edges: 7
+RECORD_M>=0_P_uses_R_to_F_gate: 78
+RECORD_inscope_THR_r>=0_M>=0: 78
+THR_inphase_fallbacks: 78
+THR_optima_tested: 78
+XG_R_to_F_optimal_edges: 83
+runs: 4
+states: 118
+RESULT OK violations=0
+docs/referee-2/R2-N5-FB/climb/ccl_best.pg exit 0

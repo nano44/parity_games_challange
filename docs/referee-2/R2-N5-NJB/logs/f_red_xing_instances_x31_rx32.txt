@@ -1,0 +1,15 @@
+MINSET_a_states: 26
+MINSET_d_fallbacks: 2
+MINSET_intervals: 2
+NORF_post_rise_states: 3
+NORF_rises_above_L_after_fallback: 3
+blocks: 6
+fallbacks: 8
+runs: 3
+scope_fallbacks: 8
+scope_runs: 3
+transitions: 133
+MINSET_max_|Mn|: 12
+max_D_M: 0
+max_block_N: 2
+RESULT OK violations=0

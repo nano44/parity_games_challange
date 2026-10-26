@@ -1,0 +1,12 @@
+FACT_A_states: 8
+PFZ_skipped_large_U: 5
+TLEN_epochs: 5
+TLEN_epochs_with_theta_change: 3
+TLEN_theta_changes: 3
+runs: 3
+states: 8
+theta_runs: 5
+max_TLEN_theta_changes_in_epoch: 1
+max_fallbacks_in_theta_run: 0
+max_fallbacks_minus_U_plus_1_U>=3: 0
+RESULT OK violations=0

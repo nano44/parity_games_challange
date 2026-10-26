@@ -1,0 +1,49 @@
+climb FIT=fb seed=32 n=32 iterations=1728 improvements=2 best_fitness=114.2
+BEST-INSTANCE counters: {'ARENA_W_improving_edges': 1151, 'ARENA_steps': 99, 'ARENA_steps_with_withheld': 91, 'ARENA_withheld': 884, 'FACT0_states': 114, 'FREEZE_F_level_>=0': 4, 'FREEZE_a_after_fallback': 20, 'FREEZE_a_after_theta_change': 28, 'FREEZE_a_checks': 34, 'FREEZE_b_checks': 34, 'FREEZE_levels_with_F': 4, 'FREEZE_no_H2_later_states': 4, 'NLMF_h_S4a_steps': 99, 'NLMF_h_S4a_steps_with_leave': 2, 'NLMF_r_gt_MF': 30, 'NLMF_r_gt_MF_with_MF=bot (NL at L=bot)': 26, 'PC_checks_sampled': 6575, 'PC_windows': 15, 'RATCHET_a_checks': 38, 'RATCHET_b_checks': 4, 'STEP1_states': 114, 'STEP2_checks': 462, 'SUB_subruns_rho>=-1': 15, 'XRUN_crossings_in_P': 41, 'XRUN_runs': 17, 'XRUN_runs_H1_P': 12, 'XRUN_runs_P_not_all_H1': 4, 'fallbacks': 14, 'phases': 9, 'runs': 4, 'transitions': 141}
+BEST-INSTANCE maxima: {'PC_max_window_len_over_n_x100': 131, 'RATCHET_b_max_theta_values': 1, 'RATCHET_c_max_runs': 1, 'XRUN_max_P_len': 20, 'XRUN_max_REL_Q': 5, 'XRUN_max_crossings_in_P': 8, 'XRUN_max_pre_crossings': 8, 'max_consecutive_h_over_n_x100': 131, 'max_phase_states': 43}
+ARENA_W_improving_edges: 617439
+ARENA_steps: 76635
+ARENA_steps_with_withheld: 49306
+ARENA_withheld: 369211
+FACT0_states: 88662
+FREEZE_F_level_>=0: 1061
+FREEZE_a_after_fallback: 4464
+FREEZE_a_after_theta_change: 8163
+FREEZE_a_checks: 10094
+FREEZE_b_checks: 10094
+FREEZE_levels_with_F: 1061
+FREEZE_no_H2_later_states: 1059
+NLMF_h_S4a_steps: 76635
+NLMF_h_S4a_steps_with_leave: 4274
+NLMF_r_gt_MF: 19159
+NLMF_r_gt_MF_with_MF=bot (NL at L=bot): 16484
+PC_checks_sampled: 3915455
+PC_windows: 23261
+RATCHET_a_checks: 11155
+RATCHET_b_checks: 1061
+STEP1_states: 88662
+STEP2_checks: 774190
+SUB_subruns_rho>=-1: 17847
+XRUN_crossings_in_P: 34368
+XRUN_runs: 15345
+XRUN_runs_H1_P: 10678
+XRUN_runs_P_not_all_H1: 4152
+climb_evaluations: 1728
+climb_runs: 6912
+fallbacks: 4389
+phases: 12778
+runs: 6912
+transitions: 115997
+PC_max_window_len_over_n_x100: 153
+RATCHET_b_max_theta_changes: 0
+RATCHET_b_max_theta_values: 1
+RATCHET_b_max_w_changes: 0
+RATCHET_c_max_runs: 1
+SUB_max_reentries: 0
+XRUN_max_P_len: 30
+XRUN_max_REL_Q: 12
+XRUN_max_crossings_in_P: 16
+XRUN_max_pre_crossings: 16
+max_consecutive_h_over_n_x100: 153
+max_phase_states: 50
+RESULT OK violations=0

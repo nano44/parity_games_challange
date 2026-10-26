@@ -1,0 +1,10 @@
+FACT_A_states: 40
+NCA_identity_states: 36
+PFZ_b_runs: 3
+PFZ_skipped_large_U: 37
+runs: 3
+states: 40
+theta_runs: 40
+max_fallbacks_in_theta_run: 0
+max_fallbacks_minus_U_plus_1_U>=3: 0
+RESULT OK violations=0

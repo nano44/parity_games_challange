@@ -1,0 +1,22 @@
+A0_checks: 521
+FACTB_pairs: 3678
+HPATH_checks: 73
+KWS_stretches: 41
+PAR_states_cw_above_cth: 6
+PHASE_checked: 12
+RUNS_runs: 1
+RUN_case_a: 1
+phases: 12
+runs: 3
+states: 42
+states_checked: 42
+stretches: 41
+max_KW_per_stretch: 1
+max_RUN_ratio_case_a_x1000: 5
+max_T_per_phase: 13
+max_Trel_per_phase: 13
+max_f_per_phase: 7
+max_freeze_delay: 1
+max_stretches_per_phase: 13
+RESULT OK violations=0
+docs/referee-2/R2-N5-ENT/climb/best_rise_9201.pg exit 0

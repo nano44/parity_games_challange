@@ -1,0 +1,9 @@
+ANTI_W_checks: 8
+ANTI_W_with_exceptional_edges: 1
+ANTI_Xi_checks: 8
+ANTI_Xi_exceptional_used: 1
+ANTI_Xi_with_exceptional_edges: 1
+runs: 4
+states: 34
+RESULT OK violations=0
+experiments/red/so/instances/exitr_cex_n16.pg exit 0

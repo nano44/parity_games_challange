@@ -1,0 +1,24 @@
+climb FIT=rise seed=12006 n=40 iterations=4034 improvements=4 best_fitness=250.0
+BEST-INSTANCE counters: {'ANTIW_blocked_edges': 154, 'ANTI_W_checks': 23, 'ANTI_W_exceptional_used': 11, 'ANTI_W_with_exceptional_edges': 17, 'ANTI_Xi_checks': 23, 'ANTI_Xi_exceptional_used': 13, 'ANTI_Xi_with_exceptional_edges': 18, 'INTO_holds': 3, 'INTO_states_r>L': 3, 'OT_exit_checks': 28, 'OT_post_rise_states': 7, 'OT_rises': 4, 'RECORD_M>=0_P_uses_R_to_F_gate': 8, 'RECORD_inscope_THR_r>=0_M>=0': 8, 'THR_inphase_fallbacks': 8, 'THR_optima_tested': 16, 'XG_R_to_F_optimal_edges': 30, 'runs': 4, 'states': 70}
+BEST-INSTANCE maxima: {}
+ANTIW_blocked_edges: 142100
+ANTI_W_checks: 51301
+ANTI_W_exceptional_used: 25749
+ANTI_W_with_exceptional_edges: 38148
+ANTI_Xi_checks: 51301
+ANTI_Xi_exceptional_used: 25282
+ANTI_Xi_with_exceptional_edges: 39140
+INTO_holds: 1490
+INTO_states_r>L: 1490
+OT_exit_checks: 19661
+OT_post_rise_states: 5070
+OT_rises: 3583
+RECORD_M>=0_P_uses_R_to_F_gate: 7746
+RECORD_inscope_THR_r>=0_M>=0: 7746
+THR_inphase_fallbacks: 7746
+THR_optima_tested: 13632
+XG_R_to_F_optimal_edges: 25489
+climb_evaluations: 4034
+runs: 16136
+states: 170926
+RESULT OK violations=0

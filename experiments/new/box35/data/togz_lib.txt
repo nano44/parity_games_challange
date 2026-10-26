@@ -1,0 +1,10 @@
+max_Zchanges_phase (44, 48, 'x32_rand48.pg', 0)
+max_drops_phase (2, 32, 'onedrop_cex_n32.pg', 2)
+max_sigc_changes_phase (3, 32, 'onedrop_cex_n32.pg', 2)
+max_toggles_phase (3, 32, 'onedrop_cex_n32.pg', 2)
+phases 1277
+tog_S 9
+tog_Z 1
+tog_ZS 4
+tog_at_fallback 9
+toggles 14

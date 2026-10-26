@@ -1,0 +1,10 @@
+MIR_A_chk                            378
+MOFC_chk                             1005
+PHIK_chk                             3000
+games                                3000
+max_len                              7
+runs                                 3000
+runs_with_two_sided                  0
+two_sided_fb                         0
+FAILS 0
+EXIT 0

@@ -1,0 +1,17 @@
+A0_checks: 44
+FACTB_pairs: 72
+KWS_stretches: 16
+PAR_states_cw_above_cth: 3
+PHASE_checked: 13
+phases: 13
+runs: 3
+states: 16
+states_checked: 16
+stretches: 16
+max_KW_per_stretch: 0
+max_T_per_phase: 3
+max_Trel_per_phase: 3
+max_f_per_phase: 3
+max_stretches_per_phase: 4
+RESULT OK violations=0
+docs/referee-2/R2-N5-LV2/climb/best_blk_9505.pg exit 0

@@ -1,0 +1,54 @@
+frozen_steps 1894
+h_steps 4084
+nonexit_leave_steps 424
+rel_noh 1
+rel_wchg_open 13
+rel_wfix_open 33
+relgates_tail_FR 19
+relgates_tail_R 27
+REL canonA_1.pg 1 8 -2 14 14 5 R False
+REL b6_xs_n24.pg 6 23 -2 23 23 1 R False
+REL b6_xs_n32.pg 13 22 -2 31 31 1 R False
+REL b6_xs_n32.pg 18 21 -2 31 31 1 R False
+REL b6_xs_n32.pg 24 20 -2 31 31 1 R False
+REL b6_xs_n40.pg 8 23 -2 38 38 1 R False
+REL b6_xs_n40.pg 23 24 -2 38 38 1 R False
+REL b6_xs_n40.pg 32 36 -2 38 38 1 R False
+REL b6_xs_n48.pg 1 18 -2 43 43 1 R False
+REL b6_xs_n48.pg 28 7 -2 43 43 1 R False
+REL canonA_1.pg 1 8 -2 14 14 5 R False
+REL n4_maxph_1.pg 1 2 -2 -1 -1 1 R False
+REL tr20_s4.pg 16 11 -2 19 19 1 R False
+REL xc16.pg 5 15 -2 14 14 1 R False
+REL xc24.pg 20 15 -2 22 22 1 R False
+REL xcf20.pg 15 8 -2 19 19 1 R False
+REL j7_n32.pg 1 13 -2 31 31 11 FR True
+REL j7_n32.pg 2 7 24 31 31 13 FR True
+REL j7_n32.pg 2 9 24 31 31 13 FR True
+REL j7_n32.pg 2 25 24 31 31 13 FR True
+REL j7_n32.pg 2 31 24 31 31 13 FR True
+REL j8_n32.pg 1 13 -2 31 31 11 FR True
+REL j8_n32.pg 2 4 -2 31 31 12 FR True
+REL j8_n32.pg 2 7 -2 31 31 12 FR True
+REL j8_n32.pg 2 9 -2 31 31 12 FR True
+REL j8_n32.pg 2 25 -2 31 31 12 FR True
+REL j8_n32.pg 2 31 -2 31 31 12 FR True
+REL x32_rand16.pg 1 4 -2 15 15 1 R False
+REL x32_rand16.pg 10 11 -2 15 15 2 FR False
+REL x32_rand32.pg 7 8 -2 31 31 1 R False
+REL x32_rand32.pg 11 0 -2 31 31 1 R False
+REL x32_rand32.pg 12 18 -2 31 31 1 R False
+REL lev_l_n20.pg 1 2 17 19 19 3 FR False
+REL lev_l_n28.pg 12 16 13 26 26 2 FR False
+REL lev_l_n28.pg 13 8 13 26 26 4 R False
+REL lev_l_n28.pg 13 27 13 26 26 4 R False
+REL lev_l_n28.pg 14 11 -2 26 26 7 FR True
+REL lev_l_n28.pg 14 7 -2 26 26 7 FR True
+REL zcl_cu_n24.pg 4 0 17 22 22 2 R False
+REL zcl_cu_n24.pg 13 1 -2 22 22 2 R False
+REL zcl_cu_n24.pg 14 6 -2 22 22 3 FR False
+REL zcl_cu_n48.pg 6 3 -2 47 47 1 R False
+REL zcl_rx_n48.pg 11 33 37 37 37 3 FR False
+REL exitr_cex_n48.pg 5 13 44 44 44 1 R False
+REL epsseg_cex_n48.pg 8 33 44 44 44 1 R False
+REL exitr_cex_n16.pg 3 3 -2 14 14 2 FR False

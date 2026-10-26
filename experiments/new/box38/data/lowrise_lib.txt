@@ -1,0 +1,10 @@
+A_fallback_bases 75
+B_INVi_fail 7
+B_fallback_bases 32
+breaks_A_charged 8
+breaks_B_charged 9
+max_lowrise_per_stretch_A (0, 16, 2, 1, 'experiments/n5-exhaustive/instances/b5_os_n16.pg', 0)
+max_lowrise_per_stretch_B (2, 24, 0, 0, 'experiments/red/xing/instances/obr_eq_n24.pg', 1)
+skipped_not_C1O 159
+stretches_tauo_o_A 25
+stretches_tauo_o_B 23

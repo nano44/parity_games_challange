@@ -1,0 +1,1 @@
+TOTAL {'A1': 123, 'A1_uses_nonexc_gate': 123, 'A2': 85, 'A2_uses_nonexc_gate': 85, 'B_uses_nonexc_gate': 311, 'CR_ok': 187, 'RC_M<r': 187, 'RC_M>=r': 124, 'THR': 519, 'kind_RC': 311, 'kind_o': 208}

@@ -1,0 +1,31 @@
+GP_H3_notH1_states: 736
+GP_c=o: 441
+GP_c_first: 886
+GP_o_first: 2614
+H2S_steps: 3
+H3C_H2_states: 669
+H3C_phases_with_h: 365
+HI_drops: 25
+PC'_windows_with_notH1: 391
+PC_checks_exhaustive: 2298
+PC_windows: 391
+RC_notH1_pairs: 347
+RC_notH1_states: 748
+STEP1'_H3_states: 1405
+STEP2'_checks: 6312
+XR'_notH1_runs: 396
+XR'_runs: 694
+XR'_runs_with_notH1_in_P: 396
+XR'_runs_with_toggle: 67
+fallbacks: 109
+phases: 699
+runs: 5000
+transitions: 5732
+HI_max_theta_changes_on_I: 1
+ONE-DROP_max_drops_per_phase (sec.8, no claim): 1
+ONE-H_max_h_runs_per_phase (sec.8, no claim): 1
+PC_max_window_len_over_n_x100: 75
+XR'_max_C: 2
+XR'_max_REL_Q: 3
+XR'_max_toggles_t_Q: 1
+RESULT OK violations=0

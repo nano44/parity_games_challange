@@ -1,0 +1,10 @@
+../../../experiments/new/box21/instances/oneodd_c16.pg 16
+../../../experiments/new/box21/instances/oneodd_c24.pg 24
+../../../experiments/new/box29/instances/u1_n32.pg 32
+../../../experiments/new/box31/instances/u1flat_best_n32.pg 32
+../../../experiments/red/n5/instances/sym_h12_s1.pg 24
+../../../experiments/red/n5/instances/sym_h8_s1.pg 16
+../../../experiments/red/n5inj/instances/phase2_pk32.pg 32
+../../../experiments/red/n5inj/instances/returns_rt32.pg 32
+../../../experiments/red/xing/instances/u1t_cex_n32.pg 32
+../../../experiments/si/orlens/instances/s_elim24_final.pg 24

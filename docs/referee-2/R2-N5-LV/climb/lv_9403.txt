@@ -1,0 +1,8 @@
+climb FIT=lv seed=9403 n=32 iterations=2667 improvements=13 best_fitness=320.0
+BEST-INSTANCE counters: {'RECORD_inscope_fallbacks_THR_r>=0_M>=0': 64, 'runs': 4, 'states': 120}
+BEST-INSTANCE maxima: {}
+RECORD_inscope_fallbacks_THR_r>=0_M>=0: 53116
+climb_evaluations: 2667
+runs: 10668
+states: 178965
+RESULT OK violations=0

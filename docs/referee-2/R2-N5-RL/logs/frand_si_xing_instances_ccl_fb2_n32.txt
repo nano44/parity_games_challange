@@ -1,0 +1,12 @@
+BLFORM_blocked_edges: 606
+BL_THR_fallbacks: 46
+CYC_fallbacks_M>=0: 46
+CYC_fallbacks_with_Ev: 46
+CYC_states: 57
+CYC_threat_meets_Ev: 8
+FF_checks: 7634
+MERGE_window_gates: 103
+fallbacks: 46
+runs: 3
+transitions: 71
+RESULT OK violations=0

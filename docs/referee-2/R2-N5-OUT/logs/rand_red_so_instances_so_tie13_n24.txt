@@ -1,0 +1,5 @@
+TRACE rand
+runs: 3
+states: 48
+max_fallbacks_per_crossing_free_run: 0
+RESULT OK violations=0

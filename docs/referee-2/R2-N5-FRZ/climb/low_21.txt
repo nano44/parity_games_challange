@@ -1,0 +1,45 @@
+climb FIT=low seed=21 n=6 iterations=377510 improvements=6 best_fitness=30.0
+BEST-INSTANCE counters: {'ARENA_W_improving_edges': 30, 'ARENA_steps': 16, 'ARENA_steps_with_withheld': 2, 'ARENA_withheld': 2, 'FACT0_states': 21, 'FREEZE_F_level_>=0': 2, 'FREEZE_levels_with_F': 2, 'NLMF_h_S4a_steps': 16, 'PC_checks': 150, 'PC_windows': 6, 'RATCHET_a_checks': 2, 'RATCHET_b_checks': 2, 'STEP1_states': 21, 'STEP2_checks': 114, 'SUB_subruns_rho>=-1': 2, 'XRUN_crossings_in_P': 10, 'XRUN_runs': 4, 'XRUN_runs_H1_P': 4, 'XRUN_segments_l>=0': 2, 'phases': 4, 'runs': 4, 'transitions': 17}
+BEST-INSTANCE maxima: {'PC_max_window_len_over_n_x100': 100, 'RATCHET_b_max_theta_values': 1, 'RATCHET_c_max_runs': 1, 'XRUN_max_P_len': 6, 'XRUN_max_crossings_in_P': 3, 'XRUN_max_pre_crossings': 3, 'max_consecutive_h_over_n_x100': 100, 'max_phase_states': 6}
+ARENA_W_improving_edges: 2931358
+ARENA_steps: 1979172
+ARENA_steps_with_withheld: 139989
+ARENA_withheld: 140623
+FACT0_states: 3797889
+FREEZE_F_level_>=0: 104689
+FREEZE_levels_with_F: 104689
+NLMF_h_S4a_steps: 1979172
+NLMF_h_S4a_steps_with_leave: 32701
+NLMF_r_gt_MF: 457381
+PC_checks: 14185423
+PC_windows: 1065343
+RATCHET_a_checks: 104689
+RATCHET_b_checks: 104689
+STEP1_states: 3797889
+STEP2_checks: 11039409
+SUB_subruns_rho>=-1: 374575
+XRUN_crossings_in_P: 1360518
+XRUN_runs: 920157
+XRUN_runs_H1_P: 865081
+XRUN_runs_P_not_all_H1: 54695
+XRUN_segments_l>=0: 104689
+climb_evaluations: 324247
+climb_runs: 1296988
+fallbacks: 11416
+phases: 920856
+runs: 1296988
+transitions: 3368869
+PC_max_window_len_over_n_x100: 100
+RATCHET_b_max_theta_changes: 0
+RATCHET_b_max_theta_values: 1
+RATCHET_b_max_w_changes: 0
+RATCHET_c_max_runs: 1
+SUB_max_reentries: 0
+XRUN_max_P_len: 6
+XRUN_max_REL_Q: 2
+XRUN_max_crossings_in_P: 4
+XRUN_max_pre_crossings: 4
+XRUN_max_segment_crossings: 0
+max_consecutive_h_over_n_x100: 100
+max_phase_states: 6
+RESULT OK violations=0

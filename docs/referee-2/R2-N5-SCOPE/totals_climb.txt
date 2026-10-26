@@ -1,0 +1,43 @@
+CLS_END_notH2 242
+CLS_H1_notH2 766012
+CLS_IN 4605
+CLS_NH1 340482
+CLS_OTHER 218
+CNL_control_noncycle_tail (i)=False (ii)=False (iii)=False 1099087
+CNL_control_noncycle_tail (i)=False (ii)=False (iii)=True 72277
+CNL_control_noncycle_tail (i)=False (ii)=True (iii)=True 85671
+CNL_hyp_followed_by_stop 153940
+CNL_hyp_followed_by_tau_change 401570
+CNL_hypothesis_cases 555510
+CNL_level-1_Even_fallbacks 1812545
+FBINT_nontame 2333
+KEY_tau_const_transitions 10546948
+NH1_caseA 338059
+NH1_caseB 2423
+NH1_fallbacks 340482
+RCONST_notH1_states 1857719
+SCOPE_case1 884731
+SCOPE_case2 1037635
+SCOPE_scope_runs 1922366
+WCH_H2_states 9535230
+WCH_at_crossings 72223
+WCH_control_w_change_noH2_Xi(t0)_same 11
+WCH_transitions 1871757
+climb_evaluations 1360886
+fallbacks 1188858
+gen_fallbacks 1968161
+gen_runs 1956724
+gen_transitions 9434180
+phases 2416508
+runs 3486820
+transitions 12696583
+MAX max_NH1_fallbacks_per_phase 4
+MAX max_WCH_per_crossing_free_interval 18
+MAX max_WCH_per_phase 20
+MAX max_caseA_fallbacks_per_notH1_run 4
+MAX max_fallbacks_per_crossing_free_run 4
+MAX max_h_runs_per_phase 2
+MAX max_out_of_SN_fallbacks_per_phase 9
+MAX max_scope_case2_per_phase 7
+MAX max_scope_runs_per_phase 7
+RESULTS {'OK': 8}

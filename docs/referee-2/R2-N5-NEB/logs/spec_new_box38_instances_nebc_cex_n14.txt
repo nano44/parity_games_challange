@@ -1,0 +1,16 @@
+CBL2_gates: 4
+HN_stretches: 2
+LOW2_INVB_i_failures: 1
+LOW2_c_cases: 1
+LOW2_steps: 11
+OUT1_phases: 1
+RECORD_INV_fails_caseB_cw=o_tau=o: 1
+RECORD_breaks_paid_by_rise: 1
+RISE_cases: 1
+bases_caseB_cw=o_tau=o: 5
+breaks_caseB_cw=o: 1
+runs: 3
+states: 24
+max_LR_S: 1
+max_breaks_per_stretch: 1
+RESULT OK violations=0

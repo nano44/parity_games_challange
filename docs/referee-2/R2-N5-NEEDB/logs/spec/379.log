@@ -1,0 +1,10 @@
+ANTI_W_checks: 38
+ANTI_W_exceptional_used: 30
+ANTI_W_with_exceptional_edges: 35
+ANTI_Xi_checks: 38
+ANTI_Xi_exceptional_used: 31
+ANTI_Xi_with_exceptional_edges: 35
+runs: 4
+states: 109
+RESULT OK violations=0
+experiments/red/so/instances/so_th_n32.pg exit 0

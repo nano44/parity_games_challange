@@ -1,0 +1,9 @@
+MOFC_chk                             3
+PHIK_chk                             1
+games                                1
+max_len                              23
+plain_differs                        1
+runs                                 1
+runs_with_two_sided                  1
+two_sided_fb                         1
+FAILS 0

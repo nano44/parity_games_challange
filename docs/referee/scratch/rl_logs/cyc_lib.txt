@@ -1,0 +1,8 @@
+BF_chk         1080
+FZ_chk         10525
+RB_chk         578
+WALK_chk       1121
+games          234
+pairs          377
+rise           0
+FAILS 0

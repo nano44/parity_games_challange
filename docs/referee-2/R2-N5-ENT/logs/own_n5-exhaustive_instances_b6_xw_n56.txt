@@ -1,0 +1,21 @@
+BF: 83
+FZ: 386
+NJBA_intervals_r_gt_M: 4
+RB: 23
+RECORD_no_rise_threat_meets_Ev: 6
+RECORD_rise_after_fallback_with_r_gt_L: 2
+RECORD_rise_with_no_next_fallback_in_S: 2
+SIGMA_pairs: 10
+SIGMA_with_M_k=L: 4
+SIGMA_without_rise: 10
+WALK: 88
+WALK_c_low_tail: 84
+blocks: 10
+intervals: 4
+runs: 3
+scope_runs: 3
+states: 145
+max_D_M: 0
+max_block_size: 3
+max_fallbacks_ge0_per_scope_run: 9
+RESULT OK violations=0

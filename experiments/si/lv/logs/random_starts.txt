@@ -1,0 +1,2 @@
+TOTAL {'pairs': 2007, 'EQ': 1090, 'nofb': 299, 'fb_h_notscope': 178, 'fb_noh': 440}
+exit 0

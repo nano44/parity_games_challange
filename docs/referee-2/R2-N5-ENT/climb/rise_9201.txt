@@ -1,0 +1,26 @@
+climb FIT=rise seed=9201 n=32 iterations=7902 improvements=19 best_fitness=456.0
+BEST-INSTANCE counters: {'BF': 53, 'FZ': 504, 'NJBA_intervals_r_gt_M': 20, 'RB': 37, 'RECORD_rise_after_fallback_with_r_gt_L': 4, 'RECORD_rise_with_no_next_fallback_in_S': 4, 'SIGMA_pairs': 24, 'SIGMA_with_M_k=L': 20, 'SIGMA_without_rise': 24, 'WALK': 58, 'WALK_c_low_tail': 58, 'blocks': 8, 'intervals': 20, 'runs': 4, 'scope_runs': 4, 'states': 68}
+BEST-INSTANCE maxima: {'max_block_size': 4, 'max_fallbacks_ge0_per_scope_run': 7}
+BF: 116494
+FZ: 1102866
+NJBA_intervals_r_gt_M: 42777
+RB: 68755
+RECORD_no_rise_threat_meets_Ev: 94
+RECORD_rise_after_fallback_with_r_gt_L: 14426
+RECORD_rise_with_no_next_fallback_in_S: 14426
+SIGMA_pairs: 52333
+SIGMA_with_M_k=L: 42777
+SIGMA_without_rise: 52333
+WALK: 158302
+WALK_c_low_tail: 152297
+blocks: 25208
+climb_evaluations: 7902
+intervals: 42880
+intervals_r_le_M_from_start: 103
+runs: 31608
+scope_runs: 29799
+states: 328926
+max_D_M: 0
+max_block_size: 4
+max_fallbacks_ge0_per_scope_run: 8
+RESULT OK violations=0

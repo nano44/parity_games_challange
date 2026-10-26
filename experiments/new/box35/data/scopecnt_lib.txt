@@ -1,0 +1,10 @@
+fb_END_nH2next 4
+fb_H1nH2 107
+fb_IN 898
+fb_NH1 11
+fb_OTH 2
+max_hruns_phase (4, 32, 'tog6a_n32.pg', 4)
+max_out_of_scope_fb_phase (12, 16, 12, 0, 'wd16_s2.pg', 6)
+max_scope_runs_phase (5, 32, 'so_th_n32.pg', 1)
+max_wch_phase (20, 24, 2, 'sc24.pg', 0)
+phases 1419

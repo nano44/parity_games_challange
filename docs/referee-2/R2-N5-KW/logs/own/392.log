@@ -1,0 +1,22 @@
+A0_checks: 3303
+FACTB_pairs: 41158
+HPATH_checks: 44
+KWS_stretches: 180
+PAR_states_cw_above_cth: 4
+PHASE_checked: 15
+RUNS_runs: 7
+RUN_case_a: 7
+phases: 15
+runs: 3
+states: 189
+states_checked: 189
+stretches: 180
+max_KW_per_stretch: 1
+max_RUN_ratio_case_a_x1000: 0
+max_T_per_phase: 112
+max_Trel_per_phase: 112
+max_f_per_phase: 9
+max_freeze_delay: 1
+max_stretches_per_phase: 109
+RESULT OK violations=0
+experiments/red/so/instances/xsn91_n48.pg exit 0

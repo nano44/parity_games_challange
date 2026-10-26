@@ -1,0 +1,55 @@
+climb FIT=block seed=11 n=32 iterations=1969 improvements=4 best_fitness=171.0
+BEST-INSTANCE counters: {'ARENA_W_improving_edges': 2643, 'ARENA_steps': 174, 'ARENA_steps_with_withheld': 163, 'ARENA_withheld': 2207, 'BLOCK_blocks': 3, 'FACT0_states': 209, 'FREEZE_F_level_>=0': 9, 'FREEZE_a_after_fallback': 134, 'FREEZE_a_after_theta_change': 166, 'FREEZE_a_checks': 186, 'FREEZE_b_checks': 186, 'FREEZE_levels_with_F': 9, 'NLMF_h_S4a_steps': 174, 'NLMF_h_S4a_steps_with_leave': 1, 'NLMF_r_gt_MF': 87, 'PC_checks': 13391, 'PC_windows': 15, 'RATCHET_a_checks': 195, 'RATCHET_b_checks': 9, 'STEP1_states': 209, 'STEP2_checks': 768, 'SUB_subruns_len>=n': 3, 'SUB_subruns_rho>=-1': 9, 'XRUN_crossings_in_P': 146, 'XRUN_runs': 22, 'XRUN_runs_H1_P': 21, 'fallbacks': 29, 'phases': 6, 'runs': 4, 'transitions': 232}
+BEST-INSTANCE maxima: {'BLOCK_max_crossings_in_ff_block': 6, 'BLOCK_max_len': 7, 'PC_max_window_len_over_n_x100': 240, 'RATCHET_b_max_theta_changes': 1, 'RATCHET_b_max_theta_values': 2, 'RATCHET_c_max_runs': 2, 'XRUN_max_P_len': 23, 'XRUN_max_crossings_in_P': 19, 'XRUN_max_pre_crossings': 19, 'max_consecutive_h_over_n_x100': 240, 'max_phase_states': 77}
+ARENA_W_improving_edges: 1501469
+ARENA_steps: 126525
+ARENA_steps_with_withheld: 98215
+ARENA_withheld: 1129698
+BLOCK_S4a_leaves: 0
+BLOCK_blocks: 740
+FACT0_states: 156130
+FREEZE_F_level_>=0: 2783
+FREEZE_a_after_fallback: 38752
+FREEZE_a_after_theta_change: 45667
+FREEZE_a_checks: 51172
+FREEZE_a_without_H2_later_differs (no claim): 15
+FREEZE_b_checks: 51172
+FREEZE_levels_with_F: 2783
+FREEZE_no_H2_later_states: 67
+NLMF_h_S4a_steps: 126525
+NLMF_h_S4a_steps_with_leave: 4101
+NLMF_r_gt_MF: 48703
+PC_checks: 8053683
+PC_windows: 24067
+RATCHET_a_checks: 53955
+RATCHET_b_checks: 2783
+STEP1_states: 156130
+STEP2_checks: 1166850
+SUB_iii_reentries: 64
+SUB_subruns_len>=n: 740
+SUB_subruns_rho>=-1: 15572
+XRUN_crossings_in_P: 93565
+XRUN_runs: 19158
+XRUN_runs_H1_P: 17437
+XRUN_runs_P_not_all_H1: 132
+climb_evaluations: 1969
+climb_runs: 7876
+fallbacks: 15445
+phases: 10798
+runs: 7876
+transitions: 174283
+BLOCK_max_crossings_in_ff_block: 7
+BLOCK_max_len: 8
+PC_max_window_len_over_n_x100: 243
+RATCHET_b_max_theta_changes: 1
+RATCHET_b_max_theta_values: 2
+RATCHET_b_max_w_changes: 0
+RATCHET_c_max_runs: 2
+SUB_max_reentries: 5
+XRUN_max_P_len: 24
+XRUN_max_REL_Q: 2
+XRUN_max_crossings_in_P: 21
+XRUN_max_pre_crossings: 21
+max_consecutive_h_over_n_x100: 243
+max_phase_states: 78
+RESULT OK violations=0

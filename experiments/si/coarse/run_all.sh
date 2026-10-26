@@ -3,7 +3,7 @@
 # Named set = experiments/si/coarse/named.txt (53 files, each asserted one-Odd-choice). Usage: experiments/si/coarse/run_all.sh
 set -u
 cd "$(git rev-parse --show-toplevel)"
-D=experiments/si/coarse; L=$D/logs; mkdir -p $L; N=$(cat $D/named.txt)
+D=experiments/si/coarse; L=${LOGDIR:-$D/logs}; mkdir -p $L; N=$(cat $D/named.txt)
 python3 $D/mono.py $N > $L/mono_named.txt 2>&1
 python3 $D/mono.py --random 701 1500 4 14 > $L/mono_rand701.txt 2>&1
 python3 $D/mono.py --random 702 1500 4 14 > $L/mono_rand702.txt 2>&1

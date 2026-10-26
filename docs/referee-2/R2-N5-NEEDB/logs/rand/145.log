@@ -1,0 +1,9 @@
+ANTI_W_checks: 7
+ANTI_W_with_exceptional_edges: 1
+ANTI_Xi_checks: 7
+ANTI_Xi_exceptional_used: 1
+ANTI_Xi_with_exceptional_edges: 1
+runs: 4
+states: 22
+RESULT OK violations=0
+docs/referee-2/R2-N5-U1/climb/u1t_cex2_n32_best.pg exit 0

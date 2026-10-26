@@ -1,14 +1,16 @@
 #!/usr/bin/env python3
 """L-SI box 5 (C): carries = W-lowering transitions (by WM, fallbacks). Per carry in the longest phase: evicted active leavers,
-carry level = max over active leavers y of lev(Ξ_k(y), Ξ_{k+1}(y)) (top rank of the path-set difference; -1 length-only; 99 cycle
+carry level = max over active leavers y of lev(Ξ_k(y), Ξ_{k+1}(y)) (top rank of the path-set difference; -1 length-only; INF (99 before box 9) cycle
 node), the levels of θ-changes since the previous carry, u* rank, |R| before/after, w unchanged since previous carry.
 lev as in docs/si/N5-OR-lens.md (Lemma U). Usage: carries.py game.pg ..."""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from xclass import *
 
+INF = 10 ** 6
+
 def lev(E, a, b):
-    if a[0] != b[0]: return 99
+    if a[0] != b[0]: return INF
     d = a[1] ^ b[1]
     if not d: return -1 if a[2] != b[2] else -2
     return d.bit_length() - 1          # masks are over ranks

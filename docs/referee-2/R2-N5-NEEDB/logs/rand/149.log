@@ -1,0 +1,10 @@
+ANTI_W_checks: 7
+ANTI_W_exceptional_used: 5
+ANTI_W_with_exceptional_edges: 6
+ANTI_Xi_checks: 7
+ANTI_Xi_exceptional_used: 3
+ANTI_Xi_with_exceptional_edges: 4
+runs: 4
+states: 23
+RESULT OK violations=0
+docs/referee-2/R2-N5-U23/climb/lit_nr_best.pg exit 0

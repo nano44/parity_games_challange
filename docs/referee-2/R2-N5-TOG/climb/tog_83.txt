@@ -1,0 +1,28 @@
+climb FIT=tog seed=83 n=12 iterations=69456 improvements=21 best_fitness=760.0
+BEST-INSTANCE counters: {'LMONO_next(c)_changes': 2, 'LMONO_transitions': 18, 'RST_restart_by_Even_fallback': 5, 'RST_restart_from_H1_notH2': 5, 'TOGGLE_kind Z_changed=False next(c)_changed=True': 2, 'TOGGLE_toggles': 2, 'XSN_crossings': 7, 'XSN_crossings_at_transition_leaving_SN_prefix': 7, 'fallbacks': 7, 'phases': 10, 'runs': 4, 'transitions': 26}
+BEST-INSTANCE maxima: {'max_X_SN_per_phase': 2, 'max_Z_changes_per_phase': 5, 'max_drops_per_phase': 1, 'max_h_runs_per_phase': 3, 'max_sigma(c)_changes_per_phase': 1, 'max_toggles_per_phase': 1}
+LMONO_next(c)_changes: 31114
+LMONO_transitions: 531030
+RST_restart_by_Even_fallback: 80398
+RST_restart_by_toggle: 898
+RST_restart_from_H1_notH2: 80398
+TOGGLE_kind Z_changed=False next(c)_changed=True: 12603
+TOGGLE_kind Z_changed=True next(c)_changed=False: 10554
+TOGGLE_kind Z_changed=True next(c)_changed=True: 16197
+TOGGLE_toggles: 39354
+TOGGLE_toggles_at_fallbacks: 19
+XSN_crossings: 192007
+XSN_crossings_at_transition_leaving_SN_prefix: 115975
+climb_evaluations: 67036
+fallbacks: 129938
+phases: 328795
+phases_c=o: 2184
+runs: 268144
+transitions: 1039200
+max_X_SN_per_phase: 6
+max_Z_changes_per_phase: 5
+max_drops_per_phase: 1
+max_h_runs_per_phase: 3
+max_sigma(c)_changes_per_phase: 2
+max_toggles_per_phase: 1
+RESULT OK violations=0

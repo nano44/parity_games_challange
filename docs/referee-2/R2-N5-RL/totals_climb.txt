@@ -1,0 +1,16 @@
+BLFORM_blocked_edges 4250465
+BL_THR_fallbacks 604087
+CYC_fallbacks_M>=0 603931
+CYC_fallbacks_with_Ev 603931
+CYC_precond_P(theta_k0)=empty 507929
+CYC_states 851022
+CYC_threat_meets_Ev 213037
+EQEND_fallbacks_after 1915
+EQEND_runs_with_eq 310000
+FF_checks 12800229
+MERGE_window_gates 1524055
+climb_evaluations 395937
+fallbacks 656022
+runs 1583748
+transitions 4809397
+RESULTS {'OK': 4}

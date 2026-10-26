@@ -1,0 +1,9 @@
+W_nonempty_both              78
+games                        253
+games_runs                   759
+max_fb_phase                 33
+max_iter                     115
+phases                       3116
+skip_not_c1o                 159
+FAILS 0
+EXIT 0

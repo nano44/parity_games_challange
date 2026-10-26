@@ -1,0 +1,20 @@
+A0_checks: 61
+FACTB_pairs: 161
+KWS_stretches: 7
+PHASE_checked: 7
+RUNS_runs: 2
+RUN_case_a: 2
+phases: 7
+runs: 3
+states: 12
+states_checked: 12
+stretches: 7
+max_KW_per_stretch: 4
+max_RUN_ratio_case_a_x1000: 111
+max_T_per_phase: 4
+max_Trel_per_phase: 4
+max_f_per_phase: 0
+max_freeze_delay: 4
+max_stretches_per_phase: 1
+RESULT OK violations=0
+experiments/new/box28/out/nh_r2802.pg.pg exit 0

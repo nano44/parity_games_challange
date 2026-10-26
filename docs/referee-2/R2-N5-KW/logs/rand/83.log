@@ -1,0 +1,21 @@
+A0_checks: 1937
+FACTB_pairs: 34
+KWS_stretches: 109
+PAR_states_cw_above_cth: 2
+PHASE_checked: 17
+RUNS_runs: 4
+RUN_case_a: 4
+phases: 17
+runs: 3
+states: 115
+states_checked: 115
+stretches: 109
+max_KW_per_stretch: 3
+max_RUN_ratio_case_a_x1000: 2
+max_T_per_phase: 34
+max_Trel_per_phase: 34
+max_f_per_phase: 33
+max_freeze_delay: 0
+max_stretches_per_phase: 34
+RESULT OK violations=0
+docs/referee-2/R2-N5-NJB/climb/best_mn_76.pg exit 0

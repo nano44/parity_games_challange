@@ -1,0 +1,54 @@
+ARENA_W_improving_edges 145248
+ARENA_steps 16601
+ARENA_steps_with_withheld 9052
+ARENA_withheld 105757
+BLOCK_S4a_leaves 0
+BLOCK_blocks 60
+FACT0_states 31651
+FREEZE_F_level_>=0 302
+FREEZE_a_after_fallback 4052
+FREEZE_a_after_theta_change 4532
+FREEZE_a_checks 5502
+FREEZE_a_without_H2_later_differs (no claim) 13
+FREEZE_b_checks 5502
+FREEZE_levels_with_F 302
+FREEZE_no_H2_later_states 41
+NLMF_h_S4a_steps 16601
+NLMF_h_S4a_steps_with_leave 3093
+NLMF_r_gt_MF 6024
+NLMF_r_gt_MF_with_MF=bot (NL at L=bot) 2610
+PC_checks_exhaustive 3755
+PC_checks_sampled 927530
+PC_windows 3386
+RATCHET_a_checks 5804
+RATCHET_b_checks 302
+STEP1_states 31651
+STEP2_checks 263067
+SUB_iii_reentries 7
+SUB_subruns_len>=n 60
+SUB_subruns_rho>=-1 1742
+XRUN_crossings_in_P 10220
+XRUN_runs 4799
+XRUN_runs_H1_P 2883
+XRUN_runs_P_not_all_H1 1447
+XRUN_segments_l>=0 3
+fallbacks 2362
+phases 3879
+runs 16434
+transitions 42962
+MAX BLOCK_max_crossings_in_ff_block 7
+MAX BLOCK_max_len 51
+MAX PC_max_window_len_over_n_x100 262
+MAX RATCHET_b_max_theta_changes 1
+MAX RATCHET_b_max_theta_values 2
+MAX RATCHET_b_max_w_changes 0
+MAX RATCHET_c_max_runs 2
+MAX SUB_max_reentries 3
+MAX XRUN_max_P_len 56
+MAX XRUN_max_REL_Q 10
+MAX XRUN_max_crossings_in_P 55
+MAX XRUN_max_pre_crossings 55
+MAX XRUN_max_segment_crossings 1
+MAX max_consecutive_h_over_n_x100 262
+MAX max_phase_states 111
+RESULTS {'OK': 477}

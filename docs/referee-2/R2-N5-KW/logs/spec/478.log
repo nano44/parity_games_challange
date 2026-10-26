@@ -1,0 +1,17 @@
+A0_checks: 535
+FACTB_pairs: 2482
+KWS_stretches: 71
+PAR_states_cw_above_cth: 12
+PHASE_checked: 20
+phases: 20
+runs: 3
+states: 71
+states_checked: 71
+stretches: 71
+max_KW_per_stretch: 0
+max_T_per_phase: 19
+max_Trel_per_phase: 19
+max_f_per_phase: 0
+max_stretches_per_phase: 20
+RESULT OK violations=0
+experiments/si/orlens/instances/lev_l_n20.pg exit 0

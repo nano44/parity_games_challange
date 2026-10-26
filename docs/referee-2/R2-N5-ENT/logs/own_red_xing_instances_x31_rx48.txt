@@ -1,0 +1,18 @@
+BF: 47
+FZ: 78
+RB: 8
+RECORD_no_rise_threat_meets_Ev: 2
+RECORD_rise_after_fallback_with_r_gt_L: 2
+RECORD_rise_with_no_next_fallback_in_S: 2
+SIGMA_pairs: 2
+SIGMA_without_rise: 2
+WALK: 49
+WALK_c_low_tail: 49
+blocks: 4
+runs: 3
+scope_runs: 3
+states: 121
+max_D_M: 0
+max_block_size: 1
+max_fallbacks_ge0_per_scope_run: 2
+RESULT OK violations=0

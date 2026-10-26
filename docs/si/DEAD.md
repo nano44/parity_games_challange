@@ -104,3 +104,73 @@ Iteration tables: docs/si/RESULTS.md (generated); raw logs experiments/si/out/ (
   experiments/red/xing/instances/x31_re24.pg (sha1 49eaf50e, 𝒞^1O), transition 1 -> 2. MF_1 = −1, while gate (4, 8) at state 2 has
   level 22. A mass arena leave (|R| 21 -> 1) turns the R -> R gate (8, 14) of level 22 into high gates into F. OFFGATE (bound M_k)
   holds: 7,134 / 0.
+- ABS-O as a route to CONJECTURE NJB (L-SI succ. 4, box 9 §3b). The lemma itself is PROVED: an absorption's closed cycle through o
+  has no vertex above max(g, rank c) outside P(Ξ_j x0), so rank o ≤ max(g, rank c). It would exclude absorptions inside a level-M
+  block only when rank o > M. That never happens: when rank o > rank c, every R -> F gate differs at o, so its level is ≥ rank o,
+  and every evicting fallback has M ≥ rank o. Instance: all of them (abso.py: 0 of 778 in-scope fallbacks have
+  rank o > max(M, rank c)). Obstruction: o sits below every evicting level.
+- CONJECTURE TEV (L-SI succ. 5, P-N5-RL §7 / docs/si/N5-RL-box10.md §5; "after an in-scope THR fallback k0 of level L ≥ 0, every later
+  post-rise state t with r > L on [k0+1, t] has the threat's play disjoint from Ev"), FALSE (L-RED 16, Lead re-run 12:27Z), both forms:
+  - any earlier k0: experiments/red/so/instances/tev_cex_n40.pg (sha1 17078f78; n5 27 iterations / 16 fallbacks; Oink OK). k0 = 4 (THR,
+    L = 33, r = 38, Ev = {5, 8, 12, 15}); 15 more level-33 fallbacks; at t = 23 the threat x_23 = 5 ∈ Ev. With k0 the last fallback
+    before t (19, also 18, 11) the threat avoids Ev.
+  - TEV-LAST (k0 the last fallback before t): experiments/red/so/instances/tevlast_cex_n40.pg (sha1 ff1e9cb4; n5 11 / 1; Oink zlk OK,
+    strategies verified). k0 = 3 (THR, L = 32, r = 38), Ev = {5, 9, 12, 15, 16, 24}; COARSE_32(θ) rises at 6 -> 7; at t = 7 the threat's
+    play is 5 -> 15 -> 35 -> 26 -> 28 -> 11. L-SI succ. 6 re-ran threv.py (thr_ev_rise 1, example (3, 7, 32)).
+  - Exact obstruction: an S4a state is not a fallback, so gates of level > L into R̄ are allowed there (M_7 = 33 > L). The walk of
+    docs/si/N5-TEV-box11.md (Corollary WALK) from e = 15 ends at v = 15 with the gate (15, 21) of level 33 at t = 7, and 15 enters R at 8
+    (checked). The threat through Ev is absorbed back at the next S4a step. This is the transient case predicted in N5-TEV-box11.md §5.
+  - What survives: TEV at FALLBACK states (N5-TEV-box11.md §3 Remarks, PROVED, no (P)), which is the only form NJB in the ENT setting needs
+    (Theorem ENT-X, CONDITIONAL on (P)). Neither instance has a second fallback after the rise, so NJB / ENT are not refuted.
+
+## Box 13 (L-SI succ. 8, 2026-10-25 ~17:10Z by date -u; details docs/si/N5-RISE-box13.md §3; script experiments/si/lv13/oldthreat.py)
+- RISE-DROP ("after a rise at j, r_{j+1} ≤ L while S continues"). FALSE.
+  - Instance: experiments/red/so/instances/tevlast7_n32.pg (sha1 d905038c), S3 start, own trace: k0 = 11, L = 26, rise at j = 17;
+    r = 30 / 27 > L on states 18-40 (in-scope S4a), then EQ.
+  - Exact obstruction: the rise level can be below r_j, and an absorption chain of gates into R̄ keeps S going with r > L.
+- GATE-ABOVE ("post-rise state with r > L ⇒ M_t > L"). FALSE.
+  - Instance: experiments/red/so/instances/rise_thin51_n40.pg (sha1 47aaf46e), S3 / own: k0 = 72, L = 33, j = 75, t = 76, M_76 = 32.
+  - Exact obstruction: the gates there are into R̄ at level 32 < L; nothing forces their level above L.
+- FEED ("post-rise state with r > L ⇒ some F → R̄ gate"). FALSE.
+  - Instance: experiments/red/so/instances/tevlast11_n40.pg (sha1 8421ab30), S3 / own: k0 = 5, L = 33, j = 8, t = 22.
+  - Exact obstruction: the only gate is the route improvement (16, 23), R → R̄.
+- What survives: CONJECTURE INTO (some gate into R̄), 425 / 425 library states, which with FBL excludes case (i) of the rise claim.
+- NONE-LAST / "an in-scope THR fallback with M = −1 is the last fallback of its scope run" (REFEREE-2 N-LV2-3; L-SI succ. 8), and with it
+  "after a (β) fallback at M = −1 the next S4a step changes λ_Ξ". FALSE.
+  - Instance: experiments/red/so/instances/beta2_n11.pg (sha1 bdea2a23; L-RED 16), canonical S3 start; n 11, o = 1 (rank 9), τ(o) = 8,
+    θ = (0, ∅, 2) ◁ w = (0, ∅, 6) (r = −1), λ_Ξ ≡ 0. Confirmed by L-RED ex16, REFEREE (LV2 §C) and the Lead (scopefb.py).
+  - SPEC trace: state 0 is a fallback with the (β) gates (5, 2), (5, 6) (R → F, level −1); it evicts 5 (R̄ {1, 5, 7, 10} → {1, 7, 10}).
+    State 1 is again a fallback with r = −1, M = −1: the R-vertex 10 now has the (β) gate (10, 5) into the evicted vertex 5 (and (0, 5)
+    F → F). λ_Ξ is unchanged.
+  - Exact obstruction: eviction cascades. An evicted vertex becomes a (β) target for its R-predecessor, one layer per fallback, with
+    COARSE_{−1}(Ξ) and λ_Ξ fixed (FLAT-ALL_{−1}^{none}). The step 0 → 1 is a fallback, not an S4a step, so "the next S4a step changes λ_Ξ"
+    has nothing to act on. LV-NONE (≤ n·n_E + 1) is unaffected; this instance exercises its N = 2 step.
+
+## Box 15 (L-SI succ. 10, 2026-10-25 22:48Z by date -u; Lead GO 22:48Z)
+- "In scope, THR ⇒ M ≥ 0" (CONJECTURE of docs/si/N5-LV3-box12.md §4-§5, l.157, sha1 20ba05d7; docs/si/N5-LEDGER-box14.md §4 item 4,
+  sha1 c54e8560; P-N5-NEEDB §5, not signed). FALSE as stated.
+  - Instance: docs/referee-2/R2-N5-LV2/climb/block_9501.pg (sha1 1b5b76fd986487549fe0a35da79f68f5f0d19b3f), n 11, o = 7, one Odd choice
+    vertex.
+  - Start pair (docs/referee-2/R2-N5-LV2/climb/block_9501.txt): σ0 = [9, 2, 9, 1, 0, 5, 2, 8, 3, 5, 7], τ0 = [9, 2, 9, 1, 0, 5, 2, 5, 0, 5, 3]
+    (Even / Odd entries used). The run has 5 states, with one fallback, at 1 → 2.
+  - State 1 (an in-phase Even S4c fallback):
+    - (h); θ = (5, {9}, 3) ◁ w = (5, ∅, 1), so THR, with r = lev(θ, w) = 10 ≥ 0;
+    - M = −1;
+    - gates (10, 1), (10, 3), (10, 8), all of level −1, all R → F, i.e. (β);
+    - rank o = 2 < rank c_θ = 9 (c_θ = 5);
+    - in scope: λ_Ξ and τ are the same at state 2, H2 holds at 2, and w_2 = w_1.
+    - This is exactly the counterexample shape N5-LV3 §4 wrote down.
+  - Exact obstruction: nothing excludes an in-scope THR fallback whose only gates are level −1 (β) exits R → F. NEED-β (signed) only
+    locates the (β) gate on Even's best reply (case B; here (10, 8)); it does not exclude one.
+  - Confirmed on three independent engines:
+    - REFEREE-2 N-NEEDB-5 (R2-N5-NEEDB.md, referee-2 ef433d32; own / spec / rand traces);
+    - REFEREE §C.3 (R-N5-NEEDB.md, referee 7dbd5118; rl_engine);
+    - L-SI experiments/si/needb5/repro.py (l-si 34e5225a; n5.py's SPEC loop on si.py; log experiments/si/needb5/saved.txt).
+    - Not run: Oink verification of the instance (not built in this container).
+  - Nothing signed depends on it (P-N5-NEEDB §5 and N5-LV3 §4-§5 are unsigned). LV-NONE and SCOPE-FB already bound these fallbacks per scope
+    run.
+- What survives, as a WEAK CONJECTURE only: "from SPEC S3's start, in scope, THR ⇒ M ≥ 0".
+  - From S3's start the same game has 4 states, one fallback (at state 0, ¬H1, not THR), and no counterexample state
+    (experiments/si/needb5/s3.txt; REFEREE §C.3; RESULTS R43 limit (iii)).
+  - Weak, because SPEC allows any start pair, and a run from S3 passes through states that are themselves start pairs. So the S3 form
+    restricts only which (σ, τ) are reachable. No current bound needs it.

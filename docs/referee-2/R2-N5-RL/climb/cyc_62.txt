@@ -1,0 +1,18 @@
+climb FIT=cyc seed=62 n=12 iterations=139845 improvements=20 best_fitness=1248.0
+BEST-INSTANCE counters: {'BLFORM_blocked_edges': 117, 'BL_THR_fallbacks': 24, 'CYC_fallbacks_M>=0': 24, 'CYC_fallbacks_with_Ev': 24, 'CYC_precond_P(theta_k0)=empty': 24, 'CYC_states': 24, 'FF_checks': 476, 'MERGE_window_gates': 27, 'fallbacks': 24, 'runs': 4, 'transitions': 42}
+BLFORM_blocked_edges: 1752223
+BL_THR_fallbacks: 367074
+CYC_fallbacks_M>=0: 367074
+CYC_fallbacks_with_Ev: 367074
+CYC_precond_P(theta_k0)=empty: 355157
+CYC_states: 437280
+CYC_threat_meets_Ev: 66217
+EQEND_fallbacks_after: 1103
+EQEND_runs_with_eq: 134662
+FF_checks: 5984015
+MERGE_window_gates: 731556
+climb_evaluations: 137254
+fallbacks: 395473
+runs: 549016
+transitions: 1864060
+RESULT OK violations=0

@@ -1,0 +1,18 @@
+LMONO_next(c)_changes: 2
+LMONO_transitions: 2
+RST_restart_by_toggle: 1
+TOGGLE_kind Z_changed=False next(c)_changed=True: 1
+TOGGLE_toggles: 1
+XSN_crossings: 1
+XSN_crossings_at_transition_leaving_SN_prefix: 0
+fallbacks: 0
+phases: 2
+runs: 3
+transitions: 9
+max_X_SN_per_phase: 1
+max_Z_changes_per_phase: 1
+max_drops_per_phase: 0
+max_h_runs_per_phase: 1
+max_sigma(c)_changes_per_phase: 1
+max_toggles_per_phase: 1
+RESULT OK violations=0

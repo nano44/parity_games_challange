@@ -1,0 +1,16 @@
+FFLAT_chk                105
+FREEZE_chk               376
+NEC_a_chk                8
+NOENT_runs               75
+NOENT_states             797
+SPLIT_a_chk              521
+SPLIT_b_chk              105
+breaks                   11
+fb_in_stretch            103
+fb_in_stretch_crossing   103
+games                    270
+skip_not_c1o             159
+stretches                113
+tauoo_stretch_A          25
+tauoo_stretch_B          12
+FAILS 0

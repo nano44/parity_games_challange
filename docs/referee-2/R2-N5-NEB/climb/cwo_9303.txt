@@ -1,0 +1,28 @@
+climb FIT=cwo seed=9303 n=24 iterations=28955 improvements=63 best_fitness=17550.0
+BEST-INSTANCE counters: {'CBL2_gates': 123, 'HN_stretches': 6, 'LOW2_steps': 45, 'OUT1_phases': 2, 'bases_caseB_cw=o_tau!=o': 15, 'runs': 4, 'states': 34}
+BEST-INSTANCE maxima: {'max_LR_S': 4}
+CBL2_gates: 784143
+HN_stretches: 110366
+LOW2_INVB_i_failures: 7
+LOW2_c_cases: 7
+LOW2_steps: 340278
+NEA2_steps: 9278
+OUT1_phases: 30235
+RECORD_INV_fails_caseB_cw!=o_tau!=o: 9
+RECORD_INV_fails_caseB_cw=o_tau!=o: 7
+RECORD_breaks_paid_by_rise: 12
+RISE_cases: 16
+bases_caseA_cw=o_tau!=o: 3837
+bases_caseA_cw=o_tau=o: 177
+bases_caseB_cw!=o_tau!=o: 640
+bases_caseB_cw=o_tau!=o: 123871
+bases_caseB_cw=o_tau=o: 3784
+breaks_caseA_cw=o: 1
+breaks_caseB_cw!=o: 5
+breaks_caseB_cw=o: 8
+climb_evaluations: 28863
+runs: 115452
+states: 634212
+max_LR_S: 7
+max_breaks_per_stretch: 2
+RESULT OK violations=0

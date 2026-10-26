@@ -1,0 +1,25 @@
+TRACE own
+FFLAT_cases: 2
+FREEZE_H1_theta_equal_steps: 15
+FREEZE_control_no_hyp: 5
+FREEZE_control_no_hyp_conclusion_fails: 5
+FREEZE_hyp_cases_fb: 2
+FREEZE_hyp_cases_s4a: 8
+HN_inphase_transitions: 15
+HN_stretches: 2
+SPLIT_a_cases: 13
+SPLIT_b_cases: 2
+STEPK_gate_edges: 4
+TAIL_starts: 11
+TAIL_steps: 55
+breaks: 0
+fallbacks_in_stretches: 2
+fallbacks_in_stretches_that_are_crossings: 2
+inphase_fallbacks: 2
+runs: 3
+states: 44
+max_X_S: 3
+max_breaks_per_stretch: 0
+max_f_S: 2
+max_fallbacks_per_crossing_free_run: 0
+RESULT OK violations=0

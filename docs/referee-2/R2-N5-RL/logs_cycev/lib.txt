@@ -1,0 +1,5 @@
+BF: 1869
+FZ: 21720
+RB_WALK: 1950
+SIGMA_settings: 836
+RESULT OK violations=0

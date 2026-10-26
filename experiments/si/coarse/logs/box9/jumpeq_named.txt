@@ -1,0 +1,12 @@
+cases (name, k, L, M_k, θ-level, θ'=w, (h) at k+1 or failing clauses, evicting fallbacks later at same w):
+   ('lev_l_x.pg', 54, 23, 23, 28, True, 'h', 0)
+   ('run_x_inr2.pg', 49, 24, 24, 30, True, 'h', 0)
+   ('fbref_cex_n32.pg', 53, 25, 25, 30, True, 'h', 0)
+   ('x31_lem_t32.pg', 58, 28, 28, 31, True, 'h', 0)
+   ('x31_rx32.pg', 53, 24, 24, 25, False, 'h', 0)
+   ('x31_rx32.pg', 54, 24, 24, 30, True, 'h', 0)
+   ('x31_rx48.pg', 49, 31, 31, 44, True, 'h', 0)
+   ('zcl_rx_n32.pg', 63, 26, 26, 27, True, 'h', 0)
+   ('x32_waves32.pg', 79, 26, 25, 29, True, 'h', 0)
+   ('x32_waves48.pg', 80, 45, 45, 47, True, 'h', 0)
+total 10 θ'=w: 9 with later carries: 0

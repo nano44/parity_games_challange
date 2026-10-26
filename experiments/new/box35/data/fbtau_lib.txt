@@ -1,0 +1,6 @@
+cycle_switch_no 102
+cycle_switch_yes 2
+fb_H1_notH2_inphase 104
+next_h1=1_h2=0 104
+tau_o_selfloop_0 13
+tau_o_selfloop_1 91

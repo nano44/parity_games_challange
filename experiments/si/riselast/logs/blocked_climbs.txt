@@ -1,0 +1,1 @@
+TOTAL {'states': 79, 'blocked': 562, 'fb': 3, 'thr_fb': 3, 'BLX_ok': 3}

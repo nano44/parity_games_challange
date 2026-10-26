@@ -1,0 +1,5 @@
+absorb_then_release 4
+max_exit_rel_per_phase (2, 'so_th_n32.pg')
+max_exit_rel_per_phase_ge2 2
+max_exit_rel_per_run (2, 'so_th_n32.pg')
+max_exit_rel_per_run_ge2 2

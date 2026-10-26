@@ -1,0 +1,19 @@
+BF: 39
+FZ: 740
+NJBA_intervals_r_gt_M: 37
+RB: 38
+SIGMA_pairs: 38
+SIGMA_with_M_k=L: 37
+SIGMA_without_rise: 38
+WALK: 40
+WALK_c_low_tail: 40
+blocks: 4
+intervals: 38
+intervals_r_le_M_from_start: 1
+runs: 3
+scope_runs: 3
+states: 87
+max_D_M: 0
+max_block_size: 21
+max_fallbacks_ge0_per_scope_run: 24
+RESULT OK violations=0

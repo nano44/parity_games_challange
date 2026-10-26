@@ -1,0 +1,11 @@
+BA_triples: 600000
+B_pairs: 32000000
+CTRL_nonoptimal_with_improving_edge: 187010
+CTRL_optimal_with_improving_edge: 6708
+M_checks: 276735
+P1_no_improving_edge: 21600
+P1_step3_edges: 149540
+P1_step5_cycles: 1446891
+games: 20000
+strategies: 215318
+RESULT OK violations=0

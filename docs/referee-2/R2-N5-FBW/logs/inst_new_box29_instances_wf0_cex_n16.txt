@@ -1,0 +1,6 @@
+FBW_gates: 17
+POPT_single_switch_checks: 152
+even_fallbacks: 9
+runs: 3
+transitions: 53
+RESULT OK violations=0

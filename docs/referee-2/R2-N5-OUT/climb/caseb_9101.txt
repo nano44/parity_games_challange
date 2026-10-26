@@ -1,0 +1,45 @@
+climb FIT=caseb seed=9101 n=13 iterations=90809 improvements=42 best_fitness=10990.0
+BEST-INSTANCE counters: {'CASEB_RR_gates': 35, 'FFLAT_cases': 1, 'FREEZE_H1_theta_equal_steps': 2, 'FREEZE_control_no_hyp': 2, 'FREEZE_control_no_hyp_conclusion_fails': 1, 'HN_inphase_transitions': 2, 'HN_stretches': 10, 'NEA_fallback_states_caseB': 3, 'SPLIT_a_cases': 1, 'SPLIT_b_cases': 1, 'STEPK_gate_edges': 6, 'TAIL_starts': 5, 'WSIDE_case1': 20, 'WSIDE_case2': 15, 'caseB_phases': 10, 'fallbacks_in_stretches': 1, 'fallbacks_in_stretches_that_are_crossings': 1, 'inphase_fallbacks': 1, 'runs': 4, 'states': 21, 'tau_o_eq_o_phases_with_HN': 10}
+BEST-INSTANCE maxima: {'max_X_S': 1, 'max_f_S': 1}
+CASEB_RR_gates: 761867
+FFLAT_cases: 17976
+FREEZE_H1_theta_equal_steps: 27423
+FREEZE_control_no_hyp: 22088
+FREEZE_control_no_hyp_conclusion_fails: 7894
+FREEZE_hyp_cases_fb: 3766
+FREEZE_hyp_cases_s4a: 1569
+HN_inphase_transitions: 31575
+HN_stretches: 359480
+NEA_ab_pairs: 255
+NEA_base_RR_gates: 293
+NEA_fallback_states_caseA: 249
+NEA_fallback_states_caseB: 73053
+NEA_steps_with_Xi_change: 255
+NEA_value_class_checks: 466
+NECOUNT_caseA_stretches: 3367
+SEPo_states: 3708
+SPLIT_a_cases: 13599
+SPLIT_b_cases: 17976
+STEPK_gate_edges: 106482
+TAIL_starts: 192112
+TAIL_steps: 5937
+WSIDE_case1: 416418
+WSIDE_case1_empty: 33555
+WSIDE_case2: 345449
+breaks: 0
+caseA_phases: 3367
+caseB_phases: 339075
+climb_evaluations: 90809
+fallbacks_in_stretches: 17976
+fallbacks_in_stretches_that_are_crossings: 17976
+inphase_fallbacks: 18534
+runs: 363236
+states: 1498147
+tau_o_eq_o_phases_with_HN: 342442
+max_X_S: 2
+max_breaks_per_stretch: 0
+max_f_HN_caseA_phase: 1
+max_f_S: 2
+max_fallbacks_per_crossing_free_run: 1
+max_theta_ph_caseA: 2
+RESULT OK violations=0

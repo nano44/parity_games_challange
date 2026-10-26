@@ -1,0 +1,21 @@
+LMONO_next(c)_changes: 127
+LMONO_transitions: 779
+RST_restart_by_toggle: 47
+TOGGLE_kind Z_changed=False next(c)_changed=True: 31
+TOGGLE_kind Z_changed=True next(c)_changed=False: 22
+TOGGLE_kind Z_changed=True next(c)_changed=True: 18
+TOGGLE_toggles: 71
+XSN_crossings: 292
+XSN_crossings_at_transition_leaving_SN_prefix: 9
+fallbacks: 80
+phases: 1002
+phases_c=o: 270
+runs: 5000
+transitions: 7014
+max_X_SN_per_phase: 2
+max_Z_changes_per_phase: 2
+max_drops_per_phase: 1
+max_h_runs_per_phase: 1
+max_sigma(c)_changes_per_phase: 1
+max_toggles_per_phase: 1
+RESULT OK violations=0

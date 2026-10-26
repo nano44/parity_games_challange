@@ -1,0 +1,8 @@
+ANTI_W_checks: 12
+ANTI_Xi_checks: 12
+ANTI_Xi_exceptional_used: 1
+ANTI_Xi_with_exceptional_edges: 1
+runs: 4
+states: 36
+RESULT OK violations=0
+docs/referee-2/R2-N5-RE/climb/tr20_s61.pg exit 0

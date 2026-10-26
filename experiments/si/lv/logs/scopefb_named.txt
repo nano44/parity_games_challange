@@ -1,0 +1,2 @@
+TOTAL {'SAND_checks': 220, 'fb_EQ': 6, 'fb_M>=0': 387, 'max_fb_per_run': 37, 'scope_runs': 111, 'transitions_r=-1': 108}
+WORST ratio fallbacks/(4 n n_E + 3): (0.006690827989963758, ('ccl_fbx_n32.pg', 24, 32, 28))

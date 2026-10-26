@@ -1,0 +1,10 @@
+ANTI_W_checks: 38
+ANTI_W_exceptional_used: 1
+ANTI_W_with_exceptional_edges: 2
+ANTI_Xi_checks: 38
+ANTI_Xi_exceptional_used: 2
+ANTI_Xi_with_exceptional_edges: 2
+runs: 4
+states: 105
+RESULT OK violations=0
+experiments/si/xing/instances/zcl_rx_n48.pg exit 0

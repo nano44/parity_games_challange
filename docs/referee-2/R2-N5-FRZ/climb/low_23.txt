@@ -1,0 +1,37 @@
+climb FIT=low seed=23 n=14 iterations=26692 improvements=11 best_fitness=18.4
+BEST-INSTANCE counters: {'ARENA_W_improving_edges': 67, 'ARENA_steps': 39, 'FACT0_states': 44, 'NLMF_h_S4a_steps': 39, 'NLMF_h_S4a_steps_with_leave': 12, 'PC_checks_sampled': 498, 'PC_windows': 4, 'STEP1_states': 44, 'STEP2_checks': 624, 'XRUN_crossings_in_P': 12, 'XRUN_runs': 4, 'XRUN_runs_H1_P': 4, 'phases': 4, 'runs': 4, 'transitions': 45}
+BEST-INSTANCE maxima: {'PC_max_window_len_over_n_x100': 92, 'XRUN_max_P_len': 13, 'XRUN_max_REL_Q': 2, 'XRUN_max_crossings_in_P': 5, 'XRUN_max_pre_crossings': 5, 'max_consecutive_h_over_n_x100': 92, 'max_phase_states': 13}
+ARENA_W_improving_edges: 674751
+ARENA_steps: 388659
+ARENA_steps_with_withheld: 866
+ARENA_withheld: 1767
+FACT0_states: 612195
+NLMF_h_S4a_steps: 388659
+NLMF_h_S4a_steps_with_leave: 100808
+NLMF_r_gt_MF: 1325
+NLMF_r_gt_MF_with_MF=bot (NL at L=bot): 1114
+PC_checks_sampled: 4794924
+PC_windows: 87166
+STEP1_states: 612195
+STEP2_checks: 6111529
+SUB_iii_reentries: 2
+SUB_subruns_rho>=-1: 7262
+XRUN_crossings_in_P: 116373
+XRUN_runs: 88364
+XRUN_runs_H1_P: 84234
+XRUN_runs_P_not_all_H1: 3977
+climb_evaluations: 26564
+climb_runs: 106256
+fallbacks: 213
+phases: 88375
+runs: 106256
+transitions: 604362
+PC_max_window_len_over_n_x100: 92
+SUB_max_reentries: 1
+XRUN_max_P_len: 13
+XRUN_max_REL_Q: 3
+XRUN_max_crossings_in_P: 8
+XRUN_max_pre_crossings: 8
+max_consecutive_h_over_n_x100: 92
+max_phase_states: 13
+RESULT OK violations=0

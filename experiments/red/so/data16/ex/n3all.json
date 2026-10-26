@@ -1,0 +1,24 @@
+{
+ "games": 9600,
+ "runs": 48600,
+ "pref": 0,
+ "pairs": 0,
+ "rises": 0,
+ "spairs": 0,
+ "srises": 0,
+ "maxfb": 1,
+ "maxit": 3,
+ "ex": [],
+ "space": {
+  "n": 3,
+  "all_starts": true,
+  "even_maxdeg": null,
+  "o_deg": null,
+  "no_forced": false,
+  "jobs": 4,
+  "part": "0/1",
+  "out": "(scratch)",
+  "selftest": 0
+ },
+ "secs": 2
+}

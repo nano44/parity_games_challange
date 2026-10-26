@@ -1,0 +1,31 @@
+ARENA_W_improving_edges: 250
+ARENA_steps: 181
+ARENA_steps_with_withheld: 1
+ARENA_withheld: 2
+FACT0_states: 2167
+NLMF_h_S4a_steps: 181
+NLMF_h_S4a_steps_with_leave: 51
+NLMF_r_gt_MF: 5
+NLMF_r_gt_MF_with_MF=bot (NL at L=bot): 5
+PC_checks_exhaustive: 737
+PC_windows: 157
+STEP1_states: 2167
+STEP2_checks: 1322
+SUB_subruns_rho>=-1: 14
+XRUN_crossings_in_P: 76
+XRUN_runs: 390
+XRUN_runs_H1_P: 162
+XRUN_runs_P_not_all_H1: 227
+fallbacks: 46
+phases: 390
+runs: 3000
+transitions: 3345
+PC_max_window_len_over_n_x100: 60
+SUB_max_reentries: 0
+XRUN_max_P_len: 3
+XRUN_max_REL_Q: 2
+XRUN_max_crossings_in_P: 2
+XRUN_max_pre_crossings: 2
+max_consecutive_h_over_n_x100: 60
+max_phase_states: 3
+RESULT OK violations=0

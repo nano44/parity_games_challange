@@ -1,0 +1,1 @@
+{'FF_eqL': 1451, 'FF_ltL': 1968, 'FR_eqL': 337, 'FR_gtL': 73, 'FR_ltL': 2026, 'RF_eqL': 2, 'RF_ltL': 15, 'RR_eqL': 1, 'RR_gtL': 14, 'RR_ltL': 273}

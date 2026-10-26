@@ -1,0 +1,18 @@
+climb FIT=mn seed=72 n=40 iterations=1210 improvements=10 best_fitness=363.0
+BEST-INSTANCE counters: {'MINSET_a_states': 121, 'MINSET_d_fallbacks': 121, 'MINSET_intervals': 121, 'blocks': 5, 'fallbacks': 127, 'runs': 4, 'scope_fallbacks': 126, 'scope_runs': 4, 'transitions': 153}
+BEST-INSTANCE maxima: {'MINSET_max_|Mn|': 1, 'max_block_N': 32}
+MINSET_a_states: 56342
+MINSET_d_fallbacks: 56574
+MINSET_intervals: 56066
+blocks: 3443
+blocks_with_r<=M_somewhere (PL (c) hypothesis fails; PL (c') covers): 139
+climb_evaluations: 1210
+fallbacks: 61006
+runs: 4840
+scope_fallbacks: 60017
+scope_runs: 5178
+transitions: 124592
+MINSET_max_|Mn|: 2
+max_D_M: 0
+max_block_N: 32
+RESULT OK violations=0

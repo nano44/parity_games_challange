@@ -1,0 +1,26 @@
+MODE files ../R2-N5-KW/files.lst 2 own MUT -
+cls_P3: 393
+cls_U1: 982
+cls_U2: 348
+cls_U23: 174
+cls_U3: 432
+other_stretches: 2329
+phases: 4123
+phases_with_O: 362
+runs: 1006
+sum_O: 1820
+transitions: 16060
+O_over_NHa_x1e6: (147, 'experiments/n5-exhaustive/instances/b4_n4all_cyc3_0.pg#0')
+max_E_broad: (15, 'experiments/new/box32/instances/kwm_cex_n24.pg#0')
+max_E_narrow: (15, 'experiments/new/box32/instances/kwm_cex_n24.pg#0')
+max_KW: (25, 'experiments/red/xing/instances/kw25_n32.pg#0')
+max_NR_P3: (9, 'experiments/new/box31/instances/p3long_n14.pg#0')
+max_NR_U1: (12, 'docs/referee-2/R2-N5-U1/climb/c_u1n32_best.pg#0')
+max_NR_U2: (25, 'experiments/red/xing/instances/kw25_n32.pg#0')
+max_NR_U23: (13, 'experiments/new/box29/out/op20_r.pg#0')
+max_NR_U3: (14, 'experiments/new/box32/instances/kwm_cex_n24.pg#0')
+max_O: (77, 'experiments/n5-exhaustive/instances/b5_os_n40.pg#0')
+max_T: (112, 'experiments/red/so/instances/xsn91_n48.pg#0')
+max_X: (100, 'experiments/red/so/instances/xsn91_n48.pg#0')
+max_fO: (13, 'experiments/si/coarse/instances/box9/cl9_mn_a.pg#1')
+RESULT OK violations=0

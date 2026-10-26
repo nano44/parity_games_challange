@@ -1,0 +1,18 @@
+A0_checks: 99
+FACTB_pairs: 643
+HPATH_checks: 14
+KWS_stretches: 13
+PAR_states_cw_above_cth: 2
+PHASE_checked: 13
+phases: 13
+runs: 3
+states: 13
+states_checked: 13
+stretches: 13
+max_KW_per_stretch: 0
+max_T_per_phase: 0
+max_Trel_per_phase: 0
+max_f_per_phase: 0
+max_stretches_per_phase: 1
+RESULT OK violations=0
+experiments/new/instances/n6/counter_ortl-3.pg exit 0

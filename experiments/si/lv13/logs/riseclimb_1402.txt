@@ -1,0 +1,4 @@
+FOUND {'rises': 4, 'AT_j+1: out_of_scope': 2, 'rise_level==r_j': 2, 'r_{j+1}<=L': 2, 'checks': 6, 'stretch_len_after_rise': 6, 'fbL': 16, 'AT_j+1: S4a_with_r>L_at_j+1': 2, 'rise_level<r_j': 2, 'r_{j+1}>L': 2, 'GA_states': 2, 'GA_FAIL (M_t <= L with r_t > L after a rise)': 2} [('GA', (1, 'own'), 14, 18, 19, 30, 32), ('GA', (1, 'spec'), 14, 18, 19, 30, 32)]
+climb seed=1402 n=40 iterations=6 best_fitness=2020256
+BEST {'AT_j+1: S4a_with_r>L_at_j+1': 2, 'AT_j+1: out_of_scope': 2, 'GA_FAIL (M_t <= L with r_t > L after a rise)': 2, 'GA_states': 2, 'checks': 6, 'fbL': 16, 'r_{j+1}<=L': 2, 'r_{j+1}>L': 2, 'rise_level<r_j': 2, 'rise_level==r_j': 2, 'rises': 4, 'stretch_len_after_rise': 6}
+ALL-EVALS {'AT_j+1: S4a_with_r>L_at_j+1': 2, 'AT_j+1: out_of_scope': 4, 'GA_FAIL (M_t <= L with r_t > L after a rise)': 2, 'GA_states': 2, 'checks': 8, 'evals': 6, 'fbL': 30, 'r_{j+1}<=L': 4, 'r_{j+1}>L': 2, 'rise_level<r_j': 2, 'rise_level==r_j': 4, 'rises': 6, 'stretch_len_after_rise': 8}

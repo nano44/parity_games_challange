@@ -1,0 +1,10 @@
+ANTI_W_checks: 29
+ANTI_W_exceptional_used: 22
+ANTI_W_with_exceptional_edges: 28
+ANTI_Xi_checks: 29
+ANTI_Xi_exceptional_used: 11
+ANTI_Xi_with_exceptional_edges: 11
+runs: 4
+states: 91
+RESULT OK violations=0
+experiments/red/n5inj/instances/frz24.pg exit 0

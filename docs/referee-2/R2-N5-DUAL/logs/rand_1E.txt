@@ -1,0 +1,22 @@
+MODE random 2000 4 14 52 1E MUT -
+C1E_runs: 2000
+DUAL1_ok: 2000
+MIRC_ok: 261
+iterations: 2806
+k_0: 72
+k_1: 261
+k_10: 3
+k_2: 392
+k_3: 365
+k_4: 332
+k_5: 260
+k_6: 165
+k_7: 88
+k_8: 46
+k_9: 16
+runs: 2000
+C1E_max_sigma_changes_over_bound: (1.0, '1E52:2')
+max_distinct_tau: (6, '1E52:29')
+max_dual_phases: (6, '1E52:1065')
+max_phases: (6, '1E52:29')
+RESULT OK violations=0

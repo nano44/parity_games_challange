@@ -1,0 +1,7 @@
+CNL_hyp_followed_by_tau_change: 1
+CNL_hypothesis_cases: 1
+CNL_level-1_Even_fallbacks: 1
+gen_fallbacks: 9
+gen_runs: 3
+gen_transitions: 55
+RESULT OK violations=0

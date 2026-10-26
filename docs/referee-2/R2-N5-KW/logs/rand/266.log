@@ -1,0 +1,16 @@
+A0_checks: 504
+FACTB_pairs: 2515
+KWS_stretches: 57
+PHASE_checked: 9
+phases: 9
+runs: 3
+states: 57
+states_checked: 57
+stretches: 57
+max_KW_per_stretch: 0
+max_T_per_phase: 17
+max_Trel_per_phase: 17
+max_f_per_phase: 0
+max_stretches_per_phase: 18
+RESULT OK violations=0
+experiments/new/box25/instances/xcf20.pg exit 0

@@ -1,0 +1,23 @@
+A0_checks: 741
+FACTB_pairs: 5105
+FRZU_checks: 29
+KWS_stretches: 46
+LEN_runs_after_f0: 5
+PAR_states_cw_above_cth: 3
+PHASE_checked: 15
+RUNS_runs: 13
+RUN_case_a: 13
+phases: 15
+runs: 3
+states: 78
+states_checked: 78
+stretches: 46
+max_KW_per_stretch: 5
+max_RUN_ratio_case_a_x1000: 17
+max_T_per_phase: 34
+max_Trel_per_phase: 34
+max_f_per_phase: 4
+max_freeze_delay: 5
+max_stretches_per_phase: 17
+RESULT OK violations=0
+docs/referee/scratch/rl_climb_out/rlc_best_88001.pg exit 0

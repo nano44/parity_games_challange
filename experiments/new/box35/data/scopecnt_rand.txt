@@ -1,0 +1,8 @@
+fb_END_nH2next 29
+fb_IN 334
+fb_NH1 338
+max_hruns_phase (1, 7, 'rand3561_3', 1)
+max_out_of_scope_fb_phase (1, 7, 0, 0, 'rand3561_19', 1)
+max_scope_runs_phase (2, 11, 'rand3561_9938', 0)
+max_wch_phase (2, 14, 0, 'rand3561_2969', 0)
+phases 39777

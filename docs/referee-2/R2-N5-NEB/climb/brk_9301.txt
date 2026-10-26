@@ -1,0 +1,30 @@
+climb FIT=brk seed=9301 n=14 iterations=35194 improvements=13 best_fitness=1800.0
+BEST-INSTANCE counters: {'CBL2_gates': 8, 'HN_stretches': 24, 'LOW2_INVB_i_failures': 4, 'LOW2_c_cases': 4, 'LOW2_steps': 4, 'RECORD_INV_fails_caseB_cw=o_tau!=o': 4, 'RECORD_breaks_paid_by_rise': 4, 'RISE_cases': 4, 'bases_caseB_cw=o_tau!=o': 4, 'breaks_caseB_cw=o': 4, 'runs': 4, 'states': 62}
+BEST-INSTANCE maxima: {'max_LR_S': 1, 'max_breaks_per_stretch': 1}
+CBL2_gates: 78076
+HN_stretches: 283338
+LOW2_INVB_i_failures: 31805
+LOW2_c_cases: 31841
+LOW2_steps: 44457
+NEA2_steps: 7799
+OUT1_phases: 1493
+RECORD_INV_fails_caseB_cw!=o_tau!=o: 4
+RECORD_INV_fails_caseB_cw=o_tau!=o: 31627
+RECORD_INV_fails_caseB_cw=o_tau=o: 178
+RECORD_breaks_paid_by_rise: 30916
+RISE_cases: 31809
+bases_caseA_cw!=o_tau!=o: 10
+bases_caseA_cw=o_tau!=o: 3502
+bases_caseA_cw=o_tau=o: 49
+bases_caseB_cw!=o_tau!=o: 77
+bases_caseB_cw=o_tau!=o: 37690
+bases_caseB_cw=o_tau=o: 860
+breaks_caseA_cw=o: 2
+breaks_caseB_cw!=o: 4
+breaks_caseB_cw=o: 30978
+climb_evaluations: 35176
+runs: 140704
+states: 1079312
+max_LR_S: 2
+max_breaks_per_stretch: 2
+RESULT OK violations=0

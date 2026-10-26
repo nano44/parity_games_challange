@@ -1,0 +1,11 @@
+HN_stretches: 3
+RECORD_INV_fails_caseB_cw!=o_tau!=o: 3
+RECORD_breaks_paid_by_rise: 2
+RISE_cases: 3
+bases_caseB_cw!=o_tau!=o: 8
+breaks_caseB_cw!=o: 2
+runs: 3
+states: 30
+max_LR_S: 0
+max_breaks_per_stretch: 2
+RESULT OK violations=0

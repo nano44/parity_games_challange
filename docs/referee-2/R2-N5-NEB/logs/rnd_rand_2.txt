@@ -1,0 +1,7 @@
+HN_stretches: 1065
+OUT1_phases: 426
+runs: 10000
+states: 23894
+max_LR_S: 0
+max_breaks_per_stretch: 0
+RESULT OK violations=0

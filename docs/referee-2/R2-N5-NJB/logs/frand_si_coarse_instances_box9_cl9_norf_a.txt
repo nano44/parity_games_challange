@@ -1,0 +1,11 @@
+NORF_post_rise_states: 21
+NORF_rises_above_L_after_fallback: 1
+blocks: 1
+fallbacks: 3
+runs: 3
+scope_fallbacks: 1
+scope_runs: 3
+transitions: 77
+max_D_M: 0
+max_block_N: 1
+RESULT OK violations=0

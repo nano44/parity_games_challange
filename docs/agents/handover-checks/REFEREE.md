@@ -1,5 +1,144 @@
 # Handover check: REFEREE
 
+## successor 11 (2026-10-25T21:00Z by date -u; Opus 5.5 under D15/L37, label "(Opus 5.5, D15)"; predecessor successor 10, handover 1c6c3448)
+Measured from the repository at the time of writing, not recalled.
+
+### 1. Branch, head, distance to trunk
+- Branch `claude/referee`. Local branch started STALE at 73b46eb8 again (`git rev-list --count 73b46eb8..1c6c3448` = 1952).
+  `git fetch origin claude/referee`; `git checkout -B claude/referee origin/claude/referee`: HEAD = origin/claude/referee = 1c6c3448
+  (checked with `git rev-parse`).
+- Trunk = remote HEAD `claude/vibrant-johnson-nxvvxo` (`git ls-remote --symref origin HEAD`) at f23b9c4b ("Lead: R47 draft (P-N5-NHN)
+  pending fixes file; log"). Before merging: 2 ahead / 21 behind trunk, merge-base 39dee725. The 2 ahead: 271ac79f (trunk merge),
+  1c6c3448 (handover).
+- Merged trunk with `git merge --no-ff` (1c8a1fa3): 3 ahead / 0 behind before this file's commit.
+- Oink: scripts/setup_oink.sh built 8fbf0a7 into tools/oink/build, exit 0.
+
+### 2. Open work and next step (notebook "HANDOVER (successor 10 -> successor 11)")
+- §C on P-N5-NEEDB: my report docs/referee/R-N5-NEEDB.md (008ad8ab; all SIGNED, no gaps; notes NEEDB-N1..N4). Next: when REFEREE-2
+  successor 12 pushes R2-N5-NEEDB and the Lead sends its SHA, write §C in R-N5-NEEDB.md (verdict comparison, joint gap map,
+  accept/reject notes).
+- §C on P-N5-FX: my report docs/referee/R-N5-FX.md (843ba1f8; SIGNED, (b) conditional on FBPOLY (+ FBP-1 repair for F*); FX-N1).
+  Next: same, after R2-N5-FX and the Lead's SHA. Check whether R2's (b) condition matches mine.
+- §C on P-N5-NH-box42: my report docs/referee/R-N5-NH42.md (a47f8540; all SIGNED, no gaps; NH42-N1..N3). Next: same, after R2's report.
+- Then the K packet (P-N5-KW) when the Lead routes it. On trunk now (unrefereed, not yet routed): L-SI box 15 N5-KW note
+  (experiments/si/kw15/), L-NEW N5-KW-box42 v3 (b9ee6918: Theorem E-HI). Not started by me.
+- Checked on trunk f23b9c4b: no docs/referee-2/R2-N5-{NEEDB,FX,NH42}* yet (`git ls-tree`), so nothing to compare; I have not opened
+  any R2 file for these packets. Order per the predecessor: NEEDB -> (R2's §C FBPOLY) -> FX -> NH42.
+
+### 3. docs/GAPS.md rows relevant to me (trunk f23b9c4b)
+- REFEREE owns no row. The row my packets feed: G-N5-TIME (l.11), major, owner L-NEW (L-LIT T22; "referees later"), **open**. Last
+  UPDATE 20:36Z: R44 (P-N5-PFZ + ext + fixes) and R45 (P-N5-RHO + fixes) LANDED [refereed-only]; "Still open for G-N5-TIME: N_HN for
+  τ(o) ≠ o (P-N5-NHN ...), fallbacks per phase (P-N5-FBPOLY), phases (P-N5-PHI), crossings (P-N5-FX), the NH count (P-N5-NH-box42),
+  and K." (Trunk also carries Lead drafts R46 (PHI) and R47 (NHN) pending fixes files, not yet in this row.)
+- G-N5-TERM (l.16) closed (RESULTS R15). DTL rows (GAP-A l.6, etc.) open but paused (D18/L40).
+
+### 4. Three owner rulings that most constrain me (verbatim, docs/DECISIONS.md), with DECISIONS-INDEX status
+1. D1 (index l.5: **active**; DECISIONS.md l.7-8):
+   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+   > Never downgrade the referee to save money.
+2. D15 (index l.26: **active**; DECISIONS.md l.278):
+   > q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it
+3. D18 (index l.32: **active**; DECISIONS.md l.333):
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+
+### 5. One trap that bit this lane, and the check that prevents it
+- Trap (successor 10, FBP-1 / FBP-2): a bound's proof silently assumed the generic case (no self-loop at o; o ≠ c_θ). Check: in every
+  bound, test the corner cases explicitly with my own probe: self-loop at o, o = c_θ, |U| = 2; and for every hypothesis a packet
+  calls vacuous or unreached, report my own count with the file set, never the packet's word (N-ENT-2, N-NEB-2 lessons).
+- Process trap (successor 10): `pkill -f` in the same shell killed its own wait loop (exit 144). Check: never pkill -f from the shell
+  that runs the loop; keep each Bash wait < 600 s.
+- Again this restart: the clone started stale (73b46eb8); checked `git rev-parse HEAD origin/claude/referee` equal before any work.
+
+## successor 10 (2026-10-25T16:41Z by date -u; Opus 5.5 under D15/L37, label "(Opus 5.5, D15)"; predecessor successor 9, handover 4859e63e)
+Measured from the repository at the time of writing, not recalled.
+
+### 1. Branch, head, distance to trunk
+- Branch `claude/referee`. Local branch started STALE at 73b46eb8 (1621 behind origin/claude/referee; `git rev-list --count
+  73b46eb8..4859e63e`). `git fetch origin claude/referee`; `git checkout -B claude/referee origin/claude/referee`:
+  HEAD = origin/claude/referee = 4859e63e (checked with `git rev-parse`).
+- Trunk = remote HEAD `claude/vibrant-johnson-nxvvxo` (`git ls-remote --symref origin HEAD`) at f7b6e688 ("Lead: REFEREE NEB/LV §Cs
+  merged ..."). Before merging: 1 ahead / 71 behind trunk, merge-base 46a80300.
+- Merged trunk with `git merge --no-ff` (efe0ab7a): 2 ahead / 0 behind before this file's commit.
+- Oink: scripts/setup_oink.sh built 8fbf0a7 into tools/oink/build, exit 0.
+
+### 2. Open work and next step (notebook "HANDOVER (successor 9 -> successor 10)")
+- P-N5-PFZ-ext (b3702b1b, pin c61ecc4): my report docs/referee/R-N5-PFZ.md (all SIGNED except ext BRK-POLY′ (i): SIGNED WITH GAP
+  PFZ-1, repair in §7). Main-packet §C done (vs R2 37e55fde: identical). Next: ext §C in R-N5-PFZ.md once the Lead names
+  REFEREE-2 10's FINAL SHA for the ext review; central question: does R2 find PFZ-1, and does their repair agree with mine
+  (refined θ-LEN ≤ |A_low| − [o low]; ρ ≥ 1 ⇒ a high u ≠ o in U)?
+- P-N5-LV2 (3b23a41f, pin 283bcb6): my report docs/referee/R-N5-LV2.md + addendum (all SIGNED with stated conditions, no gaps;
+  LV2-N1). Next: LV2 §C in R-N5-LV2.md after REFEREE-2 10's report and the Lead's SHA. No docs/referee-2/R2-N5-LV2* on trunk yet.
+- Trunk log since 4859e63e shows REFEREE-2 10 at handover (490dd0ea, 5ca9ac38: "PFZ-ext and LV2 in flight, not started"). Nothing
+  else is open for me.
+
+### 3. docs/GAPS.md rows relevant to me (trunk f7b6e688)
+- REFEREE owns no row. The row my packets feed: G-N5-TIME (l.11), major, owner L-NEW ("referees later"), **open**. Last UPDATE
+  15:55Z: RESULTS R40 LANDED (P-N5-ENT + fixes); "Open: level −1 (P-N5-LV signed by both, P-N5-LV2 in review ...), ...
+  out-of-scope fallbacks (P-N5-NEB signed by both; P-N5-PFZ in review), θ_ph / ρ, OTHER states, S4a steps, phases, X."
+- G-N5-TERM (l.16) closed (RESULTS R15).
+
+### 4. Three owner rulings that most constrain me (verbatim, docs/DECISIONS.md), with DECISIONS-INDEX status
+1. D1 (index l.5: **active**; DECISIONS.md l.7-8):
+   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+   > Never downgrade the referee to save money.
+2. D15 (index l.26: **active**; DECISIONS.md l.278):
+   > q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it
+3. D18 (index l.32: **active**; DECISIONS.md l.333):
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+
+### 5. One trap that bit this lane, and the check that prevents it
+- Trap (successor 9): Lead messages queue up while a referee works; successor 9 read the 15:34Z / 15:41Z / 15:59Z messages late and
+  did P-N5-LV before P-N5-PFZ, against the Lead's order. Check: ReadNotifications before each push and before starting the next
+  packet (done before this push: queue empty).
+- Content trap the predecessor caught (PFZ-1), kept as a check: in an epoch/phase counting proof, list the transitions at each epoch
+  boundary and confirm each is charged exactly once (a θ-change at a P(θ) change is still a θ-change; pfz_probe.py counts θ-runs
+  and P-epochs separately). Misses N-NEB-2 / N-LV-1 (found only by REFEREE-2): count every hypothesis's occurrences, say which are
+  vacuous "in MY data", with the file set.
+- Again this restart: the clone started stale (73b46eb8). And a peer file present is not final: docs/referee-2/R2-N5-PFZ.md is on my
+  tree after the trunk merge (main-packet review, 37e55fde); the ext §C compares only against the SHA the Lead names.
+
+## successor 9 (2026-10-25T14:45Z by date -u; Opus 5.5 under D15/L37, label "(Opus 5.5, D15)"; predecessor successor 8, handover 4efa2a6f)
+Measured from the repository at the time of writing, not recalled.
+
+### 1. Branch, head, distance to trunk
+- Branch `claude/referee`. Local branch started STALE (1505 behind origin/claude/referee). `git fetch origin claude/referee` and
+  `git checkout -B claude/referee origin/claude/referee`: HEAD = origin/claude/referee = 4efa2a6f (checked with `git rev-parse`).
+- Trunk = remote HEAD `claude/vibrant-johnson-nxvvxo` (`git ls-remote --symref origin HEAD`) at efa00f59 (Lead: R39 draft -> C48).
+  Before merging: 3 ahead / 8 behind trunk (merge-base 1aeff933). The 8 behind: REFEREE-2 succ. 9's R2-N5-ENT (b7df84b8), OUT §C
+  (2a9e8db0), ENT §C (f33884e6), their merges, and Lead commits 3a086cca, efa00f59.
+- Merged trunk with `git merge --no-ff` (00bea06f): 4 ahead / 0 behind before this file's commit (merge-base efa00f59).
+
+### 2. Open work and next step of each
+- Nothing in flight. Successor 8's table: RL (R37), P1 (R36), SCOPE (R38), OUT (R39 draft, CHECKER C48), ENT all signed with §C done;
+  REFEREE-2's OUT and ENT §Cs (2a9e8db0, f33884e6) report identical verdicts and an empty gap map, so nothing returns to me from them.
+- Next: wait for the Lead's GO and next packet brief. On a new packet: verify the packet sha1 at its pin, build Oink
+  (scripts/setup_oink.sh; not yet built in this container), reuse own tools in docs/referee/scratch/ (rl_engine.py, rl_probe.py, NO
+  lane imports), report under docs/referee/R-<packet>.md before reading any docs/referee-2/R2-<packet>.
+- Small item seen in LEAD-STATE 14:24Z (CHECKER 30fda11): my lane's SCOPE climb maxima rest on report text only, no committed log.
+  If the Lead wants it, I can re-run the SCOPE climbs and commit the log under docs/referee/ (not started; awaiting routing).
+
+### 3. docs/GAPS.md rows relevant to me (trunk efa00f59)
+- REFEREE owns no row. The row my packets feed: G-N5-TIME | major | owner L-NEW (L-LIT T22; referees later) | **open**. Latest
+  UPDATE 14:16Z: R38 (P-N5-SCOPE) LANDED; open: out-of-SN fallbacks (OUT-POLY CONJECTURE; P-N5-OUT signed by both referees, landing
+  next = R39), NJB = ENT, REL(S), level −1. Related closed: G-N5-TERM (R15). DTL rows (GAP-A, GAP-C, G-S5-6, G-NEST) open but paused (D18/L40).
+
+### 4. Three owner rulings that most constrain me (verbatim, docs/DECISIONS.md), with DECISIONS-INDEX status
+1. D1 (index l.5: **active**, 2026-10-14; DECISIONS.md l.7): "A claimed polynomial algorithm is far more likely to be wrong than right.
+   Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below."
+2. D15 (index l.26: **active**, 2026-10-22; DECISIONS.md l.278): "q18 b. , q16 b,c. BUt I dont want it to ask these questions from me.
+   Be autonomous, reason about it"
+3. D18 (index l.32: **active**, 2026-10-24; DECISIONS.md l.333): "Focus on N5 and work toward proving it. Explore novel approaches,
+   especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable
+   assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from
+   conjectures and open problems."
+
+### 5. One trap that bit this lane, and the check that prevents it
+- Trap (successor 8, N-ENT-2, missed by me, caught by REFEREE-2): copying a packet's "vacuous in data" line. REFEREE-2 found the NJB-A
+  hypothesis actually occurs (698 / 601 / 701 cases). Check: for every hypothesis a packet calls vacuous or unreached, count its
+  occurrences with my own probe and report the count, never the packet's word.
+- Also again this restart: the clone started stale (1505 behind origin/claude/referee); checked `git rev-parse HEAD origin/claude/referee`
+  equal before any work.
+
 ## successor 6 (2026-10-25T01:24Z by date -u; Opus 5.5 under D15/L37, label "(Opus 5.5, D15)"; predecessor successor 5, handover bb6f60f5)
 Measured from the repository at the time of writing, not recalled.
 

@@ -1,0 +1,5 @@
+TRACE own
+runs: 3
+states: 30
+max_fallbacks_per_crossing_free_run: 0
+RESULT OK violations=0

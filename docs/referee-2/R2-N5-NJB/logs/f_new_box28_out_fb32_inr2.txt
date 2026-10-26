@@ -1,0 +1,13 @@
+MINSET_a_states: 36
+MINSET_d_fallbacks: 34
+MINSET_intervals: 34
+blocks: 2
+fallbacks: 37
+runs: 3
+scope_fallbacks: 36
+scope_runs: 3
+transitions: 105
+MINSET_max_|Mn|: 13
+max_D_M: 0
+max_block_N: 23
+RESULT OK violations=0

@@ -1,0 +1,4 @@
+climb seed=1304 n=13 iterations=16627 best_fitness=80
+BEST {'fb_inscope': 20, 'fb_none': 0, 'max_fb_per_run': 8, 'scope_runs': 6, 'traces': 8}
+BEST worst ratios (0,) (0.012759170653907496, ('rnd2', 'own'), 8, 627)
+ALL-EVALS {'LVNONE_FAIL': 0, 'SAND_FAIL': 0, 'SAND_checks': 9148, 'SCOPEFB_FAIL': 0, 'evals': 16608, 'fb_inscope': 120691, 'fb_none': 0, 'max_fb_per_run': 8, 'max_none_per_run': 0, 'scope_runs': 108124}
