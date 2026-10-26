@@ -10,6 +10,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   - Lemma RET-FB (PROVED, rests on Q-A): fallback t, later C-state s ⇒ LEV_C(s) ≥ min(LEV_C(t) + 1, n − 1), any C. Corollary VIS: V_C ≤ 2n² − n + R⁰_C.
     Theorem EP-C: N_ep ≤ NCONF·(2n² − n) + R⁰, R⁰ = fallback-free returns (≤ Σ_S REV(S), ≤ f + 1 runs S).
   - DATA: liball n ≤ 40 NCONF ≤ n except nep90 (48); 122 LEV_C stalls at returns, all fallback-free; SAT_VIS ≤ 1 (CONJECTURE SAT-1).
+- (3) P-N5-HONFF-fixes-box47 FROZEN (b2dcf365, sha1 ccc520dd…): both reports + §Cs (REFEREE e7db1ab4, REFEREE-2 11e3cfb1, read on their branches since
+  trunk lacked the §Cs at 13:3xZ); 45 quotes by box48/quotecheck2.py (REV:FILE sources).
+- (2) Lemma SAT-FB (PROVED, from SAT_C alone): saturated C-fallback ⇒ last state of P or C never recurs; ≤ 1 saturated fallback per C; Theorem FB-C′
+  f ≤ n·|𝒞_f| (⇒ R60 (c)). Successor 26's "flat and ends the phase" DEAD (rho3_253_n32, random start; 12 non-flat in liball). §5 of N5-NCONF.
+- R⁰ shape (r0shape.py): 610 of 616 fallback-free returns change σ̄ at ONE vertex; 577 keep |D| ≤ 1 (already under R68 (h) REC-1 (c)).
 
 ## Box 47 log (successor 26, session_01NkLhWhNtcThjnCotjLUvvF; handover check 8a018742 (5/5, Lead 10:57Z); GO 10:57Z, Lead's stamp)
 - Container stale at 5961101a again; ff to e2a529fa; trunk f1d2cf09 merged (34a4d336), later trunk merged again. Oink built (rc 0, 8fbf0a7).

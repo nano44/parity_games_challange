@@ -2,3 +2,5 @@ STALL ../../red/rec0/instances/nep90_n40.pg n=40 start phase [4,95] C-epochs at 
 STALL ../../red/rec0/instances/nep90_n40.pg n=40 start phase [4,95] C-epochs at 65 -> 67 LEV_C 8 fb_between=False
 RISE 40 STALL 2 STALL_no_fb_between 2 confs_returning 36 returns 42 runs 1
 SAT_VIS_max 0 ('../../red/rec0/instances/nep90_n40.pg', 40) UNSAT_VIS_max 6 ('../../red/rec0/instances/nep90_n40.pg', 40)
+
+[exited with code 0]
