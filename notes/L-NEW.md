@@ -975,6 +975,14 @@ Successor 29 (Opus 5.5, D14/D18, L40). Handover check 366fd235 (Lead 5/5, GO 17:
   N5-KPOLY-box49 §8 at 331f0337. All quotes checked: out/quotecheck_offmono_add.txt (16, 0 missing).
   KPOLY §11: SPEC docs/new/N5-ssi-global.md l. 26-43 (S1 (i)-(vi)) and experiments/si/si.py Engine.evaluate l. 78-205 (restrict, longest, BFS,
   the Odd cycle node's stack DFS) opened at 366fd235.
+- (box 49, successor 29, 18:5xZ) FULL TEXTS opened for N5-ALTLIT-box49 (arXiv pdfs, pdftotext; scratch only, not committed):
+  - Friedmann, LMCS 7(3:19) 2011, arXiv 1106.0778 (sha256 46c96f44775aa2b0…): §3 (ϑ, A_{G,σ}, Lemma 3.1, Theorems 3.2-3.3 [VJ00]), §4 (I^loc,
+    Lemma 4.1; I^glo, Theorem 4.2 [Sch08]; Lemma 4.3 [Vög00] + intransitivity remark), §5 (1-sink: Sink Existence, Sink Seeking; Lemma 5.1),
+    §6.1 ("all e_i nodes are the only player 1 controlled nodes with real choices"), §6.5 (four phases; Lemmas 6.8-6.12), Theorem 6.14, §8.1-8.5
+    (stubborn cycles; Theorem 8.4: I^glo needs ≥ 2^n steps on H_n), §9 (Theorem 9.8, Corollaries 9.9, 9.10).
+  - Hansen-Miltersen-Zwick, arXiv 1008.0530v1 (sha256 f53a6b5127d95078…): §2-§7; Lemma 3.10 (x_π e = n/(1 − γ)), Lemma 4.2 (γ-contraction),
+    Lemmas 5.1-5.5 (5.5: ‖v_k − v*‖∞ ≤ γ^k‖v_0 − v*‖∞), Lemmas 6.1-6.4 (6.4: elimination after L = log_{1/γ}(n²/(1 − γ))), Theorem 6.5.
+  - L-SI docs/si/N5-EXIT-box22.md at l-si 196c7e8c: §2 NO-UP, §8 E-ONEWAY, §9 OPEN ALTERNATION.
 
 ## Dead ends
 - (box 47, successor 26, 11:13Z) CONJECTURE XD-1 (≤ 1 X_dir per {u, u′}-run): FALSE on experiments/new/box47/instances/pp2_n19.pg (sha1 97b5b132…),
@@ -1292,3 +1300,7 @@ Successor 29 (Opus 5.5, D14/D18, L40). Handover check 366fd235 (Lead 5/5, GO 17:
 - 18:4xZ Lead 18:25Z note → KPOLY §14: OFFADD-N2 PROVED (OFFSET-MONO⁺; on-cycle q: Case L1 = OFFMONO's Case L, Case L2 by Lemma S on the
   cycle through c); CHAIN-COUNT‴ cuts at EXIT only. offmono3.py 0 violations (471 on-cycle checks, all L2). Opened REFEREE
   R-N5-OFFMONO-add.md at c2a97189 (l. 20-60). Fixes file for OFFMONO waits for REFEREE-2 + both §Cs (Lead 18:25Z).
+- 18:5xZ Lead 18:36Z item 1: N5-ALTLIT-box49 (READING): (i) [F]'s I^glo family keeps λ_Ξ constant (1-sink) and has no τ, so nothing forces
+  many N5 phases; but S4a (W vs fixed τ) and S4b differ from I^glo, so nothing transfers; testable by running N5 on H_n (§8.4). (ii) [HMZ]'s
+  discount: Lemma 3.10 flux + Lemma 4.2 contraction → 5.5 → 6.4 elimination; no lexicographic analogue; [F] Cor. 9.9 puts VJ order at γ → 1.
+  Item 2 (OFFADD-N2) was already done at bb92d772.
