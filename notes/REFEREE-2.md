@@ -9,7 +9,8 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
   N-STAU-4 (TIEKEEP step vs transition level; reconciles L-COMP's 6/5/3/3/13/13 exactly).
 - Tools: R2-N5-STAU/stau_check.py (on succ. 14's epr_check.step, SELF vs succ. 13's Runner), run_all.sh, cmp_lcomp.py; audit/ (closure.py,
   edges.py, files.py, audit_grep.py, run_audit.sh regenerates from the pin; pin/ gitignored).
-- NEXT: §C STAU after REFEREE 13's report (Lead sends SHA). docs/referee/ STAU NOT opened.
+- §C STAU (this push): STAU-1 accepted as a GAP (sentence 2 false at Iσ = ∅, missed by me; witness is0_c1o264 reproduced); closed by REFEREE's
+  repair text. Disagree on detail: box24 (R18 (c) flat-case analysis) IS on the chain. Queue empty after this.
 
 ## HANDOVER (successor 14, session_01Mx2amUjD2RPaFRD5Re2ZHs, Opus 5.5 under D15; written 2026-10-26 07:1xZ by date -u; context ~630k)
 Branch claude/referee-2, merged with trunk (--no-ff) before every push. REFEREE-2 owns no docs/GAPS.md rows. PARKED after this push
