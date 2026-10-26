@@ -120,3 +120,45 @@ changes no signed statement.
   §1, so nothing is missing.
 - Verdicts unchanged: everything in this report stands with the fixes file read beside the packet. G-FBK-1 is not touched by it (it
   concerns FBK's own Corollary FB-kO sentence). (Opus 5.5, D15)
+
+## §C. Comparison with REFEREE's R-N5-FBK (REFEREE successor 12; referee c7fa8d5e, §C 0e4ba6ee). REFEREE-2 successor 14, 2026-10-26 05:5xZ (date -u)
+Signature: (Opus 5.5, D15). I wrote §1-§6 and Addendum A above (d4cc40d9, 5ad79417; in origin/claude/referee-2 since 05:0xZ). R-N5-FBK was
+opened at 05:5xZ.
+
+### C.1 Verdicts
+| statement | REFEREE | REFEREE-2 | agree |
+| --- | --- | --- | --- |
+| ROUTE-k | SIGNED | SIGN | yes |
+| SAT-k | SIGNED (FBK-N1) | SIGN (N-FBK-4) | yes |
+| Theorem FB-kT | SIGNED | SIGN | yes |
+| FB-kO per phase | SIGNED | SIGN | yes |
+| FB-kO whole-run sentence | SIGNED WITH GAP FBK-1 | SIGN for k ≥ 2 only; G-FBK-1 | yes: the SAME gap, found independently |
+| ALT, N_ep corollary | SIGNED (FBK-N2) | SIGN (N-FBK-3) | yes |
+| fixes file quotes | verbatim (script) | verbatim (script, Addendum A) | yes |
+All conditional on R56 and P-N5-2T's PFZ-q and DIR on both sides.
+
+### C.2 Joint gap / note map
+| REFEREE | REFEREE-2 | result |
+| --- | --- | --- |
+| FBK-1: whole run is O(n^{k+1}(n² + n^k)); O(n⁴) at k = 1 | G-FBK-1: O(n^{max(k+3, 2k+1)}) | identical gap; the two repairs are the same bound. One joint gap |
+| FBK-N1: SAT-k's t > g_{w_c} unused | N-FBK-4 | identical |
+| FBK-N2: ALT's "≥" is (M2κ); also "q on no honest cycle at t + 1" is unused | N-FBK-3 (first half only) | ACCEPTED the second half: ALT's step at t + 1 is (Aκ) (κ_{t+1}(q) = κwt_c(q) + κ_{t+1}(y2)), which needs only q ≠ c, not q off a cycle; cleanness at t + 1 is used nowhere else. Missed by me |
+| accepted N-FBK-1 ((YB_q) is P-N5-2T's, not an R56 fact) | N-FBK-1 | REFEREE confirmed (its C.2) |
+| accepted N-FBK-2 ((INJ) needed in step 1, not listed) | N-FBK-2 | REFEREE confirmed (its C.2) |
+| FBK-N3 (DATA: SAT-k only on constructed witnesses; late regime unreached) | §5 (same; SAT-k at depth 1 and 2 on unions) | agree. REFEREE re-ran my k3 witness (fb17_k3_P66.pg) on its engine: 26 SAT-k checks, depth 2, 0 failures — the same 26 as mine. SAT-k is thus exercised at depth 1 and 2 on two engines |
+
+### C.3 Data comparison
+| | REFEREE (fbk_probe.py) | REFEREE-2 (fbk_check.py) |
+| --- | --- | --- |
+| ALT on lib41 from S3 | 1,910 / 75 / 65 (+ 1 cycle node) | 1,910 / 75 / 65 / 1 (= the packet's §5.2) |
+| ROUTE-k max depth | 118 (tcL_N12) | 118 (tcL_N12, 233 terminals) |
+| SAT-k | 37 (2T witnesses) + 26 (k3 witness) | 76 (k3 unions) + 58 (g5 unions) + 26 (k3 witness) |
+| mutation controls | S_{q,p} shift: 37 / 37 fail | shift 76 / 76, satk0 4, altstrict on the 75 ties |
+| FB-kT late regime | never | never |
+| violations | 0 | 0 |
+
+### C.4 Result
+Both referees SIGN ROUTE-k, SAT-k, FB-kT, FB-kO per phase, ALT and the N_ep corollary, conditional on R56 and P-N5-2T's PFZ-q and DIR. One
+joint gap, FBK-1 = G-FBK-1: the whole-run clause of FB-kO holds for k ≥ 2 and is O(n⁴) at k = 1 (repair either wording). For the fixes
+file: that repair; N-FBK-1 ((YB_q) is 2T's); N-FBK-2 (add (INJ)); optional FBK-N1 = N-FBK-4, FBK-N2 (both halves) ⊇ N-FBK-3. DATA: SAT-k
+exercised only on constructed unions, at depth 1 and 2, on two engines; FB-kT's late regime unreached. (Opus 5.5, D15)

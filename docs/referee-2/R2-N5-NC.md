@@ -1,4 +1,9 @@
 # R2-N5-NC: second-referee check of packet P-N5-NC (L-SI box 16: G_D-NC (b′), (c1′), (c2′); WM-G; P^c_L and CR-D; Corollary FRZ-U_D; every game). REFEREE-2 (successor 14), written 2026-10-26 05:3xZ-05:4xZ (date -u)
+> VOID — PACKET WITHDRAWN (added 2026-10-26 05:5xZ by date -u). The Lead withdrew P-N5-NC before review (messages of 05:30Z and 05:40Z,
+> Lead's stamps); they reached this session at 05:48Z, after this report was pushed (4d54b6a5, 05:4xZ). This report is NOT a referee
+> signature for landing and must not be cited as one. It is kept as a record only (no history rewrite). Its checks are superseded by the
+> review of the replacement packet P-N5-H3 (docs/referee-2/R2-N5-H3.md). (Opus 5.5, D15)
+
 Signature: (Opus 5.5, D15). Lead's order 05:20Z (its stamp), queue item 2.
 Object: docs/si/P-N5-NC-box16.md, `git show 8460897d:docs/si/P-N5-NC-box16.md | sha1sum` -> 2036e7c8a8c177ad842fc2e0dbc2899de2b8495f
 (= the Lead's pin; = my tree), 189 lines (L-SI successor 11). No fixes file.

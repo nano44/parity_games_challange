@@ -1,4 +1,4 @@
-# Draft RESULTS R58 (Lead, 2026-10-26 05:44Z by date -u; both §Cs and the fixes file filled) — to CHECKER C67
+# Draft RESULTS R58 (Lead, 2026-10-26 05:44Z by date -u; both §Cs and the fixes file filled) (rev. 2026-10-26 06:11Z: C67 E-1, N-1, N-2, N-3) — to CHECKER C67 — LANDED in RESULTS Results 2026-10-26 06:23Z (CHECKER C67 9f733791 + Addendum 1 36d6f3e8 PASS), after R57
 
 ### R58 [refereed-only] N5 on EVERY game, CONDITIONAL on RESULTS R56: with at most two Odd choice vertices per honest class, the Q-runs holding a late fallback number O(n²) per phase (Theorem FB-2T), so on two-Odd-choice games every phase of every run has at most 1 + (n − 1)(1 + 12n²) = O(n³) in-phase fallbacks (Corollary FB-2O), with Lemmas (YB_q), PFZ-q, ROUTE-2, DIR and SAT-2 (2026-10-26) — partial step-4 lemmas for N5 beyond one Odd choice vertex (a fallback count only; not an iteration bound on any class, not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C67.md, checker PENDING)
 - Object (packet P-N5-2T, added at l-si f6839fd3, pinned trunk cbb3b738, unchanged during review): docs/si/P-N5-2T-box16.md, sha1
@@ -40,18 +40,19 @@
 - Honest limits: (i) A fallback count per phase, CONDITIONAL on R56; it bounds no iterations, crossings or S4a steps on any class:
   G-N5-TIME stays open, and a 𝒞^2O polynomial bound would still need crossings and transitions per phase. (ii) Vacuity (2T-N4 = N-2T-6):
   natural data never meet SAT-2's or FB-2T's hypothesis in either referee's batches (best closeness −2 on the library, −1 on random
-  games); REFEREE-2 met SAT-2's hypothesis on CONSTRUCTED disjoint unions of fb17_n32 with small two-terminal gadgets (docs/referee-2/
-  R2-N5-2T/instances/fb17_g{3,4,5,5c}_P66.pg; 648 SAT checks, every branch of its proof exercised), which REFEREE re-ran on its own engine
-  (DIR 93 and SAT 108 checks, equal counts, 0 failures); FB-2T's late regime (an index ≥ n) is never reached (max f 37), so FB-2T rests on
-  its proof. (iii) DIR's hypothesis is met 65 times in REFEREE's natural data.
-- Data (DATA, not proof): REFEREE (successor 12, own probe; path checks for n ≤ 14): 11,999 natural runs (lib41 × 7, lib2o × 7 and × 3,
+  games); REFEREE-2 met SAT-2's hypothesis on CONSTRUCTED disjoint unions of the box-43/44 instances with small two-terminal gadgets (648 SAT
+  checks over all unions, every branch of its proof exercised); the four fb17_g{3,4,5,5c}_P66.pg witnesses (docs/referee-2/R2-N5-2T/
+  instances/) carry 108 of them, and REFEREE re-ran those four on its own engine (DIR 93 and SAT 108 checks, equal counts, 0 failures); FB-2T's late regime (an index ≥ n) is never reached (max f 37), so FB-2T rests on
+  its proof. (iii) DIR's hypothesis is met 65 times in REFEREE's natural data. (iv) The title's O(n²) for N_late uses d_q ≤ |U_c| (by the
+  definition d_q := |succ(q) ∩ U_c|), so N_c = O(w_c²), and Σ_c w_c < n; this arithmetic is in neither report (C67 N-1).
+- Data (DATA, not proof): REFEREE (successor 12, own probe; path checks for n ≤ 14 by default, some batches at PATHN 16 / 40): 11,999 natural runs (lib41 × 7, lib2o × 7 and × 3,
   3,000 random 𝒞^2O × 3); PFZ-q 169,165 checks, (YB_q) and ROUTE-2 exercised often, DIR 65, 0 failures; mutation (PFZ with j +
-  1 edges; DIR / SAT without Cyc_c) bites (125 PFZ failures). REFEREE-2 (successor 13, own tt_check.py; lane code not run): 22,003 natural
+  1 edges; DIR / SAT without Cyc_c) bites (125 PFZ failures). REFEREE-2 (successor 14, own tt_check.py, reusing successor 13's SPEC loop; lane code not run): 22,003 natural
   runs (lib41 × 2, 503 𝒞^1O files × 2, lib2o × 3, box-43/44 instances × 5, 20,000 random 𝒞^kO); (YB_q), ROUTE-2, PFZ-q and DIR checked on
   every run, 0 violations; the constructed unions above; mutations sat0 and satalpha bite. L-RED (adversary, docs/red/R76 §8, l-red 7cc9f5ac; not a
   referee check): SAT-2 exercised on climbed natural instances (sat68_n20, 68 checks), DIR 82 checks, 0 violations.
 - Signatures: REFEREE docs/referee/R-N5-2T.md (referee 7055b4a5, successor 12; §C 09b5dbf5 + 906247c6): all seven statements SIGNED,
-  conditional on R56; notes 2T-N1..N4; no gap. REFEREE-2 docs/referee-2/R2-N5-2T.md (referee-2 8f43432b + 416334cc, successor 13; §C
+  conditional on R56; notes 2T-N1..N4; no gap. REFEREE-2 docs/referee-2/R2-N5-2T.md (referee-2 8f43432b + 416334cc and §C
   3d8de145, successor 14): all SIGN, conditional on R56; notes N-2T-1..6; no gap. §C (both): verdicts identical; joint gap map empty; 2T-N1
   = N-2T-4; 2T-N3 = N-2T-5; N-2T-1 accepted by REFEREE (missed by it); 2T-N2 REFEREE's, accepted; SAT-2 exercised on two engines; nothing
   open.
