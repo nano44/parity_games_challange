@@ -23,6 +23,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
     IMM′ (h + 1 not last ⇒ rise) survives: 0 failures (lib41 n ≤ 20, random 3,000, 4 climbs). IMM′ ⇒ HON-FF ⇒ f-free HON. Open step: use that τ is
     value-optimal against σ_{h+1} in S4b's arena (honest deviations at h + 1 then use only edges outside τ ∪ Iτ).
 
+  - 09:5xZ packet docs/new/P-N5-HON-box46.md FROZEN (Lead GO 09:21Z / 09:46Z): HON, SAT0, HON-FB, HON′, HON-0 (+ relation to REC-0: implies it,
+    strictly, f·n + 2 below), RESTRICT_u, REPRO_u, REC-1 (a) PROVED; EP-1u, REC-1 (b)-(d) implications from (Στ); HON-FF OPEN; IMM, IMM′, FB-WLEV DEAD.
+    Correction to my 09:40Z message: the inside-fallback gaps are 3 in all (not 5); hon2's 2 at n ≤ 34 are among fbin's 3.
+
 ## Box 45 log (successor 24, session_01DR27cGCEhPvHHVxiYXCfaz; handover check 5/5 (2c299e9a); GO 05:39Z, Lead's stamp)
 - Container stale at 5961101a again; ff to 43e0bd81; trunk 8460897d merged (b43b7c3c). Oink NOT built (not needed).
 - Step 2 (a): 1c344659: P-N5-VILB-fixes-box44 (sha1 56da789e…) and P-N5-ACCEL-fixes-box44 (sha1 46ef9474…), FROZEN, reported 05:44Z.
@@ -884,7 +888,7 @@ Successor 24 (Opus 5.5, D14/D18, L40), session_01DR27cGCEhPvHHVxiYXCfaz. Handove
   133 of 453 fallback-free gaps between consecutive C-epochs (lib41, n ≤ 34). Instance experiments/si/orlens/instances/thclimb_n12_s11.pg
   (sha1 e3b47b6e…), S3 start, phase [2, 17], D = {1} throughout; C = (u → 10) at states 2 and 6, LEV_C 1 → 1. Obstruction: S4a optimises
   against τ(u) = 11, not against σ̄_C(u); inside one {u}-interval σ̄(u) moves 10 → 2 → 3 → 2 → 10. Replaced by EP-1u (u-runs on G^u).
-- (box 46, successor 25, ~10:05Z) CONJECTURE IMM′ (IMM unless h + 1 is the last state of its phase): FALSE. Hand-built
+- (box 46, successor 25, ~09:50Z) CONJECTURE IMM′ (IMM unless h + 1 is the last state of its phase): FALSE. Hand-built
   experiments/new/box46/instances/immp_cex_n11.pg (sha1 1dd7f585…) + .start (sha1 18cf3766…): Iτ = ∅ (τ Odd-optimal), honest reply escapes to a vertex
   whose latent potential is not yet realised; LEV 1 → 1, phase continues. Library: exitr_cex_n16 (random start). Obstruction: Iτ is read from
   Even's G_τ-optimum, not from σ.

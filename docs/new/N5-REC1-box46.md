@@ -194,7 +194,7 @@ Proof.
   stretch (LEV 3, 4, 4, 5, 5, 6, 9 at states 5-11; gaptrace.py) and the next honest state 12 has LEV 9: HON-FF holds there, not by carrying W.
   So a proof of HON-FF cannot go through W alone; IMM′ (a rise in Ξ itself) is the remaining route.
 
-(v) CONJECTURE IMM′ (IMM whenever h + 1 is not the last state of its phase), 09:3xZ. FALSE (10:0xZ):
+(v) CONJECTURE IMM′ (IMM whenever h + 1 is not the last state of its phase), 09:3xZ. FALSE (09:5xZ, by date -u):
   - Hand construction experiments/new/box46/instances/immp_cex_n11.pg (sha1 1dd7f5853103bb0698cd7e3cbc220a70df5d24ee) with start
     instances/immp_cex_n11.start (sha1 18cf37667017b1f0244731e0719ac878568eb8fb). One cycle node (vertex 0, a self-loop), so λ never changes; one
     Odd choice q = 3 with τ(3) = 4 = a, alternative y = 5. x = 1 has σ(1) = 2 → q and an improving edge to Z = 7 (priority 20). At a = 4 the
@@ -258,9 +258,9 @@ Proof.
 - OPEN: X_dir, X_big per phase (D-changes into a singleton that do not pass through D = ∅; a special case of R55's CONJECTURE Δ1); f per phase on
   general games (R56: ρ); epochs with |D| ≥ 2; and (Στ) itself (P-N5-STAU in review).
 - (b), the f-free form, where it stands. HON′ leaves f_in: fallbacks at NON-honest states strictly between two honest states. Two routes:
-  - HON-FF directly (CONJECTURE; 0 failures, but only 5 gaps with an inside fallback exist in all the data, so the support is THIN). A proof
+  - HON-FF directly (CONJECTURE; 0 failures, but only 3 gaps with an inside fallback exist in all the data (fbin.py; hon2's 2 at n ≤ 34 are among them), so the support is THIN). A proof
     must show that W's lower bound, carried from h + 1, survives a fallback at a dishonest k (W does drop there, j10_n24) until the next
     honest state.
   - IMM′ is FALSE (§4 (v)); IMM is FALSE (§4 (iii)). The rise of Ξ is not immediate; it arrives at the next honest state.
   - What a proof of HON-FF must handle (READING): a fallback at a non-honest k inside a gap fires only if every gated edge at k is W-flat in S4a's
-    arena; W can drop there and the W-level can drop (§4 (iv)), yet in all 5 such gaps in the data Ξ's level has risen by the next honest state.
+    arena; W can drop there and the W-level can drop (§4 (iv)), yet in all 3 such gaps in the data Ξ's level has risen by the next honest state.
