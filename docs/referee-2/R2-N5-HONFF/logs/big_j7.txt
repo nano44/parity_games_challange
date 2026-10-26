@@ -1,0 +1,9 @@
+MODE start ../../../experiments/red/xing/instances/j7_n32.pg MUT - BUDGET 30000000
+ENGXI_checks: 51
+R1FF_phases: 3
+UNK_phases: 2
+phases: 3
+runs: 1
+states: 51
+HFF_max_honest: (3, 'j7_n32.pg@48 n 32 f 0')
+RESULT OK violations=0

@@ -1,0 +1,3 @@
+flipcost_checks=672 flips=672 gap_max=61 hyp=672 hyp_bothintact=672 hyp_p1=276 hyp_p1broken=0 hyp_p2=396 phases=1 sg_checks=24695
+max hyp flips per (phase, pair): 396 ('../usplit/instances/pp_K48_n449.pg', 0, 447, 448)
+N3X PASS

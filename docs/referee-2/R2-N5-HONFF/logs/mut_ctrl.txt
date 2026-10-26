@@ -1,0 +1,51 @@
+MODE files ../R2-N5-STAU/lib41_noref.lst 1 MUT ctrl BUDGET 3000000
+ENGXI_checks: 8882
+FB_after_honest_nonhonest: 1
+FB_at_nonhonest: 256
+FB_fallbacks: 270
+FB_odd_binds: 166
+FBb_checks: 68
+HFF_gaps: 585
+HFF_gaps_inside_fallback: 1
+HFF_gaps_with_fallback: 1
+LEV_phases: 160
+QA_checks: 133001617
+R1FF_phases: 2332
+UNK_phases: 113
+VIOLATIONS: 152
+V_FBa: 152
+phases: 2332
+runs: 410
+states: 8882
+HFF_max_honest: (57, 'experiments/red/xing/instances/x32_rand64.pg#0@0 n 64 f 1')
+VIOLATION FBa: experiments/new/box21/instances/fts_best16.pg#0@8: LEV 1 -> 1, LEV_odd 1
+VIOLATION FBa: experiments/new/box21/instances/fts_best16.pg#0@15: LEV 1 -> 1, LEV_odd 1
+VIOLATION FBa: experiments/new/box21/instances/oneodd_c16.pg#0@27: LEV 1 -> 1, LEV_odd 1
+VIOLATION FBa: experiments/new/box22/instances/i1h_fts_best16.pg#0@4: LEV 1 -> 1, LEV_odd 1
+VIOLATION FBa: experiments/new/box22/instances/i1h_fts_best16.pg#0@5: LEV 1 -> 1, LEV_odd 1
+VIOLATION FBa: experiments/new/box25/instances/rtt16.pg#0@11: LEV 0 -> 0, LEV_odd 0
+VIOLATION FBa: experiments/new/box25/instances/sc32.pg#0@23: LEV 1 -> 1, LEV_odd 1
+VIOLATION FBa: experiments/new/box25/thetare_min.pg#0@3: LEV 1 -> 1, LEV_odd 1
+VIOLATION FBa: experiments/new/box25/thetare_n.pg#0@3: LEV 1 -> 1, LEV_odd 1
+VIOLATION FBa: experiments/new/box28/instances/x32_sc32_final.pg#0@43: LEV 1 -> 1, LEV_odd 1
+VIOLATION FBa: experiments/new/box28/instances/x32_sc32_final.pg#0@52: LEV 1 -> 1, LEV_odd 1
+VIOLATION FBa: experiments/new/box28/instances/x48_rt48_final.pg#0@19: LEV 1 -> 1, LEV_odd 1
+VIOLATION FBa: experiments/new/box28/instances/x48_rt48_final.pg#0@25: LEV 1 -> 1, LEV_odd 1
+VIOLATION FBa: experiments/new/box28/instances/x48_rt48_final.pg#0@31: LEV 1 -> 1, LEV_odd 1
+VIOLATION FBa: experiments/new/box28/instances/x48_rt48_final.pg#0@41: LEV 1 -> 1, LEV_odd 1
+VIOLATION FBa: experiments/new/box28/instances/x48_rt48_final.pg#0@46: LEV 1 -> 1, LEV_odd 1
+VIOLATION FBa: experiments/new/box28/instances/x48_rt48_final.pg#0@53: LEV 1 -> 1, LEV_odd 1
+VIOLATION FBa: experiments/new/box28/instances/x48_rt48_final.pg#0@55: LEV 1 -> 1, LEV_odd 1
+VIOLATION FBa: experiments/new/box28/instances/x48_rt48_final.pg#0@59: LEV 1 -> 1, LEV_odd 1
+VIOLATION FBa: experiments/new/box28/instances/x48_rt48_final.pg#0@61: LEV 1 -> 1, LEV_odd 1
+VIOLATION FBa: experiments/new/box28/instances/x48_rt48_final.pg#0@83: LEV 1 -> 1, LEV_odd 1
+VIOLATION FBa: experiments/new/box28/instances/x48_rt48_final.pg#0@84: LEV 1 -> 1, LEV_odd 1
+VIOLATION FBa: experiments/new/box28/instances/x48_rt48_final.pg#0@87: LEV 1 -> 1, LEV_odd 1
+VIOLATION FBa: experiments/new/box28/instances/x48_rt48_final.pg#0@88: LEV 1 -> 1, LEV_odd 1
+VIOLATION FBa: experiments/new/box28/instances/x48_rt48_final.pg#0@89: LEV 1 -> 1, LEV_odd 1
+VIOLATION FBa: experiments/new/box28/instances/x48_rt48_final.pg#0@90: LEV 1 -> 1, LEV_odd 1
+VIOLATION FBa: experiments/new/box28/instances/x48_rt48_final.pg#0@91: LEV 1 -> 1, LEV_odd 1
+VIOLATION FBa: experiments/new/box28/instances/x48_rt48_final.pg#0@92: LEV 1 -> 1, LEV_odd 1
+VIOLATION FBa: experiments/new/box28/instances/x48_rt48_final.pg#0@93: LEV 1 -> 1, LEV_odd 1
+VIOLATION FBa: experiments/new/box28/instances/x48_rt48_final.pg#0@94: LEV 1 -> 1, LEV_odd 1
+RESULT FAIL violations=152

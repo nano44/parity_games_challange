@@ -1,6 +1,38 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## HANDOVER (successor 16, session_01R1scbTA9MiKutHRhRdi3zh, Opus 5.5 under D15; written 2026-10-26 13:19Z by date -u; context ~640k, over the line; Lead 13:18Z: §C, hand over, park)
+Branch claude/referee-2, merged with trunk (--no-ff) before every push. REFEREE-2 owns no docs/GAPS.md rows. PARKED after this push.
+Successor 17 takes P-N5-FBC and P-N5-CHOSEN (Lead).
+### DONE (every report docs/referee-2/<name>.md; every verdict "(Opus 5.5, D15)"; every push via scripts/push.sh, exit 0, VERIFY PASS)
+| item | object (sha1) @ pin | SHA(s) | outcome |
+| --- | --- | --- | --- |
+| handover check | — | 9f2af9ad | Lead 5/5 |
+| P-N5-RUND | docs/si/P-N5-RUND-box17.md 71e198f3 @ 94910ed3 | 7a02a1f2; §C 2c8c17c6 + addendum ac7e80e9 | 14 items SIGN, no gap; N-RUND-1..7 (P1/P2 naming of 1E-N3 introduced here); side finding UF-ONCE FALSE (so_th_n32 S3, phase2_pk48 + instances/phase2_pk48_s1.start); §C identical with REFEREE 13, map empty; landed (R67) |
+| P-N5-HON | docs/new/P-N5-HON-box46.md 07f8e767 @ 31835c4b | 1566b439; §C 7f8bafdc | all SIGN (EP-1u, REC-1 (b)-(d) implications); Q-R17 YES; N-HON-1 settled as wording; §C identical with REFEREE 14, map empty (R68 at CHECKER) |
+| P-N5-FLIP | docs/si/P-N5-FLIP-box18.md 96a7e088 @ d67fdb87 | e9044674; §C 75b8b52a | ROOT, ROUTE-RELAY, SELF-FREE, STATIC, FLIP (a)-(c), NEC SIGN; ROOT-C as written FALSE (G-FLIP-1 = ROOTC-2, n4_thch_0), proof gap G-FLIP-2 = ROOTC-1 (best_tog_83; repairs equivalent, LOCAL recommended); G-FLIP-3 (N3-LEVEL parenthesis, wording, REFEREE-2 only); REFEREE 14's §C still due at 12:23Z |
+| P-N5-HONFF | docs/new/P-N5-HONFF-box47.md 98101d1f @ 4a0a8aba | 05e7663c + independence addendum 1306c31e; §C (this push) | all SIGN, no gap; Q-A YES; N-HONFF-1..4; §C identical with REFEREE 14, map empty |
+### IN FLIGHT
+- None.
+### NEEDS
+- Lead: route N-RUND-*, N-HON-*, G-FLIP-1..3 + N-FLIP-1..4 (with REFEREE's ROOTC-1/2, FLIP-N1..N4), N-HONFF-1..4 (with HONFF-N1..N3) to the lanes.
+### Things only I know
+- Engines / checkers (all on L-SI's experiments/si/si.py, read-only; succ. 13's R2-N5-DUAL/dual_check.Runner = the SPEC loop):
+  - R2-N5-RUND/rund_check.py: OWN play values Xi (of (sigma, sigmabar)) and W; state_info gives xi, w, hn, wn, D, u, pi, h3, MD, Is, Iw,
+    lamX, lamW; ENGXI/FZP/P1/P2 brute premise checks; ii-runs (lambda_W constant) and h3-runs; climb.py, uf_once.py, uf_scan.py.
+  - R2-N5-HON/hon_check.py: phases, epochs, D, W-honest, exact LEV (n <= 11), RESTRICT_u / REPRO_u with my own N5^tau (run_ntau), REC-1.
+  - R2-N5-FLIP/flip_check.py: Q-exit paths, class exits, ROUTE/RELAY, ROOT-C both forms (RC_LIT), walk enumeration Pi_s(q), flips.
+  - R2-N5-HONFF/honff_check.py: exact LEV and LEV_odd with a per-phase path BUDGET (UNK over budget); FB-RISE, Q-A pointwise.
+- Traps hit this session: (1) `pkill -f` / `pgrep ... | kill` with a pattern that also appears in my own command line kills my shell (exit 144):
+  run `pgrep -f "^python3 <tool>" | xargs -r kill` in a command of its own. (2) Appending lines to a run_all.sh that a background bash is
+  still executing: bash reads scripts incrementally and RUNS the appended lines, overwriting logs; check `git status` before pushing and
+  never append to a running script. (3) Independence: REFEREE pushed its HONFF report 25 min before my push; the push-turn count was 1 and
+  my commit message template still said 0 (corrected by addendum). Write the count from the variable, never from a template; never run
+  `git log` on origin/claude/referee before the §C word (its subjects carry verdicts).
+- Data thin spots: TWIN-GAP (ii), PIECE_D (b), HON bounds never approached; FLIP's N3-LEVEL second alternative (C below odd c) never seen;
+  j7_n32 LEV over budget at 1.5e8.
+- Oink built in this container; a new container must run scripts/setup_oink.sh.
+
 ## Resume point 2 (successor 16, session_01R1scbTA9MiKutHRhRdi3zh, Opus 5.5 under D15; 2026-10-26 10:05Z by date -u)
 - Handover check 9f2af9ad (Lead 5/5, GO 09:36Z). Oink built (scripts/setup_oink.sh exit 0). Trunk merge 742ceaf6.
 - DONE: R2-N5-RUND (P-N5-RUND sha1 71e198f3 @ 94910ed3 = l-si 762b7243): all 14 items SIGN, no gap; premises P1/P2 (1E-N3) named per item;
@@ -21,7 +53,10 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
 - DONE: R2-N5-FLIP (P-N5-FLIP sha1 96a7e088 @ d67fdb87 = l-si 7ea3d8cf): ROOT, ROUTE-RELAY, SELF-FREE, STATIC, FLIP (a)-(c), NEC SIGN;
   ROOT-C SIGN WITH GAPS G-FLIP-1 (exits omitted; literal form false, n4_thch_0 0->1) + G-FLIP-2 (positional-realisation step false,
   best_tog_83 state 1; repaired by Bellman B(e, y), P1 only); N3-LEVEL SIGN WITH GAP G-FLIP-3 (parenthesis unproved). 10 quotes verbatim.
-  Tool R2-N5-FLIP/flip_check.py. Context ~300k.
+  Tool R2-N5-FLIP/flip_check.py. §C 75b8b52a (ROOTC-2 = G-FLIP-1, ROOTC-1 = G-FLIP-2, repairs equivalent; G-FLIP-3 wording).
+- DONE: R2-N5-HONFF (P-N5-HONFF sha1 98101d1f @ 4a0a8aba = l-new 2fca63b8): FB-RISE (a), (b), HON-FF, HON-0-FF, REC-1-FF (a) SIGN; REC-1-FF
+  (c), (d) implications; Q-A YES (Case A is a play-value fact); notes N-HONFF-1..4 (XW unused). Tool R2-N5-HONFF/honff_check.py (exact LEV,
+  LEV_odd with budget; j7_n32 UNK even at 1.5e8). Context ~360k.
 
 ## HANDOVER (successor 15, session_01VJosSHA8jpworMYkRKh9T4, Opus 5.5 under D15; written 2026-10-26 09:2xZ by date -u; context ~415k)
 Branch claude/referee-2, merged with trunk (--no-ff) before every push. REFEREE-2 owns no docs/GAPS.md rows. PARKED after this push (Lead 09:21Z,
