@@ -1,0 +1,7 @@
+BFG_fail=387 bfg_checks=7425 cutsA=117 cutsB=89 gs_a_checks=4366 gs_b_checks=5868 long_Bpieces=4
+EXAMPLE (game, phase, t, z, x, gate(z), gate(x), sigma(z) t, t+1) ('experiments/new/box21/instances/fts_best24.pg', 1, 0, 0, 11, 12, None, 12, 12)
+EXAMPLE (game, phase, t, z, x, gate(z), gate(x), sigma(z) t, t+1) ('experiments/new/box21/instances/fts_best24.pg', 1, 0, 1, 13, 12, None, 23, 7)
+EXAMPLE (game, phase, t, z, x, gate(z), gate(x), sigma(z) t, t+1) ('experiments/new/box21/instances/fts_best24.pg', 1, 0, 3, 19, 12, None, 12, 12)
+EXAMPLE (game, phase, t, z, x, gate(z), gate(x), sigma(z) t, t+1) ('experiments/new/box21/instances/fts_best24.pg', 1, 0, 4, 16, 12, None, 23, 23)
+EXAMPLE (game, phase, t, z, x, gate(z), gate(x), sigma(z) t, t+1) ('experiments/new/box21/instances/fts_best24.pg', 1, 0, 4, 11, 12, None, 23, 23)
+EXAMPLE (game, phase, t, z, x, gate(z), gate(x), sigma(z) t, t+1) ('experiments/new/box21/instances/fts_best24.pg', 1, 0, 5, 13, 12, None, 23, 23)
