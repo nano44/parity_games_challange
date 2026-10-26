@@ -72,3 +72,30 @@ j + 1 bound fails). Mutation control VILB_MUT=oddmax: every Odd vertex maximises
 ## 5. Notes for the fixes file
 - VILB-N1: the empty-set conventions in Val^{≤j} never fire for z ∈ U_c ∖ {c} ((Aκ)); optional wording.
 - VILB-N2: DATA (exercised, often tight; mutation bites).
+
+## §C. Comparison with REFEREE-2 (REFEREE successor 12; written 2026-10-26T05:06Z by date -u; (Opus 5.5, D15))
+- Routing: the Lead's message of 04:59Z (Lead's stamp). Objects: this report (dcb1451c; §1-§5 above unchanged) and
+  docs/referee-2/R2-N5-VILB.md (referee-2 f0e82d8a, successor 13), opened after dcb1451c was pushed. Same pinned text (sha1 872d4400…).
+
+### C.1 Verdicts side by side
+| § | statement | REFEREE (dcb1451c) | REFEREE-2 (f0e82d8a) | joint |
+| --- | --- | --- | --- | --- |
+| §1 | (Aκ), (M1κ), (M2κ), κ-FB-ROUND | SIGNED | SIGN | signed |
+| §2 | Lemma VI-LB | SIGNED | SIGN (N-VILB-1, N-VILB-2) | signed |
+| §2 | relation to κ-HAT-FREEZE (a) | READING agreed | READING, correct | agreed (not signed) |
+| §3, §4 | limits; [BGHM] reading | not signed; §3 agreed | not signed; §3 accurate | not signed |
+No disagreement; no gap in either report.
+
+### C.2 Joint note map
+| REFEREE | REFEREE-2 | relation | joint status |
+| --- | --- | --- | --- |
+| VILB-N1 (empty-set conventions never fire inside a class, by (Aκ)) | N-VILB-1 (Γ_c's −∞ convention and the j-step recursion agree; empty successor sets never occur inside a class) | SAME (R2 also checks that the recursion matches the "within j steps" gloss; so did my §2 first bullet) | optional wording |
+| §2 Odd step (forced or choice, (Aκ) at t only) | N-VILB-2 (same) | SAME | — |
+| VILB-N2 (DATA: exercised to 33 fallbacks, tight at 59% of finite lib41 checks; mutation oddmax 46,067 failures) | §3 data (control "one round too many" fails 774 times on lib41 S3: tight) | SAME conclusion by different controls (my j + 1 count: 1,216 states on lib41 S3 + 2 random) | DATA |
+
+### C.3 Data
+| item | REFEREE | REFEREE-2 | agree? |
+| --- | --- | --- | --- |
+| lib41 | 1,101 runs (n ≤ 64), 602,116 VILB checks, max f 33, 0 failures | 1,236 runs (all 412 × 3), 986,781 checks, max f 33, 0 | YES |
+| other | box-43/44 × 5 (14,437), 2,000 random (160,495) | 503 𝒞^1O files × 2 (max f 37), box-43/44 × 5, 20,000 random, climbs | YES |
+Both: the gadget regime of §4 (exponentially many fallbacks in a phase) is not exercised.
