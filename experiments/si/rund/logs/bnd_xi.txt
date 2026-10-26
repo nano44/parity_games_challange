@@ -1,0 +1,15 @@
+L=-1 MUT=0 bd=2 bd_DCH=1 bd_WG=0 bd_WG_only=0 bd_XI=1 bd_XI_only=1 max_bd_run=2 max_trans_run=24 max_xi_changes_gate=1 runs=2 trans=28 xi_b_inF_Wchanged=1
+SCHED PASS
+L=-1 MUT=0 bd=8 bd_DCH=6 bd_WG=2 bd_WG_only=1 bd_XI=2 bd_XI_only=0 max_bd_run=8 max_trans_run=23 max_w_changes_gate=1 max_xi_changes_gate=2 runs=1 trans=23 xi_b_gated=2 xi_sbar_changed=1
+SCHED PASS
+L=-1 MUT=0 bd=8 bd_DCH=4 bd_WG=2 bd_WG_only=1 bd_XI=3 bd_XI_only=2 max_bd_run=8 max_trans_run=24 max_w_changes_gate=2 max_xi_changes_gate=3 runs=1 trans=24 xi_b_gated=2 xi_b_inF_Wchanged=2 xi_sbar_changed=1
+SCHED PASS
+L=-1 MUT=0 BD_GT_N1=1 bd=34 bd_DCH=1 bd_WG=0 bd_WG_only=0 bd_XI=33 bd_XI_only=33 max_bd_run=34 max_trans_run=34 max_xi_changes_gate=33 runs=1 trans=34 xi_sbar_changed=33
+VIOLATION ('BD_GT_N1', '../../red/so/instances/pftheta34_n32.pg', 5, 34, 34, 32)
+SCHED FAIL
+  XI_B_SAME experiments/red/n5inj/instances/returns_rt32.pg rs 3 28 9 (21, 2684354560, 16) (21, 2684354560, 14) (21, 2684354560, 15) (21, 2684354560, 13)
+L=-1 MUT=0 bd=183 bd_DCH=113 bd_WG=13 bd_WG_only=6 bd_XI=85 bd_XI_only=61 max_bd_run=6 max_trans_run=23 max_w_changes_gate=2 max_xi_changes_gate=4 runs=243 trans=987 xi_b_gated=49 xi_b_inF_Wchanged=28 xi_b_inF_Wsame=1 xi_sbar_changed=30
+SCHED PASS
+  XI_B_SAME experiments/red/n5inj/instances/returns_rt32.pg rs 3 28 9 (21, 2684354560, 16) (21, 2684354560, 14) (21, 2684354560, 15) (21, 2684354560, 13)
+L=-1 MUT=0 bd=90 bd_DCH=39 bd_WG=2 bd_WG_only=1 bd_XI=62 bd_XI_only=50 max_bd_run=5 max_trans_run=23 max_w_changes_gate=1 max_xi_changes_gate=3 runs=121 trans=707 xi_b_gated=22 xi_b_inF_Wchanged=23 xi_b_inF_Wsame=1 xi_sbar_changed=20
+SCHED PASS
