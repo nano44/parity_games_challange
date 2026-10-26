@@ -17,12 +17,100 @@ import sys, os, json, tempfile
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, os.path.join(HERE, "..", "o1"))
 import o1_19 as O, pg, verify
 
+def kopt(g, E, nodes, sink, z, kwt, budget=200000):
+    """max κwt(p ∖ {sink}) over simple paths p from z to sink inside `nodes` (Even: any edge inside; Odd: only if forced), or None."""
+    best = [None]; steps = [0]
+    def dfs(v, val, on):
+        steps[0] += 1
+        if steps[0] > budget: raise OverflowError
+        if v == sink:
+            if best[0] is None or val > best[0]: best[0] = val
+            return
+        nv = (val[0] + kwt[v][0], val[1] + kwt[v][1])
+        succ = set(g.succ[v])
+        if g.owner[v] == 1 and len(succ) > 1: return
+        for w in succ:
+            if w in nodes and w not in on: on.add(w); dfs(w, nv, on); on.discard(w)
+    dfs(z, (0, 0), {z}); return best[0]
+
+def fb2t(g, E, S, SB, Xi, lam, FB, Q, C, a, b, fbs, r):
+    """L-SI N5-2O-box16 (l-si 67fd31d9): ROUTE-2 at every state of classes with |Q_c| = 2; terminal-routing acyclicity for |Q_c| >= 3;
+    DIR and SAT-2 at their (late) hypotheses, with κopt by brute-force simple paths."""
+    n = g.n; rank = E.rank
+    for c in C:
+        U = {z for z in range(n) if lam[a][z] == c}; Qc = [q for q in Q if q in U and q != c]
+        if not Qc: continue
+        sc = 1 if E.par[c] == 1 else -1
+        kwt = {v: ((E.weight(E.bit[v]) if rank[v] > rank[c] else 0), sc) for v in U}
+        kap = lambda t, z: (E.weight(Xi[t][z][1]), sc * Xi[t][z][2])
+        def nxt(t, v): return S[t][0][v] if g.owner[v] == 0 else SB[t][v]
+        def first_term(t, q):
+            v, seen = nxt(t, q), {q}
+            while True:
+                if v == q: return "cyc"
+                if v == c: return c
+                if v in Qc: return v
+                if v in seen: return "cyc"
+                seen.add(v); v = nxt(t, v)
+        Uc = len(U); late = fbs[Uc - 2] if len(fbs) >= Uc - 1 and Uc >= 2 else None   # g_{|U_c|-1} (source state)
+        for t in range(a, b + 1):
+            ft = {q: first_term(t, q) for q in Qc}
+            direct = {q: ft[q] in ("cyc", c) for q in Qc}
+            if len(Qc) == 2:
+                r["route2_checks"] += 1
+                if not any(direct.values()): r["fails"].append(f"ROUTE2 t={t} {ft}")
+            elif len(Qc) >= 3:
+                r["routeacyc_checks"] += 1
+                for q in Qc:                      # follow terminal routing q -> ft[q] -> ...; must reach c or a cycle-terminal
+                    v, seen = q, set()
+                    while v in Qc and v not in seen: seen.add(v); v = ft[v]
+                    if v in Qc: r["fails"].append(f"ROUTE_ACYC t={t}"); break
+            if late is not None and t > late:
+                for q in Qc:
+                    if not direct[q]: continue
+                    r["dir_hits"] += 1
+                    try:
+                        A = set(map(tuple, ((0, sc * l) for l in range(1, Uc))))
+                        Gc = U - (set(Q) - {c})
+                        for y in set(g.succ[q]) & U:
+                            if y == c: A.add(kwt[q])
+                            elif y not in Q:
+                                ko = kopt(g, E, Gc, c, y, kwt)
+                                if ko is not None: A.add((kwt[q][0] + ko[0], kwt[q][1] + ko[1]))
+                        r["dir_checks"] += 1
+                        if kap(t, q) not in A: r["fails"].append(f"DIR t={t} q={q} {kap(t, q)}")
+                    except OverflowError: pass
+            if late is not None and t > late and len(Qc) == 2:
+                for q, q2 in (Qc, Qc[::-1]):
+                    run0 = t
+                    while run0 > a and Xi[run0 - 1][q] == Xi[t][q]: run0 -= 1
+                    rf = [k for k in fbs if run0 <= k <= t]
+                    if len(rf) < Uc - 1 or not t > rf[Uc - 2]: continue
+                    r["sat_hits"] += 1
+                    try:
+                        al = kap(t, q); V = set(map(tuple, ((0, sc * l) for l in range(1, Uc))))
+                        Gc = U - (set(Q) - {c}); Gq = U - ((set(C) | set(Q)) - {q})
+                        for y in set(g.succ[q2]) & U:
+                            if y == q2: continue
+                            if y == q: beta = al
+                            elif y == c: beta = (0, 0)
+                            elif y in Q or y in C: continue
+                            else:
+                                o1 = kopt(g, E, Gc, c, y, kwt); o2 = kopt(g, E, Gq, q, y, kwt)
+                                cands = [x for x in (o1, (o2[0] + al[0], o2[1] + al[1]) if o2 is not None else None) if x is not None]
+                                if not cands: continue
+                                beta = max(cands)
+                            V.add((kwt[q2][0] + beta[0], kwt[q2][1] + beta[1]))
+                        r["sat_checks"] += 1
+                        if kap(t, q2) not in V: r["fails"].append(f"SAT2 t={t} q={q} q2={q2} {kap(t, q2)}")
+                    except OverflowError: pass
+
 def analyse(g, start=None, mode="n5", tmp=None, use_oink=False, cap=10 ** 6):
     n = g.n; Q = [v for v in range(n) if g.owner[v] == 1 and len(set(g.succ[v])) > 1]
     S, FB, E = O.trace(g, start, mode, cap)
     ev = [E.evaluate(s) for s, _ in S]; Xi = [X for X, _ in ev]; lam = [tuple(x[0] for x in X) for X in Xi]
     SB = [B for _, B in ev]
-    N = len(S); r = dict(Nep=0, epoch_n1=0, s4a_run=0, s4a_run_pre=0, sigbar_repeat=0, levels=0, sw_trans=0, sg_checks=0, acc_checks=0, n=n, Q=len(Q), ITER=len(FB), fmax=0, fn=0.0, rho_at=0, U_at=0, Nlate_at=0, rhomax=0, Nlate=0, late=0, phases=0, fails=[])
+    N = len(S); r = dict(route2_checks=0, routeacyc_checks=0, dir_hits=0, dir_checks=0, sat_hits=0, sat_checks=0, rho3=0, q_in_class=0, fmn=-10**9, Nep=0, epoch_n1=0, ep_fb=0, ep_fb_gap=-10**9, s4a_run=0, s4a_run_pre=0, sigbar_repeat=0, levels=0, sw_trans=0, sg_checks=0, acc_checks=0, n=n, Q=len(Q), ITER=len(FB), fmax=0, fn=0.0, rho_at=0, U_at=0, Nlate_at=0, rhomax=0, Nlate=0, late=0, phases=0, fails=[])
     a = 0
     while a < N:
         b = a
@@ -33,6 +121,13 @@ def analyse(g, start=None, mode="n5", tmp=None, use_oink=False, cap=10 ** 6):
         if any(FB[k] == 2 for k in fbs): r["fails"].append("ODDFB_INPHASE")
         f = len(fbs)
         rho = sum(1 for k in range(a, b) for q in Q if Xi[k + 1][q] != Xi[k][q])
+        # ρ restricted to honest classes holding >= 3 Odd choice vertices (Lead 04:05Z; FB-2T needs >= 3 terminals in one class)
+        for c in C:
+            Qc = [q for q in Q if lam[a][q] == c and q != c]
+            r["q_in_class"] = max(r["q_in_class"], len(Qc))
+            if len(Qc) >= 3: r["rho3"] = max(r["rho3"], sum(1 for k in range(a, b) for q in Qc if Xi[k + 1][q] != Xi[k][q]))
+        r["fmn"] = max(r["fmn"], f - n)
+        fb2t(g, E, S, SB, Xi, lam, FB, Q, C, a, b, fbs, r)
         # Q-runs: maximal runs of states a..b with Ξ(Q) constant
         qrun = [0] * (b - a + 1)
         for k in range(a + 1, b + 1): qrun[k - a] = qrun[k - a - 1] + (1 if any(Xi[k][q] != Xi[k - 1][q] for q in Q) else 0)
@@ -78,6 +173,7 @@ def analyse(g, start=None, mode="n5", tmp=None, use_oink=False, cap=10 ** 6):
         for e in range(Nep):
             Ek = [k for k in range(a, b + 1) if ep[k - a] == e]; lo, hi = Ek[0], Ek[-1]
             efb = [k for k in range(lo, min(hi, b - 1) + 1) if k < b and FB[k]]          # fallbacks k -> k+1 with k ∈ E
+            r["ep_fb"] = max(r["ep_fb"], len(efb)); r["ep_fb_gap"] = max(r["ep_fb_gap"], len(efb) - (n - 1))
             run = best = 0; pre = 0; frz = efb[n - 2] if len(efb) >= n - 1 else None
             for k in range(lo, hi):                                                       # transitions with both ends in E
                 if FB[k]: run = 0

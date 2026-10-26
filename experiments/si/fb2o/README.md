@@ -4,3 +4,4 @@
 - climb2o.py: hill-climb on games with exactly two Odd choice vertices (OBJ=f: fallbacks in one phase; OBJ=hyp: DIR + SAT hypothesis hits).
 - lib2o.txt: the 43 repository .pg files with exactly two Odd choice vertices and n ≤ 40 (found 2026-10-26 by a scan of experiments/ and docs/).
 - logs/: lib2o.txt (PASS), climb_rand.txt, climb_fts.txt, climb_hyp.txt.
+- tcsw.py: terminal changes per fallback-free run, (h_D), (h3_D), W-frame ROUTE-2 (DATA for docs/si/N5-2O-T-box16.md §3); logs tcsw_*.txt.

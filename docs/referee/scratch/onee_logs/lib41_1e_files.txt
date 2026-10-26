@@ -1,0 +1,8 @@
+../../../experiments/attr/instances/dtr_fig1.pg
+../../../experiments/n5-exhaustive/instances/n4_thch_0.pg
+../../../experiments/red/instances/claimF_bit_cf2.pg
+../../../experiments/red/instances/claimF_len_cf1.pg
+../../../experiments/red/k4b/gad5.pg
+../../../experiments/red/tpp/instances/tpp_viol_n22.pg
+../../../experiments/si/instances/red_cf1.pg
+../../../experiments/si/instances/red_cf2.pg
