@@ -1,0 +1,7 @@
+enters=159 leave_COPY=42 leave_OWN=106 leave_e1_c=55 leave_e1_other=89 leave_e1_root=4 leave_ev_RELAY=37 leave_ev_ROUTE=111 leave_fb=4 leave_noroot=7 leave_rootrho=141 leave_s4a=144 leave_tau_direct=56 leave_tau_via_term=92 leaves=148 max_leaves_u=2 x_fb_COPY_e1t=1 x_fb_OWN_e1t=3 x_s4a_COPY_e1t=41 x_s4a_OWN_e1c=55 x_s4a_OWN_e1t=48 y_RELAY_COPY=37 y_ROUTE_COPY=5 y_ROUTE_OWN=106
+TOP leaves/len (6, 4, 'experiments/red/n5/instances/dl_4_4.pg', 0)
+TOP leaves/len (6, 3, 'experiments/red/mei/instances/mei_h5.pg rs', 3)
+TOP leaves/len (6, 3, 'experiments/red/mei/instances/mei_h4.pg rs', 1)
+TOP leaves/len (6, 2, 'experiments/red/n5/instances/dl_4_4.pg rs', 3)
+TOP leaves/len (6, 2, 'experiments/red/carry/instances/spp19_stable_n30.pg', 5)
+DLEAVE PASS

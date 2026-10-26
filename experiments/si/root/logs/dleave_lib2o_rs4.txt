@@ -1,0 +1,7 @@
+enters=33 leave_COPY=3 leave_OWN=36 leave_e1_c=32 leave_e1_other=4 leave_e1_root=3 leave_ev_ROUTE=39 leave_noroot=2 leave_rootrho=37 leave_s4a=39 leave_tau_direct=37 leave_tau_via_term=2 leaves=39 max_leaves_u=2 x_s4a_COPY_e1t=3 x_s4a_OWN_e1c=32 x_s4a_OWN_e1t=4 y_ROUTE_COPY=3 y_ROUTE_OWN=36
+TOP leaves/len (2, 49, 'experiments/si/orlens/instances/s_rt32_final.pg', 3)
+TOP leaves/len (2, 25, 'experiments/new/box44/instances/fb17_n32.pg', 2)
+TOP leaves/len (2, 18, 'experiments/si/orlens/instances/s_rt32_final.pg rs', 5)
+TOP leaves/len (2, 11, 'experiments/new/box21/instances/fts_ph16.pg', 0)
+TOP leaves/len (2, 10, 'experiments/new/box21/instances/fts_ph16.pg rs', 2)
+DLEAVE PASS

@@ -184,3 +184,45 @@ FREEZE-A's hypothesis. In a piece, transitions before s + L number ≤ L ≤ |U|
   - f per phase on general games (L-NEW), and the root's non-D-direct states (on nep76 the root routes through a relay for 6 + 6 transitions).
 - Labels. PROVED (lane, unrefereed): BF-F_D, FREEZE-A, ROOT-PIECE. DATA: §1's W(r) / R_r / split columns, §5. READING: §1's map and its
   consequence, §4's last remark, §5's last item, §6's first item. OPEN: G_c, the relays' ROUTE events, f.
+
+## 7. The D-leaves G_c (Lead's NEXT (a), 14:25Z): data first, a decomposition, no bound (DATA, PROVED (elementary), READING, OPEN)
+Written 2026-10-26T14:28Z (date -u). Script experiments/si/root/dleave.py; logs root/logs/dleave_*.txt.
+A D-LEAVE at u is an in-phase transition t → t+1 with u ∈ D_t ∖ D_{t+1} (σ̄_{t+1}(u) = τ(u) ≠ σ̄_t(u)); a D-ENTER is the reverse. Every S4a
+A-gain of type DLEAVE contains a D-leave. Per leave: y1 := σ̄_t(u) and its exit e1 (first vertex of Q_c ∪ {c} on y1's play at t); τ(u) and its
+exit e2; COPY if e1 ≠ c and e1 has a ρ event at t → t+1 (CHOSEN's mechanism: the relay follows its chosen exit), OWN otherwise.
+### 7.1 DATA
+| set | leaves | at fallbacks | S4a, OWN, e1 = c (u "D-direct") | S4a, COPY | S4a, OWN, e1 a terminal | root ρ at the same transition | max leaves of one u per phase |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| nep90 phase@4 | 26 | 6 | 15 | 5 | 0 | 10 | 9 |
+| nep76 phase@9 | 21 | 2 | 11 | 6 | 2 | 15 | 8 |
+| lib41 (KMIN 2), S3 + 4 | 148 | 4 | 55 | 41 | 48 | 141 | 2 |
+| lib2o, S3 + 4 | 39 | 0 | 32 | 3 | 4 | 37 | 2 |
+- Leaves ≤ enters + 1 per vertex and phase (checked: LV_GT_EN_V = 0, a consistency check).
+- Outside nep90 / nep76 a vertex leaves D at most twice per phase. On the two long instances the relays 1, 6, 8, 17 (37) leave 4-9 times each.
+- The commonest S4a leave (15 of 20 on nep90, 55 of 144 on lib41) is by a relay that is momentarily D-DIRECT: its chosen option and τ(u)'s
+  option both exit at c, and Odd's best reply switches between two direct options (nep90: u = 6 between 38 and 25, u = 8 between 36 / 14 and
+  30). The relay is then a second root of the class, with its own direct ROUTE events.
+- So the Lead's first question has a negative answer in data: on nep90, 15 of the 20 S4a leaves are not copies of a root event (no ρ at the root
+  at that transition in 16 of the 26 leaves).
+### 7.2 Decomposition (PROVED, elementary; from landed lemmas). SUPERSEDED by packet P-N5-ROOT-box20 §5 Lemma DL-SPLIT (clean changes, TOG
+alternative at e1, as in Lemma CHOSEN); case (ii) below is stated there with its proof.
+For an S4a D-leave at u at t → t+1, with u on no honest cycle at t and t + 1:
+- (i) COPY: e1 ≠ c and κ(e1) changes at t → t+1. Then the transition carries a ROUTE, CYC or TOG event of the class (Corollary RELAY-CHAIN,
+  note §26.2, from e1's event).
+- (ii) OWN with u's class exit paths and exits unchanged: then every option value of u is κwt(path) + κ(exit) with the same paths, exits other
+  than e1 can only rise (in-phase monotonicity), y1's value is unchanged, so y1 stays a minimiser and σ̄ changes only between tied minimisers:
+  the change is a TIE in the sense of RESULTS R61 (e). DATA (dleave.py, y_* counters): a RELAY leave is always a COPY (RELAY-and-OWN: 0 on
+  nep90, nep76, lib41, lib2o), so case (ii) never occurred.
+- (iii) otherwise u has a ROUTE event at t → t+1.
+So every S4a D-leave transition carries a ROUTE / CYC / TOG event of its class or a tie; at fallbacks, at most |Q_c| leaves per fallback.
+Hence G_c ≤ SWITCH-gains + f·|Q_c| + #(S4a transitions with a class ROUTE / CYC / TOG event or a tie at a leaving vertex).
+### 7.3 READING: why this does not close, and what would
+- With ROOT-PIECE this is self-referential: ρ_r ≤ (f + G_c + 1)·B and G_c ≤ f·|Q_c| + (ROUTE / CYC / TOG transitions) + SW, and the ROUTE
+  events are ρ again. Nothing here bounds the product; nep90's 26 leaves are 15 D-direct own routes of relays + 5 copies + 6 at fallbacks.
+- What the D-direct leaves are: two "roots" of one class whose own direct routes interleave. In FREEZE-A each one alone freezes in a piece, but a
+  leave of one cuts the other's piece. A joint statement would need FREEZE-A on a region that does NOT lose its freeze at a D-leave of a
+  D-direct terminal u. At such a leave the vertices gated at u keep their W-play (σ, τ unchanged by the leave itself) and their Ξ rises to W;
+  so the cut is harmless in the W frame, and the obstruction is again Fact B across gates (§1): a W-frame Bellman-Ford step needs the Ξ-order of
+  two options (it decides the arena) to agree with their W-order, which fails when one option is gated at u and the other is not.
+- OPEN: a count of D-direct own leaves (two interleaving direct roots), a count of COPY leaves beyond "≤ |Q_c| × root events", and the
+  SWITCH gains. CONJECTURE: none stated (data outside nep90 / nep76 is too small: ≤ 2 leaves per vertex per phase).

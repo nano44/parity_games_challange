@@ -138,3 +138,15 @@ o=$(python3 -I root/rootrun.py $N90)
 for k in "cuts=22 (fb 7, DLEAVE 15, SWITCH 0)" "ROOTRUN_V=0 "; do grep -q "$k" <<<"$o"; done
 MUT=1 python3 -I root/rootrun.py $N90 | grep -q "ROOTRUN_V=10 "
 echo "root (BF-F_D, FREEZE-A pieces, ROOT-PIECE on nep90; three controls bite): PASS"
+# packet P-N5-ROOT-box20: every «quote» verbatim at its tagged commit; the shifted-lines control fails. dleave.py on nep90 (26 leaves).
+if git cat-file -e a7c141b8 && git cat-file -e 3732ab55; then
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-ROOT-box20.md | grep -q "quotes=9 bad=0"
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-ROOT-box20.md --mut | grep -q "QUOTES FAIL"
+  echo "root (packet P-N5-ROOT-box20: 9 quotes verbatim; shifted control fails): PASS"
+else
+  echo "root (packet P-N5-ROOT-box20 quotes): NOT RUN (source commits not in this clone)"
+fi
+o=$(python3 -I root/dleave.py --one $N90)
+for k in "leaves=26 " "y_ROUTE_OWN=21" "DLEAVE PASS"; do grep -q "$k" <<<"$o"; done
+if grep -q "y_RELAY_OWN" <<<"$o"; then echo "unexpected RELAY-and-OWN leave on nep90"; exit 1; fi
+echo "root (D-leaves on nep90: 26, no RELAY-and-OWN): PASS"
