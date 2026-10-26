@@ -29,3 +29,7 @@ if [ -f instances/pinned.txt ]; then
   done < instances/pinned.txt
   echo "pinned instances: PASS"
 fi
+# box 17 (RUN_D): OFFSET / TWIN-GAP checks on lib2o, and the DEAD strict-raise instance reproduces its length-only twin change
+python3 -I rund/gap.py --list fb2o/lib2o.txt 2 | grep -q "GAP PASS"
+python3 -I rund/rund.py --one rund/instances/lenonly_n8.pg | grep -q "LENONLY ('rund/instances/lenonly_n8.pg', 1, 2, 6, 4"
+echo "rund (gap lib2o, lenonly_n8): PASS"

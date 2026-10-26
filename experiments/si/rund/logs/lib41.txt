@@ -1,0 +1,5 @@
+LW_known=43 dch=11 h3run=17 lw_ge_LW=34 lw_gt_LW=0 lw_le_Ls=17 post=0 runs=90 runs_h3=54 runs_long=0 tc=58 trans=358 twin=43 w_lenonly=0 wmoving=15 wsame=9
+HIST {('dch', 'wsame'): 9, ('D=', 'set'): 32, ('dch', 'set'): 2}
+MAX twin per run [14, ('experiments/red/n5inj/instances/frz40.pg', 1, 16, 40)]
+MAX twin per vertex per run [2, ('experiments/red/n5inj/instances/frz40.pg', 44, 58, 40)]
+RUND PASS

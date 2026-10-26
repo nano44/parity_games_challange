@@ -199,3 +199,16 @@ AGAINST_W ('experiments/si/fb2o/instances/tcwult2_against_n8.pg', 0, 1, 0, 4, -1
 - Consequence for TC-SWITCH (docs/si/N5-2O-T-box16.md §4.2): a per-vertex count of terminal changes cannot come from an order on the
   gates. The natural monotone quantity at a terminal change is W(v) itself (WM), and bounding its changes per run is Theorem RUN's job.
   So TC-SWITCH is no easier than RUN_D on two gates.
+
+## DEAD box 17 (L-SI successor 12, 2026-10-26T06:5xZ by date -u): "every twin change strictly raises COARSE_L(W(v)) at the twin level" (own plan, sent to the Lead 06:23Z as a planned lemma; never stated as proved)
+- Statement killed: at an in-phase S4a transition k → k+1 at which v changes its first gate u → u′ (u_k(v) ≠ u_{k+1}(v)) with λ_W(v)
+  unchanged and D_k = D_{k+1}, COARSE_L(W_{k+1}(v)) ≻ COARSE_L(W_k(v)) at L = top(P(W(u)) Δ P(W(u′))).
+- Obstruction: W(v) can change ONLY IN LENGTH (same cycle node, same path set). Then no coarse value changes at any L ≥ −1. WM-G gives
+  W_{k+1}(v) ⊵ W_k(v) and nothing more.
+- Instance: experiments/si/rund/instances/lenonly_n8.pg (sha1 725c2766a5b9e9011d200e3ba1a3d81aac8e144b), S3 start. At transition 1 → 2,
+  v = 2 switches gate 6 → 4 with D constant; W(2) = (4, ∅, 4) → (4, ∅, 3). Check: `python3 -I experiments/si/rund/rund.py --one
+  experiments/si/rund/instances/lenonly_n8.pg` prints `LENONLY ('…lenonly_n8.pg', 1, 2, 6, 4, (4, 0, 4), (4, 0, 3))`
+  (also in experiments/si/check.sh).
+- Found in random 𝒞^2O (`K=2 rund.py --rand 3000 5 12 41`, games #321 and #933, both S3 starts).
+- Replacement: the offset count, Theorem TWIN-GAP (docs/si/N5-RUND-box17.md §5), which counts the changes of v's offset Δ(v) = s^W − s^Ξ
+  by the rise of two monotone integer scores, not by coarse values.
