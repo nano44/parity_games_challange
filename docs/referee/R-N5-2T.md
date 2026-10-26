@@ -141,7 +141,7 @@ No disagreement; no gap in either report.
 | 2T-N2 (DIR's proof never uses \|Q_c\| ≤ 2) | — | ADDITIONAL from us; no conflict (FBK uses DIR in exactly that general form) | optional remark |
 | §1 ("R56 quotes verbatim") | N-2T-1 (the κ-FB-ROUND parenthetical "FBP §1 verbatim with U_c, c" is FBRED §1.1's text, l.52, not R56's landed "(FBP §0.3, §1 with c for c_θ)") | ACCEPTED; MISSED by us. Confirmed: packet l.64-66 heads it "R56 (a), (b) lemmas used", and the phrase occurs in docs/new/P-N5-FBRED-box44.md l.52, not in docs/RESULTS.md. Same lemma; wording only | fixes file: cite "FBRED §1.1" for that quote |
 | 2T-N4 (DATA: DIR 65 checks; SAT-2 and FB-2T never reached) | N-2T-6 (natural data never meet SAT-2 either, best −2; CONSTRUCTED disjoint unions box-43/44 ⊎ small gadgets meet it: 648 SAT checks, every proof branch, 0 violations; mutations show saturation and α are needed; FB-2T's late count never reached) | R2 went further. I RE-RAN R2's four saved witnesses (docs/referee-2/R2-N5-2T/instances/fb17_g{3,4,5,5c}_P66.pg, sha1 4f83da32, 477872f9, aca9f9d4, 5398f9d7 checked) on MY engine and probe (twot_probe.py, PATHN 40, S3): 20 phases, DIR 93 checks, SAT-2 108 checks, PFZ 180,826, 0 failures — the same DIR and SAT counts as R2's row "instances/ (4 saved witnesses)". So SAT-2's hypothesis is now met and checked on two independent engines. | DATA: SAT-2 exercised (constructed instances); FB-2T's late regime unreached in all data |
-- Reproduce my witness re-run (from docs/referee/scratch): 
+- Reproduce my witness re-run (from docs/referee/scratch): `PATHN=40 python3 -I twot_probe.py ../../../docs/referee-2/R2-N5-2T/instances/*.pg`
   → twot_logs/r2_witnesses_s3.txt.
 
 ### C.3 Joint state (for the Lead and CHECKER)
