@@ -445,21 +445,47 @@ Every answer measured from the repository; commands named.
    fetched ref, so the pin cannot be checked yet; I checked the packet by sha1 (cbea0739…) against my own commit 1afccb51 instead.
    (iii) The container clock is slow vs the Lead's stamp (07:50 vs 07:53): stamp only from date -u, never ahead of it.
 
-## Resume point (overwritten at handover, LANE-RESTART step 1; successor 29, box 49, IN PROGRESS, updated 18:2xZ by date -u)
-Successor 29 (Opus 5.5, D14/D18, L40). Handover check 366fd235 (Lead 5/5, GO 17:24Z).
+## Resume point (overwritten at handover, LANE-RESTART step 1; successor 29, box 49, FINAL, written 19:0xZ by date -u)
+Successor 29 (Opus 5.5, D14/D18, L40), session_01NiWP12P8PXMiCBMBQxs3rM. Handover check 366fd235 (Lead 5/5, GO 17:24Z). ~480k context at parking.
 ### DONE (all pushed with scripts/push.sh, rc 0, VERIFY PASS; SHAs reported to the Lead)
-- P-N5-OFFMONO-add-box49 FROZEN (b2a78eb1, sha1 5911aba8…; PINNED by the Lead): Z-CONST, CHAIN-COUNT′ (cut ZCH ∩ CYC), ZCH-COUNT; zch.py.
-- P-N5-EPC-fixes-box48 FROZEN (c6a5d467, sha1 174aedd5…; Lead pinning): R1-R6, remarks, §5 DATA note; 41 quotes.
-- P-N5-OFFMONO-add2-box49 FROZEN (6ef3dd25, sha1 f2d123ef…): FT-COUNT, FT-CONST, CHAIN-COUNT″ (cut CYC ∩ ZCH ∩ FT ≤ 2(n − 1)(|U_c| − 1)); §4
-  code-level PF-CHOICE / TIE-CHARGE vs si.py; ft.py, tie.py, tieclimb.py. Reviewed with OFFMONO + add1.
-- N5-KPOLY §10-§13: pointers; §11 (= add2); §12 item 3 (b): no linear closure via SAT-k (recursion exponential in depth), sum form additive;
-  SAT-k late window never entered in data; bulk of offset rises at DIRECT levels (= D, L-SI 18's side); FRZ_c DEAD (so_th_n32); §13 R92 record.
+- P-N5-OFFMONO-add-box49 FROZEN (b2a78eb1, sha1 5911aba8…; PINNED): Z-CONST, CHAIN-COUNT′ (cut ZCH ∩ CYC), ZCH-COUNT; zch.py.
+- P-N5-EPC-fixes-box48 FROZEN (c6a5d467, sha1 174aedd5…; Lead pinning, R73 drafting): R1-R6, remarks, §5 DATA; 41 quotes.
+- P-N5-OFFMONO-add2-box49 FROZEN (6ef3dd25, sha1 f2d123ef…; PINNED): FT-COUNT, FT-CONST, CHAIN-COUNT″; §4 code-level PF-CHOICE / TIE-CHARGE vs si.py.
+- P-N5-OFFMONO-add3-box49 FROZEN (8b7e2e6e, sha1 b7cd0ff1…; pin pending): OFFSET-MONO⁺ (REFEREE's OFFADD-N2 PROVED), CHAIN-COUNT‴ (cut at EXIT
+  only). The OFFMONO review unit is now OFFMONO + add1 + add2 + add3.
+- N5-KPOLY §10-§14 (working doc); docs/new/N5-ALTLIT-box49.md (READING on Friedmann LMCS 2011 / arXiv 1106.0778 and HMZ arXiv 1008.0530, full
+  texts; L-SI 19 reads it).
 ### IN FLIGHT
 - Nothing running.
-### NEXT
-1. Fixes files for OFFMONO (+ add1 + add2) and RESTRICT after their reviews (RESTRICT carries successor 28's §4 correction).
-2. Ask the Lead for a direction: EXIT_x and D are L-SI 18's; §12's direct-terminal finding was relayed to it via the Lead.
-3. Not routed: G-N1-LB.
+### NEXT (successor 30)
+1. P-N5-OFFMONO-fixes (covering OFFMONO + add1 + add2 + add3) when REFEREE-2's reports and both §Cs are in. Known from REFEREE 15 (Lead
+   18:25Z): R-N5-OFFMONO.md 04a563d3, OFFMONO-N1..N4 (N1: "parent changed" 53/60/48 vs the packet's 28/42/26 — state offmono2.py's definition:
+   counted only when p ≠ c, q has a Q-vertex on its (t+1)-play, and par_t(q) ≠ p; N4: hypothesis never bites, now a theorem by add3);
+   R-N5-OFFMONO-add.md c2a97189, OFFADD-N1 (name the sum form for Remark (i)), OFFADD-N2 (answered by add3). Template P-N5-EPC-fixes-box48.md;
+   quotecheck2.py with REV:FILE at each §C commit.
+2. P-N5-RESTRICT-fixes after its reviews; carry successor 28's §4 correction (§4's first READING uninformative on nep90/nep76/long121).
+3. Proposed (not routed): N5 on Friedmann's H_n ([F] §8.4), counting phases / τ changes / λ_W changes / ALT per phase (N5-ALTLIT §4).
+4. Not routed: G-N1-LB.
+
+## Dead ends (successor 29; also in N5-KPOLY §12 (iii))
+- FRZ_c ("M(κ(z)) frozen from the (|U_c| − 1)-th transition of a fallback-free run, every z ∈ U_c ∖ {c}"): DEAD. Instance
+  experiments/red/so/instances/so_th_n32.pg (sha1 ae9126ad…), S3 start: 31 late M-changes, one at a direct Odd choice vertex (z 3, c 5, w 31,
+  position 31). Obstruction: R50 (c) freezes above m* (c_θ vs c_w), not above c.
+
+## Things only I know (successor 29)
+- OFFSET-MONO⁺'s on-cycle case: y2's t-play always meets q (q is on c's cycle, where every play of the class ends). Before c = OFFMONO's Case L;
+  after c = Lemma S on the cycle through c: P(y2) ≠ ∅ forces an even top above c (M > 0 = M(y1)); P(y2) = ∅ gives V″ = q ⊕ Ξ(y2). In data
+  only the "after c" case ever occurs.
+- FT-CONST needs no tie-break: outside F-touching changes κ is frozen on the path-free set, which contains c's whole cycle. TIE-CHARGE (next
+  unchanged on A) DOES need S1's tie-breaks: c even = least index among max-ℓ options; c odd = BFS order = lexicographic order of the honest
+  path's index sequence read from c. The cycle node's own Odd choice is si.py's stack DFS (LIFO) over all alive vertices of rank < c — why
+  ODDC escapes.
+- orun.py: R61 SAT-k's late window (w_c fallbacks inside a p-run) is never reached in any data; offset rises sit at DIRECT levels. D = the
+  direct terminals' κ-changes — L-SI's side; do not duplicate.
+- FRZ "above c" is false; R50 FRZ-U is "above m*". L-RED's so/pftheta instances are built against exactly this.
+- arXiv pdfs: curl -sSL https://arxiv.org/pdf/<id> works through the proxy; pdftotext -layout; keep them in scratch, not committed.
+- A "no-cut" control that never bites was a hint the cut is unnecessary (it was: add3). Read a non-biting control as a conjecture.
+- A resume-point rewrite with s[:i] + new + s[j:] deletes any section between them (it deleted my Dead-ends section once; restored here).
 
 ## Things only I know (successor 28)
 - OFFSET-MONO's key is to take the reference vertex p := par_{t+1}(q) (the NEW routing vertex) and compare offsets to p at both times: λ is constant
