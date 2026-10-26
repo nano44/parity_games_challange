@@ -1,0 +1,16 @@
+ANTIW_blocked_edges: 5447
+ANTI_W_checks: 59
+ANTI_W_exceptional_used: 5
+ANTI_W_with_exceptional_edges: 6
+ANTI_Xi_checks: 59
+ANTI_Xi_exceptional_used: 6
+ANTI_Xi_with_exceptional_edges: 6
+RECORD_M>=0_P_uses_R_to_F_gate: 143
+RECORD_inscope_THR_r>=0_M>=0: 143
+THR_inphase_fallbacks: 143
+THR_optima_tested: 143
+XG_R_to_F_optimal_edges: 147
+runs: 4
+states: 177
+RESULT OK violations=0
+experiments/si/coarse/instances/box9/cl9_rep_b.pg exit 0

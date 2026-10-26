@@ -1,0 +1,42 @@
+climb FIT=kw seed=13001 n=16 iterations=26919 improvements=30 best_fitness=12500.0
+BEST-INSTANCE counters: {'A0_checks': 632, 'FACTB_pairs': 4007, 'FRZU_checks': 8, 'HPATH_checks': 629, 'KWS_stretches': 14, 'LEN_runs_after_f0': 4, 'PAR_states_cw_above_cth': 48, 'PHASE_checked': 14, 'RECORD_cw_switches_cw_above': 1, 'RECORD_kind_change_transitions_cw_above': 38, 'RECORD_runs_cw_above_notH2': 6, 'RUNS_runs': 10, 'RUN_case_a': 4, 'RUN_case_c': 6, 'phases': 14, 'runs': 4, 'states': 57, 'states_checked': 57, 'stretches': 14}
+BEST-INSTANCE maxima: {'max_KW_per_stretch': 10, 'max_T_per_phase': 10, 'max_Trel_per_phase': 10, 'max_freeze_delay': 10, 'max_stretches_per_phase': 1}
+A0_checks: 8229860
+CASCB_kindB_switches: 9
+CWINT_cw_switches_checked: 116
+FACTB_pairs: 43925484
+FRZU_checks: 73209
+HPATH_checks: 4820575
+KMONO_runs: 159
+KWS_stretches: 478510
+LEN_runs_after_f0: 25803
+PAR_states_cw_above_cth: 404938
+PHASE_checked: 432097
+RECORD_RUN_case_b_r=1: 3
+RECORD_cw_switches: 59
+RECORD_cw_switches_cw_above: 5093
+RECORD_kind_change_transitions: 12548
+RECORD_kind_change_transitions_cw_above: 238518
+RECORD_runs_cw_above_notH2: 48236
+RUNS_runs: 109517
+RUN_case_a: 60825
+RUN_case_b: 456
+RUN_case_c: 48236
+WONCE_checks: 3
+climb_evaluations: 26839
+phases: 432097
+runs: 107356
+states: 877108
+states_checked: 877108
+stretches: 478510
+CASCB_max_step_minus_bound_plus100: 100
+max_KW_per_stretch: 10
+max_RUN_ratio_case_a_x1000: 250
+max_RUN_ratio_case_b_x1000: 18
+max_RUN_ratio_case_c_x1000: 0
+max_T_per_phase: 12
+max_Trel_per_phase: 12
+max_f_per_phase: 10
+max_freeze_delay: 10
+max_stretches_per_phase: 11
+RESULT OK violations=0

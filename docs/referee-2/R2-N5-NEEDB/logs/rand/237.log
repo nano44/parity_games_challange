@@ -1,0 +1,6 @@
+ANTI_W_checks: 4
+ANTI_Xi_checks: 4
+runs: 4
+states: 12
+RESULT OK violations=0
+experiments/n5-exhaustive/instances/thetaA_n9.pg exit 0

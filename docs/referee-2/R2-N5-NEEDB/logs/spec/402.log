@@ -1,0 +1,21 @@
+ANTIW_blocked_edges: 219
+ANTI_W_checks: 72
+ANTI_W_exceptional_used: 1
+ANTI_W_with_exceptional_edges: 1
+ANTI_Xi_checks: 72
+ANTI_Xi_exceptional_used: 2
+ANTI_Xi_with_exceptional_edges: 2
+INTO_holds: 3
+INTO_states_r>L: 3
+OT_exit_checks: 36
+OT_post_rise_states: 6
+OT_rises: 3
+RECORD_M>=0_P_uses_R_to_F_gate: 13
+RECORD_inscope_THR_r>=0_M>=0: 13
+THR_inphase_fallbacks: 13
+THR_optima_tested: 48
+XG_R_to_F_optimal_edges: 68
+runs: 4
+states: 205
+RESULT OK violations=0
+experiments/red/xing/instances/j8_n48.pg exit 0

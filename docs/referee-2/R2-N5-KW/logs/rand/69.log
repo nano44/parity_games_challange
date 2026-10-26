@@ -1,0 +1,22 @@
+A0_checks: 243
+FACTB_pairs: 444
+HPATH_checks: 186
+KWS_stretches: 24
+PAR_states_cw_above_cth: 12
+PHASE_checked: 18
+RUNS_runs: 2
+RUN_case_a: 2
+phases: 18
+runs: 3
+states: 26
+states_checked: 26
+stretches: 24
+max_KW_per_stretch: 0
+max_RUN_ratio_case_a_x1000: 0
+max_T_per_phase: 5
+max_Trel_per_phase: 5
+max_f_per_phase: 3
+max_freeze_delay: 0
+max_stretches_per_phase: 6
+RESULT OK violations=0
+docs/referee-2/R2-N5-NEB/climb/best_brk_9302.pg exit 0

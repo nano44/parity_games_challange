@@ -1,0 +1,10 @@
+/home/user/parity_games_challange/experiments/new/box28/instances/oc16_s2.pg 16 4
+/home/user/parity_games_challange/experiments/new/box31/instances/nr_u23_n32.pg 32 1
+/home/user/parity_games_challange/experiments/new/box31/instances/u3ev_n16.pg 16 1
+/home/user/parity_games_challange/experiments/new/box32/instances/kwm_cex_n24.pg 24 2
+/home/user/parity_games_challange/experiments/new/box32/instances/nowake_cex_n32.pg 32 2
+/home/user/parity_games_challange/experiments/new/box35/instances/fbrestart_cex_n24.pg 24 3
+/home/user/parity_games_challange/experiments/red/n5inj/instances/frz24.pg 24 4
+/home/user/parity_games_challange/experiments/red/so/instances/so_k2_n32.pg 32 1
+/home/user/parity_games_challange/experiments/red/xing/instances/u23sw64_n32.pg 32 1
+/home/user/parity_games_challange/experiments/new/box38/instances/tauw_A_cex_n24.pg 24 1

@@ -1,0 +1,18 @@
+A0_checks: 5
+FACTB_pairs: 3
+HPATH_checks: 2
+KWS_stretches: 6
+PAR_states_cw_above_cth: 2
+PHASE_checked: 5
+phases: 5
+runs: 3
+states: 6
+states_checked: 6
+stretches: 6
+max_KW_per_stretch: 0
+max_T_per_phase: 1
+max_Trel_per_phase: 1
+max_f_per_phase: 0
+max_stretches_per_phase: 2
+RESULT OK violations=0
+experiments/n5-exhaustive/instances/n4_thch_0.pg exit 0

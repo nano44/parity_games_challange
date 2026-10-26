@@ -1,0 +1,10 @@
+ANTI_W_checks: 9
+ANTI_W_exceptional_used: 4
+ANTI_W_with_exceptional_edges: 4
+ANTI_Xi_checks: 9
+ANTI_Xi_exceptional_used: 2
+ANTI_Xi_with_exceptional_edges: 3
+runs: 4
+states: 36
+RESULT OK violations=0
+experiments/new/box29/out/u1_32.pg exit 0

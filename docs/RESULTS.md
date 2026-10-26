@@ -2359,6 +2359,211 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
 - TARGET.md diff: not a claim of TARGET.md section 1 (Lemma Φ bounds cycle-node changes of N5 on every game, not its running time).
   GAPS G-N5-TIME: open.
 
+### R48 [refereed-only] N5 on one-Odd-choice games: in every phase the in-phase Even fallbacks number at most 1 + (|U| − 2)(|succ(o) ∩ Û| + |U|) ≤ 1 + (n − 2)(2n − 1) if o ≠ c_θ, and at most |U| if o = c_θ, with no hypothesis on H1, H2, H3, τ(o), c_w, θ or N_HN: each fallback is a Bellman-Ford round for κ on U (κ-FB-ROUND, κ-HAT-FREEZE, κ-PFZ, κ-Y-FORM), a switched vertex exits to a terminal (EXIT-SWITCH), late fallbacks switch nothing in U ∖ T (FREEZE-EXIT), the rest are one CN-LAST fallback (CN-ONLY), and θ changes few times after the freeze (THETA-AFTER) (Theorem FB-POLY) (2026-10-25) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C57.md, checker 6b15a543)
+- Object (packet P-N5-FBPOLY, added at l-new 4a17f8e1, pinned trunk 42d8c3a9, unchanged during review): docs/new/P-N5-FBPOLY-box41.md,
+  sha1 de244dcd3592b04eca2080a0efe10a7c0b2e5301 (L-NEW successor 20, Opus 5.5). It restates in κ form, with proofs, the facts of P-N5-PFZ
+  §1 and P-N5-RHO §0-§2 it uses (now RESULTS R44, R45), so it does not depend on their landing. The referees' repairs and notes are
+  collected by the lane in docs/new/P-N5-FBPOLY-fixes-box41.md (l-new 5e1b5ea0, sha1 c016c1906b197b41d1be35ab64ea0908f030b2ca, L-NEW
+  successor 21: FBP-1 = N-FBP-2, FBP-N1, FBP-2 = N-FBP-1, FBP-N2, FBP-N3 = N-FBP-3 (scope part), FBP-N4, N-FBP-3 (data part), N-FBP-4);
+  on trunk; repairs only.
+  Setting as in RESULTS R39, R44 and R45 (𝒞^1O; phase; θ, c_θ; R_k, R̄_k, F_k; H1; U := λ^{-1}(c_θ), Û := U ∖ {o}; wt; G_Û; g_1 < g_2 < …
+  the in-phase Even S4c fallbacks of the phase; a θ-run Θ and its in-run fallbacks f^Θ_1 < f^Θ_2 < …). T := {o, c_θ} (the TERMINALS);
+  deg_U(o) := |succ(o) ∩ U|; s_θ := +1 if Ω(c_θ) is odd, −1 if even; for z ∈ U, κ_t(z) := (M_t(z), s_θ·ℓ(Ξ_t z)), ordered
+  lexicographically, with M_t(z) the signed weight of P(Ξ_t z); κwt(v) := (wt(v), s_θ), κwt(A) := Σ_{v∈A} κwt(v); κoptÛ(z) :=
+  max{κwt(p ∖ {c_θ}) : p a simple path of G_Û from z to c_θ}; G_U^o: the graph on U ∖ {c_θ} in which every Even v keeps its edges into
+  U ∖ {c_θ}, every Odd v ≠ o keeps its forced edge if it lies in U ∖ {c_θ}, and o is a sink; G_U as in RESULTS R44. At a fallback
+  k → k+1: S_k the switched Even vertices (the gate sources), x*_v := σ_{k+1}(v), S_U := S_k ∩ (U ∖ T); Y_t := succ(o) ∩ U ∩ F_t.
+- Claims signed (both referees "(Opus 5.5, D15)", L37); no item uses (P); no hypothesis on H1, H2, H3, τ(o), c_w or N_HN:
+  (a) Lemma κ-FB-ROUND: at an in-phase Even fallback k → k+1, κ_{k+1}(v) ≥ κwt(v) + κ_k(x) for every Even v ∈ U ∖ {c_θ} and every
+      successor x ∈ U of v.
+  (b) Lemma κ-HAT-FREEZE: in a phase, (a) for j ≥ 0, every state t > g_j, z ∈ Û and simple path p of G_Û from z to c_θ with ≤ j edges,
+      κ_t(z) ≥ κwt(p ∖ {c_θ}); (b) for every state t and z ∈ F_t ∩ U, κoptÛ(z) is defined and κ_t(z) ≤ κoptÛ(z); (c) if |U| ≥ 2,
+      κ_t(y) = κoptÛ(y) for every state t > g_{|U|−2} and every y ∈ F_t ∩ U.
+  (c) Lemma κ-PFZ: if o ≠ c_θ and Θ is a θ-run of the phase, then for j ≥ 0, every t ∈ Θ with t > f^Θ_j (every t ∈ Θ if j = 0), every
+      z ∈ U ∖ {c_θ} and every simple path p of G_U^o from z to o with ≤ j edges, κ_t(z) ≥ κwt(p ∖ {o}) + κ_t(o).
+  (d) Lemma κ-Y-FORM: at an H1 state t, σ̄_t(o) ∈ Y_t and κ_t(o) = κwt(o) + min_{y∈Y_t} κ_t(y).
+  (e) Lemma EXIT-SWITCH: at an in-phase Even fallback k → k+1 with S_U ≠ ∅, some u ∈ S_U has the property that the honest play at k
+      from x*_u visits a vertex of T before it visits u; with e the first such vertex and p_u := u · (that play up to e), p_u is a
+      simple path from u to e, a path of G_Û if e = c_θ and of G_U^o if e = o, and κ_k(x*_u) = κwt(p_u ∖ {u, e}) + κ_k(e). (The
+      excluded "loop" branch DOES occur for some switched vertices, N-FBP-4: witness docs/referee-2/R2-N5-FBPOLY/climb/loop_4102.pg,
+      sha1 016473b4, re-run by REFEREE; the lemma's "some u exits" is what holds.)
+  (f) Lemma FREEZE-EXIT: if o ≠ c_θ and k = g_j is an in-phase Even fallback that is the i-th fallback of its θ-run (k = f^Θ_i), with
+      j ≥ |U| − 1 and i ≥ |U| − 1, then S_U = ∅.
+  (g) Lemma CN-ONLY: at an in-phase Even fallback with S_U = ∅, every gate (y, z) ∈ Iσ_k has λ_k(y) = y and lev(Ξ_k(σ_k y), Ξ_k(z)) = −1;
+      hence (CN-LAST, RESULTS R38 (f)) k + 1 is the last state of its phase, and a phase has at most one such fallback.
+  (h) Lemma THETA-AFTER: if o ≠ c_θ and the phase has at least |U| − 2 in-phase Even fallbacks, at most deg_U(o) + |U| − 2 of its
+      transitions t → t+1 with t > g_{|U|−2} change θ, so at most deg_U(o) + |U| − 1 θ-runs of the phase contain a state t > g_{|U|−2}.
+      Its proof ranges over y ∈ succ(o) ∩ Û, so it holds with |succ(o) ∩ Û| ≤ |U| − 1 in place of deg_U(o) (FBP-N1).
+  (i) Theorem FB-POLY: with f the number of in-phase Even S4c fallbacks of a phase of N5 on 𝒞^1O, (a) if o ≠ c_θ, f ≤ 1 + (|U| − 2)·
+      (deg_U(o) + |U|), and f ≤ 1 + (|U| − 2)(|succ(o) ∩ Û| + |U|) ≤ 1 + (n − 2)(2n − 1); (b) if |U| = 2, f ≤ 1; (c) if o = c_θ, f ≤ |U|;
+      (d) at most one fallback has S_U = ∅, and it is followed by the last state of the phase. The packet's end bound used deg_U(o) ≤
+      n − 1, false when o has a self-loop and succ(o) ⊇ U = V; the repair replaces deg_U(o) by |succ(o) ∩ Û| (FBP-1 = N-FBP-2, both
+      referees, independently). The packet's proof of (b) covers only o ≠ c_θ; for o = c_θ and |U| = 2 the other vertex v has next(v) = o
+      at every state and can never switch, so S_U = ∅ and (d) gives f ≤ 1 (FBP-2 = N-FBP-1, both referees, independently).
+- Not signed (packet §7, §8, §6 Remarks): CONJECTURE FB-CAP (L-RED successor 17: f ≤ max(1, |U| − 2) in every phase), proved here only
+  for |U| ≤ 2, OPEN for |U| ≥ 3, with its routes (FB-CAP-1), (FB-CAP-2) OPEN; §7's question whether EXIT-SWITCH's excluded branch can occur
+  for SOME switched vertex is answered by data: it does (N-FBP-4; the packet's "never occurs in data" is out of date); the Remarks' consequences (f removed from
+  SCOPE-COUNT, EPOCH, X-SN-PHASE) are READINGS (FBP-N3 = N-FBP-3).
+- Honest limits: (i) SUBCLASS 𝒞^1O, inside a phase. (ii) FB-POLY bounds fallbacks per phase; S4a steps, crossings, OTHER-touching
+  transitions and wakes K are not bounded here, so G-N5-TIME stays open. (iii) UNTESTED BY DATA: the hypotheses of FREEZE-EXIT and
+  THETA-AFTER (a fallback g_j with j ≥ |U| − 1 at |U| ≥ 3) never occur in the data of either referee or the lane (REFEREE: 3.82 M climb
+  candidates, best one fallback short; REFEREE-2: 1,484 batch logs and 1.92 M climb runs; L-RED R71), so FREEZE-EXIT, THETA-AFTER and
+  FB-POLY (a) beyond FB-CAP rest on their proofs; max f per phase in data 37 (|U| 48).
+- Data (DATA, not proof; one Odd choice vertex asserted on every game): REFEREE (own fbpoly_probe.py, fbpoly_climb.py on rl_engine):
+  P-N5-RHO's 412-file list (253 𝒞^1O), 990 phases, 660 fallbacks (21 with S_U = ∅, 639 with S_U ≠ ∅), the packet's §8 (L) figures
+  reproduced (except the κ-PFZ count, by convention); with 4 random start pairs 5,240 phases, 1,313 fallbacks; climbs 3,822,173 candidates (2,815,066 fully checked:
+  κ-HAT-FREEZE (a) 4,646,931, (c) 3,140,099, κ-PFZ 1,197,169 exact checks); 0 failures. REFEREE-2 (own fbpoly_check.py): 4,428 library
+  runs and 64,000 random 𝒞^1O runs, 159,383 phases (7,357 with o = c_θ and |U| = 2, max f 1), 8,643 fallbacks, (Aκ) 3,001,987,
+  κ-Y-FORM 139,928, κ-PFZ 104,199 exact checks; climbs 1,922,112 runs (31 loop-kind switched vertices); 0 violations. Lane fbpoly.py:
+  (L) and 13,364 random runs, 0 failures. L-RED successor 18 (docs/red/R72-fx-fbpoly-k.md, l-red 6e28e4f1; own fbx18.py from the
+  frozen texts): library and 8,546,164 random runs, 0 FAIL; the loop kind at 10 of 1,709 switched vertices of U ∖ T (witness
+  experiments/red/fbx/instances/exsw_loop_n15.pg, sha1 e38329f8, from the start pair in exsw_loop_n15.start.json; Lead re-run from the canonical start, where the run has no
+  fallback: one Odd choice vertex, n5 1/0, Oink zlk OK strategies verified); FREEZE-EXIT's hypothesis never reached.
+- Signatures: REFEREE docs/referee/R-N5-FBPOLY.md (referee 3de7cab, successor 10; §C d6248f7b): κ-FB-ROUND, κ-HAT-FREEZE (a)-(c),
+  κ-PFZ, κ-Y-FORM, EXIT-SWITCH, FREEZE-EXIT, CN-ONLY, THETA-AFTER, FB-POLY (a) first bound, (c), (d) SIGNED; FB-POLY (a) end bound
+  SIGNED WITH GAP FBP-1 and (b) SIGNED WITH GAP FBP-2, each repaired in one line; in §C, with both repairs in the fixes file, FB-POLY (a)
+  and (b) SIGNED without a gap; notes FBP-N1..N4. REFEREE-2 docs/referee-2/R2-N5-FBPOLY.md (referee-2 2fef7c4a, successor 11; §C
+  75372604, successor 12): all SIGN, no gap; notes N-FBP-1 ((b) at o = c_θ), N-FBP-2 ((a)'s end bound with a self-loop), N-FBP-3, N-FBP-4;
+  in §C it accepts REFEREE's form: with the two one-line repairs in the fixes file, both referees sign FB-POLY (a)-(d) unconditionally.
+  §C (both): verdicts identical in substance; FBP-1 = N-FBP-2 and FBP-2 = N-FBP-1, found independently with the same repairs; joint gap
+  map one row, closed by the agreed repairs; FBP-N2 accepted by REFEREE-2; N-FBP-4 accepted and re-run by REFEREE.
+- TARGET.md diff: not a claim of TARGET.md section 1. GAPS G-N5-TIME: open.
+
+### R49 [refereed-only] N5 on one-Odd-choice games: a gate into F along an optimal F-play has level ≥ r (XG), one-player valuations do not rise under non-improving or exceptional edges (ANTI, every one-player game), at an in-scope THR fallback with M = −1 and r ≥ 0, Even's best reply to τ from the threat x0 uses a (β) gate (NEED-β), an old threat stays in R after a rise (OLD-THREAT), and CONJECTURE INTO would exclude a later fallback (reduction); the CONJECTURE "in scope, THR ⇒ M ≥ 0" is FALSE (2026-10-25) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C58.md, checker a58dcd3a)
+- Object (packet P-N5-NEEDB, added at l-si 3ea0f5f9, pinned trunk e6ee6130, unchanged during review): docs/si/P-N5-NEEDB-box13.md, sha1
+  7471aef37f9ad2a746dbc63451a5543b3917a443 (L-SI successors 7 (§1-§3 cases (B), (A1), (A2′), (A2″)) and 8 (the rest), Opus 5.5). The
+  referees' notes are collected by the lane in docs/si/P-N5-NEEDB-fixes-box13.md (l-si 863ca636, sha1
+  0e5f24af086c54609c1a2233e6b1c485a0bf442c, L-SI successor 10: NEEDB-N1..N4, N-NEEDB-1..5, R71 §4's INTO wording); on trunk; repairs only.
+  Setting as in RESULTS R31, R35, R37, R40 and R41 (𝒞^1O; scope run S; S4a / S4c; Ξ, W; gates, gate levels, M_k; COARSE_L, (C1)-(C7);
+  R̄ / R / F; (h); r; THR; phase; c; the gate kinds (α), (β), (γ) of R41 (a)). x0 := σ̄_k(o), t := τ(o). G_τ: the one-player game "Odd
+  fixed to τ", U := Opt(G_τ) its pointwise optimum, σ* an optimal strategy of G_τ (V_{σ*,τ} = U). An Even edge (v, u) of a one-player
+  game with σ-valuation V is V-EXCEPTIONAL if v is its own V-cycle node, u ≠ σ(v) and V(u) = (v, ∅, ·). SETTING (LV+): setting (LV) of RESULTS R41 with r_k ≥ 0, i.e. k is an in-scope S4c fallback, THR at
+  k with u* ≠ none, and M_k = −1 (by LV-SHAPE every gate is (α) or (β)); 𝒫 is the σ*-play from x0 in G_τ. RISE SETTING (packet §4): k0 an in-scope
+  fallback of S with L := M_{k0} ≥ 0, j > k0 the first S4a step after k0 that changes COARSE_L(θ); between k0 and j there is no fallback,
+  every transition is in S, and r > L; a POST-RISE STATE is a state t > j such that every transition s → s+1 with k0 < s < t is an in-scope S4a step with r_s > L.
+- Claims signed (both referees "(Opus 5.5, D15)", L37); no item uses (P) beyond what RESULTS R36 discharges:
+  (a) Lemma XG: let k be an in-phase THR S4c fallback with (h), y ∈ R_k Even, s := σ_k(y) and z := σ*(y) ∈ F_k, where z's (σ*, τ)-play
+      stays in F_k. Then (y, z) is a gate at k of level ≥ r_k. "In particular M_k ≥ r_k" holds when such a y exists (NEEDB-N1, wording).
+  (b) Lemma ANTI (every one-player game): if H is a one-player game, σ an Even strategy with valuation V, and σ′ chooses at every Even
+      vertex v either an edge (v, u) with V(u) ⊴ V(σ v) or a V-exceptional edge, then V_{σ′} ⊴ V pointwise; and its instances ANTI-Ξ,
+      ANTI-W.
+  (c) Corollary NEED-β: in setting (LV+), 𝒫 uses an edge (y, σ*(y)) that is a (β) gate. The cases (B) 𝒫 avoids o, (A1) 𝒫 visits o and
+      its cycle avoids o, (A2′), (A2″) and (A2*) (𝒫's cycle contains o, by where its top lies) are exhaustive.
+  (d) Lemma OLD-THREAT: if t is a post-rise state and x ≠ o is an exit of o with x ∈ F_{k0} and COARSE_L(o ⊕ Ξ_{k0} x) =
+      COARSE_L(θ_{k0}), then x ∈ R_t; in particular the k0-threat σ̄_{k0}(o) lies in R_t.
+  (e) Reduction: CONJECTURE INTO ("at every post-rise state t with r_t > L, some gate (y, z) has z ∈ R̄_t", read at states with
+      Iσ_t ≠ ∅, R71 §4; fixes) implies that no case (i)
+      fallback occurs, i.e. no later fallback k of S with r > L on [k0 + 1, k]; "case (i)" is read as the NEXT fallback of S after k0
+      (N-NEEDB-2 = NEEDB-N2), and R20 (b) FBL's "no F → R and no R → R gate" is read in R19's notation, where R contains o (NEEDB-N3).
+- Not signed (packet §5): CONJECTURE INTO (OPEN); case (ii) of the rise question, r ≤ L before the next fallback (OPEN); the dead
+  conjectures RISE-DROP, GATE-ABOVE, FEED (FALSE, recorded in docs/si/DEAD.md, box 13; instances tevlast7_n32, rise_thin51_n40,
+  tevlast11_n40). The CONJECTURE "in scope, THR ⇒ M ≥ 0"
+  (docs/si/N5-LV3-box12.md §4-§5; RESULTS R41, R43, not signed) is FALSE (N-NEEDB-5): docs/referee-2/R2-N5-LV2/climb/block_9501.pg
+  (sha1 1b5b76fd), from the start pair in block_9501.txt, state 1: (h), θ = (5, {9}, 3) ◁ w = (5, ∅, 1), r = 10, M = −1, gates (10, 1),
+  (10, 3), (10, 8), all (β) (rank o 2 < rank c 9), k → k+1 in scope; reproduced on REFEREE-2's three traces, confirmed on REFEREE's engine (§C C.3, referee 7dbd5118) and on L-SI's
+  (experiments/si/needb5/repro.py, l-si 34e5225a). From
+  the canonical start the run has no such state (RESULTS R43 limit (iii)). At this counterexample NEED-β holds: 𝒫 uses the (β) gate
+  (10, 8), case (B). Recorded FALSE in docs/si/DEAD.md box 15 (l-si adf80994); the S3-start form survives there as a weak CONJECTURE.
+- Honest limits: (i) SUBCLASS 𝒞^1O except (b). (ii) These lemmas locate the (β) gate of any M = −1 fallback and reduce case (i) to INTO;
+  they bound no count, so G-N5-TIME stays open. (iii) Thin data: XG's hypothesis is VACUOUS in both referees' batch data and occurs 7 times
+  only in REFEREE-2's climbs (N-NEEDB-4: its first saved start pair was invalid, so REFEREE could not
+  reproduce it, §C C.4; REFEREE-2's Addendum A, referee-2 1a9a0407, pins a valid start pair and an optimal σ*, and its rng-free
+  xg_witness.py gives RESULT OK; the hypothesis holds for some optimal σ*, not for the deterministic one); NEED-β's cases (A1), (A2′), (A2″), (A2*) never occur in setting (LV+) (every (LV+) state in
+  data is case (B)), so they rest on their proofs; random-seeded climbs (REFEREE-2 12002, 12005) reach neither (LV+) nor a rise.
+- Data (DATA, not proof; one Odd choice vertex asserted on every game): REFEREE (own needb_probe.py on rl_engine): P-N5-RHO's 412-file list
+  (253 𝒞^1O) from SPEC S3's start and with 4 random start pairs, REFEREE-2's 145 climb outputs, 1,400 random-start runs on the LV2
+  witnesses and beta2_n11, and block_9501 from its own start pair: in-scope THR fallbacks with r ≥ 0 985 + 398 + 434 + 1, setting (LV+)
+  exactly once (block_9501, (β) gate (10, 8)), NEED-β's stronger form (NEEDB-N4: 𝒫 uses a gate that is not Ξ-exceptional, at every THR
+  fallback with (h) and r ≥ 0) at each of them, XG 0 cases, OLD-THREAT 510 exit checks, INTO 52 / 52, ANTI 100,000 random checks; 0 failures. REFEREE-2
+  (own needb_check.py): 5,904 library runs and 3,000 random runs, 0 violations; six climbs: 297,752 (LV+) states, every one case (B) with a
+  (β) gate on 𝒫, XG hypothesis 7 times, OLD-THREAT 57,988 exit checks at 38,664 post-rise states, INTO 1,492 / 1,492, case (i) 0, 0
+  violations; mutation controls xg, otc, b0, anti fire, otf does not.
+- Signatures: REFEREE docs/referee/R-N5-NEEDB.md (referee 008ad8ab, successor 10; §C 7dbd5118, successor 11): XG, ANTI (+
+  ANTI-Ξ, ANTI-W), NEED-β (B), (A1), (A2′), (A2″), (A2*), OLD-THREAT, the reduction SIGNED; notes NEEDB-N1..N4; no gaps. REFEREE-2
+  docs/referee-2/R2-N5-NEEDB.md (referee-2 ef433d32, successor 12; Addendum A 1a9a0407: witness start pairs corrected,
+  four lines of §1 / §6 marked "corrected in Addendum A", no verdict change): all SIGN; notes N-NEEDB-1..5; no gap. REFEREE-2 discloses that, after
+  its verdicts and notes were written, a repository grep printed two lines that report on REFEREE's R-N5-NEEDB (LEAD-STATE l. 1410, RESULTS R43
+  limit (iii)); it changed no verdict or note after that and did not open docs/referee/. §C (REFEREE): verdicts identical; joint gap map empty;
+  NEEDB-N2 = N-NEEDB-2; N-NEEDB-1 = REFEREE's IN-DATA line; N-NEEDB-3 accepted; N-NEEDB-5 confirmed; N-NEEDB-4 accepted as REFEREE-2's
+  data but NOT reproduced by REFEREE (the saved start pair of witness_xg_12004 is not a strategy pair of that game); corrected in
+  REFEREE-2's Addendum A (1a9a0407).
+  §C (REFEREE-2, fafea30e, successor 12): verdicts identical; NEEDB-N1, NEEDB-N3 and NEEDB-N4 (checked) accepted; NEEDB-N2 = N-NEEDB-2;
+  C.3 = N-NEEDB-5; C.4 correct, repaired in Addendum A. Joint gap map empty; no disagreement remains.
+- TARGET.md diff: not a claim of TARGET.md section 1. GAPS G-N5-TIME: open.
+
+### R50 [refereed-only] N5 on one-Odd-choice games: above the more relevant cycle node m*, routes freeze after |R| − 1 transitions of every fallback-free run of every stretch (FRZ-U), kinds change at most once and only B → A after the freeze (KIND-MONO, with PAR: c_w ≻ c_θ forces c_w even), so the Ξ-changes on R of a run are ≤ 3Δ·r⁴ (Theorem RUN), (K_W), (E) and wakes K are polynomial per stretch given its fallbacks (Corollary KW-S), and the transitions of a phase are ≤ an explicit polynomial in n, m and its fallbacks f (Corollary PHASE) (2026-10-25) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C59.md, checker a58dcd3a)
+- Objects (one review unit; both unchanged during review): packet P-N5-KW, docs/si/P-N5-KW-box15.md, sha1
+  c0b0111fcc2259e4ed9d43647bc4fa08cec452a5 (added at l-si bf1ed0f7), and its addendum docs/si/P-N5-KW-addendum-box15.md, sha1
+  8d6bfb3c32d80ed7040df4ae2dee56bb9bb9b5bd (added at l-si 47c4e7a2: every count is a TRANSITION count; switches ≤ n · transitions),
+  both pinned trunk d9291be0 (L-SI successor 10, Opus 5.5; Lemma PAR and four additions from L-NEW successor 21's cross-read). The
+  referees' notes are collected by the lane in docs/si/P-N5-KW-fixes-box15.md (l-si 1d33a337, sha1
+  c65f4c1e31b437f66e19cef2ff29cec66b212bdc, L-SI successor 10: KW-1 = N-KW-3, KW-N1..N5, N-KW-1..6, REFEREE's Addendum 1); on trunk;
+  repairs only.
+  Setting as in RESULTS R24, R26, R27 and R38 (𝒞^1O; phase = joint λ-phase; S4a / S4c; Ξ, W; θ, w, c_θ, c_w; H1, H2; R = R_k (o ∈ R),
+  r := |R|, F := V ∖ R, routes π_v; crossings; route form; R26's classes U1, U2, U3, U23 and kinds A / B (under ¬H2 with c_w ≠ o, v is of
+  kind A iff c_w ∈ π_v); W-flat runs). A STRETCH is a maximal run of states of a phase with R, θ, w constant; a RUN of a stretch is a
+  maximal run of its consecutive non-fallback transitions. m* := the more relevant of c_θ and c_w (c_θ if equal); κ(ρ) := ρ ∩ V_{>m*},
+  κ_k(v) := κ(π_v^k). Δ := the maximum out-degree, d_o := |succ(o)|, m := #edges.
+- Claims signed (both referees "(Opus 5.5, D15)", L37); no item uses (P); every premise is LANDED (R15, R17, R18 (d), R19, R21 (a) XW, R22, R23
+  (g), R24, R26, R27, R30 (c), R34 (e), (f), R38 (a)):
+  (a) Lemma W-ONCE (every game): if k → k+1 → k+2 are two consecutive S4a transitions of one phase with Ξ_{k+1} = Ξ_k, then
+      W_{k+2} = W_{k+1}; and Corollary W-ONCE′.
+  (b) Facts A0, A, B (on a stretch): values on R are route values with constant terminals (A0); P(Ξ(v)) ∩ V_{>m*} = κ(π_v) ⊔ C_Ξ and
+      P(W(v)) ∩ V_{>m*} = κ(π_v) ⊔ C_W with C_Ξ, C_W constant and disjoint from π_v (A); for y, z ∈ R with κ(π_y) ≠ κ(π_z),
+      Ξ(y) ◁ Ξ(z) ⟺ W(y) ◁ W(z) ⟺ κ(π_y) ≺ κ(π_z) (B).
+  (c) Lemma FRZ-U: on a run S of a stretch (states k0, …), κ_t(v) = κ_{k0+r−1}(v) for every state t ≥ k0 + r − 1 of S and every v ∈ R.
+      Its proof is self-contained (Claim P^c, cases A, B1, B2, B3); it does not rest on a transfer of R20 CR (REFEREE §3).
+  (d) Corollary LEN: after k0 + r − 1, the frame whose cycle node is m* changes on R only by lengths, monotonically.
+  (e) Lemma PAR (L-NEW successor 21): at every state of a phase on 𝒞^1O, if c_w ≻ c_θ then Ω(c_w) is even (R21 (a) XW).
+      Lemma H-PATH: on a stretch with ¬H2, c_w ≠ o and c_w ≻ c_θ, for v ∈ R ∖ {o}, c_w ∈ P(Ξ(v)) iff v is of kind A.
+      Lemma KIND-MONO: in a run of such a stretch, after k0 + r − 1 every v ∈ R ∖ {o} changes kind at most once, and only from B to A.
+      Lemma CASC-B: in a W-flat segment of a U3 / U23 stretch with no kind change (c_w and kind-A vertices may switch), a kind-B vertex v
+      switches only at steps ≤ |π_v| − 2.
+      Lemma CW-INT: in a run of a stretch with ¬H2 and c_w ≠ o, between two states with no kind change and no kind-B switch in
+      between, c_w switches at ≤ deg(c_w) − 1 transitions.
+      Proposition E-SEG (ii)-(v) on a post-freeze W-flat segment Q of a U3 / U23 stretch with c_w ≻ c_θ, with N_cut(Q) := the transitions
+      of Q with a kind change or a kind-B switch ≤ (e(Q) + 1)(r − 1). E-SEG (i) as written (N_B(Q) ≤ (e(Q) + 1)(r − 2) over all
+      kind-B-switch transitions) is not proved: a kind-change transition can also carry a kind-B switch; the proof gives
+      N_B(Q) ≤ e(Q) + (e(Q) + 1)(r − 2); with N_B(Q) redefined as the kind-B-switch transitions WITHOUT a kind change, (i) holds,
+      N_cut (counted once) ≤ (e(Q) + 1)(r − 1) − 1, and (ii)-(iv) and Theorem RUN use only N_cut (KW-1 = N-KW-3, both referees,
+      independently; fixes).
+  (f) Theorem RUN: on a run of a stretch, the transitions with a Ξ-change at some vertex of R number ≤ 3Δ·r⁴: ≤ (r − 1)² if
+      c_θ ⪰ c_w; ≤ r³ if c_w ≻ c_θ and the W frame is in route form; ≤ (r − 1)² + (Δr + 1)(2r − 3)·r² ≤ 3Δ·r⁴ on U3 / U23 with
+      c_w ≻ c_θ (for r ≥ 2; KW-N3 = N-KW-4).
+  (g) Corollary KW-S: a stretch with f_st fallback transitions has ≤ (f_st + 1)·n² non-fallback transitions with a W-change on R ((K_W)),
+      polynomially many event transitions per W-flat run ((E); explicit per run: ≤ (r − 1) + (Δr + 1)(r − 1)², KW-N4 = N-KW-6), and
+      K ≤ T_rel (wakes counted as transitions).
+  (h) Corollary PHASE (CONDITIONAL on f only): a phase on 𝒞^1O with f fallback transitions has T ≤ (m − n + 1)(T_rel + 1) transitions,
+      with T_rel ≤ S_o + N_Ξ, N_Ξ ≤ f + (N_st − 1) + (X + 1)(n − 1) + (N_st + f)·3Δn⁴, N_st ≤ 1 + X + Θ + W_ch and the landed bounds on X
+      (R30 (c), R34 (e), (f)), Θ and S_o (R27 (g)) and W_ch (R24 (e), F1°); so T = O(m·Δ·d_o·n⁹·(f + n²)).
+- Not signed (packet §8 READINGs, §9-§11): with FB-POLY (RESULTS R48), T = O(m·Δ·d_o·n¹¹) per phase; with Corollary Φ-1O (RESULTS R47)
+  and a polynomial bit cost per iteration, N5 on 𝒞^1O would make polynomially many iterations (a READING here, to be packeted and
+  refereed as an assembly); the lane notes docs/si/N5-KW-box15.md (5ebbb3b6) and docs/new/N5-KW-box42.md v3.2 (349d553c), two independent
+  lane proofs. No polynomial bound for N5 on 𝒞^1O is proved by this entry; the assembly (P-N5-1O) is not yet refereed.
+- Honest limits: (i) SUBCLASS 𝒞^1O, inside a phase; Corollary PHASE is conditional on f. (ii) Thin data: no post-freeze kind change and no post-freeze c_w switch occurs in
+  any data (REFEREE: 0 in 2.46 M post-freeze U3 / U23 transitions with c_w ≻ c_θ; REFEREE-2; L-RED R73; both lanes), so KIND-MONO,
+  CW-INT after the freeze and E-SEG's post-freeze counts rest on their proofs; W-ONCE's hypothesis: 2 checks on REFEREE's engine, 571 in
+  REFEREE-2's climbs; CASC-B's hypothesis is exercised on REFEREE's engine (Addendum 1, cascb_witness.pg, one step below its bound), in
+  REFEREE-2's climbs (10 cases, the latest at step |π_v| − 2, the bound) and twice in L-RED's runs (R73 §7 random, at step |π_v| − 4, two
+  below the bound, not pinned; §8 on REFEREE's witness); the c_w-odd branches are empty by PAR. (iii) FRZ-U's index |R| − 1 and CW-INT's deg(c_w) − 1 are attained in
+  data (L-RED R73: frzu_tight_n14, cw11_n24).
+- Data (DATA, not proof; one Odd choice vertex asserted on every game): REFEREE (own kw_probe.py, kw_climb.py on rl_engine): library 253
+  games × 4 starts and climbs (2.24 M evaluations): Corollary PHASE inequalities 2.77 M phases, H-PATH 21.9 M vertex-states, PAR 5.1 M
+  states, CW-INT 413k c_w switches, CASC-B 687k kind-B switches; 0 failures. REFEREE-2 (own kw_check.py, kw_climb.py): batch 503 files × 3 starts × 3
+  traces (4,527 runs) and 3,000 random runs, climbs 160,163 evaluations (640,652 runs); 0 violations; 1.15 M kind changes and 157,577
+  c_w switches with c_w ≻ c_θ, ¬H2, all BEFORE the freeze index; CASC-B exercised 10 times, the latest at step exactly |π_v| − 2
+  (not saved; two later climbs saved witnesses witness_cascb_13011.pg, witness_cascb_13012.pg, one step below the bound); FRZ-U's κ changes as late as run step 39 on kw_n48.pg
+  (N-KW-5; index r − 1 = 47 never exceeded); mutations frz0 and par fire, casc does not on saved data. L-RED successor 18
+  (docs/red/R73-*.md, l-red 896aea76; own kw18 tools): lib41 and 4,267,132 random runs, 0 FAIL; PAR 0 odd cases in 1.24 M qualifying
+  states. Lane (kwcheck.py, kwclimb.py): ~13 M states, 0 failures.
+- Signatures: REFEREE docs/referee/R-N5-KW.md (referee 56ac6538, successor 11; Addendum 1 1d6cbf32; §C a6e50742 + stamp fix 776281ac): W-ONCE, Facts A0 / A /
+  B, FRZ-U, LEN, PAR, H-PATH, KIND-MONO, CASC-B, CW-INT, RUN, KW-S, PHASE SIGNED; E-SEG SIGNED WITH GAP KW-1 (one-line repair); notes
+  KW-N1..N5. REFEREE-2 docs/referee-2/R2-N5-KW.md (referee-2 8a47fd92, successor 12; §C 20fea7d7): all SIGN, no gap; notes N-KW-1..6.
+  §C (both): verdicts identical; joint gap map one row, KW-1 = N-KW-3, found independently and closed by the definitional repair;
+  KW-N3 = N-KW-4, KW-N4 = N-KW-6, KW-N5 = N-KW-5; N-KW-1, N-KW-2 (CW-INT step 1 reads "kind B or o") accepted by REFEREE; KW-N1, KW-N2
+  accepted by REFEREE-2; REFEREE's CASC-B witness reproduced on REFEREE-2's SPEC trace. No disagreement remains.
+- TARGET.md diff: not a claim of TARGET.md section 1. GAPS G-N5-TIME: open.
+
 ## Dead ends (kept; each with the exact obstruction or counterexample and the instance that killed it)
 - DE1 (2026-10-14): arXiv 2511.03752 v1 (van der Heijden), claimed O(n²(n+m)) algorithm. BROKEN: wrong regions on 4-vertex games
   CE1 (l-comp 19b5ce2, experiments/m2/counterexamples/ce1_4v.pg) and cex1 (referee 936d47c, docs/referee/scratch/cex1-*.pg).

@@ -1,0 +1,10 @@
+ANTI_W_checks: 49
+ANTI_W_exceptional_used: 5
+ANTI_W_with_exceptional_edges: 5
+ANTI_Xi_checks: 49
+ANTI_Xi_exceptional_used: 3
+ANTI_Xi_with_exceptional_edges: 5
+runs: 4
+states: 161
+RESULT OK violations=0
+experiments/red/n5inj/instances/block_bk32.pg exit 0

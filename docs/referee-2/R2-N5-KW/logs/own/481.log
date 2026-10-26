@@ -1,0 +1,18 @@
+A0_checks: 488
+FACTB_pairs: 3151
+HPATH_checks: 26
+KWS_stretches: 93
+PAR_states_cw_above_cth: 3
+PHASE_checked: 11
+phases: 11
+runs: 3
+states: 93
+states_checked: 93
+stretches: 93
+max_KW_per_stretch: 0
+max_T_per_phase: 55
+max_Trel_per_phase: 55
+max_f_per_phase: 3
+max_stretches_per_phase: 56
+RESULT OK violations=0
+experiments/si/orlens/instances/lev_l_x.pg exit 0

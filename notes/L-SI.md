@@ -9,7 +9,13 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
 - Work: docs/si/N5-KW-box15.md (lane note). PROVED (L-SI 10, unrefereed): W-ONCE (any game), FRZ-U (κ-freeze above m* on EVERY
   stretch), LEN, KIND-MONO, CASC-B, CW-INT, Theorem RUN (Ξ-changes on R per fallback-free run of a stretch O(Δ r⁴)), Corollary PHASE
   (T per phase poly given f). So (K_W), (E), K closed per stretch; assembly READING: N5 on 𝒞^1O poly IF FBPOLY + PHI + this note are signed.
-- FROZEN (sha1 sent to Lead 20:51Z): docs/si/N5-KW-box15.md 5ebbb3b6 (l-si 2685ea67). New text goes in NEW files.
+- FROZEN (sha1 sent to Lead): docs/si/N5-KW-box15.md 5ebbb3b6 (l-si 2685ea67, 20:51Z); docs/si/P-N5-PHI-fixes-box14.md 29936b3d
+  (l-si dfa14399, 20:59Z); docs/si/P-N5-KW-box15.md c0b0111f (l-si bf1ed0f7, 21:46Z; packet, Lead GO 21:22Z); docs/si/P-N5-KW-addendum-box15.md 8d6bfb3c (l-si 47c4e7a2, 21:55Z; K units); docs/si/P-N5-NEEDB-fixes-box13.md 0e5f24af (l-si 863ca636, 22:57Z).
+- DONE 22:57Z: DEAD box 15 ("THR ⇒ M ≥ 0" FALSE, block_9501 saved start; repro experiments/si/needb5/); ledger line docs/si/N5-LEDGER-update-box15.md. P-N5-KW pinned trunk d9291be0, with REFEREE 11 + REFEREE-2 12. New text goes in NEW files.
+- 23:41Z: P-N5-KW SIGNED by both (REFEREE 56ac6538 + Add. 1d6cbf32, KW-1 one-line gap; REFEREE-2 8a47fd92). DRAFTS at l-si f4cb4bc3 (not
+  frozen): docs/si/P-N5-KW-fixes-box15.md (freeze on Lead go after both §Cs; add §C items), docs/si/P-N5-1O-box15.md (assembly packet;
+  freeze after Lead says R50 landed; replace 'R50' wording with the landed entry text).
+- NEXT: KW fixes freeze; P-N5-1O freeze. FX fixes (REFEREE signed R-N5-FX 843ba1f8; REFEREE-2 next) → NEW docs/si/P-N5-FX-fixes-box14.md.
 - DATA: experiments/si/kw15/kwcheck.py (library + extras), kwclimb.py (random, climbs kind / wonce / long); logs in kw15/logs/.
 
 ## Cross-read of L-NEW 21's docs/new/N5-KW-box42.md (v3, l-new b9ee6918, on trunk) against my N5-KW-box15 (5ebbb3b6); written 21:01Z (date -u)
@@ -57,6 +63,9 @@ Lead request 20:49Z item (2). Adversarial read: each step re-derived; READING la
 - Freeze index: CONSISTENT. Both are CR's closing step over simple admissible paths. Their paths lie inside R as well, so ≤ |R| − 1
   edges; their n − 1 is the weaker but valid index (|R| ≤ n). Mine states |R| − 1. Data: the largest observed delay is 1 transition
   (mine), 0.83·(n − 1) (theirs), both within either index.
+- DATA (21:37Z): 4 seeded kind3 climbs (30 min each, from u3ev_n16, nr_u23_n32, u23sw64_n32, oc16_s2; logs/climb_kind3_154*.txt):
+  ≈ 4.5M AGREE states, ≈ 2.1M freeze checks, 248k post-freeze KIND runs, 0 failures. Again 0 post-freeze kind changes or c_w switches.
+  OBSERVATION (DATA, not proved): kind changes happen only before the freeze index. Not needed for any bound.
 ### (b) Do the two notes together close K on U1 / U2 / U3 / U23?
 - Yes, per stretch, given f (READING; both lane-proved, unrefereed):
   - U1: R24 Theorem U1 (landed), or FRZ-U + LEN-W + CASC;

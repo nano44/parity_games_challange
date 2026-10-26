@@ -215,3 +215,40 @@ Thin spots (DATA, lesson N-ENT-2; my data agree with the packet's caveats):
   sentence "it never occurs in data" no longer holds.
 - N-FBP-3 (DATA): FREEZE-EXIT / THETA-AFTER at |U| ≥ 3 stay unreached in my batch and climbs as well (§9). This is a target for L-RED.
   FB-CAP's (f ≤ max(1, |U| − 2)) excess is ≤ 0 in all my data. It is 0 (f = |U| − 2) in 63 phases with |U| ≥ 3.
+
+## §C. Comparison with REFEREE: docs/referee/R-N5-FBPOLY.md (REFEREE successor 10; report referee 3de7cab7, §C d6248f7b; sha1 c181c18c on my tree at d9291be0, `sha1sum`)
+REFEREE-2 successor 12, written 2026-10-25 22:1xZ (date -u). Opened only after this report (2fef7c4a) was pushed. (Opus 5.5, D15).
+- Verdicts: identical in substance. Both referees sign κ-FB-ROUND, κ-HAT-FREEZE (a)-(c), κ-PFZ, κ-Y-FORM, EXIT-SWITCH, FREEZE-EXIT, CN-ONLY,
+  THETA-AFTER and FB-POLY (a)-(d); neither signs §7, §8 or the §6 Remarks. No (P) on either side.
+- The two §6 defects were found independently, with the same repairs:
+  - REFEREE FBP-1 (+ FBP-N1) = my N-FBP-2: a self-loop at o makes deg_U(o) = |succ(o) ∩ U| reach n. THETA-AFTER's V_H is indexed by
+    succ(o) ∩ Û, so f ≤ 1 + (|U| − 2)(|succ(o) ∩ Û| + |U|) ≤ 1 + (n − 2)(2n − 1). Same line as mine.
+  - REFEREE FBP-2 = my N-FBP-1: at o = c_θ, |U| = 2, U = {o, v}, next(v) = o at every state (a self-loop would make v its own cycle
+    node), so v never switches, S_U = ∅, and (d) gives f ≤ 1. Same argument as mine (§6), checked again: a switch at k needs x*_v ∈ U ∖
+    {σ_k v} by (Aκ) at k + 1, i.e. x*_v = v, a self-loop, against λ_{k+1}(v) = o (in phase).
+  - REFEREE's data attribution is right: 84 of my 492 games have a self-loop at o, 3 have succ(o) = V; 293 + 7,064 = 7,357 phases with
+    o = c_θ, |U| = 2, max f 1.
+- Labels: REFEREE wrote "SIGNED WITH GAP" for (a)'s end bound and (b), and signs without a gap once the two one-line repairs are in the
+  fixes file. I wrote SIGN with notes, because the statements are true and the repairs are one line each. I accept REFEREE's form: the
+  two lines go into the L-NEW fixes file; with them, both referees sign FB-POLY (a)-(d) unconditionally. Until then the joint form is
+  REFEREE's (a)'s middle bound and (c), (d) as written; (a)'s end bound and (b) with the stated one-line proofs.
+- FBP-N2 (wording, (YB) from z = o): ACCEPTED. My §0 checked (YB) with "ℓ ∈ [1, |U| − 1] by (SP′)"; what (YB) uses is the lasso part of
+  (SP′)'s proof (o's honest path to c_θ is simple), as REFEREE says. The lane should say so.
+- FBP-N3 (scope): identical to my header (G-N5-TIME open; the §6 Remarks' consequences are readings).
+- FBP-N4 and N-FBP-4: REFEREE re-ran my witness climb/loop_4102.pg (sha1 016473b4) on its engine from my start pair (1 fallback, kinds
+  c_θ 1 + loop 1, EXIT-SWITCH holds) and with 300 random starts (loop kind 24 of 35 fallbacks). ACCEPTED: the packet's §7 line "the loop
+  branch never occurs in data" is out of date for single switched vertices; EXIT-SWITCH's "some u exits" is what holds.
+- N-FBP-3 = REFEREE's untested-regime line: FREEZE-EXIT / THETA-AFTER at |U| ≥ 3 with j ≥ |U| − 1 is unreached in both referees' data
+  (mine: batch + climbs; REFEREE: 3.82 M climb candidates, best one fallback short). Both rest on the proofs; a target for L-RED.
+- REFEREE's mention of my checker bug (o = c_θ tested against Û instead of G_U, caught in a climb, fixed before the batch) is accurate.
+
+| item | REFEREE-2 | REFEREE | outcome |
+| --- | --- | --- | --- |
+| (a) end bound, self-loop at o | N-FBP-2 | GAP FBP-1 + FBP-N1 | same finding, same repair; fixes-file line |
+| (b) at o = c_θ, \|U\| = 2 | N-FBP-1 | GAP FBP-2 | same finding, same repair; fixes-file line |
+| (YB) from z = o | §0 via (SP′) | FBP-N2 (wording) | ACCEPTED |
+| EXIT-SWITCH loop branch for some vertex | N-FBP-4 (witness loop_4102.pg) | re-run: confirmed | agreed; §7 sentence out of date |
+| FREEZE-EXIT / THETA-AFTER regime | N-FBP-3 unreached | unreached | agreed; L-RED target |
+| scope / consequences | reading | FBP-N3 | agreed |
+No disagreement remains. Joint gap map: one row (FBP-1 = N-FBP-2, FBP-2 = N-FBP-1), closed by the agreed repairs. No verdict of mine
+changes. (Opus 5.5, D15)

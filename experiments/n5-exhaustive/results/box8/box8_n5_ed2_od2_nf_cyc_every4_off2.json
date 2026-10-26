@@ -1,0 +1,475 @@
+{
+ "games": 17189248,
+ "runs": 17189248,
+ "c": {
+  "OE": {
+   "runs": 17189248,
+   "transitions": 8948662,
+   "CAP1_info_states(lam(o)=o)": 11905160,
+   "CAP1_checks(lam(o)!=o)": 14232750,
+   "phases": 1297684,
+   "transitions_in_phase": 1343962,
+   "ULOC_checks": 6719810,
+   "ULOC_strictly_below_L_k": 3181470,
+   "OE_checks(no crossing)": 844228,
+   "OX_phases": 1297684,
+   "eps_total": 448,
+   "J_total": 448,
+   "rises_total": 0,
+   "K_total": 0,
+   "f_total": 290394,
+   "OE_crossings": 499734,
+   "OE_crossings_with_O>E": 448,
+   "S2_checks": 18682,
+   "S3_checks(H1 at k)": 17746,
+   "nontame_transitions": 448,
+   "phases_J_eq_X>0": 448,
+   "OE_relevant_sbar(o)_changes(no crossing)": 3908,
+   "OE_tie_moves(no crossing, level BOT)": 624,
+   "S4_checks(not H1 at k)": 936,
+   "S4_checks_offcross": 728,
+   "CAP1_info_nonminimiser(lam(o)=o)": 2195412
+  },
+  "CLS": {
+   "runs": 17189248,
+   "transitions": 8948662,
+   "C567_checks": 515677440,
+   "transitions_in_phase": 1343962,
+   "NL_no_admissible_L(S4a,(h))": 378428,
+   "scope_runs": 389478,
+   "scope_transitions": 393570,
+   "CN_checks": 552284,
+   "NL_no_admissible_L_with_leave": 180954,
+   "scope_fallbacks": 60402,
+   "scope_fallbacks_theta=w": 60402,
+   "OFFG_checks": 11982,
+   "TRANS_checks": 26118,
+   "NL_transitions_with_admissible_L": 596,
+   "NL_(j,L)_checks": 1614,
+   "NL_admissible_with_R_nonempty": 458
+  },
+  "SN": {
+   "runs": 17189248,
+   "transitions": 8948662,
+   "H3H2_states": 26137910,
+   "phases": 1297684,
+   "PREFIX_runs": 1046262,
+   "PREFIX_crossings_in_prefix": 433894,
+   "PREFIX_crossings_after": 308,
+   "ABSC_runs": 1046262,
+   "leaves_S4a": 865830,
+   "leaves_S4a_notH1": 665280,
+   "OR_eps_transitions": 448,
+   "OR_eps_H1": 448,
+   "TCS_theta_changes": 35966,
+   "LEAVE_checks(H1)": 200550,
+   "CHOICE_odd_checks": 1061795,
+   "STICK_checks": 182
+  },
+  "H1": {
+   "runs": 17189248,
+   "H1_eps": 448,
+   "KEEP_checks": 448,
+   "ABSC'_runs_with_H1_eps": 448,
+   "ABSC'_checks": 448,
+   "ABSC'_tight": 448,
+   "DROP_transitions(H1 -> notH1 in phase)": 39970,
+   "DROP_divergences": 40294
+  },
+  "oe_probe": {
+   "phases": 1297684,
+   "CAP_states": 2014348,
+   "tr": 1343962,
+   "ULOC_checks": 6719810,
+   "CTRL_own_states": 627298,
+   "so_change_X_H1": 14566,
+   "OkgtEk_X_H1": 448,
+   "nontame": 448,
+   "phases_J_eq_X": 448,
+   "so_change_nX_H1": 3180,
+   "OE_level-1_nX": 2598,
+   "so_tie_X_H1": 1360,
+   "so_change_nX_nH1": 728,
+   "so_tie_nX_nH1": 288,
+   "so_tie_nX_H1": 336,
+   "so_change_X_nH1": 208,
+   "CTRL_own_nonmin": 224148
+  },
+  "cls_probe": {
+   "C5_chk": 204430514,
+   "tr": 1343962,
+   "scope_runs": 389478,
+   "CN_chk": 552284,
+   "C7use_chk": 38962,
+   "scope_fb_EQ": 60402,
+   "CLS1_chk": 0,
+   "OFFG_chk": 11982,
+   "NL_chk": 1614,
+   "OGP_viol": 1484,
+   "TRANS_chk": 1094
+  },
+  "sn_probe": {
+   "H3H2_chk": 8584564,
+   "tr": 1343962,
+   "PREFIX_runs": 1046262,
+   "PREFIX_X_after": 308,
+   "PREFIX_X_in": 433894,
+   "ABSC_runs": 1046262,
+   "H1KEEP_chk": 448,
+   "eps_H1_Om1": 0,
+   "OR_chk": 448,
+   "OR_chk_H1": 448,
+   "TCS_chk": 35966,
+   "ABSCp_chk": 448,
+   "H1DROP_chk": 39970,
+   "LEAVE_chk": 200550,
+   "RSTICK_chk": 182
+  }
+ },
+ "mx": {
+  "J": 1,
+  "K": 0,
+  "X": 2,
+  "eps": 1,
+  "rho": 0,
+  "T": 3,
+  "X_SN": 2,
+  "REL": 2,
+  "OE:max_J": 1,
+  "OE:max_X": 2,
+  "OE:max_eps": 1,
+  "OE:max_T_phase": 3,
+  "OE:max_rho": 0,
+  "OE:max(J-X)+1000": 1000,
+  "OE:max(eps-X)+1000": 1000,
+  "SN:max_crossings_after_prefix": 1,
+  "SN:max(eps_H1-REL_run-(d_o-1))+100": 100,
+  "oe_probe:max_T": 3,
+  "oe_probe:max_X": 2,
+  "oe_probe:max_J": 1,
+  "oe_probe:max_f": 1,
+  "oe_probe:max_rho": 0,
+  "oe_probe:max_K": 0,
+  "oe_probe:max_eps": 1,
+  "sn_probe:max_ABSC_excess": 0,
+  "CLS:max_fallbacks_per_scope_run": 1,
+  "cls_probe:max_scope_fb": 1
+ },
+ "viol": [],
+ "ex": {
+  "J": {
+   "prio": [
+    0,
+    2,
+    4,
+    6,
+    8
+   ],
+   "owner": [
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     2,
+     4
+    ],
+    [
+     1
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0
+    ],
+    [
+     1
+    ]
+   ],
+   "start": null,
+   "v": 1
+  },
+  "K": {
+   "prio": [
+    0,
+    2,
+    4,
+    6,
+    8
+   ],
+   "owner": [
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     0,
+     3
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ]
+   ],
+   "start": null,
+   "v": 0
+  },
+  "X": {
+   "prio": [
+    0,
+    2,
+    4,
+    6,
+    8
+   ],
+   "owner": [
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     1,
+     4
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2
+    ]
+   ],
+   "start": null,
+   "v": 2
+  },
+  "eps": {
+   "prio": [
+    0,
+    2,
+    4,
+    6,
+    8
+   ],
+   "owner": [
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     2,
+     4
+    ],
+    [
+     1
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0
+    ],
+    [
+     1
+    ]
+   ],
+   "start": null,
+   "v": 1
+  },
+  "rho": {
+   "prio": [
+    0,
+    2,
+    4,
+    6,
+    8
+   ],
+   "owner": [
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     0,
+     3
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ]
+   ],
+   "start": null,
+   "v": 0
+  },
+  "T": {
+   "prio": [
+    0,
+    2,
+    4,
+    5,
+    7
+   ],
+   "owner": [
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     1,
+     2
+    ],
+    [
+     4
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "start": null,
+   "v": 3
+  },
+  "X_SN": {
+   "prio": [
+    0,
+    2,
+    4,
+    6,
+    8
+   ],
+   "owner": [
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     1,
+     4
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     2
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     2
+    ]
+   ],
+   "start": null,
+   "v": 2
+  },
+  "REL": {
+   "prio": [
+    0,
+    2,
+    4,
+    6,
+    8
+   ],
+   "owner": [
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "succ": [
+    [
+     2,
+     4
+    ],
+    [
+     0
+    ],
+    [
+     4
+    ],
+    [
+     1
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "start": null,
+   "v": 2
+  }
+ },
+ "tasks_done": "160/160",
+ "secs": 11344.9,
+ "options": {
+  "mode": "exh",
+  "args": [
+   "5"
+  ],
+  "even_maxdeg": 2,
+  "o_deg": 2,
+  "no_forced": true,
+  "cyclic_only": true,
+  "all_starts": false,
+  "every": 4,
+  "offset": 2,
+  "slices": null
+ }
+}

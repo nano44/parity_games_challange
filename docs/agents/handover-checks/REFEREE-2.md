@@ -228,3 +228,51 @@ Measured from the repository at the time of writing (commands named), not recall
 - Second push attempt (20:3xZ): VERIFY PASS, then rejected "fetch first". `git log HEAD..origin/claude/referee-2` -> f8cb3ef3
   (succ. 11, stamped 20:26:55Z: §C PHI vs R-N5-PHI, identical, empty gap map; handover queue updated). Merged --no-ff. Effect on
   answer 2: queue item 3 (§C PHI) is DONE by the predecessor; remaining order NEEDB -> §C FBPOLY -> FX -> NH42.
+
+## successor 13 (2026-10-26T00:02Z by date -u; Opus 5.5 under D15/L37; predecessor successor 12 session_01S8gi5khZfh16sXZ4fcHvZr, handover dd79fb25 + update 20fea7d7)
+Measured from the repository at the time of writing (commands named), not recalled.
+
+### 1. Branch, head, distance to trunk
+- Branch `claude/referee-2`. `git fetch origin claude/referee-2` (77f9cf71..20fea7d7); `git checkout -B claude/referee-2
+  origin/claude/referee-2`; `git rev-parse HEAD origin/claude/referee-2` -> both 20fea7d7. `git log dd79fb25..origin/claude/referee-2`
+  -> d915e781 (merge trunk) + 20fea7d7 (§C KW): the handover was updated after it was written, as the brief says.
+- Trunk claude/vibrant-johnson-nxvvxo (docs/NOW.md:15) at d5889f8c (fetched 00:01Z). Before merge:
+  `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` -> 5 ahead, 10 behind (merge-base 84b57e9c).
+  `git merge-base --is-ancestor`: 8a47fd92 (KW report), 75372604 (§C FBPOLY) ON trunk; dd79fb25 (handover), fafea30e (§C NEEDB),
+  20fea7d7 (§C KW) NOT on trunk.
+- `git merge --no-ff origin/claude/vibrant-johnson-nxvvxo` -> 61fe6389 (no conflict): 6 ahead, 0 behind. This file's commit adds one.
+
+### 2. Open work and next step of each (brief's queue; supersedes the handover's item 4 "ask the Lead for DUAL")
+- DONE by successor 12: §C KW (20fea7d7), §C NEEDB (fafea30e); both reach trunk with this push.
+- 1. P-N5-FX: docs/si/P-N5-FX-box14.md, `git show <trunk>:… | sha1sum` -> aa227b0b (= pin). Not started. Next: read packet + cited
+  RESULTS rows (R44-R48), build docs/referee-2/R2-N5-FX/ checker on 𝒞^1O files (reuse R2-N5-KW/ tools), batch + climb + mutation
+  control; write R2-N5-FX.md. `ls docs/referee | grep -i fx` -> R-N5-FX.md EXISTS: unopened until mine is pushed.
+- 2. P-N5-NH-box42: docs/new/P-N5-NH-box42.md sha1 93d19be8 (= pin). Not started. Same procedure, R2-N5-NH42.md.
+  `ls docs/referee` -> R-N5-NH.md and R-N5-NH42.md EXIST: both unopened until mine is pushed (R-N5-NHN.md was read by succ. 11 for NHN).
+- 3. P-N5-DUAL: docs/new/P-N5-DUAL-box43.md, sha1 at pin df073cb5 -> a51f7c30 (= brief), df073cb5 is on trunk. Not started.
+  R-N5-DUAL.md EXISTS, and this merge brought docs/referee/scratch/dual_probe.py (REFEREE's): both unopened until mine is pushed.
+- Oink: `ls tools/oink/build` -> absent; scripts/setup_oink.sh started 00:02Z (log in my scratchpad).
+
+### 3. docs/GAPS.md rows
+- `grep -n 'REFEREE-2' docs/GAPS.md`: REFEREE-2 owns no row (mentions only, in closed G-Bthr/G-K5 and GAP-A text). Relevant:
+  G-N5-TIME | major | L-NEW (L-LIT T22; referees later) | open (docs/GAPS.md:11); latest UPDATE 22:36Z: R48 (FB-POLY) landed; on
+  𝒞^1O G-N5-TIME waits on P-N5-KW and, for the second route, P-N5-FX and P-N5-NH-box42 (two of my queue items); beyond 𝒞^1O OPEN.
+  GAP-A (L-ALG) open, not routed to me.
+
+### 4. Three owner rulings that most constrain me (verbatim), with DECISIONS-INDEX status (trunk d5889f8c)
+1. D1 (docs/DECISIONS-INDEX.md:5: active), docs/DECISIONS.md:7-8:
+   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+   > Never downgrade the referee to save money.
+2. D15 (index:26 active; L37 index:27 active, label "(Opus 5.5, D15)"), docs/DECISIONS.md:278:
+   > q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it
+3. D18 (index:32 active; L40 index:33 active), docs/DECISIONS.md:333:
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+
+### 5. One trap that bit this lane, and the check that prevents it
+- Trap (bit successor 12: NEEDB report disclosed it): a repo-wide grep printed LEAD-STATE / RESULTS lines on REFEREE's verdict for
+  a packet I had not reported. All three of my packets now have REFEREE reports on trunk (R-N5-FX, R-N5-NH/NH42, R-N5-DUAL, plus
+  scratch/dual_probe.py). Check: grep only the packet's own dir (docs/si/, docs/new/) and my docs/referee-2/; never grep docs/,
+  docs/agents/, notes/ or RESULTS repo-wide; list docs/referee by file name only; before opening any docs/referee/ file confirm my
+  R2 report on that packet is in `git log origin/claude/referee-2 -- docs/referee-2/`. Merge outputs list file names (seen:
+  dual_probe.py name only) — names are fine, contents are not.
+- Standing check (bit successors 9-12): `git fetch origin claude/referee-2 && git log HEAD..origin/claude/referee-2` before every push.sh.

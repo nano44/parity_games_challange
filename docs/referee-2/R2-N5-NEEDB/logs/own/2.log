@@ -1,0 +1,6 @@
+ANTI_W_checks: 12
+ANTI_Xi_checks: 12
+runs: 4
+states: 30
+RESULT OK violations=0
+docs/referee-2/R2-N5-1OA/logs/fl_n16_y2.pg exit 0

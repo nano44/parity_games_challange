@@ -1,0 +1,20 @@
+A0_checks: 1822
+FACTB_pairs: 11296
+KWS_stretches: 8
+PHASE_checked: 8
+RUNS_runs: 3
+RUN_case_a: 3
+phases: 8
+runs: 3
+states: 68
+states_checked: 68
+stretches: 8
+max_KW_per_stretch: 21
+max_RUN_ratio_case_a_x1000: 26
+max_T_per_phase: 21
+max_Trel_per_phase: 21
+max_f_per_phase: 0
+max_freeze_delay: 21
+max_stretches_per_phase: 1
+RESULT OK violations=0
+experiments/si/kw15/climb/best_long_1513.pg exit 0

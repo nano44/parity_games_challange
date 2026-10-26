@@ -1,0 +1,10 @@
+ANTI_W_checks: 12
+ANTI_W_exceptional_used: 4
+ANTI_W_with_exceptional_edges: 8
+ANTI_Xi_checks: 12
+ANTI_Xi_exceptional_used: 5
+ANTI_Xi_with_exceptional_edges: 9
+runs: 4
+states: 37
+RESULT OK violations=0
+experiments/red/xing/instances/obr_n32.pg exit 0

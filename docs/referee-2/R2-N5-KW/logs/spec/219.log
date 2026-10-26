@@ -1,0 +1,16 @@
+A0_checks: 42
+FACTB_pairs: 116
+KWS_stretches: 11
+PHASE_checked: 5
+phases: 5
+runs: 3
+states: 11
+states_checked: 11
+stretches: 11
+max_KW_per_stretch: 0
+max_T_per_phase: 3
+max_Trel_per_phase: 3
+max_f_per_phase: 0
+max_stretches_per_phase: 4
+RESULT OK violations=0
+experiments/n5-exhaustive/instances/canonA_1.pg exit 0

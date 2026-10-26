@@ -1,0 +1,10 @@
+ANTI_W_checks: 12
+ANTI_W_exceptional_used: 1
+ANTI_W_with_exceptional_edges: 1
+ANTI_Xi_checks: 12
+ANTI_Xi_exceptional_used: 4
+ANTI_Xi_with_exceptional_edges: 4
+runs: 4
+states: 36
+RESULT OK violations=0
+experiments/new/box38/instances/nebc_cex_n14.pg exit 0

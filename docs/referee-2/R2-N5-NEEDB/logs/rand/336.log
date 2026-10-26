@@ -1,0 +1,10 @@
+ANTI_W_checks: 7
+ANTI_W_exceptional_used: 5
+ANTI_W_with_exceptional_edges: 6
+ANTI_Xi_checks: 7
+ANTI_Xi_exceptional_used: 5
+ANTI_Xi_with_exceptional_edges: 6
+runs: 4
+states: 13
+RESULT OK violations=0
+experiments/new/box40/out/rhc_rhc_oneodd_c16_2_5.pg exit 0

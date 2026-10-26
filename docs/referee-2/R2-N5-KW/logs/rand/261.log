@@ -1,0 +1,20 @@
+A0_checks: 232
+FACTB_pairs: 1053
+KWS_stretches: 40
+PHASE_checked: 7
+RUNS_runs: 3
+RUN_case_a: 3
+phases: 7
+runs: 3
+states: 43
+states_checked: 43
+stretches: 40
+max_KW_per_stretch: 0
+max_RUN_ratio_case_a_x1000: 0
+max_T_per_phase: 17
+max_Trel_per_phase: 17
+max_f_per_phase: 0
+max_freeze_delay: 0
+max_stretches_per_phase: 17
+RESULT OK violations=0
+experiments/new/box25/instances/tr20_s4.pg exit 0

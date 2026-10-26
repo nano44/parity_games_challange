@@ -1,0 +1,34 @@
+climb FIT=kind3 seed=1541 n=16 iterations=77189 improvements=24 best_fitness=142
+BEST counters: {'AGREE states': 33, 'CWINT intervals': 4, 'FRZ state checks': 20, 'KIND runs': 4, 'cw>cth notH2 runs (any length)': 4, 'post-freeze runs': 5, 'runs': 5, 'runs cth>=cw H2 H1': 1, 'runs cw>cth notH2 H1': 4, 'traces': 3, 'transitions': 36}
+BEST maxima: {'max post-freeze length': 11, 'max kappa-freeze delay (t - k0)': 0, 'max kappa-freeze delay / (|Rbar|-1)': 0, 'max Xi-changes on R / run': 0, 'max W-changes on R / run': 0, 'max run length': 12, 'max cw>cth notH2 run length': 12, 'max KIND post-freeze length': 11, 'max kind changes / run': 0, 'max c_w switches / run': 0}
+TOTAL AGREE states                              1559675
+TOTAL CWINT intervals                           109387
+TOTAL FRZ state checks                          771693
+TOTAL KIND runs                                 109387
+TOTAL Xi-flat S4a transitions                   446
+TOTAL climb evaluations                         76989
+TOTAL cw>cth notH2 runs (any length)            130860
+TOTAL post-freeze runs                          246532
+TOTAL runs                                      298864
+TOTAL runs cth>=cw H2 H1                        134753
+TOTAL runs cth>=cw H2 notH1                     13
+TOTAL runs cth>=cw notH2 H1                     6
+TOTAL runs cth>=cw notH2 notH1                  32569
+TOTAL runs cw>cth H2 H1                         517
+TOTAL runs cw>cth H2 notH1                      71
+TOTAL runs cw>cth notH2 H1                      123589
+TOTAL runs cw>cth notH2 notH1                   7346
+TOTAL runs shorter than freeze                  52332
+TOTAL traces                                    230967
+TOTAL transitions                               1947566
+TOTALMAX max KIND post-freeze length            11
+TOTALMAX max W-changes on R / run               13
+TOTALMAX max Xi-changes on R / run              13
+TOTALMAX max c_w switches / run                 0
+TOTALMAX max cw>cth notH2 run length            12
+TOTALMAX max kappa-freeze delay (t - k0)        1
+TOTALMAX max kappa-freeze delay / (|Rbar|-1)    0.5
+TOTALMAX max kind changes / run                 0
+TOTALMAX max post-freeze length                 12
+TOTALMAX max run length                         13
+KWCLIMB PASS

@@ -1,0 +1,23 @@
+A0_checks: 59
+FACTB_pairs: 44
+FRZU_checks: 2
+KWS_stretches: 30
+LEN_runs_after_f0: 1
+PAR_states_cw_above_cth: 2
+PHASE_checked: 16
+RUNS_runs: 1
+RUN_case_a: 1
+phases: 16
+runs: 3
+states: 31
+states_checked: 31
+stretches: 30
+max_KW_per_stretch: 0
+max_RUN_ratio_case_a_x1000: 0
+max_T_per_phase: 15
+max_Trel_per_phase: 15
+max_f_per_phase: 2
+max_freeze_delay: 0
+max_stretches_per_phase: 15
+RESULT OK violations=0
+experiments/si/orlens/instances/thclimb_n12_s11.pg exit 0

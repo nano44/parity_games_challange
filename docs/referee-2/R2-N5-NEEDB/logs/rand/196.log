@@ -1,0 +1,6 @@
+ANTI_W_checks: 7
+ANTI_Xi_checks: 7
+runs: 4
+states: 13
+RESULT OK violations=0
+experiments/n5-exhaustive/instances/b5_n5_cyc4_0.pg exit 0

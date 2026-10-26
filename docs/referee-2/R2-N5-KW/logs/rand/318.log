@@ -1,0 +1,27 @@
+A0_checks: 742
+FACTB_pairs: 1792
+HPATH_checks: 508
+KWS_stretches: 34
+PAR_states_cw_above_cth: 26
+PHASE_checked: 17
+RECORD_cw_switches_cw_above: 1
+RECORD_kind_change_transitions_cw_above: 4
+RECORD_runs_cw_above_notH2: 5
+RUNS_runs: 6
+RUN_case_a: 1
+RUN_case_c: 5
+phases: 17
+runs: 3
+states: 48
+states_checked: 48
+stretches: 34
+max_KW_per_stretch: 4
+max_RUN_ratio_case_a_x1000: 1
+max_RUN_ratio_case_c_x1000: 0
+max_T_per_phase: 7
+max_Trel_per_phase: 7
+max_f_per_phase: 1
+max_freeze_delay: 3
+max_stretches_per_phase: 6
+RESULT OK violations=0
+experiments/new/box35/instances/fbrestart_cex_n24.pg exit 0

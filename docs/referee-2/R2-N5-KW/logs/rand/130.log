@@ -1,0 +1,22 @@
+A0_checks: 98
+FACTB_pairs: 386
+HPATH_checks: 14
+KWS_stretches: 9
+PAR_states_cw_above_cth: 1
+PHASE_checked: 9
+RUNS_runs: 1
+RUN_case_a: 1
+phases: 9
+runs: 3
+states: 10
+states_checked: 10
+stretches: 9
+max_KW_per_stretch: 1
+max_RUN_ratio_case_a_x1000: 5
+max_T_per_phase: 1
+max_Trel_per_phase: 1
+max_f_per_phase: 0
+max_freeze_delay: 1
+max_stretches_per_phase: 1
+RESULT OK violations=0
+docs/referee-2/R2-N5-SN/climb/seed2.pg exit 0

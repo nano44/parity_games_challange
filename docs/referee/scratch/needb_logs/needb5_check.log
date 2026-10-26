@@ -1,0 +1,9 @@
+== saved start pair | o 7 | states 5 | fallbacks [1]
+ k 1: (h) True, theta (5, 1024, 3), w (5, 0, 1), r 10, M -1, H2 at k+1 True, w_{k+1} = w_k True
+   gate (10, 1) level -1  y in R True  z in F True  kind (beta)
+   gate (10, 3) level -1  y in R True  z in F True  kind (beta)
+   gate (10, 8) level -1  y in R True  z in F True  kind (beta)
+   rank o 2, cycle node c = 5 rank 9
+ in-scope THR fallbacks with r >= 0 and M < 0: 1
+== SPEC S3 start | o 7 | states 4 | fallbacks [0]
+ in-scope THR fallbacks with r >= 0 and M < 0: 0

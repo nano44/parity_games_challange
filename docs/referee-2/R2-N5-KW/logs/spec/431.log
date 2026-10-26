@@ -1,0 +1,15 @@
+A0_checks: 2480
+KWS_stretches: 122
+PHASE_checked: 7
+phases: 7
+runs: 3
+states: 122
+states_checked: 122
+stretches: 122
+max_KW_per_stretch: 0
+max_T_per_phase: 44
+max_Trel_per_phase: 44
+max_f_per_phase: 0
+max_stretches_per_phase: 45
+RESULT OK violations=0
+experiments/red/xing/instances/x32_rand48.pg exit 0

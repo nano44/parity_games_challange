@@ -1,0 +1,21 @@
+A0_checks: 1212
+FACTB_pairs: 9291
+KWS_stretches: 77
+PAR_states_cw_above_cth: 5
+PHASE_checked: 18
+RUNS_runs: 4
+RUN_case_a: 4
+phases: 18
+runs: 3
+states: 81
+states_checked: 81
+stretches: 77
+max_KW_per_stretch: 1
+max_RUN_ratio_case_a_x1000: 0
+max_T_per_phase: 25
+max_Trel_per_phase: 25
+max_f_per_phase: 16
+max_freeze_delay: 0
+max_stretches_per_phase: 25
+RESULT OK violations=0
+docs/referee-2/R2-N5-LV/climb/best_lv_9402.pg exit 0

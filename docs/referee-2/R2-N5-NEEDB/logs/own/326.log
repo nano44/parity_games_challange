@@ -1,0 +1,8 @@
+ANTI_W_checks: 5
+ANTI_Xi_checks: 5
+ANTI_Xi_exceptional_used: 1
+ANTI_Xi_with_exceptional_edges: 1
+runs: 4
+states: 16
+RESULT OK violations=0
+experiments/new/box38/instances/norise_state_n8.pg exit 0

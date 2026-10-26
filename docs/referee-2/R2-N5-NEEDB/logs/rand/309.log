@@ -1,0 +1,10 @@
+ANTI_W_checks: 7
+ANTI_W_exceptional_used: 4
+ANTI_W_with_exceptional_edges: 6
+ANTI_Xi_checks: 7
+ANTI_Xi_exceptional_used: 4
+ANTI_Xi_with_exceptional_edges: 5
+runs: 4
+states: 21
+RESULT OK violations=0
+experiments/new/box31/instances/u1flat_best_n32.pg exit 0

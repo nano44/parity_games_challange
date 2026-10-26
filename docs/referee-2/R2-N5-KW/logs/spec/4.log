@@ -1,0 +1,22 @@
+A0_checks: 122
+FACTB_pairs: 360
+FRZU_checks: 5
+KWS_stretches: 13
+LEN_runs_after_f0: 1
+PHASE_checked: 7
+RUNS_runs: 6
+RUN_case_a: 6
+phases: 7
+runs: 3
+states: 25
+states_checked: 25
+stretches: 13
+max_KW_per_stretch: 1
+max_RUN_ratio_case_a_x1000: 27
+max_T_per_phase: 7
+max_Trel_per_phase: 7
+max_f_per_phase: 0
+max_freeze_delay: 1
+max_stretches_per_phase: 3
+RESULT OK violations=0
+docs/referee-2/R2-N5-1OA/logs/fl_n16_y4.pg exit 0

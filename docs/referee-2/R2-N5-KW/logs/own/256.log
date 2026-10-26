@@ -1,0 +1,20 @@
+A0_checks: 669
+FACTB_pairs: 6943
+KWS_stretches: 16
+PHASE_checked: 13
+RUNS_runs: 3
+RUN_case_a: 3
+phases: 13
+runs: 3
+states: 43
+states_checked: 43
+stretches: 16
+max_KW_per_stretch: 10
+max_RUN_ratio_case_a_x1000: 22
+max_T_per_phase: 10
+max_Trel_per_phase: 10
+max_f_per_phase: 0
+max_freeze_delay: 10
+max_stretches_per_phase: 2
+RESULT OK violations=0
+experiments/new/box25/instances/rtt24.pg exit 0

@@ -1,0 +1,12 @@
+ANTIW_blocked_edges: 1
+ANTI_W_checks: 4
+ANTI_Xi_checks: 4
+RECORD_M>=0_P_uses_R_to_F_gate: 1
+RECORD_inscope_THR_r>=0_M>=0: 1
+THR_inphase_fallbacks: 1
+THR_optima_tested: 1
+XG_R_to_F_optimal_edges: 1
+runs: 4
+states: 13
+RESULT OK violations=0
+experiments/new/box25/fbh_thr.pg exit 0

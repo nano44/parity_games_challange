@@ -1,0 +1,15 @@
+ANTIW_blocked_edges: 28
+ANTI_W_checks: 31
+ANTI_W_with_exceptional_edges: 1
+ANTI_Xi_checks: 31
+ANTI_Xi_exceptional_used: 1
+ANTI_Xi_with_exceptional_edges: 1
+RECORD_M>=0_P_uses_R_to_F_gate: 4
+RECORD_inscope_THR_r>=0_M>=0: 4
+THR_inphase_fallbacks: 4
+THR_optima_tested: 4
+XG_R_to_F_optimal_edges: 4
+runs: 4
+states: 112
+RESULT OK violations=0
+experiments/red/xing/instances/x31_lem_e24.pg exit 0

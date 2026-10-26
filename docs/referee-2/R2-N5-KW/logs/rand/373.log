@@ -1,0 +1,17 @@
+A0_checks: 692
+FACTB_pairs: 6860
+KWS_stretches: 95
+PAR_states_cw_above_cth: 2
+PHASE_checked: 23
+phases: 23
+runs: 3
+states: 95
+states_checked: 95
+stretches: 95
+max_KW_per_stretch: 0
+max_T_per_phase: 43
+max_Trel_per_phase: 43
+max_f_per_phase: 4
+max_stretches_per_phase: 44
+RESULT OK violations=0
+experiments/red/so/instances/rise_thin51_n40.pg exit 0

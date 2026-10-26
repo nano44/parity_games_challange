@@ -1,0 +1,17 @@
+ANTIW_blocked_edges: 242
+ANTI_W_checks: 22
+ANTI_Xi_checks: 22
+INTO_holds: 1
+INTO_states_r>L: 1
+OT_exit_checks: 3
+OT_post_rise_states: 3
+OT_rises: 3
+RECORD_M>=0_P_uses_R_to_F_gate: 19
+RECORD_inscope_THR_r>=0_M>=0: 19
+THR_inphase_fallbacks: 19
+THR_optima_tested: 19
+XG_R_to_F_optimal_edges: 43
+runs: 4
+states: 66
+RESULT OK violations=0
+experiments/si/lv13/logs/risedrop_cex_1401.pg exit 0

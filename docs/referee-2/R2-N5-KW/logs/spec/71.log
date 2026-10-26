@@ -1,0 +1,21 @@
+A0_checks: 124
+FACTB_pairs: 251
+KWS_stretches: 19
+PAR_states_cw_above_cth: 1
+PHASE_checked: 8
+RUNS_runs: 3
+RUN_case_a: 3
+phases: 8
+runs: 3
+states: 22
+states_checked: 22
+stretches: 19
+max_KW_per_stretch: 1
+max_RUN_ratio_case_a_x1000: 250
+max_T_per_phase: 6
+max_Trel_per_phase: 6
+max_f_per_phase: 6
+max_freeze_delay: 1
+max_stretches_per_phase: 7
+RESULT OK violations=0
+docs/referee-2/R2-N5-NEB/climb/best_cwo_9304.pg exit 0

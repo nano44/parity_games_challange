@@ -1,0 +1,21 @@
+A0_checks: 157
+FACTB_pairs: 374
+KWS_stretches: 22
+PAR_states_cw_above_cth: 1
+PHASE_checked: 9
+RUNS_runs: 1
+RUN_case_a: 1
+phases: 9
+runs: 3
+states: 24
+states_checked: 24
+stretches: 22
+max_KW_per_stretch: 0
+max_RUN_ratio_case_a_x1000: 0
+max_T_per_phase: 7
+max_Trel_per_phase: 5
+max_f_per_phase: 1
+max_freeze_delay: 0
+max_stretches_per_phase: 8
+RESULT OK violations=0
+experiments/red/so/instances/tog6b_n32.pg exit 0

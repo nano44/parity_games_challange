@@ -1,0 +1,18 @@
+A0_checks: 2001
+FACTB_pairs: 28880
+HPATH_checks: 28
+KWS_stretches: 90
+PAR_states_cw_above_cth: 69
+PHASE_checked: 19
+phases: 19
+runs: 3
+states: 90
+states_checked: 90
+stretches: 90
+max_KW_per_stretch: 0
+max_T_per_phase: 31
+max_Trel_per_phase: 31
+max_f_per_phase: 0
+max_stretches_per_phase: 32
+RESULT OK violations=0
+experiments/red/so/instances/post31_n48.pg exit 0

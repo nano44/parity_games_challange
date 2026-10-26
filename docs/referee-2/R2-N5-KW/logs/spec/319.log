@@ -1,0 +1,25 @@
+A0_checks: 298
+FACTB_pairs: 938
+FRZU_checks: 14
+HPATH_checks: 31
+KWS_stretches: 17
+LEN_runs_after_f0: 4
+PAR_states_cw_above_cth: 1
+PHASE_checked: 9
+RECORD_kind_change_transitions: 1
+RUNS_runs: 5
+RUN_case_a: 5
+phases: 9
+runs: 3
+states: 25
+states_checked: 25
+stretches: 17
+max_KW_per_stretch: 1
+max_RUN_ratio_case_a_x1000: 1
+max_T_per_phase: 6
+max_Trel_per_phase: 5
+max_f_per_phase: 0
+max_freeze_delay: 1
+max_stretches_per_phase: 4
+RESULT OK violations=0
+experiments/new/box35/instances/onerun_cex_n32.pg exit 0

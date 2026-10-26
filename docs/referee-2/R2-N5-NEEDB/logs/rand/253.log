@@ -1,0 +1,6 @@
+ANTI_W_checks: 2
+ANTI_Xi_checks: 2
+runs: 4
+states: 14
+RESULT OK violations=0
+experiments/new/box25/fbh_drop9.pg exit 0

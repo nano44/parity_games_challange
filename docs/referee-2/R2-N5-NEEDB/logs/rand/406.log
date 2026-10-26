@@ -1,0 +1,6 @@
+ANTI_W_checks: 53
+ANTI_Xi_checks: 53
+runs: 4
+states: 147
+RESULT OK violations=0
+experiments/red/xing/instances/kw_n48.pg exit 0

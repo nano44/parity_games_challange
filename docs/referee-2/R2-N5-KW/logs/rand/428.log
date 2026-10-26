@@ -1,0 +1,17 @@
+A0_checks: 288
+FACTB_pairs: 1306
+KWS_stretches: 43
+PAR_states_cw_above_cth: 1
+PHASE_checked: 5
+phases: 5
+runs: 3
+states: 43
+states_checked: 43
+stretches: 43
+max_KW_per_stretch: 0
+max_T_per_phase: 13
+max_Trel_per_phase: 13
+max_f_per_phase: 0
+max_stretches_per_phase: 14
+RESULT OK violations=0
+experiments/red/xing/instances/x32_rand16.pg exit 0

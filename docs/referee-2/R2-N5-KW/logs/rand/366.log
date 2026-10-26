@@ -1,0 +1,23 @@
+A0_checks: 188
+FACTB_pairs: 340
+FRZU_checks: 8
+KWS_stretches: 23
+LEN_runs_after_f0: 4
+PAR_states_cw_above_cth: 5
+PHASE_checked: 17
+RUNS_runs: 6
+RUN_case_a: 6
+phases: 17
+runs: 3
+states: 29
+states_checked: 29
+stretches: 23
+max_KW_per_stretch: 1
+max_RUN_ratio_case_a_x1000: 4
+max_T_per_phase: 5
+max_Trel_per_phase: 5
+max_f_per_phase: 1
+max_freeze_delay: 1
+max_stretches_per_phase: 4
+RESULT OK violations=0
+experiments/red/so/instances/nleq_cex_n48.pg exit 0

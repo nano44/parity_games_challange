@@ -1,0 +1,18 @@
+A0_checks: 91
+FACTB_pairs: 188
+HPATH_checks: 13
+KWS_stretches: 10
+PAR_states_cw_above_cth: 1
+PHASE_checked: 10
+phases: 10
+runs: 3
+states: 10
+states_checked: 10
+stretches: 10
+max_KW_per_stretch: 0
+max_T_per_phase: 0
+max_Trel_per_phase: 0
+max_f_per_phase: 0
+max_stretches_per_phase: 1
+RESULT OK violations=0
+experiments/red/kl/instances/r2join_h0E_n14.pg exit 0

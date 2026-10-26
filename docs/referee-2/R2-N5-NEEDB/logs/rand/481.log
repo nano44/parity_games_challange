@@ -1,0 +1,10 @@
+ANTI_W_checks: 30
+ANTI_W_exceptional_used: 2
+ANTI_W_with_exceptional_edges: 2
+ANTI_Xi_checks: 30
+ANTI_Xi_exceptional_used: 2
+ANTI_Xi_with_exceptional_edges: 2
+runs: 4
+states: 92
+RESULT OK violations=0
+experiments/si/riselast/instances/rl_c.pg exit 0

@@ -1,0 +1,17 @@
+A0_checks: 61
+FACTB_pairs: 24
+KWS_stretches: 23
+PAR_states_cw_above_cth: 3
+PHASE_checked: 12
+phases: 12
+runs: 3
+states: 23
+states_checked: 23
+stretches: 23
+max_KW_per_stretch: 0
+max_T_per_phase: 6
+max_Trel_per_phase: 6
+max_f_per_phase: 0
+max_stretches_per_phase: 7
+RESULT OK violations=0
+experiments/si/lv13/logs/best_1304.pg exit 0
