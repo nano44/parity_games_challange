@@ -1,0 +1,1 @@
+G_max=3 G_sum=39 UR_cut=14 UR_in=17 UR_in_index_max_minus_U=985 X_max=1 X_sum=1 cint=219 cint_len_max=15 cint_pure=170 gcv=331 gcv_DLEAVE=323 gcv_SWITCH=8 rho_max=5 runs=117 xt_LEFT=1 xv=1 xv_SRC_LEFT=1 xv_SRC_ND=1

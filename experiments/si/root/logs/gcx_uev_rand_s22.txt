@@ -1,0 +1,1 @@
+G_max=2 G_sum=92 UR_in=2 cint=1186 cint_len_max=6 cint_long=3 cint_migt=4 cint_migt_one_max=1 cint_pure=1093 gcv=423 gcv_DLEAVE=337 gcv_SWITCH=86 mig_per_vertex_max=1 rho_max=2 runs=1033
