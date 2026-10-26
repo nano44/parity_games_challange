@@ -1,1 +1,5 @@
 0s it 7 T 91 iters 96 n 40
+143s it 1771 T 92 iters 98 n 40
+381s it 3914 T 93 iters 99 n 40
+521s it 5781 T 97 iters 100 n 40
+664s it 7866 T 99 iters 102 n 40

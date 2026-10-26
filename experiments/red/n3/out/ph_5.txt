@@ -1,3 +1,10 @@
 0s it 3 T 78 iters 88 n 40
 37s it 626 T 79 iters 89 n 40
 85s it 1365 T 80 iters 92 n 40
+263s it 3510 T 82 iters 94 n 40
+328s it 4198 T 83 iters 95 n 40
+402s it 5026 T 84 iters 96 n 40
+530s it 6891 T 86 iters 98 n 40
+532s it 6921 T 88 iters 100 n 40
+545s it 7142 T 90 iters 102 n 40
+603s it 8029 T 92 iters 104 n 40
