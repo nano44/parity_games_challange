@@ -127,3 +127,32 @@ Own engine; every maximal fallback-free run S inside a phase of an N5 run, every
   Σ_{r ≤ L*} 2^r = 2^{L*+1} − 1 (one vertex per rank, signed by parity); say so, since a reader may add the two signs twice.
 
 DONE (REFEREE successor 13, (Opus 5.5, D15)).
+
+## §C. Comparison with REFEREE-2 (R2-N5-RUND, claude/referee-2 7a02a1f2, successor 16), written 2026-10-26T10:20Z by date -u
+- Opened only after my report was pushed (29846bca) and on the Lead's word (10:17Z). Read: verdict table, §1 premises, §2 proof notes, §3
+  notes, §4 side finding, §5 data tables.
+- Re-run on my engine (scratch/rund_probe.py helpers; own SPEC engine): REFEREE-2's UF-ONCE witness so_th_n32 (S3 start; 36 iterations,
+  0 fallbacks). States 1..22 have λ_W and τ constant. At L = −1, (24, 21) is forbidden at 1, 2, 3, 12, 13, 14, and Even vertex 24
+  (succ {0, 21}) makes three unforbid-switches into it: 4 → 5, 15 → 16, 21 → 22 ✓ (as stated).
+| item | REFEREE | REFEREE-2 | relation |
+| --- | --- | --- | --- |
+| all 14 signed items (§2-§6) | SIGNED, no gap | SIGN, no gap | same |
+| Fact FZ's premises | XW / (VJ) = 1E-N3 (σ̄_k attains the pointwise minimum in G_{σ_k}), totality of ⊴, (Cstrict), definition of D_k; nothing else (RUND-N2) | P1 only (its N-RUND-1 form of 1E-N3) | same: my XW / (VJ) premise IS its P1; neither of us finds a P2 use in FZ (FZ reads no S4a step) |
+| N-RUND-1: §2-§5 (and UNF's neighbours) rest on 1E-N3 in form P2 (S4a's σ_{k+1} is the arena optimum), through WM-G = (MON), (F1) on H_k, PIECE_D's switch-best; OFFSET (a) on P1 through (SG) / R15 (a) | used implicitly, through the landed WM-G (R62 (d), whose landing note carries 1E-N3) and R18 (d) S (c); not stated as a premise of §2-§5 | REFEREE-2 | found by REFEREE-2 as an explicit premise note; ACCEPTED |
+| the R19 (d) (SG) "quote" not verbatim; the fact used is R15 (a) | RUND-N1 | N-RUND-2 | same |
+| N-RUND-3: SPLIT-RED's |S| counts transitions; PIECE_D (b)'s m | read that way (my §4) but not flagged | REFEREE-2 | found by REFEREE-2; ACCEPTED (wording) |
+| N-RUND-4: TWIN-GAP (ii) "at states ≥ k_0 + n − 1" = transitions whose source is ≥ k_0 + n − 1 | read that way (my probe counts by source) but not flagged | REFEREE-2 | found by REFEREE-2; ACCEPTED (wording) |
+| RUND-N4: TWIN-GAP (ii)'s bound is the WIDTH of the low-part range, Σ_{r ≤ L*} 2^r | mine | — | found by REFEREE only (wording) |
+| RUND-N3: PIECE_D (b) applies R17 (c) to switch-best started mid-run (Lemma P's base holds at any start) | mine | — | found by REFEREE only (wording) |
+| N-RUND-5: U(S) depends on the level L (U_L) | data remark only (my |U| is per level) | REFEREE-2 | found by REFEREE-2; ACCEPTED (wording) |
+| N-RUND-6: thin spots (bounds slack in data) | my §7 "Thin" bullets (CR-REL hypothesis 3-5 times; P^c_sch only on small games) | REFEREE-2 (TWIN-GAP (ii) slack; others) | same in substance |
+| N-RUND-7: §4 remarks ("forbidden at −1 ⇒ split"; the withdrawn READING unused) | checked (my §4) | checked | same |
+| side finding: CONJECTURE UF-ONCE (§7, not signed) FALSE | not tested (my probe counts |U(S)|, not per-vertex events) | REFEREE-2 (so_th_n32; phase2_pk48) | found by REFEREE-2; so_th_n32 REPRODUCED on my engine |
+| Data | 0 failures; long runs, lib41 (SUFFIX=0), 6,000 random; MUT=1/2 controls fail | 0 violations; packet instances, climbs, lib41, its 503 files, random k = 2..4; mutations fail | same |
+- No disagreement. Joint gap map: EMPTY for the signed items. Open outside them (lane, §7): UF-ONCE is FALSE, so §7's route "|U(S)| ≤ n_E via
+  UF-ONCE" needs another argument; CHARGE-U itself holds on the witnesses (REFEREE-2). I could not confirm this with my
+  probe: it tests (ii) on the WHOLE maximal fallback-free run and skips the §5 / §6 checks where λ_W changes inside it. On so_th_n32 that
+  skips the run (scratch/rund_logs/so_th_n32.txt: MAX_U 0, no CHARGE checks). REFEREE-2 cuts runs at λ_W changes.
+- Coverage limit of MY data (not of the proofs): §5 / §6 items were checked only on maximal fallback-free runs with λ_W constant
+  throughout (and their suffixes). Runs that are sub-runs between λ_W changes were not tested by me; REFEREE-2's data covers them.
+- Lesson (mine): a conjecture listed as "not to sign" can still be tested cheaply with the same probe; I did not, REFEREE-2 did.
