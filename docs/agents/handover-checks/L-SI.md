@@ -9,9 +9,13 @@ Its handover is notes/L-SI.md "## HANDOVER (successor 18, box 22)" (l-si 196c7e8
   - Before merging: `git rev-list --left-right --count HEAD...trunk` → 1 ahead / 72 behind; merge-base 2201aa2d (the P-N5-DEPTH packet commit).
   - `git merge --no-ff` of trunk d5ad0929 (no rebase) → merge commit 33b7f51d; then 2 ahead / 0 behind. This file is the next commit;
     the pushed SHA goes to the Lead.
+  - My first push (0db6b612) was rejected: successor 18 pushed l-si aa6061d1 (P-N5-DEPTH-add packet, handover update) after my fetch.
+    Fetched again and `git merge --no-ff origin/claude/l-si` (no rebase); this section and §2 updated for it.
 
 ## 2. Open work and the next step of each (nothing running: fresh container; Oink in §6)
-Frozen (`sha1sum`, equal to the handover's values; never edited): docs/si/P-N5-DEPTH-box22.md 549c7fb72d767293b6bf2ae5bbbb8809084df707
+Frozen (`sha1sum`, equal to the handover's values; never edited): docs/si/P-N5-DEPTH-add-box22.md 4d51aa5ea4e1a1d145da4cb825deab75198abae7
+(CONDITIONAL companion: GATE-PUSH, PURE-LEN, MONO-REF + E-ONEWAY; reviewed after its premises have both signatures; repairs in a NEW file
+docs/si/P-N5-DEPTH-add-fixes-box22.md); docs/si/P-N5-DEPTH-box22.md 549c7fb72d767293b6bf2ae5bbbb8809084df707
 (pinned on trunk d5ad0929); docs/si/P-N5-GCX-box21.md 5a91bebb…; docs/si/P-N5-ROOT-box20.md d3788bc0…; docs/si/P-N5-ROOT-add-box20.md af1c7ad4…;
 L-NEW's docs/new/P-N5-OFFMONO-box49.md d9705ac6… (read only). `ls docs/si | grep -E 'ROOT-fixes|GCX-fixes|DEPTH-fixes'` → none.
 Referee reports at trunk: docs/referee/R-N5-ROOT.md, R-N5-OFFMONO.md, R-N5-OFFMONO-add.md; docs/referee-2/ has none for ROOT / GCX / DEPTH / OFFMONO.
@@ -20,6 +24,8 @@ docs/new/N5-ALTLIT-box49.md (L-NEW 29's full-text read of 1106.0778 / 1008.0530)
   fallback-free run where σ̄ changes at a gate of class c with D ∩ U_c or a D-direct offset changing; target ≤ poly(n, k). (G1) data: 444 of 1,924
   global C-intervals on lib41 contain σ̄ changes, up to 21 in one (so_sorl_n32), lengths ≤ n − 3. L-RED 22: EXIT_x ≤ phase length, so a fixed-k kill
   needs ω(n) phases (records ≈ 2.3-3.3n).
+  Order per Lead 18:32Z (handover queue): (G1) + ALTERNATION, then gap (iv), then repairs. Carried in: L-NEW 29 relay (N5-KPOLY §12, l-new
+  278616c6): offset rises sit at DIRECT levels (p = c) in almost all data, nep76 the exception; FRZ_c DEAD (so_th_n32, 31 late M-changes at S3).
   Next step: re-read N5-EXIT §8-§9 and GCILEN §6-§7; instrument so_sorl_n32 (staticdepth.py GCI=1) to classify each in-interval σ̄ change by the
   value push that drives it (GATE-PUSH / PUSH form) and test a charging of each Odd gate change to a fresh event (a strict rise of an offset
   off(p; m) that cannot recur before a cut, or a vertex first entering D / U_c); a potential if the charging holds on lib41 and the long
@@ -29,7 +35,7 @@ docs/new/N5-ALTLIT-box49.md (L-NEW 29's full-text read of 1106.0778 / 1008.0530)
   σ̄ changes and see whether STATIC-DEPTH's d*-argument survives on the pieces.
 - (3) STANDBY: referee repairs in NEW files, in order P-N5-ROOT + addendum (docs/si/P-N5-ROOT-fixes-box20.md; REFEREE's R-N5-ROOT exists,
   REFEREE-2's not yet), then P-N5-GCX (docs/si/P-N5-GCX-fixes-box21.md; record UL_C DEAD with R91 reader_L10/20/40 and C-ONCE_X DEAD with R93
-  cxmig_k4_n54 a3893ea4, k8_n82 4fa6ee8f, k16_n138 9f29476d, l-red 18624c0b), then P-N5-DEPTH (docs/si/P-N5-DEPTH-fixes-box22.md); each when
+  cxmig_k4_n54 a3893ea4, k8_n82 4fa6ee8f, k16_n138 9f29476d, l-red 18624c0b), then P-N5-DEPTH (docs/si/P-N5-DEPTH-fixes-box22.md) and P-N5-DEPTH-add (docs/si/P-N5-DEPTH-add-fixes-box22.md); each when
   both reports and §Cs exist and the Lead routes it; quotes via experiments/si/rund/quotecheck.py, pinned in check.sh with a --mut control.
 
 ## 3. docs/GAPS.md rows I own
