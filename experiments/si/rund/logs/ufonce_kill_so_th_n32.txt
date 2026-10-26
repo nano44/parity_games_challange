@@ -1,0 +1,40 @@
+RUN ../red/so/instances/so_th_n32.pg k0=1 len=21 edges_forbidden=4 persistent=0
+  EDGE (13, 2) first=0 last=2 count=3 
+  EDGE (7, 26) first=0 last=3 count=4 
+  EDGE (30, 11) first=0 last=3 count=4 
+  EDGE (24, 21) first=0 last=13 count=6 
+  U [(4, (13, 2)), (4, (24, 21)), (9, (30, 11)), (11, (7, 26)), (15, (24, 21)), (21, (24, 21))]
+  VERTEX 0 {'changes': 4, 'window': 4} charged_edges=[]
+  VERTEX 1 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 2 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 3 {'changes': 5, 'window': 5} charged_edges=[]
+  VERTEX 4 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 6 {'changes': 5, 'window': 5} charged_edges=[]
+  VERTEX 7 {'changes': 4, 'window': 4} charged_edges=[]
+  VERTEX 8 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 9 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 10 {'changes': 5, 'window': 5} charged_edges=[]
+  VERTEX 11 {'changes': 3, 'window': 3} charged_edges=[]
+  VERTEX 12 {'changes': 6, 'window': 6} charged_edges=[]
+  VERTEX 13 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 14 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 15 {'changes': 4, 'window': 4} charged_edges=[]
+  VERTEX 16 {'changes': 4, 'window': 4} charged_edges=[]
+  VERTEX 18 {'changes': 5, 'window': 5} charged_edges=[]
+  VERTEX 19 {'changes': 3, 'window': 3} charged_edges=[]
+  VERTEX 20 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 21 {'changes': 7, 'window': 7} charged_edges=[]
+  VERTEX 22 {'changes': 4, 'window': 4} charged_edges=[]
+  VERTEX 24 {'changes': 9, 'window': 9} charged_edges=[]
+  VERTEX 25 {'changes': 3, 'window': 3} charged_edges=[]
+  VERTEX 26 {'changes': 3, 'window': 3} charged_edges=[]
+  VERTEX 27 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 28 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 29 {'changes': 4, 'window': 4} charged_edges=[]
+  VERTEX 30 {'changes': 2, 'window': 2} charged_edges=[]
+  VERTEX 31 {'changes': 1, 'window': 1} charged_edges=[]
+RUN ../red/so/instances/so_th_n32.pg k0=35 len=1 edges_forbidden=0 persistent=0
+  U []
+L=-1 MUT=0 U=6 UF_ONCE_V=1 changes=91 forb_gate_a_in_F=17 forbidden_edges=4 forbidden_pairs=17 gen_clean=2567 gen_clean_content=2335 max_KF=7 max_U_per_vertex=3 max_U_run=6 max_changes_per_vertex=9 max_charged_edges_per_vertex=0 max_charged_per_vertex=0 max_forb_states_per_edge=6 max_last_forb_rel=13 max_runlen=21 max_span=13 max_span_minus_n=0 offup_checked=17 persistent_edges=0 runs=2 states=24 switches=60 window=91
+VIOLATION ('UF_ONCE', '../red/so/instances/so_th_n32.pg', 1, [(4, (13, 2)), (4, (24, 21)), (9, (30, 11)), (11, (7, 26)), (15, (24, 21)), (21, (24, 21))])
+SCHED FAIL
