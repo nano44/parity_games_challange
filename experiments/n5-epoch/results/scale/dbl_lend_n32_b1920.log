@@ -16,3 +16,11 @@ BEST step 9154 fit (70, 3) t 948s
 BEST step 9274 fit (71, 3) t 958s
 BEST step 9907 fit (72, 3) t 1023s
 BEST step 9993 fit (73, 3) t 1032s
+BEST step 10956 fit (74, 3) t 1140s
+BEST step 11041 fit (75, 3) t 1151s
+BEST step 12429 fit (76, 3) t 1354s
+BEST step 12800 fit (77, 3) t 1404s
+BEST step 14004 fit (78, 3) t 1544s
+BEST step 14232 fit (81, 3) t 1570s
+BEST step 15163 fit (82, 3) t 1684s
+END steps 17005 best (82, 3) n 32 -> results/scale/dbl_lend_n32_b1920.pg

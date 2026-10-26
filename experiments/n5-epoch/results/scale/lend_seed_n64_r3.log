@@ -1,0 +1,14 @@
+START fit (55, 3) n 64
+BEST step 285 fit (56, 3) t 54s
+BEST step 653 fit (57, 3) t 133s
+BEST step 660 fit (58, 3) t 135s
+BEST step 2393 fit (59, 3) t 572s
+BEST step 2520 fit (60, 3) t 603s
+BEST step 2637 fit (61, 3) t 630s
+BEST step 2765 fit (62, 3) t 664s
+BEST step 2927 fit (63, 3) t 698s
+BEST step 3149 fit (64, 3) t 754s
+BEST step 3323 fit (65, 3) t 803s
+BEST step 3623 fit (67, 3) t 889s
+BEST step 3627 fit (68, 3) t 891s
+END steps 3861 best (68, 3) n 64 -> results/scale/lend_seed_n64_r3.pg

@@ -1,0 +1,5 @@
+START fit (55, 3) n 32
+BEST step 493 fit (56, 3) t 43s
+BEST step 499 fit (57, 3) t 44s
+BEST step 2667 fit (58, 3) t 224s
+END steps 2865 best (58, 3) n 32 -> results/scale/dbl_lend_n32_b240.pg
