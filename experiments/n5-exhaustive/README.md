@@ -320,3 +320,11 @@ Labels (L40): DATA. Every scored climb run is checked by the named checkers; a v
   | instances/frz3_n24 (pinned start) | 5a26b3e3... | 25 | 14 | yes |
   L-SI's gdnc.py agrees on all three (frz2: FRZ_n 0 under its 0-based base). Not yet tested by any freeze: a run of >= n + 1 states with
   not-(NC) states (H3's new regime).
+- Box 9b end (2026-10-26 06:4xZ): FIT=h3n climbs (only not-(NC) states score; 40,000 steps from tcwult2_against_n8 and tcw_against_n12)
+  plateau at an (h3_D) run of 6 states containing a not-(NC) state (n 8 / 12; n + 1 needed): FRZ-U_H3's not-(NC) case stays VACUOUS.
+  DATA (6,000 random C^kO runs, k 2-4, n 5-16): at 530 (h3_D) and not-(NC) states with a successor, tau changes at the next transition in
+  422 (80%), a fallback follows in 31, and the run stays in the same phase in only 36 (7%). READING (not proved): a gate on its own cycle
+  with sigmabar(u) != tau(u) is usually switched by Odd at once, ending the phase; this is why long freeze runs through not-(NC) states
+  are hard to find. FIT=h3 climb (seed 601, from frz3_n24): only (NC) and not (h_D) states (22 in 2 checked runs), 0 violations.
+  ABS-L climbs done (4 x 15,000 steps): 0 violations; 1,268,127 ABS-L intervals, CLS1 1,351,034 checks (1,268,127 case r > L), CLU
+  1,753,459; 0 theta-changes above L, so ABS-L's absorption count is always 0 (vacuous in substance).
