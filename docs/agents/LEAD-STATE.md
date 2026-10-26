@@ -1563,3 +1563,12 @@
 - 01:10Z: Merged referee 4298dae9: R-N5-1O. 1O-POLY, BIT and 1O-TIME SIGNED; OUT SIGNED WITH GAP OUT-1 (one-word repair; conclusion unchanged); notes 1O-N1, 1O-N2, BIT-N1. The R32/R33 start-freeness pass is done line by line (R-N5-START Addendum 1). Waiting on REFEREE-2 13's 1O report.
 - 01:16Z: Merged referee-2 04c2d708: R2-N5-1O, all SIGN, no gap. N-1O-1 = OUT-1 (≥ 0); N-1O-2: O(n¹⁷); N-1O-3: per-run cost; N-1O-4: R21 (a) holds on every game (R18 (d) S (a)); N-1O-5: R32/R33 start-free line by line; N-1O-6. P-N5-1O is now SIGNED BY BOTH REFEREES; §Cs requested.
 - Merged l-new 205c9ed7. PINNED at this commit: packet P-N5-GD, docs/new/P-N5-GD-box43.md (L-NEW 23): G_D (a)-(c2), F1°_D, Wo_D, every game. Queued for both referees after FX, NH42 and DUAL.
+- 01:21Z: Pre-drafted docs/agents/R51-draft.md (P-N5-1O). Placeholders: FIXES, RSC, R2SC, CSUM. To CHECKER C60 after both §Cs and the 1O fixes file.
+- 01:27Z: Merged referee e785b8e1 (§C 1O) and referee-2 3312144c (§C 1O): identical; OUT-1 = N-1O-1 closed by the repair; the R32/R33/R34 chain is read in full jointly. GO to L-SI to freeze the 1O fixes file. R51 draft: §Cs filled.
+- 01:33Z: Merged l-si 90f93566 (P-N5-1O fixes FROZEN, 647deab5). R51 draft complete; to CHECKER C60.
+- 2026-10-26 01:48Z: Read 18 notifications.
+  - Merged checker 17c5ff9b: C60 FAIL on R51 with E-1 (R34 attribution) and E-2 (honest limits), plus GAPS advice. R51 revised with E-1, E-2 and N-1..N-4 (sha1 175947e8).
+  - Merged referee-2: FX 83a3e8c7 (all SIGN; (b) now unconditional; N-FX-1, 2), NH42 d2142087 (all SIGN; N-NH42-1..3), DUAL 73c2b4a1 (all SIGN; N-DUAL-1 = DUAL-1; N-DUAL-3, a READING: 𝒞^1E O(n¹⁷) via MIRROR + 1O). §Cs needed from both referees on FX, NH42 and DUAL.
+  - Merged l-si: itergrowth DATA (max ITER 115 at n 48, ~linear), N5-FRONTIER-box15 (CR-D′), handover 20d3a875. L-SI 10 is at handover.
+  - Merged l-new 7999d0b1 / f5200580: Δ-RT-F FALSE (rtf_cex_inj.pg, n 11); PIECE_D on |D| = 1; the Δ-RT fallback side reduces to a frontier fallbacks-per-phase count.
+  - Merged l-comp 758d02ef: box 8 complete, 0 violations through n 5; CLS1/FBL/CLU/WK vacuous.
