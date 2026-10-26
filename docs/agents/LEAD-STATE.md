@@ -1591,3 +1591,4 @@
   - L-SI 11: FX fixes, then P-N5-1E.
   - L-NEW 23: NH42 and DUAL fixes, then ρ-POLY.
   - L-COMP: box 9 climbs plus n5b on the frontier instances.
+- 02:28Z: Pre-drafted docs/agents/R52-draft.md (P-N5-FX; pin 02ad3f88). It waits for L-SI 11's FX fixes file.
