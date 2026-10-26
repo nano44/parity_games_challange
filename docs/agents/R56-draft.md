@@ -1,4 +1,4 @@
-# Draft RESULTS R56 (Lead, 2026-10-26 03:54Z by date -u; both §Cs filled; fixes file filled 04:00Z) — to CHECKER C65
+# Draft RESULTS R56 (Lead, 2026-10-26 03:54Z by date -u; both §Cs filled; fixes file filled 04:00Z) (rev. 2026-10-26 04:15Z: C65 N-1, N-2) — to CHECKER C65 — LANDED in RESULTS Results 2026-10-26 04:15Z (CHECKER C65 b911ecce PASS), after R55
 
 ### R56 [refereed-only] N5 on EVERY game: in-phase fallbacks per phase are at most 1 + (n − 1)(2 + ρ), ρ := the Ξ-changes at Odd choice vertices in the phase, and at most 1 + (n − 1) + (n − 1)·N_late counting only Q-runs that hold a late fallback (Theorem FB-RED, both forms, signed as a REDUCTION in ρ), with the set-form κ lemmas of RESULTS R48 and the terminal-value freeze (Lemma TV) (2026-10-26) — partial step-4 lemmas for N5 beyond one Odd choice vertex (not M3, not a step-4 pass, not a TARGET.md claim; ρ is not bounded, CONJECTURE ρ-POLY OPEN; G-N5-TIME stays open for general games), CHECKER PASS (docs/checker/C65.md, checker PENDING)
 - Object (packet P-N5-FBRED, added at l-new 3732ab55, pinned trunk c3f6f2bf, unchanged during review): docs/new/P-N5-FBRED-box44.md, sha1
@@ -29,8 +29,10 @@
   (d) κ-Y-FORM_D (per q ∈ Q ∩ U_c, q ≠ c, at a state t where q lies on no honest cycle): κ_t(q) = κwt_c(q) + min over y ∈ Y^q_t of κ_t(y),
       with Y^q_t := {y ∈ succ(q) ∩ U_c : y's honest play at t avoids q}, a definition the packet gives only in its not-to-sign §4 table and
       which is read into the signed text (N-FBRED-2, REFEREE-2; accepted by REFEREE). The "≤" half uses R18 (d) Lemma S (a) on every game.
-  (e) EXIT-SWITCH_D, FREEZE-EXIT_D (conservative indices: if k = g_j with j ≥ |U_c| and k is the i-th fallback of its Q_c-run with
-      i ≥ |U_c|, then S_c = ∅) and CN-ONLY_D (a fallback with S = ∅ is the last transition of its phase; at most one per phase).
+  (e) EXIT-SWITCH_D (at an in-phase fallback k → k+1 with S_c ≠ ∅, some u ∈ S_c has: the honest play at k from x*_u visits T ∩ U_c
+      before it visits u; for the first such vertex e, p_u := u · (that play up to e) is a simple path of G_c (e = c) or G_c^e (e ∈ Q),
+      and κ_k(x*_u) = κwt_c(p_u ∖ {u, e}) + κ_k(e)), FREEZE-EXIT_D (conservative indices: if k = g_j with j ≥ |U_c| and k is the i-th
+      fallback of its Q_c-run with i ≥ |U_c|, then S_c = ∅) and CN-ONLY_D (a fallback with S = ∅ is the last transition of its phase; at most one per phase).
   (f) Theorem FB-RED: for every phase of N5 on any game, f ≤ 1 + (n − 1) + (n − 1)(1 + ρ) = 1 + (n − 1)(2 + ρ). Late form: f ≤ 1 + (n − 1)
       + (n − 1)·N_late, with N_late := the Q-runs of the phase holding a fallback g_j, j ≥ n, and N_late ≤ 1 + ρ_late (ρ_late := the
       Ξ-changes at Odd choice vertices at transitions after g_{n−1}). Both SIGNED AS A REDUCTION in ρ: polynomial in n only given ρ.
@@ -41,7 +43,7 @@
   §5.1: short late Q-runs and terminal path-sum values); the data. On 𝒞^1O, RESULTS R48 (FB-POLY) stays the unconditional form.
 - Honest limits: (i) A REDUCTION: ρ per phase is not bounded (max ρ 218 in one phase, tcL_N10, n 350, REFEREE). (ii) Vacuity
   (FBRED-N2 = N-FBRED-4, both referees): no phase in any sample or climb of either referee or the lane reaches n in-phase fallbacks (max
-  33 at n 48 on 𝒞^1O, 17 at n 32 on the frontier, fb17_n32; REFEREE-2's climbs on f − n reach −4), so FREEZE-EXIT_D's hypothesis, the
+  37 at n 48 on 𝒞^1O, dirty_a_best in REFEREE-2's 503 files, 33 in lib41; 17 at n 32 on the frontier, fb17_n32; REFEREE-2's climbs on f − n reach −4), so FREEZE-EXIT_D's hypothesis, the
   third bullet of FB-RED, the late form's N_late and Lemma TV's hypothesis are never met in data: they rest on their proofs. (iii)
   REFEREE successor 12 re-derived every port against FBP §0.3-§4 except κ-HAT-FREEZE (b), (c) in detail, where it accepts successor 11's
   reading (R-N5-FBRED §C C.1). (iv) The constant n − 1 (not FBP's |U| − 2) comes from FREEZE-EXIT_D's conservative indices.
