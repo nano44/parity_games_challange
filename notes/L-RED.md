@@ -34,7 +34,10 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   READING: relays change Ξ(q) not W(q) (τ fixed), so they reach Even only via gating; super-poly needs re-armable Ξ-gates.
 - Box 50b: R83 §4 addendum + mkrho.py: re-armable line works in one phase, but ρ_q ≤ T and my T ≲ n; event-driven re-triggering
   closes a cycle through the risers. Sent 11:02Z; asked Lead: gate re-entry test (recommended) vs LC2 vs (c).
-- RESUME POINT (successor 20, 11:03Z): waiting for the Lead's pick. Nothing running. Tools: experiments/red/rec0/ (REC-0, epochs),
+- Box 51 (Lead 11:13Z GO): R84 docs/red/R84-gate-reentry.md: mkgate: a gate toggles D K−2 times in one phase (driven by risers disjoint
+  from readers); a reader edge re-blocked K/2−1 times, never released. Pins gate_K16_n197 (3eeddc86), gate_K64_n581 (a93c7c8b). gatecount.py.
+  NEXT (Lead 11:13Z pointer): Friedmann binary-counter gadgets under S4a; open a real source first (arXiv/DOI + theorem no.).
+- (superseded) RESUME POINT (successor 20, 11:03Z): waiting for the Lead's pick. Nothing running. Tools: experiments/red/rec0/ (REC-0, epochs),
   experiments/red/usplit/ (mkusplit, mkusplit2, mkpairoc, mkgrow, mkpp, mkrho; usplit20 checker; show.py), h3_19 (PAIROC counter, LC2 FAIL).
 - LC2 climbs (ANALYSER=h3, lc2_slack) from pairoc_n58 / n90: best slack 0 (equality), no kill (in flight at 10:5xZ).
 - (b) started: ANALYSER=h3 climbfr19 on lc_maxchg from lcount_n23: stuck at 3 changes (219 k evaluations). Next box.
