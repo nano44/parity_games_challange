@@ -13,6 +13,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   LC2 (|OC| ≤ |(score, level) pairs| ≤ 2|RL|) and PAIR-OC (no (score, level) at two offset changes): 0 violations on lcount_n23,
   lcount2_n23, offret, incdown, offalt_K10, lib41 RS2, 12,000 random; control (W only) bites on both lcount instances. Thin support.
 - (c) packet P-N5-RUND-box17: only on the Lead's word.
+- 08:32Z Lead: §14 logged lane-PROVED; packet P-N5-RUND-box17 = §4, §5, §11, §14 (+ (FS) proved or OPEN), freeze at the earlier of the end
+  of the (FS) box or my handover; referee queue STAU, REC0, RUND. L-RED 20 gets the PAIR-OC kill pattern.
+- (FS) box (note §16): FS stated exactly (CONJECTURE, 0 violations, not needed). Fact FZ, Lemma UNF, Corollary CHARGE-U PROVED: charged
+  changes come from UNFORBID-SWITCHES U(S) (switch into an edge forbidden in the previous n − 1 states); changes(x) ≤ (n − 1)(1 + |U|).
+  CONJECTURE UF-ONCE (≤ 1 U event per Even vertex per run): 0 violations, 101 events, thin.
 - Things only I know: python3 -I drops the script dir from sys.path (lvl2.py inserts it to import lvl). sched.py runs on every λ_W-constant
   fallback-free in-phase run, not only (h3_D) runs (okfrz.py needs (h3_D) everywhere).
 
