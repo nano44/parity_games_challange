@@ -256,3 +256,23 @@ AGAINST_W ('experiments/si/fb2o/instances/tcwult2_against_n8.pg', 0, 1, 0, 4, -1
   these events (pinned in experiments/si/check.sh). CHARGE, FZ, UNF, OFFUP: 0 violations on both.
 - Lane fault: `sched.py --list` defaults to KMIN = 2, so the lane's 0 never covered a 𝒞^1O game (REFEREE-2: 33 of its 34 failures are 𝒞^1O).
 - Unaffected: CHARGE-U (PROVED). Closed route: |U(S)| ≤ n_E.
+
+## DEAD box 18b (L-RED 20 kill, R80, l-red 64182fe1; reproduced by L-SI successor 14, 2026-10-26T10:5xZ by date -u): CONJECTURE U-SPLIT
+- Statement killed (lane note §17, not in any packet): every U event (k′, (y, z)) of a run raises y's offset or straddles a stretch_D
+  boundary (D, or a gate's (Ξ, W) value, differs inside [f, k + 1]).
+- Obstruction: §18's scenario, built. z's unblocking switch moves z from gate u (offset > 0) to a zero-offset gate u0, and y's U event goes
+  offset 0 → 0. D, R_D and every gate value stay constant.
+- Instance: experiments/si/rund/instances/usplit_rd_s3_n27.pg (copy of L-RED's experiments/red/usplit/instances/usplit_rd_s3_n27.pg, sha1
+  1e9ca56d75237422ae3a3c705c56a36b139cb21f; n 27, 𝒞^2O, SPEC S3 start, no start file). `NOGEN=1 USTRUCT=1 python3 -I
+  experiments/si/rund/sched.py --one <pg> -v` prints `NB k=1 f=0 y=26 z=25 a_f=20 a_k=20 off_y 0->0 …` and the single violation
+  `VIOLATION ('U_OTHER', …, 0, 1, (26, 25))` (pinned). L-RED: 4 iterations, 0 fallbacks, Oink zlk OK. L-RED's earlier usplit_s3_n16 / n14 /
+  n23 kill only §17's BD text, not the full STRETCH_D (R_D changes there; R80 §0a).
+- Effect: the reduction "|U| ≤ Σ N_y^↑ + n·n_E·B(S)" (§17) is closed. CHARGE-U is unaffected.
+
+## DEAD box 18c (L-RED 20 kill, R81, l-red 64182fe1; reproduced by L-SI successor 14, 2026-10-26T10:5xZ by date -u): CONJECTURE PAIR-OC
+- Statement killed (note §15; packet §7): no (score, level) pair rises at two offset changes of one vertex in one stretch_D segment.
+- Obstruction: the kill pattern the lane gave L-RED. One score rises at a, b, a (b > a) at three offset changes.
+- Instance: experiments/si/rund/instances/pairoc_n58.pg (copy of L-RED's, sha1 4824c73cd544c12533a894d1ace902da6c73de3d) +
+  pairoc_n58.start (sha1 2f5630e98f5484e5c901ad45ae1bd752a5a7a4a8). `python3 -I experiments/si/rund/lvl2.py --one <pg> <start>` prints
+  `VIOLATION ('PAIROC', …, 0, 3, 57, [(0, 47, 52, True), (1, 48, 51, True), (2, 47, 49, True)])`: v = 57, W rises at 47, 48, 47 (pinned).
+- Survivor: CONJECTURE LC2 holds there (|OC| 3 ≤ |SL| 5: SL = {(W, 47), (W, 48), (X, 49), (X, 51), (X, 52)}; no LC2 violation, pinned).

@@ -13,6 +13,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   changed, or e's play toggling through q); Corollary SELF-FREE (m_c = 1: all events ROUTE; the structural reason 𝒞^1O closes);
   ρ ≤ |Q|·T_exit. Obstruction (READING + DATA): the re-thaw loop ρT ≤ T_exit ≤ (n − 1)(ρT + 1), closed by cycles in the phase's relay
   graph (frz40 phase@44: 11 ↔ 26; lib41 28 / 1,601 phases). CONJECTURE ROOT-C (per class) DATA only. ρ for m_c ≥ 2 stays OPEN.
+- 10:42Z Lead: logged ROOT, ROUTE-RELAY, SELF-FREE lane-PROVED; ROOT-C CONJECTURE. NEXT: 1. RUND fixes file; 2. U-SPLIT (R80) and PAIR-OC
+  (R81) dead ends; 3. FRZ-type route freeze between ρ-transitions. Relay column -> L-COMP 5; relay-cycle growth -> L-RED 20.
+- 1. docs/si/P-N5-RUND-fixes-box17.md (repairs only; 36 quotes checked by rund/quotecheck.py, --mut control fails; pinned). 2. DEAD 18b
+  (U-SPLIT, usplit_rd_s3_n27), 18c (PAIR-OC, pairoc_n58; LC2 survives), reproduced with sched.py / lvl2.py, instances copied (same sha1)
+  from l-red 64182fe1 (NOT on trunk at 10:5xZ), pinned.
 - Things only I know: relay.py's per-q exit paths stop at Q ∪ {c} (class form, §22.4); ROOT's Q-exit paths stop only at Q or a repeat
   (global form, §22.3). rho_transitions = class_event_transitions on lib41: every ρ-transition there touches one class only.
 
@@ -1142,6 +1147,7 @@ in experiments/si/orlens/instances/ (all Oink zlk OK, strategies verified). Oink
   premise (VJ) of Lemma OUT-G (docs/si/P-N5-1E-box16.md §2).
 
 ## Dead ends (details in docs/si/DEAD.md)
+- (successor 14) U-SPLIT: FALSE (L-RED R80, usplit_rd_s3_n27, y 26 offset 0 → 0, no boundary; DEAD 18b). PAIR-OC: FALSE (L-RED R81, pairoc_n58 v 57; DEAD 18c).
 - (successor 14) UF-ONCE: FALSE (REFEREE-2 16; so_th_n32 Even 24 ×3, phase2_pk48 Even 44 ×2; DEAD box 18a). Lane data had skipped 𝒞^1O (KMIN = 2).
 - Box 17d (L-RED kill, reproduced by succ. 13): LEVEL-COUNT count form; obstruction a W-then-Ξ lag at one level; lcount_n23 (f86125a0), lcount2_n23 (dd9847c6).
 - Box 17 (succ. 12), all with instances in experiments/si/rund/instances/ and pins in experiments/si/check.sh:

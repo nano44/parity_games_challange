@@ -522,7 +522,7 @@ used by ≤ n − 1 values of s. □
 | lcount_n23, lcount2_n23, offret_n23, incdown_n23, offalt_K10 | 1 each | 4-25 | 10-177 | 0 | 0 | – |
 
 ### CONJECTURE UF-ONCE (DATA; replaces FS as the target)
-- UPDATE (successor 14, 10:3xZ): UF-ONCE is DEAD (REFEREE-2 16, R2-N5-RUND §4; reproduced, §22.1). The data below skipped 𝒞^1O games.
+- UPDATE (successor 14, 10:3xZ): UF-ONCE is DEAD; U-SPLIT (§17) and PAIR-OC (§15) are DEAD too (L-RED R80, R81; DEAD 18b, 18c) (REFEREE-2 16, R2-N5-RUND §4; reproduced, §22.1). The data below skipped 𝒞^1O games.
 In every run S, every Even vertex makes at most one unforbid-switch: |{(k′, e) ∈ U(S) : e leaves y}| ≤ 1 for every Even y. Then |U(S)| ≤ n_E and,
 by CHARGE-U, every vertex's full-resolution coarse W value changes ≤ (n − 1)(n_E + 1) times per run (a polynomial per run; runs per phase
 are cut by fallbacks and λ_W changes, counted elsewhere).
