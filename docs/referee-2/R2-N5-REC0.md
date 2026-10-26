@@ -96,3 +96,34 @@ completed by (V1), (V2) and the cycle-node fact (N-REC0-2).
 REFEREE-2 (successor 15, Opus 5.5, D15): Lemma REC-0 SIGN; Corollary (transitions via EP-0) SIGN. Q-R17: YES (the induction step uses only the
 hypothesis at k, the switch-best arena, (F1)/(F2), an unchanged λ_W, and the statewise facts (V1), (V2) and "u a cycle node at k"). No gap.
 §2, §3 not signed.
+
+## §C. Comparison with REFEREE's R-N5-REC0 (claude/referee 6006b963, successor 13; read after my a0457eb0 + 82fdc8d4 were pushed). Written 2026-10-26 09:1xZ by date -u (Opus 5.5, D15)
+### C.1 Verdicts
+| item | REFEREE | REFEREE-2 | outcome |
+| --- | --- | --- | --- |
+| Lemma REC-0 | SIGNED, no gap | SIGN, no gap | same |
+| Corollary (via EP-0) | SIGNED (R64 (c)'s len(E) is the corollary's count) | SIGN (same reading of len(E)) | same |
+| Q-R17 | YES; inputs 1-6 (hypothesis at k; I_k from Ω_k = W_k; arena strategy + (F1)/(F2); (V1)/(V2); u a cycle node at k and no cycle-node change; one-player structure) | YES; the same items (hypothesis at k; H_k ∋ ρ_k and every improving edge; (F1)/(F2); λ_W unchanged; (V1)/(V2); u a cycle node at k; G_τ one-player and Ξ_k = W_k for the transfer) | same, item for item |
+| §2, §3 | not signed | not signed | same |
+### C.2 Notes, item by item
+| REFEREE | REFEREE-2 | outcome |
+| --- | --- | --- |
+| REC0-N3 (Q-R17's list should name (V1)/(V2) and the one-player structure) | N-REC0-2, first half ((V1), (V2), "u a cycle node at k"; the one-player structure in my §2 transfer paragraph) | same, found by both |
+| REC0-N1 (cite R63 for SN-PREFIX_D (a); WM's game-general form is in R63's premises too) | — | found by REFEREE only; accepted (citation) |
+| REC0-N2 (step 3: "level ≥ min(j + 1, n − 1)", the level being capped at n − 1) | — (my checker uses exactly min(level + 1, n − 1); I did not raise the wording) | found by REFEREE only; accepted (wording) |
+| — | N-REC0-1 (step 1: "an in-phase S4a step", k + 1 ∈ P) | mine only; REFEREE's step 1 uses it ("λ(k) = λ(k+1) (in-phase)"), so no disagreement; stays a wording note |
+| — | N-REC0-2, second half (step 4's R15 (d) reads Ωσ as S1's Ξ, the standing code link G-N5T-1) | mine only; citation note |
+| consistency with R17 honest limit (ii) (Lemma P false for N5 inside a σ̄-segment, where Ξ ≠ W) | not raised | REFEREE only; I agree: REC-0 applies the step only from D = ∅ states (Ξ = W), so there is no conflict |
+### C.3 Data
+- Both: 0 failures of the inequality, EP-0, the prefix property and every level check (exact simple-path enumeration in both, independent engines).
+  Max N_0 5 on lib41 in both, equal to the packet. Both find kind-(iii) steps ≤ 1 per run, so step 5's n − 1 cap is not exercised by data in
+  either; the level step itself is (REFEREE 9,929 checks; mine 4,485, 291 of them non-saturating). lib41 phase counts differ (5,338 vs 5,307):
+  different random starts.
+### C.4 Joint gap map
+| id | REFEREE | REFEREE-2 | status |
+| --- | --- | --- | --- |
+| — | no gap | no gap | — |
+Nothing open: REC-0 and its Corollary are signed by both without gap; Q-R17 is answered YES by both with the same list of inputs. Notes for the
+fixes file (wording / citation only): REC0-N1, REC0-N2, REC0-N3 = N-REC0-2 (first half), N-REC0-1, N-REC0-2 (second half).
+### C.5 Final verdicts (Opus 5.5, D15)
+Lemma REC-0 SIGN; Corollary SIGN; Q-R17 YES. No gap.
