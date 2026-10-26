@@ -1,0 +1,2 @@
+UNK_phases 15 f 768 phases_with_fb 214 runs 1527 sum_epochs 1399 sum_nconf 257 sum_rho 1403
+NCONF_max 4 ('experiments/si/xing/instances/zcl_rx_n32.pg', 32) NS_C_max 25 ('experiments/red/so/instances/farrise25_n32.pg', 32) S_C_max 1 ('docs/referee-2/R2-N5-LP/instances/df_cex.pg', 5) ep_minus_nconf 45 ('experiments/red/xing/instances/x31_rx32.pg', 32) f_max 25 ('experiments/red/so/instances/farrise25_n32.pg', 32) f_per_conf_max 25.0 ('experiments/red/so/instances/farrise25_n32.pg', 32) rho_minus_nconf 47 ('experiments/red/xing/instances/x31_rx32.pg', 32)
