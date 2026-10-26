@@ -1,0 +1,45 @@
+MODE random 3000 5 9 1601 2 2 MUT - PATHCAP 9 LALL 12 RANDP 3
+CHG_changes: 2440
+CHG_window: 2440
+CHU_U_events: 0
+CHU_checks: 40028
+CRREL_subruns: 4655
+ENGXI_checks: 14642
+FRZS_checks: 31008
+FRZS_content: 24
+FZP_checks: 14642
+FZ_checks: 83
+KF_states_Lm1: 5
+MERGE_checks: 6790
+OFFa_transitions: 573
+OFFb_checks: 8376
+OFFc_checks: 180
+P1_brute_states: 1194
+P1_brute_strategies: 7259
+P2_brute_strategies: 1737
+P2_brute_transitions: 611
+PDa_aligned_states: 603
+PDa_brute_arenas: 603
+PDa_brute_strategies: 1697
+PDb_blocks: 546
+PSCH_clean_checks: 27091
+SPR_runs: 545
+TG_changes: 48
+TG_subruns: 601
+ff_runs: 583
+ff_transitions: 611
+forbidden_pairstates_Lm1: 9
+h3_runs: 545
+h3_transitions: 573
+ii_runs: 551
+ii_transitions: 579
+runs: 6000
+states: 14642
+CHU_max_U_per_run: (0, 'random1601:1#2@1 L -1 n 8')
+PDb_max_block: (2, 'random1601:61#1@1 n 7 m_tau 12')
+SPR_max_ratio_x1000: (117, 'random1601:207#1@1 T 2 Nsplit 0 n 5')
+TG_max_B: (5, 'random1601:42#1@0 n 7')
+TG_max_Nv: (1, 'random1601:13#2@1 v 0 B 1 n 6')
+max_ff_run_transitions: (2, 'random1601:61#1@1 n 7')
+max_h3_run_transitions: (2, 'random1601:61#1@1 n 7')
+RESULT OK violations=0

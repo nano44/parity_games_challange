@@ -22,3 +22,7 @@
   on lcount_n23 / lcount2_n23 (L-RED's instances in experiments/red/h3/instances/).
 - sched.py also (note §16): FS_SPAN_V / FS_DUR_V (CONJECTURE FS), FZ_EQ_V (Fact FZ), UNF_V (Lemma UNF), U and UF_ONCE_V (CONJECTURE UF-ONCE),
   gate classes of forbidden pairs; NOGEN=1 skips the quadratic GEN check; --rand like lvl.py. Logs fs_*.txt.
+- sched.py USTRUCT=1 (note §17): per-U-event structure, OFFUP_V (Lemma OFFUP), U-SPLIT classes (U_OTHER is a violation); logs/ustruct.txt.
+- bnd.py (note §19): (R4) stretch_D boundaries per run by cause (DCH / XI / WG), gate Ξ / W changes, Lemma GATE-XI attribution; V=1 per run.
+- pot.py (note §20): ρ_q events per phase with level and ALT class; RULER check; logs pot_*.txt.
+- pot.py MULTI / TRACE (note §21): ρ_q in classes with ≥ 2 Odd choices; trace of a gate's path-set rises.

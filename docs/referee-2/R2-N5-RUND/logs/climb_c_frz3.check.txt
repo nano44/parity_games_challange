@@ -1,0 +1,53 @@
+MODE start climb/c_frz3.pg climb/c_frz3.start MUT - PATHCAP 9 LALL 12 RANDP 3
+CHG_changes: 190
+CHG_charged: 109
+CHG_window: 81
+CHU_U_events: 39
+CHU_checks: 39000
+CRREL_freeze_checks: 1
+CRREL_freeze_checks_D_nonempty: 1
+CRREL_subruns: 5
+ENGXI_checks: 27
+FRZS_checks: 18885
+FRZS_content: 8959
+FZP_checks: 27
+FZ_checks: 449
+KF_states_Lm1: 17
+MERGE_checks: 581
+OFFa_transitions: 25
+OFFb_checks: 624
+OFFc_checks: 17
+P1_brute_states: 26
+P1_brute_strategies: 156
+P2_brute_strategies: 3337
+P2_brute_transitions: 25
+PDa_aligned_states: 8
+PDa_brute_arenas: 8
+PDa_brute_strategies: 70
+PDb_blocks: 1
+PSCH_clean_checks: 9185
+SPR_runs: 1
+TG_changes: 3170
+TG_subruns: 325
+TGii_rise_checks: 72
+TGii_rise_nonzero: 4
+UNF_checks: 231
+ff_runs: 1
+ff_transitions: 25
+forbidden_pairstates_Lm1: 128
+h3_runs: 1
+h3_transitions: 25
+ii_runs: 1
+ii_transitions: 25
+runs: 1
+states: 27
+CHU_max_U_per_run: (10, 'c_frz3.pg#start@1 L -1 n 24')
+CHU_max_U_per_vertex: (1, 'c_frz3.pg#start@1 L -1')
+PDb_max_block: (8, 'c_frz3.pg#start@18 n 24 m_tau 81')
+SPR_max_ratio_x1000: (12, 'c_frz3.pg#start@1 T 25 Nsplit 17 n 24')
+TG_max_B: (20, 'c_frz3.pg#start@1 n 24')
+TG_max_Nv: (3, 'c_frz3.pg#start@1 v 10 B 20 n 24')
+TGii_max_rise_over_cap_x1000: (58, 'c_frz3.pg#start@1..25 v 4')
+max_ff_run_transitions: (25, 'c_frz3.pg#start@1 n 24')
+max_h3_run_transitions: (25, 'c_frz3.pg#start@1 n 24')
+RESULT OK violations=0

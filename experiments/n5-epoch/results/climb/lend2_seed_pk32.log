@@ -1,0 +1,22 @@
+START fit (23, 5) n 32
+BEST step 32 fit (28, 5) t 2s
+BEST step 42 fit (29, 5) t 3s
+BEST step 76 fit (30, 5) t 4s
+BEST step 139 fit (30, 6) t 8s
+BEST step 170 fit (31, 4) t 10s
+BEST step 204 fit (34, 4) t 11s
+BEST step 3306 fit (35, 3) t 173s
+BEST step 3769 fit (36, 3) t 197s
+BEST step 4638 fit (37, 3) t 242s
+BEST step 5180 fit (37, 4) t 269s
+BEST step 5552 fit (38, 4) t 288s
+BEST step 6412 fit (39, 4) t 330s
+BEST step 7382 fit (40, 4) t 379s
+BEST step 7459 fit (41, 4) t 383s
+BEST step 8112 fit (42, 4) t 418s
+BEST step 10850 fit (43, 4) t 575s
+BEST step 10884 fit (44, 4) t 577s
+BEST step 15509 fit (45, 4) t 842s
+BEST step 17618 fit (46, 4) t 962s
+BEST step 20840 fit (47, 4) t 1150s
+END steps 21655 best (47, 4) n 32 -> results/climb/lend2_seed_pk32.pg

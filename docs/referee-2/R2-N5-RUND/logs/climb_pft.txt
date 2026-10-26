@@ -1,0 +1,5 @@
+seed score 307
+it 740 score 407
+it 1077 score 410
+it 1419 score 411
+final 411

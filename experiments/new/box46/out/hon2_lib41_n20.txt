@@ -1,0 +1,1 @@
+FBGAP_AT_H 27, UNK 3, gaps 472, runs 423
