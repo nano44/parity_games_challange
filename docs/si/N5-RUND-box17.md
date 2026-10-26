@@ -1104,3 +1104,65 @@ y*'s class exit path at k, and let e be its exit (the first vertex of Q_c ∪ {c
   Both are repaired in docs/si/P-N5-FLIP-fixes-box18.md R1 / R2 (REFEREE-2's B(e, y), REFEREE's LOCAL). §25 N3-LEVEL's parenthesis
   "(both hold when p1 is intact at t2, by (c))" is unproved (G-FLIP-3, R3): (c) gives a disjunction. §26 is unaffected (see the fixes
   file's last section).
+
+## 27. Item (2)(a): which steps of the 𝒞^1O count use one Odd choice vertex (READING, DATA), and Lemma TV-END (PROVED)
+Written 2026-10-26T12:5xZ (date -u), successor 15. New script rund/tvend.py; logs tvend_m{0,1}_*.txt; a D-set trace (scratch, numbers below).
+### 27.1 The map (READING, from the landed texts)
+The 𝒞^1O per-phase count (R51) has two sides.
+- FALLBACK side: R44 FB-ROUND, R45 HAT-FREEZE / RHO-TAIL, R48 κ-FB-ROUND / κ-HAT-FREEZE / κ-PFZ / κ-Y-FORM / EXIT-SWITCH / FREEZE-EXIT.
+  This side is ALREADY PORTED to every game by RESULTS R56 (a)-(g): κ-FB-ROUND_D, κ-HAT-FREEZE_D, κ-PFZ_D, κ-Y-FORM_D, EXIT-SWITCH_D,
+  FREEZE-EXIT_D, and Lemma TV, the terminal-value freeze after |U_c| − 1 fallbacks of the phase and of a Q_c-run. L-NEW 26's FB-RISE
+  (P-N5-HONFF) is the same mechanism in the Ξ frame. Nothing here needs m_c = 1. With several terminals, the freeze restarts at every
+  terminal value change: that is R56's reduction f ≤ 1 + (n − 1)(2 + ρ).
+- S4a side: R50 (FRZ-U, KIND-MONO, CASC-B, Theorem RUN, Corollary PHASE: "T per phase given f") and R45 (d)-(f) BF-F / FREEZE-F at HN
+  states. This side DOES use m_c = 1. Its stretches are defined by R = R_k ∋ o, θ, w; kinds A / B are defined against c_w; FRZ-U's Claim
+  P^c is over a single gate. In general-game terms (R55 G_D, R62, R64), that is an epoch with D = {o}, i.e. |D_E| = 1. RESULTS R64 (e)
+  EP-1 with R65 already lands exactly that part on every game: |D_E| = 1 epochs have len(E) = O(m·Δ·n¹¹).
+- So the "per-piece bound P" of §26.3 (iv) is NOT a port of the 𝒞^1O count. Its fallback half is landed (R56). Its S4a half is the
+  |D_E| ≥ 2 core (Δ-RT, FRZ-RHO §23, the RUND line §5-§19), together with the epoch count N_ep. Both are OPEN on G-N5-TIME.
+### 27.2 DATA: the long-ρ phases are many short multi-gate epochs
+D_k := the Odd vertices with σ̄_k ≠ τ_k. Epochs are counted as D changes + 1, which is an upper proxy for R63's epochs.
+| instance | phase length | epochs | |D| over the phase's states (count) | fallbacks |
+| --- | --- | --- | --- | --- |
+| nep90_n40 (+ start) | 91 | 42 | 0: 2, 1: 15, 2: 20, 3: 26, 4: 19, 5: 10 | 7 |
+| nep76_n40 (+ .start) | 78 | 32 | 0: 2, 1: 4, 2: 17, 3: 42, 4: 14 | 6 |
+The root 0 of §26.3 is in D at every state except the last. Epochs are about 2 transitions long. So on these instances ρ_q > n comes with
+N_ep ≈ phase length / 2. Neither the length of one epoch nor the per-piece count is the issue; the number of epochs is. That is the
+N_ep / ρ circularity of R63 / §20, not a new obstruction.
+### 27.3 Lemma TV-END (PROVED, every game; P1 via R15 (SG) and R56 (g))
+Setting: a phase, an honest class c, T := Q ∪ {c}, and a Q_c-run Θ (R56's setting line). Let t ∈ Θ be a state at which every
+z ∈ U_c ∖ T has κ_t(z) = TV_Θ(z) := max(κopt_c(z), max_{q ∈ Q_c} κopt^q(z) + κ_Θ(q)). By R56 (g) Lemma TV this holds at every t ∈ Θ after
+|U_c| − 1 fallbacks of the phase and of Θ.
+Statement. Then no Even vertex of U_c ∖ T switches at any in-phase transition t → t+1. Moreover t + 1 ∈ Θ and the hypothesis holds at
+t + 1. Hence, from t to the end of the phase, class c is frozen: no switch in U_c ∖ T and no ρ event in the class, and Θ lasts to the phase
+end.
+Proof.
+- (i) Let x ∈ U_c ∖ T be Even, switching at t → t+1 (in-phase) to z := σ_{t+1}(x). The switch is to an edge improving at t (S4a's arena
+  and S4c both take Iσ_t(x)), so Ξ_t(z) ▷ Ξ_t(σ_t x). λ_{t+1}(x) = c and x ≠ c, so λ(z) = c. Within the class this is
+  κ_t(z) ≻ κ_t(σ_t x), so κwt_c(x) + κ_t(z) ≻ κwt_c(x) + κ_t(σ_t x) = κ_t(x), by additivity on x's honest play.
+- (ii) Let p be z's honest play at t up to its first vertex e ∈ T (its exit; p avoids T).
+  - If x ∉ p, then x·p is a simple path of G_c (e = c) or G_c^e (e ∈ Q_c). By additivity, κwt_c(x) + κ_t(z) = κwt_c(x·p) + κ_Θ(e) ⪯
+    TV_Θ(x) = κ_t(x) (κ_t(e) = κ_Θ(e) on Θ). That contradicts (i).
+  - The same holds if z = e ∈ T: the path is x·e.
+- (iii) So every switching x ∈ S := {Even switching vertices of U_c ∖ T} has x on z(x)'s honest play at t, before that play's exit. Follow
+  x's play at t + 1:
+  - it goes x, z(x), then along the t-play from z(x) (old edges at vertices that do not switch) until the first vertex of S, which exists
+    and comes before any vertex of T, because x itself is on that stretch;
+  - there it continues with that vertex's new edge, and so on.
+  This play never meets T. Odd vertices on these stretches are forced (non-terminal), and terminals do not occur before the exit. So the
+  play never reaches c, and λ_{t+1}(x) ≠ c, against in-phase. So S = ∅.
+- (iv) With no switch in U_c ∖ T, every class exit path and exit of class c is the same at t and t + 1: their vertices are non-terminal,
+  Even and non-switching, or forced Odd. By ROOT-C in its signed form (P-N5-FLIP-fixes-box18 R1), κ is constant on Q_c, so t + 1 ∈ Θ.
+  κ_{t+1}(z) for z ∈ U_c ∖ T is the value of the same exit path plus the same terminal value, so the hypothesis holds at t + 1.
+  Induction. □
+- What it adds to R56: FREEZE-EXIT_D says the late FALLBACKS switch nothing in the class. TV-END says no in-phase transition does
+  (S4a included), and the freeze is permanent within the phase. It does not bound ρ: ρ events happen before the class freezes, in Q_c-runs
+  with fewer than |U_c| − 1 fallbacks, which is where S4a steps act.
+- DATA (tvend.py; TVEND_V = 0). It is THIN, in the same way as R56's vacuity: lib41 (KMIN = 1, S3 + 4) reaches the freeze in 20 classes,
+  all with |Q_c| ≤ 1, with 39 frozen transitions; lib2o has 4 classes and 0 frozen transitions; nep90 and frz40 have none. The control
+  MUT=1 (phase fallbacks only, without the Q_c-run condition) does not bite on these sets (reported as such).
+### 27.4 Status, labels
+- PROVED (lane, unrefereed): Lemma TV-END.
+- READING: the map in §27.1. The per-piece bound P for m_c ≥ 2 is the |D_E| ≥ 2 S4a core plus N_ep (both OPEN), not a port.
+- DATA: §27.2 (nep90 / nep76: 42 / 32 epochs, mostly |D| ≥ 2); TV-END is thin.
+- OPEN: ρ_q for m_c ≥ 2; equivalently, at the level of the landed reductions, N_ep and the |D_E| ≥ 2 epochs.
