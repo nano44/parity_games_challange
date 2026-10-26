@@ -1,6 +1,15 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Box 44 log (successor 23, session_011WFfFqRNrU1a8LQwbwazZN; handover check d489672f; GO 01:05Z, Lead's stamp)
+- Merged trunk 1c23106b (2d28236b). Oink NOT built (not needed so far).
+- (1) Packet docs/new/P-N5-GD-box43.md (FROZEN at push): G_D (a) every game; (b) under (h_D); (c1), (c2) under (h_D) ∧ (h3_D)
+  with M_D (lev/COARSE_L of R25, ⊥ convention); F1°_D (D-crossing-free = (D_k, R_D) constant; no (h_D)); Wo_D under (h_D) at k, k+1.
+  §2 port table (landed step, one-Odd use, replacement); §3 Δ1, Δ-RT, R20 coarse port NOT to sign. Re-checked each proof against
+  P-N5-RE §1-2, P-N5-NH-box30 §1, P-N5-X §3, P-N5-FB §1. f1d.py re-run 01:07-01:09Z: 0 violations (lib41 412 runs; rand 21/22;
+  instances). Premise class transfers (R15 (a), R17, R18 (c) flat / (d) S, XW, FBL-N (i)) are stated as READING for the referees.
+- NEXT: (2) Route Δ (R20 coarse port with u* → M_D; Δ-RT). (3) DUAL / NH42 fixes on the Lead's go.
+
 ## Box 43 log (successor 22; handover check 5/5 (b4f064b4); GO 21:55Z, Lead's stamp)
 - Merged trunk c4d18621. Oink built (8fbf0a7). Notebook duplicate block (from 6a1b0e95) removed in b4f064b4.
 - eb273ebc: tools experiments/new/box43 (multi, climb, shrink, exh2); instances ret2_n7, tx2_n8; reported 22:05Z.
@@ -17,6 +26,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - 5c01a8ee: Route Δ climbs: no growth (fixed-size TJ / n 0.89, 0.50, 0.39 at n 19, 34, 67); instances tj17_n19, dch16_n44. Reported
   23:33Z; asked for the next direction ((a) prove Δ1 for G (a), F1° set form; (b) C++ engine climbs; (c) stop). Container restarted
   ~23:2xZ: scratchpad logs survived, background sleeps lost.
+- Lead 00:04Z: direction (a). §4.4 of N5-MULTI: G_D (a)-(c), F1°_D PROVED (unrefereed), Δ1 stated, Δ-RT identified; f1d.py data
+  0 violations (lib41 8,477 transitions; 2,000 + 2,000 random). Resume point written for successor 23.
 
 ## Box 42 log (successor 21, session_01YJHHx1t8hvqkDnKzMU2Lfa; handover check 5/5 (419308f1); GO 19:48Z, Lead's stamp)
 - Merged trunk 6d78b8f4. Oink built (8fbf0a7).
@@ -286,39 +297,42 @@ Every answer measured from the repository; commands named.
    fetched ref, so the pin cannot be checked yet; I checked the packet by sha1 (cbea0739…) against my own commit 1afccb51 instead.
    (iii) The container clock is slow vs the Lead's stamp (07:50 vs 07:53): stamp only from date -u, never ahead of it.
 
-## Resume point (overwritten at handover, LANE-RESTART step 1; successor 21, box 42, written 2026-10-25 21:1xZ by date -u)
-Successor 21 (Opus 5.5, D14/D15/D18, L37/L40), session_01YJHHx1t8hvqkDnKzMU2Lfa. Handover check 5/5 (419308f1). GO box 42 19:48Z.
+## Resume point (overwritten at handover, LANE-RESTART step 1; successor 22, box 43, written 2026-10-26 ~00:25Z by date -u)
+Successor 22 (Opus 5.5, D14/D18, L40). Handover check 5/5 (b4f064b4). GO box 43 21:55Z. Parking at ~410k context (Lead: hand over ~450k).
 ### DONE (all pushed with scripts/push.sh; sha1s reported = frozen)
-- Packet docs/new/P-N5-NH-box42.md (44088266, sha1 93d19be8…): Theorem NH. PINNED trunk 54ac72e6 (Lead 20:12Z), queued for both referees.
-- Working doc docs/new/N5-KW-box42.md v3.2 (31776c5c, sha1 349d553c…): WLAG, ABOVE-h, CSTRICT, KW-FREEZE, KW, NR′, PAR, H-PATH, DIR,
-  KC, CASC-B, CW (corrected), E-HI; §6 READING (conditional): T per phase poly(n)(1 + X + f). Not a packet.
-- Fixes files (5e1b5ea0): docs/new/P-N5-FBPOLY-fixes-box41.md (sha1 c016c190…), docs/new/P-N5-NHN-fixes-box40.md (sha1 d1460ffe…).
-- Cross-read of L-SI 10's docs/si/N5-KW-box15.md (669624b2; section above): rely on all; L-SI's packet first, plus PAR, H-PATH, SW (b).
-- Scripts experiments/new/box42: nhcheck, wlag, kwprof, kwfreeze, kwfreeze2, evprof, evcheck, evstress, sicross (README lists runs).
+- Packet docs/new/P-N5-DUAL-box43.md (b15856e8, sha1 a51f7c30…; PINNED trunk df073cb5): Lemma DUAL, Theorem MIRROR (implication,
+  (H-OF) explicit), Φ-kO, ENDGAME; §2 start / N5^OF table (to check). REFEREE 11 SIGNED all, wording gap DUAL-1 (Lead 00:04Z: DUAL's
+  second sentence contradicts its "i.e."; fix "agree on states 0..j; the first possible difference is at j + 1"). REFEREE-2 13 after FX, NH42.
+- Working doc docs/new/N5-MULTI-box43.md: §1 results (= packet), §2 ledger summary, §3 frontier data (exhaustive n 3-4; instances
+  ret2_n7 (𝒞^1E, harmless), tx2_n8, retf_n6, tj17_n19, dch16_n44; climbs: no growth, TJ/n falls with n; §3.5 hard families are all
+  frontier except counter_ortl (1O) and counter_qpt (one-player)), §4 routes; §4.4 Route Δ proof attempt: G_D (a) (HP replaces FO
+  completely), G_D (b) under (h_D), G_D (c1) same terminal, G_D (c2) coarse order above M_D (multi-terminal R20 Lemma C), F1°_D
+  (crossing := (D, R_D) change; FBL-N (ii) in set form), Wo_D (W(u) non-decreasing for u ∈ D_k ∩ D_{k+1} under (h_D)), Conjecture Δ1 ((D, R_D)-changes per phase ≤ poly(n)), Δ-RT (OPEN: fine
+  route order for different terminals below M_D; blocks PIECE's R-side and every R-side count). §4.5 N5 linear on exponential-SI families.
+- Full ledger docs/new/N5-MULTI-ledger-box43.md (READING; helper pass + my checks; roots on the dual side appended).
+- Tools experiments/new/box43: multi, climb (--deg2, --frontier, --seed), shrink, exh2 (--frontier), mirror, dualsym, dblfb, dset,
+  famcount, f1d. README lists runs.
 ### IN FLIGHT (others)
-- Both referees on P-N5-NH-box42. REFEREE-2's §C on P-N5-FBPOLY still to come (successor 12): append a section to the FBPOLY fixes file
-  if it adds anything (the file is frozen above that point: new text = appended section, as the Lead allowed, or a new file).
-- L-SI 10 cross-reading my N5-KW-box42 (Lead asked it the same). L-RED 18: K growth survey.
-### NEXT (successor 22): box 43, Lead's order 21:22Z (Lead's stamp), N5 BEYOND 𝒞^1O
-- Decisions taken (Lead 21:22Z):
-  - P-N5-KW is written by L-SI 10 from docs/si/N5-KW-box15.md, with my additions credited (PAR, H-PATH, SW (b) inline, B3 split,
-    route-form stretch = piece, CASC-B prefix argument).
-  - docs/new/N5-KW-box42.md v3.2 is the independent second lane proof: do NOT packet it.
-  - NHN fixes are in RESULTS R46 (LANDED, CHECKER C55, bdc05b60). FBPOLY fixes wait for REFEREE-2 12's §C FBPOLY; then append a section
-    (or write a new file) with anything it adds.
-- Box 43 (D18/D14). Write docs/new/N5-MULTI-box43.md. Labels PROVED / CONJECTURE / OPEN / DATA / READING.
-  1. Ledger. For each landed lemma R17-R46, and for FBPOLY, PHI, KW, NH42: which hypothesis uses "o is the only Odd choice vertex"?
-     Mark each one survives verbatim / survives with a per-Odd-vertex index / fails. Lemma Φ (every game) is the model of a survivor.
-     Starting hints from box 42: WLAG holds on every game; R25 Theorem FB, TAME, MONO and R27 Lemma U / Theorem LP hold on every game;
-     ABOVE-h and CSTRICT use "every Odd vertex but o is forced" (Lemma SW step 1).
-  2. First obstruction. Smallest 𝒞^2O games (two Odd choice vertices) where a quantity polynomial on 𝒞^1O (phases, fallbacks per
-     phase, stretches, K) grows fastest. Exhaustive search at small n, then climbs. Seeds: tools/oink counter_* families. Lens: N5's
-     own phases. Send the Lead the first obstruction instance as soon as there is one.
-  3. One novel route for the multi-Odd case. The Lead's candidate: each Odd choice vertex's τ-change as a phase boundary of a product
-     of 𝒞^1O runs, and bound the interleaving. A route of my own is welcome.
-- Hand over at ~450k context.
+- P-N5-DUAL: REFEREE-2 13 review pending; L-RED 18 light adversary on DUAL / MIRROR.
+- P-N5-NH-box42: NH42 fixes file docs/new/P-N5-NH-fixes-box43.md is mine when both reports + §Cs are in (Lead sends the go).
+- P-N5-FBPOLY landed as R48.
+### NEXT (successor 23)
+- When REFEREE-2 13 reports on DUAL: fixes file docs/new/P-N5-DUAL-fixes-box43.md (DUAL-1 + REFEREE-2's items).
+  Add a STATUS LINE (not a signed change; Lead 00:20Z): REFEREE 11 audited start-freeness of the 𝒞^1O chain (docs/referee/R-N5-START.md,
+  referee 4e440bd5, on trunk): every listed landed result and P-N5-KW START-FREE in statement and proof (R32/R33 chain under
+  X-SN-PHASE read at structure level only); so (H-N5) is referee-supported conditional on P-N5-KW landing (R50, at CHECKER), and
+  (H-OF) follows by MIRROR (c). Write it after REFEREE-2 13's report and both §Cs.
+- Route Δ (Lead's direction (a), 00:04Z): (1) port R20's coarse machinery (C, FBL, FBF, CR, XA) with u* → M_D and "θ, w constant" →
+  "Ξ(u), W(u) constant for u ∈ D_k" (CONJECTURE in §4.4); (2) attack Δ-RT; (3) Δ1 count: why (D, R_D) changes per phase are bounded
+  (on 𝒞^1O = [σ̄(o) ≠ τ(o)] changes + crossings). Consider packeting G_D (a)-(c) + F1°_D (short) if the Lead wants.
 
 ## Things only I know (successor 22)
+- Route Δ insight: on the frontier, "σ̄ = τ off D_k" is a DEFINITION, so every lemma whose only one-Odd use is FO/HP ports at once
+  (G (a), FBL-N (ii), F1°). The real difficulty is (i) D_k moves with σ inside a phase (Δ1 counts it) and (ii) the fine route order
+  between different terminals (Δ-RT). The coarse order above M_D survives (G_D (c2)); R20's coarse lemmas are the next port.
+- DUAL's wording gap DUAL-1 was mine: "agrees up to and including the state right after the first two-sided fallback's source, i.e. it
+  can differ first at j + 1" is self-contradictory; write "agree on states 0..j; the first possible difference is at j + 1".
+- Pitfall: a stray `git checkout <trunk> --` (meant for files) detaches HEAD; check `git branch --show-current` after any checkout.
 - N5 is mirror-symmetric under G ↔ G^d except S4c's Even-first rule. Before calling anything an "Odd-side" obstruction, check the class:
   a game with ONE Even choice vertex is a mirrored 𝒞^1O run (Lemma DUAL). My first instance ret2_n7 was such a case.
 - The ledger's root fact: on 𝒞^1O σ̄ = τ off o. On general games D_k = {σ̄ ≠ τ} moves with σ inside a phase; that is why per-o_i

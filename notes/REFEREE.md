@@ -12,7 +12,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 - DONE: P-N5-DUAL (df073cb5, sha1 a51f7c30): docs/referee/R-N5-DUAL.md: all SIGNED; DUAL-1 (wording of DUAL's 2nd sentence: first
   possible difference at j + 1). MIRROR (b) only as an implication from (H-OF). §2 table: statements spot-checked, proofs NOT audited.
   Tools dual_probe.py (run5 with odd_first), dual_climb.py; logs dual_logs/ (0 failures; 297,779 two-sided fallbacks in climbs).
-- NEXT: §C KW after R2's report (do not open R2-N5-KW* before mine is pushed — it now is, once this commit is pushed); §C FX, NH42.
+- DONE: §C KW (a6e50742, stamp 776281ac) vs R2 8a47fd92: all signed by both; KW-1 = N-KW-3 one item; N-KW-1, N-KW-2 accepted.
+- DONE: R-N5-START audit (4e440bd5): every listed C^1O result start-free (statement + proof); R32/R33 chain read at structure level.
+- NEXT (2026-10-26 00:10Z): §Cs FX, NH42, DUAL when REFEREE-2 succ. 13 reports (Lead sends SHAs). NOT before.
+- (old) NEXT: §C KW after R2's report (do not open R2-N5-KW* before mine is pushed — it now is, once this commit is pushed); §C FX, NH42.
 
 ### (earlier, 21:29Z)
 - Handover check 6c22a63c: Lead 5/5, GO (Lead stamp 21:22Z). Trunk merged at 0c02a09b (trunk e4c76bf7).

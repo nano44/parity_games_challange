@@ -1,0 +1,7 @@
+W_nonempty_both              230
+games                        500
+games_runs                   500
+max_fb_phase                 1
+max_iter                     3
+phases                       874
+FAILS 0
