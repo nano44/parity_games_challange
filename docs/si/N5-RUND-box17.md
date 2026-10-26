@@ -636,3 +636,41 @@ Proof. (V1): Ξ(u) = u ⊕ Ξ(σ̄(u)) for u not its own cycle node, at both sta
   that window). The asymptotic question is whether a run can be ≫ n; none of the data has one (max run 34 at n = 32).
 - OPEN (named exactly): a potential that strictly drops at each U event or each XI boundary, or an injective version of CHARGE-U.
   The σ̄-changes inside a phase (85 of the 216 gate Ξ-changes) are an Odd best-reply count with no bound here (OPEN).
+
+## 20. Potentials at boundaries and U events (Lead's GO 09:31Z, item (a)): DATA, and the tie to ρ / N_ep (READING)
+Written 2026-10-26 09:3xZ (date -u), successor 13. pot.py (new): per PHASE ((λ_Ξ, τ) constant, fallbacks included), per Odd choice vertex q,
+the changes of Ξ(q) (RESULTS R61 (f)'s ρ_q events), each with its level (top rank of the path-set difference; −1 = length only) and its
+ALT class (R61 (e): SB = σ̄(q) unchanged, the change comes through σ̄(q)'s own value; CLEAN (strict); TIE; NONCLEAN; CYC). Logs pot_long.txt,
+pot_lib41_rs4.txt, pot_lib2o_rs4.txt.
+### The tie to ρ (PROVED, immediate; with RESULTS R61, R63)
+- Every XI boundary (§19) is a ρ event: a gate u ∈ D_k is an Odd choice vertex, and an XI boundary is a change of Ξ(u) inside a phase.
+- Every DCH boundary is a change of D, which happens only at epoch boundaries (RESULTS R63, D-EPOCH).
+- So per phase: |B| ≤ ρ + (epochs − 1) + WG, with WG := the transitions changing some gate's W value. Combined with R61 (f)
+  (N_ep ≤ 1 + Σ_q (ρ_q + tie_q + nc_q + cyc_q)): the boundary count of §19 is ρ up to the epoch count and WG. So the circularity of §19 is
+  the ρ / N_ep problem that L-NEW and L-COMP work on, plus WG (W-changes of gates; ≤ 2 per gate per run in all data).
+### DATA
+| set | phases | transitions | ρ (Ξ changes of Odd choice vertices) | SB / CLEAN / TIE / NONCLEAN / CYC | at gates | max ρ_q in one phase | q with a reused level |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| pftheta34_n32 (S3) | 1 | 35 | 34 | 0 / 34 / 0 / 0 / 0 | 33 | 34 (> n = 32) | 1 |
+| frz1 / frz2 / frz3 (n 24, .start) | 1 / 1 / 1 | 29 / 24 / 24 | 6 / 15 / 13 | 5/1/0/0/0 · 5/9/0/1/0 · 8/5/0/0/0 | 1 / 4 / 5 | 4 / 6 / 7 | 0 / 1 / 1 |
+| lib41, S3 + 4 random starts | 236 | 1,238 | 1,047 | 677 / 339 / 0 / 31 / 0 | 254 | 10 | 9 of 749 |
+| lib2o, S3 + 4 random starts | 75 | 811 | 246 | 145 / 101 / 0 / 0 / 0 | 90 | 7 | 2 of 91 |
+- pftheta34_n32: the single gate 0's 34 Ξ changes (33 of them XI boundaries of §19) are ALL CLEAN σ̄(0)-changes, strict by ALT. 24 are
+  length-only; the 10 path-set changes have levels [28, 25, 24, 31, 25, 27, 25, 24, 28, 29]. Level 25 is used 3 times, 24 and 28 twice,
+  each reuse separated by a higher level (RULER holds: R_RULER_V = 0 everywhere; XI_DROP_V = 0). The length-only stretches between path-set
+  changes are 1, 1, 4, 1, 1, 2, 2, 4, 6, 1, 1.
+### The four candidate potentials (Lead's list), at each XI boundary and U event
+- (1) Σ over gates of Ξ, (2) the σ̄ vector by κ (R61's κ is Ξ restricted to the class), (3) the multiset of Odd values, (4) W's coarse
+  vector: all four are MONOTONE inside a phase ((SG) for Ξ, ALT for clean σ̄ changes, WM-G for W). So each strictly moves at every event
+  that changes it, trivially; on pftheta34 (1)-(3) move at all 33 XI boundaries, and (4) moves at every U event (CHARGE-U's source).
+  None drops in the wrong direction (XI_DROP_V = 0).
+- What decides is the RANGE, and the data says the range is not small: gate 0's path set on pftheta34 moves in a RULER pattern (a, …, b > a,
+  …, a), the binary-counter signature, inside one phase, at n = 32. A "each level once" potential for a gate's Ξ is therefore FALSE on
+  pftheta34 (DATA; I had not proposed it). The only per-gate bound monotonicity gives is RULER's 2^{|levels|} − 1 path-set changes, times
+  ≤ n length-only changes between them.
+### Status (READING)
+- The candidate potentials do not give a polynomial count: they are monotone with exponential range, and pftheta34 exercises the range
+  (ruler pattern at a gate inside one phase).
+- The circularity of §19 is the ρ / N_ep problem, plus WG. On pftheta34 the whole run is CLEAN ρ at one gate. Any polynomial bound on
+  ρ_q per phase (the target of L-NEW / L-COMP's N_ep work) bounds B(S), and then U and the coarse W-changes through §16-§19 only if the
+  circularity's factors close; a polynomial ρ alone is not enough without U-SPLIT (or an injective CHARGE-U).
