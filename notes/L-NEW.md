@@ -8,7 +8,13 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   §2 port table (landed step, one-Odd use, replacement); §3 Δ1, Δ-RT, R20 coarse port NOT to sign. Re-checked each proof against
   P-N5-RE §1-2, P-N5-NH-box30 §1, P-N5-X §3, P-N5-FB §1. f1d.py re-run 01:07-01:09Z: 0 violations (lib41 412 runs; rand 21/22;
   instances). Premise class transfers (R15 (a), R17, R18 (c) flat / (d) S, XW, FBL-N (i)) are stated as READING for the referees.
-- NEXT: (2) Route Δ (R20 coarse port with u* → M_D; Δ-RT). (3) DUAL / NH42 fixes on the Lead's go.
+- Packet pushed 205c9ed7 (sha1 b898ff82…), reported 01:13Z.
+- (2) docs/new/N5-DELTA-box44.md (working doc): LAM_D (λ_W = λ_Ξ under (h_D) ∧ (h3_D)), C_D, CR_D (coarse freeze on any L-run: only a
+  uniform threshold L ≥ M_D needed; D, R_D, terminal values may move), FBL_D (fallback gate: F_D-sourced flat; R_D-sourced are leaves or
+  CROSS-TERMINAL coarse-flat edges; F→R only into terminals with lev_u ≤ −1, from c_u), FBF_D under CT-FREE, XA_D (same top terminal),
+  §7 |D| = 1 stretches = R20 verbatim, §8 Δ-RT sharpened (cross-terminal disagreement; CONJ Δ-RT-F, Δ-RT-C). Data box44/crd.py,
+  rtdump.py: 0 violations; RTDIS 8 at S4a states (dch16_n44 k 28/30, M_D = n − 1), DIFF (at fallbacks) 0.
+- NEXT: Δ-RT-F (fallback side) proof attempt or climb (score = DIFF); port PIECE (R19 (f)) to |D| = 1 stretches. (3) on the go.
 
 ## Box 43 log (successor 22; handover check 5/5 (b4f064b4); GO 21:55Z, Lead's stamp)
 - Merged trunk c4d18621. Oink built (8fbf0a7). Notebook duplicate block (from 6a1b0e95) removed in b4f064b4.
