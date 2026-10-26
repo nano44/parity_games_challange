@@ -140,3 +140,44 @@ GSA, GSB, FRG (a), (b) at every state and after the freeze, FRGC (FREEZE-G (c)'s
   never occurred" read as "never alone".
 - ADD-N1 (FREEZE-G (a), base). N_t(c) = 0 needs c ∉ R_u(t); true (σ̄_t(u)'s play in A_t reaches c's cycle, so c ∈ F_D(t)); say so.
 - ADD-N2 (RELAY-PIECE (i), wording). The G-intervals are disjoint blocks; the Δ-changing transition lies between two of them.
+
+## §C. Comparison with REFEREE-2 (written 2026-10-26T19:05Z by date -u, after the Lead's word of 18:52Z; REFEREE-2's report
+docs/referee-2/R2-N5-ROOT.md at origin/claude/referee-2 3febbfaf, read only after my predecessor's report 619fccf2 was pushed)
+Written by REFEREE successor 16 as SUCCESSOR to the author of this report (successor 15): I re-read the report above, the two packets'
+statements and REFEREE-2's report, and re-ran the checks named below with my own engine. Every verdict below is labelled (Opus 5.5, D15).
+### Verdicts
+| item | REFEREE (619fccf2) | REFEREE-2 (3febbfaf) | joint |
+| --- | --- | --- | --- |
+| ROOT §2 BF-F_D | SIGNED | SIGN | SIGNED |
+| ROOT §3 FREEZE-A (a), (b), (c) | SIGNED (ROOT-N1, q = c) | SIGN (N-ROOT-1, q = c) | SIGNED |
+| ROOT §3 (R-LEN) | SIGNED (ROOT-N4) | SIGN (N-ROOT-2) | SIGNED |
+| ROOT §4 ROOT-PIECE | SIGNED as a REDUCTION | SIGN (a reduction in G_c) | SIGNED as a REDUCTION |
+| ROOT §5 DL-SPLIT, split, clean case (A), Consequence | SIGNED; (i) rested on RELAY-CHAIN (a), "not yet landed" | SIGN; the condition is MET, RELAY-CHAIN landed as RESULTS R72 | SIGNED; condition MET (RESULTS R72 is on trunk, l. 3757, re-read) |
+| add §2 GATE-SHIFT (a), (b) | SIGNED | SIGN | SIGNED |
+| add §3 FREEZE-G (a), (b), (c) | SIGNED; (b)'s freeze and (c) on PROOF ALONE (vacuous in all data) | SIGN; vacuous on natural data, weakly exercised on constructed unions (5 intervals with N moving) | SIGNED; (b)'s freeze and (c) rest on PROOF ALONE on natural games; weakly exercised only on REFEREE-2's unions |
+| add §4 RELAY-PIECE (i), (ii) | SIGNED; "exercised in 6 library runs" | SIGN; its multi-value / multi-interval content never exercised | SIGNED; only the one-value case is exercised (see Data) |
+Verdicts identical. Joint gap map: EMPTY.
+### Notes, matched
+| REFEREE | REFEREE-2 | joint |
+| --- | --- | --- |
+| ROOT-N1 (FREEZE-A (c), q = c outside (Aκ)) | N-ROOT-1 (same) | same note |
+| ROOT-N2 (name 1E-N3's P2 form for (F1) on S4a's arena and WM-G) | N-ROOT-5 (P2 there, and P1 for the κ-Y-FORM_D items: FREEZE-A (c), GATE-SHIFT (a), DL-SPLIT) | REFEREE-2's fuller form ACCEPTED |
+| ROOT-N3 (DL-SPLIT (B): "since τ and σ̄(u) are unchanged" → "since τ is unchanged") | — | REFEREE's wording note |
+| — | N-ROOT-3 ((ii) is a route change at u; FLIP's ROUTE is a ρ event; the Consequence says "ROUTE event") | ACCEPTED, as wording. I checked whether it hides a case: in clean case (A) with no TIE, u has a ρ event: κ_t(y1) < κ_t(y2) (minimum at y1, y2 ∈ Y^u_t, no tie) and κ_t(y2) ≤ κ_{t+1}(y2), so κ_{t+1}(u) > κ_t(u). With (ii) that IS a FLIP ROUTE event at u, so the Consequence's list holds in FLIP's sense too (with a tie, "a tie" covers it). Data agree: 1,663 "(ii) only" clean D-leaves, u's value changed at every one (scratch/rootc_probe.py, II_NORHO_U 0) |
+| — | N-ROOT-4 ((B) has no binder; the proof gives "every entering z is (A) or (B)") | ACCEPTED (my predecessor's probe classifies every entering z, DLS_A + DLS_B = DLS_chk) |
+| ROOT-N4 ((R-LEN) wording) | N-ROOT-2 | same note |
+| ROOT-N5 ((iii) never alone in data) | N-ROOT-6 (same, 579 cases) | same finding |
+| ADD-N1 (FREEZE-G (a) base: c ∉ R_u(t)) | — (its §1 notes u ≠ c for GATE-SHIFT (a), the same fact) | REFEREE's note |
+| ADD-N2 (RELAY-PIECE (i): the G-intervals are disjoint blocks) | — | REFEREE's wording note |
+| §4 vacuity: FREEZE-G (b) freeze, (c) on proof alone | N-ROOT-7 (same, plus the union games) | same; the landing text should carry "rests on proof alone" for FREEZE-G (b)'s freeze sentence, (c) and RELAY-PIECE's multi-value content |
+### Data
+- Both own engines, 0 failures; both reproduce the lane's BF-F_D 7,827 / 8,701 and GATE-SHIFT (a) 684 / 404, (b) 943 / 661 on nep90 / nep76.
+- Correction to my predecessor's §4: RELAY-PIECE "exercised in 6 library runs" means only that s + L_A < e there. In those 6 runs Δ(u) never
+  changes after s + L_A (my scratch/rootc_probe.py: RLP_nonvac 6, RLP_DCHG 0, on the same 2,960 runs). So (i)'s multi-value case and (ii)'s
+  multi-interval sum are not exercised in my data either, as REFEREE-2 found.
+- REFEREE-2's constructed unions, re-run with my predecessor's engine (scratch/root_probe.py, unchanged). Games u7101_1900, u7201_1948 and
+  u7202_374 (copied from 3febbfaf into scratch/rootc_inputs/), each at its .start, BUDGET 10⁵. FREEZE-G: 6 intervals, 3 of them past their
+  freeze window (max excess 45). FRG (c) 563 checks, FRGC 720, FREEZE-A pieces past s + L 3, RELAY-PIECE non-vacuous 3. 0 failures
+  (scratch/rootc_logs/r2unions_root_probe.txt). So FREEZE-G (b)'s freeze sentence and (c) are formally exercised on those games under my
+  engine too. I did not re-count REFEREE-2's "5 intervals with N moving".
+No disagreement; nothing open between the referees on ROOT. The OFFMONO and OFFMONO-add §Cs follow on the Lead's word.
