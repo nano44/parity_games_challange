@@ -1,0 +1,17 @@
+ACA_chk                    6004
+ACB_chk                    431
+CN_NONSTRICT               90
+CN_switch                  90
+CTRL_jplus1                25
+EPA_chk                    6004
+EPA_tight                  1150
+EPC_chk                    5393
+SG_chk                     22577
+games                      367
+games_pathchecked          67
+max_epochs                 50
+max_f                      33
+max_switch_trans           112
+phases                     5393
+skip_big                   45
+FAILS 0

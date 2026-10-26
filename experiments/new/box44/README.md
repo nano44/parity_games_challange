@@ -32,3 +32,5 @@ DATA, not proof. Uses experiments/new/box43 (multi, n5x via box21, f1d.hD). Run 
 - rstick.py (04:28Z-04:29Z): R-STICK_D, SN-PREFIX_D, crossings split X_D = post-prefix + X_SN^D (N5-FBF-box44.md §12). lib41 14,253
   R-STICK_D checks, 0 violations. instances/qc_toggle.pg (sha1 27850ecc…, n 5): an X_SN^D crossing whose class's cycle node is an Odd
   choice vertex (TOGGLE's excluded case); N5 output: Oink verify OK.
+- rstick.py extended (04:48Z-04:49Z): XEB (crossings at epoch boundaries), XIN, XIN_post, XIN_SN (N5-FBF-box44.md §13). lib41: 3,222
+  crossings = 1,269 at epoch boundaries + 1,953 inside epochs (0 after an epoch freeze; 1,833 unsplit pre-freeze).
