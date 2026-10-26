@@ -1,0 +1,18 @@
+MODE files ../R2-N5-KW/files.lst 3 MUT -
+EP0_checks: 3153
+LAMEND_checks: 4421
+LAMEND_differs: 536
+LAMEND_differs_D0: 211
+LAMEND_differs_D1: 325
+LAM_checks: 24630
+REP_steps: 18374
+RIII_checks: 18374
+RII_checks: 18374
+RI_checks: 24630
+epochs: 10677
+phases: 6256
+runs: 1509
+LAMEND_example: (1, 'docs/referee-2/R2-N5-CLS/climb/gt_b_best.pg#1@5 |D| 1 len 1 n 32')
+max_len_by_D0: (56, 'experiments/red/xing/instances/x32_rand64.pg#0')
+max_len_by_D1: (92, 'experiments/red/n5inj/instances/returns_ph64.pg#0')
+RESULT OK violations=0

@@ -1,0 +1,3 @@
+dchg=28 fac_n=96 max_B=17 max_dchg=8 max_ratio=79.5625 max_seg_dchg=0 max_tot_per_v=8 runs=1 runs_h3=1 seg_dchg=0 stretch_segs=2 trans_v=576 twin=3 twin_dchg=3
+BHIST [(17, 1)]
+GAP PASS

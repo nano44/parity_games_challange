@@ -1,0 +1,62 @@
+DIV                        0
+EXITLAM                    85
+EXITLAM_D0                 60
+EXITLAM_D1                 20
+EXITLAM_D2                 4
+EXITLAM_D3                 1
+EXIT_chk                   387
+R4_chk                     17
+REP_chk                    43544
+R_chk                      46323
+epochs                     43544
+epochs_D0                  18449
+epochs_D1                  12308
+epochs_D2                  8386
+epochs_D3                  4401
+games                      3000
+max_len_D0                 4
+max_len_D1                 3
+max_len_D2                 2
+max_len_D3                 2
+phases                     43157
+FAILS 0
+EX ( ('EXITLAM', 'rand92_74', 0, 0, 0)
+EX ( ('EXITLAM', 'rand92_82@r1', 1, 1, 3)
+EX ( ('EXITLAM', 'rand92_111', 0, 0, 0)
+EX ( ('EXITLAM', 'rand92_111@r1', 1, 1, 0)
+EX ( ('EXITLAM', 'rand92_114@r3', 1, 1, 0)
+EX ( ('EXITLAM', 'rand92_197@r1', 2, 2, 0)
+EX ( ('EXITLAM', 'rand92_274@r2', 1, 1, 0)
+EX ( ('EXITLAM', 'rand92_317@r4', 0, 0, 0)
+EX ( ('EXITLAM', 'rand92_445', 0, 0, 0)
+EX ( ('EXITLAM', 'rand92_511@r4', 0, 0, 0)
+EX ( ('EXITLAM', 'rand92_557', 1, 1, 0)
+EX ( ('EXITLAM', 'rand92_557@r2', 1, 1, 0)
+EX ( ('EXITLAM', 'rand92_563', 1, 1, 0)
+EX ( ('EXITLAM', 'rand92_563@r2', 2, 2, 0)
+EX ( ('EXITLAM', 'rand92_563@r3', 2, 2, 0)
+EX ( ('EXITLAM', 'rand92_601@r2', 2, 2, 0)
+EX ( ('EXITLAM', 'rand92_616@r2', 0, 0, 1)
+EX ( ('EXITLAM', 'rand92_654@r1', 0, 0, 0)
+EX ( ('EXITLAM', 'rand92_719@r1', 3, 3, 0)
+EX ( ('EXITLAM', 'rand92_746', 0, 0, 0)
+EX ( ('EXITLAM', 'rand92_746@r2', 1, 1, 0)
+EX ( ('EXITLAM', 'rand92_751@r1', 0, 0, 0)
+EX ( ('EXITLAM', 'rand92_759@r4', 0, 0, 1)
+EX ( ('EXITLAM', 'rand92_781@r2', 0, 0, 1)
+EX ( ('EXITLAM', 'rand92_855@r1', 0, 0, 2)
+EX ( ('EXITLAM', 'rand92_882', 0, 0, 0)
+EX ( ('EXITLAM', 'rand92_923@r3', 1, 1, 0)
+EX ( ('EXITLAM', 'rand92_946', 0, 0, 0)
+EX ( ('EXITLAM', 'rand92_946@r1', 0, 0, 0)
+EX ( ('EXITLAM', 'rand92_946@r3', 1, 1, 0)
+EX ( ('EXITLAM', 'rand92_946@r4', 1, 1, 0)
+EX ( ('EXITLAM', 'rand92_970@r1', 0, 0, 1)
+EX ( ('EXITLAM', 'rand92_991@r4', 0, 0, 1)
+EX ( ('EXITLAM', 'rand92_1002@r1', 2, 2, 0)
+EX ( ('EXITLAM', 'rand92_1002@r3', 2, 2, 0)
+EX ( ('EXITLAM', 'rand92_1004@r3', 1, 1, 2)
+EX ( ('EXITLAM', 'rand92_1053@r2', 0, 0, 0)
+EX ( ('EXITLAM', 'rand92_1053@r3', 0, 0, 1)
+EX ( ('EXITLAM', 'rand92_1074@r2', 0, 0, 1)
+EX ( ('EXITLAM', 'rand92_1129@r1', 1, 1, 0)

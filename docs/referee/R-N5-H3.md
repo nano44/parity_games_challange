@@ -162,3 +162,14 @@ No disagreement; no gap in either report.
 ### C.4 Joint state
 - All to-sign items signed by both; FRZ-U_H3 in the 0-based reading (freeze from state k_0 + n − 1).
 - Fixes file: H3-N2 = N-H3-4 (B1 simplicity line); N-H3-1 (quote wording); H3-N4 (index wording); landing note H3-N1.
+
+## Addendum B (2026-10-26T06:51Z by date -u; (Opus 5.5, D15)): are the observed freezes content-free by level? (the Lead's 06:49Z question)
+- Check (scratch/h3_probe.py, FRZRUN lines): for every non-vacuous freeze run (≥ n + 1 states), L := max(max_S M_D, −1), and the number of
+  (state, vertex) values on the run whose W or Ξ path set has a vertex of rank > L.
+- lib41 (n ≤ 64, S3 + 4 random + given starts; h3_logs/lib41_rs4_content.txt): 3 non-vacuous runs, pftheta34_n32 (n 32, L = 31), pftheta_cex_n32
+  (n 32, L = 31), thclimb_n16_s12 (n 16, L = 15): L = n − 1, the top rank, and 0 values with a vertex above L. CONTENT-FREE.
+- frz1_n24 (2 runs, L = 23 = top rank) and REFEREE-2's witness pft34_h3u_P32 (2 runs, n 34, L = 32 < top rank 33): 0 values with a vertex
+  above L. CONTENT-FREE as well (h3_logs/frz_content.txt).
+- So every freeze FRZ-U_H3 reaches in my data is content-free: at L = max_S M_D only the cycle node is left in COARSE_L, and that is fixed by
+  (ii) anyway. This confirms L-SI 12's finding on my runs. The lemmas are unaffected (they are proved); the DATA limit is that no observed
+  freeze is informative.

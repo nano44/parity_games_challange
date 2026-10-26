@@ -1,0 +1,15 @@
+EP0_checks: 16917
+LAMEND_checks: 176
+LAMEND_differs: 40
+LAMEND_differs_D0: 23
+LAMEND_differs_D1: 13
+LAM_checks: 46315
+REP_steps: 1960
+RIII_checks: 1960
+RII_checks: 1960
+RIV_checks: 9
+RI_checks: 46315
+epochs: 44531
+phases: 44355
+runs: 18000
+FOUND 0 RESULT OK

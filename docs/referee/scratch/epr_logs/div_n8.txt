@@ -1,0 +1,13 @@
+DIV                        1
+R4_chk                     2
+REP_chk                    4
+R_chk                      6
+epochs                     4
+epochs_D0                  2
+epochs_D1                  2
+games                      1
+given_starts               1
+max_len_D0                 0
+max_len_D1                 1
+phases                     4
+FAILS 0
