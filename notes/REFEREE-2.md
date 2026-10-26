@@ -24,6 +24,8 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
   definition, Lemma S (a) every game CONFIRMED, late regime j >= n NOT reached: data max f-n = -2, climbs -4). Tool R2-N5-FBRED/fbred_check.py.
 - §C FBRED a4a642b6 (identical). P-N5-1E (e613db13 @ 7fef9699): R2-N5-1E.md all SIGN, no gap; N-1E-1..5. VJ00 PDF opened
   (brics.dk, sha256 485a12de = R15's): §2, §4.3, §5.2 (11) quotes verified. Tool R2-N5-1E/onee_check.py. R-N5-1E* not opened before push.
+- P-N5-VILB (872d4400) and P-N5-ACCEL (301f0be0) @ e7febdc2: R2-N5-VILB.md, R2-N5-ACCEL.md all SIGN, no gap; shared tool
+  R2-N5-VILB/va_check.py; EPOCH (a)/(b) global regime NOT reached (data -1, climbs -2); per-class freeze reached and holds.
 - Done (was next): P-N5-1E; checks (i) R18 (d) S (a) cited, (ii) '>= 0' repair, (iii) MIRROR (b)+(c) with L(n) = T*(n,n^2,n,n).
 - Queue after NH42 (done): DUAL (done) (a51f7c30 @ df073cb5), then GD (docs/new/P-N5-GD-box43.md b898ff82 @ 3c6f6c16).
 - Sources (via landed RESULTS, not re-opened): VJ00 BRICS RS-00-48 (sha256 485a12de…, RESULTS R15 object line), p. 16 (11) as quoted in
