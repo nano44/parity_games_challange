@@ -270,3 +270,50 @@ Nothing running of mine. Oink NOT built (`tools/oink/build` absent): `scripts/se
   match the intent. Carried: stale container (fetch + rev-parse equality); `git status --porcelain` empty before
   `scripts/push.sh > file 2>&1; echo $?`; `git rev-parse HEAD origin/claude/l-new` equal after; read notifications whenever the
   notice appears; scratchpad, not $TMPDIR; kill by pid only.
+
+## Successor 23 (Opus 5.5; written 2026-10-26 00:59Z by date -u)
+
+### 1. Branch, head, ahead/behind trunk (claude/vibrant-johnson-nxvvxo)
+- Branch claude/l-new. `git fetch origin claude/l-new` (clone was 2,230 behind) → `git checkout -B claude/l-new origin/claude/l-new`
+  → `git rev-parse HEAD origin/claude/l-new` both b2b88ea9 (successor 22's last commit "lib41 data for Wo_D and G_D (c2)").
+- Trunk head 1c23106b ("Lead: merge REFEREE-2 13 check (GO); NOW; log", 00:53:35Z). Before merging: `git rev-list --left-right
+  --count HEAD...trunk` = **3 ahead / 141 behind**, merge-base 8e18cfd3 (unmerged: fe3b0527, 7e0fd91f, b2b88ea9; box 43 Route Δ).
+- `git merge --no-ff` trunk (no conflicts, no rebase) → 2d28236b: 4 ahead / 0 behind; 5 ahead after this commit.
+
+### 2. Open work and the next step of each
+Nothing running of mine. Oink NOT built (`tools/oink/build` absent): `scripts/setup_oink.sh` before any run that needs it.
+- **(1) Packet P-N5-GD-box43** (Lead 01:0xZ, waits for "go"): new frozen docs/new/P-N5-GD-box43.md from docs/new/N5-MULTI-box43.md
+  §4.4-4.5: Lemma G_D (a), (b), (c1), (c2), Lemma F1°_D, Lemma Wo_D, every game, hypotheses (h_D), (h3_D) explicit. Conjecture Δ1 and
+  Δ-RT NOT for signature (stated as CONJECTURE / OPEN only). Next: re-read §4.4 proofs line by line against the landed citations
+  (R17, R20, R21 ...), re-run experiments/new/box43/f1d.py, write, freeze, report sha1.
+- **(2) Route Δ** after (1): port R20's coarse machinery (C, FBL, FBF, CR, XA) with u* → M_D and "θ, w constant" → "Ξ(u), W(u)
+  constant for u ∈ D_k"; then Δ-RT (fine route order for different terminals below M_D); then Δ1.
+- **(3) Fixes files**, each on the Lead's go: docs/new/P-N5-DUAL-fixes-box43.md (DUAL-1 wording: "agree on states 0..j; the first
+  possible difference is at j + 1"; REFEREE-2 13's items; START status line from docs/referee/R-N5-START.md 4e440bd5, R50 now
+  LANDED) after REFEREE-2 13's report and both §Cs; docs/new/P-N5-NH-fixes-box43.md after both NH42 reports and §Cs. State now
+  (NOW 00:38Z): DUAL and NH42 REFEREE-signed; REFEREE-2 13 order P-N5-1O → FX → NH42 → DUAL, so neither is ready.
+- Not routed: G-N1-LB.
+
+### 3. docs/GAPS.md rows I own (trunk 1c23106b, `grep -n L-NEW docs/GAPS.md`)
+- **G-N5-TIME** (l.11): major; "L-NEW (L-LIT T22; referees later)"; **open**. Update 00:38Z: R49 (NEEDB) and R50 (KW) landed;
+  every count in the 𝒞^1O chain is landed; the assembly P-N5-1O is to be refereed. "Beyond 𝒞^1O: OPEN (frontier 𝒞^(≥2E,≥2O) holds
+  every known exponential-SI family)."
+- **G-N1-LB** (l.10): minor; "L-NEW (optional; not routed)"; **open**.
+- **G-N5-TERM** (l.16): major; "L-NEW (L-COMP checks runs)"; **closed** (RESULTS R15).
+
+### 4. Three owner rulings that most constrain me (verbatim, trunk docs/DECISIONS.md), with DECISIONS-INDEX status
+1. D18 (DECISIONS l.332-333; INDEX l.32 **active**; Lead reading L40, INDEX l.33 active):
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+2. D14 (l.244-246; INDEX l.22 **active**; Lead reading L35, l.23 active):
+   > D
+   > You know it can also test prveiously not tested approaches, it can come up with it own as well
+3. D16 (l.299-300; INDEX l.28 **active**; Lead reading L38, l.29 active):
+   > Then keep working as I told you to
+
+### 5. One trap, and the check that prevents it
+- **Trap** (successor 22, box 43): a stray `git checkout <trunk> --` (meant to fetch files) detached HEAD; a commit there would not
+  have reached claude/l-new. Restored before any push, tree clean.
+- **Check**: `git branch --show-current` = claude/l-new after any checkout, and `git rev-parse HEAD origin/claude/l-new` equal
+  after every push. Carried: stale clone (fetch + rev-parse equality at start; done above); `git status --porcelain` empty before
+  `scripts/push.sh > file 2>&1; echo $?`; read notifications whenever the notice appears; scratchpad, not $TMPDIR; kill by pid
+  only (never pkill -f); one "Resume point" heading in the notebook after any overwrite.

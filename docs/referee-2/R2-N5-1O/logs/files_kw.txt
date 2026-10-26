@@ -1,0 +1,22 @@
+MODE files ../R2-N5-KW/files.lst 3 MUT -
+O2_ok: 1509
+O3_runs: 1509
+O3_strats: 8391
+O3b_runs: 429
+O3b_skipped: 1080
+O3b_strats: 159015
+O4_ok: 1509
+O5_ok: 1509
+REW0_stops: 81
+iterations: 23105
+phases: 6209
+phases_with_fb: 436
+runs: 1509
+stops: 1509
+f_over_R48: (1.0, 'docs/referee-2/R2-N5-LP/instances/df_cex.pg#0')
+iter_over_bound: (3.5037691032306337e-10, 'experiments/attr/instances/dtr_fig1.pg#2')
+max_f: (37, 'docs/referee-2/R2-N5-FBW/climb/dirty_a_best.pg#1')
+max_phase_len: (112, 'experiments/red/so/instances/xsn91_n48.pg#0')
+max_phases: (29, 'experiments/red/n5inj/instances/block_bk32.pg#0')
+phases_over_bound: (0.375, 'experiments/attr/instances/dtr_fig1.pg#2')
+RESULT OK violations=0

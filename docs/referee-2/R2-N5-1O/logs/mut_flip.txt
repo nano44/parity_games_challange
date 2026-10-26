@@ -1,0 +1,53 @@
+MODE random 400 4 12 7 MUT flip
+O2_ok: 400
+O3_runs: 400
+O3_strats: 1006
+O3b_runs: 399
+O3b_skipped: 1
+O3b_strats: 40293
+VIOLATIONS: 1078
+V_O4: 400
+V_O5: 545
+V_O6: 133
+iterations: 466
+phases: 788
+phases_with_fb: 17
+runs: 400
+stops: 400
+f_over_R48: (1.0, 'random7:36')
+iter_over_bound: (7.543754676603891e-12, 'random7:122')
+max_f: (1, 'random7:12')
+max_phase_len: (2, 'random7:37')
+max_phases: (5, 'random7:233')
+phases_over_bound: (0.2, 'random7:29')
+VIOLATION O4: random7:0: W [0, 1, 2, 3, 4, 5, 6, 7, 8] != W_E []
+VIOLATION O5: random7:0: sigma loses from W (odd cycle at 0)
+VIOLATION O4: random7:1: W [] != W_E [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+VIOLATION O5: random7:1: sbar loses from V\W (even cycle at 2)
+VIOLATION O4: random7:2: W [] != W_E [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+VIOLATION O5: random7:2: sbar loses from V\W (even cycle at 0)
+VIOLATION O4: random7:3: W [0, 1, 2, 3] != W_E []
+VIOLATION O5: random7:3: sigma loses from W (odd cycle at 3)
+VIOLATION O4: random7:4: W [] != W_E [0, 1, 2, 3, 4, 5]
+VIOLATION O5: random7:4: sbar loses from V\W (even cycle at 4)
+VIOLATION O4: random7:5: W [0, 1, 2, 3, 4, 5, 6] != W_E []
+VIOLATION O5: random7:5: sigma loses from W (odd cycle at 0)
+VIOLATION O4: random7:6: W [0, 1, 2, 3, 4, 5] != W_E []
+VIOLATION O5: random7:6: sigma loses from W (odd cycle at 0)
+VIOLATION O4: random7:7: W [] != W_E [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+VIOLATION O5: random7:7: sbar loses from V\W (even cycle at 1)
+VIOLATION O4: random7:8: W [] != W_E [0, 1, 2, 3]
+VIOLATION O5: random7:8: sbar loses from V\W (even cycle at 0)
+VIOLATION O4: random7:9: W [1] != W_E [0, 2, 3]
+VIOLATION O5: random7:9: sigma loses from W (odd cycle at 1)
+VIOLATION O5: random7:9: sbar loses from V\W (even cycle at 2)
+VIOLATION O6: random7:9: sbar-play enters W at 0
+VIOLATION O4: random7:10: W [] != W_E [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+VIOLATION O5: random7:10: sbar loses from V\W (even cycle at 2)
+VIOLATION O4: random7:11: W [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] != W_E []
+VIOLATION O5: random7:11: sigma loses from W (odd cycle at 8)
+VIOLATION O4: random7:12: W [] != W_E [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+VIOLATION O5: random7:12: sbar loses from V\W (even cycle at 7)
+VIOLATION O4: random7:13: W [] != W_E [0, 1, 2, 3, 4]
+VIOLATION O5: random7:13: sbar loses from V\W (even cycle at 1)
+RESULT FAIL violations=1078

@@ -1546,3 +1546,20 @@
 - 00:18Z: Merged referee 4e440bd5: R-N5-START audit (REFEREE 11). Every result in the 𝒞^1O chain is start-free in statement and proof; the R32/R33 chain was read at structure level. Forwarded to L-SI (P-N5-1O: 'from any start pair' with the caveat) and L-NEW (MIRROR's H-N5).
 - 00:29Z: Merged checker 4f617e9e (C58 FAIL: R49, three E-items, wording against signed text: the rise-setting clause, a false RESULTS citation, the disclosure wording) and dc29ee23 (C59 FAIL: R50, CW-INT setting dropped, slack conventions, limit (ii) incomplete). Applied all E-items verbatim per CHECKER's text, plus optional N-1, N-3 (C58) and N-1..N-4 (C59). Revised R49 sha1 6a9ce799, R50 sha1 64cbc92f. Lesson again: diff every setting clause against the packet.
 - 00:38Z: Merged checker a58dcd3a (C58 + C59 Addendum 1 PASS). LANDED R49 (P-N5-NEEDB, lines 2432-2492) and R50 (P-N5-KW, lines 2494-2565), checker a58dcd3a, both cmp OK. GAPS line 11 UPDATE: every count in the 𝒞^1O chain is landed; the assembly P-N5-1O comes next. GO to L-SI to freeze P-N5-1O.
+- 2026-10-26 00:48Z: Merged l-si 058e5aee. PINNED at this commit: packet P-N5-1O, docs/si/P-N5-1O-box15.md, sha1 2cf5e67262d31712976fb882175f5080cc3dc4ec, 184 lines, L-SI 10. Contents:
+  - Theorem 1O-POLY: from any start pair, ITER ≤ (n(n−1)+d_o)(T*+1) = O(m·Δ·d_o·n¹³).
+  - Lemma BIT: O(n³(n+m)) word operations per iteration.
+  - Lemma OUT: S5's output is correct on 𝒞^1O.
+  - Corollary 1O-TIME.
+  - Citations: R15, R21 (a), R36 (c), R47 (b), R48 (i), R50 (h), and the R-N5-START audit.
+  - Routing: TOP PRIORITY for both referees. REFEREE 11 now. REFEREE-2 13 first after its handover check, ahead of FX, NH42 and DUAL.
+- 00:53Z: Merged referee-2 a0940b45 (REFEREE-2 13 handover check 5/5 at 00:06Z; my watcher had missed it). GO with P-N5-1O first, then FX, NH42, DUAL.
+- 2026-10-26 00:58Z: Read 14 notifications. Hourly sweep (trigger 00:03Z, run late): no overage; Lead context 689k.
+  - Merged checker 06252e76: C58 + C59 Addendum 2, R49 and R50 landed verbatim; C58 and C59 CLOSED.
+  - Merged l-new fe3b0527 / b2b88ea9: set-form lemmas G_D (a)-(c2), F1°_D, Wo_D, all every game; HP replaces FO; RT's block narrowed to the fine order between different terminals below M_D (Δ-RT, OPEN). Signpost DATA: N5 is ~linear in N on switchallexp, switchbestexp and counter_*.
+  - Merged l-red d3e8b47e: R74, post-freeze KIND-MONO still vacuous (1.86 M start-pair evaluations), with a construction target.
+  - L-NEW 22 and L-RED 18 PARKED. Created L-NEW successor 23 (session_011WFfFqRNrU1a8LQwbwazZN): packet P-N5-GD, then Route Δ. Created L-RED successor 19 (session_017GDW2Qywsw52DKHPD8kAM6): adversary on P-N5-1O, then DUAL / MIRROR.
+- 01:04Z: Merged l-new d489672f (L-NEW 23 check 5/5, GO: P-N5-GD then Route Δ) and l-red 56c75abd (L-RED 19 check 5/5, GO: adversary on 1O, then DUAL / MIRROR).
+- 01:10Z: Merged referee 4298dae9: R-N5-1O. 1O-POLY, BIT and 1O-TIME SIGNED; OUT SIGNED WITH GAP OUT-1 (one-word repair; conclusion unchanged); notes 1O-N1, 1O-N2, BIT-N1. The R32/R33 start-freeness pass is done line by line (R-N5-START Addendum 1). Waiting on REFEREE-2 13's 1O report.
+- 01:16Z: Merged referee-2 04c2d708: R2-N5-1O, all SIGN, no gap. N-1O-1 = OUT-1 (≥ 0); N-1O-2: O(n¹⁷); N-1O-3: per-run cost; N-1O-4: R21 (a) holds on every game (R18 (d) S (a)); N-1O-5: R32/R33 start-free line by line; N-1O-6. P-N5-1O is now SIGNED BY BOTH REFEREES; §Cs requested.
+- Merged l-new 205c9ed7. PINNED at this commit: packet P-N5-GD, docs/new/P-N5-GD-box43.md (L-NEW 23): G_D (a)-(c2), F1°_D, Wo_D, every game. Queued for both referees after FX, NH42 and DUAL.
