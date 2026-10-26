@@ -466,6 +466,11 @@ Successor 28 (Opus 5.5, D14/D18, L40), session_01Dg8L3iN3G8HVzEVoGgCE1Y. Handove
    unbounded part of the cycle changes); KPOLY §9 (a)'s recursion (early p-run segments charged to κ(p)-changes: does it close linearly?).
 3. Not routed: G-N1-LB.
 
+## Dead ends (successor 29; also in N5-KPOLY §12 (iii))
+- FRZ_c ("M(κ(z)) frozen from the (|U_c| − 1)-th transition of a fallback-free run, every z ∈ U_c ∖ {c}"): DEAD. Instance
+  experiments/red/so/instances/so_th_n32.pg (sha1 ae9126ad…), S3 start: 31 late M-changes, one at a direct Odd choice vertex (z 3, c 5, w 31,
+  position 31). Obstruction: R50 (c) freezes above m* (c_θ vs c_w), not above c.
+
 ## Things only I know (successor 28)
 - OFFSET-MONO's key is to take the reference vertex p := par_{t+1}(q) (the NEW routing vertex) and compare offsets to p at both times: λ is constant
   on a phase, so every vertex on q's new path is in U_c and has a t-offset to p even if its t-play missed p. That kills the ENTRY hypothesis. The
@@ -1290,3 +1295,5 @@ Successor 28 (Opus 5.5, D14/D18, L40), session_01Dg8L3iN3G8HVzEVoGgCE1Y. Handove
   (RET-FB induction), R3 = EPC-N3 + N-EPC-6 (EP-ASM a reduction), R4 = N-EPC-1 (pin wording), R5 = N-EPC-2 (D_C), R6 = N-EPC-3 (citation);
   remarks N-EPC-4, EPC-N4 = N-EPC-5; §5 DATA: non-flat saturated fallbacks 5/236, 11/178 (REFEREE) vs named-only (REFEREE-2), per REFEREE §C.
   41 quotes, 0 missing. Opened: both referee files at their §C commits in full; packet at 81ab0b72.
+- 18:3xZ: item 3 (b) → KPOLY §12: no linear closure via SAT-k (recursion exponential in depth for any E ≥ 1); sum form is additive, so bound
+  OR(x) directly. DATA orun.py: SAT-k late window never entered (LR 0), rises at direct levels (2,282/2,300). FRZ_c DEAD (so_th_n32).

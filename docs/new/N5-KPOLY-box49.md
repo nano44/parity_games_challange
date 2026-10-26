@@ -248,3 +248,29 @@ FT_c := the in-phase transitions of P at which some z ∈ U_c ∖ {c} has κ_t(z
     strictly up, the new option tied at t; the ODDC (u3ev_n16) has the old option's M rising to 8192.
   - tieclimb.py (4 climbs × 3,000 steps from u3ev_n16 / klcount_n16, n ≤ 24, objectives ODDC / TIE): best ODDC_c 1, best TIE_c 1 per phase and class;
     292,764 characterisation checks on climbed games, CHAR_V / FT_V / FTB_V 0.
+
+## 12. Queue item 3 (b): §9 (a)'s recursion, measured; where the count really sits (READING; DATA; one DEAD guess; written 18:09Z by date -u)
+- (i) PROVED (elementary, a re-reading of P-N5-OFFMONO-add §2's sum form): the κ(q)-count needs NO recursion over the chain. By CHAIN-COUNT″'s
+  sum form, κ(q)-changes ≤ |ZC″_c| + Σ_{x ∈ Q_c} OR(x), OR(x) := the transitions at which off(x; par_{t+1}(x)) rises strictly (each κ(q)-change
+  is charged to one level x of its chain and one transition, injectively in the transition). The sum is ADDITIVE over levels and the same
+  for every q. §9 (a)'s recursion appears only if OR(x) is bounded THROUGH R61 (b) SAT-k, whose window is per p-run (one early segment per
+  κ(p)-change); that recursion, OR(x) ≤ A_x + E·(κ(p)-changes + 1) with κ(p)-changes ≤ |ZC″| + Σ_{x′ above x} OR(x′), is exponential in the
+  depth for every E ≥ 1 (OR(x_h) ~ (1 + E)^h). So it does NOT close linearly by itself; the way out is to bound OR(x) directly. ANSWER to (b): no.
+- (ii) DATA (experiments/new/box48/orun.py; out/orun_lib41_n34_k2.txt, out/orun_long7.txt): per x-piece (cut EXIT_x ∪ ZC″) and p-run inside it.
+  - R61 (b)'s late window is NEVER entered: LR = 0 (no strict offset rise after the w_c-th fallback of its p-run) in all 1,466 p-runs of lib41
+    n ≤ 34 (S3 + 2, seed 7) and all p-runs of the seven long instances (nep90, nep76, long121, three climbed n-40 games, the n-80 snap). Every
+    rise is EARLY. SAT-k's |S| ≤ d_x therefore bounds nothing that happens in these runs.
+  - The rises sit at DIRECT levels (p = c, off(x; c) = κ(x)): lib41 2,282 of 2,300 rises (relayed levels: 18, at most 2 per p-run); nep90 95 / 99;
+    long121 35 / 40; the n-80 snap 186 / 191; exception nep76 36 / 76 (relayed max 15 in one p-run). One p-run of a direct level carries up to
+    51 rises (lev_l_x n 32, d_x 14, no fallback AT a rising transition), so "≤ d_x values per p-run" (HA) fails 102 times on lib41.
+  - So the open quantity behind D is the number of κ-changes of DIRECT terminals inside a phase, mostly inside fallback-free runs (RESULTS R58
+    (d) DIR bounds a direct terminal's κ only after the phase's w_c-th fallback, a window these phases also rarely reach).
+- (iii) DEAD (successor 29's guess FRZ_c, a general-game form of RESULTS R50 (c) FRZ-U): "in a fallback-free run of a phase, M(κ(z)) is
+  constant for every z ∈ U_c ∖ {c} from the run's (|U_c| − 1)-th transition on". Killed by experiments/red/so/instances/so_th_n32.pg (L-RED; sha1
+  ae9126ad1bf963114bdd56b6e50c8c1cc571779e) from the S3 start: 31 late M-changes (out/frz_so_th_n32_S3.txt), one at a direct Odd choice vertex
+  (z = 3, c = 5 even, w = 31, at position 31 of a 33-transition run, M −50331648 → 16777216). Same on pftheta_cex_n32 (53) and
+  thclimb_n16_s12 (12). All violations on lib41 (frz.py: 128, 5 at direct terminals) are in classes with ONE Odd choice vertex, at positions w to
+  w + 2. Obstruction: R50 (c) freezes the route ABOVE m* (the more relevant of c_θ and the W-frame's c_w), not above c; between c and c_w the
+  path set may still move. The seven long instances have 0 late M-changes. OPEN: the right general-game frame (an m*_c per class).
+- (iv) So the route to G-N5-TIME through OFFMONO + CHAIN-COUNT″ now needs, per phase: EXIT_x (L-SI 18), OR(x) at relayed levels (small in
+  data) and the κ-changes of direct terminals (the bulk). The last is the multi-class analogue of what R50 / R51 settle on 𝒞^1O.
