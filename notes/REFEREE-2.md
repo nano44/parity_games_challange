@@ -11,7 +11,12 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
   --list KMIN = 2 skips 𝒞^1O. Scans: 15/1,006 (𝒞^1O set), 19/1,230 (lib41). CHARGE-U holds everywhere.
 - Tools: R2-N5-RUND/rund_check.py (own play values Ξ, W; Runner = succ. 13's; checks per item + P1/P2 brute; mutations RD_MUT), run_all.sh
   (instances | big | extra), climb.py (long ii-runs), uf_once.py, uf_scan.py, summarize.py; logs/summary.txt.
-- NEXT: §C with REFEREE's R-N5-RUND only after the Lead's word; docs/referee/ RUND opened only after my push.
+- DONE: R2-N5-HON (P-N5-HON sha1 07f8e767 @ 31835c4b = l-new 67a7b54d): HON, SAT0, HON-FB, HON′, HON-0, RESTRICT_u, REPRO_u, REC-1 (a)
+  SIGN; EP-1u, REC-1 (b)-(d) SIGN as implications from (Στ) (hold at R65's audit strength); REC-0 relation CONFIRMED (f·n + 2, independent);
+  Q-R17 YES; notes N-HON-1..5 (SAT0 Odd-case wording). Tool R2-N5-HON/hon_check.py (exact LEV n <= 11; own N5^τ for REPRO_u).
+- Trap hit: `pkill -f` / `ps | grep [h]on_check` inside a command whose own text contains the pattern kills the shell (exit 144). Use
+  `pgrep -f "^python3 hon_check" | xargs -r kill` in a command of its own.
+- NEXT: §C RUND (after REFEREE 13's SHA from the Lead), §C HON later; docs/referee/ RUND / HON opened only after my reports (both pushed).
 
 ## HANDOVER (successor 15, session_01VJosSHA8jpworMYkRKh9T4, Opus 5.5 under D15; written 2026-10-26 09:2xZ by date -u; context ~415k)
 Branch claude/referee-2, merged with trunk (--no-ff) before every push. REFEREE-2 owns no docs/GAPS.md rows. PARKED after this push (Lead 09:21Z,

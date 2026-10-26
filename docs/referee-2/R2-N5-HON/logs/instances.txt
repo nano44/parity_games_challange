@@ -1,0 +1,220 @@
+MODE start ../../../experiments/new/box46/instances/immp_cex_n11.pg ../../../experiments/new/box46/instances/immp_cex_n11.start MUT - LEVMAX 11 RUMAX 3
+ENGXI_checks: 3
+H0_phases: 1
+HON_phases: 1
+R1_d_phases: 1
+R1_entries_D0: 1
+R1_entries_big: 0
+R1_entries_dir: 0
+R1_entries_start: 0
+R1_intervals: 1
+R1_phases: 1
+RP_runs: 1
+RU_checks: 3
+S0_checks: 3
+S1_gaps: 1
+S1_rise_checks_unsat: 1
+S1_step_checks: 1
+S2_checks: 1
+S3_phases: 1
+SAT0_states: 1
+phases: 1
+runs: 1
+states: 3
+H0_max_D0_states: (2, 'immp_cex_n11.pg@0 n 11')
+H0_max_N0: (2, 'immp_cex_n11.pg@0 n 11')
+HON_max_honest: (2, 'immp_cex_n11.pg@0 n 11 f 0 f_in 0')
+R1_max_interval_states: (1, 'immp_cex_n11.pg@1 u 3')
+R1_max_intervals: (1, 'immp_cex_n11.pg@0 n 11')
+RP_max_len: (2, 'immp_cex_n11.pg@0 u 3 n 11')
+S3_max_span: (0, 'immp_cex_n11.pg@0 n 11')
+RESULT OK violations=0
+MODE start ../../../experiments/new/box46/instances/immfail_n14.pg MUT - LEVMAX 11 RUMAX 3
+ENGXI_checks: 7
+H0_phases: 3
+HON_phases: 3
+R1_d_phases: 3
+R1_entries_D0: 2
+R1_entries_big: 0
+R1_entries_dir: 0
+R1_entries_start: 0
+R1_intervals: 2
+R1_phases: 3
+RP_runs: 6
+RU_checks: 12
+RU_iv_checks: 4
+S1_gaps: 2
+SAT0_states: 1
+phases: 3
+runs: 1
+states: 7
+H0_max_D0_states: (3, 'immfail_n14.pg@4 n 14')
+H0_max_N0: (1, 'immfail_n14.pg@0 n 14')
+HON_max_honest: (3, 'immfail_n14.pg@4 n 14 f 0 f_in 0')
+R1_max_interval_states: (1, 'immfail_n14.pg@1 u 0')
+R1_max_intervals: (1, 'immfail_n14.pg@0 n 14')
+RP_max_len: (2, 'immfail_n14.pg@4 u 0 n 14')
+RESULT OK violations=0
+MODE start ../../../experiments/n5-exhaustive/instances/b5_o11.pg MUT - LEVMAX 11 RUMAX 3
+ENGXI_checks: 13
+H0_phases: 2
+HON_phases: 2
+R1_d_phases: 2
+R1_entries_D0: 0
+R1_entries_big: 0
+R1_entries_dir: 0
+R1_entries_start: 1
+R1_intervals: 1
+R1_phases: 2
+RP_runs: 2
+RU_checks: 13
+S0_checks: 13
+S2_checks: 1
+S3_phases: 1
+SAT0_states: 1
+phases: 2
+runs: 1
+states: 13
+H0_max_D0_states: (1, 'b5_o11.pg@12 n 10')
+H0_max_N0: (1, 'b5_o11.pg@12 n 10')
+HON_max_honest: (1, 'b5_o11.pg@12 n 10 f 0 f_in 0')
+R1_max_interval_states: (12, 'b5_o11.pg@0 u 7')
+R1_max_intervals: (1, 'b5_o11.pg@0 n 10')
+RP_max_len: (11, 'b5_o11.pg@0 u 7 n 10')
+S3_max_span: (0, 'b5_o11.pg@12 n 10')
+RESULT OK violations=0
+MODE start ../../../experiments/n5-exhaustive/instances/b4_n5_other_0.pg MUT - LEVMAX 11 RUMAX 3
+ENGXI_checks: 3
+FB_cases: 1
+H0_phases: 1
+HON_phases: 1
+R1_d_phases: 1
+R1_entries_D0: 0
+R1_entries_big: 0
+R1_entries_dir: 0
+R1_entries_start: 0
+R1_intervals: 0
+R1_phases: 1
+RP_runs: 1
+RU_checks: 3
+S0_checks: 3
+S1_gaps: 1
+S1_rise_checks_unsat: 1
+S1_step_checks: 1
+S2_checks: 2
+S3_phases: 1
+SAT0_states: 1
+gaps_fallback_at_h: 1
+gaps_with_fallback: 1
+phases: 1
+runs: 1
+states: 3
+H0_max_D0_states: (3, 'b4_n5_other_0.pg@0 n 5')
+H0_max_N0: (1, 'b4_n5_other_0.pg@0 n 5')
+HON_max_honest: (3, 'b4_n5_other_0.pg@0 n 5 f 1 f_in 0')
+R1_max_intervals: (0, 'b4_n5_other_0.pg@0 n 5')
+RP_max_len: (2, 'b4_n5_other_0.pg@0 u 0 n 5')
+S3_max_span: (1, 'b4_n5_other_0.pg@0 n 5')
+RESULT OK violations=0
+MODE start ../../../experiments/si/orlens/instances/thclimb_n12_s11.pg MUT - LEVMAX 11 RUMAX 3
+ENGXI_checks: 20
+H0_phases: 5
+HON_phases: 5
+R1_d_phases: 5
+R1_entries_D0: 0
+R1_entries_big: 0
+R1_entries_dir: 0
+R1_entries_start: 1
+R1_intervals: 1
+R1_phases: 5
+RP_runs: 5
+RU_checks: 20
+SAT0_states: 1
+phases: 5
+runs: 1
+states: 20
+H0_max_D0_states: (1, 'thclimb_n12_s11.pg@0 n 12')
+H0_max_N0: (1, 'thclimb_n12_s11.pg@0 n 12')
+HON_max_honest: (1, 'thclimb_n12_s11.pg@0 n 12 f 0 f_in 0')
+R1_max_interval_states: (16, 'thclimb_n12_s11.pg@2 u 1')
+R1_max_intervals: (1, 'thclimb_n12_s11.pg@2 n 12')
+RP_max_len: (15, 'thclimb_n12_s11.pg@2 u 1 n 12')
+RESULT OK violations=0
+MODE start ../../../experiments/red/so/instances/so_th_n32.pg MUT - LEVMAX 11 RUMAX 3
+ENGXI_checks: 37
+H0_phases: 3
+HON_phases: 3
+R1_d_phases: 3
+R1_entries_D0: 5
+R1_entries_big: 0
+R1_entries_dir: 0
+R1_entries_start: 3
+R1_intervals: 8
+R1_phases: 3
+RP_runs: 3
+RU_checks: 37
+S1_gaps: 6
+SAT0_states: 1
+phases: 3
+runs: 1
+states: 37
+H0_max_D0_states: (6, 'so_th_n32.pg@1 n 32')
+H0_max_N0: (5, 'so_th_n32.pg@1 n 32')
+HON_max_honest: (6, 'so_th_n32.pg@1 n 32 f 0 f_in 0')
+R1_max_interval_states: (12, 'so_th_n32.pg@23 u 3')
+R1_max_intervals: (6, 'so_th_n32.pg@1 n 32')
+RP_max_len: (33, 'so_th_n32.pg@1 u 3 n 32')
+RESULT OK violations=0
+MODE start ../../../experiments/red/so/instances/exitr_cex_n16.pg MUT - LEVMAX 11 RUMAX 3
+ENGXI_checks: 11
+H0_phases: 3
+HON_phases: 3
+R1_d_phases: 3
+R1_entries_D0: 2
+R1_entries_big: 0
+R1_entries_dir: 0
+R1_entries_start: 1
+R1_intervals: 3
+R1_phases: 3
+RP_runs: 3
+RU_checks: 11
+S1_gaps: 3
+SAT0_states: 1
+phases: 3
+runs: 1
+states: 11
+H0_max_D0_states: (4, 'exitr_cex_n16.pg@1 n 16')
+H0_max_N0: (2, 'exitr_cex_n16.pg@1 n 16')
+HON_max_honest: (4, 'exitr_cex_n16.pg@1 n 16 f 0 f_in 0')
+R1_max_interval_states: (3, 'exitr_cex_n16.pg@5 u 9')
+R1_max_intervals: (3, 'exitr_cex_n16.pg@1 n 16')
+RP_max_len: (8, 'exitr_cex_n16.pg@1 u 9 n 16')
+RESULT OK violations=0
+MODE start ../../../experiments/new/box45/instances/div_n8.pg ../../../experiments/new/box45/instances/div_n8.start MUT - LEVMAX 11 RUMAX 3
+ENGXI_checks: 3
+H0_phases: 3
+HON_phases: 3
+R1_d_phases: 3
+R1_entries_D0: 0
+R1_entries_big: 0
+R1_entries_dir: 0
+R1_entries_start: 1
+R1_intervals: 1
+R1_phases: 3
+RP_runs: 5
+RU_checks: 5
+S0_checks: 3
+S2_checks: 2
+S3_phases: 2
+SAT0_states: 2
+phases: 3
+runs: 1
+states: 3
+H0_max_D0_states: (1, 'div_n8.pg@0 n 8')
+H0_max_N0: (1, 'div_n8.pg@0 n 8')
+HON_max_honest: (1, 'div_n8.pg@0 n 8 f 0 f_in 0')
+R1_max_interval_states: (1, 'div_n8.pg@1 u 3')
+R1_max_intervals: (1, 'div_n8.pg@1 n 8')
+RP_max_len: (0, 'div_n8.pg@0 u 3 n 8')
+S3_max_span: (0, 'div_n8.pg@1 n 8')
+RESULT OK violations=0
