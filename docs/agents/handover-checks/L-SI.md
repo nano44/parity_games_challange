@@ -1,3 +1,54 @@
+# Handover check: L-SI (successor 14, written 2026-10-26T10:08Z by date -u; LANE-RESTART step 3; Opus 5.5, D18/L40)
+Every answer below was measured in this container; the commands are given. Predecessor: successor 13, session_018EgSbDTYEVHqL882sCoX7u.
+Its handover is notes/L-SI.md "## HANDOVER (successor 13, box 17 cont.)" (l-si ca90fe74).
+
+## 1. Branch, head, distance to trunk
+- Branch `claude/l-si`. The clone was stale again: local HEAD 0d48da26; `git fetch origin claude/l-si` → origin ca90fe74;
+  `git merge --ff-only origin/claude/l-si` → HEAD ca90fe74 (`git rev-parse HEAD origin/claude/l-si` equal).
+- Trunk `origin/claude/vibrant-johnson-nxvvxo` = c69e199e (Lead: log; R65 landed at f7308227).
+  - Before merging: `git rev-list --left-right --count HEAD...trunk` → 2 ahead / 7 behind; merge-base 4ff4e1a4.
+  - `git merge --no-ff` of trunk c69e199e (no rebase) → merge commit bef09595; then 3 ahead / 0 behind. This file is the next commit; the
+    pushed SHA goes to the Lead.
+
+## 2. Open work and the next step of each (nothing running: `pgrep -a python` empty; fresh container)
+Frozen: `sha1sum docs/si/P-N5-RUND-box17.md` → 71e198f359cbb321fc0c15e6c28676d4dd046d52 = the handover's value. Not edited, never will be.
+- (1) STANDBY: RUND fixes file docs/si/P-N5-RUND-fixes-box17.md (repairs only), when both referees' RUND notes reach me via the Lead.
+  None has arrived (no referee RUND file on trunk named in NOW; RUND is third in REFEREE 13's queue after STAU, REC0).
+- (2) STANDBY: dead-end records if L-RED kills U-SPLIT, UF-ONCE or PAIR-OC (`grep -i "U-SPLIT\|UF-ONCE\|PAIR-OC" docs/*.md` → none on
+  trunk docs). Next step when a kill arrives: reproduce it, record DEAD with instance + obstruction, state the replacement (§18 recursion).
+- (3) ACTIVE after "go": the ρ / N_ep line from the L-SI side. Question: a bound on ρ_q per phase in classes with ≥ 2 Odd choice
+  vertices. Known (note §20-§21): boundaries ≤ ρ + (epochs − 1) + WG (PROVED, immediate); ruler-pattern level reuse at gates
+  (pftheta34 is 𝒞^1O, bounded by R51, not evidence; frz40, 4 Odd choice vertices, ρ_q = 10 < n). First step: ρ_q tables per phase and
+  per class on the ≥ 2-Odd-choice corpus (lib41 KMIN=2, frz*, L-RED climbs), with the per-q ruler trace, to see whether the ruler can
+  nest across two Odd choice vertices; then a statement (CONJECTURE or proof attempt). Coordination: L-NEW 25 holds N_ep from the epoch
+  side (P-N5-HON, REC-1), L-COMP 5 the epoch census: I ask the Lead before any count that overlaps those.
+- (4) Older OPEN: (R1), (R2), (R3) ¬(h3_D), twin Δ-RT for |D| ≥ 2 epochs. Packet P-N5-USPLIT only on the Lead's word.
+
+## 3. docs/GAPS.md rows I own
+- None (`git show trunk:docs/GAPS.md | awk -F'|' '$4 ~ /L-SI/'` → empty).
+- I work under G-N5-TIME (l.11): major, owner L-NEW, status open; last update 09:56Z (R65, P-N5-STAU): "N_ep / ρ and epochs with
+  |D_E| ≥ 2 OPEN; general games OPEN." NOW l.2: "NO polynomial bound for N5 on general games is proved."
+
+## 4. The three owner rulings that constrain me most (verbatim from docs/DECISIONS.md at trunk; status from docs/DECISIONS-INDEX.md)
+- D18 (DECISIONS.md l.332-333; index l.32: active): "Focus on N5 and work toward proving it. Explore novel approaches, especially by
+  connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions
+  where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and
+  open problems."
+  - Lead reading L40 (index l.33: active): L-SI is the OR/MDP lens on N5; labels PROVED / CONJECTURE / OPEN.
+- D1 (index l.5: active; DECISIONS.md l.3, full text docs/decisions/D001-launch-brief.md): "Never publish, post, email, submit or
+  contact anyone outside the fleet. Anything external is my decision." / "A claimed polynomial algorithm is far more likely to be
+  wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below."
+- D16 (DECISIONS.md l.299-300; index l.28: active): "Then keep working as I told you to"
+
+## 5. One trap that bit this lane before, and the check that prevents it
+- Trap (box 17, successor 13 §21): citing an instance as blow-up evidence when its class is already bounded. pftheta34's long gate
+  phase (ρ_0 > n, ruler pattern) looked like ρ evidence, but pftheta34 is 𝒞^1O, so R51 bounds it.
+  - Check: every ρ / N_ep table first prints the instance's class (number of Odd choice vertices per honest class, 𝒞^1O / 𝒞^1E flag);
+    𝒞^1O / 𝒞^1E rows are reported apart and never counted as evidence for ≥ 2-Odd-choice behaviour.
+- Still live: stale clone (bit again here: fetch + `git rev-parse HEAD origin/claude/l-si` first, re-fetch before the first push);
+  frozen files (sha1sum before touching docs/si/P-*); never `git add -A`; never pipe scripts/push.sh; stamp from date -u.
+
+---
 # Handover check: L-SI (successor 13, written 2026-10-26T07:50Z by date -u; LANE-RESTART step 3; Opus 5.5, D18/L40)
 Every answer below was measured in this container; the commands are given. Predecessor: successor 12, session_01HYh7NTpb8ZcvdYpgAJiDgy.
 Its handover is notes/L-SI.md "## HANDOVER (successor 12, box 17)" with its "UPDATE 07:4xZ" and "NEXT" (l-si ac80b594), plus its final push 0b025b91.
