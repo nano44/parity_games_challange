@@ -145,3 +145,55 @@ Proof.
   levels is gone; the exit changes EXIT_x (and CYC) take its place, so polynomial in n and k follows exactly when exits per phase are polynomial.
 - Full statements, proofs, premises, quotes and data: docs/new/P-N5-OFFMONO-box49.md (frozen at this push). DATA (offmono2.py): 0 violations in
   15,741 checks (lib41 n ≤ 34 and seven long instances incl. the n = 80 climb), 25 Case L checks, 590 parent-changed checks; controls bite.
+
+## 8. CYC_c refined to cycle changes, and the cycle changes counted (PROVED, every game; DATA; Lead's routing of 16:56Z; written 17:01Z by date -u)
+Setting as P-N5-OFFMONO-box49 §0 (frozen, sha1 d9705ac6…; not edited). Z_t(c) := c's honest cycle at t as a sequence from c (the honest play from c
+up to its return). ZCH_c := the in-phase transitions of a run J with Z_t(c) ≠ Z_{t+1}(c).
+- Remark Z-CONST (PROVED, elementary). If Z_t(c) = Z_{t+1}(c), then for every x on it, κ_t(x) = κ_{t+1}(x) (a valuation is a function of the play),
+  and for x ∈ Q on it, par_t(x) = par_{t+1}(x) and off(x; par(x)) is unchanged. So in OFFSET-MONO's corollaries the CYC transitions at which c's
+  cycle does not change contribute nothing.
+- Corollary CHAIN-COUNT′ (PROVED). P-N5-OFFMONO's CHAIN-COUNT holds with CYC_c replaced by ZCH_c (x-pieces cut at EXIT_x ∪ ZCH_c): on a piece,
+  either x is on no honest cycle at the source (OFFSET-MONO) or x lies on c's unchanged cycle (Z-CONST, offset constant). The proof is otherwise
+  CHAIN-COUNT's, with CHAIN-SUM's terms at unchanged-cycle levels equal to (0, 0).
+- Lemma ZCH-COUNT (PROVED, every game). In a phase P and class c: ZCH_c ≤ (n − 1)·(|U_c| − 1) + n + TIE_c + ODDC_c, where TIE_c := the cycle
+  changes at which every vertex v ≠ c of Z_{t+1}(c) with next_{t+1}(v) ≠ next_t(v) is Odd with κ_{t+1}(v) = κ_t(v), and ODDC_c := the cycle changes
+  at which c ∈ Q and σ̄(c) changes and no other vertex qualifies.
+  Proof. Let t → t + 1 change c's cycle and let N := {v ∈ Z_{t+1}(c), v ≠ c : next_{t+1}(v) ≠ next_t(v)}.
+  - Every vertex of Z_{t+1}(c) other than c has κ_{t+1} = (0, s_c·ℓ) with 1 ≤ ℓ ≤ n − 1 (its play to c runs along the cycle, all below c in rank,
+    so the path set is empty).
+  - If some v ∈ N has κ_{t+1}(v) ≻ κ_t(v) (STRICT): charge the transition to v. κ(v) is non-decreasing on P ((M2κ)), so the transitions at which
+    κ(v) rises strictly TO a value (0, s_c·ℓ), ℓ ∈ [1, n − 1], are at most n − 1. Over v ∈ U_c ∖ {c}: ≤ (n − 1)(|U_c| − 1).
+  - Every Even v ∈ N is STRICT: by (SW), (v, x′) ∈ Iσ_t with x′ := next_{t+1}(v), so κ_t(x′) ≻ κ_t(next_t v) ((M1κ); both in U_c), and κ_{t+1}(v) =
+    κwt_c(v) + κ_{t+1}(x′) ⪰ κwt_c(v) + κ_t(x′) ≻ κ_t(v) ((Aκ), (M2κ)). So a non-STRICT change has N consisting of Odd vertices with unchanged κ
+    (TIE_c) or N = ∅, i.e. only c's own successor changed.
+  - N = ∅ and c Even: let ψ_t := κ_t(next_t c). next_t(c) lies on c's cycle, so ψ_t = (0, s_c·ℓ) with 0 ≤ ℓ ≤ n − 1. ψ is non-decreasing on P: where
+    next(c) is unchanged by (M2κ); where c switches, by (SW) and (M1κ) as for v above, strictly. So such transitions number ≤ n − 1 ≤ n.
+  - N = ∅ and c Odd (c ∈ Q, σ̄(c) changes): ODDC_c. □
+- So the CYC part of the remaining count is polynomial except for TIE_c and ODDC_c (Odd vertices re-routing on c's cycle with unchanged κ, and the
+  cycle node's own Odd choice; these are R61 (f)'s tie_q and cyc_q kinds). OPEN: TIE_c, ODDC_c per phase.
+- DATA (experiments/new/box48/cyc.py; out/cyc_lib41_n34_k2.txt, out/cyc_long7.txt, out/cyc_long2.txt): lib41 n ≤ 34, S3 + 2, 746 phases, 6,752
+  transitions: CYC (old sense, any q on c's cycle) sums to 457 and reaches 25 = a whole phase (kw25_n32: the Odd choice vertex sits on an unchanged
+  cycle all phase, Z-CONST's case); cycle changes: STRICT 50, TIE 3, c-only 80 (c Even 85 / c Odd 1 moves of c in all, some together with STRICT),
+  ZCH_OTHER_V 0; max ZCH per phase 6. nep90, nep76, long121 and the four climbed games: c's cycle never changes (ZCH 0); old-sense CYC 0 except 2 on
+  the n-48 nep90 descendant.
+
+## 9. Note: the term-by-term matches the Lead asked for (READING; elementary facts marked; not a packet)
+(a) R61 (b) SAT-k against CHAIN-COUNT's "≤ D values on every x-piece". NOT an exact match. SAT-k (RESULTS l. 3119-3121) gives κ_t(x) ∈ S_{x,p} + κ_t(p),
+|S_{x,p}| ≤ d_x, only at states t later than the w_c-th fallback of the p-run Θ_p containing t (and t > g_{w_c}, which FBK-N1 says is unused). A
+p-run ends whenever κ(p) changes, so inside one x-piece (p fixed) the states are partitioned by p's runs, and at the EARLY states of each p-run
+(before its w_c-th fallback) SAT-k says nothing. OFFSET-MONO still makes off(x; p) non-decreasing across the whole piece, so the LATE states of
+the piece carry at most d_x distinct offsets in total (PROVED, elementary: a monotone sequence whose late terms lie in a d_x-set), but the early
+states can carry other values in between. So CHAIN-COUNT applies with D = d_x to the late states only, and its count of κ(q)-changes then needs,
+in addition, the transitions at early states of some level's p-run: one early segment per p-run, i.e. per change of κ(p). That re-introduces
+a dependence on the PARENT's change count (a recursion, not yet a product, since each early segment is charged once to a change of κ(p), not to
+each value). Whether that recursion closes linearly (each κ(p)-change is itself a counted event of the same class) is the next step; I have
+not done it. R61's own V_q counts values at late FALLBACKS only, which avoids early segments by construction.
+(b) RESULTS R72's ROUTE / RELAY against EXIT ∪ same-exit offset rises. NOT the same partition. R72: a ρ event at q (q on no honest cycle at t,
+t + 1) is ROUTE if SOME successor y ∈ succ(q) ∩ U_c changes its class exit path or exit, RELAY otherwise (P-N5-CHOSEN l. 25-27). Mine look at
+q's CHOSEN option only (par(q) = the exit of σ̄(q), which is CHOSEN's chosen exit). Two elementary facts:
+- (b1) (PROVED, elementary, up to ties) a same-exit offset rise at q (par fixed, off(q; p) strictly up) is a ROUTE event: if no successor's class
+  exit path or exit changed, both chosen options y1, y2 exit at p with fixed paths, their offsets to p are fixed, κ-Y-FORM_D at t picked the
+  smaller (y1), so at t + 1 Odd's minimum is again y1 unless the two offsets tie; so off(q; p) cannot rise. Ties excepted.
+- (b2) an EXIT change at q can be a RELAY event: q switches between two options with unchanged paths and different exits because the exits'
+  values moved (the ping-pong of N5-NCONF §8 / P-N5-ROOT). So EXIT ⊄ ROUTE; R72 charges those to the chosen exit's own ρ event (CHOSEN), mine
+  counts them as EXIT_q. The two decompositions are complementary, not nested; neither yields a new statement here.
