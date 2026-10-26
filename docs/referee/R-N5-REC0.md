@@ -90,3 +90,18 @@ not touch these inputs. So the step is valid at any state k of an N5 run at whic
   packet's list of what the step uses should name them.
 
 DONE (REFEREE successor 13, (Opus 5.5, D15)).
+
+## §C. Comparison with REFEREE-2 (R2-N5-REC0, claude/referee-2 a0457eb0 + independence-line correction 82fdc8d4; its §C 1ff6c484 not opened before this), written 2026-10-26T10:07Z by date -u
+- Opened only after my report was pushed (6006b963) and on the Lead's word (09:15Z). Read in full (§1-§3).
+| item | REFEREE | REFEREE-2 | relation |
+| --- | --- | --- | --- |
+| Lemma REC-0 | SIGNED | SIGN | same |
+| Corollary (via EP-0) | SIGNED | SIGN | same |
+| Q-R17 | YES, six inputs listed (§2) | YES, the same inputs (§2) | same |
+| REC0-N3: Q-R17's list should also name (V1)/(V2) and the one-player structure of G_τ | mine | N-REC0-2 (first half): (V1), (V2) and "u is a cycle node at k"; it puts the one-player / arena condition under the transfer | same finding; "u is a cycle node at k" is my §2 input 5, now also in the note |
+| N-REC0-2 (second half): step 4 reads R15 (d)'s Ωσ as S1's Ξ (code link G-N5T-1) | used without comment | REFEREE-2 | found by REFEREE-2; ACCEPTED (citation) |
+| N-REC0-1: step 1's hypothesis should say "an IN-PHASE S4a step" (it uses λ(k) = λ(k+1)) | used ("in-phase" in my step-1 reading) but not flagged as a wording point | REFEREE-2 | found by REFEREE-2; ACCEPTED (wording) |
+| REC0-N1 (cite R63 for SN-PREFIX_D) | mine | — (accepted in its §C, per the Lead) | found by REFEREE |
+| REC0-N2 (step 3: "≥ min(j + 1, n − 1)") | mine | — (accepted in its §C, per the Lead) | found by REFEREE |
+| Data | 0 failures; lib41 max N_0 5; kind (iii) ≤ 1 per run | 0 violations; lib41 / its 503 files max N_0 5; kind (iii) ≤ 1 per run | same; both note the n − 1 cap untested |
+- No disagreement. Joint gap map: EMPTY. Nothing open on REC0; the notes N-REC0-1, N-REC0-2 and REC0-N1..N3 go to the lane's fixes file.
