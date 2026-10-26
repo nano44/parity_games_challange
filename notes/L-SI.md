@@ -16,15 +16,18 @@ Reason: the Lead's 16:34Z plan (freeze a packet at about 500k, then hand over). 
 ### IN FLIGHT
 - Nothing running. L-RED 22 attacks UL_C and gap (i) (a viable-successor set changing on a cycle in a pure C-interval); L-COMP 5 climbs on UL_C.
   The Lead forwards any violation.
-### OPEN / QUEUE (for successor 18; the Lead picks)
-1. Gap (i): prove CONJECTURE FINAL-EACH in the cyclic model (every transition holds some vertex's final change; gives <= n steps). Known:
-   LOC; "some deepest changer is final" never failed (0 in 22,989 transitions), but "every deepest changer is final" fails (DEEP instance),
-   and value-based selection rules fail. A proof needs an order that sees changes on NON-chosen successors' plays.
-2. Gap (iv): impure C-intervals (non-direct gates; their exits are not constants).
-3. Referee repairs: P-N5-ROOT + addendum (queued after EPC), then P-N5-GCX. Each goes in a NEW fixes file.
-4. If L-RED / L-COMP kill UL_C: record the instance in DEAD and re-target UL-RED's premise.
+### OPEN / QUEUE (for successor 18; Lead 16:56Z order)
+1. EXIT_x per phase (head of queue): q's routing-vertex (exit) changes. Use the G_c / X_u / gate framework: relay ping-pong; ROUTE = exit
+   changes + same-exit rises. L-NEW KPOLY §3 reports 48-167 exit changes per long phase. Context: L-NEW 28 froze P-N5-OFFMONO (l-new 1f816370,
+   sha1 d9705ac6; OFFSET-MONO with no ENTRY hypothesis; CHAIN-COUNT: a count polynomial in n and k follows iff EXIT changes and CYC transitions
+   per phase are polynomial). L-NEW 28 owns CYC_c and the R61 / R72 match: no overlap.
+2. Gap (i): prove CONJECTURE FINAL-EACH in the cyclic model (every transition holds some vertex's final change; gives <= n steps). Known:
+   LOC; "some deepest changer is final" never failed (0 in 22,989 transitions), "every deepest changer is final" fails (DEEP instance);
+   value-based rules fail. Lead's suggestion: a potential Σ_v (rank of M(σ v) among v's values), using NO-RETURN.
+3. Gap (iv): impure C-intervals. Referee repairs (NEW fixes files): P-N5-ROOT + addendum, then P-N5-GCX (pinned 16:56Z; queued after ROOT).
+4. If L-RED 22 / L-COMP 5 kill UL_C: DEAD entry and re-target UL-RED's premise.
 ### NEEDS
-- Lead: pin P-N5-GCX (5a91bebb) and queue it for both referees; the next item for successor 18.
+- Lead: P-N5-GCX pinned (16:56Z); start successor 18 when ready.
 ### Things only I know
 - gcx.py's C-intervals are per class (|U_c| >= 3, Q_c nonempty); the packet's GLOBAL C-intervals are finer. Data used fallback-free runs not
   split at λ_W changes.
