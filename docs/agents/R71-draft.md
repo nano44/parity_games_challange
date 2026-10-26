@@ -1,4 +1,4 @@
-# Draft RESULTS R71 (Lead, 2026-10-26 15:09Z by date -u; both reports, both §Cs and the fixes file filled (15:24Z by date -u)) — to CHECKER C80
+# Draft RESULTS R71 (Lead, 2026-10-26 15:09Z by date -u; both reports, both §Cs and the fixes file filled (15:24Z by date -u)) — to CHECKER C80 (rev. 2026-10-26 15:49Z by date -u: LEAD-N1 resolved by REFEREE's erratum ae36ce48)
 
 ### R71 [refereed-only] N5 on EVERY game: in the honest frame H_C of a configuration C = σ̄|Q (every Odd vertex cut to its σ̄_C edge), an in-phase fallback from a C-state raises the level LEV_C to min(LEV_C + 1, n − 1) (Lemma FB-RISE_C); LEV_C = n − 1 at a C-state gives Ξ = B_C, and later C-states of the phase follow within 4n(n − 1) transitions with Ξ constant (Lemma SAT_C); hence in every phase the in-phase fallbacks number at most |𝒞_f(P)|·(4n² − 3n), 𝒞_f(P) the configurations at fallback sources (Theorem FB-C), so f ≤ (4n² − 3n)·min(N_ep, Π_q deg(q)), f ≤ Δ^k(4n² − 3n) on 𝒞^kO, and f ≤ (1 + m)(4n² − 3n) when |D| ≤ 1 throughout (Corollaries (a)-(d)) (2026-10-26) — a REDUCTION of f to the number of distinct configurations per phase (that number is not bounded here on general games; (a)'s N_ep form and (d) are weaker than RESULTS R60 (c) EPOCH for n ≥ 2; not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C80.md, checker PENDING)
 - Object (packet P-N5-FBC, added at l-new 1f8d6d7d, pinned trunk de02d37e, unchanged during review): docs/new/P-N5-FBC-box47.md, sha1
@@ -47,7 +47,9 @@
   phases. (iv) No running-time bound.
 - Data (DATA, not proof): REFEREE (successor 15, own fbc_probe.py on its own engine; exact LEV_C by simple-path enumeration in H_C; lane code
   not run): 35,720 runs in its §4 table over the library at n ≤ 20 and n ≤ 34 (1,140 files), two random 𝒞^kO batches (k ≤ 4, k ≤ 8) and
-  fr39_q4_n48, with 2,794 FB-RISE_C checks in the table (its §C states 36,720 runs and 3,394 checks; asked 15:10Z, LEAD-N1); 0 failures of REAL, MONO, FBC, ODDC, SATB, SATW, THM, CORA, CORC; FLATLAST (FBC-N3) 951 Ξ-flat fallbacks, all end their
+  fr39_q4_n48, with 2,794 in-phase fallbacks checked exactly by FB-RISE_C out of 3,384 (the other 590 in the n ≤ 34 row's 115 over-budget
+  phases); its §C's "36,720 runs, 3,394 FB-RISE_C checks" is an arithmetic slip, corrected by its erratum below the §C (referee ae36ce48;
+  LEAD-N1); 0 failures of REAL, MONO, FBC, ODDC, SATB, SATW, THM, CORA, CORC; FLATLAST (FBC-N3) 951 Ξ-flat fallbacks, all end their
   phase; reproduces fr39_q4_n48 (39 fallbacks, 7 configurations, 24 unsaturated) and farrise25_n32 (25); mutations MUT=1 (G_τ frame) 79,
   MUT=2 (+2) 144, MUT=3 (S4c minimum) 15 and FLATLAST 8 failures. REFEREE-2 (successor 17, own fbc_check.py; lane code not run): 21,753
   runs (named instances, lib41, its 503 𝒞^1O files, random games with 2, 4 and all Odd choice vertices); 2,294 fallback sources checked
