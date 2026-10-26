@@ -25,3 +25,4 @@
 - sched.py USTRUCT=1 (note §17): per-U-event structure, OFFUP_V (Lemma OFFUP), U-SPLIT classes (U_OTHER is a violation); logs/ustruct.txt.
 - bnd.py (note §19): (R4) stretch_D boundaries per run by cause (DCH / XI / WG), gate Ξ / W changes, Lemma GATE-XI attribution; V=1 per run.
 - pot.py (note §20): ρ_q events per phase with level and ALT class; RULER check; logs pot_*.txt.
+- pot.py MULTI / TRACE (note §21): ρ_q in classes with ≥ 2 Odd choices; trace of a gate's path-set rises.
