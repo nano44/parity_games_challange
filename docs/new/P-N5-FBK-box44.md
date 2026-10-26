@@ -1,6 +1,7 @@
 # Packet P-N5-FBK (box 44): in-phase fallbacks per phase are polynomial whenever every honest class has boundedly many Odd choice vertices (ROUTE-k, SAT-k, Theorem FB-kT; on 𝒞^kO with k fixed, f = O(n^{k+1}) per phase), and Odd's alternations at Q raise Ξ (Lemma ALT)
 L-NEW successor 23 (Opus 5.5), D14 / D18, Lead reading L40; Lead's order 04:19Z (Lead's stamp). Written 2026-10-26 04:22Z (date -u).
-STATUS: DRAFT until P-N5-2T's sha1 is in; FROZEN at the push that fills it (later text goes into a fixes file).
+FROZEN at push (draft 93c5b276; P-N5-2T's sha1 filled in at 04:37Z by date -u): later text goes into a fixes file.
+CONDITIONAL on RESULTS R56 and P-N5-2T (PFZ-q, DIR).
 Source: docs/new/N5-FBF-box44.md §10, §11 (working doc; this packet governs). Labels: PROVED (L-NEW 23, unrefereed) / READING / OPEN /
 DATA. Not a TARGET.md claim: FB-kT bounds in-phase fallbacks only; nothing here bounds N5's running time on any class beyond 𝒞^1O ∪ 𝒞^1E.
 G-N5-TIME stays open.
@@ -17,9 +18,10 @@ G-N5-TIME stays open.
   - LANDED: RESULTS R56 (P-N5-FBRED with its fixes file): (a) facts (Aκ), (M2κ), (SP′), (YB as used there), κ-FB-ROUND_D; (b) κ-HAT-FREEZE_D;
     (d) κ-Y-FORM_D with Y^q_t := {y ∈ succ(q) ∩ U_c : y's honest play at t avoids q} (fixes N-FBRED-2); (f) Theorem FB-RED, late form
     f ≤ 1 + (n − 1) + (n − 1)·N_late. RESULTS R54 (e) Corollary Φ-kO (phases). R15 (a).
-  - IN REVIEW (L-SI successor 11): packet P-N5-2T, docs/si/P-N5-2T-box16.md, sha1 P2T_SHA1: Lemma PFZ-q (κ-PFZ needs only its own
-    terminal's run constant) and Lemma DIR (a direct terminal's κ lies in A_q after g_{|U_c|−1}). This packet is CONDITIONAL on those two.
-- Notation (R56 §0): phases, g_j (source states), Q, C, T, U_c, κ, κwt_c, G_c, G_c^q, κopt_c, κopt^q, Q-runs; and from P-N5-2T: Q_c :=
+  - IN REVIEW (L-SI successor 11): packet P-N5-2T, docs/si/P-N5-2T-box16.md, sha1 fcb91130b1f93d041233c9def50614b4d0dc9a05 (l-si f6839fd3,
+    pinned trunk cbb3b738), cited exactly as stated, per its "Citation form" line: Lemma PFZ-q (§2) and Lemma DIR (§4). This packet is
+    CONDITIONAL on those two.
+- Notation (R56 §0): phases, g_j (source states), Q, C, T, U_c, κ, κwt_c, G_c, G_c^q, κopt_c, κopt^q, Q-runs; and from P-N5-2T §1, §4: Q_c :=
   (Q ∩ U_c) ∖ {c}, m_c := |Q_c|, w_c := |U_c| − 1, d_q := |succ(q) ∩ U_c|, DIRECT (q on its own honest cycle, or q's honest play visits c
   before any other terminal of Q_c), A_q (|A_q| ≤ d_q + w_c), q-run (maximal run with κ(q) constant), f^Θ_j. N_late := the number of
   Q-runs holding a fallback g_j with j ≥ n (R56 (f)). Late fallbacks i = 1, 2, … are those g_j with j ≥ n, with source states k_1 < k_2 < …;
@@ -33,7 +35,7 @@ Proof. If par_t(q) = p, then from its visit of p on, q's honest play is p's hone
 … → p_r = q (r ≥ 1) puts p_1, p_2, …, p_r = q on q's play in this order, so q's play visits q again: q lies on the cycle of its own honest
 play, i.e. q is on its own honest cycle, so q is direct, against the assumption. □
 
-## 2. Lemma SAT-k (PROVED, every game; uses PFZ-q)
+## 2. Lemma SAT-k (PROVED, every game; uses P-N5-2T's PFZ-q)
 Let t > g_{w_c} be a state of the phase, q ∈ Q_c not direct at t, p := par_t(q), Θ_p the p-run containing t, and t > f^{Θ_p}_{w_c}. Then
 κ_t(q) ∈ S_{q,p} + κ_t(p), where S_{q,p} := {κwt_c(q) + κopt^p(y) : y ∈ succ(q) ∩ U_c ∖ T, κopt^p(y) defined} ∪ {κwt_c(q) : p ∈ succ(q)};
 |S_{q,p}| ≤ d_q.
@@ -43,9 +45,9 @@ Proof. Let y := next_t(q) = σ̄_t(q). By (Aκ), y ∈ U_c and κ_t(q) = κwt_c(
 - Otherwise y ∉ T (it is neither c, since p precedes c, nor a terminal, since p is the first one).
   - "≤": the prefix of y's play up to p is a simple path ((SP′)) avoiding T ∖ {p}, with Even edges σ_t's and forced Odd vertices, i.e. a
     path of G_c^p; (Aκ) along it gives κ_t(y) = κwt_c(prefix ∖ {p}) + κ_t(p) ≤ κopt^p(y) + κ_t(p).
-  - "≥": PFZ-q (P-N5-2T) at t ∈ Θ_p with t > f^{Θ_p}_{w_c}: simple paths of G_c^p have ≤ w_c edges, so κ_t(y) ≥ κopt^p(y) + κ_t(p). □
+  - "≥": PFZ-q (P-N5-2T §2, with z = y ∈ U_c ∖ T) at t ∈ Θ_p with t > f^{Θ_p}_{w_c}: simple paths of G_c^p have ≤ w_c edges, so κ_t(y) ≥ κopt^p(y) + κ_t(p). □
 
-## 3. Theorem FB-kT and Corollary FB-kO (PROVED, every game; conditional on P-N5-2T's PFZ-q and DIR)
+## 3. Theorem FB-kT and Corollary FB-kO (PROVED, every game; conditional on RESULTS R56 and P-N5-2T (PFZ-q, DIR))
 Theorem FB-kT. In every phase, with D_c := max_{q ∈ Q_c} d_q + w_c (≤ 2n) and V_q := the number of distinct values x_i(q) over the late
 fallbacks:
   N_late ≤ 1 + Σ_c Σ_{q ∈ Q_c} (V_q − 1), and V_q ≤ Σ_{h=0}^{m_c − 1} D_c·((m_c − 1)·D_c)^h ≤ m_c·D_c·((m_c − 1)·D_c)^{m_c − 1}.
@@ -57,7 +59,7 @@ Proof.
    before. So N_late = #distinct tuples ≤ 1 + Σ_q (V_q − 1). (Cycle nodes c ∈ Q have κ(c) = (0, 0) constant and contribute 0.)
 2. Values by depth. Let V_{q,h} := the number of distinct x_i(q) over the indices i at which q has depth h at k_i (ROUTE-k). Every k_i
    satisfies k_i > g_{n−1} ≥ g_{w_c}.
-   - h = 0 (q direct at k_i): x_i(q) ∈ A_q by DIR (P-N5-2T); V_{q,0} ≤ |A_q| ≤ D_c.
+   - h = 0 (q direct at k_i): x_i(q) ∈ A_q by DIR (P-N5-2T §4); V_{q,0} ≤ |A_q| ≤ D_c.
    - h ≥ 1: let p := par_{k_i}(q), of depth h − 1 at k_i. Fix p and a value α. The indices with x(p) = α are consecutive and their source
      states lie in one p-run Θ ((M2κ)). Every index of that block after its first w_c indices has k_i > f^Θ_{w_c} (the first w_c indices are
      fallbacks of Θ with earlier source states), so SAT-k gives x_i(q) ∈ S_{q,p} + α. So the indices with parent p and x(p) = α give ≤
@@ -107,6 +109,6 @@ and cyc_q the changes at q while λ(q) = q. Proof: an epoch ends only at a trans
 - σ̄|Q repeats inside a phase (so N_ep has no ∏ deg bound): experiments/new/box25/laps/lap_n6_s1_110421.pg (n 6, Q = {2}, sha1
   4f4fe69c51e1c6f170c9c732feca025da70e7edb), σ̄(2) = 0, 4, 0 in one phase (P-N5-ACCEL §4).
 ### 5.3 What N5 on 𝒞^kO (k fixed, k ≥ 2) still needs (READING)
-phases (R54 (e), landed) × fallbacks per phase (this packet, conditional on P-N5-2T) are polynomial; still OPEN: (i) crossings per phase
+phases (R54 (e), landed) × fallbacks per phase (this packet, conditional on R56 and P-N5-2T) are polynomial; still OPEN: (i) crossings per phase
 (R30 (c) / R34 (f) on 𝒞^1O; needs R-STICK in set form); (ii) transitions per phase given f (R50 (h) on 𝒞^1O; blocked at LEN / Δ-RT on the
 frontier); (iii) Lemmas BIT and OUT beyond 𝒞^1O (R51; OUT's proof read as game-general by REFEREE's §C on DUAL; BIT is game-free).
