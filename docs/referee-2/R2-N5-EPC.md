@@ -132,3 +132,24 @@ skipped for EP-C / EP-ASM (the per-configuration checks still run on the decided
 consequences; §5 remark: SIGN, on every game, under the standing SPEC premise 1E-N3 (P1) and Q-A. §4 Corollary EP-ASM: SIGN as an assembly,
 its second term as an IMPLICATION from (Στ). FB-C′'s proof stands on its own, without REFEREE's FBC-N3 route (the Lead's question). §5's DEAD
 guess confirmed dead on my own runs. No gap; notes N-EPC-1..6. REFEREE-2 successor 17 (Opus 5.5, D15).
+
+## §C. Comparison with REFEREE (R-N5-EPC, claude/referee a52feb43 + data addendum 58fd9535, file sha1 06d98f15; successor 15), written 2026-10-26 17:03Z (date -u)
+Opened on the Lead's word (17:02Z), after my report was pushed (62b72f6e). Read in full, with the addendum (nep76_n40 at depth 16).
+| item | REFEREE | REFEREE-2 | relation |
+| --- | --- | --- | --- |
+| §1 FB-RISE_C, SAT_C; §2 RET-FB, VIS, EP-C; §3 SAT-FB, SAT-FB1, FB-C′ + consequences; §5 remark | SIGNED | SIGN | same |
+| §4 EP-ASM | SIGNED as an assembly, second term as an implication from (Στ) | same | same |
+| FB-C′ without FBC-N3's route (the Lead's question) | YES: no R15 (b), no CN-LAST; EPC's route shorter, fewer premises | YES, same reasoning | same |
+| §5 DEAD guess | CONFIRMED DEAD (rho3_253_n32 at L-RED's start: 51 non-flat / 44 not last over 32 starts) | CONFIRMED DEAD (my starts 5, 7: 23 / 21) | same, independent instances |
+| LEV_C ≥ 0 unstated in FB-C′ | EPC-N1 | (my N-FBC-1 on FBC; not repeated here) | ACCEPT EPC-N1 |
+| RET-FB's induction: only the Odd branch calls it | EPC-N2 | checked in my §1, no note | ACCEPT (wording note) |
+| EP-ASM is a reduction: name its four open terms in the statement | EPC-N3 | N-EPC-6 (data: R⁰ is most returns) | ACCEPT EPC-N3; compatible with N-EPC-6 |
+| SAT-1 would sharpen VIS (a); SAT-FB1 does not give it | EPC-N4 | N-EPC-5 (VIS kind (a) never occurs, 0 of 1,340) | same finding, ACCEPT EPC-N4's wording |
+| two "pins" name different things | — | N-EPC-1 | REFEREE-2 only (note) |
+| D_C used, only D_E defined | — | N-EPC-2 | REFEREE-2 only (note) |
+| HON-FB (iv) citation not needed | — | N-EPC-3 | REFEREE-2 only (note) |
+| RET-FB's Even step is frame-free (EVEN check 7,126) | §2 cites my N-FBC-2 | N-EPC-4 | same fact |
+- Data agree: both reproduce long121 (37 / 14), nep90 (90 / 48) and nep76 (76 / 40); both see 0 kind-(a) returns; both controls on RET-FB
+  (+2, and every later state instead of C-states) bite, and both see the DEAD guess fail on rho3_253_n32.
+- No disagreement. Joint gap map: EMPTY. Notes to the lane (union): EPC-N1..N4, N-EPC-1..6. My verdicts are unchanged. REFEREE-2 successor 17
+  (Opus 5.5, D15).
