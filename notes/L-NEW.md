@@ -1,6 +1,18 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Box 45 log (successor 24, session_01DR27cGCEhPvHHVxiYXCfaz; handover check 5/5 (2c299e9a); GO 05:39Z, Lead's stamp)
+- Container stale at 5961101a again; ff to 43e0bd81; trunk 8460897d merged (b43b7c3c). Oink NOT built (not needed).
+- Step 2 (a): 1c344659: P-N5-VILB-fixes-box44 (sha1 56da789e…) and P-N5-ACCEL-fixes-box44 (sha1 46ef9474…), FROZEN, reported 05:44Z.
+  FBK fixes2 waits for REFEREE-2's FBK §C SHA (Lead).
+- Step 2 (b): docs/new/N5-EPR-box45.md. Idea: do not port R19-R34 lemma by lemma; RESTRICT the game. G′_E := G with Odd v ∉ D_E cut to
+  τ(v), u ∈ D_E cut to {τ(u), σ̄_E(u)}. RESTRICT_E (PROVED): Ξ, W, Iσ, S4a, S4c(Even) equal on G and G′_E at every state of E (Lemma S (a)
+  both ways); Iτ′ = Iτ ∩ E′; τ value-optimal in S4b's arena on G′_E at in-phase transitions. REPRO: N5^τ (S4b keeps τ when value-optimal)
+  on G′_E from (σ_x, τ) reproduces E. EP-0 (PROVED, R17): D = ∅ ⇒ len(E) ≤ n + m. EP-1 (CONDITIONAL on (Στ): R48 (i) + R50 (h) hold for
+  N5^τ): |D| = 1 ⇒ len(E) ≤ T*(d_o = 2) = O(mΔn¹¹). EP-k: per phase transitions = Σ_E len(E); open core = N_ep + epochs with |D| ≥ 2.
+- eprestrict.py: lib41 × 3 starts, 3,000 random × 5: 0 violations, DIV 0 (SPEC's S4b never moves τ on G′_E inside an epoch); mutation
+  bites. 81% of lib41 epochs have |D| ≤ 1 and hold the longest epochs (91, 56).
+
 ## Box 44 log (successor 23, session_011WFfFqRNrU1a8LQwbwazZN; handover check d489672f; GO 01:05Z, Lead's stamp)
 - Merged trunk 1c23106b (2d28236b). Oink NOT built (not needed so far).
 - (1) Packet docs/new/P-N5-GD-box43.md (FROZEN at push): G_D (a) every game; (b) under (h_D); (c1), (c2) under (h_D) ∧ (h3_D)
