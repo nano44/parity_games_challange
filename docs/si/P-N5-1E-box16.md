@@ -1,7 +1,7 @@
 # Referee packet P-N5-1E: N5 solves one-Even-choice parity games in polynomial time from any start pair, and N5's output at its stop is correct on every game (Lemma OUT-G) — a subclass result for the time bound, not a TARGET.md claim
 Author: L-SI successor 11 (Opus 5.5; D15, D18, L37, L40), session_01FchPxfEZ9Fo56WrCZTvnXS. Written at the Lead's request of 01:5xZ and its
-GO of 02:21Z (Lead's stamps). DRAFT: not frozen. It is frozen on the Lead's word after P-N5-DUAL lands (RESULTS R54). Repairs after the
-freeze go to a NEW fixes file. Stamp: the commit (date -u).
+GO of 02:21Z (Lead's stamps). FROZEN at the Lead's freeze word of 03:2xZ (Lead's stamp), after RESULTS R54 (P-N5-DUAL) landed at trunk
+e54d8a48 (checker 04ad4a15). Repairs go to a NEW fixes file. Stamp: the commit (date -u).
 - Labels (D18 / L40): PROVED (L-SI 11, from landed or signed results only) / READING / DATA. D1: wrong until checked.
 - Scope.
   - Time bound: the candidate N5 (SPEC S1-S5 with Q1-Q4 and FIX 1-4, docs/new/N5-ssi-global.md) on 𝒞^1E, the games in which exactly one
@@ -16,7 +16,7 @@ freeze go to a NEW fixes file. Stamp: the commit (date -u).
 | --- | --- | --- | --- |
 | §2 | Lemma OUT-G (every game): if Iσ = ∅, then SPEC S5's output at σ is the pair of winning regions with positional winning strategies. So N5's output at its stop is correct on every game | PROVED | yes |
 | §3 | Lemma BIT-G (every game): RESULTS R51 (c)'s cost bound holds on every game; its proof has no class step | PROVED (class audit of R51 (c)'s proof) | yes |
-| §4 | Theorem 1E-POLY: on 𝒞^1E, from any start pair, N5 makes ≤ (n(n − 1) + d_e)(T*(n, m, Δ, d_e) + 1) = O(m·Δ·d_e·n¹³) ⊆ O(n¹⁷) iterations | PROVED (from R51 + P-N5-DUAL) | yes |
+| §4 | Theorem 1E-POLY: on 𝒞^1E, from any start pair, N5 makes ≤ (n(n − 1) + d_e)(T*(n, m, Δ, d_e) + 1) = O(m·Δ·d_e·n¹³) ⊆ O(n¹⁷) iterations | PROVED (from R51 + R54) | yes |
 | §5 | Corollary 1E-TIME: on 𝒞^1E, N5 from any start pair outputs (W_E, W_O) and positional winning strategies in time polynomial in n + m at bit cost | PROVED | yes |
 | §6 | gauntlet status; what OUT-G does for R15's G-N5T-3 | READING | no |
 | §7 | DATA (experiments/si/out16/) | DATA | no |
@@ -30,10 +30,10 @@ freeze go to a NEW fixes file. Stamp: the commit (date -u).
 | R21 (a) Lemma XW | "Ξ_k ⊴ W_k pointwise at every state (Odd's best reply σ̄_k is pointwise optimal in G_{σ_k})" | signed in 𝒞^1O; the parenthetical is game-general (N-1O-4) | any |
 | VJ00 (11) | BRICS RS-00-48 (Vöge, Jurdziński, Dec 2000), §5.2, p. 16: "Ωσ = Θσσ̄ (11). Hence by definition of Ωσ we get that Θσσ̄ ⊴ Θστ, for all strategies τ for player ⊖. In other words, σ̄ is a best counter-strategy against σ." With §4.3 (p. 12): "Ωσ(v) = min⊴ {Θ(P) : P ∈ Playsσ(v)}" | VJ00 §2: "finite parity game graphs … every vertex has at least one out-going edge" | — |
 | R51 (a), (b), (c) | (a) Theorem 1O-POLY: "for G ∈ 𝒞^1O and any start pair (the S3 start included), N5 stops after at most ITER ≤ (n(n − 1) + d_o)·(T* + 1) iterations, where T* is R50 (h)'s bound with f := F := 2n² (R48 (i) gives f ≤ 2n² in every phase; every term of R50 (h)'s chain is non-decreasing in f) … and n(n − 1) + d_o is R47 (b)'s phase count"; (b) start-freeness of every result the chain cites; (c) Lemma BIT (quoted in §3) | 𝒞^1O | any |
-| P-N5-DUAL (R54, landing) | Lemma DUAL, first sentence: "For every game G and start pair (σ_0, τ_0): the N5 run on G from (σ_0, τ_0) is the mirror of the N5^OF run on G^d from (τ_0, σ_0) (same length, state k ↦ mirror of state k)". Theorem MIRROR (a), (b), (c), quoted in §4 | DUAL every game; MIRROR 𝒞^1E / 𝒞^1O | any |
-- P-N5-DUAL is SIGNED by both referees: REFEREE R-N5-DUAL, referee cdb187c7, §C 78db369b; REFEREE-2 R2-N5-DUAL, referee-2 73c2b4a1, §C
-  253fe5c5. Its only gap is DUAL-1 = N-DUAL-1, the wording of Lemma DUAL's SECOND sentence, repaired in docs/new/P-N5-DUAL-fixes-box43.md
-  (l-new 478dd6e1). This packet uses only the FIRST sentence, MIRROR (a)-(c) and their proofs.
+| R54 (a), (b), (c), (d) | (a) Lemma DUAL, first sentence: "(every game, every start pair (σ_0, τ_0)): the N5 run on G from (σ_0, τ_0) is the mirror of the N5^OF run on G^d from (τ_0, σ_0) (same length, state k ↦ the mirror of state k)"; (b) MIRROR (a); (c), (d) MIRROR (b), (c), quoted in §4 | DUAL every game; MIRROR 𝒞^1E / 𝒞^1O | any |
+- R54 = packet P-N5-DUAL (docs/new/P-N5-DUAL-box43.md, sha1 a51f7c30) with its fixes file docs/new/P-N5-DUAL-fixes-box43.md (sha1 5d08d0fd),
+  LANDED at trunk e54d8a48 (CHECKER C63, checker 04ad4a15). Its one repair, DUAL-1 = N-DUAL-1, is the wording of Lemma DUAL's SECOND
+  sentence. This packet uses only the FIRST sentence, MIRROR (a)-(c) and their proofs (packet §1).
 - T*(n, m, Δ, d) is R51 (a)'s T* written as a function of the game's parameters (P-N5-1O §2, verbatim):
   T_H := n² + 2n − 1;  X_SN := 13(d + 1)n³(F + 1 + T_H) + T_H;  X := (F + 1)(n − 1) + F + X_SN;  Θ := (n − 1) + n(X + 1) + X;
   S_o := d(Θ + 1);  W_ch := (F + X + 1)n²;  N_st := 1 + X + Θ + W_ch;  N_Ξ := F + N_st + (X + 1)(n − 1) + (N_st + F)·3Δn⁴;
@@ -149,13 +149,16 @@ Statement. Let G ∈ 𝒞^1E with n vertices, m edges, Δ := max out-degree, e i
 (the S3 start included), N5 stops after at most
     ITER ≤ (n(n − 1) + d_e)·(T*(n, m, Δ, d_e) + 1) = O(m·Δ·d_e·n¹³)
 iterations. With m ≤ n² and Δ, d_e ≤ n: ITER ≤ (n(n − 1) + d_e)(L(n) + 1) = O(n¹⁷), L(n) := T*(n, n², n, n) = O(n¹⁵).
-Cited text of P-N5-DUAL §1 (signed, both referees), verbatim:
-- MIRROR (a): "On 𝒞^1E, along any N5 run σ changes at most d_e − 1 times, and the run has at most n(n − 1) + d_e dual phases."
-- MIRROR (b): "Hypothesis (H-OF), NOT proved here: there is L(n) such that for every 𝒞^1O game with n vertices and every start pair, the
-  FIRST phase of the N5^OF run from that start pair has at most L(n) transitions. Under (H-OF), N5 on every 𝒞^1E game with n vertices,
-  from every start pair, makes at most (n(n − 1) + d_e)(L(n) + 1) iterations."
-- MIRROR (c): "(H-OF) follows from (H-N5): 'for every 𝒞^1O game with n vertices and every start pair, the first phase of the N5 run has at
-  most L(n) transitions'."
+Cited text of RESULTS R54 (landed, trunk e54d8a48), verbatim:
+- R54 (b), MIRROR (a): "on 𝒞^1E, along any N5 run σ changes at most d_e − 1 times, and the run has at most n(n − 1) + d_e dual phases."
+- R54 (c), MIRROR (b), signed as an IMPLICATION, and R54 (d), MIRROR (c), cited together (R54's title: "a per-first-phase bound L(n) for
+  N5^OF on one-Odd-choice games ((H-OF), implied by the same bound for N5 by MIRROR (c)) gives at most (n(n − 1) + d_e)(L(n) + 1)
+  iterations on one-Even-choice games"):
+  - (c): "under hypothesis (H-OF) "there is L(n) such that for every 𝒞^1O game with n vertices and every start pair, the first phase of
+    the N5^OF run from that start pair has at most L(n) transitions", N5 on every 𝒞^1E game with n vertices, from every start pair, makes
+    at most (n(n − 1) + d_e)(L(n) + 1) iterations. (H-OF) is not proved in the packet."
+  - (d): "(H-OF) follows from (H-N5) "for every 𝒞^1O game with n vertices and every start pair, the first phase of the N5 run has at most
+    L(n) transitions" (the first N5^OF phase from a state is a prefix of, or equal to, the first N5 phase from it)."
 Proof.
 1. (H-N5), per game. Let H ∈ 𝒞^1O with parameters (n, m, Δ, d_o). Every phase of every N5 run on H, from every start pair, has at most
    T*(n, m, Δ, d_o) transitions. This is step 3 of R51 (a)'s proof (P-N5-1O §2, step 3):
@@ -212,7 +215,7 @@ On 𝒞^1E, N5 from any start pair (the S3 start included) does the following:
   - The running-time half stays OPEN for general games (G-N5-TIME).
 - Gauntlet status for the SUBCLASS 𝒞^1E (TARGET.md §5):
   - steps 1-3: as R51's table; N5 is the same object.
-  - step 4: running time by this packet with R51 and P-N5-DUAL; correctness by OUT-G.
+  - step 4: running time by this packet with R51 and R54; correctness by OUT-G.
   - Lean: not done, and not needed (not an M4 claim).
   - step 5: after the referees.
 - Scope (as P-N5-DUAL §1, READING): 𝒞^1E contains games with arbitrarily many Odd choice vertices, so the polynomial bound covers a class
@@ -221,7 +224,7 @@ On 𝒞^1E, N5 from any start pair (the S3 start included) does the following:
   family lies (L-NEW 22, DATA). Nothing here transfers there as proved: MIRROR (a)'s σ-count and the whole 𝒞^1O chain fail as bounds.
 - Honest limits:
   - (i) The time bound is for a SUBCLASS that is polynomial by other means.
-  - (ii) It rests on R51 and everything R51 cites (R15, R18 (d), R21, R36, R47, R48, R50), and on P-N5-DUAL (R54, landing).
+  - (ii) It rests on R51 and everything R51 cites (R15, R18 (d), R21, R36, R47, R48, R50), and on R54 (P-N5-DUAL).
   - (iii) The objects are SPEC's N5 and SPEC's S1. That S1's procedure computes an optimal counterstrategy is SPEC's requirement, sourced in
     VJ00. The code's match to SPEC is DATA (R15 G-N5T-1).
   - (iv) The data are thin for long runs: random 𝒞^1E runs are short.
