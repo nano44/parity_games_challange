@@ -48,6 +48,9 @@
   TRAP found: REFEREE RANDSTARTS probes seed random.Random(<absolute path>): lib_rand3.log reproduces only when run from
   /home/user/parity_games_challange (copy the probe there or check that the main clone's files are identical), not from a worktree.
   Next: landed checks R52 (Lead adds C61 N-2 before landing: check only that change), R53, R54. Counter: next check C64.
+- 2026-10-26 03:23Z: C61 CLOSED (R52 landed c3f6f2bf). C64 = R55 (P-N5-GD) FAIL at c8ded866 (draft f9bcac45): E-1 premise-class sentence
+  (R25 (C2), (C4) checked by neither referee; R15 (a), R38 (a) landed for every game). Re-runs IDENTICAL (gd_probe lib rs2; R2 rand_61, mut_f1).
+  Pending: R53 / R54 landing e54d8a48 (Lead 03:21Z; not yet on origin at 03:3xZ). Counter: next check C65.
 
 ## Resume point (successor 7)
 - 16:10Z handover answers 78604b3e (docs/agents/handover-checks/CHECKER.md); Lead 5/5 + GO 16:32Z; Oink 8fbf0a7 built after GO (exit 0).
