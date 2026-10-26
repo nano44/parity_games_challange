@@ -15,6 +15,7 @@ sha1 98101d1f…; Lemma FB-RISE, question Q-A).
 | §2 | Corollary VIS: a configuration has at most 2n² − n + R⁰_C epochs in a phase, R⁰_C := its returns with no fallback in between and LEV_C unsaturated | PROVED |
 | §2 | Theorem EP-C: N_ep(P) ≤ NCONF(P)·(2n² − n) + R⁰(P), and R⁰(P) ≤ Σ_S REV(S) over the ≤ f + 1 fallback-free runs S of P | PROVED (a reduction) |
 | §3 | data: RET-FB, VIS; at most one saturated epoch per configuration (SAT-1); NCONF ≤ n except nep90 | DATA / CONJECTURE |
+| §5 | Lemma SAT-FB: a fallback from a saturated C-state is the phase's last transition, or C never recurs; so at most one saturated fallback per configuration, and Theorem FB-C′: f ≤ n·|𝒞_f(P)| (was |𝒞_f(P)|·(4n² − 3n)); FB-C′ implies RESULTS R60 (c) EPOCH | PROVED (every game) |
 | §4 | what is open | OPEN / READING |
 
 ## 0. Setting (every game)
@@ -115,3 +116,34 @@ starts of the same configuration inside S, and a configuration with V′ epoch s
   states and unforbid switches; the switch-best structure of aligned blocks.
 - OPEN: CONJECTURE SAT-1.
 - The FB-C factor |𝒞_f(P)| is at most NCONF(P); data |𝒞_f| ≤ 7 (box 47) and ≤ 4 on nep90 / nep76.
+
+## 5. Queue item 2: the saturated term of FB-C (PROVED, every game)
+Written 13:5xZ (date -u). The obstacle named by successor 26 (N5-FB-box47 §5): in H_C, Ξ = B_C does not exclude an improving edge that closes a
+cycle Z whose top is better than the current cycle node but is not a cycle node of λ, so the HON-FB route (arena optimality (F1)) does not
+transfer. The route below does not look at the switched edges at all; it uses SAT_C's constancy.
+Lemma SAT-FB. Let t be a C-state of P with LEV_C(t) = n − 1 whose transition t → t + 1 is an in-phase S4c fallback. Then t + 1 is the last state
+of P, or P has no C-state after t.
+Proof. Suppose t′ > t is a C-state of P. By Lemma SAT_C (N5-FB-box47 §2), Ξ is constant on t, …, t′, so Ξ_{t+1} = Ξ_t (t + 1 ≤ t′).
+- Iσ_{t+1} = ∅. S2: Iσ(x) = {w ∈ succ(x) : Ξ(w) ≻ Ξ(σ(x))}, read at t + 1 with Ξ_{t+1} = Ξ_t. The fallback is Even's (in-phase, FIX 3). An Even x
+  with Iσ_t(x) = ∅ keeps σ_{t+1}(x) = σ_t(x), so Iσ_{t+1}(x) = Iσ_t(x) = ∅. An Even x with Iσ_t(x) ≠ ∅ has σ_{t+1}(x) = z*, the (Ξ_t(w), w)-maximum of
+  Iσ_t(x); a w with Ξ_t(w) ≻ Ξ_t(z*) ≻ Ξ_t(σ_t(x)) would lie in Iσ_t(x) with a larger value. So Iσ_{t+1}(x) = ∅.
+- With Iσ_{t+1} = ∅, S4a returns σ_{t+1}; then S4b changes τ, or S4c fires for Odd (FIX 3: Odd falls back only if Iσ = ∅) and changes τ, or
+  N5 stops (the argument of P-N5-HON's HON-FB (iv), signed). τ is constant on P, so t + 1 is the last state of P. □
+Corollary SAT-FB1. For every phase P and configuration C, at most one in-phase fallback of P has a saturated C-state as its source.
+Proof. If t₁ < t₂ were two, t₂ is a C-state after t₁, so by SAT-FB t₁ + 1 is the last state of P; but t₂ ≥ t₁ + 1 is the source of an
+in-phase transition, so t₂ + 1 ∈ P. □
+Theorem FB-C′. In every phase P of N5 on every game, f ≤ n·|𝒞_f(P)|.
+Proof. Theorem FB-C's proof with SAT-FB1 for the saturated fallbacks of each C: at most n − 1 unsaturated (FB-RISE_C) plus at most 1 saturated. □
+- What this changes. FB-C′ is the bound successor 26 asked for (N5-FB-box47 §5: "would bring the total to f ≤ n·|𝒞_f(P)|. Not proved."). Since
+  |𝒞_f(P)| ≤ N_ep(P), FB-C′ gives f ≤ n·N_ep, which implies RESULTS R60 (c) Lemma EPOCH (f ≤ 1 + n·N_ep) and is stronger per configuration.
+  So the CORRECTION of N5-FB-box47 §3 (that FB-C's N_ep form was weaker than R60 (c)) no longer applies to FB-C′.
+- Premises: SAT_C (which uses (MON), (V1), the H_C-play form of Ξ at a C-state, and the definition of B_C; R15 (d) only for the window, not used
+  here), S2, S4c, FIX 3, HON-FB (iv)'s last-state argument; the unsaturated part through FB-RISE_C rests on Q-A (answered YES by both referees
+  for P-N5-HONFF, docs/new/P-N5-HONFF-fixes-box47.md §1).
+- Not obtained: SAT-1 (no C-EPOCH after saturation). By SAT_C, a return to C after a saturated C-state s needs every transition of [s, s′) to
+  keep Ξ; a fallback there ends the phase (as above), so all are S4a steps with Ξ unchanged, i.e. length-only switches at cycle nodes (RESULTS
+  R15 (b)), and σ̄|Q must change through a tie of S1's counterstrategy. Not excluded here.
+- DATA (satfb.py; flags as in its docstring): random 3,000 𝒞^kO (n 5-18, gseed 111, S3 + 4 starts, seed 8; out/satfb_rand3000.txt): 546
+  saturated fallbacks, all FLAT, LAST and with t + 1 a C-state; all 549 switches at own cycle nodes, closing a cycle through x. lib41 n ≤ 16: 20,
+  the same. liball n ≤ 34: out/satfb_liball_n34_k2.txt (§3.1).
+
