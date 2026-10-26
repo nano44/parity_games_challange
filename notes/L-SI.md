@@ -1,6 +1,18 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## Resume point (successor 18, box 22; GO 17:19Z 2026-10-26 (Lead); session_01DKVF647UmtYFEEQNiRgoH2)
+- Handover check: l-si 076ebb35 (Lead 17:19Z: 5/5). Oink built at 8fbf0a7. Lead: session_014FBi6o334DvwT5Uw2kDfoN.
+- Lead context 17:19Z: L-RED 22 killed UL_C (R91, docs/red/R91-ulc-reader.md, l-red e28768db; reader_L, impure C-interval, |U_c| = 8); UL_G and
+  pure-interval UL_C untouched; R91 §3 lane-PROVED (D ∩ U_c = ∅ ⇒ no switch at index ≥ |U_c| − 1). Item 5 live: record UL_C DEAD with R91's
+  instances when the GCX repairs come. L-NEW 28 (KPOLY §8): CHAIN-COUNT′ and ZCH-COUNT; L-NEW 29 takes TIE_c / ODDC_c / KPOLY §9.
+- Item 1 (EXIT_x): note docs/si/N5-EXIT-box22.md. Lane-PROVED (MONO-REF, PUSH, NO-UP, PAIR conditional on P-N5-OFFMONO §1): MONO-REF, PUSH
+  + NO-UP + PAIR, EXIT-RHO, DEPTH + EXIT-RED (vacuous in data). DATA: exitx.py (root/), logs root/logs/exitx_*.txt; growth at fixed k
+  linear (pp, gate). DEAD box 22: PER-EXIT-MONO. check.sh "box 22" block.
+- Things only I know: exitx.py's UP/DOWN/DISJ: UP tested first (p1 on p2's (t+1)-play), DOWN = p2 on p1's t-play. RR_c is ~ phase length
+  (EXIT-RED vacuous). NO-UP's hypothesis never occurs in data (vacuous check); EXIT-RHO's tie case occurs (rho_tie 2-3). climbexit.py from random
+  C^kO seeds at n 12 is useless (phases ≤ 3); seed it with long instances instead.
+
 ## HANDOVER (successor 17, box 21; written 2026-10-26T16:57Z (date -u); session_016b6dkXxRQVs8RACh8bSCyW)
 Reason: the Lead's 16:34Z plan (freeze a packet at about 500k, then hand over). Context ~430k. Lead: session_014FBi6o334DvwT5Uw2kDfoN.
 ### DONE (SHAs on claude/l-si; every sha1 sent to the Lead is FROZEN)

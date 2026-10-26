@@ -1,0 +1,51 @@
+== red/rec0/instances/nep90_n40.pg si/rund/instances/nep90_n40.start
+PC red/rec0/instances/nep90_n40.pg 4 95 91 11 40 5 53 18 19 13 21 0 3 202 12
+CHR=21 CHV=13 CYCp_c=0 DJ_c=0 ESW_max_per_vertex=12 ESW_sum=202 ESW_trans=91 EXIT_max=18 EXIT_sum=53 NEX_max=3 N_ex=40 PEM_drop_ret=6 PEM_eq_ret=13 PEM_rise_in=99 PEM_rise_ret=26 RET=45 RR_c=89 RT=19 chr_DOWN=8 chr_UP=13 chv_DOWN=13 chv_P1UP=13 classes=1 depth_max=1 depth_sum=13 down_per_other_x100_max=81 ev_DOWN=26 ev_DOWN_newpathfixed=13 ev_UP=38 ev_same=138 len_max=91 mr_checks=4609 mr_rise=1187 n_alldown=18 n_other=22 phases=1 push_checks=16 push_m_is_c=16 push_m_is_p1=0 ratio_x100_max=19 root_OFF=12 root_RT=1 rt_DOWN=4 rt_UP=15 rt_onpath=19
+EXITX PASS
+== PUSHMUT
+== n5-epoch/instances/nep76_n40.pg n5-epoch/instances/nep76_n40.start
+PC n5-epoch/instances/nep76_n40.pg 9 87 78 11 40 5 60 21 13 17 30 0 4 188 12
+CHR=30 CHV=17 CYCp_c=0 DJ_c=4 ESW_max_per_vertex=12 ESW_sum=188 ESW_trans=78 EXIT_max=21 EXIT_sum=60 NEX_max=4 N_ex=44 PEM_drop_ret=5 PEM_eq_ret=17 PEM_rise_in=76 PEM_rise_ret=28 RET=50 RR_c=75 RT=13 chr_DOWN=7 chr_UP=23 chv_DISJ=2 chv_DOWN=15 chv_P1UP=17 classes=1 depth_max=1 depth_sum=17 down_per_other_x100_max=57 ev_DISJ=2 ev_DOWN=38 ev_DOWN_newpathfixed=29 ev_UP=58 ev_same=90 len_max=78 mr_checks=4770 mr_rise=1144 n_alldown=16 n_other=28 phases=1 push_checks=26 push_m_is_c=18 push_m_is_p1=0 ratio_x100_max=26 root_CHR=2 root_OFF=13 root_RT=2 rt_DISJ=2 rt_DOWN=4 rt_UP=7 rt_onpath=13
+EXITX PASS
+== PUSHMUT
+== new/box48/instances/long121_n40.pg new/box48/instances/long121_n40.start
+PC new/box48/instances/long121_n40.pg 1 122 121 11 40 3 48 22 26 11 11 0 3 246 12
+CHR=11 CHV=11 CYCp_c=0 DJ_c=3 ESW_max_per_vertex=12 ESW_sum=246 ESW_trans=121 EXIT_max=22 EXIT_sum=48 NEX_max=3 N_ex=39 PEM_drop_ret=4 PEM_eq_ret=15 PEM_rise_in=41 PEM_rise_ret=24 RET=43 RR_c=63 RT=26 chr_DISJ=1 chr_DOWN=7 chr_UP=3 chv_DISJ=2 chv_DOWN=9 chv_P1UP=11 classes=1 depth_max=2 depth_sum=12 down_per_other_x100_max=62 ev_DOWN=64 ev_DOWN_newpathfixed=42 ev_UP=73 ev_same=109 len_max=121 mr_checks=6377 mr_rise=1100 n_alldown=15 n_other=24 phases=1 push_checks=15 push_m_is_c=12 push_m_is_p1=0 ratio_x100_max=18 root_CHR=2 root_OFF=7 root_RT=2 rt_DOWN=7 rt_UP=19 rt_onpath=26
+EXITX PASS
+== PUSHMUT
+== new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.pg new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.start
+PC new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.pg 5 102 97 11 64 25 207 32 52 94 61 0 4 217 13
+CHR=61 CHV=94 CYCp_c=0 DJ_c=32 ESW_max_per_vertex=13 ESW_sum=217 ESW_trans=97 EXIT_max=32 EXIT_sum=207 NEX_max=4 N_ex=69 PEM_drop_ret=8 PEM_eq_ret=85 PEM_rise_in=151 PEM_rise_ret=71 RET=164 RR_c=84 RT=52 chr_DISJ=3 chr_DOWN=8 chr_UP=50 chv_DISJ=46 chv_DOWN=48 chv_P1UP=94 classes=1 depth_max=2 depth_sum=106 down_per_other_x100_max=23 ev_DISJ=8 ev_DOWN=34 ev_DOWN_newpathfixed=20 ev_UP=46 ev_same=129 len_max=97 mr_checks=9196 mr_rise=2063 n_alldown=13 n_other=56 phases=1 push_checks=157 push_m_is_c=96 push_m_is_p1=0 ratio_x100_max=32 root_CHR=24 root_OFF=62 root_RT=8 rt_DOWN=15 rt_UP=37 rt_onpath=52
+EXITX PASS
+== PUSHMUT
+== new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.pg new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.start
+PC new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.pg 7 93 86 11 64 25 200 16 30 86 84 0 4 217 12
+CHR=84 CHV=86 CYCp_c=0 DJ_c=25 ESW_max_per_vertex=12 ESW_sum=217 ESW_trans=86 EXIT_max=16 EXIT_sum=200 NEX_max=4 N_ex=60 PEM_drop_ret=7 PEM_eq_ret=83 PEM_rise_in=170 PEM_rise_ret=64 RET=154 RR_c=77 RT=30 chr_DISJ=10 chr_DOWN=16 chr_UP=58 chv_DISJ=35 chv_DOWN=51 chv_P1UP=86 classes=1 depth_max=2 depth_sum=90 down_per_other_x100_max=13 ev_DOWN=35 ev_DOWN_newpathfixed=18 ev_UP=42 ev_same=140 len_max=86 mr_checks=8102 mr_rise=1605 n_alldown=7 n_other=53 phases=1 push_checks=136 push_m_is_c=91 push_m_is_p1=0 ratio_x100_max=18 root_CHR=19 root_OFF=64 root_RT=3 rt_DOWN=3 rt_UP=27 rt_onpath=30
+EXITX PASS
+== PUSHMUT
+== new/box48/out/qpcclimb/scale/snap_n80_s62.pg new/box48/out/qpcclimb/scale/snap_n80_s62.start
+PC new/box48/out/qpcclimb/scale/snap_n80_s62.pg 5 105 100 11 80 36 274 25 94 111 69 0 6 235 11
+CHR=69 CHV=111 CYCp_c=0 DJ_c=31 ESW_max_per_vertex=11 ESW_sum=235 ESW_trans=100 EXIT_max=25 EXIT_sum=274 NEX_max=6 N_ex=73 PEM_drop_ret=10 PEM_eq_ret=113 PEM_rise_in=193 PEM_rise_ret=83 RET=206 RR_c=91 RT=94 chr_DISJ=7 chr_DOWN=15 chr_UP=47 chv_DISJ=53 chv_DOWN=58 chv_P1UP=111 classes=1 depth_max=2 depth_sum=121 down_per_other_x100_max=15 ev_DISJ=2 ev_DOWN=41 ev_DOWN_newpathfixed=19 ev_UP=52 ev_same=140 len_max=100 mr_checks=13664 mr_rise=2836 n_alldown=10 n_other=63 phases=1 push_checks=195 push_m_is_c=115 push_m_is_p1=0 ratio_x100_max=25 root_CHR=20 root_OFF=76 root_RT=15 rt_DISJ=3 rt_DOWN=29 rt_UP=62 rt_onpath=94
+EXITX PASS
+== PUSHMUT
+== red/usplit/instances/pp_K12_n161.pg red/usplit/instances/pp_K12_n161.start
+PC red/usplit/instances/pp_K12_n161.pg 0 19 19 0 161 6 25 13 0 12 13 0 3 125 7
+CHR=13 CHV=12 CYCp_c=0 DJ_c=12 ESW_max_per_vertex=7 ESW_sum=125 ESW_trans=19 EXIT_max=13 EXIT_sum=25 NEX_max=3 N_ex=13 PEM_eq_ret=10 PEM_rise_in=4 PEM_rise_ret=11 RET=21 RR_c=14 chr_DISJ=12 chr_UP=1 chv_DISJ=12 chv_P1UP=12 classes=1 depth_max=1 depth_sum=12 down_per_other_x100_max=0 ev_DISJ=42 ev_same=83 len_max=19 mr_checks=4440 mr_rise=404 n_alldown=0 n_other=13 phases=1 push_checks=24 push_m_is_c=12 push_m_is_p1=0 ratio_x100_max=68 root_CHR=12
+EXITX PASS
+== PUSHMUT
+== red/usplit/instances/pp_K48_n449.pg red/usplit/instances/pp_K48_n449.start
+PC red/usplit/instances/pp_K48_n449.pg 0 55 55 0 449 6 97 49 0 48 49 0 3 413 25
+CHR=49 CHV=48 CYCp_c=0 DJ_c=48 ESW_max_per_vertex=25 ESW_sum=413 ESW_trans=55 EXIT_max=49 EXIT_sum=97 NEX_max=3 N_ex=49 PEM_eq_ret=46 PEM_rise_in=4 PEM_rise_ret=47 RET=93 RR_c=50 chr_DISJ=48 chr_UP=1 chv_DISJ=48 chv_P1UP=48 classes=1 depth_max=1 depth_sum=48 down_per_other_x100_max=0 ev_DISJ=150 ev_same=263 len_max=55 mr_checks=36624 mr_rise=1412 n_alldown=0 n_other=49 phases=1 push_checks=96 push_m_is_c=48 push_m_is_p1=0 ratio_x100_max=89 root_CHR=48
+EXITX PASS
+== PUSHMUT
+== red/usplit/instances/gate_K16_n197.pg red/usplit/instances/gate_K16_n197.start
+PC red/usplit/instances/gate_K16_n197.pg 0 23 23 0 197 5 14 14 1 0 13 0 4 158 9
+CHR=13 CYCp_c=0 DJ_c=14 ESW_max_per_vertex=9 ESW_sum=158 ESW_trans=23 EXIT_max=14 EXIT_sum=14 NEX_max=4 N_ex=14 PEM_rise_in=4 PEM_rise_ret=11 RET=11 RR_c=16 RT=1 chr_DISJ=13 classes=1 down_per_other_x100_max=0 ev_DISJ=56 ev_same=102 len_max=23 mr_checks=6657 mr_rise=556 n_alldown=0 n_other=14 phases=1 ratio_x100_max=60 rt_DISJ=1 rt_onpath=1
+EXITX PASS
+== PUSHMUT
+== red/usplit/instances/gate_K64_n581.pg red/usplit/instances/gate_K64_n581.start
+PC red/usplit/instances/gate_K64_n581.pg 0 71 71 0 581 5 62 62 1 0 61 0 4 542 33
+CHR=61 CYCp_c=0 DJ_c=62 ESW_max_per_vertex=33 ESW_sum=542 ESW_trans=71 EXIT_max=62 EXIT_sum=62 NEX_max=4 N_ex=62 PEM_rise_in=4 PEM_rise_ret=59 RET=59 RR_c=64 RT=1 chr_DISJ=61 classes=1 down_per_other_x100_max=0 ev_DISJ=200 ev_same=342 len_max=71 mr_checks=61473 mr_rise=2092 n_alldown=0 n_other=62 phases=1 ratio_x100_max=87 rt_DISJ=1 rt_onpath=1
+EXITX PASS
+== PUSHMUT
+rc 1

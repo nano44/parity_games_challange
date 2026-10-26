@@ -314,3 +314,13 @@ AGAINST_W ('experiments/si/fb2o/instances/tcwult2_against_n8.pg', 0, 1, 0, 4, -1
   (2, t4, 1); vertex 1 is deepest at transition 0 and changes again at transition 1.
 - Survivor: CONJECTURE FINAL-EACH (every transition holds some vertex's final change; 0 violations in 22,989 transitions), which implies
   ≤ n steps.
+
+## DEAD box 22 (L-SI successor 18, 2026-10-26T17:40Z by date -u): PER-EXIT-MONO (own candidate; note docs/si/N5-EXIT-box22.md §5)
+- Statement killed (never claimed): for x ∈ Q_c and an exit p, off(x; p) = κ(x) − κ(p), read at the states where par(x) = p, never falls over the
+  whole phase, including when x returns to p after leaving it. Inside one x-piece this is OFFSET-MONO (P-N5-OFFMONO). The candidate would
+  have bounded same-exit offset rises per (x, p) over the phase instead of per piece, which is where CHAIN-COUNT's D·(EXIT_x + …) factor comes from.
+- Obstruction: while x routes elsewhere, κ(p) can rise more than κ(x). x's options towards p are then not chosen, and nothing ties their
+  offsets to κ(x). On return the offset can be lower.
+- Instance: nep90_n40 at its start (experiments/red/rec0/instances/nep90_n40.pg, experiments/si/rund/instances/nep90_n40.start):
+  exitx.py counter PEM_drop_ret = 6 (of 45 returns). Also 5 / 4 / 8 / 7 / 10 drops on nep76, long121 and L-NEW's three climbs
+  (experiments/si/root/logs/exitx_long10.txt).
