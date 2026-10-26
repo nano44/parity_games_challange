@@ -25,7 +25,13 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   (S4a does it). Tools experiments/red/fbr/ (fbr19 exact checker of FBRED / ACCEL / EPOCH / FB-2T; climbfr19; libfr19; bghm19; fried19;
   shrinkep19). Pins fr39_q4_n48, rho144_n32, lev74_n40, lev56_n48, bghm_k1_gap6_A, bghm_k3_gap4_A.
 - R76 §8 addendum: ALT 0 FAIL (8,260 changes); SAT-2 exercised (68 in sat68_n20); ρ3 84 / 253 / 293 / 666 at n 16 / 32 / 40 / 48 (≈ n², ≤ ITER·|Q|); f ≤ 14.
-- RESUME POINT (successor 19, 05:35Z): nothing running. Next: two-wave construction (two anchors, one chain, τ hiding σ̄ at each wave);
+- Box 45c/d: R76 §9 two-wave collapses (additivity obstruction; twowave19, pin twowave_L16); R75 §7 CORRECTION (f39 phase is c_θ ≠ o,
+  |U| 48; I had paired max-over-phases slacks with the fmax phase). R77 (docs/red/R77-h3-xep.md): P-N5-H3 / P-N5-XEP no kill; FRZ-U_H3
+  tight (gap 0 at n 4, 6); X_SN^pre ≤ 36 per run, 69 per epoch. Tools experiments/red/h3/ (h3_19, exh19).
+- Trap (new, twice): killing climbers with `ps | grep [c]limb... | kill` kills my own shell (the pattern is in my command line). Kill by
+  explicit pid list printed first. Also: a heredoc inside a killed shell is never written; check files exist.
+- Trap (new): never pair a run's max-over-phases slack with its max-f phase; recompute per phase before stating a phase's slack.
+- (superseded) RESUME POINT (successor 19, 05:35Z): nothing running. Next: two-wave construction (two anchors, one chain, τ hiding σ̄ at each wave);
   item (3) resume list (R74 §2.5, FB-CAP |U| ≥ 3 with f39_n48 seed, beta2 cascade).
 - Trap: climbfr19's BEST log line and best json disagreed once (cl_rise_81); pin numbers only from re-runs.
 - (superseded) RESUME POINT: nothing running. Next: item (3) resume list: FB-CAP climber with hard constraints
