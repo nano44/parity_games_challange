@@ -1,0 +1,9 @@
+START fit (0, 1) n 24
+BEST step 299 fit (0, 2) t 2s
+BEST step 1045 fit (0, 3) t 8s
+BEST step 1250 fit (1, 2) t 10s
+BEST step 5347 fit (1, 3) t 44s
+BEST step 7542 fit (2, 2) t 64s
+BEST step 8678 fit (2, 3) t 75s
+BEST step 21203 fit (3, 2) t 198s
+END steps 25531 best (3, 2) n 24 -> results/nconf/ret02_fresh_n24_r2.pg
