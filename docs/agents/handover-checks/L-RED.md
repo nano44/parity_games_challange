@@ -1,4 +1,53 @@
-# Handover check: L-RED successor 22 (Opus 5.5, D14/D15/D18; LANE-RESTART step 3; written 2026-10-26 16:16Z by date -u)
+# Handover check: L-RED successor 23 (Opus 5.5, D14/D15/D18; LANE-RESTART step 3; written 2026-10-26 18:56Z by date -u)
+Every answer is measured from the repository (commands named), not recalled. Predecessor: successor 22
+(session_012UYPozEKit18kRxKv2gKbK), handover = notebook "Successor 22 HANDOVER" at l-red 3eab40ed.
+Successor 22's answers follow below this section.
+
+## 1. Branch, head, distance to trunk
+- Branch `claude/l-red`. Container at start: local = 0d0b67a1 (stale; clean tree). `git fetch origin claude/l-red claude/vibrant-johnson-nxvvxo`
+  (18:53Z) moved origin/claude/l-red 0d0b67a1..3eab40ed; `git merge --ff-only origin/claude/l-red`; `git rev-parse HEAD origin/claude/l-red`
+  -> both 3eab40ed421170c3dcd219456ae6e8d999e77eea.
+- Trunk `claude/vibrant-johnson-nxvvxo` = e92d50c2. `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` at 3eab40ed
+  -> 3 ahead / 114 behind; merge-base 18624c0b (R93 push; R94 + handover commits 768244af, 5be3847c, 3eab40ed not yet on trunk).
+- Trunk brought in with `git merge --no-edit origin/claude/vibrant-johnson-nxvvxo` (merge commit 7d8016e1; no rebase, amend or force-push):
+  4 ahead / 0 behind before this file's commit.
+
+## 2. Open work and the next step of each
+Nothing in flight (`ps -eo pid,ppid,args | grep python3`: no lane job; predecessor's IN FLIGHT: none). tools/oink/build was absent;
+scripts/setup_oink.sh run 18:54Z, exit 0: "oink built at 8fbf0a7". Pins re-measured (`sha1sum`): experiments/red/n3/instances/lagx10_n40.pg
+7258717c, long121_n40.pg c667c085, experiments/red/ul/instances/cxmig_k4_n54.pg a3893ea4 (= R93 table).
+Planned after "go" (D18, N5; Lead brief order; ALTERNATION is the open count, docs/NOW.md line 2; EXIT_x <= phase length, R94):
+- (1) Odd-minimum next-top selector (R94 design (a)): an Odd vertex of large out-degree whose sigma-bar-minimum rises one option at a time,
+  as an end vertex's only top, to re-arm a Bellman-Ford wave once per fallback over one shared chain (target phase ~n^2 at fixed k).
+  Next: read R94 §2 (S4c Xi-greedy blocks static-top re-arming) and N5-EXIT §8-§9, build a generator in experiments/red/, run with vrun.sh
+  (n5 = n5b --mode spec, Oink); time box ~2 h; on failure a new R-file with the exact obstruction and instance.
+- (2) STATIC-DEPTH gaps (docs/si/P-N5-DEPTH-box22.md): (G1) sigma-bar changes inside a global C-interval (R94's pump is linear), (G3) cyclic
+  H_b at an impure end. Next: a long global C-interval at fixed k.
+- (3) ALTERNATION directly: many Odd gate changes in one fallback-free run at fixed k, each not paid by a fresh vertex.
+
+## 3. docs/GAPS.md rows I own
+- G-NEST (major; owner "L-RED (attacks + proof attempts); L-ALG successor if any"), status **open** (docs/GAPS.md line 9 after the merge).
+  Its DTL line is paused under D18 (Lead reading L40).
+- Attacked, not owned: G-N5-TIME (major, owner L-NEW, **open**, line 11): every target in §2 feeds it. GAP-A, GAP-C (L-ALG, open,
+  lines 6-7; DTL paused).
+
+## 4. The three owner rulings that most constrain me (verbatim), with their DECISIONS-INDEX status
+1. D18 (docs/DECISIONS.md line 333), status **active** (DECISIONS-INDEX line 32):
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+2. D1 (docs/DECISIONS.md line 7, D001 key lines), status **active** (DECISIONS-INDEX line 5):
+   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+3. D14 (docs/DECISIONS.md lines 245-246), status **active** (DECISIONS-INDEX line 22):
+   > D
+   > You know it can also test prveiously not tested approaches, it can come up with it own as well
+
+## 5. One trap that bit this lane, and the check that now prevents it
+- Trap (successors 16, 21): a borrowed checker narrower than its statement (L-SI threv.py stopped at the next fallback; flipck checked only
+  both-intact flips), so "0 violations" could not refute the frozen statement. Check: own exact checker written from the frozen text,
+  each window/threshold of a borrowed checker listed against the text, and a kill counted only with a faithful N5 run (n5b --mode spec =
+  n5.py), sha1 + full start pair, and an Oink check_sol2 cross-check (vrun.sh).
+- Also caught at this restart: stale clone (local 0d0b67a1, origin 3eab40ed), by fetch + `merge --ff-only` + `rev-parse HEAD == origin/claude/l-red`.
+
+## Successor 22 section (superseded): L-RED successor 22 (Opus 5.5, D14/D15/D18; LANE-RESTART step 3; written 2026-10-26 16:16Z by date -u)
 Every answer is measured from the repository (commands named), not recalled. Predecessor: successor 21
 (session_01KAhNrh5WEvs2zMwA7VEGx7), handover = notebook "Successor 21 HANDOVER" + addendum at l-red 1dbe6d9f.
 Successor 21's answers follow below this section.
