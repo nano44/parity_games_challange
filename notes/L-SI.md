@@ -1,6 +1,21 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## Resume point (successor 14, box 18; GO 10:23Z 2026-10-26 (Lead); session_019qFTEd4V6YTCPzEN6Js3ez)
+- Handover check 5/5 (Lead 10:23Z): l-si 873c8e71. Oink built (scripts/setup_oink.sh at 8fbf0a7), as the Lead asked before my next push.
+- Lead 10:23Z GO: (2) UF-ONCE is FALSE (REFEREE-2 16, R2-N5-RUND §4). (3) Do NOT build ρ_q tables: L-COMP 5 box 13 does them (incl.
+  nep76_n40, L-RED nep90_n40 sha1 7348271a) and the Lead relays them. My part is the PROOF side: a bound on ρ_q per phase for m_c ≥ 2,
+  or a precise obstruction. RUND notes: both referees signed with no gap, §Cs pending; the Lead sends the fixes-file brief.
+- (2) DONE: reproduced both witnesses with MY sched.py (exact U lists), DEAD box 18a in docs/si/DEAD.md, note §16 UPDATE + §22.1, pinned in
+  check.sh. CHARGE-U unaffected.
+- (3) note §22 (relay.py): Lemma ROOT (PROVED, every game: a ρ-transition changes some Q-exit path; the one-player subgame on Reach(Q) is
+  otherwise unchanged); Lemma ROUTE-RELAY (PROVED: a ρ_q event with q's exit paths unchanged has a source exit e ∈ Q_c ∖ {q} with κ(e)
+  changed, or e's play toggling through q); Corollary SELF-FREE (m_c = 1: all events ROUTE; the structural reason 𝒞^1O closes);
+  ρ ≤ |Q|·T_exit. Obstruction (READING + DATA): the re-thaw loop ρT ≤ T_exit ≤ (n − 1)(ρT + 1), closed by cycles in the phase's relay
+  graph (frz40 phase@44: 11 ↔ 26; lib41 28 / 1,601 phases). CONJECTURE ROOT-C (per class) DATA only. ρ for m_c ≥ 2 stays OPEN.
+- Things only I know: relay.py's per-q exit paths stop at Q ∪ {c} (class form, §22.4); ROOT's Q-exit paths stop only at Q or a repeat
+  (global form, §22.3). rho_transitions = class_event_transitions on lib41: every ρ-transition there touches one class only.
+
 ## HANDOVER (successor 13, box 17 cont.; written 2026-10-26T09:5xZ (date -u); session_018EgSbDTYEVHqL882sCoX7u)
 Reason: the Lead asked for the handover after item (2) (09:52Z); context ~380k, natural pause. Lead: session_014FBi6o334DvwT5Uw2kDfoN.
 ### DONE (SHAs on claude/l-si; every sha1 sent to the Lead is FROZEN)
@@ -1127,6 +1142,7 @@ in experiments/si/orlens/instances/ (all Oink zlk OK, strategies verified). Oink
   premise (VJ) of Lemma OUT-G (docs/si/P-N5-1E-box16.md §2).
 
 ## Dead ends (details in docs/si/DEAD.md)
+- (successor 14) UF-ONCE: FALSE (REFEREE-2 16; so_th_n32 Even 24 ×3, phase2_pk48 Even 44 ×2; DEAD box 18a). Lane data had skipped 𝒞^1O (KMIN = 2).
 - Box 17d (L-RED kill, reproduced by succ. 13): LEVEL-COUNT count form; obstruction a W-then-Ξ lag at one level; lcount_n23 (f86125a0), lcount2_n23 (dd9847c6).
 - Box 17 (succ. 12), all with instances in experiments/si/rund/instances/ and pins in experiments/si/check.sh:
   - strict-raise lemma ("every twin change raises COARSE_L(W(v))"): obstruction, a length-only W change; lenonly_n8.

@@ -242,3 +242,17 @@ AGAINST_W ('experiments/si/fb2o/instances/tcwult2_against_n8.pg', 0, 1, 0, 4, -1
   `python3 -I experiments/si/rund/lvl.py --one <pg> <start>` prints `VIOLATION ('LC', …, 0, 3, 1, 3, [18, 21])` (pinned in
   experiments/si/check.sh).
 - Replacement: CONJECTURE LC2 (|OC| ≤ |(score, level) pairs|) and PAIR-OC (note §15), both 0 violations on these instances and all data.
+
+## DEAD box 18a (REFEREE-2 16 side finding, R2-N5-RUND §4, referee-2 7a02a1f2; reproduced by L-SI successor 14, 2026-10-26T10:3xZ by date -u): CONJECTURE UF-ONCE
+- Statement killed: in every λ_W-constant fallback-free in-phase run S, every Even vertex makes at most one unforbid-switch (U(S) event,
+  Corollary CHARGE-U). docs/si/N5-RUND-box17.md §16, §22.1.
+- Obstruction: offset returns are realised. An Even vertex is tempted by W and blocked by Ξ at a gated successor, switches, goes back by
+  an ordinary switch, and is blocked and unblocked again, all inside one run.
+- Instances: experiments/red/so/instances/so_th_n32.pg (sha1 ae9126ad1bf963114bdd56b6e50c8c1cc571779e, 𝒞^1O) +
+  experiments/si/rund/instances/so_th_n32_s0.start (sha1 2284f723…): Even 24 makes 3 U events into (24, 21) at 4 → 5, 15 → 16, 21 → 22.
+  experiments/red/n5inj/instances/phase2_pk48.pg (sha1 83dead9bc3cd96a27f4754e99bb876956cd60268, two Odd choice vertices) +
+  experiments/si/rund/instances/phase2_pk48_s1.start (sha1 36dc43e7…): Even 44 makes 2 U events, into (44, 11) at 16 → 17 and into
+  (44, 19) at 25 → 26. `python3 -I experiments/si/rund/sched.py --one <pg> <start>` prints `VIOLATION ('UF_ONCE', …)` with exactly
+  these events (pinned in experiments/si/check.sh). CHARGE, FZ, UNF, OFFUP: 0 violations on both.
+- Lane fault: `sched.py --list` defaults to KMIN = 2, so the lane's 0 never covered a 𝒞^1O game (REFEREE-2: 33 of its 34 failures are 𝒞^1O).
+- Unaffected: CHARGE-U (PROVED). Closed route: |U(S)| ≤ n_E.
