@@ -27,3 +27,18 @@ BEST step 2985 fit (10, 28) t 177s
 BEST step 3212 fit (11, 27) t 199s
 BEST step 3345 fit (11, 28) t 210s
 BEST step 3369 fit (11, 29) t 212s
+BEST step 3515 fit (11, 30) t 229s
+BEST step 3704 fit (11, 32) t 251s
+BEST step 3834 fit (11, 33) t 265s
+BEST step 3925 fit (11, 34) t 277s
+BEST step 4193 fit (11, 35) t 312s
+BEST step 4428 fit (12, 33) t 345s
+BEST step 4546 fit (12, 34) t 360s
+BEST step 4555 fit (12, 35) t 361s
+BEST step 4695 fit (12, 36) t 380s
+BEST step 6330 fit (12, 37) t 583s
+BEST step 6576 fit (13, 38) t 609s
+BEST step 7471 fit (13, 39) t 708s
+BEST step 7822 fit (13, 40) t 748s
+BEST step 8082 fit (13, 41) t 778s
+END steps 9626 best (13, 41) n 64 -> results/scale/nep_fresh_n64_r1.pg

@@ -1,0 +1,3 @@
+START fit (90, 94) n 64
+BEST step 84 fit (90, 95) t 32s
+BEST step 305 fit (91, 96) t 132s

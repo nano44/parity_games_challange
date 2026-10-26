@@ -2,3 +2,17 @@ START fit (55, 3) n 32
 BEST step 506 fit (56, 3) t 43s
 BEST step 1171 fit (57, 3) t 115s
 BEST step 2046 fit (58, 3) t 198s
+BEST step 3047 fit (59, 3) t 314s
+BEST step 3223 fit (60, 3) t 335s
+BEST step 3389 fit (61, 3) t 356s
+BEST step 4237 fit (62, 3) t 463s
+BEST step 5509 fit (64, 3) t 592s
+BEST step 6932 fit (65, 3) t 732s
+BEST step 7058 fit (66, 3) t 745s
+BEST step 7126 fit (67, 3) t 751s
+BEST step 7144 fit (68, 3) t 752s
+BEST step 7311 fit (69, 3) t 770s
+BEST step 9154 fit (70, 3) t 948s
+BEST step 9274 fit (71, 3) t 958s
+BEST step 9907 fit (72, 3) t 1023s
+BEST step 9993 fit (73, 3) t 1032s

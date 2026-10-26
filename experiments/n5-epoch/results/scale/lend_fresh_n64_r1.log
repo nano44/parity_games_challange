@@ -9,3 +9,11 @@ BEST step 1672 fit (4, 4) t 56s
 BEST step 2045 fit (4, 5) t 78s
 BEST step 3165 fit (5, 4) t 146s
 BEST step 3527 fit (6, 4) t 167s
+BEST step 6120 fit (7, 4) t 339s
+BEST step 7478 fit (8, 3) t 434s
+BEST step 8199 fit (9, 3) t 483s
+BEST step 10261 fit (10, 3) t 592s
+BEST step 10883 fit (11, 3) t 627s
+BEST step 11092 fit (12, 3) t 639s
+BEST step 13334 fit (12, 4) t 788s
+END steps 15640 best (12, 4) n 64 -> results/scale/lend_fresh_n64_r1.pg
