@@ -1,0 +1,9 @@
+brk_transitions_N1fb=357 brk_transitions_N1sw=320 flips=152 flips_N1fb=71 flips_N1sw=58 flips_N3=11 flips_N3b=12 max_brk=19 max_flips_phase=20 max_gap_N3=10 max_gap_N3b=22 onsets=23 onsets_N1fb=6 onsets_N1sw=5 onsets_N3=4 onsets_N3b=8 phases=1601 phases_with_flips=18
+GAPS {('N3', 2): 6, ('N3', 4): 2, ('N3', 10): 3, ('N3b', 3): 1, ('N3b', 5): 3, ('N3b', 10): 1, ('N3b', 11): 2, ('N3b', 22): 5}
+TOP onsets/flips/len/rho/n (2, 20, 35, 21, 40, 'experiments/red/n5inj/instances/frz40.pg rs', 42)
+TOP onsets/flips/len/rho/n (2, 20, 35, 21, 40, 'experiments/red/n5inj/instances/frz40.pg', 44)
+TOP onsets/flips/len/rho/n (2, 4, 4, 42, 32, 'experiments/red/carry/instances/phi_flat_alive_n32.pg rs', 3)
+TOP onsets/flips/len/rho/n (2, 4, 2, 14, 20, 'experiments/red/carry/instances/gapb_dup_n20.pg rs', 6)
+TOP onsets/flips/len/rho/n (2, 3, 2, 12, 48, 'experiments/red/tcpert/instances/leanT_N6.pg rs', 5)
+FLIPCLS PASS
+rc 0

@@ -1,0 +1,11 @@
+events_in_pieces_ge2=0 max_quiet_over_n_pct_Qcge2=2 max_rho_q=72 max_rho_q_Qcge2=72 q_phases=5 quiet_max=1 quiet_max_Qcge2=1 rho_q_total=292 splits_fb=3 splits_other=434
+TOP quiet_max/rho_q/len/|Q_c|/n (1, 72, 91, 5, 40, '../red/rec0/instances/nep90_n40.pg', 4, 0)
+TOP quiet_max/rho_q/len/|Q_c|/n (1, 70, 91, 5, 40, '../red/rec0/instances/nep90_n40.pg', 4, 17)
+TOP quiet_max/rho_q/len/|Q_c|/n (1, 64, 91, 5, 40, '../red/rec0/instances/nep90_n40.pg', 4, 1)
+TOP quiet_max/rho_q/len/|Q_c|/n (1, 55, 91, 5, 40, '../red/rec0/instances/nep90_n40.pg', 4, 6)
+TOP quiet_max/rho_q/len/|Q_c|/n (1, 31, 91, 5, 40, '../red/rec0/instances/nep90_n40.pg', 4, 8)
+TOP(|Q_c|>=2) quiet_max/rho_q/len/|Q_c|/n (1, 72, 91, 5, 40, '../red/rec0/instances/nep90_n40.pg', 4, 0)
+TOP(|Q_c|>=2) quiet_max/rho_q/len/|Q_c|/n (1, 70, 91, 5, 40, '../red/rec0/instances/nep90_n40.pg', 4, 17)
+TOP(|Q_c|>=2) quiet_max/rho_q/len/|Q_c|/n (1, 64, 91, 5, 40, '../red/rec0/instances/nep90_n40.pg', 4, 1)
+TOP(|Q_c|>=2) quiet_max/rho_q/len/|Q_c|/n (1, 55, 91, 5, 40, '../red/rec0/instances/nep90_n40.pg', 4, 6)
+QUIET PASS

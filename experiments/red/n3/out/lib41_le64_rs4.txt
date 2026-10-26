@@ -1,0 +1,3 @@
+eq=10 flipcost_checks=1115 flips=1115 games=367 gap_max=22 hyp=20 hyp_bothintact=17 hyp_fail_p2intact=28 hyp_fail_top=969 hyp_p1broken=0 hyp_p2=10 hyp_q1=9 hyp_q2=1 n2_overlap=98 phases=9049 sg_checks=646054
+max hyp flips per (phase, pair): 3 ('experiments/red/carry/instances/phi_flat_alive_n32.pg rs', 3, 11, 21)
+N3X PASS

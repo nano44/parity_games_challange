@@ -231,6 +231,11 @@ for o in stable oink; do
   out=$(cd xctx && DTL_ORDER=$o python3 -I nestclass.py instances/nest3_n24.pg | grep -o "score ([0-9]*, [0-9]*, [0-9]*")
   [[ "$out" == "score (3, 3, 18" ]] || { echo "nest3_n24: NEST drifted ($o): $out"; exit 1; }
 done
+# R87 (successor 21): exact N3-LEVEL checker; pp_K12 hyp flips pinned, strict control must fail on the coverage pin
+out=$(python3 -I n3/n3x.py --one usplit/instances/pp_K12_n161.pg | head -1)
+[[ "$out" == *"hyp=60 "* ]] || { echo "n3x pp_K12 drifted: $out"; exit 1; }
+python3 -I n3/n3x.py --one n3/instances/n3cov_lean.pg n3/instances/n3cov_lean.start | grep -q "N3X PASS" || { echo "n3x n3cov_lean: not PASS"; exit 1; }
+MUT=1 python3 -I n3/n3x.py --one n3/instances/n3cov_lean.pg n3/instances/n3cov_lean.start | grep -q "N3X FAIL" || { echo "n3x strict control did not fail"; exit 1; }
 TMPDIR="$t" python3 correspond.py 2 3 4 5 6 > "$t/corr.log" || { cat "$t/corr.log"; exit 1; }
 python3 xcheck.py --games 150 --nmax 7 --seed 7 > "$t/x.log" || { cat "$t/x.log"; exit 1; }
 echo "red check: r2_check PASS (R11), bsolo 4 = 4 tangles/7 iterations (R10); dtl_flipflop F8 = 36/1/5 (R9), Claim P/Q 0 violations; zadeh_lb N2 = 43 (no fixed order, R7); fhz_padded 2 S7 = 16 (R5 kill);  friedmann_Gn 2 S7 = 15; fhz lockstep3/relation/export OK; gated_bland 6 = 63 MSF iterations (regions = Zielonka, strategies verified); Claim F instances; MSF == Bland N<=6; $(tail -1 "$t/x.log")"
