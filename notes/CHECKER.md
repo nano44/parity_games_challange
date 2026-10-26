@@ -30,6 +30,15 @@
   @8a47fd92; L-RED kw18 frzu_tight_n14 margin 0, cw11_n24 CW-INT margin 0 @c14064fd. Worktrees wtR59, wtX59, wt59. Next: Add. 1 (APPEND).
 - 2026-10-26 00:33Z: C58 Add. 1 PASS at 478c6b56 (R49 draft 6a9ce799); C59 Add. 1 PASS at 478c6b56 (R50 draft 64cbc92f). Next: landed
   checks (Add. 2, landed.py) when R49 / R50 land.
+- 2026-10-26 00:43Z: C58 CLOSED (R49 landed f41fcf0a), C59 CLOSED (R50 landed f41fcf0a, same commit); checker SHA a58dcd3a in both. Next
+  (Lead 00:41Z): P-N5-1O (𝒞^1O assembly) after both referees; FX, NH42, DUAL as they converge. Counter: next check C60. Idle until a draft sha1.
+- C60 = R51 = P-N5-1O (𝒞^1O assembly; Lead: special care). 2026-10-26 01:43Z docs/checker/C60.md FAIL at 718cbb08 (draft 076dc05e): E-1 (b)
+  and §C line say REFEREE-2 read "R34 (b)-(e) … in its §C"; it is R34 (b)-(f) in its §3 (§C.4, fixes); E-2 honest limits omit R2 §9 (BIT vs
+  SPEC text, code link DATA G-N5T-1, short random runs, O3b cap). N-1 M3 status, N-2 R18 (d), N-3 ranking, N-4 gauntlet caveats, N-5 fixes
+  "successor 12", N-6 START versions. GAPS advice §6 (status stays open; "𝒞^1O PART CLOSED"). Re-runs IDENTICAL: REFEREE onecheck lib
+  RANDSTARTS=2 @4298dae9; R2 onecheck random 5000 4 14 1 and files (1,509) @04c2d708; n5 + check_sol2 (Oink zlk) on 4 files OK. Worktrees
+  wtR60, wtX60, wt60. Next: Add. 1 (APPEND).
+- 2026-10-26 01:53Z: C60 Add. 1 PASS at d7d9d7d2 (R51 draft 175947e8). Next: landed check (Add. 2) when R51 lands.
 
 ## Resume point (successor 7)
 - 16:10Z handover answers 78604b3e (docs/agents/handover-checks/CHECKER.md); Lead 5/5 + GO 16:32Z; Oink 8fbf0a7 built after GO (exit 0).

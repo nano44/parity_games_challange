@@ -1,0 +1,107 @@
+MODE files ../../../experiments/new/box41/lib41.txt 1 MUT endg
+C1E_runs: 8
+DUAL1_ok: 412
+MIRC_ok: 253
+REC_plain_differs_at_j+1: 15
+VIOLATIONS: 163
+V_ENDG: 163
+iterations: 8477
+k_0: 9
+k_1: 253
+k_10: 5
+k_100: 1
+k_107: 1
+k_108: 1
+k_11: 9
+k_12: 9
+k_13: 5
+k_135: 1
+k_14: 2
+k_15: 3
+k_16: 10
+k_164: 1
+k_165: 1
+k_17: 4
+k_18: 3
+k_19: 3
+k_198: 1
+k_2: 5
+k_20: 3
+k_21: 2
+k_23: 2
+k_233: 1
+k_24: 3
+k_25: 2
+k_26: 1
+k_28: 1
+k_29: 1
+k_3: 4
+k_30: 1
+k_32: 4
+k_33: 2
+k_35: 2
+k_36: 2
+k_38: 1
+k_39: 1
+k_4: 3
+k_40: 1
+k_44: 2
+k_48: 1
+k_5: 6
+k_51: 1
+k_54: 2
+k_55: 1
+k_56: 1
+k_57: 1
+k_58: 1
+k_59: 1
+k_6: 3
+k_60: 1
+k_62: 1
+k_63: 1
+k_64: 1
+k_65: 1
+k_7: 4
+k_75: 5
+k_77: 1
+k_8: 3
+k_84: 1
+k_9: 9
+runs: 412
+runs_with_two_sided_fb: 15
+two_sided_fbs: 54
+C1E_max_sigma_changes_over_bound: (1.0, 'experiments/n5-exhaustive/instances/n4_thch_0.pg#0')
+max_distinct_tau: (38, 'experiments/red/n5inj/instances/wide_h16.pg#0')
+max_dual_phases: (116, 'experiments/red/so/instances/xsn91_n48.pg#0')
+max_phases: (48, 'experiments/red/n5/instances/sym_h16_s1.pg#0')
+VIOLATION ENDG: experiments/attr/instances/dtr_fig1.pg#0: sigma changes after I_sigma empty at 0
+VIOLATION ENDG: experiments/m2/counterexamples/ce1_8v_shrunk.pg#0: sigma changes after I_sigma empty at 0
+VIOLATION ENDG: experiments/m2/counterexamples/strat_s2_12v.pg#0: sigma changes after I_sigma empty at 0
+VIOLATION ENDG: experiments/n5-exhaustive/instances/b4_cyc6_0.pg#0: sigma changes after I_sigma empty at 1
+VIOLATION ENDG: experiments/n5-exhaustive/instances/b4_n4all_cyc3_0.pg#0: sigma changes after I_sigma empty at 1
+VIOLATION ENDG: experiments/n5-exhaustive/instances/b5_n5_cyc4_0.pg#0: sigma changes after I_sigma empty at 2
+VIOLATION ENDG: experiments/n5-exhaustive/instances/n4_thch_0.pg#0: sigma changes after I_sigma empty at 1
+VIOLATION ENDG: experiments/n5-exhaustive/instances/n4all_tgbad_0.pg#0: sigma changes after I_sigma empty at 0
+VIOLATION ENDG: experiments/n5-exhaustive/instances/n4all_thch_0.pg#0: sigma changes after I_sigma empty at 1
+VIOLATION ENDG: experiments/n5-exhaustive/instances/thetaA_n6.pg#0: sigma changes after I_sigma empty at 0
+VIOLATION ENDG: experiments/n5-exhaustive/instances/thetaA_n7.pg#0: sigma changes after I_sigma empty at 0
+VIOLATION ENDG: experiments/new/box21/instances/h1_hand.pg#0: sigma changes after I_sigma empty at 0
+VIOLATION ENDG: experiments/new/box21/instances/oneodd_c16.pg#0: sigma changes after I_sigma empty at 35
+VIOLATION ENDG: experiments/new/box25/fbh_drop9.pg#0: sigma changes after I_sigma empty at 1
+VIOLATION ENDG: experiments/new/box25/wdrop_cyc.pg#0: sigma changes after I_sigma empty at 1
+VIOLATION ENDG: experiments/new/box38/instances/norise_state_n8.pg#0: sigma changes after I_sigma empty at 1
+VIOLATION ENDG: experiments/new/box38/instances/norise_state_n8.pg#0: sigma changes after I_sigma empty at 2
+VIOLATION ENDG: experiments/red/carry/instances/fallv_viol_n28.pg#0: sigma changes after I_sigma empty at 4
+VIOLATION ENDG: experiments/red/carry/instances/firedlong667_n20.pg#0: sigma changes after I_sigma empty at 3
+VIOLATION ENDG: experiments/red/carry/instances/gapb_dup_n20.pg#0: sigma changes after I_sigma empty at 7
+VIOLATION ENDG: experiments/red/carry/instances/h4_compound_n44.pg#0: sigma changes after I_sigma empty at 3
+VIOLATION ENDG: experiments/red/carry/instances/lemmaS_viol_n20.pg#0: sigma changes after I_sigma empty at 3
+VIOLATION ENDG: experiments/red/carry/instances/phi_flat_alive_n32.pg#0: sigma changes after I_sigma empty at 3
+VIOLATION ENDG: experiments/red/carry/instances/pk_viol_n20.pg#0: sigma changes after I_sigma empty at 2
+VIOLATION ENDG: experiments/red/carry/instances/replay4_n32.pg#0: sigma changes after I_sigma empty at 3
+VIOLATION ENDG: experiments/red/carry/instances/spp19_oink_n30.pg#0: sigma changes after I_sigma empty at 9
+VIOLATION ENDG: experiments/red/ctxp/instances/margin1_mc5.pg#0: sigma changes after I_sigma empty at 9
+VIOLATION ENDG: experiments/red/ctxp/instances/margin1_mc5.pg#0: sigma changes after I_sigma empty at 10
+VIOLATION ENDG: experiments/red/ctxp/instances/margin1_mc5.pg#0: sigma changes after I_sigma empty at 11
+VIOLATION ENDG: experiments/red/kl/instances/klcount_n16.pg#0: sigma changes after I_sigma empty at 5
+RESULT FAIL violations=163

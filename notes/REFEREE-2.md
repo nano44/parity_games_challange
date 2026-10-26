@@ -1,6 +1,29 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point (successor 13, session_01Hjrye27AzEi22tE6LHsM4Y, Opus 5.5 under D15; 2026-10-26 01:1xZ by date -u)
+- Handover check a0940b45 (Lead 5/5, GO 00:54Z). Lead queue: P-N5-1O (NEW, top) -> FX (aa227b0b) -> NH42 (93d19be8) -> DUAL (a51f7c30 @ df073cb5).
+- P-N5-1O (docs/si/P-N5-1O-box15.md sha1 2cf5e672 @ trunk 291c110d): report docs/referee-2/R2-N5-1O.md: all SIGN, no gap; N-1O-1..6.
+  N-1O-1: Lemma OUT step 2 "reward(λ(v)) > 0" false at the rank-0 even cycle node (reward 0); ">= 0" repairs it (reached in data).
+  N-1O-2: ITER = O(n^17), packet says O(n^18) (true, loose). N-1O-4: R21 (a) parenthetical general = R18 (d) Lemma S (a). N-1O-5: R32/R33
+  chain under R34 (f) read line by line: start-free (discharges R-N5-START's depth caveat).
+- Tools R2-N5-1O/onecheck.py (on R2-N5-RE/re_check.py): phases/f/T* per phase, Lemma OUT O1-O6 vs own Zielonka + strategy verifier +
+  enumerated strategies; modes random | general | files; ONE_MUT=flip|sbar|early|phi|fb (all bite).
+- Read for this packet: docs/referee/R-N5-START.md only (Lead allowed: audit of landed results). R-N5-1O* not opened (not in tree at 01:04Z).
+- P-N5-FX (aa227b0b): R2-N5-FX.md all SIGN, no gap; N-FX-1 (FX (a) implied by landed R30 (c)), N-FX-2 (cite R48 repaired; o = c_θ
+  case). Tool R2-N5-FX/fx_check.py (FX_MUT=seg|noiii|stick|r30; stick, noiii bite). R-N5-FX.md NOT opened before my push.
+- §C 1O 3312144c (identical; OUT-1 = N-1O-1 accepted as closed gap; BIT-N1 accepted; C.4: R34 (b)-(e) line-by-line is mine).
+- P-N5-NH-box42 (93d19be8 @ 54ac72e6): R2-N5-NH42.md all SIGN, no gap; N-NH42-1..3. Tool R2-N5-NH42/nh42_check.py (NH_MUT=sw|run|stc|nr;
+  run does not bite: no 2 consecutive Ξ-flat transitions in OTHER stretches). R-N5-NH.md / R-N5-NH42.md NOT opened before push.
+- P-N5-DUAL (a51f7c30 @ df073cb5): R2-N5-DUAL.md all SIGN (MIRROR (b) as implication), no gap; N-DUAL-1 (wording j vs j+1), N-DUAL-2
+  (§2 table coverage), N-DUAL-3 (READING: (H-N5) holds via P-N5-1O, so O(n^17) on C^1E). Tool R2-N5-DUAL/dual_check.py (own N5 loop with
+  Odd-first flag; DU_MUT=plain|phi|endg all bite); reproduces lane's lib41 15 runs / 54 two-sided fallbacks. R-N5-DUAL.md NOT opened before push.
+- P-N5-GD (b898ff82 @ 3c6f6c16): R2-N5-GD.md all SIGN, no gap; N-GD-1 (R18 (d) Lemma S (c) quoted as iff; only => landed/used),
+  N-GD-2 (premise class confirmed, each proof read). Tool R2-N5-GD/gd_check.py (GD_MUT=gda|c2|wo bite, f1 not). No REFEREE GD file at 01:43Z.
+- Queue after NH42 (done): DUAL (done) (a51f7c30 @ df073cb5), then GD (docs/new/P-N5-GD-box43.md b898ff82 @ 3c6f6c16).
+- Sources (via landed RESULTS, not re-opened): VJ00 BRICS RS-00-48 (sha256 485a12de…, RESULTS R15 object line), p. 16 (11) as quoted in
+  P-N5-LP §0 l. 29.
+
 ## HANDOVER (successor 12, session_01S8gi5khZfh16sXZ4fcHvZr, Opus 5.5 under D15; written 2026-10-25 23:3xZ by date -u; context ~470k)
 Branch claude/referee-2, merged with trunk (--no-ff) before pushes. REFEREE-2 owns no docs/GAPS.md rows. PARKED after this push.
 ### DONE (every report docs/referee-2/<name>.md; every verdict "(Opus 5.5, D15)")

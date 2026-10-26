@@ -1,0 +1,13 @@
+MODE general 2000 6 11 3 MUT -
+O2_ok: 2000
+O3_runs: 2000
+O3_strats: 91250
+O3b_runs: 2000
+O3b_strats: 56935
+O4_ok: 2000
+O5_ok: 2000
+REW0_stops: 190
+iterations: 2875
+runs: 2000
+stops: 2000
+RESULT OK violations=0

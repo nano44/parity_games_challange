@@ -1,0 +1,31 @@
+runs 1012, distinct n 27
+n    3  max ITER    3  max ITER / n 1.00
+n    4  max ITER    4  max ITER / n 1.00
+n    5  max ITER    3  max ITER / n 0.60
+n    6  max ITER    3  max ITER / n 0.50
+n    7  max ITER    3  max ITER / n 0.43
+n    8  max ITER    4  max ITER / n 0.50
+n    9  max ITER    7  max ITER / n 0.78
+n   10  max ITER   12  max ITER / n 1.20
+n   11  max ITER   10  max ITER / n 0.91
+n   12  max ITER   19  max ITER / n 1.58
+n   13  max ITER    2  max ITER / n 0.15
+n   14  max ITER   22  max ITER / n 1.57
+n   15  max ITER    7  max ITER / n 0.47
+n   16  max ITER   40  max ITER / n 2.50
+n   17  max ITER    4  max ITER / n 0.24
+n   20  max ITER   34  max ITER / n 1.70
+n   22  max ITER   33  max ITER / n 1.50
+n   24  max ITER   66  max ITER / n 2.75
+n   28  max ITER   65  max ITER / n 2.32
+n   32  max ITER   87  max ITER / n 2.72
+n   36  max ITER   49  max ITER / n 1.36
+n   40  max ITER  106  max ITER / n 2.65
+n   47  max ITER    5  max ITER / n 0.11
+n   48  max ITER  115  max ITER / n 2.40
+n   50  max ITER    5  max ITER / n 0.10
+n   56  max ITER   85  max ITER / n 1.52
+n   64  max ITER  105  max ITER / n 1.64
+fit log(max ITER per n) ~ e*log n: e = 1.156
+fit log(ITER) over all runs: e = 1.250
+max ITER / n overall: 2.75;  max ITER / n^2: 0.333

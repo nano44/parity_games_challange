@@ -1,0 +1,57 @@
+MODE random 400 4 12 7 MUT early
+O2_ok: 400
+O3_runs: 400
+O3_strats: 1006
+O3b_runs: 399
+O3b_skipped: 1
+O3b_strats: 40293
+O4_ok: 269
+O5_ok: 267
+REW0_stops: 48
+VIOLATIONS: 21783
+V_O3b: 21449
+V_O4: 131
+V_O5: 133
+V_O6: 70
+iterations: 466
+phases: 788
+phases_with_fb: 17
+runs: 400
+stops: 400
+f_over_R48: (1.0, 'random7:36')
+iter_over_bound: (7.543754676603891e-12, 'random7:122')
+max_f: (1, 'random7:12')
+max_phase_len: (2, 'random7:37')
+max_phases: (5, 'random7:233')
+phases_over_bound: (0.2, 'random7:29')
+VIOLATION O3b: random7:0: sigma' (0, 8, 4, 8, 0) beats sigma at 2
+VIOLATION O3b: random7:0: sigma' (0, 8, 4, 8, 5) beats sigma at 2
+VIOLATION O3b: random7:0: sigma' (6, 8, 4, 8, 5) beats sigma at 2
+VIOLATION O3b: random7:0: sigma' (8, 8, 4, 8, 0) beats sigma at 2
+VIOLATION O3b: random7:0: sigma' (8, 8, 4, 8, 5) beats sigma at 2
+VIOLATION O3b: random7:1: sigma' (2, 0, 8, 5, 7, 1, 7, 7) beats sigma at 0
+VIOLATION O3b: random7:1: sigma' (2, 0, 8, 5, 7, 1, 7, 9) beats sigma at 0
+VIOLATION O3b: random7:1: sigma' (2, 0, 8, 5, 7, 1, 7, 10) beats sigma at 0
+VIOLATION O3b: random7:1: sigma' (2, 0, 8, 5, 7, 1, 10, 7) beats sigma at 0
+VIOLATION O3b: random7:1: sigma' (2, 0, 8, 5, 7, 1, 10, 9) beats sigma at 0
+VIOLATION O3b: random7:1: sigma' (2, 0, 8, 5, 7, 1, 10, 10) beats sigma at 0
+VIOLATION O3b: random7:1: sigma' (2, 0, 8, 5, 9, 1, 7, 7) beats sigma at 4
+VIOLATION O3b: random7:1: sigma' (2, 0, 8, 5, 9, 1, 7, 9) beats sigma at 4
+VIOLATION O3b: random7:1: sigma' (2, 0, 8, 5, 9, 1, 7, 10) beats sigma at 4
+VIOLATION O3b: random7:1: sigma' (2, 0, 8, 5, 11, 1, 7, 7) beats sigma at 0
+VIOLATION O3b: random7:1: sigma' (2, 0, 8, 5, 11, 1, 7, 9) beats sigma at 0
+VIOLATION O3b: random7:1: sigma' (2, 0, 8, 5, 11, 1, 7, 10) beats sigma at 0
+VIOLATION O3b: random7:1: sigma' (2, 0, 8, 10, 7, 1, 7, 7) beats sigma at 0
+VIOLATION O3b: random7:1: sigma' (2, 0, 8, 10, 7, 1, 7, 9) beats sigma at 0
+VIOLATION O3b: random7:1: sigma' (2, 0, 8, 10, 7, 1, 7, 10) beats sigma at 0
+VIOLATION O3b: random7:1: sigma' (2, 0, 8, 10, 7, 1, 10, 7) beats sigma at 0
+VIOLATION O3b: random7:1: sigma' (2, 0, 8, 10, 7, 1, 10, 9) beats sigma at 0
+VIOLATION O3b: random7:1: sigma' (2, 0, 8, 10, 7, 1, 10, 10) beats sigma at 0
+VIOLATION O3b: random7:1: sigma' (2, 0, 8, 10, 9, 1, 7, 7) beats sigma at 4
+VIOLATION O3b: random7:1: sigma' (2, 0, 8, 10, 9, 1, 7, 9) beats sigma at 4
+VIOLATION O3b: random7:1: sigma' (2, 0, 8, 10, 9, 1, 7, 10) beats sigma at 4
+VIOLATION O3b: random7:1: sigma' (2, 0, 8, 10, 9, 1, 10, 7) beats sigma at 5
+VIOLATION O3b: random7:1: sigma' (2, 0, 8, 10, 9, 1, 10, 9) beats sigma at 5
+VIOLATION O3b: random7:1: sigma' (2, 0, 8, 10, 9, 1, 10, 10) beats sigma at 5
+VIOLATION O3b: random7:1: sigma' (2, 0, 8, 10, 11, 1, 7, 7) beats sigma at 0
+RESULT FAIL violations=21783
