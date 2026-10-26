@@ -1,0 +1,31 @@
+MODE random 400 4 12 7 MUT fb
+O2_ok: 400
+O3_runs: 400
+O3_strats: 1006
+O3b_runs: 399
+O3b_skipped: 1
+O3b_strats: 40293
+O4_ok: 400
+O5_ok: 400
+REW0_stops: 57
+VIOLATIONS: 7
+V_FB: 7
+iterations: 466
+phases: 788
+phases_with_fb: 17
+runs: 400
+stops: 400
+f_over_R48: (1.0, 'random7:36')
+iter_over_bound: (7.543754676603891e-12, 'random7:122')
+max_f: (1, 'random7:12')
+max_phase_len: (2, 'random7:37')
+max_phases: (5, 'random7:233')
+phases_over_bound: (0.2, 'random7:29')
+VIOLATION FB: random7:36: f 1 > R48 bound 0 (|U| 1, o==c True)
+VIOLATION FB: random7:83: f 1 > R48 bound 0 (|U| 2, o==c True)
+VIOLATION FB: random7:199: f 1 > R48 bound 0 (|U| 1, o==c True)
+VIOLATION FB: random7:256: f 1 > R48 bound 0 (|U| 1, o==c True)
+VIOLATION FB: random7:341: f 1 > R48 bound 0 (|U| 1, o==c True)
+VIOLATION FB: random7:373: f 1 > R48 bound 0 (|U| 3, o==c False)
+VIOLATION FB: random7:381: f 1 > R48 bound 0 (|U| 1, o==c True)
+RESULT FAIL violations=7
