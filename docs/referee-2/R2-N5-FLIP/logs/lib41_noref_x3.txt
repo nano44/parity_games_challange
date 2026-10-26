@@ -1,0 +1,31 @@
+MODE files ../R2-N5-STAU/lib41_noref.lst 3 MUT - WALKMAX 16
+ENGXI_checks: 19456
+FL_N1: 716
+FL_N2: 49
+FL_N3: 167
+FL_b_checks: 167
+FL_c_checks: 167
+FL_flips: 883
+N3L_checks: 164
+N3L_equal: 75
+RC_LIT: 80
+RC_MIN_checks: 1211
+RC_POS: 60
+RC_static: 7000
+RC_walks: 10970
+RC_walks_via_cycle: 127
+ROOT_static: 6977
+RR_events: 9308
+RR_relay: 4935
+RR_route: 4373
+ST_intervals: 1725
+ST_states: 8807
+phases: 1167
+rho_events: 9330
+rho_transitions: 3999
+runs: 1230
+states: 19456
+transitions: 12263
+RC_LIT_example: (1, 'experiments/n5-exhaustive/instances/n4_thch_0.pg#0@0 class 1 q [0]')
+RC_POS_example: (1, 'experiments/red/kl/instances/klcount_n16.pg#0@2 class 10 q 0 walk [0, 4, 9, 11, 6, 14, 1, 3, 10] -> cycle node 14')
+RESULT OK violations=0
