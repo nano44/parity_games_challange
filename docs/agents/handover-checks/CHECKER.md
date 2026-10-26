@@ -137,3 +137,46 @@ Written 2026-10-25 22:54Z (date -u). CHECKER successor 8 (Opus 5.5, D15), this s
   d0900448, 3d6dcbc8, 2b540583). Check: every addendum is appended (`cat >>`), and before each push `git diff --stat` on docs/checker/ shows
   only insertions for an existing C-file (`git diff HEAD -- docs/checker/C5x.md | grep -c '^-[^-]'` = 0).
 - Also: stale clone with "up to date" (fetch + rev-parse check above); hand-typed stamps (every stamp from `date -u` in the writing command).
+
+## Handover check (successor 9)
+Written 2026-10-26 04:27Z (date -u). CHECKER successor 9 (Opus 5.5, D15), this session. Predecessor: successor 8, session_017WsSD8yWCujUTXzQv5cc2r,
+handover 55e3fb05 + 4dcdd7e9 (notes/CHECKER.md "## HANDOVER (successor 8 → successor 9)"). Every answer measured from the repository; commands named.
+
+### 1. Branch, head, ahead/behind trunk
+- Clone started stale again: local claude/checker = 52a1e489 with "up to date". `git fetch origin`; `git merge --ff-only origin/claude/checker`
+  → HEAD = origin/claude/checker = 4dcdd7e9 (`git rev-parse`); `git merge-base --is-ancestor 4dcdd7e9 HEAD`: yes.
+- Trunk = claude/vibrant-johnson-nxvvxo, head a81ece68 (Lead 04:20:46Z: REFEREE-2 14 GO; LANE-RESTART rows). Before merging:
+  `git rev-list --left-right --count 4dcdd7e9...trunk` = 2 ahead (55e3fb05, 4dcdd7e9), 284 behind; merge-base b911ecce (C65 report).
+  4dcdd7e9 is NOT on trunk (`merge-base --is-ancestor`: no).
+- `git merge --no-ff trunk` (no rebase) = d4429f13 → 3 ahead, 0 behind. This file's commit makes 4 ahead, 0 behind.
+
+### 2. Open work and the next step of each
+- C58-C64 CLOSED (R49-R55 landed; table in the handover). Counter: next check C66.
+- C65 = R56 (P-N5-FBRED): main report b911ecce PASS. R56 LANDED at trunk eb81356c (parent eef7346a; "Lead: land R56 (P-N5-FBRED,
+  CHECKER C65 b911ecce)"; `merge-base --is-ancestor eb81356c trunk`: yes). Next step (after "go"): C65 Addendum 1 = landed check:
+  RESULTS minus the R56 block = RESULTS@eef7346a; block = docs/agents/R56-draft.md lines 3-end with one fill "checker PENDING)" →
+  "checker b911ecce)"; GAPS: only G-N5-TIME changes (old row minus " |" a prefix of the new, status open); pins unchanged. The Lead says the
+  body changed since the passed draft 0089cc84 by optional notes N-1 (limit (ii), max f 37) and N-2 (EXIT-SWITCH_D in (e)) only: word-diff
+  the draft 0089cc84 → landed draft, and check nothing else moved. landed.py rewritten in the scratchpad from the handover listing.
+- R57 = P-N5-1E (L-SI, 𝒞^1E assembly): not started. NOW l.2: REFEREE-2 signed, REFEREE 12 on it. Next: wait for the Lead's draft sha1
+  (both reports and §Cs in), then the six-step method → docs/checker/C66.md.
+- Oink: built with scripts/setup_oink.sh in this container (tools/oink/build).
+
+### 3. docs/GAPS.md rows I own
+- `awk -F'|' '$4 ~ /CHECKER/' docs/GAPS.md`: none. Landing side: G-N5-TIME (major, L-NEW (L-LIT T22; referees later), open, l.11);
+  R56 appended to it at eb81356c; R57 will append again: old row minus " |" a prefix of the new one, status open.
+
+### 4. The three owner rulings that most constrain me, verbatim (docs/DECISIONS.md, `grep -n -F`), with index status
+- D1 (l.7; DECISIONS-INDEX l.5 "active"): "A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim,
+  including the fleet's own, as wrong until it passes the gauntlet below."
+- D15 (l.278; index l.26 "active", Lead reading L37 l.27 "active"): "q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it"
+- D18 (l.333; index l.32 "active", Lead reading L40 l.33 "active"): "Focus on N5 and work toward proving it. Explore novel approaches, especially by
+  connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where
+  needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems."
+- For the gate: nothing lands stronger than both signatures (D1); label "(Opus 5.5, D15)"; PROVED / CONJECTURE / OPEN / FALSE exact (L40).
+
+### 5. One trap, and the check that prevents it
+- Trap (successor 8, recorded in its resume point): first-line stamps of messages to the Lead typed by hand (the C65 message said "04:20Z";
+  it was sent about 04:12Z). Check: every stamp, in files and in messages, comes from `date -u` run in the same turn as the write/send.
+- Also carried: stale clone with "up to date" (fetch + rev-parse, caught again here); addenda appended only (`cat >>`, then
+  `git diff HEAD -- docs/checker/C65.md | grep -c '^-[^-]'` = 0); path-dependent seeds in REFEREE succ. 10 probes (run from the main clone).
