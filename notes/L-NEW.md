@@ -15,6 +15,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - (2) Lemma SAT-FB (PROVED, from SAT_C alone): saturated C-fallback ⇒ last state of P or C never recurs; ≤ 1 saturated fallback per C; Theorem FB-C′
   f ≤ n·|𝒞_f| (⇒ R60 (c)). Successor 26's "flat and ends the phase" DEAD (rho3_253_n32, random start; 12 non-flat in liball). §5 of N5-NCONF.
 - R⁰ shape (r0shape.py): 610 of 616 fallback-free returns change σ̄ at ONE vertex; 577 keep |D| ≤ 1 (already under R68 (h) REC-1 (c)).
+- Packet P-N5-EPC-box48 FROZEN (81ab0b72, sha1 9f48ded7…; pin trunk f4562054): FB-RISE_C + SAT_C restated, RET-FB, VIS, EP-C, SAT-FB(1), FB-C′,
+  EP-ASM; FBC-N3 (REFEREE 15, 0addfc5f) cited as a referee note with the two routes compared; 24 quotes (quotecheck_epc.txt). Lead queue: FBC, CHOSEN,
+  then EPC. FBC fixes file later: FBC-N1 (D_k / EPOCH / N_ep defs), FBC-N2 (cite R57 (a)), FBC-N4 (R56 incomparability one-way), FBC-N3 → EPC §3.
 
 ## Box 47 log (successor 26, session_01NkLhWhNtcThjnCotjLUvvF; handover check 8a018742 (5/5, Lead 10:57Z); GO 10:57Z, Lead's stamp)
 - Container stale at 5961101a again; ff to e2a529fa; trunk f1d2cf09 merged (34a4d336), later trunk merged again. Oink built (rc 0, 8fbf0a7).

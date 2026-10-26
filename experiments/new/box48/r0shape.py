@@ -28,6 +28,8 @@ def run(g, start, nm, cap=5000):
             for a, b in zip(ss, ss[1:]):
                 if any(rows[k][3] for k in range(a, b)): continue
                 U = {qi for k in range(a, b) for qi in range(len(Q)) if rows[k][2][qi] != rows[k + 1][2][qi]}
+                if rows[a][4] >= 2 and os.environ.get("R0V") == "1":
+                    print("R0_2", nm, "n", g.n, "start" if start else "S3", "phase", (i, j), "return", (a, b), "|D_C|", rows[a][4], "U", sorted(U), "Dseq", [rows[k][4] for k in range(a, b + 1)], flush=True)
                 inc(("U", len(U))); inc(("Q", len(Q))); inc(("DC", rows[a][4])); inc(("Dmax", max(rows[k][4] for k in range(a, b + 1))))
         i = j + 1
 a = sys.argv[1:]; nmax = 34

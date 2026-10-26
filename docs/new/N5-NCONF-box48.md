@@ -186,3 +186,11 @@ an implication from (Στ)). □
 - DATA, long121_n40 (L-RED 21, from its start; out/nconf_long121.txt, out/retfb_long121.txt): one phase, L 121, N_ep 37, NCONF 14, VIS 7, f 8,
   |𝒞_f| 5; two laps again (block 2 3 5 6 7 8 6 8 9 3 5 6 11 twice); RET-FB 36 checks, 0 violations; R⁰ = 3 of REV 23.
 
+## 7. After the freeze of P-N5-EPC (14:42Z): the 33 multi-gate fallback-free returns (DATA, READING; written 14:5xZ by date -u)
+- r0shape.py with R0V=1 (out/r0shape_r02_list.txt): of the 33 fallback-free returns to configurations with |D_C| ≥ 2 in liball n ≤ 40, 29 change
+  σ̄ at ONE vertex on the whole stretch (18 of them in pft34_h3u_P32: D = {0, 32} constant, σ̄(32) constant, σ̄(0) moving among 0's 19 successors);
+  4 change it at 2-3 vertices (lev74_n40, nep80_n40 ×2, nep87_n40; all L-RED instances from random starts).
+- READING. A single-vertex stretch is not covered by R68's u-runs (D ⊄ {u}). Cutting every Odd v ≠ u to σ̄(v) keeps Ξ (σ̄ stays a best reply in the
+  cut game) but not S4a's arena, which uses τ(v) at Odd v; R64's cut ({τ(v), σ̄(v)} at v ∈ D) keeps N5^τ but leaves |D| Odd choice vertices. So a
+  "frozen-side u-run" lemma would need a new restriction. OPEN.
+
