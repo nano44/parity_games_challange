@@ -1,0 +1,9 @@
+  ../red/rec0/instances/nep90_n40.pg phase@4 run[0,14] c=11 |U|=40 |Qc|=5 G=4 gcv=4 Xmax=2 Xsum=2 X={0: 2} rho_root=12
+  ../red/rec0/instances/nep90_n40.pg phase@4 run[15,25] c=11 |U|=40 |Qc|=5 G=1 gcv=1 Xmax=0 Xsum=0 X={} rho_root=10
+  ../red/rec0/instances/nep90_n40.pg phase@4 run[26,39] c=11 |U|=40 |Qc|=5 G=3 gcv=4 Xmax=1 Xsum=1 X={0: 1} rho_root=10
+  ../red/rec0/instances/nep90_n40.pg phase@4 run[40,46] c=11 |U|=40 |Qc|=5 G=0 gcv=0 Xmax=0 Xsum=0 X={} rho_root=6
+  ../red/rec0/instances/nep90_n40.pg phase@4 run[47,59] c=11 |U|=40 |Qc|=5 G=2 gcv=2 Xmax=1 Xsum=1 X={0: 1} rho_root=9
+  ../red/rec0/instances/nep90_n40.pg phase@4 run[60,70] c=11 |U|=40 |Qc|=5 G=1 gcv=1 Xmax=0 Xsum=0 X={} rho_root=10
+  ../red/rec0/instances/nep90_n40.pg phase@4 run[71,84] c=11 |U|=40 |Qc|=5 G=3 gcv=4 Xmax=1 Xsum=1 X={0: 1} rho_root=10
+  ../red/rec0/instances/nep90_n40.pg phase@4 run[85,91] c=11 |U|=40 |Qc|=5 G=1 gcv=37 Xmax=0 Xsum=0 X={} rho_root=5
+G_max=4 G_sum=15 X_max=2 X_sum=5 cint=82 cint_len_max=1 cint_pure=20 gcv=53 gcv_DLEAVE=53 rho_max=12 runs=8 xt_LEFT=5 xv=14 xv_SRC_LEFT=14 xv_SRC_ND=14

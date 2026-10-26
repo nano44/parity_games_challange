@@ -179,3 +179,13 @@ if git cat-file -e b3473114 && git cat-file -e d08011be && git cat-file -e aab45
 else
   echo "rund (P-N5-CHOSEN fixes file quotes): NOT RUN (referee commits not in this clone)"
 fi
+# box 21 (docs/si/N5-GCX-box21.md): G_c and X_u per fallback-free run on nep90 and mkpp K12; C-ONCE (no vertex migrates twice inside a
+# C-interval, none late); control MUT=1 (whole run as one interval) must find a double migration on nep90.
+o=$(python3 -I root/gcx.py --one $N90)
+for k in "G_sum=15 " "X_sum=5 " "xv=14 " "runs=8 " "cint=82 "; do grep -q "$k" <<<"$o"; done
+if grep -q "MIG2_cint\|MIG_LATE" <<<"$o"; then exit 1; fi
+MUT=1 python3 -I root/gcx.py --one $N90 | grep -q "MIG2_cint=4 "
+o=$(python3 -I root/gcx.py --one ../red/usplit/instances/pp_K12_n161.pg ../red/usplit/instances/pp_K12_n161.start)
+for k in "G_max=2 " "X_max=13 " "cint_migt=13 " "mig_per_vertex_max=1 "; do grep -q "$k" <<<"$o"; done
+if grep -q "MIG2_cint\|MIG_LATE" <<<"$o"; then exit 1; fi
+echo "root (gcx: G_c, X_u on nep90 and pp_K12; C-ONCE holds, whole-run control bites): PASS"
