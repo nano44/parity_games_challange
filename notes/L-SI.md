@@ -20,6 +20,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   (G4) W-ties. staticdepth.py (GCI=1 mode = global C-intervals). reader_L files: scratch copies from l-red 1e851da4 (sha1 match R91).
 - (L1)/(L2) (Lead 17:59Z/18:08Z, messages read late at 18:23Z): N5-GCILEN §6 GATE-PUSH + PURE-LEN (polynomial, not < 2n: lengths move
   after FREEZE-A); (L2) OPEN (SPEC's tie rule is the S1 procedure on the arena; GEN_W not implied). ALTERNATION stated in N5-EXIT §9.
+- PACKET P-N5-DEPTH-box22 (Lead 18:25Z): ABS-DEPTH + N-MONO, STATIC-DEPTH, PURE-END, GCI-LEN-ρF; 12 quotes pinned; no OFFMONO dependence.
+  FROZEN at its push (sha1 in the commit message / to the Lead). Repairs: NEW file docs/si/P-N5-DEPTH-fixes-box22.md. Queue: after GCX, before RESTRICT.
+- To record with the GCX repairs (Lead 18:25Z): L-RED 22 R93 (l-red 18624c0b, docs/red/R93-conce-x-ladder.md) kills C-ONCE_X by construction:
+  cxmig_k4_n54 (a3893ea4), k8_n82 (4fa6ee8f), k16_n138 (9f29476d): k X-migrations per vertex in ONE PURE C-interval, X_u per gate 1, no U events.
+  Also UL_C DEAD by R91 reader_L (impure). L-RED now attacks (G4), (G1), (G3).
 - Things only I know: exitx.py's UP/DOWN/DISJ: UP tested first (p1 on p2's (t+1)-play), DOWN = p2 on p1's t-play. RR_c is ~ phase length
   (EXIT-RED vacuous). NO-UP's hypothesis never occurs in data (vacuous check); EXIT-RHO's tie case occurs (rho_tie 2-3). climbexit.py from random
   C^kO seeds at n 12 is useless (phases ≤ 3); seed it with long instances instead.
