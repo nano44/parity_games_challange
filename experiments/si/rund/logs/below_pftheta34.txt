@@ -1,0 +1,37 @@
+RUN states 5..39 (35 states, n = 32)
+ k= 0 D=[0] u=0 c=1(r23) top r31 in Xi | switched [2, 3, 4, 20, 28] | Xi-chg levels {-1: 1, 28: 1, 25: 2, 26: 1, 31: 1} | W-chg levels {28: 1, 25: 2, 26: 1, 31: 1} | gate value change True
+ k= 1 D=[0] u=0 c=1(r23) top r31 in Xi | switched [7, 15, 18, 23] | Xi-chg levels {28: 2, 25: 1, 26: 1, 31: 1} | W-chg levels {25: 1, 26: 1, 28: 1, 31: 1} | gate value change True
+ k= 2 D=[0] u=0 c=1(r23) top r31 in Xi | switched [11, 21, 27] | Xi-chg levels {-1: 1, 31: 2, 25: 1, 26: 1} | W-chg levels {31: 2, 25: 1, 26: 1} | gate value change True
+ k= 3 D=[0] u=0 c=1(r23) top r31 in Xi | switched [14, 26] | Xi-chg levels {25: 1, 31: 1, 26: 1} | W-chg levels {31: 1, 26: 1} | gate value change True
+ k= 4 D=[0] u=0 c=1(r23) top r31 in Xi | switched [18, 21] | Xi-chg levels {-1: 1, 31: 1, 26: 1} | W-chg levels {31: 1, 26: 1} | gate value change True
+ k= 5 D=[0] u=0 c=1(r23) top r31 in Xi | switched [2, 7] | Xi-chg levels {-1: 1, 31: 1, 26: 1} | W-chg levels {31: 1, 26: 1} | gate value change True
+ k= 6 D=[0] u=0 c=1(r23) top r31 in Xi | switched [3, 20, 30] | Xi-chg levels {-1: 1, 26: 2, 31: 1} | W-chg levels {26: 2, 31: 1} | gate value change True
+ k= 7 D=[0] u=0 c=1(r23) top r31 in Xi | switched [13, 19] | Xi-chg levels {-1: 1, 31: 1, 26: 1} | W-chg levels {31: 1, 26: 1} | gate value change True
+ k= 8 D=[0] u=0 c=1(r23) top r31 in Xi | switched [3, 25, 29] | Xi-chg levels {24: 1, 31: 2, 26: 1} | W-chg levels {31: 2, 26: 1} | gate value change True
+ k= 9 D=[0] u=0 c=1(r23) top r31 in Xi | switched [6, 9, 20, 31] | Xi-chg levels {-1: 1, 31: 6} | W-chg levels {31: 6} | gate value change True
+ k=10 D=[0] u=0 c=1(r23) top r31 in Xi | switched [4, 5, 7, 10, 15] | Xi-chg levels {31: 10} | W-chg levels {31: 9} | gate value change True
+ k=11 D=[0] u=0 c=1(r23) top r29 in Xi | switched [6, 8, 21] | Xi-chg levels {-1: 1, 27: 2, 31: 1, 25: 1} | W-chg levels {27: 2, 31: 1, 25: 1} | gate value change True
+ k=12 D=[0] u=0 c=1(r23) top r29 in Xi | switched [4, 15, 26, 27, 31] | Xi-chg levels {25: 2, 26: 1, 27: 4} | W-chg levels {29: 1, 27: 4} | gate value change True
+ k=13 D=[0] u=0 c=1(r23) top r29 in Xi | switched [21, 29] | Xi-chg levels {-1: 3, 27: 2} | W-chg levels {27: 2} | gate value change True
+ k=14 D=[0] u=0 c=1(r23) top r29 in Xi | switched [7, 19] | Xi-chg levels {-1: 3, 27: 2} | W-chg levels {27: 2} | gate value change True
+ k=15 D=[0] u=0 c=1(r23) top r29 in Xi | switched [20] | Xi-chg levels {27: 4} | W-chg levels {27: 1} | gate value change True
+ k=16 D=[0] u=0 c=1(r23) top r29 in Xi | switched [7, 15] | Xi-chg levels {-1: 3, 25: 1, 26: 1} | W-chg levels {25: 1, 29: 1} | gate value change True
+ k=17 D=[0] u=0 c=1(r23) top r29 in Xi | switched [21, 27] | Xi-chg levels {-1: 4, 25: 1, 26: 1} | W-chg levels {25: 1, 29: 1} | gate value change True
+ k=18 D=[0] u=0 c=1(r23) top r29 in Xi | switched [26] | Xi-chg levels {25: 5, 26: 1} | W-chg levels {29: 1} | gate value change True
+ k=19 D=[0] u=0 c=1(r23) top r29 in Xi | switched [21] | Xi-chg levels {-1: 6, 26: 1} | W-chg levels {29: 1} | gate value change True
+ k=20 D=[0] u=0 c=1(r23) top r29 in Xi | switched [7] | Xi-chg levels {-1: 7, 26: 1} | W-chg levels {29: 1} | gate value change True
+ k=21 D=[0] u=0 c=1(r23) top r29 in Xi | switched [3, 20] | Xi-chg levels {-1: 8, 26: 2} | W-chg levels {29: 2} | gate value change True
+ k=22 D=[0] u=0 c=1(r23) top r29 in Xi | switched [19] | Xi-chg levels {-1: 10, 26: 1} | W-chg levels {29: 1} | gate value change True
+ k=23 D=[0] u=0 c=1(r23) top r29 in Xi | switched [29] | Xi-chg levels {24: 11, 26: 1} | W-chg levels {29: 1} | gate value change True
+ k=24 D=[0] u=0 c=1(r23) top r29 in Xi | switched [6, 31] | Xi-chg levels {-1: 12, 26: 3} | W-chg levels {29: 3} | gate value change True
+ k=25 D=[0] u=0 c=1(r23) top r29 in Xi | switched [5] | Xi-chg levels {-1: 15, 26: 2} | W-chg levels {29: 2} | gate value change True
+ k=26 D=[0] u=0 c=1(r23) top r29 in Xi | switched [9] | Xi-chg levels {-1: 17, 26: 1} | W-chg levels {29: 1} | gate value change True
+ k=27 D=[0] u=0 c=1(r23) top r29 in Xi | switched [25] | Xi-chg levels {-1: 18, 26: 1} | W-chg levels {29: 1} | gate value change True
+ k=28 D=[0] u=0 c=1(r23) top r29 in Xi | switched [13, 30] | Xi-chg levels {-1: 19, 26: 2} | W-chg levels {29: 2} | gate value change True
+ k=29 D=[0] u=0 c=1(r23) top r29 in Xi | switched [2] | Xi-chg levels {-1: 21, 26: 1} | W-chg levels {29: 1} | gate value change True
+ k=30 D=[0] u=0 c=1(r23) top r29 in Xi | switched [18] | Xi-chg levels {28: 23} | W-chg levels {29: 1} | gate value change True
+ k=31 D=[0] u=0 c=1(r23) top r29 in Xi | switched [11, 12, 14] | Xi-chg levels {-1: 23, 26: 3} | W-chg levels {29: 3} | gate value change True
+ k=32 D=[0] u=0 c=1(r23) top r29 in Xi | switched [23] | Xi-chg levels {29: 27} | W-chg levels {29: 1} | gate value change True
+ k=33 D=[0] u=0 c=1(r23) top r-1 in neither (equal path sets) | switched [16, 28] | Xi-chg levels {-1: 27, 26: 2} | W-chg levels {26: 2} | gate value change True
+ Xi change levels over the run: [(-1, 204), (24, 12), (25, 15), (26, 35), (27, 14), (28, 26), (29, 27), (31, 28)]
+ W change levels over the run: [(25, 7), (26, 12), (27, 11), (28, 2), (29, 25), (31, 27)]

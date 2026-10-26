@@ -167,3 +167,34 @@ Under (h3_D) on a run S (every terminal change is a twin change, §1):
 - CONJECTURE: OFFSET-ONCE.
 - OPEN: (R1) the per-offset-class RUN; (R2) a polynomial bound on offset changes; (R3); (R4).
 - READING: RUN_D sits inside EPR epochs. Under (h3_D) every terminal change is a twin change. TWIN-GAP's exponent is the band width B.
+
+## 9. What moves below the top-rank disagreement on the long runs (Lead's item (b), 06:48Z; DATA and READING)
+Tools: experiments/si/rund/below.py (per-transition trace of a long run), pv.py (per-vertex changes per run).
+- frz1_n24 (its .start; 24 transitions):
+  - States 0-15 are one EPR epoch with D = {12}. Gate 12 has cycle node 19 (rank 4); its Ξ/W disagreement has its top at rank 23, held
+    by Ξ. States 16-23 have D = ∅ (a one-player stretch, EP-0 / R17 territory).
+  - Almost every change is at ranks 21-23: the top vertex enters, or a high vertex leaves, the path sets of 1-2 vertices per transition.
+    Ξ and W change at the SAME vertices and levels at every transition except the two at which the gate's own value changes (k = 6, 15).
+  - So the run is long because the propagation is sequential (one switch per transition along a chain), not because values move often.
+- frz3_n24 and pftheta34_n32: the same pattern. frz3 has two twin gates (12, 23; cycle node 19; tops r23 in Ξ(12), r22 in W(23)).
+- Per-vertex changes per run (pv.py):
+
+  | set | runs | max transitions in a run | max Ξ-changes of one vertex in a run | max W-changes |
+  | --- | --- | --- | --- | --- |
+  | random 𝒞^2O, 6,000, n 5-14, seed 62 | 948 | 3 | 2 | 2 |
+  | lib41, all k, n ≤ 64, S3 + 2 random starts | 1,512 | 55 (n 64, x32_rand64) | 35 (n 48, pft35_n48) | 20 |
+
+  - The runs with one vertex changing at (almost) every transition (sc24: 20 of 20; pf_best_3621: 31 of 31; pft35_n48: 35 of 35) are all
+    𝒞^1O games (polynomial by R51), and sc24's run has D = ∅ throughout (one-player; R17 bounds it).
+- READING (the mechanism, and the next lemma to try): inside a stretch_D, each vertex keeps its offset, so s^Ξ and s^W rise by the same
+  amount at every transition (OFFSET (b)). That is why the frames move together.
+  - If, in addition, every Even edge compares the same way in both frames (Ξ(z) ▷ Ξ(a) ⟺ W(z) ▷ W(a) for z ∈ succ(x), a = σ(x)), then
+    Iσ is G_τ's improving set and the S4a step is switch-best on the one-player game G_τ. R17 (c) then bounds such a sub-run (λ_W constant
+    under (h3_D)) by n + m transitions. This is a two-gate form of R19 (f) PIECE (call it PIECE_D; NOT proved here, a sketch).
+  - What it leaves: the transitions at states with a SPLIT EDGE, an Even edge whose two frames disagree. By MERGE-B, a split edge joins
+    two vertices of different offsets, so its count is again an offset question. In frz1_n24, L_rel = 23 says split edges exist at every
+    level below 23. They join offset 0 (F_D) and offset δ(12) (R_D).
+- On the Lead's ¬(NC) pointer (L-COMP l-comp 589dc66c: τ changes at the next transition after 80 % of (h3_D) ∧ ¬(NC) states): I see no
+  forced-switch lemma yet. σ̄(u) ≠ τ(u) says σ̄(u) is Odd's better reply against σ (Ξ frame), while S4b switches τ(u) by Odd's DUAL
+  valuation (Even's best reply to τ). For u on its own W-cycle with (h3_D), both of u's successors lead to the same cycle node, so the dual
+  comparison is decided by path sets, which the hypothesis does not fix. Not attempted further; a separate item if wanted.
