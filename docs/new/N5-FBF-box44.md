@@ -454,6 +454,60 @@ phase (R30 (c) / R34 (f) on 𝒞^1O; needs R-STICK in set form, L-SI §5); (ii) 
 frontier at LEN / Δ-RT, N5-DELTA-box44 §8, L-SI N5-FRONTIER-box15 §3); (iii) BIT and OUT beyond 𝒞^1O (R51's Lemmas BIT, OUT; OUT's proof
 is game-general per REFEREE §C on DUAL, BIT is game-free) — READING.
 
+## 12. Crossings per phase in set form: R-STICK_D (Lead 04:19Z; written 04:30Z by date -u)
+Setting: R55 (P-N5-GD, landed): D_k, R_D(k) (vertices whose (σ_k, τ_k)-play meets D_k), F_D := V ∖ R_D, W_k (σ_k's valuation in G_τ),
+G_D (a) (Ξ = W on F_D, no hypothesis). λ := the honest cycle-node map (constant on a phase), λ_W := W's. A vertex v is SPLIT at k if
+λ_W(v) ≠ λ(v), UNSPLIT otherwise. A CROSSING is an in-phase transition with R_D(s) ≠ R_D(s+1) (D may change too). Landed premises: R21 (a)
+XW (Ξ_k ⊴ W_k; game-general per the referees' premise-class confirmation on R55/R56); R23 (g) WM (W_{k+1} ⊵ W_k at an in-phase non-fallback
+transition; its proof is σ_k ∈ its own S4a arena + R17 (F1) on G_τ, game-general); injective rewards (S1).
+### 12.1 Lemma R-STICK_D (PROVED, every game)
+At an in-phase S4a transition s → s+1, every split v ∈ R_D(s) lies in R_D(s+1) (whatever D_{s+1} is).
+Proof (R30 (c)'s, verbatim in set form). Suppose v ∈ R_D(s) ∩ F_D(s+1); c := λ(v), c′ := λ_{W,s}(v) ≠ c. G_D (a) at s+1: W_{s+1}(v) =
+Ξ_{s+1}(v), cycle node c (phase). WM: W_{s+1}(v) ⊵ W_s(v); the cycle nodes differ, so rew(c) > rew(c′). XW at s: Ξ_s(v) ⊴ W_s(v), cycle
+nodes c and c′, so rew(c) < rew(c′). Contradiction. □
+One-Odd uses in R30 (c) and replacements: R19 (a) "off R, Ξ = W" → G_D (a) (R55); "v ∈ R_s has W-cycle node c_w(s) and λ(v) = c_θ" (HP: all
+of R routes through o) → dropped: the statement is per vertex. Nothing else.
+### 12.2 Corollary SN-PREFIX_D (PROVED, every game)
+- (a) Along a run of consecutive in-phase S4a transitions, for each vertex v the states at which v is unsplit form a prefix of the run.
+  Proof: WM makes W(v) non-decreasing, so rew(λ_W(v)) is non-decreasing (cycle nodes compare by reward first); XW gives rew(λ_W(v)) ≥
+  rew(λ(v)) with equality iff λ_W(v) = λ(v); λ(v) is constant. So once split, v stays split for the rest of the run. □
+- (b) In such a run, after its unsplit prefix a vertex v changes its R_D-membership at most once (it may enter, it cannot leave: R-STICK_D).
+- (c) Per phase: X_D ≤ (f + 1)·n + f + X_SN^D, where X_D := crossings, f := in-phase fallbacks, and X_SN^D := crossings at which some
+  vertex that is UNSPLIT at the source state changes membership. Proof: split the phase at its fallbacks into ≤ f + 1 S4a runs; a
+  crossing inside a run at which every membership-changing vertex is split moves only split vertices, each of which (by (a), (b)) does so
+  at most once per run, so ≤ n such crossings per run; the f fallback transitions are counted separately. □
+- On 𝒞^1O this is R30 (c) with "c_w = c_θ" (a property of o, shared by all of R) replaced by "v unsplit" (per vertex), and (n − 1) by n
+  (o ∈ R always on 𝒞^1O).
+### 12.3 X_SN^D: what the 𝒞^1O chain used and what replaces it
+On 𝒞^1O, X_SN is bounded by R34 (f) X-SN-PHASE, via R33 (g) X-RUN′ ⇐ R32 (e) X-RUN ⇐ R32 (c)-(d) (P^c_ℓ, FREEZE: COARSE_{ℓ−1}(θ) takes
+≤ 2d_o values) and R34 (d)-(e) TOGGLE / TOGGLE-COUNT. Step by step (ledger docs/new/N5-MULTI-ledger-box43.md rows R32-R34, re-read):
+| 𝒞^1O step | one-Odd use | set-form status |
+| --- | --- | --- |
+| R32 (c) P^c_ℓ (coarse R17 with COARSE_ℓ) | R20 Lemma C (RT: one route terminal) | REPLACED by CR_D (docs/new/N5-DELTA-box44.md §3: coarse freeze on any L-run under (h_D) ∧ (h3_D); = L-SI's CR-D′); PROVED, unrefereed |
+| R32 (d) FREEZE / RATCHET / BLOCK | "COARSE_{ℓ−1}(θ) takes ≤ 2d_o values" at the single o | per terminal: ≤ 2d_u values of COARSE(Ξ(u)) per u ∈ D, if the per-o argument ports (it uses θ = Ξ(o) only); NOT CHECKED; and |D_k| moves inside a phase (Δ1, OPEN) |
+| R32 (e) X-RUN | via FREEZE + ABS-COUNT′ (absorptions at o, R30 (f)) | absorptions at each u ∈ D: per-terminal index (I); not written |
+| R33 (b) H2-STICK, (e) R-CONST | HP ("honest play agrees with the (σ, τ)-play up to o") | (HP_D) holds by definition off D_k; but R-CONST ("at every ¬H1 state R̄ = U") is a one-terminal identity: FAILS in set form (several terminals, regions of different terminals) |
+| R33 (c) Lemma G′ | FO ("Odd vertices other than o are forced") | FAILS (ledger F) |
+| R34 (b) L-MONO | case split assumes the cycle node c is Even or forced | FAILS for an Odd-choice cycle node (ledger U) |
+| R34 (d) TOGGLE | FO: "Odd vertices other than o have one successor and c ≠ o, so c ∈ V_E" | FAILS: see the instance below |
+| R34 (f) X-SN-PHASE | via X-RUN′ and TOGGLE-COUNT | FI |
+- Obstruction, instance-style (DATA): experiments/new/box44/instances/qc_toggle.pg (n 5, Q = {0, 2, 3, 4}, sha1 27850ecc3d9e660aefa6a3401d6af0cfc2b3317c;
+  N5 output verified by Oink verify). N5 from S3: one S4a transition, one phase; every vertex has honest cycle node 4, and 4 is an ODD
+  CHOICE vertex (4 → 0, 3); D = {0}; vertex 1 is unsplit (λ_W = λ = 4) and ENTERS R_D at the transition (σ(1): 2 → 0). So an X_SN^D
+  crossing occurs in a class whose cycle node is an Odd choice vertex: exactly the configuration that TOGGLE's "c ∈ V_E" and L-MONO's
+  case split exclude on 𝒞^1O. (This is a configuration instance, not a counterexample to any bound: the phase has one crossing.)
+- Verdict (READING): crossings per phase in set form reduce, PROVED, to X_SN^D (crossings involving an unsplit vertex). X_SN^D is OPEN: the
+  𝒞^1O bound's chain fails at G′, R-CONST, L-MONO and TOGGLE (one-Odd steps), and at Δ1 (D moves inside a phase). Ports that look
+  available: P^c_ℓ → CR_D; FREEZE per terminal (unchecked).
+### 12.4 DATA (experiments/new/box44/rstick.py; canonical S3 start)
+| sample | phases | R-STICK_D checks / viol. | SN-PREFIX_D viol. | crossings X_D (max per phase) | X_SN^D share | Odd-choice cycle node at an X_SN^D crossing | X_D bound viol. |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| lib41 (412 runs) | 2,335 | 14,253 / 0 | 0 | 3,222 (99) | 3,102 | 6 | 0 |
+| box43 + box44 instances (10) | 59 | 0 / 0 | 0 | 54 (27) | 54 | 0 | 0 |
+| `--rand 2000 5 20 101` | 4,601 | 23 / 0 | 0 | 50 (2) | 50 | 9 | 0 |
+Reading (DATA): nearly all crossings are X_SN^D (unsplit vertices), as on 𝒞^1O; post-prefix crossings are rare. The bound of 12.2 (c)
+therefore moves almost nothing into proved territory in practice; the work is in X_SN^D.
+
 ## 5. How a fallbacks-per-phase bound combines with the phase count (READING)
 - Phases. Lemma Φ (R47 (a), every game): λ changes ≤ n(n − 1); Corollary Φ-kO (P-N5-DUAL, N5-MULTI §1.4): distinct τ's ≤ ∏_{q∈Q}
   deg(q), so phases ≤ n(n − 1) + ∏_q deg(q). On 𝒞^kO with k fixed that is ≤ n(n − 1) + n^k, polynomial; for k growing with n it is

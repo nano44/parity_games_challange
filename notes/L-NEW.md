@@ -54,7 +54,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - N5-FBF §11: ROUTE-k (routing acyclic, depth ≤ m − 1), SAT-k (exact via the actual parent), Theorem FB-kT: N_late ≤ 1 + Σ_q (V_q − 1),
   V_q ≤ Σ_h D((m−1)D)^h: polynomial for bounded terminals per class; 𝒞^kO fixed k: f = O(n^{k+1}). Outer sum is a sum; per-terminal
   count is nested. Model obstruction: the lemmas used admit D^{depth} values (in-block shift rises), so a pure sum needs a new ingredient.
-- NEXT: report; then as directed.
+- ce224cbd (§11 FB-kT) reported 04:12Z. Lead 04:19Z: R56 landed (trunk eb81356c); write P-N5-FBK (freeze after P-N5-2T sha1); then
+  R-STICK_D. 93c5b276: P-N5-FBK DRAFT (P2T_SHA1 placeholder; merged trunk eb81356c).
+- N5-FBF §12: R-STICK_D (PROVED, verbatim port), SN-PREFIX_D per vertex, X_D ≤ (f + 1)n + f + X_SN^D (PROVED). X_SN^D OPEN: chain R32-R34
+  fails at G′ (FO), R-CONST (one terminal), L-MONO / TOGGLE (Odd-choice cycle node; instance qc_toggle.pg n 5), Δ1. rstick.py.
+- NEXT: freeze P-N5-FBK when the Lead sends P-N5-2T's sha1; then as directed.
 
 ## Box 43 log (successor 22; handover check 5/5 (b4f064b4); GO 21:55Z, Lead's stamp)
 - Merged trunk c4d18621. Oink built (8fbf0a7). Notebook duplicate block (from 6a1b0e95) removed in b4f064b4.
