@@ -1,0 +1,1 @@
+NORISE1 133, NORISE_UAV1 133, UNK0 1, UNK1 36, fbgaps0 2, fbgaps1 223, ffgaps0 31, ffgaps1 453, gaps0 33, gaps1 676, maxlev0 31, maxlev1 31, phases 3804, runs 816

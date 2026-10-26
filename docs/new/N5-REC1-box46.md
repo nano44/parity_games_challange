@@ -178,6 +178,15 @@ Proof.
   the Even fallback fires in-phase. hon.py: 56 such fallbacks on lib41, 546 on the random sample (FBH_V). So honest states do not exclude
   fallbacks. What replaces the claim: Lemma HON-FB (§1a), such a fallback is flat, saturating and the last transition of its phase.
 
+(iii) CONJECTURE IMM, "the Ξ-level rises AT ONCE after a non-fallback in-phase step from a W-honest state: LEV(h + 1) ≥ min(LEV(h) + 1, n − 1)"
+  (09:3xZ; it would have given HON-FF directly, since Ξ is monotone). DATA first: 0 failures on lib41 n ≤ 20 (481 steps, 27 of them split).
+  FALSE: immclimb.py (seed 61, 𝒞^2O, n ≤ 14) found experiments/new/box46/instances/immfail_n14.pg (sha1 db3fc2ca2ef48523166d93ce0eff072e1eb8d33e),
+  S3 start: h = 0 honest, LEV 3; state 1 has D = {0} and LEV 3 (W-level 6; W's cycle node moves to 10 at nine vertices, Ξ's stays 2: a split);
+  again h = 2 → 3, LEV 3 → 3 with no split. Obstruction: S4a takes the W-best target into the region where Odd now deviates at q = 0 (σ̄(0) = 2 ≠
+  τ(0) = 4), so Ξ_{h+1} lags W_{h+1}. In both failures h + 1 is the LAST state of its phase (W drops into the next state without a fallback, so
+  the next transition leaves the phase), and HON-FF holds on the game (hon2.py: 2 gaps, both rise). Refined CONJECTURE IMM′ (would imply
+  HON-FF): IMM holds whenever h + 1 is not the last state of its phase; climbs below.
+
 ## 5. DATA (not proof; experiments/new/box46/, run from that directory; outputs in out/)
 - hon.py (Lemma HON): HON_V = |H| > f + 4n² − 3n; WMC_V = the WM chain W_{h′} ⊵ W_{h+1} fails on a fallback-free gap between consecutive W-honest
   states; D0NOTHON_V = a D = ∅ state that is not W-honest; FBH_V (§4 (ii)).
