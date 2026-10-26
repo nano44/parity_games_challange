@@ -40,3 +40,5 @@ transitions, |Q| 3; out/nconf_long121.txt, out/retfb_long121.txt.
   out/swaps_long4.txt.
 - offmono2.py STARTS SEED (--list FILE | files) [--start F]: Lemma OFFSET-MONO (packet P-N5-OFFMONO-box49) with p := par_{t+1}(q): V_Kc, V_M must be
   0; V_Kx (opposite length sign) and MUT=1 (p off q's play) are controls. out/offmono2_lib41_n34_k2.txt, _MUT.txt, out/offmono2_long7.txt.
+- cyc.py STARTS SEED (--list FILE | files) [--start F]: CYC_c per phase, c's cycle changes ZCH split STRICT / TIE / c-only (N5-KPOLY §8);
+  ZCH_OTHER_V must be 0. out/cyc_lib41_n34_k2.txt, out/cyc_long7.txt, out/cyc_long2.txt.
