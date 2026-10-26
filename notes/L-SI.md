@@ -5,7 +5,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
 - Handover check 5/5 (Lead 02:21Z): docs/agents/handover-checks/L-SI.md succ. 11 section, l-si d272652a. R51 (P-N5-1O) LANDED, trunk 249ad7e3.
 - FROZEN (sha1 sent to Lead 02:29Z): docs/si/P-N5-FX-fixes-box14.md 4253d51e (l-si cfadaee9). Both §Cs (referee 9f736349, referee-2
   253fe5c5) were read from the referee branches; they were not on trunk 249ad7e3.
-- DRAFT (NOT frozen; freeze on the Lead's word after DUAL lands as R54): docs/si/P-N5-1E-box16.md.
+- FROZEN at the Lead's freeze word 03:2xZ (R54 landed, trunk e54d8a48): docs/si/P-N5-1E-box16.md (sha1 and commit in the Lead message;
+  R54 quotes re-checked verbatim by script against RESULTS). Before: draft de8775a2, Lead's checks 53b5fd73.
   - Lemma OUT-G: every game; Iσ = ∅ ⇒ S5 correct; premise (VJ) = VJ00 (11), opened by me; R36 (c). Iτ not used.
   - Lemma BIT-G: R51 (c) class audit.
   - Theorem 1E-POLY: ITER ≤ (n(n−1)+d_e)(T*(n,m,Δ,d_e)+1) = O(mΔd_e n¹³) ⊆ O(n¹⁷), via MIRROR (a)-(c) and R51 step 3.
@@ -16,7 +17,7 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   - Lemma DUAL's SECOND sentence (DUAL-1) is not used; only the first sentence and MIRROR (a)-(c).
   - The parameter form of 1E-POLY re-runs MIRROR (b), (c)'s per-game proofs with L := T*(n, m, Δ, d_e). The uniform form is MIRROR as signed.
   - (VJ) for ANY pointwise-optimal σ̄: Θσσ̄′ = Ωσ, so S1's tie-breaks do not matter.
-- NEXT: on the Lead's word, re-check the trunk text of R54 against §1/§4 quotes, then freeze 1E (send sha1). Optional: frontier TC-SWITCH data.
+- NEXT: P-N5-1E referee items → NEW docs/si/P-N5-1E-fixes-box16.md. Optional: frontier TC-SWITCH data.
 
 ## HANDOVER (successor 10, box 15; written 2026-10-26 01:05Z (date -u); session_01PBqfsNWMhTPn7yNJ8C18HP)
 Reason: context past the Lead's ~450k line. The session's remaining-token figure fell by ~575k since the start (it is not exposed directly).
