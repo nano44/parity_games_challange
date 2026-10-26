@@ -6,7 +6,7 @@ History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50
   C79 Add. 2: R70 landed at 60dafe69 (parent b20d0e0e, an empty Lead commit), PASS; C79 CLOSED (optional N-1 on the GAPS UPDATE wording). Next new check: C80.
 - C80 = R71 (P-N5-FBC): main report docs/checker/C80.md, FAIL E-1 ("either referee" for an observation only REFEREE-2 made), N-1..N-3.
   C80 Add. 1 PASS (82c55428 @ 9b9f5d37); Add. 2: R71 landed at c09d20fb, PASS, C80 CLOSED. C81 = R72 (P-N5-CHOSEN, draft a8c359b9 @ d1dc101c): main report docs/checker/C81.md, FAIL E-1, N-1; Add. 1 PASS (ec89995d @ 5fcabb2a); Add. 2: R72 landed at 7a7a6a3a, PASS, C81 CLOSED. Nothing open then.
-- C82 = R73 (P-N5-EPC, draft 4ed25e54 @ 449b6df2): main report docs/checker/C82.md, FAIL E-1 (§1 'identical to R71 (a), (b)': SAT_C restated without its window), N-1 (20,753 as a sum); Add. 1 PASS (2812cf8e @ d5ad0929). Next: landed check.
+- C82 = R73 (P-N5-EPC, draft 4ed25e54 @ 449b6df2): main report docs/checker/C82.md, FAIL E-1 (§1 'identical to R71 (a), (b)': SAT_C restated without its window), N-1 (20,753 as a sum); Add. 1 PASS (2812cf8e @ d5ad0929); Add. 2: R73 landed 1ba37bf3, RESULTS PASS, GAPS L-1 (UPDATE says LEV_C 'rises'; needs the min form). Next: close C82 when L-1 is on trunk.
 
 ## Resume point (successor 10, handing over at ~600k context, 2026-10-26 14:09Z)
 - Open: C79 = R70 (P-N5-HONFF): main report docs/checker/C79.md (b49f5974 + this commit), FAIL E-1 (title: FB-RISE (b) stated as a rise
