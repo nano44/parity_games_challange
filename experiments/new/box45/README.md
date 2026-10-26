@@ -20,3 +20,6 @@ DATA, not proof. Uses experiments/new/box43 (multi.rand_ckO) and box21 (n5x: SPE
   Q = {3, 7}, D = {3}, Xi(3) = (3, {}, 0) (u is its own cycle node), W = Xi; on G'_E SPEC's S4b moves tau(3): 5 -> 7 (S1's
   counterstrategy on G'_E picks 7 at the cycle node), N5^tau keeps tau. So N5 and N5^tau on G'_E DO differ on some epochs: premise
   (Sigma-tau) is exercised there (it is not exercised in the samples of P-N5-EPR §5).
+- n5tau.py STARTS SEED (--list | --rand C LO HI GSEED): runs N5^tau on 𝒞^1O games; R48 (i) per N5^tau phase (FB_V), TIEKEEP. Runs
+  finished by 06:44Z (date -u): out/n5tau_kwfiles_k2.txt (`n5tau.py 2 7 --list ../../../docs/referee-2/R2-N5-KW/files.lst`), out/n5tau_lib41_k2.txt
+  (`n5tau.py 2 7 --list ../box41/lib41.txt`), out/n5tau_rand5000.txt (`n5tau.py 4 9 --rand 5000 5 20 22`): FB_V 0; TIEKEEP 88 / 29 / 613.

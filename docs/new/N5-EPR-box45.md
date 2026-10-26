@@ -157,3 +157,91 @@ Reading (DATA): 81% of lib41's epochs have |D| ≤ 1 (7,099 of 8,727), and they 
 - Observation (CONJECTURE TIE-CYC, DATA only): at every tie state where it was recorded (148 of 148, seeds 11, 13, 14, 15; both DIV
   states included), u is its own honest cycle node (λ(u) = u, Ξ(u) =
   (u, ∅, 0)). Not proved; I see no reason in the definitions (Ξ(x) = Ξ(τ u) with U(x) ◁ U(τ u) is not contradictory when u is off its cycle).
+
+## 8. N5^τ on 𝒞^1O: the R48 (i) bound in data (DATA for (Στ); experiments/new/box45/n5tau.py; added 06:44Z by date -u)
+- n5tau.py runs N5^τ itself (not N5) on 𝒞^1O games and checks R48 (i) (f ≤ 1 + (n − 2)(2n − 1)) on every N5^τ phase; TIEKEEP counts the
+  iterations where N5^τ keeps τ although SPEC's S4b would move it (so the N5^τ run differs from the N5 run from there on).
+| sample | runs | phases | TIEKEEP (phases with one) | R48 (i) violations | max f per phase | max phase length (n) |
+| --- | --- | --- | --- | --- | --- | --- |
+| REFEREE-2's 503 𝒞^1O files (R2-N5-KW/files.lst), S3 + 2 random, seed 7 | 1,509 | 6,256 | 88 (46) | 0 | 37 | 112 (48) |
+| lib41's 𝒞^1O games (253), S3 + 2 random, seed 7 | 759 | 3,164 | 29 (16) | 0 | 33 | 112 (48) |
+| 5,000 random 𝒞^1O, n 5-20, games seed 22, S3 + 4 random, seed 9 | 25,000 | 61,452 | 613 (560) | 0 | 1 | 5 (15) |
+- Reading (DATA): N5^τ and N5 do differ on 𝒞^1O runs (the variant is exercised), and the N5^τ phases stay within R48 (i), with the same
+  maxima as N5 in R51's data (f 37, phase length 112). Data for (Στ), not a proof of it.
+
+## 9. (Στ), line by line: every use of S4b / Iτ / τ_new / "τ unchanged" in the R48 (i) and R50 (h) chains (Lead 06:48Z; written 06:56Z by date -u)
+### 9.1 Lemma Στ-STEP (PROVED, every game): what N5 and N5^τ share
+For every game and every state (σ, τ):
+- (a) N5 and N5^τ compute the same Ξ, W, Iσ, Iτ, the same S4a output σ_a, and the same Even and Odd S4c switch-alls (S4b^τ only changes S4b).
+- (b) If N5's transition from (σ, τ) keeps τ, N5^τ's transition from (σ, τ) is identical. (N5 keeps τ ⇒ Iτ = ∅, or S4b's output is τ, which is
+  then value-optimal in H′ (Lemma S (a)), so S4b^τ returns τ too; the fallback condition "σ_a = σ and τ_new = τ" is then the same.)
+- (c) If N5^τ's transition from (σ, τ) keeps τ, then Iσ ≠ ∅ and σ_new = Σ(σ, τ) := σ_a if σ_a ≠ σ, else Even's S4c switch-all on Iσ. (If
+  Iσ = ∅, then σ_a = σ, and N5^τ either stops (Iτ = ∅), or S4b^τ moves τ, or S4b^τ keeps τ and the fallback is Odd's, which moves τ.)
+  The same holds for N5 (with "S4b's output is τ").
+- (d) Every N5^τ iteration applies a non-empty switch of improving edges to σ or to τ (S4a's output differs from σ only on Iσ edges; S4b^τ moves
+  τ only to SPEC's S4b output; if neither moves, the fallback switches Iσ ∪ Iτ ≠ ∅). This is the hypothesis of R15 (c), (d)'s proofs
+  (docs/new/G-N5-TERM-reading.md: "every iteration applies Switch_I with ∅ ≠ I ⊆ Iσ to Even or to Odd"; Iσ, Ξσ are functions of σ alone and
+  Iτ, Ξτ of τ alone), so R15 (c), (d) hold for N5^τ runs.
+So the in-phase transitions of both algorithms are Σ-transitions (σ, τ) → (Σ(σ, τ), τ) at states with Iσ ≠ ∅ where τ is value-optimal in
+S4b's arena (or Iτ = ∅): a τ-STABLE state. N5's in-phase states are τ-stable with one more property: S1's procedure on H′ returns τ itself.
+A per-phase proof transfers to N5^τ unless it uses that extra property.
+### 9.2 The chain and the files read
+- Citation closure of R48 and R50 in docs/RESULTS.md (entries R15-R50 cited by them, transitively): R15, R17, R18, R19-R34, R38, R39, R42,
+  R44, R45, R47 (cited only in R50's not-signed reading), R48, R50.
+- Files (the "Object" / packet / fixes / proof-doc files named in those entries): G-N5-TERM-reading; N5-phase-bound-box10; N5-time-box21,
+  N5-1Oacyc-box24; P-N5-RE-box26, N5-xing-box27; P-N5-XA-box27 + fixes-box28; P-N5-X-box28 + fixes-box29, docs/agents/R19-note-X1; P-N5-NH-box30
+  + fixes; docs/si/P-N5-Z-box5 + fixes; P-N5-U1-box31 + fixes; docs/si/P-N5-FB-box7 + fixes, fixes2; P-N5-U23-box31 + fixes; P-N5-LP-box32 +
+  fixes, P-N5-SO-box32 + fixes, N5-L-box32, docs/si/N5-C-box8; P-N5-OE-box32 + fixes; docs/si/P-N5-CLS-box8 + fixes, fixes2; P-N5-SN-box33 +
+  fixes; docs/si/P-N5-FBW-box9 + fixes; P-N5-FRZ-box34 + fixes, fixes2; P-N5-L2-box34 + fixes, fixes2; P-N5-TOG-box35 + fixes, fixes2;
+  P-N5-SCOPE-box36 + fixes; P-N5-OUT-box37 + fixes; P-N5-NEB-box38 + fixes; N5-RW-box39, P-N5-PFZ-box39, P-N5-PFZ-ext-box39, P-N5-PFZ-fixes-box39;
+  P-N5-RHO-box40 + fixes; P-N5-FBPOLY-box41 + fixes, docs/red/R72-fx-fbpoly-k; docs/si/P-N5-KW-box15 + addendum + fixes, N5-KW-box42,
+  docs/si/N5-KW-box15 (all under docs/new/ unless named). 66 files.
+- Search: `grep -n` for S4b, Iτ, I_τ, τ_new, Odd's step, Odd step, Odd fall, Odd's fallback, "optimal counterstrategy to σ", "τ unchanged",
+  "fallback fires", "fallback happens", "S4c fires", "τ is unchanged", "τ changes", "Odd moves", τ_{k+1} (108 hits), and a second pass for
+  Odd's move, τ moves, Odd's arena, H′, τ-step, τ′, Odd switches, Odd improves, τ-optimal (no further use of S4b's output: H′ in P-N5-FB is a
+  functional graph, τ′ elsewhere is a quantifier in Lemma S (a)). Every hit was read in context.
+### 9.3 Every use, classified
+Kinds: DEF = a restatement of SPEC (true for N5^τ with S4b^τ, by 9.1); FIX = "in a phase τ_{k+1} = τ_k, so the transition is S4a or an Even
+fallback" (9.1 (c)); END = "Iσ = ∅ ⇒ τ changes or N5 stops" (9.1 (c)); VAL = a value statement about S4b's output (holds for N5^τ: τ is moved
+by S4b^τ whenever it is not value-optimal); R15 = a use of R15 (c), (d) (9.1 (d)); HYP = "τ_{k+1} = τ_k" as a hypothesis.
+| RESULTS | file: line(s) | the use | kind | holds for N5^τ? |
+| --- | --- | --- | --- | --- |
+| R15 | G-N5-TERM-reading: 83, 85, 91 | Iσ / Iτ are functions of σ / τ alone; flat iterations ≤ 4n(n − 1) | DEF, R15 | yes (9.1 (a), (d)) |
+| R17 | N5-phase-bound-box10: 86 | "N5's fallback fires only when the arena optimum returns σ unchanged although Iσ ≠ ∅" (one-player games) | DEF | yes (one-player: Iτ = ∅, N5^τ = N5) |
+| R18 | N5-time-box21: 77, 99-103, 107, 119 | Odd's step minimises V_{σ_k,·} over its arena; Theorem B (a) "τ_{k+1} = τ_k ⇒ σ_{k+1} = F_{τ_k}(σ_k)"; Iσ = ∅ ⇒ τ changes; Iτ_0 = ∅ ⇒ τ never changes; fallback fires only when the arena optimum is σ_k | DEF, FIX, END | yes |
+| R18 | N5-1Oacyc-box24: 99-103 | "(o, a) ∈ Iτ … S4b runs … value at o under τ′ ⊴ o ⊕ Ξ(a) ◁ o ⊕ Ξ(b). Hence τ′(o) ≠ b, and S4b changes τ" | VAL (τ strictly not optimal) | yes: S4b^τ = SPEC there |
+| R18 | N5-1Oacyc-box24: 119-122 | at a pure transition S4b returned τ; S4c fires iff S4a returns σ_k; Iσ_k ≠ ∅ | FIX | yes (9.1 (b), (c)) |
+| R19 | P-N5-RE-box26: 12-13, 51, 58; N5-xing-box27: 60 | SPEC restated; hypotheses τ_{k+1} = τ_k; fallback only when S4a's optimum is σ | DEF, HYP | yes |
+| R20 | P-N5-XA-box27: 13-14; XA-fixes-box28: 49, 140-143 | SPEC restated; l. 49 describes an OPEN configuration (no proof step); R15 (d) for value-preserving transitions | DEF, R15 | yes |
+| R21 | P-N5-X-box28: 13-14, 21, 64, 76, 170 | SPEC; R15 (d); "S4c step: Even's, since τ is fixed (S4c switches Odd only if Iσ_k = ∅, and then τ changes)"; hypothesis | DEF, R15, FIX, HYP | yes |
+| R22 | P-N5-NH-box30: 25 | R15 (a), (d) | R15 | yes |
+| R23 | si/P-N5-Z-box5: 25, 38, 48, 57, 171 | "S4c happens iff S4a returns σ_k and S4b returns τ_k"; (F0) with τ_{k+1} = τ_k; FBL-N (i); WM: "τ_{k+1} = τ_k, σ_{k+1} is S4a's choice" | DEF, HYP, FIX | yes (in an N5^τ phase both conditions of the fallback hold) |
+| R24 | P-N5-U1-box31: 13, 16; U1-fixes: 171 | "inside a phase S4b returns τ"; the fallback is Even's (FIX 3) | DEF, FIX | yes |
+| R25 | si/P-N5-FB-box7: 20-21, 45, 149; FB-fixes2: 25, 27, 32 | SPEC; Odd's fallback changes τ; FIX 3; WM | DEF, FIX, END | yes |
+| R26 | P-N5-U23-box31: 22 | "every non-fallback transition is an S4a step: S4b returns τ" | FIX | yes |
+| R27 | P-N5-LP-box32: 14, 33-34 | "every N5 iteration changes σ or τ" | DEF | yes (9.1 (d)) |
+| R28 | P-N5-OE-box32 (+ fixes) | no hit | — | yes (no use) |
+| R29 | si/P-N5-CLS-box8: 17; CLS-fixes: 10-11; fixes2: 10 | "no gate ⇒ σ unchanged ⇒ τ changes ⇒ the phase is left" | END | yes |
+| R30 | P-N5-SN-box33: 35; SN-fixes: 12, 19 | WM uses only τ_{k+1} = τ_k and the S4a optimum | HYP | yes |
+| R31 | si/P-N5-FBW-box9: 17-18 | "an S4c fallback fires exactly when S4a returns σ_k and S4b returns τ_k" | DEF | yes |
+| R32 | P-N5-FRZ-box34: 48 | "an in-phase S4c fallback happens only when S4a returned σ_k" | FIX | yes |
+| R33 | P-N5-L2-box34 (+ fixes, fixes2) | no hit | — | yes (no use) |
+| R34 | P-N5-TOG-box35: 18, 104 | at an Odd fallback σ is unchanged; "τ is constant in a phase, so it is not an Odd fallback" | DEF, FIX | yes |
+| R38 | P-N5-SCOPE-box36: 25-28, 91, 204-207 | SPEC; CN-LAST (iii): at Iσ_{k+1} = ∅ N5 stops, or S4b moves τ, or S4b returns τ and Odd falls back | DEF, END | yes (the same three cases for S4b^τ) |
+| R39 | P-N5-OUT-box37: 43-46, 82, 84, 110; OUT-fixes: 24 | SPEC; FBL-N, ACT premise rows ("τ unchanged"); the fallback is Even's | DEF, FIX | yes |
+| R42 | P-N5-NEB-box38: 34-36, 89, 91; NEB-fixes: 32 | as R39 | DEF, FIX | yes |
+| R44 | P-N5-PFZ-box39: 33, 67-68 (ext, fixes: no hit) | SPEC; premise rows | DEF | yes |
+| R45 | P-N5-RHO-box40: 40-41 | "every transition has τ unchanged, so it is an S4a step … or an Even S4c fallback" | FIX | yes |
+| R48 | P-N5-FBPOLY-box41: 34-35, 46, 68, 248 | SPEC; in-phase ⇒ S4a or Even fallback; an Odd fallback ends the phase | DEF, FIX | yes |
+| R50 | si/P-N5-KW-box15: 48 | "if S4a leaves σ unchanged and S4b leaves τ unchanged, the S4c fallback is Even's" | FIX | yes |
+| R47 | not needed: cited only in R50's not-signed reading (phase count across phases) | — | — | — |
+### 9.4 Conclusion (lane READING, for the referees)
+- No step in the R48 (i) / R50 (h) chain uses which optimal counterstrategy S1's procedure returns on S4b's arena. Every use of S4b is of kind
+  DEF, FIX, END, HYP, R15 or VAL, and each holds for N5^τ by Στ-STEP (9.1). The other per-phase steps use N5 only through the state
+  (Ξ, W, Iσ, σ̄, …, all functions of (σ, τ)) and through Σ-transitions with τ fixed, which N5^τ shares (9.1 (a), (c)).
+- So (Στ) holds, as far as this enumeration reaches: EP-1 becomes a lane result (PROVED by the lane, unrefereed), with the audit as its
+  premise check. What a referee should verify: (1) the file list (9.2) is the whole chain (proofs may sit in a doc a packet cites but RESULTS
+  does not name); (2) no proof uses S4b's output implicitly (for instance "the phase ended, so S1's procedure returned some τ′ ≠ τ").
+- Data for (Στ): §8 (N5^τ on 𝒞^1O: R48 (i) holds per N5^τ phase; the variant is exercised, TIEKEEP 88 / 29 / 613). L-COMP is building N5^τ
+  as an engine variant to re-check R48 (i) and R50 (h) (Lead 06:48Z).
+- TIE-CYC stays a CONJECTURE (DATA: 148 of 148 recorded tie states have λ(u) = u); §7.
