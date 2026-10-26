@@ -21,7 +21,8 @@ def analyse(g, start=None, mode="n5", tmp=None, use_oink=False, cap=10 ** 6):
     n = g.n; Q = [v for v in range(n) if g.owner[v] == 1 and len(set(g.succ[v])) > 1]
     S, FB, E = O.trace(g, start, mode, cap)
     ev = [E.evaluate(s) for s, _ in S]; Xi = [X for X, _ in ev]; lam = [tuple(x[0] for x in X) for X in Xi]
-    N = len(S); r = dict(n=n, Q=len(Q), ITER=len(FB), fmax=0, fn=0.0, rho_at=0, U_at=0, Nlate_at=0, rhomax=0, Nlate=0, late=0, phases=0, fails=[])
+    SB = [B for _, B in ev]
+    N = len(S); r = dict(levels=0, sw_trans=0, sg_checks=0, acc_checks=0, n=n, Q=len(Q), ITER=len(FB), fmax=0, fn=0.0, rho_at=0, U_at=0, Nlate_at=0, rhomax=0, Nlate=0, late=0, phases=0, fails=[])
     a = 0
     while a < N:
         b = a
@@ -44,6 +45,28 @@ def analyse(g, start=None, mode="n5", tmp=None, use_oink=False, cap=10 ** 6):
             Sk = {v for v in range(n) if g.owner[v] == 0 and S[k][0][v] != S[k + 1][0][v]}
             if not (Sk - T): cno.append(k)
         if len(cno) > 1 or (cno and cno[0] + 1 != b): r["fails"].append(f"CNO {cno} b={b}")
+        # ---- Lemma ACCEL (N5-FBF §8): (a) simple-path values; (SG) strict gain at switches of Even z with λ(z) != z
+        lv = {}; swt = 0
+        for k in range(a, b + 1):
+            for z in range(n):
+                lv.setdefault(z, set()).add(Xi[k][z])
+                c = lam[k][z]
+                if z == c: continue
+                path, v, seen = [], z, set()
+                while v != c and v not in seen and lam[k][v] == c:
+                    seen.add(v); path.append(v); v = S[k][0][v] if g.owner[v] == 0 else SB[k][v]
+                r["acc_checks"] += 1
+                if v != c: r["fails"].append(f"ACCEL_a nonsimple/leaves U_c z={z} k={k}"); continue
+                val = (c, 0, 0)
+                for u in reversed(path): val = E.extend(u, val)
+                if tuple(val) != tuple(Xi[k][z]): r["fails"].append(f"ACCEL_a value z={z} k={k} {val} {Xi[k][z]}")
+        for k in range(a, b):
+            swz = [z for z in range(n) if g.owner[z] == 0 and S[k][0][z] != S[k + 1][0][z] and lam[k][z] != z]
+            if swz: swt += 1
+            for z in swz:
+                r["sg_checks"] += 1
+                if not E.key(Xi[k + 1][z]) > E.key(Xi[k][z]): r["fails"].append(f"SG z={z} k={k} fb={FB[k]}")
+        r["levels"] = max(r["levels"], max(len(x) for x in lv.values())); r["sw_trans"] = max(r["sw_trans"], swt)
         if f > r["fmax"]: r.update(fmax=f, fn=f / n, rho_at=rho, Nlate_at=nl, U_at=max(sum(1 for z in lam[a] if z == c) for c in C))
         r["rhomax"] = max(r["rhomax"], rho); r["Nlate"] = max(r["Nlate"], nl); r["late"] = max(r["late"], late)
         a = b + 1
