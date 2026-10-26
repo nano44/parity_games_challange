@@ -19,8 +19,8 @@ History before successor 8 (successors 5-7: C45-C57, their resume points and han
   referee addenda e18b4370 / 9a5692ad; pftheta34 is L-RED's). C73 = R64 (EPR) b5bef23a @ acee4a3e: PASS, no notes; PRECONDITION R61 → R63 → R64.
   Next check C74.
 - Landed: R61+R63 ca0a4e97 (C70 Add. 2, C72 Add. 1, 2a5da1ac); R64 71c4e31a (C73 Add. 1, 4d5cc377); R62 177b3dbb (C71 Add. 4,
-  69d699e2); all texts PASS. L-1 OPEN (07:59Z): trunk has claude/checker only to 761bcc73, so the cited checker SHAs 2a5da1ac (R62)
-  and 7b326f11 (R64) are not on trunk; on merge, C71 and C73 close (check `merge-base --is-ancestor 69d699e2 trunk`).
+  69d699e2); all texts PASS. L-1 FIXED: Lead merged claude/checker at e1eabcd0 (07:53Z,
+  reached origin after my fetch); C71, C73 CLOSED. Rule: merge claude/checker before or with every landing.
 - PARKED LIGHT until P-N5-STAU (C74) has both §Cs (Lead 07:52Z: about an hour).
 - TRAP (new): REFEREE run_all.sh files that glob instance DIRECTORIES (vilb, accel) do not reproduce at a later trunk when a lane adds a
   file (qc_toggle.pg): re-run at the REPORT commit. And never put a shell pipe '|' inside a markdown table cell.
