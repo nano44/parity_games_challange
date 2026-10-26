@@ -276,3 +276,30 @@ AGAINST_W ('experiments/si/fb2o/instances/tcwult2_against_n8.pg', 0, 1, 0, 4, -1
   pairoc_n58.start (sha1 2f5630e98f5484e5c901ad45ae1bd752a5a7a4a8). `python3 -I experiments/si/rund/lvl2.py --one <pg> <start>` prints
   `VIOLATION ('PAIROC', …, 0, 3, 57, [(0, 47, 52, True), (1, 48, 51, True), (2, 47, 49, True)])`: v = 57, W rises at 47, 48, 47 (pinned).
 - Survivor: CONJECTURE LC2 holds there (|OC| 3 ≤ |SL| 5: SL = {(W, 47), (W, 48), (X, 49), (X, 51), (X, 52)}; no LC2 violation, pinned).
+
+## DEAD box 20 (L-SI successor 16, 2026-10-26T15:11Z by date -u): the charge "root offset resets → ping-pong entries or FLIP events"
+- Statement killed (a candidate charge, Lead's 15:02Z item, never claimed): every change of the root's gate offset Δ(r) = M(τ r) − M(σ̄ r) at an
+  in-phase S4a transition with r a D-direct gate coincides with a ping-pong entry into r's gate region or a change of some class terminal's
+  chosen exit (R69 FLIP-type event).
+- Obstruction: the changes are the root's own Bellman-Ford cascade events (a downstream switch in the direct region raises the root's best
+  option; note §28.2 PATH triggers), with no entry into the gate region and no chosen-exit change at that transition.
+- Instance: nep90_n40 (experiments/red/rec0/instances/nep90_n40.pg + experiments/si/rund/instances/nep90_n40.start), phase@4, root 0: 32 of 63
+  root offset resets have no charge but ρ at the root (`python3 -I experiments/si/root/resets.py --one <pg> <start>` prints
+  R_DELTA_U=63 and R_DELTA_U_ONLYSELF=32; pinned). nep76_n40 phase@9: 13 of 51.
+- Survivor: these events lie inside FREEZE-A pieces and are bounded there (FREEZE-A (c), RESET-PIECE (i)).
+
+## DEAD box 21 (L-SI successor 17, 2026-10-26T16:06Z by date -u): own candidates C-ONCE and UE-ONCE_C (never claimed; note docs/si/N5-GCX-box21.md §4)
+- Statements killed: (C-ONCE) inside a C-interval (A_c non-increasing, D ∩ U_c constant, every D-direct gate offset constant) no vertex
+  migrates twice between gate regions; (UE-ONCE_C) inside a C-interval every Even edge is unforbid-switched (CHARGE-U's U event) at most once.
+- Obstruction (both): Bellman-Ford staggering inside the first |U| − 1 states of the interval. A short route through one gate is taken
+  first, a longer better route through another gate arrives later, and the vertex (or the edge's tail) moves again.
+- Instances (N5 via experiments/new/box21/n5x.py, read-only; SPEC S3 start; climbed by experiments/si/root/climbmig.py):
+  - experiments/si/root/instances/cone_n65.pg (sha1 3e95fca9088f6a52cdf16325fe06933296ed357e): phase@1, class 8, C-interval [0, 4], vertices 2,
+    14, 20, 26, 29, 30, 44, 59 migrate twice between the non-direct gates 12 and 64. `python3 -I root/gcx.py --one <pg>` (from experiments/si)
+    prints MIG2_cint=1 (pinned). cone_n69.pg (sha1 dd03ba782ca821491ad5c54303ab61def7c7aff1): one interval of 19 transitions, up to 3
+    migrations per vertex (gates 20, 29, 35).
+  - experiments/si/root/instances/ueonce_n27.pg (sha1 c90d5ab8569a93bba3389002e0c85bb64bb0c214): phase@1, C-interval [1, 10], edge (10, 23)
+    has U events at k = 1 and k = 5. `UEV=1 python3 -I root/gcx.py --one <pg>` prints UE2_Cr=1 (pinned). Also lib41
+    experiments/si/xing/instances/zcl_cu_n48.pg with a random start (edge (16, 20), C-interval [7, 23]).
+- Survivor: CONJECTURE UL_C (no U event at index ≥ |U_c| − 1 of its C-interval): 0 violations on everything above, the UF-ONCE killers and the
+  libraries with KMIN 1; the killers' repeated U events on one edge all sit at C-cuts.

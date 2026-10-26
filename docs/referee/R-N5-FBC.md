@@ -130,3 +130,34 @@ of 25 unsaturated fallbacks in one configuration is the packet's farrise25_n32 f
 - FBC-N3 (strengthening, §2). At most one saturated fallback per configuration and phase (SAT_C (2) + R15 (b) + R38 (f) CN-LAST), so
   f ≤ n·|𝒞_f(P)|, which answers the packet's §5 second item. For the lane to take up; REFEREE-2 has not reviewed it.
 - FBC-N4 (reading). (d)'s "incomparable in general" with R56 is witnessed in one direction only (§3); the header's "INCOMPARABLE" likewise.
+
+## §C. Comparison with REFEREE-2 (written 2026-10-26T15:01Z-15:05Z by date -u, after the Lead's word of 14:58Z; REFEREE-2's report
+docs/referee-2/R2-N5-FBC.md at origin/claude/referee-2 64ee8e9c, read only after my report was pushed at 0addfc5f)
+### Verdicts
+| item | REFEREE (0addfc5f) | REFEREE-2 (64ee8e9c) | joint |
+| --- | --- | --- | --- |
+| FB-RISE_C | SIGNED | SIGN | SIGNED |
+| SAT_C | SIGNED | SIGN | SIGNED |
+| Theorem FB-C | SIGNED | SIGN | SIGNED |
+| Corollaries (a), (b), (c), (d) | SIGNED ((d): the inequality; its comparison sentences a READING) | SIGN | SIGNED |
+| header: (a)'s N_ep form and (d) weaker than R60 (c) EPOCH | CONFIRMED for n ≥ 2; n = 1: f = 0 | CONFIRMED for n ≥ 2; n = 1 vacuous exception (N-FBC-4) | CONFIRMED for n ≥ 2 |
+| quotes (14) | verbatim at 80509398 | verbatim at 80509398 and de02d37e | verbatim |
+Verdicts identical. Joint gap map: EMPTY (neither referee found a gap).
+### Notes, matched
+| REFEREE | REFEREE-2 | joint |
+| --- | --- | --- |
+| FBC-N1 (D_k, EPOCH / N_ep imported from P-N5-HON §0 and R60/R61, not HONFF §0) | N-FBC-3 (D_k from P-N5-HON §0 l. 44) | same note; FBC-N1 also names EPOCH / N_ep |
+| FBC-N2 (cite R57 (a) (VJ) for R15 (d) on Ξ) | — (REFEREE-2 uses the same bridge in its premise column: "(MON) = R15 (a), (d) via (VJ) under P1") | REFEREE's citation note; nothing at issue |
+| FBC-N3 (PROOF: ≤ 1 saturated fallback per configuration and phase, so f ≤ n·\|𝒞_f(P)\|) | N-FBC-6 (SAT_C's 4n(n − 1) + 1 term untested: max 1 saturated per C everywhere, longest window 2; its control "≤ 1 saturated per C" does not bite) | they fit: FBC-N3 proves that the "≤ 1 saturated per C" control cannot bite on any game, and that SAT_C's window term is never used by FB-C. FBC-N3 is REFEREE's alone and unreviewed by REFEREE-2; I ask the Lead to route it to L-NEW as a note and to REFEREE-2 if a check is wanted |
+| FBC-N4 ("incomparable with R56": witnessed in one direction only; R56's number smaller in every phase I checked) | N-FBC-5 (FB-C's number never beat EPOCH's or R56's; max N_ep/\|𝒞_f\| = 45 at n = 32 against 4n − 3 = 125); "incomparable as FORMULAS" | same observation; both read "incomparable" as a statement about forms only |
+| header n = 1 remark (§3: one vertex, self-loop only, Iσ = ∅, f = 0) | N-FBC-4 ("f ≤ 1 either way") | same; at n = 1 f = 0 exactly, so both forms hold trivially |
+| — (checked in my §1: "LEV_C(k) ≥ 0 at every state", not raised as a note) | N-FBC-1 (FB-C's count needs LEV_C ≥ 0; the packet does not say it) | ACCEPTED (I checked the fact but did not flag that the packet omits it) |
+| — (my §1: the Odd case needs no fallback and holds at every C-state) | N-FBC-2 (the Even case holds at any source state; the C-state hypothesis is needed only for the Odd case) | ACCEPTED; the two remarks are complementary (Odd case: any C-state, no fallback; Even case: any state, the fallback) |
+### Data
+Both own engines, 0 failures of every signed check (mine: 36,720 runs, 3,394 FB-RISE_C checks; REFEREE-2: 2,294 exact checks, 32·10⁶ Case A
+checks); both reproduce the packet's figures (fr39_q4_n48: 39 / 7 / 24; farrise25_n32: 25 unsaturated); both τ-frame controls bite (mine 79,
+REFEREE-2 14,399). Nothing open between the referees on FBC.
+- ERRATUM (2026-10-26T15:27Z by date -u, after the Lead's LEAD-N1 of 15:10Z; the §C text above is left as written). The §C "Data" line's
+  "mine: 36,720 runs, 3,394 FB-RISE_C checks" is an arithmetic slip. The §4 table is right: 35,720 runs (3,297 + 2,421 + 15,000 + 15,000 + 2),
+  2,794 in-phase fallbacks checked exactly by FB-RISE_C (630 + 801 + 597 + 727 + 39), out of 3,384 in-phase fallbacks in those runs (the n ≤ 34
+  row's other 590 sit in 115 phases over the path budget). The same two figures were wrong in my 14:10Z message to the Lead.

@@ -1,0 +1,8 @@
+START fit (0, 1) n 48
+BEST step 248 fit (0, 2) t 3s
+BEST step 766 fit (0, 3) t 12s
+BEST step 997 fit (0, 4) t 18s
+BEST step 1016 fit (1, 3) t 18s
+BEST step 1821 fit (1, 4) t 40s
+BEST step 1920 fit (2, 2) t 43s
+END steps 19136 best (2, 2) n 48 -> results/nconf/ret02_fresh_n48_r1.pg

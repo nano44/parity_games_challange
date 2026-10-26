@@ -1,0 +1,37 @@
+# box 14 climbs: max NCONF_{>=2} (nconf2) and max fallback-free returns RET0_{>=2} (ret02) per phase; budget 10 s x n, 2 repeats
+climb.py nconf2 64 4 1341 --secs 640 --out results/nconf/nconf2_fresh_n64_r1
+climb.py nconf2 64 1 1441 --secs 640 --seed-pg ../../experiments/red/rec0/instances/nep90_n40.pg:../../experiments/red/rec0/instances/nep90_n40.start.json --out results/nconf/nconf2_seed90_n64_r1
+climb.py nconf2 64 4 1342 --secs 640 --out results/nconf/nconf2_fresh_n64_r2
+climb.py nconf2 64 1 1442 --secs 640 --seed-pg ../../experiments/red/rec0/instances/nep90_n40.pg:../../experiments/red/rec0/instances/nep90_n40.start.json --out results/nconf/nconf2_seed90_n64_r2
+climb.py ret02 64 4 1341 --secs 640 --out results/nconf/ret02_fresh_n64_r1
+climb.py ret02 64 1 1441 --secs 640 --seed-pg ../../experiments/red/rec0/instances/nep90_n40.pg:../../experiments/red/rec0/instances/nep90_n40.start.json --out results/nconf/ret02_seed90_n64_r1
+climb.py ret02 64 4 1342 --secs 640 --out results/nconf/ret02_fresh_n64_r2
+climb.py ret02 64 1 1442 --secs 640 --seed-pg ../../experiments/red/rec0/instances/nep90_n40.pg:../../experiments/red/rec0/instances/nep90_n40.start.json --out results/nconf/ret02_seed90_n64_r2
+climb.py nconf2 48 4 1181 --secs 480 --out results/nconf/nconf2_fresh_n48_r1
+climb.py nconf2 48 1 1281 --secs 480 --seed-pg ../../experiments/red/rec0/instances/nep90_n40.pg:../../experiments/red/rec0/instances/nep90_n40.start.json --out results/nconf/nconf2_seed90_n48_r1
+climb.py nconf2 48 4 1182 --secs 480 --out results/nconf/nconf2_fresh_n48_r2
+climb.py nconf2 48 1 1282 --secs 480 --seed-pg ../../experiments/red/rec0/instances/nep90_n40.pg:../../experiments/red/rec0/instances/nep90_n40.start.json --out results/nconf/nconf2_seed90_n48_r2
+climb.py ret02 48 4 1181 --secs 480 --out results/nconf/ret02_fresh_n48_r1
+climb.py ret02 48 1 1281 --secs 480 --seed-pg ../../experiments/red/rec0/instances/nep90_n40.pg:../../experiments/red/rec0/instances/nep90_n40.start.json --out results/nconf/ret02_seed90_n48_r1
+climb.py ret02 48 4 1182 --secs 480 --out results/nconf/ret02_fresh_n48_r2
+climb.py ret02 48 1 1282 --secs 480 --seed-pg ../../experiments/red/rec0/instances/nep90_n40.pg:../../experiments/red/rec0/instances/nep90_n40.start.json --out results/nconf/ret02_seed90_n48_r2
+climb.py nconf2 40 4 1101 --secs 400 --out results/nconf/nconf2_fresh_n40_r1
+climb.py nconf2 40 1 1201 --secs 400 --seed-pg ../../experiments/red/rec0/instances/nep90_n40.pg:../../experiments/red/rec0/instances/nep90_n40.start.json --out results/nconf/nconf2_seed90_n40_r1
+climb.py nconf2 40 4 1102 --secs 400 --out results/nconf/nconf2_fresh_n40_r2
+climb.py nconf2 40 1 1202 --secs 400 --seed-pg ../../experiments/red/rec0/instances/nep90_n40.pg:../../experiments/red/rec0/instances/nep90_n40.start.json --out results/nconf/nconf2_seed90_n40_r2
+climb.py ret02 40 4 1101 --secs 400 --out results/nconf/ret02_fresh_n40_r1
+climb.py ret02 40 1 1201 --secs 400 --seed-pg ../../experiments/red/rec0/instances/nep90_n40.pg:../../experiments/red/rec0/instances/nep90_n40.start.json --out results/nconf/ret02_seed90_n40_r1
+climb.py ret02 40 4 1102 --secs 400 --out results/nconf/ret02_fresh_n40_r2
+climb.py ret02 40 1 1202 --secs 400 --seed-pg ../../experiments/red/rec0/instances/nep90_n40.pg:../../experiments/red/rec0/instances/nep90_n40.start.json --out results/nconf/ret02_seed90_n40_r2
+climb.py nconf2 32 4 1021 --secs 320 --out results/nconf/nconf2_fresh_n32_r1
+climb.py nconf2 32 4 1022 --secs 320 --out results/nconf/nconf2_fresh_n32_r2
+climb.py ret02 32 4 1021 --secs 320 --out results/nconf/ret02_fresh_n32_r1
+climb.py ret02 32 4 1022 --secs 320 --out results/nconf/ret02_fresh_n32_r2
+climb.py nconf2 24 4 941 --secs 240 --out results/nconf/nconf2_fresh_n24_r1
+climb.py nconf2 24 4 942 --secs 240 --out results/nconf/nconf2_fresh_n24_r2
+climb.py ret02 24 4 941 --secs 240 --out results/nconf/ret02_fresh_n24_r1
+climb.py ret02 24 4 942 --secs 240 --out results/nconf/ret02_fresh_n24_r2
+climb.py nconf2 16 4 861 --secs 160 --out results/nconf/nconf2_fresh_n16_r1
+climb.py nconf2 16 4 862 --secs 160 --out results/nconf/nconf2_fresh_n16_r2
+climb.py ret02 16 4 861 --secs 160 --out results/nconf/ret02_fresh_n16_r1
+climb.py ret02 16 4 862 --secs 160 --out results/nconf/ret02_fresh_n16_r2

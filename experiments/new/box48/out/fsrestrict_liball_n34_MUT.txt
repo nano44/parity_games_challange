@@ -1,0 +1,1 @@
+REP_V 16 XI_V 27 covered_by_R68_urun 121 frozen_side 31 frozen_side_epochs 130 max_Dminus 9 max_fs_epochs 35 stretch_epochs 1458 stretches 152

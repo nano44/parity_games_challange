@@ -3692,6 +3692,124 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   nothing open on the signed items. Both under the standing premise 1E-N3.
 - TARGET.md diff: not a claim of TARGET.md section 1 or §2 (per-phase bounds and reductions; no running-time bound). GAPS G-N5-TIME: open.
 
+### R71 [refereed-only] N5 on EVERY game: in the honest frame H_C of a configuration C = σ̄|Q (every Odd vertex cut to its σ̄_C edge), an in-phase fallback from a C-state raises the level LEV_C to at least min(LEV_C + 1, n − 1) (Lemma FB-RISE_C); LEV_C = n − 1 at a C-state gives Ξ = B_C, and later C-states of the phase follow within 4n(n − 1) transitions with Ξ constant (Lemma SAT_C); hence in every phase the in-phase fallbacks number at most |𝒞_f(P)|·(4n² − 3n), 𝒞_f(P) the configurations at fallback sources (Theorem FB-C), so f ≤ (4n² − 3n)·min(N_ep, Π_q deg(q)), f ≤ Δ^k(4n² − 3n) on 𝒞^kO, and f ≤ (1 + m)(4n² − 3n) when |D| ≤ 1 throughout (Corollaries (a)-(d)) (2026-10-26) — a REDUCTION of f to the number of distinct configurations per phase (that number is not bounded here on general games; (a)'s N_ep form and (d) are weaker than RESULTS R60 (c) EPOCH for n ≥ 2; not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C80.md, checker 4069b310)
+- Object (packet P-N5-FBC, added at l-new 1f8d6d7d, pinned trunk de02d37e, unchanged during review): docs/new/P-N5-FBC-box47.md, sha1
+  32d3776cf4090fb15c1d0cb4c8b4f59276f64e21 (L-NEW successor 26, Opus 5.5). The referees' notes are collected by the lane in
+  docs/new/P-N5-FBC-fixes-box47.md (l-new c2691e46, sha1 1347222ccc39ea380035da050b8af2f7cc8473d6, L-NEW successor 28: R1-R6 for FBC-N1, -N2,
+  -N4, N-FBC-1..5 and REFEREE's n = 1 line; §4: FBC-N3 is not a repair but P-N5-EPC §3; 45 quotes checked by script); on trunk; repairs only,
+  no signed statement changes.
+  Setting (every game): as in RESULTS R70 (N5 = SPEC S1-S5; Ξ_k the value of the honest play; phases; λ; value(r); f). Q := the Odd vertices of
+  out-degree ≥ 2; a CONFIGURATION is C = σ̄|Q, k is a C-STATE if σ̄_k|Q = C; H_C := G with every Odd v cut to its one edge σ̄_C(v) (H_{τ|Q} = G_τ);
+  LEV_C(k) := the largest j ≤ n − 1 with Ξ_k(x) ⪰ value(r) for every x and every simple path r of H_C with ≤ j edges from x to a cycle node of
+  λ, defined at every state of the phase, LEV_C ≥ 0 there (N-FBC-1, REFEREE-2; checked by REFEREE) and non-decreasing along it; B_C(x) := the
+  maximum of value(r) over the simple H_C-paths r from x to a cycle node of λ; 𝒞_f(P) := the configurations of the sources of P's in-phase S4c
+  fallbacks; D_k := {q ∈ Q : σ̄_k(q) ≠ τ(q)} as in RESULTS R68 (P-N5-HON §0), and epochs / N_ep as in RESULTS R60, R61 (the packet imports them
+  from P-N5-HONFF §0, which does not define them: FBC-N1 = N-FBC-3).
+- Claims signed (both referees "(Opus 5.5, D15)", L37), on every game; no item uses (P); premises LANDED: SPEC S2, S4c with FIX 3; RESULTS R15
+  (a), (d) ((MON), and R15 (d)'s window applied to Ξ through RESULTS R57 (a) (VJ) under the standing premise 1E-N3, P1 (FBC-N2, REFEREE; the
+  packet's "read as S1's Ξ" names no source)); R17 (a) (V1)/(V2), R17 (b) Lemma P's Case A with Ω := Ξ_t (RESULTS R70's Q-A, YES by both);
+  R38 (a); RESULTS R70 (a) FB-RISE's proof, items 2-3 (Even vertices), used verbatim; for (a), (d) only RESULTS R61 (f):
+  (a) Lemma FB-RISE_C: if t → t + 1 is an in-phase S4c fallback whose source t is a C-state, then LEV_C(t + 1) ≥ min(LEV_C(t) + 1, n − 1). Its
+      Odd case uses no fallback and holds at every C-state (REFEREE); its Even case holds at any source state, the C-state hypothesis being
+      needed only for the Odd case (N-FBC-2, REFEREE-2; accepted by REFEREE).
+  (b) Lemma SAT_C: if t is a C-state with LEV_C(t) = n − 1, then Ξ_t = B_C; and if t < t′ are C-states of the phase with LEV_C(t) = n − 1, then
+      Ξ is constant on t, …, t′ and t′ − t ≤ 4n(n − 1).
+  (c) Theorem FB-C: in every phase P, f ≤ |𝒞_f(P)|·(4n² − 3n) (per C: at most n − 1 unsaturated and 4n(n − 1) + 1 saturated fallback sources).
+  (d) Corollaries: (a) f ≤ (4n² − 3n)·min(N_ep(P), Π_{q ∈ Q} deg(q)); (b) on 𝒞^kO with maximum out-degree Δ, f ≤ Δ^k(4n² − 3n) per phase;
+      (c) if every state of P has |D_k| ≤ 1, f ≤ (1 + m)(4n² − 3n), and the configurations with |D| ≤ d number at most
+      Σ_{j ≤ d} C(|Q|, j)(Δ − 1)^j; (d) with RESULTS R61 (f), f ≤ (4n² − 3n)(1 + Σ_q (ρ_q + tie_q + nc_q + cyc_q)) (the inequality; the
+      comparison sentences after it are READINGS, FBC-N4).
+  Header claim CONFIRMED by both for n ≥ 2: (a)'s N_ep form and (d) are implied by RESULTS R60 (c) EPOCH (f ≤ 1 + n·N_ep; with R61 (f) for
+  (d)), since 1 + n·N_ep ≤ (4n² − 3n)·N_ep ⇔ 1 ≤ 4n(n − 1)·N_ep; at n = 1, f = 0 (the only vertex has a self-loop only) (REFEREE; N-FBC-4,
+  REFEREE-2). What FB-C adds over EPOCH is the per-configuration form: a configuration that recurs in the phase is paid once.
+- Not signed (packet §3-§5): the τ-frame split and its DEAD charge (s4c8_n13, j5_n16); the data; the OPEN items (the number of distinct
+  configurations per phase on general games; a better saturated term); the READINGs, including "incomparable with RESULTS R56", which is
+  witnessed in one direction only (FBC-N4 = N-FBC-5: FB-C's number never beat EPOCH's or R56's in any phase REFEREE-2 ran, nor R56's in the two batches where REFEREE checked it; max
+  N_ep/|𝒞_f| = 45 at n = 32 against 4n − 3 = 125, REFEREE-2).
+- Referee strengthening (NOT part of this entry): FBC-N3 (REFEREE's proof, checked line by line and accepted by REFEREE-2 in its §C): at most
+  one saturated fallback per configuration and phase, via SAT_C (b), RESULTS R15 (b) through R57 (a), and RESULTS R38 (f) CN-LAST, so
+  f ≤ n·|𝒞_f(P)|. The same statement is a lane statement in packet P-N5-EPC §3 (Lemma SAT-FB, Corollary SAT-FB1, Theorem FB-C′; l-new
+  81ab0b72, sha1 9f48ded7, pinned), proved by the lane on its own route and in review; it lands, if at all, with that packet.
+- Honest limits: (i) A REDUCTION: f is bounded by distinct configurations at fallback sources, which is not bounded here on general games
+  (Π_q deg(q) in the worst case); for fixed k and bounded degree (b) is O(n²) per phase. (ii) The saturated term 4n(n − 1) + 1 is untested:
+  at most 1 saturated source per (phase, configuration) in every set of both referees, longest saturated window 2 transitions (tog6b_n32, REFEREE-2);
+  REFEREE-2's "≤ 1 saturated per C" control cannot bite (N-FBC-6; FBC-N3 proves why). (iii) Over-budget pairs: REFEREE-2 left 173 (phase,
+  configuration) pairs undecided at budget 3·10⁶ (1,519 fallback sources skipped for the LEV_C checks); at 3·10⁷ its six worst named
+  instances are decided except one configuration in each of ffin12_n32, rise_thin51_n40, zcl_rx_n32; REFEREE's n ≤ 34 row has 115 UNK
+  phases. (iv) No running-time bound.
+- Data (DATA, not proof): REFEREE (successor 15, own fbc_probe.py on its own engine; exact LEV_C by simple-path enumeration in H_C; lane code
+  not run): 35,720 runs in its §4 table over the library at n ≤ 20 and n ≤ 34 (1,140 files), two random 𝒞^kO batches (k ≤ 4, k ≤ 8) and
+  fr39_q4_n48, with 2,794 in-phase fallbacks checked exactly by FB-RISE_C out of 3,384 (the other 590 in the n ≤ 34 row's 115 over-budget
+  phases); its §C's "36,720 runs, 3,394 FB-RISE_C checks" is an arithmetic slip, corrected by its erratum below the §C (referee ae36ce48;
+  LEAD-N1); 0 failures of REAL, MONO, FBC, ODDC, SATB, SATW, THM, CORA, CORC; FLATLAST (FBC-N3) 951 Ξ-flat fallbacks, all end their
+  phase; reproduces fr39_q4_n48 (39 fallbacks, 7 configurations, 24 unsaturated) and farrise25_n32 (25); mutations MUT=1 (G_τ frame) 79,
+  MUT=2 (+2) 144, MUT=3 (S4c minimum) 15 and FLATLAST 8 failures. REFEREE-2 (successor 17, own fbc_check.py; lane code not run): 21,753
+  runs (named instances, lib41, its 503 𝒞^1O files, random games with 2, 4 and all Odd choice vertices); 2,294 fallback sources checked
+  exactly (1,637 unsaturated); 0 violations of every signed check, Case A in H_C 32,431,842 times; max f 37 in one phase (rise_fb38_n48,
+  |𝒞_f| 1); controls plus2 298 and tau 14,399 failures (the honest frame is what makes the Odd case free).
+- Signatures: REFEREE docs/referee/R-N5-FBC.md (referee 0addfc5f, §C d08011be, successor 15): FB-RISE_C, SAT_C, Theorem FB-C, Corollaries
+  (a)-(d) SIGNED, no gap; header claim CONFIRMED for n ≥ 2; notes FBC-N1..N4. REFEREE-2 docs/referee-2/R2-N5-FBC.md (referee-2 aab45be6,
+  §C bde1ea77, successor 17): the same items SIGN, no gap; header claim CONFIRMED for n ≥ 2; notes N-FBC-1..6. §C (both): verdicts identical;
+  joint gap map empty; FBC-N1 = N-FBC-3, FBC-N4 = N-FBC-5, REFEREE's n = 1 remark = N-FBC-4; N-FBC-1, N-FBC-2 accepted by REFEREE; FBC-N3
+  accepted by REFEREE-2 and explains N-FBC-6; nothing open. Both under the standing premise 1E-N3 (P1) and RESULTS R70's Q-A.
+- TARGET.md diff: not a claim of TARGET.md section 1 or §2 (a per-phase reduction of f; no running-time bound). GAPS G-N5-TIME: open.
+
+### R72 [refereed-only] N5 on EVERY game, inside one phase: a RELAY ρ event at a terminal q is traced to the exit e of q's CHOSEN option (e ≠ c, e ≠ q): e has a ρ event at the same transition, or e's honest play at t + 1 passes through q (TOG) (Lemma CHOSEN); following chosen exits, every RELAY event chains in at most |Q_c| − 1 steps to a ROUTE or CYC event of its class at the same transition, or to a TOG step (Corollary RELAY-CHAIN), so Σ_{q ∈ Q_c} ρ_q ≤ |Q_c|·(ROUTE_c + CYC_c + TOG_c) per phase (consequence (b)); and once every non-terminal of a class sits at its target value TV_Θ (hypothesis (H)), the class has no Even switch outside its terminals and no ρ event to the end of the phase (Lemma TV-END) (2026-10-26) — structural lemmas for N5 beyond one Odd choice vertex (no count: ROUTE_c, CYC_c, TOG_c and the time to (H) are not bounded here; not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C81.md, checker 3c5ae7ee)
+- Object (packet P-N5-CHOSEN, added at l-si b7189738, pinned trunk 9196c318, unchanged during review): docs/si/P-N5-CHOSEN-box19.md, sha1
+  764cfbb331a1aaefa819a01d64ee6b7cfbbd7316 (L-SI successor 15, Opus 5.5). The referees' notes are collected by the lane in
+  docs/si/P-N5-CHOSEN-fixes-box19.md (l-si d0b94c1f, sha1 2ae6f681c5abecc915f66296cd0c5a3d5fe1c73e, L-SI successor 16: F1-F7 for CHOSEN-N1..N5,
+  N-CHOSEN-1..7; 22 quotes checked by script); on trunk; repairs only, no signed statement changes.
+  Setting (every game): as in RESULTS R69 (phases as in R38 (a); Q; classes U_c, κ, κwt_c and ρ events as in RESULTS R56 and R61; EXIT and
+  CLASS EXIT PATH per y; ROUTE / RELAY as there); Q_c := (Q ∩ U_c) ∖ {c}, T := Q ∪ {c}; a ρ event at q is CYC if q = c or q lies on its honest
+  cycle at t or t + 1. The CHOSEN EXIT of q at t is the exit e of y* := σ̄_t(q), p its class exit path. A Q_c-RUN Θ is a maximal run of the phase
+  with Ξ(q) constant for every q ∈ Q_c; TV_Θ(z) := max(κopt_c(z), max_{q ∈ Q_c} κopt^q(z) + κ_Θ(q)) for z ∈ U_c ∖ T with RESULTS R56's κopt_c,
+  κopt^q (κ_Θ(c) means κ(c) = (0, 0): CHOSEN-N4, REFEREE); (H) at t ∈ Θ: κ_t(z) = TV_Θ(z) for every z ∈ U_c ∖ T.
+- Claims signed (both referees "(Opus 5.5, D15)", L37), on every game, inside one phase, fallbacks included; no item uses (P); premises LANDED:
+  RESULTS R15 (a), (d) ((SG) via (VJ), RESULTS R57 (a), under the standing premise 1E-N3, P1; (SW): every Even switch of N5 is to an edge
+  of Iσ); R38 (a) KEY; R56 setting line, (d) κ-Y-FORM_D (its "≤" half resting on R18 (d) Lemma S (a), every game), (g) Lemma TV (only for
+  when (H) holds); RESULTS R69's setting and additivity (P-N5-FLIP §1, signed as a proof step) and R69 (c) ROOT-C in its corrected form
+  ("class exit path AND exit"). CHOSEN's identity κ_t(q) = κwt_c(q) + κ_t(y*) at t is the play decomposition (one-step additivity); R56 (d)
+  with P1 is needed only for the "⪯" step at t + 1 (CHOSEN-N1 = N-CHOSEN-4, both referees):
+  (a) Lemma CHOSEN: for q ∈ Q_c on no honest cycle at t and t + 1 with a RELAY ρ event at t → t + 1, the chosen exit e satisfies e ≠ c and
+      e ≠ q, and either κ_t(e) ≠ κ_{t+1}(e) or e's honest play at t + 1 passes through q (TOG). The packet's statement says only "e ≠ c";
+      e ≠ q follows from the same hypothesis and RELAY-CHAIN uses it (N-CHOSEN-2, REFEREE-2; accepted by REFEREE, who had checked it).
+  (b) Corollary RELAY-CHAIN: with e_0 := q and e_{i+1} := the chosen exit of e_i while e_i has a RELAY event at t → t + 1, the e_i are distinct
+      and the sequence stops after at most |Q_c| − 1 steps at an e_i whose event is ROUTE or CYC, or at a TOG step. Consequences: (a) every
+      transition with a ρ event at a terminal of the class carries a ROUTE or CYC event of the class, or a TOG step; (b) per phase,
+      Σ_{q ∈ Q_c} ρ_q ≤ |Q_c|·(ROUTE_c + CYC_c + TOG_c), ROUTE and CYC events mapped to themselves (N-CHOSEN-3, REFEREE-2; accepted by REFEREE),
+      and REFEREE's §3 derives the sharper Σ_q ρ_q ≤ |Q_c|(ROUTE_c + CYC_c) + TOG_c (CHOSEN-N3; REFEREE-2's §C calls it a compatible reading of the same argument and does not sign it separately).
+  (c) Lemma TV-END: if (H) holds at t ∈ Θ and t → t + 1 is in the phase, no Even vertex of U_c ∖ T switches at t → t + 1, t + 1 ∈ Θ and (H) holds
+      at t + 1; hence from t to the phase's end class c has no switch in U_c ∖ T and no ρ event, and Θ lasts to the phase's end. By R56 (g), (H)
+      holds at every t after |U_c| − 1 fallbacks of the phase and of a Q-run. REFEREE-2 signed TV-END conditional on ROOT-C's corrected form
+      landing (N-CHOSEN-5); R69 (c) landed at trunk a7c141b8 with that wording, and its §C lifts the condition.
+- Not signed: consequence (a)'s parenthetical "(This is the stronger, per-event form of ROOT-C's consequence …)", which is not an implication
+  (CYC and TOG ends name no changed class exit path) (CHOSEN-N2, REFEREE; REFEREE-2's verdict is on the statement). READING (REFEREE's
+  CHOSEN-N2, both §Cs): (a) proves RESULTS R69's not-signed CONJECTURE ROOT-C strong form up to the TOG alternative. Also not signed (packet
+  §5): the obstruction map (READING) and the data.
+- Honest limits: (i) Structural lemmas: no count; ROUTE_c, CYC_c, TOG_c and the number of transitions before (H) first holds are not bounded
+  here; ρ events of the class all occur before (H) (TV-END bounds nothing by itself). (ii) TOG: CHOSEN's second alternative occurs, but in
+  both referees' data never alone (the first alternative held at every RELAY event) and no chain ends in a TOG step (CHOSEN-N5 = N-CHOSEN-6,
+  first half); the packet's §5 "TOG never occurs" is too strong. (iii) Over-budget classes: REFEREE-2 skipped 2,272 (phase, class) pairs for
+  TV-END (κopt over 3·10⁵ paths; tcL_*, pp_K48_n449); REFEREE 122 UNK classes in its §5 rows and 668 in the n ≤ 40 batch.
+- Data (DATA, not proof): REFEREE (successor 15, own chosen_probe.py; lane code not run): library n ≤ 24 (2,960 runs; ROUTE / RELAY / CYC
+  2,482 / 678 / 92; chains up to 11), random 3,000 games with ≤ 8 and ≤ 12 Odd choice vertices (15,000 runs each), the lane's five
+  instances at their starts and with S3, and the n ≤ 40 library batch (e49bf11a: 2,610 runs, 6,364 / 2,027 / 99, 1,485 TV-END checks, chains
+  up to 11, ends 2,015 ROUTE / 12 CYC / 0 TOG); 0 failures; TV-END tested at every non-final (H) state, 4,356 checks in the library and random
+  rows (2,145 with |Q_c| ≥ 1), so not thin (its §5; N-CHOSEN-6 second half); mutations MUT=1 (σ̄_{t+1}) CHO 5 / CHAIN 3, MUT=2 (TV without
+  the q-terms) 24. REFEREE-2 (successor 17, own chosen_check.py; lane code not run): 21,949 runs (the lane's instances, lib2o, lib41, its 503
+  𝒞^1O files, random games with 2, 4 and all Odd choice vertices); 6,322 RELAY events, 241 with TOG, first alternative at all of them; chains
+  up to 86 (tcL_N12, |Q_c| = 233); 66,816 (class, state) pairs reach (H), 2,955 transitions checked after (H); KADD 2,161,705 and KORD
+  2,410,459 self-checks; 0 violations; on its 503 𝒞^1O files 3,781 ROUTE, 68 CYC and 0 RELAY events (N-CHOSEN-7, cross-check of R69 (b)
+  SELF-FREE); controls next 740 and noH 12,651 failures. Both reproduce the lane's nep90_n40 (153 / 139) and nep76_n40 (129 / 48) at its
+  starts.
+- Signatures: REFEREE docs/referee/R-N5-CHOSEN.md (referee b3473114, data e49bf11a, §C d08011be, successor 15): CHOSEN, RELAY-CHAIN, (a)
+  (without its parenthetical), (b), TV-END SIGNED, no gap; notes CHOSEN-N1..N5. REFEREE-2 docs/referee-2/R2-N5-CHOSEN.md (referee-2 aab45be6,
+  §C bde1ea77, successor 17): the same items SIGN, TV-END conditional on ROOT-C's corrected form, lifted in its §C (R69 (c) at a7c141b8); no
+  gap; notes N-CHOSEN-1..7. §C (both): verdicts identical; joint gap map empty; CHOSEN-N1 = N-CHOSEN-4, CHOSEN-N5 = N-CHOSEN-6; CHOSEN-N3 and
+  N-CHOSEN-3 compatible wordings of (b)'s count; N-CHOSEN-1, -2, -3, -7 accepted by REFEREE; CHOSEN-N2 accepted by REFEREE-2; N-CHOSEN-5
+  closed by R69's landing; nothing open. Both under the standing premise 1E-N3 (P1).
+- TARGET.md diff: not a claim of TARGET.md section 1 or §2 (structural lemmas; no running-time bound). GAPS G-N5-TIME: open.
+
 ## Dead ends (kept; each with the exact obstruction or counterexample and the instance that killed it)
 - DE1 (2026-10-14): arXiv 2511.03752 v1 (van der Heijden), claimed O(n²(n+m)) algorithm. BROKEN: wrong regions on 4-vertex games
   CE1 (l-comp 19b5ce2, experiments/m2/counterexamples/ce1_4v.pg) and cex1 (referee 936d47c, docs/referee/scratch/cex1-*.pg).

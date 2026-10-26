@@ -1,0 +1,2 @@
+ga_checks=95488 ga_eq=21311 intervals=729
+FREEZEG PASS

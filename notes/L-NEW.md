@@ -15,6 +15,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - (2) Lemma SAT-FB (PROVED, from SAT_C alone): saturated C-fallback ⇒ last state of P or C never recurs; ≤ 1 saturated fallback per C; Theorem FB-C′
   f ≤ n·|𝒞_f| (⇒ R60 (c)). Successor 26's "flat and ends the phase" DEAD (rho3_253_n32, random start; 12 non-flat in liball). §5 of N5-NCONF.
 - R⁰ shape (r0shape.py): 610 of 616 fallback-free returns change σ̄ at ONE vertex; 577 keep |D| ≤ 1 (already under R68 (h) REC-1 (c)).
+- Packet P-N5-EPC-box48 FROZEN (81ab0b72, sha1 9f48ded7…; pin trunk f4562054): FB-RISE_C + SAT_C restated, RET-FB, VIS, EP-C, SAT-FB(1), FB-C′,
+  EP-ASM; FBC-N3 (REFEREE 15, 0addfc5f) cited as a referee note with the two routes compared; 24 quotes (quotecheck_epc.txt). Lead queue: FBC, CHOSEN,
+  then EPC. FBC fixes file later: FBC-N1 (D_k / EPOCH / N_ep defs), FBC-N2 (cite R57 (a)), FBC-N4 (R56 incomparability one-way), FBC-N3 → EPC §3.
 
 ## Box 47 log (successor 26, session_01NkLhWhNtcThjnCotjLUvvF; handover check 8a018742 (5/5, Lead 10:57Z); GO 10:57Z, Lead's stamp)
 - Container stale at 5961101a again; ff to e2a529fa; trunk f1d2cf09 merged (34a4d336), later trunk merged again. Oink built (rc 0, 8fbf0a7).
@@ -442,27 +445,38 @@ Every answer measured from the repository; commands named.
    fetched ref, so the pin cannot be checked yet; I checked the packet by sha1 (cbea0739…) against my own commit 1afccb51 instead.
    (iii) The container clock is slow vs the Lead's stamp (07:50 vs 07:53): stamp only from date -u, never ahead of it.
 
-## Resume point (overwritten at handover, LANE-RESTART step 1; successor 26, box 47, FINAL, written 2026-10-26 12:40Z by date -u)
-Successor 26 (Opus 5.5, D14/D18, L40), session_01NkLhWhNtcThjnCotjLUvvF. Handover check 8a018742 (5/5, Lead 10:57Z). ~400k context at parking.
-### DONE (all pushed with scripts/push.sh, rc 0; sha1s reported to the Lead)
-- X_dir (docs/new/N5-XDIR-box47.md, 3d2136fd): RESTRICT_U/REPRO_U (any U ⊆ Q), Lemma STAY, ROOT_v, CHOICE, XD-CAUSE, XD-ρ (lane-PROVED); 𝒞^2O ledger
-  (READING); XD-1 DEAD (pp2_n19); "no X_dir after an honest state" DEAD (xdhon_n13); σ̄ not carried by restriction (DATA, sbmis_n12).
-- HON-FF proved (docs/new/N5-HONFF-box47.md, 385a5534): Lemma FB-RISE, Theorem HON-FF (W-honest states ≤ 4n² − 3n, no f).
-- P-N5-HON-fixes-box46 FROZEN (0238b1cb, sha1 54985acf…; in R68 at CHECKER C77).
-- Packet P-N5-HONFF-box47 FROZEN (2fca63b8, sha1 98101d1f…; pinned trunk 4a0a8aba; referees on it now; question Q-A: Lemma P Case A with Ω := Ξ).
-- f per phase (docs/new/N5-FB-box47.md, fc8b88c4 + correction 1f8d6d7d's parent): τ-frame split, ρ/epoch charge DEAD (s4c8_n13), Lemma FB-RISE_C,
-  SAT_C, Theorem FB-C f ≤ |𝒞_f|(4n² − 3n). CORRECTION: R60 (c) EPOCH (landed) already has f ≤ 1 + n·N_ep; FB-C's new content is per DISTINCT
-  configuration over the whole phase.
-- Packet P-N5-FBC-box47 FROZEN (1f8d6d7d, sha1 32d3776cf4090fb15c1d0cb4c8b4f59276f64e21); referee queue: HONFF, then FBC.
+## Resume point (overwritten at handover, LANE-RESTART step 1; successor 27, box 48, FINAL, written 2026-10-26 15:01Z by date -u)
+Successor 27 (Opus 5.5, D14/D18, L40), session_01Eb3V637FARpmtRkvarA5Jx. Handover check 6ef1a695 (5/5, Lead 13:13Z). ~430k context at parking.
+### DONE (all pushed with scripts/push.sh, rc 0, VERIFY PASS; sha1s reported to the Lead)
+- P-N5-HONFF-fixes-box47 FROZEN (b2dcf365, sha1 ccc520dd…): both reports + §Cs (read on claude/referee e7db1ab4 and claude/referee-2 11e3cfb1),
+  7 notes, independence addendum; 45 quotes by experiments/new/box48/quotecheck2.py (REV:FILE sources).
+- docs/new/N5-NCONF-box48.md (working doc §1-§9): N_ep vs NCONF, laps, RET-FB, VIS, EP-C, SAT-FB, FB-C′, EP-ASM, R⁰ shape, root × relay, frozen-side.
+- Packet P-N5-EPC-box48 FROZEN (81ab0b72, sha1 9f48ded742d7f44bbf82ae8ec9e0e88c46457700; pin trunk f4562054; now PINNED on trunk by the Lead):
+  FB-RISE_C + SAT_C restated, RET-FB, VIS, EP-C, SAT-FB, SAT-FB1, FB-C′ (f ≤ n·|𝒞_f|), EP-ASM; FBC-N3 (REFEREE 15) as a referee note; 24 quotes.
+- Frozen-side u-run restriction (N5-NCONF §9): CONJECTURE RESTRICT_{u|J} with DATA (fsrestrict.py; 0 violations, controls bite).
 ### IN FLIGHT
-- Nothing running. Referees on P-N5-HONFF; P-N5-FBC queued after it. Both rest on Q-A (if Q-A is "no", FB-RISE and FB-RISE_C fall together).
-### NEXT (successor 27), the Lead's queue (12:32Z)
-1. Distinct configurations σ̄|Q per phase on general games (the configuration side of N_ep). Tools: box47/fbconf.py prints NCONF; data so far: max 7
-   per phase (fr39_q4_n48 with L-RED's start), 257 configurations against 1,399 epochs at n ≤ 34.
-2. A better saturated term for FB-C (data: ≤ 1 saturated fallback per configuration; proved 4n(n − 1) + 1). Obstacle: in H_C, Ξ = B_C does not
-   exclude an improving gate closing a cycle with a better top (λ-cycle nodes only bound B_C); need an in-phase contradiction as in HON-FB.
-3. Fixes files for P-N5-HONFF and P-N5-FBC when the referee notes arrive (template P-N5-HON-fixes-box46.md; quotes via box47/quotecheck.py).
+- Nothing running at parking (check `pgrep -fa "[p]ython3"`). Referee queue (Lead 14:47Z): FBC and CHOSEN in review, then EPC, then ROOT (L-SI 16).
+### NEXT (successor 28), the Lead's queue (14:58Z)
+1. Fixes files: P-N5-FBC-fixes-box47 when REFEREE-2 17's FBC report and both §Cs are in (notes so far, REFEREE 15 0addfc5f: FBC-N1 D_k / EPOCH /
+   N_ep defined in P-N5-HON §0 / R60 / R61; FBC-N2 cite R57 (a) for SAT_C (2)'s use of R15 (d); FBC-N3 = P-N5-EPC §3, say so; FBC-N4 "incomparable
+   with R56" witnessed one way only). Then P-N5-EPC-fixes-box48 when EPC's reports arrive. Template: P-N5-HONFF-fixes-box47.md; quotecheck2.py.
+2. Candidate route (OPEN, N5-NCONF §8): NCONF_{≥2}(S) ≤ (relay changes in S + 1)·deg(r) on a fallback-free run S, if L-SI 16's relay-only freeze
+   lands (the Lead paired L-SI 16 / L-RED 21 on "relay changes per fallback-free run").
+3. NCONF_{≥2} structure (root sweep × relay toggles; new configurations only in lap 1; pft34's single-root fallback-free laps).
 - Not routed: G-N1-LB.
+
+## Things only I know (successor 27)
+- RET-FB's whole point: S4c's relaxation of Even vertices is frame-free (FB-RISE items 2-3 use only G's edge and the bound on Ξ_t(z)), so one
+  fallback lifts LEV_C for EVERY configuration C; Odd vertices catch up at the next C-state, by induction on path length. That is why laps
+  restarted through a fallback are paid for.
+- SAT-FB in one line: SAT_C (2) makes Ξ flat up to any later C-state; a flat fallback leaves Iσ = ∅ (z* is the Ξ-maximum); the phase ends. No R15 (b)
+  or R38 (f) needed (REFEREE 15's FBC-N3 route uses them).
+- The official epoch is σ̄|Q constant (R63/R64), not D constant; "D changes + 1" is a LOWER bound. nep90 / nep76 are named after N_ep 90 / 76.
+- The fixes-file quote checker must read referee files at the commit holding their §C when trunk lags: box48/quotecheck2.py takes REV:FILE.
+- Python f-strings swallow "{≥2}": write handover text through a quoted heredoc.
+- pft34_h3u_P32's D-vertex 32 has two choices with the same top cycle (32 self-loop, 32→33→32): mutation controls that cut it are blind there.
+- Background runs: `( … &)` survives; wait with Bash run_in_background + an until-loop, or Monitor. push.sh takes 3-8 min when CPUs are busy.
+- The first push of a session hit a transient GitHub "remote rejected … fatal error in commit_refs_rules"; a plain retry via push.sh worked.
 
 ## Things only I know (successor 26)
 - The honest frame is the right frame for fallbacks: S4c is "switch each improving Even vertex to its Ξ-best gate", which in the frame H_C of the
@@ -1207,3 +1221,30 @@ Successor 26 (Opus 5.5, D14/D18, L40), session_01NkLhWhNtcThjnCotjLUvvF. Handove
   seeded ones refuted SB1 within minutes (11 at n = 10). Seed from structure whenever a "≤ f(n)" conjecture rests on climbs.
 - (succ. 3) Lemma NR (σ and τ never return; R15 (c)+(d)) kills every N5-following argument that needs a reply to come back.
 - (succ. 3) A worker restart can kill push.sh mid-run (exit 137): check `git rev-parse HEAD origin/claude/l-new` and re-run push.sh.
+
+## Successor 28 log (Opus 5.5, D14/D18, L40; session_01Dg8L3iN3G8HVzEVoGgCE1Y)
+- Handover check 9dbaf71f (Lead 15:16Z: 5/5, GO). Oink built (8fbf0a7).
+- 15:17Z (date -u): P-N5-FBC-fixes-box47.md written (repairs R1-R6 = FBC-N1/N-FBC-3, FBC-N2, N-FBC-1, N-FBC-2, n = 1 line/N-FBC-4, FBC-N4/N-FBC-5;
+  FBC-N3 = P-N5-EPC §3, not a repair; N-FBC-6 superseded). Sources opened: R-N5-FBC.md at claude/referee d08011be, R2-N5-FBC.md at
+  claude/referee-2 bde1ea77, packet at 1f8d6d7d, P-N5-HON l. 44 and RESULTS l. 2907, 3065-3068 at trunk 10b5b144, EPC at 81ab0b72.
+  quotecheck2.py: quotes 45 missing 0 (experiments/new/box48/out/quotecheck_fbc_fixes.txt).
+- 15:25Z (date -u): queue item 3 read (L-SI N5-ROOT-box20 §1-§9 at l-si 04894bb9; open count = gate offset / region resets per fallback-free run,
+  L-SI 16's to hand over). Item 4: N5-NCONF §10 Lemma RESTRICT_H / REPRO_H PROVED (port of R64 (a), (b): only (P1) Odd edges ⊆ G's, (P2) σ̄_k ∈ H,
+  (P3) τ ∈ H + Even lists intact are used); §9's CONJECTURE RESTRICT_{u|J} now an instance; new instance G^P (used-edge game of a phase).
+  DATA phrestrict.py: long3 0/0 (QP 5/5/3), liball n ≤ 34 1,031 phases 0/0, MUT bites (XI 514, REP 292). Sources: R64 at RESULTS l. 3206
+  (opened), P-N5-EPR §1-§2 (opened), R68 (f) (opened).
+- 15:40Z (date -u): Lead 15:38Z: freeze RESTRICT_H as a packet; item 3 moved to L-SI 17 (session_016b6dkXxRQVs8RACh8bSCyW; do not duplicate; L-SI 16
+  parked with RESET-PIECE, PING/FLIP charge DEAD); my next design item: QP (Odd vertices with ≥ 2 edges in G^P). Packet P-N5-RESTRICT-box48 FROZEN
+  (quotes 8 missing 0 vs P-N5-EPR at 08abd9cb). Trunk 9bbd86e4 merged (91a69007).
+- 15:52Z (date -u): QP (N5-NCONF §11). QP = |∪D_k| (elementary). Library: long phases have small QP (len ≥ 60: ≤ 3) but selection bias (|Q| = 1).
+  Climbs weak (O fixed by climb.mutate). DUNION: k copies of nep90 = one 91-transition phase with QP 5k at n 40k, so QP is the wrong parameter;
+  QP_c (per class) proposed; OPEN. Trap: climb.mutate never changes the Odd choice set; QP ≤ |O| by design.
+- 16:13Z (date -u): §12. qpcclimb (O-moves, long-phase starts): QP_c 13 / 14 / 10 in one class on phases 99 / 81 / 127 at n 48 (from nep90 / nep76 /
+  long121); RESTRICT_H holds on them (phrestrict 0/0). QP_c is not small on long phases. R63 reading: nothing landed bounds D0 or ENT.
+  Lead 16:01Z: EPC REFEREE report a52feb43 in (EPC-N1..N4); REFEREE-2 pending; do not start EPC fixes before both §Cs.
+- 16:32Z (date -u): Lead 16:24Z: scaling = short DATA step; main effort (2) count polynomial in n and k. docs/new/N5-KPOLY-box49.md: §0 QP_c 24 / 24 /
+  36 at n 64 / 64 / 80 (climbs; verify.txt); §1 R61's product = SAT-k iterated (odometer); CHOSEN RELAY-CHAIN (b) + R56 (f) already linear in k
+  given ROUTE (READING); §2 Lemma OFFSET-MONO PROVED (reset needs an ENTRY); DATA 0 resets / 0 entries (lib41, 6 long), controls bite; §3 exit
+  changes carry the count (PARCHG ≫ RISE); §4 Davenport-Schinzel view needs pairwise swaps, swaps 11-22 (not closed; DS source NOT opened);
+  §5 other fields READING only. Sources opened: R61 (c) l. 3122-3123, §5 l. 3134; R56 (a) l. 2851, (d) l. 2858; P-N5-CHOSEN l. 81 (sha1 764cfbb3).
+  Trap: pkill pattern inside the same bash -c string killed my shell (exit 144) again; launch and kill in separate calls.

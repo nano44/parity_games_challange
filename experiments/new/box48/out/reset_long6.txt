@@ -1,0 +1,6 @@
+nep90_n40: MQ_changes 268 PARCHG 53 RISE 4 checks 170 phases 1
+nep76_n40: MQ_changes 155 PARCHG 60 RISE 32 checks 171 phases 1
+long121_n40: MQ_changes 116 PARCHG 48 RISE 6 checks 106 phases 1
+best_qpc_nep90_n40_s51: MQ_changes 520 PARCHG 167 RISE 2 checks 494 phases 2
+best_qpc_nep76_n40_s52: MQ_changes 303 PARCHG 88 RISE 9 checks 455 phases 1
+best_qpc_long121_n40_s53: MQ_changes 285 PARCHG 103 RISE 6 checks 507 phases 1

@@ -113,7 +113,10 @@ R56 (g), sanity). Starts: S3 and random start pairs (lane instances: their start
   my check tests the lemma at every such non-final state: 4,356 checks in the library and random rows, 2,145 of them in classes with |Q_c| ≥ 1, 0 failures.
 - Mutations (each bites; random 1,500 games, seed 251, S3 + 4 random): MUT=1 (CHOSEN with σ̄_{t+1}(q), the lane's control): CHO fails 5
   times, CHAIN 3 times; MUT=2 ((H) read with TV′ := κopt_c only, the q-terms dropped): TVE fails 24 times.
-- A library batch at n ≤ 40 (S3 + 2 random) is still running at the push; its result goes into the §C.
+- Added after the first push (14:55Z by date -u): the library batch at n ≤ 40 (870 files, S3 + 2 random): 2,610 runs, 13,699 phases,
+  ρ events 6,364 / 2,027 / 99 (ROUTE / RELAY / CYC), 2,027 CHOSEN checks (TOG alternative 162, with a ρ event at e), chains max 11, ends
+  2,015 ROUTE / 12 CYC / 0 TOG, 15,560 (H) states, 1,485 TV-END checks (486 with |Q_c| ≥ 1), TVG 76, 668 classes over the TV budget;
+  0 failures (scratch/chosen_logs/lib40.txt).
 ## 6. Notes (none blocks a signature)
 - CHOSEN-N1 (wording, §2 first bullet). κ_t(q) = κwt_c(q) + κ_t(y*) is the play decomposition (no half of R56 (d) needed); the step that
   needs optimality is R56 (d)'s "≤" half at t + 1 (Lemma S (a), every game). Relabel the parenthetical.
@@ -125,3 +128,33 @@ R56 (g), sanity). Starts: S3 and random start pairs (lane instances: their start
 - CHOSEN-N5 (data). "TOG never occurs" (§5) holds for TOG-ended chains (0 in my data too), but CHOSEN's second alternative does occur
   together with the first, in every case I saw (frz40 at its start, t 44, class 30, q 0, e 11; pp_K12_n161 at its start, t 3, class 0,
   q 159, e 160, a relay flip 159 ↔ 160; 130 cases in the library, random and lane-with-S3 rows of §5, each with a ρ event at e). The DATA sentence should say "no chain ends at a TOG step".
+
+## §C. Comparison with REFEREE-2 (written 2026-10-26T15:03Z-15:06Z by date -u, after the Lead's word of 14:58Z; REFEREE-2's report
+docs/referee-2/R2-N5-CHOSEN.md at origin/claude/referee-2 64ee8e9c, read only after my report was pushed at b3473114)
+### Verdicts
+| item | REFEREE (b3473114, data added e49bf11a) | REFEREE-2 (64ee8e9c) | joint |
+| --- | --- | --- | --- |
+| Lemma CHOSEN | SIGNED | SIGN | SIGNED |
+| RELAY-CHAIN | SIGNED | SIGN | SIGNED |
+| consequence (a) | SIGNED, without its parenthetical "(This is the stronger, per-event form of ROOT-C's consequence …)" (CHOSEN-N2) | SIGN (the parenthetical not discussed) | SIGNED; the parenthetical is a READING (REFEREE's note; REFEREE-2 did not sign it as a separate claim either, its verdict being on (a)'s statement) |
+| consequence (b) | SIGNED | SIGN (with the completion N-CHOSEN-3) | SIGNED |
+| Lemma TV-END | SIGNED (ROOT-C cited in its landed corrected form, R69 (c)) | SIGN, conditional on ROOT-C's repaired form landing (N-CHOSEN-5: R69 was at CHECKER when written) | SIGNED: the condition is discharged, R69 (c) landed at trunk a7c141b8 (Lead 13:44Z; ancestor of my HEAD) with exactly the repaired wording ("class exit path AND EXIT") both referees signed |
+| quotes (9 tagged) | all PASS | all verbatim (+ N-CHOSEN-1) | verbatim |
+Verdicts identical up to the discharged condition. Joint gap map: EMPTY.
+### Notes, matched
+| REFEREE | REFEREE-2 | joint |
+| --- | --- | --- |
+| CHOSEN-N1 (κ_t(q) = κwt(q) + κ_t(y*) is the play decomposition; R56 (d)'s "≤" half is the optimality step, at t + 1) | N-CHOSEN-4 (the same: one-step additivity (Aκ), R56 (d) only for the "⪯" step at t + 1) | same note |
+| CHOSEN-N5 (TOG occurs, always with a ρ event at e; no chain ends at TOG; "TOG never occurs" too strong) | N-CHOSEN-6, first half (241 TOG cases, first alternative held at all 6,322 RELAY events; no TOG end) | same finding, independently; joint wording: "no RELAY chain ends in a TOG step; the TOG alternative is never the only one" (in both referees' data) |
+| §5 data: TV-END tested at every (H) state, 4,356 + 1,485 non-final checks, not thin | N-CHOSEN-6, second half (66,816 (H) pairs, 2,955 transitions after (H)) | same: the packet's "THIN" is an artefact of its R56 (g) trigger |
+| CHOSEN-N2 ((a)'s parenthetical is not an implication; (a) proves FLIP's CONJECTURE ROOT-C (strong form) up to TOG) | — | REFEREE's note; REFEREE-2's (a) verdict is on the statement, so no disagreement; for the Lead: the not-signed strong form in R69's list is now proved up to the TOG alternative, and in both referees' data the TOG alternative never stands alone |
+| CHOSEN-N3 (TOG_c counts events, so its factor \|Q_c\| is slack) | N-CHOSEN-3 (the map must also send ROUTE / CYC events to themselves) | complementary notes on (b)'s counting sentence; my §3 used the map with ROUTE / CYC as their own ends without flagging that the packet omits it: N-CHOSEN-3 ACCEPTED |
+| CHOSEN-N4 (κ_Θ(c) means κ(c) = (0, 0)) | — (its (ii) reads it the same way: "κ(c) constant for e = c") | same reading; notation note |
+| — (my §2: "Also e ≠ q (y*'s play avoids q)", checked, not raised) | N-CHOSEN-2 (CHOSEN's statement should say e ≠ q, which RELAY-CHAIN uses) | ACCEPTED (I checked e ≠ q but did not flag that the statement omits it) |
+| — | N-CHOSEN-1 (one «…» in §1 without its own [Q] tag) | ACCEPTED (harmless; I did not notice it) |
+| — | N-CHOSEN-7 (SELF-FREE cross-check: 0 RELAY events on 503 𝒞^1O files) | ACCEPTED as REFEREE-2's data (consistent with mine: CYC / ROUTE only where \|Q_c\| ≤ 1) |
+### Data
+Both own engines, 0 failures; both reproduce the lane's nep90 153 / 139 and nep76 129 / 48 at their starts (mine also frz40, pp_K12,
+pp_K48). My n ≤ 40 library batch (added to §5 at e49bf11a): 2,610 runs, 6,364 / 2,027 / 99 ROUTE / RELAY / CYC events, chains up to 11,
+1,485 TV-END checks (486 with |Q_c| ≥ 1), 0 failures. REFEREE-2's longest chain is 86 (tcL_N12, |Q_c| = 233), beyond my size limit. Both
+controls bite (mine: CHOSEN with σ̄_{t+1} 5, TV without q-terms 24; REFEREE-2: 740 and 12,651). Nothing open between the referees on CHOSEN.

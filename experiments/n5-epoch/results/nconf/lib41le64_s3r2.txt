@@ -1,0 +1,19 @@
+NCONF: 7596
+NCONF2: 1624
+N_ep: 8727
+R0: 0
+R0_2: 0
+RET0: 642
+RET0_2: 0
+UNK: 0
+phases: 5377
+runs: 1101
+max NCONF: 23 | experiments/red/so/instances/pft35_n48.pg[S3] phase[2,41] n=48 |Q|=1 N_ep=39 NCONF=23 NCONF2=0 RET0=13 RET0_2=0 R0=0 R0_2=0
+max NCONF2: 5 | experiments/red/carry/instances/meet_viol_n29.pg[R1] phase[8,12] n=29 |Q|=11 N_ep=5 NCONF=5 NCONF2=5 RET0=0 RET0_2=0 R0=0 R0_2=0
+max N_ep: 50 | experiments/si/orlens/instances/lev_l_x.pg[S3] phase[1,56] n=32 |Q|=1 N_ep=50 NCONF=14 NCONF2=0 RET0=17 RET0_2=0 R0=0 R0_2=0
+max R0: 0 | docs/referee/R-N5-L2/droplen_cex_n12.pg[S3] phase[0,4] n=12 |Q|=1 N_ep=1 NCONF=1 NCONF2=0 RET0=0 RET0_2=0 R0=0 R0_2=0
+max R0_2: 0 | docs/referee/R-N5-L2/droplen_cex_n12.pg[S3] phase[0,4] n=12 |Q|=1 N_ep=1 NCONF=1 NCONF2=0 RET0=0 RET0_2=0 R0=0 R0_2=0
+max RET0: 17 | experiments/red/so/instances/pftheta34_n32.pg[S3] phase[4,39] n=32 |Q|=1 N_ep=35 NCONF=17 NCONF2=0 RET0=17 RET0_2=0 R0=0 R0_2=0
+max RET0_2: 0 | docs/referee/R-N5-L2/droplen_cex_n12.pg[S3] phase[0,4] n=12 |Q|=1 N_ep=1 NCONF=1 NCONF2=0 RET0=0 RET0_2=0 R0=0 R0_2=0
+max UNK: 0 | docs/referee/R-N5-L2/droplen_cex_n12.pg[S3] phase[0,4] n=12 |Q|=1 N_ep=1 NCONF=1 NCONF2=0 RET0=0 RET0_2=0 R0=0 R0_2=0
+RESULT OK violations=0
