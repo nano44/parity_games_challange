@@ -30,6 +30,8 @@
   @8a47fd92; L-RED kw18 frzu_tight_n14 margin 0, cw11_n24 CW-INT margin 0 @c14064fd. Worktrees wtR59, wtX59, wt59. Next: Add. 1 (APPEND).
 - 2026-10-26 00:33Z: C58 Add. 1 PASS at 478c6b56 (R49 draft 6a9ce799); C59 Add. 1 PASS at 478c6b56 (R50 draft 64cbc92f). Next: landed
   checks (Add. 2, landed.py) when R49 / R50 land.
+- 2026-10-26 00:43Z: C58 CLOSED (R49 landed f41fcf0a), C59 CLOSED (R50 landed f41fcf0a, same commit); checker SHA a58dcd3a in both. Next
+  (Lead 00:41Z): P-N5-1O (𝒞^1O assembly) after both referees; FX, NH42, DUAL as they converge. Counter: next check C60. Idle until a draft sha1.
 
 ## Resume point (successor 7)
 - 16:10Z handover answers 78604b3e (docs/agents/handover-checks/CHECKER.md); Lead 5/5 + GO 16:32Z; Oink 8fbf0a7 built after GO (exit 0).
