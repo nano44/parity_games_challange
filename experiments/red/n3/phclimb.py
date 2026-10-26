@@ -24,7 +24,20 @@ def fit(g, st, kmax):
         j = i
         while j + 1 < len(rows) and keys[j + 1] == keys[i]: j += 1
         f = sum(rows[k]["fb"] for k in range(i, j))
-        best = max(best, (f, j - i) if FIT == "F" else (j - i, f)); i = j + 1
+        if FIT == "R":
+            c = r = 0
+            for k in range(i, j):
+                if rows[k]["fb"]: c = 0
+                else: c += 1; r = max(r, c)
+            best = max(best, (r, j - i))
+        elif FIT == "C":
+            from collections import Counter
+            Q = [v for v in range(g.n) if g.owner[v] == 1 and len(set(g.succ[v])) >= 2]
+            cf = Counter(tuple(rows[k]["nxt"][q] for q in Q) for k in range(i, j) if rows[k]["fb"])
+            best = max(best, (max(cf.values(), default=0), f))
+        else:
+            best = max(best, (f, j - i) if FIT == "F" else (j - i, f))
+        i = j + 1
     return (best[0], best[1], len(rows))
 
 def save(g, st, p):
