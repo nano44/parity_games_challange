@@ -1,0 +1,18 @@
+START fit (1, 0) n 40
+BEST step 11 fit (2, 0) t 0s
+BEST step 537 fit (3, 0) t 7s
+BEST step 799 fit (4, 0) t 11s
+BEST step 972 fit (5, 0) t 14s
+BEST step 1890 fit (6, 0) t 38s
+BEST step 1909 fit (7, 0) t 38s
+BEST step 3657 fit (8, 0) t 90s
+BEST step 4187 fit (9, 0) t 106s
+BEST step 4563 fit (10, 0) t 119s
+BEST step 5037 fit (11, 0) t 136s
+BEST step 6908 fit (12, 0) t 206s
+BEST step 6925 fit (13, 0) t 206s
+BEST step 7930 fit (14, 0) t 252s
+BEST step 8165 fit (15, 0) t 263s
+BEST step 8886 fit (16, 0) t 303s
+BEST step 10297 fit (17, 0) t 382s
+END steps 10596 best (17, 0) n 40 -> results/nconf/nconf2_fresh_n40_r2.pg

@@ -1,0 +1,11 @@
+START fit (38, 2) n 40
+BEST step 11 fit (39, 2) t 4s
+BEST step 67 fit (46, 1) t 19s
+BEST step 142 fit (49, 1) t 40s
+BEST step 523 fit (51, 1) t 128s
+BEST step 585 fit (52, 1) t 144s
+BEST step 963 fit (53, 1) t 245s
+BEST step 1105 fit (54, 1) t 291s
+BEST step 1340 fit (55, 1) t 353s
+BEST step 1396 fit (56, 1) t 369s
+END steps 1506 best (56, 1) n 40 -> results/nconf/nconf2_seed90_n40_r1.pg
