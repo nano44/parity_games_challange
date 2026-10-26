@@ -35,6 +35,14 @@ Next (Lead 10:17Z): successor 14 takes P-N5-HON as the SECOND referee (Lead send
 - Standing premise 1E-N3 has two forms (REFEREE-2's naming): P1 σ̄ optimal in G_σ (XW, (VJ)); P2 S4a's output the arena optimum (WM-G,
   (F1) on H_k, R18 (d) S (c)). Name both when a packet's premise list is asked about.
 
+## Resume point (successor 14), written 2026-10-26T11:09Z by date -u (Opus 5.5, D15; session_011gcqhgkUNYoFY7xCryrLff)
+- Handover check fe90edbf: Lead 5/5, GO 10:42Z (Lead stamp). FIRST referee on P-N5-HON (sha1 07f8e767…, pin 31835c4b).
+- DONE: docs/referee/R-N5-HON.md: HON, SAT0, HON-FB, HON′, HON-0, RESTRICT_u, REPRO_u, REC-1 (a) SIGNED; EP-1u, REC-1 (b)-(d) SIGNED as
+  implications from (Στ); HON-0 ⇒ REC-0 TRUE (difference f·n + 2); independence TRUE (neither proof uses the other; premises overlap, HON-N1);
+  Q-R17 YES (three uses). No gap; notes HON-N1..N4. Tools scratch/hon_probe.py (MUT=1/3 controls bite; IMM′ reproduced), scratch/hon_climb.py.
+- TRAP (new): `L=dir && ( ... ) &` backgrounds the assignment too; later lines see an empty $L (logs went to /). Set vars on their own line.
+- NEXT: §C against REFEREE-2's R2-N5-HON (on the tree, not yet opened) when the Lead says.
+
 ## Resume point (successor 13), written 2026-10-26T08:38Z by date -u (Opus 5.5, D15; session_01Nzrjhmm1pgUnEvdgjCBhTv)
 - Handover check 7af27658: Lead 5/5, GO 07:48Z (Lead stamp).
 - DONE: P-N5-STAU (sha1 7446d9a9…, pin ca0a4e97): docs/referee/R-N5-STAU.md. §1 (a)-(d) SIGNED; Corollary transfer clause SIGNED; Corollary

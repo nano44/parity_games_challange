@@ -1,0 +1,81 @@
+RUN ../red/n5inj/instances/phase2_pk48.pg k0=9 len=1 edges_forbidden=9 persistent=9
+  EDGE (19, 1) first=0 last=0 count=1 PERSISTENT
+  EDGE (8, 1) first=0 last=0 count=1 PERSISTENT
+  EDGE (39, 14) first=0 last=0 count=1 PERSISTENT
+  EDGE (17, 9) first=0 last=0 count=1 PERSISTENT
+  EDGE (34, 22) first=0 last=0 count=1 PERSISTENT
+  EDGE (47, 9) first=0 last=0 count=1 PERSISTENT
+  EDGE (3, 6) first=0 last=0 count=1 PERSISTENT
+  EDGE (44, 11) first=0 last=0 count=1 PERSISTENT
+  EDGE (45, 30) first=0 last=0 count=1 PERSISTENT
+  U []
+  VERTEX 12 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 13 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 18 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 19 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 44 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 47 {'changes': 1, 'window': 1} charged_edges=[]
+RUN ../red/n5inj/instances/phase2_pk48.pg k0=11 len=2 edges_forbidden=7 persistent=7
+  EDGE (9, 35) first=0 last=1 count=2 PERSISTENT
+  EDGE (1, 30) first=0 last=1 count=2 PERSISTENT
+  EDGE (39, 14) first=0 last=1 count=2 PERSISTENT
+  EDGE (34, 22) first=0 last=1 count=2 PERSISTENT
+  EDGE (3, 6) first=0 last=1 count=2 PERSISTENT
+  EDGE (44, 11) first=0 last=1 count=2 PERSISTENT
+  EDGE (45, 30) first=0 last=1 count=2 PERSISTENT
+  U []
+  VERTEX 1 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 8 {'changes': 2, 'window': 2} charged_edges=[]
+  VERTEX 12 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 13 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 18 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 19 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 31 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 44 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 47 {'changes': 1, 'window': 1} charged_edges=[]
+RUN ../red/n5inj/instances/phase2_pk48.pg k0=15 len=12 edges_forbidden=11 persistent=3
+  EDGE (16, 11) first=0 last=0 count=1 
+  EDGE (39, 14) first=0 last=0 count=1 
+  EDGE (44, 11) first=0 last=0 count=1 
+  EDGE (45, 30) first=0 last=0 count=1 
+  EDGE (1, 30) first=0 last=1 count=2 
+  EDGE (23, 30) first=0 last=1 count=2 
+  EDGE (47, 12) first=5 last=8 count=4 
+  EDGE (44, 19) first=4 last=9 count=6 
+  EDGE (16, 14) first=0 last=11 count=12 PERSISTENT
+  EDGE (11, 14) first=2 last=11 count=10 PERSISTENT
+  EDGE (16, 23) first=3 last=11 count=9 PERSISTENT
+  U [(16, (16, 11)), (16, (39, 14)), (16, (44, 11)), (16, (45, 30)), (17, (1, 30)), (17, (23, 30)), (24, (47, 12)), (25, (44, 19))]
+  VERTEX 1 {'changes': 2, 'window': 2} charged_edges=[]
+  VERTEX 3 {'changes': 2, 'window': 2} charged_edges=[]
+  VERTEX 6 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 8 {'changes': 2, 'window': 2} charged_edges=[]
+  VERTEX 10 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 11 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 12 {'changes': 2, 'window': 2} charged_edges=[]
+  VERTEX 13 {'changes': 2, 'window': 2} charged_edges=[]
+  VERTEX 14 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 15 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 16 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 18 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 19 {'changes': 2, 'window': 2} charged_edges=[]
+  VERTEX 23 {'changes': 2, 'window': 2} charged_edges=[]
+  VERTEX 25 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 30 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 31 {'changes': 2, 'window': 2} charged_edges=[]
+  VERTEX 39 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 44 {'changes': 2, 'window': 2} charged_edges=[]
+  VERTEX 45 {'changes': 2, 'window': 2} charged_edges=[]
+  VERTEX 47 {'changes': 1, 'window': 1} charged_edges=[]
+RUN ../red/n5inj/instances/phase2_pk48.pg k0=41 len=7 edges_forbidden=0 persistent=0
+  U []
+  VERTEX 29 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 32 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 36 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 37 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 38 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 40 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 43 {'changes': 1, 'window': 1} charged_edges=[]
+L=-1 MUT=0 U=8 UF_ONCE_V=1 changes=54 forb_gate_a_in_F=72 forbidden_edges=27 forbidden_pairs=72 gen_clean=1272 gen_clean_content=1130 max_KF=12 max_U_per_vertex=2 max_U_run=8 max_changes_per_vertex=2 max_charged_edges_per_vertex=0 max_charged_per_vertex=0 max_forb_states_per_edge=12 max_last_forb_rel=11 max_pers_count=12 max_runlen=12 max_span=11 max_span_minus_n=0 offup_checked=49 offup_cn_split=23 persistent_edges=19 runs=4 states=26 switches=35 window=54
+VIOLATION ('UF_ONCE', '../red/n5inj/instances/phase2_pk48.pg', 15, [(16, (16, 11)), (16, (39, 14)), (16, (44, 11)), (16, (45, 30)), (17, (1, 30)), (17, (23, 30)), (24, (47, 12)), (25, (44, 19))])
+SCHED FAIL

@@ -17,6 +17,26 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   a cycle node of its own cycle tie in S4a's optimum. Count before you claim.
 - Trap (again): my own wait loop `until ! ps -p $(pgrep -f "...push.sh")` never ended (pgrep -f matched itself); killed by pid.
 - h3_19: LEVELCOUNT / LEVELPAY demoted to counters (lc_viol, lp_viol): with them as FAIL, climbfr19 wrote 402 _FAIL_ files in 30 s.
+- Box 47: R80 docs/red/R80-usplit-kill.md: KILL of CONJECTURE U-SPLIT (L-SI §17) from SPEC S3, usplit_s3_n16 (6a3461f4), 𝒞^1O;
+  confirmed by L-SI sched.py (U_OTHER), own usplit20.py, n5.py (3 it, 0 fb), Oink. Family mkusplit.py (experiments/red/usplit/).
+  ADDENDUM R80 §0a: the first family changes R_D (z leaves R_D) — a kill of §17 AS WRITTEN only. usplit_rd_s3_n27 (1e9ca56d, 𝒞^2O,
+  S3, zero-offset gate u0 with equal path sets, c = 1000 high) has no boundary of any kind (R_D constant): kill under both readings.
+  Lesson: check every definition clause of the target (stretch_D = D, R_D, gate values), not only the clause the target spells out.
+  Lead messages 08:32Z (PAIR-OC), 08:56Z (UF-ONCE, later dropped), 09:31Z (U-SPLIT), 10:11Z sat unread until 10:20Z: the trap again.
+- Box 48: R81 docs/red/R81-pairoc-kill.md: KILL of CONJECTURE PAIR-OC (L-SI §15), pairoc_n58 (4824c73c, start pair), W levels 47, 48, 47
+  at three offset changes of v = 57; L-SI lvl2.py PAIROC_V, own h3_19, n5.py (5 it, 0 fb), Oink. LC2 survives (3 ≤ 5). Generator mkpairoc.py.
+  h3_19: PAIROC now a counter (pairoc_viol); LC2 a FAIL check (live).
+- Box 49: R82 docs/red/R82-linear-offset-changes.md: (b) DONE — mkgrow gives K offset changes of one vertex in one stretch_D at
+  n = 8K + 53 (linear; mkalt √n). Ξ-blocked routes unblocked by taps on ONE shared line per side; c high so fillers are irrelevant.
+  Pins grow_K12_n149 (71521dd5), grow_K40_n373 (42f21793); lvl2 max_oc 40; Oink OK. Also K U events of one vertex per run.
+- Box 50 (Lead 10:42Z: re-thaw loop, relay cycles): R83 docs/red/R83-relay-cycles-linear.md. mkpp: relay 2-cycle q1 <-> q2 used
+  K/2 times in ONE phase; N_ep = K+3, ρ_q = K+2, n = 8K+65 (K 6..48); exponent 1; pins pp_K12_n161 (8808ba5d), pp_K48_n449 (a161569d).
+  READING: relays change Ξ(q) not W(q) (τ fixed), so they reach Even only via gating; super-poly needs re-armable Ξ-gates.
+- Box 50b: R83 §4 addendum + mkrho.py: re-armable line works in one phase, but ρ_q ≤ T and my T ≲ n; event-driven re-triggering
+  closes a cycle through the risers. Sent 11:02Z; asked Lead: gate re-entry test (recommended) vs LC2 vs (c).
+- RESUME POINT (successor 20, 11:03Z): waiting for the Lead's pick. Nothing running. Tools: experiments/red/rec0/ (REC-0, epochs),
+  experiments/red/usplit/ (mkusplit, mkusplit2, mkpairoc, mkgrow, mkpp, mkrho; usplit20 checker; show.py), h3_19 (PAIROC counter, LC2 FAIL).
+- LC2 climbs (ANALYSER=h3, lc2_slack) from pairoc_n58 / n90: best slack 0 (equality), no kill (in flight at 10:5xZ).
 - (b) started: ANALYSER=h3 climbfr19 on lc_maxchg from lcount_n23: stuck at 3 changes (219 k evaluations). Next box.
 
 ## Successor 19 HANDOVER (written 2026-10-26 ~08:00Z, date -u; ~560k context; for successor 20)

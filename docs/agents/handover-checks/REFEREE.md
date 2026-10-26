@@ -1,5 +1,48 @@
 # Handover check: REFEREE
 
+## successor 14 (2026-10-26T10:29Z by date -u; Opus 5.5 under D15, label "(Opus 5.5, D15)"; predecessor successor 13, handover 62a1a01d)
+Measured from the repository at the time of writing, not recalled.
+
+### 1. Branch, head, distance to trunk
+- Branch `claude/referee`. Local branch started STALE at 73b46eb8 again (`git rev-list --count 73b46eb8..62a1a01d` = 2790).
+  `git fetch origin`; `git merge --ff-only origin/claude/referee`: HEAD = 62a1a01d (`git merge-base --is-ancestor 62a1a01d HEAD` true).
+- Trunk `claude/vibrant-johnson-nxvvxo` at e03e7565 ("Lead: L-SI 14 check 5/5, GO; R79 logged; ..."). Before merging, 62a1a01d was
+  2 ahead / 82 behind trunk (merge-base 981307c9, the REC0 §C commit). The 2 ahead: R-N5-RUND §C and the successor-13 HANDOVER (62a1a01d).
+- Merged trunk with `git merge` (merge commit 6984f0f0): 3 ahead / 0 behind before this file's commit.
+- Oink: scripts/setup_oink.sh built 8fbf0a7 into tools/oink/build, exit 0.
+
+### 2. Open work and next step
+- Handover "IN FLIGHT: none" checked: R-N5-STAU, R-N5-REC0, R-N5-RUND all exist in docs/referee/ with their §C sections.
+- New (Lead brief to successor 14): P-N5-HON, docs/new/P-N5-HON-box46.md, sha1 07f8e767cfca12d29c8f6f2e3f03358326abbef1 (re-measured on the
+  tree and at l-new 67a7b54d: match), pin trunk 31835c4b (ancestor of HEAD). I am the FIRST referee (the handover said "second"; the Lead's
+  brief governs). Next, after "go": sign or not the lane-PROVED items HON, SAT0, HON-FB, HON′, HON-0, RESTRICT_u, REPRO_u, REC-1 (a); sign
+  EP-1u and REC-1 (b)-(d) as implications from (Στ); check Q-R17 in HON's own use; check §2's two claims (HON-0 ⇒ signed REC-0; proofs
+  independent); §5 HON-FF not signed. Report docs/referee/R-N5-HON.md; own engine; no docs/referee-2/ HON file opened before my report is
+  pushed (none on the tree at this fetch: `ls docs/referee-2/ | grep -ic hon` = 0).
+- Handover NEEDS (not mine; Lead routes): STAU fixes (STAU-1, N-STAU-1..4, STAU-N1..N3) to L-NEW 25; REC0 / RUND notes to their fixes files.
+
+### 3. docs/GAPS.md rows relevant to me (trunk e03e7565)
+- REFEREE owns no row. The row my packets feed: G-N5-TIME (l.11), major, owner L-NEW ("referees later"), **open**; last UPDATE 09:56Z:
+  R65 (P-N5-STAU) landed; at audit strength (Στ) holds and R64 (e) EP-1 holds without it; "N_ep / ρ and epochs with |D_E| ≥ 2 OPEN;
+  general games OPEN." RESULTS runs to R65 (`grep -n "^### R6[5-9]" docs/RESULTS.md`: R65 at l.3324 only).
+- Other open rows (not mine): GAP-A, GAP-C, G-S5-6, G-NEST, G-N1-LB. G-N5-TERM closed.
+
+### 4. Three owner rulings that most constrain me (verbatim, docs/DECISIONS.md), with DECISIONS-INDEX status
+1. D1 (index l.5: **active**; DECISIONS.md l.7-8):
+   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+   > Never downgrade the referee to save money.
+2. D15 (index l.26: **active**; DECISIONS.md l.278):
+   > q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it
+3. D18 (index l.32: **active**; DECISIONS.md l.333):
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+
+### 5. One trap that bit this lane, and the check that prevents it
+- Trap (successors 5-14): the container starts stale at 73b46eb8 (2790 behind the handover SHA this time). Check: `git fetch origin`,
+  fast-forward, `git merge-base --is-ancestor <handover SHA> HEAD` before any work.
+- Content trap (successor 13, STAU): a citation-chain audit that excluded docs/referee* missed referee-written proof steps that RESULTS
+  cites as gap closures. Check: for HON's §2 independence claim and REC-0 implication, build the citation closure including referee-written
+  sections (scratch/stau/closure2.py), and verify every quoted parenthetical by script against the cited file.
+
 ## successor 13 (2026-10-26T07:33Z by date -u; Opus 5.5 under D15, label "(Opus 5.5, D15)"; predecessor successor 12, handover 010924c7)
 Measured from the repository at the time of writing, not recalled.
 

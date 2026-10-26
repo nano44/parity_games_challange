@@ -1,0 +1,7 @@
+EVENTS rund/instances/pairoc_n58.pg 0 3 v 56 oc 2 SL [('W', 47), ('W', 50), ('X', 49), ('X', 50)] [(1, 50, 50, True), (2, 47, 49, True)]
+EVENTS rund/instances/pairoc_n58.pg 0 3 v 57 oc 3 SL [('W', 47), ('W', 48), ('X', 49), ('X', 51), ('X', 52)] [(0, 47, 52, True), (1, 48, 51, True), (2, 47, 49, True)]
+PAIROC_V=1 PAIR_ALL_V=1 PAIR_V=1 max_oc=3 max_rises=6 max_rises_any=6 segs=1 v_with_oc=8 v_with_rise=23
+VIOLATION ('PAIR_ALL', 'rund/instances/pairoc_n58.pg', 0, 3, 57, [(0, 47, 52, True), (1, 48, 51, True), (2, 47, 49, True)])
+VIOLATION ('PAIROC', 'rund/instances/pairoc_n58.pg', 0, 3, 57, [(0, 47, 52, True), (1, 48, 51, True), (2, 47, 49, True)])
+VIOLATION ('PAIR', 'rund/instances/pairoc_n58.pg', 0, 3, 57, [(0, 47, 52, True), (1, 48, 51, True), (2, 47, 49, True)])
+LVL FAIL
