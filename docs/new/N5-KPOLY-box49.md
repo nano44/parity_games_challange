@@ -197,3 +197,8 @@ q's CHOSEN option only (par(q) = the exit of σ̄(q), which is CHOSEN's chosen e
 - (b2) an EXIT change at q can be a RELAY event: q switches between two options with unchanged paths and different exits because the exits'
   values moved (the ping-pong of N5-NCONF §8 / P-N5-ROOT). So EXIT ⊄ ROUTE; R72 charges those to the chosen exit's own ρ event (CHOSEN), mine
   counts them as EXIT_q. The two decompositions are complementary, not nested; neither yields a new statement here.
+
+## 10. Pointer (successor 29): §8 is frozen as docs/new/P-N5-OFFMONO-add-box49.md
+Remark Z-CONST, Corollary CHAIN-COUNT′ and Lemma ZCH-COUNT are restated with full proofs there; that addendum governs. Differences (its §5):
+the cut set is ZC_c = ZCH_c ∩ CYC_c (KPOLY's ZCH_c form follows); TIE requires N ≠ ∅; the bound is (n − 1)|U_c| + TIE_c + ODDC_c. DATA zch.py: 0
+violations on lib41 n ≤ 34 (746 phases, 133 cycle changes: STRICT 50, TIE 3, CEVEN 79, ODDC 1) and seven long instances; sign and exit controls bite.
