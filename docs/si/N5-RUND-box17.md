@@ -296,3 +296,184 @@ Proof. λ_W is constant on S (P-N5-H3 §6, (ii)). The maximal blocks of transiti
 - N_split per run. Since the forbidden edges are persistent and structural (R_D → F_D across an offset gap), the natural next statement
   is Lemma P restricted to paths whose edges are never forbidden on S. That is a per-offset-class P^c (R50 FRZ-U's "paths inside R to o"
   with the offset class for R). Then one counts the transitions not covered by it. Not attempted yet.
+
+## 12. CONJECTURE LEVEL-COUNT (Lead's GO 07:20Z): tests, a dead strong form, and the step a proof would need
+Notation: inside one stretch_D segment of a run with (h3_D), for v with constant cycle nodes, OC(v) := the transitions at which Δ(v)
+changes, and RL(v) := the RISE LEVELS of v. A rise level is the top rank of P_k Δ P_{k+1} at a transition where s^W(v) or s^Ξ(v) rises.
+- CONJECTURE LEVEL-COUNT (count form): |OC(v)| ≤ |RL(v)| (≤ n).
+- Strong form INC ("levels only increase"): the rise level at successive offset changes of v strictly increases. It would give the count
+  form at once.
+### Lemma RULER (PROVED, elementary; WM-G / (SG) give exactly this and no more)
+For one score (s^W(v), or s^Ξ(v)) along a run on which v's cycle node is constant, two rises at the same level r are separated by a rise at
+a level > r.
+Proof.
+- A rise at level r flips the membership of rank r in the path set in the weight-increasing direction: an even r is added, or an odd r
+  is removed. Every lower rank may change.
+- A second rise at level r needs r flipped back in between. The transition doing that changes the set at level ≥ r.
+- At exactly r it would be a fall, against monotonicity (WM-G for W, (SG) for Ξ). So its level is > r, and it rises. □
+- Hence the rises of one score form a ruler sequence on the levels RL(v): |rises| ≤ 2^{|RL(v)|} − 1. By TWIN-GAP (i) each offset change
+  is a rise of one score, so |OC(v)| ≤ 2·(2^{|RL(v)|} − 1). That is all monotonicity gives.
+- The step the count form needs and RULER does not give: no level is used by two offset changes of v (two returns cannot reuse a level
+  with only a higher rise in between). Neither WM-G nor (SG) gives it. A proof must use the dynamics (S4a's arena and the delay
+  structure), not monotonicity.
+### DEAD: the strong form INC (instance)
+- experiments/si/rund/instances/incdown_n23.pg (sha1 18a5d000…) with incdown_n23.start (sha1 634dbc59…). Built by mkinc.py 2 4, which is
+  mkret.py with the safe exit s1 of the u1 route made a HIGH ODD vertex (3901 > h = 3800 > y2 = 3600).
+  - v = 22 leaves u1 for u2 because u1's route holds the odd s1: a rise at level 20, s1's rank.
+  - It comes back when the delay chain delivers the route through h without s1: a rise at level 19 < 20.
+  - Trace logs/trace_incdown_n23.txt: states 0-3 are one phase and one stretch_D (D = {4, 12}, gates unchanged, c = 0, (h3_D), no
+    fallback). lvl.py prints `VIOLATION ('INC', 'instances/incdown_n23.pg', 0, 3, 22, [20, 19])`. The count form holds there (2 changes, 2 levels).
+- Mechanism: a return can be paid by REMOVING a high odd vertex and winning at a lower level. So rise levels at offset changes need not
+  increase. Variants mkinc.py m LG, with (m, LG) = (2, 5), (2, 6), (3, 5), (3, 6), give the same.
+### DATA for the count form (lvl.py; LC_V counts violations)
+| set | stretch_D segments | vertices with an offset change | max offset changes of one vertex in one segment | LC_V |
+| --- | --- | --- | --- | --- |
+| lib41 (≥ 2 Odd choices, n ≤ 48), S3 + 2 random starts | 138 | 12 | 1 | 0 |
+| random 𝒞^2O, 6,000, n 5-14, seed 62 | 824 | 0 | 0 | 0 |
+| offret_n23 / incdown_n23 | 1 / 1 | 1 / 1 | 2 / 2 | 0 / 0 |
+| mkalt K = 4, 8, 10 | 1 each | 1 each | 3, 7, 9 | 0 |
+- Natural data never has two offset changes of one vertex in one stretch_D. The count form is tested only on constructions, so it is
+  weakly supported: CONJECTURE, DATA on the constructions only.
+- Suggested attack for L-RED: combine mkalt's alternation with mkinc's odd-removal returns, so that a vertex alternates sides with rise
+  levels a, b, a, … (b > a). That is the pattern RULER allows and the count form forbids. Breaking it needs routes that reuse vertices
+  across time (positional routes at one time are disjoint after they diverge, but not across times).
+
+## 13. The restricted Lemma P (Lead's GO 07:30Z, first attempt): Lemma P^c_ok and Corollary FRZ-OK (PROVED, every game) and DATA
+Setting. S: a fallback-free run inside one phase on which CR-D's (ii) holds (λ_W constant; e.g. (h3_D) at every state, P-N5-H3 §6).
+Level −1 ≤ L < ∞, COARSE := COARSE_L. An Even edge (x, z) is FORBIDDEN AT k (at level L) if z ≠ a := σ_k(x),
+COARSE(W_k(z)) ≻ COARSE(W_k(a)) and not Ξ_k(z) ▷ Ξ_k(a). It is OK ON S if it is forbidden at no state of S.
+### Lemma P^c_ok
+For every j with k_0 + j ∈ S, every x, and every simple path r of G_τ from x to a vertex u with λ_W(u) = u, with ≤ j edges, ALL OF
+WHOSE EVEN EDGES ARE OK ON S: Ω^c_{k_0+j}(x) ⪰ COARSE(value(r)).
+Proof. P^c_L's proof (P-N5-H3 §5) verbatim, with (i) used only where it is used there:
+- In Case B at the first edge (x, z) of r, at state k, (i) is used to turn Ω^c_k(z) ≻ Ω^c_k(a) into Ξ_k(z) ▷ Ξ_k(σ_k x). That is exactly
+  "(x, z) is not forbidden at k". The edge is OK, so the step holds.
+- The induction hypothesis is applied to the suffix r′, whose Even edges are OK too.
+- Cases A, B1 and B2 use only (ii), WM-G and (F1). □
+### Corollary FRZ-OK
+For every t ∈ S with t ≥ k_0 + n − 1 and every x whose W-play prefix at t (to its cycle node) uses only OK Even edges:
+COARSE(W_t(x)) = COARSE(W_{k_0+n−1}(x)).
+Proof. As CR-D's proof. That prefix is a simple path r_t of G_τ with ≤ n − 1 edges to λ_W(x), constant by (ii), and its Even edges are
+OK. Then P^c_ok at j = n − 1 and (MON) from k_0 + n − 1 to t give two inequalities, and (C3) makes them an equality. □
+- This is CR-REL with the edge order transfer required only on the edges the lower bound uses. FRZ-OK freezes vertex by vertex, at
+  full resolution (L = −1) if wanted, where CR-D / FRZ-U_H3 freeze globally at L ≥ max M_D (content-free in data, §3).
+### DATA (okfrz.py, L = −1; logs/okfrz_long.txt; the three long (h3_D) runs; MUT=1, freeze from k_0 + 1, fails on all three)
+
+| instance | pairs (t, x), t ≥ k_0 + n − 1 | covered (play uses only OK edges) | covered with content (non-empty path part) | edges forbidden somewhere on S | FRZOK_V |
+| --- | --- | --- | --- | --- | --- |
+| frz1_n24 (.start) | 24 | 2 | 1 | 9 | 0 |
+| frz3_n24 (.start) | 24 | 2 | 1 | 12 | 0 |
+| pftheta34_n32 (S3) | 96 | 17 | 14 | 14 | 0 |
+
+- FRZ-OK has CONTENT where FRZ-U_H3 has none: 14 frozen full values with non-empty path parts on pftheta34_n32.
+- Coverage is low: most W-plays use an edge that was forbidden at SOME state of the run (9-14 such edges per run).
+### Where this stops (exact state for successor 13)
+- "OK on S" is too strict: an edge forbidden only early in S blocks the lower bound for the whole run.
+- Next statement to try, P^c_ok(t): with "OK on [k_0 + j′, …]", i.e. edges not forbidden after some state. The induction in P^c_L can start
+  at any state of S, so the lower bound restarts at the last forbidden state of the path's edges. If edges stop being forbidden after
+  ≤ p(n) transitions, the freeze holds from there. DATA needed first: per run and edge, the last state at which it is forbidden.
+- If, instead, some edge stays forbidden through the whole run while x's play uses it, x is not covered. Then the count needed is how
+  often x's value can change while its play uses a persistently forbidden edge. That is the N_split question of §11 in per-vertex form.
+
+## 14. Lemma P^c_sch: the restricted Lemma P with an exact per-edge schedule (successor 13, Lead's GO 08:08Z; PROVED, every game) and DATA
+Written 2026-10-26 08:1xZ onward (date -u) by L-SI successor 13 (session_018EgSbDTYEVHqL882sCoX7u). Continues §13 from its stopping point.
+Setting as §13: S = states k_0, …, k_1 inside one phase, every transition an S4a step (no fallback), and CR-D's (ii) (the W-cycle-node map
+λ_W is the same at every state of S). (h3_D) is NOT assumed; (ii) is all the proof uses. Level −1 ≤ L < ∞; "forbidden at k" as in §13.
+- The observation: in P^c_L's step from k to k + 1 (P-N5-H3 §5), hypothesis (i) is used ONCE, in Case B, on the FIRST edge (x, z) of r,
+  at state k. The suffix r′ enters only through the IH at state k. Unrolled, edge q of a path that is used at state k is looked at only at
+  state k − 1 − q. "OK on S" (§13) asks for every state; the proof needs one state per edge.
+- Definition. For a simple path r = (r_0, …, r_m) of G_τ ending at a W-cycle node, and a state k ∈ S: the SCHEDULE of r at k is CLEAN if
+  k − m ≥ k_0 and, for every q < m with r_q Even, the edge (r_q, r_{q+1}) is not forbidden at state k − 1 − q.
+### Lemma P^c_sch (PROVED, every game)
+If the schedule of r at k is clean, then Ω^c_k(r_0) ⪰ COARSE(value(r)).
+Proof. Induction on m, for all k at once.
+- m = 0: r = (u), and Ω_k(u) = (u, ∅, 0) by (ii) (k ≥ k_0).
+- m ≥ 1: r = x → z → r′ with r′ simple, avoiding x, m − 1 edges. The schedule of r′ at k − 1 is clean: (k − 1) − (m − 1) = k − m ≥ k_0,
+  and edge q′ of r′ is edge q′ + 1 of r, looked at in both at state (k − 1) − 1 − q′ = k − 1 − (q′ + 1). So the IH gives
+  Ω^c_{k−1}(z) ⪰ COARSE(value(r′)).
+- Now P^c_L's step from k − 1 to k, verbatim (Cases A1, A2, B1, B2), with k − 1 in the role of its k:
+  - Cases A1, A2 use the IH, (V2c), (MON) and (ii) only.
+  - Case B (x Even, Ω^c_{k−1}(z) ≻ Ω^c_{k−1}(a), a = σ_{k−1}(x)): P^c_L uses (i) to get Ξ_{k−1}(z) ▷ Ξ_{k−1}(a). If that failed, (x, z)
+    would be forbidden at k − 1 (z ≠ a, since Ω^c(z) ≠ Ω^c(a)). Edge 0 of r is not forbidden at k − 1 − 0, so it holds. The rest of
+    Case B (B1, B2) uses (F1) on the S4a arena, the IH, (C4), (V2c) and (ii) only. □
+### Corollary FRZ-SCH (PROVED, every game)
+For s ≤ t in S and any x, let r_t be x's W-play prefix at t (to λ_W(x)), with m edges. If the schedule of r_t at s is clean, then
+COARSE(W(x)) is constant on [s, t].
+Proof. Ω_t(x) = value(r_t), by (ii) and λ_W(x) being a W-cycle node at every state (CR-D's proof). P^c_sch at s gives
+Ω^c_s(x) ⪰ Ω^c_t(x); (MON) gives Ω^c_t(x) ⪰ Ω^c_{s′}(x) ⪰ Ω^c_s(x) for s ≤ s′ ≤ t; (C3). □
+- It contains FRZ-OK (§13: an OK play is clean at every s ≥ k_0 + m) and CR-D / FRZ-U_H3 (under (i) nothing is forbidden), and it
+  starts the freeze at k_0 + m, where m is the length of x's own play prefix, not at k_0 + n − 1.
+### Corollary CHARGE (PROVED, every game): N_split in per-vertex form
+Every change of COARSE(W(x)) at a transition s − 1 → s of S is one of:
+- a WINDOW change: s − 1 − m < k_0, where m is the length of x's W-play prefix at s (so s ≤ k_0 + n − 1: at most n − 1 per x per run); or
+- a CHARGED change: x's W-play prefix r at s has an Even edge (r_q, r_{q+1}) that is FORBIDDEN AT STATE s − 2 − q.
+Proof. FRZ-SCH at (s − 1, s): if the schedule of r at s − 1 were clean, COARSE(W(x)) would be constant on [s − 1, s]. □
+- Consequence (PROVED): per vertex x and run S, changes of COARSE_L(W(x)) ≤ (n − 1) + #{s : x's play at s has a scheduled forbidden
+  edge} ≤ (n − 1) + n·|K_F(S)|, where K_F(S) := the states of S at which some Even edge is forbidden. (A charged state lies in
+  [s − 1 − m, s − 2], so each forbidden state is charged by ≤ n values of s.) So a run with no forbidden state for n consecutive states
+  freezes at full resolution (L = −1) from there.
+- What is left is EXACTLY the forbidden (edge, state) pairs on the schedule of the vertex's own new play. That is the §11 remainder
+  N_split, now per vertex and per state.
+### DATA (sched.py, L = −1; runs = maximal fallback-free in-phase runs with λ_W constant; logs/sched_long.txt, logs/sched_lib41_rs2.txt)
+Per forbidden edge: the states at which it is forbidden, first and last (relative to k_0), PERSISTENT if forbidden at the last state of S.
+
+| set | runs | states | forbidden edges (persistent) | max states one edge is forbidden | max last forbidden state (rel.) | changes | window | charged (to a persistent edge) | GEN pairs checked (content) | violations |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| frz1_n24 (.start) | 2 | 30 | 11 (2) | 15 | 15 (run of 24 transitions) | 59 | 20 | 39 (0) | 2,693 (2,383) | 0 |
+| frz3_n24 (.start) | 1 | 25 | 12 (0) | 17 | 16 (run of 24) | 56 | 16 | 40 (0) | 2,661 (2,361) | 0 |
+| pftheta34_n32 (S3) | 1 | 35 | 14 (0) | 29 | 32 (run of 34) | 84 | 56 | 28 (0) | 7,784 (7,189) | 0 |
+| lib41, S3 + 2 random starts | 156 | 812 | 568 (472) | 14 | 13 | 1,646 | 1,609 | 37 (0) | 31,636 (27,724) | 0 |
+
+- Answers to §13's DATA question (the last forbidden state per edge, long runs): on the three long runs NO edge stays forbidden to the
+  end, except two edges in frz1's first, 4-transition run. Every edge stops being forbidden by relative state 15 (frz1), 16 (frz3), 32
+  (pftheta34, n = 32). Forbidden states form one interval per edge in most cases (count = last − first + 1); some have gaps (frz3 (8, 23):
+  8 states in 0..15).
+- P^c restarted at the last forbidden state ℓ: by FRZ-SCH a vertex whose play has m edges is frozen at full resolution from state
+  ℓ + 1 + m on (relative). With ℓ = 15, 16, 32 on runs of 24, 24, 34 transitions, this restart covers only short plays at the run's end;
+  the per-state schedule (GEN column) covers far more pairs.
+- No change is ever charged to a persistent edge (0 everywhere), and on lib41 the runs are short (≈ 5 states), so the window takes 1,609
+  of 1,646 changes. Max charged changes of one vertex in one run: 4 (frz1), 3 (frz3), 1 (pftheta34, lib41).
+- A forbidden edge is forbidden at most 29 states (pftheta34, n = 32); never more than n − 1 in any data (FORB_GT_N1 = 0).
+- Mutation controls: MUT=1 (schedule shifted by one state: edge q at state k − q) FAILS on all three long runs, and MUT=2 (forbidden-ness
+  ignored: CR-D without (i)) FAILS on all three. So the schedule is exact to the state, and the forbidden-edge condition is needed.
+### OPEN (named exactly)
+- (FS) |K_F(S)|: forbidden states per run. By CHARGE, a polynomial bound on |K_F(S)| (or on the scheduled forbidden pairs on each
+  vertex's own play) bounds the coarse W-changes per vertex per run at L = −1. DATA: |K_F| ≤ 33 on the long runs (n 24-32). No argument
+  yet; it is the N_split question of §11 in its sharpest data form. An edge (x, z) is forbidden when W says z beats σ(x) and Ξ does not;
+  it stops when Ξ catches up (then (x, z) is improving) or W(σ(x)) catches up. A duration bound per edge (≤ n − 1 in all data) would be
+  the next statement to try.
+
+## 15. LEVEL-COUNT (count form) is DEAD (L-RED); a corrected form LC2 / PAIR-OC (CONJECTURE, DATA) (successor 13)
+- DEAD (L-RED's kill, reproduced here with my own lvl.py; DEAD.md box 17d): CONJECTURE LEVEL-COUNT (count form) |OC(v)| ≤ |RL(v)|.
+  - experiments/red/h3/instances/lcount_n23.pg (sha1 f86125a08f0e3b0caf3d825cb48e6dcdc0ee3b04), start lcount_n23.start: v = 1, OC 3,
+    RL {18, 21}. lvl.py prints `VIOLATION ('LC', '…lcount_n23.pg', 0, 3, 1, 3, [18, 21])`.
+  - lcount2_n23.pg (sha1 dd9847c6b19cb9f44af73bcc23de7ca2aca9a14c, L-RED's cl_171): v = 12, 16, 20 with OC 3 and RL {20, 21}.
+  - Obstruction (DATA, both instances): a LAG. The events of v = 1 on lcount_n23 (transition, W rise level, Ξ rise level, offset change):
+    (0, 18, –, yes), (1, –, 18, yes), (2, 21, 21, yes). W rises at 18 and changes the offset; one transition later Ξ rises at the SAME
+    level 18 and changes it back. RL counts the level once; the two scores use it once each. RULER (per score) is not contradicted.
+- Corrected forms (CONJECTURE, with the reason and the tests the Lead asked for):
+  - SL(v) := the (score, level) pairs of v's rises (score W or Ξ), so |SL(v)| ≤ 2·|RL(v)| ≤ 2n.
+  - CONJECTURE LC2: |OC(v)| ≤ |SL(v)| (so ≤ 2·|RL(v)|, the Lead's suggested form, and ≤ 2n).
+  - CONJECTURE PAIR-OC (stronger; implies LC2 by TWIN-GAP (i), each offset change is a rise of a score): no (score, level) pair rises at
+    two offset changes of v in one stretch_D segment.
+  - Reason it may survive: the kill's mechanism uses each (score, level) once (the lag W-then-Ξ at one level). Breaking PAIR-OC needs ONE
+    score to rise at a, b, a (b > a) at three offset changes, the ruler pattern RULER allows. That needs a high rise that undoes a lower
+    flip and a later return at the lower level, each with a gate change. No known construction does it.
+  - Reason it may not: nothing proves it. PAIR-ONCE for ALL rises (not only at offset changes) is likely false by separate delay chains
+    (three routes of v delivered at times 1, 2, 3 with path sets {a}, {b}, {a, b}); it was not built, since it would not touch the count.
+- Tests (lvl2.py; LC2_V, PAIROC_V, OC_NORISE (an offset change with no rise; TWIN-GAP (i) says 0), PAIR_ALL_V):
+
+| set | stretch_D segments | v with an offset change | max OC of one v | max rises of one v | LC2_V | PAIROC_V | OC_NORISE | PAIR_ALL_V |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| lcount_n23 (L-RED) | 1 | 11 | 3 | 4 | 0 | 0 | 0 | 0 |
+| lcount2_n23 (L-RED cl_171) | 1 | 9 | 3 | 5 | 0 | 0 | 0 | 0 |
+| offret_n23 / incdown_n23 / offalt_K10 | 1 / 1 / 1 | 1 / 1 / 1 | 2 / 2 / 9 | 4 / 4 / 20 | 0 | 0 | 0 | 0 |
+| lib41, S3 + 2 random starts | 138 | 12 | 1 | 6 | 0 | 0 | 0 | 0 |
+| random 𝒞^2O, 6,000, n 5-14, seed 62 | 824 | 0 | 0 | 2 | 0 | 0 | 0 | 0 |
+| random 𝒞^kO (k 2-4), 6,000, n 5-14, seed 63 | 648 | 0 | 0 | 4 | 0 | 0 | 0 | 0 |
+
+  - Control: MUT=1 (count only W's pairs in SL) FAILS on lcount_n23 and lcount2_n23 (LC2_V). Logs: logs/lvl2_inst.txt, lvl2_lib41_rs2.txt,
+    lvl2_rand2o.txt, lvl2_randkO.txt, lvl_lcount.txt.
+  - Support is thin: natural data has ≤ 1 offset change per vertex per segment; only constructions test LC2 non-trivially (5 instances).
+- Suggested attack for L-RED (not run here; L-RED owns the climbs): one score of v rising at a, b, a (b > a) at three offset changes,
+  e.g. mkalt's alternation with mkinc's odd-removal step and a later re-add of the even a.

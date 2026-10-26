@@ -361,3 +361,49 @@ Nothing running. Oink NOT built (`tools/oink/build` absent): `scripts/setup_oink
 - **Check**: every checker asserts each hypothesis of the lemma it tests before counting a violation, and a reported violation is
   re-checked by hand on the instance before it is called a counterexample. Carried: stale container (caught again above: fetch +
   is-ancestor a4fa94b0); `scripts/push.sh > file 2>&1; echo $?`; ReadNotifications before acting on a request that may be done.
+
+## Successor 25 (Opus 5.5; written 2026-10-26 08:24Z by date -u)
+Predecessor: successor 24, session_01DR27cGCEhPvHHVxiYXCfaz, parked at l-new 230334e4 (resume point; packet head 18dd8c90).
+
+### 1. Branch, head, ahead/behind trunk (claude/vibrant-johnson-nxvvxo)
+- Branch claude/l-new. STALE container again: local HEAD 5961101a (successor 6). `git fetch origin claude/l-new` → origin head
+  230334e4; `git merge --ff-only origin/claude/l-new` → HEAD 230334e4.
+- Trunk head 565b8a8d ("Lead: merge checker (C71/C73 closed) and l-red; L-RED 20 check 5/5, GO; NOW; log", 08:17:50Z). Before merging:
+  `git rev-list --left-right --count 230334e4...trunk` = **3 ahead / 237 behind**, merge-base 40659d50 (unmerged: 18dd8c90 packet
+  P-N5-REC0, d0a7e3cf resume point, 230334e4 stamp fix).
+- `git merge --no-ff` trunk (no conflicts, no rebase) → 64a811ba: 4 ahead / 0 behind; 5 ahead after this commit.
+
+### 2. Open work and the next step of each
+Nothing running. Oink NOT built (`tools/oink/build` absent): `scripts/setup_oink.sh` before any run that needs it.
+Frozen, not to be edited: P-N5-STAU-box45 (sha1 7446d9a9…, in review), P-N5-REC0-box45 (sha1 343239b5…, re-measured; referee queue after
+STAU; L-RED 20 attacks it). Corrections only in a fixes file, only when the referees' notes arrive.
+- **(c) first: REC for epochs with |D_E| = 1** (σ̄|Q ≠ τ|Q at one u). Next step: in docs/new/N5-NEP-box45.md (new §6) carry the
+  Lemma-P level in F_D, where Ξ = W (RESULTS R55 (a)), plus the route form through u (R55 G_D (b)); target: C-epochs per phase ≤ poly(n, f)
+  for each |D| ≤ 1 configuration (≤ m of them), which with EP-0/EP-1 (R64) bounds every phase whose epochs all have |D| ≤ 1. Checker in
+  experiments/new/box45 (rec0.py pattern), hypotheses in the guard.
+- **(b) then: f-free REC-0** via a permanent Ξ-level (obstacle: single-state D = ∅ epochs whose exit step raises W, not Ξ).
+- **Ask the Lead** for L-RED 20's REC-0 attack results and L-COMP 5's epoch census (do not edit their files).
+- Not routed: G-N1-LB.
+
+### 3. docs/GAPS.md rows I own (merged HEAD 64a811ba = trunk 565b8a8d, `grep -n L-NEW docs/GAPS.md`)
+- **G-N5-TIME** (l.11): major; "L-NEW (L-LIT T22; referees later)"; **open**. Last update 07:47Z: R62 (P-N5-H3) landed, structural;
+  𝒞^1O closed by R51, 𝒞^1E by R57; N_ep / ρ, |D_E| ≥ 2 epochs, (Στ) (P-N5-STAU in review) OPEN; general games OPEN.
+- **G-N1-LB** (l.10): minor; "L-NEW (optional; not routed)"; **open**.
+- **G-N5-TERM** (l.16): major; "L-NEW (L-COMP checks runs)"; **closed** (RESULTS R15).
+
+### 4. Three owner rulings that most constrain me (verbatim, docs/DECISIONS.md), with DECISIONS-INDEX status
+1. D18 (DECISIONS l.332-333; INDEX l.32 **active**; Lead reading L40, l.33 active):
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+2. D14 (l.244-246; INDEX l.22 **active**; Lead reading L35, l.23 active):
+   > D
+   > You know it can also test prveiously not tested approaches, it can come up with it own as well
+3. D16 (l.299-300; INDEX l.28 **active**; Lead reading L38, l.29 active):
+   > Then keep working as I told you to
+
+### 5. One trap, and the check that prevents it
+- **Trap** (successor 24, box 45): a per-epoch bound was first stated without the "+ 1" for the epoch's last transition, which can leave
+  the restricted run's phase (EPR-1: RESTRICT_E (i) needs σ̄_k = σ̄_E, false at y + 1); the referees caught it as G-EPR-1.
+- **Check**: every per-epoch count is stated for the transitions inside the epoch plus its exit step, and the checker counts the exit
+  step separately and asserts the restriction hypothesis (σ̄_k = σ̄_E) at each counted state. Carried: stale container (caught again
+  above: fetch + ff to 230334e4); `scripts/push.sh > file 2>&1; echo $?`; ReadNotifications before acting on a request that may be done;
+  date -u in the same command that writes a stamp.

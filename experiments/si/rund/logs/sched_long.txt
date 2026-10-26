@@ -1,0 +1,246 @@
+== ../../n5-exhaustive/instances/frz1_n24.pg ../../n5-exhaustive/instances/frz1_n24.start
+RUN ../../n5-exhaustive/instances/frz1_n24.pg k0=2 len=4 edges_forbidden=2 persistent=2
+  EDGE (16, 7) first=0 last=3 count=4 PERSISTENT
+  EDGE (18, 4) first=0 last=3 count=4 PERSISTENT
+  VERTEX 4 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 5 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 8 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 14 {'changes': 1, 'window': 1} charged_edges=[]
+  VERTEX 20 {'changes': 2, 'window': 2} charged_edges=[]
+RUN ../../n5-exhaustive/instances/frz1_n24.pg k0=7 len=24 edges_forbidden=9 persistent=0
+  EDGE (1, 23) first=0 last=1 count=2 
+  EDGE (14, 23) first=0 last=3 count=4 
+  EDGE (5, 23) first=0 last=4 count=5 
+  EDGE (8, 23) first=0 last=5 count=6 
+  EDGE (0, 12) first=0 last=6 count=7 
+  EDGE (17, 6) first=0 last=6 count=7 
+  EDGE (22, 10) first=0 last=14 count=15 
+  EDGE (1, 7) first=9 last=15 count=7 
+  EDGE (18, 16) first=10 last=15 count=6 
+  CHANGE x=0 s=8 m=2 charged=[(0, (0, 12), 13)]
+  CHANGE x=17 s=8 m=4 charged=[(0, (17, 6), 13)]
+  CHANGE x=7 s=9 m=3 charged=[(1, (0, 12), 13)]
+  CHANGE x=16 s=10 m=4 charged=[(2, (0, 12), 13)]
+  CHANGE x=13 s=11 m=5 charged=[(3, (0, 12), 13)]
+  CHANGE x=21 s=12 m=6 charged=[(4, (0, 12), 13)]
+  CHANGE x=17 s=13 m=7 charged=[(5, (0, 12), 13)]
+  CHANGE x=6 s=14 m=8 charged=[(6, (0, 12), 13)]
+  CHANGE x=10 s=15 m=9 charged=[(7, (0, 12), 13)]
+  CHANGE x=23 s=15 m=10 charged=[(8, (0, 12), 12)]
+  CHANGE x=1 s=16 m=11 charged=[(9, (0, 12), 12)]
+  CHANGE x=4 s=16 m=12 charged=[(10, (0, 12), 11)]
+  CHANGE x=5 s=16 m=11 charged=[(9, (0, 12), 12)]
+  CHANGE x=8 s=16 m=11 charged=[(9, (0, 12), 12)]
+  CHANGE x=14 s=16 m=11 charged=[(9, (0, 12), 12)]
+  CHANGE x=15 s=16 m=12 charged=[(10, (0, 12), 11)]
+  CHANGE x=18 s=16 m=13 charged=[(11, (0, 12), 10)]
+  CHANGE x=20 s=16 m=12 charged=[(10, (0, 12), 11)]
+  CHANGE x=22 s=16 m=10 charged=[(0, (22, 10), 21), (8, (0, 12), 13)]
+  CHANGE x=2 s=17 m=13 charged=[(11, (0, 12), 11)]
+  CHANGE x=3 s=17 m=11 charged=[(1, (22, 10), 21), (9, (0, 12), 13)]
+  CHANGE x=9 s=17 m=12 charged=[(2, (22, 10), 20), (10, (0, 12), 12)]
+  CHANGE x=11 s=17 m=14 charged=[(12, (0, 12), 10)]
+  CHANGE x=15 s=17 m=12 charged=[(10, (0, 12), 12)]
+  CHANGE x=1 s=18 m=13 charged=[(3, (22, 10), 20), (11, (0, 12), 12)]
+  CHANGE x=15 s=19 m=14 charged=[(4, (22, 10), 20), (12, (0, 12), 12)]
+  CHANGE x=2 s=20 m=16 charged=[(6, (22, 10), 19), (14, (0, 12), 11)]
+  CHANGE x=11 s=20 m=17 charged=[(7, (22, 10), 18), (15, (0, 12), 10)]
+  CHANGE x=14 s=20 m=15 charged=[(5, (22, 10), 20), (13, (0, 12), 12)]
+  CHANGE x=20 s=20 m=15 charged=[(5, (22, 10), 20), (13, (0, 12), 12)]
+  CHANGE x=5 s=21 m=16 charged=[(6, (22, 10), 20), (14, (0, 12), 12)]
+  CHANGE x=2 s=22 m=17 charged=[(7, (22, 10), 20), (15, (0, 12), 12)]
+  CHANGE x=4 s=22 m=18 charged=[(8, (22, 10), 19), (16, (0, 12), 11)]
+  CHANGE x=8 s=22 m=17 charged=[(7, (22, 10), 20), (15, (0, 12), 12)]
+  CHANGE x=11 s=22 m=18 charged=[(8, (22, 10), 19), (16, (0, 12), 11)]
+  CHANGE x=18 s=22 m=19 charged=[(9, (22, 10), 18), (17, (0, 12), 10)]
+  CHANGE x=20 s=23 m=18 charged=[(8, (22, 10), 20), (16, (0, 12), 12)]
+  CHANGE x=2 s=24 m=19 charged=[(9, (22, 10), 20), (17, (0, 12), 12)]
+  CHANGE x=11 s=24 m=20 charged=[(10, (22, 10), 19), (18, (0, 12), 11)]
+  VERTEX 0 {'changes': 1, 'charged': 1} charged_edges=[(0, 12)]
+  VERTEX 1 {'changes': 3, 'window': 1, 'charged': 2} charged_edges=[(0, 12), (22, 10)]
+  VERTEX 2 {'changes': 4, 'charged': 4} charged_edges=[(0, 12), (22, 10)]
+  VERTEX 3 {'changes': 1, 'charged': 1} charged_edges=[(0, 12), (22, 10)]
+  VERTEX 4 {'changes': 4, 'window': 2, 'charged': 2} charged_edges=[(0, 12), (22, 10)]
+  VERTEX 5 {'changes': 3, 'window': 1, 'charged': 2} charged_edges=[(0, 12), (22, 10)]
+  VERTEX 6 {'changes': 1, 'charged': 1} charged_edges=[(0, 12)]
+  VERTEX 7 {'changes': 1, 'charged': 1} charged_edges=[(0, 12)]
+  VERTEX 8 {'changes': 3, 'window': 1, 'charged': 2} charged_edges=[(0, 12), (22, 10)]
+  VERTEX 9 {'changes': 2, 'window': 1, 'charged': 1} charged_edges=[(0, 12), (22, 10)]
+  VERTEX 10 {'changes': 1, 'charged': 1} charged_edges=[(0, 12)]
+  VERTEX 11 {'changes': 4, 'charged': 4} charged_edges=[(0, 12), (22, 10)]
+  VERTEX 13 {'changes': 1, 'charged': 1} charged_edges=[(0, 12)]
+  VERTEX 14 {'changes': 4, 'window': 2, 'charged': 2} charged_edges=[(0, 12), (22, 10)]
+  VERTEX 15 {'changes': 5, 'window': 2, 'charged': 3} charged_edges=[(0, 12), (22, 10)]
+  VERTEX 16 {'changes': 1, 'charged': 1} charged_edges=[(0, 12)]
+  VERTEX 17 {'changes': 2, 'charged': 2} charged_edges=[(0, 12), (17, 6)]
+  VERTEX 18 {'changes': 3, 'window': 1, 'charged': 2} charged_edges=[(0, 12), (22, 10)]
+  VERTEX 20 {'changes': 5, 'window': 2, 'charged': 3} charged_edges=[(0, 12), (22, 10)]
+  VERTEX 21 {'changes': 1, 'charged': 1} charged_edges=[(0, 12)]
+  VERTEX 22 {'changes': 2, 'window': 1, 'charged': 1} charged_edges=[(0, 12), (22, 10)]
+  VERTEX 23 {'changes': 1, 'charged': 1} charged_edges=[(0, 12)]
+L=-1 MUT=0 changes=59 charged=39 forbidden_edges=11 forbidden_pairs=67 gen_clean=2693 gen_clean_content=2383 max_changes_per_vertex=5 max_charged_edges_per_vertex=2 max_charged_per_vertex=4 persistent_edges=2 runs=2 states=30 window=20
+SCHED PASS
+MUT=1:
+SCHED FAIL
+MUT=2:
+SCHED FAIL
+== ../../n5-exhaustive/instances/frz3_n24.pg ../../n5-exhaustive/instances/frz3_n24.start
+RUN ../../n5-exhaustive/instances/frz3_n24.pg k0=2 len=24 edges_forbidden=12 persistent=0
+  EDGE (9, 12) first=0 last=1 count=2 
+  EDGE (0, 12) first=0 last=7 count=8 
+  EDGE (6, 10) first=0 last=7 count=8 
+  EDGE (8, 23) first=0 last=15 count=8 
+  EDGE (5, 23) first=0 last=15 count=7 
+  EDGE (1, 23) first=0 last=15 count=4 
+  EDGE (22, 10) first=0 last=15 count=16 
+  EDGE (15, 12) first=0 last=16 count=17 
+  EDGE (1, 7) first=10 last=16 count=7 
+  EDGE (18, 16) first=11 last=16 count=6 
+  EDGE (5, 13) first=12 last=16 count=5 
+  EDGE (14, 13) first=12 last=16 count=5 
+  CHANGE x=0 s=9 m=2 charged=[(0, (0, 12), 9)]
+  CHANGE x=6 s=9 m=3 charged=[(0, (6, 10), 9)]
+  CHANGE x=23 s=9 m=4 charged=[(1, (6, 10), 8)]
+  CHANGE x=7 s=10 m=3 charged=[(1, (0, 12), 9)]
+  CHANGE x=17 s=10 m=3 charged=[(1, (0, 12), 9)]
+  CHANGE x=16 s=11 m=4 charged=[(2, (0, 12), 9)]
+  CHANGE x=13 s=12 m=5 charged=[(3, (0, 12), 9)]
+  CHANGE x=21 s=13 m=6 charged=[(4, (0, 12), 9)]
+  CHANGE x=17 s=14 m=7 charged=[(5, (0, 12), 9)]
+  CHANGE x=6 s=15 m=8 charged=[(6, (0, 12), 9)]
+  CHANGE x=23 s=15 m=9 charged=[(7, (0, 12), 8)]
+  CHANGE x=10 s=16 m=9 charged=[(7, (0, 12), 9)]
+  CHANGE x=1 s=17 m=10 charged=[(0, (1, 23), 17), (8, (0, 12), 9)]
+  CHANGE x=4 s=17 m=11 charged=[(9, (0, 12), 8)]
+  CHANGE x=5 s=17 m=10 charged=[(0, (5, 23), 17), (8, (0, 12), 9)]
+  CHANGE x=8 s=17 m=10 charged=[(0, (8, 23), 17), (8, (0, 12), 9)]
+  CHANGE x=14 s=17 m=12 charged=[(10, (0, 12), 7)]
+  CHANGE x=15 s=17 m=11 charged=[(9, (0, 12), 8)]
+  CHANGE x=18 s=17 m=12 charged=[(10, (0, 12), 7)]
+  CHANGE x=20 s=17 m=11 charged=[(9, (0, 12), 8)]
+  CHANGE x=22 s=17 m=10 charged=[(0, (22, 10), 17), (8, (0, 12), 9)]
+  CHANGE x=2 s=18 m=12 charged=[(10, (0, 12), 8)]
+  CHANGE x=3 s=18 m=11 charged=[(1, (22, 10), 17), (9, (0, 12), 9)]
+  CHANGE x=9 s=18 m=12 charged=[(2, (22, 10), 16), (10, (0, 12), 8)]
+  CHANGE x=11 s=18 m=13 charged=[(11, (0, 12), 7)]
+  CHANGE x=14 s=18 m=11 charged=[(1, (5, 23), 17), (9, (0, 12), 9)]
+  CHANGE x=15 s=18 m=12 charged=[(10, (0, 12), 8)]
+  CHANGE x=1 s=19 m=13 charged=[(3, (22, 10), 16), (11, (0, 12), 8)]
+  CHANGE x=15 s=20 m=14 charged=[(4, (22, 10), 16), (12, (0, 12), 8)]
+  CHANGE x=14 s=21 m=15 charged=[(5, (22, 10), 16), (13, (0, 12), 8)]
+  CHANGE x=2 s=22 m=17 charged=[(7, (22, 10), 15), (15, (0, 12), 7)]
+  CHANGE x=5 s=22 m=16 charged=[(6, (22, 10), 16), (14, (0, 12), 8)]
+  CHANGE x=11 s=22 m=18 charged=[(8, (22, 10), 14), (16, (0, 12), 6)]
+  CHANGE x=20 s=22 m=16 charged=[(6, (22, 10), 16), (14, (0, 12), 8)]
+  CHANGE x=4 s=23 m=18 charged=[(8, (22, 10), 15), (16, (0, 12), 7)]
+  CHANGE x=8 s=23 m=17 charged=[(7, (22, 10), 16), (15, (0, 12), 8)]
+  CHANGE x=18 s=23 m=19 charged=[(9, (22, 10), 14), (17, (0, 12), 6)]
+  CHANGE x=2 s=24 m=19 charged=[(9, (22, 10), 15), (17, (0, 12), 7)]
+  CHANGE x=11 s=24 m=20 charged=[(10, (22, 10), 14), (18, (0, 12), 6)]
+  CHANGE x=20 s=24 m=18 charged=[(8, (22, 10), 16), (16, (0, 12), 8)]
+  VERTEX 0 {'changes': 1, 'charged': 1} charged_edges=[(0, 12)]
+  VERTEX 1 {'changes': 3, 'window': 1, 'charged': 2} charged_edges=[(0, 12), (1, 23), (22, 10)]
+  VERTEX 2 {'changes': 3, 'charged': 3} charged_edges=[(0, 12), (22, 10)]
+  VERTEX 3 {'changes': 2, 'window': 1, 'charged': 1} charged_edges=[(0, 12), (22, 10)]
+  VERTEX 4 {'changes': 4, 'window': 2, 'charged': 2} charged_edges=[(0, 12), (22, 10)]
+  VERTEX 5 {'changes': 3, 'window': 1, 'charged': 2} charged_edges=[(0, 12), (5, 23), (22, 10)]
+  VERTEX 6 {'changes': 3, 'window': 1, 'charged': 2} charged_edges=[(0, 12), (6, 10)]
+  VERTEX 7 {'changes': 1, 'charged': 1} charged_edges=[(0, 12)]
+  VERTEX 8 {'changes': 3, 'window': 1, 'charged': 2} charged_edges=[(0, 12), (8, 23), (22, 10)]
+  VERTEX 9 {'changes': 2, 'window': 1, 'charged': 1} charged_edges=[(0, 12), (22, 10)]
+  VERTEX 10 {'changes': 1, 'charged': 1} charged_edges=[(0, 12)]
+  VERTEX 11 {'changes': 3, 'charged': 3} charged_edges=[(0, 12), (22, 10)]
+  VERTEX 13 {'changes': 1, 'charged': 1} charged_edges=[(0, 12)]
+  VERTEX 14 {'changes': 4, 'window': 1, 'charged': 3} charged_edges=[(0, 12), (5, 23), (22, 10)]
+  VERTEX 15 {'changes': 4, 'window': 1, 'charged': 3} charged_edges=[(0, 12), (22, 10)]
+  VERTEX 16 {'changes': 1, 'charged': 1} charged_edges=[(0, 12)]
+  VERTEX 17 {'changes': 2, 'charged': 2} charged_edges=[(0, 12)]
+  VERTEX 18 {'changes': 4, 'window': 2, 'charged': 2} charged_edges=[(0, 12), (22, 10)]
+  VERTEX 20 {'changes': 5, 'window': 2, 'charged': 3} charged_edges=[(0, 12), (22, 10)]
+  VERTEX 21 {'changes': 1, 'charged': 1} charged_edges=[(0, 12)]
+  VERTEX 22 {'changes': 2, 'window': 1, 'charged': 1} charged_edges=[(0, 12), (22, 10)]
+  VERTEX 23 {'changes': 3, 'window': 1, 'charged': 2} charged_edges=[(0, 12), (6, 10)]
+L=-1 MUT=0 changes=56 charged=40 forbidden_edges=12 forbidden_pairs=93 gen_clean=2661 gen_clean_content=2361 max_changes_per_vertex=5 max_charged_edges_per_vertex=3 max_charged_per_vertex=3 persistent_edges=0 runs=1 states=25 window=16
+SCHED PASS
+MUT=1:
+SCHED FAIL
+MUT=2:
+SCHED FAIL
+== ../../red/so/instances/pftheta34_n32.pg
+RUN ../../red/so/instances/pftheta34_n32.pg k0=5 len=34 edges_forbidden=14 persistent=0
+  EDGE (8, 0) first=0 last=10 count=11 
+  EDGE (15, 4) first=13 last=15 count=3 
+  EDGE (13, 0) first=0 last=28 count=29 
+  EDGE (14, 26) first=19 last=30 count=12 
+  EDGE (11, 6) first=25 last=30 count=6 
+  EDGE (12, 31) first=25 last=30 count=6 
+  EDGE (14, 30) first=29 last=30 count=2 
+  EDGE (16, 8) first=12 last=32 count=21 
+  EDGE (28, 4) first=13 last=32 count=20 
+  EDGE (28, 15) first=17 last=32 count=16 
+  EDGE (28, 21) first=20 last=32 count=13 
+  EDGE (16, 2) first=30 last=32 count=3 
+  EDGE (16, 12) first=32 last=32 count=1 
+  EDGE (28, 12) first=32 last=32 count=1 
+  CHANGE x=8 s=12 m=3 charged=[(0, (8, 0), 15)]
+  CHANGE x=4 s=13 m=4 charged=[(1, (8, 0), 15)]
+  CHANGE x=15 s=17 m=5 charged=[(0, (15, 4), 20)]
+  CHANGE x=27 s=18 m=6 charged=[(1, (15, 4), 20)]
+  CHANGE x=26 s=19 m=7 charged=[(2, (15, 4), 20)]
+  CHANGE x=21 s=20 m=8 charged=[(3, (15, 4), 20)]
+  CHANGE x=7 s=21 m=9 charged=[(4, (15, 4), 20)]
+  CHANGE x=3 s=22 m=10 charged=[(5, (15, 4), 20)]
+  CHANGE x=20 s=22 m=10 charged=[(5, (15, 4), 20)]
+  CHANGE x=19 s=23 m=11 charged=[(6, (15, 4), 20)]
+  CHANGE x=29 s=24 m=12 charged=[(7, (15, 4), 20)]
+  CHANGE x=6 s=25 m=13 charged=[(8, (15, 4), 20)]
+  CHANGE x=10 s=25 m=14 charged=[(9, (15, 4), 19)]
+  CHANGE x=31 s=25 m=13 charged=[(8, (15, 4), 20)]
+  CHANGE x=5 s=26 m=14 charged=[(9, (15, 4), 20)]
+  CHANGE x=22 s=26 m=15 charged=[(10, (15, 4), 19)]
+  CHANGE x=9 s=27 m=16 charged=[(11, (15, 4), 19)]
+  CHANGE x=25 s=28 m=17 charged=[(12, (15, 4), 19)]
+  CHANGE x=13 s=29 m=18 charged=[(13, (15, 4), 19)]
+  CHANGE x=30 s=29 m=18 charged=[(13, (15, 4), 19)]
+  CHANGE x=2 s=30 m=19 charged=[(14, (15, 4), 19)]
+  CHANGE x=18 s=31 m=20 charged=[(15, (15, 4), 19)]
+  CHANGE x=11 s=32 m=14 charged=[(0, (11, 6), 35)]
+  CHANGE x=12 s=32 m=14 charged=[(0, (12, 31), 35)]
+  CHANGE x=14 s=32 m=8 charged=[(0, (14, 26), 35)]
+  CHANGE x=23 s=33 m=15 charged=[(1, (11, 6), 35)]
+  CHANGE x=16 s=34 m=4 charged=[(0, (16, 8), 37)]
+  CHANGE x=28 s=34 m=5 charged=[(0, (28, 4), 37)]
+  VERTEX 2 {'changes': 3, 'window': 2, 'charged': 1} charged_edges=[(15, 4)]
+  VERTEX 3 {'changes': 4, 'window': 3, 'charged': 1} charged_edges=[(15, 4)]
+  VERTEX 4 {'changes': 3, 'window': 2, 'charged': 1} charged_edges=[(8, 0)]
+  VERTEX 5 {'changes': 2, 'window': 1, 'charged': 1} charged_edges=[(15, 4)]
+  VERTEX 6 {'changes': 3, 'window': 2, 'charged': 1} charged_edges=[(15, 4)]
+  VERTEX 7 {'changes': 6, 'window': 5, 'charged': 1} charged_edges=[(15, 4)]
+  VERTEX 8 {'changes': 1, 'charged': 1} charged_edges=[(8, 0)]
+  VERTEX 9 {'changes': 2, 'window': 1, 'charged': 1} charged_edges=[(15, 4)]
+  VERTEX 10 {'changes': 3, 'window': 2, 'charged': 1} charged_edges=[(15, 4)]
+  VERTEX 11 {'changes': 2, 'window': 1, 'charged': 1} charged_edges=[(11, 6)]
+  VERTEX 12 {'changes': 2, 'window': 1, 'charged': 1} charged_edges=[(12, 31)]
+  VERTEX 13 {'changes': 2, 'window': 1, 'charged': 1} charged_edges=[(15, 4)]
+  VERTEX 14 {'changes': 2, 'window': 1, 'charged': 1} charged_edges=[(14, 26)]
+  VERTEX 15 {'changes': 4, 'window': 3, 'charged': 1} charged_edges=[(15, 4)]
+  VERTEX 16 {'changes': 1, 'charged': 1} charged_edges=[(16, 8)]
+  VERTEX 18 {'changes': 3, 'window': 2, 'charged': 1} charged_edges=[(15, 4)]
+  VERTEX 19 {'changes': 4, 'window': 3, 'charged': 1} charged_edges=[(15, 4)]
+  VERTEX 20 {'changes': 5, 'window': 4, 'charged': 1} charged_edges=[(15, 4)]
+  VERTEX 21 {'changes': 7, 'window': 6, 'charged': 1} charged_edges=[(15, 4)]
+  VERTEX 22 {'changes': 2, 'window': 1, 'charged': 1} charged_edges=[(15, 4)]
+  VERTEX 23 {'changes': 2, 'window': 1, 'charged': 1} charged_edges=[(11, 6)]
+  VERTEX 25 {'changes': 2, 'window': 1, 'charged': 1} charged_edges=[(15, 4)]
+  VERTEX 26 {'changes': 4, 'window': 3, 'charged': 1} charged_edges=[(15, 4)]
+  VERTEX 27 {'changes': 4, 'window': 3, 'charged': 1} charged_edges=[(15, 4)]
+  VERTEX 28 {'changes': 2, 'window': 1, 'charged': 1} charged_edges=[(28, 4)]
+  VERTEX 29 {'changes': 4, 'window': 3, 'charged': 1} charged_edges=[(15, 4)]
+  VERTEX 30 {'changes': 2, 'window': 1, 'charged': 1} charged_edges=[(15, 4)]
+  VERTEX 31 {'changes': 3, 'window': 2, 'charged': 1} charged_edges=[(15, 4)]
+L=-1 MUT=0 changes=84 charged=28 forbidden_edges=14 forbidden_pairs=144 gen_clean=7784 gen_clean_content=7189 max_changes_per_vertex=7 max_charged_edges_per_vertex=1 max_charged_per_vertex=1 persistent_edges=0 runs=1 states=35 window=56
+SCHED PASS
+MUT=1:
+SCHED FAIL
+MUT=2:
+SCHED FAIL

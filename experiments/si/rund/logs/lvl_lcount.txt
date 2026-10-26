@@ -1,0 +1,16 @@
+== lcount_n23
+INC_V=1 LC_V=1 max_oc=3 oc=13 oc_ge2=1 segs=1 v_with_oc=11
+VIOLATION ('LC', '../../red/h3/instances/lcount_n23.pg', 0, 3, 1, 3, [18, 21])
+VIOLATION ('INC', '../../red/h3/instances/lcount_n23.pg', 0, 3, 1, [18, 18, 21])
+LVL FAIL
+== lcount2_n23
+INC_V=5 LC_V=3 max_oc=3 oc=20 oc_ge2=6 segs=1 v_with_oc=9
+VIOLATION ('LC', '../../red/h3/instances/lcount2_n23.pg', 1, 4, 12, 3, [20, 21])
+VIOLATION ('INC', '../../red/h3/instances/lcount2_n23.pg', 1, 4, 12, [20, 20, 21])
+VIOLATION ('INC', '../../red/h3/instances/lcount2_n23.pg', 1, 4, 13, [22, 20, 21])
+VIOLATION ('INC', '../../red/h3/instances/lcount2_n23.pg', 1, 4, 15, [22, 20, 21])
+VIOLATION ('LC', '../../red/h3/instances/lcount2_n23.pg', 1, 4, 16, 3, [20, 21])
+VIOLATION ('INC', '../../red/h3/instances/lcount2_n23.pg', 1, 4, 16, [20, 20, 21])
+VIOLATION ('LC', '../../red/h3/instances/lcount2_n23.pg', 1, 4, 20, 3, [20, 21])
+VIOLATION ('INC', '../../red/h3/instances/lcount2_n23.pg', 1, 4, 20, [20, 20, 21])
+LVL FAIL
