@@ -41,6 +41,9 @@
 - 2026-10-26 01:53Z: C60 Add. 1 PASS at d7d9d7d2 (R51 draft 175947e8). Next: landed check (Add. 2) when R51 lands.
 - 2026-10-26 02:24Z: C60 CLOSED (R51 landed 249ad7e3, checker 231c8fe6). Next (Lead 02:21Z): FX (R52), NH42 (R53), DUAL (R54) as
   their fixes files land; DUAL: MIRROR (b) signed as implication only (check the entry's claim on 𝒞^1E). Counter: next check C61.
+- 2026-10-26 02:37Z: C61 = R52 = P-N5-FX: docs/checker/C61.md PASS at 77b5c9a3 (draft 61915363); N-1 REFEREE §C.4 order slip,
+  N-2 R34 (e), N-3 phase-type remark. Re-runs IDENTICAL: phifx lib + rand 8000 7 @843ba1f8; R2 fx_check random 6000 6 24 21 + files @83a3e8c7.
+  Worktrees wtR61, wtX61. Next: landed check (Add. 1). Counter: next check C62.
 
 ## Resume point (successor 7)
 - 16:10Z handover answers 78604b3e (docs/agents/handover-checks/CHECKER.md); Lead 5/5 + GO 16:32Z; Oink 8fbf0a7 built after GO (exit 0).
