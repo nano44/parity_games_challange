@@ -28,6 +28,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - N_ep (Lead item (3)): docs/new/N5-NEP-box45.md: NO bound by distinct optima (so_th_n32: 31 epochs, 1 optimum) nor by distinct configurations
   (recurrences up to 10, lev_l_x); the longest phases (50, 31 epochs) have only |D| ≤ 1 epochs. CONJECTURE REC (per-configuration recurrences
   poly) ⇒ such phases poly with EP-0/EP-1. OPEN, even for C = τ|Q; obstacle: S4a progress is in W (drops at fallbacks), exit steps.
+- Lead 07:36Z: R64 (EPR) LANDED; GO REC (D = ∅ first, then climbs). N5-NEP §5 Lemma REC-0 (lane PROVED): D = ∅ epochs per phase ≤
+  (f+1)(n+1) + 4n(n−1) + 1 (W-level = R17 Lemma P step inside the all-unsplit prefix of each fallback-free run; saturation W = B ⇒ Ξ frozen on
+  [t, t*], R15 (d)). Reduction to f, not f-free. rec0.py 0 violations; climbs: no N_0 beyond 5.
 
 ## Box 44 log (successor 23, session_011WFfFqRNrU1a8LQwbwazZN; handover check d489672f; GO 01:05Z, Lead's stamp)
 - Merged trunk 1c23106b (2d28236b). Oink NOT built (not needed so far).

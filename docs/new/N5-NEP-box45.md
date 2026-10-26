@@ -63,3 +63,46 @@ C = τ|Q only. Outputs out/recclimb*.txt, best games in out/climb/.
 | --d0, k 2, n ≤ 12, 3,000 steps, seed 33 | (1, 4) (no D = ∅ recurrence) | 11 |
 | seeded from so_th_n32 (n 32), 2,000 steps, seed 34 | (5, 32) | 32 |
 Reading (DATA): random mutation does not grow recurrences beyond what the library already shows (max 10, lev_l_x); no evidence against REC.
+
+## 5. Lemma REC-0: epochs with D = ∅ per phase (PROVED by the lane, unrefereed; Lead's GO 07:36Z, item (1); written 07:49Z by date -u)
+Statement (every game). In every phase P of N5, with f := its in-phase fallbacks, the number N_0 of epochs E of P with D_E = ∅ satisfies
+    N_0 ≤ (f + 1)(n + 1) + 4n(n − 1) + 1.
+With EP-0 (RESULTS R64: len(E) ≤ n + m), the D = ∅ epochs of a phase hold at most N_0·(n + m) transitions.
+Premises: R17 (b) Lemma P (its induction step, below), R17 (F1)/(F2); R23 (g) WM (game-general, P-N5-XEP fixes XEP-N2); R21 (a) XW (Ξ ⊴ W);
+R15 (a) (Ξ non-decreasing), R15 (d) (≤ 4n(n − 1) consecutive iterations with Ωσ = Ξ and Ωτ unchanged); P-N5-XEP §2 (a) SN-PREFIX_D (a)
+(signed by both: along an S4a run, each vertex's unsplit states form a prefix); SPEC S4a; R18 (d) Lemma S (c) (S4a's output is optimal in its
+arena against τ).
+Setting. τ and λ := λ_Ξ are constant on P. The W-frame is the FIXED one-player game G_τ (Odd fixed to τ); W_k = σ_k's valuation there. A state is
+ALL-UNSPLIT if λ_W = λ there. At a D = ∅ state, σ̄ = τ on Q, so Ξ = W, and the state is all-unsplit. For j ≥ 0, LEVEL j at a state k means:
+W_k(x) ⪰ value(r) for every vertex x and every simple path r of G_τ with ≤ j edges from x to a cycle node u of λ (value(r) := (u, P(r), |r|),
+as in R17 Lemma P). B := the pointwise maximum of value(r) over all such r (any length ≤ n − 1).
+Proof.
+1. (Lemma P step, reused.) If k is a D = ∅ state with level j, k → k+1 is an S4a step, and k + 1 is all-unsplit, then k + 1 has level j + 1.
+   At k, Ξ_k = W_k, so the gates Iσ_k are exactly the W-improving edges of G_τ, and S4a's arena (Even: {σ_k(v)} ∪ Iσ_k(v); Odd: τ) is the
+   switch-best arena H_k of G_τ; S4a's output is an optimum of it (Lemma S (c)). λ_W is λ at k and at k + 1. R17 Lemma P's induction step uses
+   exactly these facts (the hypothesis at k, the arena, (F1)/(F2), and that the step stays in the λ_W-phase), and R17 (d) notes that it holds for
+   every pointwise-optimal choice. So level j + 1 at k + 1.
+2. (Persistence.) If k → k+1 is an S4a step with k, k + 1 all-unsplit, level j at k gives level j at k + 1: WM (W_{k+1} ⊵ W_k), and the cycle nodes
+   of λ are unchanged. Level 0 holds at every all-unsplit state (Ω(u) = (u, ∅, 0) for a cycle node u of λ = λ_W).
+3. (Runs.) Split the phase at its f fallback transitions into ≤ f + 1 fallback-free runs R. By SN-PREFIX_D (a) for every vertex, the all-unsplit
+   states of R form a prefix U(R) of R. So inside U(R) the level only grows (2), by one at each S4a step from a D = ∅ state to a state of U(R) (1).
+4. (Saturation.) Call a D = ∅ state t SATURATED if W_t = B. At an all-unsplit state, W_t(x) is the value of x's play, i.e. value(r) for the simple
+   path r from x to λ(x), a cycle node of λ; so W_t ⊴ B. Hence a D = ∅ state with level n − 1 (every simple path has ≤ n − 1 edges) is saturated.
+   Let t be the first saturated D = ∅ state of P (if any) and t* the last D = ∅ state of P. For every D = ∅ state t′ ≥ t: Ξ_{t′} = W_{t′} ⊴ B = Ξ_t
+   and Ξ_{t′} ⊵ Ξ_t (R15 (a)), so Ξ_{t′} = B. By R15 (a) again Ξ is constant (= B) on [t, t*]; τ is constant, so Ωσ and Ωτ are unchanged on
+   every transition there, and R15 (d) gives t* − t ≤ 4n(n − 1). So at most 4n(n − 1) + 1 D = ∅ epochs meet [t, t*].
+5. (Before saturation.) Every D = ∅ epoch E = (x, …, y) with y < t (or every D = ∅ epoch, if no state is saturated), except possibly the last epoch
+   of P, has an in-phase last transition y → y + 1 from the D = ∅ state y; these transitions are distinct for distinct epochs. Each is
+   (i) a fallback (≤ f), or (ii) an S4a step that leaves U(R) of its run (≤ 1 per run, ≤ f + 1), or (iii) an S4a step from a D = ∅ state into
+   U(R). By 1-3, after n − 1 steps of kind (iii) in one run, the next D = ∅ state of U(R) has level n − 1, hence is saturated (4); so before t,
+   kind (iii) occurs ≤ n − 1 times per run, ≤ (n − 1)(f + 1) in all. Total before t: ≤ f + (f + 1) + (n − 1)(f + 1) + 1 = (f + 1)(n + 1).
+6. Sum: N_0 ≤ (f + 1)(n + 1) + 4n(n − 1) + 1. □
+- What it does NOT give: a bound free of f. The W-level is lost at fallbacks (W may drop there) and at a split; the Ξ-level (permanent) grows
+  only at D = ∅ → D = ∅ steps, so single-state D = ∅ epochs are charged to W-progress, hence to f. With RESULTS R56 (f ≤ 1 + (n − 1)(2 + ρ)),
+  N_0 = O(n²(1 + ρ)); on 𝒞^kO with FB-kT (P-N5-FBK, both referees signed, conditional on R56 and P-N5-2T), f = O(n^{k+1}) and N_0 = O(n^{k+2}).
+  So REC for C = τ|Q is REDUCED to f (fallbacks per phase), not proved outright.
+- DATA (experiments/new/box45/rec0.py; out/rec0_*.txt): lib41 × 3 starts (1,101 runs, 5,377 phases) and 3,000 random 𝒞^kO × 5 (15,000 runs,
+  40,203 phases): 0 violations of REC-0; max N_0 = 5 (n 24) and 2; max N_0 / (f + 1) = 5.0; kind-(iii) steps per run ≤ 4 (n − 1 predicted).
+- Adversarial climbs on N_0 (recclimb.py --d0; out/recclimb0_*.txt, best games out/climb/): seeded from so_th_n32 (1,500 steps, seed 41):
+  (N_0 5, N_ep 31), no growth; k 3, n ≤ 20, 4,000 steps, seed 42: (2, 7); k 2, n ≤ 16, 4,000 steps, seed 43: (2, 3). No instance beyond the
+  library's N_0 = 5; REC-0's bound is far above every observed N_0.
