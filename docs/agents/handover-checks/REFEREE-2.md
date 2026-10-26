@@ -448,3 +448,50 @@ Measured from the repository at the time of writing (commands named), not recall
   `git ls-tree --name-only ... | grep -ic` count, write the number from that output into the report and message, never from a template;
   no `git log` on origin/claude/referee before the §C word (its subjects carry verdicts).
 - Also again this time: stale container (77f9cf71); caught by fetch + is-ancestor 11e3cfb1 before any edit.
+
+## successor 18 (2026-10-26T19:0xZ by date -u; Opus 5.5 under D15/L37; predecessor successor 17 session_01P2K6kCftytexWsuJfNFtV4, handover 549dea7e updated at f5381a5c, merge 8779d1de)
+Measured from the repository at the time of writing (commands named), not recalled.
+
+### 1. Branch, head, distance to trunk
+- Branch `claude/referee-2`. Local branch at container start was STALE again: HEAD 77f9cf71 (`git status` said "up to date" before the fetch).
+  After `git fetch origin claude/vibrant-johnson-nxvvxo claude/referee-2` and `git merge --ff-only origin/claude/referee-2`:
+  HEAD = origin/claude/referee-2 = 8779d1de; `git merge-base --is-ancestor f5381a5c HEAD` -> yes (549dea7e is in it too).
+- Trunk claude/vibrant-johnson-nxvvxo at 1ba37bf3. Before merging: `git rev-list --left-right --count origin/claude/referee-2...origin/claude/vibrant-johnson-nxvvxo`
+  -> 4 ahead (549dea7e handover, 9d2c039c merge, f5381a5c ROOT §C, 8779d1de merge), 14 behind; merge-base e92d50c2.
+  `git merge origin/claude/vibrant-johnson-nxvvxo` -> df26519d (no conflict): 5 ahead, 0 behind. This file's commit adds one.
+
+### 2. Open work and next step of each
+- Nothing in flight (predecessor: IN FLIGHT none; ROOT §C pushed at f5381a5c).
+- NEXT (after GO), in the Lead's order. Pins measured with `git show origin/claude/vibrant-johnson-nxvvxo:<path> | sha1sum`:
+  (1) P-N5-OFFMONO as one unit: docs/new/P-N5-OFFMONO-box49.md d9705ac6, -add- 5911aba8, -add2- f2d123ef (all match the brief, on trunk);
+      add3 (OFFSET-MONO⁺, CHAIN-COUNT‴) NOT yet frozen/pinned: wait for the Lead's sha1 before signing the unit.
+      Next step: read packet + add + add2 + cited results; own checker (add2 §4 is code-level against si.py: check it against si.py, run my own engine).
+  (2) P-N5-GCX docs/si/P-N5-GCX-box21.md 5a91bebb (matches); note R91 (UL_C), R93 (C-ONCE_X) kills; no to-sign item touched.
+  (3) P-N5-DEPTH docs/si/P-N5-DEPTH-box22.md 549c7fb7 (matches, trunk); P-N5-DEPTH-add docs/si/P-N5-DEPTH-add-box22.md 4d51aa5e:
+      NOT on trunk (trunk path absent, sha1sum of empty = da39a3ee); found on origin/claude/l-si (aa6061d1, sha1 4d51aa5e matches the brief).
+  (4) P-N5-RESTRICT docs/new/P-N5-RESTRICT-box48.md 48c63a8e (matches).
+- Independence state, same turn as the fetch of origin/claude/referee (19:04:54Z):
+  `git ls-tree --name-only -r origin/claude/referee docs/referee/ | grep -ic <key>` -> offmono 8, gcx 26, depth 0, restrict 0 (same on HEAD).
+  Names only; none opened. REFEREE 15 reported on OFFMONO/OFFMONO-add before; GCX files exist (first referee). I open none until my report is pushed.
+- Predecessor NEEDS (route N-FBC/N-CHOSEN/N-EPC/N-ROOT notes; ROOT §C word; start successor 18) are Lead routings; the ROOT §C is done (f5381a5c).
+- Oink: scripts/setup_oink.sh run in this container: exit 0, "oink built at 8fbf0a7" (tools/oink/build).
+
+### 3. docs/GAPS.md rows I own
+- None (`grep -n REFEREE-2 docs/GAPS.md` hits line 6 GAP-A (REFEREE-2 cited in its text) and closed rows G-Bthr, G-K5, G-STR, G-DOM (lines 20-23); owner column never REFEREE-2).
+  The open row the queue sits under: G-N5-TIME | major | L-NEW (L-LIT T22; referees later) | open (docs/GAPS.md:11).
+
+### 4. Three owner rulings that most constrain me (verbatim), with DECISIONS-INDEX status
+1. D1 (index line 5: active), docs/DECISIONS.md:7-8:
+   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+   > Never downgrade the referee to save money.
+2. D15 (index line 26: active; L37 line 27: signatures "(Opus 5.5, D15)"), docs/DECISIONS.md:278:
+   > q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it
+3. D18 (index line 32: active; L40 line 33), docs/DECISIONS.md:333:
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+
+### 5. One trap that bit this lane, and the check that prevents it
+- Trap (succ. 16, HONFF; again succ. 17 three times): the independence count changes between reads (REFEREE pushes during my reviews); a
+  count copied from a template was wrong once (addendum 1306c31e). Check: fetch origin/claude/referee in the push turn, run the
+  `git ls-tree --name-only ... | grep -ic` count, and write the number from that output; no `git log` on origin/claude/referee before the §C word.
+- Also again this time: stale container (77f9cf71); caught by fetch + is-ancestor f5381a5c before any edit. And a "pin" can be a file sha1
+  on a lane branch rather than trunk (DEPTH-add 4d51aa5e lives on l-si only): measure each pin with `git show <ref>:<path> | sha1sum`.
