@@ -261,3 +261,11 @@ if git cat-file -e 982f5c629 && git cat-file -e 58061d91 && git cat-file -e 0224
 else
   echo "root (packet P-N5-DEPTH-box22 quotes): NOT RUN (a source commit is not in this clone)"
 fi
+# P-N5-DEPTH-add-box22 (conditional companion): 5 quotes verbatim at trunk 78bc0e6a; shifted control fails.
+if git cat-file -e 78bc0e6a8; then
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-DEPTH-add-box22.md | grep -q "quotes=5 bad=0"
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-DEPTH-add-box22.md --mut | grep -q "QUOTES FAIL"
+  echo "root (packet P-N5-DEPTH-add-box22: 5 quotes verbatim; shifted control fails): PASS"
+else
+  echo "root (packet P-N5-DEPTH-add-box22 quotes): NOT RUN (source commit not in this clone)"
+fi
