@@ -1,0 +1,7 @@
+IN=45 IN_DLEAVE=45 bfa_checks=2521 bfa_eq=538 pieces=13 runs=7 runs_mono=2
+TOP IN/runlen (36, 6, '../../n5-epoch/instances/nep76_n40.pg', 9)
+TOP IN/runlen (3, 12, '../../n5-epoch/instances/nep76_n40.pg', 9)
+TOP IN/runlen (2, 15, '../../n5-epoch/instances/nep76_n40.pg', 9)
+TOP IN/runlen (2, 15, '../../n5-epoch/instances/nep76_n40.pg', 9)
+TOP IN/runlen (2, 10, '../../n5-epoch/instances/nep76_n40.pg', 9)
+SHRINK PASS

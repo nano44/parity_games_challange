@@ -123,3 +123,18 @@ if git cat-file -e 62a1a01d && git cat-file -e e8d31c47 && git cat-file -e 762b7
 else
   echo "rund (RUND fixes file quotes): NOT RUN (source commits not in this clone; fetch claude/referee, claude/referee-2)"
 fi
+# box 20 (docs/si/N5-ROOT-box20.md): BF-F_D at every S4a step of nep90 (MUT=1, equality flagged, bites); FREEZE-A (a) on its pieces and on
+# lib2o (MUT2=1, one edge too many, bites on lib2o); ROOT-PIECE on nep90: 22 cuts = 7 fallbacks + 15 D-leaves, every piece within its bound
+# (MUT=1, bound 2, bites).
+N90="../red/rec0/instances/nep90_n40.pg rund/instances/nep90_n40.start"
+o=$(python3 -I root/bffd.py --one $N90)
+for k in "checks=7827 " "BFFD PASS"; do grep -q "$k" <<<"$o"; done
+MUT=1 python3 -I root/bffd.py --one $N90 | grep -q "BFFD FAIL"
+o=$(python3 -I root/shrink.py --one $N90)
+for k in "IN_DLEAVE=53 " "pieces=20 " "SHRINK PASS"; do grep -q "$k" <<<"$o"; done
+if grep -q "IN_SWITCH\|SPLIT_IN" <<<"$o"; then echo "unexpected switch / split entry on nep90"; exit 1; fi
+RS=4 MUT2=1 python3 -I root/shrink.py --list fb2o/lib2o.txt 1 | grep -q "SHRINK FAIL"
+o=$(python3 -I root/rootrun.py $N90)
+for k in "cuts=22 (fb 7, DLEAVE 15, SWITCH 0)" "ROOTRUN_V=0 "; do grep -q "$k" <<<"$o"; done
+MUT=1 python3 -I root/rootrun.py $N90 | grep -q "ROOTRUN_V=10 "
+echo "root (BF-F_D, FREEZE-A pieces, ROOT-PIECE on nep90; three controls bite): PASS"
