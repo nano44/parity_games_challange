@@ -166,7 +166,7 @@ def analyse(g, start=None, cap=5000):
                         # offset changes of v in one stretch_D segment
                         r["pairoc_max"] = max(r.get("pairoc_max", 0), max(ocp.values(), default=0)); r["lc2_slack"] = max(r.get("lc2_slack", -10**9), chg - len(SL))
                         if chg > len(SL): r["fails"].append(f"LC2 v={v} states {s0}..{t} chg={chg} SL={sorted(SL)}")
-                        if any(c > 1 for c in ocp.values()): r["fails"].append(f"PAIROC v={v} states {s0}..{t} pairs={ocp}")
+                        if any(c > 1 for c in ocp.values()): r["pairoc_viol"] = r.get("pairoc_viol", 0) + 1   # PAIR-OC dead (R81, pairoc_n58): counter
                 t += 1
             for v in range(n): runchg[v] = sum(1 for x in range(k0, k1) if off(x + 1, v) != off(x, v))
             r["off_inrun_maxpv"] = max([r["off_inrun_maxpv"]] + list(runchg.values()))
