@@ -1565,3 +1565,4 @@
 - Merged l-new 205c9ed7. PINNED at this commit: packet P-N5-GD, docs/new/P-N5-GD-box43.md (L-NEW 23): G_D (a)-(c2), F1°_D, Wo_D, every game. Queued for both referees after FX, NH42 and DUAL.
 - 01:21Z: Pre-drafted docs/agents/R51-draft.md (P-N5-1O). Placeholders: FIXES, RSC, R2SC, CSUM. To CHECKER C60 after both §Cs and the 1O fixes file.
 - 01:27Z: Merged referee e785b8e1 (§C 1O) and referee-2 3312144c (§C 1O): identical; OUT-1 = N-1O-1 closed by the repair; the R32/R33/R34 chain is read in full jointly. GO to L-SI to freeze the 1O fixes file. R51 draft: §Cs filled.
+- 01:33Z: Merged l-si 90f93566 (P-N5-1O fixes FROZEN, 647deab5). R51 draft complete; to CHECKER C60.

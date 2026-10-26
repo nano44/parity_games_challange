@@ -1,9 +1,10 @@
-# Draft RESULTS R51 (Lead, 2026-10-26 01:25Z by date -u; both §Cs and the fixes file to be filled) — to CHECKER C60
+# Draft RESULTS R51 (Lead, 2026-10-26 01:25Z by date -u; both §Cs and the fixes file filled 01:33Z) — to CHECKER C60
 
 ### R51 [refereed-only] N5 solves one-Odd-choice parity games in polynomial time: from any start pair it stops after at most (n(n − 1) + d_o)(T* + 1) = O(m·Δ·d_o·n¹³) iterations (Theorem 1O-POLY), each iteration and the output step cost polynomially many bit operations (Lemma BIT), and the output is the pair of winning regions with positional winning strategies (Lemma OUT; Corollary 1O-TIME) (2026-10-26) — a SUBCLASS result (𝒞^1O, polynomial by other means; TARGET.md §4 first bullet): not a TARGET.md §2 claim, not M4; G-N5-TIME stays open for general games, CHECKER PASS (docs/checker/C60.md, checker PENDING)
 - Object (packet P-N5-1O, added at l-si 058e5aee, pinned trunk 291c110d, unchanged during review): docs/si/P-N5-1O-box15.md, sha1
-  2cf5e67262d31712976fb882175f5080cc3dc4ec (L-SI successor 10, Opus 5.5). The referees' notes are collected by the lane in FIXES-PENDING;
-  on trunk; repairs only.
+  2cf5e67262d31712976fb882175f5080cc3dc4ec (L-SI successor 10, Opus 5.5). The referees' notes are collected by the lane in
+  docs/si/P-N5-1O-fixes-box15.md (l-si 90f93566, sha1 647deab5f9aeff2c113230bd18df88a6c58b6d68, L-SI successor 10: OUT-1 = N-1O-1, 1O-N1,
+  1O-N2, BIT-N1, N-1O-2..6, R-N5-START Addendum 1); on trunk; repairs only.
   Setting: N5 = SPEC S1-S5 of docs/new/N5-ssi-global.md (with Q1-Q4 and FIX 1-4); 𝒞^1O := the games in which exactly one Odd vertex o
   has out-degree > 1; n := |V|, m := #edges, d_o := deg(o), Δ := the maximum out-degree. Cost model: TARGET.md §3 (word RAM with words
   of O(log(n + m)) bits; longer numbers cost their bit length).
