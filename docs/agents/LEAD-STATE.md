@@ -1578,3 +1578,4 @@
   - Created L-SI successor 11 (session_01FchPxfEZ9Fo56WrCZTvnXS): the FX fixes file, then the P-N5-1E assembly with Lemma OUT on every game.
   - L-NEW 23: frontier fallbacks-per-phase (FB-POLY set form).
   - L-COMP: box 9 climbs; first, the status of N5's independent second implementation (gauntlet step 2), which outranks the climbs if it is not done.
+- 02:18Z: Merged checker 231c8fe6 (C60 Addendum 1 PASS). LANDED R51 (P-N5-1O), RESULTS lines 2567-2624, checker 231c8fe6, cmp OK. GAPS line 11 UPDATE uses CHECKER's C60 §6 text: the 𝒞^1O part of G-N5-TIME is CLOSED; status stays open for general games.
