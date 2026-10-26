@@ -156,8 +156,8 @@ def analyse(g, start=None, cap=5000):
                     if chg:
                         r["lc_checks"] += 1; r["lc_maxchg"] = max(r["lc_maxchg"], chg); r["lc_slack"] = max(r["lc_slack"], chg - len(lvls))
                         r["lc_ratio"] = max(r["lc_ratio"], chg / n)
-                        if chg > len(lvls): r["fails"].append(f"LEVELCOUNT v={v} states {s0}..{t} chg={chg} levels={sorted(lvls)}")
-                        if None in pay or len(set(pay)) < len(pay): r["fails"].append(f"LEVELPAY v={v} states {s0}..{t} pay={pay}")
+                        if chg > len(lvls): r["lc_viol"] = r.get("lc_viol", 0) + 1      # LEVEL-COUNT dead (R78): counter, not FAIL
+                        if None in pay or len(set(pay)) < len(pay): r["lp_viol"] = r.get("lp_viol", 0) + 1   # dead with LEVEL-COUNT: counter
                 t += 1
             for v in range(n): runchg[v] = sum(1 for x in range(k0, k1) if off(x + 1, v) != off(x, v))
             r["off_inrun_maxpv"] = max([r["off_inrun_maxpv"]] + list(runchg.values()))
