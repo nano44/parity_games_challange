@@ -377,3 +377,8 @@ Answered from trunk e05382f4 (2026-10-25 16:09Z) and lane heads. Relayed to the 
 
 ## 2026-10-25T16:24Z Lead report (16:22Z, verbatim summary)
 NOW.md refreshed (trunk 40acab5). RESULTS R36-R40 landed today. In review: P-N5-NEB, P-N5-LV both referees signed (R41, R42 after §Cs/fixes); P-N5-PFZ+ext, P-N5-LV2 REFEREE 9 signed with gap PFZ-1 (repair given), REFEREE-2 10 pending. G-N5-TIME OPEN: no polynomial bound for N5 proved.
+
+## 2026-10-26T09:26Z owner message (verbatim)
+> Give me a status update about N5
+
+Answered from trunk a67dca63 (2026-10-26 09:20Z; NOW.md header 09:15Z). Relayed to the Lead.
