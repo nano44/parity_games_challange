@@ -359,3 +359,45 @@ Measured from the repository at the time of writing (commands named), not recall
   `git merge-base --is-ancestor <handover SHA> HEAD` before any edit; fast-forward to origin/claude/referee-2, then --no-ff trunk merge.
 - Second trap (succ. 12 independence slip): repo-wide greps can print REFEREE verdict lines (LEAD-STATE, RESULTS) before my report.
   Check: list docs/referee/ by name only, grep only the packet's own dirs, open R-N5-STAU only after my report is pushed.
+
+## successor 16 (2026-10-26T09:3xZ by date -u; Opus 5.5 under D15/L37; predecessor successor 15 session_01VJosSHA8jpworMYkRKh9T4, handover ed6addd8)
+Measured from the repository at the time of writing (commands named), not recalled.
+
+### 1. Branch, head, distance to trunk
+- Branch `claude/referee-2`. Local branch at container start was STALE: HEAD 77f9cf71 (R2-N5-1OA §C2; `git status` claimed "up to date"
+  before the fetch). After `git fetch origin claude/referee-2 claude/vibrant-johnson-nxvvxo` and `git merge --ff-only origin/claude/referee-2`:
+  HEAD = origin/claude/referee-2 = ed6addd8 (predecessor's handover); `git merge-base --is-ancestor ed6addd8 HEAD` -> yes.
+- Trunk claude/vibrant-johnson-nxvvxo at 21e9d0c6. Before merging: `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo`
+  -> 2 ahead (2acee863 trunk merge, ed6addd8 handover), 1 behind (21e9d0c6); merge-base a67dca63.
+  `git merge --no-ff origin/claude/vibrant-johnson-nxvvxo` -> 742ceaf6 (no conflict): 3 ahead, 0 behind. This file's commit adds one.
+
+### 2. Open work and next step of each
+- Nothing in flight (predecessor: IN FLIGHT none; RUND not started).
+- NEXT (after GO): P-N5-RUND, docs/si/P-N5-RUND-box17.md. `git show 94910ed3:docs/si/P-N5-RUND-box17.md | sha1sum` and the same at l-si 762b7243
+  -> both 71e198f359cbb321fc0c15e6c28676d4dd046d52 (matches the brief). Sign per its §0: §2 CR-REL; §3 OFFSET (a)-(c), MERGE-B, TWIN-GAP (i)-(iii)
+  + corollary; §4 PIECE_D (a), (b), SPLIT-RED; §5 P^c_sch, FRZ-SCH, CHARGE; §6 Fact FZ, Lemma UNF, Corollary CHARGE-U. Not §7-§9.
+  Next step: read the packet, SPEC S1-S5 and every cited result; check its quotes of RESULTS R55 / R62 verbatim; list every premise (incl. 1E-N3);
+  build my own checker on the predecessors' engines (dual_check.Runner, epr_check.step); output docs/referee-2/R2-N5-RUND.md.
+- Independence state: `git fetch origin claude/referee`; `git ls-tree --name-only -r origin/claude/referee docs/referee/ | grep -ic rund` -> 0;
+  same on HEAD -> 0. Not opened.
+- Predecessor NEEDS (STAU-1 repair, REC0 notes to L-NEW's fixes files) are Lead routings.
+- Oink: scripts/setup_oink.sh run in this container: exit 0, "oink built at 8fbf0a7" (tools/oink/build).
+
+### 3. docs/GAPS.md rows I own
+- None (`grep -n REFEREE-2 docs/GAPS.md` hits only closed rows G-Bthr, G-K5, G-STR, G-DOM, where REFEREE-2 is cited, not owner).
+  The open row RUND sits under: G-N5-TIME | major | L-NEW (L-LIT T22; referees later) | open (docs/GAPS.md:11).
+
+### 4. Three owner rulings that most constrain me (verbatim), with DECISIONS-INDEX status
+1. D1 (index line 5: active), docs/DECISIONS.md:7-8:
+   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+   > Never downgrade the referee to save money.
+2. D15 (index line 26: active; L37 line 27: signatures "(Opus 5.5, D15)"), docs/DECISIONS.md:278:
+   > q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it
+3. D18 (index line 32: active; L40 line 33: labels PROVED / CONJECTURE / OPEN), docs/DECISIONS.md:333:
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+
+### 5. One trap that bit this lane, and the check that prevents it
+- Trap: an independence line written from a stale listing (succ. 15 at REFEREE0, corrected 82fdc8d4): REFEREE writes in parallel, so
+  "no RUND file" goes stale. Check: `git fetch origin claude/referee` and `git ls-tree --name-only -r origin/claude/referee docs/referee/ | grep -ic rund`
+  in the same turn as writing the independence line; report the count.
+- Also again this time: stale container (77f9cf71); caught by fetch + is-ancestor ed6addd8.
