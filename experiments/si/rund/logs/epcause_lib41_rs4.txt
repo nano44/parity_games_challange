@@ -1,0 +1,7 @@
+boundaries=4854 boundaries_fb=14 boundaries_residual=283 boundaries_residual_norho=258 boundaries_rho=4596 chg_CYC=2 chg_NC=60 chg_STRICT=4698 chg_TIE=255 max_boundaries_phase=49 phases_with_boundaries=782 strict_RELAY=82 strict_ROUTE=4616
+TOP boundaries/residual/len/n (49, 0, 55, 32, 'experiments/si/orlens/instances/lev_l_x.pg', 1)
+TOP boundaries/residual/len/n (46, 0, 53, 32, 'experiments/red/xing/instances/x31_rx32.pg', 2)
+TOP boundaries/residual/len/n (44, 0, 52, 32, 'experiments/red/xing/instances/x31_rx32.pg rs', 4)
+TOP boundaries/residual/len/n (44, 0, 46, 32, 'experiments/si/orlens/instances/lev_l_sc.pg', 8)
+TOP boundaries/residual/len/n (43, 0, 49, 48, 'experiments/red/xing/instances/x31_rx48.pg', 2)
+EPCAUSE PASS

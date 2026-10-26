@@ -1,0 +1,7 @@
+boundaries=92 boundaries_fb=7 boundaries_rho=92 chg_STRICT=101 max_boundaries_phase=7 phases_with_boundaries=39 strict_RELAY=5 strict_ROUTE=96
+TOP boundaries/residual/len/n (7, 0, 25, 32, 'experiments/new/box44/instances/fb17_n32.pg', 2)
+TOP boundaries/residual/len/n (5, 0, 49, 32, 'experiments/si/orlens/instances/s_rt32_final.pg', 3)
+TOP boundaries/residual/len/n (4, 0, 51, 32, 'experiments/red/n5inj/instances/phase2_pk32.pg', 3)
+TOP boundaries/residual/len/n (4, 0, 50, 32, 'experiments/red/n5inj/instances/returns_rt32.pg', 3)
+TOP boundaries/residual/len/n (4, 0, 21, 32, 'experiments/si/orlens/instances/s_rt32_final.pg rs', 3)
+EPCAUSE PASS

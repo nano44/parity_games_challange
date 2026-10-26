@@ -96,6 +96,12 @@ MUT=1 python3 -I rund/chosen.py --one ../red/rec0/instances/nep90_n40.pg rund/in
 o=$(UP=2 python3 -I rund/quiet.py --one ../red/rec0/instances/nep90_n40.pg rund/instances/nep90_n40.start)
 for k in "max_rho_q=72 " "quiet_max=12 " "rho_q_total=292 " "QUIET PASS"; do grep -q "$k" <<<"$o"; done
 echo "rund (flip classes on frz40; CHOSEN / RELAY-CHAIN and chosen-terminal pieces on nep90_n40; MUT=1 bites): PASS"
+# note §28: epoch boundaries on nep90 are all clean strict sigma-bar changes (89 boundaries, 119 STRICT, 0 residual); MUT=1 (ALT reversed) bites.
+o=$(python3 -I rund/epcause.py --one ../red/rec0/instances/nep90_n40.pg rund/instances/nep90_n40.start)
+for k in "boundaries=89 " "boundaries_rho=89 " "chg_STRICT=119 " "strict_ROUTE=107" "EPCAUSE PASS"; do grep -q "$k" <<<"$o"; done
+if grep -q "chg_TIE\|chg_NC\|boundaries_residual" <<<"$o"; then echo "unexpected residual on nep90"; exit 1; fi
+MUT=1 python3 -I rund/epcause.py --one ../red/rec0/instances/nep90_n40.pg rund/instances/nep90_n40.start | grep -q "EPCAUSE FAIL"
+echo "rund (epoch causes on nep90: all clean strict; MUT=1 bites): PASS"
 # P-N5-RUND fixes file: every «quote» verbatim at its tagged commit and lines; the shifted-lines control (--mut) must fail.
 if git cat-file -e 62a1a01d && git cat-file -e e8d31c47 && git cat-file -e 762b7243 && git cat-file -e f1d2cf09 && git cat-file -e 6f9451e3; then
   python3 -I rund/quotecheck.py ../../docs/si/P-N5-RUND-fixes-box17.md | grep -q "QUOTES PASS"
