@@ -18,3 +18,6 @@ DATA, not proof. Uses experiments/new/box43 (multi, n5x via box21, f1d.hD). Run 
   switches 21 vertices across terminals; N5 output: Oink verify OK, regions = Oink --zlk, harness verify.py OK.
 - fbf.py: frontier FB-POLY checks (CN-ONLY_D, EXIT-SWITCH_D, FREEZE-EXIT_D, FB-RED, per-terminal THETA-AFTER "TA"), FMAX per phase.
   fbclimb.py: climbs FMAX (or --obj ta: TA violations). docs/new/N5-FBF-box44.md §4. Runs from 01:56Z.
+- fbclimb.py seeded runs 71-75 and --obj ta runs 81-84 (02:00Z-02:05Z): table in N5-FBF-box44.md §4. instances/fb17_n32.pg (sha1
+  398e23e2…): 17 in-phase fallbacks in one phase, frontier (2 Odd, 23 Even choice vertices); N5 output verified (Oink verify,
+  regions = Oink --zlk, harness verify.py).

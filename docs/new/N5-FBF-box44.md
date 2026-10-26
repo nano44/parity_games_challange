@@ -116,7 +116,7 @@ which is what made FB-POLY unconditional. (The constant here, n − 1 instead of
   and stable, values freeze bottom-up, and each level costs ≤ deg + |U| changes. Two gaps: the terminal graph need not stabilise
   (σ̄ moves), and nesting depth up to |Q| multiplies the per-level counts, which gives (deg + |U|)^{|Q|}, exponential in k. OPEN.
 - DATA (§4): the per-terminal THETA-AFTER bound (Ξ(q)-changes after g_{|U_c|−2} ≤ deg_{U_c}(q) + |U_c| − 2) held in every sample so far (733 checks, 0 violations; §4). So THETA-AFTER fails as PROVED, with no instance against
-  its per-terminal statement yet; climbs aimed at one (fbclimb.py --obj ta) were running at the time of writing.
+  its per-terminal statement yet; climbs aimed at one (fbclimb.py --obj ta, 4 runs) found none (§4).
 
 ## 4. Data (DATA, not proof): experiments/new/box44/fbf.py, fbclimb.py
 fbf.py checks per phase: CN-ONLY_D (≤ 1 fallback with S = ∅, followed by the phase end), EXIT-SWITCH_D (at each fallback and class
@@ -133,8 +133,23 @@ Frontier games (≥ 2 Odd and ≥ 2 Even choice vertices) in lib41: 126; their l
 3 Odd), 6 (returns_rt32 / phase2_pk32, n 32). The 𝒞^1O maxima are larger (33 at n 48, ccl_w48_n48), within FB-POLY.
 Climbs for FMAX vs n (fbclimb.py, random starts, k = Odd choice vertices): k 2 n ≤ 10: 1; k 3 n ≤ 16: 1; k 3 n ≤ 24: 1; k 4 n ≤ 32: 1;
 k 4 n ≤ 48: 9 (n 47). Random frontier games almost never have two fallbacks in one phase; seeded climbs from the lib41 frontier games
-above were running at the time of writing (results to be appended).
-Runs 2026-10-26 01:56Z-02:00Z (date -u), from experiments/new/box44.
+above were run next (appended 02:06Z):
+| seed game (lib41, frontier) | n | its FMAX | climbed FMAX (n) | max ρ there |
+| --- | --- | --- | --- | --- |
+| returns_rt32 | 32 | 6 | **17** (n 32) | 10 |
+| phase2_pk48 | 48 | 8 | 10 (n 46) | 4 |
+| elimn_cex_n48 (3 Odd) | 48 | 7 | 8 (n 47) | 30 |
+| returns_rt64 | 64 | 14 | **21** (n 64) | 27 |
+| frz40 (4 Odd) | 40 | 3 | 9 (n 40) | 18 |
+(3,000 steps each, fbclimb.py 0 0 3000 71-75 --seed; no violation of any PROVED statement in any scored game.)
+Instance experiments/new/box44/instances/fb17_n32.pg (n 32, 2 Odd and 23 Even choice vertices, sha1 398e23e2eb18aac3c75af0b500a5d292f57a1d1e):
+one phase with 17 in-phase fallbacks (29 iterations in all, 5 phases), ρ = 10; FB-RED's bound there is 1 + 31·12 = 373. N5's output:
+Oink verify OK, regions = Oink --zlk, harness verify.py OK. Reading: frontier fallbacks per phase reach ~n/2 in climbs (17 at n 32,
+21 at n 64); the 𝒞^1O maxima are similar (33 at n 48). No superlinear growth is visible; DATA, not a bound.
+TA climbs (fbclimb.py --obj ta, seeds 81-84: k 3 n ≤ 16, k 4 n ≤ 24, k 2 n ≤ 12, frz40 seed): 0 violations of the per-terminal
+THETA-AFTER bound in every scored game (max ρ 22, 20, 6, 33). So THETA-AFTER fails as a PROOF on the frontier, but no instance
+against its per-terminal statement is known.
+Runs 2026-10-26 01:56Z-02:05Z (date -u), from experiments/new/box44.
 
 ## 5. How a fallbacks-per-phase bound combines with the phase count (READING)
 - Phases. Lemma Φ (R47 (a), every game): λ changes ≤ n(n − 1); Corollary Φ-kO (P-N5-DUAL, N5-MULTI §1.4): distinct τ's ≤ ∏_{q∈Q}
