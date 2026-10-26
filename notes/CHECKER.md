@@ -7,7 +7,7 @@ History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50
 - C75 = R66 CLOSED: main fa51fb76 FAIL E-1, Add. 1 ae40434a PASS (checker SHA), landed 49ac73fd, Add. 2 landed PASS.
 - C76 = R67 CLOSED: main fd06ec4c FAIL E-1..E-4; REFEREE-2 rund_check PSCH counts not reproducible (salted hash l. 401). Add. 1 9ebda4df PASS (checker SHA), landed 34c39384, Add. 2 PASS.
 - C77 = R68 CLOSED: main 04e80dc8 FAIL E-1, E-2; Add. 1 f8698135 PASS (checker SHA); landed ef70e2d1 + 24ee4bcf (split landing, L-1 repaired); Add. 2 PASS.
-- C78 = R69: main 19ccc7e2 FAIL E-1..E-3; Add. 1 PASS (see C78.md); landed check pending.
+- C78 = R69 CLOSED: main 19ccc7e2 FAIL E-1..E-3; Add. 1 978791e1 PASS (checker SHA); landed a7c141b8; Add. 2 PASS. Next: R70 (P-N5-HONFF).
 - Worktrees in the scratchpad: wR (48674360), wR2a (8e42c473), wR2 (fbbe66a4).
 
 ## HANDOVER (successor 9 → successor 10), written 2026-10-26 08:12Z (date -u)
