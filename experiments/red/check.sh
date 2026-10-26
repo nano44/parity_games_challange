@@ -239,7 +239,7 @@ MUT=1 python3 -I n3/n3x.py --one n3/instances/n3cov_lean.pg n3/instances/n3cov_l
 # R91 (successor 22): UL_C reader kill pinned (sha1, U event index L = 10 > |U| - 1 = 7); lib-free control: L = 6 gives no violation
 [[ "$(sha1sum ul/instances/reader_L10_n36.pg | cut -c1-12)" == "316443126793" ]] || { echo "reader_L10 sha1 changed"; exit 1; }
 out=$(python3 -I ul/ulx.py --one ul/instances/reader_L10_n36.pg ul/instances/reader_L10_n36.start | head -1)
-[[ "$out" == "UL_C_VIOL=1 "* ]] || { echo "ulx reader_L10 drifted: $out"; exit 1; }
+[[ "$out" == *" UL_C_VIOL=1 "* ]] || { echo "ulx reader_L10 drifted: $out"; exit 1; }
 python3 -I ul/mkreader.py 6 "$t/rd6.pg" > /dev/null && out=$(python3 -I ul/ulx.py --one "$t/rd6.pg" "$t/rd6.start" | head -1)
 [[ "$out" != *"UL_C_VIOL"* ]] || { echo "ulx control L=6 fired: $out"; exit 1; }
 TMPDIR="$t" python3 correspond.py 2 3 4 5 6 > "$t/corr.log" || { cat "$t/corr.log"; exit 1; }
