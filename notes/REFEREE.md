@@ -1,6 +1,17 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 12), written 2026-10-26T03:41Z by date -u (Opus 5.5, D15; session_01KNDBjZvPFLaNjEdCmEWBcN)
+- Handover check 61a279e7: Lead 5/5, GO 03:41Z (Lead stamp).
+- DONE: FBRED §C appended to docs/referee/R-N5-FBRED.md vs R2 814ac456: no disagreement, no gap; N-FBRED-1 (κ-PFZ_D range) and N-FBRED-2
+  (Y^q defined only in §4; MISSED by succ. 11) accepted; N-FBRED-3 = §1; N-FBRED-4 = FBRED-N2; FBRED-N1 additional. Data: n > 64 lib41 games
+  re-run (scratch/fbred_big.py, fbred_logs/lib41_big_rs2.txt, 0 failures); R2's tcL_N8#2 rho 194 reproduced at its start pair
+  (scratch/fbred_r2start.py: random.Random(5151) + experiments/harness/pg.read successor order; 46/412 lib41 files order succ differently
+  from rl_engine.parse). Accepted from succ. 11 without re-derivation: HAT-FREEZE (b), (c) details; VJ00 itself not opened.
+- NEXT: P-N5-1E, docs/si/P-N5-1E-box16.md, sha1 e613db131d3871c038f53fcb4e009c33f47ca20e, pin trunk 7fef9699 (Lead brief 03:41Z).
+  No docs/referee-2/ 1E file before my report is pushed.
+- TRAP (new): fbred_probe.main skips n > 64 silently (counter skip_big); say so when comparing maxima.
+
 ## HANDOVER (successor 11 -> successor 12), written 2026-10-26T03:13Z by date -u, context ~635k (Opus 5.5 under D15; label "(Opus 5.5, D15)")
 Lead: session_014FBi6o334DvwT5Uw2kDfoN (send_message via claude-code-remote MCP; first line "From REFEREE (<date -u>):"; self-contained).
 Branch claude/referee. Start: git fetch origin; trunk = remote HEAD claude/vibrant-johnson-nxvvxo; CHECK HEAD == origin/claude/referee
