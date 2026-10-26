@@ -20,3 +20,5 @@ DATA, not proof. Uses box43 (multi: rand_ckO, SPEC N5 step), box21 (n5x.readstar
   phase NCONF2 (distinct configurations with |D_C| ≥ 2). out/r0shape_liball_n40_k2.txt.
 Instances: long121_n40.pg + .start (L-RED 21, l-red dee85909 experiments/red/n3/instances, copied; sha1 c667c085… / d750664a…): one phase of 121
 transitions, |Q| 3; out/nconf_long121.txt, out/retfb_long121.txt.
+- ncclimb.py K NMAX STEPS SEED OUTDIR [--seed FILE.pg]: climb on (max NCONF_{≥2} in one phase, max N_ep^{≥2}) from the S3 start. Random seeds stay
+  trivial (out/ncclimb_k*_s*.txt: best (4, 4)); seeded from nep90 / nep76 (S3 scores (10, 10)): out/ncclimb_nep*_s*.txt, best games in out/climb/.

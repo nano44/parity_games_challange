@@ -1,0 +1,7 @@
+start (0, 0) n 7
+1 (1, 1) n 7 |Q| 4 sumdeg 9 proddeg 24
+1975 (2, 2) n 17 |Q| 4 sumdeg 14 proddeg 108
+2003 (2, 3) n 18 |Q| 4 sumdeg 13 proddeg 90
+2025 (3, 3) n 19 |Q| 4 sumdeg 14 proddeg 120
+2463 (4, 4) n 20 |Q| 4 sumdeg 17 proddeg 216
+done (4, 4)

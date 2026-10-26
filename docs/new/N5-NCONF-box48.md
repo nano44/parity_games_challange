@@ -176,6 +176,10 @@ an implication from (Στ)). □
   (no LEV_C filter, so an upper count for R⁰), 583 go to configurations with |D_C| ≤ 1 (44 with D_C = ∅, 539 with |D_C| = 1) and 33 to |D_C| ≥ 2
   (28 / 3 / 1 / 1 for |D_C| = 2 / 3 / 4 / 5); 610 change σ̄ at one vertex only. NCONF_{≥2} per phase: 0 in 4,929 phases, 1 in 2,539, ≥ 2 in 103, max
   35. So on the library R⁰_{≥2} is small and NCONF_{≥2} carries the multi-gate epochs.
+- DATA, the multi-gate split on the three long phases (each from its own start; inline script, numbers re-derivable with nconf.py's rows):
+  nep90 NCONF_{≥2} 38, NCONF_{≤1} 10, N_ep^{≥2} 74 (deg on Q 18, 3, 2, 3, 3: Σ 29, Π 972); nep76 36 / 4 / 71 (15, 4, 5, 5, 2); long121 12 / 2 / 35
+  (5, 3, 4). So NCONF_{≥2} can exceed Σ_q deg(q) (nep90: 38 > 29): the configurations combine choices at several vertices, and N_ep^{≥2} ≈ 2·NCONF_{≥2}
+  (the laps).
 - DATA, long121_n40 (L-RED 21, from its start; out/nconf_long121.txt, out/retfb_long121.txt): one phase, L 121, N_ep 37, NCONF 14, VIS 7, f 8,
   |𝒞_f| 5; two laps again (block 2 3 5 6 7 8 6 8 9 3 5 6 11 twice); RET-FB 36 checks, 0 violations; R⁰ = 3 of REV 23.
 
