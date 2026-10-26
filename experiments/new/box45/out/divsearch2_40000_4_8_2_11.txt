@@ -1,0 +1,1 @@
+games 40000, runs 200000, tie1 64, tie1_cyc 64, DIV 0, DIV_cyc 0

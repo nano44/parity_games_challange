@@ -1,0 +1,15 @@
+FRZ_runs: 5007
+FRZ_runs_too_short(vacuous): 5007
+b'_checks: 55202
+c1'_checks: 105613
+c2'_checks: 1082641
+runs: 50000
+states: 124060
+states_D_ge2: 27446
+states_NC: 85068
+states_NC_h3: 76831
+states_NC_not_hD: 3301
+transitions: 74060
+max_FRZ_run_minus_(n-1): 0
+max_FRZ_run_states: 4
+RESULT OK violations=0

@@ -1,0 +1,56 @@
+MODE files ../../../experiments/new/box41/lib41.txt 3 MUT rstick_all
+DEP_checks: 12397
+GDA_checks: 587874
+REC_XSN_D: 5455
+REC_XSN_pre: 2838
+REC_cross_after_epoch_freeze: 0
+REC_cross_at_fallback: 991
+REC_cross_epoch_boundary: 2617
+REC_cross_inside_epoch: 3016
+REC_crossings: 5633
+RSTICK_checks: 103081
+RSTICK_transitions: 11338
+SNPA_checks: 66945
+SNPB_checks: 16590
+SNPC_checks: 7136
+SPLITR_checks: 253719
+VIOLATIONS: 6444
+V_RSTICK: 6444
+XEP_checks: 7136
+phases: 7136
+runs: 1236
+SNPB_max_changes_after_prefix: (0, 'experiments/n5-exhaustive/instances/b4_cyc6_0.pg#0')
+max_N_ep: (50, 'experiments/si/orlens/instances/lev_l_x.pg#0')
+max_X_D: (99, 'experiments/red/so/instances/xsn91_n48.pg#0')
+max_epoch_fallbacks_minus_(n-1): (-1, 'experiments/n5-exhaustive/instances/n3all_maxph_0.pg#1')
+VIOLATION RSTICK: experiments/n5-exhaustive/canonA_1.pg#0@3: v 12
+VIOLATION RSTICK: experiments/n5-exhaustive/canonA_1.pg#0@3: v 13
+VIOLATION RSTICK: experiments/n5-exhaustive/canonA_1.pg#1@1: v 13
+VIOLATION RSTICK: experiments/n5-exhaustive/canonA_1.pg#1@1: v 12
+VIOLATION RSTICK: experiments/n5-exhaustive/canonA_1.pg#1@1: v 5
+VIOLATION RSTICK: experiments/n5-exhaustive/instances/b4_cyc6_1.pg#0@0: v 1
+VIOLATION RSTICK: experiments/n5-exhaustive/instances/b4_cyc6_1.pg#2@0: v 0
+VIOLATION RSTICK: experiments/n5-exhaustive/instances/b4_cyc6_1.pg#2@0: v 1
+VIOLATION RSTICK: experiments/n5-exhaustive/instances/b4_n4all_cyc3_0.pg#1@0: v 1
+VIOLATION RSTICK: experiments/n5-exhaustive/instances/b4_n4all_cyc3_0.pg#1@0: v 3
+VIOLATION RSTICK: experiments/n5-exhaustive/instances/b4_n4all_cyc3_0.pg#2@0: v 3
+VIOLATION RSTICK: experiments/n5-exhaustive/instances/b4_theta_n7.pg#1@0: v 0
+VIOLATION RSTICK: experiments/n5-exhaustive/instances/b4_theta_n7.pg#1@0: v 1
+VIOLATION RSTICK: experiments/n5-exhaustive/instances/b4_theta_n7.pg#1@0: v 2
+VIOLATION RSTICK: experiments/n5-exhaustive/instances/b4_theta_n7.pg#1@0: v 3
+VIOLATION RSTICK: experiments/n5-exhaustive/instances/b4_theta_n7.pg#1@0: v 4
+VIOLATION RSTICK: experiments/n5-exhaustive/instances/b4_theta_n7.pg#1@0: v 5
+VIOLATION RSTICK: experiments/n5-exhaustive/instances/b4_theta_n7.pg#1@0: v 6
+VIOLATION RSTICK: experiments/n5-exhaustive/instances/b5_n5_cyc4_0.pg#1@0: v 1
+VIOLATION RSTICK: experiments/n5-exhaustive/instances/b5_n5_cyc4_0.pg#1@0: v 3
+VIOLATION RSTICK: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@85: v 0
+VIOLATION RSTICK: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@85: v 1
+VIOLATION RSTICK: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@85: v 3
+VIOLATION RSTICK: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@85: v 4
+VIOLATION RSTICK: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@85: v 5
+VIOLATION RSTICK: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@85: v 6
+VIOLATION RSTICK: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@85: v 7
+VIOLATION RSTICK: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@85: v 8
+VIOLATION RSTICK: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@85: v 9
+VIOLATION RSTICK: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@85: v 10
+RESULT FAIL violations=6444

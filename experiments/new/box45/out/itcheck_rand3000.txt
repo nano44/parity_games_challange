@@ -1,0 +1,1 @@
+runs 15000, inphase_D 671, IT1 25, IT1_D1 7, WXI 9, WXI_D1 7

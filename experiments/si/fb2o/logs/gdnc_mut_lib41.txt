@@ -1,0 +1,12 @@
+states=1039 D2=224 hD=389 NC=603 NC_not_hD=214 B_n=10349 B_V=3626 C2_n=17604 C2_V=0
+VIOLATION ('B', 'experiments/red/carry/instances/absmono_viol_n44.pg', 0, 37, 10)
+VIOLATION ('B', 'experiments/red/carry/instances/absmono_viol_n44.pg', 2, 18, 35)
+VIOLATION ('B', 'experiments/red/carry/instances/absmono_viol_n44.pg', 3, 9, 35)
+VIOLATION ('B', 'experiments/red/carry/instances/absmono_viol_n44.pg', 3, 10, 35)
+VIOLATION ('B', 'experiments/red/carry/instances/absmono_viol_n44.pg', 3, 18, 35)
+VIOLATION ('B', 'experiments/red/carry/instances/absmono_viol_n44.pg', 3, 41, 35)
+VIOLATION ('B', 'experiments/red/carry/instances/absmono_viol_n44.pg', 4, 9, 35)
+VIOLATION ('B', 'experiments/red/carry/instances/absmono_viol_n44.pg', 4, 10, 35)
+VIOLATION ('B', 'experiments/red/carry/instances/absmono_viol_n44.pg', 4, 16, 22)
+VIOLATION ('B', 'experiments/red/carry/instances/absmono_viol_n44.pg', 4, 18, 35)
+GDNC FAIL

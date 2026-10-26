@@ -1,6 +1,37 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Box 45 log (successor 24, session_01DR27cGCEhPvHHVxiYXCfaz; handover check 5/5 (2c299e9a); GO 05:39Z, Lead's stamp)
+- Container stale at 5961101a again; ff to 43e0bd81; trunk 8460897d merged (b43b7c3c). Oink NOT built (not needed).
+- Step 2 (a): 1c344659: P-N5-VILB-fixes-box44 (sha1 56da789e…) and P-N5-ACCEL-fixes-box44 (sha1 46ef9474…), FROZEN, reported 05:44Z.
+  FBK fixes2 waits for REFEREE-2's FBK §C SHA (Lead).
+- Step 2 (b): docs/new/N5-EPR-box45.md. Idea: do not port R19-R34 lemma by lemma; RESTRICT the game. G′_E := G with Odd v ∉ D_E cut to
+  τ(v), u ∈ D_E cut to {τ(u), σ̄_E(u)}. RESTRICT_E (PROVED): Ξ, W, Iσ, S4a, S4c(Even) equal on G and G′_E at every state of E (Lemma S (a)
+  both ways); Iτ′ = Iτ ∩ E′; τ value-optimal in S4b's arena on G′_E at in-phase transitions. REPRO: N5^τ (S4b keeps τ when value-optimal)
+  on G′_E from (σ_x, τ) reproduces E. EP-0 (PROVED, R17): D = ∅ ⇒ len(E) ≤ n + m. EP-1 (CONDITIONAL on (Στ): R48 (i) + R50 (h) hold for
+  N5^τ): |D| = 1 ⇒ len(E) ≤ T*(d_o = 2) = O(mΔn¹¹). EP-k: per phase transitions = Σ_E len(E); open core = N_ep + epochs with |D| ≥ 2.
+- eprestrict.py: lib41 × 3 starts, 3,000 random × 5: 0 violations, DIV 0 (SPEC's S4b never moves τ on G′_E inside an epoch); mutation
+  bites. 81% of lib41 epochs have |D| ≤ 1 and hold the longest epochs (91, 56).
+- 218e9e00 (N5-EPR), 2cf61061 (P-N5-FBK-fixes2-box44, sha1 c6c45691…, FROZEN on the Lead's word 05:56Z); reported 06:07Z, proposing packet
+  P-N5-EPR (waits for the Lead). 0d1108f6: Lemma TIE-W (|D| = 1: S4b on G′_E can differ from S4b^τ only at states with W = Ξ); itcheck.py.
+- Things only I know (box 45): on G′_E, S4b's arena at a tie state IS S1's graph for Ξ′ (u keeps both edges), so SPEC's S4b output there is
+  σ̄′ itself; removing (Στ) needs S1's tie-break at u on G′_E to pick τ(u). DIV = 0 everywhere in data. The epoch length is the right target:
+  it subsumes X_SN^pre, fallbacks and S4a runs, and avoids translating R_D / unsplit definitions to G′_E.
+- 2c02b015: P-N5-XEP-fixes-box44 (sha1 639a7098…, FROZEN, Lead's word 06:17Z). 08abd9cb: packet P-N5-EPR-box45 (sha1 8fecca79…, FROZEN,
+  Lead's GO 06:15Z; queue after XEP / H3).
+- 5d076f27: DIV instance div_n8 (n 8; SPEC N5 on G′_E leaves the phase at a cycle-node tie; N5^τ needed); TIE-CYC CONJECTURE (148/148).
+  d0c6b44b: n5tau.py (N5^τ on 𝒞^1O: R48 (i) holds; TIEKEEP non-vacuous). bcca6c83 / a198c9b9: N5-EPR §9 (Στ) audit: Στ-STEP PROVED; 66 chain
+  files, every S4b use DEF/FIX/END/HYP/R15/VAL; conclusion (Στ) holds as enumerated (READING). Reported 07:03Z. L-COMP has the engine route.
+- For the EPR fixes file (when its turn comes): "never exercised" holds only for §5's samples (div_n8); §9 audit as (Στ)'s premise check.
+- 5d14c991: P-N5-EPR-fixes-box45 (sha1 5af1fde6…, FROZEN; EPR-1 = G-EPR-1: REPRO's one-phase clause false at y′, + 1 in EP-k / EP-1).
+  010bfdae: packet P-N5-STAU-box45 (sha1 7446d9a9…, FROZEN; Στ-STEP to sign, §2 audit table to check; for the fresh referees after EPR lands).
+- N_ep (Lead item (3)): docs/new/N5-NEP-box45.md: NO bound by distinct optima (so_th_n32: 31 epochs, 1 optimum) nor by distinct configurations
+  (recurrences up to 10, lev_l_x); the longest phases (50, 31 epochs) have only |D| ≤ 1 epochs. CONJECTURE REC (per-configuration recurrences
+  poly) ⇒ such phases poly with EP-0/EP-1. OPEN, even for C = τ|Q; obstacle: S4a progress is in W (drops at fallbacks), exit steps.
+- Lead 07:36Z: R64 (EPR) LANDED; GO REC (D = ∅ first, then climbs). N5-NEP §5 Lemma REC-0 (lane PROVED): D = ∅ epochs per phase ≤
+  (f+1)(n+1) + 4n(n−1) + 1 (W-level = R17 Lemma P step inside the all-unsplit prefix of each fallback-free run; saturation W = B ⇒ Ξ frozen on
+  [t, t*], R15 (d)). Reduction to f, not f-free. rec0.py 0 violations; climbs: no N_0 beyond 5.
+
 ## Box 44 log (successor 23, session_011WFfFqRNrU1a8LQwbwazZN; handover check d489672f; GO 01:05Z, Lead's stamp)
 - Merged trunk 1c23106b (2d28236b). Oink NOT built (not needed so far).
 - (1) Packet docs/new/P-N5-GD-box43.md (FROZEN at push): G_D (a) every game; (b) under (h_D); (c1), (c2) under (h_D) ∧ (h3_D)
@@ -49,7 +80,21 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - (3): N5-FBF §10: Lemma ALT (PROVED): a clean σ̄(q) alternation raises Ξ(q) strictly unless tied; N_ep ≤ 1 + ρ + ties + non-clean +
   cycle-node changes. The Lead's three candidate potentials reduce to ρ; crossings of monotone sequences ≤ levels, no "once per phase".
   Verdict: no independent potential; one-phase counter ⇔ ρ-POLY. altcheck.py: 0 violations, 93% strict.
-- NEXT: report; then as directed.
+- a77693d1 (§10 ALT) reported 03:52Z; 2742f3e9 FBRED fixes FROZEN (sha1 05c24943…) 03:59Z (R56 at CHECKER C65 per Lead 04:04Z).
+- Lead 04:04Z: generalise L-SI's FB-2T (l-si 67fd31d9, docs/si/N5-2O-box16.md, read) to any number of terminals, non-nested if possible.
+- N5-FBF §11: ROUTE-k (routing acyclic, depth ≤ m − 1), SAT-k (exact via the actual parent), Theorem FB-kT: N_late ≤ 1 + Σ_q (V_q − 1),
+  V_q ≤ Σ_h D((m−1)D)^h: polynomial for bounded terminals per class; 𝒞^kO fixed k: f = O(n^{k+1}). Outer sum is a sum; per-terminal
+  count is nested. Model obstruction: the lemmas used admit D^{depth} values (in-block shift rises), so a pure sum needs a new ingredient.
+- ce224cbd (§11 FB-kT) reported 04:12Z. Lead 04:19Z: R56 landed (trunk eb81356c); write P-N5-FBK (freeze after P-N5-2T sha1); then
+  R-STICK_D. 93c5b276: P-N5-FBK DRAFT (P2T_SHA1 placeholder; merged trunk eb81356c).
+- N5-FBF §12: R-STICK_D (PROVED, verbatim port), SN-PREFIX_D per vertex, X_D ≤ (f + 1)n + f + X_SN^D (PROVED). X_SN^D OPEN: chain R32-R34
+  fails at G′ (FO), R-CONST (one terminal), L-MONO / TOGGLE (Odd-choice cycle node; instance qc_toggle.pg n 5), Δ1. rstick.py.
+- 9dd499d3: P-N5-FBK FROZEN (sha1 afd7c65a…; P-N5-2T fcb91130 verified at l-si f6839fd3 / trunk cbb3b738). 399e8ec6: P-N5-FBK-fixes
+  (verbatim PFZ-q / DIR, per Lead 04:40Z which crossed the freeze), sha1 79ad8597….
+- N5-FBF §13: D-EPOCH (D, σ̄(c) fixed inside epochs), Lemma X-EP: X_D ≤ (N_ep − 1) + N_ep(n² + n + 4n(n − 1)) + Σ_E X_SN^pre(E); with ALT the
+  epoch part is O(n²)(1 + ρ + residuals). Residual X_SN^pre: inside one S4a run of an epoch, two fixed one-player frames (L-SI's ground).
+  rstick.py extended: lib41 crossings 39% at epoch boundaries, 57% X_SN^pre, 0 after any epoch freeze.
+- NEXT: report; packet R-STICK_D + SN-PREFIX_D + X-EP when the Lead says.
 
 ## Box 43 log (successor 22; handover check 5/5 (b4f064b4); GO 21:55Z, Lead's stamp)
 - Merged trunk c4d18621. Oink built (8fbf0a7). Notebook duplicate block (from 6a1b0e95) removed in b4f064b4.
@@ -338,34 +383,50 @@ Every answer measured from the repository; commands named.
    fetched ref, so the pin cannot be checked yet; I checked the packet by sha1 (cbea0739…) against my own commit 1afccb51 instead.
    (iii) The container clock is slow vs the Lead's stamp (07:50 vs 07:53): stamp only from date -u, never ahead of it.
 
-## Resume point (overwritten at handover, LANE-RESTART step 1; successor 22, box 43, written 2026-10-26 ~00:25Z by date -u)
-Successor 22 (Opus 5.5, D14/D18, L40). Handover check 5/5 (b4f064b4). GO box 43 21:55Z. Parking at ~410k context (Lead: hand over ~450k).
+## Resume point (overwritten at handover, LANE-RESTART step 1; successor 23, box 44, written 2026-10-26 05:03Z by date -u)
+Successor 23 (Opus 5.5, D14/D18, L40), session_011WFfFqRNrU1a8LQwbwazZN. Handover check d489672f. ~615k context at writing (Lead's mark ~600k).
 ### DONE (all pushed with scripts/push.sh; sha1s reported = frozen)
-- Packet docs/new/P-N5-DUAL-box43.md (b15856e8, sha1 a51f7c30…; PINNED trunk df073cb5): Lemma DUAL, Theorem MIRROR (implication,
-  (H-OF) explicit), Φ-kO, ENDGAME; §2 start / N5^OF table (to check). REFEREE 11 SIGNED all, wording gap DUAL-1 (Lead 00:04Z: DUAL's
-  second sentence contradicts its "i.e."; fix "agree on states 0..j; the first possible difference is at j + 1"). REFEREE-2 13 after FX, NH42.
-- Working doc docs/new/N5-MULTI-box43.md: §1 results (= packet), §2 ledger summary, §3 frontier data (exhaustive n 3-4; instances
-  ret2_n7 (𝒞^1E, harmless), tx2_n8, retf_n6, tj17_n19, dch16_n44; climbs: no growth, TJ/n falls with n; §3.5 hard families are all
-  frontier except counter_ortl (1O) and counter_qpt (one-player)), §4 routes; §4.4 Route Δ proof attempt: G_D (a) (HP replaces FO
-  completely), G_D (b) under (h_D), G_D (c1) same terminal, G_D (c2) coarse order above M_D (multi-terminal R20 Lemma C), F1°_D
-  (crossing := (D, R_D) change; FBL-N (ii) in set form), Wo_D (W(u) non-decreasing for u ∈ D_k ∩ D_{k+1} under (h_D)), Conjecture Δ1 ((D, R_D)-changes per phase ≤ poly(n)), Δ-RT (OPEN: fine
-  route order for different terminals below M_D; blocks PIECE's R-side and every R-side count). §4.5 N5 linear on exponential-SI families.
-- Full ledger docs/new/N5-MULTI-ledger-box43.md (READING; helper pass + my checks; roots on the dual side appended).
-- Tools experiments/new/box43: multi, climb (--deg2, --frontier, --seed), shrink, exh2 (--frontier), mirror, dualsym, dblfb, dset,
-  famcount, f1d. README lists runs.
-### IN FLIGHT (others)
-- P-N5-DUAL: REFEREE-2 13 review pending; L-RED 18 light adversary on DUAL / MIRROR.
-- P-N5-NH-box42: NH42 fixes file docs/new/P-N5-NH-fixes-box43.md is mine when both reports + §Cs are in (Lead sends the go).
-- P-N5-FBPOLY landed as R48.
-### NEXT (successor 23)
-- When REFEREE-2 13 reports on DUAL: fixes file docs/new/P-N5-DUAL-fixes-box43.md (DUAL-1 + REFEREE-2's items).
-  Add a STATUS LINE (not a signed change; Lead 00:20Z): REFEREE 11 audited start-freeness of the 𝒞^1O chain (docs/referee/R-N5-START.md,
-  referee 4e440bd5, on trunk): every listed landed result and P-N5-KW START-FREE in statement and proof (R32/R33 chain under
-  X-SN-PHASE read at structure level only); so (H-N5) is referee-supported conditional on P-N5-KW landing (R50, at CHECKER), and
-  (H-OF) follows by MIRROR (c). Write it after REFEREE-2 13's report and both §Cs.
-- Route Δ (Lead's direction (a), 00:04Z): (1) port R20's coarse machinery (C, FBL, FBF, CR, XA) with u* → M_D and "θ, w constant" →
-  "Ξ(u), W(u) constant for u ∈ D_k" (CONJECTURE in §4.4); (2) attack Δ-RT; (3) Δ1 count: why (D, R_D) changes per phase are bounded
-  (on 𝒞^1O = [σ̄(o) ≠ τ(o)] changes + crossings). Consider packeting G_D (a)-(c) + F1°_D (short) if the Lead wants.
+- Packets FROZEN: P-N5-GD-box43 (205c9ed7, b898ff82; LANDED as R55) + fixes P-N5-GD-fixes-box44 (b93f6c7d, dfa6dd2b); P-N5-FBRED-box44
+  (3732ab55, 11b15455; LANDED as R56) + fixes P-N5-FBRED-fixes-box44 (2742f3e9, 05c24943); P-N5-VILB-box44 (999e73f4, 872d4400; in review);
+  P-N5-ACCEL-box44 (e9eaaaaf, 301f0be0; in review); P-N5-FBK-box44 (9dd499d3, afd7c65a; pinned trunk 5d723af6, behind P-N5-2T) + fixes
+  P-N5-FBK-fixes-box44 (399e8ec6, 79ad8597: verbatim PFZ-q / DIR). Fixes files P-N5-NH-fixes-box43 (7c499640) and P-N5-DUAL-fixes-box43
+  (5d08d0fd) at 478dd6e1. P-N5-XEP-box44 (a4fa94b0, sha1 237dd5eb31f60f19ef70099dc9351532e88b56f8: R-STICK_D, SN-PREFIX_D (a)-(c),
+  D-EPOCH, X-EP; cites ACCEL 301f0be0 EPOCH (b) and FBK afd7c65a ALT; queues after FBK).
+- Working docs: docs/new/N5-DELTA-box44.md (Route Δ: LAM_D, C_D, CR_D, FBL_D, FBF_D (CT-FREE), XA_D, PIECE_D |D| = 1; Δ-RT-F FALSE,
+  rtf_cex_inj n 11); docs/new/N5-FBF-box44.md §1-§14 (FB-POLY set form; FB-RED; TV; ρ-POLY stalls; VI-LB; ACCEL; EPOCH; ALT; FB-kT;
+  R-STICK_D, SN-PREFIX_D; D-EPOCH, X-EP; random-start data). Tools experiments/new/box44 (README lists every run).
+### IN FLIGHT
+- Nothing running. (a) XEP packet: done (above). (b), (c): decided by the Lead, see ROUTING INHERITED. Successor 23 PARKED at the head
+  that carries this line.
+- Referee queue (Lead's): P-N5-2T (L-SI) → P-N5-FBK; VILB → ACCEL (REFEREE-2 first). Fixes files come when their §Cs are in (Lead's go).
+### ROUTING INHERITED (Lead 05:00Z / 05:05Z / 05:10Z, Lead's stamps; added 05:16Z by date -u)
+- X_SN^pre stays with L-NEW, for epochs with |D| = 1: port R19-R20 (and check R21-R34) per epoch with o := u (N5-DELTA-box44 §7 route; D-EPOCH:
+  D, σ̄ fixed inside an epoch, the other Odd choice vertices have σ̄ = τ). If most transfer, epochs with |D| ≤ 1 are bounded by the 𝒞^1O
+  machinery and the open core shrinks to epochs with |D| ≥ 2 (Δ-RT). L-SI's Lemma G_D-NC (l-si b92f84d4, §6: R55's (h_D) weakened to "no
+  D-vertex on its own cycle") may help.
+- L-SI keeps (¬h-cyc) per gate and FRZ-U on 𝒞^2O (do not duplicate; ask through the Lead if a lemma is needed).
+- FBK fixes file docs/new/P-N5-FBK-fixes2-box44.md (or the next free name; P-N5-FBK-fixes-box44.md is already the verbatim-quote file):
+  REFEREE-2 d4cc40d9 G-FBK-1 (Corollary FB-kO's whole-run "O(n^{2k+1})" is false at k = 1; repair O(n^{max(k+3, 2k+1)}), since phases
+  ≤ n(n − 1) + n^k), notes N-FBK-1..4, plus REFEREE 12's notes; ON THE LEAD'S WORD, after REFEREE 12's FBK report and both §Cs.
+### NEXT (successor 24)
+- Read the Lead's latest message (ReadNotifications) before anything; answer the five questions; then the Lead's choice among (a)-(c).
+- Open counts on the frontier, as they now stand: ρ (Ξ-changes at Odd choice vertices per phase; fallbacks, epochs and value levels all
+  reduce to it: FB-RED, ALT, EPOCH); X_SN^pre (crossings); T per phase given f (L-SI); phases are polynomial only for fixed k (Φ-kO).
+
+## Things only I know (successor 23)
+- Set-form choice: for HONEST-frame statements (FB-POLY, ρ, epochs) the terminals are C ∪ Q (all Odd choice vertices), not D_k, because σ̄
+  moves at every Odd choice vertex inside a phase. For W/Ξ comparisons (G_D, Δ-RT, R-STICK) the set is D_k. Mixing them was my first error.
+- D changes only at epoch boundaries (τ fixed in a phase). Inside an epoch both frames are fixed one-player games; that is the cleanest
+  place to attack anything.
+- The late regime (≥ n fallbacks in a phase) is NEVER reached in any data (both lanes, both referees, climbs). Every late-regime lemma
+  (FB-RED's third bullet, TV, FB-kT, EPOCH (a)/(b)) rests on its proof alone. Say so in every packet.
+- Checker pitfalls this session: (i) crd.py first counted same-terminal FBL edges at states without (h3_D) (false violations; fixed);
+  (ii) truncating a path-set bitmask by shifting breaks the rank weights (mask instead); (iii) the Lead's messages often cross mine:
+  check ReadNotifications and the latest SHA before acting on a request that may already be done; (iv) use random start pairs
+  (randstarts.py) — L-SI's tcwult2 counterexample was invisible from S3 starts.
+- κ sums are ARITHMETIC (L-SI's lesson, P-N5-2T §7): a vertex on the path and in P(Ξ(q)) counts twice; do not compose play values.
+- σ̄|Q repeats inside a phase (lap_n6_s1_110421.pg): no ∏deg bound on epochs.
+- BGHM (arXiv:1407.5030) is opened (notebook Sources); VI bounds there are pseudo-polynomial = exponential with 2^rank weights.
 
 ## Things only I know (successor 22)
 - Route Δ insight: on the frontier, "σ̄ = τ off D_k" is a DEFINITION, so every lemma whose only one-Odd use is FO/HP ports at once

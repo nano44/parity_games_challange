@@ -1,0 +1,16 @@
+MODE files lib2o_noref.lst 3 MUT - UCAP 13
+DIR_checks: 2
+DIRbr_y_is_c: 2
+PFZQ_checks: 1888
+ROUTE_checks: 95
+YB_checks: 88
+classes_2term: 194
+classes_skipped_UCAP: 117
+phases: 368
+phases_2T: 368
+runs: 123
+SAT_closeness: (-2, 'experiments/new/box43/instances/retf_n6.pg#0@0 c 4 q 0 |U_c| 3')
+SAT_closeness_all_classes: (-2, 'experiments/new/box43/instances/retf_n6.pg#0@0 c 4 q 0 |U_c| 3')
+max_f: (17, 'experiments/new/box44/instances/fb17_n32.pg#0')
+max_f_in_phase_with_2term_class: (17, 'experiments/new/box44/instances/fb17_n32.pg#0')
+RESULT OK violations=0

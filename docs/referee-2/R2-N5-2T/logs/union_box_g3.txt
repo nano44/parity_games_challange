@@ -1,0 +1,21 @@
+MODE union ../R2-N5-FBRED/box4344.lst g3 3 MUT - UCAP 13
+DIR_checks: 248
+DIRbr_cycle: 152
+DIRbr_y_is_c: 96
+PFZQ_checks: 2048
+ROUTE_checks: 488
+SAT_checks: 192
+SATbr_cycle: 96
+SATbr_y_is_c: 96
+YB_checks: 875
+classes_2term: 270
+classes_skipped_UCAP: 236
+phases: 338
+phases_2T: 139
+runs: 60
+SAT_closeness: (15, 'experiments/new/box44/instances/fb17_n32.pg+g3P67#0@23 c 32 q 33 |U_c| 3')
+SAT_closeness_all_classes: (15, 'experiments/new/box44/instances/fb17_n32.pg+g3P67#0@23 c 32 q 33 |U_c| 3')
+max_f: (17, 'experiments/new/box44/instances/fb17_n32.pg+g3P66#0')
+max_f_in_phase_with_2term_class: (17, 'experiments/new/box44/instances/fb17_n32.pg+g3P66#0')
+SAT_distinct_(kq,kq')_pairs_per_(run,class,q'): max 1 classes_with_>1: 0 of 18
+RESULT OK violations=0

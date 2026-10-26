@@ -1,0 +1,7 @@
+edges_offset=933 extra_states=93 forb_states=106 max_T=20 max_block=10 max_forb_run=11 max_split_run=11 runs=32 runs_with_forb=25 runs_with_split=25 split_states=106 trans=127
+TOP ('experiments/alg/instances/dtl_pertop31_n18.pg', 1, 2, 18, 'T', 1, 'split', 0, 'maxD', 0)
+TOP ('experiments/dtl-bench/failures/count_r06005_min.pg', 0, 1, 17, 'T', 1, 'split', 0, 'maxD', 0)
+TOP ('experiments/new/box21/instances/fts_best24.pg', 1, 10, 24, 'T', 9, 'split', 9, 'maxD', 1)
+TOP ('experiments/new/box21/instances/fts_best24.pg', 23, 43, 24, 'T', 20, 'split', 10, 'maxD', 1)
+PIECE PASS
+done

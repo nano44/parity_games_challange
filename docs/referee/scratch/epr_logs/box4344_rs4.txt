@@ -1,0 +1,21 @@
+DIV                        0
+EXITLAM                    3
+EXITLAM_D1                 3
+EXIT_chk                   46
+REP_chk                    336
+R_chk                      531
+epochs                     336
+epochs_D0                  65
+epochs_D1                  94
+epochs_D2                  114
+epochs_D3                  63
+games                      11
+max_len_D0                 5
+max_len_D1                 14
+max_len_D2                 18
+max_len_D3                 10
+phases                     290
+FAILS 0
+EX ( ('EXITLAM', 'experiments/new/box44/instances/fb17_n32.pg', 26, 26, 1)
+EX ( ('EXITLAM', 'experiments/new/box44/instances/fb17_n32.pg@r1', 26, 26, 1)
+EX ( ('EXITLAM', 'experiments/new/box44/instances/fb17_n32.pg@r2', 33, 33, 1)

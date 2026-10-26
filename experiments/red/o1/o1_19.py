@@ -102,7 +102,9 @@ def analyse(g, start=None, mode="n5", tmp=None, use_oink=True):
         ph.append(dict(T=b - a, f=f, fo=fo, u=u, oc=o == ct, fbd=fbd, fbh=fbh, Th=Th, So=So, Tb=bounds(n, m, d, D, f)[0])); a = b + 1
     r["PH"] = len(ph); r["Tmax"] = max(p["T"] for p in ph); r["fmax"] = max(p["f"] for p in ph)
     r["fslack"] = max(p["f"] - p["fbd"] for p in ph); r["fslackhat"] = max(p["f"] - p["fbh"] for p in ph)
-    r["fcap"] = max(p["f"] - max(1, p["u"] - 2) for p in ph); r["fF"] = r["fmax"] - 2 * n * n; r["Tslack"] = max(p["T"] - p["Tb"] for p in ph)
+    r["fcap"] = max(p["f"] - max(1, p["u"] - 2) for p in ph)
+    r["fcap3"] = max([p["f"] - (p["u"] - 2) for p in ph if p["u"] >= 3 and p["f"] >= 2] + [-10 ** 9])   # FB-CAP slack, same phase
+    r["fF"] = r["fmax"] - 2 * n * n; r["Tslack"] = max(p["T"] - p["Tb"] for p in ph)
     r["fo_inphase"] = sum(p["fo"] for p in ph)
     r["Thmax"] = max(p["Th"] for p in ph); r["Somax"] = max(p["So"] for p in ph)
     r["Th_oc"] = max([p["Th"] for p in ph if p["oc"]] + [0]); r["So_oc"] = max([p["So"] for p in ph if p["oc"]] + [0])

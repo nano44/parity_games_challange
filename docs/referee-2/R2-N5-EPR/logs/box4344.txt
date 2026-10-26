@@ -1,0 +1,20 @@
+MODE files ../R2-N5-FBRED/box4344.lst 6 MUT -
+EP0_checks: 81
+LAMEND_checks: 53
+LAMEND_differs: 5
+LAMEND_differs_D0: 2
+LAMEND_differs_D1: 3
+LAM_checks: 582
+REP_steps: 272
+RIII_checks: 272
+RII_checks: 272
+RI_checks: 582
+epochs: 363
+phases: 310
+runs: 60
+LAMEND_example: (1, 'experiments/new/box44/instances/fb17_n32.pg#0@27 |D| 1 len 1 n 32')
+max_len_by_D0: (11, 'experiments/new/box44/instances/fb17_n32.pg#1')
+max_len_by_D1: (7, 'experiments/new/box43/instances/dch16_n44.pg#0')
+max_len_by_D2: (18, 'experiments/new/box44/instances/fb17_n32.pg#0')
+max_len_by_D3: (10, 'experiments/new/box44/instances/rtdis_k4_n24.pg#0')
+RESULT OK violations=0

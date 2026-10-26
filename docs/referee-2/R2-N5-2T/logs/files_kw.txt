@@ -1,0 +1,13 @@
+MODE files ../R2-N5-KW/files.lst 2 MUT - UCAP 13
+DIR_checks: 2
+DIRbr_y_is_c: 2
+FB2W_checks: 2
+PFZQ_checks: 11839
+YB_checks: 534
+classes_skipped_UCAP: 2283
+phases: 4170
+phases_2T: 4170
+runs: 1006
+FB2W_max_count: (1, 'docs/referee-2/R2-N5-LP/instances/df_cex.pg#0')
+max_f: (37, 'experiments/red/so/instances/rise_fb38_n48.pg#0')
+RESULT OK violations=0

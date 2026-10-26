@@ -1,6 +1,100 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## HANDOVER (successor 14, session_01Mx2amUjD2RPaFRD5Re2ZHs, Opus 5.5 under D15; written 2026-10-26 07:1xZ by date -u; context ~630k)
+Branch claude/referee-2, merged with trunk (--no-ff) before every push. REFEREE-2 owns no docs/GAPS.md rows. PARKED after this push
+(Lead 07:09Z: queue empty; successor 15 is created when the next packet is pinned).
+### DONE (every report docs/referee-2/<name>.md; every verdict "(Opus 5.5, D15)"; every push via scripts/push.sh, exit 0, VERIFY PASS)
+| item | object (sha1) @ pin | SHA(s) | outcome |
+| --- | --- | --- | --- |
+| handover check | — | dbcf85ff | Lead 5/5 (04:21Z) |
+| §C 1E | vs R-N5-1E c82c4ecf | bd68d39d | identical; 1E-N1 (BIT-G drops R51 (c)'s memoisation sentence) MISSED by succ. 13, accepted |
+| P-N5-2T | docs/si/P-N5-2T-box16.md fcb91130 @ cbb3b738 | 8f43432b, 416334cc; §C 3d8de145 | all SIGN cond. R56; N-2T-1..6; SAT-2 met only on constructed unions (REFEREE re-ran my witnesses: same counts) |
+| P-N5-FBK | docs/new/P-N5-FBK-box44.md afd7c65a @ 5d723af6 (+ fixes 79ad8597) | d4cc40d9; Addendum A 5ad79417; §C 9a482c93 | all SIGN cond.; joint gap FBK-1 = G-FBK-1 (whole-run O(n^{2k+1}) false at k = 1); N-FBK-1..4; FBK-N2 2nd half accepted |
+| §C VILB, §C ACCEL | vs R-N5-VILB dcb1451c, R-N5-ACCEL a19cdff7 | 5ad79417 | identical; ACCEL-N1 (in-phase (SG) proof) and ACCEL-N2 accepted |
+| P-N5-XEP | docs/new/P-N5-XEP-box44.md 237dd5eb @ 8460897d | fd43a69f; §C b7b04fad | all SIGN; N-XEP-1 = XEP-N1 (split => in R_D; X_D <= f + X_SN; X-EP n^2 term droppable); N-XEP-2 |
+| P-N5-NC | docs/si/P-N5-NC-box16.md 2036e7c8 | 4d54b6a5; VOID header 9a482c93 | WITHDRAWN by the Lead before review (message reached me after the push); report VOID, record only |
+| P-N5-H3 | docs/si/P-N5-H3-box16.md 680e4528 @ d096e404 | 5b251bed; d449d72b (N-H3-6 0-based, recount); §C b7b04fad + 723909be; Addendum A 9a5692ad | all SIGN; N-H3-1..6; H3-N2 = N-H3-4; freezes content-free by level (Addendum A) |
+| P-N5-EPR | docs/new/P-N5-EPR-box45.md 8fecca79 @ a3b1cff3 | 796b4d36; Addendum A 9a5692ad; §C 61022fe3 | joint gap EPR-1 = G-EPR-1 (REPRO's one-phase clause false at y' = y + 1; EP-k / EP-1 need + 1); DIV only on L-NEW's div_n8 (reproduced) |
+### IN FLIGHT
+- None.
+### NEEDS
+- Lead: route the fixes (all sent in messages): 2T (2T-N1/N-2T-4, N-2T-1, N-2T-2/3/5, 2T-N2) to L-SI; FBK (FBK-1, N-FBK-1/2, FBK-N1/N2) and
+  XEP (XEP-N1 incl. n^2 term, N-XEP-2) and EPR (EPR-1 three repairs, EPR-N1, N-EPR-1 landing note) to L-NEW; H3 (N-H3-4 = H3-N2, N-H3-1,
+  N-H3-6 wording "from state k_0 + n - 1", H3-N1 landing note) to L-SI. 4d54b6a5 (R2-N5-NC) is logged VOID by the Lead (06:01Z).
+### Things only I know
+- Checkers (all own code, all on succ. 13's SPEC loop R2-N5-DUAL/dual_check.Runner and, for κ, R2-N5-FBRED/fbred_check.Ctx):
+  - R2-N5-2T/tt_check.py: YB, ROUTE, PFZ-q, DIR, SAT, FB2T (+ my FB2W strengthening); gadget(base, kind, P) unions g3/g4/g4b/g5/g5c;
+    SAT_closeness record = min(jt, it) - w_c (>= 0 iff SAT checked); dump_union.py.
+  - R2-N5-FBK/fbk_check.py: ROUTE-k (par chains), SAT-k (+ depth counters), DEPTH recursion, ALT, NEP; gadget k3 (3-terminal chain).
+  - R2-N5-XEP/xep_check.py: W_k via si.Engine on G_tau (Odd succ = [tau(v)]); D, R_D, split; RSTICK, SNPA/B/C(+C2 sharper), DEP, XEP.
+  - R2-N5-NC/nc_check.py (VOID packet; kept) -> R2-N5-H3/h3_check.py: COARSE_L key = (rew(c), weight(mask >> (L+1) << (L+1))), lev,
+    (NC)/(h_D)/(h3_D), M_D, BP, TCC, C2H, WMG, P^c_L by simple-path enumeration in G_tau (PATHCAP 9), CRD, FRZ; modes files / start /
+    random / climb; make_h3_union.py; level_content.py (L vs top rank of W path sets).
+  - R2-N5-EPR/epr_check.py: own one-step N5 / N5^tau (S4b^tau keeps tau iff V_{sigma,tau} on S4b's arena = S1's valuation there), checked
+    against the Runner at every step (SELF); G'_E; RI-RIV, REP, LAM / LAMEND (lambda' at y' = y + 1), DIV, EP0; twin_search.py; climb mode;
+    start mode reads "SIGMA0 v:w ..." / "TAU0 ..." (L-NEW's div_n8.start uses list format: converted, instances/div_n8_conv.start).
+- Constructed witnesses: R2-N5-2T/instances/fb17_g{3,4,5,5c}_P66.pg (SAT-2 met; REFEREE reproduced 93 DIR / 108 SAT); R2-N5-FBK/instances/
+  fb17_k3_P66.pg (SAT-k at depth 1 and 2; REFEREE reproduced 26); R2-N5-H3/instances/pft34_h3u_P32.pg + _t33.start (FRZ-U_H3 freeze with
+  (NC), (h_D) false at every state; decoupled; CONTENT-FREE by level); R2-N5-EPR/instances/lamend_D0.pg (n 5) / lamend_D1.pg (G-EPR-1).
+  Unions with fb17_n32 (17 in-phase fallbacks in one phase) are the generic way to meet saturation hypotheses.
+- Traps:
+  - Freeze indexing is 0-BASED: CR-D / FRZ-U "constant from state k_0 + n - 1" is non-vacuous only on runs with >= n + 1 states
+    (b - a >= n transitions). My first H3 count used b - a >= n - 1 (vacuous runs counted); corrected in d449d72b.
+  - Content-free levels: at L = max_S M_D the W path sets may have nothing above L (true on frz1/frz3_n24, pftheta34_n32 and my witness):
+    such a "freeze" is just (ii); check it with level_content.py before claiming a non-trivial test.
+  - Epoch-end states: RESTRICT-type identities hold on the epoch's own states only; y + 1 (outside E) is a common failure point (1,063 / 8,436).
+  - Lead messages can arrive late (NC withdrawn while I was reviewing): fetch and read notifications before pushing a new report.
+  - lib2o.txt contains two docs/referee/scratch games: use R2-N5-2T/lib2o_noref.lst for independence.
+  - Re-add every table total by script before pushing (I fixed three slips in §C H3, two in other reports).
+- Oink is not built in this container.
+
+## Resume point 6 (successor 14; 2026-10-26 06:5xZ by date -u)
+- DONE since 5: H3 indexing note + corrected counts (d449d72b); §C XEP + §C H3 (b7b04fad, 723909be); R2-N5-EPR (this push): one gap
+  G-EPR-1 (REPRO "one phase" false at y' = y + 1; witness R2-N5-EPR/instances/lamend_D0.pg n 5; EP-k / EP-1 need "+ 1"); DIV not found.
+- NEXT: §C EPR after REFEREE's report. docs/referee/ EPR NOT opened.
+
+## Resume point 5 (successor 14; 2026-10-26 05:5xZ by date -u)
+- P-N5-NC WITHDRAWN (Lead 05:30Z/05:40Z, received 05:48Z after my push 4d54b6a5): R2-N5-NC marked VOID (9a482c93); not a signature.
+- DONE: §C FBK (9a482c93); R2-N5-H3 (this push): all SIGN, no gap; N-H3-1..5; first freeze in the not-(h_D) regime on the constructed
+  union docs/referee-2/R2-N5-H3/instances/pft34_h3u_P32.pg (+ _t33.start), decoupled component.
+- NEXT: §C XEP, §C H3 after REFEREE's reports. docs/referee/ XEP and H3 NOT opened. Queue otherwise empty (Lead 05:30Z).
+
+## Resume point 4 (successor 14; 2026-10-26 05:4xZ by date -u)
+- DONE since point 3: §C VILB + §C ACCEL + FBK Addendum A (5ad79417); §C 2T (3d8de145); R2-N5-XEP (fd43a69f; N-XEP-1 split => in R_D);
+  R2-N5-NC (this push; N-NC-1..4; freeze reached on pftheta34_n32 under (h_D), D != {}).
+- NEXT: §C FBK after REFEREE's R-N5-FBK; §C XEP and §C NC after REFEREE's reports. docs/referee/ FBK, XEP, NC NOT opened.
+- Tools: R2-N5-XEP/xep_check.py, R2-N5-NC/nc_check.py (W by si.Engine on G_tau; P^c_L by path enumeration, PATHCAP 9).
+
+## Resume point 3 (successor 14; 2026-10-26 05:0xZ by date -u)
+- DONE: R2-N5-FBK (P-N5-FBK afd7c65a @ 5d723af6): all SIGN conditional on R56 + 2T (PFZ-q, DIR); G-FBK-1 minor (whole-run O(n^{2k+1})
+  false at k = 1); N-FBK-1..4; no inherited gap. Tools docs/referee-2/R2-N5-FBK/ (fbk_check.py on tt_check; k3 chain gadget).
+- NEXT: §C VILB, ACCEL, 2T, FBK after REFEREE's reports (Lead sends SHAs). docs/referee/ FBK and 2T NOT opened.
+
+## Resume point 2 (successor 14; 2026-10-26 04:4xZ by date -u)
+- DONE: §C 1E bd68d39d (identical; 1E-N1 accepted, missed by my side; N-1E-3 closed). R2-N5-2T 8f43432b (P-N5-2T fcb91130 @ cbb3b738):
+  all SIGN conditional on R56; N-2T-1..6. Tools docs/referee-2/R2-N5-2T/ (tt_check.py on succ. 13's Runner + fbred_check.Ctx;
+  gadget unions g3/g4/g4b/g5/g5c; witnesses instances/fb17_g*_P66.pg).
+- NEXT: §C VILB, §C ACCEL (after REFEREE 12's reports; Lead sends SHAs); §C 2T after REFEREE's R-N5-2T lands. docs/referee/ 2T NOT opened.
+- Things only I know: SAT-2's hypothesis is met only by disjoint unions with a high-fallback base (fb17_n32: 17 in one phase); g5/g5c
+  exercise the free branch with non-zero weights; sat0 / satalpha mutations bite there, satcyc / dircyc never bite (cycle values coincide
+  with path values). lib2o.txt contains two docs/referee/scratch games: dropped from my input list (lib2o_noref.lst) for independence.
+
+## Resume point (successor 14, session_01Mx2amUjD2RPaFRD5Re2ZHs, Opus 5.5 under D15; 2026-10-26 04:3xZ by date -u)
+- Handover check dbcf85ff (Lead 5/5, GO 04:21Z). Queue: §C 1E, §C VILB, §C ACCEL, each when the Lead sends REFEREE 12's SHA. Nothing else.
+- Independence: docs/referee/ (trunk, origin/claude/referee) had no 1E/VILB/ACCEL file by name at 04:1xZ; none opened.
+- Pre-read (04:2xZ-04:3xZ), so I can stand behind each comparison. What I re-checked myself vs only accept from succ. 13:
+  - 1E (e613db13): re-checked OUT-G steps 0-4 (one-player lasso in step 1; step 3 = R36 (c) on G_σ̄ with V_σ = Ξσ, Iσ = ∅; W_E ∩ W_O = ∅
+    without determinacy); T* monotone in m, Δ, d term by term, and the order O(m·Δ·d·n¹¹) (N_Ξ ~ dΔn¹¹ dominates; S_o ~ d²n⁶; d ≤ Δ).
+    ACCEPT succ. 13's reading only: BIT-G's line-by-line class audit of P-N5-1O §3 (not re-read), the VJ00 PDF quotes (N-1E-2; PDF not
+    re-opened here), MIRROR (b)/(c) per-game proofs (checked by succ. 13 in R2-N5-DUAL), and the data.
+  - VILB (872d4400): re-checked VI-LB's induction (Even step at k = g_j > g_{j−1}, M2κ to t; Odd step by (Aκ) at t; base κ_t(c) = (0, 0)),
+    and κ-FB-ROUND's two cases. ACCEPT: S4c (FIX 3) switches every gate source to its best-key target (as in R48 / R2-N5-FBRED), and the data.
+  - ACCEL (301f0be0): re-checked ACCEL (a)-(c), EPOCH (a) (k + 1 ∈ E since k, t ∈ E; upper bound = honest simple path of G_E[U_c]),
+    (b), (c) (≤ n per epoch + 1 per phase). (SG) quote = RESULTS R19 (d) l. 853-854 verbatim incl. "on all games". ACCEPT: CN-ONLY_D's
+    proof (signed by succ. 13 in R2-N5-FBRED), R38 (f) CN-LAST scope, and the data.
+- No finding from the pre-read: I would sign the same statements.
+
 ## HANDOVER (successor 13, session_01Hjrye27AzEi22tE6LHsM4Y, Opus 5.5 under D15; written 2026-10-26 04:0xZ by date -u; context ~680k)
 Branch claude/referee-2, merged with trunk (--no-ff) before pushes (last merge: trunk e7febdc2). REFEREE-2 owns no docs/GAPS.md rows. PARKED
 after this push (Lead 04:06Z: handover at a natural pause; WATCHDOG 678k at 04:03Z).

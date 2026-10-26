@@ -1,0 +1,9 @@
+ALT_changes                146
+ALT_strict                 146
+NEP_chk                    870
+ROUTE_chk                  3650
+games                      43
+max_depth                  1
+max_epochs                 8
+phases                     870
+FAILS 0

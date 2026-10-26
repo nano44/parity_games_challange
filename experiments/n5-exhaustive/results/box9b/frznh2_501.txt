@@ -1,0 +1,6 @@
+start 3240 n 24
+473 114250 FRZ_checks 1 seed 974
+655 116250 FRZ_checks 1 seed 1156
+702 164250 FRZ_checks 1 seed 1203
+728 334250 FRZ_checks 2 seed 1229
+Terminated

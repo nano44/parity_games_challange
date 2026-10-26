@@ -1,0 +1,18 @@
+MODE random 20000 4 12 141 MUT - UCAP 13
+DIR_checks: 41
+DIRbr_cycle: 20
+DIRbr_y_is_c: 21
+FB2W_checks: 55
+PFZQ_checks: 393596
+ROUTE_checks: 13662
+YB_checks: 26417
+classes_2term: 12947
+phases: 49423
+phases_2T: 31499
+runs: 20000
+FB2W_max_count: (1, 'random141:343')
+SAT_closeness: (-1, 'random141:334@2 c 4 q 0 |U_c| 3')
+SAT_closeness_all_classes: (-1, 'random141:334@2 c 4 q 0 |U_c| 3')
+max_f: (1, 'random141:8')
+max_f_in_phase_with_2term_class: (1, 'random141:239')
+RESULT OK violations=0

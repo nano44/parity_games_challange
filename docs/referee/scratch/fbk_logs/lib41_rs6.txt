@@ -1,0 +1,12 @@
+ALT_changes                7061
+ALT_nonclean               80
+ALT_strict                 6619
+ALT_tie                    362
+NEP_chk                    12620
+ROUTE_chk                  104418
+games                      367
+max_depth                  15
+max_epochs                 50
+phases                     12620
+skip_big                   45
+FAILS 0

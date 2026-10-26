@@ -1,0 +1,23 @@
+MODE files witness.lst 1 MUT - UCAP 13
+DIR_checks: 93
+DIRbr_cycle: 42
+DIRbr_free: 51
+PFZQ_checks: 570
+ROUTE_checks: 90
+SAT_checks: 108
+SATbr_cycle: 20
+SATbr_free_via_c: 51
+SATbr_free_via_q: 17
+SATbr_y_is_q: 20
+YB_checks: 60
+classes_2term: 35
+classes_skipped_UCAP: 20
+phases: 20
+phases_2T: 20
+runs: 4
+SAT_closeness: (14, 'docs/referee-2/R2-N5-2T/instances/fb17_g4_P66.pg#0@23 c 32 q 33 |U_c| 4')
+SAT_closeness_all_classes: (14, 'docs/referee-2/R2-N5-2T/instances/fb17_g4_P66.pg#0@23 c 32 q 33 |U_c| 4')
+max_f: (17, 'docs/referee-2/R2-N5-2T/instances/fb17_g3_P66.pg#0')
+max_f_in_phase_with_2term_class: (17, 'docs/referee-2/R2-N5-2T/instances/fb17_g3_P66.pg#0')
+SAT_distinct_(kq,kq')_pairs_per_(run,class,q'): max 1 classes_with_>1: 0 of 6
+RESULT OK violations=0

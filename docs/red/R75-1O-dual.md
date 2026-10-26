@@ -11,8 +11,8 @@ D1: the candidate is wrong until checked. This report checks; it does not sign.
 - The runs come from the S3 start and from random and climbed non-S3 start pairs.
 - Closest approaches (§3):
   - R47 (a) is attained with equality: τ changes = d_o − 1 = 18 (tau18_n24).
-  - R48 (c) at 39 / 42 in-phase fallbacks on an o = c_θ phase with |U| = 42 (f39_n48). The same phase is 1 below CONJECTURE FB-CAP's
-    max(1, |U| − 2) = 40.
+  - [CORRECTED 05:50Z, see §7] Most in-phase fallbacks: 39 in one phase of f39_n48. That phase has c_θ ≠ o and |U| = 48, so its
+    R48 (a) bound is 2,715 and its FB-CAP slack is −7. The closest R48 / FB-CAP slacks (−3, −1) occur only in phases with f ≤ 1.
   - Phases: 50 at n 32, against R47 (b)'s 1,005. Above the "at most 30 phases" data note that P-N5-1O §2 quotes.
   - Iterations from a start pair: 118 at n 48 (S3 on the same game: 18). One phase alone has 114 transitions.
 - Two wording points (§4), neither a gap in P-N5-1O:
@@ -72,13 +72,13 @@ D1: the candidate is wrong until checked. This report checks; it does not sign.
 | ITER / n | 2.75 | s_elim24_final (S3) | — | — |
 | phases | 50 (n 32, d_o 13) | ph50_n32 (start pair; S3 gives 32) | R47 (b): 1,005 | 0.050 |
 | τ changes | 18 (n 24, d_o 19) | tau18_n24 (start pair; S3 gives 11) | R47 (a): d_o − 1 = 18 | **1 (tight)** |
-| in-phase Even fallbacks f | 39 in one phase, o = c_θ, \|U\| = 42 | f39_n48 (start pair; S3 gives f = 0) | R48 (c): \|U\| = 42 | 0.93 |
-| FB-CAP slack f − max(1, \|U\| − 2) | 0, only at \|U\| ≤ 3 with f = 1; −1 at \|U\| = 42 (f39_n48) | many | CONJECTURE, not landed | — |
+| in-phase Even fallbacks f | 39 in one phase, c_θ ≠ o, \|U\| = 48 [corrected, §7] | f39_n48 (start pair; S3 gives f = 0) | R48 (a): 2,715 | 0.014 |
+| FB-CAP slack f − max(1, \|U\| − 2) | 0, only at \|U\| ≤ 3 with f = 1; −7 in f39_n48's 39-fallback phase (\|U\| = 48) [corrected, §7] | many | CONJECTURE, not landed | — |
 | R48 slack f − bound | 0, only in phases with f = 1 | df_cex (S3) and random | R48 | — |
 | T per phase | 114 (iter118_n48) | start pair | T* ≈ 10²⁴ | ~ 10⁻²² |
 | T / (m − n + 1) | 1.61 | returns_ph64 (S3) | R50 (h): (T_rel + 1) | — |
 | Θ, S_o per phase | 60, 52 | rise_thin51_n40 (S3) | S_o ≤ d_o(Θ + 1): never violated | — |
-- Regimes reached: o = c_θ phases with large |U| and many fallbacks (f39_n48); long single phases from start pairs (114 transitions);
+- Regimes reached: a long fallback phase (39 fallbacks, c_θ ≠ o, |U| = 48: f39_n48); long single phases from start pairs (114 transitions);
   phase counts up to 50; Odd-first runs on the whole library. N5 never had an in-phase Odd fallback (FIX 3 / Φ-1O, as expected).
 - What a start pair changes: in 4 of the 5 pins the start pair raises the count well above S3 on the same game (ITER 118 vs 18;
   f 39 vs 0; τ changes 18 vs 11; phases 50 vs 32 and 45 vs 22). So the S3 data in RESULTS undersample these regimes. The start-free
@@ -121,6 +121,18 @@ Reproduce, from the repo root:
 
 ## 6. Not done / next
 - Item (3), the resume list, is not started: R74 §2.5 construction, FB-CAP |U| ≥ 3, beta2 cascade.
-- f39_n48 is the new FB-CAP seed: f = |U| − 3 at |U| = 42 (previous best: equality f = |U| − 2 at |U| = 4, R71 §7). The climbs from it
-  collapsed into trivial phases (f = 1) and did not improve the slack. Next: a climber that keeps |U| ≥ 3 and f ≥ 2 as hard constraints.
+- [corrected, §7] f39_n48 is NOT a near-FB-CAP instance: its 39-fallback phase has |U| = 48 (FB-CAP slack −7). The best FB-CAP slack
+  stays R71 §7's equality at |U| = 4. The climbs from f39 collapsed into trivial phases (f = 1). Next: a climber that keeps |U| ≥ 3 and f ≥ 2 as hard constraints.
 - R47 (a) is tight. A phase-count climber could aim at R47 (b)'s n(n − 1) term; 50 of 1,005 so far.
+
+## 7. Correction (2026-10-26 05:50Z, date -u; L-RED successor 19)
+- Error: §0, §3 and §6 described f39_n48's 39-fallback phase as "o = c_θ, |U| = 42, R48 (c) 39 / 42, FB-CAP slack −1".
+- Cause: o1_19.py reports fslack and fcap as maxima over ALL phases of a run, and fmax as the max f. I paired fmax with slacks that
+  belong to other phases.
+- Correct figures (per-phase recomputation, the same engine):
+  - f39_n48's phase with f = 39 has T = 42 transitions, c_θ ≠ o and |U| = 48. Its R48 (a) bound is
+    1 + (|U| − 2)(deg_U(o) + |U|) = 2,715 (slack −2,676), and its FB-CAP slack is 39 − 46 = −7.
+  - The run's max-over-phases slacks (R48 −3, FB-CAP −1) come from phases with f ≤ 1.
+- Unchanged: R47 (a) tight (whole-run count); the phase, iteration and T maxima; every 0-FAIL statement; DUAL; Lemma OUT; W1, W2.
+- The same reading error is in my 03:06Z message to the Lead ("R48 (c): 39 vs |U| = 42 on an o = c_θ phase"). It is corrected here,
+  and in R76 §4.

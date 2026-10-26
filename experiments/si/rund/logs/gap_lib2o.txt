@@ -1,0 +1,6 @@
+dchg=67 fac_n=1938 max_B=17 max_dchg=3 max_ratio=16.0 max_seg_dchg=0 max_tot_per_v=2 runs=37 runs_h3=32 seg_dchg=0 stretch_segs=39 trans_v=5666 twin=1 twin_dpres=1
+TOP ('dchg', 1, 'experiments/new/box21/instances/fts_best24.pg', 23, 43, 0, 24, 'range/gamma', 3.45)
+TOP ('dchg', 2, 'experiments/new/box21/instances/fts_best24.pg', 23, 43, 0, 24, 'range/gamma', 4.45)
+TOP ('dchg', 3, 'experiments/new/box44/instances/fb17_n32.pg', 23, 27, 3, 32, 'range/gamma', 8.0)
+BHIST [(1, 1), (3, 20), (17, 4)]
+GAP PASS

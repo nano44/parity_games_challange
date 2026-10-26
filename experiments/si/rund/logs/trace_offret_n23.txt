@@ -1,0 +1,5 @@
+0 D [4, 12] tau [2, 10] sigma(v) 20 gate 4 Xi(v) (0, 164016, 6) W(v) (0, 32820, 5) offset 131204 gates as at 0 True lambda_Xi [0] fallback 0
+1 D [4, 12] tau [2, 10] sigma(v) 19 gate 12 Xi(v) (0, 788544, 5) W(v) (0, 524360, 4) offset 264200 gates as at 0 True lambda_Xi [0] fallback 0
+2 D [4, 12] tau [2, 10] sigma(v) 19 gate 12 Xi(v) (0, 788544, 5) W(v) (0, 524360, 4) offset 264200 gates as at 0 True lambda_Xi [0] fallback 0
+3 D [4, 12] tau [2, 10] sigma(v) 20 gate 4 Xi(v) (0, 1278112, 7) W(v) (0, 1146916, 6) offset 131204 gates as at 0 True lambda_Xi [0] fallback 0
+4 D [] tau [] sigma(v) 20 gate None Xi(v) (0, 1146916, 6) W(v) (0, 1146916, 6) offset 0 gates as at 0 False lambda_Xi [0] fallback STOP
