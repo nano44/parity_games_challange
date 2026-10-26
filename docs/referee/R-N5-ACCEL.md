@@ -83,3 +83,32 @@ bound attained), CTRL (the j + 1 lower bound fails), CN_switch (switched Even cy
   (S4a's arena, S4c): an optional one-line proof would make the packet self-contained.
 - ACCEL-N2: EPOCH (b) uses Ξ = R15's Ω_σ (VJ00 (11), every game); one clause.
 - ACCEL-N3: DATA (frozen regime vacuous).
+
+## §C. Comparison with REFEREE-2 (REFEREE successor 12; written 2026-10-26T05:06Z by date -u; (Opus 5.5, D15))
+- Routing: the Lead's message of 04:59Z (Lead's stamp). Objects: this report (a19cdff7; §1-§5 above unchanged) and
+  docs/referee-2/R2-N5-ACCEL.md (referee-2 f0e82d8a, successor 13), opened after a19cdff7 was pushed. Same pinned text (sha1 301f0be0…).
+
+### C.1 Verdicts side by side
+| § | statement | REFEREE (a19cdff7) | REFEREE-2 (f0e82d8a) | joint |
+| --- | --- | --- | --- | --- |
+| §1 | facts, κ-FB-ROUND, CN-ONLY_D | SIGNED | SIGN | signed |
+| §2 | ACCEL (a)-(c) | SIGNED (ACCEL-N1) | SIGN (N-ACC-1) | signed |
+| §3 | EPOCH (a)-(c) | SIGNED (ACCEL-N2, N3) | SIGN (N-ACC-2, N-ACC-3) | signed |
+| §4 | limits, repeat instance, data | not signed; repeat instance re-run | not signed; repeat DATA confirmed | not signed |
+No disagreement; no gap in either report.
+
+### C.2 Joint note map
+| REFEREE | REFEREE-2 | relation | joint status |
+| --- | --- | --- | --- |
+| ACCEL-N1 ((SG) landed "on all games"; inside a phase re-derived from (Aκ), (M1κ), (M2κ) and "switches go along gates") | N-ACC-1 (same scope check; R19 (d)'s proof uses only R15 (a), the gate, (V1), strict (V2): no one-Odd step) | SAME | optional one-line proof |
+| ACCEL-N2 (EPOCH (b) identifies Ξ with R15's Ω_σ; VJ00 (11), every game) | — (R2 writes "Ξ (= Ω_σ)" without comment) | ADDITIONAL from us; no conflict | one clause |
+| — | N-ACC-2 (EPOCH (a) also gives the per-class freeze κ_t = opt_E on U_c once j ≥ \|U_c\| − 1; reached in data) | ACCEPTED. Checked: (a)'s lower bound at j = \|U_c\| − 1 covers every simple path of G_E[U_c] (≤ \|U_c\| − 1 edges), and the upper bound holds at every t ∈ E, so they meet on U_c. Not noted by us. | fixes file: one line |
+| ACCEL-N3 (frozen regime vacuous: no epoch reaches n − 1 fallbacks) | N-ACC-3 (same; climbs best 2 short) | SAME | DATA |
+
+### C.3 Data
+| item | REFEREE | REFEREE-2 | agree? |
+| --- | --- | --- | --- |
+| lib41 | 1,101 runs (n ≤ 64), SG 22,577, max switching transitions 112, max epochs 50 | 1,236 runs, SG 23,201, max epochs 50 (lev_l_x.pg) | YES (50 epochs on the same game) |
+| repeat instance lap_n6_s1_110421 | σ̄(2) = 0, 4, 0, one phase (re-run) | σ̄\|Q repeats in 203 lib41 phases (3 starts) | YES (the packet's 91 phases are S3 only) |
+| controls | CN_switch (410 cycle-node switches, none raises κ) | sg 12,653, kk 61 bite; ep does not | complementary |
+| frozen regime | EPB hypothesis met 0 times | best 1 short (library), 2 short (climbs) | YES (vacuous) |

@@ -1,0 +1,7 @@
+start 35 {'WK_checks': 0, 'wakes': 0, 'CLS1_checks': 38, 'CLS1_case_r>L': 35, 'ABSL_intervals': 35}
+2 51 {'WK_checks': 0, 'wakes': 0, 'CLS1_checks': 57, 'CLS1_case_r>L': 51, 'ABSL_intervals': 51}
+5 68 {'WK_checks': 0, 'wakes': 0, 'CLS1_checks': 77, 'CLS1_case_r>L': 68, 'ABSL_intervals': 68}
+19 69 {'WK_checks': 0, 'wakes': 0, 'CLS1_checks': 72, 'CLS1_case_r>L': 69, 'ABSL_intervals': 69}
+30 70 {'WK_checks': 0, 'wakes': 0, 'CLS1_checks': 78, 'CLS1_case_r>L': 70, 'ABSL_intervals': 70}
+135 71 {'WK_checks': 0, 'wakes': 0, 'CLS1_checks': 76, 'CLS1_case_r>L': 71, 'ABSL_intervals': 71}
+478 72 {'WK_checks': 0, 'wakes': 0, 'CLS1_checks': 80, 'CLS1_case_r>L': 72, 'ABSL_intervals': 72}
