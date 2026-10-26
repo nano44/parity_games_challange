@@ -40,7 +40,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   exponential on BV's LSP Fig. 2 instance where VI is linear (appendix pp. 16-17; [1], [9] not opened). (iii) Lemma ACCEL (PROVED):
   κ_t(z) ∈ K_c(z) (simple-path values), (SG) strict gains ⇒ switching transitions ≤ Σ(|K| − 1), f ≤ 1 + N_K; the BGHM gadget collapses
   (positional values, no cycle accumulation). Remaining obstruction: a counter inside ONE phase. sgcheck.py: (SG) 13,346 checks, 0 viol.
-- NEXT: report; then as directed.
+- 6800a4b7 reported 03:17Z. Lead 03:26Z: do not packet ACCEL yet; attack the one-phase counter; packet ACCEL with what I get.
+- Route (a) chosen. N5-FBF §9: Lemma EPOCH (PROVED): within a σ̄|Q-epoch Ξ freezes after n − 1 fallbacks (one-player Bellman + (SG)),
+  post-freeze ≤ 4n(n − 1) + 1 transitions (R15 (d)); f ≤ 1 + n·N_ep. σ̄|Q repeats inside a phase (DATA, instance lap_n6_s1_110421.pg,
+  σ̄(2) = 0, 4, 0), so N_ep ≤ ∏deg FAILS as a route. OPEN: pre-freeze S4a runs, N_ep. epoch.py.
+- NEXT: report; candidate packet ACCEL + EPOCH (small) if the Lead wants; then as directed.
 
 ## Box 43 log (successor 22; handover check 5/5 (b4f064b4); GO 21:55Z, Lead's stamp)
 - Merged trunk c4d18621. Oink built (8fbf0a7). Notebook duplicate block (from 6a1b0e95) removed in b4f064b4.
@@ -777,6 +781,9 @@ Successor 22 (Opus 5.5, D14/D18, L40). Handover check 5/5 (b4f064b4). GO box 43 
   docs/referee/R-N5-PFZ.md (8595343); docs/referee-2/R2-N5-PFZ.md (37e55fd) notes.
 
 ## Dead ends
+- (box 44, successor 23, 2026-10-26 ~03:27Z) Route "epochs of σ̄|Q inside a phase ≤ ∏_q deg(q)" (the σ̄-analogue of Φ-kO's no-τ-repeat):
+  FALSE as a premise. Instance experiments/new/box25/laps/lap_n6_s1_110421.pg (n 6, Q = {2}, sha1 4f4fe69c…): one phase, σ̄(2) = 0, 4, 0.
+  Obstruction: Odd's best response alternates as successor values rise in turn; no potential on σ̄|Q forbids it.
 - (box 44, successor 23, 2026-10-26 ~01:29Z) CONJECTURE Δ-RT-F "no cross-terminal gate edge is switched at an in-phase S4c fallback
   (states with (h_D) ∧ (h3_D))": FALSE. Instance experiments/new/box44/instances/rtf_cex_inj.pg (n 11, sha1 9b55eee6…): k = 1 → 2,
   D = {0, 1}, Even 3 switches 5 (terminal 1) → 10 (terminal 0), Ξ(10) = (6, {4}, 4) ▷ Ξ(5) = (6, ∅, 3), W(10) = (6, {4}, 4) ◁ W(5) =

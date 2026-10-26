@@ -25,3 +25,5 @@ DATA, not proof. Uses experiments/new/box43 (multi, n5x via box21, f1d.hD). Run 
   everywhere (no phase reaches n fallbacks). N5-FBF-box44.md §6.
 - sgcheck.py (03:11Z-03:12Z): (SG) strict gain at every switched non-cycle-node Even vertex in-phase; lib41 12,653 checks, instances
   263, --rand 2000 5 20 71 430: 0 violations; max switching transitions per phase 112, max κ-levels per vertex per phase 52 (lib41).
+- epoch.py (03:26Z): Lemma EPOCH checks (N_ep, σ̄|Q repeats, f ≤ 1 + n·N_ep, freeze), N5-FBF-box44.md §9. lib41: 91 phases with a σ̄|Q
+  repeat (max 36), max N_ep 50 (n 32); 0 violations; freeze part vacuous (no epoch with n − 1 fallbacks).

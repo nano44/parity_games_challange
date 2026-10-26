@@ -295,6 +295,65 @@ a fallback with S ≠ ∅ switches an Even y ∉ T, so λ(y) ≠ y (y ∉ C), an
 Reading (DATA): the per-vertex value levels actually used in a phase stay small (≤ 52 on lib41, games up to n 492); nothing in the data
 approaches an exponential climb inside one phase.
 
+## 9. The one-phase counter question (Lead 03:26Z; route (a); written 03:28Z by date -u)
+Question: inside one phase, can κ_t(z) pass through more than poly(n) simple-path levels? Route (a), structural. The Lead's
+cross-field reading, "N5's in-phase dynamics on G_τ is one-player SI; super-polynomial behaviour must come from σ̄ changing at Q", is
+formalised here by epochs.
+### 9.1 Lemma EPOCH (PROVED, every game)
+An EPOCH of a phase: a maximal run E of consecutive states of the phase on which σ̄_t|Q is constant (then σ̄_t is constant on E: Odd
+vertices outside Q have one successor). Let G_E := G with every Odd vertex fixed to σ̄_E (a one-player game), and for z ∈ U_c let
+opt_E(z) := max{κwt_c(p ∖ {c}) : p a simple path of G_E[U_c] from z to c}. Let e_1 < e_2 < … be the in-phase fallbacks k → k+1 with
+k ∈ E. Then:
+- (a) (freeze) for every state t ∈ E with t > e_j and every z ∈ U_c: κ_t(z) ≥ max{κwt_c(p ∖ {c}) : p a simple path of G_E[U_c] from z
+  to c with ≤ j edges}; hence for t ∈ E with t > e_{n−1}, κ_t = opt_E on every class (Ξ is frozen on all of V).
+- (b) (no switch after the freeze) no transition t → t+1 with t, t+1 ∈ E and t > e_{n−1} switches an Even vertex z with λ(z) ≠ z; and the
+  part of E after e_{n−1} has at most 4n(n − 1) + 1 transitions.
+- (c) (count) the phase has f ≤ 1 + n·N_ep in-phase fallbacks, N_ep := its number of epochs.
+Proof.
+- (a) Induction on j (as κ-HAT-FREEZE (a), with every Odd vertex forced to σ̄_E). j = 0: the path is (c); κ_t(c) = (0, 0). Step: p = z·p′,
+  p′ from x with ≤ j − 1 edges. Odd z: on E, next_t(z) = σ̄_E(z) = x, and (Aκ) with the hypothesis at t gives κ_t(z) ≥ κwt_c(z) +
+  κwt_c(p′ ∖ {c}). Even z: k := e_j < t, k ∈ E, k > e_{j−1}; κ-FB-ROUND at k gives κ_{k+1}(z) ≥ κwt_c(z) + κ_k(x), the hypothesis at k gives
+  κ_k(x) ≥ κwt_c(p′ ∖ {c}), and (M2κ) carries κ_{k+1}(z) to t. For the equality: z's honest play at t ∈ E is a simple path of G_E[U_c]
+  to c ((SP′); Even edges σ_t, Odd edges σ̄_E), so κ_t(z) ≤ opt_E(z); simple paths in U_c have ≤ |U_c| − 1 ≤ n − 1 edges.
+- (b) If such a z switched, (SG) (R19 (d), every game) would give κ_{t+1}(z) > κ_t(z) = opt_E(z) ≥ κ_{t+1}(z) (the latter by (a)'s upper
+  bound at t + 1 ∈ E): impossible. After e_{n−1}, every transition with both ends in E leaves Ξ = Ω_σ unchanged (a), and Ω_τ is constant
+  (τ is constant on a phase); RESULTS R15 (d): at most 4n(n − 1) consecutive iterations leave both unchanged. Add the transition that
+  leaves E.
+- (c) In each epoch: at most n − 1 fallbacks e_1..e_{n−1}; after e_{n−1}, a fallback with both ends in E switches only cycle nodes ((b)),
+  so S = ∅ and it is the phase's one CN-ONLY_D fallback; and at most one fallback is E's last transition. So f ≤ Σ_E ((n − 1) + 1) + 1.
+  ∎
+- What EPOCH gives: FREEZE-type collapse inside every epoch, from the one-player structure alone (R17-style, Bellman rounds = fallbacks).
+  Every super-polynomial count of fallbacks in a phase needs super-polynomially many epochs, i.e. σ̄|Q changing that often (the
+  Lead's "moves only at Q", made exact for f). Compared with FB-RED (f ≤ 1 + (n − 1)(2 + ρ)), EPOCH counts σ̄-changes instead of
+  Ξ-changes at Q; neither dominates (a Ξ(q)-change need not change σ̄(q), and σ̄(q) can change at a tie without a Ξ(q)-change).
+- What EPOCH does NOT give: the S4a steps of an epoch BEFORE its freeze (between e_j and e_{j+1}) are not counted; nor N_ep.
+### 9.2 Can N_ep be bounded by ∏ deg(q) (no repeated σ̄|Q in a phase)? NO (DATA, instance)
+For τ, Corollary Φ-kO uses "no τ repeats along a run" (R15 on G^d). The analogue for σ̄|Q inside a phase FAILS:
+- Instance experiments/new/box25/laps/lap_n6_s1_110421.pg (n 6, 𝒞^1O with Q = {2}, sha1 4f4fe69c51e1c6f170c9c732feca025da70e7edb):
+  N5 from S3: 2 iterations, both in one phase (λ ≡ 5, τ(2) = 0 throughout); σ̄_t(2) = 0, 4, 0 at states 0, 1, 2 (no fallback). A repeat.
+- lib41: 91 phases with a repeated σ̄|Q (87 of them on 𝒞^1O, |Q| = 1); up to 36 repeats and 50 epochs in one phase
+  (experiments/si/orlens/instances/lev_l_x.pg, n 32, |Q| = 1).
+- So N_ep is not bounded by the number of σ̄|Q configurations; on 𝒞^1O it is polynomial only because the whole phase is (RESULTS R51).
+  Obstruction for a fixed-k bound by this route: Odd's best response at q alternates between successors as their values rise in turn
+  (min over increasing values), which no potential on σ̄|Q forbids.
+### 9.3 The answer to the question, as far as it goes
+- PROVED: inside an epoch, after n − 1 fallbacks the honest values are frozen (EPOCH (a)); so a vertex's levels inside a phase are visited
+  only (i) at transitions before its epoch's freeze, or (ii) at epoch boundaries. Levels per vertex per phase ≤ Σ_E (1 + number of
+  switching transitions of E before e_{n−1}) (ACCEL's strict gains, restricted to epochs).
+- OPEN: (i) needs a bound on S4a runs between fallbacks inside an epoch (gated W-optimal steps; the 𝒞^1O version of this is what R50 /
+  R51 needed T*-type machinery for); (ii) needs a bound on N_ep, which the ∏deg route cannot give (§9.2).
+- Route (b) (a counter) is not attempted here: by EPOCH, a one-phase counter must either flip σ̄|Q super-polynomially often inside the
+  phase or run long S4a stretches before epoch freezes. That is the instance shape for L-RED's climb (objective: N_ep per phase, or the
+  longest pre-freeze S4a run).
+### 9.4 DATA (experiments/new/box44/epoch.py; canonical S3 start)
+| sample | phases | max N_ep (n) | phases with a σ̄|Q repeat / max repeats | EPOCH (c) viol. | epochs reaching n − 1 fallbacks | longest S4a run in an epoch | max levels of one vertex in a phase |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| lib41 (412 runs) | 2,335 | 50 (n 32) | 91 / 36 | 0 | 0 | 55 | 52 |
+| box43 + box44 instances (10) | 59 | 17 (n 44) | 2 / 7 | 0 | 0 | 7 | 17 |
+| `--rand 2000 5 20 81` | 4,610 | 2 | 0 / 0 | 0 | 0 | 3 | 3 |
+Reading (DATA): EPOCH (a)/(b) are vacuous in the data (no epoch reaches n − 1 fallbacks); EPOCH (c) holds everywhere. Epochs and σ̄
+repeats are frequent on 𝒞^1O, where N5 is polynomial anyway (R51).
+
 ## 5. How a fallbacks-per-phase bound combines with the phase count (READING)
 - Phases. Lemma Φ (R47 (a), every game): λ changes ≤ n(n − 1); Corollary Φ-kO (P-N5-DUAL, N5-MULTI §1.4): distinct τ's ≤ ∏_{q∈Q}
   deg(q), so phases ≤ n(n − 1) + ∏_q deg(q). On 𝒞^kO with k fixed that is ≤ n(n − 1) + n^k, polynomial; for k growing with n it is
