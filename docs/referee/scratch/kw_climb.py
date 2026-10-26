@@ -9,6 +9,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import rl_engine as RE, rl_probe as P, kw_probe as KP
 
 W = dict(KIND_postfrz_changes=50, CWINT_switches=20, CASCB_switches=5, WONCE_chk=2, FRZ_chk=1, u3_runs=1)
+if os.environ.get("FIT") == "thin":  # REFEREE succ. 11, on the pinned packet: aim at W-ONCE pairs and post-freeze U3 / U23 length
+    W = dict(KIND_postfrz_changes=1000, WONCE_chk=50, u3_postfrz_trs=10, CWINT_switches=1, u3_runs=1)
 
 
 def score(g):

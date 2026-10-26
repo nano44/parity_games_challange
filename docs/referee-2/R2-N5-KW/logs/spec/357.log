@@ -1,0 +1,18 @@
+A0_checks: 124
+FACTB_pairs: 469
+HPATH_checks: 63
+KWS_stretches: 31
+PAR_states_cw_above_cth: 9
+PHASE_checked: 11
+phases: 11
+runs: 3
+states: 31
+states_checked: 31
+stretches: 31
+max_KW_per_stretch: 0
+max_T_per_phase: 9
+max_Trel_per_phase: 9
+max_f_per_phase: 0
+max_stretches_per_phase: 10
+RESULT OK violations=0
+experiments/red/so/instances/epsseg_cex_n16.pg exit 0

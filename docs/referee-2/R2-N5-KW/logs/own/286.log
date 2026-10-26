@@ -1,0 +1,25 @@
+A0_checks: 1834
+FACTB_pairs: 16061
+FRZU_checks: 39
+KWS_stretches: 46
+LEN_runs_after_f0: 7
+PAR_states_cw_above_cth: 15
+PHASE_checked: 16
+RUNS_runs: 22
+RUN_case_a: 21
+RUN_case_b: 1
+phases: 16
+runs: 3
+states: 120
+states_checked: 120
+stretches: 46
+max_KW_per_stretch: 11
+max_RUN_ratio_case_a_x1000: 8
+max_RUN_ratio_case_b_x1000: 0
+max_T_per_phase: 77
+max_Trel_per_phase: 77
+max_f_per_phase: 16
+max_freeze_delay: 11
+max_stretches_per_phase: 20
+RESULT OK violations=0
+experiments/new/box28/out/fbp48_rt48.pg exit 0

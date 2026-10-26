@@ -1,0 +1,21 @@
+FRZU_checks: 5
+KWS_stretches: 8
+LEN_runs_after_f0: 2
+PAR_states_cw_above_cth: 3
+PHASE_checked: 8
+RUNS_runs: 2
+RUN_case_a: 2
+phases: 8
+runs: 3
+states: 11
+states_checked: 11
+stretches: 8
+max_KW_per_stretch: 0
+max_RUN_ratio_case_a_x1000: 0
+max_T_per_phase: 2
+max_Trel_per_phase: 1
+max_f_per_phase: 0
+max_freeze_delay: 0
+max_stretches_per_phase: 1
+RESULT OK violations=0
+experiments/new/box40/out/rhc_rhc_block_bk20_3_4.pg exit 0

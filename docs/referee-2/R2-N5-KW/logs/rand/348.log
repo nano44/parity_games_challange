@@ -1,0 +1,21 @@
+A0_checks: 2777
+FACTB_pairs: 24466
+KWS_stretches: 37
+PAR_states_cw_above_cth: 1
+PHASE_checked: 30
+RUNS_runs: 9
+RUN_case_a: 9
+phases: 30
+runs: 3
+states: 112
+states_checked: 112
+stretches: 37
+max_KW_per_stretch: 13
+max_RUN_ratio_case_a_x1000: 13
+max_T_per_phase: 29
+max_Trel_per_phase: 29
+max_f_per_phase: 0
+max_freeze_delay: 13
+max_stretches_per_phase: 4
+RESULT OK violations=0
+experiments/red/n5inj/instances/blockph_bp32.pg exit 0

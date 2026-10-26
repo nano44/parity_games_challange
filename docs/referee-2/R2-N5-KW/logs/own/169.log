@@ -1,0 +1,21 @@
+A0_checks: 70
+FACTB_pairs: 66
+KWS_stretches: 5
+PHASE_checked: 5
+RECORD_cw_switches: 1
+RUNS_runs: 2
+RUN_case_a: 2
+phases: 5
+runs: 3
+states: 7
+states_checked: 7
+stretches: 5
+max_KW_per_stretch: 1
+max_RUN_ratio_case_a_x1000: 8
+max_T_per_phase: 1
+max_Trel_per_phase: 1
+max_f_per_phase: 0
+max_freeze_delay: 0
+max_stretches_per_phase: 1
+RESULT OK violations=0
+docs/referee/R-N5-L2/droplen_cex_n12.pg exit 0

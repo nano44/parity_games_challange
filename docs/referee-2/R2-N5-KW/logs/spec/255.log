@@ -1,0 +1,23 @@
+A0_checks: 132
+FACTB_pairs: 692
+FRZU_checks: 10
+KWS_stretches: 19
+LEN_runs_after_f0: 4
+PAR_states_cw_above_cth: 1
+PHASE_checked: 11
+RUNS_runs: 5
+RUN_case_a: 5
+phases: 11
+runs: 3
+states: 31
+states_checked: 31
+stretches: 19
+max_KW_per_stretch: 6
+max_RUN_ratio_case_a_x1000: 49
+max_T_per_phase: 12
+max_Trel_per_phase: 12
+max_f_per_phase: 1
+max_freeze_delay: 6
+max_stretches_per_phase: 7
+RESULT OK violations=0
+experiments/new/box25/instances/rtt16.pg exit 0

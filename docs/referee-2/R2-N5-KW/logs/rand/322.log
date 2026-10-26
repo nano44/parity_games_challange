@@ -1,0 +1,18 @@
+A0_checks: 1376
+FACTB_pairs: 17272
+HPATH_checks: 17
+KWS_stretches: 73
+PAR_states_cw_above_cth: 12
+PHASE_checked: 18
+phases: 18
+runs: 3
+states: 73
+states_checked: 73
+stretches: 73
+max_KW_per_stretch: 0
+max_T_per_phase: 17
+max_Trel_per_phase: 17
+max_f_per_phase: 0
+max_stretches_per_phase: 18
+RESULT OK violations=0
+experiments/new/box35/instances/pf_best_3623.pg exit 0

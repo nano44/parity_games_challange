@@ -1,0 +1,22 @@
+A0_checks: 1035
+FACTB_pairs: 9265
+FRZU_checks: 4
+KWS_stretches: 74
+LEN_runs_after_f0: 2
+PHASE_checked: 23
+RUNS_runs: 15
+RUN_case_a: 15
+phases: 23
+runs: 3
+states: 100
+states_checked: 100
+stretches: 74
+max_KW_per_stretch: 4
+max_RUN_ratio_case_a_x1000: 12
+max_T_per_phase: 50
+max_Trel_per_phase: 50
+max_f_per_phase: 8
+max_freeze_delay: 4
+max_stretches_per_phase: 35
+RESULT OK violations=0
+experiments/red/xing/instances/fbref_cex_n32.pg exit 0

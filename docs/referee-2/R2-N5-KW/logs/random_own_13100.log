@@ -1,0 +1,26 @@
+A0_checks: 22574
+CWINT_cw_switches_checked: 9
+FACTB_pairs: 30302
+FRZU_checks: 551
+HPATH_checks: 1458
+KWS_stretches: 7112
+LEN_runs_after_f0: 266
+PAR_states_cw_above_cth: 806
+PHASE_checked: 6807
+RECORD_cw_switches: 12
+RECORD_kind_change_transitions: 28
+RUNS_runs: 467
+RUN_case_a: 467
+phases: 6807
+runs: 3000
+states: 7614
+states_checked: 7614
+stretches: 7112
+max_KW_per_stretch: 2
+max_RUN_ratio_case_a_x1000: 250
+max_T_per_phase: 3
+max_Trel_per_phase: 3
+max_f_per_phase: 1
+max_freeze_delay: 2
+max_stretches_per_phase: 4
+RESULT OK violations=0

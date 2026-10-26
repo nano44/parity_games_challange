@@ -1,0 +1,22 @@
+A0_checks: 624
+FACTB_pairs: 2680
+HPATH_checks: 327
+KWS_stretches: 51
+PAR_states_cw_above_cth: 19
+PHASE_checked: 19
+RUNS_runs: 2
+RUN_case_a: 2
+phases: 19
+runs: 3
+states: 54
+states_checked: 54
+stretches: 51
+max_KW_per_stretch: 2
+max_RUN_ratio_case_a_x1000: 13
+max_T_per_phase: 20
+max_Trel_per_phase: 20
+max_f_per_phase: 9
+max_freeze_delay: 0
+max_stretches_per_phase: 18
+RESULT OK violations=0
+experiments/si/coarse/instances/jcl_lev_l_sc.pg exit 0

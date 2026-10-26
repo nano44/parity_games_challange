@@ -1,0 +1,4 @@
+experiments/red/tcpert/instances/tcL_N8.pg n 232 start 0 max_f=0 max_rho=0 phases=31
+experiments/red/tcpert/instances/tcL_N8.pg n 232 start 1 max_f=0 max_rho=75 phases=31
+experiments/red/tcpert/instances/tcL_N8.pg n 232 start 2 max_f=0 max_rho=0 phases=17
+exit 0

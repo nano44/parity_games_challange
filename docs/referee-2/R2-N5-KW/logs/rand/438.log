@@ -1,0 +1,24 @@
+A0_checks: 1551
+FACTB_pairs: 16390
+FRZU_checks: 4
+HPATH_checks: 28
+KWS_stretches: 39
+LEN_runs_after_f0: 1
+PAR_states_cw_above_cth: 7
+PHASE_checked: 18
+RUNS_runs: 5
+RUN_case_a: 5
+phases: 18
+runs: 3
+states: 80
+states_checked: 80
+stretches: 39
+max_KW_per_stretch: 13
+max_RUN_ratio_case_a_x1000: 16
+max_T_per_phase: 26
+max_Trel_per_phase: 26
+max_f_per_phase: 1
+max_freeze_delay: 13
+max_stretches_per_phase: 12
+RESULT OK violations=0
+experiments/si/coarse/instances/box9/cl9_norf_a.pg exit 0

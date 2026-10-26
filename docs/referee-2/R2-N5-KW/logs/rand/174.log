@@ -1,0 +1,24 @@
+A0_checks: 258
+FACTB_pairs: 471
+FRZU_checks: 4
+HPATH_checks: 176
+KWS_stretches: 26
+LEN_runs_after_f0: 1
+PAR_states_cw_above_cth: 16
+PHASE_checked: 14
+RUNS_runs: 1
+RUN_case_a: 1
+phases: 14
+runs: 3
+states: 28
+states_checked: 28
+stretches: 26
+max_KW_per_stretch: 0
+max_RUN_ratio_case_a_x1000: 0
+max_T_per_phase: 9
+max_Trel_per_phase: 9
+max_f_per_phase: 4
+max_freeze_delay: 0
+max_stretches_per_phase: 10
+RESULT OK violations=0
+docs/referee/scratch/neb_logs/c2/best_912.pg exit 0

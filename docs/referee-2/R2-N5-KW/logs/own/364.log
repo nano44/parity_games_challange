@@ -1,0 +1,21 @@
+A0_checks: 2926
+FACTB_pairs: 12693
+KWS_stretches: 110
+PAR_states_cw_above_cth: 3
+PHASE_checked: 19
+RUNS_runs: 5
+RUN_case_a: 5
+phases: 19
+runs: 3
+states: 140
+states_checked: 140
+stretches: 110
+max_KW_per_stretch: 17
+max_RUN_ratio_case_a_x1000: 11
+max_T_per_phase: 64
+max_Trel_per_phase: 64
+max_f_per_phase: 28
+max_freeze_delay: 17
+max_stretches_per_phase: 37
+RESULT OK violations=0
+experiments/red/so/instances/njb_reabs65_n48.pg exit 0

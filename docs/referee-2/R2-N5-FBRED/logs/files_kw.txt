@@ -1,0 +1,12 @@
+MODE files ../R2-N5-KW/files.lst 2 MUT -
+PFZ_checks: 3352
+YF_checks: 15443
+phases: 4116
+runs: 1006
+FEX_closeness: (-4, 'experiments/new/box25/instances/wd16_s2.pg#0')
+max_f: (37, 'docs/referee-2/R2-N5-FBW/climb/dirty_a_best.pg#1')
+max_f_minus_n: (-2, 'experiments/n5-exhaustive/instances/n3all_maxph_0.pg#1')
+max_j_minus_n_with_S: (-4, 'experiments/new/box25/instances/wd16_s2.pg#0')
+max_j_with_S: (37, 'docs/referee-2/R2-N5-FBW/climb/dirty_a_best.pg#1')
+max_rho: (60, 'experiments/red/so/instances/rise_thin51_n40.pg#0')
+RESULT OK violations=0

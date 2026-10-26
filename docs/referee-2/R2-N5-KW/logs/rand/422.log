@@ -1,0 +1,23 @@
+A0_checks: 2
+FACTB_pairs: 2
+FRZU_checks: 33
+KWS_stretches: 10
+LEN_runs_after_f0: 4
+PAR_states_cw_above_cth: 2
+PHASE_checked: 10
+RUNS_runs: 4
+RUN_case_a: 4
+phases: 10
+runs: 3
+states: 39
+states_checked: 39
+stretches: 10
+max_KW_per_stretch: 0
+max_RUN_ratio_case_a_x1000: 0
+max_T_per_phase: 13
+max_Trel_per_phase: 13
+max_f_per_phase: 0
+max_freeze_delay: 0
+max_stretches_per_phase: 1
+RESULT OK violations=0
+experiments/red/xing/instances/x31_nh_r20.pg exit 0

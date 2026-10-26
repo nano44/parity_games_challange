@@ -1,0 +1,23 @@
+A0_checks: 1776
+FACTB_pairs: 13895
+KWS_stretches: 51
+PAR_states_cw_above_cth: 6
+PHASE_checked: 15
+RUNS_runs: 7
+RUN_case_a: 6
+RUN_case_b: 1
+phases: 15
+runs: 3
+states: 76
+states_checked: 76
+stretches: 51
+max_KW_per_stretch: 6
+max_RUN_ratio_case_a_x1000: 4
+max_RUN_ratio_case_b_x1000: 0
+max_T_per_phase: 47
+max_Trel_per_phase: 47
+max_f_per_phase: 8
+max_freeze_delay: 6
+max_stretches_per_phase: 25
+RESULT OK violations=0
+experiments/new/box28/instances/fbref_n48.pg exit 0

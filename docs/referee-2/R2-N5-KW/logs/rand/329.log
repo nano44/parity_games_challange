@@ -1,0 +1,23 @@
+A0_checks: 69
+FACTB_pairs: 39
+FRZU_checks: 5
+KWS_stretches: 16
+LEN_runs_after_f0: 2
+PAR_states_cw_above_cth: 5
+PHASE_checked: 10
+RUNS_runs: 2
+RUN_case_a: 2
+phases: 10
+runs: 3
+states: 19
+states_checked: 19
+stretches: 16
+max_KW_per_stretch: 0
+max_RUN_ratio_case_a_x1000: 0
+max_T_per_phase: 4
+max_Trel_per_phase: 4
+max_f_per_phase: 1
+max_freeze_delay: 0
+max_stretches_per_phase: 4
+RESULT OK violations=0
+experiments/new/box40/out/nhc_band_base_cex_24.pg exit 0

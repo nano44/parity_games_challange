@@ -1,0 +1,25 @@
+A0_checks: 699
+FACTB_pairs: 4437
+FRZU_checks: 9
+HPATH_checks: 135
+KWS_stretches: 53
+LEN_runs_after_f0: 3
+PAR_states_cw_above_cth: 8
+PHASE_checked: 13
+RECORD_kind_change_transitions: 6
+RUNS_runs: 7
+RUN_case_a: 7
+phases: 13
+runs: 3
+states: 67
+states_checked: 67
+stretches: 53
+max_KW_per_stretch: 2
+max_RUN_ratio_case_a_x1000: 2
+max_T_per_phase: 24
+max_Trel_per_phase: 24
+max_f_per_phase: 3
+max_freeze_delay: 2
+max_stretches_per_phase: 21
+RESULT OK violations=0
+docs/referee-2/R2-N5-FRZ/climb/best_fb_32.pg exit 0

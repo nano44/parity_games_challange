@@ -1511,3 +1511,112 @@
     - Exhaustive n = 4 shows no growth.
     - Decision: packet P-N5-DUAL (MIRROR as an implication with an explicit hypothesis table), and continue Route Δ.
   - R49 (NEEDB) draft: REFEREE §C filled; it waits for the fixes file and REFEREE-2's §C.
+- 22:54Z: Merged:
+  - checker 111afad7: C57 Addendum 2 (R48 landed verbatim; C57 CLOSED) and CHECKER 7's HANDOVER; it is parked. Created CHECKER successor 8 (session_017WsSD8yWCujUTXzQv5cc2r).
+  - l-si 863ca636: P-N5-NEEDB fixes, sha1 0e5f24af.
+  - l-si adf80994: DEAD.md, "THR ⇒ M ≥ 0" FALSE as stated; S3 form kept as a WEAK conjecture.
+  - l-red 896aea76: R73, no kill of either K note in 4.27 M runs; FRZ-U |R| − 1 and CW-INT attained; CASC-B and post-freeze KIND-MONO regimes unreached.
+  R49 draft: fixes filled; it waits only on REFEREE-2's §C NEEDB.
+  Routing: L-RED box 44, constructions entering the CASC-B and KIND-MONO regimes, then DUAL / MIRROR. R73 sent to REFEREE 11 as data for KW.
+- 23:00Z: Merged checker a0aa2651: CHECKER 8 handover check 5/5, GO; C58 waits for the final R49 draft.
+- Merged l-new b15856e8. PINNED at this commit: packet P-N5-DUAL, docs/new/P-N5-DUAL-box43.md, sha1 a51f7c30c267a4c02088cf2c849388e28c4121fa (L-NEW 22, 150 lines). Contents: Lemma DUAL, Theorem MIRROR as an implication under an explicit hypothesis (H-OF), Corollary Φ-kO, ENDGAME, and a start / N5^OF table to check.
+- Queued for both referees after P-N5-KW. REFEREE 11: KW, then DUAL. REFEREE-2 12: §C NEEDB, KW, FX, NH42, DUAL.
+- 23:06Z: Merged referee 56ac6538 + 1d6cbf32: R-N5-KW.
+  - Verdict: all SIGNED; E-SEG SIGNED WITH GAP KW-1 (a counting definition, one-line repair, no downstream bound changes); notes KW-N1..N5.
+  - FRZ-U is self-contained (no transfer of R20 CR needed). CASC-B's use of R26 (c) is checked.
+  - Addendum 1: CASC-B's hypothesis is exercised (cascb_witness.pg, within bound). KIND-MONO is still vacuous after the freeze.
+  - Told L-RED to focus its constructions on a post-freeze kind change.
+- 23:21Z: Read 12 notifications. Hourly sweep (trigger 23:03Z): WATCHDOG 23:03Z reports no overage; CHECKER's 681k alert resolved by the handover; REFEREE-2 12 at 449k; L-COMP idle 63 min.
+  - Merged referee-2 1a9a0407 (Addendum A, XG witness fixed: rng-free, pinned σ*), checker abc914c2/4cad8cb1 (C58 prep: Oink built, landed.py, NEEDB re-runs IDENTICAL), l-new 85969a3b, referee, l-red, l-comp.
+  - L-NEW DATA: every exponential-SI family (Friedmann switchall/switchbest, tc, tc+, counter_*) is in the frontier class 𝒞^{≥2E,≥2O}; only counter_ortl (𝒞^1O) and counter_qpt (one-player) are covered. Route Δ climbs: TJ and D_k changes ≤ n so far; a size-scaling test is running.
+  - Routed: REFEREE-2 (§C NEEDB first, then KW, then handover if > ~470k); L-RED (re-run REFEREE's cascb_witness.pg on kw18; R73 discrepancy); L-COMP (status nudge).
+  - R49 draft updated for Addendum A.
+- 23:28Z: Merged referee-2 8a47fd92 (R2-N5-KW: all SIGN, no gap, N-KW-1..6) and l-com de0ca760 (Q4 78/160 alive). Asked both referees for §C KW, and REFEREE-2 also for §C NEEDB. Pre-drafted docs/agents/R50-draft.md (P-N5-KW + addendum; placeholders FIXES / RSC / R2SC / CSUM). PLAN: after R50 lands, a short assembly packet (𝒞^1O polynomial iteration bound from R47 + R48 + R50 + per-iteration bit cost), refereed like any packet.
+- 23:36Z: Merged l-red db07e8e4 (R73 §7: RUN ratio ≤ 0.0123 of Δr⁴; CASC-B regime reached once in random runs; post-freeze KIND-MONO still vacuous with long post-freeze runs; PAR 838k more states). R50 draft updated.
+- 23:46Z: Merged referee a6e50742 + 776281ac: §C KW. Both referees sign every statement; KW-1 = N-KW-3 is one finding, closed by definition; N-KW-1 and N-KW-2 accepted; CASC-B exercised on both engines (slack 0 reached by REFEREE-2). R50 draft updated. KW fixes now wait only on REFEREE-2's §C KW.
+- 2026-10-26 00:01Z: Read 9 notifications.
+  - REFEREE-2 12 PARKED. §C NEEDB fafea30e; §C KW 20fea7d7 (KW-1 = N-KW-3, joint gap closed by the one-line repair); handover dd79fb25. Created REFEREE-2 successor 13 (session_01Hjrye27AzEi22tE6LHsM4Y): FX, NH42, DUAL.
+  - REFEREE 11: R-N5-DUAL cdb187c7. DUAL first sentence, MIRROR (a), (c), Φ-kO and ENDGAME SIGNED; DUAL's second sentence SIGNED WITH GAP DUAL-1 (wording); MIRROR (b) signed as an implication only. The start-pair audit of R17-R48 proofs is NOT done.
+  - L-SI f4cb4bc3: drafts of the KW fixes file and P-N5-1O. 1O-POLY: ITER ≤ (n(n−1) + d_o)(T* + 1) = O(m·Δ·d_o·n¹³). Lemma BIT: bit cost per iteration O(n³(n + m)). Lemma OUT: S5 output correct on 𝒞^1O, closing G-N5T-3.
+  - L-RED: the CASC-B discrepancy is case (a): its corpus lacked the file, and R73's "0 everywhere" was too strong; no row changes (c45b888b).
+  - L-NEW: Route Δ shows no growth (5c01a8ee; tj17_n19, dch16_n44 as DATA).
+  - L-COMP: Q4 alive, ETA ~01:00Z.
+- R49 draft final: both §Cs; (LV+) definition fixed to match the packet (in-scope, u* ≠ none). To CHECKER 8 as C58.
+- 00:12Z: Merged l-si 1d33a337 (P-N5-KW fixes FROZEN, c65f4c1e). R50 draft completed: fixes, REFEREE-2 §C 20fea7d7, and the §C summary; E-SEG clause gives the repaired (i). To CHECKER C59 after C58.
+- 00:18Z: Merged referee 4e440bd5: R-N5-START audit (REFEREE 11). Every result in the 𝒞^1O chain is start-free in statement and proof; the R32/R33 chain was read at structure level. Forwarded to L-SI (P-N5-1O: 'from any start pair' with the caveat) and L-NEW (MIRROR's H-N5).
+- 00:29Z: Merged checker 4f617e9e (C58 FAIL: R49, three E-items, wording against signed text: the rise-setting clause, a false RESULTS citation, the disclosure wording) and dc29ee23 (C59 FAIL: R50, CW-INT setting dropped, slack conventions, limit (ii) incomplete). Applied all E-items verbatim per CHECKER's text, plus optional N-1, N-3 (C58) and N-1..N-4 (C59). Revised R49 sha1 6a9ce799, R50 sha1 64cbc92f. Lesson again: diff every setting clause against the packet.
+- 00:38Z: Merged checker a58dcd3a (C58 + C59 Addendum 1 PASS). LANDED R49 (P-N5-NEEDB, lines 2432-2492) and R50 (P-N5-KW, lines 2494-2565), checker a58dcd3a, both cmp OK. GAPS line 11 UPDATE: every count in the 𝒞^1O chain is landed; the assembly P-N5-1O comes next. GO to L-SI to freeze P-N5-1O.
+- 2026-10-26 00:48Z: Merged l-si 058e5aee. PINNED at this commit: packet P-N5-1O, docs/si/P-N5-1O-box15.md, sha1 2cf5e67262d31712976fb882175f5080cc3dc4ec, 184 lines, L-SI 10. Contents:
+  - Theorem 1O-POLY: from any start pair, ITER ≤ (n(n−1)+d_o)(T*+1) = O(m·Δ·d_o·n¹³).
+  - Lemma BIT: O(n³(n+m)) word operations per iteration.
+  - Lemma OUT: S5's output is correct on 𝒞^1O.
+  - Corollary 1O-TIME.
+  - Citations: R15, R21 (a), R36 (c), R47 (b), R48 (i), R50 (h), and the R-N5-START audit.
+  - Routing: TOP PRIORITY for both referees. REFEREE 11 now. REFEREE-2 13 first after its handover check, ahead of FX, NH42 and DUAL.
+- 00:53Z: Merged referee-2 a0940b45 (REFEREE-2 13 handover check 5/5 at 00:06Z; my watcher had missed it). GO with P-N5-1O first, then FX, NH42, DUAL.
+- 2026-10-26 00:58Z: Read 14 notifications. Hourly sweep (trigger 00:03Z, run late): no overage; Lead context 689k.
+  - Merged checker 06252e76: C58 + C59 Addendum 2, R49 and R50 landed verbatim; C58 and C59 CLOSED.
+  - Merged l-new fe3b0527 / b2b88ea9: set-form lemmas G_D (a)-(c2), F1°_D, Wo_D, all every game; HP replaces FO; RT's block narrowed to the fine order between different terminals below M_D (Δ-RT, OPEN). Signpost DATA: N5 is ~linear in N on switchallexp, switchbestexp and counter_*.
+  - Merged l-red d3e8b47e: R74, post-freeze KIND-MONO still vacuous (1.86 M start-pair evaluations), with a construction target.
+  - L-NEW 22 and L-RED 18 PARKED. Created L-NEW successor 23 (session_011WFfFqRNrU1a8LQwbwazZN): packet P-N5-GD, then Route Δ. Created L-RED successor 19 (session_017GDW2Qywsw52DKHPD8kAM6): adversary on P-N5-1O, then DUAL / MIRROR.
+- 01:04Z: Merged l-new d489672f (L-NEW 23 check 5/5, GO: P-N5-GD then Route Δ) and l-red 56c75abd (L-RED 19 check 5/5, GO: adversary on 1O, then DUAL / MIRROR).
+- 01:10Z: Merged referee 4298dae9: R-N5-1O. 1O-POLY, BIT and 1O-TIME SIGNED; OUT SIGNED WITH GAP OUT-1 (one-word repair; conclusion unchanged); notes 1O-N1, 1O-N2, BIT-N1. The R32/R33 start-freeness pass is done line by line (R-N5-START Addendum 1). Waiting on REFEREE-2 13's 1O report.
+- 01:16Z: Merged referee-2 04c2d708: R2-N5-1O, all SIGN, no gap. N-1O-1 = OUT-1 (≥ 0); N-1O-2: O(n¹⁷); N-1O-3: per-run cost; N-1O-4: R21 (a) holds on every game (R18 (d) S (a)); N-1O-5: R32/R33 start-free line by line; N-1O-6. P-N5-1O is now SIGNED BY BOTH REFEREES; §Cs requested.
+- Merged l-new 205c9ed7. PINNED at this commit: packet P-N5-GD, docs/new/P-N5-GD-box43.md (L-NEW 23): G_D (a)-(c2), F1°_D, Wo_D, every game. Queued for both referees after FX, NH42 and DUAL.
+- 01:21Z: Pre-drafted docs/agents/R51-draft.md (P-N5-1O). Placeholders: FIXES, RSC, R2SC, CSUM. To CHECKER C60 after both §Cs and the 1O fixes file.
+- 01:27Z: Merged referee e785b8e1 (§C 1O) and referee-2 3312144c (§C 1O): identical; OUT-1 = N-1O-1 closed by the repair; the R32/R33/R34 chain is read in full jointly. GO to L-SI to freeze the 1O fixes file. R51 draft: §Cs filled.
+- 01:33Z: Merged l-si 90f93566 (P-N5-1O fixes FROZEN, 647deab5). R51 draft complete; to CHECKER C60.
+- 2026-10-26 01:48Z: Read 18 notifications.
+  - Merged checker 17c5ff9b: C60 FAIL on R51 with E-1 (R34 attribution) and E-2 (honest limits), plus GAPS advice. R51 revised with E-1, E-2 and N-1..N-4 (sha1 175947e8).
+  - Merged referee-2: FX 83a3e8c7 (all SIGN; (b) now unconditional; N-FX-1, 2), NH42 d2142087 (all SIGN; N-NH42-1..3), DUAL 73c2b4a1 (all SIGN; N-DUAL-1 = DUAL-1; N-DUAL-3, a READING: 𝒞^1E O(n¹⁷) via MIRROR + 1O). §Cs needed from both referees on FX, NH42 and DUAL.
+  - Merged l-si: itergrowth DATA (max ITER 115 at n 48, ~linear), N5-FRONTIER-box15 (CR-D′), handover 20d3a875. L-SI 10 is at handover.
+  - Merged l-new 7999d0b1 / f5200580: Δ-RT-F FALSE (rtf_cex_inj.pg, n 11); PIECE_D on |D| = 1; the Δ-RT fallback side reduces to a frontier fallbacks-per-phase count.
+  - Merged l-comp 758d02ef: box 8 complete, 0 violations through n 5; CLS1/FBL/CLU/WK vacuous.
+- 01:53Z: Routing:
+  - CHECKER: C60 Addendum 1 (R51 rev. 175947e8).
+  - REFEREE 11 and REFEREE-2 13: §Cs on FX, NH42 and DUAL, then REFEREE-2 continues with GD.
+  - Created L-SI successor 11 (session_01FchPxfEZ9Fo56WrCZTvnXS): the FX fixes file, then the P-N5-1E assembly with Lemma OUT on every game.
+  - L-NEW 23: frontier fallbacks-per-phase (FB-POLY set form).
+  - L-COMP: box 9 climbs; first, the status of N5's independent second implementation (gauntlet step 2), which outranks the climbs if it is not done.
+- 02:18Z: Merged checker 231c8fe6 (C60 Addendum 1 PASS). LANDED R51 (P-N5-1O), RESULTS lines 2567-2624, checker 231c8fe6, cmp OK. GAPS line 11 UPDATE uses CHECKER's C60 §6 text: the 𝒞^1O part of G-N5-TIME is CLOSED; status stays open for general games.
+- 2026-10-26 02:23Z: Read 10 notifications. Hourly sweep (trigger 02:02Z): no overage. Merged:
+  - referee: §C FX 9f736349, §C NH42 5fc234ba, §C DUAL 78db369b;
+  - referee-2: §Cs 253fe5c5; GD ab4a5af0, all SIGN, N-GD-1 (R18 (d) "iff" overstated), N-GD-2;
+  - l-si: L-SI 11 check d272652a, 5/5, GO;
+  - l-comp 45def408: gauntlet step 2 DONE, n5b vs n5 full state-sequence diff, 22,810 runs, 0 differences;
+  - l-new 63d75862: FB-POLY in set form survives except THETA-AFTER; Theorem FB-RED f ≤ 1 + (n−1)(2 + ρ); CONJECTURE ρ-POLY; fb17_n32.
+  Routing:
+  - REFEREE 11: review GD.
+  - REFEREE-2: pre-read of Lemma OUT for P-N5-1E.
+  - L-SI 11: FX fixes, then P-N5-1E.
+  - L-NEW 23: NH42 and DUAL fixes, then ρ-POLY.
+  - L-COMP: box 9 climbs plus n5b on the frontier instances.
+- 02:28Z: Pre-drafted docs/agents/R52-draft.md (P-N5-FX; pin 02ad3f88). It waits for L-SI 11's FX fixes file.
+- 02:30Z: Merged l-si cfadaee9 (FX fixes FROZEN, 4253d51e). R52 (FX) draft complete; to CHECKER C61.
+- 2026-10-26 02:35Z: Read 6 notifications.
+  - Merged checker fe6330f5: C60 Addendum 2, R51 landed verbatim; C60 CLOSED.
+  - Merged referee a50f6623: R-N5-GD, all SIGNED; GD-N1..N3.
+  - Merged l-new 478dd6e1: NH42 fixes 7c499640; DUAL fixes 5d08d0fd.
+  - Merged l-comp a47b3fa3: n5b = n5 on 9 frontier instances × 51 starts; first WK-non-vacuous instance wk1_n32.
+  - Merged l-si, l-red, referee-2.
+  - Verified: every FX / NH42 / DUAL §C commit is now an ancestor of trunk (L-NEW had noted they were not at 249ad7e3).
+  - Asked both referees for §C GD.
+  - REFEREE-2 pre-read: Lemma OUT has no 𝒞^1O step. Cosmetic note: the 1O fixes file says "REFEREE-2 successor 12" for R2-N5-1O; it should be 13.
+  - Next: R53 (NH42) and R54 (DUAL) drafts.
+- 02:43Z: R53 draft (P-N5-NH-box42, Theorem NH as a reduction; fixes 7c499640) and R54 draft (P-N5-DUAL: DUAL with the DUAL-1 repair, MIRROR (a), (b) implication, (c), Φ-kO, ENDGAME; fixes 5d08d0fd; 𝒞^1E bound a READING) written in docs/agents/; to CHECKER as C62, C63 (queued behind C61).
+- 02:57Z: C61 PASS (checker 22e8a23b, no required fix; N-2 applied: R34 (e) in R52's premise list). R52 LANDED in RESULTS; GAPS G-N5-TIME UPDATE; NOW updated. Merged checker, referee (§C GD a639e39e), referee-2 (§C GD 6e12b2bc), l-new (P-N5-FBRED frozen 3732ab55, sha1 11b15455: pinned on trunk by this merge), l-si (P-N5-1E draft de8775a2), l-comp, l-red. C62/C63 briefs sent to CHECKER. L-NEW: GD fixes file, then direction (a) fixed-k nested freeze or (b) value-iteration angle. L-SI: freeze 1E after R54.
+- 03:02Z: R52 landing pushed c3f6f2bf (parent b5a1d870), push exit 0, VERIFY PASS; CHECKER sent the landing SHA for Add. 1. Slip: my first message gave a made-up parent SHA ('50cfebea'); corrected 03:15Z. Rule: quote SHAs only from git output. P-N5-FBRED routed to REFEREE and REFEREE-2, pinned at trunk c3f6f2bf (1E has priority once pinned).
+- 03:02Z: second slip: my message stamps 02:58Z / 03:13Z / 03:15Z to CHECKER, REFEREE, REFEREE-2, L-SI were hand-typed and wrong (actual ~02:50-03:01Z); the R52 rev stamp and the R53 / R54 draft stamps were also hand-typed; all three draft headers corrected. The landing commit's parent b5a1d870 is the l-comp merge (l-red was already merged), not l-red's as I wrote. Rule restated: every stamp from date -u, every SHA from git output.
+- 03:14Z hourly sweep (trigger 03:02Z): no overage (Lead 689k; rate_limit seven_day status allowed_warning, isUsingOverage false). WATCHDOG 03:03Z: REFEREE 11 at 631k -> handover asked (notes, push, park; FBRED not to start); REFEREE-2 554k (next handover soon); CHECKER 467k; L-RED 212k; L-COMP idle 27 min at 334k with WK climbs running (no exception yet). CI green on all lane heads; trunk c3f6f2bf run in progress. L-NEW bca23df8 (Lemma VI-LB, BGHM arXiv:1407.5030 reading, obstruction): routed the obstruction to L-RED as top target (gadget, late regime f >= n); L-NEW: packet P-N5-VILB, then the converse (ACCEL / SI vs VI). R55 draft (P-N5-GD; fixes dfa6dd2b) written for CHECKER C64. Header-stamp fix pushed 1e163a67.
+- 03:19Z: C62, C63 PASS (checker 04ad4a15, no required fix); optional notes applied: C62 N-2 (R38 (a) premise), N-3 (R52 landed), C63 N-2 (title: (H-OF), MIRROR (c)). R53 and R54 LANDED in RESULTS; GAPS UPDATE; NOW updated. C61 closed (Add. 1 8c466646). REFEREE-2 signed P-N5-FBRED (814ac456; N-FBRED-1..4; late regime unreachable in its climbs). L-RED R75 (49d73f4f): 1O / DUAL no kill; now on the late-regime gadget. L-NEW: P-N5-VILB frozen 999e73f4 (sha1 872d4400). Next: freeze word for P-N5-1E to L-SI, R55 to CHECKER as C64.
+- 03:25Z: REFEREE 11 handover 76a02311 (parked ~630k); its FBRED report 1feff548 is complete (all SIGNED, FB-RED as a reduction; FBRED-N1, N2), written before my 03:05Z handover message reached it; kept. Created REFEREE successor 12 (session_01KNDBjZvPFLaNjEdCmEWBcN): handover check, then §C FBRED, then P-N5-1E. L-NEW 6800a4b7: fallback = VJ00 switch-all SI step (PROVED); Lemma ACCEL (lane-PROVED): f ≤ 1 + N_K (simple-path κ-levels), BGHM gadget collapses (READING); real obstruction = one-phase counter. L-RED retargeted (ACCEL check, then one-phase counter); L-NEW on the one-phase counter (structural bound or construction); ACCEL packet deferred. Sent L-SI the 1E freeze word (R54 landed at e54d8a48).
+- 03:30Z: P-N5-1E FROZEN (l-si adb721b5, sha1 e613db13); pinned on trunk by this merge; routed to REFEREE-2 now and to REFEREE 12 after its handover check and §C FBRED.
+- 03:35Z: C62/C63 Add. 1 PASS (9a9d19e6): R53, R54 closed. C64 (R55) FAIL E-1 (premise-class sentence over-covered R25 (C2), (C4) and R38 (a)); fixed with CHECKER's suggested text verbatim; N-2 (landing notes on R18/R21) not taken: RESULTS entries are not edited, the game-generality stays recorded in R55. REFEREE 12 handover 5/5 (61a279e7), GO sent with the 1E pin. L-NEW 916aa2b3: Lemma EPOCH (lane-PROVED): f ≤ 1 + n·N_ep; ∏deg route for N_ep dead (lap_n6_s1_110421, sigma-bar repeats in a phase).
+- 03:35Z: slip repeated: my message stamps to REFEREE-2 (03:37Z), L-SI (03:38Z), REFEREE 12 (03:41Z) were hand-typed, ~5 min ahead of date -u. From now on every message stamp comes from a date -u call in the same turn.
+- 03:45Z: C64 Add. 1 PASS (0c1969e7). R55 LANDED; GAPS UPDATE; NOW updated.
+- 03:49Z: FBRED §Cs both done (REFEREE 12 1ea0d317, REFEREE-2 a4a642b6): identical, no gap; N-FBRED-1, -2, FBRED-N1 wording; N-FBRED-2 missed by REFEREE 11. REFEREE-2 R2-N5-1E (ceed1f63): all SIGN, no gap; N-1E-1..5; VJ00 opened (sha256 485a12de). L-NEW P-N5-ACCEL frozen (e9eaaaaf, sha1 301f0be0). Merged all lane branches: VILB and ACCEL pinned on trunk by this commit; VILB routed to REFEREE-2 (queue empty), L-NEW to write FBRED fixes file.
+- 04:00Z: FBRED fixes FROZEN (l-new 2742f3e9, sha1 05c24943); R56 draft filled; to CHECKER as C65. C64 closed (Add. 2 73b2842e). L-SI 67fd31d9: FB-2T / FB-2O (lane-PROVED, conditional on FBRED): N_late polynomial with ≤ 2 terminals per class; f = O(n³) per phase on 𝒞^2O. L-NEW a77693d1: Lemma ALT: N_ep reduces to ρ; one-phase counter ⟺ ρ-POLY.
+- 04:05Z hourly sweep (trigger 04:02Z): no overage (WATCHDOG 04:03Z: isUsingOverage false on every session; seven-day allowed_warning). Exceptions: REFEREE-2 13 at 678k (queue empty after VILB + ACCEL reports f0e82d8a, all SIGN) and CHECKER 8 at 605k (idle) -> handover asked of both. L-COMP idle 42 min with CLS1 climbs running (no action before 60 min); L-RED idle 17 min (new target sent 04:05Z); REFEREE 12 at 122k on 1E. CI green on all heads. No owner line due (M2 done).
+- 04:10Z: REFEREE-2 13 handover e931730c, parked. Created REFEREE-2 successor 14 (session_01Mx2amUjD2RPaFRD5Re2ZHs): handover check, then §C 1E / VILB / ACCEL.
+- 04:15Z: C65 PASS (b911ecce); optional N-1 (max f 37 on REFEREE-2's 𝒞^1O files) and N-2 (EXIT-SWITCH_D stated) applied; R56 LANDED; GAPS UPDATE (incl. lane-PROVED FB-2T / FB-kT, conditional, labelled); NOW. L-NEW ce224cbd: ROUTE-k, SAT-k, Theorem FB-kT (lane-PROVED, conditional on R56): N_late ≤ 1 + Σ_q (V_q − 1), V_q ≤ Σ_h D(mD)^h; model obstruction: no sum bound from current lemmas.
+- 04:20Z: REFEREE-2 14 handover 5/5 (dbcf85ff; re-measured: e931730c ancestor, 2 ahead / 6 behind after Lead commits); GO (waits for REFEREE 12's reports). L-RED R76 (2207620f): no kill; late regime vacuous; BGHM gadget collapses as N5 games (bghm_k1_gap6_A, bghm_k3_gap4_A); records fr39_q4_n48 (f 39, |Q| 4), rho144_n32, lev74_n40. L-SI: P-N5-2T draft 8481bce1, audit N5-2O-T (LEN first failing link; T per phase on 𝒞^2O = X_D + TC-SWITCH + (¬h-route) + per-gate SO/WC); next TC-SWITCH.

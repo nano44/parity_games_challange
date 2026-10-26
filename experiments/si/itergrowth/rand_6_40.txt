@@ -1,0 +1,39 @@
+runs 1800, distinct n 35
+n    6  max ITER    2  max ITER / n 0.33
+n    7  max ITER    3  max ITER / n 0.43
+n    8  max ITER    3  max ITER / n 0.38
+n    9  max ITER    3  max ITER / n 0.33
+n   10  max ITER    3  max ITER / n 0.30
+n   11  max ITER    4  max ITER / n 0.36
+n   12  max ITER    4  max ITER / n 0.33
+n   13  max ITER    3  max ITER / n 0.23
+n   14  max ITER    5  max ITER / n 0.36
+n   15  max ITER    4  max ITER / n 0.27
+n   16  max ITER    4  max ITER / n 0.25
+n   17  max ITER    3  max ITER / n 0.18
+n   18  max ITER    5  max ITER / n 0.28
+n   19  max ITER    6  max ITER / n 0.32
+n   20  max ITER    5  max ITER / n 0.25
+n   21  max ITER    5  max ITER / n 0.24
+n   22  max ITER    5  max ITER / n 0.23
+n   23  max ITER    6  max ITER / n 0.26
+n   24  max ITER    5  max ITER / n 0.21
+n   25  max ITER    5  max ITER / n 0.20
+n   26  max ITER    7  max ITER / n 0.27
+n   27  max ITER    5  max ITER / n 0.19
+n   28  max ITER    4  max ITER / n 0.14
+n   29  max ITER    5  max ITER / n 0.17
+n   30  max ITER    6  max ITER / n 0.20
+n   31  max ITER    6  max ITER / n 0.19
+n   32  max ITER    6  max ITER / n 0.19
+n   33  max ITER    4  max ITER / n 0.12
+n   34  max ITER    6  max ITER / n 0.18
+n   35  max ITER    6  max ITER / n 0.17
+n   36  max ITER    6  max ITER / n 0.17
+n   37  max ITER    7  max ITER / n 0.19
+n   38  max ITER    6  max ITER / n 0.16
+n   39  max ITER    6  max ITER / n 0.15
+n   40  max ITER    6  max ITER / n 0.15
+fit log(max ITER per n) ~ e*log n: e = 0.481
+fit log(ITER) over all runs: e = 0.453
+max ITER / n overall: 0.43;  max ITER / n^2: 0.061

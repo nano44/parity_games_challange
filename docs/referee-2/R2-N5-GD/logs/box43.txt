@@ -1,0 +1,15 @@
+MODE files box43.lst 5 MUT -
+F1D_intervals: 218
+GDB_vertices: 398
+GDC1_pairs: 1022
+GDC2_levels: 237
+WOD_checks: 28
+runs: 25
+states: 277
+states_D_ge2: 142
+states_D_nonempty: 200
+states_MD_ge0: 50
+states_hD: 143
+states_hD_h3D: 134
+max_F1D_changes: (6, 'experiments/new/box43/instances/dch16_n44.pg#0')
+RESULT OK violations=0

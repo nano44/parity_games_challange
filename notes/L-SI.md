@@ -1,6 +1,87 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## Resume point (successor 11, box 16; GO 02:21Z 2026-10-26 (Lead); session_01FchPxfEZ9Fo56WrCZTvnXS)
+- Handover check 5/5 (Lead 02:21Z): docs/agents/handover-checks/L-SI.md succ. 11 section, l-si d272652a. R51 (P-N5-1O) LANDED, trunk 249ad7e3.
+- FROZEN (sha1 sent to Lead 02:29Z): docs/si/P-N5-FX-fixes-box14.md 4253d51e (l-si cfadaee9). Both §Cs (referee 9f736349, referee-2
+  253fe5c5) were read from the referee branches; they were not on trunk 249ad7e3.
+- FROZEN at the Lead's freeze word 03:2xZ (R54 landed, trunk e54d8a48): docs/si/P-N5-1E-box16.md (sha1 and commit in the Lead message;
+  R54 quotes re-checked verbatim by script against RESULTS). Before: draft de8775a2, Lead's checks 53b5fd73.
+  - Lemma OUT-G: every game; Iσ = ∅ ⇒ S5 correct; premise (VJ) = VJ00 (11), opened by me; R36 (c). Iτ not used.
+  - Lemma BIT-G: R51 (c) class audit.
+  - Theorem 1E-POLY: ITER ≤ (n(n−1)+d_e)(T*(n,m,Δ,d_e)+1) = O(mΔd_e n¹³) ⊆ O(n¹⁷), via MIRROR (a)-(c) and R51 step 3.
+  - Corollary 1E-TIME.
+  - §6 READING: OUT-G would close R15's G-N5T-3 on every game.
+- DATA: experiments/si/out16/ (outcheck.py, README, logs): 7,824 runs, 0 violations; MUT control fails (773/1,000).
+- Things only I know:
+  - Lemma DUAL's SECOND sentence (DUAL-1) is not used; only the first sentence and MIRROR (a)-(c).
+  - The parameter form of 1E-POLY re-runs MIRROR (b), (c)'s per-game proofs with L := T*(n, m, Δ, d_e). The uniform form is MIRROR as signed.
+  - (VJ) for ANY pointwise-optimal σ̄: Θσσ̄′ = Ωσ, so S1's tie-breaks do not matter.
+- 03:38Z Lead: P-N5-1E pinned trunk 7fef9699 (REFEREE-2 now; REFEREE succ. 12 later). Fixes file only on the Lead's word, after both.
+- 03:38Z Lead task: 𝒞^2O, is ρ per phase polynomial? Lane note docs/si/N5-2O-box16.md (NOT frozen):
+  - PROVED (unrefereed; conditional on FBRED): PFZ-q (κ-PFZ needs only its own terminal constant), ROUTE-2, DIR, SAT-2,
+    Theorem FB-2T (N_late ≤ 12n² under (2T): ≤ 2 terminals per class), Corollary FB-2O (f ≤ 1 + (n−1)(1+12n²) on 𝒞^2O).
+  - ρ itself: OPEN; it is not needed for f.
+  - Still OPEN for 𝒞^2O polynomial: X and T per phase (R50 (h) analogue).
+  - DATA experiments/si/fb2o/ (fb2o.py arithmetic κ; climb2o.py; lib2o.txt = 43 repo games with exactly 2 Odd choice vertices).
+- Things only I know (box 16):
+  - The lemmas' κ sums are ARITHMETIC: a vertex on the path and in P(Ξ(q)) counts twice. A checker composing values by set union
+    (S1's ⊕) reports false PFZ violations (60 on fts_best24.pg).
+  - FBRED HAT-FREEZE (c)'s wording is "play avoids Q∖{c}"; DIR uses only the prefix to c, via (a) plus (SP′).
+- 04:04Z Lead: (1) P-N5-2T DRAFT docs/si/P-N5-2T-box16.md (l-si 8481bce1; freeze on the Lead's word when R56 = FBRED lands; cite FBRED
+  11b15455, fixes 05c24943). (2) T per phase on 𝒞^2O: audit note docs/si/N5-2O-T-box16.md. LEN is the first failing link (as succ. 10 found).
+  W-frame ROUTE-2 makes (¬h-route) one-sided. T needs X_D, TC-SWITCH, the (¬h-route) FRZ-U / KIND-MONO cases, and per-gate SO / WC.
+  DATA tcsw.py: terminal changes ≤ 9 per run; (h_D) fails at 37 % (lib2o) and 63 % (lib41 frontier) of states.
+  X_D (R-STICK_D): NOT started, per the Lead.
+- NEXT: freeze P-N5-2T on the Lead's word (re-check FBRED's landed R56 text first); P-N5-1E fixes after both reports.
+
+## HANDOVER (successor 10, box 15; written 2026-10-26 01:05Z (date -u); session_01PBqfsNWMhTPn7yNJ8C18HP)
+Reason: context past the Lead's ~450k line. The session's remaining-token figure fell by ~575k since the start (it is not exposed directly).
+Lead: session_014FBi6o334DvwT5Uw2kDfoN.
+### DONE (every sha1 below went to the Lead, so these files are FROZEN; new text goes in NEW files)
+- Handover check 5/5: l-si ffc341ca.
+- docs/si/N5-KW-box15.md 5ebbb3b6 (lane note).
+- docs/si/P-N5-PHI-fixes-box14.md 29936b3d. P-N5-PHI LANDED as R47.
+- docs/si/P-N5-KW-box15.md c0b0111f, with addendum 8d6bfb3c (K units) and fixes c65f4c1e. LANDED as R50, trunk f41fcf0a.
+- docs/si/P-N5-NEEDB-fixes-box13.md 0e5f24af. NEEDB LANDED as R49.
+- docs/si/P-N5-1O-box15.md 2cf5e672 (l-si 058e5aee). PINNED at trunk 291c110d; both referees, top priority.
+  - Theorem 1O-POLY (any start pair; audit R-N5-START 4e440bd5).
+  - Lemma BIT (SPEC sections only).
+  - Lemma OUT (closes G-N5T-3 on 𝒞^1O from R36 (c) + R21 (a)).
+  - Corollary 1O-TIME.
+- DEAD box 15: "in scope, THR ⇒ M ≥ 0" is FALSE on block_9501 from its saved start. Own repro: experiments/si/needb5/. The S3 form is
+  kept only as a WEAK conjecture. Ledger line: docs/si/N5-LEDGER-update-box15.md.
+- DATA:
+  - experiments/si/kw15/ (kwcheck, kwclimb, logs);
+  - experiments/si/itergrowth/ (README: N5 iterations on 𝒞^1O, max 115 at n 48, exponent ≈ 1.2 adversarial, ≈ 0.5 random).
+- Not frozen, sha1 not sent: docs/si/N5-FRONTIER-box15.md (l-si 0bd6fb23).
+  - PAR_D and Lemma CR-D: R20 CR on any game under (i) COARSE_L Ξ = W and (ii) a constant W cycle-node map.
+  - Corollary CR-D′: under (h_D), (h3_D), via L-NEW 22's G_D.
+  - The first failing link of the KW chain is LEN (Δ-RT).
+  - CONJECTURE TC-SWITCH.
+### IN FLIGHT
+- Nothing running.
+### NEEDS
+- P-N5-1O SIGNED by both; fixes docs/si/P-N5-1O-fixes-box15.md FROZEN 647deab5 (l-si 90f93566, 01:35Z). RESULTS R51 follows (Lead).
+- Lead: FX fixes after REFEREE-2 13's FX report and both §Cs. REFEREE signed FX at 843ba1f8, notes FX-N1..N3. File:
+  docs/si/P-N5-FX-fixes-box14.md (NEW).
+### Things only I know
+- Lemma OUT's two referee checks:
+  - R21 (a)'s parenthetical must cover EVERY positional τ′, not only τ_k. Its source P-N5-X proves XW through VJ00 (11).
+  - Whether R21 (a) uses 𝒞^1O. If not, S5 is correct on every game.
+- P-N5-1O §1's table quotes R50 (h) verbatim, and the start-free audit caveat (R32/R33 at structure level) is quoted twice.
+- The KW proof's core is FRZ-U Case B (coarse-strict ⇒ gate by Fact B, then (F1)); cycles are excluded because w is constant. CR-D
+  generalises exactly this.
+- Traps this box:
+  - `until ! pgrep -f X` matches its own shell. Use `while kill -0 PID`, or ps | grep -v grep.
+  - Lead messages crossed my freezes twice: the K-unit note became an addendum, and PHI was already done. ReadNotifications before freezing.
+  - The kwcheck freeze-delay maximum is over runs that reach k0 + r − 1 only (KW-N5).
+### NEXT (for a successor)
+1. P-N5-1O fixes when the reports land.
+2. FX fixes.
+3. Frontier (Lead's optional item 3): data on terminal changes per run (TC-SWITCH) on L-NEW 22's frontier instances and lib41's frontier
+   games; then try the ≼_D order on D_k (N5-FRONTIER §4).
+
 ## Resume point (successor 10, box 15; GO 19:23Z 2026-10-25 (Lead); session_01PBqfsNWMhTPn7yNJ8C18HP)
 - Handover check 5/5 (Lead 19:23Z): docs/agents/handover-checks/L-SI.md succ. 10 section, l-si ffc341ca.
 - Box 15 items (Lead 19:23Z): (0) NEEDB fixes on arrival (wait for R2-N5-NEEDB + both §Cs; Lead relays SHAs; NEW file
@@ -10,9 +91,15 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   stretch), LEN, KIND-MONO, CASC-B, CW-INT, Theorem RUN (Ξ-changes on R per fallback-free run of a stretch O(Δ r⁴)), Corollary PHASE
   (T per phase poly given f). So (K_W), (E), K closed per stretch; assembly READING: N5 on 𝒞^1O poly IF FBPOLY + PHI + this note are signed.
 - FROZEN (sha1 sent to Lead): docs/si/N5-KW-box15.md 5ebbb3b6 (l-si 2685ea67, 20:51Z); docs/si/P-N5-PHI-fixes-box14.md 29936b3d
-  (l-si dfa14399, 20:59Z); docs/si/P-N5-KW-box15.md c0b0111f (l-si bf1ed0f7, 21:46Z; packet, Lead GO 21:22Z); docs/si/P-N5-KW-addendum-box15.md 8d6bfb3c (l-si 47c4e7a2, 21:55Z; K units). New text goes in NEW files.
-- NEXT: P-N5-KW referee items → NEW docs/si/P-N5-KW-fixes-box15.md. NEEDB fixes (R2-N5-NEEDB pending) → NEW docs/si/P-N5-NEEDB-fixes-box13.md.
-  FX fixes (REFEREE signed R-N5-FX 843ba1f8; REFEREE-2 next) → NEW docs/si/P-N5-FX-fixes-box14.md.
+  (l-si dfa14399, 20:59Z); docs/si/P-N5-KW-box15.md c0b0111f (l-si bf1ed0f7, 21:46Z; packet, Lead GO 21:22Z); docs/si/P-N5-KW-addendum-box15.md 8d6bfb3c (l-si 47c4e7a2, 21:55Z; K units); docs/si/P-N5-NEEDB-fixes-box13.md 0e5f24af (l-si 863ca636, 22:57Z).
+- DONE 22:57Z: DEAD box 15 ("THR ⇒ M ≥ 0" FALSE, block_9501 saved start; repro experiments/si/needb5/); ledger line docs/si/N5-LEDGER-update-box15.md. P-N5-KW pinned trunk d9291be0, with REFEREE 11 + REFEREE-2 12. New text goes in NEW files.
+- 23:41Z: P-N5-KW SIGNED by both (REFEREE 56ac6538 + Add. 1d6cbf32, KW-1 one-line gap; REFEREE-2 8a47fd92). DRAFTS at l-si f4cb4bc3 (not
+  frozen): docs/si/P-N5-KW-fixes-box15.md (freeze on Lead go after both §Cs; add §C items), docs/si/P-N5-1O-box15.md (assembly packet;
+  freeze after Lead says R50 landed; replace 'R50' wording with the landed entry text).
+- 00:12Z: docs/si/P-N5-KW-fixes-box15.md FROZEN c65f4c1e (l-si 1d33a337). R50 (P-N5-KW) and R49 (NEEDB) LANDED at trunk f41fcf0a.
+- 00:49Z: docs/si/P-N5-1O-box15.md FROZEN 2cf5e672 (l-si 058e5aee): Theorem 1O-POLY (any start; audit R-N5-START 4e440bd5), Lemma BIT,
+  Lemma OUT (closes G-N5T-3 on 𝒞^1O from R36 (c) + R21 (a)), Corollary 1O-TIME. Sent to Lead for pin/route.
+- NEXT: P-N5-1O referee items → NEW docs/si/P-N5-1O-fixes-box15.md. FX fixes when routed. FX fixes (REFEREE signed R-N5-FX 843ba1f8; REFEREE-2 next) → NEW docs/si/P-N5-FX-fixes-box14.md.
 - DATA: experiments/si/kw15/kwcheck.py (library + extras), kwclimb.py (random, climbs kind / wonce / long); logs in kw15/logs/.
 
 ## Cross-read of L-NEW 21's docs/new/N5-KW-box42.md (v3, l-new b9ee6918, on trunk) against my N5-KW-box15 (5ebbb3b6); written 21:01Z (date -u)
@@ -769,6 +856,11 @@ in experiments/si/orlens/instances/ (all Oink zlk OK, strategies verified). Oink
 - (successor 1) Post-Ye, "The simplex method is strongly polynomial for deterministic MDPs", arXiv 1208.5083 v2 (pdf sha256
   c51876eb...): abstract (O(n^3 m^2 log^2 n), any discount; "layers" measure of progress), Lemmas 3.4, 3.5.
 - NOT opened: Ye 2011, Math. Oper. Res. 36(4):593-603, DOI 10.1287/moor.1110.0516 (cited only through Scherrer Thm 1).
+- (successor 11, 2026-10-26 02:34Z by date -u) Vöge, Jurdziński, BRICS RS-00-48 (Dec 2000), www.brics.dk/RS/00/48/BRICS-RS-00-48.pdf,
+  sha256 485a12de432a2a8c… (the fleet's file; downloaded into the scratchpad, pdftotext). Read: §2 p. 3 (finite game graphs, every vertex
+  has an out-going edge; no other restriction), §4.3 (Ωσ(v) = min⊴ {Θ(P) : P ∈ Playsσ(v)}), §5.1 (3), (4), (6)-(10), §5.2 (σ̄ := a successor
+  minimiser of Ωσ; Prop. 5.1; Lemma 5.2 with proof; (11) Ωσ = Θσσ̄ and "Θσσ̄ ⊴ Θστ, for all strategies τ for player ⊖", p. 16). Used for
+  premise (VJ) of Lemma OUT-G (docs/si/P-N5-1E-box16.md §2).
 
 ## Dead ends (details in docs/si/DEAD.md)
 - TEV / TEV-LAST (succ. 5 conjecture): FALSE, tev_cex_n40 (17078f78), tevlast_cex_n40 (ff1e9cb4); transient absorption at an S4a state.

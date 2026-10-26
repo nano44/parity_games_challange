@@ -1,0 +1,22 @@
+MODE random 3000 12 30 5 MUT -
+O2_ok: 3000
+O3_runs: 3000
+O3_strats: 7531
+O3b_runs: 1314
+O3b_skipped: 1686
+O3b_strats: 1336385
+O4_ok: 3000
+O5_ok: 3000
+REW0_stops: 92
+iterations: 6290
+phases: 7700
+phases_with_fb: 147
+runs: 3000
+stops: 3000
+f_over_R48: (1.0, 'random5:299')
+iter_over_bound: (4.574745648894897e-18, 'random5:1064')
+max_f: (1, 'random5:4')
+max_phase_len: (4, 'random5:691')
+max_phases: (7, 'random5:67')
+phases_over_bound: (0.03731343283582089, 'random5:2763')
+RESULT OK violations=0

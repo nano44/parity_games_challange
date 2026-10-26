@@ -1,0 +1,22 @@
+A0_checks: 987
+FACTB_pairs: 5099
+HPATH_checks: 136
+KWS_stretches: 90
+PAR_states_cw_above_cth: 7
+PHASE_checked: 19
+RUNS_runs: 8
+RUN_case_a: 8
+phases: 19
+runs: 3
+states: 104
+states_checked: 104
+stretches: 90
+max_KW_per_stretch: 5
+max_RUN_ratio_case_a_x1000: 17
+max_T_per_phase: 62
+max_Trel_per_phase: 62
+max_f_per_phase: 13
+max_freeze_delay: 5
+max_stretches_per_phase: 51
+RESULT OK violations=0
+experiments/si/xing/instances/zcl_rx_n32.pg exit 0
