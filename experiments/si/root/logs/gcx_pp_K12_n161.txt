@@ -1,2 +1,16 @@
+    U event k=2 cint=[0,17] edge=(153,125)
+    U event k=3 cint=[0,17] edge=(156,127)
+    U event k=4 cint=[0,17] edge=(153,129)
+    U event k=5 cint=[0,17] edge=(156,131)
+    U event k=6 cint=[0,17] edge=(153,133)
+    U event k=7 cint=[0,17] edge=(156,135)
+    U event k=8 cint=[0,17] edge=(153,137)
+    U event k=9 cint=[0,17] edge=(156,139)
+    U event k=10 cint=[0,17] edge=(153,141)
+    U event k=11 cint=[0,17] edge=(156,143)
+    U event k=12 cint=[0,17] edge=(153,145)
+    U event k=13 cint=[0,17] edge=(156,147)
+    U event k=18 CUT edge=(153,152)
+    U event k=18 CUT edge=(156,155)
   ../red/usplit/instances/pp_K12_n161.pg phase@0 run[0,19] c=0 |U|=161 |Qc|=6 G=2 gcv=74 Xmax=13 Xsum=26 X={27: 13, 50: 13} rho_root=14
-G_max=2 G_sum=2 X_max=13 X_sum=26 cint=3 cint_len_max=17 cint_migt=13 cint_pure=1 gcv=74 gcv_DLEAVE=74 mig_per_vertex_max=1 rho_max=14 runs=1 xt_NONE=26 xv=52 xv_SRC_DD=52 xv_SRC_STAY=52
+G_max=2 G_sum=2 UR_cut=2 UR_in=12 UR_in_index_max_minus_U=853 X_max=13 X_sum=26 cint=3 cint_len_max=17 cint_migt=13 cint_migt_multioff=13 cint_migt_one_max=13 cint_pure=1 gcv=74 gcv_DLEAVE=74 mig_per_vertex_max=1 migx_per_vertex_max=1 rho_max=14 runs=1 xt_NONE=26 xv=52 xv_SRC_DD=52 xv_SRC_STAY=52

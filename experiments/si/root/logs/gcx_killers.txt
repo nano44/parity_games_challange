@@ -1,0 +1,15 @@
+== ../red/so/instances/so_th_n32.pg rund/instances/so_th_n32_s0.start
+G_max=10 G_sum=10 UR_cut=6 UR_in=8 UR_in_index_max_minus_U=979 cint=20 cint_len_max=11 cint_pure=19 gcv=32 gcv_DLEAVE=26 gcv_SWITCH=6 rho_max=33 runs=1
+== ../red/n5inj/instances/phase2_pk48.pg rund/instances/phase2_pk48_s1.start
+G_max=1 G_sum=1 UR_cut=1 UR_in=9 UR_in_index_max_minus_U=962 cint=8 cint_len_max=12 cint_pure=2 gcv=1 gcv_SWITCH=1 rho_max=3 runs=5
+== rund/instances/usplit_rd_s3_n27.pg
+G_max=2 G_sum=2 UR_in=1 UR_in_index_max_minus_U=975 X_max=1 X_sum=1 cint=3 cint_len_max=2 cint_migt=1 cint_migt_multioff=1 cint_migt_one_max=1 cint_pure=3 gcv=9 gcv_DLEAVE=9 mig_per_vertex_max=1 migx_per_vertex_max=1 rho_max=1 runs=1 xt_NONE=1 xv=1 xv_SRC_DD=1 xv_SRC_STAY=1
+== root/instances/cone_n65.pg
+G_max=1 G_sum=1 MIG2_cint=1 cint=4 cint_len_max=4 cint_migt=4 cint_migt_one_max=4 cint_pure=3 gcv=3 gcv_DLEAVE=3 mig_per_vertex_max=2 rho_max=2 runs=3
+EXAMPLE ('MIG2', 'root/instances/cone_n65.pg', 1, 0, 4, 8, {2: 2, 44: 2, 14: 2, 20: 2, 26: 2, 29: 2, 30: 2, 59: 2})
+== root/instances/cone_n69.pg
+MIG2_cint=1 UR_in=4 UR_in_index_max_minus_U=946 cint=2 cint_len_max=19 cint_migt=19 cint_migt_one_max=19 cint_pure=1 mig_per_vertex_max=3 runs=2
+EXAMPLE ('MIG2', 'root/instances/cone_n69.pg', 1, 0, 19, 55, {2: 2, 7: 3, 14: 2, 26: 3, 32: 2, 39: 2, 57: 2, 9: 2, 13: 2, 17: 2, 28: 2, 27: 2, 63: 2, 3: 2, 36: 2, 40: 2, 30: 2, 62: 2, 68: 2, 53: 2, 11: 2, 38: 2, 64: 2, 0: 2, 43: 2, 24: 2, 60: 2, 44: 2, 1: 2, 6: 2, 21: 2, 34: 2, 59: 2})
+== root/instances/ueonce_n27.pg
+G_max=1 G_sum=1 UE2_Cr=1 UR_in=20 UR_in_index_max_minus_U=981 cint=2 cint_len_max=9 cint_pure=1 gcv=7 gcv_DLEAVE=7 rho_max=1 runs=1
+EXAMPLE ('UE2_Cr', 'root/instances/ueonce_n27.pg', 1, {(1, 10, (10, 23)): 2})

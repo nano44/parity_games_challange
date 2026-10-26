@@ -1,0 +1,2 @@
+G_max=14 G_sum=760 UE2_Cr=1 UR_cut=1228 UR_in=1504 UR_in_index_max_minus_U=993 X_max=8 X_sum=20 cint=5847 cint_len_max=44 cint_long=17 cint_migt=48 cint_migt_multioff=1 cint_migt_one_max=9 cint_pure=5036 gcv=9085 gcv_DLEAVE=8802 gcv_SWITCH=283 mig_per_vertex_max=1 migx_per_vertex_max=1 rho_max=35 runs=2087 xt_DCH_PREV=1 xt_LEFT=3 xt_NONE=16 xv=29 xv_SRC_LEFT=7 xv_SRC_ND=29 xv_SRC_STAY=22
+EXAMPLE ('UE2_Cr', 'experiments/si/xing/instances/zcl_cu_n48.pg rs', 3, {(7, 23, (16, 20)): 2})

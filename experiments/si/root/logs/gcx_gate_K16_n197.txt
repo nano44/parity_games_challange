@@ -1,2 +1,20 @@
+    U event k=2 CUT edge=(183,149)
+    U event k=4 cint=[3,5] edge=(183,153)
+    U event k=5 CUT edge=(186,155)
+    U event k=6 CUT edge=(183,157)
+    U event k=6 CUT edge=(192,190)
+    U event k=7 CUT edge=(186,159)
+    U event k=8 CUT edge=(183,161)
+    U event k=9 CUT edge=(186,163)
+    U event k=10 CUT edge=(183,165)
+    U event k=11 CUT edge=(186,167)
+    U event k=12 CUT edge=(183,169)
+    U event k=13 CUT edge=(186,171)
+    U event k=14 CUT edge=(183,173)
+    U event k=15 CUT edge=(186,175)
+    U event k=16 CUT edge=(183,177)
+    U event k=17 CUT edge=(186,179)
+    U event k=22 CUT edge=(183,182)
+    U event k=22 CUT edge=(186,185)
   ../red/usplit/instances/gate_K16_n197.pg phase@0 run[0,23] c=0 |U|=197 |Qc|=5 G=2 gcv=94 Xmax=18 Xsum=35 X={58: 17, 31: 18} rho_root=15
-G_max=2 G_sum=2 X_max=18 X_sum=35 cint=17 cint_len_max=3 cint_migt=4 cint_pure=10 gcv=94 gcv_DLEAVE=94 mig_per_vertex_max=1 rho_max=15 runs=1 xt_LEFT=7 xt_NONE=28 xv=105 xv_SRC_DD=73 xv_SRC_LEFT=32 xv_SRC_ND=32 xv_SRC_STAY=73
+G_max=2 G_sum=2 UR_cut=17 UR_in=1 UR_in_index_max_minus_U=805 X_max=18 X_sum=35 cint=17 cint_len_max=3 cint_migt=4 cint_migt_multioff=4 cint_migt_one_max=2 cint_pure=10 gcv=94 gcv_DLEAVE=94 mig_per_vertex_max=1 migx_per_vertex_max=1 rho_max=15 runs=1 xt_LEFT=7 xt_NONE=28 xv=105 xv_SRC_DD=73 xv_SRC_LEFT=32 xv_SRC_ND=32 xv_SRC_STAY=73

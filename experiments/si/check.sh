@@ -188,4 +188,22 @@ MUT=1 python3 -I root/gcx.py --one $N90 | grep -q "MIG2_cint=4 "
 o=$(python3 -I root/gcx.py --one ../red/usplit/instances/pp_K12_n161.pg ../red/usplit/instances/pp_K12_n161.start)
 for k in "G_max=2 " "X_max=13 " "cint_migt=13 " "mig_per_vertex_max=1 "; do grep -q "$k" <<<"$o"; done
 if grep -q "MIG2_cint\|MIG_LATE" <<<"$o"; then exit 1; fi
-echo "root (gcx: G_c, X_u on nep90 and pp_K12; C-ONCE holds, whole-run control bites): PASS"
+echo "root (gcx: G_c, X_u on nep90 and pp_K12; no double migration inside a C-interval there, whole-run control bites): PASS"
+# box 21 §4: U events by C-interval on the UF-ONCE killer so_th_n32 (8 inside, 6 at cuts, none late: CONJECTURE UL_C); control ULMUT=1
+# (threshold 0) must fire. DEAD instances: cone_n65 (a vertex migrates twice inside a C-interval without D-direct gates), ueonce_n27 (an
+# edge unforbid-switched twice inside one C-interval).
+SO="../red/so/instances/so_th_n32.pg rund/instances/so_th_n32_s0.start"
+o=$(UEV=1 python3 -I root/gcx.py --one $SO)
+for k in "UR_cut=6 " "UR_in=8 "; do grep -q "$k" <<<"$o"; done
+if grep -q "UL_C=\|UE2_Cr=" <<<"$o"; then exit 1; fi
+UEV=1 ULMUT=1 python3 -I root/gcx.py --one $SO | grep -q "UL_C=8 "
+python3 -I root/gcx.py --one root/instances/cone_n65.pg | grep -q "MIG2_cint=1 "
+UEV=1 python3 -I root/gcx.py --one root/instances/ueonce_n27.pg | grep -q "UE2_Cr=1 "
+echo "root (gcx: UL_C on so_th_n32, control fires; DEAD C-ONCE broad (cone_n65) and UE-ONCE_C (ueonce_n27) reproduce): PASS"
+# box 21 §7: the abstract model ABS (acyclic): Lemma ABS-HEIGHT (steps <= DAG height) on 3,000 random games and a climbed one that reaches
+# n steps; control ABSMUT=1 (height - 1) must fire.
+python3 -I root/absmodel.py --rand 3000 10 1 | grep -q "games=3000 steps_ge_n=0 steps_gt_n=0 max_steps 4"
+o=$(python3 -I root/absmodel.py --climb 3000 5 1); grep -q "best steps 5 " <<<"$o"
+if grep -q "HEIGHT_V\|MONO_V" <<<"$o"; then exit 1; fi
+ABSMUT=1 python3 -I root/absmodel.py --climb 3000 5 1 | grep -q "HEIGHT_V="
+echo "root (absmodel: ABS-HEIGHT on random and climbed DAGs, sharp at n = 5; control fires): PASS"
