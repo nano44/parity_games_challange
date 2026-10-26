@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Box 45 (L-RED successor 19): hill climb on (𝒞^1O game, start pair) at fixed n, objective one of o1_19.analyse's fields
-(ITER, PH, Tmax, fmax, fslack, TAU); every candidate also goes through o1_19's bound and OUT checks (Oink off in the loop; the
+(ITER, PH, Tmax, fmax, fslack, TAU) or a Python expression over them (e.g. "fcap*1000+fmax"); every candidate also goes through o1_19's bound and OUT checks (Oink off in the loop; the
 best is re-run with Oink at the end and at each improvement). Mutations: one priority, one Even successor set, o's successor set, one
 start entry, swap a non-o Odd vertex (one successor) with an Even vertex. Ties accepted (plateau moves).
 Usage: climb19.py OBJ seed secs n OUT [seed.json]"""
@@ -19,7 +19,7 @@ def score(c):
     st = [c[3][v] if c[3][v] in g.succ[v] else g.succ[v][0] for v in range(g.n)]
     try: r = O.analyse(g, st, "n5", tmp, False)
     except AssertionError: return None, None
-    return r[obj], r
+    return eval(obj, {}, dict(r)), r
 if len(sys.argv) > 6:
     j = json.load(open(sys.argv[6])); cur = (j["prio"], j["owner"], j["succ"], j["start"] or [s[0] for s in j["succ"]]); n = len(j["prio"])
 else:
