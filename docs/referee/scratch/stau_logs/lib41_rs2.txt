@@ -1,0 +1,13 @@
+B_chk 28056
+C1N_chk 28056
+C1_chk 28107
+C2_chk 28107
+DIFF_TS 51
+D_chk 32443
+R48_maxf 33
+R48_phases 3110
+RUNS 1101
+SIGLAM 4142
+STATES 32443
+TIEKEEP_inphase 16
+skip_big 45
