@@ -9,6 +9,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   - Lemma STAY (PROVED): no Even switch on v's honest play ⇒ Ξ constant along it and the play stays optimal. ROOT_v, CHOICE, XD-CAUSE, XD-ρ.
   - 𝒞^2O ledger (IMPLICATION): poly if (N1) ρ_q, (N2) ALT residuals, (N3) len of D = Q epochs are; ρ_q ≤ (n − 1)π_q + π_q − 1 (path sets).
   - DEAD: XD-1 (pp2_n19, 𝒞^2O ping-pong {1} → {0} → {1}, length-only, both direct); "no X_dir after an honest state" (xdhon_n13).
+- (2) HON-FF: docs/new/N5-HONFF-box47.md (written 11:31Z by date -u). Lemma FB-RISE (PROVED): an in-phase S4c fallback is a Bellman-Ford step for
+  Ξ at Even vertices (Lemma P Case A with Ω = Ξ; Case B needs only Ξ_t(z*) ⪰ Ξ_t(z) and MON); Odd vertices are one level ahead at a W-honest state
+  (SAT0 Odd case). So LEV(t+1) ≥ min(LEV(h)+1, n−1). Theorem HON-FF (PROVED): W-honest states ≤ 4n² − 3n per phase, no f. HON-0-FF, REC-1-FF.
+  Replaces both uses of the fallback-free hypothesis (REFEREE 14's HON-N3). DATA: GEN_V 0 (300 fallbacks), FBRISE_V 0 (25), control bites (CTRL_T).
 
 ## Box 46 log (successor 25, session_01VsRSLkbPLhXCWoMbJMCW2r; handover check 04cedc7c (5/5, Lead 08:32Z); GO 08:32Z, Lead's stamp)
 - Container stale at 5961101a again; ff to 230334e4; trunk 565b8a8d merged (64a811ba). Oink built (scripts/setup_oink.sh rc 0, 8fbf0a7).

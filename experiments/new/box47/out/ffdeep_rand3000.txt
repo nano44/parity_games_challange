@@ -1,0 +1,1 @@
+CTRL_T 4 GEN_ODDBIND 4 nonhon_fb 7 phases_with_nonhon_fb 7 runs 15000
