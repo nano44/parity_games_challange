@@ -97,3 +97,23 @@ Step by step against P-N5-NH-box30 §1:
 - GD-N3: DATA only.
 - Premise class (§0 READING): confirmed for every premise the packet uses; the two landed lemmas with a genuine one-Odd step (R21 (c) (ii),
   R22 (a) step 1) are re-proved in set form, not cited.
+
+## §C. Comparison with REFEREE-2 (R2-N5-GD.md, referee-2 ab4a5af0, REFEREE-2 successor 13) (Opus 5.5, D15)
+Written 2026-10-26T02:34Z by date -u, REFEREE successor 11. My report (a50f6623) was pushed before I opened R2-N5-GD.md (the Lead's 02:21Z
+brief: "Do not open R2-N5-GD* before yours is pushed").
+### C.1 Verdicts
+Identical: G_D (a), (b), (c1), (c2), F1°_D, Wo_D SIGNED by both, no gap on either side; the §0 premise-class READING CONFIRMED by both, each
+by reading the source proofs; §2 checked; §3, §4 not signed.
+### C.2 Joint note map
+| REFEREE | REFEREE-2 | ruling |
+| --- | --- | --- |
+| GD-N1 (Lemma S (c) quoted as "iff"; only "⇒" landed and used) | N-GD-1 (the same) | SAME, found independently. One fixes line. |
+| §1 table (each 𝒞^1O-setting premise game-general; FBL-N (ii) and R22 (a) step 1 have a one-Odd step and are re-proved, not cited) | N-GD-2 (premise class confirmed proof by proof; landing note per premise) | SAME. I add the two landed lemmas with a genuine one-Odd step, which the packet correctly re-proves in set form. |
+| GD-N2 (F1°_D step 4: name x's switched successor x*, not "z") | — | REFEREE only; wording; stands. |
+| GD-N3 (DATA: Wo_D held at 66 transitions without (h_D)) | — | REFEREE only; DATA. |
+### C.3 Data
+REFEREE-2: lib41 × 3 starts (1,236 runs), 503 𝒞^1O files × 2, the box-43 instances, 20,000 random multi-Odd games; 0 violations. Mine: lib41 ×
+3 starts (1,101 runs), 500 random multi-Odd games × 3 starts; 0 failures; GC2 at every L ≥ M_D, with a sharp-threshold mutation. No
+disagreement.
+### C.4 Result
+P-N5-GD signed by both referees, no gaps; notes GD-N1 = N-GD-1, N-GD-2, GD-N2, GD-N3. Not a running-time bound; G-N5-TIME stays OPEN.

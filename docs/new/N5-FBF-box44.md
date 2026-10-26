@@ -36,10 +36,10 @@ Source ported: docs/new/P-N5-FBPOLY-box41.md (= RESULTS R48, landed; its fixes f
 | κ-PFZ (§1) | SURVIVES per terminal | for each q ∈ Q ∩ U_c: paths of G_c^q to q, on Q_c-runs (κ(q) constant) | "z Odd (z ≠ o) ⇒ forced": true in G_c^q |
 | κ-Y-FORM (§1) | SURVIVES per terminal (repaired Y) | Y^q_t := {y ∈ succ(q) ∩ U_c : y's honest play avoids q}; at states where q is on no honest cycle: κ(q) = κwt(q) + min_{Y^q} κ(y) | "every other Odd vertex is forced" made y's (σ, τ′)-play its honest play; with τ′ := σ̄_t except τ′(q) := y this holds by definition (the ledger's repair, N5-MULTI §2) |
 | EXIT-SWITCH (§2) | SURVIVES, several terminals | per class: some u ∈ S_c has a target whose k-play meets T ∩ U_c before u; e ∈ T ∩ U_c | "Odd w ≠ o forced, so next_{k+1}(w) = next_k(w)" for non-terminal w: non-terminal Odd vertices have out-degree 1 by definition of Q |
-| FREEZE-EXIT (§3) | SURVIVES per class | g_j with j ≥ |U_c| − 1, i-th fallback of its Q_c-run with i ≥ |U_c| − 1 ⇒ S_c = ∅ | none beyond the three above |
+| FREEZE-EXIT (§3) | SURVIVES per class | g_j with j ≥ |U_c|, i-th fallback of its Q_c-run with i ≥ |U_c| ⇒ S_c = ∅ (conservative indices; FBP's |U| − 1 form not needed) | none beyond the three above |
 | CN-ONLY (§4) | SURVIVES (new proof of one case) | a fallback with S = ∅ is CN-LAST; ≤ 1 per phase | (1) used (HP) + FBL-N (ii) to make switched y ∉ U cycle nodes: with T ⊇ C, S = ∅ gives it directly. (2), case "meets o first": replaced by "meets some q ∈ Q first" (§2.3) |
 | THETA-AFTER (§5) | FAILS as proved | — | Y ⊆ F ∩ U was frozen by HAT-FREEZE (c) because Y's plays avoid o, the only terminal; with several terminals y ∈ Y^q may route through another q′ ∈ Q, whose value is not frozen. Obstruction §3; DATA §4 |
-| FB-POLY (§6) | REDUCED | f ≤ 1 + (n − 2)(2 + ρ) (Theorem FB-RED, §2.4) | THETA-AFTER replaced by the count ρ |
+| FB-POLY (§6) | REDUCED | f ≤ 1 + (n − 1)(2 + ρ) (Theorem FB-RED, §2.4) | THETA-AFTER replaced by the count ρ |
 
 ## 2. Proofs of the set-form steps (PROVED, every game)
 Each proof is the FBP proof with the substitutions of the table. Only the changed lines are written out.
@@ -150,6 +150,54 @@ TA climbs (fbclimb.py --obj ta, seeds 81-84: k 3 n ≤ 16, k 4 n ≤ 24, k 2 n �
 THETA-AFTER bound in every scored game (max ρ 22, 20, 6, 33). So THETA-AFTER fails as a PROOF on the frontier, but no instance
 against its per-terminal statement is known.
 Runs 2026-10-26 01:56Z-02:05Z (date -u), from experiments/new/box44.
+
+## 6. ρ-POLY: the nested-freeze attempt (Lead's GO 02:21Z; written from 02:31Z by date -u)
+### 6.1 Theorem FB-RED, late form (PROVED, every game)
+Only Q-runs that hold a LATE fallback (g_j with j ≥ n) count: f ≤ 1 + (n − 1) + (n − 1)·N_late, with N_late := the number of Q-runs
+of the phase holding a fallback g_j, j ≥ n. Proof: §2.4's third bullet counts, per Q-run, only the fallbacks g_j with j ≥ n.
+N_late ≤ 1 + ρ_late, ρ_late := Ξ-changes at Odd choice vertices at transitions after g_{n−1}. (On 𝒞^1O this is the form FB-POLY uses:
+THETA-AFTER bounds only the θ-runs that meet late states.)
+### 6.2 Lemma TV (terminal-value freeze; PROVED, every game)
+Let Θ be a Q-run of a phase, c ∈ C, and t ∈ Θ with t > g_{|U_c|−1} and t > f^Θ_{|U_c|−1} (after |U_c| − 1 fallbacks of the phase and
+of Θ). Then for every z ∈ U_c ∖ T:
+κ_t(z) = V_z(κ(Q)) := max( κopt_c(z), max_{q ∈ Q ∩ U_c, q ≠ c} [κopt^q(z) + κ_Θ(q)] ),
+with κopt^q(z) := max{κwt_c(p ∖ {q}) : p a simple path of G_c^q from z to q} (max over an empty set omitted).
+Proof. "≥": every simple path of G_c or G_c^q has ≤ |U_c| − 1 edges; κ-HAT-FREEZE (a) at t > g_{|U_c|−1} gives κ_t(z) ≥ κopt_c(z);
+κ-PFZ at t > f^Θ_{|U_c|−1} (Θ lies inside a Q_c-run, so its fallbacks are fallbacks of that run) gives κ_t(z) ≥ κopt^q(z) + κ_Θ(q).
+"≤": z's honest play at t up to its first vertex e of T ∩ U_c is a simple path ((SP′)) whose Odd vertices before e are forced; if
+e = c it is a path of G_c and (Aκ) gives κ_t(z) ≤ κopt_c(z); if e = q it is a path of G_c^q and κ_t(z) = κwt_c(path ∖ {q}) + κ_t(q)
+≤ κopt^q(z) + κ_Θ(q). ∎
+So late in a Q-run every non-terminal κ is a fixed function of the terminal vector κ(Q); and by κ-Y-FORM / (YB), each terminal value
+satisfies κ(q) ∈ {κwt_c(q) + V_y(κ(Q)), κwt_c(q) + κ(q′) (y = q′ ∈ Q), κwt_c(q) (y = c) : y ∈ succ(q) ∩ U_c} at states where q is on no
+honest cycle, and κ(q) ∈ {(0, s_c·ℓ) : 1 ≤ ℓ ≤ |U_c| − 1} where it is.
+### 6.3 Why the nested freeze stalls (OPEN)
+- Gap 1 (short late Q-runs). TV applies only after |U_c| − 1 fallbacks INSIDE the Q-run. A Q-run can end, by an S4a step or a
+  fallback that raises some κ(q), before that. Each such run contributes ≤ |U_c| − 1 fallbacks, which FB-RED already counts; what
+  is not bounded is how many there are. On 𝒞^1O, THETA-AFTER bounded them through values, not through run lengths.
+- Gap 2 (no small value set). On 𝒞^1O the late values of κ(o) lay in a fixed set of ≤ deg + |U| values (Y frozen). Here, by 6.2, the
+  late values of κ(Q) are constrained only by the consistency system κ(q) ∈ Φ_q(κ(Q)), whose solutions are sums of path weights
+  through the terminal graph (Odd at q picks y, the play then follows an Even-maximal path to c or to a next terminal). Their number is
+  not bounded by a polynomial a priori: the weights are 2^rank.
+- What the system is (READING): a min-max total-weight reachability game on the terminal set Q ∪ {c} per class, Odd choosing at q,
+  Even choosing paths, with the frozen path weights κopt_c, κopt^q as edge weights. A run of late Q-runs with S4c rounds in between
+  looks like value iteration on that game. Value iteration on total-weight games with exponential weights is not polynomial in
+  general, so a proof of ρ-POLY needs more than freezing: some monotonicity of the terminal order (L-SI's TC-SWITCH asks a similar
+  question for terminal changes on R_D).
+- The nesting route of §3 (bottom-up freeze when the terminal routing is acyclic and stable) gives at best (deg + |U|)^{depth}, with
+  depth up to |Q|: polynomial for fixed k, exponential in k, the same shape as Φ-kO.
+- Verdict: ρ-POLY stays CONJECTURE; FB-RED (both forms) and TV are what is PROVED.
+### 6.4 DATA on ρ and on the late regime
+fbf.py now also checks FB-RED's late form (REDL) and records N_late and ρ_late. Max ρ per phase (all Odd choice vertices summed):
+| sample | max ρ in one phase | N_late / ρ_late max | REDL viol. |
+| --- | --- | --- | --- |
+| lib41 (412 runs, 2,335 phases) | 160 (leanT_N32, n 256, 64 Odd choice vertices; 96 on leanT_N24, n 192) | 0 / 0 | 0 |
+| box43 + box44 instances (10) | 36 | 0 / 0 | 0 |
+| ρ climbs, random start (fbclimb.py --obj rho 91-93) | 6 (k 2, n 12), 15 (k 3, n 20), 25 (k 4, n 31) | 0 / 0 | 0 |
+| ρ climbs seeded (95-97: returns_rt32, elimn_cex_n48, frz40) | 13 (n 31), 28 (n 47), 32 (n 40) | 0 / 0 | 0 |
+Reading (DATA): ρ per phase stays below n in every climb (and ≈ 0.6n on the tcpert family with |Q| ≈ n/4). NO phase in any sample or
+climb has n in-phase fallbacks, so the late regime (j ≥ n) where FB-RED's third bullet, TV and THETA-AFTER act is never reached: as
+on 𝒞^1O (FBP §8), the open count is vacuous in the data, and ρ-POLY rests on nothing but a proof that is not there.
+Runs 2026-10-26 02:31Z-02:33Z (date -u).
 
 ## 5. How a fallbacks-per-phase bound combines with the phase count (READING)
 - Phases. Lemma Φ (R47 (a), every game): λ changes ≤ n(n − 1); Corollary Φ-kO (P-N5-DUAL, N5-MULTI §1.4): distinct τ's ≤ ∏_{q∈Q}

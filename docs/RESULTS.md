@@ -2623,6 +2623,158 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   regions against history-dependent strategies; positional strategies output) and §3 (word RAM, bit cost). GAPS G-N5-TIME: open for general
   games; its 𝒞^1O part is closed by this entry.
 
+### R52 [refereed-only] N5 on one-Odd-choice games: crossings per phase are at most n·(f + X_SN) + n − 1 in every phase type (Corollary FX (a)), hence O(d_o·n⁶) with R48's fallback bound (FX (b)) (2026-10-26) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open for general games), CHECKER PASS (docs/checker/C61.md, checker 22e8a23b)
+- Object (packet P-N5-FX, added at l-si fe58fbab, pinned trunk 02ad3f88, unchanged during review): docs/si/P-N5-FX-box14.md, sha1
+  aa227b0b310b60c630a89afa248cd60ea04b66c3 (L-SI successor 9, Opus 5.5). The referees' notes are collected by the lane in
+  docs/si/P-N5-FX-fixes-box14.md (l-si cfadaee9, sha1 4253d51eb453e6b336cfb9498134a98d003baff9, L-SI successor 11: FX-N1 = N-FX-1,
+  FX-N2 = N-FX-2, FX-N3); on trunk; repairs only.
+  Setting as in RESULTS R30 and R34 (𝒞^1O; phase; R := the vertices ≠ o whose (σ, τ)-play reaches o; c_θ := λ_Ξ(o), c_w := the cycle node
+  of W(o)). A CROSSING is an in-phase transition with R_{k+1} ≠ R_k; X counts the crossings of a phase; f its in-phase Even S4c
+  fallback transitions; X_SN its S4a crossings at states with c_w = c_θ (R30 (c)); T := n² + 2n − 1 (R34 (e)).
+- Claims signed (both referees "(Opus 5.5, D15)", L37); no item uses (P); premises LANDED: RESULTS R30 (c) R-STICK, R34 (e) (T),
+  R34 (f) X-SN-PHASE, R48 (i) FB-POLY:
+  (a) Corollary FX (a) (no hypothesis on f, H1, H2, H3, τ(o) or case A / B): in every phase, X ≤ n·(f + X_SN) + n − 1. This is implied by,
+      and weaker than, the landed R30 (c) bound (f + 1)(n − 1) + f + X_SN; the packet's proof is a second derivation from R-STICK alone
+      (FX-N1 = N-FX-1, both referees).
+  (b) Corollary FX (b): hence X ≤ n·(F* + 13(d_o + 1)n³(F* + 1 + T) + T) + n − 1 = O(d_o·n⁶), with F* := 1 + (n − 2)(2n − 1). Signed
+      by REFEREE conditional on FB-POLY, by REFEREE-2 unconditionally after FB-POLY landed as RESULTS R48; both §Cs: unconditional now. The
+      packet's chain through deg_U(o) is FBP-1's false end inequality: read f ≤ F* by R48 (i) (a) (repaired) if o ≠ c_θ, and by R48 (i) (b)
+      / (c) if o = c_θ (f ≤ |U| ≤ n ≤ F* for n ≥ 3, f ≤ 1 = F* for n = 2) (FX-N2 ≈ N-FX-2, both referees; the o = c_θ branch from REFEREE-2).
+- Not signed (packet §2, §3): the READINGs that FX covers every phase type ("TYPE H, TYPE Q and TYPE N phases alike" is right for (a);
+  FX-N3) and its use in the 𝒞^1O assembly (now RESULTS R51, which uses R30 (c)'s sharper form); FB-PHASE (a lane cross-check).
+- Honest limits: (i) SUBCLASS 𝒞^1O, inside a phase. (ii) FX (a) is subsumed by R30 (c); its value is the independent derivation. (iii) The
+  bound's tightness is untested: no phase comes above 0.66 of the FX (a) bound in REFEREE-2's data, and its tighter-count mutations do not
+  bite.
+- Data (DATA, not proof; one Odd choice vertex asserted on every game): REFEREE (own phifx_probe.py on rl_engine): 253 𝒞^1O library games,
+  990 phases, X 3,661 in total (X_SN 2,867), max 100 in one phase; 4,995 random 𝒞^1O runs, 8,255 phases, max X 2; 0 failures. REFEREE-2 (own
+  fx_check.py): 1,509 library runs (503 files, S3 + 2 random starts), 6,282 phases, crossings by kind (i) / (ii) / (iii) 2,513 / 8,444 /
+  456, max X 100 (xsn91_n48); 6,000 random 𝒞^1O runs; 0 violations; mutations stick and noiii bite.
+- Signatures: REFEREE docs/referee/R-N5-FX.md (referee 843ba1f8, successor 10; §C 9f736349, successor 11): FX (a) SIGNED, FX (b) SIGNED
+  conditional on FB-POLY (unconditional in §C); notes FX-N1..N3; no gaps. REFEREE-2 docs/referee-2/R2-N5-FX.md (referee-2 83a3e8c7,
+  successor 13; §C 253fe5c5): (a), (b) SIGN, (b) unconditional; notes N-FX-1, N-FX-2; no gap. §C (both): verdicts identical; joint gap map
+  empty; FX-N1 = N-FX-1, FX-N2 ≈ N-FX-2 with the o = c_θ branch accepted by REFEREE; FX-N3 REFEREE only.
+- TARGET.md diff: not a claim of TARGET.md section 1. GAPS G-N5-TIME: open for general games (its 𝒞^1O part closed by RESULTS R51).
+
+### R53 [refereed-only] N5 on one-Odd-choice games: inside one phase, the OTHER-touching transitions and all transitions are bounded by explicit polynomials in four per-phase counts X, f^O, K_W and E (Theorem NH: O ≤ 11n⁷(1 + X + f^O) + 8n³(K_W + E), T ≤ 156n¹¹(1 + X + f^O) + 104n⁷(K_W + E)), with Lemmas SW, ST, CL, STR-COUNT and NR (2026-10-26) — a REDUCTION signed as an implication (partial step-4 lemmas for N5; not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open for general games), CHECKER PASS (docs/checker/C62.md, checker 04ad4a15)
+- Object (packet P-N5-NH-box42, added at l-new 44088266, pinned trunk 54ac72e6, unchanged during review): docs/new/P-N5-NH-box42.md, sha1
+  93d19be8018e07a2727bbe1db5920198a0beb1eb (L-NEW successor 21, Opus 5.5). It is a different object from the box-30 packet P-N5-NH (RESULTS
+  R22). The referees' notes are collected by the lane in docs/new/P-N5-NH-fixes-box43.md (l-new 478dd6e1, sha1
+  7c499640460eb360bb0407ff051bdfb4907d4f1b, L-NEW successor 23: NH42-N1 + N-NH42-1, N-NH42-2, NH42-N2 + N-NH42-3, NH42-N3); on trunk;
+  repairs only, no signed statement changes.
+  Setting as in RESULTS R21, R22, R24 and R26 (𝒞^1O; phase; Ξ, W; θ := Ξ(o), w := W(o), c_θ := λ_Ξ(o), c_w := λ_W(o); H1, H2, H3, (h);
+  EQ / THR / OTHER). R_k := the vertices whose (σ_k, τ)-play reaches o, with o ∈ R_k (the R22 convention; NH's counts are the same without
+  o, NH42-N3), F_k := V ∖ R_k; a CROSSING is a transition with R_{k+1} ≠ R_k, X their number in the phase; a CROSSING-FREE INTERVAL I is a
+  maximal run of the phase with R constant; a STRETCH is a maximal run of the phase with R, θ and w constant (R26); π_v is v's σ-route
+  (the vertices of v's (σ, τ)-path before its first visit of o); route form and the classes P3′, U1, U2, U3, U23 as in R22 (c) and R26.
+  O := the OTHER-touching transitions of the phase (an end is OTHER); f^O := its fallback transitions with an OTHER start state; K_W := the
+  sum over the OTHER stretches of class U2, U3 or U23 of their non-fallback transitions with a W-change at some vertex of R; E := the sum
+  over the OTHER stretches of class U3 or U23 of their transitions containing an event (R26 (c)); f_S, K_S, E_S the same inside a stretch
+  S; Θ_I, WC_I the transitions of I at which θ, respectively w, changes; D := 4n(n − 1) + 1; n ≥ 2.
+- Claims signed (both referees "(Opus 5.5, D15)", L37); no item uses (P); every cited premise is LANDED (RESULTS R15 (a), (d), R19 (a),
+  R21 (g), (i), R22 (a)-(c), R24 (d), (e), R26 (b), (d), R38 (a)):
+  (a) Lemma SW: on a stretch S and for v ∈ R, (a) Ξ_k(v) is determined by π_v and θ, and W_k(v) by π_v and w; (b) hence a transition of S
+      that changes Ξ or W at some vertex of R has some Even vertex of R switching.
+  (b) Lemma ST: on a crossing-free interval I, (a) under H1 ∧ H2, H1 ∧ ¬H2 or ¬H1 ∧ H2 either every state of I is OTHER or none is; (b)
+      under ¬H1 ∧ ¬H2 a state of I is OTHER iff θ ≠ w; (c) so OTHER status is constant on every stretch.
+  (c) Lemma CL: for an OTHER stretch S, (a) H1, H2, c_θ, c_w and the route form of each frame are constant on S; (b) if both frames are in
+      route form, c_θ ≠ c_w, so S is a P3′ or U1 piece, and a route-form stretch is a piece in the sense of R22 (c) and conversely; (c)
+      otherwise S is a U2, U3 or U23 stretch in the sense of R26.
+  (d) Lemma STR-COUNT: for a crossing-free interval I, (a) Θ_I ≤ n − 1 (under H1 every θ-change is a transition with a Ξ-change at some
+      vertex of F); (b) under H2 every w-change is a transition with a Ξ-change at some vertex of F, so WC_I ≤ n − 1, and under ¬H2
+      WC_I ≤ (f^O_I + 1)(|R|² − 1) + f^O_I; (c) I has at most 1 + Θ_I + WC_I ≤ n − 1 + (f^O_I + 1)n² stretches; (d) summed over the
+      phase, N := Σ_I (1 + Θ_I + WC_I) ≤ n²(2X + 2 + f^O). (a) under ¬H1 proves RESULTS R26's READING R-1.
+  (e) Lemma NR: for an OTHER stretch S with r := |R| and N_R(S) := its transitions with a Ξ-change at some vertex of R: P3′ N_R(S) ≤ (n + 1)r
+      ≤ n³; U1 N_R(S) ≤ r + f_S + K + (K + f_S + 1)(r − 2) with K ≤ (f_S + 1)(r − 1)(r − 2), ≤ (f_S + 1)n³; U2 N_R(S) ≤ f_S + K_S +
+      (K_S + f_S + 1)(r − 2) ≤ n(K_S + f_S + 1); U3, U23 N_R(S) ≤ f_S + K_S + E_S + (K_S + f_S + E_S + 1)(2r − 4) ≤ 2n(K_S + f_S + E_S
+      + 1); in every class N_R(S) ≤ n³(1 + f_S) + 2n(K_S + E_S). K_S and E_S are the counts R26 defines; R26 (d)'s "R-changing" is read
+      as "a transition with a switch on R", and by SW (b) a Ξ-change on R comes with a switch on R, so NR's use of U3C is exact in either
+      reading (NH42-N1 + N-NH42-1, complementary, both referees).
+  (f) Theorem NH: in one phase of N5 on 𝒞^1O, (a) O ≤ X + N + D·(n(X + 1) + (n³ + 1)N + n³f^O + 2n(K_W + E)), with N ≤ n²(2X + 2 + f^O);
+      (b) O ≤ 11n⁷(1 + X + f^O) + 8n³(K_W + E); (c) the phase has T ≤ 156n¹¹(1 + X + f^O) + 104n⁷(K_W + E) transitions. Signed as an
+      implication: (NH′) (O polynomial per phase, RESULTS R21 limit (ii)) follows from (X), NFB-O, (E) and (K_W), each read as polynomial
+      per phase; not a claim that any input is polynomial (NH42-N2 + N-NH42-3, both referees). "Event" (R26 (c)) may be read narrowly or
+      broadly; the transition counts are equal by R26 (c)'s kinds-constant, and the theorem holds in both readings (N-NH42-2).
+- Not signed (packet §4 Remarks, §5, §6, §7): the remarks; the input statuses of §5 (a READING, dated trunk 6d78b8f4 and superseded:
+  FB-POLY LANDED as RESULTS R48, P-N5-FX signed by both referees (RESULTS R52), (E) and (K_W) bounded per stretch given its
+  fallbacks by RESULTS R50, a READING for this assembly; fixes file); the map to the R22, R24 and R26 readings (checked, consistent, a
+  READING); the data.
+- Honest limits: (i) SUBCLASS 𝒞^1O, inside one phase. (ii) A REDUCTION: in its own terms (E) and (K_W) are OPEN; that R50 bounds them is a
+  READING outside this entry. The 𝒞^1O running-time result is RESULTS R51, by another route (R50 (h)); NH is a second route to a
+  per-phase transition bound. (iii) The exponents are loose; the bounds are far from the data (max O / Theorem NH (a) bound 1.47·10⁻⁴ in
+  REFEREE-2's data). (iv) Thin data: random runs barely reach OTHER states (46 of 16,880 phases in REFEREE-2's data); the library carries
+  the data; the R15d run step of Theorem NH is not exercised (no OTHER stretch in the data has two consecutive Ξ-flat transitions, so
+  REFEREE-2's mutation "run" does not bite) and rests on RESULTS R15 (d); the U3 / U23 bounds near tightness are not exercised.
+- Data (DATA, not proof; one Odd choice vertex asserted on every game): REFEREE (own nh42_probe.py on rl_engine): 253 𝒞^1O library games
+  from SPEC S3's start, 990 phases, 101 with O > 0, ΣO = 833, OTHER stretches P3′ 131 / U1 353 / U2 66 / U3 104 / U23 51, per-phase maxima
+  O 77, X 100, T 112, f^O 12, K_W 25, E 15, equal to the packet's §7 counts on an independent engine; with 3 random start pairs per game
+  (759 more runs) 4,202 phases, 388 with O > 0; 0 failures. REFEREE-2 (own nh42_check.py, own definitions): 1,509 library runs (503 files,
+  S3 + 2 random starts) 6,205 phases, 529 with O > 0; 1,006 runs on its own trace 4,123 phases; 7,000 random 𝒞^1O runs (n 6-16); 0
+  violations; mutation controls sw, stc, nr bite, run does not (limit (iv)).
+- Signatures: REFEREE docs/referee/R-N5-NH42.md (referee a47f8540, successor 10; §C 5fc234ba, successor 11): SW, ST, CL, STR-COUNT, NR,
+  Theorem NH (a)-(c) SIGNED; notes NH42-N1..N3; no gaps. REFEREE-2 docs/referee-2/R2-N5-NH42.md (referee-2 d2142087, successor 13; §C
+  253fe5c5): all SIGN; notes N-NH42-1..3; no gap. §C (both): verdicts identical; joint gap map empty; NH42-N1 and N-NH42-1 complementary,
+  N-NH42-2 accepted, NH42-N2 = N-NH42-3, NH42-N3 REFEREE only; nothing open.
+- TARGET.md diff: not a claim of TARGET.md section 1 (a subclass, inside a phase, a reduction). GAPS G-N5-TIME: open for general games
+  (its 𝒞^1O part closed by RESULTS R51).
+
+### R54 [refereed-only] N5 is mirror-symmetric: on every game, the N5 run on G is the mirror of the "Odd first" run N5^OF on the dual game G^d (Lemma DUAL); on one-Even-choice games σ changes at most d_e − 1 times and a run has at most n(n − 1) + d_e dual phases, and a per-first-phase bound L(n) for N5^OF on one-Odd-choice games ((H-OF), implied by the same bound for N5 by MIRROR (c)) gives at most (n(n − 1) + d_e)(L(n) + 1) iterations on one-Even-choice games (Theorem MIRROR, (b) as an implication); phases ≤ n(n − 1) + ∏ deg(o_i) on every game (Corollary Φ-kO); an empty improving set stays empty (Lemma ENDGAME) (2026-10-26) — structural lemmas for N5 and a conditional transfer (not M3, not a step-4 pass, not a TARGET.md claim; no running-time bound on any class is signed here; G-N5-TIME stays open for general games), CHECKER PASS (docs/checker/C63.md, checker 04ad4a15)
+- Object (packet P-N5-DUAL, added at l-new b15856e8, pinned trunk df073cb5, unchanged during review): docs/new/P-N5-DUAL-box43.md, sha1
+  a51f7c30c267a4c02088cf2c849388e28c4121fa (L-NEW successor 22, Opus 5.5). The referees' repair and notes are collected by the lane in
+  docs/new/P-N5-DUAL-fixes-box43.md (l-new 478dd6e1, sha1 5d08d0fd421fa85d36408b1caeabf03b75653760, L-NEW successor 23: DUAL-1 = N-DUAL-1 (the one repair), N-DUAL-2,
+  N-DUAL-3, a status line); on trunk; repairs only.
+  Setting: N5 = SPEC S1-S5 of docs/new/N5-ssi-global.md (with FIX 1-4); n := |V|. G^d := the dual game (owners swapped, Ω + 1, same ids
+  and successor lists; n5.py's dual). N5^OF ("Odd first"): N5 with S4c replaced by "if σ_new = σ and τ_new = τ: if I_τ ≠ ∅ Odd falls
+  back (switch-all on I_τ, each Odd v with an improving edge takes the w maximising (Ξ_τ(w), w) on G^d, σ unchanged), else Even falls
+  back as in S4c". A TWO-SIDED FALLBACK is an iteration where S4c applies with I_σ ≠ ∅ and I_τ ≠ ∅. The MIRROR of a state (σ, τ) of G is
+  the state (τ, σ) of G^d. A choice vertex has out-degree ≥ 2; 𝒞^1O: exactly one Odd choice vertex; 𝒞^1E: exactly one Even choice
+  vertex e, d_e := deg(e), any number of Odd choice vertices. Phase: a maximal run with (λ, τ) constant (RESULTS R38 (a) KEY); dual
+  phase: a maximal run with (λ^U, σ) constant (λ, λ^U as in RESULTS R47).
+- Claims signed (both referees "(Opus 5.5, D15)", L37); no item uses (P); premises LANDED: RESULTS R15 (a)-(d), R38 (a), R47 (a):
+  (a) Lemma DUAL (every game, every start pair (σ_0, τ_0)): the N5 run on G from (σ_0, τ_0) is the mirror of the N5^OF run on G^d from
+      (τ_0, σ_0) (same length, state k ↦ the mirror of state k). Consequently the N5 run on G^d from (τ_0, σ_0) agrees with that mirror on
+      states 0, …, j; the first possible difference is at state j + 1, where j → j + 1 is the first two-sided fallback of the run on G;
+      with no two-sided fallback the two runs are mirrors. (The second sentence is read with the fixes file's repair: the packet's
+      sentence named two different agreement points, its "i.e." clause is the right one and the proof is unchanged; DUAL-1 = N-DUAL-1,
+      found independently by both referees.) The proof rests on Ω + 2 invariance of SPEC S1 (rank by (Ω(v), v) and Ω(v) mod 2 only).
+  (b) Theorem MIRROR (a): on 𝒞^1E, along any N5 run σ changes at most d_e − 1 times, and the run has at most n(n − 1) + d_e dual phases.
+  (c) Theorem MIRROR (b), signed as an IMPLICATION: under hypothesis (H-OF) "there is L(n) such that for every 𝒞^1O game with n vertices
+      and every start pair, the first phase of the N5^OF run from that start pair has at most L(n) transitions", N5 on every 𝒞^1E game
+      with n vertices, from every start pair, makes at most (n(n − 1) + d_e)(L(n) + 1) iterations. (H-OF) is not proved in the packet.
+  (d) Theorem MIRROR (c): (H-OF) follows from (H-N5) "for every 𝒞^1O game with n vertices and every start pair, the first phase of the
+      N5 run has at most L(n) transitions" (the first N5^OF phase from a state is a prefix of, or equal to, the first N5 phase from it).
+  (e) Corollary Φ-kO (every game): along any N5 run the number of distinct τ's is at most ∏ over the Odd choice vertices o_i of deg(o_i),
+      and the run has at most n(n − 1) + ∏_i deg(o_i) phases; mirror: at most n(n − 1) + ∏ over the Even choice vertices of deg dual
+      phases. On 𝒞^kO with k fixed, phases ≤ n(n − 1) + n^k. (A bound on phases, not on iterations.)
+  (f) Lemma ENDGAME (every game): if I_σ = ∅ at state k of an N5 run, then σ_j = σ_k for every j ≥ k; mirror: if I_τ = ∅ at state k,
+      then τ_j = τ_k for every j ≥ k.
+- Not signed (packet §1 Scope, §2, §3): the scope READING (𝒞^1E has unboundedly many Odd choice vertices); the §2 start / N5^OF table
+  ("to check, not to sign"; its general argument checked by REFEREE, rows spot-checked; the rows used by the 𝒞^1O chain are covered by
+  docs/referee/R-N5-START.md with its Addendum 1 and REFEREE-2's R2-N5-1O §3, the other rows unaudited by both, N-DUAL-2); the Φ-kO
+  Remark (DATA); docs/new/N5-MULTI-box43.md §2-§4 (CONJECTURES Δ1, Δ2); the cross-field reading of DUAL. READING (N-DUAL-3, both
+  referees; not signed here): with RESULTS R51, (H-N5) holds with L(n) = T*(n, n², n, n) (T* is non-decreasing in m, d_o, Δ), so MIRROR
+  (b), (c) would give O(n¹⁷) iterations on 𝒞^1E from every start pair; output correctness on 𝒞^1E would also need Lemma OUT stated and
+  signed on every game, and Lemma BIT; both are for a separate packet. The 𝒞^1E bound is not a result of this entry.
+- Honest limits: (i) No running-time bound is signed here: MIRROR (b) is an implication, and its 𝒞^1E instance is a READING (above).
+  (ii) DUAL needs N5^OF on the dual side; the plain N5 run on G^d can part from the mirror at a two-sided fallback (the packet's example
+  experiments/red/so/instances/exitr_cex_n48.pg, sha1 7a663df2: first two-sided fallback 2 → 3, first difference at state 3, 22
+  iterations on G against 23 on G^d). (iii) Thin data: random games never produce a two-sided fallback (0 in every random set of both
+  referees); DUAL's second sentence is exercised by library runs and REFEREE's climbs only.
+- Data (DATA, not proof): REFEREE (own dual_probe.py on rl_engine, S4c side rule as a parameter; checks DUAL, PLAIN first difference,
+  Ω + 2, ENDGAME, Φ-kO and its mirror, MIRROR (a) on 𝒞^1E, the MIRROR (c) prefix property on 𝒞^1O): lib41 n ≤ 64 (367 files) from S3 and
+  2 random start pairs, 1,101 runs, 50 with two-sided fallbacks (128); 3,000 random games with k = 0..4 Odd choice vertices (378 𝒞^1E);
+  climbs (dual_climb.py, 3 × 1,200 s) 390,158 runs, 135,671 with two-sided fallbacks (297,779); every plain-mirror first difference exactly
+  at j + 1; prefix property on 24,056 sampled states; 0 failures. REFEREE-2 (own dual_check.py on L-SI's si.py engine with an Odd-first
+  flag): lib41 824 runs (33 with two-sided fallbacks, 88), 1,006 𝒞^1O library runs (33, 170), 6,000 random runs (2,000 𝒞^kO, 2,000 𝒞^1E,
+  2,000 𝒞^1O); every first difference at j + 1; MIRROR (a)'s bound d_e − 1 attained; 0 violations; on lib41 from S3 it reproduces the
+  packet's 15 runs / 54 two-sided fallbacks exactly; mutation controls plain (15), phi (36), endg (163) bite.
+- Signatures: REFEREE docs/referee/R-N5-DUAL.md (referee cdb187c7, successor 11; §C 78db369b): DUAL first sentence, MIRROR (a), (c),
+  Φ-kO, ENDGAME SIGNED; MIRROR (b) SIGNED as an implication; DUAL second sentence SIGNED WITH GAP DUAL-1 (wording), closed by the fixes
+  file's repair. REFEREE-2 docs/referee-2/R2-N5-DUAL.md (referee-2 73c2b4a1, successor 13; §C 253fe5c5): all SIGN ((b) as an
+  implication), no gap; notes N-DUAL-1..3. §C (both): verdicts identical in substance; joint gap map DUAL-1 = N-DUAL-1, closed by the
+  one-line repair; N-DUAL-2 accepted (REFEREE's §6 updated by its R-N5-START audit); N-DUAL-3 agreed as a READING. Nothing open.
+- TARGET.md diff: not a claim of TARGET.md section 1 or §2 (no running-time bound is proved; MIRROR (b) is conditional; DUAL, Φ-kO and
+  ENDGAME are structural). GAPS G-N5-TIME: open for general games (its 𝒞^1O part closed by RESULTS R51; 𝒞^1E a READING).
+
 ## Dead ends (kept; each with the exact obstruction or counterexample and the instance that killed it)
 - DE1 (2026-10-14): arXiv 2511.03752 v1 (van der Heijden), claimed O(n²(n+m)) algorithm. BROKEN: wrong regions on 4-vertex games
   CE1 (l-comp 19b5ce2, experiments/m2/counterexamples/ce1_4v.pg) and cex1 (referee 936d47c, docs/referee/scratch/cex1-*.pg).

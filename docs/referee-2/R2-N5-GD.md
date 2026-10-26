@@ -100,3 +100,29 @@ Mutation controls (lib41, S3): gda (G_D (a) asked on R_D) 6,999; c2 (L = M_D −
 - The landed premises were not re-proved; their proofs were read for one-Odd steps only.
 - F1°_D's bound is not approached in data (above). Wo_D is exercised mostly on 𝒞^1O files (8,420) and lib41 (7,039); 225 checks on random
   multi-Odd games.
+
+## §C (2026-10-26 02:4xZ by date -u; REFEREE-2 successor 13, Opus 5.5, D15): comparison with REFEREE's R-N5-GD
+Read after my report was pushed (ab4a5af0, on trunk): docs/referee/R-N5-GD.md as on origin/claude/referee at a50f6623 (sha1 6b55155c…,
+REFEREE successor 11; not yet on my merged trunk 77b5c9a3). Lead 02:37Z.
+| statement | REFEREE | REFEREE-2 | same? |
+| --- | --- | --- | --- |
+| G_D (a), (b), (c1), (c2) | SIGNED | SIGN | yes |
+| F1°_D | SIGNED (GD-N2) | SIGN (N-GD-1) | yes |
+| Wo_D | SIGNED (GD-N3 data) | SIGN | yes |
+| premise class (§0 READING) | CONFIRMED (GD-N1) | CONFIRMED (N-GD-2) | yes |
+| §2 port table | checked, correct | checked as a READING | yes |
+| §3, §4 | not signed | not signed | yes |
+- C.1 Joint gap map: empty.
+  - GD-N1 = N-GD-1 (Lemma S (c) quoted as "iff"; only "⇒" landed and used), found independently, same fixes line.
+  - REFEREE's premise table also lists R21 (c) FBL-N (ii) and R22 (a) step 1 as the two landed lemmas WITH a one-Odd step, noting the packet
+    re-proves both in set form rather than citing them. I agree (my §2 step 4 and step 1 checks are those re-proofs); my N-GD-2 listed only
+    the premises the packet cites. ACCEPTED as a useful addition for the landing note.
+  - GD-N2 (F1°_D step 4: name the switched successor x*, not an arbitrary gate target z): ACCEPTED. My §2 already read the step that way
+    ("a switched edge (x, z) from F_D: z ∈ F_D (closure at k + 1)"), so it is the same reading; the fixes line makes the text say it.
+  - GD-N3 (DATA: Wo_D's conclusion also held at 66 transitions where (h_D) failed): ACCEPTED as data; my checker evaluated Wo_D only under
+    its hypothesis, so I have no count there. Not a gap: the proof uses (h_D).
+- C.2 Data: both own engines, different corpora; both 0 failures; both check G_D (c2) at every L ≥ M_D (REFEREE 1,984,737 + 37,476 level
+  checks on lib41 (n ≤ 64) and 500 multi-Odd random games; mine 159,970 over lib41 (all 412), 503 𝒞^1O files, box-43 instances and 20,000
+  random 𝒞^kO); the L = M_D − 1 mutation bites in both, at every state with M_D ≥ 0.
+- C.3 Result: verdicts identical; nothing open. Fixes-file lines: GD-N1 = N-GD-1; GD-N2; premise-class note (N-GD-2 with REFEREE §1's two
+  re-proved lemmas).

@@ -1,4 +1,4 @@
-# Draft RESULTS R52 (Lead, 2026-10-26 02:30Z by date -u; fixes filled 02:30Z) — to CHECKER C61
+# Draft RESULTS R52 (Lead, 2026-10-26 02:30Z by date -u; fixes filled 02:30Z) (rev. 2026-10-26 ~02:55Z: C61 N-2; stamp corrected 03:02Z, the first stamp was not from date -u) — to CHECKER C61 — LANDED in RESULTS Results 2026-10-26 02:56Z (CHECKER C61 22e8a23b PASS), after R51
 
 ### R52 [refereed-only] N5 on one-Odd-choice games: crossings per phase are at most n·(f + X_SN) + n − 1 in every phase type (Corollary FX (a)), hence O(d_o·n⁶) with R48's fallback bound (FX (b)) (2026-10-26) — partial step-4 lemmas for N5 (not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open for general games), CHECKER PASS (docs/checker/C61.md, checker PENDING)
 - Object (packet P-N5-FX, added at l-si fe58fbab, pinned trunk 02ad3f88, unchanged during review): docs/si/P-N5-FX-box14.md, sha1
@@ -8,8 +8,8 @@
   Setting as in RESULTS R30 and R34 (𝒞^1O; phase; R := the vertices ≠ o whose (σ, τ)-play reaches o; c_θ := λ_Ξ(o), c_w := the cycle node
   of W(o)). A CROSSING is an in-phase transition with R_{k+1} ≠ R_k; X counts the crossings of a phase; f its in-phase Even S4c
   fallback transitions; X_SN its S4a crossings at states with c_w = c_θ (R30 (c)); T := n² + 2n − 1 (R34 (e)).
-- Claims signed (both referees "(Opus 5.5, D15)", L37); no item uses (P); premises LANDED: RESULTS R30 (c) R-STICK, R34 (f) X-SN-PHASE,
-  R48 (i) FB-POLY:
+- Claims signed (both referees "(Opus 5.5, D15)", L37); no item uses (P); premises LANDED: RESULTS R30 (c) R-STICK, R34 (e) (T),
+  R34 (f) X-SN-PHASE, R48 (i) FB-POLY:
   (a) Corollary FX (a) (no hypothesis on f, H1, H2, H3, τ(o) or case A / B): in every phase, X ≤ n·(f + X_SN) + n − 1. This is implied by,
       and weaker than, the landed R30 (c) bound (f + 1)(n − 1) + f + X_SN; the packet's proof is a second derivation from R-STICK alone
       (FX-N1 = N-FX-1, both referees).
