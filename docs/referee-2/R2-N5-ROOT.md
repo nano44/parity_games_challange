@@ -141,3 +141,27 @@ condition met by RESULTS R72): SIGN. P-N5-ROOT-add: Lemma GATE-SHIFT (a), (b), T
 All on every game, inside one phase, under the standing SPEC premise 1E-N3 (P1 and P2, N-ROOT-5). No gap; notes N-ROOT-1..7. FREEZE-G (b), (c)
 and RELAY-PIECE's multi-interval content rest on proof alone: vacuous on natural data, only weakly exercised on constructed unions (§2).
 REFEREE-2 successor 17 (Opus 5.5, D15).
+
+## §C. Comparison with REFEREE (R-N5-ROOT, claude/referee 619fccf2, file sha1 c420ca35; successor 15), written 2026-10-26 18:54Z (date -u)
+Opened on the Lead's word (18:52Z), after my report was pushed (3febbfaf). Read: verdicts, §1-§5, notes.
+| item | REFEREE | REFEREE-2 | relation |
+| --- | --- | --- | --- |
+| BF-F_D, FREEZE-A (a)-(c), R-LEN, ROOT-PIECE (reduction), DL-SPLIT (split, clean cases, consequence as a decomposition) | SIGNED | SIGN | same |
+| DL-SPLIT (i) rests on RELAY-CHAIN (a) | "signed by both referees, not yet landed" (at its writing) | met: landed as RESULTS R72 | same; the condition is now discharged |
+| GATE-SHIFT (a), (b); FREEZE-G (a) | SIGNED, exercised | SIGN, exercised | same |
+| FREEZE-G (b)'s freeze sentence and (c) | SIGNED on PROOF ALONE (vacuous in all its data and searches) | SIGN; vacuous on natural data; made to bite only weakly in constructed disjoint unions (5 substantive intervals, all pass; the tightening control never bites), so PROOF ALONE | same verdict; my unions add data, not a different conclusion |
+| RELAY-PIECE (i), (ii) | SIGNED; exercised in 6 library runs | SIGN; 186 library runs past FREEZE-A's index, but Δ never changes there, so its multi-interval content rests on proof | same |
+| FREEZE-A (c) at q = c outside (Aκ)'s domain | ROOT-N1 | N-ROOT-1 | same |
+| P2 to be named for (F1) on S4a's arena and WM-G | ROOT-N2 | N-ROOT-5 | same |
+| DL-SPLIT (B): "τ and σ̄(u) unchanged" → "τ unchanged" | ROOT-N3 | — (seen in my §1 check, not noted) | ACCEPT |
+| R-LEN's A_t sentence | ROOT-N4 | N-ROOT-2 | same |
+| case (iii) occurs, never alone | ROOT-N5 | N-ROOT-6 (579 cases, iii-only 0) | same |
+| FREEZE-G (a)'s base needs c ∉ R_u(t) | ADD-N1 | — (checked in my §1: c ∈ A_t) | ACCEPT (one sentence) |
+| RELAY-PIECE (i): blocks are disjoint; the Δ-changing transition lies between them | ADD-N2 | — (seen, not noted) | ACCEPT |
+| DL-SPLIT (ii) "ROUTE event" without a ρ event | — | N-ROOT-3 | REFEREE-2 only (note) |
+| DL-SPLIT (B)'s missing binder | — | N-ROOT-4 | REFEREE-2 only (note; close to ROOT-N3) |
+| landing text should say "rests on proof alone" | in its verdict table | N-ROOT-7 | same |
+- Data agree: both see FREEZE-G (b), (c) vacuous on natural games and the GATE-SHIFT control (Δ := 0) bite; my union games are the only
+  instances where FREEZE-G (b), (c) are reached at all.
+- No disagreement. Joint gap map: EMPTY. Notes to the lane (union): ROOT-N1..N5, ADD-N1..N2, N-ROOT-3, N-ROOT-4, N-ROOT-7 (N-ROOT-1, -2, -5, -6
+  coincide with ROOT-N1, -N4, -N2, -N5). My verdicts are unchanged. REFEREE-2 successor 17 (Opus 5.5, D15).
