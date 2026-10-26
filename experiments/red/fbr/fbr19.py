@@ -22,7 +22,7 @@ def analyse(g, start=None, mode="n5", tmp=None, use_oink=False, cap=10 ** 6):
     S, FB, E = O.trace(g, start, mode, cap)
     ev = [E.evaluate(s) for s, _ in S]; Xi = [X for X, _ in ev]; lam = [tuple(x[0] for x in X) for X in Xi]
     SB = [B for _, B in ev]
-    N = len(S); r = dict(levels=0, sw_trans=0, sg_checks=0, acc_checks=0, n=n, Q=len(Q), ITER=len(FB), fmax=0, fn=0.0, rho_at=0, U_at=0, Nlate_at=0, rhomax=0, Nlate=0, late=0, phases=0, fails=[])
+    N = len(S); r = dict(Nep=0, epoch_n1=0, s4a_run=0, s4a_run_pre=0, sigbar_repeat=0, levels=0, sw_trans=0, sg_checks=0, acc_checks=0, n=n, Q=len(Q), ITER=len(FB), fmax=0, fn=0.0, rho_at=0, U_at=0, Nlate_at=0, rhomax=0, Nlate=0, late=0, phases=0, fails=[])
     a = 0
     while a < N:
         b = a
@@ -66,6 +66,31 @@ def analyse(g, start=None, mode="n5", tmp=None, use_oink=False, cap=10 ** 6):
             for z in swz:
                 r["sg_checks"] += 1
                 if not E.key(Xi[k + 1][z]) > E.key(Xi[k][z]): r["fails"].append(f"SG z={z} k={k} fb={FB[k]}")
+        # ---- Lemma EPOCH (N5-FBF §9.1, l-new 916aa2b3): epochs = maximal runs of states of the phase with σ̄|Q constant
+        ep = [0] * (b - a + 1); seenQ = [tuple(SB[a][q] for q in Q)]
+        for k in range(a + 1, b + 1):
+            cur = tuple(SB[k][q] for q in Q); ep[k - a] = ep[k - a - 1] + (cur != tuple(SB[k - 1][q] for q in Q))
+            if cur != seenQ[-1]:
+                if cur in seenQ: r["sigbar_repeat"] += 1
+                seenQ.append(cur)
+        Nep = ep[-1] + 1; r["Nep"] = max(r["Nep"], Nep)
+        if f > 1 + n * Nep: r["fails"].append(f"EPOCH_c f={f} Nep={Nep}")
+        for e in range(Nep):
+            Ek = [k for k in range(a, b + 1) if ep[k - a] == e]; lo, hi = Ek[0], Ek[-1]
+            efb = [k for k in range(lo, min(hi, b - 1) + 1) if k < b and FB[k]]          # fallbacks k -> k+1 with k ∈ E
+            run = best = 0; pre = 0; frz = efb[n - 2] if len(efb) >= n - 1 else None
+            for k in range(lo, hi):                                                       # transitions with both ends in E
+                if FB[k]: run = 0
+                else:
+                    run += 1; best = max(best, run)
+                    if frz is None or k <= frz: pre = max(pre, run)
+            r["s4a_run"] = max(r["s4a_run"], best); r["s4a_run_pre"] = max(r["s4a_run_pre"], pre)
+            if frz is not None:
+                r["epoch_n1"] += 1
+                for k in range(frz + 1, hi):
+                    if Xi[k + 1] != Xi[k]: r["fails"].append(f"EPOCH_a_frozen k={k}"); break
+                    if any(g.owner[z] == 0 and S[k][0][z] != S[k + 1][0][z] and lam[k][z] != z for z in range(n)): r["fails"].append(f"EPOCH_b_switch k={k}"); break
+                if hi - frz > 4 * n * (n - 1) + 1: r["fails"].append(f"EPOCH_b_count {hi - frz}")
         r["levels"] = max(r["levels"], max(len(x) for x in lv.values())); r["sw_trans"] = max(r["sw_trans"], swt)
         if f > r["fmax"]: r.update(fmax=f, fn=f / n, rho_at=rho, Nlate_at=nl, U_at=max(sum(1 for z in lam[a] if z == c) for c in C))
         r["rhomax"] = max(r["rhomax"], rho); r["Nlate"] = max(r["Nlate"], nl); r["late"] = max(r["late"], late)
