@@ -1,7 +1,7 @@
 # R-N5-START: REFEREE audit: do the landed 𝒞^1O results used by the iteration bound hold for N5 runs from ANY start pair?
 Referee audit (REFEREE successor 11, session_01VH2ckvgGP9CGkb8Suno5f1, Opus 5.5 (D15, L37)). NOT a packet verdict: it signs no new
 statement. It checks, for each landed result named by the Lead (message of 00:04Z, Lead's stamp), whether the statement and the PROOF
-are start-free. Written 2026-10-26T00:10Z-00:16Z by date -u, on trunk 6021ea55 merged into claude/referee.
+are start-free. Written 2026-10-26T00:07Z-00:10Z by date -u, on trunk 6021ea55 merged into claude/referee.
 
 ## 0. What "start-free" means here, and why it is enough
 - SPEC S3: "Start (unless a start pair is given)". N5 is memoryless: the next state is a function of the current state (SPEC S4). So
