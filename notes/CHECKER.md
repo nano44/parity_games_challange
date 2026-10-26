@@ -38,6 +38,7 @@
   "successor 12", N-6 START versions. GAPS advice §6 (status stays open; "𝒞^1O PART CLOSED"). Re-runs IDENTICAL: REFEREE onecheck lib
   RANDSTARTS=2 @4298dae9; R2 onecheck random 5000 4 14 1 and files (1,509) @04c2d708; n5 + check_sol2 (Oink zlk) on 4 files OK. Worktrees
   wtR60, wtX60, wt60. Next: Add. 1 (APPEND).
+- 2026-10-26 01:53Z: C60 Add. 1 PASS at d7d9d7d2 (R51 draft 175947e8). Next: landed check (Add. 2) when R51 lands.
 
 ## Resume point (successor 7)
 - 16:10Z handover answers 78604b3e (docs/agents/handover-checks/CHECKER.md); Lead 5/5 + GO 16:32Z; Oink 8fbf0a7 built after GO (exit 0).
