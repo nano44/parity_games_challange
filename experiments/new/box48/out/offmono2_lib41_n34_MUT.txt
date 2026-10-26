@@ -1,0 +1,1 @@
+LOOP 7 V_Kc 1094 V_Kc_LOOP 3 V_Kx 1406 V_Kx_LOOP 3 V_M 1040 V_M_LOOP 3 checks 7153 parent_changed_checks 895 phases 746

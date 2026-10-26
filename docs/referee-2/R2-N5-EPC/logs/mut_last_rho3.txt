@@ -1,0 +1,83 @@
+MODE start ../../../experiments/red/fbr/instances/rho3_253_n32.pg 5 175 MUT last BUDGET 3000000
+ASM_N2_checks: 6
+ASM_checks: 6
+C_checked: 17
+C_nothing_to_check: 5
+DEAD_nonflat: 11
+DEAD_notlast: 10
+ENGXI_checks: 26
+EPC_phases: 6
+EVEN_checks: 255
+FBCp_checks: 1
+R0_total: 0
+REM_checks: 6
+RETFB_checks: 130
+RETFB_checks_other_config: 127
+SATFB_checks: 11
+VIOLATIONS: 10
+VIS_R0: 0
+VIS_a: 0
+VIS_b: 0
+VIS_checks: 17
+VIS_returns: 0
+V_MUT_last: 10
+phases: 6
+runs: 1
+states: 26
+max_NCONF: (17, 'rho3_253_n32.pg@3 n 32 N_ep 17')
+max_Nep: (17, 'rho3_253_n32.pg@3 n 32 NCONF 17')
+max_V_C: (1, 'rho3_253_n32.pg@0 n 32')
+max_sat_src_per_C: (1, 'rho3_253_n32.pg@3')
+VIOLATION MUT_last: rho3_253_n32.pg@16
+VIOLATION MUT_last: rho3_253_n32.pg@15
+VIOLATION MUT_last: rho3_253_n32.pg@10
+VIOLATION MUT_last: rho3_253_n32.pg@11
+VIOLATION MUT_last: rho3_253_n32.pg@7
+VIOLATION MUT_last: rho3_253_n32.pg@12
+VIOLATION MUT_last: rho3_253_n32.pg@19
+VIOLATION MUT_last: rho3_253_n32.pg@17
+VIOLATION MUT_last: rho3_253_n32.pg@18
+VIOLATION MUT_last: rho3_253_n32.pg@14
+RESULT FAIL violations=10
+MODE start ../../../experiments/red/fbr/instances/rho3_253_n32.pg 7 177 MUT last BUDGET 3000000
+ASM_N2_checks: 6
+ASM_checks: 6
+C_checked: 18
+C_nothing_to_check: 5
+DEAD_nonflat: 12
+DEAD_notlast: 11
+ENGXI_checks: 26
+EPC_phases: 6
+EVEN_checks: 288
+FBCp_checks: 1
+R0_total: 0
+REM_checks: 6
+RETFB_checks: 150
+RETFB_checks_other_config: 147
+SATFB_checks: 12
+VIOLATIONS: 11
+VIS_R0: 0
+VIS_a: 0
+VIS_b: 0
+VIS_checks: 18
+VIS_returns: 0
+V_MUT_last: 11
+phases: 6
+runs: 1
+states: 26
+max_NCONF: (18, 'rho3_253_n32.pg@3 n 32 N_ep 18')
+max_Nep: (18, 'rho3_253_n32.pg@3 n 32 NCONF 18')
+max_V_C: (1, 'rho3_253_n32.pg@0 n 32')
+max_sat_src_per_C: (1, 'rho3_253_n32.pg@3')
+VIOLATION MUT_last: rho3_253_n32.pg@16
+VIOLATION MUT_last: rho3_253_n32.pg@15
+VIOLATION MUT_last: rho3_253_n32.pg@10
+VIOLATION MUT_last: rho3_253_n32.pg@11
+VIOLATION MUT_last: rho3_253_n32.pg@4
+VIOLATION MUT_last: rho3_253_n32.pg@7
+VIOLATION MUT_last: rho3_253_n32.pg@12
+VIOLATION MUT_last: rho3_253_n32.pg@19
+VIOLATION MUT_last: rho3_253_n32.pg@17
+VIOLATION MUT_last: rho3_253_n32.pg@18
+VIOLATION MUT_last: rho3_253_n32.pg@14
+RESULT FAIL violations=11

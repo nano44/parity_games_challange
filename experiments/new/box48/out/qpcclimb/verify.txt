@@ -1,0 +1,3 @@
+nep90_n40_s51: qp.py 13 48 13 7 6 84 82 33 99 13 1 out/qpcclimb/best_qpc_nep90_n40_s51.pg | phrestrict.py max_QP 13 max_XDEG 33 phase_transitions 101 phases 2 phases_QP_ge2 2 transitions_QP_ge2 101
+nep76_n40_s52: qp.py 14 48 14 10 4 46 41 31 81 14 1 out/qpcclimb/best_qpc_nep76_n40_s52.pg | phrestrict.py max_QP 14 max_XDEG 31 phase_transitions 81 phases 1 phases_QP_ge2 1 transitions_QP_ge2 81
+long121_n40_s53: qp.py 10 48 10 5 5 54 44 21 127 10 1 out/qpcclimb/best_qpc_long121_n40_s53.pg | phrestrict.py max_QP 10 max_XDEG 21 phase_transitions 127 phases 1 phases_QP_ge2 1 transitions_QP_ge2 127

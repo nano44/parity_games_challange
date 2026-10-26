@@ -1,0 +1,3 @@
+best_qpc_nep90_n40_s61 sha1 5cde286d/e50f6e42: qp.py 24 64 25 15 9 76 76 46 97 24 1 | phrestrict max_QP 24 max_XDEG 46 phase_transitions 97 phases 1 phases_QP_ge2 1 transitions_QP_ge2 97
+best_qpc_nep76_n40_s63 sha1 e6b7123e/b1092e27: qp.py 24 64 25 9 15 76 76 60 86 24 1 | phrestrict max_QP 24 max_XDEG 60 phase_transitions 86 phases 1 phases_QP_ge2 1 transitions_QP_ge2 86
+best_qpc_nep90_n40_s62 sha1 06dd25e2/e11e3a0d: qp.py 36 80 36 13 23 83 83 60 100 36 1 | phrestrict max_QP 36 max_XDEG 60 phase_transitions 100 phases 1 phases_QP_ge2 1 transitions_QP_ge2 100
