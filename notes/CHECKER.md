@@ -12,7 +12,9 @@ History before successor 8 (successors 5-7: C45-C57, their resume points and han
   PASS (81f75721), N-1..N-3. Landed: R58 6984ebef (C67 Add. 2 11ef5c85), R59+R60 a3b1cff3 (C68/C69 Add. 1 b1901a15). CLOSED.
 - C70 = R61 (FBK) f152744e @ 94d797a7: FAIL E-1 (title 'epochs reduce to ρ' = the unsigned ALT reading), 98278e40. C71 = R62 (H3)
   0e5436f0 @ 94d797a7: FAIL E-1 (L-COMP random 62,761 / 6,520 untraceable; committed 1,131,485 / 115,640 at 785c38d3), E-2 (REFEREE TC 588 → 528).
-  Re-runs IDENTICAL (R2 FBK 13/13, H3 22/22; REFEREE logs reproduce at the commit that wrote them: frz1 at 7c2d9b49). Next check C72.
+  Re-runs IDENTICAL (R2 FBK 13/13, H3 22/22; REFEREE logs reproduce at the commit that wrote them: frz1 at 7c2d9b49).
+  C71 Add. 1 ab9fa27d: R62 rev. 09be6ea6 (limit (iii), rel.py re-run: content 0 on 4 games); E-1, E-2 still open.
+- C72 = R63 (XEP) 4c01107b @ 1df79fec: PASS text; PRECONDITION R61 lands first (cites R61 (e)-(f)). N-1..N-3. Next check C73.
 - TRAP (new): REFEREE run_all.sh files that glob instance DIRECTORIES (vilb, accel) do not reproduce at a later trunk when a lane adds a
   file (qc_toggle.pg): re-run at the REPORT commit. And never put a shell pipe '|' inside a markdown table cell.
 - landed.py is in the scratchpad tools/ (lost with the container; listing in the HANDOVER below).

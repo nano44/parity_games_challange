@@ -18,7 +18,7 @@ Both are lane-PROVED and unrefereed. Labels per L40: DATA / READING. Every game 
   - Best gap 0, i.e. the freeze index of FRZ-U_H3 is attained. Instances: frzgap0_n4 (n 4, a 4-state run whose coarse W changes at
     every step up to state 3) and frzgap0_n6 (n 6, by climb).
   - So the n − 1 of CR-D / FRZ-U_H3 cannot be lowered in general.
-- FRZ-U_H3 non-vacuous (a qualifying run of ≥ n states):
+- FRZ-U_H3 non-vacuous (a qualifying run of ≥ n states) [WRONG DEFINITION: ≥ n + 1 is needed; corrected counts in §6]:
   - library: 4 runs, longest 3 states beyond n (pftheta34_n32);
   - exhaustive sweep: 2 runs.
   L-SI's own data had none; L-COMP's frz1_n24 is reproduced (a 25-state run at n 24, the freeze holds).
@@ -60,10 +60,10 @@ Both are lane-PROVED and unrefereed. Labels per L40: DATA / READING. Every game 
 ## 2. Runs (0 FAIL everywhere)
 | run | what | runs | checks |
 | --- | --- | --- | --- |
-| lib (seed 13) | 625 library files with an Odd choice vertex, n ≤ 60 (of the 705 in R75 §1) × (S3 + 3 starts) | 2,500 | C2-H3 440,622; TC-CLASS 288,884; WM-G 19,413; FRZ runs 9,021 (4 non-vacuous) |
+| lib (seed 13) | 625 library files with an Odd choice vertex, n ≤ 60 (of the 705 in R75 §1) × (S3 + 3 starts) | 2,500 | C2-H3 440,622; TC-CLASS 288,884; WM-G 19,413; FRZ runs 9,021 (4 "non-vacuous" by the old definition; 3 by ≥ n + 1, §6) |
 | lib (seed 15, with XEP) | same files, new starts | 2,500 | C2-H3 432,365; TC-CLASS 298,212; WM-G 19,526; R-STICK_D 39,469; SN-PREFIX 168,117; crossings 10,745 |
 | rand (seed 14) | 20,000 random games with 2-4 Odd choice vertices, n 5-14, half from random start pairs | 20,000 | C2-H3 334,738; TC-CLASS 128,151; FRZ 30,864 (all vacuous) |
-| exh19 (seed 131) | 150,740 random games, n 4-7, × every start pair (≤ 400 per game) | 8,204,394 | 2 non-vacuous FRZ runs; best gap 0 |
+| exh19 (seed 131) | 150,740 random games, n 4-7, × every start pair (≤ 400 per game) | 8,204,394 | 2 "non-vacuous" by the old definition (§6); best gap 0 |
 | climbs | FRZ gap from best_low_21 (×2), FRZ gap and length from frz1_n24 (×3), X_SN^pre per run from nleq33_n48 | ≈ 0.5 M evaluations | best gap 0; X_SN^pre per run 36 |
 
 ## 3. Pinned (experiments/red/h3/instances/; start.json = per-vertex start and n5.py strings)
@@ -85,3 +85,19 @@ Both are lane-PROVED and unrefereed. Labels per L40: DATA / READING. Every game 
 ## 5. Not done / next
 - An X_SN^pre climb at several n, for a growth law (the per-run value is the one the packet leaves open).
 - Resume list (Lead's order): R74 §2.5, FB-CAP |U| ≥ 3, beta2.
+
+## 6. Correction (2026-10-26 07:10Z, date -u; L-RED successor 19)
+- Error: §0 and §2 counted a qualifying run as "non-vacuous" when it had ≥ n states. The freeze says COARSE_L(W) is constant from state
+  k0 + n − 1 on, so it can be tested only with a later state, i.e. ≥ n + 1 states (L-SI's convention, docs/si/N5-RUND-box17.md §3).
+  h3_19.py now uses ≥ n + 1.
+- Corrected counts:
+  - library (seed 15, re-run): 3 non-vacuous runs, all from S3: pftheta34_n32 (35 states), pftheta_cex_n32 (35), thclimb_n16_s12 (17).
+    All are CONTENT-FREE: L = max M_D is the top rank, so COARSE_L(W) is only the cycle node. This matches L-SI's §3 table.
+  - The fourth run I had counted, pf_best_3621 (experiments/new/box35/instances/, S3; sha1 a9bff03b…), has exactly n = 32 states. It is
+    the only run with content (one W path set holds the top-rank vertex above L = 30), but it is vacuous as a freeze test.
+  - frzgap0_n4 / frzgap0_n6 have exactly n states, so they are also vacuous as freeze tests. What they do show is unchanged: a coarse
+    W move INTO state n − 1, so the freeze index k0 + n − 1 cannot be lowered to k0 + n − 2. Their content is non-empty, with D = ∅
+    (L = −1, W = Ξ).
+  - The exhaustive sweep's "2 non-vacuous runs" used the old definition. One is frzgap0_n4 (exactly n states, vacuous). I have not
+    re-checked the other; a re-run of exh19 with the corrected counter is pending.
+- So no content-carrying, non-vacuous FRZ-U_H3 run is known to me either. The first real test is still missing.
