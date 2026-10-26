@@ -1,0 +1,12 @@
+MODE files ../../../experiments/new/box41/lib41.txt 1 MUT fex
+PFZ_checks: 802
+YF_checks: 69074
+phases: 2335
+runs: 412
+FEX_closeness: (-4, 'experiments/new/box25/instances/wd16_s2.pg#0')
+max_f: (33, 'experiments/si/xing/instances/ccl_w48_n48.pg#0')
+max_f_minus_n: (-3, 'docs/referee/R-N5-L2/exitdrop_n3.pg#0')
+max_j_minus_n_with_S: (-4, 'experiments/new/box25/instances/wd16_s2.pg#0')
+max_j_with_S: (33, 'experiments/si/xing/instances/ccl_w48_n48.pg#0')
+max_rho: (160, 'experiments/red/tcpert/instances/leanT_N32.pg#0')
+RESULT OK violations=0

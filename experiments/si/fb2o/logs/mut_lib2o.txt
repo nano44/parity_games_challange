@@ -1,0 +1,13 @@
+games=43 phases=129 FMAX=17 PAIRS=3 RHO=11 PFZ_n=3609 PFZ_V=11 ROUTE_n=304 ROUTE_V=0 DIR_n=1 DIR_V=0 SAT_n=0 SAT_V=0 NL_n=0 NL_V=0 NLMAX=0
+VIOLATION ('PFZ', 'experiments/new/box21/instances/fts_best24.pg', 11, 11, 10)
+VIOLATION ('PFZ', 'experiments/new/box21/instances/fts_best24.pg', 11, 11, 15)
+VIOLATION ('PFZ', 'experiments/new/box21/instances/fts_best24.pg', 11, 11, 22)
+VIOLATION ('PFZ', 'experiments/new/box21/instances/fts_best24.pg', 12, 11, 10)
+VIOLATION ('PFZ', 'experiments/new/box21/instances/fts_best24.pg', 13, 11, 10)
+VIOLATION ('PFZ', 'experiments/new/box21/instances/fts_best24.pg', 14, 11, 10)
+VIOLATION ('PFZ', 'experiments/new/box21/instances/fts_best24.pg', 15, 11, 10)
+VIOLATION ('PFZ', 'experiments/new/box21/instances/fts_best24.pg', 16, 11, 10)
+VIOLATION ('PFZ', 'experiments/new/box21/instances/fts_best24.pg', 17, 11, 10)
+VIOLATION ('PFZ', 'experiments/new/box21/instances/fts_best24.pg', 18, 11, 10)
+VIOLATION ('PFZ', 'experiments/new/box21/instances/fts_best24.pg', 19, 11, 10)
+FB2O FAIL

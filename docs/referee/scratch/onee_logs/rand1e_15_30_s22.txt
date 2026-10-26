@@ -1,0 +1,12 @@
+MUT_bites                      246
+games                          1000
+games_1e                       1000
+max_iter                       8
+max_iter_1e                    8
+max_sigch_1e                   3
+runs                           2000
+runs_1e                        2000
+sigch_eq_de_minus_1            320
+states_Is_empty                5283
+states_Is_empty_It_nonempty    3283
+FAILS 0

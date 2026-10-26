@@ -1,0 +1,14 @@
+ACA_chk                    748
+ACB_chk                    81
+CTRL_jplus1                2
+EPA_chk                    748
+EPA_tight                  191
+EPC_chk                    292
+SG_chk                     489
+games                      11
+games_pathchecked          6
+max_epochs                 17
+max_f                      17
+max_switch_trans           44
+phases                     292
+FAILS 0

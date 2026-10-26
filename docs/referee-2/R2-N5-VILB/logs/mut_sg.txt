@@ -1,0 +1,46 @@
+MODE files ../../../experiments/new/box41/lib41.txt 1 MUT sg
+ACC_phases: 112
+EPa_checks: 1397
+EPa_class_freeze_checks: 30
+REC_phases_with_sbarQ_repeat: 91
+SG_checks: 12653
+VILB_checks: 415657
+VIOLATIONS: 12653
+V_SG: 12653
+phases: 2335
+runs: 412
+max_K: (22, 'experiments/n5-exhaustive/instances/b4_cyc6_0.pg#0')
+max_epoch_fb_minus_n1: (-2, 'docs/referee/R-N5-L2/exitdrop_n3.pg#0')
+max_epochs: (50, 'experiments/si/orlens/instances/lev_l_x.pg#0')
+max_f: (33, 'experiments/si/xing/instances/ccl_w48_n48.pg#0')
+VIOLATION SG: docs/referee/R-N5-L2/droplen_cex_n12.pg#0@0: y 6
+VIOLATION SG: docs/referee/R-N5-L2/droplen_cex_n12.pg#0@0: y 7
+VIOLATION SG: experiments/n5-exhaustive/canonA_0.pg#0@0: y 3
+VIOLATION SG: experiments/n5-exhaustive/canonA_0.pg#0@0: y 12
+VIOLATION SG: experiments/n5-exhaustive/canonA_0.pg#0@1: y 7
+VIOLATION SG: experiments/n5-exhaustive/canonA_0.pg#0@2: y 12
+VIOLATION SG: experiments/n5-exhaustive/canonA_1.pg#0@1: y 2
+VIOLATION SG: experiments/n5-exhaustive/canonA_1.pg#0@1: y 4
+VIOLATION SG: experiments/n5-exhaustive/canonA_1.pg#0@1: y 10
+VIOLATION SG: experiments/n5-exhaustive/canonA_1.pg#0@2: y 14
+VIOLATION SG: experiments/n5-exhaustive/canonA_1.pg#0@3: y 2
+VIOLATION SG: experiments/n5-exhaustive/canonA_1.pg#0@3: y 4
+VIOLATION SG: experiments/n5-exhaustive/instances/b4_cyc6_0.pg#0@0: y 5
+VIOLATION SG: experiments/n5-exhaustive/instances/b4_cyc6_1.pg#0@0: y 9
+VIOLATION SG: experiments/n5-exhaustive/instances/b4_cyc6_1.pg#0@0: y 10
+VIOLATION SG: experiments/n5-exhaustive/instances/b4_cyc6_1.pg#0@1: y 3
+VIOLATION SG: experiments/n5-exhaustive/instances/b4_cyc6_1.pg#0@1: y 6
+VIOLATION SG: experiments/n5-exhaustive/instances/b4_cyc6_1.pg#0@1: y 8
+VIOLATION SG: experiments/n5-exhaustive/instances/b4_cyc6_1.pg#0@2: y 9
+VIOLATION SG: experiments/n5-exhaustive/instances/b4_cyc6_1.pg#0@3: y 6
+VIOLATION SG: experiments/n5-exhaustive/instances/b4_n4all_cyc3_0.pg#0@0: y 0
+VIOLATION SG: experiments/n5-exhaustive/instances/b4_n5_other_0.pg#0@0: y 2
+VIOLATION SG: experiments/n5-exhaustive/instances/b5_n5_cyc4_0.pg#0@0: y 0
+VIOLATION SG: experiments/n5-exhaustive/instances/b5_n5_cyc4_0.pg#0@1: y 1
+VIOLATION SG: experiments/n5-exhaustive/instances/b5_o11.pg#0@0: y 3
+VIOLATION SG: experiments/n5-exhaustive/instances/b5_o11.pg#0@1: y 9
+VIOLATION SG: experiments/n5-exhaustive/instances/b5_o11.pg#0@2: y 1
+VIOLATION SG: experiments/n5-exhaustive/instances/b5_o11.pg#0@3: y 0
+VIOLATION SG: experiments/n5-exhaustive/instances/b5_o11.pg#0@4: y 8
+VIOLATION SG: experiments/n5-exhaustive/instances/b5_o11.pg#0@5: y 2
+RESULT FAIL violations=12653

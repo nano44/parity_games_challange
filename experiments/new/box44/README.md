@@ -16,3 +16,23 @@ DATA, not proof. Uses experiments/new/box43 (multi, n5x via box21, f1d.hD). Run 
 - rtclimb.py --obj sw seeds 21-24 (01:35Z-01:40Z): best DIFFSW 0 (k 2, n ≤ 12), 8 (k 3, n 20), 0 (k 4, n 30), 21 (k 4, n 40).
   swphase.py FILE...: per-phase in-phase fallbacks and cross-terminal switches. instances/sw21_n40.pg (seed 24 best): one fallback
   switches 21 vertices across terminals; N5 output: Oink verify OK, regions = Oink --zlk, harness verify.py OK.
+- fbf.py: frontier FB-POLY checks (CN-ONLY_D, EXIT-SWITCH_D, FREEZE-EXIT_D, FB-RED, per-terminal THETA-AFTER "TA"), FMAX per phase.
+  fbclimb.py: climbs FMAX (or --obj ta: TA violations). docs/new/N5-FBF-box44.md §4. Runs from 01:56Z.
+- fbclimb.py seeded runs 71-75 and --obj ta runs 81-84 (02:00Z-02:05Z): table in N5-FBF-box44.md §4. instances/fb17_n32.pg (sha1
+  398e23e2…): 17 in-phase fallbacks in one phase, frontier (2 Odd, 23 Even choice vertices); N5 output verified (Oink verify,
+  regions = Oink --zlk, harness verify.py).
+- fbf.py: + FB-RED late form (REDL), N_late, ρ_late. fbclimb.py --obj rho (seeds 91-97, 02:31Z-02:33Z): max ρ per phase 6-32, N_late 0
+  everywhere (no phase reaches n fallbacks). N5-FBF-box44.md §6.
+- sgcheck.py (03:11Z-03:12Z): (SG) strict gain at every switched non-cycle-node Even vertex in-phase; lib41 12,653 checks, instances
+  263, --rand 2000 5 20 71 430: 0 violations; max switching transitions per phase 112, max κ-levels per vertex per phase 52 (lib41).
+- epoch.py (03:26Z): Lemma EPOCH checks (N_ep, σ̄|Q repeats, f ≤ 1 + n·N_ep, freeze), N5-FBF-box44.md §9. lib41: 91 phases with a σ̄|Q
+  repeat (max 36), max N_ep 50 (n 32); 0 violations; freeze part vacuous (no epoch with n − 1 fallbacks).
+- altcheck.py (03:46Z-03:47Z): Lemma ALT (N5-FBF-box44.md §10): lib41 2,051 in-phase σ̄(q) changes (1,910 strict, 75 ties, 65 non-clean,
+  1 at a cycle node), 0 violations; instances + lap_n6 36; --rand 2000 5 20 91: 33.
+- rstick.py (04:28Z-04:29Z): R-STICK_D, SN-PREFIX_D, crossings split X_D = post-prefix + X_SN^D (N5-FBF-box44.md §12). lib41 14,253
+  R-STICK_D checks, 0 violations. instances/qc_toggle.pg (sha1 27850ecc…, n 5): an X_SN^D crossing whose class's cycle node is an Odd
+  choice vertex (TOGGLE's excluded case); N5 output: Oink verify OK.
+- rstick.py extended (04:48Z-04:49Z): XEB (crossings at epoch boundaries), XIN, XIN_post, XIN_SN (N5-FBF-box44.md §13). lib41: 3,222
+  crossings = 1,269 at epoch boundaries + 1,953 inside epochs (0 after an epoch freeze; 1,833 unsplit pre-freeze).
+- randstarts.py STARTS SEED (--list FILE | --rand C LO HI GSEED) (04:56Z-04:57Z): all six checkers from random start pairs; lib41 (n ≤ 64)
+  × 3 and 1,500 random games × 5: 0 violations of every PROVED statement (N5-FBF-box44.md §14).

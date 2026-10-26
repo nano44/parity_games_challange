@@ -1,0 +1,16 @@
+MODE files ../../../experiments/new/box41/lib41.txt 2 MUT - UCAP 13
+ALT_clean_equal: 124
+ALT_clean_strict: 2844
+ALT_cycnode: 2
+ALT_nonclean: 97
+FBKW_checks: 2
+NEP_checks: 4791
+ROUTEK_checks: 135945
+classes_skipped_UCAP: 4103
+phases: 4791
+runs: 824
+SATK_closeness: (-2, 'experiments/red/carry/instances/fall3_n76.pg#1@4 c 13 q 27 p 2 |U_c| 3')
+max_depth: (118, 'experiments/red/tcpert/instances/tcL_N12.pg#0@29 m_c 233')
+max_epochs: (50, 'experiments/si/orlens/instances/lev_l_x.pg#0')
+max_m_c: (233, 'experiments/red/tcpert/instances/tcL_N12.pg#0')
+RESULT OK violations=0

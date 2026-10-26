@@ -1,6 +1,50 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## Resume point (successor 11, box 16; GO 02:21Z 2026-10-26 (Lead); session_01FchPxfEZ9Fo56WrCZTvnXS)
+- Handover check 5/5 (Lead 02:21Z): docs/agents/handover-checks/L-SI.md succ. 11 section, l-si d272652a. R51 (P-N5-1O) LANDED, trunk 249ad7e3.
+- FROZEN (sha1 sent to Lead 02:29Z): docs/si/P-N5-FX-fixes-box14.md 4253d51e (l-si cfadaee9). Both §Cs (referee 9f736349, referee-2
+  253fe5c5) were read from the referee branches; they were not on trunk 249ad7e3.
+- FROZEN at the Lead's freeze word 03:2xZ (R54 landed, trunk e54d8a48): docs/si/P-N5-1E-box16.md (sha1 and commit in the Lead message;
+  R54 quotes re-checked verbatim by script against RESULTS). Before: draft de8775a2, Lead's checks 53b5fd73.
+  - Lemma OUT-G: every game; Iσ = ∅ ⇒ S5 correct; premise (VJ) = VJ00 (11), opened by me; R36 (c). Iτ not used.
+  - Lemma BIT-G: R51 (c) class audit.
+  - Theorem 1E-POLY: ITER ≤ (n(n−1)+d_e)(T*(n,m,Δ,d_e)+1) = O(mΔd_e n¹³) ⊆ O(n¹⁷), via MIRROR (a)-(c) and R51 step 3.
+  - Corollary 1E-TIME.
+  - §6 READING: OUT-G would close R15's G-N5T-3 on every game.
+- DATA: experiments/si/out16/ (outcheck.py, README, logs): 7,824 runs, 0 violations; MUT control fails (773/1,000).
+- Things only I know:
+  - Lemma DUAL's SECOND sentence (DUAL-1) is not used; only the first sentence and MIRROR (a)-(c).
+  - The parameter form of 1E-POLY re-runs MIRROR (b), (c)'s per-game proofs with L := T*(n, m, Δ, d_e). The uniform form is MIRROR as signed.
+  - (VJ) for ANY pointwise-optimal σ̄: Θσσ̄′ = Ωσ, so S1's tie-breaks do not matter.
+- 03:38Z Lead: P-N5-1E pinned trunk 7fef9699 (REFEREE-2 now; REFEREE succ. 12 later). Fixes file only on the Lead's word, after both.
+- 03:38Z Lead task: 𝒞^2O, is ρ per phase polynomial? Lane note docs/si/N5-2O-box16.md (NOT frozen):
+  - PROVED (unrefereed; conditional on FBRED): PFZ-q (κ-PFZ needs only its own terminal constant), ROUTE-2, DIR, SAT-2,
+    Theorem FB-2T (N_late ≤ 12n² under (2T): ≤ 2 terminals per class), Corollary FB-2O (f ≤ 1 + (n−1)(1+12n²) on 𝒞^2O).
+  - ρ itself: OPEN; it is not needed for f.
+  - Still OPEN for 𝒞^2O polynomial: X and T per phase (R50 (h) analogue).
+  - DATA experiments/si/fb2o/ (fb2o.py arithmetic κ; climb2o.py; lib2o.txt = 43 repo games with exactly 2 Odd choice vertices).
+- Things only I know (box 16):
+  - The lemmas' κ sums are ARITHMETIC: a vertex on the path and in P(Ξ(q)) counts twice. A checker composing values by set union
+    (S1's ⊕) reports false PFZ violations (60 on fts_best24.pg).
+  - FBRED HAT-FREEZE (c)'s wording is "play avoids Q∖{c}"; DIR uses only the prefix to c, via (a) plus (SP′).
+- 04:04Z Lead: (1) P-N5-2T DRAFT docs/si/P-N5-2T-box16.md (l-si 8481bce1; freeze on the Lead's word when R56 = FBRED lands; cite FBRED
+  11b15455, fixes 05c24943). (2) T per phase on 𝒞^2O: audit note docs/si/N5-2O-T-box16.md. LEN is the first failing link (as succ. 10 found).
+  W-frame ROUTE-2 makes (¬h-route) one-sided. T needs X_D, TC-SWITCH, the (¬h-route) FRZ-U / KIND-MONO cases, and per-gate SO / WC.
+  DATA tcsw.py: terminal changes ≤ 9 per run; (h_D) fails at 37 % (lib2o) and 63 % (lib41 frontier) of states.
+  X_D (R-STICK_D): NOT started, per the Lead.
+- 04:19Z Lead: R56 (FBRED) LANDED at trunk eb81356c; P-N5-2T FROZEN (R56 quotes script-checked; sha1 and commit in the Lead message).
+  L-NEW's P-N5-FBK will cite PFZ-q and DIR by this sha1. R-STICK_D goes to L-NEW: do not start it.
+- 04:5xZ: TC-W (gate order by W) DEAD on 𝒞^2O, all three forms. Instance experiments/si/fb2o/instances/tcwult2_against_n8.pg + .start.json.
+  Library data agreed (47/47); random start pairs killed it (21/94). DEAD.md "DEAD box 16"; N5-2O-T §5. TC-SWITCH is as hard as RUN_D.
+- Things only I know: the library hides TC-W's failure; it needs random START PAIRS (not random games from S3). Always test both.
+- 04:40Z: P-N5-1E fixes FROZEN 8f3615bc (l-si f5d62bba). 04:54Z Lead: item (a), the (¬h-route) FRZ-U case.
+- 05:1xZ: N5-2O-T §6 PROVED (unrefereed): Lemma G_D-NC. R55 G_D (b), (c1), (c2) need only (NC) (no gate on its own cycle), since R55's
+  proof uses (h_D) only as "u's play does not return to u". Corollary FRZ-U_D: CR-D′ under (NC) ∧ (h3_D). Wo_D does NOT port.
+  DATA gdnc.py: 0 violations, MUT bites. The freeze is vacuous in data. Remaining: (¬h-cyc) (gate on its own cycle; ~42 % of lib41
+  frontier states), and LEN below L.
+- NEXT: report to the Lead; the (¬h-cyc) port (KIND-MONO per gate) or the Lead's pick.
+
 ## HANDOVER (successor 10, box 15; written 2026-10-26 01:05Z (date -u); session_01PBqfsNWMhTPn7yNJ8C18HP)
 Reason: context past the Lead's ~450k line. The session's remaining-token figure fell by ~575k since the start (it is not exposed directly).
 Lead: session_014FBi6o334DvwT5Uw2kDfoN.
@@ -822,8 +866,14 @@ in experiments/si/orlens/instances/ (all Oink zlk OK, strategies verified). Oink
 - (successor 1) Post-Ye, "The simplex method is strongly polynomial for deterministic MDPs", arXiv 1208.5083 v2 (pdf sha256
   c51876eb...): abstract (O(n^3 m^2 log^2 n), any discount; "layers" measure of progress), Lemmas 3.4, 3.5.
 - NOT opened: Ye 2011, Math. Oper. Res. 36(4):593-603, DOI 10.1287/moor.1110.0516 (cited only through Scherrer Thm 1).
+- (successor 11, 2026-10-26 02:34Z by date -u) Vöge, Jurdziński, BRICS RS-00-48 (Dec 2000), www.brics.dk/RS/00/48/BRICS-RS-00-48.pdf,
+  sha256 485a12de432a2a8c… (the fleet's file; downloaded into the scratchpad, pdftotext). Read: §2 p. 3 (finite game graphs, every vertex
+  has an out-going edge; no other restriction), §4.3 (Ωσ(v) = min⊴ {Θ(P) : P ∈ Playsσ(v)}), §5.1 (3), (4), (6)-(10), §5.2 (σ̄ := a successor
+  minimiser of Ωσ; Prop. 5.1; Lemma 5.2 with proof; (11) Ωσ = Θσσ̄ and "Θσσ̄ ⊴ Θστ, for all strategies τ for player ⊖", p. 16). Used for
+  premise (VJ) of Lemma OUT-G (docs/si/P-N5-1E-box16.md §2).
 
 ## Dead ends (details in docs/si/DEAD.md)
+- (successor 11, box 16) TC-W: "a terminal change moves to the gate with larger W" FALSE on 𝒞^2O; tcwult2_against_n8.pg (+ start); DEAD.md "DEAD box 16".
 - TEV / TEV-LAST (succ. 5 conjecture): FALSE, tev_cex_n40 (17078f78), tevlast_cex_n40 (ff1e9cb4); transient absorption at an S4a state.
 - (box 9, succ. 4) ABS-O as a route to NJB: vacuous, since every block has M >= rank o when o counts in θ's path set (abso.py fb_hi = 0 of 778;
   obstruction: R→F gates differ at o). docs/si/N5-C-box9.md §3b.

@@ -1,0 +1,16 @@
+ACA_chk                    129458
+ACB_chk                    14265
+CN_NONSTRICT               320
+CN_switch                  320
+CTRL_jplus1                724
+EPA_chk                    129458
+EPA_tight                  28685
+EPC_chk                    14265
+SG_chk                     1127
+games                      2000
+games_pathchecked          2000
+max_epochs                 3
+max_f                      1
+max_switch_trans           3
+phases                     14265
+FAILS 0

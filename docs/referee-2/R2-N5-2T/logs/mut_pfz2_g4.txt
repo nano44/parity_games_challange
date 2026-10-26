@@ -1,0 +1,54 @@
+MODE union ../R2-N5-FBRED/box4344.lst g4 3 MUT pfz2 UCAP 13
+DIR_checks: 108
+DIRbr_cycle: 72
+DIRbr_y_is_c: 36
+PFZQ_checks: 2727
+ROUTE_checks: 729
+SAT_checks: 144
+SATbr_cycle: 72
+SATbr_y_is_c: 36
+SATbr_y_is_q: 36
+VIOLATIONS: 76
+V_PFZQ: 76
+YB_checks: 743
+classes_2term: 432
+classes_skipped_UCAP: 231
+phases: 331
+phases_2T: 136
+runs: 60
+SAT_closeness: (14, 'experiments/new/box44/instances/fb17_n32.pg+g4P66#0@23 c 32 q 33 |U_c| 4')
+SAT_closeness_all_classes: (14, 'experiments/new/box44/instances/fb17_n32.pg+g4P66#0@23 c 32 q 33 |U_c| 4')
+max_f: (17, 'experiments/new/box44/instances/fb17_n32.pg+g4P66#0')
+max_f_in_phase_with_2term_class: (17, 'experiments/new/box44/instances/fb17_n32.pg+g4P66#0')
+SAT_distinct_(kq,kq')_pairs_per_(run,class,q'): max 1 classes_with_>1: 0 of 12
+VIOLATION PFZQ: experiments/new/box43/instances/dch16_n44.pg+g4P78#0@50: z 37 q 0
+VIOLATION PFZQ: experiments/new/box43/instances/dch16_n44.pg+g4P78#0@50: z 28 q 0
+VIOLATION PFZQ: experiments/new/box43/instances/dch16_n44.pg+g4P78#1@8: z 37 q 0
+VIOLATION PFZQ: experiments/new/box43/instances/dch16_n44.pg+g4P78#1@8: z 38 q 0
+VIOLATION PFZQ: experiments/new/box43/instances/dch16_n44.pg+g4P78#1@8: z 40 q 0
+VIOLATION PFZQ: experiments/new/box43/instances/dch16_n44.pg+g4P78#1@8: z 28 q 0
+VIOLATION PFZQ: experiments/new/box43/instances/dch16_n44.pg+g4P79#0@50: z 37 q 0
+VIOLATION PFZQ: experiments/new/box43/instances/dch16_n44.pg+g4P79#0@50: z 28 q 0
+VIOLATION PFZQ: experiments/new/box43/instances/dch16_n44.pg+g4P79#1@2: z 2 q 0
+VIOLATION PFZQ: experiments/new/box43/instances/dch16_n44.pg+g4P79#1@2: z 38 q 0
+VIOLATION PFZQ: experiments/new/box43/instances/dch16_n44.pg+g4P79#1@2: z 40 q 0
+VIOLATION PFZQ: experiments/new/box43/instances/dch16_n44.pg+g4P79#1@2: z 13 q 0
+VIOLATION PFZQ: experiments/new/box43/instances/dch16_n44.pg+g4P79#1@2: z 14 q 0
+VIOLATION PFZQ: experiments/new/box43/instances/dch16_n44.pg+g4P79#1@2: z 2 q 24
+VIOLATION PFZQ: experiments/new/box43/instances/dch16_n44.pg+g4P79#1@2: z 13 q 24
+VIOLATION PFZQ: experiments/new/box43/instances/dch16_n44.pg+g4P79#1@2: z 14 q 24
+VIOLATION PFZQ: experiments/new/box43/instances/dch16_n44.pg+g4P79#1@5: z 3 q 0
+VIOLATION PFZQ: experiments/new/box43/instances/dch16_n44.pg+g4P79#1@5: z 5 q 0
+VIOLATION PFZQ: experiments/new/box43/instances/dch16_n44.pg+g4P79#1@5: z 12 q 0
+VIOLATION PFZQ: experiments/new/box43/instances/dch16_n44.pg+g4P79#1@13: z 37 q 0
+VIOLATION PFZQ: experiments/new/box43/instances/dch16_n44.pg+g4P79#1@13: z 38 q 0
+VIOLATION PFZQ: experiments/new/box43/instances/dch16_n44.pg+g4P79#1@13: z 40 q 0
+VIOLATION PFZQ: experiments/new/box43/instances/dch16_n44.pg+g4P79#1@13: z 28 q 0
+VIOLATION PFZQ: experiments/new/box43/instances/retf_n6.pg+g4P5#1@0: z 9 q 8
+VIOLATION PFZQ: experiments/new/box43/instances/tj17_n19.pg+g4P23#1@0: z 22 q 21
+VIOLATION PFZQ: experiments/new/box43/instances/tj17_n19.pg+g4P23#2@0: z 22 q 21
+VIOLATION PFZQ: experiments/new/box43/instances/tx2_n8.pg+g4P4#0@0: z 2 q 3
+VIOLATION PFZQ: experiments/new/box43/instances/tx2_n8.pg+g4P4#0@0: z 6 q 3
+VIOLATION PFZQ: experiments/new/box43/instances/tx2_n8.pg+g4P5#0@0: z 2 q 3
+VIOLATION PFZQ: experiments/new/box43/instances/tx2_n8.pg+g4P5#0@0: z 6 q 3
+RESULT FAIL violations=76

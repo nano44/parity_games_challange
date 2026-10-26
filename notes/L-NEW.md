@@ -17,8 +17,53 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - Reported acc2ee62 at 01:25Z. Then: CONJECTURE Δ-RT-F FALSE (rtclimb + shrinksw → instances/rtf_cex_inj.pg, n 11, sha1 9b55eee6…;
   k = 1: S4c switches 3: 5 → 10 across terminals 1 → 0 with a W-loss; Oink/verify checked). PIECE_D for |D| = 1 (§7b, port).
   Reverse disagreements (W-improving, not in Iσ) named as the PIECE blocker. Checker bug fixed (same-terminal check needs (h3_D)).
-- NEXT: Δ-RT-C (count of cross-terminal fallback switches / disagreements per D-stretch): growth climbs; a W-potential argument
-  charging W-losses to cross-terminal switches. (3) on the go.
+- 77f64e00 correction (W drops at fallbacks, leaves too); f5200580 Δ-RT-C fallback face = in-phase fallbacks (sw21_n40).
+- Lead 01:53Z GO (i): frontier FB-POLY. docs/new/N5-FBF-box44.md: terminals T = C ∪ Q (cycle nodes + ALL Odd choice vertices; not
+  D_k, since σ̄ moves at every Odd choice vertex), per honest class U_c. Survive: facts, κ-FB-ROUND, κ-HAT-FREEZE (set form), κ-PFZ and
+  κ-Y-FORM per terminal, EXIT-SWITCH, FREEZE-EXIT (conservative indices), CN-ONLY (new proof of the q-case). FAILS as proved:
+  THETA-AFTER (Y^q routes through other terminals; no instance). Theorem FB-RED: f ≤ 1 + (n − 1)(2 + ρ), ρ = Ξ-changes at Odd
+  choice vertices per phase. Data fbf.py / fbclimb.py: 0 violations; frontier FMAX 17 at n 32 (fb17_n32.pg), 21 at n 64.
+- Reported (i) 02:10Z. Lead 02:21Z: R51 landed; GO fixes NH42 + DUAL; then ρ-POLY; packet FB-RED alone if ρ stalls.
+- 478dd6e1: P-N5-NH-fixes-box43 (sha1 7c499640…), P-N5-DUAL-fixes-box43 (sha1 5d08d0fd…), FROZEN, reported 02:30Z. The referees'
+  §C commits (5fc234ba, 78db369b, 253fe5c5) were NOT on trunk 249ad7e3; cited by branch SHA, told the Lead.
+- ρ-POLY: FB-RED late form + Lemma TV PROVED; nested freeze stalls (short late Q-runs; path-sum value sets = value iteration on a
+  terminal game). Data: no phase ever reaches n fallbacks (late regime vacuous). 6019ab17.
+- Packet docs/new/P-N5-FBRED-box44.md (FB-RED alone, FROZEN at push).
+- 3732ab55 P-N5-FBRED FROZEN (sha1 11b15455…), reported 02:43Z; Lead 02:47Z: pinned + routed; GO GD fixes; then (a) fixed-k or (b) VI.
+- b93f6c7d: P-N5-GD-fixes-box44 FROZEN (sha1 dfa6dd2b…), reported 02:50Z.
+- CHOICE (D18, Lead 02:47Z item 2; 02:54Z by date -u): (b), the cross-field VI angle. Reason: (a)'s nested bottom-up freeze needs the
+  terminal routing to stabilise, which I cannot prove (gap 1 of N5-FBF §6.3); an (a) "lemma" would be conditional on exactly the open
+  point. (b) can be made precise with an opened source and a PROVED bridge (Lemma VI-LB). Result: N5-FBF §7.
+- bca23df8 (b) reported 02:58Z. Lead 03:07Z: packet VI-LB; L-RED gets the gadget; me: converse side (SI vs VI, ACCEL).
+- 999e73f4: P-N5-VILB FROZEN (sha1 872d4400…), reported 03:10Z.
+- N5-FBF §8: (i) a fallback = one switch-all-best VJ00 SI step on G (honest frame); not an SI step on Γ_c. (ii) [BGHM] reports SI
+  exponential on BV's LSP Fig. 2 instance where VI is linear (appendix pp. 16-17; [1], [9] not opened). (iii) Lemma ACCEL (PROVED):
+  κ_t(z) ∈ K_c(z) (simple-path values), (SG) strict gains ⇒ switching transitions ≤ Σ(|K| − 1), f ≤ 1 + N_K; the BGHM gadget collapses
+  (positional values, no cycle accumulation). Remaining obstruction: a counter inside ONE phase. sgcheck.py: (SG) 13,346 checks, 0 viol.
+- 6800a4b7 reported 03:17Z. Lead 03:26Z: do not packet ACCEL yet; attack the one-phase counter; packet ACCEL with what I get.
+- Route (a) chosen. N5-FBF §9: Lemma EPOCH (PROVED): within a σ̄|Q-epoch Ξ freezes after n − 1 fallbacks (one-player Bellman + (SG)),
+  post-freeze ≤ 4n(n − 1) + 1 transitions (R15 (d)); f ≤ 1 + n·N_ep. σ̄|Q repeats inside a phase (DATA, instance lap_n6_s1_110421.pg,
+  σ̄(2) = 0, 4, 0), so N_ep ≤ ∏deg FAILS as a route. OPEN: pre-freeze S4a runs, N_ep. epoch.py.
+- 916aa2b3 reported 03:32Z. Lead 03:39Z: packet ACCEL + EPOCH; then (3) N_ep potential; (2) pre-freeze S4a is L-SI's.
+- e9eaaaaf: P-N5-ACCEL FROZEN (sha1 301f0be0…), reported 03:45Z.
+- (3): N5-FBF §10: Lemma ALT (PROVED): a clean σ̄(q) alternation raises Ξ(q) strictly unless tied; N_ep ≤ 1 + ρ + ties + non-clean +
+  cycle-node changes. The Lead's three candidate potentials reduce to ρ; crossings of monotone sequences ≤ levels, no "once per phase".
+  Verdict: no independent potential; one-phase counter ⇔ ρ-POLY. altcheck.py: 0 violations, 93% strict.
+- a77693d1 (§10 ALT) reported 03:52Z; 2742f3e9 FBRED fixes FROZEN (sha1 05c24943…) 03:59Z (R56 at CHECKER C65 per Lead 04:04Z).
+- Lead 04:04Z: generalise L-SI's FB-2T (l-si 67fd31d9, docs/si/N5-2O-box16.md, read) to any number of terminals, non-nested if possible.
+- N5-FBF §11: ROUTE-k (routing acyclic, depth ≤ m − 1), SAT-k (exact via the actual parent), Theorem FB-kT: N_late ≤ 1 + Σ_q (V_q − 1),
+  V_q ≤ Σ_h D((m−1)D)^h: polynomial for bounded terminals per class; 𝒞^kO fixed k: f = O(n^{k+1}). Outer sum is a sum; per-terminal
+  count is nested. Model obstruction: the lemmas used admit D^{depth} values (in-block shift rises), so a pure sum needs a new ingredient.
+- ce224cbd (§11 FB-kT) reported 04:12Z. Lead 04:19Z: R56 landed (trunk eb81356c); write P-N5-FBK (freeze after P-N5-2T sha1); then
+  R-STICK_D. 93c5b276: P-N5-FBK DRAFT (P2T_SHA1 placeholder; merged trunk eb81356c).
+- N5-FBF §12: R-STICK_D (PROVED, verbatim port), SN-PREFIX_D per vertex, X_D ≤ (f + 1)n + f + X_SN^D (PROVED). X_SN^D OPEN: chain R32-R34
+  fails at G′ (FO), R-CONST (one terminal), L-MONO / TOGGLE (Odd-choice cycle node; instance qc_toggle.pg n 5), Δ1. rstick.py.
+- 9dd499d3: P-N5-FBK FROZEN (sha1 afd7c65a…; P-N5-2T fcb91130 verified at l-si f6839fd3 / trunk cbb3b738). 399e8ec6: P-N5-FBK-fixes
+  (verbatim PFZ-q / DIR, per Lead 04:40Z which crossed the freeze), sha1 79ad8597….
+- N5-FBF §13: D-EPOCH (D, σ̄(c) fixed inside epochs), Lemma X-EP: X_D ≤ (N_ep − 1) + N_ep(n² + n + 4n(n − 1)) + Σ_E X_SN^pre(E); with ALT the
+  epoch part is O(n²)(1 + ρ + residuals). Residual X_SN^pre: inside one S4a run of an epoch, two fixed one-player frames (L-SI's ground).
+  rstick.py extended: lib41 crossings 39% at epoch boundaries, 57% X_SN^pre, 0 after any epoch freeze.
+- NEXT: report; packet R-STICK_D + SN-PREFIX_D + X-EP when the Lead says.
 
 ## Box 43 log (successor 22; handover check 5/5 (b4f064b4); GO 21:55Z, Lead's stamp)
 - Merged trunk c4d18621. Oink built (8fbf0a7). Notebook duplicate block (from 6a1b0e95) removed in b4f064b4.
@@ -655,6 +700,12 @@ Successor 22 (Opus 5.5, D14/D18, L40). Handover check 5/5 (b4f064b4). GO box 43 
   packet rule (corrections only in new dated sections).
 
 ## Sources opened
+- (succ. 23, box 44, 2026-10-26 ~02:55Z) T. Brihaye, G. Geeraerts, A. Haddad, B. Monmege, "To Reach or not to Reach? Efficient Algorithms
+  for Total-Payoff Games", arXiv:1407.5030v4 (14 Jul 2015), fetched from arxiv.org/pdf/1407.5030, pdf sha256 c2587986152b9104438261a1b93f14f235e7967d2cac31f09cf2524db7f62699.
+  Read: abstract; §3 (MCR games, Figure 2(a) example with values −W, no memoryless optimal Min strategy); Theorem 1 items 1-4 (item 4:
+  values and strategies in O(|V|²|E|W)); Algorithm 1 and operator F (x_i = Val^{≤i}); the convergence count "(2|V| − 1)W|V| + |V|
+  steps"; the Figure 2(a) VI run "requires 2W steps". Used in docs/new/N5-FBF-box44.md §7. Zwick-Paterson is cited inside it, not
+  opened by me (not cited by me).
 - (succ. 16, box 37) No external source opened. Internal: RESULTS R15, R17, R18 (d), R19, R21 (c), R22, R23 (a)-(d), R25, R28, R30; P-N5-FB §4-§5 (docs/si/P-N5-FB-box7.md), P-N5-OE §1-§3, P-N5-L2 §0-§2 and §5, P-N5-TOG §0, §4, §6; P-N5-X §0, §3; R-N5-TOG (referee fff6e624), R2-N5-TOG Addendum A (16d27d1c); SPEC S1-S5.
 - (succ. 15, box 35) No external source opened. Internal: P-N5-NJB (docs/si/P-N5-NJB-box9.md, pinned a7d85b3), P-N5-FBW §0, RESULTS R15, R27, R28; REFEREE-2 R2-N5-FRZ (+§C f546b43); REFEREE R-N5-L2 (7626354).
 - (succ. 13, box 33) No external source opened. Internal: P-N5-CLS (docs/si/P-N5-CLS-box8.md, pinned 486107a) §1-§7, N5-C-box8 §12-§13.
@@ -749,6 +800,9 @@ Successor 22 (Opus 5.5, D14/D18, L40). Handover check 5/5 (b4f064b4). GO box 43 
   docs/referee/R-N5-PFZ.md (8595343); docs/referee-2/R2-N5-PFZ.md (37e55fd) notes.
 
 ## Dead ends
+- (box 44, successor 23, 2026-10-26 ~03:27Z) Route "epochs of σ̄|Q inside a phase ≤ ∏_q deg(q)" (the σ̄-analogue of Φ-kO's no-τ-repeat):
+  FALSE as a premise. Instance experiments/new/box25/laps/lap_n6_s1_110421.pg (n 6, Q = {2}, sha1 4f4fe69c…): one phase, σ̄(2) = 0, 4, 0.
+  Obstruction: Odd's best response alternates as successor values rise in turn; no potential on σ̄|Q forbids it.
 - (box 44, successor 23, 2026-10-26 ~01:29Z) CONJECTURE Δ-RT-F "no cross-terminal gate edge is switched at an in-phase S4c fallback
   (states with (h_D) ∧ (h3_D))": FALSE. Instance experiments/new/box44/instances/rtf_cex_inj.pg (n 11, sha1 9b55eee6…): k = 1 → 2,
   D = {0, 1}, Even 3 switches 5 (terminal 1) → 10 (terminal 0), Ξ(10) = (6, {4}, 4) ▷ Ξ(5) = (6, ∅, 3), W(10) = (6, {4}, 4) ◁ W(5) =

@@ -174,3 +174,28 @@ Iteration tables: docs/si/RESULTS.md (generated); raw logs experiments/si/out/ (
     (experiments/si/needb5/s3.txt; REFEREE §C.3; RESULTS R43 limit (iii)).
   - Weak, because SPEC allows any start pair, and a run from S3 passes through states that are themselves start pairs. So the S3 form
     restricts only which (σ, τ) are reachable. No current bound needs it.
+
+## DEAD box 16 (L-SI successor 11, 2026-10-26T04:37Z by date -u): TC-W, "a terminal change moves to the gate with the larger W" (own conjecture, never sent as a lemma)
+- Statement killed (three forms, all on 𝒞^2O with |D_k| = 2 and D_k unchanged at the transition): at an in-phase S4a transition k → k+1
+  at which v ∈ R_D switches its gate u → u′, W_k(u′) ▷ W_k(u). The three forms:
+  - (first gate) u(v) is the first D-vertex on v's W-play;
+  - (ultimate gate) the first W-direct D-vertex;
+  - (ultimate gate, gate structure fixed, v ∉ D_k).
+- Obstruction (mechanism): S4a takes Even's pointwise W-optimum of its arena. A route to a gate with a lower W(u′) wins when its own path
+  part is better, e.g. shorter at an even cycle node, or through a higher even vertex. So W(v) rises while the gate's value falls. No
+  fixed order of the gates by W (or by Ξ) is respected.
+- Instances (experiments/si/fb2o/instances/, checked by experiments/si/fb2o/tcdir.py; logs/tcdir_*.txt):
+  - tcw_against_n12.pg (sha1 90b9651c…, S3 start): first-gate form. v = 5 switches from gate 2 (the even W-cycle node, W = (2, ∅, 0)) to
+    gate 3, which routes through 2 (W = (2, ∅, 3)). The ultimate gate is unchanged, so this kills only the first form.
+  - tcwult2_against_n8.pg (sha1 c2cceba0…) with tcwult2_against_n8.start.json (sha1 4a123025…): all three forms. v = 1 switches from
+    gate 0 to gate 4 at transition 0, against both W and Ξ.
+    gatev=0 D2=1 dchange=4 changes=5 same_stretch=1 toW=0 toX=0 toWX=0 againstW=1 tieW=0
+AGAINST_W ('experiments/si/fb2o/instances/tcwult2_against_n8.pg', 0, 1, 0, 4, -1)
+    → "againstW=1" (also with ULT=1).
+- Frequency (random 𝒞^2O, 150,000 games, n 5-12, seed 9; tcdir.py --rand with K=2):
+  - first-gate form: 21 of 94 qualifying changes go against W;
+  - ultimate form with structure fixed: 5 of 21.
+  - On the library (lib41's frontier games), the first-gate form held 47 / 47 with D fixed. Only random start pairs exposed it.
+- Consequence for TC-SWITCH (docs/si/N5-2O-T-box16.md §4.2): a per-vertex count of terminal changes cannot come from an order on the
+  gates. The natural monotone quantity at a terminal change is W(v) itself (WM), and bounding its changes per run is Theorem RUN's job.
+  So TC-SWITCH is no easier than RUN_D on two gates.

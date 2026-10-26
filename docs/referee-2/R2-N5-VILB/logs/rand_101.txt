@@ -1,0 +1,13 @@
+MODE random 20000 4 12 101 MUT -
+ACC_phases: 43117
+EPa_checks: 353711
+EPa_class_freeze_checks: 18024
+SG_checks: 2587
+VILB_checks: 433775
+phases: 49411
+runs: 20000
+max_K: (44, 'random101:2288')
+max_epoch_fb_minus_n1: (-2, 'random101:576')
+max_epochs: (3, 'random101:870')
+max_f: (1, 'random101:19')
+RESULT OK violations=0
