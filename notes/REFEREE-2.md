@@ -18,6 +18,8 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
 - P-N5-DUAL (a51f7c30 @ df073cb5): R2-N5-DUAL.md all SIGN (MIRROR (b) as implication), no gap; N-DUAL-1 (wording j vs j+1), N-DUAL-2
   (§2 table coverage), N-DUAL-3 (READING: (H-N5) holds via P-N5-1O, so O(n^17) on C^1E). Tool R2-N5-DUAL/dual_check.py (own N5 loop with
   Odd-first flag; DU_MUT=plain|phi|endg all bite); reproduces lane's lib41 15 runs / 54 two-sided fallbacks. R-N5-DUAL.md NOT opened before push.
+- P-N5-GD (b898ff82 @ 3c6f6c16): R2-N5-GD.md all SIGN, no gap; N-GD-1 (R18 (d) Lemma S (c) quoted as iff; only => landed/used),
+  N-GD-2 (premise class confirmed, each proof read). Tool R2-N5-GD/gd_check.py (GD_MUT=gda|c2|wo bite, f1 not). No REFEREE GD file at 01:43Z.
 - Queue after NH42 (done): DUAL (done) (a51f7c30 @ df073cb5), then GD (docs/new/P-N5-GD-box43.md b898ff82 @ 3c6f6c16).
 - Sources (via landed RESULTS, not re-opened): VJ00 BRICS RS-00-48 (sha256 485a12de…, RESULTS R15 object line), p. 16 (11) as quoted in
   P-N5-LP §0 l. 29.

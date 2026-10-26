@@ -1,0 +1,15 @@
+MODE random 20000 4 14 61 MUT -
+F1D_intervals: 51968
+GDB_vertices: 12179
+GDC1_pairs: 5760
+GDC2_levels: 55642
+WOD_checks: 225
+runs: 20000
+states: 54685
+states_D_ge2: 14242
+states_D_nonempty: 28848
+states_MD_ge0: 1672
+states_hD: 32815
+states_hD_h3D: 30608
+max_F1D_changes: (3, 'random61:10275')
+RESULT OK violations=0
