@@ -207,6 +207,84 @@ On 𝒞^1O D_k ⊆ {o} and its changes are crossings, so Δ2 generalises the cro
 terminals with different (Ξ, W) pairs), so the route-form lemmas (R19 (b), R20, R22 (c), R24, R26, CLS, KW) need a multi-terminal
 replacement; I have none.
 
+### 4.4 Route Δ, proof attempt (Lead's direction (a), 00:04Z; written 00:1xZ 2026-10-26 by date -u)
+Naming change: "Δ1" below is the Lead's (a count); the §4.3 "Δ1" (S rows hold) is split into the lemmas proved here and the OPEN RT core.
+Setting: any game, an N5 run, state k; τ := τ_k fixed inside a phase. σ̄_k = SPEC S1's optimal Odd reply to σ_k (with its tie-breaks).
+- D_k := {Odd u : σ̄_k(u) ≠ τ_k(u)} (disagreement set; on 𝒞^1O, D_k ⊆ {o}).
+- For v, u(v) := the first vertex of D_k on v's (σ_k, τ_k)-play, if any; R_D := {v : u(v) exists}; F_D := V ∖ R_D; π_v := the
+  (σ_k, τ_k)-path from v to u(v), u(v) excluded. F_D is closed under σ_k and τ_k (a successor of an F_D vertex has the same play tail).
+- W_k := the valuation of σ_k in G_τ (Odd fixed to τ_k) = the (σ_k, τ_k)-play values (R18 (d) Lemma S (b): Ξ_k ⊴ W_k).
+- (h_D) at k: for every u ∈ D_k, neither the honest play (σ_k, σ̄_k) nor the W-play (σ_k, τ_k) from u visits D_k after leaving u.
+  (On 𝒞^1O with D_k = {o}: (h_D) = H1 ∧ H2 of (h).) (h3_D): for every u ∈ D_k, λ_Ξ(u) = λ_W(u).
+- lev and COARSE_L as in RESULTS R25 (lev(a, b) := the level at which two valuations first differ; COARSE_L keeps the cycle node and
+  the path-set part above level L). M_D := max over u ∈ D_k of lev(Ξ_k(u), W_k(u)) (−1 if D_k = ∅).
+
+Lemma G_D (a) (PROVED, every game; L-NEW 22, unrefereed). For v ∈ F_D, Ξ_k(v) = W_k(v).
+Proof. Ξ_k(v) is the value of the (σ_k, σ̄_k)-play from v. Along v's (σ_k, τ_k)-play every Odd vertex x lies outside D_k (v ∈ F_D), so
+σ̄_k(x) = τ_k(x): the two plays take the same edge at every vertex, by induction along the play; equal plays have equal values. ∎
+Which step used root FO on 𝒞^1O: exactly the sentence "the σ_k-path from v meets no Odd vertex with a choice before it closes" (P-N5-RE
+§1 (a)), i.e. FO is used only to get "σ̄ = τ at every Odd vertex the play meets", which is the definition of F_D. So HP in set form
+(σ̄ = τ off D_k, true by definition) REPLACES FO here completely. The price: F_D depends on σ̄_k, which moves with σ inside a phase.
+
+Lemma G_D (b) (PROVED, every game, under (h_D)). For v ∈ R_D with u := u(v): Ξ_k(v) = π_v ⊕ Ξ_k(u) and W_k(v) = π_v ⊕ W_k(u).
+Proof. Both plays follow π_v (Odd vertices on π_v are outside D_k, so σ̄ = τ there) to u and continue with u's play in the frame. That
+continuation avoids π_v: a vertex x ∈ π_v has u(x) defined, and the honest play from x follows x's (σ_k, τ_k)-play (HP) into D_k, so
+meeting x would make the continuation visit D_k again, against (h_D); the same for the W-play. Apply (V1) along π_v (R17). ∎
+
+Lemma G_D (c) (PROVED, every game, under (h_D) and (h3_D)).
+(c1) Same terminal: if u(y) = u(z) = u, then π_y ⊕ Ξ(u) ⊴ π_z ⊕ Ξ(u) iff π_y ⊕ W(u) ⊴ π_z ⊕ W(u) (P-N5-RE §1 (c), verbatim, with u for o).
+(c2) Coarse form, any terminals: for every L ≥ M_D and every v ∈ V, COARSE_L(Ξ_k(v)) = COARSE_L(W_k(v)). Hence the COARSE_L-orders
+     of Ξ_k and W_k coincide on all of V.
+Proof of (c2). On F_D by (a). On R_D: by (b), Ξ(v) = π_v ⊕ Ξ(u), W(v) = π_v ⊕ W(u), with λ_Ξ(u) = λ_W(u) =: c by (h3_D). π ⊕ a has cycle
+node c and path set A_π ∪ P(a) (A_π := vertices of π more relevant than c), so COARSE_L(π ⊕ a) is a function of π and COARSE_L(a).
+COARSE_L(Ξ(u)) = COARSE_L(W(u)) since lev(Ξ(u), W(u)) ≤ M_D ≤ L. ∎
+(c2) is the multi-terminal form of R20 Lemma C (there M_D is the level of u* := the top of P(θ) Δ P(w)). It does NOT give the fine
+order: for y, z with different terminals u ≠ u′ and a route difference at a level ≤ M_D, π_y ⊕ Ξ(u) vs π_z ⊕ Ξ(u′) and π_y ⊕ W(u)
+vs π_z ⊕ W(u′) can be ordered differently. THIS is the one statement RT blocks (see Δ-RT below).
+
+Lemma F1°_D (PROVED, every game; L-NEW 22, unrefereed). Call a maximal run I of states of a phase with (D_k, R_D) constant a
+D-crossing-free interval. On I, the transitions at which Ξ changes at some vertex of F_D number at most max(0, |F_D| − 1).
+Proof (the six steps of R22 (a) / P-N5-NH §1, re-checked in set form).
+1. Ξ = W on F_D at every state of I (G_D (a), no (h_D)). F_D is closed under σ_k and τ. Let 𝓕 := G_τ[F_D]: a one-player arena (Odd
+   is fixed to τ in G_τ; Odd choice vertices u ∉ D_k inside F_D are fixed to τ(u) = σ̄_k(u)). [On 𝒞^1O this step said "contains no
+   vertex with an Odd choice (o ∉ F)"; with τ fixed that is not needed.]
+2. For x, z ∈ F_D: (x, z) ∈ Iσ_k iff it is 𝓕-improving at σ_k|F_D (step 1 at both endpoints).
+3. S4a steps inside I: F_D at k+1 equals F_D at k and is closed under σ_{k+1}, so σ_{k+1} maps F_D into F_D. By (F1) in G_τ (R17),
+   σ_{k+1} dominates every strategy of S4a's arena; restricted to the closed set F_D it is a pointwise optimum of 𝓕's arena
+   {σ_k(x)} ∪ (𝓕-improving edges), by step 2.
+4. S4c steps inside I are Even's (τ is constant in a phase). FBL-N (ii) in set form: for a gate edge (x, z) with x ∈ F_D, σ_k(x) ∈ F_D
+   and Ξ_k(σ_k x) = W_k(σ_k x) (G_D (a)); Ξ_k(z) ▷ Ξ_k(σ_k x); XW (R21 (a), every game) gives W_k(z) ⊵ Ξ_k(z), so W_k(z) ▷
+   W_k(σ_k x); σ_k is an arena optimum in G_τ (FBL-N (i), every game: S4a returned σ_k), so by R18 (c)'s flat case the edge is flat for
+   W_k (x = λ_W(x), λ_W(z) = x). [The 𝒞^1O proof (P-N5-X §3 (ii)) used "x's play avoids o" only to get σ_k(x) ∈ F and Lemma G (a).]
+   From here as in R22 (a) step 4: flat switches from F_D leave the F_D-values unchanged, and switches of R_D-vertices do not affect
+   F_D (F_D-plays avoid R_D).
+5. λ on F_D is λ_Ξ, constant in the phase.
+6. R17 Lemma P / Theorem PH on 𝓕 (a one-player arena run of the arena-optimum rule, from its current state) give ≤ max(0, |F_D| − 1)
+   value-changing steps. ∎
+DATA (experiments/new/box43/f1d.py): G_D (a) and F1°_D, 0 violations on the 5 box-43 instances (87 transitions) and on 2,000 random
+C^kO games (k 2-4, n 5-14; 2,487 transitions); lib41 (412 runs, 8,477 transitions): 0 violations of either.
+G_D (c2) (f1d.py, at states with (h_D) and (h3_D), L = M_D, every vertex): 0 violations at 39 instance states and 2,910 random states.
+
+Conjecture Δ1 (the Lead's form; CONJECTURE, every game). Inside one phase of an N5 run, the transitions at which (D_k, R_D) changes
+number at most poly(n). Equivalently (by F1°_D), F_D-side value changes per phase are poly(n). On 𝒞^1O it reads: changes of
+[σ̄(o) ≠ τ(o)] plus crossings X per phase (FX's quantity, plus a term on 𝒞^1O that FX does not count separately). DATA: lib41 frontier
+≤ 5 D-changes per phase; best climbed: dch16_n44 (16 D-changes, 27 R_D-changes in one phase of 44 transitions, n 44).
+
+Δ-RT, the one lemma RT blocks (OPEN). On R_D, the fine route order of G_D (c1) for routes to DIFFERENT terminals below level M_D.
+Without it, the R_D side of PIECE (R19 (f): the route game with one frozen terminal, an R17 run with ≤ |R| − 1 value changes) has no
+analogue: S4a optimises W-values (terminal values W(u)) while I_σ is computed with Ξ-values (terminal values Ξ(u)), and two
+terminals with different gaps (Ξ(u), W(u)) ≠ (Ξ(u′), W(u′)) can make an edge Ξ-improving and W-worsening. Every R-side count of the
+ledger (P3′, CASC/U1, CASC-U2/U3, CLS, KW-FREEZE) rests on this. What survives: the coarse order above M_D (G_D (c2)), so the coarse
+R20 machinery (C, FBL, FBF, CR, XA) is the natural next port (CONJECTURE: it holds with u* replaced by M_D and "θ, w constant"
+replaced by "Ξ(u), W(u) constant for every u ∈ D_k").
+
+### 4.5 Signpost (DATA): N5 on the exponential-SI families
+experiments/new/n5/per_family_summary.txt (L-NEW, earlier boxes; every output verified by Oink zlk + verify.py): N5 iterations on
+switchallexp N 1-40 (n 21-567): 5, 8, 7, 8, 10, ..., 80 (= 2N for N ≥ 4); switchbestexp N 1-32 (n 35-810): 20 ... 242; counter_*: at
+most 99 (counter_symsi N 22); tc+ N 17 (n 5,304): 178. So on frontier families where classic strategy improvement is exponential,
+N5's iteration counts are about linear in N (DATA, not a bound).
+
 ## 5. Status
-PROVED: DUAL, Corollary 1E, Theorem MIRROR (implication), Φ-kO, ENDGAME. DATA: §3 tables and instances; mirror checks. READING:
-ledger rows; the "any start" hypothesis. CONJECTURE: Δ1, Δ2. OPEN: polynomial phase length on 𝒞^1O (hence on 𝒞^1E), the frontier.
+PROVED: DUAL, Corollary 1E, Theorem MIRROR (implication), Φ-kO, ENDGAME (packet P-N5-DUAL); G_D (a)-(c), F1°_D (§4.4, unrefereed).
+DATA: §3 tables and instances; mirror checks; f1d.py. READING: ledger rows; the "any start" hypothesis. CONJECTURE: Δ1 (§4.4); the
+coarse R20 port. OPEN: Δ-RT. OPEN: polynomial phase length on 𝒞^1O (hence on 𝒞^1E), the frontier.
