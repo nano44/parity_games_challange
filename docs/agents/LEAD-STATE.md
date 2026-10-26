@@ -1593,3 +1593,13 @@
   - L-COMP: box 9 climbs plus n5b on the frontier instances.
 - 02:28Z: Pre-drafted docs/agents/R52-draft.md (P-N5-FX; pin 02ad3f88). It waits for L-SI 11's FX fixes file.
 - 02:30Z: Merged l-si cfadaee9 (FX fixes FROZEN, 4253d51e). R52 (FX) draft complete; to CHECKER C61.
+- 2026-10-26 02:35Z: Read 6 notifications.
+  - Merged checker fe6330f5: C60 Addendum 2, R51 landed verbatim; C60 CLOSED.
+  - Merged referee a50f6623: R-N5-GD, all SIGNED; GD-N1..N3.
+  - Merged l-new 478dd6e1: NH42 fixes 7c499640; DUAL fixes 5d08d0fd.
+  - Merged l-comp a47b3fa3: n5b = n5 on 9 frontier instances × 51 starts; first WK-non-vacuous instance wk1_n32.
+  - Merged l-si, l-red, referee-2.
+  - Verified: every FX / NH42 / DUAL §C commit is now an ancestor of trunk (L-NEW had noted they were not at 249ad7e3).
+  - Asked both referees for §C GD.
+  - REFEREE-2 pre-read: Lemma OUT has no 𝒞^1O step. Cosmetic note: the 1O fixes file says "REFEREE-2 successor 12" for R2-N5-1O; it should be 13.
+  - Next: R53 (NH42) and R54 (DUAL) drafts.
