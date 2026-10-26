@@ -16,3 +16,5 @@ DATA, not proof. Uses experiments/new/box43 (multi, n5x via box21, f1d.hD). Run 
 - rtclimb.py --obj sw seeds 21-24 (01:35Z-01:40Z): best DIFFSW 0 (k 2, n ≤ 12), 8 (k 3, n 20), 0 (k 4, n 30), 21 (k 4, n 40).
   swphase.py FILE...: per-phase in-phase fallbacks and cross-terminal switches. instances/sw21_n40.pg (seed 24 best): one fallback
   switches 21 vertices across terminals; N5 output: Oink verify OK, regions = Oink --zlk, harness verify.py OK.
+- fbf.py: frontier FB-POLY checks (CN-ONLY_D, EXIT-SWITCH_D, FREEZE-EXIT_D, FB-RED, per-terminal THETA-AFTER "TA"), FMAX per phase.
+  fbclimb.py: climbs FMAX (or --obj ta: TA violations). docs/new/N5-FBF-box44.md §4. Runs from 01:56Z.
