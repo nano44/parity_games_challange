@@ -102,6 +102,16 @@ def check_phase(ctx, g, I, fbs, a, b, Q, st, name):
         if f > ep_b: st.bad("CMP_EPOCH_violated", f"{name}@{a}")
         if f > r56_b: st.bad("CMP_R56_violated", f"{name}@{a}")
         if fbc_b < ep_b: st.inc("CMP_fbc_below_epoch")
+        # §C: REFEREE's FBC-N3 (f <= n |Cf|) checked here, and its comparisons; FLATLAST: a Xi-flat in-phase fallback ends its phase
+        st.inc("N3_phases")
+        if f > n * len(Cf): st.bad("N3_bound", f"{name}@{a}: f {f} n {n} |Cf| {len(Cf)}")
+        if n * len(Cf) < ep_b: st.inc("N3_below_epoch")
+        if n * len(Cf) < r56_b: st.inc("N3_below_r56")
+        if n * len(Cf) > r56_b: st.inc("N3_above_r56")
+        for t in fbk:
+            if I[t + 1]["xi"] == I[t]["xi"]:
+                st.inc("FLATLAST_checks")
+                if t + 1 != b: st.bad("FLATLAST", f"{name}@{t}: Xi-flat in-phase fallback not at the phase end")
         if fbc_b < r56_b: st.inc("CMP_fbc_below_r56")
         if n >= 2 and bound1 * Nep < ep_b: st.bad("CMP_header_Nep_form_not_weaker", f"{name}@{a}")
         st.mxr("max_rho_over_nCf", (rho / (n * len(Cf)), f"{name}@{a} n {n} rho {rho} |Cf| {len(Cf)} f {f}"))
