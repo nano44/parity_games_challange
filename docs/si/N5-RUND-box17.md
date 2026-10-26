@@ -1131,8 +1131,9 @@ N_ep ≈ phase length / 2. Neither the length of one epoch nor the per-piece cou
 N_ep / ρ circularity of R63 / §20, not a new obstruction.
 ### 27.3 Lemma TV-END (PROVED, every game; P1 via R15 (SG) and R56 (g))
 Setting: a phase, an honest class c, T := Q ∪ {c}, and a Q_c-run Θ (R56's setting line). Let t ∈ Θ be a state at which every
-z ∈ U_c ∖ T has κ_t(z) = TV_Θ(z) := max(κopt_c(z), max_{q ∈ Q_c} κopt^q(z) + κ_Θ(q)). By R56 (g) Lemma TV this holds at every t ∈ Θ after
-|U_c| − 1 fallbacks of the phase and of Θ.
+z ∈ U_c ∖ T has κ_t(z) = TV_Θ(z) := max(κopt_c(z), max_{q ∈ Q_c} κopt^q(z) + κ_Θ(q)). By R56 (g) Lemma TV this holds at every t
+after |U_c| − 1 fallbacks of the phase and of a Q-RUN (all of Q constant; contained in a Q_c-run). CORRECTION 13:0xZ: an earlier wording
+said "of Θ" (the Q_c-run); R56 (g) is stated for Q-runs. tvend.py triggers on the Q_c-run count, a heuristic trigger; see P-N5-CHOSEN §5.
 Statement. Then no Even vertex of U_c ∖ T switches at any in-phase transition t → t+1. Moreover t + 1 ∈ Θ and the hypothesis holds at
 t + 1. Hence, from t to the end of the phase, class c is frozen: no switch in U_c ∖ T and no ρ event in the class, and Θ lasts to the phase
 end.
