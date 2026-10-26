@@ -1,0 +1,47 @@
+MODE files ../../../experiments/new/box41/lib41.txt 1 MUT wo
+F1D_intervals: 5563
+GDB_vertices: 54194
+GDC1_pairs: 490158
+GDC2_levels: 25015
+VIOLATIONS: 36
+V_WOD: 36
+WOD_checks: 4421
+runs: 412
+states: 8889
+states_D_ge2: 1297
+states_D_nonempty: 7090
+states_MD_ge0: 4266
+states_hD: 6543
+states_hD_h3D: 6310
+max_F1D_changes: (55, 'experiments/red/xing/instances/x32_rand64.pg#0')
+VIOLATION WOD: experiments/new/box28/instances/fbref_n48.pg#0@0: u 14
+VIOLATION WOD: experiments/new/box28/instances/w24b_thc24_final.pg#0@4: u 19
+VIOLATION WOD: experiments/new/box28/instances/w24b_thc24_final.pg#0@5: u 19
+VIOLATION WOD: experiments/new/box28/instances/w24b_thc24_final.pg#0@6: u 19
+VIOLATION WOD: experiments/new/box28/instances/w24b_thc24_final.pg#0@7: u 19
+VIOLATION WOD: experiments/new/box28/instances/w24b_thc24_final.pg#0@12: u 19
+VIOLATION WOD: experiments/new/box28/instances/w24b_thc24_final.pg#0@13: u 19
+VIOLATION WOD: experiments/new/box28/instances/w24b_thc24_final.pg#0@14: u 19
+VIOLATION WOD: experiments/new/box28/instances/w24b_thc24_final.pg#0@15: u 19
+VIOLATION WOD: experiments/new/box32/instances/nowake_cex_n32.pg#0@4: u 27
+VIOLATION WOD: experiments/new/box35/instances/fbrestart_cex_n12.pg#0@3: u 9
+VIOLATION WOD: experiments/red/carry/instances/cm_mdrop_both_n28.pg#0@3: u 6
+VIOLATION WOD: experiments/red/carry/instances/ctx13_n40.pg#0@11: u 11
+VIOLATION WOD: experiments/red/n5inj/instances/frz32.pg#0@5: u 24
+VIOLATION WOD: experiments/red/n5inj/instances/theta_thc24.pg#0@0: u 0
+VIOLATION WOD: experiments/red/n5inj/instances/theta_thc24.pg#0@1: u 0
+VIOLATION WOD: experiments/red/n5inj/instances/theta_tp40.pg#0@1: u 0
+VIOLATION WOD: experiments/red/n5inj/instances/theta_tp40.pg#0@2: u 0
+VIOLATION WOD: experiments/red/so/instances/epsseg_cex_n48.pg#0@6: u 0
+VIOLATION WOD: experiments/red/so/instances/exitr_cex_n48.pg#0@4: u 0
+VIOLATION WOD: experiments/red/so/instances/so_k2_n32.pg#0@8: u 27
+VIOLATION WOD: experiments/red/xing/instances/j7_n32.pg#0@2: u 0
+VIOLATION WOD: experiments/red/xing/instances/j7_n32.pg#0@3: u 0
+VIOLATION WOD: experiments/red/xing/instances/j8_n48.pg#0@0: u 0
+VIOLATION WOD: experiments/red/xing/instances/x31_cu16.pg#0@0: u 0
+VIOLATION WOD: experiments/red/xing/instances/x31_cu24.pg#0@0: u 18
+VIOLATION WOD: experiments/red/xing/instances/x31_cu32.pg#0@3: u 0
+VIOLATION WOD: experiments/red/xing/instances/x31_rx48.pg#0@0: u 0
+VIOLATION WOD: experiments/si/coarse/instances/jcl_lev_l_sc.pg#0@0: u 0
+VIOLATION WOD: experiments/si/coarse/instances/jcl_zcl_cu_n48.pg#0@4: u 0
+RESULT FAIL violations=36

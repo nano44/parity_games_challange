@@ -1,0 +1,58 @@
+MODE files ../R2-N5-KW/files.lst 1 spec MUT nr
+VIOLATIONS: 89
+V_NR: 89
+cls_P3: 209
+cls_U1: 600
+cls_U2: 161
+cls_U23: 94
+cls_U3: 237
+other_stretches: 1301
+phases: 2030
+phases_with_O: 192
+runs: 503
+sum_O: 1309
+transitions: 10730
+O_over_NHa_x1e6: (147, 'experiments/n5-exhaustive/instances/b4_n4all_cyc3_0.pg#0')
+max_E_broad: (15, 'experiments/new/box32/instances/kwm_cex_n24.pg#0')
+max_E_narrow: (15, 'experiments/new/box32/instances/kwm_cex_n24.pg#0')
+max_KW: (25, 'experiments/red/xing/instances/kw25_n32.pg#0')
+max_NR_P3: (9, 'experiments/new/box31/instances/p3long_n14.pg#0')
+max_NR_U1: (12, 'docs/referee-2/R2-N5-U1/climb/c_u1n32_best.pg#0')
+max_NR_U2: (25, 'experiments/red/xing/instances/kw25_n32.pg#0')
+max_NR_U23: (13, 'experiments/new/box29/out/op20_r.pg#0')
+max_NR_U3: (14, 'experiments/new/box32/instances/kwm_cex_n24.pg#0')
+max_O: (77, 'experiments/n5-exhaustive/instances/b5_os_n40.pg#0')
+max_T: (112, 'experiments/red/so/instances/xsn91_n48.pg#0')
+max_X: (100, 'experiments/red/so/instances/xsn91_n48.pg#0')
+max_fO: (12, 'experiments/new/box25/instances/wd16_s2.pg#0')
+VIOLATION NR: docs/referee-2/R2-N5-1OA/logs/rel_g12_y1.pg#0: class U1 N_R 0 > signed bound -2
+VIOLATION NR: docs/referee-2/R2-N5-1OA/logs/rel_g12_y4.pg#0: class U1 N_R 0 > signed bound -2
+VIOLATION NR: docs/referee-2/R2-N5-CLS/climb/gt_b_best.pg#0: class U1 N_R 0 > signed bound -2
+VIOLATION NR: docs/referee-2/R2-N5-CLS/climb/gt_b_best.pg#0: class U1 N_R 0 > signed bound -2
+VIOLATION NR: docs/referee-2/R2-N5-FRZ/climb/best_block_12.pg#0: class U1 N_R 0 > signed bound -2
+VIOLATION NR: docs/referee-2/R2-N5-FRZ/climb/best_block_12.pg#0: class U1 N_R 0 > signed bound -2
+VIOLATION NR: docs/referee-2/R2-N5-LV2/climb/best_none_9502.pg#0: class U1 N_R 0 > signed bound -2
+VIOLATION NR: docs/referee-2/R2-N5-NJB/climb/best_mn_71.pg#0: class U1 N_R 0 > signed bound -2
+VIOLATION NR: docs/referee-2/R2-N5-NJB/climb/best_mn_71.pg#0: class U1 N_R 0 > signed bound -2
+VIOLATION NR: docs/referee-2/R2-N5-NJB/climb/best_mn_76.pg#0: class U1 N_R 0 > signed bound -2
+VIOLATION NR: docs/referee-2/R2-N5-NJB/climb/best_norf_73.pg#0: class U1 N_R 0 > signed bound -2
+VIOLATION NR: docs/referee-2/R2-N5-OUT/climb/best_brk_9103.pg#0: class U1 N_R 0 > signed bound -2
+VIOLATION NR: docs/referee-2/R2-N5-OUT/climb/best_caseb_9101.pg#0: class U1 N_R 0 > signed bound -2
+VIOLATION NR: docs/referee-2/R2-N5-OUT/climb/best_nea_9104.pg#0: class U1 N_R 0 > signed bound -2
+VIOLATION NR: docs/referee-2/R2-N5-OUT/climb/best_nea_9104.pg#0: class U1 N_R 0 > signed bound -2
+VIOLATION NR: docs/referee-2/R2-N5-PFZ/climb/best_brki_9601.pg#0: class U1 N_R 0 > signed bound -2
+VIOLATION NR: docs/referee-2/R2-N5-PFZ/climb/best_pfz_9502.pg#0: class U1 N_R 0 > signed bound -2
+VIOLATION NR: docs/referee-2/R2-N5-RHO/climb/best_rho_9703.pg#0: class U2 N_R 0 > signed bound -2
+VIOLATION NR: docs/referee-2/R2-N5-SCOPE/climb/best_fb_93.pg#0: class U1 N_R 0 > signed bound -2
+VIOLATION NR: docs/referee-2/R2-N5-U1/climb/b_wf0_best.pg#0: class U1 N_R 0 > signed bound -2
+VIOLATION NR: docs/referee-2/R2-N5-U1/climb/c_wf0_best.pg#0: class U1 N_R 0 > signed bound -2
+VIOLATION NR: docs/referee-2/R2-N5-U1/climb/wf0_n16_best.pg#0: class U1 N_R 0 > signed bound -2
+VIOLATION NR: docs/referee-2/R2-N5-XA/climb/xn9_s81.pg#0: class U1 N_R 0 > signed bound -2
+VIOLATION NR: docs/referee/scratch/neb_logs/c2/best_912.pg#0: class U2 N_R 0 > signed bound -2
+VIOLATION NR: experiments/n5-exhaustive/instances/b5_os_n16.pg#0: class U1 N_R 0 > signed bound -2
+VIOLATION NR: experiments/n5-exhaustive/instances/b5_os_n16.pg#0: class U1 N_R 0 > signed bound -2
+VIOLATION NR: experiments/n5-exhaustive/instances/b5_os_n16.pg#0: class U1 N_R 0 > signed bound -2
+VIOLATION NR: experiments/n5-exhaustive/instances/b5_os_n20.pg#0: class U1 N_R 0 > signed bound -2
+VIOLATION NR: experiments/n5-exhaustive/instances/b5_os_n20.pg#0: class U1 N_R 0 > signed bound -2
+VIOLATION NR: experiments/n5-exhaustive/instances/b5_os_n20.pg#0: class U1 N_R 0 > signed bound -2
+RESULT FAIL violations=89

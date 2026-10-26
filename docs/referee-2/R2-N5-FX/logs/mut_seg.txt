@@ -1,0 +1,13 @@
+MODE files ../R2-N5-KW/files.lst 1 MUT seg
+kind_i: 1470
+kind_ii: 3937
+kind_iii: 194
+phases: 2030
+phases_with_X: 367
+runs: 503
+X_over_FXa: (0.6739130434782609, 'experiments/red/so/instances/post31_n48.pg#0')
+X_over_R30c: (0.6595744680851063, 'experiments/red/so/instances/post31_n48.pg#0')
+max_X: (100, 'experiments/red/so/instances/xsn91_n48.pg#0')
+max_XSN: (91, 'experiments/red/so/instances/xsn91_n48.pg#0')
+max_f: (37, 'experiments/red/so/instances/rise_fb38_n48.pg#0')
+RESULT OK violations=0

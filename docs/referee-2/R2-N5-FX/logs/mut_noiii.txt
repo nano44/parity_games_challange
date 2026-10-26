@@ -1,0 +1,45 @@
+MODE files ../R2-N5-KW/files.lst 1 MUT noiii
+VIOLATIONS: 51
+V_FXA: 51
+kind_i: 1470
+kind_ii: 3937
+kind_iii: 194
+phases: 2030
+phases_with_X: 367
+runs: 503
+X_over_FXa: (31.0, 'experiments/red/so/instances/post31_n48.pg#0')
+X_over_R30c: (0.6595744680851063, 'experiments/red/so/instances/post31_n48.pg#0')
+max_X: (100, 'experiments/red/so/instances/xsn91_n48.pg#0')
+max_XSN: (91, 'experiments/red/so/instances/xsn91_n48.pg#0')
+max_f: (37, 'experiments/red/so/instances/rise_fb38_n48.pg#0')
+VIOLATION FXA: docs/referee-2/R2-N5-NEB/climb/best_brk_9301.pg#0: X 1 > FX(a) 0 (f 0, X_SN 0)
+VIOLATION FXA: docs/referee-2/R2-N5-NEB/climb/best_brk_9301.pg#0: X 3 > FX(a) 1 (f 1, X_SN 0)
+VIOLATION FXA: docs/referee-2/R2-N5-NEB/climb/best_brk_9302.pg#0: X 5 > FX(a) 3 (f 3, X_SN 0)
+VIOLATION FXA: docs/referee-2/R2-N5-OUT/climb/best_brk_9103.pg#0: X 9 > FX(a) 7 (f 7, X_SN 0)
+VIOLATION FXA: docs/referee-2/R2-N5-OUT/climb/best_caseb_9102.pg#0: X 5 > FX(a) 4 (f 4, X_SN 0)
+VIOLATION FXA: docs/referee-2/R2-N5-SN/climb/absc_c_best.pg#0: X 17 > FX(a) 10 (f 0, X_SN 10)
+VIOLATION FXA: docs/referee-2/R2-N5-SN/climb/stick_a_best.pg#0: X 1 > FX(a) 0 (f 0, X_SN 0)
+VIOLATION FXA: docs/referee-2/R2-N5-SN/climb/stick_a_best.pg#0: X 16 > FX(a) 0 (f 0, X_SN 0)
+VIOLATION FXA: docs/referee-2/R2-N5-U1/climb/u1t_cex2_n32_best.pg#0: X 1 > FX(a) 0 (f 0, X_SN 0)
+VIOLATION FXA: docs/referee-2/R2-N5-U1/climb/wf0_n16_best.pg#0: X 8 > FX(a) 7 (f 7, X_SN 0)
+VIOLATION FXA: docs/referee/R-N5-NEB/band_base_cex.pg#0: X 2 > FX(a) 1 (f 1, X_SN 0)
+VIOLATION FXA: docs/referee/scratch/neb_logs/c2/best_912.pg#0: X 9 > FX(a) 4 (f 4, X_SN 0)
+VIOLATION FXA: docs/referee/scratch/neb_logs/c3/best_913.pg#0: X 9 > FX(a) 5 (f 5, X_SN 0)
+VIOLATION FXA: experiments/n5-exhaustive/instances/b5_o11.pg#0: X 4 > FX(a) 3 (f 3, X_SN 0)
+VIOLATION FXA: experiments/n5-exhaustive/instances/b5_os_n12.pg#0: X 6 > FX(a) 4 (f 4, X_SN 0)
+VIOLATION FXA: experiments/n5-exhaustive/instances/b5_os_n14.pg#0: X 7 > FX(a) 6 (f 6, X_SN 0)
+VIOLATION FXA: experiments/n5-exhaustive/instances/b5_os_n16.pg#0: X 9 > FX(a) 7 (f 7, X_SN 0)
+VIOLATION FXA: experiments/n5-exhaustive/instances/b5_os_n20.pg#0: X 9 > FX(a) 7 (f 7, X_SN 0)
+VIOLATION FXA: experiments/n5-exhaustive/instances/b5_os_n24.pg#0: X 8 > FX(a) 7 (f 7, X_SN 0)
+VIOLATION FXA: experiments/n5-exhaustive/instances/b5_os_n28.pg#0: X 11 > FX(a) 8 (f 8, X_SN 0)
+VIOLATION FXA: experiments/n5-exhaustive/instances/b5_os_n32.pg#0: X 9 > FX(a) 8 (f 8, X_SN 0)
+VIOLATION FXA: experiments/n5-exhaustive/instances/b5_os_n40.pg#0: X 16 > FX(a) 9 (f 9, X_SN 0)
+VIOLATION FXA: experiments/new/box21/instances/oneodd_c16.pg#0: X 1 > FX(a) 0 (f 0, X_SN 0)
+VIOLATION FXA: experiments/new/box21/instances/oneodd_c16.pg#0: X 4 > FX(a) 2 (f 2, X_SN 0)
+VIOLATION FXA: experiments/new/box22/instances/i1_min.pg#0: X 2 > FX(a) 0 (f 0, X_SN 0)
+VIOLATION FXA: experiments/new/box25/wdrop_canon.pg#0: X 2 > FX(a) 1 (f 1, X_SN 0)
+VIOLATION FXA: experiments/new/box28/instances/oc16_s2.pg#0: X 3 > FX(a) 2 (f 2, X_SN 0)
+VIOLATION FXA: experiments/new/box28/out/oc16_s2.pg#0: X 3 > FX(a) 2 (f 2, X_SN 0)
+VIOLATION FXA: experiments/new/box29/instances/wf0_cex_n16.pg#0: X 8 > FX(a) 7 (f 7, X_SN 0)
+VIOLATION FXA: experiments/new/box29/out/nfb16.pg#0: X 8 > FX(a) 7 (f 7, X_SN 0)
+RESULT FAIL violations=51

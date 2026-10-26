@@ -8,7 +8,17 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   §2 port table (landed step, one-Odd use, replacement); §3 Δ1, Δ-RT, R20 coarse port NOT to sign. Re-checked each proof against
   P-N5-RE §1-2, P-N5-NH-box30 §1, P-N5-X §3, P-N5-FB §1. f1d.py re-run 01:07-01:09Z: 0 violations (lib41 412 runs; rand 21/22;
   instances). Premise class transfers (R15 (a), R17, R18 (c) flat / (d) S, XW, FBL-N (i)) are stated as READING for the referees.
-- NEXT: (2) Route Δ (R20 coarse port with u* → M_D; Δ-RT). (3) DUAL / NH42 fixes on the Lead's go.
+- Packet pushed 205c9ed7 (sha1 b898ff82…), reported 01:13Z.
+- (2) docs/new/N5-DELTA-box44.md (working doc): LAM_D (λ_W = λ_Ξ under (h_D) ∧ (h3_D)), C_D, CR_D (coarse freeze on any L-run: only a
+  uniform threshold L ≥ M_D needed; D, R_D, terminal values may move), FBL_D (fallback gate: F_D-sourced flat; R_D-sourced are leaves or
+  CROSS-TERMINAL coarse-flat edges; F→R only into terminals with lev_u ≤ −1, from c_u), FBF_D under CT-FREE, XA_D (same top terminal),
+  §7 |D| = 1 stretches = R20 verbatim, §8 Δ-RT sharpened (cross-terminal disagreement; CONJ Δ-RT-F, Δ-RT-C). Data box44/crd.py,
+  rtdump.py: 0 violations; RTDIS 8 at S4a states (dch16_n44 k 28/30, M_D = n − 1), DIFF (at fallbacks) 0.
+- Reported acc2ee62 at 01:25Z. Then: CONJECTURE Δ-RT-F FALSE (rtclimb + shrinksw → instances/rtf_cex_inj.pg, n 11, sha1 9b55eee6…;
+  k = 1: S4c switches 3: 5 → 10 across terminals 1 → 0 with a W-loss; Oink/verify checked). PIECE_D for |D| = 1 (§7b, port).
+  Reverse disagreements (W-improving, not in Iσ) named as the PIECE blocker. Checker bug fixed (same-terminal check needs (h3_D)).
+- NEXT: Δ-RT-C (count of cross-terminal fallback switches / disagreements per D-stretch): growth climbs; a W-potential argument
+  charging W-losses to cross-terminal switches. (3) on the go.
 
 ## Box 43 log (successor 22; handover check 5/5 (b4f064b4); GO 21:55Z, Lead's stamp)
 - Merged trunk c4d18621. Oink built (8fbf0a7). Notebook duplicate block (from 6a1b0e95) removed in b4f064b4.
@@ -739,6 +749,10 @@ Successor 22 (Opus 5.5, D14/D18, L40). Handover check 5/5 (b4f064b4). GO box 43 
   docs/referee/R-N5-PFZ.md (8595343); docs/referee-2/R2-N5-PFZ.md (37e55fd) notes.
 
 ## Dead ends
+- (box 44, successor 23, 2026-10-26 ~01:29Z) CONJECTURE Δ-RT-F "no cross-terminal gate edge is switched at an in-phase S4c fallback
+  (states with (h_D) ∧ (h3_D))": FALSE. Instance experiments/new/box44/instances/rtf_cex_inj.pg (n 11, sha1 9b55eee6…): k = 1 → 2,
+  D = {0, 1}, Even 3 switches 5 (terminal 1) → 10 (terminal 0), Ξ(10) = (6, {4}, 4) ▷ Ξ(5) = (6, ∅, 3), W(10) = (6, {4}, 4) ◁ W(5) =
+  (6, {8}, 4). Obstruction: S4c's honest key vs the W-key across terminals with different gaps below M_D.
 - (succ. 22, box 43; DATA, not a dead end of anything signed, Lead 22:48Z) Per-Odd-vertex form of Corollary Φ-1O (a) ("τ(o_i) changes ≤ deg(o_i) − 1", "τ(o_i) never repeats") on the
   frontier 𝒞^{≥2E,≥2O}: FALSE. Instance experiments/new/box43/instances/retf_n6.pg (sha1 8b936bfb…): τ(0) 2 → 1 → 5 → 1, non-own-cycle-
   node. Obstruction: S4b best-responds to the OLD σ while S4a cuts the route in the same iteration (stale-σ simultaneity).
