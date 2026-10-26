@@ -155,3 +155,15 @@ o=$(python3 -I root/bfgate.py --one $N90)
 for k in "BFG_fail=188 " "bfg_checks=948 " "cutsA=22 " "cutsB=18 " "gs_a_checks=684 " "gs_b_checks=943"; do grep -q "$k" <<<"$o"; done
 if grep -q "GS_A_V\|GS_B_V" <<<"$o"; then echo "GATE-SHIFT violated on nep90"; exit 1; fi
 echo "root (GATE-LAG on nep90: 188 / 948 naive failures; GATE-SHIFT (a), (b) hold): PASS"
+# note §9: FREEZE-G (a) on nep90's 22 G-intervals (2,531 checks).
+o=$(python3 -I root/freezeg.py --one $N90)
+for k in "ga_checks=2531 " "intervals=22" "FREEZEG PASS"; do grep -q "$k" <<<"$o"; done
+echo "root (FREEZE-G (a) on nep90): PASS"
+# packet P-N5-ROOT-add-box20 (addendum): 11 quotes verbatim; shifted control fails.
+if git cat-file -e a7c141b8 && git cat-file -e 3732ab55; then
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-ROOT-add-box20.md | grep -q "quotes=11 bad=0"
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-ROOT-add-box20.md --mut | grep -q "QUOTES FAIL"
+  echo "root (packet P-N5-ROOT-add-box20: 11 quotes verbatim; shifted control fails): PASS"
+else
+  echo "root (packet P-N5-ROOT-add-box20 quotes): NOT RUN (source commits not in this clone)"
+fi

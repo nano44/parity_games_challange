@@ -1,0 +1,10 @@
+GA_V=11 ga_checks=95488 ga_eq=28680 intervals=729
+VIOLATION ('GA', 'experiments/new/box22/instances/i4_hand.pg rs', 7, 1)
+VIOLATION ('GA', 'experiments/red/so/instances/so_sor5_n24.pg', 1, 1)
+VIOLATION ('GA', 'experiments/red/so/instances/so_sor5_n24.pg', 7, 2)
+VIOLATION ('GA', 'experiments/red/so/instances/so_sor5_n24.pg', 3, 3)
+VIOLATION ('GA', 'experiments/red/so/instances/so_sor5_n24.pg', 16, 3)
+VIOLATION ('GA', 'experiments/red/so/instances/so_sor5_n24.pg', 23, 3)
+VIOLATION ('GA', 'experiments/red/so/instances/so_sor5_n24.pg', 0, 4)
+VIOLATION ('GA', 'experiments/red/so/instances/so_sor5_n24.pg', 6, 4)
+FREEZEG FAIL
