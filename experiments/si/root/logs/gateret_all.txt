@@ -1,0 +1,8 @@
+# gateret.py --list root/logs/alt_all.lst (NMAX=600; paths relative to experiments/), 2026-10-26T19:17:17Z
+EXC_run_gates=247 EXC_run_max_plus1000=1061 MAXCH_run=62 RET_gci=116 RET_gci_in=116 RET_phase=2280 RET_phase_AG=676 RET_phase_DCH=659 RET_phase_DDSET=82 RET_phase_OSB=557 RET_phase_OVAL=7 RET_phase_in=299 RET_run=1103 RET_run_AG=346 RET_run_DCH=296 RET_run_DDSET=49 RET_run_OSB=189 RET_run_in=223 gch_AG=1102 gch_DCH=948 gch_DDSET=100 gch_OSB=804 gch_OVAL=8 gch_in=458 lambdaW_moves=125 rise_L=20 rise_M=3399 rise_none=1 runs=787 trans_AG=459 trans_DCH=491 trans_DDSET=116 trans_OSB=766 trans_OVAL=231 trans_in=4533 y2_strictly_below_y1=3406
+EXAMPLE ('EXC', 'red/usplit/instances/gate_K64_n581.pg', 0, 0, 573, 62, 2)
+EXAMPLE ('EXC', 'red/usplit/instances/pp_K48_n449.pg', 0, 0, 447, 49, 3)
+EXAMPLE ('EXC', 'red/usplit/instances/pp_K48_n449.pg', 0, 0, 448, 48, 3)
+EXAMPLE ('EXC', 'red/so/instances/pftheta_cex_n32.pg', 3, 4, 0, 33, 17)
+EXAMPLE ('EXC', 'red/so/instances/pftheta34_n32.pg', 4, 5, 0, 34, 19)
+EXAMPLE ('EXC', 'red/usplit/instances/gate_K16_n197.pg', 0, 0, 189, 14, 2)

@@ -269,3 +269,14 @@ if git cat-file -e 78bc0e6a8; then
 else
   echo "root (packet P-N5-DEPTH-add-box22 quotes): NOT RUN (source commit not in this clone)"
 fi
+# box 23 (docs/si/N5-ALT-box23.md): ALTERNATION / (G1). DEAD GATE-ONEWAY on pp_K12_n161 (21 gate returns inside one global C-interval, a gate of
+# out-degree 3 changes 13 times); DEAD FRESH3 on ret14_n48 (2 sigma-bar-changing in-interval transitions with no fresh Even edge, no fresh gate
+# option and no A-shrink); FRESH3 holds on post31_n48 and the control FMUT=1 (no credit for A-shrinks) bites there; DEAD TOP-ONCE on lev_l_sc
+# (multiplicity 7 in one run); no Xi fall in a phase (WRONG absent).
+o=$(python3 -I root/gateret.py --one ../red/usplit/instances/pp_K12_n161.pg ../red/usplit/instances/pp_K12_n161.start)
+for k in "RET_gci_in=21 " "MAXCH_run=13 " "gch_in=23 "; do grep -q "$k" <<<"$o"; done
+o=$(python3 -I root/fresh.py --one ../n5-epoch/instances/ret14_n48.pg ../n5-epoch/instances/ret14_n48.start); grep -q "NOFRESH3_gci_gch=2 " <<<"$o"
+o=$(python3 -I root/fresh.py --one ../red/so/instances/post31_n48.pg); if grep -q "NOFRESH3_gci_gch" <<<"$o"; then echo "fresh: FRESH3 fails on post31"; exit 1; fi
+FMUT=1 python3 -I root/fresh.py --one ../red/so/instances/post31_n48.pg | grep -q "NOFRESH3_gci_gch=1 "
+o=$(python3 -I root/mrise.py --one orlens/instances/lev_l_sc.pg); grep -q "MULT_run=7 " <<<"$o"; if grep -q "WRONG" <<<"$o"; then echo "mrise: Xi fall"; exit 1; fi
+echo "root (box 23 ALT: GATE-ONEWAY, FRESH3, TOP-ONCE dead with instances; FRESH3 holds on post31, control bites): PASS"
