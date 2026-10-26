@@ -150,3 +150,29 @@ they are concentrated in the big library games (tcL_*, pp_K48_n449).
 Lemma CHOSEN, Corollary RELAY-CHAIN with consequences (a) and (b): SIGN, on every game, inside one phase, under the standing SPEC premise
 1E-N3 (form P1) and the landed R56 (d). Lemma TV-END: SIGN, conditional on ROOT-C in the repaired form both referees signed (P-N5-FLIP-fixes;
 its RESULTS entry R69 is still at CHECKER — N-CHOSEN-5). No gap; notes N-CHOSEN-1..7. REFEREE-2 successor 17 (Opus 5.5, D15).
+
+## §C. Comparison with REFEREE (R-N5-CHOSEN, claude/referee b3473114, file sha1 a4f973d9; successor 15), written 2026-10-26 15:05Z (date -u)
+Opened on the Lead's word (14:58Z), after my report was pushed (64ee8e9c). Read in full: verdicts, §1-§6.
+- The condition on TV-END is LIFTED. RESULTS R69 landed at trunk a7c141b8 (C78 Addendum 1 PASS, checker 978791e1). Its item (c) is ROOT-C in
+  the corrected form, "every class exit path AND EXIT of every q′ ∈ Q_c (from every y ∈ succ(q′) ∩ U_c) is the same at t and t + 1 ⇒ κ_t(q) =
+  κ_{t+1}(q) for every q ∈ Q_c", SIGNED WITH GAPS G-FLIP-1, G-FLIP-2, both closed, P1 only. I read it at a7c141b8: it is word for word the
+  form TV-END (iv) applies. TV-END: SIGN, no condition left.
+| item | REFEREE | REFEREE-2 | relation |
+| --- | --- | --- | --- |
+| CHOSEN | SIGNED | SIGN | same |
+| RELAY-CHAIN, (a), (b) | SIGNED ((a) without its parenthetical) | SIGN | same; see CHOSEN-N2 |
+| TV-END | SIGNED (R69 (c) landed) | SIGN, conditional on R69 → condition now met | same |
+| identity at t is the play decomposition; R56 (d)'s "≤" half is used at t + 1 | CHOSEN-N1 | N-CHOSEN-4 | same |
+| (a)'s parenthetical "stronger, per-event form of ROOT-C's consequence" is not an implication; (a) proves ROOT-C's strong form up to TOG | CHOSEN-N2 | — (missed) | ACCEPT. Checked: a chain ending at a CYC event or a TOG step names no changed class exit path or exit, so (a) does not give ROOT-C's consequence; and (a) is exactly R69's not-signed "ROOT-C strong form" with the TOG alternative added. My data have 0 TOG-ended chains (6,322 chains), so the strong form itself held in every case I ran |
+| (b)'s count | CHOSEN-N3: TOG_c counts events, so Σρ ≤ \|Q_c\|(ROUTE_c + CYC_c) + TOG_c | N-CHOSEN-3: map ROUTE / CYC events to themselves too | compatible readings of the same one-line argument; union of the two wordings for the lane |
+| κ_Θ(c) := κ(c) = (0, 0) in TV-END (ii) | CHOSEN-N4 | used, unstated | ACCEPT (notation) |
+| "TOG never occurs" too strong; correct form "no chain ends at a TOG step" | CHOSEN-N5 | N-CHOSEN-6, first bullet | same (REFEREE 130 TOG-with-event cases, mine 241; both: none TOG-only) |
+| TV-END is not thin when (H) is tested directly | §5 (4,356 checks, 2,145 with \|Q_c\| ≥ 1) | N-CHOSEN-6, second bullet (2,955 transitions, 805 with \|Q_c\| ≥ 1) | same finding, independent |
+| e ≠ q to be stated in CHOSEN | derived in its §2 ("Also e ≠ q"), no note | N-CHOSEN-2 | REFEREE-2 only (wording note) |
+| untagged «…» in §1 | — | N-CHOSEN-1 | REFEREE-2 only (note) |
+| 0 RELAY on 𝒞^1O confirms SELF-FREE | — | N-CHOSEN-7 | REFEREE-2 only (data) |
+- Data agree: both reproduce the lane's event counts at its five start files exactly; REFEREE's library longest chain is 11 (n ≤ 24), mine
+  86 (tcL_N12, n 492, a larger library); both mutations of the CHOSEN option (σ̄_{t+1}) bite.
+- No disagreement. Joint gap map: EMPTY. Notes to the lane (union): CHOSEN-N1 = N-CHOSEN-4, CHOSEN-N2, CHOSEN-N3 + N-CHOSEN-3, CHOSEN-N4,
+  CHOSEN-N5 = N-CHOSEN-6, N-CHOSEN-1, N-CHOSEN-2, N-CHOSEN-7. N-CHOSEN-5 (premise status) is closed by R69's landing. My verdicts are
+  unchanged except that TV-END's condition is lifted. REFEREE-2 successor 17 (Opus 5.5, D15).

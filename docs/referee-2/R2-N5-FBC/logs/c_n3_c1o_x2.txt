@@ -1,0 +1,26 @@
+MODE files ../R2-N5-KW/files.lst 2 MUT - BUDGET 1
+COR_phases: 4164
+CORc_phases: 4164
+Cf_total: 414
+DEEP_UNK_C: 414
+DEEP_UNK_fallbacks: 2017
+ENGXI_checks: 17986
+FLATLAST_checks: 68
+N3_below_epoch: 347
+N3_below_r56: 347
+N3_phases: 347
+Nep_total_fbphases: 2425
+UNK_C: 414
+UNK_C_fallbacks: 2017
+f_total: 2017
+phases: 4164
+phases_with_fallback: 347
+rho_total_fbphases: 2481
+runs: 1006
+states: 17986
+visited_total_fbphases: 1359
+max_Cf_phase: (4, 'experiments/si/xing/instances/zcl_rx_n32.pg#0@3 n 32 f 13')
+max_Nep_over_Cf: (45.0, 'experiments/si/orlens/instances/lev_l_sc.pg#0@8 n 32 N_ep 45 |Cf| 1 visited 15')
+max_f_phase: (37, 'experiments/red/so/instances/rise_fb38_n48.pg#0@4 n 48 |Cf| 1 N_ep 3')
+max_rho_over_nCf: (1.40625, 'experiments/si/orlens/instances/lev_l_sc.pg#0@8 n 32 rho 45 |Cf| 1 f 1')
+RESULT OK violations=0

@@ -281,3 +281,111 @@ gap level rank 36-39 of 40, 188 lagging (z, x) pairs over the phase (z ∈ {12, 
   started from. For relays (small offsets in data: gate 6 on nep90, 0 lags), GATE-SHIFT (b) would give a freeze on their gate regions once
   their offsets are constant, but the relays' D-leaves are not where the cuts come from on nep90 alone (§7.1: they are 15 of 26 leaves).
 - Labels: PROVED (lane): GATE-SHIFT (a), (b). DATA: §8.2. READING: §8.4. OPEN: a freeze on any region that contains the root's gate region.
+
+## 9. GO (q) (Lead 14:53Z): the gate-region freeze in the W frame (Theorem FREEZE-G, Corollary RELAY-PIECE, PROVED; DATA)
+Written 2026-10-26T14:56Z (date -u). Script experiments/si/root/freezeg.py; logs root/logs/freezeg_*.txt.
+### 9.1 Setting
+Fix a phase, class c, U := U_c, an Odd u ∈ U, u ≠ c. R_u(t) := {z ∈ U : the first D_t-vertex of z's (σ_t, τ)-play is u} (u ∈ R_u(t) iff
+u ∈ D_t). E_t := A_t ∪ R_u(t). OFFSET off_t(z) := 0 for z ∈ A_t, Δ_t(u) for z ∈ R_u(t). N_t(z) := MW_t(z) (the path weight of W_t(z)) for
+z ∈ E_t; N_t = M_t on A_t (G_D (a)). G′[E]: A-vertices keep their edges into A (Even) or their τ-edge into A (Odd); R_u-vertices keep their
+edges into E (Even) or their τ-edge into E (Odd, u included); c is a sink. MoptG′[E](z) := the best wt-weight of a simple G′[E]-path from z to c.
+A G-INTERVAL for u: states [s, e] such that every transition t → t+1 (s ≤ t < e) is an in-phase S4a step, u ∈ DD_t for all t ∈ [s, e]
+(u ∈ D_t, σ̄_t(u) ∈ A_t, τ(u) ∈ A_t), A_{t+1} ⊆ A_t, R_u(t+1) ⊆ R_u(t), and Δ_t(u) = Δ is constant.
+### 9.2 Theorem FREEZE-G (PROVED, every game)
+On a G-interval [s, e] for u, with L := |E_s| − 1:
+- (a) for t ∈ [s, e], z ∈ E_t and every simple path p of G′[E_t] from z to c with ≤ t − s edges: N_t(z) ≥ wt(p ∖ {c});
+- (b) N_t(z) ≤ MoptG′[E_t](z); hence for s + L ≤ t ≤ t′ ≤ e and z ∈ E_{t′}: N_{t′}(z) = N_t(z), and M_{t′}(z) = M_t(z) (M = N − Δ on R_u, by
+  GATE-SHIFT (a));
+- (c) for every Odd q ∈ U ∖ {u, c}: over the states t ∈ [s + L, e] with σ̄_t(q) ∈ E_t, M_t(q) takes ≤ deg(q) values, non-decreasing; so ≤ deg(q) −
+  1 transitions t → t+1 in [s + L, e) with σ̄(q) ∈ E at both ends change M(q).
+Proof.
+- Facts on E_t (from GATE-SHIFT (a) and its proof): for z ∈ R_u(t), W_t(z) has cycle node c and M_t(z) = N_t(z) − Δ; z's W-play is π_z, u, then
+  τ(u)'s play in A_t, so for z ∈ R_u(t) ∖ {u}, next on the W-play is σ_t(z) (Even) or τ(z) (Odd), it lies in R_u(t), and N_t(z) = wt(z) +
+  N_t(next z) (summing wt over distinct vertices, as in §2 (ii)); N_t(u) = wt(u) + M_t(τ u). N is non-decreasing on R_u along the interval: z ∈
+  R_u(t+1) ⊆ R_u(t), W never drops at an in-phase S4a step (RESULTS R62 (d) WM-G), and both values have cycle node c. On A, N = M, non-decreasing
+  (M2κ).
+- (a) Induction on t − s; the base is N_t(c) = 0. Step t → t+1, z ∈ E_{t+1}, z ≠ c, p = z · p′, p′ from x, ≤ t − s edges; G′[E_{t+1}] ⊆ G′[E_t]
+  (both parts non-increasing; the edge rule depends only on membership), so by induction N_t(x) ≥ wt(p′ ∖ {c}).
+  - z ∈ A_{t+1}: then x ∈ A_{t+1} (G′ keeps A-edges into A), and FREEZE-A (a)'s step applies verbatim (BF-F_D for Even z; the τ-edge for Odd z).
+  - z = u: x = τ(u) ∈ A_{t+1}; N_{t+1}(u) = wt(u) + M_{t+1}(τ u) ≥ wt(u) + M_t(τ u) = wt(u) + N_t(x).
+  - z ∈ R_u(t+1) Odd, z ≠ u: z ∉ D, x = τ(z) = next(z); N_{t+1}(z) = wt(z) + N_{t+1}(x) ≥ wt(z) + N_t(x) (x ∈ E_{t+1}; N non-decreasing).
+  - z ∈ R_u(t+1) Even: z ∈ R_u(t) and σ_t(z) ∈ R_u(t), so off_t(σ_t z) = Δ ≥ off_t(x) (x ∈ E_t).
+    - Case 1, M_t(x) ≤ M_t(σ_t z): N_t(x) − off_t(x) ≤ N_t(σ_t z) − Δ, so N_t(x) ≤ N_t(σ_t z); then wt(z) + N_t(x) ≤ wt(z) + N_t(σ_t z) = N_t(z)
+      ≤ N_{t+1}(z).
+    - Case 2, (z, x) ∈ Iσ_t: σ″ := σ_t[z ↦ x] is in the arena H_t; (F1): W_{t+1}(z) ⊵ W_{σ″}(z). If x's (σ_t, τ)-play avoids z, W_{σ″}(z) = z ⊕
+      W_t(x), and as in §2 (i) (XW for the cycle node, W_{t+1}(z) has cycle node c) N_{t+1}(z) ≥ wt(z) + N_t(x). If it passes z, it is q · z ·
+      (z's play) and N_t(x) = wt(q) + N_t(z); under σ″, z's play is the cycle Z := z → x → q → z; if wt(Z) > 0 its top is even above c and
+      (F1) contradicts λ(W_{t+1} z) = c (§2 (ii)); so wt(Z) = wt(q) + wt(z) ≤ 0 and wt(z) + N_t(x) = wt(Z) + N_t(z) ≤ N_t(z) ≤ N_{t+1}(z).
+- (b) z ∈ E_t: z's W-play up to c is a simple path of G′[E_t] (R_u part: σ_t-edges and τ-edges inside R_u, then u's τ-edge into A; A part:
+  edges inside A), so N_t(z) = its weight ≤ MoptG′[E_t](z). Simple paths of G′[E_t] have ≤ L edges, so for t ≥ s + L, (a) gives equality,
+  and for s + L ≤ t ≤ t′: N_{t′}(z) = MoptG′[E_{t′}](z) ≤ MoptG′[E_t](z) = N_t(z) ≤ N_{t′}(z). M = N − off with off constant on the interval.
+- (c) Let t ∈ [s + L, e] with y := σ̄_t(q) ∈ E_t. If q ∉ D_t: q's honest and W-plays agree up to their first D_t-vertex and q ∈ E_t (its play is
+  q then y's, whose first D-vertex is u or none), so M_t(q) = M_{s+L}(q) by (b): one value, also of the form wt(q) + M_{s+L}(τ q) with τ q ∈
+  E_{s+L} (q ∉ D_{s+L}, τ q on q's play). If q ∈ D_t: q's honest play is q then y's play; y ∈ E_t, and y's honest play does not return to q (if
+  y ∈ A_t it avoids D_t ∋ q; if y ∈ R_u(t) it is π_y, u, σ̄_t(u)'s play in A_t, and π_y has no D_t-vertex), so q is not on its cycle and (Aκ)
+  gives M_t(q) = wt(q) + M_t(y) = wt(q) + M_{s+L}(y) by (b) (y ∈ E_t ⊆ E_{s+L}). Either way M_t(q) ∈ {wt(q) + M_{s+L}(y) : y ∈ succ(q) ∩
+  E_{s+L}}, ≤ deg(q) values; M(q) is non-decreasing on the phase (M2κ). □
+### 9.3 Corollary RELAY-PIECE (PROVED, every game)
+Let [s, e] be a FREEZE-A piece (§3) with L_A := |A_s| − 1, and u ∈ DD_t at every t ∈ [s, e] with R_u non-increasing. Then on [s + L_A, e] the
+offset Δ(u) takes ≤ deg(u) values (both terms are frozen A-values: M(τ u) by FREEZE-A (b), M(σ̄ u) ∈ V_u by FREEZE-A (c)), so [s + L_A, e] splits
+into ≤ deg(u) G-intervals. In each, after ≤ |E| − 1 steps, every relay q whose chosen option lies in E (in A or in u's gate region) changes its
+path weight ≤ deg(q) − 1 times. So per FREEZE-A piece, a relay q of u (chosen option in E) has ≤ L_A + deg(u)·(|U| − 1 + deg(q)) path-weight
+changes at transitions with its chosen option in E at both ends.
+- What it gives: the relays' own ROUTE events (the open item of §6) are bounded per piece, GIVEN the pieces: a relay of a D-direct gate cannot
+  re-route more than deg(q) − 1 times between consecutive changes of its gate's offset, once A and the gate region have frozen.
+- What it does not give: the number of pieces (fallbacks, A-gains, gate-region gains such as the ping-pong entries into the root, §8), and
+  relays whose chosen option lies behind a gate that is not D-direct.
+- The root: FREEZE-G applies to the root's own gate region too (u = 0 on nep90): GATE-LAG (§8) is a failure of the Ξ-step, but the W-step
+  (N) is exact and freezes; the honest values there are N − Δ(0) and move only when Δ(0) moves, i.e. at ρ events of the root.
+### 9.4 DATA (freezeg.py)
+| set | G-intervals | (a) checks (binding) | (a) failures | intervals longer than |E| − 1 |
+| --- | --- | --- | --- | --- |
+| nep90 / nep76 | 22 / 25 | 2,531 (332) / 2,386 (214) | 0 / 0 | 0 / 0 |
+| lib2o (KMIN 2), S3 + 4 | 120 | 15,878 (3,555) | 0 | 0 |
+| lib41 (KMIN 1), S3 + 4 | 729 | 95,488 (21,311) | 0 | 0 |
+- Control MUT=1 (one more edge than (a) allows): bites on lib41 (11, e.g. so_sor5_n24); does not bite on nep90, nep76, lib2o.
+- (b), (c) and RELAY-PIECE are VACUOUS in data: no G-interval outlives its freeze window. They rest on their proofs. G-intervals are short
+  because Δ(u) changes at every ρ event of u and the gate region gains at every ping-pong entry.
+### 9.5 Status, labels
+- PROVED (lane, unrefereed): FREEZE-G (a)-(c), RELAY-PIECE. DATA: §9.4 ((a) non-vacuous with a biting control on lib41; (b), (c) vacuous).
+- READING: the relays' ROUTE events are bounded per G-interval; what is unbounded is the number of intervals, i.e. the changes of the gates'
+  offsets (ρ at the gates) and the gate-region gains (ping-pong entries), together with fallbacks and A-gains. The open count is the same
+  one as in §6-§8, now stated per gate: how often a D-direct gate's offset or region can be reset inside one fallback-free run.
+
+## 10. The per-gate reset count (Lead's 15:02Z item): charges in data, one dead charge, Corollary RESET-PIECE (PROVED), what stays open
+Written 2026-10-26T15:11Z (date -u). Script experiments/si/root/resets.py; logs root/logs/resets_*.txt.
+### 10.1 DATA: the resets of a D-direct gate inside fallback-free runs, and their charges
+At an in-phase S4a transition with u ∈ DD_t, a RESET of u is: LEAVE (u ∉ DD_{t+1}), DELTA_U (Δ(u) changes with M(σ̄ u) changing, i.e. u's own
+path weight), DELTA_T (Δ(u) changes via M(τ u) only), RGAIN (R_u gains), AGAIN (A gains). Charges at the same transition: ROOT (Ξ of the class
+root r changes, u ≠ r), SELF (Ξ(u) changes), PING (an Even vertex outside R_u(t) switches into R_u(t)), FLIP (some Odd choice vertex of the class
+changes its chosen exit). ONLYSELF: no charge but SELF.
+| set | resets (root / relays) | root DELTA_U (ONLYSELF) | root RGAIN (with PING) | relay DELTA_U (with ROOT) | relay LEAVE (ONLYSELF) | R_u gains from A / from another gate's region | max resets of one gate in one run |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| nep90 phase@4 | 76 / 21 | 63 (32) | 22 (17) | 7 (7) | 10 (8) | 72 / 14 | 13 |
+| nep76 phase@9 | (86 in all) | 51 (13) | 25 (17) | 10 (10) | 13 (0) | 54 / 12 | 12 |
+| lib2o (KMIN 2), S3 + 4 | 186 / 89 | 21 (15) | 136 (136) | 7 | 33 | 275 / 1 | 18 |
+| lib41 (KMIN 2), S3 + 4 | 175 / 173 | 18 (13) | 110 (110) | 11 | 80 | 253 / 29 | 18 |
+- Relay offset resets on the long instances are all at a root ρ event (7 / 7, 10 / 10): copies, CHOSEN's mechanism.
+- Root region gains carry a ping-pong entry in every library case (136 / 136, 110 / 110) and in 17 of 22 / 17 of 25 on nep90 / nep76; the
+  rest are merges from another gate's region (with FLIP or SELF).
+- DEAD CHARGE (recorded in docs/si/DEAD.md "DEAD box 20"): "every reset of the root's offset is charged to a ping-pong entry or a FLIP event at the
+  same transition" is FALSE: nep90 phase@4 has 32 of 63 root offset resets with no charge but the root's own ρ (nep76: 13 of 51). They are the
+  Bellman-Ford cascade events of the direct region (§1, note §28.2's PATH triggers), i.e. FREEZE-A (c) events inside pieces.
+### 10.2 Corollary RESET-PIECE (PROVED, every game)
+Let [s, e] satisfy FREEZE-A's hypothesis (§3), L_A := |A_s| − 1, and u ∈ DD_t for every t ∈ [s, e]. Then inside [s, e]:
+- (i) Δ(u) changes at ≤ L_A + deg(u) − 1 transitions;
+- (ii) the transitions at which R_u gains a vertex coming from A number ≤ |A_s|;
+- (iii) the transitions at which R_u gains a vertex coming from another gate's region are NOT bounded here (OPEN; data: 14 / 12 vertices on
+  nep90 / nep76, 29 on lib41).
+Proof. (i) At most L_A transitions lie before s + L_A. For t ≥ s + L_A: τ(u), σ̄_t(u) ∈ A_t, so M_t(τ u) = M_{s+L_A}(τ u) (FREEZE-A (b)), and
+M_t(σ̄_t u) = M_t(u) − wt(u) ((Aκ); u is on no honest cycle) with M_t(u) ∈ V_u (FREEZE-A (c)) non-decreasing: Δ(u) takes ≤ deg(u) values
+there, in non-increasing order, and changes ≤ deg(u) − 1 times. (ii) A is non-increasing on [s, e], so a vertex leaves A at most once; each such
+transition is counted once. □
+- So inside a FREEZE-A piece the resets of a D-direct gate are polynomial except the cross-gate migrations (iii). Together with ROOT-PIECE
+  (pieces ≤ f + G_c + 1) the per-gate reset count per phase is ≤ (f + G_c + 1)·(2|U| + deg(u) + X_u), X_u := the cross-gate migrations into
+  R_u: a REDUCTION to f, G_c and X_u.
+### 10.3 Status, labels
+- PROVED (lane): RESET-PIECE (i), (ii). DATA: §10.1. DEAD: the PING / FLIP charge for root offset resets (nep90 phase@4, 32 of 63).
+- OPEN: G_c (A-gains: relay D-leaves and unsplit exits), X_u (cross-gate migrations into a gate region), f. The three lines the Lead named
+  (relay changes per fallback-free run, NCONF_{≥2}, R⁰_{≥2}) all reduce, through ROOT-PIECE, FREEZE-G and RESET-PIECE, to G_c and X_u per
+  fallback-free run; no bound on either is proved here.

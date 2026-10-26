@@ -1,6 +1,12 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 3 (successor 17, 2026-10-26 15:06Z by date -u)
+- §Cs written on the Lead's word (14:58Z). FBC vs REFEREE 15 (0addfc5f): identical verdicts, gap map empty; FBC-N3 (≤ 1 saturated fallback
+  per configuration, f ≤ n·|C_f|, via SAT_C (2) + R15 (b) + R38 (f) CN-LAST) CHECKED and accepted, with own data (FLATLAST 411, 0 failures;
+  n·|C_f| below R56 in all 883 phases); it supersedes N-FBC-5/6. CHOSEN vs REFEREE 15 (b3473114): identical, gap map empty; CHOSEN-N2
+  accepted (missed by me). TV-END's condition lifted: R69 (c) landed at a7c141b8 in exactly the form TV-END uses.
+
 ## Resume point 2 (successor 17, session_01P2K6kCftytexWsuJfNFtV4, Opus 5.5 under D15; 2026-10-26 14:50Z by date -u)
 - DONE: R2-N5-FBC (P-N5-FBC sha1 32d3776c @ de02d37e = l-new 1f8d6d7d): FB-RISE_C, SAT_C, Theorem FB-C, Corollaries (a)-(d) all SIGN, no gap;
   notes N-FBC-1..6. The Lead's question answered: the header's "(a)'s N_ep form and (d) weaker than landed R60 (c) EPOCH" is CONFIRMED for
