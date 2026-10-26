@@ -1542,3 +1542,4 @@
   - L-NEW: Route Δ shows no growth (5c01a8ee; tj17_n19, dch16_n44 as DATA).
   - L-COMP: Q4 alive, ETA ~01:00Z.
 - R49 draft final: both §Cs; (LV+) definition fixed to match the packet (in-scope, u* ≠ none). To CHECKER 8 as C58.
+- 00:12Z: Merged l-si 1d33a337 (P-N5-KW fixes FROZEN, c65f4c1e). R50 draft completed: fixes, REFEREE-2 §C 20fea7d7, and the §C summary; E-SEG clause gives the repaired (i). To CHECKER C59 after C58.
