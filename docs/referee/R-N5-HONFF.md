@@ -74,3 +74,34 @@ TARGET.md claim; G-N5-TIME stays OPEN.
 - HONFF-N2 (§0 / §1): LEV_odd quantifies over Odd x but paths through any vertices — as stated; note that LEV(k) ≤ LEV_odd(k) makes (a)'s
   bound min(LEV(t) + 1, LEV_odd(t), n − 1) ≥ LEV(t), so (a) contains (MON)'s "no fall" as a special case (consistent, not an error).
 - HONFF-N3 (§5): the cited line numbers are the lines where each quote begins or ends within the cited ranges; all found.
+
+## §C. Comparison with REFEREE-2 (R2-N5-HONFF, claude/referee-2 05e7663c + addendum 1306c31e, sha1 4e44f4d4… at 1306c31e), written 2026-10-26T13:19Z by date -u
+Opened only after my report was pushed (cce5ea5e) and the Lead's message of 13:18Z (Lead's stamp).
+- Independence (its addendum): REFEREE-2 saw my file NAME in a listing at its push turn and my commit SUBJECT after its push; it did not open
+  the file; its report was final before either. Its header "1 at 13:06Z" is the right count (its commit message's "0" is corrected by the
+  addendum, without rewriting history). I accept the record; it does not affect either report.
+### C.1 Verdicts, item by item
+| item | REFEREE (cce5ea5e) | REFEREE-2 (05e7663c) | |
+| --- | --- | --- | --- |
+| FB-RISE (a), (b) | SIGNED | SIGN | same |
+| Theorem HON-FF, HON-0-FF (a)-(c), REC-1-FF (a) | SIGNED | SIGN | same |
+| REC-1-FF (c), (d) | SIGNED as implications from (Στ) | SIGN as implications | same |
+| Q-A (Case A with Ω := Ξ_t) | YES: (1) non-improvement, (2) LEV bound, (3) (V1) for a single (honest) play, (4) (V2); one-player-ness only in Case B | YES: the same four items, "facts about the VALUE OF A PLAY"; no P1/P2 needed for Case A | same (identical item list) |
+| REC-0 difference f(n + 1) + 2 | re-computed | CORRECT | same |
+| "What is replaced" / HON-N3 | accurate | right | same |
+No disagreement; both: no gap.
+### C.2 Notes
+| note | REFEREE | REFEREE-2 | outcome |
+| --- | --- | --- | --- |
+| SAT0's Odd case is used without SAT0's hypothesis | HONFF-N1 (wording: cite the Odd-case argument) | stated in its §1 (b) ("does not use SAT0's hypothesis") | same substance; keep as one wording note |
+| XW listed but unused by HON-FF (XW enters P-N5-HON only in HON-FB (iv)) | — | N-HONFF-1 | REFEREE-2 only; ACCEPTED (checked: HON-FF cites HON steps 0-3, SAT0's Odd case, HON-0, REC-1; none uses XW) |
+| FB-RISE needs P1 only; P2 enters only through HON step 1 | implicit (my Q-A: Case B / (F1) not called; (MON) only) | N-HONFF-2 | REFEREE-2 only as a note; ACCEPTED |
+| data thin where it matters | my §3 (10 inside fallbacks exact, 7 phases UNK) | N-HONFF-3 (5 of 6 gaps exact, j7_n32 UNK even at 1.5·10⁸) | same |
+| control without LEV_odd fails | my §3 (10 on the inside-gap instances, 22 lib41 n ≤ 20; Odd term always binding) | N-HONFF-4 (152 lib41) | same |
+| LEV ≤ LEV_odd remark; quote line cites | HONFF-N2, N3 | — | REFEREE only (remarks) |
+### C.3 Data (both own engines, 0 violations)
+Both verify FB-RISE (a), (b) at every exactly-computed inside fallback of the packet's instances (mine 10 + 1 lib41; REFEREE-2 24 across 5 of
+6 gaps); both find j7_n32 over budget; both "+2" controls bite (mine 5, REFEREE-2 1); both "no Odd term" controls fail with the Odd term binding.
+### C.4 Joint gap map
+EMPTY. Joint notes for L-NEW 26's fixes file: N-HONFF-1 (XW unused), N-HONFF-2 (FB-RISE on P1 only), HONFF-N1 (SAT0 Odd-case citation),
+N-HONFF-3 / data (j7_n32 still UNK), HONFF-N2, N3 (remarks). Verdicts as in C.1, both (Opus 5.5, D15).
