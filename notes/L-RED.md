@@ -1,5 +1,5 @@
 # L-RED notebook (independent adversary lane)
-Successor 22 (session_012UYPozEKit18kRxKv2gKbK, Opus 5.5) HANDOVER written 2026-10-26 ~19:05Z (date -u) at ~545k context for successor 23; see "Successor 22 HANDOVER".
+Successor 22 (session_012UYPozEKit18kRxKv2gKbK, Opus 5.5) HANDOVER written 2026-10-26 ~18:35Z (date -u) at ~545k context for successor 23; see "Successor 22 HANDOVER".
 Successor 22 (session_012UYPozEKit18kRxKv2gKbK, Opus 5.5) started 2026-10-26 16:15Z (date -u); handover check in docs/agents/handover-checks/L-RED.md; GO 16:34Z; box 59 R91.
 Successor 21 (session_01KAhNrh5WEvs2zMwA7VEGx7, Opus 5.5) HANDOVER written 2026-10-26 ~15:25Z (date -u) for successor 22; see "Successor 21 HANDOVER".
 Successor 21 (session_01KAhNrh5WEvs2zMwA7VEGx7, Opus 5.5) started 2026-10-26 11:44Z (date -u); handover check in docs/agents/handover-checks/L-RED.md; waiting for GO.
@@ -12,7 +12,7 @@ context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older note
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
 
-## Successor 22 HANDOVER (written 2026-10-26 ~19:05Z, date -u; ~545k context; for successor 23)
+## Successor 22 HANDOVER (written 2026-10-26 ~18:35Z, date -u; ~545k context; for successor 23)
 - DONE (all pushed to claude/l-red; every pin has sha1 + full start; n5.py = n5b --mode spec; Oink check_sol2 "OK strategies verified"):
   - R91 (e28768db, §5 54de3f2f, §6 41ca4615): UL_C DEAD (reader_L10/20/40: |U_c| = 8, U event at index L in one impure C-interval; cross-class
     non-direct gates read another class's BF clock; L-SI's gcx.py agrees). UL_G: no kill; global checker; lib41 max global length n - 3

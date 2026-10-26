@@ -1,5 +1,5 @@
 # R94: STATIC-DEPTH's gaps (G4) ties and (G1) σ̄ changes, and EXIT_x at fixed k: no kill; data, a reduction and the obstructions
-L-RED successor 22 (Opus 5.5; D14/D15/D18; Lead 18:03Z (EXIT_x), 18:25Z ((b) ties / (G1) first, then (a))). Written 2026-10-26 ~19:0xZ
+L-RED successor 22 (Opus 5.5; D14/D15/D18; Lead 18:03Z (EXIT_x), 18:25Z ((b) ties / (G1) first, then (a))). Written 2026-10-26 ~18:3xZ
 (date -u). Labels (D18 / L40): DATA / READING / OPEN. Targets: docs/si/N5-GCILEN-box22.md §5 (l-si 14ba9204) (G1), (G4);
 docs/si/N5-EXIT-box22.md §7 (2) (l-si a5d5c0c8).
 
