@@ -1592,3 +1592,4 @@
   - L-NEW 23: NH42 and DUAL fixes, then ρ-POLY.
   - L-COMP: box 9 climbs plus n5b on the frontier instances.
 - 02:28Z: Pre-drafted docs/agents/R52-draft.md (P-N5-FX; pin 02ad3f88). It waits for L-SI 11's FX fixes file.
+- 02:30Z: Merged l-si cfadaee9 (FX fixes FROZEN, 4253d51e). R52 (FX) draft complete; to CHECKER C61.
