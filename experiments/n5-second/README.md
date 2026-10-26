@@ -93,3 +93,17 @@ Findings: (1) n5b in SPEC mode reproduces L-NEW's iteration and fallback counts 
 original reading (A5: optimum ties by (valuation, index)) counts differ only on counter_rob (2N vs 3N+1) and tc (both directions),
 regions and strategies always right: the counts depend materially on the tie-break, the correctness does not; (3) the tie-break
 moves the fallback rate on random games from 0.2% (orig) to 12% (spec) of games.
+
+## Full state-sequence diff against n5.py (gauntlet step 2 completion; Lead 2026-10-26 01:53Z; seqdiff.py)
+n5b.py (SPEC mode, unchanged since b49c9fc; written from the spec text only) against L-NEW's n5.py via n5x.trace(check=True) (n5.py's
+loop, asserted equal to n5.run): per run, the FULL sequence of (sigma on Even, tau on Odd) states, the iteration count and the fallback
+count. Starts: canonical; or a .start file (vertices it leaves out keep each implementation's OWN canonical choice); or one seeded random
+start pair. DATA (exact on the listed inputs):
+| input | runs | state sequences equal | counts equal | max iterations | fallbacks (total) | max n |
+| --- | --- | --- | --- | --- | --- | --- |
+| library: every experiments/**/*.pg with n <= 300 (out/ excluded; 8 files n > 300 and 1 unreadable skipped), .start when present (58) | 810 | 810 | 810 | 121 | 1,034 | 288 |
+| rand_check corpus (gen.py corpus 2000 20261018 --nmin 1 --nmax 120; sha1s = results/random_spec.csv), canonical start | 2,000 | 2,000 | 2,000 | 11 | 244 | 120 |
+| random C^1O (REFEREE-2 re_check.rand_game, 10,000 games, n 3-60, seed 20261026), canonical + one random start each | 20,000 | 20,000 | 20,000 | 10 | 1,416 | 60 |
+Total 22,810 runs, 0 differences, 0 timeouts, 0 errors. The first library pass had 1 difference and 1 error, both harness-side:
+dlmm_ML_L6.start is in L-SI's bare 'v:w' format (my reader parsed nothing) and fbh_drop9.start is partial (n5b needs every vertex);
+fixed in seqdiff.py's reader (not in n5b), after which both are equal. Results: results/seqdiff/{lib,corpus2k,c1o10k}.json.

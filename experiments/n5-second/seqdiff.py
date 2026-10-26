@@ -34,11 +34,13 @@ def _alarm(*_):
 
 def compare(g, start):
     st, fb = trace(g, start, check=True)                    # fb = number of fallback iterations (n5x.trace)
-    sig = tau = None
-    if start:
-        sig = [start[0].get(v, -1) for v in range(g.n)]; tau = [start[1].get(v, -1) for v in range(g.n)]
+    nb = n5b.N5(g, mode="spec"); sig = tau = None
+    if start:   # vertices the start leaves out keep n5b's OWN canonical choice (n5x.start_pair does the same with its own)
+        sig = list(nb.SG.initial_strategy_by_best_reward()); tau = list(nb.SD.initial_strategy_by_best_reward())
+        for v, w in start[0].items(): sig[v] = w
+        for v, w in start[1].items(): tau[v] = w
     L = []
-    _, _, itb, fbb = n5b.N5(g, mode="spec").run(sig, tau, trace=L)
+    _, _, itb, fbb = nb.run(sig, tau, trace=L)
     ev = lambda s, own: tuple(s[v] for v in range(g.n) if g.owner[v] == own)
     first = next((i for i, (a, b) in enumerate(zip(L, st)) if ev(a[0], 0) != ev(b[0], 0) or ev(a[1], 1) != ev(b[1], 1)), None)
     same = len(L) == len(st) and first is None
@@ -46,14 +48,19 @@ def compare(g, start):
                 counts_equal=(itb, fbb) == (len(st) - 1, fb))
 
 
-def readstart(path):
-    """'SIGMA0 v:w ...' / 'TAU0 v:w ...' lines (check_instance.py / dlm_gen.py format) -> (sigma dict, tau dict)."""
-    d = {}
+def readstart(path, g):
+    """'SIGMA0 v:w ...' / 'TAU0 v:w ...' lines (check_instance.py / dlm_gen.py format), or bare 'v:w' pairs (L-SI's
+    experiments/si/instances format; each pair goes to the strategy of v's owner) -> (sigma dict, tau dict), None if empty."""
+    d = {"SIGMA0": {}, "TAU0": {}}
     for line in open(path):
         p = line.split()
-        if p and p[0] in ("SIGMA0", "TAU0"):
-            d[p[0]] = {int(x.split(":")[0]): int(x.split(":")[1]) for x in p[1:]}
-    return d.get("SIGMA0", {}), d.get("TAU0", {})
+        if not p or p[0].startswith("%") or p[0].startswith("#"):
+            continue
+        tag = p[0] if p[0] in ("SIGMA0", "TAU0") else None
+        for x in (p[1:] if tag else p):
+            v, w = map(int, x.split(":"))
+            d[tag or ("SIGMA0" if g.owner[v] == 0 else "TAU0")][v] = w
+    return (d["SIGMA0"], d["TAU0"]) if d["SIGMA0"] or d["TAU0"] else None
 
 
 def rand_start(g, rng):
@@ -66,7 +73,7 @@ def job(item):
     signal.signal(signal.SIGALRM, _alarm); signal.alarm(timeout)
     try:
         if kind == "file":
-            g = pg.read(name); start = readstart(payload) if payload else None
+            g = pg.read(name); start = readstart(payload, g) if payload else None
             sha = hashlib.sha1(open(name, "rb").read()).hexdigest()
             rows = [dict(name=os.path.relpath(name, ROOT), start=("file" if payload else "canonical"), sha1=sha, n=g.n, **compare(g, start))]
         else:
