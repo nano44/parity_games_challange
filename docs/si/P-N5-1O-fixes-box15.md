@@ -1,6 +1,6 @@
 # P-N5-1O fixes (box 15 packet; repairs only)
-L-SI successor 10 (Opus 5.5; D15, D18, L37, L40). DRAFT prepared at the Lead's request of 01:18Z (Lead's stamp). Frozen only when its sha1
-is reported, on the Lead's go after both §Cs land. Stamp: the reporting commit (date -u).
+L-SI successor 10 (Opus 5.5; D15, D18, L37, L40). Prepared at the Lead's request of 01:18Z; frozen at the Lead's GO of 01:30Z (Lead's stamps),
+after both §Cs landed. Stamp: the commit (date -u).
 - Object: docs/si/P-N5-1O-box15.md, sha1 2cf5e67262d31712976fb882175f5080cc3dc4ec (l-si 058e5aee; pinned trunk 291c110d). FROZEN, not
   edited.
 - Repairs only. This file adds no new statement and no new proof.
@@ -8,7 +8,9 @@ is reported, on the Lead's go after both §Cs land. Stamp: the reporting commit 
   - REFEREE successor 11, docs/referee/R-N5-1O.md at referee 4298dae9 (40598100…). The same commit adds docs/referee/R-N5-START.md
     Addendum 1 (f3530690…).
   - REFEREE-2 successor 12, docs/referee-2/R2-N5-1O.md at referee-2 04c2d708 (8d48103f…).
-  - §Cs: pending.
+  - §Cs: REFEREE R-N5-1O §C at e785b8e1 (9b7a7dfc…); REFEREE-2 R2-N5-1O §C at 3312144c (44c7a78a…).
+- §Cs: identical verdicts. Joint gap map: OUT-1 = N-1O-1, one item, closed by the "≥ 0" repair. With it, every statement is signed by both
+  without a gap.
 - Verdicts. Every statement to sign is signed by both: 1O-POLY, BIT, OUT, 1O-TIME. REFEREE signs OUT WITH GAP OUT-1 (one-word repair);
   REFEREE-2 signs everything with no gap and files the same point as N-1O-1.
 
@@ -22,17 +24,20 @@ is reported, on the Lead's go after both §Cs land. Stamp: the reporting commit 
 - N-1O-2 (Theorem 1O-POLY step 5; arithmetic). With m ≤ n² and Δ, d_o ≤ n, O(m·Δ·d_o·n¹³) is O(n¹⁷). The stated "⊆ O(n¹⁸)" is true but
   loose.
 - BIT-N1 (Lemma BIT (iv); precision). S1 (iv)'s "recursion over successors in list order, first strict maximum wins" is read as memoised.
-  Memoisation gives the same outputs as SPEC's recursion, and Q3 makes the restricted graph minus v acyclic, so each vertex is computed
-  once.
-- N-1O-3 (Lemma BIT; optional, loose bound). One S1 run is O(n(n + m)) word operations, because the sets R of distinct cycle nodes are
-  disjoint. The stated O(n²(n + m)) is true but loose.
+  The memoised recursion is output-identical to SPEC's recursion by Q3 (the restricted graph minus v is acyclic), and each vertex is
+  computed once.
+- N-1O-3 (Lemma BIT; loose bound, accepted by REFEREE §C). One S1 run costs O(n(n + m)) words plus O(n²) vector bits, because the sets R
+  of distinct cycle nodes are disjoint. The stated O(n²(n + m)) is true but loose.
 - N-1O-4 (Lemma OUT step 2; the referees' check). YES, the parenthetical is general. Cite RESULTS R18 (d) Lemma S (a) (the statement)
   beside R21 (a) (the parenthetical) and P-N5-X §1 (the proof).
   - REFEREE-2 records that R21 (a) holds on every game via R18 (d) S (a). So the packet's §4 READING "S5 correct on every game" now has its
     premise checked. It stays a READING here; Lemma OUT is signed for 𝒞^1O.
-- N-1O-5 = REFEREE R-N5-START Addendum 1 (§2.1; the referees' item). The R32 / R33 chain under R34 (f) is START-FREE, checked line by line
-  by both referees. R-N5-START's depth caveat ("A line-by-line re-read of every R32 / R33 step was NOT done here") is CLOSED by that
-  Addendum. The packet's §6 honest-limits line on it is superseded.
+- N-1O-5 (REFEREE-2) and R-N5-START Addendum 1 (REFEREE) (§2.1; the referees' item). START-FREE, checked line by line:
+  - R32 and R33, by both referees (R-N5-START Addendum 1, referee 4298dae9; R2-N5-1O §3);
+  - R34 (b)-(f), by REFEREE-2 (R2-N5-1O §3 and §C).
+  - So, jointly, the R32 / R33 / R34 chain under X-SN-PHASE has been read in full.
+  - R-N5-START's depth caveat ("A line-by-line re-read of every R32 / R33 step was NOT done here") is CLOSED. The packet's §6 honest-limits
+    line on it is superseded. The record cites both: R-N5-START Addendum 1 for R32 / R33, R2-N5-1O §3 for R34 (b)-(f).
 - N-1O-6 (§1 / §4 quotes; cosmetic). All quotes are verbatim except two attributions: VJ00 (11) is quoted via P-N5-LP §0, and G-N5T-3's
   inner quotes. Quote marks only.
-- (Placeholder) §C items of either referee: pending.
+- §C items: none beyond the lines above (both §Cs: identical verdicts, one joint item).
