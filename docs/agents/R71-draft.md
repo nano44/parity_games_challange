@@ -1,9 +1,11 @@
-# Draft RESULTS R71 (Lead, 2026-10-26 15:09Z by date -u; both reports and both §Cs filled; fixes file PENDING, L-NEW successor 28) — to CHECKER C80 when the fixes file is in
+# Draft RESULTS R71 (Lead, 2026-10-26 15:09Z by date -u; both reports, both §Cs and the fixes file filled (15:24Z by date -u)) — to CHECKER C80
 
 ### R71 [refereed-only] N5 on EVERY game: in the honest frame H_C of a configuration C = σ̄|Q (every Odd vertex cut to its σ̄_C edge), an in-phase fallback from a C-state raises the level LEV_C to min(LEV_C + 1, n − 1) (Lemma FB-RISE_C); LEV_C = n − 1 at a C-state gives Ξ = B_C, and later C-states of the phase follow within 4n(n − 1) transitions with Ξ constant (Lemma SAT_C); hence in every phase the in-phase fallbacks number at most |𝒞_f(P)|·(4n² − 3n), 𝒞_f(P) the configurations at fallback sources (Theorem FB-C), so f ≤ (4n² − 3n)·min(N_ep, Π_q deg(q)), f ≤ Δ^k(4n² − 3n) on 𝒞^kO, and f ≤ (1 + m)(4n² − 3n) when |D| ≤ 1 throughout (Corollaries (a)-(d)) (2026-10-26) — a REDUCTION of f to the number of distinct configurations per phase (that number is not bounded here on general games; (a)'s N_ep form and (d) are weaker than RESULTS R60 (c) EPOCH for n ≥ 2; not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C80.md, checker PENDING)
 - Object (packet P-N5-FBC, added at l-new 1f8d6d7d, pinned trunk de02d37e, unchanged during review): docs/new/P-N5-FBC-box47.md, sha1
   32d3776cf4090fb15c1d0cb4c8b4f59276f64e21 (L-NEW successor 26, Opus 5.5). The referees' notes are collected by the lane in
-  docs/new/P-N5-FBC-fixes-box47.md (PENDING: L-NEW successor 28; FBC-N1..N4, N-FBC-1..6); repairs only, no signed statement changes.
+  docs/new/P-N5-FBC-fixes-box47.md (l-new c2691e46, sha1 1347222ccc39ea380035da050b8af2f7cc8473d6, L-NEW successor 28: R1-R6 for FBC-N1, -N2,
+  -N4, N-FBC-1..5 and REFEREE's n = 1 line; §4: FBC-N3 is not a repair but P-N5-EPC §3; 45 quotes checked by script); on trunk; repairs only,
+  no signed statement changes.
   Setting (every game): as in RESULTS R70 (N5 = SPEC S1-S5; Ξ_k the value of the honest play; phases; λ; value(r); f). Q := the Odd vertices of
   out-degree ≥ 2; a CONFIGURATION is C = σ̄|Q, k is a C-STATE if σ̄_k|Q = C; H_C := G with every Odd v cut to its one edge σ̄_C(v) (H_{τ|Q} = G_τ);
   LEV_C(k) := the largest j ≤ n − 1 with Ξ_k(x) ⪰ value(r) for every x and every simple path r of H_C with ≤ j edges from x to a cycle node of
