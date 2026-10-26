@@ -285,8 +285,8 @@ reduction, not a size bound (Lead's reading of 18:03Z). §0's DATA (QP_c 36 at n
 
 ## 14. REFEREE's OFFADD-N2 closes: OFFSET-MONO needs no honest-cycle hypothesis, so CHAIN-COUNT needs no cut but EXIT (PROVED, every game; DATA; Lead's note of 18:25Z; written 18:34Z by date -u)
 Setting and notation as P-N5-OFFMONO-box49 §0-§1 (frozen; not edited). REFEREE 15's addendum report (docs/referee/R-N5-OFFMONO-add.md, c2a97189;
-relayed by the Lead, not yet opened by me: opened before any packet cites it) conjectures this as OFFADD-N2; its OFFMONO-N4 found that
-dropping the hypothesis never bites at 4,006 cycle levels.
+opened at c2a97189, l. 40-44 and 58-60) states this as OFFADD-N2, a CONJECTURE candidate, with 0 failures in 4,006 + 1,371 checks; its
+OFFMONO-N4 found that dropping the hypothesis never bites at 4,006 cycle levels.
 - Lemma OFFSET-MONO⁺ (PROVED). OFFSET-MONO holds for every q ∈ Q ∩ U_c, q ≠ c, at every in-phase transition, with no hypothesis on honest
   cycles: off_{t+1}(q; p) ⪰ off_t(q; p) for p := par_{t+1}(q).
   Proof. If q is on no honest cycle at t: OFFSET-MONO. Let q ∈ Z_t(c) (add1 (CYC-ID)). Step 1 of OFFMONO's proof (the path π from y2 := σ̄_{t+1}(q)
