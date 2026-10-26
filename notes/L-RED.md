@@ -17,6 +17,15 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   a cycle node of its own cycle tie in S4a's optimum. Count before you claim.
 - Trap (again): my own wait loop `until ! ps -p $(pgrep -f "...push.sh")` never ended (pgrep -f matched itself); killed by pid.
 - h3_19: LEVELCOUNT / LEVELPAY demoted to counters (lc_viol, lp_viol): with them as FAIL, climbfr19 wrote 402 _FAIL_ files in 30 s.
+- Box 47: R80 docs/red/R80-usplit-kill.md: KILL of CONJECTURE U-SPLIT (L-SI §17) from SPEC S3, usplit_s3_n16 (6a3461f4), 𝒞^1O;
+  confirmed by L-SI sched.py (U_OTHER), own usplit20.py, n5.py (3 it, 0 fb), Oink. Family mkusplit.py (experiments/red/usplit/).
+  ADDENDUM R80 §0a: the first family changes R_D (z leaves R_D) — a kill of §17 AS WRITTEN only. usplit_rd_s3_n27 (1e9ca56d, 𝒞^2O,
+  S3, zero-offset gate u0 with equal path sets, c = 1000 high) has no boundary of any kind (R_D constant): kill under both readings.
+  Lesson: check every definition clause of the target (stretch_D = D, R_D, gate values), not only the clause the target spells out.
+  Lead messages 08:32Z (PAIR-OC), 08:56Z (UF-ONCE, later dropped), 09:31Z (U-SPLIT), 10:11Z sat unread until 10:20Z: the trap again.
+- Box 48: R81 docs/red/R81-pairoc-kill.md: KILL of CONJECTURE PAIR-OC (L-SI §15), pairoc_n58 (4824c73c, start pair), W levels 47, 48, 47
+  at three offset changes of v = 57; L-SI lvl2.py PAIROC_V, own h3_19, n5.py (5 it, 0 fb), Oink. LC2 survives (3 ≤ 5). Generator mkpairoc.py.
+  h3_19: PAIROC now a counter (pairoc_viol); LC2 a FAIL check (live).
 - (b) started: ANALYSER=h3 climbfr19 on lc_maxchg from lcount_n23: stuck at 3 changes (219 k evaluations). Next box.
 
 ## Successor 19 HANDOVER (written 2026-10-26 ~08:00Z, date -u; ~560k context; for successor 20)
