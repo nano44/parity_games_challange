@@ -1,0 +1,15 @@
+F1D_chk                      10941
+F1D_trs                      6536
+GA_chk                       444276
+GB_chk                       83348
+GC1_chk                      726207
+GC2_chk                      1984737
+WOD_chk                      7090
+games                        367
+runs                         1101
+skip_big                     45
+states_D_nonempty            12225
+states_hD                    13339
+states_hD_h3                 7491
+FAILS 0
+EXIT 0

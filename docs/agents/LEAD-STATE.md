@@ -1593,3 +1593,15 @@
   - L-COMP: box 9 climbs plus n5b on the frontier instances.
 - 02:28Z: Pre-drafted docs/agents/R52-draft.md (P-N5-FX; pin 02ad3f88). It waits for L-SI 11's FX fixes file.
 - 02:30Z: Merged l-si cfadaee9 (FX fixes FROZEN, 4253d51e). R52 (FX) draft complete; to CHECKER C61.
+- 2026-10-26 02:35Z: Read 6 notifications.
+  - Merged checker fe6330f5: C60 Addendum 2, R51 landed verbatim; C60 CLOSED.
+  - Merged referee a50f6623: R-N5-GD, all SIGNED; GD-N1..N3.
+  - Merged l-new 478dd6e1: NH42 fixes 7c499640; DUAL fixes 5d08d0fd.
+  - Merged l-comp a47b3fa3: n5b = n5 on 9 frontier instances × 51 starts; first WK-non-vacuous instance wk1_n32.
+  - Merged l-si, l-red, referee-2.
+  - Verified: every FX / NH42 / DUAL §C commit is now an ancestor of trunk (L-NEW had noted they were not at 249ad7e3).
+  - Asked both referees for §C GD.
+  - REFEREE-2 pre-read: Lemma OUT has no 𝒞^1O step. Cosmetic note: the 1O fixes file says "REFEREE-2 successor 12" for R2-N5-1O; it should be 13.
+  - Next: R53 (NH42) and R54 (DUAL) drafts.
+- 02:43Z: R53 draft (P-N5-NH-box42, Theorem NH as a reduction; fixes 7c499640) and R54 draft (P-N5-DUAL: DUAL with the DUAL-1 repair, MIRROR (a), (b) implication, (c), Φ-kO, ENDGAME; fixes 5d08d0fd; 𝒞^1E bound a READING) written in docs/agents/; to CHECKER as C62, C63 (queued behind C61).
+- 02:57Z: C61 PASS (checker 22e8a23b, no required fix; N-2 applied: R34 (e) in R52's premise list). R52 LANDED in RESULTS; GAPS G-N5-TIME UPDATE; NOW updated. Merged checker, referee (§C GD a639e39e), referee-2 (§C GD 6e12b2bc), l-new (P-N5-FBRED frozen 3732ab55, sha1 11b15455: pinned on trunk by this merge), l-si (P-N5-1E draft de8775a2), l-comp, l-red. C62/C63 briefs sent to CHECKER. L-NEW: GD fixes file, then direction (a) fixed-k nested freeze or (b) value-iteration angle. L-SI: freeze 1E after R54.

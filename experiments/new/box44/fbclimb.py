@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Box 44 climber (DATA): mutate a C^kO game (box43 climb.mutate) to maximise, lexicographically, (max in-phase fallbacks in one
 phase, TA violations, max rho) from fbf.py; stops and saves on any fbf.py violation of a PROVED statement (CNO_V, EXS_V, FEX_V,
-RED_V). With --obj ta: (TA violations, max rho, FMAX) (an instance against per-terminal THETA-AFTER).
+RED_V). With --obj rho: (max rho per phase, FMAX, NLATE). With --obj ta: (TA violations, max rho, FMAX) (an instance against per-terminal THETA-AFTER).
 Usage: fbclimb.py K NMAX STEPS SEED OUTDIR [--seed FILE.pg] [--obj ta]"""
 import sys, os, random
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, os.path.join(HERE, "..", "box43")); sys.path.insert(0, HERE)
@@ -16,6 +16,7 @@ def score(g):
     try: fbf.check(g, cap=4000)
     except RecursionError: return None, None
     c = dict(fbf.C)
+    if OBJ == "rho": return (c["RHOMAX"], c["FMAX"], c["NLATE"]), c
     if OBJ == "ta": return (c["TA_V"], c["RHOMAX"], c["FMAX"]), c
     return (c["FMAX"], c["TA_V"], c["RHOMAX"]), c
 
@@ -29,7 +30,7 @@ if __name__ == "__main__":
         if r is None: continue
         h, O2, _ = r; sc, c = score(h)
         if sc is None: continue
-        if any(c[v] for v in ("CNO_V", "EXS_V", "FEX_V", "RED_V")):
+        if any(c[v] for v in ("CNO_V", "EXS_V", "FEX_V", "RED_V", "REDL_V")):
             climb.save(os.path.join(OUT, f"viol_k{K}_s{SEED}.pg"), h, None, c); print("VIOLATION", t, c, flush=True); break
         if sc >= best:
             if sc > best: print(t, sc, "n", h.n, flush=True); climb.save(os.path.join(OUT, f"best_{OBJ}_k{K}_n{NMAX}_s{SEED}.pg"), h, None, c)
