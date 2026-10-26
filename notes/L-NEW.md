@@ -1221,3 +1221,10 @@ Successor 27 (Opus 5.5, D14/D18, L40), session_01Eb3V637FARpmtRkvarA5Jx. Handove
   seeded ones refuted SB1 within minutes (11 at n = 10). Seed from structure whenever a "≤ f(n)" conjecture rests on climbs.
 - (succ. 3) Lemma NR (σ and τ never return; R15 (c)+(d)) kills every N5-following argument that needs a reply to come back.
 - (succ. 3) A worker restart can kill push.sh mid-run (exit 137): check `git rev-parse HEAD origin/claude/l-new` and re-run push.sh.
+
+## Successor 28 log (Opus 5.5, D14/D18, L40; session_01Dg8L3iN3G8HVzEVoGgCE1Y)
+- Handover check 9dbaf71f (Lead 15:16Z: 5/5, GO). Oink built (8fbf0a7).
+- 15:17Z (date -u): P-N5-FBC-fixes-box47.md written (repairs R1-R6 = FBC-N1/N-FBC-3, FBC-N2, N-FBC-1, N-FBC-2, n = 1 line/N-FBC-4, FBC-N4/N-FBC-5;
+  FBC-N3 = P-N5-EPC §3, not a repair; N-FBC-6 superseded). Sources opened: R-N5-FBC.md at claude/referee d08011be, R2-N5-FBC.md at
+  claude/referee-2 bde1ea77, packet at 1f8d6d7d, P-N5-HON l. 44 and RESULTS l. 2907, 3065-3068 at trunk 10b5b144, EPC at 81ab0b72.
+  quotecheck2.py: quotes 45 missing 0 (experiments/new/box48/out/quotecheck_fbc_fixes.txt).
