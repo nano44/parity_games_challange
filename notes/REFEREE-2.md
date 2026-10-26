@@ -15,7 +15,10 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
 - §C 1O 3312144c (identical; OUT-1 = N-1O-1 accepted as closed gap; BIT-N1 accepted; C.4: R34 (b)-(e) line-by-line is mine).
 - P-N5-NH-box42 (93d19be8 @ 54ac72e6): R2-N5-NH42.md all SIGN, no gap; N-NH42-1..3. Tool R2-N5-NH42/nh42_check.py (NH_MUT=sw|run|stc|nr;
   run does not bite: no 2 consecutive Ξ-flat transitions in OTHER stretches). R-N5-NH.md / R-N5-NH42.md NOT opened before push.
-- Queue after NH42: DUAL (a51f7c30 @ df073cb5), then GD (docs/new/P-N5-GD-box43.md b898ff82 @ 3c6f6c16).
+- P-N5-DUAL (a51f7c30 @ df073cb5): R2-N5-DUAL.md all SIGN (MIRROR (b) as implication), no gap; N-DUAL-1 (wording j vs j+1), N-DUAL-2
+  (§2 table coverage), N-DUAL-3 (READING: (H-N5) holds via P-N5-1O, so O(n^17) on C^1E). Tool R2-N5-DUAL/dual_check.py (own N5 loop with
+  Odd-first flag; DU_MUT=plain|phi|endg all bite); reproduces lane's lib41 15 runs / 54 two-sided fallbacks. R-N5-DUAL.md NOT opened before push.
+- Queue after NH42 (done): DUAL (done) (a51f7c30 @ df073cb5), then GD (docs/new/P-N5-GD-box43.md b898ff82 @ 3c6f6c16).
 - Sources (via landed RESULTS, not re-opened): VJ00 BRICS RS-00-48 (sha256 485a12de…, RESULTS R15 object line), p. 16 (11) as quoted in
   P-N5-LP §0 l. 29.
 
