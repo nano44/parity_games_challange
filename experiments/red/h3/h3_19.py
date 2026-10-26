@@ -42,7 +42,7 @@ def analyse(g, start=None, cap=5000):
     n = g.n; S, FB, E = O.trace(g, start, "n5", cap)
     ev = [E.evaluate(s) for s, _ in S]; Xi = [X for X, _ in ev]; SB = [B for _, B in ev]
     r = dict(n=n, ITER=len(FB), states=0, h3_states=0, c2_checks=0, tcc_checks=0, wmg_checks=0, frz_runs=0, frz_nonvac=0,
-             frz_longest=0, frz_gap=-10 ** 9, frz_move_gap=-10 ** 9, frz_moves=0, off_stretches=0, off_changes=0, off_maxpv=0, off_returns=0, off_inrun_maxpv=0, rstick_checks=0, frz_content=0, frz_L=[], snp_checks=0, crossings=0, xsn_pre_ep=0, xsn_pre_run=0, xep_slack=-10 ** 9, fails=[])
+             frz_longest=0, frz_gap=-10 ** 9, frz_move_gap=-10 ** 9, frz_moves=0, lc_checks=0, lc_maxchg=0, lc_ratio=0.0, lc_slack=-10 ** 9, off_stretches=0, off_changes=0, off_maxpv=0, off_returns=0, off_inrun_maxpv=0, rstick_checks=0, frz_content=0, frz_L=[], snp_checks=0, crossings=0, xsn_pre_ep=0, xsn_pre_run=0, xep_slack=-10 ** 9, fails=[])
     lamX = [tuple(x[0] for x in X) for X in Xi]
     W, lamW, D, U, MD, H3 = [], [], [], [], [], []
     for k, (sig, tau) in enumerate(S):
@@ -140,8 +140,24 @@ def analyse(g, start=None, cap=5000):
                     for i in range(1, len(seq)):
                         if seq[i] != seq[i - 1]:
                             chg += 1; left.add(seq[i - 1])
-                            if seq[i] in left: r["off_returns"] += 1; r["fails"].append(f"OFFSET_RETURN v={v} states {s0}..{t} seq={seq}")
+                            if seq[i] in left: r["off_returns"] += 1   # OFFSET-ONCE is DEAD (L-SI offret_n23, Lead 07:20Z): counted, not a FAIL
                     r["off_changes"] += chg; r["off_maxpv"] = max(r["off_maxpv"], chg)
+                    # ---- CONJECTURE LEVEL-COUNT (L-SI, Lead 07:20Z): offset changes of v per stretch_D <= #distinct levels at which s^W(v)
+                    # or s^Ξ(v) rises; and (pay form) no two offset changes paid (TWIN-GAP (i): d > 0 by s^W, d < 0 by s^Ξ) at one level
+                    lvls = set(); pay = []
+                    for x in range(s0, t):
+                        dW = W[x][v][1] ^ W[x + 1][v][1]; dX = Xi[x][v][1] ^ Xi[x + 1][v][1]
+                        lw = dW.bit_length() - 1 if dW and E.weight(W[x + 1][v][1]) > E.weight(W[x][v][1]) else None
+                        lx = dX.bit_length() - 1 if dX and E.weight(Xi[x + 1][v][1]) > E.weight(Xi[x][v][1]) else None
+                        for l in (lw, lx):
+                            if l is not None: lvls.add(l)
+                        d = off(x + 1, v) - off(x, v)
+                        if d: pay.append(lw if d > 0 else lx)
+                    if chg:
+                        r["lc_checks"] += 1; r["lc_maxchg"] = max(r["lc_maxchg"], chg); r["lc_slack"] = max(r["lc_slack"], chg - len(lvls))
+                        r["lc_ratio"] = max(r["lc_ratio"], chg / n)
+                        if chg > len(lvls): r["fails"].append(f"LEVELCOUNT v={v} states {s0}..{t} chg={chg} levels={sorted(lvls)}")
+                        if None in pay or len(set(pay)) < len(pay): r["fails"].append(f"LEVELPAY v={v} states {s0}..{t} pay={pay}")
                 t += 1
             for v in range(n): runchg[v] = sum(1 for x in range(k0, k1) if off(x + 1, v) != off(x, v))
             r["off_inrun_maxpv"] = max([r["off_inrun_maxpv"]] + list(runchg.values()))
@@ -174,11 +190,11 @@ def libmain(seed, R, nmax, files):
             st = None if k == 0 else [rng.choice(g.succ[v]) for v in range(g.n)]
             r = analyse(g, st); runs += 1
             if r["frz_nonvac"]: print("NONVAC", os.path.basename(f), "S3" if st is None else json.dumps(st), r["n"], r["frz_L"], "content", r["frz_content"], "Dsizes", r.get("dmax"), flush=True)
-            for kk in ("states", "h3_states", "c2_checks", "tcc_checks", "wmg_checks", "frz_runs", "frz_nonvac", "frz_moves", "frz_content", "off_stretches", "off_changes", "off_returns", "rstick_checks", "snp_checks", "crossings"): tot[kk] = tot.get(kk, 0) + r[kk]
+            for kk in ("states", "h3_states", "c2_checks", "tcc_checks", "wmg_checks", "frz_runs", "frz_nonvac", "frz_moves", "frz_content", "off_stretches", "off_changes", "off_returns", "lc_checks", "rstick_checks", "snp_checks", "crossings"): tot[kk] = tot.get(kk, 0) + r[kk]
             for x in r["fails"]:
                 fails[x.split()[0]] = fails.get(x.split()[0], 0) + 1
                 if fails[x.split()[0]] <= 3: print("FAIL", f, x, st, flush=True)
-            for kk in ("frz_longest", "frz_gap", "frz_move_gap", "xsn_pre_ep", "xsn_pre_run", "xep_slack", "off_maxpv", "off_inrun_maxpv"):
+            for kk in ("frz_longest", "frz_gap", "frz_move_gap", "xsn_pre_ep", "xsn_pre_run", "xep_slack", "off_maxpv", "off_inrun_maxpv", "lc_maxchg", "lc_slack", "lc_ratio"):
                 if kk not in best or r[kk] > best[kk][0]: best[kk] = (r[kk], os.path.basename(f), st is None); bst[kk] = dict(file=f, start=st)
     json.dump(bst, open(os.environ.get("H3BEST", "/dev/null"), "w"))
     print("RUNS", runs, "TOT", tot, "FAILS", fails, "BEST", best, flush=True)
@@ -192,11 +208,11 @@ def randmain(seed, count, nmin, nmax, kmax):
         for o in rng.sample(range(n), rng.randint(2, kmax)): owner[o] = 1; succ[o] = sorted(set(rng.sample(range(n), rng.randint(2, max(2, n // 2)))))
         g = pg.Game(prio, owner, succ); st = None if i % 2 == 0 else [rng.choice(g.succ[v]) for v in range(n)]
         r = analyse(g, st)
-        for kk in ("states", "h3_states", "c2_checks", "tcc_checks", "wmg_checks", "frz_runs", "frz_nonvac", "frz_moves", "frz_content", "off_stretches", "off_changes", "off_returns", "rstick_checks", "snp_checks", "crossings"): tot[kk] = tot.get(kk, 0) + r[kk]
+        for kk in ("states", "h3_states", "c2_checks", "tcc_checks", "wmg_checks", "frz_runs", "frz_nonvac", "frz_moves", "frz_content", "off_stretches", "off_changes", "off_returns", "lc_checks", "rstick_checks", "snp_checks", "crossings"): tot[kk] = tot.get(kk, 0) + r[kk]
         for x in r["fails"]:
             fails[x.split()[0]] = fails.get(x.split()[0], 0) + 1
             if fails[x.split()[0]] <= 3: print("FAIL", x, json.dumps(dict(prio=prio, owner=owner, succ=succ, start=st)), flush=True)
-        for kk in ("frz_longest", "frz_gap", "frz_move_gap", "xsn_pre_ep", "xsn_pre_run", "xep_slack", "off_maxpv", "off_inrun_maxpv"):
+        for kk in ("frz_longest", "frz_gap", "frz_move_gap", "xsn_pre_ep", "xsn_pre_run", "xep_slack", "off_maxpv", "off_inrun_maxpv", "lc_maxchg", "lc_slack", "lc_ratio"):
             if kk not in best or r[kk] > best[kk]: best[kk] = r[kk]
     print("RAND", count, "TOT", tot, "FAILS", fails, "BEST", best, flush=True)
 
