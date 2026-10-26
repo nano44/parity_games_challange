@@ -17,7 +17,18 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   - Lemma DUAL's SECOND sentence (DUAL-1) is not used; only the first sentence and MIRROR (a)-(c).
   - The parameter form of 1E-POLY re-runs MIRROR (b), (c)'s per-game proofs with L := T*(n, m, Δ, d_e). The uniform form is MIRROR as signed.
   - (VJ) for ANY pointwise-optimal σ̄: Θσσ̄′ = Ωσ, so S1's tie-breaks do not matter.
-- NEXT: P-N5-1E referee items → NEW docs/si/P-N5-1E-fixes-box16.md. Optional: frontier TC-SWITCH data.
+- 03:38Z Lead: P-N5-1E pinned trunk 7fef9699 (REFEREE-2 now; REFEREE succ. 12 later). Fixes file only on the Lead's word, after both.
+- 03:38Z Lead task: 𝒞^2O, is ρ per phase polynomial? Lane note docs/si/N5-2O-box16.md (NOT frozen):
+  - PROVED (unrefereed; conditional on FBRED): PFZ-q (κ-PFZ needs only its own terminal constant), ROUTE-2, DIR, SAT-2,
+    Theorem FB-2T (N_late ≤ 12n² under (2T): ≤ 2 terminals per class), Corollary FB-2O (f ≤ 1 + (n−1)(1+12n²) on 𝒞^2O).
+  - ρ itself: OPEN; it is not needed for f.
+  - Still OPEN for 𝒞^2O polynomial: X and T per phase (R50 (h) analogue).
+  - DATA experiments/si/fb2o/ (fb2o.py arithmetic κ; climb2o.py; lib2o.txt = 43 repo games with exactly 2 Odd choice vertices).
+- Things only I know (box 16):
+  - The lemmas' κ sums are ARITHMETIC: a vertex on the path and in P(Ξ(q)) counts twice. A checker composing values by set union
+    (S1's ⊕) reports false PFZ violations (60 on fts_best24.pg).
+  - FBRED HAT-FREEZE (c)'s wording is "play avoids Q∖{c}"; DIR uses only the prefix to c, via (a) plus (SP′).
+- NEXT: P-N5-1E fixes on the Lead's word; the 𝒞^2O T-per-phase question (R50 analogue) if the Lead routes it.
 
 ## HANDOVER (successor 10, box 15; written 2026-10-26 01:05Z (date -u); session_01PBqfsNWMhTPn7yNJ8C18HP)
 Reason: context past the Lead's ~450k line. The session's remaining-token figure fell by ~575k since the start (it is not exposed directly).
