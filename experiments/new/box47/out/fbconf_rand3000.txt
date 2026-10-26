@@ -1,0 +1,2 @@
+f 553 phases_with_fb 553 runs 15000 sum_epochs 558 sum_nconf 553 sum_rho 20
+NCONF_max 1 ('rand6', 13) NS_C_max 1 ('rand503', 17) S_C_max 1 ('rand6', 13) ep_minus_nconf 1 ('rand806', 12) f_max 1 ('rand6', 13) f_per_conf_max 1.0 ('rand6', 13) rho_minus_nconf 0 ('rand201', 16)

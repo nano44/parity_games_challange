@@ -1,0 +1,2 @@
+f 39 phases_with_fb 1 runs 1 sum_epochs 11 sum_nconf 7 sum_rho 15
+NCONF_max 7 ('../../red/fbr/instances/fr39_q4_n48.pg', 48) NS_C_max 24 ('../../red/fbr/instances/fr39_q4_n48.pg', 48) S_C_max 0 ('../../red/fbr/instances/fr39_q4_n48.pg', 48) ep_minus_nconf 4 ('../../red/fbr/instances/fr39_q4_n48.pg', 48) f_max 39 ('../../red/fbr/instances/fr39_q4_n48.pg', 48) f_per_conf_max 5.57 ('../../red/fbr/instances/fr39_q4_n48.pg', 48) rho_minus_nconf 8 ('../../red/fbr/instances/fr39_q4_n48.pg', 48)
