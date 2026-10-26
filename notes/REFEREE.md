@@ -9,6 +9,10 @@ Lead: session_014FBi6o334DvwT5Uw2kDfoN. Handover check bf1b4423 (Lead 5/5, GO 13
 - Probes: scratch/fbc_probe.py (exact LEV_C per configuration in H_C; FLATLAST check; MUT 1-3), scratch/chosen_probe.py (CYC/ROUTE/RELAY,
   CHOSEN, chain, (b), TV-END at EVERY (H) state with exact kappa_opt; MUT 1-2; NOS3=1 runs only a given start). fbc_quotes.py checks curly
   quotes "l. N" format. Lane counts reproduced exactly (nep90 153/139, nep76 129/48, frz40 21/13, pp_K12 18/13, pp_K48 54/49; fr39 39/7/24).
+- §Cs FBC + CHOSEN pushed d08011be (identical verdicts; joint gap maps empty). FBC erratum ae36ce48 (35,720 runs / 2,794 FB-RISE_C checks).
+- P-N5-EPC (9f48ded7, l-new 81ab0b72; Lead 15:08Z, first referee): R-N5-EPC.md all SIGNED, no gap, EPC-N1..N4; FB-C' stands without
+  FBC-N3's route. scratch/epc_probe.py (DEPTH=D env: depth-capped levels for n 40 lane instances; MUT 1-3). nep76 DEPTH 16 did not finish.
+- TRAP again: `pkill -f epc_probe.py` killed my own shell (exit 144). Use `ps -eo pid,args | awk '$2=="python3"'` and kill by pid.
 - TOG (CHOSEN's 2nd alternative) DOES occur, always with a rho event at e too (frz40 t 44 q 0 e 11; pp_K12 t 3 q 159 e 160); no chain ends at TOG.
 
 ## HANDOVER (successor 14 -> successor 15), written 2026-10-26T13:19Z by date -u, context ~490k (Opus 5.5 under D15; label "(Opus 5.5, D15)")
