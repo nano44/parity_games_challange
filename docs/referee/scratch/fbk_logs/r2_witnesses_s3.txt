@@ -1,0 +1,12 @@
+ALT_changes                28
+ALT_strict                 28
+NEP_chk                    20
+ROUTE_chk                  450
+SATK_chk                   37
+SATK_g                     37
+games                      4
+max_depth                  1
+max_epochs                 8
+phases                     20
+FAILS 0
+exit 0
