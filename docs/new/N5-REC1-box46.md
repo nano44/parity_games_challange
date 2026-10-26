@@ -11,7 +11,7 @@ Frozen packets P-N5-REC0-box45 (sha1 343239b5…) and P-N5-STAU-box45 (sha1 7446
 | §1a | Lemma SAT0, Lemma HON-FB (a fallback at a W-honest state is flat, saturating, and the phase's last transition); Corollary HON′ (f replaced by f_in, the fallbacks at non-honest states between two honest ones); CONJECTURE HON-FF (no f at all) | PROVED; HON-FF CONJECTURE |
 | §2 | Lemma RESTRICT_u, Corollary REPRO_u (u-runs: maximal runs with D_k ⊆ {u} are runs of N5^τ on G^u ∈ 𝒞^1O); Corollary EP-1u | PROVED; EP-1u an IMPLICATION from (Στ) |
 | §3 | Theorem REC-1: per phase, the |D| = 1 states (so the epochs of every |D| = 1 configuration) are ≤ (1 + f + 4n² − 3n + X_dir + X_big)(T*_Q + 2) | IMPLICATION from (Στ), a REDUCTION to f, X_dir, X_big |
-| §4 | the permanent Ξ-level in H_C does not rise between C-epochs for |D_C| = 1 (thclimb_n12_s11); fallbacks do fire at W-honest states (b4_n5_other_0) | DEAD (instances) |
+| §4 | the permanent Ξ-level in H_C does not rise between C-epochs for |D_C| = 1 (thclimb_n12_s11); fallbacks do fire at W-honest states (b4_n5_other_0); IMM (immfail_n14), FB-WLEV (b5_o11), IMM′ (immp_cex_n11, exitr_cex_n16) | DEAD (instances) |
 | §5 | data | DATA |
 | §6 | what is open; (b) | OPEN / READING |
 - What changed against P-N5-REC0 (READING): REC-0's bound (f + 1)(n + 1) + 4n(n − 1) + 1 on N_0 had f MULTIPLIED by n, because its level lived in W
@@ -185,7 +185,7 @@ Proof.
   again h = 2 → 3, LEV 3 → 3 with no split. Obstruction: S4a takes the W-best target into the region where Odd now deviates at q = 0 (σ̄(0) = 2 ≠
   τ(0) = 4), so Ξ_{h+1} lags W_{h+1}. In both failures h + 1 is the LAST state of its phase (W drops into the next state without a fallback, so
   the next transition leaves the phase), and HON-FF holds on the game (hon2.py: 2 gaps, both rise). Refined CONJECTURE IMM′ (would imply
-  HON-FF): IMM holds whenever h + 1 is not the last state of its phase; climbs below.
+  HON-FF): IMM holds whenever h + 1 is not the last state of its phase; FALSE too, see (v).
 
 (iv) CONJECTURE FB-WLEV, "an in-phase fallback never lowers the W-level" (WLEV: W_k ⪰ value(r) for simple G_τ-paths r with ≤ j edges to cycle
   nodes of the phase's λ), 09:45Z, the W-carry route to HON-FF. FALSE: fbwlev.py, lib41 n ≤ 24, 14 of the 166 fallbacks at non-honest states
@@ -193,6 +193,21 @@ Proof.
   db4fe55a650236dfe1bc5030f0ca123c75754764), S3, fallback 7 → 8, WLEV 6 → 5. On the same run the Ξ-level itself climbs through the non-honest
   stretch (LEV 3, 4, 4, 5, 5, 6, 9 at states 5-11; gaptrace.py) and the next honest state 12 has LEV 9: HON-FF holds there, not by carrying W.
   So a proof of HON-FF cannot go through W alone; IMM′ (a rise in Ξ itself) is the remaining route.
+
+(v) CONJECTURE IMM′ (IMM whenever h + 1 is not the last state of its phase), 09:3xZ. FALSE (10:0xZ):
+  - Hand construction experiments/new/box46/instances/immp_cex_n11.pg (sha1 1dd7f5853103bb0698cd7e3cbc220a70df5d24ee) with start
+    instances/immp_cex_n11.start (sha1 18cf37667017b1f0244731e0719ac878568eb8fb). One cycle node (vertex 0, a self-loop), so λ never changes; one
+    Odd choice q = 3 with τ(3) = 4 = a, alternative y = 5. x = 1 has σ(1) = 2 → q and an improving edge to Z = 7 (priority 20). At a = 4 the
+    improving edge to E = 8 (priority 30); at y = 5 a two-step potential 5 → 6 → 10 (priority 40), of which only 6 → 10 is improving at the start,
+    so τ(3) = 4 is Odd-optimal for the whole game (Iτ = ∅, and τ never moves). State 0 is W-honest with LEV 1. S4a keeps x at 2 (W(2) now goes
+    through E), but at state 1 the honest reply at q is y (Ξ(4) rose through E, Ξ(5) did not yet), so Ξ_1(1) = (0, {1, 2, 3, 5}, 4) is below the
+    value (0, {1, 7}, 2) of the path 1 → 7 → 0: LEV 1 → 1. State 1 is not the last of its phase (τ is constant, λ is constant), and state 2 is
+    W-honest with LEV 10. The run (engine trace): states 0 (honest, LEV 1), 1 (D = {3}, LEV 1), 2 (honest, LEV 10), stop.
+  - In the library too: imm.py on lib41 n ≤ 34 finds 2 IMM′ failures, first experiments/red/so/instances/exitr_cex_n16.pg (random start, h = 2,
+    LEV 1 → 1).
+  - Obstruction: τ's value-optimality in S4b's arena constrains Odd only on τ ∪ Iτ; Iτ is read from Even's G_τ-OPTIMUM, so an edge to a vertex
+    with large latent potential (not yet realised by σ) is not in Iτ, and the honest reply may take it at once.
+  - HON-FF survives on both (one fallback-free gap each, both rise): the rise comes at the next honest state, carried by W (HON step 1).
 
 ## 5. DATA (not proof; experiments/new/box46/, run from that directory; outputs in out/)
 - hon.py (Lemma HON): HON_V = |H| > f + 4n² − 3n; WMC_V = the WM chain W_{h′} ⊵ W_{h+1} fails on a fallback-free gap between consecutive W-honest
@@ -229,6 +244,7 @@ Proof.
 | --- | --- | --- | --- | --- | --- |
 | lib41 n ≤ 20, S3 + 2 random, seed 7 | 481 | 27 | 0 / 0 | 0 | 11 / 0 |
 | random 3,000 𝒞^kO, S3 + 4 random, seed 8 | 2,556 | 45 | 4 / 1 | 0 | 15 / 0 |
+| lib41 n ≤ 34, budget 3·10⁶ (74 UNK) | 1,750 | 88 | 2 / 1 | 2 (exitr_cex_n16) | 62 / 0 |
   WIMM UNSPLIT = 0 is HON step 1's Lemma P rise of W (it needs no W-cycle-node change at h + 1); the split failures are allowed.
 - Climbs (ffclimb.py against HON-FF, immclimb.py against IMM / IMM′; box43 climb.mutate, S3 start; best games in out/climb/, not kept):
   ffclimb seeded from j10_n24 (1,500 steps, seed 51): (0, 1); from random 𝒞^2O / 𝒞^3O / 𝒞^4O (4,000 steps, seeds 54-56): (0, 0, 0), i.e. the
@@ -245,7 +261,6 @@ Proof.
   - HON-FF directly (CONJECTURE; 0 failures, but only 5 gaps with an inside fallback exist in all the data, so the support is THIN). A proof
     must show that W's lower bound, carried from h + 1, survives a fallback at a dishonest k (W does drop there, j10_n24) until the next
     honest state.
-  - IMM′ (CONJECTURE; it implies HON-FF because Ξ is monotone and the rise happens at h + 1, before any fallback): 0 failures on the samples and
-    in 4 climbs. IMM itself is FALSE (§4 (iii)), and both failures sit at the last state of a phase. So a proof of IMM′ must use that the phase
-    goes on after h + 1, i.e. that τ is value-optimal against σ_{h+1} in S4b's arena (Lemma Στ-STEP (c)). How that constrains Odd's honest
-    deviations at h + 1 is the open step. (READING: Iτ is a function of τ alone, so it is the same set at h and h + 1.)
+  - IMM′ is FALSE (§4 (v)); IMM is FALSE (§4 (iii)). The rise of Ξ is not immediate; it arrives at the next honest state.
+  - What a proof of HON-FF must handle (READING): a fallback at a non-honest k inside a gap fires only if every gated edge at k is W-flat in S4a's
+    arena; W can drop there and the W-level can drop (§4 (iv)), yet in all 5 such gaps in the data Ξ's level has risen by the next honest state.

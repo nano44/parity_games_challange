@@ -1,0 +1,1 @@
+IMMP_V 2, IMM_V_nothon_UNSPLIT 1, IMM_V_nothon_split 2, UNK 74, WIMM_V_split 62, runs 816, split_steps 88, steps 1750 FIRST [('experiments/n5-exhaustive/instances/n4all_tgbad_0.pg', True, 0, 0, 0)] MID [('experiments/red/so/instances/exitr_cex_n16.pg', True, 2, 1, 1)]

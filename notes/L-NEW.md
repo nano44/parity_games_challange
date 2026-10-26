@@ -884,6 +884,10 @@ Successor 24 (Opus 5.5, D14/D18, L40), session_01DR27cGCEhPvHHVxiYXCfaz. Handove
   133 of 453 fallback-free gaps between consecutive C-epochs (lib41, n ≤ 34). Instance experiments/si/orlens/instances/thclimb_n12_s11.pg
   (sha1 e3b47b6e…), S3 start, phase [2, 17], D = {1} throughout; C = (u → 10) at states 2 and 6, LEV_C 1 → 1. Obstruction: S4a optimises
   against τ(u) = 11, not against σ̄_C(u); inside one {u}-interval σ̄(u) moves 10 → 2 → 3 → 2 → 10. Replaced by EP-1u (u-runs on G^u).
+- (box 46, successor 25, ~10:05Z) CONJECTURE IMM′ (IMM unless h + 1 is the last state of its phase): FALSE. Hand-built
+  experiments/new/box46/instances/immp_cex_n11.pg (sha1 1dd7f585…) + .start (sha1 18cf3766…): Iτ = ∅ (τ Odd-optimal), honest reply escapes to a vertex
+  whose latent potential is not yet realised; LEV 1 → 1, phase continues. Library: exitr_cex_n16 (random start). Obstruction: Iτ is read from
+  Even's G_τ-optimum, not from σ.
 - (box 46, successor 25, ~09:45Z) CONJECTURE FB-WLEV ("a fallback never lowers the W-level", the W-carry route to HON-FF): FALSE.
   experiments/n5-exhaustive/instances/b5_o11.pg (sha1 db4fe55a…), S3, fallback 7 → 8, WLEV 6 → 5 (14 of 166 non-honest fallbacks, lib41 n ≤ 24).
 - (box 46, successor 25, ~09:30Z) CONJECTURE IMM ("Ξ-level rises at once after an S4a step from a W-honest state"): FALSE.
