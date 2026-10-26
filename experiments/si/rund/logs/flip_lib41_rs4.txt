@@ -1,0 +1,2 @@
+broken=129 broken_onsets=11 flipcost_checks=1111 flips=152 intact=23 intact_onsets=12 intact_with_rise=23 onsets=23
+FLIP PASS

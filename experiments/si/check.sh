@@ -73,6 +73,12 @@ echo "rund (U-SPLIT DEAD usplit_rd_s3_n27 y=26 z=25 off 0->0; PAIR-OC DEAD pairo
 # note §23: CONJECTURE FRZ-RHO on frz40 (21 rho-free intervals, max length 6, last change at index 5 < n - 1).
 python3 -I rund/frzrho.py --one ../red/n5inj/instances/frz40.pg ../red/n5inj/instances/frz40.start | grep -q "cuts=41 intervals=21 max_last=5 max_len=6 max_tex=2 max_xich=2 trans=49"
 echo "rund (FRZ-RHO data on frz40): PASS"
+# note §24: Lemma FLIP on frz40 (17 broken / 3 intact flip states) and L-RED's pp_K12_n161 (15 intact); reversed control fails.
+python3 -I rund/flipck.py --one ../red/n5inj/instances/frz40.pg ../red/n5inj/instances/frz40.start | grep -q "broken=17 broken_onsets=2 flipcost_checks=139 flips=20 intact=3 intact_onsets=0 intact_with_rise=3 onsets=2"
+o=$(python3 -I rund/flipck.py --one rund/instances/pp_K12_n161.pg rund/instances/pp_K12_n161.start)
+grep -q "FLIP PASS" <<<"$o"; grep -q "flips=15 intact=15 intact_onsets=11 intact_with_rise=15 onsets=11" <<<"$o"
+MUT=1 python3 -I rund/flipck.py --one rund/instances/pp_K12_n161.pg rund/instances/pp_K12_n161.start | grep -q "FLIP FAIL"
+echo "rund (FLIP on frz40 and pp_K12_n161; MUT=1 bites): PASS"
 # P-N5-RUND fixes file: every «quote» verbatim at its tagged commit and lines; the shifted-lines control (--mut) must fail.
 if git cat-file -e 62a1a01d && git cat-file -e e8d31c47 && git cat-file -e 762b7243 && git cat-file -e f1d2cf09; then
   python3 -I rund/quotecheck.py ../../docs/si/P-N5-RUND-fixes-box17.md | grep -q "QUOTES PASS"
