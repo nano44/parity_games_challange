@@ -263,7 +263,7 @@ Proof (the six steps of R22 (a) / P-N5-NH §1, re-checked in set form).
    value-changing steps. ∎
 DATA (experiments/new/box43/f1d.py): G_D (a) and F1°_D, 0 violations on the 5 box-43 instances (87 transitions) and on 2,000 random
 C^kO games (k 2-4, n 5-14; 2,487 transitions); lib41 (412 runs, 8,477 transitions): 0 violations of either.
-G_D (c2) (f1d.py, at states with (h_D) and (h3_D), L = M_D, every vertex): 0 violations at 39 instance states and 2,910 random states.
+G_D (c2) (f1d.py, at states with (h_D) and (h3_D), L = M_D, every vertex): 0 violations at 39 instance states, 2,910 random states and 6,310 lib41 states.
 
 Lemma Wo_D (PROVED, every game; L-NEW 22, 00:3xZ). Let k → k+1 have τ_{k+1} = τ_k, (h_D) at k and at k+1, and u ∈ D_k ∩ D_{k+1}.
 Then W_{k+1}(u) ⊵ W_k(u).
@@ -271,7 +271,7 @@ Proof (P-N5-RE §2 with u for o). Let b := τ(u). By (h_D) the W-play from u doe
 W-cycle node and b ∈ F_D at j = k, k+1 (b's play is the tail of u's). By G_D (a), W_j(b) = Ξ_j(b), and the honest play from b is its
 W-play, which avoids u. By (V1), W_j(u) = u ⊕ Ξ_j(b). By R15 (a), Ξ_{k+1}(b) ⊵ Ξ_k(b); both paths avoid u, so (V2) gives the claim. ∎
 [The ledger marked Wo "S (per o_i, but H2_i must be strengthened to τ(o_i) ∈ F_D)": (h_D) is that strengthening.] DATA (f1d.py):
-0 violations (13 instance + 23 random checks; lib41 below).
+0 violations (13 instance + 23 random checks; lib41: 4,421 checks, 0 violations).
 
 Conjecture Δ1 (the Lead's form; CONJECTURE, every game). Inside one phase of an N5 run, the transitions at which (D_k, R_D) changes
 number at most poly(n). Equivalently (by F1°_D), F_D-side value changes per phase are poly(n). On 𝒞^1O it reads: changes of
