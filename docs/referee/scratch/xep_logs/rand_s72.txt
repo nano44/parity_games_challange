@@ -1,0 +1,17 @@
+DEP_chk                    21933
+GDA_chk                    223085
+RSTICK_chk                 66
+SNC_chk                    21820
+SNPA_chk                   22179
+SPLITR_chk                 27409
+WM_chk                     16421
+XEP_chk                    21820
+X_ALLSPLIT                 2
+X_SN_pre                   33
+X_boundary                 102
+crossings                  137
+games                      3000
+max_XD                     3
+max_epochs                 3
+phases                     21820
+FAILS 0

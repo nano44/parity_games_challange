@@ -1,1 +1,1 @@
-dchange=11 changes=58 same_stretch=39 toW=47 toX=38 toWX=47 againstW=0 tieW=0
+TCCN_V=0 twinW=32 diffW=15 TCCLASS_V=0 gatev=0 D2=23 dchange=11 changes=58 same_stretch=39 toW=47 toX=38 toWX=47 againstW=0 tieW=0
