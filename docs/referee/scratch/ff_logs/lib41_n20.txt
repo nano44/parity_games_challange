@@ -1,0 +1,15 @@
+CTRL_fails 22
+FBR_chk 87
+FB_inside_gap 1
+FB_nonhonest 142
+GAPR_chk 293
+GEN_chk 170
+H0FF_chk 1507
+HFF_chk 1507
+MAX_HONEST 18
+PHASES 1507
+R1FF_chk 1507
+RUNS 423
+UNK_PHASES 3
+skip_big 271
+exit 0

@@ -11,7 +11,7 @@ Builds on docs/new/P-N5-HONFF-box47.md (frozen, sha1 98101d1f…, pinned at trun
 | §1 | the τ-frame split: f ≤ (n − 1) + #OB + #SAT (OB = fallbacks where the Odd term binds); the charge of OB to ρ or to epoch changes since the previous fallback FAILS (39 of 50 OB fallbacks have neither; s4c8_n13) | PROVED (split); DEAD (that charge) |
 | §2 | Lemma FB-RISE_C: at an in-phase fallback from a state of configuration C, the Ξ-level in the honest frame H_C rises: LEV_C(t + 1) ≥ min(LEV_C(t) + 1, n − 1); the Odd term never binds there | PROVED (every game) |
 | §2 | Theorem FB-C: in every phase, f ≤ |𝒞_f(P)| · (4n² − 3n), 𝒞_f(P) := the configurations σ̄|Q at the sources of P's fallbacks | PROVED (every game) |
-| §3 | corollaries: f ≤ (4n² − 3n)·min(N_ep, Π_q deg q); on 𝒞^kO f ≤ Δ^k(4n² − 3n); phases with all |D| ≤ 1: f ≤ (1 + m)(4n² − 3n) | PROVED |
+| §3 | corollaries (the N_ep form is weaker than landed R60 (c) EPOCH, f ≤ 1 + n·N_ep; see §3): f ≤ (4n² − 3n)·min(N_ep, Π_q deg q); on 𝒞^kO f ≤ Δ^k(4n² − 3n); phases with all |D| ≤ 1: f ≤ (1 + m)(4n² − 3n) | PROVED |
 | §4 | data | DATA |
 | §5 | what is open | OPEN / READING |
 
@@ -81,6 +81,12 @@ Let P be a phase.
 (d) With RESULTS R61 (f) (N_ep ≤ 1 + Σ_q (ρ_q + tie_q + nc_q + cyc_q)): f ≤ (4n² − 3n)(1 + Σ_q (ρ_q + tie_q + nc_q + cyc_q)). RESULTS R56's
     f ≤ 1 + (n − 1)(2 + ρ) has the better factor (n − 1 against 4n² − 3n) but counts ρ; (a) counts distinct configurations, which can be far
     fewer than epochs (a configuration that recurs is paid once). The two are incomparable in general.
+- CORRECTION (12:34Z by date -u, after the Lead's GO; found while collecting quotes): RESULTS R60 (c) Lemma EPOCH (landed; P-N5-ACCEL, L-NEW successor 23)
+  already gives f ≤ 1 + n·N_ep on every game, by the same mechanism inside one epoch (fallbacks relax the honest frame G_E in κ; docs/RESULTS.md
+  l. 3076-3079). So (a)'s N_ep form and (d) are WEAKER than a landed result, and §1-§2 should have cited EPOCH. What FB-C adds over EPOCH is only
+  this: the level is read in the configuration's frame over the WHOLE phase, so the count is per distinct configuration, not per epoch (a
+  configuration that recurs is paid once), at the price of the factor 4n² − 3n against n. (b) and (c) are stated in configurations and are not
+  implied by EPOCH (an epoch count can exceed the configuration count: 1,399 epochs against 257 configurations at n ≤ 34, §4).
 - READING (where this sits). Theorem FB-C turns "f per phase" into "distinct configurations per phase". For fixed k and bounded degree it is
   polynomial with no hypothesis. Its weak point is the factor Π_q deg(q): it is exponential in the number of Odd choice vertices, which is the
   N_ep / configuration question again, not a new one.
