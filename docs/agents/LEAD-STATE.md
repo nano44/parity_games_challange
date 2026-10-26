@@ -1613,3 +1613,4 @@
 - 03:30Z: P-N5-1E FROZEN (l-si adb721b5, sha1 e613db13); pinned on trunk by this merge; routed to REFEREE-2 now and to REFEREE 12 after its handover check and §C FBRED.
 - 03:35Z: C62/C63 Add. 1 PASS (9a9d19e6): R53, R54 closed. C64 (R55) FAIL E-1 (premise-class sentence over-covered R25 (C2), (C4) and R38 (a)); fixed with CHECKER's suggested text verbatim; N-2 (landing notes on R18/R21) not taken: RESULTS entries are not edited, the game-generality stays recorded in R55. REFEREE 12 handover 5/5 (61a279e7), GO sent with the 1E pin. L-NEW 916aa2b3: Lemma EPOCH (lane-PROVED): f ≤ 1 + n·N_ep; ∏deg route for N_ep dead (lap_n6_s1_110421, sigma-bar repeats in a phase).
 - 03:35Z: slip repeated: my message stamps to REFEREE-2 (03:37Z), L-SI (03:38Z), REFEREE 12 (03:41Z) were hand-typed, ~5 min ahead of date -u. From now on every message stamp comes from a date -u call in the same turn.
+- 03:45Z: C64 Add. 1 PASS (0c1969e7). R55 LANDED; GAPS UPDATE; NOW updated.
