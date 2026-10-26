@@ -1,0 +1,12 @@
+MIR_A_chk                            8
+MOFC_chk                             715
+PHIK_chk                             367
+games                                367
+max_len                              116
+plain_differs                        14
+runs                                 367
+runs_with_two_sided                  14
+skip_big                             45
+two_sided_fb                         51
+FAILS 0
+EXIT 0
