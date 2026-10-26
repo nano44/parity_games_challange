@@ -1,0 +1,3 @@
+start (0, 0) n 6
+0 (1, 1) n 6 |Q| 4 sumdeg 8 proddeg 16
+done (1, 1)

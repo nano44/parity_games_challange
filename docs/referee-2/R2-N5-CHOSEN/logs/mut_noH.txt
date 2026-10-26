@@ -1,0 +1,54 @@
+MODE files ../R2-N5-STAU/lib41_noref.lst 1 MUT noH BUDGET 300000
+CH_TOG: 76
+CH_TOG_with_event: 76
+CH_checks: 1899
+CH_source_event: 1899
+ENGXI_checks: 8882
+EV_CYC: 12
+EV_RELAY: 1899
+EV_ROUTE: 2152
+EV_x: 0
+KADD_checks: 415591
+KORD_checks: 121038
+RC_chains: 1899
+RC_end_ROUTE: 1899
+RCa_checks: 2060
+RCb_checks: 245
+VIOLATIONS: 12651
+V_TV_switch_noH: 12651
+phases: 2332
+runs: 410
+states: 8882
+RC_longest: (46, 'experiments/red/tcpert/instances/tcL_N12.pg#0@36 |Q_c| 144')
+RCb_max_rho_class_phase: (160, 'experiments/red/tcpert/instances/leanT_N32.pg#0@27 |Q_c| 64 ROUTE 5 CYC 0 TOG 0')
+VIOLATION TV_switch_noH: experiments/n5-exhaustive/canonA_0.pg#0@0 class 4 x 3
+VIOLATION TV_switch_noH: experiments/n5-exhaustive/canonA_0.pg#0@0 class 4 x 12
+VIOLATION TV_switch_noH: experiments/n5-exhaustive/canonA_0.pg#0@1 class 4 x 7
+VIOLATION TV_switch_noH: experiments/n5-exhaustive/canonA_0.pg#0@2 class 4 x 12
+VIOLATION TV_switch_noH: experiments/n5-exhaustive/canonA_1.pg#0@1 class 11 x 2
+VIOLATION TV_switch_noH: experiments/n5-exhaustive/canonA_1.pg#0@1 class 11 x 4
+VIOLATION TV_switch_noH: experiments/n5-exhaustive/canonA_1.pg#0@1 class 11 x 10
+VIOLATION TV_switch_noH: experiments/n5-exhaustive/canonA_1.pg#0@2 class 11 x 14
+VIOLATION TV_switch_noH: experiments/n5-exhaustive/canonA_1.pg#0@3 class 11 x 2
+VIOLATION TV_switch_noH: experiments/n5-exhaustive/canonA_1.pg#0@3 class 11 x 4
+VIOLATION TV_switch_noH: experiments/n5-exhaustive/instances/b4_cyc6_0.pg#0@0 class 3 x 5
+VIOLATION TV_switch_noH: experiments/n5-exhaustive/instances/b4_cyc6_1.pg#0@0 class 11 x 9
+VIOLATION TV_switch_noH: experiments/n5-exhaustive/instances/b4_cyc6_1.pg#0@0 class 11 x 10
+VIOLATION TV_switch_noH: experiments/n5-exhaustive/instances/b4_cyc6_1.pg#0@1 class 11 x 3
+VIOLATION TV_switch_noH: experiments/n5-exhaustive/instances/b4_cyc6_1.pg#0@1 class 11 x 6
+VIOLATION TV_switch_noH: experiments/n5-exhaustive/instances/b4_cyc6_1.pg#0@1 class 11 x 8
+VIOLATION TV_switch_noH: experiments/n5-exhaustive/instances/b4_cyc6_1.pg#0@2 class 11 x 9
+VIOLATION TV_switch_noH: experiments/n5-exhaustive/instances/b4_cyc6_1.pg#0@3 class 11 x 6
+VIOLATION TV_switch_noH: experiments/n5-exhaustive/instances/b4_n4all_cyc3_0.pg#0@0 class 2 x 0
+VIOLATION TV_switch_noH: experiments/n5-exhaustive/instances/b4_n5_other_0.pg#0@0 class 4 x 2
+VIOLATION TV_switch_noH: experiments/n5-exhaustive/instances/b5_n5_cyc4_0.pg#0@0 class 2 x 0
+VIOLATION TV_switch_noH: experiments/n5-exhaustive/instances/b5_n5_cyc4_0.pg#0@1 class 2 x 1
+VIOLATION TV_switch_noH: experiments/n5-exhaustive/instances/b5_o11.pg#0@0 class 4 x 3
+VIOLATION TV_switch_noH: experiments/n5-exhaustive/instances/b5_o11.pg#0@1 class 4 x 9
+VIOLATION TV_switch_noH: experiments/n5-exhaustive/instances/b5_o11.pg#0@2 class 4 x 1
+VIOLATION TV_switch_noH: experiments/n5-exhaustive/instances/b5_o11.pg#0@3 class 4 x 0
+VIOLATION TV_switch_noH: experiments/n5-exhaustive/instances/b5_o11.pg#0@4 class 4 x 8
+VIOLATION TV_switch_noH: experiments/n5-exhaustive/instances/b5_o11.pg#0@5 class 4 x 2
+VIOLATION TV_switch_noH: experiments/n5-exhaustive/instances/b5_o11.pg#0@6 class 4 x 9
+VIOLATION TV_switch_noH: experiments/n5-exhaustive/instances/b5_o11.pg#0@7 class 4 x 0
+RESULT FAIL violations=12651

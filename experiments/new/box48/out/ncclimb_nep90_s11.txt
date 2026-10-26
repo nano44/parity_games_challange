@@ -1,0 +1,7 @@
+start (10, 10) n 40
+49 (11, 11) n 43 |Q| 5 sumdeg 28 proddeg 648
+52 (12, 12) n 43 |Q| 5 sumdeg 28 proddeg 648
+327 (13, 13) n 48 |Q| 5 sumdeg 31 proddeg 3600
+1211 (14, 14) n 47 |Q| 5 sumdeg 33 proddeg 4800
+1297 (15, 15) n 48 |Q| 5 sumdeg 32 proddeg 3840
+done (15, 15)

@@ -1,0 +1,46 @@
+OK   e7db1ab4:docs/referee/R-N5-HONFF.md:24-24 | SIGNED as IMPLICATIONS from (Στ) (at R65's audit strength they hold; signed as stated)
+OK   e7db1ab4:docs/referee/R-N5-HONFF.md:25-25 | YES (§1 below)
+OK   e7db1ab4:docs/referee/R-N5-HONFF.md:27-27 | No gap. Notes HONFF-N1..N3.
+OK   11e3cfb1:docs/referee-2/R2-N5-HONFF.md:88-89 | FB-RISE (a), (b), Theorem HON-FF, Corollary HON-0-FF (a)-(c), Corollary REC-1-FF (a): SIGN
+OK   11e3cfb1:docs/referee-2/R2-N5-HONFF.md:21-21 | SIGN as IMPLICATIONS from (Στ) (which holds at R65's audit strength)
+OK   11e3cfb1:docs/referee-2/R2-N5-HONFF.md:24-24 | No gap. Notes N-HONFF-1..4 (§3).
+OK   e7db1ab4:docs/referee/R-N5-HONFF.md:57-57 | (f + 1)(n + 1) + 4n(n − 1) + 1 − (4n² − 3n) = f(n + 1) + 2 ✓ (re-computed).
+OK   11e3cfb1:docs/referee-2/R2-N5-HONFF.md:52-52 | REC-0 comparison: (f + 1)(n + 1) + 4n(n − 1) + 1 − (4n² − 3n) = f(n + 1) + 2. CORRECT.
+OK   e7db1ab4:docs/referee/R-N5-HONFF.md:39-39 | Case A (box 10 §2 l. 32-38) uses: (1) Ω(z) ⪯ Ω(ρ(x))
+OK   e7db1ab4:docs/referee/R-N5-HONFF.md:42-43 | A1's last link "⪯ Ω_{k+1}(x) by (F2)" is not part of the inequality value(r) ⪯ Ω(x) and is
+OK   e7db1ab4:docs/referee/R-N5-HONFF.md:43-43 | One-player-ness is used nowhere in Case A
+OK   11e3cfb1:docs/referee-2/R2-N5-HONFF.md:30-31 | All four are facts about the VALUE OF A PLAY of a positional strategy pair: the one-player
+OK   11e3cfb1:docs/referee-2/R2-N5-HONFF.md:32-33 | No optimality premise (P1 or P2) is needed for Case A itself.
+OK   e7db1ab4:docs/referee/R-N5-HONFF.md:89-89 | same (identical item list)
+OK   11e3cfb1:docs/referee-2/R2-N5-HONFF.md:107-107 | YES: play-value facts only, no optimality premise
+OK   e7db1ab4:docs/referee/R-N5-HONFF.md:6-6 e7db1ab4:docs/referee/R-N5-HONFF.md:86-86 e7db1ab4:docs/referee/R-N5-HONFF.md:87-87 | same
+OK   e7db1ab4:docs/referee/R-N5-HONFF.md:92-92 | No disagreement; both: no gap.
+OK   e7db1ab4:docs/referee/R-N5-HONFF.md:106-106 11e3cfb1:docs/referee-2/R2-N5-HONFF.md:115-115 | EMPTY.
+OK   11e3cfb1:docs/referee-2/R2-N5-HONFF.md:115-115 | No disagreement. Joint gap map: EMPTY.
+OK   2fca63b8:docs/new/P-N5-HONFF-box47.md:67-67 | SAT0's Odd case at h (with N-HON-1's wording) gives W_h(x) ⪰ value(r).
+OK   e7db1ab4:docs/referee/R-N5-HONFF.md:72-73 | what is used is the Odd-case step of SAT0's proof, which is per vertex and hypothesis-free
+OK   11e3cfb1:docs/referee-2/R2-N5-HONFF.md:44-44 | SAT0's Odd case does not use SAT0's hypothesis "no W-improving edge" (that is for Even ver
+OK   11e3cfb1:docs/referee-2/R2-N5-HONFF.md:108-108 | same; ACCEPT HONFF-N1's wording
+OK   2fca63b8:docs/new/P-N5-HONFF-box47.md:29-29 | Lemma SAT0's Odd case with REFEREE-2's wording N-HON-1
+OK   11e3cfb1:docs/referee-2/R2-N5-HONFF.md:109-109 | ACCEPT (note)
+OK   2fca63b8:docs/new/P-N5-HONFF-box47.md:44-44 | So LEV(k) ≤ LEV_odd(k).
+OK   e7db1ab4:docs/referee/R-N5-HONFF.md:74-75 | note that LEV(k) ≤ LEV_odd(k) makes (a)'s bound min(LEV(t) + 1, LEV_odd(t), n − 1) ≥ LEV(t
+OK   e7db1ab4:docs/referee/R-N5-HONFF.md:76-76 | the cited line numbers are the lines where each quote begins or ends within the cited rang
+OK   11e3cfb1:docs/referee-2/R2-N5-HONFF.md:23-23 | all VERBATIM (my own substring check against the six named files at l-new 0238b1cb)
+OK   2fca63b8:docs/new/P-N5-HONFF-box47.md:30-30 | RESULTS R21 (a) XW and R23 (g) WM enter only through HON step 1 (fallback-free gaps).
+OK   11e3cfb1:docs/referee-2/R2-N5-HONFF.md:61-62 | XW does NOT enter HON-FF at all (in P-N5-HON, XW is used only in HON-FB (iv), which HON-FF
+OK   11e3cfb1:docs/referee-2/R2-N5-HONFF.md:62-63 | suggest "WM (and Lemma S (c)) enter only through HON step 1; XW is not used".
+OK   e7db1ab4:docs/referee/R-N5-HONFF.md:97-97 | ACCEPTED (checked: HON-FF cites HON steps 0-3, SAT0's Odd case, HON-0, REC-1; none uses XW
+OK   11e3cfb1:docs/referee-2/R2-N5-HONFF.md:64-64 | FB-RISE (a), (b) need P1 only (through (MON)); P2 enters HON-FF only through HON step 1 on
+OK   e7db1ab4:docs/referee/R-N5-HONFF.md:98-98 | REFEREE-2 only as a note; ACCEPTED
+OK   11e3cfb1:docs/referee-2/R2-N5-HONFF.md:66-66 | Exact LEV reached 5 of the 6 known gaps with an inside fallback
+OK   11e3cfb1:docs/referee-2/R2-N5-HONFF.md:68-68 | j7_n32 stays over budget even at 1.5·10⁸ paths per phase (UNK).
+OK   e7db1ab4:docs/referee/R-N5-HONFF.md:104-104 | both find j7_n32 over budget
+OK   2fca63b8:docs/new/P-N5-HONFF-box47.md:102-102 | j10_n24, j7_n32, j8_n32, S3, budget 3·10⁷
+OK   11e3cfb1:docs/referee-2/R2-N5-HONFF.md:70-70 | Dropping the LEV_odd term ("LEV(t + 1) ≥ min(LEV(t) + 1, n − 1)") fails 152 times on lib41
+OK   e7db1ab4:docs/referee/R-N5-HONFF.md:67-67 | The control without the Odd term fails exactly where the packet says (inside fallbacks), a
+OK   11e3cfb1:docs/referee-2/R2-N5-HONFF.md:93-93 | The independence count at the push was 1, not 0
+OK   e7db1ab4:docs/referee/R-N5-HONFF.md:81-81 11e3cfb1:docs/referee-2/R2-N5-HONFF.md:6-6 11e3cfb1:docs/referee-2/R2-N5-HONFF.md:95-95 | 1 at 13:06Z
+OK   11e3cfb1:docs/referee-2/R2-N5-HONFF.md:97-98 | I did not open the file. My report text, verdicts and notes were final at the push and are
+OK   e7db1ab4:docs/referee/R-N5-HONFF.md:82-82 | I accept the record; it does not affect either report.
+quotes 45 missing 0

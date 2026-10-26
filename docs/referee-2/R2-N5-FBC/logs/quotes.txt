@@ -1,0 +1,15 @@
+FOUND docs/new/N5-ssi-global.md:56-57 | FALLBACK, if σ_new = σ and τ_new = τ: if Iσ ≠ ∅, for every Even v with an improving edge set σ_new(v) = the w 
+FOUND docs/new/N5-ssi-global.md:88-88 | In a fallback iteration with Iσ ≠ ∅ only σ changes (τ_new = τ)
+FOUND docs/RESULTS.md:631-631 | Ωσ ⊴ Ω_{Switch_I(σ)}
+FOUND docs/RESULTS.md:642-643 | at most 4n(n−1) consecutive N5 iterations leave both Ωσ and Ωτ unchanged
+FOUND docs/RESULTS.md:3076-3076 | Lemma EPOCH: for every phase and epoch E
+FOUND docs/RESULTS.md:3079-3079 | (c) f ≤ 1 + n·N_ep.
+FOUND docs/RESULTS.md:2865-2865 | f ≤ 1 + (n − 1) + (n − 1)(1 + ρ) = 1 + (n − 1)(2 + ρ).
+FOUND docs/RESULTS.md:3132-3132 | N_ep ≤ 1 + Σ_{q ∈ Q} (ρ_q + tie_q + nc_q + cyc_q)
+FOUND docs/RESULTS.md:3125-3125 | for fixed k, f = O(n^{k+1})
+FOUND docs/new/N5-phase-bound-box10.md:20-21 | (V1) if x is not its own cycle node then Ω_ρ(x) = x ⊕ Ω_ρ(ρ(x)) and the ρ-path from ρ(x) to λ(x) avoids x.
+FOUND docs/new/N5-phase-bound-box10.md:32-32 | Case A: (x, z) ∉ I_k, i.e. Ω_k(z) ⪯ Ω_k(ρ_k(x)).
+FOUND docs/new/P-N5-HONFF-box47.md:56-56 | 2. x Even and z ∉ Iσ_t(x), i.e. Ξ_t(z) ⪯ Ξ_t(σ_t(x)).
+FOUND docs/new/P-N5-HONFF-box47.md:58-58 | 3. x Even and z ∈ Iσ_t(x).
+FOUND docs/new/P-N5-HON-box46.md:77-77 | R15 (d) gives h_N − t ≤ 4n(n − 1), hence N − s ≤ 4n(n − 1) + 1.
+quotes 14 found 14 missing 0

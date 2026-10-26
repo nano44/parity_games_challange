@@ -505,3 +505,51 @@ Frozen, not to be edited: P-N5-HONFF-box47 (sha1 98101d1fe723a570f3c79085b929a45
   a corollary (successor 26 missed R60 (c) EPOCH); per-epoch counts carry the "+ 1" exit step (G-EPR-1); quotes checked by quotecheck.py (no
   curly-quoted lines inside the checked file); `scripts/push.sh > file 2>&1; echo $?`; "[p]ython3 name" in pgrep/pkill; ReadNotifications
   before acting; date -u in the same command that writes a stamp.
+
+## Successor 28 (Opus 5.5; written 2026-10-26 15:09Z by date -u)
+Predecessor: successor 27, session_01Eb3V637FARpmtRkvarA5Jx, parked at l-new 4b79f056 (FINAL resume point + Things only I know).
+
+### 1. Branch, head, ahead/behind trunk (claude/vibrant-johnson-nxvvxo)
+- Branch claude/l-new. STALE container again: local HEAD 5961101a (successor 6) while `git status` said "up to date".
+  `git fetch origin claude/l-new claude/vibrant-johnson-nxvvxo`; `git merge --ff-only origin/claude/l-new` → HEAD 4b79f056.
+- Trunk head cf372dec ("Lead: merges (FBC/CHOSEN reports, R90, NCONF structure); NOW; log", 15:00:48Z). Before merging:
+  `git rev-list --left-right --count HEAD...trunk` = **1 ahead / 42 behind**, merge-base 061e1946 (unmerged: 4b79f056 §9 + resume point).
+- `git merge --no-ff` trunk (no conflicts, no rebase) → 10080b5d: 2 ahead / 0 behind; 3 ahead after this commit.
+
+### 2. Open work and the next step of each
+Nothing running (`pgrep -fa "[p]ython3"` = only the container's CA helper). Oink was NOT built (tools/oink/build absent); `scripts/setup_oink.sh`
+run in this step: rc 0, "oink built at 8fbf0a7" (tools/oink/build has oink, verify, tc, tc+, counter_*, rngame). Frozen, re-measured by sha1sum: P-N5-EPC-box48 9f48ded742d7f44bbf82ae8ec9e0e88c46457700,
+P-N5-FBC-box47 32d3776cf4090fb15c1d0cb4c8b4f59276f64e21.
+- **(1) P-N5-FBC-fixes-box47** (repairs only). Present on trunk: docs/referee/R-N5-FBC.md (REFEREE 15, FBC-N1..N4; its §C not yet in),
+  docs/referee-2/R2-N5-FBC.md (REFEREE-2 17, N-FBC-1..6). REFEREE-2's §C bde1ea77 is on origin/claude/referee-2, not yet on trunk; read it
+  there by REV:FILE (quotecheck2.py). FBC-N3 → EPC §3 (SAT-FB1, FB-C′); N-FBC-5/6 superseded by it per that §C. Next step: wait for the Lead's
+  word that REFEREE 15's §C is in; then build the file on the P-N5-HONFF-fixes-box47 template, quotes checked by script.
+- **(2) P-N5-EPC-fixes-box48** when EPC's reports arrive (EPC next in both referees' queues). Next step: none until then.
+- **(3) Relay-change route** (OPEN, N5-NCONF §8): NCONF_{≥2}(S) ≤ (relay changes in S + 1)·deg(r) on a fallback-free run S. L-SI 16 has
+  FREEZE-G / RELAY-PIECE lane-PROVED (l-si 04894bb9, docs/si/N5-ROOT-box20.md §9); open count = resets of a D-direct gate's offset/region in a
+  fallback-free run. Next step: read L-SI's §9 and its handover, then measure gate resets per run on lib41 + L-RED pins.
+- **(4) NCONF_{≥2} structure + CONJECTURE RESTRICT_{u|J}** (N5-NCONF §9; open part (ii)-(iv) of R64 (a)). Next step: try (ii) on u-runs
+  where J is one {u}-interval, checking against fsrestrict.py's 75 stretches.
+- Not routed: G-N1-LB.
+
+### 3. docs/GAPS.md rows I own (merged HEAD 10080b5d = trunk cf372dec + 4b79f056, `grep -n L-NEW docs/GAPS.md`)
+- **G-N5-TIME** (l.11): major; "L-NEW (L-LIT T22; referees later)"; **open**. Latest landing recorded: R70 (P-N5-HONFF; CHECKER C79).
+- **G-N1-LB** (l.10): minor; "L-NEW (optional; not routed)"; **open**.
+- **G-N5-TERM** (l.16): major; "L-NEW (L-COMP checks runs)"; **closed** (RESULTS R15).
+
+### 4. Three owner rulings that most constrain me (verbatim, docs/DECISIONS.md), with DECISIONS-INDEX status
+1. D18 (DECISIONS l.333; INDEX l.32 **active**; Lead reading L40, l.33 active):
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+2. D14 (l.245-246; INDEX l.22 **active**; Lead reading L35, l.23 active):
+   > D
+   > You know it can also test prveiously not tested approaches, it can come up with it own as well
+3. D16 (l.300; INDEX l.28 **active**; Lead reading L38, l.29 active):
+   > Then keep working as I told you to
+
+### 5. One trap, and the check that prevents it
+- **Trap**: the stale container, every restart (again here: local 5961101a, while `git status` reported "up to date with origin" because the
+  remote-tracking ref was stale too). Acting on it would mean editing a notebook 3,000+ commits old and missing EPC/FBC and R66-R70.
+- **Check**: fetch both branches explicitly, `git merge --ff-only origin/claude/l-new`, `git rev-list --left-right --count` against trunk,
+  merge trunk with --no-ff before reading anything as truth; re-measure frozen packets by sha1sum. Carried: referee files read at the commit
+  holding their §C (REV:FILE) when trunk lags; per-epoch counts carry "+ 1" (G-EPR-1); `scripts/push.sh > file 2>&1; echo $?`;
+  "[p]ython3 name" in pgrep/pkill; ReadNotifications before acting; date -u in the same command that writes a stamp.

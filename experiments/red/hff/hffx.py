@@ -23,6 +23,28 @@ def minviol(E, g, tau, lam, Xi, x, cap):
     """min |r| over simple G_tau paths r from x to a cycle node u of lam with value(r) > Xi[x]; cap+1 if none with |r| <= cap."""
     best = [cap + 1]; kx = E.key(Xi[x]); cyc = {v for v in range(g.n) if lam[v] == v}
     succ = [g.succ[v] if g.owner[v] == 0 else [tau[v]] for v in range(g.n)]
+    # targets: cycle nodes u whose best possible value could beat Xi[x]: rew(u) > rew(c) beats outright (shortest path decides);
+    # u = c needs the path-set / length comparison (DFS); rew(u) < rew(c) can never beat.
+    c = Xi[x][0]; INF = 10 ** 9
+    def bfs_to(T):
+        pred = [[] for _ in range(g.n)]
+        for v in range(g.n):
+            for w in set(succ[v]): pred[w].append(v)
+        d = [INF] * g.n; fr = list(T)
+        for t in T: d[t] = 0
+        while fr:
+            nf = []
+            for w in fr:
+                for v in pred[w]:
+                    if d[v] == INF: d[v] = d[w] + 1; nf.append(v)
+            fr = nf
+        return d
+    better = [u for u in cyc if E.rew[u] > E.rew[c]]
+    if better:
+        db = bfs_to(better)
+        if db[x] < best[0]: best[0] = db[x]          # a shortest path is simple and its value beats Xi[x] (cycle node first)
+    dc = bfs_to([c]) if c in cyc else [INF] * g.n
+    cyc = {c} if c in cyc else set()
     path = [x]; onp = {x}
     def val_key(u):
         mask = 0
@@ -33,7 +55,7 @@ def minviol(E, g, tau, lam, Xi, x, cap):
         C["dfs"] += 1
         if C["dfs_budget"] and C["dfs"] > C["dfs_budget"]: raise TimeoutError
         L = len(path) - 1
-        if L >= best[0]: return
+        if L + dc[v] >= best[0]: return
         if v in cyc and val_key(v) > kx: best[0] = L; return
         if L + 1 >= best[0]: return
         for w in set(succ[v]):

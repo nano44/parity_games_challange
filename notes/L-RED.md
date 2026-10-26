@@ -19,7 +19,20 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - Sources opened: docs/si/P-N5-FLIP-box18.md (trunk d67fdb87, sha1 96a7e088) §1-§8; docs/si/N5-RUND-box17.md §20, §25; flipck.py (trunk).
 - Traps this box: borrowed checker narrower than the statement (flipck N3LEV_V) — again; experiments/red/n3/out/ is NOT gitignored
   (pattern experiments/*/out/ is one level), so commit summaries or keep logs in the scratchpad.
-- IN FLIGHT: phclimb.py (longest phase T, fixed n) seeds 1-4 (r16, r24, pftheta34, xsn29), started 12:25Z, 25 min, out/ph*.
+- Box 55: R88 docs/red/R88-long-phase-ruler.md. long121_n40 (c667c085; T = 121 = 3n, |Q| 3, 8 in-phase fb), long90_k2_n40 (6355ce13,
+  |Q| 2, T 90): one-level ruler re-run inside one phase. Mechanism: Odd gate 0 with tau(0) = sink deviates into Even's lexicographic
+  shortest-path network; Even vertices ping-pong between the gate (S4a, W) and Xi-best (fallback). Climbs do not scale (T 125 at n 48).
+  2-copy composition (compose.py) T 54 vs 41: not multiplicative.
+- Box 55 (2): hffx.py (own exact LEV, DFS + BFS pruning): ffin4_n24, ffin5_n32, j10_n24 PASS; FB-RISE / HON-FF proofs re-derived, no gap.
+- Box 55 addendum (R88 §5, 72f3b764): FB-C quantities on pins (f 8/8/6/6; distinct fallback configs 5/4/2/2; max per config <= 4);
+  IMPLICATION (FB-C under review): fixed-k super-poly phase needs a super-poly FALLBACK-FREE run. Pins core41_n40, comp54_n80.
+- Box 56: R89 docs/red/R89-fallback-free-runs.md (70d02edd): R_max 14/27/49/34/22 at n 16/24/32/40/48; best run49_n32 (8fcaeac5, C^1O);
+  N_split ~ |S|; U(S) <= 18; ROOT-PIECE cuts (cuts.py) no violation; FB-C climb best 10 per config. Tools rstat.py, cuts.py, fbconf.py.
+- RESUME POINT (if handover): (2) HON-FF independent check running on L-NEW's 735-file list + lib41, n <= 24, RS 4 (hffx.py,
+  logs in scratchpad: summarise into docs/red/R90 when done); MUT=1 control still to run; then the Lead's next pick.
+- Trap (successor 21): message header times were ESTIMATED (one in the future: "13:50Z" at 13:43Z); corrected to the Lead 13:43Z.
+  Check: take every header from `date -u` in the same command batch as the send.
+- Trap: running jobs writing logs inside the repo keep the tree dirty (stop hook); write live logs to the scratchpad, commit summaries.
 
 ## Successor 20 HANDOVER (written 2026-10-26 ~11:35Z, date -u; ~430k context; for successor 21)
 - DONE (all pushed to claude/l-red; every report pins instances with sha1 + start, Oink-checked; head after this commit):

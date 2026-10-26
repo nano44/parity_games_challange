@@ -24,7 +24,32 @@ def fit(g, st, kmax):
         j = i
         while j + 1 < len(rows) and keys[j + 1] == keys[i]: j += 1
         f = sum(rows[k]["fb"] for k in range(i, j))
-        best = max(best, (f, j - i) if FIT == "F" else (j - i, f)); i = j + 1
+        if FIT == "E":
+            Q = [v for v in range(g.n) if g.owner[v] == 1 and len(set(g.succ[v])) >= 2]
+            tau = rows[i]["tau"]; cf = [tuple(rows[k]["nxt"][q] for q in Q) for k in range(i, j + 1)]
+            starts = [i] + [k for k in range(i + 1, j + 1) if cf[k - i] != cf[k - i - 1]]
+            byC = {}
+            for s_ in starts: byC.setdefault(cf[s_ - i], []).append(s_)
+            fbs = [k for k in range(i, j) if rows[k]["fb"]]; ff2 = 0
+            for C, ss in byC.items():
+                if sum(1 for q, c in zip(Q, C) if c != tau[q]) < 2: continue
+                for a, b in zip(ss, ss[1:]):
+                    if not any(a <= t < b for t in fbs): ff2 += 1
+            best = max(best, (ff2, len(starts)))
+        elif FIT == "R":
+            c = r = 0
+            for k in range(i, j):
+                if rows[k]["fb"]: c = 0
+                else: c += 1; r = max(r, c)
+            best = max(best, (r, j - i))
+        elif FIT == "C":
+            from collections import Counter
+            Q = [v for v in range(g.n) if g.owner[v] == 1 and len(set(g.succ[v])) >= 2]
+            cf = Counter(tuple(rows[k]["nxt"][q] for q in Q) for k in range(i, j) if rows[k]["fb"])
+            best = max(best, (max(cf.values(), default=0), f))
+        else:
+            best = max(best, (f, j - i) if FIT == "F" else (j - i, f))
+        i = j + 1
     return (best[0], best[1], len(rows))
 
 def save(g, st, p):

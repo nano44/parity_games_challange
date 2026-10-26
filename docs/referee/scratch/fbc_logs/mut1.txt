@@ -1,0 +1,67 @@
+CORA_chk 5187
+CORC_chk 3271
+F 292
+FBC_FAIL 79
+FBC_chk 292
+FB_SAT 104
+FB_XI_FLAT 98
+MAX_CF 3
+MAX_F_PHASE 12
+MAX_RHO_FBPH 20
+MAX_SAT_C 1
+MAX_UNS_C 12
+MONO_chk 227
+ODDC_chk 1103
+PHASES 5187
+PH_FB 168
+REAL_chk 7859
+RUNS 1413
+SATB_chk 290
+SATW_chk 189
+SAT_RETURN 98
+SUM_CF 172
+SUM_CONF_FB 227
+SUM_EP_FB 259
+THM_chk 227
+skip_big 669
+EX ('FBC', '../../../experiments/alg/instances/h4_def5_stable_n20.pg/2', 4, (1, 3, 12, 15, 1, 14, 10), 3, 3)
+EX ('FBC', '../../../experiments/n5-epoch/instances/lend9_n8.pg/1', 3, (2, 1), 0, 0)
+EX ('FBC', '../../../experiments/n5-epoch/instances/lend9_n8.pg/1', 5, (2, 1), 0, 0)
+EX ('FBC', '../../../experiments/n5-epoch/results/honclimb/ff_n16.pg/2', 4, (2, 0), 0, 0)
+EX ('FBC', '../../../experiments/n5-epoch/results/honclimb/ff_n16.pg/2', 5, (2, 0), 0, 0)
+EX ('FBC', '../../../experiments/n5-epoch/results/honclimb/ff_n16.pg/2', 6, (2, 0), 0, 0)
+EX ('FBC', '../../../experiments/n5-epoch/results/honclimb/ff_n16.pg/2', 7, (2, 0), 0, 0)
+EX ('FBC', '../../../experiments/n5-epoch/results/honclimb/ff_n16.pg/2', 8, (2, 0), 0, 0)
+EX ('FBC', '../../../experiments/n5-epoch/results/honclimb/ff_n16.pg/2', 9, (2, 0), 0, 0)
+EX ('FBC', '../../../experiments/n5-epoch/results/honclimb/ff_n16.pg/2', 10, (2, 0), 0, 0)
+EX ('FBC', '../../../experiments/new/box21/instances/fts_best16.pg/0', 8, (9,), 1, 1)
+EX ('FBC', '../../../experiments/new/box21/instances/fts_best16.pg/0', 15, (9,), 1, 1)
+EX ('FBC', '../../../experiments/new/box21/instances/fts_best16.pg/2', 7, (9,), 1, 1)
+EX ('FBC', '../../../experiments/new/box21/instances/fts_best16.pg/2', 14, (9,), 1, 1)
+EX ('FBC', '../../../experiments/new/box21/instances/oneodd_c16.pg/0', 27, (10,), 1, 1)
+EX ('FBC', '../../../experiments/new/box21/instances/oneodd_c16.pg/1', 5, (10,), 1, 1)
+EX ('FBC', '../../../experiments/new/box21/instances/oneodd_c16.pg/2', 7, (10,), 1, 1)
+EX ('FBC', '../../../experiments/new/box22/instances/i1h_fts_best16.pg/0', 4, (6,), 1, 1)
+EX ('FBC', '../../../experiments/new/box22/instances/i1h_fts_best16.pg/0', 5, (6,), 1, 1)
+EX ('FBC', '../../../experiments/new/box22/instances/i1h_fts_best16.pg/1', 1, (6,), 1, 1)
+EX ('FBC', '../../../experiments/new/box22/instances/i1h_fts_best16.pg/1', 2, (6,), 1, 1)
+EX ('FBC', '../../../experiments/new/box22/instances/i3hn.pg/2', 3, (3,), 1, 1)
+EX ('FBC', '../../../experiments/new/box25/instances/rtt16.pg/0', 11, (7,), 0, 0)
+EX ('FBC', '../../../experiments/new/box25/thetare_min.pg/0', 3, (8,), 1, 1)
+EX ('FBC', '../../../experiments/new/box25/thetare_n.pg/0', 3, (6,), 1, 1)
+EX ('FBC', '../../../experiments/new/box25/thetare_n.pg/1', 4, (6,), 1, 1)
+EX ('FBC', '../../../experiments/new/box40/out/nhc_fbrestart_cex_n12_11.pg/0', 1, (7,), 1, 1)
+EX ('FBC', '../../../experiments/new/box44/instances/rtf_cex.pg/0', 1, (7, 9), 2, 2)
+EX ('FBC', '../../../experiments/new/box44/instances/rtf_cex.pg/0', 2, (7, 9), 2, 2)
+EX ('FBC', '../../../experiments/new/box44/instances/rtf_cex_inj.pg/0', 1, (7, 9), 2, 2)
+EX ('FBC', '../../../experiments/new/box44/instances/rtf_cex_inj.pg/0', 2, (7, 9), 2, 2)
+EX ('FBC', '../../../experiments/new/instances/n5adv/best_n16_seed16.pg/0', 4, (7, 15, 15, 10, 4, 10, 15, 0, 9, 4), 5, 5)
+EX ('FBC', '../../../experiments/new/instances/n5adv/best_n16_seed16.pg/0', 6, (7, 15, 15, 10, 4, 10, 15, 0, 9, 4), 5, 5)
+EX ('FBC', '../../../experiments/new/instances/n5adv/best_n16_seed16.pg/0', 8, (7, 15, 15, 10, 4, 10, 15, 0, 9, 4), 5, 5)
+EX ('FBC', '../../../experiments/new/instances/n5adv/best_n16_seed16.pg/0', 9, (7, 15, 15, 10, 4, 10, 15, 0, 9, 4), 5, 5)
+EX ('FBC', '../../../experiments/new/instances/n5lock/lock_n12_seed212.pg/0', 6, (3, 4, 5, 6, 2, 3), 1, 1)
+EX ('FBC', '../../../experiments/new/instances/n5lock/lock_n12_seed212.pg/0', 7, (3, 4, 5, 6, 2, 3), 1, 1)
+EX ('FBC', '../../../experiments/new/instances/seg10/seg_r16_s161.pg/0', 10, (1, 5, 15, 12, 13, 14, 5, 5), 3, 3)
+EX ('FBC', '../../../experiments/new/instances/seg10/seg_r16_s162.pg/0', 8, (2, 8, 5, 10, 3, 6, 1, 2), 8, 8)
+EX ('FBC', '../../../experiments/new/instances/seg10/seg_r16_s168.pg/0', 11, (2, 15, 4, 7, 14, 9, 2), 6, 6)
+EXIT 0

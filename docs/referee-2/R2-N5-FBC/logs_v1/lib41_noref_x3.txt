@@ -1,0 +1,34 @@
+MODE files ../R2-N5-STAU/lib41_noref.lst 3 MUT - BUDGET 3000000
+COR_phases: 7208
+CORc_phases: 3954
+C_checked: 138
+C_states: 1710
+Cf_total: 305
+ENGXI_checks: 19383
+FBC_fallbacks: 387
+FBC_rise_needed: 346
+FBC_sat: 41
+FBC_target_not_C: 5
+FBC_unsat: 346
+Nep_total_fbphases: 1934
+QAC_checks: 11018221
+SATC_eq_checks: 154
+SATC_window_checks: 111
+UNK_C: 167
+UNK_C_fallbacks: 703
+XIB_checks: 1710
+f_total: 1090
+phases: 7208
+phases_with_fallback: 253
+rho_total_fbphases: 2148
+runs: 1230
+states: 19383
+visited_total_fbphases: 1100
+max_Cf_phase: (4, 'experiments/red/n5inj/instances/elimn_cex_n48.pg#0@2 n 48 f 7')
+max_Nep_over_Cf: (45.0, 'experiments/si/orlens/instances/lev_l_sc.pg#0@8 n 32 N_ep 45 |Cf| 1 visited 15')
+max_f_phase: (33, 'experiments/si/xing/instances/ccl_w48_n48.pg#0@3 n 48 |Cf| 1 N_ep 1')
+max_rho_over_nCf: (1.40625, 'experiments/si/orlens/instances/lev_l_sc.pg#0@8 n 32 rho 45 |Cf| 1 f 1')
+max_sat_per_C: (1, 'experiments/n5-exhaustive/instances/b4_n5_other_0.pg#0@0 n 5')
+max_sat_window: (2, 'experiments/red/so/instances/tog6b_n32.pg#0@6 n 32')
+max_unsat_per_C: (23, 'experiments/si/xing/instances/ccl_fb2_n32.pg#0@3 n 32')
+RESULT OK violations=0

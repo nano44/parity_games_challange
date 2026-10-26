@@ -1,0 +1,5 @@
+START fit (56, 57) n 32
+BEST step 49 fit (58, 59) t 5s
+BEST step 12382 fit (59, 60) t 1359s
+BEST step 12829 fit (59, 61) t 1405s
+END steps 18082 best (59, 61) n 32 -> results/scale/dbl_nep_n32_b1920.pg

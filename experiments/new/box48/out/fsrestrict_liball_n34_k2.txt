@@ -1,0 +1,1 @@
+covered_by_R68_urun 362 frozen_side 75 frozen_side_epochs 244 max_Dminus 9 max_fs_epochs 35 stretch_epochs 2951 stretches 437

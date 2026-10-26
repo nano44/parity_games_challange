@@ -1,0 +1,2 @@
+UNK_phases 1 runs 1 sum_R0 0 sum_REV 0
+R0_max 0 ('../../n5-epoch/instances/nep76_n40.pg', 40) REV_max 0 ('../../n5-epoch/instances/nep76_n40.pg', 40) REV_minus_R0_max 0 ('../../n5-epoch/instances/nep76_n40.pg', 40)

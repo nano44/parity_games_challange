@@ -1,0 +1,2 @@
+EPD_NE_EPQ 11 RET_NOFB 3 phases 42777 phases_with_return 3 runs 15000 sum_L 4705 sum_epq 43301 sum_nconf 43298
+EPQ_max 4 ('rand1290', 24, 4) L_max 4 ('rand1304', 23, 3) NCF_max 1 ('rand50', 12, 3) NCONF_max 4 ('rand1290', 24, 4) NCONF_over_n_max 0.333 ('rand276', 6, 4) ND_max 3 ('rand315', 16, 4) RET_NOFB_max 1 ('rand2122', 13, 3) REV_max 1 ('rand2122', 13, 3) VIS_max 2 ('rand2122', 13, 3) f_max 1 ('rand50', 12, 3)

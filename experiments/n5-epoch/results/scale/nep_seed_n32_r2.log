@@ -1,0 +1,8 @@
+START fit (56, 57) n 32
+BEST step 2224 fit (57, 58) t 216s
+BEST step 2926 fit (59, 60) t 280s
+BEST step 3167 fit (60, 61) t 301s
+BEST step 3628 fit (61, 62) t 341s
+BEST step 4296 fit (62, 63) t 404s
+BEST step 4963 fit (63, 64) t 472s
+END steps 5039 best (63, 64) n 32 -> results/scale/nep_seed_n32_r2.pg
