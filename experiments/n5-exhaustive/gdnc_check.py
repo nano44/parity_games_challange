@@ -89,7 +89,7 @@ def check_state(g, E, S, c, bad, name):
     c["states_D_ge2"] += len(S["D"]) >= 2
     hD = all(not ((set(lasso(f, u)[0][1:] + lasso(f, u)[1]) - {u}) & S["D"]) and not on_own_cycle(f, u)
              for u in S["D"] for f in (S["Hf"], S["Wf"]))     # (h_D): no revisit of D after leaving u
-    c["states_NC_not_hD"] += S["NC"] and not hD
+    c["states_NC_not_hD"] += S["NC"] and not hD; S["hD"] = hD
     if MUT:
         check_bprime(g, E, S, c, bad, name, tag="MUT")
     if not S["NC"]:
@@ -138,6 +138,8 @@ def check_run(g, s, t, c, mx, bad, name):
         if len(Sx) > n - 1:
             mD = max(A[x]["MD"] for x in Sx)
             tail = Sx[n - 2:]
+            nh = sum(1 for x in Sx if not A[x]["hD"]); c["FRZ_checked_runs"] += 1; c["FRZ_checked_states_not_hD"] += nh
+            c["FRZ_checked_runs_with_not_hD"] += nh > 0; c["FRZ_checked_states_D_ge2"] += sum(1 for x in Sx if len(A[x]["D"]) >= 2)
             for L in levels(mD, n):
                 c["FRZ_checks"] += 1
                 ref = [coarse(A[tail[0]]["W"][v], L) for v in range(n)]

@@ -1,0 +1,20 @@
+MODE files ../R2-N5-FBRED/box4344.lst 6 MUT - PATHCAP 9
+BP_checks: 4263
+BP_checks_NC_not_hD: 2678
+C1P_checks: 21662
+C2P_checks: 5191
+FRZ_runs: 268
+PCL_checks: 1530
+PCL_runs: 220
+WMG_transitions: 232
+ff_runs: 406
+phases: 331
+runs: 60
+states: 638
+states_NC: 542
+states_NC_not_hD: 200
+states_hD: 342
+CRD_run_minus_(n-1): (-5, 'experiments/new/box43/instances/retf_n6.pg#0')
+FRZ_run_minus_(n-1): (-5, 'experiments/new/box43/instances/retf_n6.pg#0')
+max_ff_run_transitions: (20, 'experiments/new/box44/instances/fb17_n32.pg#5')
+RESULT OK violations=0

@@ -1,0 +1,22 @@
+MODE random 20000 2 5 193 kO 3 MUT - PATHCAP 9
+BP_checks: 6772
+BP_checks_NC_not_hD: 609
+C1P_checks: 726
+C2P_checks: 445661
+CRD_freeze_checks: 1377
+FRZ_freeze_checks: 458
+FRZ_runs: 76788
+PCL_checks: 1568071
+PCL_runs: 386807
+WMG_transitions: 3880
+ff_runs: 110432
+phases: 108729
+runs: 60000
+states: 114312
+states_NC: 81998
+states_NC_not_hD: 261
+states_hD: 81737
+CRD_run_minus_(n-1): (0, 'random193:7#3')
+FRZ_run_minus_(n-1): (0, 'random193:7#3')
+max_ff_run_transitions: (2, 'random193:2#3')
+RESULT OK violations=0
