@@ -1,0 +1,1 @@
+FBGAP_AT_H 45, FBGAP_INSIDE 2, UNK 49, gaps 1689, runs 816

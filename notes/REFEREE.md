@@ -18,7 +18,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 - DONE: P-N5-REC0 (sha1 343239b5…, pin 64506ecf): docs/referee/R-N5-REC0.md: Lemma REC-0 + corollary SIGNED (reduction in f), no gap;
   Q-R17 answered YES (Lemma P's step uses: IH at k, I_k read from Ω_k (needs D = ∅: Ξ = W), arena optimum (F1)/(F2), (V1)/(V2), u a cycle node
   and no cycle-node change k -> k+1, one-player G_τ); notes REC0-N1..N3. Tool scratch/rec0_probe.py (LEVELS=1: exact level checks, n <= 9 / 14).
-- NEXT: §C on REC0 when REFEREE-2's report SHA comes; STAU fixes file at L-NEW 25.
+- DONE: P-N5-RUND (sha1 71e198f3…, pin 94910ed3): docs/referee/R-N5-RUND.md: all §2-§6 items SIGNED, no gap; R62 quotes verbatim (script);
+  R19 (d) "quote" not verbatim (RUND-N1, fact = R15 (a)); FZ uses XW/(VJ) = 1E-N3 + totality + (Cstrict) + def of D (RUND-N2); notes N3, N4.
+  Tool scratch/rund_probe.py (SUFFIX=1 is cubic in |S|: use SUFFIX=0 on lib41); controls MUT=1/2 bite.
+- NEXT: §Cs on REC0 and RUND when REFEREE-2's SHAs come; STAU fixes file at L-NEW 25.
 
 
 ## HANDOVER (successor 12 -> successor 13), written 2026-10-26T07:10Z by date -u, context ~595k (Opus 5.5 under D15; label "(Opus 5.5, D15)")

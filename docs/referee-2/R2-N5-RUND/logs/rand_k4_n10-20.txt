@@ -1,0 +1,46 @@
+MODE random 2000 10 20 1604 4 3 MUT - PATHCAP 9 LALL 12 RANDP 3
+CHG_changes: 4211
+CHG_window: 4211
+CHU_U_events: 6
+CHU_checks: 81792
+CRREL_subruns: 4844
+ENGXI_checks: 19119
+FRZS_checks: 44524
+FRZS_content: 33
+FZP_checks: 19119
+FZ_checks: 200
+KF_states_Lm1: 27
+MERGE_checks: 24279
+OFFa_transitions: 918
+OFFb_checks: 27661
+OFFc_checks: 422
+P1_brute_states: 1858
+P1_brute_strategies: 70138
+P2_brute_strategies: 3559
+P2_brute_transitions: 965
+PDa_aligned_states: 935
+PDa_brute_arenas: 935
+PDa_brute_strategies: 3218
+PDb_blocks: 835
+PSCH_clean_checks: 37246
+SPR_runs: 848
+TG_changes: 133
+TG_subruns: 995
+ff_runs: 893
+ff_transitions: 965
+forbidden_pairstates_Lm1: 37
+h3_runs: 848
+h3_transitions: 918
+ii_runs: 853
+ii_transitions: 923
+runs: 6000
+states: 19119
+CHU_max_U_per_run: (1, 'random1604:252#1@1 L -1 n 15')
+CHU_max_U_per_vertex: (1, 'random1604:252#1@1 L -1')
+PDb_max_block: (3, 'random1604:940#1@1 n 17 m_tau 23')
+SPR_max_ratio_x1000: (96, 'random1604:1142#3@1 T 3 Nsplit 0 n 11')
+TG_max_B: (16, 'random1604:1234#2@3 n 20')
+TG_max_Nv: (2, 'random1604:994#3@1 v 4 B 3 n 14')
+max_ff_run_transitions: (3, 'random1604:940#1@1 n 17')
+max_h3_run_transitions: (3, 'random1604:940#1@1 n 17')
+RESULT OK violations=0

@@ -17,6 +17,15 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
     W-honest state" (b4_n5_other_0, flat cycle-closing switch).
   - (b) CONJECTURE HON-FF: the level rises across every gap between consecutive W-honest states (fallback gaps included) ⇒ |H| ≤ 4n² − 3n, f-free.
     DATA: 0 no-rise gaps (lib41 n ≤ 20: 472 gaps; random: 2,984); the 3 lib41 gaps with an inside fallback rise (j10_n24 1→4, j7_n32 0→19, j8_n32 2→9).
+  - 09:02Z Lead side task: docs/new/P-N5-STAU-fixes-box45.md (sha1 42d7b04c…, l-new ee95661f, FROZEN; reported 09:18Z). The two §Cs CROSSED on
+    sentence 1 (REFEREE → note, REFEREE-2 → gap); recorded both. Quotes checked by script (25/25 verbatim).
+  - CONJECTURE IMM (Ξ-level rises at h + 1 itself) DEAD: instances/immfail_n14.pg (sha1 db3fc2ca…), both failures at the LAST state of a phase.
+    IMM′ (h + 1 not last ⇒ rise) survives: 0 failures (lib41 n ≤ 20, random 3,000, 4 climbs). IMM′ ⇒ HON-FF ⇒ f-free HON. Open step: use that τ is
+    value-optimal against σ_{h+1} in S4b's arena (honest deviations at h + 1 then use only edges outside τ ∪ Iτ).
+
+  - 09:5xZ packet docs/new/P-N5-HON-box46.md FROZEN (Lead GO 09:21Z / 09:46Z): HON, SAT0, HON-FB, HON′, HON-0 (+ relation to REC-0: implies it,
+    strictly, f·n + 2 below), RESTRICT_u, REPRO_u, REC-1 (a) PROVED; EP-1u, REC-1 (b)-(d) implications from (Στ); HON-FF OPEN; IMM, IMM′, FB-WLEV DEAD.
+    Correction to my 09:40Z message: the inside-fallback gaps are 3 in all (not 5); hon2's 2 at n ≤ 34 are among fbin's 3.
 
 ## Box 45 log (successor 24, session_01DR27cGCEhPvHHVxiYXCfaz; handover check 5/5 (2c299e9a); GO 05:39Z, Lead's stamp)
 - Container stale at 5961101a again; ff to 43e0bd81; trunk 8460897d merged (b43b7c3c). Oink NOT built (not needed).
@@ -879,6 +888,15 @@ Successor 24 (Opus 5.5, D14/D18, L40), session_01DR27cGCEhPvHHVxiYXCfaz. Handove
   133 of 453 fallback-free gaps between consecutive C-epochs (lib41, n ≤ 34). Instance experiments/si/orlens/instances/thclimb_n12_s11.pg
   (sha1 e3b47b6e…), S3 start, phase [2, 17], D = {1} throughout; C = (u → 10) at states 2 and 6, LEV_C 1 → 1. Obstruction: S4a optimises
   against τ(u) = 11, not against σ̄_C(u); inside one {u}-interval σ̄(u) moves 10 → 2 → 3 → 2 → 10. Replaced by EP-1u (u-runs on G^u).
+- (box 46, successor 25, ~09:50Z) CONJECTURE IMM′ (IMM unless h + 1 is the last state of its phase): FALSE. Hand-built
+  experiments/new/box46/instances/immp_cex_n11.pg (sha1 1dd7f585…) + .start (sha1 18cf3766…): Iτ = ∅ (τ Odd-optimal), honest reply escapes to a vertex
+  whose latent potential is not yet realised; LEV 1 → 1, phase continues. Library: exitr_cex_n16 (random start). Obstruction: Iτ is read from
+  Even's G_τ-optimum, not from σ.
+- (box 46, successor 25, ~09:45Z) CONJECTURE FB-WLEV ("a fallback never lowers the W-level", the W-carry route to HON-FF): FALSE.
+  experiments/n5-exhaustive/instances/b5_o11.pg (sha1 db4fe55a…), S3, fallback 7 → 8, WLEV 6 → 5 (14 of 166 non-honest fallbacks, lib41 n ≤ 24).
+- (box 46, successor 25, ~09:30Z) CONJECTURE IMM ("Ξ-level rises at once after an S4a step from a W-honest state"): FALSE.
+  experiments/new/box46/instances/immfail_n14.pg (sha1 db3fc2ca2ef4…), S3, h = 0 (LEV 3 → 3; split) and h = 2 (3 → 3; unsplit); both h + 1 are the
+  last state of their phase. Obstruction: S4a's W-best target leads to an Odd vertex where the honest reply deviates from τ (σ̄(0) = 2 ≠ τ(0) = 4).
 - (box 46, successor 25, ~09:00Z) Side claim "no in-phase fallback at a W-honest state": FALSE. experiments/n5-exhaustive/instances/b4_n5_other_0.pg
   (sha1 6115e60a…), S3, state 1: Iσ = {(4, 0)}, 4 its own cycle node, flat cycle-closing switch. Replaced by Lemma HON-FB.
 - (box 44, successor 23, 2026-10-26 ~03:27Z) Route "epochs of σ̄|Q inside a phase ≤ ∏_q deg(q)" (the σ̄-analogue of Φ-kO's no-τ-repeat):

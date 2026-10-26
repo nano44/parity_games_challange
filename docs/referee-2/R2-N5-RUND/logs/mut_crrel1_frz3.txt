@@ -1,0 +1,85 @@
+MODE start ../../../experiments/n5-exhaustive/instances/frz3_n24.pg ../../../experiments/n5-exhaustive/instances/frz3_n24.start MUT crrel1 PATHCAP 9 LALL 12 RANDP 3
+CHG_changes: 181
+CHG_charged: 122
+CHG_window: 59
+CHU_U_events: 21
+CHU_checks: 36000
+CRREL_freeze_checks: 5
+CRREL_freeze_checks_D_nonempty: 2
+CRREL_subruns: 5
+ENGXI_checks: 27
+FRZS_checks: 17311
+FRZS_content: 7953
+FZP_checks: 27
+FZ_checks: 304
+KF_states_Lm1: 17
+MERGE_checks: 543
+OFFa_transitions: 24
+OFFb_checks: 600
+OFFc_checks: 32
+P1_brute_states: 25
+P1_brute_strategies: 675
+P2_brute_strategies: 142
+P2_brute_transitions: 24
+PDa_aligned_states: 7
+PDa_brute_arenas: 7
+PDa_brute_strategies: 38
+PDb_blocks: 1
+PSCH_clean_checks: 8037
+SPR_runs: 1
+TG_changes: 3636
+TG_subruns: 300
+TGii_rise_checks: 24
+TGii_rise_nonzero: 3
+UNF_checks: 179
+VIOLATIONS: 33
+V_CRREL: 33
+ff_runs: 1
+ff_transitions: 24
+forbidden_pairstates_Lm1: 93
+h3_runs: 1
+h3_transitions: 24
+ii_runs: 1
+ii_transitions: 24
+runs: 1
+states: 27
+CHU_max_U_per_run: (6, 'frz3_n24.pg#start@2 L -1 n 24')
+CHU_max_U_per_vertex: (1, 'frz3_n24.pg#start@2 L -1')
+PDb_max_block: (7, 'frz3_n24.pg#start@19 n 24 m_tau 59')
+SPR_max_ratio_x1000: (14, 'frz3_n24.pg#start@2 T 24 Nsplit 17 n 24')
+TG_max_B: (17, 'frz3_n24.pg#start@2 n 24')
+TG_max_Nv: (8, 'frz3_n24.pg#start@2 v 23 B 17 n 24')
+TGii_max_rise_over_cap_x1000: (0, 'frz3_n24.pg#start@2..26 v 2')
+max_ff_run_transitions: (24, 'frz3_n24.pg#start@2 n 24')
+max_h3_run_transitions: (24, 'frz3_n24.pg#start@2 n 24')
+VIOLATION CRREL: frz3_n24.pg#start@21: L -1
+VIOLATION CRREL: frz3_n24.pg#start@22: L -1
+VIOLATION CRREL: frz3_n24.pg#start@23: L -1
+VIOLATION CRREL: frz3_n24.pg#start@24: L -1
+VIOLATION CRREL: frz3_n24.pg#start@25: L -1
+VIOLATION CRREL: frz3_n24.pg#start@26: L -1
+VIOLATION CRREL: frz3_n24.pg#start@21: L 0
+VIOLATION CRREL: frz3_n24.pg#start@22: L 0
+VIOLATION CRREL: frz3_n24.pg#start@23: L 0
+VIOLATION CRREL: frz3_n24.pg#start@24: L 0
+VIOLATION CRREL: frz3_n24.pg#start@25: L 0
+VIOLATION CRREL: frz3_n24.pg#start@26: L 0
+VIOLATION CRREL: frz3_n24.pg#start@21: L 12
+VIOLATION CRREL: frz3_n24.pg#start@22: L 12
+VIOLATION CRREL: frz3_n24.pg#start@23: L 12
+VIOLATION CRREL: frz3_n24.pg#start@24: L 12
+VIOLATION CRREL: frz3_n24.pg#start@25: L 12
+VIOLATION CRREL: frz3_n24.pg#start@26: L 12
+VIOLATION CRREL: frz3_n24.pg#start@12: L 22
+VIOLATION CRREL: frz3_n24.pg#start@13: L 22
+VIOLATION CRREL: frz3_n24.pg#start@14: L 22
+VIOLATION CRREL: frz3_n24.pg#start@15: L 22
+VIOLATION CRREL: frz3_n24.pg#start@16: L 22
+VIOLATION CRREL: frz3_n24.pg#start@17: L 22
+VIOLATION CRREL: frz3_n24.pg#start@18: L 22
+VIOLATION CRREL: frz3_n24.pg#start@19: L 22
+VIOLATION CRREL: frz3_n24.pg#start@20: L 22
+VIOLATION CRREL: frz3_n24.pg#start@21: L 22
+VIOLATION CRREL: frz3_n24.pg#start@22: L 22
+VIOLATION CRREL: frz3_n24.pg#start@23: L 22
+RESULT FAIL violations=33

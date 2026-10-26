@@ -1,0 +1,1 @@
+ffgaps0 1, ffgaps1 1, gaps0 1, gaps1 1, maxlev0 16, maxlev1 12, phases 40203, runs 15000
