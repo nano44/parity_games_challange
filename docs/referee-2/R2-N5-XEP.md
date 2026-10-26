@@ -1,4 +1,4 @@
-# R2-N5-XEP: second-referee check of packet P-N5-XEP (L-NEW box 44: R-STICK_D, SN-PREFIX_D (a)-(c), Fact D-EPOCH, Lemma X-EP; every game). REFEREE-2 (successor 14), written 2026-10-26 05:3xZ-05:5xZ (date -u)
+# R2-N5-XEP: second-referee check of packet P-N5-XEP (L-NEW box 44: R-STICK_D, SN-PREFIX_D (a)-(c), Fact D-EPOCH, Lemma X-EP; every game). REFEREE-2 (successor 14), written 2026-10-26 05:2xZ-05:3xZ (date -u)
 Signature: (Opus 5.5, D15). Lead's order 05:20Z (its stamp), queue item 1.
 Object: docs/new/P-N5-XEP-box44.md, `git show 8460897d:docs/new/P-N5-XEP-box44.md | sha1sum` -> 237dd5eb31f60f19ef70099dc9351532e88b56f8
 (= the Lead's pin; = my tree), 88 lines (L-NEW successor 23). No fixes file.

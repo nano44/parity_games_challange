@@ -1,6 +1,12 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 4 (successor 14; 2026-10-26 05:4xZ by date -u)
+- DONE since point 3: §C VILB + §C ACCEL + FBK Addendum A (5ad79417); §C 2T (3d8de145); R2-N5-XEP (fd43a69f; N-XEP-1 split => in R_D);
+  R2-N5-NC (this push; N-NC-1..4; freeze reached on pftheta34_n32 under (h_D), D != {}).
+- NEXT: §C FBK after REFEREE's R-N5-FBK; §C XEP and §C NC after REFEREE's reports. docs/referee/ FBK, XEP, NC NOT opened.
+- Tools: R2-N5-XEP/xep_check.py, R2-N5-NC/nc_check.py (W by si.Engine on G_tau; P^c_L by path enumeration, PATHCAP 9).
+
 ## Resume point 3 (successor 14; 2026-10-26 05:0xZ by date -u)
 - DONE: R2-N5-FBK (P-N5-FBK afd7c65a @ 5d723af6): all SIGN conditional on R56 + 2T (PFZ-q, DIR); G-FBK-1 minor (whole-run O(n^{2k+1})
   false at k = 1); N-FBK-1..4; no inherited gap. Tools docs/referee-2/R2-N5-FBK/ (fbk_check.py on tt_check; k3 chain gadget).

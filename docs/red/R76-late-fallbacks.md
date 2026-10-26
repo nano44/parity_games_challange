@@ -107,7 +107,8 @@ Labels per L40: DATA / READING. Nothing here proves a bound. Every game class, u
 - f39_n48 (R75 §5, 𝒞^1O, start pair): its 39-fallback phase is a Bellman-Ford wave.
   - Each fallback switches exactly one Even vertex onto the vertex switched at the previous fallback: a path grows from vertex 16 over
     37 vertices.
-  - S4a takes none of these steps: they improve against σ̄ but not against τ (o = c_θ).
+  - S4a takes none of these steps: they improve against σ̄ but not against τ. The phase has c_θ ≠ o, |U| = 48, τ(o) = o, σ̄(o) = 4
+    (corrected 05:50Z; R75 §7).
   - It is one epoch with 39 fallbacks. EPOCH (a)'s freeze needs n − 1 = 47; vertex deletion gets to n 46 (gap −6), and further
     deletions break the wave (shrinkep19).
 - Frontier versions keep one wave per class: fr39_q4_n48 (|Q| 4, f 39, ρ 35).
