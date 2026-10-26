@@ -1,0 +1,2 @@
+RELAY_multi=44 ROUTE_multi=202 class_event_transitions=183 max_relay_q_phase=3 max_rho_q=7 phases=75 phases_with_relay=27 q_phase_relay_majority=18 rho_transitions=183
+RELAY PASS

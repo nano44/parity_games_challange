@@ -85,3 +85,8 @@ Reproduce: `python3 experiments/red/rec0/rec0_20.py file <x>.pg <x>.start.json -
   checked here (PREFIX; SAT_span via t* − t), with 0 FAIL, but only on short phases (max t* − t = 3).
 - Long and many epochs: N_ep reaches about 2.25n (90 at n 40) and exceeds n at |Q| = 1. len(E) at |D_E| ≥ 2 reaches 30 at n 48 (m about 100),
   below n + m. No superlinear growth was found by these climbs. They hold n fixed, so they do not measure a growth rate.
+
+## 5. POST-NOTE (2026-10-26 10:4xZ, date -u)
+- §0's "len(E) 30 at |D_E| ≥ 2 (L-NEW's library max was ≤ 28)" compared only with L-NEW's library. L-COMP 5's census (l-comp cf441de1,
+  experiments/n5-epoch/instances/lend55_n32.pg, sha1 582b9c9d, per the Lead's 10:11Z message) has a |D| ≥ 2 epoch of length 55 at n 32.
+  So lend2_30_n48 is not a record. Likewise nep76_n40 (L-COMP) is below nep90_n40, which stands as the N_ep maximum I know of.

@@ -522,6 +522,7 @@ used by ≤ n − 1 values of s. □
 | lcount_n23, lcount2_n23, offret_n23, incdown_n23, offalt_K10 | 1 each | 4-25 | 10-177 | 0 | 0 | – |
 
 ### CONJECTURE UF-ONCE (DATA; replaces FS as the target)
+- UPDATE (successor 14, 10:3xZ): UF-ONCE is DEAD (REFEREE-2 16, R2-N5-RUND §4; reproduced, §22.1). The data below skipped 𝒞^1O games.
 In every run S, every Even vertex makes at most one unforbid-switch: |{(k′, e) ∈ U(S) : e leaves y}| ≤ 1 for every Even y. Then |U(S)| ≤ n_E and,
 by CHARGE-U, every vertex's full-resolution coarse W value changes ≤ (n − 1)(n_E + 1) times per run (a polynomial per run; runs per phase
 are cut by fallbacks and λ_W changes, counted elsewhere).
@@ -697,3 +698,98 @@ Written 2026-10-26 09:5xZ (date -u), successor 13. pot.py (MULTI, TRACE); logs p
 - Ruler-type reuse DOES occur in multi-Odd-choice classes: frz40.pg (L-RED; class with 4 Odd choices), q = 27, levels [36, 28, 34, 35, 34, 27,
   37, 32, 39, 28] (ρ = 10, n = 40); elimn_cex_n48 q = 31, [43, 46, 36, 45, 43, 47]; phase2_pk32 q = 28, [28, 31, 28, 29]; fts_best24 q = 11,
   [11, 18, 9, 11]. But ρ_q ≤ 10 < n everywhere; no ρ_q > n in any multi-Odd-choice class. DATA only; no compounding seen.
+
+## 22. Box 18 (successor 14, Lead's GO 10:23Z): UF-ONCE DEAD; the ρ_q question on the proof side: Lemmas ROOT, ROUTE-RELAY, SELF-FREE (PROVED), the obstruction (READING, DATA)
+Written 2026-10-26T10:3xZ (date -u), successor 14. relay.py (new); logs relay_lib41_rs4.txt, relay_lib2o_rs4.txt, ufonce_kill_*.txt.
+### 22.1 CONJECTURE UF-ONCE is FALSE (DEAD; found by REFEREE-2 16, docs/referee-2/R2-N5-RUND.md §4, referee-2 7a02a1f2; reproduced here)
+- Instance 1: experiments/red/so/instances/so_th_n32.pg (sha1 ae9126ad1bf963114bdd56b6e50c8c1cc571779e; n = 32, 𝒞^1O) from
+  rund/instances/so_th_n32_s0.start (= REFEREE-2's file, sha1 2284f723e3e674834d39e98fe89e2f67522bb40c). sched.py (MY code) reports
+  UF_ONCE_V = 1, run at state 1, U = [(4, (13, 2)), (4, (24, 21)), (9, (30, 11)), (11, (7, 26)), (15, (24, 21)), (21, (24, 21))]: Even 24
+  makes three unforbid-switches into (24, 21), at 4 → 5, 15 → 16, 21 → 22, exactly REFEREE-2's events. No other violation (CHARGE, FZ,
+  UNF, OFFUP: 0).
+- Instance 2: experiments/red/n5inj/instances/phase2_pk48.pg (sha1 83dead9bc3cd96a27f4754e99bb876956cd60268; n = 48, two Odd choice
+  vertices) from rund/instances/phase2_pk48_s1.start (sha1 36dc43e7a64a823ffb4647858059acdc1f423ccc): run at state 15, Even 44 switches
+  into (44, 11) at 16 → 17 and into (44, 19) at 25 → 26 (two U events, two edges). Same as REFEREE-2.
+- Obstruction: an Even vertex can be tempted (W) and blocked (Ξ) by a gated successor, switch, return to its old successor by an ordinary
+  switch, and be blocked and unblocked again inside one λ_W-constant fallback-free run (the "offset return" of §17, realised). Why the lane
+  saw 0: `sched.py --list FILE` defaults to KMIN = 2 and so never ran a 𝒞^1O game (33 of REFEREE-2's 34 failures are 𝒞^1O).
+- Effect: CHARGE-U (PROVED) is unaffected. The route "|U(S)| ≤ n_E via UF-ONCE" (§16, §17) is closed. U-SPLIT (§18) is a separate
+  CONJECTURE. Its premise was UF-ONCE's weaker cousin, and it is not killed by these instances; I have not re-tested it here. Pinned in
+  check.sh (both instances, exact U lists).
+### 22.2 Setting
+Every game; N5 = SPEC S1-S5; a phase = (λ_Ξ, τ) constant (R38 (a) KEY); Q = the Odd vertices of out-degree ≥ 2; for c a cycle node of the
+phase, U_c = λ^{-1}(c), Q_c = (Q ∩ U_c) ∖ {c}; κ as in RESULTS R56 (setting line). A ρ_q EVENT is a transition t → t+1 of the phase with
+Ξ_t(q) ≠ Ξ_{t+1}(q) (R61 (f)'s ρ_q). The standing SPEC premise as in Fact FZ: σ̄_s is an optimal Odd counterstrategy in G_{σ_s}.
+- The Q-EXIT PATHS at s: for q ∈ Q and y ∈ succ(q), the play from y in G_{σ_s} (σ_s at Even vertices, the unique edge at Odd vertices
+  outside Q) up to and including the first vertex that is in Q or repeats. Reach_s(Q) := Q ∪ the vertices on these paths.
+### 22.3 Lemma ROOT (PROVED, every game)
+If at an in-phase transition t → t+1 every Q-exit path is the same at t and t+1, then Ξ_t(v) = Ξ_{t+1}(v) for every v ∈ Reach_t(Q); in
+particular no ρ_q event happens at t → t+1. Equivalently: every transition carrying a ρ event changes some Q-exit path, i.e. some Even
+vertex on a Q-exit path switches.
+Proof. Reach_s(Q) is closed under successors in G_{σ_s}: a vertex of Q has its successors on its own exit paths; a vertex on an exit path
+that is Even or forced Odd has as its unique successor in G_{σ_s} the next vertex of that path, or the closing vertex, which is on the
+path or in Q. With all exit paths equal, Reach_t(Q) = Reach_{t+1}(Q) =: X, and the edges of G_{σ_t} and G_{σ_{t+1}} leaving X coincide:
+an Even v ∈ X lies on some exit path, the same at t and t+1, and σ_t(v) = σ_{t+1}(v) is the next vertex on it. Odd's game G_{σ_s} is a
+one-player game. A play from v ∈ X stays in X, and its VJ00 valuation depends only on the play. So the optimal (pointwise ⊴-least) Odd
+valuation at v, which is the same for every optimal counterstrategy (VJ00; R17 (F1) on the one-player game, as Fact FZ uses), is the
+optimum over plays of the subgame G_{σ_s}[X]. That subgame is the same for s = t and s = t + 1, so Ξ_t(v) = Ξ_{t+1}(v). □
+- No hypothesis on q's honest cycle, on the class, on fallbacks or on λ_W is needed. ρ counts value changes. A σ̄(q) change with no value
+  change (a tie) is not a ρ event, and ROOT says nothing about it.
+- DATA (relay.py ROOT_V; MUT=1 inverts the test and must bite): 0 violations on 5,437 ρ-transitions (lib41, KMIN = 1, S3 + 4 random
+  starts, 1,601 phases) and 183 (lib2o, 75 phases); MUT=1 bites on frz40.
+### 22.4 Lemma ROUTE-RELAY (PROVED, every game) and Corollary SELF-FREE (PROVED)
+For q ∈ Q_c on no honest cycle at t and at t + 1, and y ∈ succ(q) ∩ U_c, the EXIT of y at s is the first vertex of Q_c ∪ {c} on y's honest
+play at s (it exists: the play ends on c's cycle), and its EXIT PATH is the part strictly before it. Call a ρ_q event at t → t+1 ROUTE if
+some y ∈ succ(q) ∩ U_c has a different exit path or exit at t and t + 1, and RELAY otherwise.
+- Lemma ROUTE-RELAY. A RELAY event at q has a SOURCE: an exit e ∉ {q, c} of some y ∈ succ(q) ∩ U_c with κ_t(e) ≠ κ_{t+1}(e), or with
+  e's honest play avoiding q at exactly one of t, t + 1.
+  Proof. Suppose no exit path changes and no exit e ∉ {q, c} is a source. (i) Exit c: κ(c) is the same at t and t + 1 (λ constant in
+  the phase; c's valuation has the empty path set and length 0), and c's play (its cycle) avoids q because q is on no honest cycle.
+  (ii) Exit e ∉ {q, c}: e's play avoids q at t iff at t + 1 (no source). So Y^q_t = Y^q_{t+1} (Y^q_s := the y ∈ succ(q) ∩ U_c whose
+  play at s avoids q, as in R56 (d)): y's play is its exit path followed by e's play, and the exit path avoids q. (iii) Additivity: for
+  y ∈ Y^q_s with exit e, κ_s(y) = κwt_c(exit path) + κ_s(e). The exit path and e's play up to c are disjoint: if e's play met a
+  vertex v of the exit path before reaching c, it would run on from v along the exit path back to e, a cycle in U_c that misses c. But
+  every honest cycle in U_c is c's cycle, and κ reads the play up to c. This is the decomposition used in R56 (e) EXIT-SWITCH. (iv) R56 (d) κ-Y-FORM at t and at t + 1 (q on no honest cycle at either): κ_s(q) = κwt_c(q) + min_{y ∈ Y^q} κ_s(y). This
+  is the same number at s = t and s = t + 1. Inside the class, κ determines Ξ (λ is fixed; κ's weight determines the path set above c, and
+  its second coordinate the length). So Ξ_t(q) = Ξ_{t+1}(q), which contradicts the event. □
+- Corollary SELF-FREE (m_c = 1, e.g. 𝒞^1O). If Q_c = {q}, every ρ_q event with q on no honest cycle at t, t + 1 is ROUTE. Proof: every
+  exit is q or c, so no source exists. □ This is the structural reason the 𝒞^1O chain closes: κ(o) is a minimum over route values to c,
+  and none of them depends on κ(o). Feedback from κ(o) (Even re-routing towards o when o's value rises) moves only vertices whose play then
+  passes o, and those leave Y^o. A route value to c with constant terminals is what R45 (Y-FORM, HAT-FREEZE, RHO-TAIL) and R50 (A0,
+  FRZ-U, Theorem RUN) bound. READING: those proofs use constant terminals on a stretch (R50 (b) A0), which is SELF-FREE's content.
+- DATA (relay.py): lib41 (KMIN = 1, S3 + 4 random starts): one-Odd-choice classes 5,042 events, all ROUTE (ONE_RELAY_V = 0); classes with
+  ≥ 2 Odd choice vertices 618 ROUTE, 427 RELAY; R_EMPTY_V = 0 (every RELAY event has a source whose κ changed; the "play toggles through q"
+  alternative was never needed). lib2o (S3 + 4): 202 ROUTE, 44 RELAY. In 291 (q, phase) pairs of lib41, RELAY events outnumber ROUTE events
+  at q.
+### 22.5 What breaks with ≥ 2 Odd choice vertices (the obstruction; READING, with DATA)
+ALT (R61 (e)) makes each clean change a strict rise of κ(q). So the number of κ(q) values visited in a phase is ρ_q, up to ties, and the
+question is how many values a monotone κ(q) can take. On 𝒞^1O, SELF-FREE plus constant terminals answer it: route values to c freeze
+in Bellman-Ford fashion between fallbacks (R45, R48, R50), so κ(o) visits polynomially many values. With m_c ≥ 2 there are two coupled
+monotone processes:
+- (O1) RELAY: a terminal's rise is copied upstream with no Even move on the copying terminal's exit paths (ROUTE-RELAY). At ONE transition
+  this costs nothing extra: by ROOT, every ρ-transition carries an exit-path change somewhere. DATA: in no (class, transition) are all
+  events relays (ALLRELAY_T = 0 on lib41, lib2o, frz40, nep76; CONJECTURE ROOT-C, the per-class form). So ρ (as a set of transitions) ≤
+  the transitions with an Even switch on a Q-exit path, and ρ ≤ |Q| · T_exit (PROVED, from ROOT; T_exit := the transitions changing some
+  Q-exit path).
+- (O2) RE-THAW: the converse coupling. Between two ρ-transitions all terminal values are constant, which is the 𝒞^1O situation (A0), and a
+  route freeze of FRZ-U type would give T_exit ≤ (n − 1)(ρT + 1), ρT := the ρ-transitions. But each terminal rise changes Even's preference
+  between exits to different terminals (κ(e1) + a against κ(e2) + b), so routes re-thaw after every ρ-transition. Together with (O1),
+  ρT ≤ T_exit ≤ (n − 1)(ρT + 1): the two inequalities are consistent with exponential growth, and neither side bounds the other. On 𝒞^1O
+  the loop is open, because re-thawed vertices route through o and leave Y^o (SELF-FREE). With m_c ≥ 2 it closes when vertices of Y^{q1}
+  route via q2 and vertices of Y^{q2} route via q1: a cycle in the phase's RELAY GRAPH (edge q → e for each relay source).
+- ROUTE-k (R61 (a)) forbids such a cycle at ONE state (for the parent relation along σ̄), but not over a phase. DATA: frz40.pg (L-RED, from
+  frz40.start), phase at state 44 (35 transitions): 11 relays 26 at t = 0, and 26 relays 11 at t = 30. 27 relays 11 four times
+  (t = 8, 10, 13, 14), following four ROUTE events of 11: one terminal's moves are copied event by event. lib41: 23 of 1,601 phases have
+  a 2-cycle in the relay graph, 28 a directed cycle (gapb_dup_n20, phi_flat_alive_n32, ...), all from random starts. lib2o: none. Pinned
+  in check.sh (frz40, exact relay graph).
+- So the precise obstruction is (O2) plus a cycle in the phase's relay graph. Over a phase the routes-through relation is not a fixed
+  order, and a bound per terminal (the 𝒞^1O argument, or FB-kT's depth recursion, R61 (c)) does not compose.
+### 22.6 Status, labels
+- PROVED (lane, unrefereed): ROOT (every game); ROUTE-RELAY (every game); SELF-FREE; ρ ≤ |Q| · T_exit.
+- DEAD: UF-ONCE (REFEREE-2's instances, reproduced).
+- CONJECTURE ROOT-C (per class: every (class, transition) with a ρ event has a ROUTE or CYC event at a terminal of that class); DATA only.
+- OPEN: a bound on ρ_q per phase for m_c ≥ 2. Candidate statements a proof would need, none proved: (a) an FRZ-type route freeze on every
+  game between ρ-transitions (it would give T_exit ≤ (n − 1)(ρT + 1), half of the loop); (b) an ACYCLIC relay graph per phase plus (a)
+  would give ρ_q ≤ a product over relay-graph paths (FB-kT style, polynomial for bounded m_c), but (b) fails in data (28 phases); (c) a
+  potential that counts relay cycles. Nothing here bounds N_ep. READING: the hard core of ρ for m_c ≥ 2 is the re-thaw loop (O2) through
+  relay cycles.

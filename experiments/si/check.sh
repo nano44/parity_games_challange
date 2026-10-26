@@ -49,3 +49,16 @@ MUT=1 python3 -I rund/sched.py --one ../n5-exhaustive/instances/frz3_n24.pg ../n
 echo "rund (P^c_sch / FRZ-SCH / CHARGE on frz3_n24, shifted-schedule control bites): PASS"
 NOGEN=1 USTRUCT=1 python3 -I rund/sched.py --one ../n5-exhaustive/instances/frz1_n24.pg ../n5-exhaustive/instances/frz1_n24.start | grep -q "SCHED PASS"
 echo "rund (FZ, UNF, OFFUP, U-SPLIT classes on frz1_n24): PASS"
+# UF-ONCE DEAD (REFEREE-2 16, R2-N5-RUND §4): the only violation is UF_ONCE, at Even 24 (three U events into (24, 21)) / Even 44.
+o=$(python3 -I rund/sched.py --one ../red/so/instances/so_th_n32.pg rund/instances/so_th_n32_s0.start)
+grep -q "UF_ONCE_V=1 " <<<"$o"; [ "$(grep -c '^VIOLATION' <<<"$o")" = 1 ]
+grep -q "(4, (24, 21)), (9, (30, 11)), (11, (7, 26)), (15, (24, 21)), (21, (24, 21))\])" <<<"$o"
+o=$(python3 -I rund/sched.py --one ../red/n5inj/instances/phase2_pk48.pg rund/instances/phase2_pk48_s1.start)
+grep -q "UF_ONCE_V=1 " <<<"$o"; [ "$(grep -c '^VIOLATION' <<<"$o")" = 1 ]
+grep -q "(16, (44, 11)),.*(25, (44, 19))\])" <<<"$o"
+echo "rund (UF-ONCE DEAD: so_th_n32 Even 24 x3, phase2_pk48 Even 44 x2; CHARGE/FZ/UNF/OFFUP 0 violations there): PASS"
+# note §22: Lemma ROOT / ROUTE-RELAY hold on frz40; its phase@44 has the mutual relay 11 <-> 26; the inverted ROOT test (MUT=1) bites.
+o=$(python3 -I rund/relay.py --one ../red/n5inj/instances/frz40.pg ../red/n5inj/instances/frz40.start)
+grep -q "RELAY PASS" <<<"$o"; grep -q "CYC2 ('../red/n5inj/instances/frz40.pg', 44, {0: \[11\], 11: \[26\], 26: \[11\], 27: \[11\]})" <<<"$o"
+MUT=1 python3 -I rund/relay.py --one ../red/n5inj/instances/frz40.pg ../red/n5inj/instances/frz40.start | grep -q "RELAY FAIL"
+echo "rund (ROOT, ROUTE-RELAY on frz40; mutual relay 11 <-> 26 in one phase; MUT=1 bites): PASS"
