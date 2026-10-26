@@ -10,3 +10,5 @@ DATA, not proof. Uses box43 (multi: rand_ckO, SPEC N5 step), box21 (n5x.readstar
   same configuration). out/laps_nep90.txt.
 - vislev.py STARTS SEED (... as nconf.py) [--budget B]: LEV_C (box47 fbconf) at the first state of each epoch of a returning configuration: STALL
   (LEV_C equal and < n − 1 at two consecutive C-epochs; CONJECTURE VIS-RISE says 0), LEV_DROP_V (must be 0, LEV_C non-decreasing), XI_EQ.
+- quotecheck2.py FIXES.md REV1:FILE1 [REV2:FILE2 ...]: box47/quotecheck.py with a revision per source (the two referee §Cs sit on different branches).
+  out/quotecheck_honff_fixes.txt (docs/new/P-N5-HONFF-fixes-box47.md against e7db1ab4 REFEREE, 11e3cfb1 REFEREE-2, 2fca63b8 packet): 45 quotes, 0 missing.
