@@ -1,0 +1,54 @@
+MODE random 400 4 12 7 MUT phi
+O2_ok: 400
+O3_runs: 400
+O3_strats: 1006
+O3b_runs: 399
+O3b_skipped: 1
+O3b_strats: 40293
+O4_ok: 400
+O5_ok: 400
+REW0_stops: 57
+VIOLATIONS: 39
+V_PHI: 39
+iterations: 466
+phases: 788
+phases_with_fb: 17
+runs: 400
+stops: 400
+f_over_R48: (1.0, 'random7:36')
+iter_over_bound: (7.543754676603891e-12, 'random7:122')
+max_f: (1, 'random7:12')
+max_phase_len: (2, 'random7:37')
+max_phases: (5, 'random7:233')
+phases_over_bound: (2.0, 'random7:275')
+VIOLATION PHI: random7:7: 3 phases > 2
+VIOLATION PHI: random7:39: 3 phases > 2
+VIOLATION PHI: random7:78: 3 phases > 2
+VIOLATION PHI: random7:79: 3 phases > 2
+VIOLATION PHI: random7:86: 4 phases > 3
+VIOLATION PHI: random7:89: 3 phases > 2
+VIOLATION PHI: random7:91: 3 phases > 2
+VIOLATION PHI: random7:94: 3 phases > 2
+VIOLATION PHI: random7:101: 3 phases > 2
+VIOLATION PHI: random7:136: 3 phases > 2
+VIOLATION PHI: random7:138: 3 phases > 2
+VIOLATION PHI: random7:156: 3 phases > 2
+VIOLATION PHI: random7:164: 3 phases > 2
+VIOLATION PHI: random7:165: 3 phases > 2
+VIOLATION PHI: random7:173: 3 phases > 2
+VIOLATION PHI: random7:175: 3 phases > 2
+VIOLATION PHI: random7:177: 3 phases > 2
+VIOLATION PHI: random7:189: 3 phases > 2
+VIOLATION PHI: random7:191: 3 phases > 2
+VIOLATION PHI: random7:201: 3 phases > 2
+VIOLATION PHI: random7:221: 3 phases > 2
+VIOLATION PHI: random7:231: 3 phases > 2
+VIOLATION PHI: random7:233: 5 phases > 3
+VIOLATION PHI: random7:238: 4 phases > 3
+VIOLATION PHI: random7:247: 4 phases > 3
+VIOLATION PHI: random7:249: 3 phases > 2
+VIOLATION PHI: random7:255: 3 phases > 2
+VIOLATION PHI: random7:275: 4 phases > 2
+VIOLATION PHI: random7:276: 4 phases > 3
+VIOLATION PHI: random7:297: 4 phases > 2
+RESULT FAIL violations=39

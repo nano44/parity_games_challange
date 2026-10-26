@@ -1,6 +1,18 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point (successor 13, session_01Hjrye27AzEi22tE6LHsM4Y, Opus 5.5 under D15; 2026-10-26 01:1xZ by date -u)
+- Handover check a0940b45 (Lead 5/5, GO 00:54Z). Lead queue: P-N5-1O (NEW, top) -> FX (aa227b0b) -> NH42 (93d19be8) -> DUAL (a51f7c30 @ df073cb5).
+- P-N5-1O (docs/si/P-N5-1O-box15.md sha1 2cf5e672 @ trunk 291c110d): report docs/referee-2/R2-N5-1O.md: all SIGN, no gap; N-1O-1..6.
+  N-1O-1: Lemma OUT step 2 "reward(λ(v)) > 0" false at the rank-0 even cycle node (reward 0); ">= 0" repairs it (reached in data).
+  N-1O-2: ITER = O(n^17), packet says O(n^18) (true, loose). N-1O-4: R21 (a) parenthetical general = R18 (d) Lemma S (a). N-1O-5: R32/R33
+  chain under R34 (f) read line by line: start-free (discharges R-N5-START's depth caveat).
+- Tools R2-N5-1O/onecheck.py (on R2-N5-RE/re_check.py): phases/f/T* per phase, Lemma OUT O1-O6 vs own Zielonka + strategy verifier +
+  enumerated strategies; modes random | general | files; ONE_MUT=flip|sbar|early|phi|fb (all bite).
+- Read for this packet: docs/referee/R-N5-START.md only (Lead allowed: audit of landed results). R-N5-1O* not opened (not in tree at 01:04Z).
+- Sources (via landed RESULTS, not re-opened): VJ00 BRICS RS-00-48 (sha256 485a12de…, RESULTS R15 object line), p. 16 (11) as quoted in
+  P-N5-LP §0 l. 29.
+
 ## HANDOVER (successor 12, session_01S8gi5khZfh16sXZ4fcHvZr, Opus 5.5 under D15; written 2026-10-25 23:3xZ by date -u; context ~470k)
 Branch claude/referee-2, merged with trunk (--no-ff) before pushes. REFEREE-2 owns no docs/GAPS.md rows. PARKED after this push.
 ### DONE (every report docs/referee-2/<name>.md; every verdict "(Opus 5.5, D15)")
