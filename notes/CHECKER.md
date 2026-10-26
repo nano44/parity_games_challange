@@ -23,6 +23,11 @@
   REFEREE's R-N5-NEEDB … changed no verdict or note". N-1 DEAD box 15, N-2 my sha1 swap, N-3 random climbs, N-4 REFEREE 1,817 vs 1,818.
   (a)-(e), (LV+), data, pins PASS. Re-runs EXACT: needb5 repro saved/S3; REFEREE needb5_check, ownstart, lib @7dbd5118; R2 needb_check
   #67 own/spec/rand, xg_witness @1a9a0407. Worktrees wtR58 = 7dbd5118, wtX58 = 1a9a0407. Next: Add. 1 on the revision (APPEND).
+- C59 = R50 = P-N5-KW. 2026-10-26 00:23Z docs/checker/C59.md FAIL at c14064fd (draft ce2b4861): E-1 CW-INT drops "¬H2, c_w ≠ o";
+  E-2 limit (ii) mixes REFEREE-2's slack (bound − step) and L-RED's (step − bound: "slack −2"); E-3 limit (ii) omits CW-INT / E-SEG
+  post-freeze vacuity and REFEREE-2's 571 W-ONCE checks. Points (1)-(4), (6) PASS. Re-runs: REFEREE kw_probe lib (+1 later counter line),
+  lib RANDSTARTS=3 IDENTICAL, cascb_witness CASCB 1 @1d6cbf32; R2 kw_check #406 kw_n48 3/3 IDENTICAL, cascb_witness spec reproduced
+  @8a47fd92; L-RED kw18 frzu_tight_n14 margin 0, cw11_n24 CW-INT margin 0 @c14064fd. Worktrees wtR59, wtX59, wt59. Next: Add. 1 (APPEND).
 
 ## Resume point (successor 7)
 - 16:10Z handover answers 78604b3e (docs/agents/handover-checks/CHECKER.md); Lead 5/5 + GO 16:32Z; Oink 8fbf0a7 built after GO (exit 0).
