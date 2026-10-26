@@ -1,0 +1,47 @@
+OK   SIGNED as an IMPLICATION from (Στ) | R-N5-HON.md l. 35
+OK   SIGNED as IMPLICATIONS from (Στ) | R-N5-HON.md l. 37
+OK   No gap. Notes HON-N1..N4 (wording / citation). | R-N5-HON.md l. 40
+OK   Lemma HON, Lemma SAT0, Lemma HON-FB (i)-(iv), Corollary HON′, Corollar … | R2-N5-HON.md l. 128-130
+OK   No gap. Notes N-HON-1..5 (§3). | R2-N5-HON.md l. 27
+OK   With RESULTS R65 ((Στ) at audit strength) EP-1u and REC-1 (b)-(d) hold … | R-N5-HON.md l. 40-41
+OK   at R65's audit strength EP-1u and REC-1 (b)-(d) hold without the "(Στ) … | R2-N5-HON.md l. 96
+OK   CHECKED: TRUE (strictly; difference f·n + 2) | R-N5-HON.md l. 32
+OK   CHECKED: TRUE in the sense "neither proof uses the other, nor SN-PREFI … | R-N5-HON.md l. 33
+OK   CONFIRMED (both claims) | R2-N5-HON.md l. 20
+OK   HON uses R17 three ways; in each, nothing beyond the listed items ente … | R-N5-HON.md l. 125
+OK   YES. | R2-N5-HON.md l. 89; R2-N5-HON.md l. 130
+OK   REFEREE's three-use list is the more complete statement, ACCEPTED | R2-N5-HON.md l. 141
+OK   No verdict disagreement. Both referees: no gap. | R-N5-HON.md l. 188
+OK   EMPTY. | R-N5-HON.md l. 210; R2-N5-HON.md l. 149
+OK   No disagreement on any verdict. Joint gap map: EMPTY. | R2-N5-HON.md l. 149
+OK   (r′ and z's play avoid x) | R-N5-HON.md l. 192; R2-N5-HON.md l. 85; R2-N5-HON.md l. 142 …
+OK   the parenthesis "(r′ and z's play avoid x)" is false when x lies on it … | R2-N5-HON.md l. 85-86
+OK   SETTLED as a NOTE, not a gap | R2-N5-HON.md l. 142
+OK   I WITHDRAW the word "false" and keep N-HON-1 as a wording note ("z's p … | R2-N5-HON.md l. 142
+OK   ACCEPTED. | R-N5-HON.md l. 192
+OK   equivalent: "r′ and z's path to its cycle node avoid x" | R-N5-HON.md l. 192
+OK   HON-FB adds XW and the Theorem PH case split | P-N5-HON-box46.md l. 121
+OK   REC-0's chain also contains XW: it is in P-N5-REC0's premise list (l.  … | R-N5-HON.md l. 162-163
+OK   What HON adds over REC-0's premises is R17 (c)'s case split (HON-FB (i … | R-N5-HON.md l. 163-164
+OK   ACCEPT HON-N1: the packet's "HON-FB adds XW" is inexact | R2-N5-HON.md l. 140
+OK   The independence claim ("neither proof uses the other") is unaffected. | R-N5-HON.md l. 164
+OK   in the referee queue | R-N5-HON.md l. 165; R-N5-HON.md l. 198; P-N5-HON-box46.md l. 37 …
+OK   it is in the referee queue and is expected to land as signed | P-N5-HON-box46.md l. 115
+OK   "P-N5-REC0 … is in the referee queue and is expected to land as signed … | R-N5-HON.md l. 165-166
+OK   the packet's "HON-0 is the stronger form of the signed REC-0" is now l … | R-N5-HON.md l. 166-167
+OK   ACCEPTED (my §2 uses both but did not flag it for HON-FF) | R2-N5-HON.md l. 144
+OK   The fallback-free hypothesis is used twice: for the rise (Lemma P's st … | R-N5-HON.md l. 168-169
+OK   so a proof of HON-FF has to replace both, not only the first. | R-N5-HON.md l. 170
+OK   "no vertex changes its W-cycle node from h to h + 1", which HON proves … | R2-N5-HON.md l. 91-92
+OK   The packet's list is complete; P1 enters through R15 (a), (d) | R2-N5-HON.md l. 93
+OK   and XW; P2 through WM and S (c). | R2-N5-HON.md l. 94
+OK   ACCEPTED: my signatures are under the same standing premise (as every  … | R-N5-HON.md l. 194
+OK   Standing premise 1E-N3 (RESULTS R57). | P-N5-HON-box46.md l. 22
+OK   In-gap fallbacks (f_in) occur in 9 phases (16 fallbacks) of my library … | R2-N5-HON.md l. 97-98
+OK   mutation hon (bound f_in + n − 1, the saturated tail dropped) does NOT … | R2-N5-HON.md l. 99
+OK   My lib41 run (different random starts) agrees with the packet on the m … | R-N5-HON.md l. 171-172
+OK   REFEREE's LEVMAX-20 run thins my N-HON-5 point less than I stated (1 i … | R2-N5-HON.md l. 146
+OK   All runs: own engine, 0 failures of every signed check in every sample … | R-N5-HON.md l. 137
+OK   Sets (0 violations in every set) | R2-N5-HON.md l. 109
+OK   none failed to rise. | R-N5-HON.md l. 157
+46 quotes, 46 found, 0 missing
