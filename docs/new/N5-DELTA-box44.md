@@ -1,6 +1,6 @@
 # Route Δ, step 2: the R20 coarse machinery in set form (box 44)
-L-NEW successor 23 (Opus 5.5), D14 / D18, Lead reading L40; Lead's direction (2), 01:05Z (Lead's stamp). Written 2026-10-26 01:14Z-01:22Z
-(date -u). Working doc, not a packet, unrefereed. Labels: PROVED (L-NEW 23, unrefereed) / CONJECTURE / OPEN / DATA / READING.
+L-NEW successor 23 (Opus 5.5), D14 / D18, Lead reading L40; Lead's direction (2), 01:05Z (Lead's stamp). Written 2026-10-26 01:14Z-01:31Z
+(date -u); §8 refutation and §7b added 01:29Z-01:31Z. Working doc, not a packet, unrefereed. Labels: PROVED (L-NEW 23, unrefereed) / CONJECTURE / OPEN / DATA / READING.
 TARGET.md diff: nothing here is a claim of TARGET.md §1. No polynomial bound for N5 is proved, on 𝒞^1O or beyond. G-N5-TIME open.
 
 ## 0. Setting
@@ -89,8 +89,9 @@ Proof (fixes §2, per terminal).
 3. Induction (fixes §2 step 3): for z ∈ R_t with its L-path, Ξ_t(z) = π_z ⊕ Ξ(u(z)) = Ξ_L(z) (G_D (b) at t; the terminal values are
    constant on S). For every Even y, Ξ_t(σ_t y) ⊵ Ξ_L(z) as in fixes §2 step 3 (R15 (a) and step 2). So no gate edge at t points into
    R_t; S4a and S4c switch only gate edges, and the largest-switched-vertex argument gives R_{t+1} ⊆ R_t with unchanged paths. ∎
-- Without CT-FREE: OPEN. A cross-terminal gate edge (x, z) at a fallback is coarse-flat and may be S4c's best Ξ-key choice; switching
-  it moves x into z's route region with a W-loss (it is not W-improving), and the R20 induction has no base.
+- Without CT-FREE: OPEN, and the hypothesis is not vacuous. A cross-terminal gate edge (x, z) at a fallback is coarse-flat and can be
+  S4c's best Ξ-key choice (rtf_cex_inj.pg, §8); switching it moves x into z's route region with a W-loss, and the R20 induction has
+  no base.
 
 ## 6. Theorem XA_D (PROVED, every game; same top terminal only)
 Let S be a D-stretch with threshold L ≥ 0. Let x leave R_D at an S4a step L′ → L′+1 and next re-enter at E > L′, with L′, …, E+1 in
@@ -116,47 +117,78 @@ the first n − 1 transitions of S. So such re-entries number ≤ n − 1 per ve
 If S is a D-stretch with D = {u} (one disagreement vertex; other Odd choice vertices may exist, agreeing with σ̄ at every state of S),
 then R_D's routes all end at u, there is no cross-terminal edge, and R20 (a)-(e) hold on S verbatim with o := u, θ := Ξ(u), w := W(u),
 u* := u*_u: C (§2), FBL for u* ≠ none (§4 (b), (c)), FBF for every u* (§5; CT-FREE holds automatically with one terminal), CR (§3), XA
-(§6; with one terminal, a top terminal is u itself whenever L = lev_u ≥ 0). The proof is the substitution table
-of P-N5-GD §2 plus §1-§6 here. READING: this is the frontier face of every R20-based count; whether R19 (f) PIECE and R21-R24 port
-to |D| = 1 stretches is the next check (their remaining one-Odd uses, per the ledger, are FO steps inside proofs).
+(§6; with one terminal, a top terminal is u itself whenever L = lev_u ≥ 0). The proof is the substitution table of P-N5-GD §2 plus
+§1-§6 here.
 
-## 8. Δ-RT, sharpened (OPEN)
-What blocks every multi-terminal port is one configuration: a CROSS-TERMINAL DISAGREEMENT, an edge (x, z) inside R_D with
-u(σ_k x) ≠ u(z), Ξ-improving but not W-improving. Then:
-- it is in Iσ_k and in S4a's arena, but S4a (a W-optimum) does not take it;
-- it can stay in the gate across S4a steps, so it may reach a fallback, where S4c switches by Ξ-key (FBL_D (b) shows it is
-  coarse-flat there); a switch would lower W at x;
-- by C_D (i) and (Cstrict) its two ends agree above M_D, so the disagreement is decided at ranks ≤ M_D, by the route sets A_π and
-  the terminal path sets below M_D.
-Candidate statements, none proved:
-- (Δ-RT-F) CONJECTURE: no cross-terminal edge is switched at a fallback inside a phase. DATA: 0 cross-terminal gate edges at fallbacks
-  in every sample (§9); but cross-terminal disagreements at S4a states do occur (dch16_n44: 5 at k = 28, 30).
-- (Δ-RT-C) CONJECTURE: inside a D-stretch, the transitions with a cross-terminal disagreement number ≤ poly(n).
-- (Δ-RT-W) a weighting idea (READING, untested): a potential that orders routes by (COARSE_{M_D}, then the W-frame fine order) is
-  non-decreasing at S4a steps (W-optimum) and, if Δ-RT-F holds, at fallbacks; the open part is a bound on its fine-order steps, which
-  is R17's Lemma P on R_D with several frozen terminals of different fine values. That is a one-player game (G_τ with the terminals
-  contracted to self-loops carrying their W-values), so R17 would apply IF the honest gate agreed with the W gate there, which is
-  exactly what a cross-terminal disagreement denies.
+### 7b. Lemma PIECE_D (PROVED by port, every game; |D| = 1)
+Let a run k_0 → … → k_1 lie in one phase with D_k = {u}, W(u) constant, R_D constant, (h_D) ∧ (h3_D) at every state, and no S4c
+fallback. Then it has at most (|R_D| − 1) + (|F_D| − 1) transitions at which some Ξ_k(v) or W_k(v) changes, counted as in R21 (i)
+(W on R_D, so Ξ(u) may vary).
+Proof: P-N5-RE §5 (R19 (f)) steps 1-5 with o := u, read in G_τ:
+- step 1 (closure): every vertex of π_v reaches u, so lies in R_D; F_D-plays avoid D (definition);
+- step 2: the route game 𝓡 on R_D ∪ K (K := u's W-continuation, a path in F_D by (h_D)); its Odd vertices other than u keep τ (in
+  𝒞^1O they were "forced"; here they are fixed by G_τ, with σ̄ = τ there by (HP_D)); W_k|R_D is 𝓡's valuation by G_D (b); 𝓕 := G_τ[F_D]
+  as in F1°_D;
+- step 3 (gates): G_D (c1) (one terminal) for R_D, G_D (a) for F_D;
+- steps 4-5 verbatim (S4a arena optimum against τ; (F1); R17 Theorem PH from any start; 𝓡 has one λ-phase since every play ends at
+  the terminal; 𝓕's cycle nodes are λ_Ξ's).
+The R21 (i) reading (θ free) carries over: a change of Ξ(u) at a transition with R_D constant changes W on F_D or nothing (READING of
+R21 (i)'s proof, X-1 / Lemma TF, with u for o; not re-derived here). ∎
+READING: R21-R24's remaining one-Odd uses (per the ledger: FO steps inside proofs, e.g. NF, OE, TC-SPLIT) are not checked for |D| = 1.
 
-## 9. Data (DATA, not proof): experiments/new/box44/crd.py, rtdump.py
+## 8. Δ-RT, sharpened (OPEN), and one refuted conjecture
+What blocks every multi-terminal port is the CROSS-TERMINAL DISAGREEMENT, in two directions, at a state with (h_D) ∧ (h3_D):
+- FORWARD: an edge (x, z) inside R_D with u(σ_k x) ≠ u(z), Ξ-improving but not W-improving. It is in Iσ_k and in S4a's arena;
+  S4a (a W-optimum) does not take it, but S4c (best Ξ-key) can, with a W-loss at x. By G_D (c2) and (Cstrict) its ends agree above
+  M_D (FBL_D (b)).
+- REVERSE: an edge (x, z) inside R_D, cross-terminal, W-improving but NOT in Iσ_k. S4a's arena then lacks a W-improving edge of the
+  route game, so S4a is not R17's switch-best step on R_D and Lemma P's Case B has no arena edge to use. This is what blocks a
+  multi-terminal PIECE (§7b needs |D| = 1 exactly for this).
+Both are excluded for same-terminal pairs by G_D (c1); RTREV1 = 0 in all data (§9) is that check.
+- (Δ-RT-F) "no cross-terminal edge is switched at a fallback inside a phase": **FALSE** (DATA, refuted).
+  Instance experiments/new/box44/instances/rtf_cex_inj.pg (n 11, injective priorities, sha1 9b55eee6b55df9328018fdb0a70ec974d302bd47;
+  rank-equivalent to rtf_cex.pg, sha1 2203e77f…, tied priorities, the shrinker's output; found by rtclimb.py seed 13 then shrinksw.py).
+  N5 from the S3 start: 4 iterations, 2 fallbacks. At k = 1 → 2 (an S4c fallback, λ and τ unchanged): D_1 = {0, 1}, (h_D) and (h3_D)
+  hold, M_D = 10 = n − 1. S4c switches Even 3 from 5 (terminal u(5) = 1) to 10 (terminal u(10) = 0):
+  Ξ_1(10) = (6, {4}, 4) ▷ Ξ_1(5) = (6, ∅, 3) (vertex 4 even, rank 9), but W_1(10) = (6, {4}, 4) ◁ W_1(5) = (6, {8}, 4) (vertex 8
+  even, rank 10). So W drops at 3 at this fallback. A second one at k = 2 → 3: Even 5 switches from 1 (terminal 1) to 3 (terminal 0).
+  Checks: n5x.trace equals n5.py's counts (asserted); n5.py's output passes Oink `verify` (8fbf0a7) and experiments/harness/verify.py,
+  and its winning regions equal Oink `--zlk`'s (both files).
+  Obstruction: S4c chooses by the honest key; with two terminals whose gaps (Ξ(u), W(u)) differ below M_D, the honest key and the
+  W-key order the two routes differently. Consequence: FBF_D's CT-FREE hypothesis is needed, and a multi-terminal FBF has no
+  "fallbacks only evict" base.
+- (Δ-RT-C) CONJECTURE (still open): inside a D-stretch, the transitions with a cross-terminal disagreement (either direction) number
+  ≤ poly(n). DATA: largest climbed (experiments/new/box44/instances/rtdis_k4_n24.pg, n 24, k = 4 Odd choice vertices, sha1 00529ed5…; N5 output verified as for
+  rtf_cex_inj): 12 states with a reverse
+  disagreement, 6 with a forward one, 10 cross-terminal fallback switches, over the whole run (not per stretch).
+- (Δ-RT-W) the weighting idea of the previous version (a potential monotone at fallbacks "if Δ-RT-F holds") is void with Δ-RT-F false.
+  What remains: S4a steps never lower W (R20's Lemma W, (F1)); the W-losses come only from cross-terminal fallback switches. A count
+  of those (per D-stretch) would give a W-potential argument; no bound is known.
+
+## 9. Data (DATA, not proof): experiments/new/box44/crd.py, rtdump.py, fbldump.py, rtclimb.py, shrinksw.py
 crd.py checks LAM_D, CR_D (per maximal (h_D) ∧ (h3_D) run of a phase, L := max(−1, max M_D); latest coarse change index ≤ n − 2),
-C_D (ii) (COARSE_L(Ξ) never decreases), FBL_D (b) (R_D-sourced gate edges at fallbacks: never W-improving, never same-terminal; LEAVE
-and cross-terminal DIFF counted; DIFF must be coarse-equal), FBL_D (c) / FBF base (switched F_D → R_D edges at fallbacks with (h_D) at
-both ends), and counts cross-terminal disagreements RTDIS at states with |D_k| ≥ 2. Canonical S3 start only.
-| sample | runs | trans. | LAM_D states / viol. | CR_D runs (> n long) / viol. | C_D (ii) checks / viol. | fallback R_D gate edges: LEAVE / same-term. viol. / DIFF | F_D→R_D switches (checked) / viol. | states |D| ≥ 2 / RTDIS (states) |
+C_D (ii) (COARSE_L(Ξ) never decreases), FBL_D (b) (R_D-sourced gate edges at fallbacks with (h_D): never W-improving; with (h3_D) also,
+never same-terminal; LEAVE, NOH3 (no (h3_D): no claim), cross-terminal DIFF and DIFFSW (switched by S4c) counted; DIFF must be
+coarse-equal), FBL_D (c) / FBF base (switched F_D → R_D edges at fallbacks with (h_D) at both ends), and at states with
+(h_D) ∧ (h3_D): forward (RTDIS, |D| ≥ 2) and reverse (RTREV, |D| ≥ 2; RTREV1 at |D| ≤ 1, must be 0) disagreements. Canonical S3
+start only. A first version of the FBL_D (b) check counted same-terminal edges also at states without (h3_D) and reported false
+"violations" on two climbed games; the statement needs (h3_D), the check was corrected, and the table is from the corrected script.
+| sample | runs | trans. | LAM_D states / viol. | CR_D runs (> n) / viol. | C_D (ii) checks / viol. | fallback R_D gate edges (h_D): LEAVE / NOH3 / same-term. viol. / DIFF / DIFFSW | F_D→R_D switches / viol. | states |D| ≥ 2 / RTDIS (states) / RTREV (states) / RTREV1 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| `--list ../box41/lib41.txt` | 412 | 8,477 | 6,310 / 0 | 879 (58) / 0 | 204,735 / 0 | 1,730 / 0 / 0 | 25 / 0 | 0 / 0 |
-| `--rand 2000 5 14 31` | 2,000 | 2,480 | 2,912 / 0 | 2,688 (0) / 0 | 2,359 / 0 | 0 / 0 / 0 | 46 / 0 | (not counted: run before RTDIS was added) |
-| `--rand 1000 10 24 32` | 1,000 | 1,831 | 1,910 / 0 | 1,648 (0) / 0 | 4,737 / 0 | 2 / 0 / 0 | 45 / 0 | (not counted) |
-| `--rand 3000 8 20 41` | 3,000 | 4,966 | 5,277 / 0 | 4,683 (0) / 0 | 9,030 / 0 | 0 / 0 / 0 | 108 / 0 | 85 / 0 |
-| `--rand 1500 15 30 42` | 1,500 | 3,337 | 3,325 / 0 | 2,764 (0) / 0 | 13,341 / 0 | 0 / 0 / 0 | 76 / 0 | 112 / 3 (3) |
-| `../box43/instances/*.pg` | 5 | 87 | 39 / 0 | 20 (0) / 0 | 736 / 0 | 2 / 0 / 0 | 0 / 0 | 8 / 5 (2; all dch16_n44) |
+| `--list ../box41/lib41.txt` | 412 | 8,477 | 6,310 / 0 | 879 (58) / 0 | 204,735 / 0 | 1,730 / 0 / 0 / 0 / 0 | 25 / 0 | 77 / 0 (0) / 3 (3) / 0 |
+| `--rand 2000 5 14 31` | 2,000 | 2,480 | 2,912 / 0 | 2,688 (0) / 0 | 2,359 / 0 | 0 / 0 / 0 / 0 / 0 | 46 / 0 | 18 / 0 (0) / 0 (0) / 0 |
+| `--rand 1000 10 24 32` | 1,000 | 1,831 | 1,910 / 0 | 1,648 (0) / 0 | 4,737 / 0 | 2 / 0 / 0 / 0 / 0 | 45 / 0 | 40 / 1 (1) / 4 (3) / 0 |
+| `--rand 3000 8 20 41` | 3,000 | 4,966 | 5,277 / 0 | 4,683 (0) / 0 | 9,030 / 0 | 0 / 0 / 0 / 0 / 0 | 108 / 0 | 85 / 0 (0) / 0 (0) / 0 |
+| `--rand 1500 15 30 42` | 1,500 | 3,337 | 3,325 / 0 | 2,764 (0) / 0 | 13,341 / 0 | 0 / 0 / 0 / 0 / 0 | 76 / 0 | 112 / 3 (3) / 0 (0) / 0 |
+| `../box43/instances/*.pg` | 5 | 87 | 39 / 0 | 20 (0) / 0 | 736 / 0 | 2 / 0 / 0 / 0 / 0 | 0 / 0 | 8 / 5 (2) / 2 (1) / 0 |
+| `instances/rtf_cex_inj.pg` | 1 | 4 | 4 / 0 | 2 (0) / 0 | 22 / 0 | 0 / 0 / 0 / 2 / **2** | 0 / 0 | 4 / 2 (2) / 2 (2) / 0 |
+| `instances/rtdis_k4_n24.pg` (climbed, rtclimb.py 4 24 20000 12) | 1 | — | — | — | — | 15 / 0 / 0 / 80 / **10** | 0 / 0 | 13 / 287 (6) / 104 (12) / 0 |
 Reading of the data (DATA):
-- 0 violations of every PROVED statement. CR_D is non-vacuous only on lib41 (58 runs longer than n; latest coarse change at index 54,
-  ≤ n − 2 in each run). Random runs are short (latest change index ≤ 3).
-- Fallback-side Δ-RT (DIFF) never occurred: every R_D-sourced gate edge at a fallback was a leave. Cross-terminal disagreements at
-  S4a states occur (8 in all; rtdump.py lists dch16_n44's: k = 28 and 30, D = {9, 23}, M_D = 43 = n − 1, e.g. edge (38, 9) with
-  u(σ 38) = 23, u(9) = 9, coarse-equal; S4a switched 38 to 29, a W-better arena edge).
-- Thin: lib41 has no state with |D_k| ≥ 2 and (h_D) ∧ (h3_D) (it is mostly 𝒞^1O); every multi-terminal statement rests on random
-  frontier games with short phases. The fallback cases of FBL_D (b) are untested with |D| ≥ 2.
-Runs 2026-10-26 01:13Z-01:19Z (date -u), from experiments/new/box44.
+- 0 violations of every PROVED statement (LAM_D, CR_D, C_D (ii), FBL_D (b), (c)). CR_D is non-vacuous only on lib41 (58 runs longer
+  than n; latest coarse change at index 54, ≤ n − 2 in each run). Random runs are short (latest change index ≤ 3).
+- Random sampling never found a cross-terminal fallback switch (DIFFSW 0 in 7,912 runs); climbs scored on (DIFF, RTDIS, ST2) found
+  them at once (seeds 11-14: DIFFSW 3-10 per game), and the shrinker reduced one to n 11.
+- Forward disagreements at S4a states: rtdump.py on dch16_n44 (k = 28, 30, D = {9, 23}, M_D = 43 = n − 1; e.g. edge (38, 9), u(σ 38) =
+  23, u(9) = 9, coarse-equal; S4a switched 38 to 29, a W-better arena edge).
+- Thin: every multi-terminal statement rests on short phases (random) or on climbed games; no long frontier phase is in the data.
+Runs 2026-10-26 01:13Z-01:30Z (date -u), from experiments/new/box44; Oink built at 8fbf0a7 by scripts/setup_oink.sh at ~01:27Z.

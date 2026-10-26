@@ -6,12 +6,14 @@ docs/new/P-N5-GD-box43.md section 0. Checks (docs/new/N5-DELTA-box44.md):
   CRD   on every maximal run of a phase ((lambda_Xi, tau) constant) with (hD) and (h3D) at every state, L := max(-1, max_k M_D(k)):
         COARSE_L(W_t) is constant for t >= k0 + n - 1; reports the latest coarse change index j (transition k0+j -> k0+j+1) (CR_D)
   CMON  same runs: COARSE_L(Xi) never decreases (key of the truncated value)                                (C_D, monotone half)
-  FBLD  at an S4c fallback k -> k+1 inside a phase with (hD) at k: a gate edge (x, z) with x in R_D is never W-improving; if
-        u(z) = u(x) it is not in I_sigma (counted as a violation); z in F_D is a LEAVE; if z in R_D with u(z) != u(x) it is counted (DIFF, the
-        Delta-RT obstruction), and with (h3D) its ends must be COARSE_{M_D}-equal                                    (FBL_D)
+  FBLD  at an S4c fallback k -> k+1 inside a phase with (hD) at k: a gate edge (x, z) with x in R_D is never W-improving; with
+        (h3D) also, u(z) = u(x) is impossible (counted as a violation; without (h3D) such edges are counted as NOH3, no claim); z in F_D is a LEAVE; if z in R_D with u(z) != u(x) it is counted (DIFF, the
+        Delta-RT obstruction; DIFFSW = those S4c switched, a hit refutes CONJECTURE Delta-RT-F), and its ends must be COARSE_{M_D}-equal                                    (FBL_D)
   FRD   at such a fallback with (hD) at k+1 too: no switched edge goes from F_D to R_D                      (FBL_D (i))
   RTDIS at states with (hD), (h3D), |D_k| >= 2: gate edges (x, z) inside R_D that are not W-improving (by G_D (c1) they have
         different terminals; the Delta-RT disagreement); ST2 = number of such states
+  RTREV at states with (hD), (h3D), |D_k| >= 2: edges (x, z) inside R_D that are W-improving but NOT in I_sigma (reverse
+        disagreements: S4a's arena misses a W-improving edge); RTREV1 the same at |D_k| <= 1 (must be 0 by G_D (c1))
 Usage: crd.py --list FILE | --rand COUNT NLO NHI SEED | files..."""
 import sys, os, random
 HERE = os.path.dirname(os.path.abspath(__file__)); B43 = os.path.join(HERE, "..", "box43"); sys.path.insert(0, B43)
@@ -19,8 +21,8 @@ from multi import rand_ckO, pg
 from n5x import load, step, start_pair, Engine, dual
 from f1d import hD
 
-C = dict(LAMD=0, LAMD_n=0, CRD=0, CRD_runs=0, CRD_long=0, CRD_maxj=-1, CMON=0, CMON_n=0, FBLD=0, FBLD_gate=0, LEAVE=0, DIFF=0, DIFF_coarse=0,
-         FRD=0, FRD_n=0, ST2=0, RTDIS=0, RTDIS_states=0)
+C = dict(LAMD=0, LAMD_n=0, CRD=0, CRD_runs=0, CRD_long=0, CRD_maxj=-1, CMON=0, CMON_n=0, FBLD=0, FBLD_gate=0, LEAVE=0, NOH3=0, DIFF=0, DIFFSW=0, DIFF_coarse=0,
+         FRD=0, FRD_n=0, ST2=0, RTDIS=0, RTDIS_states=0, RTREV=0, RTREV_states=0, RTREV1=0)
 
 def term(g, s, t, D):
     nxt = [s[v] if g.owner[v] == 0 else t[v] for v in range(g.n)]; u = [None] * g.n
@@ -50,6 +52,14 @@ def check(g, cap=3000):
             for x, z in r[2]:
                 if U[x] is not None and U[z] is not None and Eg.key(W[z]) <= Eg.key(W[s[x]]): dis += 1
             C["RTDIS"] += dis; C["RTDIS_states"] += dis > 0
+        if h and h3 and r is not None:
+            Iset = set(r[2]); rev = 0
+            for x in range(g.n):
+                if g.owner[x] != 0 or U[x] is None: continue
+                for z in g.succ[x]:
+                    if z != s[x] and U[z] is not None and (x, z) not in Iset and Eg.key(W[z]) > Eg.key(W[s[x]]): rev += 1
+            if len(D) >= 2: C["RTREV"] += rev; C["RTREV_states"] += rev > 0
+            else: C["RTREV1"] += rev
         row = dict(s=list(s), t=tuple(t), lam=tuple(x[0] for x in vs), vs=vs, W=W, D=D, U=U, h=h, h3=h3, M=M, fb=r[4] if r else 0,
                    Is=r[2] if r else [], Eg=Eg)
         rows.append(row)
@@ -63,11 +73,12 @@ def check(g, cap=3000):
             if a["U"][x] is None: continue
             C["FBLD_gate"] += 1; Eg = a["Eg"]; sx = a["s"][x]
             if Eg.key(a["W"][z]) > Eg.key(a["W"][sx]): C["FBLD"] += 1
-            if a["U"][z] == a["U"][x]: C["FBLD"] += 1
-            elif a["U"][z] is None: C["LEAVE"] += 1
+            if a["U"][z] is None: C["LEAVE"] += 1
+            elif not a["h3"]: C["NOH3"] += 1
+            elif a["U"][z] == a["U"][x]: C["FBLD"] += 1
             else:
-                C["DIFF"] += 1
-                if a["h3"] and coarse(a["vs"][z], a["M"]) != coarse(a["vs"][sx], a["M"]): C["DIFF_coarse"] += 1
+                C["DIFF"] += 1; C["DIFFSW"] += b["s"][x] == z
+                if coarse(a["vs"][z], a["M"]) != coarse(a["vs"][sx], a["M"]): C["DIFF_coarse"] += 1
         if b["h"]:
             for x in range(n):
                 if g.owner[x] == 0 and b["s"][x] != a["s"][x] and a["U"][x] is None:
