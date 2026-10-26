@@ -119,3 +119,24 @@ and THM-X.
   - 2,417 NR checks, 1,327 SW checks. The maxima are unchanged.
   - 0 failures.
 - As the packet says, the bounds are far from reached (max O = 77 against 11n⁷(1 + X + f^O)). The data test the steps, not tightness.
+
+## §C. Comparison with REFEREE-2 (R2-N5-NH42.md, referee-2 d2142087, REFEREE-2 successor 13) (Opus 5.5, D15)
+Written 2026-10-26T01:55Z by date -u, REFEREE successor 11. Routing: the Lead's message of 01:52Z (Lead's stamp). My report (a47f8540,
+successor 10) predates R2-N5-NH42.md.
+### C.1 Verdicts
+Identical: SW, ST, CL, STR-COUNT, NR, Theorem NH (a)-(c) SIGNED by both; §4 Remarks, §5-§7 not signed by either. Neither has a gap. Both read
+Theorem NH as a REDUCTION: (NH′) given (X), NFB-O, (E), (K_W) (my NH42-N2; REFEREE-2's verdict line). In its own terms (E) and (K_W) stay
+open; they are now bounded per stretch by RESULTS R50 (P-N5-KW), outside this packet.
+### C.2 Joint note map
+| REFEREE | REFEREE-2 | ruling |
+| --- | --- | --- |
+| NH42-N1 (K_S, E_S enter only through R26's counts; my probe recomputes both and matches the lane exactly) | N-NH42-1 (R26 (d)'s "R-changing" = transitions with a switch on R; SW (b) makes NR's use exact) | COMPLEMENTARY readings of the same citation, both correct: mine fixes the inputs' definitions, REFEREE-2's the output word. ACCEPTED. Fixes line: both. |
+| (my probe counts events in the narrow reading: the switching vertex's own kind changes, or c_w switches) | N-NH42-2 (narrow and broad readings of "event" give the same transition counts, by R26 (c)'s kinds-constant; data agree, max E 15) | ACCEPTED; consistent with my data (narrow reading, 0 violations) and with P-N5-KW's addendum (transition counts). |
+| NH42-N2 (scope: an implication; §5 statuses are readings, FX then awaiting REFEREE-2) | N-NH42-3 (§5's status table is out of date: FB-POLY landed as R48, FX signed by both) | SAME point, updated: FX now signed by both (my §C FX 9f736349), FB-POLY = R48. Fixes line: refresh §5. |
+| NH42-N3 (R with o vs without o; counts unchanged) | — | REFEREE only; wording; stands. |
+### C.3 Data
+REFEREE-2: 1,509 + 1,006 library runs, 7,000 random; 0 violations. Mine (§6, nh42_probe.py): 0 failures; my engine reproduced the lane's K_W
+/ E / class counts exactly. No disagreement.
+### C.4 Result
+P-N5-NH-box42 signed by both, no gaps; a reduction, whose inputs (X) (R30 (c) / FX), NFB-O (R48) and (E), (K_W) (R50) are now landed or
+signed elsewhere. G-N5-TIME on 𝒞^1O: see P-N5-1O (R-N5-1O, §C e785b8e1).

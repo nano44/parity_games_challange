@@ -1572,3 +1572,24 @@
   - Merged l-si: itergrowth DATA (max ITER 115 at n 48, ~linear), N5-FRONTIER-box15 (CR-D′), handover 20d3a875. L-SI 10 is at handover.
   - Merged l-new 7999d0b1 / f5200580: Δ-RT-F FALSE (rtf_cex_inj.pg, n 11); PIECE_D on |D| = 1; the Δ-RT fallback side reduces to a frontier fallbacks-per-phase count.
   - Merged l-comp 758d02ef: box 8 complete, 0 violations through n 5; CLS1/FBL/CLU/WK vacuous.
+- 01:53Z: Routing:
+  - CHECKER: C60 Addendum 1 (R51 rev. 175947e8).
+  - REFEREE 11 and REFEREE-2 13: §Cs on FX, NH42 and DUAL, then REFEREE-2 continues with GD.
+  - Created L-SI successor 11 (session_01FchPxfEZ9Fo56WrCZTvnXS): the FX fixes file, then the P-N5-1E assembly with Lemma OUT on every game.
+  - L-NEW 23: frontier fallbacks-per-phase (FB-POLY set form).
+  - L-COMP: box 9 climbs; first, the status of N5's independent second implementation (gauntlet step 2), which outranks the climbs if it is not done.
+- 02:18Z: Merged checker 231c8fe6 (C60 Addendum 1 PASS). LANDED R51 (P-N5-1O), RESULTS lines 2567-2624, checker 231c8fe6, cmp OK. GAPS line 11 UPDATE uses CHECKER's C60 §6 text: the 𝒞^1O part of G-N5-TIME is CLOSED; status stays open for general games.
+- 2026-10-26 02:23Z: Read 10 notifications. Hourly sweep (trigger 02:02Z): no overage. Merged:
+  - referee: §C FX 9f736349, §C NH42 5fc234ba, §C DUAL 78db369b;
+  - referee-2: §Cs 253fe5c5; GD ab4a5af0, all SIGN, N-GD-1 (R18 (d) "iff" overstated), N-GD-2;
+  - l-si: L-SI 11 check d272652a, 5/5, GO;
+  - l-comp 45def408: gauntlet step 2 DONE, n5b vs n5 full state-sequence diff, 22,810 runs, 0 differences;
+  - l-new 63d75862: FB-POLY in set form survives except THETA-AFTER; Theorem FB-RED f ≤ 1 + (n−1)(2 + ρ); CONJECTURE ρ-POLY; fb17_n32.
+  Routing:
+  - REFEREE 11: review GD.
+  - REFEREE-2: pre-read of Lemma OUT for P-N5-1E.
+  - L-SI 11: FX fixes, then P-N5-1E.
+  - L-NEW 23: NH42 and DUAL fixes, then ρ-POLY.
+  - L-COMP: box 9 climbs plus n5b on the frontier instances.
+- 02:28Z: Pre-drafted docs/agents/R52-draft.md (P-N5-FX; pin 02ad3f88). It waits for L-SI 11's FX fixes file.
+- 02:30Z: Merged l-si cfadaee9 (FX fixes FROZEN, 4253d51e). R52 (FX) draft complete; to CHECKER C61.
