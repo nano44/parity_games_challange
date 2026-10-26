@@ -104,6 +104,13 @@ if git cat-file -e 62a1a01d && git cat-file -e e8d31c47 && git cat-file -e 762b7
   python3 -I rund/quotecheck.py ../../docs/si/P-N5-FLIP-box18.md | grep -q "QUOTES PASS"
   python3 -I rund/quotecheck.py ../../docs/si/P-N5-FLIP-box18.md --mut | grep -q "QUOTES FAIL"
   echo "rund (packet P-N5-FLIP-box18: all quotes verbatim; shifted control fails): PASS"
+  if git cat-file -e 72db1b18 && git cat-file -e 75b8b52a; then
+    python3 -I rund/quotecheck.py ../../docs/si/P-N5-FLIP-fixes-box18.md | grep -q "quotes=23 bad=0"
+    python3 -I rund/quotecheck.py ../../docs/si/P-N5-FLIP-fixes-box18.md --mut | grep -q "QUOTES FAIL"
+    echo "rund (P-N5-FLIP fixes file: 23 quotes verbatim; shifted control fails): PASS"
+  else
+    echo "rund (P-N5-FLIP fixes file quotes): NOT RUN (referee commits 72db1b18 / 75b8b52a not in this clone)"
+  fi
 else
   echo "rund (RUND fixes file quotes): NOT RUN (source commits not in this clone; fetch claude/referee, claude/referee-2)"
 fi

@@ -1099,3 +1099,8 @@ y*'s class exit path at k, and let e be its exit (the first vertex of Q_c ∪ {c
 - CONJECTURE QUIET-n: FALSE as stated (one-terminal classes, pftheta34_n32); not pursued.
 - OPEN: the per-piece ROUTE count for m_c ≥ 2 (a port of the 𝒞^1O count); flips per phase; f per phase (L-NEW 26). ρ_q for m_c ≥ 2 stays
   OPEN.
+- CORRECTION (12:4xZ, after both referees' P-N5-FLIP reports). §24.1 ROOT-C as written here is FALSE. The hypothesis must say "class exit path
+  AND EXIT" and the consequence "a class exit path or exit". The (≤) step "each walk is a positional Odd play with cycle node c" is false.
+  Both are repaired in docs/si/P-N5-FLIP-fixes-box18.md R1 / R2 (REFEREE-2's B(e, y), REFEREE's LOCAL). §25 N3-LEVEL's parenthesis
+  "(both hold when p1 is intact at t2, by (c))" is unproved (G-FLIP-3, R3): (c) gives a disjunction. §26 is unaffected (see the fixes
+  file's last section).
