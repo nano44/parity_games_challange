@@ -1286,3 +1286,7 @@ Successor 28 (Opus 5.5, D14/D18, L40), session_01Dg8L3iN3G8HVzEVoGgCE1Y. Handove
   CYC ∩ ZCH ∩ FT): the cycle part is polynomial unconditionally; TIE/ODDC not needed. Bonus: PF-CHOICE (SPEC S1 tie-breaks; si.py l. 78-205
   opened) ⇒ TIE-CHARGE ⇒ STRICT + TIE ≤ 2(n − 1)(|U_c| − 1); ODDC stays OPEN (stack DFS over non-path-free vertices). DATA ft.py / tie.py /
   tieclimb.py all 0; tie-break controls bite; climbs reach TIE 1, ODDC 1 only.
+- 17:39Z Lead: both EPC §Cs in (REFEREE cd4795f8, REFEREE-2 c4975512). P-N5-EPC-fixes-box48 FROZEN: repairs R1 = EPC-N1 (LEV_C ≥ 0), R2 = EPC-N2
+  (RET-FB induction), R3 = EPC-N3 + N-EPC-6 (EP-ASM a reduction), R4 = N-EPC-1 (pin wording), R5 = N-EPC-2 (D_C), R6 = N-EPC-3 (citation);
+  remarks N-EPC-4, EPC-N4 = N-EPC-5; §5 DATA: non-flat saturated fallbacks 5/236, 11/178 (REFEREE) vs named-only (REFEREE-2), per REFEREE §C.
+  41 quotes, 0 missing. Opened: both referee files at their §C commits in full; packet at 81ab0b72.

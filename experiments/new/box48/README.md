@@ -57,3 +57,4 @@ transitions, |Q| 3; out/nconf_long121.txt, out/retfb_long121.txt.
   (VERB), out/tie2_lib41_n34_k2.txt, out/tie2_lib41_MUT{1,2,3}.txt.
 - tieclimb.py NMAX STEPS SEED OBJ OUTDIR --seed G [--start S]: climbs ODDC_c / TIE_c per phase (OBJ oddc / tie / both), checking tie.charcheck on
   every scored game. out/tieclimb/ (oddc_s1, s2 from box31 u3ev_n16; tie_s3, s4 from red/kl klcount_n16; 3,000 steps, n ≤ 24).
+- out/quotecheck_epc_fixes.txt: docs/new/P-N5-EPC-fixes-box48.md against cd4795f8 REFEREE (§C), c4975512 REFEREE-2 (§C), 81ab0b72 packet: 41 quotes, 0 missing.
