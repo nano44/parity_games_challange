@@ -98,6 +98,6 @@ Both are lane-PROVED and unrefereed. Labels per L40: DATA / READING. Every game 
   - frzgap0_n4 / frzgap0_n6 have exactly n states, so they are also vacuous as freeze tests. What they do show is unchanged: a coarse
     W move INTO state n − 1, so the freeze index k0 + n − 1 cannot be lowered to k0 + n − 2. Their content is non-empty, with D = ∅
     (L = −1, W = Ξ).
-  - The exhaustive sweep's "2 non-vacuous runs" used the old definition. One is frzgap0_n4 (exactly n states, vacuous). I have not
-    re-checked the other; a re-run of exh19 with the corrected counter is pending.
+  - The exhaustive sweep's "2 non-vacuous runs" used the old definition. One is frzgap0_n4 (exactly n states, vacuous). Re-run with the corrected
+    counter (R78 §2): 7,188,422 runs, 0 non-vacuous.
 - So no content-carrying, non-vacuous FRZ-U_H3 run is known to me either. The first real test is still missing.
