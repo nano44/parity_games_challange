@@ -166,3 +166,46 @@ play) and PUSHMUT=1 (the rise demanded of p2) bite.
 - (1) EXIT-changing Even re-routings per phase, and DISJ leapfrogs per phase (§6). A bound on either in n and k is open.
 - (2) A super-linear (in n) EXIT_x family at fixed k, or an argument that each leapfrog consumes fresh content (as in mkpp / mkgate).
 - (3) NO-UP's tie case: a tie at both ends with a σ̄ change. It never occurred; N5's Odd tie rule would decide it.
+
+## 8. The Even side (Lead 17:47Z): is an exit-changing Even re-routing self-limiting? It reduces to the classic count (written 18:01Z by date -u)
+Script experiments/si/root/evenside.py (per-class C-intervals and C-cuts exactly as gcx.py; logs root/logs/evenside_long8.txt,
+evenside_lib41_n34_rs2.txt).
+- Lemma E-ONEWAY (PROVED, lane; conditional as §1). Even's nested switches are one-way, mirroring NO-UP. Let Even w ∈ U ∖ {c} switch a → b at
+  t → t+1. Let e1 ∈ T be the exit of a, with a's class exit path π_a and exit e1 unchanged on [t, t′], and let e1 lie on w's honest play at
+  every state of [t + 1, t′] (Q_c-vertices on it before e1 off honest cycles). Then w does not switch back to a at t′ → t′ + 1.
+  Proof. Put h := κwt_c(w) + κwt_c(π_a) and g_s := off_s(w; e1). By (SW) and (M1κ), κ_t(b) ≻ κ_t(a). By MONO-REF at b (e1 on b's (t+1)-play),
+  g_{t+1} = κwt_c(w) + off_{t+1}(b; e1) ⪰ κwt_c(w) + off_t(b; e1) ≻ κwt_c(w) + off_t(a; e1) = h. MONO-REF at w on each later transition keeps
+  g ⪰ g_{t+1} ≻ h up to t′. A switch back at t′ needs κ_{t′}(a) ≻ κ_{t′}(σ_{t′} w), i.e. h = κwt_c(w) + off_{t′}(a; e1) ≻ g_{t′}. Contradiction. □
+  DATA (evenside.py): 777 windows checked (129 on the eight long instances, 648 on lib41 with S3 + 2), 0 returns. Control E1MUT=1 (window
+  conditions dropped): returns appear (10, 16, 7, 7, 22, 11 on six of the eight long instances), so the check is not vacuous.
+  Unlike Odd's, Even's statement is about returns, not single moves. Even's choice is an improvement, not a best response, so a single
+  shallower move is allowed (data: Even DOWN moves 26 / 38 / 64 / 41 on nep90 / nep76 / long121 / n80).
+- What does limit Even. Inside a PURE C-interval (every gate D-direct; A non-increasing; D, offsets constant), the packet's reading
+  (P-N5-GCX §5) makes S4a on U_c the abstract model's step. N5-ABSCYC-box22's Theorem ABS-DEPTH then says (under GEN) that U_c has no Even
+  switch at index ≥ (|A_a| − 1) + |U_c| of the interval. By R69's ROOT that also means no ρ event and no exit change there. READING:
+  conditional on the lift lemma (L1) and GEN.
+  DATA: 0 such late switches (PURELATE = 0) in every pure interval. Largest index of an Even switch inside a C-interval, measured from the
+  interval's start: pure 28 on lib41 and ≤ 5 on the eight long instances; impure 52 on pp_K48 (|U_c| = 449) and ≤ 3 on the others. In no
+  interval, pure or impure, is an Even switch at index ≥ |U_c| − 4 (largest index − |U_c| = −4, on lib41). (An earlier draft of this paragraph
+  quoted indices 96 / 52 / 67. They came from a bug in evenside.py's first version, which measured from the phase start instead of the
+  run start. Fixed before this push; the logs are from the fixed code.)
+- So Even's re-routing is self-limiting between C-cuts, and the count moves to the C-cuts K(S). The cuts are mostly Odd: a σ̄ change at a gate
+  changes D (DCH) or a D-direct offset (OSB). DATA, cuts by kind (AG / DCH / OSB / DDSET / OVAL):
+  | sample | transitions at cuts / inside | AG | DCH | OSB | DDSET | OVAL | exit-change transitions at cuts / inside |
+  | --- | --- | --- | --- | --- | --- | --- | --- |
+  | nep90_n40 | 74 / 10 | 15 | 19 | 38 | 2 | 0 | 31 / 2 |
+  | nep76_n40 | 63 / 9 | 9 | 20 | 24 | 10 | 0 | 40 / 0 |
+  | long121_n40 | 53 / 60 | 17 | 4 | 13 | 11 | 8 | 23 / 8 |
+  | snap_n80_s62 | 77 / 16 | 34 | 22 | 10 | 7 | 4 | 63 / 3 |
+  | pp_K48_n449 (impure) | 2 / 53 | 2 | 0 | 0 | 0 | 0 | 1 / 48 |
+  | lib41 (n ≤ 34, S3 + 2) | 1,605 / 4,322 | 304 | 169 | 942 | 14 | 176 | 35 / 17 |
+- Obstruction, named ALTERNATION (READING, plainly). After every Odd change at a gate, Even settles within about 2n steps (ABS-DEPTH; lift
+  pending). But every Odd change at a gate is itself a C-cut that restarts Even, and every Odd change needs Even activity at the same
+  transition (R69 ROOT; §2 PUSH). So the combined count is the number of Odd best-response changes at gates during Even's improvement.
+  That is the classic policy-iteration quantity: how often the best response moves while the improver improves. No potential in this note
+  breaks the cycle. DEPTH (§4) pays only for Odd's DOWN pushes; what feeds them is Even's exit changes on chosen options and DISJ leapfrogs,
+  and both occur only in the windows that the cuts open.
+  Instances: nep90_n40 (74 of 84 transitions are cuts, 57 of them Odd gate changes; 31 of 33 exit-change transitions at cuts); pp_K48_n449
+  (the impure regime: 95 σ̄ changes at non-direct gates and 48 exit changes inside one C-interval).
+- Consequence for the queue: the impure regime (gap (iv)) and the cut count are where the problem sits. L-RED's GCI-LEN (every global
+  C-interval has length ≤ n − 1) is the pure-and-impure length statement. My ABS-DEPTH reading gives < 2n for pure intervals only.
