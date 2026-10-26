@@ -119,6 +119,10 @@ def run_check(g, start, cnt, name):
                 if cw(R[n - 2]) != cw(R[n - 1]): cnt["FRZ1B_violated"] += 1; EX.append(("FRZ1B", name, R[0], len(R), n))
             if len(R) < n + 1: continue          # the proof's reading: freeze from state k0 + n - 1; content needs >= n + 1 states
             cnt["FRZ_nonvacuous"] += 1
+            # content above L: does any W path set (or Xi path set) on the run have a vertex of rank > L?
+            above = sum(1 for s in R for v in range(n) if (st[s]["W"][v][1] >> (L + 1)) or (st[s]["Xi"][v][1] >> (L + 1)))
+            EX.append(("FRZRUN", name, R[0], len(R), n, "L", L, "toprank", n - 1, "values_with_vertex_above_L", above))
+            cnt["FRZ_content_runs"] += above > 0
             base = cw(R[n - 1])
             for s in R[n - 1:]:
                 if cw(s) != base: fail(cnt, "FRZ", name, s)
