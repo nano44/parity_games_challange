@@ -1,0 +1,27 @@
+MAX_GCI_len_minus_n1_R1 -24
+MAX_GCI_len_minus_n1_R2 -24
+MAX_K_R1 47
+MAX_K_R2 47
+MAX_U 1
+MAX_ULG_idx_minus_n1_R1 -25
+MAX_ULG_idx_minus_n1_R2 -25
+MAX_XPV 16
+MAX_Xu 1
+MSC_chk 28
+MS_S_only 28
+MS_S_zswitch 28
+MS_chk 28
+RD_pure_ints 6
+RD_xmig 28
+RUNS 12
+RUNS_S 15
+RUN_STATES 323
+ULG_inside_R1 3
+ULG_inside_R2 3
+UL_runs 15
+ULa_chk_R1 15
+ULa_chk_R2 15
+ULb_chk_R1 1226
+ULb_chk_R2 1226
+U_events 3
+done

@@ -1,0 +1,68 @@
+MODE files ../R2-N5-STAU/lib41_noref.lst 1 MUT fa1 BUDGET 200000
+BFF_checks: 453316
+DLS_A: 2354
+DLS_A_clean: 2205
+DLS_A_nonclean: 149
+DLS_B: 127
+DLS_case_i: 310
+DLS_case_ii: 1953
+DLS_case_iii: 163
+DLS_entering: 2481
+DLS_gains: 198
+ENGXI_checks: 8882
+FA_UNK: 3327
+FA_beyond_freeze: 522
+FA_pieces: 10962
+FAa_checks: 346155
+FAb_checks: 346155
+FAc_checks: 2220
+FG_UNK: 2836
+FG_intervals: 5556
+FGa_checks: 181630
+FGb_checks: 181630
+GSa_checks: 57165
+GSb_checks: 113160
+RLP_beyond: 31
+RLP_beyond_switch_in_class: 31
+RLP_runs: 5556
+RLPi_checks: 36
+RLPii_checks: 160
+RP_checks: 75655
+VIOLATIONS: 81
+V_FAa: 81
+classes: 4013
+phases: 2332
+runs: 410
+states: 8882
+RP_max_rho: (37, 'experiments/new/box35/instances/pf_best_3622.pg#0@4 q 0 f 4 G_c 1 |U| 40')
+VIOLATION FAa: experiments/n5-exhaustive/canonA_0.pg#0@0 z 3 s 0
+VIOLATION FAa: experiments/n5-exhaustive/canonA_0.pg#0@1 z 7 s 0
+VIOLATION FAa: experiments/n5-exhaustive/instances/b6_xw_n40.pg#0@0 z 5 s 0
+VIOLATION FAa: experiments/n5-exhaustive/instances/b6_xw_n40.pg#0@0 z 17 s 0
+VIOLATION FAa: experiments/n5-exhaustive/instances/b6_xw_n56.pg#0@0 z 38 s 0
+VIOLATION FAa: experiments/n5-exhaustive/instances/canonA_0.pg#0@0 z 3 s 0
+VIOLATION FAa: experiments/n5-exhaustive/instances/canonA_0.pg#0@1 z 7 s 0
+VIOLATION FAa: experiments/n5-exhaustive/instances/thetaA_canon_n12.pg#0@0 z 2 s 0
+VIOLATION FAa: experiments/n5-exhaustive/instances/thetaA_canon_n12.pg#0@1 z 5 s 0
+VIOLATION FAa: experiments/new/box25/instances/rtt16.pg#0@0 z 15 s 0
+VIOLATION FAa: experiments/new/box25/instances/tr12_s3.pg#0@1 z 8 s 1
+VIOLATION FAa: experiments/new/box25/instances/tr12_s3.pg#0@2 z 5 s 1
+VIOLATION FAa: experiments/new/box25/instances/tr12_s3.pg#0@3 z 2 s 1
+VIOLATION FAa: experiments/new/box25/instances/tr12_s3.pg#0@4 z 9 s 1
+VIOLATION FAa: experiments/new/box25/instances/tr12_s3.pg#0@5 z 1 s 1
+VIOLATION FAa: experiments/new/box25/instances/tr12_s3.pg#0@6 z 7 s 1
+VIOLATION FAa: experiments/new/box25/instances/tr12_s3.pg#0@7 z 10 s 1
+VIOLATION FAa: experiments/new/box25/instances/tr12_s3.pg#0@8 z 0 s 1
+VIOLATION FAa: experiments/new/box25/instances/tr12_s3.pg#0@8 z 4 s 1
+VIOLATION FAa: experiments/new/box25/instances/xc16.pg#0@1 z 1 s 1
+VIOLATION FAa: experiments/new/box25/instances/xc16.pg#0@1 z 11 s 1
+VIOLATION FAa: experiments/new/box25/instances/xc16.pg#0@2 z 6 s 1
+VIOLATION FAa: experiments/new/box25/instances/xc16.pg#0@3 z 7 s 1
+VIOLATION FAa: experiments/new/box25/instances/xc16.pg#0@4 z 12 s 1
+VIOLATION FAa: experiments/new/box25/instances/xc16.pg#0@5 z 15 s 1
+VIOLATION FAa: experiments/new/box25/instances/xc16.pg#0@6 z 14 s 1
+VIOLATION FAa: experiments/new/box25/instances/xc16.pg#0@7 z 11 s 1
+VIOLATION FAa: experiments/new/box25/instances/xc16.pg#0@8 z 5 s 1
+VIOLATION FAa: experiments/new/box25/instances/xc16.pg#0@9 z 4 s 1
+VIOLATION FAa: experiments/new/box25/instances/xc16.pg#0@10 z 2 s 1
+RESULT FAIL violations=81

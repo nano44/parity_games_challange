@@ -29,6 +29,13 @@ def score(g, s, t, fit):
     C.analyse(g, "climb", states, fbs, S)
     if C.VIOL:
         return (10 ** 9, 0), S   # a violation of a landed statement: stop and report
+    if fit == "ulg":   # box 15: max G_LEN_SLACK over GATED global C-intervals (ulg.py); secondary max G_IDX_SLACK
+        import ulg as UG; UG.QUIET = True
+        T, top = __import__("collections").Counter(), {}
+        UG.analyse(g, "climb", states, fbs, T, top)
+        if UG.VIOL:
+            return (10 ** 9, 0), S
+        return (top.get("G_LEN_SLACK_gated", (-10 ** 6,))[0], top.get("G_IDX_SLACK", (-10 ** 6,))[0]), S
     if fit == "gdl":   # box 14: max G_DLEAVE (transitions at which some u leaves D) over phases
         import nconf as NC
         SG, A, ph = NC.phases(g, states, fbs); Q = [v for v in range(g.n) if g.owner[v] == ODD and len(set(g.succ[v])) >= 2]
@@ -85,7 +92,7 @@ def s3(g):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("fit", choices=["nep", "lend2", "nconf2", "ret02", "gdl"]); ap.add_argument("n", type=int); ap.add_argument("k", type=int)
+    ap.add_argument("fit", choices=["nep", "lend2", "nconf2", "ret02", "gdl", "ulg"]); ap.add_argument("n", type=int); ap.add_argument("k", type=int)
     ap.add_argument("seed", type=int); ap.add_argument("--secs", type=float, default=600); ap.add_argument("--steps", type=int, default=10 ** 9)
     ap.add_argument("--seed-pg"); ap.add_argument("--out", required=True)
     ap.add_argument("--fixk", action="store_true", help="reject mutations that change |Q|")

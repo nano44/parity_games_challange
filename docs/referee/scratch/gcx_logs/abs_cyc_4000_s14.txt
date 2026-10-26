@@ -1,0 +1,44 @@
+LOC_anti_FAIL 9
+LOC_chk_anti 1378
+LOC_chk_basic 1254
+LOC_chk_basicM 1256
+LOC_chk_hash 1338
+LOC_chk_lowidx 1298
+LOC_chk_sizedep 1368
+LOC_hash_FAIL 8
+LOC_sizedep_FAIL 21
+MONO_chk 235086
+NOGREATEST 1769
+NORET_chk 229
+RUNS 23304
+nostart 116
+EX ('LOC_anti', 'g66', 0, 3)
+EX ('LOC_sizedep', 'g66', 0, 3)
+EX ('LOC_hash', 'g66', 0, 3)
+EX ('LOC_sizedep', 'g255', 0, 0)
+EX ('LOC_anti', 'g292', 0, 5)
+EX ('LOC_sizedep', 'g292', 0, 5)
+EX ('LOC_hash', 'g292', 0, 5)
+EX ('LOC_sizedep', 'g342', 0, 2)
+EX ('LOC_sizedep', 'g417', 0, 1)
+EX ('LOC_sizedep', 'g483', 0, 3)
+EX ('LOC_sizedep', 'g794', 0, 5)
+EX ('LOC_anti', 'g898', 0, 2)
+EX ('LOC_sizedep', 'g898', 0, 2)
+EX ('LOC_anti', 'g927', 0, 3)
+EX ('LOC_sizedep', 'g927', 0, 3)
+EX ('LOC_hash', 'g927', 0, 3)
+EX ('LOC_sizedep', 'g1034', 0, 1)
+EX ('LOC_anti', 'g1107', 0, 3)
+EX ('LOC_anti', 'g1660', 0, 0)
+EX ('LOC_sizedep', 'g1660', 0, 0)
+EX ('LOC_hash', 'g1660', 0, 0)
+EX ('LOC_sizedep', 'g1696', 0, 2)
+EX ('LOC_anti', 'g1845', 0, 0)
+EX ('LOC_sizedep', 'g1845', 0, 0)
+EX ('LOC_sizedep', 'g1862', 0, 2)
+EX ('LOC_sizedep', 'g2052', 0, 1)
+EX ('LOC_sizedep', 'g2334', 0, 2)
+EX ('LOC_hash', 'g2334', 0, 2)
+EX ('LOC_sizedep', 'g2488', 0, 1)
+EX ('LOC_hash', 'g2488', 0, 1)

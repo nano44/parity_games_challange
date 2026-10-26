@@ -282,3 +282,34 @@ one phase with no fallback. D0 form: QP_c = k + 2 = D0, phase length k + 1; ENT 
 Bellman-Ford clock read by every gate), so not disjoint copies. Counted with this lane's qp.py unmodified; phrestrict.py (RESTRICT_H) holds,
 its MUT=1 bites. So QP_c grows LINEARLY in n within one class, on phases of length ≈ n/3: not a long-phase growth law, and RESTRICT_H is a
 reduction, not a size bound (Lead's reading of 18:03Z). §0's DATA (QP_c 36 at n 80) is consistent with it.
+
+## 14. REFEREE's OFFADD-N2 closes: OFFSET-MONO needs no honest-cycle hypothesis, so CHAIN-COUNT needs no cut but EXIT (PROVED, every game; DATA; Lead's note of 18:25Z; written 18:34Z by date -u)
+Setting and notation as P-N5-OFFMONO-box49 §0-§1 (frozen; not edited). REFEREE 15's addendum report (docs/referee/R-N5-OFFMONO-add.md, c2a97189;
+opened at c2a97189, l. 40-44 and 58-60) states this as OFFADD-N2, a CONJECTURE candidate, with 0 failures in 4,006 + 1,371 checks; its
+OFFMONO-N4 found that dropping the hypothesis never bites at 4,006 cycle levels.
+- Lemma OFFSET-MONO⁺ (PROVED). OFFSET-MONO holds for every q ∈ Q ∩ U_c, q ≠ c, at every in-phase transition, with no hypothesis on honest
+  cycles: off_{t+1}(q; p) ⪰ off_t(q; p) for p := par_{t+1}(q).
+  Proof. If q is on no honest cycle at t: OFFSET-MONO. Let q ∈ Z_t(c) (add1 (CYC-ID)). Step 1 of OFFMONO's proof (the path π from y2 := σ̄_{t+1}(q)
+  to p, backwards induction with (Aκ) at t + 1, (SW), (M1κ)) never uses q's position at t, so off_{t+1}(q; p) ⪰ κwt_c(q) + κ_t(y2) − κ_t(p).
+  By (Aκ) at t (q ≠ c), off_t(q; p) = κwt_c(q) + κ_t(y1) − κ_t(p), y1 := σ̄_t(q). It remains to show κ_t(y2) ⪰ κ_t(y1). y2 ∈ U_c (on q's t+1 play,
+  λ constant), so y2's honest play at t reaches c's cycle Z_t(c), which contains q; so it meets q, either before c or not.
+  - Case L1 (y2's t-play meets q before c). Exactly OFFMONO's Case L: ζ := that play up to q, Z := q → ζ → q avoids c, κ_t(y2) = κwt_c(Z) +
+    κ_t(y1), and κwt_c(Z) ⪰ (0, 0) by Lemma S (a) and S1's reward order; that argument does not use q's position.
+  - Case L2 (y2's t-play meets c before q). Let τ″ := σ̄_t with q's choice replaced by y2, and V″ := V_{σ_t,τ″}. Under (σ_t, τ″) the play from q
+    is q → y2 → (y2's t-play up to c) → (Z_t(c) from c up to q) → q: y2's t-play up to c avoids q (Case L2) and Z_t(c) from c to q uses only
+    vertices whose choice is unchanged. Its cycle consists of q, y2's t-path to c, and the arc of Z_t(c) from c to q; the latter has ranks
+    ≤ rank(c) (c is the top of Z_t(c)). Lemma S (a) (RESULTS R18 (d), every game by R57 (a), Ξ_t optimal under 1E-N3): Ξ_t(q) ⊴ V″(q).
+    - If P(Ξ_t y2) ≠ ∅: the top u* of the new cycle is the top of P(Ξ_t y2), rank(u*) > rank(c). S1's order compares rewards first and
+      rewards are injective, so reward(u*) > reward(c); an odd u* of rank > rank(c) has reward −p′(u*) < min(p′(c), −p′(c)) ≤ reward(c), so u* is
+      even, and M_t(y2) = wt_c(P(Ξ_t y2)) > 0 (the top power dominates). κ_t(y1) has M = 0 (y1 lies on Z_t(c) or is c; add1 (CYC-SHAPE)), so
+      κ_t(y2) ≻ κ_t(y1).
+    - If P(Ξ_t y2) = ∅: the new cycle's top is c, and V″(q) = (c, ∅, 1 + ℓ_t(y2)) = q ⊕ Ξ_t(y2) (rank(q) < rank(c), q path-free). Ξ_t(q) ⊴ V″(q)
+      with equal cycle nodes is κ_t(q) ⪯ κwt_c(q) + κ_t(y2) by (M1κ), i.e. κ_t(y1) ⪯ κ_t(y2) with (Aκ). □
+- Corollary CHAIN-COUNT‴ (PROVED). For a run J of in-phase transitions and the class c, with x-pieces cut at EXIT_x ONLY: for every
+  q ∈ Q ∩ U_c ∖ {c}, κ(q)-changes in J ≤ Σ_{x ∈ Q ∩ U_c ∖ {c}} (|EXIT_x| + Σ_π (v_x(π) − 1)) ≤ Σ_x D·(|EXIT_x| + 1). Proof: CHAIN-SUM with every
+  term ⪰ (0, 0) by OFFSET-MONO⁺; add1 §2's charging with an empty cut set. □ So the CYC / ZCH / FT machinery of add1 and add2 is not needed
+  for the count; their lemmas stay true (and FT-COUNT, PF-CHOICE stand on their own).
+- DATA (experiments/new/box48/offmono3.py = offmono2.py with the hypothesis dropped; out/offmono3_lib41_n34_k2.txt, _MUT.txt, out/offmono3_long7.txt):
+  lib41 n ≤ 34, S3 + 2, seed 7: 7,689 checks, 471 with q on an honest cycle at t (all Case L2; L1 never occurs), V_Kc 0, V_M 0. Controls bite
+  at on-cycle checks too: opposite length sign V_Kx_ONCYC 25; MUT=1 (p off q's play) V_Kc_ONCYC 51. Seven long instances: 0 violations (2
+  on-cycle checks). This also explains why the no-cut controls of add1 (MUT=1) and add2 (MUT=1, MUT=4) never bit.

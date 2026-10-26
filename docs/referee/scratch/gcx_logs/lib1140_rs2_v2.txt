@@ -1,0 +1,36 @@
+MAX_GCI_len_minus_n1_R1 0
+MAX_GCI_len_minus_n1_R2 0
+MAX_K_R1 19
+MAX_K_R2 19
+MAX_U 16
+MAX_ULG_idx_minus_n1_R1 -10
+MAX_ULG_idx_minus_n1_R2 -10
+MAX_XPV 3
+MAX_Xu 8
+MSC_chk 89
+MS_L_only 134
+MS_S_only 84
+MS_S_zswitch 83
+MS_both 5
+MS_chk 223
+R3_diff 2
+R3_reentry 2
+RD_pure_ints 1092
+RD_pure_pastfreeze 9
+RD_xmig 8
+RUNS 2739
+RUNS_S 2983
+RUN_STATES 32302
+ULG_inside_R1 952
+ULG_inside_R2 879
+UL_runs 2396
+UL_skip_not_ii 587
+ULa_chk_R1 2396
+ULa_chk_R2 2396
+ULb_chk_R1 63814
+ULb_chk_R2 63814
+U_events 1820
+skip_big 270
+EX ('GCI_LONG', '../../../experiments/red/h3/instances/frzgap0_n4.pg/2', 4, [(0, 3)])
+EX ('R3', '../../../experiments/red/n3/instances/long121_n40.pg/0', 31, 37, 11, 1, 32, 35, 302795358208, 294205427712)
+EX ('R3', '../../../experiments/red/n3/instances/long121_n40.pg/0', 91, 97, 11, 1, 92, 95, 62411931648, 53822001152)

@@ -1,0 +1,54 @@
+FIX_runs 36000
+HEIGHT_chk 12000
+LOC_anti_FAIL 55
+LOC_chk_anti 1513
+LOC_chk_basic 1337
+LOC_chk_basicM 1341
+LOC_chk_hash 1434
+LOC_chk_lowidx 1372
+LOC_chk_sizedep 1553
+LOC_hash_FAIL 37
+LOC_sizedep_FAIL 94
+MAX_fix_minus_H_anti 1
+MAX_fix_minus_H_basic 0
+MAX_fix_minus_H_basicM 0
+MAX_fix_minus_H_hash 1
+MAX_fix_minus_H_lowidx 0
+MAX_fix_minus_H_sizedep 1
+MONO_chk 425456
+NORET_chk 124
+RUNS 36000
+TIE_beyond_height_anti 1
+TIE_beyond_height_hash 1
+TIE_beyond_height_sizedep 3
+TIE_chk 36000
+EX ('LOC_sizedep', 'g31', 0, 2)
+EX ('LOC_anti', 'g63', 0, 7)
+EX ('LOC_sizedep', 'g63', 0, 7)
+EX ('LOC_hash', 'g63', 0, 7)
+EX ('LOC_anti', 'g104', 0, 2)
+EX ('LOC_sizedep', 'g104', 0, 2)
+EX ('LOC_hash', 'g104', 0, 2)
+EX ('LOC_anti', 'g110', 0, 4)
+EX ('LOC_sizedep', 'g110', 0, 4)
+EX ('LOC_sizedep', 'g118', 0, 2)
+EX ('LOC_sizedep', 'g118', 0, 3)
+EX ('LOC_hash', 'g118', 0, 2)
+EX ('LOC_sizedep', 'g124', 0, 0)
+EX ('LOC_sizedep', 'g366', 0, 6)
+EX ('LOC_anti', 'g422', 0, 2)
+EX ('LOC_sizedep', 'g422', 0, 2)
+EX ('LOC_sizedep', 'g533', 0, 2)
+EX ('LOC_hash', 'g533', 0, 2)
+EX ('LOC_anti', 'g621', 0, 6)
+EX ('LOC_sizedep', 'g621', 0, 6)
+EX ('LOC_hash', 'g621', 0, 6)
+EX ('LOC_anti', 'g634', 0, 6)
+EX ('LOC_sizedep', 'g634', 0, 6)
+EX ('LOC_sizedep', 'g651', 0, 5)
+EX ('LOC_anti', 'g680', 0, 3)
+EX ('LOC_sizedep', 'g680', 0, 3)
+EX ('LOC_sizedep', 'g703', 0, 5)
+EX ('LOC_sizedep', 'g774', 0, 4)
+EX ('LOC_anti', 'g787', 0, 0)
+EX ('LOC_sizedep', 'g787', 0, 0)
