@@ -275,3 +275,10 @@ FT_c := the in-phase transitions of P at which some z ∈ U_c ∖ {c} has κ_t(z
 - (iv) So the route to G-N5-TIME through OFFMONO + CHAIN-COUNT″ now needs, per phase: EXIT_x (L-SI 18), OR(x) at relayed levels (small in
   data) and the κ-changes of direct terminals (the bulk). The last is the multi-class analogue of what R50 / R51 settle on 𝒞^1O.
 - (Successor 29) §11 is frozen, with full proofs and the code-level part separated, as docs/new/P-N5-OFFMONO-add2-box49.md; that addendum governs.
+
+## 13. Record: QP_c on long phases (§0 and N5-NCONF §12 OPEN (1)) is answered by L-RED's R92 (DATA, not mine; written 18:24Z by date -u)
+docs/red/R92-qpc-ladder.md (l-red 1e851da4, L-RED successor 22; opened, §1-§2): the LADDER family (experiments/red/ul/mkladder.py k [ent]), n = 3k + 12,
+one phase with no fallback. D0 form: QP_c = k + 2 = D0, phase length k + 1; ENT form: QP_c = k, ENT = k − 1, N_ep = NCONF = k. One class (one
+Bellman-Ford clock read by every gate), so not disjoint copies. Counted with this lane's qp.py unmodified; phrestrict.py (RESTRICT_H) holds,
+its MUT=1 bites. So QP_c grows LINEARLY in n within one class, on phases of length ≈ n/3: not a long-phase growth law, and RESTRICT_H is a
+reduction, not a size bound (Lead's reading of 18:03Z). §0's DATA (QP_c 36 at n 80) is consistent with it.
