@@ -128,6 +128,8 @@ def phase(g, E, R, i, j, Q, name):
                 lw = all(R[x]["lamW"] == R[a]["lamW"] for x in range(a, k + 1))
                 ginfo = (name, "phase@%d" % i, "gcint=[%d,%d]" % (a - i, k - i), "n=%d" % n, "lamW_const" if lw else "lamW_moves")
                 C["gcint"] += 1; mx("G_LEN_SLACK", (k - a) - (n - 1), ginfo)
+                sbc = sum(1 for x in range(a, k) if R[x]["sb"] != R[x + 1]["sb"])     # (G1): transitions inside with a sigma-bar change
+                if sbc: C["gcint_sbchg"] += 1; mx("G_LEN_SLACK_SB", (k - a) - (n - 1), ginfo + ("sbchg=%d" % sbc,))
                 for (kk, y, z) in UE:
                     if a <= kk < k:
                         C["G_U_in"] += 1; mx("G_IDX_SLACK", (kk - a) - (n - 1), ginfo + ("k'=%d" % (kk - i), (y, z)))
