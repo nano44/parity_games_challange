@@ -1,6 +1,6 @@
-# Draft RESULTS R71 (Lead, 2026-10-26 15:09Z by date -u; both reports, both §Cs and the fixes file filled (15:24Z by date -u)) — to CHECKER C80 (rev. 2026-10-26 15:49Z by date -u: LEAD-N1 resolved by REFEREE's erratum ae36ce48)
+# Draft RESULTS R71 (Lead, 2026-10-26 15:09Z by date -u; both reports, both §Cs and the fixes file filled (15:24Z by date -u)) — to CHECKER C80 (rev. 2026-10-26 15:49Z by date -u: LEAD-N1 resolved by REFEREE's erratum ae36ce48; rev. 15:59Z by date -u: C80 E-1, N-1, N-2; N-3 by the erratum)
 
-### R71 [refereed-only] N5 on EVERY game: in the honest frame H_C of a configuration C = σ̄|Q (every Odd vertex cut to its σ̄_C edge), an in-phase fallback from a C-state raises the level LEV_C to min(LEV_C + 1, n − 1) (Lemma FB-RISE_C); LEV_C = n − 1 at a C-state gives Ξ = B_C, and later C-states of the phase follow within 4n(n − 1) transitions with Ξ constant (Lemma SAT_C); hence in every phase the in-phase fallbacks number at most |𝒞_f(P)|·(4n² − 3n), 𝒞_f(P) the configurations at fallback sources (Theorem FB-C), so f ≤ (4n² − 3n)·min(N_ep, Π_q deg(q)), f ≤ Δ^k(4n² − 3n) on 𝒞^kO, and f ≤ (1 + m)(4n² − 3n) when |D| ≤ 1 throughout (Corollaries (a)-(d)) (2026-10-26) — a REDUCTION of f to the number of distinct configurations per phase (that number is not bounded here on general games; (a)'s N_ep form and (d) are weaker than RESULTS R60 (c) EPOCH for n ≥ 2; not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C80.md, checker PENDING)
+### R71 [refereed-only] N5 on EVERY game: in the honest frame H_C of a configuration C = σ̄|Q (every Odd vertex cut to its σ̄_C edge), an in-phase fallback from a C-state raises the level LEV_C to at least min(LEV_C + 1, n − 1) (Lemma FB-RISE_C); LEV_C = n − 1 at a C-state gives Ξ = B_C, and later C-states of the phase follow within 4n(n − 1) transitions with Ξ constant (Lemma SAT_C); hence in every phase the in-phase fallbacks number at most |𝒞_f(P)|·(4n² − 3n), 𝒞_f(P) the configurations at fallback sources (Theorem FB-C), so f ≤ (4n² − 3n)·min(N_ep, Π_q deg(q)), f ≤ Δ^k(4n² − 3n) on 𝒞^kO, and f ≤ (1 + m)(4n² − 3n) when |D| ≤ 1 throughout (Corollaries (a)-(d)) (2026-10-26) — a REDUCTION of f to the number of distinct configurations per phase (that number is not bounded here on general games; (a)'s N_ep form and (d) are weaker than RESULTS R60 (c) EPOCH for n ≥ 2; not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C80.md, checker PENDING)
 - Object (packet P-N5-FBC, added at l-new 1f8d6d7d, pinned trunk de02d37e, unchanged during review): docs/new/P-N5-FBC-box47.md, sha1
   32d3776cf4090fb15c1d0cb4c8b4f59276f64e21 (L-NEW successor 26, Opus 5.5). The referees' notes are collected by the lane in
   docs/new/P-N5-FBC-fixes-box47.md (l-new c2691e46, sha1 1347222ccc39ea380035da050b8af2f7cc8473d6, L-NEW successor 28: R1-R6 for FBC-N1, -N2,
@@ -32,7 +32,7 @@
   REFEREE-2). What FB-C adds over EPOCH is the per-configuration form: a configuration that recurs in the phase is paid once.
 - Not signed (packet §3-§5): the τ-frame split and its DEAD charge (s4c8_n13, j5_n16); the data; the OPEN items (the number of distinct
   configurations per phase on general games; a better saturated term); the READINGs, including "incomparable with RESULTS R56", which is
-  witnessed in one direction only (FBC-N4 = N-FBC-5: FB-C's number never beat R56's or EPOCH's in any phase either referee ran; max
+  witnessed in one direction only (FBC-N4 = N-FBC-5: FB-C's number never beat EPOCH's or R56's in any phase REFEREE-2 ran, nor R56's in the two batches where REFEREE checked it; max
   N_ep/|𝒞_f| = 45 at n = 32 against 4n − 3 = 125, REFEREE-2).
 - Referee strengthening (NOT part of this entry): FBC-N3 (REFEREE's proof, checked line by line and accepted by REFEREE-2 in its §C): at most
   one saturated fallback per configuration and phase, via SAT_C (b), RESULTS R15 (b) through R57 (a), and RESULTS R38 (f) CN-LAST, so
@@ -40,7 +40,7 @@
   81ab0b72, sha1 9f48ded7, pinned), proved by the lane on its own route and in review; it lands, if at all, with that packet.
 - Honest limits: (i) A REDUCTION: f is bounded by distinct configurations at fallback sources, which is not bounded here on general games
   (Π_q deg(q) in the worst case); for fixed k and bounded degree (b) is O(n²) per phase. (ii) The saturated term 4n(n − 1) + 1 is untested:
-  at most 1 saturated source per (phase, configuration) in every set of both referees, longest saturated window 2 transitions (tog6b_n32);
+  at most 1 saturated source per (phase, configuration) in every set of both referees, longest saturated window 2 transitions (tog6b_n32, REFEREE-2);
   REFEREE-2's "≤ 1 saturated per C" control cannot bite (N-FBC-6; FBC-N3 proves why). (iii) Over-budget pairs: REFEREE-2 left 173 (phase,
   configuration) pairs undecided at budget 3·10⁶ (1,519 fallback sources skipped for the LEV_C checks); at 3·10⁷ its six worst named
   instances are decided except one configuration in each of ffin12_n32, rise_thin51_n40, zcl_rx_n32; REFEREE's n ≤ 34 row has 115 UNK
