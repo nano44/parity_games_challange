@@ -9,11 +9,11 @@ Author: L-SI successor 10 (Opus 5.5; D15, D18, L37, L40), session_01PBqfsNWMhTPn
 ## 0. What to sign
 | § | statement | label | to sign |
 | --- | --- | --- | --- |
-| §2 | Theorem 1O-POLY: (a) from SPEC S3's start, (b) from any start pair, N5 makes ≤ P(n, m, d_o, Δ) iterations, P explicit | PROVED; (b) with the start-independence table §2.1 to check | yes |
-| §2.1 | start-independence of every cited result (table for the referees) | READING | to check, not to sign |
+| §2 | Theorem 1O-POLY: from any start pair, N5 makes ≤ P(n, m, d_o, Δ) iterations, P explicit | PROVED (start-freeness: REFEREE audit R-N5-START) | yes |
+| §2.1 | start-freeness of the cited results: REFEREE's audit R-N5-START, with its depth caveat | audit (REFEREE) | the R32 / R33 line-by-line check is a referees' item |
 | §3 | Lemma BIT: one N5 iteration, and the final output step, cost O(n³(n + m)) word operations on O(log(n + m))-bit words and O(n)-bit vectors, i.e. polynomially many bit operations | PROVED | yes |
 | §4 | Lemma OUT: at N5's stop (Iσ = ∅), SPEC S5's output is the pair of winning regions with positional winning strategies (𝒞^1O) | PROVED | yes |
-| §5 | Corollary 1O-TIME: on 𝒞^1O, N5 from the S3 start (and from any start pair, with §2.1) outputs (W_E, W_O) and positional winning strategies in time polynomial in n + m at bit cost | PROVED | yes |
+| §5 | Corollary 1O-TIME: on 𝒞^1O, N5 from any start pair outputs (W_E, W_O) and positional winning strategies in time polynomial in n + m at bit cost | PROVED | yes |
 | §6 | gauntlet status for the subclass | READING | no |
 | §7 | MIRROR's extension to 𝒞^1E (P-N5-DUAL, in review); the frontier | READING | no |
 
@@ -30,11 +30,8 @@ Author: L-SI successor 10 (Opus 5.5; D15, D18, L37, L40), session_01PBqfsNWMhTPn
   S5. Code (an implementation of SPEC; DATA, not proof): experiments/si/si.py Engine.evaluate, experiments/new/n5.py run().
 
 ## 2. Theorem 1O-POLY (PROVED)
-Statement. Let G ∈ 𝒞^1O with n vertices, m edges, d_o := deg(o), Δ := max out-degree.
-- (a) From SPEC S3's start, N5 stops after at most ITER iterations (below).
-- (b) The same holds from any start pair (SPEC allows one: S3 "unless a start pair is given"), given the start-independence of the cited
-  results' proofs (§2.1).
-The bound: N5 stops after at most
+Statement. Let G ∈ 𝒞^1O with n vertices, m edges, d_o := deg(o), Δ := max out-degree. From any start pair (SPEC S3: "Start (unless a start
+pair is given)"; the S3 start included), N5 stops after at most
     ITER ≤ (n(n − 1) + d_o)·(T* + 1)
 iterations, where T* is R50's bound with f := F := 2n² and the landed bounds of R50's chain:
     T_H := n² + 2n − 1;  X_SN := 13(d_o + 1)n³(F + 1 + T_H) + T_H;  X := (F + 1)(n − 1) + F + X_SN;
@@ -51,23 +48,19 @@ Proof.
 5. Orders: X_SN, X = O(d_o n⁵); Θ, S_o = O(d_o² n⁶) ⊆ O(d_o n⁷); W_ch, N_st = O(d_o n⁷); N_Ξ = O(Δ d_o n¹¹); T* = O(m Δ d_o n¹¹); times
    O(n²) phases. With d_o, Δ ≤ n and m ≤ n², O(n¹⁸). □
 - The bound is loose and unoptimised (R47's data: at most 30 phases in any run; no iteration-count growth law is claimed here).
-- (a) needs nothing about starts: every cited result is a statement about the states and transitions of N5 runs, and a run from S3 is an
-  N5 run in every sense those results were proved for.
-- (b): the same proof, with each cited statement read for runs from an arbitrary start pair. None of the landed statements below
-  restricts the start. Whether some proof uses a property of S3's start (best-reward σ0, τ0) is the audit item §2.1. REFEREE 11 notes it
-  did not audit R17-R48 for this (R-N5-DUAL).
+- "From any start pair" uses that every cited result is START-FREE: its statement and its proof use only statewise facts, per-transition
+  facts and inductions whose base is the first state of the window they bound. Step 2 then bounds each phase whatever state it starts in.
 
-### 2.1 Start-independence: what each cited statement says (READING; for the referees to check)
-| result | scope of the landed statement | start in the statement | what to check in the proof |
-| --- | --- | --- | --- |
-| R15 (c), (d) | any strategy sequence of VJ00 improvements; every N5 iteration | none ((c) is about switches) | none: (c) is a property of single switches; (d) of single iterations |
-| R47 (a)-(c), Φ-1O | "along any N5 run", "a run" | none | (a) R15 (a), (d) per transition; (b) R18 (d) Lemma S (b) per transition; Φ-1O (a) R15 (c), (d) on G^d per transition. All per-transition |
-| R48 FB-POLY | "every phase" | none | κ-HAT-FREEZE and κ-PFZ count fallbacks from the phase's first state, with no initial-value assumption. Check that P-N5-FBPOLY §1-§5 use no fact about the run's first state |
-| R50 Corollary PHASE (P-N5-KW) | "a phase" | none | FRZ-U, LEN, KIND-MONO, E-SEG start from a run's first state k0 with no initial-value assumption (FRZ-U's base case is j = 0, trivial). Landed inputs R30 (c), R34 (e), (f), R27 (d), (g), R24 (e), R22 (a), (b), R19 (d), R21 (a), R23 (g): each is stated per state / transition / interval / phase. Check R33 X-RUN′ (under R34 (f)) and R32 FREEZE |
-| R36 (c) | any one-player game, any σ | not a run | none |
-| R21 (a) | "every state" | none | per state |
-- R18 (c)'s theorem is stated "from ANY start pair", with the referees confirming that (R18 (c) text). That is a precedent for this
-  family; it is not cited here.
+### 2.1 Start-freeness: REFEREE's audit
+- docs/referee/R-N5-START.md (REFEREE successor 11, referee 4e440bd5, file sha1 1dea2dd9…).
+  - It audits R47 (a), (b), R48, P-N5-KW, R15, R21 (a), R22, R24 (e), R27 (d), (g), R30 (c), R34 (e), (f), R36 and R38 (a), in statement
+    and proof.
+  - Result (its §2): "Every result in the Lead's list is START-FREE, in statement and proof".
+- Depth caveat, verbatim (its §2): "Depth, stated plainly: rows marked "full proof" were read in full for this audit (most also in my own
+  or my predecessors' reviews); R34 (b)-(f) and the R32 / R33 chain under X-SN-PHASE were read at structure level plus grep, with R32
+  FREEZE's induction base read. A line-by-line re-read of every R32 / R33 step was NOT done here."
+- REFEREES' CHECK for this packet: line-by-line start-freeness of the R32 / R33 chain (FREEZE, X-RUN′, X-RUN°) under R34 (f) X-SN-PHASE.
+- R18 (c) ("from ANY start pair", referee-confirmed) is a precedent in this family. It is not cited.
 
 ## 3. Lemma BIT (PROVED): one iteration costs polynomially many bit operations
 Model: TARGET.md §3 (word RAM, words of O(log(n + m)) bits; numbers longer than a word cost their bit length).
@@ -173,6 +166,11 @@ total is O(ITER · n³(n + m)) = poly(n + m) word operations on O(log(n + m))-bi
 | 3 barrier statement, L-LIT sign-off | done for N5 (L-LIT T20, with caveats, per R15); not specific to 𝒞^1O |
 | 4 correctness and running-time proofs, double-refereed | running time: this packet + landed R15, R47, R48, R50; correctness: Lemma OUT (this packet). Lean: NOT done (needed only for an M4 claim; not applicable) |
 | 5 CHECKER on the exact commit, owner told | after the referees |
+- Honest limits:
+  - The start-freeness of the R32 / R33 chain under X-SN-PHASE rests on REFEREE's structure-level reading (R-N5-START §2 caveat, quoted in
+    §2.1). A line-by-line check is a referees' item.
+  - Lemma OUT uses R21 (a)'s parenthetical. Its generality over every Odd strategy τ′ is a referees' check (§4).
+  - The bound P is loose; nothing here is a growth law.
 - What this does NOT do:
   - It makes no TARGET.md §2 claim: the class is restricted (TARGET §4, first bullet), and polynomial by simpler means.
   - It says nothing about games with ≥ 2 Odd choice vertices, where Φ-1O's τ-count (d − 1) fails as a bound and FB-POLY, X, KW use 𝒞^1O
