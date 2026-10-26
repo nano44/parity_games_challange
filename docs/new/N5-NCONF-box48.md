@@ -18,6 +18,8 @@ sha1 98101d1f…; Lemma FB-RISE, question Q-A).
 | §6 | Corollary EP-ASM: N_ep ≤ (4n² − 3n) + (1 + 4n² − 3n + X_dir + X_big)(T*_Q + 2) + NCONF_{≥2}·(2n² − n) + R⁰_{≥2}: the epoch count reduces to X_dir, X_big, the multi-gate configurations NCONF_{≥2} and their fallback-free returns R⁰_{≥2} | PROVED as an assembly (N_1 term an IMPLICATION from (Στ)) |
 | §5 | Lemma SAT-FB: a fallback from a saturated C-state is the phase's last transition, or C never recurs; so at most one saturated fallback per configuration, and Theorem FB-C′: f ≤ n·|𝒞_f(P)| (was |𝒞_f(P)|·(4n² − 3n)); FB-C′ implies RESULTS R60 (c) EPOCH | PROVED (every game) |
 | §4 | what is open | OPEN / READING |
+| §9 | frozen-side u-stretches: RESTRICT_{u|J} (N5 on a stretch where only u's best reply moves = N5^τ on G^{u|J}) | CONJECTURE (successor 27) → PROVED in §10 |
+| §10 | Lemma RESTRICT_H / REPRO_H: R64's restriction holds on any Odd cut H containing τ and every σ̄_k of the run; covers G′_E, G^u, G^{u|J} and the used-edge game G^P of a whole phase (nep90 / nep76 / long121: QP 5 / 5 / 3) | PROVED (L-NEW 28, unrefereed) + DATA |
 
 ## 0. Setting (every game)
 As docs/new/N5-FB-box47.md §0: N5 = SPEC S1-S5; phase P (maximal run with (λ, τ) constant); Q := Odd vertices of out-degree ≥ 2; a
@@ -233,3 +235,52 @@ its edges. If D⁻ = ∅, J is a u-run and G^{u|J} = G^u (RESULTS R68 (f)); the 
   vertices of out-degree 2 whose best reply is fixed (≠ τ) on the piece. It does NOT reduce to 𝒞^1O: S4a's arena and W need τ(v) at v ∈ D⁻, so v
   cannot be cut to σ̄_J(v) alone. A bound on such pieces would need a 𝒞^1O-type count (R51) that tolerates fixed two-way gates. OPEN.
 
+
+## 10. Lemma RESTRICT_H: §9's CONJECTURE is PROVED, in a form that covers every in-phase run (PROVED, every game; DATA; successor 28, written 15:25Z by date -u)
+Successor 28 (Opus 5.5, D14 / D18, L40), queue item 4 (Lead's GO of 15:16Z). Labels as above; PROVED here means L-NEW 28, unrefereed.
+Setting. An ODD CUT of G is a game H with G's vertices, priorities, owners and Even successor lists, in which every Odd v keeps a non-empty
+subset succ_H(v) ⊆ succ_G(v). Let J = (x, …, y) be a run of consecutive states of one phase P of N5 on G (τ constant on P). J is H-ADMISSIBLE if,
+for every Odd v, τ(v) ∈ succ_H(v) and σ̄_k(v) ∈ succ_H(v) for every k ∈ J. Objects computed by SPEC on H carry a prime.
+- Lemma RESTRICT_H (PROVED, every game; standing premise 1E-N3, as R64). If J is H-admissible and k ∈ J, then at the pair (σ_k, τ): (i) Ξ′_k = Ξ_k
+  and W′_k = W_k; (ii) Iσ′_k = Iσ_k, S4a's output on H equals its output on G, and S4c's Even switch-all is the same; (iii) Odd's dual valuation of
+  τ is the same on H as on G, so Iτ′_k = Iτ_k ∩ E(H); (iv) if k → k+1 is an in-phase transition of N5 on G and Iτ′_k ≠ ∅, then τ is value-optimal
+  against σ_k in S4b's arena of H.
+- Proof. RESULTS R64 (a)'s proof (packet P-N5-EPR §1), read with H in place of G′_E. It uses exactly three properties of G′_E, and H has each:
+  - (P1) every Odd strategy of H is one of G (H's Odd edges are G's): used in (i) (Lemma S (a) on G against S1's counterstrategy on H) and in (iv)
+    (every Odd strategy of S4b's arena on H is one of the arena H′_G on G, because Iτ′_k ⊆ Iτ_k by (iii)).
+  - (P2) σ̄_k is an Odd strategy of H (admissibility): used in (i) (Lemma S (a) on H: Ξ′_k ⊴ V_{σ_k,σ̄_k} = Ξ_k). R64 needs σ̄_k = σ̄_E for this;
+    here it is the definition of admissibility, so k may range over a run on which σ̄ CHANGES.
+  - (P3) τ is an Odd strategy of H and Even keeps all its edges (admissibility; definition of an Odd cut): used in (i) for W (G_τ and H_τ are the
+    same one-player game), in (ii) (S4a's arena: Even restricted to {σ_k(v)} ∪ Iσ_k(v), Odd to τ(v), the same game on G and H; Iσ is read from Ξ
+    and Even's lists; S1 on the dual is deterministic), in (iii) (S1 on G^d for τ runs on the graph with Odd fixed to τ and Even free, the same
+    graph for G and H) and in (iv) (τ is a strategy of S4b's arena on H).
+  Nothing else of G′_E is used: not that Odd vertices outside D_E have out-degree 1, not that D_E-vertices have out-degree 2, not that σ̄ is
+  constant on the run (each item is a statement at ONE state k). □
+- Corollary REPRO_H (PROVED, every game; with R64 (b)'s repair EPR-1). Let J = (x, …, y) be H-admissible and y′ := x + len(J) (y + 1 if
+  y → y + 1 is in-phase, else y). Then N5^τ on H from (σ_x, τ) passes through (σ_x, τ), …, (σ_{y′}, τ) with the same fallback / non-fallback type
+  at each transition as N5 on G, and x, …, y lie in one phase of that N5^τ run; y′ may leave it (EPR-1), unless J ∪ {y + 1} is admissible too.
+  Proof: R64 (b)'s induction verbatim, with RESTRICT_H (ii), (iv) at each k ∈ [x, y′ − 1] ⊆ J, and (i) for λ′ = λ on J. □
+- Instances (each is "J is H-admissible" by definition):
+  | H | J | status |
+  | --- | --- | --- |
+  | G′_E (Odd v ∉ D_E cut to τ(v), u ∈ D_E to {τ(u), σ̄_E(u)}) | an epoch E | RESULTS R64 (a), (b) |
+  | G^u (Odd v ∈ Q ∖ {u} cut to τ(v), u keeps all edges) | a u-run (D ⊆ {u}) | RESULTS R68 (f) RESTRICT_u, REPRO_u |
+  | G^{u|J} (§9) | a frozen-side u-stretch | §9's CONJECTURE RESTRICT_{u|J}: now PROVED (this §) |
+  | G^P := Odd v cut to {τ(v)} ∪ {σ̄_k(v) : k ∈ P} (the USED-EDGE game of P) | a whole phase P | NEW: every phase of N5 is one N5^τ phase on G^P, from (σ_x, τ), reproduced state by state through its last in-phase transition |
+- What it gives (READING). (1) §9's frozen-side stretches are one N5^τ phase piece on G^{u|J}, now as a lemma, not a conjecture; the open part
+  named in §9 (a 𝒞^1O-type count that tolerates fixed two-way gates) is unchanged. (2) For any count of a phase, the game may be replaced by
+  G^P, whose Odd choices are only those N5 uses in P: QP := #{Odd v with ≥ 2 edges in G^P} and XDEG := Σ_v (|succ_{G^P}(v)| − 1). A bound
+  polynomial in n and exponential only in QP (or XDEG) would bound the phase. QP is not bounded here; on nep90 / nep76 / long121 the whole long
+  phase lives on a G^P with QP = 5 / 5 / 3 (DATA below), so those instances are N5^τ phases of games with 5 / 5 / 3 Odd choice vertices. (3)
+  RESTRICT_H is the honest-frame analogue of a "used-action" reduction (only the actions an algorithm actually plays matter): it makes N5's
+  phase a function of the edge set it touches, so the library of small-QP games (𝒞^kO, k ≤ 5) is a complete test bed for these long phases.
+- DATA (experiments/new/box48/phrestrict.py; G^P per phase; XI_V = Ξ on G^P differs at a state of P, REP_V = N5^τ on G^P fails to reproduce σ, τ
+  and the fallback type at an in-phase transition of P; MUT=1 drops the edge (v, σ̄_x(v)) for one v with σ̄_x(v) ≠ τ(v), must bite):
+  nep90 / nep76 / long121 from their starts (out/phrestrict_long3.txt): one phase each (91 / 78 / 121 transitions), QP 5 / 5 / 3, XDEG 22 / 24 / 8,
+  XI_V 0, REP_V 0; MUT: XI_V 1 / 1 / 1 (bites on every phase), REP_V 0 / 1 / 1. Library: see the next item.
+  liball n ≤ 34 (experiments/new/box47/out/liball.txt), S3 + 2 random, seed 7, as §9 (out/phrestrict_liball_n34_k2.txt): 1,031 phases with ≥ 2
+  states, 8,458 in-phase transitions, 147 phases (898 transitions) with QP ≥ 2, max QP 11, max XDEG 20; XI_V 0, REP_V 0. MUT=1
+  (out/phrestrict_liball_n34_MUT.txt): 561 phases mutated, XI_V 514, REP_V 292 (bites).
+- Labels. PROVED (L-NEW 28, unrefereed): RESTRICT_H, REPRO_H (a port of signed R64 (a), (b); each step is cited above). Consequently §9's
+  RESTRICT_{u|J} is PROVED as an instance; §9's DATA stand as consistency checks. DATA: phrestrict.py. READING: "what it gives". OPEN: any bound
+  on QP or XDEG per phase; a count of N5^τ phases on games with QP Odd choice vertices (R51 covers QP = 1 under (Στ)).
