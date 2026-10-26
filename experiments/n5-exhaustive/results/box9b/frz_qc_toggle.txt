@@ -1,0 +1,5 @@
+start -1998 n 5
+65 -997 FRZ_checks 0 seed 367
+3125 4 FRZ_checks 0 seed 3427
+TOTALS {'FRZ_runs': 22440, 'FRZ_runs_too_short(vacuous)': 22440, "b'_checks": 18197, "c1'_checks": 32812, "c2'_checks": 804391, 'runs': 70392, 'states': 199245, 'states_D_ge2': 23318, 'states_NC': 120274, 'states_NC_h3': 119517, 'states_NC_not_hD': 446, 'transitions': 128853}
+RESULT OK best 4

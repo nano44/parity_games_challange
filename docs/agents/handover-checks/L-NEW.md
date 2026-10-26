@@ -317,3 +317,47 @@ Nothing running of mine. Oink NOT built (`tools/oink/build` absent): `scripts/se
   after every push. Carried: stale clone (fetch + rev-parse equality at start; done above); `git status --porcelain` empty before
   `scripts/push.sh > file 2>&1; echo $?`; read notifications whenever the notice appears; scratchpad, not $TMPDIR; kill by pid
   only (never pkill -f); one "Resume point" heading in the notebook after any overwrite.
+
+## Successor 24 (Opus 5.5; written 2026-10-26 05:26Z by date -u)
+Predecessor: successor 23, session_011WFfFqRNrU1a8LQwbwazZN, parked at l-new 43e0bd81 (resume point; packet head a4fa94b0).
+
+### 1. Branch, head, ahead/behind trunk (claude/vibrant-johnson-nxvvxo)
+- Branch claude/l-new. STALE container again: local HEAD 5961101a (successor 6). `git fetch origin claude/l-new` → origin head
+  43e0bd81; `git merge --ff-only origin/claude/l-new` → HEAD 43e0bd81; `git merge-base --is-ancestor a4fa94b0 HEAD` true.
+- Trunk head 8460897d ("Lead: pin P-N5-XEP; merges (REFEREE §Cs); log", 05:19:39Z). Before merging: `git rev-list --left-right
+  --count 43e0bd81...trunk` = **1 ahead / 64 behind**, merge-base a4fa94b0 (unmerged: 43e0bd81, the resume-point commit).
+- `git merge --no-ff` trunk (no conflicts, no rebase) → b43b7c3c: 2 ahead / 0 behind; 3 ahead after this commit.
+
+### 2. Open work and the next step of each
+Nothing running. Oink NOT built (`tools/oink/build` absent): `scripts/setup_oink.sh` before any run that needs it.
+- **(a) Fixes files** (Lead 05:20Z brief; both referees signed VILB and ACCEL, both §Cs in): NEW docs/new/P-N5-VILB-fixes-box44.md
+  (VILB-N1 = N-VILB-1, N-VILB-2, VILB-N2 DATA tight at round j) and NEW docs/new/P-N5-ACCEL-fixes-box44.md (N-ACC-2 per-class freeze,
+  ACCEL-N1 = N-ACC-1, ACCEL-N2 (EPOCH (b), R57 when landed), ACCEL-N3 = N-ACC-3). Neither file exists (checked). Packets re-measured:
+  P-N5-VILB sha1 872d4400…, P-N5-ACCEL sha1 301f0be0…, P-N5-XEP sha1 237dd5eb… (pinned on trunk 8460897d). Next: read REFEREE
+  dcb1451c / a19cdff7 / 09b5dbf5 (+906247c6) and REFEREE-2 f0e82d8a / 5ad79417, write, freeze, report sha1s.
+- **(b) Research**: X_SN^pre for epochs with |D| = 1: port R19-R34 per epoch with o := u (N5-DELTA-box44 §7, N5-FBF §13 D-EPOCH);
+  read L-SI's Lemma G_D-NC (P-N5-NC, sha1 2036e7c8).
+- **Queued on the Lead's word**: FBK fixes2 (REFEREE-2 G-FBK-1, N-FBK-1..4, REFEREE 12's notes) after REFEREE 12's FBK report and §Cs.
+- Not routed: G-N1-LB.
+
+### 3. docs/GAPS.md rows I own (trunk 8460897d, `grep -n L-NEW docs/GAPS.md`)
+- **G-N5-TIME** (l.11): major; "L-NEW (L-LIT T22; referees later)"; **open**. Last update 04:15Z: R56 (FB-RED) landed; 𝒞^1O part
+  closed by R51; general games OPEN.
+- **G-N1-LB** (l.10): minor; "L-NEW (optional; not routed)"; **open**.
+- **G-N5-TERM** (l.16): major; "L-NEW (L-COMP checks runs)"; **closed** (RESULTS R15).
+
+### 4. Three owner rulings that most constrain me (verbatim, trunk docs/DECISIONS.md), with DECISIONS-INDEX status
+1. D18 (DECISIONS l.332-333; INDEX l.32 **active**; Lead reading L40, l.33 active):
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+2. D14 (l.244-246; INDEX l.22 **active**; Lead reading L35, l.23 active):
+   > D
+   > You know it can also test prveiously not tested approaches, it can come up with it own as well
+3. D16 (l.299-300; INDEX l.28 **active**; Lead reading L38, l.29 active):
+   > Then keep working as I told you to
+
+### 5. One trap, and the check that prevents it
+- **Trap** (successor 23, box 44): a checker counted same-terminal FBL edges at states without (h3_D), producing false violations;
+  a lemma's hypotheses must be in the checker's guard, not only in the text.
+- **Check**: every checker asserts each hypothesis of the lemma it tests before counting a violation, and a reported violation is
+  re-checked by hand on the instance before it is called a counterexample. Carried: stale container (caught again above: fetch +
+  is-ancestor a4fa94b0); `scripts/push.sh > file 2>&1; echo $?`; ReadNotifications before acting on a request that may be done.

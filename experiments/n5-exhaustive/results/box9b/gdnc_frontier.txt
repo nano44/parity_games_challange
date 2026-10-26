@@ -1,0 +1,18 @@
+FRZ_runs: 712
+FRZ_runs_too_short(vacuous): 712
+MUT_b'_failures: 73044
+MUT_checks: 220039
+b'_checks: 35249
+c1'_checks: 284286
+c2'_checks: 141888
+files: 431
+runs: 1724
+states: 15847
+states_D_ge2: 9766
+states_NC: 7621
+states_NC_h3: 6575
+states_NC_not_hD: 1739
+transitions: 14123
+max_FRZ_run_minus_(n-1): 0
+max_FRZ_run_states: 37
+RESULT OK violations=0

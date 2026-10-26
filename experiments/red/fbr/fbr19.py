@@ -110,7 +110,7 @@ def analyse(g, start=None, mode="n5", tmp=None, use_oink=False, cap=10 ** 6):
     S, FB, E = O.trace(g, start, mode, cap)
     ev = [E.evaluate(s) for s, _ in S]; Xi = [X for X, _ in ev]; lam = [tuple(x[0] for x in X) for X in Xi]
     SB = [B for _, B in ev]
-    N = len(S); r = dict(route2_checks=0, routeacyc_checks=0, dir_hits=0, dir_checks=0, sat_hits=0, sat_checks=0, rho3=0, q_in_class=0, fmn=-10**9, Nep=0, epoch_n1=0, ep_fb=0, ep_fb_gap=-10**9, s4a_run=0, s4a_run_pre=0, sigbar_repeat=0, levels=0, sw_trans=0, sg_checks=0, acc_checks=0, n=n, Q=len(Q), ITER=len(FB), fmax=0, fn=0.0, rho_at=0, U_at=0, Nlate_at=0, rhomax=0, Nlate=0, late=0, phases=0, fails=[])
+    N = len(S); r = dict(alt_changes=0, alt_clean_strict=0, alt_clean_tie=0, alt_nonclean=0, alt_cyc=0, route2_checks=0, routeacyc_checks=0, dir_hits=0, dir_checks=0, sat_hits=0, sat_checks=0, rho3=0, q_in_class=0, fmn=-10**9, Nep=0, epoch_n1=0, ep_fb=0, ep_fb_gap=-10**9, s4a_run=0, s4a_run_pre=0, sigbar_repeat=0, levels=0, sw_trans=0, sg_checks=0, acc_checks=0, n=n, Q=len(Q), ITER=len(FB), fmax=0, fn=0.0, rho_at=0, U_at=0, Nlate_at=0, rhomax=0, Nlate=0, late=0, phases=0, fails=[])
     a = 0
     while a < N:
         b = a
@@ -128,6 +128,33 @@ def analyse(g, start=None, mode="n5", tmp=None, use_oink=False, cap=10 ** 6):
             if len(Qc) >= 3: r["rho3"] = max(r["rho3"], sum(1 for k in range(a, b) for q in Qc if Xi[k + 1][q] != Xi[k][q]))
         r["fmn"] = max(r["fmn"], f - n)
         fb2t(g, E, S, SB, Xi, lam, FB, Q, C, a, b, fbs, r)
+        # ---- Lemma ALT (N5-FBF §10.1, l-new a77693d1) and its corollary for N_ep
+        def nx(t, v): return S[t][0][v] if g.owner[v] == 0 else SB[t][v]
+        def oncyc(t, q):
+            v, seen = q, []
+            while v not in seen: seen.append(v); v = nx(t, v)
+            return q in seen[seen.index(v):]
+        def visits(t, y, q):
+            v, seen = y, set()
+            while v not in seen:
+                if v == q: return True
+                seen.add(v); v = nx(t, v)
+            return False
+        resid = 0; rhoq = 0
+        for k in range(a, b):
+            for q in Q:
+                if Xi[k + 1][q] != Xi[k][q]: rhoq += 1
+                if SB[k + 1][q] == SB[k][q]: continue
+                r["alt_changes"] += 1; c = lam[k][q]
+                if c == q: r["alt_cyc"] += 1; resid += 1; continue
+                y1, y2 = SB[k][q], SB[k + 1][q]
+                sc = 1 if E.par[c] == 1 else -1
+                kap = lambda t, z: (E.weight(Xi[t][z][1]), sc * Xi[t][z][2])
+                if oncyc(k, q) or oncyc(k + 1, q) or visits(k, y2, q): r["alt_nonclean"] += 1; resid += 1; continue
+                if kap(k + 1, q) > kap(k, q): r["alt_clean_strict"] += 1
+                elif kap(k + 1, q) == kap(k, q) and kap(k, y2) == kap(k, y1) and kap(k + 1, y2) == kap(k, y2): r["alt_clean_tie"] += 1; resid += 1
+                else: r["fails"].append(f"ALT k={k} q={q} {kap(k, q)} -> {kap(k + 1, q)}")
+        alt_bound = 1 + rhoq + resid
         # Q-runs: maximal runs of states a..b with Ξ(Q) constant
         qrun = [0] * (b - a + 1)
         for k in range(a + 1, b + 1): qrun[k - a] = qrun[k - a - 1] + (1 if any(Xi[k][q] != Xi[k - 1][q] for q in Q) else 0)
@@ -169,6 +196,7 @@ def analyse(g, start=None, mode="n5", tmp=None, use_oink=False, cap=10 ** 6):
                 if cur in seenQ: r["sigbar_repeat"] += 1
                 seenQ.append(cur)
         Nep = ep[-1] + 1; r["Nep"] = max(r["Nep"], Nep)
+        if Nep > alt_bound: r["fails"].append(f"ALT_COR Nep={Nep} bound={alt_bound}")
         if f > 1 + n * Nep: r["fails"].append(f"EPOCH_c f={f} Nep={Nep}")
         for e in range(Nep):
             Ek = [k for k in range(a, b + 1) if ep[k - a] == e]; lo, hi = Ek[0], Ek[-1]

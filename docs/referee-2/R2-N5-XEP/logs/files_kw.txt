@@ -1,0 +1,24 @@
+MODE files ../R2-N5-KW/files.lst 3 MUT -
+DEP_checks: 18243
+GDA_checks: 603058
+REC_XSN_D: 8431
+REC_XSN_pre: 5162
+REC_cross_after_epoch_freeze: 0
+REC_cross_at_fallback: 2521
+REC_cross_epoch_boundary: 3269
+REC_cross_inside_epoch: 5486
+REC_crossings: 8755
+RSTICK_checks: 24132
+RSTICK_transitions: 15627
+SNPA_checks: 71611
+SNPB_checks: 10417
+SNPC_checks: 6295
+SPLITR_checks: 55088
+XEP_checks: 6295
+phases: 6295
+runs: 1509
+SNPB_max_changes_after_prefix: (0, 'docs/referee-2/R2-N5-CLS/climb/gt_b_best.pg#2')
+max_N_ep: (53, 'experiments/red/so/instances/rise_thin51_n40.pg#0')
+max_X_D: (99, 'experiments/red/so/instances/xsn91_n48.pg#0')
+max_epoch_fallbacks_minus_(n-1): (-1, 'experiments/n5-exhaustive/instances/n3all_maxph_0.pg#2')
+RESULT OK violations=0
