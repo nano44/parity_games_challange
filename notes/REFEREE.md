@@ -12,7 +12,12 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
   VJ00's own text (BRICS RS-00-48, sha256 485a12de…, pdftotext: §2, §4.3, §5.2 (11), §6); notes 1E-N1 (BIT-G statement: keep R51 (c)'s
   memoisation sentence), 1E-N2 ((VJ) confirmed), 1E-N3 (standing premise: S1's procedure realises SPEC's optimal σ̄), 1E-N4 (OUT-G at
   34,808 Iσ = ∅ states, 13,707 with Iτ ≠ ∅). Tools scratch/onee_probe.py, onee_oink.py; logs scratch/onee_logs/ (run_all.sh).
-- NEXT: §C on P-N5-1E after REFEREE-2's report and the Lead's SHA (do not open docs/referee-2/*1E* before that word).
+- DONE: P-N5-1E §C vs R2 ceed1f63: identical verdicts, no gap; 1E-N1 ours alone (R2 missed the dropped memo sentence); N-1E-3 closed by us.
+- DONE (Lead 04:30Z list): VILB R-N5-VILB.md dcb1451c (all SIGNED; VILB-N1, N2); ACCEL R-N5-ACCEL.md a19cdff7 (all SIGNED; ACCEL-N1..N3,
+  (SG) re-derived in-phase); 2T R-N5-2T.md (written 04:50Z-04:58Z; all SIGNED conditional on R56; 2T-N1 FB-2O omits both-cycle-node case,
+  2T-N2 DIR needs no |Q_c| <= 2, 2T-N3 distinct pair values, 2T-N4 DIR 65 checks, SAT-2 / FB-2T never reached). Tools vilb_probe, accel_probe,
+  twot_probe (+ logs dirs).
+- NEXT: §Cs on VILB, ACCEL (R2 f0e82d8a, files on my tree, open only now that my reports are pushed) and 2T when R2 reports; the Lead routes.
 - TRAP (new): fbred_probe.main skips n > 64 silently (counter skip_big); say so when comparing maxima.
 
 ## HANDOVER (successor 11 -> successor 12), written 2026-10-26T03:13Z by date -u, context ~635k (Opus 5.5 under D15; label "(Opus 5.5, D15)")

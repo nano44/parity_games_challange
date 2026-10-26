@@ -35,7 +35,19 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   X_D (R-STICK_D): NOT started, per the Lead.
 - 04:19Z Lead: R56 (FBRED) LANDED at trunk eb81356c; P-N5-2T FROZEN (R56 quotes script-checked; sha1 and commit in the Lead message).
   L-NEW's P-N5-FBK will cite PFZ-q and DIR by this sha1. R-STICK_D goes to L-NEW: do not start it.
-- NEXT: T per phase on 𝒞^2O given f (N5-2O-T-box16 §4: TC-SWITCH on two gates, (¬h-route) FRZ-U); P-N5-1E fixes after both reports.
+- 04:5xZ: TC-W (gate order by W) DEAD on 𝒞^2O, all three forms. Instance experiments/si/fb2o/instances/tcwult2_against_n8.pg + .start.json.
+  Library data agreed (47/47); random start pairs killed it (21/94). DEAD.md "DEAD box 16"; N5-2O-T §5. TC-SWITCH is as hard as RUN_D.
+- Things only I know: the library hides TC-W's failure; it needs random START PAIRS (not random games from S3). Always test both.
+- 04:40Z: P-N5-1E fixes FROZEN 8f3615bc (l-si f5d62bba). 04:54Z Lead: item (a), the (¬h-route) FRZ-U case.
+- 05:1xZ: N5-2O-T §6 PROVED (unrefereed): Lemma G_D-NC. R55 G_D (b), (c1), (c2) need only (NC) (no gate on its own cycle), since R55's
+  proof uses (h_D) only as "u's play does not return to u". Corollary FRZ-U_D: CR-D′ under (NC) ∧ (h3_D). Wo_D does NOT port.
+  DATA gdnc.py: 0 violations, MUT bites. The freeze is vacuous in data. Remaining: (¬h-cyc) (gate on its own cycle; ~42 % of lib41
+  frontier states), and LEN below L.
+- 05:05Z Lead: P-N5-2T SIGNED by both (REFEREE 12 7055b4a5, 2T-N1..N4; REFEREE-2 8f43432b + 416334cc, N-2T-1..6). 2T fixes file on the Lead's word after
+  the §Cs. (1) Packet P-N5-NC: FROZEN docs/si/P-N5-NC-box16.md (sha1 in the Lead message): G_D-NC, WM-G, P^c_L / CR-D proof written out
+  (R20 P^c transcribed: Lemma C → (i)+(MON); B-fallback absent; coarse kills R20's (β), (γ) and "D = ∅" cases), FRZ-U_D.
+  (2) Next: (¬h-cyc) per gate (KIND-MONO port); name what breaks with two gates each on its own cycle.
+- NEXT: (¬h-cyc) per gate.
 
 ## HANDOVER (successor 10, box 15; written 2026-10-26 01:05Z (date -u); session_01PBqfsNWMhTPn7yNJ8C18HP)
 Reason: context past the Lead's ~450k line. The session's remaining-token figure fell by ~575k since the start (it is not exposed directly).
@@ -865,6 +877,7 @@ in experiments/si/orlens/instances/ (all Oink zlk OK, strategies verified). Oink
   premise (VJ) of Lemma OUT-G (docs/si/P-N5-1E-box16.md §2).
 
 ## Dead ends (details in docs/si/DEAD.md)
+- (successor 11, box 16) TC-W: "a terminal change moves to the gate with larger W" FALSE on 𝒞^2O; tcwult2_against_n8.pg (+ start); DEAD.md "DEAD box 16".
 - TEV / TEV-LAST (succ. 5 conjecture): FALSE, tev_cex_n40 (17078f78), tevlast_cex_n40 (ff1e9cb4); transient absorption at an S4a state.
 - (box 9, succ. 4) ABS-O as a route to NJB: vacuous, since every block has M >= rank o when o counts in θ's path set (abso.py fb_hi = 0 of 778;
   obstruction: R→F gates differ at o). docs/si/N5-C-box9.md §3b.

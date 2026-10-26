@@ -11,9 +11,18 @@ Handover check cd3b5ff7 (5/5, Lead GO 04:56Z). Container started 679 behind its 
   VACUOUS throughout: CLS1 / FBL / CLU (all scope fallbacks theta = w), WK (K = 0), ABS-L.
 - Box 8 COMPLETE (n 5 Q4 00:54Z): whole n 5 subset 68,764,800 runs, 0 violations (REFEREE-2 and REFEREE probes); max J 1, K 0, X 2,
   rho 1, T 3, X_SN 2, REL 2. README "Box 8" has the all-quarters rows and readings.
-### IN FLIGHT: nothing (queue ALLDONE 00:54Z). Queue for next box: none routed; the vacuous checks (CLS1/FBL/CLU, WK, ABS-L) need
-  larger n or targeted instances (climbs) to get teeth.
-- Trap (05:2xZ): `pkill -f "grep -c END"` killed my own shell (exit 144) again. Kill by pid only.
+- N5 gauntlet step 2 completed (45def408, a47b3fa3): n5b SPEC = n5.py state by state on 22,810 runs (library, 2k corpus, 20k C^1O)
+  plus box 43/44 frontier (9 canonical + 450 random starts). experiments/n5-second/seqdiff.py.
+### Box 9 (Lead GO 01:53Z; 05:05Z adds the G_D-NC / FRZ-U_D frontier work)
+- WK climbs done (52e326aa): 9,020 WK checks pass (so32 lineage); instances wk1_n32 (random start), wk2_n32 (canonical start).
+- CLS1 small-n climbs n 6/8/10/12 (20,000 steps each) done: best fitness 0.44 everywhere = no in-scope THR fallback (CLS1 still
+  vacuous at n <= 12 under this climb); CLS1 non-vacuous only at n ~ 32 (REFEREE-2 climbs, library).
+- IN FLIGHT (05:05Z): ABS-L climbs absl_{gta,gtb,ccl,fb32} (pids 21962-21965, runner run9d.sh), 15,000 steps, ETA ~07:00Z;
+  so far ABSL_intervals up to 83 but 0 theta-changes above L (ABS-L's count stays trivially 0).
+- NEXT: (1) checker for L-SI Lemma G_D-NC (l-si b92f84d4, docs/si/N5-2O-T-box16.md §6: (b'), (c2') at (NC) states) on random
+  C^kO games k = 2..4 from random start pairs; (2) FRZ-U_D climb (fallback-free in-phase run, (NC) and (h3_D) throughout,
+  COARSE_L(W) moving after state n - 1).
+- Trap (05:2xZ Oct 25): `pkill -f` killed my own shell (exit 144). Kill by pid only.
 ### Things only I know (box 8)
 - box8 wraps oe_check.phase / sn_check.phase (module attribute rebinding; files unchanged): per-phase K/J/eps/rho = deltas of the
   checker's own counters; X_SN = delta of PREFIX_crossings_in_prefix; REL recomputed with sn_check's formula (non-fallback transitions).

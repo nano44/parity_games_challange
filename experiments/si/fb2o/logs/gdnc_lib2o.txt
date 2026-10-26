@@ -1,0 +1,2 @@
+FRZ_runs=37 FRZ_n=0 FRZ_V=0 states=374 D2=182 hD=235 NC=325 NC_not_hD=90 B_n=1718 B_V=0 C2_n=7934 C2_V=0
+GDNC PASS

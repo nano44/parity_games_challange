@@ -1,0 +1,15 @@
+MODE random 20000 4 12 161 MUT - UCAP 13
+ALT_clean_equal: 35
+ALT_clean_strict: 232
+ALT_cycnode: 23
+ALT_nonclean: 32
+FBKW_checks: 67
+NEP_checks: 49359
+ROUTEK_checks: 99220
+phases: 49359
+runs: 20000
+SATK_closeness: (-1, 'random161:281@2 c 8 q 9 p 5 |U_c| 3')
+max_depth: (5, 'random161:3252@0 m_c 6')
+max_epochs: (3, 'random161:17343')
+max_m_c: (10, 'random161:11158')
+RESULT OK violations=0

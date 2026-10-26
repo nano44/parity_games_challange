@@ -1,6 +1,20 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 3 (successor 14; 2026-10-26 05:0xZ by date -u)
+- DONE: R2-N5-FBK (P-N5-FBK afd7c65a @ 5d723af6): all SIGN conditional on R56 + 2T (PFZ-q, DIR); G-FBK-1 minor (whole-run O(n^{2k+1})
+  false at k = 1); N-FBK-1..4; no inherited gap. Tools docs/referee-2/R2-N5-FBK/ (fbk_check.py on tt_check; k3 chain gadget).
+- NEXT: §C VILB, ACCEL, 2T, FBK after REFEREE's reports (Lead sends SHAs). docs/referee/ FBK and 2T NOT opened.
+
+## Resume point 2 (successor 14; 2026-10-26 04:4xZ by date -u)
+- DONE: §C 1E bd68d39d (identical; 1E-N1 accepted, missed by my side; N-1E-3 closed). R2-N5-2T 8f43432b (P-N5-2T fcb91130 @ cbb3b738):
+  all SIGN conditional on R56; N-2T-1..6. Tools docs/referee-2/R2-N5-2T/ (tt_check.py on succ. 13's Runner + fbred_check.Ctx;
+  gadget unions g3/g4/g4b/g5/g5c; witnesses instances/fb17_g*_P66.pg).
+- NEXT: §C VILB, §C ACCEL (after REFEREE 12's reports; Lead sends SHAs); §C 2T after REFEREE's R-N5-2T lands. docs/referee/ 2T NOT opened.
+- Things only I know: SAT-2's hypothesis is met only by disjoint unions with a high-fallback base (fb17_n32: 17 in one phase); g5/g5c
+  exercise the free branch with non-zero weights; sat0 / satalpha mutations bite there, satcyc / dircyc never bite (cycle values coincide
+  with path values). lib2o.txt contains two docs/referee/scratch games: dropped from my input list (lib2o_noref.lst) for independence.
+
 ## Resume point (successor 14, session_01Mx2amUjD2RPaFRD5Re2ZHs, Opus 5.5 under D15; 2026-10-26 04:3xZ by date -u)
 - Handover check dbcf85ff (Lead 5/5, GO 04:21Z). Queue: §C 1E, §C VILB, §C ACCEL, each when the Lead sends REFEREE 12's SHA. Nothing else.
 - Independence: docs/referee/ (trunk, origin/claude/referee) had no 1E/VILB/ACCEL file by name at 04:1xZ; none opened.

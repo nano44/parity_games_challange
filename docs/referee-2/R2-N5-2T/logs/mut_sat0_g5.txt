@@ -1,0 +1,40 @@
+MODE union ../R2-N5-FBRED/box4344.lst g5 3 MUT sat0 UCAP 13
+DIR_checks: 60
+DIRbr_free: 60
+PFZQ_checks: 7391
+ROUTE_checks: 817
+SAT_checks: 1634
+SATbr_cycle: 15
+SATbr_free_via_c: 843
+SATbr_free_via_q: 739
+SATbr_y_is_c: 18
+SATbr_y_is_q: 19
+VIOLATIONS: 15
+V_SAT: 15
+YB_checks: 68
+classes_2term: 436
+classes_skipped_UCAP: 238
+phases: 337
+phases_2T: 136
+runs: 60
+SAT_closeness: (11, 'experiments/new/box44/instances/fb17_n32.pg+g5P66#0@23 c 32 q 34 |U_c| 7')
+SAT_closeness_all_classes: (11, 'experiments/new/box44/instances/fb17_n32.pg+g5P66#0@23 c 32 q 34 |U_c| 7')
+max_f: (17, 'experiments/new/box44/instances/fb17_n32.pg+g5P66#0')
+max_f_in_phase_with_2term_class: (17, 'experiments/new/box44/instances/fb17_n32.pg+g5P66#0')
+SAT_distinct_(kq,kq')_pairs_per_(run,class,q'): max 2 classes_with_>1: 30 of 218
+VIOLATION SAT: experiments/new/box43/instances/dch16_n44.pg+g5P78#1@0: q 46 q' 48
+VIOLATION SAT: experiments/new/box43/instances/dch16_n44.pg+g5P79#2@0: q 46 q' 48
+VIOLATION SAT: experiments/new/box43/instances/dch16_n44.pg+g5P79#2@11: q 23 q' 0
+VIOLATION SAT: experiments/new/box43/instances/ret2_n7.pg+g5P5#1@0: q 9 q' 11
+VIOLATION SAT: experiments/new/box43/instances/retf_n6.pg+g5P4#2@0: q 8 q' 10
+VIOLATION SAT: experiments/new/box43/instances/retf_n6.pg+g5P5#1@0: q 8 q' 10
+VIOLATION SAT: experiments/new/box43/instances/tj17_n19.pg+g5P24#1@0: q 21 q' 23
+VIOLATION SAT: experiments/new/box43/instances/tj17_n19.pg+g5P24#2@0: q 21 q' 23
+VIOLATION SAT: experiments/new/box44/instances/fb17_n32.pg+g5P66#2@0: q 34 q' 36
+VIOLATION SAT: experiments/new/box44/instances/rtdis_k4_n24.pg+g5P28#2@0: q 26 q' 28
+VIOLATION SAT: experiments/new/box44/instances/rtf_cex.pg+g5P6#1@0: q 13 q' 15
+VIOLATION SAT: experiments/new/box44/instances/rtf_cex.pg+g5P6#2@0: q 13 q' 15
+VIOLATION SAT: experiments/new/box44/instances/rtf_cex_inj.pg+g5P21#1@0: q 13 q' 15
+VIOLATION SAT: experiments/new/box44/instances/rtf_cex_inj.pg+g5P21#2@0: q 13 q' 15
+VIOLATION SAT: experiments/new/box44/instances/rtf_cex_inj.pg+g5P22#2@0: q 13 q' 15
+RESULT FAIL violations=15

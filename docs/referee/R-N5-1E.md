@@ -130,3 +130,47 @@ MIRROR (a)). Mutation control MUT: the three output checks with σ read at the S
   and R21 (a).
 - 1E-N3: standing premise (S1's procedure realises SPEC's optimal σ̄; VJ00 §6 + SPEC conformance, code DATA); name it in the landing entry.
 - 1E-N4: DATA: OUT-G checked at every state with Iσ = ∅, including states with Iτ ≠ ∅.
+
+## §C. Comparison with REFEREE-2 (REFEREE successor 12; written 2026-10-26T04:31Z-04:31Z by date -u; (Opus 5.5, D15))
+- Routing: the Lead's message of 04:30Z (Lead's stamp), item (1). Objects: this report (c82c4ecf, §1-§7 above unchanged) and
+  docs/referee-2/R2-N5-1E.md (referee-2 ceed1f63, successor 13), read after c82c4ecf was pushed. Both reviewed the same pinned text
+  (sha1 e613db13…, trunk 7fef9699). Both opened VJ00 independently (same sha256 485a12de…).
+
+### C.1 Verdicts side by side
+| § | statement | REFEREE (c82c4ecf) | REFEREE-2 (ceed1f63) | joint |
+| --- | --- | --- | --- | --- |
+| §2 | premise (VJ) on every game | SIGNED (1E-N2) | SIGN (N-1E-1, N-1E-2) | signed |
+| §2 | Lemma OUT-G (every game); class audit table | SIGNED; audit checked | SIGN; audit CHECKED | signed |
+| §3 | Lemma BIT-G (every game) | SIGNED (1E-N1 wording) | SIGN | signed; wording 1E-N1 |
+| §4 | Theorem 1E-POLY (parameter and uniform forms); G^d table | SIGNED; table checked | SIGN (N-1E-3, N-1E-4); table CHECKED | signed |
+| §5 | Corollary 1E-TIME | SIGNED | SIGN | signed |
+| §6, §7 | READING, DATA | not signed; §6 agreed with premise 1E-N3 | not signed; §6 concur (N-1E-5) | not signed; READING agreed by both |
+No disagreement. Neither report has a gap or a NOT SIGNED statement. Both: not a TARGET.md §2 claim (𝒞^1E is a restricted class,
+TARGET.md §4); G-N5-TIME OPEN for general games.
+
+### C.2 Joint note map
+| REFEREE | REFEREE-2 | relation | joint status |
+| --- | --- | --- | --- |
+| 1E-N1 (BIT-G statement drops R51 (c)'s memoisation sentence, BIT-N1; the proof uses it) | — (R2 §1: "R51 (c) as restated in §3: the landed text with 'on every parity game' added ✓") | ADDITIONAL from us. Re-checked now: R51 (c) (RESULTS l.2587-2590) ends "The longest-path recursion of S1 (iv) is memoised, with the same outputs as SPEC's recursion (BIT-N1)."; the packet's §3 statement has no such sentence (its proof does: "with BIT-N1"). R2 compared the restatement against the landed text and did not flag the dropped sentence. | fixes file: keep the sentence in BIT-G's statement (wording; not a gap) |
+| 1E-N2 ((VJ) checked against VJ00 §2, §4.3, §5.2 (11)) | N-1E-2 (same quotes, same PDF) | SAME; two independent reads of the source agree | landing note |
+| 1E-N3 (standing premise: S1's PROCEDURE realises SPEC's optimal σ̄; VJ00 §6 + SPEC conformance; code DATA) | N-1E-1 (same: "S1's procedure computing an optimal σ̄ stays SPEC's requirement (VJ00 §6), as in R51, with the code DATA") | SAME | name it in the landing entry |
+| §4 assembly per game (MIRROR (b)'s proof applies (H-OF) only to G^d; (c) per state) | N-1E-4 (parameter form uses R54 (c), (d)'s PROOFS per game; written out by the packet) | SAME substance | proved, not a reading |
+| §4 step 2: the pointer to R-N5-DUAL §C C.2 checked (N-DUAL-3 row: "T* is non-decreasing in m, d_o, Δ"); the §2 quote of C.2 checked verbatim ("Lemma OUT's proof uses R36 (c) ... I see no 𝒞^1O step in it.") | N-1E-3 (not verified by R2, independence; not needed) | CLOSED by us: both REFEREE lines exist as quoted (docs/referee/R-N5-DUAL.md l.138); both referees also checked monotonicity directly | closed |
+| §5 READING on G-N5T-3, with premise 1E-N3 | N-1E-5 (concur) | SAME | READING agreed; closing the gap row is the Lead's call |
+| 1E-N4 (DATA: OUT-G at every Iσ = ∅ state, Iτ ≠ ∅ included) | — (R2 checks at stops, with enumerated counter-strategies and O2: play value = S1's Ξσ) | complementary data | DATA |
+
+### C.3 Data
+| item | REFEREE | REFEREE-2 | agree? |
+| --- | --- | --- | --- |
+| random 𝒞^1E | 11,000 runs (n 4-30); max ITER 8 | 7,500 runs (n 4-30); max ITER 6 | YES (shape; different seeds and generators) |
+| random any class | 9,000 runs (0-4 Odd choice vertices) | 4,000 runs | YES |
+| lib41 | 1,101 runs (n ≤ 64), 24 𝒞^1E runs (8 games) | 824 runs (412 files × 2), 16 𝒞^1E runs | YES (8 𝒞^1E games; 16 = 8 × 2 starts) |
+| what is checked | OUT-G at all 34,808 Iσ = ∅ states (13,707 with Iτ ≠ ∅); ITER, σ-changes on 𝒞^1E; MUT control | at stops: play = Ξσ, W = Zielonka, both strategies win against enumerated positional counter-strategies; ITER, MON, MIRROR (a); REW0 corner 1,061 stops; three mutation controls | complementary; 0 failures in both |
+| Zielonka cross-check | own Zielonka = Oink --zlk on the 8 lib41 𝒞^1E games | own Zielonka (R2-N5-1O) | — |
+Both: runs are short; the bound is far above every count; the theorem rests on its proof.
+
+### C.4 Joint state (for the Lead and CHECKER)
+- All five to-sign items are signed by both referees; no gap.
+- Fixes file: 1E-N1 (BIT-G statement keeps the memoisation sentence).
+- Landing notes: (VJ) on every game checked against VJ00's text by both (1E-N2 = N-1E-2); standing premise 1E-N3 = N-1E-1.
+- READING (both, not signed): with OUT-G, G-N5T-3's output half holds on every game under the standing premise.
