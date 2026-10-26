@@ -37,3 +37,5 @@ python3 -I rund/gap.py --one rund/instances/offret_n23.pg rund/instances/offret_
 echo "rund (OFFSET-ONCE counterexample offret_n23): PASS"
 python3 -I rund/piece.py --list fb2o/lib2o.txt 2 | grep -q "PIECE PASS"
 echo "rund (PIECE_D / SPLIT-RED on lib2o): PASS"
+python3 -I rund/lvl.py --one rund/instances/incdown_n23.pg rund/instances/incdown_n23.start | grep -q "('INC', 'rund/instances/incdown_n23.pg', 0, 3, 22, \[20, 19\])"
+echo "rund (INC counterexample incdown_n23): PASS"
