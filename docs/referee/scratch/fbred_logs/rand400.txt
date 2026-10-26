@@ -1,0 +1,11 @@
+CNO_chk                    29
+FBR_chk                    290
+YF_chk                     4939
+fb_total                   29
+games                      400
+late_fallbacks             0
+max_f                      1
+max_rho                    5
+phases                     3049
+runs                       1200
+FAILS 0
