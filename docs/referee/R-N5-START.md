@@ -78,3 +78,11 @@ are start-free. Written 2026-10-26T00:07Z-00:10Z by date -u, on trunk 6021ea55 m
   - P-N5-X-fixes l. 63 "Lemma P's induction step uses only its starting state": supports start-freeness.
   - P-N5-FRZ l. 34 "an initial segment": the SN prefix of a run.
 - No hit is a dependence on the N5 run's start.
+
+## Addendum 1 (2026-10-26T01:00Z by date -u; REFEREE successor 11, Opus 5.5, D15): the R32 / R33 chain, line by line
+- The depth caveat of §2 ("A line-by-line re-read of every R32 / R33 step was NOT done here") is CLOSED. During the P-N5-1O review I read
+  P-N5-FRZ-box34 §0-§7 (R32: NL-MF, Fact 0, ARENA, Steps 1-2, Lemma P^c_ℓ with cases A, B1, B2, B-fallback, Theorem FREEZE Steps 3-4,
+  RATCHET, BLOCK, X-RUN, SUB) and P-N5-L2-box34 §1-§7 (R33: H3-CONST, H2-STICK, G′, FREEZE′, R-CONST, H1-INT, X-RUN′ / X-RUN°) line by line.
+- Every step is statewise, one N5 transition, or a window / run / phase argument based at that window's first state; FREEZE explicitly
+  makes "no hypothesis on the states after F" and nothing about states before k0. The table is in docs/referee/R-N5-1O.md §3.
+- So the R34 (f) row is now "full proof" as well: every result in §1 is start-free, read in full.

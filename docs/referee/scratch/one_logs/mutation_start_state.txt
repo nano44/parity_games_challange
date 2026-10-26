@@ -1,0 +1,2 @@
+{'games': 239, 'mut_W_differs': 133, 'mut_SIG_fires': 0, 'mut_BAR_fires': 136}
+mutation (SIG check on the odd set): {'games': 253, 'games_with_Wodd': 56, 'mut_SIG_on_odd_set_fires': 56}

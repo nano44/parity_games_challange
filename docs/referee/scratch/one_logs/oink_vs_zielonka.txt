@@ -1,0 +1,5 @@
+skip /home/user/parity_games_challange/experiments/red/mei/instances/mei_h5.pg 0 0
+skip /home/user/parity_games_challange/experiments/red/tcpert/instances/tcS8_N11.pg 0 0
+skip /home/user/parity_games_challange/experiments/red/tcpert/instances/leanT_N6.pg 0 0
+skip /home/user/parity_games_challange/experiments/red/instances/claimF_len_cf1.pg 0 0
+oink(zlk) vs own Zielonka: files 109 mismatches 0
