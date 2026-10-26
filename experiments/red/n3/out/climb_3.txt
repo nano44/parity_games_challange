@@ -1,0 +1,1 @@
+iters 40923 best fit (viol, uncovered hyp, -min slack, hyp) (0, 20, 0, 1626)
