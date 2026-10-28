@@ -24,8 +24,8 @@ History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50
   | C82 | R73 (P-N5-EPC) | cf0f7f33 (FAIL E-1) | c785690c PASS | 1ba37bf3 (after merge 93675bc0) | Add. 2 3eef86c5 (GAPS L-1), Add. 3 f70ce55a PASS |
   | C83 | R74 (P-N5-ROOT + add) | e8f747f4 (FAIL E-1 title, 4 clauses; N-1 P1 derived uses) | Add. 1 PASS 4f494319 (369444d1 @ 33f43c20; re-verified by succ. 12 in a91364bb) | 41ad61ca | Add. 2 PASS (this commit); CLOSED |
   | C84 | R75 (OFFMONO unit) | 87e658cb (FAIL E-1 title: PF-CHOICE option set drops c, FT-COUNT counts transitions; E-2 (ii) READER status stale; N-1..N-4) | — | — | — |
-  | C85 | R76 (P-N5-GCX) | this commit (FAIL E-1 title "only for" keep rules; N-1 P2, N-2) | — | — | — |
-  | C86 | R77 (P-N5-DEPTH) | queued | — | — | — |
+  | C85 | R76 (P-N5-GCX) | ff0f970c (FAIL E-1 title "only for" keep rules; N-1 P2, N-2) | — | — | — |
+  | C86 | R77 (P-N5-DEPTH) | this commit (PASS; lands after R76) | — | — | — |
   | C87 | R78 (P-N5-DEPTH-add) | queued | — | — | — |
 - Handover check (successor 11 section in docs/agents/handover-checks/CHECKER.md): f2f24639.
 - C83: Add. 1 PASS on 369444d1 @ 33f43c20 (successor 11). NEXT: the landed check (§8) when R74 lands. (Old plan, done: Addendum 1 = script-check the four E-1 replacements of C83 §6 and N-1 (§7) in new / old
