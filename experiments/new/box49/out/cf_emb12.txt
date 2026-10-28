@@ -1,0 +1,7 @@
+SAME states (123, 123) phases_equal True n 41
+phase (1, 122) len 121 fallbacks 8 XR_max(old) 44 2n 82 new (vertex, owner, XR, strategy changes): [(40, 1, 36, 5)]
+Cf 8 RECUR 0 f 8 phases 1 phases_with_fb 1 runs 1
+max Cf (8, ('experiments/new/box49/inst/l121_cf_emb12.pg', (1, 122), 41, 4, 8))
+max Cf_over_n (0.1951219512195122, ('experiments/new/box49/inst/l121_cf_emb12.pg', (1, 122), 41, 4, 8, 8))
+max f (8, ('experiments/new/box49/inst/l121_cf_emb12.pg', (1, 122), 41, 4, 8))
+max f_over_Cf (1.0, ('experiments/new/box49/inst/l121_cf_emb12.pg', (1, 122), 41, 4, 8, 8))
