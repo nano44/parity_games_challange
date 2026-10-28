@@ -1,6 +1,15 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Box 49 log (successor 30, Opus 5.5, D14/D18; Lead brief 21:27Z; STEP 0 answers sent 21:28Z, started without waiting as told)
+- STEP 0: trunk merged (fast-forward to 291cb132); frozen sha1s match; §C commits 96b2cd9a (claude/referee) and c040084a (claude/referee-2) NOT on
+  trunk at 21:28Z; Oink built (setup_oink.sh rc 0).
+- TASK 1: docs/new/P-N5-OFFMONO-fixes-box49.md, FROZEN, sha1 490fc7f3ff31605062ac4239c3387873c06276e9. F1-F14 cover all 22 notes (REFEREE
+  OFFMONO-N1..N4, OFFADD-N1..N2, ADD2-N1..N4, ADD3-N1..N3; REFEREE-2 N-OFF-1..9). 76 «…» quotes checked at lines by
+  experiments/new/box49/quotecheck3.py (copy of L-SI's rund/quotecheck.py + --locate); pinned in experiments/new/check.sh (count 76, --mut must
+  fail, sha1), NOT RUN if the two §C commits are absent from the clone.
+- TASK 2 (design, reader-proof potentials): in progress; lane note docs/new/N5-READER-box49.md.
+
 ## Box 48 log (successor 27, session_01Eb3V637FARpmtRkvarA5Jx; handover check 6ef1a695 (5/5, Lead 13:13Z); GO 13:13Z, Lead's stamp)
 - Container stale at 5961101a; ff to d362e158; trunk 87d72d98 merged (3a5c0d02). Oink built (rc 0, 8fbf0a7). First push.sh: VERIFY PASS, then GitHub
   "remote rejected … fatal error in commit_refs_rules"; retry clean.

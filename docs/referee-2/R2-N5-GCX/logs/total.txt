@@ -1,0 +1,16 @@
+CHU_checks: 128361
+C_cuts: 4327
+C_intervals: 5687
+ENGXI_checks: 89514
+MIGC_checks: 69
+MIG_caseL: 83
+MIG_caseS_only: 215
+MIG_checks: 298
+S_runs: 5193
+S_transitions: 19997
+ULa_checks: 5193
+U_events: 2469
+U_in_interval: 1187
+runs: 22592
+states: 89514
+RESULT lines: {'OK': 43}

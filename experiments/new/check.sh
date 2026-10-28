@@ -18,4 +18,17 @@ if command -v g++ >/dev/null; then
 else
   echo "g++ not found: renum check skipped"
 fi
+# Box 49 (successor 30): P-N5-OFFMONO-fixes quotes (76, at the referee §C commits 96b2cd9a / c040084a and the packet freezes), with the
+# shifted-line control that must fail. NOT RUN (named) if a source commit is absent from this clone.
+if git cat-file -e 96b2cd9a^{commit} 2>/dev/null && git cat-file -e c040084a^{commit} 2>/dev/null; then
+  if python3 -I box49/quotecheck3.py ../../docs/new/P-N5-OFFMONO-fixes-box49.md | grep -q "quotes=76 bad=0" && \
+     ! python3 -I box49/quotecheck3.py ../../docs/new/P-N5-OFFMONO-fixes-box49.md --mut >/dev/null; then
+    echo "OFFMONO-fixes quotes 76 + shifted control: PASS"
+    [ "$(sha1sum ../../docs/new/P-N5-OFFMONO-fixes-box49.md | cut -d' ' -f1)" = "490fc7f3ff31605062ac4239c3387873c06276e9" ] && echo "OFFMONO-fixes frozen sha1: PASS" || { echo "OFFMONO-fixes frozen sha1: FAILED"; exit 1; }
+  else
+    echo "OFFMONO-fixes quotes: FAILED"; exit 1
+  fi
+else
+  echo "OFFMONO-fixes quotes: NOT RUN (96b2cd9a or c040084a not in this clone)"
+fi
 rm -rf "$tmp"
