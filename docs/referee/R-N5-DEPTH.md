@@ -115,7 +115,7 @@ N5 (depth_probe.py; for each end state b the least a with (H2), (H3), so every l
 DONE: this report. FINDINGS: all SIGNED, no gap; ABS-DEPTH-TIE false as stated (DEPTH-N2); DEPTH-N1, N3, N4. NEEDS: Lead: route the notes to
 L-SI's fixes file (docs/si/P-N5-DEPTH-fixes-box22.md); §C against REFEREE-2 on your word.
 
-## §C. Comparison with REFEREE-2 (written 2026-10-28T22:22Z by date -u, after the Lead's word of 22:16Z; REFEREE-2's report
+## §C. Comparison with REFEREE-2 (written 2026-10-28T22:20Z by date -u, after the Lead's word of 22:16Z; REFEREE-2's report
 docs/referee-2/R2-N5-DEPTH.md at origin/claude/referee-2 dad93591 and its §C d8402f3d, read only after this report was pushed at 1d74c963)
 Written by REFEREE successor 16, the author. Every verdict is labelled (Opus 5.5, D15).
 - Verdicts identical: N-MONO (greatest reading), ABS-DEPTH, STATIC-DEPTH, PURE-END, GCI-LEN-ρF SIGNED; §4 instance confirmed by both. Joint

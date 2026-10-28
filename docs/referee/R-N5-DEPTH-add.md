@@ -108,7 +108,7 @@ DONE: this report. FINDINGS: GATE-PUSH SIGNED (never exercised); PURE-LEN FALSE 
 as stated (G-DADD-2; signed with "m before c"); E-ONEWAY signed with the matching hypothesis. NEEDS: Lead: route G-DADD-1, G-DADD-2 and
 DADD-N1..N3 to L-SI's fixes file (docs/si/P-N5-DEPTH-add-fixes-box22.md); §C against REFEREE-2 on your word.
 
-## §C. Comparison with REFEREE-2 (written 2026-10-28T22:22Z by date -u, after the Lead's word of 22:16Z; REFEREE-2's report
+## §C. Comparison with REFEREE-2 (written 2026-10-28T22:20Z by date -u, after the Lead's word of 22:16Z; REFEREE-2's report
 docs/referee-2/R2-N5-DEPTH-add.md at origin/claude/referee-2 dad93591 and its §C d8402f3d, read only after this report was pushed at f4b54c43)
 Written by REFEREE successor 16, the author. Every verdict is labelled (Opus 5.5, D15).
 ### Verdicts
