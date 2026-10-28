@@ -18,6 +18,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
 - ROOT fixes (Lead 19:19Z, before continuing ALTERNATION): docs/si/P-N5-ROOT-fixes-box20.md, F1-F10 (ROOT-N1..N5, ADD-N1..N2, N-ROOT-3/-4/-5/-7;
   N-ROOT-5 replaces ROOT-N2 with a P1 / P2 table; F10 records FREEZE-G (b) freeze, (c), RELAY-PIECE multi-value on PROOF ALONE, reached only in
   REFEREE-2's unions, REFEREE 16 re-run 3 intervals 0 failures). 36 quotes, check.sh pin with shifted control. Sources on trunk 77f2664e.
+- RESTART 2026-10-28 21:05Z (Lead; weekly limit hit 10-26 ~19:37Z; container survived). Trunk merged (2cf2f35b). Lead: R74 drafted from my ROOT
+  fixes 15795d31; my queue: XR-LIN, then (G1), then gap (iv).
+- XR-LIN DEAD (N5-ALT §8): Odd READER vertex (no predecessors, priority 0) on long121_n40, run SAME (orcheck.py), XR(o) = 86 > 82. Readers
+  also inflate K (53 -> 73 with 6 readers), ALT, (G1), EXIT_x: these counts are not intrinsic. Next target must be reader-invariant
+  (Even switches per Even vertex per phase; Xi-changes of vertices with an Even predecessor). Even readers would block fallbacks: not used.
 - Things only I know: rows() is fast on re-runs (n5x caches?); gateret's lib41 run at NMAX=34 (first try) differs from the NMAX=48 log, use the log.
 
 ## HANDOVER (successor 18, box 22; written 2026-10-26T18:40Z (date -u); session_01DKVF647UmtYFEEQNiRgoH2)
