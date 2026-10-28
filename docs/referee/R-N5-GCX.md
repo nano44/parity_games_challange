@@ -159,3 +159,39 @@ conjecture with K(S) unbounded). G-N5-TIME: open.
 
 DONE: this report. FINDINGS: G-GCX-1 (LOC false for "any deterministic rule"); GCX-N1..N5. NEEDS: Lead: route G-GCX-1 and the notes to L-SI's
 fixes file; §C against REFEREE-2 on your word.
+
+## §C. Comparison with REFEREE-2 (written 2026-10-28T21:49Z by date -u, after the Lead's word of 21:43Z; REFEREE-2's report
+docs/referee-2/R2-N5-GCX.md, report fe04ca32 and its §C fc63f1f1 on trunk 5da4017d, opened only after this report was pushed at e01bdec6)
+Written by REFEREE successor 16, the author of this report. Every verdict is labelled (Opus 5.5, D15).
+### Verdicts
+| item | REFEREE (e01bdec6) | REFEREE-2 (fe04ca32) | joint |
+| --- | --- | --- | --- |
+| §2 MIG-SPLIT and Consequence | SIGNED (GCX-N2: u′ ∈ U_c via TC-CLASS) | SIGN (N-GCX-1: u′ ∈ U_c, one-clause proof) | SIGNED |
+| §3 UL-RED (a), (b), conditional on UL_G | SIGNED under the transition-local reading (GCX-N1) | SIGN as an implication; transition-local reading needed (N-GCX-2) | SIGNED, transition-local reading |
+| §4 ABS-HEIGHT, ABS-TIE | SIGNED | SIGN | SIGNED |
+| §4 LOC | SIGNED for the basic (keep) rule; "any deterministic rule" FALSE (G-GCX-1) | SIGN for the basic rule; "any deterministic rule" FALSE (G-GCX-1); repaired LOC′ signed | SIGNED for keep rules; G-GCX-1 joint; LOC′ SIGNED (below) |
+| §4 Remarks MONO, MONO-SUCC, NO-RETURN | CHECKED (GCX-N4: greatest) | SIGN | CHECKED |
+Verdicts identical. Joint gap map: {G-GCX-1}, found independently with the same one-vertex model. Both counterexamples use terminals
+h 0 / 1 / 2, T 0 / 5 / 5, and a rule that leaves a current maximiser.
+### G-GCX-1: the two repairs
+- Mine: LOC as stated for rules that KEEP the current choice when it is a maximiser, or for current-independent rules consistent under
+  contraction.
+- REFEREE-2's LOC′, for every deterministic rule: "… or s_{t+1}(v) ≠ s_t(v)". I checked the proof: if no successor changes and s_{t+1}(v) =
+  s_t(v), then the arena (same current choice, same M on the successors), the N-values and the viable set repeat. So R's inputs repeat, and
+  so does its output. I also checked it on my simulator (abs_model.py, the four GCX logs' seeds, acyclic and cyclic): 25,503 change events,
+  LOC failing 122 / 211 / 80 times under anti / sizedep / hash, LOC′ failing 0 times under all six rules.
+- I SIGN LOC′. The repairs are compatible; the fixes file can carry both.
+### Notes, matched
+| REFEREE | REFEREE-2 | joint |
+| --- | --- | --- |
+| GCX-N1 (transition-local reading; interval-level reading breaks UL-RED (a)'s count on long121_n40 [31, 37]) | N-GCX-2 (same; the working note's "(so DD_c is constant too)") | same note; my instance makes it concrete |
+| GCX-N2 (u′ ∈ U_c: R62 (b) TC-CLASS; wording "follow τ, constant on the phase") | N-GCX-1 (the same, by the honest play and W-play agreeing up to the first D-vertex) | same note; either a citation or the clause |
+| GCX-N3 (§5 READING: h_u constancy from FREEZE-A (b) + constant Δ) | — (READING not reviewed) | REFEREE's note |
+| GCX-N4 (MONO's N-half needs "greatest") | read as greatest without saying so | same |
+| GCX-N5 (ABS-HEIGHT attained; ABS-TIE needed for general rules) | the same data | same |
+| my §3 "≤ 1 + (deg(v) − 1) changes, v constant from t + deg(v)" | N-GCX-3 (constant from t + deg(v) − 1) | ACCEPTED: each change, the first included, removes the old choice from an arena of size ≤ deg(v), so ≤ deg(v) − 1 changes. My count was loose by one; no verdict depends on it |
+| — | N-GCX-4 (thin data), N-GCX-5 (independence) | ACCEPTED |
+### Data
+Both engines, 0 failures of every signed check. Both reproduce the reader_L index L in [0, L + 1], nep90 / nep76 migrations all case (L), and
+cxmig_k all case (S). UL_G holds in every run for both. LOC fails only under non-keep rules, in both simulators. Nothing open between the
+referees on GCX.
