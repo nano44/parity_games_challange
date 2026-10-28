@@ -1,0 +1,31 @@
+GP_END_lam 911
+GP_END_tau 3143
+GP_EXT 96
+GP_EXT_ex 3
+GP_EXT_tau 96
+GP_EXTchk 4270
+GP_R4chk 557
+GP_REPchk 4270
+GP_REPtrans 2565
+GP_Rchk 6835
+GP_runs 4270
+MAX_NQ 30
+MAX_QP 18
+MAX_XDEG 31
+RUNS 592
+inphase_trans 2565
+longph_ex 6
+phases 503
+phases1 3767
+phases_QP2 229
+phases_QP_lt_NQ 372
+skip_big 98
+EX ('GP_EXT', '../../../experiments/new/instances/n5adv/best_fb_n24_seed124.pg/0', 1, 1)
+EX ('GP_EXT', '../../../experiments/new/instances/n5adv/best_fb_n24_seed124.pg/0', 2, 2)
+EX ('GP_EXT', '../../../experiments/new/instances/n5b9/fc2.pg/1', 3, 3)
+EX ('LONGPHASE', '../../../experiments/red/n3/instances/long121_n40.pg/0', 1, 122, 'QP', 3, 'NQ', 3, 'XDEG', 8)
+EX ('LONGPHASE', '../../../experiments/red/n3/out/ph5/best_5.pg/0', 11, 103, 'QP', 4, 'NQ', 4, 'XDEG', 11)
+EX ('LONGPHASE', '../../../experiments/red/n3/out/ph6/best_6.pg/0', 1, 118, 'QP', 3, 'NQ', 3, 'XDEG', 8)
+EX ('LONGPHASE', '../../../experiments/red/n3/out/ph6/best_6.pg/2', 6, 116, 'QP', 3, 'NQ', 3, 'XDEG', 8)
+EX ('LONGPHASE', '../../../experiments/red/n3/out/ph7/best_7.pg/0', 3, 90, 'QP', 5, 'NQ', 5, 'XDEG', 10)
+EX ('LONGPHASE', '../../../experiments/red/n3/out/ph7/best_7.pg/2', 6, 85, 'QP', 5, 'NQ', 5, 'XDEG', 10)
