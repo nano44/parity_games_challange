@@ -1,6 +1,6 @@
-# Draft RESULTS R75 (Lead, 2026-10-28 21:49Z by date -u; both reports, both §Cs and the fixes file filled) (rev. 21:52Z by date -u: Lead removed an unsourced inference from Honest limit (ii)) — to CHECKER C84
+# Draft RESULTS R75 (Lead, 2026-10-28 21:49Z by date -u; both reports, both §Cs and the fixes file filled) (rev. 21:52Z by date -u: Lead removed an unsourced inference from Honest limit (ii)) (rev. 2026-10-28 22:34Z by date -u: C84 E-1 (a), (b), E-2 (with the reread sentence kept and scoped per phase), N-1, N-2, N-3; N-4 not applied) — to CHECKER C84
 
-### R75 [refereed-only] N5 on EVERY game, inside one phase: the κ-offset off(q; p) of an Odd choice vertex q ≠ c to its routing vertex p := par_{t+1}(q) never falls (Lemma OFFSET-MONO for q on no honest cycle at t; Lemma OFFSET-MONO⁺ for every q), so a change of κ(q) is a sum of non-negative level rises along q's chain (Corollary CHAIN-SUM), and per run J of a phase and class the transitions that change κ(q) number at most Σ_x (|EXIT_x| + Σ_π (v_x(π) − 1)) ≤ Σ_x D·(|EXIT_x| + 1), pieces cut at the exit changes only (Corollary CHAIN-COUNT‴; the cut versions CHAIN-COUNT, CHAIN-COUNT′, CHAIN-COUNT″ hold on their own proofs); an unchanged cycle of c keeps every κ-value, routing vertex and offset on it (Remark Z-CONST); the cycle changes of a class number at most (n − 1)|U_c| + TIE_c + ODDC_c per phase (Lemma ZCH-COUNT); the F-touching κ-changes number at most 2(n − 1)(|U_c| − 1) per phase (Lemma FT-COUNT), and outside them κ is constant on the path-free vertices and on c's cycle every offset is constant (Remark FT-CONST); and, code-level against si.py e688b963 (= SPEC S1), S1's choice at a path-free Odd vertex is the (κ, tie-break)-minimiser of its path-free options (Lemma PF-CHOICE), so STRICT_c + TIE_c ≤ 2(n − 1)(|U_c| − 1) (Corollary TIE-CHARGE) (2026-10-26) — structural lemmas and a REDUCTION for N5 (the per-phase, per-class count of κ-changes is reduced to EXIT_x and D, both OPEN; ODDC_c is not bounded; not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C84.md, checker PENDING)
+### R75 [refereed-only] N5 on EVERY game, inside one phase: the κ-offset off(q; p) of an Odd choice vertex q ≠ c to its routing vertex p := par_{t+1}(q) never falls (Lemma OFFSET-MONO for q on no honest cycle at t; Lemma OFFSET-MONO⁺ for every q), so a change of κ(q) is a sum of non-negative level rises along q's chain (Corollary CHAIN-SUM with OFFSET-MONO⁺), and per run J of a phase and class the transitions that change κ(q) number at most Σ_x (|EXIT_x| + Σ_π (v_x(π) − 1)) ≤ Σ_x D·(|EXIT_x| + 1), pieces cut at the exit changes only (Corollary CHAIN-COUNT‴; the cut versions CHAIN-COUNT, CHAIN-COUNT′, CHAIN-COUNT″ hold on their own proofs); an unchanged cycle of c keeps every κ-value, routing vertex and offset on it (Remark Z-CONST); the cycle changes of a class number at most (n − 1)|U_c| + TIE_c + ODDC_c per phase (Lemma ZCH-COUNT); the transitions with an F-touching κ-change number at most 2(n − 1)(|U_c| − 1) per phase (Lemma FT-COUNT), and outside them κ is constant on the path-free vertices and on c's cycle every offset is constant (Remark FT-CONST); and, code-level against si.py e688b963 (= SPEC S1), S1's choice at a path-free Odd vertex is the (κ, tie-break)-minimiser of its options that are path-free or c (Lemma PF-CHOICE), so STRICT_c + TIE_c ≤ 2(n − 1)(|U_c| − 1) (Corollary TIE-CHARGE) (2026-10-26) — structural lemmas and a REDUCTION for N5 (the per-phase, per-class count of κ-changes is reduced to EXIT_x and D, both OPEN; ODDC_c is not bounded; not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C84.md, checker PENDING)
 - Objects (four packets reviewed as ONE unit, "the OFFMONO unit"; all frozen, unchanged during review; all four on trunk 77f2664e at
   REFEREE-2's review): P-N5-OFFMONO, docs/new/P-N5-OFFMONO-box49.md, sha1 d9705ac6cede9849d68bf9b8d0fc5c54ab6fc3c4 (l-new freeze 1f816370,
   L-NEW successor 28, Opus 5.5); add1 P-N5-OFFMONO-add, docs/new/P-N5-OFFMONO-add-box49.md, sha1 5911aba8fc4e968187523c27b4f48cdc55433b3f
@@ -63,7 +63,7 @@
   (i) Lemma OFFSET-MONO⁺ (add3 §1), item (a) without the honest-cycle hypothesis: for every q ∈ Q ∩ U_c with q ≠ c and p := par_{t+1}(q),
       off_{t+1}(q; p) ⪰ off_t(q; p). For q on an honest cycle at t (q ∈ Z_t(c), path-free): y2 ≠ q (a self-loop at q would make q its own
       cycle node at t + 1, against λ_Ξ constant on the phase: ADD3-N1, F4); y2's t-play meets q before c (Case L1, OFFSET-MONO's Case L) or after
-      c (Case L2: strict when P(Ξ_t y2) ≠ ∅, "L2a", by Lemma S (a) and S1's reward order; by (M1κ) and (Aκ) when P(Ξ_t y2) = ∅, "L2b").
+      c (Case L2: strict when P(Ξ_t y2) ≠ ∅, "L2a", by Lemma S (a) and S1's reward order; by Lemma S (a), (M1κ) and (Aκ) when P(Ξ_t y2) = ∅, "L2b").
   (j) Corollary CHAIN-COUNT‴ (add3 §2; a REDUCTION to EXIT_x and D, both OPEN): for every q ∈ Q ∩ U_c ∖ {c}, the transitions of J that change
       κ(q) number at most Σ_{x ∈ Q ∩ U_c ∖ {c}} (|EXIT_x| + Σ_{x-pieces‴ π} (v_x(π) − 1)); if v_x(π) ≤ D for every x and π, at most Σ_x D·(|EXIT_x| + 1)
       (D ≥ 1 is implicit, a piece has a state; the sum forms are the sharper statements: N-OFF-6, F5).
@@ -72,20 +72,24 @@
   no longer needed for the route; as NUMBERS, the stated / D forms of CHAIN-COUNT, CHAIN-COUNT′ and CHAIN-COUNT″ follow from CHAIN-COUNT‴'s sum
   form, the cut SUM forms of CHAIN-COUNT′ and CHAIN-COUNT″ do not (a cut sum bound is below ‴'s in 10 / 12 of 27,395 (q, J) pairs in REFEREE-2's
   data, e.g. tcS8_N9, J = 19..21: 39 against 55); those stand on their own proofs (signed). OFFMONO-N4, OFFADD-N2 and ADD2-N4 (the on-cycle
-  CONJECTURE and the necessity of the cuts) are PROVED by add3's OFFSET-MONO⁺ (ADD3-N3, F3); OFFMONO's statement keeps its hypothesis as
+  CONJECTURE and the necessity of the cuts) are PROVED by add3's OFFSET-MONO⁺ (ADD3-N3 for the first two; REFEREE-2's §C for ADD2-N4; F3); OFFMONO's statement keeps its hypothesis as
   signed.
 - Honest limits: (i) A REDUCTION, not a bound: the unit reduces the per-phase, per-class count of κ-changes to EXIT_x (exit changes) and D
   (offset values on a piece); both are OPEN and neither is addressed by the unit. ODDC_c is not bounded; ZCH-COUNT, FT-COUNT and TIE-CHARGE
   are true but no longer on the route (REFEREE-2 §4). Nothing here bounds ρ, N_ep, f, the phases or N5's running time. D is large where it
   matters: max D 69 on nep90_n40's phase against at most 72 κ-changes of one vertex (OFFMONO-N2, F13). (ii) READING (Lead), from L-SI's
-  docs/si/N5-ALT-box23.md §8 (l-si 6ec0aa2b): a passive Odd READER (an appended Odd vertex with no predecessors and edges into one class)
-  leaves N5's run on the old vertices unchanged (DATA: checked per instance by L-SI's orcheck.py, not proved for all games; a referee proof
-  check, R-N5-READER, is in progress at REFEREE per docs/NOW.md), but raises L-SI's per-vertex and cut counts. On
+  docs/si/N5-ALT-box23.md §8 (l-si 6ec0aa2b): a passive Odd READER (an appended Odd vertex o with no predecessors and edges into one class) can leave N5's run on the old vertices
+  unchanged but raise L-SI's per-vertex and cut counts. REFEREE's R-N5-READER (e83fd19d; one referee): the unconditional invariance is FALSE
+  (G-READ-1: S4b can move τ(o), splitting phases or cancelling a fallback; counterexample cex_reader.pg); Theorem READER-INV PROVED under (R),
+  'τ(o) never moves at a transition at which τ is unchanged on the old vertices', which a dual-optimal start gives on any τ-constant stretch;
+  l121reader_n41 reproduced with (R). For l121reader6_n46, (R) was not checked by a referee (READ-N2); L-SI's orcheck.py finds the run SAME
+  and the phases equal there (DATA). On
   experiments/si/root/instances/l121reader6_n46.pg (sha1 29d2c84203f97bc247986d0af90778c5194d65a7, start
   7c6897065a63ce81e43c2355ac20980c81a3b515; long121_n40 plus six two-option readers, run on the old 40 vertices SAME) L-SI's exit-change count
   at cuts (its "EXIT_x") goes 23 → 41 (one reader) → 57 (six readers), its C-cuts K 53 → 57 → 73. L-SI's §8 concludes that bounding K(S) or ALT
   polynomially is at least as hard as bounding the phase length; the Lead reads the same for EXIT_x (READING, not proved: that L-SI's count is
-  the unit's EXIT_x is not checked here), so the unit's reduction need not make the problem smaller. Related: CONJECTURE XR-LIN ("in every
+  the unit's EXIT_x is not checked here), so the unit's reduction need not make the problem smaller (a phase is τ-constant, so REFEREE's Corollary, a dual-optimal start per
+  τ-constant stretch, covers a whole phase: the reading is per phase, the unit's own scope). Related: CONJECTURE XR-LIN ("in every
   phase, every vertex's Ξ changes ≤ 2n times") is DEAD (L-SI, same §8): experiments/si/root/instances/l121reader_n41.pg (sha1
   084da8cd47707b8937ebe30fdfae88d3d988bdaf, start 7ca283c43b7092acc454c5ffc6b1995e3a29bf68), Ξ(o) changes 86 times in the phase [1, 122], > 2n =
   82; reproduced by a second engine (L-COMP experiments/xr-lin/, l-comp eabb3018: n5b SPEC only, run on 0..39 = long121_n40, phases equal,
