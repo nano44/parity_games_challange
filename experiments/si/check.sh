@@ -320,3 +320,15 @@ for r in l121reader_n41 l121reader6_n46; do
   python3 -I root/orcheck.py ../new/box48/instances/long121_n40.pg ../new/box48/instances/long121_n40.start root/instances/$r.pg root/instances/$r.start | grep -q "^condition (R): True"
 done
 echo "root (box 23 §8: condition (R) holds on both reader instances): PASS"
+# P-N5-CORE-box23: 10 quotes verbatim (RESULTS and SPEC at trunk 33f43c20, FBRED at 3732ab55); shifted control fails. corecheck on nep90_n40:
+# (C1), (C3), (C4) hold (202 switches, 105 clean gate changes); control MUT=1 bites (167).
+if git cat-file -e 33f43c20 && git cat-file -e 3732ab55; then
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-CORE-box23.md | grep -q "quotes=10 bad=0"
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-CORE-box23.md --mut | grep -q "QUOTES FAIL"
+  echo "root (packet P-N5-CORE-box23: 10 quotes verbatim; shifted control fails): PASS"
+else
+  echo "root (packet P-N5-CORE-box23 quotes): NOT RUN (a source commit is not in this clone)"
+fi
+o=$(python3 -I root/corecheck.py --one ../red/rec0/instances/nep90_n40.pg rund/instances/nep90_n40.start); grep -q "C3=202 C4_clean=105 " <<<"$o"; grep -q "CORE PASS" <<<"$o"
+MUT=1 python3 -I root/corecheck.py --one ../red/rec0/instances/nep90_n40.pg rund/instances/nep90_n40.start | grep -q "C3_V=167 "
+echo "root (corecheck: P-N5-CORE (C1), (C3), (C4) on nep90; control bites): PASS"
