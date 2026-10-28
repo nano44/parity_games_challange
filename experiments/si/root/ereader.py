@@ -4,7 +4,8 @@
 the old vertices is unchanged (SAME: sigma, tau, sigma-bar, fallback flags), and counts e's switches per phase and per fallback-free run.
 --search K STEPS SEED: local search over S (subsets of the class of the longest phase; Y = the Xi-best of S at the phase start) maximising e's
 switches in one phase subject to SAME.
-Usage: ereader.py BASE.pg BASE.start S1,S2,.. Y | ereader.py BASE.pg BASE.start --search K STEPS SEED"""
+--random COUNT K SEED: random readers, how many stay SAME, and where the first divergence lies (READ-N3).
+Usage: ereader.py BASE.pg BASE.start S1,S2,.. Y | ereader.py BASE.pg BASE.start --random COUNT K SEED | ereader.py BASE.pg BASE.start --search K STEPS SEED"""
 import sys, os, random
 from collections import Counter
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
@@ -34,6 +35,18 @@ def test(S, y):
         best = max(best, (c, rmax, (i, j)))
     return True, best, g, st
 
+if sys.argv[3] == "--random":                      # READ-N3: how often is a RANDOM Even reader clean? (S random of size K, Y random in S)
+    cnt, K, seed = int(sys.argv[4]), int(sys.argv[5]), int(sys.argv[6]); rng = random.Random(seed)
+    i, j = max(phases(R0), key=lambda p: p[1] - p[0]); c = R0[i]["vs"][0][0]
+    U = [v for v in range(n0) if R0[i]["vs"][v][0] == c]; same = 0; why = Counter()
+    for _ in range(cnt):
+        S = rng.sample(U, min(K, len(U))); y = rng.choice(S); ok, sc, g, st = test(S, y); same += ok
+        if not ok:
+            E1, R1 = rows(g, st); m = min(len(R0), len(R1))
+            k = next((k for k in range(m - 1) if R0[k]["fb"] != R1[k]["fb"] or R0[k + 1]["s"] != R1[k + 1]["s"][:n0]), None)
+            why["base fallback at the first divergence" if k is not None and R0[k]["fb"] else ("S4a step differs" if k is not None else "length only")] += 1
+    print("random Even readers: SAME", same, "of", cnt, "| first divergence:", dict(why))
+    sys.exit(0)
 if sys.argv[3] == "--search":
     K, steps, seed = int(sys.argv[4]), int(sys.argv[5]), int(sys.argv[6]); rng = random.Random(seed)
     i, j = max(phases(R0), key=lambda p: p[1] - p[0]); c = R0[i]["vs"][0][0]
