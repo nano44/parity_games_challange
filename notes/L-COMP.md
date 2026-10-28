@@ -10,9 +10,11 @@ Handover check 9c5bd6e2 (Lead: 5/5). GO 19:18Z. Everything: experiments/friedman
 - box16.py on n 3..8, 10, 12, 16 (F = (ι, σ̄(ι)) = Fs3, S3, G<k> mid-counter): 45 runs OK (n5 = n5b = L-SI rows; Oink zlk; verify), 0
   violations. N5 LINEAR: S3 it 6n+4, longest 5n+1 exact; F it 8.06n+9.4, longest 7.06n+3.4. Shape: n tau changes (e_i -> h_i, one gate
   per iteration, empty phases), then one final phase (lane walk + ~1 sigma-bar flip per gate, ALT ~ n+2). f = 0, lambda_Xi const.
-### IN FLIGHT
-- randstarts.py sweep (results/rs_H<n>.log): n 3, 4 (R 200, pids 2118 2120) and n 5-8 (rs.sh JOBS=rs_jobs2.txt P=2). Slow (phase key
-  recomputes evaluate_choice per state). Fill README §4 when done.
+### DONE after RESTART (2026-10-28)
+- XR-LIN reproduction (eabb3018): experiments/xr-lin, n5b only: Xi(o) changes 86 > 2n = 82 on l121reader_n41, run on 0..39 = long121_n40.
+- §4 randstarts2.py (XR, ALT, TF per run): 1,612 H_n runs, 0 FAIL, all linear; τ re-flips at a gate at most twice.
+- §5 hn_var.py dual / ex: linear in n; gate flips ≤ 2 / ≤ 1; dual phases = it + 1; ex F phases 3n + 3.
+### IN FLIGHT: nothing.
 ### Things only I know (successor 6)
 - exh.py imports L-NEW's experiments/new/box25 'common'; L-SI's gcx needs experiments/si/root 'common': box16.py pops sys.modules['common'].
 - n5b.read_start with no TAU0 line leaves tau all -1 (truthy list, S3 not used): always write both lines.

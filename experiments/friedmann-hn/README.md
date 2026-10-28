@@ -120,10 +120,87 @@ The per-step ratio of the last two n is 1.07, falling with n; that is linear gro
   that also improves, and it shuts the gates. Whether some H_n variant forces τ to stay or return (repeated τ flips at a gate) is open;
   such a variant would be an L-RED / L-NEW design target.
 
-## 4. Robustness: random and mid-counter starts (randstarts.py)
-results/rs_H<n>.log: one line per run, then an END line with the worst run. Regions = Oink zlk and verify.py on every run.
-RUNNING at the first push (n 3, 4: R = 200 plus I^glo-trajectory starts; n 5-8: R = 60/40/30/20 plus trajectory
-starts every T/8). No FAIL and no exponential run so far. The table follows in a later push.
+## 4. Robustness: random and mid-counter starts (randstarts2.py; Lead 2026-10-28 21:05Z)
+- **Runs.** Per game:
+  - the S3 start and the F start;
+  - R seeded uniform random start pairs: R = 200 for n 3..8, R = 100 for n 10 and 12;
+  - G<k> starts: (σ_k, σ̄(σ_k)) for every GSTEP-th I^glo step k from ι (n 3..8, about 32 per n). These cover the whole exponential
+    I^glo run; the I^glo run lengths are 107, 235, 491, 1003, 2027, 4075 = 16·2^n − 21 for n 3..8.
+- **Checks on every run.** Regions = Oink zlk, and verify.py on n5b's strategies. At every state, σ̄ from L-SI's Engine equals the
+  SPEC σ̄ (an engine cross-check).
+- **Counters, per phase (R38 (a)), maximised over the run:**
+  - XR = max over v of the number of Ξ(v) changes in one phase (the Lead's XR); XRQ = the same over Q;
+  - ALT = max over S and c of ALT_c(S), same counter as box16.py;
+  - TF = max τ changes at one Q vertex over the run. In H_n, Q = {e_i}, so TF is the gate-flip count. TFG is the same on gate labels;
+    it was added later, so it shows "-" in logs written before it existed.
+- Logs: results/rs2_<n>.log (one line per run, END lines with the worst value of each counter per start family).
+  Table: results/rs2_table.md (rs2table.py).
+- **1,612 runs on H_n, 0 FAIL.** Worst over all start families:
+
+| n | runs | max it | max phases | max longest phase | max XR | max ALT | max TF (gate flips) |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 3 | 237 | 43 (G30) | 6 | 26 | 16 | 6 | 2 |
+| 4 | 235 | 53 (G91) | 9 | 35 | 17 | 8 | 2 |
+| 5 | 234 | 70 (G90) | 13 | 43 | 24 | 10 | 2 |
+| 6 | 234 | 79 (G217) | 12 | 50 | 24 | 10 | 2 |
+| 7 | 234 | 75 (G126) | 12 | 56 | 14 | 10 | 2 |
+| 8 | 234 | 81 (G1778) | 17 | 61 | 14 | 11 | 2 |
+| 10 | 102 | 92 (rand94) | 19 | 74 | 15 | 13 | 2 |
+| 12 | 102 | 117 (rand31) | 19 | 90 | 16 | 15 | 2 |
+
+- **READING (DATA).** No start found an exponential run.
+  - The worst iteration count is 1.02 to 1.43 times the F-start count at the same n, with no growth beyond linear (n 3..12).
+  - The longest phase is ≤ 9n (8.7n at n 3, 7.5n at n 12). XR ≤ 24 overall (at most 0.25 V, at n 3). ALT ≤ 2n.
+  - Fallbacks: 0 in every run.
+  - Gate flips: τ changes at most twice at any gate e_i (h → d1 → h, for example rand99 at n 3: a start with τ(e1) = h1 whose σ makes
+    d1_1 better first). So τ re-flips at a gate occur, but at most once more, and never repeatedly.
+  - Mid-counter starts (G) taken anywhere along the 16·2^n − 21 steps of I^glo also finish in ≤ 81 iterations: N5 does not resume
+    [F]'s count from any counter state.
+
+## 5. Variants in which Odd's τ cannot shut a gate permanently (hn_var.py; Lead 2026-10-28 21:05Z item 5). DATA probes.
+- **dual** = dual(H_n): owners swapped, priorities + 1.
+  - Odd is now [F]'s counting player (lane, stubborn cycles, access nodes), and the gates e_i are Even's.
+  - Oink: Even wins every vertex (the mirror of H_n).
+  - S3 / F (F = (S3's σ, ι as τ)) / 100 random starts per n, for n 3, 4, 5, 6, 8.
+- **ex** = H_n with Odd's exit from e_i routed through a new Even node u_i: e_i → {d1_i, u_i}, u_i → {h_i, d2_i}, Ω(u_i) = 8i − 4.
+  - Even can send the exit back into the stubborn cycle, so the exit is never safe for Odd on its own.
+  - Oink: Even wins all but 3 vertices, for every n run (the game is no longer 1-sink and is not a lower-bound construction).
+  - S3 / F / 100 random starts per n for n 3..8, 50 for n 10, 50 for n 12, 20 for n 16.
+- Logs: results/rs2_<n>dual.log and rs2_<n>ex.log; table: results/rs2_table.md. **0 FAIL** (Oink zlk regions, verify.py, engine
+  cross-check).
+
+| variant | n | S3 it | F it | max it (all starts) | F phases | max phases | max longest | max XR | max ALT | max TFG (gate flips) | max TF (one Q vertex) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| dual | 3 | 22 | 34 | 37 | 35 | 38 | 0 | 0 | 0 | 2 | 14 |
+| dual | 4 | 28 | 41 | 43 | 42 | 44 | 0 | 0 | 0 | 2 | 14 |
+| dual | 5 | 34 | 49 | 52 | 50 | 53 | 0 | 0 | 0 | 2 | 14 |
+| dual | 6 | 40 | 59 | 62 | 60 | 63 | 0 | 0 | 0 | 2 | 14 |
+| dual | 8 | 52 | 73 | 77 | 74 | 78 | 1 | 1 | 0 | 2 | 18 |
+| ex | 3 | 22 | 28 | 31 | 12 | 14 | 18 | 18 | 12 | 1 | 1 |
+| ex | 4 | 28 | 34 | 37 | 15 | 18 | 22 | 22 | 15 | 1 | 1 |
+| ex | 5 | 34 | 40 | 43 | 18 | 19 | 30 | 30 | 20 | 1 | 1 |
+| ex | 6 | 40 | 46 | 47 | 21 | 23 | 36 | 35 | 28 | 1 | 1 |
+| ex | 7 | 46 | 52 | 52 | 24 | 24 | 40 | 40 | 35 | 1 | 1 |
+| ex | 8 | 52 | 58 | 58 | 27 | 27 | 47 | 47 | 37 | 1 | 1 |
+| ex | 10 | 64 | 70 | 70 | 33 | 33 | 59 | 59 | 52 | 1 | 1 |
+| ex | 12 | 76 | 82 | 82 | 39 | 39 | 72 | 72 | 50 | 1 | 1 |
+| ex | 16 | 100 | 106 | 106 | 51 | 51 | 95 | 95 | 82 | 1 | 1 |
+- **READING (DATA).**
+  - **dual.** N5 is symmetric here: every iteration count equals H_n's (S3 6n + 4, F identical).
+    - Every iteration is its own phase, because the counting player is Odd and τ changes at every step. So the phase count = it + 1:
+      linear, all phases of length ≤ 1 (one phase of length 1, at n 8), ALT 0.
+    - Gate flips (σ at e_i): at most 2.
+    - τ re-flips at a single Odd vertex DO repeat: up to 14 times (18 at n 8, e.g. d1_2 and d1_3 in rand75). These are the counting
+      player's stubborn-cycle nodes, mirroring H_n's Even busy-updating. The count does not grow exponentially, and the total is ≤ it.
+  - **ex.** Odd changes τ at a gate at most once (TFG ≤ 1; 0 from S3 and F): Odd mostly keeps d1_i and Even closes the cycles.
+    - The phase count grows linearly: F-start phases = 3n + 3.
+    - Iterations are linear: S3 6n + 4, the same as H_n; F 6n + 10.
+    - The longest phase and XR grow linearly (about 6n from random starts); ALT up to 5.2n, larger than in H_n.
+  - **No exponential growth in either variant, n ≤ 16.** Neither variant makes τ flips repeat at a gate (TFG ≤ 2). In dual, repeated τ
+    flips appear at the counting player's own nodes, but they are linear in total.
+  - The question of an Odd gate that MUST re-open many times stays open. Both variants let one side settle the gates early. A design
+    in which Odd's gate preference is forced to alternate with a counter state needs Odd's own improvement (S4b, an optimum within A_τ
+    against σ) to be a counter. That is an L-RED / L-NEW design target, not run here.
 
 ## 5. Commands
 ```
@@ -131,7 +208,8 @@ python3 hn.py N [--mode fig|table] --out H.pg [--start H.start]     # the game; 
 python3 iglo.py N [--mode fig|table]                                # I^glo from ι (Theorem 8.4 check)
 P=4 ./run.sh                                                        # box16.py over jobs.txt -> results/box16.log, results/*.json
 python3 table.py > results/tables.md
-P=2 JOBS=rs_jobs2.txt ./rs.sh                                       # randstarts.py (rs_jobs.txt: n 3, 4; rs_jobs2.txt: n 5-8)
+P=4 ./rs2.sh; python3 rs2table.py > results/rs2_table.md             # §4 (rs2_jobs.txt); P=4 JOBS=var_jobs.txt ./rs2.sh for §5
+# randstarts.py / rs.sh: the first §4 attempt (no XR/ALT), superseded by randstarts2.py; its partial logs were not kept
 bash check.sh                                                       # fast self-check (verify.sh)
 ```
 Oink: scripts/setup_oink.sh (8fbf0a7). Engines: experiments/n5-second/n5b.py (L-COMP), n5.py via experiments/n5-exhaustive/exh.py
