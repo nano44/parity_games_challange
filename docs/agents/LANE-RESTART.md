@@ -138,3 +138,4 @@ Five questions:
 | 2026-10-28 | CHECKER | session_01QoVozkVaMsXGUPBea678Fa (~525k; handover b88e5bd0) | session_01V5yGRYMamtzAHMgh9kBGW5 (Opus, D15/L37) | 3 | none (measured, a91364bb: predecessor pushed after handover (4f494319), merged; append-only grep fixed) |
 | 2026-10-28 | REFEREE | session_01B9goeXLtnEY4cNgaQcxEUh (~670k; handover dc4e47b8) | session_01V5yGRYHH4CmdeoyNidN6pK (Opus, D15/L37) | 3 | none (measured e2f06134: 5/5; CORE sha1 matches at three refs) |
 | 2026-10-28 | L-SI | session_01Wri18MQcngoeeFHoME5WLV (~610k; handover 7407ef29, queue da88a6d4) | session_01V5yGRWTEYFoWjhNJrADhYc (Opus, D15/L37) | 2 | pending (handover check asked) |
+| 2026-10-28 | REFEREE-2 | session_01WT4cukhJyjxHKaBJWikCkK (~560k; handover 864302d0) | session_01V5yGRZzoAVpZvqB1LedCVF (Opus, D15/L37) | 3 | pending (handover check asked) |
