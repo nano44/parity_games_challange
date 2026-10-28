@@ -343,3 +343,8 @@ if git cat-file -e 2201aa2d && git cat-file -e aa6061d1 && git cat-file -e dc4e4
 else
   echo "root (P-N5-DEPTH / DEPTH-add fixes quotes): NOT RUN (a source commit is not in this clone)"
 fi
+# box 24 (docs/si/N5-RUNLIN-box24.md): the pinned RUN-LIN records (longest fallback-free run, two engines) and I_tau = empty along them.
+o=$(python3 -I runlin/anatomy.py runlin/instances/best60_n34.pg runlin/instances/best60_n34.start); grep -q "run \[1,61\] len 60 " <<<"$o"
+python3 -I root/n5bcmp.py runlin/instances/best60_n34.pg runlin/instances/best60_n34.start | grep -q "identical state sequences: True"
+python3 -I runlin/keeper.py ../red/n3/instances/run49_n32.pg ../red/n3/instances/run49_n32.start | grep -q "with I_tau nonempty 0 "
+echo "runlin (box 24: best60_n34 run 60, n5b identical; run49 I_tau empty along its run): PASS"

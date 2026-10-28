@@ -1,0 +1,5 @@
+seed run 49 n 32
+step 17567 run 51 n 32 ratio 1.594
+step 17578 run 52 n 32 ratio 1.625
+step 19503 run 53 n 32 ratio 1.656
+final best run/n (53, 32) 1.656
