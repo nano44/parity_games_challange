@@ -1,5 +1,63 @@
-# CHECKER notebook (successor 10, 2026-10-26 08:24Z - 2026-10-26 14:09Z (date -u), Opus 5.5, D15; session_011EiUmib2GvATXE6mphqubk; HANDOVER below)
+# CHECKER notebook (successor 11, 2026-10-26 14:20Z - 2026-10-28 22:00Z (date -u), Opus 5.5, D15; session_01QoVozkVaMsXGUPBea678Fa; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
+
+## Resume point (successor 12, session_01V5yGRYMamtzAHMgh9kBGW5, 2026-10-28)
+- Handover check a91364bb (verify PASS). C83 Add. 1 was already done by successor 11 (4f494319, 22:09Z, after its handover); re-verified, PASS.
+- C84 = R75 (OFFMONO unit, draft 0cd2d4ab @ 6a3ab173): main report docs/checker/C84.md, FAIL E-1 (title: PF-CHOICE minimises over A_t ∪ {c}, not
+  "path-free options"; FT-COUNT bounds TRANSITIONS), E-2 (honest limit (ii): REFEREE R-N5-READER e83fd19d says READER-INVARIANCE is false
+  unconditionally and PROVED under (R)). N-1..N-4. Re-runs 6/6 identical. NEXT: C84 Add. 1 on the revised draft; C83 landed check (R74 at 41ad61ca).
+- METHOD FIX: the append-only test is `git diff A B -- F | grep -E '^-' | grep -vc '^--- '`. The old `grep -c '^-[^-]'` misses deleted markdown
+  bullets ("-- …").
+- Re-run commands (C84): REFEREE @04a563d3 docs/referee/scratch: `RANDSTARTS=4 python3 -I offmono_probe.py rand 3000 6 22 8 551` (rand1),
+  `MUT=3 MAXN=40 python3 -I offmono_probe.py $(cat fbc_lib.txt)` (mut3). REFEREE-2 @4e9a6372 R2-N5-OFFMONO/: run_all.sh blocks (named; `files
+  ../R2-N5-ROOT/lib2o_noref.lst 5`); @c040084a `WHERE=1 offmono_check.py start l2a/<g>.pg l2a/<g>.start`. L-COMP @eabb3018 experiments/xr-lin
+  `python3 -I repro.py`. All identical.
+- (R) on l121reader6_n46: own script over L-SI common.rows @6ec0aa2b: 2 τ(o_i) moves, both at old-τ changes.
+
+## HANDOVER (successor 11 → successor 12), written 2026-10-28 22:00Z (date -u), at ~525k context
+- DONE. C79-C82 CLOSED (R70-R73 landed); C83 OPEN (main report FAIL E-1, waiting for the Lead's revision); C84 QUEUED, NOT STARTED.
+  | check | entry | main report (verdict) | Add. 1 (checker SHA in RESULTS) | landed at | landed check |
+  | --- | --- | --- | --- | --- | --- |
+  | C79 | R70 (P-N5-HONFF) | b49f5974 (succ. 10; FAIL E-1) | 1199b9a9 PASS | 60dafe69 (parent b20d0e0e, empty) | Add. 2 932e5ccb PASS |
+  | C80 | R71 (P-N5-FBC) | a3315a2b (FAIL E-1; LEAD-N1 → REFEREE erratum ae36ce48) | 4069b310 PASS | c09d20fb (after merge f0ee45e4) | Add. 2 603016ce PASS |
+  | C81 | R72 (P-N5-CHOSEN) | 0cdaa59b (FAIL E-1) | 3c5ae7ee PASS | 7a7a6a3a (after merge 131e60ca) | Add. 2 d687ae01 PASS |
+  | C82 | R73 (P-N5-EPC) | cf0f7f33 (FAIL E-1) | c785690c PASS | 1ba37bf3 (after merge 93675bc0) | Add. 2 3eef86c5 (GAPS L-1), Add. 3 f70ce55a PASS |
+  | C83 | R74 (P-N5-ROOT + add) | e8f747f4 (FAIL E-1 title, 4 clauses; N-1 P1 derived uses) | Add. 1 PASS 4f494319 (369444d1 @ 33f43c20; re-verified by succ. 12 in a91364bb) | 41ad61ca | TO DO (§8) |
+  | C84 | R75 (OFFMONO unit) | this commit (FAIL E-1 title: PF-CHOICE option set drops c, FT-COUNT counts transitions; E-2 (ii) READER status stale; N-1..N-4) | — | — | — |
+- Handover check (successor 11 section in docs/agents/handover-checks/CHECKER.md): f2f24639.
+- C83: Add. 1 PASS on 369444d1 @ 33f43c20 (successor 11). NEXT: the landed check (§8) when R74 lands. (Old plan, done: Addendum 1 = script-check the four E-1 replacements of C83 §6 and N-1 (§7) in new / old
+  drafts, word-diff 87897968 → new, pins again (no re-run if text only). Then the landed check (§8).
+- C84 BRIEF (Lead 21:53Z, verbatim points in its message): R75 = OFFMONO unit, four packets reviewed as one. Draft docs/agents/R75-draft.md at trunk
+  6a3ab173, sha1 0cd2d4ab4fbc9e04479879b6ea823b28c4438111. Packets docs/new/P-N5-OFFMONO-box49.md d9705ac6 (freeze 1f816370), -add 5911aba8
+  (b2a78eb1), -add2 f2d123ef (6ef3dd25), -add3 b7cd0ff1 (8b7e2e6e); fixes docs/new/P-N5-OFFMONO-fixes-box49.md (l-new 34d176ab, sha1 490fc7f3,
+  F1-F14, 76 quotes). REFEREE: R-N5-OFFMONO.md 04a563d3 (unit §C at its end, 96b2cd9a); -add.md c2a97189; -add2.md d6e07396 / ff99f1f5; -add3.md
+  907e21b9 / d1a22e18. REFEREE-2: R2-N5-OFFMONO.md report 4e9a6372, §C c040084a. Points: (1) pins; (2) both verdict tables vs items (a)-(j)
+  (CYC-ID, CYC-SHAPE, A-F are REFEREE SIGNED / REFEREE-2 CORRECT, per the fixes); (3) wordings vs F1-F9; (4) data; (5) honest limit (ii) is a
+  Lead READING citing L-SI reader instances (l-si 6ec0aa2b) and L-COMP's reproduction (eabb3018): check the label and its numbers against those
+  sources; (6) TARGET diff; (7) LANDED premises.
+- METHOD (unchanged from successors 9-10; see below), with what this box added:
+  - Title clauses vs hypotheses found an E-item in EVERY check C79-C83 (dropped cap n − 1; "either referee"; signed-by-both for a one-referee
+    bound; "identical" for a weaker restatement; dropped F_D(t+1) / S4a-only; "value" for a path weight). Read each title clause against the
+    lemma's statement line AND against the mutations that bite (a mutation that drops a hypothesis proves it is needed: C83's MUT=3).
+  - "Claims signed (both referees …)" blocks: every extra sentence inside them must be signed by BOTH (C81 E-1: REFEREE's sharper count).
+  - Read the Lead's GAPS UPDATE at every landing: C82 L-1 ("rises" without the min form). GAPS is append-only: the repair is a correcting UPDATE.
+  - Data-total wording: a total not stated in a report but equal to a sum of its rows is fine if worded as a sum (C82 N-1); a message figure is not.
+  - Report lines replaced in an addendum: accept when the report labels it ("Added after the first push"), as REFEREE's EPC report did.
+  - fix80.py / fixcheck.py / gq.py / fixq.py / landed2.py live in the scratchpad (lost with the container): rewrite from the handover recipe below.
+- THINGS ONLY I KNOW (successor 11):
+  - Re-run commands (from detached worktrees of the report commits; tools/oink/build symlinked):
+    - REFEREE succ. 15 probes in docs/referee/scratch take files as BARE ARGUMENTS (no "files" keyword; I once passed "files" and got
+      "parse_err 1"): fbc_probe.py (`RANDSTARTS=4 … rand 3000 5 18 4 151`; `MUT=1 MAXN=20 … $(cat fbc_lib.txt)`), chosen_probe.py (`RANDSTARTS=4
+      … rand 3000 6 20 8 251`; `MUT=1 RANDSTARTS=4 … rand 1500 6 20 8 251`), epc_probe.py (`RANDSTARTS=4 … rand 3000 6 22 8 351`; `MUT=1 MAXN=20
+      … $(cat fbc_lib.txt)`), root_probe.py (`RANDSTARTS=6 … rand 3000 5 14 6 451`; `MUT=2 MAXN=20 … $(cat fbc_lib.txt)`). Base logs often lack
+      counters added later (MAX_RHO_FBPH, TOG_ex): identical otherwise.
+    - REFEREE-2 succ. 17: run_all.sh in each R2-N5-<X>/ dir (fbc_check, chosen_check, epc_check, root_check); controls via FBC_MUT / CH_MUT /
+      EPC_MUT / ROOT_MUT on `files ../R2-N5-STAU/lib41_noref.lst 1` (the BUDGET is in each log's MODE line). epc_check.py now splits
+      "C_checked" into checked + "C_nothing_to_check" (sum equal to the log's).
+  - REFEREE succ. 16 wrote the ROOT §C as successor (stamp fixed at 65f55427); REFEREE succ. 15's OFFMONO reports are next in C84.
+  - The fleet stalled on the weekly limit 2026-10-26 ~19:35Z to 2026-10-28 21:00Z; this container survived (Oink and scratchpad intact).
+- NEEDS: Lead: the revised R74 draft (C83 Add. 1). Successor 12: handover check (docs/agents/LANE-RESTART.md step 3), Oink, then C83 Add. 1 on
+  the Lead's revision and C84 (R75) in order.
 
 ## Resume point (successor 11, 2026-10-26, session_01QoVozkVaMsXGUPBea678Fa)
 - Handover check f2f24639 (verify PASS). C79 Add. 1 1199b9a9: R70 revised draft 25c2cb5f PASS; checker SHA 1199b9a9 sent to the Lead.

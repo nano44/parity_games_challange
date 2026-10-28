@@ -1,0 +1,27 @@
+MODE files ../R2-N5-ROOT/lib2o_noref.lst 5
+ENGXI_checks: 1347
+EOW_checks: 1481
+GCI_intervals: 135
+GCI_noH3: 5
+GCI_sbar_changes: 13
+GL_checks: 117
+GL_sharp: 2
+GL_with_gates: 74
+MR_after_checks: 28
+MR_checks: 28768
+PE_checks: 458
+PL_FAIL: 4
+PL_checks: 118
+PURE_intervals: 118
+PURE_intervals_with_gates: 64
+SD_checks: 2228
+SD_noGEN: 7
+SD_sharp: 2
+SD_with_gates: 1597
+S_runs: 101
+runs: 205
+states: 1347
+GL_max_len: (11, 'experiments/new/box21/instances/fts_best24.pg#3', 2, 13, 17, 24, 0)
+PL_worst: (3, 'experiments/new/instances/seg10/seg_r16_s167.pg#0', 12, 10, 15, 2, 2, 0)
+SD_max_len: (11, 'experiments/new/box21/instances/fts_best24.pg#3', 2, 13, 17, 24, 0)
+RESULT OK violations=0

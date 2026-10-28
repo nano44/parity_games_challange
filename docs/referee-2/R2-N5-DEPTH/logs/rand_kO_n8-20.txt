@@ -1,0 +1,27 @@
+MODE random 1500 8 20 2213 0 3
+ENGXI_checks: 13794
+EOW_checks: 25
+GCI_intervals: 540
+GCI_noH3: 99
+GCI_sbar_changes: 2
+GL_checks: 439
+GL_sharp: 42
+GL_with_gates: 24
+MR_after_FAIL: 15
+MR_after_checks: 1097
+MR_checks: 13977
+PE_checks: 2195
+PL_FAIL: 192
+PL_checks: 963
+PURE_intervals: 963
+PURE_intervals_with_gates: 26
+SD_checks: 492
+SD_sharp: 45
+SD_with_gates: 30
+S_runs: 596
+runs: 4500
+states: 13794
+GL_max_len: (2, 'random2213:183#1', 2, 4, 3, 11, 0)
+PL_worst: (2, 'random2213:240#1', 8, 0, 2, 1, 0, 0)
+SD_max_len: (2, 'random2213:183#1', 2, 4, 3, 11, 0)
+RESULT OK violations=0

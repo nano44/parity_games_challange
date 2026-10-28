@@ -1,0 +1,25 @@
+ENGXI_checks: 79060
+EOW_checks: 63065
+EOW_checks_after: 711
+GCI_intervals: 4747
+GCI_noH3: 766
+GCI_sbar_changes: 479
+GL_checks: 3499
+GL_sharp: 255
+GL_with_gates: 1022
+MR_after_FAIL: 610
+MR_after_checks: 43388
+MR_checks: 1087965
+PE_checks: 18339
+PL_FAIL: 1326
+PL_checks: 6742
+PURE_intervals: 6742
+PURE_intervals_with_gates: 1398
+SD_checks: 53113
+SD_noGEN: 13
+SD_sharp: 651
+SD_with_gates: 17348
+S_runs: 4439
+runs: 21775
+states: 79060
+RESULT lines: {'OK': 46}

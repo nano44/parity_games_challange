@@ -1,0 +1,656 @@
+MODE start union/reader10_plus2.pg union/reader10_plus2.start
+ENGXI_checks: 14
+EOW_checks: 55
+GCI_intervals: 2
+GCI_noH3: 1
+GL_checks: 1
+MR_after_checks: 66
+MR_checks: 435
+PL_FAIL: 1
+PL_checks: 4
+PURE_intervals: 4
+SD_checks: 1
+S_runs: 2
+runs: 1
+states: 14
+GL_max_len: (1, 'reader10_plus2.pg', 12, 13, 16, 38, 0)
+PL_worst: (9, 'reader10_plus2.pg', 36, 0, 11, 2, 2, 0)
+SD_max_len: (1, 'reader10_plus2.pg', 12, 13, 16, 38, 0)
+RESULT OK violations=0
+MODE start union/reader20_plus2.pg union/reader20_plus2.start
+ENGXI_checks: 24
+EOW_checks: 210
+GCI_intervals: 2
+GCI_noH3: 1
+GL_checks: 1
+MR_after_checks: 126
+MR_checks: 1235
+PL_FAIL: 1
+PL_checks: 4
+PURE_intervals: 4
+SD_checks: 1
+S_runs: 2
+runs: 1
+states: 24
+GL_max_len: (1, 'reader20_plus2.pg', 22, 23, 26, 58, 0)
+PL_worst: (19, 'reader20_plus2.pg', 56, 0, 21, 2, 2, 0)
+SD_max_len: (1, 'reader20_plus2.pg', 22, 23, 26, 58, 0)
+RESULT OK violations=0
+MODE start union/reader40_plus2.pg union/reader40_plus2.start
+ENGXI_checks: 44
+EOW_checks: 820
+GCI_intervals: 2
+GCI_noH3: 1
+GL_checks: 1
+MR_after_checks: 246
+MR_checks: 4035
+PL_FAIL: 1
+PL_checks: 4
+PURE_intervals: 4
+SD_checks: 1
+S_runs: 2
+runs: 1
+states: 44
+GL_max_len: (1, 'reader40_plus2.pg', 42, 43, 46, 98, 0)
+PL_worst: (39, 'reader40_plus2.pg', 96, 0, 41, 2, 2, 0)
+SD_max_len: (1, 'reader40_plus2.pg', 42, 43, 46, 98, 0)
+RESULT OK violations=0
+MODE start ../../../experiments/red/ul/instances/cxmig_k16_n138.pg ../../../experiments/red/ul/instances/cxmig_k16_n138.start
+ENGXI_checks: 25
+EOW_checks: 537
+GCI_intervals: 1
+GL_checks: 1
+GL_with_gates: 1
+MR_checks: 3312
+PE_checks: 24
+PL_checks: 1
+PURE_intervals: 1
+PURE_intervals_with_gates: 1
+SD_checks: 276
+SD_with_gates: 276
+S_runs: 1
+runs: 1
+states: 25
+GL_max_len: (23, 'cxmig_k16_n138.pg', 0, 23, 24, 138, 17)
+SD_max_len: (23, 'cxmig_k16_n138.pg', 0, 23, 24, 138, 17)
+RESULT OK violations=0
+MODE start ../../../experiments/red/ul/instances/cxmig_k4_n54.pg ../../../experiments/red/ul/instances/cxmig_k4_n54.start
+ENGXI_checks: 13
+EOW_checks: 117
+GCI_intervals: 1
+GL_checks: 1
+GL_with_gates: 1
+MR_checks: 648
+PE_checks: 12
+PL_checks: 1
+PURE_intervals: 1
+PURE_intervals_with_gates: 1
+SD_checks: 66
+SD_with_gates: 66
+S_runs: 1
+runs: 1
+states: 13
+GL_max_len: (11, 'cxmig_k4_n54.pg', 0, 11, 12, 54, 5)
+SD_max_len: (11, 'cxmig_k4_n54.pg', 0, 11, 12, 54, 5)
+RESULT OK violations=0
+MODE start ../../../experiments/red/ul/instances/cxmig_k8_n82.pg ../../../experiments/red/ul/instances/cxmig_k8_n82.start
+ENGXI_checks: 17
+EOW_checks: 225
+GCI_intervals: 1
+GL_checks: 1
+GL_with_gates: 1
+MR_checks: 1312
+PE_checks: 16
+PL_checks: 1
+PURE_intervals: 1
+PURE_intervals_with_gates: 1
+SD_checks: 120
+SD_with_gates: 120
+S_runs: 1
+runs: 1
+states: 17
+GL_max_len: (15, 'cxmig_k8_n82.pg', 0, 15, 16, 82, 9)
+SD_max_len: (15, 'cxmig_k8_n82.pg', 0, 15, 16, 82, 9)
+RESULT OK violations=0
+MODE start ../../../experiments/red/ul/instances/ladderd0_k12_n48.pg ../../../experiments/red/ul/instances/ladderd0_k12_n48.start
+ENGXI_checks: 15
+EOW_checks: 78
+GCI_intervals: 1
+GCI_noH3: 1
+MR_after_checks: 182
+MR_checks: 598
+PL_checks: 1
+PURE_intervals: 1
+S_runs: 1
+runs: 1
+states: 15
+RESULT OK violations=0
+MODE start ../../../experiments/red/ul/instances/ladderd0_k24_n84.pg ../../../experiments/red/ul/instances/ladderd0_k24_n84.start
+ENGXI_checks: 27
+EOW_checks: 300
+GCI_intervals: 1
+GCI_noH3: 1
+MR_after_checks: 650
+MR_checks: 2050
+PL_checks: 1
+PURE_intervals: 1
+S_runs: 1
+runs: 1
+states: 27
+RESULT OK violations=0
+MODE start ../../../experiments/red/ul/instances/ladderd0_k48_n156.pg ../../../experiments/red/ul/instances/ladderd0_k48_n156.start
+ENGXI_checks: 51
+EOW_checks: 1176
+GCI_intervals: 1
+GCI_noH3: 1
+MR_after_checks: 2450
+MR_checks: 7546
+PL_checks: 1
+PURE_intervals: 1
+S_runs: 1
+runs: 1
+states: 51
+RESULT OK violations=0
+MODE start ../../../experiments/red/ul/instances/ladderent_k12_n48.pg ../../../experiments/red/ul/instances/ladderent_k12_n48.start
+ENGXI_checks: 15
+EOW_checks: 66
+GCI_intervals: 1
+GCI_noH3: 1
+MR_after_checks: 12
+MR_checks: 552
+PL_checks: 1
+PURE_intervals: 1
+PURE_intervals_with_gates: 1
+S_runs: 1
+runs: 1
+states: 15
+RESULT OK violations=0
+MODE start ../../../experiments/red/ul/instances/ladderent_k24_n84.pg ../../../experiments/red/ul/instances/ladderent_k24_n84.start
+ENGXI_checks: 27
+EOW_checks: 276
+GCI_intervals: 1
+GCI_noH3: 1
+MR_after_checks: 24
+MR_checks: 1968
+PL_checks: 1
+PURE_intervals: 1
+PURE_intervals_with_gates: 1
+S_runs: 1
+runs: 1
+states: 27
+RESULT OK violations=0
+MODE start ../../../experiments/red/ul/instances/ladderent_k48_n156.pg ../../../experiments/red/ul/instances/ladderent_k48_n156.start
+ENGXI_checks: 51
+EOW_checks: 1128
+GCI_intervals: 1
+GCI_noH3: 1
+MR_after_checks: 48
+MR_checks: 7392
+PL_checks: 1
+PURE_intervals: 1
+PURE_intervals_with_gates: 1
+S_runs: 1
+runs: 1
+states: 51
+RESULT OK violations=0
+MODE start ../../../experiments/red/ul/instances/reader_L10_n36.pg ../../../experiments/red/ul/instances/reader_L10_n36.start
+ENGXI_checks: 14
+EOW_checks: 55
+GCI_intervals: 2
+GCI_noH3: 1
+GL_checks: 1
+MR_after_checks: 66
+MR_checks: 423
+PL_checks: 2
+PURE_intervals: 2
+SD_checks: 1
+S_runs: 2
+runs: 1
+states: 14
+GL_max_len: (1, 'reader_L10_n36.pg', 12, 13, 16, 36, 0)
+SD_max_len: (1, 'reader_L10_n36.pg', 12, 13, 16, 36, 0)
+RESULT OK violations=0
+MODE start ../../../experiments/red/ul/instances/reader_L20_n56.pg ../../../experiments/red/ul/instances/reader_L20_n56.start
+ENGXI_checks: 24
+EOW_checks: 210
+GCI_intervals: 2
+GCI_noH3: 1
+GL_checks: 1
+MR_after_checks: 126
+MR_checks: 1213
+PL_checks: 2
+PURE_intervals: 2
+SD_checks: 1
+S_runs: 2
+runs: 1
+states: 24
+GL_max_len: (1, 'reader_L20_n56.pg', 22, 23, 26, 56, 0)
+SD_max_len: (1, 'reader_L20_n56.pg', 22, 23, 26, 56, 0)
+RESULT OK violations=0
+MODE start ../../../experiments/red/ul/instances/reader_L40_n96.pg ../../../experiments/red/ul/instances/reader_L40_n96.start
+ENGXI_checks: 44
+EOW_checks: 820
+GCI_intervals: 2
+GCI_noH3: 1
+GL_checks: 1
+MR_after_checks: 246
+MR_checks: 3993
+PL_checks: 2
+PURE_intervals: 2
+SD_checks: 1
+S_runs: 2
+runs: 1
+states: 44
+GL_max_len: (1, 'reader_L40_n96.pg', 42, 43, 46, 96, 0)
+SD_max_len: (1, 'reader_L40_n96.pg', 42, 43, 46, 96, 0)
+RESULT OK violations=0
+MODE start ../../../experiments/si/root/instances/cone_n69.pg
+ENGXI_checks: 26
+GCI_intervals: 1
+GCI_noH3: 1
+MR_after_checks: 564
+MR_checks: 1297
+PL_checks: 2
+PURE_intervals: 2
+S_runs: 1
+runs: 1
+states: 26
+RESULT OK violations=0
+MODE start ../../../experiments/red/so/instances/so_th_n32.pg
+ENGXI_checks: 37
+EOW_checks: 119
+GCI_intervals: 4
+GCI_noH3: 1
+GCI_sbar_changes: 2
+GL_checks: 1
+MR_checks: 1362
+PE_checks: 16
+PL_checks: 3
+PURE_intervals: 3
+PURE_intervals_with_gates: 2
+SD_checks: 3
+SD_with_gates: 2
+S_runs: 2
+runs: 1
+states: 37
+GL_max_len: (1, 'so_th_n32.pg', 6, 7, 10, 32, 0)
+SD_max_len: (1, 'so_th_n32.pg', 6, 7, 10, 32, 0)
+RESULT OK violations=0
+MODE start ../../../experiments/red/n5inj/instances/phase2_pk48.pg
+ENGXI_checks: 73
+EOW_checks: 81
+GCI_intervals: 12
+GCI_noH3: 11
+GL_checks: 1
+GL_with_gates: 1
+MR_after_checks: 2390
+MR_checks: 3792
+PE_checks: 13
+PL_FAIL: 1
+PL_checks: 3
+PURE_intervals: 3
+PURE_intervals_with_gates: 1
+SD_checks: 78
+SD_with_gates: 78
+S_runs: 12
+runs: 1
+states: 73
+GL_max_len: (11, 'phase2_pk48.pg', 40, 51, 21, 48, 1)
+PL_worst: (5, 'phase2_pk48.pg', 28, 65, 72, 2, 2, 0)
+SD_max_len: (12, 'phase2_pk48.pg', 39, 51, 21, 48, 1)
+RESULT OK violations=0
+MODE start ../../../experiments/red/xing/instances/x32_waves48.pg
+ENGXI_checks: 90
+EOW_checks: 291
+GCI_intervals: 7
+GL_checks: 7
+GL_with_gates: 6
+MR_checks: 5822
+PE_checks: 81
+PL_checks: 7
+PURE_intervals: 7
+PURE_intervals_with_gates: 6
+SD_checks: 719
+SD_with_gates: 683
+S_runs: 7
+runs: 1
+states: 90
+GL_max_len: (25, 'x32_waves48.pg', 4, 29, 29, 48, 1)
+SD_max_len: (26, 'x32_waves48.pg', 43, 69, 37, 48, 1)
+RESULT OK violations=0
+MODE start ../../../experiments/red/fbr/instances/twowave_L16.pg
+ENGXI_checks: 16
+EOW_checks: 14
+GCI_intervals: 1
+GL_checks: 1
+MR_checks: 465
+PL_checks: 1
+PURE_intervals: 1
+SD_checks: 120
+S_runs: 1
+runs: 1
+states: 16
+GL_max_len: (15, 'twowave_L16.pg', 0, 15, 17, 22, 0)
+SD_max_len: (15, 'twowave_L16.pg', 0, 15, 17, 22, 0)
+RESULT OK violations=0
+MODE start ../../../experiments/si/rund/instances/incdown_n23.pg ../../../experiments/si/rund/instances/incdown_n23.start
+ENGXI_checks: 5
+EOW_checks: 17
+GCI_intervals: 1
+GL_checks: 1
+GL_with_gates: 1
+MR_checks: 112
+PE_checks: 4
+PL_checks: 1
+PURE_intervals: 1
+PURE_intervals_with_gates: 1
+SD_checks: 6
+SD_with_gates: 6
+S_runs: 1
+runs: 1
+states: 5
+GL_max_len: (3, 'incdown_n23.pg', 0, 3, 6, 23, 2)
+SD_max_len: (3, 'incdown_n23.pg', 0, 3, 6, 23, 2)
+RESULT OK violations=0
+MODE start ../../../experiments/si/rund/instances/lenonly_n8.pg
+ENGXI_checks: 3
+GCI_intervals: 1
+GCI_noH3: 1
+MR_checks: 7
+S_runs: 1
+runs: 1
+states: 3
+RESULT OK violations=0
+MODE start ../../../experiments/si/rund/instances/off_s21_n24.pg
+ENGXI_checks: 27
+EOW_checks: 50
+GCI_intervals: 4
+GL_checks: 4
+GL_with_gates: 3
+MR_checks: 1027
+PE_checks: 6
+PL_checks: 2
+PURE_intervals: 2
+PURE_intervals_with_gates: 1
+SD_checks: 65
+SD_with_gates: 37
+S_runs: 2
+runs: 1
+states: 27
+GL_max_len: (7, 'off_s21_n24.pg', 19, 26, 18, 24, 0)
+SD_max_len: (7, 'off_s21_n24.pg', 19, 26, 18, 24, 0)
+RESULT OK violations=0
+MODE start ../../../experiments/si/rund/instances/off_s22_n24.pg ../../../experiments/si/rund/instances/off_s22_n24.start
+ENGXI_checks: 21
+EOW_checks: 23
+EOW_checks_after: 1
+GCI_intervals: 4
+GCI_noH3: 1
+GL_checks: 3
+GL_with_gates: 2
+MR_after_checks: 19
+MR_checks: 558
+PE_checks: 5
+PL_FAIL: 1
+PL_checks: 3
+PURE_intervals: 3
+SD_checks: 21
+SD_with_gates: 20
+S_runs: 2
+runs: 1
+states: 21
+GL_max_len: (4, 'off_s22_n24.pg', 6, 10, 8, 24, 2)
+PL_worst: (2, 'off_s22_n24.pg', 17, 2, 4, 1, 0, 0)
+SD_max_len: (4, 'off_s22_n24.pg', 6, 10, 8, 24, 2)
+RESULT OK violations=0
+MODE start ../../../experiments/si/rund/instances/off_s23_n24.pg
+ENGXI_checks: 27
+EOW_checks: 50
+GCI_intervals: 4
+GL_checks: 4
+GL_with_gates: 3
+MR_checks: 1027
+PE_checks: 6
+PL_checks: 2
+PURE_intervals: 2
+PURE_intervals_with_gates: 1
+SD_checks: 65
+SD_with_gates: 37
+S_runs: 2
+runs: 1
+states: 27
+GL_max_len: (7, 'off_s23_n24.pg', 19, 26, 18, 24, 0)
+SD_max_len: (7, 'off_s23_n24.pg', 19, 26, 18, 24, 0)
+RESULT OK violations=0
+MODE start ../../../experiments/si/rund/instances/off_s24_n40.pg
+ENGXI_checks: 91
+EOW_checks: 133
+GCI_intervals: 13
+GCI_noH3: 3
+GCI_sbar_changes: 2
+GL_checks: 8
+GL_with_gates: 7
+MR_checks: 5604
+PE_checks: 15
+PL_checks: 5
+PURE_intervals: 5
+PURE_intervals_with_gates: 2
+SD_checks: 138
+SD_with_gates: 128
+S_runs: 9
+runs: 1
+states: 91
+GL_max_len: (9, 'off_s24_n40.pg', 62, 71, 16, 40, 3)
+SD_max_len: (9, 'off_s24_n40.pg', 62, 71, 16, 40, 3)
+RESULT OK violations=0
+MODE start ../../../experiments/si/rund/instances/offalt_K10.pg ../../../experiments/si/rund/instances/offalt_K10.start
+ENGXI_checks: 25
+EOW_checks: 2487
+GCI_intervals: 1
+GL_checks: 1
+GL_with_gates: 1
+MR_checks: 7344
+PE_checks: 24
+PL_checks: 1
+PURE_intervals: 1
+PURE_intervals_with_gates: 1
+SD_checks: 276
+SD_with_gates: 276
+S_runs: 1
+runs: 1
+states: 25
+GL_max_len: (23, 'offalt_K10.pg', 0, 23, 25, 182, 2)
+SD_max_len: (23, 'offalt_K10.pg', 0, 23, 25, 182, 2)
+RESULT OK violations=0
+MODE start ../../../experiments/si/rund/instances/offret_n23.pg ../../../experiments/si/rund/instances/offret_n23.start
+ENGXI_checks: 5
+EOW_checks: 17
+GCI_intervals: 1
+GL_checks: 1
+GL_with_gates: 1
+MR_checks: 112
+PE_checks: 4
+PL_checks: 1
+PURE_intervals: 1
+PURE_intervals_with_gates: 1
+SD_checks: 6
+SD_with_gates: 6
+S_runs: 1
+runs: 1
+states: 5
+GL_max_len: (3, 'offret_n23.pg', 0, 3, 6, 23, 2)
+SD_max_len: (3, 'offret_n23.pg', 0, 3, 6, 23, 2)
+RESULT OK violations=0
+MODE start ../../../experiments/si/rund/instances/pairoc_n58.pg ../../../experiments/si/rund/instances/pairoc_n58.start
+ENGXI_checks: 6
+EOW_checks: 50
+GCI_intervals: 1
+GL_checks: 1
+GL_with_gates: 1
+MR_checks: 360
+PE_checks: 5
+PL_checks: 1
+PURE_intervals: 1
+PURE_intervals_with_gates: 1
+SD_checks: 6
+SD_with_gates: 6
+S_runs: 1
+runs: 1
+states: 6
+GL_max_len: (3, 'pairoc_n58.pg', 0, 3, 10, 58, 5)
+SD_max_len: (3, 'pairoc_n58.pg', 0, 3, 10, 58, 5)
+RESULT OK violations=0
+MODE start ../../../experiments/si/rund/instances/pp_K12_n161.pg ../../../experiments/si/rund/instances/pp_K12_n161.start
+ENGXI_checks: 20
+EOW_checks: 779
+GCI_intervals: 1
+GCI_sbar_changes: 1
+MR_checks: 4440
+SD_checks: 9
+SD_with_gates: 9
+S_runs: 1
+runs: 1
+states: 20
+SD_max_len: (3, 'pp_K12_n161.pg', 14, 17, 21, 161, 6)
+RESULT OK violations=0
+MODE start ../../../experiments/si/rund/instances/tw_s1_n10.pg
+ENGXI_checks: 1
+runs: 1
+states: 1
+RESULT OK violations=0
+MODE start ../../../experiments/si/rund/instances/tw_s1_n12.pg ../../../experiments/si/rund/instances/tw_s1_n12.start
+ENGXI_checks: 4
+EOW_checks: 3
+GCI_intervals: 2
+GCI_noH3: 1
+GCI_sbar_changes: 1
+MR_checks: 53
+S_runs: 1
+runs: 1
+states: 4
+RESULT OK violations=0
+MODE start ../../../experiments/si/rund/instances/tw_s2_n12.pg ../../../experiments/si/rund/instances/tw_s2_n12.start
+ENGXI_checks: 3
+EOW_checks: 1
+GCI_intervals: 1
+GCI_noH3: 1
+MR_after_checks: 15
+MR_checks: 20
+S_runs: 1
+runs: 1
+states: 3
+RESULT OK violations=0
+MODE start ../../../experiments/si/rund/instances/tw_s3_n12.pg ../../../experiments/si/rund/instances/tw_s3_n12.start
+ENGXI_checks: 2
+MR_checks: 11
+S_runs: 1
+runs: 1
+states: 2
+RESULT OK violations=0
+MODE start ../../../experiments/si/rund/instances/tw_s4_n12.pg
+ENGXI_checks: 3
+EOW_checks: 1
+GCI_intervals: 1
+GCI_noH3: 1
+MR_checks: 26
+S_runs: 1
+runs: 1
+states: 3
+RESULT OK violations=0
+MODE start ../../../experiments/si/rund/instances/tw_s5_n40.pg
+ENGXI_checks: 91
+EOW_checks: 133
+GCI_intervals: 13
+GCI_noH3: 3
+GCI_sbar_changes: 2
+GL_checks: 8
+GL_with_gates: 7
+MR_checks: 5604
+PE_checks: 15
+PL_checks: 5
+PURE_intervals: 5
+PURE_intervals_with_gates: 2
+SD_checks: 138
+SD_with_gates: 128
+S_runs: 9
+runs: 1
+states: 91
+GL_max_len: (9, 'tw_s5_n40.pg', 62, 71, 16, 40, 3)
+SD_max_len: (9, 'tw_s5_n40.pg', 62, 71, 16, 40, 3)
+RESULT OK violations=0
+MODE start ../../../experiments/si/rund/instances/usplit_rd_s3_n27.pg
+ENGXI_checks: 5
+EOW_checks: 14
+GCI_intervals: 1
+GL_checks: 1
+GL_with_gates: 1
+MR_checks: 132
+PE_checks: 4
+PL_checks: 1
+PURE_intervals: 1
+PURE_intervals_with_gates: 1
+SD_checks: 3
+SD_with_gates: 3
+S_runs: 1
+runs: 1
+states: 5
+GL_max_len: (2, 'usplit_rd_s3_n27.pg', 0, 2, 7, 27, 2)
+SD_max_len: (2, 'usplit_rd_s3_n27.pg', 0, 2, 7, 27, 2)
+RESULT OK violations=0
+MODE start ../../../experiments/red/rec0/instances/nep90_n40.pg ../../../experiments/si/rund/instances/nep90_n40.start
+ENGXI_checks: 96
+EOW_checks: 301
+GCI_intervals: 10
+GCI_sbar_changes: 8
+GL_checks: 2
+GL_with_gates: 1
+MR_checks: 4609
+PE_checks: 21
+PL_checks: 3
+PURE_intervals: 3
+PURE_intervals_with_gates: 2
+SD_checks: 2
+SD_with_gates: 1
+S_runs: 8
+runs: 1
+states: 96
+GL_max_len: (1, 'nep90_n40.pg', 51, 52, 11, 40, 4)
+SD_max_len: (1, 'nep90_n40.pg', 51, 52, 11, 40, 4)
+RESULT OK violations=0
+MODE start ../../../experiments/n5-epoch/instances/nep76_n40.pg ../../../experiments/n5-epoch/instances/nep76_n40.start
+ENGXI_checks: 88
+EOW_checks: 282
+GCI_intervals: 9
+GCI_sbar_changes: 8
+GL_checks: 1
+MR_checks: 4770
+PE_checks: 19
+PL_checks: 1
+PURE_intervals: 1
+SD_checks: 1
+S_runs: 7
+runs: 1
+states: 88
+GL_max_len: (1, 'nep76_n40.pg', 86, 87, 21, 40, 0)
+SD_max_len: (1, 'nep76_n40.pg', 86, 87, 21, 40, 0)
+RESULT OK violations=0
+MODE start ../../../experiments/new/box48/instances/long121_n40.pg ../../../experiments/new/box48/instances/long121_n40.start
+ENGXI_checks: 123
+EOW_checks: 446
+GCI_intervals: 29
+GCI_sbar_changes: 2
+GL_checks: 27
+GL_with_gates: 26
+MR_checks: 6377
+PE_checks: 45
+PL_checks: 7
+PURE_intervals: 7
+PURE_intervals_with_gates: 6
+SD_checks: 186
+SD_with_gates: 185
+S_runs: 9
+runs: 1
+states: 123
+GL_max_len: (6, 'long121_n40.pg', 43, 49, 16, 40, 2)
+SD_max_len: (6, 'long121_n40.pg', 43, 49, 16, 40, 2)
+RESULT OK violations=0

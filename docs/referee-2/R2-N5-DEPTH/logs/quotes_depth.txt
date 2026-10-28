@@ -1,0 +1,14 @@
+OK   docs/new/N5-ssi-global.md@982f5c629:28-29 | valuation of v under (σ, σ̄): (c, P, ℓ), c = the most relevant (max p') vertex of the cycl
+OK   docs/new/N5-ssi-global.md@982f5c629:51-51 | A(v) = {σ(v)} ∪ {w : (v, w) ∈ Iσ} for Even v
+OK   docs/new/N5-ssi-global.md@982f5c629:53-53 | (Even's one-player optimum against τ among "keep or take an improving edge".)
+OK   docs/new/N5-ssi-global.md@982f5c629:56-56 | FALLBACK, if σ_new = σ and τ_new = τ
+OK   docs/RESULTS.md@58061d91:803-804 | U_τ the pointwise maximum of V_{σ',τ} over Even's σ'
+OK   docs/RESULTS.md@982f5c629:3596-3596 | P2: S4a's step is Even's optimum in its arena
+OK   docs/RESULTS.md@982f5c629:3768-3769 | (SW): every Even switch of N5 is to an edge … of Iσ
+OK   docs/new/P-N5-FBPOLY-box41.md@982f5c629:97-97 | (M2κ) For z ∈ U and every in-phase transition t → t+1: κ_t(z) ≤ κ_{t+1}(z).
+OK   docs/RESULTS.md@982f5c629:3612-3612 | Lemma STATIC: on a ρ-FREE INTERVAL I
+OK   docs/si/P-N5-GCX-box21.md@02240121:63-64 | A STEP from a valid s: ARENA Al_s(v) := {s(v)} ∪ {y ∈ succ(v) : M_s(y) > M_s(s(v))} … s′ :
+OK   docs/si/P-N5-GCX-box21.md@02240121:32-33 | GLOBAL C-INTERVAL of S: a maximal sub-interval of S on which, for every cycle node c, A_t 
+OK   docs/red/R91-ulc-reader.md@54de3f2f:101-101 | Every global C-interval of a λ_W-constant fallback-free run has length ≤ n − 1.
+tagged quotes 12 ok 12 missing 0
+«-quotes without a [Q] tag right before them: 3
