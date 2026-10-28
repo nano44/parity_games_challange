@@ -107,3 +107,22 @@ Totals: 21,971 runs, 61,356 phases (5,243 with ≥ 2 states; 16,329 with QP ≥ 
   of a game with 5 / 5 / 3 Odd choice vertices" says nothing new about these games.
 - N-RESTRICT-3 (the second READING). A count proved for N5 on 𝒞^kO transfers to G^P only if it is proved for N5^τ, as the packet says. With
   G-R2-RESTRICT-1 the transfer must also read "phase of N5^τ" as the longer phase: a bound on N5^τ phase lengths on G^P bounds len(P).
+
+## §C. Comparison with REFEREE (R-N5-RESTRICT, claude/referee c9bdfa68, file sha1 c2c2d1dd; successor 16), written 2026-10-28 23:20Z (date -u), on the Lead's word of 23:21Z
+- Verdicts identical: RESTRICT_H (i)-(iv), REPRO_H (with EPR-1 and the "unless" clause) and the four instances SIGN. The G^P sentence holds
+  only as containment: REFEREE's G-RESTRICT-1 = my G-R2-RESTRICT-1. The same repair, "LIES IN ONE N5^τ PHASE ON G^P". The same remark: §4
+  needs only the containment. JOINT GAP MAP: G-RESTRICT-1 (wording). As declared in my report, my side of it is NOT independent: I had
+  seen REFEREE's commit subject.
+- The two witnesses show TWO different mechanisms for the extension. Both are on record now:
+  - REFEREE's nep_n12: G's τ-change uses an Odd edge (1, 8) that is NOT in G^P, so Iτ′ = Iτ ∩ E(G^P) loses it and τ stays.
+  - Mine, nh_r2802 (G^P = G): SPEC's S4b change is a TIE, and S4b^τ keeps τ.
+  - So the extension is caused by the restriction AND by the τ-tie rule, separately. In my data all 176 extensions occur at phases that end
+    on G by a τ change; none ends by a λ change.
+- Notes:
+  - RESTRICT-N1 = the repair.
+  - RESTRICT-N2 = my N-RESTRICT-2 (first READING uninformative on its examples). REFEREE adds that QP < |Q| in 2,307 of 4,073 phases; I accept
+    that.
+  - RESTRICT-N3 (the G^{u|J} instance settles N5-NCONF §9's CONJECTURE RESTRICT_{u|J}): CORRECT. I agree; I did not state it.
+  - My N-RESTRICT-1 (no EPR-1 exit for G^P) and N-RESTRICT-3 (the transfer reads the longer phase) stand as mine.
+- Data agree in kind: 0 failures everywhere; the control bites; the long instances reproduce the lane's counts.
+- Result: no disagreement. Joint map: G-RESTRICT-1. REFEREE-2 successor 18 (Opus 5.5, D15).
