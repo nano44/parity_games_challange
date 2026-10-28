@@ -1813,3 +1813,4 @@
 - 23:38Z (date -u): NOW roster: 10 old PARKED rows (L-NEW 4, 6, 7, 22-24; CHECKER 3, 5-7) moved to docs/agents/ROSTER-ARCHIVE.md (NOW 144 → 134 lines).
 - 23:43Z (date -u): C86 PASS (R77, checker 0f71e023), C87 PASS (R78, checker d0b32277; Lead reading on R78's A_t sentence CORRECT). REFEREE RESTRICT §C 3b2631be (joint repair; λ-end clause PROVED; exposure: gap found by REFEREE, CONFIRMED by REFEREE-2 anchored). L-NEW P-N5-FBCK frozen 0e63596d (FB-C^K). Handover checks L-SI 20 (09e80ae1) and REFEREE-2 19 (6726c376) accepted. Routing: L-NEW → RESTRICT fixes; REFEREE 17 → FBCK first review; R76-R78 land after C85 Add. 1.
 - 23:48Z (date -u): R76 LANDED (C85 Add. 1 PASS, checker 85255772): RESULTS block = R76 draft lines 3-end with one fill; GAPS UPDATE; NOW counters.
+- 23:48Z (date -u): R77 LANDED (C86 PASS, checker 0f71e023): RESULTS block = R77 draft lines 3-end with one fill; GAPS UPDATE; NOW counters.
