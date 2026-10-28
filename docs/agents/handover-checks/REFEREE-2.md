@@ -495,3 +495,44 @@ Measured from the repository at the time of writing (commands named), not recall
   `git ls-tree --name-only ... | grep -ic` count, and write the number from that output; no `git log` on origin/claude/referee before the §C word.
 - Also again this time: stale container (77f9cf71); caught by fetch + is-ancestor f5381a5c before any edit. And a "pin" can be a file sha1
   on a lane branch rather than trunk (DEPTH-add 4d51aa5e lives on l-si only): measure each pin with `git show <ref>:<path> | sha1sum`.
+
+## successor 19 (2026-10-28T23:3xZ by date -u; Opus 5.5 under D15/L37; predecessor successor 18 session_01WT4cukhJyjxHKaBJWikCkK, handover 864302d0)
+Measured from the repository at the time of writing (commands named), not recalled.
+
+### 1. Branch, head, distance to trunk
+- Branch `claude/referee-2`. Container NOT stale this time: `git status` / `git log -1` at start -> 864302d0 = origin/claude/referee-2 (the handover commit).
+- After `git fetch origin claude/vibrant-johnson-nxvvxo`: `git rev-list --left-right --count 864302d0...origin/claude/vibrant-johnson-nxvvxo` -> 2 ahead
+  (516b374b merge, 864302d0 RESTRICT §C + HANDOVER), 13 behind; merge-base f86a4145.
+- `git merge origin/claude/vibrant-johnson-nxvvxo` -> 73250d93 (no conflict); trunk head 908e4333; `git rev-list --left-right --count HEAD...trunk` -> 3 ahead, 0 behind.
+  This file's commit adds one.
+
+### 2. Open work and next step of each
+- Nothing in flight (handover: IN FLIGHT none; RESTRICT §C in 864302d0).
+- NEXT: P-N5-CORE, docs/si/P-N5-CORE-box23.md, items (C1)-(C6). Pin measured: `git show 081ae740:docs/si/P-N5-CORE-box23.md | sha1sum`,
+  same for origin/claude/l-si and origin/claude/vibrant-johnson-nxvvxo -> 7b66f1bae1a1b675c0fda0af1e5eaabf13f128a0 (all three match the brief).
+  Next step: read the packet and every result it cites; own checker on my lane's engines (no lane code); mutation controls + vacuity checks;
+  write docs/referee-2/R2-N5-CORE.md; push; then §C only on the Lead's word.
+- Independence state (23:29:20Z, same turn as the fetch of origin/claude/referee): `git ls-tree --name-only -r origin/claude/referee docs/referee/ | grep -ic core`
+  -> 16 (names only; none opened; no `git log` on origin/claude/referee). REFEREE's R-N5-CORE.md (9d831869) exists per the Lead.
+- Predecessor NEEDS (route OFFMONO/GCX/DEPTH/DEPTH-add/RESTRICT notes and gaps; start successor 19) are Lead routings; successor 19 = this session.
+- Oink: tools/oink/build absent at start; scripts/setup_oink.sh started in this container (result reported in the message).
+
+### 3. docs/GAPS.md rows I own
+- None (`grep -n REFEREE-2 docs/GAPS.md` -> lines 6 GAP-A (cited in text), 20-23 closed G-Bthr, G-K5, G-STR, G-DOM; owner column never REFEREE-2).
+  The open row the queue sits under: G-N5-TIME | major | L-NEW (L-LIT T22; referees later) | open (docs/GAPS.md:11).
+
+### 4. Three owner rulings that most constrain me (verbatim), with DECISIONS-INDEX status
+1. D1 (index line 5: active), docs/DECISIONS.md:7-8:
+   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+   > Never downgrade the referee to save money.
+2. D15 (index line 26: active; L37 line 27: signatures "(Opus 5.5, D15)"), docs/DECISIONS.md:278:
+   > q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it
+3. D18 (index line 32: active; L40 line 33), docs/DECISIONS.md:333:
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+
+### 5. One trap that bit this lane, and the check that prevents it
+- Trap (succ. 18, RESTRICT): `git log origin/claude/referee -- <file>` printed a LATER commit subject carrying REFEREE's verdict (exposure, declared
+  in R2-N5-RESTRICT). Check: before my own report on a packet is pushed, the only command run on origin/claude/referee is
+  `git ls-tree --name-only -r origin/claude/referee docs/referee/ | grep -ic <key>`, run in the push turn, number copied from its output.
+- Recurring content trap (succ. 18 GCX, DEPTH, DEPTH-add): "any deterministic rule" claims fail for non-keep tie rules; per-class intervals not cut
+  at freeze; telescoping lemmas need "at or before c". Check: each CORE item is tested with keep / flip / random tie rules and at freeze cuts.
