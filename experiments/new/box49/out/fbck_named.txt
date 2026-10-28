@@ -1,0 +1,10 @@
+Cf 74 Cf_K 71 Cf_read 66 RECUR 36 f 110 phases 20 phases_with_fb 14 runs 17
+max Cf (8, ('experiments/new/box49/inst/l121_cf35_39.pg', (1, 122), 41, 4, 8))
+max Cf_K (8, ('experiments/new/box49/inst/l121_cf_emb12.pg', (1, 122), 41, 41, 8))
+max Cf_over_n (0.1951219512195122, ('experiments/new/box49/inst/l121_cf35_39.pg', (1, 122), 41, 4, 8, 8))
+max Cf_read (5, ('experiments/new/box49/inst/l121_a.pg', (1, 122), 41, 8, 5))
+max f (8, ('experiments/new/box49/inst/l121_a.pg', (1, 122), 41, 4, 5))
+max f_multi (8, ('experiments/new/box49/inst/l121_a.pg', (1, 122), 41, 5, 2))
+max f_over_Cf (2.0, ('experiments/si/root/instances/swlin_kill_n26.pg', (1, 47), 26, 3, 6, 3))
+max per_K_conf_over_nK (0.11538461538461539, ('experiments/si/root/instances/swlin_kill_n26.pg', (1, 47), 26, 26, 3))
+max per_read_conf_over_n (0.23076923076923078, ('experiments/si/root/instances/swlin_kill_n26.pg', (1, 47), 26, 6))

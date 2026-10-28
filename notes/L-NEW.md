@@ -12,6 +12,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   length or fallbacks per phase (done as N5-READER §6: W-MONO DATA, W*-REACH DEAD; fallbacks OPEN).
 - Lead 22:36Z GO fallbacks per phase (§7: CF-SMALL DEAD); Lead 22:55Z: FB-LIN (f ≤ n) is mine, RUN-LIN is L-SI's. §8: read configurations
   𝒞°_f (reader-proof on instances), CONJECTURE FB-C°, climbs no kill (best f − n = −9). runfbclimb.py run from scratch copy (not on trunk).
+- Lead 23:21Z GO FB-C° proof attempt: frozen packet docs/new/P-N5-FBCK-box49.md (sha1 7747ecf2…): Theorem FB-C^K, f ≤ n_K·|𝒞^K_f|, K =
+  reachable from an Even choice vertex (plain readers drop out; embedded readers do not: FB-C° in the read frame stays OPEN). KVIOL 0 on all data.
+  Then RESTRICT fixes on the Lead's word (REFEREE-2 9549e59a in; §Cs pending).
 - TASK 1 pushed: l-new 34d176ab (VERIFY PASS); reported to the Lead 21:39Z.
 - Lead 21:35Z: REFEREE on RESTRICT (claude/referee c9bdfa68, docs/referee/R-N5-RESTRICT.md): all SIGNED; gap G-RESTRICT-1 (G^P's "IS one
   N5^τ phase" holds only as "LIES IN one"; nep_n12, 44 of 4,073 phases extend); notes RESTRICT-N1..N3. Lead: "Do NOT write the RESTRICT fixes

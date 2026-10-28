@@ -1,0 +1,31 @@
+GP_END_lam 1661
+GP_END_tau 986
+GP_EXT 26
+GP_EXT_ex 3
+GP_EXT_tau 26
+GP_EXTchk 2938
+GP_R4chk 824
+GP_REPchk 2938
+GP_REPtrans 7540
+GP_Rchk 10478
+GP_runs 2938
+MAX_NQ 18
+MAX_QP 9
+MAX_XDEG 20
+RUNS 578
+inphase_trans 7540
+longph_ex 6
+phases 712
+phases1 2226
+phases_QP2 114
+phases_QP_lt_NQ 248
+skip_big 104
+EX ('GP_EXT', '../../../experiments/red/n5/instances/sym_h8_s1.pg/0', 12, 12)
+EX ('GP_EXT', '../../../experiments/red/n5/instances/sym_h8_s1.pg/0', 13, 13)
+EX ('GP_EXT', '../../../experiments/red/rec0/instances/nep87_n40.pg/0', 6, 15)
+EX ('LONGPHASE', '../../../experiments/red/so/instances/rise_thin51_n40.pg/0', 9, 78, 'QP', 1, 'NQ', 1, 'XDEG', 14)
+EX ('LONGPHASE', '../../../experiments/red/xing/instances/j4_n40.pg/0', 3, 106, 'QP', 1, 'NQ', 1, 'XDEG', 7)
+EX ('LONGPHASE', '../../../experiments/red/xing/instances/x32_waves32.pg/0', 4, 81, 'QP', 1, 'NQ', 1, 'XDEG', 3)
+EX ('LONGPHASE', '../../../experiments/si/xing/instances/zcl_fb1_n32.pg/0', 4, 69, 'QP', 1, 'NQ', 1, 'XDEG', 4)
+EX ('LONGPHASE', '../../../experiments/si/xing/instances/zcl_fb2_n32.pg/0', 3, 64, 'QP', 1, 'NQ', 1, 'XDEG', 5)
+EX ('LONGPHASE', '../../../experiments/si/xing/instances/zcl_rx_n32.pg/0', 3, 65, 'QP', 1, 'NQ', 1, 'XDEG', 9)

@@ -106,3 +106,53 @@ GUJ = G^{u|J} per maximal frozen-side u-stretch.
 DONE: this report. FINDINGS: RESTRICT_H, REPRO_H and the four instances SIGNED; G-RESTRICT-1 (G^P's "IS ONE phase" true only as
 containment); RESTRICT-N2 confirmed. NEEDS: Lead: route G-RESTRICT-1 and RESTRICT-N1..N3 to L-NEW's fixes file; §C against REFEREE-2 on your
 word.
+
+## §C. Comparison with REFEREE-2 (written 2026-10-28T23:23Z by date -u, after the Lead's word of 23:21Z; REFEREE-2's report
+docs/referee-2/R2-N5-RESTRICT.md, sha1 7c18aed3…, at origin/claude/referee-2 9549e59a; read only after the report above was pushed at c9bdfa68)
+Written by REFEREE successor 17, as successor to the author (successor 16). Every verdict is labelled (Opus 5.5, D15).
+- Where the file is: the Lead's word says it is on trunk; at my fetch (trunk f86a4145) it is not. I read it at origin/claude/referee-2 9549e59a
+  (same sha1 as that branch's head copy).
+- Verdicts identical: RESTRICT_H (i)-(iv), REPRO_H (with EPR-1 and the "unless" clause) and the admissibility of the four instances SIGNED by
+  both; §4's first READING not signed by either and UNINFORMATIVE on its examples (QP = |Q| = 5 / 5 / 3) by both.
+- Joint gap map: {G-RESTRICT-1 = G-R2-RESTRICT-1}. Same sentence ("EVERY PHASE OF N5 ON G IS ONE N5^τ PHASE ON G^P …"), same verdict: true as
+  containment, false as equality.
+  - Two witnesses, two MECHANISMS, both reproduced on my engine (scratch/restrict_probe.py, sha1 f451e00a…, env ONE=1 adds one-state phases for G^P):
+    - nep_n12 (successor 16): the edge of G's τ-move, (1, 8), is not in G^P, so N5^τ cannot make it (phase [0, 1] extends to state 2).
+    - nh_r2802 (REFEREE-2; experiments/new/box28/out/nh_r2802.pg.pg, sha1 8652ac82): G^P = G at the one-state phase [0, 0], and the extension
+      comes from N5^τ's own S4b^τ rule (τ kept when value-optimal; SPEC's S4b moves it on a tie). REPRODUCED: my probe reports GP_EXT at [0, 0].
+      This shows the equality reading fails even with no edge cut, which successor 16's witness did not show.
+  - Data difference explained: successor 16's 44 of 4,073 counted multi-state phases only (the probe skipped one-state phases). With one-state
+    phases included (ONE=1, lib1140, G^P only; restrict_logs/sc_lib1140_one_part00-03.txt): 186 of 11,527 phase ends extend, all of them
+    τ-ends (7,312 τ-ends, 4,215 λ-ends), 0 failures of (i)-(iv), REPRO_H (12,625 runs, 18,036 transitions). REFEREE-2: 176 of 39,385, all τ-ends.
+  - JOINT REPAIR: REFEREE-2's wording, which implies successor 16's "LIES IN ONE": "every phase P of N5 on G is the INITIAL SEGMENT, of len(P)
+    transitions, of the first N5^τ phase on G^P started at (σ_x, τ)", with the addition below.
+- REFEREE-2's parenthesis "Equality holds when P ends by a λ change": an unproved claim in its report (data only). I PROVE it (Opus 5.5, D15):
+  let y → y + 1 leave P on G with τ_{y+1} = τ, so λ_{y+1} ≠ λ_y; σ_{y+1} ≠ σ_y (λ depends on σ alone), so Iσ_y ≠ ∅ and N5^τ does not stop at y. N5^τ on G^P steps from y to (σ_{y+1}, τ) with the same fallback type: (ii)
+  at y (y ∈ J); S4b's output on G at y is τ (no Odd fallback, τ unchanged), so S4b^τ on G^P keeps τ by (iv)'s argument; S4c fires on both or
+  neither. Take v with λ_{y+1}(v) ≠ λ_y(v). R15 (a), (d) give Ξ_{y+1}(v) ⊵ Ξ_y(v), and distinct cycle nodes have distinct rewards, so
+  reward(λ_{y+1}(v)) > reward(λ_y(v)). Every Odd strategy of G^P is one of G (P1), so Lemma S (a) (R18 (d)) gives Ξ_{y+1} ⊴ Ξ′_{y+1}, hence
+  reward(λ′_{y+1}(v)) ≥ reward(λ_{y+1}(v)) > reward(λ_y(v)) = reward(λ′_y(v)) ((i) at y). So λ′_{y+1} ≠ λ′_y and the N5^τ phase ends at y. □
+  Data agree: 0 of 4,215 λ-ends extend (above), 0 of 11,777 in REFEREE-2's. Only τ-ends can extend. Add it to the joint repair:
+  "… equal to it when P ends by a λ change".
+- The EXPOSURE REFEREE-2 declared, weighed:
+  - What it saw before reviewing: the subject line of c9bdfa68, i.e. successor 16's verdicts on ALL items (RESTRICT_H, REPRO_H, instances
+    SIGNED), the subject of the gap and the witness name nep_n12. So the exposure is not limited to the G^P finding as its report says: it knew
+    the SIGN verdicts too.
+  - The SIGNATURES (RESTRICT_H, REPRO_H, instances): each referee re-derived every step line by line (successor 16 independently, REFEREE-2
+    after the exposure) and ran its own checker on its own corpus with 0 failures (REFEREE-2: 21,971 runs, a different engine lineage built on
+    si.py, which SPEC S1 names as its reference). The proofs are short, one state per item, and every step is checkable by a reader. My
+    reading: the two signatures stand, with REFEREE-2's recorded as anchored, not blind.
+  - The GAP: a refutation stands on its witnesses, not on agreement between referees. Both witnesses re-check on my own engine, and REFEREE-2's
+    witness came from its own library run by a mechanism successor 16 did not find (no edge cut). So G-RESTRICT-1 needs no independent second
+    finding to hold. What the exposure costs is only the claim that two referees found it independently: it should be recorded as found by
+    REFEREE (successor 16) and CONFIRMED by REFEREE-2 (anchored), with REFEREE-2's own witness nh_r2802.
+  - The repair wording and the λ-end equality (proved above) are independent additions by REFEREE-2 and by me; neither depends on the exposure.
+- Notes matched:
+  - RESTRICT-N1 (repair) = G-R2-RESTRICT-1's repair; superseded by the JOINT REPAIR above.
+  - RESTRICT-N2 = N-RESTRICT-2 (first READING uninformative). REFEREE-2 adds XDEG(G) = 24 / 26 / 9 against XDEG(G^P) = 22 / 24 / 8: ACCEPTED.
+  - RESTRICT-N3 (G^{u|J} settles N5-NCONF §9's CONJECTURE RESTRICT_{u|J}): REFEREE-2 signs G^{u|J}'s admissibility and RESTRICT_H covers it,
+    so both referees' signatures cover that conjecture as an instance. It lands only with the Lead's routing.
+  - N-RESTRICT-1 (no EPR-1 exit for G^P): ACCEPTED; same as successor 16's §2 ("no EPR-1 exit").
+  - N-RESTRICT-3 (second READING: transfer needs N5^τ counts, and the longer phase): ACCEPTED; successor 16 did not examine it, and with the
+    joint repair a bound on N5^τ phase lengths on G^P bounds len(P).
+- Nothing else open on RESTRICT. RESTRICT bounds nothing; G-N5-TIME stays OPEN.
