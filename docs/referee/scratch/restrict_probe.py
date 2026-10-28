@@ -11,7 +11,7 @@ For each (H, J): R1-R4 = RESTRICT_H (i)-(iv) at every k in J; REP = REPRO_H (N5^
 and the fallback flags, len(J) transitions); ONEPH = lambda' at x..y equals lambda; UNLESS = when y -> y' is in-phase and sigma-bar_{y'} is
 an Odd strategy of H, lambda' at y' = lambda (REPRO_H's "unless" clause); EXITLAM (count) = y' in-phase but lambda' at y' differs.
 EXT (count, G^P only): the N5^tau run on G^P takes one more step from y and stays in the phase (lambda', tau): the N5^tau phase on G^P is
-then strictly longer than P (the equality reading of "EVERY PHASE ... IS ONE N5^tau PHASE ON G^P" would fail; containment holds).
+then strictly longer than P; split GP_EXT_tau / GP_EXT_lam by how P ends on G (succ. 17, §C) (the equality reading of "EVERY PHASE ... IS ONE N5^tau PHASE ON G^P" would fail; containment holds).
 QP, XDEG of G^P; NQ = |Q| of G (the brief's point on §4's first READING).
 Mutation MUT=1: G^P without (v, sigma-bar_x(v)) for the first v with sigma-bar_x(v) != tau(v) (P2 fails at x; must bite).
 Usage: restrict_probe.py rand N nmin nmax kmax seed | files[:start]...  (env RANDSTARTS 2, MAXN 40, NOS3, FAMS=GP,GUJ,GU,GE,RH)"""
@@ -24,6 +24,7 @@ from gcx_probe import load_start
 EX = []
 MUT = int(os.environ.get("MUT", "0"))
 FAMS = set(os.environ.get("FAMS", "GP,GUJ,GU,GE,RH").split(","))
+ONE = int(os.environ.get("ONE", "0"))
 
 
 def fail(cnt, key, *info):
@@ -74,10 +75,15 @@ def check(g, st, info, H, x, y, p1, fam, cnt, name):
     if fam == "GP" and ok:
         r = n5tau_step(H, s, tt)
         cnt["GP_EXTchk"] += 1
+        if y + 1 < len(st): cnt["GP_END_" + ("tau" if st[y + 1]["t"] != t else "lam")] += 1
         if r is not None:
             Xn, _ = RE.evaluate(H, r[0])
             if tuple(v[0] for v in Xn) == lam and r[1] == t:
                 cnt["GP_EXT"] += 1
+                if y + 1 < len(st):
+                    kind = "tau" if st[y + 1]["t"] != t else "lam"
+                    cnt["GP_EXT_" + kind] += 1
+                    if kind == "lam" and cnt["GP_EXTlam_ex"] < 5: cnt["GP_EXTlam_ex"] += 1; EX.append(("GP_EXT_lam", name, x, y))
                 if cnt["GP_EXT_ex"] < 3: cnt["GP_EXT_ex"] += 1; EX.append(("GP_EXT", name, x, y))
 
 
@@ -94,7 +100,13 @@ def analyse(g, start, cnt, name, rng):
         j = k
         while j < T_ and key[j] == key[j + 1]: j += 1
         p0, p1 = k, j; k = j + 1
-        if p1 == p0: continue
+        if p1 == p0:
+            if ONE and "GP" in FAMS and p0 < T_:  # succ. 17: one-state phases, G^P only (EXT / end type)
+                t = list(st[p0]["t"]); cnt["phases1"] += 1
+                kp = {v: {t[v], info[p0]["sb"][v]} for v in range(n) if g.owner[v] == 1}
+                H1 = RE.Game(list(g.prio), list(g.owner), [list(g.succ[v]) if g.owner[v] == 0 else sorted(kp[v]) for v in range(n)])
+                check(g, st, info, H1, p0, p1, p1, "GP", cnt, name)
+            continue
         cnt["phases"] += 1; cnt["inphase_trans"] += p1 - p0
         t = list(st[p0]["t"])
         def cut(keep):  # keep[v] = set of Odd successors

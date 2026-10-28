@@ -1,0 +1,31 @@
+GP_END_lam 1212
+GP_END_tau 1350
+GP_EXT 37
+GP_EXT_ex 3
+GP_EXT_tau 37
+GP_EXTchk 3001
+GP_R4chk 793
+GP_REPchk 3001
+GP_REPtrans 6212
+GP_Rchk 9213
+GP_runs 3001
+MAX_NQ 23
+MAX_QP 15
+MAX_XDEG 24
+RUNS 826
+inphase_trans 6212
+longph_ex 6
+phases 869
+phases1 2132
+phases_QP2 177
+phases_QP_lt_NQ 482
+skip_big 29
+EX ('LONGPHASE', '../../../experiments/n5-epoch/results/climb/nep_seed_rise51.pg/0', 9, 87, 'QP', 5, 'NQ', 5, 'XDEG', 24)
+EX ('GP_EXT', '../../../experiments/n5-epoch/results/climb/nep_seed_rise51.pg/2', 3, 4)
+EX ('GP_EXT', '../../../experiments/n5-epoch/results/honclimb/ff_n32.pg/0', 6, 23)
+EX ('GP_EXT', '../../../experiments/n5-exhaustive/canonA_1.pg/2', 0, 1)
+EX ('LONGPHASE', '../../../experiments/n5-exhaustive/instances/b5_os_n28.pg/0', 0, 60, 'QP', 1, 'NQ', 1, 'XDEG', 1)
+EX ('LONGPHASE', '../../../experiments/n5-exhaustive/instances/b5_os_n32.pg/0', 0, 67, 'QP', 1, 'NQ', 1, 'XDEG', 1)
+EX ('LONGPHASE', '../../../experiments/n5-exhaustive/instances/b5_os_n32.pg/2', 1, 68, 'QP', 1, 'NQ', 1, 'XDEG', 1)
+EX ('LONGPHASE', '../../../experiments/n5-exhaustive/instances/b5_os_n40.pg/0', 0, 77, 'QP', 1, 'NQ', 1, 'XDEG', 1)
+EX ('LONGPHASE', '../../../experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 87, 'QP', 1, 'NQ', 1, 'XDEG', 3)

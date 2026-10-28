@@ -1,0 +1,42 @@
+NOTE start file ../../../experiments/red/n3/instances/comp54_n80.start gives forced vertex 11 -> 51; using 11
+NOTE start file ../../../experiments/red/n3/instances/n3cov_lean.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file ../../../experiments/red/n3/instances/n3cov_phi.start invalid for its game (move not an edge, or missing); given start skipped
+MUT=0 ALLI=40 NMAX=600 secs=167
+C1_chk 12937
+C1_fb 1026
+C2_chk 989
+C2_maxratio_x1000 1000
+C3_chk 27194
+C3_cycle_norise 73
+C3_remark_case 1585
+C3_skip_cycle 128
+C4_clean 4953
+C4_eq 2
+C4_gatechg 6735
+C4_skip_cycle 18
+C4_tie 29
+C4_unclean 1764
+C5_chk 98053
+C5_maxfresh 71
+C5_maxnof 90
+C6_cut 4796
+C6_good 8141
+C6_int_ff 1874
+C6_int_ph 1891
+C6_maxfe 64
+C6_maxfo 19
+C6_maxsh 42
+C6_sbchg 1379
+C6_sbchg_with3 1375
+C6_trans_ff 8063
+C6_trans_ph 8141
+GAMES 413
+MAX_L 121
+MAX_SW1 48
+PHASES 5730
+PHASES_L0 4741
+RUNS 918
+RUN_STATES 18667
+TRANS 12937
+V1_chk 18667
+CORE PASS

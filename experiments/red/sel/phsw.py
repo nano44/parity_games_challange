@@ -16,9 +16,27 @@ def measure(g, start, cap=10 ** 5):
             for v in range(n):
                 if g.owner[v] != 0: continue
                 c = sum(1 for t in range(a, k - 1) if states[t][0][v] != states[t + 1][0][v])
-                if c > SW: SW, arg = c, (v, a, k - 1)
+                if c > SW:
+                    used = {states[a][0][v]}; ret = 0
+                    for t in range(a, k - 1):
+                        w = states[t + 1][0][v]
+                        if w != states[t][0][v]:
+                            ret += w in used; used.add(w)
+                    SW, arg = c, (v, a, k - 1, "returns=%d" % ret)
             a = k
     return PL, SW, arg, len(states) - 1
+
+def plfb(g, start, cap=10 ** 5):
+    """(PL, fallbacks inside the longest phase)."""
+    states = []; it, fb, ph, mp, s, t, hist = T.run(g, start, cap=cap, log=lambda *a: None, states=states)
+    E, Ed = T.Engine(g), T.Engine(T.dual(g))
+    lam = [(t, tuple(x[0] for x in E.evaluate(s)[0]), tuple(x[0] for x in Ed.evaluate(t)[0])) for s, t in states]
+    best = (0, 0); a = 0
+    for k in range(1, len(states) + 1):
+        if k == len(states) or lam[k] != lam[k - 1]:
+            L = k - 1 - a; F = sum(1 for i in range(a, k - 1) if hist[i][0] == "FB")
+            best = max(best, (L, F)); a = k
+    return best
 
 if __name__ == "__main__":
     a = sys.argv[1:]

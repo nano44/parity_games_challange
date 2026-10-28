@@ -41,4 +41,18 @@ else
   echo "N5-READER checks: FAILED"; exit 1
 fi
 rm -rf "$t49"
+# Box 49 (successor 30): packet P-N5-FBCK (frozen): quotes (9) with the shifted-line control, its sha1, and Theorem FB-C^K's data check on
+# the plain reader l121_cf35_39 (|C_f| 8, |C^K_f| 5, KVIOL absent).
+if git cat-file -e e83fd19d^{commit} 2>/dev/null; then
+  if python3 -I box49/quotecheck3.py ../../docs/new/P-N5-FBCK-box49.md | grep -q "quotes=9 bad=0" && \
+     ! python3 -I box49/quotecheck3.py ../../docs/new/P-N5-FBCK-box49.md --mut >/dev/null && \
+     [ "$(sha1sum ../../docs/new/P-N5-FBCK-box49.md | cut -d' ' -f1)" = "7747ecf23f65ac82fc2d75e0f6ecc28c7621ce1f" ] && \
+     fk=$(python3 -I box49/fbconf.py 0 1 box49/inst/l121_cf35_39.pg) && echo "$fk" | grep -q "^Cf 8 Cf_K 5 " && ! echo "$fk" | grep -q KVIOL; then
+    echo "P-N5-FBCK quotes 9 + control, sha1, FB-C^K on l121_cf35_39: PASS"
+  else
+    echo "P-N5-FBCK checks: FAILED"; exit 1
+  fi
+else
+  echo "P-N5-FBCK quotes: NOT RUN (e83fd19d not in this clone)"
+fi
 rm -rf "$tmp"

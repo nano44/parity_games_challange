@@ -1,6 +1,18 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 17), written 2026-10-28T23:02Z by date -u (Opus 5.5, D15)
+Lead: session_014FBi6o334DvwT5Uw2kDfoN. Handover check e2f06134 (sent 22:48Z). Branch claude/referee.
+- P-N5-CORE (docs/si/P-N5-CORE-box23.md, sha1 7b66f1ba…, pin l-si 081ae740), FIRST referee: R-N5-CORE.md. (C1)-(C6) all SIGNED, no gap.
+  CORE-N1 |P| = transitions (state reading false: one-state phases); CORE-N4 tie clause of (C4) needed (nep22f_n64 t 8, gates 9 and 56);
+  CORE-N2/N3 citations and scope; CORE-N5 invalid lane start files (comp54_n80, n3cov_lean, n3cov_phi); CORE-N6 FRESH3 fails 4/1,379.
+- Tool: scratch/core_probe.py (own engine; MUT 1-6: 1, 3, 6 bite; 2 bites on alt_all only; 4, 5 do not). Logs scratch/core_logs/.
+- RESTRICT §C (Lead word 23:21Z) appended to R-N5-RESTRICT.md: verdicts identical; joint map {G-RESTRICT-1 = G-R2-RESTRICT-1}; joint repair
+  = REFEREE-2's "initial segment" + my proof that λ-ends never extend; exposure weighed (it knew ALL verdicts, not only the gap); nh_r2802
+  reproduced (G^P = G, S4b^τ tie mechanism). restrict_probe.py: ONE=1 adds one-state phases (predecessor skipped them), EXT split tau/lam.
+- Queue: CORE §C when REFEREE-2 reports (word from the Lead).
+- TRAP (new): parse_start must tolerate lane start files with entries at forced vertices / invalid moves (core_probe prints a NOTE and skips).
+
 ## Resume point (successor 16), written 2026-10-26T18:46Z by date -u (Opus 5.5, D15)
 Lead: session_014FBi6o334DvwT5Uw2kDfoN. Handover check e69be9c7 (Lead 5/5, GO 18:25Z). Queue: GCX (done, below), RESTRICT next; §Cs for ROOT,
 OFFMONO, OFFMONO-add on the Lead's word; OFFMONO-add2 and P-N5-DEPTH (L-SI 18) when frozen and pinned.
