@@ -40,7 +40,8 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   11 fallbacks; n5 = n5b 103, Oink OK. Mechanism = the W/Ξ ping-pong at each fallback (FB → Ξ-best 2, S4a → W-best 23). Not new (SW-LIN dead).
 - Tools: phsw.py (PL, SW with returns; plfb = PL + fallbacks in that phase), fullstart2.py (full start = S3 overridden by a start file),
   xrclimb.py --pl / --sw / --kmax / --start / --clone.
-- IN FLIGHT (10-28 22:13Z): PL climbs (fitness PL·1000 + fallbacks in that phase, k ≤ 3), 3000 s each, in scratchpad/pl/: long121 at n 40
+- R97: PL climbs done; record pl130_n40 (895f1128, PL 130 = 3.25n, k 3, n5 = n5b, Oink OK), pl129_n40; n 56 only 2.39n. IN FLIGHT: none.
+- (done) PL climbs (fitness PL·1000 + fallbacks in that phase, k ≤ 3), 3000 s each, in scratchpad/pl/: long121 at n 40
   (seeds 21, 22 clone), snap30 at n 40 (s23), long121 padded to n 56 with clone (s24).
 - OLD (superseded) IN FLIGHT (10-28 21:25Z): xrclimb.py (fitness = max XR in one phase, k = 1, S3), seeded from lev_l_sc, n 32 / 40 / 48 × seeds 1, 2,
   2400 s each. Logs and best games are in the scratchpad (.../scratchpad/xr/); pids in xr/pids. They are lost with the container: re-run if gone.
