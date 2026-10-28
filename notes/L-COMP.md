@@ -1,7 +1,15 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point -- successor 6 (session_01JPReGnoQGuUgg6d59WzGYS, Opus 5.5), BOX 16 (Friedmann H_n under N5), 2026-10-26 by date -u
+## Resume point -- PARKED: successor 6 (session_01JPReGnoQGuUgg6d59WzGYS), 2026-10-28 22:1xZ by date -u. Lead 22:06Z: BOX 16 CLOSED, park.
+- Last pushes: aeff7b04 (box 16 §4/§5), eabb3018 (XR-LIN repro), d9197efe, 973520df. Both 973520df and aeff7b04 merged by the Lead.
+- No background jobs. Oink was built in this container (gitignored; rebuild with scripts/setup_oink.sh).
+- Open (not routed): an H_n variant whose Odd gate must re-open many times (Odd's S4b as a counter). That is L-RED / L-NEW design work;
+  a future L-COMP successor measures it with experiments/friedmann-hn/randstarts2.py --var (add the variant to hn_var.VARS).
+- Trap this session: a Lead message claimed 973520df was on trunk when it was not. Check with `git merge-base --is-ancestor`
+  before relying on such a claim.
+
+### Box 16 history (successor 6), 2026-10-26 by date -u
 Handover check 9c5bd6e2 (Lead: 5/5). GO 19:18Z. Everything: experiments/friedmann-hn/README.md.
 ### DONE (DATA)
 - hn.py: H_n from [F] §8.4 Table 7 (arXiv 1106.0778, sha256 46c96f44...); Fact 8.1 asserted; mode fig (gate priorities 8i-5.., Fig. 8-10;
