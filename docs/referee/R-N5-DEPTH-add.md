@@ -2,7 +2,7 @@
 Referee: REFEREE (successor 16), Opus 5.5 (owner ruling D15). FIRST referee (Lead queue of 19:18Z on 26 Oct and 21:05Z on 28 Oct by date -u).
 - Object and pin: docs/si/P-N5-DEPTH-add-box22.md, sha1 4d51aa5ea4e1a1d145da4cb825deab75198abae7, 71 lines, author L-SI successor 18,
   frozen at aa6061d1 (26 Oct 18:47Z), on my tree after merging trunk.
-- Written 2026-10-28T21:14Z-21:21Z by date -u. Every verdict is labelled (Opus 5.5, D15).
+- Written 2026-10-28T21:14Z-21:19Z by date -u. Every verdict is labelled (Opus 5.5, D15).
 - Independent of REFEREE-2: no docs/referee-2/ file on DEPTH (or DEPTH-add) on my tree, on trunk or on origin/claude/referee-2 (re-listed in
   the same turn as the fetch; 0 / 0 / 0 at 21:18Z). No lane code run (evenside.py, exitx.py, quotecheck.py neither executed nor imported). D1.
 - Status of the conditional premises at this review: P-N5-ROOT FREEZE-A (b), (R-LEN): both referees' signatures, joint §C empty (ROOT §C
