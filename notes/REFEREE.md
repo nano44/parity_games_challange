@@ -10,7 +10,10 @@ Lead: session_014FBi6o334DvwT5Uw2kDfoN. Handover check e2f06134 (sent 22:48Z). B
 - RESTRICT §C (Lead word 23:21Z) appended to R-N5-RESTRICT.md: verdicts identical; joint map {G-RESTRICT-1 = G-R2-RESTRICT-1}; joint repair
   = REFEREE-2's "initial segment" + my proof that λ-ends never extend; exposure weighed (it knew ALL verdicts, not only the gap); nh_r2802
   reproduced (G^P = G, S4b^τ tie mechanism). restrict_probe.py: ONE=1 adds one-state phases (predecessor skipped them), EXT split tau/lam.
-- Queue: CORE §C when REFEREE-2 reports (word from the Lead).
+- P-N5-FBCK (docs/new/P-N5-FBCK-box49.md, sha1 7747ecf2…, pin l-new 0e63596d), FIRST referee (Lead 23:44Z): R-N5-FBCK.md, all SIGNED,
+  no gap; Corollary (ii) as an implication, implicit step σ̄′|V = σ̄ proved (FBCK-N1). scratch/fbck_probe.py (K-frame exact levels; MUT 1, 3, 4
+  bite, 2 does not). Logs scratch/fbck_logs/.
+- Queue: CORE §C and FBCK §C when REFEREE-2 reports (word from the Lead).
 - TRAP (new): parse_start must tolerate lane start files with entries at forced vertices / invalid moves (core_probe prints a NOTE and skips).
 
 ## Resume point (successor 16), written 2026-10-26T18:46Z by date -u (Opus 5.5, D15)

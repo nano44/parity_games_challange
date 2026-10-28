@@ -1,0 +1,25 @@
+COR1_chk 8
+F 75
+K_chk 13
+MAX_CFK 4
+MAX_FC_x1000_over_nK 781
+MONO_chk 12
+PHASES 64
+PH_FB 8
+REAL_chk 309
+RISE_chk 53
+RISE_unsat 53
+RUNS 13
+SATB_chk 4
+SATFB1_chk 12
+SATW_chk 4
+SAT_FB 0
+SUM_CF 17
+SUM_CFK 17
+THM_MUT3_FAIL 3
+THM_chk 12
+THMtot_chk 8
+UNK_PHASES 3
+EX ('THM_MUT3', '../../../experiments/red/so/instances/farrise25_n32.pg/0', 7, (4,), 25, 32)
+EX ('THM_MUT3', '../../../experiments/new/box25/instances/wd16_s2.pg/0', 6, (3,), 12, 16)
+EX ('THM_MUT3', '../../../experiments/new/box25/instances/wd16_s2.pg/1', 3, (3,), 9, 16)

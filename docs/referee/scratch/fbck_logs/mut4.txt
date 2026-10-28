@@ -1,0 +1,25 @@
+COR1_chk 7
+F 75
+K_chk 13
+MAX_CFK 4
+MAX_FC_x1000_over_nK 781
+MONO_chk 11
+PHASES 65
+PH_FB 7
+REAL_chk 311
+RISE_FAIL 3
+RISE_chk 53
+RISE_unsat 53
+RUNS 13
+SATB_chk 4
+SATFB1_chk 11
+SATW_chk 4
+SAT_FB 0
+SUM_CF 16
+SUM_CFK 16
+THM_chk 11
+THMtot_chk 7
+UNK_PHASES 3
+EX ('RISE', '../../../experiments/red/so/instances/farrise25_n32.pg/0', 8, (4,), 3, 3)
+EX ('RISE', '../../../experiments/si/root/instances/swlin_kill_n26.pg/0', 7, (22, 4, 0), 1, 1)
+EX ('RISE', '../../../experiments/si/root/instances/swlin_kill_n26.pg/0', 17, (22, 4, 4), 3, 3)
