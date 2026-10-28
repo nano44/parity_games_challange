@@ -23,8 +23,13 @@ Reason: context near the ~550k plan. Lead: session_014FBi6o334DvwT5Uw2kDfoN. Tru
   --random), swclimb.py (RUN=1), runfbclimb.py (OBJ=run/fb/phase), n5bcmp.py (L-COMP n5b cross-check), corecheck.py (MUT). check.sh box 23 blocks.
 ### IN FLIGHT
 - Nothing running.
-### OPEN / QUEUE (Lead picks)
-1. Transition counts: FB-LIN via R73 (f ≤ n·|𝒞_f(P)|): bound the configurations at fallback sources per phase, or kill FB-LIN; RUN-LIN.
+### OPEN / QUEUE (Lead 22:55Z: RUN-LIN is L-SI's; FB-LIN went to L-NEW)
+1. MAIN: CONJECTURE RUN-LIN (a fallback-free run of a phase has ≤ 2n transitions; DATA max 49 = 1.53n on run49_n32; climbs from run49 / so_th found
+   nothing more). Proof or kill. Lead's pointers: base on the P-N5-CORE items EVERY-SWITCH, RISE-SW, FRESH-RED (|S| ≤ m_E + NOFRESH(S)); RESULTS
+   R15 (d) and R57 (a) for the Ξ-window; R74 FREEZE-A / FREEZE-G for freezing inside S4a runs; FRESH-RED's data (length ≤ m_E on every known
+   impure long interval). R75 (OFFMONO unit) LANDED at e3bd64e3, so Fact CL / OFFSET-MONO are now landed premises (the unclean RISE-GATE can be
+   stated). Lead drafts R76 GCX, R77 DEPTH, R78 DEPTH-add. First step: runfbclimb.py OBJ=run from more seeds (x32_rand64: 55-step run per
+   REFEREE-2; long D = ∅ waves), and split run length into NOFRESH vs fresh transitions per run (fresh.py).
 2. SW-RUN (per fallback-free run).
 3. (G1) flip-flops (ret14_n48), if still wanted.
 4. Repairs on P-N5-CORE when both reports are in (NEW fixes file).
