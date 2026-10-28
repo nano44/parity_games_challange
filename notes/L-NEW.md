@@ -9,6 +9,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   experiments/new/box49/quotecheck3.py (copy of L-SI's rund/quotecheck.py + --locate); pinned in experiments/new/check.sh (count 76, --mut must
   fail, sha1), NOT RUN if the two §C commits are absent from the clone.
 - TASK 1 pushed: l-new 34d176ab (VERIFY PASS); reported to the Lead 21:39Z.
+- Lead 21:35Z: REFEREE on RESTRICT (claude/referee c9bdfa68, docs/referee/R-N5-RESTRICT.md): all SIGNED; gap G-RESTRICT-1 (G^P's "IS one
+  N5^τ phase" holds only as "LIES IN one"; nep_n12, 44 of 4,073 phases extend); notes RESTRICT-N1..N3. Lead: "Do NOT write the RESTRICT fixes
+  file until REFEREE-2 has reported on RESTRICT; I will tell you." Lead 21:43Z: 34d176ab merged; trunk 5da4017d holds both §C commits, pin runs.
 - TASK 2 (D14/D18, reader-proof counts): docs/new/N5-READER-box49.md (working note, not frozen). Tools experiments/new/box49/ dress.py,
   search.py, pairs.py, coresw.py, cross.py, runall.sh; instances box49/inst/l121_{a,b,c,d29,e100,er19,er_6_19}. Results: §1 five DEAD
   restrictions (Even predecessor, on an Even play, core predecessor / quotient, every vertex with a predecessor; XR 86 > 2n with the run SAME);
