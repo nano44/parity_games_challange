@@ -1,0 +1,45 @@
+MODE files ../R2-N5-KW/files.lst 2
+AK_checks: 578007
+CC0_checks: 1866
+CC1_checks: 1866
+CC2_checks: 1866
+CC3_checks: 1866
+CSUM_checks: 13149
+CTL_cc3m: 939
+CTL_sign: 916
+CTL_tbidx: 6
+CTL_tbrev: 315
+CTL_tbseq_ceven: 75
+CYC_total: 717
+ENGXI_checks: 17668
+FTK_checks: 14020
+FT_total: 1929
+OMP_caseL2: 717
+OMP_caseL2_P0: 717
+OMP_checks: 717
+OMP_strict: 59
+OM_caseN: 12432
+OM_checks: 12432
+OM_strict: 3719
+PFC_checks: 9145
+PFC_checks_multi: 1977
+ZC2_total: 79
+ZCH_CEVEN: 116
+ZCH_ODDC: 1
+ZCH_STRICT: 112
+ZCH_TIE: 3
+ZCH_total: 232
+ZC_checks: 15717
+ZC_total: 111
+classes: 8828
+phases: 4121
+runs: 1006
+states: 17668
+transitions: 13547
+max_EXIT_per_x: (0, 'docs/referee-2/R2-N5-1OA/logs/fl_n16_y1.pg#0', 11)
+max_FT_per_phase_class: (44, 'experiments/red/xing/instances/x32_rand48.pg#0', 36)
+max_ODDC_per_phase_class: (1, 'experiments/new/box31/instances/u3ev_n16.pg#0', 2)
+max_TIE_per_phase_class: (1, 'docs/referee-2/R2-N5-L2/climb/best_tog_62.pg#1', 1)
+max_ZCH_per_phase_class: (6, 'experiments/red/so/instances/tog6a_n32.pg#0', 13)
+max_kappa_changes_q: (60, 'experiments/red/so/instances/rise_thin51_n40.pg#0', 11, 0, 60, 61)
+RESULT OK violations=0

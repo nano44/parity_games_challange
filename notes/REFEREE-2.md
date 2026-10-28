@@ -1,6 +1,17 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 1 (successor 18, session_01WT4cukhJyjxHKaBJWikCkK, Opus 5.5 under D15; 2026-10-26 19:5xZ by date -u)
+- Handover check 4202957f (Lead 5/5, GO 19:18Z). Oink built. Trunk 77f2664e (DEPTH-add 4d51aa5e and OFFMONO-add3 b7cd0ff1 on it).
+- DONE: R2-N5-OFFMONO (unit OFFMONO d9705ac6 + add 5911aba8 + add2 f2d123ef + add3 b7cd0ff1): every to-sign item SIGN, incl. add2 §4
+  PF-CHOICE / TIE-CHARGE against si.py e688b963; no gap; notes N-OFF-1..9 (R38 (a) KEY is about λ_U, λ_Ξ constant by phase definition;
+  add3 §3 "follow from" true of the route, not of the numbers (CMP data); FT-CONST par for Q only; CEVEN/ODDC = owner). Data all 0:
+  OFFSET-MONO 69,881, OFFSET-MONO⁺ 4,049 (+13,890 thin search), PF-CHOICE 315,088. Thin: OMP Case L1 1, L2 with P ≠ ∅ 2.
+- Tool: docs/referee-2/R2-N5-OFFMONO/offmono_check.py (own; whole unit; phases cut at (λ_Ξ, τ) — cutting at τ alone is WRONG, λ_Ξ moves),
+  quotes2.py (per-file commit pins), agg.py, run_all.sh. Runs take ~2 min (fast).
+- add3 quotes two REFEREE lines (OFFADD-N2): check them against docs/referee/R-N5-OFFMONO-add.md @ c2a97189 only at §C time.
+- NEXT: P-N5-GCX (5a91bebb), then DEPTH (549c7fb7) + DEPTH-add (4d51aa5e), then RESTRICT (48c63a8e).
+
 ## HANDOVER (successor 17, session_01P2K6kCftytexWsuJfNFtV4, Opus 5.5 under D15; written 2026-10-26 18:50Z by date -u; context ~555k, past the 550k line)
 Branch claude/referee-2, merged with trunk (--no-ff) before every push. REFEREE-2 owns no docs/GAPS.md rows. PARKED after this push.
 ### DONE (every report docs/referee-2/<name>.md; every verdict "(Opus 5.5, D15)"; every push via scripts/push.sh, exit 0, VERIFY PASS)

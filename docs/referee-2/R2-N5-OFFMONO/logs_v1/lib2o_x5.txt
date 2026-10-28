@@ -1,0 +1,45 @@
+MODE files ../R2-N5-ROOT/lib2o_noref.lst 5
+AK_checks: 33505
+CC0_checks: 249
+CC1_checks: 249
+CC2_checks: 249
+CC3_checks: 249
+CSUM_checks: 1658
+CTL_cc3m: 56
+CTL_noexit: 12
+CTL_part: 10
+CTL_sign: 60
+CTL_tbrev: 44
+CYC_total: 33
+ENGXI_checks: 1443
+FTK_checks: 830
+FT_total: 61
+OMP_caseL2: 35
+OMP_caseL2_P0: 35
+OMP_checks: 35
+OM_caseN: 1623
+OM_checks: 1623
+OM_parent_changed: 70
+OM_strict: 208
+PFC_checks: 1171
+PFC_checks_multi: 193
+ZC2_total: 0
+ZCH_CEVEN: 10
+ZCH_ODDC: 0
+ZCH_STRICT: 4
+ZCH_TIE: 0
+ZCH_total: 14
+ZC_checks: 877
+ZC_total: 4
+classes: 985
+phases: 605
+runs: 205
+states: 1443
+transitions: 838
+max_EXIT_per_x: (3, 'experiments/red/n5inj/instances/returns_rt32.pg#0', 21)
+max_FT_per_phase_class: (4, 'experiments/new/box21/instances/fts_ph16.pg#1', 8)
+max_ODDC_per_phase_class: (0, 'docs/referee-2/R2-N5-FBW/climb/fbw_a_best.pg#0', 0)
+max_TIE_per_phase_class: (0, 'docs/referee-2/R2-N5-FBW/climb/fbw_a_best.pg#0', 0)
+max_ZCH_per_phase_class: (4, 'experiments/new/instances/seg10/seg_r16_s167.pg#0', 5)
+max_kappa_changes_q: (7, 'experiments/new/box44/instances/fb17_n32.pg#0', 18, 23, 8, 16)
+RESULT OK violations=0

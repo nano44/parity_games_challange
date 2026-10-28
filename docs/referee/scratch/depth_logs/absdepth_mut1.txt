@@ -1,0 +1,35 @@
+DEP_GEN_FAIL 612
+DEP_NONGEN_FAIL 2737
+DEP_chk_GEN 4842
+DEP_chk_NONGEN 20796
+FIX_NONGEN_FAIL 5
+FIX_chk_GEN 1170
+FIX_chk_NONGEN 4104
+FIX_sharp_GEN 84
+FIX_sharp_NONGEN 234
+NMONO_chk 11233
+NOGREATEST 522
+RUNS_fixed 5274
+nostart 34
+runs_GEN 1170
+runs_NONGEN 4104
+EX ('DEP', 'NONGEN', 1, 'basic', 6, 0, 1)
+EX ('DEP', 'NONGEN', 1, 'basicM', 6, 0, 1)
+EX ('DEP', 'NONGEN', 1, 'lowidx', 6, 0, 1)
+EX ('DEP', 'NONGEN', 1, 'anti', 6, 0, 1)
+EX ('DEP', 'NONGEN', 1, 'sizedep', 6, 0, 1)
+EX ('DEP', 'NONGEN', 1, 'hash', 6, 0, 1)
+EX ('DEP', 'NONGEN', 5, 'basic', 1, 0, 1)
+EX ('DEP', 'NONGEN', 5, 'basicM', 1, 0, 1)
+EX ('DEP', 'NONGEN', 5, 'lowidx', 1, 0, 1)
+EX ('DEP', 'NONGEN', 5, 'anti', 1, 0, 1)
+EX ('DEP', 'NONGEN', 5, 'sizedep', 1, 0, 1)
+EX ('DEP', 'NONGEN', 5, 'hash', 1, 0, 1)
+EX ('DEP', 'NONGEN', 13, 'basic', 0, 1, 2)
+EX ('DEP', 'NONGEN', 13, 'basic', 2, 0, 1)
+EX ('DEP', 'NONGEN', 13, 'basicM', 0, 1, 2)
+EX ('DEP', 'NONGEN', 13, 'basicM', 2, 0, 1)
+EX ('DEP', 'NONGEN', 13, 'lowidx', 0, 1, 2)
+EX ('DEP', 'NONGEN', 13, 'lowidx', 2, 0, 1)
+EX ('DEP', 'NONGEN', 13, 'anti', 0, 1, 2)
+EX ('DEP', 'NONGEN', 13, 'anti', 2, 0, 1)
