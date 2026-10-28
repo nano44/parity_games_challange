@@ -32,7 +32,17 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
     lev_l_sc's lag is the one-step wave 13 → 2.
 - Tools: experiments/red/sel/{mksel.py, trace.py (states= hook), selfesc.py, xr.py, xrclimb.py}.
 - (O5) SELF-ESCAPE is FALSE (selfesc.py: long121 241 of 292 split-gate states self-escape; 3 "held" with no Iσ edge on the route). Not a lemma.
-- IN FLIGHT (10-28 21:25Z): xrclimb.py (fitness = max XR in one phase, k = 1, S3), seeded from lev_l_sc, n 32 / 40 / 48 × seeds 1, 2,
+- R96 (ca718a79): lev_l_sc anatomy (cascade through the gate frontier; fallback carry; punisher descent 30 → 29), walls 1-3, R95 §3
+  corrected, XR climbs plateau (52 at n 32, 51 at n 48).
+- Lead 21:27Z / 22:07Z: XR-LIN killed by L-SI with a passive reader (non-intrinsic); SW-LIN killed by L-SI (swlin_kill_n26, fallback re-arming).
+  The ONLY intrinsic count is the PHASE LENGTH PL. Record: long121 PL 121 = 3.02n. Pin anything with PL/n clearly above 3.02.
+- snap30 (scratchpad/sw/snap30.pg, sha1 bab4ba4a, start 4be44c2d; an SW climb from long121): PL 102, SW 30 (vertex 30, degree 4, 28 returns),
+  11 fallbacks; n5 = n5b 103, Oink OK. Mechanism = the W/Ξ ping-pong at each fallback (FB → Ξ-best 2, S4a → W-best 23). Not new (SW-LIN dead).
+- Tools: phsw.py (PL, SW with returns; plfb = PL + fallbacks in that phase), fullstart2.py (full start = S3 overridden by a start file),
+  xrclimb.py --pl / --sw / --kmax / --start / --clone.
+- IN FLIGHT (10-28 22:13Z): PL climbs (fitness PL·1000 + fallbacks in that phase, k ≤ 3), 3000 s each, in scratchpad/pl/: long121 at n 40
+  (seeds 21, 22 clone), snap30 at n 40 (s23), long121 padded to n 56 with clone (s24).
+- OLD (superseded) IN FLIGHT (10-28 21:25Z): xrclimb.py (fitness = max XR in one phase, k = 1, S3), seeded from lev_l_sc, n 32 / 40 / 48 × seeds 1, 2,
   2400 s each. Logs and best games are in the scratchpad (.../scratchpad/xr/); pids in xr/pids. They are lost with the container: re-run if gone.
 
 ## Successor 22 HANDOVER (written 2026-10-26 ~18:35Z, date -u; ~545k context; for successor 23)
