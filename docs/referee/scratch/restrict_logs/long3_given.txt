@@ -1,0 +1,34 @@
+GE_REPchk 203
+GE_REPtrans 290
+GE_Rchk 293
+GE_UNLESSchk 31
+GE_runs 203
+GP_EXTchk 3
+GP_REPchk 3
+GP_REPtrans 290
+GP_Rchk 293
+GP_runs 3
+GUJ_REPchk 796
+GUJ_REPtrans 1208
+GUJ_Rchk 1221
+GUJ_UNLESSchk 127
+GUJ_runs 796
+GU_REPchk 20
+GU_REPtrans 33
+GU_Rchk 46
+GU_runs 20
+MAX_NQ 5
+MAX_QP 5
+MAX_XDEG 24
+RH_REPchk 3
+RH_REPtrans 290
+RH_Rchk 293
+RH_runs 3
+RUNS 3
+inphase_trans 290
+longph_ex 3
+phases 3
+phases_QP2 3
+EX ('LONGPHASE', '../../../experiments/red/rec0/instances/nep90_n40.pg/0', 4, 95, 'QP', 5, 'NQ', 5, 'XDEG', 22)
+EX ('LONGPHASE', '../../../experiments/n5-epoch/instances/nep76_n40.pg/0', 9, 87, 'QP', 5, 'NQ', 5, 'XDEG', 24)
+EX ('LONGPHASE', '../../../experiments/new/box48/instances/long121_n40.pg/0', 1, 122, 'QP', 3, 'NQ', 3, 'XDEG', 8)

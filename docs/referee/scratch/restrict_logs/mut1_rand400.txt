@@ -1,0 +1,42 @@
+GP_EXTchk 235
+GP_ONEPH_FAIL 1
+GP_R1_FAIL 13
+GP_R2_FAIL 4
+GP_R4chk 6
+GP_REP_FAIL 3
+GP_REPchk 238
+GP_REPtrans 281
+GP_Rchk 519
+GP_runs 238
+MAX_NQ 6
+MAX_QP 3
+MAX_XDEG 4
+MUT_applied 29
+MUT_novictim 209
+RUNS 1200
+inphase_trans 281
+phases 238
+phases_QP2 8
+phases_QP_lt_NQ 164
+EX ('GP_R1', 'rand92/1', 1)
+EX ('GP_R1', 'rand92/2', 2)
+EX ('GP_R1', 'rand113/1', 2)
+EX ('GP_R1', 'rand229/2', 2)
+EX ('GP_R1', 'rand231/0', 0)
+EX ('GP_R1', 'rand243/2', 0)
+EX ('GP_R1', 'rand254/2', 0)
+EX ('GP_R1', 'rand254/2', 1)
+EX ('GP_ONEPH', 'rand254/2', 1)
+EX ('GP_R1', 'rand331/2', 2)
+EX ('GP_R1', 'rand342/2', 0)
+EX ('GP_R2', 'rand342/2', 0)
+EX ('GP_REP', 'rand342/2', 0, 1)
+EX ('GP_R1', 'rand363/1', 1)
+EX ('GP_R2', 'rand363/1', 1)
+EX ('GP_REP', 'rand363/1', 1, 3)
+EX ('GP_R1', 'rand398/2', 0)
+EX ('GP_R2', 'rand398/2', 0)
+EX ('GP_R1', 'rand398/2', 1)
+EX ('GP_R2', 'rand398/2', 1)
+EX ('GP_REP', 'rand398/2', 0, 1)
+done

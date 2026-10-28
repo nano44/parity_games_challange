@@ -1,0 +1,10 @@
+CC3_chk 2559
+MAX_D 52
+OMP_chk_cyc 855
+OMP_chk_nocyc 15231
+RED_L2b 855
+RUNS 1130
+ST1_chk 855
+SUM_kchg 4390
+skip_big 45
+done
