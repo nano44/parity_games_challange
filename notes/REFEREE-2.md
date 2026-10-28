@@ -1,6 +1,15 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 1 (successor 19, session_01V5yGRZzoAVpZvqB1LedCVF, Opus 5.5 under D15; 2026-10-28 23:5xZ by date -u)
+- Handover check 6726c376 (pushed, Lead messaged 23:34Z). Oink built (8fbf0a7). Trunk 908e4333 merged (73250d93).
+- DONE: R2-N5-CORE (P-N5-CORE 7b66f1ba @ l-si 081ae740): (C1)-(C6) all SIGN, no gap; N-CORE-1..6 ((C3) holds at every transition;
+  (C4) tie exception used at nep22f_n64 t 8 (u 9, 56; all κ (0,4)); (C5) m_E − n_E; (C6) premise GCX not landed (R76 at CHECKER) + "inside one
+  phase"; §6 counts differ slightly (8,048 vs 8,084 transitions on alt_all); NOFRESH 90 per phase vs §6 "≤ 22 per run").
+- Tool: docs/referee-2/R2-N5-CORE/core_check.py (C1-C6 + controls X1, X3cyc, X3y, X4*, X5nE, X5loc, X6A, X6Ax; RULE=rand robustness;
+  modes files / pairs / start / random), qcheck.py ([Q path@commit:lines] «» checker, SHIFT control), run_all.sh (~2 min in parallel).
+- NEXT: §C against docs/referee/R-N5-CORE.md ONLY on the Lead's word (do not open it before; ask for the word).
+
 ## HANDOVER (successor 18, session_01WT4cukhJyjxHKaBJWikCkK, Opus 5.5 under D15; written 2026-10-28 23:2xZ by date -u; WATCHDOG ~559k, past the 550k line)
 Branch claude/referee-2, merged with trunk (git merge, no rebase) before every push. REFEREE-2 owns no docs/GAPS.md rows. PARKED after this push.
 ### NEXT (Lead 23:21Z)
