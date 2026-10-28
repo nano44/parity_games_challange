@@ -19,6 +19,7 @@ new/box48/out/qpcclimb/scale, si/root/instances and n5-exhaustive/instances with
 | §5 | READING: Odd's best response is a shortest-path tree under monotone updates (Even–Shiloach), with lexicographic levels; [F] Cor. 9.9 shows that the levels alone allow counters; where N5 must differ | READING |
 | §6 | open items | OPEN |
 | §8 | DEAD XR-LIN (reader on long121: XR 86 > 2n = 82, run unchanged); READERS inflate K, ALT, (G1), EXIT_x without changing the run | DEAD + DATA + READING |
+| §9 | Even switches per Even vertex per phase: ≤ 0.58n in data; CONJECTURE SW-LIN (≤ n), robust to Odd readers | DATA + CONJECTURE |
 | §7 | gap (iv): FRESH-RED at interval scope; every known impure long interval (reader_L, cxmig, ladderent, pp) has NOFRESH = 0, so length ≤ m_E there | PROVED (elementary) + DATA |
 
 ## 0. Setting
@@ -223,6 +224,23 @@ Tools: experiments/si/root/mkoreader.py (appends a reader), orcheck.py (compares
     long121's phase there are 8 fallbacks.
   - (b) Quantities defined on the honest plays of vertices that some Even vertex reaches. A reader's play is reached by no one.
 - So the next target is reader-invariant: Even switches per Even vertex per phase, or Ξ-changes of vertices with an Even predecessor.
+
+## 9. The reader-robust candidate: Even switches per Even vertex per phase (DATA, CONJECTURE; written 2026-10-28 21:30Z by date -u)
+- SW_P(w) := the switches of Even vertex w in phase P. By FRESH-RED's first step, every in-phase transition has an Even switch, so
+  |P| ≤ Σ_w SW_P(w) (PROVED, elementary). A bound SW_P(w) ≤ n would give |P| ≤ n·n_E.
+- Odd readers (§8) add no Even switches. An Even reader e (no predecessors) is passive only where no fallback fires: its switch would turn a
+  fallback step into an S4a step. Inside a fallback-free stretch it switches roughly when the W-best Ξ-improving option over S changes, so it can
+  add switches there. Measured: on the longest fallback-free phase in alt_all (run49_n32, phase [2, 51], 49 transitions), the best
+  max-aggregate over a subset of the class changes 6 times, against a base maximum of 4 switches of one Even vertex. Fallback-free phases in
+  alt_all are short (≤ 1.53n). So Even readers inflate SW only a little in the data, and only between fallbacks.
+- DATA (alt_all and lib41, n ≤ 48 for lib41):
+  - the most switches of one Even vertex in one phase is 14 (sc24, n 24: 0.58n; returns_rt48 and returns_rt64, out-degree 3: 14 at both
+    n = 48 and 64);
+  - the largest excess over out-degree − 1 is 12 (out-degree 3), so Even vertices do return within a phase (E-ONEWAY is windowed only);
+  - the longest phase (lend107_n32, 108 transitions) has at most 11 switches per Even vertex.
+- CONJECTURE SW-LIN: in every phase, every Even vertex switches ≤ n times. It implies phase length ≤ n·n_E. Unlike XR-LIN, it is not killed
+  by Odd readers. Even readers can raise it only between fallbacks, by the max-aggregate count. Open whether that count can be pushed past n
+  in a fallback-free stretch: the ≤ 1.53n fallback-free phases known leave little room.
 
 ## 6. OPEN
 1. XR-LIN is DEAD (§8: l121reader_n41, XR 86 > 2n = 82). Its old statement was: in every phase, every vertex's Ξ changes ≤ 2n times. Data maximum 1.80n. It implies phase length ≤ 2n² (RISE-SW,
