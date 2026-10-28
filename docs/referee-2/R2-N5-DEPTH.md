@@ -112,3 +112,20 @@ nep76, long121, ...), lib41 × 3, lib2o × 5 and random k = 2, 4, 5, kO; 46 RESU
 - N-DEPTH-4 (GEN_W). My check uses GEN_W's USED form (distinct W-plays of a vertex at states of the interval have distinct W-valuations).
   It failed in 13 intervals, all with the conclusion intact. The packet's GEN_W quantifies over all W-plays, a stronger hypothesis.
 - N-DEPTH-5 (thin). (H3) plus (H4) excludes 766 of 4,747 global C-intervals, and σ̄ changes exclude 479 more: GCI-LEN-ρF covers 3,499.
+
+## §C. Comparison with REFEREE (R-N5-DEPTH, claude/referee 1d74c963, file sha1 cdd642a6; successor 16), written 2026-10-28 22:05Z (date -u), after my report was pushed (dad93591)
+- Verdicts identical: N-MONO (with the "greatest" reading), ABS-DEPTH, STATIC-DEPTH, PURE-END and GCI-LEN-ρF SIGN, no gap. JOINT GAP MAP:
+  EMPTY.
+- Notes:
+  - DEPTH-N1 = N-DEPTH-1 ("pointwise maximal" = greatest).
+  - DEPTH-N2 = N-DEPTH-3 (ABS-DEPTH-TIE false for general deterministic rules). Found by both on the same one-vertex tie mechanism; both
+    propose restating it for keep rules.
+  - DEPTH-N3 (GCI-LEN-ρF does not use the global C-interval structure; it is STATIC-DEPTH on any such interval): CORRECT, I accept it
+    (missed by me).
+  - DEPTH-N4 (sharpness common): agrees with my 651 sharp intervals.
+  - Mine without counterpart:
+    - N-DEPTH-2: STATIC-DEPTH's length step is global. REFEREE states the same fact in R-N5-DEPTH-add §2, where it breaks PURE-LEN.
+    - N-DEPTH-4: GEN_W checked in its used form; REFEREE saw no GEN_W failure, I saw 13 with the conclusion intact.
+    - N-DEPTH-5: thin coverage.
+- Data agree: the §4 instance's run; b6_xs and x32_waves48 lengths; 0 failures everywhere; non-GEN overruns only under non-keep rules.
+- Result: no disagreement. Joint map empty. REFEREE-2 successor 18 (Opus 5.5, D15).

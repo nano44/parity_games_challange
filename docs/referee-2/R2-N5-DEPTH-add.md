@@ -115,3 +115,37 @@ Gaps G-DADD-1..3. Notes N-DADD-1..3.
     C-intervals in which every class is pure.
   - G-DADD-2: add "m at or before z's first visit of c".
   - G-DADD-3: add "e1 at or before c on w's honest play at every state of [t + 1, t′]", or prove the e1-on-c's-cycle case separately.
+
+## §C. Comparison with REFEREE (R-N5-DEPTH-add, claude/referee f4b54c43 (+ stamp in c9bdfa68), file sha1 2774ddc4; successor 16), written 2026-10-28 22:05Z (date -u), after my report was pushed (dad93591)
+### C1. Verdicts
+Identical in substance on every item:
+- GATE-PUSH: SIGN, conditional, never exercised.
+- PURE-LEN: false as stated (G-DADD-1, both; the same failing step, STATIC-DEPTH's global length conclusion used per class; both witness
+  pure_22 [23, 33], and mine also reader40_plus2, kw25_n32, ccl_w48_n48).
+- MONO-REF: false as stated (G-DADD-2, both; witnesses frzh3n_701_best (REFEREE) and b4_theta_n7 (mine); both SIGN it with "m at or before
+  the first visit of c").
+- E-ONEWAY: both sign it only with "e1 at or before c on w's play at every state of [t + 1, t′]"; the e1-after-c case is unproved and held in
+  data (704 windows for REFEREE, 711 for me). REFEREE lists this under G-DADD-2 plus DADD-N3; I listed it as G-DADD-3. Same substance. For
+  the joint map I accept REFEREE's grouping: G-DADD-3 := G-DADD-2's consequence for E-ONEWAY.
+JOINT GAP MAP: G-DADD-1 (PURE-LEN), G-DADD-2 (MONO-REF, with E-ONEWAY's matching hypothesis).
+### C2. The PURE-LEN repairs differ in form
+- REFEREE: a POSITION form, "every Even switch of U_c lies at a transition < a + bound".
+- Mine: a COUNT form, PURE-LEN′, "the transitions of [a, b] with an Even switch in U_c number ≤ bound".
+- The position form implies the count form. Its proof needs one step that REFEREE's §2 sketch does not show: inside the per-class C-interval,
+  a class that has frozen (no Even switch, σ̄ and c's cycle unchanged) STAYS frozen, so the pieces follow each other with no idle stretch.
+  - The per-piece induction alone gives switches only in the first |U_c| − 1 transitions of each piece. A piece could, a priori, start late.
+  - I believe the step holds. In-phase, an Even switch of U_c stays in U_c (λ is constant), and the S4a step on U_c reads only σ|U_c, τ and
+    Ξ, W inside U_c. σ̄|U_c depends only on Gσ restricted to U_c (si.py's restricted graph lives on R = U_c). So a frozen restriction
+    repeats. I have not checked this argument line by line.
+- Recommendation for the fixes file: state the count form (proved by the packet's cutting plus the class-local settling), or add the
+  "frozen persists" step if the position form is wanted. Both hold in both referees' data (PLR 0 / class-local 0).
+### C3. Notes
+| REFEREE | mine | status |
+| --- | --- | --- |
+| DADD-N1 (GATE-PUSH never exercised; "rests on proof alone") | N-DADD-2 | agree |
+| DADD-N2 (OFFSET-MONO⁺ removes MONO-REF's no-cycle hypothesis; the before-c restriction stays) | N-DADD-1 | agree |
+| DADD-N3 (E-ONEWAY's e1-after-c case: held in data, needs another argument) | G-DADD-3 | agree (grouping as in C1) |
+| — | N-DADD-3 (suggested wordings) | mine, consistent with REFEREE's repairs |
+### C4. Result
+No disagreement on any verdict. Joint gap map: G-DADD-1, G-DADD-2. The PURE-LEN repair should be the count form, or the position form
+together with its extra step (C2). REFEREE-2 successor 18 (Opus 5.5, D15).
