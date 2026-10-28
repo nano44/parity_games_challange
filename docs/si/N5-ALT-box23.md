@@ -22,6 +22,7 @@ new/box48/out/qpcclimb/scale, si/root/instances and n5-exhaustive/instances with
 | §9 | Even switches per Even vertex per phase: ≤ 0.58n in data; CONJECTURE SW-LIN (≤ n), robust to Odd readers | DATA + CONJECTURE |
 | §10 | DEAD SW-LIN (swlin_kill_n26: one Even vertex switches 27 > n = 26 times in a phase, re-armed by 6 fallbacks; n5b agrees); CONJECTURE SW-RUN (per fallback-free run) | DEAD + DATA + CONJECTURE |
 | §12 | Even readers are clean in every measured case (SAME incl. fallbacks) and raise ONE vertex's switches above the base maximum (long121: 12 → 16) | DATA + READING |
+| §13 | transition counts: |P| ≤ f + (f + 1)·max run; DATA run ≤ 1.53n, f ≤ 0.78n; CONJECTURES RUN-LIN, FB-LIN; climbs found no kill | PROVED (elementary) + DATA + CONJECTURE |
 | §11 | the PROVED core (C1)-(C6) in one place, with premises; independent of MONO-REF / PURE-LEN / GATE-PUSH / E-ONEWAY | PROVED (lane) |
 | §7 | gap (iv): FRESH-RED at interval scope; every known impure long interval (reader_L, cxmig, ladderent, pp) has NOFRESH = 0, so length ≤ m_E there | PROVED (elementary) + DATA |
 
@@ -313,6 +314,21 @@ for the most switches in one phase subject to SAME. Log: root/logs/ereader_l121.
 - Consequence (READING): no per-vertex localisation (XR, SW, gate changes, exits) is smaller than the phase length. A proof has to bound the
   number of transitions directly: by a potential on the whole state, or by counting events that a passive vertex cannot create (each
   transition's set of switching vertices is not such an event, since readers add to it).
+
+## 13. Transition counts (Lead 22:06Z item 4; Lead reading: state bounds in transitions per phase, not per vertex)
+- (PROVED, elementary) A phase P with f in-phase fallbacks splits into f + 1 fallback-free runs (some possibly empty), so
+  |P| = f + Σ_runs |run| ≤ f + (f + 1)·max |run|.
+- DATA (alt_all, 413 games n ≤ 600; lib41 n ≤ 48, S3):
+  - the longest fallback-free run is 49 transitions (run49_n32, 1.53n); on lib41 34 (pftheta_cex_n32, 1.06n);
+  - the most in-phase fallbacks in one phase is 37 at n = 48 (rise_fb38_n48, 0.78n); on lib41 33 at n = 48 (ccl_w48_n48);
+  - the longest phase is 108 (lend107_n32, 3.38n). Long phases have short runs and many fallbacks, so the product bound above is far from tight.
+- CONJECTURE RUN-LIN: every fallback-free run of a phase has ≤ 2n transitions. CONJECTURE FB-LIN: every phase has ≤ n in-phase fallbacks.
+  Together they give |P| ≤ n + (n + 1)·2n. Both count transitions, so readers cannot inflate them (Theorem READER-INV under (R), REFEREE).
+  Relation to landed text: RESULTS R71 FB-C bounds f per phase by |𝒞_f(P)|·(4n² − 3n), and R73 FB-C′ by n·|𝒞_f(P)|. FB-LIN would need the
+  configurations at fallback sources to be O(1) per phase, or a different argument.
+- Climbs (experiments/si/root/runfbclimb.py, box43 mutations, 5,000 steps each; logs root/out/rl_*.log, fb_*.log): OBJ=run from run49_n32
+  (seed 11) and so_th_n32 (seed 12); OBJ=fb from farrise25_n32 (seed 13) and ccl_fbx_n32 (seed 14). No improvement over the seeds. The best stay
+  run 49 at n = 32 and fallbacks 25 at n = 32. No kill.
 
 ## 11. The PROVED core in one place (freezable as a packet once a count has a proof route; Lead 21:35Z (b))
 Labels: PROVED (lane, unrefereed). Every game, inside one phase P of N5 (τ and λ constant, RESULTS R38 (a)). Premises: SPEC S1-S5 with the
