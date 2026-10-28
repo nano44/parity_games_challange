@@ -1,0 +1,14 @@
+3 100 3 0 --var dual
+4 100 4 0 --var dual
+5 100 5 0 --var dual
+6 100 6 0 --var dual
+8 100 8 0 --var dual
+3 100 3 0 --var ex
+4 100 4 0 --var ex
+5 100 5 0 --var ex
+6 100 6 0 --var ex
+7 100 7 0 --var ex
+8 100 8 0 --var ex
+10 50 10 0 --var ex
+12 50 12 0 --var ex
+16 20 16 0 --var ex
