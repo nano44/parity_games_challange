@@ -1,6 +1,25 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point -- successor 6 (session_01JPReGnoQGuUgg6d59WzGYS, Opus 5.5), BOX 16 (Friedmann H_n under N5), 2026-10-26 by date -u
+Handover check 9c5bd6e2 (Lead: 5/5). GO 19:18Z. Everything: experiments/friedmann-hn/README.md.
+### DONE (DATA)
+- hn.py: H_n from [F] §8.4 Table 7 (arXiv 1106.0778, sha256 46c96f44...); Fact 8.1 asserted; mode fig (gate priorities 8i-5.., Fig. 8-10;
+  Table 7 as printed collides with the lane: not injective) and mode table. M1's switchbestexp is NOT H_n (25N+10 vertices).
+- iglo.py: I^glo (PGSolver switch_globally_best port) from ι: 16*2^n - 21 steps (n 1..6), Lemma 8.3 holds: H_n faithful.
+- box16.py on n 3..8, 10, 12, 16 (F = (ι, σ̄(ι)) = Fs3, S3, G<k> mid-counter): 45 runs OK (n5 = n5b = L-SI rows; Oink zlk; verify), 0
+  violations. N5 LINEAR: S3 it 6n+4, longest 5n+1 exact; F it 8.06n+9.4, longest 7.06n+3.4. Shape: n tau changes (e_i -> h_i, one gate
+  per iteration, empty phases), then one final phase (lane walk + ~1 sigma-bar flip per gate, ALT ~ n+2). f = 0, lambda_Xi const.
+### DONE after RESTART (2026-10-28)
+- XR-LIN reproduction (eabb3018): experiments/xr-lin, n5b only: Xi(o) changes 86 > 2n = 82 on l121reader_n41, run on 0..39 = long121_n40.
+- §4 randstarts2.py (XR, ALT, TF per run): 1,612 H_n runs, 0 FAIL, all linear; τ re-flips at a gate at most twice.
+- §5 hn_var.py dual / ex: linear in n; gate flips ≤ 2 / ≤ 1; dual phases = it + 1; ex F phases 3n + 3.
+### IN FLIGHT: nothing.
+### Things only I know (successor 6)
+- exh.py imports L-NEW's experiments/new/box25 'common'; L-SI's gcx needs experiments/si/root 'common': box16.py pops sys.modules['common'].
+- n5b.read_start with no TAU0 line leaves tau all -1 (truthy list, S3 not used): always write both lines.
+- [F]'s start σ̄(ι) equals S3's τ on H_n (same start sha1).
+
 ## Resume point -- HANDOVER of successor 5 (session_017XFY64b42Hkc6fmeUEzwek, Opus 5.5), parked 2026-10-26 ~19:0xZ at ~515k context
 Boxes this session: handover check 1a8a4628; box 12 epoch census cf441de1; HON-FF add-on 15bcfa06; box 13 growth law + rho_q table 73e72e55;
 box 14 NCONF 6f782d57 + EP-ASM dda29260; box 15 UL_G / GCI-LEN (this push). Everything: experiments/n5-epoch/README.md (one section per box,
@@ -337,6 +356,7 @@ AM9 Lemma 3's proof sets D_{dbar} = D cap U_{dtilde} (tex:345), probably a typo 
 | arXiv 2511.03752v1 (LaTeX e-print) | Sec. 2-3, Algorithm 1, Thm 2, Lemmas 3-4 (see M2 pseudocode) | 2026-10-14 | M2 subject |
 | github.com/tcsprojects/pgsolver @ d3cd624 | generators recursiveladder.ml, policyiter/generators/*.ml; paritygame.ml conventions | 2026-10-14 | code, not a paper; papers awaiting source |
 | arXiv 2108.13338v5 (LaTeX e-print, sha256 7189eb2f...5c816c; abs page lists v1 2021-08-30 .. v5 2025-06-15) | §2 (prelim.tex: ordered/universal trees, labels, feasibility, violated/tight/loose, Tighten, lift, Prop. 2.6 lattice fixed points); §3 (strategy-iteration.tex: Algorithm 1, admissible arcs, Thm 3.1 correctness, base nodes, Thm 3.3 MinBottleneckCycles); §4 (label-setting.tex: Algorithm 2 Dijkstra, Lemma 4.1, Thm 4.2, Cor. 4.3; §4.1 Algorithm 3 LabelSetting, Thm 4.4, Rem. 4.5) | 2026-10-23 | N8d second implementation; theorem numbers are my count in source order, the .tex uses labels (thm:correctness, thm:dijkstra, cor:dijkstra, thm:label-setting) |
+| arXiv 1106.0778 (pdf sha256 46c96f44775aa2b07cad20912cb325b177e38c94cb2e40297df66b6047679611 = L-NEW's), O. Friedmann, LMCS 7(3:19) 2011 | §2 (Ω injective, l.132 of pdftotext), §3, §4 (I^glo), §5 (1-sink), §8.1 Table 5 / Fig. 7 / Lemma 8.1, §8.2 Fig. 8, §8.3 Table 6 / Fig. 9 / Lemma 8.2, §8.4 Table 7 / Fact 8.1 / start ι_{H_n} / Fig. 10 / Lemma 8.3, §8.5 Theorem 8.4, Fig. 11 | 2026-10-26 | box 16 H_n. Table 7 gate priorities collide with the lane (d2_n = t1 = 8n+3 etc.); Fig. 10/8/9 use 8i-5..8i+2: hn.py mode fig. Text says lane length 6n-3, Table 7 has i <= 6n-2 (= m of §8.1): 6n-2 used |
 
 ## Dead ends
 - 2026-10-18 (method note): watcher loops counting 'done' lines never end when a run crashes before printing 'done'; count

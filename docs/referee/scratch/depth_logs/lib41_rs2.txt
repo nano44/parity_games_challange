@@ -1,0 +1,19 @@
+GCI_chk 1313
+GCI_ints 2038
+GCI_withgate 792
+H1_runs 1494
+H3_noncommon 1261
+H4_fail 2
+MAX_GCI_len_minus_n1 -1
+MAX_len_gate 26
+MAX_len_minus_n1 -1
+PE_chk 13427
+PE_withgate 8014
+RUNS 1130
+SDA_chk 760784
+SDV_chk 842104
+SD_chk 6667
+SD_sharp 432
+SD_withgate 3477
+skip_big 45
+done

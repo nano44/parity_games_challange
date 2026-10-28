@@ -1,0 +1,47 @@
+{
+"name": "H6_G752",
+"n": 6,
+"mode": "fig",
+"V": 126,
+"m": 365,
+"sha1": "6f6bb32c156c5e68722d566dd698d463395001a6",
+"start_sha1": "28b8e6e85164d9c1efaa2ad9c3bc47e03395ef7d",
+"it": 39,
+"fb": 0,
+"phases": 1,
+"longest": 39,
+"tau_changes": 0,
+"lamXi_changes": 0,
+"lamW_changes": 0,
+"viol": [],
+"ok": true,
+"checks": {
+"n5_eq_n5b": true,
+"rows_eq": true,
+"oink": "zlk",
+"oink_eq": true,
+"verify_n5": true,
+"verify_n5b": true
+},
+"phases_detail": [
+{
+"p": 0,
+"a": 0,
+"b": 39,
+"len": 39,
+"end": "final",
+"ntau": 0,
+"dW": 0,
+"f": 0,
+"N_ep": 6,
+"NCONF": 5,
+"NCONF2": 0,
+"S": 1,
+"ALT": 5,
+"ALTsum": 5,
+"SBG": 5,
+"sbQ": 5,
+"D": 1
+}
+]
+}

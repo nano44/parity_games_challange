@@ -1,0 +1,21 @@
+MODE files ../R2-N5-STAU/lib41_noref.lst 5
+CHU_checks: 81815
+C_cuts: 3608
+C_intervals: 3017
+ENGXI_checks: 30154
+MIGC_checks: 8
+MIG_caseL: 12
+MIG_caseS_only: 19
+MIG_checks: 31
+S_runs: 2296
+S_transitions: 15551
+ULa_checks: 2296
+U_events: 2311
+U_in_interval: 1122
+runs: 2050
+states: 30154
+max_U_index_in_interval: (21, 'experiments/red/xing/instances/x32_waves48.pg#0', 4, 29, 25, 44, 32, 48)
+max_U_over_bound_a: (0.0179, 'experiments/n5-exhaustive/instances/b5_n5_cyc4_0.pg#1', 1, 56, 2)
+max_Xu: (8, 'experiments/red/n5inj/instances/frz40.pg#0', 30, 26, 2, 14)
+max_coarseW_changes: (20, 'experiments/new/box25/instances/sc24.pg#0', 2, 0)
+RESULT OK violations=0

@@ -112,3 +112,7 @@ No gap. Notes ADD2-N1..N4. Nothing here bounds EXIT_x, D, ODDC_c or N5's running
 
 DONE: this report. FINDINGS: all SIGNED, no gap; ADD2-N1..N4. NEEDS: Lead: route the notes to L-NEW's fixes file; §C against REFEREE-2 on
 your word.
+
+## §C
+The §C for this file is the UNIT §C at the end of docs/referee/R-N5-OFFMONO.md (OFFMONO + add1 + add2 + add3 against REFEREE-2 4e9a6372),
+written 2026-10-28 by REFEREE successor 16: identical verdicts, joint gap map empty.

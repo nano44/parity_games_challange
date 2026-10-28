@@ -76,3 +76,7 @@ J = the phase, D := the actual maximum of v_x over x-pieces‴).
 
 DONE: this report. FINDINGS: OFFSET-MONO⁺ and CHAIN-COUNT‴ SIGNED, no gap; L1 exercised once (harm_n12_seed412), L2a never; ADD3-N1..N3.
 NEEDS: Lead: route the notes to L-NEW's fixes file; §C against REFEREE-2 on your word.
+
+## §C
+The §C for this file is the UNIT §C at the end of docs/referee/R-N5-OFFMONO.md (OFFMONO + add1 + add2 + add3 against REFEREE-2 4e9a6372),
+written 2026-10-28 by REFEREE successor 16: identical verdicts, joint gap map empty.

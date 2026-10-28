@@ -1,0 +1,11 @@
+long121_n40: sha1 c667c08535641a986d771c7a5f3d76bb3c0eef0f start d750664a79160e60196abb9f8daabaf141b0e780 n 40 it 122 fb 8 states 123 | regions = oink zlk: True | verify OK | start entries filled from S3: []
+l121reader_n41: sha1 084da8cd47707b8937ebe30fdfae88d3d988bdaf start 7ca283c43b7092acc454c5ffc6b1995e3a29bf68 n 41 it 122 fb 8 states 123 | regions = oink zlk: True | verify OK | start entries filled from S3: []
+reader o = 40: owner 1 prio 0 out-degree 14 in-degree 0; game on 0..39 identical to long121_n40: True
+(a) states: long121 123, reader 123; sigma, tau, sigma-bar on 0..39 equal at every state: True
+(a) fallback flags equal: True (long121 8, reader 8); tau(o) changes in the reader run: 0
+(a) phases long121: [(0, 0), (1, 122)]
+(a) phases reader (all 41): [(0, 0), (1, 122)]
+(a) phases reader (key on 0..39): [(0, 0), (1, 122)]; equal to long121's: True; equal to reader all-41: True
+(b) Xi(o) changes in [1, 122]: 86   (L-SI: 86; 2n = 82)
+(b) reader phase [1, 122] len 121: Xi(o) changes 86; XR = 86 at v 40
+    long121 phase [1, 122] len 121: XR = 44 at v 6
