@@ -1,0 +1,5 @@
+runs 9 phases 12
+swe (13, ('experiments/new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.pg', 97))
+swe_n (0.3, ('experiments/new/box48/instances/long121_n40.pg', 121, 12, 40))
+swo_n (1.425, ('experiments/n5-epoch/instances/nep76_n40.pg', 78, 57, 40))
+xr_n (1.55, ('experiments/n5-epoch/instances/nep76_n40.pg', 78, 62, 40))
