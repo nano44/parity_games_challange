@@ -4098,6 +4098,227 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
 - TARGET.md diff: not a claim of TARGET.md section 1 or §2 (structural lemmas and a per-phase reduction; no iteration bound, no algorithm
   claim). GAPS G-N5-TIME: open.
 
+### R76 [refereed-only] N5 on EVERY game, inside one phase: at an in-phase S4a step, a vertex z that migrates into the region R_u of a D-direct gate u (u ∈ DD_t ∩ DD_{t+1}, z ∉ R_u(t) ∪ A_t) has its first D_t-vertex u′ leave D (u′ ∉ D_{t+1}), or some Even vertex on z's play before u′ (z included) switches, and then z's play changes (Lemma MIG-SPLIT); so on a run S the transitions carrying such a migration into u number at most the transitions at which a vertex of D ∩ U_c leaves D plus those at which some z ∈ U_c changes its W-play (its Consequence); on every run S of in-phase S4a steps with λ_W constant, IF every unforbid-switch (k′, e) of S inside a global C-interval [a, b] has k′ − a < n − 1 (CONJECTURE UL_G, OPEN), THEN |U(S)| ≤ n_E((n − 1)(K(S) + 1) + K(S)) and every vertex's COARSE_{−1}(W) changes at most (n − 1)(1 + n_E((n − 1)(K(S) + 1) + K(S))) times on S, K(S) the number of C-cuts, global C-intervals read transition-locally (Corollary UL-RED, an implication); and in the abstract model ABS (steps to a pointwise greatest valid arena strategy), an acyclic run is fixed after at most its height ≤ n steps under the basic tie rule (Lemma ABS-HEIGHT) and after at most max over paths of Σ deg ≤ m steps under any deterministic tie rule (Lemma ABS-TIE), and in the cyclic model a vertex v with s_{t+2}(v) ≠ s_{t+1}(v) has a successor y with M_t(y) ≠ M_{t+1}(y), N_{t+1}(y) ≠ N_{t+2}(y) or a change of viability for v, or has s_{t+1}(v) ≠ s_t(v) (Lemma LOC′, any deterministic tie rule; without the last alternative, LOC, for tie rules that keep a maximal current choice) (2026-10-26) — structural lemmas and a conditional REDUCTION for N5, and settling lemmas in an abstract model (UL_G is a CONJECTURE and K(S) is not bounded; the model's link to N5 is a READING; LOC as stated, "any deterministic rule", is FALSE (G-GCX-1); not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C85.md, checker 85255772)
+- Object (L-SI successor 17, Opus 5.5; frozen, unchanged during review): packet P-N5-GCX, docs/si/P-N5-GCX-box21.md, sha1
+  5a91bebbc34f14be147da38adc1a6202407c70c2 (l-si freeze 02240121; quote base 7d87f9be). The referees' notes are collected by the lane in
+  docs/si/P-N5-GCX-fixes-box21.md (l-si 652a574f, sha1 6a416c0ac0797922f8d45b2a70fe9e7d2d33c595, L-SI successor 19: F1-F8 for G-GCX-1,
+  GCX-N1..N5, N-GCX-1..5; 29 quotes checked by script, experiments/si/rund/quotecheck.py "quotes=29 bad=0", pinned in experiments/si/check.sh);
+  on trunk; repairs only, no signed statement changes except G-GCX-1's repair of LOC (F1). The statements below are in their repaired
+  wording (F1-F6).
+  Setting (every game): N5 = SPEC S1-S5 with FIX 1-4; a phase as in RESULTS R38 (a) KEY (λ_Ξ and τ constant); D_k as in RESULTS R55; W_k the
+  (σ_k, τ)-play value (RESULTS R62 setting). A RUN S: consecutive states of one phase, all transitions S4a steps (no fallback); (ii) := λ_W
+  constant on S; U(S) at level L = −1 as in RESULTS R67's setting (UNFORBID-SWITCHES). For a cycle node c, U_c := λ^{-1}(c); A_t := {z ∈ U_c : z's
+  (σ_t, τ)-play meets no vertex of D_t}; R_u(t) := {z ∈ U_c : u is the first D_t-vertex of z's play}; DD_t := {u ∈ D_t ∩ U_c : σ̄_t(u), τ(u) ∈ A_t}
+  (D-DIRECT gates); Δ_t(u) := M_t(τ u) − M_t(σ̄ u). An X-MIGRATION into u at t → t+1: z ∈ R_u(t+1) ∖ (R_u(t) ∪ A_t) with u ∈ DD_t ∩ DD_{t+1};
+  X_u(S) := the transitions of S carrying one. A transition of S is GOOD if, for every c, A_{t+1} ⊆ A_t, D_{t+1} = D_t, DD_{t+1} = DD_t and
+  Δ_{t+1}(u) = Δ_t(u) on DD_t; a GLOBAL C-INTERVAL is a maximal run of good transitions, a C-CUT a transition that is not good, K(S) their
+  number (F2, GCX-N1 = N-GCX-2: under the packet's interval-level reading maximal intervals can overlap and UL-RED (a)'s count step fails,
+  long121_n40 (experiments/red/n3/instances, sha1 c667c085), S = [31, 37]: two maximal intervals, K = 0). Model ABS (§4): non-terminals V
+  (|V| = n), terminals t with h(t) ≤ T(t), weights w, values in a totally ordered abelian group; a valid strategy s reaches a terminal from
+  every v; M_s, N_s add h, resp. T; ARENA Al_s(v) := {s(v)} ∪ {y ∈ succ(v) : M_s(y) > M_s(s(v))}; s′ := a valid arena strategy whose N is
+  pointwise GREATEST among those (F6, GCX-N4), assumed to exist; ties broken by a deterministic rule R(arena, values, current choice); the
+  BASIC rule keeps the current choice when it is a maximiser (a KEEP rule). Acyclic model: the digraph on V is acyclic.
+- Claims signed (both referees "(Opus 5.5, D15)", L37); no item uses (P); premises LANDED: SPEC (definitions); RESULTS R38 (a) KEY; R55
+  setting (D_k); R62 setting and (b) TC-CLASS (for the Consequence's u′ ∈ U_c, F3); R67 setting (run S, (ii), U(S)) and (f) CHARGE-U (for UL-RED (b), at L = −1); CHARGE-U rests on the standing premise 1E-N3 in its form
+  P2 (RESULTS R67's premise line). (c)-(e) are self-contained in the model:
+  (a) Lemma MIG-SPLIT (§2): let t → t+1 be an in-phase S4a transition and z an X-migration into u, with first D_t-vertex u′ (u′ ≠ u). Then (L)
+      u′ ∉ D_{t+1}, or (S) some Even vertex w on the part π of z's play at t before u′ (z included) has σ_{t+1}(w) ≠ σ_t(w); in case (S) z's play
+      changes (proof with the FIRST switching w, F4; on the play every Odd vertex follows τ, constant on the phase, F3). "(z included)" is
+      needed (L-RED R93's cxmig_k: the only switcher is z; REFEREE's MUT=2 fails 28 of 28). Consequence: X_u(S) ≤ #{transitions of S at which
+      some vertex of D ∩ U_c leaves D} + #{transitions of S at which some z ∈ U_c changes its W-play}; u′ ∈ U_c by RESULTS R62 (b) TC-CLASS, or
+      because z's honest play and W-play agree up to the first D-vertex (GCX-N2 = N-GCX-1, F3).
+  (b) Corollary UL-RED (§3; an IMPLICATION from CONJECTURE UL_G, under the transition-local reading, F2): premise UL_G: for every run S with
+      (ii), every U event (k′, e) ∈ U(S) whose transition k′ → k′+1 lies in a global C-interval [a, b] has k′ − a < n − 1. Under UL_G, for every
+      run S with (ii), n_E the number of Even vertices: (a) |U(S)| ≤ n_E·((n − 1)(K(S) + 1) + K(S)); (b) for every vertex x, COARSE_{−1}(W(x))
+      changes ≤ (n − 1)(1 + n_E·((n − 1)(K(S) + 1) + K(S))) times on S (CHARGE-U with (a)).
+  (c) Lemma ABS-HEIGHT (§4; acyclic model, basic tie rule): the run is fixed (s′ = s) after at most height ≤ n steps (height: longest path to
+      a terminal, in vertices). The tie-rule hypothesis is needed (REFEREE: the one-vertex game below is acyclic and, under the rules "anti"
+      or "sizedep", is fixed only after 2 steps at height 1).
+  (d) Lemma ABS-TIE (§4; acyclic model, any deterministic tie rule): the run is fixed after at most max over paths of Σ deg(v) ≤ m steps. Its
+      proof gives "v constant from t + deg(v) − 1" (N-GCX-3, accepted by REFEREE's §C; F5); the stated bound is unchanged.
+  (e) Lemma LOC′ (§4 as repaired, G-GCX-1, F1; REFEREE-2's statement, signed by REFEREE in its §C; cyclic model, any deterministic rule): if
+      s_{t+2}(v) ≠ s_{t+1}(v), then some successor y of v has M_t(y) ≠ M_{t+1}(y), or N_{t+1}(y) ≠ N_{t+2}(y), or changes VIABILITY for v (its
+      play avoids v under s_{t+1} but not under s_{t+2}, or the reverse), OR s_{t+1}(v) ≠ s_t(v). LOC, the same without the last alternative,
+      is signed by both for KEEP rules (R returns the current choice whenever it is a maximiser), the basic rule among them.
+  Remarks MONO, MONO-SUCC, NO-RETURN (§4; not to-sign items): REFEREE CHECKED, REFEREE-2 SIGN (MONO's N-half with "greatest", F6).
+- Not signed: LOC as stated, "(cyclic model; basic or any deterministic rule)": FALSE for "any deterministic rule" (G-GCX-1, found by both
+  independently). Witness (REFEREE, scratch/loc_cex.py; REFEREE-2's is the same model under its rule "flip"): one non-terminal v, w(v) = 0,
+  terminal successors a (h 0, T 0), b (h 1, T 5), c (h 2, T 5), s_0(v) = a; under the rules "anti" or "sizedep", s_1(v) = b and s_2(v) = c while
+  every successor is a terminal (M, N constant, always viable). REFEREE's second repair class (rules current-independent and consistent
+  under contraction) is REFEREE's alone; REFEREE-2 calls the repairs compatible. §5 (READING, CONJECTURES, OPEN, DEAD, DATA), as the packet
+  asked: the READING that S4a on a pure global C-interval after A's freeze is the model's step (GCX-N3, F7: h_u's constancy follows from
+  RESULTS R74 (b) FREEZE-A (b) and the constant Δ(u); the identification stays a READING); the OPEN lift (cycles in G_c, N5's own tie rule,
+  impure intervals); CONJECTURES UL_G (OPEN), FINAL-EACH / ABS-CYC; CONJECTURE UL_C is DEAD (L-RED R91, reader_L; it is not UL-RED's premise:
+  UL_G holds there with slack, both referees); DEAD box 21 (C-ONCE, UE-ONCE_C) and DEAD box 21b (the naive cyclic settling order, abscyc.py
+  DEEP), docs/si/DEAD.md.
+- Honest limits: (i) A conditional REDUCTION: UL-RED is an implication from UL_G, whose support where it could bite is thin (index / threshold
+  at most 0.45: x32_waves48 21/47, reader_L40 40/95; N-GCX-4); only its arithmetic is new. K(S) (transitions at which some class's A grows,
+  D or DD changes, or a D-direct offset changes) is not bounded; L-SI's passive readers raise L-SI's C-cut count without changing the run
+  (DATA, fixes F8; RESULTS R75 honest limit (ii)). MIG-SPLIT bounds X_u by D-leaves and play changes, neither bounded here. (ii) (c)-(e) are
+  about the model ABS; its link to N5 is the unsigned READING above. Which kind N5's S4a tie rule is stays OPEN, so a use of LOC for N5 must
+  check that N5's rule keeps, or use LOC′; LOC is used by no signed item. (iii) Thin: MIG-SPLIT is exercised at 298 migrations in REFEREE-2's
+  data, most on constructed families (N-GCX-4). Nothing here bounds N5's running time.
+- Data (DATA, not proof): REFEREE (successor 16; own gcx_probe.py on its engine rl_engine, abs_model.py; lane code not run): library 1,140
+  files (2,739 runs; MIG-SPLIT 223 checks: (L) only 134, (S) only 84, both 5), lib41 (1,130 runs; 30), L-RED's ul instances (48 runs; 40, all
+  (S)), 9,000 + 4,500 random 𝒞^kO runs; UL_G held in every run; 0 failures of every signed check; model: 60,000 acyclic runs (6 rules),
+  ABS-HEIGHT's bound attained, 15 runs (non-keep rules) fixed after their height (GCX-N5); LOC fails only under non-keep rules, LOC′ 0
+  failures in 25,503 change events (§C); controls MUT=1 and MUT=2 fail 28/28, MUT=4 on all 3 reader runs (MUT=3 does not bite). REFEREE-2
+  (successor 18; own gcx_check.py on its SPEC loop over si.py, abs_check.py; lane tools not run): 22,592 N5 runs, 5,193 runs S; MIG-SPLIT 298
+  migrations ((L) 83, (S) only 215), Consequence 69 (u, S) pairs, C-intervals disjoint in 5,193 runs (5,687 intervals, 4,327 cuts), UL_G 1,187
+  U events inside intervals, UL-RED (a) 5,193, (b) 128,361 vertex-runs: 0 violations; model 150,000 acyclic and 97,065 cyclic runs: LOC
+  (non-basic) 166 failures, LOC′ and the other model checks 0. Both: nep90 / nep76 migrations all case (L), cxmig_k all case (S).
+- Signatures: REFEREE docs/referee/R-N5-GCX.md (report e01bdec6, §C 4aa7cc2f, stamp corrected 159c8f04; successor 16): MIG-SPLIT and its
+  Consequence (with TC-CLASS), UL-RED (a), (b) (conditional, transition-local reading), ABS-HEIGHT, ABS-TIE SIGNED; LOC SIGNED for keep rules,
+  NOT as stated (G-GCX-1); LOC′ SIGNED in §C; notes GCX-N1..N5. REFEREE-2 docs/referee-2/R2-N5-GCX.md (report fe04ca32, §C fc63f1f1; successor
+  18): the same items SIGN, LOC for the basic rule only (G-GCX-1), LOC′ SIGN; notes N-GCX-1..5. §C (both): verdicts identical; joint gap map
+  {G-GCX-1}, with two compatible repairs; GCX-N1 = N-GCX-2, GCX-N2 = N-GCX-1, N-GCX-3 ACCEPTED by REFEREE; nothing open.
+- TARGET.md diff: not a claim of TARGET.md section 1 or §2 (structural lemmas, a conditional reduction and abstract-model lemmas; no
+  running-time bound, no algorithm claim). GAPS G-N5-TIME: open.
+
+### R77 [refereed-only] N5 on EVERY game, inside one phase: on states [a, b] of one phase on which every transition is an S4a step and τ, λ, λ_W are constant (H1), σ̄ is constant (H2), the honest and the W-cycles are the same cycles and constant (H3), the end-state graph H_b is acyclic off the cycle vertices (H4), and distinct W-plays from a vertex have distinct W-valuations (GEN_W), every non-cycle vertex v has its end-state W-play and honest play from state a + d*(v) on, so σ_t = σ_b on [a + max d*, b] and b − a ≤ max d* ≤ n − 1 (Theorem STATIC-DEPTH); if every gate is D-direct at b, then (H4) holds and every cycle at b is common to both frames (Corollary PURE-END); hence b − a ≤ n − 1 on a global C-interval of a λ_W-constant fallback-free in-phase run on which σ̄ is constant and (H3), (H4), GEN_W hold (Corollary GCI-LEN-ρF; its proof does not use the C-interval structure); and in the cyclic abstract model ABS of RESULTS R76, N never falls along the run (Fact N-MONO) and, if distinct plays from a vertex have distinct N-values (GEN), every vertex v holds its final play from step d*(v) on, so the run is fixed within max d* ≤ n steps under any deterministic tie rule (Theorem ABS-DEPTH) (2026-10-26) — structural lemmas for N5 and a settling theorem in an abstract model (only intervals with σ̄ constant, (H3), (H4) and GEN_W are bounded, and their number is not; the length bound is global, not per class; CONJECTURE ABS-DEPTH-TIE is DEAD for general tie rules; not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C86.md, checker 0f71e023)
+- Object (L-SI successor 18, Opus 5.5; frozen, unchanged during review): packet P-N5-DEPTH, docs/si/P-N5-DEPTH-box22.md, sha1
+  549c7fb72d767293b6bf2ae5bbbb8809084df707 (l-si freeze 2201aa2d). The referees' notes are collected by the lane in
+  docs/si/P-N5-DEPTH-fixes-box22.md (l-si 96bde5f3, sha1 67724abe21b87eea46b7e38b1cef7de1290c542d, L-SI successor 19: F1-F5 for DEPTH-N1..N4,
+  N-DEPTH-1..5; 14 quotes checked by script, experiments/si/rund/quotecheck.py "quotes=14 bad=0", pinned in experiments/si/check.sh); on
+  trunk; repairs only, no signed statement changes; joint gap map EMPTY. The statements below are in their repaired wording (F1, F3, F4).
+  Setting (every game): N5 = SPEC S1-S5 with FIX 1-4. Ξ_t(v): the S1 valuation (c, P, ℓ) of v's honest play (σ_t, σ̄_t); W_t(v): that of v's
+  (σ_t, τ)-play. D_t := {Odd u : σ̄_t(u) ≠ τ(u)}; A_t := the vertices whose (σ_t, τ)-play meets no vertex of D_t; a gate u ∈ D_t is D-direct if
+  σ̄_t(u), τ(u) ∈ A_t. H_b: edges v → σ_b(v) (Even v), v → τ(v) (Odd v ∉ D), u → τ(u) and u → σ̄(u) (u ∈ D); cycle vertices are sinks. d*(v) := 0
+  on cycle vertices, 1 + d*(σ_b v) (Even), d*(τ v) (Odd v ∉ D), max(d*(τ u), d*(σ̄ u)) (u ∈ D): the non-cycle Even vertices on a longest
+  H_b-path from v, so d*(v) ≤ n − 1. Model (§1): ABS as in RESULTS R76's setting on any digraph, "pointwise maximal" read as pointwise GREATEST
+  (F1, DEPTH-N1 = N-DEPTH-1); play_t(v) := v's play under s_t; s* the fixed point; d*(v) := the non-terminals on v's play under s*; GEN: for
+  every v, distinct plays from v have distinct N-values.
+- Claims signed (both referees "(Opus 5.5, D15)", L37); no item uses (P); premises LANDED: SPEC S1 (valuation and order), S4a (arena
+  {σ(v)} ∪ Iσ(v); Even's one-player optimum), S4c (FALLBACK); RESULTS R18 (d) Lemma S (a), every game by R57 (a), on S4a's arena: the standing
+  premise 1E-N3 in its form P2 (as listed in RESULTS R69); (SW) as listed among RESULTS R72's landed premises; R56 (a) (M1κ), (M2κ); R69 (d)
+  Lemma STATIC (only for (H2)'s parenthetical); and RESULTS R76's model ABS and global C-interval (definitions only; R76 is not yet in
+  docs/RESULTS.md at trunk e3bd64e3 and lands before R77):
+  (a) Fact N-MONO (§1): N_{t+1} ⪰ N_t for every t ≥ 0, hence N_t ⪯ N* := N_{s*} (s_t is a candidate; s_{t+1}'s N is pointwise greatest, F1).
+      (MONO), (MONO-SUCC), (TERM): REFEREE CHECKED, REFEREE-2 CORRECT.
+  (b) Theorem ABS-DEPTH (§1; cyclic model, under GEN): for every v and every t ≥ d*(v), play_t(v) = play*(v); hence the run is fixed after at
+      most max_v d*(v) ≤ n steps. The induction runs on the final forest; neither step looks at the tie rule (REFEREE: any deterministic rule).
+  (c) Theorem STATIC-DEPTH (§2; N5, every game): on states [a, b] of one phase with (H1) every transition an S4a step (no fallback), τ, λ and
+      λ_W constant; (H2) σ̄_t = σ̄_a on [a, b]; (H3) at every t the W-cycles and the honest cycles are the same cycles, constant on [a, b]; (H4)
+      H_b acyclic outside the cycle vertices; and GEN_W (for every v, different W-plays from v to the same cycle have different W-valuations):
+      every non-cycle v has, at every t ∈ [a + d*(v), b], the same W-play and the same honest play as at b; hence σ_t = σ_b on [a + max d*, b]
+      and b − a ≤ max_v d*(v) ≤ n − 1. Facts used as proof steps (REFEREE ✓, REFEREE-2 CORRECT): (W-MONO) W_{t+1} ⊵ W_t (P2), (Ξ-SUCC)
+      Ξ_t(σ_t v) non-decreasing ((M2κ), (SW)), (CV) cycle vertices constant ((H1), (H3)). Remark (N-DEPTH-2, ACCEPTED by REFEREE; F4): the
+      per-vertex settling restricts to any set of vertices closed under H_b-successors; the length conclusion is global (it uses that σ is
+      unchanged on the whole game, then S4c's fallback), and a per-class length bound does not follow.
+  (d) Corollary PURE-END (§2): if every gate is D-direct at b, then (H4) holds, and every cycle at b is common to both frames. ((H3)'s
+      constancy on [a, b] remains a hypothesis.)
+  (e) Corollary GCI-LEN-ρF (§3): let [a, b] be a global C-interval of a λ_W-constant fallback-free run in one phase on which σ̄ is constant,
+      (H3) and (H4) hold (by (d), (H4) holds if every gate is D-direct at b), and GEN_W holds; then b − a ≤ n − 1. The proof does not use the
+      global C-interval structure: the bound holds for every interval of a λ_W-constant fallback-free in-phase run on which σ̄ is constant and
+      (H3), (H4), GEN_W hold (DEPTH-N3, accepted by REFEREE-2; F3).
+- Not signed: §4 (the instance showing GEN is needed for ABS-DEPTH's per-vertex form: at state 1 vertex 2 has N = N*(2) = 2 on the play
+  2 → 0 → 1 → t5, not its final play 2 → t4; the run still ends within max d* = 3; confirmed by both), §5 (data), §6 ((G1)-(G4), CONJECTURE
+  STATIC-DEPTH-TIE (OPEN, untouched), the READING), as the packet asked. CONJECTURE ABS-DEPTH-TIE ("in the model, the run is fixed within max d*
+  steps without GEN") is DEAD for general deterministic rules (DEPTH-N2 = N-DEPTH-3, F2; not yet in docs/si/DEAD.md at trunk e3bd64e3).
+  Obstruction: after the arena shrinks a non-keep rule may leave a current maximiser (the mechanism of G-GCX-1, RESULTS R76). Witnesses:
+  REFEREE, R76's one-vertex LOC game (non-GEN, max d* = 1, fixed only after 2 steps under "anti" or "sizedep"); REFEREE-2, non-terminals 0, 1,
+  terminals T2 (h 0, T 2), T3 (h 2, T 2), succ(0) = {T2}, succ(1) = {0, T2, T3}, w = (−2, −1), start s(1) = 0, rule "flip": s(1) = 0 → T2 → T3,
+  fixed after 2 steps against max d* = 1. Restated (OPEN): CONJECTURE ABS-DEPTH-TIE_keep, for tie rules that keep a maximal current choice (no
+  overrun under keep rules in either referee's data).
+- Honest limits: (i) STATIC-DEPTH bounds only intervals with σ̄ constant, (H3), (H4) and GEN_W, and the number of such intervals is not
+  bounded: GCI-LEN-ρF covers 3,499 of 4,747 global C-intervals in REFEREE-2's corpus (479 with a σ̄ change, (G1); 766 without (H3)) (N-DEPTH-5).
+  (G1)-(G4) stay OPEN. (ii) The length conclusion is global ((c)'s Remark): it does not give a per-class length (this is what breaks the
+  companion packet's PURE-LEN, G-DADD-1). (iii) GEN_W: SPEC breaks S4a ties by the S1 procedure on the current arena, so GEN_W has no
+  automatic substitute ((G4)); REFEREE-2's used-form check failed in 13 intervals, all with the conclusion intact (N-DEPTH-4); REFEREE saw
+  none. (iv) (a), (b) are about the model ABS; its link to N5 is a READING (RESULTS R76). (v) The bound is attained: length = max d* in 920
+  intervals (REFEREE, DEPTH-N4) and 651 (REFEREE-2). Nothing here bounds N5's running time.
+- Data (DATA, not proof): REFEREE (successor 16; own abs_depth.py on abs_model.py, depth_probe.py on its engine rl_engine; lane code not run):
+  model, 3,246 + 1,794 GEN runs, 12,798 + 6,876 per-vertex checks, 0 failures; N-MONO 0 failures; non-GEN runs later than max d* 8 + 10, all
+  under non-keep rules; MUT=1 612. N5: library 1,140 files (2,739 runs; 8,918 STATIC-DEPTH intervals, 4,263 with gates; 512,278 per-vertex
+  checks), lib41 (1,130 runs; 6,667 intervals), 9,000 random 𝒞^kO runs (1,059), named instances (184); PURE-END 19,361 / 13,427 / 16,583 / 213
+  states; GCI-LEN-ρF 2,046 / 1,313 / 960 / 35 intervals; 0 failures; MUT=1 3,010. REFEREE-2 (successor 18; own absdepth_check.py,
+  depth_check.py on its SPEC loop over si.py; lane tools not run): model 36,711 + 37,449 + 60,000 runs, N-MONO and ABS-DEPTH 0 violations
+  where GEN holds, non-GEN overruns 9 / 18 / 7 only under non-keep rules; N5 21,775 runs: STATIC-DEPTH 53,113 intervals (17,348 with gates;
+  longest 55 on x32_rand64, n 64, max d* 56), PURE-END 18,339 states, GCI-LEN-ρF 3,499 intervals, 0 violations. Both reproduce the §4 run,
+  b6_xs 21 / 29 / 36 at n = 24, 32, 40, and x32_waves48 26 (the longest with gates).
+- Signatures: REFEREE docs/referee/R-N5-DEPTH.md (report 1d74c963, §C f5081a6a, stamp corrected dc4e47b8; successor 16): N-MONO (greatest
+  reading), ABS-DEPTH, STATIC-DEPTH, PURE-END, GCI-LEN-ρF SIGNED, no gap; §4 instance CONFIRMED; notes DEPTH-N1..N4. REFEREE-2
+  docs/referee-2/R2-N5-DEPTH.md (report dad93591, §C d8402f3d; successor 18): the same items SIGN, no gap; notes N-DEPTH-1..5. §C (both):
+  verdicts identical; joint gap map EMPTY; DEPTH-N1 = N-DEPTH-1, DEPTH-N2 = N-DEPTH-3, DEPTH-N3 accepted by REFEREE-2, N-DEPTH-2 and N-DEPTH-5
+  ACCEPTED by REFEREE, N-DEPTH-4 a corpus difference; nothing open.
+- TARGET.md diff: not a claim of TARGET.md section 1 or §2 (structural lemmas bounding the intervals they cover, and an abstract-model
+  theorem; no running-time bound, no algorithm claim). GAPS G-N5-TIME: open.
+
+### R78 [refereed-only] N5 on EVERY game, inside one phase (the packet's conditional premises, now landed in RESULTS R74, R75 and R77; R78 depends on R77 and lands after it): on a pure per-class C-interval [a, b] of class c (every gate of U_c D-direct at every state), a change of a gate's choice from y1 to y2 at t → t + 1 with a + L ≤ t < b, L := max(|A_a| − 1, 0), and y1 ∈ A_{t+1} leaves M(y1) unchanged and strictly raises κ(y1), in its length component alone, unless κ_{t+1}(y1) = κ_{t+1}(y2) (Lemma GATE-PUSH), so the transitions of [a + L, b] with a σ̄ change in U_c number N_σ̄ ≤ Σ_{u ∈ D ∩ U_c} deg(u)(|U_c| − 2) + |A_a| + TIES_c (its Count; both rest on proof alone); under GEN_W on U_c, the transitions of [a, b] at which some Even vertex of U_c switches number at most L + (1 + N_σ̄ + N_cyc)(|U_c| − 1) + N_σ̄ + N_cyc, N_cyc the transitions changing c's cycle (Proposition PURE-LEN′, replacing the false length bound PURE-LEN); for z ∈ U_c ∖ {c} and m ∈ T, m ≠ z, at or before the first visit of c on z's honest (t+1)-play, with the Q-vertices from z (included) to m (excluded) on no honest cycle at t, the offset off(z; m) does not fall at an in-phase transition t → t + 1 (Lemma MONO-REF); and an Even w ∈ U_c ∖ {c} that switches a → b at t → t + 1 does not switch back to a at t′ → t′ + 1 if a's class exit path and exit e1 are unchanged on [t, t′] and e1 lies at or before the first c on w's honest play at every state of [t + 1, t′], with MONO-REF's no-cycle hypothesis (Lemma E-ONEWAY) (2026-10-26) — structural lemmas and a REDUCTION for N5 (TIES_c, ODDC_c and the length of a per-class pure C-interval are not bounded; GATE-PUSH is never exercised; E-ONEWAY's e1-after-c case is OPEN; not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C87.md, checker d0b32277)
+- Object (L-SI successor 18, Opus 5.5; frozen, unchanged during review): packet P-N5-DEPTH-add, docs/si/P-N5-DEPTH-add-box22.md, sha1
+  4d51aa5ea4e1a1d145da4cb825deab75198abae7 (l-si freeze aa6061d1; quote base 78bc0e6a8), the CONDITIONAL companion of P-N5-DEPTH (RESULTS R77).
+  The referees' notes are collected by the lane in docs/si/P-N5-DEPTH-add-fixes-box22.md (l-si 96bde5f3, sha1
+  a1ab7bfb3ac9308178374993ccb0ed9d8f562be8, L-SI successor 19: F1-F5 for G-DADD-1, G-DADD-2 (G-DADD-3 folded in), DADD-N1..N3, N-DADD-1..3; 20
+  quotes checked by script, experiments/si/rund/quotecheck.py "quotes=20 bad=0", pinned in experiments/si/check.sh); on trunk; repairs only:
+  PURE-LEN is replaced by PURE-LEN′ (F1), MONO-REF and E-ONEWAY gain their "before c" hypotheses (F2, F3). The statements below are in that
+  repaired wording.
+  Setting (every game): N5 = SPEC S1-S5 with FIX 1-4; a run S and D_t, DD, Δ as in RESULTS R76's setting. Fix a cycle node c, U := U_c.
+  A_t := F_D(t) ∩ U_c (RESULTS R74's setting); M := the path-weight component of κ; κ, κwt_c, Y^q_t as in RESULTS R56 (κ-Y-FORM_D); Q, T := (Q ∩
+  U) ∪ {c}, par and off_s(z; m) := κ_s(z) − κ_s(m) as in RESULTS R75's setting. A PER-CLASS C-INTERVAL of S: a maximal run of transitions with,
+  for class c alone, A_{t+1} ⊆ A_t, D ∩ U_c constant and Δ constant on its D-direct gates (R76's transition-local reading, REFEREE §1); PURE if
+  every gate of U_c is D-direct at every state. L := max(|A_a| − 1, 0). TIES_c: the gate switches with κ_{t+1}(y1) = κ_{t+1}(y2); N_cyc: the
+  transitions changing c's cycle (≤ (n − 1)|U_c| + TIE_c + ODDC_c per phase, RESULTS R75 (e) ZCH-COUNT). For Even w switching a → b: e1 := the
+  exit of a (the first T-vertex on a's play), π_a := a's class exit path.
+- Claims signed (both referees "(Opus 5.5, D15)", L37); no item uses (P); premises LANDED (the packet's CONDITIONAL premises included), except
+  R76 (definitions) and R77, which are not yet in docs/RESULTS.md at trunk e3bd64e3 and land before R78: RESULTS
+  R56 (a) (Aκ), (M1κ), (M2κ) and (d) κ-Y-FORM_D; (SW) as listed among RESULTS R72's landed premises; R74 (b) FREEZE-A (b), and for the Count
+  the lengths of Ξ on A in [1, |U_c| − 1] (the packet cites (R-LEN) in the ROOT packet's sentence about Ξ on A_t, which RESULTS R74 (b) records as
+  true; both referees check the Count from FREEZE-A (b), (M2κ) and those lengths; Lead reading for the landing: the sentence follows from
+  R74 (b) (M constant on A_t from a + L) with R56 (a) (INJ) and the common cycle node c, so the path set is fixed and only the length can change;
+  R74's (R-LEN) count itself is not the step used); R75 (a) OFFSET-MONO and its Step 1, (e) ZCH-COUNT; R77 (c)
+  STATIC-DEPTH with its Remark (per-vertex settling restricted to a set closed under H_b-successors, F4 of P-N5-DEPTH's fixes) and (d)
+  PURE-END. Through them, the standing premise 1E-N3 (P1 via R56 (d) and R75 (a), P2 via R77 (c)):
+  (a) Lemma GATE-PUSH and its Count (§1): let [a, b] be a pure per-class C-interval of class c, a + L ≤ t < b, and let σ̄ change at a gate u ∈
+      D ∩ U_c from y1 to y2 at t → t+1, with y1 ∈ A_{t+1}. Then M_{t+1}(y1) = M_t(y1) and κ_{t+1}(y1) ≻ κ_t(y1) (a rise of the length component
+      only), unless κ_{t+1}(y1) = κ_{t+1}(y2). Count: N_σ̄ := the transitions of [a + L, b] with a σ̄ change in U_c satisfy N_σ̄ ≤ Σ_{u ∈ D ∩ U_c}
+      deg(u)·(|U_c| − 2) + |A_a| + TIES_c.
+  (b) Proposition PURE-LEN′ (§2 as repaired, G-DADD-1, F1; signed by both): for a pure per-class C-interval [a, b] of class c, under GEN_W on
+      U_c, the transitions of [a, b] at which some Even vertex of U_c switches number ≤ L + (1 + N_σ̄ + N_cyc)·(|U_c| − 1) + N_σ̄ + N_cyc. (At most
+      L before a + L; cut [a + L, b] at every σ̄ change in U_c and every change of c's cycle; on each piece STATIC-DEPTH's per-vertex settling
+      restricted to U_c puts every Even switch of U_c in the piece's first max_{U_c} d* ≤ |U_c| − 1 transitions. No step uses that the pieces
+      are adjacent or that a frozen class stays frozen.)
+  (c) Lemma MONO-REF (§3 as repaired, G-DADD-2, F2): let t → t+1 be in-phase, z ∈ U ∖ {c}, and m ∈ T on z's honest (t+1)-play, m ≠ z, with m AT
+      OR BEFORE the first visit of c on that play; suppose the Q-vertices of that play from z (included) to m (excluded) are on no honest
+      cycle at t. Then off_{t+1}(z; m) ⪰ off_t(z; m).
+  (d) Lemma E-ONEWAY (§3 as repaired, G-DADD-2 with G-DADD-3 folded in, F3): let Even w ∈ U ∖ {c} switch a → b at t → t+1, with a's class
+      exit path π_a and exit e1 ∈ T unchanged on [t, t′], and let e1 lie AT OR BEFORE the first c on w's honest play at every state of
+      [t + 1, t′], with MONO-REF's no-cycle hypothesis. Then w does not switch back to a at t′ → t′ + 1.
+- Not signed: PURE-LEN as stated, "b − a ≤ L + (1 + N_σ̄ + N_cyc)·(|U_c| − 1) + N_σ̄ + N_cyc": FALSE (G-DADD-1; it uses STATIC-DEPTH's global
+  length step per class, RESULTS R77 (c)'s Remark). Witness (both): pure_22 (experiments/new/box22/instances/pure_22.pg, sha1 f7ba3897, n = 22)
+  at its S3 start, class 10, U_c = {4, 9, 10}, interval [23, 33]: bound 4, b − a = 10, while Even vertices of other classes switch at every
+  transition; REFEREE-2 also reader40_plus2 (docs/referee-2/R2-N5-DEPTH/union/, sha1 8b233aa5; [0, 41] against bound 2), kw25_n32 ([0, 25],
+  bound 4) and ccl_w48_n48 ([1, 27]). REFEREE's POSITION form ("every Even switch of U_c lies before a + bound") is WITHDRAWN as a repair (data
+  only); its missing step, that a frozen class stays frozen (REFEREE-2 §C C2), is not proved. MONO-REF as stated (any m ∈ T on z's play):
+  FALSE for m after c (G-DADD-2). Witnesses: frzh3n_701_best (experiments/n5-exhaustive/results/box9b/, sha1 6de40c62, n = 8) at its S3 start,
+  t = 1, c = 2, z = 0, m = 4: off(0; 4) falls from (0, 1) to (0, 0) (REFEREE); b4_theta_n7 (experiments/n5-exhaustive/instances/, sha1
+  5627745306a45f1a98387c53bba40065375acd5e) from docs/referee-2/R2-N5-DEPTH/mr/b4_theta_n7_mrafter.start, c = 1, z = 3, m = 6: off(3; 6) falls
+  from (0, −2) to (0, −3) (REFEREE-2). E-ONEWAY as stated ("e1 on w's honest play"): the case e1 after c is not reached by the proof and is
+  OPEN (DADD-N3; REFEREE-2's G-DADD-3); it held in 704 (REFEREE) and 711 (REFEREE-2) windows, 0 returns. DADD-N2 = N-DADD-1: with RESULTS R75
+  (i) OFFSET-MONO⁺ the no-cycle hypothesis can be dropped, the before-c restriction stays (a premise alternative, not adopted, F2). §4 (data).
+- Honest limits: (i) A REDUCTION: PURE-LEN′ counts the Even-switch transitions of U_c, not the interval's length, which is not bounded by
+  class quantities (pure_22, reader40_plus2). Its bound is in N_σ̄ and N_cyc, bounded by (a)'s Count and ZCH-COUNT only up to TIES_c, TIE_c and
+  ODDC_c: TIES_c and ODDC_c are not bounded (ZCH-COUNT's TIE_c is bounded per phase only code-level, RESULTS R75 (h)). (ii) PROOF ALONE: (a)
+  and its Count are never exercised (0 qualifying σ̄ changes; REFEREE 7,295 pure per-class intervals, 2,492 with gates; REFEREE-2 1,398 pure
+  intervals with gates; DADD-N1 = N-DADD-2, F4). The packet's §4 PURELATE line is about Even switches: it supports PURE-LEN′, not PURE-LEN
+  (F4). (iii) MONO-REF fails after c (REFEREE 1,527 of 29,786 checks with m after c; REFEREE-2 610 of 43,388); L-SI's working-note statements
+  in docs/si/N5-EXIT-box22.md §1-§2 that used it unrestricted carry G-DADD-2's hypothesis from now on (F2). (iv) Order: R78 rests on R77 (c),
+  (d) and lands after it. Nothing here bounds N5's running time.
+- Data (DATA, not proof): REFEREE (successor 16; own dadd_probe.py on its engine rl_engine; lane code not run): library 1,140 files (2,739
+  runs), lib41 (1,130), 9,000 random 𝒞^kO runs, named instances (18 runs); MONO-REF with m at or before c 1,411,999 checks, 0 failures;
+  E-ONEWAY 184,217 window checks, 0 switch-backs; 7,295 pure per-class intervals: PURE-LEN as stated fails in 1,140, all with class c frozen,
+  the class-local form 0 failures. REFEREE-2 (successor 18; own depth_check.py and mkunion.py; lane tools not run; 21,775 N5 runs): GATE-PUSH's
+  Count 6,742 intervals, 0; PURE-LEN as stated 1,326 FAIL of 6,742; PURE-LEN′ 0 of 6,742; MONO-REF with m at or before c 1,087,965 checks, 0;
+  E-ONEWAY with e1 at or before c 63,065 checks, 0 returns. Both: MONO-REF failures only after c, PURE-LEN failures all frozen.
+- Signatures: REFEREE docs/referee/R-N5-DEPTH-add.md (report f4b54c43, stamp c9bdfa68; §C f5081a6a, stamp corrected dc4e47b8; successor 16):
+  GATE-PUSH and its Count SIGNED (never exercised); PURE-LEN NOT SIGNED (G-DADD-1), PURE-LEN′ SIGNED in §C (with REFEREE-2); MONO-REF NOT SIGNED
+  as stated (G-DADD-2), SIGNED with "m at or before the first visit of c"; E-ONEWAY SIGNED with the matching hypothesis; position form
+  withdrawn; notes DADD-N1..N3. REFEREE-2 docs/referee-2/R2-N5-DEPTH-add.md (report dad93591, §C d8402f3d; successor 18): GATE-PUSH SIGN;
+  PURE-LEN FALSE AS STATED (G-DADD-1), PURE-LEN′ SIGN; MONO-REF SIGN with the before-c scope (G-DADD-2); E-ONEWAY SIGN with e1 at or before c
+  (G-DADD-3); notes N-DADD-1..3. §C (both): no disagreement on any verdict; joint gap map {G-DADD-1, G-DADD-2}, G-DADD-3 folded into G-DADD-2;
+  the PURE-LEN repair is the COUNT form; DADD-N1 = N-DADD-2, DADD-N2 = N-DADD-1, N-DADD-3 ACCEPTED; nothing else open.
+- TARGET.md diff: not a claim of TARGET.md section 1 or §2 (structural lemmas and a per-interval reduction; no running-time bound, no
+  algorithm claim). GAPS G-N5-TIME: open.
+
 ## Dead ends (kept; each with the exact obstruction or counterexample and the instance that killed it)
 - DE1 (2026-10-14): arXiv 2511.03752 v1 (van der Heijden), claimed O(n²(n+m)) algorithm. BROKEN: wrong regions on 4-vertex games
   CE1 (l-comp 19b5ce2, experiments/m2/counterexamples/ce1_4v.pg) and cex1 (referee 936d47c, docs/referee/scratch/cex1-*.pg).
