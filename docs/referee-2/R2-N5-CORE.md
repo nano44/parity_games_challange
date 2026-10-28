@@ -153,3 +153,70 @@ No gap. Notes N-CORE-1..6.
 - FINDINGS: (C1)-(C6) all SIGN, no gap. (C3) also holds off-phase (N-CORE-1). (C4)'s tie exception is necessary (nep22f_n64, N-CORE-2).
   (C6)'s GCX premise has not landed and its scope needs "inside one phase" (N-CORE-4). The §6 counts differ slightly from mine (N-CORE-5, -6).
 - NEEDS: Lead: the §C word (REFEREE's R-N5-CORE.md exists; I have not opened it); route N-CORE-1..6 to L-SI.
+
+## §C. Comparison with REFEREE's report (written on the Lead's word of 2026-10-28 23:54Z; from 23:55Z by date -u)
+Object: docs/referee/R-N5-CORE.md at origin/claude/referee 9d831869 (sha1 0e1480a3709671f395a8813fcafa6e464fd2ffd4), REFEREE successor 17.
+Opened for the first time after my report was pushed (2ed8d3fb).
+### C.1 Verdicts: IDENTICAL
+| item | REFEREE | REFEREE-2 | joint |
+| --- | --- | --- | --- |
+| (C1) | SIGNED | SIGN | SIGN |
+| (C2) | SIGNED, \|P\| = number of transitions (CORE-N1) | SIGN (my checker used the transition count without saying so) | SIGN, with CORE-N1's wording |
+| (C3) + Remark + Consequence | SIGNED | SIGN | SIGN |
+| (C4) | SIGNED; tie clause needed (CORE-N4) | SIGN; tie clause needed (N-CORE-2) | SIGN |
+| (C5) | SIGNED | SIGN | SIGN |
+| (C6) | SIGNED in either scope (CORE-N3) | SIGN in either scope (N-CORE-4) | SIGN |
+| quotes | 10/10 | 10/10 | 10/10 |
+### C.2 Joint gap map: EMPTY
+Neither report has a gap.
+### C.3 Notes, side by side
+- CORE-N1 (|P| read as a state count makes (C2) false): ACCEPTED, MISSED by me.
+  - My check compared Σ SW with b − a, the transition count, and skipped one-state phases. I never noticed the packet does not define |P|.
+  - Reproduced on my engine: alt_all has 2,098 one-state phases, each with |P| = 1 > 0 = Σ SW under the state reading (counter phases_one_state
+    in core_check.py, logs/alt_all.txt).
+  - Joint wording: "|P| := the number of transitions of P".
+- CORE-N2 (citations):
+  - (a) ACCEPTED, MISSED. The R15 (d) quote at l. 640 stops at "to Even's σ"; the sentence continues at l. 640-641 «(on G) and/or with ∅ ≠ I ⊆
+    Iτ to Odd's τ (on G^d)». The packet's in-phase use is right.
+  - (b) AGREED. My §1.1 noted (V1) missing from the (C3) premise list but judged S1's definition sufficient. REFEREE's citation of R17 (a)
+    (V1) for the recursion is the better one; I adopt it.
+  - (c) AGREED, and CONTAINED in my N-CORE-1, which goes further. (C3) holds at every N5 transition, including ones where λ_Ξ changes, since
+    differing cycle nodes compare by reward, which w ⊕ keeps. REFEREE notes only that the τ clause is not needed (its step 4 still uses λ
+    constant). N-CORE-1 is mine alone; it is an extension and changes no verdict.
+- CORE-N3 = my N-CORE-4.
+  - Both reports find the scope (S dropped) and "all LANDED" points: GCX is not in RESULTS; only a definition is used.
+  - REFEREE adds that the D-, DD- and Δ-clauses of goodness are unused; only "A non-increasing" is. ACCEPTED; I said only that maximality,
+    fallback-freeness and λ_W are unused.
+- CORE-N4 = my N-CORE-2: same instance, transition and vertices (nep22f_n64, 8 → 9, c = 18, u = 9 (57 → 30), u = 56 (6 → 1), κ = (0, 4)), found
+  independently.
+  - REFEREE adds that 8 → 9 is a fallback: CONFIRMED on my engine (Runner fallback flag 2 = Even fallback with Iτ ≠ ∅).
+- CORE-N5 (invalid start files in alt_all.lst): ACCEPTED, MISSED by me, and it touched my data.
+  - My reader (rund_check.read_start) does not validate. comp54_n80.start gives forced Odd vertex 11 the non-edge 11 → 51, and my alt_all run
+    used it.
+  - Re-run with validation (non-edge → first successor; counter INVALID_START_ENTRIES = 1, comp54_n80 only): every count in my §2 alt_all row
+    is IDENTICAL, 0 violations. The pre-validation log is kept as logs/alt_all_v1_unvalidated.txt.
+  - n3cov_lean.start has entries for the wrong owner and non-edges, overwritten or ignored. n3cov_lean and n3cov_phi leave 22 / 12 choice
+    vertices unset, which my reader sets to the first successor. So those two runs are from valid but partly default starts, not the "given"
+    ones.
+  - Joint: route to the owners of experiments/red/n3/instances/.
+- CORE-N6 (FRESH3 data): not reviewed by me (not to sign). No conflict.
+- Notes of mine REFEREE does not have:
+  - N-CORE-1 (above);
+  - N-CORE-3 (m_E − n_E): REFEREE has the same remark inside §4, "not needed";
+  - N-CORE-5 (my counts below §6's);
+  - N-CORE-6 (NOFRESH 90 per phase vs "≤ 22 per run"): REFEREE's max NOFRESH is also 90, so the numbers agree.
+- Controls compared:
+  - REFEREE's MUT4 (goodness necessity) and MUT5 (injectivity) did not bite. My X6A bites: in 26 alt_all phases, the transitions with an
+    A-shrink exceed Σ_c |A_a(U_c)|. My X5loc also bites: fresh-vs-previous-state transitions exceed m_E 12 times.
+  - REFEREE's MUT6 (|I| ≤ m_E without NOFRESH) bites 40 times on l121reader_n41.
+  - So the necessity of the C-interval hypothesis and of the NOFRESH term is now exhibited in data, by one referee each.
+- Data scale: REFEREE ran more runs (best-reward + 1 random on alt_all, lib1140, 48,000 random); I ran given starts, RULE=rand robustness and
+  random k2/kO/k5. Disjoint additions, 0 violations on both sides.
+### C.4 Joint list for the lane's fixes file
+CORE-N1 (|P| wording), CORE-N2 (a)-(c), CORE-N3 = N-CORE-4, CORE-N4 = N-CORE-2, CORE-N5 (start files; route to experiments/red/n3 owners),
+N-CORE-1, N-CORE-3, N-CORE-5, N-CORE-6. No verdict changes.
+### C.5 DONE / FINDINGS / NEEDS
+- DONE: this §C; core_check.py updated (start validation, phases_one_state); logs/alt_all.txt re-run (identical counts).
+- FINDINGS: verdicts identical, joint gap map empty. I missed CORE-N1, CORE-N2 (a) and CORE-N5; CORE-N5 touched my alt_all data, re-run shows no
+  change. N-CORE-1 (C3 at every transition) is mine alone.
+- NEEDS: Lead: route the joint list (C.4) to L-SI and CORE-N5 to experiments/red/n3's owner; word on P-N5-FBCK when REFEREE has reported.

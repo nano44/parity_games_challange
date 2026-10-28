@@ -1,5 +1,6 @@
 X4TIE n5-epoch/instances/nep22f_n64.pg#start 8 c 18 u 9 y1 57 y2 30 (0, 4) (0, 4) (0, 4) (0, 4)
 X4TIE n5-epoch/instances/nep22f_n64.pg#start 8 c 18 u 56 y1 6 y2 1 (0, 4) (0, 4) (0, 4) (0, 4)
+INVALID_START red/n3/instances/comp54_n80.pg 11 51
 MODE pairs ../../../experiments/si/root/logs/alt_all.lst ../../../experiments RULE n5
 AK_checks: 10468
 C1_checks: 8048
@@ -26,6 +27,7 @@ C6_nonzero_Ashrink: 424
 C6_nonzero_fresh: 1187
 C6_nonzero_oddopt: 207
 ENGXI_checks: 10604
+INVALID_START_ENTRIES: 1
 MONO_checks: 8048
 X1: 435
 X3cyc: 38
@@ -44,6 +46,7 @@ X_cross_transitions: 2143
 YF_checks: 45577
 fallback_transitions: 729
 phases: 458
+phases_one_state: 2098
 runs: 413
 states: 10604
 transitions: 8048
