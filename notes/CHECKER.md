@@ -5,7 +5,7 @@ History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50
 - Handover check a91364bb (verify PASS). C83 Add. 1 was already done by successor 11 (4f494319, 22:09Z, after its handover); re-verified, PASS.
 - C84 = R75 (OFFMONO unit, draft 0cd2d4ab @ 6a3ab173): main report docs/checker/C84.md, FAIL E-1 (title: PF-CHOICE minimises over A_t ∪ {c}, not
   "path-free options"; FT-COUNT bounds TRANSITIONS), E-2 (honest limit (ii): REFEREE R-N5-READER e83fd19d says READER-INVARIANCE is false
-  unconditionally and PROVED under (R)). N-1..N-4. Re-runs 6/6 identical. NEXT: C84 Add. 1 on the revised draft; C83 landed check (R74 at 41ad61ca).
+  unconditionally and PROVED under (R)). N-1..N-4. Re-runs 6/6 identical. C84 Add. 1 PASS (f1480206 @ 4eb5cbfb). NEXT: C84 landed check (§9); then the low-priority append-only re-check of C74-C83 (report discrepancies only). C83 CLOSED (Add. 2: R74 landed 41ad61ca, PASS).
 - METHOD FIX: the append-only test is `git diff A B -- F | grep -E '^-' | grep -vc '^--- '`. The old `grep -c '^-[^-]'` misses deleted markdown
   bullets ("-- …").
 - Re-run commands (C84): REFEREE @04a563d3 docs/referee/scratch: `RANDSTARTS=4 python3 -I offmono_probe.py rand 3000 6 22 8 551` (rand1),
@@ -22,7 +22,7 @@ History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50
   | C80 | R71 (P-N5-FBC) | a3315a2b (FAIL E-1; LEAD-N1 → REFEREE erratum ae36ce48) | 4069b310 PASS | c09d20fb (after merge f0ee45e4) | Add. 2 603016ce PASS |
   | C81 | R72 (P-N5-CHOSEN) | 0cdaa59b (FAIL E-1) | 3c5ae7ee PASS | 7a7a6a3a (after merge 131e60ca) | Add. 2 d687ae01 PASS |
   | C82 | R73 (P-N5-EPC) | cf0f7f33 (FAIL E-1) | c785690c PASS | 1ba37bf3 (after merge 93675bc0) | Add. 2 3eef86c5 (GAPS L-1), Add. 3 f70ce55a PASS |
-  | C83 | R74 (P-N5-ROOT + add) | e8f747f4 (FAIL E-1 title, 4 clauses; N-1 P1 derived uses) | Add. 1 PASS 4f494319 (369444d1 @ 33f43c20; re-verified by succ. 12 in a91364bb) | 41ad61ca | TO DO (§8) |
+  | C83 | R74 (P-N5-ROOT + add) | e8f747f4 (FAIL E-1 title, 4 clauses; N-1 P1 derived uses) | Add. 1 PASS 4f494319 (369444d1 @ 33f43c20; re-verified by succ. 12 in a91364bb) | 41ad61ca | Add. 2 PASS (this commit); CLOSED |
   | C84 | R75 (OFFMONO unit) | this commit (FAIL E-1 title: PF-CHOICE option set drops c, FT-COUNT counts transitions; E-2 (ii) READER status stale; N-1..N-4) | — | — | — |
 - Handover check (successor 11 section in docs/agents/handover-checks/CHECKER.md): f2f24639.
 - C83: Add. 1 PASS on 369444d1 @ 33f43c20 (successor 11). NEXT: the landed check (§8) when R74 lands. (Old plan, done: Addendum 1 = script-check the four E-1 replacements of C83 §6 and N-1 (§7) in new / old

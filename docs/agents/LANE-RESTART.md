@@ -135,4 +135,5 @@ Five questions:
 | 2026-10-26 | L-SI | session_017NeJAMbjHE3eoJcsnWhRbw (~400k; handover 213bba72) | session_014hNbzERgw85WwaeDGW9E2Y (Opus, D15/L37) | 5 | none (re-measured: d3b71029 contains 213bba72 and trunk a7c141b8; packet sha1 764cfbb3 matches; Oink built) |
 | 2026-10-26 | CHECKER | session_011EiUmib2GvATXE6mphqubk (~600k; handover 1e2b39f5) | session_01QoVozkVaMsXGUPBea678Fa (Opus, D15/L37) | 5 | none (re-measured: f2f24639 contains 1e2b39f5 and trunk 5fc35de2; Oink built; started C79 Add. 1 per brief) |
 | 2026-10-28 | L-NEW | session_01NiWP12P8PXMiCBMBQxs3rM (~480k; handover 64e522d6) | session_01V5yGRXpuZ54sFHkJS3KYwp (Opus, D15/L37) | 5 | none (measured: head = trunk 291cb132 contains 64e522d6; OFFMONO unit and RESTRICT sha1s match; Oink building) |
-| 2026-10-28 | CHECKER | session_01QoVozkVaMsXGUPBea678Fa (~525k; handover b88e5bd0) | session_01V5yGRYMamtzAHMgh9kBGW5 (Opus, D15/L37) | 3 | pending (handover check asked) |
+| 2026-10-28 | CHECKER | session_01QoVozkVaMsXGUPBea678Fa (~525k; handover b88e5bd0) | session_01V5yGRYMamtzAHMgh9kBGW5 (Opus, D15/L37) | 3 | none (measured, a91364bb: predecessor pushed after handover (4f494319), merged; append-only grep fixed) |
+| 2026-10-28 | REFEREE | session_01B9goeXLtnEY4cNgaQcxEUh (~670k; handover dc4e47b8) | session_01V5yGRYHH4CmdeoyNidN6pK (Opus, D15/L37) | 3 | pending (handover check asked) |
