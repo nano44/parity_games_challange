@@ -398,3 +398,7 @@ R73 (P-N5-EPC) at CHECKER C82, both referees signed, no gap: f ≤ n·|C_f| per 
 > I feel like we are slowly getting somewhere no?
 
 Answered from the record (RESULTS R51-R73, Lead report 18:25Z). Relayed to the Lead.
+
+## 2026-10-28T21:33Z Lead reports (received late; sent 2026-10-26 19:34Z and 2026-10-28 21:31Z, summary)
+19:34Z: the route reduces to one count XR (value changes of a single vertex per phase), via lane lemmas (one referee or in review); data XR ≤ 1.8n; lane conjecture XR ≤ 2n; this is where Friedmann's lower bounds live. Tests: L-COMP N5 on Friedmann H_n; L-RED super-linear XR. Not a proof; OPEN.
+21:31Z (10-28): fleet stalled 10-26 ~19:35Z to 10-28 21:00Z by the weekly usage limit; lanes restarted 21:05Z, no pushed work lost. XR-LIN DEAD (86 > 82 at n = 41; DATA, independent repro pending); device: passive reader vertices; next candidate: Even switches per Even vertex per phase. DATA: N5 linear on Friedmann H_n for n ≤ 16. OFFMONO fully signed, no gap; DEPTH-add: REFEREE found two statements false as stated, repairs proposed. R74 (ROOT) at the landing check; landed unchanged R17-R73. G-N5-TIME OPEN.
