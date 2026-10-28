@@ -1,4 +1,5 @@
-Cf 125 Cf_K 123 Cf_read 122 RECUR 285 f 410 phases 328 phases_with_fb 87 runs 311
+ABA_sources 45 Cf 125 Cf_K 123 Cf_read 122 RECUR 285 f 410 phases 328 phases_ABA 9 phases_with_fb 87 runs 311
+max ABA (25, ('experiments/red/so/instances/njb_reabs65_n48.pg', (2, 68), 48, 2, 29))
 max Cf (5, ('experiments/red/n3/instances/long121_n40.pg', (1, 122), 40, 3, 8))
 max Cf_K (5, ('experiments/red/n3/instances/long121_n40.pg', (1, 122), 40, 40, 8))
 max Cf_over_n (0.125, ('experiments/red/n3/instances/long121_n40.pg', (1, 122), 40, 3, 5, 8))
