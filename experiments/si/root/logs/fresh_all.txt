@@ -1,0 +1,13 @@
+# fresh.py --list root/logs/alt_all.lst (NMAX=600), 2026-10-26T19:17:17Z
+NOFRESH2_gci_gch=3 NOFRESH3_gci=327 NOFRESH3_gci_gch=2 NOFRESH_gci=375 NOFRESH_gci_gch=13 NOFRESH_ph=3286 NOFRESH_run=1145 NOFRESH_run_gch=378 NOFRESH_run_max=22 RET_EVEN_run=2021 gci_gch=497 gci_gch_oddonly=10 gci_kind_=325 gci_kind_A=37 gci_kind_A_gch=1 gci_kind_E=2924 gci_kind_EA=1201 gci_kind_EA_gch=2 gci_kind_EOA_gch=236 gci_kind_EO_gch=188 gci_kind_E_gch=58 gci_kind_OA_gch=5 gci_kind_O_gch=5 gci_kind__gch=2 noswitch=0 runs=912 trans=7344 trans_gci=4984
+EXAMPLE ('NF', 'red/xing/instances/x32_rand48.pg', 0, 0, 44, 22, 48)
+EXAMPLE ('NF', 'red/so/instances/pftheta34_n32.pg', 4, 5, 39, 21, 32)
+EXAMPLE ('NF', 'red/so/instances/pftheta_cex_n32.pg', 3, 4, 38, 20, 32)
+EXAMPLE ('NF', 'n5-exhaustive/instances/b6_xl_n40.pg', 2, 21, 46, 19, 40)
+EXAMPLE ('NF', 'red/n3/instances/run49_n32.pg', 2, 2, 51, 19, 32)
+EXAMPLE ('NF', 'red/n5inj/instances/theta_tp32.pg', 4, 20, 45, 18, 32)
+EXAMPLE ('NF2', 'n5-epoch/instances/ret14_n48.pg', 4, 14, 21, [0], [(27, 30, 38)])
+EXAMPLE ('NF2', 'n5-epoch/instances/ret14_n48.pg', 4, 42, 49, [0], [(27, 30, 38)])
+EXAMPLE ('NF2', 'red/so/instances/post31_n48.pg', 4, 4, 20, [0], [(39, 30, 28)])
+EXAMPLE ('NF3', 'n5-epoch/instances/ret14_n48.pg', 4, 14, 21, [0], [(27, 30, 38)])
+EXAMPLE ('NF3', 'n5-epoch/instances/ret14_n48.pg', 4, 42, 49, [0], [(27, 30, 38)])

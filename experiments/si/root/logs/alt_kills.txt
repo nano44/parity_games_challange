@@ -1,0 +1,63 @@
+# KILL traces, 2026-10-26T19:17:17Z
+## GATE-ONEWAY: pp_K48_n449, gate 447 (out-degree 3), every sigma-bar change (gateret.py VERB=1)
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 2 in u 447 441 -> 445 rise M dir (False, False) ret_run False
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 3 in u 447 445 -> 441 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 4 in u 447 441 -> 445 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 5 in u 447 445 -> 441 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 6 in u 447 441 -> 445 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 7 in u 447 445 -> 441 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 8 in u 447 441 -> 445 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 9 in u 447 445 -> 441 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 10 in u 447 441 -> 445 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 11 in u 447 445 -> 441 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 12 in u 447 441 -> 445 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 13 in u 447 445 -> 441 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 14 in u 447 441 -> 445 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 15 in u 447 445 -> 441 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 16 in u 447 441 -> 445 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 17 in u 447 445 -> 441 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 18 in u 447 441 -> 445 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 19 in u 447 445 -> 441 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 20 in u 447 441 -> 445 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 21 in u 447 445 -> 441 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 22 in u 447 441 -> 445 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 23 in u 447 445 -> 441 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 24 in u 447 441 -> 445 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 25 in u 447 445 -> 441 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 26 in u 447 441 -> 445 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 27 in u 447 445 -> 441 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 28 in u 447 441 -> 445 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 29 in u 447 445 -> 441 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 30 in u 447 441 -> 445 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 31 in u 447 445 -> 441 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 32 in u 447 441 -> 445 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 33 in u 447 445 -> 441 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 34 in u 447 441 -> 445 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 35 in u 447 445 -> 441 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 36 in u 447 441 -> 445 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 37 in u 447 445 -> 441 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 38 in u 447 441 -> 445 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 39 in u 447 445 -> 441 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 40 in u 447 441 -> 445 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 41 in u 447 445 -> 441 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 42 in u 447 441 -> 445 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 43 in u 447 445 -> 441 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 44 in u 447 441 -> 445 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 45 in u 447 445 -> 441 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 46 in u 447 441 -> 445 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 47 in u 447 445 -> 441 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 48 in u 447 441 -> 445 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 49 in u 447 445 -> 441 rise M dir (False, False) ret_run True
+CHG ../red/usplit/instances/pp_K48_n449.pg ph 0 run 0 t 54 AG u 447 441 -> 437 rise M dir (True, False) ret_run False
+## TOP-ONCE: lev_l_sc, z = 0 (mrise.py TRACE=0)
+TRACE orlens/instances/lev_l_sc.pg phase 8 54 fallbacks [31] z 0 8:19-o 9:30-o 10:19-o 11:26-o 12:19-o 13:31-o 14:19-o 15:29-o 16:19-o 17:26-o 18:19-o 19:12-o 20:20-o 21:12-o 22:L 23:19-o 24:L 25:L 26:17-o 27:14-o 28:16-o 29:13-o 30:L 32:24+e 33:21-o 34:30-o 35:19-o 36:29-o 37:19-o 38:26-o 39:19-o 40:12-o 41:20-o 42:12-o 43:L 44:19-o 45:L 46:L 47:17-o 48:14-o 49:16-o 50:13-o 51:L 52:28-o 53:23-o
+## FRESH3: ret14_n48 (fresh.py VERB=1; transitions inside a global C-interval with a gate change and none of the three fresh events)
+NOFRESH_GCI ../n5-epoch/instances/ret14_n48.pg 4 14 21 gch True [(27, 30, 38)]
+NOFRESH_GCI ../n5-epoch/instances/ret14_n48.pg 4 42 49 gch True [(27, 30, 38)]
+EXAMPLE ('NF3', '../n5-epoch/instances/ret14_n48.pg', 4, 14, 21, [0], [(27, 30, 38)])
+EXAMPLE ('NF3', '../n5-epoch/instances/ret14_n48.pg', 4, 42, 49, [0], [(27, 30, 38)])
+## FRESH2: post31_n48
+EXAMPLE ('NF2', '../red/so/instances/post31_n48.pg', 4, 4, 20, [0], [(39, 30, 28)])
+## FRESH (run scope): x32_rand48
+NOFRESH3_gci=22 NOFRESH3_gci_gch=0 NOFRESH_gci=22 NOFRESH_gci_gch=0 NOFRESH_ph=22 NOFRESH_run=22 NOFRESH_run_gch=0 NOFRESH_run_max=22 RET_EVEN_run=22 gci_kind_=22 gci_kind_E=22 noswitch=0 runs=1 trans=44 trans_gci=44
+EXAMPLE ('NF', '../red/xing/instances/x32_rand48.pg', 0, 0, 44, 22, 48)

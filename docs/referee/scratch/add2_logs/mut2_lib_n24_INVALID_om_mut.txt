@@ -1,0 +1,67 @@
+AF_FAIL 29450
+AF_chk 134576
+CC2_chk 3859
+CC2_mono_FAIL 228
+FTC_A_FAIL 1157
+FTC_chk 6823
+FTC_k_FAIL 1485
+FTC_off_FAIL 330
+FT_chk 1485
+MAX_FT 0
+PF_FAIL 5227
+PF_chk 8729
+PF_tied 653
+RUNS 1869
+SA2_FAIL 531
+SA2_chk 13422
+SA2_cycle_chk 2585
+SUM_CYC 956
+SUM_FT 0
+SUM_ZC 198
+SUM_ZC2 0
+TC_TIE 149
+TC_chk 22822
+TC_inFT_FAIL 149
+TC_next_FAIL 2193
+skip_big 548
+EX ('AF', '../R-N5-L2/droplen_cex_n12.pg/0', 0, 2, 0)
+EX ('AF', '../R-N5-L2/droplen_cex_n12.pg/0', 0, 2, 1)
+EX ('AF', '../R-N5-L2/droplen_cex_n12.pg/0', 0, 2, 4)
+EX ('AF', '../R-N5-L2/droplen_cex_n12.pg/0', 0, 2, 5)
+EX ('AF', '../R-N5-L2/droplen_cex_n12.pg/0', 0, 2, 6)
+EX ('AF', '../R-N5-L2/droplen_cex_n12.pg/0', 0, 2, 7)
+EX ('AF', '../R-N5-L2/droplen_cex_n12.pg/0', 0, 2, 8)
+EX ('AF', '../R-N5-L2/droplen_cex_n12.pg/0', 0, 2, 9)
+EX ('AF', '../R-N5-L2/droplen_cex_n12.pg/0', 0, 2, 10)
+EX ('AF', '../R-N5-L2/droplen_cex_n12.pg/0', 0, 2, 11)
+EX ('AF', '../R-N5-L2/droplen_cex_n12.pg/0', 1, 2, 0)
+EX ('AF', '../R-N5-L2/droplen_cex_n12.pg/0', 1, 2, 1)
+EX ('AF', '../R-N5-L2/droplen_cex_n12.pg/0', 1, 2, 4)
+EX ('AF', '../R-N5-L2/droplen_cex_n12.pg/0', 1, 2, 5)
+EX ('AF', '../R-N5-L2/droplen_cex_n12.pg/0', 1, 2, 6)
+EX ('AF', '../R-N5-L2/droplen_cex_n12.pg/0', 1, 2, 7)
+EX ('AF', '../R-N5-L2/droplen_cex_n12.pg/0', 1, 2, 8)
+EX ('AF', '../R-N5-L2/droplen_cex_n12.pg/0', 1, 2, 9)
+EX ('AF', '../R-N5-L2/droplen_cex_n12.pg/0', 1, 2, 10)
+EX ('AF', '../R-N5-L2/droplen_cex_n12.pg/0', 1, 2, 11)
+EX ('AF', '../R-N5-L2/droplen_cex_n12.pg/0', 2, 2, 0)
+EX ('AF', '../R-N5-L2/droplen_cex_n12.pg/0', 2, 2, 1)
+EX ('AF', '../R-N5-L2/droplen_cex_n12.pg/0', 2, 2, 4)
+EX ('AF', '../R-N5-L2/droplen_cex_n12.pg/0', 2, 2, 5)
+EX ('AF', '../R-N5-L2/droplen_cex_n12.pg/0', 2, 2, 6)
+EX ('AF', '../R-N5-L2/droplen_cex_n12.pg/0', 2, 2, 7)
+EX ('AF', '../R-N5-L2/droplen_cex_n12.pg/0', 2, 2, 8)
+EX ('AF', '../R-N5-L2/droplen_cex_n12.pg/0', 2, 2, 9)
+EX ('AF', '../R-N5-L2/droplen_cex_n12.pg/0', 2, 2, 10)
+EX ('AF', '../R-N5-L2/droplen_cex_n12.pg/0', 2, 2, 11)
+EX ('AF', '../R-N5-L2/droplen_cex_n12.pg/0', 3, 2, 0)
+EX ('AF', '../R-N5-L2/droplen_cex_n12.pg/0', 3, 2, 1)
+EX ('AF', '../R-N5-L2/droplen_cex_n12.pg/0', 3, 2, 4)
+EX ('AF', '../R-N5-L2/droplen_cex_n12.pg/0', 3, 2, 5)
+EX ('AF', '../R-N5-L2/droplen_cex_n12.pg/0', 3, 2, 6)
+EX ('AF', '../R-N5-L2/droplen_cex_n12.pg/0', 3, 2, 7)
+EX ('AF', '../R-N5-L2/droplen_cex_n12.pg/0', 3, 2, 8)
+EX ('AF', '../R-N5-L2/droplen_cex_n12.pg/0', 3, 2, 9)
+EX ('AF', '../R-N5-L2/droplen_cex_n12.pg/0', 3, 2, 10)
+EX ('AF', '../R-N5-L2/droplen_cex_n12.pg/0', 3, 2, 11)
+done
