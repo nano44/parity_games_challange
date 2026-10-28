@@ -8,6 +8,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   OFFMONO-N1..N4, OFFADD-N1..N2, ADD2-N1..N4, ADD3-N1..N3; REFEREE-2 N-OFF-1..9). 76 «…» quotes checked at lines by
   experiments/new/box49/quotecheck3.py (copy of L-SI's rund/quotecheck.py + --locate); pinned in experiments/new/check.sh (count 76, --mut must
   fail, sha1), NOT RUN if the two §C commits are absent from the clone.
+- Lead 22:17Z: SWE-LIN = SW-LIN DEAD; REFEREE's READER-INV PROVED under (R), false without (G-READ-1); NEXT: potential for fallback-free run
+  length or fallbacks per phase (done as N5-READER §6: W-MONO DATA, W*-REACH DEAD; fallbacks OPEN).
 - TASK 1 pushed: l-new 34d176ab (VERIFY PASS); reported to the Lead 21:39Z.
 - Lead 21:35Z: REFEREE on RESTRICT (claude/referee c9bdfa68, docs/referee/R-N5-RESTRICT.md): all SIGNED; gap G-RESTRICT-1 (G^P's "IS one
   N5^τ phase" holds only as "LIES IN one"; nep_n12, 44 of 4,073 phases extend); notes RESTRICT-N1..N3. Lead: "Do NOT write the RESTRICT fixes
@@ -491,6 +493,11 @@ Successor 29 (Opus 5.5, D14/D18, L40), session_01NiWP12P8PXMiCBMBQxs3rM. Handove
   (408438fe…; old Even 29 gets a never-improving edge 29 → o; XR 86 > 82) and inst/l121_e100.pg (989544fc…; o ↔ e, e Even priority 100; 86 > 84).
 - DS-ROUTE (few pairwise crossings of Ξ-trajectories, so envelope counts near-linear): DEAD, long121_n40 pair (6, 19): 22 order flips in
   its one phase (n 40); lib41 max 20 (red/xing/instances/j4_n40).
+
+- SWE-LIN (my §2 conjecture) = L-SI's SW-LIN: DEAD, experiments/si/root/instances/swlin_kill_n26.pg (l-si 85709361, sha1 e2f769e1…): one Even
+  vertex 27 > 26 switches in a 46-transition phase (re-measured with coresw.py); fallback re-arming. Lead's correction 22:17Z.
+- W*-REACH (F_t := {v : W_t(v) = W*(v)} grows at every fallback-free transition): DEAD, red/so/instances/xsn43_n48 run [1, 44] (43 stalls of 44),
+  long121 run [6, 23] (17 of 17). Obstruction: the arena is Ξ-cut; σ*'s edges are not Ξ-improving.
 
 ## Things only I know (successor 30)
 - An edge that is never improving (Ξ(o) ⊲ Ξ(σ_t p) at every t) embeds a reader at any Even vertex p of long121: all 36 Even vertices accept

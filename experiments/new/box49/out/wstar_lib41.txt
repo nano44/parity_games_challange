@@ -1,0 +1,4 @@
+L 10499 STALL 5579 games_runs 1047 runs_ff 1449
+max L_run (44, ('experiments/red/xing/instances/x32_rand48.pg', (0, 44), 48))
+max frac_stall (1.0, ('docs/referee/R-N5-L2/exitdrop_n3.pg', (0, 1), 3, 1, 1))
+max stall_run (43, ('experiments/red/so/instances/xsn43_n48.pg', (1, 44), 48, 43))

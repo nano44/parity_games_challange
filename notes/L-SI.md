@@ -30,6 +30,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   vs bound 4; repair: bound the LAST Even switch of U_c), G-DADD-2 (MONO-REF false when m lies after c; frzh3n_701_best sha1 6de40c62 at S3, t = 1;
   repair: m at or before the first visit of c); notes DADD-N1..N3. DEPTH (549c7fb7): REFEREE 1d74c963 signs all, notes DEPTH-N1..N4 (N2: ABS-DEPTH-TIE
   false for general rules). NO fixes files until REFEREE-2 has reviewed. My N5-ALT core (§11) uses none of MONO-REF / PURE-LEN / GATE-PUSH / E-ONEWAY.
+- Lead 22:06Z: (1) GCX fixes done 652a574f (sha1 6a416c0a); (2) REFEREE R-N5-READER e83fd19d: G-READ-1 (READER-INV false unconditionally; PROVED
+  under (R)); §8/§12 corrected; (R) measured true on l121reader_n41 and l121reader6_n46; random Even readers: SAME 60/60, 45/60, 58/60 (READ-N3);
+  (3) next: FREEZE P-N5-CORE-box23 ((C1)-(C6), landed premises quoted); (4) then SW-RUN + fallbacks per phase, bounds stated in TRANSITIONS.
+- PACKET P-N5-CORE-box23.md FROZEN at its push ((C1)-(C6); (C4) is the CLEAN form, landed premises only; unclean form needs Fact CL, not
+  claimed). corecheck.py data. Repairs go in a NEW file docs/si/P-N5-CORE-fixes-box23.md.
 - Things only I know: rows() is fast on re-runs (n5x caches?); gateret's lib41 run at NMAX=34 (first try) differs from the NMAX=48 log, use the log.
 
 ## HANDOVER (successor 18, box 22; written 2026-10-26T18:40Z (date -u); session_01DKVF647UmtYFEEQNiRgoH2)

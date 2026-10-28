@@ -1,4 +1,4 @@
-# N5-READER (box 49): which counts can a passive vertex not inflate? Readers embed anywhere (DEAD for every graph-local restriction); Even switches per Even vertex resist every gadget tried (CONJECTURE SWE-LIN, which would bound a phase by n²); an amortized bound SW ≤ deg + PASS (PROVED, lane)
+# N5-READER (box 49): which counts can a passive vertex not inflate? Readers embed anywhere (DEAD for every graph-local restriction); Even switches per Even vertex per phase are DEAD too (SWE-LIN = L-SI's SW-LIN, killed by swlin_kill_n26); an amortized bound SW ≤ deg + PASS (PROVED, lane); two W-potentials for fallback-free runs (§6)
 L-NEW successor 30 (Opus 5.5; D14, D18, L40). Working note, unrefereed, not frozen. Written 2026-10-28 from 21:45Z (date -u), on the Lead's
 TASK 2 of 21:27Z: find "a potential or count that readers cannot inflate", with ideas from other fields (D18).
 Labels: PROVED (lane, unrefereed) / CONJECTURE / OPEN / DATA / READING / DEAD. Not a TARGET.md claim. Nothing here bounds N5's running time;
@@ -17,11 +17,12 @@ rows() over experiments/new/box21/n5x.py (SPEC S1-S5), imported read-only.
 | §1 | Per-vertex Ξ / σ̄ counts restricted to vertices with an Even predecessor, on an Even vertex's play, with any predecessor, or outside a "reader quotient": all inflated to 86 > 2n with the run SAME | DEAD (5 instances) |
 | §2 | Every in-phase transition switches an Even vertex, so L ≤ Σ_w SW(w) | PROVED (elementary) + CHECKED |
 | §2 | SW-AMORT: SW(w) ≤ PHI0(w) + PASS(w) (potential method) | PROVED (elementary) + CHECKED |
-| §2 | SWE-LIN: per phase, every Even vertex switches at most n times. Data max 0.58n; Even gadgets reach 19 on n = 41 | CONJECTURE |
+| §2 | SWE-LIN: per phase, every Even vertex switches at most n times (= L-SI's SW-LIN) | DEAD (l-si 85709361, swlin_kill_n26: 27 > 26; re-measured with coresw.py) |
 | §2 | Why Even readers inflate less: S4a needs a Ξ-improvement AND the W-optimum of the arena | READING + DATA |
 | §3 | Kinetic / envelope view: an Odd gate is a lower envelope; pairwise order flips s(P) reach 0.55n, so no "few crossings" bound | DEAD as a route + DATA |
 | §3 | LP / tropical reading: readers are redundant rows; per-row counts are not intrinsic, pivot counts are | READING |
 | §4 | Open and next | OPEN |
+| §6 | Fallback-free runs: W never falls (DATA, 10,499 transitions); the W*-reach potential F_t stalls at 53% of transitions (xsn43_n48: 43 of 44) | DATA + DEAD |
 
 ## 0. Setting and the definition
 A phase P of N5 (λ_Ξ and τ constant, as in P-N5-OFFMONO-fixes F1); L := its number of transitions. For a vertex z: XR(z) := the number of
@@ -32,8 +33,12 @@ transitions of P at which Ξ(z) changes; SW(w) := the Even switches of an Even w
   shift when vertices are added, the order on old vertices does not).
 - A statement "every vertex of kind K has count ≤ f(n) per phase" is READER-PROOF if no run-keeping dressing gives a vertex of kind K a
   count above f(n + |H|). Counts of OLD vertices are unchanged by definition of keeping the run; the question is always about the new ones.
-- Run identity is DATA, checked per instance; it is not proved for a class of dressings here (S4b could move τ on a new Odd vertex, and an
-  Even switch of a new vertex at a state that is a fallback on G would cancel the fallback; neither happened at the instances below).
+- Run identity is DATA here: dress.py checks it per instance, and nothing in this note proves it for a class of dressings. For Odd readers
+  it is now a theorem under a hypothesis. REFEREE proved Theorem READER-INV under (R): τ(o) never moves at a transition at which τ is
+  unchanged on the old vertices (docs/referee/R-N5-READER.md at claude/referee e83fd19d, §1). Without (R) the statement is false (gap
+  G-READ-1: S4b moves τ(o), splitting phases and cancelling fallbacks; 5-vertex counterexample, §2 there). It reproduced l121reader_n41,
+  with (R) holding there (Iτ(o) = ∅ at all 123 states). My gadgets with new Even vertices, or with edges from old vertices (l121_b, _c,
+  _d29, _e100, the Even readers), are outside that theorem: they are per-instance DATA only.
 
 ## 1. DEAD: graph-local restrictions do not make per-vertex counts intrinsic
 All instances: base experiments/new/box48/instances/long121_n40 (one class, c = 11, Ω(c) = 10 even; one phase [1, 122], L = 121, 8
@@ -87,14 +92,15 @@ unless stated. Built by runall.sh; every row is SAME (run kept) in out/dress_nam
   So Even readers DO inflate the per-vertex Even count above the old vertices' 12 (to 19), but not near n. And Even gadgets are not always
   clean: 7 pair readers change the run (out/pairs_l121_different.txt: six pairs containing 33 first differ at state 5, {4, 17} at state 55;
   the dressed runs are 1-2 states longer; the transition into the first differing state is not a fallback on G; mechanism not classified).
-- CONJECTURE SWE-LIN. In every phase of every N5 run, every Even vertex switches at most n times. Consequence (PROVED, from NOSW): L ≤ n·|V_0|
-  ≤ n² for every phase. It is reader-proof against Odd gadgets by construction (they add no Even vertex and keep the old switches); against
-  Even gadgets it is DATA only (above).
-  - Falsifier to try first: a phase that holds a binary counter on Even vertices. S. Friedmann's H_n (LMCS 2011, arXiv 1106.0778, Theorem
-    8.4, opened by successor 29 and recorded in docs/new/N5-ALTLIT-box49.md §1) needs at least 2^n improvement steps of I^glo, each of which
-    switches some player-0 vertex, so some player-0 vertex switches at least 2^n / |V_0| times there (elementary from Theorem 8.4; the
-    counting is by opening and closing cycles, [F] §6.5 as recorded there). Whether such a family fits in ONE N5 phase is OPEN (N5-ALTLIT
-    §2 ANSWER); the DATA step on [F]'s H_n is routed elsewhere (docs/si/N5-ALT-box23.md §6 item 4). If it fits, SWE-LIN is DEAD there.
+- DEAD SWE-LIN ("in every phase, every Even vertex switches at most n times"; it would give L ≤ n·|V_0| through NOSW). It is the same
+  statement as L-SI's SW-LIN, which L-SI killed first: docs/si/N5-ALT-box23.md §10 at l-si 85709361. Instance
+  experiments/si/root/instances/swlin_kill_n26.pg (l-si 85709361; sha1 e2f769e1b45bdb883f7808e84f461b318a25e8f1, with its .start). Re-measured
+  with my coresw.py: one phase of 46 transitions, one Even vertex switches 27 > n = 26 times. cross.py on it gives NOSW 0 and SW-AMORT 0
+  violations (SW 115, PASS 124). Obstruction (L-SI's trace): fallback re-arming. Each S4c fallback resets the vertex to its Ξ-best option,
+  and it walks the same option cycle again. So the plain-game maxima above (≤ 0.58n) were a property of the corpus, not of N5. My Even
+  gadgets never came near n because none of them was built to re-arm through fallbacks.
+  - Lead reading (Lead message 22:17Z): only the transition count per phase is intrinsic. The current route is L-SI's surviving CONJECTURE SW-RUN (per
+    fallback-free run, DATA ≤ 0.67n) plus the number of fallbacks per phase. §6 takes that up.
 - READING + DATA (why Even readers inflate less: TWO ORDERS). An Odd gate's σ̄ follows one order, close to the Ξ-minimum of its options
   (cross.py: 3,298 of 3,505 σ̄ changes on lib41 are strict order flips of the (old, new) choice at that transition; the other 207 are not,
   ties or options whose play passes the gate; not classified). An Even switch needs two things: (w, b) ∈ Iσ (Ξ-improvement), and b
@@ -113,22 +119,46 @@ unless stated. Built by runall.sh; every row is SAME (run kept) in out/dress_nam
   of order L in data.
 - LP / tropical duality (READING, no theorem cited). In the (min, +) system that fixes Odd's best response, a reader is a REDUNDANT ROW: it
   feeds no other row. Redundant rows leave a pivot path unchanged and can be tight or entering any number of times, so per-row counts are
-  not intrinsic, while the number of pivots is. In this language SWE-LIN says: each Even "variable" enters the basis at most n times per
+  not intrinsic, while the number of pivots is. In this language SWE-LIN said (DEAD, §2): each Even "variable" enters the basis at most n times per
   phase: a strong structural claim, to be tested (§4 item 1) before it is worked on.
 - Lattice / matroid monotonicity: within a phase the vector Ξ_t is a chain in a product of chains; its length is bounded only by the number
   of distinct values (exponential, the P-component). Not developed further; no statement.
 
 ## 4. OPEN and next
-1. SWE-LIN on [F]'s H_n (above); then on L-RED's ladder family (ladderd0_k48_n156: one Even vertex switches 48 times in a phase of 49, i.e.
-   at nearly every transition; how does SW grow with k against n?).
+1. (SWE-LIN is DEAD, §2.) A potential for the transitions of a fallback-free run, or for the fallbacks per phase (§6).
 2. A proof that an Even gadget's switches are bounded by the old vertices' counts (TWO ORDERS): an Even reader switches only when the Ξ-order
    and the arena W-order agree on the new option.
 3. Run identity of the dressings as a lemma (code-level against si.py, as PF-CHOICE was): for which H is the run provably kept?
 
 ## 5. Dead ends recorded (also in notes/L-NEW.md)
+- SWE-LIN (per phase, every Even vertex ≤ n switches): DEAD, L-SI's swlin_kill_n26 (l-si 85709361, sha1 e2f769e1…): 27 > 26, fallback re-arming.
 - PRED-XR ("Ξ-changes of vertices with an Even predecessor ≤ 2n per phase"): DEAD, l121_b (6c751e71…): XR 86 > 84. Obstruction: a forced Even
   vertex in front of a reader.
 - PLAY-XR ("… of vertices on the honest play of some Even vertex"): DEAD, l121_b (o on e's play).
 - QUOT-XR ("… outside the reader quotient / with a core predecessor / every vertex with a predecessor"): DEAD, l121_d29 (408438fe…) and
   l121_e100 (989544fc…): XR 86 > 82 / 84. Obstruction: a never-improving edge from an old Even vertex, or a passive Even-winning cycle.
 - DS-ROUTE (bounded pairwise crossings of value trajectories): DEAD, long121 pair (6, 19), 22 flips in one phase (n 40).
+
+## 6. Fallback-free runs: two W-potentials (Lead's NEXT of 22:17Z; D18). Tools wamort.py, wstar.py; logs out/wamort_*.txt, out/wstar_*.txt
+A fallback-free run is a maximal stretch of a phase with no S4c fallback, so it consists of S4a steps only, with τ fixed. W_t is the
+valuation of the (σ_t, τ)-play, in S1's order. σ_{t+1} is Even's W-optimum in the arena H_t = {σ_t} ∪ Iσ_t of the one-player game G_τ.
+- DATA (W-MONO). W never falls at any vertex in a fallback-free run: 0 falls in 10,499 transitions (lib41, n ≤ 48, own start or S3 + 2 random,
+  seed 7, 1,449 runs), and 0 in 113 transitions on long121. READING: this is the one-player optimality of the arena optimum. σ_t lies in
+  H_t, so the optimum dominates it pointwise (standing premise 1E-N3 in form P2). I have not written it as a proof here.
+  W is unchanged at every vertex at 65 transitions (WFLAT). So W is a monotone potential, but it is not strict at every step.
+- The amortized argument in the W order (wamort.py) needs every switch to be W-strict at time t. It is not: 88 of 19,446 switches have
+  W_t(b) ◁ W_t(a), and 8 have W_{t+1}(b) ◁ W_{t+1}(a). So the W form of SW-AMORT fails as stated (181 vertex-runs), and PASS_W is 2.2 L
+  (23,612 / 10,499). Nothing gained over the Ξ form.
+- DEAD W*-REACH. Let W* be the valuation of Even's optimum in the whole of G_τ (S1's procedure on the dual with all Even edges, as n5x.step
+  builds its arena game). Let F_t := {v : W_t(v) = W*(v)}. F_t only grows on a fallback-free run: CHECKED, with 0 shrinks and 0 vertices
+  above W*. If F_t grew at every transition, every fallback-free run would have ≤ n transitions. It does not: F_t stalls at 5,579 of
+  10,499 transitions on lib41.
+  - Instances: experiments/red/so/instances/xsn43_n48 run [1, 44] (43 stalls in 44 transitions, n 48), and long121_n40 run [6, 23] (17 of 17).
+  - Obstruction: the arena is cut by Ξ-improvement. A fallback-free run ends at a fallback long before W reaches W*, because the edges of
+    σ* are not Ξ-improving.
+- What the charging does give, and whose it is. At a continuing S4a step, σ_{t+1} is W-optimal in H_t, so a further W-improvement needs an edge
+  that newly entered the arena. This is L-SI's FRESH-RED (docs/si/N5-ALT-box23.md §1: run length ≤ m_E + NOFRESH), not new. I do not
+  duplicate it.
+- Still OPEN (for the Lead's NEXT): a potential for the fallbacks per phase. At a fallback, no Ξ-improving edge is W-improving, and S4c takes
+  the Ξ-best improving edge, which may lower W. Fallback re-arming is exactly what killed SW-LIN (§2). So the fallback count is where the
+  per-vertex Even count goes wrong, and it is the quantity to measure next.

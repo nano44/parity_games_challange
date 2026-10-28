@@ -1,0 +1,9 @@
+# corecheck.py --list root/logs/alt_all.lst (NMAX=600), 2026-10-28T22:25:36Z
+C3=16883 C3_skip_cycle=71 C4_clean=3077 C4_tie=2 C4_unclean=1165 trans=8084
+CORE PASS
+# corecheck.py --list experiments/new/box41/lib41.txt (NMAX=48), S3 starts
+C3=11771 C3_skip_cycle=81 C4_clean=801 C4_unclean=980 trans=6104
+CORE PASS
+# control MUT=1 on nep90_n40
+C3=202 C3_V=167 C4_clean=105 C4_unclean=14 trans=91
+CORE FAIL

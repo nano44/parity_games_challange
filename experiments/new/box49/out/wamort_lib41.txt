@@ -1,0 +1,4 @@
+L 10499 PASSW 23612 WAMORT_viol 181 WFLAT 65 games_runs 1047 runs_ff 1449 sw 19446 sw_Wt1_eq 405 sw_Wt1_gt 19033 sw_Wt1_lt 8 sw_Wt_eq 300 sw_Wt_gt 19058 sw_Wt_lt 88
+max L_over_n (1.0625, ('experiments/red/so/instances/pftheta34_n32.pg', (5, 39), 32, 34))
+max PASSW_over_L (36.0, ('experiments/red/so/instances/post31_n48.pg', (1, 2), 48, 36, 1))
+max maxSW_run (14, ('experiments/new/box25/instances/sc24.pg', (0, 20), 24))
