@@ -211,7 +211,7 @@ reader lifts |𝒞_f| to f. The repair tried here is a reader-proof configuratio
     n 16). The largest f with ≥ 2 configurations is 29 at n 48 (red/so/instances/njb_reabs65_n48, phase [2, 68], 2 configurations, 26
     fallbacks from one).
 - CLIMBS for a kill (L-SI's experiments/si/root/runfbclimb.py at l-si, OBJ=fb, run from a scratch copy with only its import path changed;
-  3,000 steps each; ccl finished, the two rise climbs were still running at the push, past step 400 / 1,812; logs out/fbclimb_*.log): from
+  3,000 steps each, all finished; logs and best games out/fbclimb_*.{log,pg}): from
   rise_fb38_n48 (seeds 21, 22) and ccl_w48_n48 (seed 23). Best f − n = −9 (f 37 at n 46; f 36 at
   n 45); ccl: f 34 at n 46. No kill. The climbs shrink n at fixed f; they do not raise f.
 - CONJECTURE FB-C° (reader-proof form of R73's per-configuration count): in every phase, each read configuration is the configuration of at
