@@ -270,6 +270,8 @@ Tools: experiments/si/root/mkoreader.py (appends a reader), orcheck.py (compares
     ≤ (f + 1)·n·n_E.
   - Even readers are passive inside a fallback-free run, so SW-RUN must also survive them: a reader's switches there are max-aggregate changes.
     The longest fallback-free runs known are ~1.5n (§9), so this is not tested at scale.
+  - SW-RUN climbs (swclimb.py RUN=1, 6,000 steps each; logs root/out/swr_*.log): from sc24 (seeds 7, 8) and from swlin_kill_n26 (seed 9).
+    Best: 12 switches at n = 18 (0.67n), 14 at n = 21, 7 at n = 16. No kill; SW-RUN stays a CONJECTURE (DATA ≤ 0.67n).
 
 ## 12. Even readers: clean, and they raise the switches of ONE vertex (Lead 21:27Z, 21:35Z (a); written 2026-10-28 by date -u)
 Tool: experiments/si/root/ereader.py. It appends an Even vertex e (priority 0, no predecessors, edges to S in one class, start σ0(e) = Y),
