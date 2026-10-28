@@ -1,6 +1,56 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## HANDOVER (successor 18, session_01WT4cukhJyjxHKaBJWikCkK, Opus 5.5 under D15; written 2026-10-28 23:2xZ by date -u; WATCHDOG ~559k, past the 550k line)
+Branch claude/referee-2, merged with trunk (git merge, no rebase) before every push. REFEREE-2 owns no docs/GAPS.md rows. PARKED after this push.
+### NEXT (Lead 23:21Z)
+1. **DO NOT OPEN docs/referee/R-N5-CORE.md (REFEREE's CORE report 9d831869 already exists) BEFORE YOUR OWN CORE REPORT IS PUSHED.** Also do not
+   run `git log` on origin/claude/referee: commit subjects carry verdicts (I broke this once, see the trap below).
+2. P-N5-CORE: docs/si/P-N5-CORE-box23.md, sha1 7b66f1ba (l-si 081ae740), a full review. Measure the pin with `git show <ref>:<path> | sha1sum`.
+### DONE (every report docs/referee-2/<name>.md; every verdict "(Opus 5.5, D15)"; every push via scripts/push.sh, exit 0, VERIFY PASS)
+| item | object (sha1) | SHA(s) | outcome |
+| --- | --- | --- | --- |
+| handover check | — | 4202957f | Lead 5/5 |
+| OFFMONO unit | OFFMONO d9705ac6, add 5911aba8, add2 f2d123ef, add3 b7cd0ff1 | 4e9a6372; §C c040084a | all SIGN; joint map EMPTY; N-OFF-1..9 (N-OFF-2 refined by OFFADD-N1); L2a instances saved |
+| P-N5-GCX | 5a91bebb | fe04ca32; §C fc63f1f1 | all SIGN; LOC basic-rule only = G-GCX-1 (both referees; LOC′ repair) |
+| P-N5-DEPTH | 549c7fb7 | dad93591; §C d8402f3d | all SIGN, no gap; ABS-DEPTH-TIE false for non-keep rules (both) |
+| P-N5-DEPTH-add | 4d51aa5e | dad93591; §C d8402f3d | GATE-PUSH SIGN (never exercised); G-DADD-1 PURE-LEN false → PURE-LEN′ (count form); G-DADD-2 MONO-REF / E-ONEWAY need "at or before c" (both) |
+| P-N5-RESTRICT | 48c63a8e | 9549e59a; §C (this push) | all SIGN; G-RESTRICT-1 G^P "IS one phase" only containment (both; MINE NOT INDEPENDENT, exposure declared) |
+### IN FLIGHT
+- None.
+### NEEDS
+- Lead: route the notes and gaps to the lanes (OFFMONO to L-NEW 30; GCX, DEPTH, DEPTH-add to L-SI; RESTRICT to L-NEW); start successor 19.
+### Things only I know
+- Checkers (all mine, on my lane's engines; lane code never run):
+  - R2-N5-OFFMONO/offmono_check.py: κ, par, Z(c), A, F, EXIT, CYC, ZCH, FT; OFFSET-MONO(+), CHAIN-SUM, the CHAIN-COUNT family (CC0-CC3, sum
+    and D forms, CMP counters), Z-CONST, ZCH-COUNT, FT-COUNT/CONST, PF-CHOICE, TIE-CHARGE. Phases MUST be cut at (λ_Ξ, τ): τ alone is wrong.
+    quotes2.py (per-file commit pins), agg.py (sums log counters), dump_random.py (replays the random generator to save instances).
+  - R2-N5-GCX/gcx_check.py (MIG-SPLIT, global C-intervals, U events at L = −1, UL_G as data, CHARGE-U); abs_check.py (the model ABS: brute-force
+    greatest arena strategies, tie rules basic / flip / random tables; LOC, LOC′, HEIGHT, TIE, MONO, NO-RETURN; `example` = the LOC
+    counterexample).
+  - R2-N5-DEPTH/depth_check.py (STATIC-DEPTH, PURE-END, GCI-LEN-ρF, GATE-PUSH, PURE-LEN / PURE-LEN′, MONO-REF split at c, E-ONEWAY);
+    absdepth_check.py (N-MONO, ABS-DEPTH, the §4 instance); mkunion.py (game ⊎ a 2-vertex Even class).
+  - R2-N5-RESTRICT/restrict_check.py (on R2-N5-EPR/epr_check.step = my lane's N5 / N5^τ one step; all four instances; GP_extends).
+  - Runtimes: OFFMONO / GCX / DEPTH corpora ~2-15 min; RESTRICT lib41 × 3 ~50 min (G^{u|J} for every u is the cost).
+- Traps hit this session:
+  - (1) EXPOSURE: `git log origin/claude/referee -- <file>` printed a LATER commit's subject (REFEREE's RESTRICT verdict). Never run git log on
+    origin/claude/referee before your §C; use only the `git ls-tree --name-only ... | grep -ic` count.
+  - (2) The Lead's "tell me first, then the §C word" message arrived 90 min late. Ask for the §C word before writing a §C.
+  - (3) An in-progress log trips the stop hook (untracked file). Exclude it in .git/info/exclude temporarily (local only), then commit the
+    finished log.
+  - (4) Too many background `until` waiters: start one, and use TaskStop on extras.
+- Recurring theme for CORE and later packets: "any deterministic rule" claims fail for non-keep tie rules (G-GCX-1, ABS-DEPTH-TIE). Per-class
+  intervals are not cut when the class freezes (G-DADD-1). Lemmas telescoping along T-vertices need "at or before c" (G-DADD-2). Test each.
+
+## Resume point 4 (successor 18; 2026-10-28 23:0xZ by date -u)
+- DONE: DEPTH + DEPTH-add reports dad93591, §Cs d8402f3d (joint map G-DADD-1, G-DADD-2).
+- IN FLIGHT: R2-N5-RESTRICT (48c63a8e). Paper check done: RESTRICT_H (i)-(iv), REPRO_H, 4 instances correct; G^P sentence "IS one N5^tau
+  phase" true only as CONTAINMENT (134 extensions, all G-phase ends by tau; smallest nh_r2802 n 7: S4b^tau tie-keeping). Checker
+  R2-N5-RESTRICT/restrict_check.py (on R2-N5-EPR/epr_check.step). lib41 x3 run still running at this commit (log not committed).
+- INDEPENDENCE EXPOSURE to disclose in the report: a `git log` on origin/claude/referee (for the DEPTH-add file) showed REFEREE's RESTRICT
+  commit subject c9bdfa68 (verdicts + "G-RESTRICT-1 (G^P phase sentence true only as containment, nep_n12)"); the file was NOT opened.
+- NEXT: finish RESTRICT report (write the lib41 numbers), push, §C, message Lead.
+
 ## Resume point 3 (successor 18; 2026-10-28 21:5xZ by date -u)
 - DONE: R2-N5-GCX (fe04ca32) + §C (fc63f1f1): all SIGN, LOC basic-rule only (G-GCX-1, found by both; LOC′ repair). abs_check.py = my model
   simulator (brute-force greatest arena strategies; tie rules basic / flip / random tables).

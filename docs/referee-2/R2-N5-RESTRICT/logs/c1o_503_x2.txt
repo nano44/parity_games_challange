@@ -1,0 +1,51 @@
+GP_EXTENDS docs/referee-2/R2-N5-SN/climb/om1_a_best.pg#0 phase 0 0 G ends by tau n 16
+GP_EXTENDS docs/referee-2/R2-N5-U1/climb/c_cex2_best.pg#0 phase 0 1 G ends by tau n 32
+GP_EXTENDS experiments/new/box28/out/nh_r2802.pg.pg#0 phase 0 0 G ends by tau n 7
+GP_EXTENDS experiments/new/box35/instances/pf_best_3623.pg#1 phase 2 2 G ends by tau n 48
+GP_EXTENDS experiments/new/box35/instances/pf_best_3623.pg#1 phase 3 5 G ends by tau n 48
+GP_EXTENDS experiments/new/box38/instances/nebc_cex_n14.pg#0 phase 0 0 G ends by tau n 14
+GP_EXTENDS experiments/red/so/instances/epsseg_cex_n16.pg#0 phase 0 0 G ends by tau n 16
+GP_EXTENDS experiments/red/so/instances/exitr_cex_n48.pg#0 phase 3 3 G ends by tau n 48
+GP_EXTENDS experiments/red/so/instances/njb_reabs65_n48.pg#1 phase 3 5 G ends by tau n 48
+GP_EXTENDS experiments/red/so/instances/post31_n48.pg#1 phase 2 6 G ends by tau n 48
+GP_EXTENDS experiments/red/so/instances/tevlast11_n40.pg#1 phase 2 3 G ends by tau n 40
+GP_EXTENDS experiments/red/xing/instances/j8_n32.pg#1 phase 1 1 G ends by tau n 32
+GP_EXTENDS experiments/red/xing/instances/u1t_cex_n32.pg#0 phase 8 8 G ends by tau n 32
+GP_EXTENDS experiments/red/xing/instances/u1t_cex_n32.pg#0 phase 11 11 G ends by tau n 32
+GP_EXTENDS experiments/si/coarse/instances/rel_j7_n48.pg#1 phase 3 6 G ends by tau n 48
+GP_EXTENDS experiments/si/coarse/instances/rel_x31_cu32i.pg#0 phase 3 3 G ends by tau n 32
+GP_EXTENDS experiments/si/coarse/instances/rel_x31_rx48.pg#1 phase 3 3 G ends by tau n 48
+GP_EXTENDS experiments/si/orlens/instances/lev_l_n28.pg#0 phase 1 2 G ends by tau n 28
+GP_EXTENDS experiments/si/orlens/instances/run_m_inr2.pg#1 phase 2 2 G ends by tau n 32
+GP_EXTENDS experiments/si/riselast/instances/rl_c.pg#0 phase 1 1 G ends by tau n 32
+MODE files ../R2-N5-KW/files.lst 2
+CTL_GP_bites: 2267
+CTL_GP_runs: 2376
+GE_REP_steps: 13734
+GE_RI_checks: 17831
+GE_instances: 7542
+GP_G_phase_ends_by_lambda: 2337
+GP_G_phase_ends_by_tau: 743
+GP_Hstops_at_y: 11
+GP_REP_steps: 13734
+GP_RIV_checks: 733
+GP_RI_checks: 17831
+GP_extends: 20
+GP_extends_G_by_tau: 20
+GP_instances: 4097
+GP_phase_end_checks: 3091
+GUJ_REP_steps: 13734
+GUJ_RIV_checks: 1617
+GUJ_RI_checks: 17831
+GUJ_instances: 4097
+GU_REP_steps: 13734
+GU_RIV_checks: 1617
+GU_RI_checks: 17831
+GU_instances: 4097
+QP_le1: 4097
+phases: 4097
+phases_ge2: 1159
+runs: 1006
+GP_extends_example: (48, 'experiments/new/box35/instances/pf_best_3623.pg#1', 2, 2, 'tau')
+max_QP: (1, 'docs/referee-2/R2-N5-1OA/logs/fl_n16_y1.pg#0', 0, 1, 20)
+RESULT OK violations=0
