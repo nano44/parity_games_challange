@@ -1,0 +1,60 @@
+GCI_chk 796
+GCI_ints 1267
+GCI_withgate 239
+H1_runs 1232
+H3_noncommon 1352
+MAX_GCI_len_minus_n1 0
+MAX_len_gate 17
+MAX_len_minus_n1 0
+PE_chk 8020
+PE_withgate 2369
+RUNS 1869
+SDA_chk 127896
+SDV_FAIL 3010
+SDV_GENW 3
+SDV_chk 168739
+SD_chk 3427
+SD_sharp 215
+SD_withgate 875
+skip_big 548
+EX ('SDV', '../R-N5-LP/df_cex.pg/2', 1, 2, 10, 1, 1)
+EX ('SDV', 'neb_logs/c1/best_911.pg/1', 2, 3, 9, 2, 1)
+EX ('SDV', 'neb_logs/c1/best_911.pg/1', 2, 3, 13, 2, 1)
+EX ('SDV', 'neb_logs/c1/best_911.pg/1', 2, 4, 9, 2, 1)
+EX ('SDV', 'neb_logs/c3/best_913.pg/1', 2, 3, 0, 2, 1)
+EX ('SDV', 'neb_logs/c3/best_913.pg/1', 2, 3, 6, 2, 1)
+EX ('SDV', 'neb_logs/c3/best_913.pg/1', 2, 3, 21, 2, 1)
+EX ('SDV', 'neb_logs/c3/best_913.pg/1', 2, 4, 0, 2, 1)
+EX ('SDV', 'neb_logs/c3/best_913.pg/1', 2, 4, 6, 2, 1)
+EX ('SDV', 'neb_logs/c3/best_913.pg/1', 2, 4, 21, 2, 1)
+EX ('SDV', '../../../experiments/alg/instances/dtl_deficit_n20.pg/0', 1, 2, 17, 1, 1)
+EX ('SDV', '../../../experiments/alg/instances/dtl_pertop28_n24.pg/0', 3, 4, 14, 3, 1)
+EX ('SDV', '../../../experiments/alg/instances/tp_ident_n20.pg/0', 2, 3, 13, 2, 1)
+EX ('SDV', '../../../experiments/alg/instances/tp_ident_n20.pg/0', 2, 4, 13, 2, 1)
+EX ('SDV', '../../../experiments/alg/instances/walk_s1_k1_n7_m10_3.pg/0', 0, 1, 3, 0, 1)
+EX ('SDV', '../../../experiments/dtl-bench/failures/count_r06005_min.pg/0', 0, 1, 2, 0, 1)
+EX ('SDV', '../../../experiments/dtl-bench/failures/count_r06005_min.pg/0', 0, 1, 15, 0, 1)
+EX ('SDV', '../../../experiments/dtl-bench/failures/count_r06005_min.pg/2', 1, 2, 2, 1, 1)
+EX ('SDV', '../../../experiments/dtl-bench/failures/count_r06005_min.pg/2', 1, 2, 15, 1, 1)
+EX ('SDV', '../../../experiments/n5-epoch/instances/ffin4_n24.pg/0', 1, 2, 14, 1, 1)
+EX ('SDV', '../../../experiments/n5-epoch/instances/ffin4_n24.pg/0', 1, 2, 15, 1, 1)
+EX ('SDV', '../../../experiments/n5-epoch/instances/ffin4_n24.pg/0', 1, 2, 17, 1, 1)
+EX ('SDV', '../../../experiments/n5-epoch/instances/ffin4_n24.pg/0', 1, 3, 3, 2, 2)
+EX ('SDV', '../../../experiments/n5-epoch/instances/ffin4_n24.pg/0', 1, 3, 15, 1, 1)
+EX ('SDV', '../../../experiments/n5-epoch/instances/ffin4_n24.pg/0', 1, 3, 17, 1, 1)
+EX ('SDV', '../../../experiments/n5-epoch/instances/ffin4_n24.pg/0', 1, 4, 3, 2, 2)
+EX ('SDV', '../../../experiments/n5-epoch/instances/ffin4_n24.pg/0', 1, 4, 5, 3, 3)
+EX ('SDV', '../../../experiments/n5-epoch/instances/ffin4_n24.pg/0', 1, 4, 15, 1, 1)
+EX ('SDV', '../../../experiments/n5-epoch/instances/ffin4_n24.pg/0', 1, 4, 17, 1, 1)
+EX ('SDV', '../../../experiments/n5-epoch/instances/ffin4_n24.pg/0', 1, 5, 3, 2, 2)
+EX ('SDV', '../../../experiments/n5-epoch/instances/ffin4_n24.pg/0', 1, 5, 5, 3, 3)
+EX ('SDV', '../../../experiments/n5-epoch/instances/ffin4_n24.pg/0', 1, 5, 12, 4, 4)
+EX ('SDV', '../../../experiments/n5-epoch/instances/ffin4_n24.pg/0', 1, 5, 15, 1, 1)
+EX ('SDV', '../../../experiments/n5-epoch/instances/ffin4_n24.pg/0', 1, 5, 17, 1, 1)
+EX ('SDV', '../../../experiments/n5-epoch/instances/ffin4_n24.pg/0', 1, 5, 22, 4, 4)
+EX ('SDV', '../../../experiments/n5-epoch/instances/ffin4_n24.pg/3', 2, 3, 15, 2, 1)
+EX ('SDV', '../../../experiments/n5-epoch/results/honclimb/ff_seed_j10.pg/0', 1, 2, 14, 1, 1)
+EX ('SDV', '../../../experiments/n5-epoch/results/honclimb/ff_seed_j10.pg/0', 1, 2, 15, 1, 1)
+EX ('SDV', '../../../experiments/n5-epoch/results/honclimb/ff_seed_j10.pg/0', 1, 2, 17, 1, 1)
+EX ('SDV', '../../../experiments/n5-epoch/results/honclimb/ff_seed_j10.pg/0', 1, 3, 3, 2, 2)
+done

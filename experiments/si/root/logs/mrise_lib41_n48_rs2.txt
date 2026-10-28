@@ -1,0 +1,8 @@
+# mrise.py --list experiments/new/box41/lib41.txt (NMAX=48, RS=2), 2026-10-26T19:17:17Z
+GATE_rise=3335 GATE_rise_repeat_ph=406 LR=12343 MR=58684 MR_IN_even=14707 MR_OUT_odd=43977 MULT_ph=11 MULT_run=7 PHASELEN_x100_over_n_max=259 RISES_max=37 RISES_minus_n_max_plus1000=1005 XIRISES_argmax_docs/referee/R-N5-L2/droplen_cex_n12.pg=1 XIRISES_argmax_experiments/n5-exhaustive/canonA_0.pg=2 XIRISES_argmax_experiments/n5-exhaustive/instances/b4_cyc6_1.pg=3 XIRISES_argmax_experiments/n5-exhaustive/instances/b5_n5_cyc4_0.pg=2 XIRISES_argmax_experiments/n5-exhaustive/instances/b5_os_n24.pg=11 XIRISES_argmax_experiments/n5-exhaustive/instances/b6_xl2_n32.pg=20 XIRISES_argmax_experiments/n5-exhaustive/instances/b6_xw_n32.pg=22 XIRISES_argmax_experiments/new/box25/instances/rtt16.pg=12 XIRISES_argmax_experiments/new/box25/instances/sc24.pg=20 XIRISES_argmax_experiments/new/box25/instances/sc32.pg=43 XIRISES_argmax_experiments/red/xing/instances/x31_rx32.pg=49 XIRISES_argmax_experiments/si/orlens/instances/lev_l_x.pg=51 XIRISES_max=51 XIRISES_x100_over_n_max=159 phases_mult=200
+EXAMPLE ('MULT', 'experiments/si/orlens/instances/lev_l_sc.pg', 8, 0, 19, 'OUT', 11, 32)
+EXAMPLE ('MULT', 'experiments/si/orlens/instances/lev_l_x.pg', 1, 0, 16, 'OUT', 11, 32)
+EXAMPLE ('MULT', 'experiments/red/xing/instances/j4_n40.pg', 3, 0, 20, 'OUT', 8, 40)
+EXAMPLE ('MULT', 'experiments/new/box35/instances/pf_best_3622.pg', 4, 0, 16, 'OUT', 7, 40)
+EXAMPLE ('MULT', 'experiments/red/so/instances/pft40_n40.pg', 7, 33, 31, 'OUT', 6, 40)
+EXAMPLE ('MULT', 'experiments/red/xing/instances/x31_cu32.pg', 6, 0, 18, 'OUT', 6, 32)

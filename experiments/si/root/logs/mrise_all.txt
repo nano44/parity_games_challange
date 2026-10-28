@@ -1,0 +1,8 @@
+# mrise.py --list root/logs/alt_all.lst (NMAX=600), 2026-10-26T19:17:17Z
+GATE_rise=3863 GATE_rise_repeat_ph=1130 LR=5632 MR=53832 MR_IN_even=15017 MR_OUT_odd=38815 MULT_ph=9 MULT_run=4 PHASELEN_x100_over_n_max=337 RISES_max=67 RISES_minus_n_max_plus1000=1027 XIRISES_argmax_n5-epoch/instances/ffin12_n32.pg=9 XIRISES_argmax_n5-epoch/instances/ffin4_n24.pg=8 XIRISES_argmax_n5-epoch/instances/lend107_n32.pg=18 XIRISES_argmax_n5-epoch/instances/nconf61_n48.pg=50 XIRISES_argmax_n5-epoch/instances/nep56_n32.pg=48 XIRISES_argmax_n5-epoch/instances/nep76_n40.pg=62 XIRISES_argmax_n5-epoch/instances/nep92_n40.pg=72 XIRISES_max=75 XIRISES_x100_over_n_max=180 phases_mult=110
+EXAMPLE ('MULT', 'n5-epoch/instances/nep94_n48.pg', 4, 45, 35, 'OUT', 9, 48)
+EXAMPLE ('MULT', 'n5-epoch/instances/ret14_n48.pg', 4, 8, 38, 'OUT', 9, 48)
+EXAMPLE ('MULT', 'n5-epoch/instances/nep76_n40.pg', 9, 0, 23, 'OUT', 8, 40)
+EXAMPLE ('MULT', 'new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.pg', 5, 0, 39, 'OUT', 8, 64)
+EXAMPLE ('MULT', 'new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.pg', 5, 69, 52, 'OUT', 8, 80)
+EXAMPLE ('MULT', 'new/box48/out/qpcclimb/scale/snap_n80_s62.pg', 5, 69, 52, 'OUT', 8, 80)

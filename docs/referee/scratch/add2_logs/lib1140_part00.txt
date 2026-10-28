@@ -1,0 +1,22 @@
+AF_chk 53460
+CC2_chk 1638
+FTC_chk 1565
+FTZ_MAX 7
+FT_chk 358
+MAX_FT 22
+PFSI_chk 2621
+PF_chk 2621
+PF_tied 138
+RUNS 743
+SA2_chk 6929
+SA2_cycle_chk 381
+SIAGREE_chk 4726
+SUM_CYC 216
+SUM_FT 488
+SUM_ZC 20
+SUM_ZC2 7
+TC_STRICT 12
+TC_chk 2362
+ZC2F_chk 7
+skip_big 39
+done

@@ -1,0 +1,48 @@
+GE_EXITLAM 59
+GE_R4chk 387
+GE_REPchk 846
+GE_REPtrans 1719
+GE_Rchk 2003
+GE_UNLESSchk 106
+GE_runs 846
+GP_EXT 4
+GP_EXT_ex 3
+GP_EXTchk 284
+GP_R4chk 612
+GP_REPchk 284
+GP_REPtrans 1719
+GP_Rchk 2003
+GP_runs 284
+GUJ_EXITLAM 296
+GUJ_R4chk 2916
+GUJ_REPchk 3972
+GUJ_REPtrans 7512
+GUJ_Rchk 9247
+GUJ_UNLESSchk 547
+GUJ_runs 3972
+GU_EXITLAM 65
+GU_R4chk 335
+GU_REPchk 1117
+GU_REPtrans 2526
+GU_Rchk 3466
+GU_runs 1117
+MAX_NQ 19
+MAX_QP 13
+MAX_XDEG 24
+RH_R4chk 730
+RH_REPchk 284
+RH_REPtrans 1719
+RH_Rchk 2003
+RH_runs 284
+RUNS 743
+inphase_trans 1719
+longph_ex 1
+phases 284
+phases_QP2 104
+phases_QP_lt_NQ 205
+skip_big 39
+EX ('GP_EXT', '../../../experiments/n5-epoch/instances/nep13_n24.pg/0', 11, 12)
+EX ('LONGPHASE', '../../../experiments/n5-epoch/instances/nep76_n40.pg/0', 9, 87, 'QP', 5, 'NQ', 5, 'XDEG', 24)
+EX ('GP_EXT', '../../../experiments/n5-epoch/instances/nep76_n40.pg/3', 5, 6)
+EX ('GP_EXT', '../../../experiments/n5-epoch/results/climb/nep_n12.pg/0', 0, 1)
+done
