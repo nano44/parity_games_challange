@@ -110,7 +110,7 @@ counterexample); PROVED under (R), which the dual-optimal start gives on any τ-
 (R) holds); the XR-LIN kill does not depend on invariance.
 NEEDS: Lead: route G-READ-1 and READ-N1..N3 to L-SI (the §8 statement should carry (R)); nothing from the owner.
 
-## 6. Comparison with L-COMP's independent reproduction (written 2026-10-28T22:12Z by date -u; opened after this report was pushed at e83fd19d)
+## 6. Comparison with L-COMP's independent reproduction (written 2026-10-28T22:10Z by date -u; opened after this report was pushed at e83fd19d)
 L-COMP successor 6, experiments/xr-lin/ (l-comp eabb3018; README.md, repro.out), engine n5b.py (SPEC), Oink zlk and verify on both games.
 | item | REFEREE (rl_engine) | L-COMP (n5b.py) |
 | --- | --- | --- |
