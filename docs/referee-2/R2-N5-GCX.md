@@ -139,3 +139,43 @@ Model side (abs_check.py, logs/abs_acyclic.txt, logs/abs_cyclic.txt):
   is a handful of long intervals: index/threshold at most 0.45 (x32_waves48 21/47, reader_L40 40/95).
 - N-GCX-5 (independence). The brief named R91 and R93. I read R91's report to confirm that UL_G is untouched; R93 (C-ONCE_X) concerns no
   to-sign item and I did not open it.
+
+## §C. Comparison with REFEREE (R-N5-GCX, claude/referee e01bdec6, file sha1 d05a94f5; successor 16), written 2026-10-28 21:33Z (date -u), after my report was pushed (fe04ca32)
+### C1. Verdicts
+Identical item by item:
+- MIG-SPLIT with its Consequence: SIGN.
+- UL-RED: SIGN as an implication from UL_G, under the transition-local reading of "global C-interval".
+- ABS-HEIGHT, ABS-TIE: SIGN.
+- LOC: SIGN for the basic (keep-current) rule; the clause "any deterministic rule" is FALSE. Both of us call this G-GCX-1, and both
+  counterexamples are the same one-vertex model: terminals with h 0 / 1 / 2 and T 0 / 5 / 5, a rule that leaves the current maximiser,
+  and v changes at step 1 → 2 with all successors constant.
+- Remarks: CORRECT / CHECKED.
+Repairs:
+- REFEREE: restrict LOC to KEEP rules, or to current-independent rules that are consistent under contraction.
+- Mine: LOC′, valid for every deterministic rule, which adds the alternative "or s_{t+1}(v) ≠ s_t(v)".
+The repairs are compatible. Theirs keeps LOC's conclusion for a class of rules; mine weakens the conclusion for all rules. The fixes file
+can state both.
+JOINT GAP MAP: one gap, G-GCX-1, found by both independently; no other gap.
+### C2. Notes
+| REFEREE | mine | status |
+| --- | --- | --- |
+| GCX-N1 (transition-local reading of global C-interval; under the interval-level reading UL-RED (a)'s count step FAILS: long121_n40, S = [31, 37], two overlapping maximal intervals, K = 0) | N-GCX-2 (same point; no instance) | agree; REFEREE's instance makes it concrete. The reading matters for the proof, not just the wording |
+| GCX-N2 (u′ ∈ U_c in the Consequence: cite R62 (b) TC-CLASS; "follow τ, constant on the phase") | N-GCX-1 (u′ ∈ U_c, with a one-clause proof: honest and W-play agree up to the first D-vertex) | agree; my clause is TC-CLASS's content in this case, so either a citation or the clause |
+| (M2) "(z included)" is needed (R93's cxmig_k: the switcher is z itself); (M3) take the FIRST switching w | my data: cxmig_k4/8/16 all 4 / 8 / 16 migrations case (S) only; I did not test z's exclusion | agree (data-backed by REFEREE's MUT=2) |
+| GCX-N3 (the §5 READING's h_u constancy follows from FREEZE-A (b) plus constant Δ) | not reviewed by me (READING) | noted, not checked by me |
+| GCX-N4 (MONO's N-half needs "pointwise maximal" = pointwise GREATEST) | I read it as greatest (dominates every valid arena strategy) in §1.3 without saying so | agree |
+| GCX-N5 (ABS-HEIGHT's bound attained; ABS-TIE needed for general rules) | my data: max (fix − height) 0 basic, 1 for others | agree |
+| — | N-GCX-3 (ABS-TIE: constant from t + deg(v) − 1) | mine. REFEREE counts "≤ 1 + (deg(v) − 1)" changes and t + deg(v), which is the packet's bound. Each change strictly shrinks an arena of size ≤ deg(v), so ≤ deg(v) − 1 changes. A sharpening only; no verdict depends on it |
+| — | N-GCX-4 (thin data), N-GCX-5 (independence: R91 read, R93 not) | mine; REFEREE also re-measured R91 and R93 and found that neither touches a signed item, as I did for R91 |
+### C3. Data
+The two engines agree where they overlap:
+- reader_L10/20/40 U event at index L in [0, L + 1];
+- nep90/nep76 migrations all case (L);
+- cxmig_k all case (S);
+- UL_G held in every run for both of us;
+- 0 failures of every signed check;
+- LOC's failures only for non-keep rules, in both simulators.
+### C4. Result
+No disagreement on any verdict. Joint gap map: G-GCX-1 (LOC's "any deterministic rule"), with the two compatible repairs. Notes to L-SI's
+fixes file: GCX-N1..N5 (REFEREE), N-GCX-1 = GCX-N2, N-GCX-2 = GCX-N1, N-GCX-3, N-GCX-4 (mine). My verdicts are unchanged. REFEREE-2
+successor 18 (Opus 5.5, D15).
