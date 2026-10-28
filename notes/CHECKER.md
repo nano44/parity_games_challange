@@ -5,7 +5,7 @@ History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50
 - Handover check a91364bb (verify PASS). C83 Add. 1 was already done by successor 11 (4f494319, 22:09Z, after its handover); re-verified, PASS.
 - C84 = R75 (OFFMONO unit, draft 0cd2d4ab @ 6a3ab173): main report docs/checker/C84.md, FAIL E-1 (title: PF-CHOICE minimises over A_t ∪ {c}, not
   "path-free options"; FT-COUNT bounds TRANSITIONS), E-2 (honest limit (ii): REFEREE R-N5-READER e83fd19d says READER-INVARIANCE is false
-  unconditionally and PROVED under (R)). N-1..N-4. Re-runs 6/6 identical. C84 Add. 1 PASS (f1480206 @ 4eb5cbfb). C84 Add. 2: R75 landed e3bd64e3, PASS, CLOSED. Append-only re-check of C74-C83 DONE (e8aee102: one C81 wording discrepancy). C85-C87 briefed 23:10Z (drafts at trunk 49d9d5ee; landing order R76 → R77 → R78). C85 main report written. NEXT: C86, C87. C83 CLOSED (Add. 2: R74 landed 41ad61ca, PASS).
+  unconditionally and PROVED under (R)). N-1..N-4. Re-runs 6/6 identical. C84 Add. 1 PASS (f1480206 @ 4eb5cbfb). C84 Add. 2: R75 landed e3bd64e3, PASS, CLOSED. Append-only re-check of C74-C83 DONE (e8aee102: one C81 wording discrepancy). C85-C87 briefed 23:10Z (drafts at trunk 49d9d5ee; landing order R76 → R77 → R78). C85 FAIL E-1 (ff0f970c), C86 PASS (0f71e023), C87 PASS (see table). NEXT: C85 Add. 1 on the revised R76; landed checks R76 → R77 → R78. C83 CLOSED (Add. 2: R74 landed 41ad61ca, PASS).
 - METHOD FIX: the append-only test is `git diff A B -- F | grep -E '^-' | grep -vc '^--- '`. The old `grep -c '^-[^-]'` misses deleted markdown
   bullets ("-- …").
 - Re-run commands (C84): REFEREE @04a563d3 docs/referee/scratch: `RANDSTARTS=4 python3 -I offmono_probe.py rand 3000 6 22 8 551` (rand1),
@@ -25,8 +25,8 @@ History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50
   | C83 | R74 (P-N5-ROOT + add) | e8f747f4 (FAIL E-1 title, 4 clauses; N-1 P1 derived uses) | Add. 1 PASS 4f494319 (369444d1 @ 33f43c20; re-verified by succ. 12 in a91364bb) | 41ad61ca | Add. 2 PASS (this commit); CLOSED |
   | C84 | R75 (OFFMONO unit) | 87e658cb (FAIL E-1 title: PF-CHOICE option set drops c, FT-COUNT counts transitions; E-2 (ii) READER status stale; N-1..N-4) | — | — | — |
   | C85 | R76 (P-N5-GCX) | ff0f970c (FAIL E-1 title "only for" keep rules; N-1 P2, N-2) | — | — | — |
-  | C86 | R77 (P-N5-DEPTH) | this commit (PASS; lands after R76) | — | — | — |
-  | C87 | R78 (P-N5-DEPTH-add) | queued | — | — | — |
+  | C86 | R77 (P-N5-DEPTH) | 0f71e023 (PASS; lands after R76) | — | — | — |
+  | C87 | R78 (P-N5-DEPTH-add) | this commit (PASS; Lead reading on the Count checked; lands after R77) | — | — | — |
 - Handover check (successor 11 section in docs/agents/handover-checks/CHECKER.md): f2f24639.
 - C83: Add. 1 PASS on 369444d1 @ 33f43c20 (successor 11). NEXT: the landed check (§8) when R74 lands. (Old plan, done: Addendum 1 = script-check the four E-1 replacements of C83 §6 and N-1 (§7) in new / old
   drafts, word-diff 87897968 → new, pins again (no re-run if text only). Then the landed check (§8).
