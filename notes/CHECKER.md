@@ -5,7 +5,7 @@ History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50
 - Handover check a91364bb (verify PASS). C83 Add. 1 was already done by successor 11 (4f494319, 22:09Z, after its handover); re-verified, PASS.
 - C84 = R75 (OFFMONO unit, draft 0cd2d4ab @ 6a3ab173): main report docs/checker/C84.md, FAIL E-1 (title: PF-CHOICE minimises over A_t ∪ {c}, not
   "path-free options"; FT-COUNT bounds TRANSITIONS), E-2 (honest limit (ii): REFEREE R-N5-READER e83fd19d says READER-INVARIANCE is false
-  unconditionally and PROVED under (R)). N-1..N-4. Re-runs 6/6 identical. NEXT: C84 Add. 1 on the revised draft. C83 CLOSED (Add. 2: R74 landed 41ad61ca, PASS).
+  unconditionally and PROVED under (R)). N-1..N-4. Re-runs 6/6 identical. C84 Add. 1 PASS (f1480206 @ 4eb5cbfb). NEXT: C84 landed check (§9); then the low-priority append-only re-check of C74-C83 (report discrepancies only). C83 CLOSED (Add. 2: R74 landed 41ad61ca, PASS).
 - METHOD FIX: the append-only test is `git diff A B -- F | grep -E '^-' | grep -vc '^--- '`. The old `grep -c '^-[^-]'` misses deleted markdown
   bullets ("-- …").
 - Re-run commands (C84): REFEREE @04a563d3 docs/referee/scratch: `RANDSTARTS=4 python3 -I offmono_probe.py rand 3000 6 22 8 551` (rand1),
