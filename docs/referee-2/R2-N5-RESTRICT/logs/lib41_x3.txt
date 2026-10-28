@@ -1,0 +1,75 @@
+GP_EXTENDS experiments/new/box29/instances/u1_n32.pg#2 phase 1 1 G ends by tau n 32
+GP_EXTENDS experiments/new/box35/instances/pf_best_3623.pg#1 phase 2 5 G ends by tau n 48
+GP_EXTENDS experiments/new/box35/instances/pf_best_3623.pg#2 phase 4 9 G ends by tau n 48
+GP_EXTENDS experiments/new/box38/instances/nebc_cex_n14.pg#0 phase 0 0 G ends by tau n 14
+GP_EXTENDS experiments/new/box38/instances/nebc_cex_n14.pg#2 phase 0 0 G ends by tau n 14
+GP_EXTENDS experiments/red/carry/instances/kin_viol_n29.pg#1 phase 2 2 G ends by tau n 29
+GP_EXTENDS experiments/red/carry/instances/meet_viol_n29.pg#1 phase 4 4 G ends by tau n 29
+GP_EXTENDS experiments/red/carry/instances/meet_viol_n29.pg#1 phase 5 5 G ends by tau n 29
+GP_EXTENDS experiments/red/carry/instances/meet_viol_n29.pg#2 phase 4 4 G ends by tau n 29
+GP_EXTENDS experiments/red/kl/instances/klglobal_n18_lvl.pg#1 phase 4 4 G ends by tau n 18
+GP_EXTENDS experiments/red/n5/instances/sym_h16_s1.pg#2 phase 1 1 G ends by tau n 32
+GP_EXTENDS experiments/red/n5/instances/sym_h8_s1.pg#0 phase 12 12 G ends by tau n 16
+GP_EXTENDS experiments/red/n5/instances/sym_h8_s1.pg#0 phase 13 13 G ends by tau n 16
+GP_EXTENDS experiments/red/so/instances/epsseg_cex_n16.pg#0 phase 0 0 G ends by tau n 16
+GP_EXTENDS experiments/red/so/instances/exitr_cex_n48.pg#0 phase 3 3 G ends by tau n 48
+GP_EXTENDS experiments/red/so/instances/exitr_cex_n48.pg#1 phase 3 4 G ends by tau n 48
+GP_EXTENDS experiments/red/so/instances/njb_reabs65_n48.pg#1 phase 2 4 G ends by tau n 48
+GP_EXTENDS experiments/red/so/instances/pft40_n40.pg#1 phase 4 9 G ends by tau n 40
+GP_EXTENDS experiments/red/so/instances/pft40_n40.pg#2 phase 4 9 G ends by tau n 40
+GP_EXTENDS experiments/red/so/instances/post31_n48.pg#1 phase 1 1 G ends by tau n 48
+GP_EXTENDS experiments/red/so/instances/post31_n48.pg#1 phase 8 9 G ends by tau n 48
+GP_EXTENDS experiments/red/tcpert/instances/tcL_N10.pg#0 phase 11 11 G ends by tau n 350
+GP_EXTENDS experiments/red/tcpert/instances/tcL_N10.pg#2 phase 8 8 G ends by tau n 350
+GP_EXTENDS experiments/red/tcpert/instances/tcL_N10.pg#2 phase 17 17 G ends by tau n 350
+GP_EXTENDS experiments/red/tcpert/instances/tcL_N12.pg#0 phase 29 29 G ends by tau n 492
+GP_EXTENDS experiments/red/tcpert/instances/tcL_N12.pg#1 phase 22 22 G ends by tau n 492
+GP_EXTENDS experiments/red/tcpert/instances/tcL_N3.pg#0 phase 4 4 G ends by tau n 42
+GP_EXTENDS experiments/red/tcpert/instances/tcR4_N4.pg#0 phase 7 7 G ends by tau n 68
+GP_EXTENDS experiments/red/tcpert/instances/tcR4_N5.pg#2 phase 8 8 G ends by tau n 100
+GP_EXTENDS experiments/red/tcpert/instances/tcR4_N5.pg#2 phase 9 9 G ends by tau n 100
+GP_EXTENDS experiments/red/tcpert/instances/tcR4_N6.pg#0 phase 11 11 G ends by tau n 138
+GP_EXTENDS experiments/red/tcpert/instances/tcR4_N6.pg#0 phase 12 12 G ends by tau n 138
+GP_EXTENDS experiments/red/tcpert/instances/tcR4_N6.pg#2 phase 12 12 G ends by tau n 138
+GP_EXTENDS experiments/red/tcpert/instances/tcS8_N9.pg#0 phase 12 12 G ends by tau n 288
+GP_EXTENDS experiments/red/tcpert/instances/tcS8_N9.pg#0 phase 13 13 G ends by tau n 288
+GP_EXTENDS experiments/red/tcpert/instances/tcS8_N9.pg#0 phase 20 23 G ends by tau n 288
+GP_EXTENDS experiments/red/xing/instances/j7_n32.pg#2 phase 2 2 G ends by tau n 32
+GP_EXTENDS experiments/red/xing/instances/u1t_cex_n32.pg#0 phase 8 8 G ends by tau n 32
+GP_EXTENDS experiments/red/xing/instances/u1t_cex_n32.pg#0 phase 11 11 G ends by tau n 32
+GP_EXTENDS experiments/si/coarse/instances/rel_x31_cu32i.pg#0 phase 3 3 G ends by tau n 32
+GP_EXTENDS experiments/si/coarse/instances/rel_zcl_rx_n32.pg#2 phase 2 2 G ends by tau n 32
+GP_EXTENDS experiments/si/orlens/instances/lev_l_n28.pg#0 phase 1 2 G ends by tau n 28
+MODE files ../R2-N5-STAU/lib41_noref.lst 3
+CTL_GP_bites: 4930
+CTL_GP_runs: 5300
+GE_REP_steps: 12361
+GE_RIV_checks: 90
+GE_RI_checks: 19521
+GE_instances: 10700
+GP_G_phase_ends_by_lambda: 2145
+GP_G_phase_ends_by_tau: 3767
+GP_Hstops_at_y: 18
+GP_REP_steps: 12361
+GP_RIV_checks: 1647
+GP_RI_checks: 19521
+GP_extends: 42
+GP_extends_G_by_tau: 42
+GP_instances: 7160
+GP_phase_end_checks: 5930
+GUJ_REP_steps: 24937
+GUJ_RIV_checks: 5473
+GUJ_RI_checks: 211664
+GUJ_instances: 195572
+GU_REP_steps: 14401
+GU_RIV_checks: 1912
+GU_RI_checks: 30548
+GU_instances: 16550
+QP_ge2: 3199
+QP_le1: 3961
+phases: 7160
+phases_ge2: 1115
+runs: 1230
+GP_extends_example: (492, 'experiments/red/tcpert/instances/tcL_N12.pg#0', 29, 29, 'tau')
+max_QP: (129, 'experiments/red/tcpert/instances/tcS8_N11.pg#2', 0, 0, 418)
+RESULT OK violations=0
