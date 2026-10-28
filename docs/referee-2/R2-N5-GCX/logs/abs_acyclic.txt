@@ -1,0 +1,12 @@
+MODE random 30000 2 7 2101 0
+LOCFAIL_flip: 43
+LOCFAIL_rand: 82
+LOC_events_basic: 3586
+LOC_events_flip: 3658
+LOC_events_rand: 10961
+NORET_checks: 273
+max_fix_over_height_basic: 0
+max_fix_over_height_flip: 1
+max_fix_over_height_rand: 1
+runs: 150000
+RESULT OK violations=0

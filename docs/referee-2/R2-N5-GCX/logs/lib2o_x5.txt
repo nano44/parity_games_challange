@@ -1,0 +1,20 @@
+MODE files ../R2-N5-ROOT/lib2o_noref.lst 5
+CHU_checks: 3395
+C_cuts: 82
+C_intervals: 161
+ENGXI_checks: 1467
+MIGC_checks: 2
+MIG_caseL: 2
+MIG_checks: 2
+S_runs: 123
+S_transitions: 716
+ULa_checks: 123
+U_events: 33
+U_in_interval: 19
+runs: 205
+states: 1467
+max_U_index_in_interval: (3, 'experiments/red/n5inj/instances/returns_rt32.pg#2', 11, 15, 14, 6, 28, 32)
+max_U_over_bound_a: (0.0024, 'experiments/new/box21/instances/fts_ph16.pg#0', 3, 1235, 5)
+max_Xu: (1, 'experiments/new/box44/instances/fb17_n32.pg#0', 18, 11, 1, 2)
+max_coarseW_changes: (5, 'experiments/new/box21/instances/fts_best24.pg#0', 2, 3)
+RESULT OK violations=0

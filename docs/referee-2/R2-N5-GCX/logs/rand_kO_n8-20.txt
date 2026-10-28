@@ -1,0 +1,16 @@
+MODE random 1500 8 20 2113 0 3
+CHU_checks: 7584
+C_cuts: 72
+C_intervals: 478
+ENGXI_checks: 13699
+S_runs: 539
+S_transitions: 574
+ULa_checks: 539
+U_events: 1
+U_in_interval: 1
+runs: 4500
+states: 13699
+max_U_index_in_interval: (0, 'random2113:1208#2', 3, 5, 3, 0, 7, 20)
+max_U_over_bound_a: (0.0026, 'random2113:1208#2', 1, 390, 1)
+max_coarseW_changes: (1, 'random2113:21#2', 0, 0)
+RESULT OK violations=0

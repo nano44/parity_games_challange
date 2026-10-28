@@ -1,0 +1,13 @@
+seed score (-21, 108, -32) k 3 n 32
+step 8 score (-19, 97, -32) n 32
+step 45 score (-18, 79, -32) n 32
+step 76 score (-17, 76, -32) n 32
+step 219 score (-16, 64, -32) n 32
+step 735 score (-15, 41, -31) n 31
+step 1344 score (-14, 40, -31) n 31
+step 1412 score (-13, 42, -31) n 31
+step 1530 score (-9, 42, -31) n 31
+step 1545 score (-8, 42, -30) n 30
+step 1599 score (-7, 43, -30) n 30
+step 1752 score (-6, 44, -30) n 30
+final (-6, 45, -30)

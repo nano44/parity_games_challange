@@ -1,0 +1,18 @@
+MODE random 3000 6 16 2111 2 3
+CHU_checks: 14736
+C_cuts: 131
+C_intervals: 1110
+ENGXI_checks: 22470
+MIGC_checks: 1
+MIG_caseL: 1
+MIG_checks: 1
+S_runs: 1232
+S_transitions: 1286
+ULa_checks: 1232
+U_events: 0
+runs: 9000
+states: 22470
+max_U_over_bound_a: (0.0, 'random2111:0#0', 0, 50, 0)
+max_Xu: (1, 'random2111:1752#0', 15, 7, 1, 1)
+max_coarseW_changes: (1, 'random2111:13#0', 3, 0)
+RESULT OK violations=0

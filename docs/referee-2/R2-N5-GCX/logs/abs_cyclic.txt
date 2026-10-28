@@ -1,0 +1,11 @@
+MODE random 30000 2 6 2102 1
+LOCFAIL_flip: 11
+LOCFAIL_rand: 30
+LOC_events_basic: 2987
+LOC_events_flip: 3014
+LOC_events_rand: 9075
+NOPT: 4285
+NORET_checks: 431
+invalid_start: 9730
+runs: 97065
+RESULT OK violations=0

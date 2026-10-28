@@ -23,6 +23,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
 - XR-LIN DEAD (N5-ALT §8): Odd READER vertex (no predecessors, priority 0) on long121_n40, run SAME (orcheck.py), XR(o) = 86 > 82. Readers
   also inflate K (53 -> 73 with 6 readers), ALT, (G1), EXIT_x: these counts are not intrinsic. Next target must be reader-invariant
   (Even switches per Even vertex per phase; Xi-changes of vertices with an Even predecessor). Even readers would block fallbacks: not used.
+- SW-LIN DEAD (N5-ALT §10): swclimb.py round 2 seed 6 -> swlin_kill_n26 (Even 19: 27 switches > 26 in one phase; 6 fallbacks re-arm its
+  option cycle). Cross-checked with L-COMP's n5b spec mode via n5bcmp.py (imports n5-second/n5b.py, uses its trace hook; identical states).
+  CONJECTURE SW-RUN (per fallback-free run; data max 14 lib41, 48 = deg − 1 on ladderd0_k48). Climb outputs in experiments/si/root/out/.
 - Things only I know: rows() is fast on re-runs (n5x caches?); gateret's lib41 run at NMAX=34 (first try) differs from the NMAX=48 log, use the log.
 
 ## HANDOVER (successor 18, box 22; written 2026-10-26T18:40Z (date -u); session_01DKVF647UmtYFEEQNiRgoH2)
