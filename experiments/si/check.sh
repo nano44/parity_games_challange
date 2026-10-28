@@ -302,3 +302,7 @@ echo "root (box 23 §8: XR-LIN dead on l121reader_n41, run unchanged; six reader
 o=$(python3 -I root/n5bcmp.py root/instances/swlin_kill_n26.pg root/instances/swlin_kill_n26.start)
 grep -q "identical state sequences: True" <<<"$o"; grep -q "switching 27 times; n = 26; > n: True" <<<"$o"
 echo "root (box 23 §10: SW-LIN dead on swlin_kill_n26, n5b agrees): PASS"
+# box 23 §12: an Even reader on long121_n40 (l121ereader_n41) leaves the run SAME (fallbacks included) and switches 16 times in phase [1, 122]
+# (base maximum 12).
+python3 -I root/ereader.py ../new/box48/instances/long121_n40.pg ../new/box48/instances/long121_n40.start 1,10,13,14,16,17,20,23,30,31,32,34,38 30 | grep -q "^SAME .* (16, 3, (1, 122))"
+echo "root (box 23 §12: Even reader on long121 clean, 16 switches > base 12): PASS"

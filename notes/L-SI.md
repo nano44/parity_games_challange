@@ -26,6 +26,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
 - SW-LIN DEAD (N5-ALT §10): swclimb.py round 2 seed 6 -> swlin_kill_n26 (Even 19: 27 switches > 26 in one phase; 6 fallbacks re-arm its
   option cycle). Cross-checked with L-COMP's n5b spec mode via n5bcmp.py (imports n5-second/n5b.py, uses its trace hook; identical states).
   CONJECTURE SW-RUN (per fallback-free run; data max 14 lib41, 48 = deg − 1 on ladderd0_k48). Climb outputs in experiments/si/root/out/.
+- Lead 21:27Z: REFEREE's DEPTH-add report f4b54c43: G-DADD-1 (PURE-LEN false as stated; pure_22 sha1 f7ba3897 at S3, class 10, [23, 33] length 10
+  vs bound 4; repair: bound the LAST Even switch of U_c), G-DADD-2 (MONO-REF false when m lies after c; frzh3n_701_best sha1 6de40c62 at S3, t = 1;
+  repair: m at or before the first visit of c); notes DADD-N1..N3. DEPTH (549c7fb7): REFEREE 1d74c963 signs all, notes DEPTH-N1..N4 (N2: ABS-DEPTH-TIE
+  false for general rules). NO fixes files until REFEREE-2 has reviewed. My N5-ALT core (§11) uses none of MONO-REF / PURE-LEN / GATE-PUSH / E-ONEWAY.
 - Things only I know: rows() is fast on re-runs (n5x caches?); gateret's lib41 run at NMAX=34 (first try) differs from the NMAX=48 log, use the log.
 
 ## HANDOVER (successor 18, box 22; written 2026-10-26T18:40Z (date -u); session_01DKVF647UmtYFEEQNiRgoH2)
