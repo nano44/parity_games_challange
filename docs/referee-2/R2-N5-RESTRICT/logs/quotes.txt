@@ -1,0 +1,9 @@
+FOUND 08abd9cb:docs/new/P-N5-EPR-box45.md l.56-56 | Every Odd strategy of G′_E is one of G (G′_E's edges are G's).
+FOUND 08abd9cb:docs/new/P-N5-EPR-box45.md l.57-58 | Lemma S (a) on G′_E: Ξ′_k ⊴ V_{σ_k,σ̄_E} = Ξ_k, since σ̄_E is an Odd strategy of G′_E and σ̄_k = σ̄_
+FOUND 08abd9cb:docs/new/P-N5-EPR-box45.md l.59-60 | W: G_τ and (G′_E)_τ are the same one-player game (every Odd v keeps τ(v), which is an edge of G′_E),
+FOUND 08abd9cb:docs/new/P-N5-EPR-box45.md l.61-61 | Iσ (S2) is read from Ξ and Even's successor lists, both unchanged by (i).
+FOUND 08abd9cb:docs/new/P-N5-EPR-box45.md l.62-62 | is the same game for G and G′_E
+FOUND 08abd9cb:docs/new/P-N5-EPR-box45.md l.62-63 | reads Iσ, Ξ and vertex indices only
+FOUND 08abd9cb:docs/new/P-N5-EPR-box45.md l.64-64 | S1 on G^d for τ runs on the graph in which τ's owner (Odd) keeps only τ and Even keeps all its edges
+FOUND 08abd9cb:docs/new/P-N5-EPR-box45.md l.69-70 | every Odd strategy of it is one of H′_G, and τ is one of them
+quotes 8 found 8 missing 0

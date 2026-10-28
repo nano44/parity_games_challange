@@ -2,7 +2,7 @@
 """L-RED successor 23: hill climb for super-linear XR (docs/si/N5-ALT-box23.md §6 item 1, CONJECTURE XR-LIN) at k = 1 (exactly one Odd
 vertex of out-degree >= 2), S3 start. Fitness = max over vertices z and phases P of XR_P(z); a phase = maximal stretch with tau and both
 cycle-node maps (Xi_sigma, Xi_tau) constant. Mutations: L-NEW's experiments/new/box21/climb_fix.py mutate (read-only).
-Usage: xrclimb.py SEED.pg N seed secs OUT.pg [--clone] [--sw: fitness SW*1000 + PL (phsw.py)] [--kmax K] [--start FILE: fixed start pair, invalid entries fall back to S3]   (pads SEED to N vertices with random Even vertices; writes the best game to OUT.pg)"""
+Usage: xrclimb.py SEED.pg N seed secs OUT.pg [--clone] [--sw: fitness SW*1000 + PL (phsw.py)] [--pl: fitness PL*1000 + fallbacks in that phase] [--kmax K] [--start FILE: fixed start pair, invalid entries fall back to S3]   (pads SEED to N vertices with random Even vertices; writes the best game to OUT.pg)"""
 import sys, os, time, random
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.join(HERE, "..", "..", "..")
 sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(ROOT, "experiments", "new", "box21"))
@@ -10,6 +10,7 @@ import trace as T
 from climb_fix import mutate
 
 SWFIT = "--sw" in sys.argv
+PLFIT = "--pl" in sys.argv
 START = T.readstart(sys.argv[sys.argv.index("--start") + 1]) if "--start" in sys.argv else None
 def vstart(G):
     if START is None: return ({}, {})
@@ -20,6 +21,12 @@ def xrfit(G, cap=4000):
     if any(not s for s in succ): return -1
     kk = sum(1 for v in range(n) if owner[v] == 1 and len(set(succ[v])) > 1)
     if kk < 1 or kk > KMAX: return -1
+    if PLFIT:
+        import phsw
+        g = T.pg.Game(list(prio), list(owner), [sorted(set(s)) for s in succ])
+        try: PL, FB = phsw.plfb(g, vstart(G), cap=cap)
+        except Exception: return -1
+        return PL * 1000 + FB
     if SWFIT:
         import phsw
         g = T.pg.Game(list(prio), list(owner), [sorted(set(s)) for s in succ])
@@ -80,7 +87,7 @@ def main():
         H = clone(rng, best[1], n0) if (CLONE and rng.random() < 0.15) else mutate(rng, best[1])
         fh = xrfit(H)
         if fh >= best[0]:
-            if fh > best[0]: print("%.0fs it %d fit %d (%.2fn)" % (time.time() - t0, it, fh, (fh % 1000 if SWFIT else fh) / N), flush=True); save(H, out)
+            if fh > best[0]: print("%.0fs it %d fit %d (%.2fn)" % (time.time() - t0, it, fh, (fh % 1000 if SWFIT else (fh // 1000 if PLFIT else fh)) / N), flush=True); save(H, out)
             best = (fh, H)
     save(best[1], out); print("END fit", best[0], "n", N, "iters", it, flush=True)
 

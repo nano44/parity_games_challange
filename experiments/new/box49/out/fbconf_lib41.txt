@@ -1,0 +1,8 @@
+Cf 303 Cf_read 301 RECUR 659 f 962 phases 1012 phases_with_fb 242 runs 1047
+max Cf (4, ('experiments/red/n5inj/instances/elimn_cex_n48.pg', (2, 56), 48, 3, 7))
+max Cf_over_n (0.3333333333333333, ('experiments/n5-exhaustive/instances/n3all_maxph_0.pg', (2, 3), 3, 1, 1, 1))
+max Cf_read (4, ('experiments/si/xing/instances/zcl_rx_n32.pg', (3, 65), 32, 13, 4))
+max f (33, ('experiments/si/xing/instances/ccl_w48_n48.pg', (3, 44), 48, 1, 1))
+max f_multi (29, ('experiments/red/so/instances/njb_reabs65_n48.pg', (2, 68), 48, 2, 26))
+max f_over_Cf (33.0, ('experiments/si/xing/instances/ccl_w48_n48.pg', (3, 44), 48, 1, 33, 1))
+max per_read_conf_over_n (0.75, ('experiments/new/box25/instances/wd16_s2.pg', (6, 18), 16, 12))
