@@ -306,3 +306,12 @@ echo "root (box 23 §10: SW-LIN dead on swlin_kill_n26, n5b agrees): PASS"
 # (base maximum 12).
 python3 -I root/ereader.py ../new/box48/instances/long121_n40.pg ../new/box48/instances/long121_n40.start 1,10,13,14,16,17,20,23,30,31,32,34,38 30 | grep -q "^SAME .* (16, 3, (1, 122))"
 echo "root (box 23 §12: Even reader on long121 clean, 16 switches > base 12): PASS"
+# P-N5-GCX-fixes-box21 (repairs to P-N5-GCX 5a91bebb): 29 quotes verbatim (packet at 02240121; REFEREE e01bdec6 / 159c8f04; REFEREE-2 fe04ca32 /
+# fc63f1f1); shifted control fails.
+if git cat-file -e 02240121 && git cat-file -e e01bdec6 && git cat-file -e 159c8f04 && git cat-file -e fe04ca32 && git cat-file -e fc63f1f1; then
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-GCX-fixes-box21.md | grep -q "quotes=29 bad=0"
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-GCX-fixes-box21.md --mut | grep -q "QUOTES FAIL"
+  echo "root (P-N5-GCX fixes: 29 quotes verbatim; shifted control fails): PASS"
+else
+  echo "root (P-N5-GCX fixes quotes): NOT RUN (a source commit is not in this clone)"
+fi
