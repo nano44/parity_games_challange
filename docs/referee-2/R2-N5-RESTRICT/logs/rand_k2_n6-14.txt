@@ -1,0 +1,89 @@
+GP_EXTENDS random4811:14#2 phase 1 1 G ends by tau n 8
+GP_EXTENDS random4811:130#0 phase 0 0 G ends by tau n 8
+GP_EXTENDS random4811:204#1 phase 0 0 G ends by tau n 13
+GP_EXTENDS random4811:296#1 phase 1 1 G ends by tau n 12
+GP_EXTENDS random4811:296#2 phase 0 0 G ends by tau n 12
+GP_EXTENDS random4811:310#0 phase 0 0 G ends by tau n 7
+GP_EXTENDS random4811:370#2 phase 0 0 G ends by tau n 12
+GP_EXTENDS random4811:440#0 phase 0 0 G ends by tau n 6
+GP_EXTENDS random4811:572#2 phase 0 0 G ends by tau n 13
+GP_EXTENDS random4811:607#1 phase 0 0 G ends by tau n 8
+GP_EXTENDS random4811:653#0 phase 0 0 G ends by tau n 14
+GP_EXTENDS random4811:748#0 phase 0 0 G ends by tau n 10
+GP_EXTENDS random4811:748#1 phase 0 0 G ends by tau n 10
+GP_EXTENDS random4811:753#2 phase 0 0 G ends by tau n 8
+GP_EXTENDS random4811:805#2 phase 0 0 G ends by tau n 8
+GP_EXTENDS random4811:836#1 phase 1 1 G ends by tau n 14
+GP_EXTENDS random4811:879#2 phase 0 0 G ends by tau n 7
+GP_EXTENDS random4811:1114#2 phase 0 0 G ends by tau n 8
+GP_EXTENDS random4811:1120#1 phase 0 0 G ends by tau n 13
+GP_EXTENDS random4811:1266#2 phase 0 0 G ends by tau n 6
+GP_EXTENDS random4811:1326#1 phase 1 1 G ends by tau n 13
+GP_EXTENDS random4811:1326#2 phase 1 1 G ends by tau n 13
+GP_EXTENDS random4811:1400#2 phase 0 0 G ends by tau n 12
+GP_EXTENDS random4811:1451#0 phase 0 0 G ends by tau n 10
+GP_EXTENDS random4811:1495#0 phase 1 1 G ends by tau n 11
+GP_EXTENDS random4811:1495#2 phase 1 1 G ends by tau n 11
+GP_EXTENDS random4811:1562#1 phase 0 0 G ends by tau n 12
+GP_EXTENDS random4811:1684#2 phase 0 0 G ends by tau n 14
+GP_EXTENDS random4811:1707#1 phase 1 1 G ends by tau n 14
+GP_EXTENDS random4811:1799#1 phase 1 1 G ends by tau n 10
+GP_EXTENDS random4811:1805#0 phase 0 0 G ends by tau n 7
+GP_EXTENDS random4811:1929#0 phase 1 1 G ends by tau n 13
+GP_EXTENDS random4811:1948#1 phase 1 1 G ends by tau n 11
+GP_EXTENDS random4811:1949#1 phase 0 0 G ends by tau n 9
+GP_EXTENDS random4811:1952#2 phase 0 0 G ends by tau n 6
+GP_EXTENDS random4811:1953#1 phase 0 0 G ends by tau n 10
+GP_EXTENDS random4811:1953#2 phase 1 1 G ends by tau n 10
+GP_EXTENDS random4811:2042#1 phase 0 0 G ends by tau n 13
+GP_EXTENDS random4811:2173#0 phase 0 0 G ends by tau n 14
+GP_EXTENDS random4811:2230#1 phase 1 1 G ends by tau n 9
+GP_EXTENDS random4811:2275#2 phase 0 0 G ends by tau n 11
+GP_EXTENDS random4811:2371#1 phase 0 1 G ends by tau n 12
+GP_EXTENDS random4811:2404#1 phase 0 0 G ends by tau n 13
+GP_EXTENDS random4811:2439#2 phase 0 0 G ends by tau n 6
+GP_EXTENDS random4811:2455#0 phase 2 2 G ends by tau n 8
+GP_EXTENDS random4811:2537#1 phase 0 0 G ends by tau n 11
+GP_EXTENDS random4811:2613#2 phase 0 0 G ends by tau n 11
+GP_EXTENDS random4811:2630#2 phase 0 0 G ends by tau n 11
+GP_EXTENDS random4811:2637#1 phase 1 1 G ends by tau n 11
+GP_EXTENDS random4811:2643#0 phase 0 0 G ends by tau n 9
+GP_EXTENDS random4811:2674#0 phase 1 1 G ends by tau n 12
+GP_EXTENDS random4811:2674#2 phase 1 1 G ends by tau n 12
+GP_EXTENDS random4811:2680#2 phase 0 0 G ends by tau n 8
+GP_EXTENDS random4811:2765#2 phase 0 0 G ends by tau n 12
+GP_EXTENDS random4811:2824#2 phase 0 0 G ends by tau n 10
+GP_EXTENDS random4811:2887#0 phase 0 0 G ends by tau n 12
+MODE random 3000 6 14 4811 2 3
+CTL_GP_bites: 8095
+CTL_GP_runs: 9760
+GE_REP_steps: 1411
+GE_RIV_checks: 3
+GE_RI_checks: 21906
+GE_instances: 20643
+GP_G_phase_ends_by_lambda: 3673
+GP_G_phase_ends_by_tau: 7609
+GP_Hstops_at_y: 213
+GP_REP_steps: 1411
+GP_RIV_checks: 65
+GP_RI_checks: 21906
+GP_extends: 56
+GP_extends_G_by_tau: 56
+GP_instances: 20495
+GP_phase_end_checks: 11495
+GUJ_REP_steps: 2822
+GUJ_RIV_checks: 122
+GUJ_RI_checks: 43812
+GUJ_instances: 41152
+GU_REP_steps: 2555
+GU_RIV_checks: 97
+GU_RI_checks: 30904
+GU_instances: 28428
+QP_ge2: 2900
+QP_le1: 17595
+phases: 20495
+phases_ge2: 1324
+runs: 9000
+GP_extends_example: (14, 'random4811:653#0', 0, 0, 'tau')
+max_QP: (2, 'random4811:0#0', 0, 0, 14)
+RESULT OK violations=0

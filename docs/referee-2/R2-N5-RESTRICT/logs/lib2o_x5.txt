@@ -1,0 +1,29 @@
+MODE files ../R2-N5-ROOT/lib2o_noref.lst 5
+CTL_GP_bites: 352
+CTL_GP_runs: 370
+GE_REP_steps: 769
+GE_RI_checks: 1400
+GE_instances: 718
+GP_G_phase_ends_by_lambda: 163
+GP_G_phase_ends_by_tau: 258
+GP_Hstops_at_y: 5
+GP_REP_steps: 769
+GP_RIV_checks: 469
+GP_RI_checks: 1400
+GP_instances: 631
+GP_phase_end_checks: 426
+GUJ_REP_steps: 1538
+GUJ_RIV_checks: 663
+GUJ_RI_checks: 2800
+GUJ_instances: 1358
+GU_REP_steps: 581
+GU_RIV_checks: 187
+GU_RI_checks: 1340
+GU_instances: 795
+QP_ge2: 140
+QP_le1: 491
+phases: 631
+phases_ge2: 80
+runs: 205
+max_QP: (2, 'docs/referee-2/R2-N5-FBW/climb/fbw_a_best.pg#0', 0, 0, 10)
+RESULT OK violations=0

@@ -1,0 +1,57 @@
+GP_EXTENDS random4813:123#2 phase 0 0 G ends by tau n 13
+GP_EXTENDS random4813:179#2 phase 0 0 G ends by tau n 16
+GP_EXTENDS random4813:239#1 phase 0 0 G ends by tau n 8
+GP_EXTENDS random4813:260#1 phase 1 1 G ends by tau n 16
+GP_EXTENDS random4813:298#0 phase 0 0 G ends by tau n 10
+GP_EXTENDS random4813:328#0 phase 1 1 G ends by tau n 12
+GP_EXTENDS random4813:363#0 phase 0 0 G ends by tau n 17
+GP_EXTENDS random4813:366#1 phase 0 0 G ends by tau n 13
+GP_EXTENDS random4813:498#2 phase 0 0 G ends by tau n 8
+GP_EXTENDS random4813:571#0 phase 0 0 G ends by tau n 13
+GP_EXTENDS random4813:589#0 phase 1 1 G ends by tau n 18
+GP_EXTENDS random4813:626#0 phase 0 0 G ends by tau n 12
+GP_EXTENDS random4813:830#0 phase 0 0 G ends by tau n 13
+GP_EXTENDS random4813:850#2 phase 1 1 G ends by tau n 11
+GP_EXTENDS random4813:953#1 phase 0 0 G ends by tau n 13
+GP_EXTENDS random4813:963#2 phase 1 1 G ends by tau n 18
+GP_EXTENDS random4813:973#1 phase 0 0 G ends by tau n 12
+GP_EXTENDS random4813:1022#2 phase 0 0 G ends by tau n 8
+GP_EXTENDS random4813:1156#1 phase 1 1 G ends by tau n 11
+GP_EXTENDS random4813:1173#2 phase 0 0 G ends by tau n 9
+GP_EXTENDS random4813:1196#1 phase 0 0 G ends by tau n 14
+GP_EXTENDS random4813:1418#0 phase 0 0 G ends by tau n 18
+GP_EXTENDS random4813:1470#1 phase 1 1 G ends by tau n 16
+GP_EXTENDS random4813:1485#2 phase 0 0 G ends by tau n 15
+MODE random 1500 8 18 4813 0 3
+CTL_GP_bites: 6297
+CTL_GP_runs: 7515
+GE_REP_steps: 828
+GE_RIV_checks: 10
+GE_RI_checks: 13395
+GE_instances: 12668
+GP_G_phase_ends_by_lambda: 1596
+GP_G_phase_ends_by_tau: 6321
+GP_Hstops_at_y: 150
+GP_REP_steps: 828
+GP_RIV_checks: 58
+GP_RI_checks: 13395
+GP_extends: 24
+GP_extends_G_by_tau: 24
+GP_instances: 12567
+GP_phase_end_checks: 8067
+GUJ_REP_steps: 3289
+GUJ_RIV_checks: 157
+GUJ_RI_checks: 60956
+GUJ_instances: 58061
+GU_REP_steps: 2646
+GU_RIV_checks: 66
+GU_RI_checks: 26799
+GU_instances: 24289
+QP_ge2: 4414
+QP_le1: 8153
+phases: 12567
+phases_ge2: 769
+runs: 4500
+GP_extends_example: (18, 'random4813:589#0', 1, 1, 'tau')
+max_QP: (8, 'random4813:233#2', 0, 0, 18)
+RESULT OK violations=0
