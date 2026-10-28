@@ -1,0 +1,47 @@
+{
+"name": "H5_G245",
+"n": 5,
+"mode": "fig",
+"V": 105,
+"m": 286,
+"sha1": "700e3b2ab3e947ad501079c9fd424452684b3564",
+"start_sha1": "e99ec027008e4766bfa2246846fbd41c7884cbfd",
+"it": 34,
+"fb": 0,
+"phases": 1,
+"longest": 34,
+"tau_changes": 0,
+"lamXi_changes": 0,
+"lamW_changes": 0,
+"viol": [],
+"ok": true,
+"checks": {
+"n5_eq_n5b": true,
+"rows_eq": true,
+"oink": "zlk",
+"oink_eq": true,
+"verify_n5": true,
+"verify_n5b": true
+},
+"phases_detail": [
+{
+"p": 0,
+"a": 0,
+"b": 34,
+"len": 34,
+"end": "final",
+"ntau": 0,
+"dW": 0,
+"f": 0,
+"N_ep": 6,
+"NCONF": 5,
+"NCONF2": 0,
+"S": 1,
+"ALT": 5,
+"ALTsum": 5,
+"SBG": 5,
+"sbQ": 5,
+"D": 1
+}
+]
+}
