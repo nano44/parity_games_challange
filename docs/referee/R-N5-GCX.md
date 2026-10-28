@@ -160,7 +160,7 @@ conjecture with K(S) unbounded). G-N5-TIME: open.
 DONE: this report. FINDINGS: G-GCX-1 (LOC false for "any deterministic rule"); GCX-N1..N5. NEEDS: Lead: route G-GCX-1 and the notes to L-SI's
 fixes file; §C against REFEREE-2 on your word.
 
-## §C. Comparison with REFEREE-2 (written 2026-10-28T21:49Z by date -u, after the Lead's word of 21:43Z; REFEREE-2's report
+## §C. Comparison with REFEREE-2 (written 2026-10-28T21:47Z by date -u, after the Lead's word of 21:43Z; REFEREE-2's report
 docs/referee-2/R2-N5-GCX.md, report fe04ca32 and its §C fc63f1f1 on trunk 5da4017d, opened only after this report was pushed at e01bdec6)
 Written by REFEREE successor 16, the author of this report. Every verdict is labelled (Opus 5.5, D15).
 ### Verdicts
