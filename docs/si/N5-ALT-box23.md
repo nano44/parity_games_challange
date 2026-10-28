@@ -193,6 +193,17 @@ Tools: experiments/si/root/mkoreader.py (appends a reader), orcheck.py (compares
   - Label: DATA. The run identity is CHECKED per instance by orcheck.py (σ, τ and σ̄ on the old vertices, the fallback flags, the phases, and
     every old vertex's Ξ as (cycle node, path-set as a vertex set, length) agree at every state; ranks shift by one, the order does not). It
     is not proved for all games.
+  - CORRECTION (REFEREE, docs/referee/R-N5-READER.md at e83fd19d, gap G-READ-1 and note READ-N1). The unconditional statement is FALSE: S4b can
+    move τ(o), which ends a phase inside an old phase or cancels an old Even fallback (REFEREE's 5-vertex counterexample, its §2 (A); and
+    l121reader_n41 itself with any start τ0(o) ≠ 0 splits the phase, its §2 (B)). REFEREE PROVES (Theorem READER-INV, every game): the run on
+    the old vertices, the fallbacks and the phases are unchanged under condition (R), "τ(o) never moves at a transition at which τ is unchanged
+    on the old vertices". (R) holds when τ0(o) is maximal for Odd's dual valuation over S at the first state of a τ-constant stretch. So the
+    READER device is: «o with τ0(o) maximal for Odd's dual valuation over S, started at the first state of a τ-constant stretch; then the run on
+    the old vertices, the fallbacks and the phases are unchanged on that stretch (Theorem READER-INV)» (REFEREE's wording, READ-N1).
+  - Measured (orcheck.py, which now prints (R)): l121reader_n41 satisfies (R) (τ(o) never moves; REFEREE: Iτ′(o) = ∅ at all 123 states).
+    l121reader6_n46 satisfies (R) for all six readers (READ-N2): readers 42 and 44 move τ only at transition 0 → 1, where τ on the old vertices
+    changes too; the other four never move. So the inflation table below is an instance of Theorem READER-INV, not only DATA.
+  - The XR-LIN kill needs no invariance (REFEREE): l121reader_n41 is itself a game where one vertex's Ξ changes 86 > 2n times in one phase.
 - DEAD XR-LIN ("in every phase, every vertex's Ξ changes ≤ 2n times").
   - Instance: experiments/si/root/instances/l121reader_n41.pg (sha1 084da8cd47707b8937ebe30fdfae88d3d988bdaf; start l121reader_n41.start,
     7ca283c43b7092acc454c5ffc6b1995e3a29bf68). It is L-NEW's long121_n40 at its own start, plus a reader o = 40 with
@@ -277,6 +288,12 @@ Tools: experiments/si/root/mkoreader.py (appends a reader), orcheck.py (compares
 Tool: experiments/si/root/ereader.py. It appends an Even vertex e (priority 0, no predecessors, edges to S in one class, start σ0(e) = Y),
 checks SAME (σ, τ, σ̄ on the old vertices and the fallback flags, at every state) and counts e's switches. --search runs a local search over S
 for the most switches in one phase subject to SAME. Log: root/logs/ereader_l121.txt.
+- CORRECTION (REFEREE READ-N3, and my own measurement below): an Even reader is NOT clean in general. REFEREE's Lemma (b) fails for it (Iσ
+  gains its edges and S4a moves it), and at a base fallback its S4a switch cancels S4c. Random Even readers (ereader.py --random, |S| = 4,
+  Y random in S; log root/logs/ereader_random.txt): SAME on long121 60 of 60, on lend107 45 of 60, on swlin_kill_n26 58 of 60. In 16 of the 17
+  failures the first divergence is at a base fallback. So the searches below (which keep only SAME candidates) show that SOME Even readers are
+  clean and raise one vertex's switches; the table's instances are each checked SAME. The text that follows was written before this
+  measurement; its "every candidate accepted" is a property of the search, not of Even readers.
 - Measured reason why an Even reader is clean (DATA, every instance tried, 3 searches × 400 candidates):
   - in every candidate accepted by the search the run stayed SAME, fallback flags included;
   - in a fallback-free stretch e has no predecessor, so S4a's pointwise arena optimum for the others is unchanged;

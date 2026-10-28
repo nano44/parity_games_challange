@@ -14,3 +14,11 @@ E1_chk=14 ESW_in=87 EXIT_at_cut=41 EXIT_in=15 K_max=10 K_sum=57 LASTSW_max=5 SBG
 == si/root/instances/l121reader6_n46.pg si/root/instances/l121reader6_n46.start
 EXC_run_gates=27 EXC_run_max_plus1000=1004 MAXCH_run=5 RET_phase=109 RET_phase_AG=55 RET_phase_DCH=53 RET_phase_in=1 RET_run=50 RET_run_AG=29 RET_run_DCH=20 RET_run_in=1 gch_AG=61 gch_DCH=57 gch_in=1 rise_M=119 runs=9 trans_AG=35 trans_DCH=37 trans_DDSET=1 trans_in=40 y2_strictly_below_y1=119
 E1_chk=14 ESW_in=55 EXIT_at_cut=57 EXIT_in=3 K_max=14 K_sum=73 LASTSW_max=4 SBG_at_cut=118 SBG_in=1 SB_at_cut=118 SB_in=1 cut_AG=35 cut_DCH=37 cut_DDSET=1 lastsw_minus_U_max_plus1000=958 pure_lastsw_max=2 runs=9 sw_in_impure=25 sw_in_pure=15 trans_at_cut=73 trans_in=40
+sigma True tau True fallbacks True sigma-bar True Xi (as vertex sets) True
+SAME states 123 123 n 41
+condition (R): True | reader tau moves {40: []} | old tau changes [0]
+phases_equal True
+sigma True tau True fallbacks True sigma-bar True Xi (as vertex sets) True
+SAME states 123 123 n 46
+condition (R): True | reader tau moves {40: [], 41: [], 42: [0], 43: [], 44: [0], 45: []} | old tau changes [0]
+phases_equal True

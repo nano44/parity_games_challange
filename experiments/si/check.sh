@@ -315,3 +315,8 @@ if git cat-file -e 02240121 && git cat-file -e e01bdec6 && git cat-file -e 159c8
 else
   echo "root (P-N5-GCX fixes quotes): NOT RUN (a source commit is not in this clone)"
 fi
+# box 23 §8 (REFEREE R-N5-READER, e83fd19d): condition (R) of Theorem READER-INV holds for l121reader_n41 and all six readers of l121reader6_n46.
+for r in l121reader_n41 l121reader6_n46; do
+  python3 -I root/orcheck.py ../new/box48/instances/long121_n40.pg ../new/box48/instances/long121_n40.start root/instances/$r.pg root/instances/$r.start | grep -q "^condition (R): True"
+done
+echo "root (box 23 §8: condition (R) holds on both reader instances): PASS"
