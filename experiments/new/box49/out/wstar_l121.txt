@@ -1,0 +1,4 @@
+L 113 STALL 111 games_runs 1 runs_ff 9
+max L_run (17, ('experiments/new/box48/instances/long121_n40.pg', (6, 23), 40))
+max frac_stall (1.0, ('experiments/new/box48/instances/long121_n40.pg', (1, 5), 40, 4, 4))
+max stall_run (17, ('experiments/new/box48/instances/long121_n40.pg', (6, 23), 40, 17))
