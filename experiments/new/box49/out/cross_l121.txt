@@ -1,0 +1,6 @@
+ENVX 0 L 121 NOSW 0 PASS 303 SW 246 SWAMORT_viol 0 X 4489 phases 1 runs 1 sbch 45
+max L (121, ('experiments/new/box48/instances/long121_n40.pg', (1, 122), 40))
+max PASS_over_L (2.5041322314049586, ('experiments/new/box48/instances/long121_n40.pg', (1, 122), 40, 303, 121))
+max maxSW_over_n (0.3, ('experiments/new/box48/instances/long121_n40.pg', (1, 122), 40, 12))
+max s (22, ('experiments/new/box48/instances/long121_n40.pg', (1, 122), 40))
+max s_over_n (0.55, ('experiments/new/box48/instances/long121_n40.pg', (1, 122), 40, 22))

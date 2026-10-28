@@ -1,0 +1,10 @@
+MODE random 20000 2 7 2231 1
+ADL_FAIL_noGEN: 9
+AD_FAIL_noGEN: 30
+AD_noGEN: 12048
+AD_sharp: 4051
+AD_vertex_checks: 150963
+NOPT: 1887
+invalid_start: 7134
+runs: 36711
+RESULT OK violations=0
