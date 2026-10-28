@@ -2,7 +2,7 @@
 """L-RED successor 23: hill climb for super-linear XR (docs/si/N5-ALT-box23.md §6 item 1, CONJECTURE XR-LIN) at k = 1 (exactly one Odd
 vertex of out-degree >= 2), S3 start. Fitness = max over vertices z and phases P of XR_P(z); a phase = maximal stretch with tau and both
 cycle-node maps (Xi_sigma, Xi_tau) constant. Mutations: L-NEW's experiments/new/box21/climb_fix.py mutate (read-only).
-Usage: xrclimb.py SEED.pg N seed secs OUT.pg [--clone] [--sw: fitness SW*1000 + PL (phsw.py)] [--pl: fitness PL*1000 + fallbacks in that phase] [--kmax K] [--start FILE: fixed start pair, invalid entries fall back to S3]   (pads SEED to N vertices with random Even vertices; writes the best game to OUT.pg)"""
+Usage: xrclimb.py SEED.pg|RAND1SINK N seed secs OUT.pg [--clone] [--sw: fitness SW*1000 + PL (phsw.py)] [--pl: fitness PL*1000 + fallbacks in that phase] [--kmax K] [--start FILE: fixed start pair, invalid entries fall back to S3]   (pads SEED to N vertices with random Even vertices; writes the best game to OUT.pg)"""
 import sys, os, time, random
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.join(HERE, "..", "..", "..")
 sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(ROOT, "experiments", "new", "box21"))
@@ -77,7 +77,16 @@ def save(G, path):
 
 def main():
     seedp, N, seed, secs, out = sys.argv[1], int(sys.argv[2]), int(sys.argv[3]), float(sys.argv[4]), sys.argv[5]
-    rng = random.Random(seed); G = load(seedp); n0 = len(G[0])
+    rng = random.Random(seed)
+    if seedp == "RAND1SINK":
+        import gen1sink
+        best0 = None
+        for _ in range(200):   # best of 200 random 1-sink games as the start
+            H = gen1sink.gen(N, rng); f = xrfit(H)
+            if best0 is None or f > best0[0]: best0 = (f, H)
+        G = best0[1]
+    else: G = load(seedp)
+    n0 = len(G[0])
     for v in range(n0, N):   # inert padding: isolated Even self-loops; the climb wires them in
         G[0].append(rng.randrange(N + 3)); G[1].append(0); G[2].append([v])
     f = xrfit(G); best = (f, G); t0 = time.time(); it = 0
