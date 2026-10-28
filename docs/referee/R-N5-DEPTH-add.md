@@ -107,3 +107,34 @@ Nothing here bounds N5's running time; not a TARGET.md claim; G-N5-TIME stays OP
 DONE: this report. FINDINGS: GATE-PUSH SIGNED (never exercised); PURE-LEN FALSE as stated (G-DADD-1; class-local repair holds); MONO-REF FALSE
 as stated (G-DADD-2; signed with "m before c"); E-ONEWAY signed with the matching hypothesis. NEEDS: Lead: route G-DADD-1, G-DADD-2 and
 DADD-N1..N3 to L-SI's fixes file (docs/si/P-N5-DEPTH-add-fixes-box22.md); §C against REFEREE-2 on your word.
+
+## §C. Comparison with REFEREE-2 (written 2026-10-28T22:20Z by date -u, after the Lead's word of 22:16Z; REFEREE-2's report
+docs/referee-2/R2-N5-DEPTH-add.md at origin/claude/referee-2 dad93591 and its §C d8402f3d, read only after this report was pushed at f4b54c43)
+Written by REFEREE successor 16, the author. Every verdict is labelled (Opus 5.5, D15).
+### Verdicts
+| item | REFEREE (f4b54c43) | REFEREE-2 (dad93591) | joint |
+| --- | --- | --- | --- |
+| GATE-PUSH + Count | SIGNED; never exercised (DADD-N1) | SIGN; never exercised (N-DADD-2) | SIGNED; rests on proof alone |
+| PURE-LEN | FALSE as stated (G-DADD-1; pure_22); repair in POSITION form | FALSE as stated (G-DADD-1; pure_22 and others); repair PURE-LEN′ in COUNT form | G-DADD-1 joint; repair = the COUNT form (below) |
+| MONO-REF | FALSE for m after c (G-DADD-2); signed with "m at or before c" | the same | G-DADD-2 joint |
+| E-ONEWAY | signed with "e1 at or before c"; the e1-after-c case outside the proof (DADD-N3) | the same, listed as G-DADD-3 | as REFEREE-2's §C groups it: G-DADD-3 := G-DADD-2's consequence for E-ONEWAY, plus DADD-N3 |
+Joint gap map: {G-DADD-1, G-DADD-2} (with G-DADD-3 folded into G-DADD-2 as described).
+### The PURE-LEN repair: I ACCEPT the count form PURE-LEN′
+- PURE-LEN′: for a pure per-class C-interval [a, b] of class c, under GEN_W on U_c, the transitions of [a, b] with an Even switch in U_c
+  number ≤ L + (1 + N_σ̄ + N_cyc)(|U_c| − 1) + N_σ̄ + N_cyc.
+- Proof (complete from my §2):
+  - At most L of those transitions lie before a + L.
+  - Cut [a + L, b] at the σ̄ changes in U_c and the changes of c's cycle. That gives ≤ 1 + N_σ̄ + N_cyc pieces and N_σ̄ + N_cyc cut
+    transitions.
+  - On each piece, STATIC-DEPTH's per-vertex induction restricted to U_c (all H_b-successors of U_c lie in U_c in a pure interval) puts
+    every Even switch of U_c in the piece's first max_{U_c} d* ≤ |U_c| − 1 transitions.
+  - Sum. No step uses that the pieces are adjacent or that a frozen class stays frozen. SIGNED (with REFEREE-2).
+- My POSITION form ("every Even switch lies before a + bound") does need the extra step REFEREE-2 names: a class with no Even switch and with
+  σ̄ and c's cycle constant stays so inside the interval, so no late piece starts after an idle stretch. I believe it holds, because σ̄|U_c
+  and the in-class W-values depend only on σ|U_c and τ in a pure interval. But S4a's arena may hold Iσ-edges leaving U_c, whose values do
+  move. A switch along such an edge would end the phase; whether the S1 tie-break among in-class options could be influenced by them I have
+  NOT checked line by line. So I withdraw the position form as a repair and keep it as data only (0 failures in both corpora).
+### Notes
+DADD-N1 = N-DADD-2; DADD-N2 = N-DADD-1 (OFFSET-MONO⁺ removes MONO-REF's no-cycle hypothesis; the before-c restriction stays); DADD-N3 =
+G-DADD-3's substance; N-DADD-3 (suggested wordings) ACCEPTED. Data agree (MONO-REF failures only after c; 704 vs 711 e1-after-c windows, 0
+returns; PURE-LEN failures all frozen; PURE-LEN′ 0 failures for both). Nothing else open between the referees on DEPTH-add.

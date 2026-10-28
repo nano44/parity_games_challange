@@ -17,7 +17,7 @@ def names(path):
         if m: nm[int(m.group(1))] = m.group(2)
     return nm
 
-def run(g, start, cap=10 ** 6, log=print, nm=None):
+def run(g, start, cap=10 ** 6, log=print, nm=None, states=None):
     nm = nm or {}
     N = lambda v: nm.get(v, str(v))
     n = g.n; E, Ed = Engine(g), Engine(dual(g))
@@ -26,6 +26,7 @@ def run(g, start, cap=10 ** 6, log=print, nm=None):
     for v, w in start[1].items(): tau[v] = w
     it = fb = 0; phase = 0; plen = 0; maxp = 0; prev_sbar = None; hist = []
     while it < cap:
+        if states is not None: states.append((tuple(sigma), tuple(tau)))
         vs, sbar = E.evaluate(tuple(sigma)); Is = E.improving(tuple(sigma), vs)
         vt, tbar = Ed.evaluate(tuple(tau)); It = Ed.improving(tuple(tau), vt)
         sb = [sbar[v] if g.owner[v] == 1 else None for v in range(n)]

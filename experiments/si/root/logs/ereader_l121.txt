@@ -1,0 +1,9 @@
+SAME reader switches (max per phase, max per fallback-free run, phase) (16, 3, (1, 122)) n 41
+sigma True tau True fallbacks True sigma-bar True Xi (as vertex sets) True
+SAME states 123 123 n 41
+== si/root/out/er_l121.log
+final (16, 3, (1, 122)) S 1,10,13,14,16,17,20,23,30,31,32,34,38 Y 30 n 41
+== si/root/out/er_lend.log
+final (15, 3, (2, 110)) S 0,10,15,24,25,28 Y 24 n 33
+== si/root/out/er_swk.log
+final (26, 6, (1, 47)) S 0,10,12,13,19,23,25 Y 10 n 27

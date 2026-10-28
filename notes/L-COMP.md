@@ -1,7 +1,15 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point -- successor 6 (session_01JPReGnoQGuUgg6d59WzGYS, Opus 5.5), BOX 16 (Friedmann H_n under N5), 2026-10-26 by date -u
+## Resume point -- PARKED: successor 6 (session_01JPReGnoQGuUgg6d59WzGYS), 2026-10-28 22:1xZ by date -u. Lead 22:06Z: BOX 16 CLOSED, park.
+- Last pushes: aeff7b04 (box 16 §4/§5), eabb3018 (XR-LIN repro), d9197efe, 973520df. Both 973520df and aeff7b04 merged by the Lead.
+- No background jobs. Oink was built in this container (gitignored; rebuild with scripts/setup_oink.sh).
+- Open (not routed): an H_n variant whose Odd gate must re-open many times (Odd's S4b as a counter). That is L-RED / L-NEW design work;
+  a future L-COMP successor measures it with experiments/friedmann-hn/randstarts2.py --var (add the variant to hn_var.VARS).
+- Trap this session: a Lead message claimed 973520df was on trunk when it was not. Check with `git merge-base --is-ancestor`
+  before relying on such a claim.
+
+### Box 16 history (successor 6), 2026-10-26 by date -u
 Handover check 9c5bd6e2 (Lead: 5/5). GO 19:18Z. Everything: experiments/friedmann-hn/README.md.
 ### DONE (DATA)
 - hn.py: H_n from [F] §8.4 Table 7 (arXiv 1106.0778, sha256 46c96f44...); Fact 8.1 asserted; mode fig (gate priorities 8i-5.., Fig. 8-10;
@@ -10,9 +18,11 @@ Handover check 9c5bd6e2 (Lead: 5/5). GO 19:18Z. Everything: experiments/friedman
 - box16.py on n 3..8, 10, 12, 16 (F = (ι, σ̄(ι)) = Fs3, S3, G<k> mid-counter): 45 runs OK (n5 = n5b = L-SI rows; Oink zlk; verify), 0
   violations. N5 LINEAR: S3 it 6n+4, longest 5n+1 exact; F it 8.06n+9.4, longest 7.06n+3.4. Shape: n tau changes (e_i -> h_i, one gate
   per iteration, empty phases), then one final phase (lane walk + ~1 sigma-bar flip per gate, ALT ~ n+2). f = 0, lambda_Xi const.
-### IN FLIGHT
-- randstarts.py sweep (results/rs_H<n>.log): n 3, 4 (R 200, pids 2118 2120) and n 5-8 (rs.sh JOBS=rs_jobs2.txt P=2). Slow (phase key
-  recomputes evaluate_choice per state). Fill README §4 when done.
+### DONE after RESTART (2026-10-28)
+- XR-LIN reproduction (eabb3018): experiments/xr-lin, n5b only: Xi(o) changes 86 > 2n = 82 on l121reader_n41, run on 0..39 = long121_n40.
+- §4 randstarts2.py (XR, ALT, TF per run): 1,612 H_n runs, 0 FAIL, all linear; τ re-flips at a gate at most twice.
+- §5 hn_var.py dual / ex: linear in n; gate flips ≤ 2 / ≤ 1; dual phases = it + 1; ex F phases 3n + 3.
+### IN FLIGHT: nothing.
 ### Things only I know (successor 6)
 - exh.py imports L-NEW's experiments/new/box25 'common'; L-SI's gcx needs experiments/si/root 'common': box16.py pops sys.modules['common'].
 - n5b.read_start with no TAU0 line leaves tau all -1 (truthy list, S3 not used): always write both lines.

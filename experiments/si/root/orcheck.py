@@ -20,6 +20,11 @@ sx = all([(R0[k]["vs"][v][0], vset(E0, R0[k]["vs"][v][1]), R0[k]["vs"][v][2]) fo
 same = len(R0) == len(R1) and ss and st and sf and sb and sx
 print("sigma", ss, "tau", st, "fallbacks", sf, "sigma-bar", sb, "Xi (as vertex sets)", sx)
 print("SAME" if same else "DIFFERENT", "states", len(R0), len(R1), "n", n)
+# condition (R) of REFEREE's Theorem READER-INV (docs/referee/R-N5-READER.md): a reader's tau moves only at transitions where tau on the old
+# vertices changes
+oldt = {k for k in range(len(R1) - 1) if [R1[k]["t"][v] for v in range(n0) if g0.owner[v]] != [R1[k + 1]["t"][v] for v in range(n0) if g0.owner[v]]}
+mv = {o: [k for k in range(len(R1) - 1) if R1[k]["t"][o] != R1[k + 1]["t"][o]] for o in range(n0, n) if g1.owner[o] == 1}
+print("condition (R):", all(set(m) <= oldt for m in mv.values()), "| reader tau moves", mv, "| old tau changes", sorted(oldt))
 P0, P1 = list(phases(R0)), [(i, j) for i, j in phases(R1)]
 print("phases_equal", P0 == P1)
 for i, j in P1:

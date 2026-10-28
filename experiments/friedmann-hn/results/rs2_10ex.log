@@ -1,0 +1,56 @@
+H10ex S3 it 64 fb 0 phases 4 longest 58 XR 36 XRQ 36 ALT 1 TF 0 TFG 0 OK
+H10ex F it 70 fb 0 phases 33 longest 10 XR 10 XRQ 10 ALT 6 TF 0 TFG 0 OK
+H10ex rand0 it 59 fb 0 phases 10 longest 50 XR 30 XRQ 30 ALT 0 TF 1 TFG 1 OK
+H10ex rand1 it 61 fb 0 phases 16 longest 40 XR 40 XRQ 40 ALT 26 TF 1 TFG 1 OK
+H10ex rand2 it 64 fb 0 phases 11 longest 54 XR 36 XRQ 36 ALT 35 TF 1 TFG 1 OK
+H10ex rand3 it 58 fb 0 phases 7 longest 52 XR 28 XRQ 28 ALT 0 TF 1 TFG 1 OK
+H10ex rand4 it 67 fb 0 phases 9 longest 59 XR 59 XRQ 59 ALT 39 TF 1 TFG 1 OK
+H10ex rand5 it 62 fb 0 phases 6 longest 57 XR 35 XRQ 35 ALT 0 TF 1 TFG 1 OK
+H10ex rand6 it 64 fb 0 phases 9 longest 56 XR 34 XRQ 34 ALT 0 TF 1 TFG 1 OK
+H10ex rand7 it 62 fb 0 phases 5 longest 58 XR 36 XRQ 36 ALT 0 TF 1 TFG 1 OK
+H10ex rand8 it 6 fb 0 phases 5 longest 2 XR 1 XRQ 1 ALT 0 TF 1 TFG 1 OK
+H10ex rand9 it 63 fb 0 phases 6 longest 58 XR 36 XRQ 36 ALT 1 TF 1 TFG 1 OK
+H10ex rand10 it 60 fb 0 phases 7 longest 54 XR 21 XRQ 21 ALT 0 TF 1 TFG 1 OK
+H10ex rand11 it 8 fb 0 phases 9 longest 0 XR 0 XRQ 0 ALT 0 TF 1 TFG 1 OK
+H10ex rand12 it 56 fb 0 phases 10 longest 47 XR 32 XRQ 32 ALT 31 TF 1 TFG 1 OK
+H10ex rand13 it 64 fb 0 phases 20 longest 33 XR 33 XRQ 33 ALT 33 TF 1 TFG 1 OK
+H10ex rand14 it 58 fb 0 phases 17 longest 36 XR 24 XRQ 24 ALT 24 TF 1 TFG 1 OK
+H10ex rand15 it 60 fb 0 phases 8 longest 53 XR 32 XRQ 32 ALT 0 TF 1 TFG 1 OK
+H10ex rand16 it 57 fb 0 phases 7 longest 51 XR 31 XRQ 31 ALT 0 TF 1 TFG 1 OK
+H10ex rand17 it 63 fb 0 phases 33 longest 7 XR 7 XRQ 7 ALT 7 TF 1 TFG 1 OK
+H10ex rand18 it 49 fb 0 phases 8 longest 41 XR 13 XRQ 13 ALT 1 TF 1 TFG 1 OK
+H10ex rand19 it 65 fb 0 phases 23 longest 27 XR 27 XRQ 27 ALT 27 TF 1 TFG 1 OK
+H10ex rand20 it 67 fb 0 phases 11 longest 57 XR 38 XRQ 38 ALT 37 TF 1 TFG 1 OK
+H10ex rand21 it 59 fb 0 phases 8 longest 50 XR 31 XRQ 31 ALT 1 TF 1 TFG 1 OK
+H10ex rand22 it 63 fb 0 phases 10 longest 54 XR 36 XRQ 36 ALT 35 TF 1 TFG 1 OK
+H10ex rand23 it 55 fb 0 phases 6 longest 50 XR 26 XRQ 26 ALT 0 TF 1 TFG 1 OK
+H10ex rand24 it 64 fb 0 phases 8 longest 57 XR 35 XRQ 35 ALT 0 TF 1 TFG 1 OK
+H10ex rand25 it 66 fb 0 phases 10 longest 57 XR 57 XRQ 57 ALT 38 TF 1 TFG 1 OK
+H10ex rand26 it 61 fb 0 phases 5 longest 57 XR 35 XRQ 35 ALT 0 TF 1 TFG 1 OK
+H10ex rand27 it 62 fb 0 phases 8 longest 55 XR 33 XRQ 33 ALT 0 TF 1 TFG 1 OK
+H10ex rand28 it 53 fb 0 phases 7 longest 47 XR 15 XRQ 15 ALT 0 TF 1 TFG 1 OK
+H10ex rand29 it 62 fb 0 phases 7 longest 56 XR 34 XRQ 34 ALT 0 TF 1 TFG 1 OK
+H10ex rand30 it 66 fb 0 phases 11 longest 52 XR 52 XRQ 52 ALT 52 TF 1 TFG 1 OK
+H10ex rand31 it 63 fb 0 phases 21 longest 31 XR 31 XRQ 31 ALT 20 TF 1 TFG 1 OK
+H10ex rand32 it 65 fb 0 phases 8 longest 57 XR 35 XRQ 35 ALT 0 TF 1 TFG 1 OK
+H10ex rand33 it 58 fb 0 phases 7 longest 52 XR 27 XRQ 27 ALT 0 TF 1 TFG 1 OK
+H10ex rand34 it 62 fb 0 phases 33 longest 10 XR 10 XRQ 10 ALT 10 TF 1 TFG 1 OK
+H10ex rand35 it 62 fb 0 phases 7 longest 56 XR 34 XRQ 34 ALT 0 TF 1 TFG 1 OK
+H10ex rand36 it 64 fb 0 phases 13 longest 50 XR 50 XRQ 50 ALT 50 TF 1 TFG 1 OK
+H10ex rand37 it 63 fb 0 phases 9 longest 55 XR 33 XRQ 33 ALT 0 TF 1 TFG 1 OK
+H10ex rand38 it 62 fb 0 phases 8 longest 55 XR 33 XRQ 33 ALT 0 TF 1 TFG 1 OK
+H10ex rand39 it 62 fb 0 phases 6 longest 57 XR 35 XRQ 35 ALT 0 TF 1 TFG 1 OK
+H10ex rand40 it 68 fb 0 phases 10 longest 59 XR 59 XRQ 59 ALT 39 TF 1 TFG 1 OK
+H10ex rand41 it 62 fb 0 phases 31 longest 8 XR 6 XRQ 6 ALT 6 TF 1 TFG 1 OK
+H10ex rand42 it 60 fb 0 phases 8 longest 53 XR 32 XRQ 32 ALT 0 TF 1 TFG 1 OK
+H10ex rand43 it 68 fb 0 phases 17 longest 45 XR 45 XRQ 45 ALT 30 TF 1 TFG 1 OK
+H10ex rand44 it 65 fb 0 phases 19 longest 35 XR 35 XRQ 35 ALT 35 TF 1 TFG 1 OK
+H10ex rand45 it 58 fb 0 phases 6 longest 53 XR 33 XRQ 33 ALT 0 TF 1 TFG 1 OK
+H10ex rand46 it 53 fb 0 phases 10 longest 44 XR 18 XRQ 18 ALT 0 TF 1 TFG 1 OK
+H10ex rand47 it 62 fb 0 phases 7 longest 56 XR 34 XRQ 34 ALT 0 TF 1 TFG 1 OK
+H10ex rand48 it 69 fb 0 phases 14 longest 52 XR 52 XRQ 52 ALT 34 TF 1 TFG 1 OK
+H10ex rand49 it 62 fb 0 phases 5 longest 57 XR 35 XRQ 35 ALT 0 TF 1 TFG 1 OK
+END H10ex sha1 e9d4a562db74 V 220 fam S3 max_it 64(S3) max_fb 0(S3) max_phases 4(S3) max_longest 58(S3) max_XR 36(S3) max_XRQ 36(S3) max_ALT 1(S3) max_TF 0(S3) max_TFG 0(S3)
+END H10ex sha1 e9d4a562db74 V 220 fam F max_it 70(F) max_fb 0(F) max_phases 33(F) max_longest 10(F) max_XR 10(F) max_XRQ 10(F) max_ALT 6(F) max_TF 0(F) max_TFG 0(F)
+END H10ex sha1 e9d4a562db74 V 220 fam rand max_it 69(rand48) max_fb 0(rand0) max_phases 33(rand17) max_longest 59(rand4) max_XR 59(rand4) max_XRQ 59(rand4) max_ALT 52(rand30) max_TF 1(rand0) max_TFG 1(rand0)
+END H10ex runs 52 bad 0 oink zlk

@@ -1,0 +1,7 @@
+it 5 count 7 |S| 5 S [-33, -24, -10, 8, 32]
+it 8 count 8 |S| 6 S [-24, -10, -9, -1, 8, 32]
+it 18 count 9 |S| 3 S [-10, -1, 32]
+it 45 count 10 |S| 3 S [-26, 2, 32]
+it 52 count 12 |S| 4 S [-40, -26, -24, 2]
+it 60 count 16 |S| 6 S [-40, -24, 2, 18, 20, 39]
+BEST class 11 kind evenmax2 count 16 S -40,-24,2,18,20,39 phase (1, 122) length 121 n_dressed 41

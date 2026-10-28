@@ -1,0 +1,4 @@
+L 113 PASSW 278 games_runs 1 runs_ff 9 sw 209 sw_Wt1_gt 209 sw_Wt_gt 208 sw_Wt_lt 1
+max L_over_n (0.425, ('experiments/new/box48/instances/long121_n40.pg', (6, 23), 40, 17))
+max PASSW_over_L (4.454545454545454, ('experiments/new/box48/instances/long121_n40.pg', (56, 67), 40, 49, 11))
+max maxSW_run (3, ('experiments/new/box48/instances/long121_n40.pg', (6, 23), 40))

@@ -21,6 +21,9 @@ new/box48/out/qpcclimb/scale, si/root/instances and n5-exhaustive/instances with
 | §8 | DEAD XR-LIN (reader on long121: XR 86 > 2n = 82, run unchanged); READERS inflate K, ALT, (G1), EXIT_x without changing the run | DEAD + DATA + READING |
 | §9 | Even switches per Even vertex per phase: ≤ 0.58n in data; CONJECTURE SW-LIN (≤ n), robust to Odd readers | DATA + CONJECTURE |
 | §10 | DEAD SW-LIN (swlin_kill_n26: one Even vertex switches 27 > n = 26 times in a phase, re-armed by 6 fallbacks; n5b agrees); CONJECTURE SW-RUN (per fallback-free run) | DEAD + DATA + CONJECTURE |
+| §12 | Even readers are clean in every measured case (SAME incl. fallbacks) and raise ONE vertex's switches above the base maximum (long121: 12 → 16) | DATA + READING |
+| §13 | transition counts: |P| ≤ f + (f + 1)·max run; DATA run ≤ 1.53n, f ≤ 0.78n; CONJECTURES RUN-LIN, FB-LIN; climbs found no kill | PROVED (elementary) + DATA + CONJECTURE |
+| §11 | the PROVED core (C1)-(C6) in one place, with premises; independent of MONO-REF / PURE-LEN / GATE-PUSH / E-ONEWAY | PROVED (lane) |
 | §7 | gap (iv): FRESH-RED at interval scope; every known impure long interval (reader_L, cxmig, ladderent, pp) has NOFRESH = 0, so length ≤ m_E there | PROVED (elementary) + DATA |
 
 ## 0. Setting
@@ -42,7 +45,7 @@ changes.
   Ξ_{t+1}(w) = w ⊕ Ξ_{t+1}(y) ▷ w ⊕ Ξ_t(σ_t w) = Ξ_t(w). (The order matters: Ξ_t(y) itself may be the valuation of a play through w.) □
 - Lemma RISE-GATE. Let u be a gate change at an in-phase transition with u on no honest cycle at t or at t + 1. Then Ξ_{t+1}(y1) ⪰ Ξ_t(y1), strictly
   unless Ξ_{t+1}(y1) = Ξ_{t+1}(y2) (a tie at t + 1).
-  Proof. In κ (equivalent to Ξ inside the class by (M1κ)), this is the chain of N5-EXIT §2 GATE-PUSH / P1UP with no hypothesis on exits:
+  Proof. In κ (equivalent to Ξ inside the class by (M1κ)), this is the same three-step chain as N5-EXIT §2 Corollary P1UP, with no hypothesis on exits (GATE-PUSH's premises, FREEZE-A, are not used):
   κ_t(y1) ⪯ κ_t(y2) (BEST at t) ⪯ κ_{t+1}(y2) ((M2κ)) ⪯ κ_{t+1}(y1) (BEST at t + 1). The last step is strict unless there is a tie. BEST (N5-EXIT §2)
   is κ-Y-FORM_D (RESULTS R56 (d), landed) plus Fact CL, a proof step of P-N5-OFFMONO §1 restated there from landed premises. MONO-REF (the
   conditional part of N5-EXIT) is not used. □
@@ -191,6 +194,17 @@ Tools: experiments/si/root/mkoreader.py (appends a reader), orcheck.py (compares
   - Label: DATA. The run identity is CHECKED per instance by orcheck.py (σ, τ and σ̄ on the old vertices, the fallback flags, the phases, and
     every old vertex's Ξ as (cycle node, path-set as a vertex set, length) agree at every state; ranks shift by one, the order does not). It
     is not proved for all games.
+  - CORRECTION (REFEREE, docs/referee/R-N5-READER.md at e83fd19d, gap G-READ-1 and note READ-N1). The unconditional statement is FALSE: S4b can
+    move τ(o), which ends a phase inside an old phase or cancels an old Even fallback (REFEREE's 5-vertex counterexample, its §2 (A); and
+    l121reader_n41 itself with any start τ0(o) ≠ 0 splits the phase, its §2 (B)). REFEREE PROVES (Theorem READER-INV, every game): the run on
+    the old vertices, the fallbacks and the phases are unchanged under condition (R), "τ(o) never moves at a transition at which τ is unchanged
+    on the old vertices". (R) holds when τ0(o) is maximal for Odd's dual valuation over S at the first state of a τ-constant stretch. So the
+    READER device is: «o with τ0(o) maximal for Odd's dual valuation over S, started at the first state of a τ-constant stretch; then the run on
+    the old vertices, the fallbacks and the phases are unchanged on that stretch (Theorem READER-INV)» (REFEREE's wording, READ-N1).
+  - Measured (orcheck.py, which now prints (R)): l121reader_n41 satisfies (R) (τ(o) never moves; REFEREE: Iτ′(o) = ∅ at all 123 states).
+    l121reader6_n46 satisfies (R) for all six readers (READ-N2): readers 42 and 44 move τ only at transition 0 → 1, where τ on the old vertices
+    changes too; the other four never move. So the inflation table below is an instance of Theorem READER-INV, not only DATA.
+  - The XR-LIN kill needs no invariance (REFEREE): l121reader_n41 is itself a game where one vertex's Ξ changes 86 > 2n times in one phase.
 - DEAD XR-LIN ("in every phase, every vertex's Ξ changes ≤ 2n times").
   - Instance: experiments/si/root/instances/l121reader_n41.pg (sha1 084da8cd47707b8937ebe30fdfae88d3d988bdaf; start l121reader_n41.start,
     7ca283c43b7092acc454c5ffc6b1995e3a29bf68). It is L-NEW's long121_n40 at its own start, plus a reader o = 40 with
@@ -230,7 +244,8 @@ Tools: experiments/si/root/mkoreader.py (appends a reader), orcheck.py (compares
 - SW_P(w) := the switches of Even vertex w in phase P. By FRESH-RED's first step, every in-phase transition has an Even switch, so
   |P| ≤ Σ_w SW_P(w) (PROVED, elementary). A bound SW_P(w) ≤ n would give |P| ≤ n·n_E.
 - Odd readers (§8) add no Even switches. An Even reader e (no predecessors) is passive only where no fallback fires: its switch would turn a
-  fallback step into an S4a step. Inside a fallback-free stretch it switches roughly when the W-best Ξ-improving option over S changes, so it can
+  fallback step into an S4a step. [CORRECTION, §12: this was a reading, not a measurement. Measured, Even readers stay clean (run SAME,
+  fallbacks included) on long121, lend107 and swlin_kill_n26. At a fallback state S4c's switch-all moves e together with everyone else.] Inside a fallback-free stretch it switches roughly when the W-best Ξ-improving option over S changes, so it can
   add switches there. Measured: on the longest fallback-free phase in alt_all (run49_n32, phase [2, 51], 49 transitions), the best
   max-aggregate over a subset of the class changes 6 times, against a base maximum of 4 switches of one Even vertex. Fallback-free phases in
   alt_all are short (≤ 1.53n). So Even readers inflate SW only a little in the data, and only between fallbacks.
@@ -267,6 +282,72 @@ Tools: experiments/si/root/mkoreader.py (appends a reader), orcheck.py (compares
     ≤ (f + 1)·n·n_E.
   - Even readers are passive inside a fallback-free run, so SW-RUN must also survive them: a reader's switches there are max-aggregate changes.
     The longest fallback-free runs known are ~1.5n (§9), so this is not tested at scale.
+  - SW-RUN climbs (swclimb.py RUN=1, 6,000 steps each; logs root/out/swr_*.log): from sc24 (seeds 7, 8) and from swlin_kill_n26 (seed 9).
+    Best: 12 switches at n = 18 (0.67n), 14 at n = 21, 7 at n = 16. No kill; SW-RUN stays a CONJECTURE (DATA ≤ 0.67n).
+
+## 12. Even readers: clean, and they raise the switches of ONE vertex (Lead 21:27Z, 21:35Z (a); written 2026-10-28 by date -u)
+Tool: experiments/si/root/ereader.py. It appends an Even vertex e (priority 0, no predecessors, edges to S in one class, start σ0(e) = Y),
+checks SAME (σ, τ, σ̄ on the old vertices and the fallback flags, at every state) and counts e's switches. --search runs a local search over S
+for the most switches in one phase subject to SAME. Log: root/logs/ereader_l121.txt.
+- CORRECTION (REFEREE READ-N3, and my own measurement below): an Even reader is NOT clean in general. REFEREE's Lemma (b) fails for it (Iσ
+  gains its edges and S4a moves it), and at a base fallback its S4a switch cancels S4c. Random Even readers (ereader.py --random, |S| = 4,
+  Y random in S; log root/logs/ereader_random.txt): SAME on long121 60 of 60, on lend107 45 of 60, on swlin_kill_n26 58 of 60. In 16 of the 17
+  failures the first divergence is at a base fallback. So the searches below (which keep only SAME candidates) show that SOME Even readers are
+  clean and raise one vertex's switches; the table's instances are each checked SAME. The text that follows was written before this
+  measurement; its "every candidate accepted" is a property of the search, not of Even readers.
+- Measured reason why an Even reader is clean (DATA, every instance tried, 3 searches × 400 candidates):
+  - in every candidate accepted by the search the run stayed SAME, fallback flags included;
+  - in a fallback-free stretch e has no predecessor, so S4a's pointwise arena optimum for the others is unchanged;
+  - at a fallback state S4c switches every Even vertex with an improving edge, e among them, without touching the others' choices.
+  - The only way e could change the run is to switch at a state where the base step was a fallback (σ' = σ), turning S4c into S4a. This did not
+    happen in any candidate the search kept. My §9 sentence "an Even reader blocks fallbacks" was an unmeasured reading. It is corrected there.
+- Even readers DO raise the switches of ONE vertex (the reader itself) above the base's maximum, with the run SAME:
+  | base | base: most switches of one Even vertex in its longest phase | Even reader e: switches in that phase (max in one fallback-free run) | S, Y |
+  | --- | --- | --- | --- |
+  | long121_n40 (phase [1, 122]) | 12 (vertex 34) | 16 (3); instance l121ereader_n41 (sha1 a67da45f…, start 4cec1a16…) | 13 vertices of class 11, Y = 30 |
+  | lend107_n32 (phase [2, 110]) | 11 (vertex 21) | 15 (3) | {0, 10, 15, 24, 25, 28}, Y = 24 |
+  | swlin_kill_n26 (phase [1, 47]) | 27 (vertex 19) | 26 (6) | {0, 10, 12, 13, 19, 23, 25}, Y = 10 |
+  - So, like XR (§8), the per-vertex switch count, and the total Σ_w SW(w), can be raised by passive vertices. The phase length cannot. (C2)
+    PHASE-SW stays true, because adding switches only loosens it.
+  - Per fallback-free run, the reader's switches stay small (≤ 6). Every count that is invariant under readers is a function of the number of
+    transitions, not of which vertex moves.
+- Consequence (READING): no per-vertex localisation (XR, SW, gate changes, exits) is smaller than the phase length. A proof has to bound the
+  number of transitions directly: by a potential on the whole state, or by counting events that a passive vertex cannot create (each
+  transition's set of switching vertices is not such an event, since readers add to it).
+
+## 13. Transition counts (Lead 22:06Z item 4; Lead reading: state bounds in transitions per phase, not per vertex)
+- (PROVED, elementary) A phase P with f in-phase fallbacks splits into f + 1 fallback-free runs (some possibly empty), so
+  |P| = f + Σ_runs |run| ≤ f + (f + 1)·max |run|.
+- DATA (alt_all, 413 games n ≤ 600; lib41 n ≤ 48, S3):
+  - the longest fallback-free run is 49 transitions (run49_n32, 1.53n); on lib41 34 (pftheta_cex_n32, 1.06n);
+  - the most in-phase fallbacks in one phase is 37 at n = 48 (rise_fb38_n48, 0.78n); on lib41 33 at n = 48 (ccl_w48_n48);
+  - the longest phase is 108 (lend107_n32, 3.38n). Long phases have short runs and many fallbacks, so the product bound above is far from tight.
+- CONJECTURE RUN-LIN: every fallback-free run of a phase has ≤ 2n transitions. CONJECTURE FB-LIN: every phase has ≤ n in-phase fallbacks.
+  Together they give |P| ≤ n + (n + 1)·2n. Both count transitions, so readers cannot inflate them (Theorem READER-INV under (R), REFEREE).
+  Relation to landed text: RESULTS R71 FB-C bounds f per phase by |𝒞_f(P)|·(4n² − 3n), and R73 FB-C′ by n·|𝒞_f(P)|. FB-LIN would need the
+  configurations at fallback sources to be O(1) per phase, or a different argument.
+- Climbs (experiments/si/root/runfbclimb.py, box43 mutations, 5,000 steps each; logs root/out/rl_*.log, fb_*.log): OBJ=run from run49_n32
+  (seed 11) and so_th_n32 (seed 12); OBJ=fb from farrise25_n32 (seed 13) and ccl_fbx_n32 (seed 14). No improvement over the seeds. The best stay
+  run 49 at n = 32 and fallbacks 25 at n = 32. No kill.
+
+## 11. The PROVED core in one place (freezable as a packet once a count has a proof route; Lead 21:35Z (b))
+Labels: PROVED (lane, unrefereed). Every game, inside one phase P of N5 (τ and λ constant, RESULTS R38 (a)). Premises: SPEC S1-S5 with the
+standing premise 1E-N3 (P1: σ̄ is Odd's pointwise-optimal strategy against σ, as P-N5-FLIP §1 names it); (SW) every Even switch of N5 is to an
+edge of Iσ (S4a's arena and S4c's switch-all both take Iσ edges); RESULTS R15 (a) (Ξ_t ⊴ Ξ_{t+1} pointwise at in-phase transitions); for RISE-GATE
+only, κ-Y-FORM_D (RESULTS R56 (d)) and Fact CL (N5-EXIT §2, restated from landed premises). Not used: MONO-REF, OFFSET-MONO, PURE-LEN, GATE-PUSH,
+E-ONEWAY (so REFEREE's DEPTH-add gaps G-DADD-1 / G-DADD-2 do not touch this core).
+- (C1) EVERY-SWITCH. Every in-phase transition changes σ. An S4a step that changes neither σ nor τ is a fallback (S4c). A fallback with
+  Iσ ≠ ∅ switches every Even vertex with an improving edge, and one with Iσ = ∅ changes τ, which ends the phase.
+- (C2) PHASE-SW. |P| ≤ Σ_w SW_P(w), where SW_P(w) is the number of transitions of P at which Even w switches. Immediate from (C1).
+- (C3) RISE-SW (§1). If Even w switches at an in-phase transition and is on no honest cycle at t or at t + 1, then Ξ_{t+1}(w) ▷ Ξ_t(w).
+  So SW_P(w) ≤ XR_P(w) + (switches of w at transitions where it is on an honest cycle).
+- (C4) RISE-GATE (§1). At an in-phase gate change y1 → y2 at u, u off honest cycles at t and t + 1: Ξ_{t+1}(y1) ⪰ Ξ_t(y1), strictly unless
+  Ξ_{t+1}(y1) = Ξ_{t+1}(y2).
+- (C5) FRESH-RED (§1, §7). For any interval I of a fallback-free run of P: |I| ≤ m_E + NOFRESH(I), where NOFRESH(I) counts the transitions of
+  I at which every switching Even vertex returns to an edge it held at an earlier state of I. (C1) and an injective map to edges.
+- (C6) FRESH3-COUNT (§3). On a global C-interval I = [a, b]: transitions with a fresh Even edge ≤ m_E, with a fresh gate option ≤ Σ_{u ∈ D} deg(u),
+  with A_{t+1} ⊊ A_t ≤ |A_a|.
+What these do NOT give: a bound on SW, XR, NOFRESH or the flip-flops. §8 and §10 kill the per-vertex forms XR-LIN and SW-LIN; SW-RUN is open.
 
 ## 6. OPEN
 1. XR-LIN is DEAD (§8: l121reader_n41, XR 86 > 2n = 82). Its old statement was: in every phase, every vertex's Ξ changes ≤ 2n times. Data maximum 1.80n. It implies phase length ≤ 2n² (RISE-SW,
