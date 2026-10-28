@@ -1,0 +1,55 @@
+EO_chk 37005
+EO_e1_after_c 238
+EO_windows 12879
+MR_post_FAIL 183
+MR_post_chk 4471
+MR_pre_chk 317562
+PLSW_chk 1298
+PLX_frozen 140
+PL_FAIL 140
+PL_chk 1298
+PURE_ints 1298
+PURE_withgate 749
+RUNS 578
+skip_big 104
+EX ('PL', '../../../experiments/red/n5/instances/sym_h12_s1.pg/0', 23, 26, 11, 2, 1, 0, 0, 2, 'frozen')
+EX ('PL', '../../../experiments/red/n5/instances/sym_h12_s1.pg/0', 23, 26, 23, 2, 1, 0, 0, 2, 'frozen')
+EX ('PL', '../../../experiments/red/n5/instances/sym_h12_s1.pg/2', 6, 9, 11, 2, 1, 0, 0, 2, 'frozen')
+EX ('PL', '../../../experiments/red/n5/instances/sym_h12_s1.pg/2', 6, 9, 23, 2, 1, 0, 0, 2, 'frozen')
+EX ('PL', '../../../experiments/red/n5/instances/sym_h8_s1.pg/0', 3, 4, 12, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/red/n5/instances/sym_h8_s1.pg/0', 5, 7, 12, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/red/n5inj/instances/block_bk20.pg/0', 5, 14, 1, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/red/n5inj/instances/block_bk20.pg/0', 5, 14, 3, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/red/n5inj/instances/block_bk20.pg/0', 18, 24, 1, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/red/n5inj/instances/block_bk20.pg/0', 18, 24, 2, 2, 1, 0, 0, 2, 'frozen')
+EX ('PL', '../../../experiments/red/n5inj/instances/block_bk20.pg/0', 18, 24, 3, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/red/n5inj/instances/block_bk20.pg/0', 25, 27, 1, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/red/n5inj/instances/block_bk20.pg/0', 25, 27, 3, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/red/n5inj/instances/block_bk20.pg/1', 1, 6, 1, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/red/n5inj/instances/block_bk20.pg/1', 1, 6, 3, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/red/n5inj/instances/block_bk20.pg/1', 11, 17, 1, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/red/n5inj/instances/block_bk20.pg/1', 11, 17, 2, 2, 1, 0, 0, 2, 'frozen')
+EX ('PL', '../../../experiments/red/n5inj/instances/block_bk20.pg/1', 11, 17, 3, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/red/n5inj/instances/block_bk20.pg/1', 18, 20, 1, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/red/n5inj/instances/block_bk20.pg/1', 18, 20, 3, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/red/n5inj/instances/block_bk20.pg/2', 1, 6, 1, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/red/n5inj/instances/block_bk20.pg/2', 1, 6, 3, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/red/n5inj/instances/block_bk20.pg/2', 11, 17, 1, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/red/n5inj/instances/block_bk20.pg/2', 11, 17, 2, 2, 1, 0, 0, 2, 'frozen')
+EX ('PL', '../../../experiments/red/n5inj/instances/block_bk20.pg/2', 11, 17, 3, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/red/n5inj/instances/block_bk20.pg/2', 18, 20, 1, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/red/n5inj/instances/block_bk20.pg/2', 18, 20, 3, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/red/n5inj/instances/block_bk32.pg/0', 8, 29, 1, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/red/n5inj/instances/block_bk32.pg/0', 8, 29, 3, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/red/n5inj/instances/block_bk32.pg/2', 5, 22, 1, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/red/n5inj/instances/block_bk32.pg/2', 5, 22, 3, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/red/n5inj/instances/blockph_bp20.pg/0', 1, 20, 1, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/red/n5inj/instances/blockph_bp20.pg/0', 1, 20, 3, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/red/n5inj/instances/blockph_bp20.pg/0', 22, 25, 1, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/red/n5inj/instances/blockph_bp20.pg/0', 22, 25, 2, 2, 1, 0, 0, 2, 'frozen')
+EX ('PL', '../../../experiments/red/n5inj/instances/blockph_bp20.pg/0', 22, 25, 3, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/red/n5inj/instances/blockph_bp20.pg/1', 2, 17, 1, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/red/n5inj/instances/blockph_bp20.pg/1', 2, 17, 3, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/red/n5inj/instances/blockph_bp20.pg/1', 19, 22, 1, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/red/n5inj/instances/blockph_bp20.pg/1', 19, 22, 2, 2, 1, 0, 0, 2, 'frozen')
+done
