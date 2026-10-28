@@ -1,0 +1,21 @@
+MODE start ../../../experiments/red/usplit/instances/gate_K16_n197.pg ../../../experiments/red/usplit/instances/gate_K16_n197.start
+CHU_checks: 197
+C_cuts: 16
+C_intervals: 3
+ENGXI_checks: 24
+MIGC_checks: 2
+MIG_caseL: 32
+MIG_caseS_only: 73
+MIG_checks: 105
+S_runs: 1
+S_transitions: 23
+ULa_checks: 1
+U_events: 18
+U_in_interval: 1
+runs: 1
+states: 24
+max_U_index_in_interval: (1, 'gate_K16_n197.pg', 3, 5, 4, 183, 153, 197)
+max_U_over_bound_a: (0.0, 'gate_K16_n197.pg', 18, 639468, 16)
+max_Xu: (18, 'gate_K16_n197.pg', 0, 31, 9, 23)
+max_coarseW_changes: (9, 'gate_K16_n197.pg', 183, 18)
+RESULT OK violations=0

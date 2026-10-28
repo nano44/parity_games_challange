@@ -1,0 +1,7 @@
+OK   docs/RESULTS.md@7d87f9be:3451-3452 | A run S: consecutive states k_0, …, k_1 inside one phase, all of whose transitions are S4a
+OK   docs/RESULTS.md@7d87f9be:3452-3452 | (ii) := λ_W constant on S
+OK   docs/RESULTS.md@7d87f9be:2786-2786 | D_k := {Odd u : σ̄_k(u) ≠ τ_k(u)}
+OK   docs/RESULTS.md@7d87f9be:3457-3458 | U(S) := the S4a switch events (k′, (y, z)) of S into an edge forbidden at some state of [k
+OK   docs/RESULTS.md@7d87f9be:3485-3486 | Corollary CHARGE-U (hypothesis (ii) only): for every x the changes of COARSE_L(W(x)) on S 
+tagged quotes 5 ok 5 missing 0
+«-quotes without a [Q] tag right before them: 2

@@ -14,6 +14,11 @@ OFFMONO, OFFMONO-add on the Lead's word; OFFMONO-add2 and P-N5-DEPTH (L-SI 18) w
 - RESTRICT parked half-done: scratch/restrict_probe.py + restrict_logs/ (lib1140 4 parts, lib41, rand1500 s481, long3, MUT=1): 0 failures;
   long3 numbers = packet (91/78/121, QP 5/5/3 = |Q|, XDEG 22/24/8); MUT=1 bites (REP 2 of 3 like the lane). FINDING: GP_EXT 44 phases (lib)
   where N5^tau on G^P stays in the phase past y: "EVERY PHASE ... IS ONE N5^tau PHASE ON G^P" true only as containment. Quotes 8/8 OK.
+- Pushed 26 Oct: add2 d6e07396 (+ff99f1f5), add3 907e21b9 (+d1a22e18), DEPTH 1d74c963 (all SIGNED, no gap; DEPTH-N2: ABS-DEPTH-TIE false as stated).
+  Weekly limit stop 19:35Z 26 Oct; resumed 28 Oct 21:05Z (Lead). OFFMONO UNIT §C 96b2cd9a (in R-N5-OFFMONO.md; pointers in add/add2/add3):
+  identical to REFEREE-2 4e9a6372, joint map empty. DEPTH-add f4b54c43: G-DADD-1 (PURE-LEN false as stated, pure_22), G-DADD-2 (MONO-REF
+  false for m after c, frzh3n_701_best). RESTRICT (this push): all signed, G-RESTRICT-1 (G^P "IS ONE phase" only containment, nep_n12).
+  Queue empty: waiting for the Lead (and the §C words for GCX, DEPTH, DEPTH-add, add2/add3-unit done, RESTRICT).
 - Tools: scratch/gcx_probe.py (MS, MSC, UL R1/R2, R3, RD; MUT 1-4), abs_model.py (model ABS; rules basic, basicM, lowidx, anti, sizedep,
   hash), gcx_literal.py (interval-level reading), loc_cex.py. Inputs gcx_inputs/ (cxmig_k from l-red 18624c0b). Logs gcx_logs/.
 

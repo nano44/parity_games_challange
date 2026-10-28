@@ -1,0 +1,4 @@
+states base / reader: 3 4 | o = 5 S = [0, 2] | rank(o) = 0 | old vertices with priority <= prio(o): 0
+SAME on old vertices: False (first difference at state 1)
+phases equal: False | base phases: [(0, 0), (1, 2)] | reader phases: [(0, 0), (1, 1), (2, 3)]
+states with Itau(o) != {}: 2 | tau(o) moves: 1 | Xi(o) = o (+) min_S Xi at 4 of 4 states

@@ -1,0 +1,26 @@
+H16ex S3 it 100 fb 0 phases 4 longest 94 XR 60 XRQ 60 ALT 1 TF 0 TFG 0 OK
+H16ex F it 106 fb 0 phases 51 longest 10 XR 10 XRQ 10 ALT 6 TF 0 TFG 0 OK
+H16ex rand0 it 99 fb 0 phases 46 longest 18 XR 18 XRQ 18 ALT 18 TF 1 TFG 1 OK
+H16ex rand1 it 94 fb 0 phases 4 longest 91 XR 58 XRQ 58 ALT 0 TF 1 TFG 1 OK
+H16ex rand2 it 97 fb 0 phases 5 longest 93 XR 59 XRQ 59 ALT 0 TF 1 TFG 1 OK
+H16ex rand3 it 91 fb 0 phases 8 longest 83 XR 53 XRQ 53 ALT 0 TF 1 TFG 1 OK
+H16ex rand4 it 99 fb 0 phases 9 longest 91 XR 57 XRQ 57 ALT 0 TF 1 TFG 1 OK
+H16ex rand5 it 99 fb 0 phases 9 longest 90 XR 57 XRQ 57 ALT 1 TF 1 TFG 1 OK
+H16ex rand6 it 102 fb 0 phases 8 longest 95 XR 95 XRQ 95 ALT 63 TF 1 TFG 1 OK
+H16ex rand7 it 100 fb 0 phases 32 longest 45 XR 45 XRQ 45 ALT 30 TF 1 TFG 1 OK
+H16ex rand8 it 103 fb 0 phases 9 longest 95 XR 95 XRQ 95 ALT 63 TF 1 TFG 1 OK
+H16ex rand9 it 100 fb 0 phases 10 longest 90 XR 57 XRQ 57 ALT 1 TF 1 TFG 1 OK
+H16ex rand10 it 103 fb 0 phases 11 longest 93 XR 93 XRQ 93 ALT 62 TF 1 TFG 1 OK
+H16ex rand11 it 10 fb 0 phases 11 longest 0 XR 0 XRQ 0 ALT 0 TF 1 TFG 1 OK
+H16ex rand12 it 104 fb 0 phases 11 longest 94 XR 94 XRQ 94 ALT 62 TF 1 TFG 1 OK
+H16ex rand13 it 100 fb 0 phases 8 longest 93 XR 60 XRQ 60 ALT 0 TF 1 TFG 1 OK
+H16ex rand14 it 98 fb 0 phases 5 longest 94 XR 60 XRQ 60 ALT 1 TF 1 TFG 1 OK
+H16ex rand15 it 97 fb 0 phases 4 longest 94 XR 60 XRQ 60 ALT 1 TF 1 TFG 1 OK
+H16ex rand16 it 91 fb 0 phases 15 longest 71 XR 71 XRQ 71 ALT 71 TF 1 TFG 1 OK
+H16ex rand17 it 98 fb 0 phases 7 longest 92 XR 59 XRQ 59 ALT 0 TF 1 TFG 1 OK
+H16ex rand18 it 98 fb 0 phases 13 longest 82 XR 82 XRQ 82 ALT 82 TF 1 TFG 1 OK
+H16ex rand19 it 100 fb 0 phases 10 longest 89 XR 57 XRQ 57 ALT 1 TF 1 TFG 1 OK
+END H16ex sha1 e5b416f3147a V 352 fam S3 max_it 100(S3) max_fb 0(S3) max_phases 4(S3) max_longest 94(S3) max_XR 60(S3) max_XRQ 60(S3) max_ALT 1(S3) max_TF 0(S3) max_TFG 0(S3)
+END H16ex sha1 e5b416f3147a V 352 fam F max_it 106(F) max_fb 0(F) max_phases 51(F) max_longest 10(F) max_XR 10(F) max_XRQ 10(F) max_ALT 6(F) max_TF 0(F) max_TFG 0(F)
+END H16ex sha1 e5b416f3147a V 352 fam rand max_it 104(rand12) max_fb 0(rand0) max_phases 46(rand0) max_longest 95(rand6) max_XR 95(rand6) max_XRQ 95(rand6) max_ALT 82(rand18) max_TF 1(rand0) max_TFG 1(rand0)
+END H16ex runs 22 bad 0 oink zlk

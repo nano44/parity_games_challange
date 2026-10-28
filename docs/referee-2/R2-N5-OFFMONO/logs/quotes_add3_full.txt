@@ -1,0 +1,10 @@
+FOUND 3e03271f:docs/new/P-N5-OFFMONO-box49.md l.52-53 | Then off_{t+1}(q; p) ⪰ off_t(q; p).
+FOUND 3e03271f:docs/new/P-N5-OFFMONO-box49.md l.69-69 | Case L (y2's honest play at t passes q; it does so before c, since q ≠ c and the play is simple befo
+FOUND 3e03271f:docs/new/P-N5-OFFMONO-box49.md l.65-65 | No step uses where x's play went at t
+FOUND c2a97189:docs/referee/R-N5-OFFMONO-add.md l.43-44 | this suggests a CONJECTURE that OFFSET-MONO holds for every q ∈ Q ∩ U ∖ {c}, which would make the cu
+FOUND c2a97189:docs/referee/R-N5-OFFMONO-add.md l.58-58 | OFFSET-MONO for q on an honest cycle at t: 0 failures in 4,006 + 1,371 checks
+FOUND 3e03271f:docs/new/P-N5-OFFMONO-box49.md l.154-154; 3e03271f:docs/RESULTS.md l.803-804 | (a) L_σ is the pointwise minimum of V_{σ,τ'} over Odd's strategies τ'
+FOUND 3e03271f:docs/RESULTS.md l.1825-1825 | λ_U is a function of τ alone, so on every run of states with τ constant it is constant
+FOUND 3e03271f:docs/new/P-N5-OFFMONO-box49.md l.155-155; 3e03271f:docs/RESULTS.md l.3768-3769 | (SW): every Even switch of N5 is to an edge of Iσ
+FOUND 3e03271f:docs/new/P-N5-OFFMONO-box49.md l.147-147; 3e03271f:docs/new/N5-ssi-global.md l.30-30 | compare reward of c (p'(c) if even, −p'(c) if odd); then P by the signed weight
+quotes 9 found 9 missing 0

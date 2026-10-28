@@ -1,0 +1,55 @@
+EO_chk 31856
+EO_e1_after_c 79
+EO_windows 11076
+MR_post_FAIL 900
+MR_post_chk 5988
+MR_pre_chk 235258
+PLSW_chk 1043
+PLX_frozen 157
+PL_FAIL 157
+PL_chk 1043
+PURE_ints 1043
+PURE_withgate 381
+RUNS 826
+skip_big 29
+EX ('PL', '../../../experiments/n5-exhaustive/instances/b4_nohlen5_0.pg/0', 1, 5, 2, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/n5-exhaustive/instances/b4_nohlen5_0.pg/0', 1, 5, 7, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/n5-exhaustive/instances/b4_nohlen5_0.pg/2', 1, 3, 2, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/n5-exhaustive/instances/b4_nohlen5_0.pg/2', 1, 3, 7, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/n5-exhaustive/instances/b5_os_n14.pg/0', 21, 22, 7, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/n5-exhaustive/instances/b5_os_n16.pg/0', 25, 26, 7, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/n5-exhaustive/instances/b5_os_n16.pg/1', 3, 4, 7, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/n5-exhaustive/instances/b5_os_n20.pg/0', 33, 34, 7, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/n5-exhaustive/instances/b5_os_n24.pg/0', 51, 53, 7, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/n5-exhaustive/instances/b5_os_n24.pg/1', 26, 28, 7, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/n5-exhaustive/instances/b5_os_n24.pg/2', 29, 31, 7, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/n5-exhaustive/instances/b5_os_n28.pg/0', 62, 65, 7, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/n5-exhaustive/instances/b5_os_n28.pg/0', 62, 65, 21, 2, 1, 0, 0, 2, 'frozen')
+EX ('PL', '../../../experiments/n5-exhaustive/instances/b5_os_n28.pg/1', 28, 31, 7, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/n5-exhaustive/instances/b5_os_n28.pg/1', 28, 31, 21, 2, 1, 0, 0, 2, 'frozen')
+EX ('PL', '../../../experiments/n5-exhaustive/instances/b5_os_n32.pg/0', 69, 71, 7, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/n5-exhaustive/instances/b5_os_n32.pg/2', 70, 72, 7, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/n5-exhaustive/instances/b5_os_n40.pg/0', 79, 81, 7, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/n5-exhaustive/instances/b5_os_n40.pg/1', 33, 35, 7, 1, 0, 0, 0, 0, 'frozen')
+EX ('MR_post', '../../../experiments/n5-exhaustive/instances/notnc/notnc8_n15.pg/0', 0, 5, 1, 6)
+EX ('MR_post', '../../../experiments/n5-exhaustive/instances/notnc/notnc8_n15.pg/0', 0, 5, 2, 6)
+EX ('MR_post', '../../../experiments/n5-exhaustive/instances/notnc/notnc8_n15.pg/0', 0, 5, 3, 6)
+EX ('MR_post', '../../../experiments/n5-exhaustive/instances/notnc/notnc8_n15.pg/0', 0, 5, 7, 6)
+EX ('MR_post', '../../../experiments/n5-exhaustive/instances/notnc/notnc8_n15.pg/0', 0, 5, 12, 6)
+EX ('MR_post', '../../../experiments/n5-exhaustive/instances/wk1_n32.pg/0', 6, 26, 0, 27)
+EX ('MR_post', '../../../experiments/n5-exhaustive/instances/wk1_n32.pg/0', 6, 26, 1, 27)
+EX ('MR_post', '../../../experiments/n5-exhaustive/instances/wk1_n32.pg/0', 6, 26, 2, 27)
+EX ('MR_post', '../../../experiments/n5-exhaustive/instances/wk1_n32.pg/0', 6, 26, 3, 27)
+EX ('MR_post', '../../../experiments/n5-exhaustive/instances/wk1_n32.pg/0', 6, 26, 4, 27)
+EX ('MR_post', '../../../experiments/n5-exhaustive/instances/wk1_n32.pg/0', 6, 26, 6, 27)
+EX ('MR_post', '../../../experiments/n5-exhaustive/instances/wk1_n32.pg/0', 6, 26, 7, 27)
+EX ('MR_post', '../../../experiments/n5-exhaustive/instances/wk1_n32.pg/0', 6, 26, 8, 27)
+EX ('MR_post', '../../../experiments/n5-exhaustive/instances/wk1_n32.pg/0', 6, 26, 9, 27)
+EX ('MR_post', '../../../experiments/n5-exhaustive/instances/wk1_n32.pg/0', 6, 26, 10, 27)
+EX ('MR_post', '../../../experiments/n5-exhaustive/instances/wk1_n32.pg/0', 6, 26, 12, 27)
+EX ('MR_post', '../../../experiments/n5-exhaustive/instances/wk1_n32.pg/0', 6, 26, 13, 27)
+EX ('MR_post', '../../../experiments/n5-exhaustive/instances/wk1_n32.pg/0', 6, 26, 14, 27)
+EX ('MR_post', '../../../experiments/n5-exhaustive/instances/wk1_n32.pg/0', 6, 26, 15, 27)
+EX ('MR_post', '../../../experiments/n5-exhaustive/instances/wk1_n32.pg/0', 6, 26, 16, 27)
+EX ('MR_post', '../../../experiments/n5-exhaustive/instances/wk1_n32.pg/0', 6, 26, 18, 27)
+done
