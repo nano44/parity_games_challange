@@ -1,0 +1,29 @@
+MODE files ../R2-N5-STAU/lib41_noref.lst 3
+ENGXI_checks: 19387
+EOW_checks: 50039
+EOW_checks_after: 709
+GCI_intervals: 2009
+GCI_noH3: 256
+GCI_sbar_changes: 435
+GL_checks: 1315
+GL_sharp: 25
+GL_with_gates: 796
+MR_after_FAIL: 379
+MR_after_checks: 31830
+MR_checks: 909016
+PE_checks: 8303
+PL_FAIL: 339
+PL_checks: 2233
+PURE_intervals: 2233
+PURE_intervals_with_gates: 1202
+SD_checks: 46348
+SD_noGEN: 4
+SD_sharp: 404
+SD_with_gates: 13565
+S_runs: 1486
+runs: 1230
+states: 19387
+GL_max_len: (55, 'experiments/red/xing/instances/x32_rand64.pg#0', 0, 55, 56, 64, 0)
+PL_worst: (35, 'experiments/red/so/instances/pft35_n48.pg#0', 2, 6, 41, 1, 0, 0)
+SD_max_len: (55, 'experiments/red/xing/instances/x32_rand64.pg#0', 0, 55, 56, 64, 0)
+RESULT OK violations=0
