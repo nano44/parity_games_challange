@@ -1,3 +1,47 @@
+# Handover check: L-SI (successor 20, written 2026-10-28T23:3xZ by date -u; LANE-RESTART step 3; Opus 5.5, D18/L40)
+Every answer below was measured in this container; commands given. Predecessor: successor 19, session_01Wri18MQcngoeeFHoME5WLV.
+Its handover is notes/L-SI.md "## HANDOVER (successor 19, box 23)" (l-si 7407ef29, queue da88a6d4).
+
+## 1. Branch, head, distance to trunk
+- Branch `claude/l-si`. Clone stale again: local HEAD da88a6d4 ("up to date" per git status before the fetch).
+  `git fetch origin claude/l-si claude/vibrant-johnson-nxvvxo` → origin/claude/l-si 93ac515e (successor 19's 23:15Z DEAD box 23a/23b commit,
+  after its handover); `git merge --ff-only` → 93ac515e.
+- Trunk = f86a4145 (Lead: C85-C87 sent; NOW; log). `git rev-list --left-right --count 93ac515e...trunk` → 3 ahead / 14 behind; merge-base
+  96bde5f3. `git merge --no-ff` of trunk (no rebase) → 50481977; then 4 ahead / 0 behind. This file is the next commit.
+- Oink: tools/oink/build was absent (fresh container); `scripts/setup_oink.sh` → exit 0, "oink built at 8fbf0a7" (tc, tc+, counter_*, rngame present).
+
+## 2. Open work and the next step of each (nothing running)
+Frozen, `sha1sum` equal to the handover: docs/si/P-N5-CORE-box23.md 7b66f1ba; fixes files ROOT c8d01a25, GCX 6a416c0a, DEPTH 67724abe,
+DEPTH-add a1ab7bfb. No docs/si/P-N5-CORE-fixes* yet (`ls` → none).
+Reports on P-N5-CORE: REFEREE docs/referee/R-N5-CORE.md at origin/claude/referee 9d831869: (C1)-(C6) SIGNED, no gap, notes CORE-N1..N6
+(N1: |P| = number of TRANSITIONS). REFEREE-2: `git ls-tree -r --name-only origin/claude/referee-2 | grep N5-CORE` → only the packet copy, no report.
+- (1) MAIN: CONJECTURE RUN-LIN (fallback-free run of a phase ≤ 2n transitions; DATA max 49 = 1.53n run49_n32). Next step: the one-player /
+  1-sink special case first (τ fixed, Odd out-degree 1 off gates: then W = Ξ and S4a is switch-best inside the improving arena), try a direct
+  construction of a long run there, and in parallel runfbclimb.py OBJ=run from new seeds (x32_rand64) with a NOFRESH / fresh split per run.
+- (2) SW-RUN (per fallback-free run), CONJECTURE, DATA ≤ 0.67n. Next: only if RUN-LIN gives a handle.
+- (3) (G1) flip-flops (ret14_n48), if still wanted.
+- (4) STANDBY: P-N5-CORE fixes file (NEW docs/si/P-N5-CORE-fixes-box23.md, CORE-N1..N6) when REFEREE-2 has reported.
+
+## 3. docs/GAPS.md rows I own
+- None (`awk -F'|' '$4 ~ /L-SI/' docs/GAPS.md` → empty). I work under G-N5-TIME (GAPS l.11: major, owner L-NEW, open). RESULTS ends at R75
+  (`grep -o '^### R[0-9]*' docs/RESULTS.md | tail -1`); R76-R78 are Lead drafts at CHECKER (C85-C87).
+
+## 4. The three owner rulings that constrain me most (verbatim from docs/DECISIONS.md; status from docs/DECISIONS-INDEX.md)
+- D18 (DECISIONS.md l.332-333; index l.32: active): "Focus on N5 and work toward proving it. Explore novel approaches, especially by
+  connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions
+  where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and
+  open problems." Lead reading L40 (index l.33: active): L-SI is the OR/MDP lens on N5.
+- D1 (index l.5: active; DECISIONS.md l.3-8, full text docs/decisions/D001-launch-brief.md): "Never publish, post, email, submit or
+  contact anyone outside the fleet. Anything external is my decision." / "A claimed polynomial algorithm is far more likely to be
+  wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below."
+- D16 (DECISIONS.md l.299-300; index l.28: active): "Then keep working as I told you to"
+
+## 5. One trap that bit this lane before, and the check that prevents it
+- Trap (again here): stale clone, AND a predecessor push after its handover (93ac515e at 23:15Z, after the 22:5xZ handover). Working from
+  da88a6d4 would have missed the DEAD.md box 23a/23b entries and made the next push a non-fast-forward.
+- Check: `git fetch origin claude/l-si` + `git rev-parse HEAD origin/claude/l-si` equal before reading; fetch + merge (never rebase) right
+  before every push; sha1sum frozen files before touching docs/si/P-*; never pipe scripts/push.sh.
+
 # Handover check: L-SI (successor 19, written 2026-10-26T18:50Z by date -u; LANE-RESTART step 3; Opus 5.5, D18/L40)
 Every answer below was measured in this container; the commands are given. Predecessor: successor 18, session_01DKVF647UmtYFEEQNiRgoH2.
 Its handover is notes/L-SI.md "## HANDOVER (successor 18, box 22)" (l-si 196c7e8c).
