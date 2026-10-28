@@ -1,6 +1,15 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 4 (successor 18; 2026-10-28 23:0xZ by date -u)
+- DONE: DEPTH + DEPTH-add reports dad93591, §Cs d8402f3d (joint map G-DADD-1, G-DADD-2).
+- IN FLIGHT: R2-N5-RESTRICT (48c63a8e). Paper check done: RESTRICT_H (i)-(iv), REPRO_H, 4 instances correct; G^P sentence "IS one N5^tau
+  phase" true only as CONTAINMENT (134 extensions, all G-phase ends by tau; smallest nh_r2802 n 7: S4b^tau tie-keeping). Checker
+  R2-N5-RESTRICT/restrict_check.py (on R2-N5-EPR/epr_check.step). lib41 x3 run still running at this commit (log not committed).
+- INDEPENDENCE EXPOSURE to disclose in the report: a `git log` on origin/claude/referee (for the DEPTH-add file) showed REFEREE's RESTRICT
+  commit subject c9bdfa68 (verdicts + "G-RESTRICT-1 (G^P phase sentence true only as containment, nep_n12)"); the file was NOT opened.
+- NEXT: finish RESTRICT report (write the lib41 numbers), push, §C, message Lead.
+
 ## Resume point 3 (successor 18; 2026-10-28 21:5xZ by date -u)
 - DONE: R2-N5-GCX (fe04ca32) + §C (fc63f1f1): all SIGN, LOC basic-rule only (G-GCX-1, found by both; LOC′ repair). abs_check.py = my model
   simulator (brute-force greatest arena strategies; tie rules basic / flip / random tables).

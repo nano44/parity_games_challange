@@ -1,0 +1,735 @@
+GP_EXTENDS nep90_n40.pg phase 2 2 G ends by tau n 40
+MODE start ../../../experiments/red/rec0/instances/nep90_n40.pg ../../../experiments/si/rund/instances/nep90_n40.start
+CTL_GP_bites: 4
+CTL_GP_runs: 5
+GE_REP_steps: 91
+GE_RI_checks: 96
+GE_instances: 94
+GP_G_phase_ends_by_lambda: 1
+GP_G_phase_ends_by_tau: 3
+GP_REP_steps: 91
+GP_RI_checks: 96
+GP_extends: 1
+GP_extends_G_by_tau: 1
+GP_instances: 5
+GP_phase_end_checks: 4
+GUJ_REP_steps: 455
+GUJ_RI_checks: 480
+GUJ_instances: 401
+GU_REP_steps: 20
+GU_RI_checks: 27
+GU_instances: 12
+QP_ge2: 3
+QP_le1: 2
+phases: 5
+phases_ge2: 1
+runs: 1
+GP_extends_example: (40, 'nep90_n40.pg', 2, 2, 'tau')
+max_QP: (5, 'nep90_n40.pg', 4, 95, 40)
+RESULT OK violations=0
+MODE start ../../../experiments/n5-epoch/instances/nep76_n40.pg ../../../experiments/n5-epoch/instances/nep76_n40.start
+CTL_GP_bites: 10
+CTL_GP_runs: 10
+GE_REP_steps: 78
+GE_RI_checks: 88
+GE_instances: 85
+GP_G_phase_ends_by_lambda: 7
+GP_G_phase_ends_by_tau: 2
+GP_REP_steps: 78
+GP_RI_checks: 88
+GP_instances: 10
+GP_phase_end_checks: 9
+GUJ_REP_steps: 390
+GUJ_RI_checks: 440
+GUJ_instances: 378
+GU_REP_steps: 9
+GU_RI_checks: 14
+GU_instances: 7
+QP_ge2: 10
+phases: 10
+phases_ge2: 1
+runs: 1
+max_QP: (5, 'nep76_n40.pg', 1, 1, 40)
+RESULT OK violations=0
+MODE start ../../../experiments/new/box48/instances/long121_n40.pg ../../../experiments/new/box48/instances/long121_n40.start
+CTL_GP_bites: 2
+CTL_GP_runs: 2
+GE_REP_steps: 121
+GE_RI_checks: 123
+GE_instances: 38
+GP_G_phase_ends_by_tau: 1
+GP_REP_steps: 121
+GP_RI_checks: 123
+GP_instances: 2
+GP_phase_end_checks: 1
+GUJ_REP_steps: 363
+GUJ_RI_checks: 369
+GUJ_instances: 85
+GU_REP_steps: 4
+GU_RI_checks: 7
+GU_instances: 3
+QP_ge2: 2
+phases: 2
+phases_ge2: 1
+runs: 1
+max_QP: (3, 'long121_n40.pg', 0, 0, 40)
+RESULT OK violations=0
+MODE start ../../../experiments/n5-epoch/results/climb/lend2_n12.pg ../../../experiments/n5-epoch/results/climb/lend2_n12.start
+CTL_GP_bites: 1
+CTL_GP_runs: 1
+GE_REP_steps: 9
+GE_RI_checks: 10
+GE_instances: 2
+GP_REP_steps: 9
+GP_RI_checks: 10
+GP_instances: 1
+GUJ_REP_steps: 18
+GUJ_RI_checks: 20
+GUJ_instances: 3
+GU_RI_checks: 1
+GU_instances: 1
+QP_ge2: 1
+phases: 1
+phases_ge2: 1
+runs: 1
+max_QP: (2, 'lend2_n12.pg', 0, 9, 12)
+RESULT OK violations=0
+MODE start ../../../experiments/n5-epoch/results/climb/lend2_n16.pg ../../../experiments/n5-epoch/results/climb/lend2_n16.start
+CTL_GP_bites: 1
+CTL_GP_runs: 2
+GE_REP_steps: 13
+GE_RI_checks: 15
+GE_instances: 3
+GP_G_phase_ends_by_lambda: 1
+GP_REP_steps: 13
+GP_RI_checks: 15
+GP_instances: 2
+GP_phase_end_checks: 1
+GUJ_REP_steps: 39
+GUJ_RI_checks: 45
+GUJ_instances: 8
+GU_RI_checks: 1
+GU_instances: 1
+QP_ge2: 2
+phases: 2
+phases_ge2: 1
+runs: 1
+max_QP: (3, 'lend2_n16.pg', 0, 0, 16)
+RESULT OK violations=0
+MODE start ../../../experiments/n5-epoch/results/climb/lend2_n24.pg ../../../experiments/n5-epoch/results/climb/lend2_n24.start
+CTL_GP_bites: 3
+CTL_GP_runs: 3
+GE_REP_steps: 29
+GE_RIV_checks: 29
+GE_RI_checks: 33
+GE_instances: 6
+GP_G_phase_ends_by_lambda: 1
+GP_G_phase_ends_by_tau: 2
+GP_REP_steps: 29
+GP_RIV_checks: 29
+GP_RI_checks: 33
+GP_instances: 4
+GP_phase_end_checks: 3
+GUJ_REP_steps: 203
+GUJ_RIV_checks: 203
+GUJ_RI_checks: 231
+GUJ_instances: 42
+GU_RI_checks: 8
+GU_instances: 8
+QP_ge2: 3
+QP_le1: 1
+phases: 4
+phases_ge2: 1
+runs: 1
+max_QP: (5, 'lend2_n24.pg', 0, 0, 24)
+RESULT OK violations=0
+MODE start ../../../experiments/n5-epoch/results/climb/lend2_n32.pg ../../../experiments/n5-epoch/results/climb/lend2_n32.start
+CTL_GP_bites: 3
+CTL_GP_runs: 4
+GE_REP_steps: 22
+GE_RIV_checks: 21
+GE_RI_checks: 26
+GE_instances: 8
+GP_G_phase_ends_by_tau: 3
+GP_REP_steps: 22
+GP_RIV_checks: 22
+GP_RI_checks: 26
+GP_instances: 4
+GP_phase_end_checks: 3
+GUJ_REP_steps: 176
+GUJ_RIV_checks: 169
+GUJ_RI_checks: 208
+GUJ_instances: 62
+QP_ge2: 4
+phases: 4
+phases_ge2: 1
+runs: 1
+max_QP: (7, 'lend2_n32.pg', 1, 1, 32)
+RESULT OK violations=0
+MODE start ../../../experiments/n5-epoch/results/climb/lend2_n48.pg ../../../experiments/n5-epoch/results/climb/lend2_n48.start
+CTL_GP_bites: 10
+CTL_GP_runs: 10
+GE_REP_steps: 17
+GE_RIV_checks: 17
+GE_RI_checks: 28
+GE_instances: 14
+GP_G_phase_ends_by_lambda: 1
+GP_G_phase_ends_by_tau: 9
+GP_REP_steps: 17
+GP_RIV_checks: 17
+GP_RI_checks: 28
+GP_instances: 11
+GP_phase_end_checks: 10
+GUJ_REP_steps: 306
+GUJ_RIV_checks: 306
+GUJ_RI_checks: 504
+GUJ_instances: 251
+GU_RI_checks: 19
+GU_instances: 19
+QP_ge2: 9
+QP_le1: 2
+phases: 11
+phases_ge2: 1
+runs: 1
+max_QP: (11, 'lend2_n48.pg', 0, 0, 48)
+RESULT OK violations=0
+MODE start ../../../experiments/n5-epoch/results/climb/lend2_n8.pg ../../../experiments/n5-epoch/results/climb/lend2_n8.start
+CTL_GP_bites: 1
+CTL_GP_runs: 1
+GE_REP_steps: 9
+GE_RI_checks: 11
+GE_instances: 3
+GP_G_phase_ends_by_lambda: 1
+GP_REP_steps: 9
+GP_RI_checks: 11
+GP_instances: 2
+GP_phase_end_checks: 1
+GUJ_REP_steps: 18
+GUJ_RI_checks: 22
+GUJ_instances: 5
+GU_RI_checks: 3
+GU_instances: 3
+QP_ge2: 1
+QP_le1: 1
+phases: 2
+phases_ge2: 1
+runs: 1
+max_QP: (2, 'lend2_n8.pg', 0, 9, 8)
+RESULT OK violations=0
+MODE start ../../../experiments/n5-epoch/results/climb/lend2_seed_fb17.pg ../../../experiments/n5-epoch/results/climb/lend2_seed_fb17.start
+CTL_GP_bites: 2
+CTL_GP_runs: 2
+GE_REP_steps: 56
+GE_RIV_checks: 55
+GE_RI_checks: 59
+GE_instances: 5
+GP_G_phase_ends_by_tau: 2
+GP_REP_steps: 56
+GP_RIV_checks: 56
+GP_RI_checks: 59
+GP_instances: 3
+GP_phase_end_checks: 2
+GUJ_REP_steps: 224
+GUJ_RIV_checks: 221
+GUJ_RI_checks: 236
+GUJ_instances: 19
+GU_REP_steps: 1
+GU_RI_checks: 6
+GU_instances: 6
+QP_ge2: 1
+QP_le1: 2
+phases: 3
+phases_ge2: 1
+runs: 1
+max_QP: (4, 'lend2_seed_fb17.pg', 0, 56, 32)
+RESULT OK violations=0
+MODE start ../../../experiments/n5-epoch/results/climb/lend2_seed_pk32.pg ../../../experiments/n5-epoch/results/climb/lend2_seed_pk32.start
+CTL_GP_bites: 2
+CTL_GP_runs: 2
+GE_REP_steps: 49
+GE_RI_checks: 51
+GE_instances: 5
+GP_G_phase_ends_by_lambda: 1
+GP_REP_steps: 49
+GP_RI_checks: 51
+GP_instances: 2
+GP_phase_end_checks: 1
+GUJ_REP_steps: 147
+GUJ_RI_checks: 153
+GUJ_instances: 12
+GU_REP_steps: 2
+GU_RI_checks: 6
+GU_instances: 4
+QP_ge2: 1
+QP_le1: 1
+phases: 2
+phases_ge2: 1
+runs: 1
+max_QP: (2, 'lend2_seed_pk32.pg', 1, 50, 32)
+RESULT OK violations=0
+GP_EXTENDS nep_n12.pg phase 0 1 G ends by tau n 12
+MODE start ../../../experiments/n5-epoch/results/climb/nep_n12.pg ../../../experiments/n5-epoch/results/climb/nep_n12.start
+CTL_GP_bites: 10
+CTL_GP_runs: 12
+GE_REP_steps: 11
+GE_RIV_checks: 10
+GE_RI_checks: 24
+GE_instances: 24
+GP_G_phase_ends_by_lambda: 4
+GP_G_phase_ends_by_tau: 7
+GP_Hstops_at_y: 1
+GP_REP_steps: 11
+GP_RIV_checks: 10
+GP_RI_checks: 24
+GP_extends: 1
+GP_extends_G_by_tau: 1
+GP_instances: 13
+GP_phase_end_checks: 12
+GUJ_REP_steps: 44
+GUJ_RIV_checks: 43
+GUJ_RI_checks: 96
+GUJ_instances: 87
+GU_RI_checks: 6
+GU_instances: 6
+QP_ge2: 10
+QP_le1: 3
+phases: 13
+phases_ge2: 4
+runs: 1
+GP_extends_example: (12, 'nep_n12.pg', 0, 1, 'tau')
+max_QP: (4, 'nep_n12.pg', 0, 1, 12)
+RESULT OK violations=0
+MODE start ../../../experiments/n5-epoch/results/climb/nep_n16.pg ../../../experiments/n5-epoch/results/climb/nep_n16.start
+CTL_GP_bites: 28
+CTL_GP_runs: 29
+GE_REP_steps: 8
+GE_RIV_checks: 8
+GE_RI_checks: 38
+GE_instances: 37
+GP_G_phase_ends_by_lambda: 2
+GP_G_phase_ends_by_tau: 27
+GP_REP_steps: 8
+GP_RIV_checks: 8
+GP_RI_checks: 38
+GP_instances: 30
+GP_phase_end_checks: 29
+GUJ_REP_steps: 96
+GUJ_RIV_checks: 96
+GUJ_RI_checks: 456
+GUJ_instances: 444
+GU_RI_checks: 13
+GU_instances: 13
+QP_ge2: 28
+QP_le1: 2
+phases: 30
+phases_ge2: 1
+runs: 1
+max_QP: (12, 'nep_n16.pg', 2, 10, 16)
+RESULT OK violations=0
+GP_EXTENDS nep_n24.pg phase 0 0 G ends by tau n 24
+GP_EXTENDS nep_n24.pg phase 11 12 G ends by tau n 24
+MODE start ../../../experiments/n5-epoch/results/climb/nep_n24.pg ../../../experiments/n5-epoch/results/climb/nep_n24.start
+CTL_GP_bites: 19
+CTL_GP_runs: 21
+GE_REP_steps: 15
+GE_RIV_checks: 15
+GE_RI_checks: 36
+GE_instances: 36
+GP_G_phase_ends_by_lambda: 7
+GP_G_phase_ends_by_tau: 13
+GP_REP_steps: 15
+GP_RIV_checks: 15
+GP_RI_checks: 36
+GP_extends: 2
+GP_extends_G_by_tau: 2
+GP_instances: 21
+GP_phase_end_checks: 20
+GUJ_REP_steps: 135
+GUJ_RIV_checks: 135
+GUJ_RI_checks: 324
+GUJ_instances: 315
+GU_RI_checks: 1
+GU_instances: 1
+QP_ge2: 20
+QP_le1: 1
+phases: 21
+phases_ge2: 4
+runs: 1
+GP_extends_example: (24, 'nep_n24.pg', 0, 0, 'tau')
+max_QP: (9, 'nep_n24.pg', 6, 6, 24)
+RESULT OK violations=0
+MODE start ../../../experiments/n5-epoch/results/climb/nep_n32.pg ../../../experiments/n5-epoch/results/climb/nep_n32.start
+CTL_GP_bites: 11
+CTL_GP_runs: 18
+GE_REP_steps: 6
+GE_RIV_checks: 1
+GE_RI_checks: 27
+GE_instances: 27
+GP_G_phase_ends_by_lambda: 7
+GP_G_phase_ends_by_tau: 12
+GP_Hstops_at_y: 1
+GP_REP_steps: 6
+GP_RIV_checks: 6
+GP_RI_checks: 27
+GP_instances: 21
+GP_phase_end_checks: 20
+GUJ_REP_steps: 108
+GUJ_RIV_checks: 28
+GUJ_RI_checks: 486
+GUJ_instances: 485
+GU_RI_checks: 59
+GU_instances: 59
+QP_ge2: 13
+QP_le1: 8
+phases: 21
+phases_ge2: 2
+runs: 1
+max_QP: (13, 'nep_n32.pg', 0, 0, 32)
+RESULT OK violations=0
+MODE start ../../../experiments/n5-epoch/results/climb/nep_n8.pg ../../../experiments/n5-epoch/results/climb/nep_n8.start
+CTL_GP_bites: 7
+CTL_GP_runs: 8
+GE_REP_steps: 4
+GE_RI_checks: 13
+GE_instances: 13
+GP_G_phase_ends_by_lambda: 5
+GP_G_phase_ends_by_tau: 2
+GP_Hstops_at_y: 1
+GP_REP_steps: 4
+GP_RIV_checks: 4
+GP_RI_checks: 13
+GP_instances: 9
+GP_phase_end_checks: 8
+GUJ_REP_steps: 12
+GUJ_RIV_checks: 8
+GUJ_RI_checks: 39
+GUJ_instances: 35
+GU_REP_steps: 6
+GU_RIV_checks: 5
+GU_RI_checks: 11
+GU_instances: 7
+QP_ge2: 6
+QP_le1: 3
+phases: 9
+phases_ge2: 1
+runs: 1
+max_QP: (3, 'nep_n8.pg', 0, 0, 8)
+RESULT OK violations=0
+MODE start ../../../experiments/n5-epoch/results/climb/nep_seed_levlx.pg ../../../experiments/n5-epoch/results/climb/nep_seed_levlx.start
+CTL_GP_bites: 2
+CTL_GP_runs: 2
+GE_REP_steps: 56
+GE_RI_checks: 58
+GE_instances: 57
+GP_G_phase_ends_by_tau: 1
+GP_REP_steps: 56
+GP_RI_checks: 58
+GP_instances: 2
+GP_phase_end_checks: 1
+GUJ_REP_steps: 112
+GUJ_RI_checks: 116
+GUJ_instances: 64
+GU_REP_steps: 15
+GU_RI_checks: 18
+GU_instances: 5
+QP_ge2: 1
+QP_le1: 1
+phases: 2
+phases_ge2: 1
+runs: 1
+max_QP: (2, 'nep_seed_levlx.pg', 1, 57, 32)
+RESULT OK violations=0
+MODE start ../../../experiments/n5-epoch/results/climb/nep_seed_rise51.pg ../../../experiments/n5-epoch/results/climb/nep_seed_rise51.start
+CTL_GP_bites: 10
+CTL_GP_runs: 10
+GE_REP_steps: 78
+GE_RI_checks: 88
+GE_instances: 85
+GP_G_phase_ends_by_lambda: 7
+GP_G_phase_ends_by_tau: 2
+GP_REP_steps: 78
+GP_RI_checks: 88
+GP_instances: 10
+GP_phase_end_checks: 9
+GUJ_REP_steps: 390
+GUJ_RI_checks: 440
+GUJ_instances: 378
+GU_REP_steps: 9
+GU_RI_checks: 14
+GU_instances: 7
+QP_ge2: 10
+phases: 10
+phases_ge2: 1
+runs: 1
+max_QP: (5, 'nep_seed_rise51.pg', 1, 1, 40)
+RESULT OK violations=0
+MODE start ../../../experiments/red/ul/instances/cxmig_k16_n138.pg ../../../experiments/red/ul/instances/cxmig_k16_n138.start
+CTL_GP_bites: 1
+CTL_GP_runs: 1
+GE_REP_steps: 24
+GE_RI_checks: 25
+GE_instances: 2
+GP_REP_steps: 24
+GP_RI_checks: 25
+GP_instances: 1
+GUJ_REP_steps: 408
+GUJ_RI_checks: 425
+GUJ_instances: 34
+GU_RI_checks: 17
+GU_instances: 17
+QP_ge2: 1
+phases: 1
+phases_ge2: 1
+runs: 1
+max_QP: (17, 'cxmig_k16_n138.pg', 0, 24, 138)
+RESULT OK violations=0
+MODE start ../../../experiments/red/ul/instances/cxmig_k4_n54.pg ../../../experiments/red/ul/instances/cxmig_k4_n54.start
+CTL_GP_bites: 1
+CTL_GP_runs: 1
+GE_REP_steps: 12
+GE_RI_checks: 13
+GE_instances: 2
+GP_REP_steps: 12
+GP_RI_checks: 13
+GP_instances: 1
+GUJ_REP_steps: 60
+GUJ_RI_checks: 65
+GUJ_instances: 10
+GU_RI_checks: 5
+GU_instances: 5
+QP_ge2: 1
+phases: 1
+phases_ge2: 1
+runs: 1
+max_QP: (5, 'cxmig_k4_n54.pg', 0, 12, 54)
+RESULT OK violations=0
+MODE start ../../../experiments/red/ul/instances/cxmig_k8_n82.pg ../../../experiments/red/ul/instances/cxmig_k8_n82.start
+CTL_GP_bites: 1
+CTL_GP_runs: 1
+GE_REP_steps: 16
+GE_RI_checks: 17
+GE_instances: 2
+GP_REP_steps: 16
+GP_RI_checks: 17
+GP_instances: 1
+GUJ_REP_steps: 144
+GUJ_RI_checks: 153
+GUJ_instances: 18
+GU_RI_checks: 9
+GU_instances: 9
+QP_ge2: 1
+phases: 1
+phases_ge2: 1
+runs: 1
+max_QP: (9, 'cxmig_k8_n82.pg', 0, 16, 82)
+RESULT OK violations=0
+MODE start ../../../experiments/red/ul/instances/ladderd0_k12_n48.pg ../../../experiments/red/ul/instances/ladderd0_k12_n48.start
+CTL_GP_bites: 1
+CTL_GP_runs: 1
+GE_REP_steps: 13
+GE_RI_checks: 15
+GE_instances: 2
+GP_G_phase_ends_by_lambda: 1
+GP_REP_steps: 13
+GP_RI_checks: 15
+GP_instances: 2
+GP_phase_end_checks: 1
+GUJ_REP_steps: 182
+GUJ_RI_checks: 210
+GUJ_instances: 28
+GU_RI_checks: 14
+GU_instances: 14
+QP_ge2: 1
+QP_le1: 1
+phases: 2
+phases_ge2: 1
+runs: 1
+max_QP: (14, 'ladderd0_k12_n48.pg', 0, 13, 48)
+RESULT OK violations=0
+MODE start ../../../experiments/red/ul/instances/ladderd0_k24_n84.pg ../../../experiments/red/ul/instances/ladderd0_k24_n84.start
+CTL_GP_bites: 1
+CTL_GP_runs: 1
+GE_REP_steps: 25
+GE_RI_checks: 27
+GE_instances: 2
+GP_G_phase_ends_by_lambda: 1
+GP_REP_steps: 25
+GP_RI_checks: 27
+GP_instances: 2
+GP_phase_end_checks: 1
+GUJ_REP_steps: 650
+GUJ_RI_checks: 702
+GUJ_instances: 52
+GU_RI_checks: 26
+GU_instances: 26
+QP_ge2: 1
+QP_le1: 1
+phases: 2
+phases_ge2: 1
+runs: 1
+max_QP: (26, 'ladderd0_k24_n84.pg', 0, 25, 84)
+RESULT OK violations=0
+MODE start ../../../experiments/red/ul/instances/ladderd0_k48_n156.pg ../../../experiments/red/ul/instances/ladderd0_k48_n156.start
+CTL_GP_bites: 1
+CTL_GP_runs: 1
+GE_REP_steps: 49
+GE_RI_checks: 51
+GE_instances: 2
+GP_G_phase_ends_by_lambda: 1
+GP_REP_steps: 49
+GP_RI_checks: 51
+GP_instances: 2
+GP_phase_end_checks: 1
+GUJ_REP_steps: 2450
+GUJ_RI_checks: 2550
+GUJ_instances: 100
+GU_RI_checks: 50
+GU_instances: 50
+QP_ge2: 1
+QP_le1: 1
+phases: 2
+phases_ge2: 1
+runs: 1
+max_QP: (50, 'ladderd0_k48_n156.pg', 0, 49, 156)
+RESULT OK violations=0
+MODE start ../../../experiments/red/ul/instances/ladderent_k12_n48.pg ../../../experiments/red/ul/instances/ladderent_k12_n48.start
+CTL_GP_bites: 2
+CTL_GP_runs: 2
+GE_REP_steps: 12
+GE_RI_checks: 15
+GE_instances: 14
+GP_G_phase_ends_by_lambda: 2
+GP_REP_steps: 12
+GP_RI_checks: 15
+GP_instances: 3
+GP_phase_end_checks: 2
+GUJ_REP_steps: 168
+GUJ_RI_checks: 210
+GUJ_instances: 185
+GU_RI_checks: 14
+GU_instances: 14
+QP_ge2: 2
+QP_le1: 1
+phases: 3
+phases_ge2: 1
+runs: 1
+max_QP: (14, 'ladderent_k12_n48.pg', 1, 13, 48)
+RESULT OK violations=0
+MODE start ../../../experiments/red/ul/instances/ladderent_k24_n84.pg ../../../experiments/red/ul/instances/ladderent_k24_n84.start
+CTL_GP_bites: 2
+CTL_GP_runs: 2
+GE_REP_steps: 24
+GE_RI_checks: 27
+GE_instances: 26
+GP_G_phase_ends_by_lambda: 2
+GP_REP_steps: 24
+GP_RI_checks: 27
+GP_instances: 3
+GP_phase_end_checks: 2
+GUJ_REP_steps: 624
+GUJ_RI_checks: 702
+GUJ_instances: 653
+GU_RI_checks: 26
+GU_instances: 26
+QP_ge2: 2
+QP_le1: 1
+phases: 3
+phases_ge2: 1
+runs: 1
+max_QP: (26, 'ladderent_k24_n84.pg', 1, 25, 84)
+RESULT OK violations=0
+MODE start ../../../experiments/red/ul/instances/ladderent_k48_n156.pg ../../../experiments/red/ul/instances/ladderent_k48_n156.start
+CTL_GP_bites: 2
+CTL_GP_runs: 2
+GE_REP_steps: 48
+GE_RI_checks: 51
+GE_instances: 50
+GP_G_phase_ends_by_lambda: 2
+GP_REP_steps: 48
+GP_RI_checks: 51
+GP_instances: 3
+GP_phase_end_checks: 2
+GUJ_REP_steps: 2400
+GUJ_RI_checks: 2550
+GUJ_instances: 2453
+GU_RI_checks: 50
+GU_instances: 50
+QP_ge2: 2
+QP_le1: 1
+phases: 3
+phases_ge2: 1
+runs: 1
+max_QP: (50, 'ladderent_k48_n156.pg', 1, 49, 156)
+RESULT OK violations=0
+MODE start ../../../experiments/red/ul/instances/reader_L10_n36.pg ../../../experiments/red/ul/instances/reader_L10_n36.start
+CTL_GP_bites: 1
+CTL_GP_runs: 1
+GE_REP_steps: 12
+GE_RI_checks: 14
+GE_instances: 2
+GP_G_phase_ends_by_lambda: 1
+GP_REP_steps: 12
+GP_RI_checks: 14
+GP_instances: 2
+GP_phase_end_checks: 1
+GUJ_REP_steps: 36
+GUJ_RI_checks: 42
+GUJ_instances: 6
+GU_REP_steps: 3
+GU_RI_checks: 6
+GU_instances: 3
+QP_ge2: 1
+QP_le1: 1
+phases: 2
+phases_ge2: 2
+runs: 1
+max_QP: (3, 'reader_L10_n36.pg', 0, 11, 36)
+RESULT OK violations=0
+MODE start ../../../experiments/red/ul/instances/reader_L20_n56.pg ../../../experiments/red/ul/instances/reader_L20_n56.start
+CTL_GP_bites: 1
+CTL_GP_runs: 1
+GE_REP_steps: 22
+GE_RI_checks: 24
+GE_instances: 2
+GP_G_phase_ends_by_lambda: 1
+GP_REP_steps: 22
+GP_RI_checks: 24
+GP_instances: 2
+GP_phase_end_checks: 1
+GUJ_REP_steps: 66
+GUJ_RI_checks: 72
+GUJ_instances: 6
+GU_REP_steps: 3
+GU_RI_checks: 6
+GU_instances: 3
+QP_ge2: 1
+QP_le1: 1
+phases: 2
+phases_ge2: 2
+runs: 1
+max_QP: (3, 'reader_L20_n56.pg', 0, 21, 56)
+RESULT OK violations=0
+MODE start ../../../experiments/red/ul/instances/reader_L40_n96.pg ../../../experiments/red/ul/instances/reader_L40_n96.start
+CTL_GP_bites: 1
+CTL_GP_runs: 1
+GE_REP_steps: 42
+GE_RI_checks: 44
+GE_instances: 2
+GP_G_phase_ends_by_lambda: 1
+GP_REP_steps: 42
+GP_RI_checks: 44
+GP_instances: 2
+GP_phase_end_checks: 1
+GUJ_REP_steps: 126
+GUJ_RI_checks: 132
+GUJ_instances: 6
+GU_REP_steps: 3
+GU_RI_checks: 6
+GU_instances: 3
+QP_ge2: 1
+QP_le1: 1
+phases: 2
+phases_ge2: 2
+runs: 1
+max_QP: (3, 'reader_L40_n96.pg', 0, 41, 96)
+RESULT OK violations=0
