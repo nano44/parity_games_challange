@@ -226,3 +226,60 @@ Pins: N5-ssi-global.md 66fde9ef, si.py e688b963 (= working tree), FBPOLY de244dc
   addressed by the unit.
 - add1's ZCH-COUNT and add2's FT-COUNT / TIE-CHARGE are true and signed, but they are no longer on the route.
 - ODDC_c stays unbounded (add2 §4's own remark).
+
+## §C. Comparison with REFEREE (successors 15 and 16), written 2026-10-28 21:09Z (date -u), after my report was pushed (4e9a6372)
+REFEREE files, as on trunk bb399acd (file sha1 by `sha1sum`):
+- R-N5-OFFMONO.md, commit 04a563d3, sha1 f06a1c68, successor 15;
+- R-N5-OFFMONO-add.md, commit c2a97189, sha1 b23b9035, successor 15;
+- R-N5-OFFMONO-add2.md, commit d6e07396 + stamp fix ff99f1f5, sha1 fee77023, successor 16;
+- R-N5-OFFMONO-add3.md, commit 907e21b9 + stamp fix d1a22e18, sha1 10a0beca, successor 16.
+These were opened for the first time in this §C.
+### C1. Verdicts
+Identical on every to-sign item: SIGN, no gap, in all four files. Both of us also check (CYC-ID), (CYC-SHAPE) and (A-F) as correct.
+JOINT GAP MAP: EMPTY.
+### C2. Notes, item by item
+| REFEREE note | my reading | status |
+| --- | --- | --- |
+| OFFMONO-N1 (lane's "parent changed" column: 53 / 60 / 48 vs the packet's 28 / 42 / 26) | CONFIRMED independently. My logs/named.txt gives exactly 455 / 390 / 363 checks, 53 / 60 / 48 parent changes and Case L 2 on long121, with par as in §0 | agree (DATA; lane to state its definition) |
+| OFFMONO-N2 (D large on the lane instances) | same direction as my N-OFF-6: the sum form is tight in 2,857 (q, J) cases | agree |
+| OFFMONO-N3 (name P1 / 1E-N3 in the premise list) | I used 1E-N3 the same way (§1.1); wording | agree |
+| OFFMONO-N4, OFFADD-N2 (conjecture: OFFSET-MONO without the cycle hypothesis) | PROVED by add3's OFFSET-MONO⁺, which both of us sign (= ADD3-N3) | closed |
+| OFFADD-N1 (CHAIN-COUNT′ ⇒ CHAIN-COUNT through the SUM form, not the stated form) | CORRECT; I re-derived it, details below. It also corrects my N-OFF-2 | agree; N-OFF-2 refined below |
+| ADD2-N1 (FT-COUNT: ≤ n per vertex, since F is a contiguous block of the order for z ≠ c) | CORRECT. F = the κ-values with first component 0 (z ≠ c), so a monotone κ(z) enters F once, moves inside it ≤ n − 2 times and leaves once. My CTL_ft1 = 0 (even (n − 1)(\|U\| − 1) is never exceeded) agrees | agree (missed by me) |
+| ADD2-N2 (TIE-CHARGE's Even step: x′ ∈ U_c from (Aκ), not from "x′ on Z_{t+1}(c)") | I used (Aκ) there in §1.4 but did not make it a note | agree |
+| ADD2-N3 (si.py executed as the object, not as a checker) | same method on my side (si.py is SPEC S1's own implementation in my state loop) | agree |
+| ADD2-N4 (the ZC″ cut not shown necessary; OPEN) | the necessity question is CLOSED by OFFSET-MONO⁺: no level's offset ever falls, so no game needs any cycle cut | superseded by add3 |
+| ADD3-N1 (say y2 ≠ q) | correct: a self-loop at q would make q its own cycle node at t + 1. REFEREE 15 had it in OFFMONO §1; I checked it but did not write it | agree |
+| ADD3-N2 (L2a, P(Ξ_t y2) ≠ ∅, never occurs; "rests on proof alone") | NEW DATA (below): L2a occurs, and holds strictly, in 2 random games I saved. It is very thin (2 in about 17,900 on-cycle checks), not vacuous | refined |
+| ADD3-N3 (mark OFFADD-N2 / OFFMONO-N4 PROVED by add3) | agree | agree |
+REFEREE has no counterpart for my notes N-OFF-1 (R38 (a) KEY is about λ_U; λ_Ξ is constant on a phase by definition), N-OFF-3 (FT-CONST's
+offset clause: x ∈ Q), N-OFF-5 (CEVEN / ODDC = owner of c), N-OFF-9 (independence exposure). They are wording notes and stand as mine.
+### C3. N-OFF-2 refined by OFFADD-N1 (the one point where we read differently)
+- REFEREE (add3 §2) reads add3 §3 as "the earlier cut forms follow from CHAIN-COUNT‴". My N-OFF-2 said they do not, as numbers. Both are right,
+  for different forms.
+  - The stated / D forms of CHAIN-COUNT, CHAIN-COUNT′ and CHAIN-COUNT″ DO follow from CHAIN-COUNT‴'s SUM form. Fix a cut set X and assume
+    ≤ D values on every cut piece. An x-piece‴ is a union of cut pieces glued at X-transitions, and each glue transition adds at most one
+    strict rise. So Σ_{π‴}(v − 1) ≤ (D − 1)(|EXIT_x| + |X| + 1) + |X|, and the ‴ sum bound is ≤ Σ_x (|EXIT_x| + (D − 1)(|EXIT_x| + |X| + 1) + |X|).
+    That is at most the cut D form |X| + Σ_x D(|EXIT_x| + |X| + 1); the difference is |X| + Σ_x 1 ≥ 0. This is OFFADD-N1's argument.
+  - The cut SUM forms (CHAIN-COUNT′ and CHAIN-COUNT″ state one) do NOT follow. Their bound can be strictly smaller than ‴'s sum bound: my
+    CMP data have 10 (CC1) and 12 (CC2) such (q, J) pairs (CC0, which has no sum form, 15), e.g. tcS8_N9, J = 19..21: 39 against 55. These
+    statements stand on their own proofs, which both of us signed.
+- Joint reading: add3 §3's "follow from" is right for the stated / D forms, through ‴'s sum form, and not for the cut sum forms. The route
+  (count reduced to EXIT_x and D) is unaffected.
+### C4. Data
+Both see the long instances agree with the lane, every signed check at 0, and the controls biting (opposite sign, p := par_t, tie-break
+mutations). Where we differ:
+- Case L1: REFEREE found it once (harm_n12_seed412, not in my lib41 list). I found it once in my lib41 runs. Both exercise L1's c-odd branch
+  or its strict branch, at least once each.
+- Case L2a, my two instances, saved in docs/referee-2/R2-N5-OFFMONO/l2a/ (dump_random.py replays the generator; WHERE=1 prints the event):
+  - r1814_6302_0.pg (sha1 9c575fc9), t = 1, c = 0, q = 4, y1 = 8, y2 = p = 3: κ_t(y1) = (0, −1), κ_t(y2) = (2048, −3); off rises (−2048, 1) → (0, −1).
+  - r1813_619_1.pg (sha1 fd6d95a4), t = 0, c = 7, q = 3, y1 = 5, y2 = p = 1: κ_t(y1) = (0, 2), κ_t(y2) = (64, 1); off rises (−64, 2) → (0, 1).
+  In both, M_t(y2) > 0 = M_t(y1), exactly the strict sub-case of the proof (an even top of P(Ξ_t y2)).
+- Quotes: the 2 add3 quotes from REFEREE's file, unchecked in my report, are VERBATIM at c2a97189 (l. 43-44, l. 58; logs/quotes_add3_full.txt).
+  add3 §5 is now 9/9, and the unit 55/55.
+### C5. Result
+No disagreement on any verdict. Joint gap map EMPTY. Notes to the lane, as the union:
+- REFEREE's: OFFMONO-N1..N3, OFFADD-N1, ADD2-N1..N3, ADD3-N1..N3.
+- Mine: N-OFF-1, -3, -5, -9, and N-OFF-2 in the refined form of C3.
+- Data for ADD3-N2: L2a is thin, not vacuous.
+OFFMONO-N4, OFFADD-N2 and ADD2-N4 are closed by OFFSET-MONO⁺. My verdicts are unchanged. REFEREE-2 successor 18 (Opus 5.5, D15).

@@ -1,0 +1,10 @@
+EO_chk 8583
+EO_windows 1338
+MR_post_chk 3804
+MR_pre_chk 52035
+PLSW_chk 29
+PL_chk 29
+PURE_ints 29
+PURE_withgate 17
+RUNS 18
+done
