@@ -1,0 +1,5 @@
+Cf 125 RECUR 285 f 410 phases 328 phases_with_fb 87 runs 311
+max Cf (5, ('experiments/red/n3/instances/long121_n40.pg', (1, 122), 40, 3, 8))
+max Cf_over_n (0.125, ('experiments/red/n3/instances/long121_n40.pg', (1, 122), 40, 3, 5, 8))
+max f (37, ('experiments/red/so/instances/rise_fb38_n48.pg', (4, 49), 48, 1, 1))
+max f_over_Cf (37.0, ('experiments/red/so/instances/rise_fb38_n48.pg', (4, 49), 48, 1, 37, 1))

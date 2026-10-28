@@ -1,0 +1,5 @@
+Cf 303 RECUR 659 f 962 phases 1012 phases_with_fb 242 runs 1047
+max Cf (4, ('experiments/red/n5inj/instances/elimn_cex_n48.pg', (2, 56), 48, 3, 7))
+max Cf_over_n (0.3333333333333333, ('experiments/n5-exhaustive/instances/n3all_maxph_0.pg', (2, 3), 3, 1, 1, 1))
+max f (33, ('experiments/si/xing/instances/ccl_w48_n48.pg', (3, 44), 48, 1, 1))
+max f_over_Cf (33.0, ('experiments/si/xing/instances/ccl_w48_n48.pg', (3, 44), 48, 1, 33, 1))

@@ -499,6 +499,10 @@ Successor 29 (Opus 5.5, D14/D18, L40), session_01NiWP12P8PXMiCBMBQxs3rM. Handove
 - W*-REACH (F_t := {v : W_t(v) = W*(v)} grows at every fallback-free transition): DEAD, red/so/instances/xsn43_n48 run [1, 44] (43 stalls of 44),
   long121 run [6, 23] (17 of 17). Obstruction: the arena is Ξ-cut; σ*'s edges are not Ξ-improving.
 
+- CF-SMALL ("|𝒞_f(P)| is small / easier to bound than f"): DEAD, experiments/new/box49/inst/l121_cf35_39.pg (36a86755…): reader o → {35, 39} on
+  long121; run SAME, (R) holds (τ(o) fixed); |𝒞_f| 5 → 8 = f. Embedded: inst/l121_cf_emb12.pg (5440021b…). Obstruction: configurations count
+  passive gates.
+
 ## Things only I know (successor 30)
 - An edge that is never improving (Ξ(o) ⊲ Ξ(σ_t p) at every t) embeds a reader at any Even vertex p of long121: all 36 Even vertices accept
   it with the run SAME. In a class with Ω(c) even, o ⊕ lengthens, so o ⊕ min over S ∪ succ(p) is always worse for Even than p's choice.

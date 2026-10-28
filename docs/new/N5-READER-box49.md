@@ -22,6 +22,7 @@ rows() over experiments/new/box21/n5x.py (SPEC S1-S5), imported read-only.
 | §3 | Kinetic / envelope view: an Odd gate is a lower envelope; pairwise order flips s(P) reach 0.55n, so no "few crossings" bound | DEAD as a route + DATA |
 | §3 | LP / tropical reading: readers are redundant rows; per-row counts are not intrinsic, pivot counts are | READING |
 | §4 | Open and next | OPEN |
+| §7 | |𝒞_f(P)| (RESULTS R71 / R73's configurations at fallback sources): ≤ 7 on all plain data, but a 2-option reader lifts it to f (5 → 8 = f on long121, run SAME) | DATA + DEAD (as a route easier than f) |
 | §6 | Fallback-free runs: W never falls (DATA, 10,499 transitions); the W*-reach potential F_t stalls at 53% of transitions (xsn43_n48: 43 of 44) | DATA + DEAD |
 
 ## 0. Setting and the definition
@@ -162,3 +163,34 @@ valuation of the (σ_t, τ)-play, in S1's order. σ_{t+1} is Even's W-optimum in
 - Still OPEN (for the Lead's NEXT): a potential for the fallbacks per phase. At a fallback, no Ξ-improving edge is W-improving, and S4c takes
   the Ξ-best improving edge, which may lower W. Fallback re-arming is exactly what killed SW-LIN (§2). So the fallback count is where the
   per-vertex Even count goes wrong, and it is the quantity to measure next.
+
+## 7. Fallbacks per phase: the number of configurations |𝒞_f(P)| (Lead's GO of 22:36Z). Tools fbconf.py, cfreader.py; logs out/fbconf_*.txt, out/cf*.txt
+Ingredients (landed): RESULTS R71 Theorem FB-C, f ≤ |𝒞_f(P)|·(4n² − 3n). R73's SAT-FB1 form is f ≤ n·|𝒞_f(P)| (as the Lead's message
+names it; not re-read here). 𝒞_f(P) is the set of configurations C = σ̄|Q at the sources of P's in-phase S4c fallbacks, with Q the Odd
+vertices of out-degree ≥ 2. The open part is |𝒞_f(P)|.
+- DATA (fbconf.py; f and |𝒞_f| per phase):
+  | set | runs / phases (with a fallback) | Σ f / Σ |𝒞_f| | max |𝒞_f| (instance, phase, f) | max f (instance, |𝒞_f|) |
+  | --- | --- | --- | --- | --- |
+  | lib41 (n ≤ 48, own start or S3 + 2 random, seed 7) | 1,047 / 1,012 (242) | 962 / 303 | 4 (red/n5inj/instances/elimn_cex_n48, [2, 56], f 7) | 33 (si/xing/instances/ccl_w48_n48, 1) |
+  | L-RED instances (324 files, n ≤ 200, own start or S3) | 311 / 328 (87) | 410 / 125 | 5 (red/n3/instances/long121_n40, [1, 122], f 8) | 37 (red/so/instances/rise_fb38_n48, 1) |
+  | long: si/root/instances (incl. swlin_kill_n26), long121, nep76, qpcclimb scale | 13 / 16 (10) | 71 / 53 | 7 (qpcclimb best_qpc_nep90_n40_s61, [5, 102], f 7) | 8 (l121ereader_n41, 5) |
+  On swlin_kill_n26 (the SW-LIN kill), the phase [1, 47] has f = 6 and |𝒞_f| = 3. On plain games |𝒞_f| stays ≤ 7. The long-f phases have
+  |𝒞_f| = 1, so FB-C / SAT-FB1 carry them.
+- DEAD ("|𝒞_f(P)| is small, or easier to bound than f"). A reader lifts |𝒞_f| to f. Instance experiments/new/box49/inst/l121_cf35_39.pg
+  (sha1 36a86755be9671f8eff3f8e95b503fbc68d89e5f, with .start). It is long121_n40 plus an Odd reader o → {35, 39} (priority 0, start 35).
+  - The run is SAME and the phases are equal. τ(o) never moves (phases equal), so (R) holds and REFEREE's Theorem READER-INV covers this
+    instance, not only DATA.
+  - |𝒞_f| rises from 5 to 8 = f: every one of the 8 fallback sources gets its own configuration (out/cf35_39.txt). σ̄(o) changes only 3
+    times in the phase.
+  - Of the 780 pair readers of the class, 778 keep the run, and the best ones all give 8 (cfreader.py; out/cfreader_l121.txt).
+  - Embedded too: l121_cf_emb12.pg (sha1 5440021b27bb0ab23cd4db682ae73bfbf5aaf39a) has o → {0, 15, 35, 39} and the edge 12 → o at the OLD
+    Even vertex 12. The run is SAME and |𝒞_f| = 8 (out/cf_emb12.txt).
+  - Obstruction: a configuration records the choice of every Odd vertex of out-degree ≥ 2, including vertices that no other honest play
+    reads. A passive gate with two options can split all fallback sources into distinct configurations. So any bound |𝒞_f(P)| ≤ g(n) gives
+    f ≤ g(n + 1) on the base game. Bounding |𝒞_f| is not easier than bounding f, which is intrinsic (unchanged by the reader).
+- What a repair would need (OPEN; not attempted further). FB-C with configurations restricted to the gates that matter, i.e. a reader-proof 𝒞_f.
+  - For a reader o with no predecessors, H_C and H_{C′} differ only on o's edge when C and C′ differ only at o. Every H_C-path through o
+    starts at o, so LEV_C's constraints at every other vertex agree. Dropping x = o from LEV_C might then let one LEV progress serve both.
+  - That would need FB-RISE_C's proof re-read with the restricted LEV. An embedded reader (12 → o) puts o on H_C-paths from 12, so a purely
+    graph-defined restriction fails here too (§1's lesson). A run-defined one ("gates whose choice lies on an honest play of a vertex other
+    than itself at some fallback source") is the candidate.
