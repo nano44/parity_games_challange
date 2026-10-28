@@ -88,3 +88,36 @@ fallback-free run S of one phase at which σ̄ changes at a gate of class c (wit
   increment (τ or λ_W changing at each), [F]'s mechanism does not live inside a phase; if a phase holds exponentially many ALT events, that
   is an N5 lower bound candidate for L-RED.
 - For an upper bound, the HMZ skeleton points at the statement to look for: an unconditional elimination lemma inside a phase.
+
+## 5. The HMZ skeleton as an N5 candidate statement (Lead's word of 19:04Z; written 19:14Z by date -u)
+Notation: a phase P; an Even ACTION is an edge (w, a), w Even; it is USED at state s if σ_s(w) = a. By (SW) (RESULTS R72's premises) an action
+is re-entered only through Iσ (S4a's arena A(w) = {σ(w)} ∪ Iσ(w), or S4c). An Odd action at a gate u ∈ Q is (u, y), used at s if σ̄_s(u) = y.
+- What "left forever within a phase" means. (w, a) is LEFT FOREVER at t ∈ P if it is used at t and at no state of P after t. For S4a's arena
+  edges this is equivalent to: after t, (w, a) is never chosen from A(w) (by S4a or S4c) again; it may re-enter Iσ(w) (become improving
+  again) without being chosen. The strong form "(w, a) ∉ Iσ_s(w) for all later s" is a different statement (never improving again); HMZ's
+  Lemma 6.4 is of the weak form (the action "does not appear in any strategy σ^ℓ").
+- CONJECTURE ELIM (N5; the HMZ skeleton, OPEN as stated). There is a polynomial L(n) such that for every game, every N5 run, every phase P and
+  every state t of P with t + L(n) in P, some Even action used at t is not used at any state of P from t + L(n) on.
+  Consequence (PROVED, elementary, from the conjecture): the actions used at t, t + L, t + 2L, … inside P are pairwise eliminated one per block,
+  so |P| ≤ (m + 1)·L(n) (HMZ Theorem 6.5's count, m = the number of edges): a bound on every phase's length. ELIM says nothing about how many
+  phases there are (RESULTS R15 bounds that only by an exponential potential).
+- Its Odd twin, CONJECTURE ELIM_Q: the same for Odd actions at gates (σ̄). ALT_c(S) (docs/si/N5-EXIT-box22.md §9) counts exactly the σ̄ changes
+  at gates; ELIM_Q with a polynomial L would bound ALT per phase by (Σ_u deg u + 1)·L. Data needed: per phase, the longest gap between an
+  action's last use and its re-use (if ELIM holds, re-uses after a block of length L never occur for SOME action of each block).
+- What E-ONEWAY (docs/si/N5-EXIT-box22.md §8, l-si 196c7e8c) needs in order to drop its window. Its hypotheses on [t, t′]: (W1) a's exit e1
+  and a's class exit path π_a are unchanged; (W2) e1 lies on w's honest play at every state of [t + 1, t′]; (W3) the Q_c-vertices before e1 on
+  that play are off honest cycles.
+  - (W3) is REMOVED by P-N5-OFFMONO-add3's OFFSET-MONO⁺ (READING; for L-SI to check): MONO-REF (§1 there) uses its off-cycle hypothesis only
+    to apply OFFSET-MONO at each chain level x_i, and OFFSET-MONO⁺ needs no such hypothesis.
+  - (W1) can be weakened to "e1 unchanged": if only π_a changes with the same exit, off(a; e1) rises (MONO-REF / OFFSET-MONO⁺ at a, e1 on a's
+    play), so h := κwt_c(w) + off(a; e1) rises too, and the proof's contradiction h ≻ g needs h to stay below g. So it is NOT automatic: it
+    needs the rise of a's offset to stay below the rise of w's (OPEN).
+  - (W2) is the real window: once w's play leaves e1 (w's exit changes, an EXIT_w event), off(w; e1) is no longer defined, and the comparison
+    is between κ_{t′}(a) and κ_{t′}(σ_{t′} w) through two different exits; their difference can change sign any number of times (a DISJ
+    leapfrog). So E-ONEWAY drops its window exactly when leapfrogs between the exits of a and of w's current choice are excluded:
+  - OPEN NO-LEAPFROG(w, a): if w leaves a at t, then for every later state s of P, κ_s(a) ⪯ κ_s(σ_s w) unless some exit on a's play changed.
+    With NO-LEAPFROG, E-ONEWAY's conclusion (no switch back to a) holds for the whole phase, i.e. ELIM's "left forever" for (w, a), but
+    still without a bound on WHEN some action is left, which ELIM also needs.
+- So the two missing pieces of the HMZ skeleton, in N5 terms: (1) NO-LEAPFROG (a left action stays dominated across exit changes), and (2) a
+  polynomial L(n) within which some used action is left (HMZ gets it from the contraction; N5 has none, §3). Labels: ELIM, ELIM_Q CONJECTURE
+  (no data yet); NO-LEAPFROG OPEN; the (W3) removal a READING for L-SI to confirm.

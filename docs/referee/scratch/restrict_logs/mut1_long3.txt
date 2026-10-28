@@ -1,0 +1,57 @@
+GP_EXTchk 1
+GP_R1_FAIL 57
+GP_R2_FAIL 34
+GP_REP_FAIL 2
+GP_REPchk 3
+GP_REPtrans 290
+GP_Rchk 293
+GP_runs 3
+MAX_NQ 5
+MAX_QP 5
+MAX_XDEG 24
+MUT_applied 3
+RUNS 3
+inphase_trans 290
+longph_ex 3
+phases 3
+phases_QP2 3
+EX ('LONGPHASE', '../../../experiments/red/rec0/instances/nep90_n40.pg/0', 4, 95, 'QP', 5, 'NQ', 5, 'XDEG', 22)
+EX ('GP_R1', '../../../experiments/red/rec0/instances/nep90_n40.pg/0', 4)
+EX ('GP_R1', '../../../experiments/red/rec0/instances/nep90_n40.pg/0', 34)
+EX ('GP_R1', '../../../experiments/red/rec0/instances/nep90_n40.pg/0', 35)
+EX ('GP_R1', '../../../experiments/red/rec0/instances/nep90_n40.pg/0', 36)
+EX ('GP_R1', '../../../experiments/red/rec0/instances/nep90_n40.pg/0', 79)
+EX ('GP_R1', '../../../experiments/red/rec0/instances/nep90_n40.pg/0', 80)
+EX ('GP_R1', '../../../experiments/red/rec0/instances/nep90_n40.pg/0', 81)
+EX ('LONGPHASE', '../../../experiments/n5-epoch/instances/nep76_n40.pg/0', 9, 87, 'QP', 5, 'NQ', 5, 'XDEG', 24)
+EX ('GP_R1', '../../../experiments/n5-epoch/instances/nep76_n40.pg/0', 9)
+EX ('GP_R1', '../../../experiments/n5-epoch/instances/nep76_n40.pg/0', 10)
+EX ('GP_R1', '../../../experiments/n5-epoch/instances/nep76_n40.pg/0', 11)
+EX ('GP_R1', '../../../experiments/n5-epoch/instances/nep76_n40.pg/0', 12)
+EX ('GP_R1', '../../../experiments/n5-epoch/instances/nep76_n40.pg/0', 16)
+EX ('GP_R2', '../../../experiments/n5-epoch/instances/nep76_n40.pg/0', 16)
+EX ('GP_R1', '../../../experiments/n5-epoch/instances/nep76_n40.pg/0', 24)
+EX ('GP_R1', '../../../experiments/n5-epoch/instances/nep76_n40.pg/0', 31)
+EX ('GP_R1', '../../../experiments/n5-epoch/instances/nep76_n40.pg/0', 48)
+EX ('GP_R1', '../../../experiments/n5-epoch/instances/nep76_n40.pg/0', 49)
+EX ('GP_R1', '../../../experiments/n5-epoch/instances/nep76_n40.pg/0', 53)
+EX ('GP_R2', '../../../experiments/n5-epoch/instances/nep76_n40.pg/0', 53)
+EX ('GP_R1', '../../../experiments/n5-epoch/instances/nep76_n40.pg/0', 61)
+EX ('GP_R1', '../../../experiments/n5-epoch/instances/nep76_n40.pg/0', 68)
+EX ('GP_REP', '../../../experiments/n5-epoch/instances/nep76_n40.pg/0', 9, 87)
+EX ('LONGPHASE', '../../../experiments/new/box48/instances/long121_n40.pg/0', 1, 122, 'QP', 3, 'NQ', 3, 'XDEG', 8)
+EX ('GP_R1', '../../../experiments/new/box48/instances/long121_n40.pg/0', 1)
+EX ('GP_R2', '../../../experiments/new/box48/instances/long121_n40.pg/0', 1)
+EX ('GP_R1', '../../../experiments/new/box48/instances/long121_n40.pg/0', 2)
+EX ('GP_R2', '../../../experiments/new/box48/instances/long121_n40.pg/0', 2)
+EX ('GP_R1', '../../../experiments/new/box48/instances/long121_n40.pg/0', 3)
+EX ('GP_R2', '../../../experiments/new/box48/instances/long121_n40.pg/0', 3)
+EX ('GP_R1', '../../../experiments/new/box48/instances/long121_n40.pg/0', 4)
+EX ('GP_R2', '../../../experiments/new/box48/instances/long121_n40.pg/0', 4)
+EX ('GP_R1', '../../../experiments/new/box48/instances/long121_n40.pg/0', 5)
+EX ('GP_R2', '../../../experiments/new/box48/instances/long121_n40.pg/0', 5)
+EX ('GP_R1', '../../../experiments/new/box48/instances/long121_n40.pg/0', 6)
+EX ('GP_R2', '../../../experiments/new/box48/instances/long121_n40.pg/0', 6)
+EX ('GP_R1', '../../../experiments/new/box48/instances/long121_n40.pg/0', 7)
+EX ('GP_R2', '../../../experiments/new/box48/instances/long121_n40.pg/0', 7)
+EX ('GP_R1', '../../../experiments/new/box48/instances/long121_n40.pg/0', 8)

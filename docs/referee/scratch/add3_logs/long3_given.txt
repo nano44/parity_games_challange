@@ -1,0 +1,6 @@
+CC3_chk 13
+MAX_D 69
+OMP_chk_nocyc 1208
+RUNS 3
+SUM_kchg 586
+done
