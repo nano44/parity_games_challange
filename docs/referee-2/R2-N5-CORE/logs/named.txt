@@ -1,0 +1,51 @@
+MODE pairs named.lst ../../../experiments RULE n5
+AK_checks: 555
+C1_checks: 537
+C2_checks: 11
+C3_checks: 1160
+C3_oncyc_switches: 2
+C3cons_checks: 11
+C4_changes: 429
+C4_checks: 396
+C4_half1_only: 27
+C4_half2_only: 6
+C4_strict: 396
+C4_unclean: 33
+C5_checks: 2145
+C6S_intervals: 105
+C6S_nonzero_Ashrink: 39
+C6S_nonzero_fresh: 105
+C6S_nonzero_oddopt: 32
+C6_cuts: 309
+C6_intervals: 107
+C6_nonzero_Ashrink: 39
+C6_nonzero_fresh: 107
+C6_nonzero_oddopt: 33
+ENGXI_checks: 567
+MONO_checks: 537
+X1: 4
+X3y: 1039
+X3y_checks: 1162
+X5loc: 11
+X6A: 3
+X6Ax: 7
+XC3_checks: 113
+XC3_checks_oncyc: 34
+XC3_fail_oncyc: 2
+X_cross_transitions: 22
+YF_checks: 2634
+fallback_transitions: 37
+phases: 11
+runs: 8
+states: 567
+transitions: 537
+C6S_max_Ashrink: (2, 33, 'si/root/instances/l121ereader_n41.pg#start', 53, 55)
+C6S_max_len: (9, 'si/root/instances/ueonce_n27.pg#S3', 2, 11)
+C6S_max_oddopt: (4, 22, 'si/root/instances/l121reader_n41.pg#start', 61, 67)
+C6_max_Ashrink: (2, 33, 'si/root/instances/l121ereader_n41.pg#start', 53, 55)
+C6_max_len: (19, 'si/root/instances/cone_n69.pg#S3', 1, 20)
+C6_max_oddopt: (4, 22, 'si/root/instances/l121reader_n41.pg#start', 61, 67)
+max_NOFRESH: (90, 'si/root/instances/l121ereader_n41.pg#start', 1, 122)
+max_SW_over_P: (5.5, 'si/root/instances/cone_n65.pg#S3', 10, 12)
+max_fresh_over_mE: (0.301, 'si/root/instances/l121reader6_n46.pg#start', 1, 122)
+RESULT OK violations=0
