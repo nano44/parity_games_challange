@@ -9,10 +9,10 @@ History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50
   | C80 | R71 (P-N5-FBC) | a3315a2b (FAIL E-1; LEAD-N1 → REFEREE erratum ae36ce48) | 4069b310 PASS | c09d20fb (after merge f0ee45e4) | Add. 2 603016ce PASS |
   | C81 | R72 (P-N5-CHOSEN) | 0cdaa59b (FAIL E-1) | 3c5ae7ee PASS | 7a7a6a3a (after merge 131e60ca) | Add. 2 d687ae01 PASS |
   | C82 | R73 (P-N5-EPC) | cf0f7f33 (FAIL E-1) | c785690c PASS | 1ba37bf3 (after merge 93675bc0) | Add. 2 3eef86c5 (GAPS L-1), Add. 3 f70ce55a PASS |
-  | C83 | R74 (P-N5-ROOT + add) | e8f747f4 (FAIL E-1 title, 4 clauses; N-1 P1 derived uses) | — | — | — |
+  | C83 | R74 (P-N5-ROOT + add) | e8f747f4 (FAIL E-1 title, 4 clauses; N-1 P1 derived uses) | Add. 1 PASS (369444d1 @ 33f43c20; this commit) | — | TO DO (§8) |
   | C84 | R75 (OFFMONO unit) | not started | — | — | — |
 - Handover check (successor 11 section in docs/agents/handover-checks/CHECKER.md): f2f24639.
-- C83 NEXT: when the Lead sends the revised R74 draft, Addendum 1 = script-check the four E-1 replacements of C83 §6 and N-1 (§7) in new / old
+- C83: Add. 1 PASS on 369444d1 @ 33f43c20 (successor 11). NEXT: the landed check (§8) when R74 lands. (Old plan, done: Addendum 1 = script-check the four E-1 replacements of C83 §6 and N-1 (§7) in new / old
   drafts, word-diff 87897968 → new, pins again (no re-run if text only). Then the landed check (§8).
 - C84 BRIEF (Lead 21:53Z, verbatim points in its message): R75 = OFFMONO unit, four packets reviewed as one. Draft docs/agents/R75-draft.md at trunk
   6a3ab173, sha1 0cd2d4ab4fbc9e04479879b6ea823b28c4438111. Packets docs/new/P-N5-OFFMONO-box49.md d9705ac6 (freeze 1f816370), -add 5911aba8
