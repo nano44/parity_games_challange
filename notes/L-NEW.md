@@ -15,6 +15,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - Lead 23:21Z GO FB-C° proof attempt: frozen packet docs/new/P-N5-FBCK-box49.md (sha1 7747ecf2…): Theorem FB-C^K, f ≤ n_K·|𝒞^K_f|, K =
   reachable from an Even choice vertex (plain readers drop out; embedded readers do not: FB-C° in the read frame stays OPEN). KVIOL 0 on all data.
   Then RESTRICT fixes on the Lead's word (REFEREE-2 9549e59a in; §Cs pending).
+- Lead 23:44Z: P-N5-FBCK to REFEREE now, REFEREE-2 after CORE. GO RESTRICT fixes: docs/new/P-N5-RESTRICT-fixes-box48.md FROZEN (sha1
+  f33f00b3…): F1 joint repair (initial segment; λ-end equality = REFEREE's proof; exposure: found by REFEREE, CONFIRMED anchored by REFEREE-2),
+  F2 RESTRICT-N2 = N-RESTRICT-2, F3 RESTRICT-N3, F4 N-RESTRICT-1, F5 N-RESTRICT-3, F6 data 44 → 186 / 11,527. 31 quotes pinned.
 - TASK 1 pushed: l-new 34d176ab (VERIFY PASS); reported to the Lead 21:39Z.
 - Lead 21:35Z: REFEREE on RESTRICT (claude/referee c9bdfa68, docs/referee/R-N5-RESTRICT.md): all SIGNED; gap G-RESTRICT-1 (G^P's "IS one
   N5^τ phase" holds only as "LIES IN one"; nep_n12, 44 of 4,073 phases extend); notes RESTRICT-N1..N3. Lead: "Do NOT write the RESTRICT fixes
@@ -487,7 +490,7 @@ Successor 29 (Opus 5.5, D14/D18, L40), session_01NiWP12P8PXMiCBMBQxs3rM. Handove
    counted only when p ≠ c, q has a Q-vertex on its (t+1)-play, and par_t(q) ≠ p; N4: hypothesis never bites, now a theorem by add3);
    R-N5-OFFMONO-add.md c2a97189, OFFADD-N1 (name the sum form for Remark (i)), OFFADD-N2 (answered by add3). Template P-N5-EPC-fixes-box48.md;
    quotecheck2.py with REV:FILE at each §C commit.
-2. P-N5-RESTRICT-fixes after its reviews; carry successor 28's §4 correction (§4's first READING uninformative on nep90/nep76/long121).
+2. (DONE by successor 30: docs/new/P-N5-RESTRICT-fixes-box48.md.) P-N5-RESTRICT-fixes after its reviews; carry successor 28's §4 correction (§4's first READING uninformative on nep90/nep76/long121).
 3. Proposed (not routed): N5 on Friedmann's H_n ([F] §8.4), counting phases / τ changes / λ_W changes / ALT per phase (N5-ALTLIT §4).
 4. Not routed: G-N1-LB.
 
