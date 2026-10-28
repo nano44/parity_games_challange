@@ -332,3 +332,14 @@ fi
 o=$(python3 -I root/corecheck.py --one ../red/rec0/instances/nep90_n40.pg rund/instances/nep90_n40.start); grep -q "C3=202 C4_clean=105 " <<<"$o"; grep -q "CORE PASS" <<<"$o"
 MUT=1 python3 -I root/corecheck.py --one ../red/rec0/instances/nep90_n40.pg rund/instances/nep90_n40.start | grep -q "C3_V=167 "
 echo "root (corecheck: P-N5-CORE (C1), (C3), (C4) on nep90; control bites): PASS"
+# P-N5-DEPTH-fixes-box22 (14 quotes) and P-N5-DEPTH-add-fixes-box22 (20 quotes): verbatim at 2201aa2d / aa6061d1 (packets), dc4e47b8 (REFEREE),
+# 4eb5cbfb (REFEREE-2); shifted controls fail.
+if git cat-file -e 2201aa2d && git cat-file -e aa6061d1 && git cat-file -e dc4e47b8 && git cat-file -e 4eb5cbfb; then
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-DEPTH-fixes-box22.md | grep -q "quotes=14 bad=0"
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-DEPTH-fixes-box22.md --mut | grep -q "QUOTES FAIL"
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-DEPTH-add-fixes-box22.md | grep -q "quotes=20 bad=0"
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-DEPTH-add-fixes-box22.md --mut | grep -q "QUOTES FAIL"
+  echo "root (P-N5-DEPTH and DEPTH-add fixes: 14 + 20 quotes verbatim; shifted controls fail): PASS"
+else
+  echo "root (P-N5-DEPTH / DEPTH-add fixes quotes): NOT RUN (a source commit is not in this clone)"
+fi
