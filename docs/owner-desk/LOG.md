@@ -382,3 +382,19 @@ NOW.md refreshed (trunk 40acab5). RESULTS R36-R40 landed today. In review: P-N5-
 > Give me a status update about N5
 
 Answered from trunk a67dca63 (2026-10-26 09:20Z; NOW.md header 09:15Z). Relayed to the Lead.
+
+## 2026-10-26T09:31Z Lead report (09:30Z, summary)
+No new landing since 09:20Z. R65 (P-N5-STAU) at CHECKER C74; if PASS, R64's one-disagreement epoch bound loses premise (Στ). REC-0 signed by both referees (one §C pending): disagreement-free epochs per phase ≤ (f+1)(n+1)+4n(n−1)+1, reduction to f. L-NEW 25 HON-0 lane-proved, unrefereed; HON-FF conjecture. L-SI 13: LEVEL-COUNT dead (lcount_n23); UF-ONCE, U-SPLIT conjectures expected false; circularity reading, new potential needed (OPEN). G-N5-TIME OPEN.
+
+## 2026-10-26T18:15Z owner message (verbatim)
+> Give me a status update about N5
+
+Answered from trunk 449b6df2 (2026-10-26 18:10Z; NOW.md header 16:30Z), RESULTS R65-R72, lane rows in NOW.md. Relayed to the Lead.
+
+## 2026-10-26T18:26Z Lead report (18:25Z, summary)
+R73 (P-N5-EPC) at CHECKER C82, both referees signed, no gap: f ≤ n·|C_f| per phase; reduces epoch count to X_dir, X_big, NCONF_≥2, R⁰_≥2 (OPEN). In review: P-N5-ROOT+add, P-N5-OFFMONO+add (REFEREE signed; REFEREE-2 pending); GCX, RESTRICT queued. L-RED kills (pinned, Oink-checked): UL_C (R91), C-ONCE_X (R93); R92 disagreeing Odd vertices per class linear in n. L-SI STATIC-DEPTH lane-proved, unrefereed; remaining hard count ALTERNATION. Lead reading: super-poly needs phases of length ω(n) at fixed k; records ~2.3n-3.3n. G-N5-TIME OPEN.
+
+## 2026-10-26T19:29Z owner message (verbatim)
+> I feel like we are slowly getting somewhere no?
+
+Answered from the record (RESULTS R51-R73, Lead report 18:25Z). Relayed to the Lead.

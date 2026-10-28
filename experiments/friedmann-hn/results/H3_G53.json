@@ -1,0 +1,47 @@
+{
+"name": "H3_G53",
+"n": 3,
+"mode": "fig",
+"V": 63,
+"m": 149,
+"sha1": "f7bdd38ab04751ce891d481b98a3ffec09b8dc8e",
+"start_sha1": "edd443413a764195e74c40aced4e085f3894500b",
+"it": 20,
+"fb": 0,
+"phases": 1,
+"longest": 20,
+"tau_changes": 0,
+"lamXi_changes": 0,
+"lamW_changes": 0,
+"viol": [],
+"ok": true,
+"checks": {
+"n5_eq_n5b": true,
+"rows_eq": true,
+"oink": "zlk",
+"oink_eq": true,
+"verify_n5": true,
+"verify_n5b": true
+},
+"phases_detail": [
+{
+"p": 0,
+"a": 0,
+"b": 20,
+"len": 20,
+"end": "final",
+"ntau": 0,
+"dW": 0,
+"f": 0,
+"N_ep": 4,
+"NCONF": 3,
+"NCONF2": 0,
+"S": 1,
+"ALT": 3,
+"ALTsum": 3,
+"SBG": 3,
+"sbQ": 3,
+"D": 1
+}
+]
+}
