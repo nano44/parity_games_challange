@@ -1,0 +1,5 @@
+runs 311 phases 328
+swe (48, ('experiments/red/ul/instances/ladderd0_k48_n156.pg', 49))
+swe_n (0.375, ('experiments/red/kw/instances/cw11_n24.pg', 11, 9, 24))
+swo_n (1.4375, ('experiments/red/xing/instances/x31_rx32.pg', 53, 46, 32))
+xr_n (1.53125, ('experiments/red/xing/instances/x31_rx32.pg', 53, 49, 32))

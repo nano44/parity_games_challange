@@ -31,4 +31,14 @@ if git cat-file -e 96b2cd9a^{commit} 2>/dev/null && git cat-file -e c040084a^{co
 else
   echo "OFFMONO-fixes quotes: NOT RUN (96b2cd9a or c040084a not in this clone)"
 fi
+# Box 49 (successor 30), N5-READER: the embedded reader l121_d29 keeps long121's run and has XR 86 > 2n; NOSW and SW-AMORT hold on long121.
+t49=$(mktemp -d)
+d49=$(python3 -I box49/dress.py box48/instances/long121_n40.pg box48/instances/long121_n40.start "$t49/d29" "1:0:0,1,2,5,6,7,8,17,20,22,23,24,30,36,39:5" "EDGE:29:h0")
+if echo "$d49" | grep -q "^SAME" && echo "$d49" | grep -q "(40, 1, 86, 74)" && \
+   python3 -I box49/cross.py 0 1 box48/instances/long121_n40.pg | grep -q "NOSW 0 PASS 303 SW 246 SWAMORT_viol 0"; then
+  echo "N5-READER: embedded reader (run SAME, XR 86), NOSW, SW-AMORT on long121: PASS"
+else
+  echo "N5-READER checks: FAILED"; exit 1
+fi
+rm -rf "$t49"
 rm -rf "$tmp"

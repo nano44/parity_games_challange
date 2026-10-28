@@ -1,0 +1,28 @@
+== l121_a: Odd reader o (L-SI's l121reader_n41, rebuilt)
+dressed: inst/l121_a.pg 1:0:0,1,2,6,7,8,17,20,22,23,24,30,36,39:0
+SAME states (123, 123) phases_equal True n 41
+phase (1, 122) len 121 fallbacks 8 XR_max(old) 44 2n 82 new (vertex, owner, XR, strategy changes): [(40, 1, 86, 75)]
+== l121_b: + Even forced e -> o
+dressed: inst/l121_b.pg 1:0:0,1,2,6,7,8,17,20,22,23,24,30,36,39:0 0:0:h0:h0
+SAME states (123, 123) phases_equal True n 42
+phase (1, 122) len 121 fallbacks 8 XR_max(old) 44 2n 84 new (vertex, owner, XR, strategy changes): [(40, 1, 86, 75), (41, 0, 86, 0)]
+== l121_c: Even CHOICE e -> {o, e2}, e2 Even forced -> o, start e -> o
+dressed: inst/l121_c.pg 1:0:0,1,2,6,7,8,17,20,22,23,24,30,36,39:0 0:0:h0,h2:h0 0:0:h0:h0
+SAME states (123, 123) phases_equal True n 43
+phase (1, 122) len 121 fallbacks 8 XR_max(old) 44 2n 86 new (vertex, owner, XR, strategy changes): [(40, 1, 86, 75), (41, 0, 86, 0), (42, 0, 86, 0)]
+== l121_d29: o with S ∪ succ(29), and an edge 29 -> o at the OLD Even vertex 29
+dressed: inst/l121_d29.pg 1:0:0,1,2,5,6,7,8,17,20,22,23,24,30,36,39:5 EDGE:29:h0
+SAME states (123, 123) phases_equal True n 41
+phase (1, 122) len 121 fallbacks 8 XR_max(old) 44 2n 82 new (vertex, owner, XR, strategy changes): [(40, 1, 86, 74)]
+== l121_e100: o <-> e (o -> S ∪ {e}, e Even forced -> o, priority 100): both new vertices have a predecessor
+dressed: inst/l121_e100.pg 1:0:0,1,2,6,7,8,17,20,22,23,24,30,36,39,h1:0 0:100:h0:h0
+SAME states (123, 123) phases_equal True n 42
+phase (1, 122) len 121 fallbacks 8 XR_max(old) 44 2n 84 new (vertex, owner, XR, strategy changes): [(40, 1, 86, 75), (41, 0, 86, 0)]
+== l121_er19: Even reader e on S' (best of two hill climbs, search.py evenreader seeds 1, 2)
+dressed: inst/l121_er19.pg 0:0:6,8,17,19,25,27,34:6
+SAME states (123, 123) phases_equal True n 41
+phase (1, 122) len 121 fallbacks 8 XR_max(old) 44 2n 82 new (vertex, owner, XR, strategy changes): [(40, 0, 31, 19)]
+== l121_er_6_19: Even reader on the most-flipping pair {6, 19} (22 order flips in the phase)
+dressed: inst/l121_er_6_19.pg 0:0:6,19:6
+SAME states (123, 123) phases_equal True n 41
+phase (1, 122) len 121 fallbacks 8 XR_max(old) 44 2n 82 new (vertex, owner, XR, strategy changes): [(40, 0, 41, 11)]

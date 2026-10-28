@@ -1,0 +1,5 @@
+runs 1047 phases 1012
+swe (14, ('experiments/new/box25/instances/sc24.pg', 20))
+swe_n (0.5833333333333334, ('experiments/new/box25/instances/sc24.pg', 20, 14, 24))
+swo_n (1.53125, ('experiments/si/orlens/instances/lev_l_x.pg', 55, 49, 32))
+xr_n (1.59375, ('experiments/si/orlens/instances/lev_l_x.pg', 55, 51, 32))

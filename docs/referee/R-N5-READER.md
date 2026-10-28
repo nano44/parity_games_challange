@@ -109,3 +109,39 @@ FINDINGS: READER-INVARIANCE false unconditionally (G-READ-1: S4b moves τ(o), sp
 counterexample); PROVED under (R), which the dual-optimal start gives on any τ-constant stretch; l121reader_n41 reproduced exactly (86 > 82,
 (R) holds); the XR-LIN kill does not depend on invariance.
 NEEDS: Lead: route G-READ-1 and READ-N1..N3 to L-SI (the §8 statement should carry (R)); nothing from the owner.
+
+## 6. Comparison with L-COMP's independent reproduction (written 2026-10-28T22:10Z by date -u; opened after this report was pushed at e83fd19d)
+L-COMP successor 6, experiments/xr-lin/ (l-comp eabb3018; README.md, repro.out), engine n5b.py (SPEC), Oink zlk and verify on both games.
+| item | REFEREE (rl_engine) | L-COMP (n5b.py) |
+| --- | --- | --- |
+| instance sha1s | 084da8cd / 7ca283c4; base c667c085 / d750664a | the same |
+| states, iterations, fallbacks | 123, 122, 8 (both games) | 123, 122, 8 |
+| σ, τ, σ̄ on 0..39 at every state; fallback flags | equal | equal |
+| Ξ on 0..39 (cycle node, path vertex set, length) | equal at every state | not compared |
+| phases | [0, 0], [1, 122] in both | the same, keyed on all 41 and on 0..39 |
+| τ(o) moves; Iτ(o) | 0; Iτ(o) = ∅ at all 123 states | 0 moves (Iτ(o) not reported) |
+| Ξ(o) changes in [1, 122] | 86 | 86 |
+| XR of the phase (max over vertices) | reader 86 at o = 40 (next 44); base 44 at v 6 (next 37), scratch/reader_logs/xr_max.txt | reader 86 at v 40; base 44 at v 6 |
+| regions / strategies | not run here | Oink zlk equal, verify OK |
+Two independent engines agree on every shared figure. No disagreement.
+
+## 7. Theorem READER-INV: clean statement and its premises (Lead 22:06Z, item 2)
+Statement (PROVED, every game). The premises are SPEC S1-S5 with FIX 1-4 only, with S1's σ̄ read as si.py Engine.evaluate's procedure, as SPEC
+S1 says. For the last clause, add the standing premise 1E-N3 (RESULTS R57: S1's σ̄ is Odd's pointwise optimum).
+- Setting. Let G be a game on V and G′ = G plus one vertex o.
+  - o is Odd-owned, has no predecessors, has successors S ⊆ V, and any priority. Its index lies above V's; any position works if V's
+    order is kept.
+  - Run N5 on G from (σ0, τ0) and on G′ from (σ0, τ0 ∪ {o ↦ y0}), y0 ∈ S.
+- Hypothesis (R): at no transition of G′'s run does τ(o) change while τ on V stays the same.
+- Conclusion: the two runs have the same states restricted to V, step for step and with the same length:
+  - σ, τ|V and σ̄|V; the S4c fallback flags;
+  - Ξ|V up to the order-preserving relabelling of ranks; the phases ((λ_Ξ, τ)-constant runs).
+  - Also Ξ(o) = o ⊕ min_{y ∈ S} Ξ(y) at every state (with 1E-N3).
+- Sufficient for (R): Iτ(o) = ∅ at the start and at every state that follows a change of τ on V. Odd's dual valuation depends on τ only, so
+  on any τ-constant stretch this is equivalent to y0 maximal over S for Odd's dual valuation at the stretch's first state.
+- Not needed: S inside one honest class. The cycle node of Ξ(o) is the Odd-best of the classes of S, which is constant wherever λ is
+  constant on V. Also not needed: o's priority below the others (a tie or any rank is harmless).
+- Needed: (R), and o Odd. An Even reader enters Iσ and S4a (READ-N3). Without (R) the statement is false (§2: phases split; a fallback is
+  cancelled at S4c).
+No RESULTS entry beyond 1E-N3 (and that one only for the Ξ(o) formula) is used. The proof is §1's one-state lemma through S1 (i)-(vi), S2,
+S4a, S4b, S4c and FIX 3, with induction on the state index.

@@ -1,0 +1,9 @@
+pair (3, 33) first differing state 5 base fallback flag of the transition into it 0 states (123, 124)
+pair (4, 17) first differing state 55 base fallback flag of the transition into it 0 states (123, 125)
+pair (10, 33) first differing state 5 base fallback flag of the transition into it 0 states (123, 124)
+pair (14, 33) first differing state 5 base fallback flag of the transition into it 0 states (123, 124)
+pair (15, 33) first differing state 5 base fallback flag of the transition into it 0 states (123, 124)
+pair (16, 33) first differing state 5 base fallback flag of the transition into it 0 states (123, 124)
+pair (33, 35) first differing state 5 base fallback flag of the transition into it 0 states (123, 124)
+
+[exited with code 0]

@@ -1,6 +1,15 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 3 (successor 18; 2026-10-28 21:5xZ by date -u)
+- DONE: R2-N5-GCX (fe04ca32) + §C (fc63f1f1): all SIGN, LOC basic-rule only (G-GCX-1, found by both; LOC′ repair). abs_check.py = my model
+  simulator (brute-force greatest arena strategies; tie rules basic / flip / random tables).
+- DONE (this push): R2-N5-DEPTH (all SIGN, no gap; N-DEPTH-1..5: ABS-DEPTH-TIE false for non-keep rules) and R2-N5-DEPTH-add (GATE-PUSH SIGN,
+  never exercised; PURE-LEN FALSE as stated (G-DADD-1: per-class interval not cut when U_c frozen; reader40_plus2, pure_22, kw25_n32) →
+  PURE-LEN′ (Even-switch count) SIGN; MONO-REF needs m ≤ first c (G-DADD-2: b4_theta_n7 + mr/ start); E-ONEWAY proved only for e1 ≤ c
+  (G-DADD-3; 0 returns in 711 windows)). Tools R2-N5-DEPTH/{depth_check.py, absdepth_check.py, mkunion.py, run_all.sh}.
+- NEXT: §C on DEPTH / DEPTH-add when REFEREE's files exist (0 at 19:04Z on 10-26); then P-N5-RESTRICT (48c63a8e).
+
 ## Resume point 2 (successor 18; 2026-10-28 21:1xZ by date -u; restarted after the weekly limit, Lead 21:05Z)
 - Container survived: 4e9a6372 (R2-N5-OFFMONO) was pushed; NOT on trunk at bb399acd (the Lead thought it was). Merged trunk -> a561ed55.
 - DONE: §C of R2-N5-OFFMONO vs REFEREE 15/16 (04a563d3, c2a97189, d6e07396+ff99f1f5, 907e21b9+d1a22e18): identical verdicts, joint map EMPTY.
