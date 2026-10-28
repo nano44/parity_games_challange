@@ -1,0 +1,20 @@
+MODE random 2000 8 20 2112 4 3
+CHU_checks: 11393
+C_cuts: 111
+C_intervals: 650
+ENGXI_checks: 17805
+MIGC_checks: 1
+MIG_caseL: 3
+MIG_checks: 3
+S_runs: 746
+S_transitions: 800
+ULa_checks: 746
+U_events: 1
+U_in_interval: 1
+runs: 6000
+states: 17805
+max_U_index_in_interval: (0, 'random2112:1393#2', 4, 5, 4, 11, 9, 12)
+max_U_over_bound_a: (0.0062, 'random2112:1393#2', 1, 161, 1)
+max_Xu: (1, 'random2112:329#2', 3, 16, 2, 3)
+max_coarseW_changes: (2, 'random2112:329#2', 10, 0)
+RESULT OK violations=0

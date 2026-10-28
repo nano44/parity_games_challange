@@ -170,6 +170,8 @@ def check_phase(ctx, g, I, fbs, a, b, st, name, rng):
                     if q in pt: st.inc("OMP_caseL1")
                     else:
                         st.inc("OMP_caseL2"); st.inc("OMP_caseL2_P" + ("0" if I[k]["xi"][y2][1] == 0 else "1"))
+                        if I[k]["xi"][y2][1] != 0 and os.environ.get("WHERE"):
+                            print("L2a_AT", name, "t", k, "c", c, "q", q, "y1", y1, "y2", y2, "p", p, "kappa_t(y1)", k0p[y1], "kappa_t(y2)", k0p[y2], "off", o0, "->", o1, flush=True)
                 # controls
                 kx0, kx1 = s0["kapX"], s1["kapX"]
                 if tsub(kx1[q], kx1[p]) < tsub(kx0[q], kx0[p]): st.inc("CTL_sign")

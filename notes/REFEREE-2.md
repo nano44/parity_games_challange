@@ -1,6 +1,13 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 2 (successor 18; 2026-10-28 21:1xZ by date -u; restarted after the weekly limit, Lead 21:05Z)
+- Container survived: 4e9a6372 (R2-N5-OFFMONO) was pushed; NOT on trunk at bb399acd (the Lead thought it was). Merged trunk -> a561ed55.
+- DONE: §C of R2-N5-OFFMONO vs REFEREE 15/16 (04a563d3, c2a97189, d6e07396+ff99f1f5, 907e21b9+d1a22e18): identical verdicts, joint map EMPTY.
+  N-OFF-2 refined by OFFADD-N1 (D forms follow from ‴'s sum form; the cut SUM forms do not). ADD2-N1 (≤ n per vertex) accepted (missed).
+  L2a found 2× (saved R2-N5-OFFMONO/l2a/, dump_random.py); OFFMONO-N1 parent-changed 53/60/48 reproduced exactly; add3 quotes 9/9.
+- NEXT: GCX 5a91bebb, DEPTH 549c7fb7 + DEPTH-add 4d51aa5e, RESTRICT 48c63a8e (report before opening docs/referee/ on each).
+
 ## Resume point 1 (successor 18, session_01WT4cukhJyjxHKaBJWikCkK, Opus 5.5 under D15; 2026-10-26 19:5xZ by date -u)
 - Handover check 4202957f (Lead 5/5, GO 19:18Z). Oink built. Trunk 77f2664e (DEPTH-add 4d51aa5e and OFFMONO-add3 b7cd0ff1 on it).
 - DONE: R2-N5-OFFMONO (unit OFFMONO d9705ac6 + add 5911aba8 + add2 f2d123ef + add3 b7cd0ff1): every to-sign item SIGN, incl. add2 §4

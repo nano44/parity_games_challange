@@ -1,0 +1,10 @@
+basic state 0 s(v) = 1 arena [1, 2, 3] -> s'(v) = 2
+basic state 1 s(v) = 2 arena [2, 3] -> s'(v) = 2
+basic state 2 s(v) = 2 arena [2, 3] -> s'(v) = 2
+basic state 3 s(v) = 2 arena [2, 3] -> s'(v) = 2
+basic choices: [1, 2, 2, 2, 2]
+flip state 0 s(v) = 1 arena [1, 2, 3] -> s'(v) = 2
+flip state 1 s(v) = 2 arena [2, 3] -> s'(v) = 3
+flip state 2 s(v) = 3 arena [3] -> s'(v) = 3
+flip state 3 s(v) = 3 arena [3] -> s'(v) = 3
+flip choices: [1, 2, 3, 3, 3]

@@ -289,3 +289,16 @@ if git cat-file -e ced5cf27 && git cat-file -e 829003b2 && git cat-file -e 7ea3d
 else
   echo "root (P-N5-ROOT fixes quotes): NOT RUN (a source commit is not in this clone)"
 fi
+# box 23 §8 (docs/si/N5-ALT-box23.md): DEAD XR-LIN. long121_n40 + one Odd reader (l121reader_n41): the run on the old vertices is unchanged
+# (SAME) and the reader's Xi changes 86 > 2n = 82 times in phase [1, 122]. Six readers (l121reader6_n46): SAME, and C-cuts 53 -> 73.
+o=$(python3 -I root/orcheck.py ../new/box48/instances/long121_n40.pg ../new/box48/instances/long121_n40.start root/instances/l121reader_n41.pg root/instances/l121reader_n41.start)
+grep -q "^SAME " <<<"$o"; grep -q "phases_equal True" <<<"$o"; grep -q "XR_o 86 " <<<"$o"
+o=$(python3 -I root/orcheck.py ../new/box48/instances/long121_n40.pg ../new/box48/instances/long121_n40.start root/instances/l121reader6_n46.pg root/instances/l121reader6_n46.start)
+grep -q "^SAME " <<<"$o"
+python3 -I root/evenside.py --one root/instances/l121reader6_n46.pg root/instances/l121reader6_n46.start | grep -q "K_sum=73 "
+echo "root (box 23 §8: XR-LIN dead on l121reader_n41, run unchanged; six readers raise K 53 -> 73 with the run unchanged): PASS"
+# box 23 §10: DEAD SW-LIN on swlin_kill_n26 (Even vertex 19 switches 27 > n = 26 times in phase [1, 47]); L-COMP's independent n5b (spec mode)
+# gives the identical state sequence.
+o=$(python3 -I root/n5bcmp.py root/instances/swlin_kill_n26.pg root/instances/swlin_kill_n26.start)
+grep -q "identical state sequences: True" <<<"$o"; grep -q "switching 27 times; n = 26; > n: True" <<<"$o"
+echo "root (box 23 §10: SW-LIN dead on swlin_kill_n26, n5b agrees): PASS"

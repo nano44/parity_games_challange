@@ -1,0 +1,54 @@
+EO_chk 257
+EO_e1_after_c 3
+EO_windows 1985
+MR_post_FAIL 48
+MR_post_chk 821
+MR_pre_chk 21237
+PLSW_chk 1861
+PLX_frozen 342
+PL_FAIL 342
+PL_chk 1861
+PURE_ints 1861
+PURE_withgate 50
+RUNS 9000
+EX ('PL', 'rand21/2', 3, 4, 2, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', 'rand22/1', 1, 2, 3, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', 'rand44/0', 1, 2, 1, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', 'rand58/1', 1, 2, 4, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', 'rand106/2', 3, 4, 4, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', 'rand124/0', 1, 2, 5, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', 'rand124/1', 1, 2, 5, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', 'rand124/2', 1, 2, 5, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', 'rand140/2', 2, 3, 5, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', 'rand140/2', 2, 3, 12, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', 'rand156/1', 2, 3, 4, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', 'rand161/0', 1, 2, 11, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', 'rand161/2', 1, 2, 11, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', 'rand190/1', 3, 4, 0, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', 'rand196/1', 1, 2, 1, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', 'rand196/1', 1, 2, 12, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', 'rand203/1', 2, 3, 9, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', 'rand207/2', 1, 2, 2, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', 'rand225/1', 0, 1, 4, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', 'rand244/1', 2, 3, 1, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', 'rand244/2', 1, 2, 1, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', 'rand280/0', 0, 1, 5, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', 'rand281/1', 0, 1, 5, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', 'rand281/2', 0, 1, 5, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', 'rand295/2', 1, 2, 4, 1, 0, 0, 0, 0, 'frozen')
+EX ('MR_post', 'rand308/1', 0, 10, 1, 0)
+EX ('MR_post', 'rand308/1', 0, 10, 2, 0)
+EX ('MR_post', 'rand308/1', 0, 10, 4, 0)
+EX ('MR_post', 'rand308/1', 0, 10, 5, 0)
+EX ('MR_post', 'rand308/1', 0, 10, 6, 0)
+EX ('MR_post', 'rand308/1', 0, 10, 8, 0)
+EX ('MR_post', 'rand308/1', 0, 10, 9, 0)
+EX ('PL', 'rand342/0', 0, 1, 4, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', 'rand370/0', 1, 2, 3, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', 'rand393/0', 0, 1, 6, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', 'rand393/2', 1, 2, 6, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', 'rand400/1', 1, 3, 10, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', 'rand400/2', 2, 3, 10, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', 'rand407/0', 0, 1, 3, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', 'rand407/2', 1, 2, 3, 1, 0, 0, 0, 0, 'frozen')
+done
