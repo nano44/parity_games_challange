@@ -10,6 +10,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   fail, sha1), NOT RUN if the two §C commits are absent from the clone.
 - Lead 22:17Z: SWE-LIN = SW-LIN DEAD; REFEREE's READER-INV PROVED under (R), false without (G-READ-1); NEXT: potential for fallback-free run
   length or fallbacks per phase (done as N5-READER §6: W-MONO DATA, W*-REACH DEAD; fallbacks OPEN).
+- Lead 22:36Z GO fallbacks per phase (§7: CF-SMALL DEAD); Lead 22:55Z: FB-LIN (f ≤ n) is mine, RUN-LIN is L-SI's. §8: read configurations
+  𝒞°_f (reader-proof on instances), CONJECTURE FB-C°, climbs no kill (best f − n = −9). runfbclimb.py run from scratch copy (not on trunk).
 - TASK 1 pushed: l-new 34d176ab (VERIFY PASS); reported to the Lead 21:39Z.
 - Lead 21:35Z: REFEREE on RESTRICT (claude/referee c9bdfa68, docs/referee/R-N5-RESTRICT.md): all SIGNED; gap G-RESTRICT-1 (G^P's "IS one
   N5^τ phase" holds only as "LIES IN one"; nep_n12, 44 of 4,073 phases extend); notes RESTRICT-N1..N3. Lead: "Do NOT write the RESTRICT fixes

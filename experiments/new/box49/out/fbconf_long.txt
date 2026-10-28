@@ -1,5 +1,8 @@
-Cf 53 RECUR 18 f 71 phases 16 phases_with_fb 10 runs 13
-max Cf (7, ('experiments/new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.pg', (5, 102), 64, 25, 7))
-max Cf_over_n (0.125, ('experiments/new/box48/instances/long121_n40.pg', (1, 122), 40, 3, 5, 8))
+Cf 69 Cf_read 57 RECUR 18 f 87 phases 18 phases_with_fb 12 runs 15
+max Cf (8, ('experiments/new/box49/inst/l121_cf35_39.pg', (1, 122), 41, 4, 8))
+max Cf_over_n (0.1951219512195122, ('experiments/new/box49/inst/l121_cf35_39.pg', (1, 122), 41, 4, 8, 8))
+max Cf_read (7, ('experiments/new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.pg', (5, 102), 64, 7, 7))
 max f (8, ('experiments/si/root/instances/l121ereader_n41.pg', (1, 122), 41, 3, 5))
+max f_multi (8, ('experiments/si/root/instances/l121ereader_n41.pg', (1, 122), 41, 5, 2))
 max f_over_Cf (2.0, ('experiments/si/root/instances/swlin_kill_n26.pg', (1, 47), 26, 3, 6, 3))
+max per_read_conf_over_n (0.23076923076923078, ('experiments/si/root/instances/swlin_kill_n26.pg', (1, 47), 26, 6))

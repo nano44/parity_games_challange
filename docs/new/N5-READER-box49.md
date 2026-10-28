@@ -23,6 +23,7 @@ rows() over experiments/new/box21/n5x.py (SPEC S1-S5), imported read-only.
 | §3 | LP / tropical reading: readers are redundant rows; per-row counts are not intrinsic, pivot counts are | READING |
 | §4 | Open and next | OPEN |
 | §7 | |𝒞_f(P)| (RESULTS R71 / R73's configurations at fallback sources): ≤ 7 on all plain data, but a 2-option reader lifts it to f (5 → 8 = f on long121, run SAME) | DATA + DEAD (as a route easier than f) |
+| §8 | FB-LIN (f ≤ n per phase; L-SI §13's conjecture, routed to L-NEW 22:55Z): no kill (3 climbs, best f − n = −9); a reader-proof configuration count |𝒞°_f| (gates read by another play) stays at its base value under every reader; f per read configuration ≤ 0.78n | DATA + CONJECTURE + OPEN |
 | §6 | Fallback-free runs: W never falls (DATA, 10,499 transitions); the W*-reach potential F_t stalls at 53% of transitions (xsn43_n48: 43 of 44) | DATA + DEAD |
 
 ## 0. Setting and the definition
@@ -194,3 +195,33 @@ vertices of out-degree ≥ 2. The open part is |𝒞_f(P)|.
   - That would need FB-RISE_C's proof re-read with the restricted LEV. An embedded reader (12 → o) puts o on H_C-paths from 12, so a purely
     graph-defined restriction fails here too (§1's lesson). A run-defined one ("gates whose choice lies on an honest play of a vertex other
     than itself at some fallback source") is the candidate.
+
+## 8. FB-LIN: at most n in-phase fallbacks per phase (L-SI's docs/si/N5-ALT-box23.md §13, l-si 95591448; the Lead's scope word of 22:55Z)
+Route asked for: R73's SAT-FB1 (f ≤ n·|𝒞_f(P)|) plus a bound on |𝒞_f(P)|, or a kill. §7 shows the route cannot work with 𝒞_f as defined: a
+reader lifts |𝒞_f| to f. The repair tried here is a reader-proof configuration count.
+- Definition. Q°(P) := the gates q ∈ Q that lie on the honest play of some OTHER vertex (q met after at least one step of next_t from v ≠ q) at
+  some fallback source t of P. The READ configuration at a source t is σ̄_t|Q°(P), and 𝒞°_f(P) is the set of these. A reader (no
+  predecessors) is on no other play, and neither is an embedded reader whose edge is never used, so both drop out.
+- DATA (fbconf.py; out/fbconf_{lib41,red,long}.txt):
+  - Reader-proof on the instances. |𝒞°_f| = 5 on long121, on l121_cf35_39 and on l121_cf_emb12 (|𝒞_f| 5 / 8 / 8). On swlin_kill_n26 the 3
+    configurations differ only at unread gates: |𝒞°_f| = 1, f = 6.
+  - Size. Max |𝒞°_f| is 4 on lib41 (si/xing/instances/zcl_rx_n32, f 13), 5 on L-RED (long121_n40), and 7 on the long set
+    (best_qpc_nep90_n40_s61, f 7). Σ |𝒞°_f| ≤ Σ |𝒞_f| on every set (301 / 303 on lib41, 122 / 125 on L-RED).
+  - Fallbacks per read configuration: max 0.78n (red/so/instances/farrise25_n32: 25 at n 32) and 0.75n (box25/instances/wd16_s2: 12 at
+    n 16). The largest f with ≥ 2 configurations is 29 at n 48 (red/so/instances/njb_reabs65_n48, phase [2, 68], 2 configurations, 26
+    fallbacks from one).
+- CLIMBS for a kill (L-SI's experiments/si/root/runfbclimb.py at l-si, OBJ=fb, run from a scratch copy with only its import path changed;
+  3,000 steps each; ccl finished, the two rise climbs were still running at the push, past step 400 / 1,812; logs out/fbclimb_*.log): from
+  rise_fb38_n48 (seeds 21, 22) and ccl_w48_n48 (seed 23). Best f − n = −9 (f 37 at n 46; f 36 at
+  n 45); ccl: f 34 at n 46. No kill. The climbs shrink n at fixed f; they do not raise f.
+- CONJECTURE FB-C° (reader-proof form of R73's per-configuration count): in every phase, each read configuration is the configuration of at
+  most n fallback sources; hence f ≤ n·|𝒞°_f(P)|. DATA only (max 0.78n per read configuration). A proof would re-run FB-RISE_C / SAT-FB with
+  LEV restricted to the frame of the read gates (§7's last bullet). It does not give FB-LIN: |𝒞°_f| reaches 7.
+- Why the per-configuration route cannot reach FB-LIN alone (READING). FB-LIN needs Σ_C f_C ≤ n. LEV_C rises only at fallbacks from C-states.
+  A common level for all configurations of the phase would need Ξ(x) ⪰ value(r) along Odd edges that are not x's current choice, and Odd's
+  optimality gives the opposite inequality (Ξ(x) ⊴ x ⊕ Ξ(y) for every option y). So the levels of different configurations do not add up to
+  one budget of n. A proof of FB-LIN has to say why few configurations each spend much of their n: in data, 2 configurations with 26 + 3, and
+  long-f phases with one configuration.
+- Disjoint unions do not build a kill (READING, from SPEC S4c): a fallback fires only when the whole game has no arena step, so the
+  fallbacks of two independent parts synchronise instead of adding. n adds, f roughly does not.
+- OPEN: FB-LIN; FB-C°.
