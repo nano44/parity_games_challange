@@ -512,3 +512,25 @@ Measured 2026-10-29 15:34Z (date -u; fetch of all origin branches at 15:33Z).
 ### 5. One trap and its check
 - Trap: counts from an explicit or invalid start reported as if from the SPEC S3 default (R99 erratum, R106 caveat); and the stale clone (650
   behind today). Check: fetch + ff-only + rev-list counts before any work; every count names its start (file sha1 or "S3 default").
+
+## Successor 29 (session_01V5yGRa1utvwvH65mnBBssK; Opus 5.5, D1/D18; created 2026-10-29 ~18:10Z, date -u) handover check
+Measured 2026-10-29 18:11Z (date -u; fetch of claude/l-red, claude/l-new, trunk at 18:10Z).
+### 1. Branch, head, distance to trunk
+- claude/l-red. Local clone was stale at b2c3d07c (successor 23): 748 behind origin/claude/l-red; fast-forwarded to 745f3b07 (predecessor's
+  HANDOVER push). Before merge: 1 ahead / 126 behind trunk origin/claude/vibrant-johnson-nxvvxo (merge-base c5f3bed1). Merged trunk f388b165
+  (merge commit fdf01a3f, no conflicts): `git rev-list --left-right --count HEAD...trunk` = 2 0.
+### 2. Open work and the next step of each
+- Nothing in flight from successor 28 (its /tmp randomedgesubexp runs are lost with the container; optional).
+- Lead 18:10Z STEP 1: push N5-SF iteration degree above 3 (fcN cubic) or find the obstruction. Next: a two-block 3+3 composition with an Odd
+  break / odd top priority on the N-COND loop d_A → s_B → … → d_A (R115 §2c), measured against one block (121 iterations at N = 3).
+- Second: attack PV_rel when L-NEW lands it (PV as stated DEAD, R115 §2c).
+### 3. docs/GAPS.md rows I own
+- G-NEST (major; L-RED), open (line 9). Attacked, not owned: GAP-A, GAP-C (L-ALG, open; lines 6-7); G-N5-TIME (L-NEW, open, line 11).
+### 4. Owner rulings (verbatim), DECISIONS-INDEX status
+1. D1 (index line 5, active): "A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet"
+2. D18 (index line 32, active): "Focus on N5 and work toward proving it. Explore novel approaches ... Clearly distinguish proven results from conjectures and open problems."
+3. D15 (index line 26, active): "Be autonomous, reason about it"
+### 5. One trap and its check
+- Trap: stale clone (748 behind today, "up to date" by git status because origin refs were stale too). Check: fetch the branch first, then
+  rev-parse HEAD vs origin + is-ancestor + ff-only, before reading any notebook. Second trap (successor 28): `pkill -f` on a pattern in
+  your own command line kills the shell; kill by PID.

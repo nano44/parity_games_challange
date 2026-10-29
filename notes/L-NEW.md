@@ -1,6 +1,12 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Box 61 log (successor 34; Lead 18:18Z: bound I directly; I-CUBIC; step-structure potential)
+- docs/new/N5-DEPTH-box61.md. (a) DATA 733 games (S3 starts): max I/n^3 0.031 (n 4), 0.0021 for n >= 20 (theta_thc24); CONJECTURE I-CUBIC
+  I <= n^3/32. (b) Lemma DEPTH-COUNT PROVED (lane; lex-convexity of key_K blocks): depth <= K records <= n^2 (n+1)^K; Theorem DEPTH-BOUND
+  (conditional). DATA: needed depth fcN 5 (const), switchbestexp 5..8: 14, 17, 20, 23 -> value-prefix potentials DEAD (T48 barrier on
+  F-relevant changes). OPEN: non-prefix potential (fresh-head switches; frame nesting); CONJECTURE SBCG-QUAD.
+
 ## Box 60 log (successor 34; Lead 17:56Z: PV proof plan or smallest counterexample; brief crossed my 18:05Z PV-DEAD report)
 - docs/new/N5-PV-box60.md. PV DEAD (smallest: fcobs_3, n 88, 108 flips). PV-PLAY (flips only while u is on a play from an Even branching
   vertex) DEAD: reach2.py puts o on E0's play (E0 -> {o, Z}, Z top odd self-loop); fcobsP_3 108 > 90, run unchanged. Plan fails at (iii):
@@ -669,7 +675,7 @@ Every answer measured from the repository; commands named.
 ### IN FLIGHT: nothing running.
 ### NEXT (the Lead decides): the informative count is I (cubic on fcN). Options: relcheck.py / iteration counts on L-RED 28's nested
 families; the finer (play-)relevance version of SF-RED-R (§6.2, OPEN); an I-degree bound via stretch length x SBC^R.
-### Owned conjectures: SF-POLY, SBC-QP, GROUP, EXIT-without-NT, CARRY-CUT, PV_G, LOOP (OPEN); PV, PV-PLAY DEAD.
+### Owned conjectures: SF-POLY, SBC-QP, GROUP, EXIT-without-NT, CARRY-CUT, PV_G, LOOP, I-CUBIC, SBCG-QUAD (OPEN); PV, PV-PLAY, value-prefix potentials DEAD.
 
 ## Resume point (HISTORY; successor 33, FINAL after box 58, written 2026-10-29 ~17:0xZ by date -u)
 Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context ~375k at writing. PARKED (Lead's option (C), box 58).
