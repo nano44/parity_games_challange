@@ -196,8 +196,11 @@ differ only in the gate's tails: α₁ := Ξ(o) (pessimistic), α₂ := W(o) (op
 - READING (why a proof is not yet in hand). A re-entry needs the vertex's prefix to beat its previous prefix by the gap (re-entry at p′ after
   an exit at p: p′ ⊕ α₁ ⊵ Ξ ⊵ p ⊕ α₂), so each exit-entry round is a strict prefix improvement «by at least the gap». Bounding the number of
   such improvements per vertex needs a Lemma P across epochs, which fails in the two ways F1/F2 of §9.
-### 10.1 Kill search for TRAP-LIN / X2 (tord/xclimb.py; logs tord/out/; RUNNING at this commit, final numbers in a later commit)
+### 10.1 Kill search for TRAP-LIN / X2 (tord/xclimb.py; logs tord/out/)
 Score: max over |D| = 1, c₁ = c₂ frozen W-phases of TC/(n − 1) (kill: TC > n − 1, or a vertex entering S 3 times = CONJECTURE X2, or
 FW-BF). Seeds nleq33_n48 (0.702), x32_waves48 (0.531), x31_re24 (0.173, 2 entries per vertex; also with XCR=1, which scores crossings).
 The long trap-change runs of the corpora are MONOTONE WAVES (nleq33_n48: 33 transitions, each removes one vertex from S; x32_waves48: 25
 transitions, each adds one), so TC ≤ n there for a trivial reason; non-monotone S occurs only in short phases (x31_re24: 4 transitions).
+- RESULT (no kill; DATA): nleq33_n48 seed → 0.809 (n 43; stopped by hand at 14:57Z after 34,304+ steps); x32_waves48 → 0.868
+  (n 39; 100,000 steps, entries per vertex 2); x31_re24 → 0.636 (n 12; 100,000 steps); x31_re24 with XCR=1 → 2 entries per vertex, no 3
+  (n 11; 100,000 steps). TRAP-LIN and X2 stay CONJECTURES; the best TC/(n − 1) found is 0.868.
