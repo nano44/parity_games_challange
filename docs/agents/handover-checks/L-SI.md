@@ -1,3 +1,39 @@
+# Handover check: L-SI (successor 30, written 2026-10-29T20:37Z by date -u (20:37:16); LANE-RESTART step 3; Opus 5.5, D18/L40)
+Session session_01V5yGRXdA7p12A2AFsUdae8. Every answer below was measured in this container; commands given. Predecessor: successor 29, session_01V5yGRVp3epWjVsx5aH3qSm.
+Its handover is notes/L-SI.md "## HANDOVER (successor 29, boxes 33-35)" (l-si 88a953f5, plus 28b3a849 Lead-ruling note).
+
+## 1. Branch, head, distance to trunk
+- `git ls-remote origin` first: refs claude/l-si 28b3a849, claude/vibrant-johnson-nxvvxo 5f8853db (no `main` fetched).
+- Branch `claude/l-si`. Clone stale again: local HEAD da88a6d4 (git status "up to date"); `git fetch origin claude/l-si
+  claude/vibrant-johnson-nxvvxo` then `git merge --ff-only` → 28b3a849 (88a953f5 ancestor: `git merge-base --is-ancestor`).
+- vs trunk 5f8853db: 1 ahead / 48 behind (`git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo`), merge-base
+  88a953f5. Merged `--no-ff` (no rebase) → bb85401c. This file is the next commit. No late push from the predecessor beyond 28b3a849.
+- Oink: tools/oink/build absent (`ls`), not needed for box 36 unless a cross-check is asked.
+
+## 2. Open work and the next step of each (nothing of mine running: `ps -eo pid,args | grep "[p]ython3"` shows only the system CA helper)
+- BOX 36 (Lead 20:30Z): game-structural lemma limiting the "even top + odd block below" carry shape between matched resets
+  (fc_3 vertex 6); prove CARRY-SEG or RESET-LIN on a subclass or name a kill; composition line per result. Next: read
+  N5-RESET-box35, N5-CARX-box34, R85, R86, then carx.py on fc_3 with SHOW=1.
+- Old queue (successor 28): TC at PRE-P, INJ1, multi-gate: behind box 36.
+
+## 3. docs/GAPS.md rows I own
+- None (`awk -F'|' '$4 ~ /L-SI/' docs/GAPS.md` → empty). I work under G-N5-TIME. RESULTS last row R88
+  (`grep -o '^### R[0-9]*' docs/RESULTS.md | tail -1`).
+
+## 4. The three owner rulings that constrain me most (verbatim from docs/DECISIONS.md; status docs/DECISIONS-INDEX.md)
+- D18 (DECISIONS.md l.333; index l.32: active): "Focus on N5 and work toward proving it. Explore novel approaches, especially by
+  connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions
+  where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and
+  open problems." Lead reading L40 (index l.33: active).
+- D15 (DECISIONS.md l.278; index l.26: active): "q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be
+  autonomous, reason about it"
+- D1 (DECISIONS.md l.6; index l.5: active): "Never publish, post, email, submit or contact anyone outside the fleet. Anything external is
+  my decision."
+
+## 5. One trap that bit this lane before, and the check that prevents it
+- Trap: stale clone (da88a6d4, from successor 19, while status said "up to date"); a fetch naming a missing ref fetches nothing.
+  Check: `git ls-remote` first, fetch only existing names, then is-ancestor + rev-list count before reading the notebook and before push.
+
 # Handover check: L-SI (successor 29, written 2026-10-29T19:3xZ by date -u (19:30:43); LANE-RESTART step 3; Opus 5.5, D18/L40)
 Every answer below was measured in this container; commands given. Predecessor: successor 28, session_01V5yGRVhU281YxfobtfdJ8L.
 Its handover is notes/L-SI.md "## HANDOVER (successor 28, box 32)" (l-si aec7e3a6).
