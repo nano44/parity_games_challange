@@ -20,6 +20,7 @@ docs/si/N5-TORD-box30.md §1, §11 (prefix form, GATE-FORM, SAME-NODE); RESULTS 
 | §4 | R = 0 (⟺ R_T = 0) in 1,441 of the 1,754 same-pair frozen W-phases (FW-BF proved for each of them by FW-R); max R 40 (grow_K40_n373, WCH 45, n 373) | DATA |
 | §5 | CONJECTURE R-LIN (R ≤ n − 1, R counted per adoption) | DEAD (core/instances/rlin_cex_n40: R = 129 in 10 transitions, n 40) |
 | §6 | Lemma GP* (only BLOCKED edges, W-better but Ξ-refused, are excluded; contains GP, GP+) and Corollary FW-R*: WCH ≤ (n − 1)(R*_T + 1) | PROVED (lane); DATA 0 violations; R*_T = 0 in 1,499 / 1,754 |
+| §7 | Corollary SEG (\|D\| = 1, c₁ = c₂, TD): WCH ≤ (SEG·(n − 1) + 1)(n − 1), SEG = direction segments of S (data ≤ 4) | PROVED (lane), bookkeeping on box 29/30 lemmas |
 | §5 | open: bound R_T polynomially (R_T ≤ L, so this is FW-BF's own difficulty); the late adoption is the precise residue of the obstruction F1 | OPEN |
 
 ## 0. Setting
@@ -170,6 +171,22 @@ and held at k + 1, hence adopted at some τ ∈ (t, k] (a blocked edge is not ρ
   every W-changing transition beyond n − 1 is paid for by a resolved F1 refusal within the last n − 1 transitions. The open quantity is
   R*_T, the number of transitions in which a previously blocked edge is taken. A polynomial bound on R*_T gives a polynomial bound on WCH per
   frozen W-phase (and only that: see the Lead's question (b), answered in the 16:17Z message: FW-R* feeds box 29's W-SPLIT, not R86's NM*).
+
+## 7. PROVED (lane, a bookkeeping corollary): for |D| = 1, c₁ = c₂, TD, the frontier is the number of REVERSALS of S (written 2026-10-29T16:4xZ by date -u, see commit)
+Definitions. F a frozen W-phase with D = {o}, c₁ = c₂ and TD at every state (box 30 §0). S_k := the vertices whose (ρ_k, τ)-play meets o.
+A transition is an ENTRY transition if some vertex enters S, an EXIT transition if some vertex leaves S (it can be both: MIXED). A SEGMENT is a
+maximal run of transitions of F among whose S-changing transitions all are entry-only, or all are exit-only; a mixed transition is a segment
+by itself. SEG := the number of segments; SEG − 1 counts the direction reversals of S.
+Corollary SEG. WCH ≤ (TC + 1)(n − 1) and TC ≤ SEG·(n − 1); hence WCH ≤ (SEG·(n − 1) + 1)(n − 1).
+Proof. Epochs (maximal runs of states with S constant) number TC + 1. Inside an epoch, a W-changing transition changes W on U (EPOCH-U, box 29
+§7: ≤ |U| − 1 such transitions) or changes some trapped prefix in ≤₁ = ≤₂ (TORD (i), box 30 §4: ≤ s transitions), because for trapped x,
+W(x) = pre(x) ⊕ W(o) with W(o) = o ⊕ W(τ(o)), τ(o) ∈ U (TD; box 30 §1, as in FW-D1's proof): so ≤ |U| − 1 + s = n − 2 per epoch, plus the TC
+transitions between epochs. In an entry-only segment no vertex leaves S, so each vertex enters at most once and the segment has at most n − 1
+S-changing transitions (o never changes); the same for exit-only segments; a mixed segment has one. □
+- DATA (core/mono.py, §1): SEG ≤ 1 in 1,722 of the 1,754 same-pair phases (all but 20 of the 1,243 |D| = 1 phases; TD not filtered), SEG ≤ 4 everywhere
+  (red/xing/instances/x31_re24, 4 transitions). So, on the data, Corollary SEG is a quadratic bound; a proof that the reversals of S are O(1)
+  (or O(n)) per frozen W-phase would give a polynomial bound per |D| = 1 TD frozen W-phase. OPEN; the re-entry instances of box 30 §10
+  (x31_re24, x31_ru24, zcl_rx_n48) are the seeds for a kill search on SEG.
 
 ## DONE / FINDINGS / NEEDS
 - DONE: this note; tools experiments/si/core/ (sp.py, gp.py, mono.py, look.py, diag.py, late.py, lateshow.py, spclimb.py); outputs core/out/,
