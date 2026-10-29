@@ -101,7 +101,7 @@ DATA (grun/relseg.py; every segment with (H4′_rel) checked per vertex and for 
 - CONJECTURE SEG-RUN: SEG = O(n) for every run. With REL-SPLIT (where (H4′_rel), GEN_W hold) it gives |S| = O(n²) per run, polynomial.
   DATA: max SEG/n = 0.79 in the library, 1.00 after climbs. A super-linear SEG needs many cuts that each change σ̄ on the end state's relevant plays.
 - Climbs (grun/gclimb.py OBJ=SEG, CN 0.5; logs grun/out/sg_*.log; the log lines say "G" for the objective): from so_sor5_n24 SEG 23 at
-  n 23 (1.00n, grun/out/sg_4); from pftheta34_n32 SEG 26 at n 29 (0.90n) and 24 at n 30 (still running at this write); from runfam_K10
+  n 23 (1.00n, grun/out/sg_4); from pftheta34_n32 (20,000 steps each) SEG 29 at n 29 (1.00n, grun/out/sg_2) and 29 at n 31 (grun/out/sg_1); from runfam_K10
   12 at n 18. pg_n64_1 (the G climb's 35 at n 29) has SEG 25 (0.86n). So the data bound is SEG ≤ 1.00n; nothing super-linear. In these
   one-gate instances the segments have length ≈ 1: the run is a sequence of relevant σ̄ changes, and SEG ≈ |S|.
 

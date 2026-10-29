@@ -115,7 +115,8 @@ DATA (piece/sdprime.py; MUT=1 uses d − 1 and must bite):
   - CN = 1, from frz24, frz40, cone_n69 (ONLYOUT=1) and kw25_n32 (all pieces), 20,000 / 20,000 / 8,000 / 20,000 steps: best −4 (frz24 seed,
     piece/out/pc_frz24: length 10 at n = 15, 0.71(n − 1)); −7 (frz40 seed, n 20); −22 (cone, n 44); kw25 seed −4 at n 21. No kill.
   - CN = 0.7 (score length − 0.7(n − 1), so growth pays), ONLYOUT=1, 60,000 steps each: three seeds from piece/out/pc_frz24 (n 15) never
-    improved (logs piece/out/pcg1-3.log: final 0.2, i.e. 10 at n 15); from frz40 (pcg4.log) best −1.9 at n 28 (still running at this write).
+    improved (logs piece/out/pcg1-3.log: final 0.2, i.e. 10 at n 15); from frz40 (pcg4.log) best −1.9 at n 28, i.e. 17 transitions at n 28 (0.63(n − 1)); that process ended at step ≈ 6,000 without
+    printing its final line (cause not determined; not re-run).
     No uncovered piece above 0.71(n − 1) was found.
 - READING. Within a piece the honest frame is the one-player game G_σ̄ (σ̄ fixed) and the W-frame the one-player game G_τ; S4a is a policy
   iteration in G_σ̄ whose step is chosen by optimality in G_τ. STATIC-DEPTH′ says the run settles along the end state's plays as soon as the
