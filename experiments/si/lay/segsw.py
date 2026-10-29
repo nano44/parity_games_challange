@@ -13,6 +13,10 @@ def run(g, name, start=None):
         if b <= a: continue
         sw = Counter(v for t in range(a, b) for v in range(n) if g.owner[v] == 0 and R[t]["s"][v] != R[t + 1]["s"][v])
         m = max(sw.values()); exc = (b - a) - len(sw)
+        last = {v: max(t for t in range(a, b) if R[t]["s"][v] != R[t + 1]["s"][v]) for v in sw}
+        F = Counter(last.values()); D = [t for t in range(a, b) if F[t] == 0]; sur = sum(c - 1 for c in F.values())
+        C["deadlock_steps"] += len(D); C["surplus"] += sur
+        if D: EX.append(("DEADLOCK", name, a, b, D, "surplus", sur, "joint", sorted((t, sorted(v for v in last if last[v] == t)) for t in F if F[t] > 1)[:3]))
         C["segs"] += 1; C["maxsw_%d" % m] += 1; C["exc_max_plus100"] = max(C["exc_max_plus100"], 100 + exc)
         if m >= 3: EX.append(("MAXSW", name, a, b, m))
         if exc > 0: C["SEGCOUNT_V"] += 1; EX.append(("SEGCOUNT", name, a, b, exc))

@@ -126,7 +126,10 @@ RO_b, σ̄_t = σ̄_b on [a, b] (REL); every cycle of CW_b (CH_b) is a W-cycle (
   | 3 | 37 (49, 35, yes) | 1 (25, 21, 31, 25) | 37 → 35 L |
   | 4-6 | 40; 69; 26 (ready) | 1 stays at 25 | 40, 69, 26 L |
   | 7 | 4 (ready) | 1 → 21 | 1 L, 4 L, 30 L |
-  At t = 2 no vertex switches for the last time: SEG-LAST fails. Independent reproduction from n5b alone (lay/relcheck.py: phase, run,
+  At t = 2 no vertex switches for the last time: SEG-LAST fails. Shrunk by lay/wclimb.py OBJ=M (keep a SEG-LAST failure, minimise n):
+  lay/instances/seglast_kill_n29.pg (n 29, sha1 976fc4e8…; .start 9afeb2aa…): run [2, 4] = one REL segment; t = 2: only vertex 1 switches,
+  9 → 23 (H-sink, target 19, ready; the only W-sink 25, target 4, unready); t = 3: 1 → 19 and 25 → 4 jointly, both final. The whole
+  mechanism in two transitions. lay/relcheck.py now also recomputes the run from n5b's own (λ_Ξ, τ) key and cuts it into REL segments. Independent reproduction from n5b alone (lay/relcheck.py: phase, run,
   REL-admissibility with σ̄ from n5b, maximality, the switch history; lay/relcheck_seglast_kill_n110.txt). Observed GEN_W: 0 failures
   (n5x W-values; S1-rank valuations of n5b's plays). The bound itself is not touched: b − a = 6 ≤ 7 switching Even vertices (all in E_b).
 - Consequence for the lane's route (READING): (H4′_rel) cannot be removed from STATIC-DEPTH-REL by a per-transition "last switch" argument;
@@ -157,12 +160,29 @@ RO_b, σ̄_t = σ̄_b on [a, b] (REL); every cycle of CW_b (CH_b) is a W-cycle (
 - Per-vertex switch counts inside one REL segment are NOT bounded by a constant: alt_all pinned starts, red/ul/ladderd0_k48_n156 segment
   [0, 49], one Even vertex switches 48 times (also ladderd0_k24_n84: 24, red/usplit/grow_K40_n373: 40). So a "2 switches per vertex"
   potential is false already in the library, and SEG-COUNT (which holds there) is not a per-vertex statement.
+- Lemma W-STICK′ (PROVED, lane). If v ∈ E_b is arena-ready at s ∈ [a, b) and y_v ∈ S^W_{s+1}, then σ_{s+1}(v) = y_v (and σ = y_v on
+  [s + 1, b] by W-STICK at s + 1). Proof: as W-STICK, with y_v's W-play under σ_{s+1} equal to its b-play because y_v ∈ S^W_{s+1}: σ′ :=
+  σ_{s+1} with v ↦ y_v uses arena edges of state s, W_σ′(v) = v ⊕ W_b(y_v) = W_b(v); S4a's optimality and W-MONO give W_{s+1}(v) = W_b(v);
+  REL and GEN_W give v's W-play at s + 1 = its b-play. □
+- Corollary JOINT (PROVED, lane). Let h be an H-sink at t that is not a W-sink (jW(h) ∈ U^W_t), and s + 1 := the least state from which
+  y_h is W-settled (s ≥ t, since y_h's b-W-play contains jW(h)). If h is still off target at s, then h makes its last switch at s, and so
+  does some x ≠ h on y_h's b-W-play: the step s has ≥ 2 last switches. Proof: h is ready at s (READY: y_h ∈ S^H_t ⊆ S^H_s), so
+  W-STICK′ gives σ_{s+1}(h) = y_h ≠ σ_s(h), final by H-STICK. y_h's W-play at s differs from its b-play (y_h ∉ S^W_s) and equals it at
+  s + 1; at the first vertex x where the play at s leaves the b-play, x is Even (τ is constant), x ∉ T (F1), σ_s(x) ≠ σ_b(x) = σ_{s+1}(x),
+  and x ∈ S^W_{s+1} keeps σ_b(x) on [s + 1, b]; x ≠ h since y_h's b-play avoids h. □
 - READING (charging): in seglast_kill_n110 the extra transition (the deadlock step 2 → 3) is paid by a JOINT final step (t = 7: 1, 4 and 30
   last-switch together; 1's W-chain ends at 4, the last vertex of the W-snake), and in hgrow_kill_n89 the waiting H-sinks also switch
   jointly with their W-chain's last vertex (t = 7). A proof of SEG-COUNT along these lines would charge each step with no final switch to
-  an H-sink whose final switch is simultaneous with the final switch of the last W-sink on its W-chain. OPEN.
+  an H-sink whose final switch is simultaneous with the final switch of the last W-sink on its W-chain. JOINT proves the simultaneity
+  for every H-sink that does not reach its target before its W-chain settles. What is missing for SEG-COUNT: (a) at each deadlock step an
+  H-sink that is not a W-sink (true: no ready W-sink there, and an H-sink that is a W-sink would be one) and that does not finalize early; (b)
+  INJECTIVITY: distinct deadlock steps charged to distinct H-sinks. (b) fails if one H-sink makes two intermediate switches at two deadlock
+  steps while it is the only H-sink; no instance shows this yet. OPEN.
 - Kill search: lay/wclimb.py OBJ=C (score 100 × max EXC + 20 × SEG-LAST failures + 5 × SINK-GROW failures + W-/H-GROW failures; third
-  component = max EXC, > 0 a kill) from seglast_kill_n110 (two seeds) and wgrow_kill_n90 (lay/out/c_*.log).
+  component = max EXC, > 0 a kill) from seglast_kill_n110 (two seeds), wgrow_kill_n90, hgrow_kill_n89, karena_kill_n71 and the library's
+  longest tight segment (red/xing/x32_rand64, [.., ..] of 55 = 55 switchers at n 64): no kill, plateaus (lay/climbs_box27.txt). OBJ=D (a
+  graded score: 300 × max EXC + 100 × deadlock steps + 10 × SINK-GROW failures + 3 × W-/H-GROW failures + no-frontier steps) from
+  seglast_kill_n110, hgrow_kill_n89, wgrow_kill_n90, then from seglast_kill_n29 (four seeds, NMAX 45-80): results below.
 
 ## DONE / FINDINGS / NEEDS
 - DONE: this note; tools experiments/si/lay/ (wsink.py, wclimb.py, ssamp.py, sinkstep.py, anat.py, relcheck.py); data lay/*.txt; pins
