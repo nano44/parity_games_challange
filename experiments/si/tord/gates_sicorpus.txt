@@ -1,0 +1,6 @@
+D1_G1G2=28 D1_G1G2G3=7 D1_G2=8 D1_G2G3=271 D2_G1=2 D2_G3=74 D2_none=4 D3_G1=1 D3_G3=43 D3_none=3 D4_G1=12 D4_G1G3=18 D4_G3=50 D4_none=1 SKIPPED_input=1 checked_FWDG=7 fw=522
+maxima: {'wch_D4': (0.2708333333333333, 13, 'experiments/si/lay/out/ll41_k.pg', 0, 13, 14, 49, 'G1'), 'wch_D1': (0.8333333333333334, 115, 'experiments/si/runlin/instances/runfam_K100.pg', 52, 167, 1, 139, 'G2G3'), 'wch_D2': (0.28, 7, 'experiments/si/root/instances/swlin_kill_n26.pg', 9, 16, 2, 26, 'G3'), 'wch_D3': (0.3181818181818182, 7, 'experiments/si/piece/out/pcg4.pg', 10, 17, 3, 23, '')}
+GTF PASS
+GB PASS
+FWDG PASS
+FWD PASS

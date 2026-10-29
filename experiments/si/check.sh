@@ -669,3 +669,8 @@ o=$(python3 -I tord/epoch2.py --one ../red/xing/instances/kw25_n32.pg)
 grep -q "'diff_wch': (0.8064516129032258, 25, '../red/xing/instances/kw25_n32.pg', 0, 25, 28, 32)" <<<"$o"; grep -q "^TRAPFIX PASS$" <<<"$o"; grep -q "^FWD1 PASS$" <<<"$o"
 o=$(python3 -I tord/show.py "$(grep best tord/logs/out_c8_ee.txt | tail -1 | cut -d' ' -f6-)" | tail -1); test "$o" = "8 8 STOP"
 echo "si (box 30: PMON, H-P, TORD, TRAP-FIX, FW-D1 on oneodd_c16 and kw25_n32; HLP control fails; abstract EE best = n_abs): PASS"
+# box 30 §11: gate classes (any D): general TRAP-FIX, FW-DG and FW-D hold on lend107_n32 (|D| = 3) and oneodd_c16 (G1 G2 G3).
+o=$(python3 -I tord/gates.py --one ../n5-epoch/instances/lend107_n32.pg ../n5-epoch/instances/lend107_n32.start)
+grep -q "^D3_G3=10 fw=10$" <<<"$o"; for k in GTF GB FWDG FWD; do grep -q "^$k PASS$" <<<"$o"; done
+o=$(python3 -I tord/gates.py --one ../new/box21/instances/oneodd_c16.pg); grep -q "'G1G2G3')" <<<"$o"; grep -q "^FWDG PASS$" <<<"$o"
+echo "si (box 30 §11: gate classes, FW-DG on lend107_n32 and oneodd_c16): PASS"
