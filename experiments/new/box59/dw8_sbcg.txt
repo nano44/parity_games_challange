@@ -1,0 +1,1 @@
+SBCG dw_8.pg n 217 m 496 orbit 4847 SBC 502 SBC_G 502 SEGMAX 57 maxGflips 255 PASS

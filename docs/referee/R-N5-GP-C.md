@@ -64,3 +64,16 @@ VJ00-improving edge of Ξ); (Corollary FW-R*) …; so R*_T = 0 ⇒ ≤ n−1 —
   both; (2) G_τ, mine; (3) W-cycle node, REFEREE-2's); the final 17:23Z line repairs all three and matches §3-§4. G0-G11: clarifications/DATA,
   except G2, a true WIDENING that stays a READING unless both referees sign it as a statement.
 - NEEDS: Lead: the G12 SHA (byte check of the line); decide whether G2 is to be signed (then send its wording to both referees) or kept as a READING.
+
+## Addendum: G12 byte check (written 2026-10-29T17:40Z by date -u, on the Lead's 17:35Z message)
+- Object: docs/si/P-N5-GP-fixes-box31.md at l-si 2d0ada80, sha1 f901b5090d036e8428ae77c68d6f8f59049c43e2 (measured = the Lead's figure); packet
+  unchanged (cd4866df at 2d0ada80, measured).
+- Diff from 64a3751c: +26 / −2; the two removed lines are the old DONE/FINDINGS footer. G0-G11 untouched (the file's first 60 lines hash
+  identically at 64a3751c and 2d0ada80).
+- BYTE CHECK: G12's quoted line (the one line of the file starting «"In every frozen W-phase F = [a, b]») is byte-identical (`cmp`) to the Lead's
+  17:23Z final line as received in this session (line sha1 9e6196f2…). It is the line §3 above found to MATCH §3-§4 of the packet.
+- G12's word-by-word table against the packet's §3 / §1 agrees with my §3. Its two stated readings («Even edges» = edges with an Even tail; W, σ,
+  Ξ in the parenthetical read at state k − 1 − i) are the packet's definitions; no widening. G12 is a CLARIFICATION (records the line).
+- G2 (Lead ruling 17:33Z, recorded): it stays a READING, outside the entry, under "Referee strengthening (NOT part of this entry)"; re-checked
+  TRUE by REFEREE (§2 above), signed by one referee only.
+- Nothing open on P-N5-GP.

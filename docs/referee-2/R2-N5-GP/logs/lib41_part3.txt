@@ -1,0 +1,67 @@
+DONE-FILE experiments/red/carry/instances/h4_compound_n44.pg
+DONE-FILE experiments/red/carry/instances/h4_def2ctx_n20.pg
+DONE-FILE experiments/red/carry/instances/h4_def7_n28.pg
+DONE-FILE experiments/red/carry/instances/h4_disjoint_n20.pg
+DONE-FILE experiments/red/carry/instances/h4_notweaker_n20.pg
+DONE-FILE experiments/red/carry/instances/kfirst_viol_n13.pg
+DONE-FILE experiments/red/carry/instances/kin_viol_n29.pg
+DONE-FILE experiments/red/carry/instances/lalg_dtl_mviol_n20.pg
+DONE-FILE experiments/red/carry/instances/lemmaS_Mdrop_n20.pg
+DONE-FILE experiments/red/carry/instances/lemmaS_viol_n20.pg
+DONE-FILE experiments/red/carry/instances/lex_viol_inj_n28.pg
+DONE-FILE experiments/red/carry/instances/lex_viol_tie_n28.pg
+DONE-FILE experiments/red/carry/instances/meet_viol_n17.pg
+DONE-FILE experiments/red/carry/instances/meet_viol_n29.pg
+DONE-FILE experiments/red/carry/instances/nosig_2_3.pg
+DONE-FILE experiments/red/carry/instances/phi_flat_alive_n32.pg
+DONE-FILE experiments/red/carry/instances/pk_viol_n20.pg
+DONE-FILE experiments/red/carry/instances/replay4_n32.pg
+DONE-FILE experiments/red/carry/instances/spp19_oink_n30.pg
+DONE-FILE experiments/red/carry/instances/spp19_stable_n30.pg
+DONE-FILE experiments/red/carry/instances/spp22_oink_n40.pg
+DONE-FILE experiments/red/carry/instances/spp25_oink_n40.pg
+DONE-FILE experiments/red/carry/instances/stealer_viol_n76.pg
+DONE-FILE experiments/red/carry/instances/stealonce_both_n45.pg
+DONE-FILE experiments/red/carry/instances/stealonce_core_n76.pg
+DONE-FILE experiments/red/carry/instances/stealonce_viol_n76.pg
+DONE-FILE experiments/red/carry/instances/tstep_near_n20.pg
+DONE-FILE experiments/red/ctxp/instances/deep1_n13.pg
+DONE-FILE experiments/red/ctxp/instances/deep1_n21.pg
+DONE-FILE experiments/red/ctxp/instances/margin1_mc1.pg
+DONE-FILE experiments/red/ctxp/instances/margin1_mc5.pg
+DONE-FILE experiments/red/ctxp/instances/margin1_n20.pg
+DONE-FILE experiments/red/dtl/instances/lalg_dtl_pertop31_n18.pg
+DONE-FILE experiments/red/dtl/instances/lalg_dtl_restart8_n20.pg
+DONE-FILE experiments/red/instances/claimF_bit_cf2.pg
+DONE-FILE experiments/red/instances/claimF_len_cf1.pg
+DONE-FILE experiments/red/k4b/chain2.pg
+DONE-FILE experiments/red/k4b/gad5.pg
+DONE-FILE experiments/red/kl/instances/klcount_n16.pg
+DONE-FILE experiments/red/kl/instances/klcount_n18_base.pg
+DONE-FILE experiments/red/kl/instances/klcount_n18_lvl.pg
+DONE-FILE experiments/red/kl/instances/klglobal_n16.pg
+DONE-FILE experiments/red/kl/instances/klglobal_n18_lvl.pg
+DONE-FILE experiments/red/kl/instances/klglobal_n20_lvl2.pg
+DONE-FILE experiments/red/kl/instances/klmin_n13.pg
+DONE-FILE experiments/red/kl/instances/r2climb_h13.pg
+DONE-FILE experiments/red/kl/instances/r2crawl_n14.pg
+DONE-FILE experiments/red/kl/instances/r2join_h0E_n14.pg
+DONE-FILE experiments/red/kl/instances/r2lap_best_n22.pg
+MODE files /tmp/gplib_03 2 PCAP 300 RANDH 3 MAXF 400
+B1: 49
+F1H_checks: 49
+FWR_checks: 606
+F_RT0: 606
+F_checked: 606
+GPS_paths: 2026
+NOTBL_checks: 2035
+WMON_checks: 37
+XW_checks: 20040
+X_BLK: 1
+frozen_phases: 606
+runs: 98
+transitions: 530
+max maxF: 3
+max maxRT: 0
+max maxWCH: 3
+RESULT PASS violations 0

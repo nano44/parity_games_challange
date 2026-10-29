@@ -243,4 +243,49 @@ if grep -q "steps 286 distinct_sbar 16" <<<"$z1" && grep -q "steps 258 distinct_
 else
   echo "box 58 LA checks: FAILED"; exit 1
 fi
+# Box 59 (successor 34): N5-FC: fcN's flip word is W_N with cascades only after records (fc_4, sha1 3562ec4d); PV data line on so_sor5_n24.
+w1=$(python3 -I box59/fcword.py box59/out/fc_4.pg 4); w2=$(python3 -I box59/frec.py ../red/so/instances/so_sor5_n24.pg)
+if grep -q "^FCWORD N 4 n 110 SBC 16 W PASS C PASS$" <<<"$w1" && grep -q "^FCOPEN N 4 PASS" <<<"$w1" && grep -q "^FCLAT N 4 PASS" <<<"$w1" && \
+   grep -q "n 24 k 1 orbit 23 SBC 22 maxflips 22 " <<<"$w2" && [ "$(sha1sum box59/out/fc_4.pg | cut -c1-12)" = 3562ec4d15eb ]; then
+  echo "box 59 FC: fc_4 word W_4 (SBC 16), FCOPEN, FCLAT; so_sor5_n24 maxflips 22 <= n 24: PASS"
+else
+  echo "box 59 FC checks: FAILED"; exit 1
+fi
+w3=$(python3 -I box59/relcheck.py box59/out/fcobs_3.pg)
+if grep -q "^REL fcobs_3.pg n 88 m 208 |R| 87 orbit 122 SBC 111 SBC_R 9 LAM 0 SEGMAX 24 PASS$" <<<"$w3" && [ "$(sha1sum box59/out/fcobs_3.pg | cut -c1-12)" = 719d04830887 ]; then
+  echo "box 59 REL: fcobs_3 raw SBC 111, SBC_R 9, SF-RED-R checks (LOC, VAL, SEG, TOT): PASS"
+else
+  echo "box 59 REL checks: FAILED"; exit 1
+fi
+w4=$(python3 -I box59/pvplay.py box59/out/fcobsP_3.pg)
+if grep -q "^PVPLAY fcobsP_3.pg n 90 rawmax 108 playmax 108 playSBC 111 VIOL$" <<<"$w4" && [ "$(sha1sum box59/out/fcobsP_3.pg | cut -c1-12)" = df9fcc64bafd ]; then
+  echo "box 60 PV-PLAY counterexample: fcobsP_3 on-play flips 108 > n 90: PASS"
+else
+  echo "box 60 PV-PLAY checks: FAILED"; exit 1
+fi
+w5=$(python3 -I box59/sbcg.py box59/out/fcobsP_3.pg)
+if grep -q "^SBCG fcobsP_3.pg n 90 m 211 orbit 122 SBC 111 SBC_G 8 SEGMAX 27 maxGflips 5 PASS$" <<<"$w5"; then
+  echo "box 60 SBC_G: fcobsP_3 raw SBC 111, SBC_G 8 (= fc_3), segments within SF-RED-G (a): PASS"
+else
+  echo "box 60 SBC_G checks: FAILED"; exit 1
+fi
+w6=$(python3 -I box59/coarse.py box59/out/fc_3.pg)
+if grep -q "^COARSE fc_3.pg n 85 m 187 I 121 .* SBC_G 8 DEPTH 5 C 10 viol 5 " <<<"$w6"; then
+  echo "box 61 DEPTH: fc_3 I 121, SBC_G 8, needed depth 5, coarse (K=1) records 10 miss 5 segments: PASS"
+else
+  echo "box 61 DEPTH checks: FAILED"; exit 1
+fi
+w7=$(python3 -I box59/dwopen.py box59/out/dw_4.pg 4); w8=$(python3 -I box54/n5sf.py box59/out/dw_4.pg)
+if grep -q "^DWOPEN N 4 word BINARY sets_k>=1 7 every-set-opens-and-lane-first PASS SBC 26$" <<<"$w7" && grep -q "^iterations 286 " <<<"$w8" && \
+   [ "$(python3 -I box59/dw.py 4 | sha1sum | cut -c1-12)" = 19783274245b ]; then
+  echo "box 62 DW: dw_4 N5-SF 286 = 19*2^4-18, sbar binary counter, lane-first gap at every set: PASS"
+else
+  echo "box 62 DW checks: FAILED"; exit 1
+fi
+w9=$(EOPP=tau OOPP=sigma python3 -I box59/mix.py box59/out/dw_3.pg); w10=$(EOPP=sbar OOPP=sigma python3 -I box59/mix.py box59/out/dw_3.pg)
+if grep -q "iterations 41 .* tau-changes 3 " <<<"$w9" && grep -q "iterations 134 " <<<"$w10"; then
+  echo "box 62 FRAME: dw_3 with tau in Even's arena (N5) 41, with sbar(sigma) 134: PASS"
+else
+  echo "box 59 FC checks: FAILED"; exit 1
+fi
 rm -rf "$tmp"
