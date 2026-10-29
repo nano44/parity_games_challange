@@ -55,3 +55,19 @@ PENDING: not on origin/claude/l-new at 16:37Z (the file's last commit there is 1
 - FINDINGS: verdicts identical, joint gap map empty, no E-items. F1-F6 are all clarifications (none widens a statement); F1's premise citation
   should add R57 (b)'s "S1's procedure realises an optimal σ̄" (P1′).
 - NEEDS: Lead: the SHA of F7-F13; route P1′ to L-NEW (into F7, which answers SF-N1).
+
+## §3 Addendum: F7-F13 (written 2026-10-29T17:12Z by date -u, on the Lead's 17:01Z / 17:10Z messages)
+Object: docs/new/P-N5-SF-fixes-box55.md at l-new e9daffde, sha1 d937c8a9110297e961cc2fb9398631e7c41472ac (measured); packet unchanged
+(dbc2345f at e9daffde, measured); F1-F6 unchanged since 122c2f68 (`git diff`: 0 deleted lines). Quote check from a clean worktree at e9daffde:
+quotecheck3 on the fixes file «quotes=6 bad=0, QUOTES PASS», --mut «QUOTES FAIL».
+| item | answers | content checked | class |
+| --- | --- | --- | --- |
+| F7 | SF-N1 (+ P1′) | names both standing premises of ONE-PLAYER (a): (i) G-N5T-1 (R15 limit (ii)), (ii) R57 (b)'s «that S1's procedure realises an optimal σ̄ …» (RESULTS l. 2915-2916, verbatim); says it is not the G-N5T-3 premise; replaces Remark 2's understatement | CLARIFICATION (premise named; P1′ resolved). Remark 2 was not signed, so its replacement touches no signed item |
+| F8 | SF-N2 | cites box10 §3 Theorem PH proof l. 69-72 verbatim (I compared them with the text I read for my report: exact) for "the S4c step changes no valuation" | CLARIFICATION (citation). The lane labels it "an E-item"; I classed SF-N2 as a note: the step was already right, now cited |
+| F9 | SF-N3 | the full S4a quote l. 51-53 with «Else σ_new = σ» | CLARIFICATION (quote) |
+| F10 | SF-N4 | "same arena H" = same ids, owners, priorities, increasing-index lists (S1 l. 44 quoted) | CLARIFICATION |
+| F11 | SF-N5 | SIGMA0 47:18 on an Odd vertex has no effect (S1 reads σ only at Even vertices; my engine likewise ignores Odd entries); its inline check (valuation and run unchanged without the entry) | DATA, no statement touched. Agreed: the difference between my runs and the lane's on n3cov_lean is the start, not a disagreement |
+| F12 | SF-N6 | stretch maxima below n − 1 in all data (lane: 101 at n = 410); n + m stays the signed bound; a sharper n − 1 would be a new claim | DATA, no statement touched. Agreed |
+| F13 | SF-N7 | LAM bound proved in place from R15 (a), S1's order, injective p′; R47 deliberately not cited | CLARIFICATION (no change) |
+- All seven are clarifications or DATA; none widens or changes a signed statement. With F1-F13 every note of both referees (N-SF-1..6, SF-N1..N7,
+  P1′) is answered. Nothing open on P-N5-SF; SF-POLY OPEN, G-N5-TIME untouched.
