@@ -67,3 +67,50 @@ All runs from the SPEC S3 default start. Engines: box54/n5sf.py (N5-SF), box21/n
   (3) DEAD: SF-POLY, I-CUBIC, SBCG-QUAD; PV_G (dw_8: 255 > 217). (4) DATA: plain N5 on dw_3..6 makes 41, 47, 55, 62 iterations.
 - NEEDS: none from the owner. Lead: L-RED's dw generator SHA, to byte-compare with mine. Plain N5 on larger dwN is L-RED / REFEREE-2's
   measurement; my 4 points are a cross-check only.
+
+## 5. Addendum (Lead 18:50Z: WHY does plain N5 survive dwN? Written from 19:02Z by date -u)
+### 5.1 (a) The deciding feature: the Odd strategy in EVEN's arena (DATA, box59/mix.py; S3 start)
+mix.py runs the SPEC loop with EOPP (Odd's strategy in S4a's arena: τ = N5, σ̄(σ) = N5-SF) and OOPP (Even's strategy in S4b's arena:
+σ = N5, τ̄(τ) = N5-SF). Improving sets, S4c and S5 are unchanged. EOPP = τ with OOPP = σ reproduces N5's counts (41 / 47 / 55).
+| game | EOPP τ, OOPP σ (N5) | EOPP τ, OOPP τ̄ | EOPP σ̄, OOPP σ | EOPP σ̄, OOPP τ̄ (N5-SF) |
+| --- | --- | --- | --- | --- |
+| dw_3 / dw_4 / dw_5 | 41 / 47 / 55 | 19 / 25 / 31 | 134 / 286 / 590 | 134 / 286 / 590 |
+| dual dwd_3 / 4 / 5 (box54/mkdual.py) | 41 / 47 / 55 | 134 / 286 / 590 | 19 / 25 / 31 | 134 / 286 / 590 |
+- The exponential appears exactly when the ATTACKED player's arena uses the opponent's fresh best reply. It does not depend on S4b's
+  simultaneous move or on which frame the other side uses: EOPP = τ is linear with either OOPP, and the dual mirrors this.
+- The trace of N5 on dw_3 (box59/n5trace.py) shows how:
+  - Odd's τ at h_2, h_1, h_0 switches to the escapes m_2, m_1, m_0 at iterations 13, 14, 15, and never changes again (τ-changes = N).
+  - From then on, Even's arena always has Odd escaping at every closed cycle.
+  - σ̄(σ) still reverts (SBAR h_0, h_1: m > e at iteration 24), and Iσ still sees it. But the arena optimum is computed against τ, which
+    does not revert. So the lane-first latency gap (§2) never becomes a reset.
+- Why τ never reverts on dwN (READING): Iτ is computed against τ̄(τ), Even's best reply to τ, and Even's best reply to "Odd stays at
+  h_i" is to close cycle i. So "stay" is never an Odd improvement. A reset is a best reply to Even's TRANSIENT opening; only a frame
+  recomputed from σ (N5-SF's σ̄) reproduces it.
+### 5.2 (b) The extra ingredient, as lemma candidates
+- Lemma FRAME-τ (PROVED, lane; R15 (c), (d) on G^d, as in P-N5-SF SF-TERM (i)-(ii)):
+  - In N5 the Odd strategy in Even's arena is τ.
+  - Every change of τ is a non-empty unambiguous switch of Iτ edges.
+  - So τ's values never repeat, and the arena frame of Even changes exactly #τ − 1 times.
+  - Iτ depends on τ alone (R15 (d)), so EVEN CANNOT TRIGGER a change of its own frame; only Odd's own improvement can.
+  - In N5-SF the frame σ̄(σ) is a function of σ, so an Even-side gadget (the repeater) drives it.
+- CONJECTURE FRAME-STRETCH (OPEN): in N5, between consecutive τ-changes, σ changes fewer than n + m times.
+  - DATA: 0 / 719 violations (box59/n5frame_all.txt, S3 starts). Max τ-stretch / (n + m) = 0.66 (red/n5inj/instances/frz40.pg, 90 /
+    137). On dw_3..6: 27, 32, 39, 45, against n + m = 278..539.
+  - Not ≤ n: max τ-stretch / n = 2.72 (b6_xl2_n32, 87 / 32).
+  - Consequence: #σ − 1 < (n + m)·#τ. With the mirror (not measured), N5 is polynomial whenever min(#σ, #τ) is. An exponential family
+    for N5 must make BOTH one-sided runs long. Each player's frame changes only by the other's own improvements, so it needs two coupled
+    counters, each clocking the other.
+- Odd-side repeater (b): a PURE Odd-side repeater is the dual dwN, and N5 is 41 / 47 / 55 there (table above). It does not survive.
+  An attack on N5 needs Odd's own τ-run (fresh Iτ, choice against the current σ) to be long AND to clock Even's run. That is the design
+  target to relay to L-RED 29 (READING).
+
+## 6. DONE / FINDINGS / NEEDS (addendum)
+- DONE: box59/n5trace.py, box59/mix.py, out/dwd_3..5.pg, n5frame_all.txt (719 games); §5; docs/new/N5-SF-CLOSE-box62.md (SF close-out).
+- FINDINGS:
+  (1) DATA: the deciding feature is the Odd strategy in Even's arena. Current τ → linear (either OOPP); σ̄(σ) → 19·2^N − 18. The dual is
+  mirrored.
+  (2) PROVED (lane): Lemma FRAME-τ. N5's Even frame changes only through Odd's own never-repeating improvements; Even cannot trigger it.
+  (3) CONJECTURE FRAME-STRETCH (0 / 719): fewer than n + m σ-changes per τ-stretch. N5 exponential would then need coupled counters on
+  both sides.
+  (4) A pure Odd-side repeater (dual dwN) leaves N5 linear.
+- NEEDS: none from the owner.

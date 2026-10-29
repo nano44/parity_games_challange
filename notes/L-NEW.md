@@ -1,6 +1,12 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Box 62b log (successor 34; Lead 18:50Z: WHY does plain N5 survive dwN; SF close-out)
+- N5-DW-box62.md §5-§6. mix.py (EOPP tau|sbar x OOPP sigma|tbar): the deciding feature is the Odd strategy in EVEN's arena. tau -> 41/47/55
+  (or 19/25/31), sbar -> 134/286/590; the dual dwd mirrors it. Lemma FRAME-tau PROVED (lane): Even cannot trigger its own frame changes in N5.
+  CONJECTURE FRAME-STRETCH (< n+m sigma-changes per tau-stretch): 0/719, max 0.66(n+m). A pure Odd-side repeater (dual dw) leaves N5
+  linear. Close-out note docs/new/N5-SF-CLOSE-box62.md.
+
 ## Box 62 log (successor 34; Lead 18:39Z heads-up on L-RED 29's dwN, unpushed: I rebuilt it myself, box59/dw.py)
 - docs/new/N5-DW-box62.md. dwN = fcN + Even repeater u_i on v_i -> r_(i+1) (prio 3; others +2(N-1)+2). N5-SF iterations 134..2414, 4846 at
   N = 8 = 19*2^N - 18 (L-RED's numbers reproduced); F and I^glo same step counts, trajectories differ from step 72. sbar = full binary
@@ -676,12 +682,19 @@ Every answer measured from the repository; commands named.
    fetched ref, so the pin cannot be checked yet; I checked the packet by sha1 (cbea0739…) against my own commit 1afccb51 instead.
    (iii) The container clock is slow vs the Lead's stamp (07:50 vs 07:53): stamp only from date -u, never ahead of it.
 
-## Resume point (successor 34, session_01V5yGRZtUQrbWSSxFF96dQJ; written 2026-10-29 ~18:0xZ by date -u; overwrite at handover)
-### DONE: box 59 (N5-FC-box59.md, box59/ tools and logs, check.sh "Box 59"), pushed via scripts/push.sh.
+## Resume point (successor 34, session_01V5yGRZtUQrbWSSxFF96dQJ; FINAL-ready, written 2026-10-29 ~19:05Z by date -u)
+### DONE (all pushed via scripts/push.sh, VERIFY PASS; reported to the Lead)
+- Box 59 N5-FC-box59.md (fcN anatomy, COUNT, LATENCY, SF-RED-R under LOC, PV DEAD in §6). Box 60 N5-PV-box60.md (PV-PLAY DEAD,
+  SF-RED-G, PV_G, LOOP). Box 61 N5-DEPTH-box61.md (DEPTH-COUNT, value-prefix potentials DEAD). Box 62 N5-DW-box62.md (own dwN rebuild,
+  N5-SF exponential; §5 why N5 survives: FRAME-tau, FRAME-STRETCH) and N5-SF-CLOSE-box62.md (what stays true).
+- Tools: experiments/new/box59/ (flips, frec, fcword, window, probe, relcheck, sbcg, pvplay, coarse, dw, dwopen, fglo, n5trace, mix,
+  reach, reach2, rnd, corpus.sh [SCRIPT=...]); corpus lists all.lst / rel.lst / sbcg.lst / hard61.lst; check.sh "Box 59" pins 9 lines.
 ### IN FLIGHT: nothing running.
-### NEXT (the Lead decides): the informative count is I (cubic on fcN). Options: relcheck.py / iteration counts on L-RED 28's nested
-families; the finer (play-)relevance version of SF-RED-R (§6.2, OPEN); an I-degree bound via stretch length x SBC^R.
-### Owned conjectures: GROUP, EXIT-without-NT, CARRY-CUT, LOOP (OPEN); SF-POLY, SBC-QP, PV, PV-PLAY, PV_G, I-CUBIC, SBCG-QUAD, value-prefix potentials DEAD (dwN).
+### NEXT (the Lead decides)
+1. N5 (G-N5-TIME): CONJECTURE FRAME-STRETCH and its mirror (sigma-constant tau-stretches; not measured yet: add to mix.py).
+2. Run mix.py / n5trace.py on L-RED 29's Odd-side / coupled families when relayed (N5 needs both one-sided runs long).
+3. Byte-compare box59/dw.py with L-RED's R116 generator (l-red 6e7acb3b) - not done.
+### Owned conjectures: FRAME-STRETCH, LOOP, GROUP, EXIT-without-NT (OPEN); N5-SF line closed (N5-SF-CLOSE-box62.md).
 
 ## Resume point (HISTORY; successor 33, FINAL after box 58, written 2026-10-29 ~17:0xZ by date -u)
 Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context ~375k at writing. PARKED (Lead's option (C), box 58).
