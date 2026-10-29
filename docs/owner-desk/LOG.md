@@ -414,3 +414,15 @@ Owner line (verbatim): "N5 status: RESULTS R74–R84 landed today (all structura
 
 ## 2026-10-29T11:34Z Lead report (11:34Z, summary)
 Reduction map written: docs/lit/T36-n5-reduction-map.md (l-lit 609b9bac). Lane-PROVED, unrefereed: L-SI Theorem COMPOSE / Corollary COMPOSE-RUN: on every game N5's running time reduces to carries of one vertex inside one λ-run (uses L-LIT MATCH-Φ, one referee signed, second pending); carries count OPEN. Killed today (data): SEG-COUNT, RUN-LIN′, n−1 segment bound without (H4′_rel), ~10 lane lemmas. DATA lower bound: Θ(n²) iterations from default start on an explicit family (L-RED R106/R107, ~n²/900). Next: referees on MPGS, COMPOSE, VC-BOUND; L-RED hunts super-polynomial carries. G-N5-TIME OPEN.
+
+## 2026-10-29T17:08Z Lead owner line (17:10Z, verbatim)
+"N5 status, 17:10Z.
+RESULTS landed today: R83-R86. R86 COMPOSE reduces N5's running time to two carry counts.
+Signed by both referees today, landing next: P-N5-SF. It covers a single-frame variant of N5 (N5-SF), which is polynomial if and only if Odd's best-reply changes (SBC) are.
+Under review: P-N5-GP. It is a per-phase bound reduced to one count. The first referee signed it, and I corrected my own RESULTS-line wording after it caught that the line dropped two hypotheses.
+Adversary: the first super-linear family for N5-SF, with SBC = N² exactly (DATA). It is still polynomial. Nesting is being tried to push the degree up.
+Literature: parametric shortest paths, tropical simplex, Koh-Loho, Black-Xue. These give a barrier: any proof of N5-SF's polynomiality must use N5-SF's discrete step structure, not just monotonicity.
+Nothing is proved about N5's polynomiality itself; G-N5-TIME is OPEN.
+Usage: the seven-day limit shows 'allowed_warning' about 20 hours into the week (resets 2026-11-04 21:00Z). There is no overage. To avoid the 10-26 kind of stall, I am pacing at 4 working lanes plus the referees, instead of 5. If you would rather spend the cap faster, say so and I go back to 5.
+Optional, your decision: paywalled originals that the literature lane could not open: Carstensen 1983, Gusfield JACM 1983, Mulmuley-Shah 2001, Friedmann DAM 2013 (published version).
+Needs: none."
