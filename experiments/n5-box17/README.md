@@ -7,11 +7,16 @@ samples. Labels: CONJECTURE (L-SI's statements), OPEN, DATA.
 - REL cutting: experiments/si/lwp/seglast.py `segs()`; text docs/si/N5-GRUN-box25.md §4 (Q, X_b, RO_b, CW_b, CH_b, REL-admissible, maximal
   segments from the run's end). Run key (λ_Ξ, τ) of RESULTS R38 (a); a run = maximal fallback-free stretch of a phase (L-SI's trace.runs).
 - (a) SEG-COUNT excess: experiments/si/lay/segsw.py, EXC = (b − a) − #(Even vertices switching in [a, b]), over segments with b > a.
-  CONJECTURE SEG-COUNT (L-SI, docs/si/N5-LAY-box27.md §6): EXC ≤ 0.
+  CONJECTURE SEG-COUNT (L-SI, docs/si/N5-LAY-box27.md §6): EXC ≤ 0. DEAD (L-RED R105, l-red 22d7c6ab: segcount_kill_n20, EXC +1;
+  reproduced here: xcheck.py OK, box17 EXC +1 on segment [0, 4]). Max EXC is kept as DATA (from which n can EXC > 0 occur).
 - (b) SEG(S): number of maximal REL segments of a fallback-free run S (runs with ≥ 1 transition). CONJECTURE SEG-RUN (N5-GRUN-box25 §5): SEG = O(n).
 - (c) L-WAVE′ gap: experiments/si/grun/lwave.py PMODE=1 (events: non-L REL cuts, and every transition at which the path set of Ξ changes
   at an Odd choice vertex of RO_b); gap = distance between consecutive points of {run start} ∪ events ∪ {run end}.
   CONJECTURE L-WAVE′ (N5-GRUN-box25 §5, N5-LWP-box26 §0): every gap ≤ n − 1.
+- (e) DEADLOCK steps (Lead 10:36Z; docs/si/N5-CHG-box28.md §0, l-si 81ed7592, experiments/si/chg/dlock.py DLRUN_V): t ∈ [a, b) of a
+  segment at which no Even vertex makes its last switch in [a, b]; dl := max over segments of #{deadlock t > r0}, r0 = first state of
+  the run. Cross-check with dlock.py (L-SI's tree at 81ed7592): deadlock counts 2 / 1 / 1 / 0 and DLRUN only on segcount_kill_n20
+  (D = [0, 2], r0 = 0) for segcount_kill_n20, seglast_kill_n110, seglast_kill_n29, hgrow_kill_n89: identical.
 - (d) f(P): in-phase fallbacks of a phase P (transitions t → t + 1 with t, t + 1 ∈ P that take S4c). CONJECTURE FB-LIN (N5-ALT-box23 §13): f ≤ n.
 
 ## Implementation and cross-check (done BEFORE enumerating)

@@ -19,7 +19,9 @@ the plays, cycles, segments and counts below are computed here, not imported fro
   path set, Ξ different); (ii) every t ∈ [max(a_i, s + 1), b_i] such that the path set of Ξ changes from t − 1 to t at some Odd vertex of
   RO_{b_i} of out-degree ≥ 2. Gaps: consecutive points of {s} ∪ events ∪ {e}; gap length y − x. CONJECTURE L-WAVE′: every gap ≤ n − 1.
   (Reading where the text is silent, taken from L-SI's grun/lwave.py docstring and logic: events (ii) at t = a_i count, i.e. "inside
-  [a, b] (or into it)"; a cut with ch = ∅ (a cycle appearance) is non-L.)"""
+  [a, b] (or into it)"; a cut with ch = ∅ (a cycle appearance) is non-L.)
+- DEADLOCK step of a segment [a, b] (b > a) (docs/si/N5-CHG-box28.md §0): t ∈ [a, b) at which no Even vertex makes its last switch in
+  [a, b]. dl := max over segments of #{deadlock t > r0}, r0 the first state of the run (L-SI's DLRUN_V counts segments with dl > 0)."""
 import os
 import sys
 
@@ -156,7 +158,7 @@ def segments(eng, R, s, e):
 
 def analyse(eng, R):
     """per trajectory: dict with max values and the argmax places."""
-    g, n = eng.g, eng.n; res = dict(f=-1, f_at=None, seg=0, seg_at=None, exc=None, exc_at=None, gap=-1, gap_at=None, runs=0,
+    g, n = eng.g, eng.n; res = dict(f=-1, f_at=None, seg=0, seg_at=None, exc=None, exc_at=None, gap=-1, gap_at=None, dl=0, dl_at=None, dead=0, runs=0,
                                     phases=0, segs=0, gaps=0, it=len(R) - 1)
     for i, j in phases(R):
         res["phases"] += 1
@@ -177,6 +179,11 @@ def analyse(eng, R):
                     exc = (b - a) - len(sw)
                     if res["exc"] is None or exc > res["exc"]:
                         res["exc"], res["exc_at"] = exc, (a, b)
+                    last = {v: max(t for t in range(a, b) if R[t]["s"][v] != R[t + 1]["s"][v]) for v in sw}
+                    D = [t for t in range(a, b) if t not in set(last.values())]      # DEADLOCK steps (N5-CHG-box28 §0)
+                    res["dead"] += len(D); dr = sum(1 for t in D if t > s)             # DL-RUN: deadlock steps t > r0 = s
+                    if dr > res["dl"]:
+                        res["dl"], res["dl_at"] = dr, (a, b, s, D)
                 for t in range(max(a, s + 1), b + 1):
                     if any(R[t - 1]["xi"][u][1] != R[t]["xi"][u][1] for u in RO if u in eng.oddch):
                         ev.append(t)

@@ -1,0 +1,14 @@
+dl_total=0 segs=978
+columns: ratio (b-a)/|E_b|, game, a, b, |E_b|, SW, FIN, DL, GR, TOT, MAXV, n
+TOP (1.0, 'experiments/si/xing/instances/zcl_cu_n24.pg', 1, 21, 20, 20, 20, 0, 20, 39, 4, 24)
+TOP (1.0, 'experiments/red/xing/instances/x32_rand16.pg', 1, 14, 13, 13, 13, 0, 13, 13, 1, 16)
+TOP (1.0, 'experiments/red/n5inj/instances/block_bk20.pg', 25, 27, 2, 2, 2, 0, 2, 2, 1, 24)
+TOP (1.0, 'experiments/new/box25/instances/xcf20.pg', 1, 18, 17, 17, 17, 0, 17, 27, 3, 20)
+TOP (1.0, 'experiments/new/box25/instances/xc24.pg', 1, 22, 21, 21, 21, 0, 21, 36, 4, 24)
+TOP (1.0, 'experiments/new/box25/instances/xc16.pg', 1, 14, 13, 13, 13, 0, 13, 17, 3, 16)
+TOP (1.0, 'experiments/n5-exhaustive/instances/n5s_maxph_0.pg', 0, 1, 1, 1, 1, 0, 1, 1, 1, 5)
+TOP (0.982, 'experiments/red/xing/instances/x32_rand64.pg', 0, 55, 56, 55, 55, 0, 55, 89, 3, 64)
+LEN2 PASS
+LENE PASS
+LENG PASS
+FRZLEN PASS

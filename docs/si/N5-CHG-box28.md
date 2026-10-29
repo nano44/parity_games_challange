@@ -1,4 +1,4 @@
-# N5-CHG (box 28): the SEG-COUNT charging; (a) and INTER-JOINT DEAD; CONJECTURE DL-RUN (deadlocks only at run starts)
+# N5-CHG (box 28): the SEG-COUNT charging ((a), INTER-JOINT, DL-RUN DEAD; SEG-COUNT DEAD by L-RED R105); REL-segment LENGTH without (H4′_rel)
 L-SI successor 24 (Opus 5.5; D18, Lead reading L40). Lead's brief 2026-10-29 10:06Z, STEP 1: «the SEG-COUNT charging proof (note §6):
 charge each deadlock step of a REL segment to a JOINT final step (Corollary JOINT), and prove the two missing pieces: (a) no early
 finalization, (b) injectivity (distinct deadlock steps charged to distinct H-sinks). Use psidrop_kill_n70 and the ladder family ... as test
@@ -17,7 +17,11 @@ Labels (D18 / L40): PROVED (lane) / CONJECTURE / OPEN / DATA / READING / DEAD. C
 | §3 | DL-JOINT ((a) at deadlock steps: some H-sink finalizes at s_h) | CONJECTURE; DATA 15/15 |
 | §4 | (b) injectivity | OPEN; what a proof needs |
 | §5 | DL-HSW, DL-NEXT, GROW-PERSIST | DEAD (instances) |
-| §5 | CONJECTURE DL-RUN: a deadlock step is the FIRST transition of its fallback-free run; it implies b − a ≤ (switching Even vertices) + 1 ≤ n on every REL segment, and with DL-JOINT, SEG-COUNT | CONJECTURE; DATA |
+| §5 | CONJECTURE DL-RUN (a deadlock step is the first transition of its run), DL-FIRST, NEWFINAL | DEAD: L-RED's segcount_kill_n20 (R105), segfam_k3_n29, segfam_k8_n79 |
+| §6 | After SEG-COUNT died (L-RED R105, Lead 10:30Z): the LENGTH of a REL segment. PROVED (lane): b − a = FIN + DL, GR ≤ min(FIN, settle events ≤ 2\|E_b\|), Lemma NEW-EDGE. Conditional bounds: DL-SEP or DL-NOCONSEC ⇒ b − a ≤ 2·FIN ≤ 2\|E_b\|; FROZEN-COUNT ⇒ b − a ≤ 2\|E_b\|² + 3\|E_b\| | PROVED (lane); CONJECTURE; DATA |
+| §6 | DL-SEP, DL-NOCONSEC, FROZEN-COUNT, DL-SOMEH, ZIG and the routes (L2), (L3) | DEAD: chg/instances/dlsep_kill_n70 (8 deadlocks in one segment, n5b-reproduced) |
+| §7 | the length reduces to MAXV (switches of one vertex in one segment); Lemma SW-RETURN | READING; PROVED (lane) |
+| §6 | LENE: b − a ≤ \|E_b\| on every segment of every corpus and of L-RED's family (b − a = 2K = \|E_b\| − 1, tight) | DATA (L-RED attacks the n − 1 form) |
 
 ## 0. Setting
 As N5-LAY-box27 §0-§1 (sets S^W_t, S^H_t, U^W_t, U^H_t ⊆ E_b, maps jW, jH, W-/H-sinks, readiness, y_v = σ_b(v)) on a maximal
@@ -113,14 +117,76 @@ fW(v) = t + 1 or fH(v) = t + 1. s_h := fW(jW h) − 1 for an H-sink h that is no
 - READING (why run starts): for t > r0, σ_t is the S4a optimum against the SAME τ over the arena of state t − 1, so W_t is pointwise
   arena-optimal; at r0, σ_{r0} was optimal against the old τ (or came from a fallback). Every deadlock found sits where this W-optimality
   of the current strategy against the current τ is missing. A proof of DL-RUN would use exactly that; it is the next proof target.
-- Lemma climbs OBJ=GP (kill = DL-RUN / DL-FIRST / DL-SEP failure; shaping 5 × deadlock steps + non-growth steps) from lay/out/d29a,
-  psidrop_kill_n70, seglast_kill_n29: running (chg/out/gp_*.log).
+- UPDATE 10:39Z: DL-RUN and DL-FIRST are DEAD (DEAD.md box 28): L-RED's hand-built segcount_kill_n20 (claude/l-red 22d7c6ab,
+  docs/red/R105-segcount-kill.md; copies in chg/instances/red/, sha1 2783f64d… / 97ba6b29…) has deadlocks at t = 0 and t = 2 of its run
+  [0, 4] (r0 = 0); segfam_k3_n29: t = 0, 2, 4; segfam_k8_n79: t = 0, 2, …, 14 (chg/dlock.py DLRUN FAIL, DLFIRST FAIL; n5x = n5b,
+  root/n5bcmp.py). The same instances kill CONJECTURE SEG-COUNT (R105, EXC = K − 1) and the candidate NEWFINAL («at t > r0 some switch to
+  an arena edge outside A(t − 1) is final»; held on 240 late transitions of the climb corpus and ~12,000 library ones). The READING above
+  (W-optimality against the same τ after r0) does not prevent deadlocks: in the family each deadlock after r0 is a NEW arena edge (C_i enters
+  h's arena through w_{i−1}'s final switch).
+
+## 6. The LENGTH of a REL segment without (H4′_rel) (Lead's redirect 10:30Z)
+Notation per segment: FIN final steps, DL deadlock steps, GR growth steps, SW switching Even vertices (= Σ_t |F_t| ≥ FIN), a FROZEN RUN :=
+a maximal run of consecutive non-growth steps (sinks constant on it, Lemma FREEZE).
+- PROVED (lane), counting. (i) b − a = FIN + DL. (ii) GR ≤ FIN (Theorem SINK-STEP: a growth step is a final step). (iii) GR ≤ (settle
+  events) ≤ |U^W_a ∩ E_b| + |U^H_a ∩ E_b| ≤ 2|E_b| (a growth step settles some v in one frame, each v settles at most once per frame).
+  (iv) the frozen runs number ≤ GR + 1 and b − a = GR + Σ (frozen-run lengths).
+- Lemma NEW-EDGE (PROVED, lane). If t − 1 and t lie in one fallback-free run and σ_{t+1}(v) ∈ A(t − 1, v) for every Even v, then
+  W_{t+1} = W_t (a W-FLAT transition). Proof. σ_{t+1} then uses only arena edges of state t − 1, and σ_t is pointwise W-optimal over such
+  strategies (S4a against the same τ): W_t ⊵ W_{t+1}; W-MONO gives ⊴. □ So every non-W-flat transition after r0 switches some vertex to
+  an edge outside the arena of the previous state. DATA: W-flat late transitions 21 (alt_all), 39 (lib41), 0 (climbs, family); NEW-EDGE
+  0 failures (chg/dlock.py NEWEDGE PASS). It does not say the new-edge switch is final (NEWFINAL is DEAD).
+- Conditional length bounds (PROVED, lane, from (i)-(iv)):
+  (L2) CONJECTURE DL-SEP («two deadlock steps of one REL segment are separated by a growth step», i.e. ≤ 1 deadlock per frozen run) ⇒
+       DL ≤ GR (the last step b − 1 is a growth step: its switchers settle at b in both frames; so after the last deadlock there is one
+       more growth step) ⇒ b − a ≤ FIN + GR ≤ 2·FIN ≤ 2·SW ≤ 2|E_b| ≤ 2n − 2. The same follows from the weaker CONJECTURE DL-NOCONSEC
+       («no two consecutive deadlock steps»): then t ↦ t + 1 maps deadlock steps injectively to final steps (b − 1 is final), DL ≤ FIN.
+  (L3) CONJECTURE FROZEN-COUNT («a frozen run is no longer than the number of Even vertices switching in it», SEG-COUNT inside one frozen
+       sink structure) ⇒ b − a ≤ GR + (GR + 1)|E_b| ≤ 2|E_b|² + 3|E_b| = O(n²).
+  Either gives a polynomial per-segment length without (H4′_rel), hence with Corollary REL-SPLIT's cutting |S| ≤ SEG·(2n − 1) resp.
+  SEG·O(n²) per fallback-free run (GEN_W kept; SEG still needs CONJECTURE SEG-RUN).
+- DATA (chg/lenstat.py, chg/dlock.py; chg/lenstat_*.txt, chg/dlock_*.txt): L-RED's family mkk.py K = 2, 3, 4, 5, 6, 8, 10, 12, 16, 20, 24
+  (generated from claude/l-red 22d7c6ab; chg/lenstat_redfam.txt): b − a = 2K, FIN = GR = DL = K, SW = K + 1, |E_b| = 2K + 1, frozen runs all
+  of length 1 (pattern D G D G … D G): DL-SEP, DL-NOCONSEC, FROZEN-COUNT hold, (L2) is tight (b − a = 2·FIN). Library (alt_all both
+  start sets, lib41: 3,134 segments, no deadlock), all experiments/si instances (702 segments, 15 deadlocks), box-27 climbs (72 segments,
+  13 deadlocks, frozen runs up to 6 steps, ≤ 2 switches of one vertex inside a frozen run): DL-SEP, DL-NOCONSEC, FROZEN-COUNT, DL-SOMEH,
+  DL-JOINT, BND 0 failures. LENE (b − a ≤ |E_b|) holds everywhere, tight on the family (2K = |E_b| − 1).
+- READING (what a proof of DL-NOCONSEC needs, and why it may fail): after a deadlock at t (an H-sink h moves to a W-better, honest-improving
+  non-target c1), the next step is final in every instance because h's honest rise makes the W-sink at the end of its H-chain ready, or a
+  vertex of that H-chain takes its final successor (d29a: a snake of σ-final, non-settling switches up a W-sink's H-chain, one per step).
+  A two-stage H-chain (y_w ⇝ u ⇝ h with u a non-sink that must also make an intermediate switch) would give two consecutive deadlocks; I see
+  no lemma that forbids it, so DL-NOCONSEC is plausibly killable by L-RED's gadget method; FROZEN-COUNT would survive that design
+  (2 steps, 2 switchers).
+- UPDATE 10:46Z: DL-SEP, DL-NOCONSEC, FROZEN-COUNT (and DL-SOMEH, ZIG) are DEAD, and with them the routes (L2), (L3) (DEAD.md box 28):
+  lemma climb chg/cclimb.py OBJ=GP (kill = DL-SEP / DL-NOCONSEC / FROZEN-COUNT failure; shaping deadlocks, non-growth steps, frozen-run
+  excess) from L-RED's segfam_k3_n29, ~10,000 steps: chg/instances/dlsep_kill_n70.pg (sha1 e500ea47…; .start f5569821…). The run [0, 12]
+  is one maximal REL segment; 12 transitions with pattern F D D D F D D D D D G G (FIN 4, DL 8), ONE frozen run [0, 10) with 9 switching
+  Even vertices, then 11 vertices finalize at t = 10. Deadlocks 5, 6, 7: a SNAKE of intermediate switches of non-sinks, each to the
+  previous switcher (4: 31 → 10; 15: 23 → 4; 35: 23 → 15); then 20: 14 → 16, 44: 14 → 20 (44 returns to 20, which it left at 3). Every
+  deadlock reproduced from n5b alone (lay/relcheck.py), n5x = n5b. Later climb states (chg/out/gp3_k3*.pg: [1, 13], FIN 2, DL 10) push the
+  same way. Still holding there: b − a ≤ SW (12 ≤ 26), LEN2, LENE (12 ≤ |E_b| = 41), BND, DL-JOINT.
+
+## 7. What is left (READING; OPEN)
+- After SEG-COUNT (L-RED R105) and dlsep_kill_n70, nothing ties deadlock steps to settling, to the sink structure or to growth: inside
+  one frozen sink structure an honest snake of intermediate switches can run, and an H-sink can climb a ladder of intermediate options.
+  The only per-step currency that is never empty is a SWITCH: b − a ≤ TOT := Σ_v (switches of v in [a, b]) ≤ SW · MAXV. So a polynomial
+  REL-segment length without (H4′_rel) follows from a polynomial bound on MAXV, the switches of ONE Even vertex inside one REL segment.
+  DATA: MAXV ≤ 48 at n 156 (ladderd0_k48, its H-sink), K + 1 at n 10K − 1 (L-RED's family, its H-sink), 4 (dlsep_kill_n70).
+- Lemma SW-RETURN (PROVED, lane; the argument of box 27 Lemma H-STICK): if v leaves a successor c at s1 and switches back to c at s2 > s1
+  in [a, b], then Ξ_{s2}(c) ▷ Ξ_{s1}(c). Proof: (SW) at s2 and s1, Ξ-SUCC and R15 (a): Ξ_{s2}(c) ▷ Ξ_{s2}(σ_{s2} v) ⊵ Ξ_{s1+1}(σ_{s1+1} v)
+  ⊵ Ξ_{s1}(σ_{s1+1} v) ▷ Ξ_{s1}(c). □ So switches of v are bounded by out-degree × (1 + the number of honest-value rises of v's successors
+  between its visits); dlsep_kill_n70's vertex 44 returns to 20 after Ξ(20) rose through 20's own switch at 8. This is a recursion, not a
+  bound; it is the next proof target, together with L-RED's attempt to exceed n − 1.
 
 ## DONE / FINDINGS / NEEDS
 - DONE: this note; tools chg/suffix.py (SUFFIX-COUNT, BND with MUT, EARLY, INTER-JOINT), chg/dlock.py (deadlock anatomy and candidates),
   chg/cclimb.py (lemma climbs OBJ=IE, GP), chg/ijcheck.py (n5b-only check of an INTER-JOINT failure); pins chg/instances/
-  (interjoint_kill_n70, growpers_kill_n73); data chg/*.txt; DEAD.md "box 28"; check.sh "box 28".
-- FINDINGS: (1) PROVED (lane): FREEZE, DEADLOCK (the zig-zag cycle closes at every deadlock step), BND. (2) DEAD: general (a)
-  (wgrow_kill_n90), INTER-JOINT (interjoint_kill_n70), DL-HSW, DL-NEXT, GROW-PERSIST (growpers_kill_n73). (3) CONJECTURE DL-RUN (deadlocks
-  only at run starts; 15/15) ⇒ segment length ≤ switchers + 1 ≤ n without (H4′_rel); with DL-JOINT (15/15) ⇒ SEG-COUNT. (4) (b) OPEN.
+  (interjoint_kill_n70, growpers_kill_n73, dlsep_kill_n70; copies of L-RED's R105 pins in chg/instances/red/); chg/lenstat.py (length
+  statistics); data chg/*.txt; climb logs chg/climbs_box28.txt; DEAD.md "box 28"; check.sh "box 28" (5 blocks).
+- FINDINGS: (1) PROVED (lane): FREEZE, DEADLOCK (the zig-zag cycle closes at every deadlock step), BND, NEW-EDGE, the counting (i)-(iv)
+  of §6. (2) DEAD: general (a) (wgrow_kill_n90), INTER-JOINT (interjoint_kill_n70), DL-HSW, DL-NEXT, GROW-PERSIST (growpers_kill_n73),
+  DL-RUN, DL-FIRST, NEWFINAL (L-RED's segcount_kill_n20 / segfam_k3_n29 / segfam_k8_n79). SEG-COUNT itself: DEAD by L-RED R105 ((b) fails
+  exactly as §4 predicted). (3) The length routes (L2) (DL-SEP / DL-NOCONSEC ⇒ b − a ≤ 2·FIN) and (L3) (FROZEN-COUNT ⇒ O(n²)) are DEAD
+  (dlsep_kill_n70: 8 deadlocks, 6 consecutive, in one segment); LENE (b − a ≤ |E_b|) and b − a ≤ SW still hold in all data except L-RED's
+  family (b − a = 2K > SW = K + 1). (4) What is left: a per-vertex switch bound (§7); Lemma SW-RETURN PROVED (lane).
 - NEEDS: none from the owner.

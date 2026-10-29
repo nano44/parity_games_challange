@@ -542,7 +542,7 @@ grep -q "intermediate switch at t: True | L(h) = 5 | s_h = fW(jW h) - 1 = 6" <<<
 python3 -I root/n5bcmp.py chg/instances/interjoint_kill_n70.pg chg/instances/interjoint_kill_n70.start | grep -q "n5b iterations 10 fallbacks 1 states 11 | n5x states 11 | identical state sequences: True"
 echo "si (box 28: interjoint_kill_n70 kills INTER-JOINT, reproduced from n5b alone): PASS"
 # box 28: chg/instances/growpers_kill_n73 kills GROW-PERSIST (segment [2, 5], pattern G F G); n5b identical. CONJECTURE DL-RUN (deadlock
-# steps only at run starts), DL-FIRST, DL-JOINT (NOEARLY), DL-SOMEH, ZIG on the 48 box-27 climb instances (13 deadlock steps); MUT=1 bites.
+# steps only at run starts; DEAD later on L-RED R105, block below), DL-FIRST, DL-JOINT (NOEARLY), DL-SOMEH, ZIG on the 48 box-27 climb instances.
 echo "ff73bab1641c7f5b8f0756b25df2b24709d1bcdb  chg/instances/growpers_kill_n73.pg" | sha1sum -c --quiet
 echo "b496c9b9dffb33880c4fe632ad47d606ef8ffd84  chg/instances/growpers_kill_n73.start" | sha1sum -c --quiet
 o=$(python3 -I chg/dlock.py --one chg/instances/growpers_kill_n73.pg chg/instances/growpers_kill_n73.start); grep -q "^GROWPERS FAIL" <<<"$o"
@@ -552,3 +552,32 @@ o=$(START=1 python3 -I chg/dlock.py --list chg/climbcorpus_box27.lst); grep -q "
 for k in DLRUN DLFIRST NOEARLY DLSOMEH ZIG DLSEP GROWFIN MATCH; do grep -q "^$k PASS" <<<"$o"; done; grep -q "^DLHS FAIL" <<<"$o"; grep -q "^DLNEXT FAIL" <<<"$o"
 if ! MUT=1 python3 -I chg/dlock.py --one lay/instances/seglast_kill_n29.pg lay/instances/seglast_kill_n29.start | grep -q "^DLRUN FAIL"; then echo "box 28 DLRUN MUT"; exit 1; fi
 echo "si (box 28: growpers_kill_n73 kills GROW-PERSIST; DL-RUN, DL-FIRST, DL-JOINT hold on 13 climb deadlocks, MUT bites): PASS"
+# box 28: L-RED's R105 instances (byte-identical copies of claude/l-red 22d7c6ab experiments/red/seg/instances) kill DL-RUN, DL-FIRST and
+# NEWFINAL (deadlocks at t = 0 and t = 2 of the run [0, 4]); DL-SEP, DL-NOCONSEC, FROZEN-COUNT, DL-JOINT, BND hold; n5b identical.
+echo "2783f64d82f271ebc9a26b470b26a9938fd5295c  chg/instances/red/segcount_kill_n20.pg" | sha1sum -c --quiet
+echo "97ba6b298917676e10cb209e21f49ee442b73686  chg/instances/red/segcount_kill_n20.start" | sha1sum -c --quiet
+echo "0d242a9b99f81b1f5dc91e32da1211d12c426982  chg/instances/red/segfam_k3_n29.pg" | sha1sum -c --quiet
+echo "c0f9d1af61d74af696e6b378f33279968b448bd3  chg/instances/red/segfam_k3_n29.start" | sha1sum -c --quiet
+o=$(VERB=1 python3 -I chg/dlock.py --one chg/instances/red/segcount_kill_n20.pg chg/instances/red/segcount_kill_n20.start)
+for k in DLRUN DLFIRST NEWFINAL MATCH; do grep -q "^$k FAIL" <<<"$o"; done; for k in DLSEP DLCONSEC FRZLEN NOEARLY DLSOMEH ZIG NEWEDGE GROWFIN; do grep -q "^$k PASS" <<<"$o"; done
+grep -q "\[0,4\] t=0 switch=\[(6, 0, 11)\]" <<<"$o"; grep -q "\[0,4\] t=2 switch=\[(6, 11, 18)\]" <<<"$o"
+o=$(python3 -I chg/dlock.py --one chg/instances/red/segfam_k3_n29.pg chg/instances/red/segfam_k3_n29.start); grep -q "deadlock=3 finalsteps=3 growsteps=3" <<<"$o"
+for k in DLSEP DLCONSEC FRZLEN NOEARLY; do grep -q "^$k PASS" <<<"$o"; done; grep -q "^DLRUN FAIL" <<<"$o"
+o=$(python3 -I chg/suffix.py --one chg/instances/red/segfam_k3_n29.pg chg/instances/red/segfam_k3_n29.start); grep -q "^BND PASS" <<<"$o"
+python3 -I root/n5bcmp.py chg/instances/red/segcount_kill_n20.pg chg/instances/red/segcount_kill_n20.start | grep -q "n5b iterations 6 fallbacks 0 states 7 | n5x states 7 | identical state sequences: True"
+echo "si (box 28: L-RED's segcount_kill_n20 / segfam_k3_n29 kill DL-RUN, DL-FIRST, NEWFINAL; DL-SEP, DL-NOCONSEC, FROZEN-COUNT, BND hold): PASS"
+# box 28: chg/instances/dlsep_kill_n70 kills DL-SEP, DL-NOCONSEC, FROZEN-COUNT, DL-SOMEH, ZIG: REL segment [0, 12], deadlocks 1-3, 5-9,
+# frozen run [0, 10) with 9 switchers; every deadlock reproduced from n5b alone (lay/relcheck.py); n5b state sequence identical.
+echo "e500ea47e1dc0163b32a97042ff9752daf6db83a  chg/instances/dlsep_kill_n70.pg" | sha1sum -c --quiet
+echo "f5569821f5d951de4922a4a9853b3bb4c9bf0284  chg/instances/dlsep_kill_n70.start" | sha1sum -c --quiet
+o=$(python3 -I chg/dlock.py --one chg/instances/dlsep_kill_n70.pg chg/instances/dlsep_kill_n70.start)
+for k in DLSEP DLCONSEC FRZLEN DLSOMEH ZIG; do grep -q "^$k FAIL" <<<"$o"; done; for k in NOEARLY GROWFIN NEWEDGE; do grep -q "^$k PASS" <<<"$o"; done
+grep -q "deadlock=8 finalsteps=5 growsteps=3" <<<"$o"
+for t in 1 2 3 5 6 7 8 9; do
+  o=$(python3 -I lay/relcheck.py chg/instances/dlsep_kill_n70.pg chg/instances/dlsep_kill_n70.start 0 12 $t)
+  grep -q "its REL segments: \[(0, 12)" <<<"$o"; grep -q "REL-admissible on \[a, b\]: True" <<<"$o"; grep -q "SEG-LAST fails at t: True" <<<"$o"; grep -q "S1 rank order): 0" <<<"$o"
+done
+python3 -I root/n5bcmp.py chg/instances/dlsep_kill_n70.pg chg/instances/dlsep_kill_n70.start | grep -q "n5b iterations 16 fallbacks 0 states 17 | n5x states 17 | identical state sequences: True"
+o=$(python3 -I chg/lenstat.py --one chg/instances/dlsep_kill_n70.pg chg/instances/dlsep_kill_n70.start); grep -q "^LEN2 PASS" <<<"$o"; grep -q "^LENE PASS" <<<"$o"; grep -q "^FRZLEN FAIL" <<<"$o"
+grep -q "EXAMPLE ('FRZLEN', 'chg/instances/dlsep_kill_n70.pg', 0, 12, 0, 10, 9)" <<<"$o"
+echo "si (box 28: dlsep_kill_n70 kills DL-SEP, DL-NOCONSEC, FROZEN-COUNT; 8 deadlocks in one REL segment, reproduced from n5b alone): PASS"

@@ -15,6 +15,9 @@ nm.py --key r104 uses L-RED gatep.py's key (τ, λ_Ξ, λ_Ξτ), and gives the s
 ## Cross-checks (done first)
 - matchtest.py: K = 5, 31,744 pairs, 0 disagreements. K = 6, 258,048 pairs (all 64 parity patterns, not only T32's 40 random ones),
   0 disagreements. Of the 129,024 improving pairs at K = 6, 50,756 are carries.
+- Definitive rule (Lead 10:36Z): L-LIT T33 (docs/lit/T33-match-phi.md §1.2, T33-match-phi-check.py @ l-lit f587cb2f): matchtest.py with
+  T33's matched(): K = 6, 258,048 pairs, all 64 parity patterns, 0 disagreements. On T33 Part B's binary counter (fixed even top, k
+  bits) mine and T33's agree: carries 0, 0, 1, 3, 7, 15, 31, 63 for k = 1..8 (of 2^k − 1 P-changes).
 - nm.py vs L-RED gatep.py (best phase, summed over gates): pl130_n40 PCH 157 / RESET 133 / RESET_STALL 8, and l121reader_n41 187 / 157 / 0.
   Both identical to gatep.py's output. l121reader_n41 vertex 40 has 71 P-changes in phase [1, 122], as T32 says.
 - Pins re-checked: n5.py states = n5b states, regions = Oink zlk @ 8fbf0a7, verify.py OK for ladderd0_k12_n48 (sha1 c654bf9e…),
