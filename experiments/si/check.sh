@@ -445,3 +445,8 @@ o=$(python3 -I lwp/laststep.py --one lwp/instances/karena_kill_n71.pg); grep -q 
 python3 -I lwp/seglast.py --one lwp/instances/karena_kill_n71.pg | grep -q "SEGLAST PASS"
 o=$(python3 -I lwp/laststep.py --one lwp/instances/cycset_kill_n60.pg); grep -q "KARENA PASS" <<<"$o"; grep -q "kar_nontrivial=1 " <<<"$o"
 echo "lwp (box 26: K-REDUCTION holds on cycset_kill_n60's nontrivial part; karena_kill_n71 kills K-ARENA, SEG-LAST holds): PASS"
+# box 26: setstep_kill_n71 kills SET-STEP (SS_V=1) while SEG-LAST holds; WX-ARENA fails on cycset_kill_n60.
+echo "b6360888a8180a9afef84c38845500f46626b548  lwp/instances/setstep_kill_n71.pg" | sha1sum -c --quiet
+o=$(python3 -I lwp/seglast.py --one lwp/instances/setstep_kill_n71.pg); grep -q "SS_V=1 " <<<"$o"; grep -q "SEGLAST PASS" <<<"$o"
+python3 -I lwp/laststep.py --one lwp/instances/cycset_kill_n60.pg | grep -q "WXARENA FAIL"
+echo "lwp (box 26: setstep_kill_n71 kills SET-STEP, SEG-LAST holds; WX-ARENA fails on cycset_kill_n60): PASS"

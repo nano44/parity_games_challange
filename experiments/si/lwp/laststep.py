@@ -4,7 +4,9 @@
 t is an Even v in X_b outside T = T_W u T_H with sigma_t(v) != sigma_b(v) and sigma_b(v) in S_t. Checks per transition t -> t+1:
 FR_V (no frontier vertex), FRL_V (a frontier vertex whose last switch is not at t: the theorem says this never happens when GEN_W holds),
 and per segment whether (H4'_rel) fails (h4p_fail) and, then, whether every frontier step still existed (FR_V there). CYCSET_V: (H4'_rel)-failing segments with a J_b-cycle vertex not settled from a. KARENA_V: steps where no terminal SCC K of J_b on the unsettled set N_t has all its off-target vertices' sigma_b in the arena; KSET_V /
-KLAST_V: an arena-complete K that is not settled from t + 1 / has no last switch at t (the reduction says never, under GEN_W). MUT=1 asks for
+KLAST_V: an arena-complete K that is not settled from t + 1 / has no last switch at t; WX_V: steps where no terminal part is a
+singleton or has an off-target W-exit with target in the arena (WX-ARENA); WXL_V: such a W-exit not switching at t for the last time;
+KSET_V / KLAST_V for K that is not settled from t + 1 / has no last switch at t (the reduction says never, under GEN_W). MUT=1 asks for
 sigma_b(v) in S_(t-1) instead (must bite). Usage: laststep.py --list FILE | --one GAME [START]"""
 import sys, os
 from collections import Counter
@@ -115,6 +117,12 @@ def _run(g, R, name):
             I = set(EN.improving(tuple(R[t]["s"]), R[t]["vs"]))
             Ks = sccs_terminal(Nt, JJ)
             ok = [K for K in Ks if all(R[t]["s"][v] == B["s"][v] or (v, B["s"][v]) in I for v in K)]
+            # WX-ARENA: some terminal part is a singleton, or has an off-target W-EXIT (W-J_b-successor outside N_t) whose target is in
+            # the arena; Lemma W-EXIT then makes that vertex switch at t for the last time
+            wx = [(K, v) for K in Ks for v in K if len(K) == 1 or (R[t]["s"][v] != B["s"][v] and (v, B["s"][v]) in I and jn(v, "W") not in Nt)]
+            if not wx: C["WX_V"] += 1; EX.append(("WX", name, a, b, t))
+            for K, v in wx:
+                if len(K) > 1 and last.get(v) != t: C["WXL_V"] += 1; EX.append(("WXL", name, a, b, t, v))   # the lemma says never (GEN_W)
             C["kar_steps"] += 1; C["kar_nontrivial"] += any(len(K) > 1 for K in Ks)
             if not ok: C["KARENA_V"] += 1; EX.append(("KARENA", name, a, b, t, [sorted(K) for K in Ks][:3]))
             for K in ok:                          # the reduction's conclusion: K settled from t + 1, some vertex of K last-switches at t
@@ -140,6 +148,7 @@ def main():
     print("LASTSTEP PASS" if "FR_V" not in C and "FRL_V" not in C else "LASTSTEP FAIL")
     print("CYCSET PASS" if "CYCSET_V" not in C else "CYCSET FAIL")
     print("KARENA PASS" if "KARENA_V" not in C else "KARENA FAIL")
+    print("WXARENA PASS" if "WX_V" not in C and "WXL_V" not in C else "WXARENA FAIL")
     print("KSET PASS" if "KSET_V" not in C and "KLAST_V" not in C else "KSET FAIL")
 
 if __name__ == "__main__":

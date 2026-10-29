@@ -14,6 +14,7 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   Climbs OBJ=H4 (lwp/out/h4a, h4b) were running at the last commit: kill = SEG-LAST failure (score component >= 100).
 - PROVED (lane) Theorem K-REDUCTION (note §8; terminal part K with all targets in the arena settles in one step; contains LAST-STEP).
   K-ARENA DEAD (lwp/instances/karena_kill_n71, layered settling). Library: no step ever has a nontrivial terminal part.
+- Also DEAD: WX-ARENA, SET-STEP (lwp/instances/setstep_kill_n71). SEG-LAST survives every climb (ka6*, slk7*; climbs stopped by me).
 - Next: a LAYERED K-REDUCTION (arena-ready vertices of K take their targets for good); kill search OBJ=SL from karena_kill_n71 (lwp/out/slk*).
 - Things only I know (s22): gap reference state = y − 1 whenever the gap closes at an event (run end included); xclimb's GD scores used an
   older rule (inflated excess, see note §1 CORRECTION). `pkill -f PATTERN` inside a Bash call kills the calling shell too (exit 144): kill by

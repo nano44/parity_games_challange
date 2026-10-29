@@ -150,7 +150,8 @@ DATA (lwp/laststep.py; FR_V = steps without a frontier vertex, FRL_V = frontier 
   vertices 31, 33, 34, 35 settled from 2). SEG-LAST still holds on both.
 - What happens there (DATA, h4a_k t = 0): the unsettled J_b-cycle vertices 1 and 37 switch TOGETHER at t = 0 (1: 28 → 59, 37: 6 → 58), both for
   the last time, and the whole cycle is settled from t + 1. CONJECTURE SET-STEP («at every t of a REL segment some switcher of t is in
-  S_(t+1)»; it implies SEG-LAST): 0 failures in the 3,134 segments (lwp/seglast.py SS_V) and on h4a_k, h4b_k. The proof route: a terminal
+  S_(t+1)»; it implies SEG-LAST): 0 failures in the 3,134 segments (lwp/seglast.py SS_V) and on h4a_k, h4b_k, but DEAD by the climb instance
+  lwp/instances/setstep_kill_n71.pg (sha1 b6360888a8180a9afef84c38845500f46626b548; DEAD.md), where SEG-LAST still holds. The proof route: a terminal
   strongly connected part K of J_b on N_t settles in one transition; step (A) (arena membership) is what is missing, since the targets'
   honest values are not final before K settles.
 
@@ -197,6 +198,12 @@ from t + 1 / has no last switch at t, which the theorem excludes under GEN_W; lw
   8b659497688c47075235957ae1e636b5564ec235) in 511 steps: at t = 0 the only terminal part K = {1, 3, 35, 41, 46, 50, 64} has 41 with
   σ_0(41) = 50 ≠ 35 = σ_b(41) and (41, 35) not improving at 0, exactly the case of the READING above (41's honest J_b-successor 35 is in K and
   switches 46 → 50 at 0). K settles in two layers (from states 1 and 2). SEG-LAST holds: 1 and 35 switch at 0 for the last time.
+- Lemma W-EXIT (PROVED, lane; the argument of step (2) with σ′ changed at v alone). If v ∈ K is a W-EXIT (its W-J_b-successor is outside
+  N_t, or its W-play at b meets no Even vertex outside T after v) and σ_b(v) ∈ A(t, v), then σ = σ_b at v on [t + 1, b] and v ∈ S^W_(t+1): v's
+  W-play under σ′ := σ_(t+1) with v ↦ σ_b(v) is its W-play at b (its successors are b-successors up to a W-settled vertex), so step (2)
+  applies to v alone; by induction on s, as in (3). An H-exit has its target in the arena (READING above); a vertex that is both an H-exit and
+  a W-exit is a J_b-sink of N_t, a singleton part. CONJECTURE WX-ARENA (some terminal part is a singleton or has an off-target W-exit with its
+  target in the arena) is DEAD (cycset_kill_n60, karena_kill_n71 at t = 0; DEAD.md): the steps there are joint switches.
 - So SEG-LAST without (H4′_rel) needs a LAYERED form of the theorem: vertices of K whose targets are in the arena take them for good, the
   next honest layer follows. The partial strategy σ′ (σ_b on the arena-ready vertices only) breaks step (2), because their W-plays pass
   vertices of K that are still off target. OPEN.
@@ -206,8 +213,10 @@ from t + 1 / has no last switch at t, which the theorem excludes under GEN_W; lw
   check.sh blocks "box 26".
 - FINDINGS: (1) L-WAVE′ survives four structurally different kill searches (random starts, random games, pure-length regime, depth-excess
   climb); gap = n − 1 is reached again (xk_k) and never beaten. (2) DEAD: VS-STEP, PS-STEP, PV-STEP, GAP-DEPTH, per-gap LAST-SWITCH (lwp_a,
-  xk_k), CYC-SET (run34_n40, cycset_kill_n60), K-ARENA (karena_kill_n71). (3) CONJECTURE SEG-LAST (0 failures in 3,134 segments; it fails on pieces and runs, which serve as controls)
-  would remove (H4′_rel) and GEN_W from STATIC-DEPTH-REL; SWL, NEVEN and SET-STEP hold in the data. (4) PROVED (lane): monotone settled sets;
+  xk_k), CYC-SET (run34_n40, cycset_kill_n60), K-ARENA (karena_kill_n71, and two more climb instances), WX-ARENA, SET-STEP
+  (setstep_kill_n71). (3) CONJECTURE SEG-LAST (0 failures in 3,134 segments; it fails on pieces and runs, which serve as controls)
+  would remove (H4′_rel) and GEN_W from STATIC-DEPTH-REL; SWL and NEVEN hold in the data; SEG-LAST also survives the KA / SL climbs (lwp/out/ka*, slk*), which kill
+  every weaker per-step mechanism tried. (4) PROVED (lane): monotone settled sets;
   Lemma P-ARENA; Theorem LAST-STEP (SEG-LAST under (H4′_rel) + GEN_W, by a frontier argument that uses (H4′_rel) only to exclude an
   unsettled J_b-cycle); Theorem K-REDUCTION (§8: a terminal part of J_b on the unsettled set whose targets are all in the arena settles
   in one step; contains LAST-STEP). L-WAVE′, SEG-LAST without (H4′_rel), STATIC-DEPTH′-TIE stay OPEN.

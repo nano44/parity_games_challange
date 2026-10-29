@@ -1,3 +1,6 @@
 seed (7, 1, 0) n 60
 step 3199 score (107, 1, 1) n 72
 step 3199 KILLSCORE 1 n 72
+step 4033 score (110, 2, 1) n 72
+step 6909 score (111, 2, 1) n 72
+step 7199 score (113, 2, 1) n 72
