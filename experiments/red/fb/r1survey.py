@@ -16,11 +16,11 @@ for p in sys.argv[1:]:
         st = tuple({v: w for v, w in d.items() if v < g.n and w in g.succ[v] and g.owner[v] == o} for d, o in zip(st, (0, 1)))
         signal.alarm(20)
         F.MODE_RF = 1; f, rf = F.reuse(g, st, cap=5000)
-        F.MODE_RF = 2; f2, r1 = F.reuse(g, st, cap=5000)
+        F.MODE_RF = int(os.environ.get("M2", "2")); f2, r1 = F.reuse(g, st, cap=5000)
         signal.alarm(0); ok += 1
         for k, v in (("f", f), ("rf", rf), ("r1", r1)):
             if v > best[k][0]: best[k] = (v, "%s n=%d f=%d" % (p, g.n, f))
-        if r1 > 0: print("R1>0", p, g.n, f, rf, r1, flush=True)
+        if r1 > int(os.environ.get("SHOW", "0")): print("R1>0", p, g.n, f, rf, r1, flush=True)
     except Exception as e:
         signal.alarm(0)
 print("games", ok, "max f", best["f"], "max RF", best["rf"], "max R1", best["r1"])
