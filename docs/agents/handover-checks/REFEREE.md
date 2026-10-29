@@ -1,5 +1,39 @@
 # Handover check: REFEREE
 
+## successor 18 (2026-10-29T12:16Z by date -u; Opus 5.5 under D15, label "(Opus 5.5, D15)"; predecessor successor 17, handover 4749794b)
+Measured from the repository at the time of writing, not recalled.
+
+### 1. Branch, head, distance to trunk
+- Branch claude/referee. Local checkout was STALE at dc4e47b8 (origin had 4749794b): `git fetch` + `git merge --ff-only origin/claude/referee`;
+  `git merge-base --is-ancestor 4749794b HEAD` OK. Before the trunk merge: 4 ahead / 78 behind trunk efc8e00c (merge-base 8bec50cf).
+- Merged trunk claude/vibrant-johnson-nxvvxo (efc8e00c) with a normal merge 3c341acc: 5 ahead / 0 behind (before this file's commit).
+
+### 2. Open work and next step of each
+- STEP 1, MPGS §C: compare my side's R-N5-MPGS.md (c3a0b5d7, §1b 7cd20b05) with REFEREE-2's R2-N5-MPGS.md (succ. 19, 0c4524f0, report of
+  record) and R2-N5-MPGS-s20.md (c5f9e76e); write the joint map (E-items vs optional) into docs/referee/R-N5-MPGS.md §C.
+- STEP 2, P-N5-COMPOSE (L-SI) full first review: object docs/si/P-N5-COMPOSE-box28.md at l-si 3ca0932d (ancestor of HEAD;
+  `git show 3ca0932d:... | sha1sum` = e1b977aa9cf1583d5e0c442a8f87d024230b6524, 141 lines: matches the brief). Items §2 SW-RETURN,
+  §3 LEN-MONO, §4 Theorem COMPOSE, §5 COMPOSE-RUN, §6 COMPOSE-NM. Pinned checks: quotecheck (quotes=16 bad=0), compose.py lines; own control.
+  REFEREE-2's R2-N5-COMPOSE* not opened before my report is pushed.
+
+### 3. docs/GAPS.md rows relevant to me (trunk efc8e00c)
+- REFEREE owns no row. The row my packets feed: G-N5-TIME, major, owner L-NEW (L-LIT T22; referees later), OPEN.
+- G-N5-TERM closed; DTL rows GAP-A etc. open but DTL paused (D18/L40).
+
+### 4. Three owner rulings that most constrain me (verbatim, docs/DECISIONS.md), with DECISIONS-INDEX status
+1. D1 (index: active; DECISIONS.md line 8):
+   > Never downgrade the referee to save money.
+   and line 7: > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+2. D15 (index: active; L37 active):
+   > q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it
+3. D18 (index: active):
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+   (D17, active: CHECKER and the referees are gate roles above the five working lanes.)
+
+### 5. One trap that bit this lane, and the check that prevents it
+- Trap (again this restart): stale local branch (dc4e47b8 vs origin 4749794b). Check: fetch, `git rev-parse HEAD origin/claude/referee`, is-ancestor.
+- Trap (successor 17): missed a Lead correction for 15 min during a long run. Check: ReadNotifications between long runs and before every push.
+
 ## successor 17 (2026-10-28T22:43Z by date -u; Opus 5.5 under D15, label "(Opus 5.5, D15)"; predecessor successor 16, handover dc4e47b8)
 Measured from the repository at the time of writing, not recalled.
 
