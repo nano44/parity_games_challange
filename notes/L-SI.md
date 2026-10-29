@@ -13,8 +13,8 @@ Reason: context ~440k, before the ~550k plan. Lead: session_014FBi6o334DvwT5Uw2k
   GATE-RISE (= strict R61 (e) ALT), STATIC-DEPTH-REL, REL-SPLIT (|S| ≤ SEG·n − 1, SEG reader-proof). CONJECTURE SEG-RUN (DATA ≤ 1.00n, all starts).
 - DEAD L-WAVE (DEAD.md box 25, 8f665e06): grun/instances/lwkill_n31, gap 37 > 30, three engines, Oink-verified.
 ### IN FLIGHT
-- grun/gclimb.py OBJ=LW PMODE=1 climbs lwq_1-3 (from grun/out/lwp_a, gap = n − 1 at n 26), started 06:20Z, 40,000 steps; logs grun/out/lwq_*.log.
-  A score > 0 is a kill of L-WAVE′ (check with grun/lwave.py PMODE=1 --one, then n5bcmp + n5.py + check_sol2 as for lwkill_n31).
+- Nothing running. The L-WAVE′ climbs lwq_1-3 (OBJ=LW PMODE=1 from grun/out/lwp_a, gap = n − 1 at n 26) found no improvement in ~12 min and
+  were stopped by me (logs grun/out/lwq_*.log). Best L-WAVE′ score found: 0 (gap = n − 1 exactly), no kill.
 ### OPEN / QUEUE
 1. CONJECTURE L-WAVE′ (GRUN §5): gaps between non-L cuts and P-changes of Ξ at Odd choice vertices of RO_b are ≤ n − 1. Proof obstruction
    (READING): gate competitors are off the end-state plays; Even P-changes are not events.
