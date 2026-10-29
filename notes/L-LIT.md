@@ -2,11 +2,10 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-29 ~10:2xZ (successor, Opus 5.5, D15/D18): STEP 0 handover check pushed a0e73a8f. T32 DONE: docs/lit/T32-n5-frontier-crossfield.md
-(8 entries E1-E8 for the N5 frontier: O1 REL-segment settling / SEG-COUNT, O2 SEG-RUN, O3 P-changes under a fixed top). Key: Lemma
-MATCH-Φ (PROVED, L-LIT, unrefereed; ARV rank-replacement transferred): matched P-changes raise Φ = Σ ±pos(r) by ≥ 1, so PCH ≤
-(n²/2)(NM+1)+NM per vertex per phase, NM = carries (1-k exchanges, ARV's 1-2-exchange counter). E4 composes it with R83/GATE-RISE/GRUN
-to reduce SEG-RUN (poly form) to CF + TIE/CYC/THRU + gates' NM. Next: whatever the Lead routes (NM measurement is for L-COMP/L-SI).
+2026-10-29 ~10:4xZ (successor, Opus 5.5): T33 DONE docs/lit/T33-match-phi.md (+ T33-match-phi-check.py sha1 6853179b): Lemma MATCH-Φ
+self-contained (PROVED, L-LIT, unrefereed); ARV transfer: only ARV's free schedule (A3, Lemma 10 "there exists a best response
+sequence") fails for N5; (MON)/λ,τ fixed/DELTA/TOP-SHAPE admit an ascending counter with NM = 2^(k-2) - 1; NM = poly OPEN; gadget
+sketch §2.3 for L-RED; CONJECTURE NM-SEQ labelled for measurement. Before: T32 (a06dc24a). Next: Lead's routing.
 
 ## Queue
 - Not opened (blocked or paywalled), needed only if a lane depends on them: Friedmann RAIRO 2011 (403); FHZ SODA/STOC 2011;
@@ -278,6 +277,7 @@ to reduce SEG-RUN (poly form) to CF + TIE/CYC/THRU + gates' NM. Next: whatever t
 | epub.ub.uni-muenchen.de/8502 (PODS'89 proceedings) sha256 8b369338a66… | TOC only: Van Gelder AFP listed p.1; text is a different paper | 2026-10-29 | T32, not a source |
 | arXiv 1103.0133 v1 (Ramachandran et al.) sha256 82204868e4b… | title + intro only (cites Busch-Tirthapura); not used | 2026-10-29 | T32 |
 | NOT opened (T32) | Busch-Tirthapura SICOMP 2005 (iastate TLS fail via proxy; Wayback reset x2); CFWW SIROCCO 2011 / TALG 2015; Van Gelder JCSS 1993; Gawlitza-Seidl ESOP 2007, FM 2008 (Springer); Tardos SIDMA 1988; Schurr-Szabó (not re-opened) | 2026-10-29 | T32 §8 |
+| ECCC TR06-067 (ARV), re-read for T33 | Lemma 10 p.8-9 (gadget states, "there exists a best response sequence"), p.10 "one after another", p.11 "Altogether this shows", p.3 tight PLS remark | 2026-10-29 | T33 §2.1 |
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
 - T17 process dead end: subagent GitHub MCP search outside the repo scope was a rule breach (see Things only I know); never repeat it.
