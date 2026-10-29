@@ -68,8 +68,10 @@ print(f"SWEEPS {os.path.basename(args[0])} vertex {L(x)} NM {c} sweeps {sw}")
 # CONJECTURES CARRY-SEG and SWEEP-GAIN (box 34). Per lambda^U-run and vertex x: carries between consecutive MATCHED P-changes <= n - 1
 # (SEG_V otherwise); Phi (R85's signed position weight, G^d parities, positions relative to x's cycle node) at the states right after
 # successive MATCHED P-changes strictly increases (GAIN_V otherwise). Together they would give PCH = O(n^3) (sweeps <= Phi's range).
+D = os.environ.get("PHID", "1")                     # box 35: Phi_d (positions to the power d); "w" = S1's exact weight (Ed.weight)
 def phi(val):
-    rc = Ed.rank[val[0]]; return sum((r - rc) if not odd(r) else -(r - rc) for r in bits(val[1]))
+    if D == "w": return Ed.weight(val[1])
+    rc = Ed.rank[val[0]]; d = int(D); return sum((r - rc) ** d if not odd(r) else -((r - rc) ** d) for r in bits(val[1]))
 segv = gainv = 0; segmax = 0; exs = exg = None
 for i, j in zip(runs, runs[1:] + [T + 1]):
     for x in range(n):

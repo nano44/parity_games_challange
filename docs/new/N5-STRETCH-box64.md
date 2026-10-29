@@ -230,3 +230,29 @@ Proof.
 - (a) Close the cycle case of 5.2. That would make R* ≤ m_E·(1 + max RISE_Ξ) a lane lemma.
 - (b) Look for a charge of late adoptions to W-rises instead of Ξ-rises. W-rises inside a W-run are bounded by GP*'s propagation, and
   that would avoid P*. DATA first: is every late adoption preceded by a W-rise of z after the block?
+### 5.4 (i) closed: Lemma LATE-RISE (PROVED, lane), the W-charge DEAD, and what it means (Lead 20:14Z approved the revised box)
+Lemma SUCC-MON (PROVED, lane; R15 (a), [S4a], [S4c]). For every Even y, Ξ_k(σ_k(y)) is non-decreasing in k along every N5 run.
+Proof. At each transition, σ_{k+1}(y) ∈ {σ_k(y)} ∪ Iσ_k(y): S4a's arena allows only these, S4c's fallback picks from Iσ_k, and a τ-only
+transition keeps σ. If σ_{k+1}(y) = σ_k(y), then Ξ_{k+1}(σ_k y) ⊵ Ξ_k(σ_k y) by R15 (a) (Ξ pointwise non-decreasing). Otherwise
+Ξ_{k+1}(σ_{k+1} y) ⊵ Ξ_k(σ_{k+1} y) ▷ Ξ_k(σ_k y), by R15 (a) and then [S2]. □ (This is the fact R106 §1 uses: "Ξ_t(σ_t v) is non-decreasing".)
+Lemma LATE-RISE (PROVED, lane). If (y, z) ∉ Iσ_t and (y, z) ∈ Iσ_u with t < u, then Ξ_u(z) ▷ Ξ_t(z).
+Proof. Ξ_u(z) ▷ Ξ_u(σ_u y) ⊵ Ξ_t(σ_t y) ⊵ Ξ_t(z): [S2] at u, SUCC-MON, and [S2] at t. □
+- No cycle case arises; §5.2's caveat is removed. Being "blocked" is not used, only "not Ξ-improving at t".
+Corollary R*-RISE (PROVED, lane). In a W-run F, the late adoptions of a fixed edge (y, z) number at most RISE_F(z), the Ξ-changes of z
+inside F. Hence R*_T ≤ Σ_{z} indeg_E(z)·RISE_F(z) ≤ m_E·max_z RISE_F(z).
+Proof.
+- Every adoption at u is from Iσ_u (S4a, S4c). A late one has an earlier block at t, with (y, z) ∉ Iσ_t.
+- LATE-RISE puts a Ξ-rise of z in (t, u]. Take t = the latest block before u: it comes after y's previous adoption of z, so the
+  intervals of distinct late adoptions of (y, z) are disjoint. □
+- With R86 LEN-MONO (RISE_R(c) ≤ PCH_R(c) + (PCH_R(c) + 1)(n − 1) on λ-runs) and at most n(n − 1) λ-changes (R47 (a)), R* is
+  polynomial in P*.
+DATA (box64/late.py, late_all.txt, 719 games): 1141 late adoptions; 1141 with a Ξ-rise of z since the latest block (LATE-RISE, as
+proved); only 254 with a W-rise of z. So §5.3 (b), "charge late adoptions to W-rises", is DEAD (887 counterexamples; first instance
+dw_3: 11 late adoptions, 2 W-rises).
+### 5.5 READING: where this leaves the two routes
+- (FO) ⇐ ρ-POLY ∧ P* poly ∧ FL poly (STRETCH-RED + R*-RISE).
+- R86's route needs only P* ∧ P*^U_unp (COMPOSE-RUN with COMPOSE-FREEZE).
+- So the Theorem B / FRAME line is SUBSUMED by R86's route: every premise it adds (ρ, FL) is extra, and it still needs P*.
+  It would beat R86 only with a non-P* bound on R*, and the W-charge, the natural candidate, is DEAD.
+- Recommendation to the Lead: the remaining target is P* (Even path-set changes per λ-run; NM* via MATCH-Φ) together with
+  P*^U_unp. FRAME-STRETCH_P is no longer an independent half.

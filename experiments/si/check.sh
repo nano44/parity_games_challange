@@ -748,3 +748,10 @@ o=$(python3 -I odd/carx.py ../red/n5inj/instances/wide_h16.pg); grep -q "SEG_V 0
 o=$(SIDE=E python3 -I odd/carx.py ../new/box59/out/fc_3.pg); grep -q "SEG_V 0 .* GAIN_V 12 .* exg (6, 0, 23, 155, 88) FAIL" <<<"$o"
 o=$(python3 -I odd/carx.py odd/inst/d_hntop_n3.pg odd/inst/d_hntop_n3.start --mut); grep -q "GAIN_V 5 " <<<"$o"
 echo "si (box 34: d_hntop sweeps; CARRY-CLIMB, SWEEP-GAIN dead; CARRY-SEG holds on the kills; control fires): PASS"
+# box 35 (docs/si/N5-RESET-box35.md): reset potentials Φ_d. fc_3 (Even side) kills d = 2 and 3 at the same resets (t 0, 23); wide_h16
+# (Odd side) passes for d = 2; S1's exact weight (PHID=w) never falls across resets (sanity: it rises at every P-change).
+o=$(PHID=2 SIDE=E python3 -I odd/carx.py ../new/box59/out/fc_3.pg); grep -q "exg (6, 0, 23, 11587, 5786) FAIL" <<<"$o"
+o=$(PHID=3 SIDE=E python3 -I odd/carx.py ../new/box59/out/fc_3.pg); grep -q "exg (6, 0, 23, 872765, 373618) FAIL" <<<"$o"
+o=$(PHID=2 python3 -I odd/carx.py ../red/n5inj/instances/wide_h16.pg); grep -q "GAIN_V 0 .* PASS$" <<<"$o"
+o=$(PHID=w SIDE=E python3 -I odd/carx.py ../new/box59/out/fc_3.pg); grep -q "GAIN_V 0 .* PASS$" <<<"$o"
+echo "si (box 35: Φ_2, Φ_3 dead on fc_3; Φ_2 passes wide_h16; exact weight monotone): PASS"
