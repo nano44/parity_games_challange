@@ -97,6 +97,43 @@ Consequences (READING).
 - So "N5 is polynomial whenever min(#σ, #τ) is" is NOT landed with a polynomial factor. What holds: T ≤ (#τ)(F_E + 1) (Theorem B, lane),
   with F_E bounded only through STRETCH-CUT or P*.
 
+### 1.8 Addendum (Lead 19:45Z / 19:52Z: prove FRAME-STRETCH_P under the mixed frame or say what it needs; written ~20:20Z)
+Lemma GP*-RUN (PROVED, lane; R88's proofs read on a larger interval). Call a W-RUN a maximal run of consecutive states of one τ-stretch
+with no S4c fallback and λ_W constant. σ̄ and λ_Ξ MAY change inside it. On every W-run, R88's Lemma GP* and Corollary FW-R* hold verbatim,
+with "blocked at t" read at state t (W_t(z) ▷ W_t(ρ_t x), (x, z) ∉ Iσ_t). So a W-run has at most (n − 1)(R*_T + 1) W-changing transitions.
+Proof: the R88 packet (docs/si/P-N5-GP-box31.md §2-§4) uses
+- W-MON: its proof uses only τ_{t+1} = τ_t, "not a fallback", [S4a] and [F1] on H_t. "Inside a phase" (λ_Ξ constant) is never used.
+- GP*: the base case, B1′ (ii), B2a, B2b use λ_W constant. Case A uses "not blocked" at state k, with Iσ_k of that state. Case B uses
+  ρ̂ ∈ H_k. Nowhere σ̄ or λ_Ξ.
+- FW-R*: GP*, W-MON, λ_W constant (the cycle node u of the ρ_{k+1}-play is a cycle node of state a), [S4a].
+- σ̄ and D are used only in §3a (Corollaries GP, GP+), which this lemma does not need. □
+DATA (box64/frozen.py --wrun, wrun_all.txt, 719 games): FW-R* on W-runs, 0 violations. W-runs up to 159 W-changing transitions
+(si/runlin/instances/runfam_K40, n 79; 2.01n, with late adoptions). R*_T > 0 in 120 games (max 17, red/so/instances/so_j19_n48).
+W-flat transitions in 10 games (max 8). mkr (mk_8_32): 281 W-runs of length 0; all 280 cuts are λ_W.
+Fallbacks are NOT W-flat (DATA, box64/wdrop.py, wdrop_all.txt; 119 games with W-drops):
+- arena steps never lower W (0 cases; box 21 Lemma W);
+- 603 of 607 in-stretch fallbacks lower W; 121 of them change λ_W.
+- So box 21 §2.5's OPEN "W-flatness of fallbacks" is false. A fallback can undo λ_W-progress.
+Theorem STRETCH-RED (PROVED, lane; a reduction). Every τ-stretch S of N5 satisfies
+  |S| ≤ Q + (Q + 1)·((n − 1)(R*_S + 1) + FL_S),  Q ≤ fb_S + n(n − 1)(fb_S + 1),  fb_S ≤ n(n − 1) + (n(n − 1) + 1)·(1 + (n − 1)(2 + ρ_S)),
+with R*_S the most late-adoption transitions of one W-run of S, FL_S the W-flat transitions of S, and ρ_S the most Ξ-changes at Odd choice
+vertices in one phase meeting S.
+Proof.
+- Cut S at fallbacks and λ_W-changes. The pieces are W-runs; apply GP*-RUN.
+- λ_W-cuts: between two fallbacks W only rises (box 21 Lemma W, = W-MON), so each vertex's W-cycle node changes at most n − 1 times.
+- fb_S: the phases ((λ_Ξ, τ)-constant runs, R38 (a)) meeting S number at most n(n − 1) + 1, since λ_Ξ changes at most n(n − 1) times
+  (R47 (a)). Each phase has at most 1 + (n − 1)(2 + ρ) in-phase fallbacks (R56 FB-RED). A fallback that changes λ_Ξ is not in-phase;
+  there are at most n(n − 1) such transitions. □
+- So FRAME-STRETCH_P ⇐ ρ-POLY (R56's open conjecture, per phase) ∧ R*_S poly ∧ FL_S poly. The σ̄-changes, which are the dominant
+  frozen-phase cut, drop out entirely.
+- With L-SI 29's composition (Lead 19:52Z: G-N5-TIME ⇐ FRAME-STRETCH_P + poly NM*^U), G-N5-TIME ⇐ ρ-POLY ∧ R* poly ∧ FL poly
+  ∧ NM*^U poly (READING; I have not read l-si 33f04452).
+- What proving FRAME-STRETCH_P would take (READING):
+  - (1) R*: a late adoption is an edge whose W-advantage the honest gate saw only later. Each needs Ξ(z) to rise past Ξ(ρ x)
+    while W(z) was already ahead. A charge to Ξ-rises of z (R86 RISE) looks natural, but RISE is unbounded too.
+  - (2) FL: W-flat σ-changes; R17 (c)'s "< m value-flat steps per phase" is the one-player template, not checked under the honest gate.
+  - (3) ρ: Odd choice vertices' Ξ-changes per phase, open since R56.
+
 ## 2. (b) The mirror (DATA)
 - Mirror: τ-changes inside one σ-stretch (σ constant), against n + m.
 - 719 games (S3): 0 violations; max 0.104 (new/box54/out/d_hntop_n3: 22 / 211). τ-changes > σ-changes in 123 games.
@@ -159,6 +196,8 @@ Proof.
   (0) DEAD: FRAME-STRETCH (n + m form), L-RED 29's mkr kill (R106 mkr.py, designed start), reproduced: mk_16_100 one τ-stretch of
   1648 σ-changes, n + m 1225 (§1.5). PROVED (lane): Proposition STRETCH-CUT (§1.6), (FO) ⇐ polynomial σ̄-changes, fallbacks, R*, flat
   steps per stretch. R86 bounds a stretch only through Even's P* (NM*^U = 0 does not help).
+  (0b) PROVED (lane): Lemma GP*-RUN (R88's GP*/FW-R* hold on fallback-free λ_W-runs; σ̄, λ_Ξ may change; 0 / 719) and Theorem
+  STRETCH-RED: FRAME-STRETCH_P ⇐ ρ-POLY ∧ R* poly ∧ FL poly (§1.8). DATA: fallbacks lower W (603 / 607); box 21's W-flat question is false.
   (1) READING: FRAME-STRETCH = box 21's (FO) with bound n + m. No landed result gives it. R17 bounds one λ-phase, and a τ-stretch has
   many. R88 bounds one frozen W-phase; σ̄-changes and fallbacks inside a stretch are unbounded.
   (2) READING: the n + m form contains SB1′ (one-player switch-best < n + m steps; open since box 8). The polynomial form (FO) is

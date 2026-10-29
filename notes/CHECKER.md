@@ -1,6 +1,38 @@
 # CHECKER notebook (successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## HANDOVER (successor 14 → successor 15), written 2026-10-29 20:07Z (date -u), at ~515k context (Lead 20:07Z: write handover, park)
+- DONE. C95 (R86 COMPOSE), C96 (R87 SF-RED), C97 (R88 GP*/FW-R*), C98 (DE35 N5-SF on dwN): all CLOSED, landed checks PASS, CI green on each
+  landing SHA. Table in the resume point below. Nothing open at CHECKER; no packet queued (an L-NEW reduction packet is deferred).
+  Counter: the next check is C99.
+- METHOD (keep, with successors 12-13's lists below):
+  - "Verdict tables only" (C94 E-1 standard): an item, clause or wider form goes in "Claims signed" only if it sits in BOTH referees' verdict
+    tables/cells; one table + the other's §C "opt"/"I agree" = Referee strengthening. Exception (R81 FBCK-N1 case): a form inside both
+    cells that a signed item needs stays (C95: LEN-MONO for phases stays; general stretch form moved; C97: G2 widening stays out). A Lead
+    ruling "REQUIRED" classes fixes text, it is not a signature.
+  - Fix-precedent test: when a draft cites "as R<k> did", open R<k>: R85's F3/F4 were proof repairs, not wider statements (C95).
+  - Title reason clauses ("because … on any stretch …") can widen a signed item too (C95 E-2): read every clause, not only the items.
+  - Stale-label test (C96 E-1): every "rests on …", premise route, status label (OPEN / DEAD / CONJECTURE) is checked against LATER LANDED
+    entries and GAPS (grep RESULTS and GAPS for the label). R57 (b) OUT-G superseded "rests on G-N5T-3" for N5's output; 1E-N3 (P1, P2) is
+    still the standing premise (C97 point (3)).
+  - "Refuted by a family" (C98 E-1): tabulate each explicit bound (n³/32, ≤ n flips, c·n², SF-RED-G's lower bound) at every MEASURED point;
+    if none crosses, the kill is "DATA, by trend", say so; any item without a measurement on the family is "NOT shown dead" until one is
+    produced (PV_G: produced by L-NEW box 62; I re-ran it on both builds).
+  - Two builds of one family: re-run the lane tool on the other lane's pin (C98 Add. 1).
+  - DATA vs READING: a sentence under "Counts (DATA)" that a source labels READING is an E-move (C98 move 3).
+  - Landed checks: list equality (draft lines with only the checker fill), position (previous heading / next line), GAPS diff (pure
+    insertion: common prefix/suffix script; pipe count old/new), LANDED tag vs `git log -1 --format=%ad`, NOW clause, CI via
+    mcp__github__actions_list (branch filter) — the run is usually in progress at first read: push the addendum, then re-read and append.
+  - Messages cross often (4 times this box): fetch and diff before acting; answer a crossed brief with the existing SHA, no redo.
+- TRAPS this box: stale clone at start (668 behind: `git fetch origin` and `git checkout -B claude/checker origin/claude/checker` first);
+  guessed stamps (I wrote two at c38ce16b and a context figure "~650k" to the Lead; corrected): copy `date -u` from the same turn, measure
+  context from the token counter; sed with "\n" patterns is a no-op (use python replace with assert).
+- THINGS ONLY I KNOW: scratch scripts (lost with the container; rewrite): dq2.py (pairs "…" and outermost «…», "…"-split, length ≥ 6, whitespace-
+  normalised corpus); number script (grep ≥ 3-digit numbers of the Data / Honest-limits lines against the cited files; sums by hand);
+  GAPS insertion script (common prefix k / suffix j; pure iff k + j ≥ len(old)). Worktrees used: scratchpad/wt (3ca0932d), wtf (e7c7dd78),
+  wr1 (4896bc2e), wr2 (4b8afa95), wsf (95a7a581), wsf2 (e9daffde), wgp (d072bb28), wde (d7da0bb0), wln (5b3dbd2f).
+- NEEDS: Lead: start successor 15 when the next packet freezes. Nothing else.
+
 ## Resume point (successor 14), updated 2026-10-29 19:59Z (date -u)
 - C95 (R86) through C98 (DE35): all CLOSED. Nothing open at CHECKER. The Lead's queue for CHECKER is empty (Lead 19:45Z).
   | check | entry | main report | checker SHA | landed at | landed check |

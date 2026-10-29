@@ -4,7 +4,8 @@ R88's frozen W-phases (no S4c fallback; tau, sbar(sigma), lambda_Xi, lambda_W co
 count, per tau-stretch: frozen phases, and the boundary causes (fb, sbar, lx, lw); per frozen phase: W-changing
 transitions, W-flat transitions, R*_T (adoptions of an edge blocked at an earlier state of the phase: W-better than sigma's
 choice but not in I_sigma). Checks R88 FW-R* (W-changing <= (n-1)(R*+1)) as a control.
-Usage: frozen.py GAME.pg [--start]"""
+With --wrun the cuts are only fallbacks and lambda_W-changes (W-runs; box 64 §1.8 Lemma GP*-RUN), sbar / lambda_Xi
+changes are not cuts. Usage: frozen.py GAME.pg [--start] [--wrun]"""
 import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
 sys.path.insert(0, os.path.join(ROOT, "experiments", "new", "box21"))
@@ -13,6 +14,7 @@ import pg
 
 def main():
     p = sys.argv[1]; g = load(p); n = g.n
+    global WRUN; WRUN = "--wrun" in sys.argv
     start = readstart(p[:-3] + ".start") if "--start" in sys.argv and os.path.exists(p[:-3] + ".start") else None
     E, Ed = Engine(g), Engine(dual(g))
     s, t = start_pair(g, E, Ed, start); s, t = tuple(s), tuple(t)
@@ -45,7 +47,7 @@ def main():
         st_["sig"] += 1
         nxt = info(ns, t)
         causes = [c for c, ok in (("fb", fb), ("sbar", nxt["sb"] != cur["sb"]), ("lx", nxt["lx"] != cur["lx"]),
-                                  ("lw", nxt["lw"] != cur["lw"])) if ok]
+                                  ("lw", nxt["lw"] != cur["lw"])) if ok and (c in ("fb", "lw") or not WRUN)]
         if causes:
             close_ph(); st_["ph"] += 1
             for c in causes: st_["cause"][c] += 1
@@ -59,7 +61,7 @@ def main():
         s, cur = ns, nxt
     close_ph(); stretches.append(st_)
     big = max(stretches, key=lambda x: x["sig"])
-    print(f"FROZEN {os.path.basename(p)} n {n} m {g.m} iters {T} tau-stretches {len(stretches)} max-stretch-sig {big['sig']} "
+    print(f"{'WRUN' if WRUN else 'FROZEN'} {os.path.basename(p)} n {n} m {g.m} iters {T} tau-stretches {len(stretches)} max-stretch-sig {big['sig']} "
           f"its-phases {big['ph']} its-causes {big['cause']} max-phases-per-stretch {max(x['ph'] for x in stretches)} "
           f"worst-frozen-phase {worst_ph} FWR-viol {viol}")
 

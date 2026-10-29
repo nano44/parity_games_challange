@@ -63,3 +63,26 @@ TARGET.md claim. G-N5-TIME OPEN. Labels: PROVED (lane) / CONJECTURE / DATA / DEA
   3. CONJECTURE CARRY-SEG: 0 / 1434 corpus runs; it reduces NM to matched resets.
   4. PROVED (lane, arithmetic): CARRY-SEG + SWEEP-GAIN ⇒ PCH = O(n³), but SWEEP-GAIN is dead; CARRY-SEG alone is circular with MATCH-Φ.
 - NEEDS: none from the owner.
+
+## 5. Addendum (Lead 20:00Z): is R85's MATCH-Φ per vertex as landed? (READING of RESULTS text; trunk 754810df+, docs/RESULTS.md)
+- Per vertex per PHASE: YES, verbatim.
+  - R85 (c), RESULTS.md l. 5108-5109: "PCH_𝒫(v) ≤ (K(K+1)/2)(NM_𝒫(v) + 1) + NM_𝒫(v) per vertex per phase, every game"; in the packet's
+    words "For every game, vertex v and phase 𝒫: PCH_𝒫(v) ≤ (K(K+1)/2)·(NM_𝒫(v) + 1) + NM_𝒫(v)." The R85 headline (l. 5064) says the
+    same: "per vertex per phase, every game, PCH and NM counting v's P-changes and carries in 𝒫".
+- Per vertex per λ-run / λ^U-run: signed as a PREMISE that holds, not as a displayed item.
+  - R86 (e), l. 5345-5357: the premise is "[MΦ] holds with "phase" replaced by "λ-run" (resp. "λ^U-run" on G^d)". [MΦ] is quoted there
+    in per-vertex form: "PCH_𝒫(v) ≤ (K(K+1)/2)·(NM_𝒫(v) + 1) + NM_𝒫(v)", K the number of ranks above rank(λ(v)), NM_𝒫(v) v's carries.
+  - Both §6 cells sign that premise as holding: REFEREE "its premise "[MΦ] on λ-runs" HOLDS (… MΦ's proof reads verbatim with c fixed …)";
+    REFEREE-2 "The "phase → λ-run" replacement is VALID". The λ^U side: REFEREE §6 "on λ^U-runs it holds for U on G^d …"; REFEREE-2
+    §2.5 "MATCH-Φ's proof holds for every parity pattern, so the bound holds (N-C3)".
+  - R86's DISPLAYED conclusion is only the max form: "P*_R ≤ (n²/2)(NM*_R + 1) + NM*_R with NM*_R the most carries of one vertex in R".
+- Lane reading: the per-vertex λ^U-run form PCH^U_R(e) ≤ (K_e(K_e+1)/2)(NM^U_R(e) + 1) + NM^U_R(e) is what R86 (e)'s signed premise
+  says. Citing it per target e is citing that premise, not a new claim. If the Lead wants it displayed, it is a one-line Referee
+  strengthening of R86 (e), not a new packet.
+- Consequence:
+  - R86 (c)'s middle sum is already per target: Σ_{(v, c)} n·(PCH_R(c) + 1), summed over edges (l. 5269 headline).
+  - So with L-NEW 35's COMPOSE-FREEZE the Odd term is Σ over unprotected (o, e) of n·(PCH^U_R(e) + 1). Each PCH^U_R(e) is bounded by
+    e's own carries.
+  - G-N5-TIME's Odd half is then "NM^U_R(e) for targets e of edges that are unprotected at some state". Box 33 (class X 3073 / 3276 on
+    d_hntop_n8, 450 / 450 on runquad) says these are mostly class-X targets. §2's d_hntop vertex d3_N is one of them
+    (d_ → d_ re-entries).

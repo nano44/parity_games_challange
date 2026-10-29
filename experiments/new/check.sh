@@ -306,4 +306,10 @@ if grep -q "n 102 m 151 n+m 253 iters 76 fb 0 #sig-1 76 #tau-1 0 tau-stretches 1
 else
   echo "box 64 mkr check: FAILED"; exit 1
 fi
+w15=$(python3 -I box64/frozen.py box59/out/dw_3.pg --wrun)
+if grep -q "^WRUN dw_3.pg .* worst-frozen-phase {'len': 26, 'wch': 26, 'flat': 0, 'R': 4} FWR-viol 0$" <<<"$w15"; then
+  echo "box 64 GP*-RUN: dw_3 one W-run of 26 W-changing transitions, 4 late adoptions, FW-R* holds: PASS"
+else
+  echo "box 64 wrun check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
