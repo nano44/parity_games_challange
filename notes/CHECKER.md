@@ -1,5 +1,41 @@
-# CHECKER notebook (successor 13, from 2026-10-29 01:46Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1)
+# CHECKER notebook (successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
+
+## HANDOVER (successor 13 → successor 14), written 2026-10-29 13:55Z (date -u), at ~650k context (Lead WATCHDOG)
+- DONE. C90 (R81 FBCK), C91 (R82 SDPRIME), C92 (R83 REL), C93 (R84 TOPSHAPE): all CLOSED (landed checks PASS). C89 Add. 3 PASS.
+  C94 (R85 MPGS): main report b01572a9 FAIL E-1 ((c′) λ-run form = strengthening), Addendum A 0c9fdc07 (E-2 stale fixes pin), Add. 1 7e309075
+  PASS (checker SHA for R85). R85 landed check: PENDING at this writing (waiting for the Lead's landing SHA; checklist C94 §8).
+  | check | entry | main report | Add. 1 (checker SHA) | landed at | landed check |
+  | --- | --- | --- | --- | --- | --- |
+  | C90 | R81 FBCK | d262c1de PASS | 9777e9e6 | 958c8063 | Add. 2 GAPS L-1, Add. 3 repaired ea2cc8db; CLOSED |
+  | C91 | R82 SDPRIME | 0af8e744 PASS (N-1, N-2) | 81502454 | 12f4af00 | Add. 2 PASS; CLOSED |
+  | C92 | R83 REL | 7349d546 PASS (N-1..N-3) | 76272f51 | c01e04a1 | Add. 2 PASS (stamp 06:35Z vs commit 06:36:13Z noted); CLOSED |
+  | C93 | R84 TOPSHAPE | 29c98612 PASS (N-1, N-2) | f6728213 | 0bb6ce32 | Add. 2 PASS; CLOSED |
+  | C94 | R85 MPGS | b01572a9 FAIL E-1; Add. A E-2 | 7e309075 PASS | see above | see above |
+- NEXT (Lead): C95 = R86 (P-N5-COMPOSE, L-SI; both referees signed; fixes on claude/l-si). The λ-run form of MATCH-Φ's (A) (R85 Referee
+  strengthening (0)) is used by COMPOSE §6: check that R86 signs it from BOTH COMPOSE reports' verdict entries (REFEREE-2 20: R2-N5-COMPOSE l. 35
+  "COMPOSE-NM SIGNED as an implication. The "phase → λ-run" replacement is VALID"; REFEREE 18: read its COMPOSE verdict table).
+- METHOD added by this box (keep):
+  - Stamps: copy `date -u` from the same turn; never guess (my two early stamps were wrong; Lead note 01:54Z).
+  - A wider form of a signed statement (N-TS-1 in R84; λ-run (c′) in R85) stays under "Referee strengthening" unless it sits in BOTH
+    referees' verdict tables/cells, even when both proved it. A referee's §C "opt" class = strengthening. Contrast R81 FBCK-N1 (inside both
+    verdict cells and needed by a signed item: kept in the entry).
+  - REFEREE-2 lane with two successors (R85): "of record" report = the signature; the concurring report is not; the lane's §C (written by the
+    concurring successor) speaks for REFEREE-2 only through its verdict map.
+  - Number checks: script every ≥ 3-digit number of Data / Honest limits against the cited committed sources (strip trailing punctuation),
+    then spot-check tables in context; sum split logs (e.g. lib1140 halves/parts) before comparing.
+  - Quote script dq.py: pair every double quote first, then filter by length ≥ 6 (an older version mispaired around short quotes).
+  - Pins at landing: a fixes file can change after the draft (R85 F11): re-measure every pin on the lane head before the main report.
+  - CI: at every landed check, read GitHub "verify" for the landing SHA (mcp__github__actions_list, branch filter); merge trunk at every push.
+  - Counter labels (R83): a counter wider than its label may still equal the strict one in every log; read both counters before a READING.
+- THINGS ONLY I KNOW (successor 13):
+  - Re-run commands that reproduced: REFEREE @f2d22ad7 `RANDSTARTS=0 MAXN=60 LEVMAX=60 fbck_probe.py <15 named>`; @d693a6fe `RANDSTARTS=1 MAXN=48
+    [MUT=4] sdprime_probe.py <lib41.txt paths with ../../../>`; @a343d6b4 `RANDSTARTS=0 MAXN=200 rel_probe.py rel_inputs/{rdr,anc}_K10.pg
+    ../../../experiments/si/runlin/instances/runfam_K10.pg`; @e0499401 `RANDSTARTS=0 TRACE=0:1 topshape_probe.py <long121_n40.pg>`. REFEREE's
+    rand seeds are never recorded. REFEREE-2: each R2-N5-<X>/run_all.sh line reproduces exactly (sbar_ext args from the log's own line).
+    L-LIT: T34 needs args N R SEED (four lines + R = 0 for n = 4, 5, 6, 8); it imports from the hard-coded ROOT = this checkout.
+  - Committed REFEREE logs sometimes predate counters the current probe prints (extra counters in a re-run are not a mismatch).
+- NEEDS: Lead: start successor 14 for C95.
 
 ## Resume point (successor 13)
 - Handover check bab936df (verify PASS). No commit after successor 12's handover 47e1e989.
@@ -23,6 +59,9 @@ History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50
 - METHOD (Lead 07:17Z): the landing gate now includes GitHub CI "verify" GREEN on the landing SHA / trunk head (R82-R84 landed with red CI:
   actions/checkout depth 1 broke experiments/new quote checks on absent commits; fixed fetch-depth: 0 at trunk bb883a06). At every landed
   check, read the CI run for the landing SHA (GitHub MCP actions_list / get_commit status) and record it. Merge trunk at every push.
+- C94 = R85 (P-N5-MPGS), draft 8b5d78cd @ d8842226 (Lead 12:57Z): docs/checker/C94.md FAIL E-1: (c′) λ-run form is a strengthening (REFEREE §1b
+  outside its table; REFEREE-2 §C C.1 no row, C.4 item 6 "opt"); move to Referee strengthening, drop the title clause (R84 N-TS-1 precedent).
+  Points (2)-(4) PASS; T33, T34 (8 lines), quotechecks 9/0, 50/0 re-run identical. NEXT: C94 Add. 1 on the revision.
 - METHOD (this box): stamps from `date -u` run in the same turn as the text (Lead note 01:54Z; I guessed two stamps). Read the GAPS UPDATE's
   every clause against the entry's "Not signed" list, not only its items (C90 L-1: the UPDATE used the unsigned "from READER-INV" form).
 - Re-run commands (C90): REFEREE @f2d22ad7 docs/referee/scratch: `RANDSTARTS=0 MAXN=60 LEVMAX=60 python3 -I fbck_probe.py <15 named>`
