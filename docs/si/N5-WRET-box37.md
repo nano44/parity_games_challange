@@ -43,7 +43,7 @@ unrefereed, not a TARGET.md claim. G-N5-TIME OPEN. Labels: PROVED (lane) / CONJE
 - Notation. CN_t(v) := the cycle node of W_t(v). v is OFF-CYCLE at t if CN_t(v) ≠ v.
 - Facts used. S4a enters through the optimality of σ_{t+1} in G_τ|H_t.
   - (OPT) At every vertex v that is off-cycle at t + 1: W_{t+1}(u) ⊴ W_{t+1}(σ_{t+1} v) for every edge (v, u) ∈ H_t (successor form, as
-    Iσ is). This is an ASSUMPTION (D18).
+    Iσ is). Stated first as an ASSUMPTION; now Lemma OPT-OFF (§7, PROVED lane).
     - It is the VJ one-player optimality criterion. It FAILS at a vertex's own cycle node, which needs only some cycle through it; this
       is the REFEREE trap "VJ00 5.8 at own cycle nodes".
     - Instance: red/so/instances/tog6b_n32.pg, vertex 13 = CN(13). At t = 2 → 3 S4a moves 13 from 21 to 29, and W_3(29) ◁ W_3(21).
@@ -65,7 +65,7 @@ unrefereed, not a TARGET.md claim. G-N5-TIME OPEN. Labels: PROVED (lane) / CONJE
   - By (OPT) at j, with (v, σ_{j−1} v) ∈ H_{j−1}: W_j(σ_{j−1} v) ⊴ W_j(σ_j v) = W_j(w).
   - The chain starts and ends at W_j(w), so every term is equal. □
 - The vertex form W_j(v) = W_{j−1}(v) is not claimed. wret.py counts its failures as VFORM_V.
-- Corollary W-ENT (PROVED, lane, under (OPT)). On a guided stretch Q, for Even v and any w:
+- Corollary W-ENT (PROVED, lane; (OPT) = Lemma OPT-OFF, §7). On a guided stretch Q, for Even v and any w:
   ENT_Q(v, w) ≤ 1 + WCH_Q(w) + SIL_Q(v, w) + CYC_Q(v, w).
   - CYC_Q(v, w) counts re-entries whose interval contains a state where v is its own W-cycle node.
   - WCH_Q(w) counts the transitions of Q at which W(w) changes; SIL_Q(v, w) counts v's W-silent entries into w (successor
@@ -104,7 +104,7 @@ unrefereed, not a TARGET.md claim. G-N5-TIME OPEN. Labels: PROVED (lane) / CONJE
   - Split Q at the changes of W(w)'s cycle node. There are ≤ n − 1 of them per vertex on a fallback-free stretch (box 29 Lemma CN-W).
   - On each piece, LEN-MONO's proof read with W and W-MON gives ≤ n·WPCH + n − 1 changes, where WPCH counts w's W path-set changes.
   - So WCH_Q(w) ≤ n·WPCH_Q(w) + n².
-- Corollary (implication, under (OPT)): |Q| ≤ m_E·(1 + n·WPCH*_Q + n²) + SIL_Q + CYC_Q, with WPCH*_Q the most W path-set changes of one target in Q.
+- Corollary (implication; (OPT) = Lemma OPT-OFF): |Q| ≤ m_E·(1 + n·WPCH*_Q + n²) + SIL_Q + CYC_Q, with WPCH*_Q the most W path-set changes of one target in Q.
   - So GUIDE-POLY, and the length of every guided stretch of N5, reduce to W path-set changes in the ONE-PLAYER game G_τ under the
     "optimum of σ ∪ Iσ" dynamics, plus silent entries.
   - In switch-all's counter-model those are exactly what explodes. Under S4a, W is the optimum value of a growing family of one-player
@@ -120,15 +120,74 @@ unrefereed, not a TARGET.md claim. G-N5-TIME OPEN. Labels: PROVED (lane) / CONJE
   (O(n⁶ m)).
 - §2-§3: W-RETURN is a proved, S4a-specific replacement of SW-RETURN's Ξ-charge by a W-charge inside guided stretches; it is false for
   switch-all.
-- §5: guided-stretch length ≤ m_E(1 + n·WPCH* + n²) + SIL + CYC (under (OPT)): the per-phase half of G-N5-TIME reduces to W path-set changes in a
+- §5: guided-stretch length ≤ m_E(1 + n·WPCH* + n²) + SIL + CYC ((OPT) = Lemma OPT-OFF): the per-phase half of G-N5-TIME reduces to W path-set changes in a
   one-player game.
+
+## 7. Lemma OPT-OFF: (OPT) is a theorem (PROVED, lane; Lead 21:26Z ask (a))
+- Premise: SPEC S1 (docs/new/N5-ssi-global.md l. 32) states that the VJ procedure's output minimises S1's order "at every vertex at once".
+  S4a reads σ_new as that output on the DUAL of the arena H_t against τ (l. 15, 52).
+- Order reversal (checked from S1 l. 27-31 and n5.dual, priorities + 1).
+  - Ranks are unchanged and every parity flips.
+  - So, for distinct cycle nodes, reward_d = −(reward ± 1) reverses the reward order, case by case (even/even, odd/odd, even/odd).
+  - The signed weight is negated, and the length rule flips with c's parity. P-membership (rank above c) is unchanged.
+  - Hence the dual key of a valuation is the reverse of its key in G, and the dual's pointwise minimum is G's pointwise maximum.
+  - So σ_new is POINTWISE OPTIMAL for Even in A := G_τ|H_t: W(σ_new) ⊵ W(σ'') at every vertex, for every Even strategy σ'' inside H_t.
+- Statement. Let σ' be pointwise optimal in a one-player arena A (Odd fixed). Let v be Even with CN(v) ≠ v, where c := CN(v) is the
+  cycle node of W(v), and let (v, y) ∈ A. Then W(y) ⊴ W(σ' v).
+- Proof. Let σ'' := σ' with v → y.
+  - Since v ≠ c, W(v) = ext(v, W(σ' v)), and σ' v's play to c avoids v.
+  - ext(v, ·) preserves and reflects ⊴ between valuations whose paths to their cycle nodes avoid v. It keeps the cycle node (so the
+    reward). With the same cycle node it adds v to both P or to neither, and adds 1 to both lengths.
+  - Case 1: v is not on y's play. σ''-play from v is v, then y's σ'-play, so W''(v) = ext(v, W(y)). Optimality gives
+    W''(v) ⊴ W(v), and reflection gives W(y) ⊴ W(σ' v).
+  - Case 2: v is on y's path to y's cycle node. Then y's play continues as v's, so W(y) = (c, D ⊔ P(σ' v), ℓ + L), where D is the set of
+    vertices of the segment y … v above c, and L ≥ 1. σ'' closes the cycle C = v → y → … → v.
+    - If D ≠ ∅ with an even top, that top is C's top (rank > c), so W''(v) has a better reward than W(v): impossible. So the top of D is
+      odd, and W(y) ◁ W(σ' v).
+    - If D = ∅ and c is even, then W(y) is longer, so W(y) ◁.
+    - If D = ∅ and c is odd, C's top t has rank < c, so reward(t) > reward(c): impossible.
+  - Case 3: v is on y's cycle after c. Then CN(y) = c, and P(σ' v) = ∅ (σ' v runs along the cycle to c, whose top is c). σ'' closes
+    C = v → y → … → c → … → v.
+    - If P(y) = ∅, C's top is c and W''(v) = ext(v, W(y)): as in Case 1.
+    - Otherwise C's top is t = top of P(y), with rank > c. v itself is below c because it is on c's cycle. If t is even, W''(v) is
+      better: impossible. So t is odd, and W(y) ◁ W(σ' v).
+  - These cases are exhaustive: if v is on y's play, it lies either on y's path to y's cycle node or on y's cycle. □
+- Consequences.
+  - (OPT) holds, so Lemma W-RETURN and Corollary W-ENT are PROVED (lane) with no assumption beyond SPEC S1's stated optimality.
+  - The own-cycle-node exclusion is necessary (tog6b_n32, vertex 13).
+  - DATA agrees: OPT_V = 0 on 1,438 corpus runs. Under switch-all OPT_V = 198 on switchallexp_3, where σ is not an optimum of anything.
+
+## 8. Using R88 GP* / FW-R* and L-NEW's GP*-RUN, STRETCH-RED, R*-RISE (Lead 21:26Z ask (b); READING + DATA)
+- The setting is the same. A W-run (P-N5-FRAME §3.3) is a fallback-free piece of a τ-stretch with λ_W constant, and a guided stretch
+  (§2) is a fallback-free piece of a τ-stretch. Inside W-runs:
+  - GP*-RUN: at most (n − 1)(R*_T + 1) W-changing transitions, where R*_T counts transitions containing a late adoption of a blocked edge.
+  - R*-RISE: R*_T ≤ Σ_z d_E(z)·RISE_F(z), i.e. Ξ-rises. That goes back to PCH, the Ξ side.
+- What W-ENT adds: a W-side charge for every re-entry, so for late adoptions too:
+  #late adoptions of (y, z) ≤ ENT_F(y, z) ≤ 1 + WCH_F(z) + SIL + CYC.
+  - Plugged into FW-R* this is CIRCULAR: WCH_F(z) ≤ #W-changing transitions ≤ (n − 1)(R*_T + 1). Circular, like CARRY-SEG with MATCH-Φ.
+  - It closes only with a per-VERTEX W bound. If WCH_F(z) ≤ B for every target z, then:
+    - |F| ≤ m_E(1 + B) + SIL + CYC directly (§5);
+    - R*_T ≤ m_E(1 + B) + SIL + CYC, and FW-R* adds nothing.
+- DATA, per-vertex W-changes in one guided stretch (wret.py maxWR):
+  - corpus ≤ 0.5n (N5) and ≤ 0.42n (FG);
+  - runquad_K8_m30_n192: 16, in a 264-transition stretch;
+  - wobs_K8_m32: 16, in 280;
+  - hntop_n8 (red/seg/instances, n 168): 171, in a 291-transition stretch, with one vertex making 163 switches.
+- DEAD: W-VLIN (WCH_Q(z) ≤ n per vertex per guided stretch). Kill: hntop_n8, 171 > 168. Obstruction: H_n's lane sweeps (box 34 §2
+  pattern) are W-changes of the top gate vertices, quadratic in N.
+- CONJECTURE W-VPOLY: WCH_Q(z) ≤ n² per vertex per guided stretch. (hntop_n8: 171 ≪ n² = 28,224; one point, no family fit.)
+  - With W-ENT: |Q| ≤ m_E(1 + n²) + SIL + CYC per guided stretch.
+  - By §5, W-VPOLY is equivalent up to factors n to a polynomial bound on W path-set changes of one target in the one-player game G_τ.
+- Composition: per guided stretch, G-N5-TIME's per-stretch half ⇐ W-VPOLY + polynomial SIL, CYC. The stretch count (τ-changes,
+  fallbacks) is not addressed; STRETCH-RED's fb_S bound covers the fallbacks inside one τ-stretch.
 
 ## DONE / FINDINGS / NEEDS
 - DONE: pivot.py TARGET line; wret.py (modes n5, fg:τ, sa:τ control; --mut); R120 pins copied; corpus runs; check.sh «box 37»; this note.
 - FINDINGS:
   1. CONJECTURES RESET-LIN-T, CARRY-SEG-T, PCH-QUAD-T: 0 failures on 1,438 corpus runs. On R120's pins the target maximum is K.
-  2. PROVED (lane, under the stated assumption (OPT) off own cycle nodes): Lemma W-RETURN and Corollary W-ENT, S4a-specific.
+  2. PROVED (lane): Lemma W-RETURN and Corollary W-ENT, S4a-specific; (OPT) is Lemma OPT-OFF (§7), from SPEC S1's pointwise optimality.
      A first version without the off-cycle premise was wrong (tog6b_n32, vertex 13).
   3. DATA: the switch-all control violates W-MON and W-RETURN.
   4. Implication: guided-stretch length ≤ m_E(1 + n·WPCH* + n²) + SIL + CYC.
+  5. §8: DEAD W-VLIN (hntop_n8: 171 W-changes of one vertex in one guided stretch, n 168); CONJECTURE W-VPOLY; W-ENT + FW-R* is circular.
 - NEEDS: none from the owner.

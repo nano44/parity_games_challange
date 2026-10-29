@@ -4,7 +4,8 @@ written from RESULTS R85's definition (not from L-SI's carx.py). SIDE=E (default
 lambda-run = maximal run of states with the cycle-node map constant. For each transition inside a run and each vertex x with the
 same cycle node c and P_t != P_(t+1): w(r) = +(r - rank c) for even ranks, -(r - rank c) for odd ranks; MATCHED iff a matching
 M of out = A\\B to in = B\\A with w(i) > w(o) covers every odd incoming and every even outgoing rank (Mendelsohn-Dulmage: two
-one-sided matchings suffice). Prints the top vertices by #MAT and by NM, with n. Usage: matc.py GAME.pg [START]"""
+one-sided matchings suffice). Prints the top vertices by #MAT and by NM, with n. TARGETS=1: count only vertices that are the target of a switching edge (of the side's player) inside that lambda-run (RESET-LIN-T,
+R121). Usage: matc.py GAME.pg [START]"""
 import sys, os
 R = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", ".."))
 sys.path.insert(0, R + "/experiments/n5-second"); sys.path.insert(0, R + "/experiments/hard-families"); sys.path.insert(0, R + "/experiments/harness")
@@ -29,7 +30,7 @@ def matched(A, B, w, odd):
 
 def main():
     g = pg.read(sys.argv[1]); s0, t0 = n5b.read_start(sys.argv[2], g) if len(sys.argv) > 2 else (None, None)
-    side = os.environ.get("SIDE", "E")
+    side = os.environ.get("SIDE", "E"); global TG; TG = os.environ.get("TARGETS") == "1"
     N = n5b.N5(g, mode="spec"); tr = []; N.run(s0, t0, trace=tr)
     si = N.SG if side == "E" else N.SD; gg = si.g
     rank = {v: r for r, v in enumerate(sorted(range(g.n), key=lambda v: (gg.prio[v], v)))}
@@ -47,7 +48,10 @@ def main():
                 rc = rank[c]; w = lambda v: (rank[v] - rc) if not odd(v) else -(rank[v] - rc)
                 if matched(set(A), set(B), w, odd): mat[x] += 1
                 else: car[x] += 1
+        tg = {tr[t + 1][0][v] for t in range(a, b - 1) for v in range(g.n) if g.owner[v] == 0 and tr[t][0][v] != tr[t + 1][0][v]} \
+            if side == "E" else {tr[t + 1][1][v] for t in range(a, b - 1) for v in range(g.n) if g.owner[v] == 1 and tr[t][1][v] != tr[t + 1][1][v]}
         for x in range(g.n):
+            if TG and x not in tg: continue
             if mat[x] or car[x]: rows.append((mat[x], car[x], x, a, b))
     print(f"MATC {os.path.basename(sys.argv[1])} side {side} n {g.n} states {len(tr)} lambda-runs {len(runs) - 1}")
     print("  top #MAT: " + " ".join(f"v{x}:{m}/{c}@[{a},{b})" for m, c, x, a, b in sorted(rows, reverse=True)[:6]))
