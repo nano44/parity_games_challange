@@ -1,6 +1,6 @@
-# Draft RESULTS R85 (Lead, 2026-10-29 12:47Z by date -u; both reports, both §Cs and the fixes file filled) — to CHECKER C94 (Lead reviewed 12:56Z by date -u: subagent draft; placements accepted: (c′) λ-run as a proof step signed by REFEREE §1b + REFEREE-2 §C; Fact A1 table line Not signed; J7, J12 Referee strengthening; Lead reading in Honest limits (i) kept, labelled)
+# Draft RESULTS R85 (Lead, 2026-10-29 12:47Z by date -u; both reports, both §Cs and the fixes file filled) — to CHECKER C94 (Lead reviewed 12:56Z by date -u: subagent draft; placements accepted: (c′) λ-run as a proof step signed by REFEREE §1b + REFEREE-2 §C; Fact A1 table line Not signed; J7, J12 Referee strengthening; Lead reading in Honest limits (i) kept, labelled) (rev. 13:40Z by date -u: C94 E-1 applied as CHECKER's move (λ-run form out of the title and Claims signed, now Referee strengthening (0)); E-2 fixes pin → l-lit 510c47eb, sha1 57015bb6, F3-F11, F11 clause)
 
-### R85 [refereed-only] N5 on EVERY game: (A) for a vertex v, a phase 𝒫 (λ and τ constant on 𝒫, c := λ(v)), v's path sets P_t := P(Ξ_t v) ⊆ R_c := the K ranks above rank(c) (K ≤ n − 1, r_1 < … < r_K), pos(r_k) := k, w(r) := +pos(r) if r is even and −pos(r) if r is odd (a rank's parity is Ω's of its vertex), Φ(A) := Σ_{r ∈ A} w(r), and a P-change A → B (a transition of 𝒫 with P_t ≠ P_{t+1}) MATCHED if some matching M ⊆ (A ∖ B) × (B ∖ A) has w(i) > w(o) on every pair (o, i) and leaves only even incoming and odd outgoing ranks uncovered, a CARRY otherwise: for distinct ranks o, i, w(i) > w(o) iff weight({i}) > weight({o}), and adding an even rank or removing an odd rank raises the weight (Fact A1); Φ(B) − Φ(A) ≥ 1 at every MATCHED P-change (Lemma MATCH-Φ); hence PCH_𝒫(v) ≤ (K(K+1)/2)(NM_𝒫(v) + 1) + NM_𝒫(v) per vertex per phase, every game, PCH and NM counting v's P-changes and carries in 𝒫 (Corollary, added statement (A)), with the same proof verbatim on any stretch of consecutive states with λ(v) constant (REFEREE §1b; REFEREE-2 §C "Joint: AGREED"); (B) at a state with τ(e) = h at an Odd vertex e, for a successor d ≠ h of e, a route π = (π_1 = d, …, π_m) of distinct Even vertices of G into e, Q := {π_1, …, π_m, e}, ρ the (τ̄, τ)-play from h and c_h the cycle node of Ξτ(h): (H1) every vertex of Q ranks above c_h, (H2) ρ (prefix and cycle) contains no vertex of Q and (H3) Q's vertex of largest rank has even Ω imply (e, d) ∉ Iτ (Lemma GATE-SHUT; via Fact B1: on valuations with the same cycle node and P ≠ P′, G^d's order reverses G's, and Fact B2: (VJ) of RESULTS R57 (a) on G^d), so on a stretch of states of one run with τ(e) = h and (H1)-(H3) at every state, (e, d) ∉ Iτ at each of them and τ never moves from h to d at a transition from one of them (added statement (B); the claim at t → t + 1 uses (H1)-(H3) at t only, π may differ from state to state, the Lemma uses no phase) (2026-10-29) — a REDUCTION of one vertex's path-set changes in one phase to its carries NM, and a structural lemma on Odd's improving edges that bounds no count (NM is OPEN, not bounded here; persistence of (H1)-(H3) not claimed; (H2)'s necessity not exhibited; not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C94.md, checker PENDING)
+### R85 [refereed-only] N5 on EVERY game: (A) for a vertex v, a phase 𝒫 (λ and τ constant on 𝒫, c := λ(v)), v's path sets P_t := P(Ξ_t v) ⊆ R_c := the K ranks above rank(c) (K ≤ n − 1, r_1 < … < r_K), pos(r_k) := k, w(r) := +pos(r) if r is even and −pos(r) if r is odd (a rank's parity is Ω's of its vertex), Φ(A) := Σ_{r ∈ A} w(r), and a P-change A → B (a transition of 𝒫 with P_t ≠ P_{t+1}) MATCHED if some matching M ⊆ (A ∖ B) × (B ∖ A) has w(i) > w(o) on every pair (o, i) and leaves only even incoming and odd outgoing ranks uncovered, a CARRY otherwise: for distinct ranks o, i, w(i) > w(o) iff weight({i}) > weight({o}), and adding an even rank or removing an odd rank raises the weight (Fact A1); Φ(B) − Φ(A) ≥ 1 at every MATCHED P-change (Lemma MATCH-Φ); hence PCH_𝒫(v) ≤ (K(K+1)/2)(NM_𝒫(v) + 1) + NM_𝒫(v) per vertex per phase, every game, PCH and NM counting v's P-changes and carries in 𝒫 (Corollary, added statement (A)); (B) at a state with τ(e) = h at an Odd vertex e, for a successor d ≠ h of e, a route π = (π_1 = d, …, π_m) of distinct Even vertices of G into e, Q := {π_1, …, π_m, e}, ρ the (τ̄, τ)-play from h and c_h the cycle node of Ξτ(h): (H1) every vertex of Q ranks above c_h, (H2) ρ (prefix and cycle) contains no vertex of Q and (H3) Q's vertex of largest rank has even Ω imply (e, d) ∉ Iτ (Lemma GATE-SHUT; via Fact B1: on valuations with the same cycle node and P ≠ P′, G^d's order reverses G's, and Fact B2: (VJ) of RESULTS R57 (a) on G^d), so on a stretch of states of one run with τ(e) = h and (H1)-(H3) at every state, (e, d) ∉ Iτ at each of them and τ never moves from h to d at a transition from one of them (added statement (B); the claim at t → t + 1 uses (H1)-(H3) at t only, π may differ from state to state, the Lemma uses no phase) (2026-10-29) — a REDUCTION of one vertex's path-set changes in one phase to its carries NM, and a structural lemma on Odd's improving edges that bounds no count (NM is OPEN, not bounded here; persistence of (H1)-(H3) not claimed; (H2)'s necessity not exhibited; not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C94.md, checker PENDING)
 - Object (L-LIT successor, Opus 5.5, D18, Lead reading L40; frozen, unchanged during review): packet P-N5-MPGS, docs/lit/P-N5-MPGS.md,
   sha1 24913a7f9efea437aa202b398113b7ce12890961, 246 lines (l-lit freeze a23179b01be61d7f85e37aa93c0ae55a2dde7de8,
   2026-10-29T11:03:06Z; quote base 1f15c91b; 9 quotes, docs/lit/P-N5-MPGS-quotecheck.py, sha1 74dbe8b4e6c4f37d4fdf7ca587eb479b5434579f,
@@ -9,15 +9,14 @@
   routed: P-N5-MATCHPHI (l-lit 12b7d12a, sha1 544705b74312e49ee31fd93ede1952396ebd12f1; Part (A)'s statements, reviewed before the
   supersession: REFEREE R-N5-MATCHPHI.md, REFEREE-2 R2-N5-MATCHPHI.md) and P-N5-GATESHUT (l-lit 1298d8b2, sha1
   affcae678b12bd8fc4ebc7a9b5759ee7b2442f39; no review). The fixes file's F1 ("WITHDRAWN") is withdrawn by F2 ("Lead ruling 11:27Z: F1
-  withdrawn; P-N5-MPGS is the review object."). The referees' notes are collected by the lane in docs/lit/P-N5-MPGS-fixes.md (l-lit
-  1bd2a11e, sha1 c0b0a0aaa0f2585492741bf228a97d4486c54303, L-LIT successor 2: F3-F10 answer MPGS-N1..N5, MATCH-N1..N4, N-MPGS-1..6,
+  withdrawn; P-N5-MPGS is the review object."). The referees' notes are collected by the lane in docs/lit/P-N5-MPGS-fixes.md (l-lit 510c47eb, sha1 57015bb6bb1c9597f506613083b2389a948c05c6, L-LIT successor 2: F3-F11 answer MPGS-N1..N5, MATCH-N1..N4, N-MPGS-1..6,
   N-GS-1..5, N-MP-1..5, C.4 items 1-6 and J1-J15; 50 quotes checked by docs/lit/P-N5-MPGS-fixes-quotecheck.py, sha1
   dc3f8c0b1b447324183061385e4e3eb643e4f98c, "quotes=50 bad=0"); on trunk; "No statement of P-N5-MPGS changes; no item is FALSE" (fixes,
   Coverage). F3 appends the rise/fall summation to the proof of (A) and writes W as an equality; F4 appends to step 3 of GATE-SHUT's
   proof that h ∉ Q and that d = π_1 is Even; F5 adds two DATA notes to B3 (T34's (H1) test, T34's imports); F6 corrects B3's "The
   hypotheses are needed"; F7 corrects B4's "(H1) automatic"; F8 adds three optional one-liners (full order reversal; per-state reading
   of (B); (A) on λ-runs); F9 carries MATCHPHI's notes (sharpness at NM = 0 and the additivity line, both PROVED by L-LIT, unrefereed);
-  F10 records notes needing no packet change. The statements below are in the frozen wording with those repairs.
+  F10 records notes needing no packet change; F11 records the Lead's ruling of 12:29Z (REFEREE-2's E-class items required, done as F3-F7; J6-J8 carried into the entry); no statement change. The statements below are in the frozen wording with those repairs.
   Setting (every game): N5 = SPEC S1-S5 (docs/new/N5-ssi-global.md) with FIX 1-4; a phase is a maximal run of states with λ (Ξ's
   cycle-node map) and τ constant (RESULTS R38 (a), as in R84). Part (A): v a vertex, c := λ(v), constant on 𝒫; P_t := P(Ξ_t v), read
   as a set of ranks; R_c := {rank(u) : rank(u) > rank(c)} ⊇ P_t (by S1-rank, p'(u) > p'(c) iff rank(u) > rank(c)); K := |R_c| ≤ n − 1;
@@ -52,16 +51,6 @@
       MATCH-Φ), so #MATCHED ≤ R; negative increments occur only at carries, each ≤ W, so F ≤ W·NM_𝒫(v); so #MATCHED ≤ W + W·NM_𝒫(v) and
       PCH_𝒫(v) = #MATCHED + NM_𝒫(v). REFEREE MPGS-N1 = J4: "the inference is valid as a sketch"; REFEREE-2 §C D1: "Restore MATCHPHI's three
       lines". K ≤ n − 1 gives K(K+1)/2 ≤ n²/2 (A0; REFEREE-2 19 §1).)
-  (c′) Signed as a proof step by REFEREE §1b and REFEREE-2 §C, not as an item of either REFEREE-2 MPGS report: (A) and its proof hold
-      verbatim with 𝒫 replaced by any stretch of consecutive states of one run on which λ(v) is constant (a λ-run with τ free, fallbacks
-      included), PCH and NM counted over that stretch (fixes F8 (c)). REFEREE §1b: "YES (Opus 5.5, D15), verbatim, on ANY sequence of
-      consecutive states (phase, λ-run with τ free, or any stretch, fallbacks included) on which v's own cycle node c = λ(v) is
-      constant", "No step reads τ, the phase, (MON) or the direction of the weight change. (Even only λ(v) for the single vertex v is
-      needed, not all of λ_Ξ.)". REFEREE-2 §C (e1ec568a): "REFEREE-2 20 reached the same conclusion independently in R2-N5-COMPOSE §2.5
-      (pushed 4b8afa95 before §1b was read), and added that the Odd side reads parities on G^d (N-C3)", "Joint: AGREED. This is the premise
-      P-N5-COMPOSE §6 needs." (R2-N5-COMPOSE §2.5: "So "phase → λ-run" is not merely a reading: it is the same proof verbatim. ✓")
-      REFEREE §C (8da7b717): "REFEREE-2 did not address this question (it was asked of the first referee); nothing in either REFEREE-2
-      report contradicts it (N-MPGS-6: the Lemma uses no phase)."; it does not cite REFEREE-2's §C, pushed 21 s before it.
   (d) Fact B1 (B1): "For valuations X = (c, P, ℓ) and X′ = (c, P′, ℓ′) with the same cycle node c and P ≠ P′: X ◁_d X′ iff X′ ◁ X."
       (By [A3] G^d has G's ranks, so P and the cycle node (the vertex of maximal rank on the cycle) are the same in both readings; G^d's
       signed weight of P is −weight(P); with equal cycle nodes and P ≠ P′ both orders decide on the weights; ℓ is never reached.)
@@ -100,6 +89,19 @@
   F9 (b) are PROVED by L-LIT, unrefereed, and are not signed (bullet "Referee strengthening" (ii), (iii)).
 - Referee strengthening (NOT part of this entry; REFEREE-2 20 is cited as "REFEREE-2 concurring" (Lead ruling 11:54Z, s20 status line),
   never as a third signature):
+  (0) The λ-run form of (A) (fixes F8 (c), a remark): (A) and its proof hold
+      verbatim with 𝒫 replaced by any stretch of consecutive states of one run on which λ(v) is constant (a λ-run with τ free, fallbacks
+      included), PCH and NM counted over that stretch (fixes F8 (c)). REFEREE §1b: "YES (Opus 5.5, D15), verbatim, on ANY sequence of
+      consecutive states (phase, λ-run with τ free, or any stretch, fallbacks included) on which v's own cycle node c = λ(v) is
+      constant", "No step reads τ, the phase, (MON) or the direction of the weight change. (Even only λ(v) for the single vertex v is
+      needed, not all of λ_Ξ.)". REFEREE-2 §C (e1ec568a): "REFEREE-2 20 reached the same conclusion independently in R2-N5-COMPOSE §2.5
+      (pushed 4b8afa95 before §1b was read), and added that the Odd side reads parities on G^d (N-C3)", "Joint: AGREED. This is the premise
+      P-N5-COMPOSE §6 needs." (R2-N5-COMPOSE §2.5: "So "phase → λ-run" is not merely a reading: it is the same proof verbatim. ✓")
+      REFEREE §C (8da7b717): "REFEREE-2 did not address this question (it was asked of the first referee); nothing in either REFEREE-2
+      report contradicts it (N-MPGS-6: the Lemma uses no phase)."; it does not cite REFEREE-2's §C, pushed 21 s before it.
+      Status (CHECKER C94 E-1): REFEREE §1b is a labelled verdict outside its verdict table; REFEREE-2: not in the report of record;
+      its §C (successor 20) "Joint: AGREED", classed "opt" (C.4 item 6), with its proof in R2-N5-COMPOSE §2.5. To be signed with
+      P-N5-COMPOSE, which uses it.
   (i) J7, the full order reversal (fixes F8 (a), a remark after Fact B1): "For ALL valuations X ≠ X′, X ◁_d X′ iff X′ ◁ X. GATE-SHUT uses
   only the case of Fact B1." REFEREE-2 concurring N-GS-2: "G^d's order is the exact reverse of G's on ALL valuations, not only on equal
   cycle nodes with P ≠ P′", "the Lemma needs only the packet's B1" (b1_general.txt, 200,000 random valuation pairs, 0 violations);
@@ -143,7 +145,7 @@
   run time, not the freeze commit (F5, J3: tree ids of the six directories equal at a23179b0 and trunk 923b5b12, measured by L-LIT).
   Quote checks: P-N5-MPGS-quotecheck.py "quotes=9 bad=0"; P-N5-MPGS-fixes-quotecheck.py "quotes=50 bad=0". All three referees
   reproduced T33, T34 (four lines and S3 + F) and the quote check exactly; both quote checks re-run for this draft on trunk (docs/lit
-  equal to l-lit 1bd2a11e): 9/0, 50/0. L-COMP
+  equal to l-lit 510c47eb): 9/0, 50/0. L-COMP
   box 18 (claude/l-comp fc0758fc, via the Lead; packet A3): the MATCHED test agrees with L-COMP's on 258,048 pairs; NM per (vertex,
   phase) at most 62 (n 581), max NM/n 1.18 (pl130_n40). REFEREE (successor 17; own scratch/matchphi_probe.py, mp_chain.py (Part (A),
   R-N5-MATCHPHI.md, carried over) and scratch/gateshut_probe.py (sha1 84a77eb7…) on its engine rl_engine; no L-COMP / L-LIT import; H_n
