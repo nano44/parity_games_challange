@@ -24,13 +24,15 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 ## Successor 27 HANDOVER (written 2026-10-29 14:48Z, date -u; ~390k context)
 - DONE (claude/l-red, push.sh VERIFY PASS each push): 724bab9d handover check; 6aa2dcd7 R112 (coupled relay chain, cpl tools, check.sh gate
   relay_L3); 41c567c3 R113 (menus autonomous; tau-released steps drop W; leapfrog reactor clocks need W-rising sources; two-sided mkr dead as
-  designed); R113 §4 addendum (W-sink delay route; mkr vs its dual = opposite winning regions, cross gates never open; flip-climb DATA).
+  designed); R113 §4 addendum (mkr vs its dual = opposite winning regions, cross gates never open; flip-climb DATA); f8b59275 ewin/dewin
+  (same-region Odd clock, check.sh gate); 56f3ca89 CORRECTION (Odd holders at mkr's W-sinks fail: an Odd hold cannot delay a W-rise signal).
 - IN FLIGHT: nothing (no background jobs).
 - RESUME POINT (Lead STEP 1: coupled family, then super-quadratic NM*/NM*^U in one joint lambda-run):
   (1) DONE (R113 §4): cpl/ewin.py + dualize = dewin (Odd clock, Odd-winning, run identical). WAS: Build an Odd clock in an ODD-winning region (Odd pivots + Odd reactors whose U-plays end in Odd-winning cycles, Odd improving path
       sets). Equivalently: an Even mkr variant in an EVEN-winning region, then dualize. mkr's W-loops rely on z odd; the new one needs its
       own W-structure. Check: cpl.py (one joint run?), cause.py (STALL/opp-moved at the cross gates).
-  (2) NEXT: couple dewin to mkr (holder options must end in the SAME cycle in the gating valuation; interleave loop priorities) by one-shot holders at the W-SINKS (R113 §4): w_i keep -> Odd holder chi_i (tau -> Odd loop Lambda_i, T'_K < Lambda_i
+  (2) NEXT (R113 §4 CORRECTED: holders at mkr's W-sinks fail, h is W-gated only and a held w_i already shows W >= W(T_i); first change
+      mkr so C_{i+1}'s honest value runs through w_i (menu-gated), then) couple dewin to mkr (holder options must end in the SAME cycle in the gating valuation; interleave loop priorities) by one-shot holders at the W-SINKS (R113 §4): w_i keep -> Odd holder chi_i (tau -> Odd loop Lambda_i, T'_K < Lambda_i
       < T_i; alt -> the Odd clock's reactor end), and the mirror on the Odd clock's W-sinks. Target Theta(Km) sigma AND tau in one joint run.
   (3) Routes (A)/(B) of R113 §3 for re-usable cross gates (needed for anything beyond O(n) cross-caused events).
 - Tools (experiments/red/cpl/): cpl.py, nmrun.py, cause.py, trn.py, vcpl.sh, build.py, chain.py, search.py (MODE=flip).
