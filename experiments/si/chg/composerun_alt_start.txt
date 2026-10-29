@@ -1,0 +1,17 @@
+Elambda_runs_max=31 Epch_max=67 Olambda_runs_max=28 Opch_max=13 runs=413
+columns: L, game, i, j, S1 = sum SW, S2 = sum (1 + RISE), S3 = (I2) bound, S4 = (I3) bound, max NM, max PCH, max RISE, max SW, n
+TOP (122, 'experiments/new/box48/instances/long121_n40.pg', 0, 122, 248, 2295, 91482, 0, 246, 0, 1, 1, 40)
+TOP (122, 'experiments/red/n3/instances/long121_n40.pg', 0, 122, 248, 2295, 91482, 0, 246, 0, 1, 1, 40)
+TOP (115, 'experiments/red/so/instances/xsn91_n48.pg', 0, 115, 272, 3143, 150676, 0, 268, 0, 3, 1, 48)
+TOP (112, 'experiments/n5-epoch/instances/lend107_n32.pg', 0, 112, 147, 856, 26020, 0, 142, 1, 2, 2, 32)
+TOP (106, 'experiments/red/xing/instances/j4_n40.pg', 0, 106, 216, 2615, 87484, 0, 212, 0, 3, 1, 40)
+TOP (105, 'experiments/new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.pg', 0, 105, 246, 4199, 322565, 0, 237, 4, 3, 2, 80)
+MAXRATIO L/S1 1.000  S1/S2 1.000
+RUNI0 PASS
+R47 PASS
+EI1 PASS
+OI1 PASS
+ELDIR PASS
+OLDIR PASS
+ELBLK PASS
+OLBLK PASS

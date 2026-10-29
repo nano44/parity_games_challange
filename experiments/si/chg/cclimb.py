@@ -3,6 +3,7 @@
 OBJ=IE: kill = INTER-JOINT failure (chg/suffix.py INTEREARLY_V: an H-sink, not a W-sink, makes an intermediate switch and later
 finalizes before its W-chain settles), shaping 3 * (H-sink intermediate switches) + EARLY_V (early H-sinks of any kind, capped 20).
 OBJ=GP: kill = DL-SEP / DL-NOCONSEC / FROZEN-COUNT / GROWFIN failure (shaping also 30 * (max frozen-run excess + 9)) (DL-RUN, DL-FIRST died on L-RED's segcount_kill_n20) (GROW-PERSIST died: chg/instances/growpers_kill_n73) (chg/dlock.py), shaping 5 * deadlock steps + non-growth steps + 3 * sum over non-growth steps t > r0 of 12 // (finalizers at t).
+OBJ=LE: kill = LENE failure (a maximal REL segment with b - a > |E_b|; third component = excess, > 0 a kill), shaping 30 (b - a - |E_b|) + 10 (b - a - SW) + 3 deadlocks.
 Third component = failures (> 0 is a kill). Mutations and acceptance as lay/wclimb.py. Usage: cclimb.py SEED.pg SEED.start|- STEPS RNGSEED NMAX OUT"""
 import sys, os, random
 os.environ["PMODE"] = "1"
@@ -16,12 +17,16 @@ from multi import odd_choices
 from growclimb import clone, save, mkst
 from suffix import cscore
 from dlock import dscore
+from lenstat import lscore
 OBJ = os.environ.get("OBJ", "IE")
 
 def sc(g, st):
     try: E, R = rows(g, st, cap=1500)
     except (RecursionError, RuntimeError): return None
     if len(R) > 1500: return None
+    if OBJ == "LE":                       # kill = a REL segment longer than |E_b| (LENE); shaping: (b - a) - SW, deadlocks
+        xe, xs, dl = lscore(g, R)
+        return (1000 * max(xe + 1, 0) + 30 * xe + 10 * xs + 3 * min(dl, 30), xs, max(xe, -1) + 1)
     if OBJ == "GP":                       # kill = GROW-PERSIST or DL-FIRST failure; shaping = non-growth steps and deadlock steps
         d = dscore(g, R); f = d.get("DLSEP_V", 0) + d.get("DLCONSEC_V", 0) + d.get("GROWFIN_V", 0) + d.get("FRZLEN_V", 0)
         ng = sum(k * d.get("ngrun_%d" % k, 0) for k in range(1, 10))

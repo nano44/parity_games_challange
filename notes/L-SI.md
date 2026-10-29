@@ -2,14 +2,17 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
 ## Resume point (successor 24, box 28; GO 10:06Z 2026-10-29 (Lead brief); session_01V5yGRXKXxiTL7ZomUHUGcP)
-- Handover check d55a1e4e (pushed as 6e8b74cd), sent 10:18Z. Oink built. Note docs/si/N5-CHG-box28.md (§0-§7); tools experiments/si/chg/
-  (suffix.py, dlock.py, cclimb.py, ijcheck.py, lenstat.py); pins chg/instances/ (interjoint_kill_n70, growpers_kill_n73, dlsep_kill_n70;
-  red/ = copies of L-RED's R105 pins); DEAD.md "box 28"; check.sh "box 28" (5 blocks).
+- Handover check d55a1e4e (pushed as 6e8b74cd), sent 10:18Z. Oink built. Note docs/si/N5-CHG-box28.md (§0-§9); tools experiments/si/chg/
+  (suffix.py, dlock.py, cclimb.py, ijcheck.py, lenstat.py, revisit.py, pervert.py, compose.py); pins chg/instances/ (interjoint_kill_n70, growpers_kill_n73, dlsep_kill_n70;
+  red/ = copies of L-RED's R105/R106 pins); DEAD.md "box 28"; check.sh "box 28" (7 blocks).
 - STEP 1 (SEG-COUNT charging) CLOSED: SEG-COUNT DEAD by L-RED R105 (Lead 10:30Z). Mine: PROVED (lane) FREEZE, DEADLOCK, BND, NEW-EDGE,
   SW-RETURN, counting (i)-(iv). DEAD: general (a), INTER-JOINT, DL-HSW, DL-NEXT, GROW-PERSIST, DL-RUN, DL-FIRST, NEWFINAL, DL-SEP,
   DL-NOCONSEC, FROZEN-COUNT, DL-SOMEH, ZIG.
-- Redirect (Lead 10:30Z): polynomial REL-segment LENGTH without (H4′_rel). State: b − a ≤ TOT ≤ SW·MAXV; need a per-vertex switch bound
-  (MAXV) inside a REL segment. LENE (b − a ≤ |E_b|) holds in all data (tight on L-RED's family); L-RED attacks n − 1.
+- Redirect (Lead 10:30Z, 10:48Z): REL-segment LENGTH; LENE, LEN2 DEAD (L-RED runquad, Θ(n²) segments). Target now CONJECTURE SW-RUN /
+  SW-PER-VERTEX (O(n) switches per vertex per run; DATA ≤ 0.667n). Lemma SW-RISE PROVED (lane): b − a ≤ TOT ≤ SW·MAXV, so the
+  per-vertex switch count is the whole question; its P-part is L-LIT's MATCH-Φ (carries NM open).
+- STEP 2 (Lead 11:01Z, option D): §9 Theorem COMPOSE + Corollary COMPOSE-RUN (PROVED, lane; REDUCTION of every N5 run on every game to
+  P-changes per vertex per λ-run, and with MATCH-Φ to carries NM); Lemma LEN-MONO; tool chg/compose.py (MODE=run for the whole run).
 - Things only I know (s24): chg/ climbs write chg/out/ (NOT gitignored: experiments/*/out/ matches only experiments/si/out/); stop or
   commit them before a push. Run `date -u` alone before send_message (predecessor's trap). cclimb's KILLSCORE counts failures summed over
   candidates, so a later _k.pg can differ from the pinned copy; pin a copy at once and re-measure the copy.
