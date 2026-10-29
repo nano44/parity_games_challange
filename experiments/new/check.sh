@@ -229,4 +229,11 @@ if grep -q "^CLS g steps 286 glo_steps_used 4 patterns 27 distinct 16$" <<<"$y1"
 else
   echo "box 57 CARRY checks: FAILED"; exit 1
 fi
+# P-N5-SF fixes file (successor 33): the quotes of F7-F13 hold at trunk e251d147; the shifted control fails.
+if python3 -I box49/quotecheck3.py ../../docs/new/P-N5-SF-fixes-box55.md | grep -q "quotes=6 bad=0" && \
+   ! python3 -I box49/quotecheck3.py ../../docs/new/P-N5-SF-fixes-box55.md --mut >/dev/null; then
+  echo "P-N5-SF fixes F7-F13: quotes PASS: PASS"
+else
+  echo "P-N5-SF fixes quotes: FAILED"; exit 1
+fi
 rm -rf "$tmp"

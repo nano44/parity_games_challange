@@ -287,6 +287,9 @@ python3 -I ../hard-families/pgsolver_port.py switchbestexp 2 > "$t/sb2.pg"; out=
 python3 -I sf/fsubexp.py 3 > "$t/fs3.pg"; [[ "$(sha1sum "$t/fs3.pg" | cut -c1-12)" == "907738682bdb" ]] || { echo "fsubexp 3 sha1 changed"; exit 1; }
 out=$(python3 -I sf/sf2.py "$t/fs3.pg"); [[ "$out" == "sf2 mode spec n 77 iterations 11 "* ]] || { echo "sf2 fsubexp 3 drifted: $out"; exit 1; }
 python3 -I sf/fsubexp.py fearnley 3 > "$t/fe3.pg"; out=$(python3 -I sf/sf2.py "$t/fe3.pg"); [[ "$out" == "sf2 mode spec n 59 iterations 9 "* ]] || { echo "sf2 fearnleysubexp 3 drifted: $out"; exit 1; }
+# R115 (successor 28): fcN = switchbestexp minus f_i -> c; N5-SF SBC_sigma = N^2 (N = 3: 121 iterations, SBC 9)
+python3 -I sf/sbev.py 3 --drop fc > "$t/fc3.pg"; [[ "$(sha1sum "$t/fc3.pg" | cut -c1-12)" == "9af7ca12ace1" ]] || { echo "fc3 sha1 changed"; exit 1; }
+out=$(python3 -I sf/sf2.py "$t/fc3.pg"); [[ "$out" == "sf2 mode spec n 85 iterations 121 fallbacks 0 sigma_changes 121 SBC_sigma 9 "* ]] || { echo "fc3 drifted: $out"; exit 1; }
 TMPDIR="$t" python3 correspond.py 2 3 4 5 6 > "$t/corr.log" || { cat "$t/corr.log"; exit 1; }
 python3 xcheck.py --games 150 --nmax 7 --seed 7 > "$t/x.log" || { cat "$t/x.log"; exit 1; }
-echo "red check: R114 sf2/fsubexp OK; r2_check PASS (R11), bsolo 4 = 4 tangles/7 iterations (R10); dtl_flipflop F8 = 36/1/5 (R9), Claim P/Q 0 violations; zadeh_lb N2 = 43 (no fixed order, R7); fhz_padded 2 S7 = 16 (R5 kill);  friedmann_Gn 2 S7 = 15; fhz lockstep3/relation/export OK; gated_bland 6 = 63 MSF iterations (regions = Zielonka, strategies verified); Claim F instances; MSF == Bland N<=6; $(tail -1 "$t/x.log")"
+echo "red check: R114 sf2/fsubexp OK; R115 fc3 121/9; r2_check PASS (R11), bsolo 4 = 4 tangles/7 iterations (R10); dtl_flipflop F8 = 36/1/5 (R9), Claim P/Q 0 violations; zadeh_lb N2 = 43 (no fixed order, R7); fhz_padded 2 S7 = 16 (R5 kill);  friedmann_Gn 2 S7 = 15; fhz lockstep3/relation/export OK; gated_bland 6 = 63 MSF iterations (regions = Zielonka, strategies verified); Claim F instances; MSF == Bland N<=6; $(tail -1 "$t/x.log")"
