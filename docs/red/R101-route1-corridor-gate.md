@@ -65,6 +65,14 @@ current source A until it rises), and the gate flip IS the configuration change.
 - A kill would have to use multi-switch fallbacks repeatedly (long121's carries: RF 7 of f 8) with Θ(n) of them per phase. The climbs
   push that direction to f ≈ 0.5n at most (RF 11-14).
 
+## 6. ERRATUM (2026-10-29 ~03:45Z, after L-NEW's report relayed by the Lead 03:38Z)
+- §5's CONJECTURE R1-ZERO was contradicted by my own table in §1: new/esc/instances/cond_stuck_symsi3_YE has R1 = 1 (phase [13, 18]). I
+  stated R1-ZERO anyway, with "max R1 is 1" beside it. That is a wrong statement, not a data gap. L-NEW (l-new e2da18b0,
+  docs/new/N5-READER-box49.md §11) killed it with this instance and lend_fresh_n24_r2 (experiments/n5-epoch/results/scale, own start). My
+  survey's file list did not include experiments/n5-epoch, so that instance was missed. Mechanism (L-NEW): a single fallback at a successor y
+  of w raises Ξ(y) above w's choice, and the next fallback steps w back onto y. The correct DATA statement is: max R1 = 1 on the 1,128 games
+  of §1 and 0 in every climb. L-NEW's CONJECTURE R1-STEP replaces mine.
+
 ## DONE / FINDINGS / NEEDS
 - DONE: R101 (this file); fbphase.reuse (RF, R1), r1survey.py, fbclimb --reuse / --owntau; pin fb38_n48 (n5 = n5b 66 / 39, Oink OK);
   check.sh pins its f.
