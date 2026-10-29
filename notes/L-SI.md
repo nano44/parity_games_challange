@@ -1,7 +1,7 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
-## HANDOVER (successor 24, box 28; written 2026-10-29T11:44Z (date -u 11:44:03), updated 11:54Z after §13 (date -u 11:53:56); session_01V5yGRXKXxiTL7ZomUHUGcP)
+## HANDOVER (successor 24, box 28; written 2026-10-29T11:44Z (date -u 11:44:03), updated after §13 (11:54Z) and §14 (12:1xZ, see commit); session_01V5yGRXKXxiTL7ZomUHUGcP)
 Reason: natural pause after STEP 2 + packet freeze; context ~320k (plan: hand over before ~450k). Lead: session_014FBi6o334DvwT5Uw2kDfoN.
 Trunk claude/vibrant-johnson-nxvvxo. Note docs/si/N5-CHG-box28.md (§0-§12); packet docs/si/P-N5-COMPOSE-box28.md (FROZEN, sha1 e1b977aa…).
 ### DONE (SHAs on claude/l-si, all pushed by push.sh)
@@ -17,6 +17,9 @@ Trunk claude/vibrant-johnson-nxvvxo. Note docs/si/N5-CHG-box28.md (§0-§12); pa
   CONJECTURE LEN-TOTAL (333389b0), §12 Lemma INHERIT (d3ea05c0), §13 L-LIT T37's carries-vs-reopenings CONJECTURE measured (this commit):
   carries with NO reopening / no open Odd gate on the vertex's plays everywhere (runquad, s3quad: all of them; library up to NM 42 at n 41),
   so the multiplicative form is DEAD and the additive form is the open core; tool chg/reopen.py (operational reading in §13).
+- §14 (Lead 12:01Z): R17's Lemma P fails in two frames (Case A read in W, Case B read in Ξ; runquad witnesses at t = 0), not via σ̄
+  moving (σ̄ constant on runquad's phase); Corollary R17-D0 PROVED (lane): σ̄ = τ on a phase ⇒ < n + m transitions, ≤ n − 1 W-changing;
+  (n − 1)(|D| + 1) DEAD (b6_xl2_n32, s_elim24_final with |D| = 1). Tool chg/r17.py. Then PARKED per the Lead.
 ### IN FLIGHT
 - Nothing running (all climbs stopped; logs chg/climbs_box28.txt, chg/out/). Packet P-N5-COMPOSE awaits referees (repairs → P-N5-COMPOSE-fixes-box28.md).
 ### OPEN / QUEUE

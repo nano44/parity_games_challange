@@ -1,0 +1,19 @@
+ESWD_V=86 ESWSB_V=54 WCHD_V=16 WCHSB_V=12 phases=418 phases_D0=117 stall_pairs=13401
+columns: L, game, i, j, Even switches, W-changing transitions, σ̄-changing transitions, BLOCK pairs, first BLOCK (t, x, y, σ_t x, σ_(t+1) x), n, |D| (Odd u with σ̄ ≠ τ somewhere in the phase), STALL pairs, first STALL
+TOP (112, 'experiments/red/so/instances/xsn91_n48.pg', 3, 115, 268, 112, 14, 1762, (3, 1, 0, 35, 25), 48, 1, 384, (3, 23, 25, 8, 8))
+TOP (110, 'experiments/new/box28/instances/x48_rt48_final.pg', 2, 112, 175, 110, 2, 1301, (2, 0, 35, 2, 2), 48, 1, 265, (2, 24, 26, 4, 11))
+TOP (103, 'experiments/red/n5inj/instances/returns_ph64.pg', 2, 105, 185, 103, 1, 922, (2, 3, 6, 2, 2), 64, 1, 200, (2, 10, 21, 39, 39))
+TOP (103, 'experiments/red/xing/instances/j4_n40.pg', 3, 106, 212, 103, 32, 1275, (3, 4, 34, 33, 33), 40, 1, 444, (3, 26, 5, 8, 8))
+RATIO max WCH / ((|D| + 1)(n - 1)) = 1.339 (83, 'experiments/n5-exhaustive/instances/b6_xl2_n32.pg', 4, 87, 169, 83, 11, 817, (4, 1, 0, 25, 25), 32, 1)
+RATIO max WCH / (n - 1) = 2.677 (83, 'experiments/n5-exhaustive/instances/b6_xl2_n32.pg', 4, 87, 169, 83, 11, 817, (4, 1, 0, 25, 25), 32, 1)
+RATIO max ESW / (SBCH + 1) / n = 4.375
+EXAMPLE ('ESWSB', 'experiments/n5-exhaustive/instances/b5_o11.pg', 0, 11, 12, 0, 10)
+EXAMPLE ('WCHSB', 'experiments/n5-exhaustive/instances/b5_o11.pg', 0, 11, 11, 0, 10)
+EXAMPLE ('ESWSB', 'experiments/n5-exhaustive/instances/b5_os_n12.pg', 0, 16, 21, 0, 12)
+EXAMPLE ('WCHSB', 'experiments/n5-exhaustive/instances/b5_os_n12.pg', 0, 16, 16, 0, 12)
+EXAMPLE ('ESWSB', 'experiments/n5-exhaustive/instances/b5_os_n14.pg', 0, 20, 26, 0, 14)
+D0 PASS
+ESWSB FAIL
+WCHSB FAIL
+WCHD FAIL
+ESWD FAIL
