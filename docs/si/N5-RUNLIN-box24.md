@@ -1,4 +1,4 @@
-# N5-RUNLIN (box 24): CONJECTURE RUN-LIN, wave anatomy of the long runs, climbs to 1.75n (no kill), τ-optimal in 41 of 44 long runs, and a design obstruction for the ping-pong kill
+# N5-RUNLIN (box 24): CONJECTURE RUN-LIN is DEAD (a fallback-free run of 2n + 13 transitions for every n ≥ 73, 99 > 98 at n = 49; three engines, Oink-checked); wave anatomy; τ optimal along the long runs
 L-SI successor 20 (Opus 5.5; D18, Lead reading L40). Lead's brief 2026-10-28 23:21Z, STEP 1: «CONJECTURE RUN-LIN, a fallback-free run has ≤ 2n
 transitions ... Aim for a proof or a kill with an instance». Working note, unrefereed, not frozen. Not a TARGET.md claim. Nothing here bounds
 N5's running time; G-N5-TIME stays OPEN. Labels (D18 / L40): PROVED (lane) / CONJECTURE / OPEN / DATA / READING / DEAD.
@@ -9,9 +9,10 @@ experiments/si/runlin/out/.
 ## Summary
 | § | item | label |
 | --- | --- | --- |
+| §7 | DEAD RUN-LIN and RUN-LIN-OPT: family runfam_K (n = 39 + K, one Odd choice vertex, one phase, 0 fallbacks, I_τ = ∅ throughout): run = 74 + ⌊5K/2⌋ for K ≤ 34, then + 2 per vertex; run > 2n for every K ≥ 10 (99 at n = 49), run = 2n + 13 for K ≥ 34 | DEAD (instance; three engines agree; N5's output Oink-verified) |
 | §1 | the long runs are WAVES: one Even switch per transition along a path, restarted by each σ̄ change; run49's corridor is walked in both directions | DATA |
-| §2 | climbs (vertex cloning + box43 mutations): 49 → 53 → 56 (n 32) → 58 (n 33) → 60 (n 34, 1.76n); no kill; L-COMP's n5b agrees on every pinned record | DATA; RUN-LIN stays a CONJECTURE |
-| §3 | in 41 of 44 runs of length ≥ 0.75n (alt_all), I_τ = ∅ at EVERY state: τ is already an optimal Odd strategy; the hard case of RUN-LIN is "S4a against a fixed OPTIMAL τ" | DATA + CONJECTURE RUN-LIN-OPT |
+| §2 | climbs (vertex cloning + box43 mutations): 49 → 53 → 56 (n 32) → 58 (n 33) → 60 → 62 (n 34, 1.82n); L-COMP's n5b agrees on every pinned record; the 62 record is the seed of §7 | DATA |
+| §3 | in 41 of 44 runs of length ≥ 0.75n (alt_all), I_τ = ∅ at EVERY state: τ is already an optimal Odd strategy; CONJECTURE RUN-LIN-OPT (now DEAD, §7) | DATA |
 | §4 | a ping-pong kill design (K hidden bases at the two ends of a corridor of length L, run ≈ K·L) and why it fails at its top level: every hidden base needs an odd blocker above its reward, and the gate that carries the blocker needs (to keep τ fixed) an escape for Even above the blocker that is Ξ-closed | READING (a design obstruction, not a theorem) |
 | §5 | what a proof would have to use; next steps | OPEN |
 
@@ -19,7 +20,7 @@ experiments/si/runlin/out/.
 - N5 = SPEC S1-S5 (docs/new/N5-ssi-global.md). In a phase τ is fixed, so S4a's σ_{t+1} is Even's W-optimum in G_τ restricted to the arena
   A_t(v) = {σ_t(v)} ∪ {w : (v, w) ∈ Iσ_t}; Iσ is computed from Ξ (honest valuation, against Odd's best response σ̄). W_t := the valuation of
   the (σ_t, τ)-play. D_t := {Odd u : σ̄_t(u) ≠ τ(u)}.
-- CONJECTURE RUN-LIN (N5-ALT-box23 §13): every fallback-free run of a phase has ≤ 2n transitions. With the elementary split
+- CONJECTURE RUN-LIN (N5-ALT-box23 §13; DEAD, §7): every fallback-free run of a phase has ≤ 2n transitions. With the elementary split
   |P| ≤ f + (f + 1)·max |run| (N5-ALT §13, PROVED) and FB-LIN (L-NEW's), it would give |P| ≤ n + (n + 1)·2n.
 - Premises used below for orientation only (nothing new is claimed from them): P-N5-CORE (C1) EVERY-SWITCH (every in-phase transition
   changes σ), (C3) RISE-SW, (C5) FRESH-RED (|run| ≤ m_E + NOFRESH); REFEREE signed (C1)-(C6) with no gap (docs/referee/R-N5-CORE.md at
@@ -51,7 +52,7 @@ experiments/si/runlin/out/.
 - Objective: the longest fallback-free run R; score R − C·n. Mutations: experiments/new/box43/climb.mutate (Odd choice set fixed) plus CLONE
   (copy an Even vertex with its successors, link it to the original and to one predecessor). Logs out/g2*.log, out/h3*.log, out/k4*.log.
 - From run49_n32: C = 1.25 → 50 (n 32); C = 1.0 → 53 (n 32, best53_n32). From best53: C = 1.0 → 55, C = 0.5 → 56 (best56_n32), C = 1.5 →
-  54. From best56 with C = 0, NMAX 34: 58 at n 33 (best58_n33) and 60 at n 34 (best60_n34). From run34_n40 and x32_rand64 (seed run 55 at
+  54. From best56 with C = 0, NMAX 34: 58 at n 33 (best58_n33), 60 and 62 at n 34 (best60_n34, best62_n34). From run34_n40 and x32_rand64 (seed run 55 at
   n = 64): no ratio above 0.92. C = 0 with NMAX 48 grows n fast and the ratio falls (60 at n = 48): added vertices add ≤ 1 step each.
 - At C ≥ 0.5 no accepted step grew n; at C = 0 growth is accepted but adds about one transition per vertex. So the climbs say nothing
   about the ratio's growth with n.
@@ -61,9 +62,8 @@ experiments/si/runlin/out/.
   best60_n34 (62 / 61 / 0). On all four I_τ = ∅ at every state of the longest run (keeper.py; §3), and they have ONE Odd choice vertex (𝒞^1O,
   like run49), so RESULTS R51 already makes N5 polynomial on them; they matter only as data on the constant of RUN-LIN.
 - Instances: experiments/si/runlin/instances/ (sha1 in §6).
-- READING. 1.76n is the best known ratio; the 2n line is not crossed. L-RED R89's fixed-n climbs gave 0.88 (n 16), 1.13 (24), 1.53 (32),
-  i.e. a ratio that rises with n in the range where the climber is strong. A ratio that keeps rising would kill RUN-LIN at a larger n, so
-  RUN-LIN is not supported by a stable constant. I do not conjecture a better constant.
+- READING (written before §7). The climbs alone stayed below 2n (best 1.82n at n = 34); L-RED R89's fixed-n climbs gave 0.88 (n 16),
+  1.13 (24), 1.53 (32), a ratio rising with n. §7 crosses 2n by stretching the 62 record's corridor, not by climbing.
 
 ## 3. DATA: long runs happen against an OPTIMAL τ (allruns.py, keeper.py)
 - allruns.py on root/logs/alt_all.lst (413 games, n ≤ 600; given start where valid; out/allruns_alt.txt): 1,188 fallback-free runs; 44 have
@@ -107,15 +107,49 @@ far end. I worked the design out on paper; this section records what each part n
     LG = K + 6, and both have run < n (mkpp K = 48: 55 iterations at n = 449).
   - It does not match the climbed instances: run49 / best56 have no long delay line and reach 1.53n-1.75n with one Odd choice vertex and
     3-6 σ̄ changes. There the top gate's "escape" is the corridor itself (o's two options are its two ends), and its D-membership is
-    re-created at every wave, which is a different mechanism from the static hierarchy above. Whether that mechanism scales is OPEN.
-- So the obstruction is to this DESIGN (static hiding levels), not to RUN-LIN. It says where a kill must come from: a gate kept in D by
-  waves that recur, not by a hierarchy of blockers.
+    re-created at every wave, which is a different mechanism from the static hierarchy above. It scales by stretching the corridor: §7.
+- So the obstruction is to this DESIGN (static hiding levels), not to RUN-LIN. It said where a kill must come from, a gate kept in D by
+  waves that recur, not by a hierarchy of blockers, and §7's kill is of that kind.
+
+## 7. DEAD: RUN-LIN (and RUN-LIN-OPT) (written 2026-10-29 00:1xZ by date -u)
+- Statement killed: «every fallback-free run of a phase has ≤ 2n transitions» (CONJECTURE RUN-LIN, N5-ALT-box23 §13). Also my §3
+  CONJECTURE RUN-LIN-OPT (the same with I_τ = ∅ at every state), since the family below has I_τ = ∅ at every state of its run.
+- How it was found: climbs (§2) to best62_n34 (62 at n = 34, sha1 below); its trace shows ONE corridor walked THREE times (t = 10-22, 32-43,
+  50-62). Greedy subdivision of two-way Even pairs (stretchiter.py, 5 rounds) gave runfam_base_n39 (74 at n = 39); then repeated
+  subdivision next to vertex 25 (mkrunfam.py) adds 2 and 3 transitions alternately.
+- Family (experiments/si/runlin/mkrunfam.py K OUT; deterministic): base runfam_base_n39; step k: a new Even vertex x of priority 0
+  subdivides the two-way pair (25, last) (25: last → x, last: 25 → x, x: {25, last}; start σ0(x) = 25; a held edge 25 → last or last → 25 is
+  redirected to x); last := x. n = 39 + K. One Odd choice vertex (5: 2, 7, 9, 14, 18, 28; τ0(5) = 7), so the family lies in 𝒞^1O.
+  | K | n | longest fallback-free run | run − 2n | engines |
+  | --- | --- | --- | --- | --- |
+  | 0 | 39 | 74 | −4 | n5x |
+  | 9 | 48 | 96 | 0 | n5x |
+  | 10 | 49 | **99** | **+1** | n5x = n5b (identical 101 states) = n5.py (100 iterations, 0 fallbacks); check_sol2: zlk OK, strategies verified |
+  | 20 | 59 | 124 | +6 | n5x |
+  | 34 | 73 | 159 | +13 | n5x |
+  | 40 | 79 | 171 | +13 | n5x = n5b (173 states) = n5.py (172 iterations, 0 fallbacks); check_sol2: zlk OK, strategies verified |
+  | 60 / 100 | 99 / 139 | 211 / 291 | +13 / +13 | n5x |
+  - K ≤ 34: run = 74 + ⌊5K/2⌋ (every K checked, logs out/chain25_long.log, out/runfam_table.txt). K ≥ 34: + 2 per vertex.
+  - Each instance's whole run is ONE phase ([1, 100] at K = 10) with no fallback anywhere, λ_W constant, and I_τ = ∅ at every state
+    (keeper.py), with D ≠ ∅ at 65 of the 100 states (K = 10).
+- Anatomy (anatomy.py, K = 10 / 40): σ̄-changing transitions G = 9 at both K; σ̄-constant pieces 1, 1, 2, 5, 21, 6, 3, 26, 1, 33 (K = 10) and
+  1, 1, 2, 5, 33, 6, 3, 56, 1, 63 (K = 40). Two pieces grow by one per added vertex (the new segment is walked by two waves); the third
+  long piece grows only up to K ≈ 22-34, then stops. Every piece stays ≤ n − 1 (consistent with STATIC-DEPTH).
+- Obstruction (READING from the trace): run = Σ over σ̄-constant pieces, and a piece is a wave along a corridor of length up to n − 1. A
+  one-vertex Odd gate whose options are corridor ends restarts the wave at every σ̄ change (§1). Two such waves over the same long segment
+  already give ≈ 2n, and a third partial one gives the excess. A bound of the form c·n needs a bound on the number of LONG pieces per run,
+  not on the per-piece length.
+- What survives: every count here is linear in n (run ≤ 2.17n on the family; the family's run − 2n is constant from K = 34 on). So the kill
+  is of the constant 2, not of linearity. CONJECTURE RUN-LIN′ (weaker, open): every fallback-free run has O(n) transitions. No constant is
+  proposed; whether a third and fourth long wave can be made to grow with n is the open design question (step 2 below).
+- Pins: experiments/si/runlin/instances/runfam_base_n39 (.pg 6b6fc369…, .start 24b9c519…), runfam_K10 (.pg faf218f1…, .start 56e4dec6…),
+  runfam_K40 (.pg 287a185d…, .start bcbfeed3…); full sha1 in §6.
 
 ## 5. OPEN and next steps
-1. RUN-LIN and RUN-LIN-OPT: proof or kill. No proof route is in hand. The available pieces bound a run by Σ over σ̄-constant pieces
+1. RUN-LIN and RUN-LIN-OPT are DEAD (§7). OPEN: RUN-LIN′ (O(n) per run). No proof route is in hand. The available pieces bound a run by Σ over σ̄-constant pieces
    (STATIC-DEPTH, conditional) or by (n − 1)(1 + |U(S)|) per vertex (N5-RUND-box17 §16 CHARGE-U); both are products, not sums.
-2. Scaling the corridor mechanism of run49 / best56: find the minimal gadget (delete vertices while the run stays long), then try to
-   repeat its waves.
+2. Make a third (and fourth) long wave grow with n on runfam (stretchiter.py from runfam_K40 is the first try), i.e. pieces ≈ n with
+   G growing; that would decide whether RUN-LIN′ holds with any constant.
 3. Fixed-n climbs at n = 40, 48 from the best56 structure (embedding plus padding), to see whether the ratio keeps rising with n.
 
 ## 6. Pins (experiments/si/runlin/instances/; sha1sum)
@@ -125,10 +159,16 @@ far end. I worked the design out on paper; this section records what each part n
 | best56_n32 | b41706316c1e1604681e0573380cd1ad1ee19b34 | e31c4c6fe45b06efa2da3cb0f8e7b7c6d598dce7 | 32 | 56 |
 | best58_n33 | 147f8c704bb8861c4f09ca61ab8439b91688a4ea | 53dbe1176366ad2bb394435103562ea479bca114 | 33 | 58 |
 | best60_n34 | 3e497faff26e122c60c39548ea9d3205db8d46ea | b78fd0441ca827aa34aec8c01474c0c0a95a9e04 | 34 | 60 |
-Not checked: the solution N5 outputs on these games (check_sol2); only the run counts are claimed, by two engines.
+| best62_n34 | 85f1a82810504267771a50848e1b886edb1165c9 | 5ee8494284f50718f3b13567b18bbf1d8fa3b9d9 | 34 | 62 |
+| runfam_base_n39 | 6b6fc36985bbb40a1b2a5ac8cb35e80e72cc5c27 | 24b9c5199c3bc958d19bdc0b333893415d288532 | 39 | 74 |
+| runfam_K10 (KILL) | faf218f125d1516d4677393991d53a08a9f4f3bb | 56e4dec67323e6f5b832ac2d95ef832d6ce3a013 | 49 | 99 |
+| runfam_K40 | 287a185d6b82f3ed196abb65726152c982c71f60 | bcbfeed3a59b13acd442d1032e05655eafd30ec1 | 79 | 171 |
+best53-best62: only the run counts are claimed (two engines); N5's output not checked. runfam_K10 / K40: three engines and check_sol2 (above).
 
 ## DONE / FINDINGS / NEEDS
-- DONE: this note; experiments/si/runlin/ tools, instances, out/ logs; check.sh block "box 24".
-- FINDINGS: RUN-LIN not killed; record 60 at n = 34 (1.76n), two engines. Long runs are waves restarted by σ̄ changes. 41 of 44 long
-  runs have τ optimal throughout (CONJECTURE RUN-LIN-OPT). A static-hiding ping-pong design fails at its top level (READING).
+- DONE: this note; experiments/si/runlin/ tools (mkrunfam.py generates the family), instances, out/ logs; check.sh block "box 24"; DEAD.md box 24.
+- FINDINGS: RUN-LIN DEAD: runfam_K10 (n 49) has a fallback-free run of 99 > 98 transitions; the family has run = 2n + 13 for n ≥ 73 (three
+  engines, Oink-checked output, I_τ = ∅ throughout, one Odd choice vertex). RUN-LIN-OPT DEAD with it. Linearity is not touched (run ≤ 2.17n
+  on the family). Long runs are waves restarted by σ̄ changes; 41 of 44 long library runs have τ optimal throughout. A static-hiding
+  ping-pong design fails at its top level (READING, §4); the kill uses recurring waves instead.
 - NEEDS: none from the owner.

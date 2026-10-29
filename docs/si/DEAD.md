@@ -346,3 +346,14 @@ AGAINST_W ('experiments/si/fb2o/instances/tcwult2_against_n8.pg', 0, 1, 0, 4, -1
 - TOP-ONCE (§4): lev_l_sc, z = 0, the same top change 7 times in one run (counter recursion live).
 - FRESH at run scope (§4): x32_rand48, 22 return-only transitions (a D = ∅ wave, not alternation).
 - FRESH2 (§4): post31_n48 t = 20. FRESH3 (§3): ret14_n48 t = 21 (one-vertex flip-flop of Even 27 and gate 0).
+
+## DEAD box 24 (L-SI successor 20, 2026-10-29T00:1xZ by date -u): CONJECTURE RUN-LIN (and RUN-LIN-OPT)
+- Statement killed: «every fallback-free run of a phase has ≤ 2n transitions» (N5-ALT-box23 §13), and its τ-optimal form RUN-LIN-OPT
+  (docs/si/N5-RUNLIN-box24.md §3).
+- Instance: experiments/si/runlin/instances/runfam_K10.pg (sha1 faf218f125d1516d4677393991d53a08a9f4f3bb; start runfam_K10.start,
+  56e4dec67323e6f5b832ac2d95ef832d6ce3a013), n = 49: one phase [1, 100], 0 fallbacks, a fallback-free run of 99 > 98 transitions; I_τ = ∅ at
+  every state. n5x = L-COMP's n5b (identical 101 states) = experiments/new/n5.py (100 iterations, 0 fallbacks); check_sol2: zlk OK, strategies
+  verified. Family mkrunfam.py K: run = 74 + ⌊5K/2⌋ (K ≤ 34), then 2n + 13 (n = 39 + K); runfam_K40 (n 79): 171.
+- Obstruction: one Odd choice vertex whose options are the two ends of a two-way Even corridor; every σ̄ change restarts a wave along the
+  corridor (one Even switch per transition), so the run is a sum of up to G + 1 waves of length up to n − 1; two full waves and a partial
+  third already exceed 2n. Linearity is not killed (run ≤ 2.17n on the family).
