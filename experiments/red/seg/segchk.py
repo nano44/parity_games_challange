@@ -56,6 +56,27 @@ def analyse(g, sig0, tau0, verbose=False, out=print):
             res.append(seg(g, EV, S, WN, HN, N, tr, s0, e, info, verbose, out)); e = s0 - 1
     return res, K - 1, sum(fbt)
 
+def h4rel(g, S, WN, HN, b, CW, CH):
+    """R83 (H4'_rel): the recursion dW := 0 on T_W, dH := 0 on T_H, through tau (W) / sigma-bar_b (honest) at Odd vertices and sigma_b at
+    Even vertices of T, d(v) := 1 + max(dW(sigma_b v), dH(sigma_b v)) at Even v not in T, is well founded on the nodes reached from
+    E_2 minus T. Returns (holds, max d over E_2 minus T)."""
+    TW = {x for C in CW for x, _ in C}; TH = {x for C in CH for x, _ in C}; T = TW | TH
+    def succ(v, f):
+        if (f == "W" and v in TW) or (f == "H" and v in TH): return []
+        if g.owner[v] == n5b.EVEN and v not in T: return [(S[b][v], "W"), (S[b][v], "H")]
+        return [((WN if f == "W" else HN)[b][v], f)]
+    memo, onst = {}, set()
+    def d(node):
+        if node in memo: return memo[node]
+        if node in onst: raise ValueError
+        onst.add(node); v, f = node
+        k = [d(x) for x in succ(v, f)]
+        r = 0 if not k else (1 + max(k) if g.owner[v] == n5b.EVEN and v not in T else max(k))
+        onst.discard(node); memo[node] = r; return r
+    E2 = [v for v in range(g.n) if g.owner[v] == n5b.EVEN and len(set(g.succ[v])) >= 2 and v not in T]
+    try: return True, max([d((v, "W")) for v in E2], default=0)
+    except (ValueError, RecursionError): return False, None
+
 def seg(g, EV, S, WN, HN, N, tr, a, b, info, verbose, out):
     X, RO, CW, CH = info
     sw = {v: [t for t in range(a, b) if S[t][v] != S[t + 1][v]] for v in EV}
@@ -63,9 +84,10 @@ def seg(g, EV, S, WN, HN, N, tr, a, b, info, verbose, out):
     last = {v: sw[v][-1] for v in swv}
     dead = [t for t in range(a, b) if not any(last[v] == t for v in swv)]
     exc = (b - a) - len(swv)
-    r = dict(a=a, b=b, L=b - a, sw=len(swv), exc=exc, dead=dead)
+    h4, depth = h4rel(g, S, WN, HN, b, CW, CH)
+    r = dict(a=a, b=b, L=b - a, sw=len(swv), exc=exc, dead=dead, h4=h4)
     if b > a:
-        out(f"seg [{a}, {b}] L {b - a} switchers {len(swv)} EXC {exc} deadlock {dead}")
+        out(f"seg [{a}, {b}] L {b - a} switchers {len(swv)} EXC {exc} deadlock {dead} (H4'_rel) {'holds, max d ' + str(depth) if h4 else 'FAILS'}")
         for t in dead:
             out(f"  deadlock t={t}: " + " ".join(f"{v}:{S[t][v]}->{S[t + 1][v]}{'(I)' if S[t + 1][v] != S[b][v] else ''}"
                                             for v in EV if S[t][v] != S[t + 1][v]))
