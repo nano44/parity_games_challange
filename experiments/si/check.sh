@@ -674,3 +674,16 @@ o=$(python3 -I tord/gates.py --one ../n5-epoch/instances/lend107_n32.pg ../n5-ep
 grep -q "^D3_G3=10 fw=10$" <<<"$o"; for k in GTF GB FWDG FWD; do grep -q "^$k PASS$" <<<"$o"; done
 o=$(python3 -I tord/gates.py --one ../new/box21/instances/oneodd_c16.pg); grep -q "'G1G2G3')" <<<"$o"; grep -q "^FWDG PASS$" <<<"$o"
 echo "si (box 30 §11: gate classes, FW-DG on lend107_n32 and oneodd_c16): PASS"
+# box 31 (docs/si/N5-SPC-box31.md): same-pair core. §2 DEAD: runfam_K100 (pinned start) frozen W-phase [52, 167] lags R17's W-frame
+# Lemma P by 113 steps with TC = 2 (gap-step form dead; Ξ / mixed / admitted forms 109 / 108 / 108). §3-§4: Lemma GP+ and Corollary FW-R
+# hold on ccl_w48_n48 (R = 12); the plain W-frame Lemma P (MUT=all) must fail there.
+echo "86cf1884919b223c18f982eed6a00a4256a501dd  runlin/instances/runfam_K100.pg" | sha1sum -c --quiet
+echo "843b9f4e83a21d8ee5bd56df97f7b43f59edc394  runlin/instances/runfam_K100.start" | sha1sum -c --quiet
+o=$(python3 -I core/sp.py --one runlin/instances/runfam_K100.pg runlin/instances/runfam_K100.start)
+grep -q "^MAX D1:def (113, 'runlin/instances/runfam_K100.pg', 52, 167, 139, 1, 115, 2, 115, 113, 133, False, 109, 108, 108, 127)$" <<<"$o"
+grep -q "^CTRL PASS$" <<<"$o"
+echo "a7056dea01cd9c6398e054ef6edaaa40f60dabb1  xing/instances/ccl_w48_n48.pg" | sha1sum -c --quiet
+o=$(PLUS=1 python3 -I core/gp.py --one xing/instances/ccl_w48_n48.pg)
+grep -q "'D1': (12, 3, 3, 48, 1, 'xing/instances/ccl_w48_n48.pg', 15, 18)" <<<"$o"; for k in GP RED RLIN; do grep -q "^$k PASS$" <<<"$o"; done
+o=$(MUT=all PLUS=1 python3 -I core/gp.py --one xing/instances/ccl_w48_n48.pg); grep -q "^GP FAIL$" <<<"$o"
+echo "si (box 31: gap-step Lemma P dead on runfam_K100; GP+, FW-R on ccl_w48_n48; plain W-frame Lemma P control fails): PASS"

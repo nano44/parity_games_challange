@@ -11,7 +11,7 @@ c-cube/ocaml-minisat aeb7776 in one dune workspace; two local edits (every dune-
 ## Generators: byte-for-byte
 `generator.exe -gen recursiveladder N` and `stratimprgen.exe -pg {switchallexp,switchbestexp} "N"` vs
 `python3 pgsolver_port.py GEN N`, N = 1, 2, 3, 4, 5, 6, 8, 10, 16: IDENTICAL (cmp) for all 27 (family, N) pairs.
-(friedmannsubexp and fearnleysubexp are named in pgsolver_port.py's docstring but were never ported; not M1 families.)
+(friedmannsubexp and fearnleysubexp: ported 2026-10-29 (L-COMP box 21, experiments/n5-box21/README.md); NOT binary-diffed: the PGSolver build was refused by the permission classifier that day.)
 
 ## Strategy improvement loop: iteration counts and solutions
 `pgsolver.exe -global policyiter -x "-sa"|"-sb" -dgo -dsd -dlo -dsg -v 3 GAME` (switchall / switchbest, all preprocessing

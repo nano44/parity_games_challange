@@ -8,7 +8,8 @@ Each function cites the OCaml file and line numbers it transcribes. Conventions 
   src/lib/paritygame/paritygame.ml:365-386  output: 'parity <n-1>;' then 'i pr pl succs "desc";'
   src/lib/generators/policyiter/stratimprgenerators.ml:11-50  SymbolicParityGame: a symbol gets the next index
       the first time it is mentioned (as a node or as an edge target); add_node overrides the data of a touched symbol.
-Usage: pgsolver_port.py GENERATOR N   (GENERATOR in: recursiveladder switchallexp switchbestexp)
+Usage: pgsolver_port.py GENERATOR N   (GENERATOR in: recursiveladder switchallexp switchbestexp friedmannsubexp fearnleysubexp
+       fearnleysubexp-nogadget; the last three added 2026-10-29, L-COMP box 21)
 Checked 2026-10-15 against the original binaries at d3cd624: byte-identical output for N = 1..6, 8, 10, 16
 (pgsolver-binary-diff.md)."""
 import sys
@@ -182,7 +183,107 @@ def switchbestexp(n):
     return g.dumps()
 
 
-GENS = {"recursiveladder": recursiveladder, "switchallexp": switchallexp, "switchbestexp": switchbestexp}
+def _desc(sy):
+    """symb_to_str of friedmannsubexp.ml:31 / fearnleysubexp.ml:28 (same letters; b, l, p only in friedmannsubexp)."""
+    k = sy[0]
+    if k in ("c", "z", "x", "s", "r"):
+        return k
+    if len(sy) == 2:
+        return f"{k}{sy[1]}"
+    return f"{k}({sy[1]},{sy[2]})"
+
+
+def friedmannsubexp(n):
+    """src/lib/policyiter/generators/friedmannsubexp.ml (d3cd624): "Friedmann's Subexponential Lower Bound for snare-based rules".
+    Symbols are tuples (letter, ints) with the .ml's letters: a DecLaneEven, t DecLaneOdd, c DecLaneRoot, d CycleNode, e CycleCenter,
+    m CycleCenterBadEntry, q CycleCenterBadEntryX, u CycleNodeCho, v CycleBadEntrySel, w CycleBadEntrySelX, f CycleAccess,
+    g CycleSelector, h CycleLeaver, k UpperSelector, z FinalSink, x FinalCycle, r BitSelector, s StartEven, b CycleNodeSpecial,
+    l CycleNodeSpecialX, p CycleNodeSpecialY."""
+    g = SymbolicPG()  # create_new FinalCycle: argument unused (stratimprgenerators.ml)
+    X, S, C, R, Z = ("x",), ("s",), ("c",), ("r",), ("z",)
+    a = lambda i: ("a", i); t = lambda i: ("t", i); d = lambda i, j: ("d", i, j); e = lambda i: ("e", i); m = lambda i: ("m", i)
+    q = lambda i: ("q", i); u = lambda i, j: ("u", i, j); v = lambda i, j: ("v", i, j); w = lambda i, j: ("w", i, j); f = lambda i: ("f", i)
+    gs = lambda i: ("g", i); h = lambda i: ("h", i); k = lambda i: ("k", i); b = lambda i, j: ("b", i, j); l = lambda i, j: ("l", i, j)
+    p = lambda i, j: ("p", i, j)
+
+    def add(sy, pr, pl, li):
+        g.add_node(sy, pr, pl, li, _desc(sy))
+    add(X, 1, ODD, [X])
+    add(S, 10 * n + 8, EVEN, [Z] + mkli(n, f))
+    add(C, 10 * n + 6, EVEN, [S, R])
+    add(R, 10 * n + 10, EVEN, [Z] + mkli(n, gs))
+    add(Z, 18 * n + 12, ODD, [X])
+    for i in range(3 * n):
+        add(a(i), 4 * n + 2 * i + 6, ODD, [t(i)])
+        add(t(i), 4 * n + 2 * i + 5, EVEN, [C, R, S] if i == 0 else [t(i - 1), R, S])
+    for i in range(n):
+        for j in range(i):
+            add(u(i, j), 3, EVEN, [v(i, j), w(i, j), b(i, j)])
+            x = e(i) if j == 0 else u(i, j - 1)
+            add(b(i, j), 5, EVEN, [l(i, j), p(i, j), x])
+            add(l(i, j), 4, EVEN, [v(i, j)])
+            add(p(i, j), 4, EVEN, [w(i, j)])
+            add(v(i, j), 3, ODD, [m(j), x])
+            add(w(i, j), 2, ODD, [q(j), x])
+        for j in range(i + 1, n):
+            add(u(i, j), 3, EVEN, [v(i, j), w(i, j)])
+            x = (e(i) if i == 0 else u(i, j - 2)) if j == i + 1 else u(i, j - 1)
+            add(v(i, j), 3, ODD, [m(j), x])
+            add(w(i, j), 2, ODD, [q(j), x])
+        add(d(i, 1), 4 * i + 3, EVEN, [S, d(i, 0)] + mkli(3 * i + 3, a) + [R])
+        add(d(i, 0), 4 * i + 3, EVEN, [S, e(i) if n == 1 else (u(i, n - 2) if i == n - 1 else u(i, n - 1))] + mkli(3 * i + 3, a) + [R])
+        add(e(i), 4 * i + 6, ODD, [d(i, 1), h(i)])
+        add(m(i), 10 * n + 11 + 2 * i, ODD, [e(i)])
+        add(q(i), 12 * n + 6 * i + 15, ODD, [h(i)])
+        add(h(i), 12 * n + 6 * i + 16, ODD, [k(i)])
+        add(k(i), 12 * n + 6 * i + 11, EVEN, [Z] + mkli(n - i - 1, lambda j: gs(n - j - 1)))
+        add(f(i), 12 * n + 6 * i + 13, ODD, [e(i)])
+        add(gs(i), 4 * i + 8, EVEN, [f(i), k(i)])
+    return g.dumps()
+
+
+def fearnleysubexp(n, withfearnley=True):
+    """src/lib/policyiter/generators/fearnleysubexp.ml (d3cd624): "Subexponential Lower Bound for Fearnley's rule"; withfearnley=False is
+    its -nogadget option. Letters as friedmannsubexp."""
+    g = SymbolicPG()
+    X, S, C, R, Z = ("x",), ("s",), ("c",), ("r",), ("z",)
+    a = lambda i: ("a", i); t = lambda i: ("t", i); d = lambda i, j: ("d", i, j); e = lambda i: ("e", i); m = lambda i: ("m", i)
+    q = lambda i: ("q", i); u = lambda i, j: ("u", i, j); v = lambda i, j: ("v", i, j); w = lambda i, j: ("w", i, j); f = lambda i: ("f", i)
+    gs = lambda i: ("g", i); h = lambda i: ("h", i); k = lambda i: ("k", i)
+
+    def add(sy, pr, pl, li):
+        g.add_node(sy, pr, pl, li, _desc(sy))
+    add(X, 1, ODD, [X])
+    add(S, 10 * n + 6, EVEN, [Z] + mkli(n, f))
+    add(C, 10 * n + 4, EVEN, [S, R])
+    add(R, 10 * n + 8, EVEN, [Z] + mkli(n, gs))
+    add(Z, 18 * n + 10, ODD, [X])
+    for i in range(3 * n):
+        add(a(i), 4 * n + 2 * i + 4, ODD, [t(i)])
+        add(t(i), 4 * n + 2 * i + 3, EVEN, [C, R, S] if i == 0 else [t(i - 1), R, S])
+    for i in range(n):
+        if withfearnley:
+            for j in range(i + 1, n):
+                add(u(i, j), 3, EVEN, [v(i, j), w(i, j)])
+                x = e(i) if j == i + 1 else u(i, j - 1)
+                add(v(i, j), 3, ODD, [m(j), x])
+                add(w(i, j), 2, ODD, [q(j), x])
+        add(d(i, 1), 4 * i + 3, EVEN, [S, d(i, 0)] + mkli(3 * i + 3, a) + [R])
+        add(d(i, 0), 4 * i + 3, EVEN, [S, e(i) if (i == n - 1 or not withfearnley) else u(i, n - 1)] + mkli(3 * i + 3, a) + [R])
+        add(e(i), 4 * i + 4, ODD, [d(i, 1), h(i)])
+        if withfearnley:
+            add(m(i), 10 * n + 9 + 2 * i, ODD, [e(i)])
+            add(q(i), 12 * n + 6 * i + 13, ODD, [h(i)])
+        add(h(i), 12 * n + 6 * i + 14, ODD, [k(i)])
+        add(k(i), 12 * n + 6 * i + 9, EVEN, [Z] + mkli(n - i - 1, lambda j: gs(n - j - 1)))
+        add(f(i), 12 * n + 6 * i + 11, ODD, [e(i)])
+        add(gs(i), 4 * i + 6, EVEN, [f(i), k(i)])
+    return g.dumps()
+
+
+GENS = {"recursiveladder": recursiveladder, "switchallexp": switchallexp, "switchbestexp": switchbestexp,
+        "friedmannsubexp": friedmannsubexp, "fearnleysubexp": fearnleysubexp,
+        "fearnleysubexp-nogadget": lambda n: fearnleysubexp(n, False)}
 
 if __name__ == "__main__":
     sys.stdout.write(GENS[sys.argv[1]](int(sys.argv[2])))
