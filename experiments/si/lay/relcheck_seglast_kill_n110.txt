@@ -1,0 +1,8 @@
+n 110 states 17 fallback flags [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+tau constant on [a, b]: True | no fallback at transitions a..b-1: True
+phase/run boundary before a: tau_(a-1) == tau_a: False | fallback at a-1: False
+|X_b| 51 |RO_b| 13 |CW_b| 4 |CH_b| 3
+REL-admissible on [a, b]: True | REL at a - 1: False
+switchers at t = 2: [(1, 82, 25, 'switches again at', [7])]
+SEG-LAST fails at t: True
+observed GEN_W failures on [a, b] (S1 rank order): 0

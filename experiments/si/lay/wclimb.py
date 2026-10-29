@@ -4,7 +4,8 @@
 OBJ=T adds 5 * (steps with an unready W-sink). OBJ=H (after W-GROW died, lay/instances/wgrow_kill_n90):
 kill = H-GROW failure (third component) or SINK-SWITCH / SEG-LAST / sink-lemma failure (x 1000); W-GROW failures only shape the score.
 OBJ=S (after H-GROW died, lay/instances/hgrow_kill_n89): kill = SINK-GROW / SEG-LAST / sink-lemma failure; shaping 10 * (W-GROW and
-H-GROW failures) + sum over steps of 100 // (1 + ready W-sinks + H-sinks switching to target). Mutations as lwp/xclimb.py. Usage: wclimb.py SEED.pg SEED.start|- STEPS RNGSEED NMAX OUTPREFIX"""
+H-GROW failures) + sum over steps of 100 // (1 + ready W-sinks + H-sinks switching to target). OBJ=S2: same kill, shaping 300 // (1 + H-sink
+switches) at steps with no ready W-sink and 100 // (1 + ready W-sinks) at steps with no H-sink switch. Mutations as lwp/xclimb.py. Usage: wclimb.py SEED.pg SEED.start|- STEPS RNGSEED NMAX OUTPREFIX"""
 import sys, os, random
 os.environ["PMODE"] = "1"
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
@@ -28,6 +29,8 @@ def sc(g, st):
         return (1000 * f + 100 * d["HG"] + 20 * d["WSR"] + 5 * d["S"] + 3 * d["K"] + d["U"], d["WSR"], 1000 * f + d["HG"])
     if OBJ == "S":                        # after W-GROW and H-GROW died: kill = SINK-GROW / SEG-LAST / sink-lemma failure
         return (1000 * f + 10 * (d["HG"] + d["WSR"]) + d["SUP"] + d["U"], d["HG"] + d["WSR"], f)
+    if OBJ == "S2":                       # as S, shaping per step: 300 // (1 + H-sink switches) at W-blocked steps, 100 // (1 + ready W-sinks) at H-blocked ones
+        return (1000 * f + d["NEAR"] + d["U"], d["WSR"], f)
     f += d["WSR"]
     if OBJ == "T": return (100 * f + 5 * d["S"] + 3 * d["K"] + d["U"], d["S"], f)   # OBJ=T: also steps with an unready W-sink
     return (100 * f + 3 * d["K"] + d["U"], d["K"], f)

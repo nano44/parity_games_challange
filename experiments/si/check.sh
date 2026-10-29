@@ -481,3 +481,17 @@ if grep -q "FAIL" <<<"$o"; then echo "lay: unexpected failure on hgrow_kill_n89"
 python3 -I lwp/seglast.py --one lay/instances/hgrow_kill_n89.pg lay/instances/hgrow_kill_n89.start | grep -q "SEGLAST PASS"
 python3 -I root/n5bcmp.py lay/instances/hgrow_kill_n89.pg lay/instances/hgrow_kill_n89.start | grep -q "n5b iterations 13 fallbacks 0 states 14 | n5x states 14 | identical state sequences: True"
 echo "lay (box 27: hgrow_kill_n89 kills H-GROW, n5b identical; W-GROW, SINK-GROW, SEG-LAST hold): PASS"
+# box 27: lay/instances/seglast_kill_n110 kills CONJECTURE SEG-LAST and SINK-GROW: REL segment [2, 8] of the run [2, 8], t = 2, the only
+# switch is vertex 1, 82 -> 25, and 1 switches again at 7. Reproduced from n5b alone (lay/relcheck.py); observed GEN_W holds.
+echo "8a2201816d3a522cd2c4da238678d9f6b075f68a  lay/instances/seglast_kill_n110.pg" | sha1sum -c --quiet
+echo "107cbf0828cdf1120d8f70b80cdef0e75e9908a4  lay/instances/seglast_kill_n110.start" | sha1sum -c --quiet
+o=$(python3 -I lwp/seglast.py --one lay/instances/seglast_kill_n110.pg lay/instances/seglast_kill_n110.start); grep -q "SEGLAST FAIL" <<<"$o"
+grep -q "EXAMPLE ('lay/instances/seglast_kill_n110.pg', 2, 8, \[2\]" <<<"$o"
+o=$(python3 -I lay/wsink.py --one lay/instances/seglast_kill_n110.pg lay/instances/seglast_kill_n110.start); grep -q "^SS FAIL" <<<"$o"
+for k in WSOFF HSOFF HSR WSL NOSINK; do grep -q "^$k PASS" <<<"$o"; done
+o=$(python3 -I lay/relcheck.py lay/instances/seglast_kill_n110.pg lay/instances/seglast_kill_n110.start 2 8 2)
+grep -q "tau constant on \[a, b\]: True | no fallback at transitions a..b-1: True" <<<"$o"; grep -q "tau_(a-1) == tau_a: False" <<<"$o"
+grep -q "REL-admissible on \[a, b\]: True | REL at a - 1: False" <<<"$o"; grep -q "switchers at t = 2: \[(1, 82, 25, 'switches again at', \[7\])\]" <<<"$o"
+grep -q "SEG-LAST fails at t: True" <<<"$o"; grep -q "observed GEN_W failures on \[a, b\] (S1 rank order): 0" <<<"$o"
+python3 -I root/n5bcmp.py lay/instances/seglast_kill_n110.pg lay/instances/seglast_kill_n110.start | grep -q "n5b iterations 16 fallbacks 0 states 17 | n5x states 17 | identical state sequences: True"
+echo "lay (box 27: seglast_kill_n110 kills SEG-LAST and SINK-GROW, reproduced from n5b alone; sink lemmas hold): PASS"

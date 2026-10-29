@@ -1,4 +1,4 @@
-# N5-LAY (box 27): frame-wise sinks; SEG-LAST reduces to SINK-GROW (a frame-wise settled set grows at every step); W-GROW and H-GROW DEAD
+# N5-LAY (box 27): frame-wise sinks (Theorem SINK-STEP); W-GROW, H-GROW, SINK-GROW and CONJECTURE SEG-LAST DEAD (seglast_kill_n110)
 L-SI successor 23 (Opus 5.5; D18, Lead reading L40). Lead's brief 2026-10-29 08:10Z, STEP 1: «the layered K-REDUCTION (queue item 1):
 prove CONJECTURE SEG-LAST without (H4′_rel) (GEN_W may stay), or find a SEG-LAST failure inside a REL segment. ... If a proof needs a new
 hypothesis, state it and measure how often it holds on the library and on the kill instances.» Working note, unrefereed, not frozen. Not a
@@ -13,7 +13,8 @@ DATA / READING / DEAD. Counts are TRANSITIONS. Tools: experiments/si/lay/ (wsink
 | §2 | Corollary: SEG-LAST without (H4′_rel) on every REL segment where W-GROW or H-GROW holds at each step (GEN_W kept); contains LAST-STEP (box 26 §7) and K-REDUCTION (box 26 §8) | PROVED (lane) |
 | §3 | W-GROW and H-GROW at every step of the library (14,103 steps, 3,134 segments) and of the three box-26 kill pins, including the 4 steps with no frontier vertex; the box-26 N_t-version (MUT) fails there | DATA |
 | §4 | W-GROW DEAD (lay/instances/wgrow_kill_n90, t = 1) and H-GROW DEAD (lay/instances/hgrow_kill_n89, 6 of 7 steps), both two engines; dual obstructions (a W-sink waits for its target's honest value; an H-sink waits for its W-chain); CONJECTURE SINK-GROW (W-GROW ∨ H-GROW at each step) survives both; kill searches on SINK-GROW | DEAD; CONJECTURE; DATA |
-| §5 | where a proof of W-GROW stands; the remaining obstruction (a zig-zag of unready W-sinks) | READING, OPEN |
+| §4 | CONJECTURE SEG-LAST DEAD and SINK-GROW DEAD: lay/instances/seglast_kill_n110 (n 110, REL segment [2, 8], t = 2: the only switch is an intermediate one, 82 → 25 at vertex 1, which switches again at 7); n5b alone reproduces it; observed GEN_W holds | DEAD |
+| §5 | the deadlock that kills SEG-LAST; what survives (count forms) | READING, OPEN |
 
 ## 0. Setting and premises
 As N5-LWP-box26 §0, §7, §8 (GRUN §4 notation). A maximal REL-admissible segment [a, b] of one fallback-free run, GEN_W assumed, NO (H4′_rel).
@@ -116,15 +117,44 @@ RO_b, σ̄_t = σ̄_b on [a, b] (REL); every cycle of CW_b (CH_b) is a W-cycle (
   SEG-LAST or sink-lemma failure; shaping: W-/H-GROW failures and 100 // (1 + support), support = ready W-sinks + H-sinks switching to
   target) from hgrow_kill_n89 (two seeds), wgrow_kill_n90, karena_kill_n71: results below.
 
-## 5. Where a proof of W-GROW stands (READING; OPEN)
+- SEG-LAST and SINK-GROW are DEAD (DEAD.md box 27): OBJ=S from hgrow_kill_n89, step 6,286: lay/instances/seglast_kill_n110.pg (n 110,
+  sha1 8a220181…; .start sha1 107cbf08…). The run is the phase [2, 8] (τ changes at 1 → 2; no fallback); it is one maximal REL segment
+  ((H4′_rel) fails: a 16-vertex J_b-cycle, none of it settled before 8). Sinks per step (lay/sinkstep_seglast_kill_n110.txt):
+  | t | W-sinks (σ, target, ready) | H-sinks (σ, target, jW, σ_{t+1}) | switches (L = last) |
+  | --- | --- | --- | --- |
+  | 2 | 37 (49, 35, no) | 1 (82, 21, 31, 25) | 1: 82 → 25 (not last) |
+  | 3 | 37 (49, 35, yes) | 1 (25, 21, 31, 25) | 37 → 35 L |
+  | 4-6 | 40; 69; 26 (ready) | 1 stays at 25 | 40, 69, 26 L |
+  | 7 | 4 (ready) | 1 → 21 | 1 L, 4 L, 30 L |
+  At t = 2 no vertex switches for the last time: SEG-LAST fails. Independent reproduction from n5b alone (lay/relcheck.py: phase, run,
+  REL-admissibility with σ̄ from n5b, maximality, the switch history; lay/relcheck_seglast_kill_n110.txt). Observed GEN_W: 0 failures
+  (n5x W-values; S1-rank valuations of n5b's plays). The bound itself is not touched: b − a = 6 ≤ 7 switching Even vertices (all in E_b).
+- Consequence for the lane's route (READING): (H4′_rel) cannot be removed from STATIC-DEPTH-REL by a per-transition "last switch" argument;
+  Theorem SINK-STEP stays PROVED (lane) as a statement about which switches are final, and its sink lemmas held at every step of every
+  instance (incl. this one). The surviving targets are COUNT forms: b − a ≤ (Even vertices switching in [a, b]) (SEG-COUNT; 6 ≤ 7 here),
+  b − a ≤ n − 1 on REL segments without (H4′_rel), and box 26's SWL / NEVEN for L-WAVE′.
+
+## 5. The deadlock (READING; was: where a proof of W-GROW stands)
 - An unready W-sink w at t: y_w ∈ S^W_t, and by READY y_w ∉ S^H_t, so jH(w) ∈ U^H_t; and (SW) at w's final switch t_w > t forces
   Ξ_{t_w}(y_w) ▷ Ξ_t(y_w): y_w's honest value must still rise strictly, which goes through its H-chain (Odd vertices of RO_b and Even
   vertices of T are fixed, so Ξ_s(y_w) is a strictly monotone function of Ξ_s(jH(w))).
 - The H-chain from jH(w) ends at an H-sink h (H-chains have no repeats), which is off target and ready (SINK-OFF). If h is also a W-sink, it
   is a frontier vertex and W-GROW holds. Otherwise jW(h) ∈ U^W_t and the W-chain from h ends at another W-sink. So W-GROW fails at t only
   if this zig-zag (W-sink → H-chain → H-sink → W-chain → W-sink → …) closes into a cycle on which every W-sink is unready and every
-  H-sink is passed over by S4a in favour of a W-better arena edge. That is box 26's J_b-cycle obstruction in its sharpest form; nothing proved
-  here excludes it.
+  H-sink is passed over by S4a in favour of a W-better arena edge. That is box 26's J_b-cycle obstruction in its sharpest form.
+  seglast_kill_n110 realizes it at t = 2 (W-sink 37 → H-chain → H-sink 1 → W-chain 31, 75, …, 37), and S4a resolves it by an INTERMEDIATE
+  switch of the H-sink (to an arena edge that is neither its current nor its final successor), which raises the blocked W-sink's target value.
 - A time-only argument cannot close it: with L(x) the last switch of x, the lemmas give L(x) ≤ max(f^W(jW x), f^H(jH x)) and
   f^W(x) = max(L(x) + 1, f^W(jW x)) (f^W, f^H the first settled states), the recursion of R82's depth; a step t with no last switch then
   forces a jW/jH-cycle of vertices with L > t, and the recursion allows it.
+
+## DONE / FINDINGS / NEEDS
+- DONE: this note; tools experiments/si/lay/ (wsink.py, wclimb.py, ssamp.py, sinkstep.py, anat.py, relcheck.py); data lay/*.txt; pins
+  lay/instances/ (wgrow_kill_n90, hgrow_kill_n89, seglast_kill_n110, each with its S3 start); DEAD.md "box 27"; check.sh "box 27".
+- FINDINGS: (1) PROVED (lane): Lemmas W-STICK, H-STICK, READY, SINK-OFF and Theorem SINK-STEP (no (H4′_rel); GEN_W): a switch to the
+  final successor whose W- or H-successor in J_b is settled in that frame is final; ready W-sinks switch at once; it contains LAST-STEP and
+  K-REDUCTION. (2) DEAD: W-GROW (wgrow_kill_n90), H-GROW (hgrow_kill_n89), SINK-GROW and CONJECTURE SEG-LAST (seglast_kill_n110: a REL
+  segment of a fallback-free run where transition 2 → 3 is an intermediate switch of one vertex, no vertex's last switch; two
+  implementations; observed GEN_W holds). (3) SEG-LAST without (H4′_rel) is FALSE; the per-transition route to dropping (H4′_rel) is
+  closed. The segment bound itself (b − a ≤ n − 1, and b − a ≤ switching Even vertices) is not touched by any instance found.
+- NEEDS: none from the owner.

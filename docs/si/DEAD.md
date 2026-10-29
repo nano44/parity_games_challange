@@ -429,3 +429,18 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
   (38/70 → 48, 49 → 38, 64 → 49, 77/78 → 64, 22 → 77, 28/33 → 22), and switch only at t = 7, when their W-chain end 34 settles. Checks: n5b
   state sequence identical (13 iterations, 0 fallbacks); honest successor maps (σ̄) and improving sets equal n5b's at all 14 states.
   Obstruction: an H-sink's W-chain is still unsettled, so S4a (W-optimal) does not yet take its target. W-GROW, SINK-GROW and SEG-LAST hold.
+- SEG-LAST (CONJECTURE, box 26 §4: «in every maximal REL-admissible segment [a, b], every transition t → t + 1 (a ≤ t < b) is the last
+  switch in [a, b] of some Even vertex»; 0 failures in 3,134 library segments and every box-26 climb) and SINK-GROW (box 27: «at every step
+  of a REL segment the W-settled or the H-settled part of E_b grows»; it implies SEG-LAST by Theorem SINK-STEP): killed by
+  experiments/si/lay/instances/seglast_kill_n110.pg (n 110, sha1 8a2201816d3a522cd2c4da238678d9f6b075f68a; S3 start written out as
+  seglast_kill_n110.start, sha1 107cbf0828cdf1120d8f70b80cdef0e75e9908a4), found by lay/wclimb.py OBJ=S from hgrow_kill_n89 in 6,286 steps.
+  Run = phase [2, 8] (τ changes at 1 → 2, no fallback), one maximal REL segment [2, 8] (6 transitions; (H4′_rel) fails: a 16-vertex
+  J_b-cycle {1, 4, 7, 26, 31, 32, 34, 35, 37, 40, 69, 75, 83, 85, 106, 109}, none settled before 8). At t = 2 the ONLY switch is vertex 1:
+  82 → 25; vertex 1 switches again at t = 7 (25 → 21 = σ_8(1)). So 2 → 3 is no vertex's last switch. Observed GEN_W holds on [2, 8] (0
+  failures, by n5x's W-values and by S1-rank valuations computed from n5b's plays). Checks: n5b (L-COMP, SPEC mode) state sequence identical
+  (16 iterations, 0 fallbacks); lay/relcheck.py recomputes phase, run, REL-admissibility (σ̄ from n5b on RO_b, CW_b, CH_b), maximality,
+  the switch history and observed GEN_W from n5b ALONE (lay/relcheck_seglast_kill_n110.txt). Obstruction (the deadlock of note §5): at
+  t = 2 the only W-sink 37 (target 35) waits for 35's honest value, and the only H-sink 1 (ready, target 21) waits for its W-chain (1 → 31 →
+  … → 37 → 35); S4a breaks it with an INTERMEDIATE switch of 1 (82 → 25), after which 37 is ready (t = 3) and a W-snake 37, 40, 69, 26, 4
+  settles one vertex per step; 1 reaches 21 at t = 7. What survives here: b − a = 6 ≤ 7 = Even vertices switching in [2, 8] (all in E_b,
+  |E_b| = 48), so the COUNT forms (SWL-type) and b − a ≤ n − 1 are not touched.
