@@ -234,8 +234,8 @@ done
 # R87 (successor 21): exact N3-LEVEL checker; pp_K12 hyp flips pinned, strict control must fail on the coverage pin
 out=$(python3 -I n3/n3x.py --one usplit/instances/pp_K12_n161.pg | head -1)
 [[ "$out" == *"hyp=60 "* ]] || { echo "n3x pp_K12 drifted: $out"; exit 1; }
-python3 -I n3/n3x.py --one n3/instances/n3cov_lean.pg n3/instances/n3cov_lean.start | grep -q "N3X PASS" || { echo "n3x n3cov_lean: not PASS"; exit 1; }
-MUT=1 python3 -I n3/n3x.py --one n3/instances/n3cov_lean.pg n3/instances/n3cov_lean.start | grep -q "N3X FAIL" || { echo "n3x strict control did not fail"; exit 1; }
+python3 -I n3/n3x.py --one n3/instances/n3cov_lean.pg n3/instances/n3cov_lean_fixed.start | grep -q "N3X PASS" || { echo "n3x n3cov_lean: not PASS"; exit 1; }
+MUT=1 python3 -I n3/n3x.py --one n3/instances/n3cov_lean.pg n3/instances/n3cov_lean_fixed.start | grep -q "N3X FAIL" || { echo "n3x strict control did not fail"; exit 1; }
 # R91 (successor 22): UL_C reader kill pinned (sha1, U event index L = 10 > |U| - 1 = 7); lib-free control: L = 6 gives no violation
 [[ "$(sha1sum ul/instances/reader_L10_n36.pg | cut -c1-12)" == "316443126793" ]] || { echo "reader_L10 sha1 changed"; exit 1; }
 out=$(python3 -I ul/ulx.py --one ul/instances/reader_L10_n36.pg ul/instances/reader_L10_n36.start | head -1)

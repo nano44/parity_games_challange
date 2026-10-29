@@ -472,27 +472,23 @@ Every answer measured from the repository; commands named.
    fetched ref, so the pin cannot be checked yet; I checked the packet by sha1 (cbea0739…) against my own commit 1afccb51 instead.
    (iii) The container clock is slow vs the Lead's stamp (07:50 vs 07:53): stamp only from date -u, never ahead of it.
 
-## Resume point (overwritten at handover, LANE-RESTART step 1; successor 29, box 49, FINAL, written 19:0xZ by date -u)
-Successor 29 (Opus 5.5, D14/D18, L40), session_01NiWP12P8PXMiCBMBQxs3rM. Handover check 366fd235 (Lead 5/5, GO 17:24Z). ~480k context at parking.
-### DONE (all pushed with scripts/push.sh, rc 0, VERIFY PASS; SHAs reported to the Lead)
-- P-N5-OFFMONO-add-box49 FROZEN (b2a78eb1, sha1 5911aba8…; PINNED): Z-CONST, CHAIN-COUNT′ (cut ZCH ∩ CYC), ZCH-COUNT; zch.py.
-- P-N5-EPC-fixes-box48 FROZEN (c6a5d467, sha1 174aedd5…; Lead pinning, R73 drafting): R1-R6, remarks, §5 DATA; 41 quotes.
-- P-N5-OFFMONO-add2-box49 FROZEN (6ef3dd25, sha1 f2d123ef…; PINNED): FT-COUNT, FT-CONST, CHAIN-COUNT″; §4 code-level PF-CHOICE / TIE-CHARGE vs si.py.
-- P-N5-OFFMONO-add3-box49 FROZEN (8b7e2e6e, sha1 b7cd0ff1…; pin pending): OFFSET-MONO⁺ (REFEREE's OFFADD-N2 PROVED), CHAIN-COUNT‴ (cut at EXIT
-  only). The OFFMONO review unit is now OFFMONO + add1 + add2 + add3.
-- N5-KPOLY §10-§14 (working doc); docs/new/N5-ALTLIT-box49.md (READING on Friedmann LMCS 2011 / arXiv 1106.0778 and HMZ arXiv 1008.0530, full
-  texts; L-SI 19 reads it).
+## Resume point (overwritten at handover, LANE-RESTART step 1; successor 30, box 49, PARKED, written 00:2xZ 2026-10-29 by date -u)
+Successor 30 (Opus 5.5, D14/D18, L40), session_01V5yGRXpuZ54sFHkJS3KYwp. Parked on the Lead's word of 00:10Z ("park with a resume point").
+### DONE (all pushed with scripts/push.sh, VERIFY PASS; SHAs reported to the Lead)
+- docs/new/P-N5-OFFMONO-fixes-box49.md FROZEN (34d176ab, sha1 490fc7f3…; 76 quotes pinned). Lead drafts R75.
+- docs/new/P-N5-RESTRICT-fixes-box48.md FROZEN (a99dee17, sha1 f33f00b3…; 31 quotes pinned). Lead drafts R79.
+- docs/new/P-N5-FBCK-box49.md FROZEN (0e63596d, sha1 7747ecf2…): Theorem FB-C^K, f ≤ n_K·|𝒞^K_f| (K = reachable from an Even choice
+  vertex). REFEREE f2d22ad7: all SIGNED, Cor. (ii) as an implication, no gap, notes FBCK-N1..N4. REFEREE-2 after CORE.
+- docs/new/N5-READER-box49.md (working note) §0-§10: dead graph-local restrictions; SWE-LIN DEAD (= L-SI SW-LIN); NOSW, SW-AMORT PROVED (lane);
+  W-MONO DATA, W*-REACH DEAD; CF-SMALL DEAD; read configurations; FB-C° CONJECTURE; FB-LIN climbs no kill; MONO-CONF, SMALL-CK DEAD; §10 OPEN.
 ### IN FLIGHT
 - Nothing running.
-### NEXT (successor 30)
-1. P-N5-OFFMONO-fixes (covering OFFMONO + add1 + add2 + add3) when REFEREE-2's reports and both §Cs are in. Known from REFEREE 15 (Lead
-   18:25Z): R-N5-OFFMONO.md 04a563d3, OFFMONO-N1..N4 (N1: "parent changed" 53/60/48 vs the packet's 28/42/26 — state offmono2.py's definition:
-   counted only when p ≠ c, q has a Q-vertex on its (t+1)-play, and par_t(q) ≠ p; N4: hypothesis never bites, now a theorem by add3);
-   R-N5-OFFMONO-add.md c2a97189, OFFADD-N1 (name the sum form for Remark (i)), OFFADD-N2 (answered by add3). Template P-N5-EPC-fixes-box48.md;
-   quotecheck2.py with REV:FILE at each §C commit.
-2. (DONE by successor 30: docs/new/P-N5-RESTRICT-fixes-box48.md.) P-N5-RESTRICT-fixes after its reviews; carry successor 28's §4 correction (§4's first READING uninformative on nep90/nep76/long121).
-3. Proposed (not routed): N5 on Friedmann's H_n ([F] §8.4), counting phases / τ changes / λ_W changes / ALT per phase (N5-ALTLIT §4).
-4. Not routed: G-N1-LB.
+### NEXT (successor 31)
+1. P-N5-FBCK fixes file once REFEREE-2 has reported and both §Cs are in (notes FBCK-N1..N4 at claude/referee f2d22ad7). Model:
+   P-N5-RESTRICT-fixes-box48.md; quotes with [Q path@commit:lines], experiments/new/box49/quotecheck3.py (--locate, then check, --mut control),
+   pin count + control + sha1 in experiments/new/check.sh, guarded NOT RUN if a source commit is absent.
+2. FB-LIN (f ≤ n per phase): OPEN. Obstruction in N5-READER §10: no inequality between LEV^K_C and LEV^K_{C′}. The tie candidate in §10 is untested.
+3. FB-C° in the read frame (embedded readers): OPEN (FBCK §3).
 
 ## Dead ends (successor 30; also in docs/new/N5-READER-box49.md §5)
 - PRED-XR / PLAY-XR ("Ξ-changes of vertices with an Even predecessor / on an Even vertex's honest play ≤ 2n per phase"): DEAD,
@@ -515,6 +511,11 @@ Successor 29 (Opus 5.5, D14/D18, L40), session_01NiWP12P8PXMiCBMBQxs3rM. Handove
   (σ̄ on gates 0, 1, 6); njb_reabs65_n48 [2,68]: 2 configurations alternating over 29 fallbacks. SMALL-CK: DEAD by l121_cf_emb12 (|𝒞^K_f| = f = 8).
 
 ## Things only I know (successor 30)
+- fbconf.py prints its counters in sorted-key order; check.sh greps must not anchor on the first key (an ABA counter broke my FBCK pin once;
+  VERIFY caught it, nothing pushed).
+- The "compare: 5 games ... solvers ['wrong']: FAIL (5 bad)" line in verify output is the harness's intended control, not a failure.
+- runfbclimb.py (L-SI) is not on trunk; I ran a scratch copy with only HERE/ROOT changed. Climbs: ~3,000 steps take ~15 min on n 48.
+- Referee §C commits often sit on claude/referee or claude/referee-2 before the Lead merges; quote them there and guard the pin.
 - An edge that is never improving (Ξ(o) ⊲ Ξ(σ_t p) at every t) embeds a reader at any Even vertex p of long121: all 36 Even vertices accept
   it with the run SAME. In a class with Ω(c) even, o ⊕ lengthens, so o ⊕ min over S ∪ succ(p) is always worse for Even than p's choice.
 - Even readers switch far less than their Ξ-leader changes (pair {6, 19}: 22 flips, 11 switches): S4a picks the W-optimum of the arena, a
