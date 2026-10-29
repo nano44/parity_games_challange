@@ -37,6 +37,10 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   set) and (ii) have priorities above q's (below the cycle priority VJ ignores them and path length makes the forward chain better).
   n5sf.py runs from a worktree /tmp/claude-0/lnew of origin/claude/l-new with absolute game paths.
 - Tools: experiments/red/sf/dlchain.py (dwN = dlchain.py N 1), instances/dw_3..8.pg.
+- RESUME POINT (18:50Z): R116 pushed (6e7acb3b, 41811710, bc9334f6). Both engines agree to N = 9 (9697; the 19*2^N - 18 fit is exact
+  to N = 8 only); SBC exact to N = 9; Oink OK N 3..7. sf2 N = 10 was running in the container (scratch big_sf2_10.txt); if lost, re-run
+  `python3 experiments/red/sf/dlchain.py 10 1 > g.pg; python3 experiments/red/sf/sf2.py g.pg` (~40 min). Open: a proof of the binary word
+  (induction over the run); PV_rel when L-NEW lands it (h_i in R, h0 flips 2^N - 1); the Lead's re-run request (CHECKER / L-NEW).
 
 ## Successor 28 HANDOVER (written 2026-10-29 ~17:40Z, date -u; ~400k context)
 - DONE (claude/l-red, push.sh VERIFY PASS each push): c619e6eb handover check; 61ef6237 R114 (sf2 engine; switchbestexp SBC linear;
