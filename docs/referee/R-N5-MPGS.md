@@ -111,3 +111,39 @@ step-4 pass, not a TARGET.md claim; G-N5-TIME stays OPEN.
   (B) SIGNED, no gap; verified on every game of my corpora (22,487 hits, 0 failures); (H1), (H3) needed (MUT 3, 1 bite); (H2)'s need not exhibited.
 - λ-run question: the Corollary holds verbatim on any stretch with λ(v) fixed (§1b), so on λ-runs; no extra step needed.
 - NEEDS: Lead: the MPGS §C word when REFEREE-2 reports (successor 18 if I have handed over); route MPGS-N1..N5 to L-LIT.
+
+## §C. Joint gap map with REFEREE-2 (written 2026-10-29T12:17Z by date -u, on the Lead's word of 12:14Z; REFEREE successor 18, Opus 5.5, D15)
+REFEREE-2's report of record: docs/referee-2/R2-N5-MPGS.md (successor 19, commit 0c4524f0, sha1 5ed019b7…). Concurring supplementary:
+docs/referee-2/R2-N5-MPGS-s20.md (successor 20, c5f9e76e, sha1 ee4ca241…). Both read after this report (c3a0b5d7, §1b 7cd20b05) was pushed.
+- Independence: clean on all three sides (REFEREE-2 names-only counts 0 at 11:17Z / 11:25Z / 11:33Z / 11:36Z; my predecessor saw 16 names only).
+  The three reviews share no code (rl_engine + gateshut_probe.py; gateshut_check.py; gs_check.py + si.py).
+- VERDICTS IDENTICAL. Every item (A0-A2, B0-B2, Added statements (A), (B)) is SIGNED by all three reports; none FALSE; no gap on any side.
+  Pinned re-runs (quotecheck 9/0, T33, T34 four lines + S3/F 228/350/510/872) reproduced exactly by all three. B0 is "CHECKED" here and
+  "SIGNED (well formed)" there: same content. JOINT GAP MAP: EMPTY.
+- Data agree: GATE-SHUT 0 violations everywhere (mine 22,487 hits; R2-19 72,985 gates; R2-20 every-τ runs, 0). Hypothesis controls agree in
+  every report: (H1) and (H3) each bite alone (mine MUT 3 / MUT 1; R2-19 noH1/noH3; R2-20 X1/X3), (H2) alone never bites (MUT 2; noH2 0;
+  X2 0 of 1,648).
+
+| joint note | REFEREE (this report) | REFEREE-2 | class |
+| --- | --- | --- | --- |
+| J1 (H2) necessity not exhibited; (H1) alone already gives e ∉ ρ (if ρ reaches e it continues to h = τ(e), so e is on ρ's cycle and rank(c_h) ≥ rank(e), against (H1)); whether (H1) + (H3) suffice is OPEN | MPGS-N3 | N-MPGS-1, N-GS-3 | optional (a possible strengthening for L-LIT; not claimed, not signed). I checked the e ∉ ρ step: correct |
+| J2 T34 tests (H1) through d1 only; exact on H_n since d1 < d2 < d3 < e in each gate (hn.py l. 46-49) | MPGS-N4 (second half) | N-MPGS-2, N-GS-5 | optional (DATA comment in B3) |
+| J3 T34 imports L-COMP code from a hard-coded ROOT (the working tree at run time, not the freeze commit) | MPGS-N4 (first half) | — (both ran it in a worktree; not raised) | optional (DATA reproducibility; one line in B3 or pin ROOT to the script's commit) |
+| J4 Corollary (A)'s proof skips the rise/fall summation (R − F = ΔΦ ≤ W, F ≤ W·NM, #MATCHED ≤ R) and leaves "Φ changes only at P-changes" implicit | MPGS-N1 | R2-20 §1 table ("proof compressed") | optional, recommended: the inference is valid as a sketch; restore MATCHPHI's three lines |
+| J5 step 3 uses h ∉ Q and d Even (π_1 = d) | MPGS-N2 | R2-19 §2 (Q distinct, π Even), R2-20 §2.4 | optional (wording) |
+| J6 Standing premise: Ξτ(x) = V^d_{τ,τ̄}(x) is S1-val's definition; that S1's procedure outputs it is SPEC conformance, the premise R57 (b) records | — (used, not flagged) | N-GS-1 | optional for the lane; the RESULTS entry should carry the clause as R57 (b) does (Lead/CHECKER) |
+| J7 Fact B1 holds without its restriction: G^d's order is the exact reverse of G's on ALL valuations (reward_d(c) = −reward(c) − 1, weights negate, the length rule flips with c's parity) | — | N-GS-2 | optional (one line). I re-derived it: Ω(c) even, p′ = 2r → p′_d = 2r + 1, reward −(2r + 1); Ω(c) odd, −(2r + 1) → 2r; both = −reward − 1. Correct |
+| J8 the Corollary (B) uses only the hypotheses at the transition's source state; π may differ per state | §2 "the first claim is the Lemma per state" | N-GS-4, N-MPGS-6 | optional (one clause in RESULTS) |
+| J9 B4 READING "(H1) automatic in Friedmann's 1-sink games" holds only where c_h is the sink; (H1) fails on some H_n gate-states | MUT 3 bites on H_3 (§2) | N-MPGS-4 | optional (READING, not signed) |
+| J10 data scope: gate enumeration capped | DFS budget 4,000 nodes | π ≤ 6 / 40 per (e, d) (R2-19); ≤ 64 per (state, e, d) (R2-20) | none (the proof has no length condition) |
+| J11 Part (A) = MATCHPHI in mathematics; the "Uses" line repairs MATCH-N1 = N-MP-1 | MPGS-N5 | §1 of both | closed |
+| J12 W = K(K+1)/2 sharp at NM = 0 (all-matched chains) | MATCH-N4 | N-MP-2 | optional (record beside (A)) |
+| J13 a MATCHED change raises the weight of the CURRENT set (additivity, one line) | MATCH-N2 | N-MP-3 | optional (one line) |
+| J14 L-COMP's "31 on alt_all" | MATCH-N3 (mine 41 at n ≤ 100) | N-MP-4 (62 with gate_K64_n581) | MOOT: MPGS A3 now says "at most 62 (n 581), max NM/n 1.18 (pl130_n40)", consistent with both (mine excluded n > 100) |
+| J15 NM ≤ 1 per (vertex, phase) on random games; carries come from library / lane instances | — | N-MP-5 | optional (DATA reading) |
+
+- E-ITEMS (must change before landing): NONE. Every signed statement and proof is correct as frozen at a23179b0. The landing text should carry J6
+  (standing premise) and may carry J7, J8, J12 as referees' remarks; J1-J5, J13, J15 go to L-LIT's fixes file as optional.
+- λ-runs (my §1b): the MATCH-Φ Corollary holds verbatim on any stretch with λ(v) fixed. REFEREE-2 did not address this question (it was asked of
+  the first referee); nothing in either REFEREE-2 report contradicts it (N-MPGS-6: the Lemma uses no phase).
+- Nothing open on MPGS. NM is OPEN; G-N5-TIME stays OPEN.

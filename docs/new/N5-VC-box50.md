@@ -92,8 +92,8 @@ execution's joint (σ, τ) family. SCOPE=ent uses run ENT.
 | --- | --- | --- | --- | --- |
 | vk10 (run VC) | runfam_K10 | 64 | 3,000 | VC 3 (no gain) |
 | vpf, vpf2, vpf3 (run VC) | pftheta34_n32 | 48 | 3,000 / stopped by me (last gain at step 429) / 20,000 | 3, 3, **4** (vpf3_vc4, n 48, run [5, 27] of 22, step ~5,600); 5-sets reach 22 of 32 traces |
-| vpf4 (run VC) | vpf3_best | 96 | running at writing | 4, 5-sets 22.8 of 32 |
-| vsym, vsym2 (exec joint VC) | counter_symsi_6 | 80 / 120 | 3,000 / running | 4 (vsym_vc4, n 80); 5-sets 24 of 32 |
+| vpf4 (run VC) | vpf3_best | 96 | stopped at 12,545 (handover) | 4; 5-sets 23 of 32 |
+| vsym, vsym2 (exec joint VC) | counter_symsi_6 | 80 / 120 | 3,000 / stopped at ~5,550 (handover) | 4 (vsym_vc4, n 80); 5-sets 25 of 32 |
 | ent1, ent2 (run ENT) | pftheta34_n32, ent1_best | 48 / 96 | 20,000 each | **ENT 6** (ent1_vc6, n 48, run [1, 18] of 17; run VC 3), ENT 6 at n 96 (no gain) |
 - DEAD: CONJECTURE VC-RUN with the library constant (run VC ≤ 3). Killed by box50/out/vpf3_vc4.pg (n 48, sha1 1aef63fe…; .start = S3 start):
   the run [5, 27] shatters {(7, 20), (8, 0), (20, 19), (39, 32)}. It is two-engine (§3). The O(1) form survives (no 5 at n ≤ 96 / 120).

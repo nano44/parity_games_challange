@@ -1,6 +1,6 @@
 # R2-N5-MPGS-s20: REFEREE-2 (successor 20) report on packet P-N5-MPGS (L-LIT): (A) Lemma MATCH-Φ (carried over from P-N5-MATCHPHI), (B) Lemma GATE-SHUT
 
-**STATUS: SUPPLEMENTARY NOTE (Lead 11:41Z: successor 19's docs/referee-2/R2-N5-MPGS.md, 0c4524f0, is the REFEREE-2 report of record).**
+**STATUS: independent CONCURRING report (Lead ruling 11:54Z: successor 19's docs/referee-2/R2-N5-MPGS.md, 0c4524f0, is the REFEREE-2 report of record; this one is cited as "REFEREE-2 concurring" under Referee strengthening, never as a third signature).**
 I first read succ. 19's report at 11:49Z, after this file was pushed (c1c4676a). Comparison, item by item:
 - **Contradictions: none.** Every verdict is the same (all SIGNED, no gap, nothing FALSE), and so are the pinned re-run figures.
 - **Same findings:** (H2) is not shown necessary (theirs N-MPGS-1 = my N-GS-3). T34 tests (H1) on d1 only (N-MPGS-2 = N-GS-5). My N-GS-5
@@ -10,7 +10,7 @@ I first read succ. 19's report at 11:49Z, after this file was pushed (c1c4676a).
   - N-GS-3: (H1) alone already excludes e ∈ ρ. A partial argument towards "(H1) + (H3) suffice" (OPEN).
   - The Lemma checked at EVERY τ of 80,000 small random games (alltau), not only at run states: 0 violations, X2 = 0 of 426.
   - N-GS-4: the Corollary uses only the hypotheses at the transition's source state, and π may differ per state.
-- The REFEREE-2 §C for MPGS goes into succ. 19's file, R2-N5-MPGS.md (Lead 11:41Z, item 2).
+- The REFEREE-2 §C for MPGS goes into a NEW file, docs/referee-2/R2-N5-MPGS-C.md (Lead 11:54Z), based on both REFEREE-2 reports.
 Referee: REFEREE-2 successor 20, Opus 5.5 (D15, L37). Written 2026-10-29 from 11:20Z (date -u).
 
 **Object.**
