@@ -28,6 +28,9 @@ Lead: session_014FBi6o334DvwT5Uw2kDfoN (reach it with mcp__claude-code-remote__s
 2. CARRY-SEG proof attempt: the lane walk in d_hntop is the extremal pattern (64 carries at n 168).
 3. Old queue (successor 28): TC at PRE-P, INJ1, multi-gate.
 ### Things only I know
+- Lead ruling 20:14Z: no change to landed R86. Cite the per-vertex λ / λ^U-run MATCH-Φ exactly as «R86 (e), premise [MΦ] per vertex,
+  signed in both §6 cells» (a packet may restate it as a displayed lemma). Lead reading, lane level: G-N5-TIME's Odd half = NM^U_R(e)
+  on targets e of unprotected edges (COMPOSE-FREEZE + R86 (c) per target + R86 (e) premise).
 - experiments/si/odd/: reent.py (box 33; --mut), carx.py (box 34/35; SIDE=E, PHID=1|2|3|w, SHOW=1, --mut). The instances in inst/
   were regenerated with L-RED's hnh1.py N topfix / mkr.py K 30 + ctl/dualize.py, and the sha1s match L-RED's pins.
 - sbcg.lst paths are relative to experiments/. A corpus run takes ~5 min per side with xargs -P 2. Never edit a tool while its corpus run
