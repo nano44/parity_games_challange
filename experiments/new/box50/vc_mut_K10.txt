@@ -1,0 +1,8 @@
+dsig_max=4 dtau_max=0 exec_ENT_max=3 exec_VC_max=4 exec_VCbar_max=2 exec_len_max=100 execs=1 joint_VC_max=4 phase_ENT_max=3 phase_VC_max=3 phase_VCbar_max=2 phase_len_max=99 phases=1 run_ENT_max=3 run_VC_max=3 run_VCbar_max=2 run_len_max=99 runs=1
+TOP run VC 3 VCbar 2 len 99 m 110 n 49 ../../si/runlin/instances/runfam_K10.pg [1,100] wit ((0, 4), (1, 10), (2, 7))
+TOP phase VC 3 VCbar 2 len 99 m 110 n 49 ../../si/runlin/instances/runfam_K10.pg [1,100] wit ((0, 4), (1, 10), (2, 7))
+TOP exec VC 4 VCbar 2 len 100 m 115 n 49 ../../si/runlin/instances/runfam_K10.pg [0,100] wit ((1, 10), (12, 13), (23, 29), (38, 37))
+TOP joint VC 4 VCbar 0 len 100 m 115 n 49 ../../si/runlin/instances/runfam_K10.pg [0,100] wit ((1, 10), (12, 13), (23, 29), (38, 37))
+TOP bound dsig 4 dtau 0 iters 100 msig 115 mtau 0 ../../si/runlin/instances/runfam_K10.pg sauer 7166915 |Fsig| 101 ()
+TOP tau dtau 0 dsig 4 iters 100 mtau 0 n 49 ../../si/runlin/instances/runfam_K10.pg [0,100] ()
+VC PASS

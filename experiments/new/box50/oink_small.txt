@@ -1,0 +1,36 @@
+counter_symsi 2 exec_ENT_max=2 exec_VC_max=2 exec_len_max=13 joint_VC_max=2 phase_VC_max=1 run_VC_max=1 run_len_max=1 
+counter_symsi 4 exec_ENT_max=2 exec_VC_max=2 exec_len_max=22 joint_VC_max=3 phase_VC_max=1 run_VC_max=1 run_len_max=2 
+counter_symsi 6 exec_ENT_max=3 exec_VC_max=3 exec_len_max=37 joint_VC_max=3 phase_VC_max=2 run_VC_max=2 run_len_max=7 
+counter_symsi 8 exec_ENT_max=3 exec_VC_max=3 exec_len_max=48 joint_VC_max=3 phase_VC_max=2 run_VC_max=1 run_len_max=8 
+counter_symsi 10 exec_ENT_max=3 exec_VC_max=3 exec_len_max=55 joint_VC_max=3 phase_VC_max=2 run_VC_max=1 run_len_max=8 
+counter_symsi 12 exec_ENT_max=3 exec_VC_max=3 exec_len_max=64 joint_VC_max=3 phase_VC_max=2 run_VC_max=1 run_len_max=10 
+counter_core 2 exec_ENT_max=1 exec_VC_max=1 exec_len_max=4 joint_VC_max=1 
+counter_core 4 exec_ENT_max=1 exec_VC_max=1 exec_len_max=8 joint_VC_max=1 
+counter_core 6 exec_ENT_max=1 exec_VC_max=1 exec_len_max=12 joint_VC_max=1 
+counter_core 8 exec_ENT_max=1 exec_VC_max=1 exec_len_max=16 joint_VC_max=1 
+counter_core 10 exec_ENT_max=1 exec_VC_max=1 exec_len_max=20 joint_VC_max=1 
+counter_core 12 exec_ENT_max=1 exec_VC_max=1 exec_len_max=24 joint_VC_max=1 
+counter_ortl 2 exec_ENT_max=1 exec_VC_max=1 exec_len_max=3 joint_VC_max=1 
+counter_ortl 4 exec_ENT_max=1 exec_VC_max=1 exec_len_max=5 joint_VC_max=1 
+counter_ortl 6 exec_ENT_max=1 exec_VC_max=1 exec_len_max=7 joint_VC_max=1 
+counter_ortl 8 exec_ENT_max=1 exec_VC_max=1 exec_len_max=9 joint_VC_max=1 
+counter_ortl 10 exec_ENT_max=1 exec_VC_max=1 exec_len_max=11 joint_VC_max=1 
+counter_ortl 12 exec_ENT_max=1 exec_VC_max=1 exec_len_max=13 joint_VC_max=1 
+counter_rob 2 exec_ENT_max=2 exec_VC_max=2 exec_len_max=5 joint_VC_max=2 
+counter_rob 4 exec_ENT_max=3 exec_VC_max=2 exec_len_max=10 joint_VC_max=2 
+counter_rob 6 exec_ENT_max=3 exec_VC_max=3 exec_len_max=16 joint_VC_max=3 
+counter_rob 8 exec_ENT_max=3 exec_VC_max=3 exec_len_max=22 joint_VC_max=3 
+counter_rob 10 exec_ENT_max=3 exec_VC_max=3 exec_len_max=28 joint_VC_max=3 
+counter_rob 12 exec_ENT_max=3 exec_VC_max=3 exec_len_max=34 joint_VC_max=3 
+counter_dp 2 exec_ENT_max=1 exec_VC_max=1 exec_len_max=2 joint_VC_max=1 
+counter_dp 4 exec_ENT_max=1 exec_VC_max=1 exec_len_max=4 joint_VC_max=1 
+counter_dp 6 exec_ENT_max=1 exec_VC_max=1 exec_len_max=6 joint_VC_max=1 
+counter_dp 8 exec_ENT_max=1 exec_VC_max=1 exec_len_max=8 joint_VC_max=1 
+counter_dp 10 exec_ENT_max=1 exec_VC_max=1 exec_len_max=10 joint_VC_max=1 
+counter_dp 12 exec_ENT_max=1 exec_VC_max=1 exec_len_max=12 joint_VC_max=1 
+counter_m 2 exec_ENT_max=1 exec_VC_max=1 exec_len_max=2 joint_VC_max=1 
+counter_m 4 exec_ENT_max=1 exec_VC_max=1 exec_len_max=3 joint_VC_max=1 
+counter_m 6 exec_ENT_max=1 exec_VC_max=1 exec_len_max=4 joint_VC_max=1 
+counter_m 8 exec_ENT_max=1 exec_VC_max=1 exec_len_max=5 joint_VC_max=1 
+counter_m 10 exec_ENT_max=1 exec_VC_max=1 exec_len_max=6 joint_VC_max=1 
+counter_m 12 exec_ENT_max=1 exec_VC_max=1 exec_len_max=7 joint_VC_max=1 
