@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """L-RED successor 27: hill climb for small coupled runs. Fitness = max over joint lambda-runs of min(sigma-changes, tau-changes)
 (ties: that run's length). Mutations: edge target, priority swap, owner flip, start entry. Every new best is written as PG + start.
-Usage: search.py n steps seed outprefix [s3]"""
+Usage: [MODE=flip] search.py n steps seed outprefix [s3]. MODE=flip: fitness = min(max switches of one Even vertex, of one Odd vertex) in one joint run."""
 import random, sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import cpl, n5b
+MODE = os.environ.get('MODE', 'count')
 
 def mk(n, rng):
     owner = [rng.randint(0, 1) for _ in range(n)]
@@ -33,6 +34,15 @@ def fit(G, st, s3):
     except Exception:
         return (-1, 0), None
     bl, _, _ = cpl.analyse(g, N, tr, fb)
+    if MODE == "flip":                      # per-vertex: the most switches of ONE Even and ONE Odd vertex inside one joint run
+        best = None
+        for r in bl:
+            a, b2 = r["a"], r["b"]
+            ce = max([sum(1 for t in range(a, b2) if tr[t][0][v] != tr[t + 1][0][v]) for v in range(g.n)] or [0])
+            co = max([sum(1 for t in range(a, b2) if tr[t][1][v] != tr[t + 1][1][v]) for v in range(g.n)] or [0])
+            k = (min(ce, co), ce + co, r["len"])
+            if best is None or k > best[0]: best = (k, dict(r, ce=ce, co=co))
+        return best[0], (best[1], len(tr) - 1, txt, s0, t0)
     b = max(bl, key=lambda r: (min(r["sc"], r["tc"]), r["len"]))
     return (min(b["sc"], b["tc"]), b["len"]), (b, len(tr) - 1, txt, s0, t0)
 
