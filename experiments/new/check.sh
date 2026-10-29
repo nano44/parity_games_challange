@@ -294,4 +294,10 @@ if grep -q "^FREEZE2 dw_3.pg states 42 hyp-hits 81 viol 0 PASS$" <<<"$w11"; then
 else
   echo "box 59 FC checks: FAILED"; exit 1
 fi
+w12=$(python3 -I box64/frozen.py box59/out/dw_3.pg); w13=$(python3 -I box64/stretch.py ../red/ctl/instances/d_runquad_K8_m30_n192.pg --start)
+if grep -q "max-stretch-sig 26 its-phases 4 its-causes {'fb': 0, 'sbar': 3, 'lx': 0, 'lw': 0} .* FWR-viol 0$" <<<"$w12" && grep -q " #sig-1 0 #tau-1 264 .* max-tau-per-sigma-stretch 264 " <<<"$w13"; then
+  echo "box 64 STRETCH: dw_3 longest tau-stretch 26 = 4 frozen phases (3 sbar cuts); d_runquad_K8 mirror 264 tau-changes, sigma constant: PASS"
+else
+  echo "box 64 STRETCH checks: FAILED"; exit 1
+fi
 rm -rf "$tmp"
