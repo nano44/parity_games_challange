@@ -1,0 +1,8 @@
+MAX_NM_over_n (0.46875, ('../../../experiments/n5-exhaustive/instances/b6_xw_n32.pg', 32, 8, (4, 79), 22, 15))
+MAX_NM 18
+MAX_PCH 37
+N5_chk 47368
+NM 15751
+PCH 30700
+RUNS 349
+VP 5785

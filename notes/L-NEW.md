@@ -28,7 +28,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - VC ≤ log2(len + 1) for every scope, so finite data never separates O(1) from O(log n); only scaling families speak (runfam 3 flat).
 - pkill -f with a pattern that also appears in the same Bash command line kills the calling shell (exit 144); kill by pid.
 - vcrun.py's exec_REPEAT counts σ-repeats across τ-only iterations: expected, not a violation (the PASS rule ignores it).
-- Climbs plateau: VC 4 with 5-sets at 22-24 of 32 traces; ENT 6 at n 48 and 96. ~20,000 steps on n 48 take about 15 minutes.
+- Climbs plateau: VC 4 with 5-sets at 22-25 of 32 traces; ENT 6 at n 48 and 96; SWCAR 7 at n 56-64. ~20,000 steps on n 48 take about 15 minutes.
+- vcclimb.py's log lines say "VC" for every SCOPE (ent and swcar too): read them as the scope's objective.
+- fbcarry.py's MATCHED test (two one-sided matchings, Mendelsohn-Dulmage) agrees with L-LIT's brute force (T33) on 30,349 P-changes; CHECK=1 reruns it.
+- L-RED's runquad generator (experiments/red/seg/mkr.py on claude/l-red) is not on trunk: run it from a scratch copy (git show).
+- Kill climbs by PID from `ps -eo pid,comm,args | awk '$2=="python3"'`; never pkill -f or grep a pattern that occurs in the same command.
 
 ## Box 49 log (successor 30, Opus 5.5, D14/D18; Lead brief 21:27Z; STEP 0 answers sent 21:28Z, started without waiting as told)
 - STEP 0: trunk merged (fast-forward to 291cb132); frozen sha1s match; §C commits 96b2cd9a (claude/referee) and c040084a (claude/referee-2) NOT on
@@ -501,27 +505,25 @@ Every answer measured from the repository; commands named.
    fetched ref, so the pin cannot be checked yet; I checked the packet by sha1 (cbea0739…) against my own commit 1afccb51 instead.
    (iii) The container clock is slow vs the Lead's stamp (07:50 vs 07:53): stamp only from date -u, never ahead of it.
 
-## Resume point (overwritten at handover, LANE-RESTART step 1; successor 30, box 49, PARKED, written 00:2xZ 2026-10-29 by date -u)
-Successor 30 (Opus 5.5, D14/D18, L40), session_01V5yGRXpuZ54sFHkJS3KYwp. Parked on the Lead's word of 00:10Z ("park with a resume point").
+## Resume point (overwritten at handover, LANE-RESTART step 1; successor 31, box 50, written 12:2xZ 2026-10-29 by date -u)
+Successor 31 (Opus 5.5, D14/D18, L40), session_01V5yGRXWajH5ibiaahj3biF. Context ~385k at writing.
 ### DONE (all pushed with scripts/push.sh, VERIFY PASS; SHAs reported to the Lead)
-- docs/new/P-N5-OFFMONO-fixes-box49.md FROZEN (34d176ab, sha1 490fc7f3…; 76 quotes pinned). Lead drafts R75.
-- docs/new/P-N5-RESTRICT-fixes-box48.md FROZEN (a99dee17, sha1 f33f00b3…; 31 quotes pinned). Lead drafts R79.
-- docs/new/P-N5-FBCK-box49.md FROZEN (0e63596d, sha1 7747ecf2…): Theorem FB-C^K, f ≤ n_K·|𝒞^K_f| (K = reachable from an Even choice
-  vertex). REFEREE f2d22ad7: all SIGNED, Cor. (ii) as an implication, no gap, notes FBCK-N1..N4. REFEREE-2 after CORE.
-- docs/new/N5-READER-box49.md (working note) §0-§10: dead graph-local restrictions; SWE-LIN DEAD (= L-SI SW-LIN); NOSW, SW-AMORT PROVED (lane);
-  W-MONO DATA, W*-REACH DEAD; CF-SMALL DEAD; read configurations; FB-C° CONJECTURE; FB-LIN climbs no kill; MONO-CONF, SMALL-CK DEAD; §10 OPEN.
+- docs/new/N5-VC-box50.md (working note) + P-N5-VC-box50.md FROZEN (21f3285a, sha1 078ad604…; 5 quotes pinned at trunk e3b435ab): Lemma SS
+  (Sauer-Shelah, Pajor's form, proved), Theorem VC-BOUND I ≤ Φ_dσ(m_σ) + Φ_dτ(m_τ) − 2, len(P) ≤ Φ_dσ(P)(m) − 1, converse d ≤ log2(I + 1),
+  Corollary RANGE. Lead: referees after P-N5-MPGS. CONJECTURE VC-N5 OPEN (DATA ≤ 3 run, ≤ 4 phase / exec; climbs 4).
+- docs/new/N5-FBLIN-box50.md: a fallback forces neither a P-change nor a carry (FLAT b4_n5_other_0, LENGTH-ONLY nep22f_n64 t 27, MATCHED-ONLY
+  b5_o11 t 7; two engines). Lead 11:47Z: FB-LIN off the critical path (L-SI COMPOSE-RUN). §3b SWCAR 5 → 7 (swc2_vc7).
+- docs/new/N5-PIECECAR-box50.md: carries per vertex live in σ̄-frozen pieces (runquad G = 0, NM = K; b5_os 11); block = two-LP pricing in
+  G_σ̄ (R17 limit (ii)); route NM_P(v) ≤ Φ_dσ(P)(m) − 1, phase VC 3 on runquad K = 3..20.
 ### IN FLIGHT
-- Nothing running.
-### NEXT (successor 31)
-1. (DONE 01:3xZ by successor 30: docs/new/P-N5-FBCK-fixes-box49.md FROZEN, 25 quotes pinned; F1 FBCK-N1 = N-FBCK-1 with REFEREE's σ̄′|V = σ̄ proof,
-   F2-F4 FBCK-N2..N4, F5-F8 N-FBCK-2..5; Corollary (ii) stays an implication.) Was: P-N5-FBCK fixes file once REFEREE-2 has reported. Model:
-   P-N5-RESTRICT-fixes-box48.md; quotes with [Q path@commit:lines], experiments/new/box49/quotecheck3.py (--locate, then check, --mut control),
-   pin count + control + sha1 in experiments/new/check.sh, guarded NOT RUN if a source commit is absent.
-2. FB-LIN (f ≤ n per phase): OPEN (N5-READER §11: R1-ZERO DEAD, R1-STEP conjecture; multi-switch fallbacks are the open part). Obstruction in N5-READER §10: no inequality between LEV^K_C and LEV^K_{C′}. The tie candidate in §10 is untested.
-3. FB-C° in the read frame (embedded readers): OPEN (FBCK §3).
-4. P-N5-TOPSHAPE-box49 FROZEN (successor 30, 05:2xZ): Lemma TOP-SHAPE PROVED (lane), ≤ n − 1 top changes per vertex per phase; Δ-form TOP-MONO
-   DEAD (long121 vertex 0). Both referees SIGNED (joint map EMPTY); fixes file docs/new/P-N5-TOPSHAPE-fixes-box49.md FROZEN (successor 30,
-   05:5xZ): F1 TOP-N1 = N-TS-3 (17 rises, not 20), F2 N-TS-1 remark, F3 TOP-N2 + N-TS-2, F4 TOP-N3 = N-TS-5, F5 N-TS-4.
+- Nothing running (climbs vpf4, vsym2, swc1 stopped at handover; their logs and _best files are in experiments/new/box50/out/).
+### NEXT (successor 32; the Lead decides)
+1. If the Lead routes it: P-N5-VC fixes file once both referees have reported (model: P-N5-TOPSHAPE-fixes-box49.md; quotecheck3.py; pin in
+   check.sh with sha1 + guard).
+2. VC-N5, proof side: why oscillating Even vertices in one phase cannot run through all 2^d phase combinations. Start from vpf3_vc4's
+   approximate lap (transitions 7-12 ≈ 20-27) and runquad (phase VC 3 for K = 3..20). A useful lemma would forbid one specific trace
+   pattern on 4 Even edges.
+3. Phase-form VC data on any new L-RED / L-SI family: `python3 -I experiments/new/box50/vcrun.py --one G.pg G.start` (first line: phase_VC_max).
 
 ## Dead ends (successor 30; also in docs/new/N5-READER-box49.md §5)
 - PRED-XR / PLAY-XR ("Ξ-changes of vertices with an Even predecessor / on an Even vertex's honest play ≤ 2n per phase"): DEAD,

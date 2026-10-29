@@ -27,6 +27,7 @@ Labels (D18 / L40): PROVED (lane) / CONJECTURE / OPEN / DATA / READING / DEAD. C
 | §11 | CONJECTURE LEN-TOTAL (≤ n − 1 length-only rises per vertex per phase; would sharpen COMPOSE to m_E·(P* + n)) | CONJECTURE; DATA ≤ 0.875n |
 | §12 | Lemma INHERIT: a vertex's carry is the carry of the switch where its honest play diverges | PROVED (lane, generic case); DATA 0 failures |
 | §13 | T37's carries-vs-reopenings CONJECTURE: carries with NO reopening on the vertex's plays everywhere (runquad, s3quad: all); multiplicative form DEAD, additive form = the open core | DATA |
+| §14 | R17's Lemma P fails in two frames (Case A for W, Case B for Ξ; runquad t = 0 witnesses), NOT through σ̄ moving (σ̄ constant on runquad's Θ(n²) phase); Corollary R17-D0 (σ̄ = τ on the phase ⇒ R17's bound); (n − 1)(\|D\| + 1) DEAD (b6_xl2_n32) | PROVED (lane); DEAD; DATA |
 | §8 | Lemma SW-RISE (a switch strictly raises the switcher's own Ξ off its honest cycle); SW-RUN per fallback-free run (Lead: SW-PER-VERTEX) | PROVED (lane); CONJECTURE, DATA ≤ 0.667n |
 
 ## 0. Setting
@@ -334,6 +335,35 @@ for any sequence of subsets of R_c (c fixed), the number of changes is ≤ (K(K+
   runquad / s3quad are inherited (§12) from Even switches (the pivots' and reactors'), never from σ̄ or τ.
 - READING for the proof side (L-NEW 31): any route to NM must handle τ-quiet λ-runs, where every carry is created by an Even switch and
   copied upstream (INHERIT); gate reopenings can at most add to that.
+
+## 14. Where R17's one-player phase bound breaks in two-player N5 (Lead 12:01Z; tool chg/r17.py)
+- R17's proof (docs/new/N5-phase-bound-box10.md §2, Lemma P, induction step k → k + 1 along r = x → z → r′) uses ONE valuation Ω for two
+  jobs: the arena (Case A: «(x, z) ∉ I_k, i.e. Ω_k(z) ⪯ Ω_k(ρ_k(x))») and the step's objective (Case B: «ρ̂ := ρ_k[x → z] is a strategy of the
+  arena H_k, so by (F1) Ω_{k+1}(x) ⪰ val_ρ̂(x)»). N5's S4a takes the arena from Ξ (against σ̄) and maximises W (against τ). So:
+  (A-fail) read with Ω = W, Case A's implication fails: a W-better edge can be outside the arena. Witness runquad_K8_m30_n192, transition
+  0 → 1, x = 5, z = 4 (σ_0(5) = σ_1(5) = 6): 5 ⊕ W_1(4) ▷ W_1(5) and (5, 4) ∉ A(0, 5); 3,102 such (t, x) pairs in the one phase.
+  (B-fail) read with Ω = Ξ, Case B's (F1) fails: S4a's choice can be honest-worse than an available honest switch (a K1 stall, the source's
+  own §5 diagnosis). Witness runquad_K8_m30_n192, transition 0 → 1, x = 3, z = 27: (3, 27) ∈ Iσ_0, σ_0(3) = 0, σ_1(3) = 9, and
+  3 ⊕ Ξ_0(27) ▷ Ξ_1(3); 2,096 such pairs.
+- It is NOT σ̄ moving: in runquad_K8_m30_n192 σ̄ is CONSTANT on the whole phase (0 σ̄-changing transitions), yet the phase has 263 W-changing
+  transitions and 481 Even switches at n 192. So the candidate «Even switches per phase ≤ n·(σ̄-changes + 1)» is DEAD (481 > 192), and so is
+  the source's own (SEG-LEN) «Even moves inside one λ-phase of one σ̄-segment ≤ n − 1» (263 > 191). Library: Even switches per phase up to
+  4.375·n·(σ̄-changes + 1) (ESWSB_V on alt_all pinned 42, lib41 54, experiments/si 23 phases).
+- What separates the frames is D := the Odd vertices with σ̄_t ≠ τ at some state of the phase (runquad: |D| = 32).
+  Corollary R17-D0 (PROVED, lane, by RESULTS R17 (b), (c), (e) on G_τ). If σ̄_t = τ at every Odd vertex at every state of a phase, then the
+  phase has fewer than n + m transitions, at most n − 1 of them W-changing. Proof. Then Ξ_t = W_t (both are S1's valuation of the same
+  (σ_t, τ)-plays), so Iσ_t is the improving set of σ_t in the one-player game G_τ (Odd fixed to τ, constant on the phase), S4a's σ_{t+1} is
+  an optimal strategy of that arena (switch-best on G_τ, R17 (d): any pointwise-optimal choice), S4c fires as in R17 (e), and the phase is a
+  λ-phase of G_τ (λ_Ξ = λ_W constant). R17 (b), (c) apply to G_τ. □ DATA: D0 0 failures on the 309 D = ∅ phases of alt_all pinned (114), lib41
+  (117), experiments/si (78).
+- The interpolation «W-changing transitions per phase ≤ (n − 1)(|D| + 1)» is DEAD in the library: lib41 / alt_all n5-exhaustive/instances/
+  b6_xl2_n32, phase [4, 87]: 83 W-changing transitions, |D| = 1, (n − 1)(|D| + 1) = 62 (ratio 1.339); experiments/si orlens/instances/
+  s_elim24_final, phase [4, 63]: 59 > 46 with |D| = 1 (σ̄ ≠ τ only at Odd vertex 18; Ξ ≠ W at ≤ 5 vertices). ONE disagreement vertex already
+  breaks the one-player count. CONJECTURE (weakest R17-type form consistent with all data): W-changing transitions per phase = O(n·(|D| + 1));
+  DATA max ratio WCH / ((|D| + 1)(n − 1)) = 1.339 (b6_xl2_n32), runquad 263 / (191·33) = 0.04. Not a useful target on its own: |D| ≤ n.
+- READING. R17's mechanism needs the arena and the objective in one frame. In a phase τ is fixed, and the frames differ exactly on D; a
+  single Odd vertex in D (s_elim24_final) suffices to exceed n − 1, and runquad's 32 give Θ(n²). A two-player Lemma P would have to
+  quantify progress in BOTH frames at once (the W-chain / H-chain pairs of §2's Lemma DEADLOCK are this obstruction at the level of sinks).
 
 ## DONE / FINDINGS / NEEDS
 - DONE: this note; tools chg/suffix.py (SUFFIX-COUNT, BND with MUT, EARLY, INTER-JOINT), chg/dlock.py (deadlock anatomy and candidates),
