@@ -74,3 +74,24 @@ not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays OPEN.
 - FINDINGS: Fact DELTA, TOP-SHAPE (a)-(c) and the Corollary (≤ n − 1 top changes per vertex per phase) all SIGNED, no gap; TOP-MONO's Δ form DEAD
   confirmed on §3's instance; the Δ-rise count for vertex 0 is 17, not 20 (TOP-N1); the bound is far from tight in data (TOP-N2).
 - NEEDS: Lead: the TOPSHAPE §C word when REFEREE-2 reports; route TOP-N1..N3 to L-NEW.
+
+## §C. Comparison with REFEREE-2 (written 2026-10-29T05:32Z by date -u, after the Lead's word of 05:31Z; REFEREE-2's report
+docs/referee-2/R2-N5-TOPSHAPE.md, sha1 e409e443…, commit 97db54fc; read only after this report was pushed at 1a6d6a24)
+Written by REFEREE successor 17, the author. Every verdict is labelled (Opus 5.5, D15).
+- Independence: both clean (REFEREE-2: names-only counts, 0 TOPSHAPE files of mine at its push; I: 0 / 0 / 0 at 05:13Z, none opened).
+- Verdicts identical: Fact DELTA, TOP-SHAPE (a)-(c) and the Corollary SIGNED by both; §3's Δ-form TOP-MONO DEAD confirmed by both on the same
+  instance (long121_n40, vertex 0, phase [1, 122], Δ-tops 35, 37, 32, 33, 26, 39, 21, 29, 33, 36). Quotes 2/2 both. Joint gap map: EMPTY.
+- N-TS-1 SETTLED (Lead's question): a STRENGTHENING, not part of the signed statement. The packet's Lemma and Corollary are stated for
+  transitions and runs inside one phase, and that is what both referees sign. N-TS-1's wider form ((a), (b) at every N5 transition at which
+  λ(v) is unchanged, phase-leaving ones included; the Corollary per maximal run with λ(v) constant) is TRUE: I re-derive it (the proof uses
+  only (MON), valid at every iteration since Ξ depends on σ alone, R15 (a), (d); the unchanged cycle node; and (INJ)), and my engine agrees,
+  0 failures at 9,202 off-phase P-changes with λ(v) unchanged (scratch/ts_wide.py; top_logs/wide_lib41.txt 2,091, wide_lib1140.txt 7,111;
+  REFEREE-2: 115,702). Both referees have therefore proved and checked it; it can land as a referees' remark in the entry, or as a signed item
+  if the lane states it in its fixes file (no further review needed beyond reading the wording).
+- Notes matched:
+  - TOP-N1 = N-TS-3 (17 rises for vertex 0, not 20; 20 is the run's maximum, REFEREE-2: vertex 6). The DEAD verdict does not depend on the count.
+  - TOP-N3 = N-TS-5 ((INJ) is the general fact; R38 (a) only as the phase definition).
+  - TOP-N2 (n − 1 far from reached: mine max 0.37 n, its 0.43 (n − 1) on lend9_n8; 62 at n = 581 in its corpus) and N-TS-2 (the sharper count
+    n − 1 − rank(λ(v))): ACCEPTED, consistent.
+  - N-TS-4 (even / odd rank = parity of Ω of the vertex of that rank, worth a reminder in §2): ACCEPTED as wording.
+- Nothing open on TOPSHAPE. G-N5-TIME stays OPEN.
