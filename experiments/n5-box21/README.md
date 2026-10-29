@@ -49,3 +49,26 @@ define no initial strategy, and Friedmann's papers' specified starts were not op
 - Start (T47 §4): the generators define none, and PGSolver's snare solver starts from initial_strategy_by_best_reward (= SPEC S3 for
   Even), so the S3 runs above are the intended start. T47 and T46 name no designed (ι-type) start. Extra start run here: "lastedge"
   (PGSolver initial_strategy_by_last_edge for Even, S3 dual for Odd; run21.py --start lastedge).
+
+## Both starts, N = 1..12 (results/run21_S3.log, results/run21_lastedge.log). Every row passes all checks: n5b = n5x states, N5 regions
+## = Oink zlk, verify.py OK; N5-SF no cycle, regions = Oink, no improving edge left. "LE" = lastedge start (Even), S3 dual (Odd).
+| N | friedmann n | N5 it S3 / LE | N5-SF it S3 / LE | SBC_σ S3 / LE | fearnley n | N5 it S3 / LE | N5-SF it S3 / LE | SBC_σ S3 / LE |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | 20 | 4 / 1 | 4 / 1 | 1 / 0 | 20 | 4 / 1 | 4 / 1 | 1 / 0 |
+| 2 | 44 | 10 / 6 | 8 / 3 | 5 / 2 | 38 | 8 / 6 | 6 / 3 | 3 / 2 |
+| 3 | 77 | 15 / 9 | 11 / 13 | 9 / 11 | 59 | 12 / 10 | 9 / 4 | 5 / 4 |
+| 4 | 119 | 19 / 24 | 14 / 17 | 12 / 15 | 83 | 14 / 14 | 12 / 6 | 6 / 6 |
+| 5 | 170 | 23 / 31 | 18 / 25 | 16 / 21 | 110 | 16 / 16 | 15 / 11 | 9 / 7 |
+| 6 | 230 | 27 / 37 | 23 / 32 | 20 / 28 | 140 | 18 / 18 | 18 / 12 | 10 / 10 |
+| 7 | 299 | 31 / 41 | 28 / 39 | 26 / 37 | 173 | 21 / 20 | 21 / 15 | 13 / 11 |
+| 8 | 377 | 35 / 45 | 33 / 46 | 32 / 44 | 209 | 24 / 22 | 24 / 19 | 16 / 18 |
+| 9 | 464 | 39 / 49 | 41 / 52 | 36 / 48 | 248 | 27 / 24 | 27 / 24 | 20 / 20 |
+| 10 | 560 | 43 / 53 | 49 / 59 | 44 / 56 | 290 | 30 / 26 | 30 / 27 | 22 / 23 |
+| 11 | 665 | 47 / 57 | 53 / 62 | 51 / 60 | 335 | 33 / 28 | 33 / 29 | 26 / 26 |
+| 12 | 779 | 51 / 61 | 68 / 81 | 62 / 79 | 383 | 36 / 30 | 36 / 36 | 28 / 32 |
+- SBC_τ = 0 and N5 fallbacks = 0 in every run. N5 phases: friedmann 3 (LE: 0, 1, 1, then 3); fearnley 2 (LE: 0, then 1).
+- N5 stays linear in N for both starts: friedmann 4N + 3 (S3, N ≥ 3) and 4N + 13 (LE, N ≥ 5); fearnley 3N (S3, N ≥ 7) and 2N + 6 (LE, N ≥ 3).
+- N5-SF's SBC on friedmannsubexp grows FASTER than linearly in N at the top of the range. S3 increments by N: 4, 4, 3, 4, 4, 6, 6, 4, 8, 7, 11.
+  LE increments: …, 7, 9, 7, 4, 8, 4, 19. So SBC/N = 4.0 (N 8), 4.4 (N 10), 5.2 (N 12) from S3, and 5.5, 5.6, 6.6 from LE.
+  In the game size n (≈ 4.5N² + 10.5N + 5), SBC/n FALLS (S3: 0.085 at N 8, 0.080 at N 12). This is DATA on N ≤ 12 only; the trend could be
+  N log N, quadratic in N (= linear in n), or noise. fearnleysubexp SBC stays ≈ 2.3-2.7 N.
