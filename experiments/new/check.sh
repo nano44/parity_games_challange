@@ -286,6 +286,12 @@ w9=$(EOPP=tau OOPP=sigma python3 -I box59/mix.py box59/out/dw_3.pg); w10=$(EOPP=
 if grep -q "iterations 41 .* tau-changes 3 " <<<"$w9" && grep -q "iterations 134 " <<<"$w10"; then
   echo "box 62 FRAME: dw_3 with tau in Even's arena (N5) 41, with sbar(sigma) 134: PASS"
 else
+  echo "box 62 FRAME checks: FAILED"; exit 1
+fi
+w11=$(python3 -I box59/freeze2.py box59/out/dw_3.pg)
+if grep -q "^FREEZE2 dw_3.pg states 42 hyp-hits 81 viol 0 PASS$" <<<"$w11"; then
+  echo "box 63 ODD-FREEZE: dw_3 81 hypothesis hits, 0 improving: PASS"
+else
   echo "box 59 FC checks: FAILED"; exit 1
 fi
 rm -rf "$tmp"
