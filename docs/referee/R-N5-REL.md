@@ -112,3 +112,31 @@ No gap. Notes REL-N1..N5. Nothing here bounds SEG, G or CF; not M3, not a step-4
 - FINDINGS: GATE-RISE with its Count, STATIC-DEPTH-REL and REL-SPLIT all SIGNED, no gap; the σ̄-on-RO_b condition and (iii) are needed (MUT 4,
   3 bite); (ii) and X_b's closure rest on proof; GATE-RISE is R61 (e) ALT's strict form, self-contained (REL-N1); notation clash Q (REL-N3).
 - NEEDS: Lead: the REL §C word when REFEREE-2 reports; route REL-N1..N5 to L-SI's fixes file.
+
+## §C. Comparison with REFEREE-2 (written 2026-10-29T05:06Z by date -u, after the Lead's word of 05:06Z; REFEREE-2's report
+docs/referee-2/R2-N5-REL.md, sha1 b75ae5ca…, commit eb5aa2b5; read only after this report was pushed at 69b12910)
+Written by REFEREE successor 17, the author. Every verdict is labelled (Opus 5.5, D15).
+- Independence: REFEREE-2 opened no REFEREE REL file. Its one declared overlap is with my SDPRIME SDP-N2 (read for its SDPRIME §C on the
+  Lead's word), a point it had found itself first (R2-N5-SDPRIME §1). I opened no REFEREE-2 REL file before my push. No effect on any verdict.
+- Verdicts identical: GATE-RISE, its Count, STATIC-DEPTH-REL and REL-SPLIT SIGNED by both. Joint gap map: EMPTY.
+- CORRECTION of my §2 (Remark, not to sign). I wrote "true as stated"; REFEREE-2's N-REL-5 is right and I ACCEPT it: STATIC-DEPTH-REL contains
+  STATIC-DEPTH′'s LENGTH bound (and per-vertex settling on V^W_b ∪ V^H_b), but not STATIC-DEPTH′'s per-vertex settling at vertices outside
+  those domains (e.g. a reader). The Remark should say "contains its length bound". My REMK data checked only the start a, which is what the
+  length bound needs.
+- Notes matched:
+  - REL-N2 = N-REL-6 (W-MONO / Ξ-SUCC at λ_W changes; the same signed proof step as SDPRIME's §C).
+  - REL-N3 = N-REL-4 (Q redefined as the Even vertices of out-degree ≥ 2).
+  - REL-N5 = N-REL-1 (the (SW) quote's "…"; 16/17 strictly verbatim, both).
+  - My §1 step 3 ("u-free values") = N-REL-2 (the injectivity sentence needs "u-free, fixed cycle node", plus the different-cycle-node case):
+    ACCEPTED as wording.
+  - My MUT=2 non-bite = N-REL-3 ((ii) not shown necessary in data: 13 mine, 239 its; it stays a proof hypothesis).
+  - REL-N4 ~ N-REL-7: both find alt_all's max SEG / n = 0.79 under given / S3 starts, as §4 says. Random starts go higher (mine 0.83 on
+    lib41 and on lib1140 run_m_n24; its 0.95 on lib41 lev_l_n20 #2, and 1.00 on the lane climb sg_2). No conflict; the lane should state its
+    start set.
+- REFEREE-2's evidence stronger than mine: its cyc control (8 of 23 CYC changes without a rise) shows hypothesis (i) is needed; its qonly control
+  shows the closure of X_b is STRUCTURALLY needed (the recursion leaves its domain, RDOM 246); my MUT=5 did not bite because my depth routine
+  is not restricted to the domains. ACCEPTED. My REL-N1 remark (only (i) at t + 1 can be weakened to u ≠ λ(u); 4 cases, all rising) is
+  compatible with its cyc control, which includes failures of (i) at t; not signed.
+- Mine not in REFEREE-2's: REL-N1 (GATE-RISE = the strict form of landed R61 (e) Lemma ALT, now self-contained; cite it). For routing.
+- N-REL-8 (what the freedom buys: almost every interval on the lane's reader instances is beyond STATIC-DEPTH′) agrees with my 175 of 273 on
+  rdr_K10 / anc_K10 / runfam_K10. Nothing open on REL.
