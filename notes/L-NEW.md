@@ -13,6 +13,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - Addendum (Lead 19:37Z): FRAME-STRETCH (n+m) DEAD by L-RED 29's mkr (R106 mkr.py, designed start); reproduced mk_4_16..mk_16_100
   (1648 sigma-changes in one tau-stretch, n+m 1225; every transition a lambda_W change). PROVED (lane) STRETCH-CUT (§1.6). R86 bounds
   a stretch only through P* (NM*^U = 0 does not help); not landed.
+- Addendum 2 (Lead 19:45Z/19:52Z): §1.8. GP*-RUN (R88 proofs need only tau, lambda_W constant + no fallback) and STRETCH-RED
+  PROVED (lane): FRAME-STRETCH_P <= rho-POLY, R* poly, FL poly. Fallbacks lower W 603/607 (box 21's W-flat question false).
 
 ## Box 63 log (successor 34; Lead 19:10Z: ODD-FREEZE for plain N5)
 - docs/new/N5-FREEZE-box63.md. Lemma ODD-FREEZE PROVED (lane) with H1 (or H1' Even CAN) + H2 (disjoint) + H3 (even top above tau(o)'s cycle
@@ -709,7 +711,7 @@ Every answer measured from the repository; commands named.
 ### DONE: box 64 (N5-STRETCH-box64.md; tools experiments/new/box64/ stretch.py, frozen.py, climb1p.py; check.sh "box 64").
 ### IN FLIGHT: nothing running.
 ### NEXT (the Lead decides)
-1. (FO): bound sbar-changes of Odd's best reply inside one tau-stretch (the dominant frozen-phase cut), or a family with many.
+1. FRAME-STRETCH_P via STRETCH-RED: bound R* (late adoptions per W-run), FL, and rho (R56's rho-POLY), or a family with many.
 2. Check whether R85 MATCH-Phi holds per vertex (PCH_R(c) by c's own carries): decides whether COMPOSE-FREEZE gives NM*^U_unp.
 3. SB1' (one-player switch-best O(n)): Lemma T (box 8 §3c) leaves "cycle tops settle in O(n)".
 4. Byte-compare box59/dw.py with L-RED's R116 generator - still not done.
