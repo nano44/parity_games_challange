@@ -26,7 +26,9 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - Box 3 (Lead 03:24Z: multi-switch carry route): R102 docs/red/R102-carry-route.md. NO KILL. CR climbs plateau 11 at n 40; graft of a wave
   onto long121 changes nothing (300 variants, f 8); f = stall count; route reduces to Theta(n) stall-ending rises of one gate's Xi (READING).
   R101 erratum: my R1-ZERO contradicted my own table (L-NEW killed it, l-new e2da18b0); survey missed experiments/n5-epoch.
-- RESUME POINT (ask the Lead first): R102 §5 (gate with Theta(n) stall-ending Xi rises per phase). Older: R101 §5 (multi-switch carries at Theta(n) per phase is the only shape left); older: R100 §5. (1) Fallback analogue of L-SI's runfam: one Odd gate with options = corridor ends, each wave
+- Box 4 (Lead 04:28Z: gate-rise gadget): R103 docs/red/R103-gate-rise.md. NO KILL. ISO (isolated stalls) data max 0.28n, climbs plateau
+  0.33n; carries track the gate's P-changes and its top walks down the ranks (~1 carry per rank); length rises sit inside S4a runs.
+- RESUME POINT (ask the Lead first): R103 §4 (a gate whose path set COUNTS under a fixed top, with a stall per count). Older: R102 §5 (gate with Theta(n) stall-ending Xi rises per phase). Older: R101 §5 (multi-switch carries at Theta(n) per phase is the only shape left); older: R100 §5. (1) Fallback analogue of L-SI's runfam: one Odd gate with options = corridor ends, each wave
   flips the gate (new K-configuration), W flipped per wave by tau-branch readers. (2) A long121-style carry cell that detaches Theta(n)
   vertices per carry (reuse happens there with S4a stretches between fallbacks, outside the §3 obstruction's premise).
 - Tools (experiments/red/fb/): fbphase.py (f per phase), dsl.py, lvl1.py, chainclimb.py, topo2.py, fbclimb.py (--owntau; default TAUSTAR =

@@ -1,6 +1,15 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 5 (successor 19; 2026-10-29 04:5xZ by date -u)
+- DONE: SDPRIME §C 9784229a (identical with REFEREE 17 573d2695; W-MONO/Ξ-SUCC at λ_W changes SIGNED with citation repair = SDP-N2).
+- DONE: R2-N5-REL (P-N5-REL f79300a2 @ l-si 07f19760): GATE-RISE + Count, STATIC-DEPTH-REL, REL-SPLIT all SIGN, no gap; N-REL-1..8
+  ((ii) THRU never shown necessary; Remark holds for the length bound only; Q redefined as Even choice vertices; nosbar control breaks LEN).
+- Tool: docs/referee-2/R2-N5-REL/rel_check.py (GATE-RISE kinds + GR2-4 + Count; X_b/RO_b/CW/CH/V^W/V^H, REL-admissible intervals, recursion,
+  settling, RREM vs SDPRIME, REL-SPLIT; MUT y2rise/thru/tie/cyc/dm1/nosbar/qonly), seg_case.py; inst/ = lane grun/out instance copies.
+  run_all.sh ~15 min (nosbar ~60 min).
+- NEXT: §C on REL only on the Lead's word.
+
 ## Resume point 4 (successor 19; 2026-10-29 04:1xZ by date -u)
 - DONE: R2-N5-SDPRIME (P-N5-SDPRIME 54678c38 @ l-si edc14c51, not on trunk at 04:04Z): STATIC-DEPTH′, Remark (⊇ R77 (c)), EPOCH all SIGN,
   no gap; N-SD-1..7 (spurious "…" in the (SW) quote; GEN_W "at every epoch end" redundant; "other cycles come and go" only 6 intervals).
