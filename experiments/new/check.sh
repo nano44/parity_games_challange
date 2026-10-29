@@ -187,4 +187,25 @@ if [ $ok = 1 ] && grep -q "^ROW ../n5-exhaustive/instances/n3all_maxph_0.pg 3 3 
 else
   echo "box 54 N5-SF checks: FAILED"; exit 1
 fi
+# Box 55 (successor 33): packet P-N5-SF (docs/new/P-N5-SF-box55.md §4): pcheck on three pins (DECOUPLE orbit, SF-RED step identity, bounds), MUT bites, quotes; NO-TRANSFER on switchbestexp_2.
+w1=$(python3 -I box55/pcheck.py ../n5-exhaustive/instances/n3all_maxph_0.pg ../n5-exhaustive/instances/n3all_maxph_0.start)
+w2=$(python3 -I box55/pcheck.py box54/out/switchbestexp_2.pg)
+w3=$(python3 -I box55/pcheck.py ../red/n3/instances/n3cov_lean.pg ../red/n3/instances/n3cov_lean.start)
+w4=$(MUT=1 python3 -I box55/pcheck.py box54/out/switchbestexp_2.pg || true)
+w5=$(python3 -I box55/ntcheck.py box54/out/switchbestexp_2.pg)
+if grep -q "^CHECK PASS" <<<"$w1" && grep -q "^CHECK PASS" <<<"$w2" && grep -q "^CHECK PASS" <<<"$w3" && \
+   grep -q "^ROW E_ n 3 m 6 values 3 orbit 3 SBC 1 LAM 1 SEG 2 SEGMAX 1$" <<<"$w1" && \
+   grep -q "^ROW E_ n 60 m 130 values 59 orbit 59 SBC 4 LAM 0 SEG 5 SEGMAX 18$" <<<"$w2" && \
+   grep -q "^ROW E_ n 48 m 128 values 29 orbit 29 SBC 11 LAM 4 SEG 12 SEGMAX 6$" <<<"$w3" && \
+   grep -q "^ROW O_ n 48 m 128 values 6 orbit 6 SBC 3 LAM 5 SEG 6 SEGMAX 0$" <<<"$w3" && \
+   grep -q "^E_ORB_V" <<<"$w4" && grep -q "^CHECK FAIL" <<<"$w4" && grep -q "^NT PASS" <<<"$w5" && \
+   [ "$(sha1sum box54/out/switchbestexp_2.pg | cut -d' ' -f1)" = "b3d5bc293d1b76ce5c7ae8dadc4e9b0b51294484" ] && \
+   [ "$(sha1sum ../red/n3/instances/n3cov_lean.pg | cut -d' ' -f1)" = "bcf8dbf64cba48123dc7da849b179793257e13e1" ] && \
+   [ "$(sha1sum ../../docs/new/P-N5-SF-box55.md | cut -d' ' -f1)" = "0ab6b416da5fe30bfacd99f1f2ae1a42b373e1d1" ] && \
+   python3 -I box49/quotecheck3.py ../../docs/new/P-N5-SF-box55.md | grep -q "quotes=18 bad=0" && \
+   ! python3 -I box49/quotecheck3.py ../../docs/new/P-N5-SF-box55.md --mut >/dev/null; then
+  echo "box 55 P-N5-SF: pcheck PASS on n3all_maxph_0 (fallback), switchbestexp_2 (SBC 4), n3cov_lean (LAM 4, SBC 11), MUT bites; quotes PASS: PASS"
+else
+  echo "box 55 P-N5-SF checks: FAILED"; exit 1
+fi
 rm -rf "$tmp"

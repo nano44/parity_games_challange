@@ -1,0 +1,1653 @@
+GAME n5-epoch/instances/ffin12_n32.pg rc=0
+ROW E_ n 32 m 122 values 32 orbit 32 SBC 6 LAM 3 SEG 8 SEGMAX 11
+ROW O_ n 32 m 122 values 2 orbit 2 SBC 0 LAM 0 SEG 1 SEGMAX 1
+CHECK PASS
+GAME n5-epoch/instances/ffin4_n24.pg rc=0
+ROW E_ n 24 m 89 values 19 orbit 19 SBC 5 LAM 0 SEG 6 SEGMAX 7
+ROW O_ n 24 m 89 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME n5-epoch/instances/ffin5_n32.pg rc=0
+ROW E_ n 32 m 151 values 20 orbit 20 SBC 4 LAM 4 SEG 7 SEGMAX 8
+ROW O_ n 32 m 151 values 3 orbit 3 SBC 0 LAM 1 SEG 2 SEGMAX 1
+CHECK PASS
+GAME n5-epoch/instances/gci2_n12.pg rc=0
+ROW E_ n 12 m 29 values 11 orbit 11 SBC 1 LAM 0 SEG 2 SEGMAX 9
+ROW O_ n 12 m 29 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME n5-epoch/instances/immfail_n14.pg rc=0
+ROW E_ n 14 m 35 values 5 orbit 5 SBC 2 LAM 0 SEG 3 SEGMAX 2
+ROW O_ n 14 m 35 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME n5-epoch/instances/immp_cex_n11.pg rc=0
+ROW E_ n 11 m 16 values 3 orbit 3 SBC 2 LAM 0 SEG 3 SEGMAX 0
+ROW O_ n 11 m 16 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME n5-epoch/instances/gci3_n24.pg rc=0
+ROW E_ n 24 m 96 values 19 orbit 19 SBC 2 LAM 2 SEG 3 SEGMAX 16
+ROW O_ n 24 m 96 values 3 orbit 3 SBC 1 LAM 1 SEG 3 SEGMAX 0
+CHECK PASS
+GAME n5-epoch/instances/lcount_n23.pg rc=0
+ROW E_ n 23 m 50 values 6 orbit 6 SBC 2 LAM 1 SEG 3 SEGMAX 3
+ROW O_ n 23 m 50 values 2 orbit 2 SBC 0 LAM 0 SEG 1 SEGMAX 1
+CHECK PASS
+GAME n5-epoch/instances/lend13_n16.pg rc=0
+ROW E_ n 16 m 46 values 15 orbit 15 SBC 2 LAM 1 SEG 3 SEGMAX 12
+ROW O_ n 16 m 46 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME n5-epoch/instances/lend27_n24.pg rc=0
+ROW E_ n 24 m 93 values 11 orbit 11 SBC 5 LAM 2 SEG 6 SEGMAX 5
+ROW O_ n 24 m 93 values 3 orbit 3 SBC 1 LAM 1 SEG 2 SEGMAX 1
+CHECK PASS
+GAME n5-epoch/instances/lend107_n32.pg rc=0
+ROW E_ n 32 m 106 values 28 orbit 28 SBC 3 LAM 2 SEG 5 SEGMAX 23
+ROW O_ n 32 m 106 values 3 orbit 3 SBC 1 LAM 2 SEG 3 SEGMAX 0
+CHECK PASS
+GAME n5-epoch/instances/lend15_n48.pg rc=0
+ROW E_ n 48 m 185 values 16 orbit 16 SBC 10 LAM 6 SEG 12 SEGMAX 4
+ROW O_ n 48 m 185 values 5 orbit 5 SBC 3 LAM 4 SEG 5 SEGMAX 0
+CHECK PASS
+GAME n5-epoch/instances/lend39f_n32.pg rc=0
+ROW E_ n 32 m 114 values 10 orbit 10 SBC 3 LAM 3 SEG 4 SEGMAX 6
+ROW O_ n 32 m 114 values 3 orbit 3 SBC 1 LAM 2 SEG 3 SEGMAX 0
+CHECK PASS
+GAME n5-epoch/instances/lend47_n32.pg rc=0
+ROW E_ n 32 m 103 values 22 orbit 22 SBC 4 LAM 1 SEG 5 SEGMAX 16
+ROW O_ n 32 m 103 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME n5-epoch/instances/lend55_n32.pg rc=0
+ROW E_ n 32 m 114 values 22 orbit 22 SBC 2 LAM 0 SEG 3 SEGMAX 19
+ROW O_ n 32 m 114 values 3 orbit 3 SBC 1 LAM 2 SEG 3 SEGMAX 0
+CHECK PASS
+GAME n5-epoch/instances/lend9_n8.pg rc=0
+ROW E_ n 8 m 22 values 5 orbit 5 SBC 2 LAM 1 SEG 3 SEGMAX 2
+ROW O_ n 8 m 22 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME n5-epoch/instances/lend82_n32.pg rc=0
+ROW E_ n 32 m 116 values 26 orbit 26 SBC 4 LAM 2 SEG 5 SEGMAX 21
+ROW O_ n 32 m 116 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME n5-epoch/instances/lend72_n48.pg rc=0
+ROW E_ n 48 m 156 values 26 orbit 26 SBC 3 LAM 0 SEG 4 SEGMAX 22
+ROW O_ n 48 m 156 values 3 orbit 3 SBC 0 LAM 2 SEG 3 SEGMAX 0
+CHECK PASS
+GAME n5-epoch/instances/nep13_n24.pg rc=0
+ROW E_ n 24 m 100 values 14 orbit 14 SBC 13 LAM 3 SEG 14 SEGMAX 0
+ROW O_ n 24 m 100 values 8 orbit 8 SBC 2 LAM 5 SEG 7 SEGMAX 1
+CHECK PASS
+GAME n5-epoch/instances/nconf61_n48.pg rc=0
+ROW E_ n 48 m 178 values 23 orbit 23 SBC 21 LAM 3 SEG 22 SEGMAX 1
+ROW O_ n 48 m 178 values 3 orbit 3 SBC 1 LAM 1 SEG 2 SEGMAX 1
+CHECK PASS
+GAME n5-epoch/instances/nep56_n32.pg rc=0
+ROW E_ n 32 m 125 values 19 orbit 19 SBC 17 LAM 1 SEG 18 SEGMAX 1
+ROW O_ n 32 m 125 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME n5-epoch/instances/nep22f_n64.pg rc=0
+ROW E_ n 64 m 285 values 15 orbit 15 SBC 14 LAM 4 SEG 15 SEGMAX 0
+ROW O_ n 64 m 285 values 21 orbit 21 SBC 18 LAM 15 SEG 20 SEGMAX 1
+CHECK PASS
+GAME n5-epoch/instances/nep76_n40.pg rc=0
+ROW E_ n 40 m 170 values 21 orbit 21 SBC 19 LAM 7 SEG 20 SEGMAX 1
+ROW O_ n 40 m 170 values 3 orbit 3 SBC 2 LAM 1 SEG 3 SEGMAX 0
+CHECK PASS
+GAME n5-epoch/instances/nep94_n48.pg rc=0
+ROW E_ n 48 m 193 values 24 orbit 24 SBC 23 LAM 3 SEG 24 SEGMAX 0
+ROW O_ n 48 m 193 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME n5-epoch/instances/nep92_n40.pg rc=0
+ROW E_ n 40 m 165 values 24 orbit 24 SBC 20 LAM 2 SEG 21 SEGMAX 2
+ROW O_ n 40 m 165 values 3 orbit 3 SBC 2 LAM 1 SEG 3 SEGMAX 0
+CHECK PASS
+GAME n5-epoch/instances/ret12_n40.pg rc=0
+ROW E_ n 40 m 167 values 17 orbit 17 SBC 15 LAM 4 SEG 16 SEGMAX 1
+ROW O_ n 40 m 167 values 3 orbit 3 SBC 1 LAM 1 SEG 2 SEGMAX 1
+CHECK PASS
+GAME n5-exhaustive/instances/b4_cyc6_0.pg rc=0
+ROW E_ n 11 m 24 values 5 orbit 5 SBC 2 LAM 0 SEG 3 SEGMAX 2
+ROW O_ n 11 m 24 values 2 orbit 2 SBC 0 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/b4_cyc6_1.pg rc=0
+ROW E_ n 12 m 28 values 5 orbit 5 SBC 1 LAM 0 SEG 2 SEGMAX 3
+ROW O_ n 12 m 28 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/b4_n4all_cyc3_0.pg rc=0
+ROW E_ n 4 m 8 values 3 orbit 3 SBC 2 LAM 0 SEG 3 SEGMAX 0
+ROW O_ n 4 m 8 values 2 orbit 2 SBC 0 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/b4_n5_other_0.pg rc=0
+ROW E_ n 5 m 8 values 3 orbit 3 SBC 0 LAM 0 SEG 1 SEGMAX 2
+ROW O_ n 5 m 8 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/b4_nohlen5_0.pg rc=0
+ROW E_ n 11 m 26 values 7 orbit 7 SBC 1 LAM 1 SEG 2 SEGMAX 5
+ROW O_ n 11 m 26 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME n5-epoch/instances/ret14_n48.pg rc=0
+ROW E_ n 48 m 177 values 21 orbit 21 SBC 17 LAM 4 SEG 18 SEGMAX 1
+ROW O_ n 48 m 177 values 2 orbit 2 SBC 1 LAM 0 SEG 2 SEGMAX 0
+CHECK PASS
+GAME n5-epoch/instances/ret14_n64.pg rc=0
+ROW E_ n 64 m 201 values 18 orbit 18 SBC 14 LAM 3 SEG 15 SEGMAX 1
+ROW O_ n 64 m 201 values 4 orbit 4 SBC 2 LAM 2 SEG 3 SEGMAX 1
+CHECK PASS
+GAME n5-exhaustive/instances/b4_theta_n7.pg rc=0
+ROW E_ n 7 m 13 values 2 orbit 2 SBC 1 LAM 0 SEG 2 SEGMAX 0
+ROW O_ n 7 m 13 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/b5_n5_cyc4_0.pg rc=0
+ROW E_ n 5 m 8 values 3 orbit 3 SBC 1 LAM 0 SEG 2 SEGMAX 1
+ROW O_ n 5 m 8 values 2 orbit 2 SBC 0 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/b5_o11.pg rc=0
+ROW E_ n 10 m 20 values 5 orbit 5 SBC 1 LAM 1 SEG 2 SEGMAX 3
+ROW O_ n 10 m 20 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/b5_os_n12.pg rc=0
+ROW E_ n 12 m 37 values 5 orbit 5 SBC 1 LAM 2 SEG 3 SEGMAX 2
+ROW O_ n 12 m 37 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/b5_os_n14.pg rc=0
+ROW E_ n 14 m 37 values 5 orbit 5 SBC 1 LAM 1 SEG 2 SEGMAX 3
+ROW O_ n 14 m 37 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/b5_os_n16.pg rc=0
+ROW E_ n 16 m 36 values 4 orbit 4 SBC 1 LAM 1 SEG 2 SEGMAX 2
+ROW O_ n 16 m 36 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/b5_os_n20.pg rc=0
+ROW E_ n 20 m 44 values 7 orbit 7 SBC 1 LAM 1 SEG 2 SEGMAX 4
+ROW O_ n 20 m 44 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/b5_os_n24.pg rc=0
+ROW E_ n 24 m 71 values 5 orbit 5 SBC 1 LAM 2 SEG 3 SEGMAX 2
+ROW O_ n 24 m 71 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/b5_os_n28.pg rc=0
+ROW E_ n 28 m 92 values 7 orbit 7 SBC 1 LAM 2 SEG 3 SEGMAX 4
+ROW O_ n 28 m 92 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/b5_os_n32.pg rc=0
+ROW E_ n 32 m 102 values 7 orbit 7 SBC 1 LAM 2 SEG 3 SEGMAX 4
+ROW O_ n 32 m 102 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/b5_os_n40.pg rc=0
+ROW E_ n 40 m 151 values 8 orbit 8 SBC 1 LAM 2 SEG 3 SEGMAX 5
+ROW O_ n 40 m 151 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/b6_xl2_n32.pg rc=0
+ROW E_ n 32 m 110 values 25 orbit 25 SBC 7 LAM 3 SEG 8 SEGMAX 12
+ROW O_ n 32 m 110 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/b6_xl_n32.pg rc=0
+ROW E_ n 32 m 113 values 24 orbit 24 SBC 8 LAM 3 SEG 10 SEGMAX 8
+ROW O_ n 32 m 113 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/b6_xl_n40.pg rc=0
+ROW E_ n 40 m 135 values 23 orbit 23 SBC 7 LAM 3 SEG 8 SEGMAX 12
+ROW O_ n 40 m 135 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/b6_xs_n24.pg rc=0
+ROW E_ n 24 m 90 values 22 orbit 22 SBC 0 LAM 0 SEG 1 SEGMAX 21
+ROW O_ n 24 m 90 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/b6_xs_n32.pg rc=0
+ROW E_ n 32 m 118 values 30 orbit 30 SBC 0 LAM 0 SEG 1 SEGMAX 29
+ROW O_ n 32 m 118 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/b6_xl_n48.pg rc=0
+ROW E_ n 48 m 184 values 17 orbit 17 SBC 6 LAM 4 SEG 9 SEGMAX 3
+ROW O_ n 48 m 184 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/b6_xs_n40.pg rc=0
+ROW E_ n 40 m 167 values 37 orbit 37 SBC 0 LAM 0 SEG 1 SEGMAX 36
+ROW O_ n 40 m 167 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/b6_xw_n32.pg rc=0
+ROW E_ n 32 m 119 values 17 orbit 17 SBC 6 LAM 4 SEG 9 SEGMAX 3
+ROW O_ n 32 m 119 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/b6_xs_n48.pg rc=0
+ROW E_ n 48 m 186 values 38 orbit 38 SBC 0 LAM 0 SEG 1 SEGMAX 37
+ROW O_ n 48 m 186 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/b6_xw_n40.pg rc=0
+ROW E_ n 40 m 165 values 23 orbit 23 SBC 9 LAM 4 SEG 10 SEGMAX 6
+ROW O_ n 40 m 165 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/canonA_0.pg rc=0
+ROW E_ n 15 m 29 values 4 orbit 4 SBC 0 LAM 0 SEG 1 SEGMAX 3
+ROW O_ n 15 m 29 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/b6_xw_n48.pg rc=0
+ROW E_ n 48 m 198 values 19 orbit 19 SBC 7 LAM 3 SEG 8 SEGMAX 3
+ROW O_ n 48 m 198 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/canonA_1.pg rc=0
+ROW E_ n 15 m 30 values 4 orbit 4 SBC 2 LAM 0 SEG 3 SEGMAX 1
+ROW O_ n 15 m 30 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/b6_xw_n56.pg rc=0
+ROW E_ n 56 m 210 values 23 orbit 23 SBC 8 LAM 4 SEG 9 SEGMAX 4
+ROW O_ n 56 m 210 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/frz1_n24.pg rc=0
+ROW E_ n 24 m 62 values 22 orbit 22 SBC 1 LAM 2 SEG 4 SEGMAX 10
+ROW O_ n 24 m 62 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/frz2_n24.pg rc=0
+ROW E_ n 24 m 60 values 20 orbit 20 SBC 7 LAM 1 SEG 8 SEGMAX 6
+ROW O_ n 24 m 60 values 2 orbit 2 SBC 0 LAM 0 SEG 1 SEGMAX 1
+CHECK PASS
+GAME n5-exhaustive/instances/n3all_maxph_0.pg rc=0
+ROW E_ n 3 m 6 values 3 orbit 3 SBC 1 LAM 1 SEG 2 SEGMAX 1
+ROW O_ n 3 m 6 values 2 orbit 2 SBC 0 LAM 0 SEG 1 SEGMAX 1
+CHECK PASS
+GAME n5-exhaustive/instances/n3all_maxph_1.pg rc=0
+ROW E_ n 3 m 6 values 3 orbit 3 SBC 1 LAM 1 SEG 2 SEGMAX 1
+ROW O_ n 3 m 6 values 2 orbit 2 SBC 0 LAM 0 SEG 1 SEGMAX 1
+CHECK PASS
+GAME n5-exhaustive/instances/frz3_n24.pg rc=0
+ROW E_ n 24 m 65 values 22 orbit 22 SBC 8 LAM 2 SEG 9 SEGMAX 7
+ROW O_ n 24 m 65 values 3 orbit 3 SBC 1 LAM 1 SEG 2 SEGMAX 1
+CHECK PASS
+GAME n5-exhaustive/instances/n3all_maxph_2.pg rc=0
+ROW E_ n 3 m 7 values 3 orbit 3 SBC 1 LAM 1 SEG 2 SEGMAX 1
+ROW O_ n 3 m 7 values 2 orbit 2 SBC 0 LAM 0 SEG 1 SEGMAX 1
+CHECK PASS
+GAME n5-exhaustive/instances/n4_maxph_1.pg rc=0
+ROW E_ n 4 m 7 values 3 orbit 3 SBC 0 LAM 1 SEG 2 SEGMAX 1
+ROW O_ n 4 m 7 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/n4_maxph_0.pg rc=0
+ROW E_ n 4 m 7 values 3 orbit 3 SBC 0 LAM 1 SEG 2 SEGMAX 1
+ROW O_ n 4 m 7 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/n4_thch_0.pg rc=0
+ROW E_ n 4 m 6 values 2 orbit 2 SBC 1 LAM 0 SEG 2 SEGMAX 0
+ROW O_ n 4 m 6 values 2 orbit 2 SBC 0 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/n4all_maxph_0.pg rc=0
+ROW E_ n 4 m 8 values 4 orbit 4 SBC 0 LAM 0 SEG 1 SEGMAX 3
+ROW O_ n 4 m 8 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/n4all_maxph_1.pg rc=0
+ROW E_ n 4 m 8 values 4 orbit 4 SBC 0 LAM 0 SEG 1 SEGMAX 3
+ROW O_ n 4 m 8 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/n4all_tgbad_0.pg rc=0
+ROW E_ n 4 m 7 values 3 orbit 3 SBC 1 LAM 0 SEG 2 SEGMAX 1
+ROW O_ n 4 m 7 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/n4all_thch_0.pg rc=0
+ROW E_ n 4 m 8 values 3 orbit 3 SBC 2 LAM 0 SEG 3 SEGMAX 0
+ROW O_ n 4 m 8 values 2 orbit 2 SBC 0 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/n5s_maxph_0.pg rc=0
+ROW E_ n 5 m 8 values 3 orbit 3 SBC 1 LAM 0 SEG 2 SEGMAX 1
+ROW O_ n 5 m 8 values 2 orbit 2 SBC 0 LAM 0 SEG 1 SEGMAX 1
+CHECK PASS
+GAME n5-exhaustive/instances/nh_n8.pg rc=0
+ROW E_ n 8 m 13 values 5 orbit 5 SBC 0 LAM 0 SEG 1 SEGMAX 4
+ROW O_ n 8 m 13 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/thetaA_canon_n8.pg rc=0
+ROW E_ n 8 m 12 values 4 orbit 4 SBC 0 LAM 0 SEG 1 SEGMAX 3
+ROW O_ n 8 m 12 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/thetaA_canon_n12.pg rc=0
+ROW E_ n 12 m 16 values 4 orbit 4 SBC 0 LAM 0 SEG 1 SEGMAX 3
+ROW O_ n 12 m 16 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/thetaA_n17.pg rc=0
+ROW E_ n 17 m 36 values 5 orbit 5 SBC 1 LAM 1 SEG 2 SEGMAX 3
+ROW O_ n 17 m 36 values 3 orbit 3 SBC 2 LAM 1 SEG 3 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/thetaA_n6.pg rc=0
+ROW E_ n 6 m 10 values 3 orbit 3 SBC 1 LAM 0 SEG 2 SEGMAX 1
+ROW O_ n 6 m 10 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/thetaA_n9.pg rc=0
+ROW E_ n 9 m 13 values 4 orbit 4 SBC 0 LAM 0 SEG 1 SEGMAX 3
+ROW O_ n 9 m 13 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/thetaA_n7.pg rc=0
+ROW E_ n 7 m 11 values 4 orbit 4 SBC 2 LAM 0 SEG 3 SEGMAX 1
+ROW O_ n 7 m 11 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME n5-exhaustive/instances/wk1_n32.pg rc=0
+ROW E_ n 32 m 94 values 6 orbit 6 SBC 4 LAM 4 SEG 5 SEGMAX 1
+ROW O_ n 32 m 94 values 2 orbit 2 SBC 0 LAM 0 SEG 1 SEGMAX 1
+CHECK PASS
+GAME n5-exhaustive/instances/wk2_n32.pg rc=0
+ROW E_ n 32 m 90 values 6 orbit 6 SBC 3 LAM 3 SEG 5 SEGMAX 1
+ROW O_ n 32 m 90 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME new/box48/instances/long121_n40.pg rc=0
+ROW E_ n 40 m 116 values 25 orbit 25 SBC 10 LAM 1 SEG 11 SEGMAX 6
+ROW O_ n 40 m 116 values 3 orbit 3 SBC 1 LAM 2 SEG 3 SEGMAX 0
+CHECK PASS
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.pg rc=0
+ROW E_ n 64 m 276 values 18 orbit 18 SBC 17 LAM 6 SEG 18 SEGMAX 0
+ROW O_ n 64 m 276 values 5 orbit 5 SBC 3 LAM 2 SEG 4 SEGMAX 1
+CHECK PASS
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.pg rc=0
+ROW E_ n 64 m 241 values 26 orbit 26 SBC 20 LAM 3 SEG 21 SEGMAX 2
+ROW O_ n 64 m 241 values 4 orbit 4 SBC 3 LAM 1 SEG 4 SEGMAX 0
+CHECK PASS
+GAME red/carry/instances/absmono_viol_n44.pg rc=0
+ROW E_ n 44 m 858 values 4 orbit 4 SBC 1 LAM 1 SEG 2 SEGMAX 2
+ROW O_ n 44 m 858 values 6 orbit 6 SBC 1 LAM 4 SEG 5 SEGMAX 1
+CHECK PASS
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.pg rc=0
+ROW E_ n 80 m 303 values 18 orbit 18 SBC 15 LAM 3 SEG 16 SEGMAX 1
+ROW O_ n 80 m 303 values 4 orbit 4 SBC 2 LAM 2 SEG 3 SEGMAX 1
+CHECK PASS
+GAME red/carry/instances/carry3_2_2.pg rc=0
+ROW E_ n 47 m 67 values 2 orbit 2 SBC 0 LAM 0 SEG 1 SEGMAX 1
+ROW O_ n 47 m 67 values 3 orbit 3 SBC 2 LAM 2 SEG 3 SEGMAX 0
+CHECK PASS
+GAME red/carry/instances/cm_mdrop_both_n28.pg rc=0
+ROW E_ n 28 m 92 values 8 orbit 8 SBC 7 LAM 4 SEG 8 SEGMAX 0
+ROW O_ n 28 m 92 values 4 orbit 4 SBC 3 LAM 1 SEG 4 SEGMAX 0
+CHECK PASS
+GAME red/carry/instances/cm_mdrop_oink_n28.pg rc=0
+ROW E_ n 28 m 108 values 4 orbit 4 SBC 2 LAM 2 SEG 3 SEGMAX 1
+ROW O_ n 28 m 108 values 4 orbit 4 SBC 1 LAM 1 SEG 2 SEGMAX 2
+CHECK PASS
+GAME new/box48/out/qpcclimb/scale/snap_n80_s62.pg rc=0
+ROW E_ n 80 m 303 values 18 orbit 18 SBC 15 LAM 3 SEG 16 SEGMAX 1
+ROW O_ n 80 m 303 values 4 orbit 4 SBC 2 LAM 2 SEG 3 SEGMAX 1
+CHECK PASS
+GAME red/carry/instances/ctx11_n40.pg rc=0
+ROW E_ n 40 m 274 values 10 orbit 10 SBC 8 LAM 4 SEG 9 SEGMAX 1
+ROW O_ n 40 m 274 values 12 orbit 12 SBC 11 LAM 5 SEG 12 SEGMAX 0
+CHECK PASS
+GAME red/carry/instances/ctx6_n20.pg rc=0
+ROW E_ n 20 m 113 values 3 orbit 3 SBC 2 LAM 1 SEG 3 SEGMAX 0
+ROW O_ n 20 m 113 values 3 orbit 3 SBC 2 LAM 2 SEG 3 SEGMAX 0
+CHECK PASS
+GAME red/carry/instances/ctx12_n40.pg rc=0
+ROW E_ n 40 m 297 values 7 orbit 7 SBC 6 LAM 4 SEG 7 SEGMAX 0
+ROW O_ n 40 m 297 values 5 orbit 5 SBC 3 LAM 1 SEG 4 SEGMAX 1
+CHECK PASS
+GAME red/carry/instances/ctx13_n40.pg rc=0
+ROW E_ n 40 m 316 values 15 orbit 15 SBC 11 LAM 4 SEG 12 SEGMAX 2
+ROW O_ n 40 m 316 values 7 orbit 7 SBC 5 LAM 4 SEG 6 SEGMAX 1
+CHECK PASS
+GAME red/carry/instances/ctx7_n30.pg rc=0
+ROW E_ n 30 m 293 values 10 orbit 10 SBC 7 LAM 3 SEG 9 SEGMAX 1
+ROW O_ n 30 m 293 values 9 orbit 9 SBC 8 LAM 8 SEG 9 SEGMAX 0
+CHECK PASS
+GAME red/carry/instances/f1_twodef_n48.pg rc=0
+ROW E_ n 48 m 264 values 5 orbit 5 SBC 4 LAM 4 SEG 5 SEGMAX 0
+ROW O_ n 48 m 264 values 3 orbit 3 SBC 1 LAM 1 SEG 2 SEGMAX 1
+CHECK PASS
+GAME red/carry/instances/ctx6_n56.pg rc=0
+ROW E_ n 56 m 432 values 11 orbit 11 SBC 9 LAM 5 SEG 10 SEGMAX 1
+ROW O_ n 56 m 432 values 8 orbit 8 SBC 6 LAM 5 SEG 7 SEGMAX 1
+CHECK PASS
+GAME red/carry/instances/f1_twofall_n48.pg rc=0
+ROW E_ n 48 m 236 values 7 orbit 7 SBC 5 LAM 4 SEG 6 SEGMAX 1
+ROW O_ n 48 m 236 values 4 orbit 4 SBC 2 LAM 1 SEG 3 SEGMAX 1
+CHECK PASS
+GAME red/carry/instances/fallv_viol_n28.pg rc=0
+ROW E_ n 28 m 288 values 8 orbit 8 SBC 7 LAM 6 SEG 8 SEGMAX 0
+ROW O_ n 28 m 288 values 5 orbit 5 SBC 2 LAM 1 SEG 3 SEGMAX 2
+CHECK PASS
+GAME red/carry/instances/fall3_n76.pg rc=0
+ROW E_ n 76 m 425 values 8 orbit 8 SBC 6 LAM 6 SEG 7 SEGMAX 1
+ROW O_ n 76 m 425 values 4 orbit 4 SBC 3 LAM 2 SEG 4 SEGMAX 0
+CHECK PASS
+GAME red/carry/instances/fired10_n20.pg rc=0
+ROW E_ n 20 m 144 values 4 orbit 4 SBC 1 LAM 1 SEG 3 SEGMAX 1
+ROW O_ n 20 m 144 values 6 orbit 6 SBC 5 LAM 3 SEG 6 SEGMAX 0
+CHECK PASS
+GAME red/carry/instances/firedlong667_n20.pg rc=0
+ROW E_ n 20 m 139 values 3 orbit 3 SBC 1 LAM 2 SEG 3 SEGMAX 0
+ROW O_ n 20 m 139 values 5 orbit 5 SBC 2 LAM 3 SEG 4 SEGMAX 1
+CHECK PASS
+GAME red/carry/instances/firedlong667_n43.pg rc=0
+ROW E_ n 43 m 283 values 3 orbit 3 SBC 0 LAM 1 SEG 2 SEGMAX 1
+ROW O_ n 43 m 283 values 3 orbit 3 SBC 1 LAM 1 SEG 2 SEGMAX 1
+CHECK PASS
+GAME red/carry/instances/gapbW_dup_n20.pg rc=0
+ROW E_ n 20 m 159 values 5 orbit 5 SBC 2 LAM 2 SEG 3 SEGMAX 2
+ROW O_ n 20 m 159 values 6 orbit 6 SBC 4 LAM 5 SEG 6 SEGMAX 0
+CHECK PASS
+GAME red/carry/instances/gapb_dup_n20.pg rc=0
+ROW E_ n 20 m 113 values 5 orbit 5 SBC 3 LAM 2 SEG 5 SEGMAX 0
+ROW O_ n 20 m 113 values 6 orbit 6 SBC 4 LAM 3 SEG 5 SEGMAX 1
+CHECK PASS
+GAME red/carry/instances/firedstep13_n76.pg rc=0
+ROW E_ n 76 m 562 values 10 orbit 10 SBC 8 LAM 4 SEG 9 SEGMAX 1
+ROW O_ n 76 m 562 values 6 orbit 6 SBC 4 LAM 3 SEG 6 SEGMAX 0
+CHECK PASS
+GAME red/carry/instances/fall4_n116.pg rc=0
+ROW E_ n 116 m 455 values 7 orbit 7 SBC 5 LAM 4 SEG 6 SEGMAX 1
+ROW O_ n 116 m 455 values 4 orbit 4 SBC 2 LAM 2 SEG 4 SEGMAX 0
+CHECK PASS
+GAME red/carry/instances/h4_compound2x2_n44.pg rc=0
+ROW E_ n 44 m 127 values 8 orbit 8 SBC 4 LAM 3 SEG 5 SEGMAX 2
+ROW O_ n 44 m 127 values 3 orbit 3 SBC 2 LAM 1 SEG 3 SEGMAX 0
+CHECK PASS
+GAME red/carry/instances/h4_def2ctx_n20.pg rc=0
+ROW E_ n 20 m 71 values 5 orbit 5 SBC 3 LAM 3 SEG 4 SEGMAX 1
+ROW O_ n 20 m 71 values 4 orbit 4 SBC 2 LAM 2 SEG 4 SEGMAX 0
+CHECK PASS
+GAME red/carry/instances/h4_compound_n44.pg rc=0
+ROW E_ n 44 m 129 values 5 orbit 5 SBC 3 LAM 4 SEG 5 SEGMAX 0
+ROW O_ n 44 m 129 values 4 orbit 4 SBC 1 LAM 0 SEG 2 SEGMAX 2
+CHECK PASS
+GAME red/carry/instances/h4_def7_n28.pg rc=0
+ROW E_ n 28 m 83 values 4 orbit 4 SBC 2 LAM 3 SEG 4 SEGMAX 0
+ROW O_ n 28 m 83 values 2 orbit 2 SBC 0 LAM 0 SEG 1 SEGMAX 1
+CHECK PASS
+GAME red/carry/instances/h4_disjoint_n20.pg rc=0
+ROW E_ n 20 m 63 values 3 orbit 3 SBC 1 LAM 2 SEG 3 SEGMAX 0
+ROW O_ n 20 m 63 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/carry/instances/kfirst_viol_n13.pg rc=0
+ROW E_ n 13 m 20 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+ROW O_ n 13 m 20 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/carry/instances/h4_notweaker_n20.pg rc=0
+ROW E_ n 20 m 65 values 6 orbit 6 SBC 5 LAM 5 SEG 6 SEGMAX 0
+ROW O_ n 20 m 65 values 6 orbit 6 SBC 5 LAM 5 SEG 6 SEGMAX 0
+CHECK PASS
+GAME red/carry/instances/kin_viol_n29.pg rc=0
+ROW E_ n 29 m 79 values 6 orbit 6 SBC 5 LAM 5 SEG 6 SEGMAX 0
+ROW O_ n 29 m 79 values 7 orbit 7 SBC 6 LAM 6 SEG 7 SEGMAX 0
+CHECK PASS
+GAME red/carry/instances/lemmaS_Mdrop_n20.pg rc=0
+ROW E_ n 20 m 71 values 5 orbit 5 SBC 3 LAM 3 SEG 4 SEGMAX 1
+ROW O_ n 20 m 71 values 4 orbit 4 SBC 2 LAM 1 SEG 3 SEGMAX 1
+CHECK PASS
+GAME red/carry/instances/lalg_dtl_mviol_n20.pg rc=0
+ROW E_ n 20 m 64 values 4 orbit 4 SBC 3 LAM 3 SEG 4 SEGMAX 0
+ROW O_ n 20 m 64 values 6 orbit 6 SBC 3 LAM 1 SEG 4 SEGMAX 1
+CHECK PASS
+GAME red/carry/instances/lemmaS_viol_n20.pg rc=0
+ROW E_ n 20 m 69 values 3 orbit 3 SBC 2 LAM 2 SEG 3 SEGMAX 0
+ROW O_ n 20 m 69 values 5 orbit 5 SBC 1 LAM 0 SEG 2 SEGMAX 3
+CHECK PASS
+GAME red/carry/instances/lex_viol_inj_n28.pg rc=0
+ROW E_ n 28 m 187 values 7 orbit 7 SBC 5 LAM 4 SEG 6 SEGMAX 1
+ROW O_ n 28 m 187 values 4 orbit 4 SBC 2 LAM 1 SEG 3 SEGMAX 1
+CHECK PASS
+GAME red/carry/instances/meet_viol_n17.pg rc=0
+ROW E_ n 17 m 22 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+ROW O_ n 17 m 22 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/carry/instances/lex_viol_tie_n28.pg rc=0
+ROW E_ n 28 m 187 values 7 orbit 7 SBC 5 LAM 4 SEG 6 SEGMAX 1
+ROW O_ n 28 m 187 values 4 orbit 4 SBC 2 LAM 1 SEG 3 SEGMAX 1
+CHECK PASS
+GAME red/carry/instances/nosig_2_3.pg rc=0
+ROW E_ n 24 m 41 values 2 orbit 2 SBC 0 LAM 0 SEG 1 SEGMAX 1
+ROW O_ n 24 m 41 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/carry/instances/pk_viol_n20.pg rc=0
+ROW E_ n 20 m 171 values 3 orbit 3 SBC 0 LAM 0 SEG 1 SEGMAX 2
+ROW O_ n 20 m 171 values 3 orbit 3 SBC 1 LAM 1 SEG 2 SEGMAX 1
+CHECK PASS
+GAME red/carry/instances/phi_flat_alive_n32.pg rc=0
+ROW E_ n 32 m 128 values 4 orbit 4 SBC 1 LAM 1 SEG 2 SEGMAX 2
+ROW O_ n 32 m 128 values 8 orbit 8 SBC 6 LAM 5 SEG 7 SEGMAX 1
+CHECK PASS
+GAME red/carry/instances/meet_viol_n29.pg rc=0
+ROW E_ n 29 m 177 values 13 orbit 13 SBC 10 LAM 9 SEG 13 SEGMAX 0
+ROW O_ n 29 m 177 values 6 orbit 6 SBC 5 LAM 5 SEG 6 SEGMAX 0
+CHECK PASS
+GAME red/carry/instances/replay4_n32.pg rc=0
+ROW E_ n 32 m 159 values 4 orbit 4 SBC 2 LAM 1 SEG 3 SEGMAX 1
+ROW O_ n 32 m 159 values 8 orbit 8 SBC 5 LAM 3 SEG 6 SEGMAX 2
+CHECK PASS
+GAME red/carry/instances/spp19_oink_n30.pg rc=0
+ROW E_ n 30 m 295 values 9 orbit 9 SBC 7 LAM 4 SEG 8 SEGMAX 1
+ROW O_ n 30 m 295 values 8 orbit 8 SBC 6 LAM 6 SEG 7 SEGMAX 1
+CHECK PASS
+GAME red/carry/instances/spp19_stable_n30.pg rc=0
+ROW E_ n 30 m 254 values 10 orbit 10 SBC 8 LAM 4 SEG 9 SEGMAX 1
+ROW O_ n 30 m 254 values 5 orbit 5 SBC 3 LAM 2 SEG 4 SEGMAX 1
+CHECK PASS
+GAME red/carry/instances/spp22_oink_n40.pg rc=0
+ROW E_ n 40 m 205 values 8 orbit 8 SBC 6 LAM 4 SEG 7 SEGMAX 1
+ROW O_ n 40 m 205 values 7 orbit 7 SBC 5 LAM 2 SEG 6 SEGMAX 1
+CHECK PASS
+GAME red/carry/instances/spp25_oink_n40.pg rc=0
+ROW E_ n 40 m 221 values 9 orbit 9 SBC 7 LAM 4 SEG 8 SEGMAX 1
+ROW O_ n 40 m 221 values 6 orbit 6 SBC 5 LAM 1 SEG 6 SEGMAX 0
+CHECK PASS
+GAME red/carry/instances/stealonce_both_n45.pg rc=0
+ROW E_ n 45 m 70 values 6 orbit 6 SBC 4 LAM 4 SEG 5 SEGMAX 1
+ROW O_ n 45 m 70 values 2 orbit 2 SBC 0 LAM 0 SEG 1 SEGMAX 1
+CHECK PASS
+GAME red/carry/instances/stealonce_core_n76.pg rc=0
+ROW E_ n 76 m 101 values 6 orbit 6 SBC 4 LAM 4 SEG 5 SEGMAX 1
+ROW O_ n 76 m 101 values 2 orbit 2 SBC 0 LAM 0 SEG 1 SEGMAX 1
+CHECK PASS
+GAME red/carry/instances/tstep_near_n20.pg rc=0
+ROW E_ n 20 m 172 values 6 orbit 6 SBC 5 LAM 4 SEG 6 SEGMAX 0
+ROW O_ n 20 m 172 values 4 orbit 4 SBC 2 LAM 1 SEG 3 SEGMAX 1
+CHECK PASS
+GAME red/carry/instances/stealer_viol_n76.pg rc=0
+ROW E_ n 76 m 450 values 8 orbit 8 SBC 6 LAM 4 SEG 7 SEGMAX 1
+ROW O_ n 76 m 450 values 6 orbit 6 SBC 4 LAM 2 SEG 5 SEGMAX 1
+CHECK PASS
+GAME red/ctxp/instances/deep1_n13.pg rc=0
+ROW E_ n 13 m 22 values 2 orbit 2 SBC 0 LAM 0 SEG 1 SEGMAX 1
+ROW O_ n 13 m 22 values 2 orbit 2 SBC 0 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/ctxp/instances/deep1_n21.pg rc=0
+ROW E_ n 21 m 32 values 2 orbit 2 SBC 0 LAM 1 SEG 2 SEGMAX 0
+ROW O_ n 21 m 32 values 4 orbit 4 SBC 1 LAM 1 SEG 3 SEGMAX 1
+CHECK PASS
+GAME red/ctxp/instances/margin1_mc5.pg rc=0
+ROW E_ n 50 m 200 values 4 orbit 4 SBC 2 LAM 3 SEG 4 SEGMAX 0
+ROW O_ n 50 m 200 values 5 orbit 5 SBC 2 LAM 2 SEG 3 SEGMAX 2
+CHECK PASS
+GAME red/ctxp/instances/margin1_mc1.pg rc=0
+ROW E_ n 80 m 374 values 7 orbit 7 SBC 3 LAM 2 SEG 4 SEGMAX 3
+ROW O_ n 80 m 374 values 7 orbit 7 SBC 3 LAM 6 SEG 7 SEGMAX 0
+CHECK PASS
+GAME red/ctxp/instances/margin1_n20.pg rc=0
+ROW E_ n 20 m 86 values 4 orbit 4 SBC 1 LAM 3 SEG 4 SEGMAX 0
+ROW O_ n 20 m 86 values 6 orbit 6 SBC 4 LAM 4 SEG 5 SEGMAX 1
+CHECK PASS
+GAME red/dtl/instances/lalg_dtl_pertop31_n18.pg rc=0
+ROW E_ n 18 m 108 values 4 orbit 4 SBC 1 LAM 2 SEG 3 SEGMAX 1
+ROW O_ n 18 m 108 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/carry/instances/stealonce_viol_n76.pg rc=0
+ROW E_ n 76 m 451 values 8 orbit 8 SBC 6 LAM 4 SEG 7 SEGMAX 1
+ROW O_ n 76 m 451 values 6 orbit 6 SBC 4 LAM 2 SEG 5 SEGMAX 1
+CHECK PASS
+GAME red/fbr/instances/bghm_k1_gap6_A.pg rc=0
+ROW E_ n 21 m 23 values 2 orbit 2 SBC 0 LAM 1 SEG 2 SEGMAX 0
+ROW O_ n 21 m 23 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/fbr/instances/bghm_k3_gap4_A.pg rc=0
+ROW E_ n 45 m 51 values 2 orbit 2 SBC 0 LAM 1 SEG 2 SEGMAX 0
+ROW O_ n 45 m 51 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/dtl/instances/lalg_dtl_restart8_n20.pg rc=0
+ROW E_ n 20 m 119 values 3 orbit 3 SBC 1 LAM 1 SEG 2 SEGMAX 1
+ROW O_ n 20 m 119 values 5 orbit 5 SBC 3 LAM 3 SEG 4 SEGMAX 1
+CHECK PASS
+GAME red/fbr/instances/lev74_n40.pg rc=0
+ROW E_ n 40 m 140 values 19 orbit 19 SBC 13 LAM 2 SEG 15 SEGMAX 2
+ROW O_ n 40 m 140 values 4 orbit 4 SBC 2 LAM 1 SEG 3 SEGMAX 1
+CHECK PASS
+GAME red/fbr/instances/fr39_q4_n48.pg rc=0
+ROW E_ n 48 m 126 values 37 orbit 37 SBC 4 LAM 2 SEG 5 SEGMAX 23
+ROW O_ n 48 m 126 values 4 orbit 4 SBC 2 LAM 1 SEG 4 SEGMAX 0
+CHECK PASS
+GAME red/fbr/instances/lev56_n48.pg rc=0
+ROW E_ n 48 m 170 values 23 orbit 23 SBC 12 LAM 3 SEG 14 SEGMAX 3
+ROW O_ n 48 m 170 values 4 orbit 4 SBC 3 LAM 1 SEG 4 SEGMAX 0
+CHECK PASS
+GAME red/fbr/instances/rho144_n32.pg rc=0
+ROW E_ n 32 m 80 values 9 orbit 9 SBC 8 LAM 3 SEG 9 SEGMAX 0
+ROW O_ n 32 m 80 values 4 orbit 4 SBC 3 LAM 2 SEG 4 SEGMAX 0
+CHECK PASS
+GAME red/fbr/instances/rho3_253_n32.pg rc=0
+ROW E_ n 32 m 79 values 7 orbit 7 SBC 5 LAM 6 SEG 7 SEGMAX 0
+ROW O_ n 32 m 79 values 4 orbit 4 SBC 2 LAM 1 SEG 4 SEGMAX 0
+CHECK PASS
+GAME red/fbr/instances/rho84_n16.pg rc=0
+ROW E_ n 16 m 45 values 5 orbit 5 SBC 4 LAM 1 SEG 5 SEGMAX 0
+ROW O_ n 16 m 45 values 3 orbit 3 SBC 0 LAM 2 SEG 3 SEGMAX 0
+CHECK PASS
+GAME red/fbr/instances/sat4_n20.pg rc=0
+ROW E_ n 20 m 71 values 5 orbit 5 SBC 3 LAM 3 SEG 4 SEGMAX 1
+ROW O_ n 20 m 71 values 4 orbit 4 SBC 2 LAM 2 SEG 4 SEGMAX 0
+CHECK PASS
+GAME red/fbr/instances/nep80_n40.pg rc=0
+ROW E_ n 40 m 142 values 20 orbit 20 SBC 18 LAM 2 SEG 19 SEGMAX 1
+ROW O_ n 40 m 142 values 3 orbit 3 SBC 2 LAM 1 SEG 3 SEGMAX 0
+CHECK PASS
+GAME red/fbr/instances/rho666_n48.pg rc=0
+ROW E_ n 48 m 161 values 16 orbit 16 SBC 11 LAM 5 SEG 12 SEGMAX 2
+ROW O_ n 48 m 161 values 3 orbit 3 SBC 1 LAM 1 SEG 2 SEGMAX 1
+CHECK PASS
+GAME red/fbr/instances/sat68_n20.pg rc=0
+ROW E_ n 20 m 46 values 7 orbit 7 SBC 1 LAM 2 SEG 3 SEGMAX 3
+ROW O_ n 20 m 46 values 2 orbit 2 SBC 0 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/fbx/instances/exsw_loop_n15.pg rc=0
+ROW E_ n 15 m 26 values 2 orbit 2 SBC 0 LAM 1 SEG 2 SEGMAX 0
+ROW O_ n 15 m 26 values 2 orbit 2 SBC 0 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/fbr/instances/twowave_L16.pg rc=0
+ROW E_ n 22 m 55 values 16 orbit 16 SBC 0 LAM 0 SEG 1 SEGMAX 15
+ROW O_ n 22 m 55 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/fbx/instances/kt6_n58.pg rc=0
+ROW E_ n 58 m 199 values 10 orbit 10 SBC 5 LAM 2 SEG 6 SEGMAX 4
+ROW O_ n 58 m 199 values 2 orbit 2 SBC 0 LAM 0 SEG 1 SEGMAX 1
+CHECK PASS
+GAME red/frz/instances/fbcap_eq_u4_n11.pg rc=0
+ROW E_ n 11 m 31 values 7 orbit 7 SBC 2 LAM 5 SEG 6 SEGMAX 1
+ROW O_ n 11 m 31 values 2 orbit 2 SBC 0 LAM 0 SEG 1 SEGMAX 1
+CHECK PASS
+GAME red/frz/instances/fx2_n11.pg rc=0
+ROW E_ n 11 m 30 values 10 orbit 10 SBC 1 LAM 2 SEG 3 SEGMAX 7
+ROW O_ n 11 m 30 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/h3/instances/frzgap0_n4.pg rc=0
+ROW E_ n 4 m 9 values 2 orbit 2 SBC 0 LAM 0 SEG 1 SEGMAX 1
+ROW O_ n 4 m 9 values 2 orbit 2 SBC 0 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/h3/instances/frzgap0_n6.pg rc=0
+ROW E_ n 6 m 13 values 4 orbit 4 SBC 0 LAM 0 SEG 1 SEGMAX 3
+ROW O_ n 6 m 13 values 2 orbit 2 SBC 0 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/h3/instances/lcount2_n23.pg rc=0
+ROW E_ n 23 m 48 values 5 orbit 5 SBC 2 LAM 3 SEG 4 SEGMAX 1
+ROW O_ n 23 m 48 values 3 orbit 3 SBC 1 LAM 1 SEG 3 SEGMAX 0
+CHECK PASS
+GAME red/h3/instances/lcount_n23.pg rc=0
+ROW E_ n 23 m 50 values 6 orbit 6 SBC 2 LAM 1 SEG 3 SEGMAX 3
+ROW O_ n 23 m 50 values 2 orbit 2 SBC 0 LAM 0 SEG 1 SEGMAX 1
+CHECK PASS
+GAME red/h3/instances/offret_l19_n24.pg rc=0
+ROW E_ n 24 m 52 values 3 orbit 3 SBC 1 LAM 2 SEG 3 SEGMAX 0
+ROW O_ n 24 m 52 values 2 orbit 2 SBC 0 LAM 0 SEG 1 SEGMAX 1
+CHECK PASS
+GAME red/kl/instances/klcount_n16.pg rc=0
+ROW E_ n 16 m 95 values 5 orbit 5 SBC 4 LAM 3 SEG 5 SEGMAX 0
+ROW O_ n 16 m 95 values 4 orbit 4 SBC 1 LAM 3 SEG 4 SEGMAX 0
+CHECK PASS
+GAME red/kl/instances/klcount_n18_base.pg rc=0
+ROW E_ n 18 m 97 values 5 orbit 5 SBC 4 LAM 3 SEG 5 SEGMAX 0
+ROW O_ n 18 m 97 values 4 orbit 4 SBC 1 LAM 3 SEG 4 SEGMAX 0
+CHECK PASS
+GAME red/kl/instances/klcount_n18_lvl.pg rc=0
+ROW E_ n 18 m 97 values 5 orbit 5 SBC 4 LAM 3 SEG 5 SEGMAX 0
+ROW O_ n 18 m 97 values 4 orbit 4 SBC 1 LAM 3 SEG 4 SEGMAX 0
+CHECK PASS
+GAME red/kl/instances/klglobal_n16.pg rc=0
+ROW E_ n 16 m 99 values 4 orbit 4 SBC 2 LAM 2 SEG 3 SEGMAX 1
+ROW O_ n 16 m 99 values 5 orbit 5 SBC 2 LAM 1 SEG 3 SEGMAX 2
+CHECK PASS
+GAME red/h3/instances/xsnpre36_n48.pg rc=0
+ROW E_ n 48 m 129 values 34 orbit 34 SBC 1 LAM 3 SEG 4 SEGMAX 30
+ROW O_ n 48 m 129 values 2 orbit 2 SBC 0 LAM 0 SEG 1 SEGMAX 1
+CHECK PASS
+GAME red/kl/instances/klglobal_n18_lvl.pg rc=0
+ROW E_ n 18 m 101 values 4 orbit 4 SBC 2 LAM 2 SEG 3 SEGMAX 1
+ROW O_ n 18 m 101 values 5 orbit 5 SBC 2 LAM 1 SEG 3 SEGMAX 2
+CHECK PASS
+GAME red/kl/instances/klglobal_n20_lvl2.pg rc=0
+ROW E_ n 20 m 103 values 4 orbit 4 SBC 2 LAM 2 SEG 3 SEGMAX 1
+ROW O_ n 20 m 103 values 5 orbit 5 SBC 2 LAM 1 SEG 3 SEGMAX 2
+CHECK PASS
+GAME red/kl/instances/klmin_n13.pg rc=0
+ROW E_ n 13 m 18 values 4 orbit 4 SBC 0 LAM 2 SEG 3 SEGMAX 1
+ROW O_ n 13 m 18 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/kl/instances/r2climb_h13.pg rc=0
+ROW E_ n 13 m 55 values 3 orbit 3 SBC 2 LAM 2 SEG 3 SEGMAX 0
+ROW O_ n 13 m 55 values 3 orbit 3 SBC 1 LAM 1 SEG 3 SEGMAX 0
+CHECK PASS
+GAME red/kl/instances/r2join_h0E_n14.pg rc=0
+ROW E_ n 14 m 21 values 4 orbit 4 SBC 1 LAM 2 SEG 4 SEGMAX 0
+ROW O_ n 14 m 21 values 2 orbit 2 SBC 1 LAM 0 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/kl/instances/r2crawl_n14.pg rc=0
+ROW E_ n 14 m 84 values 4 orbit 4 SBC 2 LAM 3 SEG 4 SEGMAX 0
+ROW O_ n 14 m 84 values 4 orbit 4 SBC 2 LAM 3 SEG 4 SEGMAX 0
+CHECK PASS
+GAME red/kl/instances/r2lap_best_n22.pg rc=0
+ROW E_ n 22 m 180 values 5 orbit 5 SBC 3 LAM 4 SEG 5 SEGMAX 0
+ROW O_ n 22 m 180 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/kl24/instances/HL88_0.pg rc=0
+ROW E_ n 41 m 60 values 4 orbit 4 SBC 0 LAM 2 SEG 3 SEGMAX 1
+ROW O_ n 41 m 60 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/kl24/instances/HL88_1.pg rc=0
+ROW E_ n 43 m 62 values 4 orbit 4 SBC 0 LAM 2 SEG 3 SEGMAX 1
+ROW O_ n 43 m 62 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/kl24/instances/HL88_2.pg rc=0
+ROW E_ n 45 m 64 values 4 orbit 4 SBC 0 LAM 2 SEG 3 SEGMAX 1
+ROW O_ n 45 m 64 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/kl24/instances/HLg_0.pg rc=0
+ROW E_ n 29 m 42 values 4 orbit 4 SBC 0 LAM 2 SEG 3 SEGMAX 1
+ROW O_ n 29 m 42 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/kl24/instances/HL88_3.pg rc=0
+ROW E_ n 47 m 66 values 4 orbit 4 SBC 0 LAM 2 SEG 3 SEGMAX 1
+ROW O_ n 47 m 66 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/kl24/instances/HLg_1.pg rc=0
+ROW E_ n 35 m 50 values 4 orbit 4 SBC 0 LAM 2 SEG 3 SEGMAX 1
+ROW O_ n 35 m 50 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/kl24/instances/HLg_2.pg rc=0
+ROW E_ n 45 m 64 values 4 orbit 4 SBC 0 LAM 2 SEG 3 SEGMAX 1
+ROW O_ n 45 m 64 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/kl24/instances/HLg_3.pg rc=0
+ROW E_ n 55 m 78 values 4 orbit 4 SBC 0 LAM 2 SEG 3 SEGMAX 1
+ROW O_ n 55 m 78 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/kw/instances/cw11_n24.pg rc=0
+ROW E_ n 24 m 72 values 7 orbit 7 SBC 3 LAM 2 SEG 4 SEGMAX 3
+ROW O_ n 24 m 72 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/kw/instances/frzu_tight_n14.pg rc=0
+ROW E_ n 14 m 34 values 5 orbit 5 SBC 0 LAM 1 SEG 2 SEGMAX 2
+ROW O_ n 14 m 34 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/lag/instances/depth2_n39.pg rc=0
+ROW E_ n 39 m 76 values 4 orbit 4 SBC 1 LAM 1 SEG 2 SEGMAX 2
+ROW O_ n 39 m 76 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/kw/instances/kc18_n24.pg rc=0
+ROW E_ n 24 m 66 values 20 orbit 20 SBC 3 LAM 18 SEG 19 SEGMAX 1
+ROW O_ n 24 m 66 values 2 orbit 2 SBC 1 LAM 0 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/lag/instances/depth3_n46.pg rc=0
+ROW E_ n 46 m 88 values 3 orbit 3 SBC 1 LAM 1 SEG 2 SEGMAX 1
+ROW O_ n 46 m 88 values 4 orbit 4 SBC 2 LAM 3 SEG 4 SEGMAX 0
+CHECK PASS
+GAME red/lag/instances/fam_D4_n50.pg rc=0
+ROW E_ n 50 m 98 values 3 orbit 3 SBC 0 LAM 1 SEG 2 SEGMAX 1
+ROW O_ n 50 m 98 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/lag/instances/depth4_n53.pg rc=0
+ROW E_ n 53 m 103 values 4 orbit 4 SBC 1 LAM 1 SEG 2 SEGMAX 2
+ROW O_ n 53 m 103 values 5 orbit 5 SBC 2 LAM 4 SEG 5 SEGMAX 0
+CHECK PASS
+GAME red/lag/instances/fam_D12_n106.pg rc=0
+ROW E_ n 106 m 210 values 3 orbit 3 SBC 0 LAM 1 SEG 2 SEGMAX 1
+ROW O_ n 106 m 210 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/mei/instances/mei_h2.pg rc=0
+ROW E_ n 19 m 27 values 2 orbit 2 SBC 1 LAM 0 SEG 2 SEGMAX 0
+ROW O_ n 19 m 27 values 2 orbit 2 SBC 0 LAM 0 SEG 1 SEGMAX 1
+CHECK PASS
+GAME red/lag/instances/fam_D8_n78.pg rc=0
+ROW E_ n 78 m 154 values 3 orbit 3 SBC 0 LAM 1 SEG 2 SEGMAX 1
+ROW O_ n 78 m 154 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/mei/instances/mei_h3.pg rc=0
+ROW E_ n 27 m 39 values 3 orbit 3 SBC 2 LAM 0 SEG 3 SEGMAX 0
+ROW O_ n 27 m 39 values 3 orbit 3 SBC 1 LAM 0 SEG 2 SEGMAX 1
+CHECK PASS
+GAME red/mei/instances/mei_h4.pg rc=0
+ROW E_ n 35 m 51 values 4 orbit 4 SBC 3 LAM 0 SEG 4 SEGMAX 0
+ROW O_ n 35 m 51 values 4 orbit 4 SBC 2 LAM 0 SEG 3 SEGMAX 1
+CHECK PASS
+GAME red/mei/instances/mei_h5.pg rc=0
+ROW E_ n 43 m 63 values 5 orbit 5 SBC 4 LAM 0 SEG 5 SEGMAX 0
+ROW O_ n 43 m 63 values 5 orbit 5 SBC 3 LAM 0 SEG 4 SEGMAX 1
+CHECK PASS
+GAME red/mei/instances/mei_h6.pg rc=0
+ROW E_ n 51 m 75 values 6 orbit 6 SBC 5 LAM 0 SEG 6 SEGMAX 0
+ROW O_ n 51 m 75 values 6 orbit 6 SBC 4 LAM 0 SEG 5 SEGMAX 1
+CHECK PASS
+GAME red/mei/instances/mei_h8.pg rc=0
+ROW E_ n 67 m 99 values 8 orbit 8 SBC 7 LAM 0 SEG 8 SEGMAX 0
+ROW O_ n 67 m 99 values 8 orbit 8 SBC 6 LAM 0 SEG 7 SEGMAX 1
+CHECK PASS
+GAME red/n3/instances/core41_n40.pg rc=0
+ROW E_ n 40 m 67 values 12 orbit 12 SBC 7 LAM 0 SEG 8 SEGMAX 2
+ROW O_ n 40 m 67 values 2 orbit 2 SBC 0 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/n3/instances/lagx10_n40.pg rc=0
+ROW E_ n 40 m 98 values 5 orbit 5 SBC 3 LAM 3 SEG 5 SEGMAX 0
+ROW O_ n 40 m 98 values 2 orbit 2 SBC 0 LAM 0 SEG 1 SEGMAX 1
+CHECK PASS
+GAME red/n3/instances/lag11_n40.pg rc=0
+ROW E_ n 40 m 102 values 16 orbit 16 SBC 11 LAM 4 SEG 12 SEGMAX 3
+ROW O_ n 40 m 102 values 4 orbit 4 SBC 2 LAM 2 SEG 4 SEGMAX 0
+CHECK PASS
+GAME red/n3/instances/comp54_n80.pg rc=0
+ROW E_ n 80 m 134 values 14 orbit 14 SBC 8 LAM 0 SEG 9 SEGMAX 3
+ROW O_ n 80 m 134 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/n3/instances/long90_k2_n40.pg rc=0
+ROW E_ n 40 m 86 values 19 orbit 19 SBC 5 LAM 1 SEG 7 SEGMAX 5
+ROW O_ n 40 m 86 values 2 orbit 2 SBC 0 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/n3/instances/long121_n40.pg rc=0
+ROW E_ n 40 m 116 values 25 orbit 25 SBC 10 LAM 1 SEG 11 SEGMAX 6
+ROW O_ n 40 m 116 values 3 orbit 3 SBC 1 LAM 2 SEG 3 SEGMAX 0
+CHECK PASS
+GAME red/n3/instances/n3cov_lean.pg rc=0
+ROW E_ n 48 m 128 values 29 orbit 29 SBC 11 LAM 4 SEG 12 SEGMAX 6
+ROW O_ n 48 m 128 values 6 orbit 6 SBC 3 LAM 5 SEG 6 SEGMAX 0
+CHECK PASS
+GAME red/n3/instances/n3cov_phi.pg rc=0
+ROW E_ n 32 m 97 values 8 orbit 8 SBC 6 LAM 2 SEG 7 SEGMAX 1
+ROW O_ n 32 m 97 values 6 orbit 6 SBC 3 LAM 2 SEG 4 SEGMAX 2
+CHECK PASS
+GAME red/n3/instances/run49_n32.pg rc=0
+ROW E_ n 32 m 81 values 20 orbit 20 SBC 3 LAM 2 SEG 4 SEGMAX 15
+ROW O_ n 32 m 81 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/n3/instances/ret22_n40.pg rc=0
+ROW E_ n 40 m 121 values 14 orbit 14 SBC 11 LAM 4 SEG 12 SEGMAX 1
+ROW O_ n 40 m 121 values 3 orbit 3 SBC 1 LAM 0 SEG 2 SEGMAX 1
+CHECK PASS
+GAME red/n3/instances/run34_n40.pg rc=0
+ROW E_ n 40 m 121 values 38 orbit 38 SBC 19 LAM 2 SEG 20 SEGMAX 4
+ROW O_ n 40 m 121 values 3 orbit 3 SBC 1 LAM 1 SEG 3 SEGMAX 0
+CHECK PASS
+GAME red/n5/instances/dl_4_4.pg rc=0
+ROW E_ n 42 m 88 values 9 orbit 9 SBC 3 LAM 0 SEG 4 SEGMAX 4
+ROW O_ n 42 m 88 values 9 orbit 9 SBC 3 LAM 0 SEG 4 SEGMAX 4
+CHECK PASS
+GAME red/n5/instances/dlm2_4.pg rc=0
+ROW E_ n 42 m 86 values 6 orbit 6 SBC 4 LAM 0 SEG 5 SEGMAX 1
+ROW O_ n 42 m 86 values 6 orbit 6 SBC 4 LAM 0 SEG 5 SEGMAX 1
+CHECK PASS
+GAME red/n5/instances/sym_h12_s1.pg rc=0
+ROW E_ n 24 m 58 values 11 orbit 11 SBC 8 LAM 10 SEG 11 SEGMAX 0
+ROW O_ n 24 m 58 values 14 orbit 14 SBC 9 LAM 11 SEG 14 SEGMAX 0
+CHECK PASS
+GAME red/n5/instances/sym_h8_s1.pg rc=0
+ROW E_ n 16 m 40 values 5 orbit 5 SBC 2 LAM 4 SEG 5 SEGMAX 0
+ROW O_ n 16 m 40 values 7 orbit 7 SBC 1 LAM 6 SEG 7 SEGMAX 0
+CHECK PASS
+GAME red/n5/instances/sym_h16_s1.pg rc=0
+ROW E_ n 32 m 80 values 9 orbit 9 SBC 7 LAM 6 SEG 8 SEGMAX 1
+ROW O_ n 32 m 80 values 17 orbit 17 SBC 12 LAM 10 SEG 15 SEGMAX 1
+CHECK PASS
+GAME red/n5inj/instances/block_bk20.pg rc=0
+ROW E_ n 24 m 46 values 28 orbit 28 SBC 0 LAM 10 SEG 11 SEGMAX 9
+ROW O_ n 24 m 46 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/n5inj/instances/blockph_bp20.pg rc=0
+ROW E_ n 24 m 46 values 26 orbit 26 SBC 0 LAM 3 SEG 4 SEGMAX 19
+ROW O_ n 24 m 46 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/n5inj/instances/block_bk32.pg rc=0
+ROW E_ n 36 m 69 values 50 orbit 50 SBC 0 LAM 28 SEG 29 SEGMAX 21
+ROW O_ n 36 m 69 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/n5inj/instances/bribe_cex_n15.pg rc=0
+ROW E_ n 15 m 42 values 3 orbit 3 SBC 1 LAM 1 SEG 2 SEGMAX 1
+ROW O_ n 15 m 42 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/n5inj/instances/blockph_bp32.pg rc=0
+ROW E_ n 36 m 69 values 40 orbit 40 SBC 0 LAM 9 SEG 10 SEGMAX 30
+ROW O_ n 36 m 69 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/n5inj/instances/frz24.pg rc=0
+ROW E_ n 24 m 53 values 16 orbit 16 SBC 1 LAM 6 SEG 7 SEGMAX 7
+ROW O_ n 24 m 53 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/n5inj/instances/elimn_cex_n48.pg rc=0
+ROW E_ n 48 m 93 values 27 orbit 27 SBC 9 LAM 2 SEG 11 SEGMAX 9
+ROW O_ n 48 m 93 values 2 orbit 2 SBC 1 LAM 0 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/n5inj/instances/frz32.pg rc=0
+ROW E_ n 32 m 72 values 8 orbit 8 SBC 3 LAM 4 SEG 5 SEGMAX 3
+ROW O_ n 32 m 72 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/n5/instances/dl_6_8.pg rc=0
+ROW E_ n 110 m 228 values 15 orbit 15 SBC 5 LAM 0 SEG 6 SEGMAX 8
+ROW O_ n 110 m 228 values 15 orbit 15 SBC 5 LAM 0 SEG 6 SEGMAX 8
+CHECK PASS
+GAME red/n5inj/instances/frz40.pg rc=0
+ROW E_ n 40 m 97 values 22 orbit 22 SBC 8 LAM 8 SEG 12 SEGMAX 4
+ROW O_ n 40 m 97 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/n5inj/instances/phase2_pk32.pg rc=0
+ROW E_ n 32 m 70 values 25 orbit 25 SBC 5 LAM 6 SEG 9 SEGMAX 8
+ROW O_ n 32 m 70 values 3 orbit 3 SBC 0 LAM 0 SEG 1 SEGMAX 2
+CHECK PASS
+GAME red/n5inj/instances/returns_rt32.pg rc=0
+ROW E_ n 32 m 70 values 27 orbit 27 SBC 4 LAM 5 SEG 8 SEGMAX 10
+ROW O_ n 32 m 70 values 3 orbit 3 SBC 1 LAM 0 SEG 2 SEGMAX 1
+CHECK PASS
+GAME red/n5inj/instances/phase2_pk48.pg rc=0
+ROW E_ n 48 m 92 values 38 orbit 38 SBC 5 LAM 6 SEG 8 SEGMAX 15
+ROW O_ n 48 m 92 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/n5inj/instances/returns_ph64.pg rc=0
+ROW E_ n 64 m 127 values 38 orbit 38 SBC 1 LAM 2 SEG 4 SEGMAX 23
+ROW O_ n 64 m 127 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/n5inj/instances/returns_rt48.pg rc=0
+ROW E_ n 48 m 101 values 35 orbit 35 SBC 1 LAM 2 SEG 4 SEGMAX 20
+ROW O_ n 48 m 101 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/n5inj/instances/theta_thc24.pg rc=0
+ROW E_ n 24 m 51 values 30 orbit 30 SBC 9 LAM 12 SEG 22 SEGMAX 4
+ROW O_ n 24 m 51 values 2 orbit 2 SBC 0 LAM 0 SEG 1 SEGMAX 1
+CHECK PASS
+GAME red/n5inj/instances/theta_thf16.pg rc=0
+ROW E_ n 16 m 36 values 16 orbit 16 SBC 5 LAM 2 SEG 7 SEGMAX 6
+ROW O_ n 16 m 36 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/n5inj/instances/theta_tp32.pg rc=0
+ROW E_ n 32 m 67 values 3 orbit 3 SBC 1 LAM 1 SEG 3 SEGMAX 0
+ROW O_ n 32 m 67 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/n5inj/instances/returns_rt64.pg rc=0
+ROW E_ n 64 m 124 values 34 orbit 34 SBC 2 LAM 2 SEG 5 SEGMAX 18
+ROW O_ n 64 m 124 values 2 orbit 2 SBC 0 LAM 0 SEG 1 SEGMAX 1
+CHECK PASS
+GAME red/n5inj/instances/wide_h16.pg rc=0
+ROW E_ n 32 m 104 values 12 orbit 12 SBC 11 LAM 5 SEG 12 SEGMAX 0
+ROW O_ n 32 m 104 values 18 orbit 18 SBC 16 LAM 11 SEG 18 SEGMAX 0
+CHECK PASS
+GAME red/n5inj/instances/theta_tp40.pg rc=0
+GAME red/nest16/instances/k4L72_n101.pg rc=0
+ROW E_ n 40 m 78 values 42 orbit 42 SBC 10 LAM 4 SEG 14 SEGMAX 20
+ROW E_ n 101 m 319 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+ROW O_ n 40 m 78 values 2 orbit 2 SBC 0 LAM 0 SEG 1 SEGMAX 1
+ROW O_ n 101 m 319 values 7 orbit 7 SBC 0 LAM 4 SEG 5 SEGMAX 2
+CHECK PASS
+CHECK PASS
+GAME red/nest16/instances/k4L72r_n101.pg rc=0
+ROW E_ n 101 m 320 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+ROW O_ n 101 m 320 values 7 orbit 7 SBC 0 LAM 4 SEG 5 SEGMAX 2
+CHECK PASS
+GAME red/nest16/instances/k4seed_c1_n82.pg rc=0
+ROW E_ n 82 m 245 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+ROW O_ n 82 m 245 values 4 orbit 4 SBC 0 LAM 2 SEG 3 SEGMAX 1
+CHECK PASS
+GAME red/nest16/instances/k4g50_n101.pg rc=0
+ROW E_ n 101 m 319 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+ROW O_ n 101 m 319 values 6 orbit 6 SBC 0 LAM 4 SEG 5 SEGMAX 1
+CHECK PASS
+GAME red/nest16/instances/k4seed_vr_n87.pg rc=0
+ROW E_ n 87 m 254 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+ROW O_ n 87 m 254 values 4 orbit 4 SBC 0 LAM 2 SEG 3 SEGMAX 1
+CHECK PASS
+GAME red/nest16/instances/k4u_n101.pg rc=0
+ROW E_ n 101 m 318 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+ROW O_ n 101 m 318 values 4 orbit 4 SBC 0 LAM 2 SEG 3 SEGMAX 1
+CHECK PASS
+GAME red/nest16/instances/k4y1_n82.pg rc=0
+ROW E_ n 82 m 260 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+ROW O_ n 82 m 260 values 6 orbit 6 SBC 0 LAM 3 SEG 4 SEGMAX 2
+CHECK PASS
+GAME red/nest16/instances/k4y2_n87.pg rc=0
+ROW E_ n 87 m 298 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+ROW O_ n 87 m 298 values 7 orbit 7 SBC 0 LAM 3 SEG 4 SEGMAX 2
+CHECK PASS
+GAME red/nest16/instances/near4_n26.pg rc=0
+ROW E_ n 26 m 83 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+ROW O_ n 26 m 83 values 3 orbit 3 SBC 0 LAM 1 SEG 2 SEGMAX 1
+CHECK PASS
+GAME red/nest16/instances/nest4u_n46.pg rc=0
+ROW E_ n 46 m 138 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+ROW O_ n 46 m 138 values 3 orbit 3 SBC 0 LAM 1 SEG 2 SEGMAX 1
+CHECK PASS
+GAME red/nest16/instances/nest4uu_n51.pg rc=0
+ROW E_ n 51 m 159 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+ROW O_ n 51 m 159 values 3 orbit 3 SBC 0 LAM 2 SEG 3 SEGMAX 0
+CHECK PASS
+GAME red/nest16/instances/nest5_n49.pg rc=0
+ROW E_ n 49 m 151 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+ROW O_ n 49 m 151 values 4 orbit 4 SBC 0 LAM 1 SEG 2 SEGMAX 2
+CHECK PASS
+GAME red/nest16/instances/nest6_n75.pg rc=0
+ROW E_ n 75 m 233 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+ROW O_ n 75 m 233 values 4 orbit 4 SBC 0 LAM 1 SEG 2 SEGMAX 2
+CHECK PASS
+GAME red/nest16/instances/nest6min_n75.pg rc=0
+ROW E_ n 75 m 236 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+ROW O_ n 75 m 236 values 4 orbit 4 SBC 0 LAM 2 SEG 3 SEGMAX 1
+CHECK PASS
+GAME red/nest16/instances/oseg_n26.pg rc=0
+ROW E_ n 26 m 82 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+ROW O_ n 26 m 82 values 4 orbit 4 SBC 0 LAM 2 SEG 3 SEGMAX 1
+CHECK PASS
+GAME red/nest16/instances/nest6x_n75.pg rc=0
+ROW E_ n 75 m 314 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+ROW O_ n 75 m 314 values 6 orbit 6 SBC 0 LAM 3 SEG 4 SEGMAX 2
+CHECK PASS
+GAME red/nest16/instances/w1_n27.pg rc=0
+ROW E_ n 27 m 86 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+ROW O_ n 27 m 86 values 3 orbit 3 SBC 0 LAM 2 SEG 3 SEGMAX 0
+CHECK PASS
+GAME red/nest16/instances/win3_n27.pg rc=0
+ROW E_ n 27 m 85 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+ROW O_ n 27 m 85 values 3 orbit 3 SBC 0 LAM 2 SEG 3 SEGMAX 0
+CHECK PASS
+GAME red/nopre/instances/nopre_viol_n20.pg rc=0
+ROW E_ n 20 m 57 values 6 orbit 6 SBC 4 LAM 5 SEG 6 SEGMAX 0
+ROW O_ n 20 m 57 values 3 orbit 3 SBC 1 LAM 1 SEG 2 SEGMAX 1
+CHECK PASS
+GAME red/o1/instances/ph45_n32.pg rc=0
+ROW E_ n 32 m 81 values 20 orbit 20 SBC 8 LAM 19 SEG 20 SEGMAX 0
+ROW O_ n 32 m 81 values 4 orbit 4 SBC 2 LAM 1 SEG 4 SEGMAX 0
+CHECK PASS
+GAME red/o1/instances/ph50_n32.pg rc=0
+ROW E_ n 32 m 77 values 16 orbit 16 SBC 10 LAM 15 SEG 16 SEGMAX 0
+ROW O_ n 32 m 77 values 2 orbit 2 SBC 0 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/o1/instances/f39_n48.pg rc=0
+ROW E_ n 48 m 130 values 39 orbit 39 SBC 4 LAM 4 SEG 5 SEGMAX 34
+ROW O_ n 48 m 130 values 2 orbit 2 SBC 0 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/o1/instances/tau18_n24.pg rc=0
+ROW E_ n 24 m 63 values 12 orbit 12 SBC 11 LAM 11 SEG 12 SEGMAX 0
+ROW O_ n 24 m 63 values 2 orbit 2 SBC 0 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/o1/instances/iter118_n48.pg rc=0
+ROW E_ n 48 m 178 values 22 orbit 22 SBC 9 LAM 4 SEG 10 SEGMAX 4
+ROW O_ n 48 m 178 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/rec0/instances/fbd0_n4.pg rc=0
+ROW E_ n 4 m 9 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+ROW O_ n 4 m 9 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/rec0/instances/n0_6_n24.pg rc=0
+ROW E_ n 24 m 52 values 4 orbit 4 SBC 2 LAM 3 SEG 4 SEGMAX 0
+ROW O_ n 24 m 52 values 2 orbit 2 SBC 0 LAM 0 SEG 1 SEGMAX 1
+CHECK PASS
+GAME red/rec0/instances/nep24_n20.pg rc=0
+ROW E_ n 20 m 55 values 15 orbit 15 SBC 14 LAM 1 SEG 15 SEGMAX 0
+ROW O_ n 20 m 55 values 2 orbit 2 SBC 0 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/rec0/instances/lend2_30_n48.pg rc=0
+ROW E_ n 48 m 138 values 12 orbit 12 SBC 6 LAM 7 SEG 9 SEGMAX 3
+ROW O_ n 48 m 138 values 7 orbit 7 SBC 4 LAM 4 SEG 7 SEGMAX 0
+CHECK PASS
+GAME red/sgrow/instances/s20_n20.pg rc=0
+ROW E_ n 20 m 88 values 4 orbit 4 SBC 1 LAM 1 SEG 2 SEGMAX 2
+ROW O_ n 20 m 88 values 5 orbit 5 SBC 3 LAM 3 SEG 4 SEGMAX 1
+CHECK PASS
+GAME red/rec0/instances/nep87_n40.pg rc=0
+ROW E_ n 40 m 142 values 17 orbit 17 SBC 15 LAM 2 SEG 16 SEGMAX 1
+ROW O_ n 40 m 142 values 4 orbit 4 SBC 2 LAM 1 SEG 3 SEGMAX 1
+CHECK PASS
+GAME red/sgrow/instances/s21_oink_n20.pg rc=0
+ROW E_ n 20 m 82 values 4 orbit 4 SBC 1 LAM 2 SEG 3 SEGMAX 1
+ROW O_ n 20 m 82 values 8 orbit 8 SBC 6 LAM 4 SEG 7 SEGMAX 1
+CHECK PASS
+GAME red/rec0/instances/nep90_n40.pg rc=0
+ROW E_ n 40 m 142 values 21 orbit 21 SBC 18 LAM 3 SEG 19 SEGMAX 1
+ROW O_ n 40 m 142 values 5 orbit 5 SBC 3 LAM 1 SEG 4 SEGMAX 1
+CHECK PASS
+GAME red/sgrow/instances/s29_n30.pg rc=0
+ROW E_ n 30 m 141 values 6 orbit 6 SBC 4 LAM 3 SEG 5 SEGMAX 1
+ROW O_ n 30 m 141 values 3 orbit 3 SBC 1 LAM 1 SEG 2 SEGMAX 1
+CHECK PASS
+GAME red/sgrow/instances/s34_oink_n40.pg rc=0
+ROW E_ n 40 m 234 values 8 orbit 8 SBC 4 LAM 4 SEG 6 SEGMAX 2
+ROW O_ n 40 m 234 values 4 orbit 4 SBC 2 LAM 2 SEG 3 SEGMAX 1
+CHECK PASS
+GAME red/sgrow/instances/s32_n60.pg rc=0
+ROW E_ n 60 m 498 values 8 orbit 8 SBC 6 LAM 4 SEG 8 SEGMAX 0
+ROW O_ n 60 m 498 values 8 orbit 8 SBC 5 LAM 2 SEG 6 SEGMAX 2
+CHECK PASS
+GAME red/sgrow/instances/s35_oink_n80.pg rc=0
+ROW E_ n 80 m 311 values 5 orbit 5 SBC 3 LAM 1 SEG 4 SEGMAX 1
+ROW O_ n 80 m 311 values 4 orbit 4 SBC 2 LAM 2 SEG 3 SEGMAX 1
+CHECK PASS
+GAME red/sgrow/instances/s36_oink_n60.pg rc=0
+ROW E_ n 60 m 293 values 5 orbit 5 SBC 3 LAM 1 SEG 4 SEGMAX 1
+ROW O_ n 60 m 293 values 4 orbit 4 SBC 2 LAM 2 SEG 3 SEGMAX 1
+CHECK PASS
+GAME red/sgrow/instances/s34_oink_n80.pg rc=0
+ROW E_ n 80 m 606 values 6 orbit 6 SBC 4 LAM 2 SEG 5 SEGMAX 1
+ROW O_ n 80 m 606 values 8 orbit 8 SBC 6 LAM 5 SEG 7 SEGMAX 1
+CHECK PASS
+GAME red/so/instances/beta2_n11.pg rc=0
+ROW E_ n 11 m 23 values 4 orbit 4 SBC 1 LAM 1 SEG 2 SEGMAX 2
+ROW O_ n 11 m 23 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/so/instances/epsseg_cex_n16.pg rc=0
+ROW E_ n 16 m 50 values 12 orbit 12 SBC 9 LAM 1 SEG 10 SEGMAX 2
+ROW O_ n 16 m 50 values 2 orbit 2 SBC 0 LAM 0 SEG 1 SEGMAX 1
+CHECK PASS
+GAME red/so/instances/exitr_cex_n16.pg rc=0
+ROW E_ n 16 m 51 values 11 orbit 11 SBC 8 LAM 2 SEG 9 SEGMAX 2
+ROW O_ n 16 m 51 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/so/instances/epsseg_cex_n48.pg rc=0
+ROW E_ n 48 m 202 values 6 orbit 6 SBC 4 LAM 3 SEG 5 SEGMAX 1
+ROW O_ n 48 m 202 values 3 orbit 3 SBC 0 LAM 1 SEG 2 SEGMAX 1
+CHECK PASS
+GAME red/so/instances/exitr_cex_n48.pg rc=0
+ROW E_ n 48 m 190 values 4 orbit 4 SBC 2 LAM 3 SEG 4 SEGMAX 0
+ROW O_ n 48 m 190 values 3 orbit 3 SBC 1 LAM 1 SEG 2 SEGMAX 1
+CHECK PASS
+GAME red/so/instances/mn_abs74_n48.pg rc=0
+ROW E_ n 48 m 203 values 10 orbit 10 SBC 6 LAM 6 SEG 9 SEGMAX 1
+ROW O_ n 48 m 203 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/so/instances/farrise25_n32.pg rc=0
+ROW E_ n 32 m 108 values 32 orbit 32 SBC 1 LAM 4 SEG 6 SEGMAX 25
+ROW O_ n 32 m 108 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/so/instances/njb_reabs54_n32.pg rc=0
+ROW E_ n 32 m 127 values 23 orbit 23 SBC 5 LAM 6 SEG 7 SEGMAX 16
+ROW O_ n 32 m 127 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/so/instances/nleq_cex_n48.pg rc=0
+ROW E_ n 48 m 208 values 7 orbit 7 SBC 4 LAM 3 SEG 6 SEGMAX 1
+ROW O_ n 48 m 208 values 2 orbit 2 SBC 0 LAM 0 SEG 1 SEGMAX 1
+CHECK PASS
+GAME red/so/instances/njb_reabs65_n48.pg rc=0
+ROW E_ n 48 m 208 values 39 orbit 39 SBC 9 LAM 4 SEG 11 SEGMAX 25
+ROW O_ n 48 m 208 values 3 orbit 3 SBC 1 LAM 2 SEG 3 SEGMAX 0
+CHECK PASS
+GAME red/so/instances/nleq33_n48.pg rc=0
+ROW E_ n 48 m 191 values 39 orbit 39 SBC 5 LAM 6 SEG 7 SEGMAX 32
+ROW O_ n 48 m 191 values 2 orbit 2 SBC 0 LAM 0 SEG 1 SEGMAX 1
+CHECK PASS
+GAME red/so/instances/pftheta34_n32.pg rc=0
+ROW E_ n 32 m 100 values 13 orbit 13 SBC 11 LAM 3 SEG 12 SEGMAX 1
+ROW O_ n 32 m 100 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/so/instances/pft35_n48.pg rc=0
+ROW E_ n 48 m 184 values 22 orbit 22 SBC 21 LAM 2 SEG 22 SEGMAX 0
+ROW O_ n 48 m 184 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/so/instances/pft40_n40.pg rc=0
+ROW E_ n 40 m 145 values 24 orbit 24 SBC 17 LAM 5 SEG 19 SEGMAX 3
+ROW O_ n 40 m 145 values 4 orbit 4 SBC 3 LAM 1 SEG 4 SEGMAX 0
+CHECK PASS
+GAME red/so/instances/pftheta_cex_n32.pg rc=0
+ROW E_ n 32 m 112 values 14 orbit 14 SBC 12 LAM 3 SEG 13 SEGMAX 1
+ROW O_ n 32 m 112 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/so/instances/post31_n48.pg rc=0
+ROW E_ n 48 m 180 values 21 orbit 21 SBC 13 LAM 4 SEG 14 SEGMAX 2
+ROW O_ n 48 m 180 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/so/instances/rise_thin51_n40.pg rc=0
+ROW E_ n 40 m 165 values 23 orbit 23 SBC 17 LAM 5 SEG 19 SEGMAX 1
+ROW O_ n 40 m 165 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/so/instances/s4c8_n13.pg rc=0
+ROW E_ n 13 m 36 values 8 orbit 8 SBC 1 LAM 2 SEG 3 SEGMAX 5
+ROW O_ n 13 m 36 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/so/instances/rise_fb38_n48.pg rc=0
+ROW E_ n 48 m 176 values 45 orbit 45 SBC 8 LAM 6 SEG 9 SEGMAX 32
+ROW O_ n 48 m 176 values 3 orbit 3 SBC 0 LAM 1 SEG 2 SEGMAX 1
+CHECK PASS
+GAME red/so/instances/so_k2_n32.pg rc=0
+ROW E_ n 32 m 113 values 5 orbit 5 SBC 2 LAM 2 SEG 3 SEGMAX 2
+ROW O_ n 32 m 113 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/so/instances/so_sor5_n24.pg rc=0
+ROW E_ n 24 m 81 values 23 orbit 23 SBC 22 LAM 0 SEG 23 SEGMAX 0
+ROW O_ n 24 m 81 values 2 orbit 2 SBC 0 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/so/instances/so_sorl_n32.pg rc=0
+ROW E_ n 32 m 114 values 23 orbit 23 SBC 22 LAM 0 SEG 23 SEGMAX 0
+ROW O_ n 32 m 114 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/so/instances/so_j19_n48.pg rc=0
+ROW E_ n 48 m 177 values 15 orbit 15 SBC 13 LAM 2 SEG 14 SEGMAX 1
+ROW O_ n 48 m 177 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/so/instances/so_tie13_n24.pg rc=0
+ROW E_ n 24 m 92 values 17 orbit 17 SBC 15 LAM 0 SEG 16 SEGMAX 1
+ROW O_ n 24 m 92 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/so/instances/so_th_n32.pg rc=0
+ROW E_ n 32 m 124 values 23 orbit 23 SBC 17 LAM 2 SEG 18 SEGMAX 2
+ROW O_ n 32 m 124 values 2 orbit 2 SBC 0 LAM 0 SEG 1 SEGMAX 1
+CHECK PASS
+GAME red/so/instances/so_tie15_n32.pg rc=0
+ROW E_ n 32 m 127 values 21 orbit 21 SBC 19 LAM 1 SEG 20 SEGMAX 1
+ROW O_ n 32 m 127 values 2 orbit 2 SBC 0 LAM 0 SEG 1 SEGMAX 1
+CHECK PASS
+GAME red/so/instances/tevlast7_n32.pg rc=0
+ROW E_ n 32 m 100 values 18 orbit 18 SBC 4 LAM 3 SEG 5 SEGMAX 13
+ROW O_ n 32 m 100 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/so/instances/tev_cex_n40.pg rc=0
+ROW E_ n 40 m 159 values 25 orbit 25 SBC 8 LAM 7 SEG 11 SEGMAX 14
+ROW O_ n 40 m 159 values 2 orbit 2 SBC 1 LAM 0 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/so/instances/tevlast11_n40.pg rc=0
+ROW E_ n 40 m 162 values 33 orbit 33 SBC 5 LAM 3 SEG 7 SEGMAX 15
+ROW O_ n 40 m 162 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/so/instances/tog6a_n32.pg rc=0
+GAME red/so/instances/tevlast_cex_n40.pg rc=0
+ROW E_ n 32 m 104 values 10 orbit 10 SBC 1 LAM 3 SEG 4 SEGMAX 6
+ROW E_ n 40 m 152 values 6 orbit 6 SBC 2 LAM 2 SEG 3 SEGMAX 3
+ROW O_ n 32 m 104 values 2 orbit 2 SBC 1 LAM 0 SEG 2 SEGMAX 0
+ROW O_ n 40 m 152 values 2 orbit 2 SBC 1 LAM 0 SEG 2 SEGMAX 0
+CHECK PASS
+CHECK PASS
+GAME red/so/instances/tog6b_n32.pg rc=0
+ROW E_ n 32 m 94 values 9 orbit 9 SBC 2 LAM 1 SEG 3 SEGMAX 5
+ROW O_ n 32 m 94 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/so/instances/xrun8_n10.pg rc=0
+ROW E_ n 10 m 30 values 7 orbit 7 SBC 3 LAM 2 SEG 5 SEGMAX 1
+ROW O_ n 10 m 30 values 2 orbit 2 SBC 0 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/so/instances/xrun21_n24.pg rc=0
+ROW E_ n 24 m 89 values 23 orbit 23 SBC 1 LAM 1 SEG 3 SEGMAX 20
+ROW O_ n 24 m 89 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/so/instances/xsn29_n32.pg rc=0
+ROW E_ n 32 m 133 values 30 orbit 30 SBC 0 LAM 0 SEG 1 SEGMAX 29
+ROW O_ n 32 m 133 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/so/instances/xsn43_n48.pg rc=0
+ROW E_ n 48 m 170 values 46 orbit 46 SBC 4 LAM 2 SEG 6 SEGMAX 21
+ROW O_ n 48 m 170 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/so/instances/xsnf42_n48.pg rc=0
+ROW E_ n 48 m 186 values 45 orbit 45 SBC 0 LAM 1 SEG 2 SEGMAX 43
+ROW O_ n 48 m 186 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/so/instances/xsn91_n48.pg rc=0
+ROW E_ n 48 m 196 values 22 orbit 22 SBC 10 LAM 4 SEG 11 SEGMAX 4
+ROW O_ n 48 m 196 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/so/instances/xsnf52_n64.pg rc=0
+ROW E_ n 64 m 255 values 55 orbit 55 SBC 0 LAM 1 SEG 2 SEGMAX 53
+ROW O_ n 64 m 255 values 2 orbit 2 SBC 1 LAM 0 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/tcpert/instances/leanT_N12.pg rc=0
+ROW E_ n 96 m 275 values 14 orbit 14 SBC 13 LAM 8 SEG 14 SEGMAX 0
+ROW O_ n 96 m 275 values 7 orbit 7 SBC 1 LAM 6 SEG 7 SEGMAX 0
+CHECK PASS
+GAME red/tcpert/instances/leanT_N16.pg rc=0
+ROW E_ n 128 m 431 values 20 orbit 20 SBC 19 LAM 9 SEG 20 SEGMAX 0
+ROW O_ n 128 m 431 values 10 orbit 10 SBC 1 LAM 9 SEG 10 SEGMAX 0
+CHECK PASS
+GAME red/tcpert/instances/leanT_N6.pg rc=0
+ROW E_ n 48 m 101 values 7 orbit 7 SBC 6 LAM 5 SEG 7 SEGMAX 0
+ROW O_ n 48 m 101 values 4 orbit 4 SBC 1 LAM 3 SEG 4 SEGMAX 0
+CHECK PASS
+GAME red/tcpert/instances/leanT_N8.pg rc=0
+ROW E_ n 64 m 151 values 11 orbit 11 SBC 10 LAM 5 SEG 11 SEGMAX 0
+ROW O_ n 64 m 151 values 6 orbit 6 SBC 1 LAM 5 SEG 6 SEGMAX 0
+CHECK PASS
+GAME red/tcpert/instances/leanT_N24.pg rc=0
+ROW E_ n 192 m 839 values 30 orbit 30 SBC 28 LAM 13 SEG 30 SEGMAX 0
+ROW O_ n 192 m 839 values 14 orbit 14 SBC 1 LAM 13 SEG 14 SEGMAX 0
+CHECK PASS
+GAME red/tcpert/instances/tcL_N10.pg rc=0
+ROW E_ n 350 m 749 values 19 orbit 19 SBC 16 LAM 11 SEG 19 SEGMAX 0
+ROW O_ n 350 m 749 values 30 orbit 30 SBC 27 LAM 12 SEG 29 SEGMAX 1
+CHECK PASS
+GAME red/tcpert/instances/tcL_N3.pg rc=0
+ROW E_ n 42 m 77 values 7 orbit 7 SBC 5 LAM 3 SEG 6 SEGMAX 1
+ROW O_ n 42 m 77 values 9 orbit 9 SBC 8 LAM 4 SEG 9 SEGMAX 0
+CHECK PASS
+GAME red/tcpert/instances/tcL_N4.pg rc=0
+ROW E_ n 68 m 131 values 10 orbit 10 SBC 6 LAM 9 SEG 10 SEGMAX 0
+ROW O_ n 68 m 131 values 8 orbit 8 SBC 7 LAM 4 SEG 8 SEGMAX 0
+CHECK PASS
+GAME red/tcpert/instances/tcL_N5.pg rc=0
+ROW E_ n 100 m 199 values 13 orbit 13 SBC 10 LAM 8 SEG 13 SEGMAX 0
+ROW O_ n 100 m 199 values 14 orbit 14 SBC 13 LAM 5 SEG 14 SEGMAX 0
+CHECK PASS
+GAME red/tcpert/instances/tcL_N6.pg rc=0
+ROW E_ n 138 m 281 values 14 orbit 14 SBC 11 LAM 7 SEG 13 SEGMAX 1
+ROW O_ n 138 m 281 values 13 orbit 13 SBC 11 LAM 5 SEG 13 SEGMAX 0
+CHECK PASS
+GAME red/tcpert/instances/leanT_N32.pg rc=0
+ROW E_ n 256 m 1375 values 37 orbit 37 SBC 36 LAM 12 SEG 37 SEGMAX 0
+ROW O_ n 256 m 1375 values 22 orbit 22 SBC 1 LAM 21 SEG 22 SEGMAX 0
+CHECK PASS
+GAME red/tcpert/instances/tcR4_N4.pg rc=0
+ROW E_ n 68 m 140 values 8 orbit 8 SBC 6 LAM 4 SEG 8 SEGMAX 0
+ROW O_ n 68 m 140 values 9 orbit 9 SBC 8 LAM 2 SEG 9 SEGMAX 0
+CHECK PASS
+GAME red/tcpert/instances/tcR4_N5.pg rc=0
+ROW E_ n 100 m 215 values 11 orbit 11 SBC 8 LAM 5 SEG 11 SEGMAX 0
+ROW O_ n 100 m 215 values 10 orbit 10 SBC 9 LAM 4 SEG 10 SEGMAX 0
+CHECK PASS
+GAME red/tcpert/instances/tcL_N8.pg rc=0
+ROW E_ n 232 m 487 values 16 orbit 16 SBC 13 LAM 7 SEG 16 SEGMAX 0
+ROW O_ n 232 m 487 values 18 orbit 18 SBC 16 LAM 9 SEG 18 SEGMAX 0
+CHECK PASS
+GAME red/tcpert/instances/tcR4_N6.pg rc=0
+ROW E_ n 138 m 306 values 15 orbit 15 SBC 12 LAM 9 SEG 15 SEGMAX 0
+ROW O_ n 138 m 306 values 12 orbit 12 SBC 10 LAM 4 SEG 11 SEGMAX 1
+CHECK PASS
+GAME red/tcpert/instances/tcR4_N7.pg rc=0
+ROW E_ n 182 m 413 values 17 orbit 17 SBC 16 LAM 5 SEG 17 SEGMAX 0
+ROW O_ n 182 m 413 values 15 orbit 15 SBC 14 LAM 2 SEG 15 SEGMAX 0
+CHECK PASS
+GAME red/tcpert/instances/tcR4_N8.pg rc=0
+ROW E_ n 232 m 536 values 22 orbit 22 SBC 19 LAM 7 SEG 22 SEGMAX 0
+ROW O_ n 232 m 536 values 22 orbit 22 SBC 20 LAM 5 SEG 22 SEGMAX 0
+CHECK PASS
+GAME red/tcpert/instances/tcL_N12.pg rc=0
+ROW E_ n 492 m 1067 values 26 orbit 26 SBC 25 LAM 13 SEG 26 SEGMAX 0
+ROW O_ n 492 m 1067 values 32 orbit 32 SBC 31 LAM 13 SEG 32 SEGMAX 0
+CHECK PASS
+GAME red/tcpert/instances/tcS8_N6.pg rc=0
+ROW E_ n 138 m 342 values 8 orbit 8 SBC 7 LAM 6 SEG 8 SEGMAX 0
+ROW O_ n 138 m 342 values 11 orbit 11 SBC 10 LAM 4 SEG 11 SEGMAX 0
+CHECK PASS
+GAME red/tcpert/instances/tcS8_N10.pg rc=0
+ROW E_ n 350 m 930 values 20 orbit 20 SBC 19 LAM 9 SEG 20 SEGMAX 0
+ROW O_ n 350 m 930 values 14 orbit 14 SBC 11 LAM 4 SEG 12 SEGMAX 2
+CHECK PASS
+GAME red/tcpert/instances/tcS8_N7.pg rc=0
+ROW E_ n 182 m 462 values 9 orbit 9 SBC 7 LAM 6 SEG 9 SEGMAX 0
+ROW O_ n 182 m 462 values 12 orbit 12 SBC 9 LAM 2 SEG 10 SEGMAX 2
+CHECK PASS
+GAME red/tcpert/instances/tcS8_N8.pg rc=0
+ROW E_ n 232 m 600 values 10 orbit 10 SBC 8 LAM 8 SEG 10 SEGMAX 0
+ROW O_ n 232 m 600 values 12 orbit 12 SBC 9 LAM 3 SEG 10 SEGMAX 2
+CHECK PASS
+GAME red/tpp/instances/tpp_viol_n22.pg rc=0
+ROW E_ n 22 m 28 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+ROW O_ n 22 m 28 values 3 orbit 3 SBC 1 LAM 2 SEG 3 SEGMAX 0
+CHECK PASS
+GAME red/tpp/instances/tpp_viol_n63.pg rc=0
+ROW E_ n 63 m 215 values 7 orbit 7 SBC 5 LAM 4 SEG 6 SEGMAX 1
+ROW O_ n 63 m 215 values 5 orbit 5 SBC 4 LAM 2 SEG 5 SEGMAX 0
+CHECK PASS
+GAME red/tcpert/instances/tcS8_N11.pg rc=0
+ROW E_ n 418 m 1122 values 15 orbit 15 SBC 14 LAM 10 SEG 15 SEGMAX 0
+ROW O_ n 418 m 1122 values 15 orbit 15 SBC 12 LAM 3 SEG 13 SEGMAX 2
+CHECK PASS
+GAME red/ul/instances/cxmig_k4_n54.pg rc=0
+ROW E_ n 54 m 85 values 13 orbit 13 SBC 1 LAM 0 SEG 2 SEGMAX 11
+ROW O_ n 54 m 85 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/ul/instances/cxmig_k16_n138.pg rc=0
+ROW E_ n 138 m 229 values 25 orbit 25 SBC 1 LAM 0 SEG 2 SEGMAX 23
+ROW O_ n 138 m 229 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/ul/instances/cxmig_k8_n82.pg rc=0
+ROW E_ n 82 m 133 values 17 orbit 17 SBC 1 LAM 0 SEG 2 SEGMAX 15
+ROW O_ n 82 m 133 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/ul/instances/ladderd0_k12_n48.pg rc=0
+ROW E_ n 48 m 89 values 15 orbit 15 SBC 13 LAM 1 SEG 14 SEGMAX 1
+ROW O_ n 48 m 89 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/ul/instances/ladderd0_k24_n84.pg rc=0
+ROW E_ n 84 m 161 values 27 orbit 27 SBC 25 LAM 1 SEG 26 SEGMAX 1
+ROW O_ n 84 m 161 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/tcpert/instances/tcS8_N9.pg rc=0
+ROW E_ n 288 m 756 values 17 orbit 17 SBC 15 LAM 10 SEG 16 SEGMAX 1
+ROW O_ n 288 m 756 values 25 orbit 25 SBC 24 LAM 9 SEG 25 SEGMAX 0
+CHECK PASS
+GAME red/ul/instances/ladderent_k12_n48.pg rc=0
+ROW E_ n 48 m 89 values 15 orbit 15 SBC 13 LAM 1 SEG 14 SEGMAX 1
+ROW O_ n 48 m 89 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/ul/instances/ladderent_k24_n84.pg rc=0
+ROW E_ n 84 m 161 values 27 orbit 27 SBC 25 LAM 1 SEG 26 SEGMAX 1
+ROW O_ n 84 m 161 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/ul/instances/reader_L10_n36.pg rc=0
+ROW E_ n 36 m 54 values 14 orbit 14 SBC 3 LAM 1 SEG 4 SEGMAX 8
+ROW O_ n 36 m 54 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/ul/instances/reader_L20_n56.pg rc=0
+ROW E_ n 56 m 84 values 24 orbit 24 SBC 3 LAM 1 SEG 4 SEGMAX 18
+ROW O_ n 56 m 84 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/ul/instances/ladderd0_k48_n156.pg rc=0
+ROW E_ n 156 m 305 values 51 orbit 51 SBC 49 LAM 1 SEG 50 SEGMAX 1
+ROW O_ n 156 m 305 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/ul/instances/reader_L40_n96.pg rc=0
+ROW E_ n 96 m 144 values 44 orbit 44 SBC 3 LAM 1 SEG 4 SEGMAX 38
+ROW O_ n 96 m 144 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/usplit/instances/gate_K16_n197.pg rc=0
+ROW E_ n 197 m 362 values 24 orbit 24 SBC 2 LAM 0 SEG 3 SEGMAX 21
+ROW O_ n 197 m 362 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/ul/instances/ladderent_k48_n156.pg rc=0
+ROW E_ n 156 m 305 values 51 orbit 51 SBC 49 LAM 1 SEG 50 SEGMAX 1
+ROW O_ n 156 m 305 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/usplit/instances/grow_K12_n149.pg rc=0
+ROW E_ n 149 m 276 values 20 orbit 20 SBC 2 LAM 0 SEG 3 SEGMAX 17
+ROW O_ n 149 m 276 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/usplit/instances/pairoc_n58.pg rc=0
+ROW E_ n 58 m 92 values 6 orbit 6 SBC 2 LAM 0 SEG 3 SEGMAX 3
+ROW O_ n 58 m 92 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/usplit/instances/pp_K12_n161.pg rc=0
+ROW E_ n 161 m 294 values 20 orbit 20 SBC 3 LAM 0 SEG 4 SEGMAX 15
+ROW O_ n 161 m 294 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/usplit/instances/pp_K12_n161_dual.pg rc=0
+ROW E_ n 161 m 294 values 3 orbit 3 SBC 1 LAM 0 SEG 2 SEGMAX 1
+ROW O_ n 161 m 294 values 19 orbit 19 SBC 4 LAM 0 SEG 5 SEGMAX 14
+CHECK PASS
+GAME red/usplit/instances/grow_K40_n373.pg rc=0
+ROW E_ n 373 m 724 values 48 orbit 48 SBC 2 LAM 0 SEG 3 SEGMAX 45
+ROW O_ n 373 m 724 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/usplit/instances/pp_K48_n449.pg rc=0
+ROW E_ n 449 m 870 values 56 orbit 56 SBC 3 LAM 0 SEG 4 SEGMAX 51
+ROW O_ n 449 m 870 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/usplit/instances/usplit_n14.pg rc=0
+ROW E_ n 14 m 21 values 4 orbit 4 SBC 1 LAM 0 SEG 2 SEGMAX 2
+ROW O_ n 14 m 21 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/usplit/instances/usplit_n23.pg rc=0
+ROW E_ n 23 m 39 values 10 orbit 10 SBC 1 LAM 0 SEG 2 SEGMAX 8
+ROW O_ n 23 m 39 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/usplit/instances/usplit_rd_n24.pg rc=0
+ROW E_ n 24 m 36 values 5 orbit 5 SBC 2 LAM 0 SEG 3 SEGMAX 2
+ROW O_ n 24 m 36 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/usplit/instances/usplit_rd_s3_n27.pg rc=0
+ROW E_ n 27 m 41 values 5 orbit 5 SBC 2 LAM 0 SEG 3 SEGMAX 2
+ROW O_ n 27 m 41 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/usplit/instances/usplit_s3_n16.pg rc=0
+ROW E_ n 16 m 24 values 4 orbit 4 SBC 1 LAM 0 SEG 2 SEGMAX 2
+ROW O_ n 16 m 24 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/xctx/instances/nest3_n20.pg rc=0
+ROW E_ n 20 m 55 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+ROW O_ n 20 m 55 values 3 orbit 3 SBC 0 LAM 1 SEG 2 SEGMAX 1
+CHECK PASS
+GAME red/xctx/instances/nest3_n24.pg rc=0
+ROW E_ n 24 m 74 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+ROW O_ n 24 m 74 values 3 orbit 3 SBC 0 LAM 1 SEG 2 SEGMAX 1
+CHECK PASS
+GAME red/xctx/instances/vrall_viol_n20.pg rc=0
+ROW E_ n 20 m 43 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+ROW O_ n 20 m 43 values 5 orbit 5 SBC 0 LAM 4 SEG 5 SEGMAX 0
+CHECK PASS
+GAME red/xctx/instances/xcov11_n20.pg rc=0
+ROW E_ n 20 m 53 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+ROW O_ n 20 m 53 values 3 orbit 3 SBC 0 LAM 2 SEG 3 SEGMAX 0
+CHECK PASS
+GAME red/xctx/instances/xctx_viol_n20.pg rc=0
+ROW E_ n 20 m 53 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+ROW O_ n 20 m 53 values 6 orbit 6 SBC 0 LAM 4 SEG 5 SEGMAX 1
+CHECK PASS
+GAME red/xing/instances/fbref_cex_n32.pg rc=0
+ROW E_ n 32 m 108 values 15 orbit 15 SBC 5 LAM 6 SEG 8 SEGMAX 6
+ROW O_ n 32 m 108 values 2 orbit 2 SBC 0 LAM 0 SEG 1 SEGMAX 1
+CHECK PASS
+GAME red/xing/instances/j10_n24.pg rc=0
+ROW E_ n 24 m 87 values 24 orbit 24 SBC 17 LAM 1 SEG 19 SEGMAX 1
+ROW O_ n 24 m 87 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/xing/instances/j4_n40.pg rc=0
+ROW E_ n 40 m 144 values 31 orbit 31 SBC 10 LAM 5 SEG 13 SEGMAX 10
+ROW O_ n 40 m 144 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/xing/instances/j5_n16.pg rc=0
+ROW E_ n 16 m 56 values 5 orbit 5 SBC 2 LAM 4 SEG 5 SEGMAX 0
+ROW O_ n 16 m 56 values 2 orbit 2 SBC 0 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/xing/instances/j7_n32.pg rc=0
+ROW E_ n 32 m 129 values 20 orbit 20 SBC 9 LAM 2 SEG 11 SEGMAX 4
+ROW O_ n 32 m 129 values 3 orbit 3 SBC 2 LAM 0 SEG 3 SEGMAX 0
+CHECK PASS
+GAME red/xing/instances/j7_n48.pg rc=0
+ROW E_ n 48 m 176 values 28 orbit 28 SBC 12 LAM 1 SEG 13 SEGMAX 3
+ROW O_ n 48 m 176 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/xing/instances/j8_n32.pg rc=0
+ROW E_ n 32 m 112 values 19 orbit 19 SBC 8 LAM 2 SEG 10 SEGMAX 4
+ROW O_ n 32 m 112 values 4 orbit 4 SBC 2 LAM 0 SEG 3 SEGMAX 1
+CHECK PASS
+GAME red/xing/instances/j8_n48.pg rc=0
+ROW E_ n 48 m 198 values 20 orbit 20 SBC 8 LAM 1 SEG 9 SEGMAX 3
+ROW O_ n 48 m 198 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/xing/instances/kw25_n32.pg rc=0
+ROW E_ n 32 m 100 values 5 orbit 5 SBC 1 LAM 2 SEG 3 SEGMAX 2
+ROW O_ n 32 m 100 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/xing/instances/kw_n16.pg rc=0
+ROW E_ n 16 m 47 values 13 orbit 13 SBC 0 LAM 0 SEG 1 SEGMAX 12
+ROW O_ n 16 m 47 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/xing/instances/kw_n24.pg rc=0
+ROW E_ n 24 m 63 values 21 orbit 21 SBC 0 LAM 0 SEG 1 SEGMAX 20
+ROW O_ n 24 m 63 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/xing/instances/kw_n48.pg rc=0
+ROW E_ n 48 m 169 values 41 orbit 41 SBC 0 LAM 0 SEG 1 SEGMAX 40
+ROW O_ n 48 m 169 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/xing/instances/obr_eq_n24.pg rc=0
+ROW E_ n 24 m 59 values 3 orbit 3 SBC 1 LAM 2 SEG 3 SEGMAX 0
+ROW O_ n 24 m 59 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/xing/instances/obr_n32.pg rc=0
+ROW E_ n 32 m 118 values 6 orbit 6 SBC 1 LAM 2 SEG 3 SEGMAX 3
+ROW O_ n 32 m 118 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/xing/instances/u1t_cex_n32.pg rc=0
+ROW E_ n 32 m 116 values 5 orbit 5 SBC 2 LAM 2 SEG 4 SEGMAX 1
+ROW O_ n 32 m 116 values 2 orbit 2 SBC 0 LAM 0 SEG 1 SEGMAX 1
+CHECK PASS
+GAME red/xing/instances/u1t_own6_n32.pg rc=0
+ROW E_ n 32 m 95 values 4 orbit 4 SBC 1 LAM 2 SEG 3 SEGMAX 1
+ROW O_ n 32 m 95 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/xing/instances/u23sw64_n32.pg rc=0
+ROW E_ n 32 m 152 values 6 orbit 6 SBC 3 LAM 2 SEG 4 SEGMAX 1
+ROW O_ n 32 m 152 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/xing/instances/u2flat73_n32.pg rc=0
+ROW E_ n 32 m 166 values 7 orbit 7 SBC 1 LAM 6 SEG 7 SEGMAX 0
+ROW O_ n 32 m 166 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/xing/instances/u2flat_n32.pg rc=0
+ROW E_ n 32 m 88 values 9 orbit 9 SBC 1 LAM 6 SEG 7 SEGMAX 2
+ROW O_ n 32 m 88 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/xing/instances/x31_cu16.pg rc=0
+ROW E_ n 16 m 52 values 15 orbit 15 SBC 12 LAM 2 SEG 13 SEGMAX 1
+ROW O_ n 16 m 52 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/usplit/instances/gate_K64_n581.pg rc=0
+ROW E_ n 581 m 1130 values 72 orbit 72 SBC 2 LAM 0 SEG 3 SEGMAX 69
+ROW O_ n 581 m 1130 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/xing/instances/x31_cu24.pg rc=0
+ROW E_ n 24 m 93 values 12 orbit 12 SBC 4 LAM 4 SEG 5 SEGMAX 6
+ROW O_ n 24 m 93 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/xing/instances/x31_cu32.pg rc=0
+ROW E_ n 32 m 118 values 23 orbit 23 SBC 19 LAM 7 SEG 23 SEGMAX 0
+ROW O_ n 32 m 118 values 4 orbit 4 SBC 2 LAM 0 SEG 3 SEGMAX 1
+CHECK PASS
+GAME red/xing/instances/x31_cu32i.pg rc=0
+ROW E_ n 32 m 108 values 7 orbit 7 SBC 6 LAM 4 SEG 7 SEGMAX 0
+ROW O_ n 32 m 108 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/usplit/instances/pp_K48_n449_dual.pg rc=0
+ROW E_ n 449 m 870 values 3 orbit 3 SBC 1 LAM 0 SEG 2 SEGMAX 1
+ROW O_ n 449 m 870 values 55 orbit 55 SBC 4 LAM 0 SEG 5 SEGMAX 50
+CHECK PASS
+GAME red/xing/instances/x31_lem_e24.pg rc=0
+ROW E_ n 24 m 81 values 19 orbit 19 SBC 3 LAM 4 SEG 5 SEGMAX 14
+ROW O_ n 24 m 81 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/xing/instances/x31_lem_t32.pg rc=0
+ROW E_ n 32 m 101 values 11 orbit 11 SBC 2 LAM 4 SEG 5 SEGMAX 6
+ROW O_ n 32 m 101 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/xing/instances/x31_nh_r20.pg rc=0
+ROW E_ n 20 m 66 values 16 orbit 16 SBC 1 LAM 1 SEG 2 SEGMAX 14
+ROW O_ n 20 m 66 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/xing/instances/x31_cu48.pg rc=0
+ROW E_ n 48 m 187 values 25 orbit 25 SBC 21 LAM 2 SEG 23 SEGMAX 1
+ROW O_ n 48 m 187 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/xing/instances/x31_nh_e24.pg rc=0
+ROW E_ n 24 m 65 values 21 orbit 21 SBC 0 LAM 0 SEG 1 SEGMAX 20
+ROW O_ n 24 m 65 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/xing/instances/x31_ru24.pg rc=0
+ROW E_ n 24 m 82 values 8 orbit 8 SBC 2 LAM 2 SEG 3 SEGMAX 4
+ROW O_ n 24 m 82 values 2 orbit 2 SBC 0 LAM 0 SEG 1 SEGMAX 1
+CHECK PASS
+GAME red/xing/instances/x31_re24.pg rc=0
+ROW E_ n 24 m 80 values 7 orbit 7 SBC 2 LAM 2 SEG 3 SEGMAX 4
+ROW O_ n 24 m 80 values 2 orbit 2 SBC 0 LAM 0 SEG 1 SEGMAX 1
+CHECK PASS
+GAME red/xing/instances/x31_rx32.pg rc=0
+ROW E_ n 32 m 101 values 20 orbit 20 SBC 17 LAM 2 SEG 18 SEGMAX 2
+ROW O_ n 32 m 101 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/xing/instances/x32_rand16.pg rc=0
+ROW E_ n 16 m 50 values 16 orbit 16 SBC 0 LAM 1 SEG 2 SEGMAX 14
+ROW O_ n 16 m 50 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/xing/instances/x31_rx48.pg rc=0
+ROW E_ n 48 m 201 values 18 orbit 18 SBC 13 LAM 3 SEG 15 SEGMAX 2
+ROW O_ n 48 m 201 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/xing/instances/x32_nest40.pg rc=0
+ROW E_ n 40 m 144 values 25 orbit 25 SBC 8 LAM 3 SEG 9 SEGMAX 9
+ROW O_ n 40 m 144 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/xing/instances/x32_rand24.pg rc=0
+ROW E_ n 24 m 83 values 21 orbit 21 SBC 0 LAM 0 SEG 1 SEGMAX 20
+ROW O_ n 24 m 83 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/xing/instances/x32_rand32.pg rc=0
+ROW E_ n 32 m 129 values 30 orbit 30 SBC 0 LAM 0 SEG 1 SEGMAX 29
+ROW O_ n 32 m 129 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/xing/instances/x32_rand48.pg rc=0
+ROW E_ n 48 m 154 values 45 orbit 45 SBC 0 LAM 0 SEG 1 SEGMAX 44
+ROW O_ n 48 m 154 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/xing/instances/x32_waves32.pg rc=0
+ROW E_ n 32 m 122 values 21 orbit 21 SBC 9 LAM 4 SEG 11 SEGMAX 3
+ROW O_ n 32 m 122 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME si/root/instances/cone_n65.pg rc=0
+ROW E_ n 65 m 203 values 7 orbit 7 SBC 3 LAM 4 SEG 5 SEGMAX 2
+ROW O_ n 65 m 203 values 2 orbit 2 SBC 1 LAM 0 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/xing/instances/x32_rand64.pg rc=0
+ROW E_ n 64 m 237 values 57 orbit 57 SBC 0 LAM 0 SEG 1 SEGMAX 56
+ROW O_ n 64 m 237 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/xing/instances/x32_waves48.pg rc=0
+ROW E_ n 48 m 158 values 22 orbit 22 SBC 4 LAM 4 SEG 6 SEGMAX 8
+ROW O_ n 48 m 158 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME si/root/instances/ueonce_n27.pg rc=0
+ROW E_ n 27 m 85 values 12 orbit 12 SBC 3 LAM 1 SEG 5 SEGMAX 7
+ROW O_ n 27 m 85 values 2 orbit 2 SBC 0 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME si/root/instances/cone_n69.pg rc=0
+ROW E_ n 69 m 216 values 16 orbit 16 SBC 2 LAM 13 SEG 15 SEGMAX 1
+ROW O_ n 69 m 216 values 4 orbit 4 SBC 3 LAM 1 SEG 4 SEGMAX 0
+CHECK PASS
+games 413 pass 413 fail 0 timeout 0

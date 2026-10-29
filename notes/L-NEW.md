@@ -1,6 +1,29 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Box 55 log (successor 33, Opus 5.5, D14/D18; Lead brief 15:19Z; STEP 0 answers sent 15:20:17Z, started without waiting as told)
+- STEP 0 (measured): local l-new STALE (840 behind origin); ff-only to 56a42d4f (is-ancestor OK); merge --no-ff trunk 305cc8be -> 202bf1ec
+  (5 ahead / 0 behind; was 4 / 18, merge-base f67f5020). GAPS G-N5-TIME l.11 open, G-N1-LB l.10 open, G-N5-TERM l.16 closed. D1 (INDEX l.5),
+  D14 (l.22), D18 (l.32) active. Answers here because docs/agents/ is Lead-only.
+- (1) Packet docs/new/P-N5-SF-box55.md: SF-TERM, DECOUPLE, ONE-PLAYER, SF-RED (a)-(c). RESULTS line sent 15:27:39Z BEFORE freezing. Change
+  vs box 54: stretch bound b − a ≤ n + m from SIGNED R17 (c), (e) only (constant n + m + 1); converse SBC ≤ 2I added. Checker box55/pcheck.py
+  (+ MUT control), corpus driver box55/corpus.sh; quotes at trunk 305cc8be (18). alt_all 413/413 PASS (box55/pc_alt.txt).
+- (2) docs/new/N5-SBC-box55.md: no polynomial bound. PROVED (lane): SBC-EQ, NO-TRANSFER (from τ* with Iτ* = ∅ N5-SF is the one-sided
+  rule F, I = #σ − 1; Odd's run cannot bound SBC_σ). DEAD: M1 (σ̄ ≺_{G^d}-monotone), M2, M3, M4. Obstruction: P-component leapfrog at the
+  Odd vertex 14N + 16 of switchbestexp_N (2^N − 1 flips for N ≤ 4).
+- (3) docs/new/N5-SF-gauntlet-box55.md: no step passed in full; 1 and 4-correctness partly met; 2, 3, 4-time open.
+### N5-SF exact pseudocode (gauntlet step 1; the definition is P-N5-SF-box55.md §0, which governs; implementation experiments/new/box54/n5sf.py, default MODE)
+Input G, optional start pair; S1 (valuations Ξσ against S1's σ̄(σ); Ξτ, τ̄(τ) on G^d), S2 (Iσ, Iτ), S3 (start) exactly as SPEC
+(docs/new/N5-ssi-global.md). Loop while Iσ ∪ Iτ ≠ ∅ (each pass = one iteration), both steps from the same (σ, τ):
+  a′. if Iσ ≠ ∅: H := G with Even v restricted to {σ(v)} ∪ Iσ(v), Odd v restricted to σ̄(σ)(v); σ_new := Even's optimum of H (S1 procedure on
+      the dual of H against σ̄(σ)); else σ_new := σ.
+  b′. if Iτ ≠ ∅: H′ := G with Odd v restricted to {τ(v)} ∪ Iτ(v), Even v restricted to τ̄(τ)(v); τ_new := Odd's optimum of H′ (S1 on H′
+      against τ̄(τ)); else τ_new := τ.
+  c. if σ_new = σ and τ_new = τ: if Iσ ≠ ∅, every Even v with improving edges takes the (v, w) ∈ Iσ maximising (Ξσ(w), w), τ unchanged
+     (FIX 3); else the same for Odd on Iτ with G^d's valuations.
+  d. σ, τ := σ_new, τ_new.
+Stop (S5) when Iσ = Iτ = ∅: Even wins v iff the cycle node of Ξσ(v) has even Ω; Even's strategy σ on Even's region, Odd's σ̄(σ) on Odd's.
+
 ## Box 51 log (successor 32, Opus 5.5, D14/D18; Lead brief 12:43Z; STEP 0 answers sent 12:44:31Z, started without waiting as told)
 - STEP 0 (measured): local l-new STALE at d4bcdd21; fetched, ff-only to 7ea2826d (is-ancestor OK); merge --no-ff trunk 27365bed → 12ec8621
   (2 ahead / 0 behind; was 1 / 152, merge-base 36fd5bb8). GAPS G-N5-TIME l.11 open, G-N1-LB l.10 open, G-N5-TERM l.16 closed. D18 (INDEX
@@ -30,6 +53,23 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   (b), (c); length < 2(n + m)(n² − n + 1 + SBC)). DEAD: NOFB (n3all_maxph_0), W-frame twin N5-SFW cycles (theta_thf16, period 10; 49/413).
   DATA: correct on 1,038 library + families + hard families; SF ≈ ½ N5; runquad 264 → 2, topfix 7N + 43; switchbestexp N=10 619 vs 89, SBC 97.
   Open count SBC (CONJECTURE SF-POLY OPEN).
+
+## Dead ends (successor 33; also in docs/new/N5-SBC-box55.md §4)
+- (M1) σ̄(σ^(j)) monotone in R15's ≺ on G^d (either direction): DEAD, experiments/new/box54/out/switchbestexp_2.pg (n 60, sha1 b3d5bc29…,
+  S3 start): σ̄'s G^d-valuation goes down for Odd at vertices 1, 3, 4 at j = 9, 32 and up at j = 28, 41.
+- (M2) O(1) entries of an Odd edge into σ̄: DEAD, switchbestexp_10 (sha1 c26f4387…): 21 entries. (M3) O(deg) σ̄-changes at one Odd vertex:
+  DEAD, switchbestexp_4 (sha1 57b27b74…) vertex 72 (deg 2): 15. (M4) ≤ n distinct Ξ values per vertex: DEAD, switchbestexp_4 vertex 107:
+  120 > n = 110, one cycle node.
+- Route "R15 well-foundedness on G^d bounds SBC_σ": DEAD by Proposition NO-TRANSFER (proved): from τ* with Iτ* = ∅ Odd never moves and
+  SBC_σ is unchanged (checked: box55/ntcheck.py, alt_all box55/nt_alt.txt). Obstruction: DECOUPLE separates the runs.
+- Obstruction to SF-POLY: P-component leapfrog at Odd vertex u = 14N + 16 of switchbestexp_N (successors 14N + 11, 14N + 18): flips
+  2^N − 1 for N ≤ 4, 41 at N = 10; LAM = 0 throughout.
+
+## Things only I know (successor 33)
+- pcheck.py must compare strategies on the player's OWN vertices: red/n3/instances/n3cov_lean.start sets SIGMA0 47:18 on an Odd vertex;
+  start_pair writes it into σ and S1 ignores it, so unprojected sequences differ (a false TAU_V).
+- corpus.sh with xargs -P 3: print each game's block in ONE write, or the lines of parallel jobs interleave (first sicorpus log was garbled).
+- sbc.py's DUAL columns value σ̄ on G^d with Ed.key (larger = better for Odd).
 
 ## Dead ends (successor 32; also in docs/new/N5-VCPHASE-box51.md §6, N5-RLV-box52.md §3, N5-RANK-box53.md §5, N5-SF-box54.md §1-§2)
 - N5-SFW (W-frame single-frame variant): DEAD, cycles on red/n5inj/instances/theta_thf16.pg (n 16, sha1 90ed13cf…, S3 start; period 10).
