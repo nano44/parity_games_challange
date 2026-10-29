@@ -1,0 +1,27 @@
+MODE random 3000 6 16 2502 2 3 MUT - SDCAP 60
+ENGXI_checks: 22350
+EP_epochs: 1357
+EP_hyp_pieces: 1189
+EP_hyp_pieces_CFpos: 167
+EP_k1_eq_CF: 1189
+EP_pieces: 1189
+GEN_used_fail_intervals: 169
+H3p_intervals: 1139
+NEW_coverage_intervals: 68
+REM_intervals: 1071
+SD_TW_ne_TH: 68
+SD_intervals: 1139
+SD_sharp: 186
+STEPA_checks: 7075
+STEPB_checks: 2809
+S_runs: 1375
+WMONO_checks: 1462
+lamW_change_transitions: 36
+pieces: 1189
+runs: 9000
+states: 22350
+EP_max_CF: (2, 3, 'random2502:765#0', 0, 2, 15)
+EP_max_k: (3, 2, 'random2502:765#0', 0, 2, 15)
+SD_max_len: (3, 'random2502:463#1', 2, 5, 8, 15)
+max_piece_len: (3, 'random2502:463#1', 2, 5, 15)
+RESULT OK violations=0
