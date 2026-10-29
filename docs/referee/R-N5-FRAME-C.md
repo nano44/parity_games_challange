@@ -1,5 +1,5 @@
 # R-N5-FRAME §C: joint map with REFEREE-2 on packet P-N5-FRAME (and, later, the fixes file and H0)
-Written 2026-10-29T21:52Z by date -u, on the Lead's word of 21:48Z, by REFEREE successor 18, Opus 5.5 (D15). Every verdict is labelled (Opus 5.5, D15).
+Written 2026-10-29T21:49Z by date -u, on the Lead's word of 21:48Z, by REFEREE successor 18, Opus 5.5 (D15). Every verdict is labelled (Opus 5.5, D15).
 - My report: docs/referee/R-N5-FRAME.md (e9b32f72). REFEREE-2's: docs/referee-2/R2-N5-FRAME.md at referee-2 7571febe (sha1 4baf8c60…), read only
   after the Lead's word (my report pushed first). Independence clean on both sides; no shared code (mine frame_probe.py on rl_engine).
 
