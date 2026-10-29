@@ -1,0 +1,7 @@
+R>TC=11 cls_S>S'=1 cls_U>S=178 cls_same=25 perv>1=1 phases_R>0=93 wchg_at_adoption=204 zS_at_tau=200
+columns: value, R, TC, per-vertex max, per-edge max, n, |D|, game, a, b
+MAX R (12, 12, 2, 1, 1, 48, 1, '../experiments/si/xing/instances/ccl_w48_n48.pg', 15, 18)
+MAX R-TC (10, 12, 2, 1, 1, 48, 1, '../experiments/si/xing/instances/ccl_w48_n48.pg', 15, 18)
+MAX R/(n-1) (0.3225806451612903, 10, 1, 1, 1, 32, 1, '../experiments/si/xing/instances/ccl_fbx_n32.pg', 5, 7)
+MAX pere (1, 1, 4, 1, 1, 32, 1, '../experiments/n5-exhaustive/instances/b6_xl2_n32.pg', 67, 72)
+MAX perv (2, 4, 3, 2, 1, 48, 1, '../experiments/red/so/instances/xsn91_n48.pg', 110, 113)

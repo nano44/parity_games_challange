@@ -687,3 +687,12 @@ o=$(PLUS=1 python3 -I core/gp.py --one xing/instances/ccl_w48_n48.pg)
 grep -q "'D1': (12, 3, 3, 48, 1, 'xing/instances/ccl_w48_n48.pg', 15, 18)" <<<"$o"; for k in GP RED RLIN; do grep -q "^$k PASS$" <<<"$o"; done
 o=$(MUT=all PLUS=1 python3 -I core/gp.py --one xing/instances/ccl_w48_n48.pg); grep -q "^GP FAIL$" <<<"$o"
 echo "si (box 31: gap-step Lemma P dead on runfam_K100; GP+, FW-R on ccl_w48_n48; plain W-frame Lemma P control fails): PASS"
+# box 31 §5: R-LIN dead on rlin_cex_n40 (R = 129 > 39 in 10 transitions); FW-R and FW-R′ (R_T = 9) hold there; n5b identical.
+echo "670ba1ffc22c8f9b170e11ca3e43c33cee9329ca  core/instances/rlin_cex_n40.pg" | sha1sum -c --quiet
+echo "e488c00fe1359818b9a665a415cc7b2962015318  core/instances/rlin_cex_n40.start" | sha1sum -c --quiet
+o=$(PLUS=1 python3 -I core/gp.py --one core/instances/rlin_cex_n40.pg core/instances/rlin_cex_n40.start)
+grep -q "'D1:R_T/(n-1)': (0.23076923076923078, 9, 10, 40, 1, 'core/instances/rlin_cex_n40.pg', 1, 11)" <<<"$o"
+grep -q "'D1': (129, 10, 10, 40, 1, 'core/instances/rlin_cex_n40.pg', 1, 11)" <<<"$o"
+grep -q "^RLIN FAIL$" <<<"$o"; grep -q "^RED PASS$" <<<"$o"; grep -q "^GP PASS$" <<<"$o"
+o=$(python3 -I root/n5bcmp.py core/instances/rlin_cex_n40.pg core/instances/rlin_cex_n40.start | head -1); grep -q "identical state sequences: True" <<<"$o"
+echo "si (box 31 §5: R-LIN dead on rlin_cex_n40; FW-R, FW-R′ hold; n5b identical): PASS"
