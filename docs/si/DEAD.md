@@ -570,3 +570,9 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
 - SWEEP-GAIN (R85's Φ just after successive matched P-changes strictly increases in a λ-run). Kills: red/n5inj/instances/wide_h16.pg
   (sha1 990ecbcf; Odd side, S3), vertex 2, run from 13, t = 23, Φ 18 then 18; new/box59/out/fc_3.pg (9af7ca12; Even side, S3), vertex 6,
   t = 23, Φ 155 then 88. Obstruction: a reset can land at lower Φ after a carry burst; R85's Φ is not a net-progress potential.
+
+## box 35 (L-SI successor 29, docs/si/N5-RESET-box35.md §1; carx.py PHID, check.sh «box 35»)
+- Reset potentials of polynomial range: (λ, Φ) lexicographic (dead by box 34's kills, which lie inside one λ-run); Φ_2 and Φ_3
+  (signed positions squared / cubed). Kill: new/box59/out/fc_3.pg (sha1 9af7ca12; Even side, S3), vertex 6, resets at t 0 and 23:
+  Φ_2 11587 → 5786, Φ_3 872765 → 373618. Obstruction: between trivial resets, carries bring a high even rank with an odd block below
+  it (binary-counter shape), which raises S1's weight and lowers every polynomial-range potential.
