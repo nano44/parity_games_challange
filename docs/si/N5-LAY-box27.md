@@ -195,6 +195,19 @@ RO_b, σ̄_t = σ̄_b on [a, b] (REL); every cycle of CW_b (CH_b) is a W-cycle (
   graded score: 300 × max EXC + 100 × deadlock steps + 10 × SINK-GROW failures + 3 × W-/H-GROW failures + no-frontier steps) from
   seglast_kill_n110, hgrow_kill_n89, wgrow_kill_n90, then from seglast_kill_n29 (four seeds, NMAX 45-80): results below.
 
+## 7. A potential that survives the deadlock: CONJECTURE PSI-DROP (DATA; kill search running)
+- PSI1_t := |U^W_t| + |U^H_t| + (W-sinks at t that are NOT arena-ready); PSI0_t := |U^W_t| + |U^H_t| (both 0 at b). CONJECTURE PSI-DROP:
+  PSI1 strictly drops at every transition of a REL segment. It would give b − a ≤ PSI1_a ≤ 2|U^W_a| + |U^H_a| ≤ 3|E_b| ≤ 3(n − 1) on
+  every REL segment, without (H4′_rel) and without SEG-LAST (a COUNT bound, weaker than SEG-COUNT's n − 1 but enough for REL-SPLIT).
+- DATA (lay/psi.py): PSI1_V = 0 on alt_all default (4,478 steps) and pinned starts (5,384), lib41 (4,241), and all six kill pins
+  (cycset, karena, setstep, wgrow, hgrow, seglast_kill_n110 / n29). PSI0 fails exactly at the deadlock steps (seglast_kill_n29 t = 2,
+  n110 t = 2): there the unready W-sink becomes ready, which is what PSI1 adds.
+- Why it might hold (READING): a step with no settling is a deadlock step, and there the only switches are intermediate ones; in both
+  killers the intermediate switch makes the blocked W-sink ready. What could break it: a W-sink settling at t whose jW-predecessors become
+  NEW W-sinks at t + 1 that are not ready (each adds 1 to PSI1 while the settling removes 1 from U^W, and 0 or 1 from U^H).
+- Kill search: lay/wclimb.py OBJ=P (kill = a PSI1 failure; shaping: steps where PSI1 drops by exactly 1) from seglast_kill_n29,
+  hgrow_kill_n89, wgrow_kill_n90 (lay/out/p*.log).
+
 ## DONE / FINDINGS / NEEDS
 - DONE: this note; tools experiments/si/lay/ (wsink.py, wclimb.py, ssamp.py, sinkstep.py, anat.py, relcheck.py); data lay/*.txt; pins
   lay/instances/ (wgrow_kill_n90, hgrow_kill_n89, seglast_kill_n110, each with its S3 start); DEAD.md "box 27"; check.sh "box 27".
