@@ -18,7 +18,16 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   one phase (N = 3, 4, 6, 8, 10, 12). READING: the graft mirrors pairwise Ξ-leapfrogs, so SBCH″ is not easier than |P|. Lead told 13:31Z.
 - Fixes file P-N5-VC-fixes-box50.md F1 frozen (2c2b8960, sha1 9e8b7bd2…), reported 13:31Z.
 
-## Dead ends (successor 32; also in docs/new/N5-VCPHASE-box51.md §6 and N5-RLV-box52.md §3)
+## Box 53 log (successor 32; Lead 13:47Z: ranking-function synthesis, PR / lexicographic, data before proof)
+- docs/new/N5-RANK-box53.md. Tools box53/ (feat.py, rlp.py [scipy HiGHS, container only], mkcert.py, cert.py [pure Python], revpair.py).
+  Lemma CIRCUIT / Corollary REVERSE-PAIR PROVED (lane). Exact certificates: F24 u23sw64_n32 (5), F24m b5_os_n16 (8), F45 returns_ph64 (12),
+  edge bits lend9_n8 (2: vertex 3 6→7 at t 2, 7→6 at t 5; 89/410 library games). Shared F45 across zcl n32: circuit 18; joint lex STUCK.
+  F45 ranks every long family (cycle / top features). No uniform form, so no CONJECTURE. L-LIT T42 read (its §3 template question: EB DEAD).
+
+## Dead ends (successor 32; also in docs/new/N5-VCPHASE-box51.md §6, N5-RLV-box52.md §3, N5-RANK-box53.md §5)
+- Linear / lexicographic ranking functions over F24, F24m, F45, edge bits: DEAD on u23sw64_n32, b5_os_n16, red/n5inj/instances/returns_ph64,
+  n5-epoch/instances/lend9_n8 (exact certificates experiments/new/box53/cert/). Obstruction: S1's top-first order is not a polynomial-weight
+  linear form; N5 makes exact reverse switches.
 - SBCH″ = O(n) per phase (and SBCH′ = O(n)): DEAD, experiments/new/box52/out/topfix_n8_cmp.pg (n 171, sha1 6427c105…; .start): 149 relevant
   σ̄-changes in the phase [0, 241]; family topfix_N_cmp gives 2N² + 3N − 3. Obstruction: an Odd comparator with two observers copies a host
   pair's Ξ-leapfrogs into arena-relevant σ̄-changes.
@@ -37,6 +46,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - One observer cannot see σ̄ flips both ways: the true Ξ is ⊴ the frozen one (σ̄ minimises), so after one cut the reference locks. Use two observers.
 - `until ! pgrep -f "scripts/push.sh"` matches ITSELF and never ends (exit 144 when killed). Wait on push with `ps -eo args | grep -q "^bash scripts/push.sh"`.
 - A parked predecessor pushed during my push (c2df6801): push rejected, merged normally, re-pushed.
+- scipy is NOT in the base container: `pip install scipy` (box 53 LP only); check.sh never needs it (cert.py is pure Python).
+- LP feasibility with per-vertex / per-rank / edge-bit features is overfit at library run lengths (features ≥ transitions); only circuits count.
 
 ## Box 50 log (successor 31, Opus 5.5, D14/D18; Lead brief 09:59Z; STEP 0 answers sent 10:00:48Z, started without waiting as told)
 - STEP 0 (measured): fetched l-new, trunk, l-si; local l-new was 1 commit stale (d4bcdd21 → ff 8e8f7238); trunk merge was a fast-forward to e3b435ab

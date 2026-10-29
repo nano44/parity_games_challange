@@ -165,4 +165,13 @@ if [ $ok = 1 ] && grep -q ", 1, 122, 8, 0, 74, 30, 0, 25, 6, 6, 41)" <<<"$v1" &&
 else
   echo "box 52 RLV checks: FAILED"; exit 1
 fi
+# Box 53 (successor 32): N5-RANK: exact Farkas-circuit certificates (no linear / lexicographic ranking function) for F24, F24m, F45, edge bits; corrupted control.
+v=$(cd ../.. && python3 -I experiments/new/box53/cert.py experiments/new/box53/cert/f0_u23sw64_n32.json experiments/new/box53/cert/f4_b5_os_n16.json experiments/new/box53/cert/f5_returns_ph64.json experiments/new/box53/cert/f6_lend9_n8.json)
+bad=$(mktemp); python3 -c "import json,sys; c=json.load(open('box53/cert/f6_lend9_n8.json')); c['y'][0][1]+=1; json.dump(c,open(sys.argv[1],'w'))" $bad
+if [ "$(grep -c "CERT OK" <<<"$v")" = 4 ] && ! (cd ../.. && python3 -I experiments/new/box53/cert.py $bad >/dev/null); then
+  echo "box 53 RANK: 4 certificates exact (F24 u23sw64_n32 / F24m b5_os_n16 / F45 returns_ph64 / edge bits lend9_n8), control fails: PASS"
+else
+  echo "box 53 RANK checks: FAILED"; exit 1
+fi
+rm -f $bad
 rm -rf "$tmp"

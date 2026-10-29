@@ -1,0 +1,411 @@
+FEASIBLE n5-epoch/instances/ffin12_n32.pg 33 {'e4': 1, 'e5': -4, 'e8': 1, 'e13': 1, 'e21': 1, 'e29': 1, 'e38': -1, 'e48': 1, 'e52': 1, 'e56': 3, 'e59': 1, 'e63': 1, 'e65': -1, 'e70': 6, 'e72': 1, 'e74': -1, 'e83': 8, 'e8
+FEASIBLE n5-epoch/instances/ffin4_n24.pg 20 {'e2': 1, 'e4': 4, 'e9': 1, 'e11': -6, 'e19': 2, 'e21': 1, 'e23': 1, 'e32': 1, 'e38': 1, 'e43': -1, 'e46': 1, 'e48': 2, 'e65': 4, 'e69': 1}
+INFEASIBLE n5-epoch/instances/ffin5_n32.pg 23 support 2 games ['n5-epoch/instances/ffin5_n32.pg'] exact
+FEASIBLE n5-epoch/instances/gci2_n12.pg 10 {'e2': 4, 'e4': 1, 'e6': 1, 'e8': 1, 'e12': 1, 'e14': 1, 'e16': 1, 'e19': 1, 'e25': 1, 'e26': 1}
+FEASIBLE n5-epoch/instances/gci3_n24.pg 21 {'e9': 4, 'e11': 2, 'e14': 2, 'e15': 2, 'e18': 2, 'e28': 15, 'e32': 2, 'e34': -3, 'e45': 2, 'e46': 2, 'e50': 2, 'e53': 2, 'e60': 1, 'e64': 2, 'e67': 2, 'e72': 4, 'e84': 4, 'e86'
+FEASIBLE n5-epoch/instances/immfail_n14.pg 6 {'e1': 1, 'e7': 1, 'e10': -1, 'e13': 1, 'e16': 1, 'e23': 1}
+FEASIBLE n5-epoch/instances/immp_cex_n11.pg 2 {'e5': 1, 'e7': 1}
+FEASIBLE n5-epoch/instances/lcount_n23.pg 5 {'e1': 1, 'e4': -1, 'e7': 1, 'e26': 2, 'e36': 1}
+INFEASIBLE n5-epoch/instances/lend107_n32.pg 112 support 2 games ['n5-epoch/instances/lend107_n32.pg'] exact
+FEASIBLE n5-epoch/instances/lend13_n16.pg 14 {'e0': -1, 'e1': 1, 'e5': 1, 'e7': 1, 'e9': 1, 'e12': 1, 'e13': 1, 'e18': 1, 'e23': 1, 'e32': 1, 'e35': 1, 'e37': 1, 'e41': 1, 'e43': 1}
+FEASIBLE n5-epoch/instances/lend15_n48.pg 27 {'e1': 2, 'e2': -3, 'e5': 1, 'e25': 1, 'e38': 3, 'e44': -5, 'e51': 1, 'e65': 1, 'e68': -1, 'e71': 2, 'e78': 1, 'e104': 1, 'e114': 1, 'e128': 1, 'e134': 2, 'e135': -1, 'e150': 
+INFEASIBLE n5-epoch/instances/lend27_n24.pg 32 support 8 games ['n5-epoch/instances/lend27_n24.pg'] exact
+INFEASIBLE n5-epoch/instances/lend39f_n32.pg 47 support 2 games ['n5-epoch/instances/lend39f_n32.pg'] exact
+INFEASIBLE n5-epoch/instances/lend47_n32.pg 50 support 2 games ['n5-epoch/instances/lend47_n32.pg'] exact
+INFEASIBLE n5-epoch/instances/lend55_n32.pg 58 support 2 games ['n5-epoch/instances/lend55_n32.pg'] exact
+INFEASIBLE n5-epoch/instances/lend72_n48.pg 76 support 2 games ['n5-epoch/instances/lend72_n48.pg'] exact
+INFEASIBLE n5-epoch/instances/lend82_n32.pg 87 support 2 games ['n5-epoch/instances/lend82_n32.pg'] exact
+INFEASIBLE n5-epoch/instances/lend9_n8.pg 10 support 2 games ['n5-epoch/instances/lend9_n8.pg'] exact
+INFEASIBLE n5-epoch/instances/nconf61_n48.pg 73 support 2 games ['n5-epoch/instances/nconf61_n48.pg'] exact
+INFEASIBLE n5-epoch/instances/nep13_n24.pg 35 support 2 games ['n5-epoch/instances/nep13_n24.pg'] exact
+INFEASIBLE n5-epoch/instances/nep22f_n64.pg 52 support 2 games ['n5-epoch/instances/nep22f_n64.pg'] exact
+INFEASIBLE n5-epoch/instances/nep56_n32.pg 57 support 2 games ['n5-epoch/instances/nep56_n32.pg'] exact
+INFEASIBLE n5-epoch/instances/nep76_n40.pg 87 support 2 games ['n5-epoch/instances/nep76_n40.pg'] exact
+INFEASIBLE n5-epoch/instances/nep92_n40.pg 98 support 2 games ['n5-epoch/instances/nep92_n40.pg'] exact
+INFEASIBLE n5-epoch/instances/nep94_n48.pg 100 support 2 games ['n5-epoch/instances/nep94_n48.pg'] exact
+INFEASIBLE n5-epoch/instances/ret12_n40.pg 60 support 2 games ['n5-epoch/instances/ret12_n40.pg'] exact
+INFEASIBLE n5-epoch/instances/ret14_n48.pg 61 support 2 games ['n5-epoch/instances/ret14_n48.pg'] exact
+INFEASIBLE n5-epoch/instances/ret14_n64.pg 65 support 2 games ['n5-epoch/instances/ret14_n64.pg'] exact
+FEASIBLE n5-exhaustive/instances/b4_cyc6_0.pg 5 {'e0': 1, 'e5': -1, 'e7': 1, 'e9': 1, 'e16': 1}
+FEASIBLE n5-exhaustive/instances/b4_cyc6_1.pg 4 {'e9': 2, 'e17': 1, 'e20': 1, 'e23': 2}
+FEASIBLE n5-exhaustive/instances/b4_n4all_cyc3_0.pg 3 {'e0': 1, 'e3': 1, 'e6': 1}
+FEASIBLE n5-exhaustive/instances/b4_n5_other_0.pg 2 {'e3': 1, 'e4': 1}
+FEASIBLE n5-exhaustive/instances/b4_nohlen5_0.pg 6 {'e2': 1, 'e8': 1, 'e12': 1, 'e15': 2, 'e18': 1, 'e20': 1}
+FEASIBLE n5-exhaustive/instances/b4_theta_n7.pg 2 {'e4': 1, 'e6': 2}
+FEASIBLE n5-exhaustive/instances/b5_n5_cyc4_0.pg 3 {'e0': 1, 'e2': 1, 'e5': 1}
+INFEASIBLE n5-exhaustive/instances/b5_o11.pg 12 support 4 games ['n5-exhaustive/instances/b5_o11.pg'] exact
+INFEASIBLE n5-exhaustive/instances/b5_os_n12.pg 18 support 2 games ['n5-exhaustive/instances/b5_os_n12.pg'] exact
+INFEASIBLE n5-exhaustive/instances/b5_os_n14.pg 22 support 2 games ['n5-exhaustive/instances/b5_os_n14.pg'] exact
+INFEASIBLE n5-exhaustive/instances/b5_os_n16.pg 26 support 2 games ['n5-exhaustive/instances/b5_os_n16.pg'] exact
+INFEASIBLE n5-exhaustive/instances/b5_os_n20.pg 34 support 2 games ['n5-exhaustive/instances/b5_os_n20.pg'] exact
+INFEASIBLE n5-exhaustive/instances/b5_os_n24.pg 53 support 2 games ['n5-exhaustive/instances/b5_os_n24.pg'] exact
+INFEASIBLE n5-exhaustive/instances/b5_os_n28.pg 65 support 2 games ['n5-exhaustive/instances/b5_os_n28.pg'] exact
+INFEASIBLE n5-exhaustive/instances/b5_os_n32.pg 71 support 4 games ['n5-exhaustive/instances/b5_os_n32.pg'] exact
+INFEASIBLE n5-exhaustive/instances/b5_os_n40.pg 81 support 2 games ['n5-exhaustive/instances/b5_os_n40.pg'] exact
+INFEASIBLE n5-exhaustive/instances/b6_xl2_n32.pg 87 support 2 games ['n5-exhaustive/instances/b6_xl2_n32.pg'] exact
+INFEASIBLE n5-exhaustive/instances/b6_xl_n32.pg 85 support 2 games ['n5-exhaustive/instances/b6_xl_n32.pg'] exact
+INFEASIBLE n5-exhaustive/instances/b6_xl_n40.pg 89 support 4 games ['n5-exhaustive/instances/b6_xl_n40.pg'] exact
+INFEASIBLE n5-exhaustive/instances/b6_xl_n48.pg 97 support 2 games ['n5-exhaustive/instances/b6_xl_n48.pg'] exact
+FEASIBLE n5-exhaustive/instances/b6_xs_n24.pg 21 {'e3': 1, 'e5': 1, 'e8': 1, 'e13': 1, 'e17': 1, 'e19': 1, 'e21': 1, 'e23': 1, 'e27': 3, 'e48': 1, 'e51': 1, 'e57': 1, 'e59': 1, 'e66': 1, 'e68': 1, 'e73': 1, 'e77': 1, 'e7
+FEASIBLE n5-exhaustive/instances/b6_xs_n32.pg 29 {'e1': 1, 'e4': 1, 'e7': 1, 'e18': 1, 'e20': 1, 'e23': 1, 'e27': 1, 'e31': 1, 'e36': 4, 'e50': 1, 'e51': 1, 'e57': 1, 'e58': 1, 'e61': 1, 'e65': 1, 'e69': 1, 'e71': 1, 'e7
+FEASIBLE n5-exhaustive/instances/b6_xs_n40.pg 36 {'e1': 1, 'e3': 1, 'e5': 1, 'e13': 1, 'e14': 1, 'e18': 1, 'e19': 1, 'e22': 1, 'e24': 6, 'e42': 1, 'e44': 1, 'e53': 1, 'e58': 1, 'e63': 1, 'e67': 1, 'e71': 1, 'e74': 1, 'e7
+FEASIBLE n5-exhaustive/instances/b6_xs_n48.pg 37 {'e1': 1, 'e3': 1, 'e5': 1, 'e14': 1, 'e17': 1, 'e19': 1, 'e21': 1, 'e24': 1, 'e34': 6, 'e45': 1, 'e48': 1, 'e54': 1, 'e58': 1, 'e66': 1, 'e69': 1, 'e71': 1, 'e75': 1, 'e7
+INFEASIBLE n5-exhaustive/instances/b6_xw_n32.pg 79 support 3 games ['n5-exhaustive/instances/b6_xw_n32.pg'] exact
+INFEASIBLE n5-exhaustive/instances/b6_xw_n40.pg 80 support 4 games ['n5-exhaustive/instances/b6_xw_n40.pg'] exact
+FEASIBLE n5-exhaustive/instances/b6_xw_n48.pg 85 {'e5': 1, 'e8': -2, 'e9': 23, 'e12': 1, 'e16': 1, 'e19': 2, 'e20': 1, 'e23': -1, 'e24': -1, 'e27': 1, 'e28': -14, 'e30': 14, 'e32': -3, 'e33': 1, 'e37': -15, 'e38': 1, 'e4
+FEASIBLE n5-exhaustive/instances/b6_xw_n56.pg 85 {'e1': 10, 'e5': 2, 'e6': 1, 'e7': -2, 'e9': 44, 'e12': 1, 'e14': -26, 'e18': -7, 'e19': -19, 'e21': 2, 'e22': 1, 'e24': 1, 'e25': -16, 'e32': 7, 'e36': 1, 'e41': 1, 'e43'
+FEASIBLE n5-exhaustive/instances/canonA_0.pg 3 {'e4': 2, 'e14': 1, 'e20': 1}
+FEASIBLE n5-exhaustive/instances/canonA_1.pg 4 {'e0': 1, 'e6': 1, 'e16': 2, 'e24': 1}
+FEASIBLE n5-exhaustive/instances/frz1_n24.pg 31 {'e1': 2, 'e3': 1, 'e6': 13, 'e8': -5, 'e9': 14, 'e10': 16, 'e16': 1, 'e20': 1, 'e21': 1, 'e23': 1, 'e25': -1, 'e27': 5, 'e32': 1, 'e39': 1, 'e41': 2, 'e43': 2, 'e45': 1, '
+FEASIBLE n5-exhaustive/instances/frz2_n24.pg 25 {'e0': 1, 'e4': 1, 'e7': -4, 'e8': 1, 'e15': 1, 'e19': 11, 'e20': 1, 'e22': 2, 'e25': 5, 'e27': 1, 'e32': 1, 'e34': 2, 'e35': 2, 'e38': 1, 'e42': 1, 'e49': 1, 'e52': 1, 'e5
+FEASIBLE n5-exhaustive/instances/frz3_n24.pg 26 {'e1': 2, 'e3': 1, 'e7': 3, 'e12': 1, 'e15': 2, 'e18': -1, 'e20': 2, 'e23': 1, 'e26': 1, 'e29': 1, 'e38': 1, 'e41': 1, 'e42': 1, 'e45': 1, 'e49': 1, 'e55': 1, 'e59': 1, 'e6
+FEASIBLE n5-exhaustive/instances/n3all_maxph_0.pg 3 {'e0': 2, 'e2': 1, 'e5': 1}
+FEASIBLE n5-exhaustive/instances/n3all_maxph_1.pg 3 {'e0': 1, 'e2': 1, 'e5': 1}
+FEASIBLE n5-exhaustive/instances/n3all_maxph_2.pg 3 {'e0': 2, 'e2': 1, 'e6': 1}
+FEASIBLE n5-exhaustive/instances/n4_maxph_0.pg 2 {'e3': 1, 'e4': 1}
+FEASIBLE n5-exhaustive/instances/n4_maxph_1.pg 2 {'e3': 1, 'e4': 1}
+FEASIBLE n5-exhaustive/instances/n4_thch_0.pg 2 {'e1': 1, 'e2': 1}
+FEASIBLE n5-exhaustive/instances/n4all_maxph_0.pg 4 {'e1': 1, 'e3': 1, 'e4': 1, 'e6': 1}
+FEASIBLE n5-exhaustive/instances/n4all_maxph_1.pg 4 {'e1': 1, 'e3': 1, 'e4': 1, 'e6': 1}
+FEASIBLE n5-exhaustive/instances/n4all_tgbad_0.pg 3 {'e0': 1, 'e3': 1, 'e5': 1}
+FEASIBLE n5-exhaustive/instances/n4all_thch_0.pg 3 {'e0': 1, 'e3': 1, 'e6': 1}
+FEASIBLE n5-exhaustive/instances/n5s_maxph_0.pg 3 {'e1': 1, 'e2': 1, 'e4': 1}
+FEASIBLE n5-exhaustive/instances/nh_n8.pg 4 {'e1': 1, 'e2': 1, 'e5': 1, 'e9': 1}
+FEASIBLE n5-exhaustive/instances/thetaA_canon_n12.pg 3 {'e0': 2, 'e2': 1, 'e5': 1}
+FEASIBLE n5-exhaustive/instances/thetaA_canon_n8.pg 3 {'e1': 1, 'e3': 2, 'e7': 1}
+FEASIBLE n5-exhaustive/instances/thetaA_n17.pg 5 {'e0': 1, 'e7': 1, 'e12': 2, 'e16': 1}
+FEASIBLE n5-exhaustive/instances/thetaA_n6.pg 3 {'e0': 1, 'e5': 1, 'e6': 2}
+FEASIBLE n5-exhaustive/instances/thetaA_n7.pg 3 {'e0': 2, 'e3': 1, 'e4': 1}
+FEASIBLE n5-exhaustive/instances/thetaA_n9.pg 4 {'e1': 1, 'e3': 1, 'e4': 2, 'e6': 1}
+FEASIBLE n5-exhaustive/instances/wk1_n32.pg 7 {'e5': 1, 'e12': 1, 'e24': 2, 'e48': 1, 'e52': 1, 'e74': 1}
+FEASIBLE n5-exhaustive/instances/wk2_n32.pg 7 {'e1': 1, 'e5': 1, 'e16': 1, 'e23': 1, 'e33': 1, 'e49': 1, 'e52': 1}
+INFEASIBLE new/box48/instances/long121_n40.pg 122 support 2 games ['new/box48/instances/long121_n40.pg'] exact
+INFEASIBLE new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.pg 93 support 2 games ['new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.pg'] exact
+INFEASIBLE new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.pg 102 support 2 games ['new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.pg'] exact
+INFEASIBLE new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.pg 105 support 2 games ['new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.pg'] exact
+INFEASIBLE new/box48/out/qpcclimb/scale/snap_n80_s62.pg 105 support 2 games ['new/box48/out/qpcclimb/scale/snap_n80_s62.pg'] exact
+FEASIBLE red/carry/instances/absmono_viol_n44.pg 7 {'e16': 1, 'e45': 1, 'e61': 1, 'e154': 1, 'e429': 1, 'e604': 1, 'e687': 1}
+FEASIBLE red/carry/instances/carry3_2_2.pg 2 {'e9': 1, 'e16': 1}
+FEASIBLE red/carry/instances/cm_mdrop_both_n28.pg 10 {'e5': 1, 'e6': -1, 'e10': 2, 'e22': -2, 'e25': 1, 'e39': 2, 'e41': 1, 'e44': 1, 'e48': 1, 'e63': 1}
+FEASIBLE red/carry/instances/cm_mdrop_oink_n28.pg 3 {'e0': 1, 'e11': 1, 'e21': 1}
+FEASIBLE red/carry/instances/ctx11_n40.pg 9 {'e2': 2, 'e5': 1, 'e17': 1, 'e29': 1, 'e34': 1, 'e141': 1, 'e233': 1, 'e236': 1}
+FEASIBLE red/carry/instances/ctx12_n40.pg 8 {'e0': 5, 'e8': 2, 'e14': 3, 'e33': 4, 'e89': 1, 'e90': -1, 'e260': 2}
+FEASIBLE red/carry/instances/ctx13_n40.pg 17 {'e2': 1, 'e9': 1, 'e18': -1, 'e29': 1, 'e32': 4, 'e35': 2, 'e69': 1, 'e95': 1, 'e148': 1, 'e172': 1, 'e203': 1, 'e238': 1, 'e262': 1, 'e276': 1}
+FEASIBLE red/carry/instances/ctx6_n20.pg 3 {'e9': 1, 'e29': 1, 'e48': 1}
+FEASIBLE red/carry/instances/ctx6_n56.pg 12 {'e11': 1, 'e24': 3, 'e78': 1, 'e86': 1, 'e237': -1, 'e299': -1, 'e300': 2, 'e305': 1, 'e384': 1, 'e390': -1}
+FEASIBLE red/carry/instances/ctx7_n30.pg 11 {'e3': 1, 'e8': 1, 'e13': 1, 'e30': 1, 'e73': 1, 'e90': 1, 'e96': 1, 'e142': 1, 'e221': 1, 'e224': 1, 'e289': 1}
+FEASIBLE red/carry/instances/f1_twodef_n48.pg 6 {'e0': 1, 'e37': 1, 'e43': 1, 'e60': 1, 'e156': 1, 'e221': 1}
+FEASIBLE red/carry/instances/f1_twofall_n48.pg 6 {'e5': 1, 'e33': 1, 'e46': 1, 'e79': 1, 'e123': 1, 'e172': 1}
+FEASIBLE red/carry/instances/fall3_n76.pg 8 {'e0': 1, 'e6': 1, 'e33': 2, 'e77': 1, 'e112': 1, 'e126': 1, 'e238': 1, 'e273': 1}
+FEASIBLE red/carry/instances/fall4_n116.pg 6 {'e0': 1, 'e6': 1, 'e33': 1, 'e77': 1, 'e112': 1, 'e126': 1}
+FEASIBLE red/carry/instances/fallv_viol_n28.pg 5 {'e0': 1, 'e19': 1, 'e74': 2, 'e156': 1, 'e275': 1}
+FEASIBLE red/carry/instances/fired10_n20.pg 6 {'e9': 1, 'e11': 1, 'e22': 1, 'e45': 1, 'e71': 1, 'e125': 1}
+FEASIBLE red/carry/instances/firedlong667_n20.pg 4 {'e3': 1, 'e12': 1, 'e45': 1, 'e72': 1}
+FEASIBLE red/carry/instances/firedlong667_n43.pg 3 {'e1': 1, 'e9': 1, 'e21': 1}
+FEASIBLE red/carry/instances/firedstep13_n76.pg 8 {'e2': 1, 'e41': 1, 'e47': 1, 'e76': 2, 'e121': 1, 'e247': 1, 'e266': 1}
+FEASIBLE red/carry/instances/gapbW_dup_n20.pg 5 {'e2': 1, 'e11': 1, 'e35': 1, 'e72': 1, 'e123': 1}
+FEASIBLE red/carry/instances/gapb_dup_n20.pg 8 {'e11': 1, 'e16': 1, 'e35': 1, 'e37': 1, 'e40': 1, 'e56': 1, 'e61': 1, 'e84': 1}
+FEASIBLE red/carry/instances/h4_compound2x2_n44.pg 10 {'e2': 1, 'e3': 1, 'e9': 1, 'e11': 1, 'e13': 1, 'e27': 1, 'e33': 2, 'e34': 1, 'e48': 1, 'e64': 1}
+FEASIBLE red/carry/instances/h4_compound_n44.pg 4 {'e3': 1, 'e12': 1, 'e43': 1, 'e109': 1}
+FEASIBLE red/carry/instances/h4_def2ctx_n20.pg 6 {'e4': 1, 'e17': 1, 'e22': 1, 'e27': 1, 'e38': 1, 'e52': 1}
+FEASIBLE red/carry/instances/h4_def7_n28.pg 3 {'e5': 1, 'e11': 1, 'e68': 1}
+FEASIBLE red/carry/instances/h4_disjoint_n20.pg 3 {'e17': 1, 'e23': 1, 'e39': 1}
+FEASIBLE red/carry/instances/h4_notweaker_n20.pg 5 {'e9': 1, 'e10': 1, 'e24': 1, 'e49': 1, 'e60': 1}
+FEASIBLE red/carry/instances/kin_viol_n29.pg 5 {'e0': 1, 'e2': 1, 'e17': 1, 'e57': 1, 'e69': 1}
+FEASIBLE red/carry/instances/lalg_dtl_mviol_n20.pg 5 {'e0': 1, 'e3': 1, 'e12': 1, 'e36': 1, 'e41': 1}
+FEASIBLE red/carry/instances/lemmaS_Mdrop_n20.pg 6 {'e0': 1, 'e3': 1, 'e19': 1, 'e21': 1, 'e24': 1, 'e37': 1}
+FEASIBLE red/carry/instances/lemmaS_viol_n20.pg 4 {'e0': 1, 'e4': 1, 'e7': 1, 'e32': 1}
+FEASIBLE red/carry/instances/lex_viol_inj_n28.pg 6 {'e0': 1, 'e6': 1, 'e33': 1, 'e77': 1, 'e112': 1, 'e126': 1}
+FEASIBLE red/carry/instances/lex_viol_tie_n28.pg 7 {'e0': 1, 'e6': 1, 'e33': 1, 'e65': 1, 'e77': 1, 'e107': 1, 'e126': 1}
+FEASIBLE red/carry/instances/meet_viol_n29.pg 11 {'e0': 1, 'e5': 1, 'e23': 1, 'e28': 1, 'e55': -1, 'e57': -3, 'e69': 1, 'e111': 1, 'e166': 2}
+FEASIBLE red/carry/instances/nosig_2_3.pg 2 {'e8': 1, 'e16': 1}
+FEASIBLE red/carry/instances/phi_flat_alive_n32.pg 4 {'e2': 1, 'e7': 1, 'e32': 1, 'e48': 1}
+FEASIBLE red/carry/instances/pk_viol_n20.pg 3 {'e14': 1, 'e42': 1, 'e92': 1}
+FEASIBLE red/carry/instances/replay4_n32.pg 4 {'e3': 2, 'e32': 1, 'e66': 1}
+FEASIBLE red/carry/instances/spp19_oink_n30.pg 10 {'e14': 1, 'e31': 1, 'e38': 1, 'e46': 1, 'e72': 2, 'e105': 1, 'e118': 1, 'e156': 1, 'e189': -1}
+FEASIBLE red/carry/instances/spp19_stable_n30.pg 7 {'e0': 1, 'e15': 1, 'e44': 1, 'e63': 1, 'e74': 1, 'e157': 1, 'e227': 1}
+FEASIBLE red/carry/instances/spp22_oink_n40.pg 8 {'e4': 1, 'e12': 1, 'e23': 2, 'e25': 1, 'e50': 1, 'e68': 1, 'e146': 1}
+FEASIBLE red/carry/instances/spp25_oink_n40.pg 10 {'e2': 1, 'e6': 1, 'e15': 1, 'e27': 1, 'e31': 1, 'e52': 1, 'e55': 1, 'e96': 1, 'e159': 1, 'e185': 1}
+FEASIBLE red/carry/instances/stealer_viol_n76.pg 12 {'e0': 1, 'e35': 2, 'e78': 1, 'e102': 1, 'e116': 1, 'e119': -1, 'e187': 2, 'e208': 1, 'e217': 1, 'e279': -1, 'e291': 1}
+FEASIBLE red/carry/instances/stealonce_both_n45.pg 4 {'e0': 1, 'e9': 1, 'e22': 1, 'e23': 1}
+FEASIBLE red/carry/instances/stealonce_core_n76.pg 4 {'e0': 1, 'e9': 1, 'e22': 1, 'e23': 1}
+FEASIBLE red/carry/instances/stealonce_viol_n76.pg 12 {'e0': 1, 'e7': 1, 'e35': 2, 'e78': 1, 'e102': 1, 'e114': -1, 'e116': 1, 'e188': 2, 'e199': 1, 'e209': 1, 'e292': 1}
+FEASIBLE red/carry/instances/tstep_near_n20.pg 5 {'e2': 1, 'e18': 1, 'e40': 2, 'e66': 1}
+FEASIBLE red/ctxp/instances/deep1_n13.pg 1 {'e10': 1}
+FEASIBLE red/ctxp/instances/deep1_n21.pg 3 {'e3': 1, 'e5': 1, 'e9': 1}
+FEASIBLE red/ctxp/instances/margin1_mc1.pg 10 {'e4': 2, 'e6': 2, 'e37': 1, 'e43': 1, 'e111': 1, 'e114': 1, 'e262': -1, 'e264': 1}
+FEASIBLE red/ctxp/instances/margin1_mc5.pg 12 {'e3': 1, 'e5': 1, 'e10': 1, 'e17': 1, 'e22': 3, 'e31': 1, 'e37': -1, 'e39': 2, 'e47': 1, 'e125': 1, 'e138': 1, 'e171': 1}
+FEASIBLE red/ctxp/instances/margin1_n20.pg 5 {'e2': 1, 'e5': 1, 'e9': 1, 'e38': 1, 'e58': 1}
+FEASIBLE red/dtl/instances/lalg_dtl_pertop31_n18.pg 2 {'e1': 1, 'e52': 1}
+FEASIBLE red/dtl/instances/lalg_dtl_restart8_n20.pg 5 {'e11': 1, 'e34': 1, 'e40': 1, 'e49': 1, 'e57': 1}
+FEASIBLE red/fbr/instances/bghm_k1_gap6_A.pg 1 {'e3': 1}
+FEASIBLE red/fbr/instances/bghm_k3_gap4_A.pg 1 {'e3': 1}
+FEASIBLE red/fbr/instances/fr39_q4_n48.pg 36 {'e0': 1, 'e11': 1, 'e15': 1, 'e17': 1, 'e22': 5, 'e24': 1, 'e25': -1, 'e33': 1, 'e35': 1, 'e37': 1, 'e40': 1, 'e42': 1, 'e45': 1, 'e49': 1, 'e53': 1, 'e55': 1, 'e60': 1, 'e61
+INFEASIBLE red/fbr/instances/lev56_n48.pg 86 support 3 games ['red/fbr/instances/lev56_n48.pg'] exact
+FEASIBLE red/fbr/instances/lev74_n40.pg 18 {'e5': 1, 'e12': -2, 'e19': -1, 'e27': 1, 'e30': 1, 'e31': 1, 'e40': 4, 'e41': 1, 'e44': 1, 'e51': 1, 'e53': 1, 'e58': 1, 'e63': 1, 'e84': 2, 'e102': 1, 'e121': 1, 'e131': 1}
+FEASIBLE red/fbr/instances/nep80_n40.pg 22 {'e2': 2, 'e5': 3, 'e14': 1, 'e18': 2, 'e23': 1, 'e30': 1, 'e34': 1, 'e35': 1, 'e38': 3, 'e42': 1, 'e45': 1, 'e52': -1, 'e53': 1, 'e55': 1, 'e66': 1, 'e71': 1, 'e103': 1, 'e109'
+FEASIBLE red/fbr/instances/rho144_n32.pg 9 {'e1': 1, 'e11': 1, 'e16': 1, 'e18': 2, 'e21': 1, 'e24': 1, 'e45': 1, 'e51': 1, 'e52': 1}
+FEASIBLE red/fbr/instances/rho3_253_n32.pg 11 {'e1': 3, 'e15': 1, 'e22': 3, 'e26': 1, 'e29': 1, 'e52': 1, 'e55': 1, 'e69': 1, 'e70': 1, 'e73': 1}
+FEASIBLE red/fbr/instances/rho666_n48.pg 16 {'e1': 1, 'e5': 1, 'e15': 1, 'e18': 1, 'e22': 1, 'e25': 3, 'e31': 1, 'e33': 1, 'e37': 2, 'e45': 1, 'e48': 1, 'e57': 1, 'e64': 1, 'e104': 1, 'e114': 1}
+FEASIBLE red/fbr/instances/rho84_n16.pg 5 {'e2': 1, 'e4': 1, 'e8': 1, 'e17': 1, 'e31': 1}
+FEASIBLE red/fbr/instances/sat4_n20.pg 6 {'e4': 1, 'e17': 1, 'e22': 1, 'e27': 1, 'e38': 1, 'e52': 1}
+FEASIBLE red/fbr/instances/sat68_n20.pg 5 {'e0': 1, 'e5': 1, 'e12': 1, 'e19': 1, 'e33': 1}
+FEASIBLE red/fbr/instances/twowave_L16.pg 15 {'e0': 1, 'e4': 1, 'e7': 1, 'e10': 1, 'e13': 1, 'e16': 1, 'e19': 1, 'e22': 1, 'e25': 1, 'e28': 1, 'e31': 1, 'e34': 1, 'e37': 1, 'e40': 1, 'e43': 1}
+FEASIBLE red/fbx/instances/exsw_loop_n15.pg 1 {'e4': 1}
+FEASIBLE red/fbx/instances/kt6_n58.pg 38 {'e0': 1, 'e2': 1, 'e5': 1, 'e8': -1, 'e11': 1, 'e19': -1, 'e20': 6, 'e28': 2, 'e33': 1, 'e39': 1, 'e43': -10, 'e45': 2, 'e65': 1, 'e73': 1, 'e76': 1, 'e77': -1, 'e79': 1, 'e81': 
+FEASIBLE red/frz/instances/fbcap_eq_u4_n11.pg 6 {'e1': 2, 'e4': 1, 'e7': 1, 'e8': -1, 'e11': 1, 'e17': 1}
+FEASIBLE red/frz/instances/fx2_n11.pg 9 {'e1': 3, 'e7': 1, 'e10': 1, 'e13': 1, 'e14': 1, 'e18': 1, 'e21': 1, 'e22': 1, 'e27': 1}
+FEASIBLE red/h3/instances/frzgap0_n4.pg 1 {'e1': 1}
+FEASIBLE red/h3/instances/frzgap0_n6.pg 3 {'e2': 1, 'e3': 1, 'e8': 1}
+FEASIBLE red/h3/instances/lcount2_n23.pg 6 {'e1': 1, 'e3': 1, 'e5': 1, 'e12': 1, 'e17': 1, 'e40': 1}
+FEASIBLE red/h3/instances/lcount_n23.pg 5 {'e1': 1, 'e4': -1, 'e7': 1, 'e26': 2, 'e36': 1}
+FEASIBLE red/h3/instances/offret_l19_n24.pg 3 {'e4': 1, 'e11': 1, 'e18': 1}
+FEASIBLE red/h3/instances/xsnpre36_n48.pg 33 {'e4': 1, 'e7': 1, 'e9': 1, 'e12': 1, 'e13': 1, 'e19': 1, 'e20': 1, 'e29': 1, 'e31': 1, 'e32': 1, 'e36': -1, 'e39': 1, 'e42': 1, 'e43': 1, 'e47': 1, 'e51': 1, 'e53': 1, 'e56':
+FEASIBLE red/kl/instances/klcount_n16.pg 6 {'e5': 1, 'e8': 1, 'e10': 1, 'e19': 1, 'e28': 1, 'e48': 1}
+FEASIBLE red/kl/instances/klcount_n18_base.pg 6 {'e5': 1, 'e8': 1, 'e10': 1, 'e19': 1, 'e28': 1, 'e48': 1}
+FEASIBLE red/kl/instances/klcount_n18_lvl.pg 6 {'e5': 1, 'e8': 1, 'e10': 1, 'e19': 1, 'e28': 1, 'e48': 1}
+FEASIBLE red/kl/instances/klglobal_n16.pg 6 {'e14': 1, 'e21': 1, 'e65': 1, 'e77': 1, 'e89': 2}
+FEASIBLE red/kl/instances/klglobal_n18_lvl.pg 6 {'e14': 1, 'e21': 1, 'e65': 1, 'e77': 1, 'e89': 2}
+FEASIBLE red/kl/instances/klglobal_n20_lvl2.pg 6 {'e14': 1, 'e21': 1, 'e65': 1, 'e77': 1, 'e89': 2}
+FEASIBLE red/kl/instances/klmin_n13.pg 3 {'e0': 1, 'e3': 1, 'e9': 1}
+FEASIBLE red/kl/instances/r2climb_h13.pg 4 {'e3': 1, 'e6': -1, 'e14': 1, 'e22': 1}
+FEASIBLE red/kl/instances/r2crawl_n14.pg 5 {'e2': 1, 'e32': 1, 'e45': 1, 'e51': 1, 'e80': 1}
+FEASIBLE red/kl/instances/r2join_h0E_n14.pg 3 {'e0': 1, 'e3': 1, 'e5': 1}
+FEASIBLE red/kl/instances/r2lap_best_n22.pg 5 {'e3': 1, 'e7': 2, 'e18': 1, 'e25': 1, 'e46': 1}
+FEASIBLE red/kl24/instances/HL88_0.pg 3 {'e0': 1, 'e3': 1, 'e9': 1}
+FEASIBLE red/kl24/instances/HL88_1.pg 3 {'e0': 1, 'e3': 1, 'e9': 1}
+FEASIBLE red/kl24/instances/HL88_2.pg 3 {'e0': 1, 'e3': 1, 'e9': 1}
+FEASIBLE red/kl24/instances/HL88_3.pg 3 {'e0': 1, 'e3': 1, 'e9': 1}
+FEASIBLE red/kl24/instances/HLg_0.pg 3 {'e0': 1, 'e3': 1, 'e9': 1}
+FEASIBLE red/kl24/instances/HLg_1.pg 3 {'e0': 1, 'e3': 1, 'e9': 1}
+FEASIBLE red/kl24/instances/HLg_2.pg 3 {'e0': 1, 'e3': 1, 'e9': 1}
+FEASIBLE red/kl24/instances/HLg_3.pg 3 {'e0': 1, 'e3': 1, 'e9': 1}
+INFEASIBLE red/kw/instances/cw11_n24.pg 17 support 4 games ['red/kw/instances/cw11_n24.pg'] exact
+FEASIBLE red/kw/instances/frzu_tight_n14.pg 4 {'e0': 1, 'e8': 1, 'e20': 1, 'e26': 1}
+FEASIBLE red/kw/instances/kc18_n24.pg 23 {'e0': 1, 'e2': -2, 'e5': 3, 'e9': 1, 'e11': 1, 'e13': 1, 'e17': 1, 'e25': 1, 'e27': 1, 'e29': 1, 'e31': 1, 'e33': 1, 'e38': 1, 'e40': 1, 'e42': 1, 'e44': 1, 'e46': 1, 'e53': 2, '
+FEASIBLE red/lag/instances/depth2_n39.pg 3 {'e1': 2, 'e46': 1, 'e49': 1}
+FEASIBLE red/lag/instances/depth3_n46.pg 3 {'e1': 1, 'e23': 1, 'e39': 1}
+FEASIBLE red/lag/instances/depth4_n53.pg 4 {'e1': 2, 'e27': 1, 'e46': 1, 'e54': 1}
+FEASIBLE red/lag/instances/fam_D12_n106.pg 1 {'e1': 1}
+FEASIBLE red/lag/instances/fam_D4_n50.pg 1 {'e1': 1}
+FEASIBLE red/lag/instances/fam_D8_n78.pg 1 {'e1': 1}
+FEASIBLE red/mei/instances/mei_h2.pg 1 {'e0': 1}
+FEASIBLE red/mei/instances/mei_h3.pg 2 {'e0': 1, 'e4': 1}
+FEASIBLE red/mei/instances/mei_h4.pg 3 {'e0': 1, 'e4': 2}
+FEASIBLE red/mei/instances/mei_h5.pg 4 {'e0': 1, 'e4': 1, 'e8': 2}
+FEASIBLE red/mei/instances/mei_h6.pg 5 {'e0': 1, 'e4': 2, 'e8': 1, 'e12': 2}
+FEASIBLE red/mei/instances/mei_h8.pg 7 {'e0': 1, 'e4': 2, 'e12': 4}
+FEASIBLE red/n3/instances/comp54_n80.pg 55 {'e4': 5, 'e6': 5, 'e9': 6, 'e11': 3, 'e12': 1, 'e14': 2, 'e22': -7, 'e23': -1, 'e25': 28, 'e27': 11, 'e28': 2, 'e31': 1, 'e35': 1, 'e40': 1, 'e46': -9, 'e47': 1, 'e55': 1, 'e57
+INFEASIBLE red/n3/instances/core41_n40.pg 42 support 2 games ['red/n3/instances/core41_n40.pg'] exact
+FEASIBLE red/n3/instances/lag11_n40.pg 23 {'e3': 5, 'e4': -2, 'e5': 2, 'e9': 3, 'e16': 1, 'e23': 7, 'e44': 3, 'e46': 2, 'e49': 1, 'e50': -1, 'e69': 2, 'e71': 10, 'e77': 5, 'e78': 2, 'e83': 10, 'e87': 5}
+FEASIBLE red/n3/instances/lagx10_n40.pg 17 {'e9': 10, 'e15': 1, 'e21': 2, 'e25': 4, 'e37': 1, 'e39': 1, 'e42': 2, 'e45': 1, 'e47': -1, 'e51': 2, 'e59': 5, 'e61': 1, 'e72': 5, 'e79': 1, 'e89': -1}
+INFEASIBLE red/n3/instances/long121_n40.pg 122 support 2 games ['red/n3/instances/long121_n40.pg'] exact
+INFEASIBLE red/n3/instances/long90_k2_n40.pg 92 support 2 games ['red/n3/instances/long90_k2_n40.pg'] exact
+FEASIBLE red/n3/instances/n3cov_lean.pg 35 {'e3': 1, 'e7': 1, 'e9': 2, 'e12': 1, 'e14': -3, 'e15': 1, 'e22': 1, 'e26': 1, 'e28': 4, 'e34': 6, 'e35': 1, 'e42': 3, 'e46': 1, 'e48': 1, 'e49': -7, 'e53': 1, 'e56': -1, 'e59':
+INFEASIBLE red/n3/instances/n3cov_phi.pg 31 support 2 games ['red/n3/instances/n3cov_phi.pg'] exact
+INFEASIBLE red/n3/instances/ret22_n40.pg 94 support 2 games ['red/n3/instances/ret22_n40.pg'] exact
+FEASIBLE red/n3/instances/run34_n40.pg 51 {'e1': 1, 'e4': 1, 'e6': -5, 'e19': 1, 'e20': 1, 'e25': 1, 'e27': 1, 'e29': 1, 'e33': 1, 'e37': 1, 'e41': 1, 'e43': 1, 'e46': 1, 'e50': 2, 'e51': 3, 'e53': 1, 'e59': 1, 'e60': 1,
+INFEASIBLE red/n3/instances/run49_n32.pg 51 support 2 games ['red/n3/instances/run49_n32.pg'] exact
+FEASIBLE red/n5/instances/dl_4_4.pg 8 {'e5': 2, 'e18': 3, 'e22': 1, 'e71': 2, 'e73': 1, 'e75': 1, 'e77': 1}
+FEASIBLE red/n5/instances/dl_6_8.pg 14 {'e5': 2, 'e10': -1, 'e30': 3, 'e34': 1, 'e132': 2, 'e195': 2, 'e197': 3, 'e199': 1, 'e201': 1, 'e203': 1, 'e205': 1, 'e207': 1, 'e209': 1}
+FEASIBLE red/n5/instances/dlm2_4.pg 8 {'e1': 1, 'e2': 1, 'e18': 2, 'e20': 1, 'e40': 1, 'e57': 4, 'e61': 4}
+INFEASIBLE red/n5/instances/sym_h12_s1.pg 34 support 3 games ['red/n5/instances/sym_h12_s1.pg'] exact
+INFEASIBLE red/n5/instances/sym_h16_s1.pg 55 support 2 games ['red/n5/instances/sym_h16_s1.pg'] exact
+INFEASIBLE red/n5/instances/sym_h8_s1.pg 25 support 3 games ['red/n5/instances/sym_h8_s1.pg'] exact
+INFEASIBLE red/n5inj/instances/block_bk20.pg 27 support 14 games ['red/n5inj/instances/block_bk20.pg'] exact
+INFEASIBLE red/n5inj/instances/block_bk32.pg 49 support 2 games ['red/n5inj/instances/block_bk32.pg'] exact
+FEASIBLE red/n5inj/instances/blockph_bp20.pg 25 {'e3': 4, 'e4': 2, 'e6': 2, 'e9': 2, 'e11': 2, 'e13': 2, 'e14': 2, 'e17': 2, 'e18': 8, 'e20': 13, 'e22': 7, 'e24': -2, 'e26': 15, 'e28': 2, 'e30': 2, 'e32': 12, 'e33': 2, '
+INFEASIBLE red/n5inj/instances/blockph_bp32.pg 39 support 17 games ['red/n5inj/instances/blockph_bp32.pg'] exact
+FEASIBLE red/n5inj/instances/bribe_cex_n15.pg 1 {'e2': 1}
+INFEASIBLE red/n5inj/instances/elimn_cex_n48.pg 92 support 2 games ['red/n5inj/instances/elimn_cex_n48.pg'] exact
+INFEASIBLE red/n5inj/instances/frz24.pg 39 support 5 games ['red/n5inj/instances/frz24.pg'] exact
+INFEASIBLE red/n5inj/instances/frz32.pg 66 support 3 games ['red/n5inj/instances/frz32.pg'] exact
+INFEASIBLE red/n5inj/instances/frz40.pg 90 support 4 games ['red/n5inj/instances/frz40.pg'] exact
+INFEASIBLE red/n5inj/instances/phase2_pk32.pg 56 support 2 games ['red/n5inj/instances/phase2_pk32.pg'] exact
+INFEASIBLE red/n5inj/instances/phase2_pk48.pg 72 support 2 games ['red/n5inj/instances/phase2_pk48.pg'] exact
+INFEASIBLE red/n5inj/instances/returns_ph64.pg 105 support 2 games ['red/n5inj/instances/returns_ph64.pg'] exact
+INFEASIBLE red/n5inj/instances/returns_rt32.pg 57 support 2 games ['red/n5inj/instances/returns_rt32.pg'] exact
+INFEASIBLE red/n5inj/instances/returns_rt48.pg 80 support 2 games ['red/n5inj/instances/returns_rt48.pg'] exact
+INFEASIBLE red/n5inj/instances/returns_rt64.pg 90 support 2 games ['red/n5inj/instances/returns_rt64.pg'] exact
+INFEASIBLE red/n5inj/instances/theta_thc24.pg 29 support 3 games ['red/n5inj/instances/theta_thc24.pg'] exact
+FEASIBLE red/n5inj/instances/theta_thf16.pg 20 {'e6': 1, 'e8': -3, 'e9': 1, 'e11': 3, 'e12': 1, 'e16': 5, 'e18': 1, 'e21': 2, 'e23': 10, 'e25': 4, 'e26': 3, 'e28': 2, 'e31': 1, 'e34': 1}
+INFEASIBLE red/n5inj/instances/theta_tp32.pg 45 support 6 games ['red/n5inj/instances/theta_tp32.pg'] exact
+FEASIBLE red/n5inj/instances/theta_tp40.pg 41 {'e1': -5, 'e4': 6, 'e6': 1, 'e8': 2, 'e10': 5, 'e13': 1, 'e15': 3, 'e17': 3, 'e19': 1, 'e20': 2, 'e24': 1, 'e27': 1, 'e28': 2, 'e31': 7, 'e32': -4, 'e34': 1, 'e35': 1, 'e37'
+FEASIBLE red/n5inj/instances/wide_h16.pg 44 {'e0': 2, 'e4': 2, 'e8': 2, 'e10': -3, 'e12': 2, 'e13': -2, 'e15': 3, 'e16': 8, 'e20': -2, 'e21': 2, 'e24': -10, 'e25': 1, 'e27': 2, 'e29': -2, 'e34': 2, 'e40': -8, 'e41': -2, 
+FEASIBLE red/nest16/instances/k4L72_n101.pg 6 {'e3': 1, 'e5': 1, 'e117': 1, 'e150': 1, 'e160': 1, 'e165': 1}
+FEASIBLE red/nest16/instances/k4L72r_n101.pg 6 {'e3': 1, 'e5': 1, 'e117': 1, 'e150': 1, 'e160': 1, 'e165': 1}
+FEASIBLE red/nest16/instances/k4g50_n101.pg 5 {'e3': 1, 'e5': 1, 'e16': 1, 'e22': 1, 'e24': 1}
+FEASIBLE red/nest16/instances/k4seed_c1_n82.pg 3 {'e3': 1, 'e5': 1, 'e117': 1}
+FEASIBLE red/nest16/instances/k4seed_vr_n87.pg 3 {'e3': 1, 'e5': 1, 'e117': 1}
+FEASIBLE red/nest16/instances/k4u_n101.pg 3 {'e3': 1, 'e5': 1, 'e117': 1}
+FEASIBLE red/nest16/instances/k4y1_n82.pg 5 {'e4': 2, 'e6': 1, 'e26': 1, 'e49': 1, 'e70': 1}
+FEASIBLE red/nest16/instances/k4y2_n87.pg 6 {'e6': 1, 'e8': 1, 'e17': 1, 'e25': 1, 'e26': 1, 'e63': 1}
+FEASIBLE red/nest16/instances/near4_n26.pg 2 {'e2': 1, 'e53': 1}
+FEASIBLE red/nest16/instances/nest4u_n46.pg 2 {'e2': 1, 'e53': 1}
+FEASIBLE red/nest16/instances/nest4uu_n51.pg 2 {'e2': 1, 'e8': 1}
+FEASIBLE red/nest16/instances/nest5_n49.pg 3 {'e1': 1, 'e16': 1, 'e39': 1}
+FEASIBLE red/nest16/instances/nest6_n75.pg 3 {'e3': 1, 'e5': 1, 'e130': 1}
+FEASIBLE red/nest16/instances/nest6min_n75.pg 3 {'e3': 1, 'e5': 1, 'e117': 1}
+FEASIBLE red/nest16/instances/nest6x_n75.pg 5 {'e10': 1, 'e16': 1, 'e39': 1, 'e50': 1, 'e59': 1}
+FEASIBLE red/nest16/instances/oseg_n26.pg 3 {'e2': 1, 'e36': 1, 'e53': 1}
+FEASIBLE red/nest16/instances/w1_n27.pg 2 {'e2': 1, 'e6': 1}
+FEASIBLE red/nest16/instances/win3_n27.pg 2 {'e2': 1, 'e8': 1}
+FEASIBLE red/nopre/instances/nopre_viol_n20.pg 3 {'e0': 1, 'e7': 1, 'e11': 1}
+FEASIBLE red/o1/instances/f39_n48.pg 38 {'e0': 1, 'e11': 1, 'e15': 1, 'e17': 1, 'e18': -2, 'e22': 1, 'e29': 1, 'e31': 1, 'e33': 1, 'e36': 1, 'e38': 1, 'e41': 1, 'e47': 1, 'e52': 1, 'e54': 1, 'e56': 1, 'e57': 1, 'e59': 5,
+FEASIBLE red/o1/instances/iter118_n48.pg 18 {'e5': 5, 'e15': 2, 'e24': -2, 'e28': 3, 'e49': 2, 'e53': 2, 'e58': 4, 'e75': 2, 'e77': -1, 'e96': 4, 'e105': 2, 'e123': 2, 'e128': 2, 'e143': 2, 'e147': 2, 'e150': 4, 'e163': 
+FEASIBLE red/o1/instances/ph45_n32.pg 21 {'e4': 7, 'e9': 1, 'e12': 1, 'e15': 1, 'e19': 2, 'e22': 1, 'e25': 1, 'e29': 1, 'e32': 1, 'e34': 1, 'e36': 1, 'e38': 1, 'e42': 1, 'e44': 1, 'e47': 1, 'e49': 1, 'e51': 1, 'e54': 1, 
+INFEASIBLE red/o1/instances/ph50_n32.pg 32 support 4 games ['red/o1/instances/ph50_n32.pg'] exact
+FEASIBLE red/o1/instances/tau18_n24.pg 12 {'e2': 2, 'e4': -1, 'e6': 2, 'e21': 1, 'e23': 1, 'e26': 3, 'e31': 1, 'e34': 1, 'e45': 1, 'e47': 1, 'e50': 1, 'e51': 1}
+FEASIBLE red/rec0/instances/lend2_30_n48.pg 25 {'e1': 1, 'e4': -2, 'e5': 1, 'e20': -1, 'e23': 7, 'e28': -1, 'e36': 1, 'e40': 1, 'e44': 1, 'e47': 4, 'e53': 1, 'e71': 1, 'e75': 2, 'e77': 1, 'e88': 3, 'e95': -1, 'e107': 1, 
+FEASIBLE red/rec0/instances/n0_6_n24.pg 3 {'e0': 1, 'e18': 1, 'e25': 1}
+FEASIBLE red/rec0/instances/nep24_n20.pg 15 {'e2': 1, 'e4': 1, 'e9': 2, 'e16': 2, 'e20': 1, 'e24': 2, 'e29': 1, 'e32': -1, 'e33': -1, 'e34': 1, 'e36': -1, 'e44': 1, 'e48': 1, 'e50': 1, 'e51': 1}
+FEASIBLE red/rec0/instances/nep87_n40.pg 25 {'e2': 1, 'e5': 2, 'e14': 3, 'e18': 4, 'e32': 1, 'e34': 3, 'e41': 1, 'e43': 1, 'e49': 1, 'e52': -1, 'e53': 1, 'e55': 1, 'e71': 2, 'e75': 1, 'e84': 1, 'e93': 1, 'e104': -2, 'e10
+FEASIBLE red/rec0/instances/nep90_n40.pg 23 {'e2': 2, 'e5': 3, 'e23': 1, 'e29': 1, 'e32': 1, 'e41': 1, 'e48': 1, 'e51': -1, 'e52': 1, 'e54': 1, 'e71': 3, 'e75': 2, 'e82': -1, 'e87': 1, 'e92': 1, 'e104': 1, 'e106': 1, 'e1
+FEASIBLE red/sgrow/instances/s20_n20.pg 8 {'e0': 2, 'e11': 2, 'e17': -1, 'e28': 1, 'e40': 1, 'e44': 1, 'e51': 1, 'e57': 1}
+FEASIBLE red/sgrow/instances/s21_oink_n20.pg 8 {'e1': 2, 'e2': 1, 'e10': 1, 'e19': 1, 'e23': 1, 'e30': 1, 'e33': 1, 'e61': 1}
+FEASIBLE red/sgrow/instances/s29_n30.pg 7 {'e12': 1, 'e29': 1, 'e40': 3, 'e44': 1, 'e50': 1, 'e64': 1, 'e116': 1}
+FEASIBLE red/sgrow/instances/s32_n60.pg 8 {'e0': 1, 'e13': 1, 'e17': 1, 'e19': 1, 'e45': 1, 'e54': 1, 'e292': 1, 'e323': 1}
+FEASIBLE red/sgrow/instances/s34_oink_n40.pg 5 {'e4': 1, 'e9': 1, 'e16': 1, 'e22': 1, 'e66': 1}
+FEASIBLE red/sgrow/instances/s34_oink_n80.pg 8 {'e5': 1, 'e9': 5, 'e18': 2, 'e37': 2, 'e74': 2, 'e143': -2, 'e195': 1, 'e272': 3}
+FEASIBLE red/sgrow/instances/s35_oink_n80.pg 5 {'e4': 1, 'e13': 1, 'e46': 1, 'e52': 1, 'e181': 1}
+FEASIBLE red/sgrow/instances/s36_oink_n60.pg 5 {'e4': 1, 'e13': 1, 'e46': 1, 'e52': 1, 'e182': 1}
+FEASIBLE red/so/instances/beta2_n11.pg 4 {'e1': 1, 'e11': 1, 'e14': 1, 'e15': 2}
+FEASIBLE red/so/instances/epsseg_cex_n16.pg 11 {'e2': 1, 'e9': 1, 'e13': 2, 'e16': 8, 'e24': 1, 'e34': 1, 'e36': 1, 'e40': -3, 'e43': 1}
+FEASIBLE red/so/instances/epsseg_cex_n48.pg 26 {'e7': 1, 'e22': 1, 'e36': 1, 'e51': 1, 'e52': 3, 'e54': 1, 'e72': 1, 'e75': 1, 'e81': 1, 'e86': 1, 'e88': -1, 'e91': 1, 'e95': 9, 'e101': 1, 'e115': 5, 'e145': 1, 'e148': 1
+FEASIBLE red/so/instances/exitr_cex_n16.pg 10 {'e1': 1, 'e8': -1, 'e9': 1, 'e11': -5, 'e13': 1, 'e16': 1, 'e20': 1, 'e29': 1, 'e39': 1, 'e45': 2}
+FEASIBLE red/so/instances/exitr_cex_n48.pg 22 {'e2': 6, 'e21': 1, 'e25': 2, 'e30': 1, 'e36': 1, 'e38': -1, 'e53': 1, 'e59': 1, 'e69': 1, 'e70': -1, 'e81': -1, 'e85': 1, 'e88': 1, 'e91': 1, 'e99': 1, 'e105': 1, 'e113': 2,
+FEASIBLE red/so/instances/farrise25_n32.pg 35 {'e3': 1, 'e5': 1, 'e7': -1, 'e8': 1, 'e9': 1, 'e12': 1, 'e14': 1, 'e17': 1, 'e19': 1, 'e23': -9, 'e26': 1, 'e28': 1, 'e32': 1, 'e37': 1, 'e41': 1, 'e45': 1, 'e49': -11, 'e56
+FEASIBLE red/so/instances/mn_abs74_n48.pg 22 {'e43': 3, 'e46': 3, 'e59': -3, 'e71': 17, 'e77': 9, 'e83': 3, 'e85': 2, 'e93': 3, 'e98': 3, 'e106': 6, 'e118': 8, 'e134': -3, 'e137': 2, 'e151': 3, 'e153': 5, 'e162': 9, 'e16
+INFEASIBLE red/so/instances/njb_reabs54_n32.pg 40 support 3 games ['red/so/instances/njb_reabs54_n32.pg'] exact
+FEASIBLE red/so/instances/njb_reabs65_n48.pg 70 {'e41': -1, 'e45': 1, 'e49': 1, 'e52': 1, 'e54': -7, 'e55': 1, 'e58': 1, 'e62': 1, 'e67': 24, 'e74': 1, 'e76': -1, 'e79': -1, 'e84': 7, 'e98': 1, 'e100': 1, 'e108': 1, 'e10
+FEASIBLE red/so/instances/nleq33_n48.pg 40 {'e8': 1, 'e14': 1, 'e18': -7, 'e20': 1, 'e23': 1, 'e24': 1, 'e30': 1, 'e31': 1, 'e37': 1, 'e42': -1, 'e45': -5, 'e51': 1, 'e59': 1, 'e65': 1, 'e75': 1, 'e80': 1, 'e83': 1, 'e87
+FEASIBLE red/so/instances/nleq_cex_n48.pg 10 {'e40': 1, 'e55': 1, 'e60': 1, 'e72': 1, 'e92': 1, 'e112': 2, 'e136': 1, 'e151': 1, 'e167': -1}
+FEASIBLE red/so/instances/pft35_n48.pg 41 {'e8': 1, 'e26': 1, 'e35': -1, 'e37': 1, 'e39': -1, 'e40': 1, 'e46': 4, 'e51': 2, 'e53': -7, 'e54': 1, 'e59': 2, 'e61': 1, 'e65': -8, 'e66': 1, 'e69': 1, 'e71': 1, 'e76': -1, 'e7
+INFEASIBLE red/so/instances/pft40_n40.pg 54 support 2 games ['red/so/instances/pft40_n40.pg'] exact
+FEASIBLE red/so/instances/pftheta34_n32.pg 39 {'e23': 1, 'e25': 1, 'e27': 3, 'e30': 14, 'e31': 13, 'e34': 4, 'e36': 2, 'e37': 9, 'e39': 1, 'e45': 2, 'e48': -23, 'e52': 3, 'e54': 3, 'e56': -4, 'e62': 2, 'e68': 1, 'e70': 1
+FEASIBLE red/so/instances/pftheta_cex_n32.pg 38 {'e21': 1, 'e23': 4, 'e25': 1, 'e27': -10, 'e29': 1, 'e31': 3, 'e32': 2, 'e34': 1, 'e35': -12, 'e45': 5, 'e47': -17, 'e48': 1, 'e55': 6, 'e57': -3, 'e59': 1, 'e64': 27, 'e7
+FEASIBLE red/so/instances/post31_n48.pg 36 {'e0': 2, 'e7': -2, 'e14': 1, 'e18': 1, 'e31': 1, 'e32': 1, 'e36': 8, 'e39': 1, 'e42': -1, 'e54': -1, 'e56': 1, 'e60': 2, 'e64': 1, 'e68': -10, 'e69': 1, 'e70': 1, 'e75': 1, 'e8
+FEASIBLE red/so/instances/rise_fb38_n48.pg 53 {'e12': 1, 'e13': 1, 'e16': 1, 'e19': 1, 'e20': 1, 'e23': 1, 'e24': -4, 'e27': -1, 'e28': 1, 'e32': 1, 'e33': 1, 'e47': 1, 'e48': 1, 'e51': -6, 'e53': 1, 'e54': 1, 'e57': -6,
+INFEASIBLE red/so/instances/rise_thin51_n40.pg 78 support 2 games ['red/so/instances/rise_thin51_n40.pg'] exact
+INFEASIBLE red/so/instances/s4c8_n13.pg 12 support 2 games ['red/so/instances/s4c8_n13.pg'] exact
+INFEASIBLE red/so/instances/so_j19_n48.pg 25 support 2 games ['red/so/instances/so_j19_n48.pg'] exact
+FEASIBLE red/so/instances/so_k2_n32.pg 20 {'e1': 1, 'e11': -1, 'e17': -7, 'e20': 2, 'e22': 3, 'e26': 1, 'e29': 1, 'e39': 1, 'e42': -5, 'e46': 1, 'e49': 1, 'e56': 1, 'e64': 1, 'e68': 1, 'e75': 1, 'e93': 1, 'e99': 2, 'e100
+FEASIBLE red/so/instances/so_sor5_n24.pg 23 {'e3': 1, 'e4': -6, 'e5': 1, 'e9': -1, 'e14': 1, 'e32': 1, 'e33': -2, 'e34': 2, 'e37': 1, 'e40': 1, 'e43': 1, 'e45': 1, 'e47': 1, 'e50': 1, 'e55': 1, 'e56': 1, 'e59': 1, 'e62':
+FEASIBLE red/so/instances/so_sorl_n32.pg 22 {'e2': 2, 'e4': 1, 'e8': 1, 'e11': 1, 'e12': 1, 'e14': 1, 'e25': 1, 'e26': 1, 'e31': 2, 'e59': 1, 'e63': 1, 'e65': 1, 'e70': 1, 'e74': 1, 'e78': 3, 'e82': 1, 'e87': 1, 'e89': 1
+FEASIBLE red/so/instances/so_th_n32.pg 36 {'e0': 1, 'e2': 1, 'e9': 1, 'e11': -1, 'e17': 13, 'e34': 1, 'e38': 1, 'e40': 1, 'e43': 1, 'e45': 1, 'e49': 2, 'e54': 3, 'e55': 1, 'e58': 4, 'e59': -6, 'e72': 4, 'e75': 1, 'e76': 
+FEASIBLE red/so/instances/so_tie13_n24.pg 16 {'e16': 1, 'e21': 1, 'e23': 1, 'e24': -5, 'e26': 1, 'e30': 1, 'e39': 1, 'e44': 1, 'e47': 1, 'e51': 1, 'e61': 1, 'e66': 1, 'e69': 1, 'e76': 1, 'e81': 2, 'e83': 1}
+FEASIBLE red/so/instances/so_tie15_n32.pg 20 {'e0': 1, 'e9': 1, 'e24': 1, 'e25': 7, 'e32': 1, 'e33': 1, 'e39': 1, 'e41': 1, 'e50': 1, 'e74': 1, 'e76': 1, 'e89': 1, 'e92': 1, 'e96': 1, 'e99': 1, 'e103': 1, 'e105': 1, 'e10
+INFEASIBLE red/so/instances/tev_cex_n40.pg 27 support 2 games ['red/so/instances/tev_cex_n40.pg'] exact
+FEASIBLE red/so/instances/tevlast11_n40.pg 36 {'e10': 1, 'e12': 1, 'e14': 1, 'e16': -5, 'e20': 1, 'e36': 1, 'e40': 1, 'e43': 1, 'e50': 5, 'e56': 1, 'e64': 1, 'e67': 1, 'e70': 1, 'e74': 1, 'e81': 1, 'e82': 1, 'e87': 1, 'e
+FEASIBLE red/so/instances/tevlast7_n32.pg 41 {'e6': 2, 'e9': 2, 'e10': -22, 'e12': 11, 'e14': 5, 'e20': 2, 'e22': 2, 'e24': 2, 'e26': 2, 'e30': 2, 'e34': 2, 'e35': 2, 'e38': 2, 'e40': -2, 'e43': 2, 'e44': -4, 'e50': -2, 
+FEASIBLE red/so/instances/tevlast_cex_n40.pg 11 {'e4': 2, 'e9': 1, 'e24': 1, 'e31': 1, 'e37': 1, 'e46': 1, 'e64': 1, 'e71': 1, 'e74': 1, 'e96': 1, 'e139': 1}
+FEASIBLE red/so/instances/tog6a_n32.pg 10 {'e3': 1, 'e22': 1, 'e25': 1, 'e41': 1, 'e50': 2, 'e51': 1, 'e55': 2, 'e60': 1, 'e67': 1, 'e93': 1}
+FEASIBLE red/so/instances/tog6b_n32.pg 8 {'e0': 1, 'e2': -1, 'e19': 1, 'e26': 1, 'e33': 1, 'e36': -1, 'e47': 1, 'e53': 2}
+FEASIBLE red/so/instances/xrun21_n24.pg 24 {'e0': -3, 'e3': 1, 'e4': -4, 'e10': 1, 'e13': 1, 'e17': 1, 'e19': 3, 'e25': 1, 'e28': 1, 'e30': 1, 'e35': 1, 'e44': 1, 'e46': 1, 'e48': 1, 'e53': 1, 'e57': 1, 'e61': 1, 'e66': 
+FEASIBLE red/so/instances/xrun8_n10.pg 11 {'e0': 1, 'e4': 1, 'e5': -1, 'e7': -4, 'e9': 1, 'e16': 1, 'e19': 1, 'e21': -1, 'e23': 1, 'e25': 1, 'e28': 1}
+FEASIBLE red/so/instances/xsn29_n32.pg 29 {'e0': 1, 'e10': 1, 'e15': 1, 'e18': 1, 'e19': 1, 'e28': 1, 'e32': 1, 'e34': 1, 'e36': 1, 'e49': 1, 'e51': 1, 'e57': 1, 'e59': 1, 'e76': 1, 'e80': 1, 'e83': 1, 'e86': 1, 'e89': 1
+FEASIBLE red/so/instances/xsn43_n48.pg 45 {'e4': 1, 'e9': 1, 'e17': 1, 'e18': 1, 'e24': 1, 'e33': 1, 'e40': 1, 'e42': 1, 'e50': 1, 'e52': -14, 'e55': 1, 'e60': 1, 'e63': 1, 'e65': 1, 'e68': 1, 'e73': 1, 'e75': 1, 'e78': 
+INFEASIBLE red/so/instances/xsn91_n48.pg 115 support 5 games ['red/so/instances/xsn91_n48.pg'] exact
+FEASIBLE red/so/instances/xsnf42_n48.pg 44 {'e1': 1, 'e4': 1, 'e6': 1, 'e13': 1, 'e16': 1, 'e24': 1, 'e27': 1, 'e31': 1, 'e32': 1, 'e35': 1, 'e37': 1, 'e38': 1, 'e41': 1, 'e44': 1, 'e47': 1, 'e51': 1, 'e55': 1, 'e62': 1,
+FEASIBLE red/so/instances/xsnf52_n64.pg 55 {'e0': 1, 'e4': 1, 'e10': 1, 'e15': 1, 'e19': 1, 'e26': 1, 'e27': 1, 'e35': 1, 'e37': 1, 'e41': 1, 'e42': 1, 'e46': 2, 'e48': 1, 'e52': 1, 'e59': 1, 'e62': 1, 'e76': 1, 'e78': 1
+FEASIBLE red/tcpert/instances/leanT_N12.pg 13 {'e0': 1, 'e90': 1, 'e96': 1, 'e97': 1, 'e102': 1, 'e109': -1, 'e111': 1, 'e112': 1, 'e128': 1, 'e140': 1, 'e153': 1, 'e167': 1, 'e219': 1}
+FEASIBLE red/tcpert/instances/leanT_N16.pg 16 {'e0': 1, 'e154': 1, 'e159': 1, 'e160': 1, 'e163': 1, 'e169': 1, 'e180': 1, 'e192': 1, 'e204': 1, 'e217': 1, 'e235': 1, 'e252': 1, 'e268': 1, 'e283': 1, 'e304': 1, 'e312': 1}
+FEASIBLE red/tcpert/instances/leanT_N24.pg 25 {'e0': 1, 'e326': 1, 'e343': 1, 'e348': 1, 'e350': 1, 'e351': 1, 'e367': 1, 'e387': 1, 'e388': 1, 'e412': 1, 'e435': 1, 'e458': 1, 'e459': 1, 'e483': 1, 'e484': 1, 'e539': 1,
+FEASIBLE red/tcpert/instances/leanT_N32.pg 33 {'e0': 1, 'e562': 1, 'e567': -1, 'e568': 1, 'e576': 1, 'e579': 1, 'e583': 1, 'e590': 1, 'e596': 1, 'e601': 1, 'e620': 1, 'e621': 1, 'e641': 1, 'e642': 1, 'e661': 1, 'e680': 1
+FEASIBLE red/tcpert/instances/leanT_N6.pg 6 {'e0': 1, 'e27': 1, 'e32': 1, 'e34': 1, 'e35': 1, 'e48': 1}
+FEASIBLE red/tcpert/instances/leanT_N8.pg 8 {'e0': 1, 'e47': 1, 'e48': 1, 'e54': 1, 'e61': 1, 'e64': 1, 'e71': 1, 'e84': 1}
+FEASIBLE red/tcpert/instances/tcL_N10.pg 27 {'e24': 5, 'e31': 1, 'e51': 1, 'e142': 2, 'e158': 1, 'e161': 1, 'e164': 1, 'e217': 1, 'e226': 1, 'e248': 1, 'e260': 1, 'e324': 1, 'e345': 1, 'e357': 1, 'e360': 1, 'e382': 1, 'e
+FEASIBLE red/tcpert/instances/tcL_N12.pg 37 {'e38': 5, 'e45': 5, 'e48': 16, 'e51': 2, 'e90': 1, 'e111': 1, 'e132': 5, 'e134': 8, 'e137': 10, 'e154': 5, 'e201': -2, 'e230': 4, 'e236': 5, 'e267': 1, 'e342': 4, 'e344': 5, '
+FEASIBLE red/tcpert/instances/tcL_N3.pg 7 {'e3': 1, 'e10': 1, 'e12': 1, 'e13': 1, 'e22': 1, 'e29': 1, 'e52': 1}
+FEASIBLE red/tcpert/instances/tcL_N4.pg 16 {'e0': 1, 'e4': 1, 'e7': 1, 'e21': 1, 'e30': -1, 'e38': 1, 'e49': 2, 'e53': 1, 'e61': 1, 'e62': 1, 'e71': 1, 'e72': 2, 'e84': 1, 'e93': 1}
+FEASIBLE red/tcpert/instances/tcL_N5.pg 19 {'e0': 1, 'e3': 1, 'e4': 2, 'e11': 1, 'e25': 1, 'e33': 1, 'e37': 2, 'e43': 2, 'e48': 1, 'e51': 1, 'e79': 1, 'e96': 1, 'e108': 1, 'e122': 1, 'e146': 1, 'e162': 1}
+FEASIBLE red/tcpert/instances/tcL_N6.pg 18 {'e0': 1, 'e2': 1, 'e9': 1, 'e12': 1, 'e27': 1, 'e30': 2, 'e32': 1, 'e33': 1, 'e60': 1, 'e61': 1, 'e73': 2, 'e91': 1, 'e98': 1, 'e143': 1, 'e230': 1, 'e244': 1}
+FEASIBLE red/tcpert/instances/tcL_N8.pg 30 {'e4': 4, 'e7': 4, 'e27': 4, 'e35': 2, 'e37': 2, 'e38': 3, 'e45': 1, 'e55': 2, 'e109': 6, 'e139': 2, 'e140': 4, 'e151': 2, 'e184': 2, 'e190': 2, 'e191': 2, 'e259': 2, 'e263': 2,
+FEASIBLE red/tcpert/instances/tcR4_N4.pg 12 {'e0': 1, 'e4': 1, 'e7': 1, 'e13': 1, 'e25': 1, 'e32': 1, 'e52': 1, 'e78': 1, 'e79': 1, 'e82': -1, 'e84': 1, 'e109': 1}
+FEASIBLE red/tcpert/instances/tcR4_N5.pg 14 {'e0': 1, 'e3': 1, 'e4': 1, 'e14': 1, 'e17': 1, 'e20': 1, 'e25': 1, 'e33': 1, 'e55': 1, 'e67': 1, 'e96': -1, 'e126': 1, 'e132': 1, 'e163': 1}
+FEASIBLE red/tcpert/instances/tcR4_N6.pg 22 {'e2': 1, 'e9': 1, 'e12': 1, 'e21': 3, 'e33': 1, 'e42': 1, 'e61': 1, 'e69': 1, 'e85': 1, 'e94': 1, 'e103': 1, 'e109': 1, 'e122': 1, 'e132': 1, 'e148': 2, 'e178': 1, 'e186': -1,
+FEASIBLE red/tcpert/instances/tcR4_N7.pg 41 {'e1': 1, 'e3': 2, 'e4': 1, 'e10': 1, 'e13': 1, 'e14': 1, 'e23': 1, 'e26': 1, 'e29': 1, 'e40': 1, 'e65': 1, 'e72': 1, 'e74': 1, 'e75': 1, 'e78': 1, 'e81': 1, 'e103': 1, 'e122':
+FEASIBLE red/tcpert/instances/tcR4_N8.pg 33 {'e4': 2, 'e7': 1, 'e13': 1, 'e22': 1, 'e25': 1, 'e27': 1, 'e28': 1, 'e31': 1, 'e35': 1, 'e38': 1, 'e73': 1, 'e92': 1, 'e95': 1, 'e99': 1, 'e112': 1, 'e140': 1, 'e169': 1, 'e18
+FEASIBLE red/tcpert/instances/tcS8_N10.pg 16 {'e11': 1, 'e28': 1, 'e34': 1, 'e44': 1, 'e65': 1, 'e74': -1, 'e96': 1, 'e120': 3, 'e178': 1, 'e192': 1, 'e381': 1, 'e506': 1, 'e537': 1, 'e582': -1}
+FEASIBLE red/tcpert/instances/tcS8_N11.pg 20 {'e2': 1, 'e13': 1, 'e32': 1, 'e38': 1, 'e45': 1, 'e52': 1, 'e59': 1, 'e171': 1, 'e327': 3, 'e466': -1, 'e552': 1, 'e585': 1, 'e629': 1, 'e731': -1, 'e905': 1, 'e928': 1, 'e93
+FEASIBLE red/tcpert/instances/tcS8_N6.pg 17 {'e5': 1, 'e17': 3, 'e33': 1, 'e47': 1, 'e63': 2, 'e71': 1, 'e76': 1, 'e94': 1, 'e97': 1, 'e105': 1, 'e158': 1, 'e179': 1, 'e237': -1, 'e266': 1, 'e268': 1}
+FEASIBLE red/tcpert/instances/tcS8_N7.pg 14 {'e12': 1, 'e15': 1, 'e65': -1, 'e91': 1, 'e110': 2, 'e117': 1, 'e160': 1, 'e171': 2, 'e188': -1, 'e238': 2, 'e280': 1}
+FEASIBLE red/tcpert/instances/tcS8_N8.pg 10 {'e5': 1, 'e9': 1, 'e11': 1, 'e29': 1, 'e66': 1, 'e170': 2, 'e182': 1, 'e320': 1, 'e568': 1}
+FEASIBLE red/tcpert/instances/tcS8_N9.pg 36 {'e4': 1, 'e14': 5, 'e41': 2, 'e49': 2, 'e52': 2, 'e92': 1, 'e150': 2, 'e164': 1, 'e166': -1, 'e169': 1, 'e239': 2, 'e291': 1, 'e307': 1, 'e318': 1, 'e337': 1, 'e350': 1, 'e358
+FEASIBLE red/tpp/instances/tpp_viol_n22.pg 2 {'e0': 1, 'e6': 1}
+FEASIBLE red/tpp/instances/tpp_viol_n63.pg 8 {'e1': 1, 'e7': 1, 'e13': 1, 'e21': 1, 'e42': 1, 'e99': 1, 'e101': 1, 'e174': 1}
+FEASIBLE red/ul/instances/cxmig_k16_n138.pg 24 {'e0': 1, 'e2': 1, 'e4': 1, 'e6': 1, 'e8': 1, 'e10': 1, 'e12': 1, 'e14': 1, 'e16': 1, 'e18': 1, 'e20': 1, 'e22': 1, 'e24': 1, 'e26': 1, 'e28': 1, 'e30': 1, 'e32': 1, 'e35': 
+FEASIBLE red/ul/instances/cxmig_k4_n54.pg 12 {'e0': 1, 'e2': 1, 'e4': 1, 'e6': 1, 'e8': 1, 'e11': 1, 'e12': 1, 'e14': 1, 'e16': 1, 'e18': 1, 'e20': 1, 'e39': 1}
+FEASIBLE red/ul/instances/cxmig_k8_n82.pg 16 {'e0': 1, 'e2': 1, 'e4': 1, 'e6': 1, 'e8': 1, 'e10': 1, 'e12': 1, 'e14': 1, 'e16': 1, 'e19': 1, 'e20': 1, 'e22': 1, 'e24': 1, 'e26': 1, 'e28': 1, 'e59': 1}
+FEASIBLE red/ul/instances/ladderd0_k12_n48.pg 14 {'e0': 1, 'e2': 1, 'e4': 1, 'e6': 1, 'e8': 1, 'e10': 1, 'e12': 1, 'e14': 1, 'e16': 1, 'e18': 1, 'e20': 1, 'e22': 1, 'e25': 1, 'e44': 1}
+FEASIBLE red/ul/instances/ladderd0_k24_n84.pg 26 {'e0': 1, 'e2': 1, 'e4': 1, 'e6': 1, 'e8': 1, 'e10': 1, 'e12': 1, 'e14': 1, 'e16': 1, 'e18': 1, 'e20': 1, 'e22': 1, 'e24': 1, 'e26': 1, 'e28': 1, 'e30': 1, 'e32': 1, 'e34'
+FEASIBLE red/ul/instances/ladderd0_k48_n156.pg 50 {'e0': 1, 'e2': 1, 'e4': 1, 'e6': 1, 'e8': 1, 'e10': 1, 'e12': 1, 'e14': 1, 'e16': 1, 'e18': 1, 'e20': 1, 'e22': 1, 'e24': 1, 'e26': 1, 'e28': 1, 'e30': 1, 'e32': 1, 'e34
+FEASIBLE red/ul/instances/ladderent_k12_n48.pg 14 {'e0': 1, 'e2': 1, 'e4': 1, 'e6': 1, 'e8': 1, 'e10': 1, 'e12': 1, 'e14': 1, 'e16': 1, 'e18': 1, 'e20': 1, 'e22': 1, 'e25': 1, 'e44': 1}
+FEASIBLE red/ul/instances/ladderent_k24_n84.pg 26 {'e0': 1, 'e2': 1, 'e4': 1, 'e6': 1, 'e8': 1, 'e10': 1, 'e12': 1, 'e14': 1, 'e16': 1, 'e18': 1, 'e20': 1, 'e22': 1, 'e24': 1, 'e26': 1, 'e28': 1, 'e30': 1, 'e32': 1, 'e34
+FEASIBLE red/ul/instances/ladderent_k48_n156.pg 50 {'e0': 1, 'e2': 1, 'e4': 1, 'e6': 1, 'e8': 1, 'e10': 1, 'e12': 1, 'e14': 1, 'e16': 1, 'e18': 1, 'e20': 1, 'e22': 1, 'e24': 1, 'e26': 1, 'e28': 1, 'e30': 1, 'e32': 1, 'e3
+FEASIBLE red/ul/instances/reader_L10_n36.pg 13 {'e0': 2, 'e2': 1, 'e4': 1, 'e6': 1, 'e8': 1, 'e10': 1, 'e12': 1, 'e14': 1, 'e16': 1, 'e18': 1, 'e21': 1, 'e31': 1, 'e33': 1}
+FEASIBLE red/ul/instances/reader_L20_n56.pg 23 {'e0': 2, 'e2': 1, 'e4': 1, 'e6': 1, 'e8': 1, 'e10': 1, 'e12': 1, 'e14': 1, 'e16': 1, 'e18': 1, 'e20': 1, 'e22': 1, 'e24': 1, 'e26': 1, 'e28': 1, 'e30': 1, 'e32': 1, 'e34': 
+FEASIBLE red/ul/instances/reader_L40_n96.pg 43 {'e0': 2, 'e2': 1, 'e4': 1, 'e6': 1, 'e8': 1, 'e10': 1, 'e12': 1, 'e14': 1, 'e16': 1, 'e18': 1, 'e20': 1, 'e22': 1, 'e24': 1, 'e26': 1, 'e28': 1, 'e30': 1, 'e32': 1, 'e34': 
+FEASIBLE red/usplit/instances/gate_K16_n197.pg 23 {'e3': 1, 'e5': 1, 'e7': 1, 'e9': 1, 'e11': 1, 'e13': 1, 'e15': 1, 'e17': 1, 'e19': 1, 'e21': 1, 'e23': 1, 'e25': 1, 'e27': 1, 'e29': 1, 'e31': 1, 'e33': 1, 'e35': 1, 'e3
+FEASIBLE red/usplit/instances/gate_K64_n581.pg 71 {'e3': 1, 'e5': 1, 'e7': 1, 'e9': 1, 'e11': 1, 'e13': 1, 'e15': 1, 'e17': 1, 'e19': 1, 'e21': 1, 'e23': 1, 'e25': 1, 'e27': 1, 'e29': 1, 'e31': 1, 'e33': 1, 'e35': 1, 'e3
+FEASIBLE red/usplit/instances/grow_K12_n149.pg 19 {'e3': 1, 'e5': 1, 'e7': 1, 'e9': 1, 'e11': 1, 'e13': 1, 'e15': 1, 'e17': 1, 'e19': 1, 'e21': 1, 'e23': 1, 'e25': 1, 'e27': 1, 'e29': 1, 'e31': 1, 'e33': 1, 'e35': 1, 'e3
+FEASIBLE red/usplit/instances/grow_K40_n373.pg 47 {'e3': 1, 'e5': 1, 'e7': 1, 'e9': 1, 'e11': 1, 'e13': 1, 'e15': 1, 'e17': 1, 'e19': 1, 'e21': 1, 'e23': 1, 'e25': 1, 'e27': 1, 'e29': 1, 'e31': 1, 'e33': 1, 'e35': 1, 'e3
+FEASIBLE red/usplit/instances/pairoc_n58.pg 5 {'e3': 1, 'e5': 1, 'e7': 1, 'e9': 1, 'e43': 1}
+FEASIBLE red/usplit/instances/pp_K12_n161.pg 19 {'e3': 1, 'e5': 1, 'e7': 1, 'e9': 1, 'e11': 1, 'e13': 1, 'e15': 1, 'e17': 1, 'e19': 1, 'e21': 1, 'e23': 1, 'e25': 1, 'e27': 1, 'e29': 1, 'e31': 1, 'e33': 1, 'e35': 1, 'e37'
+FEASIBLE red/usplit/instances/pp_K12_n161_dual.pg 20 {'e0': 1, 'e3': 1, 'e5': 1, 'e7': 1, 'e9': 1, 'e11': 1, 'e13': 1, 'e15': 1, 'e17': 1, 'e19': 1, 'e21': 1, 'e23': 1, 'e25': 1, 'e27': 1, 'e29': 1, 'e31': 1, 'e33': 2, '
+FEASIBLE red/usplit/instances/pp_K48_n449.pg 55 {'e3': 1, 'e5': 1, 'e7': 1, 'e9': 1, 'e11': 1, 'e13': 1, 'e15': 1, 'e17': 1, 'e19': 1, 'e21': 1, 'e23': 1, 'e25': 1, 'e27': 1, 'e29': 1, 'e31': 1, 'e33': 1, 'e35': 1, 'e37'
+FEASIBLE red/usplit/instances/pp_K48_n449_dual.pg 56 {'e0': 1, 'e3': 1, 'e5': 1, 'e7': 1, 'e9': 1, 'e11': 1, 'e13': 1, 'e15': 1, 'e17': 1, 'e19': 1, 'e21': 1, 'e23': 1, 'e25': 1, 'e27': 1, 'e29': 1, 'e31': 1, 'e33': 1, '
+FEASIBLE red/usplit/instances/usplit_n14.pg 3 {'e3': 1, 'e5': 1, 'e7': 1}
+FEASIBLE red/usplit/instances/usplit_n23.pg 9 {'e3': 1, 'e5': 1, 'e7': 1, 'e9': 1, 'e11': 1, 'e13': 1, 'e15': 1, 'e17': 1, 'e19': 1}
+FEASIBLE red/usplit/instances/usplit_rd_n24.pg 4 {'e3': 1, 'e5': 1, 'e7': 1, 'e11': 1}
+FEASIBLE red/usplit/instances/usplit_rd_s3_n27.pg 4 {'e3': 1, 'e5': 1, 'e7': 1, 'e13': 1}
+FEASIBLE red/usplit/instances/usplit_s3_n16.pg 3 {'e3': 1, 'e5': 1, 'e7': 1}
+FEASIBLE red/xctx/instances/nest3_n20.pg 2 {'e1': 1, 'e23': 1}
+FEASIBLE red/xctx/instances/nest3_n24.pg 2 {'e5': 1, 'e39': 1}
+FEASIBLE red/xctx/instances/vrall_viol_n20.pg 4 {'e8': 1, 'e13': 1, 'e29': 1, 'e31': 1}
+FEASIBLE red/xctx/instances/xcov11_n20.pg 2 {'e2': 1, 'e9': 1}
+FEASIBLE red/xctx/instances/xctx_viol_n20.pg 5 {'e1': 1, 'e8': -1, 'e9': 1, 'e11': 1, 'e30': 1}
+INFEASIBLE red/xing/instances/fbref_cex_n32.pg 56 support 2 games ['red/xing/instances/fbref_cex_n32.pg'] exact
+FEASIBLE red/xing/instances/j10_n24.pg 25 {'e0': -1, 'e3': 7, 'e6': 1, 'e10': 1, 'e13': 2, 'e20': 3, 'e23': 1, 'e27': 8, 'e29': -3, 'e30': 1, 'e32': 1, 'e36': 1, 'e38': 1, 'e40': 1, 'e44': 1, 'e45': 1, 'e46': -2, 'e49': 
+INFEASIBLE red/xing/instances/j4_n40.pg 106 support 2 games ['red/xing/instances/j4_n40.pg'] exact
+INFEASIBLE red/xing/instances/j5_n16.pg 30 support 2 games ['red/xing/instances/j5_n16.pg'] exact
+INFEASIBLE red/xing/instances/j7_n32.pg 50 support 3 games ['red/xing/instances/j7_n32.pg'] exact
+INFEASIBLE red/xing/instances/j7_n48.pg 78 support 2 games ['red/xing/instances/j7_n48.pg'] exact
+INFEASIBLE red/xing/instances/j8_n32.pg 54 support 3 games ['red/xing/instances/j8_n32.pg'] exact
+INFEASIBLE red/xing/instances/j8_n48.pg 86 support 2 games ['red/xing/instances/j8_n48.pg'] exact
+INFEASIBLE red/xing/instances/kw25_n32.pg 29 support 2 games ['red/xing/instances/kw25_n32.pg'] exact
+FEASIBLE red/xing/instances/kw_n16.pg 12 {'e0': 1, 'e3': 1, 'e6': 1, 'e13': 3, 'e16': 1, 'e21': 1, 'e22': 1, 'e24': 1, 'e27': 1, 'e29': 1, 'e34': 1, 'e41': 1}
+FEASIBLE red/xing/instances/kw_n24.pg 20 {'e2': 1, 'e5': 1, 'e9': 2, 'e11': 1, 'e16': 1, 'e17': 1, 'e20': 1, 'e25': 1, 'e27': 1, 'e30': 1, 'e32': 1, 'e33': 1, 'e36': 1, 'e41': 1, 'e45': 1, 'e47': 1, 'e48': 1, 'e50': 1, '
+FEASIBLE red/xing/instances/kw_n48.pg 40 {'e2': 1, 'e5': 1, 'e9': 1, 'e13': 1, 'e18': 1, 'e29': 1, 'e31': 1, 'e32': 1, 'e38': 1, 'e41': 1, 'e48': 1, 'e51': 1, 'e58': 1, 'e67': 1, 'e71': 1, 'e78': 1, 'e79': 1, 'e83': 1, '
+FEASIBLE red/xing/instances/obr_eq_n24.pg 7 {'e2': 2, 'e9': 1, 'e11': 1, 'e23': 1, 'e30': 3, 'e31': -1, 'e44': 1}
+FEASIBLE red/xing/instances/obr_n32.pg 22 {'e3': 1, 'e8': 1, 'e11': -1, 'e20': 1, 'e29': 1, 'e35': 2, 'e38': -1, 'e44': -1, 'e47': 1, 'e48': -5, 'e53': 5, 'e56': 3, 'e59': 2, 'e69': -3, 'e84': 1, 'e87': 1, 'e92': 1, 'e10
+FEASIBLE red/xing/instances/u1t_cex_n32.pg 12 {'e21': 1, 'e34': 1, 'e43': 1, 'e53': 1, 'e59': 1, 'e60': -2, 'e64': 4, 'e76': -2, 'e84': 1, 'e99': -3}
+FEASIBLE red/xing/instances/u1t_own6_n32.pg 9 {'e7': 2, 'e10': 3, 'e11': 2, 'e16': 6, 'e18': 2, 'e26': -2, 'e30': -3, 'e36': -1, 'e68': 2}
+FEASIBLE red/xing/instances/u23sw64_n32.pg 16 {'e11': -4, 'e16': -4, 'e18': 3, 'e53': 1, 'e55': 1, 'e67': -2, 'e68': 1, 'e77': 1, 'e92': 2, 'e94': -2, 'e102': 1, 'e132': 1}
+FEASIBLE red/xing/instances/u2flat73_n32.pg 16 {'e0': -2, 'e2': 1, 'e10': 1, 'e16': 2, 'e17': -1, 'e21': 1, 'e24': -1, 'e26': 4, 'e27': 1, 'e36': -3, 'e51': 1, 'e63': 1, 'e72': 2, 'e81': 1, 'e123': 1, 'e145': 2}
+FEASIBLE red/xing/instances/u2flat_n32.pg 13 {'e11': 5, 'e13': 2, 'e16': 1, 'e19': 1, 'e21': -2, 'e33': -1, 'e39': 1, 'e44': 1, 'e51': 1, 'e62': -1, 'e65': 1, 'e70': 1, 'e73': 1}
+FEASIBLE red/xing/instances/x31_cu16.pg 23 {'e13': 1, 'e14': 1, 'e16': 5, 'e18': -1, 'e19': 1, 'e23': 1, 'e24': -1, 'e25': 3, 'e27': 1, 'e30': 2, 'e34': 3, 'e40': 10, 'e42': -6, 'e44': 1, 'e45': -1, 'e49': 1}
+FEASIBLE red/xing/instances/x31_cu24.pg 22 {'e1': 1, 'e2': -6, 'e4': 2, 'e5': -7, 'e8': 1, 'e9': -3, 'e15': -5, 'e22': 2, 'e24': -3, 'e25': -6, 'e37': 1, 'e48': 5, 'e50': -1, 'e53': 1, 'e60': 1, 'e74': 1}
+INFEASIBLE red/xing/instances/x31_cu32.pg 49 support 6 games ['red/xing/instances/x31_cu32.pg'] exact
+INFEASIBLE red/xing/instances/x31_cu32i.pg 42 support 8 games ['red/xing/instances/x31_cu32i.pg'] exact
+FEASIBLE red/xing/instances/x31_cu48.pg 46 {'e20': 1, 'e22': -3, 'e23': 1, 'e25': 6, 'e30': -3, 'e32': -1, 'e33': 1, 'e35': 1, 'e39': 2, 'e51': 9, 'e60': 2, 'e67': 1, 'e72': 1, 'e74': -4, 'e78': 3, 'e90': 1, 'e93': 2, 'e
+INFEASIBLE red/xing/instances/x31_lem_e24.pg 54 support 2 games ['red/xing/instances/x31_lem_e24.pg'] exact
+INFEASIBLE red/xing/instances/x31_lem_t32.pg 65 support 2 games ['red/xing/instances/x31_lem_t32.pg'] exact
+FEASIBLE red/xing/instances/x31_nh_e24.pg 20 {'e1': 1, 'e5': 1, 'e7': 1, 'e10': 1, 'e12': 1, 'e14': 1, 'e17': 1, 'e18': 1, 'e24': 3, 'e26': 1, 'e27': 1, 'e31': 1, 'e33': 1, 'e36': -1, 'e40': 1, 'e42': 1, 'e43': 1, 'e51':
+FEASIBLE red/xing/instances/x31_nh_r20.pg 15 {'e1': 1, 'e6': 6, 'e9': 1, 'e11': 1, 'e13': 1, 'e16': 1, 'e26': 1, 'e28': 1, 'e37': 1, 'e40': 1, 'e43': 1, 'e46': 1, 'e49': 1, 'e61': 1, 'e62': 1}
+FEASIBLE red/xing/instances/x31_re24.pg 6 {'e1': 1, 'e3': 1, 'e8': 1, 'e26': 1, 'e29': 1, 'e37': 1}
+FEASIBLE red/xing/instances/x31_ru24.pg 7 {'e1': 2, 'e6': 1, 'e10': 1, 'e49': 1, 'e59': 1, 'e61': -1}
+INFEASIBLE red/xing/instances/x31_rx32.pg 55 support 2 games ['red/xing/instances/x31_rx32.pg'] exact
+INFEASIBLE red/xing/instances/x31_rx48.pg 53 support 2 games ['red/xing/instances/x31_rx48.pg'] exact
+FEASIBLE red/xing/instances/x32_nest40.pg 58 {'e9': -2, 'e11': -4, 'e12': 4, 'e19': 2, 'e25': 2, 'e26': 21, 'e29': -4, 'e31': 2, 'e32': 17, 'e39': 2, 'e44': 2, 'e49': 2, 'e50': -40, 'e52': 2, 'e53': -11, 'e58': 2, 'e59':
+FEASIBLE red/xing/instances/x32_rand16.pg 15 {'e1': 1, 'e2': 1, 'e5': 1, 'e9': 1, 'e11': 1, 'e13': 1, 'e18': 1, 'e20': 1, 'e24': 1, 'e27': -1, 'e29': 1, 'e33': 1, 'e39': 1, 'e41': 1, 'e45': 1}
+FEASIBLE red/xing/instances/x32_rand24.pg 20 {'e3': 1, 'e11': 1, 'e13': 1, 'e14': 1, 'e17': 3, 'e19': 1, 'e22': 1, 'e25': 1, 'e27': 1, 'e35': 1, 'e46': 5, 'e47': 1, 'e50': 1, 'e54': 1, 'e55': 1, 'e60': 1, 'e65': 1, 'e67'
+FEASIBLE red/xing/instances/x32_rand32.pg 29 {'e1': 1, 'e3': 1, 'e5': 1, 'e9': 1, 'e10': 1, 'e16': 1, 'e18': 1, 'e20': 1, 'e24': 1, 'e32': 1, 'e50': 1, 'e55': 1, 'e56': 1, 'e60': 1, 'e64': 1, 'e67': 1, 'e69': 1, 'e72': 1
+FEASIBLE red/xing/instances/x32_rand48.pg 44 {'e0': 1, 'e4': 1, 'e10': 6, 'e13': 1, 'e14': 1, 'e17': 1, 'e22': 1, 'e27': 1, 'e31': 1, 'e32': 1, 'e34': 1, 'e37': 1, 'e40': 1, 'e44': 1, 'e46': 1, 'e49': 1, 'e52': 1, 'e57':
+FEASIBLE red/xing/instances/x32_rand64.pg 56 {'e1': 1, 'e2': 1, 'e4': 1, 'e10': 1, 'e16': 10, 'e30': 1, 'e35': 1, 'e42': 1, 'e44': 1, 'e47': 1, 'e49': 1, 'e51': 1, 'e53': 1, 'e68': 1, 'e72': 1, 'e78': 1, 'e79': 1, 'e82':
+INFEASIBLE red/xing/instances/x32_waves32.pg 81 support 2 games ['red/xing/instances/x32_waves32.pg'] exact
+INFEASIBLE red/xing/instances/x32_waves48.pg 89 support 4 games ['red/xing/instances/x32_waves48.pg'] exact
+FEASIBLE si/root/instances/cone_n65.pg 12 {'e2': 1, 'e5': 1, 'e23': 1, 'e32': 2, 'e38': 1, 'e47': 1, 'e56': 1, 'e77': -1, 'e79': 1, 'e117': 1, 'e157': 2}
+FEASIBLE si/root/instances/cone_n69.pg 25 {'e2': 1, 'e18': 1, 'e22': 1, 'e28': 2, 'e37': 3, 'e39': 1, 'e51': 1, 'e68': 1, 'e70': 1, 'e76': 1, 'e79': 1, 'e85': 1, 'e87': 1, 'e97': 1, 'e99': 1, 'e102': -1, 'e104': 3, 'e125
+FEASIBLE si/root/instances/ueonce_n27.pg 12 {'e2': 1, 'e4': -3, 'e8': 1, 'e16': 1, 'e19': 1, 'e26': 1, 'e31': 1, 'e36': 1, 'e45': 1, 'e61': 1, 'e66': 1, 'e74': 1}
+SUMMARY eb6_alt games 410 infeasible 89 smallest [(8, 10, 'n5-epoch/instances/lend9_n8.pg'), (10, 12, 'n5-exhaustive/instances/b5_o11.pg'), (12, 18, 'n5-exhaustive/instances/b5_os_n12.pg'), (13, 12, 'red/so/instances/s4c
