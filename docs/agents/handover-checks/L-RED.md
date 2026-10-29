@@ -557,3 +557,25 @@ Measured 2026-10-29 19:52Z (date -u).
 ### 5. One trap and its check
 - Trap (Lead, three times today): a nonexistent ref in `git fetch` aborts the whole fetch, leaving every origin ref stale with no visible
   error in a tail. Check: `git ls-remote origin` first, fetch only names it lists, then rev-parse HEAD vs origin + ff-only + is-ancestor.
+
+## Successor 31 (Opus 5.5, D1/D18; created 2026-10-29 ~22:19Z, date -u) handover check
+Measured 2026-10-29 22:26Z (date -u).
+### 1. Branch, head, distance to trunk
+- claude/l-red. Local clone stale at b2c3d07c. `git ls-remote origin` first (l-red 1e07ddfc, l-si dab44572, trunk a60e5704 exist), then
+  `git fetch origin claude/l-red claude/vibrant-johnson-nxvvxo claude/l-si`; ff-only to 1e07ddfc (predecessor's last push; 033dcab8 is
+  an ancestor). Then 0 ahead / 90 behind trunk (merge-base 1e07ddfc = HEAD), so ff-only to trunk a60e5704: 0 / 0.
+### 2. Open work and the next step of each
+- Nothing in flight (HANDOVER "IN FLIGHT: nothing"; `ps` shows no lane python3). Oink not built here; setup_oink.sh started 22:26Z.
+- Lead 22:19Z STEP 1: attack CONJECTURE PCH-QUAD-S (and RESET-LIN-S, CARRY-SEG-S, MIN-QUAD) of L-SI box 38/39 Lemma SPAN: one pair (v, c)
+  whose span holds > n^2+n path-set changes of c. Next: read N5-SPAN-box38 / N5-SPANW-box39 and odd/win.py, odd/spanw.py, then build mkr +
+  leave/re-enter switcher families. Predecessor's open items (FG climb, RESET-LIN-T window, CARRY-SEG) are superseded by this STEP 1.
+### 3. docs/GAPS.md rows I own
+- G-NEST (major; L-RED), open (GAPS line 9). Attacked, not owned: GAP-A, GAP-C (L-ALG, open, lines 6-7); G-N5-TIME (L-NEW, open, line 11).
+### 4. Owner rulings (verbatim), DECISIONS-INDEX status
+1. D1 (index line 5, active; DECISIONS.md line 7): "A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below."
+2. D18 (index line 32, active; DECISIONS.md line 333): "Focus on N5 and work toward proving it. Explore novel approaches ... Clearly distinguish proven results from conjectures and open problems."
+3. D15 (index line 26, active; DECISIONS.md line 278): "Be autonomous, reason about it"
+### 5. One trap and its check
+- Trap: stale clone (b2c3d07c, git status said "up to date" against stale origin refs). Check: `git ls-remote origin` first, fetch only
+  listed names, rev-parse HEAD vs origin, is-ancestor 033dcab8, ff-only. Second (predecessor): a push.sh moved to background by a tool
+  timeout still holds the tree; wait for it before committing.
