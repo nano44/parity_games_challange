@@ -101,3 +101,6 @@ N = 13..20 instances are byte-identical to T47's generator. Every run: no cycle,
   e_words_count distinct values: 132 at N 20, far below 2^N. Consecutive words are never consecutive integers (e_binary_counter
   false for every N ≥ 2, both starts). From S3 at N 8 the words run 255, 254, 252, 249, 248, 242, 241, 228, …, 3, 1, 3, 0, 1, 0. They
   mostly fall, with a few re-openings at the end, so no counter completes.
+- N5 at N = 13..16 (run21.py, all checks pass; n5b = n5x): S3 55, 59, 63, 67 = 4N + 3; LE 65, 69, 73, 77 = 4N + 13; 0 fallbacks. N5 stays
+  exactly linear in N (so ~√n in the game size) up to n = 1,325, while N5-SF's SBC grows ~0.08n. The run21.py SF counts at N 13..16 equal
+  sbcanat.py's (two scripts, same engine).
