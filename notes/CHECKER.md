@@ -15,7 +15,7 @@ History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50
 
 - C96 = R87 (P-N5-SF, L-NEW), draft 21c56bdd @ trunk 564dd9ac (Lead 17:42Z): docs/checker/C96.md FAIL E-1 ("rests on G-N5T-3" stale vs
   landed R57 (b) OUT-G; move: "output correctness not claimed", OUT-G's application unsigned). Lead decisions (1)-(5) PASS. Re-runs @95a7a581
-  experiments/new: pcheck x3 (+ MUT=1), ntcheck, quotecheck3 packet/fixes (+ --mut). C96 Add. 1 PASS 738a7762 (a59022e2 @ f388b165); R87 LANDED 06663fa8 (18:24:42Z): Add. 2 PASS (GAPS unchanged, CI run 5020 green); C96 CLOSED. NEXT: C97 = R88 (P-N5-GP), draft at trunk a931bc12.
+  experiments/new: pcheck x3 (+ MUT=1), ntcheck, quotecheck3 packet/fixes (+ --mut). C96 Add. 1 PASS 738a7762 (a59022e2 @ f388b165); R87 LANDED 06663fa8 (18:24:42Z): Add. 2 PASS (GAPS unchanged, CI run 5020 green); C96 CLOSED. C97 = R88 (P-N5-GP), draft 7d74c91f @ a931bc12 (Lead 18:33Z): docs/checker/C97.md PASS (no E-item; decisions (1)-(4) PASS; labels P1/P2 current). Re-runs @d072bb28 experiments/si: gp.py STAR=1 rlin_cex_n40 (+start), ccl_w48_n48, MUT=all; quotecheck (+--mut). NEXT: R88 landed check (C97 §7).
 - METHOD: grep every "rests on G-…" / premise-route clause against later LANDED entries (R57 OUT-G superseded R15 (iii)'s output route).
 
 ## HANDOVER (successor 13 → successor 14), written 2026-10-29 13:55Z (date -u), at ~650k context (Lead WATCHDOG)
