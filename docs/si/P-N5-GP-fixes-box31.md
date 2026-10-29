@@ -60,6 +60,30 @@ for both parities: x and the arc vertices of c's cycle are less relevant than c 
 - G11 (N-GP-6, R*_T): agreed; G0 already uses R*_T. R_T (FW-R′ of docs/si/N5-SPC-box31.md §4, adoptions of edges not in ALLOWED⁺) satisfies
   R_T ≥ R*_T, because every blocked edge is outside ALLOWED⁺ (§3a). So a line stated with R_T would be implied by FW-R*, but weaker.
 
+## G12. REFEREE-2 20's N-GP-7 (report docs/referee-2/R2-N5-GP.md at referee-2 894a1971, §2.6 and §4): the FINAL RESULTS line, verbatim; supersedes G0's line
+Lead 2026-10-29 17:23Z (brief to successor 28): «G12 records the FINAL RESULTS line verbatim, superseding G0's line.» Final line:
+"In every frozen W-phase F = [a, b] of N5 on any game (N5-FRZ-box29 §0: no S4c fallback; τ, σ̄, λ_Ξ, λ_W constant; W = val(σ, τ)), (Lemma GP*) for every k ∈ [a, b], W_k(x) ⊵ value(r) for every simple path r of G_τ (Odd steps follow τ) with at most k − a edges from x to a W-cycle node u of F's first state a (λ_W(u) = u), none of whose Even edges (r_i, r_{i+1}) was BLOCKED at state k−1−i (W-better than σ's choice at r_i but not a VJ00-improving edge of Ξ); (Corollary FW-R*) F has at most (n−1)(R*_T+1) W-changing transitions, R*_T := the transitions of F at which some Even vertex adopts an edge blocked at an earlier state of F; so R*_T = 0 ⇒ ≤ n−1 — a REDUCTION (R*_T is not bounded here; FW-BF, G-N5-TIME open; per frozen W-phase only, not a bound on the run)."
+- N-GP-7 agreed. (a) «at most k − a edges» was already restored in G0 (GP-E1); the referee's instances b4_theta_n7.pg (x = 1, z = 6), canonA_0.pg
+  (x = 3, z = 4), b5_os_n28.pg (x = 1, z = 7), from docs/referee-2/R2-N5-GP/line_probe.py, are one-edge paths at k = a and are excluded by it
+  (at k = a only L = 0 is allowed). (b) G0 said «a cycle node of F's first state»; the final line says «a W-cycle node u … (λ_W(u) = u)». This
+  matters: λ_Ξ and λ_W are both constant on F but differ when D ≠ ∅, and GP* (base case W_a(u) = (u, ∅, 0)) needs u to be W's cycle node.
+- Word-by-word check against the packet's §3 (docs/si/P-N5-GP-box31.md lines 85-89, sha1 cd4866df) and §1 [FRZ] (line 67):
+  | packet §3 / §1 | final line | match |
+  | --- | --- | --- |
+  | F = [a, b] a frozen W-phase; k ∈ [a, b] | «frozen W-phase F = [a, b]», «for every k ∈ [a, b]» | yes |
+  | path of G_τ (Odd r_i: r_{i+1} = τ(r_i)) | «path r of G_τ (Odd steps follow τ)» | yes |
+  | simple | «simple» | yes |
+  | u a cycle node of state a (λ_W(u) = u) | «a W-cycle node u of F's first state a (λ_W(u) = u)» | yes |
+  | L ≤ k − a | «with at most k − a edges» | yes |
+  | for every i < L with r_i Even, (r_i, r_{i+1}) not blocked at state k − 1 − i | «none of whose Even edges (r_i, r_{i+1}) was BLOCKED at state k−1−i» | yes, reading «Even edge» as «edge whose tail r_i is Even» (the packet's «with x Even» in BLOCKED) |
+  | BLOCKED at t ∈ [a, b): W_t(z) ▷ W_t(ρ_t(x)) and (x, z) ∉ Iσ_t; ρ_t := σ_t (§1 [FRZ]); Iσ_t = [S2]'s improving edges of Ξ_{σ_t} | «W-better than σ's choice at r_i but not a VJ00-improving edge of Ξ» | yes (strict; W, σ, Ξ read at that state t = k − 1 − i; t ∈ [a, k − 1] ⊆ [a, b) because i < L ≤ k − a) |
+  | Lemma GP*: W_k(r_0) ⊵ value(r), value(r) := (u, P(r), L) [VAL] | «W_k(x) ⊵ value(r)», x = r_0 | yes (value(r) is the packet's [VAL]; the line does not restate it) |
+  | §4 FW-R*: WCH ≤ (n − 1)(R*_T + 1), R*_T as defined | as G0, unchanged; REFEREE-2 §2.6: «matches §4» | yes |
+  Nothing else differs. Two readings the line leaves implicit, both forced by the packet: «Even edges» = edges with an Even tail, and the
+  state at which W, σ and Ξ are read in the parenthetical is the state k − 1 − i named just before it.
+- Packet unchanged (sha1 cd4866df re-measured at this commit). Label: the line is a wording of PROVED (lane) content, signed by REFEREE-2 20.
+
 ## DONE / FINDINGS / NEEDS
-- DONE: G0-G5 above (REFEREE 18), G6-G11 (REFEREE-2 20). FINDINGS: GP-E1 is a RESULTS-line wording error (mine, approved at 16:26Z), not a packet error; GP-N1-N5 and N-GP-1..6
-  accepted, no change to any proof. NEEDS: none from the owner.
+- DONE: G0-G5 above (REFEREE 18), G6-G11 (REFEREE-2 20), G12 (REFEREE-2 20's N-GP-7: final RESULTS line, word-by-word against §3).
+  FINDINGS: GP-E1 is a RESULTS-line wording error (mine, approved at 16:26Z), not a packet error; GP-N1-N5 and N-GP-1..7 accepted, no change
+  to any proof; the final line matches §3 word by word (G12 table). NEEDS: none from the owner.
