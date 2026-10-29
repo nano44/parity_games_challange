@@ -169,7 +169,7 @@ No gap. No item FALSE. Notes N-GP-1..N-GP-6 (§4).
 | lib41_noref, S3 + 1 random | 650 (+170 with counters lost, see below) | 6,732 | 3,446,322 | 19,018 | 441,864 | 3 / 55 | 344,537 |
 | ccl_w48_n48 (S3) | 1 | 39 | 89 | 46 | 876 | 1 / 3 | 2 |
 | rlin_cex_n40 (pinned start) | 1 | 4 | 58,296 | 199 | 569 | 0 / 10 | 0 |
-| runfam_K100 (pinned start + S3) | pending (in progress at push 1) | | | | | | |
+| runfam_K100 (pinned start + S3; n 139; NODECAP 20,000, 66,110 truncated enumerations) | 2 | 23 | 6,909,085 | 1,135 | 176,810 | 1 / 123 (bound (n−1)(R*_T+1) = 276) | 10,196 |
 
 - Agreement with the lane's pins:
   - ccl_w48_n48: frozen phase of 3 transitions, R*_T = 1, WCH 3, plain Lemma P fails (the lane: [15, 18], R_T 1, WCH 3, MUT=all FAIL).
