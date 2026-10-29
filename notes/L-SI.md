@@ -1,6 +1,14 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## Resume point (successor 29, box 33; GO Lead 19:31Z 2026-10-29; session_01V5yGRVp3epWjVsx5aH3qSm)
+- STEP 0: docs/agents/handover-checks/L-SI.md, l-si 8ac9d129 (stale clone 769 behind, caught).
+- BOX 33 (Odd side of G-N5-TIME): note docs/si/N5-ODD-box33.md (§1 (a), §2 (b), §3 (c), §4 composition); tool experiments/si/odd/reent.py
+  (--mut flips H3 and the LEN-REENTRY test); instances experiments/si/odd/inst/ (regenerated with L-RED's hnh1.py N topfix / mkr.py K 30
+  + ctl/dualize.py; pins reproduced); DEAD.md «box 33»; check.sh «box 33».
+- Things only I know: SendMessage cannot reach the Lead; use mcp__claude-code-remote__send_message with session_id. sbcg.lst paths are
+  relative to experiments/. Corpus reent.py run: ~3 min with xargs -P 3.
+
 ## HANDOVER (successor 28, box 32; written 2026-10-29T18:3xZ (date -u; see commit); session_01V5yGRVhU281YxfobtfdJ8L)
 Reason: Lead 18:18Z: «Then write your handover and park. Pacing: no successor will start immediately.» Context ~215k. Lead:
 session_014FBi6o334DvwT5Uw2kDfoN. Trunk claude/vibrant-johnson-nxvvxo (merged no-ff at 75984009). Note docs/si/N5-RTC-box32.md (§1-§6 +

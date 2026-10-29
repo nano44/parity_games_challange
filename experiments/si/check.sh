@@ -726,3 +726,16 @@ echo "si (box 32 §5: rounds all class A, prefixes monotone on x31_re24; MUT=rev
 o=$(python3 -I core/rounds.py --one ../red/xing/instances/x31_re24.pg); grep -q " round_tails_equal=33 " <<<"$o"; if grep -q "ROUNDG_V" <<<"$o"; then exit 1; fi
 o=$(python3 -I core/rounds.py --one ../new/box25/instances/rtt16.pg); grep -q "^HC_toprep=0 PREINC=24 TOPREP=7 " <<<"$o"
 echo "si (box 32 §6: ROUND-G on x31_re24; distinct climb tops dead on rtt16): PASS"
+# box 33 (docs/si/N5-ODD-box33.md): Odd re-entries on plain N5 against R86's Odd side. d_hntop_n3 (L-RED's dualised hntop, own
+# regenerated copy): 251 re-entries, 0 protected (ODD-FREEZE), every window has a U(e)-change (SW-RETURN), NM^U max 28 = 2N²+5N−5;
+# MUT flips H3 (protected re-entries must appear). d_runquad_K2_m30: 61 re-entries with no carry of U(e) in the window (charge_MAT).
+# d_runquad_K3_m30: ENT ≤ 1 + NM^U(e) DEAD. lev74_n40 (S3): ENT ≤ 1 + PCH^U(e) DEAD; Lemma LEN-REENTRY holds; MUT control fires.
+o=$(python3 -I odd/reent.py odd/inst/d_hntop_n3.pg odd/inst/d_hntop_n3.start)
+for k in " reentries 251 " " max_per_o 22 " " NMU_max 28 " " charge_CAR 184 " " charge_LAM 67 " " class_X 248 " " class_Z 3 "; do grep -q "$k" <<<"$o"; done
+grep -q " PASS$" <<<"$o"; if grep -q "PROT_V\|SWR_V\|LENTIE_V" <<<"$o"; then exit 1; fi
+o=$(python3 -I odd/reent.py odd/inst/d_hntop_n3.pg odd/inst/d_hntop_n3.start --mut); grep -q " PROT_V 3 " <<<"$o"
+o=$(python3 -I odd/reent.py odd/inst/d_runquad_K2_m30.pg odd/inst/d_runquad_K2_m30.start); grep -q " charge_MAT 61 " <<<"$o"; grep -q " PASS$" <<<"$o"
+o=$(python3 -I odd/reent.py odd/inst/d_runquad_K3_m30.pg odd/inst/d_runquad_K3_m30.start); grep -q "'ENTNM': (0, 99, 42, 43, 3, 1)" <<<"$o"
+o=$(python3 -I odd/reent.py ../red/fbr/instances/lev74_n40.pg); grep -q "'ENTPCH': (0, 18, 6, 0, 2, 0)" <<<"$o"; grep -q " charge_LEN 1 " <<<"$o"; grep -q " PASS$" <<<"$o"
+o=$(python3 -I odd/reent.py ../red/fbr/instances/lev74_n40.pg --mut); grep -q " LENTIE_V 1 " <<<"$o"
+echo "si (box 33: ODD-FREEZE / SW-RETURN on Odd re-entries; carry-charge, ENT-NM, ENT-PCH dead; LEN-REENTRY; controls fire): PASS"
