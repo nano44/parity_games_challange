@@ -53,6 +53,13 @@ Quote base: SPEC docs/new/N5-ssi-global.md and docs/RESULTS.md at l-new 9905dac3
 - [R86] RESULTS R86: for a stretch R, ENT_R(v, c) = the transitions of R at which v's strategy enters c (switches to c); RISE_R(c),
   PCH_R(c); Lemma SW-RETURN (ENT_R(v, c) ≤ 1 + RISE_R(c) on every stretch, dually for Odd v with U on G^d); Lemma LEN-MONO (RISE_R(c) ≤
   PCH_R(c) + (PCH_R(c) + 1)(n − 1) on every λ-run, dually on λ^U-runs); λ-run, λ^U-run as defined there.
+- [R85c] RESULTS R85 (c) (docs/RESULTS.md l. 5108-5109 at trunk c9045f86 = l-new c9045f86): [Q] «(c) Added statement (A), Corollary (A2):
+  "PCH_𝒫(v) ≤ (K(K+1)/2)(NM_𝒫(v) + 1) + NM_𝒫(v) per vertex per phase, every game"». K = the ranks above rank(λ(v)), NM_𝒫(v) = v's carries
+  (R86 (e)'s gloss, l. 5350-5351). This is the PER-VERTEX form.
+- [R86e] RESULTS R86 (e) (l. 5345-5357): Corollary COMPOSE-NM, an implication whose premise «[MΦ] holds with "phase" replaced by "λ-run"
+  (resp. "λ^U-run" on G^d)» both referees sign as HOLDING («MΦ's proof reads verbatim with c fixed»; REFEREE-2: «MATCH-Φ's proof holds
+  for every parity pattern»), with NM^U read with G^d's parities (F3). Used here in the per-vertex form of [R85c] on one λ^U-run R:
+  PCH^U_R(e) ≤ (n²/2)(NM^U_R(e) + 1) + NM^U_R(e) (K ≤ n − 1 gives K(K + 1)/2 ≤ n²/2, as R86 (e) notes).
 - [R88] RESULTS R88 and its object docs/si/P-N5-GP-box31.md (sha1 cd4866df…): W_t := the valuation [S1-val] of the (σ_t, τ_t)-plays, λ_W
   its cycle-node map, G_τ := G with Odd fixed to τ; Lemma W-MON (§2), Lemma GP* (§3, with BLOCKED at t: W_t(z) ▷ W_t(σ_t x) and (x, z) ∉
   Iσ_t), Corollary FW-R* (§4, LATE ADOPTION, R*_T, WCH).
@@ -91,7 +98,9 @@ Hypotheses:
   before it repeats a vertex; write P_e := P_e(σ_e) (a simple path ending at o);
 - (H2) the (τ, τ̄)-play from τ(o) has no vertex in P_e;
 - (H3) the most relevant vertex x of P_e has even Ω, and x is more relevant than the cycle node w of the (τ, τ̄)-play from τ(o).
-(With σ_e = τ̄, (H1′) is box 63's (H1).) Claim: (o, e) ∉ Iτ.
+(With σ_e = τ̄, (H1′) is box 63's (H1).) Correspondence with box 63 (N5-FREEZE-box63.md §1): (H1′), (H2), (H3) here are box 63's H1′,
+H2, H3 for "that play", made exact in two places: σ_e is POSITIONAL and the play is the (τ, σ_e)-play; P_e INCLUDES o (box 63's "cut at
+the first visit of o"), so (H2) also says the play from τ(o) avoids o. Claim: (o, e) ∉ Iτ.
 Proof.
 - The (τ, σ_e)-play from e is P_e followed by the (τ, σ_e)-play from τ(o) (Odd o follows τ). The (τ, τ̄)-play from τ(o) never enters P_e
   (H2), and σ_e = τ̄ outside P_e, so by induction along that play the (τ, σ_e)-play from τ(o) is the same play: call it π_o, cycle node w,
@@ -115,8 +124,10 @@ UNP_R := the set of such Odd edges. Then
 (b) ENT_R(o, e) ≤ 1 + RISE^U_R(e) ≤ n·(PCH^U_R(e) + 1) for (o, e) ∈ UNP_R;
 (c) the Odd switches in R (Σ over Odd o of the transitions of R at which τ(o) changes) are at most Σ_{(o, e) ∈ UNP_R} n·(PCH^U_R(e) + 1);
 (d) the τ-changing transitions of the whole run are at most n(n − 1) + (n(n − 1) + 1)·max_R Σ_{(o, e) ∈ UNP_R} n·(PCH^U_R(e) + 1).
+(e) with [R85c] / [R86e] per vertex on λ^U-runs: PCH^U_R(e) ≤ (n²/2)(NM^U_R(e) + 1) + NM^U_R(e), so (b)-(d) hold with PCH^U_R(e)
+    replaced by that bound, i.e. in terms of the carries NM^U_R(e) of the targets of unprotected Odd edges only.
 Proof. (a) An entry of e by o at t → t + 1 needs τ_t(o) ≠ e = τ_{t+1}(o); if (o, e) ∉ UNP_R then (o, e) is protected at t, and ENT-FREEZE
-excludes it. (b) R86 SW-RETURN (dual), then LEN-MONO (dual) on the λ^U-run R: 1 + PCH + (PCH + 1)(n − 1) ≤ n(PCH + 1). (c) Every Odd switch
+excludes it. (e) is [R85c] read on R as [R86e] signs it. (b) R86 SW-RETURN (dual), then LEN-MONO (dual) on the λ^U-run R: 1 + PCH + (PCH + 1)(n − 1) ≤ n(PCH + 1). (c) Every Odd switch
 of o in R enters some e, so the switches are Σ_e ENT_R(o, e); apply (a), (b). (d) At most n(n − 1) transitions change λ^U ([R47a]); every
 other τ-changing transition lies inside one of at most n(n − 1) + 1 λ^U-runs and contains at least one Odd switch. □
 
