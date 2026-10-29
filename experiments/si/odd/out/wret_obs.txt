@@ -1,0 +1,2 @@
+WRET tobs_K8_m32.pg mode n5 n 233 iter 280 stretches 1 longest 280 WMON_V 0 WRET_V 0 REENT 480 WPAID 480 SILENT 0 VFORM_V 0 CYC 0 OPT_V 0 maxSW 16 maxWR 17 maxWRspan 13 maxWRout 8 ex None PASS
+WRET wobs_K8_m32.pg mode n5 n 231 iter 280 stretches 1 longest 280 WMON_V 0 WRET_V 0 REENT 480 WPAID 480 SILENT 0 VFORM_V 0 CYC 0 OPT_V 0 maxSW 16 maxWR 16 maxWRspan 13 maxWRout 8 ex None PASS

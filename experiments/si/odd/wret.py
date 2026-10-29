@@ -60,7 +60,7 @@ for t in range(len(ok) + 1):
     if t == len(ok) or not ok[t]:
         if t > a: stretches.append((a, t))         # states a..t, transitions a..t-1 all guided
         a = t + 1
-wmon = wret = reent = wpaid = silent = vsil = optv = cyc = maxsw = maxwr = longest = 0; ex = None
+wmon = wret = reent = wpaid = silent = vsil = optv = cyc = maxwrspan = maxwrout = maxsw = maxwr = longest = 0; ex = None
 for a, b in stretches:
     Wk = [W(t) for t in range(a, b + 1)]; longest = max(longest, b - a)
     CN = [WE[TAU[t]].evaluate(S[t])[0] for t in range(a, b + 1)]       # W-valuations (cycle node in [0])
@@ -87,5 +87,15 @@ for a, b in stretches:
                     else: wret += 1; ex = ex or (v, w, k1, j)
                     if Wk[j - a][v] != Wk[j - 1 - a][v]: vsil += 1                  # vertex form W(v) unchanged: counted only
         maxsw = max(maxsw, sw)
+        sws = [j for j in range(a + 1, b + 1) if S[j][v] != S[j - 1][v]]      # window-only W counts per pair (v, w), box 38
+        for w in {S[j][v] for j in sws}:
+            ent = [j for j in sws if S[j][v] == w]; lv = [j for j in sws if S[j - 1][v] == w]
+            outs = set()
+            for l in lv:
+                nx = [e for e in ent if e > l]
+                if nx: outs |= set(range(l, nx[0]))                          # states l..e-1: transitions l -> l+1 .. e-1 -> e
+            if lv and ent and max(ent) > lv[0]:
+                wsp = sum(1 for t in range(lv[0], max(ent)) if Wk[t + 1 - a][w] != Wk[t - a][w]); maxwrspan = max(maxwrspan, wsp)
+            maxwrout = max(maxwrout, sum(1 for t in outs if t + 1 <= b and Wk[t + 1 - a][w] != Wk[t - a][w]))
 print(f"WRET {os.path.basename(args[0])} mode {MODE} n {n} iter {len(S) - 1} stretches {len(stretches)} longest {longest} WMON_V {wmon} "
-      f"WRET_V {wret} REENT {reent} WPAID {wpaid} SILENT {silent} VFORM_V {vsil} CYC {cyc} OPT_V {optv} maxSW {maxsw} maxWR {maxwr} ex {ex} {'PASS' if wmon == wret == optv == 0 else 'FAIL'}")
+      f"WRET_V {wret} REENT {reent} WPAID {wpaid} SILENT {silent} VFORM_V {vsil} CYC {cyc} OPT_V {optv} maxSW {maxsw} maxWR {maxwr} maxWRspan {maxwrspan} maxWRout {maxwrout} ex {ex} {'PASS' if wmon == wret == optv == 0 else 'FAIL'}")

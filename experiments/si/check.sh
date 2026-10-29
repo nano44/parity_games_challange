@@ -786,3 +786,6 @@ o=$(SIDE=E python3 -I odd/win.py odd/inst/red/tobs_K8_m32.pg odd/inst/red/tobs_K
 grep -q "n 233 pairs 96 maxENT 8 SPAN_V 0 .*OUTRISE_V 0 | IN: MAT 248 PCH 263 SEG 2 at (231, 198, 0) OUT: MAT 7 PCH 14 SEG 1 at (102, 104, 0) SPAN: MAT 7 PCH 14 SEG 1" <<<"$o"; grep -q "PASS$" <<<"$o"
 o=$(SIDE=E python3 -I odd/win.py ../red/n5inj/instances/returns_rt32.pg --mut); grep -q "SPAN_V 1 SPAN1 1 .*ex (12, 10, 3, 2, 0)" <<<"$o"   # control: length-only re-entry needs the factor n
 echo "si (box 38: Lemma SPAN holds; in-window form inflated on tobs, span form not): PASS"
+# box 38 §6: W-frame windows on hntop_N (N = 3 pinned: one guided stretch of 61; all 31, span 28, out 28 = 2N²+5N−5).
+o=$(python3 -I odd/wret.py odd/inst/hn/hntop_n3.pg odd/inst/hn/hntop_n3.start); grep -q "iter 61 .*WRET_V 0 .*OPT_V 0 maxSW 28 maxWR 31 maxWRspan 28 maxWRout 28 .*PASS$" <<<"$o"
+echo "si (box 38 §6: hntop_3 W-window counts): PASS"

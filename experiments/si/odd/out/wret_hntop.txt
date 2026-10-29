@@ -1,0 +1,7 @@
+WRET hntop_n2.pg mode n5 n 42 iter 33 stretches 1 longest 33 WMON_V 0 WRET_V 0 REENT 84 WPAID 84 SILENT 0 VFORM_V 0 CYC 0 OPT_V 0 maxSW 13 maxWR 15 maxWRspan 13 maxWRout 13 ex None PASS
+WRET hntop_n3.pg mode n5 n 63 iter 61 stretches 1 longest 61 WMON_V 0 WRET_V 0 REENT 251 WPAID 251 SILENT 0 VFORM_V 0 CYC 0 OPT_V 0 maxSW 28 maxWR 31 maxWRspan 28 maxWRout 28 ex None PASS
+WRET hntop_n4.pg mode n5 n 84 iter 95 stretches 1 longest 95 WMON_V 0 WRET_V 0 REENT 532 WPAID 532 SILENT 0 VFORM_V 0 CYC 0 OPT_V 0 maxSW 47 maxWR 51 maxWRspan 48 maxWRout 47 ex None PASS
+WRET hntop_n5.pg mode n5 n 105 iter 135 stretches 1 longest 135 WMON_V 0 WRET_V 0 REENT 951 WPAID 951 SILENT 0 VFORM_V 0 CYC 0 OPT_V 0 maxSW 70 maxWR 75 maxWRspan 72 maxWRout 70 ex None PASS
+WRET hntop_n6.pg mode n5 n 126 iter 181 stretches 1 longest 181 WMON_V 0 WRET_V 0 REENT 1532 WPAID 1532 SILENT 0 VFORM_V 0 CYC 0 OPT_V 0 maxSW 97 maxWR 103 maxWRspan 100 maxWRout 97 ex None PASS
+WRET hntop_n7.pg mode n5 n 147 iter 233 stretches 1 longest 233 WMON_V 0 WRET_V 0 REENT 2299 WPAID 2299 SILENT 0 VFORM_V 0 CYC 0 OPT_V 0 maxSW 128 maxWR 135 maxWRspan 132 maxWRout 128 ex None PASS
+WRET hntop_n8.pg mode n5 n 168 iter 291 stretches 1 longest 291 WMON_V 0 WRET_V 0 REENT 3276 WPAID 3276 SILENT 0 VFORM_V 0 CYC 0 OPT_V 0 maxSW 163 maxWR 171 maxWRspan 168 maxWRout 163 ex None PASS
