@@ -1,0 +1,1 @@
+LEX mlex_alt 10224 depth 2 [1603, 'STUCK(8621 left)']

@@ -1,0 +1,334 @@
+FEASIBLE ../docs/referee/R-N5-L2/droplen_cex_n12.pg 4 {'nIs': -1}
+FEASIBLE ../docs/referee/R-N5-L2/exitdrop_n3.pg 1 {'X_m4': -1}
+FEASIBLE ../experiments/attr/instances/dtr_fig1.pg 1 {'nD': 1}
+FEASIBLE ../experiments/m2/counterexamples/ce1_8v_shrunk.pg 1 {'W_m4': 3}
+FEASIBLE ../experiments/m2/counterexamples/strat_s2_12v.pg 1 {'T_cr': 1}
+FEASIBLE ../experiments/n5-exhaustive/canonA_0.pg 3 {'X_m4': -1}
+FEASIBLE ../experiments/n5-exhaustive/canonA_1.pg 4 {'W_m4': -1, 'T_m4': 2}
+FEASIBLE ../experiments/n5-exhaustive/instances/b4_cyc6_0.pg 2 {'W_m4': -5, 'T_m4': 9}
+FEASIBLE ../experiments/n5-exhaustive/instances/b4_cyc6_1.pg 4 {'X_m4': -2, 'X_ln': 2500, 'W_m4': 2}
+FEASIBLE ../experiments/n5-exhaustive/instances/b4_n4all_cyc3_0.pg 2 {'X_m4': 4, 'T_m4': 1}
+FEASIBLE ../experiments/n5-exhaustive/instances/b4_n5_other_0.pg 2 {'nIs': -1}
+FEASIBLE ../experiments/n5-exhaustive/instances/b4_nohlen5_0.pg 1 {'X_cr': 1}
+FEASIBLE ../experiments/n5-exhaustive/instances/b4_theta_n7.pg 1 {'T_m4': -1}
+FEASIBLE ../experiments/n5-exhaustive/instances/b5_n5_cyc4_0.pg 3 {'X_m4': 1, 'T_m4': 1}
+FEASIBLE ../experiments/n5-exhaustive/instances/b5_o11.pg 12 {'X_m2': 24028, 'X_m3': -6389, 'X_m4': 404, 'X_cr': 19575, 'W_m4': 11, 'W_cr': 135, 'nIs': -133306}
+FEASIBLE ../experiments/n5-exhaustive/instances/b5_os_n12.pg 18 {'X_m2': 23304, 'X_m3': -5802, 'X_m4': 339, 'X_cr': 31582, 'W_m2': 7550, 'W_m3': -706}
+FEASIBLE ../experiments/n5-exhaustive/instances/b5_os_n14.pg 22 {'X_m2': np.float64(-0.432), 'X_m3': np.float64(0.019), 'X_m4': np.float64(0.002), 'X_cr': np.float64(0.587), 'W_m2': np.float64(0.632), 'W_m3': np.float64(
+INFEASIBLE ../experiments/n5-exhaustive/instances/b5_os_n16.pg 26 support 8 games ['../experiments/n5-exhaustive/instances/b5_os_n16.pg'] exact
+INFEASIBLE ../experiments/n5-exhaustive/instances/b5_os_n20.pg 34 support 9 games ['../experiments/n5-exhaustive/instances/b5_os_n20.pg'] exact
+FEASIBLE ../experiments/n5-exhaustive/instances/b5_os_n24.pg 53 {'X_m1': np.float64(-3.697), 'X_m2': np.float64(1.0), 'X_m3': np.float64(-0.069), 'X_m4': np.float64(0.001), 'X_cr': np.float64(0.758), 'X_ln': np.float64(0
+INFEASIBLE ../experiments/n5-exhaustive/instances/b5_os_n28.pg 65 support 11 games ['../experiments/n5-exhaustive/instances/b5_os_n28.pg'] exact
+INFEASIBLE ../experiments/n5-exhaustive/instances/b5_os_n32.pg 71 support 8 games ['../experiments/n5-exhaustive/instances/b5_os_n32.pg'] exact
+INFEASIBLE ../experiments/n5-exhaustive/instances/b5_os_n40.pg 81 support 10 games ['../experiments/n5-exhaustive/instances/b5_os_n40.pg'] exact
+FEASIBLE ../experiments/n5-exhaustive/instances/b6_xl2_n32.pg 87 {'X_m1': np.float64(2.693), 'X_m2': np.float64(-0.456), 'X_m3': np.float64(0.025), 'X_cr': np.float64(4.709), 'X_ln': np.float64(0.107), 'W_m1': np.float64
+FEASIBLE ../experiments/n5-exhaustive/instances/b6_xl_n32.pg 85 {'X_m1': np.float64(5.732), 'X_m2': np.float64(-0.813), 'X_m3': np.float64(0.038), 'X_m4': np.float64(-0.001), 'X_cr': np.float64(5.704), 'X_ln': np.float64
+FEASIBLE ../experiments/n5-exhaustive/instances/b6_xl_n40.pg 89 {'X_m1': np.float64(1.696), 'X_m2': np.float64(-0.258), 'X_m3': np.float64(0.013), 'X_cr': np.float64(5.654), 'X_ln': np.float64(0.101), 'W_m2': np.float64(
+FEASIBLE ../experiments/n5-exhaustive/instances/b6_xl_n48.pg 97 {'X_m0': np.float64(-44.742), 'X_m1': np.float64(9.73), 'X_m2': np.float64(-0.733), 'X_m3': np.float64(0.024), 'X_cr': np.float64(6.166), 'X_ln': np.float64
+FEASIBLE ../experiments/n5-exhaustive/instances/b6_xs_n24.pg 21 {'X_m4': -4}
+FEASIBLE ../experiments/n5-exhaustive/instances/b6_xs_n32.pg 29 {}
+FEASIBLE ../experiments/n5-exhaustive/instances/b6_xs_n40.pg 36 {}
+FEASIBLE ../experiments/n5-exhaustive/instances/b6_xs_n48.pg 37 {'X_m3': np.float64(0.001)}
+INFEASIBLE ../experiments/n5-exhaustive/instances/b6_xw_n32.pg 79 support 13 games ['../experiments/n5-exhaustive/instances/b6_xw_n32.pg'] exact
+FEASIBLE ../experiments/n5-exhaustive/instances/b6_xw_n40.pg 80 {'X_m1': np.float64(0.33), 'X_m2': np.float64(-0.074), 'X_m3': np.float64(0.005), 'X_cr': np.float64(3.674), 'W_m0': np.float64(-8.623), 'W_m1': np.float64(
+INFEASIBLE ../experiments/n5-exhaustive/instances/b6_xw_n48.pg 85 support 14 games ['../experiments/n5-exhaustive/instances/b6_xw_n48.pg'] exact
+FEASIBLE ../experiments/n5-exhaustive/instances/canonA_0.pg 3 {'X_m4': -1}
+FEASIBLE ../experiments/n5-exhaustive/instances/canonA_1.pg 4 {'W_m4': -1, 'T_m4': 2}
+FEASIBLE ../experiments/n5-exhaustive/instances/n4_maxph_0.pg 2 {'X_m4': 1, 'nIs': -1000}
+FEASIBLE ../experiments/n5-exhaustive/instances/n4_maxph_1.pg 2 {'X_m4': 1, 'nIs': -1000}
+FEASIBLE ../experiments/n5-exhaustive/instances/n4_thch_0.pg 2 {'X_m4': 2, 'T_m4': 2}
+FEASIBLE ../experiments/n5-exhaustive/instances/n4all_maxph_0.pg 2 {'nIs': -1}
+FEASIBLE ../experiments/n5-exhaustive/instances/n4all_maxph_1.pg 2 {'nIs': -1}
+FEASIBLE ../experiments/n5-exhaustive/instances/n4all_tgbad_0.pg 1 {'T_m4': 2}
+FEASIBLE ../experiments/n5-exhaustive/instances/n4all_thch_0.pg 2 {'X_m4': 4, 'T_m4': 1}
+FEASIBLE ../experiments/n5-exhaustive/instances/n5s_maxph_0.pg 3 {'T_ln': 1, 'nIs': -1}
+FEASIBLE ../experiments/n5-exhaustive/instances/nh_n8.pg 3 {'X_ln': 2, 'W_ln': 3}
+FEASIBLE ../experiments/n5-exhaustive/instances/thetaA_canon_n12.pg 3 {'X_m3': 28, 'X_m4': -3}
+FEASIBLE ../experiments/n5-exhaustive/instances/thetaA_canon_n8.pg 3 {'X_m4': -4}
+FEASIBLE ../experiments/n5-exhaustive/instances/thetaA_n17.pg 1 {}
+FEASIBLE ../experiments/n5-exhaustive/instances/thetaA_n6.pg 1 {'W_m4': 2}
+FEASIBLE ../experiments/n5-exhaustive/instances/thetaA_n7.pg 1 {'W_m4': 1}
+FEASIBLE ../experiments/n5-exhaustive/instances/thetaA_n9.pg 1 {'X_m4': -3}
+FEASIBLE ../experiments/new/box21/instances/fts_best16.pg 28 {'X_m2': -16327, 'X_m3': 3467, 'X_m4': -170, 'W_m1': 175054, 'W_m2': -37970, 'W_m3': 1692, 'W_m4': 3, 'W_ln': -311096, 'nIs': -94301}
+FEASIBLE ../experiments/new/box21/instances/h1_hand.pg 1 {'T_cr': 2}
+FEASIBLE ../experiments/new/box21/instances/oneodd_c16.pg 36 {'X_m3': np.float64(0.001), 'X_cr': np.float64(0.46), 'X_ln': np.float64(0.198), 'W_m2': np.float64(-0.039), 'W_m3': np.float64(0.007), 'W_cr': np.float64(0.42
+FEASIBLE ../experiments/new/box21/instances/oneodd_c24.pg 44 {'X_m0': np.float64(-142.72), 'X_m1': np.float64(9.501), 'X_ln': np.float64(-0.024), 'W_m0': np.float64(-3700.545), 'W_m1': np.float64(827.705), 'W_m2': np.flo
+FEASIBLE ../experiments/new/box22/instances/cyc4.pg 1 {'X_m4': -1}
+FEASIBLE ../experiments/new/box22/instances/i1_min.pg 4 {'W_m4': 1}
+FEASIBLE ../experiments/new/box22/instances/i1h_fts_best16.pg 8 {'X_m3': 1, 'W_m3': 27, 'W_m4': -2}
+FEASIBLE ../experiments/new/box22/instances/i1hn_fts_best16.pg 8 {'X_m3': 1}
+FEASIBLE ../experiments/new/box22/instances/i1hn_oneodd_c24.pg 10 {'X_m3': -643, 'X_m4': 73, 'X_cr': 5639, 'W_m4': 4}
+FEASIBLE ../experiments/new/box22/instances/i3hn.pg 6 {'W_m4': 2}
+FEASIBLE ../experiments/new/box22/instances/n9_i2.pg 2 {'nIs': -1}
+FEASIBLE ../experiments/new/box22/instances/pure_14.pg 18 {'X_m2': 11801, 'X_m3': -1938, 'X_m4': 76, 'X_cr': 139200}
+FEASIBLE ../experiments/new/box22/instances/pure_22.pg 33 {'X_m1': np.float64(-0.348), 'X_m2': np.float64(0.066), 'X_m3': np.float64(-0.003), 'X_cr': np.float64(0.211)}
+FEASIBLE ../experiments/new/box22/instances/statY_12.pg 8 {'X_m3': 368, 'X_m4': -54, 'W_cr': 6250}
+FEASIBLE ../experiments/new/box25/fbh_drop9.pg 2 {'X_m4': 1, 'T_m4': -2}
+FEASIBLE ../experiments/new/box25/fbh_thr.pg 2 {'X_m4': 1}
+FEASIBLE ../experiments/new/box25/instances/rtt16.pg 14 {'X_m3': -20, 'X_cr': 32938, 'W_m2': 17058, 'W_m3': -2169, 'W_m4': 69}
+FEASIBLE ../experiments/new/box25/instances/rtt24.pg 14 {'X_m2': np.float64(-0.005), 'X_cr': np.float64(0.079), 'X_ln': np.float64(0.25), 'W_m3': np.float64(0.002)}
+FEASIBLE ../experiments/new/box25/instances/rttf48.pg 13 {'X_cr': np.float64(0.005)}
+FEASIBLE ../experiments/new/box25/instances/sc24.pg 20 {'X_m3': np.float64(0.002)}
+FEASIBLE ../experiments/new/box25/instances/sc32.pg 48 {'X_m1': np.float64(21.618), 'X_m2': np.float64(-2.585), 'X_m3': np.float64(0.102), 'X_m4': np.float64(-0.001), 'X_cr': np.float64(0.45), 'W_m1': np.float64(3.704), 
+FEASIBLE ../experiments/new/box25/instances/tr12_s3.pg 11 {'X_m3': 430, 'X_m4': -45, 'X_cr': 11263, 'nIs': -100000}
+FEASIBLE ../experiments/new/box25/instances/tr20_s4.pg 17 {'X_m3': 97, 'X_m4': -6}
+FEASIBLE ../experiments/new/box25/instances/wd12_s1.pg 8 {'X_m4': -2, 'W_m4': 2}
+FEASIBLE ../experiments/new/box25/instances/wd16_s2.pg 19 {'X_m3': np.float64(0.001), 'X_cr': np.float64(0.088)}
+FEASIBLE ../experiments/new/box25/instances/xc16.pg 14 {'X_m2': 3320, 'X_m3': -565, 'W_m4': 23, 'W_ln': -1287}
+FEASIBLE ../experiments/new/box25/instances/xc24.pg 22 {'X_m2': np.float64(-0.119), 'X_m3': np.float64(0.011), 'W_ln': np.float64(-0.182)}
+FEASIBLE ../experiments/new/box25/instances/xcf20.pg 18 {'X_m3': np.float64(0.001), 'X_cr': np.float64(0.041)}
+FEASIBLE ../experiments/new/box25/laps/lap_n6_s1_110421.pg 2 {'X_m4': -1}
+FEASIBLE ../experiments/new/box25/laps/lap_n9_s1_32427.pg 3 {'X_m3': 43, 'W_m4': -5}
+FEASIBLE ../experiments/new/box25/thetare_min.pg 7 {'X_m3': 31, 'X_m4': -2, 'W_m3': 18}
+FEASIBLE ../experiments/new/box25/thetare_n.pg 7 {'X_m3': 4, 'W_m3': 17}
+FEASIBLE ../experiments/new/box25/wdrop_canon.pg 4 {'X_m4': 3, 'W_cr': 833, 'nIs': -3333}
+FEASIBLE ../experiments/new/box25/wdrop_cyc.pg 2 {'X_cr': 1, 'T_cr': 2}
+FEASIBLE ../experiments/new/box25/zfrozen_thr.pg 1 {'X_m4': 3}
+FEASIBLE ../experiments/new/box28/instances/fb32_inr2_final.pg 47 {'X_m1': np.float64(1.905), 'X_m2': np.float64(-0.26), 'X_m3': np.float64(0.012), 'X_cr': np.float64(0.596), 'X_ln': np.float64(-0.077), 'W_m0': np.float6
+FEASIBLE ../experiments/new/box28/instances/fbref_n48.pg 60 {'X_m0': np.float64(-503640.898), 'X_m1': np.float64(46139.228), 'X_m2': np.float64(-1583.811), 'X_m3': np.float64(24.144), 'X_m4': np.float64(-0.138), 'X_cr': 
+FEASIBLE ../experiments/new/box28/instances/oc16_s2.pg 26 {'X_m3': np.float64(-0.001), 'X_cr': np.float64(2.089), 'W_m3': np.float64(-0.038), 'W_m4': np.float64(0.003), 'W_ln': np.float64(0.5)}
+FEASIBLE ../experiments/new/box28/instances/oc24_s4_final.pg 20 {'X_m3': -86, 'X_m4': 4, 'nIs': -40187}
+FEASIBLE ../experiments/new/box28/instances/w24b_thc24_final.pg 17 {'X_m2': np.float64(-0.041), 'X_m3': np.float64(0.004), 'X_cr': np.float64(0.134), 'X_ln': np.float64(0.001), 'W_m3': np.float64(0.001), 'W_ln': np.float
+FEASIBLE ../experiments/new/box28/instances/x32_sc32_1309s.pg 63 {'X_m1': np.float64(3.386), 'X_m2': np.float64(-0.511), 'X_m3': np.float64(0.025), 'X_cr': np.float64(0.88), 'X_ln': np.float64(0.29), 'W_m1': np.float64(-
+FEASIBLE ../experiments/new/box28/instances/x32_sc32_final.pg 76 {'X_m1': np.float64(14.014), 'X_m2': np.float64(-1.933), 'X_m3': np.float64(0.088), 'X_m4': np.float64(-0.001), 'X_cr': np.float64(9.377), 'X_ln': np.float
+INFEASIBLE ../experiments/new/box28/instances/x48_rt48_final.pg 112 support 10 games ['../experiments/new/box28/instances/x48_rt48_final.pg'] exact
+FEASIBLE ../experiments/new/box29/instances/u1_n32.pg 16 {'X_m4': -1, 'W_m4': -2, 'W_ln': 100000}
+FEASIBLE ../experiments/new/box29/instances/wf0_cex_n16.pg 40 {'X_m1': 4063, 'X_m3': 148, 'X_m4': -17, 'X_cr': 138426, 'X_ln': 29721, 'W_m2': -11181, 'W_m3': 1386, 'W_m4': -40, 'W_cr': 27036, 'W_ln': 85513, 'nIs': -12131
+FEASIBLE ../experiments/new/box31/instances/nr_u23_n32.pg 14 {'X_m3': np.float64(-0.001), 'W_m3': np.float64(0.009), 'nIs': np.float64(-1.0)}
+FEASIBLE ../experiments/new/box31/instances/p3long_n14.pg 10 {'X_m4': 4}
+FEASIBLE ../experiments/new/box31/instances/u1flat_best_n32.pg 10 {'X_m2': np.float64(-0.012), 'X_m3': np.float64(0.002), 'X_cr': np.float64(0.128), 'W_m3': np.float64(0.004), 'nIs': np.float64(-1.0)}
+FEASIBLE ../experiments/new/box31/instances/u1t_cex2_n32.pg 9 {'X_m2': np.float64(0.029), 'X_m3': np.float64(-0.002), 'X_cr': np.float64(0.026), 'W_m3': np.float64(0.012), 'nIs': np.float64(-0.2)}
+FEASIBLE ../experiments/new/box31/instances/u3ev_n16.pg 6 {'X_cr': np.float64(0.1), 'W_ln': np.float64(0.091), 'nIs': np.float64(-0.317)}
+FEASIBLE ../experiments/new/box32/instances/kwm_cex_n24.pg 21 {'X_m2': np.float64(0.039), 'X_m3': np.float64(-0.002), 'X_cr': np.float64(0.066), 'W_m2': np.float64(0.047), 'W_m3': np.float64(-0.006)}
+FEASIBLE ../experiments/new/box32/instances/nowake_cex_n32.pg 9 {'X_cr': np.float64(0.072), 'W_cr': np.float64(0.003), 'nIs': np.float64(-1.0)}
+FEASIBLE ../experiments/new/box34/instances/onedrop_cex_n32.pg 6 {'nIs': -1}
+FEASIBLE ../experiments/new/box34/instances/oneh_cex_n32.pg 3 {'nIs': -1}
+FEASIBLE ../experiments/new/box35/instances/fbrestart_cex_n12.pg 5 {'X_m3': -377, 'X_m4': 35, 'W_m4': -1, 'nIs': -100000}
+FEASIBLE ../experiments/new/box35/instances/fbrestart_cex_n24.pg 23 {'X_m2': np.float64(0.003), 'X_m3': np.float64(-0.001), 'X_cr': np.float64(0.24), 'X_ln': np.float64(0.284), 'W_ln': np.float64(0.216), 'nIs': np.float6
+FEASIBLE ../experiments/new/box35/instances/onerun_cex_n32.pg 8 {'X_ln': np.float64(0.5), 'nIs': np.float64(-0.5)}
+FEASIBLE ../experiments/new/box35/instances/pf_best_3621.pg 36 {'X_m1': np.float64(20.091), 'X_m2': np.float64(-2.497), 'X_m3': np.float64(0.103), 'X_m4': np.float64(-0.001), 'X_cr': np.float64(5.325), 'X_ln': np.float64
+FEASIBLE ../experiments/new/box35/instances/pf_best_3622.pg 55 {'X_m1': np.float64(5.773), 'X_m2': np.float64(-0.755), 'X_m3': np.float64(0.031), 'X_cr': np.float64(11.15), 'X_ln': np.float64(-0.121), 'W_m1': np.float64(
+FEASIBLE ../experiments/new/box35/instances/pf_best_3623.pg 40 {'X_m1': np.float64(5.889), 'X_m2': np.float64(-0.516), 'X_m3': np.float64(0.015), 'X_cr': np.float64(3.721), 'X_ln': np.float64(-0.171), 'W_m2': np.float64(
+FEASIBLE ../experiments/new/box37/instances/rfroz_cex_n16.pg 15 {'X_m2': -13726, 'X_m3': 2070, 'X_m4': -77, 'X_cr': 100919, 'W_m2': -18657, 'W_m4': 172, 'W_cr': -18609, 'nIs': -36745}
+FEASIBLE ../experiments/new/box38/instances/neb_cex_n11.pg 3 {'W_m4': 1, 'T_m4': -2}
+FEASIBLE ../experiments/new/box38/instances/nebc_cex_n14.pg 9 {'X_m4': 5, 'X_cr': 3695, 'W_cr': 3448, 'T_cr': 3571}
+FEASIBLE ../experiments/new/box38/instances/norise_state_n8.pg 3 {'T_m4': -1, 'nD': 10000}
+FEASIBLE ../experiments/new/box38/instances/tauw_A_cex_n24.pg 16 {'X_cr': np.float64(0.218), 'W_m3': np.float64(-0.01), 'nIs': np.float64(-1.0)}
+FEASIBLE ../experiments/new/box38/instances/tauw_B_cex_n24.pg 10 {'X_m3': np.float64(-0.002), 'X_cr': np.float64(0.031), 'W_m3': np.float64(0.001)}
+FEASIBLE ../experiments/new/instances/killer/deeptrap_sae_N1.pg 4 {}
+FEASIBLE ../experiments/new/instances/n6/counter_ortl-3.pg 4 {'X_m3': 177, 'X_m4': -17, 'W_m4': 4}
+FEASIBLE ../experiments/red/carry/instances/absmono_viol_n44.pg 7 {'T_cr': 2, 'nIs': -100}
+FEASIBLE ../experiments/red/carry/instances/carry3_2_2.pg 2 {}
+FEASIBLE ../experiments/red/carry/instances/cm_mdrop_both_n28.pg 10 {'W_cr': np.float64(0.01)}
+FEASIBLE ../experiments/red/carry/instances/cm_mdrop_oink_n28.pg 3 {}
+FEASIBLE ../experiments/red/carry/instances/ctx11_n40.pg 9 {}
+FEASIBLE ../experiments/red/carry/instances/ctx12_n40.pg 8 {}
+FEASIBLE ../experiments/red/carry/instances/ctx13_n40.pg 17 {'T_m3': np.float64(0.001)}
+FEASIBLE ../experiments/red/carry/instances/ctx6_n20.pg 3 {'X_cr': np.float64(0.031)}
+FEASIBLE ../experiments/red/carry/instances/ctx7_n30.pg 11 {}
+FEASIBLE ../experiments/red/carry/instances/f1_twodef_n48.pg 6 {}
+FEASIBLE ../experiments/red/carry/instances/f1_twofall_n48.pg 6 {}
+FEASIBLE ../experiments/red/carry/instances/fallv_viol_n28.pg 5 {}
+FEASIBLE ../experiments/red/carry/instances/fired10_n20.pg 6 {'nIs': -1}
+FEASIBLE ../experiments/red/carry/instances/firedlong667_n20.pg 4 {'X_m3': np.float64(0.001)}
+FEASIBLE ../experiments/red/carry/instances/firedlong667_n43.pg 3 {'nIs': -1}
+FEASIBLE ../experiments/red/carry/instances/gapbW_dup_n20.pg 5 {'W_m3': np.float64(-0.007)}
+FEASIBLE ../experiments/red/carry/instances/gapb_dup_n20.pg 8 {'X_m3': 779, 'X_m4': -45, 'W_m3': -264, 'W_m4': 14, 'T_m3': 146, 'T_m4': -8}
+FEASIBLE ../experiments/red/carry/instances/h4_compound2x2_n44.pg 10 {}
+FEASIBLE ../experiments/red/carry/instances/h4_compound_n44.pg 4 {}
+FEASIBLE ../experiments/red/carry/instances/h4_def2ctx_n20.pg 6 {'W_m3': np.float64(0.001)}
+FEASIBLE ../experiments/red/carry/instances/h4_def7_n28.pg 3 {}
+FEASIBLE ../experiments/red/carry/instances/h4_disjoint_n20.pg 3 {}
+FEASIBLE ../experiments/red/carry/instances/h4_notweaker_n20.pg 5 {}
+FEASIBLE ../experiments/red/carry/instances/kin_viol_n29.pg 5 {}
+FEASIBLE ../experiments/red/carry/instances/lalg_dtl_mviol_n20.pg 5 {}
+FEASIBLE ../experiments/red/carry/instances/lemmaS_Mdrop_n20.pg 6 {}
+FEASIBLE ../experiments/red/carry/instances/lemmaS_viol_n20.pg 4 {}
+FEASIBLE ../experiments/red/carry/instances/lex_viol_inj_n28.pg 6 {}
+FEASIBLE ../experiments/red/carry/instances/lex_viol_tie_n28.pg 7 {}
+FEASIBLE ../experiments/red/carry/instances/meet_viol_n29.pg 11 {'W_cr': np.float64(0.007), 'T_cr': np.float64(0.011)}
+FEASIBLE ../experiments/red/carry/instances/nosig_2_3.pg 2 {}
+FEASIBLE ../experiments/red/carry/instances/phi_flat_alive_n32.pg 4 {}
+FEASIBLE ../experiments/red/carry/instances/pk_viol_n20.pg 3 {'nIt': np.float64(-1.0)}
+FEASIBLE ../experiments/red/carry/instances/replay4_n32.pg 4 {}
+FEASIBLE ../experiments/red/carry/instances/spp19_oink_n30.pg 10 {'X_m3': np.float64(-0.001), 'T_m2': np.float64(0.026), 'T_m3': np.float64(-0.002)}
+FEASIBLE ../experiments/red/carry/instances/spp19_stable_n30.pg 7 {}
+FEASIBLE ../experiments/red/carry/instances/spp22_oink_n40.pg 8 {}
+FEASIBLE ../experiments/red/carry/instances/spp25_oink_n40.pg 10 {}
+FEASIBLE ../experiments/red/carry/instances/stealonce_both_n45.pg 4 {}
+FEASIBLE ../experiments/red/carry/instances/tstep_near_n20.pg 5 {'X_m4': -1, 'W_m4': 1, 'T_m4': 1}
+FEASIBLE ../experiments/red/ctxp/instances/deep1_n13.pg 1 {'W_m4': -3}
+FEASIBLE ../experiments/red/ctxp/instances/deep1_n21.pg 3 {}
+FEASIBLE ../experiments/red/ctxp/instances/margin1_n20.pg 5 {}
+FEASIBLE ../experiments/red/dtl/instances/lalg_dtl_pertop31_n18.pg 2 {'X_m4': 2}
+FEASIBLE ../experiments/red/dtl/instances/lalg_dtl_restart8_n20.pg 5 {'W_m3': 110, 'W_m4': -6, 'T_m3': 12}
+FEASIBLE ../experiments/red/instances/claimF_len_cf1.pg 1 {'X_m4': 4}
+FEASIBLE ../experiments/red/kl/instances/klcount_n16.pg 6 {'X_m3': np.float64(-0.001)}
+FEASIBLE ../experiments/red/kl/instances/klcount_n18_base.pg 6 {}
+FEASIBLE ../experiments/red/kl/instances/klcount_n18_lvl.pg 6 {'X_m3': np.float64(-0.001)}
+FEASIBLE ../experiments/red/kl/instances/klglobal_n16.pg 6 {'X_m4': 1, 'nIt': -56225, 'nD': 43775}
+FEASIBLE ../experiments/red/kl/instances/klglobal_n18_lvl.pg 6 {'X_m4': 1, 'nIt': -56225, 'nD': 43775}
+FEASIBLE ../experiments/red/kl/instances/klglobal_n20_lvl2.pg 6 {'X_m4': 1, 'nIt': -56225, 'nD': 43775}
+FEASIBLE ../experiments/red/kl/instances/klmin_n13.pg 3 {'X_m3': -71, 'X_m4': 7, 'X_cr': 761}
+FEASIBLE ../experiments/red/kl/instances/r2climb_h13.pg 4 {'X_m4': 1, 'W_m4': 1}
+FEASIBLE ../experiments/red/kl/instances/r2crawl_n14.pg 5 {}
+FEASIBLE ../experiments/red/kl/instances/r2join_h0E_n14.pg 3 {'W_m3': np.float64(0.002)}
+FEASIBLE ../experiments/red/kl/instances/r2lap_best_n22.pg 5 {'W_ln': np.float64(-0.166), 'T_ln': np.float64(0.334)}
+FEASIBLE ../experiments/red/kl24/instances/HL88_0.pg 3 {}
+FEASIBLE ../experiments/red/kl24/instances/HL88_1.pg 3 {}
+FEASIBLE ../experiments/red/kl24/instances/HL88_2.pg 3 {}
+FEASIBLE ../experiments/red/kl24/instances/HL88_3.pg 3 {}
+FEASIBLE ../experiments/red/kl24/instances/HLg_0.pg 3 {}
+FEASIBLE ../experiments/red/kl24/instances/HLg_1.pg 3 {}
+FEASIBLE ../experiments/red/kl24/instances/HLg_2.pg 3 {}
+FEASIBLE ../experiments/red/lag/instances/depth2_n39.pg 3 {}
+FEASIBLE ../experiments/red/lag/instances/depth3_n46.pg 3 {}
+FEASIBLE ../experiments/red/mei/instances/mei_h2.pg 1 {}
+FEASIBLE ../experiments/red/mei/instances/mei_h3.pg 2 {}
+FEASIBLE ../experiments/red/mei/instances/mei_h4.pg 3 {}
+FEASIBLE ../experiments/red/mei/instances/mei_h5.pg 4 {}
+FEASIBLE ../experiments/red/n5/instances/dl_4_4.pg 8 {}
+FEASIBLE ../experiments/red/n5/instances/dlm2_4.pg 5 {}
+FEASIBLE ../experiments/red/n5/instances/sym_h12_s1.pg 34 {'X_m2': np.float64(0.013), 'X_m3': np.float64(-0.002), 'X_cr': np.float64(0.071), 'W_m2': np.float64(0.002), 'W_cr': np.float64(0.004), 'W_ln': np.float64(0.018)
+FEASIBLE ../experiments/red/n5/instances/sym_h16_s1.pg 55 {'X_m1': np.float64(0.065), 'X_m2': np.float64(-0.001), 'X_cr': np.float64(0.43), 'W_m1': np.float64(0.207), 'W_m2': np.float64(-0.032), 'W_m3': np.float64(0.002)
+FEASIBLE ../experiments/red/n5/instances/sym_h8_s1.pg 25 {'X_m3': np.float64(0.005), 'X_cr': np.float64(0.131), 'W_m1': np.float64(0.074), 'W_m2': np.float64(0.002), 'W_cr': np.float64(-0.02), 'W_ln': np.float64(-0.104),
+FEASIBLE ../experiments/red/n5inj/instances/block_bk20.pg 27 {'X_m3': np.float64(-0.002), 'X_cr': np.float64(0.535), 'X_ln': np.float64(0.2), 'nIs': np.float64(-0.4)}
+FEASIBLE ../experiments/red/n5inj/instances/block_bk32.pg 49 {'X_m2': np.float64(-0.249), 'X_m3': np.float64(0.015), 'X_cr': np.float64(0.915)}
+FEASIBLE ../experiments/red/n5inj/instances/blockph_bp20.pg 25 {'X_m2': np.float64(0.017), 'X_cr': np.float64(0.514), 'X_ln': np.float64(0.5), 'nIs': np.float64(-0.5)}
+FEASIBLE ../experiments/red/n5inj/instances/blockph_bp32.pg 39 {'X_m2': np.float64(-0.098), 'X_m3': np.float64(0.006), 'X_cr': np.float64(0.064), 'X_ln': np.float64(-0.059)}
+FEASIBLE ../experiments/red/n5inj/instances/bribe_cex_n15.pg 1 {'X_m4': -1}
+INFEASIBLE ../experiments/red/n5inj/instances/elimn_cex_n48.pg 92 support 15 games ['../experiments/red/n5inj/instances/elimn_cex_n48.pg'] exact
+FEASIBLE ../experiments/red/n5inj/instances/frz24.pg 39 {'X_m2': np.float64(0.019), 'X_m3': np.float64(-0.002), 'X_cr': np.float64(0.746), 'X_ln': np.float64(0.128), 'W_m2': np.float64(0.05), 'W_m3': np.float64(-0.007), 
+FEASIBLE ../experiments/red/n5inj/instances/frz32.pg 8 {'X_cr': np.float64(0.003), 'T_ln': np.float64(0.067)}
+INFEASIBLE ../experiments/red/n5inj/instances/frz40.pg 90 support 15 games ['../experiments/red/n5inj/instances/frz40.pg'] exact
+FEASIBLE ../experiments/red/n5inj/instances/phase2_pk32.pg 56 {'X_m3': np.float64(-0.006), 'W_m2': np.float64(-19.199), 'W_m3': np.float64(1.277), 'W_m4': np.float64(-0.021), 'W_cr': np.float64(9.583), 'W_ln': np.float64
+FEASIBLE ../experiments/red/n5inj/instances/phase2_pk48.pg 72 {'X_m1': np.float64(127.449), 'X_m2': np.float64(-10.839), 'X_m3': np.float64(0.302), 'X_m4': np.float64(-0.003), 'X_cr': np.float64(5.718), 'X_ln': np.float6
+FEASIBLE ../experiments/red/n5inj/instances/returns_rt32.pg 57 {'X_m2': np.float64(-39.765), 'X_m3': np.float64(2.585), 'X_m4': np.float64(-0.042), 'X_cr': np.float64(5.582), 'X_ln': np.float64(1.0), 'W_cr': np.float64(0
+INFEASIBLE ../experiments/red/n5inj/instances/returns_rt48.pg 80 support 8 games ['../experiments/red/n5inj/instances/returns_rt48.pg'] exact
+FEASIBLE ../experiments/red/n5inj/instances/theta_thc24.pg 29 {'X_m2': np.float64(-0.031), 'X_m3': np.float64(0.011), 'X_cr': np.float64(0.519), 'W_m2': np.float64(-0.133), 'W_m3': np.float64(0.007), 'W_ln': np.float64(-
+FEASIBLE ../experiments/red/n5inj/instances/theta_thf16.pg 20 {'X_m2': np.float64(0.008), 'X_m3': np.float64(-0.001), 'X_cr': np.float64(0.219), 'W_m2': np.float64(-0.305), 'W_m3': np.float64(0.054), 'W_m4': np.float64(-
+FEASIBLE ../experiments/red/n5inj/instances/theta_tp32.pg 45 {'X_m2': np.float64(-0.04), 'X_m3': np.float64(0.003), 'X_cr': np.float64(0.104), 'W_m2': np.float64(-0.109), 'W_m3': np.float64(0.009), 'W_cr': np.float64(0.0
+FEASIBLE ../experiments/red/n5inj/instances/theta_tp40.pg 41 {'X_m1': np.float64(0.704), 'X_cr': np.float64(0.209), 'X_ln': np.float64(0.556), 'W_m0': np.float64(-3934.675), 'W_m1': np.float64(509.966), 'W_m2': np.float6
+FEASIBLE ../experiments/red/n5inj/instances/wide_h16.pg 44 {'X_m1': np.float64(-0.061), 'X_m2': np.float64(0.021), 'X_m3': np.float64(-0.001), 'X_cr': np.float64(0.222), 'X_ln': np.float64(-0.084), 'W_m1': np.float64(5.5
+FEASIBLE ../experiments/red/nest16/instances/near4_n26.pg 2 {'nD': -1}
+FEASIBLE ../experiments/red/nest16/instances/nest4u_n46.pg 2 {'nD': -5}
+FEASIBLE ../experiments/red/nest16/instances/oseg_n26.pg 3 {'nD': -1}
+FEASIBLE ../experiments/red/nest16/instances/w1_n27.pg 2 {}
+FEASIBLE ../experiments/red/nest16/instances/win3_n27.pg 2 {'T_cr': 2}
+FEASIBLE ../experiments/red/nopre/instances/nopre_viol_n20.pg 3 {}
+FEASIBLE ../experiments/red/sgrow/instances/s20_n20.pg 8 {'X_ln': np.float64(0.009), 'W_ln': np.float64(0.036), 'nIs': np.float64(-0.955)}
+FEASIBLE ../experiments/red/sgrow/instances/s21_oink_n20.pg 8 {'W_m3': np.float64(0.004), 'T_m3': np.float64(-0.002)}
+FEASIBLE ../experiments/red/sgrow/instances/s29_n30.pg 7 {'W_ln': np.float64(-0.003), 'nIt': np.float64(-0.761), 'nD': np.float64(-0.236)}
+FEASIBLE ../experiments/red/sgrow/instances/s34_oink_n40.pg 5 {}
+FEASIBLE ../experiments/red/so/instances/epsseg_cex_n16.pg 11 {'W_m3': np.float64(0.001)}
+FEASIBLE ../experiments/red/so/instances/epsseg_cex_n48.pg 26 {'X_m2': np.float64(0.002), 'X_cr': np.float64(0.011), 'W_m2': np.float64(0.019), 'W_m3': np.float64(-0.001)}
+FEASIBLE ../experiments/red/so/instances/exitr_cex_n16.pg 10 {'X_m2': 28, 'W_m2': 10, 'W_m3': 103, 'W_m4': -8, 'W_cr': 3055}
+FEASIBLE ../experiments/red/so/instances/exitr_cex_n48.pg 22 {'X_m2': np.float64(-0.003), 'X_cr': np.float64(0.102), 'X_ln': np.float64(0.187), 'W_m2': np.float64(0.002), 'nIs': np.float64(-0.813)}
+FEASIBLE ../experiments/red/so/instances/mn_abs74_n48.pg 22 {'X_m2': np.float64(-0.055), 'X_m3': np.float64(0.002), 'X_cr': np.float64(0.141), 'W_m2': np.float64(-0.01), 'W_m3': np.float64(0.001), 'nIs': np.float64(-1.0)
+FEASIBLE ../experiments/red/so/instances/njb_reabs54_n32.pg 40 {'X_m2': np.float64(-0.013), 'X_m3': np.float64(0.002), 'X_cr': np.float64(4.559), 'X_ln': np.float64(-1.234), 'W_m2': np.float64(4.727), 'W_m3': np.float64(
+FEASIBLE ../experiments/red/so/instances/njb_reabs65_n48.pg 70 {'X_cr': np.float64(0.392), 'W_ln': np.float64(0.003), 'nIs': np.float64(-0.054)}
+FEASIBLE ../experiments/red/so/instances/pft35_n48.pg 41 {'X_m0': np.float64(-2398.156), 'X_m1': np.float64(265.101), 'X_m2': np.float64(-10.91), 'X_m3': np.float64(0.198), 'X_m4': np.float64(-0.001), 'X_cr': np.float64(
+FEASIBLE ../experiments/red/so/instances/pft40_n40.pg 54 {'X_m1': np.float64(8.092), 'X_m2': np.float64(-0.89), 'X_m3': np.float64(0.032), 'X_cr': np.float64(2.306), 'X_ln': np.float64(0.843), 'W_m1': np.float64(7.11), '
+FEASIBLE ../experiments/red/so/instances/pftheta34_n32.pg 39 {'X_m2': np.float64(-0.408), 'X_m3': np.float64(0.03), 'X_m4': np.float64(-0.001), 'X_ln': np.float64(-0.119), 'W_m2': np.float64(0.224), 'W_m3': np.float64(-0
+FEASIBLE ../experiments/red/so/instances/pftheta_cex_n32.pg 38 {'X_m2': np.float64(-0.129), 'X_m3': np.float64(0.009), 'X_cr': np.float64(0.465), 'X_ln': np.float64(-0.098), 'W_m2': np.float64(0.106), 'W_m3': np.float64(
+FEASIBLE ../experiments/red/so/instances/post31_n48.pg 36 {'X_m2': np.float64(0.001), 'X_cr': np.float64(0.022), 'W_m2': np.float64(-0.022), 'W_m3': np.float64(0.002)}
+FEASIBLE ../experiments/red/so/instances/so_j19_n48.pg 25 {'X_cr': np.float64(0.023), 'W_m2': np.float64(0.002)}
+FEASIBLE ../experiments/red/so/instances/so_k2_n32.pg 20 {'X_m2': np.float64(0.006), 'X_m3': np.float64(-0.001), 'X_cr': np.float64(0.135), 'X_ln': np.float64(-0.025), 'W_ln': np.float64(0.15)}
+FEASIBLE ../experiments/red/so/instances/so_sor5_n24.pg 23 {'X_m3': np.float64(0.006)}
+FEASIBLE ../experiments/red/so/instances/so_sorl_n32.pg 22 {}
+FEASIBLE ../experiments/red/so/instances/so_th_n32.pg 36 {'X_m2': np.float64(-0.016), 'X_m3': np.float64(0.001), 'X_cr': np.float64(0.172), 'X_ln': np.float64(0.028), 'W_m2': np.float64(-0.067), 'W_m3': np.float64(0.006)
+FEASIBLE ../experiments/red/so/instances/so_tie13_n24.pg 16 {'X_m3': 2189, 'X_m4': -95}
+FEASIBLE ../experiments/red/so/instances/so_tie15_n32.pg 20 {}
+FEASIBLE ../experiments/red/so/instances/tog6a_n32.pg 10 {'X_m3': np.float64(-0.001), 'X_ln': np.float64(0.194), 'nIs': np.float64(-1.0)}
+FEASIBLE ../experiments/red/so/instances/tog6b_n32.pg 8 {'X_ln': np.float64(0.097), 'nIs': np.float64(-1.0)}
+FEASIBLE ../experiments/red/so/instances/xsn29_n32.pg 29 {}
+FEASIBLE ../experiments/red/so/instances/xsn43_n48.pg 45 {'X_m3': np.float64(-0.001), 'X_cr': np.float64(0.027), 'X_ln': np.float64(-0.077), 'W_ln': np.float64(-0.027)}
+FEASIBLE ../experiments/red/so/instances/xsn91_n48.pg 115 {'X_m0': np.float64(-76.471), 'X_m1': np.float64(12.039), 'X_m2': np.float64(-0.718), 'X_m3': np.float64(0.019), 'X_cr': np.float64(27.888), 'X_ln': np.float64(-0
+FEASIBLE ../experiments/red/so/instances/xsnf42_n48.pg 44 {'X_cr': np.float64(0.001), 'nIs': np.float64(-1.0)}
+FEASIBLE ../experiments/red/tcpert/instances/leanT_N6.pg 6 {}
+FEASIBLE ../experiments/red/tcpert/instances/tcL_N3.pg 7 {}
+FEASIBLE ../experiments/red/tpp/instances/tpp_viol_n22.pg 2 {'W_m3': np.float64(-0.001)}
+FEASIBLE ../experiments/red/xctx/instances/nest3_n20.pg 2 {'T_ln': np.float64(0.2)}
+FEASIBLE ../experiments/red/xctx/instances/nest3_n24.pg 2 {'nD': -1}
+FEASIBLE ../experiments/red/xctx/instances/vrall_viol_n20.pg 4 {'T_cr': 5}
+FEASIBLE ../experiments/red/xctx/instances/xcov11_n20.pg 2 {}
+FEASIBLE ../experiments/red/xctx/instances/xctx_viol_n20.pg 5 {'nIt': np.float64(-0.245), 'nD': np.float64(-0.755)}
+INFEASIBLE ../experiments/red/xing/instances/fbref_cex_n32.pg 56 support 12 games ['../experiments/red/xing/instances/fbref_cex_n32.pg'] exact
+FEASIBLE ../experiments/red/xing/instances/j10_n24.pg 25 {'X_m1': np.float64(2.215), 'X_m2': np.float64(-0.354), 'X_m3': np.float64(0.019), 'X_cr': np.float64(0.014), 'X_ln': np.float64(-0.988), 'W_m2': np.float64(-0.037
+INFEASIBLE ../experiments/red/xing/instances/j4_n40.pg 106 support 14 games ['../experiments/red/xing/instances/j4_n40.pg'] exact
+FEASIBLE ../experiments/red/xing/instances/j5_n16.pg 30 {'X_m1': np.float64(1.896), 'X_m2': np.float64(-0.703), 'X_m3': np.float64(0.073), 'X_m4': np.float64(-0.002), 'X_cr': np.float64(1.845), 'W_m2': np.float64(0.103),
+FEASIBLE ../experiments/red/xing/instances/j7_n32.pg 50 {'X_m2': np.float64(-0.023), 'X_m3': np.float64(0.002), 'X_ln': np.float64(-0.061), 'W_m3': np.float64(0.001), 'W_cr': np.float64(0.616), 'W_ln': np.float64(-0.114)
+INFEASIBLE ../experiments/red/xing/instances/j7_n48.pg 78 support 14 games ['../experiments/red/xing/instances/j7_n48.pg'] exact
+FEASIBLE ../experiments/red/xing/instances/j8_n32.pg 54 {'X_m1': np.float64(20.122), 'X_m2': np.float64(-2.446), 'X_m3': np.float64(0.099), 'X_m4': np.float64(-0.001), 'X_cr': np.float64(2.62), 'X_ln': np.float64(-0.026)
+INFEASIBLE ../experiments/red/xing/instances/j8_n48.pg 86 support 14 games ['../experiments/red/xing/instances/j8_n48.pg'] exact
+FEASIBLE ../experiments/red/xing/instances/kw25_n32.pg 29 {'X_m2': np.float64(0.096), 'X_m3': np.float64(-0.011), 'X_cr': np.float64(0.33), 'W_m2': np.float64(0.171), 'W_m3': np.float64(-0.007), 'nIs': np.float64(-1.0)}
+FEASIBLE ../experiments/red/xing/instances/kw_n16.pg 12 {'X_m4': 2}
+FEASIBLE ../experiments/red/xing/instances/kw_n24.pg 20 {}
+FEASIBLE ../experiments/red/xing/instances/kw_n48.pg 40 {}
+FEASIBLE ../experiments/red/xing/instances/obr_eq_n24.pg 7 {'X_m3': np.float64(-0.012), 'X_m4': np.float64(0.001), 'W_m3': np.float64(-0.001), 'W_ln': np.float64(1.0)}
+FEASIBLE ../experiments/red/xing/instances/obr_n32.pg 22 {'X_m3': np.float64(-0.001), 'X_cr': np.float64(0.118), 'W_m3': np.float64(0.001), 'nIs': np.float64(-1.0)}
+FEASIBLE ../experiments/red/xing/instances/u1t_cex_n32.pg 12 {'X_m2': np.float64(-0.023), 'X_m3': np.float64(0.001), 'X_ln': np.float64(0.111)}
+FEASIBLE ../experiments/red/xing/instances/u1t_own6_n32.pg 9 {'X_cr': np.float64(0.034)}
+FEASIBLE ../experiments/red/xing/instances/u23sw64_n32.pg 16 {'X_m1': np.float64(-1.55), 'X_m2': np.float64(0.274), 'X_m3': np.float64(-0.016), 'X_cr': np.float64(0.281), 'X_ln': np.float64(0.304), 'W_m3': np.float64(-0.
+FEASIBLE ../experiments/red/xing/instances/u2flat73_n32.pg 16 {'X_m2': np.float64(-0.01), 'X_cr': np.float64(0.296), 'X_ln': np.float64(-0.37), 'W_m3': np.float64(0.004)}
+FEASIBLE ../experiments/red/xing/instances/u2flat_n32.pg 13 {'X_m3': np.float64(-0.021), 'X_m4': np.float64(0.001), 'X_cr': np.float64(0.323), 'X_ln': np.float64(0.125), 'W_m3': np.float64(0.024), 'W_m4': np.float64(-0.0
+FEASIBLE ../experiments/red/xing/instances/x31_cu16.pg 23 {'X_m2': 568, 'X_m3': -150, 'X_m4': 6, 'X_cr': 55667, 'W_m2': -21485, 'W_m3': 3379, 'W_m4': -132, 'W_ln': -74826}
+FEASIBLE ../experiments/red/xing/instances/x31_cu24.pg 22 {'X_m1': np.float64(0.069), 'X_m2': np.float64(0.019), 'X_m3': np.float64(-0.003), 'X_cr': np.float64(0.221), 'W_m2': np.float64(-0.045), 'W_m3': np.float64(0.005
+FEASIBLE ../experiments/red/xing/instances/x31_cu32.pg 49 {'X_m1': np.float64(0.81), 'X_m2': np.float64(-0.171), 'X_m3': np.float64(0.012), 'X_cr': np.float64(7.55), 'X_ln': np.float64(-0.117), 'W_m1': np.float64(6.363),
+FEASIBLE ../experiments/red/xing/instances/x31_cu32i.pg 42 {'X_m0': np.float64(-218.441), 'X_m1': np.float64(42.552), 'X_m2': np.float64(-3.063), 'X_m3': np.float64(0.097), 'X_m4': np.float64(-0.001), 'X_cr': np.float64(
+FEASIBLE ../experiments/red/xing/instances/x31_cu48.pg 46 {'X_m1': np.float64(0.276), 'X_m2': np.float64(-0.034), 'X_m3': np.float64(0.001), 'X_cr': np.float64(0.419), 'X_ln': np.float64(-0.027), 'W_m2': np.float64(0.004
+FEASIBLE ../experiments/red/xing/instances/x31_lem_e24.pg 54 {'X_m2': np.float64(-0.195), 'X_m3': np.float64(0.009), 'X_cr': np.float64(1.209), 'W_m0': np.float64(-2198.839), 'W_m1': np.float64(560.563), 'W_m2': np.float
+INFEASIBLE ../experiments/red/xing/instances/x31_lem_t32.pg 65 support 8 games ['../experiments/red/xing/instances/x31_lem_t32.pg'] exact
+FEASIBLE ../experiments/red/xing/instances/x31_nh_e24.pg 20 {'X_m2': np.float64(-0.061), 'X_m3': np.float64(0.006)}
+FEASIBLE ../experiments/red/xing/instances/x31_nh_r20.pg 15 {'nIs': np.float64(-1.0)}
+FEASIBLE ../experiments/red/xing/instances/x31_re24.pg 6 {'X_cr': np.float64(0.047)}
+FEASIBLE ../experiments/red/xing/instances/x31_ru24.pg 7 {'X_cr': np.float64(0.029), 'nIs': np.float64(-1.0)}
+FEASIBLE ../experiments/red/xing/instances/x31_rx32.pg 55 {'X_m1': np.float64(46.66), 'X_m2': np.float64(-6.101), 'X_m3': np.float64(0.264), 'X_m4': np.float64(-0.004), 'X_cr': np.float64(12.996), 'X_ln': np.float64(-0.0
+FEASIBLE ../experiments/red/xing/instances/x31_rx48.pg 53 {'X_m1': np.float64(0.88), 'X_m2': np.float64(-0.106), 'X_m3': np.float64(0.004), 'X_cr': np.float64(0.032), 'X_ln': np.float64(0.094), 'W_m0': np.float64(-374.04
+FEASIBLE ../experiments/red/xing/instances/x32_nest40.pg 58 {'X_m2': np.float64(-0.012), 'X_m3': np.float64(0.001), 'X_cr': np.float64(0.623), 'W_m2': np.float64(0.004), 'W_ln': np.float64(0.053), 'nIs': np.float64(-0.13
+FEASIBLE ../experiments/red/xing/instances/x32_rand16.pg 15 {'X_m3': 1112, 'X_m4': -78, 'nIs': -100000}
+FEASIBLE ../experiments/red/xing/instances/x32_rand24.pg 20 {'X_m4': -2}
+FEASIBLE ../experiments/red/xing/instances/x32_rand32.pg 29 {}
+FEASIBLE ../experiments/red/xing/instances/x32_rand48.pg 44 {}
+FEASIBLE ../experiments/red/xing/instances/x32_waves32.pg 81 {'X_m1': np.float64(14.688), 'X_m2': np.float64(-2.085), 'X_m3': np.float64(0.098), 'X_m4': np.float64(-0.002), 'X_cr': np.float64(24.088), 'X_ln': np.float64(
+FEASIBLE ../experiments/red/xing/instances/x32_waves48.pg 89 {'X_m2': np.float64(-83.23), 'X_m3': np.float64(3.627), 'X_m4': np.float64(-0.039), 'X_cr': np.float64(15.225), 'X_ln': np.float64(-14.073), 'W_m1': np.float64
+FEASIBLE ../experiments/si/coarse/instances/cls_rel_lev.pg 26 {'X_cr': np.float64(0.396)}
+FEASIBLE ../experiments/si/coarse/instances/jcl_lev_l_sc.pg 23 {'X_m2': np.float64(0.026), 'X_m3': np.float64(-0.002), 'X_cr': np.float64(0.163), 'W_m2': np.float64(0.289), 'W_m3': np.float64(-0.02), 'W_ln': np.float64(0
+FEASIBLE ../experiments/si/coarse/instances/jcl_x31_cu32i.pg 16 {'X_m2': np.float64(-0.001), 'X_cr': np.float64(0.026), 'W_m2': np.float64(0.011), 'W_m3': np.float64(-0.001)}
+FEASIBLE ../experiments/si/coarse/instances/jcl_x32_nest40.pg 36 {'X_m2': np.float64(0.009), 'X_cr': np.float64(0.102), 'W_m2': np.float64(0.007), 'W_cr': np.float64(0.071), 'nIs': np.float64(-0.274)}
+FEASIBLE ../experiments/si/coarse/instances/jcl_zcl_cu_n48.pg 23 {'X_cr': np.float64(0.238), 'W_m2': np.float64(0.001), 'W_cr': np.float64(0.049)}
+FEASIBLE ../experiments/si/coarse/instances/rel2_x31_rx48.pg 26 {'X_m1': np.float64(0.127), 'X_m2': np.float64(-0.013), 'X_cr': np.float64(0.031), 'X_ln': np.float64(0.022), 'W_m1': np.float64(0.736), 'W_m2': np.float64(
+FEASIBLE ../experiments/si/coarse/instances/rel_j7_n32.pg 22 {'X_m1': np.float64(0.545), 'X_m2': np.float64(-0.076), 'X_m3': np.float64(0.004), 'X_cr': np.float64(0.023), 'X_ln': np.float64(0.003), 'W_m2': np.float64(-0.
+FEASIBLE ../experiments/si/coarse/instances/rel_j7_n48.pg 23 {'X_m2': np.float64(-0.016), 'X_m3': np.float64(0.001), 'X_ln': np.float64(0.021), 'W_m2': np.float64(-0.011), 'W_m3': np.float64(0.001), 'W_cr': np.float64(0.
+FEASIBLE ../experiments/si/coarse/instances/rel_lev_l_sc.pg 19 {'X_m2': np.float64(-0.01), 'X_m3': np.float64(0.001)}
+FEASIBLE ../experiments/si/coarse/instances/rel_x31_cu32i.pg 19 {'X_m2': np.float64(-0.03), 'X_m3': np.float64(0.003), 'W_m2': np.float64(-0.076), 'W_m3': np.float64(0.006), 'W_cr': np.float64(0.065)}
+FEASIBLE ../experiments/si/coarse/instances/rel_x31_rx48.pg 24 {'X_m1': np.float64(0.144), 'X_m2': np.float64(-0.016), 'X_m3': np.float64(0.001), 'X_cr': np.float64(0.083), 'X_ln': np.float64(0.161), 'W_m2': np.float64(-
+FEASIBLE ../experiments/si/coarse/instances/rel_zcl_rx_n32.pg 21 {'X_m0': np.float64(347.817), 'X_m1': np.float64(-62.986), 'X_m2': np.float64(4.17), 'X_m3': np.float64(-0.12), 'X_m4': np.float64(0.001), 'X_ln': np.float
+FEASIBLE ../experiments/si/instances/red_cf1.pg 1 {'X_m4': 4}
+FEASIBLE ../experiments/si/orlens/instances/cycelim_cex_n32.pg 31 {'X_m1': np.float64(25.585), 'X_m2': np.float64(-2.857), 'X_m3': np.float64(0.106), 'X_m4': np.float64(-0.001), 'X_ln': np.float64(0.056), 'W_m2': np.floa
+FEASIBLE ../experiments/si/orlens/instances/elim24_p52.pg 59 {'X_m0': np.float64(-2089.343), 'X_m1': np.float64(314.618), 'X_m2': np.float64(-17.084), 'X_m3': np.float64(0.413), 'X_m4': np.float64(-0.004), 'X_cr': np.flo
+FEASIBLE ../experiments/si/orlens/instances/inr2_n32.pg 32 {'X_m0': np.float64(-2007.527), 'X_m1': np.float64(325.96), 'X_m2': np.float64(-19.662), 'X_m3': np.float64(0.522), 'X_m4': np.float64(-0.005), 'X_cr': np.float6
+FEASIBLE ../experiments/si/orlens/instances/lev_l_n20.pg 23 {'X_m2': np.float64(0.025), 'X_m3': np.float64(-0.004), 'X_ln': np.float64(-0.037), 'W_m2': np.float64(0.027), 'W_m3': np.float64(-0.002)}
+FEASIBLE ../experiments/si/orlens/instances/lev_l_n28.pg 25 {'X_cr': np.float64(0.225), 'W_m2': np.float64(-0.046), 'W_m3': np.float64(0.005)}
+FEASIBLE ../experiments/si/orlens/instances/lev_l_sc.pg 54 {'X_m0': np.float64(-20.784), 'X_m1': np.float64(4.794), 'X_m2': np.float64(-0.404), 'X_m3': np.float64(0.015), 'X_cr': np.float64(1.223), 'X_ln': np.float64(-0.
+FEASIBLE ../experiments/si/orlens/instances/lev_l_x.pg 56 {'X_m1': np.float64(11.125), 'X_m2': np.float64(-1.675), 'X_m3': np.float64(0.083), 'X_m4': np.float64(-0.001), 'X_ln': np.float64(0.127), 'W_m1': np.float64(-16.
+FEASIBLE ../experiments/si/orlens/instances/rise3_n32.pg 30 {'X_cr': np.float64(0.434), 'X_ln': np.float64(0.016), 'W_m2': np.float64(-0.036), 'W_m3': np.float64(0.003), 'W_ln': np.float64(-0.06)}
+FEASIBLE ../experiments/si/orlens/instances/run_m_inr2.pg 35 {'X_m1': np.float64(4.249), 'X_m2': np.float64(-0.572), 'X_m3': np.float64(0.025), 'X_cr': np.float64(0.63), 'X_ln': np.float64(-0.046), 'W_m1': np.float64(-0.
+FEASIBLE ../experiments/si/orlens/instances/run_m_n24.pg 22 {'X_m2': np.float64(0.003), 'W_m2': np.float64(0.098), 'W_m3': np.float64(-0.011)}
+FEASIBLE ../experiments/si/orlens/instances/run_x_inr2.pg 51 {'X_m0': np.float64(1.533), 'X_m1': np.float64(0.505), 'X_m2': np.float64(-0.124), 'X_m3': np.float64(0.008), 'X_cr': np.float64(3.101), 'X_ln': np.float64(0.3
+FEASIBLE ../experiments/si/orlens/instances/s_elim24_final.pg 66 {'X_m1': np.float64(52.288), 'X_m2': np.float64(-7.11), 'X_m3': np.float64(0.31), 'X_m4': np.float64(-0.004), 'X_cr': np.float64(1.483), 'X_ln': np.float64
+FEASIBLE ../experiments/si/orlens/instances/s_tp32_final.pg 43 {'X_m2': np.float64(-0.036), 'X_m3': np.float64(0.003), 'X_cr': np.float64(0.799), 'X_ln': np.float64(0.003), 'W_m1': np.float64(10.036), 'W_m2': np.float64(
+FEASIBLE ../experiments/si/orlens/instances/thclimb_n12_s11.pg 19 {'X_m3': 16, 'X_m4': -3, 'X_cr': 4498, 'W_m2': 626, 'W_m3': -50}
+FEASIBLE ../experiments/si/orlens/instances/thclimb_n16_s12.pg 17 {'X_m3': -57, 'X_m4': 6, 'X_cr': 2724, 'W_m2': -10982, 'W_m3': 1867, 'W_m4': -78}
+FEASIBLE ../experiments/si/xing/instances/ccl_fb2_n32.pg 33 {'X_m2': np.float64(-0.143), 'X_m3': np.float64(0.01), 'W_m2': np.float64(0.205), 'W_m3': np.float64(-0.015), 'W_cr': np.float64(0.743), 'nIs': np.float64(-0.10
+FEASIBLE ../experiments/si/xing/instances/ccl_fbx_n32.pg 31 {'X_cr': np.float64(0.494), 'nIs': np.float64(-0.532)}
+FEASIBLE ../experiments/si/xing/instances/ccl_w48_n48.pg 46 {'X_m2': np.float64(0.064), 'X_m3': np.float64(-0.004), 'X_cr': np.float64(0.088), 'W_m2': np.float64(0.047), 'W_m3': np.float64(-0.001), 'W_ln': np.float64(-0.
+FEASIBLE ../experiments/si/xing/instances/nofe_cyc_n8.pg 2 {'nIs': -1}
+FEASIBLE ../experiments/si/xing/instances/zcl_cu_n24.pg 21 {'X_m2': np.float64(-0.012), 'X_cr': np.float64(0.074), 'W_m2': np.float64(-0.039), 'W_m3': np.float64(0.007)}
+FEASIBLE ../experiments/si/xing/instances/zcl_cu_n48.pg 39 {'W_m2': np.float64(-0.036), 'W_m3': np.float64(0.002), 'W_ln': np.float64(-0.127)}
+INFEASIBLE ../experiments/si/xing/instances/zcl_fb1_n32.pg 71 support 14 games ['../experiments/si/xing/instances/zcl_fb1_n32.pg'] exact
+INFEASIBLE ../experiments/si/xing/instances/zcl_fb2_n32.pg 66 support 14 games ['../experiments/si/xing/instances/zcl_fb2_n32.pg'] exact
+FEASIBLE ../experiments/si/xing/instances/zcl_rx_n32.pg 66 {'X_m0': np.float64(-3479.21), 'X_m1': np.float64(707.608), 'X_m2': np.float64(-53.23), 'X_m3': np.float64(1.753), 'X_m4': np.float64(-0.021), 'X_ln': np.float64
+FEASIBLE ../experiments/si/xing/instances/zcl_rx_n48.pg 30 {'X_m2': np.float64(-0.026), 'X_m3': np.float64(0.002), 'X_ln': np.float64(-0.074), 'W_m2': np.float64(-0.005), 'W_ln': np.float64(-0.533)}
+FEASIBLE ../experiments/si/xing/instances/zcl_tp_n32.pg 62 {'X_m1': np.float64(9.007), 'X_m2': np.float64(-1.074), 'X_m3': np.float64(0.051), 'X_m4': np.float64(-0.001), 'X_cr': np.float64(0.639), 'X_ln': np.float64(-25.
+SUMMARY mom_lib41 games 333 infeasible 18 smallest [(16, 26, '../experiments/n5-exhaustive/instances/b5_os_n16.pg'), (20, 34, '../experiments/n5-exhaustive/instances/b5_os_n20.pg'), (28, 65, '../experiments/n5-exhaustive
