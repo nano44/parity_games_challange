@@ -1841,3 +1841,4 @@
 - 02:19Z (date -u): R81 LANDED (C90 Add. 1 PASS, checker 9777e9e6); GAPS UPDATE; NOW counters R17-R81.
 - 02:31Z (date -u): C90 Add. 2 (R81 landed check 6c1c9cba): RESULTS PASS; GAPS L-1 (my R81 UPDATE widened Corollary (ii)) → correcting UPDATE appended verbatim. LESSON (Lead): third GAPS L-item from paraphrase (C86, C88 date, C90); from now on GAPS UPDATE text is built from the entry's title clauses, not paraphrased.
 - 02:36Z (date -u): L-RED R100 899b274d (FB-LIN: no kill; climbs converge to one wave; 4 second-wave designs die on the reader-prefix inequality pair, READING) → next route (1) fallback analogue of runfam.
+- 02:41Z (date -u): C90 CLOSED (Add. 3 d40e292c). Nothing open at CHECKER; all reviewed packets landed (R17-R81). Working: L-SI 20 (RUN-LIN′), L-RED 24 (FB-LIN route (1)). Parked: REFEREE 17, REFEREE-2 19, CHECKER 13, L-NEW 30, L-COMP 6.
