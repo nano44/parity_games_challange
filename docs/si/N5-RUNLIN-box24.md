@@ -153,6 +153,16 @@ far end. I worked the design out on paper; this section records what each part n
   Continued 60 more steps (out/chain28b.log): 276 (n 120), 302 (130), 327 (140), 352 (150), 377 (160), 403 at n = 170 (2n + 63, 2.37n), still
   exactly +2.5 per vertex, no saturation in 90 steps. So the family at vertex 28 has run ≈ 2.5n − c: a third long wave that grows with n.
   The ratio tends to 2.5, a constant: RUN-LIN′ (linear) is untouched. A super-linear run needs the number of long waves to grow with n.
+- Growing the NUMBER of long pieces (Lead 02:04Z; DATA, written 02:4xZ by date -u). Three tries from runfam_K20 (n 59, run 124, G = 9,
+  three long pieces 26 / 36 / 43):
+  - optclone.py (copy an option of gate 5, 7 priority shifts × 3 edge modes per option): no gain (124).
+  - optadd.py (15 rounds × 300 random new Even options of gate 5, 2-4 random successors, random priority; kept only at +3): no gain (best 125).
+  - growclimb.py C = 2 (run − 2n), 3 seeds × ~12,000-17,000 steps: best 135 at n = 59 (x135_n59, 2.29n): G = 11, pieces 1, 13, 1, 1, 31, 6,
+    3, 29, 1, 1, 5, 43, i.e. FOUR pieces ≥ 13. Stretching it (stretchall.py, every two-way Even pair, priorities 0 / 3 / 6, both starts):
+    the best pair adds +3 (138 at n = 60, the old vertex-25 segment) and no pair adds +4. So no segment is walked by more than three
+    growing waves in anything found.
+- READING. In every instance found, one Odd gate makes at most ~3 long waves over a segment, and G stays ≤ 11. A super-linear run would
+  need G to grow with n while the pieces between σ̄ changes stay long; none of the searches produced that. OPEN.
 - Pins: experiments/si/runlin/instances/runfam_base_n39 (.pg 6b6fc369…, .start 24b9c519…), runfam_K10 (.pg faf218f1…, .start 56e4dec6…),
   runfam_K40 (.pg 287a185d…, .start bcbfeed3…); full sha1 in §6.
 
