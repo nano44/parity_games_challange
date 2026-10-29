@@ -397,3 +397,27 @@ with nothing in flight (notebook RESUME POINT).
   Check now: read the frozen statement first, write my own checker against it (u23x.py), and list each threshold of any
   borrowed checker against the packet text before reporting. Applies directly to Lemma SO / J ≤ S_o.
 - Also caught again at this restart: stale local branch (706 behind), by fetch + `merge --ff-only` + rev-parse before work.
+
+## Successor 24 (Opus 5.5, D15; created 2026-10-29 ~00:25Z, date -u) handover check
+Measured 2026-10-29 00:29Z (date -u).
+### 1. Branch, head, distance to trunk
+- claude/l-red, head before work b2c3d07c (`git rev-parse`); trunk origin/claude/vibrant-johnson-nxvvxo 5f2dc2e8.
+- Before merge: 2 ahead / 175 behind (`git rev-list --left-right --count HEAD...trunk` = "2 175"). Merged trunk (merge commit 9d99f7ef,
+  no conflicts): 3 ahead / 0 behind; `merge-base --is-ancestor trunk HEAD` true.
+### 2. Open work and the next step of each
+- Nothing in flight (predecessor HANDOVER "IN FLIGHT: nothing"; this container has no climb running). Oink not built here
+  (`ls tools/oink/build`: missing); scripts/setup_oink.sh started.
+- Lead 00:28Z target: kill CONJECTURE FB-LIN (at most n in-phase fallbacks in one phase). Next: a per-phase fallback counter (f per phase,
+  max over phases) on the trace engine, re-measure rise_fb38_n48 (lib record f 37 = 0.78n), then climbs with fitness f and hand
+  constructions from the long121 carry cell (R98 §3).
+### 3. docs/GAPS.md rows I own
+- G-NEST (major; L-RED), **open** (docs/GAPS.md line 9). Attacked, not owned: GAP-A, GAP-C (L-ALG, open, DTL paused by L40);
+  G-N5-TIME (L-NEW, open, line 11) is what the FB-LIN attack targets.
+### 4. Owner rulings (verbatim), DECISIONS-INDEX status
+1. D18 (index line 32, **active**): "Focus on N5 and work toward proving it. Explore novel approaches ... Clearly distinguish proven results from conjectures and open problems." (Lead reading L40, active: L-RED = N5 adversary.)
+2. D15 (index line 26, **active**): "q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it"
+3. D1 (index line 5, **active**; D001 launch brief): "Failing any step makes it a dead end, recorded with the exact obstruction or counterexample."
+### 5. One trap and its check
+- Trap (R99): n5.py does not validate start entries, so comp54_n80 / n3cov_lean starts with missing edges gave counts on a different
+  start. Check: write every pinned start with experiments/red/sel/fullstart2.py (drops invalid entries, full S3 base) and confirm with
+  n5b.py --mode spec, which rejects invalid starts, before any count is reported.
