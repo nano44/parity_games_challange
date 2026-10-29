@@ -1,0 +1,31 @@
+CMP_chk 7666
+FB_E_kind1 1
+FB_E_kind2 100
+FB_O_kind4 26
+FMON_chk 119178
+FSW_chk 11213
+LEN_chk 109744
+LEN_lonly 3268
+PH_chk 5407
+PH_eq 382
+RUNS 2000
+RUN_chk 2000
+SUCC_chk 59589
+SWRS_chk 11
+SWR_MUT2_V 3
+SWR_chk 37250
+TRANS 4077
+both_change 1466
+kind1 2481
+kind2 1072
+kind3 355
+kind4 169
+max_T 7
+max_lamUruns 5
+max_lamruns 7
+slack_S1_S2_den 10198
+slack_S1_S2_num 2744
+VIOLATIONS 3
+EX ('SWR_MUT2', 'rand524', 'stretch', 0, 4, 14, 2, 3)
+EX ('SWR_MUT2', 'rand898', 'stretch', 0, 7, 9, 2, 1)
+EX ('SWR_MUT2', 'rand898', 'stretch', 0, 7, 9, 2, 1)
