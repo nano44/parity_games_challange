@@ -26,6 +26,7 @@ Labels (D18 / L40): PROVED (lane) / CONJECTURE / OPEN / DATA / READING / DEAD. C
 | §10 | where carries come from (runquad: one high Odd rank swapped for a lower one plus the reactor chain); polynomial re-weightings Φ_d (d ≤ 3) keep the carries | DATA, READING |
 | §11 | CONJECTURE LEN-TOTAL (≤ n − 1 length-only rises per vertex per phase; would sharpen COMPOSE to m_E·(P* + n)) | CONJECTURE; DATA ≤ 0.875n |
 | §12 | Lemma INHERIT: a vertex's carry is the carry of the switch where its honest play diverges | PROVED (lane, generic case); DATA 0 failures |
+| §13 | T37's carries-vs-reopenings CONJECTURE: carries with NO reopening on the vertex's plays everywhere (runquad, s3quad: all); multiplicative form DEAD, additive form = the open core | DATA |
 | §8 | Lemma SW-RISE (a switch strictly raises the switcher's own Ξ off its honest cycle); SW-RUN per fallback-free run (Lead: SW-PER-VERTEX) | PROVED (lane); CONJECTURE, DATA ≤ 0.667n |
 
 ## 0. Setting
@@ -307,6 +308,32 @@ for any sequence of subsets of R_c (c fixed), the number of changes is ≤ (K(K+
   about how often one vertex's honest play is redirected through a carry-creating switch — in runquad once per pivot climb (the reactor chain
   enters y's play), while the reactors themselves create carries at nearly every step. No S4a-specific bound is in sight; this is the open
   core of G-N5-TIME after COMPOSE.
+
+## 13. L-LIT T37 §3's CONJECTURE (carries ≤ poly(n) × gate reopenings on the vertex's play), measured (Lead 11:47Z)
+- Operational reading (chg/reopen.py; T37 defines no counter): per λ-run and vertex y, NM(y) = y's carries; RW(y) = transitions with an Odd
+  switch (τ change) at a vertex of y's W-play (σ, τ) before or after; RH(y) = the same on y's honest play (σ, σ̄); RI(y) = states with an Odd
+  vertex of y's W-play whose Iτ is non-empty (an open Odd gate, taken or not). Every gate reopening in T37's sense (an Odd switch back into
+  a cycle region, i.e. (e, d) entering Iτ and being taken) is an RW- or RH-event on the plays it affects and an RI-state, so RW + RH + RI
+  over-count reopenings; a carry with RW = RH = RI = 0 has NO reopening on its vertex's plays in the whole λ-run.
+- DATA: carrying (vertex, λ-run) pairs with NO reopening and no open Odd gate on their plays (zero_reopen), and their largest NM:
+  | corpus | carrying pairs | zero_reopen | largest NM there | at |
+  | --- | --- | --- | --- | --- |
+  | runquad_K8_m30_n192 (R106, explicit start) | 121 | 121 | 8 | n 192 (vertex 18 etc.) |
+  | s3quad_K8_m30 (L-RED R107, S3 default start; copy chg/instances/red/, sha1 95763331…) | 271 | 271 | 8 | n 479 |
+  | s3quad_K3_m4 | 67 | 67 | 3 | n 137 |
+  | dlsep_kill_n70 | 73 | 73 | 5 | n 70 |
+  | seglast_kill_n110 | 131 | 93 | 4 | n 110 |
+  | alt_all pinned starts | 11,675 | 4,945 | 62 | red/usplit/instances/gate_K64_n581 (n 581) |
+  | lib41 | 10,676 | 5,028 | 18 | red/so/instances/xsn91_n48 (n 48) |
+  | experiments/si | 7,241 | 4,934 | 42 | root/instances/l121reader_n41 (n 41, NM 42 > n) |
+- FINDINGS. (1) In the literal multiplicative form («NM ≤ poly(n) × reopenings») the conjecture is DEAD on every instance above: carries
+  occur on vertices whose plays see no Odd switch and no open Odd gate during the whole λ-run (runquad, s3quad, dlsep_kill_n70: ALL carries
+  are of this kind; τ is constant there, I_τ = ∅). (2) With an additive term («NM ≤ poly(n) · (reopenings + 1)») it is consistent with all
+  data, but then its content for these instances is «NM ≤ poly(n) when τ is quiet», i.e. a bound on carries from σ-dynamics alone, which
+  is exactly the open core; reopenings are not where the carries of the known Θ(n²) and library instances come from. (3) The carries in
+  runquad / s3quad are inherited (§12) from Even switches (the pivots' and reactors'), never from σ̄ or τ.
+- READING for the proof side (L-NEW 31): any route to NM must handle τ-quiet λ-runs, where every carry is created by an Even switch and
+  copied upstream (INHERIT); gate reopenings can at most add to that.
 
 ## DONE / FINDINGS / NEEDS
 - DONE: this note; tools chg/suffix.py (SUFFIX-COUNT, BND with MUT, EARLY, INTER-JOINT), chg/dlock.py (deadlock anatomy and candidates),
