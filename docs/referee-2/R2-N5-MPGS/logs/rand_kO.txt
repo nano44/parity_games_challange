@@ -1,0 +1,14 @@
+MODE random 5000 8 20 3401 0 3 PCAP_LEN 6 PCAP 40
+B1_checks: 2732086
+CORB_checks: 1594
+CTL_flip_nohyp: 3719
+CTL_noH1: 1233
+CTL_noH1_checks: 15220
+CTL_noH2_checks: 157
+CTL_noH3: 384
+CTL_noH3_checks: 1757
+DENG_checks: 46244
+GS_checks: 2775
+runs: 15000
+states: 46244
+RESULT OK violations=0

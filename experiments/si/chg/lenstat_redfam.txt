@@ -1,0 +1,31 @@
+# L-RED family experiments/red/seg/mkk.py (claude/l-red 22d7c6ab) K = 2..24, generated into the L-SI scratchpad
+dl_total=110 frozen_len_1=110 frozen_maxsw_1=110 segs=11
+columns: ratio (b-a)/|E_b|, game, a, b, |E_b|, SW, FIN, DL, GR, TOT, MAXV, n
+TOP (0.98, 'k24.pg', 0, 48, 49, 25, 24, 24, 24, 49, 25, 239)
+TOP (0.976, 'k20.pg', 0, 40, 41, 21, 20, 20, 20, 41, 21, 199)
+TOP (0.97, 'k16.pg', 0, 32, 33, 17, 16, 16, 16, 33, 17, 159)
+TOP (0.96, 'k12.pg', 0, 24, 25, 13, 12, 12, 12, 25, 13, 119)
+TOP (0.952, 'k10.pg', 0, 20, 21, 11, 10, 10, 10, 21, 11, 99)
+TOP (0.941, 'k8.pg', 0, 16, 17, 9, 8, 8, 8, 17, 9, 79)
+TOP (0.923, 'k6.pg', 0, 12, 13, 7, 6, 6, 6, 13, 7, 59)
+TOP (0.909, 'k5.pg', 0, 10, 11, 6, 5, 5, 5, 11, 6, 49)
+LEN2 PASS
+LENE PASS
+LENG PASS
+FRZLEN PASS
+DLFIRST_V=11 DLRUN_V=11 GROWPERS_V=11 MATCH_V=11 NEWFINAL_V=99 deadlock=110 finalsteps=110 growsteps=110 late_flat=0 late_trans=209 maxdead_10=1 maxdead_12=1 maxdead_16=1 maxdead_2=1 maxdead_20=1 maxdead_24=1 maxdead_3=1 maxdead_4=1 maxdead_5=1 maxdead_6=1 maxdead_8=1 ngrun_1=110 segs_with_deadlock=11 zlate_ng=99 zlate_ng_inv=2376
+DLHS PASS
+DLSOMEH PASS
+DLNEXT PASS
+DLEND PASS
+NOEARLY PASS
+MATCH FAIL
+ZIG PASS
+DLSEP PASS
+GROWFIN PASS
+GROWPERS FAIL
+DLFIRST FAIL
+DLRUN FAIL
+NEWEDGE PASS
+NEWFINAL FAIL
+DLCONSEC PASS

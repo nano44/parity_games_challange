@@ -1,0 +1,5 @@
+carrying_vertex_runs=10676 nm_zero_max=18 ratio_max_x100=1800 zero_reopen=5028
+EXAMPLE ('ZERO', 'experiments/n5-exhaustive/instances/b6_xl_n48.pg', 3, 97, 35, 15, 48)
+EXAMPLE ('ZERO', 'experiments/n5-exhaustive/instances/b6_xl_n48.pg', 3, 97, 45, 16, 48)
+EXAMPLE ('ZERO', 'experiments/n5-exhaustive/instances/b6_xw_n48.pg', 5, 85, 37, 18, 48)
+EXAMPLE ('ZERO', 'experiments/red/so/instances/xsn91_n48.pg', 3, 115, 35, 18, 48)

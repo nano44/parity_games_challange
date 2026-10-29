@@ -1,10 +1,34 @@
 # L-LIT notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point
-2026-10-24 ~14:4xZ: PARKED (context ~500k, Lead's instruction) after T31 docs/lit/T31-mei-port.md: Mei Ĝ_h ported to parity
-(n = 8h+3, d = 8h+2; split-edge cost vertices; W layered by level, k below W-level 2 and decreasing in i). Mei Lemmas 2,4,5,6 PROVED-S;
-Dantzig-SSI 2^h-1 PROVED-S; N5 deviates at k = 0 (gate = all h levels) -> CONJECTURE O(h). Before: T25-T30. Successor: start from Lead.
+## Resume point (HANDOVER, 2026-10-29 ~12:2xZ by date -u; successor Opus 5.5, D15/D18; context ~670k, parked on Lead's word)
+DONE this session (all on claude/l-lit, pushed via scripts/push.sh, each VERIFY PASS):
+- a0e73a8f handover check (docs/agents/handover-checks/L-LIT.md).
+- T32 a06dc24a docs/lit/T32-n5-frontier-crossfield.md (cross-field scan; MATCH-Phi first form).
+- T33 f587cb2f docs/lit/T33-match-phi.md (+ T33-match-phi-check.py sha1 6853179b): MATCH-Phi self-contained; ARV transfer (only the
+  free schedule fails; ascending counter NM = 2^(k-2) - 1).
+- T34 f09b2b43 docs/lit/T34-friedmann-vs-n5.md (+ T34-gateshut-check.py sha1 7c33508b): Lemma GATE-SHUT; Friedmann's hiding void
+  under N5; CONJECTURE NO-HIDE.
+- PACKETS: P-N5-MPGS (A = MATCH-Phi + Corollary, B = GATE-SHUT) frozen a23179b0, sha1 24913a7f, quotecheck P-N5-MPGS-quotecheck.py
+  (quotes=9 bad=0). THE REVIEW OBJECT (Lead ruling 11:27Z). BOTH REFEREES SIGNED IT WITH NO GAP (Lead 12:14Z). P-N5-MATCHPHI
+  (12b7d12a) and P-N5-GATESHUT (1298d8b2) are superseded copies, not routed (their fixes files say so).
+- T35 5bdebc10 docs/lit/T35-howard-quadratic-vs-runquad.md (HZ/ACR lane x reset vs runquad; Zhong-Ye refutes HZ conjecture via
+  cycle means, blocked for N5; CONJECTURE CUT-Phi).
+- T36 609b9bac (+ b5fac397) docs/lit/T36-n5-reduction-map.md (owner-facing map: R47 -> R15/R80 -> SW-RETURN -> LEN-MONO -> COMPOSE
+  (l-si f372bc6b) -> MATCH-Phi -> OPEN NM*, NM*^U; VC-BOUND alternative).
+- T37 5d32f637 docs/lit/T37-exponential-families-classified.md (every parity/sink-MDP family is carry-type; 3-ingredient sequencing).
+  Its §3 CONJECTURE is DEAD (L-SI 390d2d8a §13; Dead ends).
+- T38 6e4d5655 docs/lit/T38-one-sink-n5.md (1-sink: one lambda-run, l = |P|, Even-side collapse). Lead deferred a short packet.
+- T39 14f1b4fa docs/lit/T39-tau-changes-per-lambda-run.md (tau-changes reduce to NM*^U via COMPOSE's tau-half; Lead: no packet change
+  needed, he adds the line in the RESULTS entry).
+IN FLIGHT: none.
+NEXT for the successor (Lead's instruction 12:14Z): when BOTH referees' §Cs on P-N5-MPGS are in, write docs/lit/P-N5-MPGS-fixes.md
+items with the referees' joint notes (append only; MPGS-fixes already has F1 (withdrawn) and F2 (Lead ruling 11:27Z: MPGS is the
+review object)). Include REFEREE-2 19's notes N-MP-1..5 on the identical (A) statements (docs/referee-2/R2-N5-MATCHPHI.md,
+referee-2 5ba3e21d): (1) the premise sentence says (MON) is used by Fact 1, but Fact 1 uses only DELTA; (2) the first term is sharp
+(longest MATCHED-only chain = K(K+1)/2, K <= 7); (3) Fact 1 needs the one-line additivity of weight; (4) §3's "max NM 31 on alt_all"
+misses gate_K64_n581 (NM 62), and "157 = 41 + 116" lacks a unit; (5) random games have NM <= 1. Never edit frozen packet text.
+NEEDS: none from the owner.
 
 ## Queue
 - Not opened (blocked or paywalled), needed only if a lane depends on them: Friedmann RAIRO 2011 (403); FHZ SODA/STOC 2011;
@@ -38,6 +62,16 @@ Dantzig-SSI 2^h-1 PROVED-S; N5 deviates at k = 0 (gate = all h levels) -> CONJEC
 
 - T18 (2026-10-18): PDFs in this session's scratchpad dl/<arXiv id>/p.pdf (+ hollanders-thesis, icaps-dmdp, anp); not committed.
   HDJ12 CDC paper itself not on arXiv; its theorem was read in Hollanders' thesis (same authors' result).
+
+- T32 (2026-10-29): PDFs + pdftotext in this session's scratchpad dl32/ (not committed). www.ece.iastate.edu fails TLS through the proxy (curl 60 even with --cacert); web.archive.org resets.
+
+- 2026-10-29 session: PDFs of T32-T39 are in this session's scratchpad dl32/ dl34/ dl35/ dl37/ dl39/ (not committed, lost with the
+  container); every one has its arXiv id / URL and sha256 in "Sources opened", so a successor can re-fetch and re-check.
+- www.ece.iastate.edu fails TLS via the proxy; web.archive.org resets; Springer chapter PDFs come back empty; Zwick's tau.ac.il papers
+  dir has no Howard paper. arxiv.org and export.arxiv.org work (https).
+- The "file changed on disk" notices for my docs/lit files on 2026-10-29 were spurious: the working tree was clean and P-N5-MPGS.md
+  kept sha1 24913a7f (checked twice).
+- T34-gateshut-check.py imports L-COMP's hn.py / census.py and n5b.py read-only; runs from the repo root; n=5, 30 starts ~25 s.
 
 ## Sources opened
 | source (arXiv id / DOI) | result used (theorem / section) | opened on | note |
@@ -265,9 +299,45 @@ Dantzig-SSI 2^h-1 PROVED-S; N5 deviates at k = 0 (gate = all h levels) -> CONJEC
 | HMZ 1008.0530 Lemma 6.1-6.4 p.11; Post-Ye 1208.5083 Lemma 3.5-3.6 p.8, Thm 3.7 p.9; Scherrer 1306.0386 Lemma 8 p.6, Lemma 4-5, 9, Thm 6-7 | re-read | 2026-10-24 | T30 |
 | NOT opened (T30) | HKZ SODA 2014 (SIAM HTML); Madani-Thorup-Zwick TALG 2010; Kitahara-Mizuno 1101.3821 (HTML); Mukherjee-Kalyanakrishnan; Melekopoglou-Condon 1994 original | 2026-10-24 | T30 |
 | arXiv 2610.27386 v1 (Mei), full §2-§3, §5.1 | Def. 1, Alg. 1 p.4; §3.1 eq. (3) + Table 1 p.5 (rendered as image); eq. (4)-(8) p.6; Lemma 2 p.6; Lemma 3-5 p.7-9; Lemma 6 p.9; Lemma 7 p.10; Thm 1 + pattern p.11; Table 2 p.12; Alg. 2 p.18; eq. (35), Thm 4 p.20 | 2026-10-24 | T31 |
+| arXiv 1111.4600 v1 (Charron-Bost, Függer, Nowak) sha256 f2d15914778… | §8.3 PDF pp.31-32: Full Reversal work vectors as min-plus linear system; routing θ(G0) ≤ (N−1)², trees 2(N−1) | 2026-10-29 | T32 E1 |
+| arXiv 1309.3445 v3 (Bond, Levine, Abelian networks I) sha256 c15cd4abd31… | Lemma 4.1-4.2 p.14, Lemma 4.3 (least action) p.14, Lemma 4.4 p.15, Thm 4.9 p.17 | 2026-10-29 | T32 E2 |
+| arXiv 1409.0169 v2 (Abelian networks II) sha256 b446ee69833… | downloaded, title checked only; not used | 2026-10-29 | T32 |
+| arXiv cs/0101014 v1 (Lonc, Truszczyński) sha256 ab28e0fcb7c… | p.4 GL antimonotone, lfp; Alg. 1 p.5; Thm 3.1 p.5-6; (W1)-(W2) p.7; O(|At|×size) p.9 | 2026-10-29 | T32 E3 (Van Gelder only through it) |
+| ECCC TR06-067 (Ackermann, Röglin, Vöcking) sha256 d13b2032bc8… | Thm 3 + Lemma 4 p.5; p.7 key-insight sentence; Thm 7, Def. 8 p.7; Lemma 9 p.8; Lemma 10 p.8-9 | 2026-10-29 | T32 E5 |
+| arXiv 2111.14050 v1 (Black, De Loera, Kafer, Sanità) sha256 28377b4a413… | Thm 1-3 p.3-4; Lemma 2 p.14; Cor. 1 p.15; Def. 4, Thm 5 p.15-16; Lemma 5 p.17 | 2026-10-29 | T32 E7 |
+| epub.ub.uni-muenchen.de/8502 (PODS'89 proceedings) sha256 8b369338a66… | TOC only: Van Gelder AFP listed p.1; text is a different paper | 2026-10-29 | T32, not a source |
+| arXiv 1103.0133 v1 (Ramachandran et al.) sha256 82204868e4b… | title + intro only (cites Busch-Tirthapura); not used | 2026-10-29 | T32 |
+| NOT opened (T32) | Busch-Tirthapura SICOMP 2005 (iastate TLS fail via proxy; Wayback reset x2); CFWW SIROCCO 2011 / TALG 2015; Van Gelder JCSS 1993; Gawlitza-Seidl ESOP 2007, FM 2008 (Springer); Tardos SIDMA 1988; Schurr-Szabó (not re-opened) | 2026-10-29 | T32 §8 |
+| ECCC TR06-067 (ARV), re-read for T33 | Lemma 10 p.8-9 (gadget states, "there exists a best response sequence"), p.10 "one after another", p.11 "Altogether this shows", p.3 tight PLS remark | 2026-10-29 | T33 §2.1 |
+| arXiv 1106.0778 v2 (Friedmann, LMCS 7(3:19)) sha256 46c96f44775aa2b0… (re-opened, = L-COMP's and L-NEW 29's file) | §4 p.6-7 (I^loc, I^glo, Lemma 4.3); §5 p.8 (1-sink, Lemma 5.1); §6.1 p.9-10 (simple cycle, Lemma 6.1, 6.2, hiding sentence); §6.2 p.11-12 (Lemmas 6.3, 6.4, purpose sentence); §8 p.26 intro; §8.1 Lemma 8.1; §8.2 stubborn cycle; §8.3 Table 6, Lemma 8.2; §8.4 Table 7, Fact 8.1, Lemma 8.3; §8.5 Thm 8.4 p.33 | 2026-10-29 | T34 |
+| Hansen-Zwick ISAAC 2010 talk slides (pdfs.semanticscholar.org/8eaf/45e9b507fc545fb05f018f2709a05e30c8f6.pdf) sha256 1ff1ee804ac47c08… | pp.6-19: main theorem p.14, construction p.15-17, LP search p.18, conjecture p.19 | 2026-10-29 | T35; paper itself NOT opened (Springer empty, no tau.ac.il copy) |
+| arXiv 2506.12254 v1 (Asadi, Chatterjee, de Raaij) sha256 78c4ee071961b89e… | p.2 Table 1 + HZ description; Conjecture 3.1; Thm 3.2 p.4; sequence (1), Lemma 4.1 p.5, intuition | 2026-10-29 | T35 |
+| arXiv 2609.40147 v2 (Zhong, Ye) sha256 dafeb81816af6582… (re-opened) | abstract, §1 Table 1; Thm 6.1 p.23 + refutation sentence; §6.1 construction, eq. (6.8), Lemma 6.2 p.26; Thm 7.2 p.33 + proof p.33-34 ("every N consecutive updates create a new cycle"); §8 | 2026-10-29 | T35 |
+| arXiv 2211.15602 v2 (Goenka et al.) sha256 e62fb2eceb298d98… | abstract; Defs 13-18; Lemmas 7-8; Thms 4-5; Cors 1-2 (§4) | 2026-10-29 | T35 |
+| arXiv 2505.00795 v1 (Mukherjee, Kalyanakrishnan) sha256 7b856cc9010c6c06… | abstract, §1.1, Thm 1.2 | 2026-10-29 | T35 |
+| arXiv 2610.22149 v1 (Loff, Skomra, smoothed PI/VI) sha256 18d7ea9dab8dff7e… | title only, not used | 2026-10-29 | T35 |
+| arXiv 1003.3418 v1 (Fearnley) sha256 0964f029581ae02e… (re-opened) | §4: sink c_{n+1} p.5; Prop. 2, 4 p.6; §4.2 deceleration lane p.6-7; pi^B p.9; Props 12-16 p.10-11; Thm 17, 18 p.12 | 2026-10-29 | T37 |
+| arXiv 1911.01074 v2 (Disser, Friedmann, Hopp; Zadeh) sha256 ba3242140c0832ac… | abstract; §2.1 sink games p.4; §3 cycle centers p.6; Thm 6.18 p.31 | 2026-10-29 | T37 |
+| arXiv 1305.3944 v1 (Avis, Friedmann; Cunningham) sha256 d1fafb8b5d0b822c… | abstract; sink game def p.10; Thm 4 p.15; Thm 6 | 2026-10-29 | T37 |
+| arXiv 1410.7871 v1 (FHZ errata) sha256 d89ec8c329a4f113… (re-opened) | p.1-3 status | 2026-10-29 | T37 |
+| arXiv 2309.02223 v1 (van Dijk, Loho, Maat) sha256 10e6794d82aba465… (re-opened) | abstract; p.3 key insight; Def. 2 p.4; Thm 1 p.2 | 2026-10-29 | T37 |
+| arXiv 2512.16684 v2 (Disser, Loho, Maat, Mosis) sha256 fa9b42e397e3e434… (re-opened) | abstract; Thm 4.3 p.13; Thm 5.1, 5.3 | 2026-10-29 | T37 |
+| arXiv 2509.16075 v2 (Maat) sha256 69706649fed1fac9… | abstract only (connection result, no lower-bound family) | 2026-10-29 | T37 |
+| arXiv 1106.0778 v2 (Friedmann), further | §6.3 cycle gate Table 3, Lemmas 6.5-6.6; §6.4 Table 4 p.16, Lemma 6.7 p.17; §6.5 phases, Lemma 6.11 p.21, 6.12 p.22 | 2026-10-29 | T37 |
+| arXiv 1008.0530 v1 (HMZ) sha256 f53a6b5127d95078… (re-opened) | Def. 2.6; Thm 6.5 p.11 | 2026-10-29 | T39 |
+| arXiv 1501.06484 v1 (Schewe, Trivedi, Varghese) sha256 7b68cc69de78bd90… | Alg. 2 + Condon sentence p.2; Alg. 3; §4.1 p.9 | 2026-10-29 | T39 |
+| arXiv 2606.29568 v1 (Mei, Sun, Ye) sha256 8bbb42f6834b6738… (re-opened) | Def. 7; Lemma 10, 11 p.15 | 2026-10-29 | T39 |
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
 - T17 process dead end: subagent GitHub MCP search outside the repo scope was a rule breach (see Things only I know); never repeat it.
+
+- T32 (2026-10-29): planned O2 entry Gawlitza-Seidl (abstract interpretation strategy iteration) dropped: no open copy (Springer). Planned USO jump entry dropped: Schurr-Szabó not re-opened.
+- T32 E2/E3: least action (abelian networks) and the alternating-fixpoint template (W2) do not give SEG-COUNT. Obstruction: N5's in-segment dynamics are not locally abelian and violate (W2); instance seglast_kill_n29 (L-SI LAY box27 §4), t = 2: vertex 1's intermediate switch 9 → 23, no settling in either frame.
+
+- T34 (2026-10-29): first form of GATE-SHUT without (H1)/(H2) is FALSE on H_n random starts (rand4, n = 3, it 0: cycle node e2 above gate 1, path sets equal, length decides); fixed by (H1), (H2); 247 reopenings, all outside the hypotheses.
+- T34: direct merge of Friedmann's gadgets with T33 §2.3 blocked by GATE-SHUT + S4a's choice by W (hiding void).
+
+- T37 §3 CONJECTURE (carries per vertex per lambda-run <= poly(n) x gate reopenings violating (H1)-(H3)): DEAD. Obstruction: carries occur in tau-quiet lambda-runs with no reopening and no open Odd gate on the vertex's plays. Instances: runquad_K8_m30_n192 (all 121 carrying pairs), s3quad_K3_m4 (all 67), dlsep_kill_n70 (L-SI 390d2d8a, N5-CHG-box28 §13).
 
 ## Corrections log
 - 2026-10-23 (T26): N8d-barrier.md §0 and R54 §0 put Lemma 4.75 / Thm 4.76 on p.187; opened PDF: printed p.186 (PDF p.202). Reported as caveat 4.

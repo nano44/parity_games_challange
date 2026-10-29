@@ -129,4 +129,16 @@ if git cat-file -e e3b435ab^{commit} 2>/dev/null; then
 else
   echo "P-N5-VC quotes: NOT RUN (e3b435ab not in this clone)"
 fi
+# Box 51 (successor 32): N5-VCPHASE: Proposition DLC (one-player family, phase VC d at n < 2^(2d+1); VC-PHASE DEAD), two engines, DS-PAIR data.
+v1=$(for d in 1 2 3 4; do python3 -I box51/dlccheck.py $d; done)
+v2=$(python3 -I ../si/root/n5bcmp.py box51/out/dlc_d3.pg box51/out/dlc_d3.start | head -1)
+v3=$(python3 -I box51/alt.py ../red/seg/instances/runquad_K3_m4_n54.pg)
+if [ "$(grep -c "DLC PASS" <<<"$v1")" = 4 ] && grep -q "d=4 n=455 len=31 traces on the 4 x-edges=16 phase_VC=4 DLC PASS" <<<"$v1" && \
+   grep -q "identical state sequences: True" <<<"$v2" && grep -q "max pairwise alt in a run: (10, " <<<"$v3" && \
+   [ "$(sha1sum box51/out/dlc_d4.pg | cut -d' ' -f1)" = "f77955fde03e36de8a1b3696523780368d28a184" ] && \
+   [ "$(sha1sum box51/out/dlc_d5.pg | cut -d' ' -f1)" = "345fae4c9644f63323c84846b0f85f10a78db837" ]; then
+  echo "box 51 DLC: d = 1..4 one phase, trace formula, phase VC = d; n5b identical (d 3); runquad_K3 alt 10; pins sha1: PASS"
+else
+  echo "box 51 DLC checks: FAILED"; exit 1
+fi
 rm -rf "$tmp"

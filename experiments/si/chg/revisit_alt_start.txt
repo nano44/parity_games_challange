@@ -1,0 +1,12 @@
+DEG_V=42 ENTER2_V=1 enter_max_1=1219 enter_max_2=29 enter_max_3=1 maxv_max=48 segs=1249
+EXAMPLE ('DEG', 'experiments/n5-epoch/instances/gci3_n24.pg', 1, 21, 4, 3, 2)
+EXAMPLE ('ENTER2', 'experiments/red/n3/instances/lagx10_n40.pg', 1, 12, [(39, 15)], 3)
+EXAMPLE ('DEG', 'experiments/red/n3/instances/lagx10_n40.pg', 1, 12, 39, 6, 4)
+EXAMPLE ('DEG', 'experiments/red/n5inj/instances/block_bk20.pg', 5, 14, 14, 3, 2)
+EXAMPLE ('DEG', 'experiments/red/n5inj/instances/block_bk32.pg', 8, 29, 4, 3, 2)
+EXAMPLE ('DEG', 'experiments/red/n5inj/instances/block_bk32.pg', 8, 29, 10, 3, 2)
+EXAMPLE ('DEG', 'experiments/red/n5inj/instances/block_bk32.pg', 8, 29, 26, 3, 2)
+EXAMPLE ('DEG', 'experiments/red/n5inj/instances/block_bk32.pg', 8, 29, 18, 3, 2)
+ENTER2 FAIL
+DEG FAIL
+DEG2 PASS

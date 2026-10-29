@@ -507,3 +507,121 @@ grep -q "switchers at t = 2: \[(1, 9, 23, 'switches again at', \[3\])\]" <<<"$o"
 o=$(python3 -I lay/relcheck.py lay/instances/seglast_kill_n110.pg lay/instances/seglast_kill_n110.start 2 8 2); grep -q "its REL segments: \[(2, 8)\] | \[a, b\] is one of them: True" <<<"$o"
 python3 -I root/n5bcmp.py lay/instances/seglast_kill_n29.pg lay/instances/seglast_kill_n29.start | grep -q "n5b iterations 9 fallbacks 0 states 10 | n5x states 10 | identical state sequences: True"
 echo "lay (box 27: seglast_kill_n29 kills SEG-LAST, run and segment recomputed from n5b alone): PASS"
+# box 27: lay/instances/psidrop_kill_n70 kills PSI-DROP (PSI1 = 24 at t = 2 and 3 in segment [2, 5]); SEG-LAST holds there; n5b identical.
+echo "9cd26eeded045052b769175e3c18dbb72936d404  lay/instances/psidrop_kill_n70.pg" | sha1sum -c --quiet
+echo "6ba80572a67873884d21a7cfd26140f7950c2d59  lay/instances/psidrop_kill_n70.start" | sha1sum -c --quiet
+o=$(python3 -I lay/psi.py --one lay/instances/psidrop_kill_n70.pg lay/instances/psidrop_kill_n70.start); grep -q "PSI0_V=2 PSI1_V=1 steps=3" <<<"$o"
+grep -q "EXAMPLE ('lay/instances/psidrop_kill_n70.pg', 2, 5, 2, 24, 24)" <<<"$o"
+python3 -I lwp/seglast.py --one lay/instances/psidrop_kill_n70.pg lay/instances/psidrop_kill_n70.start | grep -q "SEGLAST PASS"
+python3 -I root/n5bcmp.py lay/instances/psidrop_kill_n70.pg lay/instances/psidrop_kill_n70.start | grep -q "n5b iterations 9 fallbacks 1 states 10 | n5x states 10 | identical state sequences: True"
+python3 -I lay/psi.py --one lay/instances/seglast_kill_n29.pg lay/instances/seglast_kill_n29.start | grep -q "^PSI0_V=1 steps=2$"
+echo "lay (box 27: psidrop_kill_n70 kills PSI-DROP, n5b identical; seglast_kill_n29: PSI0 fails at the deadlock, PSI1 drops): PASS"
+# box 28 (docs/si/N5-CHG-box28.md): SEG-COUNT charging. Corollary BND (L(v) <= max(fW(jW v) - 1, fH(jH v))) and SUFFIX-COUNT hold on the
+# box-27 kill pins and the ladder; MUT=1 (bound lowered by one) bites. General (a) (EARLY) fails on wgrow_kill_n90 (H-sink 34 at t = 0).
+for i in seglast_kill_n29 seglast_kill_n110 psidrop_kill_n70; do
+  o=$(python3 -I chg/suffix.py --one lay/instances/$i.pg lay/instances/$i.start); for k in BND SUFFIX JOINTX INTEREARLY; do grep -q "^$k PASS" <<<"$o"; done
+done
+L=../red/ul/instances/ladderd0_k12_n48
+o=$(python3 -I chg/suffix.py --one $L.pg $L.start); for k in BND SUFFIX EARLY JOINTX INTEREARLY; do grep -q "^$k PASS" <<<"$o"; done; grep -q "hsink_inter=11 " <<<"$o"
+if ! MUT=1 python3 -I chg/suffix.py --one $L.pg $L.start | grep -q "^BND FAIL"; then echo "box 28 BND MUT did not bite"; exit 1; fi
+if ! MUT=1 python3 -I chg/suffix.py --one lay/instances/seglast_kill_n29.pg lay/instances/seglast_kill_n29.start | grep -q "^BND FAIL"; then echo "box 28 BND MUT n29"; exit 1; fi
+o=$(python3 -I chg/suffix.py --one lay/instances/wgrow_kill_n90.pg lay/instances/wgrow_kill_n90.start); grep -q "^EARLY FAIL" <<<"$o"
+grep -q "EXAMPLE ('EARLY', 'lay/instances/wgrow_kill_n90.pg', 0, 3, 0, 34, 0, 2)" <<<"$o"
+echo "si (box 28: BND and SUFFIX-COUNT on kill pins and ladder, MUT bites; general (a) dead on wgrow_kill_n90): PASS"
+# box 28: chg/instances/interjoint_kill_n70 kills INTER-JOINT: H-sink 10 (intermediate switches at 1, 2, 3) finalizes at 5 < s_h = 6;
+# n5b state sequence identical; chg/ijcheck.py recomputes run, REL segment, sink status and L(h) from n5b alone.
+echo "79a7c76af6e44bce47a6bd2c8e52b47ddf926d23  chg/instances/interjoint_kill_n70.pg" | sha1sum -c --quiet
+echo "9b313151306069cb9c1f470bf0846730ae111331  chg/instances/interjoint_kill_n70.start" | sha1sum -c --quiet
+o=$(python3 -I chg/suffix.py --one chg/instances/interjoint_kill_n70.pg chg/instances/interjoint_kill_n70.start); grep -q "^INTEREARLY FAIL" <<<"$o"
+grep -q "EXAMPLE ('INTEREARLY', 'chg/instances/interjoint_kill_n70.pg', 1, 7, 1, 10, 5, 6)" <<<"$o"; grep -q "^SUFFIX PASS" <<<"$o"
+o=$(python3 -I chg/ijcheck.py chg/instances/interjoint_kill_n70.pg chg/instances/interjoint_kill_n70.start 1 7 1 10)
+grep -q "its REL segments: \[(1, 7)\] | \[a, b\] is one of them: True" <<<"$o"; grep -q "REL-admissible on \[a, b\]: True | REL at a - 1: False" <<<"$o"
+grep -q "sigma_k(h) for k in \[a, b\]: \[32, 21, 36, 24, 24, 28, 28\] | y_h = 28" <<<"$o"; grep -q "jW(h) = 0 first W-settled state of jW(h): 7" <<<"$o"
+grep -q "h H-unsettled at t: True | jH(h) H-settled at t (h an H-sink): True | jW(h) W-unsettled at t (h not a W-sink): True" <<<"$o"
+grep -q "intermediate switch at t: True | L(h) = 5 | s_h = fW(jW h) - 1 = 6" <<<"$o"; grep -q "S1 rank order): 0" <<<"$o"
+python3 -I root/n5bcmp.py chg/instances/interjoint_kill_n70.pg chg/instances/interjoint_kill_n70.start | grep -q "n5b iterations 10 fallbacks 1 states 11 | n5x states 11 | identical state sequences: True"
+echo "si (box 28: interjoint_kill_n70 kills INTER-JOINT, reproduced from n5b alone): PASS"
+# box 28: chg/instances/growpers_kill_n73 kills GROW-PERSIST (segment [2, 5], pattern G F G); n5b identical. CONJECTURE DL-RUN (deadlock
+# steps only at run starts; DEAD later on L-RED R105, block below), DL-FIRST, DL-JOINT (NOEARLY), DL-SOMEH, ZIG on the 48 box-27 climb instances.
+echo "ff73bab1641c7f5b8f0756b25df2b24709d1bcdb  chg/instances/growpers_kill_n73.pg" | sha1sum -c --quiet
+echo "b496c9b9dffb33880c4fe632ad47d606ef8ffd84  chg/instances/growpers_kill_n73.start" | sha1sum -c --quiet
+o=$(python3 -I chg/dlock.py --one chg/instances/growpers_kill_n73.pg chg/instances/growpers_kill_n73.start); grep -q "^GROWPERS FAIL" <<<"$o"
+grep -q "EXAMPLE ('GROWPERS', 'chg/instances/growpers_kill_n73.pg', 2, 5, 'GFG')" <<<"$o"
+python3 -I root/n5bcmp.py chg/instances/growpers_kill_n73.pg chg/instances/growpers_kill_n73.start | grep -q "n5b iterations 9 fallbacks 1 states 10 | n5x states 10 | identical state sequences: True"
+o=$(START=1 python3 -I chg/dlock.py --list chg/climbcorpus_box27.lst); grep -q "deadlock=13 " <<<"$o"
+for k in DLRUN DLFIRST NOEARLY DLSOMEH ZIG DLSEP GROWFIN MATCH; do grep -q "^$k PASS" <<<"$o"; done; grep -q "^DLHS FAIL" <<<"$o"; grep -q "^DLNEXT FAIL" <<<"$o"
+if ! MUT=1 python3 -I chg/dlock.py --one lay/instances/seglast_kill_n29.pg lay/instances/seglast_kill_n29.start | grep -q "^DLRUN FAIL"; then echo "box 28 DLRUN MUT"; exit 1; fi
+echo "si (box 28: growpers_kill_n73 kills GROW-PERSIST; DL-RUN, DL-FIRST, DL-JOINT hold on 13 climb deadlocks, MUT bites): PASS"
+# box 28: L-RED's R105 instances (byte-identical copies of claude/l-red 22d7c6ab experiments/red/seg/instances) kill DL-RUN, DL-FIRST and
+# NEWFINAL (deadlocks at t = 0 and t = 2 of the run [0, 4]); DL-SEP, DL-NOCONSEC, FROZEN-COUNT, DL-JOINT, BND hold; n5b identical.
+echo "2783f64d82f271ebc9a26b470b26a9938fd5295c  chg/instances/red/segcount_kill_n20.pg" | sha1sum -c --quiet
+echo "97ba6b298917676e10cb209e21f49ee442b73686  chg/instances/red/segcount_kill_n20.start" | sha1sum -c --quiet
+echo "0d242a9b99f81b1f5dc91e32da1211d12c426982  chg/instances/red/segfam_k3_n29.pg" | sha1sum -c --quiet
+echo "c0f9d1af61d74af696e6b378f33279968b448bd3  chg/instances/red/segfam_k3_n29.start" | sha1sum -c --quiet
+o=$(VERB=1 python3 -I chg/dlock.py --one chg/instances/red/segcount_kill_n20.pg chg/instances/red/segcount_kill_n20.start)
+for k in DLRUN DLFIRST NEWFINAL MATCH; do grep -q "^$k FAIL" <<<"$o"; done; for k in DLSEP DLCONSEC FRZLEN NOEARLY DLSOMEH ZIG NEWEDGE GROWFIN; do grep -q "^$k PASS" <<<"$o"; done
+grep -q "\[0,4\] t=0 switch=\[(6, 0, 11)\]" <<<"$o"; grep -q "\[0,4\] t=2 switch=\[(6, 11, 18)\]" <<<"$o"
+o=$(python3 -I chg/dlock.py --one chg/instances/red/segfam_k3_n29.pg chg/instances/red/segfam_k3_n29.start); grep -q "deadlock=3 finalsteps=3 growsteps=3" <<<"$o"
+for k in DLSEP DLCONSEC FRZLEN NOEARLY; do grep -q "^$k PASS" <<<"$o"; done; grep -q "^DLRUN FAIL" <<<"$o"
+o=$(python3 -I chg/suffix.py --one chg/instances/red/segfam_k3_n29.pg chg/instances/red/segfam_k3_n29.start); grep -q "^BND PASS" <<<"$o"
+python3 -I root/n5bcmp.py chg/instances/red/segcount_kill_n20.pg chg/instances/red/segcount_kill_n20.start | grep -q "n5b iterations 6 fallbacks 0 states 7 | n5x states 7 | identical state sequences: True"
+echo "si (box 28: L-RED's segcount_kill_n20 / segfam_k3_n29 kill DL-RUN, DL-FIRST, NEWFINAL; DL-SEP, DL-NOCONSEC, FROZEN-COUNT, BND hold): PASS"
+# box 28: chg/instances/dlsep_kill_n70 kills DL-SEP, DL-NOCONSEC, FROZEN-COUNT, DL-SOMEH, ZIG: REL segment [0, 12], deadlocks 1-3, 5-9,
+# frozen run [0, 10) with 9 switchers; every deadlock reproduced from n5b alone (lay/relcheck.py); n5b state sequence identical.
+echo "e500ea47e1dc0163b32a97042ff9752daf6db83a  chg/instances/dlsep_kill_n70.pg" | sha1sum -c --quiet
+echo "f5569821f5d951de4922a4a9853b3bb4c9bf0284  chg/instances/dlsep_kill_n70.start" | sha1sum -c --quiet
+o=$(python3 -I chg/dlock.py --one chg/instances/dlsep_kill_n70.pg chg/instances/dlsep_kill_n70.start)
+for k in DLSEP DLCONSEC FRZLEN DLSOMEH ZIG; do grep -q "^$k FAIL" <<<"$o"; done; for k in NOEARLY GROWFIN NEWEDGE; do grep -q "^$k PASS" <<<"$o"; done
+grep -q "deadlock=8 finalsteps=5 growsteps=3" <<<"$o"
+for t in 1 2 3 5 6 7 8 9; do
+  o=$(python3 -I lay/relcheck.py chg/instances/dlsep_kill_n70.pg chg/instances/dlsep_kill_n70.start 0 12 $t)
+  grep -q "its REL segments: \[(0, 12)" <<<"$o"; grep -q "REL-admissible on \[a, b\]: True" <<<"$o"; grep -q "SEG-LAST fails at t: True" <<<"$o"; grep -q "S1 rank order): 0" <<<"$o"
+done
+python3 -I root/n5bcmp.py chg/instances/dlsep_kill_n70.pg chg/instances/dlsep_kill_n70.start | grep -q "n5b iterations 16 fallbacks 0 states 17 | n5x states 17 | identical state sequences: True"
+o=$(python3 -I chg/lenstat.py --one chg/instances/dlsep_kill_n70.pg chg/instances/dlsep_kill_n70.start); grep -q "^LEN2 PASS" <<<"$o"; grep -q "^LENE PASS" <<<"$o"; grep -q "^FRZLEN FAIL" <<<"$o"
+grep -q "EXAMPLE ('FRZLEN', 'chg/instances/dlsep_kill_n70.pg', 0, 12, 0, 10, 9)" <<<"$o"
+echo "si (box 28: dlsep_kill_n70 kills DL-SEP, DL-NOCONSEC, FROZEN-COUNT; 8 deadlocks in one REL segment, reproduced from n5b alone): PASS"
+# box 28: L-RED's R106 runquad_K8_m30_n192 (copy) kills LENE and LEN2 (one REL segment [0, 263], |E_b| = 49, SW = 47); BND, FROZEN-COUNT
+# hold. Lemma SW-RISE: every switch off the switcher's own cycle strictly raises its Xi (chg/pervert.py SWRISE PASS; reactors switch 15 times).
+echo "ebaa6ac57ec60948fb986210c27479cb3a7961d9  chg/instances/red/runquad_K8_m30_n192.pg" | sha1sum -c --quiet
+echo "4ba9f8605a1b18891dffb40d508bce929cf7c952  chg/instances/red/runquad_K8_m30_n192.start" | sha1sum -c --quiet
+o=$(python3 -I chg/lenstat.py --one chg/instances/red/runquad_K8_m30_n192.pg chg/instances/red/runquad_K8_m30_n192.start)
+grep -q "^LENE FAIL" <<<"$o"; grep -q "^LEN2 FAIL" <<<"$o"; grep -q "^FRZLEN PASS" <<<"$o"
+grep -q "TOP (5.367, 'chg/instances/red/runquad_K8_m30_n192.pg', 0, 263, 49, 47, 45, 218, 45, 481, 15, 192)" <<<"$o"
+python3 -I chg/suffix.py --one chg/instances/red/runquad_K8_m30_n192.pg chg/instances/red/runquad_K8_m30_n192.start | grep -q "^BND PASS"
+o=$(python3 -I chg/pervert.py --one chg/instances/red/runquad_K8_m30_n192.pg chg/instances/red/runquad_K8_m30_n192.start)
+grep -q "^SWRISE PASS" <<<"$o"; grep -q "^PERV PASS" <<<"$o"; grep -q "TOP (0.078, 'chg/instances/red/runquad_K8_m30_n192.pg', 0, 263, 263, 15, 15, 16, 192)" <<<"$o"
+echo "si (box 28: runquad_K8_m30_n192 kills LENE and LEN2; BND, SW-RISE hold; max 15 switches per vertex at n 192): PASS"
+# box 28 §9: Theorem COMPOSE (phase length <= sum (1 + RISE(c)) <= sum n (PCH(c) + 1)) and Corollary COMPOSE-RUN (whole run, Odd side on G^d)
+# measured with every inequality's slack on runquad, dlsep_kill_n70, segcount_kill_n20 and seglast_kill_n110; LEN-MONO (LDIR, LBLK) holds.
+o=$(python3 -I chg/compose.py --one chg/instances/red/runquad_K8_m30_n192.pg chg/instances/red/runquad_K8_m30_n192.start)
+for k in I0 I1 LDIR LBLK I2 I3; do grep -q "^$k PASS" <<<"$o"; done
+grep -q "TOP (263, 'chg/instances/red/runquad_K8_m30_n192.pg', 0, 263, 481, 1016, 195072, 265890048, 8, 15, 15, 15, 192)" <<<"$o"
+o=$(python3 -I chg/compose.py --one chg/instances/dlsep_kill_n70.pg chg/instances/dlsep_kill_n70.start); for k in I0 I1 LDIR LBLK I2 I3; do grep -q "^$k PASS" <<<"$o"; done
+grep -q "TOP (12, 'chg/instances/dlsep_kill_n70.pg', 0, 12, 39, 387, 26810, 14059640, 5, 6, 7, 4, 70)" <<<"$o"
+for f in chg/instances/red/segcount_kill_n20 lay/instances/seglast_kill_n110; do
+  o=$(MODE=run python3 -I chg/compose.py --one $f.pg $f.start); for k in RUNI0 R47 EI1 OI1 ELDIR OLDIR ELBLK OLBLK; do grep -q "^$k PASS" <<<"$o"; done
+done
+grep -q "TOP (16, 'lay/instances/seglast_kill_n110.pg', 0, 16, 27, 152, 16066, 0, 20, 1, 4, 2, 110)" <<<"$o"
+echo "si (box 28 §9: COMPOSE and COMPOSE-RUN inequalities hold with their slack on runquad, dlsep_kill_n70, R105 and n110 pins): PASS"
+# box 28: packet docs/si/P-N5-COMPOSE-box28.md (FROZEN): its 16 verbatim quotes, and the shifted-line control that must fail.
+python3 -I rund/quotecheck.py ../../docs/si/P-N5-COMPOSE-box28.md | grep -q "quotes=16 bad=0"
+python3 -I rund/quotecheck.py ../../docs/si/P-N5-COMPOSE-box28.md --mut | grep -q "QUOTES FAIL"
+echo "si (box 28: P-N5-COMPOSE quotes verbatim, shifted control fails): PASS"
+# box 28 §12: Lemma INHERIT (a vertex's carry is the carry of the switch where its honest play diverges): 0 failures on runquad and dlsep.
+o=$(python3 -I chg/carrysrc.py --one chg/instances/red/runquad_K8_m30_n192.pg chg/instances/red/runquad_K8_m30_n192.start)
+grep -q "^carries=856 nm_max=8 phases=1 src_even=856 srcs_max_per_phase=256$" <<<"$o"; grep -q "^INH PASS" <<<"$o"
+o=$(python3 -I chg/carrysrc.py --one chg/instances/dlsep_kill_n70.pg chg/instances/dlsep_kill_n70.start); grep -q "src_odd=26" <<<"$o"; grep -q "^INH PASS" <<<"$o"
+echo "si (box 28 §12: INHERIT holds on runquad (856 carries) and dlsep_kill_n70): PASS"
+# box 28 §13: carries with no gate reopening and no open Odd gate on the vertex's plays (L-LIT T37 §3's CONJECTURE, multiplicative form):
+# all 121 carrying (vertex, λ-run) pairs of runquad_K8_m30_n192 and all 67 of L-RED's s3quad_K3_m4 (copy, S3 default start).
+echo "675778af8ea65724a053fe1e4cbbf8b8fe33f8ad  chg/instances/red/s3quad_K3_m4.pg" | sha1sum -c --quiet
+python3 -I chg/reopen.py --one chg/instances/red/runquad_K8_m30_n192.pg chg/instances/red/runquad_K8_m30_n192.start | grep -q "^carrying_vertex_runs=121 nm_zero_max=8 ratio_max_x100=800 zero_reopen=121$"
+python3 -I chg/reopen.py --one chg/instances/red/s3quad_K3_m4.pg | grep -q "^carrying_vertex_runs=67 nm_zero_max=3 ratio_max_x100=300 zero_reopen=67$"
+echo "si (box 28 §13: carries without reopenings on runquad (121/121) and s3quad_K3_m4 (67/67)): PASS"
+# box 28 §14: R17's Lemma P breaks in two frames on runquad (σ̄ constant on the phase): W-better edges outside the arena (3,102 pairs, first
+# t = 0, x = 5, z = 4) and honest switches beaten in Ξ by S4a's τ-optimum (2,096, first t = 0, x = 3, z = 27); |D| = 32.
+o=$(python3 -I chg/r17.py --one chg/instances/red/runquad_K8_m30_n192.pg chg/instances/red/runquad_K8_m30_n192.start)
+grep -q "TOP (263, 'chg/instances/red/runquad_K8_m30_n192.pg', 0, 263, 481, 263, 0, 3102, (0, 5, 4, 6, 6), 192, 32, 2096, (0, 3, 27, 0, 9))" <<<"$o"
+grep -q "^ESWSB FAIL" <<<"$o"; grep -q "^D0 PASS" <<<"$o"
+echo "si (box 28 §14: R17's Lemma P fails in both frames on runquad with σ̄ constant): PASS"

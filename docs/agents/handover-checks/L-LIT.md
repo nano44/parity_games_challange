@@ -1,34 +1,35 @@
-# Handover check: L-LIT (successor, Opus 5.5 per D8; written 2026-10-16T10:38Z; LANE-RESTART step 3)
+# Handover check: L-LIT (successor 2, Opus 5.5, D15/D18; written 2026-10-29T12:23Z by date -u; LANE-RESTART step 3)
 Every answer measured from the repository at the time of writing (commands given), not recalled.
+(Predecessor's check of 10:01Z is in git history, a0e73a8f.)
 
 ## 1. Branch, head, distance to trunk
-- Branch `claude/l-lit`. Container start head = origin/claude/l-lit = 4f61b4c ("L-LIT T16 addenda ...").
-  `git rev-list --left-right --count 4f61b4c...origin/claude/vibrant-johnson-nxvvxo` -> 0 ahead, 808 behind; 4f61b4c is an
-  ancestor of trunk (all L-LIT work is on trunk).
-- After `git fetch origin` and `git merge --no-ff origin/claude/vibrant-johnson-nxvvxo` (trunk 3c6dfb6, D9): head = 35e4175
-  (merge commit), 1 ahead, 0 behind; merge-base = 3c6dfb6. This file's commit adds one more.
+- `git fetch origin`: the local checkout was STALE (`git status -sb` -> "behind 3889", local head dedbbe7e = T31).
+  `git merge --ff-only origin/claude/l-lit` -> head 83155d075 ("Merge remote-tracking branch 'origin/claude/vibrant-johnson-nxvvxo'
+  into claude/l-lit"); `git merge-base --is-ancestor e5ae41116 HEAD` -> yes (the HANDOVER commit is in).
+- `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` -> 2 ahead, 6 behind (trunk 923b5b125
+  "Lead: MPGS signed by both referees; REFEREE successor 18; T39; NOW; log"); merge-base efc8e00c6.
 
 ## 2. Open work and next step of each
-- T17 (D9, L28): search online for van Dijk's counter_dtl / any family aimed at Oink's DTL. Next step: Oink refs and history,
-  forks, Software Heritage, Wayback, author pages, web search; write docs/lit/T17-counter-dtl-search.md. Proceeds without "go".
-- Notebook queue (notes/L-LIT.md): unopened primaries (Friedmann RAIRO 2011, FHZ SODA/STOC 2011, Hansen thesis 2012, ...),
-  Semantic Scholar retry for 2511.03752, van Dijk 2024 chapter "Solving Parity Games, Very Slowly" (Q10). Next step: only if
-  a lane needs them.
+- STEP 1 (Lead 12:22Z): docs/lit/P-N5-MPGS-fixes.md, append items from REFEREE-2's §C (docs/referee-2/R2-N5-MPGS-C.md, C.4 joint list
+  of 6 + MATCHPHI carry-overs) and the reports (R-N5-MPGS.md, R2-N5-MPGS.md, R2-N5-MPGS-s20.md). Next: read those, draft; push only
+  after REFEREE 18's §C lands on claude/referee and is merged into the file.
+- STEP 2 (Lead 12:22Z): T40, literature on PI/SI where the improving set and the selection rule use different valuations (N5's FRAME
+  SPLIT, claude/l-si docs/si/N5-CHG-box28.md §14). Next: read §14, open sources, write docs/lit/T40-*.md (<= ~8 entries).
 
 ## 3. docs/GAPS.md rows I own
-- None. docs/GAPS.md at 3c6dfb6: open table empty; closed table only G1 (owner L-STRUCT).
+- None. `git show origin/claude/vibrant-johnson-nxvvxo:docs/GAPS.md | grep -n L-LIT` -> lines 10 (G-N1-LB, owner L-NEW) and 11
+  (G-N5-TIME, owner L-NEW), both open, L-LIT only cited as a source.
 
 ## 4. Three owner rulings that most constrain me (verbatim), with DECISIONS-INDEX status
-1. D1 (index: active):
+1. D18 (index line 32: active):
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+2. D1 (index line 5: active):
    > Never publish, post, email, submit or contact anyone outside the fleet. Anything external is my decision.
-2. D9 (index: active):
-   > Can you start a subsession that tries to look up if van dijk's DLT counter example is anywhere online available or posted
-   (Lead reading L28: DTL; read-only, no contact, no login; any find to the Lead at once.)
-3. D8 (index: active):
-   > I think it is okay if we switch to opus 5.5 until the weekly limit is reset no? They produce very similiar results on the benchmarks
-   (L27: Opus work labelled as such in the notebook.)
+3. D15 (index line 26: active):
+   > q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it
 
 ## 5. One trap that bit this lane, and the check that prevents it
-- Trap (notebook Corrections log, 2026-10-14): a first draft cited priority promotion as arXiv 1608.04548, an astrophysics
-  paper; the id was not opened before citing. Check: every cited id is opened and its title matched before it is written,
-  and recorded in the notebook "Sources opened" table (CLAUDE.md hard rule). Push only via scripts/push.sh, output not piped.
+- Stale local branch: this container started 3889 commits behind origin/claude/l-lit (measured above). Check: `git fetch origin`
+  then `git status -sb` and `git merge-base --is-ancestor <handover SHA> HEAD` before reading any file.
+- Older trap (notebook Corrections log, 2026-10-14): an unopened arXiv id (1608.04548, astrophysics) was cited. Check: every id is
+  opened and its title matched before it is written, and logged in "Sources opened".

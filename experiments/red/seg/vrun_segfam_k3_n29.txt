@@ -1,0 +1,62 @@
+game experiments/red/seg/instances/segfam_k3_n29.pg sha1 0d242a9b99f81b1f5dc91e32da1211d12c426982
+start experiments/red/seg/instances/segfam_k3_n29.start sha1 c0f9d1af61d74af696e6b378f33279968b448bd3
+n5b iterations 8 fallbacks 0 evals 35
+RESULT mode=n5 n=29 iterations=8 fallback=0 capped=0 evals=10 secs=0.00
+n5b: states 9 iterations 8 fallbacks 0 | n5.py (si.py engine): iterations 8 fallbacks 0 states logged 9
+state sequences identical: True
+n5b solution: zielonka(oink zlk) OK strategies verified
+n5.py solution: zielonka(oink zlk) OK strategies verified
+seg [0, 6] L 6 switchers 4 EXC 2 deadlock [0, 2, 4]
+  deadlock t=0: 3:0->11(I)
+  deadlock t=2: 3:11->22(I)
+  deadlock t=4: 3:22->27(I)
+  E_b [3, 4, 7, 8, 10, 20, 25] T [0, 12, 13, 15] jW {3: 10, 4: None, 7: None, 8: None, 10: None, 20: None, 25: None} jH {3: 8, 4: 3, 7: 3, 8: None, 10: 3, 20: None, 25: None}
+  t=0 Wsinks [(4, 2, 12, 'u'), (7, 5, 13, 'u'), (10, 8, 15, 'u')] Hsinks [(3, 0, 28, 11)] switches 3:0->11
+  t=1 Wsinks [(4, 2, 12, 'R'), (7, 5, 13, 'u'), (10, 8, 15, 'u')] Hsinks [(3, 11, 28, 11)] switches 4:2->12L
+  t=2 Wsinks [(7, 5, 13, 'u'), (10, 8, 15, 'u')] Hsinks [(3, 11, 28, 22)] switches 3:11->22
+  t=3 Wsinks [(7, 5, 13, 'R'), (10, 8, 15, 'u')] Hsinks [(3, 22, 28, 22)] switches 7:5->13L
+  t=4 Wsinks [(10, 8, 15, 'u')] Hsinks [(3, 22, 28, 27)] switches 3:22->27
+  t=5 Wsinks [(10, 8, 15, 'R')] Hsinks [(3, 27, 28, 28)] switches 3:27->28L 10:8->15L
+n 29 iterations 8 fallbacks 0 segments 1 maxEXC 2 max deadlocks/segment 3
+--- L-SI lay/relcheck.py 0 6 0
+n 29 states 9 fallback flags [0, 0, 0, 0, 0, 0, 0, 0]
+tau constant on [a, b]: True | no fallback at transitions a..b-1: True
+phase/run boundary before a: tau_(a-1) == tau_a: False | fallback at a-1: False
+run containing t (n5b: (lambda_Xi, tau) constant, no fallback): (0, 6) | its REL segments: [(0, 6)] | [a, b] is one of them: True
+|X_b| 8 |RO_b| 10 |CW_b| 4 |CH_b| 1
+REL-admissible on [a, b]: True | REL at a - 1: False
+switchers at t = 0: [(3, 0, 11, 'switches again at', [2, 4, 5])]
+SEG-LAST fails at t: True
+observed GEN_W failures on [a, b] (S1 rank order): 0
+--- L-SI lay/relcheck.py 0 6 2
+n 29 states 9 fallback flags [0, 0, 0, 0, 0, 0, 0, 0]
+tau constant on [a, b]: True | no fallback at transitions a..b-1: True
+phase/run boundary before a: tau_(a-1) == tau_a: False | fallback at a-1: False
+run containing t (n5b: (lambda_Xi, tau) constant, no fallback): (0, 6) | its REL segments: [(0, 6)] | [a, b] is one of them: True
+|X_b| 8 |RO_b| 10 |CW_b| 4 |CH_b| 1
+REL-admissible on [a, b]: True | REL at a - 1: False
+switchers at t = 2: [(3, 11, 22, 'switches again at', [4, 5])]
+SEG-LAST fails at t: True
+observed GEN_W failures on [a, b] (S1 rank order): 0
+--- L-SI lay/relcheck.py 0 6 4
+n 29 states 9 fallback flags [0, 0, 0, 0, 0, 0, 0, 0]
+tau constant on [a, b]: True | no fallback at transitions a..b-1: True
+phase/run boundary before a: tau_(a-1) == tau_a: False | fallback at a-1: False
+run containing t (n5b: (lambda_Xi, tau) constant, no fallback): (0, 6) | its REL segments: [(0, 6)] | [a, b] is one of them: True
+|X_b| 8 |RO_b| 10 |CW_b| 4 |CH_b| 1
+REL-admissible on [a, b]: True | REL at a - 1: False
+switchers at t = 4: [(3, 22, 27, 'switches again at', [5])]
+SEG-LAST fails at t: True
+observed GEN_W failures on [a, b] (S1 rank order): 0
+--- L-SI lay/segsw.py
+SEGCOUNT_V=1 deadlock_steps=3 exc_max_plus100=102 maxsw_4=1 segs=1 surplus=1
+SEGCOUNT FAIL
+--- L-SI lay/wsink.py
+SS_V=3 WSR_V=3 hsinks=6 segs=1 steps_hsink_switch=1 steps_unready_wsink=5 steps_with_bothsink=0 trans=6 wsinks=12 wsinks_ready=3 znear_h0=400 znear_w0=900 zsupport_inv_x100=433
+WSOFF PASS
+HSOFF PASS
+HSR PASS
+WSL PASS
+WSR FAIL
+SS FAIL
+NOSINK PASS

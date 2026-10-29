@@ -1,0 +1,5 @@
+SKIPPED_input=1 carrying_vertex_runs=7241 nm_zero_max=42 ratio_max_x100=4200 zero_reopen=4934
+EXAMPLE ('ZERO', 'experiments/si/root/instances/l121ereader_n41.pg', 1, 122, 6, 31, 41)
+EXAMPLE ('ZERO', 'experiments/si/root/instances/l121reader6_n46.pg', 1, 122, 6, 31, 46)
+EXAMPLE ('ZERO', 'experiments/si/root/instances/l121reader6_n46.pg', 1, 122, 42, 34, 46)
+EXAMPLE ('ZERO', 'experiments/si/root/instances/l121reader_n41.pg', 1, 122, 40, 42, 41)

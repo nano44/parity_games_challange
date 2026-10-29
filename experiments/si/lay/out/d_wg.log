@@ -1,0 +1,5 @@
+seed (-3295, 0, -11) n 90
+step 14 score (-300, 0, -1) n 94
+step 14 KILLSCORE -1 n 94
+step 16 score (0, 0, 0) n 94
+step 16 KILLSCORE 0 n 94

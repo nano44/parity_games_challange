@@ -1,0 +1,31 @@
+{
+ "model": "C",
+ "n": 1,
+ "all_starts": true,
+ "every": 1,
+ "offset": 0,
+ "counts": {
+  "games": 4,
+  "runs": 0,
+  "starts": 4,
+  "trajs_with_run": 0,
+  "phases": 0,
+  "segs": 0,
+  "gaps": 0,
+  "states": 4
+ },
+ "best": {
+  "exc": null,
+  "seg": null,
+  "gap": null,
+  "f": null
+ },
+ "hist": {
+  "exc": {},
+  "seg": {},
+  "gap": {},
+  "f": {}
+ },
+ "violations": [],
+ "seconds": 0
+}

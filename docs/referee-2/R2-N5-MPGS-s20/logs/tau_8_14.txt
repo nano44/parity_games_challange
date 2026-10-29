@@ -1,0 +1,12 @@
+MODE tau 20000 8 14 32 5 0.6 PCAP 64 FB1 200
+B1_pairs: 16239613
+ENGXI_checks: 1100040
+GS_paths: 2551
+GS_triples: 2219
+H1fail_triples: 14394
+H2fail_triples: 118
+H3fail_triples: 3165
+X1: 5189
+X3: 2005
+states: 100000
+RESULT PASS violations 0

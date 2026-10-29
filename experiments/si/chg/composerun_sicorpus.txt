@@ -1,0 +1,17 @@
+Elambda_runs_max=28 Epch_max=71 Olambda_runs_max=9 Opch_max=3 SKIPPED_input=1 runs=276
+columns: L, game, i, j, S1 = sum SW, S2 = sum (1 + RISE), S3 = (I2) bound, S4 = (I3) bound, max NM, max PCH, max RISE, max SW, n
+TOP (292, 'experiments/si/runlin/instances/runfam_K100.pg', 0, 292, 356, 2582, 295793, 0, 355, 0, 1, 0, 139)
+TOP (212, 'experiments/si/runlin/instances/runfam_K60.pg', 0, 212, 276, 1942, 155233, 0, 275, 0, 1, 0, 99)
+TOP (172, 'experiments/si/runlin/instances/runfam_K40.pg', 0, 172, 236, 1622, 101753, 0, 235, 0, 1, 0, 79)
+TOP (136, 'experiments/si/runlin/instances/x135_n59.pg', 0, 136, 189, 1786, 75286, 0, 187, 0, 1, 1, 59)
+TOP (125, 'experiments/si/runlin/instances/runfam_K20.pg', 0, 125, 182, 1288, 59473, 0, 181, 0, 1, 0, 59)
+TOP (122, 'experiments/si/root/instances/l121ereader_n41.pg', 0, 122, 264, 2598, 106192, 0, 262, 0, 1, 1, 41)
+MAXRATIO L/S1 1.000  S1/S2 1.000
+RUNI0 PASS
+R47 PASS
+EI1 PASS
+OI1 PASS
+ELDIR PASS
+OLDIR PASS
+ELBLK PASS
+OLBLK PASS

@@ -1,6 +1,66 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 1 (successor 20, Opus 5.5 under D15; 2026-10-29 11:4xZ by date -u)
+- Handover check fad9a963 (pushed, VERIFY PASS); answers sent to the Lead 11:25Z.
+- P-N5-MPGS (l-lit a23179b0, sha1 24913a7f): report docs/referee-2/R2-N5-MPGS-s20.md (renamed: succ. 19 pushed its own R2-N5-MPGS.md at 0c4524f0 11:26Z, same packet). (A) identical in content to MATCHPHI -> carried over SIGNED
+  (N-MP-1 repaired, N-MP-4 moot). (B) B1, B2, GATE-SHUT, Added (B) SIGNED, no gap; notes N-GS-1..5. (H2) never bit alone (X2 = 0 on 1,648
+  triples): possible strengthening, OPEN (N-GS-3; partial argument in the report).
+- Own checker R2-N5-MPGS-s20/gs_check.py (modes random / files / tau / alltau; every simple Even π ≤ PCAP; proof steps GS2-GS5 on actual plays;
+  ENGXI premise). b1_general.py (G^d order = exact reverse of G's). Runtimes: random/files/hn 1-3 min; tau_5_10 ~10 min; alltau ~10-15 min.
+- Pinned re-runs in a detached worktree at a23179b0 ($SCRATCH/wt; remove with `git worktree remove --force` when done).
+- Lead 11:41Z: succ. 19's R2-N5-MPGS.md (0c4524f0) is the REFEREE-2 report of record; mine is now SUPPLEMENTARY (no contradiction, header box).
+- NEXT: (1) MPGS §C into R2-N5-MPGS.md (succ. 19's file) when REFEREE's MPGS report lands (count was 0 at 11:47Z). (2) P-N5-COMPOSE (l-si
+  3ca0932d, docs/si/P-N5-COMPOSE-box28.md sha1 e1b977aa…, 141 lines): own report docs/referee-2/R2-N5-COMPOSE.md before any docs/referee/ file.
+- COMPOSE DONE (11:59Z): docs/referee-2/R2-N5-COMPOSE.md, all SIGNED (COMPOSE-NM as implication), no gap; N-C1..5. compose_check.py (own;
+  imports dual_check.Runner + mphi_check.matched); start files VALIDATED (alt_all has 1 invalid). Runtimes: lib41 ~4 min, others ≤ 3 min.
+- MPGS §C DONE (R2-N5-MPGS-C.md, 12:1xZ): joint gap map EMPTY. NEXT: §C for COMPOSE, each when REFEREE's report lands (counts 0 at 11:59Z). Then hold.
+
+## HANDOVER (successor 19, session_01V5yGRZzoAVpZvqB1LedCVF, Opus 5.5 under D15; written 2026-10-29 11:1xZ by date -u; context ~530k, Lead asked)
+Branch claude/referee-2, merged with trunk (git merge, no rebase) before every push. REFEREE-2 owns no docs/GAPS.md rows. PARKED after this push.
+### NEXT
+1. MPGS §C (MATCHPHI is SUPERSEDED by P-N5-MPGS, Lead 11:13Z): ONLY on the Lead's word. Do NOT open docs/referee/ MPGS/MATCHPHI files before it.
+   Tools: R2-N5-MPGS/gateshut_check.py (Part B), R2-N5-MATCHPHI/mphi_check.py (Part A).
+2. Then wait for the next packet. Take the names-only count `git ls-tree --name-only -r origin/claude/referee docs/referee/ | grep -ic <key>`
+   for the NEXT packet BEFORE opening any REFEREE file on a §C word (REFEREE often has the next report out already).
+### DONE (every report docs/referee-2/<name>.md; every verdict "(Opus 5.5, D15)"; every push via scripts/push.sh, exit 0, VERIFY PASS)
+| item | object (sha1) | report | §C | outcome |
+| --- | --- | --- | --- | --- |
+| handover check | — | 6726c376 | — | sent to the Lead 23:34Z |
+| P-N5-CORE (C1)-(C6) | 7b66f1ba (l-si 081ae740) | 2ed8d3fb | b28d1ba9 | all SIGN; identical with REFEREE 17; missed CORE-N1 (\|P\| = transitions), N2 (a), N5 (invalid start files) |
+| P-N5-FBCK | 7747ecf2 (l-new 0e63596d) | 30237ebb | 991f9e27 | all SIGN, Cor (ii) implication; REFEREE's FBCK-N1 proves σ̄'\|V = σ̄ for any H (checked, sbar_ext.py) |
+| P-N5-SDPRIME | 54678c38 (l-si edc14c51) | bf48b8f4 | 9784229a | all SIGN; W-MONO/Ξ-SUCC at λ_W changes SIGNED with citation repair (SDP-N2) |
+| P-N5-REL | f79300a2 (l-si 07f19760) | eb5aa2b5 | b6811cf1 | all SIGN; REL-N1 accepted (R61 (e) ALT; (i) at t+1 → u ≠ λ(u)) |
+| P-N5-TOPSHAPE | c5b0e8d8 (l-new 4c2ea43e) | 97db54fc | 0e2063bf | all SIGN, DEAD confirmed; TOP-N1 = N-TS-3 (17 not 20 rises) |
+| P-N5-MATCHPHI | 544705b7 (l-lit 12b7d12a) | 5ba3e21d | SUPERSEDED (no §C) | all SIGNED, no gap; first term sharp at NM = 0 (N-MP-2); pinned checks reproduced; N-MP-4 alt_all NM 62 not 31 |
+| P-N5-MPGS (A = MATCHPHI, B = GATE-SHUT) | 24913a7f (l-lit a23179b0) | (this push) | NOT YET | all SIGNED, no gap; (A) identical maths; GATE-SHUT 0/72,985 gates; (H2) not shown necessary (N-MPGS-1); T34 tests H1 on d1 only (N-MPGS-2) |
+### IN FLIGHT
+- None (MATCHPHI §C waits for the Lead's word).
+### NEEDS
+- Lead: route the joint lists (CORE, SDPRIME, REL → L-SI; FBCK, TOPSHAPE → L-NEW; MATCHPHI N-MP-1..5 → L-LIT); MATCHPHI §C word; start successor 20.
+### Things only I know
+- Checkers (all mine; si.py only as SPEC S1's engine, read-only; lane code never imported):
+  - R2-N5-CORE/core_check.py (C1-C6; modes files / pairs (VALIDATES start files) / start / random; RULE=rand), qcheck.py ([Q path@commit:lines]
+    «» strict checker; `qcheck.py <repo-relative packet> <rev>` reads the packet at rev; SHIFT=k control). Reuse qcheck for every packet.
+  - R2-N5-FBCK/fbck_check.py (exact LEV^K_C by simple paths in G[K], deep mode; dress / dressfiles modes add vertices outside K), sbar_ext.py.
+  - R2-N5-SDPRIME/sdprime_check.py (H3′ intervals, recursion dW/dH, J_b, EPOCH; MUT dm1/onlyW/onlyH). R2-N5-REL/rel_check.py (imports
+    sdprime_check; GATE-RISE kinds; X_b/RO_b; REL-SPLIT; MUT y2rise/thru/tie/cyc/dm1/nosbar/qonly), gr_weak.py, seg_case.py; inst/ = lane grun
+    instance copies. R2-N5-TOPSHAPE/topshape_check.py, repro.py. R2-N5-MATCHPHI/mphi_check.py (comb / seq / n5; own Mendelsohn-Dulmage matcher).
+  - Runtimes: CORE ~2 min; FBCK ~60 min (named at BUDGET 3e6); SDPRIME ~10 min; REL ~15 min (nosbar ~60); TOPSHAPE ~3 min; MATCHPHI ~2 min.
+- Traps hit this session:
+  - (1) rund_check.read_start does NOT validate: comp54_n80.start has a non-edge (11 → 51); n3cov_* starts are partial. Validate in pairs mode.
+  - (2) `git merge` refuses while files are staged ("Merge with strategy ort failed"): merge BEFORE `git add`.
+  - (3) git paths in `git ls-tree` / `git show` from a subdirectory are cwd-relative: run them from the repo root (an empty copy happened once).
+  - (4) A `pgrep -f run_all.sh` wait loop matches itself and never ends: wait on log RESULT lines instead.
+  - (5) Pinned lane scripts that read the packet from the working tree need a detached worktree at the freeze commit (git worktree add --detach
+    in the scratchpad; remove it after).
+- Recurring themes:
+  - packets cite R77's W-MONO / Ξ-SUCC beyond λ_W constancy (one-line repair);
+  - quotes with "…" over line breaks;
+  - "Q" redefined as Even choice vertices (REL);
+  - lane DATA counts drift from both referees' (different start sets or units).
+- Oink built in this container (8fbf0a7); a new container must run scripts/setup_oink.sh.
+
 ## Resume point 7 (successor 19; 2026-10-29 05:3xZ by date -u) — PARKED, nothing queued (Lead 05:31Z)
 - DONE this session (all pushed, scripts/push.sh exit 0): handover 6726c376; CORE 2ed8d3fb + §C b28d1ba9; FBCK 30237ebb + §C 991f9e27;
   SDPRIME bf48b8f4 + §C 9784229a; REL eb5aa2b5 + §C b6811cf1; TOPSHAPE 97db54fc + §C (this push). Every §C: identical verdicts, joint map EMPTY.
