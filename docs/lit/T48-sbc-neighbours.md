@@ -132,7 +132,9 @@ start file is given). Snare instances: python3 -I docs/lit/T47-gen-pgsolver-snar
 - OPEN (not closed by this): an embedding of σ̄ ALONE (Odd's trees, with Even's choices encoded non-linearly), or an embedding into a
   lifted graph where G-paths do not map injectively. A time-indexed lift is circular (size × #σ).
 
-### 1.5 For L-RED (READING; a design hint, not a construction)
+### 1.5 For L-RED (READING; a design hint, not a construction). RETRACTED 2026-10-29 ~16:50Z (T49 §5): the hint is circular. A clock
+that takes K distinct values crosses at most K breakpoints of any one-parameter family, and SBC ≤ #σ − 1 anyway (SBC-EQ). So an Even
+clock cannot amplify; the super-polynomial count has to come from the length of the σ-run itself. Kept below for the record.
 - Carstensen-type Odd networks driven by an Even "clock" are the natural quasi-polynomial attack on SF-POLY.
 - The 0/1-slope case is polynomial (Gusfield Thm 4.1; YTO ≤ n² trees), and bounded integer slopes give O(n²W) (Nishida). So the clock
   must realise super-polynomially many distinct slopes.

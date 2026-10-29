@@ -1,6 +1,13 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Box 57 log (successor 33; Lead 16:24Z: the CARRY-CUT route)
+- docs/new/N5-CARRY-box57.md. DATA: on switchbestexp the early carry is caused entirely by F's stale frame at Odd-reset steps. F keeps
+  g_j → h_j and x → y, where I^glo opens g_j → g′_j and routes x → w. Each lag is strict in both frames (forced by S4a′). The hybrid
+  box56/hybrid.py CLS=g corrects exactly 2^(N−1) − N steps and restores I^glo's 286 / 590 / 1198 / 2414 (N = 4..7). Lemma STALE PROVED
+  (lane). CONJECTURE CARRY-CUT OPEN, expected refutable by a gated counter (kill recipe §3 for L-RED via the Lead).
+- Fixes file P-N5-SF-fixes-box55.md F1-F6 (REFEREE-2 N-SF-1..6) pushed 122c2f68.
+
 ## Box 56 log (successor 33; Lead 15:54Z: attack SBC directly, else the weakest extra hypothesis)
 - docs/new/N5-SBC2-box56.md. (1) No potential. DATA: switchbestexp's σ̄ = N-bit counter on cycle centres CC(i), complete for N ≤ 4 (DSB 2^N),
   early carry at orbit j 219 → 221 for every N ≥ 4. CONJECTURE GROUP (per (λ-interval, σ̄ value) ≤ n − 1 Ξ-changes across stretches): 0
@@ -622,6 +629,7 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
   Lead 15:39Z as worded 15:27:39Z; Lead routes it to both referees. Corpus DATA: alt_all 413, sicorpus 276, fam 20, hard 73, all PASS.
 - Box 55 (2): N5-SBC-box55.md (SBC-EQ, NO-TRANSFER PROVED lane; M1-M4 DEAD; P-leapfrog obstruction at switchbestexp vertex 14N + 16).
 - Box 55 (3): N5-SF-gauntlet-box55.md (no step passed in full).
+- Box 57: N5-CARRY-box57.md (stale-reset lags = the early carry; Lemma STALE; CARRY-CUT OPEN). Fixes F1-F6.
 - Box 56: N5-SBC2-box56.md (counter DATA, CONJECTURE GROUP, Theorem EXIT under NT).
 ### IN FLIGHT
 - Nothing running. Referee reports on P-N5-SF will come: answers go into a NEW P-N5-SF-fixes-box55.md, never into the frozen packet.

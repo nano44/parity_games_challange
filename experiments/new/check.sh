@@ -219,4 +219,21 @@ if grep -q "^EXIT PASS" <<<"$x1" && grep -q "EXIT_V=0 FLIPMAX=3 FLIPMAX_GOOD=1 G
 else
   echo "box 56 EXIT checks: FAILED"; exit 1
 fi
+# Box 57 (successor 33): N5-CARRY: on switchbestexp_4, F 258 steps; the CLS=g hybrid (I^glo's step at the 4 stale-reset lags) restores I^glo's 286; forced strictly on switchbestexp_5 at 217.
+y1=$(CLS=g python3 -I box56/hybrid.py box54/out/switchbestexp_4.pg CLS | head -1)
+y2=$(python3 -I box56/hybrid.py box54/out/switchbestexp_4.pg F | head -1)
+y3=$(python3 -I box56/forced.py box54/out/switchbestexp_5.pg 217)
+if grep -q "^CLS g steps 286 glo_steps_used 4 patterns 27 distinct 16$" <<<"$y1" && grep -q "^F  steps 258 " <<<"$y2" && \
+   [ "$(grep -c "stale frame: F-option STRICTLY better | true frame: F-option STRICTLY worse" <<<"$y3")" = 2 ]; then
+  echo "box 57 CARRY: switchbestexp_4 F 258, hybrid with 4 stale-reset corrections 286 (= I^glo), lags strict in both frames: PASS"
+else
+  echo "box 57 CARRY checks: FAILED"; exit 1
+fi
+# P-N5-SF fixes file (successor 33): the quotes of F7-F13 hold at trunk e251d147; the shifted control fails.
+if python3 -I box49/quotecheck3.py ../../docs/new/P-N5-SF-fixes-box55.md | grep -q "quotes=6 bad=0" && \
+   ! python3 -I box49/quotecheck3.py ../../docs/new/P-N5-SF-fixes-box55.md --mut >/dev/null; then
+  echo "P-N5-SF fixes F7-F13: quotes PASS: PASS"
+else
+  echo "P-N5-SF fixes quotes: FAILED"; exit 1
+fi
 rm -rf "$tmp"
