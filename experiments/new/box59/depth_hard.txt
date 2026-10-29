@@ -1,0 +1,14 @@
+GAME new/box59/out/snare/fearnleysubexp_2.pg rc=0 COARSE fearnleysubexp_2.pg n 38 m 89 I 6 I/n3 0.00011 I/n2nm 0.000033 SBC_G 3 DEPTH 3 C 0 viol 3 first (0, 2) FAIL
+GAME new/box59/out/snare/fearnleysubexp_3.pg rc=0 COARSE fearnleysubexp_3.pg n 59 m 150 I 9 I/n3 0.00004 I/n2nm 0.000012 SBC_G 5 DEPTH 6 C 0 viol 5 first (0, 2) FAIL
+GAME new/box59/out/snare/fearnleysubexp_4.pg rc=0 COARSE fearnleysubexp_4.pg n 83 m 224 I 12 I/n3 0.00002 I/n2nm 0.000006 SBC_G 6 DEPTH 6 C 0 viol 6 first (0, 2) FAIL
+GAME new/box59/out/snare/fearnleysubexp_5.pg rc=0 COARSE fearnleysubexp_5.pg n 110 m 311 I 15 I/n3 0.00001 I/n2nm 0.000003 SBC_G 9 DEPTH 12 C 0 viol 9 first (0, 2) FAIL
+GAME new/box59/out/snare/friedmannsubexp_2.pg rc=0 COARSE friedmannsubexp_2.pg n 44 m 101 I 8 I/n3 0.00009 I/n2nm 0.000028 SBC_G 5 DEPTH 3 C 0 viol 5 first (0, 2) FAIL
+GAME new/box59/out/snare/friedmannsubexp_3.pg rc=0 COARSE friedmannsubexp_3.pg n 77 m 186 I 11 I/n3 0.00002 I/n2nm 0.000007 SBC_G 9 DEPTH 3 C 0 viol 9 first (0, 2) FAIL
+GAME new/box59/out/snare/friedmannsubexp_4.pg rc=0 COARSE friedmannsubexp_4.pg n 119 m 296 I 14 I/n3 0.00001 I/n2nm 0.000002 SBC_G 12 DEPTH 3 C 0 viol 12 first (0, 2) FAIL
+GAME new/box59/out/snare/friedmannsubexp_5.pg rc=0 COARSE friedmannsubexp_5.pg n 170 m 431 I 18 I/n3 0.00000 I/n2nm 0.000001 SBC_G 16 DEPTH 6 C 0 viol 16 first (0, 2) FAIL
+GAME new/box59/out/snare/switchbestexp_5.pg rc=0 COARSE switchbestexp_5.pg n 135 m 310 I 364 I/n3 0.00015 I/n2nm 0.000045 SBC_G 48 DEPTH 14 C 15 viol 42 first (0, 12) FAIL
+GAME new/box59/out/snare/switchbestexp_6.pg rc=0 COARSE switchbestexp_6.pg n 160 m 370 I 412 I/n3 0.00010 I/n2nm 0.000030 SBC_G 55 DEPTH 17 C 10 viol 51 first (0, 12) FAIL
+GAME new/box59/out/snare/switchbestexp_7.pg rc=0 COARSE switchbestexp_7.pg n 185 m 430 I 456 I/n3 0.00007 I/n2nm 0.000022 SBC_G 59 DEPTH 20 C 10 viol 55 first (0, 12) FAIL
+GAME new/box59/out/snare/switchbestexp_8.pg rc=0 COARSE switchbestexp_8.pg n 210 m 490 I 489 I/n3 0.00005 I/n2nm 0.000016 SBC_G 74 DEPTH 23 C 5 viol 72 first (0, 12) FAIL
+GAME new/box59/out/snare/fc_9.pg rc=0 COARSE fc_9.pg n 235 m 541 I 1360 I/n3 0.00010 I/n2nm 0.000032 SBC_G 80 DEPTH 5 C 25 viol 71 first (0, 12) FAIL
+GAME new/box59/out/snare/fc_10.pg rc=0 COARSE fc_10.pg n 260 m 600 I 1753 I/n3 0.00010 I/n2nm 0.000030 SBC_G 99 DEPTH 5 C 25 viol 90 first (0, 12) FAIL

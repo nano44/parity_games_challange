@@ -1,4 +1,5 @@
 # L-RED notebook (independent adversary lane)
+Successor 29 (session_01V5yGRa1utvwvH65mnBBssK, Opus 5.5) started 2026-10-29 18:10Z (date -u); handover check 27bebb98; STEP 1 = N5-SF degree > 3: R116 EXPONENTIAL (dwN); see "Successor 29".
 Successor 28 (session_01V5yGRXarwpixU1C9hcL21Z, Opus 5.5) HANDOVER written 2026-10-29 ~17:40Z (date -u) at ~400k context; see "Successor 28 HANDOVER".
 Successor 28 (session_01V5yGRXarwpixU1C9hcL21Z, Opus 5.5) started 2026-10-29 15:33Z (date -u); handover check c619e6eb; STEP 1 = SF-POLY attack (R114, R115); see "Successor 28".
 Successor 27 (session_01V5yGRZhxQ9YBy6C2G2tafC, Opus 5.5) HANDOVER written 2026-10-29 14:48Z (date -u) at ~390k context; see "Successor 27 HANDOVER".
@@ -22,6 +23,20 @@ Successor 15 PARKED ~09:40Z 2026-10-25 after box 38; RESUME POINT for successor 
 context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older notebook: `git show b0884407:notes/L-RED.md`.
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
+
+## Successor 29 (session_01V5yGRa1utvwvH65mnBBssK, Opus 5.5, D1/D18; started 2026-10-29 18:10Z, date -u)
+- Handover check 27bebb98 (stale clone 748 behind at b2c3d07c, ff'd to 745f3b07; trunk merged fdf01a3f). Oink built (8fbf0a7).
+- STEP 1 (Lead 18:10Z): N5-SF degree > 3. R116 docs/red/R116-sf-exponential.md: dwN = fcN + one Even repeater u_i on each v_i -> r_(i+1)
+  (edges {r_(i+1), v_(i+1)}, low odd priority ABOVE q): N5-SF iterations 19*2^N - 18, SBC_sigma 2^(N+1) - N - 2, n = 26N + 9, N 3..8 on
+  sf2 AND n5sf.py; Oink OK. Binary counter word (every set cascades). Plain N5 (n5b) linear, = fcN (41/47/55/62). I^glo same lengths.
+- Composition attempts first (scratch comp2.py, compose.py + Odd gadget o on d_A -> s_B or d_B -> s_A; 'oh' odd prio P(X)+1, 'ob' Odd
+  break to p_A, 'ohb' both): athru 12 it (A's root loses its lane role, LAM 1), sinkE,athru 58, aroot / root 121 (= parallel, o unused).
+  READING: with disjoint priority ranges, any read of one block by the other is decided by the upper block's part or by the sign of the
+  lower block's top (p_B), so it is constant: either never used or permanent. Superseded by R116 (no composition needed).
+- Things only I know: repeaters must (i) fall back to v_(i+1) (fallback p never re-arms: r never drops below the sink while a higher bit is
+  set) and (ii) have priorities above q's (below the cycle priority VJ ignores them and path length makes the forward chain better).
+  n5sf.py runs from a worktree /tmp/claude-0/lnew of origin/claude/l-new with absolute game paths.
+- Tools: experiments/red/sf/dlchain.py (dwN = dlchain.py N 1), instances/dw_3..8.pg.
 
 ## Successor 28 HANDOVER (written 2026-10-29 ~17:40Z, date -u; ~400k context)
 - DONE (claude/l-red, push.sh VERIFY PASS each push): c619e6eb handover check; 61ef6237 R114 (sf2 engine; switchbestexp SBC linear;
