@@ -1,0 +1,20 @@
+red/ctl/pivot_demo.pg red/ctl/pivot_demo.start
+new/box54/out/d_pivot_demo.pg new/box54/out/d_pivot_demo.start
+red/seg/instances/runquad_K3_m4_n54.pg red/seg/instances/runquad_K3_m4_n54.start
+red/seg/instances/runquad_K8_m30_n192.pg red/seg/instances/runquad_K8_m30_n192.start
+red/seg/instances/s3quad_K3_m4.pg
+red/seg/instances/s3quad_K8_m30.pg
+new/box54/out/d_runquad_K3.pg new/box54/out/d_runquad_K3.start
+new/box52/out/topfix_n3.pg new/box52/out/topfix_n3.start
+new/box52/out/topfix_n4.pg new/box52/out/topfix_n4.start
+new/box52/out/topfix_n6.pg new/box52/out/topfix_n6.start
+new/box52/out/topfix_n8.pg new/box52/out/topfix_n8.start
+new/box52/out/topfix_n10.pg new/box52/out/topfix_n10.start
+new/box54/out/d_hntop_n3.pg new/box54/out/d_hntop_n3.start
+new/box52/out/topfix_n8_cmp.pg new/box52/out/topfix_n8_cmp.start
+new/box51/out/dlc_d2.pg
+new/box51/out/dlc_d3.pg
+new/box51/out/dlc_d4.pg
+new/box54/out/d_dlc_d3.pg
+si/runlin/instances/runfam_K10.pg si/runlin/instances/runfam_K10.start
+si/runlin/instances/runfam_K40.pg si/runlin/instances/runfam_K40.start

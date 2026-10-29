@@ -1,0 +1,33 @@
+== pin 1: experiments/n5-exhaustive/instances/n3all_maxph_0.pg experiments/n5-exhaustive/instances/n3all_maxph_0.start
+stretches_E: 2
+stretches_O: 1
+max maxI: 2
+max maxLAM_E: 1
+max maxLAM_O: 0
+max maxSBC_E: 1
+max maxSBC_O: 0
+max maxstretch_E: 1
+max maxstretch_O: 1
+RESULT PASS violations 0
+== pin 2: experiments/new/box54/out/switchbestexp_2.pg
+stretches_E: 5
+stretches_O: 3
+max maxI: 58
+max maxLAM_E: 0
+max maxLAM_O: 2
+max maxSBC_E: 4
+max maxSBC_O: 2
+max maxstretch_E: 18
+max maxstretch_O: 0
+RESULT PASS violations 0
+== pin 3: experiments/red/n3/instances/n3cov_lean.pg experiments/red/n3/instances/n3cov_lean.start
+stretches_E: 12
+stretches_O: 6
+max maxI: 28
+max maxLAM_E: 4
+max maxLAM_O: 5
+max maxSBC_E: 11
+max maxSBC_O: 3
+max maxstretch_E: 6
+max maxstretch_O: 0
+RESULT PASS violations 0

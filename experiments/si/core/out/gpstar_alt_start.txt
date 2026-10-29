@@ -1,0 +1,5 @@
+D1=445 D1_GP_V=0 D1_R>0=83 D1_late>0=0 D2+=310 D2+_GP_V=0 D2+_R>0=37 D2+_late>0=0 ctrl=184 ctrl_GP_V=0 ctrl_R>0=0 ctrl_late>0=0
+max R (R, WCH, L, n, |D|, game, a, b): {'ctrl:R_T/(n-1)': (0.0, 0, 5, 32, 0, 'n5-epoch/instances/ffin12_n32.pg', 1, 6), 'ctrl:R/(n-1)': (0.0, 0, 5, 32, 0, 'n5-epoch/instances/ffin12_n32.pg', 1, 6), 'ctrl': (0, 5, 5, 32, 0, 'n5-epoch/instances/ffin12_n32.pg', 1, 6), 'D2+:R_T/(n-1)': (0.10752688172043011, 40, 45, 373, 4, 'red/usplit/instances/grow_K40_n373.pg', 0, 45), 'D2+:R/(n-1)': (0.1282051282051282, 5, 7, 40, 2, 'red/n3/instances/long90_k2_n40.pg', 21, 28), 'D2+': (40, 45, 45, 373, 4, 'red/usplit/instances/grow_K40_n373.pg', 0, 45), 'D1:R_T/(n-1)': (0.1111111111111111, 1, 2, 10, 1, 'red/so/instances/xrun8_n10.pg', 2, 4), 'D1:R/(n-1)': (0.12903225806451613, 4, 7, 32, 1, 'red/xing/instances/x32_waves32.pg', 47, 54), 'D1': (6, 12, 12, 48, 1, 'red/n5inj/instances/phase2_pk48.pg', 39, 51)}
+GP PASS
+RED PASS
+RLIN PASS

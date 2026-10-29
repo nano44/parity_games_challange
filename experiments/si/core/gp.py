@@ -7,13 +7,15 @@ GP: W_{a+j} >= B_j pointwise for every j <= b - a [GP_V]. PLUS=1: GP+ (also z in
 B0=W: B_0 := W_a with its play paths (base variant). MUT=all (every successor allowed) is the control that must bite (MUT=noU only weakens the statement).
 LATE = W-changing transitions k -> k+1 with k - a >= n - 1;
 R = adoptions (rho_{k+1}(x) = z != rho_k(x)) of an edge (x, z) that was NOT allowed (in the GP+ sense) at an earlier state of the phase;
-RED_V := WCH > n - 1 + n R (Corollary FW-R, a proved reduction; a violation would be a bug); RLIN_V := R > n - 1 (CONJECTURE R-LIN). Usage: gp.py --list FILE | --one GAME [START]"""
+RED_V := WCH > n - 1 + n R (Corollary FW-R, a proved reduction; a violation would be a bug); RLIN_V := R > n - 1 (CONJECTURE R-LIN,
+DEAD: core/instances/rlin_cex_n40). R_T := transitions with at least one late adoption; RED_V also checks WCH > (n - 1)(R_T + 1). Usage: gp.py --list FILE | --one GAME [START]"""
 import sys, os
 from collections import Counter
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, os.path.join(HERE, "..", "frz")); sys.path.insert(0, os.path.join(HERE, "..", "root"))
 from common import rows, load, readstart, phases, avoid
 from fwphase import fwphases
 sys.path.insert(0, os.path.join(HERE, "..", "tord")); from gates import basins
+STAR = os.environ.get("STAR") == "1"   # GP* (note §6): every successor except the BLOCKED ones (W_k(z) > W_k(rho_k x), (x, z) not in I_sigma); R then counts late adoptions*
 PLUS = os.environ.get("PLUS") == "1"   # GP+: also every z in the same basin S_d as x at a + j, if d satisfies G3 then (core note §2)
 C = Counter(); MX = {}; EX = []
 MUT = os.environ.get("MUT", "")
@@ -33,7 +35,7 @@ def _run(E, g, R, name):
                     while y != lam[x]: msk |= 1 << y; y = R[a]["wn"][y]
                     P.append((R[a]["W"][x], msk | (1 << y)))
             else: P = [((x, 0, 0), 1 << x) if lam[x] == x else None for x in range(n)]
-            viol = 0; late = 0; REF = set(); radopt = 0
+            viol = 0; late = 0; REF = set(); radopt = 0; rT = 0
             for k in range(a, b):
                 if k - a >= n - 1 and R[k]["W"] != R[k + 1]["W"]: late += 1
                 U = avoid(R[k]["wn"], D, n) if D else set(range(n))
@@ -48,24 +50,34 @@ def _run(E, g, R, name):
                     else:
                         al = {R[k]["s"][x]} | Is.get(x, set()) | {z for z in g.succ[x] if z in U}
                         if PLUS and Fk[x] != -1 and Fk[x] in G3k: al |= {z for z in g.succ[x] if Fk[z] == Fk[x]}
+                    if STAR and g.owner[x] == 1: pass
+                    elif STAR:
+                        kr = E.key(R[k]["W"][R[k]["s"][x]])
+                        al = {z for z in g.succ[x] if z in Is.get(x, set()) or z == R[k]["s"][x] or E.key(R[k]["W"][z]) <= kr}
                     if MUT == "all" and g.owner[x] == 0: al = g.succ[x]
                     for z in al:
                         if P[z] is None or (P[z][1] >> x) & 1: continue
                         v = E.extend(x, P[z][0])
                         if Q[x] is None or E.key(v) > E.key(Q[x][0]): Q[x] = (v, P[z][1] | (1 << x))
-                for x in range(n):                       # R: adoptions of edges refused cross-basin at an earlier state (§4)
+                r0 = radopt
+                for x in range(n):                       # R: adoptions of edges not ALLOWED+ at an earlier state (§4)
                     if g.owner[x] == 0 and R[k + 1]["s"][x] != R[k]["s"][x] and (x, R[k + 1]["s"][x]) in REF: radopt += 1
                     if g.owner[x] == 0 and D:
                         al = {R[k]["s"][x]} | Is.get(x, set()) | {z for z in g.succ[x] if z in U}
                         if Fk[x] != -1 and Fk[x] in G3k: al |= {z for z in g.succ[x] if Fk[z] == Fk[x]}
+                        if STAR:
+                            kr = E.key(R[k]["W"][R[k]["s"][x]])
+                            al = {z for z in g.succ[x] if z in Is.get(x, set()) or z == R[k]["s"][x] or E.key(R[k]["W"][z]) <= kr}
                         REF |= {(x, z) for z in g.succ[x] if z not in al}
+                rT += radopt > r0
                 P = Q; W = R[k + 1]["W"]
                 bad = [x for x in range(n) if P[x] is not None and E.key(W[x]) < E.key(P[x][0])]
                 if bad:
                     viol += 1
                     if len(EX) < 8: EX.append(("GP", cls, name, a, b, k + 1, bad[:5]))
             wch = sum(1 for q in range(a, b) if R[q]["W"] != R[q + 1]["W"])
-            if wch > n - 1 + n * radopt: C["RED_V"] += 1
+            if wch > n - 1 + n * radopt or wch > (n - 1) * (rT + 1): C["RED_V"] += 1
+            if rT / (n - 1) > MX.get(cls + ":R_T/(n-1)", (-1,))[0]: MX[cls + ":R_T/(n-1)"] = (rT / (n - 1), rT, wch, n, len(D), name, a, b)
             C[cls + "_R>0"] += radopt > 0
             if radopt > n - 1: C["RLIN_V"] += 1; EX.append(("RLIN", cls, name, a, b, radopt, n))
             if radopt / (n - 1) > MX.get(cls + ":R/(n-1)", (-1,))[0]: MX[cls + ":R/(n-1)"] = (radopt / (n - 1), radopt, wch, n, len(D), name, a, b)
