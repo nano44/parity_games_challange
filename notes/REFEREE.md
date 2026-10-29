@@ -13,13 +13,14 @@ HOLDING (Lead 13:08Z): next packet P-N5-VC deferred (its §4 CONJECTURE VC-N5 re
 | P-N5-SF (l-new 95a7a581, dbc2345f), first | R-N5-SF.md 500b51d7 | PENDING (Lead's word; no R2 SF file opened) | all SIGNED, no gap; SF-N1..N7 |
 | SF §C | R-N5-SF-C.md 6bbf0aed vs R2 3ae22a6d | done (§3 F7-F13 PENDING the Lead's SHA) | identical, map empty; F1-F6 clarifications; P1′ (F1/F7 cite R57 (b)) |
 | P-N5-GP (l-si d072bb28, cd4866df), first | R-N5-GP.md 7dffab64 | §C fee33b06 vs R2 894a1971: identical; line = GP-E1 ∪ N-GP-7, final 17:23Z line OK; G12 byte check PENDING; G2 widening | all SIGNED; E-item GP-E1 on the approved RESULTS line (drops L ≤ k − a and G_τ) |
-| P-N5-FRAME (l-new 938d8796, ce8c4803), first | R-N5-FRAME.md e9b32f72 | PENDING (no R2 FRAME file opened) | all SIGNED, no gap; FR-N1..N6 |
+| P-N5-FRAME (l-new 938d8796, ce8c4803), first | R-N5-FRAME.md e9b32f72 | §C c908a865 + §4 0b080b2c vs R2 7571febe: identical; line E-item Q undefined (R2 caught, I missed; my MATCHES withdrawn), H0 discharges it | all SIGNED, no gap; FR-N1..N6 = H1-H6 |
 ### Things only I know
 - scratch/compose_probe.py (MUT 1-4, MPHI=1 adds MATCH-Φ per λ-run for both players via matchphi_probe.corollary; keep MPHI to n ≤ 40).
   rand n 16-30 on rl_engine is too slow (stopped after 22 min): keep random batches at n ≤ 20.
 - scratch/sf_probe.py: own N5-SF (MUT 1 = N5's S4a, bites; MUT 2 = stretch n - 1, never bites); sf_inputs/ = box54/55 families.
 - scratch/gp_probe.py: frozen W-phases, GP* by capped DFS (CAP), MUT 1 (no L ≤ k − a), 2 (Odd off τ), 3 (no blocked cond.) all bite.
 - scratch/frame_probe.py: ODD-FREEZE witness DFS, LATE-RISE, W-runs (GP*-RUN), STRETCH-RED; MUT 1/3/4 bite, 2 ((H2)) never.
+- TRAP (new, FRAME): checking a RESULTS line, list EVERY symbol it uses and find each definition IN THE LINE (I missed an undefined Q).
 - TRAP (new): `pkill -f <pattern>` kills the bash -c wrapper of the calling shell itself (exit 144); kill by pid.
 
 ## HANDOVER (successor 17 -> successor 18), written 2026-10-29T11:28Z by date -u, context ~560k (Opus 5.5 under D15; label "(Opus 5.5, D15)")
@@ -282,6 +283,7 @@ Next (Lead 10:17Z): successor 14 takes P-N5-HON as the SECOND referee (Lead send
   witness scratch/stau_inputs/is0_c1o264.pg canonical start). §2 CHECKED: (1) YES (own closure = packet's list; 4 entry-named files omitted,
   none on the chain), (2) NO implicit use (own wider search incl. ASCII H', tie-breaks all S4a's or σ̄'s). Notes STAU-N1..N3.
 - Tools: scratch/stau_probe.py (own N5 vs N5^τ step at every state), scratch/stau/closure2.py (RESULTS closure); logs scratch/stau_logs/.
+- TRAP (new, FRAME): checking a RESULTS line, list EVERY symbol it uses and find each definition IN THE LINE (I missed an undefined Q).
 - TRAP (new): `pkill -f` / `pgrep -f` with a pattern that also occurs in the calling shell's command line kills / finds that shell
   (exit 144). Use `ps -eo pid,args | awk '$2=="python3" && $4=="<script>"'`.
 - TRAP (new): dual_probe.rand_ck(rng, n, k) loops forever when k > #possible Odd vertices; draw k <= n - 1.
