@@ -1,3 +1,5 @@
-h4len_max_plus1=7 h4p_fail=2 jcyc_vertices=39 segs=978 trans=4241
+h4len_max_plus1=7 h4p_fail=2 jcyc_vertices=39 kar_nontrivial=0 kar_steps=4241 segs=978 trans=4241
 LASTSTEP PASS
 CYCSET PASS
+KARENA PASS
+KSET PASS

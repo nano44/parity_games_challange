@@ -16,6 +16,7 @@ gaptrace.py, vstep.py, gapdepth.py, lastsw.py, seglast.py); outputs lwp/*.txt, l
 | §5 | Lemma P-ARENA (the (c, P)-level form of STATIC-DEPTH′ step (A)) and the monotonicity of settled sets | PROVED (lane), elementary |
 | §6 | where the proof route stands | READING, OPEN |
 | §7 | Theorem LAST-STEP: SEG-LAST holds under STATIC-DEPTH-REL's hypotheses ((H4′_rel), GEN_W), by a frontier argument; the frontier exists at every step of all 3,134 library segments; CONJECTURE CYC-SET (which would remove (H4′_rel)) DEAD; CONJECTURE SET-STEP open | PROVED (lane); DATA; DEAD; CONJECTURE |
+| §8 | Theorem K-REDUCTION: a terminal part of J_b on the unsettled vertices whose targets are in the arena settles in one step (contains LAST-STEP); its hypothesis K-ARENA DEAD (karena_kill_n71); in the library every step is covered by the singleton case | PROVED (lane); DATA; DEAD |
 
 ## 0. Setting
 As N5-GRUN-box25 §0, §4, §5. A run S: a maximal fallback-free stretch of one phase. REL segments, RO_b, X_b, CW_b, CH_b, L-cuts as in GRUN
@@ -153,13 +154,61 @@ DATA (lwp/laststep.py; FR_V = steps without a frontier vertex, FRL_V = frontier 
   strongly connected part K of J_b on N_t settles in one transition; step (A) (arena membership) is what is missing, since the targets'
   honest values are not final before K settles.
 
+## 8. Theorem K-REDUCTION (PROVED, lane): SEG-LAST without (H4′_rel), given K-ARENA
+Setting and premises as §7 (R82, R83 proof steps; R80 (a) EVERY-SWITCH; S4a's pointwise W-optimality over strategies using arena edges, as
+listed in R82). A(t, v) := {σ_t(v)} ∪ {w : (v, w) ∈ Iσ_t} (v's S4a arena at t). N_t := (X_b ∩ Even) ∖ (T ∪ S_t). A TERMINAL PART of J_b on N_t
+is a strongly connected set K ⊆ N_t such that every J_b-successor of a vertex of K lies in K or outside N_t.
+- K-ARENA at t: some terminal part K of J_b on N_t has σ_b(v) ∈ A(t, v) for every v ∈ K.
+Statement. Let [a, b] be REL-admissible with GEN_W (no (H4′_rel)). If K-ARENA holds at t ∈ [a, b) for the part K, then σ_s = σ_b on K for every
+s ∈ [t + 1, b], K ⊆ S_(t+1), and some v ∈ K has σ_t(v) ≠ σ_b(v): v switches at t for the last time in [a, b]. So if K-ARENA holds at every
+t < b, SEG-LAST (and SET-STEP) hold on [a, b] and b − a ≤ the number of Even vertices of X_b ∖ T that switch in [a, b] ≤ n − 1.
+Proof. N_t ≠ ∅ for t < b (§7, first bullet), so terminal parts exist (a sink component of the condensation).
+- (1) Off-K vertices on K's plays are settled. Let v ∈ K. On v's W-play at b, the first Even vertex outside T after v is a J_b-successor: in
+  K, or in S_t, and then every vertex after it on its W-play is W-settled from t (suffixes of a play that is constant on [t, b]). The same
+  holds for honest plays. Odd vertices on these plays use τ (W) or σ̄, constant on RO_b (honest); Even vertices of T keep σ_b (F1). So for
+  any state s ∈ [t, b] and any σ* with σ* = σ_b on K and σ* = σ_s off K, the W-play (honest play) of v ∈ K under σ* (with τ, resp. σ̄)
+  equals its W-play (honest play) at b: at every vertex the successor is the b-successor (W-settled Even vertices have σ_s = σ_b), and the
+  play ends in a cycle of CW_b (CH_b), which is a cycle of its frame at s (REL-admissible).
+- (2) s = t + 1. Let σ′ := σ_(t+1) with σ′ := σ_b on K. By K-ARENA, σ′ uses arena edges of state t. By (1) (with σ_(t+1) off K, s = t + 1),
+  W_σ′(v) = W_b(v) for v ∈ K. S4a's pointwise optimality gives W_(t+1)(v) ⊵ W_b(v), W-MONO gives ⊴, so they are equal. The cycle node of W_b(v)
+  is on a cycle of CW_b, a W-cycle at t + 1, so v's W-play at t + 1 ends in it; GEN_W gives v's W-play at t + 1 = its W-play at b, hence
+  σ_(t+1)(v) = σ_b(v), for every v ∈ K.
+- (3) Induction. If σ_s = σ_b on K for some s ∈ [t + 1, b − 1], K-ARENA at s holds trivially (σ_b(v) = σ_s(v)), and (2) at state s (off-K
+  vertices are settled from t ≤ s) gives σ_(s+1) = σ_b on K. So σ = σ_b on K on [t + 1, b], and (1) gives K ⊆ S_(t+1).
+- (4) If σ_t = σ_b on K, (3) runs from s = t and (1) gives K ⊆ S_t, against K ⊆ N_t. So some v ∈ K has σ_t(v) ≠ σ_b(v) = σ_(t+1)(v). □
+Corollary (contains Theorem LAST-STEP). K-ARENA holds automatically for a terminal part that is a single vertex {v}: v ∉ T is not its own
+J_b-successor, so all J_b-successors of v are in S_t, then (F1), (F2) backwards put y := σ_b(v) in S_t, and step (A) of STATIC-DEPTH′ puts y
+in A(t, v). Under (H4′_rel) every terminal part is a single vertex. So K-ARENA can fail only when EVERY terminal part of J_b on N_t is a
+J_b-cycle (size ≥ 2), and SEG-LAST without (H4′_rel) is reduced to: CONJECTURE K-ARENA for terminal J_b-cycles of unsettled vertices.
+GEN_W is still used (step (2)); CONJECTURE STATIC-DEPTH′-TIE stays open.
+DATA (lwp/laststep.py KARENA_V: steps with no arena-complete terminal part; KSET_V / KLAST_V: an arena-complete part that is not settled
+from t + 1 / has no last switch at t, which the theorem excludes under GEN_W; lwp/laststep_*.txt, the same runs as the §7 table):
+- alt_all (4,478 steps; pinned starts 5,384) and lib41 (4,241): KARENA_V = KSET_V = KLAST_V = 0, and NO step has a nontrivial terminal part
+  (kar_nontrivial = 0): in the library every step is covered by the singleton case, i.e. by the Corollary, even in the 10 (H4′_rel)-failing
+  segments (their J_b-cycles are not terminal among the unsettled vertices, or are settled).
+- cycset_kill_n60 (the climb instance of §7): one step (t = 0) with a nontrivial terminal part K ⊇ {1, 37}; K-ARENA holds there and K
+  settles from t + 1, as the theorem says.
+- READING (where K-ARENA can fail). Inside a terminal part K the honest J_b-edges form an acyclic graph (an honest J_b-cycle would be an honest
+  cycle at b, in T_H), so K has H-EXIT vertices, whose honest J_b-successor lies outside K (in S_t). For an H-exit v, y := σ_b(v) is
+  H-settled from t and step (A) gives y ∈ A(t, v). So K-ARENA can fail only at a vertex v ∈ K with σ_t(v) ≠ σ_b(v) whose honest
+  J_b-successor u is in K and whose target's honest value Ξ_t(σ_b v) still rises before v's last switch, i.e. u is not yet at its b-value at t.
+- CONJECTURE K-ARENA is DEAD (DEAD.md box 26): lwp/xclimb.py OBJ=KA (score: steps with a nontrivial terminal part; kill = K-ARENA / KSET /
+  KLAST / SEG-LAST failure; lwp/out/ka*.log) from cycset_kill_n60 found lwp/instances/karena_kill_n71.pg (n 71, sha1
+  8b659497688c47075235957ae1e636b5564ec235) in 511 steps: at t = 0 the only terminal part K = {1, 3, 35, 41, 46, 50, 64} has 41 with
+  σ_0(41) = 50 ≠ 35 = σ_b(41) and (41, 35) not improving at 0, exactly the case of the READING above (41's honest J_b-successor 35 is in K and
+  switches 46 → 50 at 0). K settles in two layers (from states 1 and 2). SEG-LAST holds: 1 and 35 switch at 0 for the last time.
+- So SEG-LAST without (H4′_rel) needs a LAYERED form of the theorem: vertices of K whose targets are in the arena take them for good, the
+  next honest layer follows. The partial strategy σ′ (σ_b on the arena-ready vertices only) breaks step (2), because their W-plays pass
+  vertices of K that are still off target. OPEN.
+
 ## DONE / FINDINGS / NEEDS
 - DONE: this note; experiments/si/lwp/ tools and logs; pins in §1, §7 (lwp/instances/); DEAD entries in docs/si/DEAD.md (box 26);
   check.sh blocks "box 26".
 - FINDINGS: (1) L-WAVE′ survives four structurally different kill searches (random starts, random games, pure-length regime, depth-excess
   climb); gap = n − 1 is reached again (xk_k) and never beaten. (2) DEAD: VS-STEP, PS-STEP, PV-STEP, GAP-DEPTH, per-gap LAST-SWITCH (lwp_a,
-  xk_k), CYC-SET (run34_n40, cycset_kill_n60). (3) CONJECTURE SEG-LAST (0 failures in 3,134 segments; it fails on pieces and runs, which serve as controls)
+  xk_k), CYC-SET (run34_n40, cycset_kill_n60), K-ARENA (karena_kill_n71). (3) CONJECTURE SEG-LAST (0 failures in 3,134 segments; it fails on pieces and runs, which serve as controls)
   would remove (H4′_rel) and GEN_W from STATIC-DEPTH-REL; SWL, NEVEN and SET-STEP hold in the data. (4) PROVED (lane): monotone settled sets;
   Lemma P-ARENA; Theorem LAST-STEP (SEG-LAST under (H4′_rel) + GEN_W, by a frontier argument that uses (H4′_rel) only to exclude an
-  unsettled J_b-cycle). L-WAVE′, SEG-LAST without (H4′_rel), STATIC-DEPTH′-TIE stay OPEN.
+  unsettled J_b-cycle); Theorem K-REDUCTION (§8: a terminal part of J_b on the unsettled set whose targets are all in the arena settles
+  in one step; contains LAST-STEP). L-WAVE′, SEG-LAST without (H4′_rel), STATIC-DEPTH′-TIE stay OPEN.
 - NEEDS: none from the owner.
