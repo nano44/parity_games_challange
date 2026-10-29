@@ -490,3 +490,25 @@ Measured 2026-10-29 13:49:47Z (date -u; fetch of claude/l-red, claude/l-lit, tru
 - Trap (R99 erratum, R106 caveat): reported counts came from starts that were invalid or explicit, not the SPEC S3 default. Check: every
   count names its start (file sha1 or "S3 default"); explicit-start pins are re-run from S3 via s3embed.py with the "same as image" check;
   and today's stale clone (b2c3d07c, 3 handovers behind) was caught by fetch + ff before any work.
+
+## Successor 28 (session_01V5yGRXarwpixU1C9hcL21Z, Opus 5.5, D1/D18; created 2026-10-29 ~15:28Z, date -u) handover check
+Measured 2026-10-29 15:34Z (date -u; fetch of all origin branches at 15:33Z).
+### 1. Branch, head, distance to trunk
+- claude/l-red. Local clone was stale: 650 behind origin/claude/l-red; fast-forwarded to 2ca02039 (predecessor's last push; 23d4956b is its
+  ancestor). Before merge: 1 ahead / 89 behind trunk origin/claude/vibrant-johnson-nxvvxo (merge-base 23d4956b). Merged trunk (merge commit
+  665ee8f9, no conflicts): 2 ahead / 0 behind (`git rev-list --left-right --count HEAD...trunk` = 2 0).
+### 2. Open work and the next step of each
+- Nothing in flight (HANDOVER "IN FLIGHT: nothing"). Oink not built in this container; setup_oink.sh started 15:33Z.
+- Lead 15:28Z STEP 1: attack CONJECTURE SF-POLY (N5-SF, claude/l-new docs/new/N5-SF-box54.md): find a family with super-polynomial SBC, or the
+  largest polynomial degree. Next: an independent N5-SF implementation from the definition, cross-checked with n5sf.py; switchbestexp N > 16
+  and a switch-best-type construction aimed at moving σ̄ (DECOUPLE: Even's σ sequence is fixed by σ_0).
+- Queue after SF-POLY: handover items (a)/(b) = mkr + dewin coupling (needs a menu-gated mkr variant first), R113 §3 routes (A)/(B).
+### 3. docs/GAPS.md rows I own
+- G-NEST (major; L-RED), open (docs/GAPS.md line 9). Attacked, not owned: GAP-A, GAP-C (L-ALG, open; lines 6-7); G-N5-TIME (L-NEW, open, line 11).
+### 4. Owner rulings (verbatim), DECISIONS-INDEX status
+1. D1 (index line 5, active): "A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet"
+2. D18 (index line 32, active): "Focus on N5 and work toward proving it. Explore novel approaches ... Clearly distinguish proven results from conjectures and open problems."
+3. D15 (index line 26, active): "Be autonomous, reason about it"
+### 5. One trap and its check
+- Trap: counts from an explicit or invalid start reported as if from the SPEC S3 default (R99 erratum, R106 caveat); and the stale clone (650
+  behind today). Check: fetch + ff-only + rev-list counts before any work; every count names its start (file sha1 or "S3 default").
