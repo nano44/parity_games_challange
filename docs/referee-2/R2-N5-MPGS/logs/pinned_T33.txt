@@ -1,0 +1,9 @@
+A: improving pairs 80640 | matched with phi rise < 1: 0 | carries: 32534
+B: k=1 P-changes=1 strict-rise=True fixed-top=True carries(NM)=0
+B: k=2 P-changes=3 strict-rise=True fixed-top=True carries(NM)=0
+B: k=3 P-changes=7 strict-rise=True fixed-top=True carries(NM)=1
+B: k=4 P-changes=15 strict-rise=True fixed-top=True carries(NM)=3
+B: k=5 P-changes=31 strict-rise=True fixed-top=True carries(NM)=7
+B: k=6 P-changes=63 strict-rise=True fixed-top=True carries(NM)=15
+B: k=7 P-changes=127 strict-rise=True fixed-top=True carries(NM)=31
+B: k=8 P-changes=255 strict-rise=True fixed-top=True carries(NM)=63
