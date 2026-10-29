@@ -152,5 +152,5 @@ Five questions:
 | 2026-10-29 | L-RED | session_01V5yGRWodt68VHnvw1bRQmG (~400k; handover 7002ff99; the Lead's 10:48Z checks (S3 start, per-vertex switches, total iterations) not done) | session_01V5yGRZkfreYYKp9tvV9Bre (Opus, D1/D18) | 2 | none (check 59c51092; stale local branch caught) |
 | 2026-10-29 | REFEREE-2 | session_01V5yGRZzoAVpZvqB1LedCVF (~530k; handover c5ee7fc3) | session_01V5yGRW4aXFYpk1wXFkEfTp (Opus, D15/D17) | 2 | none (check fad9a963; stale local branch caught) |
 | 2026-10-29 | REFEREE | session_01V5yGRYHH4CmdeoyNidN6pK (~645k; handover 4749794b) | session_01V5yGRWhY1hPQJuromKjMnv (Opus, D15/D17) | 2 | none (check 3a3d4f35; stale local branch caught) |
-| 2026-10-29 | L-SI | session_01V5yGRXKXxiTL7ZomUHUGcP (handover 0e4169e2) | session_01V5yGRX5qhrUa1vEEamVDc3 (Opus, D15/L37) | 2 | PENDING (successor's check) |
-| 2026-10-29 | L-LIT | session_01V5yGRXhHuM2pqfXJ6ZB8RM (~667k; handover e5ae4111, head 83155d07) | session_01V5yGRXvhKC2cX2To8m3mpV (Opus, D18) | 2 | PENDING (successor's check) |
+| 2026-10-29 | L-SI | session_01V5yGRXKXxiTL7ZomUHUGcP (handover 0e4169e2) | session_01V5yGRX5qhrUa1vEEamVDc3 (Opus, D15/L37) | 2 | none (check c41cb18b; stale clone caught) |
+| 2026-10-29 | L-LIT | session_01V5yGRXhHuM2pqfXJ6ZB8RM (~667k; handover e5ae4111, head 83155d07) | session_01V5yGRXvhKC2cX2To8m3mpV (Opus, D18) | 2 | none (check 394aea76; container 3889 behind, caught) |
