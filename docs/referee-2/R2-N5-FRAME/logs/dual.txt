@@ -1,0 +1,41 @@
+MODE files dual.lst 2 experiments/ PCAP 200 NODECAP 20000 OFCAP 400 OFNODE 20000 GPMAX 60 MAXT 3000
+CF_edges: 10117
+CFa_checks: 6959
+CONS_checks: 141514
+DORD_pairs: 64299356
+EF_checks: 899
+FB56_checks: 852
+FT2_checks: 68874
+FWR_checks: 852
+GPS_paths: 2750
+GPS_paths_notfrozen: 2750
+LR_checks: 43
+OF_edges: 184063
+OF_hits: 940
+OF_unprot_in_It: 11034
+SM_checks: 76820
+WM_checks: 57
+X_OF_noH3e: 1146
+X_OF_noH3r: 13
+X_SM_W: 6340
+X_WRUN_notfrozen: 27
+fb_lamXi_changing: 1
+lamU_runs: 50
+runs: 21
+starts_valid: 5
+stretches: 844
+transitions: 881
+wruns: 852
+max maxRT: 0
+max maxWCH: 2
+max max_FL: 0
+max max_NMU_unp: 163
+max max_PCHU_unp: 170
+max max_Q: 2
+max max_RS: 0
+max max_fbS: 1
+max max_stretch: 2
+max max_tau_changes: 291
+max max_unp_frac_pct: 99
+max max_wrun: 2
+RESULT PASS violations 0

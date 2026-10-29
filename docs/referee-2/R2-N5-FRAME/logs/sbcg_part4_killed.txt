@@ -1,0 +1,8 @@
+DONE-FILE red/tpp/instances/tpp_viol_n22.pg
+DONE-FILE red/tpp/instances/tpp_viol_n63.pg
+DONE-FILE red/tcpert/instances/tcS8_N11.pg
+DONE-FILE red/ul/instances/cxmig_k4_n54.pg
+DONE-FILE red/ul/instances/cxmig_k16_n138.pg
+DONE-FILE red/ul/instances/cxmig_k8_n82.pg
+DONE-FILE red/ul/instances/ladderd0_k12_n48.pg
+DONE-FILE red/ul/instances/ladderd0_k24_n84.pg

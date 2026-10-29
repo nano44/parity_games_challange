@@ -1,0 +1,88 @@
+DONE-FILE new/box59/out/fc_8.pg
+DONE-FILE new/box59/out/fcobsR_4.pg
+DONE-FILE new/box59/out/fcobs_4.pg
+DONE-FILE red/carry/instances/fall4_n116.pg
+DONE-FILE red/tcpert/instances/leanT_N16.pg
+DONE-FILE red/tcpert/instances/leanT_N24.pg
+DONE-FILE red/tcpert/instances/tcL_N10.pg
+DONE-FILE red/tcpert/instances/tcL_N6.pg
+DONE-FILE red/tcpert/instances/leanT_N32.pg
+DONE-FILE red/tcpert/instances/tcL_N8.pg
+DONE-FILE red/tcpert/instances/tcR4_N6.pg
+DONE-FILE red/tcpert/instances/tcR4_N7.pg
+DONE-FILE red/tcpert/instances/tcR4_N8.pg
+DONE-FILE red/tcpert/instances/tcL_N12.pg
+DONE-FILE red/tcpert/instances/tcS8_N6.pg
+DONE-FILE red/tcpert/instances/tcS8_N10.pg
+DONE-FILE red/tcpert/instances/tcS8_N7.pg
+DONE-FILE red/tcpert/instances/tcS8_N8.pg
+DONE-FILE red/tcpert/instances/tcS8_N9.pg
+DONE-FILE red/ul/instances/ladderd0_k48_n156.pg
+DONE-FILE red/usplit/instances/gate_K16_n197.pg
+DONE-FILE red/ul/instances/ladderent_k48_n156.pg
+DONE-FILE red/usplit/instances/grow_K12_n149.pg
+DONE-FILE red/usplit/instances/pp_K12_n161.pg
+DONE-FILE red/usplit/instances/pp_K12_n161_dual.pg
+DONE-FILE red/usplit/instances/grow_K40_n373.pg
+DONE-FILE red/usplit/instances/pp_K48_n449.pg
+DONE-FILE red/usplit/instances/gate_K64_n581.pg
+DONE-FILE red/usplit/instances/pp_K48_n449_dual.pg
+DONE-FILE new/box54/out/switchbestexp_4.pg
+DONE-FILE new/box54/out/switchbestexp_5.pg
+DONE-FILE new/box54/out/switchbestexp_6.pg
+DONE-FILE new/box54/out/switchbestexp_7.pg
+DONE-FILE new/box54/out/switchbestexp_8.pg
+DONE-FILE red/seg/instances/s3quad_K8_m30.pg
+DONE-FILE new/box52/out/topfix_n6.pg
+DONE-FILE new/box52/out/topfix_n8.pg
+DONE-FILE new/box52/out/topfix_n10.pg
+DONE-FILE new/box52/out/topfix_n8_cmp.pg
+DONE-FILE new/box51/out/dlc_d3.pg
+DONE-FILE new/box51/out/dlc_d4.pg
+DONE-FILE new/box54/out/d_dlc_d3.pg
+MODE files /tmp/claude-0/-home-user-parity-games-challange/dcf76fbb-3694-56a4-b493-c44b27344cc8/scratchpad/rest_big.lst 1 experiments/ PCAP 200 NODECAP 20000 OFCAP 400 OFNODE 3000 GPMAX 20 MAXT 3000
+CF_edges: 65831
+CFa_checks: 55761
+CONS_checks: 276044
+DORD_pairs: 3692000
+DORD_sampled_states: 1846
+EF_checks: 8932
+FB56_checks: 552
+FT2_checks: 240333
+FWR_checks: 870
+GPS_paths: 259179
+GPS_paths_notfrozen: 97365
+LR_checks: 16352
+OF_edges: 137995
+OF_hits: 9359
+OF_truncated_unknown: 31419
+OF_unprot_in_It: 7687
+RR_checks: 149
+RR_tight: 8
+SM_checks: 250133
+WM_checks: 1323
+X_GPall: 1
+X_OF_noH3e: 2005
+X_OF_noH3r: 436
+X_SM_W: 10536
+X_WRUN_notfrozen: 27
+fb_lamXi_changing: 2
+lamU_runs: 224
+late_adoptions: 168
+runs: 42
+stretches: 520
+transitions: 1804
+wruns: 870
+max maxRT: 5
+max maxWCH: 68
+max max_FL: 0
+max max_NMU_unp: 10
+max max_PCHU_unp: 13
+max max_Q: 264
+max max_RS: 5
+max max_fbS: 1
+max max_stretch: 264
+max max_tau_changes: 55
+max max_unp_frac_pct: 88
+max max_wrun: 68
+RESULT PASS violations 0
