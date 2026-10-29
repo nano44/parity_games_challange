@@ -1,0 +1,21 @@
+# pinned re-runs: experiments/si/check.sh l. 699-710 (box 31 §6 and box 31 packet), detached worktree at l-si d072bb28, python3 -I; core/gp.py 270f247c, rund/quotecheck.py 29bb4a97
+## check.sh l. 700-710 run as one block with set -e: exit 0
+si (box 31 §6: GP*, FW-R* on rlin_cex_n40 and ccl_w48_n48; MUT=all control fails): PASS
+si (box 31 packet P-N5-GP: 14 quotes exact; shifted control fails): PASS
+## raw outputs
+### STAR=1 gp.py rlin_cex_n40
+max R (R, WCH, L, n, |D|, game, a, b): {'D1:R_T/(n-1)': (0.0, 0, 10, 40, 1, 'core/instances/rlin_cex_n40.pg', 1, 11), 'D1:R/(n-1)': (0.0, 0, 10, 40, 1, 'core/instances/rlin_cex_n40.pg', 1, 11), 'D1': (0, 10, 10, 40, 1, 'core/instances/rlin_cex_n40.pg', 1, 11)}
+GP PASS
+RED PASS
+RLIN PASS
+### STAR=1 gp.py ccl_w48_n48
+max R (R, WCH, L, n, |D|, game, a, b): {'D1:R_T/(n-1)': (0.02127659574468085, 1, 3, 48, 1, 'xing/instances/ccl_w48_n48.pg', 15, 18), 'D1:R/(n-1)': (0.2553191489361702, 12, 3, 48, 1, 'xing/instances/ccl_w48_n48.pg', 15, 18), 'D1': (12, 3, 3, 48, 1, 'xing/instances/ccl_w48_n48.pg', 15, 18)}
+GP PASS
+RED PASS
+RLIN PASS
+### MUT=all STAR=1 gp.py ccl_w48_n48
+GP FAIL
+### quotecheck
+quotes=14 bad=0
+QUOTES PASS
+QUOTES FAIL

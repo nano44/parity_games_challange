@@ -1,0 +1,18 @@
+MODE files /tmp/gp2.lst 0 PCAP 300 RANDH 3 MAXF 400
+B1: 199
+F1H_checks: 199
+FWR_checks: 4
+F_RT0: 4
+F_checked: 4
+GPS_paths: 58296
+NOTBL_checks: 569
+WMON_checks: 10
+XW_checks: 560
+frozen_phases: 4
+runs: 1
+starts_valid: 1
+transitions: 13
+max maxF: 10
+max maxRT: 0
+max maxWCH: 10
+RESULT PASS violations 0
