@@ -1,7 +1,7 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point -- PARKED: successor 7 (session_01V5yGRZrRdwiCSQqHfS2zGE, Opus 5.5), 2026-10-29 ~18:xxZ by date -u. Lead 17:49Z: box 22 last, then park; no successor for now.
+## Resume point -- PARKED: successor 7 (session_01V5yGRZrRdwiCSQqHfS2zGE, Opus 5.5), 2026-10-29 19:2xZ by date -u. Lead 17:49Z: box 22 last, then park; no successor for now.
 - Handover check 76a57b40 (successor 7's answers in docs/agents/handover-checks/L-COMP.md). Boxes this session: 17-22, all under experiments/n5-box17..22/
   (one README per box: definitions, cross-checks, every table, every pinned sha1). Every push via scripts/push.sh, verify PASS each time.
 ### DONE (all DATA unless labelled)
@@ -20,8 +20,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
   (family, N) pairs N 1..12 (+ friedmann N 13..20); NOT diffed vs the PGSolver binary (build refused by the permission classifier).
   N5 linear (friedmann 4N+3 S3 / 4N+13 lastedge, N <= 16); N5-SF SBC ~ 0.08n on friedmannsubexp N <= 20 (DSB = SBC + 1, no cycle-centre
   counter). check.sh gate n5-box21/check.sh.
-- BOX 22: see n5-box22/README.md (fcN from own port = L-RED sha1s; sfb.py = N5-SF on n5b, second engine).
-### IN FLIGHT: nothing after the box-22 push (see that README for the final numbers).
+- BOX 22: fcN (L-RED R115) rebuilt from my own switchbestexp port (fc3/6/10 sha1 = L-RED's); sfb.py = N5-SF on n5b (= n5sf.py on fc3-6, fc8
+  and 1,000 random games). N = 3..16, S3: L-RED's iteration counts reproduced exactly; SBC_σ = N² for N <= 14, then 227 (N²+2) at 15 and
+  257 (N²+1) at 16; SBC_τ = N. N5 itself on fcN is linear (41..129, ≈ 6.3N + 22, 0 fallbacks).
+### IN FLIGHT: nothing. No background jobs. Parked on the Lead's 17:49Z order (no successor for now).
+### NEEDS: none from the owner. Open (not routed): a PGSolver binary diff of friedmannsubexp/fearnleysubexp if an OCaml build is ever allowed.
 ### Things only I know (successor 7)
 - An experiments/n5-box17/enum.py name shadowed stdlib `enum` (any `import re` broke): never name a module after a stdlib module (renamed exh17.py).
 - pgrep -f in an until-loop matches its own command line (bit me again 10:3xZ): wait on files/line counts, not process names.
