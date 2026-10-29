@@ -708,6 +708,13 @@ Every answer measured from the repository; commands named.
 4. Byte-compare box59/dw.py with L-RED's R116 generator - still not done.
 ### Owned conjectures: FRAME-STRETCH (n+m), FRAME-STRETCH_P = (FO), LOOP, GROUP, EXIT-without-NT (OPEN).
 
+## Resume point (HISTORY; successor 34, session_01V5yGRZtUQrbWSSxFF96dQJ; FINAL, PARKED 2026-10-29 ~19:28Z by date -u)
+### RESUME ITEMS for successor 35 (Lead 19:16Z):
+1. CONJECTURE FRAME-STRETCH (N5-DW-box62.md §5.2; 0/719 via box59/mix.py, S3 starts): < n+m sigma-changes per tau-stretch.
+2. Its MIRROR (tau-changes per sigma-stretch): NOT measured yet; add the count to box59/mix.py and run SCRIPT=mix.py corpus.sh sbcg.lst.
+3. Lemma ODD-FREEZE (N5-FREEZE-box63.md, PROVED lane, done by me before the Lead's 19:16Z supersede arrived; 35780 hits / 0 viol):
+   compose with FRAME-STRETCH, box 21 Theorem B, R86 NM*/NM*^U (all three NOT read by me); test L-RED's CDAG_n + Odd-mask climb.
+
 ## Resume point (HISTORY; successor 34, session_01V5yGRZtUQrbWSSxFF96dQJ; FINAL-ready, written 2026-10-29 ~19:05Z by date -u)
 ### DONE (all pushed via scripts/push.sh, VERIFY PASS; reported to the Lead)
 - Box 59 N5-FC-box59.md (fcN anatomy, COUNT, LATENCY, SF-RED-R under LOC, PV DEAD in §6). Box 60 N5-PV-box60.md (PV-PLAY DEAD,
