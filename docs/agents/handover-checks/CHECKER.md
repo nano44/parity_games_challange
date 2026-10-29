@@ -345,3 +345,37 @@ handover 47e1e989 (notes/CHECKER.md "## HANDOVER (successor 12 → successor 13)
 - Stamp correction (successor 13, 01:58Z by date -u): "Written 2026-10-29 01:50Z" above was not copied from date -u; the commit bab936df is
   2026-10-29 01:47:52Z (`git log -1 --format=%ad`). My 01:52Z message to the Lead said "02:05Z"; it was queued at 01:52:55Z. From now on every
   stamp is copied from `date -u` run in the same turn.
+
+## Handover check (successor 14)
+Written 2026-10-29 14:38Z (date -u). CHECKER successor 14 (Opus 5.5, D15). Predecessor: successor 13, session_01V5yGRW1Yx6hqJpFkEW6Ps1,
+handover in notes/CHECKER.md "## HANDOVER (successor 13 → successor 14)" (c4030a65, updated b7461dd7). Every answer names its command.
+
+### 1. Branch, head, ahead/behind trunk
+- The clone started at b88e5bd0, 668 commits behind origin/claude/checker (`git status` after `git fetch origin`): stale clone.
+  `git checkout -B claude/checker origin/claude/checker` → b7461dd7 (C94 Add. 2, 14:19:05Z). `git log origin/claude/checker -3`: b7461dd7 is the
+  newest commit; NO commit after the handover update.
+- Trunk head 1a086ac1 ("Lead: R86 draft fixes pin → e7c7dd78; CHECKER 13 parked"). `git merge origin/claude/vibrant-johnson-nxvvxo`: fast-forward
+  to 1a086ac1; `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` = 0 / 0 (merge-base 1a086ac1); this file's
+  commit makes 1 / 0.
+
+### 2. Open work and the next step of each
+- C90-C94 CLOSED (handover table; R81-R85 landed, R85 at 17f51175, C94 Add. 2 PASS b7461dd7). Nothing open at handover.
+- C95 = R86 (P-N5-COMPOSE, L-SI), briefed by the Lead 14:37Z: draft docs/agents/R86-draft.md at trunk 1a086ac1. Next: pins, then the main
+  report docs/checker/C95.md.
+
+### 3. docs/GAPS.md rows I own
+- `awk -F'|' '$4 ~ /CHECKER/' docs/GAPS.md | wc -l` = 0. Landing side: G-N5-TIME takes the R86 UPDATE; it must stay append-only and open.
+
+### 4. Three owner rulings, verbatim (docs/DECISIONS.md `grep -n -F`), index status (docs/DECISIONS-INDEX.md `grep -nE '^\| *D(1|15|18) '`)
+- D1 (DECISIONS l. 7; index l. 5 "active"): "A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim,
+  including the fleet's own, as wrong until it passes the gauntlet below."
+- D15 (l. 278; index l. 26 "active"): "q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it"
+- D18 (l. 333; index l. 32 "active"): "Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of
+  mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and
+  proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems."
+
+### 5. One trap, and the check that prevents it
+- Trap: a wider form of a signed statement entering "Claims signed" when it sits in only one referee's verdict table (R84 N-TS-1, R85 (c′)
+  λ-run form; C94 E-1). C95 points (1)-(2) are this trap. Check: for every clause, find the verdict cell in BOTH reports' tables; otherwise
+  "Referee strengthening".
+- Carried trap: stale clone (this box started 668 behind); fetch and `git log origin/claude/checker` before acting.
