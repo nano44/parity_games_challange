@@ -13,6 +13,12 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   entry and exit by Ξ: pre ⊕ α1 against the U-value; the hysteresis is only in S4a's W-choice, α2 ▷ α1) is box 30 §10's READING again,
   not new. Untried: bound the exit-entry rounds of one vertex by the strict Ξ rises across a round (Ξ_{q2+1}(x) ▷ W_{q2}(x) ⊵ W_{q1+1}(x)
   ▷ Ξ_{q1}(x)) plus a count of distinct prefix classes.
+- X2 attempt (18:0xZ, after the Lead's 17:49Z approval; |D| = 1, TD, c1 = c2; NOT a result): at an exit q, Ξ_{q+1}(x) = W_{q+1}(x) ⊵ pre_q(x)
+  ⊕ α2 (Ξ jumps by the gate gap); at an entry, W_{q+1}(x) = pre′ ⊕ α2 ▷ pre′ ⊕ α1 ⊵ W_q(x) (W jumps by the gap). A round exit → entry
+  needs pre′ ⊕ α1 ⊵ pre ⊕ α2: pre′ beats pre above g := top of P(α1) Δ P(α2) (or by the length gap). Every element of the chain is a
+  W-value of x, so bounding rounds = bounding x's W-changes across epochs = FW-BF again (circular; same wall as box 30 §10 READING).
+  What would break the circle: a bound on prefix improvements «above g» per vertex that does not go through W-changes (e.g. via the
+  fixed set of vertices more relevant than g). Untried.
 - Session id for trailers: session_01V5yGRVhU281YxfobtfdJ8L (2d0ada80 and 62561001 carry a wrong one).
 - check.sh: old «; ! grep» negations are no-ops under set -e; use «if grep …; then exit 1; fi».
 

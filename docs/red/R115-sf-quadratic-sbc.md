@@ -68,6 +68,24 @@ Engines and checks as in R114 §0 (sf2.py SPEC mode = L-NEW's n5sf.py; Oink zlk 
   N5-SF = I^glo up to tie-type steps. The polynomial ceiling comes from the unary counter itself, not from N5-SF's optimism. Removing
   f_i → c removes the binary reset for I^glo too. L-NEW §3 condition (ii) holds trivially: no non-top bit ever resets.
 
+## 2c. Lead 17:49Z / L-NEW BOX 59 follow-ups (DATA; 18:0xZ)
+- CONJECTURE PV (L-NEW 34: "every Odd vertex changes its best reply ≤ n times along F's run") is FALSE as stated. On fcN + observer
+  (sbev.py N --drop fc,obs; S3 start), the observer o flips 198 times at N = 4 (n 113, sha1 08b6583e739e) and 492 times at N = 6 (n 163,
+  sha1 e6ad362a05d5). Its two choices P0 / P1 are Even selectors over the even / odd lane entries, and P0 switches 268 times at N = 6.
+  Iterations 215 / 520, as on fcN. o is irrelevant to Even's run, so the counterexample is to PV as stated, not to a relevance-restricted
+  PV. On plain fcN the maximum is h0 with 2N − 1 flips (11 at N = 6).
+- Gated nesting attempt (compose.py; blocks 3 + 3, n 170):
+  - 'sink,aroot' (B's sink → A's start, plus an extra edge A's lane root d_A → s_B): 30 iterations.
+  - 'sink,athru' (d_A → s_B only): 12 iterations, LAM 1.
+  - 'sinkE,athru': 58 iterations.
+  All are below one block's 121, so the counter collapses.
+- EXACT OBSTRUCTION ('sink,athru'): the wiring closes the loop d_A → s_B → (B) → p_B → s_A → (A's bits, escapes) → A's lane b_j → d_A. Its top
+  priority is d_A's (even), so it is an Even-winning cycle and LAM = 1 (the λ component changes). In the first 5 F steps every A cycle
+  closes at once (steps 2–5: f, e, g edges of all three A cycles in the same steps, σ̄ at h0..h2 of A flips at step 5), because A's lane
+  entries now carry B's value too, and the lane timing that separates the bits is lost. Routing the upper block through the lower
+  block's escape route (L-NEW's N-COND) needs a loop through both blocks. In sink wiring that loop is an Even-won cycle unless an Odd
+  break, or an odd priority above d_A, is placed on it. That changes the winner on the loop, and is the open design question.
+
 ## 3. READING / OPEN
 - Degree 2 is forced (fcN). A higher degree needs nested resets. A reset of a lower block must be triggered by something other than a
   new global maximum, without leaving a stale escape that N5-SF can route into (R114 §4). In fcN only a NEW TOP bit resets, and that

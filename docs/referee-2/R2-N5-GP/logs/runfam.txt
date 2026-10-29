@@ -1,0 +1,21 @@
+MODE files /tmp/gp3.lst 1 PCAP 300 RANDH 3 MAXF 400
+B1: 1135
+F1H_checks: 1135
+FWR_checks: 23
+F_RT0: 21
+F_checked: 23
+GPS_dfs_truncated: 66110
+GPS_paths: 6909085
+NOTBL_checks: 176810
+WMON_checks: 570
+XW_checks: 80203
+X_BLK: 11
+X_GPall: 10196
+frozen_phases: 23
+runs: 2
+starts_valid: 1
+transitions: 575
+max maxF: 123
+max maxRT: 1
+max maxWCH: 123
+RESULT PASS violations 0
