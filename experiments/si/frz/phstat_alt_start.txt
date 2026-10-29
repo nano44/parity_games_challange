@@ -1,0 +1,11 @@
+phases=457
+columns: L, game, i, j, FB, LWCH, SBCH', #frozen W-phases, longest frozen W-phase, n
+TOP (121, 'new/box48/instances/long121_n40.pg', 1, 122, 8, 0, 33, 28, 6, 40)
+TOP (121, 'red/n3/instances/long121_n40.pg', 1, 122, 8, 0, 33, 28, 6, 40)
+TOP (112, 'red/so/instances/xsn91_n48.pg', 3, 115, 9, 0, 14, 17, 11, 48)
+max FB/n = 0.781 (28, 'red/so/instances/farrise25_n32.pg', 7, 35, 25, 0, 1, 2, 1, 32)
+max LWCH/n = 0.646 (31, 'red/so/instances/post31_n48.pg', 4, 35, 0, 31, 0, 0, 0, 48)
+max SBCH'/n = 2.100 (92, 'n5-epoch/instances/nep92_n40.pg', 6, 98, 7, 0, 84, 1, 1, 40)
+max NFW/n = 0.700 (121, 'red/n3/instances/long121_n40.pg', 1, 122, 8, 0, 33, 28, 6, 40)
+WSPLIT PASS
+CNW PASS

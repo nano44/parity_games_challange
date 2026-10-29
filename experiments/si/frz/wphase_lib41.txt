@@ -1,0 +1,22 @@
+WSIL=61 phases=368 wphases=676
+W-phase columns: L, game, a, b, WCH, NMw, PCHw, LONw, |D|, SBCH, n, m
+TOP (44, '../experiments/red/xing/instances/x32_rand48.pg', 0, 44, 44, 0, 1, 2, 0, 0, 48, 154)
+TOP (43, '../experiments/red/so/instances/xsn43_n48.pg', 1, 44, 43, 1, 1, 1, 1, 3, 48, 170)
+TOP (42, '../experiments/red/so/instances/xsnf42_n48.pg', 1, 43, 42, 1, 1, 1, 0, 0, 48, 186)
+TOP (40, '../experiments/red/xing/instances/kw_n48.pg', 0, 40, 40, 0, 3, 1, 0, 0, 48, 169)
+TOP (37, '../experiments/n5-exhaustive/instances/b6_xs_n48.pg', 0, 37, 37, 1, 2, 1, 0, 0, 48, 186)
+max L/n = 1.062 (34, '../experiments/red/so/instances/pftheta_cex_n32.pg', 4, 38, 34, 2, 7, 0, 1, 33, 32, 112)
+max WCH/n = 1.062 (34, '../experiments/red/so/instances/pftheta_cex_n32.pg', 4, 38, 34, 2, 7, 0, 1, 33, 32, 112)
+max NMw/n = 0.333 (20, '../experiments/new/box25/instances/sc24.pg', 0, 20, 20, 8, 20, 0, 0, 0, 24, 86)
+max PCHw/n = 0.833 (20, '../experiments/new/box25/instances/sc24.pg', 0, 20, 20, 8, 20, 0, 0, 0, 24, 86)
+max LONw/n = 0.333 (16, '../experiments/new/box28/instances/w24b_thc24_final.pg', 1, 17, 16, 6, 10, 8, 1, 14, 24, 76)
+max L/(n+m) = 0.286 (30, '../experiments/red/n5inj/instances/blockph_bp32.pg', 1, 31, 30, 2, 4, 1, 0, 0, 36, 69)
+phase columns: L, game, i, j, FB, LWCH (lambda_W-changing non-fb), WSIL (W-silent non-fb), #W-phases, n
+PTOP (112, '../experiments/red/so/instances/xsn91_n48.pg', 3, 115, 9, 0, 0, 9, 48)
+PTOP (110, '../experiments/new/box28/instances/x48_rt48_final.pg', 2, 112, 21, 0, 0, 13, 48)
+PTOP (103, '../experiments/red/xing/instances/j4_n40.pg', 3, 106, 4, 0, 0, 5, 40)
+PTOP (94, '../experiments/n5-exhaustive/instances/b6_xl_n48.pg', 3, 97, 9, 0, 0, 10, 48)
+max LWCH/n = 0.646 (31, '../experiments/red/so/instances/post31_n48.pg', 4, 35, 0, 31, 0, 0, 48)
+WMON PASS
+CNW PASS
+R17W PASS

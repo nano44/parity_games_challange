@@ -1,0 +1,10 @@
+TMONO_P_V=81 TMONO_V_V=86 fw=1125
+maxima: {'wcu': 55, 'wcs': 48, 'epochs': 34} largest WCS epoch (WCS, game, a, b, e, f, |S|, n): (48, 'red/ul/instances/ladderd0_k48_n156.pg', 0, 49, 0, 49, 52, 156)
+EXAMPLE ('TMONO_P', 'n5-epoch/instances/lend107_n32.pg', 27, 38, 28, [1, 18])
+EXAMPLE ('TMONO_P', 'n5-epoch/instances/lend107_n32.pg', 27, 38, 29, [0, 7, 8, 9, 10])
+EXAMPLE ('TMONO_P', 'n5-epoch/instances/lend107_n32.pg', 27, 38, 30, [15])
+EXAMPLE ('TMONO_P', 'n5-epoch/instances/lend47_n32.pg', 7, 19, 8, [9])
+TMONO_P FAIL
+TMONO_V FAIL
+R17U PASS
+EPS PASS

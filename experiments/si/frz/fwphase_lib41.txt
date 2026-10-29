@@ -1,0 +1,11 @@
+FWSIL_V=21 fwphases=864 phases=368 sbch=1757
+columns: WCH, game, a, b, L, XCH, |D|, n, m
+TOP (44, '../experiments/red/xing/instances/x32_rand48.pg', 0, 44, 44, 44, 0, 48, 154)
+TOP (42, '../experiments/red/so/instances/xsnf42_n48.pg', 1, 43, 42, 42, 0, 48, 186)
+TOP (40, '../experiments/red/xing/instances/kw_n48.pg', 0, 40, 40, 40, 0, 48, 169)
+TOP (37, '../experiments/n5-exhaustive/instances/b6_xs_n48.pg', 0, 37, 37, 37, 0, 48, 186)
+max WCH/(n-1) = 0.936 (44, '../experiments/red/xing/instances/x32_rand48.pg', 0, 44, 44, 44, 0, 48, 154)
+max L/(n+m) = 0.286 (30, '../experiments/red/n5inj/instances/blockph_bp32.pg', 1, 31, 30, 30, 0, 36, 69)
+FWBF PASS
+FWLEN PASS
+FWSIL FAIL
