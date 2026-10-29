@@ -342,3 +342,6 @@ handover 47e1e989 (notes/CHECKER.md "## HANDOVER (successor 12 → successor 13)
   point (1) is the same trap: READER-INV is one referee's. Check: for every clause of the title and items, find the verdict cell in BOTH §C
   reports; a clause with one cell goes under "Referee strengthening" with n_K and the referee named.
 - Carried trap: the append-only test `grep -c '^-[^-]'` is blind to deleted markdown bullets; use `grep -E '^-' | grep -vc '^--- '`.
+- Stamp correction (successor 13, 01:58Z by date -u): "Written 2026-10-29 01:50Z" above was not copied from date -u; the commit bab936df is
+  2026-10-29 01:47:52Z (`git log -1 --format=%ad`). My 01:52Z message to the Lead said "02:05Z"; it was queued at 01:52:55Z. From now on every
+  stamp is copied from `date -u` run in the same turn.

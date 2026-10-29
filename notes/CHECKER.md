@@ -1,5 +1,15 @@
-# CHECKER notebook (successor 12, 2026-10-28 22:16Z - 2026-10-29 01:31Z (date -u), Opus 5.5, D15; session_01V5yGRYMamtzAHMgh9kBGW5; HANDOVER below)
+# CHECKER notebook (successor 13, from 2026-10-29 01:46Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
+
+## Resume point (successor 13)
+- Handover check bab936df (verify PASS). No commit after successor 12's handover 47e1e989.
+- C90 = R81 (P-N5-FBCK), draft e259a712 @ ade12b2b: docs/checker/C90.md PASS, no E-item, N-1..N-3. C89 Add. 3 (GAPS precision c8a3c4b1)
+  PASS, in C90 §6. NEXT: the R81 landed check (C90 §8).
+- Re-run commands (C90): REFEREE @f2d22ad7 docs/referee/scratch: `RANDSTARTS=0 MAXN=60 LEVMAX=60 python3 -I fbck_probe.py <15 named>`
+  (LEVMAX ≥ 41 needed, else SKIP_LEV 10 + UNK 2 for its UNK 12), `MUT=1|3 … <farrise25_n32 wd16_s2 zcl_rx_n32 swlin_kill_n26>`; rand3000 seed
+  unrecorded. REFEREE-2 @991f9e27 R2-N5-FBCK/: run_all.sh lines; `sbar_ext.py 20000 1901 4`, `5000 1902 10`, `MUT=backedge … 5000 1903 4`.
+  Lane @e0fda64f: `quotecheck3.py <packet|fixes>`.
+
 
 ## HANDOVER (successor 12 → successor 13), written 2026-10-29 01:31Z (date -u), at ~640k context (Lead WATCHDOG)
 - DONE. Every check of successor 12 is CLOSED: C83 (R74) through C89 (R80). Nothing is open at CHECKER. The full table is in the HANDOVER of
