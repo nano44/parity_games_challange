@@ -1,0 +1,544 @@
+FCWORD N 3 n 85 SBC 9 W PASS C PASS
+SET (0, 9, 3, [])
+SET (1, 28, 3, [(0, 3)])
+SET (0, 41, 3, [])
+SET (2, 66, 3, [(0, 3), (1, 3)])
+SET (0, 79, 3, [])
+SET (1, 98, 3, [(0, 3)])
+OPEN 0 record escaping-below [] opened [] OK
+OPEN 1 record escaping-below [0] opened [0] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 2 record escaping-below [0, 1] opened [0, 1] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 1 re-set escaping-below [0] opened [] OK
+FCOPEN N 3 PASS (record: every escaping lower cycle opens before the next flip; re-set: none opens)
+LAT 1 set at 28 d-has-l_k at 32 z_{k-1}->v_{k-1} at 33 improving at s_d: True
+LAT 2 set at 66 d-has-l_k at 70 z_{k-1}->v_{k-1} at 71 improving at s_d: True
+LAT2 1 cycle k-1 opens at state 32 ; at state 31 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+LAT2 2 cycle k-1 opens at state 70 ; at state 69 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+FCLAT N 3 PASS (at every record k >= 1, the state before cycle k-1 opens: lane a0 has m_k, f_(k-1) has not, (z_(k-1), v_(k-1)) not improving)
+FCWORD N 4 n 110 SBC 16 W PASS C PASS
+SET (0, 9, 3, [])
+SET (1, 28, 3, [(0, 3)])
+SET (0, 41, 3, [])
+SET (2, 66, 3, [(0, 3), (1, 3)])
+SET (0, 79, 3, [])
+SET (1, 98, 3, [(0, 3)])
+SET (3, 129, 3, [(0, 3), (1, 3), (2, 3)])
+SET (0, 142, 3, [])
+SET (1, 161, 3, [(0, 3)])
+SET (2, 186, 3, [(0, 3), (1, 3)])
+OPEN 0 record escaping-below [] opened [] OK
+OPEN 1 record escaping-below [0] opened [0] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 2 record escaping-below [0, 1] opened [0, 1] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 1 re-set escaping-below [0] opened [] OK
+OPEN 3 record escaping-below [0, 1, 2] opened [0, 1, 2] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 1 re-set escaping-below [0] opened [] OK
+OPEN 2 re-set escaping-below [0, 1] opened [] OK
+FCOPEN N 4 PASS (record: every escaping lower cycle opens before the next flip; re-set: none opens)
+LAT 1 set at 28 d-has-l_k at 32 z_{k-1}->v_{k-1} at 33 improving at s_d: True
+LAT 2 set at 66 d-has-l_k at 70 z_{k-1}->v_{k-1} at 71 improving at s_d: True
+LAT 3 set at 129 d-has-l_k at 133 z_{k-1}->v_{k-1} at 134 improving at s_d: True
+LAT2 1 cycle k-1 opens at state 32 ; at state 31 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+LAT2 2 cycle k-1 opens at state 70 ; at state 69 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+LAT2 3 cycle k-1 opens at state 133 ; at state 132 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+FCLAT N 4 PASS (at every record k >= 1, the state before cycle k-1 opens: lane a0 has m_k, f_(k-1) has not, (z_(k-1), v_(k-1)) not improving)
+FCWORD N 5 n 135 SBC 25 W PASS C PASS
+SET (0, 9, 3, [])
+SET (1, 28, 3, [(0, 3)])
+SET (0, 41, 3, [])
+SET (2, 66, 3, [(0, 3), (1, 3)])
+SET (0, 79, 3, [])
+SET (1, 98, 3, [(0, 3)])
+SET (3, 129, 3, [(0, 3), (1, 3), (2, 3)])
+SET (0, 142, 3, [])
+SET (1, 161, 3, [(0, 3)])
+SET (2, 186, 3, [(0, 3), (1, 3)])
+SET (4, 223, 3, [(0, 3), (1, 3), (2, 3), (3, 3)])
+SET (0, 236, 3, [])
+SET (1, 255, 3, [(0, 3)])
+SET (2, 280, 3, [(0, 3), (1, 3)])
+SET (3, 311, 3, [(0, 3), (1, 3), (2, 3)])
+OPEN 0 record escaping-below [] opened [] OK
+OPEN 1 record escaping-below [0] opened [0] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 2 record escaping-below [0, 1] opened [0, 1] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 1 re-set escaping-below [0] opened [] OK
+OPEN 3 record escaping-below [0, 1, 2] opened [0, 1, 2] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 1 re-set escaping-below [0] opened [] OK
+OPEN 2 re-set escaping-below [0, 1] opened [] OK
+OPEN 4 record escaping-below [0, 1, 2, 3] opened [0, 1, 2, 3] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 1 re-set escaping-below [0] opened [] OK
+OPEN 2 re-set escaping-below [0, 1] opened [] OK
+OPEN 3 re-set escaping-below [0, 1, 2] opened [] OK
+FCOPEN N 5 PASS (record: every escaping lower cycle opens before the next flip; re-set: none opens)
+LAT 1 set at 28 d-has-l_k at 32 z_{k-1}->v_{k-1} at 33 improving at s_d: True
+LAT 2 set at 66 d-has-l_k at 70 z_{k-1}->v_{k-1} at 71 improving at s_d: True
+LAT 3 set at 129 d-has-l_k at 133 z_{k-1}->v_{k-1} at 134 improving at s_d: True
+LAT 4 set at 223 d-has-l_k at 227 z_{k-1}->v_{k-1} at 228 improving at s_d: True
+LAT2 1 cycle k-1 opens at state 32 ; at state 31 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+LAT2 2 cycle k-1 opens at state 70 ; at state 69 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+LAT2 3 cycle k-1 opens at state 133 ; at state 132 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+LAT2 4 cycle k-1 opens at state 227 ; at state 226 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+FCLAT N 5 PASS (at every record k >= 1, the state before cycle k-1 opens: lane a0 has m_k, f_(k-1) has not, (z_(k-1), v_(k-1)) not improving)
+FCWORD N 6 n 160 SBC 36 W PASS C PASS
+SET (0, 9, 3, [])
+SET (1, 28, 3, [(0, 3)])
+SET (0, 41, 3, [])
+SET (2, 66, 3, [(0, 3), (1, 3)])
+SET (0, 79, 3, [])
+SET (1, 98, 3, [(0, 3)])
+SET (3, 129, 3, [(0, 3), (1, 3), (2, 3)])
+SET (0, 142, 3, [])
+SET (1, 161, 3, [(0, 3)])
+SET (2, 186, 3, [(0, 3), (1, 3)])
+SET (4, 223, 3, [(0, 3), (1, 3), (2, 3), (3, 3)])
+SET (0, 236, 3, [])
+SET (1, 255, 3, [(0, 3)])
+SET (2, 280, 3, [(0, 3), (1, 3)])
+SET (3, 311, 3, [(0, 3), (1, 3), (2, 3)])
+SET (5, 354, 3, [(0, 3), (1, 3), (2, 3), (3, 3), (4, 3)])
+SET (0, 367, 3, [])
+SET (1, 386, 3, [(0, 3)])
+SET (2, 411, 3, [(0, 3), (1, 3)])
+SET (3, 442, 3, [(0, 3), (1, 3), (2, 3)])
+SET (4, 479, 3, [(0, 3), (1, 3), (2, 3), (3, 3)])
+OPEN 0 record escaping-below [] opened [] OK
+OPEN 1 record escaping-below [0] opened [0] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 2 record escaping-below [0, 1] opened [0, 1] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 1 re-set escaping-below [0] opened [] OK
+OPEN 3 record escaping-below [0, 1, 2] opened [0, 1, 2] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 1 re-set escaping-below [0] opened [] OK
+OPEN 2 re-set escaping-below [0, 1] opened [] OK
+OPEN 4 record escaping-below [0, 1, 2, 3] opened [0, 1, 2, 3] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 1 re-set escaping-below [0] opened [] OK
+OPEN 2 re-set escaping-below [0, 1] opened [] OK
+OPEN 3 re-set escaping-below [0, 1, 2] opened [] OK
+OPEN 5 record escaping-below [0, 1, 2, 3, 4] opened [0, 1, 2, 3, 4] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 1 re-set escaping-below [0] opened [] OK
+OPEN 2 re-set escaping-below [0, 1] opened [] OK
+OPEN 3 re-set escaping-below [0, 1, 2] opened [] OK
+OPEN 4 re-set escaping-below [0, 1, 2, 3] opened [] OK
+FCOPEN N 6 PASS (record: every escaping lower cycle opens before the next flip; re-set: none opens)
+LAT 1 set at 28 d-has-l_k at 32 z_{k-1}->v_{k-1} at 33 improving at s_d: True
+LAT 2 set at 66 d-has-l_k at 70 z_{k-1}->v_{k-1} at 71 improving at s_d: True
+LAT 3 set at 129 d-has-l_k at 133 z_{k-1}->v_{k-1} at 134 improving at s_d: True
+LAT 4 set at 223 d-has-l_k at 227 z_{k-1}->v_{k-1} at 228 improving at s_d: True
+LAT 5 set at 354 d-has-l_k at 358 z_{k-1}->v_{k-1} at 359 improving at s_d: True
+LAT2 1 cycle k-1 opens at state 32 ; at state 31 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+LAT2 2 cycle k-1 opens at state 70 ; at state 69 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+LAT2 3 cycle k-1 opens at state 133 ; at state 132 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+LAT2 4 cycle k-1 opens at state 227 ; at state 226 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+LAT2 5 cycle k-1 opens at state 358 ; at state 357 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+FCLAT N 6 PASS (at every record k >= 1, the state before cycle k-1 opens: lane a0 has m_k, f_(k-1) has not, (z_(k-1), v_(k-1)) not improving)
+FCWORD N 7 n 185 SBC 49 W PASS C PASS
+SET (0, 9, 3, [])
+SET (1, 28, 3, [(0, 3)])
+SET (0, 41, 3, [])
+SET (2, 66, 3, [(0, 3), (1, 3)])
+SET (0, 79, 3, [])
+SET (1, 98, 3, [(0, 3)])
+SET (3, 129, 3, [(0, 3), (1, 3), (2, 3)])
+SET (0, 142, 3, [])
+SET (1, 161, 3, [(0, 3)])
+SET (2, 186, 3, [(0, 3), (1, 3)])
+SET (4, 223, 3, [(0, 3), (1, 3), (2, 3), (3, 3)])
+SET (0, 236, 3, [])
+SET (1, 255, 3, [(0, 3)])
+SET (2, 280, 3, [(0, 3), (1, 3)])
+SET (3, 311, 3, [(0, 3), (1, 3), (2, 3)])
+SET (5, 354, 3, [(0, 3), (1, 3), (2, 3), (3, 3), (4, 3)])
+SET (0, 367, 3, [])
+SET (1, 386, 3, [(0, 3)])
+SET (2, 411, 3, [(0, 3), (1, 3)])
+SET (3, 442, 3, [(0, 3), (1, 3), (2, 3)])
+SET (4, 479, 3, [(0, 3), (1, 3), (2, 3), (3, 3)])
+SET (6, 528, 3, [(0, 3), (1, 3), (2, 3), (3, 3), (4, 3), (5, 3)])
+SET (0, 541, 3, [])
+SET (1, 560, 3, [(0, 3)])
+SET (2, 585, 3, [(0, 3), (1, 3)])
+SET (3, 616, 3, [(0, 3), (1, 3), (2, 3)])
+SET (4, 653, 3, [(0, 3), (1, 3), (2, 3), (3, 3)])
+SET (5, 696, 3, [(0, 3), (1, 3), (2, 3), (3, 3), (4, 3)])
+OPEN 0 record escaping-below [] opened [] OK
+OPEN 1 record escaping-below [0] opened [0] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 2 record escaping-below [0, 1] opened [0, 1] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 1 re-set escaping-below [0] opened [] OK
+OPEN 3 record escaping-below [0, 1, 2] opened [0, 1, 2] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 1 re-set escaping-below [0] opened [] OK
+OPEN 2 re-set escaping-below [0, 1] opened [] OK
+OPEN 4 record escaping-below [0, 1, 2, 3] opened [0, 1, 2, 3] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 1 re-set escaping-below [0] opened [] OK
+OPEN 2 re-set escaping-below [0, 1] opened [] OK
+OPEN 3 re-set escaping-below [0, 1, 2] opened [] OK
+OPEN 5 record escaping-below [0, 1, 2, 3, 4] opened [0, 1, 2, 3, 4] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 1 re-set escaping-below [0] opened [] OK
+OPEN 2 re-set escaping-below [0, 1] opened [] OK
+OPEN 3 re-set escaping-below [0, 1, 2] opened [] OK
+OPEN 4 re-set escaping-below [0, 1, 2, 3] opened [] OK
+OPEN 6 record escaping-below [0, 1, 2, 3, 4, 5] opened [0, 1, 2, 3, 4, 5] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 1 re-set escaping-below [0] opened [] OK
+OPEN 2 re-set escaping-below [0, 1] opened [] OK
+OPEN 3 re-set escaping-below [0, 1, 2] opened [] OK
+OPEN 4 re-set escaping-below [0, 1, 2, 3] opened [] OK
+OPEN 5 re-set escaping-below [0, 1, 2, 3, 4] opened [] OK
+FCOPEN N 7 PASS (record: every escaping lower cycle opens before the next flip; re-set: none opens)
+LAT 1 set at 28 d-has-l_k at 32 z_{k-1}->v_{k-1} at 33 improving at s_d: True
+LAT 2 set at 66 d-has-l_k at 70 z_{k-1}->v_{k-1} at 71 improving at s_d: True
+LAT 3 set at 129 d-has-l_k at 133 z_{k-1}->v_{k-1} at 134 improving at s_d: True
+LAT 4 set at 223 d-has-l_k at 227 z_{k-1}->v_{k-1} at 228 improving at s_d: True
+LAT 5 set at 354 d-has-l_k at 358 z_{k-1}->v_{k-1} at 359 improving at s_d: True
+LAT 6 set at 528 d-has-l_k at 532 z_{k-1}->v_{k-1} at 533 improving at s_d: True
+LAT2 1 cycle k-1 opens at state 32 ; at state 31 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+LAT2 2 cycle k-1 opens at state 70 ; at state 69 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+LAT2 3 cycle k-1 opens at state 133 ; at state 132 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+LAT2 4 cycle k-1 opens at state 227 ; at state 226 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+LAT2 5 cycle k-1 opens at state 358 ; at state 357 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+LAT2 6 cycle k-1 opens at state 532 ; at state 531 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+FCLAT N 7 PASS (at every record k >= 1, the state before cycle k-1 opens: lane a0 has m_k, f_(k-1) has not, (z_(k-1), v_(k-1)) not improving)
+FCWORD N 8 n 210 SBC 64 W PASS C PASS
+SET (0, 9, 3, [])
+SET (1, 28, 3, [(0, 3)])
+SET (0, 41, 3, [])
+SET (2, 66, 3, [(0, 3), (1, 3)])
+SET (0, 79, 3, [])
+SET (1, 98, 3, [(0, 3)])
+SET (3, 129, 3, [(0, 3), (1, 3), (2, 3)])
+SET (0, 142, 3, [])
+SET (1, 161, 3, [(0, 3)])
+SET (2, 186, 3, [(0, 3), (1, 3)])
+SET (4, 223, 3, [(0, 3), (1, 3), (2, 3), (3, 3)])
+SET (0, 236, 3, [])
+SET (1, 255, 3, [(0, 3)])
+SET (2, 280, 3, [(0, 3), (1, 3)])
+SET (3, 311, 3, [(0, 3), (1, 3), (2, 3)])
+SET (5, 354, 3, [(0, 3), (1, 3), (2, 3), (3, 3), (4, 3)])
+SET (0, 367, 3, [])
+SET (1, 386, 3, [(0, 3)])
+SET (2, 411, 3, [(0, 3), (1, 3)])
+SET (3, 442, 3, [(0, 3), (1, 3), (2, 3)])
+SET (4, 479, 3, [(0, 3), (1, 3), (2, 3), (3, 3)])
+SET (6, 528, 3, [(0, 3), (1, 3), (2, 3), (3, 3), (4, 3), (5, 3)])
+SET (0, 541, 3, [])
+SET (1, 560, 3, [(0, 3)])
+SET (2, 585, 3, [(0, 3), (1, 3)])
+SET (3, 616, 3, [(0, 3), (1, 3), (2, 3)])
+SET (4, 653, 3, [(0, 3), (1, 3), (2, 3), (3, 3)])
+SET (5, 696, 3, [(0, 3), (1, 3), (2, 3), (3, 3), (4, 3)])
+SET (7, 751, 3, [(0, 3), (1, 3), (2, 3), (3, 3), (4, 3), (5, 3), (6, 3)])
+SET (0, 764, 3, [])
+SET (1, 783, 3, [(0, 3)])
+SET (2, 808, 3, [(0, 3), (1, 3)])
+SET (3, 839, 3, [(0, 3), (1, 3), (2, 3)])
+SET (4, 876, 3, [(0, 3), (1, 3), (2, 3), (3, 3)])
+SET (5, 919, 3, [(0, 3), (1, 3), (2, 3), (3, 3), (4, 3)])
+SET (6, 968, 3, [(0, 3), (1, 3), (2, 3), (3, 3), (4, 3), (5, 3)])
+OPEN 0 record escaping-below [] opened [] OK
+OPEN 1 record escaping-below [0] opened [0] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 2 record escaping-below [0, 1] opened [0, 1] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 1 re-set escaping-below [0] opened [] OK
+OPEN 3 record escaping-below [0, 1, 2] opened [0, 1, 2] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 1 re-set escaping-below [0] opened [] OK
+OPEN 2 re-set escaping-below [0, 1] opened [] OK
+OPEN 4 record escaping-below [0, 1, 2, 3] opened [0, 1, 2, 3] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 1 re-set escaping-below [0] opened [] OK
+OPEN 2 re-set escaping-below [0, 1] opened [] OK
+OPEN 3 re-set escaping-below [0, 1, 2] opened [] OK
+OPEN 5 record escaping-below [0, 1, 2, 3, 4] opened [0, 1, 2, 3, 4] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 1 re-set escaping-below [0] opened [] OK
+OPEN 2 re-set escaping-below [0, 1] opened [] OK
+OPEN 3 re-set escaping-below [0, 1, 2] opened [] OK
+OPEN 4 re-set escaping-below [0, 1, 2, 3] opened [] OK
+OPEN 6 record escaping-below [0, 1, 2, 3, 4, 5] opened [0, 1, 2, 3, 4, 5] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 1 re-set escaping-below [0] opened [] OK
+OPEN 2 re-set escaping-below [0, 1] opened [] OK
+OPEN 3 re-set escaping-below [0, 1, 2] opened [] OK
+OPEN 4 re-set escaping-below [0, 1, 2, 3] opened [] OK
+OPEN 5 re-set escaping-below [0, 1, 2, 3, 4] opened [] OK
+OPEN 7 record escaping-below [0, 1, 2, 3, 4, 5, 6] opened [0, 1, 2, 3, 4, 5, 6] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 1 re-set escaping-below [0] opened [] OK
+OPEN 2 re-set escaping-below [0, 1] opened [] OK
+OPEN 3 re-set escaping-below [0, 1, 2] opened [] OK
+OPEN 4 re-set escaping-below [0, 1, 2, 3] opened [] OK
+OPEN 5 re-set escaping-below [0, 1, 2, 3, 4] opened [] OK
+OPEN 6 re-set escaping-below [0, 1, 2, 3, 4, 5] opened [] OK
+FCOPEN N 8 PASS (record: every escaping lower cycle opens before the next flip; re-set: none opens)
+LAT 1 set at 28 d-has-l_k at 32 z_{k-1}->v_{k-1} at 33 improving at s_d: True
+LAT 2 set at 66 d-has-l_k at 70 z_{k-1}->v_{k-1} at 71 improving at s_d: True
+LAT 3 set at 129 d-has-l_k at 133 z_{k-1}->v_{k-1} at 134 improving at s_d: True
+LAT 4 set at 223 d-has-l_k at 227 z_{k-1}->v_{k-1} at 228 improving at s_d: True
+LAT 5 set at 354 d-has-l_k at 358 z_{k-1}->v_{k-1} at 359 improving at s_d: True
+LAT 6 set at 528 d-has-l_k at 532 z_{k-1}->v_{k-1} at 533 improving at s_d: True
+LAT 7 set at 751 d-has-l_k at 755 z_{k-1}->v_{k-1} at 756 improving at s_d: True
+LAT2 1 cycle k-1 opens at state 32 ; at state 31 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+LAT2 2 cycle k-1 opens at state 70 ; at state 69 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+LAT2 3 cycle k-1 opens at state 133 ; at state 132 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+LAT2 4 cycle k-1 opens at state 227 ; at state 226 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+LAT2 5 cycle k-1 opens at state 358 ; at state 357 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+LAT2 6 cycle k-1 opens at state 532 ; at state 531 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+LAT2 7 cycle k-1 opens at state 755 ; at state 754 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+FCLAT N 8 PASS (at every record k >= 1, the state before cycle k-1 opens: lane a0 has m_k, f_(k-1) has not, (z_(k-1), v_(k-1)) not improving)
+FCWORD N 9 n 235 SBC 81 W PASS C PASS
+SET (0, 9, 3, [])
+SET (1, 28, 3, [(0, 3)])
+SET (0, 41, 3, [])
+SET (2, 66, 3, [(0, 3), (1, 3)])
+SET (0, 79, 3, [])
+SET (1, 98, 3, [(0, 3)])
+SET (3, 129, 3, [(0, 3), (1, 3), (2, 3)])
+SET (0, 142, 3, [])
+SET (1, 161, 3, [(0, 3)])
+SET (2, 186, 3, [(0, 3), (1, 3)])
+SET (4, 223, 3, [(0, 3), (1, 3), (2, 3), (3, 3)])
+SET (0, 236, 3, [])
+SET (1, 255, 3, [(0, 3)])
+SET (2, 280, 3, [(0, 3), (1, 3)])
+SET (3, 311, 3, [(0, 3), (1, 3), (2, 3)])
+SET (5, 354, 3, [(0, 3), (1, 3), (2, 3), (3, 3), (4, 3)])
+SET (0, 367, 3, [])
+SET (1, 386, 3, [(0, 3)])
+SET (2, 411, 3, [(0, 3), (1, 3)])
+SET (3, 442, 3, [(0, 3), (1, 3), (2, 3)])
+SET (4, 479, 3, [(0, 3), (1, 3), (2, 3), (3, 3)])
+SET (6, 528, 3, [(0, 3), (1, 3), (2, 3), (3, 3), (4, 3), (5, 3)])
+SET (0, 541, 3, [])
+SET (1, 560, 3, [(0, 3)])
+SET (2, 585, 3, [(0, 3), (1, 3)])
+SET (3, 616, 3, [(0, 3), (1, 3), (2, 3)])
+SET (4, 653, 3, [(0, 3), (1, 3), (2, 3), (3, 3)])
+SET (5, 696, 3, [(0, 3), (1, 3), (2, 3), (3, 3), (4, 3)])
+SET (7, 751, 3, [(0, 3), (1, 3), (2, 3), (3, 3), (4, 3), (5, 3), (6, 3)])
+SET (0, 764, 3, [])
+SET (1, 783, 3, [(0, 3)])
+SET (2, 808, 3, [(0, 3), (1, 3)])
+SET (3, 839, 3, [(0, 3), (1, 3), (2, 3)])
+SET (4, 876, 3, [(0, 3), (1, 3), (2, 3), (3, 3)])
+SET (5, 919, 3, [(0, 3), (1, 3), (2, 3), (3, 3), (4, 3)])
+SET (6, 968, 3, [(0, 3), (1, 3), (2, 3), (3, 3), (4, 3), (5, 3)])
+SET (8, 1029, 3, [(0, 3), (1, 3), (2, 3), (3, 3), (4, 3), (5, 3), (6, 3), (7, 3)])
+SET (0, 1042, 3, [])
+SET (1, 1061, 3, [(0, 3)])
+SET (2, 1086, 3, [(0, 3), (1, 3)])
+SET (3, 1117, 3, [(0, 3), (1, 3), (2, 3)])
+SET (4, 1154, 3, [(0, 3), (1, 3), (2, 3), (3, 3)])
+SET (5, 1197, 3, [(0, 3), (1, 3), (2, 3), (3, 3), (4, 3)])
+SET (6, 1246, 3, [(0, 3), (1, 3), (2, 3), (3, 3), (4, 3), (5, 3)])
+SET (7, 1301, 3, [(0, 3), (1, 3), (2, 3), (3, 3), (4, 3), (5, 3), (6, 3)])
+OPEN 0 record escaping-below [] opened [] OK
+OPEN 1 record escaping-below [0] opened [0] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 2 record escaping-below [0, 1] opened [0, 1] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 1 re-set escaping-below [0] opened [] OK
+OPEN 3 record escaping-below [0, 1, 2] opened [0, 1, 2] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 1 re-set escaping-below [0] opened [] OK
+OPEN 2 re-set escaping-below [0, 1] opened [] OK
+OPEN 4 record escaping-below [0, 1, 2, 3] opened [0, 1, 2, 3] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 1 re-set escaping-below [0] opened [] OK
+OPEN 2 re-set escaping-below [0, 1] opened [] OK
+OPEN 3 re-set escaping-below [0, 1, 2] opened [] OK
+OPEN 5 record escaping-below [0, 1, 2, 3, 4] opened [0, 1, 2, 3, 4] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 1 re-set escaping-below [0] opened [] OK
+OPEN 2 re-set escaping-below [0, 1] opened [] OK
+OPEN 3 re-set escaping-below [0, 1, 2] opened [] OK
+OPEN 4 re-set escaping-below [0, 1, 2, 3] opened [] OK
+OPEN 6 record escaping-below [0, 1, 2, 3, 4, 5] opened [0, 1, 2, 3, 4, 5] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 1 re-set escaping-below [0] opened [] OK
+OPEN 2 re-set escaping-below [0, 1] opened [] OK
+OPEN 3 re-set escaping-below [0, 1, 2] opened [] OK
+OPEN 4 re-set escaping-below [0, 1, 2, 3] opened [] OK
+OPEN 5 re-set escaping-below [0, 1, 2, 3, 4] opened [] OK
+OPEN 7 record escaping-below [0, 1, 2, 3, 4, 5, 6] opened [0, 1, 2, 3, 4, 5, 6] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 1 re-set escaping-below [0] opened [] OK
+OPEN 2 re-set escaping-below [0, 1] opened [] OK
+OPEN 3 re-set escaping-below [0, 1, 2] opened [] OK
+OPEN 4 re-set escaping-below [0, 1, 2, 3] opened [] OK
+OPEN 5 re-set escaping-below [0, 1, 2, 3, 4] opened [] OK
+OPEN 6 re-set escaping-below [0, 1, 2, 3, 4, 5] opened [] OK
+OPEN 8 record escaping-below [0, 1, 2, 3, 4, 5, 6, 7] opened [0, 1, 2, 3, 4, 5, 6, 7] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 1 re-set escaping-below [0] opened [] OK
+OPEN 2 re-set escaping-below [0, 1] opened [] OK
+OPEN 3 re-set escaping-below [0, 1, 2] opened [] OK
+OPEN 4 re-set escaping-below [0, 1, 2, 3] opened [] OK
+OPEN 5 re-set escaping-below [0, 1, 2, 3, 4] opened [] OK
+OPEN 6 re-set escaping-below [0, 1, 2, 3, 4, 5] opened [] OK
+OPEN 7 re-set escaping-below [0, 1, 2, 3, 4, 5, 6] opened [] OK
+FCOPEN N 9 PASS (record: every escaping lower cycle opens before the next flip; re-set: none opens)
+LAT 1 set at 28 d-has-l_k at 32 z_{k-1}->v_{k-1} at 33 improving at s_d: True
+LAT 2 set at 66 d-has-l_k at 70 z_{k-1}->v_{k-1} at 71 improving at s_d: True
+LAT 3 set at 129 d-has-l_k at 133 z_{k-1}->v_{k-1} at 134 improving at s_d: True
+LAT 4 set at 223 d-has-l_k at 227 z_{k-1}->v_{k-1} at 228 improving at s_d: True
+LAT 5 set at 354 d-has-l_k at 358 z_{k-1}->v_{k-1} at 359 improving at s_d: True
+LAT 6 set at 528 d-has-l_k at 532 z_{k-1}->v_{k-1} at 533 improving at s_d: True
+LAT 7 set at 751 d-has-l_k at 755 z_{k-1}->v_{k-1} at 756 improving at s_d: True
+LAT 8 set at 1029 d-has-l_k at 1033 z_{k-1}->v_{k-1} at 1034 improving at s_d: True
+LAT2 1 cycle k-1 opens at state 32 ; at state 31 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+LAT2 2 cycle k-1 opens at state 70 ; at state 69 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+LAT2 3 cycle k-1 opens at state 133 ; at state 132 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+LAT2 4 cycle k-1 opens at state 227 ; at state 226 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+LAT2 5 cycle k-1 opens at state 358 ; at state 357 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+LAT2 6 cycle k-1 opens at state 532 ; at state 531 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+LAT2 7 cycle k-1 opens at state 755 ; at state 754 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+LAT2 8 cycle k-1 opens at state 1033 ; at state 1032 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+FCLAT N 9 PASS (at every record k >= 1, the state before cycle k-1 opens: lane a0 has m_k, f_(k-1) has not, (z_(k-1), v_(k-1)) not improving)
+FCWORD N 10 n 260 SBC 100 W PASS C PASS
+SET (0, 9, 3, [])
+SET (1, 28, 3, [(0, 3)])
+SET (0, 41, 3, [])
+SET (2, 66, 3, [(0, 3), (1, 3)])
+SET (0, 79, 3, [])
+SET (1, 98, 3, [(0, 3)])
+SET (3, 129, 3, [(0, 3), (1, 3), (2, 3)])
+SET (0, 142, 3, [])
+SET (1, 161, 3, [(0, 3)])
+SET (2, 186, 3, [(0, 3), (1, 3)])
+SET (4, 223, 3, [(0, 3), (1, 3), (2, 3), (3, 3)])
+SET (0, 236, 3, [])
+SET (1, 255, 3, [(0, 3)])
+SET (2, 280, 3, [(0, 3), (1, 3)])
+SET (3, 311, 3, [(0, 3), (1, 3), (2, 3)])
+SET (5, 354, 3, [(0, 3), (1, 3), (2, 3), (3, 3), (4, 3)])
+SET (0, 367, 3, [])
+SET (1, 386, 3, [(0, 3)])
+SET (2, 411, 3, [(0, 3), (1, 3)])
+SET (3, 442, 3, [(0, 3), (1, 3), (2, 3)])
+SET (4, 479, 3, [(0, 3), (1, 3), (2, 3), (3, 3)])
+SET (6, 528, 3, [(0, 3), (1, 3), (2, 3), (3, 3), (4, 3), (5, 3)])
+SET (0, 541, 3, [])
+SET (1, 560, 3, [(0, 3)])
+SET (2, 585, 3, [(0, 3), (1, 3)])
+SET (3, 616, 3, [(0, 3), (1, 3), (2, 3)])
+SET (4, 653, 3, [(0, 3), (1, 3), (2, 3), (3, 3)])
+SET (5, 696, 3, [(0, 3), (1, 3), (2, 3), (3, 3), (4, 3)])
+SET (7, 751, 3, [(0, 3), (1, 3), (2, 3), (3, 3), (4, 3), (5, 3), (6, 3)])
+SET (0, 764, 3, [])
+SET (1, 783, 3, [(0, 3)])
+SET (2, 808, 3, [(0, 3), (1, 3)])
+SET (3, 839, 3, [(0, 3), (1, 3), (2, 3)])
+SET (4, 876, 3, [(0, 3), (1, 3), (2, 3), (3, 3)])
+SET (5, 919, 3, [(0, 3), (1, 3), (2, 3), (3, 3), (4, 3)])
+SET (6, 968, 3, [(0, 3), (1, 3), (2, 3), (3, 3), (4, 3), (5, 3)])
+SET (8, 1029, 3, [(0, 3), (1, 3), (2, 3), (3, 3), (4, 3), (5, 3), (6, 3), (7, 3)])
+SET (0, 1042, 3, [])
+SET (1, 1061, 3, [(0, 3)])
+SET (2, 1086, 3, [(0, 3), (1, 3)])
+SET (3, 1117, 3, [(0, 3), (1, 3), (2, 3)])
+SET (4, 1154, 3, [(0, 3), (1, 3), (2, 3), (3, 3)])
+SET (5, 1197, 3, [(0, 3), (1, 3), (2, 3), (3, 3), (4, 3)])
+SET (6, 1246, 3, [(0, 3), (1, 3), (2, 3), (3, 3), (4, 3), (5, 3)])
+SET (7, 1301, 3, [(0, 3), (1, 3), (2, 3), (3, 3), (4, 3), (5, 3), (6, 3)])
+SET (9, 1368, 3, [(0, 3), (1, 3), (2, 3), (3, 3), (4, 3), (5, 3), (6, 3), (7, 3), (8, 3)])
+SET (0, 1381, 2, [])
+SET (1, 1387, 3, [(0, 3)])
+SET (2, 1412, 3, [(0, 3), (1, 3)])
+SET (3, 1443, 3, [(0, 3), (1, 3), (2, 3)])
+SET (4, 1480, 3, [(0, 3), (1, 3), (2, 3), (3, 3)])
+SET (5, 1523, 3, [(0, 3), (1, 3), (2, 3), (3, 3), (4, 3)])
+SET (6, 1572, 3, [(0, 3), (1, 3), (2, 3), (3, 3), (4, 3), (5, 3)])
+SET (7, 1627, 3, [(0, 3), (1, 3), (2, 3), (3, 3), (4, 3), (5, 3), (6, 3)])
+SET (8, 1688, 3, [(0, 3), (1, 3), (2, 3), (3, 3), (4, 3), (5, 3), (6, 3), (7, 3)])
+OPEN 0 record escaping-below [] opened [] OK
+OPEN 1 record escaping-below [0] opened [0] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 2 record escaping-below [0, 1] opened [0, 1] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 1 re-set escaping-below [0] opened [] OK
+OPEN 3 record escaping-below [0, 1, 2] opened [0, 1, 2] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 1 re-set escaping-below [0] opened [] OK
+OPEN 2 re-set escaping-below [0, 1] opened [] OK
+OPEN 4 record escaping-below [0, 1, 2, 3] opened [0, 1, 2, 3] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 1 re-set escaping-below [0] opened [] OK
+OPEN 2 re-set escaping-below [0, 1] opened [] OK
+OPEN 3 re-set escaping-below [0, 1, 2] opened [] OK
+OPEN 5 record escaping-below [0, 1, 2, 3, 4] opened [0, 1, 2, 3, 4] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 1 re-set escaping-below [0] opened [] OK
+OPEN 2 re-set escaping-below [0, 1] opened [] OK
+OPEN 3 re-set escaping-below [0, 1, 2] opened [] OK
+OPEN 4 re-set escaping-below [0, 1, 2, 3] opened [] OK
+OPEN 6 record escaping-below [0, 1, 2, 3, 4, 5] opened [0, 1, 2, 3, 4, 5] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 1 re-set escaping-below [0] opened [] OK
+OPEN 2 re-set escaping-below [0, 1] opened [] OK
+OPEN 3 re-set escaping-below [0, 1, 2] opened [] OK
+OPEN 4 re-set escaping-below [0, 1, 2, 3] opened [] OK
+OPEN 5 re-set escaping-below [0, 1, 2, 3, 4] opened [] OK
+OPEN 7 record escaping-below [0, 1, 2, 3, 4, 5, 6] opened [0, 1, 2, 3, 4, 5, 6] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 1 re-set escaping-below [0] opened [] OK
+OPEN 2 re-set escaping-below [0, 1] opened [] OK
+OPEN 3 re-set escaping-below [0, 1, 2] opened [] OK
+OPEN 4 re-set escaping-below [0, 1, 2, 3] opened [] OK
+OPEN 5 re-set escaping-below [0, 1, 2, 3, 4] opened [] OK
+OPEN 6 re-set escaping-below [0, 1, 2, 3, 4, 5] opened [] OK
+OPEN 8 record escaping-below [0, 1, 2, 3, 4, 5, 6, 7] opened [0, 1, 2, 3, 4, 5, 6, 7] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 1 re-set escaping-below [0] opened [] OK
+OPEN 2 re-set escaping-below [0, 1] opened [] OK
+OPEN 3 re-set escaping-below [0, 1, 2] opened [] OK
+OPEN 4 re-set escaping-below [0, 1, 2, 3] opened [] OK
+OPEN 5 re-set escaping-below [0, 1, 2, 3, 4] opened [] OK
+OPEN 6 re-set escaping-below [0, 1, 2, 3, 4, 5] opened [] OK
+OPEN 7 re-set escaping-below [0, 1, 2, 3, 4, 5, 6] opened [] OK
+OPEN 9 record escaping-below [0, 1, 2, 3, 4, 5, 6, 7, 8] opened [0, 1, 2, 3, 4, 5, 6, 7, 8] OK
+OPEN 0 re-set escaping-below [] opened [] OK
+OPEN 1 re-set escaping-below [0] opened [] OK
+OPEN 2 re-set escaping-below [0, 1] opened [] OK
+OPEN 3 re-set escaping-below [0, 1, 2] opened [] OK
+OPEN 4 re-set escaping-below [0, 1, 2, 3] opened [] OK
+OPEN 5 re-set escaping-below [0, 1, 2, 3, 4] opened [] OK
+OPEN 6 re-set escaping-below [0, 1, 2, 3, 4, 5] opened [] OK
+OPEN 7 re-set escaping-below [0, 1, 2, 3, 4, 5, 6] opened [] OK
+OPEN 8 re-set escaping-below [0, 1, 2, 3, 4, 5, 6, 7] opened [] OK
+FCOPEN N 10 PASS (record: every escaping lower cycle opens before the next flip; re-set: none opens)
+LAT 1 set at 28 d-has-l_k at 32 z_{k-1}->v_{k-1} at 33 improving at s_d: True
+LAT 2 set at 66 d-has-l_k at 70 z_{k-1}->v_{k-1} at 71 improving at s_d: True
+LAT 3 set at 129 d-has-l_k at 133 z_{k-1}->v_{k-1} at 134 improving at s_d: True
+LAT 4 set at 223 d-has-l_k at 227 z_{k-1}->v_{k-1} at 228 improving at s_d: True
+LAT 5 set at 354 d-has-l_k at 358 z_{k-1}->v_{k-1} at 359 improving at s_d: True
+LAT 6 set at 528 d-has-l_k at 532 z_{k-1}->v_{k-1} at 533 improving at s_d: True
+LAT 7 set at 751 d-has-l_k at 755 z_{k-1}->v_{k-1} at 756 improving at s_d: True
+LAT 8 set at 1029 d-has-l_k at 1033 z_{k-1}->v_{k-1} at 1034 improving at s_d: True
+LAT 9 set at 1368 d-has-l_k at 1372 z_{k-1}->v_{k-1} at 1373 improving at s_d: True
+LAT2 1 cycle k-1 opens at state 32 ; at state 31 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+LAT2 2 cycle k-1 opens at state 70 ; at state 69 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+LAT2 3 cycle k-1 opens at state 133 ; at state 132 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+LAT2 4 cycle k-1 opens at state 227 ; at state 226 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+LAT2 5 cycle k-1 opens at state 358 ; at state 357 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+LAT2 6 cycle k-1 opens at state 532 ; at state 531 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+LAT2 7 cycle k-1 opens at state 755 ; at state 754 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+LAT2 8 cycle k-1 opens at state 1033 ; at state 1032 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+LAT2 9 cycle k-1 opens at state 1372 ; at state 1371 Xi(f_{k-1}) has m_k: False Xi(lane a0) has m_k: True Xi(d) has m_k: False (z,v) improving: False (v,r_k) improving: True
+FCLAT N 10 PASS (at every record k >= 1, the state before cycle k-1 opens: lane a0 has m_k, f_(k-1) has not, (z_(k-1), v_(k-1)) not improving)
