@@ -1,4 +1,4 @@
-# Draft RESULTS R85 (Lead, 2026-10-29 12:47Z by date -u; both reports, both §Cs and the fixes file filled) — to CHECKER C94
+# Draft RESULTS R85 (Lead, 2026-10-29 12:47Z by date -u; both reports, both §Cs and the fixes file filled) — to CHECKER C94 (Lead reviewed 12:56Z by date -u: subagent draft; placements accepted: (c′) λ-run as a proof step signed by REFEREE §1b + REFEREE-2 §C; Fact A1 table line Not signed; J7, J12 Referee strengthening; Lead reading in Honest limits (i) kept, labelled)
 
 ### R85 [refereed-only] N5 on EVERY game: (A) for a vertex v, a phase 𝒫 (λ and τ constant on 𝒫, c := λ(v)), v's path sets P_t := P(Ξ_t v) ⊆ R_c := the K ranks above rank(c) (K ≤ n − 1, r_1 < … < r_K), pos(r_k) := k, w(r) := +pos(r) if r is even and −pos(r) if r is odd (a rank's parity is Ω's of its vertex), Φ(A) := Σ_{r ∈ A} w(r), and a P-change A → B (a transition of 𝒫 with P_t ≠ P_{t+1}) MATCHED if some matching M ⊆ (A ∖ B) × (B ∖ A) has w(i) > w(o) on every pair (o, i) and leaves only even incoming and odd outgoing ranks uncovered, a CARRY otherwise: for distinct ranks o, i, w(i) > w(o) iff weight({i}) > weight({o}), and adding an even rank or removing an odd rank raises the weight (Fact A1); Φ(B) − Φ(A) ≥ 1 at every MATCHED P-change (Lemma MATCH-Φ); hence PCH_𝒫(v) ≤ (K(K+1)/2)(NM_𝒫(v) + 1) + NM_𝒫(v) per vertex per phase, every game, PCH and NM counting v's P-changes and carries in 𝒫 (Corollary, added statement (A)), with the same proof verbatim on any stretch of consecutive states with λ(v) constant (REFEREE §1b; REFEREE-2 §C "Joint: AGREED"); (B) at a state with τ(e) = h at an Odd vertex e, for a successor d ≠ h of e, a route π = (π_1 = d, …, π_m) of distinct Even vertices of G into e, Q := {π_1, …, π_m, e}, ρ the (τ̄, τ)-play from h and c_h the cycle node of Ξτ(h): (H1) every vertex of Q ranks above c_h, (H2) ρ (prefix and cycle) contains no vertex of Q and (H3) Q's vertex of largest rank has even Ω imply (e, d) ∉ Iτ (Lemma GATE-SHUT; via Fact B1: on valuations with the same cycle node and P ≠ P′, G^d's order reverses G's, and Fact B2: (VJ) of RESULTS R57 (a) on G^d), so on a stretch of states of one run with τ(e) = h and (H1)-(H3) at every state, (e, d) ∉ Iτ at each of them and τ never moves from h to d at a transition from one of them (added statement (B); the claim at t → t + 1 uses (H1)-(H3) at t only, π may differ from state to state, the Lemma uses no phase) (2026-10-29) — a REDUCTION of one vertex's path-set changes in one phase to its carries NM, and a structural lemma on Odd's improving edges that bounds no count (NM is OPEN, not bounded here; persistence of (H1)-(H3) not claimed; (H2)'s necessity not exhibited; not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C94.md, checker PENDING)
 - Object (L-LIT successor, Opus 5.5, D18, Lead reading L40; frozen, unchanged during review): packet P-N5-MPGS, docs/lit/P-N5-MPGS.md,
@@ -118,20 +118,20 @@
   correct"; REFEREE-2 concurring §2.4: "(H1) already excludes e ∈ ρ"; so (H2) adds only "ρ avoids π_1, …, π_m". (v) REFEREE-2
   concurring N-C3 (R2-N5-COMPOSE, quoted in REFEREE-2 §C): on the Odd side (G^d), MATCHED, w and NM^U are read with G^d's parities.
 - Honest limits: (i) MATCH-Φ and (A) are a REDUCTION of the path-set changes of one vertex in one phase to its carries NM. NM is OPEN and
-  not bounded here (packet: "It does not bound the carries; NM is OPEN"; REFEREE-2 19: "(A) is a REDUCTION to NM (OPEN)"). DATA only,
-  not refereed: carries of one vertex in one phase reach NM = 2n² + 5n − 5 on L-RED's R109 topfix family (claude/l-red e5c9b628,
-  docs/red/R109-hn-topgate.md §5, phases keyed by (λ_Ξ, τ); n is Friedmann's index, N = 21n vertices: max NM 343 = 1.361 N at n 12,
-  N 252; "Carries of ONE vertex in ONE phase are Θ(N²) on this family"). Lead reading: these DATA are against the packet's A4
-  CONJECTURE "NM = O(n) per vertex per phase" (READING, OPEN, not signed) on that family. T33 Part B (DATA): under abstract monotone set
-  sequences with a fixed top NM can be exponential (k = 8: 255 P-changes, NM 63); these are not N5 runs. (ii) (B) bounds no count and does not claim that (H1)-(H3) persist (packet "What is not claimed": "a cycle node above
-  the gate can appear"; REFEREE-2 19: "8,829 h → d moves of τ at gates where some hypothesis fails (CTL_flip_nohyp)"). On L-RED's R109
-  family (H1) fails at the τ-gates (DATA, R109 FINDINGS 2: "τ-gates never shut, because (H1) fails"). (iii) (H2)'s necessity is not
-  exhibited, in all three data sets: REFEREE MUT 2 (8,975 relaxed hits, all still shut); REFEREE-2 19 noH2 0 of 15,528; REFEREE-2 20 X2
-  0 of 1,648 (426 under every τ of their game). (H1) and (H3) each bite alone (REFEREE MUT 3: Lemma 576, Corollary 66; MUT 1: Lemma 240,
-  Corollary 89; REFEREE-2 19 noH1 5,673, noH3 4,422; REFEREE-2 20 X1, X3 > 0). Whether (H1) + (H3) suffice is OPEN (CONJECTURE
-  H2-FREE). (iv) The referees' gate enumerations are capped (REFEREE DFS budget 4,000 nodes; REFEREE-2 19 π ≤ 6 vertices, ≤ 40 per
-  (e, d); REFEREE-2 20 ≤ 64 per (state, e, d)); the proof has no length condition (J10). (v) Nothing here bounds N5's running time;
-  not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open.
+  not bounded here (packet: "It does not bound the carries; NM is OPEN"; REFEREE-2 19: "(A) is a REDUCTION to NM (OPEN)"). DATA only, not
+  refereed: carries of one vertex in one phase reach NM = 2n² + 5n − 5 on L-RED's R109 topfix family (claude/l-red e5c9b628,
+  docs/red/R109-hn-topgate.md §5, phases keyed by (λ_Ξ, τ); n is Friedmann's index, N = 21n vertices: max NM 343 = 1.361 N at n 12, N 252;
+  "Carries of ONE vertex in ONE phase are Θ(N²) on this family"). Lead reading: these DATA are against the packet's A4 CONJECTURE "NM = O(n)
+  per vertex per phase" (READING, OPEN, not signed) on that family. T33 Part B (DATA): under abstract monotone set sequences with a fixed
+  top NM can be exponential (k = 8: 255 P-changes, NM 63); these are not N5 runs. (ii) (B) bounds no count and does not claim that (H1)-(H3)
+  persist (packet "What is not claimed": "a cycle node above the gate can appear"; REFEREE-2 19: "8,829 h → d moves of τ at gates where some
+  hypothesis fails (CTL_flip_nohyp)"). On L-RED's R109 family (H1) fails at the τ-gates (DATA, R109 FINDINGS 2: "τ-gates never shut, because
+  (H1) fails"). (iii) (H2)'s necessity is not exhibited, in all three data sets: REFEREE MUT 2 (8,975 relaxed hits, all still shut);
+  REFEREE-2 19 noH2 0 of 15,528; REFEREE-2 20 X2 0 of 1,648 (426 under every τ of their game). (H1) and (H3) each bite alone (REFEREE MUT 3:
+  Lemma 576, Corollary 66; MUT 1: Lemma 240, Corollary 89; REFEREE-2 19 noH1 5,673, noH3 4,422; REFEREE-2 20 X1, X3 > 0). Whether (H1) +
+  (H3) suffice is OPEN (CONJECTURE H2-FREE). (iv) The referees' gate enumerations are capped (REFEREE DFS budget 4,000 nodes; REFEREE-2 19 π
+  ≤ 6 vertices, ≤ 40 per (e, d); REFEREE-2 20 ≤ 64 per (state, e, d)); the proof has no length condition (J10). (v) Nothing here bounds N5's
+  running time; not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open.
 - Data (DATA, not proof): pinned (packet A3, B3), run as `python3 -I`: docs/lit/T33-match-phi-check.py (sha1
   6853179bf10bdf1c3d9cae61c939b1054aa4b70c) "A: improving pairs 80640 | matched with phi rise < 1: 0 | carries: 32534" (80640 / 0 /
   32534; Part A brute-forces the Lemma for K = 6), Part B k = 1..8 strict-rise=True, fixed-top=True, P-changes 1, 3, 7, …, 255, NM 0, 0,
