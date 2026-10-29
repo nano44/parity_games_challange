@@ -1,0 +1,5 @@
+experiments/si/chg/instances/red/runquad_K8_m30_n192.pg experiments/si/chg/instances/red/runquad_K8_m30_n192.start
+experiments/si/chg/instances/dlsep_kill_n70.pg experiments/si/chg/instances/dlsep_kill_n70.start
+experiments/si/lay/instances/seglast_kill_n110.pg experiments/si/lay/instances/seglast_kill_n110.start
+experiments/si/chg/instances/red/segcount_kill_n20.pg experiments/si/chg/instances/red/segcount_kill_n20.start
+experiments/si/root/instances/l121reader_n41.pg experiments/si/root/instances/l121reader_n41.start

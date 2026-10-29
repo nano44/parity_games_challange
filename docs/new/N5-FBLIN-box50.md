@@ -55,6 +55,20 @@ When a fallback carries anywhere, a switched vertex carries (376 of 377 such fal
   of order n·n·n²·NM. This is far from n. READING: since every transition of a phase is counted the same way (R80 PHASE-SW), the bound
   is a phase-length bound, not a fallback bound.
 
+## 3b. Per-phase counts of the fallback kinds, and a per-vertex charge (DATA; fbcarry.py, logs box50/fbc3_alt.txt, fbc3_alt_start.txt)
+- Per phase (both start sets): fallbacks with no P-change anywhere ≤ 2; fallbacks with no carry anywhere ≤ 14 (farrise25_n32, phase
+  [7, 35], f 25); fallbacks that carry ≤ 37 (rise_fb38_n48, phase [4, 49], f 37, all of them carry). The fallback-rich phases are carry phases.
+- Decomposition (elementary): f(P) ≤ NSC(P) + Σ_v SWCAR_P(v). Here SWCAR_P(v) is the number of fallbacks of P at which v is switched
+  AND carries, and NSC(P) the number of fallbacks with no such vertex. Then f(P) ≤ NSC(P) + n·max_v SWCAR_P(v), so a constant bound on
+  max_v SWCAR_P(v) plus NSC(P) = O(n) would give f = O(n).
+- DATA: max_v SWCAR_P(v) ≤ 5 in the library (rise_thin51_n40 vertex 17; long121_n40 vertex 23; nep92/nep94 vertex 36). rise_fb38_n48's 37
+  carry fallbacks spread with ≤ 2 per vertex.
+- DEAD: "SWCAR ≤ 5" (the library constant). Kill climb box50/vcclimb.py SCOPE=swcar from long121_n40 (pinned .start), step 257:
+  box50/out/swc2_vc7.pg (n 56, sha1 f0df2aa9…; .start), phase [2, 69] with f 9, and vertex 53 is the switched carrier at 7 of the 9. Two
+  engines agree (n5b = n5x, 70 states). A second climb from rise_thin51_n40 reaches 7 at n 63-64 (out/swc1_vc7.pg). The charge
+  concentrates on one vertex rather than spreading. CONJECTURE SWCAR-O(1) stays OPEN only in the weak sense that nothing above 7 was seen.
+  It is a per-vertex count of the kind that died before (SW-LIN, XR-LIN), so it is not a promising route.
+
 ## 4. OPEN, and what the data suggest next
 - FB-LIN (f ≤ n per phase): OPEN. Data max 0.79n (Lead). fb_per_phase_max = 37 in alt_all.
 - The three fallback kinds above (FLAT, LEN-only, MATCHED-only) are the cases a per-fallback charge to carries misses. A charge to
@@ -63,8 +77,8 @@ When a fallback carries anywhere, a switched vertex carries (376 of 377 such fal
   they do spread, which is the wrong direction for a single-vertex charge.
 
 ## DONE / FINDINGS / NEEDS
-- DONE: this note; experiments/new/box50/fbcarry.py, fbwalk.py, fbinst/*.start; logs fbc_alt.txt, fbc_alt_start.txt.
-- FINDINGS: (1) DEAD: a fallback forces neither a P-change (FLAT b4_n5_other_0; LENGTH-ONLY nep22f_n64 t 27) nor a carry (MATCHED-ONLY
+- DONE: this note; experiments/new/box50/fbcarry.py, fbwalk.py, fbinst/*.start; logs fbc_alt.txt, fbc_alt_start.txt, fbc2_*.txt, fbc3_*.txt; climbs out/swc1*, out/swc2* (vcclimb.py SCOPE=swcar).
+- FINDINGS: (0) §3b: per phase ≤ 2 path-set-free and ≤ 14 carry-free fallbacks; per-vertex switched-carry charge ≤ 5 in the library, 7 after climbs (swc2_vc7, DEAD at 5). (1) DEAD: a fallback forces neither a P-change (FLAT b4_n5_other_0; LENGTH-ONLY nep22f_n64 t 27) nor a carry (MATCHED-ONLY
   b5_o11 t 7), and no vertex carries at every fallback of a phase (0 / 55 and 4 / 85 phases). All three are two-engine. (2) FB-LIN does not
   reduce to NM by a per-fallback charge. The reduction that remains is polynomial and not fallback-specific (§3). (3) Fallbacks carry about
   as often as S4a steps (59 % against 55 % of switched vertices).

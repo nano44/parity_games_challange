@@ -5,6 +5,7 @@ default 0). SCOPE=exec: the whole execution's joint (sigma, tau) family instead.
 (read-only). Usage: vcclimb.py SEED.pg SEED.start|- STEPS RNGSEED NMAX OUTPREFIX"""
 import sys, os, random
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
+sys.path.insert(0, HERE)
 for p in (os.path.join(ROOT, "experiments", "si", "root"), os.path.join(ROOT, "experiments", "new", "box43"), os.path.join(ROOT, "experiments", "si", "runlin")):
     sys.path.insert(0, p)
 from common import rows, load, readstart
@@ -44,6 +45,19 @@ def score(g, st):
     if len(R) > 1500: return None
     n = g.n; ev = [v for v in range(n) if g.owner[v] == 0 and len(set(g.succ[v])) >= 2]
     sig = [frozenset((v, r["s"][v]) for v in ev) for r in R]
+    if SCOPE == "swcar":                    # max over phases and vertices of fallbacks at which v is switched and carries (fbcarry.py)
+        from fbcarry import kind
+        from common import phases
+        best = (0, 0)
+        for i, j in phases(R):
+            cnt = {}; f = 0
+            for t in range(i, j):
+                if not R[t]["fb"]: continue
+                f += 1
+                for v in ev:
+                    if R[t]["s"][v] != R[t + 1]["s"][v] and kind(E, R[t]["vs"][v], R[t + 1]["vs"][v]) == "CAR": cnt[v] = cnt.get(v, 0) + 1
+            mx = max(cnt.values(), default=0); best = max(best, (mx, f / 1000))
+        return best
     if SCOPE == "ent":                      # CONJECTURE ENT-RUN: max entries of one Even edge into sigma within one run
         best = (0, 0)
         for a, b, i, j in runs(R):

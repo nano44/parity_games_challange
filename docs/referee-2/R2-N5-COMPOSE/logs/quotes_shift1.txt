@@ -1,0 +1,17 @@
+MISS docs/new/N5-ssi-global.md@b025560c9:29-30 | valuation of v under (σ, σ̄): (c, P, ℓ), c = the most relevant (max p') vertex of the cycl
+MISS docs/new/N5-ssi-global.md@b025560c9:31-32 | order (better for Even): compare reward of c (p'(c) if even, −p'(c) if odd); then P by the
+MISS docs/new/N5-ssi-global.md@b025560c9:33-33 | Ξσ = valuation of every vertex under σ and Odd's OPTIMAL counterstrategy σ̄ (minimising th
+MISS docs/new/N5-ssi-global.md@b025560c9:48-48 | Improving edges: Iσ = {(v, w) : owner(v) = Even, w ≠ σ(v), Ξσ(w) strictly better than Ξσ(σ
+MISS docs/new/N5-ssi-global.md@b025560c9:52-52 | a. If Iσ ≠ ∅: A(v) = {σ(v)} ∪ {w : (v, w) ∈ Iσ} for Even v.
+MISS docs/new/N5-ssi-global.md@b025560c9:52-52 | Even v keeps only edges to A(v)
+MISS docs/new/N5-ssi-global.md@b025560c9:55-55 | b. If Iτ ≠ ∅: A(v) = {τ(v)} ∪ {w : (v, w) ∈ Iτ} for Odd v. Arena H': Odd v keeps only edge
+MISS docs/new/N5-ssi-global.md@b025560c9:57-58 | c. FALLBACK, if σ_new = σ and τ_new = τ: if Iσ ≠ ∅, for every Even v with an improving edg
+MISS docs/RESULTS.md@b025560c9:632-632 | (a) Lemma A: for any non-empty unambiguous set I of improvements of σ (VJ00 §4.4), Ωσ ⊴ Ω_
+MISS docs/RESULTS.md@b025560c9:641-643 | (d) N5: every iteration applies Switch_I with ∅ ≠ I ⊆ Iσ to Even's σ (on G) and/or with ∅ 
+MISS docs/RESULTS.md@b025560c9:2331-2332 | Ξ_k := Ξ_{σ_k} (Even's valuation, R15's Ω_σ), λ_k(v) its cycle node; U_k := Odd's valuatio
+MISS docs/RESULTS.md@b025560c9:2337-2337 | (a) Lemma Φ (every game):
+MISS docs/RESULTS.md@b025560c9:2339-2339 | (c) along a run at most n(n − 1) transitions change λ and at most n(n − 1) change λ^U
+MISS docs/RESULTS.md@b025560c9:4968-4969 | (a) Fact DELTA (§1, with F4): for sets A ≠ B of ranks, weight(B) > weight(A) iff d := d(A,
+MISS docs/lit/P-N5-MPGS.md@a23179b01:98-99 | Added statement (A), Corollary.…For every game, vertex v and phase 𝒫: PCH_𝒫(v) ≤ (K(K+1)/2
+MISS docs/lit/P-N5-MPGS.md@a23179b01:106-106 | Uses: distinct ranks [S1-rank], P_t ⊆ R_c [S1-val] with c fixed on 𝒫 [PHASE].
+tags 16 ok 0 miss 16 SHIFT 1

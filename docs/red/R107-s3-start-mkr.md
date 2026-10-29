@@ -86,7 +86,12 @@ count here is polynomial (quadratic).
 | 7 | 28 | 433 | 217 / 0 / 2 / 2 / 216 | 217, True | True |
 | 8 | 32 | 493 | 280 / 0 / 2 / 2 / 279 | 280, True | True |
 | 9 | 36 | 553 | 351 / 0 / 2 / 2 / 350 | 351, True | True |
-| 9-14 | | | running at this push; an addendum will add these rows | | |
+| 9 | 36 | 553 | 351 / 0 / 2 / 2 / 350 | 351, True | True |
+| 10 | 40 | 613 | 430 / 0 / 2 / 2 / 429 | 430, True | True |
+| 11 | 44 | 673 | 517 / 0 / 2 / 2 / 516 | 517, True | True |
+| 12 | 48 | 733 | 612 / 0 / 2 / 2 / 611 | 612, True | True |
+| 13 | 52 | 793 | 715 / 0 / 2 / 2 / 714 | 715, True | True |
+| 14 | 56 | 853 | not finished at this push (run killed at the box end if still running) | | |
 - Every row reproduces §2's explicit-start count exactly (iterations 4K² + 3K). So N5's total iteration count FROM THE S3 DEFAULT
   START on this explicit family is 4K² + 3K at n′ = 60K + 13, i.e. ≈ n′²/900.
 
