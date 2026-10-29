@@ -1834,3 +1834,4 @@
 - 01:30Z (date -u): L-NEW FBCK fixes e0fda64f (sha1 19237624, F1-F8, 25 quotes; Cor. (ii) implication; general-H bullet 3 an ASSUMPTION); L-NEW parked. R81 (FBCK) draft delegated to a subagent.
 - 01:36Z (date -u): C89 CLOSED (Add. 2 PASS, R80 landed check). GAPS precision UPDATE appended for C89 Add. 2 N-1 (READING label, 'some passive Even readers'). CHECKER 12 parked (handover 47e1e989) → successor 13 next.
 - 01:41Z (date -u): R81 (FBCK) draft reviewed (FBCK-N1 inside (i): REFEREE's verdict row and REFEREE-2's §C joint verdict cell both include the σ̄ step). To CHECKER 13 as C90 (CHECKER 13 to start).
+- 01:46Z (date -u): CHECKER 13 started (session_01V5yGRW1Yx6hqJpFkEW6Ps1) with C90 (R81 e259a712 at ade12b2b) and C89 Add. 3. SLIP: its brief's stamp '01:41Z' was not a date -u reading (session created 01:46Z).
