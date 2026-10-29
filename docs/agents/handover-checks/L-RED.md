@@ -423,7 +423,7 @@ Measured 2026-10-29 00:29Z (date -u).
   n5b.py --mode spec, which rejects invalid starts, before any count is reported.
 
 ## Successor 25 (Opus 5.5, D15/D18; created 2026-10-29 ~09:59Z, date -u) handover check
-Measured 2026-10-29 10:0xZ (date -u 10:00:09Z at fetch).
+Measured 2026-10-29 10:00:55Z (date -u; fetch at 10:00:09Z).
 ### 1. Branch, head, distance to trunk
 - claude/l-red, head before work 92754453 (= origin/claude/l-red, the predecessor's HANDOVER push; local was fast-forwarded from b2c3d07c).
   Trunk origin/claude/vibrant-johnson-nxvvxo e3b435ab. Before merge: 0 ahead / 244 behind (`git rev-list --left-right --count`).
