@@ -3,7 +3,9 @@ History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50
 
 ## Resume point (successor 15, session_01V5yGRa9pQWTf3AmjVLrkK8), started 2026-10-29 22:26Z (date -u)
 - Handover check: docs/agents/handover-checks/CHECKER.md "## Handover check (successor 15)" (35f52a02). Clone started stale at b88e5bd0.
-- C99 = R89 (P-N5-FRAME, L-NEW 35). Draft docs/agents/R89-draft.md NOT YET SENT (absent at trunk a60e5704). Prep done:
+- C99 = R89 (P-N5-FRAME, L-NEW 35). Draft 2840438c @ trunk 5d61c587 (Lead 22:40Z): docs/checker/C99.md (cee834e5) FAIL E-1 (mkr n − 1
+  for n, draft l. 32-33 and l. 242-243, exact moves in C99 §3); decisions (1)-(3) PASS; N-1..N-4 (N-3: REFEREE's H17 line pending, re-pin
+  §C at Add. 1). Sent to Lead 23:05Z. C99 Add. 1 PASS on b5a1b6f6 @ a4412797 (E-1 discharged, N-2, N-3 applied). NEXT: R89 landed check (Add. 2). Prep (kept):
   - Pins measured: packet 938d8796 ce8c4803 (= l-new head content); fixes 9631bbc5 eb5bd5e1 (H0-H16 at d3d98d1c b1127e57, H17 appended
     9631bbc5); line-H0 ab1ee38a (a file sha1, not a commit); old line acf3234f. Reports: REFEREE e9b32f72 (R-N5-FRAME.md 90c2ca4d), §C
     0b080b2c (9a00c9b2; its §4 reviews fixes at d3d98d1c: H17 NOT reviewed by REFEREE); REFEREE-2 a1142a46 / 7571febe (report), §C 1008d66e,
