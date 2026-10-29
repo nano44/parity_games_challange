@@ -6,8 +6,8 @@ History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50
 - C90 = R81 (P-N5-FBCK), draft e259a712 @ ade12b2b: docs/checker/C90.md PASS, no E-item, N-1..N-3. C89 Add. 3 (GAPS precision c8a3c4b1)
   PASS, in C90 §6. C90 Add. 1 PASS 9777e9e6 (checker SHA in R81; revised draft 3e706fdc @ 10f79f47). R81 LANDED 958c8063 (02:19:53Z).
   C90 Add. 2: RESULTS PASS, stamps OK; GAPS L-1 (UPDATE's Corollary (ii) parenthesis drops hypotheses 2-3 and says "from READER-INV";
-  correcting UPDATE text proposed in Add. 2). C90 OPEN. NEXT: Add. 3 = check the Lead's correcting GAPS UPDATE (append-only, prefix, open,
-  stamp vs git, text vs R81 item (i)); then C90 CLOSED. PARKED after Add. 2 on the Lead's word of 02:22Z.
+  correcting UPDATE text proposed in Add. 2). C90 Add. 3 PASS (correcting UPDATE ea2cc8db, verbatim, stamp OK): C90 CLOSED. Nothing open at CHECKER. PARKED (Lead's word
+  02:33Z). Counter: the next check is C91.
 - METHOD (this box): stamps from `date -u` run in the same turn as the text (Lead note 01:54Z; I guessed two stamps). Read the GAPS UPDATE's
   every clause against the entry's "Not signed" list, not only its items (C90 L-1: the UPDATE used the unsigned "from READER-INV" form).
 - Re-run commands (C90): REFEREE @f2d22ad7 docs/referee/scratch: `RANDSTARTS=0 MAXN=60 LEVMAX=60 python3 -I fbck_probe.py <15 named>`
