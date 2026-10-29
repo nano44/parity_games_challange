@@ -15,6 +15,7 @@ HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, os.path.jo
 from common import rows, load, readstart, phases, avoid
 from fwphase import fwphases
 sys.path.insert(0, os.path.join(HERE, "..", "tord")); from gates import basins
+STAR = os.environ.get("STAR") == "1"   # GP* (note §6): every successor except the BLOCKED ones (W_k(z) > W_k(rho_k x), (x, z) not in I_sigma); R then counts late adoptions*
 PLUS = os.environ.get("PLUS") == "1"   # GP+: also every z in the same basin S_d as x at a + j, if d satisfies G3 then (core note §2)
 C = Counter(); MX = {}; EX = []
 MUT = os.environ.get("MUT", "")
@@ -49,6 +50,10 @@ def _run(E, g, R, name):
                     else:
                         al = {R[k]["s"][x]} | Is.get(x, set()) | {z for z in g.succ[x] if z in U}
                         if PLUS and Fk[x] != -1 and Fk[x] in G3k: al |= {z for z in g.succ[x] if Fk[z] == Fk[x]}
+                    if STAR and g.owner[x] == 1: pass
+                    elif STAR:
+                        kr = E.key(R[k]["W"][R[k]["s"][x]])
+                        al = {z for z in g.succ[x] if z in Is.get(x, set()) or z == R[k]["s"][x] or E.key(R[k]["W"][z]) <= kr}
                     if MUT == "all" and g.owner[x] == 0: al = g.succ[x]
                     for z in al:
                         if P[z] is None or (P[z][1] >> x) & 1: continue
@@ -60,6 +65,9 @@ def _run(E, g, R, name):
                     if g.owner[x] == 0 and D:
                         al = {R[k]["s"][x]} | Is.get(x, set()) | {z for z in g.succ[x] if z in U}
                         if Fk[x] != -1 and Fk[x] in G3k: al |= {z for z in g.succ[x] if Fk[z] == Fk[x]}
+                        if STAR:
+                            kr = E.key(R[k]["W"][R[k]["s"][x]])
+                            al = {z for z in g.succ[x] if z in Is.get(x, set()) or z == R[k]["s"][x] or E.key(R[k]["W"][z]) <= kr}
                         REF |= {(x, z) for z in g.succ[x] if z not in al}
                 rT += radopt > r0
                 P = Q; W = R[k + 1]["W"]
