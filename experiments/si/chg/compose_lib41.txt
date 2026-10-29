@@ -1,0 +1,17 @@
+nm_max=18 pch_max=37 phases=418
+columns: L, game, i, j, S1 = sum SW, S2 = sum (1 + RISE), S3 = (I2) bound, S4 = (I3) bound, max NM, max PCH, max RISE, max SW, n
+TOP (112, 'experiments/red/so/instances/xsn91_n48.pg', 3, 115, 268, 3139, 150672, 64856736, 18, 27, 27, 12, 48)
+TOP (110, 'experiments/new/box28/instances/x48_rt48_final.pg', 2, 112, 175, 1043, 47472, 800976, 6, 13, 13, 11, 48)
+TOP (103, 'experiments/red/n5inj/instances/returns_ph64.pg', 2, 105, 185, 735, 45184, 5428608, 8, 14, 16, 10, 64)
+TOP (103, 'experiments/red/xing/instances/j4_n40.pg', 3, 106, 212, 2611, 87480, 8060200, 13, 30, 37, 13, 40)
+TOP (94, 'experiments/n5-exhaustive/instances/b6_xl_n48.pg', 3, 97, 223, 2643, 126864, 73938912, 16, 23, 23, 12, 48)
+TOP (87, 'experiments/n5-exhaustive/instances/b6_xl_n40.pg', 2, 89, 193, 2000, 70280, 21189600, 14, 21, 24, 10, 40)
+NMTOP (max NM / n) 0.469 (75, 'experiments/n5-exhaustive/instances/b6_xw_n32.pg', 4, 79, 160, 1739, 55648, 16313728, 15, 22, 22, 10, 32)
+PCHTOP (max PCH / n) 1.156 (46, 'experiments/si/orlens/instances/lev_l_sc.pg', 8, 54, 118, 1466, 39552, 3917696, 14, 37, 45, 11, 32)
+MAXRATIO L/S1 1.000  S1/S2 0.500
+I0 PASS
+I1 PASS
+LDIR PASS
+LBLK PASS
+I2 PASS
+I3 PASS

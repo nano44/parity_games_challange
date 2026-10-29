@@ -62,3 +62,13 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+def pscore(g, R):
+    """(max over fallback-free runs and Even v of SW(v) - n, the same max of SW(v), SW-RISE failures) for chg/cclimb.py OBJ=SR."""
+    global C, EX, TOP
+    save = (C, EX, TOP); C, EX, TOP = Counter(), [], []
+    try:
+        _run(g, R, "x")
+        if not TOP: return -g.n, 0, 0
+        m = max(z[5] for z in TOP); return m - g.n, m, C["SWRISE_V"]
+    finally: C, EX, TOP = save

@@ -592,3 +592,15 @@ python3 -I chg/suffix.py --one chg/instances/red/runquad_K8_m30_n192.pg chg/inst
 o=$(python3 -I chg/pervert.py --one chg/instances/red/runquad_K8_m30_n192.pg chg/instances/red/runquad_K8_m30_n192.start)
 grep -q "^SWRISE PASS" <<<"$o"; grep -q "^PERV PASS" <<<"$o"; grep -q "TOP (0.078, 'chg/instances/red/runquad_K8_m30_n192.pg', 0, 263, 263, 15, 15, 16, 192)" <<<"$o"
 echo "si (box 28: runquad_K8_m30_n192 kills LENE and LEN2; BND, SW-RISE hold; max 15 switches per vertex at n 192): PASS"
+# box 28 §9: Theorem COMPOSE (phase length <= sum (1 + RISE(c)) <= sum n (PCH(c) + 1)) and Corollary COMPOSE-RUN (whole run, Odd side on G^d)
+# measured with every inequality's slack on runquad, dlsep_kill_n70, segcount_kill_n20 and seglast_kill_n110; LEN-MONO (LDIR, LBLK) holds.
+o=$(python3 -I chg/compose.py --one chg/instances/red/runquad_K8_m30_n192.pg chg/instances/red/runquad_K8_m30_n192.start)
+for k in I0 I1 LDIR LBLK I2 I3; do grep -q "^$k PASS" <<<"$o"; done
+grep -q "TOP (263, 'chg/instances/red/runquad_K8_m30_n192.pg', 0, 263, 481, 1016, 195072, 265890048, 8, 15, 15, 15, 192)" <<<"$o"
+o=$(python3 -I chg/compose.py --one chg/instances/dlsep_kill_n70.pg chg/instances/dlsep_kill_n70.start); for k in I0 I1 LDIR LBLK I2 I3; do grep -q "^$k PASS" <<<"$o"; done
+grep -q "TOP (12, 'chg/instances/dlsep_kill_n70.pg', 0, 12, 39, 387, 26810, 14059640, 5, 6, 7, 4, 70)" <<<"$o"
+for f in chg/instances/red/segcount_kill_n20 lay/instances/seglast_kill_n110; do
+  o=$(MODE=run python3 -I chg/compose.py --one $f.pg $f.start); for k in RUNI0 R47 EI1 OI1 ELDIR OLDIR ELBLK OLBLK; do grep -q "^$k PASS" <<<"$o"; done
+done
+grep -q "TOP (16, 'lay/instances/seglast_kill_n110.pg', 0, 16, 27, 152, 16066, 0, 20, 1, 4, 2, 110)" <<<"$o"
+echo "si (box 28 §9: COMPOSE and COMPOSE-RUN inequalities hold with their slack on runquad, dlsep_kill_n70, R105 and n110 pins): PASS"
