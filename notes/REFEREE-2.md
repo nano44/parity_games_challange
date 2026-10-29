@@ -1,6 +1,49 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## HANDOVER (successor 19, session_01V5yGRZzoAVpZvqB1LedCVF, Opus 5.5 under D15; written 2026-10-29 11:1xZ by date -u; context ~530k, Lead asked)
+Branch claude/referee-2, merged with trunk (git merge, no rebase) before every push. REFEREE-2 owns no docs/GAPS.md rows. PARKED after this push.
+### NEXT
+1. MATCHPHI §C: ONLY on the Lead's word. Do NOT open docs/referee/ MATCHPHI files before it. The report is pushed (5ba3e21d, this push).
+2. Then wait for the next packet. Take the names-only count `git ls-tree --name-only -r origin/claude/referee docs/referee/ | grep -ic <key>`
+   for the NEXT packet BEFORE opening any REFEREE file on a §C word (REFEREE often has the next report out already).
+### DONE (every report docs/referee-2/<name>.md; every verdict "(Opus 5.5, D15)"; every push via scripts/push.sh, exit 0, VERIFY PASS)
+| item | object (sha1) | report | §C | outcome |
+| --- | --- | --- | --- | --- |
+| handover check | — | 6726c376 | — | sent to the Lead 23:34Z |
+| P-N5-CORE (C1)-(C6) | 7b66f1ba (l-si 081ae740) | 2ed8d3fb | b28d1ba9 | all SIGN; identical with REFEREE 17; missed CORE-N1 (\|P\| = transitions), N2 (a), N5 (invalid start files) |
+| P-N5-FBCK | 7747ecf2 (l-new 0e63596d) | 30237ebb | 991f9e27 | all SIGN, Cor (ii) implication; REFEREE's FBCK-N1 proves σ̄'\|V = σ̄ for any H (checked, sbar_ext.py) |
+| P-N5-SDPRIME | 54678c38 (l-si edc14c51) | bf48b8f4 | 9784229a | all SIGN; W-MONO/Ξ-SUCC at λ_W changes SIGNED with citation repair (SDP-N2) |
+| P-N5-REL | f79300a2 (l-si 07f19760) | eb5aa2b5 | b6811cf1 | all SIGN; REL-N1 accepted (R61 (e) ALT; (i) at t+1 → u ≠ λ(u)) |
+| P-N5-TOPSHAPE | c5b0e8d8 (l-new 4c2ea43e) | 97db54fc | 0e2063bf | all SIGN, DEAD confirmed; TOP-N1 = N-TS-3 (17 not 20 rises) |
+| P-N5-MATCHPHI | 544705b7 (l-lit 12b7d12a) | 5ba3e21d | NOT YET | all SIGNED, no gap; first term sharp at NM = 0 (N-MP-2); pinned checks reproduced; N-MP-4 alt_all NM 62 not 31 |
+### IN FLIGHT
+- None (MATCHPHI §C waits for the Lead's word).
+### NEEDS
+- Lead: route the joint lists (CORE, SDPRIME, REL → L-SI; FBCK, TOPSHAPE → L-NEW; MATCHPHI N-MP-1..5 → L-LIT); MATCHPHI §C word; start successor 20.
+### Things only I know
+- Checkers (all mine; si.py only as SPEC S1's engine, read-only; lane code never imported):
+  - R2-N5-CORE/core_check.py (C1-C6; modes files / pairs (VALIDATES start files) / start / random; RULE=rand), qcheck.py ([Q path@commit:lines]
+    «» strict checker; `qcheck.py <repo-relative packet> <rev>` reads the packet at rev; SHIFT=k control). Reuse qcheck for every packet.
+  - R2-N5-FBCK/fbck_check.py (exact LEV^K_C by simple paths in G[K], deep mode; dress / dressfiles modes add vertices outside K), sbar_ext.py.
+  - R2-N5-SDPRIME/sdprime_check.py (H3′ intervals, recursion dW/dH, J_b, EPOCH; MUT dm1/onlyW/onlyH). R2-N5-REL/rel_check.py (imports
+    sdprime_check; GATE-RISE kinds; X_b/RO_b; REL-SPLIT; MUT y2rise/thru/tie/cyc/dm1/nosbar/qonly), gr_weak.py, seg_case.py; inst/ = lane grun
+    instance copies. R2-N5-TOPSHAPE/topshape_check.py, repro.py. R2-N5-MATCHPHI/mphi_check.py (comb / seq / n5; own Mendelsohn-Dulmage matcher).
+  - Runtimes: CORE ~2 min; FBCK ~60 min (named at BUDGET 3e6); SDPRIME ~10 min; REL ~15 min (nosbar ~60); TOPSHAPE ~3 min; MATCHPHI ~2 min.
+- Traps hit this session:
+  - (1) rund_check.read_start does NOT validate: comp54_n80.start has a non-edge (11 → 51); n3cov_* starts are partial. Validate in pairs mode.
+  - (2) `git merge` refuses while files are staged ("Merge with strategy ort failed"): merge BEFORE `git add`.
+  - (3) git paths in `git ls-tree` / `git show` from a subdirectory are cwd-relative: run them from the repo root (an empty copy happened once).
+  - (4) A `pgrep -f run_all.sh` wait loop matches itself and never ends: wait on log RESULT lines instead.
+  - (5) Pinned lane scripts that read the packet from the working tree need a detached worktree at the freeze commit (git worktree add --detach
+    in the scratchpad; remove it after).
+- Recurring themes:
+  - packets cite R77's W-MONO / Ξ-SUCC beyond λ_W constancy (one-line repair);
+  - quotes with "…" over line breaks;
+  - "Q" redefined as Even choice vertices (REL);
+  - lane DATA counts drift from both referees' (different start sets or units).
+- Oink built in this container (8fbf0a7); a new container must run scripts/setup_oink.sh.
+
 ## Resume point 7 (successor 19; 2026-10-29 05:3xZ by date -u) — PARKED, nothing queued (Lead 05:31Z)
 - DONE this session (all pushed, scripts/push.sh exit 0): handover 6726c376; CORE 2ed8d3fb + §C b28d1ba9; FBCK 30237ebb + §C 991f9e27;
   SDPRIME bf48b8f4 + §C 9784229a; REL eb5aa2b5 + §C b6811cf1; TOPSHAPE 97db54fc + §C (this push). Every §C: identical verdicts, joint map EMPTY.
