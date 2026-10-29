@@ -444,3 +444,8 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
   … → 37 → 35); S4a breaks it with an INTERMEDIATE switch of 1 (82 → 25), after which 37 is ready (t = 3) and a W-snake 37, 40, 69, 26, 4
   settles one vertex per step; 1 reaches 21 at t = 7. What survives here: b − a = 6 ≤ 7 = Even vertices switching in [2, 8] (all in E_b,
   |E_b| = 48), so the COUNT forms (SWL-type) and b − a ≤ n − 1 are not touched.
+- SEG-LAST, smaller killer (box 27): experiments/si/lay/instances/seglast_kill_n29.pg (n 29, sha1 976fc4e88a514b1615ef81caa8b4af17a42b1c5f;
+  .start sha1 9afeb2aaf26dd63460216185b6a405a02b07474f), seglast_kill_n110 shrunk by lay/wclimb.py OBJ=M (keep a SEG-LAST failure, minimise
+  n). Run [2, 4] (phase key (λ_Ξ, τ): τ changes at 1 → 2, λ_Ξ at 4 → 5) is one REL segment; t = 2: the only switch is vertex 1, 9 → 23 (an
+  H-sink, target 19, ready; the only W-sink 25, target 4, not ready); t = 3: 1 → 19 and 25 → 4, both final. Reproduced from n5b alone,
+  run boundaries from n5b's own (λ_Ξ, τ) key included (lay/relcheck_seglast_kill_n29.txt); observed GEN_W holds.

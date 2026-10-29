@@ -38,6 +38,18 @@ print("n", n, "states", len(tr), "fallback flags", fbt)
 print("tau constant on [a, b]:", all(T[k] == T[a] for k in range(a, b + 1)), "| no fallback at transitions a..b-1:", all(fbt[k] == 0 for k in range(a, b)))
 print("phase/run boundary before a: tau_(a-1) == tau_a:", a > 0 and T[a - 1] == T[a], "| fallback at a-1:", a > 0 and fbt[a - 1] == 1)
 X, RO, CW, CH = ends(b)
+VS = [N.ev(N.SG, [S[k][v] if g.owner[v] == n5b.EVEN else -1 for v in range(n)]) for k in range(len(tr))]
+KEY = [(tuple(VS[k][v][0] for v in range(n)), tuple(T[k])) for k in range(len(tr))]   # RESULTS R38 (a) KEY: (lambda_Xi, tau)
+r0 = t0
+while r0 > 0 and KEY[r0 - 1] == KEY[t0] and fbt[r0 - 1] == 0: r0 -= 1
+r1 = t0
+while r1 + 1 < len(tr) and KEY[r1 + 1] == KEY[t0] and fbt[r1] == 0: r1 += 1
+segs, e = [], r1                                  # cut the run [r0, r1] from its end into maximal REL segments (GRUN §4)
+while e >= r0:
+    Xe, ROe, CWe, CHe = ends(e); s0 = e
+    while s0 > r0 and rel(s0 - 1, e, Xe, ROe, CWe, CHe): s0 -= 1
+    segs.append((s0, e)); e = s0 - 1
+print("run containing t (n5b: (lambda_Xi, tau) constant, no fallback):", (r0, r1), "| its REL segments:", segs[::-1], "| [a, b] is one of them:", (a, b) in segs)
 print("|X_b|", len(X), "|RO_b|", len(RO), "|CW_b|", len(CW), "|CH_b|", len(CH))
 print("REL-admissible on [a, b]:", all(rel(k, b, X, RO, CW, CH) for k in range(a, b + 1)), "| REL at a - 1:", a > 0 and rel(a - 1, b, X, RO, CW, CH))
 sw = [v for v in EV if S[t0][v] != S[t0 + 1][v]]
