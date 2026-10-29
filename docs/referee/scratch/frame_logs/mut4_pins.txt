@@ -1,0 +1,39 @@
+DUAL_chk 1295
+FRT_chk 8236
+FWR_chk 153
+GAMES 4
+GPR_MUT4_V 17
+GPR_chk 22695
+LATE_chk 17665
+OFZ_hitlen_max 42
+OFZ_hits 130
+OFZ_pairs 1730
+RRS_chk 30
+RT_max 4
+RUNS 10
+STRETCHES 20
+STR_chk 20
+SUCC_chk 10173
+TRANS 249
+WMON_chk 6893
+WRUNS 153
+fbS_max 33
+stretch_max 76
+VIOLATIONS 17
+EX ('GPR_MUT4', 'frame_inputs/ccl_w48_n48.pg', 15, 18, 18, 9, [9, 14, 34, 27])
+EX ('GPR_MUT4', 'frame_inputs/ccl_w48_n48.pg', 15, 18, 18, 22, [22, 14, 34, 27])
+EX ('GPR_MUT4', 'frame_inputs/ccl_w48_n48.pg', 2, 26, 5, 9, [9, 14, 34, 27])
+EX ('GPR_MUT4', 'frame_inputs/ccl_w48_n48.pg', 2, 26, 6, 9, [9, 14, 34, 27])
+EX ('GPR_MUT4', 'frame_inputs/ccl_w48_n48.pg', 2, 26, 6, 17, [17, 41, 14, 34, 27])
+EX ('GPR_MUT4', 'frame_inputs/ccl_w48_n48.pg', 2, 26, 6, 17, [17, 20, 14, 34, 27])
+EX ('GPR_MUT4', 'frame_inputs/ccl_w48_n48.pg', 2, 26, 6, 35, [35, 9, 14, 34, 27])
+EX ('GPR_MUT4', 'frame_inputs/ccl_w48_n48.pg', 2, 26, 6, 42, [42, 41, 14, 34, 27])
+EX ('GPR_MUT4', 'frame_inputs/ccl_w48_n48.pg', 2, 26, 6, 42, [42, 20, 14, 34, 27])
+EX ('GPR_MUT4', 'frame_inputs/ccl_w48_n48.pg', 2, 26, 7, 9, [9, 17, 41, 14, 34, 27])
+EX ('GPR_MUT4', 'frame_inputs/ccl_w48_n48.pg', 2, 26, 7, 9, [9, 17, 20, 14, 34, 27])
+EX ('GPR_MUT4', 'frame_inputs/ccl_w48_n48.pg', 2, 26, 7, 9, [9, 14, 34, 27])
+EX ('GPR_MUT4', 'frame_inputs/ccl_w48_n48.pg', 2, 26, 7, 17, [17, 41, 14, 34, 27])
+EX ('GPR_MUT4', 'frame_inputs/ccl_w48_n48.pg', 2, 26, 7, 17, [17, 20, 14, 34, 27])
+EX ('GPR_MUT4', 'frame_inputs/ccl_w48_n48.pg', 2, 26, 8, 9, [9, 17, 41, 14, 34, 27])
+EX ('GPR_MUT4', 'frame_inputs/ccl_w48_n48.pg', 2, 26, 8, 9, [9, 17, 20, 14, 34, 27])
+EX ('GPR_MUT4', 'frame_inputs/ccl_w48_n48.pg', 2, 26, 8, 9, [9, 14, 34, 27])

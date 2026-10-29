@@ -1,0 +1,51 @@
+DUAL_chk 25640
+FRT_chk 11543
+FWR_chk 4834
+GPR_chk 10443
+LATE_chk 1493
+OFZ_MUT1_ENT_V 175
+OFZ_MUT1_V 454
+OFZ_hitlen_max 9
+OFZ_hits 4176
+OFZ_pairs 25219
+RT_max 0
+RUNS 2000
+STRETCHES 3721
+STR_chk 3721
+SUCC_chk 16452
+TRANS 3128
+WMON_chk 2733
+WRUNS 4834
+fbS_max 1
+stretch_max 5
+VIOLATIONS 629
+EX ('OFZ_MUT1', 'rand15', 0, 5, 5, [5])
+EX ('OFZ_MUT1_ENT', 'rand15', 0, 5, 5)
+EX ('OFZ_MUT1', 'rand15', 0, 5, 5, [5])
+EX ('OFZ_MUT1', 'rand15', 1, 5, 5, [5])
+EX ('OFZ_MUT1_ENT', 'rand15', 1, 5, 5)
+EX ('OFZ_MUT1', 'rand18', 0, 0, 0, [0])
+EX ('OFZ_MUT1', 'rand18', 0, 5, 5, [5])
+EX ('OFZ_MUT1', 'rand22', 0, 5, 5, [5])
+EX ('OFZ_MUT1', 'rand26', 0, 4, 4, [4])
+EX ('OFZ_MUT1_ENT', 'rand26', 0, 4, 4)
+EX ('OFZ_MUT1', 'rand42', 1, 4, 9, [9, 4])
+EX ('OFZ_MUT1_ENT', 'rand42', 1, 4, 9)
+EX ('OFZ_MUT1', 'rand42', 1, 4, 9, [9, 4])
+EX ('OFZ_MUT1_ENT', 'rand42', 1, 4, 9)
+EX ('OFZ_MUT1', 'rand42', 1, 10, 7, [7, 10])
+EX ('OFZ_MUT1_ENT', 'rand42', 1, 10, 7)
+EX ('OFZ_MUT1', 'rand47', 0, 1, 1, [1])
+EX ('OFZ_MUT1_ENT', 'rand47', 0, 1, 1)
+EX ('OFZ_MUT1', 'rand47', 0, 1, 1, [1])
+EX ('OFZ_MUT1', 'rand47', 1, 1, 1, [1])
+EX ('OFZ_MUT1', 'rand47', 2, 1, 1, [1])
+EX ('OFZ_MUT1_ENT', 'rand47', 2, 1, 1)
+EX ('OFZ_MUT1', 'rand51', 1, 5, 9, [9, 6, 5])
+EX ('OFZ_MUT1', 'rand51', 1, 6, 9, [9, 6])
+EX ('OFZ_MUT1', 'rand52', 0, 3, 3, [3])
+EX ('OFZ_MUT1', 'rand52', 0, 4, 4, [4])
+EX ('OFZ_MUT1', 'rand56', 0, 1, 9, [9, 1])
+EX ('OFZ_MUT1', 'rand56', 0, 8, 8, [8])
+EX ('OFZ_MUT1', 'rand59', 0, 4, 4, [4])
+EX ('OFZ_MUT1', 'rand59', 0, 8, 8, [8])
