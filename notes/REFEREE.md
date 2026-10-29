@@ -15,6 +15,9 @@ Lead: session_014FBi6o334DvwT5Uw2kDfoN. Branch claude/referee. Queue EMPTY (Lead
 scratch/sdprime_probe.py (MUT 1-4 all bite on lib41), logs scratch/sdp_logs/. REFEREE-2's SDPRIME files exist (not opened): §C on the word.
 TRAP (new): a wait loop `until ! ps -eo args | grep -q "[s]dprime_probe"` never ends, because the bash -c wrapper's own command line contains the
 string. Wait on pids instead (ps -eo pid,args | awk '$2=="python3"').
+### SDPRIME §C d693a6fe (identical; SDP-N2 settled as a SIGNED proof step: W-MONO / Ξ-SUCC without λ_W; scratch/lw_facts.py).
+### P-N5-REL (f79300a2, l-si 07f19760; Lead 04:41Z), FIRST referee: R-N5-REL.md all SIGNED, no gap, REL-N1..N5 (GATE-RISE = R61 (e) ALT's
+strict form; Q notation clash). scratch/rel_probe.py (MUT 1, 3, 4 bite; 2, 5 do not). REFEREE-2 has 2 REL names (not opened): §C on the word.
 ### NEEDS: Lead routes CORE-N1..N6 (+ N-CORE-1..6) to L-SI, FBCK-N1..N4 (+ N-FBCK-1..5) and the RESTRICT joint repair to L-NEW.
 ### Things only I know
 - Probes (docs/referee/scratch/, own engine rl_engine, `python3 -I`): core_probe.py (CORE C1-C6, MUT 1-6; parse_start tolerant of bad lane
