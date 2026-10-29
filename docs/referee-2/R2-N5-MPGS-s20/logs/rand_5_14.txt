@@ -1,0 +1,13 @@
+MODE random 3000 5 14 11 3 PCAP 64 FB1 200
+B1_pairs: 1843553
+ENGXI_checks: 313300
+FLIP: 21280
+GS_paths: 1711
+GS_triples: 1523
+H1fail_triples: 5998
+H2fail_triples: 73
+H3fail_triples: 799
+X1: 499
+X3: 246
+states: 31735
+RESULT PASS violations 0

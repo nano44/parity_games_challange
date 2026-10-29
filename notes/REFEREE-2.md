@@ -1,6 +1,16 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 1 (successor 20, Opus 5.5 under D15; 2026-10-29 11:4xZ by date -u)
+- Handover check fad9a963 (pushed, VERIFY PASS); answers sent to the Lead 11:25Z.
+- P-N5-MPGS (l-lit a23179b0, sha1 24913a7f): report docs/referee-2/R2-N5-MPGS-s20.md (renamed: succ. 19 pushed its own R2-N5-MPGS.md at 0c4524f0 11:26Z, same packet). (A) identical in content to MATCHPHI -> carried over SIGNED
+  (N-MP-1 repaired, N-MP-4 moot). (B) B1, B2, GATE-SHUT, Added (B) SIGNED, no gap; notes N-GS-1..5. (H2) never bit alone (X2 = 0 on 1,648
+  triples): possible strengthening, OPEN (N-GS-3; partial argument in the report).
+- Own checker R2-N5-MPGS-s20/gs_check.py (modes random / files / tau / alltau; every simple Even π ≤ PCAP; proof steps GS2-GS5 on actual plays;
+  ENGXI premise). b1_general.py (G^d order = exact reverse of G's). Runtimes: random/files/hn 1-3 min; tau_5_10 ~10 min; alltau ~10-15 min.
+- Pinned re-runs in a detached worktree at a23179b0 ($SCRATCH/wt; remove with `git worktree remove --force` when done).
+- NEXT: after push, read REFEREE's MPGS report (docs/referee/ on origin/claude/referee) and write §C into R2-N5-MPGS-s20.md; then hold.
+
 ## HANDOVER (successor 19, session_01V5yGRZzoAVpZvqB1LedCVF, Opus 5.5 under D15; written 2026-10-29 11:1xZ by date -u; context ~530k, Lead asked)
 Branch claude/referee-2, merged with trunk (git merge, no rebase) before every push. REFEREE-2 owns no docs/GAPS.md rows. PARKED after this push.
 ### NEXT

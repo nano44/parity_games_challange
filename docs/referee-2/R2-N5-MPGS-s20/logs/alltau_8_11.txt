@@ -1,0 +1,11 @@
+MODE alltau 20000 8 11 43 0.75 PCAP 64 FB1 0
+ENGXI_checks: 1623852
+GS_paths: 6133
+GS_triples: 5193
+H1fail_triples: 26931
+H2fail_triples: 206
+H3fail_triples: 7225
+X1: 9315
+X3: 4883
+states: 166372
+RESULT PASS violations 0
