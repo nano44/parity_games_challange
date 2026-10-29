@@ -9,7 +9,9 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
 - Own checker R2-N5-MPGS-s20/gs_check.py (modes random / files / tau / alltau; every simple Even π ≤ PCAP; proof steps GS2-GS5 on actual plays;
   ENGXI premise). b1_general.py (G^d order = exact reverse of G's). Runtimes: random/files/hn 1-3 min; tau_5_10 ~10 min; alltau ~10-15 min.
 - Pinned re-runs in a detached worktree at a23179b0 ($SCRATCH/wt; remove with `git worktree remove --force` when done).
-- NEXT: after push, read REFEREE's MPGS report (docs/referee/ on origin/claude/referee) and write §C into R2-N5-MPGS-s20.md; then hold.
+- Lead 11:41Z: succ. 19's R2-N5-MPGS.md (0c4524f0) is the REFEREE-2 report of record; mine is now SUPPLEMENTARY (no contradiction, header box).
+- NEXT: (1) MPGS §C into R2-N5-MPGS.md (succ. 19's file) when REFEREE's MPGS report lands (count was 0 at 11:47Z). (2) P-N5-COMPOSE (l-si
+  3ca0932d, docs/si/P-N5-COMPOSE-box28.md sha1 e1b977aa…, 141 lines): own report docs/referee-2/R2-N5-COMPOSE.md before any docs/referee/ file.
 
 ## HANDOVER (successor 19, session_01V5yGRZzoAVpZvqB1LedCVF, Opus 5.5 under D15; written 2026-10-29 11:1xZ by date -u; context ~530k, Lead asked)
 Branch claude/referee-2, merged with trunk (git merge, no rebase) before every push. REFEREE-2 owns no docs/GAPS.md rows. PARKED after this push.
