@@ -2,11 +2,9 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-29 ~12:0xZ (successor, Opus 5.5): T37 DONE docs/lit/T37-exponential-families-classified.md: all parity/sink-MDP exponential
-SI/PI families are CARRY-type (1-sink); only deterministic-MDP families (Zhong-Ye Thm 6.1, HZ/ACR) are CYCLE-type (blocked by R47);
-3-ingredient sequencing (hidden-profit gate, index-ordered lane, one-step reset); N5: only tau-gates hide, allowed within a lambda-run;
-GATE-SHUT forces reopenings to violate (H1)/(H2)/(H3). Review object P-N5-MPGS (a23179b0); MATCHPHI, GATESHUT superseded copies
-(fixes b5fac397); N-MP-1..5 go into P-N5-MPGS-fixes when reports are in. Next: Lead's routing.
+2026-10-29 ~11:5xZ (successor, Opus 5.5): T38 DONE docs/lit/T38-one-sink-n5.md (1-sink: one lambda-run from starts dominating iota;
+l = |P| so RISE = PCH; COMPOSE-RUN Even part = m_E(P*+1); Odd side lambda^U varies; no carry bound on 1-sink; H_n linear DATA). Before:
+T37 5d32f637. Review object P-N5-MPGS a23179b0. Next: Lead's routing.
 
 ## Queue
 - Not opened (blocked or paywalled), needed only if a lane depends on them: Friedmann RAIRO 2011 (403); FHZ SODA/STOC 2011;

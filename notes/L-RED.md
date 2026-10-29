@@ -25,7 +25,12 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   pin s3quad_K8_m30 (9576333116f7, n 479, 264 iterations, two engines, Oink OK); per-vertex max switches = max Xi-changes = 2K - 1;
   sum switches 8K^2 - 1; switches(v) <= sum_succ (Xi-changes + 1) holds, min slack 1 at h.
 - Tools: experiments/red/seg/r107.py (phases/runs/PL/RUN/per-vertex counts + second engine), s3embed.py (S3 start = given start).
-- Next: STEP 2 (a2) counter clock across phases.
+- STEP 2 (a2): R108 docs/red/R108-step2-backpressure.md (OPEN): reduction via R47 Lemma Phi (super-poly total => super-poly joint
+  lambda-run); mkr ticks = W-cycle-node changes (monotone in phase); backpressure needs the closed link's current option to carry high W
+  (Xi <= W, R18 (d) Lemma S (b)); pivot-pair obstruction (R108 §4); mk3.py v1 DATA: tau unstable at gates/readers (I_tau at state 0).
+  Next: (A) tau-ticks (one U-improving tau change per pivot tick so gates re-close across phases), (B) length thresholds, (C) other clocks.
+- Things only I know: W >= Xi pointwise (Lemma S (b)) kills every "Xi high, W low" gadget; the Odd honest choice is a MIN, so an Odd
+  vertex's Xi is at most its tau-option's Xi. s3embed.py works on any explicit-start pin (check "same as image").
 
 ## Successor 25 HANDOVER (written 2026-10-29 10:52Z, date -u; ~400k context)
 - DONE (claude/l-red, push.sh VERIFY PASS each push):
