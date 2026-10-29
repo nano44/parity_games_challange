@@ -1,0 +1,4 @@
+Dmax=0 dsigP_max=5 dsigP_max_D1=0 phases=1
+TOP-D dsig(P) 5 |D| 0 len 63 n 1897 m 3610 box51/out/dlc_d5.pg [0,63]
+TOP-LEN dsig(P) 5 |D| 0 len 63 n 1897 m 3610 box51/out/dlc_d5.pg [0,63]
+TOP-VC dsig(P) 5 |D| 0 len 63 n 1897 m 3610 box51/out/dlc_d5.pg [0,63]

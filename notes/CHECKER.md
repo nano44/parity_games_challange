@@ -23,6 +23,9 @@ History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50
 - METHOD (Lead 07:17Z): the landing gate now includes GitHub CI "verify" GREEN on the landing SHA / trunk head (R82-R84 landed with red CI:
   actions/checkout depth 1 broke experiments/new quote checks on absent commits; fixed fetch-depth: 0 at trunk bb883a06). At every landed
   check, read the CI run for the landing SHA (GitHub MCP actions_list / get_commit status) and record it. Merge trunk at every push.
+- C94 = R85 (P-N5-MPGS), draft 8b5d78cd @ d8842226 (Lead 12:57Z): docs/checker/C94.md FAIL E-1: (c′) λ-run form is a strengthening (REFEREE §1b
+  outside its table; REFEREE-2 §C C.1 no row, C.4 item 6 "opt"); move to Referee strengthening, drop the title clause (R84 N-TS-1 precedent).
+  Points (2)-(4) PASS; T33, T34 (8 lines), quotechecks 9/0, 50/0 re-run identical. NEXT: C94 Add. 1 on the revision.
 - METHOD (this box): stamps from `date -u` run in the same turn as the text (Lead note 01:54Z; I guessed two stamps). Read the GAPS UPDATE's
   every clause against the entry's "Not signed" list, not only its items (C90 L-1: the UPDATE used the unsigned "from READER-INV" form).
 - Re-run commands (C90): REFEREE @f2d22ad7 docs/referee/scratch: `RANDSTARTS=0 MAXN=60 LEVMAX=60 python3 -I fbck_probe.py <15 named>`
