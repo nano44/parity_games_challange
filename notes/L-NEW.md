@@ -1,6 +1,13 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Box 56 log (successor 33; Lead 15:54Z: attack SBC directly, else the weakest extra hypothesis)
+- docs/new/N5-SBC2-box56.md. (1) No potential. DATA: switchbestexp's σ̄ = N-bit counter on cycle centres CC(i), complete for N ≤ 4 (DSB 2^N),
+  early carry at orbit j 219 → 221 for every N ≥ 4. CONJECTURE GROUP (per (λ-interval, σ̄ value) ≤ n − 1 Ξ-changes across stretches): 0
+  violations on 689 games; proof breaks at "lost progress" (Ξ_{σ′} ⊴ val(σ′, s) after leaving s). (2) Theorem EXIT (PROVED lane, under
+  ASSUMPTION NT): H-EXIT (≤ 1 successor reaching an Even choice) + H-TOP (u tops no cycle) ⇒ σ̄(u) changes ≤ once (Lemma LOC-OPT from R15
+  (a), (b) on the dual of G_σ; Lemma FIX); F < (n + m + 1)(n² + 1) on Odd-exit games. Tools box55/grp.py, box56/exit.py; check.sh "Box 56".
+
 ## Box 55 log (successor 33, Opus 5.5, D14/D18; Lead brief 15:19Z; STEP 0 answers sent 15:20:17Z, started without waiting as told)
 - STEP 0 (measured): local l-new STALE (840 behind origin); ff-only to 56a42d4f (is-ancestor OK); merge --no-ff trunk 305cc8be -> 202bf1ec
   (5 ahead / 0 behind; was 4 / 18, merge-base f67f5020). GAPS G-N5-TIME l.11 open, G-N1-LB l.10 open, G-N5-TERM l.16 closed. D1 (INDEX l.5),
@@ -62,10 +69,14 @@ Stop (S5) when Iσ = Iτ = ∅: Even wins v iff the cycle node of Ξσ(v) has ev
   120 > n = 110, one cycle node.
 - Route "R15 well-foundedness on G^d bounds SBC_σ": DEAD by Proposition NO-TRANSFER (proved): from τ* with Iτ* = ∅ Odd never moves and
   SBC_σ is unchanged (checked: box55/ntcheck.py, alt_all box55/nt_alt.txt). Obstruction: DECOUPLE separates the runs.
+- GROUP-type bounds (distinct best replies DSB instead of SBC): DEAD as a route to polynomial, switchbestexp_4 (sha1 57b27b74…): DSB = 16 = 2^4
+  (the σ̄ counter visits every pattern).
 - Obstruction to SF-POLY: P-component leapfrog at Odd vertex u = 14N + 16 of switchbestexp_N (successors 14N + 11, 14N + 18): flips
   2^N − 1 for N ≤ 4, 41 at N = 10; LAM = 0 throughout.
 
 ## Things only I know (successor 33)
+- Random class games (exit.py --rand) converge in ~3 σ-values even from random σ_0: they test LOC-OPT, not the polynomial bound.
+- T47 (named by the Lead 15:54Z) was not on claude/l-lit when I fetched at 15:53Z; only T46.
 - pcheck.py must compare strategies on the player's OWN vertices: red/n3/instances/n3cov_lean.start sets SIGMA0 47:18 on an Odd vertex;
   start_pair writes it into σ and S1 ignores it, so unprojected sequences differ (a false TAU_V).
 - corpus.sh with xargs -P 3: print each game's block in ONE write, or the lines of parallel jobs interleave (first sicorpus log was garbled).
@@ -611,6 +622,7 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
   Lead 15:39Z as worded 15:27:39Z; Lead routes it to both referees. Corpus DATA: alt_all 413, sicorpus 276, fam 20, hard 73, all PASS.
 - Box 55 (2): N5-SBC-box55.md (SBC-EQ, NO-TRANSFER PROVED lane; M1-M4 DEAD; P-leapfrog obstruction at switchbestexp vertex 14N + 16).
 - Box 55 (3): N5-SF-gauntlet-box55.md (no step passed in full).
+- Box 56: N5-SBC2-box56.md (counter DATA, CONJECTURE GROUP, Theorem EXIT under NT).
 ### IN FLIGHT
 - Nothing running. Referee reports on P-N5-SF will come: answers go into a NEW P-N5-SF-fixes-box55.md, never into the frozen packet.
 ### NEXT (the Lead decides)
