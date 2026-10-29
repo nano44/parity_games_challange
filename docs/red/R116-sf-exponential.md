@@ -23,7 +23,7 @@ Start: SPEC S3 default (best-reward start for both players) everywhere.
   | 6 | 165 | 1198 | 1198 | 1198 | 120 | 120 | 6 | 0 | 0 | OK | 34ad93bc62d0 |
   | 7 | 191 | 2414 | 2414 | 2414 | 247 | 247 | 7 | 0 | 0 | OK | 6b40922a7950 |
   | 8 | 217 | 4846 | 4846 | 4846 | 502 | 502 | 8 | 0 | 0 | | 5a7fe1cc2d78 |
-  | 9 | 243 | **9697** | (running) | 9710 | 1013 | 1013 | 9 | 0 | 0 | | (dlchain.py 9 1) |
+  | 9 | 243 | **9697** | 9697 | 9710 | 1013 | 1013 | 9 | 0 | 0 | | (dlchain.py 9 1) |
   | 10 | 269 | S10 | | 19438 | | 2036 | | | | | |
   The SBC formula holds exactly at N = 3..9. The iteration formula holds exactly at N = 3..8. At N = 9 the count is 9697, 13 below
   the fit (ratio to N = 8: 2.0010), so the iteration closed form is a fit, not the law. The growth is still a doubling per bit. For comparison, fcN (no repeaters) gives 121 / 215 / 520 / 1021 at N = 3 / 4 / 6 / 8
@@ -36,6 +36,10 @@ Start: SPEC S3 default (best-reward start for both players) everywhere.
   repeat at every level, so the iterations double with N as well.
 - I^glo (evseq.py --rule glo, the switch-best rule in the Ξ frame) gives the same σ-sequence lengths: 134 / 286 / 590 at N = 3 / 4 / 5
   (σ̄-changes 10 / 24 / 54).
+
+- Random starts (scratch rstart.py, uniform σ_0 and τ_0, seeds 1-4; sf2): N = 5: 292, 442, 192, 281 iterations (SBC 28, 45, 25, 33);
+  N = 6: 585, 581, 550, 607 (SBC 67, 61, 65, 71). That is about half of the S3 count, and it still roughly doubles per bit. READING: a
+  random start enters the counter mid-count.
 
 ## 2. Why one repeater suffices (READING; the mechanism is L-NEW's LATENCY, box59 §1.3)
 - In fcN a set of bit j below the current top reaches two places along the same shared chain:
@@ -86,7 +90,7 @@ Start: SPEC S3 default (best-reward start for both players) everywhere.
 
 ## 4. What is and is not shown
 - DATA: two independent engines agree on the counts for N = 3..8, see the table. Oink regions and verify.py are OK at N = 3..7. The
-  SBC closed form holds exactly at N = 3..9. The iteration closed form holds at N = 3..8 and misses by 13 at N = 9 (sf2 only).
+  SBC closed form holds exactly at N = 3..9. The iteration closed form holds at N = 3..8 and misses by 13 at N = 9 (sf2 = n5sf.py = 9697).
 - NOT shown: a proof that the word is the binary counter for every N. That would need an induction over the run, like the one L-NEW
   left open for fcN (box59 §1.3). The doubling F(j) = 2F(j − 1) + j + 1 is read from the words for N ≤ 5 only.
 - What would make this wrong: an engine bug shared by both engines (they share no code: sf2 uses L-COMP's PGSolver port, n5sf.py uses L-SI's
