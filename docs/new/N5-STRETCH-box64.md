@@ -208,3 +208,25 @@ Proof.
   (5) PROVED (lane): Lemma ENT-FREEZE and Corollary COMPOSE-FREEZE. The Odd term of R86 restricts to unprotected options:
   P*^U_unp (NM*^U via MATCH-Φ). G-N5-TIME ⇐ (FO) ∧ (P*^U_unp polynomial).
 - NEEDS: none from the owner.
+
+## 5. BOX 65 start (Lead 20:00Z; σ̄ version superseded by §1.8, Lead told 20:09Z). Written ~20:25Z (date -u)
+### 5.1 DATA: ρ per phase (box64/rho.py; rho_all.txt 719 games, rho_mkr.txt)
+- ρ is counted as (Odd choice vertex, in-phase transition) pairs at which Ξ of that vertex changes. Control: R56 FB-RED holds in every
+  phase (0 violations).
+- 719 games: max ρ 225 (red/seg/instances/s3quad_K8_m30, n 479); max ρ / n 2.67 (nconf61_n48); max in-phase fallbacks 37 (rise_fb38_n48).
+- mkr, own starts: ρ = 49, 121, 225, 961 at K = 4, 6, 8, 16, i.e. exactly (2K − 1)². With m = 4K this is Θ(n²) per phase
+  (mk_16_100: 961 > n = 498). So any "ρ = O(n)" form is DEAD on mkr. ρ-POLY (R56) is untouched. mkr has 0 fallbacks, so its ρ does not
+  enter STRETCH-RED's fallback term there.
+### 5.2 READING: late adoptions charge to Ξ-rises, i.e. back to R86's RISE / P*
+- A late adoption of (y, z) at transition u, blocked at t < u in the same W-run:
+  - at t, (y, z) ∉ Iσ_t, i.e. Ξ_t(z) ⊴ Ξ_t(ρ_t y);
+  - at u, the adoption needs (y, z) ∈ Iσ_u, i.e. Ξ_u(z) ▷ Ξ_u(ρ_u y).
+- Ξ is pointwise non-decreasing along N5 (R15 (a), box 21 Lemma S (b)). If also Ξ_u(ρ_u y) ⊵ Ξ_t(ρ_t y), then Ξ(z) rose strictly in
+  (t, u]. That holds when y is not on its own Ξ-cycle at t or u, by [V2]'s order-reflection.
+- So, modulo that cycle case (not checked), R* ≤ Σ_{(y, z)} RISE_Ξ(z) over the W-run, and R86 LEN-MONO bounds RISE by path-set changes
+  PCH. Hence the (FO) route, too, comes back to Even's P*, exactly the term of R86's route.
+- READING: the two routes of §3.3 are not independent. Both need P* (or a sharper R* argument than "one Ξ-rise per late adoption").
+### 5.3 Next (proposed)
+- (a) Close the cycle case of 5.2. That would make R* ≤ m_E·(1 + max RISE_Ξ) a lane lemma.
+- (b) Look for a charge of late adoptions to W-rises instead of Ξ-rises. W-rises inside a W-run are bounded by GP*'s propagation, and
+  that would avoid P*. DATA first: is every late adoption preceded by a W-rise of z after the block?
