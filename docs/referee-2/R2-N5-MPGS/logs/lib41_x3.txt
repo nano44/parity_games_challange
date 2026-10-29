@@ -1,0 +1,14 @@
+MODE files ../R2-N5-STAU/lib41_noref.lst 3 PCAP_LEN 6 PCAP 40
+B1_checks: 3314362
+CORB_checks: 8934
+CTL_flip_nohyp: 2270
+CTL_noH1: 2938
+CTL_noH1_checks: 214496
+CTL_noH2_checks: 10837
+CTL_noH3: 2777
+CTL_noH3_checks: 210912
+DENG_checks: 19519
+GS_checks: 33572
+runs: 1230
+states: 19519
+RESULT OK violations=0

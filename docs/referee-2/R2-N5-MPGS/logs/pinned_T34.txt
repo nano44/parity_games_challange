@@ -1,0 +1,16 @@
+n=3 starts=2 gate-states with tau(e)=h: 135; with (H1),(H2): 135; violations (d1 in I_tau): 0; h->d1 flips: 0, of which with (H1),(H2): 0
+exit 0 (3 0 0)
+n=3 starts=202 gate-states with tau(e)=h: 14385; with (H1),(H2): 14217; violations (d1 in I_tau): 0; h->d1 flips: 102, of which with (H1),(H2): 0
+exit 0 (3 200 3)
+n=4 starts=102 gate-states with tau(e)=h: 12045; with (H1),(H2): 11911; violations (d1 in I_tau): 0; h->d1 flips: 97, of which with (H1),(H2): 0
+exit 0 (4 100 4)
+n=5 starts=32 gate-states with tau(e)=h: 5783; with (H1),(H2): 5705; violations (d1 in I_tau): 0; h->d1 flips: 48, of which with (H1),(H2): 0
+exit 0 (5 30 5)
+n=4 starts=2 gate-states with tau(e)=h: 228; with (H1),(H2): 228; violations (d1 in I_tau): 0; h->d1 flips: 0, of which with (H1),(H2): 0
+exit 0 (4 0 0)
+n=5 starts=2 gate-states with tau(e)=h: 350; with (H1),(H2): 350; violations (d1 in I_tau): 0; h->d1 flips: 0, of which with (H1),(H2): 0
+exit 0 (5 0 0)
+n=6 starts=2 gate-states with tau(e)=h: 510; with (H1),(H2): 510; violations (d1 in I_tau): 0; h->d1 flips: 0, of which with (H1),(H2): 0
+exit 0 (6 0 0)
+n=8 starts=2 gate-states with tau(e)=h: 872; with (H1),(H2): 872; violations (d1 in I_tau): 0; h->d1 flips: 0, of which with (H1),(H2): 0
+exit 0 (8 0 0)

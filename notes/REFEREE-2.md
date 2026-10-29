@@ -4,7 +4,8 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
 ## HANDOVER (successor 19, session_01V5yGRZzoAVpZvqB1LedCVF, Opus 5.5 under D15; written 2026-10-29 11:1xZ by date -u; context ~530k, Lead asked)
 Branch claude/referee-2, merged with trunk (git merge, no rebase) before every push. REFEREE-2 owns no docs/GAPS.md rows. PARKED after this push.
 ### NEXT
-1. MATCHPHI §C: ONLY on the Lead's word. Do NOT open docs/referee/ MATCHPHI files before it. The report is pushed (5ba3e21d, this push).
+1. MPGS §C (MATCHPHI is SUPERSEDED by P-N5-MPGS, Lead 11:13Z): ONLY on the Lead's word. Do NOT open docs/referee/ MPGS/MATCHPHI files before it.
+   Tools: R2-N5-MPGS/gateshut_check.py (Part B), R2-N5-MATCHPHI/mphi_check.py (Part A).
 2. Then wait for the next packet. Take the names-only count `git ls-tree --name-only -r origin/claude/referee docs/referee/ | grep -ic <key>`
    for the NEXT packet BEFORE opening any REFEREE file on a §C word (REFEREE often has the next report out already).
 ### DONE (every report docs/referee-2/<name>.md; every verdict "(Opus 5.5, D15)"; every push via scripts/push.sh, exit 0, VERIFY PASS)
@@ -16,7 +17,8 @@ Branch claude/referee-2, merged with trunk (git merge, no rebase) before every p
 | P-N5-SDPRIME | 54678c38 (l-si edc14c51) | bf48b8f4 | 9784229a | all SIGN; W-MONO/Ξ-SUCC at λ_W changes SIGNED with citation repair (SDP-N2) |
 | P-N5-REL | f79300a2 (l-si 07f19760) | eb5aa2b5 | b6811cf1 | all SIGN; REL-N1 accepted (R61 (e) ALT; (i) at t+1 → u ≠ λ(u)) |
 | P-N5-TOPSHAPE | c5b0e8d8 (l-new 4c2ea43e) | 97db54fc | 0e2063bf | all SIGN, DEAD confirmed; TOP-N1 = N-TS-3 (17 not 20 rises) |
-| P-N5-MATCHPHI | 544705b7 (l-lit 12b7d12a) | 5ba3e21d | NOT YET | all SIGNED, no gap; first term sharp at NM = 0 (N-MP-2); pinned checks reproduced; N-MP-4 alt_all NM 62 not 31 |
+| P-N5-MATCHPHI | 544705b7 (l-lit 12b7d12a) | 5ba3e21d | SUPERSEDED (no §C) | all SIGNED, no gap; first term sharp at NM = 0 (N-MP-2); pinned checks reproduced; N-MP-4 alt_all NM 62 not 31 |
+| P-N5-MPGS (A = MATCHPHI, B = GATE-SHUT) | 24913a7f (l-lit a23179b0) | (this push) | NOT YET | all SIGNED, no gap; (A) identical maths; GATE-SHUT 0/72,985 gates; (H2) not shown necessary (N-MPGS-1); T34 tests H1 on d1 only (N-MPGS-2) |
 ### IN FLIGHT
 - None (MATCHPHI §C waits for the Lead's word).
 ### NEEDS

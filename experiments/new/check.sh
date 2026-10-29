@@ -117,4 +117,16 @@ if grep -q "VC PASS" <<<"$v1" && has dsig_max=3 "$v1" && has run_VC_max=3 "$v1" 
 else
   echo "box 50 VC checks: FAILED"; exit 1
 fi
+# Box 50 (successor 31): packet P-N5-VC (frozen): 5 quotes at trunk e3b435ab + shifted control + sha1.
+if git cat-file -e e3b435ab^{commit} 2>/dev/null; then
+  if python3 -I box49/quotecheck3.py ../../docs/new/P-N5-VC-box50.md | grep -q "quotes=5 bad=0" && \
+     ! python3 -I box49/quotecheck3.py ../../docs/new/P-N5-VC-box50.md --mut >/dev/null && \
+     [ "$(sha1sum ../../docs/new/P-N5-VC-box50.md | cut -d' ' -f1)" = "078ad604cd232eed26a3fff7ad632852b0613e93" ]; then
+    echo "P-N5-VC quotes 5 + control, sha1: PASS"
+  else
+    echo "P-N5-VC checks: FAILED"; exit 1
+  fi
+else
+  echo "P-N5-VC quotes: NOT RUN (e3b435ab not in this clone)"
+fi
 rm -rf "$tmp"
