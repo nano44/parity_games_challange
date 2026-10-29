@@ -1,0 +1,22 @@
+MODE pairs named.lst ../../../experiments
+CTL_counting: 32
+CTL_cross: 666
+CTL_cross_checks: 729
+CTL_deltatop: 679
+CTL_deltatop_seqs: 689
+CTL_flip: 426
+DELTA_rand: 400
+ENGXI_checks: 1897
+Pchanges: 12716
+TSa_checks: 426
+TSb_checks: 1103
+XSAMEC_checks: 24
+phases: 24
+runs: 20
+states: 1897
+v_phases_odd_then_even: 505
+v_phases_with_top_change: 779
+max_Pchanges_per_v_phase: (72, 'new/box49/inst/l121_d29.pg#start', 1, 122, 40, 41)
+max_top_changes: (9, 'new/box25/instances/sc32.pg#S3', 4, 48, 0, 32)
+max_top_changes_over_n: (0.29, 'new/box25/instances/sc32.pg#S3', 4, 48, 0, 32)
+RESULT OK violations=0
