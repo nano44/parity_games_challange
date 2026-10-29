@@ -129,3 +129,66 @@ No gap. Notes N-SD-1..7.
   the length bound), and the d bound is exact (dm1). One quote carries a spurious "…" (N-SD-1). "Other cycles come and go" is barely exercised
   (N-SD-3).
 - NEEDS: Lead: the §C word (REFEREE reviews in parallel; I have not opened docs/referee/ on SDPRIME); route N-SD-1..7 to L-SI.
+
+## §C. Comparison with REFEREE's report (written on the Lead's word of 2026-10-29 04:41Z; from 04:41Z by date -u)
+Object: docs/referee/R-N5-SDPRIME.md at origin/claude/referee 573d2695 (sha1 47d5287569a739ec4e491e26fb1a263ee785733f), REFEREE successor 17.
+Opened for the first time after my report was pushed (bf48b8f4).
+### C.1 Verdicts: IDENTICAL
+| item | REFEREE | REFEREE-2 | joint |
+| --- | --- | --- | --- |
+| Theorem STATIC-DEPTH′ | SIGNED | SIGN | SIGN |
+| (H4′)'s equivalence and d = longest J_b-path | SIGNED (by proof) | SIGN (proof + H4EQ / DEQ data) | SIGN |
+| Remark (contains R77 (c)) | SIGNED | SIGN | SIGN |
+| Corollary EPOCH | SIGNED (a REDUCTION) | SIGN (a REDUCTION) | SIGN |
+| quotes | 12/12 (the "…" noted as cosmetic, SDP-N3) | 11/12 strict, the same "…" (N-SD-1) | 12/12 in content; one cosmetic "…" |
+### C.2 Joint gap map: EMPTY
+### C.3 The Lead's question: is the W-MONO / Ξ-SUCC step, used where λ_W changes, signed?
+- YES, it is signed as a proof step, with a citation repair. Both referees found the same point independently: REFEREE's SDP-N2, and my §1
+  first bullet with N-SD-5.
+- The packet cites W-MONO and Ξ-SUCC from R77 (c), where they are landed "on in-phase S4a transitions (R77's (H1))". R77's (H1) includes λ_W
+  constancy, and STATIC-DEPTH′ uses both facts on (H1′) intervals where λ_W may change.
+- Neither fact depends on λ_W:
+  - W-MONO is one S4a step. σ_t is a strategy of S4a's arena at t, and τ is fixed. P2 / R18 (d) Lemma S (a) makes σ_{t+1} the pointwise
+    greatest arena strategy in W, so W_{t+1} ⊵ W_t.
+  - Ξ-SUCC follows from RESULTS R15 (a), (d) (Ξ non-decreasing at every N5 iteration) and (SW): a switch at v goes to an Iσ_t edge, strictly
+    better at t.
+  - Both proofs are one line, and both referees wrote the same ones.
+- Both referees checked it in data with 0 failures: mine at 283 + 657 + 24 + 56 λ_W-changing transitions (WMONO_lw, XSUCC_lw), REFEREE's over
+  its 585 λ_W-changing intervals.
+- So no unlanded premise enters. The joint repair for L-SI's fixes file is REFEREE's SDP-N2 wording: "W-MONO (P2 at an S4a step) and Ξ-SUCC
+  (R15 (a), (d), (SW)) hold at every in-phase S4a transition; λ_W is not used". N-SD-5 (the (M2κ) citation is stronger than needed) is the same
+  repair.
+### C.4 Notes, side by side
+- SDP-N1 (coverage as a ratio; counts differ from §4) = my N-SD-7.
+  - The two referees' piece counts AGREE with each other: alt_all pieces with ≥ 1 transition, REFEREE 1,132, mine 1,133. Both differ from the
+    lane's 872. So the difference is the lane's piece notion or starts, not an engine difference.
+  - The one-piece discrepancy between us is unexplained (likely the comp54_n80 start: I validate it to the first successor, REFEREE may treat
+    it otherwise; not checked).
+  - REFEREE's ratio figures (97.0 % / 81.1 % vs §4's 96.8 % / 81.2 %) are accepted. I did not compute whole-piece ratios.
+- SDP-N2: §C.3.
+- SDP-N3 = N-SD-1 (the "…" in the (SW) quote): identical finding.
+- SDP-N4 = N-SD-2 (GEN_W is a property of (G, τ); only its used form is checked and needed): identical. Both find the conclusion intact where
+  the used form fails (REFEREE 161 intervals, mine 132 + 173), consistent with the unsigned CONJECTURE STATIC-DEPTH′-TIE.
+- SDP-N5 (thin spots: EPOCH with CF ≥ 1 on few pieces; MUT=1 bites only where the bound is sharp) is contained in my N-SD-3.
+- Mine only:
+  - N-SD-3's first part: "other cycles come and go" is exercised in only 6 intervals. REFEREE reports no such count. Its T_W ≠ T_H and λ_W
+    counts agree in kind with mine.
+  - N-SD-4: (H4′) is not vacuous (fails 32 times; REFEREE: 2 pieces).
+  - N-SD-6: R77's (CV) step is replaced by item 1. REFEREE's item 1 check says the same in substance.
+  - None conflicts.
+- Interval counts differ by sampling: REFEREE 4,791 intervals on alt_all, mine 32,268 (I test every sub-interval of a piece up to length 60).
+  Both have 0 failures.
+- Controls, complementary:
+  - REFEREE MUT2 (H3′ in the W frame only) = my onlyW. Both bite, and the honest half is needed.
+  - My onlyH (honest frame only) bites 3,009 times, LEN 23. So the W half is needed too; REFEREE's "both halves of (H3′)" is now exhibited for
+    both halves.
+  - REFEREE's MUT3 (depth from the W frame only) and MUT4 (CF counting W-cycle appearances only) bite. I did not run them.
+  - MUT1 = my dm1: both bite.
+### C.5 Joint list for L-SI's fixes file
+SDP-N1 (with the referees' agreeing count 1,132 / 1,133), SDP-N2 (= N-SD-5; the citation repair of §C.3), SDP-N3 = N-SD-1, SDP-N4 = N-SD-2,
+SDP-N5 + N-SD-3, N-SD-4, N-SD-6. No verdict changes.
+### C.6 DONE / FINDINGS / NEEDS
+- DONE: this §C.
+- FINDINGS: verdicts identical, joint gap map empty. The W-MONO / Ξ-SUCC step at λ_W changes is SIGNED, with a citation repair (one-line proofs
+  from P2 and from R15 + (SW); 0 failures in both referees' data).
+- NEEDS: Lead: route the joint list (C.5) to L-SI.
