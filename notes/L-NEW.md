@@ -1218,6 +1218,8 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
     Lemmas 5.1-5.5 (5.5: ‖v_k − v*‖∞ ≤ γ^k‖v_0 − v*‖∞), Lemmas 6.1-6.4 (6.4: elimination after L = log_{1/γ}(n²/(1 − γ))), Theorem 6.5.
   - L-SI docs/si/N5-EXIT-box22.md at l-si 196c7e8c: §2 NO-UP, §8 E-ONEWAY, §9 OPEN ALTERNATION.
 
+- (successor 33, 16:25Z) arXiv 1811.05115 v3, Gajjar-Radhakrishnan, «Parametric Shortest Paths in Planar Graphs»: ABSTRACT only (export.arxiv.org/abs): n^{Ω(log n)} pieces; Carstensen 1983, Mulmuley-Shah 2001 lower bounds; Gusfield 1980 / Dean 2009 upper n^{log n + O(1)}. Theorem text not opened.
+
 ## Dead ends
 - (box 47, successor 26, 11:13Z) CONJECTURE XD-1 (≤ 1 X_dir per {u, u′}-run): FALSE on experiments/new/box47/instances/pp2_n19.pg (sha1 97b5b132…),
   𝒞^2O, S3, phase [1, 3], D = {1}, {0}, {1}; length-only values (cycle node 9). Obstruction: each X_dir needs only an Even switch on each

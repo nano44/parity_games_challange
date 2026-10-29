@@ -101,6 +101,31 @@ without NT is OPEN (S1's tie-breaks, SPEC FIX 2 / FIX 4, depend on σ elsewhere)
 - Labels for the Lead: Theorem EXIT, Lemmas LOC-OPT, FIX, Corollary EXIT-RED: PROVED (lane), under ASSUMPTION NT; CONJECTURE GROUP OPEN;
   SF-POLY OPEN.
 
+## 4. The barrier (added 16:2xZ after the Lead's 16:19Z inputs: L-LIT T48 interim 1, L-RED R114)
+- READING, T48's (I checked only the abstract): arXiv 1811.05115 v3 (Gajjar-Radhakrishnan) abstract, opened 16:25Z (date -u): «as λ
+  varies in (−∞, +∞), the piece-wise linear cost of the shortest path from s to t has n^{Ω(log n)} pieces. This shows that lower bounds
+  obtained earlier by Carstensen (1983) and Mulmuley & Shah (2001) for general graphs also hold for planar graphs»; and «Gusfield (1980)
+  and Dean (2009) showed that the number of pieces for every n-vertex graph with linear edge weights is n^{log n + O(1)}». I have not
+  opened the theorem or checked T48's reading that the construction can be run with monotone-rising distances. With that reading, the
+  barrier is:
+  BARRIER (READING). Consider an abstract run in which (i) every vertex's value rises monotonically (MONO-XI), and (ii) every Odd vertex's
+  choice is an argmin of its successors' values over a FIXED successor set (LOC-OPT). Parametric shortest paths fit this model and have
+  n^{Ω(log n)} changes of the optimal path, each a change of some vertex's argmin. So a proof of SF-POLY that uses only (i) and (ii)
+  cannot give better than quasi-polynomial. N5-SBC §3's leapfrog is that mechanism at one vertex.
+- The extra ingredient in what I proved. Theorem EXIT uses (i) and (ii) plus Lemma FIX: all but one argument of each argmin is CONSTANT.
+  A rising chain crosses a constant once, so one moving line against constants cannot leapfrog. Parametric constructions need two or more
+  moving arguments at one argmin, which is exactly what H-EXIT forbids. That is why EXIT is consistent with the barrier: it is a
+  single-moving-line case.
+- For the general case, a polynomial proof must use the DISCRETE structure of F's moves: switch-best inside the improving arena against a
+  stale reply. L-LIT's EVRET (Even vertices return to earlier edges, up to 95 changes at one vertex on switchbestexp_8) says the run is not
+  one-parametric, so Gusfield's upper argument (linear dependence on one scalar) does not apply as is either. I found no such ingredient.
+- CONJECTURE SBC-QP: along every orbit of F, SBC_σ ≤ n^{O(log n)}. OPEN. No route: I have no parametrisation of F's run in which values are
+  linear (or low-degree) in one parameter. It is named as a target shape only (Lead 16:19Z); it would give N5-SF ≤ n^{O(log n)} by SF-RED
+  (b), not SF-POLY.
+- DATA from L-RED R114 (l-red 61ef6237, two engines, S3 start; not re-run by me): SBC on switchbestexp is linear (≈ 12N, 0.47n at N = 24).
+  N5-SF is linear on L-RED's own ports of friedmannsubexp and fearnleysubexp. This is consistent with §1's early carry (I^glo doubles,
+  N5-SF leaves the counter at stale-escape resets, T46 Mechanism 2).
+
 ## DONE / FINDINGS / NEEDS
 - DONE: this note; experiments/new/box55/grp.py, box56/exit.py, box56/libexit.sh; logs box55/grp_alt.txt, grp_si.txt, box56/exit_alt.txt;
   check.sh block "Box 56".
@@ -108,4 +133,6 @@ without NT is OPEN (S1's tie-breaks, SPEC FIX 2 / FIX 4, depend on σ elsewhere)
   N ≥ 5 (DATA; the kill lead for L-RED). (2) CONJECTURE GROUP (per-best-reply Ξ-changes ≤ n − 1 across stretches): 0 violations, proof
   breaks at "lost progress"; useless on counters anyway. (3) Theorem EXIT (PROVED lane, under NT): one σ-dependent successor and no cycle
   top ⇒ σ̄(u) changes ≤ once; F polynomial on Odd-exit games, (n + m + 1)(n² + 1). Boundary = switchbestexp's cycle centres.
+- (added) FINDINGS (4): §4 BARRIER (READING via T48; abstract of arXiv 1811.05115 opened): MONO-XI + argmin alone cap at quasi-polynomial.
+  EXIT's extra ingredient is Lemma FIX (constants). CONJECTURE SBC-QP is OPEN with no route.
 - NEEDS: none from the owner. To the Lead: route the early-carry observation to L-RED 28; T47 not seen on claude/l-lit at 15:53Z.
