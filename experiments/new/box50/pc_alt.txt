@@ -1,0 +1,13 @@
+CPIECE_max=11 G_max=52 NM_max=31 NM_over_G1_x100_max=1100 phases=454 piece_len_max=91
+TOP-CPIECE NM 11 CPIECE 11 G 0 len 49 maxpiece 49 n 24 n5-exhaustive/instances/b5_os_n24.pg [0,49]
+TOP-CPIECE NM 11 CPIECE 11 G 0 len 60 maxpiece 60 n 28 n5-exhaustive/instances/b5_os_n28.pg [0,60]
+TOP-CPIECE NM 11 CPIECE 11 G 0 len 77 maxpiece 77 n 40 n5-exhaustive/instances/b5_os_n40.pg [0,77]
+TOP-CPIECE NM 10 CPIECE 10 G 0 len 67 maxpiece 67 n 32 n5-exhaustive/instances/b5_os_n32.pg [0,67]
+TOP-CPIECE NM 18 CPIECE 10 G 14 len 112 maxpiece 48 n 48 red/so/instances/xsn91_n48.pg [3,115]
+TOP-CPIECE NM 8 CPIECE 8 G 1 len 103 maxpiece 91 n 64 red/n5inj/instances/returns_ph64.pg [2,105]
+TOP-NM/(G+1) NM 11 CPIECE 11 G 0 len 49 maxpiece 49 n 24 n5-exhaustive/instances/b5_os_n24.pg [0,49]
+TOP-NM/(G+1) NM 11 CPIECE 11 G 0 len 60 maxpiece 60 n 28 n5-exhaustive/instances/b5_os_n28.pg [0,60]
+TOP-NM/(G+1) NM 11 CPIECE 11 G 0 len 77 maxpiece 77 n 40 n5-exhaustive/instances/b5_os_n40.pg [0,77]
+TOP-NM/(G+1) NM 10 CPIECE 10 G 0 len 67 maxpiece 67 n 32 n5-exhaustive/instances/b5_os_n32.pg [0,67]
+TOP-NM/(G+1) NM 8 CPIECE 8 G 0 len 17 maxpiece 17 n 24 red/xing/instances/x31_cu24.pg [2,19]
+TOP-NM/(G+1) NM 5 CPIECE 5 G 0 len 8 maxpiece 8 n 32 red/xing/instances/u23sw64_n32.pg [1,9]
