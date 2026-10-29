@@ -1,0 +1,44 @@
+FRZ 4811
+FRZ_Dnonempty 2151
+FRZ_len 282
+FWR_chk 4811
+GPS_MUT2_V 93
+GPS_chk 10465
+RT_max 0
+RT_pos 0
+RUNS 2000
+TRANS 3093
+WCH_max 2
+WMON_chk 2703
+XW_chk 44726
+VIOLATIONS 93
+EX ('GPS_MUT2', 'rand8', 2, 3, 3, 2, [2, 4])
+EX ('GPS_MUT2', 'rand8', 2, 3, 3, 3, [3, 4])
+EX ('GPS_MUT2', 'rand10', 2, 3, 3, 4, [4, 10])
+EX ('GPS_MUT2', 'rand54', 2, 3, 3, 3, [3, 0])
+EX ('GPS_MUT2', 'rand71', 0, 1, 1, 2, [2, 1])
+EX ('GPS_MUT2', 'rand117', 0, 1, 1, 3, [3, 1])
+EX ('GPS_MUT2', 'rand121', 0, 1, 1, 4, [4, 3])
+EX ('GPS_MUT2', 'rand121', 1, 3, 2, 4, [4, 3])
+EX ('GPS_MUT2', 'rand121', 1, 3, 3, 0, [0, 4, 3])
+EX ('GPS_MUT2', 'rand121', 1, 3, 3, 2, [2, 4, 3])
+EX ('GPS_MUT2', 'rand121', 1, 3, 3, 4, [4, 6, 3])
+EX ('GPS_MUT2', 'rand121', 1, 3, 3, 4, [4, 3])
+EX ('GPS_MUT2', 'rand156', 1, 2, 2, 4, [4, 0])
+EX ('GPS_MUT2', 'rand156', 1, 2, 2, 6, [6, 0])
+EX ('GPS_MUT2', 'rand175', 0, 1, 1, 0, [0, 2])
+EX ('GPS_MUT2', 'rand175', 0, 1, 1, 3, [3, 2])
+EX ('GPS_MUT2', 'rand190', 2, 4, 4, 0, [0, 2, 9])
+EX ('GPS_MUT2', 'rand190', 2, 4, 4, 4, [4, 2, 9])
+EX ('GPS_MUT2', 'rand190', 2, 4, 4, 0, [0, 2, 9])
+EX ('GPS_MUT2', 'rand190', 2, 4, 4, 4, [4, 2, 9])
+EX ('GPS_MUT2', 'rand198', 3, 4, 4, 3, [3, 11])
+EX ('GPS_MUT2', 'rand198', 3, 4, 4, 7, [7, 11])
+EX ('GPS_MUT2', 'rand210', 2, 4, 3, 6, [6, 9])
+EX ('GPS_MUT2', 'rand210', 2, 4, 4, 0, [0, 6, 9])
+EX ('GPS_MUT2', 'rand210', 2, 4, 4, 5, [5, 6, 9])
+EX ('GPS_MUT2', 'rand210', 2, 4, 4, 6, [6, 10, 9])
+EX ('GPS_MUT2', 'rand210', 2, 4, 4, 6, [6, 9])
+EX ('GPS_MUT2', 'rand214', 1, 2, 2, 9, [9, 6])
+EX ('GPS_MUT2', 'rand230', 1, 2, 2, 0, [0, 1])
+EX ('GPS_MUT2', 'rand230', 1, 2, 2, 6, [6, 1])
