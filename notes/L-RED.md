@@ -1,5 +1,5 @@
 # L-RED notebook (independent adversary lane)
-Successor 25 (session_01V5yGRWodt68VHnvw1bRQmG, Opus 5.5) HANDOVER written 2026-10-29 ~10:55Z (date -u) at ~400k context; see "Successor 25 HANDOVER".
+Successor 25 (session_01V5yGRWodt68VHnvw1bRQmG, Opus 5.5) HANDOVER written 2026-10-29 10:52Z (date -u) at ~400k context; see "Successor 25 HANDOVER".
 Successor 25 (session_01V5yGRWodt68VHnvw1bRQmG, Opus 5.5) started 2026-10-29 09:59Z (date -u); handover check 61ab6c66; box item 1 = SEG-COUNT, KILLED (R105); item (a) = quadratic one-segment run (R106); see "Successor 25".
 Successor 24 (session_01V5yGRZAX31ZbgX9Mz7tMR1, Opus 5.5) HANDOVER written 2026-10-29 ~05:25Z (date -u) at ~260k context, PARKED; see "Successor 24 HANDOVER".
 Successor 24 (session_01V5yGRZAX31ZbgX9Mz7tMR1, Opus 5.5) started 2026-10-29 00:28Z (date -u); handover check ebc3e9cb; box 1 = FB-LIN attack, R100; see "Successor 24".
@@ -17,7 +17,7 @@ context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older note
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
 
-## Successor 25 HANDOVER (written 2026-10-29 ~10:55Z, date -u; ~400k context)
+## Successor 25 HANDOVER (written 2026-10-29 10:52Z, date -u; ~400k context)
 - DONE (claude/l-red, push.sh VERIFY PASS each push):
   - 61ab6c66 handover check; 22d7c6ab R105: CONJECTURE SEG-COUNT DEAD (segcount_kill_n20, EXC 1; family mkk.py EXC = K − 1 at n = 10K − 1).
   - 86f24219 R106: a fallback-free in-phase run of Θ(n²) transitions that is ONE maximal REL segment (mkr.py K m; L = K(m + 3) − 1 at
