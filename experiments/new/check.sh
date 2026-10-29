@@ -153,4 +153,16 @@ if git cat-file -e 21f3285a^{commit} 2>/dev/null && git cat-file -e db1d3707^{co
 else
   echo "P-N5-VC-fixes quotes: NOT RUN (21f3285a or db1d3707 not in this clone)"
 fi
+# Box 52 (successor 32): N5-RLV: arena-frozen cut (Lemma W-SPLIT''), reader pair long121 / l121reader (SBCH'' 30 = 30), comparator graft topfix_3 (SBCH'' 24).
+v1=$(python3 -I box52/rlv.py --one ../si/root/instances/l121reader_n41.pg ../si/root/instances/l121reader_n41.start)
+v2=$(python3 -I box52/rlv.py --one box48/instances/long121_n40.pg box48/instances/long121_n40.start)
+v3=$(python3 -I box52/rlv.py --one box52/out/topfix_n3_cmp.pg box52/out/topfix_n3_cmp.start)
+ok=1; for v in "$v1" "$v2" "$v3"; do for k in ARENA SPLIT FWBF2 FWLEN2; do grep -q "^$k PASS" <<<"$v" || ok=0; done; done
+if [ $ok = 1 ] && grep -q ", 1, 122, 8, 0, 74, 30, 0, 25, 6, 6, 41)" <<<"$v1" && grep -q ", 1, 122, 8, 0, 33, 30, 0, 25, 6, 6, 40)" <<<"$v2" && \
+   grep -q "0, 41, 0, 8, 24, 24, 0, 9, 1, 1, 66)" <<<"$v3" && \
+   [ "$(sha1sum box52/out/topfix_n8_cmp.pg | cut -d' ' -f1)" = "6427c10505559df11a9660094dd4e235766e3b31" ]; then
+  echo "box 52 RLV: SBCH'' reader-proof (74 -> 30 = 30), topfix_3 graft 24 = 2N^2+3N-3, checks PASS"
+else
+  echo "box 52 RLV checks: FAILED"; exit 1
+fi
 rm -rf "$tmp"

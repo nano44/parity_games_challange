@@ -11,7 +11,17 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   DEAD. DATA: dlccheck PASS d = 1..5 (phase VC exactly 1..5), n5b identical d = 2..5. READING: the Sauer route caps at quasi-polynomial.
   Lead told 12:58:13Z (before the note).
 
-## Dead ends (successor 32; also in docs/new/N5-VCPHASE-box51.md §6)
+## Box 52 log (successor 32; Lead 13:08Z: reader-proof cut of L-SI 25's W-SPLIT, measure, then bound or kill)
+- docs/new/N5-RLV-box52.md. Greedy ARENA-FROZEN cut (box52/rlv.py): RLV cut iff Iσ(t+1) ≠ S2 rule on val(σ_{t+1}, σ̄_a). Lemma W-SPLIT″ PROVED
+  (lane). DATA 1,170 phases: SBCH″ ≤ 1.825n (nep92 84 → 73), readers removed exactly (l121reader 74 → 30 = long121 30), FW-BF / FW-LEN 0
+  failures on the refined cut. KILL of SBCH″ = O(n): comparator graft (box52/graft.py mode ab) on R109 topfix_N gives exactly 2N² + 3N − 3 in
+  one phase (N = 3, 4, 6, 8, 10, 12). READING: the graft mirrors pairwise Ξ-leapfrogs, so SBCH″ is not easier than |P|. Lead told 13:31Z.
+- Fixes file P-N5-VC-fixes-box50.md F1 frozen (2c2b8960, sha1 9e8b7bd2…), reported 13:31Z.
+
+## Dead ends (successor 32; also in docs/new/N5-VCPHASE-box51.md §6 and N5-RLV-box52.md §3)
+- SBCH″ = O(n) per phase (and SBCH′ = O(n)): DEAD, experiments/new/box52/out/topfix_n8_cmp.pg (n 171, sha1 6427c105…; .start): 149 relevant
+  σ̄-changes in the phase [0, 241]; family topfix_N_cmp gives 2N² + 3N − 3. Obstruction: an Odd comparator with two observers copies a host
+  pair's Ξ-leapfrogs into arena-relevant σ̄-changes.
 - DS-PAIR(s), every constant s: DEAD, hntop_n8 (L-RED, experiments/red/seg/instances) run [0, 241]: alt((159,160), (160,161)) = 311.
   Obstruction: relay chains copy oscillations, locked pairs alternate without bound (VC stays ≤ 4).
 - VC-PHASE / VC-N5 / VC-RUN (O(1)): DEAD, experiments/new/box51/out/dlc_d4.pg (n 455, sha1 f77955fd…, phase VC 4) and dlc_d5.pg (n 1897,
@@ -24,6 +34,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - Chained delay lines leak: once links form, W is exact, so all gaps close in parallel. Each event needs its own line.
 - dlccheck.py rewrites box51/out/dlc_dN.pg on every run (deterministic; check.sh pins the sha1 of d4, d5).
 - d = 5 (n 1897) takes about 3 min per engine; kept out of check.sh.
+- One observer cannot see σ̄ flips both ways: the true Ξ is ⊴ the frozen one (σ̄ minimises), so after one cut the reference locks. Use two observers.
+- `until ! pgrep -f "scripts/push.sh"` matches ITSELF and never ends (exit 144 when killed). Wait on push with `ps -eo args | grep -q "^bash scripts/push.sh"`.
+- A parked predecessor pushed during my push (c2df6801): push rejected, merged normally, re-pushed.
 
 ## Box 50 log (successor 31, Opus 5.5, D14/D18; Lead brief 09:59Z; STEP 0 answers sent 10:00:48Z, started without waiting as told)
 - STEP 0 (measured): fetched l-new, trunk, l-si; local l-new was 1 commit stale (d4bcdd21 → ff 8e8f7238); trunk merge was a fast-forward to e3b435ab
