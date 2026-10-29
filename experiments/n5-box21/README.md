@@ -35,8 +35,8 @@ define no initial strategy, and Friedmann's papers' specified starts were not op
 | fearnleysubexp_8 | 209 | 8e259baa | 24 | 0 | 2 | 20 | 24 | 0 | 16 | 0 | 0 | 17 |
 - Checks, all instances: n5b state sequence = n5x's; N5 regions = Oink zlk @ 8fbf0a7; N5 strategies pass verify.py. N5-SF does not
   cycle, its regions = Oink, and its final σ has no improving edge.
-- DATA: from S3, N5 is LINEAR in N on both families: friedmannsubexp it = 4N + 3 for N = 2..8 (4 at N = 1); fearnleysubexp
-  it ≈ 2.4N + 5. There are no fallbacks and 2-3 phases. N5-SF is linear too (≈ 4.3N), with SBC_σ ≈ 4N on friedmannsubexp and
+- DATA: from S3, N5 is LINEAR in N on both families: friedmannsubexp it = 4N + 3 for N = 3..8 (4, 10 at N = 1, 2); fearnleysubexp
+  it 4, 8, 12, 14, 16, 18, 21, 24 (steps of 2-4). There are no fallbacks and 2-3 phases. N5-SF is linear too (≈ 4.3N), with SBC_σ ≈ 4N on friedmannsubexp and
   ≈ 2N on fearnleysubexp. SBC_τ is 0 everywhere, so τ never moves Even's best reply.
 - The box-17 quantities on these runs: max SEG 13, EXC ≤ 0, L-WAVE′ gap ≤ 3, f 0.
 - Honest limit: Friedmann's lower bounds hold for the snare-memorising rules from their own initial strategy. Nothing here says
