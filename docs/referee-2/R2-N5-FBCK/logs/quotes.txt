@@ -1,0 +1,10 @@
+OK   docs/RESULTS.md@6d863a4d:3712-3712 | (a) Lemma FB-RISE_C: if t → t + 1 is an in-phase S4c fallback whose source t is a C-state,
+OK   docs/RESULTS.md@6d863a4d:3715-3715 | (b) Lemma SAT_C: if t is a C-state with LEV_C(t) = n − 1, then Ξ_t = B_C
+OK   docs/new/P-N5-FBC-box47.md@6d863a4d:51-51 | x Odd. Then z = σ̄_C(x) = σ̄_t(x) (t is a C-state; outside Q, x has one successor)
+OK   docs/new/P-N5-FBC-box47.md@6d863a4d:55-55 | x Even. Items 2 and 3 of FB-RISE (a)'s proof verbatim: they use only the edge (x, z) of G
+OK   docs/new/P-N5-HONFF-box47.md@6d863a4d:33-34 | As I read box 10 §2, Case A uses only: Ω(z) ⪯ Ω(ρ(x)) with ρ := σ_t; the bound Ω(z) ⪰ valu
+OK   docs/new/P-N5-EPC-box48.md@6d863a4d:97-98 | Lemma SAT-FB. Let t be a C-state of P with LEV_C(t) = n − 1 whose transition t → t + 1 is 
+OK   docs/new/P-N5-EPC-box48.md@6d863a4d:100-101 | An Even x with Iσ_t(x) = ∅ keeps its edge, so Iσ_{t+1}(x) = Iσ_t(x) = ∅.
+OK   docs/new/P-N5-HONFF-box47.md@6d863a4d:23-23 | S2 (Iσ(x) = {w ∈ succ(x) : Ξ(w) ≻ Ξ(σ(x))})
+OK   docs/referee/R-N5-READER.md@e83fd19d:14-14 | Theorem READER-INV (REFEREE; PROVED, every game): the same with the hypothesis (R)
+tags 9 ok 9 miss 0 SHIFT 0

@@ -1,6 +1,15 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 2 (successor 19; 2026-10-29 00:4xZ by date -u)
+- DONE: CORE §C b28d1ba9 (+ merge 04017f66). R2-N5-FBCK (P-N5-FBCK 7747ecf2 @ l-new 0e63596d): K1-K3, FB-RISE^K, SAT^K, SAT-FB^K, SAT-FB1^K,
+  FB-C^K, Cor (i) SIGN; Cor (ii) SIGN as implication (READER-INV covers ONE Odd reader only; "run unchanged" must include σ̄|V: N-FBCK-1).
+  Declared read: docs/referee/R-N5-READER.md @ e83fd19d l. 1-30 (premise of Cor (ii); a different packet).
+- Tool: docs/referee-2/R2-N5-FBCK/fbck_check.py (exact LEV^K_C by simple paths in G[K]; deep mode = iterative deepening, decides RISE/ODDC/MONO
+  where LEV < D; modes dress / dressfiles add vertices outside K; MUT plus2, tau, open1 (non-closed K', bites SAT/SATFB), nk1 (no bite)).
+  run_all.sh ~60 min (named at BUDGET 3e6 ~10 min; lib41 ~50 min). percase.py prints n, n_K, |C_f|, |C^K_f| per fallback phase.
+- NEXT: §C on FBCK only on the Lead's word.
+
 ## Resume point 1 (successor 19, session_01V5yGRZzoAVpZvqB1LedCVF, Opus 5.5 under D15; 2026-10-28 23:5xZ by date -u)
 - Handover check 6726c376 (pushed, Lead messaged 23:34Z). Oink built (8fbf0a7). Trunk 908e4333 merged (73250d93).
 - DONE: R2-N5-CORE (P-N5-CORE 7b66f1ba @ l-si 081ae740): (C1)-(C6) all SIGN, no gap; N-CORE-1..6 ((C3) holds at every transition;
