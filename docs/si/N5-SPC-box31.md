@@ -193,7 +193,8 @@ S-changing transitions (o never changes); the same for exit-only segments; a mix
 | --- | --- | --- | --- | --- |
 | WCH/(n − 1) | lend13_n16 / ccl_fbx_n32 / x31_re24 (NMAX 40-48) | 100,000 each | 0.800 (n 16, 21) | — |
 | WCH/(n − 1) | gci3_n24 (NMAX 64) | ~100,000 | 0.869 (seed; no gain) | — |
-| WCH/(n − 1) | red/xing/instances/x32_waves48 (NMAX 64) | > 200,000 (running at 17:0xZ) | 0.897 (WCH 35 at n 40) | core/instances/spbest_n40 |
+| WCH/(n − 1) | red/xing/instances/x32_waves48 (NMAX 64) | stopped at 17:0xZ (best at step 110,972, none after) | 0.897 (WCH 35 at n 40) | core/instances/spbest_n40 |
+| WCH/(n − 1) | spbest_n40 (NMAX 64) | stopped at 17:0xZ (~10 min) | 0.897 (seed; no gain) | — |
 | R/(n − 1) (R-LIN) | lend13_n16 / ccl_fbx_n32 | ~10,000 | 3.54 / 1.34: R-LIN DEAD (§5) | core/instances/rlin_cex_n40 |
 | R*_T/(n − 1) | xrun8_n10 / ccl_w48_n48 | 100,000 each | 0.142 / 0.250 (R*_T = 2 at n 9) | — |
 | SEG/(n − 1) (\|D\| = 1) | x31_re24 / zcl_rx_n48 | 200,000 each | 0.416 / 0.454 (SEG = 5 at n 12, 13) | — |
