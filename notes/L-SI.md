@@ -31,6 +31,8 @@ Reason: context ~370k, before the ~450k plan. Lead: session_014FBi6o334DvwT5Uw2k
 - The library never shows the J_b-cycle regime (frontier vertex at every step: 14,103 steps, 31,471 lib41 runs from random start pairs,
   ≥ 16,000 random games n 4-12); only climbs reach it. H-sinks make intermediate switches only in the red/ul ladder family (pinned starts).
 - Phase/run boundaries use the key (λ_Ξ, τ) (RESULTS R38 (a)); λ_Ξ = the cycle nodes of Ξ. relcheck.py recomputes it from n5b.
+- Message time stamps: run `date -u` ALONE in one call, read it, THEN send_message. Twice today I sent in the same parallel batch and
+  stamped a wrong time (corrections sent 09:26Z, 10:02Z).
 
 ## HANDOVER (successor 22, box 26; written 2026-10-29T07:33Z (date -u 07:33:03); session_01V5yGRZMmxSubTRSBLM6LGn)
 Reason: context large (~400k), before the ~550k plan. Lead: session_014FBi6o334DvwT5Uw2kDfoN. Trunk claude/vibrant-johnson-nxvvxo.
