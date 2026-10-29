@@ -90,7 +90,7 @@ G_τ (G_σ̄): G with Odd fixed to τ (σ̄), a one-player game of Even; on a σ
 - Kill search (fwclimb.py: score = max over frozen W-phases with |D| ≥ 1 of WCH/(n − 1), kill = FW-BF or FW-LEN failure; mutations of
   chg/cclimb.py): seeds gci3_n24 (0.869), lend13_n16 (0.800), s_elim24_final (0.695, stopped), red/xing/instances/kw25_n32 (0.806):
   no kill. gci3: 46,000 steps, plateau 0.869 (stopped); lend13: 100,000 steps, 0.800; s_elim24: stopped at 0.695; kw25: 0.806 → 0.838 after
-  47,000 steps (still running at the commit; logs frz/out/fw_*.log).
+  47,000 steps, stopped at 67,507 steps (logs and best instances frz/out/fw_*).
 - DEAD: «a W-phase (cut at fallbacks and λ_W changes only, σ̄ free) has ≤ n − 1 W-changing transitions»: runlin/instances/x135_n59 (sha1
   e71e8af0…, start 4afb7e8c…; n5b identical, 136 iterations, 0 fallbacks): W-phase [1, 136], 135 W-changing transitions, n 59, |D| = 1, 11
   σ̄-changes; also red/n3/instances/run49_n32 (49 > 31) and red/so/instances/pftheta_cex_n32 (34 > 31). Its seven frozen W-phases have ≤ 43
@@ -170,6 +170,19 @@ G_τ (G_σ̄): G with Odd fixed to τ (σ̄), a one-player game of Even; on a σ
   games), a static «two-order switch-best» problem otherwise (arena by one VJ prefix order, choice by another; thresholds and length
   directions differ). That abstract problem is the next target.
 
+## 8. L-RED R109's H_n-topfix (Lead 12:29Z, 12:36Z): the quadratic phase in the W frame (DATA)
+- Pins copied byte-identically from claude/l-red 674bbda8 experiments/red/seg/instances/ to experiments/si/frz/instances/red/: hntop_n3.pg
+  (sha1 4be33ae9…, start c552ac0d…), hntop_n8.pg (sha1 f71291a3…, start 5ec2d306…). N = vertices (63, 168). Phases by the key (λ_Ξ, τ).
+  | instance | phase | L | FB | LWCH | SBCH′ | frozen W-phases | longest (\|D\|) | max WCH/(N − 1) over frozen W-phases | FW-BF |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | hntop_n3 | [0, 41] | 41 | 0 | 8 | 0 | 3 | 18 (1) | 0.290 | PASS |
+  | hntop_n8 | [0, 241] | 241 | 0 | 28 | 0 | 8 | 48 (1) | 0.287 | PASS |
+  (the second phases [45, 61] and [245, 291] are one frozen W-phase each, D = ∅, length 16 and 46 < N − 1: FW-D0.)
+- READING. R109's Θ(n²) phase is (number of frozen W-phases ≈ n) × (frozen W-phase length ≈ 6n), the frozen W-phases separated by λ_W-changes
+  (CN-W: ≤ N(N − 1)); no fallbacks and no σ̄-change outside the λ_W-cuts. So with FW-BF (or FW-LEN) W-SPLIT bounds this family polynomially,
+  and the per-vertex carries (2n² + 5n − 5 for d1_n, R109 §5) do not enter. W-carries exist inside its frozen W-phases (up to 31 per vertex at
+  N = 168), again without making them long.
+
 ## DONE / FINDINGS / NEEDS
 - DONE: this note; tools experiments/si/frz/ (10 scripts), data frz/*.txt, climbs frz/out/; pin frz/instances/s_elim24_final.{pg,start};
   DEAD.md «box 29»; check.sh «box 29» block.
@@ -180,3 +193,4 @@ G_τ (G_σ̄): G with Odd fixed to τ (σ̄), a one-player game of Even; on a σ
   SETTLE_X, RDX, B-MONO, FRESH, ENT1 (instances above). (5) The proof obstruction is the optimism-trapped vertex (play into D).
 - NEEDS: none from the owner.
 - ADDENDUM (§7): Lemma EPOCH-U PROVED (lane); TRAP-MONO DEAD (fbrestart_cex_n12 play form, lend107_n32 value form); the trapped part is the open core of FW-BF.
+- ADDENDUM (§8): L-RED R109's H_n-topfix: phase = 8 frozen W-phases (≤ 0.29(N − 1) each, |D| = 1) + 28 λ_W-changes, 0 fallbacks; consistent with W-SPLIT + FW-BF.

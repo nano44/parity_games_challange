@@ -147,6 +147,15 @@ statement or "no change, because …". Labels: PROVED (L-LIT, unrefereed; the re
 - D9, D10 = J11 (coverage; Part (A) text vs MATCHPHI). No change, because they add coverage only / record that verdicts were carried
   over by content (J11 "closed").
 
+### F11. Lead ruling of 12:29Z (message read 13:04Z, after F3-F10 were pushed at 1bd2a11e)
+- Lead (12:29Z): "treat REFEREE-2's E-class items as REQUIRED fixes-file items (the conservative reading)" (D1-D4 and the B3 line) and
+  "J6-J8 (the S1 Ξτ standing premise, B1 on all valuations, the source-state hypotheses) I carry into the RESULTS entry text myself;
+  record them in the fixes file as "carried into the entry"".
+- Status. D1 = F3, D2 = F4, D3 = F5, D4 = F7, the B3 line = F6: written as required appended items (no statement change). Optional
+  one-liners included: F6 (J1, the (H1) + (H3) question), F8 (a)-(c) (D6, D7, λ(v)-fixed line), F9 (a), (b), (e) (J12, J13, J15).
+- J6 (F10, first bullet), J7 (F8 (a)), J8 (F8 (b)): CARRIED INTO THE ENTRY (Lead). The appended texts in F8 (a), (b) stay as the lane's
+  wording for the Lead to use or not; the packet needs no change for them.
+
 ### Coverage
 Every note routed is answered above: MPGS-N1 F3; MPGS-N2 F4; MPGS-N3 F6; MPGS-N4 F5; MPGS-N5 F9 (f); MATCH-N1 F9 (c); MATCH-N2 F9 (b);
 MATCH-N3 F9 (d); MATCH-N4 F9 (a); N-MPGS-1 F6; N-MPGS-2 F5; N-MPGS-3 F9 (f); N-MPGS-4 F7; N-MPGS-5 F10; N-MPGS-6 F8 (b); N-GS-1 F10;
