@@ -1,0 +1,36 @@
+NOTE start file ../../../experiments/red/n3/instances/n3cov_phi.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file ../../../experiments/red/n3/out/c3/best_3.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file ../../../experiments/red/n3/out/ph1/best_1.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file ../../../experiments/red/n3/out/ph2/best_2.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file ../../../experiments/red/n3/out/ph3/best_3.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file ../../../experiments/red/n3/out/ph4/best_4.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file ../../../experiments/red/n3/out/ph5/best_5.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file ../../../experiments/red/n3/out/ph6/best_6.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file ../../../experiments/red/n3/out/ph7/best_7.start invalid for its game (move not an edge, or missing); given start skipped
+COV_R77 1473
+COV_SDp 3626
+EP_chk 3746
+EP_hyp 3674
+FF_runs 3413
+GAMES 193
+GENW_used_fail 6
+MAX_CF 4
+MAX_EPOCHS 5
+MAX_PIECE_minus_n1_plus1000 998
+MAX_SD_len 25
+PIECES 3746
+PIECES_CF1 52
+REM_chk 838
+RUNS 390
+SA_chk 46512
+SB_chk 36400
+SDV_chk 115271
+SD_cand 1032
+SD_cand_TWneTH 191
+SD_cand_lamWchg 58
+SD_chk 1032
+SD_chk_TWneTH 191
+SD_chk_lamWchg 58
+SD_sharp 37
+SD_withgate 448
+skip_big 98
