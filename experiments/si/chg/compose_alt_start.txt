@@ -1,0 +1,17 @@
+fall_d1=16138 fall_d2=13210 fall_d3=10967 fallmax_d1=25 fallmax_d2=20 fallmax_d3=19 nm_max=62 pch_max=67 phases=457
+columns: L, game, i, j, S1 = sum SW, S2 = sum (1 + RISE), S3 = (I2) bound, S4 = (I3) bound, max NM, max PCH, max RISE, max SW, n
+TOP (121, 'experiments/new/box48/instances/long121_n40.pg', 1, 122, 246, 2293, 91480, 30014240, 31, 44, 44, 12, 40)
+TOP (121, 'experiments/red/n3/instances/long121_n40.pg', 1, 122, 246, 2293, 91480, 30014240, 31, 44, 44, 12, 40)
+TOP (112, 'experiments/red/so/instances/xsn91_n48.pg', 3, 115, 268, 3139, 150672, 64856736, 18, 27, 27, 12, 48)
+TOP (108, 'experiments/n5-epoch/instances/lend107_n32.pg', 2, 110, 142, 850, 25952, 1285568, 9, 17, 18, 11, 32)
+TOP (103, 'experiments/red/n5inj/instances/returns_ph64.pg', 2, 105, 185, 735, 45184, 5428608, 8, 14, 16, 10, 64)
+TOP (103, 'experiments/red/xing/instances/j4_n40.pg', 3, 106, 212, 2611, 87480, 8060200, 13, 30, 37, 13, 40)
+NMTOP (max NM / n) 0.9 (83, 'experiments/red/n3/instances/ret22_n40.pg', 7, 90, 195, 2218, 88720, 50841840, 36, 48, 48, 13, 40)
+PCHTOP (max PCH / n) 1.675 (92, 'experiments/n5-epoch/instances/nep92_n40.pg', 6, 98, 197, 3332, 124480, 44533120, 35, 67, 72, 11, 40)
+MAXRATIO L/S1 1.000  S1/S2 0.750
+I0 PASS
+I1 PASS
+LDIR PASS
+LBLK PASS
+I2 PASS
+I3 PASS

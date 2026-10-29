@@ -1,0 +1,12 @@
+MODE n5 files ../R2-N5-STAU/lib41_noref.lst 3 BF 8
+COR_checks: 23111
+NM_total: 39794
+Pchanges: 70808
+matched: 31014
+phases: 1134
+runs: 1230
+max_NM: (18, 'experiments/red/so/instances/xsn91_n48.pg#0', 3, 115, 35, 48, 25)
+max_NM_over_n: (0.469, 'experiments/n5-exhaustive/instances/b6_xw_n32.pg#0', 4, 79, 8, 32, 22)
+max_PCH: (37, 'experiments/si/orlens/instances/lev_l_sc.pg#0', 8, 54, 6, 32, 11)
+max_PCH_over_bound: (1.0, 'experiments/si/instances/red_cf1.pg#2', 0, 1, 3, 1, 0, 1)
+RESULT OK violations=0

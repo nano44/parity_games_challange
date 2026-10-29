@@ -101,4 +101,20 @@ if git cat-file -e e0499401^{commit} 2>/dev/null && git cat-file -e 0e2063bf^{co
 else
   echo "TOPSHAPE-fixes quotes: NOT RUN (e0499401 or 0e2063bf not in this clone)"
 fi
+# Box 50 (successor 31): N5-VC working note: Theorem VC-BOUND checks (VC PASS), pinned VC values, reader-proofness, MUT control, two climbed pins.
+has() { grep -qE "(^| )$1( |$)" <<<"$2"; }
+v1=$(python3 -I box50/vcrun.py --one ../si/runlin/instances/runfam_K10.pg ../si/runlin/instances/runfam_K10.start)
+v2=$(python3 -I box50/vcrun.py --one ../si/grun/out/anc_K10.pg ../si/grun/out/anc_K10.start)
+v3=$(MUT=1 python3 -I box50/vcrun.py --one ../si/runlin/instances/runfam_K10.pg ../si/runlin/instances/runfam_K10.start)
+v4=$(python3 -I box50/vcrun.py --one box50/out/vpf3_vc4.pg box50/out/vpf3_vc4.start)
+v5=$(python3 -I box50/vcrun.py --one box50/out/ent1_vc6.pg box50/out/ent1_vc6.start)
+if grep -q "VC PASS" <<<"$v1" && has dsig_max=3 "$v1" && has run_VC_max=3 "$v1" && has exec_VC_max=3 "$v1" && \
+   grep -q "VC PASS" <<<"$v2" && has dsig_max=3 "$v2" && has run_VCbar_max=4 "$v2" && \
+   has exec_VC_max=4 "$v3" && \
+   grep -q "VC PASS" <<<"$v4" && has run_VC_max=4 "$v4" && grep -q "VC PASS" <<<"$v5" && has run_ENT_max=6 "$v5" && has run_VC_max=3 "$v5" && \
+   [ "$(sha1sum box50/out/vpf3_vc4.pg | cut -d' ' -f1)" = "1aef63fe2a33d6b07cdadf06636e26dfedeb5966" ] && [ "$(sha1sum box50/out/ent1_vc6.pg | cut -d' ' -f1)" = "129e9df12266a37722b92e45c5657e45d5fc7d0f" ]; then
+  echo "box 50 VC: VC-BOUND 0 violations, runfam_K10 / anc_K10 dsig 3 (VCbar 1 -> 4), MUT bites, pins vpf3_vc4 (run VC 4) and ent1_vc6 (ENT 6, VC 3): PASS"
+else
+  echo "box 50 VC checks: FAILED"; exit 1
+fi
 rm -rf "$tmp"

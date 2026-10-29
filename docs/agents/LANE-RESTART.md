@@ -150,3 +150,4 @@ Five questions:
 | 2026-10-29 | L-LIT | session_01BHfSXDDqsBQ27C9uYvBQVP (parked 2026-10-24; resume point l-lit dedbbe7e) | session_01V5yGRXhHuM2pqfXJ6ZB8RM (Opus, D18) | 2 | none (check l-lit a0e73a8f) |
 | 2026-10-29 | L-SI | session_01V5yGRYvskmpjWeFYKqryuH (~380k; handover a9960e64, head 28f558df) | session_01V5yGRXKXxiTL7ZomUHUGcP (Opus, D15/L37) | 2 | none (check d55a1e4e; stale clone caught again) |
 | 2026-10-29 | L-RED | session_01V5yGRWodt68VHnvw1bRQmG (~400k; handover 7002ff99; the Lead's 10:48Z checks (S3 start, per-vertex switches, total iterations) not done) | session_01V5yGRZkfreYYKp9tvV9Bre (Opus, D1/D18) | 2 | none (check 59c51092; stale local branch caught) |
+| 2026-10-29 | REFEREE-2 | session_01V5yGRZzoAVpZvqB1LedCVF (~530k; handover c5ee7fc3) | session_01V5yGRW4aXFYpk1wXFkEfTp (Opus, D15/D17) | 2 | none (check fad9a963; stale local branch caught) |
