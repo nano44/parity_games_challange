@@ -41,10 +41,29 @@ polynomial.
 - OPEN, next: a game in which Odd's τ-run (as in dual hntop) and Even's σ-run (as in hntop) interleave, each re-creating the other's
   improving configurations inside one joint λ-run.
 
+## 4. The design target for a binary N5 counter, stated as constraints (READING; nothing here is proved)
+Combining R109 §4, R110 and §3:
+- (C1) In W, a closed gate with τ inside is a cycle node. W is non-decreasing in a phase, so a Friedmann-type counter is unary
+  unless set bits look like FORCED EXITS in W, i.e. τ(e_i) = exit while bit i is set, and τ(e_i) = inside while it is unset (hiding,
+  T37 ingredient 1).
+- (C2) So every set and every reset of bit i is a τ-change at e_i. A k-bit binary count needs about 2^(k+1) τ-changes, all inside one
+  joint λ-run (R47 Lemma Φ). Each is U-improving for Odd (I_τ depends on τ only; R110).
+- (C3) τ(e_i) must therefore alternate exit ↔ inside with U-improvements both ways. U is monotone for Odd, so the U-values of e_i's
+  two options must LEAPFROG. e_i is an Odd-side reactor, driven by U-decreases caused by τ-changes elsewhere (U depends on τ only).
+- (C4) Hence the Odd side must itself contain a counter whose carries (NM*^U) drive the e_i's, and that counter's τ-changes are timed
+  by σ through W (R110). It is a MUTUAL construction: Even's counter supplies the W-rankings (σ-controller) under which Odd takes the
+  right U-improving switch, and Odd's counter supplies the τ-changes that let W drop for Even's resets.
+- (C5) The mirror (§3) shows each side alone can do Θ(N²). Nothing seen so far couples them. Every construction so far (mkr, topfix,
+  their duals) has one side frozen: σ constant on the duals, τ constant on R106/R109.
+- OPEN: a gadget in which both sides change inside one joint λ-run, with τ-changes caused by σ-changes and the other way round. The
+  first measurable target is a family where τ-changes AND σ-changes per joint λ-run both grow, with NM* and NM*^U both > 0.
+
 ## DONE / FINDINGS / NEEDS
 - DONE: dualize.py; three dual pins; mirror check; the table.
 - FINDINGS:
   1. DATA: on G^d, N5's run mirrors the run on G state by state (two pins).
   2. DATA: 264 τ-changes inside one joint λ-run (dual runquad_K8_m30); 241 inside one λ-run (dual hntop_n8); Θ(n²) from S3 (dual s3quad).
   3. READING: NM^U = NM of the mirror: up to 2n² + 5n − 5 per vertex per λ-run. Polynomial.
+  4. READING (§4): a binary counter needs a mutual Even/Odd construction. Set bits must be forced exits in W, so every set and reset
+     is a U-improving τ-change, which makes e_i an Odd-side reactor. All known constructions freeze one side.
 - NEEDS: none from the owner.
