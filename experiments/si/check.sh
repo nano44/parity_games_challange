@@ -382,3 +382,12 @@ o=$(python3 -I grun/relseg.py --one runlin/instances/runfam_K10.pg runlin/instan
 t=$(mktemp -d); python3 -I grun/anchor.py grun/out/rdr_K10.pg grun/out/rdr_K10.start 1 100 $t/a | grep -q "anchors 25 n 99 SAME True readers in K 25 run 99 G 91 G^K 91 SEG 9 fallbacks in \[A,B\] 0"
 cmp -s $t/a.pg grun/out/anc_K10.pg; cmp -s $t/a.start grun/out/anc_K10.start; rm -rf $t
 echo "grun (box 25: GATE-RISE on pftheta34, MUT bites; readers G 9 -> 91 with run 99 fixed, anchors G^K 91, SEG 9; anchor generator reproduces the pin): PASS"
+# P-N5-SDPRIME-box25 (FROZEN, sha1 54678c38a04842bd936a9bf4b241d47ad8ab90a3): 12 quotes verbatim (trunk 55e0bcbda); shifted control fails.
+if git cat-file -e 55e0bcbda; then
+  echo "54678c38a04842bd936a9bf4b241d47ad8ab90a3  ../../docs/si/P-N5-SDPRIME-box25.md" | sha1sum -c --quiet
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-SDPRIME-box25.md | grep -q "quotes=12 bad=0"
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-SDPRIME-box25.md --mut | grep -q "QUOTES FAIL"
+  echo "piece (P-N5-SDPRIME frozen sha1; 12 quotes verbatim; shifted control fails): PASS"
+else
+  echo "piece (P-N5-SDPRIME quotes): NOT RUN (source commit 55e0bcbda not in this clone)"
+fi
