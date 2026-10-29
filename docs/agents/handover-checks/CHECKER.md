@@ -306,3 +306,39 @@ handover b88e5bd0 (notes/CHECKER.md "## HANDOVER (successor 11 → successor 12)
   I told the Lead at 22:16Z and asked it to confirm successor 11 is parked before I start C84.
 - Carried trap: the E-items of C79-C83 were all title clauses wider than the signed items. Check: split the title into clauses, diff each one against
   the signed item's hypotheses, and script-check the fix texts in the new and old drafts.
+
+## Handover check (successor 13)
+Written 2026-10-29 01:50Z (date -u). CHECKER successor 13 (Opus 5.5, D15), session_01V5yGRW1Yx6hqJpFkEW6Ps1. Predecessor: successor 12, session_01V5yGRYMamtzAHMgh9kBGW5,
+handover 47e1e989 (notes/CHECKER.md "## HANDOVER (successor 12 → successor 13)"). Every answer names its command.
+
+### 1. Branch, head, ahead/behind trunk
+- The clone started at b88e5bd0 ("up to date" before fetch). `git fetch origin claude/checker claude/vibrant-johnson-nxvvxo`: origin/claude/checker
+  b88e5bd0 → 47e1e989. `git log --oneline origin/claude/checker`: 47e1e989 (the handover) is the newest commit; NO commit after the handover.
+  `git merge --ff-only origin/claude/checker` → 47e1e989.
+- Trunk head ade12b2b ("Lead: R81 draft (FBCK) for CHECKER C90; log"). 47e1e989 is an ancestor of trunk, so `git merge origin/claude/vibrant-johnson-nxvvxo`
+  fast-forwarded to ade12b2b. `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` = 0 / 0 (merge-base ade12b2b); this
+  file's commit makes 1 / 0.
+
+### 2. Open work and the next step of each
+- C83-C89 CLOSED (handover table; R74-R80 landed). Nothing open at handover.
+- C90 = R81 (P-N5-FBCK), briefed by the Lead 01:41Z: draft docs/agents/R81-draft.md at trunk ade12b2b. Next: the main report docs/checker/C90.md.
+- C89 Add. 3: the GAPS precision UPDATE for C89 Add. 2 N-1 at trunk c8a3c4b1. Next: check it (append-only, stamp vs git, text vs N-1).
+- Oink: `scripts/setup_oink.sh` run in this container (result in the C90 report).
+
+### 3. docs/GAPS.md rows I own
+- `awk -F'|' '$4 ~ /CHECKER/' docs/GAPS.md | wc -l` = 0. Landing side: G-N5-TIME (l. 11, major, open) takes the R81 UPDATE; it must stay
+  append-only (`git diff A B -- docs/GAPS.md | grep -E '^-' | grep -vc '^--- '` counts only the replaced row) and open.
+
+### 4. Three owner rulings, verbatim (docs/DECISIONS.md, `grep -n -F`), with index status (docs/DECISIONS-INDEX.md, `grep -nE '^\| *D(1|15|18) '`)
+- D1 (DECISIONS l. 7; index l. 5 "active"): "A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim,
+  including the fleet's own, as wrong until it passes the gauntlet below."
+- D15 (l. 278; index l. 26 "active"): "q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it"
+- D18 (l. 333; index l. 32 "active"): "Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of
+  mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and
+  proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems."
+
+### 5. One trap, and the check that prevents it
+- Trap: a one-referee result entering an entry as if signed by both (READER-INV, R79 λ-end clause, R80 N-CORE-1; handover method list). C90
+  point (1) is the same trap: READER-INV is one referee's. Check: for every clause of the title and items, find the verdict cell in BOTH §C
+  reports; a clause with one cell goes under "Referee strengthening" with n_K and the referee named.
+- Carried trap: the append-only test `grep -c '^-[^-]'` is blind to deleted markdown bullets; use `grep -E '^-' | grep -vc '^--- '`.
