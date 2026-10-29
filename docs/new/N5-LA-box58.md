@@ -69,3 +69,6 @@ from S3, distinct σ̄ in brackets:
   defence against fcN-type families either (DATA). If L-RED's nesting gives N^k, every variant here is expected to follow it (READING).
 - Not done: (B) for nested unary counters (does nesting depth cost arena size multiplicatively?). Parked; it goes to the next successor if
   the Lead routes it.
+- Correction (successor 34, 2026-10-29 ~18:0xZ; docs/new/N5-FC-box59.md §6.3): the F column 121, 215, 346, 520, 743 has second
+  differences 37, 43, 49 (not 28-34), growing by 6: CUBIC, the same numbers as R115's iteration counts (≈ N³ to N = 12). "Quadratic"
+  above is wrong for F and LA_1; the LAG_d columns were not re-measured.
