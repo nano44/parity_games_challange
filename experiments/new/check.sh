@@ -141,4 +141,16 @@ if [ "$(grep -c "DLC PASS" <<<"$v1")" = 4 ] && grep -q "d=4 n=455 len=31 traces 
 else
   echo "box 51 DLC checks: FAILED"; exit 1
 fi
+# Box 51 (successor 32): P-N5-VC-fixes (frozen): F1 (VC-N5 FALSE by DLC_d), 3 quotes at 21f3285a / db1d3707, shifted control, sha1.
+if git cat-file -e 21f3285a^{commit} 2>/dev/null && git cat-file -e db1d3707^{commit} 2>/dev/null; then
+  if python3 -I box49/quotecheck3.py ../../docs/new/P-N5-VC-fixes-box50.md | grep -q "quotes=3 bad=0" && \
+     ! python3 -I box49/quotecheck3.py ../../docs/new/P-N5-VC-fixes-box50.md --mut >/dev/null && \
+     [ "$(sha1sum ../../docs/new/P-N5-VC-fixes-box50.md | cut -d' ' -f1)" = "9e8b7bd208aae5eb3f540d0e5d7f8c77a0834370" ]; then
+    echo "P-N5-VC-fixes quotes 3 + control, sha1: PASS"
+  else
+    echo "P-N5-VC-fixes checks: FAILED"; exit 1
+  fi
+else
+  echo "P-N5-VC-fixes quotes: NOT RUN (21f3285a or db1d3707 not in this clone)"
+fi
 rm -rf "$tmp"
