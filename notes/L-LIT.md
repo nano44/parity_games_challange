@@ -2,9 +2,11 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-24 ~14:4xZ: PARKED (context ~500k, Lead's instruction) after T31 docs/lit/T31-mei-port.md: Mei Ĝ_h ported to parity
-(n = 8h+3, d = 8h+2; split-edge cost vertices; W layered by level, k below W-level 2 and decreasing in i). Mei Lemmas 2,4,5,6 PROVED-S;
-Dantzig-SSI 2^h-1 PROVED-S; N5 deviates at k = 0 (gate = all h levels) -> CONJECTURE O(h). Before: T25-T30. Successor: start from Lead.
+2026-10-29 ~10:2xZ (successor, Opus 5.5, D15/D18): STEP 0 handover check pushed a0e73a8f. T32 DONE: docs/lit/T32-n5-frontier-crossfield.md
+(8 entries E1-E8 for the N5 frontier: O1 REL-segment settling / SEG-COUNT, O2 SEG-RUN, O3 P-changes under a fixed top). Key: Lemma
+MATCH-Φ (PROVED, L-LIT, unrefereed; ARV rank-replacement transferred): matched P-changes raise Φ = Σ ±pos(r) by ≥ 1, so PCH ≤
+(n²/2)(NM+1)+NM per vertex per phase, NM = carries (1-k exchanges, ARV's 1-2-exchange counter). E4 composes it with R83/GATE-RISE/GRUN
+to reduce SEG-RUN (poly form) to CF + TIE/CYC/THRU + gates' NM. Next: whatever the Lead routes (NM measurement is for L-COMP/L-SI).
 
 ## Queue
 - Not opened (blocked or paywalled), needed only if a lane depends on them: Friedmann RAIRO 2011 (403); FHZ SODA/STOC 2011;
@@ -38,6 +40,8 @@ Dantzig-SSI 2^h-1 PROVED-S; N5 deviates at k = 0 (gate = all h levels) -> CONJEC
 
 - T18 (2026-10-18): PDFs in this session's scratchpad dl/<arXiv id>/p.pdf (+ hollanders-thesis, icaps-dmdp, anp); not committed.
   HDJ12 CDC paper itself not on arXiv; its theorem was read in Hollanders' thesis (same authors' result).
+
+- T32 (2026-10-29): PDFs + pdftotext in this session's scratchpad dl32/ (not committed). www.ece.iastate.edu fails TLS through the proxy (curl 60 even with --cacert); web.archive.org resets.
 
 ## Sources opened
 | source (arXiv id / DOI) | result used (theorem / section) | opened on | note |
@@ -265,9 +269,21 @@ Dantzig-SSI 2^h-1 PROVED-S; N5 deviates at k = 0 (gate = all h levels) -> CONJEC
 | HMZ 1008.0530 Lemma 6.1-6.4 p.11; Post-Ye 1208.5083 Lemma 3.5-3.6 p.8, Thm 3.7 p.9; Scherrer 1306.0386 Lemma 8 p.6, Lemma 4-5, 9, Thm 6-7 | re-read | 2026-10-24 | T30 |
 | NOT opened (T30) | HKZ SODA 2014 (SIAM HTML); Madani-Thorup-Zwick TALG 2010; Kitahara-Mizuno 1101.3821 (HTML); Mukherjee-Kalyanakrishnan; Melekopoglou-Condon 1994 original | 2026-10-24 | T30 |
 | arXiv 2610.27386 v1 (Mei), full §2-§3, §5.1 | Def. 1, Alg. 1 p.4; §3.1 eq. (3) + Table 1 p.5 (rendered as image); eq. (4)-(8) p.6; Lemma 2 p.6; Lemma 3-5 p.7-9; Lemma 6 p.9; Lemma 7 p.10; Thm 1 + pattern p.11; Table 2 p.12; Alg. 2 p.18; eq. (35), Thm 4 p.20 | 2026-10-24 | T31 |
+| arXiv 1111.4600 v1 (Charron-Bost, Függer, Nowak) sha256 f2d15914778… | §8.3 PDF pp.31-32: Full Reversal work vectors as min-plus linear system; routing θ(G0) ≤ (N−1)², trees 2(N−1) | 2026-10-29 | T32 E1 |
+| arXiv 1309.3445 v3 (Bond, Levine, Abelian networks I) sha256 c15cd4abd31… | Lemma 4.1-4.2 p.14, Lemma 4.3 (least action) p.14, Lemma 4.4 p.15, Thm 4.9 p.17 | 2026-10-29 | T32 E2 |
+| arXiv 1409.0169 v2 (Abelian networks II) sha256 b446ee69833… | downloaded, title checked only; not used | 2026-10-29 | T32 |
+| arXiv cs/0101014 v1 (Lonc, Truszczyński) sha256 ab28e0fcb7c… | p.4 GL antimonotone, lfp; Alg. 1 p.5; Thm 3.1 p.5-6; (W1)-(W2) p.7; O(|At|×size) p.9 | 2026-10-29 | T32 E3 (Van Gelder only through it) |
+| ECCC TR06-067 (Ackermann, Röglin, Vöcking) sha256 d13b2032bc8… | Thm 3 + Lemma 4 p.5; p.7 key-insight sentence; Thm 7, Def. 8 p.7; Lemma 9 p.8; Lemma 10 p.8-9 | 2026-10-29 | T32 E5 |
+| arXiv 2111.14050 v1 (Black, De Loera, Kafer, Sanità) sha256 28377b4a413… | Thm 1-3 p.3-4; Lemma 2 p.14; Cor. 1 p.15; Def. 4, Thm 5 p.15-16; Lemma 5 p.17 | 2026-10-29 | T32 E7 |
+| epub.ub.uni-muenchen.de/8502 (PODS'89 proceedings) sha256 8b369338a66… | TOC only: Van Gelder AFP listed p.1; text is a different paper | 2026-10-29 | T32, not a source |
+| arXiv 1103.0133 v1 (Ramachandran et al.) sha256 82204868e4b… | title + intro only (cites Busch-Tirthapura); not used | 2026-10-29 | T32 |
+| NOT opened (T32) | Busch-Tirthapura SICOMP 2005 (iastate TLS fail via proxy; Wayback reset x2); CFWW SIROCCO 2011 / TALG 2015; Van Gelder JCSS 1993; Gawlitza-Seidl ESOP 2007, FM 2008 (Springer); Tardos SIDMA 1988; Schurr-Szabó (not re-opened) | 2026-10-29 | T32 §8 |
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
 - T17 process dead end: subagent GitHub MCP search outside the repo scope was a rule breach (see Things only I know); never repeat it.
+
+- T32 (2026-10-29): planned O2 entry Gawlitza-Seidl (abstract interpretation strategy iteration) dropped: no open copy (Springer). Planned USO jump entry dropped: Schurr-Szabó not re-opened.
+- T32 E2/E3: least action (abelian networks) and the alternating-fixpoint template (W2) do not give SEG-COUNT. Obstruction: N5's in-segment dynamics are not locally abelian and violate (W2); instance seglast_kill_n29 (L-SI LAY box27 §4), t = 2: vertex 1's intermediate switch 9 → 23, no settling in either frame.
 
 ## Corrections log
 - 2026-10-23 (T26): N8d-barrier.md §0 and R54 §0 put Lemma 4.75 / Thm 4.76 on p.187; opened PDF: printed p.186 (PDF p.202). Reported as caveat 4.
