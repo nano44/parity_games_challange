@@ -408,3 +408,16 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
   setstep_kill_n71.pg (n 71, sha1 b6360888a8180a9afef84c38845500f46626b548, default start; found by lwp/xclimb.py OBJ=KA from cycset_kill_n60). Segment [1, 4]: at one step no
   switcher is settled from t + 1 (lwp/seglast.py SS_V=1), while SEG-LAST holds (every step is still some vertex's last switch). Obstruction:
   the last switch at that step goes to a target whose plays still change later (layered settling of a terminal part of 10 vertices).
+
+## DEAD box 27 (L-SI successor 23, 2026-10-29T08:25Z by date -u (08:24:59)): W-GROW (docs/si/N5-LAY-box27.md §2-§4)
+- W-GROW («in a REL-admissible segment with GEN_W, the W-settled part of E_b grows at every transition»; equivalently, by Theorem SINK-STEP,
+  «some W-sink is arena-ready at every step»; with Theorem SINK-STEP it would prove SEG-LAST without (H4′_rel)): killed by
+  experiments/si/lay/instances/wgrow_kill_n90.pg (n 90, sha1 f9a7ef090b3df5bb4293301e6bd1236e33a92cd0; start = N5's S3 start, written out
+  as wgrow_kill_n90.start, sha1 a4ead4deae5534731a199c8697c072f407643ca2), found by lay/wclimb.py (score: steps with no frontier vertex +
+  unready W-sinks) from lwp/instances/karena_kill_n71 in 10,666 steps. Segment [0, 3], t = 1: the only W-sinks are 37 and 57 (σ_1 = 1, target
+  5 for both; 5 is W-settled from 0 but H-settled only from 2), and (37, 5), (57, 5) are not improving at 1 (Ξ_1(5) ⋫ Ξ_1(1)); they become
+  improving at 2 and both switch then for the last time. Checks: n5b (L-COMP's independent implementation, SPEC mode) gives the identical
+  state sequence (root/n5bcmp.py: 9 iterations, 1 fallback, identical: True); n5b's improving-edge sets equal n5x's at t = 0, 1, 2; W-plays
+  recomputed from (σ_t, τ) directly (τ constant on [0, 3]). Obstruction: the W-sinks' common target 5 is W-final while its honest value
+  still rises at 1 → 2 (its own H-chain), so the arena at 1 excludes it. SEG-LAST holds (43 and 55 switch at 1 for the last time), and so
+  does CONJECTURE H-GROW (the H-sink 55 switches to its target 48 at 1).

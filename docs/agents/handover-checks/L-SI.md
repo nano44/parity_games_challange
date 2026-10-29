@@ -1,3 +1,44 @@
+# Handover check: L-SI (successor 23, written 2026-10-29T08:1xZ by date -u (08:11:15 at the measurement); LANE-RESTART step 3; Opus 5.5, D18/L40)
+Every answer below was measured in this container; commands given. Predecessor: successor 22, session_01V5yGRZMmxSubTRSBLM6LGn.
+Its handover is notes/L-SI.md "## HANDOVER (successor 22, box 26)" (l-si 1417b7fb, stamp 484f3f59).
+
+## 1. Branch, head, distance to trunk
+- Branch `claude/l-si`. Clone stale again: local HEAD da88a6d4 before the fetch ("up to date" per git status).
+  `git fetch origin claude/l-si claude/vibrant-johnson-nxvvxo` → origin/claude/l-si 484f3f59; `git merge --ff-only` to it.
+- Trunk = 9c917d95 (Lead: push.sh pushes exactly the verified commit). `git rev-list --left-right --count origin/claude/l-si...trunk`
+  → 2 ahead / 6 behind. `git merge --no-edit` of trunk (no rebase) → c69aa163; `git rev-list --left-right --count HEAD...trunk` → 3 ahead /
+  0 behind, merge-base 9c917d95. This file is the next commit.
+- Oink: tools/oink/build absent (fresh container); `scripts/setup_oink.sh` run (output to a scratch file); result in the commit message.
+
+## 2. Open work and the next step of each (nothing running: `ps -eo pid,args | grep -c "[x]climb"` → 0; tree clean before the merge)
+Pins unchanged (`sha1sum experiments/si/lwp/instances/*.pg`): cycset_kill_n60 957c7c9e, karena_kill_n71 8b659497, lwp_gap_n26 1ad8d003,
+setstep_kill_n71 b6360888 (match note §1, §7, §8).
+- STEP 1 (Lead 08:10Z, queue item 1): layered K-REDUCTION ⇒ CONJECTURE SEG-LAST without (H4′_rel) (GEN_W may stay), or a SEG-LAST failure
+  inside a REL segment. Obstruction (karena_kill_n71, t = 0): 41 ∈ K, σ_0(41) = 50 ≠ 35 = σ_b(41), (41, 35) not improving at 0; 41's honest
+  J_b-successor 35 still switching. Next: read the layering at t = 0 on karena_kill_n71 with lwp/laststep.py, then try a proof by induction
+  on the honest J_b-order inside K (honest J_b-edges in K are acyclic, note §8 READING); measure any new hypothesis on library + kill pins.
+- STEP 2: packet decision (LAST-STEP + K-REDUCTION ± layered form): the one-line statement not implied by R83, to the Lead before freezing.
+- Queue items 2-3 unchanged: L-WAVE′ (OPEN), SEG-RUN, STATIC-DEPTH′-TIE.
+
+## 3. docs/GAPS.md rows I own
+- None (`awk -F'|' '$4 ~ /L-SI/' docs/GAPS.md` → empty). I work under G-N5-TIME (open, GAPS l.11).
+- RESULTS: `grep -n '^### R83' docs/RESULTS.md` → l.4774 (R83 REL now in RESULTS; the predecessor's mismatch is resolved). Last entry R84.
+
+## 4. The three owner rulings that constrain me most (verbatim from docs/DECISIONS.md; status docs/DECISIONS-INDEX.md)
+- D18 (DECISIONS.md l.332; index l.32: active): "Focus on N5 and work toward proving it. Explore novel approaches, especially by
+  connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions
+  where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and
+  open problems." Lead reading L40 (index l.33: active).
+- D16 (DECISIONS.md l.299; index l.28: active): "Then keep working as I told you to"
+- D1 (DECISIONS.md l.6; index l.5: active): "Never publish, post, email, submit or contact anyone outside the fleet. Anything external is
+  my decision."
+
+## 5. One trap that bit this lane before, and the check that prevents it
+- Trap (successor 22): push.sh pushed the branch HEAD at the end of verify, so a commit made during verify would go out unverified. Check:
+  trunk 9c917d95 (merged here) makes push.sh push exactly the verified commit; and I make no commit while push.sh runs.
+- Stale clone again (da88a6d4 "up to date" vs origin 484f3f59): `git fetch` of both branches + `rev-list --left-right --count` before
+  reading the notebook and before every push.
+
 # Handover check: L-SI (successor 22, written 2026-10-29T06:4xZ by date -u (06:40:40 at the measurement); LANE-RESTART step 3; Opus 5.5, D18/L40)
 Every answer below was measured in this container; commands given. Predecessor: successor 21, session_01V5yGRa5b9XuhTGUqNBFGaE.
 Its handover is notes/L-SI.md "## HANDOVER (successor 21, box 25)" (l-si f756e089; head 10ea06e5).
