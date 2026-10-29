@@ -1,4 +1,4 @@
-# N5-CHG (box 28): the SEG-COUNT charging ((a), INTER-JOINT, DL-RUN DEAD; SEG-COUNT DEAD by L-RED R105); REL-segment LENGTH without (H4′_rel)
+# N5-CHG (box 28): the SEG-COUNT charging ((a), INTER-JOINT, DL-RUN DEAD; SEG-COUNT DEAD by L-RED R105); REL-segment LENGTH; Theorem COMPOSE (phase length ≤ m·n·(PCH + 1), a reduction to MATCH-Φ's carries)
 L-SI successor 24 (Opus 5.5; D18, Lead reading L40). Lead's brief 2026-10-29 10:06Z, STEP 1: «the SEG-COUNT charging proof (note §6):
 charge each deadlock step of a REL segment to a JOINT final step (Corollary JOINT), and prove the two missing pieces: (a) no early
 finalization, (b) injectivity (distinct deadlock steps charged to distinct H-sinks). Use psidrop_kill_n70 and the ladder family ... as test
@@ -21,7 +21,14 @@ Labels (D18 / L40): PROVED (lane) / CONJECTURE / OPEN / DATA / READING / DEAD. C
 | §6 | After SEG-COUNT died (L-RED R105, Lead 10:30Z): the LENGTH of a REL segment. PROVED (lane): b − a = FIN + DL, GR ≤ min(FIN, settle events ≤ 2\|E_b\|), Lemma NEW-EDGE. Conditional bounds: DL-SEP or DL-NOCONSEC ⇒ b − a ≤ 2·FIN ≤ 2\|E_b\|; FROZEN-COUNT ⇒ b − a ≤ 2\|E_b\|² + 3\|E_b\| | PROVED (lane); CONJECTURE; DATA |
 | §6 | DL-SEP, DL-NOCONSEC, FROZEN-COUNT, DL-SOMEH, ZIG and the routes (L2), (L3) | DEAD: chg/instances/dlsep_kill_n70 (8 deadlocks in one segment, n5b-reproduced) |
 | §7 | the length reduces to MAXV (switches of one vertex in one segment); Lemma SW-RETURN | READING; PROVED (lane) |
-| §6 | LENE: b − a ≤ \|E_b\| on every segment of every corpus and of L-RED's family (b − a = 2K = \|E_b\| − 1, tight) | DATA (L-RED attacks the n − 1 form) |
+| §6 | LENE (b − a ≤ \|E_b\|) and LEN2 (b − a ≤ 2·SW + 1) | DEAD: L-RED R106 runquad_K8_m30_n192 (one REL segment of 263 transitions, \|E_b\| = 49, SW = 47) |
+| §9 | Theorem COMPOSE: every phase has ≤ Σ_{(v,c)} n(PCH(c) + 1) ≤ m·n·(max PCH + 1) transitions (Lemmas SW-RETURN, LEN-MONO); with MATCH-Φ (L-LIT, under review) ≤ m·n·((n²/2)(NM + 1) + NM + 1); Corollary COMPOSE-RUN (R47 (a), both players): the whole N5 run on any game is polynomial IF the carry counts are | PROVED (lane), a REDUCTION; DATA slack |
+| §10 | where carries come from (runquad: one high Odd rank swapped for a lower one plus the reactor chain); polynomial re-weightings Φ_d (d ≤ 3) keep the carries | DATA, READING |
+| §11 | CONJECTURE LEN-TOTAL (≤ n − 1 length-only rises per vertex per phase; would sharpen COMPOSE to m_E·(P* + n)) | CONJECTURE; DATA ≤ 0.875n |
+| §12 | Lemma INHERIT: a vertex's carry is the carry of the switch where its honest play diverges | PROVED (lane, generic case); DATA 0 failures |
+| §13 | T37's carries-vs-reopenings CONJECTURE: carries with NO reopening on the vertex's plays everywhere (runquad, s3quad: all); multiplicative form DEAD, additive form = the open core | DATA |
+| §14 | R17's Lemma P fails in two frames (Case A for W, Case B for Ξ; runquad t = 0 witnesses), NOT through σ̄ moving (σ̄ constant on runquad's Θ(n²) phase); Corollary R17-D0 (σ̄ = τ on the phase ⇒ R17's bound); (n − 1)(\|D\| + 1) DEAD (b6_xl2_n32) | PROVED (lane); DEAD; DATA |
+| §8 | Lemma SW-RISE (a switch strictly raises the switcher's own Ξ off its honest cycle); SW-RUN per fallback-free run (Lead: SW-PER-VERTEX) | PROVED (lane); CONJECTURE, DATA ≤ 0.667n |
 
 ## 0. Setting
 As N5-LAY-box27 §0-§1 (sets S^W_t, S^H_t, U^W_t, U^H_t ⊆ E_b, maps jW, jH, W-/H-sinks, readiness, y_v = σ_b(v)) on a maximal
@@ -178,15 +185,199 @@ a maximal run of consecutive non-growth steps (sinks constant on it, Lemma FREEZ
   between its visits); dlsep_kill_n70's vertex 44 returns to 20 after Ξ(20) rose through 20's own switch at 8. This is a recursion, not a
   bound; it is the next proof target, together with L-RED's attempt to exceed n − 1.
 
+## 8. Per-vertex switches per fallback-free run (Lead 10:48Z: CONJECTURE SW-PER-VERTEX, after L-RED R106)
+- DEAD (DEAD.md box 28): LENE («b − a ≤ |E_b|») and LEN2 («b − a ≤ 2·SW + 1»), and with them every per-segment LINEAR length bound in
+  |E_b| or SW: L-RED's runquad_K8_m30_n192 (claude/l-red 86f24219, R106; copy chg/instances/red/, sha1 ebaa6ac5… / 4ba9f860…): one
+  fallback-free run [0, 263] = one maximal REL segment, |E_b| = 49, SW = 47, FIN = 45, DL = 218, TOT = 481 switches (chg/lenstat.py).
+  BND and FROZEN-COUNT still hold there (frozen runs of length 1 and 9). The run length is Θ(n²) on L-RED's family mkr.py (L ≈ n²/144).
+- Lemma SW-RISE (PROVED, lane). Let t → t + 1 be a transition of a fallback-free run and v an Even vertex with σ_{t+1}(v) = w ≠ σ_t(v) = u
+  such that v is on the cycle of neither its honest play at t nor at t + 1. Then Ξ_{t+1}(v) ▷ Ξ_t(v).
+  Proof. v's honest plays at t and t + 1 are v·(u's play) and v·(w's play), and these avoid v. RESULTS R15 (a) (Lemma A, VJ00 Lemma 5.7)
+  gives Ξ_{t+1}(w) ⊵ Ξ_t(w); (SW) gives Ξ_t(w) ▷ Ξ_t(u). Prepending v to a play that avoids v is strictly order-preserving under S1's order
+  (the cycle node is unchanged; v enters both P-sets or neither, so the largest rank of the symmetric difference is unchanged (RESULTS R84
+  Fact DELTA); both lengths grow by 1). So Ξ_{t+1}(v) = v ⊕ Ξ_{t+1}(w) ⊵ v ⊕ Ξ_t(w) ▷ v ⊕ Ξ_t(u) = Ξ_t(v). □
+  DATA (chg/pervert.py, all switches of all fallback-free runs): the only switches with Ξ_{t+1}(v) = Ξ_t(v) are at v's OWN cycle node
+  (R15 (b)'s length-only switches): FLATCN = 7 (alt_all), 8 (alt_all pinned starts), 19 (lib41), 6 (experiments/si instances); SWRISE_V
+  = 0 (no other flat switch) on every corpus, the runquad family (mkr.py (K, m) = (3, 4) … (12, 4), (6, 40)) and dlsep_kill_n70.
+- Corollary. SW(v) ≤ RISE(v) + (own-cycle-node switches of v) in every fallback-free run: switches are bounded by the rises of the
+  switcher's OWN honest value (with Lemma SW-RETURN, also by its successors' rises). It is a reduction, not a bound: RISE(v) ≤ n is FALSE
+  (RISEN: grun/out/gc1 etc., 34 rises in a run of 35 at n 31; alt_all pinned red/so/instances/so_th_n32: 33 > 32): a vertex downstream of
+  everything rises at almost every step. The usable count is the number of DISTINCT successor values Ξ_t(σ_t v) at v's switch times
+  (strictly increasing by (SW) and Ξ-SUCC), which is SW(v) + 1 itself; its P-part is L-LIT's MATCH-Φ count (docs/lit/T33-match-phi.md,
+  trunk): matched P-changes raise the potential Φ (range O(n²)), carries (NM) are the open part.
+- CONJECTURE SW-PER-VERTEX = the fleet's CONJECTURE SW-RUN (every Even vertex switches O(n) times per fallback-free run; Θ(n²) runs would
+  then be tight against runquad). DATA (chg/pervert.py, chg/pervert_*.txt): max SW(v)/n = 0.667 (experiments/si/root/out/swr_sc24_s8, n 21:
+  vertex 0 switches 14 times in a 14-step run, cycling 9 → 12 → 4 four times: each re-entry after the successor's Ξ rose, Lemma SW-RETURN),
+  0.583 (lib41 sc24), 0.308 (ladder k48), (2K − 1)/n ≤ 0.142 on the runquad family; SW(v) ≤ n: 0 failures (PERV PASS) on every corpus.
+  (Per PHASE it is false: SW-LIN DEAD, swlin_kill_n26, fallbacks re-arm; N5-ALT §10.)
+
+## 9. STEP 2 (Lead 11:01Z, option D): Theorem COMPOSE — phase and run length reduced to P-changes, hence (MATCH-Φ) to carries
+Setting: N5 = SPEC S1-S5 on ANY game. A PHASE: a maximal run of states with λ (Ξ's cycle-node map) and τ constant (RESULTS R38 (a)),
+in-phase S4c fallbacks included. A λ-RUN: a maximal run of states with λ constant (τ free). For a vertex c and a stretch R of states:
+RISE_R(c) := #{t : t, t + 1 ∈ R, Ξ_{t+1}(c) ≠ Ξ_t(c)}; PCH_R(c) := #{such t with P(Ξ_{t+1} c) ≠ P(Ξ_t c)}; ENT_R(v, c) := #{t : σ_t(v) ≠ c
+= σ_{t+1}(v)}; SW_R(v) := Σ_c ENT_R(v, c); m_E := the number of edges leaving Even vertices.
+Premises (LANDED unless said): (MON) RESULTS R15 (a) (VJ00 Lemma 5.7): Ξ_{t+1} ⊵ Ξ_t at every vertex, at EVERY N5 transition (S4a, S4c
+and S4b steps: σ changes only by a non-empty set of improving switches, or not at all); (SW) every Even switch of N5 is to an edge of
+Iσ_t (S4a's arena consists of such edges; S4c switches only along Iσ); (STEP) RESULTS R15 (d): every transition changes σ or τ;
+(ORD) SPEC S1's order: cycle-node reward, then weight(P), then the length (shorter better if Ω(c) even, longer if odd); (Δ) RESULTS R84
+(a) Fact DELTA; (Φ) RESULTS R47 (a): λ changes at most n(n − 1) times along a run, and Odd's dual cycle-node map λ^U at most n(n − 1)
+times; (MΦ) L-LIT's Lemma MATCH-Φ Corollary (packet P-N5-MATCHPHI, now inside P-N5-MPGS (A), claude/l-lit; ASSUMED, UNDER REVIEW):
+for any sequence of subsets of R_c (c fixed), the number of changes is ≤ (K(K+1)/2)(NM + 1) + NM, K = |R_c| ≤ n − 1, NM its carries.
+- Lemma SW-RETURN (PROVED, lane; §7, now on any stretch of N5): ENT_R(v, c) ≤ 1 + RISE_R(c).
+  Proof. Let e_1 < e_2 be consecutive entries of v into c (σ_{e_k + 1}(v) = c) and s ∈ [e_1 + 1, e_2) the step at which v leaves c. By (SW)
+  at e_2 and at s, (MON), and Ξ-SUCC (Ξ_t(σ_t v) is non-decreasing in t, by (MON) between switches of v and by (SW) + (MON) at them):
+  Ξ_{e_2}(c) ▷ Ξ_{e_2}(σ_{e_2} v) ⊵ Ξ_{s+1}(σ_{s+1} v) ⊵ Ξ_s(σ_{s+1} v) ▷ Ξ_s(c) ⊵ Ξ_{e_1 + 1}(c). So c's value rises at some transition in
+  [e_1 + 1, e_2); these intervals are disjoint for successive pairs of entries. □
+- Lemma LEN-MONO (PROVED, lane; Lead's item (2)). On a λ-run R, for every vertex c: RISE_R(c) ≤ PCH_R(c) + (PCH_R(c) + 1)(n − 1).
+  Proof. c's cycle node is fixed on R. By (MON) Ξ_t(c) is non-decreasing on R; by (ORD) with the cycle node fixed, a change of P raises
+  weight(P) strictly (distinct sets have distinct weights, (Δ)), so every P-value occupies one contiguous block of R, and inside a block
+  every rise of Ξ(c) is a strict move of the length in the direction (ORD) prefers for Ω(c). The length is the number of steps from c to
+  its cycle node along a lasso, in {0, …, n − 1}, so a block holds ≤ n − 1 rises. There are PCH_R(c) + 1 blocks. □
+  (The Lead asked whether the length can move both ways under a fixed P: it cannot; DATA LDIR_V = 0 below.)
+- Theorem COMPOSE (PROVED, lane; a REDUCTION). (a) Every phase 𝒫 of N5 on any game has
+  |𝒫| ≤ Σ_v SW_𝒫(v) ≤ Σ_{(v, c) ∈ E, v Even} (1 + RISE_𝒫(c)) ≤ Σ_{(v, c)} n·(PCH_𝒫(c) + 1) ≤ m_E·n·(P*_𝒫 + 1), P*_𝒫 := max_c PCH_𝒫(c).
+  (b) (Corollary COMPOSE-RUN) Every N5 run on any game has at most
+  2n(n − 1) + m_E·n·Σ_{λ-runs R}(P*_R + 1) + m_O·n·Σ_{λ^U-runs R′}(P*^U_{R′} + 1) ≤ 2n(n − 1) + (n(n − 1) + 1)·n·(m_E (P* + 1) + m_O (P*^U + 1))
+  iterations, P* (P*^U) the largest number of P-changes of one vertex's Ξ (of its dual valuation U of τ on G^d) inside one λ-run (λ^U-run).
+  (c) With (MΦ): P* ≤ (n²/2)(NM* + 1) + NM*, NM* the most carries of one vertex in one λ-run (dually for U). So N5 is polynomial on every
+  game IF the carry counts NM*, NM*^U are polynomial: G-N5-TIME is REDUCED to a carry count (not proved; NM is OPEN).
+  Proof. (a) A phase has τ constant, so by (STEP) every transition of 𝒫 changes σ: |𝒫| ≤ Σ_v SW_𝒫(v). SW = Σ_c ENT, and SW-RETURN, LEN-MONO
+  (a phase lies in a λ-run) give the rest. (b) Cut the run into λ-runs (≤ n(n − 1) + 1 of them by (Φ)). A transition either changes λ
+  (≤ n(n − 1) of these), or changes σ inside a λ-run (an Even switch, counted by (a)'s argument on that λ-run, which uses only (MON), (SW),
+  (ORD), (Δ)), or leaves σ unchanged and changes τ; the last kind either changes λ^U (≤ n(n − 1)) or is an Odd switch inside a λ^U-run,
+  bounded by the same argument on G^d (Odd's S4b and S4c steps switch along Iτ, and R15 (a), (d) hold on G^d, RESULTS R15 (d)). (c) (MΦ)
+  applies on each λ-run: it needs only c fixed and P_t ⊆ R_c (packet remark: «The Corollary holds for any sequence of subsets of R_c»). □
+- What is new and what is not (READING). Each piece is elementary; the composition is the point: switches of one vertex are paid by
+  value rises of its successors (SW-RETURN), rises by P-changes (LEN-MONO), P-changes by Φ and carries (MΦ). The τ-side is symmetric, so
+  unlike R47's phase count (bounded only on 𝒞^1O) nothing here needs the number of phases. It does NOT bound N5: NM can be large (R105/
+  R106 families: NM = K, i.e. Θ(n); a binary counter of P-sets has carries 2^k − 1, T33 Part B) and nothing yet bounds NM under S4a.
+- DATA (chg/compose.py; per phase with every inequality's slack: S1 = Σ SW, S2 = Σ(1 + RISE), S3 = Σ n(PCH + 1), S4 = the (MΦ) bound):
+  | instance | L | S1 | S2 | S3 | S4 | max NM | max PCH | max RISE | max SW | n |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | runquad_K8_m30_n192 (L-RED R106) | 263 | 481 | 1,016 | 195,072 | 265,890,048 | 8 | 15 | 15 | 15 | 192 |
+  | dlsep_kill_n70 [0, 12] | 12 | 39 | 387 | 26,810 | 14,059,640 | 5 | 6 | 7 | 4 | 70 |
+  | ladderd0_k48_n156 | 49 | 97 | 195 | 30,420 | 118,925,352 | 0 | 48 | 48 | 48 | 156 |
+  | segcount_kill_n20 (R105) | 4 | 5 | 16 | 320 | 4,840 | 1 | 3 | 3 | 3 | 20 |
+  runquad family mkr.py (K, m) = (3, 4), (6, 12), (10, 10), (12, 4), (6, 40): L = 20, 89, 129, 83, 257 vs S2 = 81, 380, 722, 738, 912;
+  max NM = K, max PCH = max RISE = max SW = 2K − 1. Corpora (all phases): I0, I1, LDIR, LBLK, I2, I3 PASS on alt_all pinned starts
+  (457 phases), lib41 (418), all experiments/si instances (345); L/S1 ≤ 1.000, S1/S2 ≤ 0.75 everywhere. Largest per vertex per phase:
+  NM 36 at n 40 (red/n3/instances/ret22_n40, 0.90n), 42 at n 41 (root/instances/l121reader_n41, 1.02n; L-COMP's NM ≤ 1.18n is the same
+  order); PCH 67 at n 40 (n5-epoch/instances/nep92_n40, 1.68n), 71 at n 41 (l121reader_n41, 1.73n). Run mode (Corollary (b), MODE=run;
+  Even side on λ-runs, Odd side on λ^U-runs of U = Ed.evaluate(τ)): RUNI0 (run length ≤ in-run switches + λ- and λ^U-changes), R47
+  (≤ n(n − 1) changes each), EI1/OI1, ELDIR/OLDIR, ELBLK/OLBLK PASS on alt_all pinned starts (413 runs), lib41 (412), experiments/si
+  (276), and the pins above (chg/composerun_*.txt); at most 31 λ-runs and 28 λ^U-runs in one run; Odd-side PCH ≤ 13. The slack: L ≤ S1 ≤ S2 are within factors 2-4 (the counting is sharp up to constants); the
+  factor n of LEN-MONO and the n²/2 of (MΦ) are where all the slack sits (max RISE = max PCH in every family above).
+
+## 10. Where carries come from (anatomy; DATA, READING)
+- chg/carries.py on runquad (the vertex with the most carries in the longest phase): runquad_K8_m30_n192, Odd vertex 18 (cycle node 0):
+  14 P-changes, 8 carries, in pairs one pivot climb apart (t = 63/65, 96/98, …, 228/230, then 261): a CARRY removes one high-rank Odd
+  vertex (55, then 61, 67, …: the pivot's current marker) and adds a slightly lower-rank Odd vertex (11, 12, …) PLUS the whole reactor
+  chain (≈ m + 3 low-rank Odd vertices 190, 187, …, 130, …; vertex ids), Φ falls by 463; two steps later a MATCHED change removes that chain again (Φ + 467). The weight
+  rises at both (the removed high Odd rank dominates), Φ falls at the carry because Φ weighs ranks linearly. runquad_K3_m4_n54: vertex 13,
+  4 P-changes, 3 carries, the same shape. So in L-RED's families NM = K = Θ(n) per vertex per phase, PCH = 2K − 1.
+- Polynomial re-weightings do not remove carries (DATA, chg/compose.py fall_dK): with Φ_d := Σ ±pos^d, P-changes where Φ_d does not rise
+  on runquad_K8_m30_n192: d = 1, 2, 3: 824, 724, 616 (8 per vertex at most for every d); dlsep_kill_n70: 54, 42, 23; runquad_K3_m4_n54:
+  63, 25, 2; the library has them too (most per vertex per phase, d = 1/2/3: alt_all pinned 25/20/19, lib41 12/10/9, experiments/si
+  22/15/14; chg/compose_*.txt). The carry «drop one high rank r, add a slightly lower rank r′ and a long tail» defeats any weight with
+  w(r) − w(r′) bounded by a polynomial in the gap, since the tail is long (≈ m). Only S1's exact 2^rank weights see it as a rise.
+- READING. A bound on NM under S4a cannot come from the P-sets alone (MATCH-Φ's remark: the Corollary holds for any sequence of subsets);
+  in runquad each carry of vertex 18 is caused by ONE pivot step (a high marker leaves 18's honest play and the reactor chain enters it).
+  The natural S4a-specific target is therefore «carries of one vertex per λ-run ≤ (pivot steps that change its honest play's top
+  segment)», i.e. a count of a different kind (cycle-node-near events, not P-sets). Not attempted yet.
+
+## 11. LEN-MONO's factor n (proposal (i), 11:19Z): CONJECTURE LEN-TOTAL (DATA)
+- CONJECTURE LEN-TOTAL: a vertex has at most n − 1 LENGTH-ONLY rises (P unchanged) in one phase in total, not just per P-block. With it,
+  LEN-MONO's bound improves to RISE(c) ≤ PCH(c) + n − 1, and Theorem COMPOSE (a) to |𝒫| ≤ Σ_{(v,c)} (PCH(c) + n) ≤ m_E·(P* + n).
+- DATA (chg/compose.py LONLY): 0 failures; most length-only rises of one vertex in one phase: 28 at n 32 (red/xing/instances/x31_rx32,
+  phase [2, 55], vertex 0; 0.875n), 28 (lib41, same order), 25 at n 31 (grun/out/gc2); 0 on runquad (all its rises are P-changes), 1 on
+  dlsep_kill_n70. Totals: 5,632 (alt_all pinned), 6,770 (lib41), 6,481 (experiments/si).
+- No proof route yet: the length does NOT move monotonically across P-changes (it moves against S1's preferred direction at 738 P-changes
+  of runquad_K8_m30_n192 and 105 of dlsep_kill_n70; counter lwrong_at_pchange), so the per-block argument of LEN-MONO does not chain.
+
+## 12. (ii) carries under S4a: they are inherited from the divergence point (Lemma INHERIT; DATA)
+- Lemma INHERIT (PROVED, lane, generic case). Let y have a P-change at t → t + 1 inside a phase, and let x be the first vertex of y's honest
+  play at t whose honest successor changes (so y's plays at t and t + 1 share the prefix Π = y … x). If x's honest plays at t and t + 1 avoid
+  Π ∖ {x} before reaching the cycle node c (the generic case: no new cycle through Π), then P(Ξ y) = Q ∪ P(Ξ x) at both states, Q := the
+  vertices of Π ∖ {x} above c, disjoint from both P(Ξ_t x), P(Ξ_{t+1} x); so y's and x's P-changes have the same symmetric difference and the
+  same R_c (same c, λ constant), and y's P-change is a CARRY iff x's is. □
+- DATA (chg/carrysrc.py; every carry of every vertex, its divergence vertex x): INHERIT 0 failures (INH PASS) on runquad_K8_m30_n192 (856 carries,
+  all with an Even source), runquad_K3_m4_n54 (75), dlsep_kill_n70 (144: 118 Even, 26 Odd sources; an Odd source is a σ̄ change); alt_all pinned starts
+  30,425 carries (19,931 Even / 10,494 Odd sources), lib41 20,773, experiments/si 15,300 (chg/carrysrc_*.txt): 0 failures. In runquad_K8_m30_n192 the single phase has 256 distinct source carries (t, x) in 263 transitions: almost every reactor
+  switch is a carry AT THE SWITCHER, while any one vertex inherits only ≤ 8 (= K) of them.
+- READING (what a bound on NM needs). Carries are created at switches (an Even switch whose own P-change is not decomposable, or a σ̄ change)
+  and copied upstream along honest plays. NM(y) ≤ #{t : y's honest play diverges at t at a carry source}. So NM per vertex is a statement
+  about how often one vertex's honest play is redirected through a carry-creating switch — in runquad once per pivot climb (the reactor chain
+  enters y's play), while the reactors themselves create carries at nearly every step. No S4a-specific bound is in sight; this is the open
+  core of G-N5-TIME after COMPOSE.
+
+## 13. L-LIT T37 §3's CONJECTURE (carries ≤ poly(n) × gate reopenings on the vertex's play), measured (Lead 11:47Z)
+- Operational reading (chg/reopen.py; T37 defines no counter): per λ-run and vertex y, NM(y) = y's carries; RW(y) = transitions with an Odd
+  switch (τ change) at a vertex of y's W-play (σ, τ) before or after; RH(y) = the same on y's honest play (σ, σ̄); RI(y) = states with an Odd
+  vertex of y's W-play whose Iτ is non-empty (an open Odd gate, taken or not). Every gate reopening in T37's sense (an Odd switch back into
+  a cycle region, i.e. (e, d) entering Iτ and being taken) is an RW- or RH-event on the plays it affects and an RI-state, so RW + RH + RI
+  over-count reopenings; a carry with RW = RH = RI = 0 has NO reopening on its vertex's plays in the whole λ-run.
+- DATA: carrying (vertex, λ-run) pairs with NO reopening and no open Odd gate on their plays (zero_reopen), and their largest NM:
+  | corpus | carrying pairs | zero_reopen | largest NM there | at |
+  | --- | --- | --- | --- | --- |
+  | runquad_K8_m30_n192 (R106, explicit start) | 121 | 121 | 8 | n 192 (vertex 18 etc.) |
+  | s3quad_K8_m30 (L-RED R107, S3 default start; copy chg/instances/red/, sha1 95763331…) | 271 | 271 | 8 | n 479 |
+  | s3quad_K3_m4 | 67 | 67 | 3 | n 137 |
+  | dlsep_kill_n70 | 73 | 73 | 5 | n 70 |
+  | seglast_kill_n110 | 131 | 93 | 4 | n 110 |
+  | alt_all pinned starts | 11,675 | 4,945 | 62 | red/usplit/instances/gate_K64_n581 (n 581) |
+  | lib41 | 10,676 | 5,028 | 18 | red/so/instances/xsn91_n48 (n 48) |
+  | experiments/si | 7,241 | 4,934 | 42 | root/instances/l121reader_n41 (n 41, NM 42 > n) |
+- FINDINGS. (1) In the literal multiplicative form («NM ≤ poly(n) × reopenings») the conjecture is DEAD on every instance above: carries
+  occur on vertices whose plays see no Odd switch and no open Odd gate during the whole λ-run (runquad, s3quad, dlsep_kill_n70: ALL carries
+  are of this kind; τ is constant there, I_τ = ∅). (2) With an additive term («NM ≤ poly(n) · (reopenings + 1)») it is consistent with all
+  data, but then its content for these instances is «NM ≤ poly(n) when τ is quiet», i.e. a bound on carries from σ-dynamics alone, which
+  is exactly the open core; reopenings are not where the carries of the known Θ(n²) and library instances come from. (3) The carries in
+  runquad / s3quad are inherited (§12) from Even switches (the pivots' and reactors'), never from σ̄ or τ.
+- READING for the proof side (L-NEW 31): any route to NM must handle τ-quiet λ-runs, where every carry is created by an Even switch and
+  copied upstream (INHERIT); gate reopenings can at most add to that.
+
+## 14. Where R17's one-player phase bound breaks in two-player N5 (Lead 12:01Z; tool chg/r17.py)
+- R17's proof (docs/new/N5-phase-bound-box10.md §2, Lemma P, induction step k → k + 1 along r = x → z → r′) uses ONE valuation Ω for two
+  jobs: the arena (Case A: «(x, z) ∉ I_k, i.e. Ω_k(z) ⪯ Ω_k(ρ_k(x))») and the step's objective (Case B: «ρ̂ := ρ_k[x → z] is a strategy of the
+  arena H_k, so by (F1) Ω_{k+1}(x) ⪰ val_ρ̂(x)»). N5's S4a takes the arena from Ξ (against σ̄) and maximises W (against τ). So:
+  (A-fail) read with Ω = W, Case A's implication fails: a W-better edge can be outside the arena. Witness runquad_K8_m30_n192, transition
+  0 → 1, x = 5, z = 4 (σ_0(5) = σ_1(5) = 6): 5 ⊕ W_1(4) ▷ W_1(5) and (5, 4) ∉ A(0, 5); 3,102 such (t, x) pairs in the one phase.
+  (B-fail) read with Ω = Ξ, Case B's (F1) fails: S4a's choice can be honest-worse than an available honest switch (a K1 stall, the source's
+  own §5 diagnosis). Witness runquad_K8_m30_n192, transition 0 → 1, x = 3, z = 27: (3, 27) ∈ Iσ_0, σ_0(3) = 0, σ_1(3) = 9, and
+  3 ⊕ Ξ_0(27) ▷ Ξ_1(3); 2,096 such pairs.
+- It is NOT σ̄ moving: in runquad_K8_m30_n192 σ̄ is CONSTANT on the whole phase (0 σ̄-changing transitions), yet the phase has 263 W-changing
+  transitions and 481 Even switches at n 192. So the candidate «Even switches per phase ≤ n·(σ̄-changes + 1)» is DEAD (481 > 192), and so is
+  the source's own (SEG-LEN) «Even moves inside one λ-phase of one σ̄-segment ≤ n − 1» (263 > 191). Library: Even switches per phase up to
+  4.375·n·(σ̄-changes + 1) (ESWSB_V on alt_all pinned 42, lib41 54, experiments/si 23 phases).
+- What separates the frames is D := the Odd vertices with σ̄_t ≠ τ at some state of the phase (runquad: |D| = 32).
+  Corollary R17-D0 (PROVED, lane, by RESULTS R17 (b), (c), (e) on G_τ). If σ̄_t = τ at every Odd vertex at every state of a phase, then the
+  phase has fewer than n + m transitions, at most n − 1 of them W-changing. Proof. Then Ξ_t = W_t (both are S1's valuation of the same
+  (σ_t, τ)-plays), so Iσ_t is the improving set of σ_t in the one-player game G_τ (Odd fixed to τ, constant on the phase), S4a's σ_{t+1} is
+  an optimal strategy of that arena (switch-best on G_τ, R17 (d): any pointwise-optimal choice), S4c fires as in R17 (e), and the phase is a
+  λ-phase of G_τ (λ_Ξ = λ_W constant). R17 (b), (c) apply to G_τ. □ DATA: D0 0 failures on the 309 D = ∅ phases of alt_all pinned (114), lib41
+  (117), experiments/si (78).
+- The interpolation «W-changing transitions per phase ≤ (n − 1)(|D| + 1)» is DEAD in the library: lib41 / alt_all n5-exhaustive/instances/
+  b6_xl2_n32, phase [4, 87]: 83 W-changing transitions, |D| = 1, (n − 1)(|D| + 1) = 62 (ratio 1.339); experiments/si orlens/instances/
+  s_elim24_final, phase [4, 63]: 59 > 46 with |D| = 1 (σ̄ ≠ τ only at Odd vertex 18; Ξ ≠ W at ≤ 5 vertices). ONE disagreement vertex already
+  breaks the one-player count. CONJECTURE (weakest R17-type form consistent with all data): W-changing transitions per phase = O(n·(|D| + 1));
+  DATA max ratio WCH / ((|D| + 1)(n − 1)) = 1.339 (b6_xl2_n32), runquad 263 / (191·33) = 0.04. Not a useful target on its own: |D| ≤ n.
+- READING. R17's mechanism needs the arena and the objective in one frame. In a phase τ is fixed, and the frames differ exactly on D; a
+  single Odd vertex in D (s_elim24_final) suffices to exceed n − 1, and runquad's 32 give Θ(n²). A two-player Lemma P would have to
+  quantify progress in BOTH frames at once (the W-chain / H-chain pairs of §2's Lemma DEADLOCK are this obstruction at the level of sinks).
+
 ## DONE / FINDINGS / NEEDS
 - DONE: this note; tools chg/suffix.py (SUFFIX-COUNT, BND with MUT, EARLY, INTER-JOINT), chg/dlock.py (deadlock anatomy and candidates),
   chg/cclimb.py (lemma climbs OBJ=IE, GP), chg/ijcheck.py (n5b-only check of an INTER-JOINT failure); pins chg/instances/
   (interjoint_kill_n70, growpers_kill_n73, dlsep_kill_n70; copies of L-RED's R105 pins in chg/instances/red/); chg/lenstat.py (length
-  statistics); data chg/*.txt; climb logs chg/climbs_box28.txt; DEAD.md "box 28"; check.sh "box 28" (5 blocks).
-- FINDINGS: (1) PROVED (lane): FREEZE, DEADLOCK (the zig-zag cycle closes at every deadlock step), BND, NEW-EDGE, the counting (i)-(iv)
+  statistics), chg/revisit.py, chg/pervert.py (per-vertex switches), chg/compose.py (§9); data chg/*.txt; climb logs chg/climbs_box28.txt; DEAD.md "box 28"; check.sh "box 28" (5 blocks).
+- FINDINGS: (0) STEP 2: Theorem COMPOSE + Corollary COMPOSE-RUN (PROVED, lane; a REDUCTION): every N5 run on every game has
+  ≤ 2n(n − 1) + (n(n − 1) + 1)·n·(m_E(P* + 1) + m_O(P*^U + 1)) iterations, P* the most P-changes of one vertex in one λ-run; with L-LIT's
+  MATCH-Φ (under review) G-N5-TIME reduces to the carry count NM (OPEN; DATA ≤ 1.02n per vertex per phase). Lemma LEN-MONO answers the
+  Lead's item (2): under a fixed P the length moves one way (≤ n − 1 rises per P-block). (1) PROVED (lane): FREEZE, DEADLOCK (the zig-zag cycle closes at every deadlock step), BND, NEW-EDGE, the counting (i)-(iv)
   of §6. (2) DEAD: general (a) (wgrow_kill_n90), INTER-JOINT (interjoint_kill_n70), DL-HSW, DL-NEXT, GROW-PERSIST (growpers_kill_n73),
   DL-RUN, DL-FIRST, NEWFINAL (L-RED's segcount_kill_n20 / segfam_k3_n29 / segfam_k8_n79). SEG-COUNT itself: DEAD by L-RED R105 ((b) fails
   exactly as §4 predicted). (3) The length routes (L2) (DL-SEP / DL-NOCONSEC ⇒ b − a ≤ 2·FIN) and (L3) (FROZEN-COUNT ⇒ O(n²)) are DEAD
   (dlsep_kill_n70: 8 deadlocks, 6 consecutive, in one segment); LENE (b − a ≤ |E_b|) and b − a ≤ SW still hold in all data except L-RED's
-  family (b − a = 2K > SW = K + 1). (4) What is left: a per-vertex switch bound (§7); Lemma SW-RETURN PROVED (lane).
+  family (b − a = 2K > SW = K + 1). (4) What is left: a per-vertex switch bound (§7, §8); Lemmas SW-RETURN, SW-RISE PROVED (lane); LENE, LEN2 DEAD (runquad,
+  L-RED R106); SW-RUN DATA ≤ 0.667n.
 - NEEDS: none from the owner.

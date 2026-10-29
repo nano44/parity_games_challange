@@ -1,0 +1,16 @@
+FLATCN=19 RISEN_V=3 runs=779
+columns: maxSW/n, game, s, e, run length, max SW(v), max RISE(v), max DIST(v), n
+TOP (0.583, 'experiments/new/box25/instances/sc24.pg', 0, 20, 20, 14, 20, 20, 24)
+TOP (0.5, 'experiments/new/box25/instances/rtt16.pg', 0, 11, 11, 8, 11, 11, 16)
+TOP (0.333, 'experiments/new/box28/instances/w24b_thc24_final.pg', 1, 17, 16, 8, 16, 16, 24)
+TOP (0.333, 'docs/referee/R-N5-L2/droplen_cex_n12.pg', 0, 4, 4, 4, 1, 4, 12)
+TOP (0.286, 'experiments/si/orlens/instances/lev_l_n28.pg', 3, 25, 22, 8, 22, 18, 28)
+TOP (0.25, 'experiments/red/xing/instances/x31_cu24.pg', 2, 10, 8, 6, 8, 8, 24)
+TOP (0.25, 'experiments/new/box25/instances/rtt24.pg', 1, 11, 10, 6, 10, 10, 24)
+TOP (0.25, 'experiments/n5-exhaustive/instances/thetaA_canon_n8.pg', 0, 3, 3, 2, 2, 2, 8)
+EXAMPLE ('RISEN', 'experiments/red/so/instances/pftheta34_n32.pg', 5, 39, 34, 32)
+EXAMPLE ('RISEN', 'experiments/red/so/instances/pftheta_cex_n32.pg', 4, 38, 33, 32)
+EXAMPLE ('RISEN', 'experiments/red/so/instances/so_th_n32.pg', 1, 34, 33, 32)
+SWRISE PASS
+PERV PASS
+RISEN FAIL

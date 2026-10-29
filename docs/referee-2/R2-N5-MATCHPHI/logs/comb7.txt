@@ -1,0 +1,16 @@
+MODE comb 7 BF 6
+CTL_carry_rise: 525558
+CTL_noM1: 547514
+CTL_noM2: 375337
+F1_checks: 8184
+MM_checks: 2358516
+matched_pairs: 661892
+pairs: 2374900
+TIGHT_K1: (1, 1, 1)
+TIGHT_K2: (3, 3, 3)
+TIGHT_K3: (6, 6, 7)
+TIGHT_K4: (10, 10, 15)
+TIGHT_K5: (15, 15, 31)
+TIGHT_K6: (21, 21, 63)
+TIGHT_K7: (28, 28, 127)
+RESULT OK violations=0

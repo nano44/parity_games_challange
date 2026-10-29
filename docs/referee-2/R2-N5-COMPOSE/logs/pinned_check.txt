@@ -1,0 +1,52 @@
+# pinned re-runs, detached worktree at l-si 3ca0932d, from experiments/si, python3 -I; sha1: quotecheck 29bb4a97, compose.py 9fc3b081, check.sh 7747e70c
+## quotecheck
+quotes=16 bad=0
+QUOTES PASS
+## quotecheck --mut (must FAIL)
+QUOTES FAIL
+## compose.py (three pinned commands of packet §7)
+fall_d1=824 fall_d2=724 fall_d3=616 fallmax_d1=8 fallmax_d2=8 fallmax_d3=8 lonly_max=0 lonly_total=0 lwrong_at_pchange=738 nm_max=8 pch_max=15 phases=1
+columns: L, game, i, j, S1 = sum SW, S2 = sum (1 + RISE), S3 = (I2) bound, S4 = (I3) bound, max NM, max PCH, max RISE, max SW, n
+TOP (263, 'chg/instances/red/runquad_K8_m30_n192.pg', 0, 263, 481, 1016, 195072, 265890048, 8, 15, 15, 15, 192)
+NMTOP (max NM / n) 0.042 (263, 'chg/instances/red/runquad_K8_m30_n192.pg', 0, 263, 481, 1016, 195072, 265890048, 8, 15, 15, 15, 192)
+PCHTOP (max PCH / n) 0.078 (263, 'chg/instances/red/runquad_K8_m30_n192.pg', 0, 263, 481, 1016, 195072, 265890048, 8, 15, 15, 15, 192)
+MAXRATIO L/S1 0.547  S1/S2 0.473
+I0 PASS
+I1 PASS
+LDIR PASS
+LBLK PASS
+I2 PASS
+I3 PASS
+LONLY PASS
+fall_d1=54 fall_d2=42 fall_d3=23 fallmax_d1=2 fallmax_d2=1 fallmax_d3=1 lonly_max=1 lonly_total=9 lwrong_at_pchange=105 nm_max=5 pch_max=6 phases=3
+columns: L, game, i, j, S1 = sum SW, S2 = sum (1 + RISE), S3 = (I2) bound, S4 = (I3) bound, max NM, max PCH, max RISE, max SW, n
+TOP (12, 'chg/instances/dlsep_kill_n70.pg', 0, 12, 39, 387, 26810, 14059640, 5, 6, 7, 4, 70)
+TOP (1, 'chg/instances/dlsep_kill_n70.pg', 13, 14, 3, 14, 980, 219800, 1, 1, 1, 1, 70)
+TOP (1, 'chg/instances/dlsep_kill_n70.pg', 15, 16, 5, 19, 1190, 46200, 0, 0, 1, 1, 70)
+NMTOP (max NM / n) 0.071 (12, 'chg/instances/dlsep_kill_n70.pg', 0, 12, 39, 387, 26810, 14059640, 5, 6, 7, 4, 70)
+PCHTOP (max PCH / n) 0.086 (12, 'chg/instances/dlsep_kill_n70.pg', 0, 12, 39, 387, 26810, 14059640, 5, 6, 7, 4, 70)
+LONLYTOP (max length-only rises / n) (0.014, 'chg/instances/dlsep_kill_n70.pg', 0, 12, 14, 1, 70)
+MAXRATIO L/S1 0.333  S1/S2 0.263
+I0 PASS
+I1 PASS
+LDIR PASS
+LBLK PASS
+I2 PASS
+I3 PASS
+LONLY PASS
+Elambda_runs_max=5 Epch_max=4 Olambda_runs_max=3 Opch_max=1 runs=1
+columns: L, game, i, j, S1 = sum SW, S2 = sum (1 + RISE), S3 = (I2) bound, S4 = (I3) bound, max NM, max PCH, max RISE, max SW, n
+TOP (16, 'lay/instances/seglast_kill_n110.pg', 0, 16, 27, 152, 16066, 0, 20, 1, 4, 2, 110)
+MAXRATIO L/S1 0.593  S1/S2 0.178
+RUNI0 PASS
+R47 PASS
+EI1 PASS
+OI1 PASS
+ELDIR PASS
+OLDIR PASS
+ELBLK PASS
+OLBLK PASS
+
+real	0m2.540s
+user	0m2.459s
+sys	0m0.046s

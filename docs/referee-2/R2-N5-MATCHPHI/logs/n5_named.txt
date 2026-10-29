@@ -1,0 +1,12 @@
+MODE n5 pairs named.lst ../../../experiments BF 8
+COR_checks: 709
+NM_total: 9519
+Pchanges: 13282
+matched: 3763
+phases: 22
+runs: 19
+max_NM: (47, 'red/sel/instances/pl130_n40.pg#start', 1, 131, 1, 40, 62)
+max_NM_over_n: (1.175, 'red/sel/instances/pl130_n40.pg#start', 1, 131, 1, 40, 62)
+max_PCH: (72, 'new/box49/inst/l121_d29.pg#start', 1, 122, 40, 41, 42)
+max_PCH_over_bound: (0.6667, 'si/root/instances/ueonce_n27.pg#S3', 1, 11, 26, 2, 0, 2)
+RESULT OK violations=0

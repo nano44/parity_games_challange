@@ -581,3 +581,67 @@ python3 -I root/n5bcmp.py chg/instances/dlsep_kill_n70.pg chg/instances/dlsep_ki
 o=$(python3 -I chg/lenstat.py --one chg/instances/dlsep_kill_n70.pg chg/instances/dlsep_kill_n70.start); grep -q "^LEN2 PASS" <<<"$o"; grep -q "^LENE PASS" <<<"$o"; grep -q "^FRZLEN FAIL" <<<"$o"
 grep -q "EXAMPLE ('FRZLEN', 'chg/instances/dlsep_kill_n70.pg', 0, 12, 0, 10, 9)" <<<"$o"
 echo "si (box 28: dlsep_kill_n70 kills DL-SEP, DL-NOCONSEC, FROZEN-COUNT; 8 deadlocks in one REL segment, reproduced from n5b alone): PASS"
+# box 28: L-RED's R106 runquad_K8_m30_n192 (copy) kills LENE and LEN2 (one REL segment [0, 263], |E_b| = 49, SW = 47); BND, FROZEN-COUNT
+# hold. Lemma SW-RISE: every switch off the switcher's own cycle strictly raises its Xi (chg/pervert.py SWRISE PASS; reactors switch 15 times).
+echo "ebaa6ac57ec60948fb986210c27479cb3a7961d9  chg/instances/red/runquad_K8_m30_n192.pg" | sha1sum -c --quiet
+echo "4ba9f8605a1b18891dffb40d508bce929cf7c952  chg/instances/red/runquad_K8_m30_n192.start" | sha1sum -c --quiet
+o=$(python3 -I chg/lenstat.py --one chg/instances/red/runquad_K8_m30_n192.pg chg/instances/red/runquad_K8_m30_n192.start)
+grep -q "^LENE FAIL" <<<"$o"; grep -q "^LEN2 FAIL" <<<"$o"; grep -q "^FRZLEN PASS" <<<"$o"
+grep -q "TOP (5.367, 'chg/instances/red/runquad_K8_m30_n192.pg', 0, 263, 49, 47, 45, 218, 45, 481, 15, 192)" <<<"$o"
+python3 -I chg/suffix.py --one chg/instances/red/runquad_K8_m30_n192.pg chg/instances/red/runquad_K8_m30_n192.start | grep -q "^BND PASS"
+o=$(python3 -I chg/pervert.py --one chg/instances/red/runquad_K8_m30_n192.pg chg/instances/red/runquad_K8_m30_n192.start)
+grep -q "^SWRISE PASS" <<<"$o"; grep -q "^PERV PASS" <<<"$o"; grep -q "TOP (0.078, 'chg/instances/red/runquad_K8_m30_n192.pg', 0, 263, 263, 15, 15, 16, 192)" <<<"$o"
+echo "si (box 28: runquad_K8_m30_n192 kills LENE and LEN2; BND, SW-RISE hold; max 15 switches per vertex at n 192): PASS"
+# box 28 §9: Theorem COMPOSE (phase length <= sum (1 + RISE(c)) <= sum n (PCH(c) + 1)) and Corollary COMPOSE-RUN (whole run, Odd side on G^d)
+# measured with every inequality's slack on runquad, dlsep_kill_n70, segcount_kill_n20 and seglast_kill_n110; LEN-MONO (LDIR, LBLK) holds.
+o=$(python3 -I chg/compose.py --one chg/instances/red/runquad_K8_m30_n192.pg chg/instances/red/runquad_K8_m30_n192.start)
+for k in I0 I1 LDIR LBLK I2 I3; do grep -q "^$k PASS" <<<"$o"; done
+grep -q "TOP (263, 'chg/instances/red/runquad_K8_m30_n192.pg', 0, 263, 481, 1016, 195072, 265890048, 8, 15, 15, 15, 192)" <<<"$o"
+o=$(python3 -I chg/compose.py --one chg/instances/dlsep_kill_n70.pg chg/instances/dlsep_kill_n70.start); for k in I0 I1 LDIR LBLK I2 I3; do grep -q "^$k PASS" <<<"$o"; done
+grep -q "TOP (12, 'chg/instances/dlsep_kill_n70.pg', 0, 12, 39, 387, 26810, 14059640, 5, 6, 7, 4, 70)" <<<"$o"
+for f in chg/instances/red/segcount_kill_n20 lay/instances/seglast_kill_n110; do
+  o=$(MODE=run python3 -I chg/compose.py --one $f.pg $f.start); for k in RUNI0 R47 EI1 OI1 ELDIR OLDIR ELBLK OLBLK; do grep -q "^$k PASS" <<<"$o"; done
+done
+grep -q "TOP (16, 'lay/instances/seglast_kill_n110.pg', 0, 16, 27, 152, 16066, 0, 20, 1, 4, 2, 110)" <<<"$o"
+echo "si (box 28 §9: COMPOSE and COMPOSE-RUN inequalities hold with their slack on runquad, dlsep_kill_n70, R105 and n110 pins): PASS"
+# box 28: packet docs/si/P-N5-COMPOSE-box28.md (FROZEN): its 16 verbatim quotes, and the shifted-line control that must fail.
+python3 -I rund/quotecheck.py ../../docs/si/P-N5-COMPOSE-box28.md | grep -q "quotes=16 bad=0"
+python3 -I rund/quotecheck.py ../../docs/si/P-N5-COMPOSE-box28.md --mut | grep -q "QUOTES FAIL"
+echo "si (box 28: P-N5-COMPOSE quotes verbatim, shifted control fails): PASS"
+# box 28 §12: Lemma INHERIT (a vertex's carry is the carry of the switch where its honest play diverges): 0 failures on runquad and dlsep.
+o=$(python3 -I chg/carrysrc.py --one chg/instances/red/runquad_K8_m30_n192.pg chg/instances/red/runquad_K8_m30_n192.start)
+grep -q "^carries=856 nm_max=8 phases=1 src_even=856 srcs_max_per_phase=256$" <<<"$o"; grep -q "^INH PASS" <<<"$o"
+o=$(python3 -I chg/carrysrc.py --one chg/instances/dlsep_kill_n70.pg chg/instances/dlsep_kill_n70.start); grep -q "src_odd=26" <<<"$o"; grep -q "^INH PASS" <<<"$o"
+echo "si (box 28 §12: INHERIT holds on runquad (856 carries) and dlsep_kill_n70): PASS"
+# box 28 §13: carries with no gate reopening and no open Odd gate on the vertex's plays (L-LIT T37 §3's CONJECTURE, multiplicative form):
+# all 121 carrying (vertex, λ-run) pairs of runquad_K8_m30_n192 and all 67 of L-RED's s3quad_K3_m4 (copy, S3 default start).
+echo "675778af8ea65724a053fe1e4cbbf8b8fe33f8ad  chg/instances/red/s3quad_K3_m4.pg" | sha1sum -c --quiet
+python3 -I chg/reopen.py --one chg/instances/red/runquad_K8_m30_n192.pg chg/instances/red/runquad_K8_m30_n192.start | grep -q "^carrying_vertex_runs=121 nm_zero_max=8 ratio_max_x100=800 zero_reopen=121$"
+python3 -I chg/reopen.py --one chg/instances/red/s3quad_K3_m4.pg | grep -q "^carrying_vertex_runs=67 nm_zero_max=3 ratio_max_x100=300 zero_reopen=67$"
+echo "si (box 28 §13: carries without reopenings on runquad (121/121) and s3quad_K3_m4 (67/67)): PASS"
+# box 28 §14: R17's Lemma P breaks in two frames on runquad (σ̄ constant on the phase): W-better edges outside the arena (3,102 pairs, first
+# t = 0, x = 5, z = 4) and honest switches beaten in Ξ by S4a's τ-optimum (2,096, first t = 0, x = 3, z = 27); |D| = 32.
+o=$(python3 -I chg/r17.py --one chg/instances/red/runquad_K8_m30_n192.pg chg/instances/red/runquad_K8_m30_n192.start)
+grep -q "TOP (263, 'chg/instances/red/runquad_K8_m30_n192.pg', 0, 263, 481, 263, 0, 3102, (0, 5, 4, 6, 6), 192, 32, 2096, (0, 3, 27, 0, 9))" <<<"$o"
+grep -q "^ESWSB FAIL" <<<"$o"; grep -q "^D0 PASS" <<<"$o"
+echo "si (box 28 §14: R17's Lemma P fails in both frames on runquad with σ̄ constant): PASS"
+# box 29 (docs/si/N5-FRZ-box29.md): W-SPLIT bookkeeping and CN-W on runquad (all 263 transitions change lambda_W, W has 0 P-changes);
+# FW-BF/FW-LEN hold on s_elim24_final's frozen W-phases; the W-phase form dies on x135_n59; SETTLE dies on s_elim24_final, SETTLE_X on the ladder.
+echo "ddb99d6c103e4d60b1b1d4a6b8c3b5ab9070b21b  frz/instances/s_elim24_final.pg" | sha1sum -c --quiet
+o=$(python3 -I frz/phstat.py --one chg/instances/red/runquad_K8_m30_n192.pg chg/instances/red/runquad_K8_m30_n192.start)
+grep -q "TOP (263, 'chg/instances/red/runquad_K8_m30_n192.pg', 0, 263, 0, 263, 0, 0, 0, 192)" <<<"$o"; grep -q "^WSPLIT PASS" <<<"$o"; grep -q "^CNW PASS" <<<"$o"
+python3 -I frz/frozen.py --one chg/instances/red/runquad_K8_m30_n192.pg chg/instances/red/runquad_K8_m30_n192.start | grep -q "EXT (263, 'chg/instances/red/runquad_K8_m30_n192.pg', 0, 263, 32, 0, 0, 0, 15, 1419, 192)"
+o=$(python3 -I frz/fwphase.py --one frz/instances/s_elim24_final.pg frz/instances/s_elim24_final.start)
+grep -q "^fwphases=5 phases=1 sbch=0$" <<<"$o"; grep -q "^FWBF PASS" <<<"$o"; grep -q "^FWLEN PASS" <<<"$o"
+o=$(python3 -I frz/wphase.py --one runlin/instances/x135_n59.pg runlin/instances/x135_n59.start)
+grep -q "TOP (135, 'runlin/instances/x135_n59.pg', 1, 136, 135, 5, 7, 1, 1, 11, 59, 218)" <<<"$o"
+o=$(python3 -I frz/settle.py --one frz/instances/s_elim24_final.pg frz/instances/s_elim24_final.start); grep -q "^SETTLE FAIL" <<<"$o"; grep -q "^SETTLE_X PASS" <<<"$o"
+o=$(python3 -I frz/settle.py --one ../red/ul/instances/ladderd0_k12_n48.pg ../red/ul/instances/ladderd0_k12_n48.start); grep -q "^SETTLE_X FAIL" <<<"$o"; grep -q "^SETTLE PASS" <<<"$o"
+echo "si (box 29: W-SPLIT/CN-W on runquad, FW-BF on s_elim24_final, W-phase form dead on x135_n59, SETTLE/SETTLE_X kills): PASS"
+# box 29 §7: Lemma EPOCH-U holds (R17 on the untrapped part) and TRAP-MONO dies on fbrestart_cex_n12 (play form) and lend107_n32 (value form).
+echo "35223b6c46750b2c1c961d68485025a9a5e69d87  frz/instances/fbrestart_cex_n12.pg" | sha1sum -c --quiet
+o=$(python3 -I frz/epoch.py --one frz/instances/fbrestart_cex_n12.pg frz/instances/fbrestart_cex_n12.start)
+grep -q "^TMONO_P_V=1 fw=2$" <<<"$o"; grep -q "^R17U PASS" <<<"$o"; grep -q "^TMONO_V PASS" <<<"$o"
+o=$(python3 -I frz/epoch.py --one ../n5-epoch/instances/lend107_n32.pg ../n5-epoch/instances/lend107_n32.start)
+grep -q "^TMONO_P_V=3 TMONO_V_V=3 fw=10$" <<<"$o"; grep -q "^R17U PASS" <<<"$o"
+echo "si (box 29 §7: EPOCH-U holds; TRAP-MONO dead on fbrestart_cex_n12 and lend107_n32): PASS"

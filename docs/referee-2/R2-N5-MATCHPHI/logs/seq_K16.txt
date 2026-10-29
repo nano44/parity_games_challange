@@ -1,0 +1,4 @@
+MODE seq 5000 16 2000 3302 BF 8
+COR_checks: 5000
+seq_max_ratio: (0.012, 16, 1976, 1247)
+RESULT OK violations=0

@@ -1,0 +1,17 @@
+SETTLE_V=40 SETTLE_V_D1=38 SETTLE_V_D2=2 SETTLE_X_V=2 SETTLE_X_V_D3=2 SKIPPED_input=1 fw_D0=133 fw_D1=314 fw_D2=80 fw_D3=128
+max WCH/(n-1) at |D| class 0: (1.0, 'experiments/si/lwp/out/rl1_12556_0.pg', 0, 3, 3, 0, 4)
+max WCH/(n-1) at |D| class 1: (0.833, 'experiments/si/runlin/instances/runfam_K100.pg', 52, 167, 115, 1, 139)
+max WCH/(n-1) at |D| class 2: (0.28, 'experiments/si/root/instances/swlin_kill_n26.pg', 9, 16, 7, 2, 26)
+max WCH/(n-1) at |D| class 3: (0.318, 'experiments/si/piece/out/pcg4.pg', 10, 17, 7, 3, 23)
+EXAMPLE (tag, game, a, b, x, final length, first k failing, value then, final value, |D|) ('SETTLE', 'experiments/si/grun/instances/lwkill_n31.pg', 8, 28, 8, 7, 7, (20, 905969664, 10), (20, 738197504, 7), 1)
+EXAMPLE (tag, game, a, b, x, final length, first k failing, value then, final value, |D|) ('SETTLE', 'experiments/si/grun/instances/lwkill_n31.pg', 8, 28, 10, 3, 3, (20, 1073741824, 3), (20, 536870912, 3), 1)
+EXAMPLE (tag, game, a, b, x, final length, first k failing, value then, final value, |D|) ('SETTLE', 'experiments/si/grun/instances/lwkill_n31.pg', 8, 28, 12, 10, 10, (20, 838860800, 9), (20, 738197504, 10), 1)
+EXAMPLE (tag, game, a, b, x, final length, first k failing, value then, final value, |D|) ('SETTLE', 'experiments/si/grun/instances/lwkill_n31.pg', 8, 28, 13, 9, 9, (20, 838860800, 10), (20, 738197504, 9), 1)
+EXAMPLE (tag, game, a, b, x, final length, first k failing, value then, final value, |D|) ('SETTLE', 'experiments/si/grun/instances/lwkill_n31.pg', 8, 28, 15, 5, 5, (20, 1207959552, 2), (20, 671088640, 5), 1)
+EXAMPLE (tag, game, a, b, x, final length, first k failing, value then, final value, |D|) ('SETTLE', 'experiments/si/grun/instances/lwkill_n31.pg', 8, 28, 18, 8, 8, (20, 838860800, 11), (20, 738197504, 8), 1)
+EXAMPLE (tag, game, a, b, x, final length, first k failing, value then, final value, |D|) ('SETTLE', 'experiments/si/grun/instances/lwkill_n31.pg', 8, 28, 24, 11, 11, (20, 536870912, 3), (20, 738197504, 11), 1)
+EXAMPLE (tag, game, a, b, x, final length, first k failing, value then, final value, |D|) ('SETTLE', 'experiments/si/grun/instances/lwkill_n31.pg', 8, 28, 29, 6, 6, (20, 905969664, 9), (20, 738197504, 6), 1)
+EXAMPLE (tag, game, a, b, x, final length, first k failing, value then, final value, |D|) ('SETTLE_X', 'experiments/si/lay/out/ll41_k.pg', 0, 13, 14, 2, 2, (17, 137438953472, 2), (17, 140737488355328, 2), 14)
+EXAMPLE (tag, game, a, b, x, final length, first k failing, value then, final value, |D|) ('SETTLE_X', 'experiments/si/lay/out/ll42_k.pg', 0, 12, 14, 2, 2, (17, 35184372088832, 2), (17, 36028797018963968, 2), 14)
+SETTLE FAIL
+SETTLE_X FAIL

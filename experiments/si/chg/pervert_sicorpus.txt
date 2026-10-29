@@ -1,0 +1,19 @@
+FLATCN=6 RISEN_V=6 SKIPPED_input=1 runs=495
+columns: maxSW/n, game, s, e, run length, max SW(v), max RISE(v), max DIST(v), n
+TOP (0.667, 'experiments/si/root/out/swr_sc24_s8.pg', 0, 14, 14, 14, 14, 14, 21)
+TOP (0.667, 'experiments/si/root/out/swr_sc24_s7.pg', 0, 12, 12, 12, 12, 12, 18)
+TOP (0.667, 'experiments/si/root/out/sw_sc24_s1.pg', 0, 14, 14, 14, 14, 14, 21)
+TOP (0.609, 'experiments/si/root/out/sw_sc24_s2.pg', 0, 15, 15, 14, 15, 15, 23)
+TOP (0.5, 'experiments/si/lwp/out/rl2_6281_0.pg', 0, 3, 3, 2, 2, 2, 4)
+TOP (0.5, 'experiments/si/lwp/out/rl2_34115_0.pg', 0, 3, 3, 2, 2, 2, 4)
+TOP (0.5, 'experiments/si/lwp/out/rl2_33110_0.pg', 0, 3, 3, 2, 2, 2, 4)
+TOP (0.5, 'experiments/si/lwp/out/rl2_1985_0.pg', 0, 3, 3, 2, 2, 2, 4)
+EXAMPLE ('RISEN', 'experiments/si/grun/out/gc1.pg', 6, 41, 34, 31)
+EXAMPLE ('RISEN', 'experiments/si/grun/out/gc2.pg', 7, 41, 34, 31)
+EXAMPLE ('RISEN', 'experiments/si/grun/out/pg_n48_1.pg', 4, 39, 35, 31)
+EXAMPLE ('RISEN', 'experiments/si/grun/out/pg_n48_2.pg', 3, 38, 35, 30)
+EXAMPLE ('RISEN', 'experiments/si/grun/out/pg_n64_1.pg', 7, 42, 35, 29)
+EXAMPLE ('RISEN', 'experiments/si/grun/out/pg_n64_2.pg', 3, 39, 35, 31)
+SWRISE PASS
+PERV PASS
+RISEN FAIL

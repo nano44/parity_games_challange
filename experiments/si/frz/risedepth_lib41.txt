@@ -1,0 +1,8 @@
+RD_V=57 RD_V_D1=57
+max L/(n-1) = 0.936 ('../experiments/red/xing/instances/x32_rand48.pg', 0, 44, 0, 48)
+EXAMPLE (tag, game, a, b, k, x, before, after, |D|) ('RD', '../experiments/n5-exhaustive/instances/b6_xl_n48.pg', 22, 25, 3, 5, (11, 8796160131072, 2), (11, 67633152, 2), 1)
+EXAMPLE (tag, game, a, b, k, x, before, after, |D|) ('RD', '../experiments/n5-exhaustive/instances/b6_xw_n32.pg', 46, 53, 3, 1, (11, 805896580, 7), (11, 540672, 2), 1)
+EXAMPLE (tag, game, a, b, k, x, before, after, |D|) ('RD', '../experiments/n5-exhaustive/instances/b6_xw_n32.pg', 46, 53, 3, 6, (11, 805372064, 5), (11, 16416, 2), 1)
+EXAMPLE (tag, game, a, b, k, x, before, after, |D|) ('RD', '../experiments/n5-exhaustive/instances/b6_xw_n32.pg', 46, 53, 4, 8, (11, 838926464, 5), (11, 33570848, 3), 1)
+RD FAIL
+RDX PASS

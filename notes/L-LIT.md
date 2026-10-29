@@ -1,12 +1,24 @@
 # L-LIT notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point
-2026-10-29 ~11:0xZ (successor, Opus 5.5): packet docs/lit/P-N5-MATCHPHI.md FROZEN at push (sha1 544705b7; quotecheck
-P-N5-MATCHPHI-quotecheck.py quotes=5 bad=0; pinned check T33-match-phi-check.py sha1 6853179b). Later text -> P-N5-MATCHPHI-fixes.md.
-NEST-FACE (i) dropped (undefined "realizable"). Before: T34 f09b2b43, T33 f587cb2f, T32 a06dc24a. Next: Lead's routing.
+## Resume point (2026-10-29 ~13:0xZ by date -u; successor 2, Opus 5.5, D15/D18; session_01V5yGRXvhKC2cX2To8m3mpV)
+DONE this session (claude/l-lit, each via scripts/push.sh, VERIFY PASS):
+- 394aea76 handover check (docs/agents/handover-checks/L-LIT.md; container was 3889 behind, fast-forwarded).
+- 1bd2a11e P-N5-MPGS-fixes.md F3-F10 (sha1 c0b0a0aa…) + P-N5-MPGS-fixes-quotecheck.py ("quotes=50 bad=0"): every referee note
+  (MPGS-N1..N5, MATCH-N1..N4, N-MPGS-1..6, N-GS-1..5, N-MP-1..5, C.4 items, J1-J15) quoted verbatim and answered; no statement change.
+  New small PROVED remarks there (unrefereed): F9 (a) sharpness at NM = 0 (all-odd chain of length W), F9 (b) additivity / MATCHED raises
+  weight; F6 CONJECTURE H2-FREE (OPEN) with its obstruction. Lead asked whether F9 (a), (b) go to referees.
+- T40 docs/lit/T40-frame-split.md + T40-dominance-check.py (frame split literature; 7 entries; PROVED: STV with τ fixed ≤ |V_0|
+  steps; W-MONO and B-DOM on S4a transitions; DATA: A-dominance over Howard fails 262/263 runquad, ~50% libraries).
+Predecessor's packets (T32-T39, P-N5-MPGS) are listed in git history (e5ae4111 resume point); P-N5-MPGS signed by both referees.
+- T41 docs/lit/T41-moving-target.md + T41-target-check.py (S4a vs fixed σ^c_τ per phase; topfix d1_n leaves its target n²+2n−2
+  times in one phase; library MISS ~45%, AWAY ≤ 7). Lead: F9 (a), (b) stay remarks in R85 (no referee round).
+IN FLIGHT: none. NEXT: Lead's word.
+NEEDS: none from the owner.
 
 ## Queue
+- T40 primaries not opened: Condon 1993 (DIMACS 13), Pollatschek-Avi-Itzhak 1969 (Mgmt Sci 15), van der Wal 1976/1978 (cited via
+  STV p.2 and Bertsekas 2107.10406 §2), Schewe CSL 2008 (via Friedmann §4).
 - Not opened (blocked or paywalled), needed only if a lane depends on them: Friedmann RAIRO 2011 (403); FHZ SODA/STOC 2011;
   Friedmann IPCO 2011; Hansen thesis 2012 (404); Jurdziński-Savani CiE 2008 (abstract only); Halman Algorithmica 2007
   (Dagstuhl abstract only); Matoušek 1994; Gärtner 2002; Obdržálek CAV 2003 + CSL 2007 (Springer bot wall); Fearnley-Lachish
@@ -18,6 +30,8 @@ NEST-FACE (i) dropped (undefined "realizable"). Before: T34 f09b2b43, T33 f587cb
 - Open FL09 (self-loop removal) if the REFEREE needs it; Friedmann RAIRO 2011 (publisher 403; try author copy).
 
 ## Things only I know
+- T40 (2026-10-29, successor 2): PDFs in this session's scratchpad dl40/<name>/p.pdf (sha256 in Sources opened); batch logs of
+  T40-dominance-check.py over alt_all and lib41 in scratchpad t40/*3.txt (not committed; re-run: one line per game, minutes).
 - Research agents (my subagents, this session) opened most T2/T3 primaries; their full reports with verbatim quotes and page
   numbers are in my scratchpad dl/agentA|B|C/agent*_report.md (not committed). I re-checked by grep the key quotes:
   CDFJLP Thm 5.1 + Prop. 3.2 + §3.3 "only applies to strong"; ANP Thm 5.1; JMOT p.2; PW23 p.8 + Thm 4.1; CFGO Cor. 6.13;
@@ -40,6 +54,14 @@ NEST-FACE (i) dropped (undefined "realizable"). Before: T34 f09b2b43, T33 f587cb
   HDJ12 CDC paper itself not on arXiv; its theorem was read in Hollanders' thesis (same authors' result).
 
 - T32 (2026-10-29): PDFs + pdftotext in this session's scratchpad dl32/ (not committed). www.ece.iastate.edu fails TLS through the proxy (curl 60 even with --cacert); web.archive.org resets.
+
+- 2026-10-29 session: PDFs of T32-T39 are in this session's scratchpad dl32/ dl34/ dl35/ dl37/ dl39/ (not committed, lost with the
+  container); every one has its arXiv id / URL and sha256 in "Sources opened", so a successor can re-fetch and re-check.
+- www.ece.iastate.edu fails TLS via the proxy; web.archive.org resets; Springer chapter PDFs come back empty; Zwick's tau.ac.il papers
+  dir has no Howard paper. arxiv.org and export.arxiv.org work (https).
+- The "file changed on disk" notices for my docs/lit files on 2026-10-29 were spurious: the working tree was clean and P-N5-MPGS.md
+  kept sha1 24913a7f (checked twice).
+- T34-gateshut-check.py imports L-COMP's hn.py / census.py and n5b.py read-only; runs from the repo root; n=5, 30 starts ~25 s.
 
 ## Sources opened
 | source (arXiv id / DOI) | result used (theorem / section) | opened on | note |
@@ -278,6 +300,33 @@ NEST-FACE (i) dropped (undefined "realizable"). Before: T34 f09b2b43, T33 f587cb
 | NOT opened (T32) | Busch-Tirthapura SICOMP 2005 (iastate TLS fail via proxy; Wayback reset x2); CFWW SIROCCO 2011 / TALG 2015; Van Gelder JCSS 1993; Gawlitza-Seidl ESOP 2007, FM 2008 (Springer); Tardos SIDMA 1988; Schurr-Szabó (not re-opened) | 2026-10-29 | T32 §8 |
 | ECCC TR06-067 (ARV), re-read for T33 | Lemma 10 p.8-9 (gadget states, "there exists a best response sequence"), p.10 "one after another", p.11 "Altogether this shows", p.3 tight PLS remark | 2026-10-29 | T33 §2.1 |
 | arXiv 1106.0778 v2 (Friedmann, LMCS 7(3:19)) sha256 46c96f44775aa2b0… (re-opened, = L-COMP's and L-NEW 29's file) | §4 p.6-7 (I^loc, I^glo, Lemma 4.3); §5 p.8 (1-sink, Lemma 5.1); §6.1 p.9-10 (simple cycle, Lemma 6.1, 6.2, hiding sentence); §6.2 p.11-12 (Lemmas 6.3, 6.4, purpose sentence); §8 p.26 intro; §8.1 Lemma 8.1; §8.2 stubborn cycle; §8.3 Table 6, Lemma 8.2; §8.4 Table 7, Fact 8.1, Lemma 8.3; §8.5 Thm 8.4 p.33 | 2026-10-29 | T34 |
+| Hansen-Zwick ISAAC 2010 talk slides (pdfs.semanticscholar.org/8eaf/45e9b507fc545fb05f018f2709a05e30c8f6.pdf) sha256 1ff1ee804ac47c08… | pp.6-19: main theorem p.14, construction p.15-17, LP search p.18, conjecture p.19 | 2026-10-29 | T35; paper itself NOT opened (Springer empty, no tau.ac.il copy) |
+| arXiv 2506.12254 v1 (Asadi, Chatterjee, de Raaij) sha256 78c4ee071961b89e… | p.2 Table 1 + HZ description; Conjecture 3.1; Thm 3.2 p.4; sequence (1), Lemma 4.1 p.5, intuition | 2026-10-29 | T35 |
+| arXiv 2609.40147 v2 (Zhong, Ye) sha256 dafeb81816af6582… (re-opened) | abstract, §1 Table 1; Thm 6.1 p.23 + refutation sentence; §6.1 construction, eq. (6.8), Lemma 6.2 p.26; Thm 7.2 p.33 + proof p.33-34 ("every N consecutive updates create a new cycle"); §8 | 2026-10-29 | T35 |
+| arXiv 2211.15602 v2 (Goenka et al.) sha256 e62fb2eceb298d98… | abstract; Defs 13-18; Lemmas 7-8; Thms 4-5; Cors 1-2 (§4) | 2026-10-29 | T35 |
+| arXiv 2505.00795 v1 (Mukherjee, Kalyanakrishnan) sha256 7b856cc9010c6c06… | abstract, §1.1, Thm 1.2 | 2026-10-29 | T35 |
+| arXiv 2610.22149 v1 (Loff, Skomra, smoothed PI/VI) sha256 18d7ea9dab8dff7e… | title only, not used | 2026-10-29 | T35 |
+| arXiv 1003.3418 v1 (Fearnley) sha256 0964f029581ae02e… (re-opened) | §4: sink c_{n+1} p.5; Prop. 2, 4 p.6; §4.2 deceleration lane p.6-7; pi^B p.9; Props 12-16 p.10-11; Thm 17, 18 p.12 | 2026-10-29 | T37 |
+| arXiv 1911.01074 v2 (Disser, Friedmann, Hopp; Zadeh) sha256 ba3242140c0832ac… | abstract; §2.1 sink games p.4; §3 cycle centers p.6; Thm 6.18 p.31 | 2026-10-29 | T37 |
+| arXiv 1305.3944 v1 (Avis, Friedmann; Cunningham) sha256 d1fafb8b5d0b822c… | abstract; sink game def p.10; Thm 4 p.15; Thm 6 | 2026-10-29 | T37 |
+| arXiv 1410.7871 v1 (FHZ errata) sha256 d89ec8c329a4f113… (re-opened) | p.1-3 status | 2026-10-29 | T37 |
+| arXiv 2309.02223 v1 (van Dijk, Loho, Maat) sha256 10e6794d82aba465… (re-opened) | abstract; p.3 key insight; Def. 2 p.4; Thm 1 p.2 | 2026-10-29 | T37 |
+| arXiv 2512.16684 v2 (Disser, Loho, Maat, Mosis) sha256 fa9b42e397e3e434… (re-opened) | abstract; Thm 4.3 p.13; Thm 5.1, 5.3 | 2026-10-29 | T37 |
+| arXiv 2509.16075 v2 (Maat) sha256 69706649fed1fac9… | abstract only (connection result, no lower-bound family) | 2026-10-29 | T37 |
+| arXiv 1106.0778 v2 (Friedmann), further | §6.3 cycle gate Table 3, Lemmas 6.5-6.6; §6.4 Table 4 p.16, Lemma 6.7 p.17; §6.5 phases, Lemma 6.11 p.21, 6.12 p.22 | 2026-10-29 | T37 |
+| arXiv 1008.0530 v1 (HMZ) sha256 f53a6b5127d95078… (re-opened) | Def. 2.6; Thm 6.5 p.11 | 2026-10-29 | T39 |
+| arXiv 1501.06484 v1 (Schewe, Trivedi, Varghese) sha256 7b68cc69de78bd90… | Alg. 2 + Condon sentence p.2; Alg. 3; §4.1 p.9 | 2026-10-29 | T39 |
+| arXiv 2606.29568 v1 (Mei, Sun, Ye) sha256 8bbb42f6834b6738… (re-opened) | Def. 7; Lemma 10, 11 p.15 | 2026-10-29 | T39 |
+| arXiv 1501.06484 v1 (STV) sha256 7b68cc69de78bd90… (re-opened) | Alg. 3 p.2; Def. 2.7; Alg. 5 + Lemma 3.1 p.6; Thm 3.4-3.5; Thm 3.7 p.7; §4.1 p.9-10 (incl. "would imply a proof ... polynomial time") | 2026-10-29 | T40 |
+| arXiv 2309.02223 v1 (van Dijk, Loho, Maat) sha256 10e6794d82aba465… (re-opened) | Prop. 7 p.10 (5-step structure, both players switch), Obs. 8-10 | 2026-10-29 | T40 |
+| arXiv 1306.0386 v4 (Scherrer, PI complexity) sha256 391b6481c8fa903f… | Lemma 1 p.2; Lemma 2 p.6 + proof §5 p.8; Lemma 4 (= Post-Ye Lemma 3.4) p.5; Lemma 8 p.6 + proof p.17; Thm 1 | 2026-10-29 | T40 |
+| arXiv 2107.10406 v4 (Bertsekas, minimax PI) sha256 ee3d5f1a0fcbea33… | abstract; §2 p.10-13: Hoffman-Karp (2.11)-(2.12), Pollatschek-Avi-Itzhak (2.13)-(2.14), Fig. 2.1, van der Wal "[Van76]" oscillation (not in bibliography, which lists [Van78]); §3 p.13 | 2026-10-29 | T40; secondary for PAI/van der Wal (primaries not opened) |
+| HAL hal-01091370 = DOI 10.1016/j.orl.2014.07.006 (Feinberg, Huang, Scherrer, ORL 42 (2014)) sha256 94e00b822393495c… | abstract; Thm 1 p.3; Cor. 2 p.4; Example 1 | 2026-10-29 | T40 |
+| arXiv 1805.07956 v2 (Efroni, Dalal, Scherrer, Mannor) sha256 80dd0a269b5f00e0… | abstract; Thm 1 p.3 (soft update, stepsize threshold); Thm 3, 5, 6 (γ-rates) | 2026-10-29 | T40 |
+| arXiv 1712.06924 v5 (Laroche, Trichelair, Tachet des Combes, SPIBB) sha256 ebb7aa35960e803f… | Π_b definition §2.3; Thm 1, 2 p.3 | 2026-10-29 | T40 |
+| arXiv 1607.03842 v1 (Petrik, Chow, Ghavamzadeh) sha256 5797962546187611… | Def. 2; Thm 6 p.5 (NP-hard) | 2026-10-29 | T40 |
+| arXiv 1205.3054 v2 (Scherrer et al., AMPI) | abstract (arXiv API): "error propagation analyses" and a finite-sample analysis; no iteration counts. PDF not read | 2026-10-29 | T40; cited only as "bounds errors, not counts" |
+| arXiv 1008.0530 v1 (HMZ) sha256 f53a6b5127d95078… (re-downloaded) | not re-read for T40 beyond T39's rows | 2026-10-29 | T40 |
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
 - T17 process dead end: subagent GitHub MCP search outside the repo scope was a rule breach (see Things only I know); never repeat it.
@@ -287,6 +336,8 @@ NEST-FACE (i) dropped (undefined "realizable"). Before: T34 f09b2b43, T33 f587cb
 
 - T34 (2026-10-29): first form of GATE-SHUT without (H1)/(H2) is FALSE on H_n random starts (rand4, n = 3, it 0: cycle node e2 above gate 1, path sets equal, length decides); fixed by (H1), (H2); 247 reopenings, all outside the hypotheses.
 - T34: direct merge of Friedmann's gadgets with T33 §2.3 blocked by GATE-SHUT + S4a's choice by W (hiding void).
+
+- T37 §3 CONJECTURE (carries per vertex per lambda-run <= poly(n) x gate reopenings violating (H1)-(H3)): DEAD. Obstruction: carries occur in tau-quiet lambda-runs with no reopening and no open Odd gate on the vertex's plays. Instances: runquad_K8_m30_n192 (all 121 carrying pairs), s3quad_K3_m4 (all 67), dlsep_kill_n70 (L-SI 390d2d8a, N5-CHG-box28 §13).
 
 ## Corrections log
 - 2026-10-23 (T26): N8d-barrier.md §0 and R54 §0 put Lemma 4.75 / Thm 4.76 on p.187; opened PDF: printed p.186 (PDF p.202). Reported as caveat 4.

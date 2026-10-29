@@ -1,0 +1,12 @@
+K 3 m 4 n 54
+K3 m4 dsig_max=3 phase_VC_max=3 phase_len_max=20 run_ENT_max=3  n=parity 53;
+K 6 m 12 n 114
+K6 m12 dsig_max=3 phase_VC_max=3 phase_len_max=89 run_ENT_max=6  n=parity 113;
+K 10 m 10 n 156
+K10 m10 dsig_max=3 phase_VC_max=3 phase_len_max=129 run_ENT_max=10  n=parity 155;
+K 12 m 4 n 162
+K12 m4 dsig_max=3 phase_VC_max=3 phase_len_max=83 run_ENT_max=12  n=parity 161;
+K 16 m 4 n 210
+K16 m4 dsig_max=3 phase_VC_max=3 phase_len_max=111 run_ENT_max=16  n=parity 209;
+K 20 m 4 n 258
+K20 m4 dsig_max=3 phase_VC_max=3 phase_len_max=139 run_ENT_max=20  n=parity 257;
