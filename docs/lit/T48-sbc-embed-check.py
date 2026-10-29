@@ -5,7 +5,10 @@ ODMAX / ODRET the same for sbar at Odd vertices; SBC; values (= #sigma); PLAYRET
 it left earlier (summed); SEGRET = returns of a play SEGMENT x -> y (prefix of x's play up to the first visit of y) to a segment
 witnessed earlier for the same (x, y) and then replaced by a different witnessed segment (summed over (x, y)); SEGPAIRS = pairs with a return.
 Gusfield's induction (thesis 1980 Thm 4.4) needs every sub-pair to be optimal on one interval, so SEGRET > 0 rules out a generic
-one-parameter linear embedding of the joint plays (T48 §1). Read-only use of experiments/new/box54/n5sf.py (L-NEW, sha1 1ea3bdc7) and box21/n5x.py.
+one-parameter linear embedding of the joint plays (T48 §1).
+PIECES = least number of consecutive index windows with no segment return inside any window (greedy cut at the first return
+relative to the window start; greedy is optimal); a lower bound on the straight pieces of any piecewise one-parameter linear path
+through the run (T49 §4). Read-only use of experiments/new/box54/n5sf.py (L-NEW, sha1 1ea3bdc7) and box21/n5x.py.
 Usage (from the repo root): python3 -I docs/lit/T48-sbc-embed-check.py GAME [START]"""
 import sys, os
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
@@ -29,6 +32,7 @@ def main():
     ch = Counter(); ret = Counter(); used = defaultdict(set); sbc = 0
     plays = [None] * n; pused = defaultdict(set); pret = 0
     seglast = {}; segleft = defaultdict(set); segret = 0; segpairs = set(); segfirst = {}; wit = None
+    wl = {}; wleft = defaultdict(set); pieces = 1; cuts = []
     def segs(pl):
         x = pl[0]; first = {}
         for i, y in enumerate(pl[:-1]):
@@ -40,6 +44,24 @@ def main():
         else: used[v].add(seq[0][1][v])
         plays[v] = play(g, seq[0][0], seq[0][1], v); pused[v].add(plays[v])
         for k, sg in segs(plays[v]): seglast[k] = sg; segfirst[(k, sg)] = 0
+    def allsegs(i):
+        out = {}
+        for v in range(n):
+            for k, sg in segs(play(g, seq[i][0], seq[i][1], v)): out[k] = sg
+        return out
+    if os.environ.get("PIECES"):
+        wl = allsegs(0)
+        for i in range(1, len(seq)):
+            cur = allsegs(i); bad = False
+            for k, sg in cur.items():
+                old = wl.get(k)
+                if old is not None and old != sg and sg in wleft[k]: bad = True; break
+            if bad:
+                pieces += 1; cuts.append(i); wl = cur; wleft = defaultdict(set); continue
+            for k, sg in cur.items():
+                old = wl.get(k)
+                if old is not None and old != sg: wleft[k].add(old)
+                wl[k] = sg
     for i in range(1, len(seq)):
         s, sb = seq[i]; ps, psb = seq[i - 1]
         if any(g.owner[u] == 1 and sb[u] != psb[u] for u in range(n)): sbc += 1
@@ -62,6 +84,9 @@ def main():
                     seglast[k] = sg
                 if q in pused[v]: pret += 1
                 pused[v].add(q); plays[v] = q
+    if os.environ.get("PIECES") == "2":
+        sbi = [i for i in range(1, len(seq)) if any(g.owner[u] == 1 and seq[i][1][u] != seq[i - 1][1][u] for u in range(n))]
+        print("CUTS", cuts, "SBCIDX", sbi)
     if wit and os.environ.get("WIT"):
         (x, y), j0, i, sg, old = wit
         print("WITNESS pair", x, y, "segment", list(sg), "first used at index", j0, "left, then the different segment", list(old),
@@ -71,5 +96,5 @@ def main():
     m = sum(len(set(x)) for x in g.succ)
     print("ROW", os.path.basename(sys.argv[1]), "n", n, "m", m, "values", len(seq), "SBC", sbc,
           "EVMAX", ch[evm] if ev else 0, "EVDEG", len(set(g.succ[evm])) if ev else 0, "EVRET", sum(ret[v] for v in ev),
-          "EVCHG", sum(ch[v] for v in ev), "ODMAX", max((ch[v] for v in od), default=0), "ODRET", sum(ret[v] for v in od), "PLAYRET", pret, "SEGRET", segret, "SEGPAIRS", len(segpairs), flush=True)
+          "EVCHG", sum(ch[v] for v in ev), "ODMAX", max((ch[v] for v in od), default=0), "ODRET", sum(ret[v] for v in od), "PLAYRET", pret, "SEGRET", segret, "SEGPAIRS", len(segpairs), "PIECES", pieces if os.environ.get("PIECES") else "-", flush=True)
 main()
