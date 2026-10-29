@@ -1,0 +1,9 @@
+SKIPPED_input=1 checked_TD_epochs=658 ep_TD=658 ep_W>=4 ep_X>=31 ep_notTD=41 ep_same=664 fw1=314 fw1_diff=35
+maxima: {'r': (0.8809523809523809, 111, 'same', True, 'experiments/si/runlin/instances/runfam_K100.pg', 52, 167, 53, 164, 126, 139), 'pw': 111, 'epochs': 20, 'epochs_same': 20, 'epochs_diff': 1, 'diff_wch': (0.6666666666666666, 10, 'experiments/si/kw15/climb/best_kind3_1544.pg', 0, 10, 1, 16)}
+PMON1 PASS
+PMON2 PASS
+HLP PASS
+LMON PASS
+CNT PASS
+TRAPFIX PASS
+FWD1 PASS
