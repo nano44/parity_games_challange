@@ -1,0 +1,10 @@
+SKIPPED_input=1 TMONO_P_V=61 TMONO_V_V=61 fw=655
+maxima: {'wcu': 123, 'wcs': 111, 'epochs': 20} largest WCS epoch (WCS, game, a, b, e, f, |S|, n): (111, 'experiments/si/runlin/instances/runfam_K100.pg', 52, 167, 53, 164, 127, 139)
+EXAMPLE ('TMONO_P', 'experiments/si/lay/out/s_ka.pg', 0, 5, 2, [21])
+EXAMPLE ('TMONO_P', 'experiments/si/lay/out/s_ka.pg', 0, 5, 5, [28])
+EXAMPLE ('TMONO_P', 'experiments/si/lay/out/s_ka.pg', 8, 9, 9, [33, 70])
+EXAMPLE ('TMONO_P', 'experiments/si/lwp/out/dag20.pg', 2, 5, 5, [2])
+TMONO_P FAIL
+TMONO_V FAIL
+R17U PASS
+EPS PASS

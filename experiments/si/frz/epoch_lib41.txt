@@ -1,0 +1,10 @@
+TMONO_P_V=32 TMONO_V_V=31 fw=864
+maxima: {'wcu': 44, 'wcs': 25, 'epochs': 26} largest WCS epoch (WCS, game, a, b, e, f, |S|, n): (25, '../experiments/red/xing/instances/kw25_n32.pg', 0, 25, 0, 25, 29, 32)
+EXAMPLE ('TMONO_P', '../experiments/new/box25/instances/rttf48.pg', 1, 11, 2, [24])
+EXAMPLE ('TMONO_P', '../experiments/new/box35/instances/fbrestart_cex_n12.pg', 4, 5, 5, [8])
+EXAMPLE ('TMONO_P', '../experiments/red/carry/instances/h4_compound2x2_n44.pg', 7, 8, 8, [6])
+EXAMPLE ('TMONO_P', '../experiments/red/n5inj/instances/elimn_cex_n48.pg', 51, 53, 52, [6, 16])
+TMONO_P FAIL
+TMONO_V FAIL
+R17U PASS
+EPS PASS

@@ -525,3 +525,10 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
   B-MONO (the blocked set is monotone), FRESH (every transition enters a not-yet-entered edge), ENT1 (an edge is entered ≤ once per
   W-phase): all on x135_n59 inside frozen W-phases (frz/caseA.py: 1,721 / 278 triples; frz/blocked.py: 21 growth and 5 shrink events;
   frz/fresh.py: 59 re-entry-only transitions, an edge entered 3 times).
+- TRAP-MONO («inside a frozen W-phase the trapped set S^p (vertices whose (σ, τ)-play meets D) only grows», and its value form
+  {W ▷ Ξ}; N5-FRZ-box29 §7): play form killed by experiments/si/frz/instances/fbrestart_cex_n12.pg (sha1
+  35223b6c46750b2c1c961d68485025a9a5e69d87, start a2bf7077e797f2ea50ebb05ac9baabc4668a443e = S3 default written out; copy of
+  new/box35/instances/fbrestart_cex_n12.pg): frozen W-phase [4, 5], vertex 8 leaves S^p at t = 5; value form by
+  n5-epoch/instances/lend107_n32 (sha1 ab4c9811b311e303e5d41a9e923766a4b3fdae33, start 9df4ea2ceafe43c4a7d88ef1e1f262101d7f0c35), frozen
+  W-phase [27, 38], vertices 1, 18 leave at t = 28 (frz/epoch.py); n5b identical on both (5 iterations / 2 fallbacks; 112 / 10).
+  Obstruction: a trapped vertex can find an honest D-free route at least as good as its optimistic one; the epoch count is not ≤ n.

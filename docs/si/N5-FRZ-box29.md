@@ -19,6 +19,7 @@ sha1 ddb99d6c…, with its S3 default start written out so that n5b can replay i
 | §4 | W-phases (cut at fallbacks and λ_W changes only): ≤ n − 1 W-changing DEAD (x135_n59: 135 > 58); σ̄ changes restart waves | DEAD; DATA |
 | §5 | the proof obstruction: R17's induction in the W frame needs the Ξ-form of the hypothesis at z; it fails at OPTIMISM-TRAPPED vertices (play into D, where τ flatters Even). Candidate lemmas SETTLE, RD (W frame), SETTLE_X, RDX (Ξ frame), Case A (W), Case B (Ξ), B monotone, FRESH, ENT1 | READING; DEAD (instances) |
 | §6 | what is left: FB per phase (FB-LIN, OPEN), σ̄-changes per phase SBCH′ (OPEN; DATA ≤ 1.53n), FW-BF (CONJECTURE) | OPEN |
+| §7 | TRAP EPOCHS: Lemma EPOCH-U (inside a frozen W-phase, while the trapped set S^p is constant, the untrapped part runs R17's switch-best on G_τ[U]: ≤ \|U\| − 1 W-changes there); CONJECTURE TRAP-MONO (S^p only grows) | PROVED (lane); DEAD (frz/instances/fbrestart_cex_n12, lend107_n32) |
 
 ## 0. Setting
 N5 = SPEC S1-S5 (docs/new/N5-ssi-global.md), any game. A PHASE 𝒫: a maximal run of states with λ_Ξ (Ξ's cycle-node map) and τ constant
@@ -88,7 +89,8 @@ G_τ (G_σ̄): G with Odd fixed to τ (σ̄), a one-player game of Even; on a σ
   W-phases (FWSIL), so FW-LEN is not implied by FW-BF.
 - Kill search (fwclimb.py: score = max over frozen W-phases with |D| ≥ 1 of WCH/(n − 1), kill = FW-BF or FW-LEN failure; mutations of
   chg/cclimb.py): seeds gci3_n24 (0.869), lend13_n16 (0.800), s_elim24_final (0.695, stopped), red/xing/instances/kw25_n32 (0.806):
-  no kill (see the log lines in frz/out/fw_*.log at the commit).
+  no kill. gci3: 46,000 steps, plateau 0.869 (stopped); lend13: 100,000 steps, 0.800; s_elim24: stopped at 0.695; kw25: 0.806 → 0.838 after
+  47,000 steps (still running at the commit; logs frz/out/fw_*.log).
 - DEAD: «a W-phase (cut at fallbacks and λ_W changes only, σ̄ free) has ≤ n − 1 W-changing transitions»: runlin/instances/x135_n59 (sha1
   e71e8af0…, start 4afb7e8c…; n5b identical, 136 iterations, 0 fallbacks): W-phase [1, 136], 135 W-changing transitions, n 59, |D| = 1, 11
   σ̄-changes; also red/n3/instances/run49_n32 (49 > 31) and red/so/instances/pftheta_cex_n32 (34 > 31). Its seven frozen W-phases have ≤ 43
@@ -138,6 +140,36 @@ G_τ (G_σ̄): G with Odd fixed to τ (σ̄), a one-player game of Even; on a σ
   value (σ̄ on the Ξ-plays from successors of Even vertices); then the readers' changes stay inside frozen W-phases, and FW-BF must be
   re-measured with the coarser cut (not done yet; OPEN).
 
+## 7. Trap epochs (frz/trap.py, frz/epoch.py): the untrapped part is R17; what is left is the trapped part
+- Definitions (inside a frozen W-phase F = [a, b], ρ_k = σ_{a+k}): S_k := S^p_k = the vertices whose (ρ_k, τ)-play meets D (D ⊆ S_k); U_k := V ∖ S_k.
+  An EPOCH is a maximal run of states of F with S_k constant. (Value form S^v_k := {x : W_k(x) ▷ Ξ_k(x)} ⊆ S^p_k by Lemma XW.)
+- Lemma EPOCH-U (PROVED, lane). In an epoch [e, f] with untrapped set U, at most |U| − 1 transitions change W at a vertex of U, and the
+  restriction ρ_k|U (k ∈ [e, f]) is a switch-best run of the one-player game G_τ[U] (vertices U; Even edges inside U; Odd u ∈ U keeps τ(u)).
+  Proof. (i) U is closed under (ρ_k, τ)-play successors for k ∈ [e, f] (a play meeting D from a successor would meet D from the vertex), and
+  Odd u ∈ U is not in D. So W_k on U is the valuation of ρ_k|U in G_τ[U], and Ξ_k = W_k on U (the (ρ_k, σ̄)- and (ρ_k, τ)-plays from U
+  coincide). (ii) For Even x, z ∈ U: (x, z) ∈ Iσ_k ⇔ Ξ_k(z) ▷ Ξ_k(ρ_k x) ⇔ W_k(z) ▷ W_k(ρ_k x), since ρ_k x ∈ U; so the arena H_k restricted
+  to U × U is exactly {ρ_k x} ∪ (the W-improving edges of ρ_k|U in G_τ[U]). (iii) ρ_{k+1}(x) ∈ U for x ∈ U (x ∈ U_{k+1}). Every strategy π
+  of the restricted arena extends to a strategy of H_k whose plays from U stay in U, and S4a's ρ_{k+1} is pointwise W-optimal in H_k
+  (W-MON's argument), so W_{k+1}(x) ⊵ val_{G_τ[U]}(π)(x) for x ∈ U: ρ_{k+1}|U is a pointwise optimum of the restricted arena.
+  (iv) λ_W is constant on F. So [e, f] restricted to U is switch-best on G_τ[U] inside one λ-phase, and RESULTS R17 (b), (c) (Lemma P,
+  Theorem PH; any pointwise-optimal choice, R17 (d)) give ≤ |U| − 1 value-changing steps. □
+  DATA: R17U_V = 0 on all three corpora (2,644 frozen W-phases), as it must.
+- CONJECTURE TRAP-MONO («S^p_k ⊆ S^p_{k+1}» and the value form) is DEAD. Play form: frz/instances/fbrestart_cex_n12.pg (copy of
+  new/box35/instances/fbrestart_cex_n12.pg, sha1 35223b6c46750b2c1c961d68485025a9a5e69d87; its S3 default start written out, sha1
+  a2bf7077e797f2ea50ebb05ac9baabc4668a443e; n5b identical, 5 iterations, 2 fallbacks): frozen W-phase [4, 5], vertex 8 leaves S^p at t = 5.
+  Value form: n5-epoch/instances/lend107_n32 (sha1 ab4c9811…, start 9df4ea2c…; n5b identical, 112 iterations, 10 fallbacks), frozen W-phase
+  [27, 38]: vertices 1, 18 leave at t = 28 and 0, 7, 8, 9, 10 at t = 29. Corpora: play form 81 / 32 / 61 transitions (alt_all pinned / lib41 /
+  experiments/si), value form 86 / 31 / 61. (It held on the four probes x135_n59, runfam_K100, s_elim24_final, ladderd0_k12_n48.)
+- DATA per epoch: largest WCS (transitions changing W at a trapped vertex) 111 (runfam_K100, epoch [53, 164], |S| = 127, n 139), 48
+  (ladderd0_k48_n156, |S| = 52), 25 (kw25_n32, |S| = 29); WCS ≤ n − 1 everywhere (EPS PASS). Epochs per frozen W-phase: up to 34 / 26 / 20.
+- READING (what is left for FW-BF / FW-D). With E epochs, WCH(F) ≤ (E − 1) + Σ_e (|U_e| − 1 + WCS_e). Two quantities remain: (i) the number of
+  trap changes in F (TRAP-MONO would have made it ≤ n; it is dead, so a vertex can leave and re-enter S), and (ii) WCS per epoch: the trapped
+  part, where the frames differ. For |D| = 1 (one gate o) every trapped play enters o, the Ξ- and W-tails from o are fixed between
+  U-changes, and two trapped alternatives z, z′ compare as pre_z ⊕ α vs pre_z′ ⊕ α with α = Ξ(o) in the arena and α = W(o) in the choice:
+  the same prefix order exactly when o has the same cycle node in both frames (DATA: 140 of 208 D-vertex instances in 60 experiments/si
+  games), a static «two-order switch-best» problem otherwise (arena by one VJ prefix order, choice by another; thresholds and length
+  directions differ). That abstract problem is the next target.
+
 ## DONE / FINDINGS / NEEDS
 - DONE: this note; tools experiments/si/frz/ (10 scripts), data frz/*.txt, climbs frz/out/; pin frz/instances/s_elim24_final.{pg,start};
   DEAD.md «box 29»; check.sh «box 29» block.
@@ -147,3 +179,4 @@ G_τ (G_σ̄): G with Odd fixed to τ (σ̄), a one-player game of Even; on a σ
   piece is O((FB + 1)·n²·(n + m)). (4) DEAD: «≤ n − 1 per W-phase» (x135_n59), and the single-frame lemmas CASEA-W, CASEB-Ξ, SETTLE, RD,
   SETTLE_X, RDX, B-MONO, FRESH, ENT1 (instances above). (5) The proof obstruction is the optimism-trapped vertex (play into D).
 - NEEDS: none from the owner.
+- ADDENDUM (§7): Lemma EPOCH-U PROVED (lane); TRAP-MONO DEAD (fbrestart_cex_n12 play form, lend107_n32 value form); the trapped part is the open core of FW-BF.
