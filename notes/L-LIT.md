@@ -1,16 +1,20 @@
 # L-LIT notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point (successor 3, Opus 5.5, D15/D18; session_01V5yGRZ7SzNwVcgLkYDDxY7; 2026-10-29 from 14:45Z by date -u)
-DONE this session (claude/l-lit; every push via scripts/push.sh):
-- dbaf814b handover check (container started 4009 behind; fast-forwarded). VERIFY PASS, Oink smoke NOT RUN (not built).
-- T44 docs/lit/T44-single-frame-variants.md + T44-sf-variants.py + T44-sfw-cycle-check.py + T44-rcyc10.pg (single-frame N5 variants for
-  L-NEW 32 BOX 54): SF-Ξ = Friedmann I^glo (Thm 8.4; H3-H5 107/235/491), SF-W cycles (dlm1 n 5-7, dlm2 n 2-4, 10-vertex random), SF-SSI = SSI.
-- T45 3c5c6eca (T44 §6: n5sf ≠ SF-Ξ, opponent frozen to σ̄(σ) vs free; dlm1 n=2 state 0).
-- T46 docs/lit/T46-n5sf-literature.md + T46-backedge-sbc.py: N5-SF = I^glo in the OLD-counterstrategy frame; PGSolver dead strimprbyco;
-  Fearnley snare SI (READING); SBC: 53/53 back-edge steps change σ̄; kill target friedmannsubexp (DAM 2013 NOT opened, unported).
-IN FLIGHT: none. NEXT: the Lead's word.
-Predecessor's resume point (successor 2, parked 14:25Z): in git history at 6e1b01fe.
+## Resume point (HANDOVER, 2026-10-29 ~15:50Z by date -u; successor 3, Opus 5.5, D15/D18; session_01V5yGRZ7SzNwVcgLkYDDxY7; parked on Lead's word)
+DONE this session (claude/l-lit; every push via scripts/push.sh, exit 0, VERIFY PASS; Oink smoke NOT RUN, Oink not built here):
+- dbaf814b handover check (container started 4009 behind; fast-forwarded).
+- 325b7cc2 T44 docs/lit/T44-single-frame-variants.md + T44-sf-variants.py + T44-sfw-cycle-check.py + T44-rcyc10.pg: SF-Ξ = Friedmann
+  I^glo (PROVED reduction; Thm 8.4; H3-H5 107/235/491), SF-W cycles (dlm1 n 5-7, dlm2 n 2-4, 10-vertex random), SF-SSI = SSI (DLM).
+- 3c5c6eca T45 (T44 §6 + T45-sf-diff.py): L-NEW's n5sf (057a08eb) ≠ SF-Ξ: opponent frozen to σ̄(σ) vs free; dlm1 n=2 state 0.
+- b6111905 T46 docs/lit/T46-n5sf-literature.md + T46-backedge-sbc.py: N5-SF = I^glo in the OLD-counterstrategy frame (thesis p.101),
+  PGSolver dead strimprbyco, Fearnley snare SI (READING); SBC: 53/53 back-edge steps change σ̄; non-back-edge SBC grows.
+- T47 (this push) docs/lit/T47-snare-families-spec.md + T47-gen-pgsolver-snare.py: specs of PGSolver friedmannsubexp / fearnleysubexp
+  (d3cd624, line numbers), pinned sha1s n = 1..5, start = best reward (snare solver). For L-COMP's independent port.
+IN FLIGHT: none.
+NEXT for a successor: the Lead's word. Offered: (i) if L-COMP's port disagrees with T47's sha1s, re-read the OCaml lines cited there;
+(ii) DAM 2013 (DOI 10.1016/j.dam.2013.02.007) stays NOT OPENED (owner-optional, Lead 15:39Z: no access request).
+NEEDS: none from the owner.
 
 ## Queue
 - T40 primaries not opened: Condon 1993 (DIMACS 13), Pollatschek-Avi-Itzhak 1969 (Mgmt Sci 15), van der Wal 1976/1978 (cited via
@@ -26,6 +30,11 @@ Predecessor's resume point (successor 2, parked 14:25Z): in git history at 6e1b0
 - Open FL09 (self-loop removal) if the REFEREE needs it; Friedmann RAIRO 2011 (publisher 403; try author copy).
 
 ## Things only I know
+- Successor 3: PGSolver clone at d3cd624 lives in scratchpad dl46/pgsolver (lost with the container; re-clone github.com/tcsprojects/pgsolver,
+  checkout d3cd624). No OCaml toolchain here, so no binary check of T47. Friedmann thesis + Fearnley PDFs in scratchpad dl46/ (sha256 in Sources).
+- L-NEW's n5sf.py computes ROOT from its own path: to run a copy from the scratchpad, pre-insert experiments/new/box21 etc. into sys.path
+  (T45-sf-diff.py, T46-backedge-sbc.py do this). H3 F start: trace() gives 64 iterations vs L-NEW's 7n+49 = 70 (reported to Lead).
+- The ScienceDirect/Elsevier fetch for DAM 2013 was refused by the session's permission classifier; do not retry around it.
 - Successor 3 (T44): run scripts from the repo root (python3 -I docs/lit/T44-*.py). DLM instances: experiments/new/dlm_gen.py 1|2 n > g.pg
   2> g.start; H_n: experiments/friedmann-hn/instances/H<n>.pg + H<n>_F.start. Random search script + logs: scratchpad t44/ (lost with the
   container; rnd.py = random games, owner/prio/succ uniform, out-degree 1-3, seeds 1 and 7). Friedmann PDFs: scratchpad dl44/f/.
