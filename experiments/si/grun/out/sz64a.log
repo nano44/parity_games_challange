@@ -1,0 +1,13 @@
+seed G 24 n 32
+step 3108 G 29 n 64 G/n 0.453
+step 3597 G 30 n 63 G/n 0.476
+step 3855 G 31 n 64 G/n 0.484
+step 5013 G 32 n 64 G/n 0.500
+step 5445 G 33 n 64 G/n 0.516
+step 8540 G 34 n 63 G/n 0.540
+step 8940 G 35 n 63 G/n 0.556
+step 11489 G 36 n 64 G/n 0.562
+step 16714 G 37 n 63 G/n 0.587
+step 18794 G 38 n 64 G/n 0.594
+step 20001 G 39 n 63 G/n 0.619
+step 20110 G 40 n 64 G/n 0.625
