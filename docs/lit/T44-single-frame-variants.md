@@ -120,3 +120,22 @@ Friedmann's H_n and DLM's families. A single-frame variant to which R17's per-ph
   - SF-SSI = SSI: DLM Thm 1 / 13; counts 2^(n+1) − 3, 7·2^(n−1) − 5 reproduced.
   - DLM's lock returns only with the best-reply restriction; the frame split (Ξ arena, W choice) is what lets N5 escape both H_n and DLM.
 - NEEDS: none from the owner.
+
+## 6. T45 (Lead 15:05Z): L-NEW's N5-SF (claude/l-new 057a08eb, experiments/new/box54/n5sf.py, sha1 1ea3bdc7, MODE=x) vs SF-Ξ
+Written from 15:07Z (date -u). Read only; tool docs/lit/T45-sf-diff.py (same state, both steps, first difference).
+- The definitions differ in ONE place, the opponent inside the arena game. Arena: identical (Even: {σ(v)} ∪ Iσ(v), Ξ frame; Odd mirrored).
+  Choice: SF-Ξ lets Odd play FREELY in the arena game (the optimum is max over arena strategies σ′ of Ξ_{σ′}, Odd re-replying to σ′:
+  Friedmann's I^glo). n5sf FIXES Odd to σ̄(σ), Odd's optimal counterstrategy to the CURRENT σ («Odd v keeps only sigma-bar(v)»), so its
+  σ_new is Even's one-player optimum in the arena against that stale reply. Odd's side mirrors (n5sf fixes Even to τ̄(τ); SF-Ξ leaves Even
+  free on G^d). S4c/S5 and the start are the same; SF-Ξ needs no fallback either.
+- PROVED (L-LIT, unrefereed). n5sf's step is not I^glo in general, but every n5sf step is Ξ-dominated by SF-Ξ's step from the same state:
+  Ξ_{σ_sfxi} ⊵ Ξ_{σ′} for every arena strategy σ′ (I^glo's defining property, Friedmann §4), in particular for σ′ = n5sf's choice. So the two
+  coincide exactly at states where n5sf's choice is itself Ξ-optimal in the arena (e.g. when σ̄ stays Odd's best reply to the new σ).
+- DATA (first divergence, tool above): dlm1 n = 2 (dlm_gen.py 1 2, sha1 22b64c39, ids a1 0, d1 1, a2 2, d2 3, a3 4, d3 5), state 0 = DLM's
+  start (σ: a1→a2, a2→a3; τ: d1→d2, d2→d3); Iσ = {(a1, d2), (a2, d3)}, σ̄(σ0): d1→a2, d2→d1. SF-Ξ keeps a1→a2, n5sf switches a1→d2 (both
+  switch a2→d3); Odd: SF-Ξ keeps d1→d2, n5sf switches d1→a2. Ξ of SF-Ξ's σ is strictly better at 1 vertex, worse at none. Further first
+  divergences: dlm1 n = 3, 4, 5 at state 0; dlm2 n = 3 (412fbbf9) at state 1; H3 (f7bdd38a, F start) at state 22 (Even v3: SF-Ξ → 51, n5sf
+  stays 42; v38: SF-Ξ → 7, n5sf stays 39; SF-Ξ better at 4 vertices, worse at none). On T44-rcyc10.pg the two runs are identical (3 steps).
+- READING. n5sf = "arena Ξ, choice against the frozen σ̄(σ)": a one-player (R17-type) step in G_{σ̄(σ)}, not Schewe's step. So T44 §1's
+  reduction to Friedmann Thm 8.4 does NOT transfer to n5sf as it stands; whether H_n from ι_{H_n} is slow for n5sf is a run for L-NEW (not
+  duplicated here). On H3 the two agree for the first 22 iterations of SF-Ξ's 107.
