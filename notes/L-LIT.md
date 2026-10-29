@@ -1,10 +1,13 @@
 # L-LIT notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point (2026-10-29 ~16:50Z by date -u; successor 4, Opus 5.5, D15/D18; T49)
+## Resume point (2026-10-29 ~17:05Z by date -u; successor 4, Opus 5.5, D15/D18; T50)
 DONE this session (claude/l-lit; pushes via scripts/push.sh only, all exit 0, VERIFY PASS, Oink smoke NOT RUN):
 - 6c065788 handover check; 0703a463 trunk merge + script v1; ca194a96 T48 (merged by Lead, trunk fae5725e); 4ff31a84 PIECES in the script.
-- T49 (this push): docs/lit/T49-tropical-simplex.md (Maat dictionary, transfer theorem + rule list, smoothed results do not reach parity,
+- 44e057ef T49 (merged by Lead).
+- T50 (this push): docs/lit/T50-quasipoly-si.md (Koh-Loho potential-height mechanism; coherent = parametric dimension 1, Black-Xue 2026;
+  DLM locks cannot act on F (DECOUPLE), no all-rules bound for one-sided SI (Friedmann Lemma 4.2)).
+- (T49 detail) docs/lit/T49-tropical-simplex.md (Maat dictionary, transfer theorem + rule list, smoothed results do not reach parity,
   PIECES ≈ SBC/2, Loff-Skomra one- vs two-player single-parameter breakpoints); T48 §1.5 clock hint RETRACTED (circular).
 IN FLIGHT: none.
 NEXT: the Lead's word.
@@ -401,6 +404,13 @@ NEEDS: none from the owner.
 | arXiv 2212.00083 v1 (Christ-Yannakakis) sha256 ab6b525118aadbb3… | Thm 3 p.26 | 2026-10-29 | |
 | arXiv 2607.21055 v1 (Chillara-Gajjar-Raja); 2406.06936 v1 (Black-Criado); 2007.08387 v1 (Combes-Touati) | Thm 2-3 p.5; Thm 1.1; Thm 1 | 2026-10-29 | |
 | NOT opened (T49) | journal versions of ABGJ papers; Allamigeon-Gaubert-Joswig survey; Benchimol Ch. 6 body; Goldfarb 1983/1994; Borgwardt; Deshpande-Spielman; Boros et al. ICALP'11 / Algorithmica'18; Avis-Chvátal (Bland); Gaubert-Katz-Sergeev EPiC; Loff-Skomra / Disser-Loho-Maat-Mosis not re-read for pivots | 2026-10-29 | |
+| T50 (2026-10-29) sources, opened by me | | | |
+| arXiv 2108.13338 (Koh-Loho, LMCS 21(2:24) 2025) sha256 21ee0e4336252f7e… | p.2-3 framework, «force µ to increase», [Ohl21]; p.3 «trivially bounded by n|L(T)|», pivot rule open; Algorithm 1 + Thm 3.1 p.9; Thm 4.5; abstract running times | 2026-10-29 | |
+| arXiv 2607.21055 v1 (Chillara-Gajjar-Raja) sha256 32ee94e1aab6eecd… | Def. 1 (MSPC); Thm 2 (DAG), Thm 3 (no negative cycles), Thm 4 (undirected, non-negative): n^O(d log n); abstract | 2026-10-29 | read by me |
+| arXiv 2607.11628 v1 (Black-Xue) sha256 26ed159192e9e6e6… | p.2 coherent = parametric; Thm 1.1; Cor. 1.3, 1.5 | 2026-10-29 | |
+| arXiv 2201.05134 v1 (Black-De Loera-Lütjeharms-Sanyal) sha256 aa1e5e36f30e5572… | p.1 coherent paths = vertices of monotone path polytopes; p.3-4 shadow vertex = coherent path | 2026-10-29 | Billera-Sturmfels 1992 NOT OPENED |
+| arXiv 2309.02223 v1 (van Dijk-Loho-Maat) sha256 10e6794d82aba465… (re-open) | Thm 1 p.2; p.2 contrast with [15, Lemma 4.2]; p.3 key insight + self-similar recursion; Algorithm 2 p.8; Thm 13 | 2026-10-29 | |
+| Friedmann thesis sha256 68748f5388a94151… (re-open) | Lemma 4.2 printed p.74 (SWITCH-LIN, ≤ |V| iterations) | 2026-10-29 | |
 
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
@@ -424,6 +434,8 @@ NEEDS: none from the owner.
 - T49 (2026-10-29): T48 §1.5 "Even clock + Carstensen network" attack hint: DEAD (circular). Obstruction: a one-parameter family
   crosses at most as many breakpoints as its parameter takes values, and SBC ≤ #σ − 1 (SBC-EQ); the long run must exist first.
 - T49: "F's run is a 2-D shadow (shadow-vertex path)": DEAD, PIECES > 1 from switchbestexp_1 (2), switchbestexp_6 needs 29 pieces.
+- T50 (2026-10-29): "adapt DLM's mutual counter locks to N5-SF's F": DEAD. Obstruction: DECOUPLE (F's arena and opponent are functions of
+  σ alone, so τ-gated locks have no effect); "all-rules lower bound for F": DEAD by Friedmann thesis Lemma 4.2 (one-sided SI has a ≤ |V| rule).
 
 ## Corrections log
 - 2026-10-23 (T26): N8d-barrier.md §0 and R54 §0 put Lemma 4.75 / Thm 4.76 on p.187; opened PDF: printed p.186 (PDF p.202). Reported as caveat 4.
