@@ -576,3 +576,14 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
   (signed positions squared / cubed). Kill: new/box59/out/fc_3.pg (sha1 9af7ca12; Even side, S3), vertex 6, resets at t 0 and 23:
   Φ_2 11587 → 5786, Φ_3 872765 → 373618. Obstruction: between trivial resets, carries bring a high even rank with an odd block below
   it (binary-counter shape), which raises S1's weight and lowers every polynomial-range potential.
+
+## box 36 (L-SI successor 30, docs/si/N5-PIVOT-box36.md §2-§4; odd/pivot.py, odd/barrier.py, check.sh «box 36»)
+- PIVOT-DISTINCT / PIVOT-DEEP (pivots of one carry segment distinct / deepening). Kill: new/box59/out/fc_3.pg (9af7ca12), Even side,
+  vertex 1, λ-run from 0, t = 25: pivot 3 again at depth 1. Obstruction: one switcher on x's play creates several of x's carries.
+- EDGE-DISTINCT (pivot edges of one carry segment distinct). Kill: fc_3, Even, vertex 4 switches 5 → 1 → 5 → 1 → 5 (t 11, 13, 20, 22),
+  all carries in one segment; Odd side red/n5inj/instances/wide_h16.pg (990ecbcf), vertex 18, t = 9, edge (18, 25).
+- Any rule-generic proof of CARRY-SEG or RESET-LIN (from F-SW, F-MON, SW-RETURN, LEN-MONO, SUCC-MON, LATE-RISE, MATCH-Φ, INHERIT-λ).
+  Kill: switch-all SI on experiments/si/odd/inst/switchallexp_7.pg (ff46e32f), one λ-run, vertex 101: 126 MATCHED > n = 105, longest
+  carry segment 375; all premises checked 0 violations. Obstruction: the carry shape is the switch-all counter's; N5's S4a is needed.
+- Charging resets to τ-changes (≤ C resets per vertex per phase). Kill: rise_thin51_n40 (Even side, S3), vertex 0: 29 MATCHED changes
+  in one phase (λ and τ constant).
