@@ -10,7 +10,11 @@ History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50
   02:33Z). Counter: the next check is C91.
 - C91 = R82 (P-N5-SDPRIME), draft 1f744f3f @ f68f7e41 (Lead 05:16Z): docs/checker/C91.md PASS, N-1 ("4 + 2" omits random's 1), N-2 (708
   untraceable). Re-runs: REFEREE @d693a6fe scratch `RANDSTARTS=1 MAXN=48 [MUT=4] python3 -I sdprime_probe.py <lib41.txt paths, ../../../ prefix>`;
-  REFEREE-2 @9784229a run_all.sh lines (named, rand_kO, qcheck). NEXT: the R82 landed check (C91 §7).
+  REFEREE-2 @9784229a run_all.sh lines (named, rand_kO, qcheck). C91 Add. 1 PASS 81502454; R82 landed 12f4af00, Add. 2 PASS: C91 CLOSED.
+- C92 = R83 (P-N5-REL), draft ccd56407 @ 4a67f98f (Lead 05:50Z): docs/checker/C92.md PASS, N-1 (REFEREE-2 counter never widened), N-2
+  (title SEG-RUN consequence drops hypotheses), N-3 (GEN_W wording). Re-runs: REFEREE @a343d6b4 `RANDSTARTS=0 MAXN=200 rel_probe.py
+  rel_inputs/{rdr,anc}_K10.pg ../../../experiments/si/runlin/instances/runfam_K10.pg`; REFEREE-2 @b6811cf1 run_all.sh lines. Quote script
+  dq.py fixed (pair every double quote, then filter length >= 6). NEXT: the R83 landed check (C92 §8).
 - METHOD (this box): stamps from `date -u` run in the same turn as the text (Lead note 01:54Z; I guessed two stamps). Read the GAPS UPDATE's
   every clause against the entry's "Not signed" list, not only its items (C90 L-1: the UPDATE used the unsigned "from READER-INV" form).
 - Re-run commands (C90): REFEREE @f2d22ad7 docs/referee/scratch: `RANDSTARTS=0 MAXN=60 LEVMAX=60 python3 -I fbck_probe.py <15 named>`
