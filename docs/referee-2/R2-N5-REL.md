@@ -138,3 +138,62 @@ No gap. Notes N-REL-1..8.
     needed in data (N-REL-3).
   - The Remark holds for the length bound only (N-REL-5). Q is redefined as the Even choice vertices (N-REL-4).
 - NEEDS: Lead: the §C word; route N-REL-1..8 to L-SI.
+
+## §C. Comparison with REFEREE's report (written on the Lead's word of 2026-10-29 05:06Z; from 05:06Z by date -u)
+Object: docs/referee/R-N5-REL.md at origin/claude/referee 69b12910 (sha1 8ae211bd760e7a7347cdc979e22a674c4ddd5d01), REFEREE successor 17. Opened
+for the first time after my report was pushed (eb5aa2b5).
+### C.1 Verdicts: IDENTICAL
+| item | REFEREE | REFEREE-2 | joint |
+| --- | --- | --- | --- |
+| Lemma GATE-RISE | SIGNED | SIGN | SIGN |
+| its Count | SIGNED | SIGN | SIGN |
+| Theorem STATIC-DEPTH-REL | SIGNED (with the domain-closure sentences) | SIGN (RCLOSE / RDOM checked) | SIGN |
+| Corollary REL-SPLIT | SIGNED (REDUCTION) | SIGN (REDUCTION) | SIGN |
+| Remark (not to sign) | "true as stated" | holds for the length bound and settling on V^W ∪ V^H only (N-REL-5) | not signed; wording, C.3 |
+| quotes | 16/17 strict (the (SW) "…") | 16/17 strict (the same) | same |
+### C.2 Joint gap map: EMPTY
+### C.3 Notes, side by side
+- REL-N1 (GATE-RISE is the strict form of RESULTS R61 (e) Lemma ALT; (i) at t + 1 can be weakened to u ≠ λ(u)): ACCEPTED, MISSED by me.
+  - I read R61 (e)'s landed text (RESULTS l. 3128-3131 on trunk). It defines the clean change as here and proves "κ_{t+1}(q) ≥ κ_t(q), equality
+    only at a tie". Its referees already recorded that "q on no honest cycle at t + 1" is unused there, the step at t + 1 being (Aκ), which
+    needs only q ≠ c.
+  - GATE-RISE adds three things: it states the strict form in Ξ, for every off-cycle Odd u, and with a direct proof from R57 (a), R17 and R15
+    (R61 is CONDITIONAL on R56 / R58).
+  - The packet should cite R61 (e).
+  - The weakening holds. If u ≠ λ(u) and u lies on its honest cycle at t + 1, S1 measures u's play only up to its first visit of the cycle node
+    c, and y2's play reaches c before returning to u. So Ξ_{t+1}(u) = u ⊕ Ξ_{t+1}(y2) with a u-free value, and step 4 goes through.
+  - My own check (gr_weak.py, alt_all + lib41 × 3): 1 + 4 such changes with (ii), (iii) holding, all with a strict rise. REFEREE has 4.
+  - Further, data only: the same weakening at t (u on its cycle at t, u ≠ λ(u)) gave 2 + 1 cases, and at both t and t + 1, 2 + 10 cases. All
+    rose. My script did not filter (ii) in those cases, so this is a data point, not a checked statement. Not proposed for signature.
+- REL-N2 (W-MONO / Ξ-SUCC beyond R77 (H1)) = N-REL-6. The same signed proof step as SDPRIME §C.3. Identical.
+- REL-N3 (Q redefined as the Even choice vertices) = N-REL-4. Identical. The joint proposal is to rename it (Q_E or E_2) before landing.
+- REL-N4 (§4's "SEG ≤ 0.79n in the library": alt_all 0.79 as stated; lib1140 0.83) = N-REL-7 in kind.
+  - Mine: alt_all 0.792; lib41 with a random start 0.95 (lev_l_n20 #2); the lane climb sg_2 1.00.
+  - Both referees reach the same conclusion: the lane should name the library and starts behind 0.79.
+- REL-N5 (the (SW) "…") = N-REL-1. Identical.
+- The Remark. REFEREE reads "contains STATIC-DEPTH′" as true as stated: REL's least a is never later, and the depths coincide on the domains.
+  - I read it as literal containment of every conclusion. STATIC-DEPTH′ also asserts settling for vertices outside V^W_b ∪ V^H_b, e.g.
+    readers, which STATIC-DEPTH-REL does not conclude.
+  - Both readings agree on the facts: length bound contained, settling contained on the domains, my RREM checks 0 failures.
+  - The Remark is not to sign, and neither reading changes a verdict. Joint proposal: "contains STATIC-DEPTH′'s length bound, and its settling
+    on V^W_b ∪ V^H_b".
+- Mine only:
+  - N-REL-2 (step 3's injectivity needs u-free values). REFEREE's step 3 says the same in substance ("on values of plays avoiding u ... all
+    values used are u-free"), so it is agreed, as wording.
+  - N-REL-3 ((ii) not shown necessary) = REFEREE's MUT2, which does not bite. Same finding.
+  - N-REL-8 (coverage beyond STATIC-DEPTH′) agrees in kind with REFEREE's REL_sigmabar_moves_off_RO counts.
+- Controls compared:
+  - dm1 = MUT1 (both bite); tie = MUT3 (both bite: 167 / 128); thru = MUT2 (neither bites).
+  - nosbar = MUT4: both bite, including the length bound (mine LEN 1,450, REFEREE LEN 283).
+  - qonly = MUT5. REFEREE: does not bite on the conclusions. Mine: the recursion leaves its domain (RDOM 246) and RCLOSE fails, i.e. the closure
+    is needed for the definitions to be well formed, but no settling failure was observed. These agree: X_b's closure rests on proof.
+  - cyc: mine only, bites 8 of 23, so (i) is needed in some form, consistent with REL-N1, which keeps u ≠ λ(u).
+- Reader data: both reproduce rdr_K10 / anc_K10 (G 91, SEG 9).
+### C.4 Joint list for L-SI's fixes file
+REL-N1 (cite R61 (e); the optional (i)-at-t + 1 weakening), REL-N2 = N-REL-6, REL-N3 = N-REL-4, REL-N4 + N-REL-7, REL-N5 = N-REL-1, N-REL-2
+(wording), the Remark wording (C.3), N-REL-3, N-REL-8. No verdict changes.
+### C.5 DONE / FINDINGS / NEEDS
+- DONE: this §C; R2-N5-REL/gr_weak.py and logs/grweak_*.txt.
+- FINDINGS: verdicts identical, joint gap map empty. REL-N1 accepted (missed by me): the R61 (e) link and the u ≠ λ(u) weakening, checked on 5 of
+  my own cases. The Remark's two readings are reconciled by a wording.
+- NEEDS: Lead: route the joint list (C.4) to L-SI.
