@@ -1,10 +1,34 @@
 # L-LIT notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point
-2026-10-29 ~12:1xZ (successor, Opus 5.5): T39 DONE docs/lit/T39-tau-changes-per-lambda-run.md: tau-changes per run reduce to NM*^U via
-the tau-half of COMPOSE (b) + MPhi (L-LIT reading); literature bounds best-response changes only under discount (HMZ) / forward (MSY).
-Before: T38 6e4d5655. Review object P-N5-MPGS a23179b0. Next: Lead's routing.
+## Resume point (HANDOVER, 2026-10-29 ~12:2xZ by date -u; successor Opus 5.5, D15/D18; context ~670k, parked on Lead's word)
+DONE this session (all on claude/l-lit, pushed via scripts/push.sh, each VERIFY PASS):
+- a0e73a8f handover check (docs/agents/handover-checks/L-LIT.md).
+- T32 a06dc24a docs/lit/T32-n5-frontier-crossfield.md (cross-field scan; MATCH-Phi first form).
+- T33 f587cb2f docs/lit/T33-match-phi.md (+ T33-match-phi-check.py sha1 6853179b): MATCH-Phi self-contained; ARV transfer (only the
+  free schedule fails; ascending counter NM = 2^(k-2) - 1).
+- T34 f09b2b43 docs/lit/T34-friedmann-vs-n5.md (+ T34-gateshut-check.py sha1 7c33508b): Lemma GATE-SHUT; Friedmann's hiding void
+  under N5; CONJECTURE NO-HIDE.
+- PACKETS: P-N5-MPGS (A = MATCH-Phi + Corollary, B = GATE-SHUT) frozen a23179b0, sha1 24913a7f, quotecheck P-N5-MPGS-quotecheck.py
+  (quotes=9 bad=0). THE REVIEW OBJECT (Lead ruling 11:27Z). BOTH REFEREES SIGNED IT WITH NO GAP (Lead 12:14Z). P-N5-MATCHPHI
+  (12b7d12a) and P-N5-GATESHUT (1298d8b2) are superseded copies, not routed (their fixes files say so).
+- T35 5bdebc10 docs/lit/T35-howard-quadratic-vs-runquad.md (HZ/ACR lane x reset vs runquad; Zhong-Ye refutes HZ conjecture via
+  cycle means, blocked for N5; CONJECTURE CUT-Phi).
+- T36 609b9bac (+ b5fac397) docs/lit/T36-n5-reduction-map.md (owner-facing map: R47 -> R15/R80 -> SW-RETURN -> LEN-MONO -> COMPOSE
+  (l-si f372bc6b) -> MATCH-Phi -> OPEN NM*, NM*^U; VC-BOUND alternative).
+- T37 5d32f637 docs/lit/T37-exponential-families-classified.md (every parity/sink-MDP family is carry-type; 3-ingredient sequencing).
+  Its §3 CONJECTURE is DEAD (L-SI 390d2d8a §13; Dead ends).
+- T38 6e4d5655 docs/lit/T38-one-sink-n5.md (1-sink: one lambda-run, l = |P|, Even-side collapse). Lead deferred a short packet.
+- T39 14f1b4fa docs/lit/T39-tau-changes-per-lambda-run.md (tau-changes reduce to NM*^U via COMPOSE's tau-half; Lead: no packet change
+  needed, he adds the line in the RESULTS entry).
+IN FLIGHT: none.
+NEXT for the successor (Lead's instruction 12:14Z): when BOTH referees' §Cs on P-N5-MPGS are in, write docs/lit/P-N5-MPGS-fixes.md
+items with the referees' joint notes (append only; MPGS-fixes already has F1 (withdrawn) and F2 (Lead ruling 11:27Z: MPGS is the
+review object)). Include REFEREE-2 19's notes N-MP-1..5 on the identical (A) statements (docs/referee-2/R2-N5-MATCHPHI.md,
+referee-2 5ba3e21d): (1) the premise sentence says (MON) is used by Fact 1, but Fact 1 uses only DELTA; (2) the first term is sharp
+(longest MATCHED-only chain = K(K+1)/2, K <= 7); (3) Fact 1 needs the one-line additivity of weight; (4) §3's "max NM 31 on alt_all"
+misses gate_K64_n581 (NM 62), and "157 = 41 + 116" lacks a unit; (5) random games have NM <= 1. Never edit frozen packet text.
+NEEDS: none from the owner.
 
 ## Queue
 - Not opened (blocked or paywalled), needed only if a lane depends on them: Friedmann RAIRO 2011 (403); FHZ SODA/STOC 2011;
@@ -40,6 +64,14 @@ Before: T38 6e4d5655. Review object P-N5-MPGS a23179b0. Next: Lead's routing.
   HDJ12 CDC paper itself not on arXiv; its theorem was read in Hollanders' thesis (same authors' result).
 
 - T32 (2026-10-29): PDFs + pdftotext in this session's scratchpad dl32/ (not committed). www.ece.iastate.edu fails TLS through the proxy (curl 60 even with --cacert); web.archive.org resets.
+
+- 2026-10-29 session: PDFs of T32-T39 are in this session's scratchpad dl32/ dl34/ dl35/ dl37/ dl39/ (not committed, lost with the
+  container); every one has its arXiv id / URL and sha256 in "Sources opened", so a successor can re-fetch and re-check.
+- www.ece.iastate.edu fails TLS via the proxy; web.archive.org resets; Springer chapter PDFs come back empty; Zwick's tau.ac.il papers
+  dir has no Howard paper. arxiv.org and export.arxiv.org work (https).
+- The "file changed on disk" notices for my docs/lit files on 2026-10-29 were spurious: the working tree was clean and P-N5-MPGS.md
+  kept sha1 24913a7f (checked twice).
+- T34-gateshut-check.py imports L-COMP's hn.py / census.py and n5b.py read-only; runs from the repo root; n=5, 30 starts ~25 s.
 
 ## Sources opened
 | source (arXiv id / DOI) | result used (theorem / section) | opened on | note |
