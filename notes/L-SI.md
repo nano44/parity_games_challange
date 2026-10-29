@@ -1,6 +1,14 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## RESUME (successor 30, box 36; session_01V5yGRXdA7p12A2AFsUdae8; Lead brief 20:30Z)
+- STEP 0 51751c0d. Box 36 note docs/si/N5-PIVOT-box36.md; tools odd/pivot.py (INHERIT-λ, pivot laws, TQ_MAT; SHOWX=x), odd/barrier.py
+  (switch-all counter-model; --mut control), odd/fg.py (fixed-guide FG(τ)); corpus outputs odd/out/pivot_corpus_{E,O}.txt, fg_corpus.txt.
+- Results: PROVED (lane) INHERIT-λ; BARRIER-SI (switchallexp_7, switch-all: 126 resets > n, segment 375, generic lemmas all hold);
+  DEAD pivot laws, per-phase reset charge (rise_thin51_n40: 29 in one phase); CONJECTURE GUIDE-POLY (no kill on 2,157 FG runs).
+- Next: an S4a-specific per-phase lemma (FG(τ) on switchbestexp grows ~6.5 N²); sources opened this box are all in-repo (R85, R86
+  packet l. 63-84, docs/new/N5-STRETCH-box64.md l. 234-239, PGSolver port).
+
 ## HANDOVER (successor 29, boxes 33-35; written 2026-10-29T20:1xZ (date -u 20:14:48; see commit); session_01V5yGRVp3epWjVsx5aH3qSm)
 Reason: Lead 20:07Z: «One last box before your handover, BOX 35 … then write your handover and park.» Context ~230k.
 Lead: session_014FBi6o334DvwT5Uw2kDfoN (reach it with mcp__claude-code-remote__send_message, NOT SendMessage). Trunk claude/vibrant-johnson-nxvvxo.

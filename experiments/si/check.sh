@@ -755,3 +755,16 @@ o=$(PHID=3 SIDE=E python3 -I odd/carx.py ../new/box59/out/fc_3.pg); grep -q "exg
 o=$(PHID=2 python3 -I odd/carx.py ../red/n5inj/instances/wide_h16.pg); grep -q "GAIN_V 0 .* PASS$" <<<"$o"
 o=$(PHID=w SIDE=E python3 -I odd/carx.py ../new/box59/out/fc_3.pg); grep -q "GAIN_V 0 .* PASS$" <<<"$o"
 echo "si (box 35: Φ_2, Φ_3 dead on fc_3; Φ_2 passes wide_h16; exact weight monotone): PASS"
+# box 36 (docs/si/N5-PIVOT-box36.md): Lemma INHERIT-λ (pivot's ΔP = x's ΔP on λ-runs; --mut must fire), PIVOT-DISTINCT /
+# PIVOT-DEEP / EDGE-DISTINCT dead on fc_3 (Even) and wide_h16 (Odd); BARRIER-SI: switch-all on switchallexp_7 (one λ-run) has
+# 126 matched resets of vertex 101 (> n = 105) and a 375-carry segment, with F-MON, SUCC-MON, LATE-RISE, SW-RETURN all holding.
+o=$(SIDE=E python3 -I odd/pivot.py ../new/box59/out/fc_3.pg); grep -q "INH_V 0 " <<<"$o"; grep -q "PD_V 339 DP_V 420 ED_V 168 " <<<"$o"; grep -q "PASS$" <<<"$o"
+o=$(SIDE=E python3 -I odd/pivot.py ../new/box59/out/fc_3.pg --mut); if grep -q "INH_V 0 " <<<"$o"; then exit 1; fi
+o=$(python3 -I odd/pivot.py ../red/n5inj/instances/wide_h16.pg); grep -q "INH_V 0 .*PD_V 48 DP_V 56 ED_V 2 " <<<"$o"
+o=$(python3 -I odd/barrier.py odd/inst/switchallexp_7.pg); grep -q "n 105 iter 1243 lambda_runs 1 FMON_V 0 SUCCMON_V 0 LATERISE_V 0 SWRET_V 0 STILL 0 maxPCH 984 (NM 858 MAT 126 vertex 101 run \[0,1244)) maxSEG 375 PASS" <<<"$o"
+o=$(python3 -I odd/barrier.py ../new/box54/out/switchallexp_2.pg --mut); grep -q "FMON_V 255 SUCCMON_V 166 LATERISE_V 179 " <<<"$o"   # control: reversed run
+echo "si (box 36: INHERIT-λ exact, mutation bites; pivot laws dead; switch-all kills RESET-LIN and CARRY-SEG with all generic lemmas holding): PASS"
+# box 36 §5: the frozen guide alone breaks the counter: FG(τ) (S4a with τ frozen) on switchallexp_7, τ = first / last.
+o=$(python3 -I odd/fg.py odd/inst/switchallexp_7.pg first last)
+grep -q "tau first iter 142 stalls 24 lambda_runs 1 maxPCH 63 maxMAT 1 vertex 102 DONE" <<<"$o"; grep -q "tau last iter 14 stalls 0 lambda_runs 1 maxPCH 12 maxMAT 1 vertex 102 DONE" <<<"$o"
+echo "si (box 36 §5: FG(τ) on switchallexp_7: 142 / 14 iterations, ≤ 1 matched reset per vertex): PASS"
