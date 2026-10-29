@@ -619,3 +619,9 @@ echo "675778af8ea65724a053fe1e4cbbf8b8fe33f8ad  chg/instances/red/s3quad_K3_m4.p
 python3 -I chg/reopen.py --one chg/instances/red/runquad_K8_m30_n192.pg chg/instances/red/runquad_K8_m30_n192.start | grep -q "^carrying_vertex_runs=121 nm_zero_max=8 ratio_max_x100=800 zero_reopen=121$"
 python3 -I chg/reopen.py --one chg/instances/red/s3quad_K3_m4.pg | grep -q "^carrying_vertex_runs=67 nm_zero_max=3 ratio_max_x100=300 zero_reopen=67$"
 echo "si (box 28 §13: carries without reopenings on runquad (121/121) and s3quad_K3_m4 (67/67)): PASS"
+# box 28 §14: R17's Lemma P breaks in two frames on runquad (σ̄ constant on the phase): W-better edges outside the arena (3,102 pairs, first
+# t = 0, x = 5, z = 4) and honest switches beaten in Ξ by S4a's τ-optimum (2,096, first t = 0, x = 3, z = 27); |D| = 32.
+o=$(python3 -I chg/r17.py --one chg/instances/red/runquad_K8_m30_n192.pg chg/instances/red/runquad_K8_m30_n192.start)
+grep -q "TOP (263, 'chg/instances/red/runquad_K8_m30_n192.pg', 0, 263, 481, 263, 0, 3102, (0, 5, 4, 6, 6), 192, 32, 2096, (0, 3, 27, 0, 9))" <<<"$o"
+grep -q "^ESWSB FAIL" <<<"$o"; grep -q "^D0 PASS" <<<"$o"
+echo "si (box 28 §14: R17's Lemma P fails in both frames on runquad with σ̄ constant): PASS"

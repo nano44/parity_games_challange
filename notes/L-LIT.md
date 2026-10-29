@@ -1,10 +1,34 @@
 # L-LIT notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point
-2026-10-29 ~11:5xZ (successor, Opus 5.5): T38 DONE docs/lit/T38-one-sink-n5.md (1-sink: one lambda-run from starts dominating iota;
-l = |P| so RISE = PCH; COMPOSE-RUN Even part = m_E(P*+1); Odd side lambda^U varies; no carry bound on 1-sink; H_n linear DATA). Before:
-T37 5d32f637. Review object P-N5-MPGS a23179b0. Next: Lead's routing.
+## Resume point (HANDOVER, 2026-10-29 ~12:2xZ by date -u; successor Opus 5.5, D15/D18; context ~670k, parked on Lead's word)
+DONE this session (all on claude/l-lit, pushed via scripts/push.sh, each VERIFY PASS):
+- a0e73a8f handover check (docs/agents/handover-checks/L-LIT.md).
+- T32 a06dc24a docs/lit/T32-n5-frontier-crossfield.md (cross-field scan; MATCH-Phi first form).
+- T33 f587cb2f docs/lit/T33-match-phi.md (+ T33-match-phi-check.py sha1 6853179b): MATCH-Phi self-contained; ARV transfer (only the
+  free schedule fails; ascending counter NM = 2^(k-2) - 1).
+- T34 f09b2b43 docs/lit/T34-friedmann-vs-n5.md (+ T34-gateshut-check.py sha1 7c33508b): Lemma GATE-SHUT; Friedmann's hiding void
+  under N5; CONJECTURE NO-HIDE.
+- PACKETS: P-N5-MPGS (A = MATCH-Phi + Corollary, B = GATE-SHUT) frozen a23179b0, sha1 24913a7f, quotecheck P-N5-MPGS-quotecheck.py
+  (quotes=9 bad=0). THE REVIEW OBJECT (Lead ruling 11:27Z). BOTH REFEREES SIGNED IT WITH NO GAP (Lead 12:14Z). P-N5-MATCHPHI
+  (12b7d12a) and P-N5-GATESHUT (1298d8b2) are superseded copies, not routed (their fixes files say so).
+- T35 5bdebc10 docs/lit/T35-howard-quadratic-vs-runquad.md (HZ/ACR lane x reset vs runquad; Zhong-Ye refutes HZ conjecture via
+  cycle means, blocked for N5; CONJECTURE CUT-Phi).
+- T36 609b9bac (+ b5fac397) docs/lit/T36-n5-reduction-map.md (owner-facing map: R47 -> R15/R80 -> SW-RETURN -> LEN-MONO -> COMPOSE
+  (l-si f372bc6b) -> MATCH-Phi -> OPEN NM*, NM*^U; VC-BOUND alternative).
+- T37 5d32f637 docs/lit/T37-exponential-families-classified.md (every parity/sink-MDP family is carry-type; 3-ingredient sequencing).
+  Its §3 CONJECTURE is DEAD (L-SI 390d2d8a §13; Dead ends).
+- T38 6e4d5655 docs/lit/T38-one-sink-n5.md (1-sink: one lambda-run, l = |P|, Even-side collapse). Lead deferred a short packet.
+- T39 14f1b4fa docs/lit/T39-tau-changes-per-lambda-run.md (tau-changes reduce to NM*^U via COMPOSE's tau-half; Lead: no packet change
+  needed, he adds the line in the RESULTS entry).
+IN FLIGHT: none.
+NEXT for the successor (Lead's instruction 12:14Z): when BOTH referees' §Cs on P-N5-MPGS are in, write docs/lit/P-N5-MPGS-fixes.md
+items with the referees' joint notes (append only; MPGS-fixes already has F1 (withdrawn) and F2 (Lead ruling 11:27Z: MPGS is the
+review object)). Include REFEREE-2 19's notes N-MP-1..5 on the identical (A) statements (docs/referee-2/R2-N5-MATCHPHI.md,
+referee-2 5ba3e21d): (1) the premise sentence says (MON) is used by Fact 1, but Fact 1 uses only DELTA; (2) the first term is sharp
+(longest MATCHED-only chain = K(K+1)/2, K <= 7); (3) Fact 1 needs the one-line additivity of weight; (4) §3's "max NM 31 on alt_all"
+misses gate_K64_n581 (NM 62), and "157 = 41 + 116" lacks a unit; (5) random games have NM <= 1. Never edit frozen packet text.
+NEEDS: none from the owner.
 
 ## Queue
 - Not opened (blocked or paywalled), needed only if a lane depends on them: Friedmann RAIRO 2011 (403); FHZ SODA/STOC 2011;
@@ -40,6 +64,14 @@ T37 5d32f637. Review object P-N5-MPGS a23179b0. Next: Lead's routing.
   HDJ12 CDC paper itself not on arXiv; its theorem was read in Hollanders' thesis (same authors' result).
 
 - T32 (2026-10-29): PDFs + pdftotext in this session's scratchpad dl32/ (not committed). www.ece.iastate.edu fails TLS through the proxy (curl 60 even with --cacert); web.archive.org resets.
+
+- 2026-10-29 session: PDFs of T32-T39 are in this session's scratchpad dl32/ dl34/ dl35/ dl37/ dl39/ (not committed, lost with the
+  container); every one has its arXiv id / URL and sha256 in "Sources opened", so a successor can re-fetch and re-check.
+- www.ece.iastate.edu fails TLS via the proxy; web.archive.org resets; Springer chapter PDFs come back empty; Zwick's tau.ac.il papers
+  dir has no Howard paper. arxiv.org and export.arxiv.org work (https).
+- The "file changed on disk" notices for my docs/lit files on 2026-10-29 were spurious: the working tree was clean and P-N5-MPGS.md
+  kept sha1 24913a7f (checked twice).
+- T34-gateshut-check.py imports L-COMP's hn.py / census.py and n5b.py read-only; runs from the repo root; n=5, 30 starts ~25 s.
 
 ## Sources opened
 | source (arXiv id / DOI) | result used (theorem / section) | opened on | note |
@@ -292,6 +324,9 @@ T37 5d32f637. Review object P-N5-MPGS a23179b0. Next: Lead's routing.
 | arXiv 2512.16684 v2 (Disser, Loho, Maat, Mosis) sha256 fa9b42e397e3e434… (re-opened) | abstract; Thm 4.3 p.13; Thm 5.1, 5.3 | 2026-10-29 | T37 |
 | arXiv 2509.16075 v2 (Maat) sha256 69706649fed1fac9… | abstract only (connection result, no lower-bound family) | 2026-10-29 | T37 |
 | arXiv 1106.0778 v2 (Friedmann), further | §6.3 cycle gate Table 3, Lemmas 6.5-6.6; §6.4 Table 4 p.16, Lemma 6.7 p.17; §6.5 phases, Lemma 6.11 p.21, 6.12 p.22 | 2026-10-29 | T37 |
+| arXiv 1008.0530 v1 (HMZ) sha256 f53a6b5127d95078… (re-opened) | Def. 2.6; Thm 6.5 p.11 | 2026-10-29 | T39 |
+| arXiv 1501.06484 v1 (Schewe, Trivedi, Varghese) sha256 7b68cc69de78bd90… | Alg. 2 + Condon sentence p.2; Alg. 3; §4.1 p.9 | 2026-10-29 | T39 |
+| arXiv 2606.29568 v1 (Mei, Sun, Ye) sha256 8bbb42f6834b6738… (re-opened) | Def. 7; Lemma 10, 11 p.15 | 2026-10-29 | T39 |
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
 - T17 process dead end: subagent GitHub MCP search outside the repo scope was a rule breach (see Things only I know); never repeat it.
@@ -301,6 +336,8 @@ T37 5d32f637. Review object P-N5-MPGS a23179b0. Next: Lead's routing.
 
 - T34 (2026-10-29): first form of GATE-SHUT without (H1)/(H2) is FALSE on H_n random starts (rand4, n = 3, it 0: cycle node e2 above gate 1, path sets equal, length decides); fixed by (H1), (H2); 247 reopenings, all outside the hypotheses.
 - T34: direct merge of Friedmann's gadgets with T33 §2.3 blocked by GATE-SHUT + S4a's choice by W (hiding void).
+
+- T37 §3 CONJECTURE (carries per vertex per lambda-run <= poly(n) x gate reopenings violating (H1)-(H3)): DEAD. Obstruction: carries occur in tau-quiet lambda-runs with no reopening and no open Odd gate on the vertex's plays. Instances: runquad_K8_m30_n192 (all 121 carrying pairs), s3quad_K3_m4 (all 67), dlsep_kill_n70 (L-SI 390d2d8a, N5-CHG-box28 §13).
 
 ## Corrections log
 - 2026-10-23 (T26): N8d-barrier.md §0 and R54 §0 put Lemma 4.75 / Thm 4.76 on p.187; opened PDF: printed p.186 (PDF p.202). Reported as caveat 4.
