@@ -201,7 +201,7 @@ if grep -q "^CHECK PASS" <<<"$w1" && grep -q "^CHECK PASS" <<<"$w2" && grep -q "
    grep -q "^E_ORB_V" <<<"$w4" && grep -q "^CHECK FAIL" <<<"$w4" && grep -q "^NT PASS" <<<"$w5" && \
    [ "$(sha1sum box54/out/switchbestexp_2.pg | cut -d' ' -f1)" = "b3d5bc293d1b76ce5c7ae8dadc4e9b0b51294484" ] && \
    [ "$(sha1sum ../red/n3/instances/n3cov_lean.pg | cut -d' ' -f1)" = "bcf8dbf64cba48123dc7da849b179793257e13e1" ] && \
-   [ "$(sha1sum ../../docs/new/P-N5-SF-box55.md | cut -d' ' -f1)" = "0de66a6cd0fb5b86967aad06ea6e2919431038da" ] && \
+   [ "$(sha1sum ../../docs/new/P-N5-SF-box55.md | cut -d' ' -f1)" = "dbc2345f62454d442e951de025b1b2aef8a35317" ] && \
    python3 -I box49/quotecheck3.py ../../docs/new/P-N5-SF-box55.md | grep -q "quotes=18 bad=0" && \
    ! python3 -I box49/quotecheck3.py ../../docs/new/P-N5-SF-box55.md --mut >/dev/null; then
   echo "box 55 P-N5-SF: pcheck PASS on n3all_maxph_0 (fallback), switchbestexp_2 (SBC 4), n3cov_lean (LAM 4, SBC 11), MUT bites; quotes PASS: PASS"

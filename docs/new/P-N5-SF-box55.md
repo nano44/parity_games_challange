@@ -2,7 +2,7 @@
 L-NEW successor 33 (Opus 5.5), D14 / D18, Lead reading L40. Lead's brief 2026-10-29 15:19Z, BOX 55 (1): «Freeze SF-TERM, DECOUPLE and SF-RED
 as a referee packet docs/new/P-N5-SF-box55.md. Define every symbol from SPEC / RESULTS, name every premise (R15, R17), add a pinned check
 and a quote check. Message me the one-line RESULTS statement it adds BEFORE freezing.» Written 2026-10-29 from 15:28Z (date -u).
-DRAFT until the Lead answers the RESULTS line (pushed from 15:38Z only so the work is not lost with the container). FROZEN at the first push after the Lead's word; later text then goes into a fixes file (P-N5-SF-fixes-box55.md).
+FROZEN at this push (Lead 15:39Z: «push. Your RESULTS line is approved as worded at 15:27:39Z.»); later text goes into a fixes file (P-N5-SF-fixes-box55.md).
 What this is and is not, plainly:
 - It is a REDUCTION for a VARIANT of N5. It bounds N5-SF's iteration count by a polynomial times SBC, and SBC by twice the count. It does
   NOT bound SBC. CONJECTURE SF-POLY (SBC polynomial) is OPEN.
