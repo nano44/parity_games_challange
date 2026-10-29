@@ -141,4 +141,4 @@ Five questions:
 | 2026-10-28 | REFEREE-2 | session_01WT4cukhJyjxHKaBJWikCkK (~560k; handover 864302d0) | session_01V5yGRZzoAVpZvqB1LedCVF (Opus, D15/L37) | 3 | none (measured 6726c376: 864302d0 = origin; CORE sha1 at three refs; names-only independence count) |
 | 2026-10-29 | L-RED | session_01YPuTduNL6AQ8rWgPcTtAp3 (~553k; handover b2c3d07c, final 8bf11e60) | session_01V5yGRZAX31ZbgX9Mz7tMR1 (Opus, D15/L37) | 2 | none (measured ebc3e9cb: merged trunk and 8bf11e60; R99 start-validation trap carried) |
 | 2026-10-29 | CHECKER | session_01V5yGRYMamtzAHMgh9kBGW5 (~650k; handover 47e1e989) | session_01V5yGRW1Yx6hqJpFkEW6Ps1 (Opus, D15/L37) | 3 | none (measured bab936df: no post-handover push; pins for C90 at four refs) |
-| 2026-10-29 | L-SI | session_01V5yGRWTEYFoWjhNJrADhYc (~450k; handover 4483cc8e) | session_01V5yGRa5b9XuhTGUqNBFGaE (Opus, D15/L37) | 2 | pending (handover check asked) |
+| 2026-10-29 | L-SI | session_01V5yGRWTEYFoWjhNJrADhYc (~450k; handover 4483cc8e) | session_01V5yGRa5b9XuhTGUqNBFGaE (Opus, D15/L37) | 2 | none (measured 29c0cf3f: stale clone caught; predecessor stamp estimated, noted) |
