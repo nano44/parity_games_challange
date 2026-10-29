@@ -421,3 +421,27 @@ Measured 2026-10-29 00:29Z (date -u).
 - Trap (R99): n5.py does not validate start entries, so comp54_n80 / n3cov_lean starts with missing edges gave counts on a different
   start. Check: write every pinned start with experiments/red/sel/fullstart2.py (drops invalid entries, full S3 base) and confirm with
   n5b.py --mode spec, which rejects invalid starts, before any count is reported.
+
+## Successor 25 (Opus 5.5, D15/D18; created 2026-10-29 ~09:59Z, date -u) handover check
+Measured 2026-10-29 10:00:55Z (date -u; fetch at 10:00:09Z).
+### 1. Branch, head, distance to trunk
+- claude/l-red, head before work 92754453 (= origin/claude/l-red, the predecessor's HANDOVER push; local was fast-forwarded from b2c3d07c).
+  Trunk origin/claude/vibrant-johnson-nxvvxo e3b435ab. Before merge: 0 ahead / 244 behind (`git rev-list --left-right --count`).
+  Merged trunk (merge commit 8e7e02ad, no conflicts): 1 ahead / 0 behind; `merge-base --is-ancestor trunk HEAD` true.
+### 2. Open work and the next step of each
+- Nothing in flight (predecessor HANDOVER "IN FLIGHT: nothing"; FB-LIN parked as CONJECTURE, data max 0.79n). Oink not built here
+  (tools/oink/build missing); scripts/setup_oink.sh started.
+- Lead 09:59Z box: (1) attack CONJECTURE SEG-COUNT (L-SI LAY §6) by construction: two deadlock steps in one REL segment charged to one
+  H-sink; seed seglast_kill_n29 (experiments/si/lay/instances/). Next: own REL/segment/sink checker on seglast_kill_n29, reproduce L-SI's
+  table, then build the two-deadlock gadget. (2) if (1) stalls: L-WAVE′ (gaps ≤ n − 1) by a vertex switching twice in one gap.
+### 3. docs/GAPS.md rows I own
+- G-NEST (major; L-RED), **open** (docs/GAPS.md line 9). Attacked, not owned: GAP-A, GAP-C (L-ALG, open); G-N5-TIME (L-NEW, open, line 11)
+  is what the SEG-COUNT attack targets.
+### 4. Owner rulings (verbatim), DECISIONS-INDEX status
+1. D18 (index line 32, **active**): "Focus on N5 and work toward proving it. Explore novel approaches ... Clearly distinguish proven results from conjectures and open problems."
+2. D15 (index line 26, **active**): "q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it"
+3. D1 (index line 5, **active**; D001 launch brief): "Failing any step makes it a dead end, recorded with the exact obstruction or counterexample."
+### 5. One trap and its check
+- Trap (R100-R104): every count-based climb fitness except the target itself got gamed (switch-all fallbacks, parallel waves, several gates
+  per stall). Check: keep the target quantity (here EXC = (b − a) − switching Even vertices, recomputed by my own checker) primary, and
+  inspect the trace of the best game before reporting a number.
