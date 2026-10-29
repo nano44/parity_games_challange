@@ -272,6 +272,9 @@ out=$(python3 -I ../n5-second/n5b.py seg/instances/s3quad_K3_m4.pg "$t/e.sol" --
 # R109 (successor 26): H_n with the top gate's exit removed; hnh1.py reproduces the pin; N5 from iota (+ S3 tau) makes 3n^2+13n-5 = 61 at n 3
 python3 -I seg/hnh1.py 3 topfix "$t/h3.pg" "$t/h3.start" > /dev/null; cmp -s "$t/h3.pg" seg/instances/hntop_n3.pg && cmp -s "$t/h3.start" seg/instances/hntop_n3.start || { echo "hnh1 drifted from hntop_n3"; exit 1; }
 out=$(python3 -I ../n5-second/n5b.py seg/instances/hntop_n3.pg "$t/h3.sol" --mode spec --start seg/instances/hntop_n3.start); [[ "$out" == "n5b iterations 61 fallbacks 0 "* ]] || { echo "hntop_n3 drifted: $out"; exit 1; }
+# R111 (successor 26): dualize.py reproduces the dual pin; N5 from S3 on G^d of s3quad_K3_m4 makes 21 iterations (mirror of R107)
+printf 'SIGMA0\nTAU0\n' > "$t/emp.start"; python3 -I ctl/dualize.py seg/instances/s3quad_K3_m4.pg "$t/emp.start" "$t/d.pg" "$t/d.start"; cmp -s "$t/d.pg" ctl/instances/d_s3quad_K3_m4.pg || { echo "dualize drifted"; exit 1; }
+out=$(python3 -I ../n5-second/n5b.py ctl/instances/d_s3quad_K3_m4.pg "$t/d.sol" --mode spec); [[ "$out" == "n5b iterations 21 fallbacks 0 "* ]] || { echo "d_s3quad_K3_m4 drifted: $out"; exit 1; }
 TMPDIR="$t" python3 correspond.py 2 3 4 5 6 > "$t/corr.log" || { cat "$t/corr.log"; exit 1; }
 python3 xcheck.py --games 150 --nmax 7 --seed 7 > "$t/x.log" || { cat "$t/x.log"; exit 1; }
 echo "red check: r2_check PASS (R11), bsolo 4 = 4 tangles/7 iterations (R10); dtl_flipflop F8 = 36/1/5 (R9), Claim P/Q 0 violations; zadeh_lb N2 = 43 (no fixed order, R7); fhz_padded 2 S7 = 16 (R5 kill);  friedmann_Gn 2 S7 = 15; fhz lockstep3/relation/export OK; gated_bland 6 = 63 MSF iterations (regions = Zielonka, strategies verified); Claim F instances; MSF == Bland N<=6; $(tail -1 "$t/x.log")"

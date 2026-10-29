@@ -1,0 +1,14 @@
+SKIPPED_input=1 frozen2=706 phases=345
+columns: L, game, i, j, FB, LWCH, SBCH', SBCH'', DEL, NFW'', LFW'', WCH'', n
+TOP (291, 'experiments/si/runlin/instances/runfam_K100.pg', 1, 292, 0, 0, 9, 9, 0, 7, 123, 123, 139)
+TOP (211, 'experiments/si/runlin/instances/runfam_K60.pg', 1, 212, 0, 0, 9, 9, 0, 7, 83, 83, 99)
+TOP (171, 'experiments/si/runlin/instances/runfam_K40.pg', 1, 172, 0, 0, 9, 9, 0, 7, 63, 63, 79)
+max SBCH'/n = 1.805 (121, 'experiments/si/root/instances/l121reader_n41.pg', 1, 122, 8, 0, 74, 30, 0, 25, 6, 6, 41)
+max SBCH''/n = 1.375 (55, 'experiments/si/orlens/instances/lev_l_x.pg', 1, 56, 3, 0, 49, 44, 0, 5, 4, 4, 32)
+max DEL/n = 0.115 (46, 'experiments/si/root/out/sw_lend2_s6.pg', 1, 47, 6, 1, 8, 8, 3, 12, 6, 6, 26)
+max LFW''/n = 0.885 (291, 'experiments/si/runlin/instances/runfam_K100.pg', 1, 292, 0, 0, 9, 9, 0, 7, 123, 123, 139)
+max WCH''/n = 0.885 (291, 'experiments/si/runlin/instances/runfam_K100.pg', 1, 292, 0, 0, 9, 9, 0, 7, 123, 123, 139)
+ARENA PASS
+SPLIT PASS
+FWBF2 PASS
+FWLEN2 PASS
