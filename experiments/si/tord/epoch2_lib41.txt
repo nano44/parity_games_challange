@@ -1,0 +1,9 @@
+checked_TD_epochs=1611 ep_TD=1611 ep_W>=29 ep_X>=117 ep_notTD=147 ep_same=1612 fw1=665 fw1_diff=146
+maxima: {'pw': 25, 'epochs': 26, 'epochs_diff': 1, 'diff_wch': (0.8064516129032258, 25, '../experiments/red/xing/instances/kw25_n32.pg', 0, 25, 28, 32), 'r': (1.0, 4, 'W>', False, '../experiments/red/xing/instances/obr_eq_n24.pg', 1, 5, 1, 5, 4, 24), 'epochs_same': 26}
+PMON1 PASS
+PMON2 PASS
+HLP PASS
+LMON PASS
+CNT PASS
+TRAPFIX PASS
+FWD1 PASS
