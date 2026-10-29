@@ -1,0 +1,7 @@
+SIL2=12 fw=864
+maxima: {'silrun': (8, '../experiments/red/xing/instances/u23sw64_n32.pg', 1, 9, 1, 32), 'tc/wch': (1.0, 11, 11, '../experiments/n5-exhaustive/instances/b6_xl2_n32.pg', 4, 15, 32)}
+EXAMPLE ('SIL2', '../docs/referee/R-N5-L2/droplen_cex_n12.pg', 0, 4, 3, 0, 12)
+EXAMPLE ('SIL2', '../experiments/new/box29/instances/u1_n32.pg', 0, 12, 3, 1, 32)
+EXAMPLE ('SIL2', '../experiments/new/box31/instances/nr_u23_n32.pg', 1, 8, 7, 1, 32)
+EXAMPLE ('SIL2', '../experiments/new/box31/instances/u1flat_best_n32.pg', 0, 5, 5, 1, 32)
+EXAMPLE ('SIL2', '../experiments/new/box31/instances/u1t_cex2_n32.pg', 0, 5, 5, 1, 32)

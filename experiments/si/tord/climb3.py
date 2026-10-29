@@ -42,7 +42,7 @@ def mut(I):
     return (G, rho, pp, th, t1, t2)
 def enc(I): G, rho, pp, th, t1, t2 = I; return json.dumps([G, rho, pp, th, [sorted(t1[0]), t1[1]], [sorted(t2[0]), t2[1]]])
 def score(I):
-    w, s, tc, why = run(*I); return (w, s), why, tc
+    w, s, tc, why = run(*I); return ((tc, w) if os.environ.get("BYTC") else (w, s)), why, tc
 cur = None
 while cur is None:
     I = rand(); cur = (score(I)[0], I)

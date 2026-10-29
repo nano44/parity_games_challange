@@ -1,0 +1,5 @@
+EN2_V=2 EX2_V=2 RE_V=3 fw_same=519 fw_same_tc>0=305
+maxima: {'tc': (25, '../experiments/red/xing/instances/x32_waves48.pg', 4, 29, 48), 'maxent': (2, '../experiments/red/xing/instances/x31_re24.pg', 1, 5, 24), 'totcross': (66, '../experiments/red/xing/instances/x31_re24.pg', 1, 5, 24), 'maxext': (2, '../experiments/red/xing/instances/x31_re24.pg', 1, 5, 24)}
+EXAMPLE ('RE', '../experiments/red/xing/instances/x31_re24.pg', 1, 5, [0, 1, 2, 3], [('out', 2), ('in', 3), ('out', 4), ('in', 5)], 24)
+EXAMPLE ('RE', '../experiments/red/xing/instances/x31_ru24.pg', 1, 5, [0, 1, 2, 3], [('out', 2), ('in', 3)], 24)
+EXAMPLE ('RE', '../experiments/si/xing/instances/zcl_rx_n48.pg', 19, 25, [27, 35, 20], [('out', 20), ('in', 24)], 48)

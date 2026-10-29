@@ -155,7 +155,7 @@ the restriction to U is switch-best on G_τ[U], where every switch raises W at t
   W(ρx) ◁ pre_z ⊕ α₂): Case A in the W frame; (F2) a trapped x keeps (or takes) the gate although an arena edge to U is Ξ-better
   (optimism trap, box 29 §5; s_elim24_final x = 3): Case B in the Ξ frame. Each frame's Lemma P holds on the other frame's failure set.
 - OPEN: |D| ≥ 2 (several gates with different tails: trapped comparisons are not pure prefix comparisons); the non-TD epochs (319 of 4,021).
-- Next (Lead's order): the c₁ = c₂ epoch count; then FW-D for |D| ≥ 2 via the gate classes of §5.
+- Next (Lead's order): the c₁ = c₂ epoch count (§10); then FW-D for |D| ≥ 2 via the gate classes of §5.
 
 ## DONE / FINDINGS / NEEDS
 - DONE: this note; tools experiments/si/tord/ (epoch2.py, abs2.py, abs3.py, climb.py, climb3.py, search.py, show.py); data
@@ -166,3 +166,38 @@ the restriction to U is switch-best on G_τ[U], where every switch raises W at t
   c₁ ≠ c₂, TD ⇒ WCH ≤ |U| − 1 + s² < n². (4) DATA: 0 violations; prefix W-changes ≤ s per epoch everywhere; abstract climbs stop at n_abs.
   (5) OPEN: epochs for c₁ = c₂ (obstruction F1/F2), |D| ≥ 2, non-TD.
 - NEEDS: none from the owner.
+
+## 10. The c₁ = c₂ case: trap changes (Lead's second item). Written 2026-10-29T14:3xZ by date -u (see commit)
+Tools: experiments/si/tord/cross.py (crossings per frozen W-phase), tord/silent.py (W-silent transitions), tord/xclimb.py (kill climbs);
+outputs tord/cross_*.txt, tord/silent_*.txt, tord/out/ (climbs). Notation as §0; here c₁ = c₂ = c, so ≤₁ = ≤₂ on prefixes and the frames
+differ only in the gate's tails: α₁ := Ξ(o) (pessimistic), α₂ := W(o) (optimistic), α₂ ⊵ α₁ (Lemma XW), same cycle node c.
+- Remark (one frame). If α₂ = α₁ then Ξ = W at every vertex and the frozen W-phase is switch-best on G_τ in ONE frame: FW-D0's argument
+  (R17 (b), (c)) gives ≤ n − 1 W-changes. So below α₂ ▷ α₁ («strict gap»); then S = {v : W(v) ▷ Ξ(v)} (play form = value form).
+- Lemma SIL-EXIT (PROVED, lane). In a |D| = 1 frozen W-phase with c₁ = c₂, strict gap and TD at states k and k + 1: if the transition
+  k → k + 1 is W-silent (W_{k+1} = W_k at every vertex), then no vertex enters S, and every switched vertex either leaves S or is its own
+  cycle node (a flat cycle-closing switch, R17 (b) case B2). Proof. W is unchanged on U, so Ξ = W is unchanged on U, and α₁ = o ⊕ Ξ(σ̄(o)),
+  α₂ = o ⊕ W(τ(o)) are unchanged (TD). A switched x rises strictly in Ξ unless it closes a flat cycle at itself (the switch (x, z) ∈ Iσ_k and
+  Ξ_{k+1}(z) ⊵ Ξ_k(z), as in R17). x ∈ U_k ∩ U_{k+1}: Ξ = W at x, so W rises. x ∈ S_k ∩ S_{k+1}: Ξ = pre ⊕ α₁ with α₁ fixed, so pre rises in ≤₁
+  = ≤₂, so W = pre ⊕ α₂ rises. x ∈ U_k ∩ S_{k+1}: W_{k+1}(x) = pre′ ⊕ α₂ ▷ pre′ ⊕ α₁ = Ξ_{k+1}(x) ⊵ Ξ_k(x) = W_k(x). All three contradict
+  W-silence, so x ∈ S_k ∖ S_{k+1}. A non-switched vertex v entering S would have a first switched vertex w on its old play with w entering
+  S (v's new play is its old play up to w, then w's new play). □ So in this case a phase's W-silent transitions only shrink S.
+- DATA (silent.py, the three corpora): NO W-silent transition occurs in any |D| = 1, c₁ = c₂ frozen W-phase (SIL-EXIT is vacuous there:
+  every transition of those frozen W-phases changes W). Two or more consecutive W-silent transitions occur in 23 frozen W-phases (9 alt_all,
+  12 lib41, 2 experiments/si), up to 8 in a row (red/xing/instances/u23sw64_n32, |D| = 1, c₁ ≠ c₂: X> case, Mid rises at equal length, as
+  TORD's READING says), so «W-silent transitions are isolated» is not a general fact (it was a candidate here, not a published claim).
+- DATA (cross.py): |D| = 1, c₁ = c₂ frozen W-phases: 445 / 519 / 279 (alt_all pinned / lib41 / experiments/si), of which 257 / 305 / 150
+  change S at least once. Trap-changing transitions TC per frozen W-phase ≤ 33 (red/so/instances/nleq33_n48, n 48: 0.70(n − 1)), 25
+  (red/xing/instances/x32_waves48, n 48), 19 (si/riselast/instances/rl_b, n 32). Entries per vertex ≤ 2 and exits per vertex ≤ 2 everywhere;
+  a vertex that leaves and re-enters occurs in 3 games (red/xing/instances/x31_re24: vertices 0-3 out at t = 2, in at 3, out at 4, in at
+  5, gap = one length unit at the gate: α₁ = (∅, 2), α₂ = (∅, 1), c = 20 even; x31_ru24; si/xing/instances/zcl_rx_n48). TC ≤ WCH + 1
+  in every such frozen W-phase (silent.py; max TC/WCH = 1.0, n5-exhaustive/instances/b6_xl2_n32 11/11).
+- CONJECTURE TRAP-LIN: a |D| = 1, c₁ = c₂ frozen W-phase has at most n − 1 trap-changing transitions. With TORD (i) and EPOCH-U per epoch,
+  TRAP-LIN would give WCH ≤ n(n − 1) for every |D| = 1 TD frozen W-phase (polynomial FW-BF for |D| = 1). Kill search: §10.1.
+- READING (why a proof is not yet in hand). A re-entry needs the vertex's prefix to beat its previous prefix by the gap (re-entry at p′ after
+  an exit at p: p′ ⊕ α₁ ⊵ Ξ ⊵ p ⊕ α₂), so each exit-entry round is a strict prefix improvement «by at least the gap». Bounding the number of
+  such improvements per vertex needs a Lemma P across epochs, which fails in the two ways F1/F2 of §9.
+### 10.1 Kill search for TRAP-LIN / X2 (tord/xclimb.py; logs tord/out/; RUNNING at this commit, final numbers in a later commit)
+Score: max over |D| = 1, c₁ = c₂ frozen W-phases of TC/(n − 1) (kill: TC > n − 1, or a vertex entering S 3 times = CONJECTURE X2, or
+FW-BF). Seeds nleq33_n48 (0.702), x32_waves48 (0.531), x31_re24 (0.173, 2 entries per vertex; also with XCR=1, which scores crossings).
+The long trap-change runs of the corpora are MONOTONE WAVES (nleq33_n48: 33 transitions, each removes one vertex from S; x32_waves48: 25
+transitions, each adds one), so TC ≤ n there for a trivial reason; non-monotone S occurs only in short phases (x31_re24: 4 transitions).
