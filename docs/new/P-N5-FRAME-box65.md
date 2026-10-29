@@ -2,7 +2,7 @@
 L-NEW successor 35 (Opus 5.5), D14 / D18, Lead reading L40. Lead 2026-10-29 20:22Z: «freeze the packet: GP*-RUN, STRETCH-RED, ODD-FREEZE,
 ENT-FREEZE, FRAME-τ, COMPOSE-FREEZE, plus (a) if closed». (a) is closed (SUCC-MON, LATE-RISE, R*-RISE). Sources: docs/new/N5-FREEZE-box63.md
 §1, N5-DW-box62.md §5.2, N5-STRETCH-box64.md §1.6-§1.8, §3, §5.4 (working notes; THIS packet governs where they differ).
-Status: DRAFT, NOT FROZEN (RESULTS line sent to the Lead first, 2026-10-29 ~20:28Z). REDUCTION only. Nothing here bounds N5's iteration count; G-N5-TIME stays OPEN. Not a TARGET.md claim, not M3, not a step-4 pass.
+Status: FROZEN 2026-10-29 (Lead 20:47Z: «freeze. Your RESULTS line (P-N5-FRAME-box65-line.txt, sha1 acf3234f…) is APPROVED as worded.»). REDUCTION only. Nothing here bounds N5's iteration count; G-N5-TIME stays OPEN. Not a TARGET.md claim, not M3, not a step-4 pass.
 Quote base: SPEC docs/new/N5-ssi-global.md and docs/RESULTS.md at l-new 9905dac3 (SPEC lines 28-57 unchanged since 2a435f8f4, R88's base).
 
 ## 0. What to sign
