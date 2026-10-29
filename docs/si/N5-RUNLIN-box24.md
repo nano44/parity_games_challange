@@ -139,6 +139,11 @@ far end. I worked the design out on paper; this section records what each part n
   one-vertex Odd gate whose options are corridor ends restarts the wave at every σ̄ change (§1). Two such waves over the same long segment
   already give ≈ 2n, and a third partial one gives the excess. A bound of the form c·n needs a bound on the number of LONG pieces per run,
   not on the per-piece length.
+- REFEREE's independent reproduction (docs/referee/R-N5-RUNLIN-kill.md, referee c609f779, own engine; relayed by the Lead 00:36Z): runfam_K10
+  99 > 98, runfam_K40 171 = 2n + 13, Oink zlk and tl agree; the obstruction above judged FAIR, with two precisions (adopted):
+  - (a) gate 5 has 6 options; only 28 is a corridor end. The other end, 25, is one Even step from options 2 and 9.
+  - (b) waves also run along other Even chains (e.g. t = 10-21: 26 → 3 → 36 → … → 21); the corridor 28-34-37 … 48-25 is walked FOUR times, in
+    alternating directions.
 - What survives: every count here is linear in n (run ≤ 2.17n on the family; the family's run − 2n is constant from K = 34 on). So the kill
   is of the constant 2, not of linearity. CONJECTURE RUN-LIN′ (weaker, open): every fallback-free run has O(n) transitions. No constant is
   proposed; whether a third and fourth long wave can be made to grow with n is the open design question (step 2 below).
