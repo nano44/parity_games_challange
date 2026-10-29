@@ -142,6 +142,9 @@ far end. I worked the design out on paper; this section records what each part n
 - What survives: every count here is linear in n (run ≤ 2.17n on the family; the family's run − 2n is constant from K = 34 on). So the kill
   is of the constant 2, not of linearity. CONJECTURE RUN-LIN′ (weaker, open): every fallback-free run has O(n) transitions. No constant is
   proposed; whether a third and fourth long wave can be made to grow with n is the open design question (step 2 below).
+- Third wave (DATA, written 00:3xZ): from runfam_K40, subdividing next to vertex 28 instead (chain25.py with U = 28, log out/chain28.log)
+  again alternates +3 / +2 for 30 steps: 251 at n = 110 (run − 2n = +31, 2.28n), still rising at the stop. So stretching both corridor
+  ends in turn keeps a slope of about 2.5 per vertex over the sizes tried; whether it stays above 2 indefinitely is not shown.
 - Pins: experiments/si/runlin/instances/runfam_base_n39 (.pg 6b6fc369…, .start 24b9c519…), runfam_K10 (.pg faf218f1…, .start 56e4dec6…),
   runfam_K40 (.pg 287a185d…, .start bcbfeed3…); full sha1 in §6.
 
