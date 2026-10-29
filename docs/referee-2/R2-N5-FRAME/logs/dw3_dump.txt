@@ -1,0 +1,51 @@
+WRUN new/box59/out/dw_3.pg#0 [0,9] len 9 WCH 9 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box59/out/dw_3.pg#0 [10,10] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box59/out/dw_3.pg#0 [11,11] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box59/out/dw_3.pg#0 [12,12] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+STRETCH new/box59/out/dw_3.pg#0 [0,12] |S| 12 fb 0 Q 3 R*_S 0 FL 0 rho_S 15
+WRUN new/box59/out/dw_3.pg#0 [13,13] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+STRETCH new/box59/out/dw_3.pg#0 [13,13] |S| 0 fb 0 Q 0 R*_S 0 FL 0 rho_S 0
+WRUN new/box59/out/dw_3.pg#0 [14,14] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+STRETCH new/box59/out/dw_3.pg#0 [14,14] |S| 0 fb 0 Q 0 R*_S 0 FL 0 rho_S 0
+WRUN new/box59/out/dw_3.pg#0 [15,41] len 26 WCH 26 RT 4 late 11 sbar/lamXi-cuts-inside 3
+STRETCH new/box59/out/dw_3.pg#0 [15,41] |S| 26 fb 0 Q 0 R*_S 4 FL 0 rho_S 11
+MODE files /tmp/claude-0/-home-user-parity-games-challange/dcf76fbb-3694-56a4-b493-c44b27344cc8/scratchpad/dw3.lst 1 experiments/ PCAP 200 NODECAP 20000 OFCAP 400 OFNODE 20000 GPMAX 60 MAXT 3000
+CF_edges: 132
+CFa_checks: 129
+CONS_checks: 609
+DORD_pairs: 493340
+EF_checks: 79
+FB56_checks: 4
+FT2_checks: 1230
+FWR_checks: 7
+GPS_paths: 202398
+GPS_paths_notfrozen: 193645
+LR_checks: 376
+OF_edges: 126
+OF_hits: 82
+OF_truncated_unknown: 2
+OF_unprot_in_It: 15
+RR_checks: 10
+SM_checks: 2337
+WM_checks: 38
+X_SM_W: 46
+X_WRUN_notfrozen: 1
+lamU_runs: 4
+late_adoptions: 11
+runs: 1
+stretches: 4
+transitions: 41
+wruns: 7
+max maxRT: 4
+max maxWCH: 26
+max max_FL: 0
+max max_NMU_unp: 0
+max max_PCHU_unp: 0
+max max_Q: 3
+max max_RS: 4
+max max_fbS: 0
+max max_stretch: 26
+max max_tau_changes: 3
+max max_unp_frac_pct: 9
+max max_wrun: 26
+RESULT PASS violations 0

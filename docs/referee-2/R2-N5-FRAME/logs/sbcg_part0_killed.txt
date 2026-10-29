@@ -1,0 +1,5 @@
+DONE-FILE new/box59/out/fc_3.pg
+DONE-FILE new/box59/out/fc_4.pg
+DONE-FILE new/box59/out/fc_5.pg
+DONE-FILE new/box59/out/fc_6.pg
+DONE-FILE new/box59/out/fc_7.pg

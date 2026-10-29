@@ -1,0 +1,614 @@
+WRUN new/box64/mkr/mk_4_16.pg#start [0,0] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [1,1] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [2,2] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [3,3] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [4,4] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [5,5] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [6,6] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [7,7] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [8,8] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [9,9] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [10,10] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [11,11] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [12,12] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [13,13] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [14,14] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [15,15] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [16,16] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [17,17] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [18,18] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [19,19] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [20,20] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [21,21] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [22,22] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [23,23] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [24,24] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [25,25] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [26,26] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [27,27] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [28,28] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [29,29] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [30,30] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [31,31] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [32,32] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [33,33] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [34,34] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [35,35] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [36,36] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [37,37] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [38,38] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [39,39] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [40,40] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [41,41] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [42,42] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [43,43] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [44,44] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [45,45] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [46,46] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [47,47] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [48,48] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [49,49] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [50,50] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [51,51] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [52,52] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [53,53] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [54,54] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [55,55] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [56,56] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [57,57] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [58,58] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [59,59] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [60,60] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [61,61] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [62,62] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [63,63] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [64,64] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [65,65] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [66,66] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [67,67] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [68,68] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [69,69] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [70,70] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [71,71] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [72,72] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [73,73] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [74,74] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [75,75] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#start [76,76] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+STRETCH new/box64/mkr/mk_4_16.pg#start [0,76] |S| 76 fb 0 Q 76 R*_S 0 FL 0 rho_S 49
+WRUN new/box64/mkr/mk_4_16.pg#0 [0,0] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#0 [1,1] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+STRETCH new/box64/mkr/mk_4_16.pg#0 [0,1] |S| 1 fb 0 Q 1 R*_S 0 FL 0 rho_S 0
+WRUN new/box64/mkr/mk_4_16.pg#0 [2,2] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+STRETCH new/box64/mkr/mk_4_16.pg#0 [2,2] |S| 0 fb 0 Q 0 R*_S 0 FL 0 rho_S 0
+WRUN new/box64/mkr/mk_4_16.pg#0 [3,3] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+STRETCH new/box64/mkr/mk_4_16.pg#0 [3,3] |S| 0 fb 0 Q 0 R*_S 0 FL 0 rho_S 0
+WRUN new/box64/mkr/mk_4_16.pg#1 [0,0] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+STRETCH new/box64/mkr/mk_4_16.pg#1 [0,0] |S| 0 fb 0 Q 0 R*_S 0 FL 0 rho_S 0
+WRUN new/box64/mkr/mk_4_16.pg#1 [1,1] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_4_16.pg#1 [2,2] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+STRETCH new/box64/mkr/mk_4_16.pg#1 [1,2] |S| 1 fb 0 Q 1 R*_S 0 FL 0 rho_S 0
+WRUN new/box64/mkr/mk_4_16.pg#1 [3,3] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+STRETCH new/box64/mkr/mk_4_16.pg#1 [3,3] |S| 0 fb 0 Q 0 R*_S 0 FL 0 rho_S 0
+WRUN new/box64/mkr/mk_4_16.pg#1 [4,4] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+STRETCH new/box64/mkr/mk_4_16.pg#1 [4,4] |S| 0 fb 0 Q 0 R*_S 0 FL 0 rho_S 0
+DONE-FILE new/box64/mkr/mk_4_16.pg
+WRUN new/box64/mkr/mk_6_24.pg#start [0,0] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [1,1] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [2,2] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [3,3] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [4,4] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [5,5] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [6,6] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [7,7] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [8,8] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [9,9] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [10,10] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [11,11] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [12,12] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [13,13] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [14,14] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [15,15] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [16,16] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [17,17] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [18,18] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [19,19] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [20,20] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [21,21] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [22,22] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [23,23] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [24,24] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [25,25] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [26,26] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [27,27] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [28,28] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [29,29] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [30,30] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [31,31] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [32,32] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [33,33] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [34,34] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [35,35] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [36,36] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [37,37] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [38,38] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [39,39] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [40,40] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [41,41] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [42,42] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [43,43] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [44,44] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [45,45] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [46,46] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [47,47] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [48,48] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [49,49] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [50,50] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [51,51] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [52,52] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [53,53] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [54,54] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [55,55] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [56,56] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [57,57] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [58,58] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [59,59] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [60,60] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [61,61] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [62,62] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [63,63] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [64,64] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [65,65] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [66,66] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [67,67] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [68,68] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [69,69] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [70,70] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [71,71] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [72,72] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [73,73] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [74,74] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [75,75] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [76,76] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [77,77] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [78,78] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [79,79] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [80,80] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [81,81] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [82,82] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [83,83] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [84,84] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [85,85] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [86,86] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [87,87] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [88,88] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [89,89] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [90,90] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [91,91] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [92,92] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [93,93] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [94,94] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [95,95] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [96,96] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [97,97] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [98,98] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [99,99] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [100,100] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [101,101] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [102,102] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [103,103] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [104,104] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [105,105] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [106,106] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [107,107] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [108,108] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [109,109] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [110,110] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [111,111] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [112,112] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [113,113] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [114,114] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [115,115] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [116,116] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [117,117] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [118,118] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [119,119] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [120,120] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [121,121] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [122,122] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [123,123] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [124,124] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [125,125] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [126,126] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [127,127] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [128,128] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [129,129] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [130,130] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [131,131] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [132,132] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [133,133] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [134,134] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [135,135] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [136,136] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [137,137] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [138,138] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [139,139] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [140,140] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [141,141] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [142,142] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [143,143] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [144,144] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [145,145] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [146,146] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [147,147] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [148,148] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [149,149] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [150,150] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [151,151] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [152,152] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [153,153] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [154,154] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [155,155] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [156,156] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [157,157] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [158,158] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [159,159] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [160,160] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [161,161] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#start [162,162] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+STRETCH new/box64/mkr/mk_6_24.pg#start [0,162] |S| 162 fb 0 Q 162 R*_S 0 FL 0 rho_S 121
+WRUN new/box64/mkr/mk_6_24.pg#0 [0,0] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#0 [1,1] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+STRETCH new/box64/mkr/mk_6_24.pg#0 [0,1] |S| 1 fb 0 Q 1 R*_S 0 FL 0 rho_S 0
+WRUN new/box64/mkr/mk_6_24.pg#0 [2,2] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+STRETCH new/box64/mkr/mk_6_24.pg#0 [2,2] |S| 0 fb 0 Q 0 R*_S 0 FL 0 rho_S 0
+WRUN new/box64/mkr/mk_6_24.pg#0 [3,3] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+STRETCH new/box64/mkr/mk_6_24.pg#0 [3,3] |S| 0 fb 0 Q 0 R*_S 0 FL 0 rho_S 0
+WRUN new/box64/mkr/mk_6_24.pg#1 [0,0] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+STRETCH new/box64/mkr/mk_6_24.pg#1 [0,0] |S| 0 fb 0 Q 0 R*_S 0 FL 0 rho_S 0
+WRUN new/box64/mkr/mk_6_24.pg#1 [1,1] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_6_24.pg#1 [2,2] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+STRETCH new/box64/mkr/mk_6_24.pg#1 [1,2] |S| 1 fb 0 Q 1 R*_S 0 FL 0 rho_S 0
+WRUN new/box64/mkr/mk_6_24.pg#1 [3,3] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+STRETCH new/box64/mkr/mk_6_24.pg#1 [3,3] |S| 0 fb 0 Q 0 R*_S 0 FL 0 rho_S 0
+WRUN new/box64/mkr/mk_6_24.pg#1 [4,4] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+STRETCH new/box64/mkr/mk_6_24.pg#1 [4,4] |S| 0 fb 0 Q 0 R*_S 0 FL 0 rho_S 0
+DONE-FILE new/box64/mkr/mk_6_24.pg
+WRUN new/box64/mkr/mk_8_32.pg#start [0,0] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [1,1] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [2,2] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [3,3] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [4,4] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [5,5] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [6,6] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [7,7] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [8,8] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [9,9] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [10,10] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [11,11] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [12,12] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [13,13] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [14,14] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [15,15] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [16,16] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [17,17] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [18,18] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [19,19] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [20,20] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [21,21] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [22,22] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [23,23] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [24,24] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [25,25] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [26,26] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [27,27] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [28,28] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [29,29] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [30,30] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [31,31] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [32,32] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [33,33] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [34,34] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [35,35] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [36,36] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [37,37] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [38,38] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [39,39] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [40,40] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [41,41] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [42,42] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [43,43] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [44,44] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [45,45] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [46,46] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [47,47] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [48,48] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [49,49] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [50,50] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [51,51] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [52,52] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [53,53] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [54,54] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [55,55] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [56,56] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [57,57] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [58,58] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [59,59] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [60,60] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [61,61] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [62,62] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [63,63] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [64,64] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [65,65] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [66,66] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [67,67] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [68,68] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [69,69] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [70,70] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [71,71] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [72,72] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [73,73] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [74,74] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [75,75] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [76,76] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [77,77] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [78,78] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [79,79] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [80,80] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [81,81] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [82,82] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [83,83] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [84,84] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [85,85] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [86,86] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [87,87] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [88,88] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [89,89] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [90,90] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [91,91] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [92,92] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [93,93] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [94,94] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [95,95] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [96,96] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [97,97] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [98,98] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [99,99] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [100,100] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [101,101] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [102,102] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [103,103] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [104,104] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [105,105] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [106,106] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [107,107] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [108,108] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [109,109] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [110,110] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [111,111] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [112,112] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [113,113] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [114,114] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [115,115] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [116,116] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [117,117] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [118,118] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [119,119] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [120,120] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [121,121] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [122,122] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [123,123] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [124,124] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [125,125] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [126,126] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [127,127] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [128,128] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [129,129] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [130,130] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [131,131] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [132,132] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [133,133] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [134,134] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [135,135] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [136,136] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [137,137] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [138,138] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [139,139] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [140,140] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [141,141] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [142,142] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [143,143] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [144,144] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [145,145] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [146,146] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [147,147] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [148,148] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [149,149] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [150,150] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [151,151] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [152,152] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [153,153] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [154,154] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [155,155] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [156,156] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [157,157] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [158,158] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [159,159] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [160,160] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [161,161] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [162,162] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [163,163] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [164,164] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [165,165] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [166,166] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [167,167] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [168,168] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [169,169] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [170,170] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [171,171] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [172,172] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [173,173] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [174,174] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [175,175] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [176,176] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [177,177] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [178,178] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [179,179] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [180,180] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [181,181] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [182,182] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [183,183] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [184,184] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [185,185] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [186,186] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [187,187] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [188,188] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [189,189] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [190,190] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [191,191] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [192,192] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [193,193] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [194,194] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [195,195] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [196,196] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [197,197] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [198,198] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [199,199] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [200,200] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [201,201] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [202,202] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [203,203] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [204,204] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [205,205] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [206,206] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [207,207] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [208,208] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [209,209] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [210,210] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [211,211] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [212,212] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [213,213] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [214,214] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [215,215] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [216,216] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [217,217] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [218,218] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [219,219] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [220,220] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [221,221] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [222,222] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [223,223] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [224,224] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [225,225] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [226,226] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [227,227] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [228,228] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [229,229] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [230,230] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [231,231] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [232,232] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [233,233] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [234,234] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [235,235] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [236,236] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [237,237] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [238,238] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [239,239] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [240,240] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [241,241] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [242,242] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [243,243] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [244,244] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [245,245] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [246,246] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [247,247] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [248,248] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [249,249] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [250,250] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [251,251] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [252,252] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [253,253] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [254,254] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [255,255] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [256,256] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [257,257] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [258,258] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [259,259] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [260,260] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [261,261] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [262,262] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [263,263] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [264,264] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [265,265] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [266,266] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [267,267] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [268,268] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [269,269] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [270,270] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [271,271] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [272,272] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [273,273] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [274,274] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [275,275] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [276,276] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [277,277] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [278,278] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [279,279] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#start [280,280] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+STRETCH new/box64/mkr/mk_8_32.pg#start [0,280] |S| 280 fb 0 Q 280 R*_S 0 FL 0 rho_S 225
+WRUN new/box64/mkr/mk_8_32.pg#0 [0,0] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#0 [1,1] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+STRETCH new/box64/mkr/mk_8_32.pg#0 [0,1] |S| 1 fb 0 Q 1 R*_S 0 FL 0 rho_S 0
+WRUN new/box64/mkr/mk_8_32.pg#0 [2,2] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+STRETCH new/box64/mkr/mk_8_32.pg#0 [2,2] |S| 0 fb 0 Q 0 R*_S 0 FL 0 rho_S 0
+WRUN new/box64/mkr/mk_8_32.pg#0 [3,3] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+STRETCH new/box64/mkr/mk_8_32.pg#0 [3,3] |S| 0 fb 0 Q 0 R*_S 0 FL 0 rho_S 0
+WRUN new/box64/mkr/mk_8_32.pg#1 [0,0] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+STRETCH new/box64/mkr/mk_8_32.pg#1 [0,0] |S| 0 fb 0 Q 0 R*_S 0 FL 0 rho_S 0
+WRUN new/box64/mkr/mk_8_32.pg#1 [1,1] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#1 [2,2] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#1 [3,3] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+WRUN new/box64/mkr/mk_8_32.pg#1 [4,4] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+STRETCH new/box64/mkr/mk_8_32.pg#1 [1,4] |S| 3 fb 1 Q 3 R*_S 0 FL 0 rho_S 32
+WRUN new/box64/mkr/mk_8_32.pg#1 [5,5] len 0 WCH 0 RT 0 late 0 sbar/lamXi-cuts-inside 0
+STRETCH new/box64/mkr/mk_8_32.pg#1 [5,5] |S| 0 fb 0 Q 0 R*_S 0 FL 0 rho_S 0
+DONE-FILE new/box64/mkr/mk_8_32.pg
+MODE files /tmp/claude-0/-home-user-parity-games-challange/dcf76fbb-3694-56a4-b493-c44b27344cc8/scratchpad/mkr_small.lst 2 experiments/ PCAP 200 NODECAP 20000 OFCAP 400 OFNODE 20000 GPMAX 60 MAXT 3000
+CF_edges: 3038
+CFa_checks: 2831
+CONS_checks: 92190
+DORD_pairs: 2743253
+DORD_sampled_states: 545
+EF_checks: 541
+FB56_checks: 33
+FT2_checks: 66780
+FWR_checks: 549
+LR_checks: 1109
+OF_edges: 14816
+OF_hits: 550
+OF_unprot_in_It: 199
+SM_checks: 24060
+WM_checks: 525
+X_OF_noH3e: 14
+X_SM_W: 184
+X_SR_Q0: 2
+fb_lamXi_changing: 1
+lamU_runs: 23
+runs: 9
+starts_valid: 3
+stretches: 23
+transitions: 540
+wruns: 549
+max maxRT: 0
+max maxWCH: 0
+max max_FL: 0
+max max_NMU_unp: 0
+max max_PCHU_unp: 0
+max max_Q: 280
+max max_RS: 0
+max max_fbS: 1
+max max_stretch: 280
+max max_tau_changes: 3
+max max_unp_frac_pct: 17
+max max_wrun: 0
+RESULT PASS violations 0

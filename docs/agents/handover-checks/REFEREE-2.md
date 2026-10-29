@@ -571,3 +571,35 @@ Measured from the repository at the time of writing (commands named), not recall
 - Trap (succ. 19, trap 5): pinned lane scripts read the packet from the working tree, so a run on a later tree checks the wrong text.
   Check: run T34-gateshut-check.py and P-N5-MPGS-quotecheck.py in a detached worktree at a23179b0, sha1 of each script compared first.
 - Also this session: local branch stale (864302d0 vs origin c5ee7fc3); checked `git rev-parse HEAD origin/claude/referee-2` equal after ff.
+
+## successor 21 (2026-10-29T20:58Z by date -u; Opus 5.5 under D15/L37; predecessor successor 20 session_01V5yGRW4aXFYpk1wXFkEfTp, last push d1575e61)
+Measured from the repository at the time of writing (commands named), not recalled.
+
+### 1. Branch, head, ahead/behind trunk
+- `git ls-remote origin` first (15 branch refs; claude/referee-2 d1575e61, trunk claude/vibrant-johnson-nxvvxo 5057c0a2); fetched only those names.
+- Local container was stale at 864302d0 (succ. 18's handover). `git merge --ff-only origin/claude/referee-2` -> d1575e61.
+- `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` at d1575e61: **0 ahead / 101 behind**; merge-base = d1575e61
+  (my branch is fully on trunk). Merged trunk (fast-forward) -> HEAD 5057c0a2 = trunk, 0/0. This section is the first commit on top.
+
+### 2. Open work and next step of each
+- Predecessor (succ. 20) wrote no HANDOVER section; its last notebook entry is Resume point 3 (18:1xZ): SF and GP closed with §Cs
+  (R2-N5-SF-C.md, R2-N5-GP-C.md), queue empty. After it: R2-N5-DW (fef9dd1b) + addendum (d1575e61), both on trunk. Nothing in flight.
+- NOW (Lead brief 20:56Z): P-N5-FRAME, docs/new/P-N5-FRAME-box65.md @ l-new 938d8796: `git show 938d8796:docs/new/P-N5-FRAME-box65.md | sha1sum`
+  = ce8c4803ee18dc90ee761863d006d0aca0476542, 194 lines (match); 938d8796 is an ancestor of origin/claude/l-new. Line file sha1 acf3234f… (match,
+  read at origin/claude/l-new). Next step: full review -> docs/referee-2/R2-N5-FRAME.md with own checker.
+- Independence: `git ls-tree --name-only -r origin/claude/referee docs/referee/ | grep -ic frame` -> 0. No git log on origin/claude/referee.
+- Oink: not built in this container (`ls tools/oink/build/oink` -> no such file); scripts/setup_oink.sh started.
+
+### 3. docs/GAPS.md rows I own
+- `awk -F'|' 'NR>4 && $4 ~ /REFEREE-2/' docs/GAPS.md | wc -l` -> 0 owner cells. `grep -c REFEREE-2 docs/GAPS.md` -> 6, all as attester inside
+  other lanes' rows. REFEREE-2 owns no row.
+
+### 4. Three owner rulings (verbatim) with DECISIONS-INDEX status
+1. D1 (index: active): > Never downgrade the referee to save money.
+2. D15 (index: active): > q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it
+3. D18 (index: active): > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+
+### 5. One trap and its check
+- Trap: stale container (this one sat at 864302d0, three successors back) and an aborted multi-ref fetch on a missing ref.
+  Check: `git ls-remote origin` first, fetch only listed names, `git rev-parse` local vs origin after ff. Plus the independence trap
+  (git log on origin/claude/referee leaks verdicts): only the names-only count is used.

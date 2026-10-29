@@ -35,12 +35,11 @@ Target: L-SI 29, claude/l-si 88a953f5, docs/si/N5-RESET-box35.md §2: "CONJECTUR
   - Also runquad_K8_m30_n192 + observer: n 223, #MAT 232 > 223.
   - With m = 4K: #MAT = 4K² − K = Θ(n²) (n = 28K + 7). RESET-LIN fails from K = 8 on.
 - Checks:
-  - Second engine: seg/xeng.py (L-NEW's n5.py driver on L-SI's si.py valuations). State sequences are IDENTICAL to n5b's at K = 4
-    (77 states) and K = 8 (281). K = 12, 16: addendum.
+  - Second engine: seg/xeng.py (L-NEW's n5.py driver on L-SI's si.py valuations). State sequences are IDENTICAL to n5b's at
+    K = 4, 8, 12, 16 (77 / 281 / 613 / 1073 states).
   - Independent counter: L-NEW's box21 n5x engine + L-SI's compose.matched (the functions L-SI's carx.py uses; scratch wrapper,
-    SIDE=E form). #MAT at o = 60 / 248 / 564 at K = 4 / 8 / 12, equal.
-  - Oink: n5b's solution checked by experiments/new/check_sol2.py: "zielonka(oink zlk) OK strategies verified" at K = 4, 8, 12.
-    K = 16: addendum.
+    SIDE=E form). #MAT at o = 60 / 248 / 564 / 1008 at K = 4 / 8 / 12 / 16, equal.
+  - Oink: n5b's solution checked by experiments/new/check_sol2.py: "zielonka(oink zlk) OK strategies verified" at K = 4, 8, 12, 16.
   - Odd mirror: ctl/dualize.py of K = 8. SIDE=O (Ξτ on G^d) gives #MAT^U = 248 at n 231, so the λ^U-run form fails too.
 - Pins (experiments/red/mix/instances/, sha1 first 12):
   - wobs_K8_m32.pg ec3fb888367e, .start 13075ecab4ec;
@@ -63,11 +62,26 @@ Target: L-SI 29, claude/l-si 88a953f5, docs/si/N5-RESET-box35.md §2: "CONJECTUR
   vertices whose own strategy switches (box 28 SW-RISE charges each switch to a rise of the switching vertex) or of the targets of
   switching edges. OPEN which such restriction keeps R86's arithmetic.
 
+## 3. A SWITCHING observer: switches inflate, matched changes do not here (DATA + READING)
+- Variant: OWNER=0 ABOVE=a obs2.py. o is EVEN, and the q_j sit just above the reactors' a-markers, so q dominates them.
+- o now switches y_j → y_(j+1) at every wave step. At each state exactly one option is Ξ-improving, and it is W-best.
+  | K | m | n | states | switches of o | #MAT(o) | carries(o) | longest carry burst |
+  | --- | --- | --- | --- | --- | --- | --- | --- |
+  | 4 | 16 | 119 | 77 | 65 | 4 | 64 | 16 |
+  | 8 | 32 | 231 | 281 | 257 | 8 | 256 | 32 |
+- So one vertex's switch count reaches T (257 > n = 231): per-vertex switch bounds are reader-inflatable, as NOW.md records.
+- Its P-changes are carries, not MATCHED. The newly flipped reactor's play adds its odd a-marker, and no outgoing odd rank is
+  available to pair with it (M2). A matched move needs at least as many odd ranks leaving as entering, and a wave only adds a-markers.
+- CARRY-SEG survives: the longest burst is m < n − 1.
+- So "RESET-LIN for switching vertices (or switch targets) only" is not killed by this design. That restriction is the next target
+  (OPEN).
+
 ## DONE / FINDINGS / NEEDS
 - DONE: mix/matc.py (#MAT / NM per vertex per λ-run from R85's text), mix/obs2.py (wave observer), pins, check.sh gate, two engines,
   two counters, Oink, Odd mirror.
 - FINDINGS:
   1. DATA: observer #MAT = K(m − 1) in one λ-run; 1008 > n = 455 at K = 16, Θ(n²). RESET-LIN DEAD (both sides).
-  2. READING: the kill is reader inflation; per-vertex matched counts are bounded only by T, so RESET-LIN-type laws need a restriction
+  2. DATA: an Even (switching) observer switches 257 > n times in one λ-run, but its P-changes are carries (#MAT = K).
+  3. READING: the kill is reader inflation; per-vertex matched counts are bounded only by T, so RESET-LIN-type laws need a restriction
      to vertices an observer cannot be (switching vertices or switch targets).
 - NEEDS: none from the owner.

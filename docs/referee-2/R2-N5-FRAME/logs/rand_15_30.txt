@@ -1,0 +1,42 @@
+MODE random 300 15 30 23 2 PCAP 200 NODECAP 20000 OFCAP 400 OFNODE 20000 GPMAX 60 MAXT 3000
+CF_edges: 48915
+CFa_checks: 40736
+CONS_checks: 73157
+DORD_pairs: 1074578
+EF_checks: 2101
+FB56_checks: 3175
+FT2_checks: 27895
+FWR_checks: 3223
+GPS_paths: 1438
+GPS_paths_notfrozen: 212
+LR_checks: 1682
+OF_edges: 37630
+OF_hits: 3065
+OF_unprot_in_It: 6871
+RR_checks: 2
+RR_tight: 2
+SM_checks: 29211
+WM_checks: 553
+X_OF_noH3e: 512
+X_OF_noH3r: 576
+X_SM_W: 4770
+X_WRUN_notfrozen: 22
+lamU_runs: 2138
+late_adoptions: 2
+runs: 900
+stretches: 2804
+transitions: 2501
+wruns: 3223
+max maxRT: 1
+max maxWCH: 3
+max max_FL: 2
+max max_NMU_unp: 2
+max max_PCHU_unp: 2
+max max_Q: 3
+max max_RS: 1
+max max_fbS: 1
+max max_stretch: 5
+max max_tau_changes: 6
+max max_unp_frac_pct: 92
+max max_wrun: 3
+RESULT PASS violations 0

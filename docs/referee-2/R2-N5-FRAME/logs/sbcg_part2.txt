@@ -1,0 +1,137 @@
+DONE-FILE red/fbx/instances/exsw_loop_n15.pg
+DONE-FILE red/fbr/instances/twowave_L16.pg
+DONE-FILE red/fbx/instances/kt6_n58.pg
+DONE-FILE red/frz/instances/fbcap_eq_u4_n11.pg
+DONE-FILE red/frz/instances/fx2_n11.pg
+DONE-FILE red/h3/instances/frzgap0_n4.pg
+DONE-FILE red/h3/instances/frzgap0_n6.pg
+DONE-FILE red/h3/instances/lcount2_n23.pg
+DONE-FILE red/h3/instances/lcount_n23.pg
+DONE-FILE red/h3/instances/offret_l19_n24.pg
+DONE-FILE red/kl/instances/klcount_n16.pg
+DONE-FILE red/kl/instances/klcount_n18_base.pg
+DONE-FILE red/kl/instances/klcount_n18_lvl.pg
+DONE-FILE red/kl/instances/klglobal_n16.pg
+DONE-FILE red/h3/instances/xsnpre36_n48.pg
+DONE-FILE red/kl/instances/klglobal_n18_lvl.pg
+DONE-FILE red/kl/instances/klglobal_n20_lvl2.pg
+DONE-FILE red/kl/instances/klmin_n13.pg
+DONE-FILE red/kl/instances/r2climb_h13.pg
+DONE-FILE red/kl/instances/r2join_h0E_n14.pg
+DONE-FILE red/kl/instances/r2crawl_n14.pg
+DONE-FILE red/kl/instances/r2lap_best_n22.pg
+DONE-FILE red/kl24/instances/HL88_0.pg
+DONE-FILE red/kl24/instances/HL88_1.pg
+DONE-FILE red/kl24/instances/HL88_2.pg
+DONE-FILE red/kl24/instances/HLg_0.pg
+DONE-FILE red/kl24/instances/HL88_3.pg
+DONE-FILE red/kl24/instances/HLg_1.pg
+DONE-FILE red/kl24/instances/HLg_2.pg
+DONE-FILE red/kl24/instances/HLg_3.pg
+DONE-FILE red/kw/instances/cw11_n24.pg
+DONE-FILE red/kw/instances/frzu_tight_n14.pg
+DONE-FILE red/lag/instances/depth2_n39.pg
+DONE-FILE red/kw/instances/kc18_n24.pg
+DONE-FILE red/lag/instances/depth3_n46.pg
+DONE-FILE red/lag/instances/fam_D4_n50.pg
+DONE-FILE red/lag/instances/depth4_n53.pg
+DONE-FILE red/lag/instances/fam_D12_n106.pg
+DONE-FILE red/mei/instances/mei_h2.pg
+DONE-FILE red/lag/instances/fam_D8_n78.pg
+DONE-FILE red/mei/instances/mei_h3.pg
+DONE-FILE red/mei/instances/mei_h4.pg
+DONE-FILE red/mei/instances/mei_h5.pg
+DONE-FILE red/mei/instances/mei_h6.pg
+DONE-FILE red/mei/instances/mei_h8.pg
+DONE-FILE red/n3/instances/core41_n40.pg
+DONE-FILE red/n3/instances/lagx10_n40.pg
+DONE-FILE red/n3/instances/lag11_n40.pg
+DONE-FILE red/n3/instances/comp54_n80.pg
+DONE-FILE red/n3/instances/long90_k2_n40.pg
+DONE-FILE red/n3/instances/long121_n40.pg
+DONE-FILE red/n3/instances/n3cov_lean.pg
+DONE-FILE red/n3/instances/n3cov_phi.pg
+DONE-FILE red/n3/instances/run49_n32.pg
+DONE-FILE red/n3/instances/ret22_n40.pg
+DONE-FILE red/n3/instances/run34_n40.pg
+DONE-FILE red/n5/instances/dl_4_4.pg
+DONE-FILE red/n5/instances/dlm2_4.pg
+DONE-FILE red/n5/instances/sym_h12_s1.pg
+DONE-FILE red/n5/instances/sym_h8_s1.pg
+DONE-FILE red/n5/instances/sym_h16_s1.pg
+DONE-FILE red/n5inj/instances/block_bk20.pg
+DONE-FILE red/n5inj/instances/blockph_bp20.pg
+DONE-FILE red/n5inj/instances/block_bk32.pg
+DONE-FILE red/n5inj/instances/bribe_cex_n15.pg
+DONE-FILE red/n5inj/instances/blockph_bp32.pg
+DONE-FILE red/n5inj/instances/frz24.pg
+DONE-FILE red/n5inj/instances/elimn_cex_n48.pg
+DONE-FILE red/n5inj/instances/frz32.pg
+DONE-FILE red/n5/instances/dl_6_8.pg
+DONE-FILE red/n5inj/instances/frz40.pg
+DONE-FILE red/n5inj/instances/phase2_pk32.pg
+DONE-FILE red/n5inj/instances/returns_rt32.pg
+DONE-FILE red/n5inj/instances/phase2_pk48.pg
+DONE-FILE red/n5inj/instances/returns_ph64.pg
+DONE-FILE red/n5inj/instances/returns_rt48.pg
+DONE-FILE red/n5inj/instances/theta_thc24.pg
+DONE-FILE red/n5inj/instances/theta_thf16.pg
+DONE-FILE red/n5inj/instances/theta_tp32.pg
+DONE-FILE red/n5inj/instances/returns_rt64.pg
+DONE-FILE red/n5inj/instances/wide_h16.pg
+DONE-FILE red/n5inj/instances/theta_tp40.pg
+DONE-FILE red/nest16/instances/k4L72_n101.pg
+DONE-FILE red/nest16/instances/k4L72r_n101.pg
+DONE-FILE red/nest16/instances/k4seed_c1_n82.pg
+DONE-FILE red/nest16/instances/k4g50_n101.pg
+DONE-FILE red/nest16/instances/k4seed_vr_n87.pg
+DONE-FILE red/nest16/instances/k4u_n101.pg
+DONE-FILE red/nest16/instances/k4y1_n82.pg
+DONE-FILE red/nest16/instances/k4y2_n87.pg
+DONE-FILE red/nest16/instances/near4_n26.pg
+MODE files /tmp/claude-0/-home-user-parity-games-challange/dcf76fbb-3694-56a4-b493-c44b27344cc8/scratchpad/frsb_02 1 experiments/ PCAP 200 NODECAP 20000 OFCAP 400 OFNODE 20000 GPMAX 60 MAXT 3000
+CF_edges: 15749
+CFa_checks: 12229
+CONS_checks: 29751
+DORD_pairs: 4018359
+EF_checks: 3102
+FB56_checks: 619
+FT2_checks: 16084
+FWR_checks: 767
+GPS_dfs_truncated: 453
+GPS_paths: 510157
+GPS_paths_notfrozen: 275189
+LR_checks: 5128
+OF_edges: 24654
+OF_hits: 3560
+OF_truncated_unknown: 289
+OF_unprot_in_It: 3890
+RR_checks: 78
+RR_tight: 25
+SM_checks: 52218
+WM_checks: 1235
+X_GPall: 26378
+X_OF_noH3e: 354
+X_OF_noH3r: 402
+X_SM_W: 1943
+X_WRUN_notfrozen: 45
+fb_lamXi_changing: 9
+lamU_runs: 221
+late_adoptions: 80
+runs: 91
+stretches: 400
+transitions: 1652
+wruns: 767
+max maxRT: 7
+max maxWCH: 30
+max max_FL: 7
+max max_NMU_unp: 8
+max max_PCHU_unp: 11
+max max_Q: 28
+max max_RS: 7
+max max_fbS: 15
+max max_stretch: 105
+max max_tau_changes: 37
+max max_unp_frac_pct: 100
+max max_wrun: 30
+RESULT PASS violations 0
