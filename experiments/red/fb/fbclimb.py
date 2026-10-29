@@ -7,7 +7,9 @@ import sys, os, random, time
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, os.path.join(HERE, "..", "sel"))
 import trace as T
 from fbphase import fstats, reuse
-REUSE = "--reuse" in sys.argv
+REUSE = "--reuse" in sys.argv or "--fm" in sys.argv
+if "--fm" in sys.argv:
+    import fbphase; fbphase.MODE_RF = 3
 
 def load(p, s):
     g = T.pg.parse("".join(l for l in open(p) if not l.lstrip().startswith("%")))
