@@ -1,3 +1,39 @@
+# Handover check: L-SI (successor 27, written 2026-10-29T15:2xZ by date -u (15:20:18); LANE-RESTART step 3; Opus 5.5, D18/L40)
+Every answer below was measured in this container; commands given. Predecessor: successor 26, session_01V5yGRZzXJYDE4RqCwgmy7e.
+Its handover is notes/L-SI.md "## HANDOVER (successor 26, box 30)" (l-si 72a4c733).
+
+## 1. Branch, head, distance to trunk
+- Branch `claude/l-si`. Clone stale again: local HEAD da88a6d4 before the fetch (git status said "up to date").
+  `git fetch origin claude/l-si` → 72a4c733; `git merge --ff-only` to it.
+- Trunk claude/vibrant-johnson-nxvvxo = 305cc8be. `git rev-list --left-right --count HEAD...trunk` at 72a4c733 → 2 ahead / 17 behind
+  (merge-base f67f5020). `git merge --no-ff` of trunk (no rebase) → 3 ahead / 0 behind. This file is the next commit.
+- Oink: tools/oink/build absent; scripts/setup_oink.sh started (output to a scratch file).
+
+## 2. Open work and the next step of each (nothing running: `ps -eo pid,args | grep "[p]ython3"` → none)
+- STEP 1 (Lead 15:19Z): the same-pair core (predecessor queue 1; docs/si/N5-TORD-box30.md §11 OPEN): Ξ ⊴ W under one VJ order,
+  differing only on same-pair gates' tails; arena by Ξ, choice by W. Target FW-BF (WCH ≤ n − 1) or any polynomial bound per frozen
+  W-phase; else a kill. Next: data on the 554 |D| ≥ 2 same-pair phases and the |D| = 1 c1 = c2 corpus; then a W-frame Lemma P with one
+  «gap step» charged per basin change.
+- Queue 2-4 of the handover (G2 failure inside a G1 class; TORD-BF; old queue) stay behind STEP 1.
+
+## 3. docs/GAPS.md rows I own
+- None (`awk -F'|' '$4 ~ /L-SI/' docs/GAPS.md | wc -l` → 0). I work under G-N5-TIME (open, owner L-NEW).
+- RESULTS: `grep -o '^### R[0-9]*' docs/RESULTS.md | tail -1` → R85.
+
+## 4. The three owner rulings that constrain me most (verbatim from docs/DECISIONS.md; status docs/DECISIONS-INDEX.md)
+- D18 (DECISIONS.md l.333; index l.32: active): "Focus on N5 and work toward proving it. Explore novel approaches, especially by
+  connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions
+  where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and
+  open problems." Lead reading L40 (index l.33: active).
+- D16 (DECISIONS.md l.300; index l.28: active): "Then keep working as I told you to"
+- D1 (DECISIONS.md l.6; index l.5: active): "Never publish, post, email, submit or contact anyone outside the fleet. Anything external is
+  my decision."
+
+## 5. One trap that bit this lane before, and the check that prevents it
+- Trap: a stale clone (third time today: da88a6d4 "up to date" vs origin 72a4c733). Check: `git fetch` of both branches + rev-list
+  count before reading the notebook and before every push.
+- Trap: tord/out/ and frz/out/ are not gitignored. Check: `git status --short experiments/si` before push.sh.
+
 # Handover check: L-SI (successor 26, written 2026-10-29T13:17Z by date -u (13:17:48); LANE-RESTART step 3; Opus 5.5, D18/L40)
 Every answer below was measured in this container; commands given. Predecessor: successor 25, session_01V5yGRX5qhrUa1vEEamVDc3.
 Its handover is notes/L-SI.md "## HANDOVER (successor 25, box 29)" (l-si 491cdd27; head fd2881fb).
