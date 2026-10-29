@@ -1,23 +1,24 @@
-# Handover check: L-LIT (successor, Opus 5.5, D15/D18; written 2026-10-29T10:01Z by date -u; LANE-RESTART step 3)
+# Handover check: L-LIT (successor 2, Opus 5.5, D15/D18; written 2026-10-29T12:23Z by date -u; LANE-RESTART step 3)
 Every answer measured from the repository at the time of writing (commands given), not recalled.
+(Predecessor's check of 10:01Z is in git history, a0e73a8f.)
 
 ## 1. Branch, head, distance to trunk
-- Branch `claude/l-lit`. After `git fetch origin claude/l-lit claude/vibrant-johnson-nxvvxo claude/l-si`:
-  origin/claude/l-lit = dedbbe7e (T31). `git rev-list --left-right --count origin/claude/l-lit...origin/claude/vibrant-johnson-nxvvxo`
-  -> 0 ahead, 3763 behind; `git merge-base --is-ancestor` -> dedbbe7e is an ancestor of trunk (all L-LIT work is on trunk).
-- `git merge origin/claude/vibrant-johnson-nxvvxo` fast-forwarded: head = trunk = e3b435ab2 ("Lead: merge l-si (n29 killer, JOINT); NOW; log"),
-  0 ahead / 0 behind; merge-base e3b435ab2. This file's commit adds one more.
+- `git fetch origin`: the local checkout was STALE (`git status -sb` -> "behind 3889", local head dedbbe7e = T31).
+  `git merge --ff-only origin/claude/l-lit` -> head 83155d075 ("Merge remote-tracking branch 'origin/claude/vibrant-johnson-nxvvxo'
+  into claude/l-lit"); `git merge-base --is-ancestor e5ae41116 HEAD` -> yes (the HANDOVER commit is in).
+- `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` -> 2 ahead, 6 behind (trunk 923b5b125
+  "Lead: MPGS signed by both referees; REFEREE successor 18; T39; NOW; log"); merge-base efc8e00c6.
 
 ## 2. Open work and next step of each
-- T32 (Lead, 2026-10-29 09:59Z): targeted cross-field scan for three N5 objects (REL-segment settling / SEG-COUNT; SEG-RUN;
-  path-set changes under a fixed top, R84). Next step: read L-SI LAY box27 + GRUN box25 (claude/l-si, read only), then open
-  sources, write docs/lit/T32-*.md (<= ~10 entries).
-- Notebook queue (notes/L-LIT.md "Queue"): unopened primaries (Friedmann RAIRO 2011, FHZ SODA/STOC 2011, Hansen thesis, ...);
-  only if a lane needs them.
+- STEP 1 (Lead 12:22Z): docs/lit/P-N5-MPGS-fixes.md, append items from REFEREE-2's §C (docs/referee-2/R2-N5-MPGS-C.md, C.4 joint list
+  of 6 + MATCHPHI carry-overs) and the reports (R-N5-MPGS.md, R2-N5-MPGS.md, R2-N5-MPGS-s20.md). Next: read those, draft; push only
+  after REFEREE 18's §C lands on claude/referee and is merged into the file.
+- STEP 2 (Lead 12:22Z): T40, literature on PI/SI where the improving set and the selection rule use different valuations (N5's FRAME
+  SPLIT, claude/l-si docs/si/N5-CHG-box28.md §14). Next: read §14, open sources, write docs/lit/T40-*.md (<= ~8 entries).
 
 ## 3. docs/GAPS.md rows I own
-- None. `grep -n "L-LIT" docs/GAPS.md` -> only mentions as a source (G-N1-LB: "L-LIT T19"; G-N5-TIME: "L-NEW (L-LIT T22; referees later)"),
-  owners L-NEW.
+- None. `git show origin/claude/vibrant-johnson-nxvvxo:docs/GAPS.md | grep -n L-LIT` -> lines 10 (G-N1-LB, owner L-NEW) and 11
+  (G-N5-TIME, owner L-NEW), both open, L-LIT only cited as a source.
 
 ## 4. Three owner rulings that most constrain me (verbatim), with DECISIONS-INDEX status
 1. D18 (index line 32: active):
@@ -28,7 +29,7 @@ Every answer measured from the repository at the time of writing (commands given
    > q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it
 
 ## 5. One trap that bit this lane, and the check that prevents it
-- Trap (notes/L-LIT.md "Corrections log", 2026-10-14): a draft cited priority promotion as arXiv 1608.04548, an astrophysics paper,
-  id not opened. Check: every id is opened and its title matched before it is written, and logged in "Sources opened".
-  Second trap (notebook l.34, T17): a subagent used GitHub MCP search outside the repo scope; check: no GitHub MCP calls outside
-  nano44/parity_games_challange, stated in every subagent brief.
+- Stale local branch: this container started 3889 commits behind origin/claude/l-lit (measured above). Check: `git fetch origin`
+  then `git status -sb` and `git merge-base --is-ancestor <handover SHA> HEAD` before reading any file.
+- Older trap (notebook Corrections log, 2026-10-14): an unopened arXiv id (1608.04548, astrophysics) was cited. Check: every id is
+  opened and its title matched before it is written, and logged in "Sources opened".
