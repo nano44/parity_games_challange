@@ -3,7 +3,7 @@
 MATCHED test: mix/matc.py's (written from RESULTS R85). For each lambda-run R, each Even v and each target c of v that v leaves and
 later re-enters inside R: span = transitions t -> t+1 with t_leave <= t <= t_reenter (t_leave: sigma_t(v) = c != sigma_(t+1)(v);
 t_reenter: sigma_t(v) != c = sigma_(t+1)(v); first leave, last re-entry). Counts P-changes (PCH) and MATCHED ones (MAT) of Xi(c) there
-(same cycle node, P differs). Prints the top pairs by MAT and PCH, with n.  Usage: spanc.py GAME.pg START"""
+(same cycle node, P differs), and SEG = the longest run of carries between MATCHED changes inside the span. Prints the top pairs by MAT and PCH, with n.  Usage: spanc.py GAME.pg START"""
 import sys, os
 R = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", ".."))
 for p in ("experiments/n5-second", "experiments/hard-families", "experiments/harness", "experiments/red/mix"): sys.path.insert(0, os.path.join(R, p))
@@ -31,8 +31,13 @@ for a, b in zip(runs, runs[1:]):
             if x != y: lv.setdefault(x, t); re_[y] = t
         for c, tl in lv.items():
             if c in re_ and re_[c] > tl:
-                ks = [kind(c, t) for t in range(tl, re_[c] + 1)]
-                rows.append((ks.count("MAT"), ks.count("MAT") + ks.count("CAR"), v, c, tl, re_[c]))
+                ks = [kind(c, t) for t in range(tl, re_[c] + 1)]; seg = cur = 0
+                for k in ks:
+                    if k == "MAT": cur = 0
+                    if k == "CAR": cur += 1; seg = max(seg, cur)
+                rows.append((ks.count("MAT"), ks.count("MAT") + ks.count("CAR"), v, c, tl, re_[c], seg))
 print(f"SPANC {os.path.basename(sys.argv[1])} n {g.n} T {T} lambda-runs {len(runs) - 1} pairs {len(rows)}")
 for r in sorted(rows, reverse=True)[:4]: print(f"  pair ({r[2]}, {r[3]}) span [{r[4]}, {r[5]}]: MAT {r[0]} PCH {r[1]}")
+sg = max(rows, key=lambda r: r[6], default=None)
+if sg: print(f"  max SEG^span {sg[6]} at pair ({sg[2]}, {sg[3]}) span [{sg[4]}, {sg[5]}] (MAT {sg[0]} PCH {sg[1]}); CARRY-SEG-S {'FAIL' if sg[6] > g.n - 1 else 'PASS'}")
 mx = max(rows, default=(0, 0)); print(f"  max MAT^span {mx[0]} (/n {mx[0] / g.n:.3f}), max PCH^span {max((r[1] for r in rows), default=0)}; RESET-LIN-S {'FAIL' if mx[0] > g.n else 'PASS'}")

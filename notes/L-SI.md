@@ -1,6 +1,11 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## Resume point (successor 31, box 40; session_01V5yGRY6GXgHUrdpJa5WBaa; GO Lead 22:47Z)
+- STEP 0 0e189416. Box 40 (2) DONE: docs/si/N5-CUT-box40.md, tool experiments/si/odd/cuts.py (default frame; FR=1 old-τ frame),
+  si/check.sh «box 40». PROVED (lane) W-RETURN-G, CUT-CHARGE; READING G_vc ≤ B_vc (no independent lever); CONJECTURE FC-LIN.
+- Next: (1) PCH-QUAD-S / FC-LIN proof attempt; (3) W-VPOLY-S.
+
 ## HANDOVER (successor 30, boxes 36-39; written 2026-10-29T22:1xZ (date -u; see commit); session_01V5yGRXdA7p12A2AFsUdae8)
 Reason: Lead 22:03Z: «Write your handover at ~400k or when BOX 39 ends, whichever comes first.» Box 39 ended; context ~275k.
 Lead: session_014FBi6o334DvwT5Uw2kDfoN (mcp__claude-code-remote__send_message). Trunk claude/vibrant-johnson-nxvvxo (merged no-ff at af47d197).
