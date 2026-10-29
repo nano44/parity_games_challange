@@ -13,7 +13,8 @@ Lead: session_014FBi6o334DvwT5Uw2kDfoN. Handover check e2f06134 (sent 22:48Z). B
 - P-N5-FBCK (docs/new/P-N5-FBCK-box49.md, sha1 7747ecf2…, pin l-new 0e63596d), FIRST referee (Lead 23:44Z): R-N5-FBCK.md, all SIGNED,
   no gap; Corollary (ii) as an implication, implicit step σ̄′|V = σ̄ proved (FBCK-N1). scratch/fbck_probe.py (K-frame exact levels; MUT 1, 3, 4
   bite, 2 does not). Logs scratch/fbck_logs/.
-- Queue: CORE §C and FBCK §C when REFEREE-2 reports (word from the Lead).
+- CORE §C appended to R-N5-CORE.md: identical, joint map empty; CORE-N4 = N-CORE-2 (same nep22f_n64 witness, two engines); N-CORE-1 accepted.
+- Queue: FBCK §C when REFEREE-2 reports (word from the Lead).
 - TRAP (new): parse_start must tolerate lane start files with entries at forced vertices / invalid moves (core_probe prints a NOTE and skips).
 
 ## Resume point (successor 16), written 2026-10-26T18:46Z by date -u (Opus 5.5, D15)
