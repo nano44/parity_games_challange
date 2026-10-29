@@ -51,3 +51,21 @@ So (C): park after this box with a clean handover (notes/L-NEW.md resume point).
   (doubling, 1198 at N = 6). (3) DATA: more staleness (LAG_1, LAG_2) shortens the run further (225 / 212 at N = 7). READING: staleness is
   the protective feature; immunity unproved. (4) (B) has no handle.
 - NEEDS: none from the owner. Lead: LAG_d may interest L-RED as a next target after gated resets (a d-step gate); I park.
+
+## 4. Addendum (17:1xZ by date -u; after the Lead's 17:01Z message with L-RED R115): the variants on fcN
+fcN := switchbestexp_N with the N edges f_i → c removed (L-RED R115's family, rebuilt here from box54/out/switchbestexp_N.pg by
+deleting c from each f_i's list; not compared byte-for-byte with L-RED's generator). Files experiments/new/box58/out/fcN.pg. One-sided steps
+from S3, distinct σ̄ in brackets:
+| N | F | LA_1 | LAG_1 | LAG_2 |
+| --- | --- | --- | --- | --- |
+| 3 | 121 (7) | 121 (7) | 89 (7) | 76 (7) |
+| 4 | 215 (11) | 215 (11) | 158 (11) | 113 (11) |
+| 5 | 346 (16) | 346 (16) | 258 (16) | 156 (16) |
+| 6 | 520 (22) | 520 (22) | 382 (22) | 205 (22) |
+| 7 | 743 (29) | 743 (29) | 549 (29) | 260 (29) |
+- LA_1 = F on fcN: with the stale escape removed there is no stale-reset lag, so the frame does not matter (consistent with box 57).
+- All four are QUADRATIC here (F ≈ 15N², second differences 28-34; LAG_2 second difference 6). Distinct σ̄ = 1 + N(N+1)/2 in every
+  variant (7, 11, 16, 22, 29), L-RED's unary counter with full resets. Staleness lowers the constant, not the degree. So LAG_d is no
+  defence against fcN-type families either (DATA). If L-RED's nesting gives N^k, every variant here is expected to follow it (READING).
+- Not done: (B) for nested unary counters (does nesting depth cost arena size multiplicatively?). Parked; it goes to the next successor if
+  the Lead routes it.
