@@ -133,3 +133,36 @@ Controls 4 and 5 do not bite; (C5) and (C6) rest on the injections of §4, which
   needed (nep22f_n64, transition 8 → 9, two gates). CORE-N2/N3 citation and scope wording. CORE-N5: three invalid lane start files.
 - NEEDS: Lead: route CORE-N1..N5 to L-SI's fixes file (N5 to the owners of experiments/red/n3/instances/) after REFEREE-2 reports; the §C
   word when REFEREE-2's R2-N5-CORE is pushed.
+
+## §C. Comparison with REFEREE-2 (written 2026-10-29T00:01Z by date -u, after the Lead's word of 23:54Z; REFEREE-2's report
+docs/referee-2/R2-N5-CORE.md, sha1 a402d9e7…, commit 2ed8d3fb on trunk e9bf47ee; read only after this report was pushed at 9d831869)
+Written by REFEREE successor 17, the author. Every verdict is labelled (Opus 5.5, D15).
+- Independence: both clean. REFEREE-2 declares no exposure (names-only counts of docs/referee/). I opened no REFEREE-2 CORE file before my
+  push (re-listed 23:00Z, 0 / 0 / 0).
+- Verdicts identical: (C1)-(C6) all SIGNED by both, quotes 10/10 by both. Joint gap map: EMPTY.
+- The strongest agreement: CORE-N4 = N-CORE-2, found independently on two engines (mine: rl_engine from SPEC; REFEREE-2's: si.py). Same instance
+  (nep22f_n64 at its .start), same transition 8 → 9, same class 18, same two gates (u = 9: 57 → 30; u = 56: 6 → 1), same κ = (0, 4). So
+  (C4)'s tie exception is needed, with two independent reproductions.
+- Notes matched:
+  - CORE-N3 = N-CORE-4 ((C6)'s GCX premise not landed; scope "inside one phase", not "of S"). Both readings checked by both (my ph / ff, its
+    C6 / C6S). REFEREE-2 adds that GCX is R76 at CHECKER C85: ACCEPTED.
+  - My §4 remark (m_E − n_E) = N-CORE-3. REFEREE-2's controls go further: the bound cannot be lowered to n_E (X5nE bites 344 in alt_all; my
+    first n_E variant bit nowhere on my 4-instance set, a corpus difference), and "earlier state of I" cannot be "previous state" (X5loc 12):
+    ACCEPTED.
+  - CORE-N2 (b) ((V1) is R17 (a), not a sentence of SPEC S1) and REFEREE-2 §1.1 ("the step is the definition of a valuation as a play value;
+    nothing is missing") agree: the premise is available either way. Both engines check Ξ = play value at every state (my V1, its ENGXI).
+  - N-CORE-6 (NOFRESH reaches 90 over a whole phase, so §6's "≤ 22 per run" needs a smaller unit): my data agree (alt_all max NOFRESH 90):
+    ACCEPTED.
+  - N-CORE-5 (its counts vs the lane's §6): no conflict; my counts differ from both because I ran extra starts (918 runs on alt_all).
+- Notes of REFEREE-2 I had not made:
+  - N-CORE-1 ((C3) holds at every N5 transition, not only in-phase): ACCEPTED, re-derived. Steps 1-2 of §2 hold at every iteration ((SW); Ξ
+    depends on σ alone, R15 (a), (d)); w-freeness needs only "off honest cycles at t and t + 1". If the two w-free values have the same cycle
+    node, §2 step 5 applies; if they differ, ▷ is decided by the cycle-node reward, which w ⊕ does not change. So Ξ_{t+1}(w) ▷ Ξ_t(w) ✓.
+  - Its RULE=rand runs ((C3)-(C5) under any non-empty subset of Iσ) and its controls X3y, X6A, X6Ax: extra evidence. X6A / X6Ax bite where my
+    MUT=4 did not (its corpus): goodness IS needed for (C6) (c) in data. ACCEPTED.
+- Notes of mine REFEREE-2 did not make (for the Lead to route; none is a gap):
+  - CORE-N1 (|P| = number of transitions; false as a state count on one-state phases). REFEREE-2's (C2) data count transitions too (equality
+    in 151 of 458 phases), so it reads |P| the same way; the wording fix stands.
+  - CORE-N2 (a) (the R15 (d) quote truncated mid-sentence) and (c) (R38 (a) not needed for τ constant).
+  - CORE-N5 (three invalid start files in alt_all.lst) and CORE-N6 (FRESH3 fails 4 of 1,379 on my engine; unsigned).
+- Nothing open on CORE. CORE bounds nothing; G-N5-TIME stays OPEN.

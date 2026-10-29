@@ -1,0 +1,11 @@
+seed run 55 n 64
+step 45 run 54 n 63 ratio 0.857
+step 1698 run 55 n 63 ratio 0.873
+step 2062 run 55 n 62 ratio 0.887
+step 2443 run 54 n 61 ratio 0.885
+step 2643 run 53 n 60 ratio 0.883
+step 2672 run 52 n 59 ratio 0.881
+step 2857 run 53 n 59 ratio 0.898
+step 5886 run 52 n 58 ratio 0.897
+step 6107 run 53 n 58 ratio 0.914
+final best run/n (53, 58) 0.914

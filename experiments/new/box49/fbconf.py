@@ -38,6 +38,10 @@ def run(g, st, nm):
                 if y not in K: K.add(y); stack.append(y)
         QK = [q for q in Q if q in K]; ck = [tuple(R[t]["sb"][q] for q in QK) for t in src]
         C["Cf_K"] += len(set(ck))
+        # ABA: a K-configuration recurs at a later source after a different one in between (no strict order on K-configurations of a phase)
+        aba = sum(1 for b in range(len(ck)) if any(ck[a] == ck[b] and any(ck[m] != ck[a] for m in range(a + 1, b)) for a in range(b)))
+        C["ABA_sources"] += aba
+        if aba: C["phases_ABA"] += 1; mx("ABA", aba, (nm, (i, j), g.n, len(set(ck)), f))
         if ck:
             pk = {}
             for c in ck: pk[c] = pk.get(c, 0) + 1

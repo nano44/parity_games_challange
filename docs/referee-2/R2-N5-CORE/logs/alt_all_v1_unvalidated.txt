@@ -1,0 +1,59 @@
+X4TIE n5-epoch/instances/nep22f_n64.pg#start 8 c 18 u 9 y1 57 y2 30 (0, 4) (0, 4) (0, 4) (0, 4)
+X4TIE n5-epoch/instances/nep22f_n64.pg#start 8 c 18 u 56 y1 6 y2 1 (0, 4) (0, 4) (0, 4) (0, 4)
+MODE pairs ../../../experiments/si/root/logs/alt_all.lst ../../../experiments RULE n5
+AK_checks: 10468
+C1_checks: 8048
+C2_checks: 458
+C2_tight: 151
+C3_checks: 16825
+C3_oncyc_switches: 71
+C3cons_checks: 458
+C4_changes: 4146
+C4_checks: 3071
+C4_half1_only: 941
+C4_half2_only: 108
+C4_strict: 3069
+C4_tie_at_t1: 16
+C4_unclean: 1075
+C5_checks: 86519
+C6S_intervals: 1172
+C6S_nonzero_Ashrink: 389
+C6S_nonzero_fresh: 1172
+C6S_nonzero_oddopt: 196
+C6_cuts: 3029
+C6_intervals: 1187
+C6_nonzero_Ashrink: 424
+C6_nonzero_fresh: 1187
+C6_nonzero_oddopt: 207
+ENGXI_checks: 10604
+MONO_checks: 8048
+X1: 435
+X3cyc: 38
+X3y: 14480
+X3y_checks: 16896
+X4strict: 2
+X4tie: 2
+X5loc: 12
+X5nE: 344
+X6A: 26
+X6Ax: 201
+XC3_checks: 6863
+XC3_checks_oncyc: 1876
+XC3_fail_oncyc: 32
+X_cross_transitions: 2143
+YF_checks: 45577
+fallback_transitions: 729
+phases: 458
+runs: 413
+states: 10604
+transitions: 8048
+C6S_max_Ashrink: (40, 46, 'red/so/instances/xsn43_n48.pg#S3', 1, 41)
+C6S_max_len: (55, 'red/xing/instances/x32_rand64.pg#S3', 0, 55)
+C6S_max_oddopt: (19, 22, 'red/so/instances/so_sorl_n32.pg#S3', 0, 21)
+C6_max_Ashrink: (40, 46, 'red/so/instances/xsn43_n48.pg#S3', 1, 41)
+C6_max_len: (56, 'red/xing/instances/x32_rand64.pg#S3', 0, 56)
+C6_max_oddopt: (19, 22, 'red/so/instances/so_sorl_n32.pg#S3', 0, 21)
+max_NOFRESH: (90, 'new/box48/instances/long121_n40.pg#start', 1, 122)
+max_SW_over_P: (17.0, 'red/xing/instances/u2flat73_n32.pg#S3', 0, 2)
+max_fresh_over_mE: (0.5, 'n5-exhaustive/instances/b5_o11.pg#S3', 0, 8)
+RESULT OK violations=0

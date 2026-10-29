@@ -24,6 +24,7 @@ rows() over experiments/new/box21/n5x.py (SPEC S1-S5), imported read-only.
 | §4 | Open and next | OPEN |
 | §7 | |𝒞_f(P)| (RESULTS R71 / R73's configurations at fallback sources): ≤ 7 on all plain data, but a 2-option reader lifts it to f (5 → 8 = f on long121, run SAME) | DATA + DEAD (as a route easier than f) |
 | §8 | FB-LIN (f ≤ n per phase; L-SI §13's conjecture, routed to L-NEW 22:55Z): no kill (3 climbs, best f − n = −9); a reader-proof configuration count |𝒞°_f| (gates read by another play) stays at its base value under every reader; f per read configuration ≤ 0.78n | DATA + CONJECTURE + OPEN |
+| §9 | FB-LIN through FB-C^K: max |𝒞^K_f| 4 / 5 / 8 (lib41 / L-RED / dressings); MONO-CONF (K-configurations at successive fallback sources never recur after a different one) DEAD on the plain long121_n40 and njb_reabs65_n48; SMALL-CK DEAD by l121_cf_emb12 (|𝒞^K_f| = f = 8) | DATA + DEAD |
 | §6 | Fallback-free runs: W never falls (DATA, 10,499 transitions); the W*-reach potential F_t stalls at 53% of transitions (xsn43_n48: 43 of 44) | DATA + DEAD |
 
 ## 0. Setting and the definition
@@ -225,3 +226,28 @@ reader lifts |𝒞_f| to f. The repair tried here is a reader-proof configuratio
 - Disjoint unions do not build a kill (READING, from SPEC S4c): a fallback fires only when the whole game has no arena step, so the
   fallbacks of two independent parts synchronise instead of adding. n adds, f roughly does not.
 - OPEN: FB-LIN; FB-C°.
+
+## 9. FB-LIN through Theorem FB-C^K (Lead's NEXT of 23:54Z). The open part is |𝒞^K_f(P)|. Tool fbconf.py (ABA counter added); logs out/fbconf_{lib41,red}.txt, out/fbck_long.txt
+Counts are per phase; phase lengths are in transitions.
+- DATA. Max |𝒞^K_f(P)|:
+  - 4 on lib41 (si/xing/instances/zcl_rx_n32, phase [3, 65], 62 transitions, f 13);
+  - 5 on L-RED (red/n3/instances/long121_n40, phase [1, 122], 121 transitions, f 8);
+  - 8 on the dressings (l121_cf_emb12, f 8; below).
+  KVIOL 0 everywhere. Max f is 37 (red/so/instances/rise_fb38_n48, phase [4, 49], 45 transitions, |𝒞^K_f| 1).
+- DEAD MONO-CONF ("there is an order on K-configurations in which the configurations at successive fallback sources of a phase never go back";
+  in particular no configuration recurs after a different one). A recurrence after a different configuration (an ABA pattern) occurs in 10
+  phases of lib41 and 9 of L-RED. Two instances:
+  - The plain game long121_n40 (n 40, n_K 40, Q = {0, 1, 6}), with no dressing. Phase [1, 122] (121 transitions) has its 8 fallback sources at
+    states 5, 23, 37, 55, 67, 83, 97, 115, with K-configurations C0 C1 C2 C3 C4 C1 C2 C3:
+    - C0 = (13, 17, 7), C1 = (31, 23, 25), C2 = (19, 23, 7), C3 = (13, 23, 25), C4 = (13, 23, 7), as σ̄ on (0, 1, 6).
+    - The run cycles through C1 → C2 → C3 → C4 and back.
+  - red/so/instances/njb_reabs65_n48. Phase [2, 68] (66 transitions) has f 29 with only 2 K-configurations, which alternate: 25 of its 29
+    sources repeat a configuration after the other one.
+  - Obstruction: the gates' best replies at fallback sources go round a cycle. Each configuration's own level LEV^K_C rises at its own
+    sources (FB-RISE^K), but nothing orders the configurations against each other.
+- DEAD SMALL-CK ("|𝒞^K_f(P)| ≤ g(n) with g smaller than the trivial f"), as a route to FB-LIN. Instance experiments/new/box49/inst/l121_cf_emb12.pg
+  (§7): an embedded reader (the old Even vertex 12 → o) lifts |𝒞^K_f| from 5 to 8 = f, with the run SAME. So a bound |𝒞^K_f| ≤ g(n)
+  gives f ≤ g(n + 1) on the base game. Bounding |𝒞^K_f| is not easier than bounding f, as for |𝒞_f| in §7. Plain readers cannot do this
+  (Corollary (ii) of P-N5-FBCK). Edges from an Even choice vertex can.
+- So FB-C^K does not reduce FB-LIN to anything smaller. FB-LIN needs an argument across configurations; the data's shape (one configuration
+  for the long-f phases, short cycles of configurations otherwise) is what such an argument would explain. OPEN.
