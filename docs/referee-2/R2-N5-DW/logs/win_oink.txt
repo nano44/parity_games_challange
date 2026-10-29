@@ -1,0 +1,5 @@
+N 3: n 87 Oink(zlk, verified) Even-wins 0; SF regions == Oink: True; N5 regions == Oink: True
+N 4: n 113 Oink(zlk, verified) Even-wins 0; SF regions == Oink: True; N5 regions == Oink: True
+N 5: n 139 Oink(zlk, verified) Even-wins 0; SF regions == Oink: True; N5 regions == Oink: True
+N 6: n 165 Oink(zlk, verified) Even-wins 0; SF regions == Oink: True; N5 regions == Oink: True
+N 7: n 191 Oink(zlk, verified) Even-wins 0; SF regions == Oink: True; N5 regions == Oink: True
