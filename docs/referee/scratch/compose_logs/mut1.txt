@@ -1,0 +1,58 @@
+CMP_chk 7666
+FB_E_kind1 1
+FB_E_kind2 100
+FB_O_kind4 26
+FMON_chk 119178
+FSW_chk 11213
+LEN_chk 109744
+LEN_lonly 3268
+PH_chk 5407
+PH_eq 382
+RUNS 2000
+RUN_chk 2000
+SUCC_chk 59589
+SWRS_chk 11
+SWR_MUT1_V 14867
+SWR_chk 37250
+TRANS 4077
+both_change 1466
+kind1 2481
+kind2 1072
+kind3 355
+kind4 169
+max_T 7
+max_lamUruns 5
+max_lamruns 7
+slack_S1_S2_den 10198
+slack_S1_S2_num 2744
+VIOLATIONS 14867
+EX ('SWR_MUT1', 'rand0', 'stretch', 0, 11, 1, 1, 0)
+EX ('SWR_MUT1', 'rand0', 'stretch', 0, 11, 1, 1, 0)
+EX ('SWR_MUT1', 'rand0', 'stretch', 0, 11, 1, 1, 0)
+EX ('SWR_MUT1', 'rand0', 'stretch', 0, 11, 1, 1, 0)
+EX ('SWR_MUT1', 'rand0', 'lamrun', 0, 3, 4, 1, 0)
+EX ('SWR_MUT1', 'rand0', 'phase', 0, 3, 4, 1, 0)
+EX ('SWR_MUT1', 'rand0', 'stretch', 0, 11, 1, 1, 0)
+EX ('SWR_MUT1', 'rand0', 'stretch', 0, 11, 1, 1, 0)
+EX ('SWR_MUT1', 'rand1', 'stretch', 0, 4, 5, 1, 0)
+EX ('SWR_MUT1', 'rand1', 'stretch', 0, 13, 5, 1, 0)
+EX ('SWR_MUT1', 'rand1', 'stretch', 0, 11, 4, 1, 0)
+EX ('SWR_MUT1', 'rand1', 'stretch', 0, 4, 5, 1, 0)
+EX ('SWR_MUT1', 'rand1', 'stretch', 0, 13, 5, 1, 0)
+EX ('SWR_MUT1', 'rand1', 'stretch', 0, 4, 5, 1, 0)
+EX ('SWR_MUT1', 'rand1', 'stretch', 0, 13, 5, 1, 0)
+EX ('SWR_MUT1', 'rand1', 'stretch', 0, 4, 5, 1, 0)
+EX ('SWR_MUT1', 'rand1', 'stretch', 0, 13, 5, 1, 0)
+EX ('SWR_MUT1', 'rand1', 'stretch', 0, 17, 1, 1, 0)
+EX ('SWR_MUT1', 'rand1', 'stretch', 0, 4, 5, 1, 0)
+EX ('SWR_MUT1', 'rand1', 'stretch', 0, 13, 5, 1, 0)
+EX ('SWR_MUT1', 'rand1', 'stretch', 0, 17, 1, 1, 0)
+EX ('SWR_MUT1', 'rand1', 'stretch', 0, 4, 5, 1, 0)
+EX ('SWR_MUT1', 'rand1', 'stretch', 0, 13, 5, 1, 0)
+EX ('SWR_MUT1', 'rand1', 'stretch', 0, 17, 1, 1, 0)
+EX ('SWR_MUT1', 'rand1', 'stretch', 0, 4, 5, 1, 0)
+EX ('SWR_MUT1', 'rand1', 'stretch', 0, 13, 5, 1, 0)
+EX ('SWR_MUT1', 'rand1', 'stretch', 0, 17, 1, 1, 0)
+EX ('SWR_MUT1', 'rand1', 'stretch', 1, 15, 11, 1, 0)
+EX ('SWR_MUT1', 'rand1', 'stretch', 1, 16, 7, 1, 0)
+EX ('SWR_MUT1', 'rand1', 'stretch', 1, 15, 12, 1, 0)
