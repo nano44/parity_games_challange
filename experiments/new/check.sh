@@ -208,4 +208,15 @@ if grep -q "^CHECK PASS" <<<"$w1" && grep -q "^CHECK PASS" <<<"$w2" && grep -q "
 else
   echo "box 55 P-N5-SF checks: FAILED"; exit 1
 fi
+# Box 56 (successor 33): Theorem EXIT / Lemma LOC-OPT on 400 random class games (half with H-EXIT broken), switchbestexp_2 classes, GROUP on switchbestexp_2.
+x1=$(python3 -I box56/exit.py --rand 400 2 0.5)
+x2=$(python3 -I box56/exit.py box54/out/switchbestexp_2.pg)
+x3=$(python3 -I box55/grp.py box54/out/switchbestexp_2.pg)
+if grep -q "^EXIT PASS" <<<"$x1" && grep -q "EXIT_V=0 FLIPMAX=3 FLIPMAX_GOOD=1 GOOD=2285 LOC_V=0 TIES=298" <<<"$x1" && \
+   grep -q "^n=60 CH=2 EXIT=1 TOP=0 GOOD=0 TIES=0 FLIPMAX_GOOD=0 FLIPMAX=3 LOC_V=0 EXIT_V=0 values=59 SBC=4$" <<<"$x2" && \
+   grep -q "groups 4 GVCmax 20 stretches_of_it 2 GSTEPmax 20 GVC>n-1 0" <<<"$x3"; then
+  echo "box 56 EXIT: LOC-OPT 0 violations, EXIT flips <= 1 (2285 good vertices), switchbestexp_2 CC fails H-TOP, GROUP 20 <= 59: PASS"
+else
+  echo "box 56 EXIT checks: FAILED"; exit 1
+fi
 rm -rf "$tmp"

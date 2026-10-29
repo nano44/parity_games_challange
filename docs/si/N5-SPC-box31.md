@@ -16,8 +16,10 @@ docs/si/N5-TORD-box30.md §1, §11 (prefix form, GATE-FORM, SAME-NODE); RESULTS 
 | §3 | Lemma GP (timely Lemma P): W_k ⊵ value(r) for every simple path r whose i-th Even edge was ALLOWED (ρ, arena, or into U) at state k − 1 − i; any frozen W-phase | PROVED (lane); DATA 0 violations, control bites |
 | §3 | Lemma GP+: also allowed: an edge inside one basin S_d whose gate is same-pair and tail-disjoint (G3*) | PROVED (lane); DATA 0 violations |
 | §4 | Corollary FW-R: WCH ≤ (n − 1)(R + 1), R := adoptions of edges that were not allowed at an earlier state of the phase («late adoptions»); R = 0 ⇒ FW-BF; D = ∅ ⇒ R = 0 (R17 / FW-D0 recovered) | PROVED (lane), a REDUCTION |
-| §4 | R = 0 in 1,441 of the 1,754 same-pair frozen W-phases (FW-BF proved for each of them by FW-R); max R 40 (grow_K40_n373, WCH 45, n 373) | DATA |
-| §5 | open: bound R (polynomially, or R ≤ TC-type); the late adoption is the precise residue of the obstruction F1 | OPEN |
+| §4 | the same with R_T := transitions containing a late adoption: WCH ≤ (n − 1)(R_T + 1) | PROVED (lane) |
+| §4 | R = 0 (⟺ R_T = 0) in 1,441 of the 1,754 same-pair frozen W-phases (FW-BF proved for each of them by FW-R); max R 40 (grow_K40_n373, WCH 45, n 373) | DATA |
+| §5 | CONJECTURE R-LIN (R ≤ n − 1, R counted per adoption) | DEAD (core/instances/rlin_cex_n40: R = 129 in 10 transitions, n 40) |
+| §5 | open: bound R_T polynomially (R_T ≤ L, so this is FW-BF's own difficulty); the late adoption is the precise residue of the obstruction F1 | OPEN |
 
 ## 0. Setting
 A frozen W-phase F = [a, b] (box 29 §0): no fallback, τ, σ̄, D = {Odd u : σ̄(u) ≠ τ(u)}, λ_Ξ, λ_W constant. ρ_k := σ at state k;
@@ -110,6 +112,8 @@ W_{k+1}(x) = W_k(x) (VJ keys are injective on values): contradiction. So some Ev
 t := k − 1 − i ≥ a. Since ρ_{k+1}(y_i) = y_{i+1} ≠ ρ_t(y_i) (ρ_t(y_i) is allowed at t), y_i adopts y_{i+1} at some τ ∈ (t, k]: a late
 adoption (y_i, τ) with k − τ ≤ k − t − 1 = i ≤ n − 2. Charge k to it. A late adoption at τ is charged only by transitions k ∈ [τ, τ + n − 2],
 at most n − 1 of them. So the W-changing transitions with k ≥ a + n − 1 number at most (n − 1)R. □
+- Variant FW-R′ (same proof, charge k to the TRANSITION τ instead of the pair (y_i, τ)): WCH ≤ (n − 1)(R_T + 1), R_T := the number of
+  transitions τ → τ + 1 of F containing at least one late adoption. R_T ≤ min(R, L); R_T = 0 ⟺ R = 0. PROVED (lane).
 - READING. FW-R isolates the residue of the obstruction F1 (box 30 §9, §11 SAME-NODE): R counts the refusals that are LATER RESOLVED
   (the refused edge is eventually adopted); permanent refusals and refusals inside a G3* same-pair basin cost nothing. For D = ∅, R = 0 and
   FW-R is FW-D0. A polynomial bound on R gives a polynomial bound per frozen W-phase.
@@ -120,18 +124,29 @@ at most n − 1 of them. So the W-changing transitions with k ≥ a + n − 1 nu
   adoption (26, 27) of §2).
 
 ## 5. OPEN, next
-- OPEN (the same-pair core after FW-R): bound R. Facts: an adoption (x, z) of a refused cross-basin edge moves x into z's basin if z is still
-  in it (a basin change), so R ≤ TC fails only through adoptions after z's basin changed (grow_K40_n373: R 40, TC 42). CONJECTURE R-LIN: R ≤
-  n − 1 per frozen W-phase (DATA, RLIN_V = 0 on all 1,754: max R/(n − 1) = 0.733, n5-epoch/instances/lend13_n16, |D| = 2, R 11, WCH 12,
-  n 16; |D| = 1: 0.323, xing/instances/ccl_fbx_n32, R 10 in 2 transitions). With FW-R, R-LIN gives WCH ≤ n(n − 1) per same-pair frozen W-phase,
-  and FW-BF itself needs the sharper amortisation the data show (WCH ≤ 0.87(n − 1) even with R up to 40).
+- DATA (core/late.py, outputs core/out/late_*.txt; the 687 late adoptions of the three corpora): x enters a basin (U → S) 468, x changes
+  basin (S → S′) 125, no basin change of x 94; never S → U; the transition changes W at every late adoption. One vertex can make many: 40 late adoptions by one vertex, each to a different edge (red/usplit/instances/grow_K40_n373); an
+  edge can be re-adopted 5 times in 23 transitions (si/rund/instances/offalt_K10, n 182, D = {4, 32}: vertex 181 alternates 179 ↔ 180
+  between the basins of the two same-pair gates every two transitions, each switch Ξ-improving; core/lateshow.py). So no per-vertex or
+  per-edge bound on late adoptions holds by itself.
+- DEAD: CONJECTURE R-LIN (R ≤ n − 1 with R counted per adoption; it was stated in the first push of this note, l-si 76c83301). Killed by
+  experiments/si/core/instances/rlin_cex_n40.pg (sha1 670ba1ffc22c8f9b170e11ca3e43c33cee9329ca), start rlin_cex_n40.start (sha1
+  e488c00fe1359818b9a665a415cc7b2962015318); found by core/spclimb.py SCORE=r from lend13_n16 within ~1 minute. Frozen W-phase [1, 11], n 40,
+  |D| = 1 (gate NOT tail-disjoint, so GP+'s basin allowance is unavailable): R = 129 late adoptions in 10 transitions (R_T = 9), WCH = 10.
+  n5b identical (13 iterations). Obstruction: R counts several vertices per transition; FW-R′ (R_T) is the right count. FW-R itself holds
+  there (WCH 10 ≤ 39).
+- OPEN (the same-pair core after FW-R′): bound R_T. R_T ≤ L, so «R_T ≤ n − 1» is implied by FW-BF and implies only WCH ≤ n(n − 1); a
+  polynomial bound on R_T would already give a polynomial bound per frozen W-phase. FW-BF itself needs the sharper amortisation the data
+  show (WCH ≤ 0.87(n − 1) even with R up to 40).
 - Next steps (lane): (i) bound late adoptions per edge (an edge adopted, left and re-adopted needs Ξ(x) to rise past it twice); (ii) a kill
   search maximising R/(n − 1) and WCH/(n − 1) in the same-pair core (seeds grow_K40_n373, ccl_w48_n48, runfam_K100); (iii) the non-G3* gates.
 
 ## DONE / FINDINGS / NEEDS
-- DONE: this note; tools experiments/si/core/ (sp.py, gp.py, mono.py, look.py, diag.py); outputs core/out/; check.sh «box 31» block.
+- DONE: this note; tools experiments/si/core/ (sp.py, gp.py, mono.py, look.py, diag.py, late.py, lateshow.py, spclimb.py); outputs core/out/,
+  climb logs core/climb/; check.sh «box 31» block.
 - FINDINGS: (1) DEAD: the gap-step Lemma P charged per basin change (and its Ξ, mixed, admitted-graph forms): runfam_K100, lag 113 with 2
   basin changes; the lag comes from a long-lived refusal, not from basin changes. (2) PROVED (lane): Lemma GP / GP+ (timely Lemma P), any
   frozen W-phase. (3) PROVED (lane): Corollary FW-R, WCH ≤ (n − 1)(R + 1); R = 0 ⇒ FW-BF; R = 0 on 1,441 / 1,754 same-pair phases.
-  (4) DATA: every same-pair frozen W-phase has L = WCH ≤ 0.87(n − 1). (5) OPEN: a polynomial bound on R (CONJECTURE R-LIN).
+  (4) DATA: every same-pair frozen W-phase has L = WCH ≤ 0.87(n − 1). (5) DEAD: CONJECTURE R-LIN
+  (rlin_cex_n40, R = 129 in 10 transitions). (6) OPEN: a polynomial bound on R_T.
 - NEEDS: none from the owner.

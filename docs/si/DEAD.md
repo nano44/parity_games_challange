@@ -542,3 +542,8 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
   108); core/sp.py; n5b identical (root/n5bcmp.py: 293 states). Obstruction: a long-lived F1 refusal (vertex 26 refused (26, 27), W-better
   from state 69 at the latest, adopted at 164 → 165) during a trapped wave; W never changes at 26 meanwhile, so no single-frame Lemma P
   holds, while WCH = 115 < n − 1. What survives: the timely Lemma P (GP / GP+, §3) and FW-R (§4).
+- CONJECTURE R-LIN (box 31 §5: «a frozen W-phase has at most n − 1 late adoptions», R counted per (vertex, transition); stated in
+  l-si 76c83301): killed by experiments/si/core/instances/rlin_cex_n40.pg (sha1 670ba1ffc22c8f9b170e11ca3e43c33cee9329ca), start
+  rlin_cex_n40.start (sha1 e488c00fe1359818b9a665a415cc7b2962015318), frozen W-phase [1, 11], n 40, |D| = 1 (gate not tail-disjoint): R = 129
+  in 10 transitions (core/gp.py PLUS=1, core/late.py); n5b identical (13 iterations). Found by core/spclimb.py SCORE=r from
+  n5-epoch/instances/lend13_n16. Obstruction: many vertices adopt in one transition; the per-transition count R_T (FW-R′) replaces R.
