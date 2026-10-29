@@ -6,7 +6,8 @@ Usage: fbclimb.py SEED.pg SEED.start|S3 seed secs OUTPREFIX [--keepodd] [--ownta
 import sys, os, random, time
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, os.path.join(HERE, "..", "sel"))
 import trace as T
-from fbphase import fstats
+from fbphase import fstats, reuse
+REUSE = "--reuse" in sys.argv
 
 def load(p, s):
     g = T.pg.parse("".join(l for l in open(p) if not l.lstrip().startswith("%")))
@@ -29,6 +30,9 @@ def ev(G):
             if it >= 3000: return None
             st = (s0, {v: t[v] for v in range(g.n) if owner[v] == 1})
         it2, fb2, *_ = T.run(g, st, cap=3000, log=lambda *a: None)
+        if REUSE:
+            f, R = reuse(g, st, cap=3000)
+            return 1000 * f + 300 * R + fb2, f, st, R
         f, ph, it3 = fstats(g, st, cap=3000)
         return 1000 * f + fb2, f, st
     except Exception: return None
@@ -75,5 +79,5 @@ if __name__ == "__main__":
         if e[0] >= cur[0]:
             Gc, cur = H, e
             if e[0] > best[0]:
-                best = e; save(out, H, e[2]); print("%.0fs f=%d total=%d" % (time.time() - t0, e[1], e[0] % 1000), flush=True)
+                best = e; save(out, H, e[2]); print("%.0fs f=%d fit=%d%s" % (time.time() - t0, e[1], e[0], (" R=%d" % e[3]) if REUSE else ""), flush=True)
     print("BEST f", best[1], "n", n)
