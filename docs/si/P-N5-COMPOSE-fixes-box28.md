@@ -113,6 +113,9 @@ re-worded §C C5 (claude/referee 1680010b, after F7 quoted c6011b70), REFEREE §
 - Note, verbatim (REFEREE §1): «COMP-E1 (E-item). |𝒫| (§4) is used but never defined. It must be the number of TRANSITIONS t → t + 1 with t, t + 1 ∈ 𝒫 (compose.py's L = j − i).»
 - Appended text (definition line; same content as F1, in the form the Lead asked for): «|𝒫| := number of transitions t → t + 1 with t, t + 1 ∈ 𝒫.»
   Read as the number of states, the phase part is FALSE (REFEREE §1: a one-state phase gives 1 ≤ 0).
+- Lead ruling on the class difference (Lead 13:43Z by date -u, verbatim): «REFEREE-2's D2 (N-C2: "any stretch with λ (λ^U) constant")
+  and D3 (N-C3: Odd side read on G^d) are REQUIRED appended items, the conservative reading.» So F2 and F3 are REQUIRED items (class E);
+  they stay as written.
 
 ## F12 (REFEREE §C C5, re-worded at 1680010b)
 - Note, verbatim (REFEREE §C C5 at 1680010b): «UPDATED: [MΦ] is now SIGNED by both referees with an empty joint map (R-N5-MPGS §C 8da7b717, R2-N5-MPGS 0c4524f0); §6 can land as "COMPOSE-RUN with [MΦ] (citing the landed MPGS entry) gives …", the λ-run transfer as a referees' remark.»
