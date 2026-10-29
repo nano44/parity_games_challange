@@ -1,0 +1,7 @@
+hsink_nonw=1 minslack_0=704 minslack_1=128 minslack_2=54 minslack_3=92 segs=978 trans=4241
+SWOUT PASS
+BND PASS
+SUFFIX PASS
+EARLY PASS
+JOINTX PASS
+INTEREARLY PASS

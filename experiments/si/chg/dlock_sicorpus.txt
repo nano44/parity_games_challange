@@ -1,0 +1,25 @@
+DLHS_V=4 DLNEXT_V=4 SKIPPED_input=1 deadlock=15 finalsteps=4112 growsteps=4096 late_flat=1 late_trans=3724 maxdead_1=15 ngrun_1=11 ngrun_2=5 ngrun_4=1 ngrun_6=1 segs_with_deadlock=15 zfrozen_excess_plus9=9 zlate_ng=13 zlate_ng_inv=148
+EXAMPLE ('DLHS', 'experiments/si/lay/out/c_sk.pg', 5, 14, 5, [1, 41, 48, 127, 131], [1])
+EXAMPLE ('DLHS', 'experiments/si/lay/out/d29a.pg', 4, 20, 4, [1, 30, 56], [56])
+EXAMPLE ('DLNEXT', 'experiments/si/lay/out/d29a.pg', 4, 20, 4)
+EXAMPLE ('DLHS', 'experiments/si/lay/out/d29c.pg', 4, 12, 4, [21, 24], [24])
+EXAMPLE ('DLNEXT', 'experiments/si/lay/out/d29c.pg', 4, 12, 4)
+EXAMPLE ('DLNEXT', 'experiments/si/lay/out/d29d.pg', 5, 19, 5)
+EXAMPLE ('DLHS', 'experiments/si/lay/out/ll29.pg', 3, 7, 3, [1, 31], [1])
+EXAMPLE ('DLNEXT', 'experiments/si/lay/out/p29.pg', 3, 6, 3)
+DLHS FAIL
+DLSOMEH PASS
+DLNEXT FAIL
+DLEND PASS
+NOEARLY PASS
+MATCH PASS
+ZIG PASS
+DLSEP PASS
+GROWFIN PASS
+GROWPERS PASS
+DLFIRST PASS
+DLRUN PASS
+NEWEDGE PASS
+NEWFINAL PASS
+DLCONSEC PASS
+FRZLEN PASS

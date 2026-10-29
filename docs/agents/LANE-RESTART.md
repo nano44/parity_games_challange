@@ -144,3 +144,8 @@ Five questions:
 | 2026-10-29 | L-SI | session_01V5yGRWTEYFoWjhNJrADhYc (~450k; handover 4483cc8e) | session_01V5yGRa5b9XuhTGUqNBFGaE (Opus, D15/L37) | 2 | none (measured 29c0cf3f: stale clone caught; predecessor stamp estimated, noted) |
 | 2026-10-29 | L-SI | session_01V5yGRa5b9XuhTGUqNBFGaE (~440k; handover f756e089, IN FLIGHT e03c3988, head 10ea06e5) | session_01V5yGRZMmxSubTRSBLM6LGn (Opus, D15/L37) | 2 | one, Lead's (check l-si 8d7a0053: brief said R83 LANDED while its push was still in verify; stale clone caught by the lane) |
 | 2026-10-29 | L-SI | session_01V5yGRZMmxSubTRSBLM6LGn (~360k; handover 1417b7fb, stamp 484f3f59; no message to the Lead at handover) | session_01V5yGRYvskmpjWeFYKqryuH (Opus, D15/L37) | 2 | none new (check l-si ec993ac9; stale clone caught again by the lane) |
+| 2026-10-29 | L-NEW | session_01V5yGRXpuZ54sFHkJS3KYwp (parked 05:48Z; resume point l-new 8e8f7238) | session_01V5yGRXWajH5ibiaahj3biF (Opus, D14/D18) | 2 | none (check: ff to trunk e3b435ab, measured) |
+| 2026-10-29 | L-RED | session_01V5yGRZAX31ZbgX9Mz7tMR1 (parked 05:22Z; handover l-red 92754453) | session_01V5yGRWodt68VHnvw1bRQmG (Opus, D1/D18) | 2 | none (check 61ab6c66) |
+| 2026-10-29 | L-COMP | session_01JPReGnoQGuUgg6d59WzGYS (parked 2026-10-28 22:14Z; resume point l-comp 9b029d23) | session_01V5yGRZrRdwiCSQqHfS2zGE (Opus, D15/L37) | 2 | none (check 76a57b40) |
+| 2026-10-29 | L-LIT | session_01BHfSXDDqsBQ27C9uYvBQVP (parked 2026-10-24; resume point l-lit dedbbe7e) | session_01V5yGRXhHuM2pqfXJ6ZB8RM (Opus, D18) | 2 | none (check l-lit a0e73a8f) |
+| 2026-10-29 | L-SI | session_01V5yGRYvskmpjWeFYKqryuH (~380k; handover a9960e64, head 28f558df) | session_01V5yGRXKXxiTL7ZomUHUGcP (Opus, D15/L37) | 2 | none (check d55a1e4e; stale clone caught again) |

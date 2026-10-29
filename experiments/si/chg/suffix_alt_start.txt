@@ -1,0 +1,8 @@
+EARLY_V=1 hsink_inter=81 hsink_nonw=165 minslack_0=860 minslack_1=197 minslack_2=82 minslack_3=110 segs=1249 trans=5384
+EXAMPLE ('EARLY', 'experiments/red/n3/instances/n3cov_lean.pg', 19, 21, 19, 23, 19, 20)
+SWOUT PASS
+BND PASS
+SUFFIX PASS
+EARLY FAIL
+JOINTX PASS
+INTEREARLY PASS
