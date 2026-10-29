@@ -87,7 +87,7 @@ docs/new/P-N5-FRAME-box65-line-H0.txt sha1 ab1ee38a45f0637216de2287c3020165cdd54
 - No H-item widens a signed statement. H12 and H14 are strengthenings recorded as READINGs (both true); H9 is an equivalence. The fixes
   file's header claim («H1-H16 are clarifications … Every sharpening below is a READING, not a widening») is CONFIRMED.
 - Nothing open on P-N5-FRAME.
-- H17 (2026-10-29T22:48Z by date -u): fixes file at l-new 9631bbc5, sha1 eb5bd5e1… (measured), +4 / −0 against d3d98d1c (H0-H16 untouched). H17
+- H17 (2026-10-29T22:47Z by date -u): fixes file at l-new 9631bbc5, sha1 eb5bd5e1… (measured), +4 / −0 against d3d98d1c (H0-H16 untouched). H17
   replaces H16's attribution: freeze2.py's 81 counts box 63's (H1) (σ_e = τ̄) over all 42 states; the packet's (H1′) gives 84 (81 on states 0-40).
   DATA only, no statement or pinned check touched (CHECKER 15's h1count re-run agrees, per the Lead). I did not re-count dw_3 myself. ACCEPTED.
 
