@@ -1,0 +1,14 @@
+beyond_len_max=25 checked=914 checked_beyond_H3=153 genw_fail=481 genw_fail_pieces=14 h3p_fail=27 h4p_fail=2 pieces=943 tight=21
+EXAMPLE ('H3P', 'docs/referee/R-N5-L2/droplen_cex_n12.pg', 0, 4, 4, 12)
+EXAMPLE ('H3P', 'experiments/n5-exhaustive/instances/b4_n5_other_0.pg', 0, 1, 1, 5)
+EXAMPLE ('H3P', 'experiments/n5-exhaustive/instances/nh_n8.pg', 1, 3, 2, 8)
+EXAMPLE ('H3P', 'experiments/new/box22/instances/n9_i2.pg', 0, 2, 2, 9)
+EXAMPLE ('H3P', 'experiments/new/box25/wdrop_canon.pg', 3, 4, 1, 8)
+EXAMPLE ('H3P', 'experiments/new/box31/instances/nr_u23_n32.pg', 1, 8, 7, 32)
+EXAMPLE ('H3P', 'experiments/new/box31/instances/nr_u23_n32.pg', 11, 14, 3, 32)
+EXAMPLE ('H3P', 'experiments/new/box31/instances/u1flat_best_n32.pg', 8, 9, 1, 32)
+EXAMPLE ('H3P', 'experiments/new/box32/instances/nowake_cex_n32.pg', 0, 3, 3, 32)
+EXAMPLE ('H3P', 'experiments/new/box34/instances/onedrop_cex_n32.pg', 2, 5, 3, 32)
+EXAMPLE ('H3P', 'experiments/new/box35/instances/fbrestart_cex_n24.pg', 0, 7, 7, 24)
+EXAMPLE ('H3P', 'experiments/new/box35/instances/onerun_cex_n32.pg', 2, 8, 6, 32)
+SDPRIME PASS

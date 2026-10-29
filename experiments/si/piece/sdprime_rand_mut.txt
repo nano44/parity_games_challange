@@ -1,0 +1,14 @@
+SET_V=74 beyond_len_max=2 checked=95 checked_beyond_H3=9 genw_fail=0 genw_fail_pieces=0 h3p_fail=15 pieces=110 tight=2
+EXAMPLE ('H3P', 'rand seed 7 #4', 3, 4, 1, 33)
+EXAMPLE ('H3P', 'rand seed 7 #11', 3, 4, 1, 33)
+EXAMPLE ('H3P', 'rand seed 7 #50', 1, 2, 1, 29)
+EXAMPLE ('H3P', 'rand seed 7 #59', 2, 4, 2, 38)
+EXAMPLE ('SETW', 'rand seed 7 #62', 0, 1, 2, 0, 1)
+EXAMPLE ('SETH', 'rand seed 7 #62', 0, 1, 2, 0, 1)
+EXAMPLE ('H3P', 'rand seed 7 #64', 3, 4, 1, 33)
+EXAMPLE ('SETW', 'rand seed 7 #74', 3, 4, 3, 3, 1)
+EXAMPLE ('SETH', 'rand seed 7 #74', 3, 4, 3, 3, 1)
+EXAMPLE ('SETW', 'rand seed 7 #83', 1, 3, 5, 1, 1)
+EXAMPLE ('SETH', 'rand seed 7 #83', 1, 3, 5, 1, 1)
+EXAMPLE ('SETW', 'rand seed 7 #83', 1, 3, 23, 1, 1)
+SDPRIME FAIL

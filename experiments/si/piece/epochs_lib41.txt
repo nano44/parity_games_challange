@@ -1,0 +1,2 @@
+cf_max=5 epoch_h4p_fail=2 epoch_len_max=55 epochs=990 k_max=6 multi_len_max=11 pieces=943 pieces_multi_epoch=27 slack_min_plus1000=1000
+EPOCHS PASS

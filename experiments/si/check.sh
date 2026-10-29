@@ -364,3 +364,11 @@ if git cat-file -e 081ae740 && git cat-file -e 33f43c20 && git cat-file -e 84ab5
 else
   echo "root (P-N5-CORE fixes quotes): NOT RUN (a source commit is not in this clone)"
 fi
+# box 25 (docs/si/N5-PIECE-box25.md): Theorem STATIC-DEPTH' data. kw25_n32's piece [0,25] fails R77's (H3) and (H4) and is covered by
+# STATIC-DEPTH' (two-frame form); frz24 has a piece with an end-state cycle formed inside it ((H3') fails) and an epoch split; MUT=1 bites.
+o=$(python3 -I piece/pieceh.py --one ../red/xing/instances/kw25_n32.pg); grep -q "F_len_max=25 " <<<"$o"; grep -q "h4=1 " <<<"$o"; grep -q "PIECE PASS" <<<"$o"
+o=$(python3 -I piece/sdprime.py --one ../red/xing/instances/kw25_n32.pg); grep -q "beyond_len_max=25 checked=2 checked_beyond_H3=1 " <<<"$o"; grep -q "SDPRIME PASS" <<<"$o"
+o=$(python3 -I piece/sdprime.py --one ../red/n5inj/instances/frz24.pg); grep -q "h3p_fail=1 " <<<"$o"; grep -q "SDPRIME PASS" <<<"$o"
+MUT=1 python3 -I piece/sdprime.py --one ../red/n5inj/instances/frz24.pg | grep -q "SDPRIME FAIL"
+o=$(python3 -I piece/epochs.py --one ../red/n5inj/instances/frz24.pg); grep -q "k_max=2 " <<<"$o"; grep -q "EPOCHS PASS" <<<"$o"
+echo "piece (box 25: STATIC-DEPTH' covers kw25 [0,25] outside R77; frz24 (H3') failure and 2 epochs; MUT=1 bites): PASS"
