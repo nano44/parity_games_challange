@@ -1868,3 +1868,4 @@
 - 05:35Z (date -u): C91 PASS (R82, checker 0af8e744; READING label confirmed) with N-1 (H4′ count) applied verbatim, N-2 (packet's 708) not applied (labelled DATA); C91 Add. 1 requested. L-SI REL fixes 843cf5b5 (sha1 16a74626, F1-F9) → R83 draft next.
 - 05:41Z (date -u): TOPSHAPE §Cs: REFEREE e0499401, REFEREE-2 0e2063bf (identical, map empty; N-TS-1 wider form a STRENGTHENING, proved by both). TOPSHAPE joint list → L-NEW fixes file. Both referees parked (REFEREE ~470k: handover at next item).
 - 05:46Z (date -u): R82 LANDED (C91 Add. 1 PASS, checker 81502454); GAPS UPDATE built from the title clauses; NOW counters R17-R82.
+- 05:50Z (date -u): R83 (REL) draft reviewed (subagent; findings: run-count conventions differ (READING), longest segment 67 vs 55 recorded, two lane MUT counts without committed log cited to packet §4). To CHECKER as C92.
