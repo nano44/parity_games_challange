@@ -26,6 +26,7 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   2L sigma- and 2L+1 tau-changes, each released by the other; linear, NM = NM^U = 0. Rules (S) stall-support, (D) direction, (C) cycles.
 - Tools experiments/red/cpl/: cpl.py (joint lambda-runs: lambda from Xi_sigma, lambda^U from Xi_tau on G^d), nmrun.py (NM per lambda-run with
   nm.matched unchanged), trn.py, vcpl.sh, build.py, chain.py, search.py.
+- R113 (READING): two-sided mkr dead as designed: tau-released pivot steps drop W, leapfrog reactors need W rises; open: break (A) or (B).
 - Things only I know: nm.py's key r38 includes tau, so it is per PHASE; use nmrun.py for per-lambda-run. R111's "287 tau-changes" on
   d_hntop_n8: cpl.py counts 291 transitions that change tau (all 291), 241 inside the first joint run. A U-high/Xi-low route needs a
   not-best-reply vertex on the other side; in a DAG such supports unravel (every gate fires once).
