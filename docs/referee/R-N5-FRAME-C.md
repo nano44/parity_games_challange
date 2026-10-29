@@ -53,11 +53,43 @@ Written 2026-10-29T21:49Z by date -u, on the Lead's word of 21:48Z, by REFEREE s
 - Data agree: 0 violations in both controls; (H3)'s two parts bite in both; (H2) never bites in either; GP*'s blocked condition bites
   (mine MUT 4 on ccl_w48_n48; REFEREE-2 GPall on sbcg). mk_4_16's τ-stretch of 76 is reproduced by both.
 
-## 4. Fixes file and H0
-PENDING: the Lead will send the SHA of docs/new/P-N5-FRAME-fixes-box65.md (H0 corrected line; H1-H6 for FR-N1..N6; H7-H16 for N-FR-1..10).
+## 4. Fixes file and H0 (addendum written 2026-10-29T22:08Z by date -u, on the Lead's 21:56Z message)
+Objects (measured at l-new d3d98d1c): fixes file docs/new/P-N5-FRAME-fixes-box65.md sha1 b1127e579c48d4bc1213b13d21b213113bbd18d3; corrected line
+docs/new/P-N5-FRAME-box65-line-H0.txt sha1 ab1ee38a45f0637216de2287c3020165cdd542f0; packet unchanged (ce8c4803). All = the Lead's figures.
+- H0, character diff (difflib, own script) against the approved line acf3234f: EXACTLY two insertions, nothing else changed:
+  (i) «where Q := the transitions of S that are an S4c fallback or change λ_W, and » after «… + FL_S) transitions, »;
+  (ii) « (NM^U_R(e) := the carries of U(e) in R, read with G^d's parities, RESULTS R86 (e) F3)» after «PCH^U_R(e) ≤ (n²/2)(NM^U_R(e) + 1) + NM^U_R(e)».
+- Word by word: (i) = §3.5's proof «Q := the transitions of S that are a fallback or change λ_W», "fallback" being the S4c fallback of [S4c]
+  (§1): same set. The clause now reads «at most Q + (Q + 1)(…) transitions, where Q := …, and Q ≤ fb_S + n(n − 1)(fb_S + 1), fb_S ≤ …»: Q is
+  bound, and the Q = 0 misreading (mk_6_24) is gone. (ii) = §2.5 (e) with [R85c]'s «v's carries» and [R86e]'s F3 «read with G^d's parities»,
+  for e on one λ^U-run R. ✓
+- H0 DISCHARGES THE E-ITEM. With it the line matches §2-§3 and every symbol is defined in the line or in the RESULTS items it cites.
+- H-items:
+  | item | answers | verdict | class |
+  | --- | --- | --- | --- |
+  | H0 | N-FR-7 / §2 E-item, FR-N4 | correct (above) | REQUIRED line correction, discharged |
+  | H1 | FR-N1 | both facts named (optimality at every vertex; realisation of U by τ̄), R57 (b) mirrored | CLARIFICATION |
+  | H2 | FR-N2 | (H2) stays; necessity not exhibited | CLARIFICATION |
+  | H3 | FR-N3 | in-stretch S4c transitions are Even fallbacks (an Odd one changes τ) | CLARIFICATION |
+  | H4 | FR-N4 | = H0 (ii) | CLARIFICATION |
+  | H5 | FR-N5 | the n(n − 1) λ_Ξ-change term added to the parenthetical; Consequence unaffected | CLARIFICATION |
+  | H6 | FR-N6 | names R88's G12 hypotheses (G_τ, ≤ k − a edges, W-cycle node of F's first state); matches R88's line | CLARIFICATION |
+  | H7 | N-FR-1 | [R86e] is displayed; per-vertex form is the premise | CLARIFICATION (agrees with my §3) |
+  | H8 | N-FR-2 | R57 (a) (VJ) on G^d cited with H1 | CLARIFICATION |
+  | H9 | N-FR-3 | (H1′) ⇔ a simple G_τ path e → o (Even free); both directions correct (my probe uses this form) | READING, an equivalent reformulation, not a widening |
+  | H10 | N-FR-4 | ODD-FREEZE without (H2): CONJECTURE (OPEN) | not claimed; no change |
+  | H11 | N-FR-5 | = H3 | CLARIFICATION |
+  | H12 | N-FR-6 | sharper |S| ≤ Q + (Q + 1)(n − 1)(R*_S + 1) + FL_S | READING (a true strengthening, §3; NOT part of the signed statement or the line, correctly) |
+  | H13 | N-FR-7 | = H0 | — |
+  | H14 | N-FR-8 | strict SUCC-MON at σ(y)-changes | READING (a true strengthening; not signed separately, correctly) |
+  | H15 | N-FR-9 | the second ≤ of COMPOSE-FREEZE (b) is = | CLARIFICATION |
+  | H16 | N-FR-10 | dw_3: 84 hits over 42 states; pinned line keeps the tool's 81 | DATA |
+- No H-item widens a signed statement. H12 and H14 are strengthenings recorded as READINGs (both true); H9 is an equivalence. The fixes
+  file's header claim («H1-H16 are clarifications … Every sharpening below is a READING, not a widening») is CONFIRMED.
+- Nothing open on P-N5-FRAME.
 
 ## DONE / FINDINGS / NEEDS
 - DONE: this §C; scratch/frame_q.py (Q instance reproduced).
 - FINDINGS: verdicts identical, packet map empty. E-item on the RESULTS line: Q undefined (REFEREE-2's catch; my "MATCHES" withdrawn on that
   point; Q = 0 reading false on mk_6_24, reproduced). NM^U definition recommended.
-- NEEDS: Lead: the fixes-file SHA (H0-H16) for §4.
+- NEEDS: none (§4 addendum: H0 discharges the E-item; H1-H16 clarifications / READINGs / DATA).
