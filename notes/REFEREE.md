@@ -14,6 +14,8 @@ Lead: session_014FBi6o334DvwT5Uw2kDfoN. Handover check e2f06134 (sent 22:48Z). B
   no gap; Corollary (ii) as an implication, implicit step σ̄′|V = σ̄ proved (FBCK-N1). scratch/fbck_probe.py (K-frame exact levels; MUT 1, 3, 4
   bite, 2 does not). Logs scratch/fbck_logs/.
 - CORE §C appended to R-N5-CORE.md: identical, joint map empty; CORE-N4 = N-CORE-2 (same nep22f_n64 witness, two engines); N-CORE-1 accepted.
+- RUN-LIN kill confirmation (Lead 00:20Z): R-N5-RUNLIN-kill.md; runfam_K10/K20/K40/K60/K100 reproduced (99 > 98 etc.), Oink zlk/tl agree,
+  §7 reading fair with two precisions. scratch/runlin_check.py, runlin_inputs/, runlin_logs/.
 - Queue: FBCK §C when REFEREE-2 reports (word from the Lead).
 - TRAP (new): parse_start must tolerate lane start files with entries at forced vertices / invalid moves (core_probe prints a NOTE and skips).
 

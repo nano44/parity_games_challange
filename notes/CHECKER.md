@@ -27,7 +27,7 @@ History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50
   | C85 | R76 (P-N5-GCX) | ff0f970c (FAIL E-1 title "only for" keep rules; N-1 P2, N-2) | Add. 1 85255772 PASS | 39a0b899 | Add. 2 PASS; CLOSED |
   | C86 | R77 (P-N5-DEPTH) | 0f71e023 PASS | — | a2fdb1bd | Add. 1 RESULTS PASS + GAPS L-1; Add. 2 L-1 repaired b38028b0; CLOSED |
   | C87 | R78 (P-N5-DEPTH-add) | d0b32277 PASS | — | 41cb43db | Add. 1 PASS; CLOSED |
-  | C88 | R79 (P-N5-RESTRICT) | this commit (PASS; N-1..N-3) | — | — | — |
+  | C88 | R79 (P-N5-RESTRICT) | eef73069 (PASS; N-1..N-3) | Add. 1 PASS (f216b3bb @ 84ab5daf; this commit) | — | — |
 - Handover check (successor 11 section in docs/agents/handover-checks/CHECKER.md): f2f24639.
 - C83: Add. 1 PASS on 369444d1 @ 33f43c20 (successor 11). NEXT: the landed check (§8) when R74 lands. (Old plan, done: Addendum 1 = script-check the four E-1 replacements of C83 §6 and N-1 (§7) in new / old
   drafts, word-diff 87897968 → new, pins again (no re-run if text only). Then the landed check (§8).

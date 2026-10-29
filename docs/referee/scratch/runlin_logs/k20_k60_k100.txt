@@ -1,0 +1,39 @@
+== runlin_inputs/runfam_K20.pg n=59 m=185 states=126 iterations=125
+Q (Odd choice vertices) = [5]  succ: {5: [2, 7, 9, 14, 18, 28]}  tau0: {5: 7}
+phases = [(0, 0), (1, 125)]
+fallbacks = 0 []
+longest fallback-free run in a phase = 124 transitions (1, 125) ; 2n = 118 ; run - 2n = 6
+I_tau empty at every state: True  I_tau nonempty at states: []
+states with D nonempty: 81 of 126
+sigmabar-changing transitions in the run: G = 9 at [1, 2, 4, 9, 35, 41, 44, 80, 81]
+sigmabar(Q) along the run: [(1, (7,)), (2, (2,)), (3, (9,)), (5, (14,)), (10, (28,)), (36, (18,)), (42, (28,)), (45, (14,)), (81, (9,)), (82, (7,))]
+sigmabar-constant pieces (transitions strictly between sigmabar changes): [0, 0, 1, 4, 25, 5, 2, 35, 0, 43]
+oink --zlk regions agree: True
+oink --tl regions agree: True
+|W_Even| = 59, |W_Odd| = 0; sigma wins W_Even: (True, None); sigmabar wins W_Odd: (True, None)
+== runlin_inputs/runfam_K60.pg n=99 m=265 states=213 iterations=212
+Q (Odd choice vertices) = [5]  succ: {5: [2, 7, 9, 14, 18, 28]}  tau0: {5: 7}
+phases = [(0, 0), (1, 212)]
+fallbacks = 0 []
+longest fallback-free run in a phase = 211 transitions (1, 212) ; 2n = 198 ; run - 2n = 13
+I_tau empty at every state: True  I_tau nonempty at states: []
+states with D nonempty: 128 of 213
+sigmabar-changing transitions in the run: G = 9 at [1, 2, 4, 9, 42, 48, 51, 127, 128]
+sigmabar(Q) along the run: [(1, (7,)), (2, (2,)), (3, (9,)), (5, (14,)), (10, (28,)), (43, (18,)), (49, (28,)), (52, (14,)), (128, (9,)), (129, (7,))]
+sigmabar-constant pieces (transitions strictly between sigmabar changes): [0, 0, 1, 4, 32, 5, 2, 75, 0, 83]
+oink --zlk regions agree: True
+oink --tl regions agree: True
+|W_Even| = 99, |W_Odd| = 0; sigma wins W_Even: (True, None); sigmabar wins W_Odd: (True, None)
+== runlin_inputs/runfam_K100.pg n=139 m=345 states=293 iterations=292
+Q (Odd choice vertices) = [5]  succ: {5: [2, 7, 9, 14, 18, 28]}  tau0: {5: 7}
+phases = [(0, 0), (1, 292)]
+fallbacks = 0 []
+longest fallback-free run in a phase = 291 transitions (1, 292) ; 2n = 278 ; run - 2n = 13
+I_tau empty at every state: True  I_tau nonempty at states: []
+states with D nonempty: 168 of 293
+sigmabar-changing transitions in the run: G = 9 at [1, 2, 4, 9, 42, 48, 51, 167, 168]
+sigmabar(Q) along the run: [(1, (7,)), (2, (2,)), (3, (9,)), (5, (14,)), (10, (28,)), (43, (18,)), (49, (28,)), (52, (14,)), (168, (9,)), (169, (7,))]
+sigmabar-constant pieces (transitions strictly between sigmabar changes): [0, 0, 1, 4, 32, 5, 2, 115, 0, 123]
+oink --zlk regions agree: True
+oink --tl regions agree: True
+|W_Even| = 139, |W_Odd| = 0; sigma wins W_Even: (True, None); sigmabar wins W_Odd: (True, None)
