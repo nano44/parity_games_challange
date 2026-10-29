@@ -449,3 +449,10 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
   n). Run [2, 4] (phase key (λ_Ξ, τ): τ changes at 1 → 2, λ_Ξ at 4 → 5) is one REL segment; t = 2: the only switch is vertex 1, 9 → 23 (an
   H-sink, target 19, ready; the only W-sink 25, target 4, not ready); t = 3: 1 → 19 and 25 → 4, both final. Reproduced from n5b alone,
   run boundaries from n5b's own (λ_Ξ, τ) key included (lay/relcheck_seglast_kill_n29.txt); observed GEN_W holds.
+- PSI-DROP (box 27, note §7: «PSI1 := |U^W_t| + |U^H_t| + unready W-sinks strictly drops at every transition of a REL segment»; it would
+  give b − a ≤ 3(n − 1) on REL segments; 0 failures in 14,103 library steps and on every earlier pin): killed by
+  experiments/si/lay/instances/psidrop_kill_n70.pg (n 70, sha1 9cd26eeded045052b769175e3c18dbb72936d404; S3 start written out as .start,
+  sha1 6ba80572a67873884d21a7cfd26140f7950c2d59), found by lay/wclimb.py OBJ=P from seglast_kill_n29 in 4,107 steps. Segment [2, 5], t = 2:
+  the switches are 1: 14 → 48 (intermediate) and 29: 8 → 31 (final, but 29 is neither a W-sink nor an H-sink, so nothing becomes settled
+  in either frame), and the only W-sink 24 stays unready: PSI1 = 24 at 2 and at 3. n5b state sequence identical (9 iterations, 1
+  fallback). Obstruction: a final switch of a non-sink vertex is progress PSI1 does not see. SEG-LAST, SEG-COUNT hold there.

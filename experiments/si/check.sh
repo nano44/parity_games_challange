@@ -507,3 +507,12 @@ grep -q "switchers at t = 2: \[(1, 9, 23, 'switches again at', \[3\])\]" <<<"$o"
 o=$(python3 -I lay/relcheck.py lay/instances/seglast_kill_n110.pg lay/instances/seglast_kill_n110.start 2 8 2); grep -q "its REL segments: \[(2, 8)\] | \[a, b\] is one of them: True" <<<"$o"
 python3 -I root/n5bcmp.py lay/instances/seglast_kill_n29.pg lay/instances/seglast_kill_n29.start | grep -q "n5b iterations 9 fallbacks 0 states 10 | n5x states 10 | identical state sequences: True"
 echo "lay (box 27: seglast_kill_n29 kills SEG-LAST, run and segment recomputed from n5b alone): PASS"
+# box 27: lay/instances/psidrop_kill_n70 kills PSI-DROP (PSI1 = 24 at t = 2 and 3 in segment [2, 5]); SEG-LAST holds there; n5b identical.
+echo "9cd26eeded045052b769175e3c18dbb72936d404  lay/instances/psidrop_kill_n70.pg" | sha1sum -c --quiet
+echo "6ba80572a67873884d21a7cfd26140f7950c2d59  lay/instances/psidrop_kill_n70.start" | sha1sum -c --quiet
+o=$(python3 -I lay/psi.py --one lay/instances/psidrop_kill_n70.pg lay/instances/psidrop_kill_n70.start); grep -q "PSI0_V=2 PSI1_V=1 steps=3" <<<"$o"
+grep -q "EXAMPLE ('lay/instances/psidrop_kill_n70.pg', 2, 5, 2, 24, 24)" <<<"$o"
+python3 -I lwp/seglast.py --one lay/instances/psidrop_kill_n70.pg lay/instances/psidrop_kill_n70.start | grep -q "SEGLAST PASS"
+python3 -I root/n5bcmp.py lay/instances/psidrop_kill_n70.pg lay/instances/psidrop_kill_n70.start | grep -q "n5b iterations 9 fallbacks 1 states 10 | n5x states 10 | identical state sequences: True"
+python3 -I lay/psi.py --one lay/instances/seglast_kill_n29.pg lay/instances/seglast_kill_n29.start | grep -q "^PSI0_V=1 steps=2$"
+echo "lay (box 27: psidrop_kill_n70 kills PSI-DROP, n5b identical; seglast_kill_n29: PSI0 fails at the deadlock, PSI1 drops): PASS"

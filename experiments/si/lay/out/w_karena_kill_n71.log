@@ -1,0 +1,9 @@
+seed (3, 1, 0) n 71
+step 5101 score (6, 2, 0) n 90
+step 10655 score (10, 2, 0) n 90
+step 10666 score (110, 2, 1) n 90
+step 10666 KILLSCORE 1 n 90
+step 11189 score (112, 2, 1) n 90
+step 11426 score (212, 2, 2) n 90
+step 11426 KILLSCORE 2 n 90
+step 12118 score (214, 2, 2) n 90
