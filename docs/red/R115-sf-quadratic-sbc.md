@@ -57,6 +57,12 @@ Engines and checks as in R114 §0 (sf2.py SPEC mode = L-NEW's n5sf.py; Oink zlk 
 - Masks at N = 10 (50 random masks, in flight): best so far 0100000110, 2318 iterations / SBC 160, against fc10's 1753 / 100. Sparse
   masks can beat fcN at fixed N. Their growth with N is not measured.
 
+- Single-edge and prefix masks at N = 8 (sf2; fc8 = 1021 / 64). One kept edge f_p → c: p = 0..7 gives 1315, 1321, 1281, 1213, 1135, 1065,
+  1021, 1021 iterations (SBC 106 .. 64). The kept bit resets and re-sets after every higher set ("1− 1+" in the trace): a constant factor.
+  Prefixes 11000000 / 11100000 / 11110000 / 11111000 collapse to 355 / 355 / 382 / 424, because adjacent low f → c edges bring back the
+  stale-escape short-cut. Suffixes 00000011 / 00000111 / 00001111 give 1021 / 1065 / 1140. N = 10: p = 1 → 2313, p = 2 → 2299 (fc10 1753).
+  READING: binary resets on a small set of bits buy at most a constant factor; on a growing set N5-SF short-cuts them.
+
 ## 3. READING / OPEN
 - Degree 2 is forced (fcN). A higher degree needs nested resets. A reset of a lower block must be triggered by something other than a
   new global maximum, without leaving a stale escape that N5-SF can route into (R114 §4). In fcN only a NEW TOP bit resets, and that

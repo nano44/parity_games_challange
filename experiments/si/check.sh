@@ -424,7 +424,7 @@ echo "grun (box 25: DEAD L-WAVE, lwkill_n31 gap 37 > 30, n5b identical; L-WAVE' 
 # box 26 (docs/si/N5-LWP-box26.md): L-WAVE' gap anatomy and the dead candidate invariants. lwp_a's gap [1,26] has 25 = n - 1 transitions:
 # LAST-SWITCH per gap fails there (2 transitions) while SEG-LAST holds on its 3 segments; PV-STEP fails at t = 2; GAP-DEPTH 25 > 23;
 # SEG-LAST fails on cw11_n24's pieces (control) and on whole runs (control); SWL / NEVEN hold on lwp_a.
-o=$(python3 -I lwp/lastsw.py --one grun/out/lwp_a.pg grun/out/lwp_a.start); grep -q "LS_V=2 " <<<"$o"; grep -q "gap_minus_nEven_max_plus1000=1000 " <<<"$o"; ! grep -q "SWL_V" <<<"$o"
+o=$(python3 -I lwp/lastsw.py --one grun/out/lwp_a.pg grun/out/lwp_a.start); grep -q "LS_V=2 " <<<"$o"; grep -q "gap_minus_nEven_max_plus1000=1000 " <<<"$o"; if grep -q "SWL_V" <<<"$o"; then exit 1; fi
 o=$(python3 -I lwp/seglast.py --one grun/out/lwp_a.pg grun/out/lwp_a.start); grep -q "segs=3 trans=23" <<<"$o"; grep -q "SEGLAST PASS" <<<"$o"
 MODE=piece python3 -I lwp/seglast.py --one ../red/kw/instances/cw11_n24.pg | grep -q "SEGLAST FAIL"
 MODE=run python3 -I lwp/seglast.py --one grun/instances/lwkill_n31.pg grun/instances/lwkill_n31.start | grep -q "SEGLAST FAIL"
@@ -437,7 +437,7 @@ python3 -I lwp/laststep.py --one grun/out/lwp_a.pg grun/out/lwp_a.start | grep -
 MUT=1 python3 -I lwp/laststep.py --one grun/out/lwp_a.pg grun/out/lwp_a.start | grep -q "LASTSTEP FAIL"
 echo "957c7c9e2ce5a6d57890e42b0e8ca0a0911ecefd  lwp/instances/cycset_kill_n60.pg" | sha1sum -c --quiet
 o=$(python3 -I lwp/laststep.py --one lwp/instances/cycset_kill_n60.pg); grep -q "CYCSET_V=1 FR_V=1 FR_V_h4fail=1 " <<<"$o"; grep -q "CYCSET FAIL" <<<"$o"
-o=$(python3 -I lwp/seglast.py --one lwp/instances/cycset_kill_n60.pg); grep -q "SEGLAST PASS" <<<"$o"; ! grep -q "SS_V" <<<"$o"
+o=$(python3 -I lwp/seglast.py --one lwp/instances/cycset_kill_n60.pg); grep -q "SEGLAST PASS" <<<"$o"; if grep -q "SS_V" <<<"$o"; then exit 1; fi
 echo "lwp (box 26: LAST-STEP frontier on lwp_a, MUT bites; cycset_kill_n60 kills CYC-SET, SEG-LAST / SET-STEP hold): PASS"
 # box 26 (note §8): K-REDUCTION data. karena_kill_n71 kills K-ARENA (one terminal part at t = 0, not arena-complete); SEG-LAST holds.
 echo "8b659497688c47075235957ae1e636b5564ec235  lwp/instances/karena_kill_n71.pg" | sha1sum -c --quiet
@@ -708,3 +708,12 @@ echo "si (box 31 §6: GP*, FW-R* on rlin_cex_n40 and ccl_w48_n48; MUT=all contro
 o=$(python3 -I rund/quotecheck.py ../../docs/si/P-N5-GP-box31.md); grep -q "^quotes=14 bad=0$" <<<"$o"; grep -q "^QUOTES PASS$" <<<"$o"
 o=$(python3 -I rund/quotecheck.py ../../docs/si/P-N5-GP-box31.md --mut); grep -q "^QUOTES FAIL$" <<<"$o"
 echo "si (box 31 packet P-N5-GP: 14 quotes exact; shifted control fails): PASS"
+# box 32 (docs/si/N5-RTC-box32.md): R*-TC by injection. Same-pair core: lend47_n32 (pinned start) has a non-basin-changing late*
+# transition (s = 8) charged to the basin change at 7; matching exists, Lemma LATE-BASIN holds; MUT=lastonly (per-transition form) fails.
+# General R*-TC DEAD: kt6_n58 (S3 start, written out as core/instances/kt6_n58_S3.start), D = {18}, c1 ≠ c2: R*_T = 5 > TC = 0.
+o=$(python3 -I core/inj.py --one ../n5-epoch/instances/lend47_n32.pg ../n5-epoch/instances/lend47_n32.start)
+grep -q "^SP_RT=3 SP_TC=15 SP_late_noBC=1 SP_phases=2$" <<<"$o"; if grep -q "MATCH_FAIL\|LEMMA_VIOL" <<<"$o"; then exit 1; fi
+o=$(MUT=lastonly python3 -I core/inj.py --one ../n5-epoch/instances/lend47_n32.pg ../n5-epoch/instances/lend47_n32.start); grep -q "SP_MATCH_FAIL=1" <<<"$o"
+o=$(python3 -I core/inj.py --one ../red/fbx/instances/kt6_n58.pg core/instances/kt6_n58_S3.start)
+grep -q "^NSP_MATCH_FAIL=1 NSP_RT=5 NSP_RT>TC=1 NSP_TC=0 NSP_late_noBC=5 NSP_noBC_empty=5 NSP_phases=1$" <<<"$o"; if grep -q "LEMMA_VIOL" <<<"$o"; then exit 1; fi
+echo "si (box 32: LATE-BASIN + matching on lend47_n32, lastonly control fails; general R*-TC dead on kt6_n58): PASS"
