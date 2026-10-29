@@ -2,9 +2,10 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-29 ~11:1xZ (successor, Opus 5.5): packet docs/lit/P-N5-MPGS.md FROZEN at push ((A) MATCH-Φ + Corollary, (B) GATE-SHUT +
-Corollary; quotecheck P-N5-MPGS-quotecheck.py quotes=9 bad=0; pinned checks T33-match-phi-check.py 6853179b, T34-gateshut-check.py
-7c33508b). P-N5-MATCHPHI superseded (fixes F1). Next: T35 (Hansen-Zwick Howard lower bound vs L-RED's runquad; SW-PER-VERTEX).
+2026-10-29 ~11:3xZ (successor, Opus 5.5): T35 DONE docs/lit/T35-howard-quadratic-vs-runquad.md: runquad = Hansen-Zwick/ACR lane x reset
+moved from gain level (new cycle = new N5 phase) to bias level (in-phase); Zhong-Ye Thm 6.1 refutes HZ's <= m conjecture via a cycle-mean
+counter, blocked for N5 (<= n cycle-node values, R47 Lemma Phi); no upper-bound template for SW-PER-VERTEX; CONJECTURE CUT-Phi. Packet
+P-N5-MPGS frozen a23179b0 (sha1 24913a7f). Next: Lead's routing.
 
 ## Queue
 - Not opened (blocked or paywalled), needed only if a lane depends on them: Friedmann RAIRO 2011 (403); FHZ SODA/STOC 2011;
@@ -278,6 +279,12 @@ Corollary; quotecheck P-N5-MPGS-quotecheck.py quotes=9 bad=0; pinned checks T33-
 | NOT opened (T32) | Busch-Tirthapura SICOMP 2005 (iastate TLS fail via proxy; Wayback reset x2); CFWW SIROCCO 2011 / TALG 2015; Van Gelder JCSS 1993; Gawlitza-Seidl ESOP 2007, FM 2008 (Springer); Tardos SIDMA 1988; Schurr-Szabó (not re-opened) | 2026-10-29 | T32 §8 |
 | ECCC TR06-067 (ARV), re-read for T33 | Lemma 10 p.8-9 (gadget states, "there exists a best response sequence"), p.10 "one after another", p.11 "Altogether this shows", p.3 tight PLS remark | 2026-10-29 | T33 §2.1 |
 | arXiv 1106.0778 v2 (Friedmann, LMCS 7(3:19)) sha256 46c96f44775aa2b0… (re-opened, = L-COMP's and L-NEW 29's file) | §4 p.6-7 (I^loc, I^glo, Lemma 4.3); §5 p.8 (1-sink, Lemma 5.1); §6.1 p.9-10 (simple cycle, Lemma 6.1, 6.2, hiding sentence); §6.2 p.11-12 (Lemmas 6.3, 6.4, purpose sentence); §8 p.26 intro; §8.1 Lemma 8.1; §8.2 stubborn cycle; §8.3 Table 6, Lemma 8.2; §8.4 Table 7, Fact 8.1, Lemma 8.3; §8.5 Thm 8.4 p.33 | 2026-10-29 | T34 |
+| Hansen-Zwick ISAAC 2010 talk slides (pdfs.semanticscholar.org/8eaf/45e9b507fc545fb05f018f2709a05e30c8f6.pdf) sha256 1ff1ee804ac47c08… | pp.6-19: main theorem p.14, construction p.15-17, LP search p.18, conjecture p.19 | 2026-10-29 | T35; paper itself NOT opened (Springer empty, no tau.ac.il copy) |
+| arXiv 2506.12254 v1 (Asadi, Chatterjee, de Raaij) sha256 78c4ee071961b89e… | p.2 Table 1 + HZ description; Conjecture 3.1; Thm 3.2 p.4; sequence (1), Lemma 4.1 p.5, intuition | 2026-10-29 | T35 |
+| arXiv 2609.40147 v2 (Zhong, Ye) sha256 dafeb81816af6582… (re-opened) | abstract, §1 Table 1; Thm 6.1 p.23 + refutation sentence; §6.1 construction, eq. (6.8), Lemma 6.2 p.26; Thm 7.2 p.33 + proof p.33-34 ("every N consecutive updates create a new cycle"); §8 | 2026-10-29 | T35 |
+| arXiv 2211.15602 v2 (Goenka et al.) sha256 e62fb2eceb298d98… | abstract; Defs 13-18; Lemmas 7-8; Thms 4-5; Cors 1-2 (§4) | 2026-10-29 | T35 |
+| arXiv 2505.00795 v1 (Mukherjee, Kalyanakrishnan) sha256 7b856cc9010c6c06… | abstract, §1.1, Thm 1.2 | 2026-10-29 | T35 |
+| arXiv 2610.22149 v1 (Loff, Skomra, smoothed PI/VI) sha256 18d7ea9dab8dff7e… | title only, not used | 2026-10-29 | T35 |
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
 - T17 process dead end: subagent GitHub MCP search outside the repo scope was a rule breach (see Things only I know); never repeat it.
