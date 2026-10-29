@@ -1,0 +1,13 @@
+MODE files ../R2-N5-STAU/lib41_noref.lst 2 PCAP 64 FB1 200
+B1_pairs: 146414
+ENGXI_checks: 696332
+FLIP: 11412
+GS_paths: 11963
+GS_triples: 6017
+H1fail_triples: 27080
+H2fail_triples: 778
+H3fail_triples: 10881
+X1: 903
+X3: 233
+states: 14145
+RESULT PASS violations 0
