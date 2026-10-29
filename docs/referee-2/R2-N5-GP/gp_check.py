@@ -8,7 +8,8 @@ Checks (each must be 0):
   WMON   every in-phase non-fallback transition: W_{t+1} >= W_t pointwise, and W_{t+1} >= the W-value of RANDH random strategies of H_t
   XW     Xi_t <= W_t everywhere; Xi_t = W_t where the W-play meets no vertex of D_t
   GPS    Lemma GP*: every k in F, every x, every path r of G_tau unblocked at state k (simple; ends at a W cycle node; L <= k - a; Even edge i
-         not blocked at state k-1-i), at most PCAP per (k, x), DFS in index order: W_k(x) >= value(r)
+         not blocked at state k-1-i), at most PCAP per (k, x), DFS in index order: W_k(x) >= value(r). NODECAP (0 = none) bounds the DFS
+         nodes per (k, x); truncations are counted (GPS_dfs_truncated)
   F1H    every k -> k+1 in F, every (x, z) in I_sigma_k: W_{k+1}(x) >= val_rhohat(x), rhohat = rho_k[x -> z] (F1 in H_k, Case B's first line)
   IMP    the Case B sub-cases the proof calls impossible inside F never occur: B1'(ii) (x not in pi, x on c's cycle, top of P(pi) even) and
          B2b (i) (top of D' even) / (iii) with c odd. Counted per sub-case: B1, B1'(i), B1'(iii), B2a, B2b(ii), B2b(iii) c even.
@@ -22,7 +23,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "..", "R2-N5-DUAL"))
 import dual_check as DC
 pg, Engine, dual = DC.pg, DC.Engine, DC.dual
-PCAP = int(os.environ.get("PCAP", "300")); RANDH = int(os.environ.get("RANDH", "3")); MAXF = int(os.environ.get("MAXF", "400"))
+PCAP = int(os.environ.get("PCAP", "300")); NODECAP = int(os.environ.get("NODECAP", "0")); RANDH = int(os.environ.get("RANDH", "3")); MAXF = int(os.environ.get("MAXF", "400"))
 
 
 class St:
@@ -111,9 +112,13 @@ def frozen(g, E, info, fbs, a, b, st, name):
     for k in range(a, b + 1):
         Wk = info[k]["W"]
         for x in range(n):
-            cnt = [0]; worst = [None]
+            cnt = [0]; worst = [None]; nodes = [0]
             def dfs(y, path, vis, mut):
                 if cnt[0] >= PCAP: return
+                nodes[0] += 1
+                if NODECAP and nodes[0] > NODECAP:
+                    if nodes[0] == NODECAP + 1: st.inc("GPS_dfs_truncated")
+                    return
                 L = len(path) - 1
                 if lamW[y] == y:
                     cnt[0] += 1
@@ -131,7 +136,7 @@ def frozen(g, E, info, fbs, a, b, st, name):
                     vis.add(z); path.append(z); dfs(z, path, vis, mut); path.pop(); vis.discard(z)
             dfs(x, [x], {x}, False); st.inc("GPS_paths", cnt[0])
             if BL and any(BL.values()):
-                cnt[0] = 0; dfs(x, [x], {x}, True)
+                cnt[0] = 0; nodes[0] = 0; dfs(x, [x], {x}, True)
     # F1H and the Case B sub-case census, per transition k -> k+1 in F
     for k in range(a, b):
         A, B = info[k], info[k + 1]

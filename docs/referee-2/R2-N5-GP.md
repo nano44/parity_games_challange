@@ -166,7 +166,7 @@ No gap. No item FALSE. Notes N-GP-1..N-GP-6 (§4).
 | random 3000 games n 4-14, S3 + 3 random | 12,000 | 29,440 | 63,315 | 1,679 | 14,167 | 0 / 3 | 0 |
 | random 400 games n 15-30, S3 + 2 random | 1,200 | 4,326 | 11,430 | 225 | 3,815 | 0 / 2 | 0 |
 | alt_all, pinned starts (93 valid, 1 invalid skipped) | 93 | 1,970 | 887,036 | 9,299 | 159,321 | 40 / 49 | 125,338 |
-| lib41_noref, S3 + 1 random | pending (run in 8 chunks, in progress at push 1) | | | | | | |
+| lib41_noref, S3 + 1 random | 650 (+170 with counters lost, see below) | 6,732 | 3,446,322 | 19,018 | 441,864 | 3 / 55 | 344,537 |
 | ccl_w48_n48 (S3) | 1 | 39 | 89 | 46 | 876 | 1 / 3 | 2 |
 | rlin_cex_n40 (pinned start) | 1 | 4 | 58,296 | 199 | 569 | 0 / 10 | 0 |
 | runfam_K100 (pinned start + S3) | pending (in progress at push 1) | | | | | | |
@@ -174,6 +174,13 @@ No gap. No item FALSE. Notes N-GP-1..N-GP-6 (§4).
 - Agreement with the lane's pins:
   - ccl_w48_n48: frozen phase of 3 transitions, R*_T = 1, WCH 3, plain Lemma P fails (the lane: [15, 18], R_T 1, WCH 3, MUT=all FAIL).
   - rlin_cex_n40: one 10-transition frozen W-phase, R*_T 0, WCH 10 ≤ 39 (the lane: R = 0, WCH 10, L 10).
+- lib41 ran in 8 chunks (split -n l/8). Chunks 0, 5 and 7 each stalled on one dense game (b6_xs_n40, xsnf42_n48, x32_rand64). The DFS capped
+  completed paths but not explored nodes. Those chunks were stopped after 33, 44 and 8 files (85 files, 170 runs; 0 VIOLATION lines
+  printed, but their counters were lost with the stop: logs/lib41_part{0,5,7}_a.txt). Their remaining 67 files were re-run with NODECAP =
+  20,000 DFS nodes per (k, x) (logs/lib41_part{0,5,7}_b.txt), which truncated 18,437 enumerations (counted). The lib41 row sums chunks 1, 2, 3,
+  4, 6 and the three _b runs. So every lib41 file was run, with GP*'s path enumeration partial on the dense ones; WMON, XW, F1H, IMP, NOTBL
+  and FWR are exhaustive per state.
+- Sub-case census (lib41): B1 18,132; B1′(i) 85; B2a 393; B2b(ii) 24; B2b(iii) c even 384; B1′(iii) 0; the impossible ones 0.
 - Sub-case census (alt_all): B1 9,087; B1′(i) 18; B1′(iii) 4; B2a 83; B2b(ii) 41; B2b(iii) c even 66; the impossible ones 0.
 - In random games frozen W-phases are short (≤ 3 transitions) and nothing is blocked, so the library and lane pins carry the information.
 
