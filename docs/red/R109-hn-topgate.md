@@ -67,6 +67,27 @@ L-RED successor 26 (Opus 5.5; D15/D18; STEP 2 (A), T37 §3's (H1) route; Lead 11
   inside one λ-run: the "dual reactor" of R108 §6 (A).
 - OPEN.
 
+## 5. Carries (Lead 12:15Z: the primary quantities are NM* (Even side) and NM*^U (Odd side on G^d))
+- NM per (vertex, phase): L-COMP's experiments/n5-box18/nm.py (key r38 = (λ_Ξ, τ); T33's MATCHED rule), run unmodified on the pins and
+  on hnh1.py N topfix.
+
+| instance | N | states | max PCH | max NM (carries of one vertex in one phase) | NM / N | max NM at a fixed top | max NM at a gate |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| hntop_n3 | 63 | 62 | 30 | 28 | 0.444 | 26 | 13 |
+| hntop_n8 | 168 | 292 | 170 | 163 | 0.970 | 156 | 123 |
+| topfix n 10 | 210 | 426 | 254 | 245 | 1.167 | 236 | 195 |
+| topfix n 12 | 252 | 584 | 354 | 343 | 1.361 | 332 | 285 |
+| runquad_K8_m30_n192 (R106, for comparison) | 192 | 265 | 15 | 8 (= K, as L-SI found) | 0.042 | 8 | 8 |
+
+- max NM = 2n² + 5n − 5 = d1_n's switch count: every lane step of the top gate's d1_n is a carry of its path set. Carries of ONE vertex
+  in ONE phase are Θ(N²) on this family. NM/N exceeds 1 from n = 10 and grows linearly in n. The previous data maximum was 0.90N
+  (box 18, ret22_n40).
+- NM*^U = 0 exactly, and PCH^U = 0. U_τ (Odd's valuation of τ on G^d against Even's best reply) is a function of τ alone, and τ never
+  changes. τ-changes per λ-run: 0.
+- Which count this design targets (Lead 12:01Z): carries per vertex per PHASE. It shows that count can be super-linear (Θ(N²)) inside
+  one τ-quiet phase. It does not reach super-polynomial. A binary version would need NM*^U > 0 (τ moving out of and back into the
+  lower gates, §4).
+
 ## DONE / FINDINGS / NEEDS
 - DONE: hnh1.py (variants gate, gateE, lane, top, topfix), gatestate.py, pins hntop_n3 (check.sh), hntop_n8, hntop_n8_s3; the tables
   above.
@@ -78,4 +99,6 @@ L-RED successor 26 (Opus 5.5; D15/D18; STEP 2 (A), T37 §3's (H1) route; Lead 11
      this family.
   4. READING: τ-pinning hides both the set and the re-set of lower bits, so the counter is unary (Θ(n²)). A binary count needs
      U-improving τ moves out of and back into each lower gate within one λ-run.
+- ADDENDUM FINDING (§5): DATA: carries of one vertex in one phase, NM = 2n² + 5n − 5 (1.36N at n 12; previous data max 0.90N).
+  NM^U = 0 (τ frozen). Polynomial (Θ(N²)); G-N5-TIME untouched.
 - NEEDS: none from the owner.
