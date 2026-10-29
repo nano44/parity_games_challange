@@ -67,4 +67,16 @@ if git cat-file -e 3b2631be^{commit} 2>/dev/null && git cat-file -e 864302d0^{co
 else
   echo "RESTRICT-fixes quotes: NOT RUN (3b2631be or 864302d0 not in this clone)"
 fi
+# Box 49 (successor 30): P-N5-FBCK-fixes (frozen): 25 quotes at the §C commits 6b752e89 / 991f9e27 and the freeze 0e63596d, shifted control, sha1.
+if git cat-file -e 6b752e89^{commit} 2>/dev/null && git cat-file -e 991f9e27^{commit} 2>/dev/null; then
+  if python3 -I box49/quotecheck3.py ../../docs/new/P-N5-FBCK-fixes-box49.md | grep -q "quotes=25 bad=0" && \
+     ! python3 -I box49/quotecheck3.py ../../docs/new/P-N5-FBCK-fixes-box49.md --mut >/dev/null && \
+     [ "$(sha1sum ../../docs/new/P-N5-FBCK-fixes-box49.md | cut -d' ' -f1)" = "19237624d32db379db858ea961861bd094441db1" ]; then
+    echo "FBCK-fixes quotes 25 + control, sha1: PASS"
+  else
+    echo "FBCK-fixes checks: FAILED"; exit 1
+  fi
+else
+  echo "FBCK-fixes quotes: NOT RUN (6b752e89 or 991f9e27 not in this clone)"
+fi
 rm -rf "$tmp"
