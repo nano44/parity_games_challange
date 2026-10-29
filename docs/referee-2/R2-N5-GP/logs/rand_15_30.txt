@@ -1,0 +1,20 @@
+MODE random 400 15 30 12 2 PCAP 300 RANDH 3 MAXF 400
+B1: 192
+B1p_i: 20
+B2a: 13
+F1H_checks: 225
+FWR_checks: 4326
+F_RT0: 4326
+F_checked: 4326
+GPS_paths: 11430
+NOTBL_checks: 3815
+WMON_checks: 201
+XW_checks: 103785
+X_BLK: 1
+frozen_phases: 4326
+runs: 1200
+transitions: 3285
+max maxF: 2
+max maxRT: 0
+max maxWCH: 2
+RESULT PASS violations 0
