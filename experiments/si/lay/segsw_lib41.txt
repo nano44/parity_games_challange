@@ -1,0 +1,10 @@
+exc_max_plus100=100 maxsw_1=763 maxsw_14=1 maxsw_2=166 maxsw_3=30 maxsw_4=8 maxsw_5=2 maxsw_6=6 maxsw_8=2 segs=978
+EXAMPLE ('MAXSW', 'experiments/n5-exhaustive/instances/b5_os_n24.pg', 0, 14, 3)
+EXAMPLE ('MAXSW', 'experiments/n5-exhaustive/instances/b5_os_n32.pg', 24, 34, 3)
+EXAMPLE ('MAXSW', 'experiments/n5-exhaustive/instances/b5_os_n32.pg', 47, 56, 3)
+EXAMPLE ('MAXSW', 'experiments/n5-exhaustive/instances/b5_os_n40.pg', 31, 43, 4)
+EXAMPLE ('MAXSW', 'experiments/n5-exhaustive/instances/b5_os_n40.pg', 56, 65, 3)
+EXAMPLE ('MAXSW', 'experiments/n5-exhaustive/instances/b6_xl_n48.pg', 55, 63, 3)
+EXAMPLE ('MAXSW', 'experiments/n5-exhaustive/instances/b6_xw_n48.pg', 50, 56, 3)
+EXAMPLE ('MAXSW', 'experiments/new/box22/instances/pure_14.pg', 3, 8, 3)
+SEGCOUNT PASS

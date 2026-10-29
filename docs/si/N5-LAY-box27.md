@@ -148,6 +148,22 @@ RO_b, σ̄_t = σ̄_b on [a, b] (REL); every cycle of CW_b (CH_b) is a W-cycle (
   f^W(x) = max(L(x) + 1, f^W(jW x)) (f^W, f^H the first settled states), the recursion of R82's depth; a step t with no last switch then
   forces a jW/jH-cycle of vertices with L > t, and the recursion allows it.
 
+## 6. What survives: CONJECTURE SEG-COUNT (DATA; kill search running)
+- CONJECTURE SEG-COUNT: in every maximal REL-admissible segment [a, b], b − a ≤ the number of Even vertices that switch in [a, b]
+  (all of them lie in E_b ∪ T, and Even vertices of T never switch in [a, b] (F1), so the bound is ≤ |E_b| ≤ n − 1 without (H4′_rel)).
+  SEG-LAST implied it; it is weaker. DATA (lay/segsw.py, EXC = (b − a) − switching Even vertices): max EXC = 0 on alt_all (907 segments),
+  alt_all pinned starts (1,249), lib41 (978) (tight somewhere in each); −1 on seglast_kill_n110 ([2, 8]: 6 transitions, 7 switchers;
+  [11, 16]: 5 and 5), −11 on hgrow_kill_n89, wgrow_kill_n90; ≤ 0 on all box-26 pins (lay/segsw_*.txt).
+- Per-vertex switch counts inside one REL segment are NOT bounded by a constant: alt_all pinned starts, red/ul/ladderd0_k48_n156 segment
+  [0, 49], one Even vertex switches 48 times (also ladderd0_k24_n84: 24, red/usplit/grow_K40_n373: 40). So a "2 switches per vertex"
+  potential is false already in the library, and SEG-COUNT (which holds there) is not a per-vertex statement.
+- READING (charging): in seglast_kill_n110 the extra transition (the deadlock step 2 → 3) is paid by a JOINT final step (t = 7: 1, 4 and 30
+  last-switch together; 1's W-chain ends at 4, the last vertex of the W-snake), and in hgrow_kill_n89 the waiting H-sinks also switch
+  jointly with their W-chain's last vertex (t = 7). A proof of SEG-COUNT along these lines would charge each step with no final switch to
+  an H-sink whose final switch is simultaneous with the final switch of the last W-sink on its W-chain. OPEN.
+- Kill search: lay/wclimb.py OBJ=C (score 100 × max EXC + 20 × SEG-LAST failures + 5 × SINK-GROW failures + W-/H-GROW failures; third
+  component = max EXC, > 0 a kill) from seglast_kill_n110 (two seeds) and wgrow_kill_n90 (lay/out/c_*.log).
+
 ## DONE / FINDINGS / NEEDS
 - DONE: this note; tools experiments/si/lay/ (wsink.py, wclimb.py, ssamp.py, sinkstep.py, anat.py, relcheck.py); data lay/*.txt; pins
   lay/instances/ (wgrow_kill_n90, hgrow_kill_n89, seglast_kill_n110, each with its S3 start); DEAD.md "box 27"; check.sh "box 27".
