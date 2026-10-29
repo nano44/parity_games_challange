@@ -1,0 +1,12 @@
+PCH 27587 TDOWN 6127 TUP 2815 UP 9170 gate_TUP 273 runs 311 vP_with_TUP 2129 vP_with_UP 2804
+max PCH_per_vP (60, ('experiments/red/so/instances/rise_thin51_n40.pg', (9, 78), 40, 0))
+max TUP_per_vP (48, ('experiments/red/ul/instances/ladderd0_k48_n156.pg', (0, 49), 156, 50, [-1, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121]))
+max TUP_per_vP_gate (14, ('experiments/red/usplit/instances/gate_K16_n197.pg', (0, 23), 197, 189, [-1, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 190]))
+max UP_per_vP (47, ('experiments/red/ul/instances/ladderd0_k48_n156.pg', (0, 49), 156, 50))
+max distinct_tops_per_vP (48, ('experiments/red/ul/instances/ladderd0_k48_n156.pg', (0, 49), 156, 50))
+UP ('experiments/red/carry/instances/firedstep13_n76.pg', (6, 8), 76, 43, [48, 55], [6, 7])
+UP ('experiments/red/carry/instances/h4_compound2x2_n44.pg', (7, 10), 44, 7, [15, 39], [8, 9])
+UP ('experiments/red/carry/instances/h4_compound2x2_n44.pg', (7, 10), 44, 8, [15, 39], [8, 9])
+UP ('experiments/red/carry/instances/h4_compound2x2_n44.pg', (7, 10), 44, 10, [15, 39], [8, 9])
+UP ('experiments/red/carry/instances/h4_compound2x2_n44.pg', (7, 10), 44, 14, [15, 39], [8, 9])
+UP ('experiments/red/carry/instances/h4_compound2x2_n44.pg', (7, 10), 44, 21, [15, 39], [8, 9])

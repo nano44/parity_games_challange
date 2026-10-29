@@ -1,0 +1,37 @@
+NOTE start file ../../../experiments/red/n3/instances/n3cov_phi.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file ../../../experiments/red/n3/out/c3/best_3.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file ../../../experiments/red/n3/out/ph1/best_1.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file ../../../experiments/red/n3/out/ph2/best_2.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file ../../../experiments/red/n3/out/ph3/best_3.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file ../../../experiments/red/n3/out/ph4/best_4.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file ../../../experiments/red/n3/out/ph5/best_5.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file ../../../experiments/red/n3/out/ph6/best_6.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file ../../../experiments/red/n3/out/ph7/best_7.start invalid for its game (move not an edge, or missing); given start skipped
+CNT_chk 48135
+CUT_chk 1878
+GAMES 381
+GENW_used_fail 36
+GR_CLEAN 2298
+GR_CYC 17
+GR_CYC1 2
+GR_THRU 29
+GR_TIE 134
+GR_chk 2298
+H4rel_fail 107
+MAX_REL_len 30
+MAX_RUN 34
+MAX_SEG 26
+MAX_SEG_x100_over_n 83
+REL_X_gt_Q 1643
+REL_chk 4611
+REL_longer_than_SDp 661
+REL_sharp 175
+REL_sigmabar_moves_off_RO 661
+REMK_chk 4611
+RUNS 780
+RUNS_S 6288
+SDV_chk 591372
+SIG_chk 175
+SPLIT_chk 6288
+SPLIT_hyp 6177
+skip_big 202

@@ -79,4 +79,14 @@ if git cat-file -e 6b752e89^{commit} 2>/dev/null && git cat-file -e 991f9e27^{co
 else
   echo "FBCK-fixes quotes: NOT RUN (6b752e89 or 991f9e27 not in this clone)"
 fi
+# Box 49 (successor 30): packet P-N5-TOPSHAPE (frozen): quotes (2) + shifted control + sha1, and Lemma TOP-SHAPE's checks on long121 (VIOL absent).
+tq=$(python3 -I box49/topmono.py 0 1 box48/instances/long121_n40.pg)
+if python3 -I box49/quotecheck3.py ../../docs/new/P-N5-TOPSHAPE-box49.md | grep -q "quotes=2 bad=0" && \
+   ! python3 -I box49/quotecheck3.py ../../docs/new/P-N5-TOPSHAPE-box49.md --mut >/dev/null && \
+   [ "$(sha1sum ../../docs/new/P-N5-TOPSHAPE-box49.md | cut -d' ' -f1)" = "c5b0e8d86745d6db5e0c9f6e1551b10c5b511b8f" ] && \
+   echo "$tq" | grep -q "PCH 769 TDOWN" && ! echo "$tq" | grep -q VIOL; then
+  echo "P-N5-TOPSHAPE quotes 2 + control, sha1, TOP-SHAPE on long121: PASS"
+else
+  echo "P-N5-TOPSHAPE checks: FAILED"; exit 1
+fi
 rm -rf "$tmp"

@@ -1,0 +1,30 @@
+NOTE start file ../../../experiments/new/box45/instances/div_n8.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file ../../../experiments/new/box45/out/div_s13_1.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file ../../../experiments/new/box45/out/div_s15_1.start invalid for its game (move not an edge, or missing); given start skipped
+CNT_chk 29837
+CUT_chk 1199
+GAMES 489
+GENW_used_fail 40
+GR_CLEAN 1765
+GR_CYC 51
+GR_THRU 62
+GR_TIE 35
+GR_chk 1765
+H4rel_fail 98
+MAX_REL_len 36
+MAX_RUN 36
+MAX_SEG 24
+MAX_SEG_x100_over_n 100
+REL_X_gt_Q 1584
+REL_chk 4130
+REL_longer_than_SDp 461
+REL_sharp 231
+REL_sigmabar_moves_off_RO 461
+REMK_chk 4130
+RUNS 1077
+RUNS_S 5157
+SDV_chk 484691
+SIG_chk 231
+SPLIT_chk 5157
+SPLIT_hyp 5052
+skip_big 68

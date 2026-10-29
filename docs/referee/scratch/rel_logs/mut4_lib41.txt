@@ -1,0 +1,72 @@
+CNT_chk 19115
+CUT_chk 180
+GAMES 349
+GENW_used_fail 52
+GR_CLEAN 2438
+GR_CYC 15
+GR_CYC1 2
+GR_THRU 13
+GR_TIE 129
+GR_chk 2438
+H4rel_fail 62
+LEN_FAIL 283
+MAX_REL_len 44
+MAX_RUN 44
+MAX_SEG 6
+MAX_SEG_x100_over_n 50
+REL_X_gt_Q 4040
+REL_chk 7853
+REL_longer_than_SDp 4039
+REL_sharp 541
+REL_sigmabar_moves_off_RO 4039
+REMK_chk 7853
+RUNS 727
+RUNS_S 4353
+SDV_FAIL 26383
+SDV_chk 1902250
+SIG_FAIL 1274
+SIG_chk 2098
+SPLIT_FAIL 3
+SPLIT_chk 4353
+SPLIT_hyp 4280
+skip_big 63
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 16, 0, 'nxH', 8, 4)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 16, 4, 'nxH', 13, 9)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 16, 5, 'nxH', 10, 6)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 16, 6, 'nxH', 9, 5)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 16, 8, 'nxH', 10, 6)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 16, 16, 'nxH', 11, 7)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 16, 17, 'nxH', 15, 11)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 16, 22, 'nxH', 12, 8)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 16, 23, 'nxH', 11, 7)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 16, 26, 'nxH', 11, 7)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 16, 27, 'nxH', 14, 10)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 16, 28, 'nxH', 12, 8)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 17, 13, 'nxW', 9, 5)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 17, 0, 'nxH', 8, 4)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 17, 4, 'nxH', 13, 9)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 17, 5, 'nxH', 10, 6)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 17, 6, 'nxH', 9, 5)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 17, 8, 'nxH', 10, 6)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 17, 13, 'nxH', 9, 5)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 17, 16, 'nxH', 11, 7)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 17, 17, 'nxH', 15, 11)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 17, 22, 'nxH', 12, 8)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 17, 23, 'nxH', 11, 7)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 17, 26, 'nxH', 11, 7)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 17, 27, 'nxH', 14, 10)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 17, 28, 'nxH', 12, 8)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 18, 13, 'nxW', 9, 5)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 18, 0, 'nxH', 8, 4)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 18, 4, 'nxH', 13, 9)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 18, 5, 'nxH', 10, 6)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 18, 6, 'nxH', 9, 5)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 18, 8, 'nxH', 10, 6)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 18, 13, 'nxH', 9, 5)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 18, 16, 'nxH', 11, 7)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 18, 17, 'nxH', 15, 11)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 18, 22, 'nxH', 12, 8)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 18, 23, 'nxH', 11, 7)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 18, 26, 'nxH', 11, 7)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 18, 27, 'nxH', 14, 10)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b6_xl2_n32.pg/0', 4, 18, 28, 'nxH', 12, 8)
