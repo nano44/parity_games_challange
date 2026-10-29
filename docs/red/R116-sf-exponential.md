@@ -1,4 +1,4 @@
-# R116: N5-SF makes EXPONENTIALLY many iterations on dwN = fcN plus one repeater per escape-chain edge: 19·2^N − 18 iterations at n = 26N + 9, SBC_σ = 2^(N+1) − N − 2 (N = 3..8, two engines). DATA against CONJECTURE SF-POLY; plain N5 stays linear on the same games
+# R116: N5-SF makes EXPONENTIALLY many iterations on dwN = fcN plus one repeater per escape-chain edge: 19·2^N − 18 iterations (exact N = 3..8; 9697 at N = 9) at n = 26N + 9, SBC_σ = 2^(N+1) − N − 2 (exact N = 3..9). DATA against CONJECTURE SF-POLY; plain N5 stays linear on the same games
 L-RED successor 29 (Opus 5.5; D1/D18; Lead 18:10Z STEP 1, "push N5-SF's iteration degree above 3, or find the obstruction"). Written
 2026-10-29 from 18:30Z (date -u). Labels: DATA / READING / OPEN / DEAD. Not a TARGET.md claim. N5-SF is L-NEW's single-frame variant
 (claude/l-new docs/new/N5-SF-box54.md; CONJECTURE SF-POLY in P-N5-SF-box55.md §5). This note does NOT concern N5 SSI-GLOBAL itself (§3).
@@ -20,12 +20,13 @@ Start: SPEC S3 default (best-reward start for both players) everywhere.
   | 3 | 87 | 134 | 134 | 134 | 11 | 11 | 3 | 0 | 0 | OK | e5f94c800324 |
   | 4 | 113 | 286 | 286 | 286 | 26 | 26 | 4 | 0 | 0 | OK | eba759c1e811 |
   | 5 | 139 | 590 | 590 | 590 | 57 | 57 | 5 | 0 | 0 | OK | c03e3e00578a |
-  | 6 | 165 | 1198 | 1198 | 1198 | 120 | 120 | 6 | 0 | 0 | | 34ad93bc62d0 |
-  | 7 | 191 | 2414 | 2414 | 2414 | 247 | 247 | 7 | 0 | 0 | | 6b40922a7950 |
+  | 6 | 165 | 1198 | 1198 | 1198 | 120 | 120 | 6 | 0 | 0 | OK | 34ad93bc62d0 |
+  | 7 | 191 | 2414 | 2414 | 2414 | 247 | 247 | 7 | 0 | 0 | OK | 6b40922a7950 |
   | 8 | 217 | 4846 | 4846 | 4846 | 502 | 502 | 8 | 0 | 0 | | 5a7fe1cc2d78 |
-  | 9 | 243 | S9 | | 9710 | | 1013 | | | | | |
+  | 9 | 243 | **9697** | (running) | 9710 | 1013 | 1013 | 9 | 0 | 0 | | (dlchain.py 9 1) |
   | 10 | 269 | S10 | | 19438 | | 2036 | | | | | |
-  Both formulas hold exactly wherever measured. For comparison, fcN (no repeaters) gives 121 / 215 / 520 / 1021 at N = 3 / 4 / 6 / 8
+  The SBC formula holds exactly at N = 3..9. The iteration formula holds exactly at N = 3..8. At N = 9 the count is 9697, 13 below
+  the fit (ratio to N = 8: 2.0010), so the iteration closed form is a fit, not the law. The growth is still a doubling per bit. For comparison, fcN (no repeaters) gives 121 / 215 / 520 / 1021 at N = 3 / 4 / 6 / 8
   (R115).
 - The σ̄-flip word (sftrace.py; h_i+ = Odd escapes cycle i, i.e. bit i set; h_i− = Odd returns). N = 5, 57 flips:
   `h0+ h1+ h0- h0+ h2+ h1- h0- h0+ h1+ h0- h0+ h3+ h2- h1- h0- h0+ h1+ h0- h0+ h2+ h1- h0- h0+ h1+ h0- h0+ h4+ h3- …`.
@@ -84,8 +85,8 @@ Start: SPEC S3 default (best-reward start for both players) everywhere.
   this, because §1 needs no nesting at all.
 
 ## 4. What is and is not shown
-- DATA: two independent engines agree on the counts for N = 3..8, see the table. Oink regions and verify.py are OK at N = 3, 4, 5. The
-  closed forms are fits that hold exactly at every measured N.
+- DATA: two independent engines agree on the counts for N = 3..8, see the table. Oink regions and verify.py are OK at N = 3..7. The
+  SBC closed form holds exactly at N = 3..9. The iteration closed form holds at N = 3..8 and misses by 13 at N = 9 (sf2 only).
 - NOT shown: a proof that the word is the binary counter for every N. That would need an induction over the run, like the one L-NEW
   left open for fcN (box59 §1.3). The doubling F(j) = 2F(j − 1) + j + 1 is read from the words for N ≤ 5 only.
 - What would make this wrong: an engine bug shared by both engines (they share no code: sf2 uses L-COMP's PGSolver port, n5sf.py uses L-SI's
@@ -94,7 +95,7 @@ Start: SPEC S3 default (best-reward start for both players) everywhere.
 ## DONE / FINDINGS / NEEDS
 - DONE: dlchain.py (dwN), pins dw_3..dw_8, check.sh gate (dw_3 134/11, dw_4 286/26), two-engine counts, Oink checks, the word, the I^glo
   and plain-N5 comparisons.
-- FINDINGS: (1) DATA: N5-SF iterations 19·2^N − 18 and SBC_σ 2^(N+1) − N − 2 on dwN (n = 26N + 9), N = 3..8. This is evidence that
+- FINDINGS: (1) DATA: N5-SF iterations 19·2^N − 18 (N = 3..8; 9697 at N = 9) and SBC_σ 2^(N+1) − N − 2 (N = 3..9) on dwN (n = 26N + 9). This is evidence that
   CONJECTURE SF-POLY is false, on an exact exponential pattern. (2) READING: one positive hop lag on each escape-chain edge turns fcN's
   unary counter into a binary one, so N5-SF's frame (Odd fixed to σ̄) loses the race that plain N5 wins. (3) Plain N5 is unaffected
   (linear, = fcN). (4) DEAD: repeaters with fallback p, and repeaters with priorities below q.
