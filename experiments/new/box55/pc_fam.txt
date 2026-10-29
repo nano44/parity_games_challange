@@ -1,0 +1,81 @@
+GAME new/box54/out/d_pivot_demo.pg rc=0
+ROW E_ n 11 m 15 values 2 orbit 2 SBC 0 LAM 1 SEG 2 SEGMAX 0
+ROW O_ n 11 m 15 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/ctl/pivot_demo.pg rc=0
+ROW E_ n 11 m 15 values 2 orbit 2 SBC 1 LAM 1 SEG 2 SEGMAX 0
+ROW O_ n 11 m 15 values 2 orbit 2 SBC 0 LAM 1 SEG 2 SEGMAX 0
+CHECK PASS
+GAME red/seg/instances/runquad_K3_m4_n54.pg rc=0
+ROW E_ n 54 m 83 values 3 orbit 3 SBC 1 LAM 1 SEG 2 SEGMAX 1
+ROW O_ n 54 m 83 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/seg/instances/s3quad_K3_m4.pg rc=0
+ROW E_ n 137 m 166 values 3 orbit 3 SBC 1 LAM 1 SEG 2 SEGMAX 1
+ROW O_ n 137 m 166 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME new/box54/out/d_runquad_K3.pg rc=0
+ROW E_ n 54 m 83 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+ROW O_ n 54 m 83 values 3 orbit 3 SBC 1 LAM 1 SEG 2 SEGMAX 1
+CHECK PASS
+GAME red/seg/instances/runquad_K8_m30_n192.pg rc=0
+ROW E_ n 192 m 287 values 3 orbit 3 SBC 1 LAM 1 SEG 2 SEGMAX 1
+ROW O_ n 192 m 287 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME red/seg/instances/s3quad_K8_m30.pg rc=0
+ROW E_ n 479 m 574 values 3 orbit 3 SBC 1 LAM 1 SEG 2 SEGMAX 1
+ROW O_ n 479 m 574 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME new/box52/out/topfix_n3.pg rc=0
+ROW E_ n 63 m 148 values 65 orbit 65 SBC 6 LAM 4 SEG 10 SEGMAX 18
+ROW O_ n 63 m 148 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME new/box52/out/topfix_n4.pg rc=0
+ROW E_ n 84 m 213 values 78 orbit 78 SBC 11 LAM 4 SEG 15 SEGMAX 23
+ROW O_ n 84 m 213 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME new/box52/out/topfix_n6.pg rc=0
+ROW E_ n 126 m 364 values 92 orbit 92 SBC 14 LAM 4 SEG 17 SEGMAX 35
+ROW O_ n 126 m 364 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME new/box54/out/d_hntop_n3.pg rc=0
+ROW E_ n 63 m 148 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+ROW O_ n 63 m 148 values 65 orbit 65 SBC 6 LAM 4 SEG 10 SEGMAX 18
+CHECK PASS
+GAME new/box52/out/topfix_n8.pg rc=0
+ROW E_ n 168 m 543 values 106 orbit 106 SBC 16 LAM 4 SEG 19 SEGMAX 47
+ROW O_ n 168 m 543 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME new/box51/out/dlc_d2.pg rc=0
+ROW E_ n 27 m 49 values 8 orbit 8 SBC 0 LAM 0 SEG 1 SEGMAX 7
+ROW O_ n 27 m 49 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME new/box51/out/dlc_d3.pg rc=0
+ROW E_ n 109 m 211 values 16 orbit 16 SBC 0 LAM 0 SEG 1 SEGMAX 15
+ROW O_ n 109 m 211 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME new/box51/out/dlc_d4.pg rc=0
+ROW E_ n 455 m 901 values 32 orbit 32 SBC 0 LAM 0 SEG 1 SEGMAX 31
+ROW O_ n 455 m 901 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME new/box54/out/d_dlc_d3.pg rc=0
+ROW E_ n 109 m 211 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+ROW O_ n 109 m 211 values 16 orbit 16 SBC 0 LAM 0 SEG 1 SEGMAX 15
+CHECK PASS
+GAME si/runlin/instances/runfam_K10.pg rc=0
+ROW E_ n 49 m 165 values 38 orbit 38 SBC 9 LAM 2 SEG 10 SEGMAX 25
+ROW O_ n 49 m 165 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME si/runlin/instances/runfam_K40.pg rc=0
+ROW E_ n 79 m 225 values 40 orbit 40 SBC 9 LAM 2 SEG 10 SEGMAX 27
+ROW O_ n 79 m 225 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME new/box52/out/topfix_n8_cmp.pg rc=0
+ROW E_ n 171 m 549 values 106 orbit 106 SBC 47 LAM 4 SEG 50 SEGMAX 47
+ROW O_ n 171 m 549 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+GAME new/box52/out/topfix_n10.pg rc=0
+ROW E_ n 210 m 750 values 120 orbit 120 SBC 18 LAM 4 SEG 21 SEGMAX 59
+ROW O_ n 210 m 750 values 1 orbit 1 SBC 0 LAM 0 SEG 1 SEGMAX 0
+CHECK PASS
+games 20 pass 20 fail 0 timeout 0

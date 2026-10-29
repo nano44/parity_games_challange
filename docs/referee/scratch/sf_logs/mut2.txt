@@ -1,0 +1,16 @@
+NOTE start file sf_inputs/n3cov_lean.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file sf_inputs/new_box52_out_topfix_n8_cmp.start invalid for its game (move not an edge, or missing); given start skipped
+CONF_chk 381506
+GAMES 89
+ITER 2969
+ONEP_chk 3149
+ORB_chk 208
+RUNS 104
+SBC_max 60
+SEG_chk 1103
+SEG_fb_in 1
+TAU_chk 104
+TOT_chk 208
+segmax 47
+skip_big 6
+VIOLATIONS 0

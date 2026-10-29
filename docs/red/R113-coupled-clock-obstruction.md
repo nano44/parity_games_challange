@@ -50,10 +50,13 @@ OPEN. Not a TARGET.md claim, not a proof. G-N5-TIME stays OPEN.
   i.e. towards a polynomial bound. The obvious next test is (i) or (ii).
 
 ## 4. Addendum (2026-10-29 14:47Z, date -u): route (iv′) and why mkr cannot simply be merged with its dual
-- A route that respects §2: let Odd delay mkr's W-SINKS instead of the pivots. w_i's keep goes to a one-shot Odd holder χ_i (τ = a new
-  Odd loop Λ_i with T′_K < Λ_i < T_i, so W(keep) ≥ W(T_i) and τ(Λ_i) = self stays U-stable through mkr's EQ escape). h cannot take
-  C_{i+1} during the hold, because C_{i+1}'s honest value rises only after w_i switches (its Ξ-menu, Even's own). So the net W-drop at
-  w_i (rule D) is followed by nobody, and h's step is still a W-rise. Each pivot step then waits for one Odd event.
+- A route that seemed to respect §2 (first version of this addendum, 41c567c3..f8b59275): let Odd delay mkr's W-SINKS with one-shot
+  holders χ_i on w_i's keep. CORRECTION (checked against mkr.py, 2026-10-29 15:09Z, date -u): it does not work in mkr. C_{i+1} is in h's
+  Ξ-menu from the start (h's honest value at C_{i+1} is H_{i+1} = {η_{i+1}, M} via Bq_{i+1}, whatever w_i does); h is gated by W
+  only, through W(C_{i+1}) = W(w_i). A stalled w_i has W(w_i) = W(keep) ≥ W(T_i), and T_i already beats h's current loop T_{i−1}, so
+  h would leave early, during the hold. General form (READING): a W-rise signal cannot be delayed by an Odd hold, because the stalled
+  vertex's W is already at least its alternative's. A hold can delay only a step whose follower is gated by its own MENU (Ξ for Even),
+  so mkr would have to be changed so that C_{i+1}'s honest value runs through w_i. Not done.
 - The Odd events must come from an Odd clock (Odd pivots + Odd reactors) whose own W-sinks wait for Even events. The obvious Odd clock
   is the dual of mkr. It does not work as a partner (READING, from S1's order, no instance):
   - mkr lives in an Odd-winning region: every Ξ-play ends at z (odd), every U-play in an Odd self-loop. Its dual lives in an
@@ -86,6 +89,7 @@ OPEN. Not a TARGET.md claim, not a proof. G-N5-TIME stays OPEN.
      every followed step; so an Even reactor clock cannot be driven by Odd-released pivots (and dually). The "two-sided mkr" of R112 §4
      is DEAD as designed (the holder ladder must decrease, the reactors need it to increase).
   3. OPEN: break (B) (separate W-sources behind not-best-reply Odd a_j, b_j) or (A) (simultaneous changes on one play).
-  4. READING (§4): Odd may delay mkr's W-sinks (one-shot holders) without breaking §2; but mkr's dual is in the opposite winning
-     region, so cross gates between mkr and its dual never open. The partner clock must be built in the same region. OPEN.
+  4. READING (§4, corrected): an Odd hold cannot delay a W-rise signal (the held vertex's W already reaches its alternative's), so
+     W-sink holders fail in mkr as built; mkr's dual is in the opposite winning region, so cross gates between them never open;
+     DATA: ewin/dewin give a same-region Odd clock. OPEN: a clock whose pivot options are menu-gated through the W-sinks.
 - NEEDS: none from the owner.

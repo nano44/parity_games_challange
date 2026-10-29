@@ -1,0 +1,15 @@
+OK   docs/new/N5-ssi-global.md@2a435f8f4:28-29 | valuation of v under (σ, σ̄): (c, P, ℓ), c = the most relevant (max p') vertex of the cycl
+OK   docs/new/N5-ssi-global.md@2a435f8f4:30-31 | order (better for Even): compare reward of c (p'(c) if even, −p'(c) if odd); then P by the
+OK   docs/new/N5-ssi-global.md@2a435f8f4:32-32 | Ξσ = valuation of every vertex under σ and Odd's OPTIMAL counterstrategy σ̄ (minimising th
+OK   docs/new/N5-ssi-global.md@2a435f8f4:47-47 | Improving edges: Iσ = {(v, w) : owner(v) = Even, w ≠ σ(v), Ξσ(w) strictly better than Ξσ(σ
+OK   docs/new/N5-ssi-global.md@2a435f8f4:51-54 | a. If Iσ ≠ ∅: A(v) = {σ(v)} ∪ {w : (v, w) ∈ Iσ} for Even v. Arena H: Even v keeps only edg
+OK   docs/new/N5-ssi-global.md@2a435f8f4:56-56 | c. FALLBACK, if σ_new = σ and τ_new = τ:
+OK   docs/RESULTS.md@2a435f8f4:640-642 | (d) N5: every iteration applies Switch_I with ∅ ≠ I ⊆ Iσ to Even's σ (on G) and/or with ∅ 
+OK   docs/new/N5-phase-bound-box10.md@2a435f8f4:16-16 | (F1) the optimum of a one-player game dominates every strategy of that game pointwise
+OK   docs/new/N5-phase-bound-box10.md@2a435f8f4:13-14 | Prefix: x ⊕ (c, P, ℓ) := (c, P ∪ {x if x more relevant than c}, ℓ + 1); this is the value 
+OK   docs/new/N5-phase-bound-box10.md@2a435f8f4:20-21 | (V1) if x is not its own cycle node then Ω_ρ(x) = x ⊕ Ω_ρ(ρ(x)) and the ρ-path from ρ(x) t
+OK   docs/new/N5-phase-bound-box10.md@2a435f8f4:21-22 | (V2) PREFIX MONOTONICITY: if a ⪯ b are values whose paths both avoid x (or whose cycle nod
+OK   docs/new/N5-phase-bound-box10.md@2a435f8f4:27-28 | For a simple path r = (x = r_0, r_1, …, r_L = u) in H with L ≤ k edges let value(r) := (u,
+MISS docs/new/N5-phase-bound-box10.md@2a435f8f4:32-37 | Case A: (x, z) ∉ I_k, i.e. Ω_k(z) ⪯ Ω_k(ρ_k(x)). So value(r') ⪯ Ω_k(ρ_k(x)) (transitivity)
+OK   docs/new/N5-phase-bound-box10.md@2a435f8f4:38-39 | Case B: (x, z) ∈ I_k, i.e. Ω_k(z) ≻ Ω_k(ρ_k(x)). Then ρ̂ := ρ_k[x → z] is a strategy of th
+tags 14 ok 13 miss 1 SHIFT 0

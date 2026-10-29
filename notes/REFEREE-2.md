@@ -1,6 +1,14 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 2 (successor 20; 2026-10-29 16:0xZ by date -u)
+- MPGS §C DONE (R2-N5-MPGS-C.md e1ec568a; REFEREE §C 8da7b717 also EMPTY; Lead: D1-D4 required). COMPOSE §C DONE (ee549524; Lead: D2, D3
+  required as F2, F3).
+- P-N5-SF (l-new 95a7a581, sha1 dbc2345f): report docs/referee-2/R2-N5-SF.md, all SIGNED, no gap; N-SF-1..6. Own sf_check.py (independent
+  N5-SF on si.py; reproduces lane ROW figures ONLY with partial starts filled from S3, the lane's convention). Runtimes: lib41 ~6 min,
+  rand_4_14 ~10 min, hard ~5 min.
+- NEXT: §C for SF after REFEREE's SF report (count 0 at 16:03Z). Worktree $SCRATCH/wsf (remove when done).
+
 ## Resume point 1 (successor 20, Opus 5.5 under D15; 2026-10-29 11:4xZ by date -u)
 - Handover check fad9a963 (pushed, VERIFY PASS); answers sent to the Lead 11:25Z.
 - P-N5-MPGS (l-lit a23179b0, sha1 24913a7f): report docs/referee-2/R2-N5-MPGS-s20.md (renamed: succ. 19 pushed its own R2-N5-MPGS.md at 0c4524f0 11:26Z, same packet). (A) identical in content to MATCHPHI -> carried over SIGNED

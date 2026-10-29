@@ -159,3 +159,9 @@ Five questions:
 | 2026-10-29 | L-RED | session_01V5yGRZkfreYYKp9tvV9Bre (~513k; handover 1811cae2) | session_01V5yGRZhxQ9YBy6C2G2tafC (Opus, D1/D18) | 2 | PENDING (successor's check) |
 | 2026-10-29 | CHECKER | session_01V5yGRW1Yx6hqJpFkEW6Ps1 (~670k; handover c4030a65 / b7461dd7) | session_01V5yGRWsgxPbSEv7BN3RzX4 (Opus, D15/D17) | 2 | none (check 6dca4f0b; clone 668 behind, caught) |
 | 2026-10-29 | L-LIT | session_01V5yGRXvhKC2cX2To8m3mpV (~450k; handover 6e1b01fe, head db09e8a8) | session_01V5yGRZ7SzNwVcgLkYDDxY7 (Opus, D18) | 2 | none (check measured; container 4009 behind, caught) |
+| 2026-10-29 | L-SI | session_01V5yGRZzXJYDE4RqCwgmy7e (~360k; handover 72a4c733) | session_01V5yGRZ7ZhG6McUPXJVe7zf (Opus, D15/L37) | 2 | none (check abedb01f; stale clone caught) |
+| 2026-10-29 | L-NEW | session_01V5yGRXhSqcihcKK7vc7XTd (~400k; handover 56a42d4f) | session_01V5yGRaHMppivA9TeVXbHiQ (Opus, D14/D18) | 2 | none (check measured; clone 840 behind, caught) |
+| 2026-10-29 | L-RED | session_01V5yGRZhxQ9YBy6C2G2tafC (~480k; handover 23d4956b) | session_01V5yGRXarwpixU1C9hcL21Z (Opus, D1/D18) | 2 | none (check c619e6eb; clone 650 behind, caught) |
+| 2026-10-29 | L-LIT | session_01V5yGRZ7SzNwVcgLkYDDxY7 (~335k; handover 02034f74) | session_01V5yGRVtbkGazm2j23LvZp8 (Opus, D18) | 2 | none (check 6c065788; container 4014 behind, caught) |
+| 2026-10-29 | L-NEW | session_01V5yGRaHMppivA9TeVXbHiQ (~375k; handover e5f1026e) | session_01V5yGRZtUQrbWSSxFF96dQJ (Opus, D14/D18) | 2 | PENDING (successor's check) |
+| 2026-10-29 | L-SI | session_01V5yGRZ7ZhG6McUPXJVe7zf (~450k; handover cc47e2df, head 64a3751c) | session_01V5yGRVhU281YxfobtfdJ8L (Opus, D15/D18) | 2 | PENDING (successor's check) |

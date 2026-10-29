@@ -1,0 +1,19 @@
+MODE files /tmp/gp1.lst 1 PCAP 300 RANDH 3 MAXF 400
+B1: 46
+F1H_checks: 46
+FWR_checks: 39
+F_RT0: 38
+F_checked: 39
+GPS_paths: 89
+NOTBL_checks: 876
+WMON_checks: 8
+XW_checks: 2256
+X_BLK: 6
+X_GPall: 2
+frozen_phases: 39
+runs: 1
+transitions: 46
+max maxF: 3
+max maxRT: 1
+max maxWCH: 3
+RESULT PASS violations 0

@@ -1,13 +1,28 @@
 # L-LIT notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point (successor 3, Opus 5.5, D15/D18; session_01V5yGRZ7SzNwVcgLkYDDxY7; 2026-10-29 from 14:45Z by date -u)
-DONE this session (claude/l-lit; every push via scripts/push.sh):
-- dbaf814b handover check (container started 4009 behind; fast-forwarded). VERIFY PASS, Oink smoke NOT RUN (not built).
-- T44 docs/lit/T44-single-frame-variants.md + T44-sf-variants.py + T44-sfw-cycle-check.py + T44-rcyc10.pg (single-frame N5 variants for
-  L-NEW 32 BOX 54): SF-Ξ = Friedmann I^glo (Thm 8.4; H3-H5 107/235/491), SF-W cycles (dlm1 n 5-7, dlm2 n 2-4, 10-vertex random), SF-SSI = SSI.
-IN FLIGHT: none. NEXT: the Lead's word.
-Predecessor's resume point (successor 2, parked 14:25Z): in git history at 6e1b01fe.
+## Resume point (HANDOVER, 2026-10-29 ~17:12Z by date -u; successor 4, Opus 5.5, D15/D18; session_01V5yGRVtbkGazm2j23LvZp8; parked on Lead's word)
+DONE this session (claude/l-lit; every push via scripts/push.sh, exit 0, VERIFY PASS; Oink smoke NOT RUN, Oink not built here):
+- 6c065788 handover check (container 4014 behind; fast-forwarded). 0703a463 trunk merge 55d45567 + T48 script v1.
+- ca194a96 T48 docs/lit/T48-sbc-neighbours.md + T48-sbc-embed-check.py: parametric shortest paths vs SBC (leapfrog = Carstensen mechanism,
+  quasi-poly floor for value+argmin proofs; F not one-parametric, SEGRET witness switchbestexp_1 pair (15,5)); DMDP / opponent-response
+  literature (no source counts response changes); Friedmann DAM 2013 snare preprint OPENED. §1.5 clock hint later RETRACTED (circular).
+- 4ff31a84 PIECES in the script. 44e057ef T49 docs/lit/T49-tropical-simplex.md (Maat SI = simplex dictionary; transfer theorem + rule list;
+  smoothed results do not reach parity; PIECES ≈ SBC/2; Loff-Skomra one- vs two-player single-parameter breakpoints).
+- 6722627d T50 docs/lit/T50-quasipoly-si.md (Koh-Loho potential height; coherent = parametric dimension 1, Black-Xue 2026; DLM locks cannot
+  act on F; no all-rules bound for one-sided SI, Friedmann Lemma 4.2).
+IN FLIGHT: none.
+OPEN LEADS for a successor (only on a concrete Lead question):
+- KL-SF (T50 §1): F's step with Koh-Loho tree labels; for L-NEW to define/measure. Literature side: Koh-Loho Prop. 2.5 with roles swapped.
+- Parametric dimension d ≥ 2 of F's runs (T49 §4, T50 §2): no test, no literature; Billera-Sturmfels Fiber polytopes (1992) NOT OPENED.
+- Maat 2509.16075 p.18 open direction (tropical LP where SI = tropical simplex); is F's distinct-σ sequence a subsequence of a monotone
+  single-switch simplex path (T49 §1, OPEN).
+- Loff-Skomra p.7 one-player «at most n break points» is stated without proof there (BEF+11/18 not opened).
+NOT OPENED (owner-optional, paywalled or unreachable): Carstensen 1983 + Michigan thesis; Gusfield JACM 1983; Mulmuley-Shah JCSS 2001;
+Karp-Orlin DAM 1981; Kelner-Nikolova FOCS 2007; Nikolova thesis 2009; Erickson SODA 2010; HKZ SODA 2014; Hansen-Zwick ISAAC 2010 full text;
+Madani-Thorup-Zwick TALG 2010; DAM 2013 published version (preprint opened); journal versions of ABGJ papers; AGJ survey; Goldfarb;
+Borgwardt; Deshpande-Spielman; Boros et al. ICALP'11/Algorithmica'18; Avis-Chvátal; Billera-Sturmfels 1992; Gaubert-Katz-Sergeev EPiC.
+NEEDS: none from the owner.
 
 ## Queue
 - T40 primaries not opened: Condon 1993 (DIMACS 13), Pollatschek-Avi-Itzhak 1969 (Mgmt Sci 15), van der Wal 1976/1978 (cited via
@@ -23,6 +38,17 @@ Predecessor's resume point (successor 2, parked 14:25Z): in git history at 6e1b0
 - Open FL09 (self-loop removal) if the REFEREE needs it; Friedmann RAIRO 2011 (publisher 403; try author copy).
 
 ## Things only I know
+- Successor 4 (T48): source PDFs in scratchpad t48/A (parametric), t48/B (DMDP), t48/C (Friedmann/Fearnley), each with .txt; Gusfield 1980
+  thesis is a scan without text layer, pages read as PNG (t48/Aimg/gus3 = printed pp.83-87). Lost with the container; URLs + sha256 in Sources.
+- Friedmann snare preprint URL oliverfriedmann.com/downloads/papers/fearnley_lower_bound.pdf (HTTP 200 though his page marks it broken);
+  oliverfriedmann.de resets. Do not fetch sciencedirect.
+- T48-sbc-embed-check.py runs from the repo root (needs trunk's experiments/new/box54, box21, si, harness); WIT=1 prints the first SEGRET witness.
+  snare instances: T47 generator into scratchpad t48/inst. switchbestexp_5 with SEGRET takes a few minutes.
+- Successor 3: PGSolver clone at d3cd624 lives in scratchpad dl46/pgsolver (lost with the container; re-clone github.com/tcsprojects/pgsolver,
+  checkout d3cd624). No OCaml toolchain here, so no binary check of T47. Friedmann thesis + Fearnley PDFs in scratchpad dl46/ (sha256 in Sources).
+- L-NEW's n5sf.py computes ROOT from its own path: to run a copy from the scratchpad, pre-insert experiments/new/box21 etc. into sys.path
+  (T45-sf-diff.py, T46-backedge-sbc.py do this). H3 F start: trace() gives 64 iterations vs L-NEW's 7n+49 = 70 (reported to Lead).
+- The ScienceDirect/Elsevier fetch for DAM 2013 was refused by the session's permission classifier; do not retry around it.
 - Successor 3 (T44): run scripts from the repo root (python3 -I docs/lit/T44-*.py). DLM instances: experiments/new/dlm_gen.py 1|2 n > g.pg
   2> g.start; H_n: experiments/friedmann-hn/instances/H<n>.pg + H<n>_F.start. Random search script + logs: scratchpad t44/ (lost with the
   container; rnd.py = random games, owner/prio/succ uniform, out-degree 1-3, seeds 1 and 7). Friedmann PDFs: scratchpad dl44/f/.
@@ -343,6 +369,59 @@ Predecessor's resume point (successor 2, parked 14:25Z): in git history at 6e1b0
 | arXiv 1204.1147 v1 (Gawlitza, Seidl) sha256 df5c0793acd36a2c… | abstract; Thm 1 p.27 (+ conjecture); Thm 4 p.39 | 2026-10-29 | T42 |
 | Podelski-Rybalchenko VMCAI 2004; Bradley-Manna-Sipma ICALP 2005; Alias et al. SAS 2010 | NOT opened (author/publisher URLs return HTML); cited via the survey 2509.06752 and BG14 only | 2026-10-29 | T42 |
 | arXiv 1106.0778 v1 (sha256 a35e4ef6e2c4d0b9…) and v2 (sha256 46c96f44775aa2b0…, = L-COMP's file) (Friedmann, LMCS 7(3:19)) | §3 improvement arena A_{G,σ} (p.5-6); §4 I^loc, I^glo definitions (p.6-7), Thm 4.2 [Sch08]; Thm 6.14 (I^loc, G_n); Thm 8.4 (I^glo, H_n, ≥ 2^n steps from ι_{H_n}) | 2026-10-29 | T44; superscripts dropped by pdftotext |
+| arXiv 1003.2976 v1 (Fearnley, Non-oblivious SI, LPAR 2010), sha256 7ac44213b8d8d633… | Def. 2, 3, 10, 11; Thm 4; Prop. 12, 14, 15, 16; Alg. 1; §8.1-8.2 p.11-13 | 2026-10-29 | T46 |
+| Friedmann PhD (edoc 13294, sha256 68748f53…), re-opened | Table 4.2 p.94; §4.3 p.101-104 (intermediate cycles, simple cycle gadget Fig. 4.4-4.7); §4.6.2 p.139-140; Thm 4.41, 4.43, 4.45, 4.50 (p.149) | 2026-10-29 | T46 |
+| github.com/tcsprojects/pgsolver @ d3cd624 (git clone) | stratimpralgs/switch_locally_best.ml l.21-45 (improvement_policy_by_counterstrategy), stratimpralgs.ml l.136-145, switch_internal.ml l.490-494 (strimprbyco commented out), git log -S (f2ea8b0, 2013); generators/policyiter list incl. friedmannsubexp.ml, fearnleysubexp.ml | 2026-10-29 | T46 |
+| DOI 10.1016/j.dam.2013.02.007 (Friedmann, snare memorization, DAM 161 (2013) 1317-1337) | (T48: author preprint now OPENED, see below) NOT OPENED: Crossref metadata only; publisher fetch refused in-session; not on arXiv | 2026-10-29 | T46 |
+| T48 (2026-10-29) sources below: opened by my subagents A/B/C, key quotes re-checked by grep by me (marked *) | | | |
+| Gusfield, PhD thesis UC Berkeley 1980, ERL M80/22 (www2.eecs.berkeley.edu/Pubs/TechRpts/1980/Archive/ERL-m-80-22.pdf) sha256 7a77e3926d6ce0d8… | Thm 4.1 printed p.59 (0/1 slopes: n-1 s-t breakpoints, n(n-1)/2 s-to-all); Thm 4.4 pp.83-86 (G_{n×c}, halving at A); Thm 4.5 p.86 ((2n+1)^(log n+1)/2); p.87 remark «any cost function with the property that no path is minimum for more than one contiguous range of λ» | 2026-10-29 | * read from page images by me (pp.83-87) |
+| arXiv 1811.05115 v3 (Gajjar-Radhakrishnan) sha256 79208b4f… | Thm 1 p.2; p.2 Carstensen / Mulmuley-Shah / Gusfield statements; Thm 3 | 2026-10-29 | * p.2 re-grepped |
+| arXiv cs/0205041 (Young-Tarjan-Orlin, Networks 1991) sha256 15898b5e26c94971… | §2: «at most n^2 trees», «no vertex acquires a new path more than n − 1 times»; §5 p.16 (Kn^2 trees) | 2026-10-29 | * |
+| Nikolova-Kelner-Brand-Mitzenmacher ESA 2006 (author PDF eecs.harvard.edu/~michaelm/postscripts/esa2006c.pdf) sha256 2cd7c54b45e6d1b3… | §2.2; Lemma 1 (breakpoints = shadow extreme points); Cor. 1 n^Θ(log n) | 2026-10-29 | agent A |
+| arXiv 1001.3749 v2 (Chakraborty-Fischer-Lachish-Yuster) sha256 45398534db333c8b… | pp.170-171: Carstensen example with a_e, b_e positive; tightness | 2026-10-29 | agent A |
+| arXiv 2501.11544 (Nemesch-Ruzika-Thielen-Wittmann survey) sha256 3bd371745579cad8… | §4.1 p.11-12 | 2026-10-29 | agent A |
+| arXiv 2607.21055 (Chillara-Gajjar) sha256 32ee94e1aab6eecd… | abstract; Thm 2 p.5: n^O(d log n), matching lower bound | 2026-10-29 | agent A |
+| arXiv 2609.29234 (Nishida, parametric min cycle mean) sha256 ca9af90fc532c74a… | p.2, §2 p.6: O(n^2 W) breakpoints; per-vertex path changes ≤ 2(n−1)W | 2026-10-29 | agent A |
+| arXiv 1311.5935 v2 (Disser-Skutella) sha256 b298d3e9… | Cor. 3, 4 p.4 (counting shadow vertices NP-hard) | 2026-10-29 | agent A |
+| arXiv 2604.08892, 1904.01082 | abstracts: no one-parameter count bound | 2026-10-29 | agent A |
+| arXiv 1208.5083 v2 (Post-Ye) sha256 c51876ebf5c3cdb0… | Thm 3.7 p.9, Thm 4.8 p.12, p.2 «do not extend to policy iteration», §5 p.12 | 2026-10-29 | * p.2 |
+| arXiv 1008.0530 v1 (HMZ) sha256 f53a6b5127d95078… | Thm 6.5 p.11; p.9 best response black box; Lemma 6.4 | 2026-10-29 | * |
+| arXiv 2606.29568 v1 (Mei-Sun-Ye) sha256 8bbb42f6834b6738… | Thm 1 p.16; Prop. 2; Alg. 1 p.10; p.10 «each such pivot may change Player 2's optimal response» | 2026-10-29 | * |
+| Björklund-Vorobyov DAM 155 (2007) author PDF (dbai.tuwien.ac.at) sha256 95a6b406f01db6b4… | §6, Thm 6.1, journal pp.221-222: «the sum of all n_i's does not exceed n^2·W» | 2026-10-29 | * |
+| arXiv 2506.12254 v1 (Asadi-Chatterjee-de Raaij) sha256 78c4ee071961b89e… | Thm 3.2 p.4 | 2026-10-29 | agent B |
+| arXiv 1003.3418 v1 (Fearnley ICALP 2010) sha256 0964f029… | Thm 17, 18 p.12 | 2026-10-29 | agent B (re-open) |
+| arXiv 2102.04922 v2, 1501.06484 v1, 2309.02223 v1, 2405.02479, 1705.02313, 1901.05316 | best-response remarks only; no count of opponent changes | 2026-10-29 | agent B |
+| Hansen-Zwick ISAAC 2010 abstract (Aarhus Pure) | abstract «Ω(n^2) iterations» | 2026-10-29 | agent B; full text NOT OPENED |
+| Friedmann, «A Superpolynomial Lower Bound for Strategy Iteration based on Snare Memorization», author preprint «February 13, 2013» (oliverfriedmann.com/downloads/papers/fearnley_lower_bound.pdf) sha256 8ea13895373a8e9a… (= DAM 161 (2013), DOI 10.1016/j.dam.2013.02.007; not diffed) | abstract p.1; p.2; p.6; Thm 11 p.9; p.13-14; Lemma 12 p.15; Lemma 14 p.20; Lemma 15 p.21; Thm 26 p.25 | 2026-10-29 | * Lemma 14, 15, Thm 11, 26 re-grepped |
+| Friedmann thesis (edoc 13294) sha256 68748f5388a94151… | p.84 Thm 4.9; p.98; pp.101-104 (§4.3, p.104 «only role that player 1 has»); p.118-119 Lemma 4.27; Thm 4.41 p.134; pp.139-149 (H_n, stubborn cycle, Thm 4.50) | 2026-10-29 | agent C |
+| arXiv 1106.0778 (Friedmann LMCS) sha256 46c96f44775aa2b0… | Lemma 6.1 p.10; Lemmas 6.8, 6.11, 6.12 pp.18-22 | 2026-10-29 | agent C |
+| arXiv 1003.2976 v1 (Fearnley non-oblivious) sha256 7ac44213b8d8d633… | Def. 2, 3, 13; Prop. 14, 15, 16; p.10, p.12, p.13 | 2026-10-29 | agent C |
+| NOT opened (T48) | Gusfield JACM 1983 (ACM 403); Carstensen Math. Prog. 1983 (Springer login/429) and Michigan thesis (not online); Mulmuley-Shah JCSS 2001 (403; author page TLS/503); Karp-Orlin DAM 1981 (403); Kelner-Nikolova FOCS 2007 (TLS/503); Nikolova thesis (429); Erickson SODA 2010 (404); HKZ SODA 2014 (SIAM 403); Hansen-Zwick ISAAC 2010 full text (Springer); Madani-Thorup-Zwick TALG 2010 (ACM 403); DAM 2013 published version (sciencedirect not fetched, by rule) | 2026-10-29 | |
+| T48 search (opponent best-response change counts): arXiv API queries abs:"best response" AND abs:"strategy iteration" (0), abs:"counter strategy" AND abs:"strategy improvement" (0), abs:"Hoffman-Karp", abs:"symmetric strategy improvement", au:Strozecki, au:Hansen AND au:Zwick; extended web search | nothing found | 2026-10-29 | agent B |
+| T49 (2026-10-29) sources: opened by my subagents (scratchpad t49/A, t49/B), key quotes re-grepped by me (*) | | | |
+| arXiv 2509.16075 v2 (Maat) sha256 69706649fed1fac9… | Def. 3.1 p.6; Thm 3.4 p.8 (*); Thm 3.5 p.12; Thm 4.9; p.18 doubly exponential coefficients, «conceivable» tropical variant (*) | 2026-10-29 | |
+| arXiv 1308.0454 v2 (ABGJ, Tropicalizing the simplex algorithm) sha256 6e7f8188f3e51249… | Thm 1 p.2; p.3 «great leaps» (*); Prop-Def 19, 21 p.18; p.37 | 2026-10-29 | |
+| arXiv 1309.5925 v2 (ABGJ, Combinatorial simplex algorithms can solve MPGs) sha256 6ef1312e6a4875f1… | Thm 2.1 p.5; Thm 3.2, 3.12; p.13 combinatorial rule; Prop. 4.1 p.14; Thm 4.2 pp.15-16; Cor. 4.3 (*) | 2026-10-29 | |
+| arXiv 1406.5433 v2 (ABG, tropical shadow vertex on average) sha256 7deeec2eaf73d0c0… | Thm 7 p.10; Prop. 9; Thm 11, 13; Assumption B pp.14-15; p.16 flip invariance (*) | 2026-10-29 | |
+| arXiv 1405.4161 v3 (Long and winding central paths) sha256 b878327d8361a4e5… | Thm 10, 14, 27; p.2 | 2026-10-29 | |
+| Benchimol PhD thesis (HAL tel-01198482) sha256 18206ec26dc96f21… | p.44, p.53 defs; p.54 rule list (*); Thm 3.25 p.55; Thm 5.3 p.95; Thm 5.4 p.96 | 2026-10-29 | |
+| arXiv 1612.01890 v2 (Loho), 2503.17294 v1 (Loho-Maat-Skomra), 1802.07712 v1 (AGKS) | §3.3, Thm 65; related work; nothing on pivots | 2026-10-29 | |
+| arXiv cs/0111050 v7 (Spielman-Teng) sha256 0892cccbeb8afdee… | Thm 4.0.1 p.38; Thm 5.0.1 p.59 | 2026-10-29 | |
+| arXiv cs/0604055 v3 (Vershynin); 1711.05667 v4 (Dadush-Huiberts); 1412.6705 (Dadush-Hähnle); 2211.11860 v3 (Huiberts-Lee-Zhang, sha256 f6f78091d8d1690b…); 2504.04197 v2 (Bach-Huiberts, sha256 6647a097ed3c423d…); Kelner-Spielman STOC'06 (author PDF) | Thm 1.2; Thm 13 p.19; abstract; Thm 1.1-1.3; §1.1, Thm 57; Thm 3.2 | 2026-10-29 | HLZ log^5/4 vs BH log^7/4 discrepancy noted |
+| Amenta-Ziegler, Deformed products and maximal shadows (ps.gz, Ziegler page) sha256 03518a114443331f… | abstract: Θ(n^⌊d/2⌋) 2-D projections (*) | 2026-10-29 | Goldfarb NOT OPENED |
+| arXiv 1404.3320 (Adler-Papadimitriou-Rubinstein) sha256 5146d54ceb66138d…; 1404.0605 (Fearnley-Savani) | Thm 2 p.10 shadow vertex tractable (*); Thm 1-4 | 2026-10-29 | |
+| arXiv 2402.03975 v1 (Loff-Skomra) sha256 fbe498226a150670… | Thm 1.1 p.6; p.7 one-player ≤ n break points, two-player 2^Ω(n) (*); Lemma 2.3; p.14; Ex. 3.5 p.17 (*) | 2026-10-29 | |
+| arXiv 2610.22149 v1 (Loff-Skomra 2026) sha256 18d7ea9dab8dff7e…; 2610.14150 v1 (Asadi-Chatterjee-Luo) | Thm 1.2 p.5 (*); Def. 2, Thm 13 p.27, p.3 (*) | 2026-10-29 | |
+| arXiv 2212.00083 v1 (Christ-Yannakakis) sha256 ab6b525118aadbb3… | Thm 3 p.26 | 2026-10-29 | |
+| arXiv 2607.21055 v1 (Chillara-Gajjar-Raja); 2406.06936 v1 (Black-Criado); 2007.08387 v1 (Combes-Touati) | Thm 2-3 p.5; Thm 1.1; Thm 1 | 2026-10-29 | |
+| NOT opened (T49) | journal versions of ABGJ papers; Allamigeon-Gaubert-Joswig survey; Benchimol Ch. 6 body; Goldfarb 1983/1994; Borgwardt; Deshpande-Spielman; Boros et al. ICALP'11 / Algorithmica'18; Avis-Chvátal (Bland); Gaubert-Katz-Sergeev EPiC; Loff-Skomra / Disser-Loho-Maat-Mosis not re-read for pivots | 2026-10-29 | |
+| T50 (2026-10-29) sources, opened by me | | | |
+| arXiv 2108.13338 (Koh-Loho, LMCS 21(2:24) 2025) sha256 21ee0e4336252f7e… | p.2-3 framework, «force µ to increase», [Ohl21]; p.3 «trivially bounded by n|L(T)|», pivot rule open; Algorithm 1 + Thm 3.1 p.9; Thm 4.5; abstract running times | 2026-10-29 | |
+| arXiv 2607.21055 v1 (Chillara-Gajjar-Raja) sha256 32ee94e1aab6eecd… | Def. 1 (MSPC); Thm 2 (DAG), Thm 3 (no negative cycles), Thm 4 (undirected, non-negative): n^O(d log n); abstract | 2026-10-29 | read by me |
+| arXiv 2607.11628 v1 (Black-Xue) sha256 26ed159192e9e6e6… | p.2 coherent = parametric; Thm 1.1; Cor. 1.3, 1.5 | 2026-10-29 | |
+| arXiv 2201.05134 v1 (Black-De Loera-Lütjeharms-Sanyal) sha256 aa1e5e36f30e5572… | p.1 coherent paths = vertices of monotone path polytopes; p.3-4 shadow vertex = coherent path | 2026-10-29 | Billera-Sturmfels 1992 NOT OPENED |
+| arXiv 2309.02223 v1 (van Dijk-Loho-Maat) sha256 10e6794d82aba465… (re-open) | Thm 1 p.2; p.2 contrast with [15, Lemma 4.2]; p.3 key insight + self-similar recursion; Algorithm 2 p.8; Thm 13 | 2026-10-29 | |
+| Friedmann thesis sha256 68748f5388a94151… (re-open) | Lemma 4.2 printed p.74 (SWITCH-LIN, ≤ |V| iterations) | 2026-10-29 | |
 
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
@@ -359,6 +438,15 @@ Predecessor's resume point (successor 2, parked 14:25Z): in git history at 6e1b0
 - T44 (2026-10-29): SF-W ("arena by W, choose by W", single-frame N5) is NOT an algorithm: it cycles. Obstruction: simultaneous one-step
   W-improvements of both players undo each other (no potential). Instances: docs/lit/T44-rcyc10.pg (period 4 from S3 start), dlm1 n = 5
   (period 37). SF-Ξ dies on Friedmann's H_n (Thm 8.4), SF-SSI on DLM (Thm 1).
+
+- T48 (2026-10-29): Gusfield's n^O(log n) route for SBC (embed F's run in a one-parameter family): DEAD. Obstruction: play SEGMENTS x -> y
+  return after being replaced (SEGRET > 0), impossible for strict optima under affine costs; witness switchbestexp_1 pair (15, 5), Even vertex 16
+  5 -> 14 -> 5 (docs/lit/T48-sbc-neighbours.md §1.4). Faithful embedding (edge availability by weights) dead by EVRET (switchbestexp_8: 5340).
+- T49 (2026-10-29): T48 §1.5 "Even clock + Carstensen network" attack hint: DEAD (circular). Obstruction: a one-parameter family
+  crosses at most as many breakpoints as its parameter takes values, and SBC ≤ #σ − 1 (SBC-EQ); the long run must exist first.
+- T49: "F's run is a 2-D shadow (shadow-vertex path)": DEAD, PIECES > 1 from switchbestexp_1 (2), switchbestexp_6 needs 29 pieces.
+- T50 (2026-10-29): "adapt DLM's mutual counter locks to N5-SF's F": DEAD. Obstruction: DECOUPLE (F's arena and opponent are functions of
+  σ alone, so τ-gated locks have no effect); "all-rules lower bound for F": DEAD by Friedmann thesis Lemma 4.2 (one-sided SI has a ≤ |V| rule).
 
 ## Corrections log
 - 2026-10-23 (T26): N8d-barrier.md §0 and R54 §0 put Lemma 4.75 / Thm 4.76 on p.187; opened PDF: printed p.186 (PDF p.202). Reported as caveat 4.

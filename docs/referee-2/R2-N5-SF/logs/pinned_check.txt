@@ -1,0 +1,40 @@
+# pinned re-runs: the check.sh box 55 commands, from experiments/new in a detached worktree at l-new 95a7a581, python3 -I; sha1: pcheck f4d741c2, n5sf 1ea3bdc7, n5x bbc7d4c9, quotecheck3 eaf18411
+## w1
+ROW E_ n 3 m 6 values 3 orbit 3 SBC 1 LAM 1 SEG 2 SEGMAX 1
+ROW O_ n 3 m 6 values 2 orbit 2 SBC 0 LAM 0 SEG 1 SEGMAX 1
+iterations 2 fallbacks 1
+violations none
+CHECK PASS
+exit 0
+## w2
+ROW E_ n 60 m 130 values 59 orbit 59 SBC 4 LAM 0 SEG 5 SEGMAX 18
+ROW O_ n 60 m 130 values 3 orbit 3 SBC 2 LAM 2 SEG 3 SEGMAX 0
+iterations 58 fallbacks 0
+violations none
+CHECK PASS
+exit 0
+## w3
+ROW E_ n 48 m 128 values 29 orbit 29 SBC 11 LAM 4 SEG 12 SEGMAX 6
+ROW O_ n 48 m 128 values 6 orbit 6 SBC 3 LAM 5 SEG 6 SEGMAX 0
+iterations 28 fallbacks 0
+violations none
+CHECK PASS
+exit 0
+## w4 MUT=1
+ROW E_ n 60 m 130 values 59 orbit 15 SBC 4 LAM 0 SEG 5 SEGMAX 18
+ROW O_ n 60 m 130 values 3 orbit 3 SBC 2 LAM 2 SEG 3 SEGMAX 0
+iterations 58 fallbacks 0
+E_ORB_V
+CHECK FAIL
+exit 1
+## w5
+GAME box54/out/switchbestexp_2.pg I 58 I_from_tau_final 58 ok
+games=1 bad=0
+NT PASS
+exit 0
+## quotes
+quotes=18 bad=0
+QUOTES PASS
+QUOTES FAIL
+b3d5bc293d1b76ce5c7ae8dadc4e9b0b51294484  box54/out/switchbestexp_2.pg
+bcf8dbf64cba48123dc7da849b179793257e13e1  ../red/n3/instances/n3cov_lean.pg

@@ -1,0 +1,23 @@
+MODE files fam.lst 1 experiments/
+OP_E_checks: 1055
+OP_O_checks: 111
+ORB2_checks: 34
+ORB_E_checks: 34
+ORB_O_checks: 34
+WIN_checks: 34
+X_ORBN5: 23
+fallbacks_E: 0
+fallbacks_O: 0
+iterations: 1161
+runs: 34
+starts_valid: 14
+stretches_E: 263
+stretches_O: 57
+max maxI: 119
+max maxLAM_E: 4
+max maxLAM_O: 4
+max maxSBC_E: 47
+max maxSBC_O: 6
+max maxstretch_E: 59
+max maxstretch_O: 18
+RESULT PASS violations 0

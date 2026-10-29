@@ -1,0 +1,46 @@
+FRZ 71
+FRZ_Dnonempty 67
+FRZ_len 578
+FWR_chk 71
+GAMES 3
+GPS_MUT3_V 756
+GPS_capped 70059
+GPS_chk 111587
+RT_max 1
+RT_pos 3
+RUNS 5
+TRANS 644
+WCH_max 123
+WMON_chk 78030
+XW_chk 83459
+VIOLATIONS 756
+EX ('GPS_MUT3', 'gp_inputs/ccl_w48_n48.pg', 15, 18, 18, 9, [9, 14, 34, 27])
+EX ('GPS_MUT3', 'gp_inputs/ccl_w48_n48.pg', 15, 18, 18, 22, [22, 14, 34, 27])
+EX ('GPS_MUT3', 'gp_inputs/runfam_K100.pg', 5, 9, 8, 6, [6, 5, 7, 20])
+EX ('GPS_MUT3', 'gp_inputs/runfam_K100.pg', 5, 9, 8, 10, [10, 5, 7, 20])
+EX ('GPS_MUT3', 'gp_inputs/runfam_K100.pg', 5, 9, 8, 31, [31, 5, 7, 20])
+EX ('GPS_MUT3', 'gp_inputs/runfam_K100.pg', 5, 9, 9, 1, [1, 10, 5, 7, 20])
+EX ('GPS_MUT3', 'gp_inputs/runfam_K100.pg', 5, 9, 9, 6, [6, 5, 7, 20])
+EX ('GPS_MUT3', 'gp_inputs/runfam_K100.pg', 5, 9, 9, 8, [8, 12, 5, 7, 20])
+EX ('GPS_MUT3', 'gp_inputs/runfam_K100.pg', 5, 9, 9, 8, [8, 6, 5, 7, 20])
+EX ('GPS_MUT3', 'gp_inputs/runfam_K100.pg', 5, 9, 9, 9, [9, 31, 5, 7, 20])
+EX ('GPS_MUT3', 'gp_inputs/runfam_K100.pg', 5, 9, 9, 9, [9, 12, 5, 7, 20])
+EX ('GPS_MUT3', 'gp_inputs/runfam_K100.pg', 5, 9, 9, 10, [10, 5, 7, 20])
+EX ('GPS_MUT3', 'gp_inputs/runfam_K100.pg', 5, 9, 9, 11, [11, 10, 5, 7, 20])
+EX ('GPS_MUT3', 'gp_inputs/runfam_K100.pg', 5, 9, 9, 14, [14, 24, 5, 7, 20])
+EX ('GPS_MUT3', 'gp_inputs/runfam_K100.pg', 5, 9, 9, 14, [14, 6, 5, 7, 20])
+EX ('GPS_MUT3', 'gp_inputs/runfam_K100.pg', 5, 9, 9, 18, [18, 12, 5, 7, 20])
+EX ('GPS_MUT3', 'gp_inputs/runfam_K100.pg', 5, 9, 9, 18, [18, 10, 5, 7, 20])
+EX ('GPS_MUT3', 'gp_inputs/runfam_K100.pg', 5, 9, 9, 21, [21, 10, 5, 7, 20])
+EX ('GPS_MUT3', 'gp_inputs/runfam_K100.pg', 5, 9, 9, 27, [27, 10, 5, 7, 20])
+EX ('GPS_MUT3', 'gp_inputs/runfam_K100.pg', 5, 9, 9, 28, [28, 12, 5, 7, 20])
+EX ('GPS_MUT3', 'gp_inputs/runfam_K100.pg', 5, 9, 9, 29, [29, 10, 5, 7, 20])
+EX ('GPS_MUT3', 'gp_inputs/runfam_K100.pg', 5, 9, 9, 30, [30, 10, 5, 7, 20])
+EX ('GPS_MUT3', 'gp_inputs/runfam_K100.pg', 5, 9, 9, 31, [31, 5, 7, 20])
+EX ('GPS_MUT3', 'gp_inputs/runfam_K100.pg', 5, 9, 9, 33, [33, 10, 5, 7, 20])
+EX ('GPS_MUT3', 'gp_inputs/runfam_K100.pg', 10, 42, 13, 6, [6, 5, 7, 20])
+EX ('GPS_MUT3', 'gp_inputs/runfam_K100.pg', 10, 42, 13, 10, [10, 5, 7, 20])
+EX ('GPS_MUT3', 'gp_inputs/runfam_K100.pg', 10, 42, 13, 31, [31, 5, 7, 20])
+EX ('GPS_MUT3', 'gp_inputs/runfam_K100.pg', 10, 42, 14, 1, [1, 10, 5, 7, 20])
+EX ('GPS_MUT3', 'gp_inputs/runfam_K100.pg', 10, 42, 14, 6, [6, 5, 7, 20])
+EX ('GPS_MUT3', 'gp_inputs/runfam_K100.pg', 10, 42, 14, 8, [8, 12, 5, 7, 20])
