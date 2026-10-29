@@ -379,3 +379,39 @@ handover in notes/CHECKER.md "## HANDOVER (successor 13 → successor 14)" (c403
   λ-run form; C94 E-1). C95 points (1)-(2) are this trap. Check: for every clause, find the verdict cell in BOTH reports' tables; otherwise
   "Referee strengthening".
 - Carried trap: stale clone (this box started 668 behind); fetch and `git log origin/claude/checker` before acting.
+
+## Handover check (successor 15)
+Written 2026-10-29 22:26Z (date -u). CHECKER successor 15 (Opus 5.5, D15). Predecessor: successor 14, session_01V5yGRWsgxPbSEv7BN3RzX4,
+handover in notes/CHECKER.md "## HANDOVER (successor 14 → successor 15)" (ec4c25ca, 20:07:36Z). Every answer names its command.
+
+### 1. Branch, head, ahead/behind trunk
+- `git ls-remote origin`: 16 refs (HEAD = claude/vibrant-johnson-nxvvxo a60e5704; claude/checker ec4c25ca; claude/l-new 9631bbc5; claude/referee
+  4ff7dfea; claude/referee-2 b8aea44b). Fetched only those names (no missing ref in the fetch list; exit 0).
+- Stale clone again: local claude/checker was at b88e5bd0 (successor 11's handover) while `git status` said "up to date". `git merge --ff-only
+  origin/claude/checker` → ec4c25ca; `git log origin/claude/checker -1` = ec4c25ca: NO commit after the handover.
+- `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` = 0 / 86 (merge-base ec4c25ca, trunk ahead by Lead commits);
+  `git merge origin/claude/vibrant-johnson-nxvvxo` fast-forwarded to a60e5704 (0 / 0); this file's commit makes 1 / 0.
+
+### 2. Open work and the next step of each
+- C95-C98 CLOSED (handover table: R86 5e9f6edb, R87 06663fa8, R88 dee2055e, DE35 acf60fdc landed, landed checks PASS). Nothing open at handover.
+- C99 = RESULTS R89 for P-N5-FRAME (L-NEW 35; Lead brief 22:19Z): draft docs/agents/R89-draft.md not yet sent. Next: read the packet (l-new
+  938d8796, sha1 ce8c4803), corrected line H0 ab1ee38a, fixes H0-H17 (l-new 9631bbc5, sha1 eb5bd5e1), both reports and both §Cs; re-measure
+  every pin; then the main report docs/checker/C99.md on the draft SHA the Lead sends.
+
+### 3. docs/GAPS.md rows I own
+- `awk -F'|' '$4 ~ /CHECKER/' docs/GAPS.md | wc -l` = 0. Landing side: an R89 GAPS UPDATE (if any) must be a pure insertion.
+
+### 4. Three owner rulings, verbatim (docs/DECISIONS.md `grep -n -F`), index status (docs/DECISIONS-INDEX.md `grep -nE '^\| *D(1|15|18) '`)
+- D1 (DECISIONS l. 7; index l. 5 "active"): "A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim,
+  including the fleet's own, as wrong until it passes the gauntlet below."
+- D15 (l. 278; index l. 26 "active"): "q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it"
+- D18 (l. 333; index l. 32 "active"): "Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of
+  mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and
+  proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems."
+
+### 5. One trap, and the check that prevents it
+- Trap: stale clone with a misleading `git status` ("up to date" against a stale remote-tracking ref): this box started at b88e5bd0, three
+  successors back. Check: `git ls-remote origin` first, fetch the listed names, `git merge --ff-only origin/claude/checker`, then compare HEAD with
+  the ls-remote SHA.
+- Carried method trap (C94 E-1, C96 E-1): a clause in "Claims signed" that sits in only one referee's verdict table, or a status label stale
+  against a later landed entry. Check: both verdict tables for every clause; grep RESULTS/GAPS for every label.
