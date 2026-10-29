@@ -14,7 +14,7 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
   3ca0932d, docs/si/P-N5-COMPOSE-box28.md sha1 e1b977aa…, 141 lines): own report docs/referee-2/R2-N5-COMPOSE.md before any docs/referee/ file.
 - COMPOSE DONE (11:59Z): docs/referee-2/R2-N5-COMPOSE.md, all SIGNED (COMPOSE-NM as implication), no gap; N-C1..5. compose_check.py (own;
   imports dual_check.Runner + mphi_check.matched); start files VALIDATED (alt_all has 1 invalid). Runtimes: lib41 ~4 min, others ≤ 3 min.
-- NEXT: §C for MPGS (into succ. 19's R2-N5-MPGS.md) and for COMPOSE, each when REFEREE's report lands (counts 0 at 11:59Z). Then hold.
+- NEXT: §C for MPGS (NEW file docs/referee-2/R2-N5-MPGS-C.md, both REFEREE-2 reports + their differences; Lead 11:54Z; mine = CONCURRING) and for COMPOSE, each when REFEREE's report lands (counts 0 at 11:59Z). Then hold.
 
 ## HANDOVER (successor 19, session_01V5yGRZzoAVpZvqB1LedCVF, Opus 5.5 under D15; written 2026-10-29 11:1xZ by date -u; context ~530k, Lead asked)
 Branch claude/referee-2, merged with trunk (git merge, no rebase) before every push. REFEREE-2 owns no docs/GAPS.md rows. PARKED after this push.
