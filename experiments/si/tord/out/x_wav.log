@@ -1,0 +1,21 @@
+seed (541, 531, 0, 1) n 48
+step 43 score (553, 543, 0, 1) n 47
+step 278 score (565, 555, 0, 1) n 46
+step 388 score (578, 568, 0, 1) n 45
+step 397 score (591, 581, 0, 1) n 44
+step 749 score (614, 604, 0, 1) n 44
+step 992 score (637, 627, 0, 1) n 44
+step 998 score (652, 642, 0, 1) n 43
+step 1016 score (668, 658, 0, 1) n 42
+step 1300 score (692, 682, 0, 1) n 42
+step 2256 score (710, 700, 0, 1) n 41
+step 6806 score (735, 725, 0, 1) n 41
+step 10856 score (753, 743, 0, 1) n 40
+step 11626 score (779, 769, 0, 1) n 40
+step 12159 score (785, 775, 0, 1) n 41
+step 13980 score (804, 794, 0, 1) n 40
+step 26269 score (830, 820, 0, 1) n 40
+step 46586 score (852, 842, 0, 1) n 39
+step 52073 score (878, 868, 0, 1) n 39
+step 71181 score (888, 868, 0, 2) n 39
+final (888, 868, 0, 2) n 39 best kill score 0

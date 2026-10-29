@@ -1,0 +1,39 @@
+n5-epoch/instances/nconf61_n48.pg n5-epoch/instances/nconf61_n48.start
+n5-epoch/instances/nep56_n32.pg n5-epoch/instances/nep56_n32.start
+n5-epoch/instances/nep76_n40.pg n5-epoch/instances/nep76_n40.start
+n5-epoch/instances/nep92_n40.pg n5-epoch/instances/nep92_n40.start
+n5-epoch/instances/nep94_n48.pg n5-epoch/instances/nep94_n48.start
+n5-epoch/instances/ret12_n40.pg n5-epoch/instances/ret12_n40.start
+n5-epoch/instances/ret14_n64.pg n5-epoch/instances/ret14_n64.start
+n5-exhaustive/instances/b5_os_n24.pg
+n5-exhaustive/instances/b5_os_n28.pg
+n5-exhaustive/instances/b5_os_n32.pg
+n5-exhaustive/instances/b5_os_n40.pg
+n5-exhaustive/instances/b6_xl2_n32.pg
+n5-exhaustive/instances/b6_xl_n48.pg
+n5-exhaustive/instances/b6_xw_n32.pg
+n5-exhaustive/instances/b6_xw_n40.pg
+n5-exhaustive/instances/b6_xw_n48.pg
+n5-exhaustive/instances/b6_xw_n56.pg
+new/box48/instances/long121_n40.pg new/box48/instances/long121_n40.start
+new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.pg new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.start
+new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.pg new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.start
+new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.pg new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.start
+new/box48/out/qpcclimb/scale/snap_n80_s62.pg new/box48/out/qpcclimb/scale/snap_n80_s62.start
+red/fbr/instances/lev56_n48.pg
+red/n3/instances/comp54_n80.pg red/n3/instances/comp54_n80.start
+red/n3/instances/long121_n40.pg red/n3/instances/long121_n40.start
+red/n3/instances/long90_k2_n40.pg red/n3/instances/long90_k2_n40.start
+red/n3/instances/ret22_n40.pg red/n3/instances/ret22_n40.start
+red/n5inj/instances/elimn_cex_n48.pg
+red/n5inj/instances/returns_ph64.pg
+red/n5inj/instances/returns_rt48.pg
+red/so/instances/rise_thin51_n40.pg
+red/xing/instances/fbref_cex_n32.pg
+red/xing/instances/j7_n48.pg
+red/xing/instances/u23sw64_n32.pg
+red/xing/instances/x31_cu24.pg
+red/xing/instances/x31_lem_t32.pg
+red/xing/instances/x31_rx32.pg
+red/xing/instances/x31_rx48.pg
+red/xing/instances/x32_waves32.pg

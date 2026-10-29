@@ -1,0 +1,17 @@
+seed (193, 173, 0, 2) n 24
+step 3 score (201, 181, 0, 2) n 23
+step 455 score (210, 190, 0, 2) n 22
+step 499 score (220, 200, 0, 2) n 21
+step 680 score (232, 222, 0, 1) n 19
+step 785 score (245, 235, 0, 1) n 18
+step 1300 score (260, 250, 0, 1) n 17
+step 1313 score (276, 266, 0, 1) n 16
+step 1325 score (295, 285, 0, 1) n 15
+step 1595 score (343, 333, 0, 1) n 16
+step 1964 score (367, 357, 0, 1) n 15
+step 2344 score (394, 384, 0, 1) n 14
+step 2401 score (426, 416, 0, 1) n 13
+step 2490 score (510, 500, 0, 1) n 13
+step 29723 score (555, 545, 0, 1) n 12
+step 60019 score (646, 636, 0, 1) n 12
+final (646, 636, 0, 1) n 12 best kill score 0

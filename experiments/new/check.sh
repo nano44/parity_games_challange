@@ -129,4 +129,62 @@ if git cat-file -e e3b435ab^{commit} 2>/dev/null; then
 else
   echo "P-N5-VC quotes: NOT RUN (e3b435ab not in this clone)"
 fi
+# Box 51 (successor 32): N5-VCPHASE: Proposition DLC (one-player family, phase VC d at n < 2^(2d+1); VC-PHASE DEAD), two engines, DS-PAIR data.
+v1=$(for d in 1 2 3 4; do python3 -I box51/dlccheck.py $d; done)
+v2=$(python3 -I ../si/root/n5bcmp.py box51/out/dlc_d3.pg box51/out/dlc_d3.start | head -1)
+v3=$(python3 -I box51/alt.py ../red/seg/instances/runquad_K3_m4_n54.pg)
+if [ "$(grep -c "DLC PASS" <<<"$v1")" = 4 ] && grep -q "d=4 n=455 len=31 traces on the 4 x-edges=16 phase_VC=4 DLC PASS" <<<"$v1" && \
+   grep -q "identical state sequences: True" <<<"$v2" && grep -q "max pairwise alt in a run: (10, " <<<"$v3" && \
+   [ "$(sha1sum box51/out/dlc_d4.pg | cut -d' ' -f1)" = "f77955fde03e36de8a1b3696523780368d28a184" ] && \
+   [ "$(sha1sum box51/out/dlc_d5.pg | cut -d' ' -f1)" = "345fae4c9644f63323c84846b0f85f10a78db837" ]; then
+  echo "box 51 DLC: d = 1..4 one phase, trace formula, phase VC = d; n5b identical (d 3); runquad_K3 alt 10; pins sha1: PASS"
+else
+  echo "box 51 DLC checks: FAILED"; exit 1
+fi
+# Box 51 (successor 32): P-N5-VC-fixes (frozen): F1 (VC-N5 FALSE by DLC_d), 3 quotes at 21f3285a / db1d3707, shifted control, sha1.
+if git cat-file -e 21f3285a^{commit} 2>/dev/null && git cat-file -e db1d3707^{commit} 2>/dev/null; then
+  if python3 -I box49/quotecheck3.py ../../docs/new/P-N5-VC-fixes-box50.md | grep -q "quotes=3 bad=0" && \
+     ! python3 -I box49/quotecheck3.py ../../docs/new/P-N5-VC-fixes-box50.md --mut >/dev/null && \
+     [ "$(sha1sum ../../docs/new/P-N5-VC-fixes-box50.md | cut -d' ' -f1)" = "9e8b7bd208aae5eb3f540d0e5d7f8c77a0834370" ]; then
+    echo "P-N5-VC-fixes quotes 3 + control, sha1: PASS"
+  else
+    echo "P-N5-VC-fixes checks: FAILED"; exit 1
+  fi
+else
+  echo "P-N5-VC-fixes quotes: NOT RUN (21f3285a or db1d3707 not in this clone)"
+fi
+# Box 52 (successor 32): N5-RLV: arena-frozen cut (Lemma W-SPLIT''), reader pair long121 / l121reader (SBCH'' 30 = 30), comparator graft topfix_3 (SBCH'' 24).
+v1=$(python3 -I box52/rlv.py --one ../si/root/instances/l121reader_n41.pg ../si/root/instances/l121reader_n41.start)
+v2=$(python3 -I box52/rlv.py --one box48/instances/long121_n40.pg box48/instances/long121_n40.start)
+v3=$(python3 -I box52/rlv.py --one box52/out/topfix_n3_cmp.pg box52/out/topfix_n3_cmp.start)
+ok=1; for v in "$v1" "$v2" "$v3"; do for k in ARENA SPLIT FWBF2 FWLEN2; do grep -q "^$k PASS" <<<"$v" || ok=0; done; done
+if [ $ok = 1 ] && grep -q ", 1, 122, 8, 0, 74, 30, 0, 25, 6, 6, 41)" <<<"$v1" && grep -q ", 1, 122, 8, 0, 33, 30, 0, 25, 6, 6, 40)" <<<"$v2" && \
+   grep -q "0, 41, 0, 8, 24, 24, 0, 9, 1, 1, 66)" <<<"$v3" && \
+   [ "$(sha1sum box52/out/topfix_n8_cmp.pg | cut -d' ' -f1)" = "6427c10505559df11a9660094dd4e235766e3b31" ]; then
+  echo "box 52 RLV: SBCH'' reader-proof (74 -> 30 = 30), topfix_3 graft 24 = 2N^2+3N-3, checks PASS"
+else
+  echo "box 52 RLV checks: FAILED"; exit 1
+fi
+# Box 53 (successor 32): N5-RANK: exact Farkas-circuit certificates (no linear / lexicographic ranking function) for F24, F24m, F45, edge bits; corrupted control.
+v=$(cd ../.. && python3 -I experiments/new/box53/cert.py experiments/new/box53/cert/f0_u23sw64_n32.json experiments/new/box53/cert/f4_b5_os_n16.json experiments/new/box53/cert/f5_returns_ph64.json experiments/new/box53/cert/f6_lend9_n8.json)
+bad=$(mktemp); python3 -c "import json,sys; c=json.load(open('box53/cert/f6_lend9_n8.json')); c['y'][0][1]+=1; json.dump(c,open(sys.argv[1],'w'))" $bad
+if [ "$(grep -c "CERT OK" <<<"$v")" = 4 ] && ! (cd ../.. && python3 -I experiments/new/box53/cert.py $bad >/dev/null); then
+  echo "box 53 RANK: 4 certificates exact (F24 u23sw64_n32 / F24m b5_os_n16 / F45 returns_ph64 / edge bits lend9_n8), control fails: PASS"
+else
+  echo "box 53 RANK checks: FAILED"; exit 1
+fi
+rm -f $bad
+# Box 54 (successor 32): N5-SF: fallback instance (NOFB dead), W-frame twin cycles on theta_thf16, switchbestexp_2 (SF 58 vs N5 32), topfix_3 (SF 64).
+v1=$(python3 -I box54/sfrun.py ../n5-exhaustive/instances/n3all_maxph_0.pg ../n5-exhaustive/instances/n3all_maxph_0.start)
+v2=$(MODE=w python3 -I box54/sfrun.py ../red/n5inj/instances/theta_thf16.pg)
+v3=$(python3 -I box54/sfrun.py box54/out/switchbestexp_2.pg)
+v4=$(python3 -I box54/sfrun.py box52/out/topfix_n3.pg box52/out/topfix_n3.start)
+ok=1; for v in "$v1" "$v3" "$v4"; do for k in WIN OPT R17 CYC; do grep -q "^$k PASS" <<<"$v" || ok=0; done; done
+if [ $ok = 1 ] && grep -q "^ROW ../n5-exhaustive/instances/n3all_maxph_0.pg 3 3 1 2 1 False" <<<"$v1" && grep -q "^CYC FAIL" <<<"$v2" && \
+   grep -q "^ROW box54/out/switchbestexp_2.pg 60 32 2 58 0 False 4 0 5 19" <<<"$v3" && grep -q "^ROW box52/out/topfix_n3.pg 63 61 2 64 0 False" <<<"$v4" && \
+   [ "$(sha1sum ../red/n5inj/instances/theta_thf16.pg | cut -d' ' -f1)" = "90ed13cf9e2c81c1aa3ab3c2058ac736a1ed489b" ]; then
+  echo "box 54 N5-SF: correct on the pins, fallback fires (n3all_maxph_0), W-frame twin cycles (theta_thf16), switchbestexp_2 58 vs 32: PASS"
+else
+  echo "box 54 N5-SF checks: FAILED"; exit 1
+fi
 rm -rf "$tmp"

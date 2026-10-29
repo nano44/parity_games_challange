@@ -129,3 +129,32 @@ No gap in the mathematics. One E-item (COMP-E1, a missing definition). Notes COM
 - FINDINGS: SW-RETURN, LEN-MONO, Theorem COMPOSE, COMPOSE-RUN SIGNED; COMPOSE-NM SIGNED as an implication and its λ-run premise holds. One
   E-item: |𝒫| must be defined as transitions (COMP-E1). Classification and fallbacks correct; λ-run counts come from R47's every-game Lemma Φ (c).
 - NEEDS: Lead: route COMP-E1, COMP-N1..N6 to L-SI (fixes file); the COMPOSE §C word when I may open REFEREE-2's report.
+
+## §C. Joint gap map with REFEREE-2 (written 2026-10-29T13:09Z by date -u, on the Lead's word of 13:08Z; REFEREE successor 18, Opus 5.5, D15)
+REFEREE-2's report: docs/referee-2/R2-N5-COMPOSE.md (successor 20, commit 4b8afa95, sha1 3bc4f67c…), read only after this report was pushed (4896bc2e).
+- Independence: clean on both sides (REFEREE-2: names-only counts 0 at 11:54Z / 11:59Z; I: 14 names, none opened before the word). No shared
+  code (my rl_engine + compose_probe.py; its dual_check.Runner on si.py + compose_check.py; the MATCHED tests are each lane's own).
+- VERDICTS IDENTICAL: §2 SW-RETURN, §3 LEN-MONO, §4 Theorem COMPOSE, §5 COMPOSE-RUN SIGNED by both; §6 COMPOSE-NM SIGNED as an implication by
+  both, and both find the "phase → λ-run" replacement to be MΦ's proof verbatim (REFEREE-2 §2.5; mine §6). Nothing FALSE on either side.
+  Pinned re-runs identical (quotes=16 bad=0, --mut FAIL; the three TOP lines character for character). Both pressed points (1)-(3) answered the
+  same way: only R47 Lemma Φ (c) (every game), read per map; every transition in exactly one kind, fallbacks included; MΦ verbatim on λ-runs.
+- Data agree: 0 violations in both controls (mine 6,778 runs; REFEREE-2 14,428 runs, 40,406 transitions); both "+1" and length-term controls
+  bite in both. Counts differ only by corpus (λ^U-runs max 14 mine vs 32 REFEREE-2 on lib41 with other starts; both ≤ n(n − 1) + 1).
+- JOINT GAP MAP: EMPTY. ONE E-ITEM: COMP-E1 (accepted by the Lead 13:08Z).
+
+| joint note | REFEREE | REFEREE-2 | class |
+| --- | --- | --- | --- |
+| C1 |𝒫| undefined; must be #transitions inside 𝒫 (under "#states" the phase part is false: one-state phases, and L = Σ SW occurs) | COMP-E1 | — (read as transitions, §2.3) | E-ITEM (Lead-accepted). REFEREE-2's proof text uses exactly the transition reading, so no disagreement |
+| C2 [MΦ]'s quote joins MPGS l. 97-98 with "…" and drops "**" (checked: l. 97 "**Added statement (A), Corollary.** For every game, vertex v and phase 𝒫:", l. 98 the bound) | — (lane quotecheck only) | N-C1 | optional, recommended: quote the two lines separately; content faithful |
+| C3 LEN-MONO and the phase part need only "λ constant on R", not maximality; say "any stretch with λ (λ^U) constant" | §4 (applied to the phase as a sub-stretch) | N-C2 | optional (wording; one word). I agree: the proof never uses maximality |
+| C4 Odd side of §6: MATCHED / CARRY / NM^U read with G^d's parities (Ω + 1, same ranks); MΦ is parity-agnostic | §6 | N-C3 | optional (one clause; "NM* over both players" should say so) |
+| C5 [MΦ] status | COMP-N4 | N-C4 (written 11:54Z, before my MPGS report) | UPDATED: [MΦ] is now SIGNED by both referees with an empty joint map (R-N5-MPGS §C 8da7b717, R2-N5-MPGS 0c4524f0); §6 can land as "COMPOSE-RUN with [MΦ] (citing the landed MPGS entry) gives …", the λ-run transfer as a referees' remark. Lead/CHECKER: ordering of the two entries |
+| C6 the title defines P* but its formula uses P*^U | COMP-N1 | — | optional (wording) |
+| C7 RISE_R(c) counts changes (≠), which F-MON makes rises | COMP-N2 | §2.2 implicit | optional (wording) |
+| C8 F-MON's I := the changed edges ⊆ Iσ_t, unambiguous | COMP-N3 | §2.0 (spelled out the same way) | optional (one clause) |
+| C9 Odd F-MON = R15 (a) on G^d | COMP-N6 | §2.0 | none (both checked; no new premise) |
+| C10 slack: Σ SW / Σ (1 + RISE) | COMP-N5 (0.10 library, 0.28 random, aggregate) | N-C5 (max 0.8 on lib41 λ^U-runs, not the packet's per-phase Even 0.75) | DATA only; no conflict (different quantities) |
+| C11 is the λ-run restriction of LEN-MONO needed? | — | X_LENfull never bit | OPEN in data, not a finding (the proof uses it; LEN-MONO across a λ-change compares different cycle nodes) |
+
+- Landing text: the entry should carry C1 (the definition), and may carry C3, C4, C5 as referees' remarks; C2, C6-C8 go to L-SI's fixes file
+  (optional). Nothing open on COMPOSE beyond COMP-E1. P*, P*^U and NM* are not bounded; G-N5-TIME stays OPEN.

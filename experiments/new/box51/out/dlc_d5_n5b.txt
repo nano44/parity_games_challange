@@ -1,0 +1,2 @@
+n5b iterations 63 fallbacks 0 states 64 | n5x states 64 | identical state sequences: True
+phase [0,63] (n5x lambda/tau) len 63: n5b trace gives Even vertex 1 switching 31 times; n = 1897; > n: False

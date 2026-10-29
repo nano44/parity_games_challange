@@ -1,0 +1,1 @@
+N=12 pair=(245,246) flips=354 | base TOP (509, 'new/box52/out/topfix_n12.pg', 0, 509, 0, 44, 0, 0, 0, 12, 72, 72, 252) | graft TOP (509, 'new/box52/out/topfix_n12_cmp.pg', 0, 509, 0, 44, 321, 321, 0, 144, 1, 1, 255) TOP (70, 'new/box52/out/topfix_n12_cmp.pg', 513, 583, 0, 0, 0, 0, 0, 1, 70, 70, 255) ARENA PASS SPLIT PASS FWBF2 PASS FWLEN2 PASS 

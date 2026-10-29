@@ -1,20 +1,13 @@
 # L-LIT notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point (2026-10-29 ~13:0xZ by date -u; successor 2, Opus 5.5, D15/D18; session_01V5yGRXvhKC2cX2To8m3mpV)
-DONE this session (claude/l-lit, each via scripts/push.sh, VERIFY PASS):
-- 394aea76 handover check (docs/agents/handover-checks/L-LIT.md; container was 3889 behind, fast-forwarded).
-- 1bd2a11e P-N5-MPGS-fixes.md F3-F10 (sha1 c0b0a0aa…) + P-N5-MPGS-fixes-quotecheck.py ("quotes=50 bad=0"): every referee note
-  (MPGS-N1..N5, MATCH-N1..N4, N-MPGS-1..6, N-GS-1..5, N-MP-1..5, C.4 items, J1-J15) quoted verbatim and answered; no statement change.
-  New small PROVED remarks there (unrefereed): F9 (a) sharpness at NM = 0 (all-odd chain of length W), F9 (b) additivity / MATCHED raises
-  weight; F6 CONJECTURE H2-FREE (OPEN) with its obstruction. Lead asked whether F9 (a), (b) go to referees.
-- T40 docs/lit/T40-frame-split.md + T40-dominance-check.py (frame split literature; 7 entries; PROVED: STV with τ fixed ≤ |V_0|
-  steps; W-MONO and B-DOM on S4a transitions; DATA: A-dominance over Howard fails 262/263 runquad, ~50% libraries).
-Predecessor's packets (T32-T39, P-N5-MPGS) are listed in git history (e5ae4111 resume point); P-N5-MPGS signed by both referees.
-- T41 docs/lit/T41-moving-target.md + T41-target-check.py (S4a vs fixed σ^c_τ per phase; topfix d1_n leaves its target n²+2n−2
-  times in one phase; library MISS ~45%, AWAY ≤ 7). Lead: F9 (a), (b) stay remarks in R85 (no referee round).
-IN FLIGHT: none. NEXT: Lead's word.
-NEEDS: none from the owner.
+## Resume point (successor 3, Opus 5.5, D15/D18; session_01V5yGRZ7SzNwVcgLkYDDxY7; 2026-10-29 from 14:45Z by date -u)
+DONE this session (claude/l-lit; every push via scripts/push.sh):
+- dbaf814b handover check (container started 4009 behind; fast-forwarded). VERIFY PASS, Oink smoke NOT RUN (not built).
+- T44 docs/lit/T44-single-frame-variants.md + T44-sf-variants.py + T44-sfw-cycle-check.py + T44-rcyc10.pg (single-frame N5 variants for
+  L-NEW 32 BOX 54): SF-Ξ = Friedmann I^glo (Thm 8.4; H3-H5 107/235/491), SF-W cycles (dlm1 n 5-7, dlm2 n 2-4, 10-vertex random), SF-SSI = SSI.
+IN FLIGHT: none. NEXT: the Lead's word.
+Predecessor's resume point (successor 2, parked 14:25Z): in git history at 6e1b01fe.
 
 ## Queue
 - T40 primaries not opened: Condon 1993 (DIMACS 13), Pollatschek-Avi-Itzhak 1969 (Mgmt Sci 15), van der Wal 1976/1978 (cited via
@@ -30,6 +23,17 @@ NEEDS: none from the owner.
 - Open FL09 (self-loop removal) if the REFEREE needs it; Friedmann RAIRO 2011 (publisher 403; try author copy).
 
 ## Things only I know
+- Successor 3 (T44): run scripts from the repo root (python3 -I docs/lit/T44-*.py). DLM instances: experiments/new/dlm_gen.py 1|2 n > g.pg
+  2> g.start; H_n: experiments/friedmann-hn/instances/H<n>.pg + H<n>_F.start. Random search script + logs: scratchpad t44/ (lost with the
+  container; rnd.py = random games, owner/prio/succ uniform, out-degree 1-3, seeds 1 and 7). Friedmann PDFs: scratchpad dl44/f/.
+- sfw "improving" edges can be length-degenerate at a cycle node (T44 §3); that is why sfw has a fixpoint stop clause.
+- Successor 2 (2026-10-29): measurement scripts T40/T41/T41b import L-SI's experiments/si/root/common.py (-> experiments/new/box21/n5x.py,
+  si.py) from the REPO ROOT (run as python3 -I docs/lit/<script> from the root); batch wrapper used: scratchpad t40/batch.sh (reads list files
+  like r17.py: path, then experiments/path; uses the start file when given). Corpora: experiments/si/root/logs/alt_all.lst (with starts),
+  experiments/n5-box18/results/lib41_n48.lst, experiments/si/chg/sicorpus.lst (dlmm_ML_L6 has a start file in another format: skipped, as L-SI).
+- Topfix n 4, 6, 10, 12 generated with experiments/red/seg/hnh1.py N topfix into scratchpad t41/inst (n 8 regenerates the pin byte for byte).
+- DLM dlm1 instances: experiments/new/dlm_gen.py 1 n (start pair on stderr); SSI runs: experiments/new/dlm_diag.py game ssi start.
+- The "file changed on disk" notices for docs/lit/T40-T43 were spurious (tree clean, sha1s as pushed).
 - T40 (2026-10-29, successor 2): PDFs in this session's scratchpad dl40/<name>/p.pdf (sha256 in Sources opened); batch logs of
   T40-dominance-check.py over alt_all and lib41 in scratchpad t40/*3.txt (not committed; re-run: one line per game, minutes).
 - Research agents (my subagents, this session) opened most T2/T3 primaries; their full reports with verbatim quotes and page
@@ -327,6 +331,19 @@ NEEDS: none from the owner.
 | arXiv 1607.03842 v1 (Petrik, Chow, Ghavamzadeh) sha256 5797962546187611… | Def. 2; Thm 6 p.5 (NP-hard) | 2026-10-29 | T40 |
 | arXiv 1205.3054 v2 (Scherrer et al., AMPI) | abstract (arXiv API): "error propagation analyses" and a finite-sample analysis; no iteration counts. PDF not read | 2026-10-29 | T40; cited only as "bounds errors, not counts" |
 | arXiv 1008.0530 v1 (HMZ) sha256 f53a6b5127d95078… (re-downloaded) | not re-read for T40 beyond T39's rows | 2026-10-29 | T40 |
+| arXiv 1208.4041 v4 (Ben-Amram, Genaim, JACM) sha256 cce1ca84b940d1b8… | Thm 3.1 p.10, 3.17, 3.19 p.16; Cor. 4.25 p.27; Cor. 5.12 p.33; §5.4 + Thm 5.37 p.48; p.25 (PR04 via LP) | 2026-10-29 | T42 |
+| arXiv 1504.05018 v1 (Ben-Amram, Genaim, BMS-LLRF) sha256 c6547c7522892ce9… | abstract; Table 1 p.3; Cor. 1, Thm 1 p.7; Thm 3 p.9; Thm 4 p.11 | 2026-10-29 | T42 |
+| arXiv 1703.07547 v2 (Ben-Amram, Genaim, MΦRF) sha256 29c0b9064915207f… | abstract; Thm 3.4, 3.5 p.12; Thm 4.4 p.15; Thm 5.6, 6.1 p.18; Ex. 7.1, Lemma 7.2, Thm 7.4 p.19-21 | 2026-10-29 | T42 |
+| arXiv 1811.07340 v2 (Ben-Amram, Doménech, Genaim) sha256 f7682cc87a5ce648… | abstract | 2026-10-29 | T42 |
+| arXiv 2509.06752 v3 (Ben-Amram, Genaim, Ouaknine, Worrell, survey) sha256 21e65378dcc4bb1b… | Thm 4.1 (PR04) p.51; Thm 4.13 (ADFG) p.71; Thm 4.14 (BMS) p.74; Thm 4.23 + 'remains open' p.79; §4.2.5 polyranking p.80 | 2026-10-29 | T42 |
+| arXiv 1503.00193 v2 (Leike, Heizmann, LMCS 11(1:16)) sha256 50ced19c25758b53… | abstract; §1 (Motzkin, exponential-time [GV88]); Thm 4.4, 4.5 p.8 | 2026-10-29 | T42 |
+| arXiv 1408.5955 v1 (Ben-Amram, lasso LRF hardness) sha256 6bf89bdfdd23d60a… | abstract (EXPSPACE-hard Z, PSPACE-hard Q) | 2026-10-29 | T42 |
+| arXiv 1702.05051 v3 (Jurdziński, Lazić) sha256 7411fd3816d4d229… | abstract; §1.2 p.2; Thm 7 p.14; lifting Table 1 | 2026-10-29 | T42 |
+| arXiv 1709.04037 v1 (Agrawal, Chatterjee, Novotný) sha256 fcbaa71a4e08986c… | abstract; Thm 5.1 p.17; Fig. 2 p.16; Thm 7.2 p.23 | 2026-10-29 | T42 |
+| arXiv 1204.1147 v1 (Gawlitza, Seidl) sha256 df5c0793acd36a2c… | abstract; Thm 1 p.27 (+ conjecture); Thm 4 p.39 | 2026-10-29 | T42 |
+| Podelski-Rybalchenko VMCAI 2004; Bradley-Manna-Sipma ICALP 2005; Alias et al. SAS 2010 | NOT opened (author/publisher URLs return HTML); cited via the survey 2509.06752 and BG14 only | 2026-10-29 | T42 |
+| arXiv 1106.0778 v1 (sha256 a35e4ef6e2c4d0b9…) and v2 (sha256 46c96f44775aa2b0…, = L-COMP's file) (Friedmann, LMCS 7(3:19)) | §3 improvement arena A_{G,σ} (p.5-6); §4 I^loc, I^glo definitions (p.6-7), Thm 4.2 [Sch08]; Thm 6.14 (I^loc, G_n); Thm 8.4 (I^glo, H_n, ≥ 2^n steps from ι_{H_n}) | 2026-10-29 | T44; superscripts dropped by pdftotext |
+
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
 - T17 process dead end: subagent GitHub MCP search outside the repo scope was a rule breach (see Things only I know); never repeat it.
@@ -338,6 +355,10 @@ NEEDS: none from the owner.
 - T34: direct merge of Friedmann's gadgets with T33 §2.3 blocked by GATE-SHUT + S4a's choice by W (hiding void).
 
 - T37 §3 CONJECTURE (carries per vertex per lambda-run <= poly(n) x gate reopenings violating (H1)-(H3)): DEAD. Obstruction: carries occur in tau-quiet lambda-runs with no reopening and no open Odd gate on the vertex's plays. Instances: runquad_K8_m30_n192 (all 121 carrying pairs), s3quad_K3_m4 (all 67), dlsep_kill_n70 (L-SI 390d2d8a, N5-CHG-box28 §13).
+
+- T44 (2026-10-29): SF-W ("arena by W, choose by W", single-frame N5) is NOT an algorithm: it cycles. Obstruction: simultaneous one-step
+  W-improvements of both players undo each other (no potential). Instances: docs/lit/T44-rcyc10.pg (period 4 from S3 start), dlm1 n = 5
+  (period 37). SF-Ξ dies on Friedmann's H_n (Thm 8.4), SF-SSI on DLM (Thm 1).
 
 ## Corrections log
 - 2026-10-23 (T26): N8d-barrier.md §0 and R54 §0 put Lemma 4.75 / Thm 4.76 on p.187; opened PDF: printed p.186 (PDF p.202). Reported as caveat 4.

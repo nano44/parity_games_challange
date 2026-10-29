@@ -1,0 +1,8 @@
+FEASIBLE new/box52/out/topfix_n8.pg 291 {'X_cr': np.float64(0.046), 'X_ps': np.float64(0.003), 'W_cr': np.float64(0.029), 'W_tp': np.float64(0.007), 'W_pp': np.float64(-0.006), 'X_m2': np.float64(0.001), 'W_m2': np.float
+FEASIBLE new/box52/out/topfix_n10.pg 425 {'X_cr': np.float64(0.049), 'X_ps': np.float64(0.003), 'W_cr': np.float64(0.027), 'W_ps': np.float64(-0.001), 'W_tp': np.float64(0.005), 'W_pp': np.float64(-0.005), 'X_m2': np.flo
+FEASIBLE new/box52/out/topfix_n12.pg 583 {'X_cr': np.float64(0.072), 'X_ps': np.float64(0.004), 'X_tp': np.float64(0.007), 'W_cr': np.float64(0.003), 'W_ps': np.float64(-0.002), 'W_tp': np.float64(0.001), 'W_pp': np.floa
+FEASIBLE new/box52/out/topfix_n12_cmp.pg 583 {'X_cr': np.float64(0.017), 'X_ps': np.float64(0.001), 'W_cr': np.float64(0.042), 'W_tp': np.float64(0.004), 'W_pp': np.float64(-0.001), 'W_m1': np.float64(-0.001)}
+FEASIBLE red/seg/instances/runquad_K8_m30_n192.pg 264 {'X_ps': np.float64(0.03), 'W_ps': np.float64(0.002), 'W_tp': np.float64(-0.003)}
+FEASIBLE si/runlin/instances/runfam_K100.pg 292 {'X_cr': np.float64(1.788), 'X_tp': np.float64(6.942), 'W_ps': np.float64(0.022), 'W_ln': np.float64(-0.002), 'nIs': np.float64(-0.523)}
+FEASIBLE new/box51/out/dlc_d5.pg 63 {}
+SUMMARY both_long games 7 infeasible 0 smallest []

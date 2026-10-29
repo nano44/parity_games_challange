@@ -1,0 +1,334 @@
+FEASIBLE ../docs/referee/R-N5-L2/droplen_cex_n12.pg 4 {'nIs': -1}
+FEASIBLE ../docs/referee/R-N5-L2/exitdrop_n3.pg 1 {'X_cr': 1}
+FEASIBLE ../experiments/attr/instances/dtr_fig1.pg 1 {'nD': 1}
+FEASIBLE ../experiments/m2/counterexamples/ce1_8v_shrunk.pg 1 {'W_pn': 2}
+FEASIBLE ../experiments/m2/counterexamples/strat_s2_12v.pg 1 {'T_cr': 1}
+FEASIBLE ../experiments/n5-exhaustive/canonA_0.pg 3 {'X_tp': 4, 'X_pn': -1}
+FEASIBLE ../experiments/n5-exhaustive/canonA_1.pg 4 {'X_ps': 2}
+FEASIBLE ../experiments/n5-exhaustive/instances/b4_cyc6_0.pg 2 {'X_ps': 2, 'T_pn': 2}
+FEASIBLE ../experiments/n5-exhaustive/instances/b4_cyc6_1.pg 4 {'X_tp': 4, 'X_ln': 25}
+FEASIBLE ../experiments/n5-exhaustive/instances/b4_n4all_cyc3_0.pg 2 {'X_ps': 2, 'T_pn': 1}
+FEASIBLE ../experiments/n5-exhaustive/instances/b4_n5_other_0.pg 2 {'nIs': -1}
+FEASIBLE ../experiments/n5-exhaustive/instances/b4_nohlen5_0.pg 1 {'X_cr': 1}
+FEASIBLE ../experiments/n5-exhaustive/instances/b4_theta_n7.pg 1 {'T_cr': 1}
+FEASIBLE ../experiments/n5-exhaustive/instances/b5_n5_cyc4_0.pg 3 {'X_ps': 11, 'W_tp': -1, 'T_pn': 4}
+FEASIBLE ../experiments/n5-exhaustive/instances/b5_o11.pg 12 {'X_tp': 53, 'X_pp': 13, 'W_cr': 68, 'W_tp': 12, 'W_pp': 2}
+FEASIBLE ../experiments/n5-exhaustive/instances/b5_os_n12.pg 18 {'X_ps': 25, 'X_pc': -77, 'X_pp': 20, 'W_cr': 37, 'W_pc': -100, 'W_tp': 13}
+FEASIBLE ../experiments/n5-exhaustive/instances/b5_os_n14.pg 22 {'X_ps': 31, 'X_tp': 70, 'X_pn': -7, 'X_ln': 51, 'W_cr': 89, 'W_pp': 24, 'W_pn': 13, 'W_ln': -1}
+FEASIBLE ../experiments/n5-exhaustive/instances/b5_os_n16.pg 26 {'X_ps': 159, 'X_pp': 676, 'X_ln': 1137, 'W_cr': 904, 'W_tp': 163, 'W_pp': 23, 'W_pn': 16, 'nIs': 617}
+FEASIBLE ../experiments/n5-exhaustive/instances/b5_os_n20.pg 34 {'X_pc': -59, 'X_tp': 97, 'X_pp': 30, 'X_ln': 67, 'W_cr': 207, 'W_ps': 16, 'W_tp': 1, 'W_pp': 10, 'nIs': 33}
+INFEASIBLE ../experiments/n5-exhaustive/instances/b5_os_n24.pg 53 support 12 games ['../experiments/n5-exhaustive/instances/b5_os_n24.pg'] exact
+INFEASIBLE ../experiments/n5-exhaustive/instances/b5_os_n28.pg 65 support 19 games ['../experiments/n5-exhaustive/instances/b5_os_n28.pg'] inexact
+INFEASIBLE ../experiments/n5-exhaustive/instances/b5_os_n32.pg 71 support 26 games ['../experiments/n5-exhaustive/instances/b5_os_n32.pg'] inexact
+INFEASIBLE ../experiments/n5-exhaustive/instances/b5_os_n40.pg 81 support 21 games ['../experiments/n5-exhaustive/instances/b5_os_n40.pg'] inexact
+INFEASIBLE ../experiments/n5-exhaustive/instances/b6_xl2_n32.pg 87 support 21 games ['../experiments/n5-exhaustive/instances/b6_xl2_n32.pg'] inexact
+FEASIBLE ../experiments/n5-exhaustive/instances/b6_xl_n32.pg 85 {'X_cr': 210043, 'X_ps': 1466, 'X_pc': -30974, 'X_tp': 64344, 'X_pp': 180, 'X_ln': -141, 'W_ps': 189, 'W_tp': 24, 'W_pn': -20, 'W_ln': -1339, 'nIs': -3560}
+FEASIBLE ../experiments/n5-exhaustive/instances/b6_xl_n40.pg 89 {'X_cr': 1305, 'X_ps': 11, 'X_pc': -207, 'X_tp': 764, 'X_pp': 4, 'X_ln': -13, 'W_ps': -1, 'W_tp': 4, 'W_pp': -5, 'W_ln': -6, 'nIs': -162}
+INFEASIBLE ../experiments/n5-exhaustive/instances/b6_xl_n48.pg 97 support 11 games ['../experiments/n5-exhaustive/instances/b6_xl_n48.pg'] inexact
+FEASIBLE ../experiments/n5-exhaustive/instances/b6_xs_n24.pg 21 {'X_pp': -4}
+FEASIBLE ../experiments/n5-exhaustive/instances/b6_xs_n32.pg 29 {'X_tp': 3}
+FEASIBLE ../experiments/n5-exhaustive/instances/b6_xs_n40.pg 36 {'X_pp': -3}
+FEASIBLE ../experiments/n5-exhaustive/instances/b6_xs_n48.pg 37 {'X_tp': 1}
+INFEASIBLE ../experiments/n5-exhaustive/instances/b6_xw_n32.pg 79 support 22 games ['../experiments/n5-exhaustive/instances/b6_xw_n32.pg'] inexact
+INFEASIBLE ../experiments/n5-exhaustive/instances/b6_xw_n40.pg 80 support 54 games ['../experiments/n5-exhaustive/instances/b6_xw_n40.pg'] inexact
+INFEASIBLE ../experiments/n5-exhaustive/instances/b6_xw_n48.pg 85 support 56 games ['../experiments/n5-exhaustive/instances/b6_xw_n48.pg'] inexact
+FEASIBLE ../experiments/n5-exhaustive/instances/canonA_0.pg 3 {'X_tp': 4, 'X_pn': -1}
+FEASIBLE ../experiments/n5-exhaustive/instances/canonA_1.pg 4 {'X_ps': 2}
+FEASIBLE ../experiments/n5-exhaustive/instances/n4_maxph_0.pg 2 {'X_cr': 4, 'nIs': -100}
+FEASIBLE ../experiments/n5-exhaustive/instances/n4_maxph_1.pg 2 {'X_cr': 4, 'nIs': -100}
+FEASIBLE ../experiments/n5-exhaustive/instances/n4_thch_0.pg 2 {'X_ps': 2, 'T_pn': 1}
+FEASIBLE ../experiments/n5-exhaustive/instances/n4all_maxph_0.pg 2 {'nIs': -1}
+FEASIBLE ../experiments/n5-exhaustive/instances/n4all_maxph_1.pg 2 {'nIs': -1}
+FEASIBLE ../experiments/n5-exhaustive/instances/n4all_tgbad_0.pg 1 {'T_cr': 1}
+FEASIBLE ../experiments/n5-exhaustive/instances/n4all_thch_0.pg 2 {'X_ps': 2, 'T_pn': 1}
+FEASIBLE ../experiments/n5-exhaustive/instances/n5s_maxph_0.pg 3 {'T_ln': 1, 'nIs': -1}
+FEASIBLE ../experiments/n5-exhaustive/instances/nh_n8.pg 3 {'X_ln': 2, 'W_ln': 3}
+FEASIBLE ../experiments/n5-exhaustive/instances/thetaA_canon_n12.pg 3 {'X_ps': -8, 'X_pp': -21}
+FEASIBLE ../experiments/n5-exhaustive/instances/thetaA_canon_n8.pg 3 {'X_pn': -14, 'X_ln': -50}
+FEASIBLE ../experiments/n5-exhaustive/instances/thetaA_n17.pg 1 {'X_cr': 4}
+FEASIBLE ../experiments/n5-exhaustive/instances/thetaA_n6.pg 1 {'W_pn': 1}
+FEASIBLE ../experiments/n5-exhaustive/instances/thetaA_n7.pg 1 {'W_pp': 1}
+FEASIBLE ../experiments/n5-exhaustive/instances/thetaA_n9.pg 1 {'X_pp': -5}
+FEASIBLE ../experiments/new/box21/instances/fts_best16.pg 28 {'X_cr': 213, 'X_ps': 1, 'X_tp': 259, 'X_pn': -9, 'X_ln': -68, 'W_ln': -26, 'nIs': -41}
+FEASIBLE ../experiments/new/box21/instances/h1_hand.pg 1 {'T_cr': 2}
+FEASIBLE ../experiments/new/box21/instances/oneodd_c16.pg 36 {'X_cr': 35, 'X_ps': 9, 'X_tp': 6, 'X_ln': 62, 'W_cr': 87, 'W_ps': 10, 'W_pp': 13, 'W_ln': 73, 'T_ps': -25, 'nIs': -33}
+INFEASIBLE ../experiments/new/box21/instances/oneodd_c24.pg 44 support 13 games ['../experiments/new/box21/instances/oneodd_c24.pg'] exact
+FEASIBLE ../experiments/new/box22/instances/cyc4.pg 1 {'X_ps': -1}
+FEASIBLE ../experiments/new/box22/instances/i1_min.pg 4 {'X_tp': 3, 'W_pn': 4}
+FEASIBLE ../experiments/new/box22/instances/i1h_fts_best16.pg 8 {'X_pn': 1, 'W_pp': 5, 'W_pn': 8}
+FEASIBLE ../experiments/new/box22/instances/i1hn_fts_best16.pg 8 {'X_pn': 2, 'W_ps': -1}
+FEASIBLE ../experiments/new/box22/instances/i1hn_oneodd_c24.pg 10 {'X_cr': 4, 'X_pp': 7, 'X_pn': 3, 'W_cr': 1, 'W_ps': 2}
+FEASIBLE ../experiments/new/box22/instances/i3hn.pg 6 {'X_pp': 8, 'X_pn': 1, 'W_pn': 4}
+FEASIBLE ../experiments/new/box22/instances/n9_i2.pg 2 {'nIs': -1}
+FEASIBLE ../experiments/new/box22/instances/pure_14.pg 18 {'X_cr': 11, 'X_pn': -1, 'X_ln': -5}
+FEASIBLE ../experiments/new/box22/instances/pure_22.pg 33 {'X_cr': 60, 'X_tp': 7, 'X_pp': 8, 'X_ln': -93}
+FEASIBLE ../experiments/new/box22/instances/statY_12.pg 8 {'X_cr': 5, 'W_ps': 1, 'nIs': -9}
+FEASIBLE ../experiments/new/box25/fbh_drop9.pg 2 {'X_cr': 1, 'T_ps': -5}
+FEASIBLE ../experiments/new/box25/fbh_thr.pg 2 {'X_cr': 1}
+FEASIBLE ../experiments/new/box25/instances/rtt16.pg 14 {'X_cr': 220, 'X_ps': 67, 'X_tp': 366, 'W_tp': 16, 'W_pp': 267}
+FEASIBLE ../experiments/new/box25/instances/rtt24.pg 14 {'X_cr': 144, 'X_pc': -78, 'X_tp': 328, 'X_pp': 1, 'X_pn': 28, 'W_ln': 165, 'nIs': -339}
+FEASIBLE ../experiments/new/box25/instances/rttf48.pg 13 {'X_cr': 302, 'X_ps': 2, 'X_tp': 1167, 'X_pn': -22, 'X_ln': -125}
+FEASIBLE ../experiments/new/box25/instances/sc24.pg 20 {'X_tp': 6, 'X_pp': 7, 'X_pn': 4}
+FEASIBLE ../experiments/new/box25/instances/sc32.pg 48 {'X_cr': 438, 'X_tp': 472, 'X_pn': 1, 'X_ln': -7, 'W_ps': 25, 'W_tp': -3, 'W_pp': 27, 'W_ln': -68}
+FEASIBLE ../experiments/new/box25/instances/tr12_s3.pg 11 {'X_cr': 71, 'X_tp': 93, 'X_pn': -7, 'X_ln': 57, 'nIs': -100}
+FEASIBLE ../experiments/new/box25/instances/tr20_s4.pg 17 {'X_ps': -1, 'X_pp': -5}
+FEASIBLE ../experiments/new/box25/instances/wd12_s1.pg 8 {'X_cr': 4, 'X_ps': -14}
+FEASIBLE ../experiments/new/box25/instances/wd16_s2.pg 19 {'X_cr': 9, 'X_pp': -4, 'W_pp': -2}
+FEASIBLE ../experiments/new/box25/instances/xc16.pg 14 {'X_tp': 2, 'X_pp': 2}
+FEASIBLE ../experiments/new/box25/instances/xc24.pg 22 {'X_pp': 13, 'W_tp': 7}
+FEASIBLE ../experiments/new/box25/instances/xcf20.pg 18 {'X_cr': 10, 'X_ps': -2, 'X_tp': 16, 'X_pp': -7}
+FEASIBLE ../experiments/new/box25/laps/lap_n6_s1_110421.pg 2 {'X_ln': -3}
+FEASIBLE ../experiments/new/box25/laps/lap_n9_s1_32427.pg 3 {'W_ps': -1}
+FEASIBLE ../experiments/new/box25/thetare_min.pg 7 {'X_pp': 1, 'X_pn': 1, 'W_pn': 3}
+FEASIBLE ../experiments/new/box25/thetare_n.pg 7 {'X_cr': 1, 'X_ps': 5, 'X_pn': -1, 'W_ps': -1, 'W_pn': 8}
+FEASIBLE ../experiments/new/box25/wdrop_canon.pg 4 {'X_tp': 1, 'W_cr': 1, 'nIs': -3}
+FEASIBLE ../experiments/new/box25/wdrop_cyc.pg 2 {'X_cr': 1, 'T_cr': 2}
+FEASIBLE ../experiments/new/box25/zfrozen_thr.pg 1 {'X_cr': 4}
+FEASIBLE ../experiments/new/box28/instances/fb32_inr2_final.pg 47 {'X_cr': 5, 'X_pp': 4, 'W_pp': -3}
+INFEASIBLE ../experiments/new/box28/instances/fbref_n48.pg 60 support 27 games ['../experiments/new/box28/instances/fbref_n48.pg'] inexact
+FEASIBLE ../experiments/new/box28/instances/oc16_s2.pg 26 {'X_cr': 18, 'X_ps': -1, 'X_tp': 2, 'X_pn': 1, 'W_tp': 1, 'W_ln': 5}
+FEASIBLE ../experiments/new/box28/instances/oc24_s4_final.pg 20 {'X_cr': 2, 'X_tp': 32, 'X_pp': 12}
+FEASIBLE ../experiments/new/box28/instances/w24b_thc24_final.pg 17 {'X_cr': 648, 'X_ps': 59, 'X_tp': 799, 'X_pn': -36, 'X_ln': 138, 'W_ps': -53, 'W_pc': -76, 'W_pn': 9, 'nIs': -154}
+FEASIBLE ../experiments/new/box28/instances/x32_sc32_1309s.pg 63 {'X_cr': 1518, 'X_tp': 1623, 'X_pp': 7, 'X_pn': 2, 'X_ln': 15, 'W_ps': 5, 'W_tp': 7, 'W_pp': 5, 'W_ln': -15, 'nIs': -230}
+FEASIBLE ../experiments/new/box28/instances/x32_sc32_final.pg 76 {'X_cr': 63781, 'X_ps': 1187, 'X_pc': -33599, 'X_tp': 16360, 'X_pn': -76, 'X_ln': 84, 'W_ps': 2211, 'W_pc': -52972, 'W_tp': -75, 'W_pp': 690, 'W_ln': 750, 
+INFEASIBLE ../experiments/new/box28/instances/x48_rt48_final.pg 112 support 16 games ['../experiments/new/box28/instances/x48_rt48_final.pg'] inexact
+FEASIBLE ../experiments/new/box29/instances/u1_n32.pg 16 {'X_ps': -1, 'X_ln': 12, 'W_ln': 88}
+FEASIBLE ../experiments/new/box29/instances/wf0_cex_n16.pg 40 {'X_cr': 132, 'X_ps': 12, 'X_tp': 2, 'X_pp': 2, 'X_ln': 8, 'W_ps': -1, 'W_pc': -65, 'W_tp': 4, 'W_pp': -7, 'W_ln': 21, 'nIs': -71}
+FEASIBLE ../experiments/new/box31/instances/nr_u23_n32.pg 14 {'X_pp': -38, 'X_pn': -26, 'W_cr': 80, 'W_ln': 461, 'nIs': -539}
+FEASIBLE ../experiments/new/box31/instances/p3long_n14.pg 10 {'X_tp': 4}
+FEASIBLE ../experiments/new/box31/instances/u1flat_best_n32.pg 10 {'X_cr': 548, 'X_pp': 181, 'X_pn': 49, 'W_ps': -15, 'nIs': -1000}
+FEASIBLE ../experiments/new/box31/instances/u1t_cex2_n32.pg 9 {'X_cr': 106, 'X_tp': 1, 'X_pp': 35, 'X_pn': 70, 'nIs': -570}
+FEASIBLE ../experiments/new/box31/instances/u3ev_n16.pg 6 {'X_cr': 9, 'X_tp': 2, 'W_ln': 9, 'nIs': -32}
+FEASIBLE ../experiments/new/box32/instances/kwm_cex_n24.pg 21 {'X_cr': 6, 'W_cr': 1, 'W_tp': 1, 'W_pp': 4}
+FEASIBLE ../experiments/new/box32/instances/nowake_cex_n32.pg 9 {'X_cr': 148, 'X_ps': 34, 'X_tp': 19, 'X_pp': 1, 'W_cr': 91, 'W_ln': 194, 'nIs': -1000}
+FEASIBLE ../experiments/new/box34/instances/onedrop_cex_n32.pg 6 {'nIs': -1}
+FEASIBLE ../experiments/new/box34/instances/oneh_cex_n32.pg 3 {'nIs': -1}
+FEASIBLE ../experiments/new/box35/instances/fbrestart_cex_n12.pg 5 {'X_ps': -1, 'X_ln': 3, 'nIs': -7}
+FEASIBLE ../experiments/new/box35/instances/fbrestart_cex_n24.pg 23 {'X_cr': 21, 'X_tp': 7, 'X_pp': 8, 'X_ln': 45, 'W_ln': 5, 'nIs': -50}
+FEASIBLE ../experiments/new/box35/instances/onerun_cex_n32.pg 8 {'X_cr': 133, 'X_ln': 500, 'nIs': -500}
+FEASIBLE ../experiments/new/box35/instances/pf_best_3621.pg 36 {'X_cr': 1646, 'X_ps': 19, 'X_pc': -734, 'X_tp': 2691, 'X_ln': 34, 'W_tp': -2948, 'W_pp': 107, 'W_pn': 4, 'W_ln': -175, 'nIs': 92}
+FEASIBLE ../experiments/new/box35/instances/pf_best_3622.pg 55 {'X_cr': 3613, 'X_ps': -9, 'X_pc': 208, 'X_tp': 1710, 'X_pp': -43, 'X_ln': 9, 'W_ps': 108, 'W_pc': -2250, 'W_tp': -21, 'W_pp': 58, 'W_ln': -248}
+FEASIBLE ../experiments/new/box35/instances/pf_best_3623.pg 40 {'X_cr': 5538, 'X_ps': 2, 'X_tp': 232, 'X_pp': 19, 'X_ln': -42, 'W_tp': 10, 'W_pn': 2, 'W_ln': -9, 'nIs': -241}
+FEASIBLE ../experiments/new/box37/instances/rfroz_cex_n16.pg 15 {'X_cr': 25, 'X_pp': 28, 'X_pn': 1, 'W_cr': 2, 'W_ps': 9, 'W_pp': 6, 'W_ln': 113, 'nIs': 3}
+FEASIBLE ../experiments/new/box38/instances/neb_cex_n11.pg 3 {'X_cr': 1, 'T_ps': -2}
+FEASIBLE ../experiments/new/box38/instances/nebc_cex_n14.pg 9 {'X_cr': 4, 'X_tp': 10, 'X_pp': 4, 'W_cr': 3, 'T_cr': 4}
+FEASIBLE ../experiments/new/box38/instances/norise_state_n8.pg 3 {'X_cr': 1, 'nIt': -100}
+FEASIBLE ../experiments/new/box38/instances/tauw_A_cex_n24.pg 16 {'X_cr': 1, 'X_ps': 1, 'W_cr': 1, 'nIs': -10}
+FEASIBLE ../experiments/new/box38/instances/tauw_B_cex_n24.pg 10 {'X_cr': 13, 'X_ps': 19, 'X_tp': 1, 'X_pn': -16, 'W_cr': 5, 'W_tp': 15}
+FEASIBLE ../experiments/new/instances/killer/deeptrap_sae_N1.pg 4 {'X_pp': 6, 'X_pn': 4}
+FEASIBLE ../experiments/new/instances/n6/counter_ortl-3.pg 4 {'W_ps': -3, 'W_tp': -1}
+FEASIBLE ../experiments/red/carry/instances/absmono_viol_n44.pg 7 {'W_cr': -2, 'nIs': -100}
+FEASIBLE ../experiments/red/carry/instances/carry3_2_2.pg 2 {'W_pp': 1}
+FEASIBLE ../experiments/red/carry/instances/cm_mdrop_both_n28.pg 10 {'X_cr': 11, 'X_ps': -1, 'X_pp': -15, 'W_cr': 2, 'W_pn': -3, 'T_pp': 6, 'T_pn': 24}
+FEASIBLE ../experiments/red/carry/instances/cm_mdrop_oink_n28.pg 3 {'X_cr': 9, 'X_ps': 5, 'W_ps': 3}
+FEASIBLE ../experiments/red/carry/instances/ctx11_n40.pg 9 {'X_tp': 18, 'X_pn': 19, 'W_cr': -1, 'W_tp': 1, 'W_pn': 1, 'T_pp': 3}
+FEASIBLE ../experiments/red/carry/instances/ctx12_n40.pg 8 {'X_cr': 7, 'X_ps': 13, 'X_tp': -6, 'W_ps': 4, 'W_pp': 5, 'T_pp': -2}
+FEASIBLE ../experiments/red/carry/instances/ctx13_n40.pg 17 {'X_cr': 6, 'X_tp': 13, 'X_pn': 6, 'W_cr': 1}
+FEASIBLE ../experiments/red/carry/instances/ctx6_n20.pg 3 {'X_cr': 31, 'W_tp': -5, 'T_cr': 2}
+FEASIBLE ../experiments/red/carry/instances/ctx7_n30.pg 11 {'X_pp': 44, 'W_ps': -22, 'W_tp': 39, 'W_pn': 12, 'T_ps': -6}
+FEASIBLE ../experiments/red/carry/instances/f1_twodef_n48.pg 6 {'X_pn': 1, 'W_pn': 5, 'T_pp': 8}
+FEASIBLE ../experiments/red/carry/instances/f1_twofall_n48.pg 6 {'X_ps': -1, 'X_pn': 1, 'T_ps': 2}
+FEASIBLE ../experiments/red/carry/instances/fallv_viol_n28.pg 5 {'W_pn': 1}
+FEASIBLE ../experiments/red/carry/instances/fired10_n20.pg 6 {'nIs': -1}
+FEASIBLE ../experiments/red/carry/instances/firedlong667_n20.pg 4 {'X_tp': -4, 'W_ps': -6, 'T_cr': 33, 'T_ps': 244}
+FEASIBLE ../experiments/red/carry/instances/firedlong667_n43.pg 3 {'nIs': -1}
+FEASIBLE ../experiments/red/carry/instances/gapbW_dup_n20.pg 5 {'X_cr': 3, 'W_cr': -26, 'W_ps': 500}
+FEASIBLE ../experiments/red/carry/instances/gapb_dup_n20.pg 8 {'X_pp': 2, 'W_ps': -8, 'T_cr': 5}
+FEASIBLE ../experiments/red/carry/instances/h4_compound2x2_n44.pg 10 {'X_cr': 152, 'X_pp': -36, 'W_cr': -40, 'W_pp': -160, 'T_cr': 95}
+FEASIBLE ../experiments/red/carry/instances/h4_compound_n44.pg 4 {'X_pn': 1, 'T_ps': -5}
+FEASIBLE ../experiments/red/carry/instances/h4_def2ctx_n20.pg 6 {'X_cr': 2, 'X_ps': -24, 'W_tp': 2, 'T_pn': 4}
+FEASIBLE ../experiments/red/carry/instances/h4_def7_n28.pg 3 {'W_pn': 1}
+FEASIBLE ../experiments/red/carry/instances/h4_disjoint_n20.pg 3 {'X_pn': 6, 'W_cr': -1}
+FEASIBLE ../experiments/red/carry/instances/h4_notweaker_n20.pg 5 {'X_pn': 3, 'W_cr': 2, 'W_ps': -1, 'T_cr': 2}
+FEASIBLE ../experiments/red/carry/instances/kin_viol_n29.pg 5 {'X_pn': 2, 'W_cr': 1, 'T_cr': 1}
+FEASIBLE ../experiments/red/carry/instances/lalg_dtl_mviol_n20.pg 5 {'X_cr': 1}
+FEASIBLE ../experiments/red/carry/instances/lemmaS_Mdrop_n20.pg 6 {'X_cr': 2, 'X_ps': -24, 'W_tp': 1, 'T_pn': 3}
+FEASIBLE ../experiments/red/carry/instances/lemmaS_viol_n20.pg 4 {'X_cr': 15, 'W_ps': -30, 'W_pp': -44}
+FEASIBLE ../experiments/red/carry/instances/lex_viol_inj_n28.pg 6 {'X_cr': 1, 'X_ps': -3, 'X_pn': 1, 'T_ps': 6, 'T_pp': 1}
+FEASIBLE ../experiments/red/carry/instances/lex_viol_tie_n28.pg 7 {'X_ps': -3, 'X_pn': 3, 'T_ps': 9, 'T_tp': 3}
+FEASIBLE ../experiments/red/carry/instances/meet_viol_n29.pg 11 {'X_cr': 63, 'X_pp': 59, 'W_cr': 16, 'W_ps': 187, 'W_pn': -88, 'T_cr': 123, 'T_pp': 145}
+FEASIBLE ../experiments/red/carry/instances/nosig_2_3.pg 2 {'X_pp': -5, 'T_cr': 1}
+FEASIBLE ../experiments/red/carry/instances/phi_flat_alive_n32.pg 4 {'W_pp': 1, 'T_cr': 2}
+FEASIBLE ../experiments/red/carry/instances/pk_viol_n20.pg 3 {'X_ps': 1, 'nIt': -10}
+FEASIBLE ../experiments/red/carry/instances/replay4_n32.pg 4 {'X_cr': 2, 'W_ps': -2, 'W_pn': 2, 'T_pp': 4}
+FEASIBLE ../experiments/red/carry/instances/spp19_oink_n30.pg 10 {'X_ps': 6, 'X_tp': -4, 'W_tp': -2, 'T_cr': 1, 'T_pp': 1}
+FEASIBLE ../experiments/red/carry/instances/spp19_stable_n30.pg 7 {'X_cr': 2, 'X_pn': 1, 'W_pn': 2, 'T_cr': 1}
+FEASIBLE ../experiments/red/carry/instances/spp22_oink_n40.pg 8 {'X_cr': 2, 'X_ps': -8, 'X_pn': 6, 'W_pn': 10, 'T_pp': 3}
+FEASIBLE ../experiments/red/carry/instances/spp25_oink_n40.pg 10 {'X_tp': 3, 'W_ps': -2, 'W_pp': -2, 'T_pp': 4}
+FEASIBLE ../experiments/red/carry/instances/stealonce_both_n45.pg 4 {'W_cr': 41, 'W_pn': -1}
+FEASIBLE ../experiments/red/carry/instances/tstep_near_n20.pg 5 {'X_cr': 5, 'X_pp': 4, 'W_cr': 1, 'W_pp': 1}
+FEASIBLE ../experiments/red/ctxp/instances/deep1_n13.pg 1 {'T_cr': 2}
+FEASIBLE ../experiments/red/ctxp/instances/deep1_n21.pg 3 {'T_pp': 1}
+FEASIBLE ../experiments/red/ctxp/instances/margin1_n20.pg 5 {'X_cr': 3, 'W_cr': 1, 'T_cr': 3, 'T_tp': 1}
+FEASIBLE ../experiments/red/dtl/instances/lalg_dtl_pertop31_n18.pg 2 {'X_pp': 1, 'W_tp': 1}
+FEASIBLE ../experiments/red/dtl/instances/lalg_dtl_restart8_n20.pg 5 {'X_cr': 2, 'W_cr': -1, 'W_pp': 38}
+FEASIBLE ../experiments/red/instances/claimF_len_cf1.pg 1 {'X_ps': 1}
+FEASIBLE ../experiments/red/kl/instances/klcount_n16.pg 6 {'X_cr': 1, 'X_tp': 8, 'T_tp': -1}
+FEASIBLE ../experiments/red/kl/instances/klcount_n18_base.pg 6 {'X_cr': 1, 'X_tp': 7, 'T_tp': -1}
+FEASIBLE ../experiments/red/kl/instances/klcount_n18_lvl.pg 6 {'X_cr': 1, 'X_tp': 8, 'T_tp': -1}
+FEASIBLE ../experiments/red/kl/instances/klglobal_n16.pg 6 {'X_tp': 2, 'W_cr': 1, 'nIt': -100}
+FEASIBLE ../experiments/red/kl/instances/klglobal_n18_lvl.pg 6 {'X_tp': 2, 'W_cr': 1, 'nIt': -100}
+FEASIBLE ../experiments/red/kl/instances/klglobal_n20_lvl2.pg 6 {'X_tp': 2, 'W_cr': 1, 'nIt': -100}
+FEASIBLE ../experiments/red/kl/instances/klmin_n13.pg 3 {'X_cr': 1, 'X_tp': 1, 'X_pn': 1}
+FEASIBLE ../experiments/red/kl/instances/r2climb_h13.pg 4 {'X_tp': 5, 'W_tp': 1}
+FEASIBLE ../experiments/red/kl/instances/r2crawl_n14.pg 5 {'X_cr': 4, 'X_ps': -4, 'T_ps': -1}
+FEASIBLE ../experiments/red/kl/instances/r2join_h0E_n14.pg 3 {'X_cr': 3, 'X_ps': 2, 'X_tp': 23}
+FEASIBLE ../experiments/red/kl/instances/r2lap_best_n22.pg 5 {'X_cr': 1, 'W_cr': 1, 'T_ln': 50}
+FEASIBLE ../experiments/red/kl24/instances/HL88_0.pg 3 {'X_cr': 1, 'X_pn': 1}
+FEASIBLE ../experiments/red/kl24/instances/HL88_1.pg 3 {'X_cr': 1, 'X_pn': 1}
+FEASIBLE ../experiments/red/kl24/instances/HL88_2.pg 3 {'X_cr': 1, 'X_pn': 1}
+FEASIBLE ../experiments/red/kl24/instances/HL88_3.pg 3 {'X_cr': 1, 'X_pn': 1}
+FEASIBLE ../experiments/red/kl24/instances/HLg_0.pg 3 {'X_cr': 2, 'X_pn': 3}
+FEASIBLE ../experiments/red/kl24/instances/HLg_1.pg 3 {'X_cr': 14, 'X_pn': 19}
+FEASIBLE ../experiments/red/kl24/instances/HLg_2.pg 3 {'X_cr': 1, 'X_pn': 1}
+FEASIBLE ../experiments/red/lag/instances/depth2_n39.pg 3 {'W_ps': 1}
+FEASIBLE ../experiments/red/lag/instances/depth3_n46.pg 3 {'T_ps': -1}
+FEASIBLE ../experiments/red/mei/instances/mei_h2.pg 1 {'X_pn': 1}
+FEASIBLE ../experiments/red/mei/instances/mei_h3.pg 2 {'X_tp': 2, 'X_pn': 5}
+FEASIBLE ../experiments/red/mei/instances/mei_h4.pg 3 {'X_tp': 2, 'X_pn': 2}
+FEASIBLE ../experiments/red/mei/instances/mei_h5.pg 4 {'X_tp': 2, 'X_pn': 1}
+FEASIBLE ../experiments/red/n5/instances/dl_4_4.pg 8 {'X_ps': 1, 'W_tp': 14, 'T_pp': -2}
+FEASIBLE ../experiments/red/n5/instances/dlm2_4.pg 5 {'W_cr': -12, 'W_pp': 7, 'T_cr': 14}
+FEASIBLE ../experiments/red/n5/instances/sym_h12_s1.pg 34 {'X_cr': 56, 'X_tp': -3, 'X_pp': 4, 'X_pn': 5, 'W_cr': 4, 'W_tp': 9, 'W_pp': -8, 'T_cr': 53, 'T_ps': -2, 'T_tp': -40, 'nIs': -1000, 'nIt': -578, 'nD': 422}
+FEASIBLE ../experiments/red/n5/instances/sym_h16_s1.pg 55 {'X_cr': 295, 'X_tp': 1, 'X_pp': 20, 'X_pn': 6, 'X_ln': -155, 'W_cr': 10, 'W_pp': -2, 'W_pn': -9, 'T_cr': 154, 'T_pc': -143, 'T_tp': 57, 'T_pp': 34, 'T_pn': 13, '
+FEASIBLE ../experiments/red/n5/instances/sym_h8_s1.pg 25 {'X_cr': 135, 'X_ps': 4, 'X_tp': -39, 'X_pp': 125, 'W_cr': 7, 'W_tp': 26, 'W_pn': 25, 'T_cr': 97, 'T_ps': 23}
+FEASIBLE ../experiments/red/n5inj/instances/block_bk20.pg 27 {'X_cr': 4, 'X_tp': 1, 'X_ln': 2, 'nIs': -4}
+FEASIBLE ../experiments/red/n5inj/instances/block_bk32.pg 49 {'X_cr': 65, 'X_ps': 56, 'X_pc': -1762, 'X_pn': -1, 'X_ln': -4}
+FEASIBLE ../experiments/red/n5inj/instances/blockph_bp20.pg 25 {'X_cr': 1025, 'X_tp': 627, 'X_pp': 78, 'X_pn': 195, 'X_ln': 500, 'nIs': -500}
+FEASIBLE ../experiments/red/n5inj/instances/blockph_bp32.pg 39 {'X_cr': 8, 'X_tp': 3}
+FEASIBLE ../experiments/red/n5inj/instances/bribe_cex_n15.pg 1 {'X_cr': 1}
+INFEASIBLE ../experiments/red/n5inj/instances/elimn_cex_n48.pg 92 support 35 games ['../experiments/red/n5inj/instances/elimn_cex_n48.pg'] inexact
+FEASIBLE ../experiments/red/n5inj/instances/frz24.pg 39 {'X_cr': 167, 'X_ps': 18, 'X_tp': 39, 'X_pp': 21, 'X_ln': 275, 'W_cr': -1, 'W_ps': -20, 'W_tp': 45, 'W_ln': 58, 'nIs': -667}
+FEASIBLE ../experiments/red/n5inj/instances/frz32.pg 8 {'X_cr': 1, 'W_ln': -5, 'T_ln': 1}
+FEASIBLE ../experiments/red/n5inj/instances/frz40.pg 90 {'X_cr': 158537, 'X_ps': 76, 'X_pc': -1630, 'X_tp': 4295, 'X_pp': 24, 'X_ln': -40, 'W_ps': -17, 'W_pc': 1203, 'W_tp': -54, 'W_pp': -13, 'W_ln': -307, 'nIs': -577, '
+FEASIBLE ../experiments/red/n5inj/instances/phase2_pk32.pg 56 {'X_cr': 1688, 'X_tp': 127, 'X_pn': -244, 'X_ln': 50, 'W_tp': 7, 'W_ln': 50}
+FEASIBLE ../experiments/red/n5inj/instances/phase2_pk48.pg 72 {'X_cr': 4811, 'X_ps': 121, 'X_pc': -3781, 'X_tp': 700, 'X_pn': -50, 'W_cr': 45, 'W_pc': -1362, 'W_tp': 67, 'W_pp': 57, 'W_ln': -682, 'T_pp': 13, 'nIs': -694}
+FEASIBLE ../experiments/red/n5inj/instances/returns_rt32.pg 57 {'X_cr': 4242, 'X_tp': 314, 'X_pn': -287, 'X_ln': 808, 'W_tp': 96, 'W_ln': 192}
+INFEASIBLE ../experiments/red/n5inj/instances/returns_rt48.pg 80 support 12 games ['../experiments/red/n5inj/instances/returns_rt48.pg'] inexact
+FEASIBLE ../experiments/red/n5inj/instances/theta_thc24.pg 29 {'X_cr': 577, 'X_ps': -24, 'X_tp': 180, 'X_pp': -7, 'W_ps': 8, 'W_pp': 6, 'W_ln': 28}
+FEASIBLE ../experiments/red/n5inj/instances/theta_thf16.pg 20 {'X_cr': 75, 'X_tp': 113, 'X_ln': 4, 'W_pp': 9, 'nIs': -27}
+FEASIBLE ../experiments/red/n5inj/instances/theta_tp32.pg 45 {'X_cr': 87, 'X_tp': 86, 'X_pp': -4, 'X_pn': -19, 'W_cr': -25, 'W_tp': 38, 'W_pn': -6, 'W_ln': -293}
+FEASIBLE ../experiments/red/n5inj/instances/theta_tp40.pg 41 {'X_cr': 25, 'X_tp': 6, 'X_ln': 1, 'W_ln': -3}
+FEASIBLE ../experiments/red/n5inj/instances/wide_h16.pg 44 {'X_cr': 418, 'X_ps': 4, 'X_tp': 309, 'W_cr': -57, 'W_tp': -41, 'W_pp': -1, 'W_pn': -3, 'W_ln': -63, 'T_cr': 223, 'T_ps': 5, 'T_tp': 51, 'T_pp': 7, 'T_ln': -44}
+FEASIBLE ../experiments/red/nest16/instances/near4_n26.pg 2 {'nD': -1}
+FEASIBLE ../experiments/red/nest16/instances/nest4u_n46.pg 2 {'nD': -5}
+FEASIBLE ../experiments/red/nest16/instances/oseg_n26.pg 3 {'nD': -1}
+FEASIBLE ../experiments/red/nest16/instances/w1_n27.pg 2 {'T_cr': 3}
+FEASIBLE ../experiments/red/nest16/instances/win3_n27.pg 2 {'T_cr': 2}
+FEASIBLE ../experiments/red/nopre/instances/nopre_viol_n20.pg 3 {'X_cr': 2, 'X_pn': 1, 'T_cr': 1}
+FEASIBLE ../experiments/red/sgrow/instances/s20_n20.pg 8 {'X_ln': 12, 'W_ln': 13, 'T_tp': 11, 'T_pn': 4, 'nIs': -975}
+FEASIBLE ../experiments/red/sgrow/instances/s21_oink_n20.pg 8 {'T_cr': 4, 'T_pp': 3}
+FEASIBLE ../experiments/red/sgrow/instances/s29_n30.pg 7 {'W_ln': -7, 'T_ps': -1, 'T_ln': 5, 'nIt': -959, 'nD': -29}
+FEASIBLE ../experiments/red/sgrow/instances/s34_oink_n40.pg 5 {'X_ps': -1, 'X_pp': -3, 'W_pp': -1, 'T_cr': 3}
+FEASIBLE ../experiments/red/so/instances/epsseg_cex_n16.pg 11 {'X_pp': -5, 'X_pn': -4, 'X_ln': -14, 'W_tp': 13, 'W_ln': -22}
+FEASIBLE ../experiments/red/so/instances/epsseg_cex_n48.pg 26 {'X_cr': 495, 'X_pp': 173, 'X_pn': 101, 'W_tp': 3376, 'W_pp': 243, 'W_pn': 293}
+FEASIBLE ../experiments/red/so/instances/exitr_cex_n16.pg 10 {'X_cr': 2, 'X_ps': -1, 'X_tp': 12, 'X_pp': -6, 'W_pn': 5}
+FEASIBLE ../experiments/red/so/instances/exitr_cex_n48.pg 22 {'X_cr': 302, 'X_ps': 6, 'X_tp': 66, 'X_pn': -3, 'X_ln': 102, 'W_ps': 86, 'W_tp': 198, 'W_pp': 52, 'nIs': -9898}
+FEASIBLE ../experiments/red/so/instances/mn_abs74_n48.pg 22 {'X_cr': 27200, 'X_ps': 123, 'X_tp': 6767, 'X_pp': 33, 'X_ln': 1087, 'W_cr': 18006, 'W_tp': 17685, 'W_pn': 378, 'W_ln': 5781, 'nIs': -3132}
+FEASIBLE ../experiments/red/so/instances/njb_reabs54_n32.pg 40 {'X_cr': 55451, 'X_ps': 2317, 'X_pc': -57008, 'X_tp': 22386, 'X_ln': -1443, 'W_ps': 171, 'W_tp': -42668, 'W_pp': 1296, 'W_ln': 1347, 'nIs': -5239}
+FEASIBLE ../experiments/red/so/instances/njb_reabs65_n48.pg 70 {'X_cr': 119, 'X_ps': 8, 'X_tp': 429, 'W_cr': 163, 'W_tp': -6, 'W_pp': 17, 'W_pn': 11, 'W_ln': 3, 'nIs': -54}
+FEASIBLE ../experiments/red/so/instances/pft35_n48.pg 41 {'X_cr': 526, 'X_tp': 313, 'W_ps': -3, 'W_tp': 19, 'W_ln': -1}
+FEASIBLE ../experiments/red/so/instances/pft40_n40.pg 54 {'X_cr': 2962, 'X_ps': 16, 'X_pc': -440, 'X_tp': 2500, 'X_pp': 10, 'X_ln': 21, 'W_ps': 57, 'W_pc': -2172, 'W_tp': -2, 'W_pn': -12, 'W_ln': -54, 'nIs': -343}
+FEASIBLE ../experiments/red/so/instances/pftheta34_n32.pg 39 {'X_cr': 3072, 'X_ps': -2, 'X_tp': 2449, 'X_ln': -17, 'W_ps': 19, 'W_tp': -1576, 'W_pp': 29, 'W_ln': -91, 'nIs': 210}
+FEASIBLE ../experiments/red/so/instances/pftheta_cex_n32.pg 38 {'X_cr': 15940, 'X_tp': 1710, 'X_pp': 13, 'X_pn': 22, 'X_ln': -63, 'W_ps': 133, 'W_pc': -2850, 'W_tp': -746, 'W_ln': -69}
+FEASIBLE ../experiments/red/so/instances/post31_n48.pg 36 {'X_cr': 13, 'X_pn': 1, 'W_cr': 86, 'W_ps': 2, 'W_tp': 26, 'W_pn': -1}
+FEASIBLE ../experiments/red/so/instances/so_j19_n48.pg 25 {'X_cr': 1, 'W_tp': 2}
+FEASIBLE ../experiments/red/so/instances/so_k2_n32.pg 20 {'X_cr': 15, 'X_tp': 2, 'W_pn': -4, 'W_ln': 15}
+FEASIBLE ../experiments/red/so/instances/so_sor5_n24.pg 23 {'X_tp': 55, 'X_pn': -6, 'W_tp': 5, 'W_pp': -4, 'W_pn': -37, 'T_pn': 1}
+FEASIBLE ../experiments/red/so/instances/so_sorl_n32.pg 22 {'X_ps': 3}
+FEASIBLE ../experiments/red/so/instances/so_th_n32.pg 36 {'X_cr': 495, 'X_tp': 88, 'X_pp': 62, 'X_pn': 31, 'X_ln': 622, 'W_tp': 1205, 'W_pn': -250, 'W_ln': -4041, 'nIs': -8418}
+FEASIBLE ../experiments/red/so/instances/so_tie13_n24.pg 16 {'X_tp': 2, 'W_ps': 2}
+FEASIBLE ../experiments/red/so/instances/so_tie15_n32.pg 20 {'X_pn': 6, 'W_ps': 9}
+FEASIBLE ../experiments/red/so/instances/tog6a_n32.pg 10 {'X_cr': 43, 'X_ps': -5, 'X_ln': 194, 'nIs': -1000}
+FEASIBLE ../experiments/red/so/instances/tog6b_n32.pg 8 {'X_pp': -11, 'X_ln': 97, 'nIs': -1000}
+FEASIBLE ../experiments/red/so/instances/xsn29_n32.pg 29 {'X_tp': 3}
+FEASIBLE ../experiments/red/so/instances/xsn43_n48.pg 45 {'X_cr': 3, 'X_ps': 2, 'X_ln': -8, 'W_ln': -3}
+FEASIBLE ../experiments/red/so/instances/xsn91_n48.pg 115 {'X_cr': 233540, 'X_ps': 148, 'X_pc': -5292, 'X_tp': 77663, 'X_pn': -21, 'X_ln': 999, 'W_ps': 66, 'W_pc': -339, 'W_tp': 173, 'W_pn': -217, 'W_ln': -5227, 'nIs': -
+FEASIBLE ../experiments/red/so/instances/xsnf42_n48.pg 44 {'X_cr': 1, 'X_tp': 21, 'nIs': -1000}
+FEASIBLE ../experiments/red/tcpert/instances/leanT_N6.pg 6 {'X_ps': -16, 'X_pn': 15, 'W_cr': -3, 'T_cr': 3}
+FEASIBLE ../experiments/red/tcpert/instances/tcL_N3.pg 7 {'X_cr': 2, 'X_pn': 1, 'W_tp': 1}
+FEASIBLE ../experiments/red/tpp/instances/tpp_viol_n22.pg 2 {'W_pp': 1, 'T_cr': 1}
+FEASIBLE ../experiments/red/xctx/instances/nest3_n20.pg 2 {'T_cr': 32, 'T_ln': 200}
+FEASIBLE ../experiments/red/xctx/instances/nest3_n24.pg 2 {'nIt': -1}
+FEASIBLE ../experiments/red/xctx/instances/vrall_viol_n20.pg 4 {'T_cr': 1}
+FEASIBLE ../experiments/red/xctx/instances/xcov11_n20.pg 2 {'T_cr': 1}
+FEASIBLE ../experiments/red/xctx/instances/xctx_viol_n20.pg 5 {'T_cr': 2, 'nIt': -221, 'nD': -779}
+INFEASIBLE ../experiments/red/xing/instances/fbref_cex_n32.pg 56 support 26 games ['../experiments/red/xing/instances/fbref_cex_n32.pg'] inexact
+FEASIBLE ../experiments/red/xing/instances/j10_n24.pg 25 {'X_cr': 1018, 'X_tp': 1965, 'X_pp': -1, 'X_pn': -6, 'X_ln': -98, 'W_tp': 599, 'W_pp': -43, 'W_pn': -62, 'W_ln': -990, 'nIs': -100}
+FEASIBLE ../experiments/red/xing/instances/j4_n40.pg 106 {'X_cr': 113291, 'X_ps': 104, 'X_pc': -1668, 'X_tp': 8157, 'X_pp': 230, 'X_ln': -200, 'W_ps': 181, 'W_pc': -5223, 'W_tp': -94, 'W_ln': 181, 'nIs': -858}
+FEASIBLE ../experiments/red/xing/instances/j5_n16.pg 30 {'X_cr': 1084, 'X_pc': -32, 'X_tp': 111, 'X_pp': -10, 'X_pn': -37, 'X_ln': -349, 'W_tp': 13, 'W_pp': 2, 'W_pn': 28, 'W_ln': 275, 'nIs': -1106}
+FEASIBLE ../experiments/red/xing/instances/j7_n32.pg 50 {'X_cr': 334, 'X_pc': -272, 'X_tp': 669, 'X_pp': -11, 'X_pn': -29, 'X_ln': -40, 'W_tp': 921, 'W_pp': 96, 'W_pn': 4, 'W_ln': -348, 'T_ln': 6149, 'nIs': -793}
+INFEASIBLE ../experiments/red/xing/instances/j7_n48.pg 78 support 22 games ['../experiments/red/xing/instances/j7_n48.pg'] inexact
+FEASIBLE ../experiments/red/xing/instances/j8_n32.pg 54 {'X_cr': 17329, 'X_tp': 3208, 'X_pp': -11, 'X_pn': -1, 'X_ln': -4, 'W_tp': 3321, 'W_pp': 152, 'W_pn': 11, 'W_ln': 145, 'nIs': -718}
+FEASIBLE ../experiments/red/xing/instances/j8_n48.pg 86 {'X_cr': 236538, 'X_ps': 1425, 'X_pc': -50070, 'X_tp': 92389, 'X_pn': -346, 'X_ln': -3358, 'W_ps': 1430, 'W_pc': -65438, 'W_tp': 7657, 'W_pp': 527, 'W_ln': 2834, 'n
+FEASIBLE ../experiments/red/xing/instances/kw25_n32.pg 29 {'X_cr': 642, 'X_pp': 5, 'X_ln': -187, 'W_tp': 1, 'W_pn': 24, 'nIs': -1187}
+FEASIBLE ../experiments/red/xing/instances/kw_n16.pg 12 {'X_tp': 1}
+FEASIBLE ../experiments/red/xing/instances/kw_n24.pg 20 {'X_ps': 4}
+FEASIBLE ../experiments/red/xing/instances/kw_n48.pg 40 {'X_ps': 2}
+FEASIBLE ../experiments/red/xing/instances/obr_eq_n24.pg 7 {'X_cr': 125, 'W_tp': 93, 'W_ln': 1000}
+FEASIBLE ../experiments/red/xing/instances/obr_n32.pg 22 {'X_cr': 312, 'X_pp': 34, 'W_tp': -33, 'W_pp': 9, 'W_pn': 16, 'nIs': -1000}
+FEASIBLE ../experiments/red/xing/instances/u1t_cex_n32.pg 12 {'X_ps': 1, 'X_pc': -31, 'X_pn': -3, 'X_ln': 9, 'nIs': -5}
+FEASIBLE ../experiments/red/xing/instances/u1t_own6_n32.pg 9 {'X_cr': 34, 'X_pp': -266, 'X_pn': -125, 'W_ps': 267}
+INFEASIBLE ../experiments/red/xing/instances/u23sw64_n32.pg 16 support 5 games ['../experiments/red/xing/instances/u23sw64_n32.pg'] exact
+FEASIBLE ../experiments/red/xing/instances/u2flat73_n32.pg 16 {'X_cr': 8, 'X_tp': 14, 'X_pp': -7, 'X_pn': -8, 'nIs': -1}
+FEASIBLE ../experiments/red/xing/instances/u2flat_n32.pg 13 {'X_cr': 72, 'X_tp': 20, 'X_pp': 17, 'nIs': -1000}
+FEASIBLE ../experiments/red/xing/instances/x31_cu16.pg 23 {'X_cr': 385, 'X_ps': 2, 'X_pc': -67, 'X_tp': 259, 'X_pp': 65, 'X_ln': 90, 'W_cr': 274, 'W_ps': 98, 'W_pc': -1364, 'W_pn': -56, 'W_ln': -571}
+INFEASIBLE ../experiments/red/xing/instances/x31_cu24.pg 22 support 14 games ['../experiments/red/xing/instances/x31_cu24.pg'] inexact
+FEASIBLE ../experiments/red/xing/instances/x31_cu32.pg 49 {'X_cr': 763, 'X_ps': 16, 'X_pc': -186, 'X_tp': 255, 'X_pp': 36, 'X_ln': 34, 'W_ps': 71, 'W_pc': -1623, 'W_tp': 56, 'W_pp': 9, 'W_ln': 73}
+FEASIBLE ../experiments/red/xing/instances/x31_cu32i.pg 42 {'X_cr': 175, 'X_pc': 43, 'X_tp': 154, 'X_pp': -2, 'X_pn': -1, 'X_ln': -50, 'W_pc': -53, 'W_tp': 6, 'W_pp': 11, 'W_pn': 2, 'W_ln': 31}
+FEASIBLE ../experiments/red/xing/instances/x31_cu48.pg 46 {'X_cr': 2897, 'X_ps': 169, 'X_pc': -3895, 'X_tp': 1341, 'X_pp': 120, 'X_ln': -88, 'W_ps': 32, 'W_pc': -3656, 'W_tp': 15, 'W_pn': -36, 'W_ln': -281, 'nIs': 528}
+FEASIBLE ../experiments/red/xing/instances/x31_lem_e24.pg 54 {'X_cr': 35455, 'X_tp': -1146, 'X_pn': -353, 'W_pc': -2429, 'W_tp': 8626, 'W_pp': 365, 'W_pn': 149, 'W_ln': -82, 'nIs': 20}
+INFEASIBLE ../experiments/red/xing/instances/x31_lem_t32.pg 65 support 44 games ['../experiments/red/xing/instances/x31_lem_t32.pg'] inexact
+FEASIBLE ../experiments/red/xing/instances/x31_nh_e24.pg 20 {'X_pp': 12, 'X_pn': 1, 'X_ln': 14}
+FEASIBLE ../experiments/red/xing/instances/x31_nh_r20.pg 15 {'X_ps': 5, 'nIs': -100}
+FEASIBLE ../experiments/red/xing/instances/x31_re24.pg 6 {'X_cr': 47, 'X_ps': 3, 'X_pn': -11}
+FEASIBLE ../experiments/red/xing/instances/x31_ru24.pg 7 {'X_tp': 23, 'nIs': -1000}
+INFEASIBLE ../experiments/red/xing/instances/x31_rx32.pg 55 support 41 games ['../experiments/red/xing/instances/x31_rx32.pg'] inexact
+INFEASIBLE ../experiments/red/xing/instances/x31_rx48.pg 53 support 30 games ['../experiments/red/xing/instances/x31_rx48.pg'] inexact
+FEASIBLE ../experiments/red/xing/instances/x32_nest40.pg 58 {'X_cr': 21866, 'X_ps': 883, 'X_pc': -22005, 'X_tp': 8226, 'X_pn': -13, 'X_ln': -101, 'W_ps': 56, 'W_pc': -4650, 'W_tp': 31, 'W_pp': 186, 'W_ln': 728, 'nIs': -1
+FEASIBLE ../experiments/red/xing/instances/x32_rand16.pg 15 {'X_cr': 33, 'X_ps': -1, 'X_tp': 73, 'X_pp': -85, 'nIs': -1000}
+FEASIBLE ../experiments/red/xing/instances/x32_rand24.pg 20 {'X_ps': 1}
+FEASIBLE ../experiments/red/xing/instances/x32_rand32.pg 29 {'X_tp': 3}
+FEASIBLE ../experiments/red/xing/instances/x32_rand48.pg 44 {'X_ps': 2}
+INFEASIBLE ../experiments/red/xing/instances/x32_waves32.pg 81 support 20 games ['../experiments/red/xing/instances/x32_waves32.pg'] inexact
+FEASIBLE ../experiments/red/xing/instances/x32_waves48.pg 89 {'X_cr': 35155, 'X_ps': 10586, 'X_pc': -407000, 'X_tp': -1143, 'X_pp': 1899, 'X_ln': 2359, 'W_pc': -125996, 'W_tp': 268, 'W_pn': -2368, 'W_ln': -4177, 'nIs': -
+FEASIBLE ../experiments/si/coarse/instances/cls_rel_lev.pg 26 {'X_cr': 1067, 'X_tp': 105, 'X_pp': -442, 'X_pn': -65, 'W_tp': 161, 'W_pp': 108, 'W_pn': 60, 'W_ln': -1902, 'nIs': -8855}
+FEASIBLE ../experiments/si/coarse/instances/jcl_lev_l_sc.pg 23 {'X_cr': 120, 'X_tp': -14, 'X_pn': 13, 'X_ln': 21, 'W_ps': 22, 'W_tp': 157, 'W_pp': 131, 'W_ln': 229}
+FEASIBLE ../experiments/si/coarse/instances/jcl_x31_cu32i.pg 16 {'X_cr': 1, 'W_tp': 1}
+FEASIBLE ../experiments/si/coarse/instances/jcl_x32_nest40.pg 36 {'X_cr': 471, 'X_ps': 19, 'X_tp': -21, 'X_pp': 11, 'W_cr': 610, 'W_ps': 4, 'W_pp': 412, 'W_ln': 205, 'nIs': -383}
+FEASIBLE ../experiments/si/coarse/instances/jcl_zcl_cu_n48.pg 23 {'X_cr': 2240, 'X_tp': -4, 'X_pp': -15, 'X_pn': -7, 'X_ln': 439, 'W_cr': 33, 'W_ps': 65, 'W_tp': 373, 'W_pp': 39, 'W_ln': 275}
+FEASIBLE ../experiments/si/coarse/instances/rel2_x31_rx48.pg 26 {'X_cr': 200, 'X_ps': 2, 'X_tp': 144, 'X_pp': 1, 'X_ln': -61, 'W_cr': -1, 'W_pp': -6, 'W_pn': -4, 'W_ln': -24}
+FEASIBLE ../experiments/si/coarse/instances/rel_j7_n32.pg 22 {'X_cr': 198, 'X_ps': 2, 'X_tp': 485, 'X_pn': -5, 'X_ln': -46, 'W_cr': 302, 'W_ps': 18, 'W_tp': -198, 'W_pp': 19}
+FEASIBLE ../experiments/si/coarse/instances/rel_j7_n48.pg 23 {'X_cr': 3944, 'X_tp': 1322, 'X_pp': -36, 'X_pn': -35, 'X_ln': -271, 'W_tp': 720, 'W_pp': 327, 'W_pn': 159, 'W_ln': 2518, 'nIs': -506}
+FEASIBLE ../experiments/si/coarse/instances/rel_lev_l_sc.pg 19 {'X_ps': 1, 'X_tp': 225, 'X_pn': -13, 'X_ln': -275, 'W_tp': -3, 'W_pp': -26, 'W_pn': -28, 'T_pn': 623, 'nIs': -884}
+FEASIBLE ../experiments/si/coarse/instances/rel_x31_cu32i.pg 19 {'X_cr': 148, 'X_tp': 164, 'X_pp': 5, 'W_cr': -3, 'W_pn': -15, 'T_pn': 1}
+FEASIBLE ../experiments/si/coarse/instances/rel_x31_rx48.pg 24 {'X_cr': 187, 'X_pc': -2, 'X_tp': 125, 'X_pp': -2, 'X_pn': -4, 'X_ln': -100, 'W_tp': 21, 'W_pp': -5, 'W_pn': -4}
+FEASIBLE ../experiments/si/coarse/instances/rel_zcl_rx_n32.pg 21 {'X_ps': 78, 'X_pc': -1247, 'X_tp': 3, 'X_pp': 8, 'X_ln': -193, 'W_ps': 77, 'W_pc': -3966, 'W_tp': 159, 'W_pp': 79, 'W_ln': 371, 'nIs': 222}
+FEASIBLE ../experiments/si/instances/red_cf1.pg 1 {'X_ps': 1}
+FEASIBLE ../experiments/si/orlens/instances/cycelim_cex_n32.pg 31 {'X_cr': 533, 'X_ps': 102, 'X_pc': -2467, 'X_tp': 198, 'X_pp': 8, 'X_ln': 20, 'W_pc': -1554, 'W_tp': 7, 'W_pp': -8, 'W_pn': -41, 'W_ln': 104, 'nIs': -876}
+FEASIBLE ../experiments/si/orlens/instances/elim24_p52.pg 59 {'X_cr': 6122, 'X_ps': 15, 'X_pc': -643, 'X_pn': -26, 'W_ps': 9, 'W_tp': 970, 'W_pp': 26, 'W_ln': -50}
+FEASIBLE ../experiments/si/orlens/instances/inr2_n32.pg 32 {'X_cr': 157, 'X_ps': 101, 'X_pc': -3019, 'X_tp': 61, 'X_pp': 125, 'W_ps': 230, 'W_pc': -4988, 'W_tp': -93, 'W_pp': 24, 'W_ln': 21}
+FEASIBLE ../experiments/si/orlens/instances/lev_l_n20.pg 23 {'X_tp': 13, 'X_pn': 1, 'X_ln': 3, 'W_tp': 1}
+FEASIBLE ../experiments/si/orlens/instances/lev_l_n28.pg 25 {'X_cr': 867, 'X_ps': 4, 'X_pc': -25, 'X_pp': 46, 'X_ln': -35, 'W_ps': 33, 'W_pc': -529, 'W_tp': 2332, 'W_pn': -28, 'W_ln': -263, 'T_ps': 4}
+FEASIBLE ../experiments/si/orlens/instances/lev_l_sc.pg 54 {'X_cr': 53057, 'X_ps': 120, 'X_pc': -2287, 'X_tp': 9971, 'X_pn': -23, 'X_ln': -105, 'W_pc': -16, 'W_tp': 195, 'W_pp': 2, 'W_pn': 124, 'W_ln': 1078, 'nIs': -3291
+INFEASIBLE ../experiments/si/orlens/instances/lev_l_x.pg 56 support 40 games ['../experiments/si/orlens/instances/lev_l_x.pg'] inexact
+FEASIBLE ../experiments/si/orlens/instances/rise3_n32.pg 30 {'X_cr': 596, 'X_ps': 6, 'X_tp': 65, 'X_ln': 17, 'W_tp': 2, 'W_pp': 9, 'W_pn': 6, 'W_ln': -81}
+FEASIBLE ../experiments/si/orlens/instances/run_m_inr2.pg 35 {'X_cr': 1995, 'X_ps': 19, 'X_pc': -504, 'X_tp': 3128, 'X_pn': -1, 'W_ps': 141, 'W_pc': -3472, 'W_tp': 6, 'W_pn': -9, 'W_ln': -91, 'nIs': -774}
+FEASIBLE ../experiments/si/orlens/instances/run_m_n24.pg 22 {'X_cr': 1, 'X_pp': 4}
+INFEASIBLE ../experiments/si/orlens/instances/run_x_inr2.pg 51 support 24 games ['../experiments/si/orlens/instances/run_x_inr2.pg'] inexact
+FEASIBLE ../experiments/si/orlens/instances/s_elim24_final.pg 66 {'X_cr': 1299, 'X_ps': 22, 'X_pc': -385, 'X_pn': -4, 'W_ps': 44, 'W_pc': -685, 'W_tp': 135, 'W_ln': -30}
+FEASIBLE ../experiments/si/orlens/instances/s_tp32_final.pg 43 {'X_cr': 5675, 'X_ps': 2509, 'X_pc': -59092, 'X_tp': 631, 'X_pn': -135, 'X_ln': 406, 'W_tp': 145, 'W_pp': 222, 'W_pn': 110, 'W_ln': 617, 'T_pp': 24, 'nIs': -
+FEASIBLE ../experiments/si/orlens/instances/thclimb_n12_s11.pg 19 {'X_cr': 134, 'X_tp': 171, 'X_pp': -1, 'X_pn': -3, 'X_ln': 19, 'W_ps': 3, 'W_pn': -12, 'W_ln': -96}
+FEASIBLE ../experiments/si/orlens/instances/thclimb_n16_s12.pg 17 {'X_cr': 84, 'X_pp': 13, 'W_ps': 1, 'W_tp': 244, 'W_pn': -3}
+FEASIBLE ../experiments/si/xing/instances/ccl_fb2_n32.pg 33 {'X_cr': 48, 'X_ps': 7, 'X_pc': -70, 'X_tp': 84, 'X_ln': -26, 'W_cr': 309, 'W_tp': 22, 'W_pn': 4, 'W_ln': 25, 'nIs': -77}
+FEASIBLE ../experiments/si/xing/instances/ccl_fbx_n32.pg 31 {'X_cr': 8, 'X_ps': -19, 'X_pp': -32, 'W_ps': -78, 'W_tp': 99, 'nIs': -346}
+FEASIBLE ../experiments/si/xing/instances/ccl_w48_n48.pg 46 {'X_cr': 550, 'X_pp': -569, 'X_pn': -13, 'X_ln': -2707, 'W_ps': -17, 'W_tp': -141, 'W_ln': -2936}
+FEASIBLE ../experiments/si/xing/instances/nofe_cyc_n8.pg 2 {'nIs': -1}
+FEASIBLE ../experiments/si/xing/instances/zcl_cu_n24.pg 21 {'X_cr': 6184, 'X_ps': 158, 'X_tp': 18288, 'X_pp': 543, 'W_pn': 41, 'W_ln': -857}
+FEASIBLE ../experiments/si/xing/instances/zcl_cu_n48.pg 39 {'X_ps': 2, 'X_tp': 7, 'X_ln': -21, 'W_tp': 30}
+INFEASIBLE ../experiments/si/xing/instances/zcl_fb1_n32.pg 71 support 13 games ['../experiments/si/xing/instances/zcl_fb1_n32.pg'] inexact
+INFEASIBLE ../experiments/si/xing/instances/zcl_fb2_n32.pg 66 support 35 games ['../experiments/si/xing/instances/zcl_fb2_n32.pg'] inexact
+FEASIBLE ../experiments/si/xing/instances/zcl_rx_n32.pg 66 {'X_cr': 13004, 'X_ps': 67, 'X_pc': -1302, 'X_tp': 22826, 'X_pp': 164, 'X_ln': 99, 'W_ps': -86, 'W_pc': 2276, 'W_tp': -1036, 'W_pp': -60, 'W_ln': -394, 'nIs': -2
+FEASIBLE ../experiments/si/xing/instances/zcl_rx_n48.pg 30 {'X_tp': 181, 'X_pp': -11, 'X_pn': -4, 'X_ln': 1, 'W_cr': 5, 'W_ps': 1, 'W_pp': 36, 'W_ln': -148, 'T_pp': 40}
+FEASIBLE ../experiments/si/xing/instances/zcl_tp_n32.pg 62 {'X_cr': 9462, 'X_tp': 1787, 'X_pp': -31, 'X_pn': -1, 'X_ln': -306, 'W_ps': 34, 'W_pc': -1529, 'W_tp': -82, 'W_pp': 193, 'W_ln': -800, 'nIs': -510}
+SUMMARY lib41_1 games 333 infeasible 26 smallest [(24, 22, '../experiments/red/xing/instances/x31_cu24.pg'), (24, 44, '../experiments/new/box21/instances/oneodd_c24.pg'), (24, 53, '../experiments/n5-exhaustive/instances/

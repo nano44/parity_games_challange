@@ -1,0 +1,16 @@
+== hntop_n3 parity 62;
+Dmax=2 dsigP_max=4 dsigP_max_D1=0 phases=2
+TOP-LEN dsig(P) 4 |D| 2 len 41 n 63 m 106 hntop_n3.pg [0,41]
+TOP-LEN dsig(P) 2 |D| 0 len 16 n 63 m 73 hntop_n3.pg [45,61]
+== hntop_n8 parity 167;
+Dmax=7 dsigP_max=4 dsigP_max_D1=0 phases=2
+TOP-LEN dsig(P) 4 |D| 7 len 241 n 168 m 446 hntop_n8.pg [0,241]
+TOP-LEN dsig(P) 3 |D| 0 len 46 n 168 m 323 hntop_n8.pg [245,291]
+== topfix_10 parity 209;
+Dmax=9 dsigP_max=4 dsigP_max_D1=0 phases=2
+TOP-LEN dsig(P) 4 |D| 9 len 363 n 210 m 631 topfix_10.pg [0,363]
+TOP-LEN dsig(P) 3 |D| 0 len 58 n 210 m 465 topfix_10.pg [367,425]
+== topfix_12 parity 251;
+Dmax=11 dsigP_max=4 dsigP_max_D1=0 phases=2
+TOP-LEN dsig(P) 4 |D| 11 len 509 n 252 m 844 topfix_12.pg [0,509]
+TOP-LEN dsig(P) 3 |D| 0 len 70 n 252 m 631 topfix_12.pg [513,583]

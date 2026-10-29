@@ -5061,6 +5061,398 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
 - TARGET.md diff: not a claim of TARGET.md section 1 or §2 (structural lemmas on N5 inside one phase bounding the changes of the top of a
   vertex's path set; no running-time bound, no algorithm claim). GAPS G-N5-TIME: open.
 
+### R85 [refereed-only] N5 on EVERY game: (A) for a vertex v, a phase 𝒫 (λ and τ constant on 𝒫, c := λ(v)), v's path sets P_t := P(Ξ_t v) ⊆ R_c := the K ranks above rank(c) (K ≤ n − 1, r_1 < … < r_K), pos(r_k) := k, w(r) := +pos(r) if r is even and −pos(r) if r is odd (a rank's parity is Ω's of its vertex), Φ(A) := Σ_{r ∈ A} w(r), and a P-change A → B (a transition of 𝒫 with P_t ≠ P_{t+1}) MATCHED if some matching M ⊆ (A ∖ B) × (B ∖ A) has w(i) > w(o) on every pair (o, i) and leaves only even incoming and odd outgoing ranks uncovered, a CARRY otherwise: for distinct ranks o, i, w(i) > w(o) iff weight({i}) > weight({o}), and adding an even rank or removing an odd rank raises the weight (Fact A1); Φ(B) − Φ(A) ≥ 1 at every MATCHED P-change (Lemma MATCH-Φ); hence PCH_𝒫(v) ≤ (K(K+1)/2)(NM_𝒫(v) + 1) + NM_𝒫(v) per vertex per phase, every game, PCH and NM counting v's P-changes and carries in 𝒫 (Corollary, added statement (A)); (B) at a state with τ(e) = h at an Odd vertex e, for a successor d ≠ h of e, a route π = (π_1 = d, …, π_m) of distinct Even vertices of G into e, Q := {π_1, …, π_m, e}, ρ the (τ̄, τ)-play from h and c_h the cycle node of Ξτ(h): (H1) every vertex of Q ranks above c_h, (H2) ρ (prefix and cycle) contains no vertex of Q and (H3) Q's vertex of largest rank has even Ω imply (e, d) ∉ Iτ (Lemma GATE-SHUT; via Fact B1: on valuations with the same cycle node and P ≠ P′, G^d's order reverses G's, and Fact B2: (VJ) of RESULTS R57 (a) on G^d), so on a stretch of states of one run with τ(e) = h and (H1)-(H3) at every state, (e, d) ∉ Iτ at each of them and τ never moves from h to d at a transition from one of them (added statement (B); the claim at t → t + 1 uses (H1)-(H3) at t only, π may differ from state to state, the Lemma uses no phase) (2026-10-29) — a REDUCTION of one vertex's path-set changes in one phase to its carries NM, and a structural lemma on Odd's improving edges that bounds no count (NM is OPEN, not bounded here; persistence of (H1)-(H3) not claimed; (H2)'s necessity not exhibited; not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C94.md, checker 7e309075)
+- Object (L-LIT successor, Opus 5.5, D18, Lead reading L40; frozen, unchanged during review): packet P-N5-MPGS, docs/lit/P-N5-MPGS.md,
+  sha1 24913a7f9efea437aa202b398113b7ce12890961, 246 lines (l-lit freeze a23179b01be61d7f85e37aa93c0ae55a2dde7de8,
+  2026-10-29T11:03:06Z; quote base 1f15c91b; 9 quotes, docs/lit/P-N5-MPGS-quotecheck.py, sha1 74dbe8b4e6c4f37d4fdf7ca587eb479b5434579f,
+  "quotes=9 bad=0"; all three referee reports measured the packet sha1 and the pins), Part (A) (A0 definitions, Fact A1, Lemma MATCH-Φ,
+  added statement (A)) and Part (B) (B0 definitions, Fact B1, Fact B2, Lemma GATE-SHUT, added statement (B)). Superseded copies, not
+  routed: P-N5-MATCHPHI (l-lit 12b7d12a, sha1 544705b74312e49ee31fd93ede1952396ebd12f1; Part (A)'s statements, reviewed before the
+  supersession: REFEREE R-N5-MATCHPHI.md, REFEREE-2 R2-N5-MATCHPHI.md) and P-N5-GATESHUT (l-lit 1298d8b2, sha1
+  affcae678b12bd8fc4ebc7a9b5759ee7b2442f39; no review). The fixes file's F1 ("WITHDRAWN") is withdrawn by F2 ("Lead ruling 11:27Z: F1
+  withdrawn; P-N5-MPGS is the review object."). The referees' notes are collected by the lane in docs/lit/P-N5-MPGS-fixes.md (l-lit 510c47eb, sha1 57015bb6bb1c9597f506613083b2389a948c05c6, L-LIT successor 2: F3-F11 answer MPGS-N1..N5, MATCH-N1..N4, N-MPGS-1..6,
+  N-GS-1..5, N-MP-1..5, C.4 items 1-6 and J1-J15; 50 quotes checked by docs/lit/P-N5-MPGS-fixes-quotecheck.py, sha1
+  dc3f8c0b1b447324183061385e4e3eb643e4f98c, "quotes=50 bad=0"); on trunk; "No statement of P-N5-MPGS changes; no item is FALSE" (fixes,
+  Coverage). F3 appends the rise/fall summation to the proof of (A) and writes W as an equality; F4 appends to step 3 of GATE-SHUT's
+  proof that h ∉ Q and that d = π_1 is Even; F5 adds two DATA notes to B3 (T34's (H1) test, T34's imports); F6 corrects B3's "The
+  hypotheses are needed"; F7 corrects B4's "(H1) automatic"; F8 adds three optional one-liners (full order reversal; per-state reading
+  of (B); (A) on λ-runs); F9 carries MATCHPHI's notes (sharpness at NM = 0 and the additivity line, both PROVED by L-LIT, unrefereed);
+  F10 records notes needing no packet change; F11 records the Lead's ruling of 12:29Z (REFEREE-2's E-class items required, done as F3-F7; J6-J8 carried into the entry); no statement change. The statements below are in the frozen wording with those repairs.
+  Setting (every game): N5 = SPEC S1-S5 (docs/new/N5-ssi-global.md) with FIX 1-4; a phase is a maximal run of states with λ (Ξ's
+  cycle-node map) and τ constant (RESULTS R38 (a), as in R84). Part (A): v a vertex, c := λ(v), constant on 𝒫; P_t := P(Ξ_t v), read
+  as a set of ranks; R_c := {rank(u) : rank(u) > rank(c)} ⊇ P_t (by S1-rank, p'(u) > p'(c) iff rank(u) > rank(c)); K := |R_c| ≤ n − 1;
+  a rank is even or odd as Ω of its vertex (R84 F5); weight(A) := Σ_{r ∈ A} s(r)2^r (R84 (a)); a P-change of v in 𝒫 is a transition
+  t → t + 1 of 𝒫 (in-phase S4c fallbacks included) with P_t ≠ P_{t+1}, PCH_𝒫(v) their number; MATCHED: a matching M ⊆ (A ∖ B) × (B ∖ A)
+  with (M1) "w(i) > w(o) for every (o, i) ∈ M", (M2) "every i ∈ B ∖ A not covered by M is even", (M3) "every o ∈ A ∖ B not covered by M
+  is odd"; CARRY: a P-change that is not MATCHED; NM_𝒫(v) the number of carries of v in 𝒫. Part (B), at a state t of an N5 run (σ :=
+  σ_t, τ := τ_t): G^d the dual game (owner swapped, Ω + 1); Ξτ S1's valuation of τ on G^d; τ̄ S1's optimal counterstrategy on G^d to
+  τ, an Even strategy of G; ⊴ S1's order on G, ⊴_d S1's order on G^d (better for Odd of G); (e, w) ∈ Iτ iff e is Odd, w ≠ τ(e) and
+  Ξτ(w) ▷_d Ξτ(τ(e)) (S2); π(x; σ′, τ) the play from x under (σ′, τ), a lasso, and V^d_{τ,σ′}(x) S1's valuation of it on G^d; the
+  gate e, h := τ(e), d ≠ h, π, Q, ρ := π(h; τ̄, τ), c_h as in the title; (H1) "rank(u) > rank(c_h) for every u ∈ Q", (H2) "ρ, prefix and
+  cycle, contains no vertex of Q", (H3) "the vertex of largest rank in Q has even Ω (in G)".
+- Claims signed (both referees "(Opus 5.5, D15)", L37: REFEREE successor 17; REFEREE-2 successor 19, report of record); on every game;
+  no item uses (P); premises LANDED: SPEC S1 (rank, valuation (c, P, ℓ), order, Odd's side on G^d), the SPEC ambiguity row A3 (G^d has
+  G's ranks), S2, S4b, S4c (quote base 1f15c91b); RESULTS R57 (a) (VJ); RESULTS R84 (a) Fact DELTA; RESULTS R38 (a), as the phase
+  definition only. Part (A) uses neither (MON) nor R84's TOP-SHAPE (packet A2: "Fact A1 also uses [DELTA]. It does not use (MON) or
+  R84's TOP-SHAPE"; this repairs MATCH-N1 = N-MP-1, J11 "closed"). Standing premise, as in RESULTS R57 (b) (J6, REFEREE §C: "the RESULTS
+  entry should carry the clause as R57 (b) does"): Ξτ(x) = V^d_{τ,τ̄}(x) is S1-val's definition (B0: "by definition"); that S1's
+  procedure outputs it is SPEC conformance, the premise R57 (b) records ("that S1's procedure realises an optimal σ̄ is VJ00 §6 plus SPEC
+  conformance"); the code's match to SPEC is DATA (REFEREE-2 19 DENG, REFEREE-2 20 ENGXI, 0 differences).
+  (a) Fact A1 (A2): "For distinct ranks o, i: w(i) > w(o) iff weight({i}) > weight({o}). Adding an even rank or removing an odd rank
+      raises the weight." ([DELTA] with d = max(o, i): for i > o the exchange raises the weight iff i is even, and then w(i) = pos(i) >
+      pos(o) ≥ w(o), else w(i) = −pos(i) < −pos(o) ≤ w(o); for o > i iff o is odd, and then w(o) = −pos(o) < −pos(i) ≤ w(i), else w(o) =
+      pos(o) > pos(i) ≥ w(i); additions and removals: [DELTA] with d the added or removed rank.)
+  (b) Lemma MATCH-Φ (A2): "At every MATCHED P-change A → B, Φ(B) − Φ(A) ≥ 1." (Φ(B) − Φ(A) = Σ_{(o,i) ∈ M}(w(i) − w(o)) +
+      Σ_{uncovered i ∈ B∖A} pos(i) + Σ_{uncovered o ∈ A∖B} pos(o); every term is an integer ≥ 1 by (M1), (M2), (M3), and some term exists
+      since A ≠ B.)
+  (c) Added statement (A), Corollary (A2): "PCH_𝒫(v) ≤ (K(K+1)/2)(NM_𝒫(v) + 1) + NM_𝒫(v) per vertex per phase, every game"; in the
+      packet's words "For every game, vertex v and phase 𝒫: PCH_𝒫(v) ≤ (K(K+1)/2)·(NM_𝒫(v) + 1) + NM_𝒫(v)." (Proof with F3: W := max Φ −
+      min Φ over subsets of R_c = Σ_{k=1}^{K} k = K(K+1)/2, an equality; Φ_t := Φ(P_t) changes only at P-changes; with R the sum of the
+      positive and F of the absolute negative increments, R − F = Φ_end − Φ_start ≤ W; every MATCHED change adds ≥ 1 to R (Lemma
+      MATCH-Φ), so #MATCHED ≤ R; negative increments occur only at carries, each ≤ W, so F ≤ W·NM_𝒫(v); so #MATCHED ≤ W + W·NM_𝒫(v) and
+      PCH_𝒫(v) = #MATCHED + NM_𝒫(v). REFEREE MPGS-N1 = J4: "the inference is valid as a sketch"; REFEREE-2 §C D1: "Restore MATCHPHI's three
+      lines". K ≤ n − 1 gives K(K+1)/2 ≤ n²/2 (A0; REFEREE-2 19 §1).)
+  (d) Fact B1 (B1): "For valuations X = (c, P, ℓ) and X′ = (c, P′, ℓ′) with the same cycle node c and P ≠ P′: X ◁_d X′ iff X′ ◁ X."
+      (By [A3] G^d has G's ranks, so P and the cycle node (the vertex of maximal rank on the cycle) are the same in both readings; G^d's
+      signed weight of P is −weight(P); with equal cycle nodes and P ≠ P′ both orders decide on the weights; ℓ is never reached.)
+  (e) Fact B2 (B1): "For every positional Even strategy σ′ of G and every x: Ξτ(x) ⊴_d V^d_{τ,σ′}(x)." ([VJ] holds "on every game",
+      hence on G^d, whose "Even" strategy is τ and whose "Odd" strategies are G's Even strategies; instantiate with σ := τ, τ′ := σ′.)
+  (f) Lemma GATE-SHUT (B2): "At a state t with τ(e) = h, (H1), (H2) and (H3) imply (e, d) ∉ Iτ." (1: σ′ := τ̄ except σ′(π_k) := π_{k+1}
+      (k < m), σ′(π_m) := e, a positional Even strategy of G differing from τ̄ only on π. 2 ((H2)): π(h; σ′, τ) = ρ. 3: π(d; σ′, τ) is π_1,
+      …, π_m, e, then ρ, with F4: "Here h ∉ Q, because ρ starts at h and (H2) says ρ contains no vertex of Q; so the play, after π·e,
+      enters ρ at its first vertex h and then follows step 2. And d = π_1 is an Even vertex of G (π consists of Even vertices, B0), so
+      σ′(d) = π_2 (or e if m = 1) is set by step 1."; its cycle node is c_h and by (H1) its set is P(ρ) ∪ Q, Q ∩ P(ρ) = ∅ by (H2): V :=
+      V^d_{τ,σ′}(d) = (c_h, P(ρ) ∪ Q, ℓ(ρ) + |Q|). 4 ((H3)): the top rank of Q is even and in the larger set, so [DELTA] gives
+      weight(P(ρ) ∪ Q) > weight(P(ρ)), Ξτ(h) ◁ V, and V ◁_d Ξτ(h) by Fact B1. 5 ((VJ)): Fact B2 at x = d: Ξτ(d) ⊴_d V. 6: Ξτ(d) ⊴_d V
+      ◁_d Ξτ(h) = Ξτ(τ(e)), so (e, d) ∉ Iτ by [S2].)
+  (g) Added statement (B), Corollary (B2): "(H1)-(H3) at every state of a stretch on which τ(e) = h ⇒ (e, d) ∉ Iτ at every state of it,
+      and τ never moves from h to d at a transition from it"; in the packet's words "Let [t_0, t_1] be a stretch of states of one run with
+      τ_t(e) = h and (H1)-(H3) at every t ∈ [t_0, t_1]. Then (e, d) ∉ Iτ_t for every such t, and τ_{t+1}(e) ≠ d for every t ∈ [t_0, t_1]."
+      (The first claim is the Lemma at each t; S4b: τ_{t+1}(e) ∈ A(e) = {τ_t(e)} ∪ {w : (e, w) ∈ Iτ_t}; S4c's Odd fallback moves e only to
+      an Iτ_t-target; S4a and an Even fallback (FIX 3) leave τ.) Scope, as both referees read it (J8; fixes F8 (b)): the claim at t → t + 1
+      uses (H1)-(H3) at t only and π may differ per state (REFEREE §C J8: "the Corollary (B) uses only the hypotheses at the transition's
+      source state; π may differ per state"; REFEREE §2: "the first claim is the Lemma per state"); REFEREE-2 19 N-MPGS-6: "The Lemma holds
+      at any state of any N5 run, in-phase or not (it uses no phase). The added statement (B) is per transition. Both are stated that way;
+      nothing to repair." (Also REFEREE-2 20 N-GS-4, concurring.) B0, A0: REFEREE "CHECKED", REFEREE-2 19 "SIGNED (well formed)"; REFEREE's
+      §C: "same content".
+- Not signed: A3, B3 (DATA) and A4, B4 (READING), as the packet says, with their corrections: B3's last bullet "The hypotheses are needed:
+  the unhypothesised form is false on these instances." is true of the three together, of (H1) alone and of (H3) alone, and NOT exhibited
+  for (H2) alone (F6; REFEREE MPGS-N3, REFEREE-2 19 N-MPGS-1, REFEREE-2 20 N-GS-3; bullet "Honest limits" (iii)); B4's first bullet "(H1)
+  is automatic" holds only at states where c_h is the sink (F7; REFEREE-2 19 N-MPGS-4: "consistent with my H_n data only where c_h is the
+  sink"; REFEREE J9; "These are the reopenings §B3 describes"); B3's T34 tests (H1) only as rank(c_h) < rank(d1_i), exact on H_n (hn.py
+  l. 46-49: d1_i < d2_i < d3_i < e_i) and not a test of (H1) on other games (F5; MPGS-N4 = J2, N-MPGS-2, N-GS-5). The to-sign table's
+  line for Fact A1, "MATCHED = decomposes into individually weight-raising one-rank moves", is not the signed Fact A1 (REFEREE §1: Fact A1
+  "drops MATCHPHI's last sentence", "which the to-sign table still carries"; REFEREE-2 20: "N-MP-3 (additivity, one line) still applies to
+  the table's wording"); it needs the additivity line (bullet "Referee strengthening" (iii)). The packet's A4 CONJECTURE NM = O(n) per
+  vertex per phase (READING, OPEN) and B4's CONJECTURE NO-HIDE (not part of the packet). CONJECTURE H2-FREE (F6: at a state with τ(e) = h,
+  (H1) and (H3) imply (e, d) ∉ Iτ): OPEN, "not claimed, not signed" (F6); REFEREE J1 "whether (H1) + (H3) suffice is OPEN", REFEREE-2 20
+  N-GS-3 "NOT claimed by the packet and NOT signed here" (its partial argument is incomplete: "which I have not completed"). F9 (a) and
+  F9 (b) are PROVED by L-LIT, unrefereed, and are not signed (bullet "Referee strengthening" (ii), (iii)).
+- Referee strengthening (NOT part of this entry; REFEREE-2 20 is cited as "REFEREE-2 concurring" (Lead ruling 11:54Z, s20 status line),
+  never as a third signature):
+  (0) The λ-run form of (A) (fixes F8 (c), a remark): (A) and its proof hold
+      verbatim with 𝒫 replaced by any stretch of consecutive states of one run on which λ(v) is constant (a λ-run with τ free, fallbacks
+      included), PCH and NM counted over that stretch (fixes F8 (c)). REFEREE §1b: "YES (Opus 5.5, D15), verbatim, on ANY sequence of
+      consecutive states (phase, λ-run with τ free, or any stretch, fallbacks included) on which v's own cycle node c = λ(v) is
+      constant", "No step reads τ, the phase, (MON) or the direction of the weight change. (Even only λ(v) for the single vertex v is
+      needed, not all of λ_Ξ.)". REFEREE-2 §C (e1ec568a): "REFEREE-2 20 reached the same conclusion independently in R2-N5-COMPOSE §2.5
+      (pushed 4b8afa95 before §1b was read), and added that the Odd side reads parities on G^d (N-C3)", "Joint: AGREED. This is the premise
+      P-N5-COMPOSE §6 needs." (R2-N5-COMPOSE §2.5: "So "phase → λ-run" is not merely a reading: it is the same proof verbatim. ✓")
+      REFEREE §C (8da7b717): "REFEREE-2 did not address this question (it was asked of the first referee); nothing in either REFEREE-2
+      report contradicts it (N-MPGS-6: the Lemma uses no phase)."; it does not cite REFEREE-2's §C, pushed 21 s before it.
+      Status (CHECKER C94 E-1): REFEREE §1b is a labelled verdict outside its verdict table; REFEREE-2: not in the report of record;
+      its §C (successor 20) "Joint: AGREED", classed "opt" (C.4 item 6), with its proof in R2-N5-COMPOSE §2.5. To be signed with
+      P-N5-COMPOSE, which uses it.
+  (i) J7, the full order reversal (fixes F8 (a), a remark after Fact B1): "For ALL valuations X ≠ X′, X ◁_d X′ iff X′ ◁ X. GATE-SHUT uses
+  only the case of Fact B1." REFEREE-2 concurring N-GS-2: "G^d's order is the exact reverse of G's on ALL valuations, not only on equal
+  cycle nodes with P ≠ P′", "the Lemma needs only the packet's B1" (b1_general.txt, 200,000 random valuation pairs, 0 violations);
+  REFEREE §C J7: "I re-derived it: Ω(c) even, p′ = 2r → p′_d = 2r + 1, reward −(2r + 1); Ω(c) odd, −(2r + 1) → 2r; both = −reward − 1.
+  Correct"; not raised by REFEREE-2 19 (REFEREE-2 §C D7: "Not raised by the others"). (ii) J12, sharpness at NM = 0: as a statement about
+  subset sequences of R_c the bound is attained with NM = 0 (PCH = W = K(K+1)/2). In REFEREE-2 19's verdict line for (A) as an addition
+  ("SIGNED. The first term is SHARP at NM = 0 (N-MP-2)"; R2-N5-MATCHPHI N-MP-2: "all-odd parities, K ≤ 7, exhaustive"); REFEREE
+  R-N5-MATCHPHI MATCH-N4: "attained by abstract all-matched chains (§3); the bound is sharp as a statement about subset sequences. Its N5
+  tightness is open." (its §3: "for all-even ranks and K = 1..8"); REFEREE §C: "may carry J7, J8, J12 as referees' remarks". F9 (a) gives
+  an explicit all-odd construction, PROVED (L-LIT, unrefereed). Whether N5 attains it is OPEN. (iii) J13, additivity (F9 (b), PROVED by
+  L-LIT, unrefereed): weight(S ∖ {o} ∪ {i}) − weight(S) = weight({i}) − weight({o}), so a MATCHED change raises the weight of the current
+  set (weight(B) > weight(A)); in the superseded reviews REFEREE-2 19 (F1add, F1b: "Hence a MATCHED change always raises the weight (F1b:
+  0 failures on all 2,374,900 ordered pairs, K ≤ 7)") and REFEREE ("immediate from additivity of the weight": MATCH-N2). READING (F9 (b),
+  not signed): in a phase, where every P-change raises the weight (R84), the carries are exactly the weight-raising P-changes that do
+  not decompose so. (iv) J1, (H1) alone gives e ∉ ρ (F6, PROVED by L-LIT, unrefereed as an item): REFEREE J1: "I checked the e ∉ ρ step:
+  correct"; REFEREE-2 concurring §2.4: "(H1) already excludes e ∈ ρ"; so (H2) adds only "ρ avoids π_1, …, π_m". (v) REFEREE-2
+  concurring N-C3 (R2-N5-COMPOSE, quoted in REFEREE-2 §C): on the Odd side (G^d), MATCHED, w and NM^U are read with G^d's parities.
+- Honest limits: (i) MATCH-Φ and (A) are a REDUCTION of the path-set changes of one vertex in one phase to its carries NM. NM is OPEN and
+  not bounded here (packet: "It does not bound the carries; NM is OPEN"; REFEREE-2 19: "(A) is a REDUCTION to NM (OPEN)"). DATA only, not
+  refereed: carries of one vertex in one phase reach NM = 2n² + 5n − 5 on L-RED's R109 topfix family (claude/l-red e5c9b628,
+  docs/red/R109-hn-topgate.md §5, phases keyed by (λ_Ξ, τ); n is Friedmann's index, N = 21n vertices: max NM 343 = 1.361 N at n 12, N 252;
+  "Carries of ONE vertex in ONE phase are Θ(N²) on this family"). Lead reading: these DATA are against the packet's A4 CONJECTURE "NM = O(n)
+  per vertex per phase" (READING, OPEN, not signed) on that family. T33 Part B (DATA): under abstract monotone set sequences with a fixed
+  top NM can be exponential (k = 8: 255 P-changes, NM 63); these are not N5 runs. (ii) (B) bounds no count and does not claim that (H1)-(H3)
+  persist (packet "What is not claimed": "a cycle node above the gate can appear"; REFEREE-2 19: "8,829 h → d moves of τ at gates where some
+  hypothesis fails (CTL_flip_nohyp)"). On L-RED's R109 family (H1) fails at the τ-gates (DATA, R109 FINDINGS 2: "τ-gates never shut, because
+  (H1) fails"). (iii) (H2)'s necessity is not exhibited, in all three data sets: REFEREE MUT 2 (8,975 relaxed hits, all still shut);
+  REFEREE-2 19 noH2 0 of 15,528; REFEREE-2 20 X2 0 of 1,648 (426 under every τ of their game). (H1) and (H3) each bite alone (REFEREE MUT 3:
+  Lemma 576, Corollary 66; MUT 1: Lemma 240, Corollary 89; REFEREE-2 19 noH1 5,673, noH3 4,422; REFEREE-2 20 X1, X3 > 0). Whether (H1) +
+  (H3) suffice is OPEN (CONJECTURE H2-FREE). (iv) The referees' gate enumerations are capped (REFEREE DFS budget 4,000 nodes; REFEREE-2 19 π
+  ≤ 6 vertices, ≤ 40 per (e, d); REFEREE-2 20 ≤ 64 per (state, e, d)); the proof has no length condition (J10). (v) Nothing here bounds N5's
+  running time; not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open.
+- Data (DATA, not proof): pinned (packet A3, B3), run as `python3 -I`: docs/lit/T33-match-phi-check.py (sha1
+  6853179bf10bdf1c3d9cae61c939b1054aa4b70c) "A: improving pairs 80640 | matched with phi rise < 1: 0 | carries: 32534" (80640 / 0 /
+  32534; Part A brute-forces the Lemma for K = 6), Part B k = 1..8 strict-rise=True, fixed-top=True, P-changes 1, 3, 7, …, 255, NM 0, 0,
+  1, 3, 7, 15, 31, 63; docs/lit/T34-gateshut-check.py (sha1 7c33508b2ef6639da2ce736028bcf013f152ed75, N5 by L-COMP's n5b on Friedmann's
+  H_n by L-COMP's hn.py, mode fig) four lines, gate-states with τ(e) = h / with (H1), (H2) / violations / h → d1 flips, of which with
+  (H1), (H2): "3 0 0" 135 / 135 / 0 / 0, 0; "3 200 3" 14385 / 14217 / 0 / 102, 0; "4 100 4" 12045 / 11911 / 0 / 97, 0; "5 30 5" 5783 /
+  5705 / 0 / 48, 0; S3 and F only, n = 4, 5, 6, 8: 228, 350, 510, 872 gate-states, all with (H1), (H2), 0 violations, 0 flips; the 247
+  flips all fail (H1) or (H2) (B3's example rand4 fails (H1), F6). T34 imports hn, census, n5b from a hard-coded ROOT, the checkout at
+  run time, not the freeze commit (F5, J3: tree ids of the six directories equal at a23179b0 and trunk 923b5b12, measured by L-LIT).
+  Quote checks: P-N5-MPGS-quotecheck.py "quotes=9 bad=0"; P-N5-MPGS-fixes-quotecheck.py "quotes=50 bad=0". All three referees
+  reproduced T33, T34 (four lines and S3 + F) and the quote check exactly; both quote checks re-run for this draft on trunk (docs/lit
+  equal to l-lit 510c47eb): 9/0, 50/0. L-COMP
+  box 18 (claude/l-comp fc0758fc, via the Lead; packet A3): the MATCHED test agrees with L-COMP's on 258,048 pairs; NM per (vertex,
+  phase) at most 62 (n 581), max NM/n 1.18 (pl130_n40). REFEREE (successor 17; own scratch/matchphi_probe.py, mp_chain.py (Part (A),
+  R-N5-MATCHPHI.md, carried over) and scratch/gateshut_probe.py (sha1 84a77eb7…) on its engine rl_engine; no L-COMP / L-LIT import; H_n
+  exported once to .pg): Part (A) exhaustive K = 6, 7: 258,048 + 2,080,768 ordered pairs (78,268 + 571,298 MATCHED), 0 failures; 3,000 +
+  2,000 arbitrary and as many weight-increasing sequences, 0 failures; N5: pl130_n40 1 run, 962 P-changes, 688 carries, max PCH / NM per
+  (v, phase) 62 / 47 (1.175 n); alt_all n ≤ 100 379 runs, 45,234, 25,585, 67 / 41 (0.90); L-RED instances 319 runs, 29,501, 15,978,
+  62 / 47; lib41 349 runs, 30,700, 15,751, 37 / 18; λ-runs (§1b, LAMRUN=1) lib41 38,243 (vertex, λ-run) checks, 31,662 P-changes, 16,291
+  carries, 0 failures (the L-RED λ-run batch stopped unfinished, recorded); MUT1 ((M2) dropped) bites 43,975, MUT3 (W := K) bites on
+  all-matched chains. Part (B): H_3, H_4 8 runs, 915 (e, d) pairs, 761 states with an (H1)-(H3) route, 733 Corollary checks; H_5, H_6 8,
+  1,983, 1,722, 1,678; lib1140 1,857, 334,123, 10,198, 9,052; lib41 1,076, 198,065, 7,857, 6,825; rand_ck 12,000, 176,427, 1,949,
+  1,196; 0 failures; step 4 and Fact B2 at every hit, 22,487 checks, 0 failures; Fact B1 on 3,712,665 dual-valuation pairs, 0 failures;
+  MUT 1 / 2 / 3 as in "Honest limits" (iii). REFEREE-2 19 (own R2-N5-MATCHPHI/mphi_check.py and R2-N5-MPGS/gateshut_check.py on its
+  lane's SPEC loop; no lane module imported): Part (A) every ordered pair, K ≤ 7, every parity pattern, 2,374,900 pairs (661,892
+  MATCHED), 0 failures; 25,000 arbitrary subset sequences; N5 alt_all 413 runs, 53,549 P-changes, 23,330 / 30,219 MATCHED / carries,
+  max NM 62 (gate_K64_n581, n 581), max NM/n 0.90 (ret22_n40), max PCH 67; lib41_noref × 3 1,230, 70,808, 31,014 / 39,794, 18, 0.469,
+  37; named 19, 13,282, 3,763 / 9,519, 47 (pl130_n40), 1.175, 72 (l121_d29); random kO 9,000, 1,221, 872 / 349, 1, 0.125, 2; controls
+  CTL_noM2 375,337, CTL_noM1 547,514, CTL_carry_rise 525,558. Part (B): gates with (H1)-(H3) / CORB transitions: H_n 71 runs 22,798 /
+  22,412; lib41_noref × 3 1,230 runs 33,572 / 8,934; alt_all 413 runs 12,713 / 4,820; random 30,000 runs 3,902 / 2,123; 72,985 gates,
+  0 violations of DENG, B1, GS, S3, S4, S5, CORB; Fact B1 on 10,036,398 same-cycle-node pairs; controls noH1 28/28 (H_n), 2,938/214,496,
+  871/104,971, 1,836/20,780; noH2 0/10,837, 0/4,450, 0/241; noH3 2,777/210,912, 1,064/239,267, 581/2,539. REFEREE-2 concurring (successor
+  20; own gs_check.py on R2-N5-DUAL/dual_check.Runner and si.py; L-COMP's n5b and hn.py not imported): (state, e, d) with (H1)-(H3) on
+  run states (random n 5-14, n 15-24, lib41_noref, H3-H6) 1,523 / 419 / 6,017 / 2,348 and at arbitrary or every τ (tau n 5-10, n 8-14;
+  alltau n 4-8, n 8-11) 6,174 / 2,219 / 7,778 / 5,193; 0 violations of GS, GS2-GS5, GSC, B1, ENGXI; X1 / X2 / X3 as in its §3.2 (H3-H6:
+  X1 32 of 32); B1 on 76.3M random pairs; λ-run data (REFEREE-2 §C): 56,999 Even and 21,286 Odd (vertex, λ-run) pairs, 0 failures. Run
+  counts differ by start set and corpus (REFEREE lib41 1,076 runs in Part (B) and 349 in Part (A); REFEREE-2 lib41_noref × 3 1,230); not
+  reconciled in any report. No signed statement uses any count.
+- Signatures: REFEREE docs/referee/R-N5-MPGS.md (report c3a0b5d7, sha1 b1a0310d1020ad7d9182d954666f4da4071bdc6b there, successor 17; §1b
+  7cd20b05, sha1 988945c360be9b48a41f2db799536c365dfd54a2 there; §C 8da7b717, sha1 7c293a20af130a968df5e91cfee29f072db397dd there,
+  successor 18): A0 CHECKED; Fact A1 SIGNED; Lemma MATCH-Φ SIGNED; added statement (A) SIGNED ("proof condensed; MPGS-N1"); B0-B1
+  definitions CHECKED; Fact B1 SIGNED; Fact B2 SIGNED; Lemma GATE-SHUT (steps 1-6) SIGNED; added statement (B) SIGNED; A3, B3 reproduced
+  exactly, not signed; A4, B4 not signed; §1b λ-runs "YES (Opus 5.5, D15), verbatim"; quotes 9 of 9 (own scratch/flip_quotes.py:
+  "QUOTES 9 FAILED 0"); notes MPGS-N1..N5 (MATCH-N2..N4 carried over); "No gap." REFEREE-2 of record docs/referee-2/R2-N5-MPGS.md (report
+  0c4524f0, sha1 5ed019b764708f5c61d09e46db4b591672a5a1bf there; successor 19): A0 SIGNED; Fact A1, Lemma MATCH-Φ SIGNED; added
+  statement (A) SIGNED ("The first term is SHARP at NM = 0 (N-MP-2)"); B0 "SIGNED (well formed)"; Fact B1, Fact B2, Lemma GATE-SHUT (6
+  steps), added statement (B) SIGNED; pinned re-runs "REPRODUCED exactly"; quotes "9/9 VERBATIM" (own qcheck 9/9, SHIFT=1 control 0/9);
+  A3, A4, B3, B4 not signed; notes N-MPGS-1..6 (N-MP-2..5 carried over); "No gap." REFEREE-2 concurring docs/referee-2/R2-N5-MPGS-s20.md
+  (report c1c4676a, sha1 b34e67d55479895fa3cafa6dad84734a8edb8dc1 there; marked c5f9e76e, sha1 ee4ca241ed54be2f19b3d0dd1076775c92364cd9
+  there, and 152503ca, sha1 15f14eb487418908a4e063e407676f85827c0af5 there; successor 20; written without reading 19's report): every
+  item SIGNED, no gap, no item FALSE; notes N-GS-1..5; not a third signature. REFEREE-2 §C docs/referee-2/R2-N5-MPGS-C.md (cfc77e84,
+  sha1 8d8245369966b60611f9a8ea59dd7cca1e9bfe8a there; final e1ec568a, sha1 6a023656a417841297077b9db5aba6383196442f there; successor 20).
+  Superseded-copy reviews (P-N5-MATCHPHI, not routed for landing): REFEREE docs/referee/R-N5-MATCHPHI.md (2f2c40dc, sha1
+  b17f092b18e49eccd17c52ac3fb14fca840922b8 there; definitions CHECKED, Fact 1, Lemma MATCH-Φ, Corollary SIGNED, no gap, MATCH-N1..N4)
+  and REFEREE-2 docs/referee-2/R2-N5-MATCHPHI.md (5ba3e21d, sha1 097e9858569e2623175b4ab2e314c39cd25c42d3 there; all SIGNED, no gap,
+  N-MP-1..5); both carried over to Part (A) by content after a diff (REFEREE §1; REFEREE-2 19 §1; REFEREE-2 20 §1). INDEPENDENCE: REFEREE
+  had no docs/referee-2/ MPGS file on its tree and saw 16 names matching "mpgs" on origin/claude/referee-2 at 11:42Z ("names only, none
+  opened"); it did not open R2-N5-MATCHPHI.md; it read both REFEREE-2 reports after c3a0b5d7 and 7cd20b05 were pushed (§C). REFEREE-2 19
+  opened no file under docs/referee/ on MPGS or MATCHPHI (name counts 0 at 11:17:40Z and 11:25:43Z); REFEREE-2 20 opened no file under
+  docs/referee/ before its report (0 at 11:33:19Z and 11:36:04Z), first opened c3a0b5d7 at 12:05Z and §1b at 12:17Z, after both
+  REFEREE-2 reports were pushed (§C Inputs). No review imported lane code; the lane's pinned scripts were read, then run, in worktrees
+  at a23179b0. §C (both): verdicts identical (REFEREE §C: "VERDICTS IDENTICAL. Every item (A0-A2, B0-B2, Added statements (A), (B)) is
+  SIGNED by all three reports; none FALSE; no gap on any side"; REFEREE-2 §C C.1: "SIGNED by both"); joint gap map EMPTY (REFEREE "JOINT
+  GAP MAP: EMPTY."; REFEREE-2 "Joint gap map: EMPTY."); REFEREE "E-ITEMS (must change before landing): NONE. Every signed statement and
+  proof is correct as frozen at a23179b0."; REFEREE-2 classes C.4 items 1-5 (D1-D4 and C.2's (H2) point) as E, text fixes for the fixes
+  file, done as F3-F7 (fixes: "Both agree no statement or proof changes"); J1-J15 / D1-D10 answered in F3-F10; REFEREE: "Nothing open on
+  MPGS. NM is OPEN; G-N5-TIME stays OPEN."
+- TARGET.md diff: not a claim of TARGET.md section 1 or §2 (a reduction of one vertex's path-set changes in one phase of N5 to its
+  carries NM, which are not bounded, and a structural lemma on Odd's improving edges in N5; no running-time bound, no algorithm claim).
+  GAPS G-N5-TIME: open.
+
+### R86 [refereed-only] N5 on EVERY game: with λ (λ^U) the cycle-node map of Even's valuation Ξ (Odd's valuation U of τ on G^d), a λ-run (λ^U-run) a maximal run of states with λ (λ^U) constant, and, for a stretch R of consecutive states of one run, ENT_R(v, c) the transitions of R at which v's strategy enters c, SW_R(v) := Σ_c ENT_R(v, c) the switches of v, RISE_R(c) the transitions of R at which Ξ(c) changes and PCH_R(c) those at which c's path set P(Ξ c) changes: ENT_R(v, c) ≤ 1 + RISE_R(c) on every stretch, for every Even v and vertex c (Lemma SW-RETURN; dually for Odd v with U on G^d); RISE_R(c) ≤ PCH_R(c) + (PCH_R(c) + 1)(n − 1) on every λ-run R and on every phase R = 𝒫 (Lemma LEN-MONO; dually on λ^U-runs with λ^U); so on every λ-run R Σ_v SW_R(v) ≤ Σ_{(v, c) ∈ E, v Even, SW_R(v) > 0} (1 + RISE_R(c)) ≤ Σ_{(v, c)} n·(PCH_R(c) + 1) ≤ m_E·n·(P*_R + 1), P*_R := max_c PCH_R(c), and a phase 𝒫 has |𝒫| ≤ Σ_v SW_𝒫(v) ≤ the same sums over 𝒫, |𝒫| := the number of transitions t → t + 1 with t, t + 1 ∈ 𝒫 (Theorem COMPOSE; dually for Odd's switches in every λ^U-run); hence every N5 run on every game has T ≤ 2n(n − 1) + (n(n − 1) + 1)·n·(m_E(P* + 1) + m_O(P*^U + 1)) transitions (iterations), P* (P*^U) the most path-set changes of one vertex's Ξ (U) inside one λ-run (λ^U-run) and m_E (m_O) the number of edges leaving Even (Odd) vertices (Corollary COMPOSE-RUN, via RESULTS R47 (a)'s every-game count: at most n(n − 1) transitions change λ and at most n(n − 1) change λ^U); and if MATCH-Φ's bound holds with "phase" replaced by "λ-run" ("λ^U-run" on G^d, read with G^d's parities), then P*_R ≤ (n²/2)(NM*_R + 1) + NM*_R, NM*_R the most carries of one vertex in R, and T is bounded by a polynomial in n, m and the largest carry count NM* = max(NM*_Even, NM*^U) (Corollary COMPOSE-NM, an implication), whose premise both referees sign as holding, with RESULTS R85's MATCH-Φ (landed at trunk 17f51175; CHECKER C94 Add. 2 PASS, b7461dd7), because MATCH-Φ's proof reads verbatim on every λ-run (λ^U-run on G^d), where c = λ(v) is fixed (2026-10-29) — a REDUCTION of N5's iteration count to per-vertex path-set changes P*, P*^U and, with MATCH-Φ, to carries NM*, NM*^U (none of which is bounded here; carries of one vertex reach Θ(N²) per phase, and through the dual mirror per λ^U-run, on L-RED's families, DATA only; not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C95.md, checker 79f2ba92)
+- Object (L-SI successor 24, Opus 5.5, D18, Lead reading L40; frozen, unchanged during review): packet P-N5-COMPOSE,
+  docs/si/P-N5-COMPOSE-box28.md, sha1 e1b977aa9cf1583d5e0c442a8f87d024230b6524, 141 lines (l-si freeze
+  3ca0932d44c407fed38e5fb930744d7107ee79c8, 2026-10-29T11:34:00Z; quote bases b025560c9 (SPEC, RESULTS) and a23179b01 (P-N5-MPGS);
+  16 quotes, experiments/si/rund/quotecheck.py, sha1 29bb4a971680c9278f5f8c6f40eac17c0134db72, "quotes=16 bad=0", pinned in
+  experiments/si/check.sh with a shifted-line control (--mut: "quotes=16 bad=16", "QUOTES FAIL"); the packet sha1 is pinned in check.sh;
+  both referees measured the packet sha1 and the pins): §1 setting with (F-SW) and (F-MON), §2 Lemma SW-RETURN, §3 Lemma LEN-MONO, §4
+  Theorem COMPOSE, §5 Corollary COMPOSE-RUN, §6 Corollary COMPOSE-NM (the implication), §7 DATA. The referees' notes are collected by the
+  lane in docs/si/P-N5-COMPOSE-fixes-box28.md (F1-F10: L-SI successor 25, l-si 45778960, sha1 3d63f0ab there; F11-F14 appended by L-SI
+  successor 26 at l-si 4e928f11aeed2bb38954efa785ef6b93989b3cdf, 2026-10-29T13:36:48Z, append-only (git diff 45778960 4e928f11: 55 lines
+  added, 0 removed; then e7c7dd78, 2026-10-29T14:17:47Z, +3 lines in F11 recording the Lead's 13:43Z ruling "D2 … and D3 … are REQUIRED
+  appended items, the conservative reading", no statement change); at e7c7dd78 and on trunk sha1 b4c69e110d3c57eae73697d36729134f60ab5ea1,
+  164 lines; 19 quotes checked by
+  docs/si/P-N5-COMPOSE-fixes-quotecheck.py, sha1 45ff072708e4bd78591174fc556ea19040496470, "quotes=19 bad=0", a mutated quote caught in
+  check.sh). The fixes file: "This file changes NO signed statement and NO proof step; every F-item below is APPENDED text that is read
+  together with the packet". F1 and F11 define |𝒫| as the number of transitions (COMP-E1, E-item of both referees); F2 reads LEN-MONO and
+  Theorem COMPOSE's first statement on any stretch with λ (λ^U) constant (N-C2 = REFEREE-2 §C D2); F3 reads Odd's side of §6 with G^d's
+  parities (N-C3 = D3); the Lead ruled D2, D3 required ("Ruling: D2, D3 REQUIRED (already appended as fixes F2, F3)", 13:48Z). F4
+  defines P*^U for the title, F5 says RISE counts changes, F6 spells out (F-MON)'s set I (optional: COMP-N1..N3 = D4-D6); F7 and F12
+  record [MΦ]'s status, F8 the [MΦ] quote form (N-C1), F9 and F14 data figures, F10 (F-MON) on Odd's side, F13 REFEREE §C C11 = REFEREE-2
+  §C D11 as OPEN: each a "No change, because" clause. The statements below are in the frozen wording with F1/F11, F2 and F3.
+  Setting (every game): N5 = SPEC S1-S5 (docs/new/N5-ssi-global.md) with FIX 1-4; G any parity game, n = |V|; a run is the sequence of
+  states (σ_t, τ_t), t = 0, …, T, a TRANSITION is t → t + 1; m_E (m_O) the number of edges leaving Even (Odd) vertices. Ξ_t := Ξ_{σ_t},
+  S1's valuation (c, P, ℓ) against Odd's optimal counterstrategy, a function of σ_t only (R15 (d)); λ_t(v) its cycle node; U_t := Odd's
+  valuation of τ_t on the dual game G^d (R47's setting), λ^U_t its cycle node. A λ-RUN: a maximal run of consecutive states with λ_t
+  constant (τ free); a λ^U-RUN likewise; a PHASE: a maximal run with (λ_t, τ_t) constant (RESULTS R38 (a)), which lies inside one λ-run.
+  For a stretch R (consecutive states of one run) and vertices v, c: ENT_R(v, c) := #{t : t, t + 1 ∈ R, σ_t(v) ≠ c = σ_{t+1}(v)} (Even
+  v; τ for Odd v), SW_R(v) := Σ_c ENT_R(v, c); RISE_R(c) := #{t : t, t + 1 ∈ R, Ξ_{t+1}(c) ≠ Ξ_t(c)}; PCH_R(c) := #{t : t, t + 1 ∈ R,
+  P(Ξ_{t+1} c) ≠ P(Ξ_t c)}; RISE^U, PCH^U the same with U_t on G^d; P*_R := max_c PCH_R(c), P* := max over λ-runs R of P*_R, P*^U likewise
+  over λ^U-runs. F11: "|𝒫| := number of transitions t → t + 1 with t, t + 1 ∈ 𝒫." F1: for any stretch R, "|R| := #{t : t, t + 1 ∈ R},
+  the number of TRANSITIONS inside R (one less than its number of states)", and "«transitions (iterations)» in Corollary COMPOSE-RUN count
+  transitions". (F-SW): every Even switch goes along an edge of Iσ_t (S4a, S4c), every Odd switch along Iτ_t (S4b, S4c). (F-MON): Ξ_{t+1}
+  ⊵ Ξ_t at every vertex and every transition (R15 (a) with (d)); dually U_{t+1} ⊵ U_t in G^d's order. §1 cells: REFEREE "CHECKED (F-SW
+  and F-MON are correct consequences of S4a-c, [STEP], [MON]; |𝒫| is not defined: COMP-E1)"; REFEREE-2 "SIGNED (well formed; F-SW and
+  F-MON proved correctly from [S4a-c], [STEP], [MON])".
+- Claims signed (both referees "(Opus 5.5, D15)": REFEREE successor 18, REFEREE-2 successor 20). Each item below is SIGNED in both verdict
+  tables (REFEREE "## Verdicts", l. 13-22 of R-N5-COMPOSE.md; REFEREE-2 "## 0. Verdicts", l. 27-36 of R2-N5-COMPOSE.md; REFEREE-2 §C
+  C.1: "SIGNED by both" for §2-§6), in the frozen wording with the required appended text F1/F11, F2, F3. On every game; no item uses
+  (P). Premises LANDED: SPEC S1 (valuation, order, Ξσ), S2, S4a-c (quote base b025560c9); RESULTS R15 (a) Lemma A ([MON]) and (d)
+  ([STEP]); RESULTS R47 (a) Lemma Φ (every game), item (c) only ([Φ]); RESULTS R84 (a) Fact DELTA; RESULTS R38 (a), as the phase
+  definition only. Premise for (e) only: RESULTS R85 (A) (P-N5-MPGS; landed at trunk 17f51175,
+  2026-10-29T14:02:36Z, CHECKER C94 Add. 1 7e309075; landed check C94 Add. 2 PASS, b7461dd7).
+  (a) Lemma SW-RETURN (§2): "For every run of states R of an N5 run, every Even v and every vertex c: ENT_R(v, c) ≤ 1 + RISE_R(c).
+      Dually for Odd v with U." (Ξ-SUCC: Ξ_t(σ_t v) is non-decreasing in t, by (F-MON), (F-SW) and [S2]. For consecutive entries e < e′
+      of v into c and the step s ∈ [e + 1, e′ − 1] at which v leaves c: Ξ_{e′}(c) ▷ Ξ_{e′}(σ_{e′} v) ⊵ Ξ_{s+1}(σ_{s+1} v) ⊵ Ξ_s(σ_{s+1}
+      v) ▷ Ξ_s(c) ⊵ Ξ_{e+1}(c), so Ξ(c) changes at a transition in [e + 1, e′ − 1] ⊆ R; these windows are disjoint.) Cells: REFEREE
+      "SIGNED", REFEREE-2 "SIGNED"; REFEREE §2: "No phase, no λ, no τ used: it holds on ANY stretch of consecutive states, fallbacks
+      included."
+  (b) Lemma LEN-MONO (§3) on every λ-run and, with F2, on every phase 𝒫 (a stretch inside one λ-run, RISE_𝒫 and PCH_𝒫 counted inside 𝒫): "For every λ-run R and every vertex c: RISE_R(c) ≤ PCH_R(c) + (PCH_R(c) + 1)(n − 1). Dually for
+      λ^U-runs with U.", F2 appended: "In Lemma LEN-MONO and in Theorem COMPOSE's first statement, "every λ-run R" is to be read as
+      "every stretch R of consecutive states on which λ is constant" (dually λ^U); a λ-run and a phase are such stretches." Signed here for λ-runs and phases only; F2's reading for every stretch with λ constant: Referee strengthening (0). (On R the
+      cycle node c₀ of Ξ_t(c) is fixed; by (F-MON) and [S1-ord] the weight of P never falls and rises strictly at a P-change ([DELTA]),
+      so the P-values form PCH_R(c) + 1 contiguous blocks; inside a block only ℓ changes, strictly in the direction [S1-ord] prefers for
+      Ω(c₀), and ℓ ∈ {0, …, n − 1}; so RISE_R(c) ≤ n·PCH_R(c) + n − 1.) Cells: REFEREE "SIGNED" (row "Lemma LEN-MONO (any λ-run /
+      λ^U-run)"); REFEREE-2 "SIGNED (it holds on any stretch with λ constant: N-C2)". The stretch reading, for the phase: REFEREE
+      §4, inside its signed phase part: "a phase lies inside one λ-run, so LEN-MONO applies to it (cycle nodes fixed)"; REFEREE §C
+      C3: "I agree: the proof never uses maximality" (classed "optional (wording; one word)"); REFEREE-2 §C D2: "Applying the λ-run
+      bound to the enclosing λ-run would give PCH_R, not PCH_𝒫, so the phase statement needs the stretch form".
+  (c) Theorem COMPOSE (§4), with F1/F11, and F2 for the phase statement: "For every λ-run R of an N5 run on any game, the Even switches inside R satisfy Σ_v
+      SW_R(v) ≤ Σ_{(v, c) ∈ E, owner(v) = Even, SW_R(v) > 0} (1 + RISE_R(c)) ≤ Σ_{(v, c)} n·(PCH_R(c) + 1) ≤ m_E·n·(P*_R + 1). For every
+      phase 𝒫 (inside a λ-run R): |𝒫| ≤ Σ_v SW_𝒫(v) ≤ the same sums with R replaced by 𝒫. Dually for Odd's switches in a λ^U-run.";
+      F2: "Theorem COMPOSE's phase statement is the first statement applied to the stretch 𝒫, with RISE_𝒫, PCH_𝒫 counted inside 𝒫."
+      (SW_R(v) = Σ_{c ∈ succ(v)} ENT_R(v, c), then SW-RETURN, then LEN-MONO, summed over the Even v that switch; in a phase τ is constant,
+      so by [STEP] every transition of 𝒫 changes σ, i.e. contains an Even switch.) Cells: REFEREE "SIGNED, with |𝒫| read as the number of
+      transitions inside 𝒫 (COMP-E1: under the "number of states" reading the phase part is FALSE)"; REFEREE-2 "SIGNED"; REFEREE-2 §C
+      C.1: "SIGNED by both, with COMP-E1". (REFEREE §1: read as states, "a one-state phase gives 1 ≤ 0".)
+  (d) Corollary COMPOSE-RUN (§5): "Every N5 run on every game has T ≤ 2n(n − 1) + Σ_{λ-runs R} Σ_v SW_R(v) + Σ_{λ^U-runs R′} Σ_{Odd
+      v} SW_{R′}(v) ≤ 2n(n − 1) + (n(n − 1) + 1)·n·(m_E·(P* + 1) + m_O·(P*^U + 1)) transitions (iterations)." (Classify each transition,
+      S4c fallbacks included, by the first of (i) λ changes, (ii) σ changes, (iii) λ^U changes, (iv) otherwise, when τ changes by [STEP];
+      a kind-(ii) transition holds an Even switch of one λ-run, a kind-(iv) one an Odd switch of one λ^U-run; [Φ] (c), RESULTS R47 (a)
+      Lemma Φ (every game): "along a run at most n(n − 1) transitions change λ and at most n(n − 1) change λ^U", read separately for each
+      map, so at most n(n − 1) + 1 λ-runs and as many λ^U-runs; Theorem COMPOSE on each. Not used: R47's joint count, Corollary Φ-1O,
+      R48. Fallbacks: an Even fallback is kind (i) or (ii), an Odd fallback kind (iii) or (iv); "No transition is uncharged".) Cells:
+      REFEREE "SIGNED" (row "Corollary COMPOSE-RUN (every run, every game), including the classification and the fallback paragraph");
+      REFEREE-2 "SIGNED (Lead's points (1) and (2) checked: §2.4)" (row "Corollary COMPOSE-RUN: T ≤ 2n(n−1) +
+      (n(n−1)+1)·n·(m_E(P*+1) + m_O(P*^U+1)), every run, every game").
+  (e) Corollary COMPOSE-NM (§6), the implication, with F3: "If [MΦ] holds with "phase" replaced by "λ-run" (resp. "λ^U-run" on G^d),
+      then P*_R ≤ (n²/2)(NM*_R + 1) + NM*_R with NM*_R the most carries of one vertex in R, and Corollary COMPOSE-RUN bounds T by a
+      polynomial in n, m and the largest carry count NM* (over both players)."; F3 appended: "On Odd's side (λ^U-runs of U on G^d),
+      P-changes, MATCHED, CARRY and the carry count NM^U are read on G^d, i.e. with G^d's parities (Ω + 1; the ranks are those of G). NM*
+      in the Corollary is max(NM*_Even, NM*^U)." (K ≤ n − 1 gives K(K + 1)/2 ≤ n²/2.) [MΦ] is P-N5-MPGS (A)'s Corollary, the subject of
+      RESULTS R85 (A): "PCH_𝒫(v) ≤ (K(K+1)/2)·(NM_𝒫(v) + 1) + NM_𝒫(v)", K the number of ranks above rank(λ(v)), NM_𝒫(v) v's carries.
+      Its λ-run form, the implication's premise, sits in both verdict cells for §6: REFEREE "SIGNED as an implication; its premise
+      "[MΦ] on λ-runs" HOLDS (§6 below: MΦ's proof reads verbatim with c fixed; my predecessor's R-N5-MPGS §1b agrees), so the
+      conclusion holds with [MΦ] as signed by both referees"; REFEREE-2 "SIGNED as an implication. The "phase → λ-run" replacement is
+      VALID (Lead's point (3), §2.5). Read NM^U with G^d's parities (N-C3)". The λ^U-run side: REFEREE's cell names λ-runs; its §6,
+      which the cell cites: "on λ^U-runs it holds for U on G^d (G^d is a game with the same ranks; MATCHED is then read with G^d's
+      parities)"; REFEREE-2 §2.5: "MATCH-Φ's proof holds for every parity pattern, so the bound holds (N-C3)". Hence, with RESULTS R85's
+      MATCH-Φ (landed at 17f51175, landed check PASS b7461dd7): P*_R ≤ (n²/2)(NM*_R + 1) + NM*_R on every λ-run R (and on every λ^U-run,
+      NM^U read on G^d), and T is bounded by a polynomial in n, m and NM*. This is the λ-run form that RESULTS R85 carries as Referee
+      strengthening (0), "To be signed with P-N5-COMPOSE, which uses it" (CHECKER C94 §3).
+- Not signed: §7 (DATA; REFEREE "DATA, not signed; reproduced EXACTLY (below)", REFEREE-2 "DATA, not signed. Reproduced EXACTLY
+  (§3.1)") and its "Slack (READING)". The packet's own label of §6, "PROVED from an ASSUMED premise (sign only the implication)", and its
+  "Note for the referees", which calls the λ-run replacement "a reading of [MΦ]'s proof, to be confirmed by its referees": confirmed in
+  both §6 cells (item (e)); the premise itself is R85's, not this entry's. LEN-MONO across a λ-change: not claimed; whether the
+  restriction is needed is OPEN (F13; "Honest limits" (iii)). The fixes file's records F7, F12 ("[MΦ] is signed by both referees";
+  "When P-N5-MPGS lands, §6's premise is that entry plus this referees' remark") and F9, F13, F14: lane records ("This file is a lane
+  record, not refereed text"). F4-F6 (optional wording): bullet "Referee strengthening" (i), (ii).
+- Referee strengthening (NOT part of this entry; remarks of one or both referees outside the verdict cells, or optional wording):
+  (0) F2's general reading (N-C2 = REFEREE-2 §C D2; the Lead ruled D2 required as appended text, 13:43Z): LEN-MONO and Theorem
+  COMPOSE's first statement on every stretch of consecutive states with λ (λ^U) constant. REFEREE-2 §3 cell: "SIGNED (it holds on any
+  stretch with λ constant: N-C2)"; REFEREE: its §3 row signs "any λ-run / λ^U-run", its §4 applies the Lemma to a phase ("a phase lies
+  inside one λ-run, so LEN-MONO applies to it (cycle nodes fixed)"), and its §C C3 "I agree: the proof never uses maximality", classed
+  "optional (wording; one word)". Not used by any signed item beyond λ-runs and phases.
+  (i) COMP-N2 = D5 (F5): RISE_R(c) counts changes of Ξ(c), and by (F-MON) every such change is a strict rise. REFEREE §8: "COMP-N2:
+  SW-RETURN's RISE_R(c) counts CHANGES of Ξ(c); by F-MON they are rises."; REFEREE-2 §C D5: "Agreed" (class "opt"). The signed items
+  count changes (≠), as defined. (ii) COMP-N3 = D6 (F6): (F-MON)'s set is I := {(v, σ_{t+1}(v)) : σ_{t+1}(v) ≠ σ_t(v)} ⊆ Iσ_t by (F-SW);
+  REFEREE-2 §C D6: "Agreed; my §2.0 used exactly this I" (opt); COMP-N6 = D9 (F10): "F-MON on the Odd side is [MON] applied to G^d, as in
+  R47's Lemma Φ (b) citation chain (PHI-N1 = N-PHI-2); no new premise." (both: REFEREE-2 §C D9 "Same"). (iii) The classification by what
+  changes (REFEREE §5, a remark on the fallback paragraph): "A transition where S4a runs but leaves σ unchanged and S4b changes τ is (i),
+  (iii) or (iv): the classification is by what changes, not by which step ran, so it is covered." The packet's sentence "A transition
+  applying S4a and S4b together is charged to its Even switch (kind (ii)) unless λ changes" presumes σ changes; REFEREE-2 §2.4: "S4a + S4b
+  together is kind (i) or (ii)". No gap: the proof classifies by what changes. (iv) REFEREE §5 on [Φ] (c): "Its content is elementary
+  from (a), (b): reward is injective, so each vertex's λ changes ≤ n − 1 times, and each λ-changing transition changes some vertex."
+  (v) COMP-N4 = D7, C5 (F7, F12): REFEREE §8: "the λ-run reading of [MΦ] is now confirmed by the first referee twice (R-N5-MPGS §1b, here
+  §6); it can be stated as a remark of the landed MPGS entry rather than an assumption."; REFEREE §C C5 (1680010b): "§6 can land as
+  "COMPOSE-RUN with [MΦ] (citing the landed MPGS entry) gives …", the λ-run transfer as a referees' remark."; REFEREE-2 §C D7: "Agreed.
+  It is now confirmed by both referees (R2-N5-MPGS-C, "§1b AGREED"), so the packet's ASSUMED label on [MΦ] is resolved once MPGS lands"
+  (opt). Status: this entry states the λ-run form inside item (e) because both §6 verdict cells carry it; R85 as landed carries it as Referee strengthening (0), "To be signed with P-N5-COMPOSE, which uses it"; this entry signs it (item (e)).
+- Honest limits: (i) COMPOSE is a REDUCTION of N5's total iterations to P*, P*^U and, with R85's MATCH-Φ, to the carries NM*, NM*^U.
+  None of them is bounded here (packet SCOPE: "P* and the carry counts are NOT bounded here"; REFEREE: "Nothing here bounds P* or NM*").
+  The bound is polynomial in n, m and P* (or NM*), and P* is not bounded. NM* and NM*^U are OPEN. DATA only, not refereed: L-RED's R109
+  (claude/l-red e5c9b628, docs/red/R109-hn-topgate.md §5; L-COMP's nm.py unmodified, phases keyed by r38 = (λ_Ξ, τ)): carries of one
+  vertex in one phase reach max NM 343 (max PCH 354) on topfix n 12 (N 252 vertices), NM / N 1.361, "max NM = 2n² + 5n − 5", "Carries of
+  ONE vertex in ONE phase are Θ(N²) on this family"; there "NM*^U = 0 exactly" (τ never changes). L-RED's R111 (claude/l-red 463bec6e,
+  1811cae2, docs/red/R111-dual-tau-runs.md): on G^d N5's run is the mirror of the run on G (DATA, two pins: "σ_G = τ_{G^d} and τ_G =
+  σ_{G^d} at EVERY state"); 264 τ-changes inside one joint λ-run (dual runquad_K8_m30); NM^U = 163 = 2n² + 5n − 5 per vertex per λ-run
+  on dual hntop_n8 is a READING through the mirror ("Not measured directly: nm.py is Even-side only"); "Both are polynomial". (ii) T
+  counts iterations (transitions), not bit operations; nothing here bounds N5's running time. (iii) OPEN (F13): whether LEN-MONO's
+  restriction to stretches with λ constant is needed. REFEREE §C C11: "OPEN in data, not a finding (the proof uses it; LEN-MONO across a
+  λ-change compares different cycle nodes)"; REFEREE-2 §3.2: "X_LENfull (LEN-MONO across λ-changes) never bit"; REFEREE-2 §C D11:
+  "neither shows the λ restriction of LEN-MONO is needed". The restriction of the phase bound to phases is needed (REFEREE MUT 4: 423
+  violations on whole λ-runs), and so are SW-RETURN's "+1" and LEN-MONO's length term (MUT 1, MUT 3; REFEREE-2 X_SWR0, X_LEN0). (iv)
+  Slack (READING, packet §7 and COMP-N5): "the factor n of LEN-MONO and MΦ's n²/2 are the loose links". (v) Not M3, not a step-4 pass,
+  not a TARGET.md claim; G-N5-TIME stays open. Item (e)'s conclusion rests on R85 (A) (landed at 17f51175, landed check PASS b7461dd7).
+- Data (DATA, not proof): pinned (packet §7; experiments/si/chg/compose.py, sha1 9fc3b081bff815a72597a394af918786e3d6f2ec, check.sh box
+  28 §9), run as `python3 -I` from experiments/si: runquad_K8_m30_n192 "TOP (263, 'chg/instances/red/runquad_K8_m30_n192.pg', 0, 263,
+  481, 1016, 195072, 265890048, 8, 15, 15, 15, 192)" (L = 263 ≤ S1 = 481 ≤ S2 = 1,016 ≤ S3 = 195,072 ≤ S4; max NM 8, max PCH = max
+  RISE = max SW = 15; n = 192; instance sha1 ebaa6ac57ec60948fb986210c27479cb3a7961d9, L-RED's R106 pin), I0 I1 LDIR LBLK I2 I3 PASS;
+  dlsep_kill_n70 "TOP (12, 'chg/instances/dlsep_kill_n70.pg', 0, 12, 39, 387, 26810, 14059640, 5, 6, 7, 4, 70)" (sha1
+  e500ea47e1dc0163b32a97042ff9752daf6db83a), the same six PASS; MODE=run seglast_kill_n110 "TOP (16, 'lay/instances/seglast_kill_n110.pg',
+  0, 16, 27, 152, 16066, 0, 20, 1, 4, 2, 110)" (T = 16 ≤ 20 Even + 1 Odd in-run switches + 4 λ- and 2 λ^U-changes = 27), RUNI0 R47 EI1 OI1
+  ELDIR OLDIR ELBLK OLBLK PASS, also on segcount_kill_n20. Re-run for this draft on trunk 764101b1 (compose.py sha1 as above; rund/,
+  lay/ and root/ tree ids equal to 3ca0932d's, chg/ only 16 added files): the three TOP lines identical, every PASS line as listed;
+  quote checks: packet "quotes=16 bad=0" (--mut "quotes=16 bad=16", "QUOTES FAIL"), fixes "quotes=19 bad=0" (mutated: "quotes=19
+  bad=1"). Packet corpora (chg/compose_*.txt, chg/composerun_*.txt): every inequality on all phases of alt_all pinned starts (457), lib41
+  (418), all experiments/si instances (345) and all runs (413, 412, 276); per vertex per phase NM 42 and PCH 71 at most, at n 41
+  (l121reader_n41); at most 31 λ-runs and 28 λ^U-runs in one run; L-RED's R106 mkr.py families NM = K, PCH = 2K − 1; ladderd0_k48_n156
+  NM 0, PCH 48. REFEREE (successor 18; own scratch/compose_probe.py, sha1 239d122e…, on its engine rl_engine; no lane code; pinned
+  re-runs in a worktree at 3ca0932d, exact): library (n ≤ 64) 763 runs, 12,426 transitions, SW-RETURN checks 87,161 (strong form 7,057),
+  LEN-MONO 129,260, kinds (i)/(ii)/(iii)/(iv) 2,101 / 9,964 / 238 / 123; lane pins 15, 512, 2,468 (610), 8,818, 43 / 463 / 5 / 1; random
+  rand_ck n 5-16 6,000, 10,171, 82,509 (20), 232,299, 5,878 / 2,262 / 1,471 / 560; random n 6-16 with MPHI 4,000 runs; 0 violations; at
+  most 29 λ-runs and 14 λ^U-runs in one run (library); [MΦ] on every λ-run of both players: library 294 games, 29,931 (Even) + 12,222
+  (Odd, on G^d) (vertex, λ-run) checks, random 4,000 runs, 94,226 + 71,142, 0 failures, max NM 15; MUT 1 14,867, MUT 2 3, MUT 3 3,144,
+  MUT 4 423 violations (all bite); a batch rand n 16-30 stopped unfinished (recorded). REFEREE-2 (successor 20; own
+  R2-N5-COMPOSE/compose_check.py on its lane's dual_check.Runner and si.py, MATCHED test mphi_check.matched; lane code only run as the
+  pinned re-runs, exact): 14,428 runs, 40,406 transitions, SWR checks 523,231 / 319,059 (Even / Odd), LEN 551,515 / 440,798, CMP 31,125
+  / 26,918, 2,840 phases, 0 violations of FSW, FMON, SWR, LEN, LENB, LEND, CMP, RUN, NM; kinds 13,857 / 19,061 / 5,104 / 2,384; at most 29
+  λ-runs and 32 λ^U-runs in one run (lib41); [MΦ] on 56,999 Even and 21,286 Odd (vertex, λ-run) pairs, max NM 62 / PCH 67 (alt_all) and
+  42 / 71 (l121reader_n41); controls X_SWR0 "233,008 (stretch, v, c) checks", X_LEN0 "42,128 (λ-run, c) checks", X_RUN0 "bites at 8,597
+  runs", X_LENfull never bit; strict quote check 15/16 (the miss is [MΦ]'s joined quote, N-C1; F8), SHIFT=1 control 0/16; max S1/S2 0.8.
+  Run counts: REFEREE's §C says "mine 6,778 runs", REFEREE-2's §C D12 "REFEREE: 10,778 runs (763 library + 15 pins + 6,000 + 4,000
+  random)"; F14 (lane reading) puts the difference at REFEREE's 4,000 MPHI runs; not reconciled by REFEREE. No signed statement uses any
+  count.
+- Signatures: REFEREE docs/referee/R-N5-COMPOSE.md (report 4896bc2e, 2026-10-29T12:51:21Z, sha1 3c29700d886cf1604fd49e19f2ab071ecca0d404
+  there; §C c6011b70, 13:09:45Z, sha1 25b431846675f10883d3831acd5abd38de5ddbee there; §C wording 1680010b, 13:17:12Z, sha1
+  5f7fa31269f160a3bf76f1ba6eed5af7aab12d03 there, = claude/referee head and trunk; successor 18; append-only after 4896bc2e): §1 CHECKED;
+  §2 SW-RETURN SIGNED; §3 LEN-MONO SIGNED; §4 Theorem COMPOSE SIGNED with |𝒫| as transitions; §5 COMPOSE-RUN SIGNED; §6 COMPOSE-NM
+  SIGNED as an implication, premise on λ-runs HOLDS; §7 DATA, reproduced exactly; quotes "quotes=16 bad=0"; E-item COMP-E1; notes
+  COMP-N1..N6; "No gap in the mathematics." REFEREE-2 docs/referee-2/R2-N5-COMPOSE.md (report 4b8afa95, 2026-10-29T11:59:33Z, sha1
+  3bc4f67cf8536f82c2c48e114c1e091cbd6a85db there; §C appended ee549524, 13:10:01Z, sha1 8a04defa57089c9eb271e77a22fa1df15b69a726 there, =
+  claude/referee-2 head and trunk; successor 20): §1 SIGNED; §2-§5 SIGNED; §6 SIGNED as an implication, λ-run replacement VALID; §7 DATA,
+  reproduced exactly; "No gap. No item FALSE."; notes N-C1..N-C5. INDEPENDENCE: REFEREE: "14 names matching "compose" under
+  docs/referee-2/, 12:40Z; names only", "None opened.", and it read REFEREE-2's report "only after this report was pushed (4896bc2e)";
+  REFEREE-2's name count of COMPOSE files on origin/claude/referee was 0 at 11:54:22Z and 11:59:23Z, and it first opened REFEREE's
+  report at 13:09Z, after 4b8afa95 was pushed ("Neither referee had read the other's report before writing its own."). No review
+  imported lane code.
+  §C (both): verdicts identical (REFEREE: "VERDICTS IDENTICAL: §2 SW-RETURN, §3 LEN-MONO, §4 Theorem COMPOSE, §5 COMPOSE-RUN SIGNED by both;
+  §6 COMPOSE-NM SIGNED as an implication by both"; REFEREE-2 C.1: "SIGNED by both" for §2-§6); joint gap map empty (REFEREE "JOINT GAP
+  MAP: EMPTY. ONE E-ITEM: COMP-E1"; REFEREE-2 "Joint gap map: no mathematical gap."); COMP-E1 agreed as the E-item by both (REFEREE-2 §C
+  C.2: "AGREED, it is an E-item"), done as F1 and F11; REFEREE §C C1-C11 classes C3 = N-C2 and C4 = N-C3 "optional", REFEREE-2 §C C.3
+  classes D2 = N-C2 and D3 = N-C3 as E; the Lead ruled them required (13:48Z), done as F2, F3; C.4 joint list items 1-4 answered in F1-F8;
+  REFEREE: "Nothing open on COMPOSE beyond COMP-E1. P*, P*^U and NM* are not bounded; G-N5-TIME stays OPEN."
+- TARGET.md diff: not a claim of TARGET.md section 1 or §2 (a reduction of N5's iteration count on every game to per-vertex path-set
+  changes P*, P*^U and, with MATCH-Φ, to carries NM*, NM*^U, which are not bounded; no running-time bound, no algorithm claim).
+  GAPS G-N5-TIME: open.
+
 ## Dead ends (kept; each with the exact obstruction or counterexample and the instance that killed it)
 - DE1 (2026-10-14): arXiv 2511.03752 v1 (van der Heijden), claimed O(n²(n+m)) algorithm. BROKEN: wrong regions on 4-vertex games
   CE1 (l-comp 19b5ce2, experiments/m2/counterexamples/ce1_4v.pg) and cex1 (referee 936d47c, docs/referee/scratch/cex1-*.pg).

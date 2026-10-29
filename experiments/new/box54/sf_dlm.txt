@@ -1,0 +1,14 @@
+dlm1_2.pg n 6 N5 2 SF 2 fb 0 cyc False SBC 1
+dlm1_3.pg n 8 N5 4 SF 3 fb 0 cyc False SBC 2
+dlm1_4.pg n 10 N5 4 SF 4 fb 0 cyc False SBC 3
+dlm1_5.pg n 12 N5 6 SF 5 fb 0 cyc False SBC 4
+dlm1_6.pg n 14 N5 7 SF 6 fb 0 cyc False SBC 5
+dlm1_7.pg n 16 N5 8 SF 7 fb 0 cyc False SBC 6
+dlm1_8.pg n 18 N5 8 SF 8 fb 0 cyc False SBC 7
+dlm2_2.pg n 22 N5 4 SF 3 fb 0 cyc False SBC 2
+dlm2_3.pg n 32 N5 7 SF 4 fb 0 cyc False SBC 3
+dlm2_4.pg n 42 N5 8 SF 5 fb 0 cyc False SBC 4
+dlm2_5.pg n 52 N5 11 SF 6 fb 0 cyc False SBC 5
+dlm2_6.pg n 62 N5 12 SF 7 fb 0 cyc False SBC 6
+dlm2_7.pg n 72 N5 13 SF 8 fb 0 cyc False SBC 7
+dlm2_8.pg n 82 N5 15 SF 9 fb 0 cyc False SBC 8

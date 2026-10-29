@@ -1,3 +1,39 @@
+# Handover check: L-SI (successor 26, written 2026-10-29T13:17Z by date -u (13:17:48); LANE-RESTART step 3; Opus 5.5, D18/L40)
+Every answer below was measured in this container; commands given. Predecessor: successor 25, session_01V5yGRX5qhrUa1vEEamVDc3.
+Its handover is notes/L-SI.md "## HANDOVER (successor 25, box 29)" (l-si 491cdd27; head fd2881fb).
+
+## 1. Branch, head, distance to trunk
+- Branch `claude/l-si`. Clone stale again: local HEAD da88a6d4 before the fetch ("up to date" per git status).
+  `git fetch origin claude/l-si` → fd2881fb; `git merge --ff-only` to it.
+- Trunk claude/vibrant-johnson-nxvvxo = 0a6d053f. `git rev-list --left-right --count HEAD...trunk` (at fd2881fb) → 3 ahead / 18 behind.
+  `git merge --no-ff` of trunk (no rebase) → 620b38a9; then 4 ahead / 0 behind. This file is the next commit.
+- Oink: tools/oink/build absent; `scripts/setup_oink.sh` (output to a scratch file) → exit 0.
+
+## 2. Open work and the next step of each (nothing running: `ps -eo pid,args | grep -c "[f]wclimb"` → 0)
+Pin: `sha1sum docs/si/P-N5-COMPOSE-box28.md` → e1b977aa (frozen 3ca0932d, unchanged).
+- STEP 1 (Lead 13:15Z): docs/si/P-N5-COMPOSE-fixes-box28.md (absent; to create): F-items for REFEREE COMP-E1 (|P| := #transitions
+  inside P) and COMP-N1..N6, REFEREE-2 N-C1..5, plus any §C item; quote check script. Next: read both reports, write, push after both §Cs.
+- STEP 2: FW-BF's trapped part (notebook queue 1): two-order switch-best for |D| = 1, then trap changes per frozen W-phase; weaker
+  target FW-D ≤ (|D|+1)(n−1). Queue 2 (reader-proof σ̄-change cut) left to L-NEW 32.
+
+## 3. docs/GAPS.md rows I own
+- None (`awk -F'|' '$4 ~ /L-SI/' docs/GAPS.md | wc -l` → 0). I work under G-N5-TIME (open, owner L-NEW; GAPS l.11).
+- RESULTS: `grep -o '^### R[0-9]*' docs/RESULTS.md | tail -1` → R84.
+
+## 4. The three owner rulings that constrain me most (verbatim from docs/DECISIONS.md; status docs/DECISIONS-INDEX.md)
+- D18 (DECISIONS.md l.333; index l.32: active): "Focus on N5 and work toward proving it. Explore novel approaches, especially by
+  connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions
+  where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and
+  open problems." Lead reading L40 (index l.33: active).
+- D16 (DECISIONS.md l.300; index l.28: active): "Then keep working as I told you to"
+- D1 (DECISIONS.md l.6; index l.5: active): "Never publish, post, email, submit or contact anyone outside the fleet. Anything external is
+  my decision."
+
+## 5. One trap that bit this lane before, and the check that prevents it
+- Trap: a stale clone (again: da88a6d4 "up to date" vs origin fd2881fb). Check: `git fetch` of both branches + rev-list count before
+  reading the notebook and before every push.
+- Trap (successor 25): a `pkill -f` pattern matching the calling shell kills it (exit 144). Check: kill by pid list only.
+
 # Handover check: L-SI (successor 25, written 2026-10-29T12:3xZ by date -u (12:22:34 at the start); LANE-RESTART step 3; Opus 5.5, D18/L40)
 Every answer below was measured in this container; commands given. Predecessor: successor 24, session_01V5yGRXKXxiTL7ZomUHUGcP.
 Its handover is notes/L-SI.md "## HANDOVER (successor 24, box 28)" (l-si 0e4169e2).
