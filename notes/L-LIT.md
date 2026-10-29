@@ -2,10 +2,11 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-29 ~10:4xZ (successor, Opus 5.5): T33 DONE docs/lit/T33-match-phi.md (+ T33-match-phi-check.py sha1 6853179b): Lemma MATCH-Φ
-self-contained (PROVED, L-LIT, unrefereed); ARV transfer: only ARV's free schedule (A3, Lemma 10 "there exists a best response
-sequence") fails for N5; (MON)/λ,τ fixed/DELTA/TOP-SHAPE admit an ascending counter with NM = 2^(k-2) - 1; NM = poly OPEN; gadget
-sketch §2.3 for L-RED; CONJECTURE NM-SEQ labelled for measurement. Before: T32 (a06dc24a). Next: Lead's routing.
+2026-10-29 ~11:0xZ (successor, Opus 5.5): T34 DONE docs/lit/T34-friedmann-vs-n5.md (+ T34-gateshut-check.py sha1 7c33508b): Lemma
+GATE-SHUT (PROVED L-LIT, unrefereed; 0 violations / 34,308 gate-state checks on H_n; 247 reopenings all where (H1)/(H2) fail);
+Friedmann's counters break at the hiding step ([F] Lemma 6.1(3), 6.2(2), §8 p.26, §8.2) because N5's τ shuts gates and S4a chooses
+by W; direct merge with T33 §2.3 BLOCKED; CONJECTURE NO-HIDE; design target (R1)-(R3) for any non-Friedmann gadget; no merged spec
+given (none verifiable). Before: T33 f587cb2f, T32 a06dc24a. Next: Lead's routing.
 
 ## Queue
 - Not opened (blocked or paywalled), needed only if a lane depends on them: Friedmann RAIRO 2011 (403); FHZ SODA/STOC 2011;
@@ -278,12 +279,16 @@ sketch §2.3 for L-RED; CONJECTURE NM-SEQ labelled for measurement. Before: T32 
 | arXiv 1103.0133 v1 (Ramachandran et al.) sha256 82204868e4b… | title + intro only (cites Busch-Tirthapura); not used | 2026-10-29 | T32 |
 | NOT opened (T32) | Busch-Tirthapura SICOMP 2005 (iastate TLS fail via proxy; Wayback reset x2); CFWW SIROCCO 2011 / TALG 2015; Van Gelder JCSS 1993; Gawlitza-Seidl ESOP 2007, FM 2008 (Springer); Tardos SIDMA 1988; Schurr-Szabó (not re-opened) | 2026-10-29 | T32 §8 |
 | ECCC TR06-067 (ARV), re-read for T33 | Lemma 10 p.8-9 (gadget states, "there exists a best response sequence"), p.10 "one after another", p.11 "Altogether this shows", p.3 tight PLS remark | 2026-10-29 | T33 §2.1 |
+| arXiv 1106.0778 v2 (Friedmann, LMCS 7(3:19)) sha256 46c96f44775aa2b0… (re-opened, = L-COMP's and L-NEW 29's file) | §4 p.6-7 (I^loc, I^glo, Lemma 4.3); §5 p.8 (1-sink, Lemma 5.1); §6.1 p.9-10 (simple cycle, Lemma 6.1, 6.2, hiding sentence); §6.2 p.11-12 (Lemmas 6.3, 6.4, purpose sentence); §8 p.26 intro; §8.1 Lemma 8.1; §8.2 stubborn cycle; §8.3 Table 6, Lemma 8.2; §8.4 Table 7, Fact 8.1, Lemma 8.3; §8.5 Thm 8.4 p.33 | 2026-10-29 | T34 |
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
 - T17 process dead end: subagent GitHub MCP search outside the repo scope was a rule breach (see Things only I know); never repeat it.
 
 - T32 (2026-10-29): planned O2 entry Gawlitza-Seidl (abstract interpretation strategy iteration) dropped: no open copy (Springer). Planned USO jump entry dropped: Schurr-Szabó not re-opened.
 - T32 E2/E3: least action (abelian networks) and the alternating-fixpoint template (W2) do not give SEG-COUNT. Obstruction: N5's in-segment dynamics are not locally abelian and violate (W2); instance seglast_kill_n29 (L-SI LAY box27 §4), t = 2: vertex 1's intermediate switch 9 → 23, no settling in either frame.
+
+- T34 (2026-10-29): first form of GATE-SHUT without (H1)/(H2) is FALSE on H_n random starts (rand4, n = 3, it 0: cycle node e2 above gate 1, path sets equal, length decides); fixed by (H1), (H2); 247 reopenings, all outside the hypotheses.
+- T34: direct merge of Friedmann's gadgets with T33 §2.3 blocked by GATE-SHUT + S4a's choice by W (hiding void).
 
 ## Corrections log
 - 2026-10-23 (T26): N8d-barrier.md §0 and R54 §0 put Lemma 4.75 / Thm 4.76 on p.187; opened PDF: printed p.186 (PDF p.202). Reported as caveat 4.
