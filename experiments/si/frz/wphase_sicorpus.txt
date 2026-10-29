@@ -1,0 +1,22 @@
+SKIPPED_input=1 WSIL=7 phases=345 wphases=464
+W-phase columns: L, game, a, b, WCH, NMw, PCHw, LONw, |D|, SBCH, n, m
+TOP (291, 'experiments/si/runlin/instances/runfam_K100.pg', 1, 292, 291, 3, 6, 2, 1, 9, 139, 345)
+TOP (211, 'experiments/si/runlin/instances/runfam_K60.pg', 1, 212, 211, 3, 6, 2, 1, 9, 99, 265)
+TOP (171, 'experiments/si/runlin/instances/runfam_K40.pg', 1, 172, 171, 3, 6, 2, 1, 9, 79, 225)
+TOP (135, 'experiments/si/runlin/instances/x135_n59.pg', 1, 136, 135, 5, 7, 1, 1, 11, 59, 218)
+TOP (124, 'experiments/si/runlin/instances/runfam_K20.pg', 1, 125, 124, 3, 6, 2, 1, 9, 59, 185)
+max L/n = 2.288 (135, 'experiments/si/runlin/instances/x135_n59.pg', 1, 136, 135, 5, 7, 1, 1, 11, 59, 218)
+max WCH/n = 2.288 (135, 'experiments/si/runlin/instances/x135_n59.pg', 1, 136, 135, 5, 7, 1, 1, 11, 59, 218)
+max NMw/n = 0.500 (12, 'experiments/si/root/out/swr_sc24_s7.pg', 0, 12, 12, 9, 12, 0, 0, 0, 18, 51)
+max PCHw/n = 0.667 (14, 'experiments/si/root/out/swr_sc24_s8.pg', 0, 14, 14, 6, 14, 0, 0, 0, 21, 70)
+max LONw/n = 0.250 (3, 'experiments/si/lwp/out/rl2_6281_0.pg', 0, 3, 3, 0, 1, 1, 0, 0, 4, 9)
+max L/(n+m) = 0.601 (291, 'experiments/si/runlin/instances/runfam_K100.pg', 1, 292, 291, 3, 6, 2, 1, 9, 139, 345)
+phase columns: L, game, i, j, FB, LWCH (lambda_W-changing non-fb), WSIL (W-silent non-fb), #W-phases, n
+PTOP (291, 'experiments/si/runlin/instances/runfam_K100.pg', 1, 292, 0, 0, 0, 1, 139)
+PTOP (211, 'experiments/si/runlin/instances/runfam_K60.pg', 1, 212, 0, 0, 0, 1, 99)
+PTOP (171, 'experiments/si/runlin/instances/runfam_K40.pg', 1, 172, 0, 0, 0, 1, 79)
+PTOP (135, 'experiments/si/runlin/instances/x135_n59.pg', 1, 136, 0, 0, 0, 1, 59)
+max LWCH/n = 0.448 (32, 'experiments/si/root/out/rl_soth_s12.pg', 1, 33, 0, 13, 0, 1, 29)
+WMON PASS
+CNW PASS
+R17W PASS

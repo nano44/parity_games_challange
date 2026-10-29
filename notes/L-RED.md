@@ -30,8 +30,11 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   (1) Binary counting on R109's family: lower gates must leave (tau -> h_i) when they should pay and return after the reset; both are
       U-improving tau moves inside one lambda-run (NM^U > 0). U_tau depends on tau only, so Odd has a fixed menu I_tau until it moves;
       S4b's W-choice against sigma decides when. Idea: Even's sigma as an adversarial pivot-rule controller for Odd's SI on G^d.
-  (2) Why topfix re-closes lower gates but never re-sets them (R109 §4): find the exact step where [F]'s Lemma 6.11 phase 3->4 fails
-      under N5 (s -> f1 never returns). tr.py-style trace: experiments/red/seg/gatestate.py, hnh1.py N topfix.
+  (1b) DONE (R110, pushed 12:47Z, c843ec8e): S4b CAN take a U-non-best improving switch (pivot_demo n 11, two engines, Oink); Odd's step = W-optimum vs
+      current sigma over {keep} U I_tau (stalls, single switches, non-best targets realisable). Open: can S4a keep re-creating
+      controlling sigma-configurations super-polynomially often inside one lambda-run (= NM*^U).
+  (2) DONE (R109 §4, pushed 12:41Z, 81ad9c7d): under pinned tau a set bit is a W-cycle node; W non-decreasing in a phase rejects lower closings
+      (hntop_n3 t 29-41: d3_1 -> e1 in I_sigma, W-cycle e1 = 8 < e2 = 16). Unary forced; binary needs tau-changes (NM*^U > 0).
 - Tools (experiments/red/seg/): r107.py (phases/runs/PL/RUN/per-vertex counts/second engine), s3embed.py (any explicit-start pin ->
   S3-start instance; check "same as image"), hnh1.py (H_n variants: gate, gateE, lane, top, topfix), gatestate.py (tau(e_i) history),
   mk3.py (failed gated chain v1). Carries: L-COMP experiments/n5-box18/nm.py GAME START (NM per vertex, phase), unmodified.
