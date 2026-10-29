@@ -167,3 +167,69 @@ No gap. Notes N-FBCK-1..5.
   - Corollary (ii) SIGN as an implication, with σ̄|V in "the run unchanged". READER-INV covers only a single Odd reader (N-FBCK-1).
   - The closure of K is needed (open1 control); FB-RISE^K's +1 is the right step (plus2 bites).
 - NEEDS: Lead: the §C word (REFEREE's R-N5-FBCK.md exists; not opened); route N-FBCK-1..5 to L-NEW.
+
+## §C. Comparison with REFEREE's report (written on the Lead's word of 2026-10-29 01:03Z; from 01:06Z by date -u)
+Object: docs/referee/R-N5-FBCK.md at origin/claude/referee f2d22ad7 (sha1 913f31be56428f515652a482750cbd8c8cd3e67c), REFEREE successor 17.
+Opened for the first time after my report was pushed (30237ebb).
+### C.1 Verdicts: IDENTICAL
+| item | REFEREE | REFEREE-2 | joint |
+| --- | --- | --- | --- |
+| K1-K3 (with LEV^K_C ≥ 0, non-decreasing; 𝒞^K_f the image of 𝒞_f) | SIGNED | SIGN | SIGN |
+| FB-RISE^K | SIGNED | SIGN | SIGN |
+| SAT^K | SIGNED | SIGN | SIGN |
+| SAT-FB^K | SIGNED | SIGN | SIGN |
+| SAT-FB1^K | SIGNED | SIGN | SIGN |
+| Theorem FB-C^K | SIGNED | SIGN | SIGN |
+| Corollary (i) | SIGNED | SIGN | SIGN |
+| Corollary (ii) | SIGNED as an implication, implicit step (σ̄ on old vertices) made explicit AND PROVED (FBCK-N1) | SIGN as an implication, with σ̄\|V read into "the run unchanged" (N-FBCK-1) | SIGN as an implication; the σ̄ step is proved (C.3) |
+| quotes | 9/9 | 9/9 | 9/9 |
+### C.2 Joint gap map: EMPTY
+Neither report has a gap.
+### C.3 Notes, side by side
+- FBCK-N1 = N-FBCK-1, and REFEREE goes further. I wrote that "the run on the old vertices unchanged" must include σ̄|V, and treated that as an
+  assumption for |H| ≥ 2. REFEREE PROVES σ̄′|V = σ̄ (and Ξ′|V = Ξ as triples) from the first hypothesis alone (no old → H edges), by extending
+  READER-INV's one-state Lemma (a) to a set H.
+  - I checked the argument step by step against SPEC S1 (i)-(vi), and it holds:
+    - (i), (v): every DFS from an old vertex follows successors, so it sees only old vertices.
+    - (ii): a cycle node in H has a reach set inside H, so it kills only H vertices.
+    - (iii) at an old cycle node v, H vertex u: for Even-liked u, all old vertices of R reach v without passing u, so they lie in M. u is added
+      only to H vertices' paths. The deleted edges leave M, and an old q's edges outside M go outside R, so they are already absent. For
+      Odd-liked u, M (vertices reaching u) lies in H.
+    - (iv): the longest-path recursion at old vertices reads old successors. The BFS over predecessors discovers H vertices only from H
+      vertices, so the FIFO order of old vertices, and their first discoveries, are unchanged.
+    - Ranks are relabelled in an order-preserving way.
+  - I also checked it in data: own sbar_ext.py, random G plus random H with any owners and out-degrees (Even H vertices of out-degree ≥ 2
+    included) and random σ. S1's σ̄ and Ξ (cycle node, P as a vertex set, length) agree on V in 100,000 / 100,000 cases (h = 4 and h = 10).
+    Control MUT=backedge (one old → H edge) gives 8,203 differences in 20,000 cases.
+  - So ACCEPTED: my N-FBCK-1's "σ̄|V must be read in" is SUPERSEDED (it follows from hypothesis 1). Its other half stands for both of us:
+    READER-INV's statement covers one Odd reader. For a general H, the third bullet (run, fallbacks and phases unchanged) is an assumption, with
+    (R) read for every Odd vertex of H.
+  - The joint wording for the fixes file is REFEREE's FBCK-N1.
+- FBCK-N2 (the K gain is rare in natural data) AGREED, and my data extend it.
+  - My lib41: Σ |𝒞_f| / Σ |𝒞^K_f| = 299 / 297 (REFEREE 261 / 259).
+  - The gain appears when vertices outside K are added: lib41 + 5 (no old → new edges), 414 → 257 in 76 of 205 phases.
+  - Same reading: the K frame's use is reader-proofness, and the open case of §3 (l121_cf_emb12, 8 = f) is where it does not help.
+- FBCK-N3 (SAT^K drops R71's window; SAT-FB1^K needs only a later K-C-state) AGREED. It is my §1.3 "the 4n(n − 1) window is not used".
+- FBCK-N4 (READER-INV has one referee and is not landed; Corollary (ii) stays an implication) AGREED (my verdict row and §1.5).
+- REFEREE's K ≠ ∅ ⇒ n_K ≥ 2 remark: AGREED (an Even choice vertex has two distinct successors in K). It is not in my report.
+- Notes of mine REFEREE does not have:
+  - N-FBCK-2 (the transfer is a restriction; the single non-trivial step is SAT-FB^K's Iσ_{t+1} = ∅ via K1 + K2);
+  - N-FBCK-3 (thin: SAT-FB^K's "no later K-C-state" branch never occurs alone; the bound never approached);
+  - N-FBCK-4 (premise list matches R71 / R73's landed claim lines);
+  - N-FBCK-5 (my §4 counts differ from the lane's by start choice).
+  - None conflicts with REFEREE's report.
+- Controls compared. Common: + 2 on FB-RISE^K (both bite). Different:
+  - REFEREE's MUT3 (n_K // 2 per configuration) bites; my nk1 (n_K − 1) does not. Both say the bound has slack, by a factor < 2 at the worst
+    configuration (0.78 n_K).
+  - REFEREE's MUT4 (S4c minimum) and my open1 (non-closed K′: SAT / SATFB / SATFB1 bite) and tau (Odd frame cut to τ) test different
+    hypotheses. Between them they show the S4c rule, the closure of K and the configuration frame each carry weight.
+  - REFEREE's MUT2 (configuration at t + 1) does not bite; I did not run it.
+- Data reproduced by both: l121_cf35_39 (|𝒞_f| 8, |𝒞^K_f| 5, n_K 40), l121_cf_emb12 (8 = f, n_K = 41), l121_a (5). Max fallbacks per
+  K-configuration: 0.78 n_K (farrise25_n32, REFEREE's named set) and 0.75 (wd16_s2 and ccl_fbx_n32 + 5, mine). farrise25_n32 is not in my named set.
+### C.4 Joint list for L-NEW's fixes file
+FBCK-N1 (REFEREE's wording, with its proof; supersedes the σ̄ half of N-FBCK-1), FBCK-N2, FBCK-N3, FBCK-N4, N-FBCK-2..5. No verdict changes.
+### C.5 DONE / FINDINGS / NEEDS
+- DONE: this §C; R2-N5-FBCK/sbar_ext.py (the extension check, control MUT=backedge); logs/sbar_ext_*.txt.
+- FINDINGS: verdicts identical, joint gap map empty. REFEREE's proof that σ̄′|V = σ̄ for any H with no old → H edges is checked (argument + 100,000
+  cases, control bites), so Corollary (ii) needs only the run / fallback / phase hypothesis.
+- NEEDS: Lead: route the joint list (C.4) to L-NEW.
