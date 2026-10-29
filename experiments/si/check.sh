@@ -471,3 +471,13 @@ for k in WSOFF HSOFF HSR WSL SS NOSINK; do grep -q "^$k PASS" <<<"$o"; done; gre
 python3 -I lwp/seglast.py --one lay/instances/wgrow_kill_n90.pg lay/instances/wgrow_kill_n90.start | grep -q "SEGLAST PASS"
 python3 -I root/n5bcmp.py lay/instances/wgrow_kill_n90.pg lay/instances/wgrow_kill_n90.start | grep -q "n5b iterations 9 fallbacks 1 states 10 | n5x states 10 | identical state sequences: True"
 echo "lay (box 27: wgrow_kill_n90 kills W-GROW, n5b identical; sink lemmas, H-GROW, SEG-LAST hold): PASS"
+# box 27: lay/instances/hgrow_kill_n89 kills H-GROW (H-sinks switch to target at 1 of 7 steps) while W-GROW, SINK-GROW and SEG-LAST hold;
+# no step has a frontier vertex; n5b gives the identical state sequence.
+echo "998a4a5e770c97b409ebf9f0a9d0ca08fac9bcbd  lay/instances/hgrow_kill_n89.pg" | sha1sum -c --quiet
+echo "5895810a61760e4180d70202911768bd75f2beea  lay/instances/hgrow_kill_n89.start" | sha1sum -c --quiet
+o=$(python3 -I lay/wsink.py --one lay/instances/hgrow_kill_n89.pg lay/instances/hgrow_kill_n89.start)
+grep -q "hsinks=21 segs=1 steps_hsink_switch=1 steps_unready_wsink=0 steps_with_bothsink=0 trans=7 wsinks=14 wsinks_ready=14" <<<"$o"
+if grep -q "FAIL" <<<"$o"; then echo "lay: unexpected failure on hgrow_kill_n89"; exit 1; fi
+python3 -I lwp/seglast.py --one lay/instances/hgrow_kill_n89.pg lay/instances/hgrow_kill_n89.start | grep -q "SEGLAST PASS"
+python3 -I root/n5bcmp.py lay/instances/hgrow_kill_n89.pg lay/instances/hgrow_kill_n89.start | grep -q "n5b iterations 13 fallbacks 0 states 14 | n5x states 14 | identical state sequences: True"
+echo "lay (box 27: hgrow_kill_n89 kills H-GROW, n5b identical; W-GROW, SINK-GROW, SEG-LAST hold): PASS"

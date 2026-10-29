@@ -1,4 +1,4 @@
-# N5-LAY (box 27): frame-wise sinks; SEG-LAST reduces to SINK-GROW (a frame-wise settled set grows at every step); W-GROW DEAD, H-GROW open
+# N5-LAY (box 27): frame-wise sinks; SEG-LAST reduces to SINK-GROW (a frame-wise settled set grows at every step); W-GROW and H-GROW DEAD
 L-SI successor 23 (Opus 5.5; D18, Lead reading L40). Lead's brief 2026-10-29 08:10Z, STEP 1: «the layered K-REDUCTION (queue item 1):
 prove CONJECTURE SEG-LAST without (H4′_rel) (GEN_W may stay), or find a SEG-LAST failure inside a REL segment. ... If a proof needs a new
 hypothesis, state it and measure how often it holds on the library and on the kill instances.» Working note, unrefereed, not frozen. Not a
@@ -12,7 +12,7 @@ DATA / READING / DEAD. Counts are TRANSITIONS. Tools: experiments/si/lay/ (wsink
 | §2 | Lemmas W-STICK, H-STICK, READY, SINK-OFF; Theorem SINK-STEP: an arena-ready W-sink, and an H-sink that switches to its target, switch at t for the LAST time; W-GROW(t) ⇔ some W-sink is arena-ready at t | PROVED (lane) |
 | §2 | Corollary: SEG-LAST without (H4′_rel) on every REL segment where W-GROW or H-GROW holds at each step (GEN_W kept); contains LAST-STEP (box 26 §7) and K-REDUCTION (box 26 §8) | PROVED (lane) |
 | §3 | W-GROW and H-GROW at every step of the library (14,103 steps, 3,134 segments) and of the three box-26 kill pins, including the 4 steps with no frontier vertex; the box-26 N_t-version (MUT) fails there | DATA |
-| §4 | W-GROW DEAD (lay/instances/wgrow_kill_n90, t = 1, two engines); CONJECTURE H-GROW and SINK-GROW (W-GROW ∨ H-GROW at each step) survive it; kill searches on H-GROW | DEAD; CONJECTURE; DATA |
+| §4 | W-GROW DEAD (lay/instances/wgrow_kill_n90, t = 1) and H-GROW DEAD (lay/instances/hgrow_kill_n89, 6 of 7 steps), both two engines; dual obstructions (a W-sink waits for its target's honest value; an H-sink waits for its W-chain); CONJECTURE SINK-GROW (W-GROW ∨ H-GROW at each step) survives both; kill searches on SINK-GROW | DEAD; CONJECTURE; DATA |
 | §5 | where a proof of W-GROW stands; the remaining obstruction (a zig-zag of unready W-sinks) | READING, OPEN |
 
 ## 0. Setting and premises
@@ -75,8 +75,8 @@ RO_b, σ̄_t = σ̄_b on [a, b] (REL); every cycle of CW_b (CH_b) is a W-cycle (
   vertex) vertex 35 is a ready W-sink (σ_0(35) = 46, y = 50; jW(35) = 50 is W-settled from 0 but H-settled only from 1, which is why
   box 26's WX-ARENA, phrased on N_t, missed it); 35 switches at 0 for the last time.
 - So: SEG-LAST without (H4′_rel) is REDUCED to CONJECTURE SINK-GROW («in a REL-admissible segment with GEN_W, at every transition the
-  W-settled part or the H-settled part of E_b grows»). GEN_W is still used (W-STICK). W-GROW alone is DEAD (§4); CONJECTURE H-GROW («the
-  H-settled part grows at every transition», equivalently «some H-sink switches to its target at every step») is open and implies SINK-GROW.
+  W-settled part or the H-settled part of E_b grows»). GEN_W is still used (W-STICK). W-GROW alone and H-GROW alone are DEAD (§4).
+  SINK-GROW also gives b − a ≤ |U^W_a| + |U^H_a| ≤ 2|E_b|, and (with SINK-STEP) SEG-LAST, so b − a ≤ |E_b| ≤ n − 1.
 
 ## 3. DATA (lay/wsink.py; WSOFF/HSOFF = SINK-OFF, HSR = READY at H-sinks, WSL = W-STICK, WSR = W-GROW, SS = neither W-GROW nor H-GROW
 ## by a sink switching to target; MUT=1 takes the sinks of box 26's N_t instead of U^W_t and must bite)
@@ -102,8 +102,19 @@ RO_b, σ̄_t = σ̄_b on [a, b] (REL); every cycle of CW_b (CH_b) is a W-cycle (
   both switch for the last time. Two engines (n5b SPEC state sequence identical; improving sets identical at t = 0, 1, 2); W-plays
   recomputed from (σ_t, τ). At t = 1 the H-sink 55 switches 40 → 48 = its target (H-GROW holds), 43 switches 37 → 70 (last); SEG-LAST holds.
 - So the W-frame alone does not carry SEG-LAST: an unready W-sink waits for its target's HONEST value, exactly the case of §5 first bullet.
-- H-GROW climbs (OBJ=H: kill = H-GROW failure, or SINK-GROW / SEG-LAST / sink-lemma failure; W-GROW failures shape the score) from
-  wgrow_kill_n90, karena_kill_n71, cycset_kill_n60 and a b5_os_n24 descendant: results below.
+- H-GROW is DEAD (DEAD.md box 27): OBJ=H (kill = H-GROW failure) from cycset_kill_n60, step 1,208: lay/instances/hgrow_kill_n89.pg (n 89,
+  sha1 998a4a5e…; .start sha1 5895810a…). Segment [1, 8], 7 steps, H-GROW fails at t = 1..6, a frontier vertex at NO step:
+  | t | ready W-sinks (all switch, last) | H-sinks (σ, target, jW) | other switchers |
+  | --- | --- | --- | --- |
+  | 1 | 38, 66, 70 | 1, 46, 73 (27, 23, 34): stay | none |
+  | 2-6 | 49; 64; 77, 78; 22; 28, 33 | the same three: stay | none |
+  | 7 | 4, 34, 62, 80 | 1, 46, 73 switch to 23 (last) | 55 (last) |
+  A W-frame snake settles one W-sink per step; the H-sinks' W-chains end at 34, which settles only at t = 7. Two engines (n5b state
+  sequence identical; σ̄ maps and improving sets equal n5b's at all 14 states).
+- The two kills are dual: a W-sink can wait for its target's HONEST value (wgrow_kill_n90), an H-sink can wait for its W-chain
+  (hgrow_kill_n89). CONJECTURE SINK-GROW says the frames never wait on each other at the same step. SINK-GROW climbs (OBJ=S: kill = SINK-GROW,
+  SEG-LAST or sink-lemma failure; shaping: W-/H-GROW failures and 100 // (1 + support), support = ready W-sinks + H-sinks switching to
+  target) from hgrow_kill_n89 (two seeds), wgrow_kill_n90, karena_kill_n71: results below.
 
 ## 5. Where a proof of W-GROW stands (READING; OPEN)
 - An unready W-sink w at t: y_w ∈ S^W_t, and by READY y_w ∉ S^H_t, so jH(w) ∈ U^H_t; and (SW) at w's final switch t_w > t forces
