@@ -1,0 +1,2 @@
+N 6 iterations 1198 fallbacks 0 cycle False
+N 7 iterations 2414 fallbacks 0 cycle False

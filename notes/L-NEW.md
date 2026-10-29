@@ -1,6 +1,12 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Box 62 log (successor 34; Lead 18:39Z heads-up on L-RED 29's dwN, unpushed: I rebuilt it myself, box59/dw.py)
+- docs/new/N5-DW-box62.md. dwN = fcN + Even repeater u_i on v_i -> r_(i+1) (prio 3; others +2(N-1)+2). N5-SF iterations 134..2414, 4846 at
+  N = 8 = 19*2^N - 18 (L-RED's numbers reproduced); F and I^glo same step counts, trajectories differ from step 72. sbar = full binary
+  counter (dwopen BINARY), every set has the lane-first latency gap. SBC_G = 2^(N+1)-N-2; max Gflips 2^N - 1, 255 > 217 at N = 8.
+  DEAD: SF-POLY, I-CUBIC, SBCG-QUAD, PV_G. Plain N5 on dw_3..6: 41, 47, 55, 62 (survives here).
+
 ## Box 61 log (successor 34; Lead 18:18Z: bound I directly; I-CUBIC; step-structure potential)
 - docs/new/N5-DEPTH-box61.md. (a) DATA 733 games (S3 starts): max I/n^3 0.031 (n 4), 0.0021 for n >= 20 (theta_thc24); CONJECTURE I-CUBIC
   I <= n^3/32. (b) Lemma DEPTH-COUNT PROVED (lane; lex-convexity of key_K blocks): depth <= K records <= n^2 (n+1)^K; Theorem DEPTH-BOUND
@@ -675,7 +681,7 @@ Every answer measured from the repository; commands named.
 ### IN FLIGHT: nothing running.
 ### NEXT (the Lead decides): the informative count is I (cubic on fcN). Options: relcheck.py / iteration counts on L-RED 28's nested
 families; the finer (play-)relevance version of SF-RED-R (§6.2, OPEN); an I-degree bound via stretch length x SBC^R.
-### Owned conjectures: SF-POLY, SBC-QP, GROUP, EXIT-without-NT, CARRY-CUT, PV_G, LOOP, I-CUBIC, SBCG-QUAD (OPEN); PV, PV-PLAY, value-prefix potentials DEAD.
+### Owned conjectures: GROUP, EXIT-without-NT, CARRY-CUT, LOOP (OPEN); SF-POLY, SBC-QP, PV, PV-PLAY, PV_G, I-CUBIC, SBCG-QUAD, value-prefix potentials DEAD (dwN).
 
 ## Resume point (HISTORY; successor 33, FINAL after box 58, written 2026-10-29 ~17:0xZ by date -u)
 Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context ~375k at writing. PARKED (Lead's option (C), box 58).
