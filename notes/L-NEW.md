@@ -515,6 +515,7 @@ Successor 31 (Opus 5.5, D14/D18, L40), session_01V5yGRXWajH5ibiaahj3biF. Context
   b5_o11 t 7; two engines). Lead 11:47Z: FB-LIN off the critical path (L-SI COMPOSE-RUN). §3b SWCAR 5 → 7 (swc2_vc7).
 - docs/new/N5-PIECECAR-box50.md: carries per vertex live in σ̄-frozen pieces (runquad G = 0, NM = K; b5_os 11); block = two-LP pricing in
   G_σ̄ (R17 limit (ii)); route NM_P(v) ≤ Φ_dσ(P)(m) − 1, phase VC 3 on runquad K = 3..20.
+- N5-VC §6 (Lead 12:22Z): phase VC vs |D|: ≤ 4 everywhere (b6_xl2_n32 4 at |D| 1; ladders 1 at |D| 50); CONJECTURE VC-PHASE stated.
 ### IN FLIGHT
 - Nothing running (climbs vpf4, vsym2, swc1 stopped at handover; their logs and _best files are in experiments/new/box50/out/).
 ### NEXT (successor 32; the Lead decides)

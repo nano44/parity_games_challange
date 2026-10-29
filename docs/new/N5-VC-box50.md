@@ -128,6 +128,33 @@ execution's joint (σ, τ) family. SCOPE=ent uses run ENT.
   exactly up to quasi-polynomial factors (Corollary (b), (c)). The constant form is CONJECTURE VC-N5 / VC-RUN, OPEN with DATA ≤ 4. The log form
   is necessary for polynomial N5 and sufficient only for quasi-polynomial.
 
+## 6. Phase VC against |D| (Lead 12:22Z, item (a)); CONJECTURE VC-PHASE (item (b))
+Tool: box50/phvc.py. Per phase P: dσ(P), len(P), |D| := max over states of P of |D_t| (D_t = Odd vertices with σ̄_t ≠ τ, L-SI's
+common.Dset), n. Logs: box50/phvc_named.txt, phvc_alt.txt, phvc_alt_start.txt.
+| instance / corpus | phase | |D| | len(P) | n | dσ(P) |
+| --- | --- | --- | --- | --- | --- |
+| n5-exhaustive/instances/b6_xl2_n32 (S3 start; L-SI 0e4169e2: (n − 1)(|D| + 1) DEAD) | [4, 87] | 1 | 83 | 32 | 4 |
+| si/orlens/instances/s_elim24_final (S3 start) | [4, 63] | 1 | 59 | 24 | 3 |
+| runquad_K3_m4_n54 / runquad_K8_m30_n192 (L-RED) | [0, 20] / [0, 263] | 12 / 32 | 20 / 263 | 54 / 192 | 3 / 3 |
+| alt_all default starts, 454 phases: longest (xsn91_n48, returns_ph64, j4_n40, b6_xl_n48) | | 1 | 112, 103, 103, 94 | 48, 64, 40, 48 | 4 |
+| alt_all pinned starts, 457 phases: longest (long121_n40, lend107_n32) | | 3 | 121, 108 | 40, 32 | 4 |
+| largest |D| (ladderd0 / ladderent k48, k24; nep22f_n64) | | 48-50, 24-26, 26-27 | 49, 25, 18-21 | 156, 84, 64 | 1, 1, 3 |
+| overall (both start sets) | | ≤ 50 | ≤ 121 | | ≤ 4; ≤ 4 at |D| = 1 |
+- CONJECTURE VC-PHASE: dσ(P) = O(1) on every phase of N5 on every game (DATA: ≤ 4 on every phase measured, whatever |D|; 3 on all of
+  runquad K = 3..20; climbs: 4). With P-N5-VC (b) it gives len(P) ≤ Φ_c(m) − 1, hence NM_P(v), PCH_P(v) and SW_P(v) ≤ Φ_c(m), with no
+  dependence on |D| or G(P). DATA reading: the phase VC does not follow |D|. The large-|D| phases (ladders) have dσ(P) = 1, and the
+  dσ(P) = 4 phases have |D| ≤ 3.
+- What a proof would need (READING). Inside a phase τ is fixed, and σ_{t+1} is the W-optimum (against τ, in the one-player game G_τ) over
+  the arena A_t = {σ_t} ∪ Iσ_t. So the visited family is the image of a sequence of arenas under ONE choice map A ↦ opt_τ(A), and the
+  sequence is doubly monotone: W non-decreasing (W-MONO) and Ξ strictly increasing (R15). Shattering d edges at d Even vertices needs the
+  d vertices to oscillate with independent relative phases. The only coupling in hand is per vertex: SW-RETURN (L-SI COMPOSE: a return of
+  v to c costs a Ξ-rise of c) and H-STICK / W-STICK (L-SI LAY: inside a REL segment no return to the final successor). A proof needs a
+  coupling ACROSS vertices. One candidate: if two Even vertices u, v both oscillate, the W-optimality of opt_τ over nested arenas forces
+  their switch times to interleave in a fixed pattern (the arena of a later step contains the earlier step's choice; W-optimal choices
+  on nested one-player arenas are monotone, an exchange property). That would forbid one trace pattern on a pair, and a forbidden pattern on
+  pairs bounds the VC by 2 or 3 at most. NOT proved, and the arenas are not nested in general (Iσ_t moves with Ξ_t). This is the
+  structure a proof must find.
+
 ## DONE / FINDINGS / NEEDS
 - DONE: this note; tools experiments/new/box50/ (vcrun.py, vcclimb.py, dunion.py, mkstart.py, laps.py); logs laps_alt.txt, laps_alt_start.txt, vc_alt.txt, vc_alt_start.txt,
   vc_rand.txt, vc_mut_K10.txt, families.txt, oink_small.txt, oink_big.txt, out/*.log; pins out/vpf3_vc4.{pg,start}, out/ent1_vc6.{pg,start}
@@ -138,4 +165,6 @@ execution's joint (σ, τ) family. SCOPE=ent uses run ENT.
   executions and 2,000 random games; flat on every scaling family; climbs reach 4 (run) and 4 (exec), no 5. (3) DEAD: run VC ≤ 3
   (vpf3_vc4) and ENT-RUN ≤ 4 (ent1_vc6: one edge entered 6 times in a run of 17, a repeated lap). (4) READING: the data cannot
   separate O(1) from O(log n), and the log form gives only quasi-polynomial.
+- (§6) CONJECTURE VC-PHASE (dσ(P) = O(1) per phase): DATA ≤ 4 on every phase, including |D| = 1 (b6_xl2_n32 4, s_elim24_final 3) and
+  |D| up to 50 (ladders: 1); runquad 3. A proof needs a cross-vertex coupling of oscillations under S4a's W-choice (§6).
 - NEEDS: none from the owner.
