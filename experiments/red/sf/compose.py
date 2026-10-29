@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """L-RED: compose two fcN blocks (sbev.py N --drop fc). Block B keeps its priorities; block A's priorities are shifted above B's
 (by an even offset, parity kept). Wiring MODE (comma list): 'sink' = B's FinalSink p_B -> A's StartEven s_A instead of B's q;
-'root' = B's DecLaneOddRoot d gets an extra edge to s_A; 'sinkE' = p_B becomes Even with edges [q_B, s_A].
+'root' = B's DecLaneOddRoot d gets an extra edge to s_A; 'aroot' = A's d gets an extra edge to s_B; 'athru' = A's d -> s_B only; 'sinkE' = p_B becomes Even with edges [q_B, s_A].
 Usage: compose.py NA NB MODE > game.pg"""
 import sys, os, re
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -25,6 +25,9 @@ def compose(NA, NB, mode):
     if "sink" in mode: G[pB][2] = [sA]
     if "sinkE" in mode: G[pB][1] = 0; G[pB][2] = [qB, sA]
     if "root" in mode: G[dB][2] = sorted(set(G[dB][2] + [sA]))
+    sB = lab(B, "s"); dA = nb + lab(A, "d"); xA = nb + lab(A, "x")
+    if "aroot" in mode: G[dA][2] = sorted(set(G[dA][2] + [sB]))        # A's lane root may read B's start (N-COND attempt)
+    if "athru" in mode: G[dA][2] = [sB]                                # A's lane root ONLY through B
     out = [f"parity {len(G) - 1};"] + [f'{i} {p} {o} {",".join(map(str, sorted(set(s))))} "{d}";' for i, (p, o, s, d) in enumerate(G)]
     return "\n".join(out) + "\n"
 

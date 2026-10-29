@@ -36,6 +36,9 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
       (f_i -> c on adjacent low bits, switchbestexp itself) lets N5-SF route into stale escapes (R114 §4) and the counter short-cuts.
       Idea not built: two fc blocks GATED in sequence (compose.py wires them only in parallel: SBC adds).
   (3) Optional: randomedgesubexp grows super-linearly in iterations (it/n 1.1, 1.8, 2.9 at n 84, 189, 354); measure N 5, 6.
+- 18:0xZ addenda: PV killed as stated by fcN+observer (fo_4 08b6583e739e, fo_6 e6ad362a05d5; o flips 198 > 113, 492 > 163).
+  Gated nesting: compose.py aroot/athru wirings collapse; exact obstruction = Even-won loop d_A -> s_B -> ... -> p_B -> s_A -> ... -> d_A
+  (LAM 1); next design must break that loop with an Odd choice or odd top priority (R115 §2c).
 - Things only I know: see "Successor 28" above. Never pkill -f a pattern that appears in your own command line (it kills the shell).
 
 ## Successor 28 (session_01V5yGRXarwpixU1C9hcL21Z, Opus 5.5, D1/D18; started 2026-10-29 15:33Z, date -u)
