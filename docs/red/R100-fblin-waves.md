@@ -79,14 +79,27 @@ Concretely (signed weights w(v) = ±2^rank(v), a = w(c_m), all three designs bel
   starts the next wave, runfam_K10: the corridor 37-48 is walked three times). The fallback analogue needs, in addition, W to favour the
   current direction at every wave. Not built (OPEN, §5).
 
-## 4. DATA: climbs (no kill; INTERIM, climbs still running at this push, 01:2xZ)
+## 4. DATA: climbs (no kill)
 - chainclimb.py (fixed chain of m Even vertices + 14 mutable gadget vertices, seeded with the level-1 template, TAUSTAR, fitness = excess
-  of f over m at m = 6 and m = 12): best f = m + 5 at both sizes (e.g. f(12) = 17 at n = 26). Extra gadget vertices add one fallback each;
-  no slope above one per chain vertex, so no second wave.
-- topo2.py (priorities and optional edges on the fixed two-wave topology of §3 (O-B)): best f = 2 at m = 6 and 12 (the topology's waves
-  do not even start under the seed priorities; see §3 for why no priority choice can give both).
-- fbclimb.py (fixed n, fitness f, TAUSTAR) from lvl1 + 14 spare vertices (n 51, f 30), runfam_K10 (n 49, f 0), rise_fb38_n48 (n 48, f 35
-  from TAUSTAR, 37 reached), farrise25_n32 (n 32, f 25): running; results in the next push.
+  of f over m at m = 6 and m = 12; 4 seeds, ~5-25 min each): best f = m + 5 at both sizes (f(12) = 17 at n = 26). Extra gadget vertices add
+  one fallback each; no slope above one per chain vertex, so no second wave. An earlier fitness (slope f(12) − f(6)) was gamed by breaking
+  the m = 6 instance (f(6) = 0); replaced.
+- topo2.py (priorities and optional edges on the two-wave topology of §3 (O-B), TAUSTAR): best f = 2 at m = 6 and 12.
+- fbclimb.py (fixed n, fitness 1000 f + total fallbacks; mutations: priority, edge add / delete, Even start entry). Runs of 25-40 min (the
+  first batch was cut at ~25-30 min by a container restart; the scratchpad survived):
+  | seed | start | n | f at seed | best f | best f / n | shape of the best |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | lvl1 + 14 spare vertices | TAUSTAR | 51 | 30 | 31 | 0.61 | one wave |
+  | runfam_K10 (l-si) | TAUSTAR | 49 | 0 | 1 | 0.02 | runfam's waves are S4a waves; no fallback structure to grow |
+  | rise_fb38_n48 | TAUSTAR / own (S3) | 48 | 35 / 37 | 37 / 37 | 0.77 | one wave (unchanged) |
+  | farrise25_n32 | TAUSTAR / own (S3) | 32 | 25 / 25 | 25 / 25 | 0.78 | one wave (unchanged) |
+  | pl130_n40 (R97) | own | 40 | 11 | 15 | 0.38 | short carries |
+  | long121_n40 (R96-R98) | own | 40 | 8 | 25 | 0.63 | ONE wave: fallbacks at iterations 13-35 consecutive (23 in a row, phase of 36); long121's multi-carry structure is gone |
+- Reading: f-climbs from every seed converge to the single-wave shape (f ≤ 0.78n). From long121 the climb trades the 8 reused carries for one
+  long wave. No climb produced vertex reuse at scale. The climbs do not test the corridor-gate design of §5.
+- Misread caught during the box: an interim look at the logs credited f = 31 to the farrise25 climb (it would have been 0.97n); `tail -q`
+  had printed the lvl1 climb's line (n 51). Re-running fbphase.py on the saved farrise game gave 25. Every number above is re-run
+  from the saved .pg / .start.
 
 ## 5. OPEN and next
 - The fallback analogue of L-SI's runfam: one Odd gate whose options are the two ends of a corridor, so that each wave's arrival flips the
@@ -97,4 +110,14 @@ Concretely (signed weights w(v) = ±2^rank(v), a = w(c_m), all three designs bel
   designs where S4a cascades run between fallbacks. A carry cell that detaches Θ(n) vertices per carry is the open design.
 
 ## DONE / FINDINGS / NEEDS
-- Interim; filled at the end of the box.
+- DONE: R100 (this file) with tools experiments/red/fb/ (fbphase.py, dsl.py, lvl1.py, chainclimb.py, topo2.py, fbclimb.py); check.sh pins
+  lvl1 (f = 8 at m = 8) and fbphase.py's library maxima (37, 25). Pushes 674fb359, 469acd9c, and this one.
+- FINDINGS:
+  - The FB-LIN record (37 = 0.77n) and farrise25 (0.78n) are each ONE detachment wave under one configuration; a 7-vertex template gives
+    f = m at n = m + 7 for every m.
+  - A kill needs vertex reuse across two configurations. Four second-wave designs die on one inequality pair (in-wave safety p < 0, post-wave
+    rise p > 0 on the same reader prefix): DESIGN OBSTRUCTION (READING), not a theorem.
+  - W is not the obstacle: an Even reader on a gate's τ branch can turn W into an Even-won W-cycle after a wave, with τ fixed.
+  - f-climbs from six seeds converge to the one-wave shape (max 0.78n); from long121 the climb gives up reuse for one long wave (8 → 25).
+  - FB-LIN: no kill, CONJECTURE stands; data max unchanged at 0.78n.
+- NEEDS: none from the owner.
