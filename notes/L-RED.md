@@ -41,6 +41,11 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   to N = 8 only); SBC exact to N = 9; Oink OK N 3..7. sf2 N = 10 was running in the container (scratch big_sf2_10.txt); if lost, re-run
   `python3 experiments/red/sf/dlchain.py 10 1 > g.pg; python3 experiments/red/sf/sf2.py g.pg` (~40 min). Open: a proof of the binary word
   (induction over the run); PV_rel when L-NEW lands it (h_i in R, h0 flips 2^N - 1); the Lead's re-run request (CHECKER / L-NEW).
+- Lead 18:46Z: SF-POLY DEAD (R116 reproduced by REFEREE-2 fef9dd1b + Lead + L-NEW sfrun); new top target plain N5 (G-N5-TIME).
+  R117 docs/red/R117-n5-after-dwn.md: N5 on dwN = N tau-changes (each h_i once) + one sigma-run ~7N; READING: an Odd bit that is an
+  Even-closable cycle is never reset (h_i -> e_i never U_tau-improving), tau freezes at tau*, frozen run G_tau*-monotone. (FO*) probe
+  cdmask.py / cdrand.py (masked CDAG_n, frozen run from tau*): 3 / 5 / 6 at n 3 / 4 / 5 (chain 4 / 11 / 26). Masks must read HIGHER
+  vertices -> Odd-won cycle at sigma*. Next options: (a) coupled Odd counter on G^d (R111-R113); (b) gates reading non-reaching vertices.
 
 ## Successor 28 HANDOVER (written 2026-10-29 ~17:40Z, date -u; ~400k context)
 - DONE (claude/l-red, push.sh VERIFY PASS each push): c619e6eb handover check; 61ef6237 R114 (sf2 engine; switchbestexp SBC linear;
