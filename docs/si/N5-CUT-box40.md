@@ -124,3 +124,32 @@ quickly." Working note, unrefereed, not a TARGET.md claim. G-N5-TIME OPEN. Label
   is the costly one and the W-branch is cheap (R123: WCH 11 on the pair (e, o)).
 - R123 (4)'s equivalence (PCH^span ≤ poly ⇔ G-N5-TIME, given Lemma SPAN and R47) applies to FC-LIN's route as well: FC ≤ ENT, so
   FC-LIN carries content only through its linear exponent.
+- carryobs_K12_m48 (R123 §4, kills CARRY-SEG-S; pin from origin/claude/l-red, sha1 .pg 73e337d2e437, .start ed0b87992144; copied to
+  odd/inst/red/): n 346, 612 iterations, 0 cuts, 146 pairs, 1,609 re-entries, ALL W-paid, FC 0, W-RETURN-G 0 failures, most entries
+  of one pair 13 (DATA). Same reading as spanobs.
+
+## 6. FC-LIN proof attempt: splitting FRESH (PROVED lane, DATA); what is left
+- Tool odd/cutsx.py (cuts.py + the split below), FR=1; output odd/out/cutsx_corpus_fr.txt (719 games).
+- Lemma FRESH-SPLIT (PROVED, lane). Let j − 1 → j be a FRESH re-entry of v into c, in the τ*-piece [a, j − 1], W* := W^{τ*}. Exactly
+  one of:
+  - (WC) W*(c) changes on [a, j];
+  - (G0) W*(c) is constant on [a, j], W*_j(c) ▷ W*_j(σ_{j−1} v), and j − 1 = a: the re-entry is the first transition after the boundary;
+  - (CY) as (G0) but j − 1 > a, and v is its own W*-cycle node at j − 1 or j;
+  - (LATE) as (CY) but v off-cycle at j − 1 and j. Then (v, c) is BLOCKED at j − 2 in R88's sense (W*_{j−2}(c) ▷ W*_{j−2}(σ_{j−2} v) and
+    (v, c) ∉ Iσ_{j−2}), so the re-entry is a LATE ADOPTION (R88 §4 / R89 GP*-RUN);
+  - (SAME) W*(c) constant on [a, j] and not W*_j(c) ▷ W*_j(σ_{j−1} v) (no strict gain; silent-type).
+- Proof of (LATE). (v, c) ∉ H_{j−2} (FRESH). W*_{j−2}(c) = W*_j(c) ▷ W*_j(σ_{j−1} v) ⊵ W*_{j−1}(σ_{j−1} v) (W-MON at j − 1 → j)
+  ⊵ W*_{j−1}(σ_{j−2} v) ((OPT) at j − 1: (v, σ_{j−2} v) ∈ σ_{j−2} ⊆ H_{j−2}, v off-cycle at j − 1) ⊵ W*_{j−2}(σ_{j−2} v) (W-MON). □
+- Consequence (PROVED, lane). With the windows disjoint as in CUT-CHARGE:
+  ENT_R(v, c) ≤ 1 + BA_R(v, c) + WCH*^span(c) + LATE_R(v, c) + SIL + CYC, where BA := #F + #G0 + #SAME, the BOUNDARY-ADJACENT re-entries
+  (made by a fallback, or at the first transition after a boundary, or silent across one), and LATE_R(v, c) := the late adoptions of
+  (v, c) in R. The (WC) re-entries join the W-paid ones in WCH*^span.
+- DATA (6,031 FRESH re-entries): WC 3,925; G0 1,787; LATE 313; CY 1; SAME 5; LATE-claim failures 0. With the 557 fallback-made ones,
+  BA = 2,349 of 11,669 re-entries (20%).
+- What is left (READING). FC-LIN reduces to two per-pair counts:
+  - (i) boundary-adjacent re-entries BA (≤ 1 per boundary per pair; the boundary is an Even fallback or a τ-change);
+  - (ii) late adoptions of the edge (v, c) (R*-RISE bounds them by RISE(c), the Ξ-route again).
+  The first is the Lead's (2) in its sharpest form: only boundaries at which v returns to c at once cost an entry. The second is the
+  GP*-RUN quantity of R89 restricted to one edge. Neither is proved polynomial here. No DEAD.
+- Composition: G-N5-TIME ⇐ BA polynomial per pair ∧ LATE per edge polynomial ∧ MIN-QUAD (same-frame W) ∧ SIL / CYC (Even half; Odd by
+  the mirror).
