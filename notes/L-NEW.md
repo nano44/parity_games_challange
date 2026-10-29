@@ -1,6 +1,17 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Box 59 log (successor 34, Opus 5.5, D14/D18; Lead brief 17:15Z; STEP 0 answers sent 17:16:54Z, started without waiting as told)
+- STEP 0 (measured): local clone STALE again (868 behind; my first fetch named a non-existent ref `main` and git aborted the WHOLE fetch
+  while status said "up to date"). ff-only to e5f1026e, merge --no-ff trunk 1eb9d9a2 (2 ahead / 0 behind). GAPS G-N5-TIME l.11 open,
+  G-N1-LB l.10 open, G-N5-TERM l.16 closed; D1 l.5, D14 l.22, D18 l.32 active.
+- docs/new/N5-FC-box59.md. (a) fcN flip word = W_N (unary counter, cascades only after records), N = 3..10 (fcword.py: W, C, FCOPEN,
+  FCLAT all PASS); SBC = N² to N = 12. Lemma COUNT (PROVED). Mechanism = Lemma LATENCY (PROVED, from SF-TERM (i)) + FCLAT: at a record
+  the lane gets l_k in 1 F-step, the escape chain needs 2 (v_(k-1) -> r_k, then z_(k-1) -> v_(k-1)); re-sets reach lane and escapes
+  together. (b) READING: external reset of a fc block costs O(bits); degree 3 needs N-COND (upper source routed back through the lower
+  block); OPEN. (c) CONJECTURE PV (each Odd vertex <= n flips => SBC <= n^2, N5-SF polynomial): 0 / 720 violations, max 0.917n.
+  DEAD: FLIP-REC°, decisive-vertex multiplicity.
+
 ## Box 58 log (successor 33; Lead 16:54Z: (A) immune variant / (B) impossibility / (C) park)
 - docs/new/N5-LA-box58.md: LA_K / LAG_d terminate (R15 (c)). LA_1 = I^glo on switchbestexp N = 3..6 (286 / 590 / 1198): look-ahead DEAD.
   LAG_1/2 shorter (225 / 212 at N = 7). (B) no handle. Parked (C).
@@ -71,6 +82,17 @@ Stop (S5) when Iσ = Iτ = ∅: Even wins v iff the cycle node of Ξσ(v) has ev
   (b), (c); length < 2(n + m)(n² − n + 1 + SBC)). DEAD: NOFB (n3all_maxph_0), W-frame twin N5-SFW cycles (theta_thf16, period 10; 49/413).
   DATA: correct on 1,038 library + families + hard families; SF ≈ ½ N5; runquad 264 → 2, topfix 7N + 43; switchbestexp N=10 619 vs 89, SBC 97.
   Open count SBC (CONJECTURE SF-POLY OPEN).
+
+## Dead ends (successor 34; also in docs/new/N5-FC-box59.md §5)
+- FLIP-REC° (flips(u) <= 2 REC°(u) + 1, REC° = changes of the top non-sink vertex of Xi(u)): DEAD, experiments/red/so/instances/
+  so_sorl_n32.pg (sha1 ce8f7013…): vertex 13, 22 flips, REC° 0 (44 / 514 corpus games fail). Exact on fcN.
+- O(1) flips per (Odd vertex, decisive vertex): DEAD, experiments/new/box59/out/fc_5.pg (sha1 6e916303…): h_0 alternates m_0 / h_0, 9 flips.
+
+## Things only I know (successor 34)
+- box59/out/sha1s.txt is in `ls` (alphabetical) order: fc_10, fc_11, fc_12 come before fc_3. I mis-mapped them once.
+- fcword's SET lag is 3 in 215 / 216 events; the exception is fc_10 transition 1381 (bit 0, lag 2, no lower cycle). Not investigated.
+- frec.py runs the S3 default start only; alt_all's pinned starts are NOT used (P-N5-SF's pc_alt used them).
+- In window.py a flip shown at "j" happened between states j - 1 and j.
 
 ## Dead ends (successor 33; also in docs/new/N5-SBC-box55.md §4)
 - Look-ahead LA_1 as an immunity device: DEAD, experiments/new/box54/out/switchbestexp_6.pg (n 160): 1198 steps = I^glo (F 412).
@@ -628,7 +650,14 @@ Every answer measured from the repository; commands named.
    fetched ref, so the pin cannot be checked yet; I checked the packet by sha1 (cbea0739…) against my own commit 1afccb51 instead.
    (iii) The container clock is slow vs the Lead's stamp (07:50 vs 07:53): stamp only from date -u, never ahead of it.
 
-## Resume point (overwritten at handover, LANE-RESTART step 1; successor 33, FINAL after box 58, written 2026-10-29 ~17:0xZ by date -u)
+## Resume point (successor 34, session_01V5yGRZtUQrbWSSxFF96dQJ; written 2026-10-29 ~18:0xZ by date -u; overwrite at handover)
+### DONE: box 59 (N5-FC-box59.md, box59/ tools and logs, check.sh "Box 59"), pushed via scripts/push.sh.
+### IN FLIGHT: nothing running.
+### NEXT (the Lead decides): run box59/frec.py on L-RED 28's nested families when they land (max flips(u) > n kills PV); then the
+PV proof plan (§4 (i)-(iii)), starting with (ii) on switchbestexp's leapfrog vertex 14N + 16.
+### Owned conjectures: SF-POLY, SBC-QP, GROUP, EXIT-without-NT, CARRY-CUT, PV (all OPEN).
+
+## Resume point (HISTORY; successor 33, FINAL after box 58, written 2026-10-29 ~17:0xZ by date -u)
 Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context ~375k at writing. PARKED (Lead's option (C), box 58).
 ### DONE (all pushed via scripts/push.sh, VERIFY PASS; reported to the Lead)
 - Box 55: P-N5-SF-box55.md FROZEN 95a7a581 (sha1 dbc2345f…), signed in full by REFEREE 18 and REFEREE-2 20, joint gap map empty. Fixes

@@ -1,0 +1,6 @@
+GAME new/box59/out/sbe_10.pg rc=0 FREC sbe_10.pg n 260 k 10 orbit 620 SBC 97 maxflips 41 maxexcess 31 worst (156, 41, 5)
+GAME new/box59/out/sbe_11.pg rc=0 FREC sbe_11.pg n 285 k 11 orbit 652 SBC 119 maxflips 47 maxexcess 37 worst (170, 47, 5)
+GAME new/box59/out/sbe_12.pg rc=0 FREC sbe_12.pg n 310 k 12 orbit 685 SBC 138 maxflips 51 maxexcess 41 worst (184, 51, 5)
+GAME new/box59/out/fc_11.pg rc=0 FREC fc_11.pg n 285 k 11 orbit 2220 SBC 121 maxflips 21 maxexcess -1 worst (170, 21, 11)
+GAME new/box59/out/sbe_9.pg rc=0 FREC sbe_9.pg n 235 k 9 orbit 578 SBC 92 maxflips 39 maxexcess 29 worst (142, 39, 5)
+GAME new/box59/out/fc_12.pg rc=0 FREC fc_12.pg n 310 k 12 orbit 2765 SBC 144 maxflips 23 maxexcess -1 worst (184, 23, 12)
