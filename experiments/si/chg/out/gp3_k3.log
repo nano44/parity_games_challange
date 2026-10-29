@@ -1,0 +1,40 @@
+seed (432, 2, 0) n 29
+step 996 score (2450, 3, 2) n 70
+step 996 KILLSCORE 2 n 70
+step 1071 score (2480, 3, 2) n 69
+step 1465 score (2505, 3, 2) n 70
+step 1476 score (2510, 3, 2) n 70
+step 2246 score (3523, 4, 3) n 67
+step 2246 KILLSCORE 3 n 67
+step 2251 score (3529, 4, 3) n 69
+step 2945 score (3560, 5, 3) n 69
+step 3566 score (3566, 5, 3) n 70
+step 3702 score (3584, 5, 3) n 68
+step 4939 score (5625, 5, 5) n 70
+step 4939 KILLSCORE 5 n 70
+step 8576 score (7667, 6, 7) n 70
+step 8576 KILLSCORE 7 n 70
+step 9344 score (8398, 7, 8) n 70
+step 9344 KILLSCORE 8 n 70
+step 9513 score (10404, 8, 10) n 70
+step 9513 KILLSCORE 10 n 70
+step 9575 score (12409, 9, 12) n 70
+step 9575 KILLSCORE 12 n 70
+step 10077 score (12439, 9, 12) n 69
+step 10144 score (12469, 9, 12) n 70
+step 10213 score (12499, 9, 12) n 69
+step 10272 score (12529, 9, 12) n 70
+step 10369 score (12559, 9, 12) n 70
+step 10497 score (12589, 9, 12) n 70
+step 10548 score (12619, 9, 12) n 70
+step 10772 score (12649, 9, 12) n 70
+step 10801 score (12679, 9, 12) n 69
+step 10851 score (13709, 9, 13) n 70
+step 10851 KILLSCORE 13 n 70
+step 10853 score (14709, 9, 14) n 70
+step 10853 KILLSCORE 14 n 70
+step 12184 score (14739, 8, 14) n 70
+step 13751 score (17744, 8, 17) n 70
+step 13751 KILLSCORE 17 n 70
+step 22300 score (19779, 9, 19) n 70
+step 22300 KILLSCORE 19 n 70

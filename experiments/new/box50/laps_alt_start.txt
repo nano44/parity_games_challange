@@ -1,0 +1,11 @@
+EREP_max=3 REP_max=2 runs=921
+TOP REP 2 EREP 3 run 14 n 40 red/n3/instances/lag11_n40.pg [6,20]
+TOP REP 2 EREP 2 run 23 n 24 n5-exhaustive/instances/frz2_n24.pg [2,25]
+TOP REP 2 EREP 2 run 24 n 24 n5-exhaustive/instances/frz3_n24.pg [2,26]
+TOP REP 2 EREP 2 run 49 n 32 red/n3/instances/run49_n32.pg [2,51]
+TOP REP 2 EREP 2 run 16 n 32 red/n5inj/instances/frz32.pg [10,26]
+TOP REP 1 EREP 3 run 35 n 48 red/so/instances/pft35_n48.pg [6,41]
+TOPE REP 2 EREP 3 run 14 n 40 red/n3/instances/lag11_n40.pg [6,20]
+TOPE REP 1 EREP 3 run 35 n 48 red/so/instances/pft35_n48.pg [6,41]
+TOPE REP 1 EREP 3 run 34 n 32 red/so/instances/pftheta34_n32.pg [5,39]
+TOPE REP 1 EREP 3 run 34 n 32 red/so/instances/pftheta_cex_n32.pg [4,38]

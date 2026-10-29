@@ -1,0 +1,10 @@
+OK   docs/new/N5-ssi-global.md@1f15c91b:27-27 | injective priorities: rank(v) = position of v in V sorted by (Ω(v), v); p'(v) = 2·rank(v) 
+OK   docs/new/N5-ssi-global.md@1f15c91b:28-28 | valuation of v under (σ, σ̄): (c, P, ℓ), c = the most relevant (max p') vertex of the cycl
+OK   docs/new/N5-ssi-global.md@1f15c91b:29-29 | vertices on the play before reaching c with p' > p'(c), ℓ = number of steps to reach c.
+OK   docs/new/N5-ssi-global.md@1f15c91b:31-31 | Σ_{u∈P} (+2^rank(u) if Ω(u) even else −2^rank(u)); then ℓ: if c is odd, longer is better f
+OK   docs/new/N5-ssi-global.md@1f15c91b:45-45 | Odd's side: everything on the DUAL game G^d (owner swapped, Ω + 1); τ is an "Even" strateg
+OK   docs/new/N5-ssi-global.md@1f15c91b:73-73 | settled; ranks of G^d equal those of G (Ω + 1 keeps the order and the index ties)
+OK   docs/new/N5-ssi-global.md@1f15c91b:47-47 | S2 Improving edges: Iσ = {(v, w) : owner(v) = Even, w ≠ σ(v), Ξσ(w) strictly better than Ξ
+OK   docs/RESULTS.md@1f15c91b:2907-2907 | (a) Premise (VJ), on every game: for every positional σ and every positional Odd strategy 
+OK   docs/RESULTS.md@1f15c91b:4967-4967 | (a) Fact DELTA (§1, with F4): for sets A ≠ B of ranks, weight(B) > weight(A) iff d := d(A,
+tags 9 ok 9 miss 0 SHIFT 0

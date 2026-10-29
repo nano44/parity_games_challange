@@ -1,0 +1,34 @@
+# pinned re-runs, detached worktree at a23179b0 (scratchpad), python3 -I; sha1: T34 7c33508b, quotecheck 74dbe8b4, T33 6853179b
+## P-N5-MPGS-quotecheck.py
+quotes=9 bad=0
+## T33-match-phi-check.py
+A: improving pairs 80640 | matched with phi rise < 1: 0 | carries: 32534
+B: k=1 P-changes=1 strict-rise=True fixed-top=True carries(NM)=0
+B: k=2 P-changes=3 strict-rise=True fixed-top=True carries(NM)=0
+B: k=3 P-changes=7 strict-rise=True fixed-top=True carries(NM)=1
+B: k=4 P-changes=15 strict-rise=True fixed-top=True carries(NM)=3
+B: k=5 P-changes=31 strict-rise=True fixed-top=True carries(NM)=7
+B: k=6 P-changes=63 strict-rise=True fixed-top=True carries(NM)=15
+B: k=7 P-changes=127 strict-rise=True fixed-top=True carries(NM)=31
+B: k=8 P-changes=255 strict-rise=True fixed-top=True carries(NM)=63
+## T34-gateshut-check.py N R SEED
+== 3 0 0
+n=3 starts=2 gate-states with tau(e)=h: 135; with (H1),(H2): 135; violations (d1 in I_tau): 0; h->d1 flips: 0, of which with (H1),(H2): 0
+exit 0
+== 3 200 3
+n=3 starts=202 gate-states with tau(e)=h: 14385; with (H1),(H2): 14217; violations (d1 in I_tau): 0; h->d1 flips: 102, of which with (H1),(H2): 0
+exit 0
+== 4 100 4
+n=4 starts=102 gate-states with tau(e)=h: 12045; with (H1),(H2): 11911; violations (d1 in I_tau): 0; h->d1 flips: 97, of which with (H1),(H2): 0
+exit 0
+== 5 30 5
+n=5 starts=32 gate-states with tau(e)=h: 5783; with (H1),(H2): 5705; violations (d1 in I_tau): 0; h->d1 flips: 48, of which with (H1),(H2): 0
+exit 0
+== 4 0 0
+n=4 starts=2 gate-states with tau(e)=h: 228; with (H1),(H2): 228; violations (d1 in I_tau): 0; h->d1 flips: 0, of which with (H1),(H2): 0
+== 5 0 0
+n=5 starts=2 gate-states with tau(e)=h: 350; with (H1),(H2): 350; violations (d1 in I_tau): 0; h->d1 flips: 0, of which with (H1),(H2): 0
+== 6 0 0
+n=6 starts=2 gate-states with tau(e)=h: 510; with (H1),(H2): 510; violations (d1 in I_tau): 0; h->d1 flips: 0, of which with (H1),(H2): 0
+== 8 0 0
+n=8 starts=2 gate-states with tau(e)=h: 872; with (H1),(H2): 872; violations (d1 in I_tau): 0; h->d1 flips: 0, of which with (H1),(H2): 0

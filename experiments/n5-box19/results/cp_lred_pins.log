@@ -1,0 +1,3 @@
+CUTPHI l-red:experiments/red/seg/instances/segcount_kill_n20.pg start n 20 states 7 {"cuts": 0, "fail": 0, "carry_cuts": 0, "nopch_cuts": 0, "sb_cuts": 0, "cyc_only_cuts": 0} []
+CUTPHI l-red:experiments/red/seg/instances/runquad_K3_m4_n54.pg start n 54 states 22 {"cuts": 0, "fail": 0, "carry_cuts": 0, "nopch_cuts": 0, "sb_cuts": 0, "cyc_only_cuts": 0} []
+CUTPHI l-red:experiments/red/seg/instances/runquad_K8_m30_n192.pg start n 192 states 265 {"cuts": 0, "fail": 0, "carry_cuts": 0, "nopch_cuts": 0, "sb_cuts": 0, "cyc_only_cuts": 0} []

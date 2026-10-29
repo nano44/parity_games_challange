@@ -479,3 +479,30 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
   the pattern D F* G*): killed by experiments/si/chg/instances/growpers_kill_n73.pg (n 73, sha1 ff73bab1641c7f5b8f0756b25df2b24709d1bcdb;
   .start b496c9b9dffb33880c4fe632ad47d606ef8ffd84), chg/cclimb.py OBJ=GP from psidrop_kill_n70 in 5 steps: segment [2, 5], pattern G F G
   (t = 3: vertex 1 finalizes, no sink settles); n5b state sequence identical (9 iterations, 1 fallback).
+- DL-RUN («a deadlock step of a REL segment is the first transition of its fallback-free run»), DL-FIRST («... the first step a of its
+  segment») and NEWFINAL («at a transition t > r0, some switch to an edge outside the arena of t − 1 is a last switch»; DATA had 0 failures on
+  ~12,000 library and 240 climb late transitions): killed by L-RED's hand-built R105 instances (claude/l-red 22d7c6ab, experiments/red/seg/
+  instances; byte-identical copies in experiments/si/chg/instances/red/): segcount_kill_n20 (sha1 2783f64d82f271ebc9a26b470b26a9938fd5295c,
+  .start 97ba6b298917676e10cb209e21f49ee442b73686), run [0, 4] = one REL segment, deadlocks t = 0 and t = 2 (r0 = 0); segfam_k3_n29 (sha1
+  0d242a9b…, deadlocks 0, 2, 4), segfam_k8_n79 (sha1 ddb67eff…, deadlocks 0, 2, …, 14). chg/dlock.py: DLRUN FAIL, DLFIRST FAIL, NEWFINAL FAIL;
+  n5x and n5b identical (root/n5bcmp.py, 0 fallbacks). Obstruction: after r0 a deadlock is still possible when the H-sink's next
+  intermediate option enters its arena only through a W-sink's final switch (C_i through w_{i−1}). The same instances kill CONJECTURE
+  SEG-COUNT (L-RED R105, the charging's injectivity (b)).
+- DL-SEP («two deadlock steps of one REL segment are separated by a growth step»), DL-NOCONSEC («no two consecutive deadlock steps»),
+  FROZEN-COUNT («a maximal run of non-growth steps is no longer than the Even vertices switching in it»), DL-SOMEH («some H-sink switches
+  at every deadlock step»), ZIG («... the end of an unready W-sink's H-chain switches»), and with them the conditional length bounds (L2)
+  b − a ≤ 2·FIN and (L3) b − a = O(n²) of N5-CHG-box28 §6: killed by experiments/si/chg/instances/dlsep_kill_n70.pg (n 70, sha1
+  e500ea47e1dc0163b32a97042ff9752daf6db83a; .start sha1 f5569821f5d951de4922a4a9853b3bb4c9bf0284), found by chg/cclimb.py OBJ=GP from L-RED's
+  segfam_k3_n29 (copy chg/instances/red/) in ~10,000 steps. The fallback-free run [0, 12] is one maximal REL segment: 12 transitions,
+  pattern F D D D F D D D D D G G, deadlocks t = 1, 2, 3, 5, 6, 7, 8, 9; one frozen run [0, 10) with 9 switching Even vertices; t = 10
+  finalizes 11 vertices. Deadlocks 5, 6, 7 are a snake of intermediate switches of non-sinks (4: 31 → 10; 15: 23 → 4; 35: 23 → 15).
+  Checks: n5x and n5b identical (root/n5bcmp.py: 16 iterations, 0 fallbacks); lay/relcheck.py from n5b alone: run (0, 12), REL segments
+  [(0, 12), …], REL fails at −1 (run start), every listed t is no vertex's last switch, observed GEN_W 0 failures. SEG-COUNT-type counts
+  hold there (12 ≤ 26 switchers). Obstruction: deadlocks are not tied to the sink structure; an honest snake of intermediate switches
+  can run inside one frozen sink structure.
+- LENE («every maximal REL segment has b − a ≤ |E_b|»; tight on L-RED's R105 family) and LEN2 («b − a ≤ 2·SW + 1»): killed by L-RED's R106
+  pin runquad_K8_m30_n192 (claude/l-red 86f24219, experiments/red/seg/instances; byte-identical copy experiments/si/chg/instances/red/,
+  sha1 ebaa6ac57ec60948fb986210c27479cb3a7961d9, .start 4ba9f8605a1b18891dffb40d508bce929cf7c952): one fallback-free run [0, 263] = one maximal
+  REL segment with |E_b| = 49, SW = 47 switching Even vertices, 218 deadlock steps (chg/lenstat.py). Obstruction: two pivots climbing in
+  alternation drive a reactor chain back and forth; each reactor switches 2K − 1 = 15 times (chg/pervert.py), so switches per vertex, not
+  vertices, carry the length.

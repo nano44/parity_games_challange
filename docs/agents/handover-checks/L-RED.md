@@ -445,3 +445,25 @@ Measured 2026-10-29 10:00:55Z (date -u; fetch at 10:00:09Z).
 - Trap (R100-R104): every count-based climb fitness except the target itself got gamed (switch-all fallbacks, parallel waves, several gates
   per stall). Check: keep the target quantity (here EXC = (b − a) − switching Even vertices, recomputed by my own checker) primary, and
   inspect the trace of the best game before reporting a number.
+
+## Successor 26 (Opus 5.5, D15/D18; created 2026-10-29 ~11:07Z, date -u) handover check
+Measured 2026-10-29 11:08:19Z (date -u; fetch of claude/l-red, claude/l-lit, trunk just before).
+### 1. Branch, head, distance to trunk
+- claude/l-red. Local was stale at b2c3d07c (successor 23); fast-forwarded to origin 7002ff99 (predecessor's handover stamp;
+  `merge-base --is-ancestor 7002ff99 HEAD` true). Before merge: 3 ahead / 45 behind trunk origin/claude/vibrant-johnson-nxvvxo
+  (merge-base 22d7c6ab). Merged trunk (merge commit 09d020c7, no conflicts): 4 ahead / 0 behind.
+### 2. Open work and the next step of each
+- Nothing in flight (HANDOVER "IN FLIGHT: nothing"). Oink not built in this container; setup_oink.sh started.
+- Lead 11:07Z box: STEP 1 = R107 (DATA) on mkr K = 2..14, m = 4K, both engines: (a3) S3 default start run length / phases / longest
+  fallback-free run; (b) per-vertex switch counts in the long run (max over v vs K, n); (c) total iterations, phases, runs, explicit and S3
+  starts. Next: run n5b SPEC + n5.py on mkr instances with no start file. STEP 2 = (a2) a counter clock across phases (odd-top sequencing).
+### 3. docs/GAPS.md rows I own
+- G-NEST (major; L-RED), open (docs/GAPS.md line 9). Attacked, not owned: GAP-A, GAP-C (L-ALG, open); G-N5-TIME (L-NEW, open, line 11).
+### 4. Owner rulings (verbatim), DECISIONS-INDEX status
+1. D18 (index line 32, active): "Focus on N5 and work toward proving it. Explore novel approaches ... Clearly distinguish proven results from conjectures and open problems."
+2. D15 (index line 26, active): "q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it"
+3. D1 (index line 5, active; D001 launch brief): "Failing any step makes it a dead end, recorded with the exact obstruction or counterexample."
+### 5. One trap and its check
+- Trap (R106 caveat): every R105/R106 run used an explicit start pair; a result from an explicit start bounds a run, not N5's iteration
+  count from its S3 default start. Check: every count reported in R107 names its start (file sha1 or "S3 default"), and stale local branch
+  (b2c3d07c, 2 handovers behind) caught by fetch + ff + is-ancestor.

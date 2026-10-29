@@ -1,0 +1,15 @@
+MODE comb 6 BF 8
+CTL_carry_rise: 56472
+CTL_noM1: 64362
+CTL_noM2: 50767
+F1_checks: 2808
+MM_checks: 294132
+matched_pairs: 90594
+pairs: 294132
+TIGHT_K1: (1, 1, 1)
+TIGHT_K2: (3, 3, 3)
+TIGHT_K3: (6, 6, 7)
+TIGHT_K4: (10, 10, 15)
+TIGHT_K5: (15, 15, 31)
+TIGHT_K6: (21, 21, 63)
+RESULT OK violations=0

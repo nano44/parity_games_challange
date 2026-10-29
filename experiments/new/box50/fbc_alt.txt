@@ -1,0 +1,28 @@
+FB=536 FB_allswP=477 FB_anyCAR=377 FB_anyP=509 FB_swCAR=376 FB_swP=509 FB_sw_CAR=797 FB_sw_LEN=60 FB_sw_MAT=459 FB_sw_NONE=24 SA=5641 SA_allswP=5399 SA_anyCAR=3767 SA_anyP=5509 SA_swCAR=3708 SA_swP=5509 SA_sw_CAR=5918 SA_sw_LEN=581 SA_sw_MAT=4281 SA_sw_NONE=7 check=30349 cover_min_x100=0 fb_per_phase_max=37 ph_f2=55
+noP 27
+   ('noP', 'n5-epoch/instances/ffin12_n32.pg', 8, 16, 15, [5], ['NONE'])
+   ('noP', 'n5-epoch/instances/ffin5_n32.pg', 4, 10, 9, [7], ['NONE'])
+   ('noP', 'n5-epoch/instances/nep22f_n64.pg', 11, 29, 27, [5, 11, 31, 34, 38, 49, 54], ['LEN', 'LEN', 'LEN', 'LEN', 'LEN', 'LEN', 'LEN'])
+   ('noP', 'n5-epoch/instances/nep22f_n64.pg', 11, 29, 28, [58], ['LEN'])
+   ('noP', 'n5-exhaustive/instances/b4_n5_other_0.pg', 0, 2, 1, [4], ['NONE'])
+   ('noP', 'n5-exhaustive/instances/n4all_maxph_0.pg', 1, 2, 1, [2], ['NONE'])
+   ('noP', 'n5-exhaustive/instances/n4all_maxph_1.pg', 1, 2, 1, [2], ['NONE'])
+   ('noP', 'n5-exhaustive/instances/n5s_maxph_0.pg', 2, 3, 2, [4], ['NONE'])
+noCAR 159
+   ('noCAR', 'n5-epoch/instances/ffin12_n32.pg', 8, 16, 15, [5], ['NONE'])
+   ('noCAR', 'n5-epoch/instances/ffin5_n32.pg', 4, 10, 9, [7], ['NONE'])
+   ('noCAR', 'n5-epoch/instances/nep22f_n64.pg', 11, 29, 25, [17, 31, 34, 38, 55, 58], ['MAT', 'MAT', 'MAT', 'MAT', 'MAT', 'MAT'])
+   ('noCAR', 'n5-epoch/instances/nep22f_n64.pg', 11, 29, 27, [5, 11, 31, 34, 38, 49, 54], ['LEN', 'LEN', 'LEN', 'LEN', 'LEN', 'LEN', 'LEN'])
+   ('noCAR', 'n5-epoch/instances/nep22f_n64.pg', 11, 29, 28, [58], ['LEN'])
+   ('noCAR', 'n5-exhaustive/instances/b4_n5_other_0.pg', 0, 2, 1, [4], ['NONE'])
+   ('noCAR', 'n5-exhaustive/instances/b5_o11.pg', 0, 11, 7, [0, 1], ['MAT', 'MAT'])
+   ('noCAR', 'n5-exhaustive/instances/b5_o11.pg', 0, 11, 9, [9], ['MAT'])
+nocommon 55
+   ('nocommon', 'n5-epoch/instances/nconf61_n48.pg', 12, 43, 3, 2)
+   ('nocommon', 'n5-epoch/instances/nep22f_n64.pg', 11, 29, 9, 3)
+   ('nocommon', 'n5-exhaustive/instances/b5_o11.pg', 0, 11, 3, 1)
+   ('nocommon', 'n5-exhaustive/instances/b5_os_n12.pg', 0, 16, 4, 2)
+   ('nocommon', 'n5-exhaustive/instances/b5_os_n14.pg', 0, 20, 6, 2)
+   ('nocommon', 'n5-exhaustive/instances/b5_os_n16.pg', 0, 24, 7, 2)
+   ('nocommon', 'n5-exhaustive/instances/b5_os_n20.pg', 0, 32, 7, 2)
+   ('nocommon', 'n5-exhaustive/instances/b5_os_n24.pg', 0, 49, 7, 2)

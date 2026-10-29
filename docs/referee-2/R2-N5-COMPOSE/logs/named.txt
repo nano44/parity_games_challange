@@ -1,0 +1,33 @@
+MODE files named.lst 2 RSUB 20
+CMP_E_checks: 66
+CMP_O_checks: 43
+LEN_E_checks: 5680
+LEN_O_checks: 3884
+NM_E_checks: 1269
+NM_O_checks: 8
+RUN_checks: 15
+SWR_E_checks: 6104
+SWR_O_checks: 941
+X_LEN0_E: 53
+X_LEN0_O: 49
+X_RUN0: 6
+X_SWR0_E: 665
+X_SWR0_O: 422
+kind1: 35
+kind2: 472
+kind3: 3
+kind4: 1
+phases: 16
+runs: 15
+starts_valid: 5
+transitions: 511
+max S1/S2_E: 0.473
+max S1/S2_O: 0.5
+max maxNM_E: 42
+max maxNM_O: 1
+max maxPCH_E: 71
+max maxPCH_O: 1
+max maxT: 264
+max max_lUruns: 6
+max max_lruns: 5
+RESULT PASS violations 0

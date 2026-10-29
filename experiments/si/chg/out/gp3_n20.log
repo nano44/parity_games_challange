@@ -1,0 +1,18 @@
+seed (354, 1, 0) n 20
+step 12772 score (363, 3, 0) n 59
+step 12776 score (422, 3, 0) n 60
+step 13554 score (459, 4, 0) n 58
+step 15594 score (496, 5, 0) n 60
+step 16114 score (1537, 5, 1) n 60
+step 16114 KILLSCORE 1 n 60
+step 17060 score (2578, 5, 2) n 60
+step 17060 KILLSCORE 2 n 60
+step 17371 score (3541, 4, 3) n 59
+step 17371 KILLSCORE 3 n 59
+step 17614 score (5619, 5, 5) n 60
+step 17614 KILLSCORE 5 n 60
+step 18748 score (6582, 4, 6) n 60
+step 18748 KILLSCORE 6 n 60
+step 22031 score (6619, 5, 6) n 59
+step 26370 score (6620, 5, 6) n 60
+step 28526 score (6656, 6, 6) n 59

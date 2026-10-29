@@ -1,0 +1,5 @@
+carrying_vertex_runs=11675 nm_zero_max=62 ratio_max_x100=6200 zero_reopen=4945
+EXAMPLE ('ZERO', 'experiments/new/box48/out/qpcclimb/scale/snap_n80_s62.pg', 5, 105, 17, 41, 80)
+EXAMPLE ('ZERO', 'experiments/red/usplit/instances/gate_K64_n581.pg', 0, 71, 573, 62, 581)
+EXAMPLE ('ZERO', 'experiments/red/usplit/instances/gate_K64_n581.pg', 0, 71, 574, 62, 581)
+EXAMPLE ('ZERO', 'experiments/red/usplit/instances/gate_K64_n581.pg', 0, 71, 578, 62, 581)
