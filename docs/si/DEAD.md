@@ -393,3 +393,18 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
   12-14 (lwp/laststep_alt_start.txt); and lwp/out/h4a_k.pg (n 60, sha1 957c7c9e2ce5a6d57890e42b0e8ca0a0911ecefd, default start), segment
   [0, 4], cycle vertices settled from 1 and NO frontier vertex at t = 0 (found by lwp/xclimb.py OBJ=H4 from dl_4_4). Obstruction: a J_b-cycle
   settles in one transition with its unsettled Even vertices switching together (1: 28 → 59 and 37: 6 → 58 at t = 0); SEG-LAST holds there.
+- K-ARENA («at every step some terminal part K of J_b on the unsettled set has σ_b(v) in v's S4a arena for all v ∈ K»; with GEN_W it gives
+  SEG-LAST without (H4′_rel), note §8): lwp/instances/karena_kill_n71.pg (n 71, sha1 8b659497688c47075235957ae1e636b5564ec235, default
+  start; found by lwp/xclimb.py OBJ=KA from cycset_kill_n60 in 511 steps). Segment [0, 4], t = 0: the only terminal part is K = {1, 3, 35, 41,
+  46, 50, 64}; 41 has σ_0(41) = 50 ≠ σ_b(41) = 35 and (41, 35) is not improving at 0 (it is at 1, after 35 switched 46 → 50 at 0). K settles in
+  two layers (35, 46, 50 from state 1; the rest from 2). Obstruction: an Even vertex of K whose honest J_b-successor is in K and still
+  switching. SEG-LAST holds there (1 and 35 switch at 0 for the last time).
+- WX-ARENA («at every step some terminal part is a single vertex or has an off-target W-exit vertex, i.e. one whose W-J_b-successor is
+  settled, with its target in the arena»; with the per-vertex Lemma W-EXIT it would give SEG-LAST): lwp/instances/cycset_kill_n60.pg at
+  t = 0 and karena_kill_n71.pg at t = 0 (lwp/laststep.py WX_V=1 on each). Obstruction: there the last switches at t (1 and 37 in
+  cycset_kill_n60) are not W-exits; the step is a joint switch of the part (Theorem K-REDUCTION covers the first instance, nothing covers the
+  second).
+- SET-STEP («at every step of a REL segment some switcher is W- and H-settled from t + 1»; it implies SEG-LAST): lwp/instances/
+  setstep_kill_n71.pg (n 71, sha1 b6360888a8180a9afef84c38845500f46626b548, default start; found by lwp/xclimb.py OBJ=KA from cycset_kill_n60). Segment [1, 4]: at one step no
+  switcher is settled from t + 1 (lwp/seglast.py SS_V=1), while SEG-LAST holds (every step is still some vertex's last switch). Obstruction:
+  the last switch at that step goes to a target whose plays still change later (layered settling of a terminal part of 10 vertices).

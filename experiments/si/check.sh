@@ -439,3 +439,14 @@ echo "957c7c9e2ce5a6d57890e42b0e8ca0a0911ecefd  lwp/instances/cycset_kill_n60.pg
 o=$(python3 -I lwp/laststep.py --one lwp/instances/cycset_kill_n60.pg); grep -q "CYCSET_V=1 FR_V=1 FR_V_h4fail=1 " <<<"$o"; grep -q "CYCSET FAIL" <<<"$o"
 o=$(python3 -I lwp/seglast.py --one lwp/instances/cycset_kill_n60.pg); grep -q "SEGLAST PASS" <<<"$o"; ! grep -q "SS_V" <<<"$o"
 echo "lwp (box 26: LAST-STEP frontier on lwp_a, MUT bites; cycset_kill_n60 kills CYC-SET, SEG-LAST / SET-STEP hold): PASS"
+# box 26 (note §8): K-REDUCTION data. karena_kill_n71 kills K-ARENA (one terminal part at t = 0, not arena-complete); SEG-LAST holds.
+echo "8b659497688c47075235957ae1e636b5564ec235  lwp/instances/karena_kill_n71.pg" | sha1sum -c --quiet
+o=$(python3 -I lwp/laststep.py --one lwp/instances/karena_kill_n71.pg); grep -q "KARENA_V=1 " <<<"$o"; grep -q "kar_nontrivial=1 " <<<"$o"; grep -q "KSET PASS" <<<"$o"
+python3 -I lwp/seglast.py --one lwp/instances/karena_kill_n71.pg | grep -q "SEGLAST PASS"
+o=$(python3 -I lwp/laststep.py --one lwp/instances/cycset_kill_n60.pg); grep -q "KARENA PASS" <<<"$o"; grep -q "kar_nontrivial=1 " <<<"$o"
+echo "lwp (box 26: K-REDUCTION holds on cycset_kill_n60's nontrivial part; karena_kill_n71 kills K-ARENA, SEG-LAST holds): PASS"
+# box 26: setstep_kill_n71 kills SET-STEP (SS_V=1) while SEG-LAST holds; WX-ARENA fails on cycset_kill_n60.
+echo "b6360888a8180a9afef84c38845500f46626b548  lwp/instances/setstep_kill_n71.pg" | sha1sum -c --quiet
+o=$(python3 -I lwp/seglast.py --one lwp/instances/setstep_kill_n71.pg); grep -q "SS_V=1 " <<<"$o"; grep -q "SEGLAST PASS" <<<"$o"
+python3 -I lwp/laststep.py --one lwp/instances/cycset_kill_n60.pg | grep -q "WXARENA FAIL"
+echo "lwp (box 26: setstep_kill_n71 kills SET-STEP, SEG-LAST holds; WX-ARENA fails on cycset_kill_n60): PASS"

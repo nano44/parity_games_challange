@@ -12,7 +12,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
 - STEP 2 (SEG-LAST, PIECE side): PROVED (lane) Theorem LAST-STEP (note §7; frontier argument, needs (H4′_rel) + GEN_W). CYC-SET DEAD
   (run34_n40 pinned start; lwp/instances/cycset_kill_n60). CONJECTURE SET-STEP (some switcher settles at every step) 0 failures.
   Climbs OBJ=H4 (lwp/out/h4a, h4b) were running at the last commit: kill = SEG-LAST failure (score component >= 100).
-- Next: SET-STEP / SEG-LAST on (H4′_rel)-failing segments: a terminal SCC K of J_b on N_t settles in one step; missing: step (A) for K.
+- PROVED (lane) Theorem K-REDUCTION (note §8; terminal part K with all targets in the arena settles in one step; contains LAST-STEP).
+  K-ARENA DEAD (lwp/instances/karena_kill_n71, layered settling). Library: no step ever has a nontrivial terminal part.
+- Also DEAD: WX-ARENA, SET-STEP (lwp/instances/setstep_kill_n71). SEG-LAST survives every climb (ka6*, slk7*; climbs stopped by me).
+- Next: a LAYERED K-REDUCTION (arena-ready vertices of K take their targets for good); kill search OBJ=SL from karena_kill_n71 (lwp/out/slk*).
 - Things only I know (s22): gap reference state = y − 1 whenever the gap closes at an event (run end included); xclimb's GD scores used an
   older rule (inflated excess, see note §1 CORRECTION). `pkill -f PATTERN` inside a Bash call kills the calling shell too (exit 144): kill by
   pid. lwave/gaps cutting: lwp/gaps.py._pts returns (s, e, x, y) and fills LCUTS / EVENTS.
