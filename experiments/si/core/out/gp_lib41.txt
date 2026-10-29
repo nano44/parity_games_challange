@@ -1,0 +1,2 @@
+D1=519 D1_GP_V=0 D1_late>0=0 D2+=30 D2+_GP_V=0 D2+_late>0=0 ctrl=164 ctrl_GP_V=0 ctrl_late>0=0
+GP PASS
