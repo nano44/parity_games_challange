@@ -467,3 +467,26 @@ Measured 2026-10-29 11:08:19Z (date -u; fetch of claude/l-red, claude/l-lit, tru
 - Trap (R106 caveat): every R105/R106 run used an explicit start pair; a result from an explicit start bounds a run, not N5's iteration
   count from its S3 default start. Check: every count reported in R107 names its start (file sha1 or "S3 default"), and stale local branch
   (b2c3d07c, 2 handovers behind) caught by fetch + ff + is-ancestor.
+
+## Successor 27 (Opus 5.5, D1/D15/D18; created 2026-10-29 ~13:47Z, date -u) handover check
+Measured 2026-10-29 13:49:47Z (date -u; fetch of claude/l-red, claude/l-lit, trunk at 13:48Z).
+### 1. Branch, head, distance to trunk
+- claude/l-red. Local clone was stale at b2c3d07c (successor 23); fetched and fast-forwarded to origin 1811cae2 (predecessor's last push,
+  R111 §4 + notebook). Before merge: 2 ahead / 134 behind trunk origin/claude/vibrant-johnson-nxvvxo (merge-base 61881154). Merged trunk
+  (merge commit 2c8e7d04, no conflicts): 3 ahead / 0 behind (`git rev-list --left-right --count HEAD...trunk` = 3 0).
+### 2. Open work and the next step of each
+- Nothing in flight (HANDOVER "IN FLIGHT: nothing"). Oink not built in this container; setup_oink.sh started 13:49Z.
+- Lead 13:47Z STEP 1: the COUPLED family (R111 §4 (C4)/(C5) target): a game where σ-changes and τ-changes per joint λ-run both grow,
+  each caused by the other. Next: design a gadget where an Odd τ-run (dual hntop-like) and an Even σ-run interleave; measure NM* (nm.py),
+  NM*^U (nm.py on G^d via ctl/dualize.py + mirror), τ/σ-changes per joint λ-run, totals; two engines, Oink, S3 start via s3embed.
+### 3. docs/GAPS.md rows I own
+- G-NEST (major; L-RED), open (docs/GAPS.md line 9). Attacked, not owned: GAP-A, GAP-C (L-ALG, open; lines 6-7); G-N5-TIME (L-NEW,
+  open, line 11).
+### 4. Owner rulings (verbatim), DECISIONS-INDEX status
+1. D18 (index line 32, active): "Focus on N5 and work toward proving it. Explore novel approaches ... Clearly distinguish proven results from conjectures and open problems."
+2. D1 (index line 5, active; D001 launch brief): "Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet"
+3. D15 (index line 26, active): "Be autonomous, reason about it"
+### 5. One trap and its check
+- Trap (R99 erratum, R106 caveat): reported counts came from starts that were invalid or explicit, not the SPEC S3 default. Check: every
+  count names its start (file sha1 or "S3 default"); explicit-start pins are re-run from S3 via s3embed.py with the "same as image" check;
+  and today's stale clone (b2c3d07c, 3 handovers behind) was caught by fetch + ff before any work.
