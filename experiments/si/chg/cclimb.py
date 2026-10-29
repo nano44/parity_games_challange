@@ -2,7 +2,7 @@
 """L-SI box 28: kill search for the charging lemmas of note §3 (lemma kills, not SEG-COUNT kills; L-RED owns those).
 OBJ=IE: kill = INTER-JOINT failure (chg/suffix.py INTEREARLY_V: an H-sink, not a W-sink, makes an intermediate switch and later
 finalizes before its W-chain settles), shaping 3 * (H-sink intermediate switches) + EARLY_V (early H-sinks of any kind, capped 20).
-OBJ=GP: kill = DL-RUN / DL-FIRST / DL-SEP / GROWFIN failure (GROW-PERSIST died: chg/instances/growpers_kill_n73) (chg/dlock.py), shaping 5 * deadlock steps + non-growth steps.
+OBJ=GP: kill = DL-SEP / DL-NOCONSEC / FROZEN-COUNT / GROWFIN failure (shaping also 30 * (max frozen-run excess + 9)) (DL-RUN, DL-FIRST died on L-RED's segcount_kill_n20) (GROW-PERSIST died: chg/instances/growpers_kill_n73) (chg/dlock.py), shaping 5 * deadlock steps + non-growth steps + 3 * sum over non-growth steps t > r0 of 12 // (finalizers at t).
 Third component = failures (> 0 is a kill). Mutations and acceptance as lay/wclimb.py. Usage: cclimb.py SEED.pg SEED.start|- STEPS RNGSEED NMAX OUT"""
 import sys, os, random
 os.environ["PMODE"] = "1"
@@ -23,9 +23,9 @@ def sc(g, st):
     except (RecursionError, RuntimeError): return None
     if len(R) > 1500: return None
     if OBJ == "GP":                       # kill = GROW-PERSIST or DL-FIRST failure; shaping = non-growth steps and deadlock steps
-        d = dscore(g, R); f = d.get("DLRUN_V", 0) + d.get("DLFIRST_V", 0) + d.get("DLSEP_V", 0) + d.get("GROWFIN_V", 0)
+        d = dscore(g, R); f = d.get("DLSEP_V", 0) + d.get("DLCONSEC_V", 0) + d.get("GROWFIN_V", 0) + d.get("FRZLEN_V", 0)
         ng = sum(k * d.get("ngrun_%d" % k, 0) for k in range(1, 10))
-        return (1000 * f + 5 * min(d.get("deadlock", 0), 10) + min(ng, 40), ng, f)
+        return (1000 * f + 5 * min(d.get("deadlock", 0), 10) + min(ng, 40) + 3 * min(d.get("zlate_ng_inv", 0), 120) + 30 * d.get("zfrozen_excess_plus9", 9), d.get("zlate_ng", 0), f)
     d = cscore(g, R); f = d.get("INTEREARLY_V", 0) + d.get("JOINTX_V", 0) + d.get("BND_V", 0) + d.get("SUFFIX_V", 0)
     return (1000 * f + 3 * min(d.get("hsink_inter", 0), 30) + min(d.get("EARLY_V", 0), 20), d.get("hsink_inter", 0), f)
 

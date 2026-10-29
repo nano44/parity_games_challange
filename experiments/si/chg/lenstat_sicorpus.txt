@@ -1,0 +1,14 @@
+SKIPPED_input=1 dl_total=15 frozen_len_1=11 frozen_len_2=5 frozen_len_4=1 frozen_len_6=1 frozen_maxsw_1=14 frozen_maxsw_2=4 segs=702
+columns: ratio (b-a)/|E_b|, game, a, b, |E_b|, SW, FIN, DL, GR, TOT, MAXV, n
+TOP (1.0, 'experiments/si/xing/instances/zcl_cu_n24.pg', 1, 21, 20, 20, 20, 0, 20, 39, 4, 24)
+TOP (1.0, 'experiments/si/piece/out/pcg4.pg', 18, 19, 1, 1, 1, 0, 1, 1, 1, 23)
+TOP (1.0, 'experiments/si/piece/out/pc_frz24.pg', 8, 10, 2, 2, 2, 0, 2, 2, 1, 15)
+TOP (1.0, 'experiments/si/lwp/out/rs1_64212_0.pg', 0, 4, 4, 4, 4, 0, 4, 4, 1, 5)
+TOP (1.0, 'experiments/si/lwp/out/rl2_6281_0.pg', 0, 3, 3, 3, 3, 0, 3, 4, 2, 4)
+TOP (1.0, 'experiments/si/lwp/out/rl2_42511_0.pg', 0, 3, 3, 3, 3, 0, 3, 3, 1, 4)
+TOP (1.0, 'experiments/si/lwp/out/rl2_4191_0.pg', 0, 3, 3, 3, 3, 0, 3, 3, 1, 4)
+TOP (1.0, 'experiments/si/lwp/out/rl2_40714_0.pg', 0, 3, 3, 3, 3, 0, 3, 3, 1, 4)
+LEN2 PASS
+LENE PASS
+LENG PASS
+FRZLEN PASS
