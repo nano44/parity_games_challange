@@ -13,17 +13,22 @@ sys.path.insert(0, os.path.join(ROOT, "experiments", "friedmann-hn")); sys.path.
 import hn, n5b
 n, where = int(sys.argv[1]), sys.argv[2]
 g, ix = hn.build(n, "fig")
+if where == "topfix":           # T37 (H1) route: the top gate's exit e_n -> h_n removed, so tau(e_n) stays inside for good
+    g.succ[ix[f"e{n}"]] = [w for w in g.succ[ix[f"e{n}"]] if w != ix[f"h{n}"]]
 pr = list(g.prio); x = ix["x"]
 where = where.rstrip("E")
 if where == "gate":
     cut = 8 * n + 3
 elif where == "lane":
     cut = 20 * n + 1               # c = 20n (odd vertex c has even priority 20n); s = 20n+2: x goes to 20n+1 after shifting
+elif where == "topfix":
+    cut = None
 else:
     cut = max(pr) + 1
-pr = [p + 2 if p >= cut else p for p in pr]
-pr[x] = cut if cut % 2 == 1 else cut + 1
-if "E" in sys.argv[2:3][0][-1:]: pr[x] += 1      # WHERE ending in E: the sink gets the EVEN priority just above (Even-won sink)
+if cut is not None:
+    pr = [p + 2 if p >= cut else p for p in pr]
+    pr[x] = cut if cut % 2 == 1 else cut + 1
+if cut is not None and sys.argv[2].endswith("E"): pr[x] += 1      # WHERE ending in E: the sink gets the EVEN priority just above (Even-won sink)
 assert len(set(pr)) == len(pr)
 lab = g.labels or [str(v) for v in range(g.n)]
 with open(sys.argv[3], "w") as f:

@@ -29,6 +29,11 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   lambda-run); mkr ticks = W-cycle-node changes (monotone in phase); backpressure needs the closed link's current option to carry high W
   (Xi <= W, R18 (d) Lemma S (b)); pivot-pair obstruction (R108 §4); mk3.py v1 DATA: tau unstable at gates/readers (I_tau at state 0).
   Next: (A) tau-ticks (one U-improving tau change per pivot tick so gates re-close across phases), (B) length thresholds, (C) other clocks.
+- R108 §7 (H1) route: H_n with the sink lifted above the gates gives 0 reopenings (odd sink: shut once; even sink: never shut, never pays).
+  Forced-exit + (H1)-reopening needs c_U(h) even and c_Xi(h) odd.
+- R109 docs/red/R109-hn-topgate.md (DATA): H_n minus the edge e_n -> h_n (hnh1.py N topfix): tau never changes, gates never shut (c_U(h_i) = e_n,
+  c_Xi(h_i) = x), lane runs, bits set once each in order: 3n^2+13n-5 iterations from iota; d1_n switches 2n^2+5n-5 times in one run (> N
+  from n 10). Pins hntop_n3 (check.sh), hntop_n8, hntop_n8_s3 (S3 via s3embed, 291). Open: binary counting needs tau moves out/in.
 - Things only I know: W >= Xi pointwise (Lemma S (b)) kills every "Xi high, W low" gadget; the Odd honest choice is a MIN, so an Odd
   vertex's Xi is at most its tau-option's Xi. s3embed.py works on any explicit-start pin (check "same as image").
 
