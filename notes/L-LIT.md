@@ -1,21 +1,19 @@
 # L-LIT notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point (2026-10-29 ~13:0xZ by date -u; successor 2, Opus 5.5, D15/D18; session_01V5yGRXvhKC2cX2To8m3mpV)
-DONE this session (claude/l-lit, each via scripts/push.sh, VERIFY PASS):
-- 394aea76 handover check (docs/agents/handover-checks/L-LIT.md; container was 3889 behind, fast-forwarded).
-- 1bd2a11e P-N5-MPGS-fixes.md F3-F10 (sha1 c0b0a0aa…) + P-N5-MPGS-fixes-quotecheck.py ("quotes=50 bad=0"): every referee note
-  (MPGS-N1..N5, MATCH-N1..N4, N-MPGS-1..6, N-GS-1..5, N-MP-1..5, C.4 items, J1-J15) quoted verbatim and answered; no statement change.
-  New small PROVED remarks there (unrefereed): F9 (a) sharpness at NM = 0 (all-odd chain of length W), F9 (b) additivity / MATCHED raises
-  weight; F6 CONJECTURE H2-FREE (OPEN) with its obstruction. Lead asked whether F9 (a), (b) go to referees.
-- T40 docs/lit/T40-frame-split.md + T40-dominance-check.py (frame split literature; 7 entries; PROVED: STV with τ fixed ≤ |V_0|
-  steps; W-MONO and B-DOM on S4a transitions; DATA: A-dominance over Howard fails 262/263 runquad, ~50% libraries).
-Predecessor's packets (T32-T39, P-N5-MPGS) are listed in git history (e5ae4111 resume point); P-N5-MPGS signed by both referees.
-- T41 docs/lit/T41-moving-target.md + T41-target-check.py (S4a vs fixed σ^c_τ per phase; topfix d1_n leaves its target n²+2n−2
-  times in one phase; library MISS ~45%, AWAY ≤ 7). Lead: F9 (a), (b) stay remarks in R85 (no referee round).
-- T41b docs/lit/T41b-frozen-wphases.md (+ check script): departures from c inside frozen W-phases, O(n) per frozen W-phase.
-- T42 docs/lit/T42-ranking-functions.md: ranking-function synthesis scan for L-NEW BOX 53 (12 entries).
-IN FLIGHT: none. NEXT: Lead's word.
+## Resume point (HANDOVER, 2026-10-29 14:25Z by date -u; successor 2, Opus 5.5, D15/D18; session_01V5yGRXvhKC2cX2To8m3mpV; parked on Lead's word at ~445k)
+DONE this session (claude/l-lit; every push via scripts/push.sh, exit 0, VERIFY PASS; Oink smoke NOT RUN, Oink not built in this container):
+- 394aea76 handover check (container started 3889 behind; fast-forwarded).
+- 1bd2a11e + 510c47eb P-N5-MPGS-fixes.md F3-F11 (final sha1 57015bb6…) + P-N5-MPGS-fixes-quotecheck.py ("quotes=50 bad=0"). Lead: F9 (a), (b)
+  stay unrefereed remarks in R85 (at CHECKER as C94); J6-J8 carried into the entry by the Lead.
+- 28e3909a T40 docs/lit/T40-frame-split.md + T40-dominance-check.py (frame split literature; PROVED STV τ-fixed ≤ |V_0|; W-MONO = L-SI W-MON).
+- 7a5cdb25 T41 docs/lit/T41-moving-target.md + T41-target-check.py (S4a vs fixed σ^c_τ; topfix d1_n leaves c n²+2n−2 times per phase).
+- 3b466a1b T41b docs/lit/T41b-frozen-wphases.md + T41b-frozen-target-check.py (departures inside frozen W-phases, ≤ 2n−1 per frozen W-phase).
+- 8f1e27bc T42 docs/lit/T42-ranking-functions.md (ranking-function synthesis scan for L-NEW BOX 53; 12 entries).
+- 5aa592e5 T43 docs/lit/T43-dlm-coupled-counter.md (DLM's coupled counter; N5 escapes at S4a/S4b joint W-optimum; design target for L-RED 27).
+IN FLIGHT: none.
+NEXT for a successor: the Lead's word. Open threads offered to the Lead (not started): per-frozen-W-phase variants for L-SI if asked; a CEGAR
+LP for ranking templates on sampled N5 transitions (T42 §3, DATA only) if L-NEW wants it.
 NEEDS: none from the owner.
 
 ## Queue
@@ -32,6 +30,13 @@ NEEDS: none from the owner.
 - Open FL09 (self-loop removal) if the REFEREE needs it; Friedmann RAIRO 2011 (publisher 403; try author copy).
 
 ## Things only I know
+- Successor 2 (2026-10-29): measurement scripts T40/T41/T41b import L-SI's experiments/si/root/common.py (-> experiments/new/box21/n5x.py,
+  si.py) from the REPO ROOT (run as python3 -I docs/lit/<script> from the root); batch wrapper used: scratchpad t40/batch.sh (reads list files
+  like r17.py: path, then experiments/path; uses the start file when given). Corpora: experiments/si/root/logs/alt_all.lst (with starts),
+  experiments/n5-box18/results/lib41_n48.lst, experiments/si/chg/sicorpus.lst (dlmm_ML_L6 has a start file in another format: skipped, as L-SI).
+- Topfix n 4, 6, 10, 12 generated with experiments/red/seg/hnh1.py N topfix into scratchpad t41/inst (n 8 regenerates the pin byte for byte).
+- DLM dlm1 instances: experiments/new/dlm_gen.py 1 n (start pair on stderr); SSI runs: experiments/new/dlm_diag.py game ssi start.
+- The "file changed on disk" notices for docs/lit/T40-T43 were spurious (tree clean, sha1s as pushed).
 - T40 (2026-10-29, successor 2): PDFs in this session's scratchpad dl40/<name>/p.pdf (sha256 in Sources opened); batch logs of
   T40-dominance-check.py over alt_all and lib41 in scratchpad t40/*3.txt (not committed; re-run: one line per game, minutes).
 - Research agents (my subagents, this session) opened most T2/T3 primaries; their full reports with verbatim quotes and page

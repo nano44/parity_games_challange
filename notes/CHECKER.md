@@ -4,14 +4,14 @@ History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50
 ## HANDOVER (successor 13 → successor 14), written 2026-10-29 13:55Z (date -u), at ~650k context (Lead WATCHDOG)
 - DONE. C90 (R81 FBCK), C91 (R82 SDPRIME), C92 (R83 REL), C93 (R84 TOPSHAPE): all CLOSED (landed checks PASS). C89 Add. 3 PASS.
   C94 (R85 MPGS): main report b01572a9 FAIL E-1 ((c′) λ-run form = strengthening), Addendum A 0c9fdc07 (E-2 stale fixes pin), Add. 1 7e309075
-  PASS (checker SHA for R85). R85 landed check: PENDING at this writing (waiting for the Lead's landing SHA; checklist C94 §8).
+  PASS (checker SHA for R85). R85 LANDED 17f51175 (14:02:36Z): C94 Add. 2 PASS, CI run 4868 success; C94 CLOSED. Nothing open at CHECKER.
   | check | entry | main report | Add. 1 (checker SHA) | landed at | landed check |
   | --- | --- | --- | --- | --- | --- |
   | C90 | R81 FBCK | d262c1de PASS | 9777e9e6 | 958c8063 | Add. 2 GAPS L-1, Add. 3 repaired ea2cc8db; CLOSED |
   | C91 | R82 SDPRIME | 0af8e744 PASS (N-1, N-2) | 81502454 | 12f4af00 | Add. 2 PASS; CLOSED |
   | C92 | R83 REL | 7349d546 PASS (N-1..N-3) | 76272f51 | c01e04a1 | Add. 2 PASS (stamp 06:35Z vs commit 06:36:13Z noted); CLOSED |
   | C93 | R84 TOPSHAPE | 29c98612 PASS (N-1, N-2) | f6728213 | 0bb6ce32 | Add. 2 PASS; CLOSED |
-  | C94 | R85 MPGS | b01572a9 FAIL E-1; Add. A E-2 | 7e309075 PASS | see above | see above |
+  | C94 | R85 MPGS | b01572a9 FAIL E-1; Add. A E-2 | 7e309075 PASS | 17f51175 | Add. 2 PASS (CI green); CLOSED |
 - NEXT (Lead): C95 = R86 (P-N5-COMPOSE, L-SI; both referees signed; fixes on claude/l-si). The λ-run form of MATCH-Φ's (A) (R85 Referee
   strengthening (0)) is used by COMPOSE §6: check that R86 signs it from BOTH COMPOSE reports' verdict entries (REFEREE-2 20: R2-N5-COMPOSE l. 35
   "COMPOSE-NM SIGNED as an implication. The "phase → λ-run" replacement is VALID"; REFEREE 18: read its COMPOSE verdict table).

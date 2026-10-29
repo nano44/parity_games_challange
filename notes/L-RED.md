@@ -1,4 +1,5 @@
 # L-RED notebook (independent adversary lane)
+Successor 27 (session_01V5yGRZhxQ9YBy6C2G2tafC, Opus 5.5) started 2026-10-29 13:47Z (date -u); handover check 724bab9d; STEP 1 = COUPLED family, R112; see "Successor 27".
 Successor 26 (session_01V5yGRZkfreYYKp9tvV9Bre, Opus 5.5) HANDOVER written 2026-10-29 12:31Z (date -u) at ~300k context; see "Successor 26 HANDOVER".
 Successor 26 (session_01V5yGRZkfreYYKp9tvV9Bre, Opus 5.5) started 2026-10-29 11:07Z (date -u); handover check 59c51092; STEP 1 = R107; see "Successor 26".
 Successor 25 (session_01V5yGRWodt68VHnvw1bRQmG, Opus 5.5) HANDOVER written 2026-10-29 10:52Z (date -u) at ~400k context; see "Successor 25 HANDOVER".
@@ -18,6 +19,17 @@ Successor 15 PARKED ~09:40Z 2026-10-25 after box 38; RESUME POINT for successor 
 context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older notebook: `git show b0884407:notes/L-RED.md`.
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
+
+## Successor 27 (session_01V5yGRZhxQ9YBy6C2G2tafC, Opus 5.5, D1/D15/D18; started 2026-10-29 13:47Z, date -u)
+- Handover check 724bab9d (trunk merged 2c8e7d04); Oink built (8fbf0a7).
+- STEP 1 (Lead 13:47Z): COUPLED family. R112 docs/red/R112-coupled-relay.md (DATA + READING): cpl/chain.py relay chain, one joint lambda-run,
+  2L sigma- and 2L+1 tau-changes, each released by the other; linear, NM = NM^U = 0. Rules (S) stall-support, (D) direction, (C) cycles.
+- Tools experiments/red/cpl/: cpl.py (joint lambda-runs: lambda from Xi_sigma, lambda^U from Xi_tau on G^d), nmrun.py (NM per lambda-run with
+  nm.matched unchanged), trn.py, vcpl.sh, build.py, chain.py, search.py.
+- R113 (READING): two-sided mkr dead as designed: tau-released pivot steps drop W, leapfrog reactors need W rises; open: break (A) or (B).
+- Things only I know: nm.py's key r38 includes tau, so it is per PHASE; use nmrun.py for per-lambda-run. R111's "287 tau-changes" on
+  d_hntop_n8: cpl.py counts 291 transitions that change tau (all 291), 241 inside the first joint run. A U-high/Xi-low route needs a
+  not-best-reply vertex on the other side; in a DAG such supports unravel (every gate fires once).
 
 ## Successor 26 HANDOVER (written 2026-10-29 12:31Z, date -u; ~300k context)
 - DONE (claude/l-red, push.sh VERIFY PASS each push): 59c51092 handover check; 5635a4cf/502757d5 R107 (S3 start; s3embed);
