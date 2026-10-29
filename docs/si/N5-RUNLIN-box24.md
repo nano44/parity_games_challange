@@ -150,6 +150,9 @@ far end. I worked the design out on paper; this section records what each part n
 - Third wave (DATA, written 00:3xZ): from runfam_K40, subdividing next to vertex 28 instead (chain25.py with U = 28, log out/chain28.log)
   again alternates +3 / +2 for 30 steps: 251 at n = 110 (run − 2n = +31, 2.28n), still rising at the stop. So stretching both corridor
   ends in turn keeps a slope of about 2.5 per vertex over the sizes tried; whether it stays above 2 indefinitely is not shown.
+  Continued 60 more steps (out/chain28b.log): 276 (n 120), 302 (130), 327 (140), 352 (150), 377 (160), 403 at n = 170 (2n + 63, 2.37n), still
+  exactly +2.5 per vertex, no saturation in 90 steps. So the family at vertex 28 has run ≈ 2.5n − c: a third long wave that grows with n.
+  The ratio tends to 2.5, a constant: RUN-LIN′ (linear) is untouched. A super-linear run needs the number of long waves to grow with n.
 - Pins: experiments/si/runlin/instances/runfam_base_n39 (.pg 6b6fc369…, .start 24b9c519…), runfam_K10 (.pg faf218f1…, .start 56e4dec6…),
   runfam_K40 (.pg 287a185d…, .start bcbfeed3…); full sha1 in §6.
 
