@@ -1,0 +1,15 @@
+SETTLE_V=55 SETTLE_V_D1=55 fw_D0=164 fw_D1=665 fw_D2=27 fw_D3=8
+max WCH/(n-1) at |D| class 0: (0.936, '../experiments/red/xing/instances/x32_rand48.pg', 0, 44, 44, 0, 48)
+max WCH/(n-1) at |D| class 1: (0.806, '../experiments/red/xing/instances/kw25_n32.pg', 0, 25, 25, 1, 32)
+max WCH/(n-1) at |D| class 2: (0.355, '../experiments/red/n5inj/instances/phase2_pk32.pg', 8, 19, 11, 2, 32)
+max WCH/(n-1) at |D| class 3: (0.231, '../experiments/red/n5inj/instances/frz40.pg', 62, 71, 9, 3, 40)
+EXAMPLE (tag, game, a, b, x, final length, first k failing, value then, final value, |D|) ('SETTLE', '../experiments/n5-exhaustive/instances/b6_xl_n48.pg', 22, 25, 5, 2, 2, (11, 8796160131072, 2), (11, 67633152, 2), 1)
+EXAMPLE (tag, game, a, b, x, final length, first k failing, value then, final value, |D|) ('SETTLE', '../experiments/n5-exhaustive/instances/b6_xw_n32.pg', 46, 53, 1, 2, 2, (11, 805896580, 7), (11, 540672, 2), 1)
+EXAMPLE (tag, game, a, b, x, final length, first k failing, value then, final value, |D|) ('SETTLE', '../experiments/n5-exhaustive/instances/b6_xw_n32.pg', 46, 53, 6, 2, 2, (11, 805372064, 5), (11, 16416, 2), 1)
+EXAMPLE (tag, game, a, b, x, final length, first k failing, value then, final value, |D|) ('SETTLE', '../experiments/n5-exhaustive/instances/b6_xw_n32.pg', 46, 53, 8, 3, 3, (11, 838926464, 5), (11, 33570848, 3), 1)
+EXAMPLE (tag, game, a, b, x, final length, first k failing, value then, final value, |D|) ('SETTLE', '../experiments/n5-exhaustive/instances/b6_xw_n32.pg', 46, 53, 10, 3, 3, (11, 805372292, 6), (11, 16672, 3), 1)
+EXAMPLE (tag, game, a, b, x, final length, first k failing, value then, final value, |D|) ('SETTLE', '../experiments/n5-exhaustive/instances/b6_xw_n32.pg', 46, 53, 20, 4, 4, (11, 805372036, 5), (11, 16676, 4), 1)
+EXAMPLE (tag, game, a, b, x, final length, first k failing, value then, final value, |D|) ('SETTLE', '../experiments/n5-exhaustive/instances/b6_xw_n32.pg', 46, 53, 22, 6, 6, (11, 805372032, 4), (11, 67191076, 6), 1)
+EXAMPLE (tag, game, a, b, x, final length, first k failing, value then, final value, |D|) ('SETTLE', '../experiments/n5-exhaustive/instances/b6_xw_n32.pg', 46, 53, 26, 5, 5, (11, 872480896, 5), (11, 67125540, 5), 1)
+SETTLE FAIL
+SETTLE_X PASS

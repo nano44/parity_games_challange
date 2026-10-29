@@ -1,0 +1,12 @@
+RDX_V=84 RDX_V_D3=84 RD_V=87 RD_V_D1=54 RD_V_D2=30 RD_V_D3=3
+max L/(n-1) = 0.936 ('red/xing/instances/x32_rand48.pg', 0, 44, 0, 48)
+EXAMPLE (tag, game, a, b, k, x, before, after, |D|) ('RD', 'n5-epoch/instances/lend47_n32.pg', 31, 47, 4, 15, (21, 3221225472, 2), (21, 1073741824, 2), 2)
+EXAMPLE (tag, game, a, b, k, x, before, after, |D|) ('RD', 'n5-epoch/instances/lend47_n32.pg', 31, 47, 5, 30, (21, 536870912, 10), (21, 1073741824, 3), 2)
+EXAMPLE (tag, game, a, b, k, x, before, after, |D|) ('RD', 'n5-epoch/instances/lend47_n32.pg', 31, 47, 6, 8, (21, 536870912, 9), (21, 1073741824, 4), 2)
+EXAMPLE (tag, game, a, b, k, x, before, after, |D|) ('RD', 'n5-epoch/instances/lend47_n32.pg', 31, 47, 7, 18, (21, 536870912, 9), (21, 1073741824, 5), 2)
+EXAMPLE (tag, game, a, b, k, x, before, after, |D|) ('RDX', 'red/ul/instances/ladderd0_k12_n48.pg', 0, 13, 3, 14, (17, 68719476736, 2), (17, 137438953472, 2), 14)
+EXAMPLE (tag, game, a, b, k, x, before, after, |D|) ('RDX', 'red/ul/instances/ladderd0_k12_n48.pg', 0, 13, 4, 14, (17, 137438953472, 2), (17, 274877906944, 2), 14)
+EXAMPLE (tag, game, a, b, k, x, before, after, |D|) ('RDX', 'red/ul/instances/ladderd0_k12_n48.pg', 0, 13, 5, 14, (17, 274877906944, 2), (17, 549755813888, 2), 14)
+EXAMPLE (tag, game, a, b, k, x, before, after, |D|) ('RDX', 'red/ul/instances/ladderd0_k12_n48.pg', 0, 13, 6, 14, (17, 549755813888, 2), (17, 1099511627776, 2), 14)
+RD FAIL
+RDX FAIL

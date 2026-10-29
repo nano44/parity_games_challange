@@ -1,0 +1,22 @@
+WSIL=39 phases=457 wphases=881
+W-phase columns: L, game, a, b, WCH, NMw, PCHw, LONw, |D|, SBCH, n, m
+TOP (71, 'red/usplit/instances/gate_K64_n581.pg', 0, 71, 71, 1, 33, 0, 5, 64, 581, 1130)
+TOP (55, 'red/usplit/instances/pp_K48_n449.pg', 0, 55, 55, 1, 25, 0, 6, 50, 449, 870)
+TOP (55, 'red/xing/instances/x32_rand64.pg', 0, 55, 55, 0, 1, 2, 0, 0, 64, 237)
+TOP (52, 'red/so/instances/xsnf52_n64.pg', 2, 54, 52, 1, 1, 1, 0, 0, 64, 255)
+TOP (49, 'red/n3/instances/run49_n32.pg', 2, 51, 49, 3, 4, 0, 1, 3, 32, 81)
+max L/n = 1.531 (49, 'red/n3/instances/run49_n32.pg', 2, 51, 49, 3, 4, 0, 1, 3, 32, 81)
+max WCH/n = 1.531 (49, 'red/n3/instances/run49_n32.pg', 2, 51, 49, 3, 4, 0, 1, 3, 32, 81)
+max NMw/n = 0.222 (3, 'n5-exhaustive/instances/thetaA_n9.pg', 1, 4, 3, 2, 2, 0, 0, 0, 9, 13)
+max PCHw/n = 0.333 (8, 'red/xing/instances/x31_cu24.pg', 2, 10, 8, 4, 8, 0, 1, 0, 24, 93)
+max LONw/n = 0.250 (3, 'n5-exhaustive/instances/nh_n8.pg', 0, 3, 3, 0, 0, 2, 0, 0, 8, 13)
+max L/(n+m) = 0.434 (49, 'red/n3/instances/run49_n32.pg', 2, 51, 49, 3, 4, 0, 1, 3, 32, 81)
+phase columns: L, game, i, j, FB, LWCH (lambda_W-changing non-fb), WSIL (W-silent non-fb), #W-phases, n
+PTOP (121, 'new/box48/instances/long121_n40.pg', 1, 122, 8, 0, 0, 9, 40)
+PTOP (121, 'red/n3/instances/long121_n40.pg', 1, 122, 8, 0, 0, 9, 40)
+PTOP (112, 'red/so/instances/xsn91_n48.pg', 3, 115, 9, 0, 0, 9, 48)
+PTOP (108, 'n5-epoch/instances/lend107_n32.pg', 2, 110, 10, 2, 0, 10, 32)
+max LWCH/n = 0.646 (31, 'red/so/instances/post31_n48.pg', 4, 35, 0, 31, 0, 0, 48)
+WMON PASS
+CNW PASS
+R17W PASS

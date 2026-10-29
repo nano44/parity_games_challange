@@ -1,0 +1,58 @@
+CMP_chk 7666
+FB_E_kind1 1
+FB_E_kind2 100
+FB_O_kind4 26
+FMON_chk 119178
+FSW_chk 11213
+LEN_MUT3_V 3144
+LEN_chk 109744
+LEN_lonly 3268
+PH_chk 5407
+PH_eq 382
+RUNS 2000
+RUN_chk 2000
+SUCC_chk 59589
+SWRS_chk 11
+SWR_chk 37250
+TRANS 4077
+both_change 1466
+kind1 2481
+kind2 1072
+kind3 355
+kind4 169
+max_T 7
+max_lamUruns 5
+max_lamruns 7
+slack_S1_S2_den 10198
+slack_S1_S2_num 2744
+VIOLATIONS 3144
+EX ('LEN_MUT3', 'rand0', 0, 1, 2, 3, 1, 0)
+EX ('LEN_MUT3', 'rand0', 0, 2, 4, 0, 1, 0)
+EX ('LEN_MUT3', 'rand0', 0, 2, 4, 3, 1, 0)
+EX ('LEN_MUT3', 'rand0', 0, 2, 4, 4, 1, 0)
+EX ('LEN_MUT3', 'rand0', 0, 2, 4, 6, 1, 0)
+EX ('LEN_MUT3', 'rand0', 0, 2, 4, 7, 1, 0)
+EX ('LEN_MUT3', 'rand0', 0, 2, 4, 9, 1, 0)
+EX ('LEN_MUT3', 'rand0', 0, 2, 4, 12, 1, 0)
+EX ('LEN_MUT3', 'rand1', 1, 1, 2, 15, 1, 0)
+EX ('LEN_MUT3', 'rand1', 1, 1, 2, 19, 1, 0)
+EX ('LEN_MUT3', 'rand3', 1, 0, 2, 2, 1, 0)
+EX ('LEN_MUT3', 'rand3', 1, 0, 2, 9, 1, 0)
+EX ('LEN_MUT3', 'rand3', 1, 0, 2, 13, 1, 0)
+EX ('LEN_MUT3', 'rand5', 1, 1, 2, 3, 1, 0)
+EX ('LEN_MUT3', 'rand6', 0, 0, 1, 0, 1, 0)
+EX ('LEN_MUT3', 'rand6', 0, 0, 1, 1, 1, 0)
+EX ('LEN_MUT3', 'rand6', 0, 0, 1, 5, 1, 0)
+EX ('LEN_MUT3', 'rand6', 0, 1, 2, 0, 1, 0)
+EX ('LEN_MUT3', 'rand6', 0, 1, 2, 1, 1, 0)
+EX ('LEN_MUT3', 'rand6', 0, 1, 2, 5, 1, 0)
+EX ('LEN_MUT3', 'rand6', 1, 0, 1, 2, 1, 0)
+EX ('LEN_MUT3', 'rand6', 1, 0, 1, 4, 1, 0)
+EX ('LEN_MUT3', 'rand6', 1, 0, 1, 8, 1, 0)
+EX ('LEN_MUT3', 'rand6', 1, 0, 1, 10, 1, 0)
+EX ('LEN_MUT3', 'rand8', 0, 1, 2, 0, 1, 0)
+EX ('LEN_MUT3', 'rand8', 0, 1, 2, 2, 1, 0)
+EX ('LEN_MUT3', 'rand9', 0, 3, 4, 14, 1, 0)
+EX ('LEN_MUT3', 'rand10', 1, 0, 2, 5, 1, 0)
+EX ('LEN_MUT3', 'rand10', 0, 0, 1, 0, 1, 0)
+EX ('LEN_MUT3', 'rand10', 0, 0, 1, 5, 1, 0)

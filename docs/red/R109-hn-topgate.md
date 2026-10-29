@@ -55,17 +55,27 @@ L-RED successor 26 (Opus 5.5; D15/D18; STEP 2 (A), T37 §3's (H1) route; Lead 11
 - τ never changes. Odd's τ(e_i) stays on d1_i: the U-frame sees e4's closed cycle (c_U(h_i) = e4), so Odd has no reason to shut.
 - Cycle nodes of the exits (state k: Ξ / U): k = 0, 10, 30, 50, 70: h1, h2, h3 = x / e4, h4 = x / x; k = 90: h1..h3 = e4 / e4.
 
-## 4. Why no binary counting (READING, partial)
-- In [F] the increment after setting bit j re-sets bit 1 next. Here, after a reset, gate 1's cycle re-closes (d1_1 → d2_1 → d3_1 → e1
-  at t 47-49), but s never returns to f1, and y1, g1 do not return to f1, y1.
-- In [F] that step is the selector's hidden-profit update through the lane. Under N5 the choice is by W against τ, and τ(e1) = d1_1
-  (inside). So the W-value of e1 is the gate cycle's, not the exit's, and setting bit 1 again looks no better to S4a than the current
-  route through the higher set bit.
-- In [F] the profit of a closed gate becomes visible through Odd's forced exit (τ_σ = σ̄), and here W never uses σ̄.
-- Hence the same τ-pinning that hides profit (no shutting) also hides the RE-set of lower bits. A binary N5 counter needs a τ that
-  leaves the lower gates exactly when they should pay, and returns inside after the reset. Those are τ-changes, U-improving both ways,
-  inside one λ-run: the "dual reactor" of R108 §6 (A).
-- OPEN.
+## 4. Why no binary counting (DATA + READING; replaces the partial reading of the first push)
+**DATA** (hntop_n3, iota start; Iσ and the (σ, τ)-plays by vertex name).
+- From t 29 to t 41, gate 1's closing edge d3_1 → e1 is in Iσ at every state (Ξ-improving), and S4a never takes it. At t 42 bit 3 is
+  set instead (s → f3, y3 → f3), skipping bit 1.
+- The W-plays (σ at Even vertices, τ at Odd vertices) at t 30 and t 41:
+  - keep d3_1 → a4: d3_1 a4 t4 t3 t2 t1 c r g2 y2 f2 e2 d1_2 d2_2 …, which ends in gate 2's closed cycle, top e2 (priority 16, even);
+  - close d3_1 → e1: d3_1 e1 d1_1 d2_1, which ends in gate 1's cycle, top e1 (priority 8, even).
+- S4a chooses by W, and the higher even cycle node wins, so the closing is rejected.
+- At t 4, before any higher gate was closed, the same closing was taken (W-play ending in e1 vs routes to x).
+
+**READING.**
+- With τ(e_i) pinned inside, a set bit i shows up in W as the W-cycle node e_i: Odd stays in the closed gate under τ, and there is no
+  forced exit in W.
+- Inside a phase, W is non-decreasing (R108 §1: Lemma S (c) with R17 F1), so the W-cycle-node reward at each vertex only rises.
+  Once a route to a closed gate j is available, closing a lower gate i < j is W-worse and is never taken in that phase.
+- Bits are therefore set in increasing order, each at most once per phase. Each set costs a lane climb of Θ(i), which gives the
+  unary count Σ Θ(i) = Θ(n²).
+- This is the R108 (2) obstruction (W-cycle-node ticks are monotone within a phase) appearing inside Friedmann's own construction.
+- A binary N5 counter needs W to DROP between increments. W can drop only at a τ-change, so it needs τ to leave the lower gates
+  (forced exit visible to W) and to return after the reset. Both moves are U-improving, inside one λ-run: NM*^U > 0, the Odd-side
+  carries of the Lead's 12:15Z framing. OPEN.
 
 ## 5. Carries (Lead 12:15Z: the primary quantities are NM* (Even side) and NM*^U (Odd side on G^d))
 - NM per (vertex, phase): L-COMP's experiments/n5-box18/nm.py (key r38 = (λ_Ξ, τ); T33's MATCHED rule), run unmodified on the pins and
@@ -97,8 +107,9 @@ L-RED successor 26 (Opus 5.5; D15/D18; STEP 2 (A), T37 §3's (H1) route; Lead 11
   2. DATA: τ-gates never shut, because (H1) fails via c_U(h_i) = e_n, c_Ξ(h_i) = x (R108 §7's condition). 0 reopenings.
   3. DATA: one vertex switches 2n² + 5n − 5 times in one run (> N from n 10). The "O(n) switches per vertex per run" route is dead on
      this family.
-  4. READING: τ-pinning hides both the set and the re-set of lower bits, so the counter is unary (Θ(n²)). A binary count needs
-     U-improving τ moves out of and back into each lower gate within one λ-run.
+  4. DATA + READING (§4): under pinned τ a set bit is a W-cycle node (closed gate cycle). W is non-decreasing in a phase, so a lower
+     gate's Ξ-improving closing is rejected once a higher closed gate is reachable (hntop_n3, t 29-41: d3_1 → e1 stalls, e1 = 8 <
+     e2 = 16). The counter is unary. A binary count needs τ-changes (W drops only there), i.e. NM*^U > 0.
 - ADDENDUM FINDING (§5): DATA: carries of one vertex in one phase, NM = 2n² + 5n − 5 (1.36N at n 12; previous data max 0.90N).
   NM^U = 0 (τ frozen). Polynomial (Θ(N²)); G-N5-TIME untouched.
 - NEEDS: none from the owner.
