@@ -1,5 +1,5 @@
 # L-RED notebook (independent adversary lane)
-Successor 27 (session_01V5yGRZhxQ9YBy6C2G2tafC, Opus 5.5) HANDOVER written 2026-10-29 ~15:10Z (date -u) at ~390k context; see "Successor 27 HANDOVER".
+Successor 27 (session_01V5yGRZhxQ9YBy6C2G2tafC, Opus 5.5) HANDOVER written 2026-10-29 14:48Z (date -u) at ~390k context; see "Successor 27 HANDOVER".
 Successor 27 (session_01V5yGRZhxQ9YBy6C2G2tafC, Opus 5.5) started 2026-10-29 13:47Z (date -u); handover check 724bab9d; STEP 1 = COUPLED family, R112; see "Successor 27".
 Successor 26 (session_01V5yGRZkfreYYKp9tvV9Bre, Opus 5.5) HANDOVER written 2026-10-29 12:31Z (date -u) at ~300k context; see "Successor 26 HANDOVER".
 Successor 26 (session_01V5yGRZkfreYYKp9tvV9Bre, Opus 5.5) started 2026-10-29 11:07Z (date -u); handover check 59c51092; STEP 1 = R107; see "Successor 26".
@@ -21,7 +21,7 @@ context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older note
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
 
-## Successor 27 HANDOVER (written 2026-10-29 ~15:10Z, date -u; ~390k context)
+## Successor 27 HANDOVER (written 2026-10-29 14:48Z, date -u; ~390k context)
 - DONE (claude/l-red, push.sh VERIFY PASS each push): 724bab9d handover check; 6aa2dcd7 R112 (coupled relay chain, cpl tools, check.sh gate
   relay_L3); 41c567c3 R113 (menus autonomous; tau-released steps drop W; leapfrog reactor clocks need W-rising sources; two-sided mkr dead as
   designed); R113 §4 addendum (W-sink delay route; mkr vs its dual = opposite winning regions, cross gates never open; flip-climb DATA).

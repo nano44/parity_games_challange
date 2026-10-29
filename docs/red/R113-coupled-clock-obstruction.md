@@ -49,7 +49,7 @@ OPEN. Not a TARGET.md claim, not a proof. G-N5-TIME stays OPEN.
   side's own rises, and the other side could only add one-shot delays. That would point AGAINST the mutual binary counter of R111 §4,
   i.e. towards a polynomial bound. The obvious next test is (i) or (ii).
 
-## 4. Addendum (2026-10-29 ~15:05Z, date -u): route (iv′) and why mkr cannot simply be merged with its dual
+## 4. Addendum (2026-10-29 14:47Z, date -u): route (iv′) and why mkr cannot simply be merged with its dual
 - A route that respects §2: let Odd delay mkr's W-SINKS instead of the pivots. w_i's keep goes to a one-shot Odd holder χ_i (τ = a new
   Odd loop Λ_i with T′_K < Λ_i < T_i, so W(keep) ≥ W(T_i) and τ(Λ_i) = self stays U-stable through mkr's EQ escape). h cannot take
   C_{i+1} during the hold, because C_{i+1}'s honest value rises only after w_i switches (its Ξ-menu, Even's own). So the net W-drop at
