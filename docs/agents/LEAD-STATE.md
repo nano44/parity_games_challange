@@ -1832,3 +1832,4 @@
 - 01:20Z (date -u): C88 CLOSED (Add. 3 5d70c88b). FBCK §Cs: REFEREE 6b752e89, REFEREE-2 991f9e27 (identical, joint map empty; σ̄|V closure proof by REFEREE, verified by REFEREE-2) → L-NEW woken for FBCK fixes. Both referees parked. L-RED interim (lvl1 template f = m; second-wave sign obstruction, READING). Waiting C89 Add. 1 for R80.
 - 01:25Z (date -u): R80 LANDED (C89 Add. 1 PASS, checker 3f849b3a); GAPS UPDATE (date from date -u); NOW counters R17-R80.
 - 01:30Z (date -u): L-NEW FBCK fixes e0fda64f (sha1 19237624, F1-F8, 25 quotes; Cor. (ii) implication; general-H bullet 3 an ASSUMPTION); L-NEW parked. R81 (FBCK) draft delegated to a subagent.
+- 01:36Z (date -u): C89 CLOSED (Add. 2 PASS, R80 landed check). GAPS precision UPDATE appended for C89 Add. 2 N-1 (READING label, 'some passive Even readers'). CHECKER 12 parked (handover 47e1e989) → successor 13 next.
