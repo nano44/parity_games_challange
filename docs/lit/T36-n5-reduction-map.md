@@ -43,7 +43,7 @@ Asked by the Lead at 11:19Z (date -u), for the owner. Owner ruling D18:
 | 3 | switches → successor rises | SW-RETURN: v re-enters a successor c at most 1 + (number of Ξ(c) rises) times, on any stretch | PROVED (lane, L-SI s24, l-si 884fea80 / f372bc6b) | claude/l-si docs/si/N5-CHG-box28.md §7, §9 |
 | 4 | rises → P-changes | LEN-MONO: on a λ-run, RISE(c) ≤ PCH(c) + (PCH(c) + 1)(n − 1); under a fixed P the length moves one way | PROVED (lane, l-si f372bc6b); same bound in GRUN §5 (l-si e03c3988) | N5-CHG-box28 §9; N5-GRUN-box25 §5 |
 | 5 | **composition** | Theorem COMPOSE / Corollary COMPOSE-RUN: iterations ≤ 2n(n − 1) + (n(n − 1) + 1)·n·(m_E(P* + 1) + m_O(P*^U + 1)), with P* (P*^U) the most P-changes of one vertex in one λ-run (λ^U-run). Needs no bound on phases. | PROVED (lane, l-si f372bc6b), a REDUCTION | N5-CHG-box28 §9 |
-| 6 | P-changes → carries | MATCH-Φ: PCH ≤ (K(K+1)/2)(NM + 1) + NM, K ≤ n − 1. It holds for any sequence of subsets of R_c with c fixed, so on λ-runs. | PROVED (REFEREE-2 signed every item, docs/referee-2/R2-N5-MATCHPHI.md, referee-2 5ba3e21d; REFEREE pending) | docs/lit/P-N5-MATCHPHI.md, l-lit 12b7d12a |
+| 6 | P-changes → carries | MATCH-Φ: PCH ≤ (K(K+1)/2)(NM + 1) + NM, K ≤ n − 1. It holds for any sequence of subsets of R_c with c fixed, so on λ-runs. COMPOSE uses it as an ASSUMED premise | PROVED (L-LIT), under review. Review object P-N5-MPGS (A) (l-lit a23179b0), REFEREE-2 20 reviewing. REFEREE-2 19 already signed every item of the identical statements in P-N5-MATCHPHI (docs/referee-2/R2-N5-MATCHPHI.md, referee-2 5ba3e21d). REFEREE pending | docs/lit/P-N5-MPGS.md (A); docs/lit/P-N5-MATCHPHI.md (12b7d12a, superseded) |
 | 7 | **open** | NM*, NM*^U = poly(n)? | OPEN | §3 |
 
 **Consequence.** If links 3-6 are refereed as they stand, N5 is polynomial on every game IF NM* and NM*^U are polynomial
@@ -99,11 +99,13 @@ S4a's rule, i.e. how an edge enters the arena Iσ_t (T33 §2.4; T34).
 - Θ(n²) iterations in one run from an explicit start (runquad, R106; DATA).
 - Nothing super-polynomial.
 - Friedmann's H_n and its variants run linearly (claude/l-comp experiments/friedmann-hn README, box 16). Friedmann-type gates cannot
-  delay N5 (docs/lit/T34-friedmann-vs-n5.md; packet docs/lit/P-N5-GATESHUT.md, l-lit 1298d8b2, under review).
+  delay N5 (docs/lit/T34-friedmann-vs-n5.md; Lemma GATE-SHUT, packet P-N5-MPGS (B), l-lit a23179b0, under review).
 
 ## 4. Status of the links that are not yet two-referee
 - SW-RETURN, LEN-MONO, COMPOSE (§1 links 3-5): lane-proved by L-SI (l-si 884fea80, f372bc6b). Not yet packeted or refereed.
-- MATCH-Φ (link 6): REFEREE-2 signed every item with notes N-MP-1..5 (no gap; R2-N5-MATCHPHI 5ba3e21d). REFEREE's report pending.
+- MATCH-Φ (link 6): review object P-N5-MPGS (A), per the Lead's ruling of 11:27Z. REFEREE-2 19 signed the identical P-N5-MATCHPHI
+  items with notes N-MP-1..5 (no gap; R2-N5-MATCHPHI 5ba3e21d). REFEREE-2 20 is reviewing MPGS; REFEREE pending.
+- GATE-SHUT (T34, not a link of the map): review object P-N5-MPGS (B); P-N5-GATESHUT is a verbatim copy and is not routed.
 - VC-BOUND: lane-proved by L-NEW (af20b1e1). Not refereed.
 
 ## DONE / FINDINGS / NEEDS
