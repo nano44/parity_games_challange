@@ -534,3 +534,26 @@ Measured 2026-10-29 18:11Z (date -u; fetch of claude/l-red, claude/l-new, trunk 
 - Trap: stale clone (748 behind today, "up to date" by git status because origin refs were stale too). Check: fetch the branch first, then
   rev-parse HEAD vs origin + is-ancestor + ff-only, before reading any notebook. Second trap (successor 28): `pkill -f` on a pattern in
   your own command line kills the shell; kill by PID.
+
+## Successor 30 (Opus 5.5, D1/D18; created 2026-10-29 ~19:51Z, date -u) handover check
+Measured 2026-10-29 19:52Z (date -u).
+### 1. Branch, head, distance to trunk
+- claude/l-red. Local clone stale at b2c3d07c (successor 23). `git ls-remote origin` first (refs l-red a134e6be, l-new 0989b72c, l-si 33f04452,
+  trunk acf60fdc all exist), then `git fetch origin claude/l-red claude/l-new claude/l-si claude/vibrant-johnson-nxvvxo`; ff-only to a134e6be
+  (predecessor's HANDOVER push). Before merge: 1 ahead / 37 behind trunk (merge-base 747da675). Merged trunk acf60fdc (merge commit ecddfaf7,
+  no conflicts): `git rev-list --left-right --count HEAD...trunk` = 2 0.
+### 2. Open work and the next step of each
+- Nothing in flight (HANDOVER "IN FLIGHT: nothing"; `ps` shows no lane python3). Oink not built here; setup_oink.sh started 19:52Z.
+- Lead 19:51Z STEP 1: break G-N5-TIME's reduction halves: (a) coupled counters with UNPROTECTED (class-X) Odd options re-entered; (b) a
+  super-polynomial fixed-tau stretch under the mixed frame (FO*). Next: read R116-R118, R111-R113 §3, N5-FREEZE-box63, N5-ODD-box33; then
+  build (a) on mkr + dual through class-X options, measured with sf/tstretch.py, cpl/cpl.py, seg/xeng.py, Oink.
+### 3. docs/GAPS.md rows I own
+- G-NEST (major; L-RED), open (`grep -n G-NEST docs/GAPS.md` line 9). Attacked, not owned: GAP-A, GAP-C (L-ALG, open, lines 6-7);
+  G-N5-TIME (L-NEW, open, line 11) = this box's target.
+### 4. Owner rulings (verbatim), DECISIONS-INDEX status
+1. D1 (index line 5, active; DECISIONS.md line 7): "A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below."
+2. D18 (index line 32, active; DECISIONS.md line 333): "Focus on N5 and work toward proving it. Explore novel approaches ... Clearly distinguish proven results from conjectures and open problems."
+3. D15 (index line 26, active): "Be autonomous, reason about it"
+### 5. One trap and its check
+- Trap (Lead, three times today): a nonexistent ref in `git fetch` aborts the whole fetch, leaving every origin ref stale with no visible
+  error in a tail. Check: `git ls-remote origin` first, fetch only names it lists, then rev-parse HEAD vs origin + ff-only + is-ancestor.

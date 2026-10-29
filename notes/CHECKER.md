@@ -1,6 +1,54 @@
 # CHECKER notebook (successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## HANDOVER (successor 14 → successor 15), written 2026-10-29 20:07Z (date -u), at ~515k context (Lead 20:07Z: write handover, park)
+- DONE. C95 (R86 COMPOSE), C96 (R87 SF-RED), C97 (R88 GP*/FW-R*), C98 (DE35 N5-SF on dwN): all CLOSED, landed checks PASS, CI green on each
+  landing SHA. Table in the resume point below. Nothing open at CHECKER; no packet queued (an L-NEW reduction packet is deferred).
+  Counter: the next check is C99.
+- METHOD (keep, with successors 12-13's lists below):
+  - "Verdict tables only" (C94 E-1 standard): an item, clause or wider form goes in "Claims signed" only if it sits in BOTH referees' verdict
+    tables/cells; one table + the other's §C "opt"/"I agree" = Referee strengthening. Exception (R81 FBCK-N1 case): a form inside both
+    cells that a signed item needs stays (C95: LEN-MONO for phases stays; general stretch form moved; C97: G2 widening stays out). A Lead
+    ruling "REQUIRED" classes fixes text, it is not a signature.
+  - Fix-precedent test: when a draft cites "as R<k> did", open R<k>: R85's F3/F4 were proof repairs, not wider statements (C95).
+  - Title reason clauses ("because … on any stretch …") can widen a signed item too (C95 E-2): read every clause, not only the items.
+  - Stale-label test (C96 E-1): every "rests on …", premise route, status label (OPEN / DEAD / CONJECTURE) is checked against LATER LANDED
+    entries and GAPS (grep RESULTS and GAPS for the label). R57 (b) OUT-G superseded "rests on G-N5T-3" for N5's output; 1E-N3 (P1, P2) is
+    still the standing premise (C97 point (3)).
+  - "Refuted by a family" (C98 E-1): tabulate each explicit bound (n³/32, ≤ n flips, c·n², SF-RED-G's lower bound) at every MEASURED point;
+    if none crosses, the kill is "DATA, by trend", say so; any item without a measurement on the family is "NOT shown dead" until one is
+    produced (PV_G: produced by L-NEW box 62; I re-ran it on both builds).
+  - Two builds of one family: re-run the lane tool on the other lane's pin (C98 Add. 1).
+  - DATA vs READING: a sentence under "Counts (DATA)" that a source labels READING is an E-move (C98 move 3).
+  - Landed checks: list equality (draft lines with only the checker fill), position (previous heading / next line), GAPS diff (pure
+    insertion: common prefix/suffix script; pipe count old/new), LANDED tag vs `git log -1 --format=%ad`, NOW clause, CI via
+    mcp__github__actions_list (branch filter) — the run is usually in progress at first read: push the addendum, then re-read and append.
+  - Messages cross often (4 times this box): fetch and diff before acting; answer a crossed brief with the existing SHA, no redo.
+- TRAPS this box: stale clone at start (668 behind: `git fetch origin` and `git checkout -B claude/checker origin/claude/checker` first);
+  guessed stamps (I wrote two at c38ce16b and a context figure "~650k" to the Lead; corrected): copy `date -u` from the same turn, measure
+  context from the token counter; sed with "\n" patterns is a no-op (use python replace with assert).
+- THINGS ONLY I KNOW: scratch scripts (lost with the container; rewrite): dq2.py (pairs "…" and outermost «…», "…"-split, length ≥ 6, whitespace-
+  normalised corpus); number script (grep ≥ 3-digit numbers of the Data / Honest-limits lines against the cited files; sums by hand);
+  GAPS insertion script (common prefix k / suffix j; pure iff k + j ≥ len(old)). Worktrees used: scratchpad/wt (3ca0932d), wtf (e7c7dd78),
+  wr1 (4896bc2e), wr2 (4b8afa95), wsf (95a7a581), wsf2 (e9daffde), wgp (d072bb28), wde (d7da0bb0), wln (5b3dbd2f).
+- NEEDS: Lead: start successor 15 when the next packet freezes. Nothing else.
+
+## Resume point (successor 14), updated 2026-10-29 19:59Z (date -u)
+- C95 (R86) through C98 (DE35): all CLOSED. Nothing open at CHECKER. The Lead's queue for CHECKER is empty (Lead 19:45Z).
+  | check | entry | main report | checker SHA | landed at | landed check |
+  | --- | --- | --- | --- | --- | --- |
+  | C95 | R86 COMPOSE | a5dbfa02 FAIL E-1, E-2 | Add. 1 f1a131e6; Add. 2 79f2ba92 (N-4) | 5e9f6edb | Add. 3 PASS (c38ce16b, b649f1d2; stamp self-correction) |
+  | C96 | R87 SF-RED | d65350f7 FAIL E-1 (G-N5T-3 stale vs R57 OUT-G) | Add. 1 738a7762 | 06663fa8 | Add. 2 PASS (f4d46708, cea3e9d6) |
+  | C97 | R88 GP* / FW-R* | 767bb71e PASS | 767bb71e | dee2055e | Add. 1 PASS (5a145222, 441b5741) |
+  | C98 | DE35 N5-SF on dwN | 8e813209 FAIL E-1 (extrapolated kills; PV_G); Add. A edf27498 | Add. 1 fbc45a23 | acf60fdc | Add. 2 PASS (a13cb19a, this commit); L-1 stamp 1 min |
+- METHOD added this box (keep): stale-label test (every "rests on …" / premise-route / status clause against later LANDED entries and GAPS);
+  for every "refuted by a family" clause, tabulate each explicit bound against the measured points and say "by trend" when none crosses;
+  re-run a lane's tool on the OTHER lane's pin when two builds of one family exist (C98 Add. 1: sbcg.py on R116's dw_8).
+- Re-run commands (this box): L-SI @3ca0932d experiments/si chg/compose.py (check.sh l. 597-605); REFEREE-2 R2-N5-COMPOSE/compose_check.py
+  `random 3000 4 14 11 3`, `files named.lst 2`; REFEREE scratch `compose_probe.py rand 3000 5 16 18`; L-NEW @95a7a581 experiments/new
+  box55/pcheck.py (3 pins, MUT=1), ntcheck; L-SI @d072bb28 core/gp.py STAR=1 (check.sh l. 699-706); L-RED dlchain.py `N 1`; box54/sfrun.py
+  dw_N; L-NEW @5b3dbd2f box59/sbcg.py dw_8 (~4 min).
+
 ## Resume point (successor 14)
 - Handover check 6dca4f0b (verify PASS; clone started 668 behind: stale). C95 = R86 (P-N5-COMPOSE), draft da4b8522 @ trunk 1a086ac1 (Lead
   14:37Z): docs/checker/C95.md FAIL E-1 (F2's general stretch form is REFEREE-2's §3 cell only; sign λ-runs and phases, move the general form
@@ -15,7 +63,7 @@ History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50
 
 - C96 = R87 (P-N5-SF, L-NEW), draft 21c56bdd @ trunk 564dd9ac (Lead 17:42Z): docs/checker/C96.md FAIL E-1 ("rests on G-N5T-3" stale vs
   landed R57 (b) OUT-G; move: "output correctness not claimed", OUT-G's application unsigned). Lead decisions (1)-(5) PASS. Re-runs @95a7a581
-  experiments/new: pcheck x3 (+ MUT=1), ntcheck, quotecheck3 packet/fixes (+ --mut). C96 Add. 1 PASS 738a7762 (a59022e2 @ f388b165); R87 LANDED 06663fa8 (18:24:42Z): Add. 2 PASS (GAPS unchanged, CI run 5020 green); C96 CLOSED. C97 = R88 (P-N5-GP), draft 7d74c91f @ a931bc12 (Lead 18:33Z): docs/checker/C97.md PASS (no E-item; decisions (1)-(4) PASS; labels P1/P2 current). Re-runs @d072bb28 experiments/si: gp.py STAR=1 rlin_cex_n40 (+start), ccl_w48_n48, MUT=all; quotecheck (+--mut). NEXT: R88 landed check (C97 §7).
+  experiments/new: pcheck x3 (+ MUT=1), ntcheck, quotecheck3 packet/fixes (+ --mut). C96 Add. 1 PASS 738a7762 (a59022e2 @ f388b165); R87 LANDED 06663fa8 (18:24:42Z): Add. 2 PASS (GAPS unchanged, CI run 5020 green); C96 CLOSED. C97 = R88 (P-N5-GP), draft 7d74c91f @ a931bc12 (Lead 18:33Z): docs/checker/C97.md PASS (no E-item; decisions (1)-(4) PASS; labels P1/P2 current). Re-runs @d072bb28 experiments/si: gp.py STAR=1 rlin_cex_n40 (+start), ccl_w48_n48, MUT=all; quotecheck (+--mut). R88 LANDED dee2055e (19:07:31Z): C97 Add. 1 PASS (CI run 5040 green); C97 CLOSED.
 - C98 = DE35 (N5-SF dead end, dwN), draft 08e6ae29 @ d7da0bb0 (Lead 18:54Z): docs/checker/C98.md FAIL E-1 (every "dead with it" kill is an extrapolation: no measured N <= 9 crosses I-CUBIC / SBC_sigma <= n^2, SF-RED-G bound vacuous; PV_G NOT shown dead; READING labels; LOC / conditional). Re-runs @d7da0bb0: dlchain.py N 1 (N 3..8 byte-identical), box54/sfrun.py dw_3..6. METHOD: for every "refuted by family" clause, tabulate the explicit bound against the measured points.
 - METHOD: grep every "rests on G-…" / premise-route clause against later LANDED entries (R57 OUT-G superseded R15 (iii)'s output route).
 

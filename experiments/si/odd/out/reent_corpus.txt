@@ -1,0 +1,719 @@
+REENT fc_3.pg n 85 m 187 iter 41 fb 0 tau_changes 3 lamU_runs 4 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT fc_4.pg n 110 m 246 iter 47 fb 0 tau_changes 4 lamU_runs 5 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT fc_5.pg n 135 m 305 iter 55 fb 0 tau_changes 5 lamU_runs 6 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT fc_6.pg n 160 m 364 iter 62 fb 0 tau_changes 6 lamU_runs 7 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT fcobsR_3.pg n 90 m 211 iter 41 fb 0 tau_changes 4 lamU_runs 4 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 1 ex {} PASS
+REENT fc_7.pg n 185 m 423 iter 68 fb 0 tau_changes 7 lamU_runs 8 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT fcobsR_4.pg n 115 m 276 iter 47 fb 0 tau_changes 5 lamU_runs 5 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 1 ex {} PASS
+REENT fcobs_3.pg n 88 m 208 iter 41 fb 0 tau_changes 4 lamU_runs 4 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 1 ex {} PASS
+REENT ffin12_n32.pg n 32 m 122 iter 16 fb 1 tau_changes 3 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 3 ex {} PASS
+REENT ffin4_n24.pg n 24 m 89 iter 3 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT ffin5_n32.pg n 32 m 151 iter 10 fb 1 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT gci2_n12.pg n 12 m 29 iter 7 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT immfail_n14.pg n 14 m 35 iter 6 fb 0 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT immp_cex_n11.pg n 11 m 16 iter 1 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT fcobs_4.pg n 113 m 273 iter 47 fb 0 tau_changes 5 lamU_runs 5 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 1 ex {} PASS
+REENT gci3_n24.pg n 24 m 96 iter 16 fb 1 tau_changes 4 lamU_runs 3 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 1 charge_LAM_Y 1 class_Y 1 pairs 3 wchg 1 wchg_COPY 1 ex {} PASS
+REENT lcount_n23.pg n 23 m 50 iter 2 fb 0 tau_changes 2 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 4 ex {} PASS
+REENT lend13_n16.pg n 16 m 46 iter 11 fb 1 tau_changes 3 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT lend27_n24.pg n 24 m 93 iter 7 fb 0 tau_changes 4 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 4 ex {} PASS
+REENT lend107_n32.pg n 32 m 106 iter 26 fb 0 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT lend15_n48.pg n 48 m 185 iter 11 fb 0 tau_changes 8 lamU_runs 9 reentries 2 odd_reentering 1 max_per_o 2 max_per_oe 1 NMU_max 0 charge_LAM 2 charge_LAM_X 2 class_X 2 lamchg_at_X 2 lamo_at_X 1 wchg 3 wchg_COPY 2 ex {} PASS
+REENT lend39f_n32.pg n 32 m 114 iter 13 fb 1 tau_changes 6 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 6 ex {} PASS
+REENT lend47_n32.pg n 32 m 103 iter 22 fb 0 tau_changes 4 lamU_runs 2 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 1 charge_LAM_X 1 class_X 1 pairs 3 wchg 2 wchg_COPY 1 ex {} PASS
+REENT lend55_n32.pg n 32 m 114 iter 18 fb 0 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 2 ex {} PASS
+REENT lend9_n8.pg n 8 m 22 iter 4 fb 0 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT lend82_n32.pg n 32 m 116 iter 24 fb 0 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT lend72_n48.pg n 48 m 156 iter 13 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT nep13_n24.pg n 24 m 100 iter 12 fb 0 tau_changes 7 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 8 ex {} PASS
+REENT nep56_n32.pg n 32 m 125 iter 18 fb 0 tau_changes 9 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 9 ex {} PASS
+REENT nconf61_n48.pg n 48 m 178 iter 47 fb 3 tau_changes 8 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 10 ex {} PASS
+REENT nep76_n40.pg n 40 m 170 iter 18 fb 0 tau_changes 3 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 5 ex {} PASS
+REENT nep22f_n64.pg n 64 m 285 iter 51 fb 14 tau_changes 30 lamU_runs 19 reentries 36 odd_reentering 18 max_per_o 7 max_per_oe 3 NMU_max 2 charge_LAM 32 charge_LAM_X 23 charge_LAM_Y 4 charge_LAM_Z 5 charge_LEN 1 charge_LEN_Y 1 charge_MAT 3 charge_MAT_X 1 charge_MAT_Z 2 class_X 24 class_Y 5 class_Z 7 lamchg_at_X 16 lamchg_at_Y 4 lamchg_at_Z 5 lamo_at_X 13 lamo_at_Y 4 lamo_at_Z 4 pairs 37 wchg 118 wchg_COPY 26 ex {} PASS
+REENT fc_8.pg n 210 m 482 iter 77 fb 0 tau_changes 8 lamU_runs 9 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT nep92_n40.pg n 40 m 165 iter 13 fb 0 tau_changes 10 lamU_runs 2 reentries 2 odd_reentering 2 max_per_o 1 max_per_oe 1 NMU_max 1 ENTNM_V 1 ENTPCH_V 1 charge_LAM 1 charge_LAM_X 1 charge_LEN 1 charge_LEN_X 1 class_X 2 pairs 12 wchg 2 wchg_COPY 1 ex {'ENTNM': (0, 12, 8, 36, 2, 0), 'ENTPCH': (0, 12, 8, 36, 2, 0)} PASS
+REENT nep94_n48.pg n 48 m 193 iter 18 fb 0 tau_changes 6 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 11 ex {} PASS
+REENT ret12_n40.pg n 40 m 167 iter 13 fb 0 tau_changes 7 lamU_runs 2 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 1 charge_LAM 1 charge_LAM_X 1 class_X 1 pairs 10 wchg 1 ex {} PASS
+REENT b4_cyc6_0.pg n 11 m 24 iter 2 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT b4_n4all_cyc3_0.pg n 4 m 8 iter 2 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT b4_n5_other_0.pg n 5 m 8 iter 2 fb 1 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT b4_cyc6_1.pg n 12 m 28 iter 4 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT b4_nohlen5_0.pg n 11 m 26 iter 1 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT b4_theta_n7.pg n 7 m 13 iter 1 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT ret14_n48.pg n 48 m 177 iter 17 fb 0 tau_changes 4 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 4 ex {} PASS
+REENT b5_n5_cyc4_0.pg n 5 m 8 iter 3 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT b5_o11.pg n 10 m 20 iter 12 fb 3 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT b5_os_n12.pg n 12 m 37 iter 18 fb 4 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT b5_os_n14.pg n 14 m 37 iter 22 fb 6 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT b5_os_n16.pg n 16 m 36 iter 26 fb 7 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT ret14_n64.pg n 64 m 201 iter 14 fb 0 tau_changes 9 lamU_runs 5 reentries 3 odd_reentering 3 max_per_o 1 max_per_oe 1 NMU_max 1 charge_LAM 3 charge_LAM_X 2 charge_LAM_Z 1 class_X 2 class_Z 1 lamchg_at_Z 1 lamo_at_Z 1 pairs 8 wchg 5 wchg_COPY 2 ex {} PASS
+REENT b5_os_n20.pg n 20 m 44 iter 34 fb 7 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT b5_os_n24.pg n 24 m 71 iter 53 fb 7 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT b5_os_n32.pg n 32 m 102 iter 71 fb 8 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT b5_os_n28.pg n 28 m 92 iter 65 fb 8 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT b5_os_n40.pg n 40 m 151 iter 81 fb 9 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT b6_xl2_n32.pg n 32 m 110 iter 87 fb 10 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT b6_xs_n24.pg n 24 m 90 iter 21 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT b6_xs_n32.pg n 32 m 118 iter 29 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT b6_xl_n40.pg n 40 m 135 iter 89 fb 10 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT b6_xl_n32.pg n 32 m 113 iter 85 fb 10 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT b6_xs_n40.pg n 40 m 167 iter 36 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT b6_xw_n32.pg n 32 m 119 iter 79 fb 10 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT b6_xl_n48.pg n 48 m 184 iter 97 fb 9 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT b6_xs_n48.pg n 48 m 186 iter 37 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT canonA_0.pg n 15 m 29 iter 3 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT canonA_1.pg n 15 m 30 iter 4 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT b6_xw_n40.pg n 40 m 165 iter 80 fb 10 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT frz1_n24.pg n 24 m 62 iter 31 fb 1 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT frz2_n24.pg n 24 m 60 iter 25 fb 1 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 1 ex {} PASS
+REENT b6_xw_n48.pg n 48 m 198 iter 85 fb 9 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT n3all_maxph_0.pg n 3 m 6 iter 0 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT n3all_maxph_1.pg n 3 m 6 iter 0 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT n3all_maxph_2.pg n 3 m 7 iter 0 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT frz3_n24.pg n 24 m 65 iter 26 fb 1 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT n4_maxph_1.pg n 4 m 7 iter 2 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT b6_xw_n56.pg n 56 m 210 iter 85 fb 9 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT n4_maxph_0.pg n 4 m 7 iter 2 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT n4_thch_0.pg n 4 m 6 iter 2 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT n4all_maxph_0.pg n 4 m 8 iter 2 fb 1 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT n4all_maxph_1.pg n 4 m 8 iter 2 fb 1 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT n4all_tgbad_0.pg n 4 m 7 iter 1 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT n4all_thch_0.pg n 4 m 8 iter 2 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT n5s_maxph_0.pg n 5 m 8 iter 3 fb 1 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT nh_n8.pg n 8 m 13 iter 3 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT thetaA_canon_n8.pg n 8 m 12 iter 3 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT thetaA_canon_n12.pg n 12 m 16 iter 3 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT thetaA_n17.pg n 17 m 36 iter 1 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT thetaA_n6.pg n 6 m 10 iter 1 fb 0 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT thetaA_n9.pg n 9 m 13 iter 1 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT thetaA_n7.pg n 7 m 11 iter 1 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT wk1_n32.pg n 32 m 94 iter 3 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT wk2_n32.pg n 32 m 90 iter 7 fb 1 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT long121_n40.pg n 40 m 116 iter 23 fb 0 tau_changes 5 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 3 ex {} PASS
+REENT best_qpc_nep76_n40_s63.pg n 64 m 276 iter 9 fb 0 tau_changes 7 lamU_runs 2 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 2 charge_LAM 1 charge_LAM_X 1 class_X 1 pairs 18 wchg 2 wchg_COPY 1 ex {} PASS
+REENT absmono_viol_n44.pg n 44 m 858 iter 7 fb 1 tau_changes 5 lamU_runs 5 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 1 charge_LAM 1 charge_LAM_X 1 class_X 1 lamchg_at_X 1 lamo_at_X 1 pairs 1 wchg 2 ex {} PASS
+REENT best_qpc_nep90_n40_s61.pg n 64 m 241 iter 23 fb 1 tau_changes 9 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 19 ex {} PASS
+REENT carry3_2_2.pg n 47 m 67 iter 2 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT cm_mdrop_both_n28.pg n 28 m 92 iter 10 fb 0 tau_changes 4 lamU_runs 2 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 2 charge_LAM 1 charge_LAM_Y 1 class_Y 1 pairs 3 wchg 1 ex {} PASS
+REENT cm_mdrop_oink_n28.pg n 28 m 108 iter 3 fb 0 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT best_qpc_nep90_n40_s62.pg n 80 m 303 iter 20 fb 0 tau_changes 9 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 20 ex {} PASS
+REENT ctx11_n40.pg n 40 m 274 iter 9 fb 0 tau_changes 6 lamU_runs 2 reentries 7 odd_reentering 7 max_per_o 1 max_per_oe 1 NMU_max 2 charge_LAM 7 charge_LAM_X 7 class_X 7 pairs 33 wchg 11 wchg_COPY 2 ex {} PASS
+REENT ctx6_n20.pg n 20 m 113 iter 3 fb 0 tau_changes 3 lamU_runs 3 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 1 charge_LAM_Y 1 class_Y 1 lamchg_at_Y 1 lamo_at_Y 1 pairs 1 wchg 1 wchg_COPY 1 ex {} PASS
+REENT ctx12_n40.pg n 40 m 297 iter 8 fb 0 tau_changes 7 lamU_runs 2 reentries 6 odd_reentering 6 max_per_o 1 max_per_oe 1 NMU_max 2 charge_LAM 4 charge_LAM_X 4 charge_LEN 2 charge_LEN_X 1 charge_LEN_Y 1 class_X 5 class_Y 1 pairs 23 wchg 8 wchg_COPY 2 ex {} PASS
+REENT ctx13_n40.pg n 40 m 316 iter 17 fb 0 tau_changes 8 lamU_runs 4 reentries 6 odd_reentering 6 max_per_o 1 max_per_oe 1 NMU_max 1 charge_LAM 6 charge_LAM_X 5 charge_LAM_Y 1 class_X 5 class_Y 1 lamchg_at_X 3 lamchg_at_Y 1 lamo_at_X 3 lamo_at_Y 1 pairs 13 wchg 8 wchg_COPY 2 ex {} PASS
+REENT ctx7_n30.pg n 30 m 293 iter 11 fb 0 tau_changes 9 lamU_runs 7 reentries 9 odd_reentering 9 max_per_o 1 max_per_oe 1 NMU_max 1 charge_LAM 9 charge_LAM_X 6 charge_LAM_Y 1 charge_LAM_Z 2 class_X 6 class_Y 1 class_Z 2 lamchg_at_X 5 lamchg_at_Y 1 lamchg_at_Z 2 lamo_at_X 5 lamo_at_Y 1 lamo_at_Z 2 pairs 4 wchg 24 wchg_COPY 9 ex {} PASS
+REENT f1_twodef_n48.pg n 48 m 264 iter 6 fb 0 tau_changes 4 lamU_runs 3 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 1 charge_LAM 1 charge_LAM_Y 1 class_Y 1 lamchg_at_Y 1 lamo_at_Y 1 pairs 5 wchg 1 wchg_COPY 1 ex {} PASS
+REENT snap_n80_s62.pg n 80 m 303 iter 20 fb 0 tau_changes 9 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 20 ex {} PASS
+REENT ctx6_n56.pg n 56 m 432 iter 12 fb 0 tau_changes 11 lamU_runs 5 reentries 8 odd_reentering 7 max_per_o 2 max_per_oe 1 NMU_max 1 charge_CAR 1 charge_CAR_X 1 charge_LAM 6 charge_LAM_X 3 charge_LAM_Y 1 charge_LAM_Z 2 charge_LEN 1 charge_LEN_Y 1 class_X 4 class_Y 2 class_Z 2 lamchg_at_X 2 lamchg_at_Y 2 lamchg_at_Z 1 lamo_at_X 2 lamo_at_Y 2 lamo_at_Z 1 pairs 30 wchg 20 wchg_COPY 2 ex {} PASS
+REENT f1_twofall_n48.pg n 48 m 236 iter 6 fb 0 tau_changes 3 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 9 ex {} PASS
+REENT fallv_viol_n28.pg n 28 m 288 iter 5 fb 0 tau_changes 4 lamU_runs 2 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 1 charge_LAM 1 charge_LAM_Z 1 class_Z 1 pairs 11 wchg 1 ex {} PASS
+REENT fired10_n20.pg n 20 m 144 iter 6 fb 1 tau_changes 4 lamU_runs 2 reentries 2 odd_reentering 1 max_per_o 2 max_per_oe 1 NMU_max 1 charge_LAM 1 charge_LAM_X 1 charge_LEN 1 charge_LEN_X 1 class_X 2 lamchg_at_X 1 lamo_at_X 1 pairs 8 wchg 2 wchg_COPY 1 ex {} PASS
+REENT firedlong667_n20.pg n 20 m 139 iter 4 fb 0 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 2 ex {} PASS
+REENT fall3_n76.pg n 76 m 425 iter 8 fb 0 tau_changes 5 lamU_runs 3 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 1 charge_LAM 1 charge_LAM_X 1 class_X 1 pairs 19 wchg 2 ex {} PASS
+REENT firedlong667_n43.pg n 43 m 283 iter 3 fb 1 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 2 ex {} PASS
+REENT gapbW_dup_n20.pg n 20 m 159 iter 5 fb 0 tau_changes 3 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 6 ex {} PASS
+REENT gapb_dup_n20.pg n 20 m 113 iter 8 fb 0 tau_changes 5 lamU_runs 3 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 2 charge_CAR 1 charge_CAR_Z 1 class_Z 1 lamchg_at_Z 1 lamo_at_Z 1 pairs 4 wchg 1 ex {} PASS
+REENT firedstep13_n76.pg n 76 m 562 iter 8 fb 0 tau_changes 6 lamU_runs 4 reentries 5 odd_reentering 5 max_per_o 1 max_per_oe 1 NMU_max 1 charge_LAM 5 charge_LAM_X 4 charge_LAM_Y 1 class_X 4 class_Y 1 lamchg_at_X 1 lamchg_at_Y 1 lamo_at_X 1 lamo_at_Y 1 pairs 19 wchg 5 ex {} PASS
+REENT h4_def2ctx_n20.pg n 20 m 71 iter 6 fb 0 tau_changes 3 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 3 ex {} PASS
+REENT h4_compound2x2_n44.pg n 44 m 127 iter 10 fb 0 tau_changes 6 lamU_runs 4 reentries 5 odd_reentering 4 max_per_o 2 max_per_oe 1 NMU_max 1 charge_LAM 3 charge_LAM_X 2 charge_LAM_Z 1 charge_LEN 1 charge_LEN_Y 1 charge_MAT 1 charge_MAT_Y 1 class_X 2 class_Y 2 class_Z 1 lamchg_at_X 2 lamchg_at_Y 1 lamchg_at_Z 1 lamo_at_X 2 lamo_at_Y 1 lamo_at_Z 1 pairs 6 wchg 6 ex {} PASS
+REENT h4_compound_n44.pg n 44 m 129 iter 4 fb 0 tau_changes 4 lamU_runs 1 reentries 2 odd_reentering 2 max_per_o 1 max_per_oe 1 NMU_max 3 charge_CAR 2 charge_CAR_X 2 class_X 2 pairs 12 wchg 2 ex {} PASS
+REENT fall4_n116.pg n 116 m 455 iter 6 fb 0 tau_changes 5 lamU_runs 5 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 2 ex {} PASS
+REENT h4_def7_n28.pg n 28 m 83 iter 3 fb 0 tau_changes 2 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 2 ex {} PASS
+REENT h4_disjoint_n20.pg n 20 m 63 iter 3 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT kfirst_viol_n13.pg n 13 m 20 iter 0 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT h4_notweaker_n20.pg n 20 m 65 iter 5 fb 0 tau_changes 4 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 2 ex {} PASS
+REENT kin_viol_n29.pg n 29 m 79 iter 5 fb 0 tau_changes 5 lamU_runs 4 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 2 ex {} PASS
+REENT lemmaS_Mdrop_n20.pg n 20 m 71 iter 6 fb 0 tau_changes 4 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 2 pairs 5 ex {} PASS
+REENT lalg_dtl_mviol_n20.pg n 20 m 64 iter 5 fb 0 tau_changes 5 lamU_runs 2 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 2 charge_LAM 1 charge_LAM_Z 1 class_Z 1 pairs 8 wchg 1 ex {} PASS
+REENT lemmaS_viol_n20.pg n 20 m 69 iter 4 fb 0 tau_changes 4 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 2 pairs 7 ex {} PASS
+REENT meet_viol_n17.pg n 17 m 22 iter 0 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT lex_viol_inj_n28.pg n 28 m 187 iter 6 fb 0 tau_changes 3 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 7 ex {} PASS
+REENT nosig_2_3.pg n 24 m 41 iter 2 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT lex_viol_tie_n28.pg n 28 m 187 iter 7 fb 0 tau_changes 4 lamU_runs 2 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 1 charge_LAM 1 charge_LAM_X 1 class_X 1 pairs 11 wchg 2 ex {} PASS
+REENT pk_viol_n20.pg n 20 m 171 iter 3 fb 1 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT phi_flat_alive_n32.pg n 32 m 128 iter 4 fb 0 tau_changes 4 lamU_runs 4 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 1 ex {} PASS
+REENT meet_viol_n29.pg n 29 m 177 iter 11 fb 0 tau_changes 8 lamU_runs 7 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 1 charge_LAM 1 charge_LAM_Y 1 class_Y 1 lamchg_at_Y 1 lamo_at_Y 1 pairs 3 wchg 2 wchg_COPY 1 ex {} PASS
+REENT replay4_n32.pg n 32 m 159 iter 4 fb 0 tau_changes 4 lamU_runs 3 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 1 charge_LAM 1 charge_LAM_X 1 class_X 1 pairs 4 wchg 2 ex {} PASS
+REENT spp19_oink_n30.pg n 30 m 295 iter 10 fb 0 tau_changes 10 lamU_runs 7 reentries 8 odd_reentering 6 max_per_o 2 max_per_oe 1 NMU_max 1 charge_LAM 8 charge_LAM_X 6 charge_LAM_Y 1 charge_LAM_Z 1 class_X 6 class_Y 1 class_Z 1 lamchg_at_X 4 lamchg_at_Y 1 lamchg_at_Z 1 lamo_at_X 4 lamo_at_Y 1 lamo_at_Z 1 pairs 7 wchg 29 wchg_COPY 4 ex {} PASS
+REENT spp22_oink_n40.pg n 40 m 205 iter 8 fb 0 tau_changes 6 lamU_runs 2 reentries 4 odd_reentering 4 max_per_o 1 max_per_oe 1 NMU_max 1 charge_LAM 3 charge_LAM_X 2 charge_LAM_Z 1 charge_LEN 1 charge_LEN_X 1 class_X 3 class_Z 1 pairs 17 wchg 5 wchg_COPY 2 ex {} PASS
+REENT spp25_oink_n40.pg n 40 m 221 iter 10 fb 0 tau_changes 7 lamU_runs 2 reentries 4 odd_reentering 4 max_per_o 1 max_per_oe 1 NMU_max 2 charge_LAM 4 charge_LAM_X 4 class_X 4 pairs 19 wchg 5 wchg_COPY 1 ex {} PASS
+REENT spp19_stable_n30.pg n 30 m 254 iter 7 fb 0 tau_changes 5 lamU_runs 2 reentries 3 odd_reentering 3 max_per_o 1 max_per_oe 1 NMU_max 2 charge_LAM 2 charge_LAM_X 2 charge_LEN 1 charge_LEN_Y 1 class_X 2 class_Y 1 lamchg_at_Y 1 lamo_at_Y 1 pairs 12 wchg 4 wchg_COPY 2 ex {} PASS
+REENT stealonce_core_n76.pg n 76 m 101 iter 4 fb 0 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 1 ex {} PASS
+REENT stealonce_both_n45.pg n 45 m 70 iter 4 fb 0 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 1 ex {} PASS
+REENT tstep_near_n20.pg n 20 m 172 iter 5 fb 0 tau_changes 4 lamU_runs 2 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 2 charge_CAR 1 charge_CAR_X 1 class_X 1 pairs 7 wchg 1 ex {} PASS
+REENT deep1_n13.pg n 13 m 22 iter 1 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT deep1_n21.pg n 21 m 32 iter 3 fb 0 tau_changes 3 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 3 ex {} PASS
+REENT stealer_viol_n76.pg n 76 m 450 iter 12 fb 0 tau_changes 8 lamU_runs 5 reentries 7 odd_reentering 7 max_per_o 1 max_per_oe 1 NMU_max 1 charge_LAM 7 charge_LAM_X 5 charge_LAM_Y 1 charge_LAM_Z 1 class_X 5 class_Y 1 class_Z 1 lamchg_at_X 2 lamchg_at_Y 1 lamo_at_X 2 lamo_at_Y 1 pairs 19 wchg 15 wchg_COPY 6 ex {} PASS
+REENT margin1_mc5.pg n 50 m 200 iter 12 fb 3 tau_changes 10 lamU_runs 6 reentries 9 odd_reentering 8 max_per_o 2 max_per_oe 2 NMU_max 2 charge_CAR 1 charge_CAR_X 1 charge_LAM 7 charge_LAM_X 5 charge_LAM_Y 1 charge_LAM_Z 1 charge_MAT 1 charge_MAT_X 1 class_X 7 class_Y 1 class_Z 1 lamchg_at_X 5 lamchg_at_Y 1 lamchg_at_Z 1 lamo_at_X 3 lamo_at_Y 1 lamo_at_Z 1 pairs 9 wchg 19 wchg_COPY 3 ex {} PASS
+REENT margin1_n20.pg n 20 m 86 iter 5 fb 0 tau_changes 4 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 3 ex {} PASS
+REENT lalg_dtl_pertop31_n18.pg n 18 m 108 iter 2 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT margin1_mc1.pg n 80 m 374 iter 10 fb 1 tau_changes 9 lamU_runs 9 reentries 4 odd_reentering 3 max_per_o 2 max_per_oe 1 NMU_max 0 charge_LAM 4 charge_LAM_X 4 class_X 4 lamchg_at_X 4 lamo_at_X 4 pairs 2 wchg 8 wchg_COPY 1 ex {} PASS
+REENT bghm_k1_gap6_A.pg n 21 m 23 iter 1 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT bghm_k3_gap4_A.pg n 45 m 51 iter 1 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT lalg_dtl_restart8_n20.pg n 20 m 119 iter 5 fb 0 tau_changes 5 lamU_runs 4 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 2 ex {} PASS
+REENT stealonce_viol_n76.pg n 76 m 451 iter 12 fb 0 tau_changes 9 lamU_runs 7 reentries 7 odd_reentering 7 max_per_o 1 max_per_oe 1 NMU_max 1 charge_LAM 7 charge_LAM_X 3 charge_LAM_Y 3 charge_LAM_Z 1 class_X 3 class_Y 3 class_Z 1 lamchg_at_Y 3 lamchg_at_Z 1 lamo_at_Y 3 lamo_at_Z 1 pairs 19 wchg 16 wchg_COPY 8 ex {} PASS
+REENT lev74_n40.pg n 40 m 140 iter 18 fb 0 tau_changes 8 lamU_runs 2 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 0 ENTNM_V 1 ENTPCH_V 1 charge_LEN 1 charge_LEN_X 1 class_X 1 pairs 7 wchg 2 wchg_COPY 1 ex {'ENTNM': (0, 18, 6, 0, 2, 0), 'ENTPCH': (0, 18, 6, 0, 2, 0)} PASS
+REENT fr39_q4_n48.pg n 48 m 126 iter 36 fb 0 tau_changes 3 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 3 ex {} PASS
+REENT rho144_n32.pg n 32 m 80 iter 9 fb 0 tau_changes 5 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 10 ex {} PASS
+REENT rho3_253_n32.pg n 32 m 79 iter 11 fb 0 tau_changes 5 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 10 ex {} PASS
+REENT sat4_n20.pg n 20 m 71 iter 6 fb 0 tau_changes 3 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 3 ex {} PASS
+REENT rho84_n16.pg n 16 m 45 iter 5 fb 0 tau_changes 5 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 3 ex {} PASS
+REENT nep80_n40.pg n 40 m 142 iter 22 fb 1 tau_changes 10 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 11 ex {} PASS
+REENT lev56_n48.pg n 48 m 170 iter 86 fb 9 tau_changes 3 lamU_runs 2 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 0 charge_MAT 1 charge_MAT_Z 1 class_Z 1 pairs 3 wchg 1 wchg_COPY 1 ex {} PASS
+REENT rho666_n48.pg n 48 m 161 iter 16 fb 0 tau_changes 5 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 10 ex {} PASS
+REENT sat68_n20.pg n 20 m 46 iter 5 fb 1 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT exsw_loop_n15.pg n 15 m 26 iter 1 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT twowave_L16.pg n 22 m 55 iter 15 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT fbcap_eq_u4_n11.pg n 11 m 31 iter 6 fb 2 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT kt6_n58.pg n 58 m 199 iter 38 fb 2 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT fx2_n11.pg n 11 m 30 iter 9 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT frzgap0_n4.pg n 4 m 9 iter 1 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT frzgap0_n6.pg n 6 m 13 iter 3 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT lcount2_n23.pg n 23 m 48 iter 4 fb 0 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT lcount_n23.pg n 23 m 50 iter 2 fb 0 tau_changes 2 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 4 ex {} PASS
+REENT offret_l19_n24.pg n 24 m 52 iter 3 fb 0 tau_changes 2 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 3 ex {} PASS
+REENT klcount_n16.pg n 16 m 95 iter 6 fb 0 tau_changes 5 lamU_runs 4 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 7 ex {} PASS
+REENT klcount_n18_base.pg n 18 m 97 iter 6 fb 0 tau_changes 5 lamU_runs 4 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 7 ex {} PASS
+REENT klcount_n18_lvl.pg n 18 m 97 iter 6 fb 0 tau_changes 5 lamU_runs 4 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 7 ex {} PASS
+REENT klglobal_n16.pg n 16 m 99 iter 6 fb 1 tau_changes 5 lamU_runs 2 reentries 2 odd_reentering 2 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 1 charge_LAM_Y 1 charge_LEN 1 charge_LEN_Y 1 class_Y 2 pairs 13 wchg 2 wchg_COPY 2 ex {} PASS
+REENT klglobal_n20_lvl2.pg n 20 m 103 iter 6 fb 1 tau_changes 5 lamU_runs 2 reentries 2 odd_reentering 2 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 1 charge_LAM_Y 1 charge_LEN 1 charge_LEN_Y 1 class_Y 2 pairs 13 wchg 2 wchg_COPY 2 ex {} PASS
+REENT klglobal_n18_lvl.pg n 18 m 101 iter 6 fb 1 tau_changes 5 lamU_runs 2 reentries 2 odd_reentering 2 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 1 charge_LAM_Y 1 charge_LEN 1 charge_LEN_Y 1 class_Y 2 pairs 13 wchg 2 wchg_COPY 2 ex {} PASS
+REENT klmin_n13.pg n 13 m 18 iter 3 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r2climb_h13.pg n 13 m 55 iter 4 fb 0 tau_changes 3 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 4 ex {} PASS
+REENT xsnpre36_n48.pg n 48 m 129 iter 33 fb 0 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT r2join_h0E_n14.pg n 14 m 21 iter 3 fb 0 tau_changes 2 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 2 ex {} PASS
+REENT r2crawl_n14.pg n 14 m 84 iter 5 fb 0 tau_changes 3 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 7 ex {} PASS
+REENT r2lap_best_n22.pg n 22 m 180 iter 5 fb 0 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT HL88_0.pg n 41 m 60 iter 3 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT HL88_1.pg n 43 m 62 iter 3 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT HL88_2.pg n 45 m 64 iter 3 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT HLg_0.pg n 29 m 42 iter 3 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT HL88_3.pg n 47 m 66 iter 3 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT HLg_2.pg n 45 m 64 iter 3 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT HLg_1.pg n 35 m 50 iter 3 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT HLg_3.pg n 55 m 78 iter 3 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT cw11_n24.pg n 24 m 72 iter 17 fb 4 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT frzu_tight_n14.pg n 14 m 34 iter 4 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT depth2_n39.pg n 39 m 76 iter 3 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT depth3_n46.pg n 46 m 88 iter 3 fb 0 tau_changes 3 lamU_runs 4 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT kc18_n24.pg n 24 m 66 iter 23 fb 1 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT fam_D4_n50.pg n 50 m 98 iter 1 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT depth4_n53.pg n 53 m 103 iter 4 fb 0 tau_changes 3 lamU_runs 4 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT fam_D12_n106.pg n 106 m 210 iter 1 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT mei_h2.pg n 19 m 27 iter 1 fb 0 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 1 ex {} PASS
+REENT fam_D8_n78.pg n 78 m 154 iter 1 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT mei_h3.pg n 27 m 39 iter 2 fb 0 tau_changes 2 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 2 ex {} PASS
+REENT mei_h4.pg n 35 m 51 iter 3 fb 0 tau_changes 3 lamU_runs 1 reentries 2 odd_reentering 1 max_per_o 2 max_per_oe 1 NMU_max 1 charge_CAR 1 charge_CAR_X 1 charge_MAT 1 charge_MAT_X 1 class_X 2 pairs 4 wchg 2 ex {} PASS
+REENT mei_h5.pg n 43 m 63 iter 4 fb 0 tau_changes 4 lamU_runs 1 reentries 2 odd_reentering 1 max_per_o 2 max_per_oe 1 NMU_max 1 charge_CAR 1 charge_CAR_X 1 charge_MAT 1 charge_MAT_X 1 class_X 2 pairs 5 wchg 2 ex {} PASS
+REENT mei_h6.pg n 51 m 75 iter 5 fb 0 tau_changes 5 lamU_runs 1 reentries 4 odd_reentering 2 max_per_o 2 max_per_oe 1 NMU_max 1 charge_CAR 2 charge_CAR_X 2 charge_MAT 2 charge_MAT_X 2 class_X 4 pairs 7 wchg 6 ex {} PASS
+REENT core41_n40.pg n 40 m 67 iter 11 fb 0 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT mei_h8.pg n 67 m 99 iter 7 fb 0 tau_changes 7 lamU_runs 1 reentries 12 odd_reentering 4 max_per_o 6 max_per_oe 3 NMU_max 2 ENTNM_V 2 charge_CAR 5 charge_CAR_X 5 charge_MAT 7 charge_MAT_X 7 class_X 12 pairs 11 wchg 16 ex {'ENTNM': (0, 8, 1, 3, 4, 1)} PASS
+REENT lagx10_n40.pg n 40 m 98 iter 17 fb 1 tau_changes 2 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 3 ex {} PASS
+REENT lag11_n40.pg n 40 m 102 iter 17 fb 2 tau_changes 8 lamU_runs 4 reentries 3 odd_reentering 3 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 3 charge_LAM_X 2 charge_LAM_Y 1 class_X 2 class_Y 1 pairs 9 wchg 3 wchg_COPY 2 ex {} PASS
+REENT long90_k2_n40.pg n 40 m 86 iter 18 fb 0 tau_changes 3 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT comp54_n80.pg n 80 m 134 iter 11 fb 0 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT long121_n40.pg n 40 m 116 iter 23 fb 0 tau_changes 5 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 3 ex {} PASS
+REENT n3cov_lean.pg n 48 m 128 iter 18 fb 0 tau_changes 4 lamU_runs 5 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT n3cov_phi.pg n 32 m 97 iter 10 fb 0 tau_changes 10 lamU_runs 7 reentries 10 odd_reentering 7 max_per_o 2 max_per_oe 1 NMU_max 1 charge_LAM 8 charge_LAM_X 7 charge_LAM_Z 1 charge_MAT 2 charge_MAT_X 1 charge_MAT_Z 1 class_X 8 class_Z 2 lamchg_at_X 2 lamchg_at_Z 1 lamo_at_X 2 lamo_at_Z 1 pairs 17 wchg 17 wchg_COPY 4 ex {} PASS
+REENT run49_n32.pg n 32 m 81 iter 20 fb 6 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT ret22_n40.pg n 40 m 121 iter 4 fb 0 tau_changes 4 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 6 ex {} PASS
+REENT dl_4_4.pg n 42 m 88 iter 8 fb 0 tau_changes 3 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 3 pairs 15 ex {} PASS
+REENT run34_n40.pg n 40 m 121 iter 40 fb 2 tau_changes 6 lamU_runs 4 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 4 ex {} PASS
+REENT dlm2_4.pg n 42 m 86 iter 5 fb 0 tau_changes 5 lamU_runs 6 reentries 3 odd_reentering 3 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 3 charge_LAM_X 2 charge_LAM_Y 1 class_X 2 class_Y 1 lamchg_at_X 2 lamchg_at_Y 1 lamo_at_X 2 lamo_at_Y 1 wchg 3 ex {} PASS
+REENT sym_h12_s1.pg n 24 m 58 iter 34 fb 2 tau_changes 21 lamU_runs 14 reentries 18 odd_reentering 7 max_per_o 4 max_per_oe 2 NMU_max 4 charge_CAR 6 charge_CAR_X 1 charge_CAR_Z 5 charge_LAM 12 charge_LAM_X 9 charge_LAM_Y 3 class_X 10 class_Y 3 class_Z 5 lamchg_at_X 6 lamchg_at_Y 2 lamchg_at_Z 1 lamo_at_X 6 lamo_at_Y 2 pairs 14 wchg 53 wchg_COPY 9 ex {} PASS
+REENT sym_h8_s1.pg n 16 m 40 iter 25 fb 1 tau_changes 16 lamU_runs 11 reentries 5 odd_reentering 3 max_per_o 2 max_per_oe 1 NMU_max 1 charge_LAM 5 charge_LAM_X 5 class_X 5 lamchg_at_X 3 lamo_at_X 3 pairs 6 wchg 11 ex {} PASS
+REENT block_bk20.pg n 24 m 46 iter 27 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT blockph_bp20.pg n 24 m 46 iter 25 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT bribe_cex_n15.pg n 15 m 42 iter 1 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT block_bk32.pg n 36 m 69 iter 49 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT blockph_bp32.pg n 36 m 69 iter 39 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT frz24.pg n 24 m 53 iter 39 fb 4 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT sym_h16_s1.pg n 32 m 80 iter 55 fb 0 tau_changes 33 lamU_runs 13 reentries 23 odd_reentering 12 max_per_o 4 max_per_oe 2 NMU_max 3 charge_CAR 1 charge_CAR_X 1 charge_LAM 22 charge_LAM_X 12 charge_LAM_Y 2 charge_LAM_Z 8 class_X 13 class_Y 2 class_Z 8 lamchg_at_X 4 lamchg_at_Y 2 lamo_at_X 4 lamo_at_Y 2 pairs 33 wchg 151 wchg_COPY 64 ex {} PASS
+REENT frz32.pg n 32 m 72 iter 8 fb 0 tau_changes 3 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 2 ex {} PASS
+REENT elimn_cex_n48.pg n 48 m 93 iter 92 fb 10 tau_changes 2 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 2 ex {} PASS
+REENT frz40.pg n 40 m 97 iter 90 fb 7 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT returns_rt32.pg n 32 m 70 iter 57 fb 6 tau_changes 3 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 3 ex {} PASS
+REENT phase2_pk32.pg n 32 m 70 iter 56 fb 6 tau_changes 2 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 2 ex {} PASS
+REENT dl_6_8.pg n 110 m 228 iter 14 fb 0 tau_changes 5 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 5 pairs 45 ex {} PASS
+REENT phase2_pk48.pg n 48 m 92 iter 72 fb 8 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT returns_rt48.pg n 48 m 101 iter 80 fb 14 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT theta_thc24.pg n 24 m 51 iter 29 fb 0 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT returns_ph64.pg n 64 m 127 iter 105 fb 15 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT theta_thf16.pg n 16 m 36 iter 20 fb 1 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT theta_tp32.pg n 32 m 67 iter 45 fb 1 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT wide_h16.pg n 32 m 104 iter 44 fb 0 tau_changes 37 lamU_runs 10 reentries 24 odd_reentering 12 max_per_o 5 max_per_oe 2 NMU_max 8 charge_CAR 4 charge_CAR_X 3 charge_CAR_Z 1 charge_LAM 20 charge_LAM_X 11 charge_LAM_Y 2 charge_LAM_Z 7 class_X 14 class_Y 2 class_Z 8 lamchg_at_X 2 lamchg_at_Y 2 lamo_at_X 2 lamo_at_Y 2 pairs 37 wchg 135 wchg_COPY 53 ex {} PASS
+REENT theta_tp40.pg n 40 m 78 iter 41 fb 0 tau_changes 2 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 2 ex {} PASS
+REENT k4L72_n101.pg n 101 m 319 iter 6 fb 0 tau_changes 6 lamU_runs 5 reentries 7 odd_reentering 7 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 7 charge_LAM_X 7 class_X 7 lamchg_at_X 7 lamo_at_X 5 pairs 7 wchg 13 wchg_COPY 8 ex {} PASS
+REENT k4L72r_n101.pg n 101 m 320 iter 6 fb 0 tau_changes 6 lamU_runs 5 reentries 7 odd_reentering 7 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 7 charge_LAM_X 7 class_X 7 lamchg_at_X 7 lamo_at_X 5 pairs 7 wchg 13 wchg_COPY 8 ex {} PASS
+REENT k4seed_c1_n82.pg n 82 m 245 iter 3 fb 0 tau_changes 3 lamU_runs 3 reentries 2 odd_reentering 2 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 2 charge_LAM_X 2 class_X 2 pairs 5 wchg 4 wchg_COPY 4 ex {} PASS
+REENT k4g50_n101.pg n 101 m 319 iter 5 fb 0 tau_changes 5 lamU_runs 5 reentries 4 odd_reentering 4 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 4 charge_LAM_X 4 class_X 4 lamchg_at_X 2 lamo_at_X 2 pairs 6 wchg 9 wchg_COPY 5 ex {} PASS
+REENT k4seed_vr_n87.pg n 87 m 254 iter 3 fb 0 tau_changes 3 lamU_runs 3 reentries 2 odd_reentering 2 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 2 charge_LAM_X 2 class_X 2 pairs 5 wchg 4 wchg_COPY 4 ex {} PASS
+REENT k4u_n101.pg n 101 m 318 iter 3 fb 0 tau_changes 3 lamU_runs 3 reentries 2 odd_reentering 2 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 2 charge_LAM_X 2 class_X 2 pairs 6 wchg 4 wchg_COPY 4 ex {} PASS
+REENT k4y1_n82.pg n 82 m 260 iter 5 fb 0 tau_changes 5 lamU_runs 4 reentries 3 odd_reentering 3 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 3 charge_LAM_X 3 class_X 3 lamchg_at_X 1 pairs 4 wchg 6 wchg_COPY 1 ex {} PASS
+REENT near4_n26.pg n 26 m 83 iter 2 fb 0 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT k4y2_n87.pg n 87 m 298 iter 6 fb 0 tau_changes 6 lamU_runs 4 reentries 12 odd_reentering 12 max_per_o 1 max_per_oe 1 NMU_max 1 charge_LAM 12 charge_LAM_X 11 charge_LAM_Y 1 class_X 11 class_Y 1 lamchg_at_X 1 lamo_at_X 1 pairs 27 wchg 26 wchg_COPY 3 ex {} PASS
+REENT returns_rt64.pg n 64 m 124 iter 90 fb 14 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 1 ex {} PASS
+REENT nest4uu_n51.pg n 51 m 159 iter 2 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT nest4u_n46.pg n 46 m 138 iter 2 fb 0 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 2 ex {} PASS
+REENT nest5_n49.pg n 49 m 151 iter 3 fb 0 tau_changes 3 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 9 ex {} PASS
+REENT nest6_n75.pg n 75 m 233 iter 3 fb 0 tau_changes 3 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 16 ex {} PASS
+REENT nest6min_n75.pg n 75 m 236 iter 3 fb 0 tau_changes 3 lamU_runs 3 reentries 2 odd_reentering 2 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 2 charge_LAM_X 2 class_X 2 pairs 5 wchg 4 wchg_COPY 4 ex {} PASS
+REENT oseg_n26.pg n 26 m 82 iter 3 fb 0 tau_changes 3 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT nest6x_n75.pg n 75 m 314 iter 5 fb 0 tau_changes 5 lamU_runs 4 reentries 4 odd_reentering 3 max_per_o 2 max_per_oe 1 NMU_max 0 charge_LAM 4 charge_LAM_X 4 class_X 4 lamchg_at_X 1 lamo_at_X 1 pairs 21 wchg 8 wchg_COPY 2 ex {} PASS
+REENT w1_n27.pg n 27 m 86 iter 2 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT nopre_viol_n20.pg n 20 m 57 iter 3 fb 0 tau_changes 3 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 3 ex {} PASS
+REENT win3_n27.pg n 27 m 85 iter 2 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT ph45_n32.pg n 32 m 81 iter 21 fb 0 tau_changes 7 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 6 ex {} PASS
+REENT ph50_n32.pg n 32 m 77 iter 32 fb 18 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT tau18_n24.pg n 24 m 63 iter 12 fb 0 tau_changes 11 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 10 ex {} PASS
+REENT f39_n48.pg n 48 m 130 iter 38 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT iter118_n48.pg n 48 m 178 iter 18 fb 1 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT fbd0_n4.pg n 4 m 9 iter 0 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT n0_6_n24.pg n 24 m 52 iter 3 fb 0 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT nep24_n20.pg n 20 m 55 iter 15 fb 0 tau_changes 13 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 12 ex {} PASS
+REENT s20_n20.pg n 20 m 88 iter 8 fb 0 tau_changes 7 lamU_runs 5 reentries 3 odd_reentering 3 max_per_o 1 max_per_oe 1 NMU_max 1 charge_LAM 3 charge_LAM_X 2 charge_LAM_Z 1 class_X 2 class_Z 1 lamchg_at_X 1 lamo_at_X 1 pairs 5 wchg 6 wchg_COPY 1 ex {} PASS
+REENT s21_oink_n20.pg n 20 m 82 iter 8 fb 0 tau_changes 8 lamU_runs 6 reentries 4 odd_reentering 4 max_per_o 1 max_per_oe 1 NMU_max 1 charge_LAM 4 charge_LAM_X 2 charge_LAM_Y 1 charge_LAM_Z 1 class_X 2 class_Y 1 class_Z 1 lamchg_at_Y 1 lamo_at_Y 1 pairs 5 wchg 16 ex {} PASS
+REENT nep87_n40.pg n 40 m 142 iter 25 fb 1 tau_changes 9 lamU_runs 2 reentries 2 odd_reentering 1 max_per_o 2 max_per_oe 1 NMU_max 1 ENTNM_V 1 ENTPCH_V 1 charge_LAM 1 charge_LAM_X 1 charge_LEN 1 charge_LEN_X 1 class_X 2 pairs 9 wchg 3 wchg_COPY 1 ex {'ENTNM': (0, 24, 8, 36, 2, 0), 'ENTPCH': (0, 24, 8, 36, 2, 0)} PASS
+REENT lend2_30_n48.pg n 48 m 138 iter 25 fb 0 tau_changes 8 lamU_runs 5 reentries 4 odd_reentering 4 max_per_o 1 max_per_oe 1 NMU_max 1 charge_LAM 4 charge_LAM_X 4 class_X 4 lamchg_at_X 2 lamo_at_X 2 pairs 8 wchg 10 wchg_COPY 2 ex {} PASS
+REENT s29_n30.pg n 30 m 141 iter 7 fb 0 tau_changes 7 lamU_runs 6 reentries 3 odd_reentering 3 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 3 charge_LAM_X 1 charge_LAM_Y 2 class_X 1 class_Y 2 lamchg_at_Y 2 lamo_at_Y 2 pairs 2 wchg 13 wchg_COPY 5 ex {} PASS
+REENT s34_oink_n40.pg n 40 m 234 iter 5 fb 0 tau_changes 3 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 2 ex {} PASS
+REENT nep90_n40.pg n 40 m 142 iter 23 fb 1 tau_changes 7 lamU_runs 2 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 1 charge_LAM 1 charge_LAM_X 1 class_X 1 pairs 9 wchg 1 ex {} PASS
+REENT s32_n60.pg n 60 m 498 iter 8 fb 0 tau_changes 8 lamU_runs 3 reentries 5 odd_reentering 5 max_per_o 1 max_per_oe 1 NMU_max 3 charge_LAM 5 charge_LAM_X 5 class_X 5 pairs 39 wchg 12 wchg_COPY 3 ex {} PASS
+REENT s35_oink_n80.pg n 80 m 311 iter 5 fb 0 tau_changes 4 lamU_runs 3 reentries 2 odd_reentering 2 max_per_o 1 max_per_oe 1 NMU_max 1 charge_LAM 2 charge_LAM_X 2 class_X 2 lamchg_at_X 1 lamo_at_X 1 pairs 11 wchg 2 wchg_COPY 1 ex {} PASS
+REENT s36_oink_n60.pg n 60 m 293 iter 5 fb 0 tau_changes 4 lamU_runs 3 reentries 2 odd_reentering 2 max_per_o 1 max_per_oe 1 NMU_max 1 charge_LAM 2 charge_LAM_X 2 class_X 2 lamchg_at_X 1 lamo_at_X 1 pairs 11 wchg 2 wchg_COPY 1 ex {} PASS
+REENT beta2_n11.pg n 11 m 23 iter 4 fb 2 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT epsseg_cex_n16.pg n 16 m 50 iter 11 fb 0 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT exitr_cex_n16.pg n 16 m 51 iter 10 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT s34_oink_n80.pg n 80 m 606 iter 8 fb 0 tau_changes 7 lamU_runs 6 reentries 11 odd_reentering 11 max_per_o 1 max_per_oe 1 NMU_max 1 charge_LAM 11 charge_LAM_X 9 charge_LAM_Z 2 class_X 9 class_Z 2 lamchg_at_X 4 lamchg_at_Z 2 lamo_at_X 4 lamo_at_Z 2 pairs 28 wchg 24 wchg_COPY 4 ex {} PASS
+REENT exitr_cex_n48.pg n 48 m 190 iter 22 fb 1 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT mn_abs74_n48.pg n 48 m 203 iter 22 fb 4 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT epsseg_cex_n48.pg n 48 m 202 iter 26 fb 1 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT farrise25_n32.pg n 32 m 108 iter 35 fb 28 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT nleq_cex_n48.pg n 48 m 208 iter 10 fb 1 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT njb_reabs54_n32.pg n 32 m 127 iter 40 fb 22 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT njb_reabs65_n48.pg n 48 m 208 iter 70 fb 29 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT pftheta34_n32.pg n 32 m 100 iter 39 fb 1 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT nleq33_n48.pg n 48 m 191 iter 40 fb 1 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT pft35_n48.pg n 48 m 184 iter 41 fb 1 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT pftheta_cex_n32.pg n 32 m 112 iter 38 fb 1 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT pft40_n40.pg n 40 m 145 iter 54 fb 4 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT s4c8_n13.pg n 13 m 36 iter 12 fb 8 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT post31_n48.pg n 48 m 180 iter 36 fb 1 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT so_k2_n32.pg n 32 m 113 iter 20 fb 2 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT rise_thin51_n40.pg n 40 m 165 iter 78 fb 7 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT rise_fb38_n48.pg n 48 m 176 iter 53 fb 38 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT so_sor5_n24.pg n 24 m 81 iter 23 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT so_sorl_n32.pg n 32 m 114 iter 22 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT so_tie13_n24.pg n 24 m 92 iter 16 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT so_j19_n48.pg n 48 m 177 iter 25 fb 1 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT so_th_n32.pg n 32 m 124 iter 36 fb 0 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT so_tie15_n32.pg n 32 m 127 iter 20 fb 0 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT tevlast7_n32.pg n 32 m 100 iter 41 fb 2 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT tev_cex_n40.pg n 40 m 159 iter 27 fb 16 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT tevlast11_n40.pg n 40 m 162 iter 36 fb 2 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT tog6a_n32.pg n 32 m 104 iter 10 fb 1 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT tevlast_cex_n40.pg n 40 m 152 iter 11 fb 1 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT tog6b_n32.pg n 32 m 94 iter 8 fb 1 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT xrun8_n10.pg n 10 m 30 iter 11 fb 1 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT xrun21_n24.pg n 24 m 89 iter 24 fb 0 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT xsn29_n32.pg n 32 m 133 iter 29 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT xsn43_n48.pg n 48 m 170 iter 45 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT xsnf42_n48.pg n 48 m 186 iter 44 fb 1 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT xsnf52_n64.pg n 64 m 255 iter 55 fb 1 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT leanT_N12.pg n 96 m 275 iter 13 fb 0 tau_changes 11 lamU_runs 12 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT xsn91_n48.pg n 48 m 196 iter 115 fb 9 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT leanT_N6.pg n 48 m 101 iter 6 fb 0 tau_changes 3 lamU_runs 4 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT leanT_N8.pg n 64 m 151 iter 8 fb 0 tau_changes 6 lamU_runs 7 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT leanT_N16.pg n 128 m 431 iter 16 fb 0 tau_changes 15 lamU_runs 16 reentries 3 odd_reentering 3 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 3 charge_LAM_X 3 class_X 3 lamchg_at_X 3 lamo_at_X 3 wchg 5 ex {} PASS
+REENT tcL_N3.pg n 42 m 77 iter 7 fb 0 tau_changes 5 lamU_runs 4 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 1 charge_LAM 1 charge_LAM_Z 1 class_Z 1 pairs 4 wchg 2 ex {} PASS
+REENT tcL_N4.pg n 68 m 131 iter 16 fb 0 tau_changes 15 lamU_runs 6 reentries 22 odd_reentering 12 max_per_o 3 max_per_oe 2 NMU_max 6 charge_CAR 6 charge_CAR_X 4 charge_CAR_Z 2 charge_LAM 16 charge_LAM_X 12 charge_LAM_Z 4 class_X 16 class_Z 6 lamchg_at_X 1 lamchg_at_Z 3 lamo_at_Z 3 pairs 27 wchg 61 wchg_COPY 11 ex {} PASS
+REENT tcL_N5.pg n 100 m 199 iter 19 fb 0 tau_changes 17 lamU_runs 9 reentries 21 odd_reentering 14 max_per_o 2 max_per_oe 1 NMU_max 3 charge_CAR 4 charge_CAR_X 1 charge_CAR_Z 3 charge_LAM 17 charge_LAM_X 11 charge_LAM_Y 4 charge_LAM_Z 2 class_X 12 class_Y 4 class_Z 5 lamchg_at_X 1 lamchg_at_Y 4 lamchg_at_Z 1 lamo_at_X 1 lamo_at_Y 4 lamo_at_Z 1 pairs 32 wchg 89 wchg_COPY 24 ex {} PASS
+REENT tcL_N6.pg n 138 m 281 iter 18 fb 0 tau_changes 18 lamU_runs 8 reentries 35 odd_reentering 23 max_per_o 3 max_per_oe 2 NMU_max 5 charge_CAR 4 charge_CAR_X 1 charge_CAR_Z 3 charge_LAM 31 charge_LAM_X 25 charge_LAM_Y 5 charge_LAM_Z 1 class_X 26 class_Y 5 class_Z 4 lamchg_at_X 7 lamchg_at_Y 3 lamchg_at_Z 1 lamo_at_X 7 lamo_at_Y 3 lamo_at_Z 1 pairs 49 wchg 164 wchg_COPY 59 ex {} PASS
+REENT leanT_N24.pg n 192 m 839 iter 25 fb 0 tau_changes 19 lamU_runs 20 reentries 2 odd_reentering 2 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 2 charge_LAM_X 2 class_X 2 lamchg_at_X 2 lamo_at_X 2 wchg 2 ex {} PASS
+REENT tcR4_N4.pg n 68 m 140 iter 12 fb 0 tau_changes 10 lamU_runs 3 reentries 5 odd_reentering 5 max_per_o 1 max_per_oe 1 NMU_max 5 charge_CAR 2 charge_CAR_X 2 charge_LAM 3 charge_LAM_X 3 class_X 5 pairs 24 wchg 14 ex {} PASS
+REENT tcR4_N5.pg n 100 m 215 iter 14 fb 0 tau_changes 11 lamU_runs 4 reentries 6 odd_reentering 6 max_per_o 1 max_per_oe 1 NMU_max 4 charge_CAR 1 charge_CAR_X 1 charge_LAM 5 charge_LAM_X 5 class_X 6 lamchg_at_X 2 lamo_at_X 2 pairs 38 wchg 15 wchg_COPY 4 ex {} PASS
+REENT tcL_N10.pg n 350 m 749 iter 27 fb 0 tau_changes 26 lamU_runs 11 reentries 130 odd_reentering 72 max_per_o 5 max_per_oe 3 NMU_max 7 charge_CAR 12 charge_CAR_X 7 charge_CAR_Z 5 charge_LAM 117 charge_LAM_X 91 charge_LAM_Y 5 charge_LAM_Z 21 charge_MAT 1 charge_MAT_Z 1 class_X 98 class_Y 5 class_Z 27 lamchg_at_X 40 lamchg_at_Y 4 lamchg_at_Z 11 lamo_at_X 33 lamo_at_Y 4 lamo_at_Z 9 pairs 120 wchg 696 wchg_COPY 190 ex {} PASS
+REENT tcR4_N6.pg n 138 m 306 iter 22 fb 0 tau_changes 18 lamU_runs 5 reentries 20 odd_reentering 18 max_per_o 2 max_per_oe 1 NMU_max 4 charge_LAM 20 charge_LAM_X 18 charge_LAM_Y 2 class_X 18 class_Y 2 lamchg_at_X 5 lamchg_at_Y 1 lamo_at_X 5 lamo_at_Y 1 pairs 66 wchg 69 wchg_COPY 16 ex {} PASS
+REENT tcL_N8.pg n 232 m 487 iter 30 fb 0 tau_changes 29 lamU_runs 13 reentries 124 odd_reentering 57 max_per_o 8 max_per_oe 4 NMU_max 4 charge_CAR 10 charge_CAR_X 9 charge_CAR_Z 1 charge_LAM 106 charge_LAM_X 86 charge_LAM_Y 4 charge_LAM_Z 16 charge_LEN 7 charge_LEN_X 7 charge_MAT 1 charge_MAT_X 1 class_X 103 class_Y 4 class_Z 17 lamchg_at_X 42 lamchg_at_Z 5 lamo_at_X 25 lamo_at_Z 3 pairs 135 wchg 672 wchg_COPY 262 ex {} PASS
+REENT tcR4_N7.pg n 182 m 413 iter 41 fb 0 tau_changes 25 lamU_runs 3 reentries 8 odd_reentering 6 max_per_o 2 max_per_oe 1 NMU_max 11 charge_CAR 5 charge_CAR_X 5 charge_LAM 3 charge_LAM_X 3 class_X 8 pairs 85 wchg 23 wchg_COPY 3 ex {} PASS
+REENT leanT_N32.pg n 256 m 1375 iter 33 fb 0 tau_changes 27 lamU_runs 28 reentries 2 odd_reentering 2 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 2 charge_LAM_X 2 class_X 2 lamchg_at_X 2 lamo_at_X 2 wchg 2 ex {} PASS
+REENT tcS8_N6.pg n 138 m 342 iter 17 fb 0 tau_changes 16 lamU_runs 6 reentries 35 odd_reentering 25 max_per_o 3 max_per_oe 1 NMU_max 3 charge_CAR 3 charge_CAR_X 2 charge_CAR_Z 1 charge_LAM 28 charge_LAM_X 20 charge_LAM_Y 3 charge_LAM_Z 5 charge_MAT 4 charge_MAT_X 4 class_X 26 class_Y 3 class_Z 6 lamchg_at_X 4 lamchg_at_Y 2 lamchg_at_Z 2 lamo_at_X 4 lamo_at_Y 2 lamo_at_Z 2 pairs 59 wchg 126 wchg_COPY 26 ex {} PASS
+REENT tcR4_N8.pg n 232 m 536 iter 33 fb 0 tau_changes 26 lamU_runs 6 reentries 32 odd_reentering 24 max_per_o 2 max_per_oe 1 NMU_max 8 charge_CAR 6 charge_CAR_X 6 charge_LAM 26 charge_LAM_X 23 charge_LAM_Y 1 charge_LAM_Z 2 class_X 29 class_Y 1 class_Z 2 lamchg_at_X 6 lamchg_at_Y 1 lamchg_at_Z 2 lamo_at_X 6 lamo_at_Y 1 lamo_at_Z 2 pairs 125 wchg 173 wchg_COPY 56 ex {} PASS
+REENT tcS8_N7.pg n 182 m 462 iter 14 fb 0 tau_changes 14 lamU_runs 5 reentries 37 odd_reentering 37 max_per_o 1 max_per_oe 1 NMU_max 3 charge_CAR 1 charge_CAR_X 1 charge_LAM 34 charge_LAM_X 30 charge_LAM_Y 2 charge_LAM_Z 2 charge_MAT 2 charge_MAT_X 2 class_X 33 class_Y 2 class_Z 2 lamchg_at_X 1 lamchg_at_Y 2 lamo_at_X 1 lamo_at_Y 2 pairs 65 wchg 138 wchg_COPY 31 ex {} PASS
+REENT tcS8_N8.pg n 232 m 600 iter 10 fb 0 tau_changes 9 lamU_runs 3 reentries 33 odd_reentering 30 max_per_o 2 max_per_oe 1 NMU_max 2 charge_CAR 1 charge_CAR_X 1 charge_LAM 31 charge_LAM_X 27 charge_LAM_Y 2 charge_LAM_Z 2 charge_MAT 1 charge_MAT_X 1 class_X 29 class_Y 2 class_Z 2 lamchg_at_X 1 lamchg_at_Y 2 lamo_at_X 1 lamo_at_Y 2 pairs 79 wchg 82 wchg_COPY 32 ex {} PASS
+REENT tpp_viol_n22.pg n 22 m 28 iter 2 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT tpp_viol_n63.pg n 63 m 215 iter 8 fb 0 tau_changes 7 lamU_runs 3 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 1 charge_LAM 1 charge_LAM_X 1 class_X 1 pairs 16 wchg 2 wchg_COPY 1 ex {} PASS
+REENT tcS8_N10.pg n 350 m 930 iter 16 fb 0 tau_changes 16 lamU_runs 5 reentries 49 odd_reentering 45 max_per_o 3 max_per_oe 2 NMU_max 2 charge_LAM 47 charge_LAM_X 39 charge_LAM_Y 4 charge_LAM_Z 4 charge_MAT 2 charge_MAT_X 2 class_X 41 class_Y 4 class_Z 4 lamchg_at_X 7 lamchg_at_Y 1 lamo_at_X 7 lamo_at_Y 1 pairs 92 wchg 186 wchg_COPY 65 ex {} PASS
+REENT cxmig_k4_n54.pg n 54 m 85 iter 12 fb 0 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 5 ex {} PASS
+REENT cxmig_k16_n138.pg n 138 m 229 iter 24 fb 0 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 17 ex {} PASS
+REENT cxmig_k8_n82.pg n 82 m 133 iter 16 fb 0 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 9 ex {} PASS
+REENT ladderd0_k12_n48.pg n 48 m 89 iter 14 fb 0 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT ladderd0_k24_n84.pg n 84 m 161 iter 26 fb 0 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT tcS8_N11.pg n 418 m 1122 iter 20 fb 0 tau_changes 19 lamU_runs 4 reentries 76 odd_reentering 73 max_per_o 2 max_per_oe 1 NMU_max 6 ENTNM_V 2 charge_CAR 2 charge_CAR_X 2 charge_LAM 66 charge_LAM_X 63 charge_LAM_Y 2 charge_LAM_Z 1 charge_MAT 8 charge_MAT_X 8 class_X 73 class_Y 2 class_Z 1 lamchg_at_X 9 lamchg_at_Y 2 lamchg_at_Z 1 lamo_at_X 9 lamo_at_Y 2 lamo_at_Z 1 pairs 128 wchg 355 wchg_COPY 69 ex {'ENTNM': (3, 21, 317, 68, 2, 0)} PASS
+REENT ladderent_k12_n48.pg n 48 m 89 iter 14 fb 0 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT ladderent_k24_n84.pg n 84 m 161 iter 26 fb 0 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT reader_L10_n36.pg n 36 m 54 iter 13 fb 0 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 2 ex {} PASS
+REENT reader_L20_n56.pg n 56 m 84 iter 23 fb 0 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 2 ex {} PASS
+REENT tcS8_N9.pg n 288 m 756 iter 36 fb 3 tau_changes 29 lamU_runs 8 reentries 77 odd_reentering 57 max_per_o 4 max_per_oe 2 NMU_max 3 ENTNM_V 1 charge_CAR 5 charge_CAR_X 1 charge_CAR_Z 4 charge_LAM 68 charge_LAM_X 63 charge_LAM_Y 2 charge_LAM_Z 3 charge_MAT 4 charge_MAT_X 3 charge_MAT_Z 1 class_X 67 class_Y 2 class_Z 8 lamchg_at_X 29 lamchg_at_Y 2 lamchg_at_Z 1 lamo_at_X 25 lamo_at_Y 2 lamo_at_Z 1 pairs 80 wchg 272 wchg_COPY 69 ex {'ENTNM': (4, 34, 180, 181, 2, 0)} PASS
+REENT reader_L40_n96.pg n 96 m 144 iter 43 fb 0 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 2 ex {} PASS
+REENT tcL_N12.pg n 492 m 1067 iter 37 fb 0 tau_changes 35 lamU_runs 10 reentries 145 odd_reentering 85 max_per_o 6 max_per_oe 3 NMU_max 10 charge_CAR 22 charge_CAR_X 13 charge_CAR_Z 9 charge_LAM 121 charge_LAM_X 97 charge_LAM_Y 7 charge_LAM_Z 17 charge_MAT 2 charge_MAT_X 1 charge_MAT_Z 1 class_X 111 class_Y 7 class_Z 27 lamchg_at_X 24 lamchg_at_Y 5 lamchg_at_Z 10 lamo_at_X 20 lamo_at_Y 5 lamo_at_Z 8 pairs 203 wchg 864 wchg_COPY 231 ex {} PASS
+REENT gate_K16_n197.pg n 197 m 362 iter 23 fb 0 tau_changes 2 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 2 pairs 4 ex {} PASS
+REENT ladderd0_k48_n156.pg n 156 m 305 iter 50 fb 0 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT pairoc_n58.pg n 58 m 92 iter 4 fb 0 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 4 ex {} PASS
+REENT grow_K12_n149.pg n 149 m 276 iter 18 fb 0 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 3 ex {} PASS
+REENT pp_K12_n161.pg n 161 m 294 iter 20 fb 0 tau_changes 3 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 2 pairs 6 ex {} PASS
+REENT pp_K12_n161_dual.pg n 161 m 294 iter 20 fb 0 tau_changes 19 lamU_runs 1 reentries 2 odd_reentering 2 max_per_o 1 max_per_oe 1 NMU_max 3 charge_MAT 2 charge_MAT_X 2 class_X 2 pairs 87 wchg 2 ex {} PASS
+REENT ladderent_k48_n156.pg n 156 m 305 iter 50 fb 0 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT usplit_n14.pg n 14 m 21 iter 3 fb 0 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 1 ex {} PASS
+REENT usplit_n23.pg n 23 m 39 iter 9 fb 0 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 1 ex {} PASS
+REENT usplit_rd_n24.pg n 24 m 36 iter 3 fb 0 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 1 ex {} PASS
+REENT usplit_rd_s3_n27.pg n 27 m 41 iter 4 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT usplit_s3_n16.pg n 16 m 24 iter 3 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT nest3_n20.pg n 20 m 55 iter 2 fb 0 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 2 ex {} PASS
+REENT nest3_n24.pg n 24 m 74 iter 2 fb 0 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT vrall_viol_n20.pg n 20 m 43 iter 4 fb 0 tau_changes 4 lamU_runs 5 reentries 3 odd_reentering 3 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 3 charge_LAM_X 3 class_X 3 lamchg_at_X 3 lamo_at_X 3 wchg 6 ex {} PASS
+REENT xcov11_n20.pg n 20 m 53 iter 2 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT xctx_viol_n20.pg n 20 m 53 iter 5 fb 0 tau_changes 5 lamU_runs 5 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 1 charge_LAM_X 1 class_X 1 lamchg_at_X 1 pairs 1 wchg 2 ex {} PASS
+REENT fbref_cex_n32.pg n 32 m 108 iter 56 fb 8 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 1 ex {} PASS
+REENT grow_K40_n373.pg n 373 m 724 iter 46 fb 0 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 3 ex {} PASS
+REENT j10_n24.pg n 24 m 87 iter 25 fb 1 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT j5_n16.pg n 16 m 56 iter 30 fb 4 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT j4_n40.pg n 40 m 144 iter 106 fb 4 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT j7_n32.pg n 32 m 129 iter 50 fb 1 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT j8_n32.pg n 32 m 112 iter 54 fb 2 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT j7_n48.pg n 48 m 176 iter 78 fb 7 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT kw25_n32.pg n 32 m 100 iter 29 fb 1 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT kw_n16.pg n 16 m 47 iter 12 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT j8_n48.pg n 48 m 198 iter 86 fb 8 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT kw_n24.pg n 24 m 63 iter 20 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT kw_n48.pg n 48 m 169 iter 40 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT obr_eq_n24.pg n 24 m 59 iter 7 fb 1 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT u1t_cex_n32.pg n 32 m 116 iter 12 fb 1 tau_changes 2 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 2 ex {} PASS
+REENT obr_n32.pg n 32 m 118 iter 22 fb 2 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT u23sw64_n32.pg n 32 m 152 iter 16 fb 1 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT u1t_own6_n32.pg n 32 m 95 iter 9 fb 1 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT u2flat73_n32.pg n 32 m 166 iter 16 fb 5 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT u2flat_n32.pg n 32 m 88 iter 13 fb 3 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT x31_cu16.pg n 16 m 52 iter 23 fb 1 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT x31_cu24.pg n 24 m 93 iter 22 fb 1 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT x31_cu32.pg n 32 m 118 iter 49 fb 1 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT x31_cu32i.pg n 32 m 108 iter 42 fb 1 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT pp_K48_n449.pg n 449 m 870 iter 56 fb 0 tau_changes 3 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 2 pairs 6 ex {} PASS
+REENT x31_lem_e24.pg n 24 m 81 iter 54 fb 4 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT x31_lem_t32.pg n 32 m 101 iter 65 fb 6 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT x31_nh_r20.pg n 20 m 66 iter 15 fb 1 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT x31_cu48.pg n 48 m 187 iter 46 fb 1 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT x31_nh_e24.pg n 24 m 65 iter 20 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT x31_ru24.pg n 24 m 82 iter 7 fb 1 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT x31_re24.pg n 24 m 80 iter 6 fb 0 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT x31_rx32.pg n 32 m 101 iter 55 fb 3 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT x32_rand16.pg n 16 m 50 iter 15 fb 1 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT x31_rx48.pg n 48 m 201 iter 53 fb 2 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT x32_nest40.pg n 40 m 144 iter 58 fb 2 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT x32_rand24.pg n 24 m 83 iter 20 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT x32_rand32.pg n 32 m 129 iter 29 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT x32_rand48.pg n 48 m 154 iter 44 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT x32_waves32.pg n 32 m 122 iter 81 fb 9 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT cone_n65.pg n 65 m 203 iter 12 fb 1 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 2 ex {} PASS
+REENT x32_rand64.pg n 64 m 237 iter 56 fb 1 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT x32_waves48.pg n 48 m 158 iter 89 fb 19 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT ueonce_n27.pg n 27 m 85 iter 12 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT cone_n69.pg n 69 m 216 iter 25 fb 0 tau_changes 4 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 3 ex {} PASS
+REENT switchbestexp_1.pg n 35 m 70 iter 20 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT switchbestexp_2.pg n 60 m 130 iter 32 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT switchbestexp_3.pg n 85 m 190 iter 41 fb 0 tau_changes 3 lamU_runs 4 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT switchbestexp_4.pg n 110 m 250 iter 47 fb 0 tau_changes 4 lamU_runs 5 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT pp_K48_n449_dual.pg n 449 m 870 iter 56 fb 0 tau_changes 55 lamU_runs 1 reentries 2 odd_reentering 2 max_per_o 1 max_per_oe 1 NMU_max 3 charge_MAT 2 charge_MAT_X 2 class_X 2 pairs 267 wchg 2 ex {} PASS
+REENT switchbestexp_5.pg n 135 m 310 iter 55 fb 0 tau_changes 5 lamU_runs 6 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT gate_K64_n581.pg n 581 m 1130 iter 71 fb 0 tau_changes 2 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 2 pairs 4 ex {} PASS
+REENT switchbestexp_6.pg n 160 m 370 iter 62 fb 0 tau_changes 6 lamU_runs 7 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT switchallexp_1.pg n 21 m 41 iter 5 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT switchallexp_2.pg n 35 m 75 iter 8 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT switchallexp_3.pg n 49 m 109 iter 7 fb 0 tau_changes 3 lamU_runs 4 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT switchallexp_4.pg n 63 m 143 iter 8 fb 0 tau_changes 4 lamU_runs 5 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT switchallexp_5.pg n 77 m 177 iter 10 fb 0 tau_changes 5 lamU_runs 6 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT switchallexp_6.pg n 91 m 211 iter 12 fb 0 tau_changes 6 lamU_runs 7 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_core_2.pg n 15 m 28 iter 4 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_core_3.pg n 21 m 40 iter 6 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_core_4.pg n 27 m 52 iter 8 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_core_5.pg n 33 m 64 iter 10 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_core_6.pg n 39 m 76 iter 12 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_core_8.pg n 51 m 100 iter 16 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT switchbestexp_7.pg n 185 m 430 iter 68 fb 0 tau_changes 7 lamU_runs 8 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_dp_2.pg n 12 m 19 iter 2 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_dp_3.pg n 16 m 26 iter 4 fb 0 tau_changes 4 lamU_runs 5 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_dp_4.pg n 20 m 33 iter 4 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_dp_5.pg n 24 m 40 iter 6 fb 0 tau_changes 6 lamU_runs 7 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_dp_6.pg n 28 m 47 iter 6 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_dp_8.pg n 36 m 61 iter 8 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_m_2.pg n 9 m 15 iter 2 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_m_3.pg n 12 m 21 iter 2 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_m_4.pg n 15 m 27 iter 3 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_m_5.pg n 18 m 33 iter 3 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_m_6.pg n 21 m 39 iter 4 fb 0 tau_changes 3 lamU_runs 4 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_m_8.pg n 27 m 51 iter 5 fb 0 tau_changes 4 lamU_runs 5 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_ortl_2.pg n 11 m 17 iter 3 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_ortl_3.pg n 16 m 25 iter 4 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_ortl_4.pg n 21 m 33 iter 5 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_ortl_5.pg n 26 m 41 iter 6 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_ortl_6.pg n 31 m 49 iter 7 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_ortl_8.pg n 41 m 65 iter 9 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_qpt_2.pg n 4 m 5 iter 1 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_qpt_4.pg n 8 m 11 iter 1 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_qpt_3.pg n 6 m 8 iter 1 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_qpt_5.pg n 10 m 14 iter 1 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_qpt_6.pg n 12 m 17 iter 1 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_qpt_8.pg n 16 m 23 iter 1 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_rob_2.pg n 31 m 80 iter 5 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_rob_3.pg n 54 m 148 iter 7 fb 0 tau_changes 3 lamU_runs 4 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_rob_4.pg n 83 m 236 iter 10 fb 0 tau_changes 4 lamU_runs 5 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_rob_5.pg n 118 m 344 iter 13 fb 0 tau_changes 5 lamU_runs 6 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_rob_6.pg n 159 m 472 iter 16 fb 0 tau_changes 6 lamU_runs 7 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_rr_2.pg n 8 m 16 iter 1 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_rr_3.pg n 12 m 24 iter 1 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_rob_8.pg n 259 m 788 iter 22 fb 0 tau_changes 8 lamU_runs 9 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_rr_5.pg n 20 m 40 iter 2 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_rr_4.pg n 16 m 32 iter 2 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_rr_6.pg n 24 m 48 iter 2 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_rr_8.pg n 32 m 64 iter 2 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_symsi_2.pg n 22 m 48 iter 13 fb 4 tau_changes 7 lamU_runs 6 reentries 2 odd_reentering 2 max_per_o 1 max_per_oe 1 NMU_max 1 charge_LAM 2 charge_LAM_X 1 charge_LAM_Y 1 class_X 1 class_Y 1 lamchg_at_Y 1 lamo_at_Y 1 pairs 2 wchg 3 ex {} PASS
+REENT counter_symsi_3.pg n 32 m 70 iter 25 fb 5 tau_changes 14 lamU_runs 10 reentries 7 odd_reentering 6 max_per_o 2 max_per_oe 1 NMU_max 1 charge_LAM 6 charge_LAM_X 5 charge_LAM_Y 1 charge_MAT 1 charge_MAT_Z 1 class_X 5 class_Y 1 class_Z 1 lamchg_at_X 2 lamchg_at_Y 1 lamo_at_X 2 lamo_at_Y 1 pairs 6 wchg 12 ex {} PASS
+REENT counter_symsi_4.pg n 42 m 92 iter 22 fb 2 tau_changes 16 lamU_runs 12 reentries 10 odd_reentering 8 max_per_o 2 max_per_oe 1 NMU_max 2 charge_CAR 3 charge_CAR_X 2 charge_CAR_Z 1 charge_LAM 6 charge_LAM_X 5 charge_LAM_Y 1 charge_MAT 1 charge_MAT_Z 1 class_X 7 class_Y 1 class_Z 2 lamchg_at_X 4 lamchg_at_Y 1 lamo_at_X 4 lamo_at_Y 1 pairs 7 wchg 20 wchg_COPY 1 ex {} PASS
+REENT counter_symsi_5.pg n 52 m 114 iter 31 fb 4 tau_changes 18 lamU_runs 13 reentries 13 odd_reentering 10 max_per_o 2 max_per_oe 1 NMU_max 3 charge_CAR 3 charge_CAR_X 1 charge_CAR_Z 2 charge_LAM 9 charge_LAM_X 8 charge_LAM_Y 1 charge_MAT 1 charge_MAT_Z 1 class_X 9 class_Y 1 class_Z 3 lamchg_at_X 5 lamchg_at_Y 1 lamo_at_X 5 lamo_at_Y 1 pairs 9 wchg 27 wchg_COPY 3 ex {} PASS
+REENT counter_symsi_6.pg n 62 m 136 iter 37 fb 4 tau_changes 21 lamU_runs 15 reentries 16 odd_reentering 12 max_per_o 2 max_per_oe 1 NMU_max 4 charge_CAR 4 charge_CAR_X 1 charge_CAR_Z 3 charge_LAM 11 charge_LAM_X 10 charge_LAM_Y 1 charge_MAT 1 charge_MAT_Z 1 class_X 11 class_Y 1 class_Z 4 lamchg_at_X 6 lamchg_at_Y 1 lamo_at_X 6 lamo_at_Y 1 pairs 11 wchg 36 wchg_COPY 6 ex {} PASS
+REENT recursiveladder_2.pg n 10 m 19 iter 2 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT recursiveladder_3.pg n 15 m 30 iter 2 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT counter_symsi_8.pg n 82 m 180 iter 48 fb 4 tau_changes 27 lamU_runs 19 reentries 22 odd_reentering 16 max_per_o 2 max_per_oe 1 NMU_max 6 charge_CAR 6 charge_CAR_X 1 charge_CAR_Z 5 charge_LAM 15 charge_LAM_X 14 charge_LAM_Y 1 charge_MAT 1 charge_MAT_Z 1 class_X 15 class_Y 1 class_Z 6 lamchg_at_X 8 lamchg_at_Y 1 lamo_at_X 8 lamo_at_Y 1 pairs 15 wchg 57 wchg_COPY 15 ex {} PASS
+REENT recursiveladder_5.pg n 25 m 52 iter 4 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT recursiveladder_4.pg n 20 m 41 iter 4 fb 0 tau_changes 4 lamU_runs 5 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT recursiveladder_6.pg n 30 m 63 iter 6 fb 0 tau_changes 6 lamU_runs 7 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT tc_2.pg n 22 m 36 iter 4 fb 0 tau_changes 4 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 3 ex {} PASS
+REENT tc_3.pg n 42 m 75 iter 7 fb 0 tau_changes 5 lamU_runs 4 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 1 charge_LAM 1 charge_LAM_Z 1 class_Z 1 pairs 4 wchg 2 ex {} PASS
+REENT switchbestexp_8.pg n 210 m 490 iter 77 fb 0 tau_changes 8 lamU_runs 9 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT tc_4.pg n 68 m 128 iter 16 fb 0 tau_changes 15 lamU_runs 6 reentries 22 odd_reentering 12 max_per_o 3 max_per_oe 2 NMU_max 6 charge_CAR 6 charge_CAR_X 4 charge_CAR_Z 2 charge_LAM 16 charge_LAM_X 12 charge_LAM_Z 4 class_X 16 class_Z 6 lamchg_at_X 1 lamchg_at_Z 3 lamo_at_Z 3 pairs 27 wchg 61 wchg_COPY 11 ex {} PASS
+REENT tc_5.pg n 100 m 195 iter 19 fb 0 tau_changes 17 lamU_runs 9 reentries 21 odd_reentering 14 max_per_o 2 max_per_oe 1 NMU_max 3 charge_CAR 4 charge_CAR_X 1 charge_CAR_Z 3 charge_LAM 17 charge_LAM_X 11 charge_LAM_Y 4 charge_LAM_Z 2 class_X 12 class_Y 4 class_Z 5 lamchg_at_X 1 lamchg_at_Y 4 lamchg_at_Z 1 lamo_at_X 1 lamo_at_Y 4 lamo_at_Z 1 pairs 32 wchg 89 wchg_COPY 24 ex {} PASS
+REENT pivot_demo.pg n 11 m 15 iter 0 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT d_pivot_demo.pg n 11 m 15 iter 0 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT tc_6.pg n 138 m 276 iter 18 fb 0 tau_changes 18 lamU_runs 8 reentries 35 odd_reentering 23 max_per_o 3 max_per_oe 2 NMU_max 5 charge_CAR 4 charge_CAR_X 1 charge_CAR_Z 3 charge_LAM 31 charge_LAM_X 25 charge_LAM_Y 5 charge_LAM_Z 1 class_X 26 class_Y 5 class_Z 4 lamchg_at_X 7 lamchg_at_Y 3 lamchg_at_Z 1 lamo_at_X 7 lamo_at_Y 3 lamo_at_Z 1 pairs 49 wchg 164 wchg_COPY 59 ex {} PASS
+REENT runquad_K3_m4_n54.pg n 54 m 83 iter 3 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT s3quad_K3_m4.pg n 137 m 166 iter 21 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT runquad_K8_m30_n192.pg n 192 m 287 iter 3 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT d_runquad_K3.pg n 54 m 83 iter 3 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT topfix_n3.pg n 63 m 148 iter 22 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT topfix_n4.pg n 84 m 213 iter 28 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT tc_8.pg n 232 m 480 iter 30 fb 0 tau_changes 29 lamU_runs 13 reentries 124 odd_reentering 57 max_per_o 8 max_per_oe 4 NMU_max 4 charge_CAR 10 charge_CAR_X 9 charge_CAR_Z 1 charge_LAM 106 charge_LAM_X 86 charge_LAM_Y 4 charge_LAM_Z 16 charge_LEN 7 charge_LEN_X 7 charge_MAT 1 charge_MAT_X 1 class_X 103 class_Y 4 class_Z 17 lamchg_at_X 42 lamchg_at_Z 5 lamo_at_X 25 lamo_at_Z 3 pairs 135 wchg 672 wchg_COPY 262 ex {} PASS
+REENT topfix_n6.pg n 126 m 364 iter 40 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT topfix_n8.pg n 168 m 543 iter 52 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT d_hntop_n3.pg n 63 m 148 iter 22 fb 0 tau_changes 22 lamU_runs 5 reentries 55 odd_reentering 30 max_per_o 6 max_per_oe 4 NMU_max 7 charge_CAR 16 charge_CAR_X 16 charge_LAM 39 charge_LAM_X 39 class_X 55 lamchg_at_X 10 lamo_at_X 8 pairs 74 wchg 85 wchg_COPY 4 ex {} PASS
+REENT topfix_n10.pg n 210 m 750 iter 64 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT dlc_d2.pg n 27 m 49 iter 7 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT dlc_d3.pg n 109 m 211 iter 15 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT topfix_n8_cmp.pg n 171 m 549 iter 52 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT d_dlc_d3.pg n 109 m 211 iter 15 fb 0 tau_changes 15 lamU_runs 1 reentries 8 odd_reentering 2 max_per_o 6 max_per_oe 3 NMU_max 0 ENTNM_V 3 charge_MAT 8 charge_MAT_X 8 class_X 8 pairs 93 wchg 8 ex {'ENTNM': (0, 16, 1, 2, 4, 0)} PASS
+REENT runfam_K10.pg n 49 m 165 iter 97 fb 1 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT dlc_d4.pg n 455 m 901 iter 31 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r100_n40.pg n 40 m 83 iter 3 fb 0 tau_changes 2 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 6 ex {} PASS
+REENT r101_n50.pg n 50 m 91 iter 4 fb 0 tau_changes 3 lamU_runs 3 reentries 3 odd_reentering 3 max_per_o 1 max_per_oe 1 NMU_max 1 charge_LAM 3 charge_LAM_X 3 class_X 3 lamchg_at_X 2 lamo_at_X 1 pairs 4 wchg 3 ex {} PASS
+REENT r102_n60.pg n 60 m 123 iter 4 fb 0 tau_changes 3 lamU_runs 3 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 1 charge_LAM_X 1 class_X 1 lamchg_at_X 1 lamo_at_X 1 pairs 7 wchg 1 ex {} PASS
+REENT r103_n70.pg n 70 m 151 iter 5 fb 0 tau_changes 5 lamU_runs 6 reentries 2 odd_reentering 2 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 2 charge_LAM_X 2 class_X 2 lamchg_at_X 2 lamo_at_X 2 wchg 2 ex {} PASS
+REENT r104_n80.pg n 80 m 144 iter 3 fb 0 tau_changes 3 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 12 ex {} PASS
+REENT runfam_K40.pg n 79 m 225 iter 163 fb 1 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r105_n20.pg n 20 m 38 iter 5 fb 0 tau_changes 3 lamU_runs 4 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r106_n30.pg n 30 m 55 iter 3 fb 1 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 2 ex {} PASS
+REENT r107_n40.pg n 40 m 84 iter 3 fb 0 tau_changes 2 lamU_runs 3 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 1 charge_LAM_X 1 class_X 1 lamchg_at_X 1 lamo_at_X 1 wchg 1 wchg_COPY 1 ex {} PASS
+REENT r108_n50.pg n 50 m 105 iter 3 fb 0 tau_changes 3 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 6 ex {} PASS
+REENT r109_n60.pg n 60 m 117 iter 4 fb 0 tau_changes 4 lamU_runs 2 reentries 2 odd_reentering 2 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 1 charge_LAM_X 1 charge_LEN 1 charge_LEN_X 1 class_X 2 pairs 11 wchg 4 wchg_COPY 3 ex {} PASS
+REENT r10_n50.pg n 50 m 94 iter 4 fb 0 tau_changes 4 lamU_runs 5 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r110_n70.pg n 70 m 123 iter 5 fb 0 tau_changes 4 lamU_runs 2 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 0 charge_MAT 1 charge_MAT_X 1 class_X 1 lamchg_at_X 1 lamo_at_X 1 pairs 8 wchg 1 wchg_COPY 1 ex {} PASS
+REENT r112_n20.pg n 20 m 39 iter 2 fb 0 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT r111_n80.pg n 80 m 167 iter 7 fb 0 tau_changes 7 lamU_runs 1 reentries 4 odd_reentering 3 max_per_o 2 max_per_oe 1 NMU_max 0 ENTNM_V 2 charge_LEN 1 charge_LEN_X 1 charge_MAT 3 charge_MAT_X 3 class_X 4 pairs 24 wchg 5 wchg_COPY 2 ex {'ENTNM': (0, 8, 24, 46, 2, 0)} PASS
+REENT r113_n30.pg n 30 m 53 iter 3 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r114_n40.pg n 40 m 80 iter 3 fb 0 tau_changes 2 lamU_runs 3 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 1 charge_LAM_X 1 class_X 1 lamchg_at_X 1 lamo_at_X 1 wchg 1 wchg_COPY 1 ex {} PASS
+REENT r115_n50.pg n 50 m 98 iter 5 fb 0 tau_changes 4 lamU_runs 4 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT r116_n60.pg n 60 m 115 iter 4 fb 0 tau_changes 4 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 12 ex {} PASS
+REENT r117_n70.pg n 70 m 142 iter 3 fb 0 tau_changes 3 lamU_runs 4 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 1 charge_LAM_X 1 class_X 1 lamchg_at_X 1 lamo_at_X 1 wchg 2 ex {} PASS
+REENT r119_n20.pg n 20 m 37 iter 1 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r118_n80.pg n 80 m 162 iter 6 fb 0 tau_changes 6 lamU_runs 7 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 1 charge_LAM_X 1 class_X 1 lamchg_at_X 1 wchg 1 ex {} PASS
+REENT r11_n60.pg n 60 m 117 iter 5 fb 0 tau_changes 5 lamU_runs 4 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 7 ex {} PASS
+REENT r120_n30.pg n 30 m 58 iter 2 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r121_n40.pg n 40 m 75 iter 2 fb 0 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT r122_n50.pg n 50 m 94 iter 5 fb 1 tau_changes 3 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 2 ex {} PASS
+REENT r123_n60.pg n 60 m 121 iter 3 fb 0 tau_changes 3 lamU_runs 4 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 1 charge_LAM_X 1 class_X 1 lamchg_at_X 1 lamo_at_X 1 wchg 2 wchg_COPY 1 ex {} PASS
+REENT r124_n70.pg n 70 m 138 iter 7 fb 1 tau_changes 6 lamU_runs 5 reentries 3 odd_reentering 3 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 2 charge_LAM_X 2 charge_LEN 1 charge_LEN_Y 1 class_X 2 class_Y 1 lamchg_at_X 2 lamchg_at_Y 1 lamo_at_X 1 lamo_at_Y 1 pairs 2 wchg 5 ex {} PASS
+REENT r125_n80.pg n 80 m 167 iter 6 fb 0 tau_changes 6 lamU_runs 6 reentries 2 odd_reentering 2 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 2 charge_LAM_X 1 charge_LAM_Z 1 class_X 1 class_Z 1 lamchg_at_X 1 lamchg_at_Z 1 lamo_at_X 1 lamo_at_Z 1 pairs 2 wchg 3 ex {} PASS
+REENT r126_n20.pg n 20 m 46 iter 5 fb 0 tau_changes 3 lamU_runs 4 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r127_n30.pg n 30 m 51 iter 3 fb 0 tau_changes 2 lamU_runs 3 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 1 charge_LAM_X 1 class_X 1 lamchg_at_X 1 lamo_at_X 1 wchg 1 ex {} PASS
+REENT r128_n40.pg n 40 m 79 iter 3 fb 0 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT r129_n50.pg n 50 m 103 iter 3 fb 0 tau_changes 3 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 2 ex {} PASS
+REENT r12_n70.pg n 70 m 144 iter 4 fb 0 tau_changes 3 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT r130_n60.pg n 60 m 106 iter 3 fb 0 tau_changes 2 lamU_runs 3 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 1 charge_LAM_X 1 class_X 1 lamchg_at_X 1 wchg 1 ex {} PASS
+REENT r131_n70.pg n 70 m 150 iter 3 fb 0 tau_changes 3 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 6 ex {} PASS
+REENT r133_n20.pg n 20 m 34 iter 2 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r132_n80.pg n 80 m 163 iter 5 fb 0 tau_changes 4 lamU_runs 4 reentries 2 odd_reentering 2 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 2 charge_LAM_X 1 charge_LAM_Y 1 class_X 1 class_Y 1 lamchg_at_X 1 lamchg_at_Y 1 lamo_at_X 1 lamo_at_Y 1 pairs 1 wchg 4 ex {} PASS
+REENT r134_n30.pg n 30 m 58 iter 2 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r135_n40.pg n 40 m 74 iter 2 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r136_n50.pg n 50 m 102 iter 3 fb 0 tau_changes 3 lamU_runs 4 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r137_n60.pg n 60 m 116 iter 2 fb 0 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 2 ex {} PASS
+REENT r138_n70.pg n 70 m 135 iter 4 fb 0 tau_changes 4 lamU_runs 4 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 2 ex {} PASS
+REENT r139_n80.pg n 80 m 152 iter 3 fb 0 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT r13_n80.pg n 80 m 156 iter 3 fb 0 tau_changes 3 lamU_runs 2 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 2 charge_LAM 1 charge_LAM_X 1 class_X 1 pairs 4 wchg 2 ex {} PASS
+REENT r140_n20.pg n 20 m 40 iter 1 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r141_n30.pg n 30 m 62 iter 4 fb 0 tau_changes 3 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 1 ex {} PASS
+REENT r143_n50.pg n 50 m 104 iter 1 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r142_n40.pg n 40 m 83 iter 5 fb 0 tau_changes 3 lamU_runs 2 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 1 charge_CAR 1 charge_CAR_X 1 class_X 1 lamchg_at_X 1 pairs 7 wchg 1 ex {} PASS
+REENT r144_n60.pg n 60 m 113 iter 2 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r145_n70.pg n 70 m 133 iter 7 fb 0 tau_changes 7 lamU_runs 5 reentries 6 odd_reentering 5 max_per_o 2 max_per_oe 1 NMU_max 0 charge_LAM 5 charge_LAM_X 2 charge_LAM_Y 3 charge_LEN 1 charge_LEN_Y 1 class_X 2 class_Y 4 lamchg_at_X 1 lamo_at_X 1 pairs 6 wchg 11 ex {} PASS
+REENT r146_n80.pg n 80 m 162 iter 7 fb 1 tau_changes 6 lamU_runs 4 reentries 2 odd_reentering 2 max_per_o 1 max_per_oe 1 NMU_max 1 charge_LAM 2 charge_LAM_X 2 class_X 2 pairs 5 wchg 4 ex {} PASS
+REENT r148_n30.pg n 30 m 60 iter 2 fb 0 tau_changes 2 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 2 ex {} PASS
+REENT r147_n20.pg n 20 m 38 iter 2 fb 0 tau_changes 2 lamU_runs 2 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 1 charge_LAM_X 1 class_X 1 pairs 1 wchg 1 ex {} PASS
+REENT r149_n40.pg n 40 m 73 iter 2 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r14_n20.pg n 20 m 40 iter 2 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r150_n50.pg n 50 m 91 iter 6 fb 0 tau_changes 4 lamU_runs 4 reentries 2 odd_reentering 2 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 2 charge_LAM_X 2 class_X 2 lamchg_at_X 1 pairs 2 wchg 5 ex {} PASS
+REENT r151_n60d2.pg n 60 m 91 iter 4 fb 0 tau_changes 4 lamU_runs 5 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r152_n60d2.pg n 60 m 91 iter 2 fb 0 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 2 ex {} PASS
+REENT r154_n60d2.pg n 60 m 88 iter 3 fb 0 tau_changes 3 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT r153_n60d2.pg n 60 m 91 iter 4 fb 0 tau_changes 3 lamU_runs 2 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LEN 1 charge_LEN_X 1 class_X 1 pairs 3 wchg 1 ex {} PASS
+REENT r155_n60d2.pg n 60 m 92 iter 5 fb 0 tau_changes 3 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 2 ex {} PASS
+REENT r156_n60d2.pg n 60 m 85 iter 4 fb 0 tau_changes 4 lamU_runs 4 reentries 2 odd_reentering 2 max_per_o 1 max_per_oe 1 NMU_max 1 charge_LAM 2 charge_LAM_X 2 class_X 2 lamchg_at_X 2 lamo_at_X 2 pairs 2 wchg 2 ex {} PASS
+REENT r157_n60d2.pg n 60 m 91 iter 5 fb 0 tau_changes 4 lamU_runs 4 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 4 ex {} PASS
+REENT r158_n60d2.pg n 60 m 88 iter 2 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r159_n60d2.pg n 60 m 89 iter 2 fb 0 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT r15_n30.pg n 30 m 61 iter 2 fb 0 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 3 ex {} PASS
+REENT r160_n60d2.pg n 60 m 91 iter 3 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r162_n60d2.pg n 60 m 91 iter 5 fb 0 tau_changes 5 lamU_runs 4 reentries 3 odd_reentering 3 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 3 charge_LAM_X 3 class_X 3 lamchg_at_X 2 lamo_at_X 2 pairs 5 wchg 4 ex {} PASS
+REENT r161_n60d2.pg n 60 m 92 iter 4 fb 0 tau_changes 4 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 6 ex {} PASS
+REENT r163_n60d2.pg n 60 m 93 iter 3 fb 0 tau_changes 2 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 2 pairs 9 ex {} PASS
+REENT r164_n60d2.pg n 60 m 94 iter 3 fb 0 tau_changes 3 lamU_runs 3 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LEN 1 charge_LEN_X 1 class_X 1 pairs 1 wchg 1 wchg_COPY 1 ex {} PASS
+REENT r165_n60d2.pg n 60 m 84 iter 2 fb 0 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 2 ex {} PASS
+REENT r167_n60d2.pg n 60 m 87 iter 3 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r166_n60d2.pg n 60 m 91 iter 3 fb 0 tau_changes 3 lamU_runs 3 reentries 2 odd_reentering 2 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 2 charge_LAM_X 1 charge_LAM_Y 1 class_X 1 class_Y 1 lamchg_at_X 1 lamo_at_X 1 pairs 1 wchg 3 wchg_COPY 3 ex {} PASS
+REENT r168_n60d2.pg n 60 m 88 iter 3 fb 0 tau_changes 3 lamU_runs 4 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r169_n60d2.pg n 60 m 93 iter 3 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r16_n40.pg n 40 m 80 iter 3 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r170_n60d2.pg n 60 m 86 iter 5 fb 0 tau_changes 4 lamU_runs 2 reentries 2 odd_reentering 2 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 2 charge_LAM_X 2 class_X 2 pairs 3 wchg 3 ex {} PASS
+REENT r171_n60d2.pg n 60 m 87 iter 4 fb 1 tau_changes 4 lamU_runs 4 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 1 charge_LAM_Y 1 class_Y 1 pairs 1 wchg 1 wchg_COPY 1 ex {} PASS
+REENT r172_n60d2.pg n 60 m 93 iter 3 fb 0 tau_changes 3 lamU_runs 4 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 1 charge_LAM_X 1 class_X 1 lamchg_at_X 1 lamo_at_X 1 wchg 1 ex {} PASS
+REENT r173_n60d2.pg n 60 m 95 iter 4 fb 0 tau_changes 4 lamU_runs 4 reentries 2 odd_reentering 1 max_per_o 2 max_per_oe 1 NMU_max 1 charge_LAM 2 charge_LAM_X 2 class_X 2 lamchg_at_X 2 lamo_at_X 1 pairs 1 wchg 2 ex {} PASS
+REENT r175_n60d2.pg n 60 m 90 iter 3 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r174_n60d2.pg n 60 m 90 iter 4 fb 0 tau_changes 4 lamU_runs 5 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 1 charge_LAM_X 1 class_X 1 lamchg_at_X 1 lamo_at_X 1 wchg 3 ex {} PASS
+REENT r176_n60d2.pg n 60 m 89 iter 3 fb 1 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r177_n60d2.pg n 60 m 89 iter 2 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r178_n60d2.pg n 60 m 84 iter 3 fb 0 tau_changes 3 lamU_runs 2 reentries 2 odd_reentering 2 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 2 charge_LAM_X 2 class_X 2 pairs 3 wchg 3 wchg_COPY 1 ex {} PASS
+REENT r17_n50.pg n 50 m 102 iter 5 fb 0 tau_changes 3 lamU_runs 4 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r179_n60d2.pg n 60 m 82 iter 4 fb 0 tau_changes 3 lamU_runs 4 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r180_n60d2.pg n 60 m 91 iter 2 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r181_n60d2.pg n 60 m 91 iter 4 fb 0 tau_changes 4 lamU_runs 5 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 1 charge_LAM_X 1 class_X 1 lamchg_at_X 1 lamo_at_X 1 wchg 1 ex {} PASS
+REENT r182_n60d2.pg n 60 m 85 iter 2 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r184_n60d2.pg n 60 m 92 iter 4 fb 0 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT r183_n60d2.pg n 60 m 90 iter 2 fb 0 tau_changes 2 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 5 ex {} PASS
+REENT r185_n60d2.pg n 60 m 86 iter 3 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r186_n60d2.pg n 60 m 81 iter 4 fb 0 tau_changes 3 lamU_runs 4 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r188_n60d2.pg n 60 m 90 iter 2 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r187_n60d2.pg n 60 m 94 iter 4 fb 1 tau_changes 4 lamU_runs 4 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 1 charge_LAM_X 1 class_X 1 lamchg_at_X 1 lamo_at_X 1 pairs 1 wchg 1 ex {} PASS
+REENT r189_n60d2.pg n 60 m 85 iter 3 fb 0 tau_changes 3 lamU_runs 4 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r18_n60.pg n 60 m 121 iter 3 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r190_n60d2.pg n 60 m 95 iter 2 fb 0 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT r192_n60d2.pg n 60 m 97 iter 5 fb 0 tau_changes 4 lamU_runs 5 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r191_n60d2.pg n 60 m 89 iter 6 fb 0 tau_changes 5 lamU_runs 4 reentries 2 odd_reentering 2 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 2 charge_LAM_X 2 class_X 2 lamchg_at_X 2 lamo_at_X 2 pairs 5 wchg 2 ex {} PASS
+REENT r193_n60d2.pg n 60 m 84 iter 2 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r194_n60d2.pg n 60 m 97 iter 5 fb 0 tau_changes 4 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 4 ex {} PASS
+REENT r195_n60d2.pg n 60 m 100 iter 4 fb 0 tau_changes 4 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 2 ex {} PASS
+REENT r196_n60d2.pg n 60 m 87 iter 2 fb 0 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT r197_n60d2.pg n 60 m 93 iter 5 fb 0 tau_changes 4 lamU_runs 4 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT r198_n60d2.pg n 60 m 85 iter 5 fb 0 tau_changes 4 lamU_runs 5 reentries 2 odd_reentering 2 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 2 charge_LAM_X 2 class_X 2 lamchg_at_X 2 lamo_at_X 2 wchg 4 ex {} PASS
+REENT r199_n60d2.pg n 60 m 92 iter 2 fb 0 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 2 ex {} PASS
+REENT r19_n70.pg n 70 m 141 iter 5 fb 0 tau_changes 5 lamU_runs 6 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r1_n30.pg n 30 m 62 iter 3 fb 0 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT r200_n60d2.pg n 60 m 88 iter 2 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r20_n80.pg n 80 m 153 iter 3 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r22_n30.pg n 30 m 58 iter 2 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r21_n20.pg n 20 m 40 iter 3 fb 0 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 2 ex {} PASS
+REENT r23_n40.pg n 40 m 89 iter 5 fb 0 tau_changes 5 lamU_runs 4 reentries 2 odd_reentering 2 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 1 charge_LAM_X 1 charge_LEN 1 charge_LEN_X 1 class_X 2 lamchg_at_X 2 lamo_at_X 1 pairs 7 wchg 3 wchg_COPY 2 ex {} PASS
+REENT r24_n50.pg n 50 m 100 iter 3 fb 0 tau_changes 3 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 4 ex {} PASS
+REENT r25_n60.pg n 60 m 129 iter 3 fb 0 tau_changes 2 lamU_runs 3 reentries 2 odd_reentering 2 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 2 charge_LAM_X 1 charge_LAM_Z 1 class_X 1 class_Z 1 lamchg_at_X 1 lamchg_at_Z 1 lamo_at_Z 1 wchg 2 wchg_COPY 1 ex {} PASS
+REENT r26_n70.pg n 70 m 146 iter 6 fb 0 tau_changes 5 lamU_runs 3 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 1 charge_LAM 1 charge_LAM_X 1 class_X 1 pairs 4 wchg 1 ex {} PASS
+REENT r27_n80.pg n 80 m 162 iter 5 fb 0 tau_changes 5 lamU_runs 5 reentries 2 odd_reentering 2 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 2 charge_LAM_X 2 class_X 2 lamchg_at_X 2 lamo_at_X 2 pairs 3 wchg 2 ex {} PASS
+REENT r28_n20.pg n 20 m 36 iter 1 fb 0 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT r29_n30.pg n 30 m 58 iter 3 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r2_n40.pg n 40 m 81 iter 3 fb 0 tau_changes 3 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 2 ex {} PASS
+REENT r30_n40.pg n 40 m 92 iter 2 fb 0 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 2 ex {} PASS
+REENT r31_n50.pg n 50 m 84 iter 3 fb 0 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 1 ex {} PASS
+REENT r32_n60.pg n 60 m 109 iter 3 fb 0 tau_changes 3 lamU_runs 2 reentries 2 odd_reentering 2 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LEN 1 charge_LEN_X 1 charge_MAT 1 charge_MAT_X 1 class_X 2 lamchg_at_X 1 pairs 7 wchg 2 wchg_COPY 1 ex {} PASS
+REENT r33_n70.pg n 70 m 142 iter 6 fb 0 tau_changes 3 lamU_runs 4 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 1 charge_LAM_X 1 class_X 1 lamchg_at_X 1 lamo_at_X 1 wchg 2 ex {} PASS
+REENT r34_n80.pg n 80 m 158 iter 4 fb 0 tau_changes 4 lamU_runs 4 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 1 charge_LAM_Y 1 class_Y 1 lamchg_at_Y 1 lamo_at_Y 1 pairs 1 wchg 1 ex {} PASS
+REENT r35_n20.pg n 20 m 45 iter 2 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r36_n30.pg n 30 m 59 iter 3 fb 0 tau_changes 3 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT r37_n40.pg n 40 m 90 iter 3 fb 0 tau_changes 2 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 3 ex {} PASS
+REENT r38_n50.pg n 50 m 94 iter 3 fb 0 tau_changes 2 lamU_runs 3 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 1 charge_LAM_Y 1 class_Y 1 lamchg_at_Y 1 lamo_at_Y 1 wchg 1 wchg_COPY 1 ex {} PASS
+REENT r39_n60.pg n 60 m 113 iter 5 fb 0 tau_changes 3 lamU_runs 4 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r3_n50.pg n 50 m 107 iter 4 fb 0 tau_changes 3 lamU_runs 4 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r40_n70.pg n 70 m 130 iter 5 fb 0 tau_changes 3 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 6 ex {} PASS
+REENT r41_n80.pg n 80 m 166 iter 4 fb 0 tau_changes 4 lamU_runs 3 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 1 charge_LAM_X 1 class_X 1 pairs 4 wchg 2 wchg_COPY 1 ex {} PASS
+REENT r42_n20.pg n 20 m 42 iter 0 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r43_n30.pg n 30 m 56 iter 4 fb 0 tau_changes 3 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 2 ex {} PASS
+REENT r44_n40.pg n 40 m 83 iter 3 fb 0 tau_changes 3 lamU_runs 4 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 1 charge_LAM_X 1 class_X 1 lamchg_at_X 1 lamo_at_X 1 wchg 1 ex {} PASS
+REENT r45_n50.pg n 50 m 100 iter 3 fb 0 tau_changes 3 lamU_runs 4 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r46_n60.pg n 60 m 120 iter 3 fb 0 tau_changes 3 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT r47_n70.pg n 70 m 151 iter 5 fb 0 tau_changes 5 lamU_runs 2 reentries 2 odd_reentering 2 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 2 charge_LAM_X 2 class_X 2 pairs 17 wchg 5 wchg_COPY 3 ex {} PASS
+REENT r48_n80.pg n 80 m 157 iter 6 fb 1 tau_changes 4 lamU_runs 3 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 1 charge_LAM_X 1 class_X 1 lamchg_at_X 1 lamo_at_X 1 pairs 6 wchg 1 ex {} PASS
+REENT r49_n20.pg n 20 m 44 iter 4 fb 0 tau_changes 4 lamU_runs 4 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 1 ex {} PASS
+REENT r4_n60.pg n 60 m 112 iter 4 fb 1 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT r50_n30.pg n 30 m 55 iter 1 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r51_n40.pg n 40 m 86 iter 2 fb 0 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 6 ex {} PASS
+REENT r52_n50.pg n 50 m 95 iter 4 fb 0 tau_changes 4 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 2 pairs 4 ex {} PASS
+REENT r53_n60.pg n 60 m 122 iter 3 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r54_n70.pg n 70 m 139 iter 5 fb 0 tau_changes 5 lamU_runs 4 reentries 9 odd_reentering 5 max_per_o 2 max_per_oe 1 NMU_max 1 charge_CAR 2 charge_CAR_X 2 charge_LAM 7 charge_LAM_X 5 charge_LAM_Y 2 class_X 7 class_Y 2 lamchg_at_X 2 lamchg_at_Y 1 lamo_at_X 2 lamo_at_Y 1 pairs 17 wchg 13 wchg_COPY 5 ex {} PASS
+REENT r55_n80.pg n 80 m 166 iter 5 fb 0 tau_changes 3 lamU_runs 2 reentries 2 odd_reentering 2 max_per_o 1 max_per_oe 1 NMU_max 1 charge_LAM 2 charge_LAM_X 2 class_X 2 pairs 8 wchg 2 ex {} PASS
+REENT r56_n20.pg n 20 m 42 iter 3 fb 0 tau_changes 3 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 2 ex {} PASS
+REENT r57_n30.pg n 30 m 59 iter 3 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r58_n40.pg n 40 m 79 iter 2 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT s3quad_K8_m30.pg n 479 m 574 iter 264 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r59_n50.pg n 50 m 103 iter 7 fb 3 tau_changes 4 lamU_runs 4 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT r5_n70.pg n 70 m 132 iter 8 fb 0 tau_changes 6 lamU_runs 6 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 1 charge_LAM_X 1 class_X 1 lamchg_at_X 1 lamo_at_X 1 pairs 7 wchg 1 ex {} PASS
+REENT r60_n60.pg n 60 m 122 iter 4 fb 0 tau_changes 4 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 3 ex {} PASS
+REENT r61_n70.pg n 70 m 117 iter 4 fb 0 tau_changes 3 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 3 ex {} PASS
+REENT r63_n20.pg n 20 m 36 iter 1 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r64_n30.pg n 30 m 58 iter 1 fb 0 tau_changes 1 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r62_n80.pg n 80 m 157 iter 10 fb 2 tau_changes 9 lamU_runs 9 reentries 10 odd_reentering 9 max_per_o 2 max_per_oe 1 NMU_max 0 charge_LAM 10 charge_LAM_X 8 charge_LAM_Y 2 class_X 8 class_Y 2 lamchg_at_X 6 lamchg_at_Y 2 lamo_at_X 6 lamo_at_Y 2 pairs 3 wchg 22 wchg_COPY 2 ex {} PASS
+REENT r65_n40.pg n 40 m 89 iter 3 fb 0 tau_changes 3 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 3 ex {} PASS
+REENT r66_n50.pg n 50 m 113 iter 4 fb 0 tau_changes 4 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 9 ex {} PASS
+REENT r67_n60.pg n 60 m 127 iter 5 fb 0 tau_changes 4 lamU_runs 4 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT r68_n70.pg n 70 m 136 iter 3 fb 0 tau_changes 3 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 2 ex {} PASS
+REENT r69_n80.pg n 80 m 153 iter 4 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r70_n20.pg n 20 m 47 iter 2 fb 0 tau_changes 0 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r6_n80.pg n 80 m 159 iter 4 fb 0 tau_changes 4 lamU_runs 1 reentries 3 odd_reentering 3 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LEN 3 charge_LEN_X 3 class_X 3 pairs 19 wchg 5 wchg_COPY 3 ex {} PASS
+REENT r71_n30.pg n 30 m 51 iter 4 fb 0 tau_changes 4 lamU_runs 3 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 1 charge_LAM_Y 1 class_Y 1 pairs 2 wchg 1 wchg_COPY 1 ex {} PASS
+REENT r72_n40.pg n 40 m 75 iter 4 fb 0 tau_changes 4 lamU_runs 3 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 1 charge_LAM 1 charge_LAM_X 1 class_X 1 pairs 4 wchg 1 ex {} PASS
+REENT r73_n50.pg n 50 m 97 iter 2 fb 0 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 1 ex {} PASS
+REENT r74_n60.pg n 60 m 125 iter 3 fb 0 tau_changes 3 lamU_runs 2 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LEN 1 charge_LEN_X 1 class_X 1 lamchg_at_X 1 lamo_at_X 1 pairs 9 wchg 1 wchg_COPY 1 ex {} PASS
+REENT r75_n70.pg n 70 m 127 iter 5 fb 0 tau_changes 4 lamU_runs 5 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r76_n80.pg n 80 m 163 iter 5 fb 0 tau_changes 4 lamU_runs 3 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 1 charge_LAM 1 charge_LAM_X 1 class_X 1 lamchg_at_X 1 pairs 4 wchg 1 ex {} PASS
+REENT r77_n20.pg n 20 m 35 iter 4 fb 1 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT r78_n30.pg n 30 m 56 iter 3 fb 0 tau_changes 3 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 3 ex {} PASS
+REENT r7_n20.pg n 20 m 44 iter 2 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r79_n40.pg n 40 m 88 iter 4 fb 0 tau_changes 3 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT r80_n50.pg n 50 m 93 iter 2 fb 0 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT r81_n60.pg n 60 m 124 iter 5 fb 0 tau_changes 4 lamU_runs 2 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 1 charge_LAM_X 1 class_X 1 pairs 8 wchg 2 wchg_COPY 1 ex {} PASS
+REENT r82_n70.pg n 70 m 136 iter 3 fb 0 tau_changes 3 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 2 ex {} PASS
+REENT r83_n80.pg n 80 m 175 iter 4 fb 0 tau_changes 4 lamU_runs 4 reentries 2 odd_reentering 2 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 2 charge_LAM_X 1 charge_LAM_Z 1 class_X 1 class_Z 1 lamchg_at_X 1 lamchg_at_Z 1 lamo_at_X 1 lamo_at_Z 1 pairs 1 wchg 2 ex {} PASS
+REENT r84_n20.pg n 20 m 36 iter 2 fb 0 tau_changes 2 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 6 ex {} PASS
+REENT r85_n30.pg n 30 m 55 iter 2 fb 0 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT r86_n40.pg n 40 m 83 iter 2 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r87_n50.pg n 50 m 100 iter 2 fb 0 tau_changes 2 lamU_runs 3 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 1 charge_LAM_X 1 class_X 1 lamchg_at_X 1 lamo_at_X 1 wchg 1 ex {} PASS
+REENT r88_n60.pg n 60 m 111 iter 2 fb 0 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 2 ex {} PASS
+REENT r89_n70.pg n 70 m 137 iter 4 fb 0 tau_changes 3 lamU_runs 3 reentries 5 odd_reentering 4 max_per_o 2 max_per_oe 1 NMU_max 1 charge_CAR 2 charge_CAR_X 2 charge_LAM 1 charge_LAM_X 1 charge_MAT 2 charge_MAT_X 2 class_X 5 lamchg_at_X 5 lamo_at_X 4 pairs 8 wchg 5 wchg_COPY 2 ex {} PASS
+REENT r8_n30.pg n 30 m 61 iter 5 fb 0 tau_changes 4 lamU_runs 4 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 2 ex {} PASS
+REENT r91_n20.pg n 20 m 41 iter 3 fb 0 tau_changes 2 lamU_runs 2 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 2 ex {} PASS
+REENT r90_n80.pg n 80 m 154 iter 5 fb 0 tau_changes 5 lamU_runs 3 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 0 charge_MAT 1 charge_MAT_X 1 class_X 1 pairs 6 wchg 1 ex {} PASS
+REENT r92_n30.pg n 30 m 64 iter 4 fb 0 tau_changes 4 lamU_runs 5 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 1 charge_LAM_X 1 class_X 1 lamchg_at_X 1 lamo_at_X 1 wchg 2 ex {} PASS
+REENT r94_n50.pg n 50 m 100 iter 5 fb 0 tau_changes 5 lamU_runs 4 reentries 2 odd_reentering 2 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 2 charge_LAM_X 2 class_X 2 lamchg_at_X 2 lamo_at_X 2 pairs 2 wchg 3 wchg_COPY 1 ex {} PASS
+REENT r93_n40.pg n 40 m 79 iter 4 fb 0 tau_changes 4 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 4 ex {} PASS
+REENT r95_n60.pg n 60 m 121 iter 6 fb 0 tau_changes 6 lamU_runs 5 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 1 charge_LAM_X 1 class_X 1 lamchg_at_X 1 pairs 4 wchg 2 ex {} PASS
+REENT r96_n70.pg n 70 m 138 iter 4 fb 0 tau_changes 3 lamU_runs 3 reentries 1 odd_reentering 1 max_per_o 1 max_per_oe 1 NMU_max 0 charge_LAM 1 charge_LAM_Y 1 class_Y 1 lamchg_at_Y 1 lamo_at_Y 1 pairs 4 wchg 1 ex {} PASS
+REENT r97_n80.pg n 80 m 153 iter 4 fb 0 tau_changes 4 lamU_runs 4 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT r99_n30.pg n 30 m 57 iter 2 fb 0 tau_changes 1 lamU_runs 1 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT r98_n20.pg n 20 m 41 iter 2 fb 0 tau_changes 2 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0  ex {} PASS
+REENT r9_n40.pg n 40 m 79 iter 5 fb 1 tau_changes 3 lamU_runs 3 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 0 pairs 1 ex {} PASS
+REENT fcobsP_3.pg n 90 m 211 iter 41 fb 0 tau_changes 4 lamU_runs 4 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 1 ex {} PASS
+REENT fcobsP_4.pg n 115 m 276 iter 47 fb 0 tau_changes 5 lamU_runs 5 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 1 ex {} PASS
+REENT fcobs_6.pg n 163 m 403 iter 62 fb 0 tau_changes 7 lamU_runs 7 reentries 0 odd_reentering 0 max_per_o 0 max_per_oe 0 NMU_max 1 pairs 1 ex {} PASS
