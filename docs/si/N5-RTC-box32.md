@@ -104,3 +104,16 @@ MUT=lastonly (candidates {s} only, the per-transition form) must fail on a phase
 - FINDINGS: (1) PROVED (lane): Lemma LATE-BASIN. (2) DEAD: R*-TC in general (kt6_n58, c₁ ≠ c₂, R*_T 5, TC 0). (3) DATA: in the same-pair core
   the naive injection is injective, gap 1. (4) CONJECTURE R*-TC(SP), INJ1. (5) READING: feeds W-SPLIT's L* only; nothing for NM*/NM*^U.
 - NEEDS: none from the owner.
+
+## Addendum (Lead 17:31Z: «For each result, also state the instance that would kill it if one turns up»; written 2026-10-29T17:4xZ by date -u, see commit)
+| result | label | what would kill it | where it would show |
+| --- | --- | --- | --- |
+| Lemma LATE-BASIN (i) | PROVED (lane) | a blocked edge (y, w) at t with w ∈ U_t (w's (ρ_t, τ)-play avoids D) | that would also refute Lemma XW (packet §2), already signed |
+| Lemma LATE-BASIN (ii)-(iii) | PROVED (lane) | a frozen W-phase with a late* adoption at a non-basin-changing s, w's gate at t same-pair and G3* at t, and neither y nor w changing basin in [t, s) | inj.py LEMMA_VIOL > 0 |
+| general R*-TC | DEAD | (killed: kt6_n58) | — |
+| CONJECTURE R*-TC(SP) | CONJECTURE | a same-pair frozen W-phase with R*_T > TC | inj.py SP_RT>TC > 0 (and SP_MATCH_FAIL > 0) |
+| CONJECTURE INJ1 | CONJECTURE | a same-pair non-basin-changing late* transition s whose adopted edge was last blocked before s − 1 or with no basin change of y or w at s − 1 (gap > 1), or with s − 1 itself a late* transition (C2) | inj.py SHOW=1: «gap» ≠ 1, or SP naive_mult > 1 |
+| READING (composition) | READING | — (not a claim) | — |
+- The «w's exit» pattern (§2) is DATA, not a claim; a same-pair non-basin-changing late* transition charged to y's entry would end it.
+- Fixes-file footer (Lead 17:35Z note): in docs/si/P-N5-GP-fixes-box31.md I edited the existing DONE / FINDINGS / NEEDS footer when adding
+  G12 (2d0ada80) instead of appending a new one. Noted; later fixes items append a new footer and leave the old one in place.
