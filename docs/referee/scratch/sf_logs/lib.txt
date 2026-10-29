@@ -1,0 +1,14 @@
+CONF_chk 154284
+GAMES 349
+ITER 3857
+ONEP_chk 4238
+ORB_chk 756
+RUNS 378
+SBC_max 26
+SEG_chk 2977
+SEG_fb_in 43
+TAU_chk 378
+TOT_chk 756
+segmax 44
+skip_big 63
+VIOLATIONS 0
