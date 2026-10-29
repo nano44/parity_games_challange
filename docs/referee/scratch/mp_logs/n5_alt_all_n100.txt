@@ -1,0 +1,11 @@
+NOTE start file ../../../experiments/red/n3/instances/comp54_n80.start gives forced vertex 11 -> 51; using 11
+NOTE start file ../../../experiments/red/n3/instances/n3cov_lean.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file ../../../experiments/red/n3/instances/n3cov_phi.start invalid for its game (move not an edge, or missing); given start skipped
+MAX_NM_over_n (0.9, ('../../../experiments/red/n3/instances/ret22_n40.pg', 40, 1, (7, 90), 48, 36))
+MAX_NM 41
+MAX_PCH 67
+N5_chk 79639
+NM 25585
+PCH 45234
+RUNS 379
+VP 7596
