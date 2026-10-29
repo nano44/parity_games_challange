@@ -5,7 +5,7 @@ t_vw an even self-loop with a high priority P_vw (all distinct, above every orig
 (t_vw is Even-won and top), so Xi_sigma and I_sigma are those of the original game up to uniform lengths; the guide
 tau(o_vw) = t_vw makes W_tau(v -> o_vw) = the cycle reward of t_vw: a FIXED edge ranking. Then FG's S4a step is "every Even vertex
 takes its highest-ranked edge among {sigma(v)} + I_sigma(v)", and a stall (no vertex moves) is a switch-all step.
-RANK: index (rank = successor position), rindex (reverse), rand:SEED. Engine: n5b SPEC pieces. Usage: fgt.py GAME.pg RANK [maxit]"""
+RANK: index (rank = successor position), rindex (reverse), rand:SEED, file:PATH (edges 'v:w', lowest rank first). Engine: n5b SPEC pieces. Env: START=wbest starts from the wrapped game's S3; OUT=FILE writes the wrapped game. Usage: fgt.py GAME.pg RANK [maxit]"""
 import sys, os, random
 R = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", ".."))
 sys.path.insert(0, R + "/experiments/n5-second"); sys.path.insert(0, R + "/experiments/hard-families"); sys.path.insert(0, R + "/experiments/harness")
@@ -29,6 +29,7 @@ def main():
     g0 = pg.read(sys.argv[1]); spec = sys.argv[2]; maxit = int(sys.argv[3]) if len(sys.argv) > 3 else 200000
     if spec == "index": rank = lambda E: sorted(E, key=lambda e: (e[1], e[0]))
     elif spec == "rindex": rank = lambda E: sorted(E, key=lambda e: (-e[1], e[0]))
+    elif spec.startswith("file:"): rank = lambda E: [tuple(map(int, x.split(":"))) for x in open(spec[5:]).read().split()]
     elif spec.startswith("rand:"): rank = lambda E: random.Random(int(spec[5:])).sample(E, len(E))
     g, ov = wrap(g0, rank)
     N = n5b.N5(g, mode="spec"); SG = N.SG
@@ -40,6 +41,8 @@ def main():
     tau = [-1] * g.n
     for v in range(g.n):
         if g.owner[v] == 1: tau[v] = g.succ[v][0] if v < g0.n else g.succ[v][1]
+    if os.environ.get("START") == "wbest": sigma = SG.initial_strategy_by_best_reward()    # S3 of the WRAPPED game (L-SI fg.py's "best")
+    if os.environ.get("OUT"): open(os.environ["OUT"], "w").write(f"parity {g.n - 1};\n" + "".join(f"{v} {g.prio[v]} {g.owner[v]} {','.join(map(str, g.succ[v]))};\n" for v in range(g.n)))
     start = list(sigma)
     it = stalls = 0
     while True:
