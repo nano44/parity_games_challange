@@ -188,6 +188,22 @@ S-changing transitions (o never changes); the same for exit-only segments; a mix
   (or O(n)) per frozen W-phase would give a polynomial bound per |D| = 1 TD frozen W-phase. OPEN; the re-entry instances of box 30 §10
   (x31_re24, x31_ru24, zcl_rx_n48) are the seeds for a kill search on SEG.
 
+## 8. DATA: kill search in the same-pair core (core/spclimb.py; logs core/climb/*.log, written 2026-10-29T17:0xZ by date -u, see commit)
+| score | seed | steps | best | instance |
+| --- | --- | --- | --- | --- |
+| WCH/(n − 1) | lend13_n16 / ccl_fbx_n32 / x31_re24 (NMAX 40-48) | 100,000 each | 0.800 (n 16, 21) | — |
+| WCH/(n − 1) | gci3_n24 (NMAX 64) | ~100,000 | 0.869 (seed; no gain) | — |
+| WCH/(n − 1) | red/xing/instances/x32_waves48 (NMAX 64) | > 200,000 (running at 17:0xZ) | 0.897 (WCH 35 at n 40) | core/instances/spbest_n40 |
+| R/(n − 1) (R-LIN) | lend13_n16 / ccl_fbx_n32 | ~10,000 | 3.54 / 1.34: R-LIN DEAD (§5) | core/instances/rlin_cex_n40 |
+| R*_T/(n − 1) | xrun8_n10 / ccl_w48_n48 | 100,000 each | 0.142 / 0.250 (R*_T = 2 at n 9) | — |
+| SEG/(n − 1) (\|D\| = 1) | x31_re24 / zcl_rx_n48 | 200,000 each | 0.416 / 0.454 (SEG = 5 at n 12, 13) | — |
+- core/instances/spbest_n40.pg (sha1 d46d099c04f13c9e66c3e284a4476e5b71671478; S3 default start written out as spbest_n40.start, sha1
+  fb9adc58ced3bdfbeb9ad4133a81c3370bb1ff95; n5b identical, 36 iterations): frozen W-phase [0, 35], |D| = 1, c₁ = c₂, WCH = L = 35 at n 40
+  (0.897 (n − 1), the largest in the same-pair core so far; box 29's overall best was 0.869), TC = 31, SEG = 1 (a monotone entry wave),
+  R*_T = 1. FW-BF holds; FW-R* gives ≤ 78 there, Corollary SEG ≤ 39·40.
+- READING. The long same-pair phases found are monotone waves (one basin change per transition) with almost no late adoptions; the climb
+  approaches n − 1 slowly (0.80 → 0.897 over ~10⁵ steps) and has not passed it. No kill of FW-BF in the core. SEG reaches 5 only at n ≤ 13.
+
 ## DONE / FINDINGS / NEEDS
 - DONE: this note; tools experiments/si/core/ (sp.py, gp.py, mono.py, look.py, diag.py, late.py, lateshow.py, spclimb.py); outputs core/out/,
   climb logs core/climb/; check.sh «box 31» block.
