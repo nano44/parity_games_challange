@@ -1,0 +1,1 @@
+STRETCH mk_16_100.pg n 498 m 727 n+m 1225 iters 1648 fb 0 #sig-1 1648 #tau-1 0 tau-stretches 1 max-sig-per-tau-stretch 1648 ratio 1.345 at (0, 1648) terms {'sig': 1648, 'sbar': 1, 'lx': 1, 'lw': 1648, 'drop': 0, 'flat': 0} | sigma-stretches 1649 max-tau-per-sigma-stretch 0 mratio 0.000 | all {'sig': 1648, 'sbar': 1, 'lx': 1, 'lw': 1648, 'drop': 0, 'flat': 0}

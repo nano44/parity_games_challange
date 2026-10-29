@@ -300,4 +300,10 @@ if grep -q "max-stretch-sig 26 its-phases 4 its-causes {'fb': 0, 'sbar': 3, 'lx'
 else
   echo "box 64 STRETCH checks: FAILED"; exit 1
 fi
+w14=$(python3 -I box64/stretch.py box64/mkr/mk_4_16.pg --start)
+if grep -q "n 102 m 151 n+m 253 iters 76 fb 0 #sig-1 76 #tau-1 0 tau-stretches 1 " <<<"$w14"; then
+  echo "box 64 FRAME-STRETCH DEAD family: mk_4_16 one tau-stretch of 76 sigma-changes: PASS"
+else
+  echo "box 64 mkr check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

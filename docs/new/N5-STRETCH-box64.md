@@ -1,4 +1,4 @@
-# N5-STRETCH (box 64): FRAME-STRETCH is box 21's (FO), contains SB1′, and is not closed; the composition with ODD-FREEZE and R86
+# N5-STRETCH (box 64): FRAME-STRETCH DEAD (mkr, L-RED 29; reproduced); FRAME-STRETCH_P = box 21's (FO) open; composition with ODD-FREEZE and R86
 L-NEW successor 35 (Opus 5.5), D14 / D18, Lead reading L40. Lead's brief 2026-10-29 19:29Z (BOX 64 (a)-(d)).
 Written 2026-10-29 from ~19:55Z (date -u). Working note, unrefereed, not a TARGET.md claim. G-N5-TIME OPEN.
 Labels: PROVED (lane) / DATA / READING / CONJECTURE / OPEN / DEAD.
@@ -6,7 +6,7 @@ Labels: PROVED (lane) / DATA / READING / CONJECTURE / OPEN / DEAD.
   climb1p.py. Outputs: box64/stretch_all.txt, frozen_all.txt (719 games, box59/sbcg.lst), dual_start.txt, frozen_dual.txt.
 - Read for this box: box 21 Theorem B (docs/new/N5-time-box21.md §2.4-§2.6), RESULTS R17, R86, R87, R88, N5-K8-box8.md §3b-§3c (SB1′).
 
-## 1. (a) FRAME-STRETCH: not given by landed results, not closed, not killed
+## 1. (a) FRAME-STRETCH: DEAD as stated (§1.5); the polynomial form is not given by landed results
 ### 1.1 What it is
 - A τ-stretch of N5 is box 21's "τ-constant block". Theorem B (a) (box 21 §2.4, PROVED lane): inside it, σ_{k+1} = F_τ(σ_k).
   F_τ is the frozen-τ run: S4a's arena on G_τ (Odd follows τ, Even may use σ ∪ Iσ), with Iσ computed against σ̄(σ), plus S4c's
@@ -52,8 +52,50 @@ Labels: PROVED (lane) / DATA / READING / CONJECTURE / OPEN / DEAD.
   in plain N5 (dw_3: 26 = 4 frozen phases), where N5-SF's is exponential.
 - One-player climbs (climb1p.py, n 10, 4 seeds × 1500 mutations, start σ_0 searched): best 9 / 27 = 0.33 of n + m. No kill.
 ### 1.4 Verdict for (a)
-- FRAME-STRETCH: CONJECTURE (n + m form; contains SB1′). FRAME-STRETCH_P = (FO): OPEN. Neither landed nor killed.
+- FRAME-STRETCH (n + m form): DEAD (§1.5). FRAME-STRETCH_P = (FO): OPEN, reduced in §1.6. Not landed.
 - No referee packet is proposed (task (d) does not apply).
+
+### 1.5 Addendum (Lead 19:37Z, relaying L-RED 29): FRAME-STRETCH DEAD (DATA, reproduced here)
+- Kill: L-RED's R106 family (docs/red/R106-quadratic-run.md) experiments/red/seg/mkr.py K m with its designed explicit start (SPEC S3 allows start pairs).
+  One fallback-free run, τ constant (Iτ = ∅ at every state, so by box 21 Theorem B (c) the run IS F_τ), L = K(m + 3) − 1.
+- My reproduction (box64/stretch.py --start, box64/mkr/; my S3-start corpus could not see it):
+  | instance | n | n + m | σ-changes in the one τ-stretch | ratio | λ_W-changing transitions | σ̄-changes |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | mk_4_16 | 102 | 253 | 76 | 0.300 | 76 | 1 |
+  | mk_6_24 | 150 | 373 | 162 | 0.434 | 162 | 1 |
+  | mk_8_32 | 198 | 493 | 280 | 0.568 | 280 | 1 |
+  | mk_16_100 | 498 | 1225 | 1648 | 1.345 | 1648 | 1 |
+- mk_16_100.pg sha1 49ba9a59…; the L-RED number (1648, ratio 1.345) is reproduced exactly. With m = 4K the stretch is Θ(n²).
+- Obstruction: every transition changes λ_W (W-cycle node of some vertex). The stretch is n(n−1)-many one-step frozen phases, not
+  one long phase. Lemma P / R17 (c)'s "< n + m per λ-phase" is still true per phase; the n + m form of FRAME-STRETCH confused a
+  stretch with a phase (§1.2 (i)).
+- Restated: CONJECTURE FRAME-STRETCH_P: every τ-stretch has at most poly(n, m) σ-changes (target O(n²(n + m)), the one-player R17 (d)
+  shape). mkr is consistent with it (≤ n(n − 1) λ_W-cuts, §1.6).
+### 1.6 Proposition STRETCH-CUT (PROVED, lane; a reduction of FRAME-STRETCH_P)
+Let S be a τ-stretch. Write fb_S, SB_S for the S4c fallbacks and σ̄-changing transitions in S, R*_S for the largest R*_T of a frozen
+W-phase of S (R88), FL_S for the W-flat transitions in S. Then
+  |S| ≤ Q_S + (Q_S + 1)·((n − 1)(R*_S + 1) + FL_S),  Q_S ≤ fb_S + SB_S + n(n − 1) + n(n − 1)(fb_S + 1).
+Proof.
+- Cut S at every transition that is a fallback or changes σ̄, λ_Ξ or λ_W. The pieces are frozen W-phases (R88's definition: τ is
+  constant in S). Q_S = the number of cut transitions.
+- λ_Ξ: at most n(n − 1) changes in the whole run (R47 (a), as cited in R86).
+- λ_W: at every arena (non-fallback) step of F_τ, W_{k+1} ⊵ W_k pointwise (box 21 Lemma W: σ_k lies in the arena and the arena
+  optimum of the one-player game H dominates pointwise, R17 (a) F1). The cycle node is the first key component and rewards are
+  injective, so between two fallbacks each vertex's W-cycle node changes at most n − 1 times: at most n(n − 1) λ_W-cuts per
+  fallback-free piece.
+- Each frozen W-phase has at most (n − 1)(R*_T + 1) W-changing transitions (R88 FW-R*), plus its W-flat ones. □
+Consequences (READING).
+- FRAME-STRETCH_P ⇐ fb_S, SB_S, R*_S, FL_S polynomial per stretch. On mkr all four are ≤ 1, and the n(n − 1) λ_W term is what grows.
+- DATA (§1.3): on the 719 corpus the dominant cut is SB_S (σ̄), then λ_W; R*_S ≤ 5; FL_S ≤ 8.
+### 1.7 The Lead's question: does R86 bound a fixed-τ stretch with NM*^U = 0? (READING, checked against R86's text)
+- In a τ-stretch Odd makes no switch, so R86's Odd term contributes nothing there. But the stretch is still bounded only by Even's
+  term: |S| ≤ n(n − 1) + (n(n − 1) + 1)·n·m_E·(P*_S + 1) (R86 COMPOSE on each λ-run meeting S; λ changes ≤ n(n − 1)).
+- P* is NOT bounded by any landed result (R86: "none of which is bounded here"). So R86 gives FRAME-STRETCH_P only conditionally on P*
+  (or NM*_Even via MATCH-Φ). On mkr, R106 reports NM = K, PCH = 2K − 1: polynomial there.
+- R17 does not apply: G_τ is one-player, but F_τ's gate is honest (against σ̄), so F_τ is not switch-best on G_τ (box 21 Lemma PT).
+- R38 / R47: R38's phases are on 𝒞^1O; R47 (a) bounds λ / λ^U changes (n(n − 1) each), not run length inside a λ-run.
+- So "N5 is polynomial whenever min(#σ, #τ) is" is NOT landed with a polynomial factor. What holds: T ≤ (#τ)(F_E + 1) (Theorem B, lane),
+  with F_E bounded only through STRETCH-CUT or P*.
 
 ## 2. (b) The mirror (DATA)
 - Mirror: τ-changes inside one σ-stretch (σ constant), against n + m.
@@ -64,6 +106,8 @@ Labels: PROVED (lane) / DATA / READING / CONJECTURE / OPEN / DEAD.
   - d_runquad_K8_m30_n192: 264, 0.551 (n + m 479);
   - d_s3quad_K3_m4: 21, 0.069; dewin_runquad_K3_m4: 21, 0.153;
   - relay_L3 / L10 / L10_s3: 2; ewin_runquad_K3_m4: 0.
+- READING (not run): the dual of mkr (box54/mkdual.py) should kill the mirror's n + m form the same way; the mirror's poly form is
+  FRAME-STRETCH_P on G^d.
 - On the dualised families, σ never changes. So the whole run is one σ-stretch, i.e. Odd's own F_σ run on G^d. These are dual
   one-player-like runs below n + m, consistent with the mirror and with SB1′'s dual.
 
@@ -112,6 +156,9 @@ Proof.
 - DONE: box64/stretch.py, frozen.py, climb1p.py; stretch_all.txt, frozen_all.txt (719), dual_start.txt, frozen_dual.txt (8 coupled /
   dual instances, own starts); check.sh "box 64" pin; this note.
 - FINDINGS:
+  (0) DEAD: FRAME-STRETCH (n + m form), L-RED 29's mkr kill (R106 mkr.py, designed start), reproduced: mk_16_100 one τ-stretch of
+  1648 σ-changes, n + m 1225 (§1.5). PROVED (lane): Proposition STRETCH-CUT (§1.6), (FO) ⇐ polynomial σ̄-changes, fallbacks, R*, flat
+  steps per stretch. R86 bounds a stretch only through Even's P* (NM*^U = 0 does not help).
   (1) READING: FRAME-STRETCH = box 21's (FO) with bound n + m. No landed result gives it. R17 bounds one λ-phase, and a τ-stretch has
   many. R88 bounds one frozen W-phase; σ̄-changes and fallbacks inside a stretch are unbounded.
   (2) READING: the n + m form contains SB1′ (one-player switch-best < n + m steps; open since box 8). The polynomial form (FO) is

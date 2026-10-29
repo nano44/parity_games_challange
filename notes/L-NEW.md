@@ -10,6 +10,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   OPEN. DATA 0/719 (max 0.650); longest stretch up to 265 frozen phases, cuts sbar 2277 > lw 1376 > lx 826 > fb 609. (b) mirror 0/719
   (max 0.104); dual families sigma constant, 264-291 tau-changes (<= 0.551(n+m)). (c) PROVED (lane) ENT-FREEZE, COMPOSE-FREEZE: R86's
   Odd term restricts to unprotected options (P*^U_unp); G-N5-TIME <= (FO) and P*^U_unp poly. (d) no packet.
+- Addendum (Lead 19:37Z): FRAME-STRETCH (n+m) DEAD by L-RED 29's mkr (R106 mkr.py, designed start); reproduced mk_4_16..mk_16_100
+  (1648 sigma-changes in one tau-stretch, n+m 1225; every transition a lambda_W change). PROVED (lane) STRETCH-CUT (§1.6). R86 bounds
+  a stretch only through P* (NM*^U = 0 does not help); not landed.
 
 ## Box 63 log (successor 34; Lead 19:10Z: ODD-FREEZE for plain N5)
 - docs/new/N5-FREEZE-box63.md. Lemma ODD-FREEZE PROVED (lane) with H1 (or H1' Even CAN) + H2 (disjoint) + H3 (even top above tau(o)'s cycle
@@ -129,6 +132,10 @@ Stop (S5) when Iσ = Iτ = ∅: Even wins v iff the cycle node of Ξσ(v) has ev
   (b), (c); length < 2(n + m)(n² − n + 1 + SBC)). DEAD: NOFB (n3all_maxph_0), W-frame twin N5-SFW cycles (theta_thf16, period 10; 49/413).
   DATA: correct on 1,038 library + families + hard families; SF ≈ ½ N5; runquad 264 → 2, topfix 7N + 43; switchbestexp N=10 619 vs 89, SBC 97.
   Open count SBC (CONJECTURE SF-POLY OPEN).
+
+## Dead ends (successor 35; also in docs/new/N5-STRETCH-box64.md §1.5)
+- FRAME-STRETCH (< n+m sigma-changes per tau-stretch): DEAD, experiments/new/box64/mkr/mk_16_100.pg (sha1 49ba9a59…, start in .start;
+  L-RED 29's kill, reproduced): 1648 > 1225. Obstruction: a stretch holds up to n(n-1) lambda_W-phases; R17 (c) bounds one phase.
 
 ## Dead ends (successor 34; also in docs/new/N5-FC-box59.md §5)
 - FLIP-REC° (flips(u) <= 2 REC°(u) + 1, REC° = changes of the top non-sink vertex of Xi(u)): DEAD, experiments/red/so/instances/
@@ -706,7 +713,7 @@ Every answer measured from the repository; commands named.
 2. Check whether R85 MATCH-Phi holds per vertex (PCH_R(c) by c's own carries): decides whether COMPOSE-FREEZE gives NM*^U_unp.
 3. SB1' (one-player switch-best O(n)): Lemma T (box 8 §3c) leaves "cycle tops settle in O(n)".
 4. Byte-compare box59/dw.py with L-RED's R116 generator - still not done.
-### Owned conjectures: FRAME-STRETCH (n+m), FRAME-STRETCH_P = (FO), LOOP, GROUP, EXIT-without-NT (OPEN).
+### Owned conjectures: FRAME-STRETCH_P = (FO) (n+m form DEAD), LOOP, GROUP, EXIT-without-NT (OPEN).
 
 ## Resume point (HISTORY; successor 34, session_01V5yGRZtUQrbWSSxFF96dQJ; FINAL, PARKED 2026-10-29 ~19:28Z by date -u)
 ### RESUME ITEMS for successor 35 (Lead 19:16Z):
