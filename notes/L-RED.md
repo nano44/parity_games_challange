@@ -35,7 +35,9 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   - fe734a22 + bef58856: R120. RESET-LIN DEAD by the wave observer on mkr: #MAT = K(m-1), 1008 > n 455. Both engines, two counters,
     Oink, Odd mirror. §3: an Even switching observer switches 257 > n times, but its P-changes are all carries.
   - 345b2da7: R121. RESET-LIN-T DEAD: one switch into the observer gives a target and a switcher, each with K(m-1).
-- IN FLIGHT: (2) FG(tau) (Lead 21:05Z, L-SI box 36 GUIDE-POLY) via experiments/red/mix/fgt.py, the wrapped game.
+- (22:03Z) FG(tau) written up: R122 docs/red/R122-fg-fixed-ranking.md (climbed FG 119 > switch-all 70 at N 3, 174 > 150 at N 4;
+  FG/n 0.53 -> 0.59; GUIDE-POLY not killed). IN FLIGHT: nothing. History of the FG item:
+- WAS IN FLIGHT: (2) FG(tau) (Lead 21:05Z, L-SI box 36 GUIDE-POLY) via experiments/red/mix/fgt.py, the wrapped game.
   - Each Even edge v -> w becomes v -> o_vw -> {w, t_vw}, t_vw an Even-won top self-loop. Xi and I_sigma are unchanged;
     tau(o_vw) = t_vw makes W a FIXED edge ranking.
   - Data: switchallexp N 2/3/4, switch-all 30/70/150 on the wrapped game vs FG 22-58 under index / reverse / random rankings.
