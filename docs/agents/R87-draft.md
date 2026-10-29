@@ -1,11 +1,11 @@
-# Draft RESULTS R87 (Lead, 2026-10-29 17:34Z by date -u; both reports, both §Cs and the fixes file filled) — to CHECKER C96 (Lead reviewed 17:41Z by date -u: subagent draft, sha1 2d0c8e0c before review; one change: the subagent's "Draft note" on
+# Draft RESULTS R87 (Lead, 2026-10-29 17:34Z by date -u; both reports, both §Cs and the fixes file filled) — to CHECKER C96 (REVISED 18:02Z by date -u for C96 E-1, moves 1-3 applied verbatim (d65350f7 §3): output correctness is NOT claimed; the R57 (b) OUT-G note below is thereby answered in the entry. Earlier: Lead reviewed 17:41Z by date -u: subagent draft, sha1 2d0c8e0c before review; one change: the subagent's "Draft note" on
 R57 (b) Lemma OUT-G moved out of the entry to this header, as a note to CHECKER only: OUT-G (landed) is stated for every σ with Iσ = ∅; R57's
 "Not signed" (RESULTS l. 2932-2936) records the removal of G-N5T-3's output half as a Lead reading, not a signed statement; neither referee
-nor the packet applies it to N5-SF's stop, so the entry keeps the approved label "rests on G-N5T-3". Lead decisions for CHECKER to check:
+nor the packet applies it to N5-SF's stop, so (C96 E-1, superseding the first version of this note) the entry claims no output correctness for N5-SF. Lead decisions for CHECKER to check:
 the optional clause "(and SPEC S1 conformance, as R57 (b))" is a premise disclosure in the Premises line, not in the title; the title is
-the approved line verbatim (ONE-PLAYER, signed by both, is in Claims signed, not in the title); no GAPS row changes (a variant result).)
+the approved line verbatim except its output-correctness status clause (C96 E-1 move 1) (ONE-PLAYER, signed by both, is in Claims signed, not in the title); no GAPS row changes (a variant result).)
 
-### R87 [refereed-only] N5-SF (SPEC S1-S5 with S4a's opponent τ replaced by Odd's best reply σ̄(σ), S4b mirrored) terminates (Lemma SF-TERM; R15 (c), (d)); its sequence of distinct σ depends on σ_0 alone and that of τ on τ_0 alone (Lemma DECOUPLE); and its iteration count I satisfies SBC/2 ≤ I < (n + m + 1)(2(n² − n + 1) + SBC), SBC = the σ-changes at which σ̄(σ) changes plus the mirror (Theorem SF-RED; R15 (a), (c), (d), R17 (c), (e)): a reduction, polynomial iff SBC is (2026-10-29) — a REDUCTION for a VARIANT (N5-SF) of N5 (SBC is not bounded here; CONJECTURE SF-POLY (SBC polynomial) OPEN; output correctness as N5's (rests on G-N5T-3); it says nothing about N5 itself; not M3, not a gauntlet pass, not a TARGET.md claim; G-N5-TIME untouched), CHECKER PASS (docs/checker/C96.md, checker PENDING)
+### R87 [refereed-only] N5-SF (SPEC S1-S5 with S4a's opponent τ replaced by Odd's best reply σ̄(σ), S4b mirrored) terminates (Lemma SF-TERM; R15 (c), (d)); its sequence of distinct σ depends on σ_0 alone and that of τ on τ_0 alone (Lemma DECOUPLE); and its iteration count I satisfies SBC/2 ≤ I < (n + m + 1)(2(n² − n + 1) + SBC), SBC = the σ-changes at which σ̄(σ) changes plus the mirror (Theorem SF-RED; R15 (a), (c), (d), R17 (c), (e)): a reduction, polynomial iff SBC is (2026-10-29) — a REDUCTION for a VARIANT (N5-SF) of N5 (SBC is not bounded here; CONJECTURE SF-POLY (SBC polynomial) OPEN; output correctness not claimed (N5-SF stops, like N5, at a σ with Iσ = ∅, the hypothesis of RESULTS R57 (b) Lemma OUT-G; that application is not signed here); it says nothing about N5 itself; not M3, not a gauntlet pass, not a TARGET.md claim; G-N5-TIME untouched), CHECKER PASS (docs/checker/C96.md, checker PENDING)
 - Object (L-NEW successor 33, Opus 5.5, D14/D18, Lead reading L40; frozen, unchanged during review): packet P-N5-SF,
   docs/new/P-N5-SF-box55.md, sha1 dbc2345f62454d442e951de025b1b2aef8a35317, 172 lines (l-new freeze
   95a7a581353157ebc13bd57ae1ffe318e3ba581d, 2026-10-29T15:46:10Z; `git diff 95a7a581 3d8b357d` on the file is empty; quote base trunk
@@ -98,8 +98,10 @@ the approved line verbatim (ONE-PLAYER, signed by both, is in Claims signed, not
   was not signed, so its replacement touches no signed item"). Remark 1's sharper b − a < n + m: READING (F5: «Remark 1 stays a
   remark»). §4: DATA and the pinned check (DATA, not to sign). §5: CONJECTURE SF-POLY (SBC polynomially bounded on every game) OPEN;
   with SF-RED (c) it is EQUIVALENT to N5-SF being polynomial («it is not an easier statement; it only names where the cost sits»).
-  Output correctness: S5 on the final σ, as in N5; it rests on G-N5T-3 (RESULTS R15 limit (iii)), not re-derived by the packet or by
-  either referee. Gauntlet status (TARGET.md §5): «N5-SF has passed no gauntlet step in full» (packet l. 172;
+  Output correctness: S5 on the final σ, as in N5. The packet (l. 88, l. 170) rests it on VJ00 Lemma 5.8 (RESULTS R15 limit (iii),
+  G-N5T-3). Since RESULTS R57 (b) Lemma OUT-G (every game, every σ with Iσ = ∅; standing premise 1E-N3), N5's output correctness rests on
+  OUT-G, and the output half of G-N5T-3 is removed (R57 Not signed; GAPS G-N5-TIME). Neither the packet nor either referee applies OUT-G to
+  N5-SF's stop, so output correctness is not claimed here. Gauntlet status (TARGET.md §5): «N5-SF has passed no gauntlet step in full» (packet l. 172;
   docs/new/N5-SF-gauntlet-box55.md, not reviewed). The packet's "Consequence (timing only)" (l. 98-99) is not a row of either verdict
   table: its "#σ only on σ_0 and #τ only on τ_0" is DECOUPLE's content, and "I depends on both starts" is not claimed. F12's sharper
   "n − 1" stretch bound: «a sharper statement (n − 1) would be a new claim for both referees» (not made).
@@ -122,7 +124,8 @@ the approved line verbatim (ONE-PLAYER, signed by both, is in Claims signed, not
   (ii) It says nothing about N5 itself: N5-SF is a different algorithm (REFEREE-2 X_ORBN5, DATA: on 2,787 of 14,220 runs N5's
   distinct-σ sequence differs from N5-SF's; REFEREE MUT 1, N5's own S4a in place of S4a′, bites: ORB 113, TAU_E 119, ONEPb 120 on
   1,000 runs). No statement here transfers to N5's run; G-N5-TIME untouched. (iii) I counts iterations, not bit operations; no
-  running-time bound. (iv) Output correctness: G-N5T-3, not re-derived (DATA: REFEREE-2 WIN, N5-SF's final regions equal N5's on all
+  running-time bound. (iv) Output correctness: not claimed (Not signed;
+  RESULTS R57 (b) OUT-G covers S5 at every σ with Iσ = ∅, its application to N5-SF unsigned) (DATA: REFEREE-2 WIN, N5-SF's final regions equal N5's on all
   14,220 runs; packet: WIN PASS and OPT PASS on box 54's runs). (v) Sharpness (DATA): no stretch exceeds n − 1 transitions in either
   referee's data (REFEREE max 47 families / 44 library, MUT 2 does not bite; REFEREE-2 X_SEGn1: 0 on lib41, alt_all, fam, hard, max
   69 / 59 / 56 / 52); the lane's max is 101 at switchbestexp_16, n = 410 (F5, F12; not re-run by REFEREE-2, C.3 l. 72). The signed
