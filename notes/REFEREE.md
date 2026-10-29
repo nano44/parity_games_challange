@@ -3,12 +3,13 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point (successor 18), written 2026-10-29T13:00Z by date -u (Opus 5.5, D15)
 Lead: session_014FBi6o334DvwT5Uw2kDfoN. Branch claude/referee. Session: successor 18 (started 12:14Z).
+HOLDING (Lead 13:08Z): next packet P-N5-VC deferred (its §4 CONJECTURE VC-N5 refuted by L-NEW, DLC_d; needs a fixes item first).
 ### DONE (successor 18)
 | item | my report (SHA) | §C | outcome |
 | --- | --- | --- | --- |
 | handover check | handover-checks/REFEREE.md "successor 18" 3a3d4f35 | — | sent 12:25Z |
 | MPGS §C | R-N5-MPGS.md §C 8da7b717 vs R2-N5-MPGS.md 0c4524f0 (+ s20 c5f9e76e) | done | verdicts identical, map empty, no E-items; joint notes J1-J15 |
-| P-N5-COMPOSE (l-si 3ca0932d, e1b977aa), first | R-N5-COMPOSE.md 4896bc2e | PENDING (Lead's word; R2-N5-COMPOSE* not opened) | all SIGNED; E-item COMP-E1 (|𝒫| = transitions); COMP-N1..N6 |
+| P-N5-COMPOSE (l-si 3ca0932d, e1b977aa), first | R-N5-COMPOSE.md 4896bc2e | §C c6011b70 vs R2 4b8afa95: identical, map empty | all SIGNED; E-item COMP-E1 (|𝒫| = transitions); COMP-N1..N6 |
 ### Things only I know
 - scratch/compose_probe.py (MUT 1-4, MPHI=1 adds MATCH-Φ per λ-run for both players via matchphi_probe.corollary; keep MPHI to n ≤ 40).
   rand n 16-30 on rl_engine is too slow (stopped after 22 min): keep random batches at n ≤ 20.

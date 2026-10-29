@@ -33,6 +33,9 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   (1b) DONE (R110, pushed 12:47Z, c843ec8e): S4b CAN take a U-non-best improving switch (pivot_demo n 11, two engines, Oink); Odd's step = W-optimum vs
       current sigma over {keep} U I_tau (stalls, single switches, non-best targets realisable). Open: can S4a keep re-creating
       controlling sigma-configurations super-polynomially often inside one lambda-run (= NM*^U).
+  (1c) DONE (R111): N5 on G^d mirrors N5 on G state by state (ctl/mirror.py); dual runquad: 264 tau-changes in ONE joint lambda-run;
+      dual hntop_n8: NM^U = 163 per vertex per lambda-run (by mirror). R111 §4 = constraints (C1)-(C5) for a binary counter: mutual
+      Even/Odd construction; first target = a family where tau-changes AND sigma-changes per joint lambda-run both grow (NM*, NM*^U > 0).
   (2) DONE (R109 §4, pushed 12:41Z, 81ad9c7d): under pinned tau a set bit is a W-cycle node; W non-decreasing in a phase rejects lower closings
       (hntop_n3 t 29-41: d3_1 -> e1 in I_sigma, W-cycle e1 = 8 < e2 = 16). Unary forced; binary needs tau-changes (NM*^U > 0).
 - Tools (experiments/red/seg/): r107.py (phases/runs/PL/RUN/per-vertex counts/second engine), s3embed.py (any explicit-start pin ->

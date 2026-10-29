@@ -1,0 +1,14 @@
+frozen2=1229 phases=457
+columns: L, game, i, j, FB, LWCH, SBCH', SBCH'', DEL, NFW'', LFW'', WCH'', n
+TOP (121, 'new/box48/instances/long121_n40.pg', 1, 122, 8, 0, 33, 30, 0, 25, 6, 6, 40)
+TOP (121, 'red/n3/instances/long121_n40.pg', 1, 122, 8, 0, 33, 30, 0, 25, 6, 6, 40)
+TOP (112, 'red/so/instances/xsn91_n48.pg', 3, 115, 9, 0, 14, 14, 0, 17, 11, 11, 48)
+max SBCH'/n = 2.100 (92, 'n5-epoch/instances/nep92_n40.pg', 6, 98, 7, 0, 84, 73, 0, 12, 1, 1, 40)
+max SBCH''/n = 1.825 (92, 'n5-epoch/instances/nep92_n40.pg', 6, 98, 7, 0, 84, 73, 0, 12, 1, 1, 40)
+max DEL/n = 0.031 (77, 'red/xing/instances/x32_waves32.pg', 4, 81, 9, 0, 11, 11, 1, 18, 9, 9, 32)
+max LFW''/n = 0.917 (44, 'red/xing/instances/x32_rand48.pg', 0, 44, 0, 0, 0, 0, 0, 1, 44, 44, 48)
+max WCH''/n = 0.917 (44, 'red/xing/instances/x32_rand48.pg', 0, 44, 0, 0, 0, 0, 0, 1, 44, 44, 48)
+ARENA PASS
+SPLIT PASS
+FWBF2 PASS
+FWLEN2 PASS

@@ -1,0 +1,12 @@
+== hntop_n3
+frozen2=4 phases=2
+TOP (41, 'red/seg/instances/hntop_n3.pg', 0, 41, 0, 8, 0, 0, 0, 3, 18, 18, 63)
+== hntop_n8
+frozen2=9 phases=2
+TOP (241, 'red/seg/instances/hntop_n8.pg', 0, 241, 0, 28, 0, 0, 0, 8, 48, 48, 168)
+== runquad_K3_m4_n54
+frozen2=0 phases=1
+TOP (20, 'red/seg/instances/runquad_K3_m4_n54.pg', 0, 20, 0, 20, 0, 0, 0, 0, 0, 0, 54)
+== runquad_K8_m30_n192
+frozen2=0 phases=1
+TOP (263, 'red/seg/instances/runquad_K8_m30_n192.pg', 0, 263, 0, 263, 0, 0, 0, 0, 0, 0, 192)

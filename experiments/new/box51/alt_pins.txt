@@ -1,0 +1,6 @@
+vpf3_vc4 max pairwise alt in a run: (12, (7, 20), (40, 20), 5, 27)
+ent1_vc6 max pairwise alt in a run: (20, (24, 20), (31, 20), 1, 18)
+b6_xl2_n32 max pairwise alt in a run: (5, (1, 10), (12, 5), 19, 41)
+runquad_K3_m4_n54 max pairwise alt in a run: (10, (42, 43), (45, 46), 0, 20)
+runquad_K8_m30_n192 max pairwise alt in a run: (30, (102, 103), (105, 106), 0, 263)
+hntop_n8 max pairwise alt in a run: (311, (159, 160), (160, 161), 0, 241)
