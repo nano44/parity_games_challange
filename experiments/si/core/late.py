@@ -12,6 +12,7 @@ from common import rows, load, readstart, phases, avoid
 from fwphase import fwphases
 from gates import basins
 C = Counter(); MX = {}; EX = []
+STAR = os.environ.get("STAR") == "1"   # late adoptions* (note §6): only BLOCKED edges count as refused
 
 def _run(E, g, R, name):
     n = g.n
@@ -39,6 +40,9 @@ def _run(E, g, R, name):
                         C["zS_at_tau"] += Fk[z] != -1
                     al = {R[k]["s"][x]} | Is.get(x, set()) | {w for w in g.succ[x] if Fk[w] == -1}
                     if Fk[x] != -1 and Fk[x] in G3k: al |= {w for w in g.succ[x] if Fk[w] == Fk[x]}
+                    if STAR:
+                        kr = E.key(R[k]["W"][R[k]["s"][x]])
+                        al = {w for w in g.succ[x] if w in Is.get(x, set()) or w == R[k]["s"][x] or E.key(R[k]["W"][w]) <= kr}
                     for w in g.succ[x]:
                         if w not in al: REF[(x, w)] += 1
                 if r > r0:

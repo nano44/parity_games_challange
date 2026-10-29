@@ -1,0 +1,9 @@
+R>TC=6 RT=52 RT_noTC=2 RT_noTC_G3=2 SKIPPED_input=1 cls_S>S'=3 cls_U>S=77 cls_same=3 phases_R>0=48 wchg_at_adoption=83 zS_at_tau=81
+columns: value, R, TC, per-vertex max, per-edge max, n, |D|, game, a, b
+MAX R (12, 12, 2, 1, 1, 48, 1, 'experiments/si/xing/instances/ccl_w48_n48.pg', 15, 18)
+MAX R-TC (10, 12, 2, 1, 1, 48, 1, 'experiments/si/xing/instances/ccl_w48_n48.pg', 15, 18)
+MAX R/(n-1) (0.3225806451612903, 10, 1, 1, 1, 32, 1, 'experiments/si/xing/instances/ccl_fbx_n32.pg', 5, 7)
+MAX pere (1, 5, 1, 1, 1, 32, 1, 'experiments/si/coarse/instances/cls_rel_lev.pg', 11, 14)
+MAX perv (1, 5, 1, 1, 1, 32, 1, 'experiments/si/coarse/instances/cls_rel_lev.pg', 11, 14)
+EXAMPLE ('late-no-TC', 'experiments/si/lay/out/s_ka.pg', 0, 5, 2, 109, 4, 'G3all')
+EXAMPLE ('late-no-TC', 'experiments/si/rund/instances/usplit_rd_s3_n27.pg', 0, 2, 1, 27, 2, 'G3all')

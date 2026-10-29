@@ -1,0 +1,13 @@
+R>TC=9 RT=192 RT_noTC=6 RT_noTC_G3=6 cls_S>S'=53 cls_U>S=190 cls_same=12 perv>1=4 phases_R>0=120 wchg_at_adoption=255 zS_at_tau=249
+columns: value, R, TC, per-vertex max, per-edge max, n, |D|, game, a, b
+MAX R (40, 40, 42, 40, 1, 373, 4, 'red/usplit/instances/grow_K40_n373.pg', 0, 45)
+MAX R-TC (4, 5, 1, 1, 1, 40, 2, 'red/n3/instances/long90_k2_n40.pg', 21, 28)
+MAX R/(n-1) (0.12903225806451613, 4, 4, 1, 1, 32, 1, 'red/xing/instances/x32_waves32.pg', 47, 54)
+MAX pere (1, 1, 1, 1, 1, 32, 2, 'n5-epoch/instances/lend47_n32.pg', 7, 19)
+MAX perv (40, 40, 42, 40, 1, 373, 4, 'red/usplit/instances/grow_K40_n373.pg', 0, 45)
+EXAMPLE ('late-no-TC', 'n5-epoch/instances/lend47_n32.pg', 7, 19, 8, 32, 2, 'G3all')
+EXAMPLE ('late-no-TC', 'red/usplit/instances/usplit_n14.pg', 0, 2, 1, 14, 1, 'G3all')
+EXAMPLE ('late-no-TC', 'red/usplit/instances/usplit_n23.pg', 0, 8, 4, 23, 1, 'G3all')
+EXAMPLE ('late-no-TC', 'red/usplit/instances/usplit_rd_n24.pg', 0, 2, 1, 24, 2, 'G3all')
+EXAMPLE ('late-no-TC', 'red/usplit/instances/usplit_rd_s3_n27.pg', 0, 2, 1, 27, 2, 'G3all')
+EXAMPLE ('late-no-TC', 'red/usplit/instances/usplit_s3_n16.pg', 0, 2, 1, 16, 1, 'G3all')
