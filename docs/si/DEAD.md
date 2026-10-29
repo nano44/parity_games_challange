@@ -357,3 +357,16 @@ AGAINST_W ('experiments/si/fb2o/instances/tcwult2_against_n8.pg', 0, 1, 0, 4, -1
 - Obstruction: one Odd choice vertex whose options are the two ends of a two-way Even corridor; every σ̄ change restarts a wave along the
   corridor (one Even switch per transition), so the run is a sum of up to G + 1 waves of length up to n − 1; two full waves and a partial
   third already exceed 2n. Linearity is not killed (run ≤ 2.17n on the family).
+
+## DEAD box 25 (L-SI successor 21, 2026-10-29T06:13Z by date -u): CONJECTURE L-WAVE (docs/si/N5-GRUN-box25.md §5)
+- Statement killed: «between two consecutive non-L REL cuts (cuts other than length-only changes of Ξ at the changing gates) of a fallback-free
+  run, or the run's ends, there are ≤ n − 1 transitions».
+- Killer: experiments/si/grun/instances/lwkill_n31 (.pg sha1 4c083c557b69f7ceb263ae492bce33ff1ea6887e, .start sha1
+  177dd289ae04262e5ce63cdbf34bde04bcf6b17c; n 31, one Odd choice vertex u = 5), found by grun/gclimb.py OBJ=LW from run49_n32 in 358 steps.
+  Run [2, 40] (38 transitions, one phase, 0 fallbacks); REL segments [2, 7], [8, 28], [29, 38], [39, 40]; the cuts 7 → 8 and 28 → 29 change
+  only the length of Ξ(5) (path sets 1073741824 and 838860800 unchanged across them), the cut 38 → 39 changes its path set. So the gap [2, 39]
+  has 37 > n − 1 = 30 transitions. n5x = L-COMP's n5b (identical 41 states) = experiments/new/n5.py (40 iterations, 0 fallbacks); check_sol2:
+  zlk OK, strategies verified. Every REL segment is within STATIC-DEPTH-REL's bound (relseg PASS; longest 20).
+- Obstruction: the path set of Ξ(5) changes INSIDE segment [8, 28] (from 1073741824 to 838860800) while σ̄(5) stays on option 28: a P-change of
+  a gate's value without a σ̄ change, which is no cut. L-WAVE counted P-changes only at cuts. Refined CONJECTURE L-WAVE′ (events also at every
+  P-change of Ξ at an Odd choice vertex of RO_b): holds on the killer (max gap 19) and on alt_all (default and pinned starts); OPEN.

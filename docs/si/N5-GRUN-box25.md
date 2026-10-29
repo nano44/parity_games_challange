@@ -124,7 +124,15 @@ DATA (grun/relseg.py; every segment with (H4′_rel) checked per vertex and for 
   nothing beyond one wave. READING: within a gap only lengths move at the relevant gates (P fixed, cycle node fixed in the phase), which is
   the Bellman-Ford regime of RESULTS R74 FREEZE-A / FREEZE-G (path weights frozen, lengths settle in < |A| rounds); a proof would extend
   STATIC-DEPTH-REL across length-only gate changes. NOT proved.
-- L-WAVE proof attempt (READING, written 2026-10-29 05:0xZ; no result). Natural route: run STATIC-DEPTH-REL's induction with VALUE-level
+- L-WAVE is DEAD (written 2026-10-29 06:1xZ by date -u; DEAD.md box 25): grun/instances/lwkill_n31 (n 31, one gate u = 5) has a run [2, 40]
+  of 38 transitions whose only non-L cut is 38 → 39, so the gap [2, 39] has 37 > 30 transitions; the two L-cuts 7 → 8, 28 → 29 change only
+  the length of Ξ(5). Three engines agree (n5x = n5b, 41 identical states; n5.py 40 iterations, 0 fallbacks); N5's output Oink-verified. Found
+  by grun/gclimb.py OBJ=LW (score max gap − (n − 1)) from run49_n32 in 358 steps. Obstruction: Ξ(5)'s path set changes inside segment
+  [8, 28] with σ̄(5) fixed, a P-change that is no cut.
+- CONJECTURE L-WAVE′ (OPEN; grun/lwave.py PMODE=1): the same with events also at every transition at which the path set of Ξ changes at an Odd
+  choice vertex of RO_b (b the end of the segment containing the transition). DATA: holds on lwkill_n31 (max gap 19 at n 31) and on alt_all
+  with default and pinned starts. If true, |S| ≤ (N_P + 1)(n − 1) + N_P with N_P the number of such events.
+- L-WAVE proof attempt (READING, written 2026-10-29 05:0xZ; no result; for the dead form, kept as the record). Natural route: run STATIC-DEPTH-REL's induction with VALUE-level
   honest settling ("Ξ_t(v) = Ξ_b(v) for t ≥ s") instead of play-level, since step (A) uses only Ξ-values of y, and step (C) gives
   Ξ_{t+1}(v) = v ⊕ Ξ_b(y). Even vertices go through unchanged. The obstruction is the Odd step at a gate u with L-cuts: Ξ_t(u) = u ⊕ min over u's
   options (GATE-RISE's argument), and Ξ_t(u) reaches Ξ_b(u) only when every competing option y has Ξ_t(y) ⊵ Ξ_b(σ̄_b u); competitors are not on

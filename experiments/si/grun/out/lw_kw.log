@@ -1,0 +1,5 @@
+seed G -6.0 n 32
+step 944 G -5.0 n 29 G/n -0.172
+step 1461 G -4.0 n 28 G/n -0.143
+step 2296 G -3.0 n 27 G/n -0.111
+final best G/n -0.111 G -3 n 27

@@ -416,3 +416,8 @@ if git cat-file -e a343d6b4 && git cat-file -e b6811cf1 && git cat-file -e ab545
 else
   echo "grun (P-N5-REL fixes quotes): NOT RUN (a source commit is not in this clone)"
 fi
+# box 25 (DEAD.md box 25): DEAD L-WAVE. lwkill_n31: run [2,40] (38), non-L gap [2,39] of 37 > 30 (lwave FAIL), n5b identical; L-WAVE' holds there.
+o=$(python3 -I grun/lwave.py --one grun/instances/lwkill_n31.pg grun/instances/lwkill_n31.start); grep -q "EXAMPLE ('grun/instances/lwkill_n31.pg', 2, 39, 31)" <<<"$o"; grep -q "LWAVE FAIL" <<<"$o"
+python3 -I root/n5bcmp.py grun/instances/lwkill_n31.pg grun/instances/lwkill_n31.start | grep -q "n5b iterations 40 fallbacks 0 states 41 | n5x states 41 | identical state sequences: True"
+PMODE=1 python3 -I grun/lwave.py --one grun/instances/lwkill_n31.pg grun/instances/lwkill_n31.start | grep -q "LWAVE PASS"
+echo "grun (box 25: DEAD L-WAVE, lwkill_n31 gap 37 > 30, n5b identical; L-WAVE' holds there): PASS"
