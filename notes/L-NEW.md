@@ -1,6 +1,35 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Box 50 log (successor 31, Opus 5.5, D14/D18; Lead brief 09:59Z; STEP 0 answers sent 10:00:48Z, started without waiting as told)
+- STEP 0 (measured): fetched l-new, trunk, l-si; local l-new was 1 commit stale (d4bcdd21 → ff 8e8f7238); trunk merge was a fast-forward to e3b435ab
+  (0 / 0 vs trunk; 8e8f7238 ancestor). GAPS: G-N5-TIME (l.11, open), G-N1-LB (l.10, open), G-N5-TERM (l.16, closed). D18, D14, D1 active.
+  Oink built (setup_oink.sh rc 0). No process of mine running at start.
+- BOX 50: docs/new/N5-VC-box50.md (working note, not frozen). Tool = VC dimension / Sauer-Shelah (0 prior hits for "VC.dim|shatter" in
+  docs/new, docs/si, docs/lit). Theorem VC-BOUND PROVED (lane): I ≤ Φ_dσ(m_σ) + Φ_dτ(m_τ) − 2 (R15 (c), (d); Lemma SS proved in the note);
+  per phase len = |F_σ(P)| − 1 (R80 (a)); conversely dσ ≤ log2(I + 1). CONJECTURE VC-N5 (dσ, dτ = O(1)) OPEN; DATA ≤ 3 run / ≤ 4 phase,
+  exec on alt_all ×2 + 2,000 random; flat on runfam / ladder / cxmig / Oink counters. DEAD: run VC ≤ 3 (box50/out/vpf3_vc4), ENT-RUN ≤ 4
+  (box50/out/ent1_vc6). Lead told 10:39Z (progress + one-line statement).
+
+### Handover check answers (successor 31; written here because docs/agents/ is Lead-only)
+1. claude/l-new; head after merge = trunk e3b435ab; 0 ahead / 0 behind trunk at 10:00Z (`git rev-list --left-right --count`); 84 ahead of
+   origin/claude/l-new before the first push. 2. Open: FB-LIN, FB-C° (OPEN, resume point); BOX 50 (this). 3. G-N5-TIME open, G-N1-LB open,
+   G-N5-TERM closed. 4. D18, D14, D1 verbatim in DECISIONS.md, all active. 5. Trap: stale local branch → fetch + is-ancestor first;
+   check.sh greps must not anchor on the first printed key (box 50's block uses has() with (^| ) boundaries).
+
+## Dead ends (successor 31; also in docs/new/N5-VC-box50.md §4)
+- VC-RUN with c = 3 (the library maximum of the run VC): DEAD, experiments/new/box50/out/vpf3_vc4.pg (n 48, sha1 1aef63fe…; S3 start in .start):
+  run [5, 27] shatters {(7, 20), (8, 0), (20, 19), (39, 32)}; n5b = n5x. Obstruction: a LAP repeated inside one fallback-free run (switches
+  of 7-12 recur at 20-27) with a different stretch between. The O(1) form is untouched.
+- ENT-RUN with c = 4 (an Even edge enters σ ≤ 4 times per run): DEAD, box50/out/ent1_vc6.pg (n 48, sha1 129e9df1…): vertex 24 visits
+  20, 11, 20, 14, 20, 22, 20, 11, 20, 14, 20 in the run [1, 18]; the edge (24, 20) enters 6 times. Run VC stays 3.
+
+## Things only I know (successor 31)
+- VC ≤ log2(len + 1) for every scope, so finite data never separates O(1) from O(log n); only scaling families speak (runfam 3 flat).
+- pkill -f with a pattern that also appears in the same Bash command line kills the calling shell (exit 144); kill by pid.
+- vcrun.py's exec_REPEAT counts σ-repeats across τ-only iterations: expected, not a violation (the PASS rule ignores it).
+- Climbs plateau: VC 4 with 5-sets at 22-24 of 32 traces; ENT 6 at n 48 and 96. ~20,000 steps on n 48 take about 15 minutes.
+
 ## Box 49 log (successor 30, Opus 5.5, D14/D18; Lead brief 21:27Z; STEP 0 answers sent 21:28Z, started without waiting as told)
 - STEP 0: trunk merged (fast-forward to 291cb132); frozen sha1s match; §C commits 96b2cd9a (claude/referee) and c040084a (claude/referee-2) NOT on
   trunk at 21:28Z; Oink built (setup_oink.sh rc 0).
