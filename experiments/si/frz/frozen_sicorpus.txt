@@ -1,0 +1,26 @@
+SKIPPED_input=1 WMON_V=1455 Wcyclenode_changes_nonfb=1404 Wsame_nonfb=7 fb_in_pieces=420 pieces=634 pieces_D0=140 pieces_D1=282 pieces_D2=212
+columns: L, game, a, b, |D|, ESW, WCH, XCH, SWmax, NMx, NMw, n, m, phase length
+TOP (123, 'experiments/si/runlin/instances/runfam_K100.pg', 169, 292, 0, 127, 123, 123, 2, 1, 1, 139, 345, 291)
+TOP (115, 'experiments/si/runlin/instances/runfam_K100.pg', 52, 167, 1, 125, 115, 115, 2, 1, 1, 139, 345, 291)
+TOP (83, 'experiments/si/runlin/instances/runfam_K60.pg', 129, 212, 0, 87, 83, 83, 2, 1, 1, 99, 265, 211)
+TOP (75, 'experiments/si/runlin/instances/runfam_K60.pg', 52, 127, 1, 85, 75, 75, 2, 1, 1, 99, 265, 211)
+TOP (63, 'experiments/si/runlin/instances/runfam_K40.pg', 109, 172, 0, 67, 63, 63, 2, 1, 1, 79, 225, 171)
+TOP (59, 'experiments/si/orlens/instances/s_elim24_final.pg', 4, 63, 1, 73, 59, 59, 5, 4, 4, 24, 67, 59)
+D0 max L/n = 0.885 (123, 'experiments/si/runlin/instances/runfam_K100.pg', 169, 292, 0, 127, 123, 123, 2, 1, 1, 139, 345, 291)
+D0 max NMx/n = 0.500 (12, 'experiments/si/root/out/swr_sc24_s7.pg', 0, 12, 0, 38, 12, 12, 12, 9, 9, 18, 51, 12)
+D1 max L/n = 2.458 (59, 'experiments/si/orlens/instances/s_elim24_final.pg', 4, 63, 1, 73, 59, 59, 5, 4, 4, 24, 67, 59)
+D1 max NMx/n = 0.167 (59, 'experiments/si/orlens/instances/s_elim24_final.pg', 4, 63, 1, 73, 59, 59, 5, 4, 4, 24, 67, 59)
+D2+ max L/n = 1.000 (28, 'experiments/si/root/out/sw_lend2_s5.pg', 10, 38, 2, 57, 28, 28, 15, 6, 6, 28, 97, 41)
+D2+ max NMx/n = 0.214 (28, 'experiments/si/root/out/sw_lend2_s5.pg', 10, 38, 2, 57, 28, 28, 15, 6, 6, 28, 97, 41)
+max L/((|D|+1) n) = 1.229 (59, 'experiments/si/orlens/instances/s_elim24_final.pg', 4, 63, 1, 73, 59, 59, 5, 4, 4, 24, 67, 59)
+max SWmax/n = 0.667 (14, 'experiments/si/root/out/sw_sc24_s1.pg', 0, 14, 0, 47, 14, 14, 14, 7, 7, 21, 64, 14)
+EXT columns: L, game, a, b, |D|, fallbacks, NMw(non-fb), PCHw max, RISEw max, sum RISEw, n
+EXT (123, 'experiments/si/runlin/instances/runfam_K100.pg', 169, 292, 0, 0, 1, 2, 2, 246, 139)
+EXT (115, 'experiments/si/runlin/instances/runfam_K100.pg', 52, 167, 1, 0, 1, 2, 3, 234, 139)
+EXT (83, 'experiments/si/runlin/instances/runfam_K60.pg', 129, 212, 0, 0, 1, 2, 2, 166, 99)
+EXT (75, 'experiments/si/runlin/instances/runfam_K60.pg', 52, 127, 1, 0, 1, 2, 3, 154, 99)
+EXT max NMw (23, 'experiments/si/rund/instances/offalt_K10.pg', 0, 23, 2, 0, 10, 10, 10, 176, 182)
+EXT max RISEw/n 0.667 (14, 'experiments/si/root/out/sw_sc24_s1.pg', 0, 14, 0, 0, 7, 13, 14, 91, 21)
+WMON FAIL
+XMON PASS
+D0 PASS

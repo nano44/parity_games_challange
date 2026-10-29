@@ -1,0 +1,11 @@
+SKIPPED_input=1 phases=345
+columns: L, game, i, j, FB, LWCH, SBCH', #frozen W-phases, longest frozen W-phase, n
+TOP (291, 'experiments/si/runlin/instances/runfam_K100.pg', 1, 292, 0, 0, 9, 7, 123, 139)
+TOP (211, 'experiments/si/runlin/instances/runfam_K60.pg', 1, 212, 0, 0, 9, 7, 83, 99)
+TOP (171, 'experiments/si/runlin/instances/runfam_K40.pg', 1, 172, 0, 0, 9, 7, 63, 79)
+max FB/n = 0.850 (34, 'experiments/si/coarse/instances/box9/cl9_mn_b.pg', 5, 39, 34, 0, 0, 0, 0, 40)
+max LWCH/n = 0.448 (32, 'experiments/si/root/out/rl_soth_s12.pg', 1, 33, 0, 13, 7, 3, 6, 29)
+max SBCH'/n = 1.805 (121, 'experiments/si/root/instances/l121reader_n41.pg', 1, 122, 8, 0, 74, 17, 5, 41)
+max NFW/n = 0.683 (121, 'experiments/si/root/instances/l121ereader_n41.pg', 1, 122, 8, 0, 33, 28, 6, 41)
+WSPLIT PASS
+CNW PASS

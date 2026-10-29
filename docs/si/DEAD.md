@@ -506,3 +506,22 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
   REL segment with |E_b| = 49, SW = 47 switching Even vertices, 218 deadlock steps (chg/lenstat.py). Obstruction: two pivots climbing in
   alternation drive a reactor chain back and forth; each reactor switches 2K − 1 = 15 times (chg/pervert.py), so switches per vertex, not
   vertices, carry the length.
+
+## DEAD box 29 (L-SI successor 25, 2026-10-29 by date -u; docs/si/N5-FRZ-box29.md §4-§5): W-frame and Ξ-frame forms of R17's Lemma P inside frozen W-phases
+- «A W-phase (in-phase run without fallbacks and λ_W changes, σ̄ free) has ≤ n − 1 W-changing transitions»: experiments/si/runlin/instances/
+  x135_n59.pg (sha1 e71e8af0a7e0d0d07b7f609ee88628151af99002, start 4afb7e8c1eb830c46715a893d0295e77667f5418): W-phase [1, 136], 135 W-changing
+  transitions > 58, |D| = 1, 11 σ̄-changes (frz/wphase.py); n5x and n5b identical (root/n5bcmp.py: 136 iterations, 0 fallbacks). Obstruction:
+  every σ̄-change restarts a Bellman-Ford wave (as in RUN-LIN, box 24); its seven frozen W-phases have ≤ 43 each.
+- SETTLE («in a frozen W-phase [a, b], W_{a+k}(x) = W_b(x) once W_b(x).length ≤ k») and RD («a W-rise at step k has length ≥ k»):
+  experiments/si/frz/instances/s_elim24_final.pg (sha1 ddb99d6c103e4d60b1b1d4a6b8c3b5ab9070b21b; copy of orlens/instances/
+  s_elim24_final.pg) with its S3 default start written out (s_elim24_final.start, sha1 f576e9ef3c67584b82c0ac15ebee19e0e2b9c333): frozen W-phase [17, 33], |D| = 1, x = 11 has final length
+  3 and changes W at k = 16 (frz/settle.py, frz/risedepth.py); n5b identical (66 iterations, 4 fallbacks). Obstruction: optimism-trapped
+  vertices (plays into D, where τ flatters Even) move late with short plays.
+- SETTLE_X and RDX (the same in Ξ): experiments/red/ul/instances/ladderd0_k12_n48.pg (L-RED's ladder; sha1
+  c654bf9ec7445726f7526738f9c5efc6bc1049fd, start 674f6eeb580b88de302d0b968d1cf79d05e0b295): frozen W-phase [0, 13], |D| = 14, x = 14 has
+  final Ξ-length 2 and changes Ξ at every step k = 2..13 (one D-gated rung per tick); n5b identical (14 iterations, 0 fallbacks).
+  Obstruction: Ξ-rises driven through D gates are not depth-ordered; FW-BF still holds there (13 ≤ 47).
+- CASEA-W (an edge outside the arena is never W-better than σ_t(x)), CASEB-Ξ (an arena switch is never Ξ-better than S4a's choice),
+  B-MONO (the blocked set is monotone), FRESH (every transition enters a not-yet-entered edge), ENT1 (an edge is entered ≤ once per
+  W-phase): all on x135_n59 inside frozen W-phases (frz/caseA.py: 1,721 / 278 triples; frz/blocked.py: 21 growth and 5 shrink events;
+  frz/fresh.py: 59 re-entry-only transitions, an edge entered 3 times).
