@@ -1,0 +1,38 @@
+FB=731 FB_allswP=657 FB_anyCAR=530 FB_anyP=698 FB_swCAR=528 FB_swP=698 FB_sw_CAR=1277 FB_sw_LEN=100 FB_sw_MAT=522 FB_sw_NONE=30 SA=7353 SA_allswP=7051 SA_anyCAR=5253 SA_anyP=7184 SA_swCAR=5028 SA_swP=7184 SA_sw_CAR=8027 SA_sw_LEN=680 SA_sw_MAT=6310 SA_sw_NONE=8 carry_fb_per_phase_max=37 cover_min_x100=0 fb_per_phase_max=37 noP_fb_per_phase_max=2 noncarry_fb_per_phase_max=14 ph_common_carrier=4 ph_f2=85
+PHASE f 25 noncarry 14 noP 0 n 32 red/so/instances/farrise25_n32.pg 7 35
+PHASE f 10 noncarry 10 noP 0 n 32 n5-epoch/instances/lend55_n32.pg 0 56
+PHASE f 10 noncarry 8 noP 0 n 32 n5-epoch/instances/lend82_n32.pg 2 85
+PHASE f 10 noncarry 8 noP 0 n 32 n5-exhaustive/instances/b6_xw_n32.pg 4 79
+PHASE f 19 noncarry 8 noP 0 n 48 red/xing/instances/x32_waves48.pg 4 89
+PHASE f 10 noncarry 7 noP 0 n 40 n5-exhaustive/instances/b6_xl_n40.pg 2 89
+PHASE-f/n f 25 noncarry 14 noP 0 n 32 red/so/instances/farrise25_n32.pg 7 35
+PHASE-f/n f 37 noncarry 0 noP 0 n 48 red/so/instances/rise_fb38_n48.pg 4 49
+PHASE-f/n f 21 noncarry 0 noP 0 n 32 red/so/instances/njb_reabs54_n32.pg 5 38
+PHASE-f/n f 8 noncarry 0 noP 0 n 13 red/so/instances/s4c8_n13.pg 1 11
+noP 33
+   ('noP', 'n5-epoch/instances/ffin12_n32.pg', 25, 33, 32, [5], ['NONE'])
+   ('noP', 'n5-epoch/instances/ffin5_n32.pg', 14, 22, 21, [7], ['NONE'])
+   ('noP', 'n5-epoch/instances/nep22f_n64.pg', 8, 29, 27, [5, 11, 31, 34, 38, 49, 54], ['LEN', 'LEN', 'LEN', 'LEN', 'LEN', 'LEN', 'LEN'])
+   ('noP', 'n5-epoch/instances/nep22f_n64.pg', 8, 29, 28, [58], ['LEN'])
+   ('noP', 'n5-exhaustive/instances/b4_n5_other_0.pg', 0, 2, 1, [4], ['NONE'])
+   ('noP', 'n5-exhaustive/instances/b4_nohlen5_0.pg', 1, 6, 5, [5], ['NONE'])
+   ('noP', 'n5-exhaustive/instances/b4_theta_n7.pg', 0, 2, 1, [1], ['NONE'])
+   ('noP', 'n5-exhaustive/instances/n3all_maxph_0.pg', 2, 3, 2, [1], ['NONE'])
+noCAR 201
+   ('noCAR', 'n5-epoch/instances/ffin12_n32.pg', 1, 24, 10, [7, 11, 15, 21, 23], ['MAT', 'LEN', 'MAT', 'LEN', 'LEN'])
+   ('noCAR', 'n5-epoch/instances/ffin12_n32.pg', 25, 33, 32, [5], ['NONE'])
+   ('noCAR', 'n5-epoch/instances/ffin4_n24.pg', 1, 20, 9, [7], ['MAT'])
+   ('noCAR', 'n5-epoch/instances/ffin4_n24.pg', 1, 20, 10, [0], ['MAT'])
+   ('noCAR', 'n5-epoch/instances/ffin5_n32.pg', 14, 22, 21, [7], ['NONE'])
+   ('noCAR', 'n5-epoch/instances/lend107_n32.pg', 2, 110, 26, [23], ['MAT'])
+   ('noCAR', 'n5-epoch/instances/lend107_n32.pg', 2, 110, 38, [20], ['MAT'])
+   ('noCAR', 'n5-epoch/instances/lend107_n32.pg', 2, 110, 51, [13], ['MAT'])
+nocommon 81
+   ('nocommon', 'n5-epoch/instances/ffin12_n32.pg', 1, 24, 12, 2)
+   ('nocommon', 'n5-epoch/instances/ffin4_n24.pg', 1, 20, 4, 1)
+   ('nocommon', 'n5-epoch/instances/ffin5_n32.pg', 2, 12, 5, 1)
+   ('nocommon', 'n5-epoch/instances/lend107_n32.pg', 2, 110, 10, 1)
+   ('nocommon', 'n5-epoch/instances/lend15_n48.pg', 5, 22, 4, 2)
+   ('nocommon', 'n5-epoch/instances/lend27_n24.pg', 1, 30, 6, 2)
+   ('nocommon', 'n5-epoch/instances/lend39f_n32.pg', 6, 45, 6, 0)
+   ('nocommon', 'n5-epoch/instances/lend47_n32.pg', 1, 50, 5, 0)

@@ -1,0 +1,6 @@
+seed VC 5 SH 0.01 n 40
+step 12 VC 5 SH 0.01 n 44
+step 100 VC 6 SH 0.01 n 56
+step 257 VC 7 SH 0.01 n 56
+step 2594 VC 7 SH 0.01 n 56
+final best VC 7

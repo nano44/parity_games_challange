@@ -62,7 +62,7 @@ def kind(E, a, b):
 def one(g, name, start=None):
     E, R = rows(g, start); n = g.n; ev = [v for v in range(n) if g.owner[v] == 0]
     for i, j in phases(R):
-        nfb = 0; carriers = []
+        nfb = 0; carriers = []; nc_ph = [0, 0]; swcar = Counter()
         for t in range(i, j):
             fb = bool(R[t]["fb"]); tag = "FB" if fb else "SA"; nfb += fb
             K = {v: kind(E, R[t]["vs"][v], R[t + 1]["vs"][v]) for v in range(n)}
@@ -74,10 +74,17 @@ def one(g, name, start=None):
             allswP = all(K[v] in ("MAT", "CAR") for v in SW)
             C[tag + "_anyP"] += anyP; C[tag + "_anyCAR"] += anyC; C[tag + "_swP"] += swP; C[tag + "_swCAR"] += swC; C[tag + "_allswP"] += allswP
             for v in SW: C[tag + "_sw_" + K[v]] += 1
-            if fb: carriers.append({v for v in range(n) if K[v] == "CAR"})
+            if fb:
+                carriers.append({v for v in range(n) if K[v] == "CAR"}); swcar.update(v for v in SW if K[v] == "CAR")
+                nc_ph[0] += (not anyC); nc_ph[1] += (not anyP)
             if fb and not anyP: TOP.append(("noP", name, i, j, t, SW, [K[v] for v in SW]))
             if fb and not anyC: TOP.append(("noCAR", name, i, j, t, SW, [K[v] for v in SW]))
         C["fb_per_phase_max"] = max(C["fb_per_phase_max"], nfb)
+        C["noncarry_fb_per_phase_max"] = max(C["noncarry_fb_per_phase_max"], nc_ph[0]); C["noP_fb_per_phase_max"] = max(C["noP_fb_per_phase_max"], nc_ph[1])
+        C["carry_fb_per_phase_max"] = max(C["carry_fb_per_phase_max"], nfb - nc_ph[0])
+        if nfb: TOP.append(("ph", name, i, j, nfb, nc_ph[0], nc_ph[1], n))
+        mx = max(swcar.values(), default=0); C["swcar_per_vertex_phase_max"] = max(C["swcar_per_vertex_phase_max"], mx)
+        if mx: TOP.append(("swcar", name, i, j, nfb, mx, swcar.most_common(1)[0][0], n))
         if nfb >= 2:                                   # one vertex carrying at EVERY fallback of the phase?
             C["ph_f2"] += 1; cov = Counter(v for S in carriers for v in S); best = max(cov.values(), default=0)
             if best == nfb: C["ph_common_carrier"] += 1
@@ -95,6 +102,9 @@ def main():
                 try: one(load(X(p[0])), p[0], readstart(X(p[1])) if len(p) > 1 and os.environ.get("START") == "1" else None)
                 except Exception as ex: C["ERR"] += 1; print("ERR", p[0], repr(ex)[:80])
     print(" ".join(f"{k}={v}" for k, v in sorted(C.items())))
+    for x in sorted([x for x in TOP if x[0] == "ph"], key=lambda x: -x[5])[:6]: print("PHASE f %d noncarry %d noP %d n %d" % (x[4], x[5], x[6], x[7]), x[1], x[2], x[3])
+    for x in sorted([x for x in TOP if x[0] == "ph"], key=lambda x: -x[4] / x[7])[:4]: print("PHASE-f/n f %d noncarry %d noP %d n %d" % (x[4], x[5], x[6], x[7]), x[1], x[2], x[3])
+    for x in sorted([x for x in TOP if x[0] == "swcar"], key=lambda x: -x[5])[:6]: print("SWCAR f %d max-per-vertex %d (vertex %d) n %d" % (x[4], x[5], x[6], x[7]), x[1], x[2], x[3])
     for kd in ("noP", "noCAR", "nocommon"):
         xs = [x for x in TOP if x[0] == kd]
         print(kd, len(xs)); [print("  ", x) for x in xs[:8]]
