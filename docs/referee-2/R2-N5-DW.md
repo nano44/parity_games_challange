@@ -68,3 +68,15 @@ Script R2-N5-DW/dw_run.py, log R2-N5-DW/logs/dw_up.txt.
   - Plain N5: 41 / 47 / 55 / 62 / 68, linear.
   - WIN: all match Oink's verified solutions.
 - NEEDS: Lead: L-RED's generator SHA and pinned sha1s, to diff my dwN files (isomorphism if the numbering differs).
+
+## Addendum (18:5xZ by date -u): isomorphism with L-RED's pins (Lead 18:50Z)
+- Pins: L-RED experiments/red/sf/instances/dw_3..8.pg at claude/l-red 6e7acb3b. sha1 prefixes measured: e5f94c800324 / eba759c1e811 /
+  c03e3e00578a / 34ad93bc62d0 / 6b40922a7950 / 5a7fe1cc2d78, equal to the Lead's. Trunk 0b3abd0f was not yet on origin at my fetch, so I read
+  them from 6e7acb3b.
+- Check: R2-N5-DW/iso_check.py, log logs/iso.txt. Vertices are matched by name, and the repeaters (mine u_i, L-RED's u_i_0) by their unique
+  priority.
+- Result, N = 3..7: all vertices matched, with 0 priority, 0 owner and 0 edge-set mismatches. My dwN and L-RED's dw_N are the SAME GAME up to
+  vertex numbering, with identical priority values.
+- At N = 4 and 6 (injective priorities) the priority map alone confirms it independently.
+- In particular the last repeater u_(N−2) has edges {p, r_(N−1)} in both: my settled reading of "v_(N−1)" (= v_(N−2)'s other successor, p) is
+  L-RED's construction.

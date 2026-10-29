@@ -1,0 +1,30 @@
+== N 3
+NAMEMAP matched 87 of 87 (by name 85 ) priority mismatches 0 owner mismatches 0 edge-set mismatches 0 => ISOMORPHIC (name map)
+  unnamed-match: u0 -> u0_0 prio 3 edges ['r1', 'v1']
+  unnamed-match: u1 -> u1_0 prio 5 edges ['p', 'r2']
+== N 4
+NAMEMAP matched 113 of 113 (by name 110 ) priority mismatches 0 owner mismatches 0 edge-set mismatches 0 => ISOMORPHIC (name map)
+  unnamed-match: u0 -> u0_0 prio 3 edges ['r1', 'v1']
+  unnamed-match: u1 -> u1_0 prio 5 edges ['r2', 'v2']
+  unnamed-match: u2 -> u2_0 prio 7 edges ['p', 'r3']
+== N 5
+NAMEMAP matched 139 of 139 (by name 135 ) priority mismatches 0 owner mismatches 0 edge-set mismatches 0 => ISOMORPHIC (name map)
+  unnamed-match: u0 -> u0_0 prio 3 edges ['r1', 'v1']
+  unnamed-match: u1 -> u1_0 prio 5 edges ['r2', 'v2']
+  unnamed-match: u2 -> u2_0 prio 7 edges ['r3', 'v3']
+  unnamed-match: u3 -> u3_0 prio 9 edges ['p', 'r4']
+== N 6
+NAMEMAP matched 165 of 165 (by name 160 ) priority mismatches 0 owner mismatches 0 edge-set mismatches 0 => ISOMORPHIC (name map)
+  unnamed-match: u0 -> u0_0 prio 3 edges ['r1', 'v1']
+  unnamed-match: u1 -> u1_0 prio 5 edges ['r2', 'v2']
+  unnamed-match: u2 -> u2_0 prio 7 edges ['r3', 'v3']
+  unnamed-match: u3 -> u3_0 prio 9 edges ['r4', 'v4']
+  unnamed-match: u4 -> u4_0 prio 11 edges ['p', 'r5']
+== N 7
+NAMEMAP matched 191 of 191 (by name 185 ) priority mismatches 0 owner mismatches 0 edge-set mismatches 0 => ISOMORPHIC (name map)
+  unnamed-match: u0 -> u0_0 prio 3 edges ['r1', 'v1']
+  unnamed-match: u1 -> u1_0 prio 5 edges ['r2', 'v2']
+  unnamed-match: u2 -> u2_0 prio 7 edges ['r3', 'v3']
+  unnamed-match: u3 -> u3_0 prio 9 edges ['r4', 'v4']
+  unnamed-match: u4 -> u4_0 prio 11 edges ['r5', 'v5']
+  unnamed-match: u5 -> u5_0 prio 13 edges ['p', 'r6']

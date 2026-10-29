@@ -1,6 +1,24 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Box 63 log (successor 34; Lead 19:10Z: ODD-FREEZE for plain N5)
+- docs/new/N5-FREEZE-box63.md. Lemma ODD-FREEZE PROVED (lane) with H1 (or H1' Even CAN) + H2 (disjoint) + H3 (even top above tau(o)'s cycle
+  node); freeze2.py 35780 hits / 0 viol on 719. At-leave-time form DEAD (117 protected-then-return, 48 games, first gci3_n24). Dual families:
+  thousands of unprotected returns (d_hntop_n8 3276). READING: all-protected => #tau-1 <= m => with FRAME-STRETCH, N5 polynomial.
+  Not read: box 21 Thm B, R86, R109.
+
+## Box 62b log (successor 34; Lead 18:50Z: WHY does plain N5 survive dwN; SF close-out)
+- N5-DW-box62.md §5-§6. mix.py (EOPP tau|sbar x OOPP sigma|tbar): the deciding feature is the Odd strategy in EVEN's arena. tau -> 41/47/55
+  (or 19/25/31), sbar -> 134/286/590; the dual dwd mirrors it. Lemma FRAME-tau PROVED (lane): Even cannot trigger its own frame changes in N5.
+  CONJECTURE FRAME-STRETCH (< n+m sigma-changes per tau-stretch): 0/719, max 0.66(n+m). A pure Odd-side repeater (dual dw) leaves N5
+  linear. Close-out note docs/new/N5-SF-CLOSE-box62.md.
+
+## Box 62 log (successor 34; Lead 18:39Z heads-up on L-RED 29's dwN, unpushed: I rebuilt it myself, box59/dw.py)
+- docs/new/N5-DW-box62.md. dwN = fcN + Even repeater u_i on v_i -> r_(i+1) (prio 3; others +2(N-1)+2). N5-SF iterations 134..2414, 4846 at
+  N = 8 = 19*2^N - 18 (L-RED's numbers reproduced); F and I^glo same step counts, trajectories differ from step 72. sbar = full binary
+  counter (dwopen BINARY), every set has the lane-first latency gap. SBC_G = 2^(N+1)-N-2; max Gflips 2^N - 1, 255 > 217 at N = 8.
+  DEAD: SF-POLY, I-CUBIC, SBCG-QUAD, PV_G. Plain N5 on dw_3..6: 41, 47, 55, 62 (survives here).
+
 ## Box 61 log (successor 34; Lead 18:18Z: bound I directly; I-CUBIC; step-structure potential)
 - docs/new/N5-DEPTH-box61.md. (a) DATA 733 games (S3 starts): max I/n^3 0.031 (n 4), 0.0021 for n >= 20 (theta_thc24); CONJECTURE I-CUBIC
   I <= n^3/32. (b) Lemma DEPTH-COUNT PROVED (lane; lex-convexity of key_K blocks): depth <= K records <= n^2 (n+1)^K; Theorem DEPTH-BOUND
@@ -670,12 +688,26 @@ Every answer measured from the repository; commands named.
    fetched ref, so the pin cannot be checked yet; I checked the packet by sha1 (cbea0739…) against my own commit 1afccb51 instead.
    (iii) The container clock is slow vs the Lead's stamp (07:50 vs 07:53): stamp only from date -u, never ahead of it.
 
-## Resume point (successor 34, session_01V5yGRZtUQrbWSSxFF96dQJ; written 2026-10-29 ~18:0xZ by date -u; overwrite at handover)
-### DONE: box 59 (N5-FC-box59.md, box59/ tools and logs, check.sh "Box 59"), pushed via scripts/push.sh.
+## Resume point (successor 34, session_01V5yGRZtUQrbWSSxFF96dQJ; FINAL, PARKED 2026-10-29 ~19:28Z by date -u)
+### RESUME ITEMS for successor 35 (Lead 19:16Z):
+1. CONJECTURE FRAME-STRETCH (N5-DW-box62.md §5.2; 0/719 via box59/mix.py, S3 starts): < n+m sigma-changes per tau-stretch.
+2. Its MIRROR (tau-changes per sigma-stretch): NOT measured yet; add the count to box59/mix.py and run SCRIPT=mix.py corpus.sh sbcg.lst.
+3. Lemma ODD-FREEZE (N5-FREEZE-box63.md, PROVED lane, done by me before the Lead's 19:16Z supersede arrived; 35780 hits / 0 viol):
+   compose with FRAME-STRETCH, box 21 Theorem B, R86 NM*/NM*^U (all three NOT read by me); test L-RED's CDAG_n + Odd-mask climb.
+### DONE (all pushed via scripts/push.sh, VERIFY PASS; reported to the Lead)
+- Box 59 N5-FC-box59.md (fcN anatomy, COUNT, LATENCY, SF-RED-R under LOC, PV DEAD in §6). Box 60 N5-PV-box60.md (PV-PLAY DEAD,
+  SF-RED-G, PV_G, LOOP). Box 61 N5-DEPTH-box61.md (DEPTH-COUNT, value-prefix potentials DEAD). Box 62 N5-DW-box62.md (own dwN rebuild,
+  N5-SF exponential; §5 why N5 survives: FRAME-tau, FRAME-STRETCH) and N5-SF-CLOSE-box62.md (what stays true).
+- Tools: experiments/new/box59/ (flips, frec, fcword, window, probe, relcheck, sbcg, pvplay, coarse, dw, dwopen, fglo, n5trace, mix,
+  reach, reach2, rnd, corpus.sh [SCRIPT=...]); corpus lists all.lst / rel.lst / sbcg.lst / hard61.lst; check.sh "Box 59" pins 9 lines.
 ### IN FLIGHT: nothing running.
-### NEXT (the Lead decides): the informative count is I (cubic on fcN). Options: relcheck.py / iteration counts on L-RED 28's nested
-families; the finer (play-)relevance version of SF-RED-R (§6.2, OPEN); an I-degree bound via stretch length x SBC^R.
-### Owned conjectures: SF-POLY, SBC-QP, GROUP, EXIT-without-NT, CARRY-CUT, PV_G, LOOP, I-CUBIC, SBCG-QUAD (OPEN); PV, PV-PLAY, value-prefix potentials DEAD.
+### NEXT (the Lead decides)
+1. N5 (G-N5-TIME): CONJECTURE FRAME-STRETCH and its mirror (sigma-constant tau-stretches; not measured yet: add to mix.py).
+2. Run mix.py / n5trace.py on L-RED 29's Odd-side / coupled families when relayed (N5 needs both one-sided runs long).
+3. Byte-compare box59/dw.py with L-RED's R116 generator (l-red 6e7acb3b) - not done.
+### Owned conjectures: FRAME-STRETCH, LOOP, GROUP, EXIT-without-NT (OPEN); N5-SF line closed (N5-SF-CLOSE-box62.md).
+### Box 63 added: Lemma ODD-FREEZE (PROVED lane). Next for a successor: read box 21 Theorem B and R86 NM*/NM*^U and compose them with
+ODD-FREEZE + FRAME-STRETCH; measure FRAME-STRETCH's mirror; test L-RED's CDAG_n + Odd-mask climb with freeze.py / freeze2.py / mix.py.
 
 ## Resume point (HISTORY; successor 33, FINAL after box 58, written 2026-10-29 ~17:0xZ by date -u)
 Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context ~375k at writing. PARKED (Lead's option (C), box 58).
