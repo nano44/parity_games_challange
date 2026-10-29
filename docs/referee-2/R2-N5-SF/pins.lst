@@ -1,0 +1,3 @@
+experiments/n5-exhaustive/instances/n3all_maxph_0.pg experiments/n5-exhaustive/instances/n3all_maxph_0.start
+experiments/new/box54/out/switchbestexp_2.pg
+experiments/red/n3/instances/n3cov_lean.pg experiments/red/n3/instances/n3cov_lean.start

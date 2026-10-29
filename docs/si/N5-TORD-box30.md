@@ -204,3 +204,36 @@ transitions, each adds one), so TC ≤ n there for a trivial reason; non-monoton
 - RESULT (no kill; DATA): nleq33_n48 seed → 0.809 (n 43; stopped by hand at 14:57Z after 34,304+ steps); x32_waves48 → 0.868
   (n 39; 100,000 steps, entries per vertex 2); x31_re24 → 0.636 (n 12; 100,000 steps); x31_re24 with XCR=1 → 2 entries per vertex, no 3
   (n 11; 100,000 steps). TRAP-LIN and X2 stay CONJECTURES; the best TC/(n − 1) found is 0.868.
+
+## 11. |D| ≥ 2 by gate classes (Lead 15:05Z: «Take (b): FW-D for |D| ≥ 2 using §5's gate classes»). Written 2026-10-29T15:1xZ by date -u (see commit)
+Tool: experiments/si/tord/gates.py; outputs tord/gates_{alt_start,lib41,sicorpus}.txt. For a gate d ∈ D: S_d := vertices whose (σ, τ)-play
+meets D first at d (d ∈ S_d), s_d := |S_d| − 1, π(d) := (λ_Ξ(d), λ_W(d)), U := vertices whose play avoids D. Conditions: G1 every gate has
+λ_Ξ(d) ≠ λ_W(d); G2 distinct gates have distinct π; G3 τ(d), σ̄(d) ∉ S_d at every state (per-gate tail-disjointness; for |D| = 1 this is
+TD).
+- Lemma GATE-FORM (PROVED, lane; §1 per gate). For x ∈ S_d: λ_Ξ(x) = λ_Ξ(d), λ_W(x) = λ_W(d); under G3, Ξ(x) = pre(x) ⊕ Ξ(d) and
+  W(x) = pre(x) ⊕ W(d), pre(x) := the play from x up to (excluding) d. For u ∈ U: Ξ(u) = W(u). Every W value is the composition of the
+  segments of its play (prefix to the next gate, the gate, ..., up to a vertex of U or around a cycle through gates), so a transition that
+  changes no segment key (no ≤₂-prefix key in any S_d, no W value on U) changes no W value.
+- Theorem FW-DG (PROVED, lane). In a frozen W-phase with G1, G2, G3 (any |D|):
+  (a) U and every basin S_d are constant (TRAP-FIX, general form §5: each class is one gate, and G1 forbids exchanges with U);
+  (b) on U the run is switch-best on G_τ[U] (EPOCH-U with the epoch = the whole frozen W-phase): ≤ |U| − 1 transitions change W on U;
+  (c) inside each S_d, §2-§4 hold verbatim with o := d, c₁ := λ_Ξ(d), c₂ := λ_W(d) (PMON's hybrid strategy is ρ_k on S_d and ρ_{k+1}
+      elsewhere; d's tails do not re-enter S_d by G3 and (a)): ≤ s_d² transitions change a ≤₂-prefix key in S_d;
+  (d) hence WCH ≤ |U| − 1 + Σ_{d ∈ D} s_d² < n² (by GATE-FORM, every W-changing transition changes a segment key in U or in some S_d).
+  For |D| = 1 this is FW-D1.
+- DATA (gates.py, the three corpora, 2,163 frozen W-phases with D ≠ ∅): 0 violations of GTF (TRAP-FIX per class), GB ((a)), FWDG ((d),
+  157 frozen W-phases checked) and of CONJECTURE FW-D (WCH ≤ (|D| + 1)(n − 1)). Largest WCH/(n − 1): |D| = 2: 0.80 (n5-epoch/instances/
+  lend13_n16), |D| = 3: 0.48 (lend107_n32), |D| ≥ 4: 0.35 (lend55_n32); |D| = 1: 0.87 (gci3_n24). So FW-BF (≤ n − 1) itself holds on all
+  of them; the multi-gate phases are SHORTER relative to n than the |D| = 1 ones.
+- FINDING (where the |D| ≥ 2 mass is). Of the 617 frozen W-phases with |D| ≥ 2 (374 alt_all / 35 lib41 / 208 experiments/si), only 63
+  satisfy G1 and NONE satisfies G1 ∧ G2 ∧ G3: almost every multi-gate frozen W-phase has a gate with λ_Ξ(d) = λ_W(d). So FW-DG proves the
+  multi-gate statement on a class that the corpora do not reach; the |D| ≥ 2 frontier is the SAME-PAIR gate, the multi-gate form of the
+  c₁ = c₂ case of §9-§10.
+- Lemma SAME-NODE (PROVED, lane; from GATE-FORM). If every gate has λ_Ξ(d) = λ_W(d), then λ_Ξ = λ_W at every vertex, so Ξ and W are
+  valuations into the SAME ordered set (one VJ order per cycle node) with Ξ ⊴ W pointwise and Ξ = W exactly off ∪_d S_d where the two tails
+  of d differ. The arena compares in Ξ, the choice optimises in W, with one order. A W-frame Lemma P then fails only in Case A at an edge
+  (x, z) with z trapped and W(z) ▷ W(ρx) ⊵ Ξ(ρx) ⊵ Ξ(z) (F1, an arena refusal by the gate's pessimistic tail); when z and ρ(x) lie in the
+  same basin S_d the comparison is a prefix comparison and F1 cannot occur. So F1 needs z and ρ(x) in DIFFERENT basins (or ρ(x) ∈ U).
+- OPEN (the general core, stated once): one VJ order, two valuations Ξ ⊴ W that differ only by the gates' tails; arena by Ξ, choice by W;
+  bound the W-changes (FW-D) or the basin changes. G2-failure inside a G1 class (several gates with the same π, π₁ ≠ π₂: the class union is
+  constant by §5, the basins inside it are not) is the second open piece.

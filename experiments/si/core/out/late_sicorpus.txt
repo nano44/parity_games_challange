@@ -1,0 +1,13 @@
+R>TC=11 RT=106 RT>TC=4 RT_noTC=30 RT_noTC_G3=14 SKIPPED_input=1 cls_S>S'=21 cls_U>S=89 cls_same=32 pere>1=1 perv>1=1 phases_R>0=76 wchg_at_adoption=142 zS_at_tau=128
+columns: value, R, TC, per-vertex max, per-edge max, n, |D|, game, a, b
+MAX R (12, 12, 2, 1, 1, 48, 1, 'experiments/si/xing/instances/ccl_w48_n48.pg', 15, 18)
+MAX R-TC (10, 12, 2, 1, 1, 48, 1, 'experiments/si/xing/instances/ccl_w48_n48.pg', 15, 18)
+MAX R/(n-1) (0.3225806451612903, 10, 1, 1, 1, 32, 1, 'experiments/si/xing/instances/ccl_fbx_n32.pg', 5, 7)
+MAX pere (5, 9, 9, 9, 5, 182, 2, 'experiments/si/rund/instances/offalt_K10.pg', 0, 23)
+MAX perv (9, 9, 9, 9, 5, 182, 2, 'experiments/si/rund/instances/offalt_K10.pg', 0, 23)
+EXAMPLE ('late-no-TC', 'experiments/si/lay/instances/seglast_kill_n110.pg', 11, 16, 12, 110, 1, 'notG3')
+EXAMPLE ('late-no-TC', 'experiments/si/lay/instances/seglast_kill_n110.pg', 11, 16, 13, 110, 1, 'notG3')
+EXAMPLE ('late-no-TC', 'experiments/si/lay/instances/seglast_kill_n110.pg', 11, 16, 14, 110, 1, 'notG3')
+EXAMPLE ('late-no-TC', 'experiments/si/lay/instances/seglast_kill_n110.pg', 11, 16, 15, 110, 1, 'notG3')
+EXAMPLE ('late-no-TC', 'experiments/si/lay/out/s_hg.pg', 13, 18, 14, 110, 1, 'notG3')
+EXAMPLE ('late-no-TC', 'experiments/si/lay/out/s_hg.pg', 13, 18, 15, 110, 1, 'notG3')

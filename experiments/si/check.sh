@@ -669,3 +669,42 @@ o=$(python3 -I tord/epoch2.py --one ../red/xing/instances/kw25_n32.pg)
 grep -q "'diff_wch': (0.8064516129032258, 25, '../red/xing/instances/kw25_n32.pg', 0, 25, 28, 32)" <<<"$o"; grep -q "^TRAPFIX PASS$" <<<"$o"; grep -q "^FWD1 PASS$" <<<"$o"
 o=$(python3 -I tord/show.py "$(grep best tord/logs/out_c8_ee.txt | tail -1 | cut -d' ' -f6-)" | tail -1); test "$o" = "8 8 STOP"
 echo "si (box 30: PMON, H-P, TORD, TRAP-FIX, FW-D1 on oneodd_c16 and kw25_n32; HLP control fails; abstract EE best = n_abs): PASS"
+# box 30 §11: gate classes (any D): general TRAP-FIX, FW-DG and FW-D hold on lend107_n32 (|D| = 3) and oneodd_c16 (G1 G2 G3).
+o=$(python3 -I tord/gates.py --one ../n5-epoch/instances/lend107_n32.pg ../n5-epoch/instances/lend107_n32.start)
+grep -q "^D3_G3=10 fw=10$" <<<"$o"; for k in GTF GB FWDG FWD; do grep -q "^$k PASS$" <<<"$o"; done
+o=$(python3 -I tord/gates.py --one ../new/box21/instances/oneodd_c16.pg); grep -q "'G1G2G3')" <<<"$o"; grep -q "^FWDG PASS$" <<<"$o"
+echo "si (box 30 §11: gate classes, FW-DG on lend107_n32 and oneodd_c16): PASS"
+# box 31 (docs/si/N5-SPC-box31.md): same-pair core. §2 DEAD: runfam_K100 (pinned start) frozen W-phase [52, 167] lags R17's W-frame
+# Lemma P by 113 steps with TC = 2 (gap-step form dead; Ξ / mixed / admitted forms 109 / 108 / 108). §3-§4: Lemma GP+ and Corollary FW-R
+# hold on ccl_w48_n48 (R = 12); the plain W-frame Lemma P (MUT=all) must fail there.
+echo "86cf1884919b223c18f982eed6a00a4256a501dd  runlin/instances/runfam_K100.pg" | sha1sum -c --quiet
+echo "843b9f4e83a21d8ee5bd56df97f7b43f59edc394  runlin/instances/runfam_K100.start" | sha1sum -c --quiet
+o=$(python3 -I core/sp.py --one runlin/instances/runfam_K100.pg runlin/instances/runfam_K100.start)
+grep -q "^MAX D1:def (113, 'runlin/instances/runfam_K100.pg', 52, 167, 139, 1, 115, 2, 115, 113, 133, False, 109, 108, 108, 127)$" <<<"$o"
+grep -q "^CTRL PASS$" <<<"$o"
+echo "a7056dea01cd9c6398e054ef6edaaa40f60dabb1  xing/instances/ccl_w48_n48.pg" | sha1sum -c --quiet
+o=$(PLUS=1 python3 -I core/gp.py --one xing/instances/ccl_w48_n48.pg)
+grep -q "'D1': (12, 3, 3, 48, 1, 'xing/instances/ccl_w48_n48.pg', 15, 18)" <<<"$o"; for k in GP RED RLIN; do grep -q "^$k PASS$" <<<"$o"; done
+o=$(MUT=all PLUS=1 python3 -I core/gp.py --one xing/instances/ccl_w48_n48.pg); grep -q "^GP FAIL$" <<<"$o"
+echo "si (box 31: gap-step Lemma P dead on runfam_K100; GP+, FW-R on ccl_w48_n48; plain W-frame Lemma P control fails): PASS"
+# box 31 §5: R-LIN dead on rlin_cex_n40 (R = 129 > 39 in 10 transitions); FW-R and FW-R′ (R_T = 9) hold there; n5b identical.
+echo "670ba1ffc22c8f9b170e11ca3e43c33cee9329ca  core/instances/rlin_cex_n40.pg" | sha1sum -c --quiet
+echo "e488c00fe1359818b9a665a415cc7b2962015318  core/instances/rlin_cex_n40.start" | sha1sum -c --quiet
+o=$(PLUS=1 python3 -I core/gp.py --one core/instances/rlin_cex_n40.pg core/instances/rlin_cex_n40.start)
+grep -q "'D1:R_T/(n-1)': (0.23076923076923078, 9, 10, 40, 1, 'core/instances/rlin_cex_n40.pg', 1, 11)" <<<"$o"
+grep -q "'D1': (129, 10, 10, 40, 1, 'core/instances/rlin_cex_n40.pg', 1, 11)" <<<"$o"
+grep -q "^RLIN FAIL$" <<<"$o"; grep -q "^RED PASS$" <<<"$o"; grep -q "^GP PASS$" <<<"$o"
+o=$(python3 -I root/n5bcmp.py core/instances/rlin_cex_n40.pg core/instances/rlin_cex_n40.start | head -1); grep -q "identical state sequences: True" <<<"$o"
+echo "si (box 31 §5: R-LIN dead on rlin_cex_n40; FW-R, FW-R′ hold; n5b identical): PASS"
+# box 31 §6: GP* / FW-R* (only blocked edges excluded): rlin_cex_n40 has R* = 0 (FW-BF proved there by FW-R*), ccl_w48_n48 R*_T = 1;
+# the plain W-frame Lemma P (MUT=all) still fails on ccl_w48_n48.
+o=$(STAR=1 python3 -I core/gp.py --one core/instances/rlin_cex_n40.pg core/instances/rlin_cex_n40.start)
+grep -q "'D1': (0, 10, 10, 40, 1, 'core/instances/rlin_cex_n40.pg', 1, 11)" <<<"$o"; for k in GP RED RLIN; do grep -q "^$k PASS$" <<<"$o"; done
+o=$(STAR=1 python3 -I core/gp.py --one xing/instances/ccl_w48_n48.pg)
+grep -q "'D1:R_T/(n-1)': (0.02127659574468085, 1, 3, 48, 1, 'xing/instances/ccl_w48_n48.pg', 15, 18)" <<<"$o"; grep -q "^GP PASS$" <<<"$o"
+o=$(MUT=all STAR=1 python3 -I core/gp.py --one xing/instances/ccl_w48_n48.pg); grep -q "^GP FAIL$" <<<"$o"
+echo "si (box 31 §6: GP*, FW-R* on rlin_cex_n40 and ccl_w48_n48; MUT=all control fails): PASS"
+# box 31 packet docs/si/P-N5-GP-box31.md (frozen): its 14 verbatim quotes hold at their pinned commit; shifting every line range by one fails.
+o=$(python3 -I rund/quotecheck.py ../../docs/si/P-N5-GP-box31.md); grep -q "^quotes=14 bad=0$" <<<"$o"; grep -q "^QUOTES PASS$" <<<"$o"
+o=$(python3 -I rund/quotecheck.py ../../docs/si/P-N5-GP-box31.md --mut); grep -q "^QUOTES FAIL$" <<<"$o"
+echo "si (box 31 packet P-N5-GP: 14 quotes exact; shifted control fails): PASS"

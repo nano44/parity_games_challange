@@ -1,0 +1,22 @@
+MODE files hard.lst 1 experiments/
+OP_E_checks: 2577
+OP_O_checks: 235
+ORB2_checks: 73
+ORB_E_checks: 73
+ORB_O_checks: 73
+WIN_checks: 73
+X_ORBN5: 33
+fallbacks_E: 0
+fallbacks_O: 0
+iterations: 2613
+runs: 73
+stretches_E: 694
+stretches_O: 302
+max maxI: 489
+max maxLAM_E: 17
+max maxLAM_O: 9
+max maxSBC_E: 75
+max maxSBC_O: 16
+max maxstretch_E: 52
+max maxstretch_O: 1
+RESULT PASS violations 0

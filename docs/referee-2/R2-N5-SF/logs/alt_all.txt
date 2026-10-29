@@ -1,0 +1,24 @@
+MODE files ../../../experiments/si/root/logs/alt_all.lst 0 experiments/
+OP_E_checks: 1497
+OP_O_checks: 146
+ORB2_checks: 93
+ORB_E_checks: 93
+ORB_O_checks: 93
+WIN_checks: 93
+X_ORBN5: 72
+fallbacks_E: 10
+fallbacks_O: 2
+iterations: 1505
+runs: 93
+starts_INVALID_skipped: 1
+starts_valid: 93
+stretches_E: 782
+stretches_O: 201
+max maxI: 71
+max maxLAM_E: 8
+max maxLAM_O: 15
+max maxSBC_E: 49
+max maxSBC_O: 18
+max maxstretch_E: 69
+max maxstretch_O: 8
+RESULT PASS violations 0

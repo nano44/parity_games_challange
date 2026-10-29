@@ -24,13 +24,24 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 ## Successor 27 HANDOVER (written 2026-10-29 14:48Z, date -u; ~390k context)
 - DONE (claude/l-red, push.sh VERIFY PASS each push): 724bab9d handover check; 6aa2dcd7 R112 (coupled relay chain, cpl tools, check.sh gate
   relay_L3); 41c567c3 R113 (menus autonomous; tau-released steps drop W; leapfrog reactor clocks need W-rising sources; two-sided mkr dead as
-  designed); R113 §4 addendum (W-sink delay route; mkr vs its dual = opposite winning regions, cross gates never open; flip-climb DATA).
+  designed); R113 §4 addendum (mkr vs its dual = opposite winning regions, cross gates never open; flip-climb DATA); f8b59275 ewin/dewin
+  (same-region Odd clock, check.sh gate); 56f3ca89 CORRECTION (Odd holders at mkr's W-sinks fail: an Odd hold cannot delay a W-rise signal).
 - IN FLIGHT: nothing (no background jobs).
+- QUEUE TOP for successor 28 (Lead 15:20Z, verbatim gist): attack CONJECTURE SF-POLY for L-NEW's single-frame variant N5-SF (claude/l-new
+  56a42d4f, docs/new/N5-SF-box54.md; tool experiments/new/box54/n5sf.py). N5-SF is polynomial IFF SBC is (Odd's best-reply changes along the
+  run, plus the mirror; Theorem SF-RED, lane). DATA: linear on H_n and DLM; SBC 0.45n -> 0.57n on switchbestexp N <= 16, still rising. Task:
+  a family with super-polynomial SBC, or the largest polynomial degree found. L-LIT T46 is finding N5-SF's closest known rule.
+- Also relayed (Lead 14:44Z): L-LIT T43 (claude/l-lit 09dfa5f0b, docs/lit/T43-dlm-coupled-counter.md): DLM's mutual counter locks sit in
+  SSI's selection rule, N5 escapes in iteration 1; an N5 counter must put every lock in the ARENAS (each level's final edge enters I_sigma /
+  I_tau only when the lower counter completes). Agrees with R113 §0 and with the 56f3ca89 correction (holds delay only menu-gated followers).
+- Lead 15:20Z asked to finish the mkr + dewin build first. NOT done: the 56f3ca89 correction showed mkr's pivot is W-gated only, so the build
+  first needs a mkr variant whose C_{i+1} honest value runs through w_i (item (2) below). Left for the queue after SF-POLY.
 - RESUME POINT (Lead STEP 1: coupled family, then super-quadratic NM*/NM*^U in one joint lambda-run):
   (1) DONE (R113 §4): cpl/ewin.py + dualize = dewin (Odd clock, Odd-winning, run identical). WAS: Build an Odd clock in an ODD-winning region (Odd pivots + Odd reactors whose U-plays end in Odd-winning cycles, Odd improving path
       sets). Equivalently: an Even mkr variant in an EVEN-winning region, then dualize. mkr's W-loops rely on z odd; the new one needs its
       own W-structure. Check: cpl.py (one joint run?), cause.py (STALL/opp-moved at the cross gates).
-  (2) NEXT: couple dewin to mkr (holder options must end in the SAME cycle in the gating valuation; interleave loop priorities) by one-shot holders at the W-SINKS (R113 §4): w_i keep -> Odd holder chi_i (tau -> Odd loop Lambda_i, T'_K < Lambda_i
+  (2) NEXT (R113 §4 CORRECTED: holders at mkr's W-sinks fail, h is W-gated only and a held w_i already shows W >= W(T_i); first change
+      mkr so C_{i+1}'s honest value runs through w_i (menu-gated), then) couple dewin to mkr (holder options must end in the SAME cycle in the gating valuation; interleave loop priorities) by one-shot holders at the W-SINKS (R113 §4): w_i keep -> Odd holder chi_i (tau -> Odd loop Lambda_i, T'_K < Lambda_i
       < T_i; alt -> the Odd clock's reactor end), and the mirror on the Odd clock's W-sinks. Target Theta(Km) sigma AND tau in one joint run.
   (3) Routes (A)/(B) of R113 §3 for re-usable cross gates (needed for anything beyond O(n) cross-caused events).
 - Tools (experiments/red/cpl/): cpl.py, nmrun.py, cause.py, trn.py, vcpl.sh, build.py, chain.py, search.py (MODE=flip).

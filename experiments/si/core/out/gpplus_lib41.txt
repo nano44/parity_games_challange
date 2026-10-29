@@ -1,0 +1,5 @@
+D1=519 D1_GP_V=0 D1_R>0=88 D1_late>0=0 D2+=30 D2+_GP_V=0 D2+_R>0=5 D2+_late>0=0 ctrl=164 ctrl_GP_V=0 ctrl_R>0=0 ctrl_late>0=0
+max R (R, WCH, L, n, |D|, game, a, b): {'ctrl:R/(n-1)': (0.0, 0, 1, 12, 0, '../docs/referee/R-N5-L2/droplen_cex_n12.pg', 0, 4), 'ctrl': (0, 1, 4, 12, 0, '../docs/referee/R-N5-L2/droplen_cex_n12.pg', 0, 4), 'D1:R/(n-1)': (0.3225806451612903, 10, 2, 32, 1, '../experiments/si/xing/instances/ccl_fbx_n32.pg', 5, 7), 'D1': (12, 3, 3, 48, 1, '../experiments/si/xing/instances/ccl_w48_n48.pg', 15, 18), 'D2+:R/(n-1)': (0.05128205128205128, 2, 9, 40, 3, '../experiments/red/n5inj/instances/frz40.pg', 62, 71), 'D2+': (2, 2, 2, 48, 2, '../experiments/red/n5inj/instances/elimn_cex_n48.pg', 51, 53)}
+GP PASS
+RED PASS
+RLIN PASS
