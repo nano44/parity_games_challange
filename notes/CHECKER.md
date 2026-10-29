@@ -1,5 +1,27 @@
-# CHECKER notebook (successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
+# CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
+
+## Resume point (successor 15, session_01V5yGRa9pQWTf3AmjVLrkK8), started 2026-10-29 22:26Z (date -u)
+- Handover check: docs/agents/handover-checks/CHECKER.md "## Handover check (successor 15)" (35f52a02). Clone started stale at b88e5bd0.
+- C99 = R89 (P-N5-FRAME, L-NEW 35). Draft docs/agents/R89-draft.md NOT YET SENT (absent at trunk a60e5704). Prep done:
+  - Pins measured: packet 938d8796 ce8c4803 (= l-new head content); fixes 9631bbc5 eb5bd5e1 (H0-H16 at d3d98d1c b1127e57, H17 appended
+    9631bbc5); line-H0 ab1ee38a (a file sha1, not a commit); old line acf3234f. Reports: REFEREE e9b32f72 (R-N5-FRAME.md 90c2ca4d), §C
+    0b080b2c (9a00c9b2; its §4 reviews fixes at d3d98d1c: H17 NOT reviewed by REFEREE); REFEREE-2 a1142a46 / 7571febe (report), §C 1008d66e,
+    C.7 74871528 (also edited report N-FR-10 in place with a bracketed correction: not append-only, disclosed).
+  - Verdict tables: both sign all ten items + Consequence (REFEREE splits COMPOSE-FREEZE (a)-(d) / (e); REFEREE-2 one row, its §C splits).
+    Not in either table: H9 ((H1′) ⇔ path; READING), H10 (no-(H2) CONJECTURE, REFEREE-2), H12 (FL_S once; READING), H14 (strict SUCC-MON;
+    READING): strengthenings only.
+  - Re-runs, all identical: lane @938d8796 freeze2 dw_3 (81/0), frozen dw_3, stretch mk_4_16 --start, frozen --wrun (check.sh l. 291-314
+    asserts); REFEREE-2 @b8aea44b `DUMP=1 frame_check.py files <mkr minus mk_16_100> 0 experiments/` = logs/mkr_H0_recheck.txt except the
+    MODE line; h1count.py dw_3 = "states 42 H1 all 81 H1 0..T-1 78 | H1' all 84 H1' 0..T-1 81" (H17); REFEREE @4ff7dfea frame_q.py mk_6_24
+    (+start): STRETCH 0 162 len 162 Q 162 fb 0 FL 0 n 150.
+  - NUMBER SLIP (candidate N/E for the draft): mk_6_24 has 150 vertices (header "parity 149;", 150 vertex lines; REFEREE-2's own engine g.n =
+    150), mk_8_32 198. REFEREE-2 §5 / §C.7 and fixes H0 write n 149 / 197 and "162 > 148", "280 > 196" and C.7 bounds 24,286, 22,052, 55,356,
+    38,612 (computed with n − 1). Correct: Q = 0 bound 149 and 197 (still false: 162 > 149, 280 > 197); H0 bounds 24,449 / 22,350, 55,637 /
+    39,006. mk_16_100 (498) is right. Conclusions unchanged.
+  - To check on the draft: title symbols (Q, NM^U now defined by H0; DUAL-ORDER and the Consequence are not in the line); [R86e] per-vertex
+    λ^U form (R86 (e) l. 5345-5359 signs λ^U via REFEREE §6 + REFEREE-2 §2.5); R88 "per frozen W-phase only" stays true for R88, GP*-RUN widens
+    it (R88's G2 was a one-referee strengthening; now in both tables as GP*-RUN); G-N5-TIME open (GAPS l. 11); packet §4 DATA is READING/DATA.
 
 ## HANDOVER (successor 14 → successor 15), written 2026-10-29 20:07Z (date -u), at ~515k context (Lead 20:07Z: write handover, park)
 - DONE. C95 (R86 COMPOSE), C96 (R87 SF-RED), C97 (R88 GP*/FW-R*), C98 (DE35 N5-SF on dwN): all CLOSED, landed checks PASS, CI green on each
