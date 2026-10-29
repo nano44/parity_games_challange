@@ -1,0 +1,14 @@
+round 0 run 171 n 79
+round 1 pair (28, 34) run 174 n 80 run-2n 14 ratio 2.175
+round 2 pair (28, 79) run 177 n 81 run-2n 15 ratio 2.185
+round 3 pair (28, 80) run 180 n 82 run-2n 16 ratio 2.195
+round 4 pair (28, 81) run 183 n 83 run-2n 17 ratio 2.205
+round 5 pair (28, 82) run 186 n 84 run-2n 18 ratio 2.214
+round 6 pair (28, 83) run 189 n 85 run-2n 19 ratio 2.224
+round 7 pair (25, 78) run 191 n 86 run-2n 19 ratio 2.221
+round 8 pair (28, 84) run 194 n 87 run-2n 20 ratio 2.230
+round 9 pair (25, 85) run 196 n 88 run-2n 20 ratio 2.227
+round 10 pair (28, 86) run 199 n 89 run-2n 21 ratio 2.236
+round 11 pair (25, 87) run 201 n 90 run-2n 21 ratio 2.233
+round 12 pair (28, 88) run 204 n 91 run-2n 22 ratio 2.242
+round 13 pair (25, 89) run 206 n 92 run-2n 22 ratio 2.239
