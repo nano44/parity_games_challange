@@ -49,12 +49,43 @@ OPEN. Not a TARGET.md claim, not a proof. G-N5-TIME stays OPEN.
   side's own rises, and the other side could only add one-shot delays. That would point AGAINST the mutual binary counter of R111 §4,
   i.e. towards a polynomial bound. The obvious next test is (i) or (ii).
 
+## 4. Addendum (2026-10-29 14:47Z, date -u): route (iv′) and why mkr cannot simply be merged with its dual
+- A route that respects §2: let Odd delay mkr's W-SINKS instead of the pivots. w_i's keep goes to a one-shot Odd holder χ_i (τ = a new
+  Odd loop Λ_i with T′_K < Λ_i < T_i, so W(keep) ≥ W(T_i) and τ(Λ_i) = self stays U-stable through mkr's EQ escape). h cannot take
+  C_{i+1} during the hold, because C_{i+1}'s honest value rises only after w_i switches (its Ξ-menu, Even's own). So the net W-drop at
+  w_i (rule D) is followed by nobody, and h's step is still a W-rise. Each pivot step then waits for one Odd event.
+- The Odd events must come from an Odd clock (Odd pivots + Odd reactors) whose own W-sinks wait for Even events. The obvious Odd clock
+  is the dual of mkr. It does not work as a partner (READING, from S1's order, no instance):
+  - mkr lives in an Odd-winning region: every Ξ-play ends at z (odd), every U-play in an Odd self-loop. Its dual lives in an
+    Even-winning region (z^d and the dual loops have even priority).
+  - Valuations compare cycle nodes first. A cross edge from mkr's χ_i into the dual region gives χ_i's alt an Even-winning U-play, so
+    alt is never U-improving for Odd; dually a cross edge from a dual holder ψ_i into mkr is never Ξ-improving for Even. The cross gates
+    never open.
+  - So both clocks must live in the SAME winning region: an Odd clock in an Odd-winning region (equivalently, the dual of an Even
+    clock in an Even-winning region). mkr's W-loops rely on z being odd (Odd self-loops of low odd priority beat z for Even), so this
+    needs a new clock design, not a relabelling. OPEN; this is the resume point.
+- Same-region Odd clock: DONE (DATA). cpl/ewin.py moves mkr into an EVEN-winning region by priorities only (structural < z, now even <
+  loops, now even with their order reversed < h, h′ < markers unchanged). On mkr K, m = (3, 4), (6, 24), (8, 30) the run is state by state
+  identical (21, 162, 264 iterations). Its dual (ctl/dualize.py) is an Odd clock in an ODD-winning region, the region mkr lives in:
+  instances/dewin_runquad_K3_m4 (from runquad_K3_m4_n54): 21 iterations, 21 τ-changes, 0 σ-changes, every Ξ- and U-cycle node over the
+  run has odd priority; n5b = n5.py state sequences; Oink zlk OK, both strategies. check.sh gate.
+- Next (resume point): mkr ⊎ dewin with one-shot cross holders. The holder's two options must END IN THE SAME CYCLE in the valuation
+  that gates it (cycle nodes are compared first; across copies they differ), and its W must fall below the W-sink's loop only at the
+  release. So the two copies' loop priorities have to be interleaved by hand against mkr's W-loop schedule. Not done.
+- Climb DATA (cpl/search.py, MODE=flip: fitness = min(most switches of one Even vertex, of one Odd vertex) inside one joint λ-run;
+  n 12, 16, 20, two seeds each, ≤ 30,000 steps, explicit starts): best 6 / 7 (n 16), 8 / 6 (n 20). cause.py on the n 12 best (Even
+  vertex 7 visits 10, 3, 0, 8, 10, 3, 0; Odd vertex 2 visits 8, 11, 5, 8, 0, 8; one joint λ-run, 8 iterations, 0 fallbacks): every
+  switch of vertex 7 and all but the last of vertex 2 are MENU switches (the target entered the own side's improving set at that
+  state), i.e. driven by the own side's leapfrogging values, not released by the opponent. Not coupled. Bests not pinned.
+
 ## DONE / FINDINGS / NEEDS
-- DONE: this note (no new instance; the R112 traces satisfy (A)).
+- DONE: this note (no new instance; the R112 traces satisfy (A)); cpl/cause.py (MENU vs STALL per switch); flip climb (§4).
 - FINDINGS:
   1. READING: each side's menu is autonomous; coupling is only through W, i.e. pivot-rule control (as R110).
   2. READING under (A), (B): τ-released steps lower W at the released vertex; a leapfrog reactor chain needs its sources' W to rise at
      every followed step; so an Even reactor clock cannot be driven by Odd-released pivots (and dually). The "two-sided mkr" of R112 §4
      is DEAD as designed (the holder ladder must decrease, the reactors need it to increase).
   3. OPEN: break (B) (separate W-sources behind not-best-reply Odd a_j, b_j) or (A) (simultaneous changes on one play).
+  4. READING (§4): Odd may delay mkr's W-sinks (one-shot holders) without breaking §2; but mkr's dual is in the opposite winning
+     region, so cross gates between mkr and its dual never open. The partner clock must be built in the same region. OPEN.
 - NEEDS: none from the owner.
