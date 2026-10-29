@@ -1870,3 +1870,4 @@
 - 05:46Z (date -u): R82 LANDED (C91 Add. 1 PASS, checker 81502454); GAPS UPDATE built from the title clauses; NOW counters R17-R82.
 - 05:50Z (date -u): R83 (REL) draft reviewed (subagent; findings: run-count conventions differ (READING), longest segment 67 vs 55 recorded, two lane MUT counts without committed log cited to packet §4). To CHECKER as C92.
 - 05:55Z (date -u): C92 sent (R83 ccd56407 at 4a67f98f); R82 landed check requested.
+- 06:00Z (date -u): L-NEW TOPSHAPE fixes 8e8f72387 (sha1 be683e9f, F1-F5, 17 quotes); L-NEW parked. R84 (TOPSHAPE) draft delegated to a subagent.
