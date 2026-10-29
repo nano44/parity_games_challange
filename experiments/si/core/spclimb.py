@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """L-SI box 31 (docs/si/N5-SPC-box31.md §5): kill search in the SAME-PAIR CORE (frozen W-phases with D != {} and lambda_Xi(d) = lambda_W(d)
 at every gate). SCORE=wch (default): 1000 * kill + floor(1000 * max WCH / (n - 1)), kill := WCH > n - 1 (FW-BF in the core) or R > n - 1;
-SCORE=r: the same with R / (n - 1) (CONJECTURE R-LIN; R = late adoptions, core/late.py). Mutations, acceptance, saving as frz/fwclimb.py.
+SCORE=r: the same with R / (n - 1) (CONJECTURE R-LIN, DEAD; R = late adoptions, core/late.py); SCORE=rstar: R*_T / (n - 1) (note §6). Mutations, acceptance, saving as frz/fwclimb.py.
 Usage: spclimb.py SEED.pg SEED.start|- STEPS RNGSEED NMAX OUT"""
 import sys, os, random
 os.environ["PMODE"] = "1"
@@ -17,18 +17,25 @@ from fwphase import fwphases
 from gates import basins
 MODE = os.environ.get("SCORE", "wch")
 
-def late(E, g, R, a, b, D):
-    n = g.n; REF = set(); r = 0
+def late(E, g, R, a, b, D, star=False):
+    """late adoptions (star=False, ALLOWED+ notion, core/gp.py PLUS) or the number of TRANSITIONS with a late adoption* (star=True,
+    blocked edges only, note §6)."""
+    n = g.n; REF = set(); r = 0; rT = 0
     for k in range(a, b):
         Fk = basins(R[k]["wn"], D, n); G3k = {d for d in D if Fk[R[k]["t"][d]] != d and Fk[R[k]["sb"][d]] != d}; Is = {}
         for x, z in E.improving(tuple(R[k]["s"]), R[k]["vs"]): Is.setdefault(x, set()).add(z)
+        r0 = r
         for x in range(n):
             if g.owner[x] != 0: continue
             if R[k + 1]["s"][x] != R[k]["s"][x] and (x, R[k + 1]["s"][x]) in REF: r += 1
             al = {R[k]["s"][x]} | Is.get(x, set()) | {w for w in g.succ[x] if Fk[w] == -1}
             if Fk[x] != -1 and Fk[x] in G3k: al |= {w for w in g.succ[x] if Fk[w] == Fk[x]}
+            if star:
+                kr = E.key(R[k]["W"][R[k]["s"][x]])
+                al = {w for w in g.succ[x] if w in Is.get(x, set()) or w == R[k]["s"][x] or E.key(R[k]["W"][w]) <= kr}
             REF |= {(x, w) for w in g.succ[x] if w not in al}
-    return r
+        rT += r > r0
+    return rT if star else r
 
 def sc(g, st):
     try: E, R = rows(g, st, cap=1500)
@@ -42,6 +49,7 @@ def sc(g, st):
             wch = sum(1 for t in range(a, b) if R[t]["W"] != R[t + 1]["W"])
             v = wch
             if MODE == "r": v = late(E, g, R, a, b, D)
+            if MODE == "rstar": v = late(E, g, R, a, b, D, star=True)
             if wch > n - 1 or v > n - 1: kill = 1
             best = max(best, v / (n - 1))
     return (1000 * kill + int(1000 * best), int(1000 * best), kill)

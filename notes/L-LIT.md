@@ -1,16 +1,14 @@
 # L-LIT notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point (2026-10-29 ~16:25Z by date -u; successor 4, Opus 5.5, D15/D18; T48)
-DONE this session (claude/l-lit; pushes via scripts/push.sh only):
-- 6c065788 handover check (container 4014 behind; fast-forwarded); push exit 0, VERIFY PASS (Oink smoke NOT RUN).
-- 55d45567 merge of trunk 51f52b57 (merge commit, no rebase); 0703a463 T48-sbc-embed-check.py (first form).
-- T48 (this push): docs/lit/T48-sbc-neighbours.md + T48-sbc-embed-check.py (SEGRET added): parametric shortest paths vs SBC (leapfrog =
-  parametric mechanism, quasi-poly floor for value+argmin proofs; F's run not one-parametric, SEGRET witness switchbestexp_1 (15,5));
-  DMDP/opponent-response literature (none counts response changes; Mei-Sun-Ye 2026 p.10 names it); Friedmann snare preprint OPENED.
+## Resume point (2026-10-29 ~16:50Z by date -u; successor 4, Opus 5.5, D15/D18; T49)
+DONE this session (claude/l-lit; pushes via scripts/push.sh only, all exit 0, VERIFY PASS, Oink smoke NOT RUN):
+- 6c065788 handover check; 0703a463 trunk merge + script v1; ca194a96 T48 (merged by Lead, trunk fae5725e); 4ff31a84 PIECES in the script.
+- T49 (this push): docs/lit/T49-tropical-simplex.md (Maat dictionary, transfer theorem + rule list, smoothed results do not reach parity,
+  PIECES ≈ SBC/2, Loff-Skomra one- vs two-player single-parameter breakpoints); T48 §1.5 clock hint RETRACTED (circular).
 IN FLIGHT: none.
 NEXT: the Lead's word.
-NEEDS: none from the owner (paywalled originals owner-optional).
+NEEDS: none from the owner.
 
 ## Queue
 - T40 primaries not opened: Condon 1993 (DIMACS 13), Pollatschek-Avi-Itzhak 1969 (Mgmt Sci 15), van der Wal 1976/1978 (cited via
@@ -386,6 +384,23 @@ NEEDS: none from the owner (paywalled originals owner-optional).
 | arXiv 1003.2976 v1 (Fearnley non-oblivious) sha256 7ac44213b8d8d633… | Def. 2, 3, 13; Prop. 14, 15, 16; p.10, p.12, p.13 | 2026-10-29 | agent C |
 | NOT opened (T48) | Gusfield JACM 1983 (ACM 403); Carstensen Math. Prog. 1983 (Springer login/429) and Michigan thesis (not online); Mulmuley-Shah JCSS 2001 (403; author page TLS/503); Karp-Orlin DAM 1981 (403); Kelner-Nikolova FOCS 2007 (TLS/503); Nikolova thesis (429); Erickson SODA 2010 (404); HKZ SODA 2014 (SIAM 403); Hansen-Zwick ISAAC 2010 full text (Springer); Madani-Thorup-Zwick TALG 2010 (ACM 403); DAM 2013 published version (sciencedirect not fetched, by rule) | 2026-10-29 | |
 | T48 search (opponent best-response change counts): arXiv API queries abs:"best response" AND abs:"strategy iteration" (0), abs:"counter strategy" AND abs:"strategy improvement" (0), abs:"Hoffman-Karp", abs:"symmetric strategy improvement", au:Strozecki, au:Hansen AND au:Zwick; extended web search | nothing found | 2026-10-29 | agent B |
+| T49 (2026-10-29) sources: opened by my subagents (scratchpad t49/A, t49/B), key quotes re-grepped by me (*) | | | |
+| arXiv 2509.16075 v2 (Maat) sha256 69706649fed1fac9… | Def. 3.1 p.6; Thm 3.4 p.8 (*); Thm 3.5 p.12; Thm 4.9; p.18 doubly exponential coefficients, «conceivable» tropical variant (*) | 2026-10-29 | |
+| arXiv 1308.0454 v2 (ABGJ, Tropicalizing the simplex algorithm) sha256 6e7f8188f3e51249… | Thm 1 p.2; p.3 «great leaps» (*); Prop-Def 19, 21 p.18; p.37 | 2026-10-29 | |
+| arXiv 1309.5925 v2 (ABGJ, Combinatorial simplex algorithms can solve MPGs) sha256 6ef1312e6a4875f1… | Thm 2.1 p.5; Thm 3.2, 3.12; p.13 combinatorial rule; Prop. 4.1 p.14; Thm 4.2 pp.15-16; Cor. 4.3 (*) | 2026-10-29 | |
+| arXiv 1406.5433 v2 (ABG, tropical shadow vertex on average) sha256 7deeec2eaf73d0c0… | Thm 7 p.10; Prop. 9; Thm 11, 13; Assumption B pp.14-15; p.16 flip invariance (*) | 2026-10-29 | |
+| arXiv 1405.4161 v3 (Long and winding central paths) sha256 b878327d8361a4e5… | Thm 10, 14, 27; p.2 | 2026-10-29 | |
+| Benchimol PhD thesis (HAL tel-01198482) sha256 18206ec26dc96f21… | p.44, p.53 defs; p.54 rule list (*); Thm 3.25 p.55; Thm 5.3 p.95; Thm 5.4 p.96 | 2026-10-29 | |
+| arXiv 1612.01890 v2 (Loho), 2503.17294 v1 (Loho-Maat-Skomra), 1802.07712 v1 (AGKS) | §3.3, Thm 65; related work; nothing on pivots | 2026-10-29 | |
+| arXiv cs/0111050 v7 (Spielman-Teng) sha256 0892cccbeb8afdee… | Thm 4.0.1 p.38; Thm 5.0.1 p.59 | 2026-10-29 | |
+| arXiv cs/0604055 v3 (Vershynin); 1711.05667 v4 (Dadush-Huiberts); 1412.6705 (Dadush-Hähnle); 2211.11860 v3 (Huiberts-Lee-Zhang, sha256 f6f78091d8d1690b…); 2504.04197 v2 (Bach-Huiberts, sha256 6647a097ed3c423d…); Kelner-Spielman STOC'06 (author PDF) | Thm 1.2; Thm 13 p.19; abstract; Thm 1.1-1.3; §1.1, Thm 57; Thm 3.2 | 2026-10-29 | HLZ log^5/4 vs BH log^7/4 discrepancy noted |
+| Amenta-Ziegler, Deformed products and maximal shadows (ps.gz, Ziegler page) sha256 03518a114443331f… | abstract: Θ(n^⌊d/2⌋) 2-D projections (*) | 2026-10-29 | Goldfarb NOT OPENED |
+| arXiv 1404.3320 (Adler-Papadimitriou-Rubinstein) sha256 5146d54ceb66138d…; 1404.0605 (Fearnley-Savani) | Thm 2 p.10 shadow vertex tractable (*); Thm 1-4 | 2026-10-29 | |
+| arXiv 2402.03975 v1 (Loff-Skomra) sha256 fbe498226a150670… | Thm 1.1 p.6; p.7 one-player ≤ n break points, two-player 2^Ω(n) (*); Lemma 2.3; p.14; Ex. 3.5 p.17 (*) | 2026-10-29 | |
+| arXiv 2610.22149 v1 (Loff-Skomra 2026) sha256 18d7ea9dab8dff7e…; 2610.14150 v1 (Asadi-Chatterjee-Luo) | Thm 1.2 p.5 (*); Def. 2, Thm 13 p.27, p.3 (*) | 2026-10-29 | |
+| arXiv 2212.00083 v1 (Christ-Yannakakis) sha256 ab6b525118aadbb3… | Thm 3 p.26 | 2026-10-29 | |
+| arXiv 2607.21055 v1 (Chillara-Gajjar-Raja); 2406.06936 v1 (Black-Criado); 2007.08387 v1 (Combes-Touati) | Thm 2-3 p.5; Thm 1.1; Thm 1 | 2026-10-29 | |
+| NOT opened (T49) | journal versions of ABGJ papers; Allamigeon-Gaubert-Joswig survey; Benchimol Ch. 6 body; Goldfarb 1983/1994; Borgwardt; Deshpande-Spielman; Boros et al. ICALP'11 / Algorithmica'18; Avis-Chvátal (Bland); Gaubert-Katz-Sergeev EPiC; Loff-Skomra / Disser-Loho-Maat-Mosis not re-read for pivots | 2026-10-29 | |
 
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
@@ -406,6 +421,9 @@ NEEDS: none from the owner (paywalled originals owner-optional).
 - T48 (2026-10-29): Gusfield's n^O(log n) route for SBC (embed F's run in a one-parameter family): DEAD. Obstruction: play SEGMENTS x -> y
   return after being replaced (SEGRET > 0), impossible for strict optima under affine costs; witness switchbestexp_1 pair (15, 5), Even vertex 16
   5 -> 14 -> 5 (docs/lit/T48-sbc-neighbours.md §1.4). Faithful embedding (edge availability by weights) dead by EVRET (switchbestexp_8: 5340).
+- T49 (2026-10-29): T48 §1.5 "Even clock + Carstensen network" attack hint: DEAD (circular). Obstruction: a one-parameter family
+  crosses at most as many breakpoints as its parameter takes values, and SBC ≤ #σ − 1 (SBC-EQ); the long run must exist first.
+- T49: "F's run is a 2-D shadow (shadow-vertex path)": DEAD, PIECES > 1 from switchbestexp_1 (2), switchbestexp_6 needs 29 pieces.
 
 ## Corrections log
 - 2026-10-23 (T26): N8d-barrier.md §0 and R54 §0 put Lemma 4.75 / Thm 4.76 on p.187; opened PDF: printed p.186 (PDF p.202). Reported as caveat 4.

@@ -704,3 +704,7 @@ o=$(STAR=1 python3 -I core/gp.py --one xing/instances/ccl_w48_n48.pg)
 grep -q "'D1:R_T/(n-1)': (0.02127659574468085, 1, 3, 48, 1, 'xing/instances/ccl_w48_n48.pg', 15, 18)" <<<"$o"; grep -q "^GP PASS$" <<<"$o"
 o=$(MUT=all STAR=1 python3 -I core/gp.py --one xing/instances/ccl_w48_n48.pg); grep -q "^GP FAIL$" <<<"$o"
 echo "si (box 31 §6: GP*, FW-R* on rlin_cex_n40 and ccl_w48_n48; MUT=all control fails): PASS"
+# box 31 packet docs/si/P-N5-GP-box31.md (frozen): its 14 verbatim quotes hold at their pinned commit; shifting every line range by one fails.
+o=$(python3 -I rund/quotecheck.py ../../docs/si/P-N5-GP-box31.md); grep -q "^quotes=14 bad=0$" <<<"$o"; grep -q "^QUOTES PASS$" <<<"$o"
+o=$(python3 -I rund/quotecheck.py ../../docs/si/P-N5-GP-box31.md --mut); grep -q "^QUOTES FAIL$" <<<"$o"
+echo "si (box 31 packet P-N5-GP: 14 quotes exact; shifted control fails): PASS"
