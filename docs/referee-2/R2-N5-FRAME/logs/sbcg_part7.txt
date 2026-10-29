@@ -1,0 +1,143 @@
+DONE-FILE new/box59/out/rnd/r194_n60d2.pg
+DONE-FILE new/box59/out/rnd/r195_n60d2.pg
+DONE-FILE new/box59/out/rnd/r196_n60d2.pg
+DONE-FILE new/box59/out/rnd/r197_n60d2.pg
+DONE-FILE new/box59/out/rnd/r198_n60d2.pg
+DONE-FILE new/box59/out/rnd/r199_n60d2.pg
+DONE-FILE new/box59/out/rnd/r19_n70.pg
+DONE-FILE new/box59/out/rnd/r1_n30.pg
+DONE-FILE new/box59/out/rnd/r200_n60d2.pg
+DONE-FILE new/box59/out/rnd/r20_n80.pg
+DONE-FILE new/box59/out/rnd/r21_n20.pg
+DONE-FILE new/box59/out/rnd/r22_n30.pg
+DONE-FILE new/box59/out/rnd/r23_n40.pg
+DONE-FILE new/box59/out/rnd/r24_n50.pg
+DONE-FILE new/box59/out/rnd/r25_n60.pg
+DONE-FILE new/box59/out/rnd/r26_n70.pg
+DONE-FILE new/box59/out/rnd/r27_n80.pg
+DONE-FILE new/box59/out/rnd/r28_n20.pg
+DONE-FILE new/box59/out/rnd/r29_n30.pg
+DONE-FILE new/box59/out/rnd/r2_n40.pg
+DONE-FILE new/box59/out/rnd/r30_n40.pg
+DONE-FILE new/box59/out/rnd/r31_n50.pg
+DONE-FILE new/box59/out/rnd/r32_n60.pg
+DONE-FILE new/box59/out/rnd/r33_n70.pg
+DONE-FILE new/box59/out/rnd/r34_n80.pg
+DONE-FILE new/box59/out/rnd/r35_n20.pg
+DONE-FILE new/box59/out/rnd/r36_n30.pg
+DONE-FILE new/box59/out/rnd/r37_n40.pg
+DONE-FILE new/box59/out/rnd/r38_n50.pg
+DONE-FILE new/box59/out/rnd/r39_n60.pg
+DONE-FILE new/box59/out/rnd/r3_n50.pg
+DONE-FILE new/box59/out/rnd/r40_n70.pg
+DONE-FILE new/box59/out/rnd/r41_n80.pg
+DONE-FILE new/box59/out/rnd/r42_n20.pg
+DONE-FILE new/box59/out/rnd/r43_n30.pg
+DONE-FILE new/box59/out/rnd/r44_n40.pg
+DONE-FILE new/box59/out/rnd/r45_n50.pg
+DONE-FILE new/box59/out/rnd/r46_n60.pg
+DONE-FILE new/box59/out/rnd/r47_n70.pg
+DONE-FILE new/box59/out/rnd/r48_n80.pg
+DONE-FILE new/box59/out/rnd/r49_n20.pg
+DONE-FILE new/box59/out/rnd/r4_n60.pg
+DONE-FILE new/box59/out/rnd/r50_n30.pg
+DONE-FILE new/box59/out/rnd/r51_n40.pg
+DONE-FILE new/box59/out/rnd/r52_n50.pg
+DONE-FILE new/box59/out/rnd/r53_n60.pg
+DONE-FILE new/box59/out/rnd/r54_n70.pg
+DONE-FILE new/box59/out/rnd/r55_n80.pg
+DONE-FILE new/box59/out/rnd/r56_n20.pg
+DONE-FILE new/box59/out/rnd/r57_n30.pg
+DONE-FILE new/box59/out/rnd/r58_n40.pg
+DONE-FILE new/box59/out/rnd/r59_n50.pg
+DONE-FILE new/box59/out/rnd/r5_n70.pg
+DONE-FILE new/box59/out/rnd/r60_n60.pg
+DONE-FILE new/box59/out/rnd/r61_n70.pg
+DONE-FILE new/box59/out/rnd/r62_n80.pg
+DONE-FILE new/box59/out/rnd/r63_n20.pg
+DONE-FILE new/box59/out/rnd/r64_n30.pg
+DONE-FILE new/box59/out/rnd/r65_n40.pg
+DONE-FILE new/box59/out/rnd/r66_n50.pg
+DONE-FILE new/box59/out/rnd/r67_n60.pg
+DONE-FILE new/box59/out/rnd/r68_n70.pg
+DONE-FILE new/box59/out/rnd/r69_n80.pg
+DONE-FILE new/box59/out/rnd/r6_n80.pg
+DONE-FILE new/box59/out/rnd/r70_n20.pg
+DONE-FILE new/box59/out/rnd/r71_n30.pg
+DONE-FILE new/box59/out/rnd/r72_n40.pg
+DONE-FILE new/box59/out/rnd/r73_n50.pg
+DONE-FILE new/box59/out/rnd/r74_n60.pg
+DONE-FILE new/box59/out/rnd/r75_n70.pg
+DONE-FILE new/box59/out/rnd/r76_n80.pg
+DONE-FILE new/box59/out/rnd/r77_n20.pg
+DONE-FILE new/box59/out/rnd/r78_n30.pg
+DONE-FILE new/box59/out/rnd/r79_n40.pg
+DONE-FILE new/box59/out/rnd/r7_n20.pg
+DONE-FILE new/box59/out/rnd/r80_n50.pg
+DONE-FILE new/box59/out/rnd/r81_n60.pg
+DONE-FILE new/box59/out/rnd/r82_n70.pg
+DONE-FILE new/box59/out/rnd/r83_n80.pg
+DONE-FILE new/box59/out/rnd/r84_n20.pg
+DONE-FILE new/box59/out/rnd/r85_n30.pg
+DONE-FILE new/box59/out/rnd/r86_n40.pg
+DONE-FILE new/box59/out/rnd/r87_n50.pg
+DONE-FILE new/box59/out/rnd/r88_n60.pg
+DONE-FILE new/box59/out/rnd/r89_n70.pg
+DONE-FILE new/box59/out/rnd/r8_n30.pg
+DONE-FILE new/box59/out/rnd/r90_n80.pg
+DONE-FILE new/box59/out/rnd/r91_n20.pg
+DONE-FILE new/box59/out/rnd/r92_n30.pg
+DONE-FILE new/box59/out/rnd/r93_n40.pg
+DONE-FILE new/box59/out/rnd/r94_n50.pg
+DONE-FILE new/box59/out/rnd/r95_n60.pg
+DONE-FILE new/box59/out/rnd/r96_n70.pg
+DONE-FILE new/box59/out/rnd/r97_n80.pg
+DONE-FILE new/box59/out/rnd/r98_n20.pg
+DONE-FILE new/box59/out/rnd/r99_n30.pg
+DONE-FILE new/box59/out/rnd/r9_n40.pg
+DONE-FILE new/box59/out/fcobsP_3.pg
+DONE-FILE new/box59/out/fcobsP_4.pg
+DONE-FILE new/box59/out/fcobs_6.pg
+MODE files /tmp/claude-0/-home-user-parity-games-challange/dcf76fbb-3694-56a4-b493-c44b27344cc8/scratchpad/frsb_07 1 experiments/ PCAP 200 NODECAP 20000 OFCAP 400 OFNODE 20000 GPMAX 60 MAXT 3000
+CF_edges: 15592
+CFa_checks: 13003
+CONS_checks: 26678
+DORD_pairs: 4528183
+EF_checks: 880
+FB56_checks: 440
+FT2_checks: 16338
+FWR_checks: 454
+GPS_paths: 1574977
+GPS_paths_notfrozen: 1574817
+LR_checks: 2316
+OF_edges: 12309
+OF_hits: 1079
+OF_truncated_unknown: 230
+OF_unprot_in_It: 1801
+RR_checks: 36
+RR_tight: 2
+SM_checks: 22133
+WM_checks: 187
+X_OF_noH3e: 164
+X_OF_noH3r: 139
+X_SM_W: 1802
+X_WRUN_notfrozen: 9
+lamU_runs: 296
+late_adoptions: 41
+runs: 100
+stretches: 407
+transitions: 500
+wruns: 454
+max maxRT: 4
+max maxWCH: 44
+max max_FL: 1
+max max_NMU_unp: 1
+max max_PCHU_unp: 2
+max max_Q: 3
+max max_RS: 4
+max max_fbS: 2
+max max_stretch: 44
+max max_tau_changes: 9
+max max_unp_frac_pct: 72
+max max_wrun: 44
+RESULT PASS violations 0

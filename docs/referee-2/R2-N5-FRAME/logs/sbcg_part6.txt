@@ -1,0 +1,137 @@
+DONE-FILE new/box59/out/rnd/r107_n40.pg
+DONE-FILE new/box59/out/rnd/r108_n50.pg
+DONE-FILE new/box59/out/rnd/r109_n60.pg
+DONE-FILE new/box59/out/rnd/r10_n50.pg
+DONE-FILE new/box59/out/rnd/r110_n70.pg
+DONE-FILE new/box59/out/rnd/r111_n80.pg
+DONE-FILE new/box59/out/rnd/r112_n20.pg
+DONE-FILE new/box59/out/rnd/r113_n30.pg
+DONE-FILE new/box59/out/rnd/r114_n40.pg
+DONE-FILE new/box59/out/rnd/r115_n50.pg
+DONE-FILE new/box59/out/rnd/r116_n60.pg
+DONE-FILE new/box59/out/rnd/r117_n70.pg
+DONE-FILE new/box59/out/rnd/r118_n80.pg
+DONE-FILE new/box59/out/rnd/r119_n20.pg
+DONE-FILE new/box59/out/rnd/r11_n60.pg
+DONE-FILE new/box59/out/rnd/r120_n30.pg
+DONE-FILE new/box59/out/rnd/r121_n40.pg
+DONE-FILE new/box59/out/rnd/r122_n50.pg
+DONE-FILE new/box59/out/rnd/r123_n60.pg
+DONE-FILE new/box59/out/rnd/r124_n70.pg
+DONE-FILE new/box59/out/rnd/r125_n80.pg
+DONE-FILE new/box59/out/rnd/r126_n20.pg
+DONE-FILE new/box59/out/rnd/r127_n30.pg
+DONE-FILE new/box59/out/rnd/r128_n40.pg
+DONE-FILE new/box59/out/rnd/r129_n50.pg
+DONE-FILE new/box59/out/rnd/r12_n70.pg
+DONE-FILE new/box59/out/rnd/r130_n60.pg
+DONE-FILE new/box59/out/rnd/r131_n70.pg
+DONE-FILE new/box59/out/rnd/r132_n80.pg
+DONE-FILE new/box59/out/rnd/r133_n20.pg
+DONE-FILE new/box59/out/rnd/r134_n30.pg
+DONE-FILE new/box59/out/rnd/r135_n40.pg
+DONE-FILE new/box59/out/rnd/r136_n50.pg
+DONE-FILE new/box59/out/rnd/r137_n60.pg
+DONE-FILE new/box59/out/rnd/r138_n70.pg
+DONE-FILE new/box59/out/rnd/r139_n80.pg
+DONE-FILE new/box59/out/rnd/r13_n80.pg
+DONE-FILE new/box59/out/rnd/r140_n20.pg
+DONE-FILE new/box59/out/rnd/r141_n30.pg
+DONE-FILE new/box59/out/rnd/r142_n40.pg
+DONE-FILE new/box59/out/rnd/r143_n50.pg
+DONE-FILE new/box59/out/rnd/r144_n60.pg
+DONE-FILE new/box59/out/rnd/r145_n70.pg
+DONE-FILE new/box59/out/rnd/r146_n80.pg
+DONE-FILE new/box59/out/rnd/r147_n20.pg
+DONE-FILE new/box59/out/rnd/r148_n30.pg
+DONE-FILE new/box59/out/rnd/r149_n40.pg
+DONE-FILE new/box59/out/rnd/r14_n20.pg
+DONE-FILE new/box59/out/rnd/r150_n50.pg
+DONE-FILE new/box59/out/rnd/r151_n60d2.pg
+DONE-FILE new/box59/out/rnd/r152_n60d2.pg
+DONE-FILE new/box59/out/rnd/r153_n60d2.pg
+DONE-FILE new/box59/out/rnd/r154_n60d2.pg
+DONE-FILE new/box59/out/rnd/r155_n60d2.pg
+DONE-FILE new/box59/out/rnd/r156_n60d2.pg
+DONE-FILE new/box59/out/rnd/r157_n60d2.pg
+DONE-FILE new/box59/out/rnd/r158_n60d2.pg
+DONE-FILE new/box59/out/rnd/r159_n60d2.pg
+DONE-FILE new/box59/out/rnd/r15_n30.pg
+DONE-FILE new/box59/out/rnd/r160_n60d2.pg
+DONE-FILE new/box59/out/rnd/r161_n60d2.pg
+DONE-FILE new/box59/out/rnd/r162_n60d2.pg
+DONE-FILE new/box59/out/rnd/r163_n60d2.pg
+DONE-FILE new/box59/out/rnd/r164_n60d2.pg
+DONE-FILE new/box59/out/rnd/r165_n60d2.pg
+DONE-FILE new/box59/out/rnd/r166_n60d2.pg
+DONE-FILE new/box59/out/rnd/r167_n60d2.pg
+DONE-FILE new/box59/out/rnd/r168_n60d2.pg
+DONE-FILE new/box59/out/rnd/r169_n60d2.pg
+DONE-FILE new/box59/out/rnd/r16_n40.pg
+DONE-FILE new/box59/out/rnd/r170_n60d2.pg
+DONE-FILE new/box59/out/rnd/r171_n60d2.pg
+DONE-FILE new/box59/out/rnd/r172_n60d2.pg
+DONE-FILE new/box59/out/rnd/r173_n60d2.pg
+DONE-FILE new/box59/out/rnd/r174_n60d2.pg
+DONE-FILE new/box59/out/rnd/r175_n60d2.pg
+DONE-FILE new/box59/out/rnd/r176_n60d2.pg
+DONE-FILE new/box59/out/rnd/r177_n60d2.pg
+DONE-FILE new/box59/out/rnd/r178_n60d2.pg
+DONE-FILE new/box59/out/rnd/r179_n60d2.pg
+DONE-FILE new/box59/out/rnd/r17_n50.pg
+DONE-FILE new/box59/out/rnd/r180_n60d2.pg
+DONE-FILE new/box59/out/rnd/r181_n60d2.pg
+DONE-FILE new/box59/out/rnd/r182_n60d2.pg
+DONE-FILE new/box59/out/rnd/r183_n60d2.pg
+DONE-FILE new/box59/out/rnd/r184_n60d2.pg
+DONE-FILE new/box59/out/rnd/r185_n60d2.pg
+DONE-FILE new/box59/out/rnd/r186_n60d2.pg
+DONE-FILE new/box59/out/rnd/r187_n60d2.pg
+DONE-FILE new/box59/out/rnd/r188_n60d2.pg
+DONE-FILE new/box59/out/rnd/r189_n60d2.pg
+DONE-FILE new/box59/out/rnd/r18_n60.pg
+DONE-FILE new/box59/out/rnd/r190_n60d2.pg
+DONE-FILE new/box59/out/rnd/r191_n60d2.pg
+DONE-FILE new/box59/out/rnd/r192_n60d2.pg
+DONE-FILE new/box59/out/rnd/r193_n60d2.pg
+MODE files /tmp/claude-0/-home-user-parity-games-challange/dcf76fbb-3694-56a4-b493-c44b27344cc8/scratchpad/frsb_06 1 experiments/ PCAP 200 NODECAP 20000 OFCAP 400 OFNODE 20000 GPMAX 60 MAXT 3000
+CF_edges: 14394
+CFa_checks: 12706
+CONS_checks: 23060
+DORD_pairs: 678454
+EF_checks: 371
+FB56_checks: 401
+FT2_checks: 9531
+FWR_checks: 405
+GPS_paths: 244
+GPS_paths_notfrozen: 17
+LR_checks: 419
+OF_edges: 8957
+OF_hits: 514
+OF_truncated_unknown: 1
+OF_unprot_in_It: 1488
+SM_checks: 9389
+WM_checks: 47
+X_OF_noH3e: 113
+X_OF_noH3r: 79
+X_SM_W: 1555
+X_WRUN_notfrozen: 1
+fb_lamXi_changing: 1
+lamU_runs: 292
+runs: 96
+stretches: 375
+transitions: 330
+wruns: 405
+max maxRT: 0
+max maxWCH: 1
+max max_FL: 1
+max max_NMU_unp: 2
+max max_PCHU_unp: 2
+max max_Q: 2
+max max_RS: 0
+max max_fbS: 1
+max max_stretch: 2
+max max_tau_changes: 7
+max max_unp_frac_pct: 68
+max max_wrun: 1
+RESULT PASS violations 0
