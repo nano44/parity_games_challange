@@ -2,7 +2,9 @@
 """L-SI box 27: kill search for CONJECTURE WSINK-READY (lay/wsink.py). Score = 100 * (WSINK-READY, W-SINK, SINK-OFF and SEG-LAST failures)
 + 3 * (steps with no vertex that is both a W-sink and an H-sink) + (unready W-sinks). Third component = failures (> 0 is a kill).
 OBJ=T adds 5 * (steps with an unready W-sink). OBJ=H (after W-GROW died, lay/instances/wgrow_kill_n90):
-kill = H-GROW failure (third component) or SINK-SWITCH / SEG-LAST / sink-lemma failure (x 1000); W-GROW failures only shape the score. Mutations as lwp/xclimb.py. Usage: wclimb.py SEED.pg SEED.start|- STEPS RNGSEED NMAX OUTPREFIX"""
+kill = H-GROW failure (third component) or SINK-SWITCH / SEG-LAST / sink-lemma failure (x 1000); W-GROW failures only shape the score.
+OBJ=S (after H-GROW died, lay/instances/hgrow_kill_n89): kill = SINK-GROW / SEG-LAST / sink-lemma failure; shaping 10 * (W-GROW and
+H-GROW failures) + sum over steps of 100 // (1 + ready W-sinks + H-sinks switching to target). Mutations as lwp/xclimb.py. Usage: wclimb.py SEED.pg SEED.start|- STEPS RNGSEED NMAX OUTPREFIX"""
 import sys, os, random
 os.environ["PMODE"] = "1"
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
@@ -24,6 +26,8 @@ def sc(g, st):
     d = wsscore(g, R); f2, _ = slscore(g, R); f = d["LEM"] + d["SS"] + f2
     if OBJ == "H":                        # box 27 after W-GROW died: kill = H-GROW, SINK-SWITCH, sink-lemma or SEG-LAST failure
         return (1000 * f + 100 * d["HG"] + 20 * d["WSR"] + 5 * d["S"] + 3 * d["K"] + d["U"], d["WSR"], 1000 * f + d["HG"])
+    if OBJ == "S":                        # after W-GROW and H-GROW died: kill = SINK-GROW / SEG-LAST / sink-lemma failure
+        return (1000 * f + 10 * (d["HG"] + d["WSR"]) + d["SUP"] + d["U"], d["HG"] + d["WSR"], f)
     f += d["WSR"]
     if OBJ == "T": return (100 * f + 5 * d["S"] + 3 * d["K"] + d["U"], d["S"], f)   # OBJ=T: also steps with an unready W-sink
     return (100 * f + 3 * d["K"] + d["U"], d["K"], f)

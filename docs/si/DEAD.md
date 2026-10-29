@@ -421,3 +421,11 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
   recomputed from (σ_t, τ) directly (τ constant on [0, 3]). Obstruction: the W-sinks' common target 5 is W-final while its honest value
   still rises at 1 → 2 (its own H-chain), so the arena at 1 excludes it. SEG-LAST holds (43 and 55 switch at 1 for the last time), and so
   does CONJECTURE H-GROW (the H-sink 55 switches to its target 48 at 1).
+- H-GROW («... the H-settled part of E_b grows at every transition»; equivalently «some H-sink switches to its target at every step»; with
+  Theorem SINK-STEP it would prove SEG-LAST without (H4′_rel)): killed by experiments/si/lay/instances/hgrow_kill_n89.pg (n 89, sha1
+  998a4a5e770c97b409ebf9f0a9d0ca08fac9bcbd; S3 start written out as hgrow_kill_n89.start, sha1 5895810a61760e4180d70202911768bd75f2beea),
+  found by lay/wclimb.py OBJ=H from lwp/instances/cycset_kill_n60 in 1,208 steps. Segment [1, 8]: H-GROW fails at 6 of its 7 steps
+  (t = 1..6): the H-sinks 1, 46, 73 (σ = 27, target 23, ready from t = 1) wait while a W-frame snake settles one W-sink per step
+  (38/70 → 48, 49 → 38, 64 → 49, 77/78 → 64, 22 → 77, 28/33 → 22), and switch only at t = 7, when their W-chain end 34 settles. Checks: n5b
+  state sequence identical (13 iterations, 0 fallbacks); honest successor maps (σ̄) and improving sets equal n5b's at all 14 states.
+  Obstruction: an H-sink's W-chain is still unsettled, so S4a (W-optimal) does not yet take its target. W-GROW, SINK-GROW and SEG-LAST hold.
