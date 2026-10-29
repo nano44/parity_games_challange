@@ -97,6 +97,19 @@ in rationals (rlp.cert_y). mkcert.py writes the compact certificate.
   and those quantities are already polynomially bounded. The runs that defeat the aggregates are short library runs whose Ξ path sets change
   under a fixed top, the part TOP-SHAPE leaves open (R84: «NOT the P-changes under a fixed top»).
 
+### 3b. Family-uniform templates (Lead 14:15Z: «a uniform template across a scaling family (runquad, hntop, DLC_d) is the informative test»)
+One F45 coefficient vector shared by every member of a family (rlp.py mode uni over the family; written 14:2xZ by date -u):
+| family | members | transitions | shared F45 function | dominant features (signs) |
+| --- | --- | --- | --- | --- |
+| topfix_N (R109) | N = 3, 4, 6, 8, 10 | 1,053 | FEASIBLE | W_cr (+), X_pc (−), nIs (−), W_m0 (+) |
+| runquad_K (R106) | K = 3, 8 | 285 | FEASIBLE | W_cr (+), W_pp (−) |
+| DLC_d (box 51) | d = 1..4 | 56 | FEASIBLE, small integers: 2·X_pc − X_ln − 2·nIs | |
+| topfix_N_cmp (box 52) | N = 3, 4, 6, 8 | 628 | FEASIBLE | X_cr, W_cr, X_pc, X_ln, nIs, nD, W_m0 |
+- The integer coefficients printed in the logs (up to ~10^16) come from rational rounding of the LP solution, not from the families. The LP
+  solutions are moderate. Every family is ranked mainly by the cycle-reward features (W_cr, X_cr), i.e. by CN-W-type progress that is
+  already polynomially bounded. So the templates exist exactly where a polynomial bound is already known. The certified obstructions of §2
+  sit on library runs outside these families. DATA, not a CONJECTURE.
+
 ## 4. READING: what this says about the method
 - Necessary content. A polynomial bound for N5 needs, per game, SOME ranking function with polynomial range (T42 §3). Lemma CIRCUIT shows that
   for each fixed polynomial-size feature family tried here there are library games with none. The EB kill is unconditional on coefficients:

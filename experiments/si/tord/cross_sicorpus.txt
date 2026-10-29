@@ -1,0 +1,3 @@
+RE_V=1 SKIPPED_input=1 fw_same=279 fw_same_tc>0=150
+maxima: {'tc': (19, 'experiments/si/riselast/instances/rl_b.pg', 12, 31, 32), 'maxent': (1, 'experiments/si/coarse/instances/box9/cl9_mn_a.pg', 17, 18, 32), 'totcross': (116, 'experiments/si/runlin/instances/runfam_K100.pg', 52, 167, 139), 'maxext': (1, 'experiments/si/lay/out/s_ka.pg', 8, 9, 109)}
+EXAMPLE ('RE', 'experiments/si/xing/instances/zcl_rx_n48.pg', 19, 25, [27, 35, 20], [('out', 20), ('in', 24)], 48)
