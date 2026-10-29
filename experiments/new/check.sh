@@ -174,4 +174,17 @@ else
   echo "box 53 RANK checks: FAILED"; exit 1
 fi
 rm -f $bad
+# Box 54 (successor 32): N5-SF: fallback instance (NOFB dead), W-frame twin cycles on theta_thf16, switchbestexp_2 (SF 58 vs N5 32), topfix_3 (SF 64).
+v1=$(python3 -I box54/sfrun.py ../n5-exhaustive/instances/n3all_maxph_0.pg ../n5-exhaustive/instances/n3all_maxph_0.start)
+v2=$(MODE=w python3 -I box54/sfrun.py ../red/n5inj/instances/theta_thf16.pg)
+v3=$(python3 -I box54/sfrun.py box54/out/switchbestexp_2.pg)
+v4=$(python3 -I box54/sfrun.py box52/out/topfix_n3.pg box52/out/topfix_n3.start)
+ok=1; for v in "$v1" "$v3" "$v4"; do for k in WIN OPT R17 CYC; do grep -q "^$k PASS" <<<"$v" || ok=0; done; done
+if [ $ok = 1 ] && grep -q "^ROW ../n5-exhaustive/instances/n3all_maxph_0.pg 3 3 1 2 1 False" <<<"$v1" && grep -q "^CYC FAIL" <<<"$v2" && \
+   grep -q "^ROW box54/out/switchbestexp_2.pg 60 32 2 58 0 False 4 0 5 19" <<<"$v3" && grep -q "^ROW box52/out/topfix_n3.pg 63 61 2 64 0 False" <<<"$v4" && \
+   [ "$(sha1sum ../red/n5inj/instances/theta_thf16.pg | cut -d' ' -f1)" = "90ed13cf9e2c81c1aa3ab3c2058ac736a1ed489b" ]; then
+  echo "box 54 N5-SF: correct on the pins, fallback fires (n3all_maxph_0), W-frame twin cycles (theta_thf16), switchbestexp_2 58 vs 32: PASS"
+else
+  echo "box 54 N5-SF checks: FAILED"; exit 1
+fi
 rm -rf "$tmp"
