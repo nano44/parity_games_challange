@@ -2,10 +2,11 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-29 ~11:4xZ (successor, Opus 5.5): T36 DONE docs/lit/T36-n5-reduction-map.md (owner-facing map: R47 -> R15/R80 -> SW-RETURN ->
-LEN-MONO -> COMPOSE (l-si f372bc6b, lane) -> MATCH-PHI (REFEREE-2 signed 5ba3e21d) -> OPEN NM*, NM*^U; alt chains; VC-BOUND af20b1e1).
-Packets: P-N5-MATCHPHI 12b7d12a (routed; REFEREE-2 notes N-MP-1..5 to go into P-N5-MATCHPHI-fixes when both reports are in),
-P-N5-GATESHUT 1298d8b2 (frozen), P-N5-MPGS withdrawn. Next: Lead's routing.
+2026-10-29 ~12:0xZ (successor, Opus 5.5): T37 DONE docs/lit/T37-exponential-families-classified.md: all parity/sink-MDP exponential
+SI/PI families are CARRY-type (1-sink); only deterministic-MDP families (Zhong-Ye Thm 6.1, HZ/ACR) are CYCLE-type (blocked by R47);
+3-ingredient sequencing (hidden-profit gate, index-ordered lane, one-step reset); N5: only tau-gates hide, allowed within a lambda-run;
+GATE-SHUT forces reopenings to violate (H1)/(H2)/(H3). Review object P-N5-MPGS (a23179b0); MATCHPHI, GATESHUT superseded copies
+(fixes b5fac397); N-MP-1..5 go into P-N5-MPGS-fixes when reports are in. Next: Lead's routing.
 
 ## Queue
 - Not opened (blocked or paywalled), needed only if a lane depends on them: Friedmann RAIRO 2011 (403); FHZ SODA/STOC 2011;
@@ -285,6 +286,14 @@ P-N5-GATESHUT 1298d8b2 (frozen), P-N5-MPGS withdrawn. Next: Lead's routing.
 | arXiv 2211.15602 v2 (Goenka et al.) sha256 e62fb2eceb298d98… | abstract; Defs 13-18; Lemmas 7-8; Thms 4-5; Cors 1-2 (§4) | 2026-10-29 | T35 |
 | arXiv 2505.00795 v1 (Mukherjee, Kalyanakrishnan) sha256 7b856cc9010c6c06… | abstract, §1.1, Thm 1.2 | 2026-10-29 | T35 |
 | arXiv 2610.22149 v1 (Loff, Skomra, smoothed PI/VI) sha256 18d7ea9dab8dff7e… | title only, not used | 2026-10-29 | T35 |
+| arXiv 1003.3418 v1 (Fearnley) sha256 0964f029581ae02e… (re-opened) | §4: sink c_{n+1} p.5; Prop. 2, 4 p.6; §4.2 deceleration lane p.6-7; pi^B p.9; Props 12-16 p.10-11; Thm 17, 18 p.12 | 2026-10-29 | T37 |
+| arXiv 1911.01074 v2 (Disser, Friedmann, Hopp; Zadeh) sha256 ba3242140c0832ac… | abstract; §2.1 sink games p.4; §3 cycle centers p.6; Thm 6.18 p.31 | 2026-10-29 | T37 |
+| arXiv 1305.3944 v1 (Avis, Friedmann; Cunningham) sha256 d1fafb8b5d0b822c… | abstract; sink game def p.10; Thm 4 p.15; Thm 6 | 2026-10-29 | T37 |
+| arXiv 1410.7871 v1 (FHZ errata) sha256 d89ec8c329a4f113… (re-opened) | p.1-3 status | 2026-10-29 | T37 |
+| arXiv 2309.02223 v1 (van Dijk, Loho, Maat) sha256 10e6794d82aba465… (re-opened) | abstract; p.3 key insight; Def. 2 p.4; Thm 1 p.2 | 2026-10-29 | T37 |
+| arXiv 2512.16684 v2 (Disser, Loho, Maat, Mosis) sha256 fa9b42e397e3e434… (re-opened) | abstract; Thm 4.3 p.13; Thm 5.1, 5.3 | 2026-10-29 | T37 |
+| arXiv 2509.16075 v2 (Maat) sha256 69706649fed1fac9… | abstract only (connection result, no lower-bound family) | 2026-10-29 | T37 |
+| arXiv 1106.0778 v2 (Friedmann), further | §6.3 cycle gate Table 3, Lemmas 6.5-6.6; §6.4 Table 4 p.16, Lemma 6.7 p.17; §6.5 phases, Lemma 6.11 p.21, 6.12 p.22 | 2026-10-29 | T37 |
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
 - T17 process dead end: subagent GitHub MCP search outside the repo scope was a rule breach (see Things only I know); never repeat it.
