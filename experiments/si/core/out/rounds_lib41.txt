@@ -1,0 +1,17 @@
+HC_toprep=0 PREINC=686 TOPREP=35 inc_len_only=96 inc_mask=590 inc_mask_top_added=310 phases=519 phases_TD=512 round_A=63 round_high_climb=27 round_tails_equal=36 rounds=63
+columns: value, n, phase length, TD, game, a, b
+MAX GC (1, 40, 1, True, '../experiments/red/n5inj/instances/theta_tp40.pg', 2, 3)
+MAX entries/vertex (2, 24, 4, True, '../experiments/red/xing/instances/x31_re24.pg', 1, 5)
+MAX lenonly/vertex (2, 48, 14, True, '../experiments/new/box28/instances/fbref_n48.pg', 37, 51)
+MAX preinc/vertex (11, 16, 11, True, '../experiments/new/box25/instances/rtt16.pg', 0, 11)
+MAX preinc_total/(n-1) (2.8297872340425534, 48, 10, True, '../experiments/new/box25/instances/rttf48.pg', 1, 11)
+MAX rounds/vertex (2, 24, 4, True, '../experiments/red/xing/instances/x31_re24.pg', 1, 5)
+MAX toprep/vertex (5, 16, 11, True, '../experiments/new/box25/instances/rtt16.pg', 0, 11)
+EXAMPLE ('TOPREP', '../experiments/new/box25/instances/rtt16.pg', 0, 11, 'x', 8, 't', 4, 'rank', 5)
+EXAMPLE ('TOPREP', '../experiments/new/box25/instances/rtt16.pg', 0, 11, 'x', 8, 't', 8, 'rank', 11)
+EXAMPLE ('TOPREP', '../experiments/new/box25/instances/rtt16.pg', 0, 11, 'x', 8, 't', 9, 'rank', 3)
+EXAMPLE ('TOPREP', '../experiments/new/box25/instances/rtt16.pg', 0, 11, 'x', 8, 't', 10, 'rank', 5)
+EXAMPLE ('TOPREP', '../experiments/new/box25/instances/rtt16.pg', 0, 11, 'x', 8, 't', 11, 'rank', 2)
+EXAMPLE ('TOPREP', '../experiments/new/box25/instances/rtt16.pg', 0, 11, 'x', 11, 't', 9, 'rank', 11)
+EXAMPLE ('TOPREP', '../experiments/new/box25/instances/rtt16.pg', 0, 11, 'x', 12, 't', 10, 'rank', 5)
+EXAMPLE ('TOPREP', '../experiments/new/box25/instances/rtt24.pg', 1, 11, 'x', 8, 't', 7, 'rank', 22)

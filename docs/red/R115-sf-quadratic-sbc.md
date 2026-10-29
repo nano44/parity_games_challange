@@ -57,6 +57,35 @@ Engines and checks as in R114 §0 (sf2.py SPEC mode = L-NEW's n5sf.py; Oink zlk 
 - Masks at N = 10 (50 random masks, in flight): best so far 0100000110, 2318 iterations / SBC 160, against fc10's 1753 / 100. Sparse
   masks can beat fcN at fixed N. Their growth with N is not measured.
 
+- Single-edge and prefix masks at N = 8 (sf2; fc8 = 1021 / 64). One kept edge f_p → c: p = 0..7 gives 1315, 1321, 1281, 1213, 1135, 1065,
+  1021, 1021 iterations (SBC 106 .. 64). The kept bit resets and re-sets after every higher set ("1− 1+" in the trace): a constant factor.
+  Prefixes 11000000 / 11100000 / 11110000 / 11111000 collapse to 355 / 355 / 382 / 424, because adjacent low f → c edges bring back the
+  stale-escape short-cut. Suffixes 00000011 / 00000111 / 00001111 give 1021 / 1065 / 1140. N = 10: p = 1 → 2313, p = 2 → 2299 (fc10 1753).
+  READING: binary resets on a small set of bits buy at most a constant factor; on a growing set N5-SF short-cuts them.
+
+- Lead check (a), 17:49Z: I^glo on fcN (evseq.py --rule glo) gives 215 / 346 σ-changes at N = 4 / 5, the SAME as N5-SF. The shadow
+  differs at only 2 / 3 steps, all of the harmless type (a) (v_i → r_{i+1} vs v_{i+1}; R114 §4). So on fcN F has NO stale-reset lags:
+  N5-SF = I^glo up to tie-type steps. The polynomial ceiling comes from the unary counter itself, not from N5-SF's optimism. Removing
+  f_i → c removes the binary reset for I^glo too. L-NEW §3 condition (ii) holds trivially: no non-top bit ever resets.
+
+## 2c. Lead 17:49Z / L-NEW BOX 59 follow-ups (DATA; 18:0xZ)
+- CONJECTURE PV (L-NEW 34: "every Odd vertex changes its best reply ≤ n times along F's run") is FALSE as stated. On fcN + observer
+  (sbev.py N --drop fc,obs; S3 start), the observer o flips 198 times at N = 4 (n 113, sha1 08b6583e739e) and 492 times at N = 6 (n 163,
+  sha1 e6ad362a05d5). Its two choices P0 / P1 are Even selectors over the even / odd lane entries, and P0 switches 268 times at N = 6.
+  Iterations 215 / 520, as on fcN. o is irrelevant to Even's run, so the counterexample is to PV as stated, not to a relevance-restricted
+  PV. On plain fcN the maximum is h0 with 2N − 1 flips (11 at N = 6).
+- Gated nesting attempt (compose.py; blocks 3 + 3, n 170):
+  - 'sink,aroot' (B's sink → A's start, plus an extra edge A's lane root d_A → s_B): 30 iterations.
+  - 'sink,athru' (d_A → s_B only): 12 iterations, LAM 1.
+  - 'sinkE,athru': 58 iterations.
+  All are below one block's 121, so the counter collapses.
+- EXACT OBSTRUCTION ('sink,athru'): the wiring closes the loop d_A → s_B → (B) → p_B → s_A → (A's bits, escapes) → A's lane b_j → d_A. Its top
+  priority is d_A's (even), so it is an Even-winning cycle and LAM = 1 (the λ component changes). In the first 5 F steps every A cycle
+  closes at once (steps 2–5: f, e, g edges of all three A cycles in the same steps, σ̄ at h0..h2 of A flips at step 5), because A's lane
+  entries now carry B's value too, and the lane timing that separates the bits is lost. Routing the upper block through the lower
+  block's escape route (L-NEW's N-COND) needs a loop through both blocks. In sink wiring that loop is an Even-won cycle unless an Odd
+  break, or an odd priority above d_A, is placed on it. That changes the winner on the loop, and is the open design question.
+
 ## 3. READING / OPEN
 - Degree 2 is forced (fcN). A higher degree needs nested resets. A reset of a lower block must be triggered by something other than a
   new global maximum, without leaving a stale escape that N5-SF can route into (R114 §4). In fcN only a NEW TOP bit resets, and that

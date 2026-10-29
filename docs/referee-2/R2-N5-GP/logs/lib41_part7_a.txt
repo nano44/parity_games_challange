@@ -1,0 +1,8 @@
+DONE-FILE experiments/red/xing/instances/x31_ru24.pg
+DONE-FILE experiments/red/xing/instances/x31_rx32.pg
+DONE-FILE experiments/red/xing/instances/x31_rx48.pg
+DONE-FILE experiments/red/xing/instances/x32_nest40.pg
+DONE-FILE experiments/red/xing/instances/x32_rand16.pg
+DONE-FILE experiments/red/xing/instances/x32_rand24.pg
+DONE-FILE experiments/red/xing/instances/x32_rand32.pg
+DONE-FILE experiments/red/xing/instances/x32_rand48.pg

@@ -12,7 +12,7 @@ HOLDING (Lead 13:08Z): next packet P-N5-VC deferred (its §4 CONJECTURE VC-N5 re
 | P-N5-COMPOSE (l-si 3ca0932d, e1b977aa), first | R-N5-COMPOSE.md 4896bc2e | §C c6011b70 vs R2 4b8afa95: identical, map empty | all SIGNED; E-item COMP-E1 (|𝒫| = transitions); COMP-N1..N6 |
 | P-N5-SF (l-new 95a7a581, dbc2345f), first | R-N5-SF.md 500b51d7 | PENDING (Lead's word; no R2 SF file opened) | all SIGNED, no gap; SF-N1..N7 |
 | SF §C | R-N5-SF-C.md 6bbf0aed vs R2 3ae22a6d | done (§3 F7-F13 PENDING the Lead's SHA) | identical, map empty; F1-F6 clarifications; P1′ (F1/F7 cite R57 (b)) |
-| P-N5-GP (l-si d072bb28, cd4866df), first | R-N5-GP.md 7dffab64 | PENDING | all SIGNED; E-item GP-E1 on the approved RESULTS line (drops L ≤ k − a and G_τ) |
+| P-N5-GP (l-si d072bb28, cd4866df), first | R-N5-GP.md 7dffab64 | §C fee33b06 vs R2 894a1971: identical; line = GP-E1 ∪ N-GP-7, final 17:23Z line OK; G12 byte check PENDING; G2 widening | all SIGNED; E-item GP-E1 on the approved RESULTS line (drops L ≤ k − a and G_τ) |
 ### Things only I know
 - scratch/compose_probe.py (MUT 1-4, MPHI=1 adds MATCH-Φ per λ-run for both players via matchphi_probe.corollary; keep MPHI to n ≤ 40).
   rand n 16-30 on rl_engine is too slow (stopped after 22 min): keep random batches at n ≤ 20.
