@@ -120,11 +120,28 @@ counter_symsi 8, 9, 11, 12, 14, 17 (13, 25, 22, 31, 37, 48); tc 4, 8, 9, 13, 13,
   changes of both one-sided runs. So the per-phase length is no longer open for N5-SF; only SBC is.
 - NOT shown: any bound on SBC. CONJECTURE SF-POLY: SBC is polynomial (DATA: ≤ 1.2n on the library, ≤ 16 on the M1 families, 97 = 0.37n on
   switchbestexp at N = 10, growing roughly linearly after a steep start). OPEN.
-- NOT shown: that N5-SF is new, or that it escapes Friedmann's lower bounds. Its first four switchbestexp counts track PGSolver's switch-best,
+- NOT shown: that N5-SF is new, or that it escapes Friedmann's lower bounds in general (it does escape H_n's, §5). Its first four switchbestexp counts track PGSolver's switch-best,
   so a larger switch-best-type family is the natural kill target. Next steps, if routed: (i) L-LIT identifies N5-SF's one-sided step in the SI
   literature; (ii) switchbestexp N = 12..20 and Friedmann's other switch-best constructions; (iii) the gauntlet (TARGET.md §5).
 - Relevance refinement (not done): as in box 52, only σ̄-changes that change Iσ or σ̄ on the arena's plays matter. SBC as measured counts
   them all (topfix_8_cmp: 47 = 16 + the comparator's flips, harmless here).
+
+## 5. N5-SF is NOT Friedmann's I^glo (L-LIT T44, claude/l-lit 325b7cc2; Lead 15:05Z), and it escapes H_n and DLM (DATA; written ~15:2xZ)
+- T44's SF-Ξ chooses Even's optimum of the arena game with Odd FREE (Schewe's optimal step, Friedmann's I^glo; Friedmann 1106.0778 v2 Thm 8.4:
+  ≥ 2^n steps on H_n from ι_{H_n}). N5-SF's S4a′ is the optimum against Odd FIXED to σ̄(σ_t), i.e. the one-player relaxation. These are
+  different rules. On H3's F start (experiments/friedmann-hn/instances/H3.pg + H3_F.start) the two give the same Even strategy for 22 steps.
+  At step 22 they diverge at vertices 3 and 38: I^glo moves 3: 42 → 51 and 38: 39 → 7, while N5-SF keeps both, and I^glo's Ξ there is
+  higher. T44's own script (docs/lit/T44-sf-variants.py, run read-only from a scratch copy) gives sfxi 107 on H3, which reproduces T44.
+- N5-SF on H_n, F start (sfrun.py; sf_hn_big.txt and the inline runs): n = 3, 4, 5, 6, 8, 10, 12 → 64, 77, 84, 91, 105, 119, 133 iterations
+  (= 7n + 49 for n ≥ 5), SBC 8, 13, 14, 15, 17, 19, 21. I^glo (T44) gives 107, 235, 491 at n = 3..5 (16·2^n − 21); N5 gives 34, 41, 49, 59, 73,
+  90, 107.
+- DLM families (experiments/new/dlm_gen.py, DLM start pairs; sf_dlm.txt), n = 2..8: family 1: N5-SF 2, 3, …, 8 (N5 2, 4, 4, 6, 7, 8, 8);
+  family 2: N5-SF 3, …, 9 (N5 4, 7, 8, 11, 12, 13, 15). SBC = n − 1, linear, no fallback, no cycle.
+- On T44's READING («the frame split is what lets N5 escape BOTH Friedmann's H_n (W in the choice) and DLM»): my data DISAGREE in part. N5-SF
+  has no frame split (Ξ in arena and choice) and still escapes H_n (linear, against I^glo's 2^n) and DLM (linear). The feature separating
+  N5 and N5-SF from I^glo here is that the choice is a ONE-PLAYER optimum against a FIXED opponent strategy (τ for N5, σ̄(σ_t) for N5-SF),
+  not the optimum of the arena game. READING, on two families. SF-POLY stays OPEN, with switchbestexp's SBC growth (§3) as the live
+  kill target.
 
 ## DONE / FINDINGS / NEEDS
 - DONE: this note; experiments/new/box54/ (n5sf.py, sfrun.py, hf.sh, mkdual.py; logs; instances out/: switchbestexp N ≤ 12, switchallexp
