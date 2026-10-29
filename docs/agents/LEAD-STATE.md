@@ -1855,3 +1855,4 @@
 - 04:18Z (date -u): REFEREE-2 SDPRIME report bf48b8f4 (all SIGN, no gap; N-SD-1..7; independence clean: name count 0). §C words after REFEREE's report.
 - 04:23Z (date -u): P-N5-REL-box25 frozen at l-si 07f19760 (sha1 f79300a2 measured; self-contained; GATE-RISE + Count, STATIC-DEPTH-REL, REL-SPLIT). Queued for both referees after SDPRIME. L-SI GRUN §5 DATA: gate Ξ rises in P-blocks; XR ≤ PCH + (PCH+1)(n−1), max gate PCH 0.66n.
 - 04:28Z (date -u): L-RED R102 691239ae (carry route: no kill; CR ≤ 0.28n; grafted waves add no stalls (300 variants); READING f = S4a stall count; route reduces to a gate with Θ(n) Ξ-rises ending in stalls) + R101 erratum. Next: gate-rise gadget box (P-changes as the knob).
+- 04:40Z (date -u): REFEREE SDPRIME report 573d2695 (all SIGNED, no gap; SDP-N1..N5; SDP-N2: W-MONO/Ξ-SUCC landed under λ_W-constancy, used where λ_W changes; holds by P2 + R15/(SW)). §C words to both referees (settle SDP-N2's status); then REL reviews (both).
