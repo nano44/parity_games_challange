@@ -1,4 +1,4 @@
-# Draft RESULTS R80 (Lead, 2026-10-29 00:45Z by date -u; both reports, both §Cs and the fixes file filled) — to CHECKER C89 (Lead reviewed 00:51Z by date -u: title date set to the packet's freeze date 2026-10-28; N-CORE-1 kept as Referee strengthening (REFEREE 'ACCEPTED, re-derived', not 'SIGNED'))
+# Draft RESULTS R80 (Lead, 2026-10-29 00:45Z by date -u; both reports, both §Cs and the fixes file filled) — to CHECKER C89 (Lead reviewed 00:51Z by date -u: title date set to the packet's freeze date 2026-10-28; N-CORE-1 kept as Referee strengthening (REFEREE 'ACCEPTED, re-derived', not 'SIGNED')) (rev. 01:10Z by date -u: C89 N-1, N-2)
 
 ### R80 [refereed-only] N5 on EVERY game, inside one phase: every transition of a phase changes Even's σ (Lemma EVERY-SWITCH), so a phase P has |P| ≤ Σ_w SW_P(w), |P| the number of TRANSITIONS of P and SW_P(w) the number of those at which σ(w) changes (PHASE-SW; FALSE if |P| counts states); an Even vertex w that switches at a transition t → t + 1 of a phase and lies on no honest cycle at t and at t + 1 strictly raises Ξ(w) (Lemma RISE-SW), so |P| ≤ Σ_w XR_P(w) + #{(w, t) : w switches at t and lies on an honest cycle at t or t + 1}, XR_P(w) the transitions of P at which Ξ(w) changes (its Consequence); a CLEAN change y1 → y2 of σ̄ at an Odd choice vertex u ∈ U_c ∖ {c} of class c, u on no honest cycle at t and at t + 1, gives κ_{t+1}(y1) ⪰ κ_t(y1), strictly unless κ_{t+1}(y1) = κ_{t+1}(y2) (Lemma RISE-GATE-CLEAN; the tie exception is needed, nep22f_n64); a set I of consecutive transitions of one phase has |I| ≤ m_E + NOFRESH(I) (FRESH-RED); and on a global C-interval (RESULTS R76's definition, taken inside one phase) the transitions with a fresh Even edge, with a fresh Odd option and with a strict shrink of some A number at most m_E, Σ_{Odd u} (deg(u) − 1) and Σ_c |A_a(U_c)| ≤ n (FRESH3-COUNT) (2026-10-28) — elementary structural lemmas for N5 (they bound nothing: no count of switches or Ξ-changes per vertex, no NOFRESH and no phase length is bounded; the per-vertex forms SW-LIN and XR-LIN are DEAD; not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C89.md, checker PENDING)
 - Object (L-SI successor 19, Opus 5.5; frozen, unchanged during review): packet P-N5-CORE, docs/si/P-N5-CORE-box23.md, sha1
@@ -57,7 +57,7 @@
   The packet's §6 (not to sign, as the packet says): the DATA; the UNCLEAN gate change (N5-ALT §1 RISE-GATE, through Fact CL of P-N5-OFFMONO
   §1); the conjecture FRESH3 (every σ̄-changing in-interval transition has one of (f)'s three events), DEAD (ret14_n48, N5-ALT §3; REFEREE
   reproduces 4 failures of 1,379 in alt_all, CORE-N6); the DEAD per-vertex forms XR-LIN and SW-LIN; the READING on passive readers.
-- Referee strengthening (NOT part of this entry; N-CORE-1, in neither referee's verdict table): (C3) RISE-SW at EVERY N5 transition, in a
+- Referee strengthening (NOT part of this entry; N-CORE-1: in REFEREE-2's (C3) verdict line as an addition, not in REFEREE's verdict table): (C3) RISE-SW at EVERY N5 transition, in a
   phase or not (fixes F3 writes it into (C3)'s statement). REFEREE-2 states and proves it in its report (verdict line of (C3), "Also true at
   every N5 transition, not only in-phase ones (N-CORE-1)"; §3: if the cycle nodes at t and t + 1 differ, the two values compare by the
   cycle node's reward, which w ⊕ does not change; data XC3, 0 failures off-cycle) and calls it in its §C "mine alone; it is an extension and
@@ -82,8 +82,7 @@
   X6Ax 201 / 472 on alt_all / lib41; REFEREE's MUT4 did not bite on its corpus). (iv) (d) is for CLEAN changes only; the unclean case is not
   claimed (REFEREE-2 saw (d)'s conclusion hold at every unclean change it checked, DATA). (v) NOFRESH is not small over a phase: the packet's
   §6 "≤ 22 per run" holds per fallback-free run (fresh.py's unit; F7, N-CORE-6); over whole phases it reaches 90 (long121_n40 and
-  l121ereader_n41 [1, 122], both referees), and 115 in one fallback-free run on the RUN-LIN family (runfam_K40; N5-RUNLIN-box24 §7, fixes
-  F7). Nothing here bounds N5's running time.
+  l121ereader_n41 [1, 122], both referees), and 115 in one fallback-free run on the RUN-LIN family (runfam_K40, L-SI's experiments/si/runlin/anatomy.py; fixes F7). Nothing here bounds N5's running time.
 - Data (DATA, not proof): REFEREE (successor 17; own scratch/core_probe.py (sha1 be6bb900…) on its engine rl_engine, written from SPEC S1-S5
   + FIX 1-4; lane code not run; 0 failures in every MUT=0 run): alt_all (413 games of root/logs/alt_all.lst, n ≤ 600; 918 runs: given start
   when valid, best-reward, 1 random) 12,937 in-phase transitions, (C3) 27,194 checks, (C4) 4,953 clean / 1,764 unclean / 29 ties at t + 1 /
