@@ -1,0 +1,60 @@
+COR1_chk 316
+F 329
+K3_chk 352
+K_chk 9000
+MAX_CFK 1
+MAX_FC_x1000_over_nK 500
+MONO_chk 319
+PHASES 24990
+PH_FB 316
+PH_nK_lt_n 146
+REAL_chk 27142
+RISE_FAIL 1
+RISE_chk 329
+RISE_unsat 4
+RUNS 9000
+RUNS_nK_lt_n 4059
+SATB_chk 648
+SATFB1_FAIL 12
+SATFB1_chk 319
+SATFB_FAIL 20
+SATFB_chk 325
+SATW_chk 313
+SAT_FB 325
+SUM_CF 316
+SUM_CFK 316
+THM_chk 319
+THMtot_chk 316
+EX ('SATFB', 'rand199/1', 1, (6, 6, 1))
+EX ('SATFB', 'rand199/1', 2, (6, 6, 1))
+EX ('SATFB1', 'rand199/1', 1, (6, 6, 1), 3)
+EX ('SATFB', 'rand260/1', 1, (2,))
+EX ('SATFB', 'rand394/0', 3, (17, 6, 5, 7))
+EX ('SATFB', 'rand632/2', 3, (2, 3))
+EX ('SATFB1', 'rand632/2', 2, (2, 3), 2)
+EX ('SATFB', 'rand725/0', 1, (12, 12, 12, 6, 6))
+EX ('SATFB1', 'rand725/0', 1, (12, 12, 12, 6, 6), 2)
+EX ('SATFB', 'rand725/1', 2, (12, 12, 12, 6, 6))
+EX ('SATFB1', 'rand725/1', 2, (12, 12, 12, 6, 6), 2)
+EX ('SATFB', 'rand725/2', 2, (12, 12, 12, 6, 6))
+EX ('SATFB1', 'rand725/2', 2, (12, 12, 12, 6, 6), 2)
+EX ('SATFB', 'rand836/2', 2, (3,))
+EX ('SATFB1', 'rand836/2', 1, (3,), 2)
+EX ('SATFB', 'rand1149/1', 2, (12, 0, 9, 1))
+EX ('SATFB', 'rand1160/2', 1, ())
+EX ('SATFB1', 'rand1160/2', 0, (), 2)
+EX ('SATFB', 'rand1165/0', 1, (5, 3, 3, 3, 3))
+EX ('SATFB1', 'rand1165/0', 0, (5, 3, 3, 3, 3), 2)
+EX ('SATFB', 'rand2294/2', 1, (8, 4, 4, 4))
+EX ('SATFB1', 'rand2294/2', 1, (8, 4, 4, 4), 2)
+EX ('RISE', 'rand2462/2', 1, (3, 4, 1, 4), 0, 0)
+EX ('SATFB', 'rand2556/1', 1, ())
+EX ('SATFB1', 'rand2556/1', 1, (), 2)
+EX ('SATFB', 'rand2603/2', 2, (2, 13, 5, 2, 14, 2))
+EX ('SATFB1', 'rand2603/2', 2, (2, 13, 5, 2, 14, 2), 2)
+EX ('SATFB', 'rand2727/1', 1, (6, 6, 0, 6, 6))
+EX ('SATFB', 'rand2910/1', 1, (3, 5, 3, 2))
+EX ('SATFB1', 'rand2910/1', 1, (3, 5, 3, 2), 2)
+EX ('SATFB', 'rand2941/0', 1, (2,))
+EX ('SATFB', 'rand2941/1', 1, (2,))
+EX ('SATFB', 'rand2941/2', 3, (2,))
