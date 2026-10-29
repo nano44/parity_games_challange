@@ -24,7 +24,8 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 ## Successor 27 HANDOVER (written 2026-10-29 14:48Z, date -u; ~390k context)
 - DONE (claude/l-red, push.sh VERIFY PASS each push): 724bab9d handover check; 6aa2dcd7 R112 (coupled relay chain, cpl tools, check.sh gate
   relay_L3); 41c567c3 R113 (menus autonomous; tau-released steps drop W; leapfrog reactor clocks need W-rising sources; two-sided mkr dead as
-  designed); R113 §4 addendum (W-sink delay route; mkr vs its dual = opposite winning regions, cross gates never open; flip-climb DATA).
+  designed); R113 §4 addendum (mkr vs its dual = opposite winning regions, cross gates never open; flip-climb DATA); f8b59275 ewin/dewin
+  (same-region Odd clock, check.sh gate); 56f3ca89 CORRECTION (Odd holders at mkr's W-sinks fail: an Odd hold cannot delay a W-rise signal).
 - IN FLIGHT: nothing (no background jobs).
 - RESUME POINT (Lead STEP 1: coupled family, then super-quadratic NM*/NM*^U in one joint lambda-run):
   (1) DONE (R113 §4): cpl/ewin.py + dualize = dewin (Odd clock, Odd-winning, run identical). WAS: Build an Odd clock in an ODD-winning region (Odd pivots + Odd reactors whose U-plays end in Odd-winning cycles, Odd improving path
