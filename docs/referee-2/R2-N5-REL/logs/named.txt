@@ -1,0 +1,23 @@
+MODE pairs ../R2-N5-SDPRIME/named.lst ../../../experiments MUT - RELCAP 60
+ENGXI_checks: 567
+GRC_checks: 231
+GR_changes_CLEAN: 390
+GR_changes_CYC: 1
+GR_changes_THRU: 3
+GR_checks: 390
+GR_norise_CYC: 1
+RA_intervals: 1173
+REL_beyond_SDPRIME: 539
+REL_intervals: 1173
+REL_sbar_moves_off_RO: 539
+RREM_checks: 634
+RS_hyp_runs: 45
+RS_runs: 48
+RS_segments: 198
+S_runs: 48
+runs: 8
+states: 567
+REL_max_len: (17, 'si/root/instances/cone_n69.pg#S3', 2, 19, 20, 69)
+RS_max_SEG_over_n: (0.325, 'red/rec0/instances/nep90_n40.pg#start', 4, 18, 13, 40)
+RS_max_run_over_SEGn: (0.308, 'si/root/instances/swlin_kill_n26.pg#start', 8, 16, 1, 26)
+RESULT OK violations=0

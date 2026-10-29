@@ -1,0 +1,28 @@
+anc_K10.pg anc_K10.start
+fx_n12_1.pg
+fx_n12_2.pg
+fx_n16_1.pg
+fx_n16_2.pg
+fx_n24_1.pg
+fx_n24_2.pg
+fx_n32_1.pg
+fx_n32_2.pg
+gc1.pg
+gc2.pg
+gc3.pg
+gc4.pg gc4.start
+pg_n48_1.pg
+pg_n48_2.pg
+pg_n64_1.pg
+pg_n64_2.pg
+rdr_K10.pg rdr_K10.start
+seed_n12.pg
+seed_n16.pg
+seed_n24.pg
+seed_n32.pg
+sg_1.pg
+sg_2.pg
+sg_3.pg sg_3.start
+sg_4.pg
+sz48a.pg
+sz64b.pg

@@ -1,0 +1,46 @@
+MODE files ../R2-N5-STAU/lib41_noref.lst 3 MUT y2rise RELCAP 60
+ENGXI_checks: 19315
+GRC_checks: 10733
+GR_changes_CLEAN: 3751
+GR_changes_CYC: 23
+GR_changes_THRU: 109
+GR_changes_TIE: 168
+GR_checks: 3751
+GR_norise_CYC: 8
+GR_norise_TIE: 167
+S_runs: 1612
+VIOLATIONS: 3426
+V_MUT_y2rise: 3426
+runs: 1230
+states: 19315
+VIOLATION MUT_y2rise: experiments/n5-exhaustive/canonA_1.pg#0@2 u=13
+VIOLATION MUT_y2rise: experiments/n5-exhaustive/canonA_1.pg#0@3 u=13
+VIOLATION MUT_y2rise: experiments/n5-exhaustive/instances/b4_cyc6_0.pg#0@0 u=6
+VIOLATION MUT_y2rise: experiments/n5-exhaustive/instances/b4_n4all_cyc3_0.pg#0@0 u=3
+VIOLATION MUT_y2rise: experiments/n5-exhaustive/instances/b4_n4all_cyc3_0.pg#2@0 u=3
+VIOLATION MUT_y2rise: experiments/n5-exhaustive/instances/b4_n4all_cyc3_0.pg#2@1 u=3
+VIOLATION MUT_y2rise: experiments/n5-exhaustive/instances/b4_theta_n7.pg#2@0 u=6
+VIOLATION MUT_y2rise: experiments/n5-exhaustive/instances/b5_n5_cyc4_0.pg#0@1 u=3
+VIOLATION MUT_y2rise: experiments/n5-exhaustive/instances/b5_n5_cyc4_0.pg#1@0 u=3
+VIOLATION MUT_y2rise: experiments/n5-exhaustive/instances/b5_n5_cyc4_0.pg#2@1 u=3
+VIOLATION MUT_y2rise: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@15 u=0
+VIOLATION MUT_y2rise: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@20 u=0
+VIOLATION MUT_y2rise: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@21 u=0
+VIOLATION MUT_y2rise: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@24 u=0
+VIOLATION MUT_y2rise: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@35 u=0
+VIOLATION MUT_y2rise: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@45 u=0
+VIOLATION MUT_y2rise: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@52 u=0
+VIOLATION MUT_y2rise: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@56 u=0
+VIOLATION MUT_y2rise: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@81 u=0
+VIOLATION MUT_y2rise: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0@85 u=0
+VIOLATION MUT_y2rise: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#1@3 u=0
+VIOLATION MUT_y2rise: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#1@22 u=0
+VIOLATION MUT_y2rise: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#1@26 u=0
+VIOLATION MUT_y2rise: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#2@18 u=0
+VIOLATION MUT_y2rise: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#2@22 u=0
+VIOLATION MUT_y2rise: experiments/n5-exhaustive/instances/b6_xl_n32.pg#0@15 u=0
+VIOLATION MUT_y2rise: experiments/n5-exhaustive/instances/b6_xl_n32.pg#0@23 u=0
+VIOLATION MUT_y2rise: experiments/n5-exhaustive/instances/b6_xl_n32.pg#0@34 u=0
+VIOLATION MUT_y2rise: experiments/n5-exhaustive/instances/b6_xl_n32.pg#0@44 u=0
+VIOLATION MUT_y2rise: experiments/n5-exhaustive/instances/b6_xl_n32.pg#0@55 u=0
+RESULT FAIL violations=3426
