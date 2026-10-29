@@ -15,7 +15,18 @@ C = Counter(); OUT = []
 def norm(cs): return frozenset(min(tuple(c[k:] + c[:k]) for k in range(len(c))) for c in cs)
 def cyc(nx, n): return norm(frozenset(walk(nx, v)[1] for v in range(n)))
 
-def pieces(R):
+def kset(g):
+    """RESULTS R81's K: the vertices reachable (in >= 1 step, or the vertex itself) from an Even vertex of out-degree >= 2."""
+    K, st = set(), [v for v in range(g.n) if g.owner[v] == 0 and len(set(g.succ[v])) >= 2]
+    while st:
+        x = st.pop()
+        if x in K: continue
+        K.add(x); st.extend(g.succ[x])
+    return K
+
+def pieces(R, K=None):
+    """sigma-bar-constant pieces of the fallback-free in-phase runs; with K, sigma-bar is compared on K only (K-pieces)."""
+    same = (lambda x, y: x == y) if K is None else (lambda x, y: all(x[u] == y[u] for u in K))
     for i, j in phases(R):
         rs, s = [], i
         for k in range(i, j):
@@ -25,7 +36,7 @@ def pieces(R):
             a = s
             while a < e:
                 b = a
-                while b < e and R[b + 1]["sb"] == R[a]["sb"]: b += 1
+                while b < e and same(R[b + 1]["sb"], R[a]["sb"]): b += 1
                 if b > a: yield a, b
                 a = b + 1 if b > a else a + 1
 

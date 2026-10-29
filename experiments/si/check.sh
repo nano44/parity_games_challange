@@ -372,3 +372,31 @@ o=$(python3 -I piece/sdprime.py --one ../red/n5inj/instances/frz24.pg); grep -q 
 MUT=1 python3 -I piece/sdprime.py --one ../red/n5inj/instances/frz24.pg | grep -q "SDPRIME FAIL"
 o=$(python3 -I piece/epochs.py --one ../red/n5inj/instances/frz24.pg); grep -q "k_max=2 " <<<"$o"; grep -q "EPOCHS PASS" <<<"$o"
 echo "piece (box 25: STATIC-DEPTH' covers kw25 [0,25] outside R77; frz24 (H3') failure and 2 epochs; MUT=1 bites): PASS"
+# box 25 (docs/si/N5-GRUN-box25.md): Lemma GATE-RISE on pftheta34 (MUT bites); G is not intrinsic: runfam_K10 + 25 readers has G 91 at n 74
+# with the run unchanged, + 25 anchors G^K 91 at n 99 (generator reproduces the pin); SEG stays 9; STATIC-DEPTH-REL checks pass.
+python3 -I grun/gaterise.py --one ../red/so/instances/pftheta34_n32.pg | grep -q "GATERISE PASS"
+MUT=1 python3 -I grun/gaterise.py --one ../red/so/instances/pftheta34_n32.pg | grep -q "GATERISE FAIL"
+python3 -I grun/gstat.py --one grun/out/rdr_K10.pg grun/out/rdr_K10.start | grep -q "TOP G 91 n 74 run 99 "
+o=$(python3 -I grun/relseg.py --one grun/out/rdr_K10.pg grun/out/rdr_K10.start); grep -q "SEG_max=9 " <<<"$o"; grep -q "RELSEG PASS" <<<"$o"
+o=$(python3 -I grun/relseg.py --one runlin/instances/runfam_K10.pg runlin/instances/runfam_K10.start); grep -q "SEG_max=9 " <<<"$o"; grep -q "RELSEG PASS" <<<"$o"
+t=$(mktemp -d); python3 -I grun/anchor.py grun/out/rdr_K10.pg grun/out/rdr_K10.start 1 100 $t/a | grep -q "anchors 25 n 99 SAME True readers in K 25 run 99 G 91 G^K 91 SEG 9 fallbacks in \[A,B\] 0"
+cmp -s $t/a.pg grun/out/anc_K10.pg; cmp -s $t/a.start grun/out/anc_K10.start; rm -rf $t
+echo "grun (box 25: GATE-RISE on pftheta34, MUT bites; readers G 9 -> 91 with run 99 fixed, anchors G^K 91, SEG 9; anchor generator reproduces the pin): PASS"
+# P-N5-SDPRIME-box25 (FROZEN, sha1 54678c38a04842bd936a9bf4b241d47ad8ab90a3): 12 quotes verbatim (trunk 55e0bcbda); shifted control fails.
+if git cat-file -e 55e0bcbda; then
+  echo "54678c38a04842bd936a9bf4b241d47ad8ab90a3  ../../docs/si/P-N5-SDPRIME-box25.md" | sha1sum -c --quiet
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-SDPRIME-box25.md | grep -q "quotes=12 bad=0"
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-SDPRIME-box25.md --mut | grep -q "QUOTES FAIL"
+  echo "piece (P-N5-SDPRIME frozen sha1; 12 quotes verbatim; shifted control fails): PASS"
+else
+  echo "piece (P-N5-SDPRIME quotes): NOT RUN (source commit 55e0bcbda not in this clone)"
+fi
+# P-N5-REL-box25 (FROZEN, sha1 f79300a2d01cfb0aa27ad7214bcefbd84eafd7bb): 17 quotes verbatim (trunk b28123a58); shifted control fails.
+if git cat-file -e b28123a58; then
+  echo "f79300a2d01cfb0aa27ad7214bcefbd84eafd7bb  ../../docs/si/P-N5-REL-box25.md" | sha1sum -c --quiet
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-REL-box25.md | grep -q "quotes=17 bad=0"
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-REL-box25.md --mut | grep -q "QUOTES FAIL"
+  echo "grun (P-N5-REL frozen sha1; 17 quotes verbatim; shifted control fails): PASS"
+else
+  echo "grun (P-N5-REL quotes): NOT RUN (source commit b28123a58 not in this clone)"
+fi

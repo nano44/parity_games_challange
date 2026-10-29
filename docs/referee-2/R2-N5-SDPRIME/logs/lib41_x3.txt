@@ -1,0 +1,34 @@
+MODE files ../R2-N5-STAU/lib41_noref.lst 3 MUT - SDCAP 60
+ENGXI_checks: 19579
+EP_epochs: 1887
+EP_hyp_pieces: 1785
+EP_hyp_pieces_CFpos: 50
+EP_k1_eq_CF: 1812
+EP_nohyp_pieces: 27
+EP_pieces: 1812
+GEN_used_fail_intervals: 343
+H3p_intervals: 52303
+H4p_fail: 28
+NEW_coverage_intervals: 5005
+REM_intervals: 47270
+SD_TW_ne_TH: 4811
+SD_intervals: 52102
+SD_lamW_moves: 681
+SD_sharp: 429
+SDng_TW_ne_TH: 165
+SDng_intervals: 173
+SDng_lamW_moves: 6
+STEPA_checks: 8589064
+STEPB_checks: 7602983
+S_runs: 1614
+WMONO_checks: 11292
+lamW_change_transitions: 657
+pieces: 1812
+runs: 1230
+states: 19579
+EP_max_CF: (5, 6, 'experiments/red/so/instances/tog6a_n32.pg#0', 4, 9, 32)
+EP_max_k: (6, 5, 'experiments/red/so/instances/tog6a_n32.pg#0', 4, 9, 32)
+SD_max_len: (55, 'experiments/red/xing/instances/x32_rand64.pg#0', 0, 55, 56, 64)
+SDng_max_len: (12, 'experiments/new/box29/instances/u1_n32.pg#0', 0, 12, 15, 32)
+max_piece_len: (55, 'experiments/red/xing/instances/x32_rand64.pg#0', 0, 55, 64)
+RESULT OK violations=0

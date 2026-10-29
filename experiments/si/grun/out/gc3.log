@@ -1,0 +1,6 @@
+seed G 30 n 32
+step 651 G 30 n 31 G/n 0.968
+step 1270 G 30 n 30 G/n 1.000
+step 1750 G 31 n 31 G/n 1.000
+step 2722 G 31 n 30 G/n 1.033
+step 5849 G 32 n 31 G/n 1.032

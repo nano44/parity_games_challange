@@ -1,0 +1,13 @@
+CH_max=35 CH_over_deg_x100_max=194 GK_max=48 GK_over_n_x1000_max=1062 G_max=48 G_minus_GK_max=6 G_over_n_x1000_max=1062 G_sum=1578 RET_max=18 gates_changing_max=49 runs=745
+TOP G 34 n 32 run 34 gates 1 CHmax 34 RETmax 18 experiments/red/so/instances/pftheta34_n32.pg [5,39]
+TOP G 33 n 32 run 34 gates 1 CHmax 33 RETmax 17 experiments/red/so/instances/pftheta_cex_n32.pg [4,38]
+TOP G 30 n 32 run 33 gates 1 CHmax 30 RETmax 13 experiments/red/so/instances/so_th_n32.pg [1,34]
+TOP G 22 n 24 run 22 gates 1 CHmax 22 RETmax 5 experiments/red/so/instances/so_sor5_n24.pg [0,22]
+TOP G 12 n 16 run 13 gates 1 CHmax 12 RETmax 2 experiments/red/xing/instances/x31_cu16.pg [10,23]
+TOP G 35 n 48 run 35 gates 1 CHmax 35 RETmax 14 experiments/red/so/instances/pft35_n48.pg [6,41]
+TOP G 22 n 32 run 22 gates 1 CHmax 22 RETmax 2 experiments/red/so/instances/so_sorl_n32.pg [0,22]
+TOP G 22 n 32 run 22 gates 1 CHmax 22 RETmax 11 experiments/red/xing/instances/x31_rx32.pg [2,24]
+TOP G 21 n 32 run 21 gates 1 CHmax 21 RETmax 8 experiments/red/xing/instances/x31_cu32.pg [26,47]
+TOP G 15 n 24 run 16 gates 1 CHmax 15 RETmax 2 experiments/red/so/instances/so_tie13_n24.pg [0,16]
+TOP G 20 n 32 run 21 gates 1 CHmax 20 RETmax 8 experiments/red/xing/instances/x31_cu32i.pg [3,24]
+TOP G 24 n 40 run 27 gates 1 CHmax 24 RETmax 12 experiments/red/so/instances/pft40_n40.pg [27,54]

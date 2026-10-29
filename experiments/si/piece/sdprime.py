@@ -13,10 +13,11 @@ from collections import Counter
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "root"))
 from common import rows, load, readstart
 from staticdepth import walk
-from pieceh import pieces, cyc
+from pieceh import pieces, cyc, kset
+KMODE = os.environ.get("K") == "1"          # K=1: K-pieces (sigma-bar constant on R81's K only), cycles, depths and checks inside K
 C = Counter(); EX = []; MUT = os.environ.get("MUT") == "1"
 
-def depths(g, B, TW, TH):
+def depths(g, B, TW, TH, dom=None):
     n = g.n; memo = {}; st = {}
     def d(v, fr):                                     # fr: "W" or "H"
         T = TW if fr == "W" else TH
@@ -29,19 +30,21 @@ def depths(g, B, TW, TH):
         elif v in TW or v in TH: r = d(B["s"][v], fr)          # v in the other frame's terminals: sigma constant, no step
         else: y = B["s"][v]; r = 1 + max(d(y, "W"), d(y, "H"))
         st[k] = 2; memo[k] = r; return r
-    return {v: d(v, "W") for v in range(n)}, {v: d(v, "H") for v in range(n)}
+    dom = range(n) if dom is None else dom
+    return {v: d(v, "W") for v in dom}, {v: d(v, "H") for v in dom}
 
 def run(g, name, start=None):
-    E, R = rows(g, start); n = g.n
-    for a, b in pieces(R):
+    E, R = rows(g, start); n = g.n; K = kset(g) if KMODE else set(range(n))
+    cK = lambda cs: frozenset(c for c in cs if set(c) <= K)
+    for a, b in pieces(R, K if KMODE else None):
         ln = b - a; B = R[b]; C["pieces"] += 1
-        cwb, chb = cyc(B["wn"], n), cyc(B["nxt"], n)
+        cwb, chb = cK(cyc(B["wn"], n)), cK(cyc(B["nxt"], n))
         h3p = all(cwb <= cyc(R[t]["wn"], n) and chb <= cyc(R[t]["nxt"], n) for t in range(a, b + 1))
         if not h3p: C["h3p_fail"] += 1; EX.append(("H3P", name, a, b, ln, n)); continue
         TW = {v for c in cwb for v in c}; TH = {v for c in chb for v in c}
-        try: dW, dH = depths(g, B, TW, TH)
+        try: dW, dH = depths(g, B, TW, TH, sorted(K))
         except (ValueError, RecursionError): C["h4p_fail"] += 1; EX.append(("H4P", name, a, b, ln, n)); continue
-        C["checked"] += 1; dm = max(list(dW.values()) + list(dH.values()))
+        C["checked"] += 1; dm = max([dW[v] for v in K] + [dH[v] for v in K])
         if cyc(B["wn"], n) != cyc(B["nxt"], n) or any(cyc(R[t]["wn"], n) != cwb or cyc(R[t]["nxt"], n) != chb for t in range(a, b + 1)):
             C["checked_beyond_H3"] += 1; C["beyond_len_max"] = max(C["beyond_len_max"], ln)
         if ln > dm: C["LEN_V"] += 1; EX.append(("LEN", name, a, b, ln, dm))
@@ -52,7 +55,7 @@ def run(g, name, start=None):
             for v in range(n):
                 if seen.setdefault((v, R[t]["W"][v]), walk(R[t]["wn"], v)[0]) != walk(R[t]["wn"], v)[0]: gf += 1
         C["genw_fail"] += gf; C["genw_fail_pieces"] += gf > 0
-        for v in range(n):
+        for v in sorted(K):
             fw, fh = walk(B["wn"], v), walk(B["nxt"], v)
             for t in range(a + max(dW[v] - MUT, 0), b + 1):
                 if walk(R[t]["wn"], v) != fw: C["SET_V"] += 1; EX.append(("SETW", name, a, b, v, t, dW[v])); break
