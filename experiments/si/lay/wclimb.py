@@ -5,7 +5,8 @@ OBJ=T adds 5 * (steps with an unready W-sink). OBJ=H (after W-GROW died, lay/ins
 kill = H-GROW failure (third component) or SINK-SWITCH / SEG-LAST / sink-lemma failure (x 1000); W-GROW failures only shape the score.
 OBJ=S (after H-GROW died, lay/instances/hgrow_kill_n89): kill = SINK-GROW / SEG-LAST / sink-lemma failure; shaping 10 * (W-GROW and
 H-GROW failures) + sum over steps of 100 // (1 + ready W-sinks + H-sinks switching to target). OBJ=D: SEG-COUNT kill (third component = max excess) with the gradient 300 x + 100 SEG-LAST failures + 10 SINK-GROW failures +
-3 (W-/H-GROW failures) + steps with no frontier vertex. OBJ=M: shrink an instance while keeping a SEG-LAST failure (score 1000 * [failure] - n). OBJ=C (after SEG-LAST died, lay/instances/seglast_kill_n110): kill = SEG-COUNT failure (max over REL segments of length - switching
+3 (W-/H-GROW failures) + steps with no frontier vertex. OBJ=L: SEG-COUNT kill (third = max excess), shaping 100 deadlock steps + 30 (steps where an H-sink switches to a non-target while no
+W-sink is ready) + 2 (steps with an H-sink intermediate switch) + 3 W-GROW failures + no-frontier steps; for the ladder seeds. OBJ=M: shrink an instance while keeping a SEG-LAST failure (score 1000 * [failure] - n). OBJ=C (after SEG-LAST died, lay/instances/seglast_kill_n110): kill = SEG-COUNT failure (max over REL segments of length - switching
 Even vertices > 0, third component); shaping 20 * SEG-LAST failures + 5 * SINK-GROW failures + W-/H-GROW failures. OBJ=S2: same kill, shaping 300 // (1 + H-sink
 switches) at steps with no ready W-sink and 100 // (1 + ready W-sinks) at steps with no H-sink switch. Mutations as lwp/xclimb.py. Usage: wclimb.py SEED.pg SEED.start|- STEPS RNGSEED NMAX OUTPREFIX"""
 import sys, os, random
@@ -33,6 +34,8 @@ def sc(g, st):
         return (1000 * f + 10 * (d["HG"] + d["WSR"]) + d["SUP"] + d["U"], d["HG"] + d["WSR"], f)
     if OBJ == "D":                        # SEG-COUNT with a gradient: no-frontier steps < W-/H-GROW failures < SINK-GROW failures < deadlocks < excess
         x = slscore(g, R)[1]; return (300 * x + 100 * f2 + 10 * d["SS"] + 3 * (d["HG"] + d["WSR"]) + d["K"], f2, x)
+    if OBJ == "L":                        # the ladder pattern: H-sink intermediate switches at W-blocked steps (deadlock candidates)
+        x = slscore(g, R)[1]; return (300 * max(x, 0) + 100 * f2 + 30 * d["HIW"] + 2 * d["HI"] + 3 * d["WSR"] + d["K"], d["HIW"], x)
     if OBJ == "M":                        # shrink: keep a SEG-LAST failure (third component = failures), prefer small n
         return (1000 * min(f2, 1) + 10 * min(f2, 3) - g.n, f2, min(f2, 1))
     if OBJ == "C":                        # after SEG-LAST died: CONJECTURE SEG-COUNT, x = max over segments of (length - switching Even vertices)

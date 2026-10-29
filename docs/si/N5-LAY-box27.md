@@ -178,9 +178,20 @@ RO_b, σ̄_t = σ̄_b on [a, b] (REL); every cycle of CW_b (CH_b) is a W-cycle (
   H-sink that is not a W-sink (true: no ready W-sink there, and an H-sink that is a W-sink would be one) and that does not finalize early; (b)
   INJECTIVITY: distinct deadlock steps charged to distinct H-sinks. (b) fails if one H-sink makes two intermediate switches at two deadlock
   steps while it is the only H-sink; no instance shows this yet. OPEN.
+- DATA on (b) (lay/hsinter.py: intermediate switches, σ_{t+1}(v) ∉ {σ_t(v), σ_b(v)}, made by v while an H-sink): lib41 and alt_all
+  default starts: NONE (H-sinks only ever switch to their target); alt_all pinned starts: three segments, all the red/ul ladder family
+  (ladderd0_k12_n48 [0, 13]: H-sink 14 makes 11 intermediate switches 15 → 35 → 36 → … while a both-sink snake 12, 11, 10, … finalizes one
+  vertex per step; k24: 23; k48: 47), none at a deadlock step; the two SEG-LAST killers: exactly one, at the deadlock step.
+- READING (why a second deadlock is hard): S4a optimizes all Even vertices jointly over the arena of state t. If the H-sink's next
+  intermediate option c2 is W-best once a W-sink w1 finalizes, S4a moves the H-sink to c2 in the SAME step as w1's final switch (no
+  deadlock), and the next W-sink that waits for the H-sink's honest value is ready one step later. A second deadlock needs c2 to enter
+  the H-sink's ARENA only after w1 finalizes (Ξ(c2) rises through w1), so that w1's final step and the H-sink's move to c2 fall in different
+  steps: t1 deadlock (h → c1), t1 + 1 w1 final alone, t1 + 2 deadlock (h → c2, unblocking w2), t1 + 3 w2 and h final: 4 transitions, 3
+  switchers, EXC = +1. Climb lay/wclimb.py OBJ=L (shaping: steps where an H-sink switches to a non-target while no W-sink is ready) from the
+  ladder ladderd0_k12_n48 (pinned start, two seeds) and from seglast_kill_n29: results below.
 - Kill search: lay/wclimb.py OBJ=C (score 100 × max EXC + 20 × SEG-LAST failures + 5 × SINK-GROW failures + W-/H-GROW failures; third
   component = max EXC, > 0 a kill) from seglast_kill_n110 (two seeds), wgrow_kill_n90, hgrow_kill_n89, karena_kill_n71 and the library's
-  longest tight segment (red/xing/x32_rand64, [.., ..] of 55 = 55 switchers at n 64): no kill, plateaus (lay/climbs_box27.txt). OBJ=D (a
+  longest tight segment (red/xing/x32_rand64, [0, 55]: 55 transitions = 55 switchers at n 64, no deadlock step): no kill, plateaus (lay/climbs_box27.txt). OBJ=D (a
   graded score: 300 × max EXC + 100 × deadlock steps + 10 × SINK-GROW failures + 3 × W-/H-GROW failures + no-frontier steps) from
   seglast_kill_n110, hgrow_kill_n89, wgrow_kill_n90, then from seglast_kill_n29 (four seeds, NMAX 45-80): results below.
 
