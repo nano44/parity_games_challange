@@ -193,3 +193,56 @@ p2 ⊕ α2_{q1} ⊵ p2 ⊕ α1_{q2+1} ⊵ p1 ⊕ α2_{q1}. Both sides now carry 
   - (4) DEAD on data: the summed form «PI ≤ n − 1» (rttf48, 2.83(n − 1)), and «rounds per vertex ≤ 1» (x31_re24).
   - (5) TC is parked at PRE-P, a prefix-frame Lemma P across epochs.
 - NEEDS: none from the owner.
+
+## 6. The bounded attempt «prefix improvements above g» (Lead 18:18Z: «a per-vertex bound on prefix improvements above g = top of P(α1) Δ P(α2) that does NOT go through W-changes, e.g. a count of distinct (prefix class, g) pairs that can only rise in a fixed order. One bounded attempt»). Written 2026-10-29T18:3xZ by date -u, see commit
+### 6.1 PROVED (lane): Lemma ROUND-G (where a round's climb must sit)
+Setting and notation of §5. Let (q1, q2) be a round of x with neither (B) nor (M). Assume also (M′): hp1 is disjoint from P(α1_{q2+1}).
+(M′ is the reverse capture: an above-c vertex of x's old prefix lies on the gate's Ξ-tail at q2 + 1.) Let g′ := the top of P(α1_{q2+1}) Δ
+P(α2_{q1}). Then either P(α1_{q2+1}) = P(α2_{q1}), i.e. the tails differ at most in length, or hp1 ≠ hp2 and the top of hp1 Δ hp2 is more
+relevant than g′.
+Proof. ROUND's chain gives p2 ⊕ α1′ ⊵ p1 ⊕ α2, with α1′ := α1_{q2+1} ⊴ α2 := α2_{q1}. Suppose P(α1′) ≠ P(α2). Then weight(P(α1′)) <
+weight(P(α2)): a weight tie forces equal sets (RESULTS R84 (a) Fact DELTA). The signed-weight comparison of two sets is decided at the top of
+their symmetric difference, so g′ lies in P(α2) ∖ P(α1′) if g′ is even, and in P(α1′) ∖ P(α2) if odd. Not (M) and not (M′), and each play is
+simple, so the four sets hp1, hp2, P(α1′), P(α2) meet only as hp_i ∩ P(α_i) = ∅ and between the two tails. The symmetric difference of
+hp2 ∪ P(α1′) and hp1 ∪ P(α2) is therefore (hp1 Δ hp2) ∪ (P(α1′) Δ P(α2)). If its top were g′, the comparison would be decided at g′ for the
+α2 side, and p2 ⊕ α1′ ◁ p1 ⊕ α2: a contradiction. So the top lies in hp1 Δ hp2 and is above g′. □
+- DATA (core/rounds.py, ROUNDG_V = 0): of the 126 rounds, 54 are high climbs (top of hp1 Δ hp2 above g′) and 72 have equal tail masks
+  (the gate's gap is a length gap only).
+- Kill: a round with no (B), (M) or (M′), unequal tail masks, and the prefix difference's top below g′ (rounds.py ROUNDG_V > 0); it would
+  refute XW, W-MON or Ξ-monotonicity.
+
+### 6.2 The (prefix class, g) count: where it fails
+- Idea tested: the climbs that pay rounds are high (above g′), and the ranks above g′ form a fixed set. If the tops of a vertex's climbs
+  never repeated, a vertex would have at most n climbs and hence at most n rounds, with no W-changes used.
+- DEAD for all prefix climbs (not only the round-paying ones). Instance experiments/new/box25/instances/rtt16.pg (sha1
+  1775c8b0e0f16e4393a945299eacac4098778d08), S3 start, phase [0, 11], gate o = 13. Vertex 8 climbs 11 times. Every climb's top is an ADDED
+  even vertex, and the top ranks repeat (5 repeats for vertex 8, 7 in the phase; TOPREP). This is a binary-counter pattern: a lower even
+  vertex is re-added after a higher climb dropped it. Here g = rank 15 lies above every prefix vertex, so none of these climbs is high, and
+  vertex 8 never makes a round. The counter mechanism lives below g.
+- Does not apply at all to equal-tail gates. Instance experiments/red/xing/instances/x31_re24.pg (sha1
+  49eaf50e960923f70ec6df2671561dd89e38882a), phase [1, 5]: P(α1) = P(α2) (α1 = (∅, 2), α2 = (∅, 1)). There every one of the 33 rounds is paid
+  by an arbitrary prefix climb (round_tails_equal = 33), 2 rounds per vertex. «Above g» is vacuous there, so a (prefix class, g) count can
+  give nothing for this family.
+- What remains true on the data: the HIGH climbs of one vertex never repeat a top (HC_toprep = 0). This is thin evidence: at most 2 rounds
+  per vertex in all corpora.
+
+### 6.3 The precise missing lemma (parking point)
+- CONJECTURE PRE-HC (unequal tail masks). In a |D| = 1, c₁ = c₂, TD frozen W-phase, the rounds of x not decided by (B), (M) or (M′) have
+  pairwise distinct climb tops. Then x has at most n such rounds, by ROUND-G, without W-changes.
+  - Kill: a vertex with two rounds whose climbs share their top (rounds.py HC_toprep > 0).
+  - Even with PRE-HC, the remaining rounds stay open: equal-tail rounds (x31 family) and rounds decided by (B), (M) or (M′). Those need
+    PRE-P (§5.3) or a gate-crossing count.
+- Combined parking point for TC (|D| = 1, c₁ = c₂, TD): PRE-MON + PRE-P (§5.3) ⇒ TC ≤ 2n² ⇒ WCH = O(n³). The «above g» lever handles only
+  rounds through unequal tails, and only under PRE-HC. The length-gap gates (x31_re24) and the in-stay counter pattern (rtt16) are the two
+  instances any proof must handle.
+- Composition: unchanged from §4 and §5.3 (W-SPLIT's L* for this class only; nothing for NM*/NM*^U).
+
+## DONE / FINDINGS / NEEDS (box 32, after §6)
+- DONE: §6; rounds.py (ROUNDG_V, HC_toprep, TOPREP counters); core/out/rounds_*.txt re-run; check.sh «box 32 §6» pins.
+- FINDINGS:
+  - (1) PROVED (lane): Lemma ROUND-G (a round through unequal tails needs a prefix climb above g′).
+  - (2) DEAD: distinct climb tops per vertex for all prefix climbs (rtt16: 11 climbs, counter-like repeats below g).
+  - (3) The «above g» lever is vacuous for length-gap gates (x31_re24: 33 rounds with equal tail masks).
+  - (4) CONJECTURE PRE-HC (thin data).
+  - (5) TC parked at PRE-MON + PRE-P.
+- NEEDS: none from the owner.

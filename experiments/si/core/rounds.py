@@ -34,20 +34,31 @@ def _run(E, g, R, name):
                 kw = E.key(R[t]["W"][o]); nxt = next((u for u in range(t + 1, b + 1) if E.key(R[u]["vs"][o]) > kw), None)
                 if nxt is None: break
                 gc += 1; t = nxt
-            ent = Counter(); rd = Counter()
-            pinc = Counter()
+            ent = Counter(); rd = Counter(); hc = {}
+            pinc = Counter(); tops = {x: set() for x in range(n)}; lonly = Counter(); trep = Counter()
             for x in range(n):
                 if x == o: continue
                 prev = None
                 for t in range(a, b + 1):
                     if not inS[t - a][x]: continue
                     Wx, Wo = R[t]["W"][x], R[t]["W"][o]
+                    hm = Wx[1] ^ Wo[1]
                     ln = Wx[2] - Wo[2]; pk = (E.weight(Wx[1] ^ Wo[1]), ln if E.par[Wo[0]] == 1 else -ln)
-                    if prev is not None and pk > prev[0]: C["PREINC"] += 1; pinc[x] += 1
+                    if prev is not None and pk > prev[0]:
+                        C["PREINC"] += 1; pinc[x] += 1
+                        d = hm ^ prev[2]
+                        if d:
+                            tb = d.bit_length() - 1
+                            C["inc_mask"] += 1; C["inc_mask_top_added"] += bool(hm >> tb & 1)
+                            if tb in tops[x]:
+                                C["TOPREP"] += 1; trep[x] += 1
+                                if len(EX) < 8: EX.append(("TOPREP", name, a, b, "x", x, "t", t, "rank", tb))
+                            tops[x].add(tb)
+                        else: C["inc_len_only"] += 1; lonly[x] += 1
                     if prev is not None and (pk > prev[0] if os.environ.get("MUT") == "rev" else pk < prev[0]):
                         C["PREDEC_" + ("round" if prev[1] < t - 1 else "stay")] += 1
                         if len(EX) < 8: EX.append(("PREDEC", name, a, b, "x", x, "t", t, "after", prev[1]))
-                    prev = (pk, t)
+                    prev = (pk, t, hm)
             for x in range(n):
                 if x == o: continue
                 last_exit = None
@@ -70,9 +81,15 @@ def _run(E, g, R, name):
                             cl = "A" if inpre and not intail else ("B" if intail and not inpre else "M")
                         C["round_" + cl] += 1; rd[x] += 1
                         if cl == "B" and E.key(Xo) > E.key(R[q1]["W"][o]): C["B_with_gate_crossing"] += 1
+                        gd = Xo[1] ^ Wo[1]; pd = p1 ^ p2
+                        if gd == 0: C["round_tails_equal"] += 1
+                        elif pd and pd.bit_length() > gd.bit_length(): C["round_high_climb"] += 1; hc.setdefault(x, []).append(pd.bit_length() - 1)
+                        else: C["ROUNDG_V"] += 1
+
                         if len(EX) < 8: EX.append((name, a, b, "x", x, "q1", q1, "q2", q2, cl))
             C["rounds"] += sum(rd.values())
-            for key, v in (("entries/vertex", max(ent.values(), default=0)), ("rounds/vertex", max(rd.values(), default=0)), ("GC", gc), ("preinc/vertex", max(pinc.values(), default=0)), ("preinc_total/(n-1)", sum(pinc.values()) / (n - 1))):
+            C["HC_toprep"] += sum(len(v) - len(set(v)) for v in hc.values())
+            for key, v in (("entries/vertex", max(ent.values(), default=0)), ("rounds/vertex", max(rd.values(), default=0)), ("GC", gc), ("preinc/vertex", max(pinc.values(), default=0)), ("lenonly/vertex", max(lonly.values(), default=0)), ("toprep/vertex", max(trep.values(), default=0)), ("preinc-n+1", max(pinc.values(), default=0) - n + 1), ("preinc_total/(n-1)", sum(pinc.values()) / (n - 1))):
                 if v > MX.get(key, (-1,))[0]: MX[key] = (v, n, b - a, td, name, a, b)
 
 def run(g, name, start=None):

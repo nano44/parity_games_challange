@@ -719,6 +719,10 @@ grep -q "^NSP_MATCH_FAIL=1 NSP_RT=5 NSP_RT>TC=1 NSP_TC=0 NSP_late_noBC=5 NSP_noB
 echo "si (box 32: LATE-BASIN + matching on lend47_n32, lastonly control fails; general R*-TC dead on kt6_n58): PASS"
 # box 32 §5: rounds of one vertex (|D| = 1, c1 = c2): on x31_re24 every one of the 33 rounds is a strict prefix climb (class A) and prefixes
 # never decrease (34 strict increases); MUT=rev (flag increases as decreases) must fire.
-o=$(python3 -I core/rounds.py --one ../red/xing/instances/x31_re24.pg); grep -q "^PREINC=34 phases=1 phases_TD=1 round_A=33 rounds=33$" <<<"$o"
+o=$(python3 -I core/rounds.py --one ../red/xing/instances/x31_re24.pg); for k in " PREINC=34 " " round_A=33 " " rounds=33"; do grep -q "$k" <<<"$o"; done; if grep -q "PREDEC" <<<"$o"; then exit 1; fi
 o=$(MUT=rev python3 -I core/rounds.py --one ../red/xing/instances/x31_re24.pg); grep -q "PREDEC_round=33 PREDEC_stay=1" <<<"$o"
 echo "si (box 32 §5: rounds all class A, prefixes monotone on x31_re24; MUT=rev control fires): PASS"
+# box 32 §6: Lemma ROUND-G holds on x31_re24 (all 33 rounds have equal tail masks, no ROUNDG_V); distinct climb tops fail on rtt16 (TOPREP 7).
+o=$(python3 -I core/rounds.py --one ../red/xing/instances/x31_re24.pg); grep -q " round_tails_equal=33 " <<<"$o"; if grep -q "ROUNDG_V" <<<"$o"; then exit 1; fi
+o=$(python3 -I core/rounds.py --one ../new/box25/instances/rtt16.pg); grep -q "^HC_toprep=0 PREINC=24 TOPREP=7 " <<<"$o"
+echo "si (box 32 §6: ROUND-G on x31_re24; distinct climb tops dead on rtt16): PASS"
