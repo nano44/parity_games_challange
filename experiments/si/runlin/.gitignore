@@ -1,0 +1,4 @@
+# L-SI box 24: intermediate climb / stretch states (pinned records are in instances/)
+out/*.pg
+out/*.start
+__pycache__/

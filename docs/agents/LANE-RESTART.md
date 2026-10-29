@@ -139,4 +139,4 @@ Five questions:
 | 2026-10-28 | REFEREE | session_01B9goeXLtnEY4cNgaQcxEUh (~670k; handover dc4e47b8) | session_01V5yGRYHH4CmdeoyNidN6pK (Opus, D15/L37) | 3 | none (measured e2f06134: 5/5; CORE sha1 matches at three refs) |
 | 2026-10-28 | L-SI | session_01Wri18MQcngoeeFHoME5WLV (~610k; handover 7407ef29, queue da88a6d4) | session_01V5yGRWTEYFoWjhNJrADhYc (Opus, D15/L37) | 2 | none (re-measured: origin l-si contains 93ac515e (post-handover push), CORE 7b66f1ba; stale clone caught by the lane) |
 | 2026-10-28 | REFEREE-2 | session_01WT4cukhJyjxHKaBJWikCkK (~560k; handover 864302d0) | session_01V5yGRZzoAVpZvqB1LedCVF (Opus, D15/L37) | 3 | none (measured 6726c376: 864302d0 = origin; CORE sha1 at three refs; names-only independence count) |
-| 2026-10-29 | L-RED | session_01YPuTduNL6AQ8rWgPcTtAp3 (~550k; handover b2c3d07c) | session_01V5yGRZAX31ZbgX9Mz7tMR1 (Opus, D15/L37) | 2 | pending (handover check asked) |
+| 2026-10-29 | L-RED | session_01YPuTduNL6AQ8rWgPcTtAp3 (~553k; handover b2c3d07c, final 8bf11e60) | session_01V5yGRZAX31ZbgX9Mz7tMR1 (Opus, D15/L37) | 2 | pending (handover check asked) |
