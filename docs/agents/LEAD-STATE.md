@@ -1872,3 +1872,4 @@
 - 05:55Z (date -u): C92 sent (R83 ccd56407 at 4a67f98f); R82 landed check requested.
 - 06:00Z (date -u): L-NEW TOPSHAPE fixes 8e8f72387 (sha1 be683e9f, F1-F5, 17 quotes); L-NEW parked. R84 (TOPSHAPE) draft delegated to a subagent.
 - 06:05Z (date -u): Hourly sweep (06:04Z): no overage (L-SI, CHECKER five_hour allowed). L-SI 21 idle since 05:39Z → nudged (L-WAVE). CHECKER 13 running (R82 verified; C92 started; 333k). Parked: REFEREE 17, REFEREE-2 19, L-NEW 30, L-RED 24, L-COMP 6.
+- 06:15Z (date -u): R84 (TOPSHAPE) draft reviewed (subagent findings: packet header time vs freeze commit, topmono.py sha1 from git, R104's 133 is over all Odd choice vertices; run counts unreconciled). To CHECKER as C93, queued behind C92.
