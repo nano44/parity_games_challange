@@ -391,3 +391,12 @@ if git cat-file -e 55e0bcbda; then
 else
   echo "piece (P-N5-SDPRIME quotes): NOT RUN (source commit 55e0bcbda not in this clone)"
 fi
+# P-N5-REL-box25 (FROZEN, sha1 f79300a2d01cfb0aa27ad7214bcefbd84eafd7bb): 17 quotes verbatim (trunk b28123a58); shifted control fails.
+if git cat-file -e b28123a58; then
+  echo "f79300a2d01cfb0aa27ad7214bcefbd84eafd7bb  ../../docs/si/P-N5-REL-box25.md" | sha1sum -c --quiet
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-REL-box25.md | grep -q "quotes=17 bad=0"
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-REL-box25.md --mut | grep -q "QUOTES FAIL"
+  echo "grun (P-N5-REL frozen sha1; 17 quotes verbatim; shifted control fails): PASS"
+else
+  echo "grun (P-N5-REL quotes): NOT RUN (source commit b28123a58 not in this clone)"
+fi

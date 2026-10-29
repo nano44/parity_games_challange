@@ -105,6 +105,15 @@ DATA (grun/relseg.py; every segment with (H4′_rel) checked per vertex and for 
   12 at n 18. pg_n64_1 (the G climb's 35 at n 29) has SEG 25 (0.86n). So the data bound is SEG ≤ 1.00n; nothing super-linear. In these
   one-gate instances the segments have length ≈ 1: the run is a sequence of relevant σ̄ changes, and SEG ≈ |S|.
 
+- Anatomy of the G champion (pftheta34_n32, run [5, 39], one gate u = 0 with 19 options, all Even): at almost every transition ONE option x
+  switches, Ξ(x) rises, and σ̄(u) moves to the next-cheapest option; Ξ(u) = (1, P, ℓ) rises 34 times, through 11 path sets P, with ℓ strictly
+  falling inside each P-block (c = 1 has even priority: shorter is better). The number of Even choice vertices whose honest play passes u grows
+  from 0 to 27 along the run.
+- Elementary (PROVED, lane): in a phase the cycle node of Ξ(v) is constant, and inside a block of constant P the order is decided by ℓ alone
+  (S1), so by R15 (a) ℓ moves strictly one way there: XR_S(v) ≤ PCH_S(v) + (PCH_S(v) + 1)(n − 1), PCH_S(v) the P-changes of Ξ(v) in S.
+  DATA (grun/pch.py; grun/pch_alt.txt; 0 failures of the block monotonicity): max PCH of a gate 20 (so_th_n32, XR 33), PCH ≤ 0.66n. Again a
+  product; the P-changes are where an exponential lower bound would have to live (a binary-counter on P), and nothing here excludes it.
+
 ## 6. Pins (grun/out/; sha1sum)
 - rdr_K10: runfam_K10 + 25 Odd readers, n 74, run [1, 100] (99), G 91, SEG 9. .pg a7ac4830ddfd9c49a3c0ad1379cae26299a35bee, .start
   f95c5587016a4b572f7e15539342d8c2f8e97aae.
