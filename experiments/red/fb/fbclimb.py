@@ -32,7 +32,7 @@ def ev(G):
         it2, fb2, *_ = T.run(g, st, cap=3000, log=lambda *a: None)
         if REUSE:
             f, R = reuse(g, st, cap=3000)
-            return 1000 * f + 300 * R + fb2, f, st, R
+            return 100 * f + 1000 * R + fb2, f, st, R
         f, ph, it3 = fstats(g, st, cap=3000)
         return 1000 * f + fb2, f, st
     except Exception: return None

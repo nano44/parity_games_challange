@@ -20,19 +20,23 @@ def fstats(g, start, cap=10 ** 5):
             if cur > best[0]: best = (cur, a)
     return best[0], best[1], it
 
+MODE_RF = 2   # 1: RF = in-phase fallbacks re-switching a vertex already fallback-switched in the phase; 2: R1 = the same over single-switch fallbacks only; 0: vertices switched >= 2 times
 def reuse(g, start, cap=10 ** 5):
     """(f, R): f as fstats; R = number of Even vertices switched by in-phase fallbacks >= 2 times inside the phase with the largest R."""
     states = []; it, fb, ph, mp, s, t, hist = T.run(g, start, cap=cap, log=lambda *a: None, states=states)
     if len(states) == len(hist): raise RuntimeError("cap reached")
     E, Ed = T.Engine(g), T.Engine(T.dual(g))
     lam = [(t, tuple(x[0] for x in E.evaluate(s)[0]), tuple(x[0] for x in Ed.evaluate(t)[0])) for s, t in states]
-    bestf = bestR = 0; cnt = {}; cur = 0
+    bestf = bestR = 0; cnt = {}; cur = 0; rf = 0
     for i, (kind, sw, tw) in enumerate(hist):
-        if lam[i + 1] != lam[i]: cnt = {}; cur = 0; continue
+        if lam[i + 1] != lam[i]: cnt = {}; cur = 0; rf = 0; continue
         if kind == "FB":
             cur += 1; bestf = max(bestf, cur)
-            for v in sw: cnt[v] = cnt.get(v, 0) + 1
-            bestR = max(bestR, sum(1 for c in cnt.values() if c >= 2))
+            if MODE_RF == 1 and any(v in cnt for v in sw): rf += 1
+            if MODE_RF == 2 and len(sw) == 1 and sw[0] in cnt: rf += 1
+            if MODE_RF != 2 or len(sw) == 1:
+                for v in sw: cnt[v] = cnt.get(v, 0) + 1
+            bestR = max(bestR, rf) if MODE_RF else max(bestR, sum(1 for c in cnt.values() if c >= 2))
     return bestf, bestR
 
 if __name__ == "__main__":
