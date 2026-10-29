@@ -1,4 +1,4 @@
-# Draft RESULTS R88 (Lead, 2026-10-29 18:22Z by date -u; both reports, both §Cs and the fixes file filled) — to CHECKER C97 (Lead reviewed 18:31Z by date -u: subagent draft, sha1 ba7124b2 before review. Lead changes: Honest limits (v) (relation to RESULTS R21 (a), R62 (d), R67 (e)-(f): a drafter's
+# Draft RESULTS R88 (Lead, 2026-10-29 18:22Z by date -u; both reports, both §Cs and the fixes file filled) — to CHECKER C97 (Lead reviewed 18:31Z by date -u: subagent draft, sha1 ba7124b2 before review. Lead changes: Honest limits (v) (relation to RESULTS R21 (a), R62 (d), R67 (e)-(f): a drafter's — LANDED in RESULTS Results 2026-10-29 19:07Z (CHECKER C97 767bb71e PASS), after R87
 reading that no referee checked) REMOVED from the entry and kept here only as a note to CHECKER; the sentence on the lane's CONJECTURE R*-TC
 (DEAD in general form, lane DATA) REMOVED from Honest limits (ii) to keep the entry to refereed matter; old (vi) renumbered (v). Lead decisions for CHECKER
 to check: (1) the title is G12's final line (fixes l. 65; line sha1 9e6196f2…, byte-checked by REFEREE with `cmp`) verbatim, outer quotes and final

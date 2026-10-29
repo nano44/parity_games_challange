@@ -273,6 +273,13 @@ w6=$(python3 -I box59/coarse.py box59/out/fc_3.pg)
 if grep -q "^COARSE fc_3.pg n 85 m 187 I 121 .* SBC_G 8 DEPTH 5 C 10 viol 5 " <<<"$w6"; then
   echo "box 61 DEPTH: fc_3 I 121, SBC_G 8, needed depth 5, coarse (K=1) records 10 miss 5 segments: PASS"
 else
+  echo "box 61 DEPTH checks: FAILED"; exit 1
+fi
+w7=$(python3 -I box59/dwopen.py box59/out/dw_4.pg 4); w8=$(python3 -I box54/n5sf.py box59/out/dw_4.pg)
+if grep -q "^DWOPEN N 4 word BINARY sets_k>=1 7 every-set-opens-and-lane-first PASS SBC 26$" <<<"$w7" && grep -q "^iterations 286 " <<<"$w8" && \
+   [ "$(python3 -I box59/dw.py 4 | sha1sum | cut -c1-12)" = 19783274245b ]; then
+  echo "box 62 DW: dw_4 N5-SF 286 = 19*2^4-18, sbar binary counter, lane-first gap at every set: PASS"
+else
   echo "box 59 FC checks: FAILED"; exit 1
 fi
 rm -rf "$tmp"
