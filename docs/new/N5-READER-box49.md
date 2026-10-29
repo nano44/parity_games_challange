@@ -27,6 +27,7 @@ rows() over experiments/new/box21/n5x.py (SPEC S1-S5), imported read-only.
 | §9 | FB-LIN through FB-C^K: max |𝒞^K_f| 4 / 5 / 8 (lib41 / L-RED / dressings); MONO-CONF (K-configurations at successive fallback sources never recur after a different one) DEAD on the plain long121_n40 and njb_reabs65_n48; SMALL-CK DEAD by l121_cf_emb12 (|𝒞^K_f| = f = 8) | DATA + DEAD |
 | §10 | One across-configuration attempt for FB-LIN (Lead 00:10Z): the candidate potentials either scale with |𝒞^K_f| or do not rise at every source | OPEN (obstruction recorded) |
 | §11 | L-RED's CONJECTURE R1-ZERO (Lead 03:24Z): DEAD as stated (2 instances, one mechanism: w, then a successor y of w, then w → y); no lemma proved; the reduction it would give for FB-LIN stated | DATA + DEAD + OPEN |
+| §12 | Lead's TOP-MONO (04:57Z): Δ-form DEAD (long121 vertex 0, 20 rises); Lemma TOP-SHAPE PROVED (top(P) falls only while odd, rises only to even; ≤ n − 1 top changes per vertex per phase): packet P-N5-TOPSHAPE-box49 | PROVED (lane) + DEAD + DATA |
 | §6 | Fallback-free runs: W never falls (DATA, 10,499 transitions); the W*-reach potential F_t stalls at 53% of transitions (xsn43_n48: 43 of 44) | DATA + DEAD |
 
 ## 0. Setting and the definition
@@ -313,3 +314,12 @@ for every Even x ≠ w, and w moves to the (Ξ_t, index)-maximum of Iσ_t(w). To
   - A proof of a per-vertex statement needs to say why a vertex, once moved by a fallback to its Ξ-best improving option, is not later
     overtaken there by an option whose value the wave itself raised. The two events are exactly that overtaking.
 - No lemma proved, so no packet. Status: R1-ZERO DEAD as stated; R1-STEP CONJECTURE (thin data); FB-LIN OPEN.
+
+## 12. TOP-MONO (Lead's wake-up of 04:57Z, from L-RED R103 and L-SI GRUN §5): see the frozen packet docs/new/P-N5-TOPSHAPE-box49.md
+- DEAD in the Lead's literal form (the Δ-top at successive P-changes is non-increasing): long121_n40, vertex 0, 20 rises in phase [1, 122].
+  The Δ-top is a counter's carry position.
+- PROVED (lane), Lemma TOP-SHAPE. The top of P(Ξ_t v) rises only to even ranks and never falls from an even rank. So its distinct values in a
+  phase are an odd decreasing run, possibly ⊥, then an even increasing run: at most n − 1 top changes per vertex per phase, on every game
+  (Fact DELTA + (MON) + λ constant). DATA: 0 violations on 1,371 runs (98,427 P-changes).
+- What remains for the Lead's plan: the P-changes under a FIXED top (the counting part, up to 71 per vertex per phase). L-RED attacks it.
+  TOP-SHAPE bounds the carries tied to top changes by n − 1 per vertex per phase, as the Lead's message anticipates.
