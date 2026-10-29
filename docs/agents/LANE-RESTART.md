@@ -166,3 +166,6 @@ Five questions:
 | 2026-10-29 | L-NEW | session_01V5yGRaHMppivA9TeVXbHiQ (~375k; handover e5f1026e) | session_01V5yGRZtUQrbWSSxFF96dQJ (Opus, D14/D18) | 2 | PENDING (successor's check) |
 | 2026-10-29 | L-SI | session_01V5yGRZ7ZhG6McUPXJVe7zf (~450k; handover cc47e2df, head 64a3751c) | session_01V5yGRVhU281YxfobtfdJ8L (Opus, D15/D18) | 2 | PENDING (successor's check) |
 | 2026-10-29 | L-RED | session_01V5yGRXarwpixU1C9hcL21Z (~445k; handover acd161dd, head 745f3b07) | session_01V5yGRa1utvwvH65mnBBssK (Opus, D1/D18) | 2 | PENDING (successor's check) |
+| 2026-10-29 | L-NEW | session_01V5yGRZtUQrbWSSxFF96dQJ (~450k; handover d6fd1979) | session_01V5yGRZhJhpJcRZhDSWTwuE (Opus, D14/D18) | 2 | PENDING (successor's check) |
+| 2026-10-29 | L-SI | session_01V5yGRVhU281YxfobtfdJ8L (~290k; handover aec7e3a6) | session_01V5yGRVp3epWjVsx5aH3qSm (Opus, D15/D18) | 2 | PENDING (successor's check) |
+| 2026-10-29 | L-RED | session_01V5yGRa1utvwvH65mnBBssK (~320k; handover a134e6be) | session_01V5yGRZ2y7KsHSMJMvdKBmF (Opus, D1/D18) | 2 | none (check 9221e775; ls-remote first, stale clone caught) |

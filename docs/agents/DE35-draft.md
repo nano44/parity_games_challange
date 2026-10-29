@@ -1,4 +1,4 @@
-# Draft RESULTS DE35 (Lead, 2026-10-29 18:46Z by date -u) — to CHECKER C98 (REVISED 19:15Z by date -u for C98 E-1: moves 1-3 verbatim; move 4 verbatim EXCEPT PV_G, which is DEAD by a measured instance CHECKER did not have (L-NEW 5b3dbd2f dw_8, maxGflips 255 > n 217); optional N-1..N-3 applied); lines 3-end are the entry
+# Draft RESULTS DE35 (Lead, 2026-10-29 18:46Z by date -u) — to CHECKER C98 (REVISED 19:15Z by date -u for C98 E-1: moves 1-3 verbatim; move 4 verbatim EXCEPT PV_G, which is DEAD by a measured instance CHECKER did not have (L-NEW 5b3dbd2f dw_8, maxGflips 255 > n 217); optional N-1..N-3 applied); lines 3-end are the entry — LANDED in RESULTS Dead ends 2026-10-29 19:43Z (CHECKER C98 Add. 1 fbc45a23 PASS), after DE34; optional N-4 not applied
 
 - DE35 (2026-10-29): N5-SF, the single-frame variant of N5 (SPEC S1-S5 + FIX 1-4 with S4a's opponent τ replaced by Odd's best reply σ̄(σ),
   S4b mirrored; L-NEW successors 32-33, docs/new/N5-SF-box54.md, packet docs/new/P-N5-SF-box55.md frozen at l-new 95a7a581; RESULTS R87

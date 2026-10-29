@@ -1,0 +1,3 @@
+RHO mk_4_16.pg n 102 phases 2 worst {'rho': 49, 'fb': 0, 'len': 75} FBRED-viol 0
+RHO mk_6_24.pg n 150 phases 2 worst {'rho': 121, 'fb': 0, 'len': 161} FBRED-viol 0
+RHO mk_16_100.pg n 498 phases 2 worst {'rho': 961, 'fb': 0, 'len': 1647} FBRED-viol 0
