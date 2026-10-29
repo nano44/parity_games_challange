@@ -1,3 +1,42 @@
+# Handover check: L-SI (successor 29, written 2026-10-29T19:3xZ by date -u (19:30:43); LANE-RESTART step 3; Opus 5.5, D18/L40)
+Every answer below was measured in this container; commands given. Predecessor: successor 28, session_01V5yGRVhU281YxfobtfdJ8L.
+Its handover is notes/L-SI.md "## HANDOVER (successor 28, box 32)" (l-si aec7e3a6).
+
+## 1. Branch, head, distance to trunk
+- Branch `claude/l-si`. Clone stale again: local HEAD da88a6d4 ("up to date" per git status), 769 behind origin aec7e3a6
+  (`git rev-list --left-right --count HEAD...origin/claude/l-si` → 0 769). `git merge --ff-only` to aec7e3a6; aec7e3a6 is the
+  predecessor's handover (`git merge-base --is-ancestor`).
+- Trunk claude/vibrant-johnson-nxvvxo = 754810df at the fetch: aec7e3a6 was 0 ahead / 75 behind (merge-base aec7e3a6). `git merge --no-ff`
+  (no rebase) → d4716874, 1 ahead / 0 behind. This file is the next commit. Note: my first fetch also named a nonexistent ref `main` and
+  so fetched nothing; re-fetched without it.
+- Oink: tools/oink/build absent (not needed for box 33 unless a solver cross-check is asked).
+
+## 2. Open work and the next step of each (nothing running: `ps -eo args | grep -c "[p]ython3"` → 0)
+- STEP 1, BOX 33 (Lead 19:31Z): the Odd side of G-N5-TIME. (a) relate #τ restricted to re-entries of unprotected Odd options to R86's
+  NM*^U / P*^U; (b) the mirror of L-NEW 34's ODD-FREEZE in R86's terms; (c) measure #τ and unprotected re-entries per Odd vertex on the
+  dualised families. Next: read R86, R88, box63/box62 §5-§6, R117; then the tooling for (c).
+- Predecessor queue (TC at PRE-P, INJ1, multi-gate) stays behind box 33.
+
+## 3. docs/GAPS.md rows I own
+- None (`awk -F'|' '$4 ~ /L-SI/' docs/GAPS.md` → empty). I work under G-N5-TIME (open, owner L-NEW). RESULTS last row R88
+  (`grep -o '^### R[0-9]*' docs/RESULTS.md | tail -1`).
+
+## 4. The three owner rulings that constrain me most (verbatim from docs/DECISIONS.md; status docs/DECISIONS-INDEX.md)
+- D18 (DECISIONS.md l.332; index l.32: active): "Focus on N5 and work toward proving it. Explore novel approaches, especially by
+  connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions
+  where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and
+  open problems." Lead reading L40 (index l.33: active).
+- D15 (DECISIONS.md l.278; index l.26: active): "q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be
+  autonomous, reason about it"
+- D1 (DECISIONS.md l.6; index l.5: active): "Never publish, post, email, submit or contact anyone outside the fleet. Anything external is
+  my decision."
+
+## 5. One trap that bit this lane before, and the check that prevents it
+- Trap: stale clone (again: 769 behind while git status said "up to date"); a fetch naming a missing ref silently fetches nothing.
+  Check: fetch each branch by name, then `git rev-parse origin/claude/l-si` and the rev-list count before reading the notebook and
+  before every push.
+- Trap (successor 28): «; ! grep» is a no-op under set -e in check.sh. Check: use «if grep …; then exit 1; fi».
+
 # Handover check: L-SI (successor 27, written 2026-10-29T15:2xZ by date -u (15:20:18); LANE-RESTART step 3; Opus 5.5, D18/L40)
 Every answer below was measured in this container; commands given. Predecessor: successor 26, session_01V5yGRZzXJYDE4RqCwgmy7e.
 Its handover is notes/L-SI.md "## HANDOVER (successor 26, box 30)" (l-si 72a4c733).
@@ -221,7 +260,7 @@ Frozen packets unchanged (`sha1sum docs/si/P-N5-*box25*.md`): SDPRIME 54678c38, 
   where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and
   open problems." Lead reading L40 (index l.33: active).
 - D14 (DECISIONS.md l.244; index l.22: active): "D" / "You know it can also test prveiously not tested approaches, it can come up with it own as well"
-- D1 (DECISIONS.md l.3; index l.5: active): "Never publish, post, email, submit or contact anyone outside the fleet. Anything external is
+- D1 (DECISIONS.md l.6; index l.5: active): "Never publish, post, email, submit or contact anyone outside the fleet. Anything external is
   my decision."
 
 ## 5. One trap that bit this lane before, and the check that prevents it
