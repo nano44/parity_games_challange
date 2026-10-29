@@ -38,9 +38,22 @@ def plfb(g, start, cap=10 ** 5):
             best = max(best, (L, F)); a = k
     return best
 
+def runlen(g, start, cap=10 ** 5):
+    """Longest fallback-free run inside one phase (consecutive non-fallback transitions, tau and cycle-node maps constant)."""
+    states = []; it, fb, ph, mp, s, t, hist = T.run(g, start, cap=cap, log=lambda *a: None, states=states)
+    E, Ed = T.Engine(g), T.Engine(T.dual(g))
+    lam = [(t, tuple(x[0] for x in E.evaluate(s)[0]), tuple(x[0] for x in Ed.evaluate(t)[0])) for s, t in states]
+    best = cur = 0
+    for i, (kind, sw, tw) in enumerate(hist):
+        if kind == "FB" or lam[i + 1] != lam[i]: cur = 0
+        else: cur += 1; best = max(best, cur)
+    return best
+
 if __name__ == "__main__":
     a = sys.argv[1:]
     for i in range(0, len(a), 2):
         g = T.pg.parse("".join(l for l in open(a[i]) if not l.lstrip().startswith("%")))
         PL, SW, arg, it = measure(g, ({}, {}) if a[i + 1] == "S3" else T.readstart(a[i + 1]))
-        print("%s n=%d iterations=%d PL=%d (%.2fn) SW=%d (vertex, phase)=%s" % (os.path.basename(a[i]), g.n, it, PL, PL / g.n, SW, arg))
+        st = ({}, {}) if a[i + 1] == "S3" else T.readstart(a[i + 1])
+        R = runlen(g, st)
+        print("%s n=%d iterations=%d PL=%d (%.2fn) RUN=%d (%.2fn) SW=%d (vertex, phase)=%s" % (os.path.basename(a[i]), g.n, it, PL, PL / g.n, R, R / g.n, SW, arg))
