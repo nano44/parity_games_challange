@@ -29,6 +29,21 @@ def run(g, st, nm):
                 while x not in seen: hit.add(x); seen.add(x); x = nx[x]
         Qr = [q for q in Q if q in hit]
         rd = [tuple(R[t]["sb"][q] for q in Qr) for t in src]
+        # K-configurations (Theorem FB-C^K, docs/new/P-N5-FBCK-box49.md): K := the vertices reachable in G from an Even vertex of
+        # out-degree >= 2; configuration = σ̄_t|(Q ∩ K). Checked: at most n_K = |K| fallback sources per K-configuration (KVIOL must be 0).
+        K = set(st0 for st0 in range(g.n) if g.owner[st0] == 0 and len(g.succ[st0]) >= 2); stack = list(K)
+        while stack:
+            x = stack.pop()
+            for y in g.succ[x]:
+                if y not in K: K.add(y); stack.append(y)
+        QK = [q for q in Q if q in K]; ck = [tuple(R[t]["sb"][q] for q in QK) for t in src]
+        C["Cf_K"] += len(set(ck))
+        if ck:
+            pk = {}
+            for c in ck: pk[c] = pk.get(c, 0) + 1
+            if max(pk.values()) > len(K): C["KVIOL"] += 1
+            mx("per_K_conf_over_nK", max(pk.values()) / len(K), (nm, (i, j), g.n, len(K), max(pk.values())))
+            mx("Cf_K", len(set(ck)), (nm, (i, j), g.n, len(K), f))
         kr = len(set(rd)); C["Cf_read"] += kr
         if rd:
             pr = {}
