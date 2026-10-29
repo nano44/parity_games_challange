@@ -280,6 +280,12 @@ if grep -q "^DWOPEN N 4 word BINARY sets_k>=1 7 every-set-opens-and-lane-first P
    [ "$(python3 -I box59/dw.py 4 | sha1sum | cut -c1-12)" = 19783274245b ]; then
   echo "box 62 DW: dw_4 N5-SF 286 = 19*2^4-18, sbar binary counter, lane-first gap at every set: PASS"
 else
+  echo "box 62 DW checks: FAILED"; exit 1
+fi
+w9=$(EOPP=tau OOPP=sigma python3 -I box59/mix.py box59/out/dw_3.pg); w10=$(EOPP=sbar OOPP=sigma python3 -I box59/mix.py box59/out/dw_3.pg)
+if grep -q "iterations 41 .* tau-changes 3 " <<<"$w9" && grep -q "iterations 134 " <<<"$w10"; then
+  echo "box 62 FRAME: dw_3 with tau in Even's arena (N5) 41, with sbar(sigma) 134: PASS"
+else
   echo "box 59 FC checks: FAILED"; exit 1
 fi
 rm -rf "$tmp"
