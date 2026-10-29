@@ -183,3 +183,56 @@ No gap. No item FALSE. Notes N-C1..N-C5 (§4).
   - Pinned quotecheck and compose.py are reproduced exactly.
   - My own checker shows 0 violations on 14,428 runs.
 - NEEDS: Lead: route N-C1..N-C5 to L-SI. I write §C after REFEREE's COMPOSE report.
+
+## §C. Joint gap map (REFEREE-2 successor 20, written 2026-10-29 from 13:10Z by date -u)
+REFEREE's report: docs/referee/R-N5-COMPOSE.md (REFEREE successor 18; claude/referee 4896bc2e, read at 0ea27806). I first opened it at 13:09Z,
+after this report was pushed (4b8afa95, 11:59Z). Neither referee had read the other's report before writing its own.
+
+### C.1 Verdict map
+| § | REFEREE | REFEREE-2 | joint |
+| --- | --- | --- | --- |
+| §1 setting, (F-SW), (F-MON) | CHECKED (|𝒫| undefined: COMP-E1) | SIGNED | agreed; COMP-E1 is the one E-item (C.2) |
+| §2 SW-RETURN | SIGNED | SIGNED | SIGNED by both |
+| §3 LEN-MONO | SIGNED | SIGNED | SIGNED by both |
+| §4 Theorem COMPOSE | SIGNED with |𝒫| := transitions (COMP-E1) | SIGNED (my check read |𝒫| as transitions, b − a) | SIGNED by both, with COMP-E1 |
+| §5 COMPOSE-RUN | SIGNED | SIGNED | SIGNED by both |
+| §6 COMPOSE-NM | SIGNED as an implication; its premise [MΦ] on λ-runs HOLDS | SIGNED as an implication; λ-run replacement valid (§2.5) | SIGNED by both. Premise confirmed by both: REFEREE §6 + R-N5-MPGS §1b; REFEREE-2 §2.5 + R2-N5-MPGS-C |
+| §7 DATA | reproduced exactly | reproduced exactly | identical figures |
+
+**Joint gap map: no mathematical gap.** The one joint E-item is a missing definition (COMP-E1). No item is FALSE.
+
+### C.2 COMP-E1: AGREED, it is an E-item
+- The packet uses |𝒫| in Theorem COMPOSE's phase part and never defines it.
+- Read as the number of STATES, the phase part is false. A one-state phase gives 1 ≤ 0. A one-transition phase with one switch gives
+  2 ≤ 1. REFEREE reports 247 + 844 phases with L = Σ SW.
+- Read as TRANSITIONS, it is what the proof shows and what both checkers compute. Mine computed it as b − a, with 0 violations on 2,840 phases.
+- I missed it: my report signed the phase part without noting the undefined symbol.
+- Fix: define |𝒫| := #{t : t, t + 1 ∈ 𝒫}.
+
+### C.3 Differences (class: E = required text fix for docs/si/P-N5-COMPOSE-fixes-box28.md; opt = optional; — = record only)
+| # | point | raised by | REFEREE-2 assessment | class |
+| --- | --- | --- | --- | --- |
+| D1 | COMP-E1: |𝒫| undefined; must be transitions | REFEREE | Agreed (C.2) | E |
+| D2 | N-C2: LEN-MONO and COMPOSE are stated for (maximal) λ-runs, but the phase part applies LEN-MONO to a phase. The proof uses only "λ constant", so say "any stretch with λ (λ^U) constant" | REFEREE-2 | REFEREE §4 applies it the same way, without a text note. Applying the λ-run bound to the enclosing λ-run would give PCH_R, not PCH_𝒫, so the phase statement needs the stretch form. One word | E |
+| D3 | N-C3: on λ^U-runs, MATCHED / NM^U are read with G^d's parities | REFEREE-2; REFEREE §6 says the same in its text | Agreed by both. §6's "NM* over both players" should say so | E |
+| D4 | COMP-N1: the title's formula uses P*^U, which the title does not define (§1 does) | REFEREE | Agreed | opt |
+| D5 | COMP-N2: RISE counts CHANGES of Ξ(c) (rises by F-MON); say so at its definition | REFEREE | Agreed | opt |
+| D6 | COMP-N3: spell out I := {(v, σ_{t+1}(v)) : σ_{t+1}(v) ≠ σ_t(v)} ⊆ Iσ_t in (F-MON) | REFEREE | Agreed; my §2.0 used exactly this I | opt |
+| D7 | COMP-N4: the λ-run reading of [MΦ] can be a remark in the landed MPGS entry | REFEREE | Agreed. It is now confirmed by both referees (R2-N5-MPGS-C, "§1b AGREED"), so the packet's ASSUMED label on [MΦ] is resolved once MPGS lands | opt |
+| D8 | N-C1: the [MΦ] quote joins MPGS l. 97-98 with "…" and drops "**" | REFEREE-2 (strict qcheck 15/16) | REFEREE's checker passes it. Content faithful | opt |
+| D9 | COMP-N6 = my §2.0 (F-MON dual is [MON] on G^d, as in R47's citation chain) | both | Same | — |
+| D10 | Slack: REFEREE Σ SW / Σ(1 + RISE) = 0.10 overall (library); my max per run 0.8 (N-C5) | both | Different statistics (overall vs per-run maximum); no conflict | — |
+| D11 | Controls. REFEREE MUT 4: the phase bound fails on whole λ-runs (423); MUT 2: PCH in place of RISE bites (3). My X_LENfull (LEN-MONO across λ-changes) did not bite | both | Complementary. REFEREE shows the phase restriction is needed; neither shows the λ restriction of LEN-MONO is needed | — |
+| D12 | Data scale | both | REFEREE: 10,778 runs (763 library + 15 pins + 6,000 + 4,000 random), Odd-side λ^U NM data new. REFEREE-2: 14,428 runs, 40,406 transitions. 0 failures in both. Max λ-runs 29 in both (library) | — |
+
+### C.4 Joint list for L-SI (fixes file)
+1. E: define |𝒫| as the number of transitions inside 𝒫 (D1).
+2. E: state LEN-MONO and Theorem COMPOSE for any stretch with λ (λ^U) constant (D2).
+3. E: §6: NM^U (and MATCHED on λ^U-runs) are read with G^d's parities (D3).
+4. opt: D4-D8.
+
+### C.5 DONE / FINDINGS / NEEDS (§C)
+- DONE: this §C.
+- FINDINGS: all items are SIGNED by both referees, with no mathematical gap. COMP-E1 is AGREED as an E-item. REFEREE-2 adds two one-clause
+  E-items (D2, D3), which REFEREE's own text already applies implicitly.
+- NEEDS: Lead: rule on D2, D3 as E or opt; route C.4 to L-SI.
