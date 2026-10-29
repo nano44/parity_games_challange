@@ -1,0 +1,1 @@
+checks 20000 diffs 0 (h 10, seed 1902)
