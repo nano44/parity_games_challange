@@ -126,6 +126,7 @@ def side_checks(g, S, seq_full, fbflags, name, tag, st, n, m):
             S_ += 1; L = b - a; st.mxu(f"maxstretch_{tag}", L); st.inc(f"stretches_{tag}")
             if L > n + m: st.bad("SEG", f"{name} {tag} stretch {a}-{b} len {L} > n+m")
             if L == n + m: st.inc("SEGsharp")
+            if L > n - 1: st.inc("X_SEGn1")   # control: a stretch longer than n - 1 (the m term is used)
             vch = sum(infos[j + 1][0] != infos[j][0] for j in range(a, b))
             if vch > n - 1: st.bad("SEG", f"{name} {tag} stretch {a}-{b}: {vch} value changes")
             for j in range(a, b):
