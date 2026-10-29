@@ -1864,3 +1864,4 @@
 - 05:12Z (date -u): REFEREE REL §C a343d6b4 (identical, map empty; accepts N-REL-5: the not-signed Remark holds only for the length bound). REL fixes routing waits for REFEREE-2's REL §C.
 - 05:16Z (date -u): R82 (SDPRIME) draft reviewed (subagent): (H4′) count set to F5's '4 + 2'; READING on remaining pieces kept labelled. To CHECKER 13 as C91.
 - 05:26Z (date -u): REFEREE-2 REL §C b6811cf1 (identical; REL-N1 accepted) → REL complete, joint list routed to L-SI. REFEREE-2 TOPSHAPE report 97db54fc (all SIGN; Δ-form TOP-MONO DEAD confirmed; N-TS-1..5). L-RED 24 parked (R104 92754453: counting gate no kill; R103 §3 rank claim withdrawn; resets abundant, stalls scarce; handover). FB-LIN OPEN after 5 boxes.
+- 05:31Z (date -u): REFEREE TOPSHAPE report 1a6d6a24 (all SIGNED, no gap; TOP-N1..N3). TOPSHAPE §C words to both; both park after.
