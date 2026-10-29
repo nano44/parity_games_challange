@@ -1,0 +1,8 @@
+SBCG dw_3.pg n 87 m 191 orbit 135 SBC 11 SBC_G 11 SEGMAX 27 maxGflips 7 PASS
+FREC dw_3.pg n 87 k 3 orbit 135 SBC 11 maxflips 7 maxexcess 1 worst (58, 7, 3)
+SBCG dw_4.pg n 113 m 252 orbit 287 SBC 26 SBC_G 26 SEGMAX 33 maxGflips 15 PASS
+FREC dw_4.pg n 113 k 4 orbit 287 SBC 26 maxflips 15 maxexcess 7 worst (72, 15, 4)
+SBCG dw_5.pg n 139 m 313 orbit 591 SBC 57 SBC_G 57 SEGMAX 39 maxGflips 31 PASS
+FREC dw_5.pg n 139 k 5 orbit 591 SBC 57 maxflips 31 maxexcess 21 worst (86, 31, 5)
+SBCG dw_6.pg n 165 m 374 orbit 1199 SBC 120 SBC_G 120 SEGMAX 45 maxGflips 63 PASS
+FREC dw_6.pg n 165 k 6 orbit 1199 SBC 120 maxflips 63 maxexcess 51 worst (100, 63, 6)
