@@ -1,4 +1,4 @@
-SKIPPED_input=1 nm_max=42 pch_max=71 phases=345
+SKIPPED_input=1 fall_d1=8963 fall_d2=6015 fall_d3=4692 fallmax_d1=22 fallmax_d2=15 fallmax_d3=14 nm_max=42 pch_max=71 phases=345
 columns: L, game, i, j, S1 = sum SW, S2 = sum (1 + RISE), S3 = (I2) bound, S4 = (I3) bound, max NM, max PCH, max RISE, max SW, n
 TOP (291, 'experiments/si/runlin/instances/runfam_K100.pg', 1, 292, 355, 2581, 295792, 6145885, 4, 8, 11, 5, 139)
 TOP (211, 'experiments/si/runlin/instances/runfam_K60.pg', 1, 212, 275, 1941, 155232, 3205125, 4, 8, 11, 5, 99)

@@ -23,6 +23,7 @@ Labels (D18 / L40): PROVED (lane) / CONJECTURE / OPEN / DATA / READING / DEAD. C
 | §7 | the length reduces to MAXV (switches of one vertex in one segment); Lemma SW-RETURN | READING; PROVED (lane) |
 | §6 | LENE (b − a ≤ \|E_b\|) and LEN2 (b − a ≤ 2·SW + 1) | DEAD: L-RED R106 runquad_K8_m30_n192 (one REL segment of 263 transitions, \|E_b\| = 49, SW = 47) |
 | §9 | Theorem COMPOSE: every phase has ≤ Σ_{(v,c)} n(PCH(c) + 1) ≤ m·n·(max PCH + 1) transitions (Lemmas SW-RETURN, LEN-MONO); with MATCH-Φ (L-LIT, under review) ≤ m·n·((n²/2)(NM + 1) + NM + 1); Corollary COMPOSE-RUN (R47 (a), both players): the whole N5 run on any game is polynomial IF the carry counts are | PROVED (lane), a REDUCTION; DATA slack |
+| §10 | where carries come from (runquad: one high Odd rank swapped for a lower one plus the reactor chain); polynomial re-weightings Φ_d (d ≤ 3) keep the carries | DATA, READING |
 | §8 | Lemma SW-RISE (a switch strictly raises the switcher's own Ξ off its honest cycle); SW-RUN per fallback-free run (Lead: SW-PER-VERTEX) | PROVED (lane); CONJECTURE, DATA ≤ 0.667n |
 
 ## 0. Setting
@@ -262,6 +263,23 @@ for any sequence of subsets of R_c (c fixed), the number of changes is ≤ (K(K+
   (≤ n(n − 1) changes each), EI1/OI1, ELDIR/OLDIR, ELBLK/OLBLK PASS on alt_all pinned starts (413 runs), lib41 (412), experiments/si
   (276), and the pins above (chg/composerun_*.txt); at most 31 λ-runs and 28 λ^U-runs in one run; Odd-side PCH ≤ 13. The slack: L ≤ S1 ≤ S2 are within factors 2-4 (the counting is sharp up to constants); the
   factor n of LEN-MONO and the n²/2 of (MΦ) are where all the slack sits (max RISE = max PCH in every family above).
+
+## 10. Where carries come from (anatomy; DATA, READING)
+- chg/carries.py on runquad (the vertex with the most carries in the longest phase): runquad_K8_m30_n192, Odd vertex 18 (cycle node 0):
+  14 P-changes, 8 carries, in pairs one pivot climb apart (t = 63/65, 96/98, …, 228/230, then 261): a CARRY removes one high-rank Odd
+  vertex (55, then 61, 67, …: the pivot's current marker) and adds a slightly lower-rank Odd vertex (11, 12, …) PLUS the whole reactor
+  chain (≈ m + 3 low-rank Odd vertices 190, 187, …, 130, …; vertex ids), Φ falls by 463; two steps later a MATCHED change removes that chain again (Φ + 467). The weight
+  rises at both (the removed high Odd rank dominates), Φ falls at the carry because Φ weighs ranks linearly. runquad_K3_m4_n54: vertex 13,
+  4 P-changes, 3 carries, the same shape. So in L-RED's families NM = K = Θ(n) per vertex per phase, PCH = 2K − 1.
+- Polynomial re-weightings do not remove carries (DATA, chg/compose.py fall_dK): with Φ_d := Σ ±pos^d, P-changes where Φ_d does not rise
+  on runquad_K8_m30_n192: d = 1, 2, 3: 824, 724, 616 (8 per vertex at most for every d); dlsep_kill_n70: 54, 42, 23; runquad_K3_m4_n54:
+  63, 25, 2; the library has them too (most per vertex per phase, d = 1/2/3: alt_all pinned 25/20/19, lib41 12/10/9, experiments/si
+  22/15/14; chg/compose_*.txt). The carry «drop one high rank r, add a slightly lower rank r′ and a long tail» defeats any weight with
+  w(r) − w(r′) bounded by a polynomial in the gap, since the tail is long (≈ m). Only S1's exact 2^rank weights see it as a rise.
+- READING. A bound on NM under S4a cannot come from the P-sets alone (MATCH-Φ's remark: the Corollary holds for any sequence of subsets);
+  in runquad each carry of vertex 18 is caused by ONE pivot step (a high marker leaves 18's honest play and the reactor chain enters it).
+  The natural S4a-specific target is therefore «carries of one vertex per λ-run ≤ (pivot steps that change its honest play's top
+  segment)», i.e. a count of a different kind (cycle-node-near events, not P-sets). Not attempted yet.
 
 ## DONE / FINDINGS / NEEDS
 - DONE: this note; tools chg/suffix.py (SUFFIX-COUNT, BND with MUT, EARLY, INTER-JOINT), chg/dlock.py (deadlock anatomy and candidates),

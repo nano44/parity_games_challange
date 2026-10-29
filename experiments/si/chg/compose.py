@@ -12,6 +12,8 @@ Mendelsohn-Dulmage theorem: a matching covering the even outgoing and the odd in
 MODE=run: Corollary COMPOSE-RUN on the whole run (Even switches on lambda_Xi-runs, Odd switches on lambda_U-runs of the dual valuation
 U of tau on G^d): RUNI0_V (run length > Even + Odd switches), EI1/OI1, ELDIR/OLDIR, ELBLK/OLBLK; TOP columns then read L, game, 0, T,
 switches + B, sum (1 + RISE) + B, sum n (PCH + 1) + B, -, Even switches, Odd switches, B_Xi, B_U, n (B = lambda-change transitions).
+fall_dK / fallmax_dK: P-changes at which Phi_d := sum of signed pos^d (d = 1, 2, 3) does not rise (all, and the most for one
+vertex in one phase); CONJECTURE PHI-d-MONO would say fall_dK = 0 under S4a for some fixed d (it would bound PCH by the range n^(d+1)).
 Prints per phase the sums S1 = sum_v SW(v), S2 = sum_(v,c) (1 + RISE(c)), S3 = sum_(v,c) (1 + PCH(c) + (PCH(c)+1)(n-1)),
 S4 = the same with the MATCH-Phi bound for PCH; and the maxima of NM, PCH, RISE. Usage: compose.py --list FILE | --one GAME [START]"""
 import sys, os
@@ -46,7 +48,7 @@ def bits(m):
 def _run(E, g, R, name):
     n = g.n; rk2v = {E.rank[v]: v for v in range(n)}; odd = lambda r: E.par[rk2v[r]] == 1
     for i, j in phases(R):
-        L = j - i; sw = Counter(); ent = Counter(); rise = Counter(); pch = Counter(); nm = Counter()
+        L = j - i; sw = Counter(); ent = Counter(); rise = Counter(); pch = Counter(); nm = Counter(); fall = Counter()
         for t in range(i, j):
             A, B = R[t], R[t + 1]
             for v in range(n):
@@ -63,6 +65,9 @@ def _run(E, g, R, name):
                     if E.weight(b[1]) <= E.weight(a[1]): C["LDIR_V"] += 1; EX.append(("LDIR", name, i, j, t, x, "P falls"))
                     rc = E.rank[c]; w = lambda r: (r - rc) if not odd(r) else -(r - rc)
                     if not matched(bits(a[1]), bits(b[1]), w, odd): nm[x] += 1
+                    for d in (1, 2, 3):                 # Phi_d: signed pos^d weights; a FALL is a P-change with Phi_d not rising
+                        wd = lambda r: (r - rc) ** d if not odd(r) else -((r - rc) ** d)
+                        if sum(map(wd, bits(b[1]))) - sum(map(wd, bits(a[1]))) <= 0: C["fall_d%d" % d] += 1; fall[(d, x)] += 1
                 else:
                     blk += 1
                     better = (b[2] < a[2]) if E.par[c] == 0 else (b[2] > a[2])
@@ -82,6 +87,7 @@ def _run(E, g, R, name):
         def mb(c):
             K = sum(1 for r in range(n) if r > E.rank[R[i]["vs"][c][0]]); return (K * (K + 1) // 2) * (nm[c] + 1) + nm[c]
         S4 = sum(1 + mb(c) + (mb(c) + 1) * (n - 1) for v, c in pairs)
+        for d in (1, 2, 3): C["fallmax_d%d" % d] = max(C["fallmax_d%d" % d], max((fall[(d, x)] for x in range(n)), default=0))
         C["phases"] += 1; C["nm_max"] = max(C["nm_max"], max(nm.values(), default=0)); C["pch_max"] = max(C["pch_max"], max(pch.values(), default=0))
         TOP.append((L, name, i, j, S1, S2, S3, S4, max(nm.values(), default=0), max(pch.values(), default=0), max(rise.values(), default=0), max(sw.values(), default=0), n))
 

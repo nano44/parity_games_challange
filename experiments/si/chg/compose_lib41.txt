@@ -1,4 +1,4 @@
-nm_max=18 pch_max=37 phases=418
+fall_d1=10847 fall_d2=8192 fall_d3=6417 fallmax_d1=12 fallmax_d2=10 fallmax_d3=9 nm_max=18 pch_max=37 phases=418
 columns: L, game, i, j, S1 = sum SW, S2 = sum (1 + RISE), S3 = (I2) bound, S4 = (I3) bound, max NM, max PCH, max RISE, max SW, n
 TOP (112, 'experiments/red/so/instances/xsn91_n48.pg', 3, 115, 268, 3139, 150672, 64856736, 18, 27, 27, 12, 48)
 TOP (110, 'experiments/new/box28/instances/x48_rt48_final.pg', 2, 112, 175, 1043, 47472, 800976, 6, 13, 13, 11, 48)

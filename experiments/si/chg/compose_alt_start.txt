@@ -1,4 +1,4 @@
-nm_max=62 pch_max=67 phases=457
+fall_d1=16138 fall_d2=13210 fall_d3=10967 fallmax_d1=25 fallmax_d2=20 fallmax_d3=19 nm_max=62 pch_max=67 phases=457
 columns: L, game, i, j, S1 = sum SW, S2 = sum (1 + RISE), S3 = (I2) bound, S4 = (I3) bound, max NM, max PCH, max RISE, max SW, n
 TOP (121, 'experiments/new/box48/instances/long121_n40.pg', 1, 122, 246, 2293, 91480, 30014240, 31, 44, 44, 12, 40)
 TOP (121, 'experiments/red/n3/instances/long121_n40.pg', 1, 122, 246, 2293, 91480, 30014240, 31, 44, 44, 12, 40)
