@@ -22,7 +22,7 @@ HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 import box17 as B  # noqa: E402
 import pg  # noqa: E402
 
-QK = ("exc", "seg", "segn", "gap", "f")
+QK = ("exc", "seg", "segn", "gap", "f", "dl")
 
 
 def prios(par):
@@ -41,7 +41,7 @@ def enc(g, st):
 
 class Stats:
     def __init__(self):
-        self.c = dict(games=0, runs=0, starts=0, trajs_with_run=0, phases=0, segs=0, gaps=0, states=0)
+        self.c = dict(games=0, runs=0, starts=0, trajs_with_run=0, phases=0, segs=0, gaps=0, states=0, deadlock_steps=0)
         self.best = {k: None for k in QK}         # (value, instance, place)
         self.viol = []
         self.hist = {k: {} for k in QK}
@@ -110,7 +110,11 @@ def do_game(g, all_starts, S):
                 S.put("seg", a["seg"], inst, a["seg_at"]); S.put("gap", a["gap"], inst, a["gap_at"])
                 if a["gap"] > n - 1:
                     S.viol.append(("L-WAVE'", a["gap"], inst, a["gap_at"]))
+            S.c["deadlock_steps"] += a["dead"]
             if a["exc"] is not None:
+                S.put("dl", a["dl"], inst, a["dl_at"])
+                if a["dl"] > 0:
+                    S.viol.append(("DL-RUN", a["dl"], inst, a["dl_at"]))
                 S.put("exc", a["exc"], inst, a["exc_at"])
                 if a["exc"] > 0:
                     S.viol.append(("SEG-COUNT", a["exc"], inst, a["exc_at"]))
