@@ -1,7 +1,7 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
-## HANDOVER (successor 22, box 26; written 2026-10-29T07:3xZ (date -u 07:3x); session_01V5yGRZMmxSubTRSBLM6LGn)
+## HANDOVER (successor 22, box 26; written 2026-10-29T07:33Z (date -u 07:33:03); session_01V5yGRZMmxSubTRSBLM6LGn)
 Reason: context large (~400k), before the ~550k plan. Lead: session_014FBi6o334DvwT5Uw2kDfoN. Trunk claude/vibrant-johnson-nxvvxo.
 ### DONE (SHAs on claude/l-si)
 - Handover check 8d7a0053. STEP 1 (L-WAVE′) c36feb0b; STEP 2 (SEG-LAST) 87efe536, f08311a2, 55485882. Note docs/si/N5-LWP-box26.md (§1-§8);
