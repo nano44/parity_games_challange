@@ -107,3 +107,31 @@ No gap. Notes SDP-N1..N5. Nothing here bounds CF or the number of pieces; not M3
   dH part of d and the honest half of CF are needed (MUT 2-4 bite); W-MONO / Ξ-SUCC are used beyond their landed (H1) scope, harmlessly
   (SDP-N2); coverage reproduced as a ratio, counts differ (SDP-N1).
 - NEEDS: Lead: the SDPRIME §C word (REFEREE-2's files exist; not opened); route SDP-N1..N5 to L-SI's fixes file.
+
+## §C. Comparison with REFEREE-2 (written 2026-10-29T04:42Z by date -u, after the Lead's word of 04:41Z; REFEREE-2's report
+docs/referee-2/R2-N5-SDPRIME.md, sha1 e12e3641…, commit bf48b8f4; read only after this report was pushed at 573d2695)
+Written by REFEREE successor 17, the author. Every verdict is labelled (Opus 5.5, D15).
+- Independence: both clean (REFEREE-2: names-only counts of docs/referee/, 0 SDPRIME files at its push; I: names only, none opened).
+- Verdicts identical: STATIC-DEPTH′, (H4′)'s equivalence (and d = longest J_b-path count), the Remark and EPOCH SIGNED by both. Joint gap map:
+  EMPTY.
+- SDP-N2 SETTLED (Lead's question): the extension of W-MONO and Ξ-SUCC to in-phase S4a transitions at which λ_W changes is a SIGNED PROOF
+  STEP of this entry, not a note. Both referees proved it independently (my §1 first bullet; REFEREE-2 §1 "Premises": "Neither uses λ_W",
+  with the same two derivations: W-MONO from P2 / R18 (d) Lemma S (a) at one S4a step, σ_t being in the arena; Ξ-SUCC from (SW) and R15 (a),
+  (d) pointwise monotonicity). STATIC-DEPTH′ needs it (its intervals may change λ_W), so its signature rests on it, and the landing entry
+  should list it among "facts used as proof steps, signed by both": "(W-MONO) and (Ξ-SUCC) hold at every in-phase S4a transition; λ_W is not
+  used". Data: 0 failures of either at 285 (alt_all) + 214 (lib41) λ_W-changing in-phase S4a transitions (my scratch/lw_facts.py,
+  sdp_logs/lw_*.txt; REFEREE-2: 283 + 657 + 24 + 56).
+- Notes matched:
+  - SDP-N3 = N-SD-1 (the (SW) quote's "…" marks only a line break). REFEREE-2's strict checker counts it as not verbatim (11/12); mine treats
+    "…" as a separator (12/12). ACCEPTED: strictly 11/12 verbatim plus one with a spurious "…", content identical.
+  - SDP-N4 = N-SD-2 (GEN_W is a property of (G, τ); the proof uses only its used form; "at every epoch end" is redundant or means the used form):
+    ACCEPTED as wording.
+  - SDP-N1 = N-SD-7 (piece counts differ from §4). The two referees agree with each other: 1,132 (mine) and 1,133 (REFEREE-2) alt_all pieces
+    with ≥ 1 transition; the 1-piece difference is plausibly the start file REFEREE-2's validation adjusted (cf. my CORE-N5). Both differ
+    from §4's 872, so the lane should define its piece count.
+  - SDP-N5 (thin spots) ⊇ N-SD-3 / N-SD-4: ACCEPTED. REFEREE-2 adds that "other cycles come and go" is exercised in only 3 + 0 + 3 intervals;
+    I did not count it.
+  - N-SD-5 (Ξ-SUCC's (M2κ) citation stronger than needed) and N-SD-6 (the proof replaces R77's (CV) by item 1, which is what lets other
+    cycles come and go): ACCEPTED; both agree with my §1.
+- Controls agree: settling from d − 1 bites for both; a one-frame (H3′) bites for both (mine W-only; REFEREE-2 both W-only and H-only, with the
+  length bound itself failing). My W-only depth and W-only CF controls bite too. Nothing open on SDPRIME.
