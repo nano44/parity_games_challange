@@ -30,6 +30,9 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   (1) Binary counting on R109's family: lower gates must leave (tau -> h_i) when they should pay and return after the reset; both are
       U-improving tau moves inside one lambda-run (NM^U > 0). U_tau depends on tau only, so Odd has a fixed menu I_tau until it moves;
       S4b's W-choice against sigma decides when. Idea: Even's sigma as an adversarial pivot-rule controller for Odd's SI on G^d.
+  (1b) DONE (R110, 12:50Z): S4b CAN take a U-non-best improving switch (pivot_demo n 11, two engines, Oink); Odd's step = W-optimum vs
+      current sigma over {keep} U I_tau (stalls, single switches, non-best targets realisable). Open: can S4a keep re-creating
+      controlling sigma-configurations super-polynomially often inside one lambda-run (= NM*^U).
   (2) DONE (R109 §4, 12:40Z): under pinned tau a set bit is a W-cycle node; W non-decreasing in a phase rejects lower closings
       (hntop_n3 t 29-41: d3_1 -> e1 in I_sigma, W-cycle e1 = 8 < e2 = 16). Unary forced; binary needs tau-changes (NM*^U > 0).
 - Tools (experiments/red/seg/): r107.py (phases/runs/PL/RUN/per-vertex counts/second engine), s3embed.py (any explicit-start pin ->
