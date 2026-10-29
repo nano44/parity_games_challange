@@ -4,7 +4,7 @@ to y_1..y_m, y_j (Odd, single successor) -> r_j (mkr's reactor j, label "r<j>"),
 priority Z; every original priority > Z is shifted by 2m + 2, which keeps parities and the order). Xi(o) = Odd's minimum over
 {q_j} + Xi(r_j): while a wave runs down the chain, the argmin is the next unflipped reactor. o and the y_j reach no other vertex,
 so the sigma-run is unchanged. Env: OWNER=0 makes o Even; ABOVE=a puts the q_j just above the reactor a-markers
-(instead of just above z). Usage: obs2.py IN.pg IN.start OUT.pg OUT.start"""
+(instead of just above z); TARGET=1 adds an Even e -> {o, d} that switches to o once. Usage: obs2.py IN.pg IN.start OUT.pg OUT.start"""
 import sys, re
 src, sst, out, ost = sys.argv[1:5]
 rows = []; lab = {}
@@ -24,6 +24,10 @@ n = len(rows); o = n
 rows.append([o, 0, OWN, [n + 1 + k for k in range(m)], "obs"])
 for k, (j, rv) in enumerate(reac):
     rows.append([n + 1 + k, Z - 1 + 2 * j, 1, [rv], f"y{j}"])
+TGT = os.environ.get("TARGET") == "1"                          # TARGET=1: Even e -> {o, d}, d -> z with a low odd marker: e switches to o
+if TGT:                                                        # at the first transition, so o is a target of a switching edge (R121)
+    e, d = len(rows), len(rows) + 1
+    rows.append([e, 0, 0, [o, d], "e"]); rows.append([d, Z, 1, [lab["z"]], "d"])
 with open(out, "w") as f:
     f.write(f"parity {len(rows) - 1};\n")
     for v, pr, ow, su, l in rows: f.write(f'{v} {pr} {ow} {",".join(map(str, su))} "{l}";\n')
@@ -32,5 +36,7 @@ with open(ost, "w") as f:
         l = l.rstrip("\n")
         if l.startswith("TAU0"): l += (f" {o}:{n + 1}" if OWN == 1 else "") + "".join(f" {n + 1 + k}:{rv}" for k, (j, rv) in enumerate(reac))
         if l.startswith("SIGMA0") and OWN == 0: l += f" {o}:{n + 1}"
+        if l.startswith("SIGMA0") and TGT: l += f" {e}:{d}"
+        if l.startswith("TAU0") and TGT: l += f" {d}:{lab['z']}"
         f.write(l + "\n")
 print(f"obs2: n {len(rows)} m_reactors {m} Z {Z}")
