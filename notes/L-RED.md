@@ -27,7 +27,16 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   - R99 (5e8f0174): erratum. comp54_n80 / n3cov_lean starts were invalid, n3cov_phi partial; *_fixed.start written; every count
     reproduces; check.sh uses n3cov_lean_fixed.start.
 - IN FLIGHT: nothing (all climbs finished; logs were in the scratchpad only, results summarised in R96-R98).
-- RESUME POINT (ask the Lead first). Lead 00:10Z: L-SI's RUN-LIN data (l-si ca3b2443, docs/si/N5-RUNLIN-box24.md, not yet opened by me):
+- RESUME POINT = Lead 2026-10-29 00:20Z pick (c): attack CONJECTURE FB-LIN (in-phase fallbacks per phase f ≤ n).
+  - Data max 37 = 0.78n (rise_fb38_n48). L-NEW's proof routes MONO-CONF and SMALL-CK are DEAD.
+  - L-SI KILLED RUN-LIN (l-si 90bcc50c, runfam_K10: n 49, one fallback-free run 99 > 98; family run = 2n + 13).
+  - Plan, in order:
+    - (i) climbs with fitness f. xrclimb.py --pl uses PL·1000 + f; add an "--fb" fitness = f·1000 + PL (phsw.plfb already returns f).
+      Seeds: pl130_n40 (f 11), snap30 (f 11), long121 (f 8), rise_fb38_n48 (locate on trunk / l-new).
+    - (ii) hand anatomy: long121's carries ARE fallbacks that detach the gate-attached vertices (36, 23, 12, 21, 25: edges into gate 0).
+      A repeatable carry cell = a fallback-count attack (R98 §3).
+    - Pin and verify anything with f > n (vrun.sh + phsw.py; full start via fullstart2.py).
+- Older resume context. Lead 00:10Z: L-SI's RUN-LIN data (l-si ca3b2443, docs/si/N5-RUNLIN-box24.md, not yet opened by me):
   long fallback-free runs are WAVES, each σ̄ change starts a new wave in a corridor between an Odd vertex's options; I_τ = ∅ in 41 of 44
   (CONJECTURE RUN-LIN-OPT); record 60 = 1.76n at n 34. "A family with recurring waves is the kill shape". Before designing, read R95:
   recurring waves through ONE two-way chain are dead for reader-triggered tops. The live repair is a top clock that does not read the chain
