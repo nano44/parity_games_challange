@@ -236,4 +236,11 @@ if python3 -I box49/quotecheck3.py ../../docs/new/P-N5-SF-fixes-box55.md | grep 
 else
   echo "P-N5-SF fixes quotes: FAILED"; exit 1
 fi
+# Box 58 (successor 33): look-ahead LA_1 = I^glo on switchbestexp_4 (286), F 258, LAG_1 155.
+z1=$(python3 -I box58/la.py box54/out/switchbestexp_4.pg 1); z2=$(python3 -I box58/la.py box54/out/switchbestexp_4.pg 0); z3=$(LAG=1 python3 -I box58/la.py box54/out/switchbestexp_4.pg 0)
+if grep -q "steps 286 distinct_sbar 16" <<<"$z1" && grep -q "steps 258 distinct_sbar 16" <<<"$z2" && grep -q "steps 155 distinct_sbar 14" <<<"$z3"; then
+  echo "box 58 LA: switchbestexp_4 LA_1 286 (= I^glo), F 258, LAG_1 155: PASS"
+else
+  echo "box 58 LA checks: FAILED"; exit 1
+fi
 rm -rf "$tmp"

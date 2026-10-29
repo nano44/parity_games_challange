@@ -1,0 +1,4 @@
+seed (111, 111, 0) n 10
+step 1111 score (125, 125, 0) n 9
+step 2915 score (142, 142, 0) n 8
+final (142, 142, 0) n 8 best kill score 0

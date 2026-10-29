@@ -20,6 +20,7 @@ docs/si/N5-TORD-box30.md §1, §11 (prefix form, GATE-FORM, SAME-NODE); RESULTS 
 | §4 | R = 0 (⟺ R_T = 0) in 1,441 of the 1,754 same-pair frozen W-phases (FW-BF proved for each of them by FW-R); max R 40 (grow_K40_n373, WCH 45, n 373) | DATA |
 | §5 | CONJECTURE R-LIN (R ≤ n − 1, R counted per adoption) | DEAD (core/instances/rlin_cex_n40: R = 129 in 10 transitions, n 40) |
 | §6 | Lemma GP* (only BLOCKED edges, W-better but Ξ-refused, are excluded; contains GP, GP+) and Corollary FW-R*: WCH ≤ (n − 1)(R*_T + 1) | PROVED (lane); DATA 0 violations; R*_T = 0 in 1,499 / 1,754 |
+| §7 | Corollary SEG (\|D\| = 1, c₁ = c₂, TD): WCH ≤ (SEG·(n − 1) + 1)(n − 1), SEG = direction segments of S (data ≤ 4) | PROVED (lane), bookkeeping on box 29/30 lemmas |
 | §5 | open: bound R_T polynomially (R_T ≤ L, so this is FW-BF's own difficulty); the late adoption is the precise residue of the obstruction F1 | OPEN |
 
 ## 0. Setting
@@ -160,10 +161,49 @@ and held at k + 1, hence adopted at some τ ∈ (t, k] (a blocked edge is not ρ
   R*_T = 0 in 1,499 of the 1,754 same-pair frozen W-phases (alt_all 635 of 755, lib41 462 of 549, experiments/si 402 of 450): FW-BF is
   proved for each of these by FW-R*. Largest R*_T: 40 (grow_K40_n373, |D| = 4, WCH 45; R*_T/(n − 1) = 0.11); |D| = 1: R*_T/(n − 1) ≤ 0.11
   (red/so/instances/xrun8_n10, 1 at n 10). rlin_cex_n40 has R* = 0 (FW-BF proved there); ccl_w48_n48 has R* = 12 in R*_T = 1 transition.
+- DATA (core/late.py STAR=1, outputs core/out/latestar_*.txt): R*_T ≤ TC in every one of the 1,754 same-pair frozen W-phases. Of the 348
+  late-adoption* transitions, 340 change some basin; the other 8 (all with tail-disjoint gates) do not, so the inequality is not a
+  per-transition fact. CONJECTURE R*-TC: R*_T ≤ TC in every frozen W-phase. With FW-R* it gives WCH ≤ (n − 1)(TC + 1), i.e. the epoch count
+  again (box 30 TORD (i) + EPOCH-U give the same for |D| = 1, TD); the frontier stays TC (CONJECTURE TRAP-LIN and its multi-gate form).
+- PACKET: docs/si/P-N5-GP-box31.md (GP*, GP, GP+, FW-R*, with W-MON and XW), FROZEN at l-si d072bb28, sha1 cd4866df18b55f44b3ef3d52de65943eeffe9140
+  (Lead 16:24Z / 16:31Z).
 - READING. FW-R* is the cleanest form of the reduction: the W-frame Bellman-Ford of R17 runs undisturbed except across F1 refusals, and
   every W-changing transition beyond n − 1 is paid for by a resolved F1 refusal within the last n − 1 transitions. The open quantity is
   R*_T, the number of transitions in which a previously blocked edge is taken. A polynomial bound on R*_T gives a polynomial bound on WCH per
   frozen W-phase (and only that: see the Lead's question (b), answered in the 16:17Z message: FW-R* feeds box 29's W-SPLIT, not R86's NM*).
+
+## 7. PROVED (lane, a bookkeeping corollary): for |D| = 1, c₁ = c₂, TD, the frontier is the number of REVERSALS of S (written 2026-10-29T16:4xZ by date -u, see commit)
+Definitions. F a frozen W-phase with D = {o}, c₁ = c₂ and TD at every state (box 30 §0). S_k := the vertices whose (ρ_k, τ)-play meets o.
+A transition is an ENTRY transition if some vertex enters S, an EXIT transition if some vertex leaves S (it can be both: MIXED). A SEGMENT is a
+maximal run of transitions of F among whose S-changing transitions all are entry-only, or all are exit-only; a mixed transition is a segment
+by itself. SEG := the number of segments; SEG − 1 counts the direction reversals of S.
+Corollary SEG. WCH ≤ (TC + 1)(n − 1) and TC ≤ SEG·(n − 1); hence WCH ≤ (SEG·(n − 1) + 1)(n − 1).
+Proof. Epochs (maximal runs of states with S constant) number TC + 1. Inside an epoch, a W-changing transition changes W on U (EPOCH-U, box 29
+§7: ≤ |U| − 1 such transitions) or changes some trapped prefix in ≤₁ = ≤₂ (TORD (i), box 30 §4: ≤ s transitions), because for trapped x,
+W(x) = pre(x) ⊕ W(o) with W(o) = o ⊕ W(τ(o)), τ(o) ∈ U (TD; box 30 §1, as in FW-D1's proof): so ≤ |U| − 1 + s = n − 2 per epoch, plus the TC
+transitions between epochs. In an entry-only segment no vertex leaves S, so each vertex enters at most once and the segment has at most n − 1
+S-changing transitions (o never changes); the same for exit-only segments; a mixed segment has one. □
+- DATA (core/mono.py, §1): SEG ≤ 1 in 1,722 of the 1,754 same-pair phases (all but 20 of the 1,243 |D| = 1 phases; TD not filtered), SEG ≤ 4 everywhere
+  (red/xing/instances/x31_re24, 4 transitions). So, on the data, Corollary SEG is a quadratic bound; a proof that the reversals of S are O(1)
+  (or O(n)) per frozen W-phase would give a polynomial bound per |D| = 1 TD frozen W-phase. OPEN; the re-entry instances of box 30 §10
+  (x31_re24, x31_ru24, zcl_rx_n48) are the seeds for a kill search on SEG.
+
+## 8. DATA: kill search in the same-pair core (core/spclimb.py; logs core/climb/*.log, written 2026-10-29T17:0xZ by date -u, see commit)
+| score | seed | steps | best | instance |
+| --- | --- | --- | --- | --- |
+| WCH/(n − 1) | lend13_n16 / ccl_fbx_n32 / x31_re24 (NMAX 40-48) | 100,000 each | 0.800 (n 16, 21) | — |
+| WCH/(n − 1) | gci3_n24 (NMAX 64) | ~100,000 | 0.869 (seed; no gain) | — |
+| WCH/(n − 1) | red/xing/instances/x32_waves48 (NMAX 64) | stopped at 17:0xZ (best at step 110,972, none after) | 0.897 (WCH 35 at n 40) | core/instances/spbest_n40 |
+| WCH/(n − 1) | spbest_n40 (NMAX 64) | stopped at 17:0xZ (~10 min) | 0.897 (seed; no gain) | — |
+| R/(n − 1) (R-LIN) | lend13_n16 / ccl_fbx_n32 | ~10,000 | 3.54 / 1.34: R-LIN DEAD (§5) | core/instances/rlin_cex_n40 |
+| R*_T/(n − 1) | xrun8_n10 / ccl_w48_n48 | 100,000 each | 0.142 / 0.250 (R*_T = 2 at n 9) | — |
+| SEG/(n − 1) (\|D\| = 1) | x31_re24 / zcl_rx_n48 | 200,000 each | 0.416 / 0.454 (SEG = 5 at n 12, 13) | — |
+- core/instances/spbest_n40.pg (sha1 d46d099c04f13c9e66c3e284a4476e5b71671478; S3 default start written out as spbest_n40.start, sha1
+  fb9adc58ced3bdfbeb9ad4133a81c3370bb1ff95; n5b identical, 36 iterations): frozen W-phase [0, 35], |D| = 1, c₁ = c₂, WCH = L = 35 at n 40
+  (0.897 (n − 1), the largest in the same-pair core so far; box 29's overall best was 0.869), TC = 31, SEG = 1 (a monotone entry wave),
+  R*_T = 1. FW-BF holds; FW-R* gives ≤ 78 there, Corollary SEG ≤ 39·40.
+- READING. The long same-pair phases found are monotone waves (one basin change per transition) with almost no late adoptions; the climb
+  approaches n − 1 slowly (0.80 → 0.897 over ~10⁵ steps) and has not passed it. No kill of FW-BF in the core. SEG reaches 5 only at n ≤ 13.
 
 ## DONE / FINDINGS / NEEDS
 - DONE: this note; tools experiments/si/core/ (sp.py, gp.py, mono.py, look.py, diag.py, late.py, lateshow.py, spclimb.py); outputs core/out/,
