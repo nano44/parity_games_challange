@@ -604,3 +604,7 @@ for f in chg/instances/red/segcount_kill_n20 lay/instances/seglast_kill_n110; do
 done
 grep -q "TOP (16, 'lay/instances/seglast_kill_n110.pg', 0, 16, 27, 152, 16066, 0, 20, 1, 4, 2, 110)" <<<"$o"
 echo "si (box 28 §9: COMPOSE and COMPOSE-RUN inequalities hold with their slack on runquad, dlsep_kill_n70, R105 and n110 pins): PASS"
+# box 28: packet docs/si/P-N5-COMPOSE-box28.md (FROZEN): its 16 verbatim quotes, and the shifted-line control that must fail.
+python3 -I rund/quotecheck.py ../../docs/si/P-N5-COMPOSE-box28.md | grep -q "quotes=16 bad=0"
+python3 -I rund/quotecheck.py ../../docs/si/P-N5-COMPOSE-box28.md --mut | grep -q "QUOTES FAIL"
+echo "si (box 28: P-N5-COMPOSE quotes verbatim, shifted control fails): PASS"
