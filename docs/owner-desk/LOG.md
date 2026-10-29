@@ -426,3 +426,14 @@ Nothing is proved about N5's polynomiality itself; G-N5-TIME is OPEN.
 Usage: the seven-day limit shows 'allowed_warning' about 20 hours into the week (resets 2026-11-04 21:00Z). There is no overage. To avoid the 10-26 kind of stall, I am pacing at 4 working lanes plus the referees, instead of 5. If you would rather spend the cap faster, say so and I go back to 5.
 Optional, your decision: paywalled originals that the literature lane could not open: Carstensen 1983, Gusfield JACM 1983, Mulmuley-Shah 2001, Friedmann DAM 2013 (published version).
 Needs: none."
+
+## 2026-10-29T21:05Z Lead owner line (21:05Z, verbatim)
+"N5 status, 21:05Z.
+Landed since 17:10Z: R87 (reduction for the variant N5-SF), R88 (a per-phase W bound for N5), DE35. DE35 records that N5-SF is a dead end: a family built by our adversary lane makes N5-SF exponential (iterations double with each N, from 134 at N = 3 to 9,697 at N = 9). Three lanes reproduced it independently.
+Plain N5 stays linear on that family. We now know why: N5's Odd player answers with its CURRENT strategy, which freezes the counter, where N5-SF used a fresh best reply.
+Under review by both referees: P-N5-FRAME, ten lemmas reducing N5's running time to two quantities: Even's path-set changes, and Odd's carries on 'unprotected' options.
+Conjectures killed today on the way: FRAME-STRETCH, PV, RESET-LIN and several more, each with a pinned instance.
+Barrier found: no argument that works for every improving-switch rule can finish the proof. It must use N5's specific step (Even's best reply to Odd's current strategy).
+G-N5-TIME, i.e. whether N5 is polynomial, is OPEN. Nothing about N5 itself is proved polynomial or refuted.
+Usage: the seven-day limit is still at warning, no overage. Running 2 working lanes plus 2 referees.
+Needs: none."
