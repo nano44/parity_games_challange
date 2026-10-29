@@ -1,0 +1,5 @@
+K 10 n 49 run 99 run-2n 1
+K 20 n 59 run 124 run-2n 6
+K 40 n 79 run 171 run-2n 13
+K 60 n 99 run 211 run-2n 13
+K 100 n 139 run 291 run-2n 13

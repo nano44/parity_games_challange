@@ -7,6 +7,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   shrink); outputs out/. DATA: long runs are waves restarted by σ̄ changes; climbs 49 -> 53 -> 55 -> 56 (n 32) -> 58 (n 33) -> 60 (n 34), no
   kill; 41 of 44 long runs (alt_all) have I_τ = ∅ at every state (CONJECTURE RUN-LIN-OPT); ping-pong kill design fails at its top level
   (READING, §4). STEP 2 (CORE fixes) waits for REFEREE-2.
+- RUN-LIN DEAD (note §7, DEAD.md box 24): stretching best62_n34's thrice-walked corridor (stretchiter.py, then mkrunfam.py next to vertex 25)
+  gives runfam_K: n = 39 + K, run = 74 + ⌊5K/2⌋ (K ≤ 34), then 2n + 13; runfam_K10 (n 49) run 99 > 98. Three engines, check_sol2 OK, I_τ = ∅.
+  Linearity not killed. Next: grow a third / fourth long wave (stretchiter from runfam_K40, out/stretch40.log).
 - Things only I know: pkill -f / pgrep|xargs kill on a pattern that is in my own command line kills my shell (exit 144): kill by pid from
   `ps -eo pid,args | grep "[g]rowclimb"`. growclimb.py saves the best RATIO state, so out/*.pg can be a smaller n than the last log line.
 
