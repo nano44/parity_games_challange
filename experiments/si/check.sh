@@ -400,3 +400,11 @@ if git cat-file -e b28123a58; then
 else
   echo "grun (P-N5-REL quotes): NOT RUN (source commit b28123a58 not in this clone)"
 fi
+# P-N5-SDPRIME-fixes-box25 (repairs only): 12 quotes verbatim (REFEREE d693a6fe7, REFEREE-2 9784229a2, RESULTS 55e0bcbda / b28123a58); shifted control fails.
+if git cat-file -e d693a6fe7 && git cat-file -e 9784229a2 && git cat-file -e b28123a58; then
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-SDPRIME-fixes-box25.md | grep -q "quotes=12 bad=0"
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-SDPRIME-fixes-box25.md --mut | grep -q "QUOTES FAIL"
+  echo "piece (P-N5-SDPRIME fixes: 12 quotes verbatim; shifted control fails): PASS"
+else
+  echo "piece (P-N5-SDPRIME fixes quotes): NOT RUN (a source commit is not in this clone)"
+fi

@@ -1,0 +1,14 @@
+beyond_len_max=49 checked=1113 checked_beyond_H3=195 genw_fail=317 genw_fail_pieces=9 h3p_fail=25 h4p_fail=2 pieces=1140 tight=21
+EXAMPLE ('H3P', 'experiments/n5-exhaustive/instances/b4_n5_other_0.pg', 0, 1, 1, 5)
+EXAMPLE ('H3P', 'experiments/n5-exhaustive/instances/wk1_n32.pg', 3, 5, 2, 32)
+EXAMPLE ('H3P', 'experiments/n5-exhaustive/instances/wk2_n32.pg', 1, 4, 3, 32)
+EXAMPLE ('H3P', 'experiments/red/fbx/instances/kt6_n58.pg', 31, 37, 6, 58)
+EXAMPLE ('H3P', 'experiments/red/kw/instances/cw11_n24.pg', 0, 3, 3, 24)
+EXAMPLE ('H3P', 'experiments/red/kw/instances/cw11_n24.pg', 4, 8, 4, 24)
+EXAMPLE ('H3P', 'experiments/red/kw/instances/cw11_n24.pg', 9, 11, 2, 24)
+EXAMPLE ('H3P', 'experiments/red/kw/instances/cw11_n24.pg', 12, 14, 2, 24)
+EXAMPLE ('H4P', 'experiments/red/n3/instances/run34_n40.pg', 12, 14, 2, 40)
+EXAMPLE ('H4P', 'experiments/red/n3/instances/run34_n40.pg', 45, 46, 1, 40)
+EXAMPLE ('H3P', 'experiments/red/n5/instances/sym_h8_s1.pg', 5, 7, 2, 16)
+EXAMPLE ('H3P', 'experiments/red/n5inj/instances/frz24.pg', 1, 11, 10, 24)
+SDPRIME PASS
