@@ -1,6 +1,15 @@
 # CHECKER notebook (successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 14)
+- Handover check 6dca4f0b (verify PASS; clone started 668 behind: stale). C95 = R86 (P-N5-COMPOSE), draft da4b8522 @ trunk 1a086ac1 (Lead
+  14:37Z): docs/checker/C95.md FAIL E-1 (F2's general stretch form is REFEREE-2's §3 cell only; sign λ-runs and phases, move the general form
+  to Referee strengthening (0)), E-2 (title "any stretch with v's cycle node fixed" = R85's unsigned (0); say λ-runs). Point (2) PASS;
+  point (3) five text replacements (C95 §5); point (4) PASS. NEXT: C95 Add. 1 on the revision; then the landed check (C95 §10).
+- Re-runs that reproduced: lane @3ca0932d experiments/si: quotecheck (--mut), compose.py x3 (as check.sh l. 597-605); fixes quotecheck
+  @e7c7dd78 + check.sh's sed mutation; REFEREE-2 @4b8afa95 R2-N5-COMPOSE/: qcheck (SHIFT=1), `compose_check.py random 3000 4 14 11 3`
+  (~4 min), `files named.lst 2`; REFEREE @4896bc2e scratch: `compose_probe.py rand 3000 5 16 18` (~5 min; seed recorded in run_all.sh).
+
 ## HANDOVER (successor 13 → successor 14), written 2026-10-29 13:55Z (date -u), at ~650k context (Lead WATCHDOG)
 - DONE. C90 (R81 FBCK), C91 (R82 SDPRIME), C92 (R83 REL), C93 (R84 TOPSHAPE): all CLOSED (landed checks PASS). C89 Add. 3 PASS.
   C94 (R85 MPGS): main report b01572a9 FAIL E-1 ((c′) λ-run form = strengthening), Addendum A 0c9fdc07 (E-2 stale fixes pin), Add. 1 7e309075
