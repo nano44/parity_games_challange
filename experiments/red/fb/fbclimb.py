@@ -10,6 +10,8 @@ from fbphase import fstats, reuse
 REUSE = "--reuse" in sys.argv or "--fm" in sys.argv
 if "--fm" in sys.argv:
     import fbphase; fbphase.MODE_RF = 3
+if "--cr" in sys.argv:
+    import fbphase; fbphase.MODE_RF = 4; REUSE = True
 
 def load(p, s):
     g = T.pg.parse("".join(l for l in open(p) if not l.lstrip().startswith("%")))
