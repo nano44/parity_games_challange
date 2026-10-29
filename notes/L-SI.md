@@ -13,7 +13,7 @@ Reason: context ~370k, before the ~450k plan. Lead: session_014FBi6o334DvwT5Uw2k
 - STEP 2 decided with the Lead (08:45Z): NO packet for SINK-STEP / LAST-STEP / K-REDUCTION.
 - Reported to the Lead 08:18Z, 08:31Z, 08:44Z, 09:26Z (+ a time correction), and the handover message.
 ### IN FLIGHT
-- Nothing running (all climbs stopped by me; last lines in experiments/si/lay/climbs_box27.txt; logs lay/out/, untracked).
+- Nothing running (all climbs stopped by me; last lines in experiments/si/lay/climbs_box27.txt; logs and best instances lay/out/, committed).
 ### OPEN / QUEUE
 1. CONJECTURE SEG-COUNT (note §6): b − a ≤ Even vertices switching in a REL segment. Search found no kill (OBJ=C/D/L climbs from all
    pins, the ladder and x32_rand64; the longest past 50,000 steps; never 2 deadlock steps in one segment). Proof route (READING): charge

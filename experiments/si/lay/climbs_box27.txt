@@ -1,4 +1,4 @@
-# box 27 climb logs, last lines (stopped by L-SI successor 23 at handover; .log files themselves are in lay/out/, untracked)
+# box 27 climb logs, last lines (stopped by L-SI successor 23 at handover; the .log and .pg files are in lay/out/)
 lay/out/c_hg.log: 4 step 25 KILLSCORE 0 n 95
 lay/out/c_ka.log: 0 seed (0, 0, 0) n 71
 lay/out/c_sk.log: 3 step 8752 score (34, 1, 0) n 140
