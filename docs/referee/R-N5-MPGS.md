@@ -49,6 +49,19 @@ step-4 pass, not a TARGET.md claim; G-N5-TIME stays OPEN.
   total fall F satisfy R − F = Φ(end) − Φ(start) ≤ W, falls occur only at carries (F ≤ W·NM), and #MATCHED ≤ R. MATCHPHI's proof had it. Wording;
   the conclusion stands. Also "width W ≤ K(K+1)/2" is an equality.
 
+## 1b. The λ-run question (Lead 11:41Z): does MATCH-Φ's Corollary hold verbatim on any stretch with c = λ(v) fixed?
+- YES (Opus 5.5, D15), verbatim, on ANY sequence of consecutive states (phase, λ-run with τ free, or any stretch, fallbacks included) on which
+  v's own cycle node c = λ(v) is constant. Step by step, the proof reads: (1) R_c, hence pos, w, Φ and W: functions of c and of the global ranks
+  only; (2) P_t ⊆ R_c at every state of the stretch (S1: P is the set of play vertices above the cycle node, and c is fixed); (3) for each
+  P-change, the MATCHED / CARRY split, a property of the pair (P_t, P_{t+1}) alone; (4) the counting (rise ≤ W + fall, falls only at carries). No
+  step reads τ, the phase, (MON) or the direction of the weight change. (Even only λ(v) for the single vertex v is needed, not all of λ_Ξ.)
+- What does NOT carry over without more: nothing in the Corollary. Only the READING "a carry is an improving change that does not decompose"
+  needs the weight to rise at every P-change; on a λ-run that still holds (Ξ is non-decreasing at every N5 iteration, R15 (a), (d), since Ξσ
+  depends on σ alone, and c fixed makes the weight decide), but the Corollary does not use it.
+- Data: the Corollary on arbitrary subset sequences (R-N5-MATCHPHI.md §3: 5,000 arbitrary + 5,000 increasing sequences, 0 failures), and on N5
+  runs split into λ-runs (λ_Ξ constant, τ free; scratch/matchphi_probe.py LAMRUN=1): lib41, 38,243 (vertex, λ-run) checks, 31,662 P-changes,
+  16,291 carries, 0 failures (mp_logs/lamrun_lib41.txt). The L-RED λ-run batch was stopped unfinished (too slow), recorded.
+
 ## 2. Part (B): GATE-SHUT re-derived
 - Setting ✓. Ξτ is S1's valuation of τ on G^d, realised by τ̄ (an Even strategy of G) at every vertex at once, so Ξτ(x) = V^d_{τ,τ̄}(x) ✓. Iτ per
   S2 on G^d ✓. π_1 = d is Even (π consists of Even vertices), so the Lemma speaks only of Even d. (H2) gives h ∉ Q (ρ starts at h) — the packet
@@ -96,4 +109,5 @@ step-4 pass, not a TARGET.md claim; G-N5-TIME stays OPEN.
 - DONE: R-N5-MPGS.md (this file), scratch/gateshut_probe.py, scratch/gs_inputs/ (H_n exports), scratch/gs_logs/; pinned checks re-run (exact).
 - FINDINGS: Part (A) = MATCHPHI's content (text reworded, not identical); all items SIGNED, no gap. Part (B): Facts B1, B2, Lemma GATE-SHUT and statement
   (B) SIGNED, no gap; verified on every game of my corpora (22,487 hits, 0 failures); (H1), (H3) needed (MUT 3, 1 bite); (H2)'s need not exhibited.
+- λ-run question: the Corollary holds verbatim on any stretch with λ(v) fixed (§1b), so on λ-runs; no extra step needed.
 - NEEDS: Lead: the MPGS §C word when REFEREE-2 reports (successor 18 if I have handed over); route MPGS-N1..N5 to L-LIT.

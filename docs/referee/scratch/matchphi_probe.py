@@ -5,7 +5,7 @@
             ranks; counts of improving pairs, matched, carries.
  seq N L K  the Corollary on N random sequences of L subsets of K ranks (any sequence: the Remark's claim), and on N random weight-
             increasing sequences.
- files...   N5 (own engine): per (vertex, phase) PCH, NM, the Corollary's bound; maxima.
+ files...   N5 (own engine): per (vertex, phase) PCH, NM, the Corollary's bound; maxima. LAMRUN=1: per lambda-run (lambda_Xi constant, tau free).
 Mutations: MUT=1 (M2) dropped (uncovered odd additions allowed); MUT=2 (M1) non-strict (w(i) >= w(o)); MUT=3 the Corollary with W := K."""
 import sys, os, itertools, random
 from collections import Counter
@@ -99,7 +99,7 @@ def n5(paths):
         T = len(st); k = 0
         while k < T:
             j = k; lam = tuple(v[0] for v in st[k]["Xi"])
-            while j + 1 < T and tuple(v[0] for v in st[j + 1]["Xi"]) == lam and st[j + 1]["t"] == st[k]["t"]: j += 1
+            while j + 1 < T and tuple(v[0] for v in st[j + 1]["Xi"]) == lam and (os.environ.get("LAMRUN") or st[j + 1]["t"] == st[k]["t"]): j += 1
             for v in range(g.n):
                 c = lam[v]; rc = g.rank[c]; K = g.n - 1 - rc
                 par = [g.prio[g.byrank[rc + 1 + p]] % 2 for p in range(K)]       # positions over R_c
