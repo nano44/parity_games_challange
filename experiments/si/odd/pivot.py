@@ -68,6 +68,28 @@ for i, j in zip(runs, runs[1:] + [T + 1]):
             e = (p, NX[t + 1][p])
             if any(e == b for _, _, b in seg): edv += 1; ex.setdefault("ED", (x, i, t, e))
             seg.append((p, d, e)); segmax = max(segmax, len(seg))
+# Switch-target forms (Lead 21:05Z after L-RED R120): counts only at TARGETS c of switching edges of the improving player inside the
+# lambda-run (ENT_R(v, c) > 0 for some v, R86's notation). RESET-LIN-T: #MAT_R(c) <= n; CARRY-SEG-T: carry segments of c <= n - 1;
+# PCH-QUAD-T: PCH_R(c) <= n^2 + n. Reported: max over all vertices (ALL) and over targets (T).
+imp = lambda k: st[k][1] if SIDE == "O" else st[k][0]
+tg = {"MAT": [0, 0], "SEG": [0, 0], "PCH": [0, 0]}; tgx = None
+for i, j in zip(runs, runs[1:] + [T + 1]):
+    tgt = {imp(t + 1)[v] for t in range(i, j - 1) for v in range(n) if imp(t + 1)[v] != imp(t)[v]}
+    for x in range(n):
+        ma = pc = cur = sg = 0
+        for t in range(i, j - 1):
+            k = kind(U[t][x], U[t + 1][x])
+            if k: pc += 1
+            if k == "MAT": ma += 1; cur = 0
+            if k == "CAR": cur += 1; sg = max(sg, cur)
+        for key, val in (("MAT", ma), ("SEG", sg), ("PCH", pc)):
+            tg[key][0] = max(tg[key][0], val)
+            if x in tgt:
+                if key == "MAT" and val > tg[key][1]: tgx = (x, i)
+                tg[key][1] = max(tg[key][1], val)
+print(f"TARGET {os.path.basename(args[0])} side {SIDE} n {n} MAT_ALL {tg['MAT'][0]} MAT_T {tg['MAT'][1]} at {tgx} SEG_ALL {tg['SEG'][0]} "
+      f"SEG_T {tg['SEG'][1]} PCH_ALL {tg['PCH'][0]} PCH_T {tg['PCH'][1]} RESETLINT {'PASS' if tg['MAT'][1] <= n else 'FAIL'} "
+      f"CARRYSEGT {'PASS' if tg['SEG'][1] <= n - 1 else 'FAIL'} PCHQUADT {'PASS' if tg['PCH'][1] <= n * n + n else 'FAIL'}")
 nm = os.path.basename(args[0])
 print(f"PIVOT {nm} side {SIDE} n {n} iter {T} changes {nch} INH_V {inh} SW {sw} RP {rp} rp_car {rpcar} seg_max {segmax} "
       f"PD_V {pdv} DP_V {dpv} ED_V {edv} TQ_MAT {tq} at {tqx} ex {ex} {'PASS' if inh == 0 else 'FAIL'}")
