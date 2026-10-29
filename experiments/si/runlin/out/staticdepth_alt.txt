@@ -1,0 +1,14 @@
+acyc_b=834 acyc_fail=29 checked=708 checked_gates=533 cyc_const=711 dstar_max=80 gates_len_max=67 gates_len_minus_n1_max_plus1000=993 genw_fail=23 intervals=863 len_max=67 len_minus_n1_max_plus1000=998 pure_b=666 pure_but_cycles_move=10 slack_min_plus1000=1000 tight=14
+EXAMPLE ('GATES', 'experiments/n5-exhaustive/instances/b6_xl2_n32.pg', 4, 15, 11, 19, 32, 1)
+EXAMPLE ('GATES', 'experiments/n5-exhaustive/instances/b6_xl2_n32.pg', 25, 35, 10, 19, 32, 1)
+EXAMPLE ('GATES', 'experiments/n5-exhaustive/instances/b6_xl_n32.pg', 4, 15, 11, 21, 32, 1)
+EXAMPLE ('GATES', 'experiments/n5-exhaustive/instances/b6_xl_n32.pg', 24, 34, 10, 20, 32, 1)
+EXAMPLE ('GATES', 'experiments/n5-exhaustive/instances/b6_xl_n40.pg', 3, 17, 14, 21, 40, 1)
+EXAMPLE ('GATES', 'experiments/n5-exhaustive/instances/b6_xl_n40.pg', 24, 40, 16, 21, 40, 1)
+EXAMPLE ('TIGHT', 'experiments/n5-exhaustive/instances/b6_xs_n24.pg', 0, 21, 21, 24)
+EXAMPLE ('TIGHT', 'experiments/n5-exhaustive/instances/b6_xs_n32.pg', 0, 29, 29, 32)
+EXAMPLE ('TIGHT', 'experiments/n5-exhaustive/instances/b6_xs_n40.pg', 0, 36, 36, 40)
+EXAMPLE ('GATES', 'experiments/red/usplit/instances/gate_K64_n581.pg', 1, 68, 67, 75, 581, 1)
+EXAMPLE ('GATES', 'experiments/red/usplit/instances/pp_K48_n449.pg', 2, 52, 50, 57, 449, 1)
+EXAMPLE ('GATES', 'experiments/red/usplit/instances/grow_K40_n373.pg', 0, 44, 44, 48, 373, 1)
+STATICDEPTH PASS
