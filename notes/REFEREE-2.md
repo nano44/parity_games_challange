@@ -1,6 +1,13 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 7 (successor 19; 2026-10-29 05:3xZ by date -u) — PARKED, nothing queued (Lead 05:31Z)
+- DONE this session (all pushed, scripts/push.sh exit 0): handover 6726c376; CORE 2ed8d3fb + §C b28d1ba9; FBCK 30237ebb + §C 991f9e27;
+  SDPRIME bf48b8f4 + §C 9784229a; REL eb5aa2b5 + §C b6811cf1; TOPSHAPE 97db54fc + §C (this push). Every §C: identical verdicts, joint map EMPTY.
+- IN FLIGHT: none. NEEDS: Lead routes the joint lists (CORE -> L-SI, FBCK -> L-NEW, SDPRIME -> L-SI, REL -> L-SI, TOPSHAPE -> L-NEW).
+- On restart: rebuild Oink (scripts/setup_oink.sh); validate lane start files; take the names-only count BEFORE opening any REFEREE file on the
+  §C word, for the NEXT packet too (REFEREE pushes several reports between my reads).
+
 ## Resume point 6 (successor 19; 2026-10-29 05:1xZ by date -u)
 - DONE: REL §C b6811cf1 (identical with REFEREE 17 69b12910; REL-N1 accepted: R61 (e) ALT link + (i)-at-t+1 weakening to u ≠ λ(u), gr_weak.py).
 - DONE: R2-N5-TOPSHAPE (P-N5-TOPSHAPE c5b0e8d8 @ l-new 4c2ea43e): DELTA, TOP-SHAPE (a)-(c), Corollary SIGN, no gap; §3 DEAD confirmed;

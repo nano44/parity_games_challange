@@ -96,3 +96,46 @@ No gap. Notes N-TS-1..5.
     sharper count (N-TS-2).
   - §3's DEAD verdict is confirmed. Its rise count for vertex 0 is 17, not 20 (N-TS-3).
 - NEEDS: Lead: the §C word; route N-TS-1..5 to L-NEW.
+
+## §C. Comparison with REFEREE's report (written on the Lead's word of 2026-10-29 05:31Z; from 05:31Z by date -u)
+Object: docs/referee/R-N5-TOPSHAPE.md at origin/claude/referee 1a6d6a24 (sha1 8e4afe5a87b5e8e96bf7fb19b3d63f27ed3fe830), REFEREE successor 17.
+Opened for the first time after my report was pushed (97db54fc).
+### C.1 Verdicts: IDENTICAL
+| item | REFEREE | REFEREE-2 | joint |
+| --- | --- | --- | --- |
+| Fact DELTA | SIGNED | SIGN | SIGN |
+| Lemma TOP-SHAPE (a)-(c) | SIGNED | SIGN | SIGN |
+| Corollary (≤ n − 1 top changes per vertex per phase) | SIGNED | SIGN | SIGN |
+| Reader-proofness (READING) | not signed; true as a consequence | not signed; follows | same |
+| §3 TOP-MONO Δ form | DEAD confirmed | DEAD confirmed | DEAD |
+| quotes | 2/2 | 2/2 | 2/2 |
+### C.2 Joint gap map: EMPTY
+### C.3 Notes, side by side
+- TOP-N1 = N-TS-3, found independently with the same numbers:
+  - vertex 0 has 17 Δ-top rises over its 35 P-changes;
+  - 20 is the maximum over the vertices (vertex 6, in my run);
+  - the first ten Δ-tops agree exactly with §3.
+- TOP-N2 (the bound is far from reached) AGREED.
+  - REFEREE's maximum is 0.37·n (lib1140). Mine is 0.43·(n − 1), on the small game lend9_n8 (alt_all), and 62 at n = 581 (gate_K64_n581).
+  - Both maxima are far below the bound, and neither referee's control at n − 2 / n − 1 − rank(c) bites (my CORc is the sharper valid count,
+    N-TS-2).
+  - Whether n − 1 (or n − 1 − rank(c)) is attained by some game stays OPEN, as REFEREE says.
+- TOP-N3 ((INJ) is general; "of one class" in DELTA not needed) = N-TS-5. Identical.
+- Mine only:
+  - N-TS-1: (a) and (b) hold whenever v's own cycle node is unchanged, phase or not. 0 failures in 115,702 checks. REFEREE's §1 notes that (MON)
+    holds at every transition, which is the reason.
+  - N-TS-2: the sharper count n − 1 − rank(λ(v)).
+  - N-TS-4: the wording of "even / odd rank".
+  - None conflicts.
+- Controls, consistent:
+  - flipped parity = MUT1 (both bite at every rise);
+  - Δ form = MUT3 (both bite: my 4,360 sequences on alt_all, REFEREE 7,305 pairs on lib41);
+  - REFEREE's MUT2 (n − 2) does not bite, and my CORc (n − 1 − rank(c)) holds.
+  - My cross-phase control (CTL_cross) has no REFEREE counterpart.
+- Data reproduced by both: ladderd0_k48_n156 (48 top changes), l121reader-type P-change counts (71 / 72), long121's Δ-top list.
+### C.4 Joint list for L-NEW's fixes file
+TOP-N1 = N-TS-3, TOP-N2 (+ N-TS-2's sharper count), TOP-N3 = N-TS-5, N-TS-1, N-TS-4. No verdict changes.
+### C.5 DONE / FINDINGS / NEEDS
+- DONE: this §C.
+- FINDINGS: verdicts identical, joint gap map empty, every note agreed or complementary.
+- NEEDS: Lead: route the joint list (C.4) to L-NEW.
