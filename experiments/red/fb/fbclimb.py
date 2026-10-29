@@ -10,6 +10,8 @@ from fbphase import fstats, reuse
 REUSE = "--reuse" in sys.argv or "--fm" in sys.argv
 if "--fm" in sys.argv:
     import fbphase; fbphase.MODE_RF = 3
+if "--iso" in sys.argv:
+    import fbphase; fbphase.MODE_RF = 5; REUSE = True
 if "--cr" in sys.argv:
     import fbphase; fbphase.MODE_RF = 4; REUSE = True
 
