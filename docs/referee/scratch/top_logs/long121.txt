@@ -1,0 +1,15 @@
+TRACE ../../../experiments/new/box48/instances/long121_n40.pg/0 v 0 phase (1, 122) P-changes 35 top changes 6 rises of Delta-top 17
+TRACE Delta-tops [35, 37, 32, 33, 26, 39, 21, 29, 33, 36, 33, 18, 21, 18, 34, 33, 38, 30, 29, 28]
+TRACE distinct tops [39, 38, 37, 36, 35, 26, 14]
+A_chk 9
+B_chk 54
+DELTA_chk 769
+GAMES 1
+MAX_DTOP_RISES 20
+MAX_PCH 44
+MAX_TCH 7
+MAX_TCH_x100_over_n 17
+PCH 769
+PHASES 1
+RUNS 1
+VP_chk 39

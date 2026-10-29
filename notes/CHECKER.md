@@ -8,6 +8,9 @@ History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50
   C90 Add. 2: RESULTS PASS, stamps OK; GAPS L-1 (UPDATE's Corollary (ii) parenthesis drops hypotheses 2-3 and says "from READER-INV";
   correcting UPDATE text proposed in Add. 2). C90 Add. 3 PASS (correcting UPDATE ea2cc8db, verbatim, stamp OK): C90 CLOSED. Nothing open at CHECKER. PARKED (Lead's word
   02:33Z). Counter: the next check is C91.
+- C91 = R82 (P-N5-SDPRIME), draft 1f744f3f @ f68f7e41 (Lead 05:16Z): docs/checker/C91.md PASS, N-1 ("4 + 2" omits random's 1), N-2 (708
+  untraceable). Re-runs: REFEREE @d693a6fe scratch `RANDSTARTS=1 MAXN=48 [MUT=4] python3 -I sdprime_probe.py <lib41.txt paths, ../../../ prefix>`;
+  REFEREE-2 @9784229a run_all.sh lines (named, rand_kO, qcheck). NEXT: the R82 landed check (C91 §7).
 - METHOD (this box): stamps from `date -u` run in the same turn as the text (Lead note 01:54Z; I guessed two stamps). Read the GAPS UPDATE's
   every clause against the entry's "Not signed" list, not only its items (C90 L-1: the UPDATE used the unsigned "from READER-INV" form).
 - Re-run commands (C90): REFEREE @f2d22ad7 docs/referee/scratch: `RANDSTARTS=0 MAXN=60 LEVMAX=60 python3 -I fbck_probe.py <15 named>`

@@ -1,0 +1,23 @@
+MODE pairs ../../../experiments/si/root/logs/alt_all.lst ../../../experiments
+CTL_counting: 23
+CTL_cross: 17907
+CTL_cross_checks: 63293
+CTL_deltatop: 4360
+CTL_deltatop_seqs: 6124
+CTL_flip: 6082
+DELTA_rand: 8236
+ENGXI_checks: 10604
+INVALID_START_ENTRIES: 1
+Pchanges: 53549
+TSa_checks: 6082
+TSb_checks: 10282
+XSAMEC_checks: 27442
+phases: 458
+runs: 413
+states: 10604
+v_phases_odd_then_even: 3643
+v_phases_with_top_change: 8516
+max_Pchanges_per_v_phase: (67, 'n5-epoch/instances/nep92_n40.pg#start', 6, 98, 0, 40)
+max_top_changes: (62, 'red/usplit/instances/gate_K64_n581.pg#start', 0, 71, 573, 581)
+max_top_changes_over_n: (0.429, 'n5-epoch/instances/lend9_n8.pg#start', 0, 9, 3, 8)
+RESULT OK violations=0

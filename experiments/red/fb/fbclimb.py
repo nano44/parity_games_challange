@@ -10,6 +10,8 @@ from fbphase import fstats, reuse
 REUSE = "--reuse" in sys.argv or "--fm" in sys.argv
 if "--fm" in sys.argv:
     import fbphase; fbphase.MODE_RF = 3
+RS = "--rs" in sys.argv
+if RS: REUSE = True
 if "--iso" in sys.argv:
     import fbphase; fbphase.MODE_RF = 5; REUSE = True
 if "--cr" in sys.argv:
@@ -36,6 +38,10 @@ def ev(G):
             if it >= 3000: return None
             st = (s0, {v: t[v] for v in range(g.n) if owner[v] == 1})
         it2, fb2, *_ = T.run(g, st, cap=3000, log=lambda *a: None)
+        if RS:
+            import gatep
+            pch, rs, rss = gatep.measure(g, st, cap=3000); f, ph, it3 = fstats(g, st, cap=3000)
+            return 1000 * rss + 30 * rs + 10 * f + fb2, f, st, rss
         if REUSE:
             f, R = reuse(g, st, cap=3000)
             return 100 * f + 1000 * R + fb2, f, st, R

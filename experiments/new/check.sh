@@ -89,4 +89,16 @@ if python3 -I box49/quotecheck3.py ../../docs/new/P-N5-TOPSHAPE-box49.md | grep 
 else
   echo "P-N5-TOPSHAPE checks: FAILED"; exit 1
 fi
+# Box 49 (successor 30): P-N5-TOPSHAPE-fixes (frozen): 17 quotes at the §C commits e0499401 / 0e2063bf and the freeze 4c2ea43e, shifted control, sha1.
+if git cat-file -e e0499401^{commit} 2>/dev/null && git cat-file -e 0e2063bf^{commit} 2>/dev/null; then
+  if python3 -I box49/quotecheck3.py ../../docs/new/P-N5-TOPSHAPE-fixes-box49.md | grep -q "quotes=17 bad=0" && \
+     ! python3 -I box49/quotecheck3.py ../../docs/new/P-N5-TOPSHAPE-fixes-box49.md --mut >/dev/null && \
+     [ "$(sha1sum ../../docs/new/P-N5-TOPSHAPE-fixes-box49.md | cut -d' ' -f1)" = "be683e9fd1dcd64f48c9d02f2fac66fc214cff0d" ]; then
+    echo "TOPSHAPE-fixes quotes 17 + control, sha1: PASS"
+  else
+    echo "TOPSHAPE-fixes checks: FAILED"; exit 1
+  fi
+else
+  echo "TOPSHAPE-fixes quotes: NOT RUN (e0499401 or 0e2063bf not in this clone)"
+fi
 rm -rf "$tmp"

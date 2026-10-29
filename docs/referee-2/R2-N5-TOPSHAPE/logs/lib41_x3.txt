@@ -1,0 +1,22 @@
+MODE files ../R2-N5-STAU/lib41_noref.lst 3
+CTL_counting: 3
+CTL_cross: 50151
+CTL_cross_checks: 180461
+CTL_deltatop: 8694
+CTL_deltatop_seqs: 11028
+CTL_flip: 6986
+DELTA_rand: 24488
+ENGXI_checks: 19245
+Pchanges: 72783
+TSa_checks: 6986
+TSb_checks: 13914
+XSAMEC_checks: 76721
+phases: 1116
+runs: 1230
+states: 19245
+v_phases_odd_then_even: 5429
+v_phases_with_top_change: 14277
+max_Pchanges_per_v_phase: (37, 'experiments/new/box35/instances/pf_best_3622.pg#0', 4, 55, 0, 40)
+max_top_changes: (10, 'experiments/si/coarse/instances/rel2_x31_rx48.pg#0', 5, 26, 0, 48)
+max_top_changes_over_n: (0.333, 'experiments/n5-exhaustive/instances/b4_n4all_cyc3_0.pg#0', 0, 1, 0, 4)
+RESULT OK violations=0

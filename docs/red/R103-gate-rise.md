@@ -39,6 +39,9 @@ the number of runs is ISO (plus one if the phase opens with a fallback).
 - Several gates sharing a phase do not add stalls either. A stall is global (S4c fires only when S4a and S4b change nothing anywhere), so
   stalls of independent gates synchronise (as L-NEW noted for fallbacks in N5-READER §8).
 
+## 3a. CORRECTION (2026-10-29 05:20Z): §3's "each reset costs a rank" is wrong; binary counting is Ξ-monotone and low-digit resets are
+abundant (133 in one pl130 phase). See R104 §1-§2. The carry count (ISO) data of §2 stand.
+
 ## 4. OPEN
 - A gate whose path set counts (low digits reset and re-rise under a fixed top) with a stall at each count. This is the only shape left for
   carries to beat one per rank.
