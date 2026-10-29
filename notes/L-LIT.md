@@ -11,6 +11,8 @@ DONE this session (claude/l-lit, each via scripts/push.sh, VERIFY PASS):
 - T40 docs/lit/T40-frame-split.md + T40-dominance-check.py (frame split literature; 7 entries; PROVED: STV with τ fixed ≤ |V_0|
   steps; W-MONO and B-DOM on S4a transitions; DATA: A-dominance over Howard fails 262/263 runquad, ~50% libraries).
 Predecessor's packets (T32-T39, P-N5-MPGS) are listed in git history (e5ae4111 resume point); P-N5-MPGS signed by both referees.
+- T41 docs/lit/T41-moving-target.md + T41-target-check.py (S4a vs fixed σ^c_τ per phase; topfix d1_n leaves its target n²+2n−2
+  times in one phase; library MISS ~45%, AWAY ≤ 7). Lead: F9 (a), (b) stay remarks in R85 (no referee round).
 IN FLIGHT: none. NEXT: Lead's word.
 NEEDS: none from the owner.
 

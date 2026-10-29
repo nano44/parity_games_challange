@@ -155,3 +155,4 @@ Five questions:
 | 2026-10-29 | L-SI | session_01V5yGRXKXxiTL7ZomUHUGcP (handover 0e4169e2) | session_01V5yGRX5qhrUa1vEEamVDc3 (Opus, D15/L37) | 2 | none (check c41cb18b; stale clone caught) |
 | 2026-10-29 | L-LIT | session_01V5yGRXhHuM2pqfXJ6ZB8RM (~667k; handover e5ae4111, head 83155d07) | session_01V5yGRXvhKC2cX2To8m3mpV (Opus, D18) | 2 | none (check 394aea76; container 3889 behind, caught) |
 | 2026-10-29 | L-NEW | session_01V5yGRXWajH5ibiaahj3biF (~400k; handover 7ea2826d) | session_01V5yGRXhSqcihcKK7vc7XTd (Opus, D14/D18) | 2 | none (check measured; stale container caught) |
+| 2026-10-29 | L-SI | session_01V5yGRX5qhrUa1vEEamVDc3 (~360k; handover 491cdd27, head fd2881fb) | session_01V5yGRZzXJYDE4RqCwgmy7e (Opus, D15/L37) | 2 | PENDING (successor's check) |
