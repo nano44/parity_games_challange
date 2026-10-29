@@ -11,6 +11,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   together. (b) READING: external reset of a fc block costs O(bits); degree 3 needs N-COND (upper source routed back through the lower
   block); OPEN. (c) CONJECTURE PV (each Odd vertex <= n flips => SBC <= n^2, N5-SF polynomial): 0 / 720 violations, max 0.917n.
   DEAD: FLIP-REC°, decisive-vertex multiplicity.
+- Addendum (Lead 17:23Z: R115 addendum, observer gadget, relevance, cubic tension). §6 of N5-FC-box59.md. PV DEAD (fcobs_4: o flips 198 > n
+  113; reachable fcobsR_4 same). Theorem SF-RED-R PROVED (lane, under ASSUMPTION LOC; relcheck.py 716/716 PASS): SF-RED with SBC^R, R =
+  reachable from Even branching vertices. A reachable observer still counts (READING: only "changes F's step" excludes it = I itself).
+  Tension resolved: same numbers (I = #σ − 1 on fcN), cubic (3rd differences 6); box 58 §4's "quadratic" corrected in N5-LA-box58.md.
 
 ## Box 58 log (successor 33; Lead 16:54Z: (A) immune variant / (B) impossibility / (C) park)
 - docs/new/N5-LA-box58.md: LA_K / LAG_d terminate (R15 (c)). LA_1 = I^glo on switchbestexp N = 3..6 (286 / 590 / 1198): look-ahead DEAD.
@@ -92,6 +96,7 @@ Stop (S5) when Iσ = Iτ = ∅: Even wins v iff the cycle node of Ξσ(v) has ev
 - box59/out/sha1s.txt is in `ls` (alphabetical) order: fc_10, fc_11, fc_12 come before fc_3. I mis-mapped them once.
 - fcword's SET lag is 3 in 215 / 216 events; the exception is fc_10 transition 1381 (bit 0, lag 2, no lower cycle). Not investigated.
 - frec.py runs the S3 default start only; alt_all's pinned starts are NOT used (P-N5-SF's pc_alt used them).
+- relcheck.py keeps ONE cached G* (per stretch start a); corpus.sh takes SCRIPT=relcheck.py.
 - In window.py a flip shown at "j" happened between states j - 1 and j.
 
 ## Dead ends (successor 33; also in docs/new/N5-SBC-box55.md §4)
@@ -653,9 +658,9 @@ Every answer measured from the repository; commands named.
 ## Resume point (successor 34, session_01V5yGRZtUQrbWSSxFF96dQJ; written 2026-10-29 ~18:0xZ by date -u; overwrite at handover)
 ### DONE: box 59 (N5-FC-box59.md, box59/ tools and logs, check.sh "Box 59"), pushed via scripts/push.sh.
 ### IN FLIGHT: nothing running.
-### NEXT (the Lead decides): run box59/frec.py on L-RED 28's nested families when they land (max flips(u) > n kills PV); then the
-PV proof plan (§4 (i)-(iii)), starting with (ii) on switchbestexp's leapfrog vertex 14N + 16.
-### Owned conjectures: SF-POLY, SBC-QP, GROUP, EXIT-without-NT, CARRY-CUT, PV (all OPEN).
+### NEXT (the Lead decides): the informative count is I (cubic on fcN). Options: relcheck.py / iteration counts on L-RED 28's nested
+families; the finer (play-)relevance version of SF-RED-R (§6.2, OPEN); an I-degree bound via stretch length x SBC^R.
+### Owned conjectures: SF-POLY, SBC-QP, GROUP, EXIT-without-NT, CARRY-CUT (OPEN); PV DEAD (§6.1).
 
 ## Resume point (HISTORY; successor 33, FINAL after box 58, written 2026-10-29 ~17:0xZ by date -u)
 Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context ~375k at writing. PARKED (Lead's option (C), box 58).

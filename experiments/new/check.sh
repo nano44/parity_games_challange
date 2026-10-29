@@ -251,4 +251,10 @@ if grep -q "^FCWORD N 4 n 110 SBC 16 W PASS C PASS$" <<<"$w1" && grep -q "^FCOPE
 else
   echo "box 59 FC checks: FAILED"; exit 1
 fi
+w3=$(python3 -I box59/relcheck.py box59/out/fcobs_3.pg)
+if grep -q "^REL fcobs_3.pg n 88 m 208 |R| 87 orbit 122 SBC 111 SBC_R 9 LAM 0 SEGMAX 24 PASS$" <<<"$w3" && [ "$(sha1sum box59/out/fcobs_3.pg | cut -c1-12)" = 719d04830887 ]; then
+  echo "box 59 REL: fcobs_3 raw SBC 111, SBC_R 9, SF-RED-R checks (LOC, VAL, SEG, TOT): PASS"
+else
+  echo "box 59 FC checks: FAILED"; exit 1
+fi
 rm -rf "$tmp"
