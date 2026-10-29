@@ -98,3 +98,22 @@ wgrow_kill_n90, as L-SI reported for its kill pins.
   4K² + 3K − 1 at n = 24K + 6 (≈ n²/144), fallback-free, in one phase, τ fixed. (3) DATA: R105's kills fail (H4′_rel) and keep GEN_W.
   (4) OPEN: super-quadratic or super-polynomial runs by nesting.
 - NEEDS: none from the owner.
+
+## Addendum (Lead 10:48Z, three checks; experiments/red/seg/whole.py; written 2026-10-29 11:10Z, date -u)
+1. S3 DEFAULT start: N5 from its own start does NOT produce the quadratic run. On every member tested (K = 2, 4, 6, 8 with m = 4K;
+   runquad_K3_m4_n54; runquad_K8_m30_n192) the S3 run terminates after 3 iterations (0 fallbacks, 3 phases), n5b and n5.py alike.
+   So R106 bounds runs from a reachable-by-construction start pair, not N5's iteration count from scratch. Whether some prefix leads
+   N5 from S3 into the designed start is OPEN (not attempted).
+2. Per-vertex switch counts (max over Even vertices): whole execution 2K, inside the run 2K − 1; the maximum is attained by the reactors
+   (each flips twice per pivot cycle; trace of K = 3, m = 4: r1 switches at t = 1, 6, 8, 13, 15, 20). Pivots switch K times, W-sinks once.
+   So per-vertex counts stay O(n) (2K ≤ n/12) and the run is Θ(m · K): the family is TIGHT for "per-vertex switches per run = O(n) ⇒ run
+   = O(n²)", it does not exceed it. Growth beyond n² needs super-linear per-vertex counts.
+3. Whole execution from the designed start (n5b; n5.py gives the same iteration counts):
+| K | m | n | total iterations | fallbacks | phases | runs | longest run | max per-vertex switches (whole / run) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2 | 8 | 54 | 22 | 0 | 1 | 2 | 21 | 4 / 3 |
+| 4 | 16 | 102 | 76 | 0 | 1 | 2 | 75 | 8 / 7 |
+| 6 | 24 | 150 | 162 | 0 | 1 | 2 | 161 | 12 / 11 |
+| 8 | 32 | 198 | 280 | 0 | 1 | 2 | 279 | 16 / 15 |
+| 8 | 30 | 192 (pin) | 264 | 0 | 1 | 2 | 263 | 16 / 15 |
+   The whole execution is one phase; its second run is the single final state after the λ-changing last transition. Total = L + 1.
