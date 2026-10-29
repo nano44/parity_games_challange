@@ -100,10 +100,17 @@ execution's joint (σ, τ) family. SCOPE=ent uses run ENT.
 - DEAD: ENT-RUN with the library constant 4. Killed by box50/out/ent1_vc6.pg (n 48, sha1 129e9df1…): Even vertex 24's successor along the run
   [1, 18] is 20, 11, 11, 20, 14, 14, 20, 22, 22, 20, 11, 11, 20, 14, 14, 20, 20, 20. The edge (24, 20) is entered 6 times (and so are 5 clones
   of 24), and the run's VC is 3. Obstruction: a vertex can return to a hub option after every detour, in a lap that repeats inside one run.
-- Anatomy (vpf3_vc4, READING): the run [5, 27] repeats a LAP. The Even switches of transitions 7-12 recur at 20-27: 7: 20 ↔ 21; 21: 7 ↔ 26;
+- Anatomy (vpf3_vc4, READING): the run [5, 27] repeats a LAP approximately (no full switch set repeats: laps.py REP = 1 there). Most
+  Even switches of transitions 7-12 recur at 20-27: 7: 20 ↔ 21; 21: 7 ↔ 26;
   20: 19 ↔ 7; 26, 39, 45: 6 → 32; 27, 32, 35, 44: 6 → 15. The stretch 13-19 between the laps differs, and the strategies never repeat. The
   4-shattering is made by two laps of oscillating vertices with different phases plus the in-between stretch. Laps inside one
   fallback-free run are where a counter would have to live: k laps nested inside each other would shatter about k edges.
+
+- Laps in the library (box50/laps.py; laps_alt.txt, laps_alt_start.txt): REP is the most transitions of one run with the same full switch
+  set, and EREP the most transitions of one run containing one same single switch (v, a → b). alt_all, default starts (745 runs): REP ≤ 2,
+  EREP ≤ 3. Pinned starts (921 runs): REP ≤ 2 (lag11_n40, frz2/frz3_n24, run49_n32, frz32), EREP ≤ 3 (pft35_n48, pftheta34, lag11_n40). The
+  climbed pins: REP 1, EREP 3 on both. So one switch recurs at most 3 times per run in all data: the library's laps are as deep as the
+  climbs'.
 
 ## 5. What a proof would need (READING)
 - Per run, by Lemma ENT, VC ≤ max{d : 2^d ≤ 1 + 2·ENT·d}, so a constant ENT bound would give constant VC AND |S| ≤ ENT·m directly.
@@ -122,7 +129,7 @@ execution's joint (σ, τ) family. SCOPE=ent uses run ENT.
   is necessary for polynomial N5 and sufficient only for quasi-polynomial.
 
 ## DONE / FINDINGS / NEEDS
-- DONE: this note; tools experiments/new/box50/ (vcrun.py, vcclimb.py, dunion.py, mkstart.py); logs vc_alt.txt, vc_alt_start.txt,
+- DONE: this note; tools experiments/new/box50/ (vcrun.py, vcclimb.py, dunion.py, mkstart.py, laps.py); logs laps_alt.txt, laps_alt_start.txt, vc_alt.txt, vc_alt_start.txt,
   vc_rand.txt, vc_mut_K10.txt, families.txt, oink_small.txt, oink_big.txt, out/*.log; pins out/vpf3_vc4.{pg,start}, out/ent1_vc6.{pg,start}
   (plus out/vsym_vc4.pg and the climbs' _best / _last files); experiments/new/check.sh block "Box 50".
 - FINDINGS: (1) PROVED (lane) Theorem VC-BOUND: I ≤ Φ_dσ(m_σ) + Φ_dτ(m_τ) − 2 on every game (R15 (c), (d) + Lemma SS, proof given),
