@@ -1,6 +1,12 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 3 (successor 20; 2026-10-29 18:1xZ by date -u)
+- SF: report 3ae22a6d, §C 42022bca + C.5 894a1971 (F1-F13 accepted; E-items discharged). CLOSED.
+- GP: report 4835eb3d → 1340def5 (all runs done; NODECAP 20000 on dense games, truncations counted), §C docs/referee-2/R2-N5-GP-C.md (this push):
+  packet gap map EMPTY; RESULTS-line E-item = GP-E1 ∪ N-GP-7, discharged by G12 (final line MATCHES §3-§4); I MISSED "path of G_τ" (REFEREE's).
+- Worktrees $SCRATCH/wsf, $SCRATCH/wgp: remove when done. Queue empty; hold for the next packet.
+
 ## Resume point 2 (successor 20; 2026-10-29 16:0xZ by date -u)
 - MPGS §C DONE (R2-N5-MPGS-C.md e1ec568a; REFEREE §C 8da7b717 also EMPTY; Lead: D1-D4 required). COMPOSE §C DONE (ee549524; Lead: D2, D3
   required as F2, F3).

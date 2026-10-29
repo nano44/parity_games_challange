@@ -1,0 +1,66 @@
+DONE-FILE experiments/red/xing/instances/x32_rand64.pg
+DONE-FILE experiments/red/xing/instances/x32_waves32.pg
+DONE-FILE experiments/red/xing/instances/x32_waves48.pg
+DONE-FILE experiments/si/coarse/instances/cls_rel_lev.pg
+DONE-FILE experiments/si/coarse/instances/jcl_lev_l_sc.pg
+DONE-FILE experiments/si/coarse/instances/jcl_x31_cu32i.pg
+DONE-FILE experiments/si/coarse/instances/jcl_x32_nest40.pg
+DONE-FILE experiments/si/coarse/instances/jcl_zcl_cu_n48.pg
+DONE-FILE experiments/si/coarse/instances/rel2_x31_rx48.pg
+DONE-FILE experiments/si/coarse/instances/rel_j7_n32.pg
+DONE-FILE experiments/si/coarse/instances/rel_j7_n48.pg
+DONE-FILE experiments/si/coarse/instances/rel_lev_l_sc.pg
+DONE-FILE experiments/si/coarse/instances/rel_x31_cu32i.pg
+DONE-FILE experiments/si/coarse/instances/rel_x31_rx48.pg
+DONE-FILE experiments/si/coarse/instances/rel_zcl_rx_n32.pg
+DONE-FILE experiments/si/instances/red_cf1.pg
+DONE-FILE experiments/si/instances/red_cf2.pg
+DONE-FILE experiments/si/orlens/instances/cycelim_cex_n32.pg
+DONE-FILE experiments/si/orlens/instances/elim24_p52.pg
+DONE-FILE experiments/si/orlens/instances/inr2_n32.pg
+DONE-FILE experiments/si/orlens/instances/lev_l_n20.pg
+DONE-FILE experiments/si/orlens/instances/lev_l_n28.pg
+DONE-FILE experiments/si/orlens/instances/lev_l_sc.pg
+DONE-FILE experiments/si/orlens/instances/lev_l_x.pg
+DONE-FILE experiments/si/orlens/instances/rise3_n32.pg
+DONE-FILE experiments/si/orlens/instances/run_m_inr2.pg
+DONE-FILE experiments/si/orlens/instances/run_m_n24.pg
+DONE-FILE experiments/si/orlens/instances/run_x_inr2.pg
+DONE-FILE experiments/si/orlens/instances/s_elim24_final.pg
+DONE-FILE experiments/si/orlens/instances/s_tp32_final.pg
+DONE-FILE experiments/si/orlens/instances/thclimb_n12_s11.pg
+DONE-FILE experiments/si/orlens/instances/thclimb_n16_s12.pg
+DONE-FILE experiments/si/xing/instances/ccl_fb2_n32.pg
+DONE-FILE experiments/si/xing/instances/ccl_fbx_n32.pg
+DONE-FILE experiments/si/xing/instances/ccl_w48_n48.pg
+DONE-FILE experiments/si/xing/instances/nofe_cyc_n8.pg
+DONE-FILE experiments/si/xing/instances/zcl_cu_n24.pg
+DONE-FILE experiments/si/xing/instances/zcl_cu_n48.pg
+DONE-FILE experiments/si/xing/instances/zcl_fb1_n32.pg
+DONE-FILE experiments/si/xing/instances/zcl_fb2_n32.pg
+DONE-FILE experiments/si/xing/instances/zcl_rx_n32.pg
+DONE-FILE experiments/si/xing/instances/zcl_rx_n48.pg
+DONE-FILE experiments/si/xing/instances/zcl_tp_n32.pg
+MODE files /tmp/gplib_rest7 2 PCAP 300 RANDH 3 MAXF 400
+B1: 3299
+B2a: 103
+B2b_ii: 2
+B2b_iii_even: 8
+F1H_checks: 3412
+FWR_checks: 1558
+F_RT0: 1533
+F_checked: 1558
+GPS_dfs_truncated: 5990
+GPS_paths: 636062
+NOTBL_checks: 96152
+WMON_checks: 1695
+XW_checks: 84595
+X_BLK: 179
+X_GPall: 111380
+frozen_phases: 1558
+runs: 86
+transitions: 2313
+max maxF: 55
+max maxRT: 2
+max maxWCH: 55
+RESULT PASS violations 0
