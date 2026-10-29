@@ -2,11 +2,9 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-29 ~11:0xZ (successor, Opus 5.5): T34 DONE docs/lit/T34-friedmann-vs-n5.md (+ T34-gateshut-check.py sha1 7c33508b): Lemma
-GATE-SHUT (PROVED L-LIT, unrefereed; 0 violations / 34,308 gate-state checks on H_n; 247 reopenings all where (H1)/(H2) fail);
-Friedmann's counters break at the hiding step ([F] Lemma 6.1(3), 6.2(2), §8 p.26, §8.2) because N5's τ shuts gates and S4a chooses
-by W; direct merge with T33 §2.3 BLOCKED; CONJECTURE NO-HIDE; design target (R1)-(R3) for any non-Friedmann gadget; no merged spec
-given (none verifiable). Before: T33 f587cb2f, T32 a06dc24a. Next: Lead's routing.
+2026-10-29 ~11:0xZ (successor, Opus 5.5): packet docs/lit/P-N5-MATCHPHI.md FROZEN at push (sha1 544705b7; quotecheck
+P-N5-MATCHPHI-quotecheck.py quotes=5 bad=0; pinned check T33-match-phi-check.py sha1 6853179b). Later text -> P-N5-MATCHPHI-fixes.md.
+NEST-FACE (i) dropped (undefined "realizable"). Before: T34 f09b2b43, T33 f587cb2f, T32 a06dc24a. Next: Lead's routing.
 
 ## Queue
 - Not opened (blocked or paywalled), needed only if a lane depends on them: Friedmann RAIRO 2011 (403); FHZ SODA/STOC 2011;
