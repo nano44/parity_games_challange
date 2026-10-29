@@ -15,6 +15,8 @@ DATA / READING / DEAD. Counts are TRANSITIONS. Tools: experiments/si/lay/ (wsink
 | §4 | W-GROW DEAD (lay/instances/wgrow_kill_n90, t = 1) and H-GROW DEAD (lay/instances/hgrow_kill_n89, 6 of 7 steps), both two engines; dual obstructions (a W-sink waits for its target's honest value; an H-sink waits for its W-chain); CONJECTURE SINK-GROW (W-GROW ∨ H-GROW at each step) survives both; kill searches on SINK-GROW | DEAD; CONJECTURE; DATA |
 | §4 | CONJECTURE SEG-LAST DEAD and SINK-GROW DEAD: lay/instances/seglast_kill_n110 (n 110, REL segment [2, 8], t = 2: the only switch is an intermediate one, 82 → 25 at vertex 1, which switches again at 7); n5b alone reproduces it; observed GEN_W holds | DEAD |
 | §5 | the deadlock that kills SEG-LAST; what survives (count forms) | READING, OPEN |
+| §6 | CONJECTURE SEG-COUNT (b − a ≤ Even vertices switching in [a, b]): library max excess 0; Lemma W-STICK′ and Corollary JOINT (an H-sink that waits for its W-chain finalizes TOGETHER with a vertex of it: what pays for each deadlock step); OBJ=C/D/L kill searches (the longest past 50,000 steps) find no segment with two deadlock steps | CONJECTURE; PROVED (lane); DATA |
+| §7 | PSI-DROP (|U^W| + |U^H| + unready W-sinks drops every step; would give 3(n − 1)) DEAD: psidrop_kill_n70 | DEAD |
 
 ## 0. Setting and premises
 As N5-LWP-box26 §0, §7, §8 (GRUN §4 notation). A maximal REL-admissible segment [a, b] of one fallback-free run, GEN_W assumed, NO (H4′_rel).
@@ -195,7 +197,7 @@ RO_b, σ̄_t = σ̄_b on [a, b] (REL); every cycle of CW_b (CH_b) is a W-cycle (
   graded score: 300 × max EXC + 100 × deadlock steps + 10 × SINK-GROW failures + 3 × W-/H-GROW failures + no-frontier steps) from
   seglast_kill_n110, hgrow_kill_n89, wgrow_kill_n90, then from seglast_kill_n29 (four seeds, NMAX 45-80): results below.
 
-## 7. A potential that survives the deadlock: CONJECTURE PSI-DROP (DATA; kill search running)
+## 7. A potential that survives the deadlock: PSI-DROP (DEAD)
 - PSI1_t := |U^W_t| + |U^H_t| + (W-sinks at t that are NOT arena-ready); PSI0_t := |U^W_t| + |U^H_t| (both 0 at b). CONJECTURE PSI-DROP:
   PSI1 strictly drops at every transition of a REL segment. It would give b − a ≤ PSI1_a ≤ 2|U^W_a| + |U^H_a| ≤ 3|E_b| ≤ 3(n − 1) on
   every REL segment, without (H4′_rel) and without SEG-LAST (a COUNT bound, weaker than SEG-COUNT's n − 1 but enough for REL-SPLIT).
@@ -205,16 +207,23 @@ RO_b, σ̄_t = σ̄_b on [a, b] (REL); every cycle of CW_b (CH_b) is a W-cycle (
 - Why it might hold (READING): a step with no settling is a deadlock step, and there the only switches are intermediate ones; in both
   killers the intermediate switch makes the blocked W-sink ready. What could break it: a W-sink settling at t whose jW-predecessors become
   NEW W-sinks at t + 1 that are not ready (each adds 1 to PSI1 while the settling removes 1 from U^W, and 0 or 1 from U^H).
-- Kill search: lay/wclimb.py OBJ=P (kill = a PSI1 failure; shaping: steps where PSI1 drops by exactly 1) from seglast_kill_n29,
-  hgrow_kill_n89, wgrow_kill_n90 (lay/out/p*.log).
+- PSI-DROP is DEAD (DEAD.md box 27): lay/wclimb.py OBJ=P (kill = a PSI1 failure) from seglast_kill_n29, step 4,107:
+  lay/instances/psidrop_kill_n70.pg (n 70, sha1 9cd26eed…; .start 6ba80572…), segment [2, 5], t = 2: switches 1: 14 → 48 (intermediate)
+  and 29: 8 → 31 (final, but 29 is no sink, so neither frame settles anything), W-sink 24 still unready: PSI1 = 24 at 2 and at 3. n5b
+  identical. SEG-LAST and SEG-COUNT hold there. A potential must also count final switches of non-sink vertices, which is SEG-COUNT's own
+  currency; no potential tried here does better.
 
 ## DONE / FINDINGS / NEEDS
-- DONE: this note; tools experiments/si/lay/ (wsink.py, wclimb.py, ssamp.py, sinkstep.py, anat.py, relcheck.py); data lay/*.txt; pins
-  lay/instances/ (wgrow_kill_n90, hgrow_kill_n89, seglast_kill_n110, each with its S3 start); DEAD.md "box 27"; check.sh "box 27".
-- FINDINGS: (1) PROVED (lane): Lemmas W-STICK, H-STICK, READY, SINK-OFF and Theorem SINK-STEP (no (H4′_rel); GEN_W): a switch to the
-  final successor whose W- or H-successor in J_b is settled in that frame is final; ready W-sinks switch at once; it contains LAST-STEP and
-  K-REDUCTION. (2) DEAD: W-GROW (wgrow_kill_n90), H-GROW (hgrow_kill_n89), SINK-GROW and CONJECTURE SEG-LAST (seglast_kill_n110: a REL
-  segment of a fallback-free run where transition 2 → 3 is an intermediate switch of one vertex, no vertex's last switch; two
-  implementations; observed GEN_W holds). (3) SEG-LAST without (H4′_rel) is FALSE; the per-transition route to dropping (H4′_rel) is
-  closed. The segment bound itself (b − a ≤ n − 1, and b − a ≤ switching Even vertices) is not touched by any instance found.
+- DONE: this note; tools experiments/si/lay/ (wsink.py sink counters; wclimb.py climbs, OBJ = "" / T / H / S / S2 / C / D / L / P / M;
+  ssamp.py sampling; sinkstep.py, anat.py anatomy; relcheck.py n5b-only reproduction; segsw.py, hsinter.py, psi.py); data lay/*.txt;
+  pins lay/instances/ (wgrow_kill_n90, hgrow_kill_n89, seglast_kill_n110, seglast_kill_n29, psidrop_kill_n70, each with its S3 start);
+  DEAD.md "box 27"; check.sh "box 27".
+- FINDINGS: (1) PROVED (lane): Lemmas W-STICK, W-STICK′, H-STICK, READY, SINK-OFF; Theorem SINK-STEP (no (H4′_rel); GEN_W): a switch
+  to the final successor whose J_b-successor in one frame is settled in that frame is final; ready W-sinks switch at once; contains
+  LAST-STEP and K-REDUCTION. Corollary JOINT. (2) DEAD: W-GROW, H-GROW, SINK-GROW, CONJECTURE SEG-LAST (seglast_kill_n110, shrunk to
+  seglast_kill_n29: run [2, 4], t = 2 is an intermediate switch of one vertex; n5b-only reproduction incl. run boundaries; observed GEN_W
+  holds), PSI-DROP (psidrop_kill_n70). (3) SEG-LAST without (H4′_rel) is FALSE: a REL segment can contain a transition that is no
+  vertex's last switch (a frame deadlock broken by an intermediate switch). (4) OPEN: CONJECTURE SEG-COUNT (b − a ≤ switching Even
+  vertices ≤ n − 1 on every REL segment); every instance found has ≤ 1 deadlock step per segment, paid for by a JOINT final step; the
+  ladder family (red/ul/ladderd0) has one H-sink making 11/23/47 intermediate switches in one segment, never at a deadlock step.
 - NEEDS: none from the owner.
