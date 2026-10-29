@@ -27,6 +27,15 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   designed); R113 §4 addendum (mkr vs its dual = opposite winning regions, cross gates never open; flip-climb DATA); f8b59275 ewin/dewin
   (same-region Odd clock, check.sh gate); 56f3ca89 CORRECTION (Odd holders at mkr's W-sinks fail: an Odd hold cannot delay a W-rise signal).
 - IN FLIGHT: nothing (no background jobs).
+- QUEUE TOP for successor 28 (Lead 15:20Z, verbatim gist): attack CONJECTURE SF-POLY for L-NEW's single-frame variant N5-SF (claude/l-new
+  56a42d4f, docs/new/N5-SF-box54.md; tool experiments/new/box54/n5sf.py). N5-SF is polynomial IFF SBC is (Odd's best-reply changes along the
+  run, plus the mirror; Theorem SF-RED, lane). DATA: linear on H_n and DLM; SBC 0.45n -> 0.57n on switchbestexp N <= 16, still rising. Task:
+  a family with super-polynomial SBC, or the largest polynomial degree found. L-LIT T46 is finding N5-SF's closest known rule.
+- Also relayed (Lead 14:44Z): L-LIT T43 (claude/l-lit 09dfa5f0b, docs/lit/T43-dlm-coupled-counter.md): DLM's mutual counter locks sit in
+  SSI's selection rule, N5 escapes in iteration 1; an N5 counter must put every lock in the ARENAS (each level's final edge enters I_sigma /
+  I_tau only when the lower counter completes). Agrees with R113 §0 and with the 56f3ca89 correction (holds delay only menu-gated followers).
+- Lead 15:20Z asked to finish the mkr + dewin build first. NOT done: the 56f3ca89 correction showed mkr's pivot is W-gated only, so the build
+  first needs a mkr variant whose C_{i+1} honest value runs through w_i (item (2) below). Left for the queue after SF-POLY.
 - RESUME POINT (Lead STEP 1: coupled family, then super-quadratic NM*/NM*^U in one joint lambda-run):
   (1) DONE (R113 §4): cpl/ewin.py + dualize = dewin (Odd clock, Odd-winning, run identical). WAS: Build an Odd clock in an ODD-winning region (Odd pivots + Odd reactors whose U-plays end in Odd-winning cycles, Odd improving path
       sets). Equivalently: an Even mkr variant in an EVEN-winning region, then dualize. mkr's W-loops rely on z odd; the new one needs its
