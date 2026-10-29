@@ -1,0 +1,8 @@
+round 0 run 62 n 34 run-2n -6
+round 1 pair (25, 28) prio 0 run 65 n 35 run-2n -5 ratio 1.857
+round 2 pair (3, 24) prio 0 run 67 n 36 run-2n -5 ratio 1.861
+round 3 pair (3, 27) prio 0 run 69 n 37 run-2n -5 ratio 1.865
+round 4 pair (25, 34) prio 0 run 71 n 38 run-2n -5 ratio 1.868
+round 5 pair (25, 37) prio 0 run 74 n 39 run-2n -4 ratio 1.897
+round 6 pair (25, 38) prio 0 run 76 n 40 run-2n -4 ratio 1.900
+round 7 pair (25, 39) prio 0 run 79 n 41 run-2n -3 ratio 1.927

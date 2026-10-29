@@ -348,3 +348,11 @@ o=$(python3 -I runlin/anatomy.py runlin/instances/best60_n34.pg runlin/instances
 python3 -I root/n5bcmp.py runlin/instances/best60_n34.pg runlin/instances/best60_n34.start | grep -q "identical state sequences: True"
 python3 -I runlin/keeper.py ../red/n3/instances/run49_n32.pg ../red/n3/instances/run49_n32.start | grep -q "with I_tau nonempty 0 "
 echo "runlin (box 24: best60_n34 run 60, n5b identical; run49 I_tau empty along its run): PASS"
+# box 24 §7: DEAD RUN-LIN. runfam_K10 (n 49): one phase, 0 fallbacks, fallback-free run 99 > 2n = 98 (n5x; n5b identical); the generator
+# reproduces the pinned instance; I_tau empty along the run.
+o=$(python3 -I runlin/anatomy.py runlin/instances/runfam_K10.pg runlin/instances/runfam_K10.start); grep -q "phase \[1,100\] run \[1,100\] len 99 " <<<"$o"
+python3 -I root/n5bcmp.py runlin/instances/runfam_K10.pg runlin/instances/runfam_K10.start | grep -q "n5b iterations 100 fallbacks 0 states 101 | n5x states 101 | identical state sequences: True"
+python3 -I runlin/keeper.py runlin/instances/runfam_K10.pg runlin/instances/runfam_K10.start | grep -q "with I_tau nonempty 0 "
+t=$(mktemp -d); python3 -I runlin/mkrunfam.py 10 $t/f | grep -q "K 10 n 49 run 99 run-2n 1"
+cmp -s $t/f.pg runlin/instances/runfam_K10.pg; cmp -s $t/f.start runlin/instances/runfam_K10.start; rm -rf $t
+echo "runlin (box 24 §7: DEAD RUN-LIN, runfam_K10 run 99 > 98, n5b identical, generator reproduces the pin): PASS"

@@ -1,4 +1,4 @@
-# Draft RESULTS R79 (Lead, 2026-10-28 23:55Z by date -u; both reports, both §Cs and the fixes file filled) — to CHECKER C88 (Lead reviewed 23:58Z by date -u: the one-referee λ-end clause moved out of the title and (d) into 'Referee strengthening')
+# Draft RESULTS R79 (Lead, 2026-10-28 23:55Z by date -u; both reports, both §Cs and the fixes file filled) — to CHECKER C88 (Lead reviewed 23:58Z by date -u: the one-referee λ-end clause moved out of the title and (d) into 'Referee strengthening') (rev. 00:18Z by date -u: C88 N-1, N-2, N-3)
 
 ### R79 [refereed-only] N5 on EVERY game, inside one phase: a run J = (x, …, y) of a phase depends only on the Odd edges it uses — on every Odd cut H of G (G's Even successor lists, each Odd list a non-empty subset of G's) that contains τ and every Odd best reply σ̄_k, k ∈ J, RESULTS R64 (a) (i)-(iv) hold at each state of J (Lemma RESTRICT_H), and N5^τ on H from (σ_x, τ) passes through (σ_x, τ), …, (σ_{y′}, τ), y′ := x + len(J), with N5's fallback / non-fallback type at each transition, the states of J in one N5^τ phase and the last transition may leave it unless σ̄_{y′} is an Odd strategy of H (Corollary REPRO_H, with EPR-1); instances: the epoch game G′_E (RESULTS R64), G^u (RESULTS R68 (f)), the frozen-side game G^{u|J}, which proves N5-NCONF §9's CONJECTURE RESTRICT_{u|J}, and the used-edge game G^P of a whole phase P, of which P is the initial segment, of len(P) transitions, of the first N5^τ phase on G^P started at (σ_x, τ) (G-RESTRICT-1 repaired) (2026-10-26) — structural lemmas for N5 (they bound nothing: no phase length is bounded, QP(P) and XDEG(P) are OPEN; not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C88.md, checker PENDING)
 - Object (L-NEW successor 28, Opus 5.5; frozen, unchanged during review): packet P-N5-RESTRICT, docs/new/P-N5-RESTRICT-box48.md, sha1
@@ -20,8 +20,7 @@
   USED-EDGE game G^P: every Odd v cut to {τ(v)} ∪ {σ̄_k(v) : k ∈ P}; QP(P) := #{Odd v : |succ_{G^P}(v)| ≥ 2}, XDEG(P) := Σ_v (|succ_{G^P}(v)| − 1).
 - Claims signed (both referees "(Opus 5.5, D15)", L37), on every game; no item uses (P); premises LANDED: SPEC S1-S5 (S1's injective rewards
   included); RESULTS R18 (d) Lemma S (a) (= (VJ), signed on every game in RESULTS R57 (a)), on G, on H and on S4b's arenas; R38 (a); R64 (a),
-  (b) with the repair EPR-1, and their proof (P-N5-EPR §1-§2, pinned in R64), read with H in place of G′_E; R68 (f) for G^u; for (d)'s λ-end
-  clause also R15 (a), (d). RESTRICT_H (i) rests, as R64 (a) (i) does, on the standing SPEC premise 1E-N3 (RESULTS R57; N-EPR-1):
+  (b) with the repair EPR-1, and their proof (P-N5-EPR §1-§2, pinned in R64), read with H in place of G′_E; R68 (f) for G^u. RESTRICT_H (i) rests, as R64 (a) (i) does, on the standing SPEC premise 1E-N3 (RESULTS R57; N-EPR-1):
   (a) Lemma RESTRICT_H (§1): let J be an H-admissible run of a phase of N5 on G and k ∈ J. At the pair (σ_k, τ): (i) Ξ′_k = Ξ_k and W′_k =
       W_k; (ii) Iσ′_k = Iσ_k, SPEC S4a's output on H equals its output on G, and S4c's Even switch-all on Iσ is the same on both; (iii) Odd's
       dual valuation of τ is the same on both, so Iτ′_k = Iτ_k ∩ E(H); (iv) if k → k + 1 is an in-phase transition of N5 on G and Iτ′_k ≠ ∅,
@@ -60,7 +59,7 @@
   0 of 11,777 λ-ends extend). (iii) Whether RESULTS R61's 𝒞^kO counts hold for N5^τ is not checked by the packet or either referee. (iv) The
   extension in (d) is rare but real: 186 of 11,527 phase ends (REFEREE) and 176 of 39,385 (REFEREE-2), all τ-ends; REFEREE successor 16's
   earlier "44 of 4,073" counted multi-state phases only (F6).
-- Data (DATA, not proof): REFEREE (successor 16; own docs/referee/scratch/restrict_probe.py, sha1 f451e00a, on its engine rl_engine with
+- Data (DATA, not proof): REFEREE (successor 16; own docs/referee/scratch/restrict_probe.py (sha1 0429b61b at the report; f451e00a, with ONE=1, at successor 17's §C), on its engine rl_engine with
   REFEREE successor 12's own N5^τ step; lane code not run): library 1,140 files (2,739 runs), lib41 (763), 4,500 random 𝒞^kO runs, nep90 /
   nep76 / long121 at their starts: 8,005 N5 runs, 4,073 phases, 28,938 in-phase transitions reproduced on G^P (and on G′_E), 202,408
   RESTRICT_H checks over five families (G^P, a random admissible cut, G′_E, G^u, G^{u|J}), 3,954 "unless" checks, 2,976 EPR-1 exits that
@@ -68,8 +67,7 @@
   lib1140, G^P only): 12,625 runs, 18,036 transitions, 0 failures; 186 of 11,527 phase ends extend, all τ-ends (7,312 τ-ends, 4,215 λ-ends).
   REFEREE-2 (successor 18; own docs/referee-2/R2-N5-RESTRICT/restrict_check.py on its lane's Runner (si.py) and its R2-N5-EPR step; lane
   tools not run): 21,971 runs, 61,356 phases; (H, J) instances G^P 61,356, G^u 104,910, G^{u|J} 372,118, G′_E 69,253, 0 violations (ADM,
-  (i)-(iv), REPRO_H, λ′ = λ); of 39,385 phase ends with a next state on G, G's phase ends by τ in 27,020 and by λ in 11,777, N5^τ on G^P
-  stops at y in 588, and its phase extends past y in 176, all τ-ends; control (one (v, σ̄_x(v)) dropped) fails in 30,335 of 35,196 runs.
+  (i)-(iv), REPRO_H, λ′ = λ); of 39,385 phase ends with a next state on G, G's phase ends by τ in 27,020 and by λ in 11,777, N5^τ on G^P stops at y in 588 (the three counts partition the 39,385; G's end type is recorded only where N5^τ steps on), and its phase extends past y in 176, all τ-ends; control (one (v, σ̄_x(v)) dropped) fails in 30,335 of 35,196 runs.
 - Signatures: REFEREE docs/referee/R-N5-RESTRICT.md (report c9bdfa68, successor 16; §C 3b2631be, successor 17): RESTRICT_H (i)-(iv), REPRO_H
   with EPR-1 and the "unless" clause, the four instances' admissibility SIGNED; the G^P sentence SIGNED in the containment reading, FALSE as
   equality (G-RESTRICT-1, wording; witness nep_n12); notes RESTRICT-N1..N3; in §C the λ-end equality PROVED. REFEREE-2
