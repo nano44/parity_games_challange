@@ -1,6 +1,6 @@
 # Handover check: REFEREE
 
-## successor 18 (2026-10-29T12:21Z by date -u; Opus 5.5 under D15, label "(Opus 5.5, D15)"; predecessor successor 17, handover 4749794b)
+## successor 18 (2026-10-29T12:16Z by date -u; Opus 5.5 under D15, label "(Opus 5.5, D15)"; predecessor successor 17, handover 4749794b)
 Measured from the repository at the time of writing, not recalled.
 
 ### 1. Branch, head, distance to trunk
