@@ -25,6 +25,7 @@ rows() over experiments/new/box21/n5x.py (SPEC S1-S5), imported read-only.
 | §7 | |𝒞_f(P)| (RESULTS R71 / R73's configurations at fallback sources): ≤ 7 on all plain data, but a 2-option reader lifts it to f (5 → 8 = f on long121, run SAME) | DATA + DEAD (as a route easier than f) |
 | §8 | FB-LIN (f ≤ n per phase; L-SI §13's conjecture, routed to L-NEW 22:55Z): no kill (3 climbs, best f − n = −9); a reader-proof configuration count |𝒞°_f| (gates read by another play) stays at its base value under every reader; f per read configuration ≤ 0.78n | DATA + CONJECTURE + OPEN |
 | §9 | FB-LIN through FB-C^K: max |𝒞^K_f| 4 / 5 / 8 (lib41 / L-RED / dressings); MONO-CONF (K-configurations at successive fallback sources never recur after a different one) DEAD on the plain long121_n40 and njb_reabs65_n48; SMALL-CK DEAD by l121_cf_emb12 (|𝒞^K_f| = f = 8) | DATA + DEAD |
+| §10 | One across-configuration attempt for FB-LIN (Lead 00:10Z): the candidate potentials either scale with |𝒞^K_f| or do not rise at every source | OPEN (obstruction recorded) |
 | §6 | Fallback-free runs: W never falls (DATA, 10,499 transitions); the W*-reach potential F_t stalls at 53% of transitions (xsn43_n48: 43 of 44) | DATA + DEAD |
 
 ## 0. Setting and the definition
@@ -251,3 +252,26 @@ Counts are per phase; phase lengths are in transitions.
   (Corollary (ii) of P-N5-FBCK). Edges from an Even choice vertex can.
 - So FB-C^K does not reduce FB-LIN to anything smaller. FB-LIN needs an argument across configurations; the data's shape (one configuration
   for the long-f phases, short cycles of configurations otherwise) is what such an argument would explain. OPEN.
+
+## 10. One attempt at an ACROSS-configuration argument for FB-LIN (Lead's word of 00:10Z; bounded to one box). Result: OPEN, with the obstruction
+The question: is there a quantity Φ that rises strictly at EVERY in-phase fallback source, whatever its K-configuration, and takes at most O(n)
+values in a phase? Then f ≤ O(n). Candidates, each checked against what FB-RISE^K proves (a fallback from a K-C-state raises LEV^K_C, its own
+level; every LEV^K_{C′} is non-decreasing on the phase by (MON)):
+- Σ_C LEV^K_C over C ∈ 𝒞^K_f(P). It rises at every unsaturated source (that source's own term rises, the others do not fall). But its range is
+  |𝒞^K_f|·(n_K − 1), so it gives back Theorem FB-C^K and nothing more.
+- max_C LEV^K_C. Its range is O(n), but it rises only when the source's configuration holds the maximum. In long121's cycle C1 → C2 → C3 → C4 →
+  C1 (§9), a fallback from C2 need not move max_C LEV^K_C. Nothing proves that the configuration of a source is the leading one.
+- min_C LEV^K_C, or a level in a common frame. A common frame H_∪ (each gate keeps every edge it takes at some source) would need Ξ_t(x) ⪰
+  value(r) along a gate's edge y ≠ σ̄_t(x). Odd's optimality gives Ξ_t(x) ⊴ x ⊕ Ξ_t(y), the opposite direction (§8). So FB-RISE's Odd case,
+  which is the only place the configuration is used, fails in H_∪, and the common level need not rise.
+- A strict rise at every source does exist, but its range is unbounded: Ξ strictly rises at the Even vertices that the fallback switches (S4c
+  takes an Iσ edge; RISE-SW, docs/si/N5-ALT-box23.md §1 (C3), off honest cycles). That is a rise of Ξ, which has exponentially many values.
+- What forces a recurrence (C1 recurs at long121's sources 23 and 83). When a configuration C recurs, LEV^K_C is at least where its last
+  source left it plus one (FB-RISE^K with (MON)). So each recurrence costs a strict rise of C's own level, and that is exactly FB-C^K's count.
+  The open question is why few configurations each use much of their n_K budget. The data show this: f 29 at n 48 with two configurations;
+  long121, 8 fallbacks over 5 configurations. It needs a reason why a gate's best reply, once it changes at a fallback source, cannot cycle
+  back through n configurations each with a fresh level. I have none.
+- Obstruction, stated once: the levels LEV^K_C live in different frames, and no proved inequality compares LEV^K_C with LEV^K_{C′} for
+  C ≠ C′. Any across-configuration argument must supply such a comparison. One candidate, OPEN: if C and C′ differ only at gates whose
+  options' values are tied at the source, then LEV^K_C = LEV^K_{C′} there.
+- Status: FB-LIN OPEN. No new statement; no packet. Parked, with the resume point in notes/L-NEW.md.
