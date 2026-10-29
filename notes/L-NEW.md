@@ -1,6 +1,11 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Box 60 log (successor 34; Lead 17:56Z: PV proof plan or smallest counterexample; brief crossed my 18:05Z PV-DEAD report)
+- docs/new/N5-PV-box60.md. PV DEAD (smallest: fcobs_3, n 88, 108 flips). PV-PLAY (flips only while u is on a play from an Even branching
+  vertex) DEAD: reach2.py puts o on E0's play (E0 -> {o, Z}, Z top odd self-loop); fcobsP_3 108 > 90, run unchanged. Plan fails at (iii):
+  only coarse records are <= n; flips need fine ones (= T48 barrier). READING: bound I directly.
+
 ## Box 59 log (successor 34, Opus 5.5, D14/D18; Lead brief 17:15Z; STEP 0 answers sent 17:16:54Z, started without waiting as told)
 - STEP 0 (measured): local clone STALE again (868 behind; my first fetch named a non-existent ref `main` and git aborted the WHOLE fetch
   while status said "up to date"). ff-only to e5f1026e, merge --no-ff trunk 1eb9d9a2 (2 ahead / 0 behind). GAPS G-N5-TIME l.11 open,

@@ -22,7 +22,7 @@ p sink. "Bit i set" = σ̄(h_i) = m_i (Odd escapes a cycle Even has closed). A R
   reset is a cascade plus a record-free re-climb. Nesting raises the degree only if the lower block's reset source gets superlinearly
   many events that bypass the lower escape chain. A necessary condition is stated (§3). It is OPEN whether a gadget meets it.
 - (c) [DEAD since the addendum, §6: L-RED's observer gadget makes one Odd vertex flip ~I ≫ n times] CONJECTURE PV (per vertex): along F's run each Odd vertex changes its best reply at most n times. Then SBC_σ ≤ k_O · n ≤ n², and
-  by SF-RED (b) N5-SF makes O(n²(n + m)) iterations. DATA: 720 games, 0 violations. The maximum is flips(u)/n = 0.917 (so_sor5_n24,
+  by SF-RED (b) N5-SF makes O(n²(n + m)) iterations. DATA: 720 games, all from the SPEC S3 default start (not the corpus's pinned starts), 0 violations. The maximum is flips(u)/n = 0.917 (so_sor5_n24,
   one Odd branching vertex). fcN gives 2N − 1 ≈ 0.08n, switchbestexp_12 gives 51 = 0.16n, random games ≤ 0.10n. PV is falsifiable
   by L-RED's nested families: it predicts that no Odd vertex flips more than n times there.
 - DEAD: FLIP-REC° (flips(u) ≤ 2·REC°(u) + 1, where REC° counts changes of the top non-sink vertex of Ξ(u)). It holds on fcN exactly

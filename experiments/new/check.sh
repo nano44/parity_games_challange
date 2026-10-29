@@ -255,6 +255,12 @@ w3=$(python3 -I box59/relcheck.py box59/out/fcobs_3.pg)
 if grep -q "^REL fcobs_3.pg n 88 m 208 |R| 87 orbit 122 SBC 111 SBC_R 9 LAM 0 SEGMAX 24 PASS$" <<<"$w3" && [ "$(sha1sum box59/out/fcobs_3.pg | cut -c1-12)" = 719d04830887 ]; then
   echo "box 59 REL: fcobs_3 raw SBC 111, SBC_R 9, SF-RED-R checks (LOC, VAL, SEG, TOT): PASS"
 else
+  echo "box 59 REL checks: FAILED"; exit 1
+fi
+w4=$(python3 -I box59/pvplay.py box59/out/fcobsP_3.pg)
+if grep -q "^PVPLAY fcobsP_3.pg n 90 rawmax 108 playmax 108 playSBC 111 VIOL$" <<<"$w4" && [ "$(sha1sum box59/out/fcobsP_3.pg | cut -c1-12)" = df9fcc64bafd ]; then
+  echo "box 60 PV-PLAY counterexample: fcobsP_3 on-play flips 108 > n 90: PASS"
+else
   echo "box 59 FC checks: FAILED"; exit 1
 fi
 rm -rf "$tmp"
