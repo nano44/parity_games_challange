@@ -3,8 +3,8 @@ Written by REFEREE-2 successor 20, Opus 5.5 (D15, L37), 2026-10-29 from 12:06Z (
 based on both REFEREE-2 reports with their differences listed.
 
 **Inputs.**
-- REFEREE: docs/referee/R-N5-MPGS.md (origin/claude/referee; REFEREE successor 17). First opened 12:05Z, after both REFEREE-2 reports were
-  pushed.
+- REFEREE: docs/referee/R-N5-MPGS.md (origin/claude/referee; REFEREE successor 17). The c3a0b5d7 text was first opened at 12:05Z, after both
+  REFEREE-2 reports were pushed. §1b (added at 7cd20b05) was read at 12:17Z.
 - REFEREE-2, report of record: docs/referee-2/R2-N5-MPGS.md (successor 19, 0c4524f0).
 - REFEREE-2, concurring: docs/referee-2/R2-N5-MPGS-s20.md (successor 20, c1c4676a; written without reading 19's).
 
@@ -34,19 +34,26 @@ based on both REFEREE-2 reports with their differences listed.
 - Part (A) has the same mathematics as MATCHPHI with reworded text. All three carry the MATCHPHI verdicts over. MATCH-N1 (REFEREE) = N-MP-1
   (REFEREE-2) is repaired by MPGS's "Uses" line.
 
+**The λ-run question (REFEREE §1b; Lead 11:41Z).** REFEREE: the MATCH-Φ Corollary holds verbatim on any stretch with λ(v) fixed, so on
+λ-runs; no step reads τ or the phase. REFEREE-2 20 reached the same conclusion independently in R2-N5-COMPOSE §2.5 (pushed 4b8afa95 before §1b
+was read), and added that the Odd side reads parities on G^d (N-C3). REFEREE's λ-run data: lib41, 38,243 checks, 0 failures. Mine: 56,999 Even
+and 21,286 Odd (vertex, λ-run) pairs, 0 failures. Joint: AGREED. This is the premise P-N5-COMPOSE §6 needs.
+
 ## C.3 Differences between the reports (each is a note; none changes a verdict)
-| # | point | raised by | REFEREE-2 20's assessment |
-| --- | --- | --- | --- |
-| D1 | MPGS-N1: (A)'s Corollary proof skips the rise/fall summation (R − F = Φ(end) − Φ(start) ≤ W, F ≤ W·NM, #MATCHED ≤ R); also "W ≤ K(K+1)/2" is an equality | REFEREE; 19 noted the "≤ / =" point in §1 | Correct. I marked "compressed" in my diff table without flagging it. Restore MATCHPHI's three lines |
-| D2 | MPGS-N2: step 3 uses h ∉ Q (from (H2), ρ starts at h) and d Even (π_1 = d) | REFEREE | Correct. My §2.4 uses both implicitly. One clause |
-| D3 | T34 imports L-COMP code from a hard-coded ROOT (the working tree at run time, not the freeze commit) | REFEREE (MPGS-N4) | Correct, and the same as REFEREE-2's standing trap (pinned scripts read the working tree). Pin the imports or state the dependency |
-| D4 | B4 READING: "(H1) is automatic" holds only where c_h is the sink; the noH1 control bites on 28 H_n gate-states | REFEREE-2 19 (N-MPGS-4) | Agreed (my H3-H6 run: X1 = 32 of 32 there) |
-| D5 | Enumeration caps (π ≤ 6 vertices / ≤ 40 per (e, d); ≤ 64 paths; DFS budget 4,000) | 19 (N-MPGS-5); caps differ per referee | Covered jointly: three different enumerations, 0 failures in all |
-| D6 | Scope wording: the Lemma holds at any state, in-phase or not; (B) is per transition | 19 (N-MPGS-6) | Agreed; matches my N-GS-4 |
-| D7 | G^d's order is the exact reverse of G's on ALL valuations (B1 is a special case) | 20 (N-GS-2) | Not raised by the others; checked on 200,000 pairs |
-| D8 | ENGXI: Ξτ = the (τ̄, τ)-play value at every vertex, as the R57 (b) standing premise | 20 (N-GS-1); 19 (DENG); REFEREE ("realised by τ̄ at every vertex") | All three rely on it, and two check it in data |
-| D9 | The Lemma checked at EVERY τ of 80,000 small random games (not only at run states) | 20 | Adds coverage only |
-| D10 | Part (A) text: REFEREE calls it "NOT identical, content the same" (similarity 0.12); 19: "mathematics IDENTICAL"; 20: "not byte-identical, same content" | all | Same finding in different words. Every verdict was carried over by content, not by text |
+Class: **E** = a text fix the lane should make in docs/lit/P-N5-MPGS-fixes.md. **opt** = optional (a strengthening, a reading or data; no fix
+needed). **—** = record only.
+| # | point | raised by | REFEREE-2 20's assessment | class |
+| --- | --- | --- | --- | --- |
+| D1 | MPGS-N1: (A)'s Corollary proof skips the rise/fall summation (R − F = Φ(end) − Φ(start) ≤ W, F ≤ W·NM, #MATCHED ≤ R); also "W ≤ K(K+1)/2" is an equality | REFEREE; 19 noted the "≤ / =" point in §1 | Correct. I marked "compressed" in my diff table without flagging it. Restore MATCHPHI's three lines | E |
+| D2 | MPGS-N2: step 3 uses h ∉ Q (from (H2), ρ starts at h) and d Even (π_1 = d) | REFEREE | Correct. My §2.4 uses both implicitly. One clause | E |
+| D3 | T34 imports L-COMP code from a hard-coded ROOT (the working tree at run time, not the freeze commit) | REFEREE (MPGS-N4) | Correct, and the same as REFEREE-2's standing trap (pinned scripts read the working tree). Pin the imports or state the dependency | E |
+| D4 | B4 READING: "(H1) is automatic" holds only where c_h is the sink; the noH1 control bites on 28 H_n gate-states | REFEREE-2 19 (N-MPGS-4) | Agreed (my H3-H6 run: X1 = 32 of 32 there) | E |
+| D5 | Enumeration caps (π ≤ 6 vertices / ≤ 40 per (e, d); ≤ 64 paths; DFS budget 4,000) | 19 (N-MPGS-5); caps differ per referee | Covered jointly: three different enumerations, 0 failures in all | — |
+| D6 | Scope wording: the Lemma holds at any state, in-phase or not; (B) is per transition | 19 (N-MPGS-6) | Agreed; matches my N-GS-4 | opt |
+| D7 | G^d's order is the exact reverse of G's on ALL valuations (B1 is a special case) | 20 (N-GS-2) | Not raised by the others; checked on 200,000 pairs | opt |
+| D8 | ENGXI: Ξτ = the (τ̄, τ)-play value at every vertex, as the R57 (b) standing premise | 20 (N-GS-1); 19 (DENG); REFEREE ("realised by τ̄ at every vertex") | All three rely on it, and two check it in data | — |
+| D9 | The Lemma checked at EVERY τ of 80,000 small random games (not only at run states) | 20 | Adds coverage only | — |
+| D10 | Part (A) text: REFEREE calls it "NOT identical, content the same" (similarity 0.12); 19: "mathematics IDENTICAL"; 20: "not byte-identical, same content" | all | Same finding in different words. Every verdict was carried over by content, not by text | — |
 
 Data scale (Part B), for the landing entry:
 - REFEREE: 22,487 hits, plus 3.7M B1 pairs.
@@ -55,14 +62,15 @@ Data scale (Part B), for the landing entry:
 - 0 failures in all three.
 
 ## C.4 Joint list for L-LIT (fixes file docs/lit/P-N5-MPGS-fixes.md)
-1. (A) Corollary proof: restore the rise/fall summation; write "W = K(K+1)/2" (D1).
-2. Step 3: state h ∉ Q (from (H2)) and that d = π_1 is Even (D2).
-3. B3: T34's (H1) test via d1 is exact on H_n because d1_i is Q's lowest vertex (hn.py l. 46-49); pin or state T34's imports from the working
-   tree (D3, C.2).
-4. B3's "the hypotheses are needed": true for (H1) and (H3) separately; (H2)'s necessity is not exhibited (C.2). Optional OPEN question:
-   do (H1) + (H3) suffice?
-5. B4: "(H1) automatic" only where c_h is the sink (D4).
-6. Optional one-liners: the full order reversal (D7); the Corollary uses only the hypotheses at the source state, and π may vary (D6).
+1. E: (A) Corollary proof: restore the rise/fall summation; write "W = K(K+1)/2" (D1).
+2. E: step 3: state h ∉ Q (from (H2)) and that d = π_1 is Even (D2).
+3. E: B3: T34's (H1) test via d1 is exact on H_n because d1_i is Q's lowest vertex (hn.py l. 46-49); pin or state T34's imports from the
+   working tree (D3, C.2).
+4. E: B3's "the hypotheses are needed" is true for (H1) and (H3) separately; (H2)'s necessity is not exhibited (C.2). opt: the OPEN question
+   whether (H1) + (H3) suffice.
+5. E: B4: "(H1) automatic" holds only where c_h is the sink (D4).
+6. opt: the full order reversal (D7); the Corollary uses only the hypotheses at the source state, and π may vary (D6); MATCH-Φ's Corollary
+   holds on any stretch with λ(v) fixed (§1b; worth one line in (A), since P-N5-COMPOSE §6 uses it).
 Carried from MATCHPHI: N-MP-2 / MATCH-N4 (first term sharp at NM = 0), N-MP-3 (additivity line), N-MP-5 / MATCH-N2.
 
 ## C.5 DONE / FINDINGS / NEEDS
