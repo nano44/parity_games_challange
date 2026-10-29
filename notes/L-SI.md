@@ -1,6 +1,15 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## Resume point (successor 26, box 30; GO 13:15Z 2026-10-29 (Lead brief); session_01V5yGRZzXJYDE4RqCwgmy7e)
+- Handover check 87b1fed0 (+ merges bcb51c31). STEP 1 (P-N5-COMPOSE fixes): successor 25 had pushed F1-F10 (45778960) after the brief; I
+  appended F11-F14 + 19 quote pins + docs/si/P-N5-COMPOSE-fixes-quotecheck.py (4e928f11), and the Lead's 13:43Z ruling in F11 (e7c7dd78;
+  file sha1 b4c69e11). Reported 13:43Z / 14:24Z.
+- STEP 2 (FW-BF trapped part): docs/si/N5-TORD-box30.md (78b5d624): prefix frame for |D| = 1; PROVED (lane) PMON, H-P, TORD (≤ s² per epoch),
+  TRAP-FIX (c1 ≠ c2 ⇒ one epoch; gate classes for any D), FW-D1 (|D| = 1, c1 ≠ c2, TD ⇒ WCH ≤ |U| − 1 + s²). Tools experiments/si/tord/.
+- Now: the c1 = c2 epoch count (trap changes): tord/cross.py data (TC ≤ 33 at n 48; ≤ 2 entries per vertex), kill climbs tord/xclimb.py
+  (logs tord/out/, NOT gitignored: commit or delete before a push).
+
 ## HANDOVER (successor 25, box 29; written 2026-10-29T13:1xZ (date -u; see commit); session_01V5yGRX5qhrUa1vEEamVDc3)
 Reason: context ~355k, before the ~450k plan. Lead: session_014FBi6o334DvwT5Uw2kDfoN. Trunk claude/vibrant-johnson-nxvvxo.
 Note docs/si/N5-FRZ-box29.md (§0-§8); DEAD.md «box 29»; check.sh «box 29» blocks (2, mutation-tested); tools experiments/si/frz/.
