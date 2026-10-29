@@ -14,7 +14,15 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   G not intrinsic (readers: runfam_K10 G 9 -> 91 at n 74, run 99 fixed; anchors put readers into K: G^K 91); G 35 at n 29 by climb (1.21n).
   PROVED (lane): GATE-RISE (gate's own Ξ rises), STATIC-DEPTH-REL + REL-SPLIT (|S| ≤ SEG·n − 1, SEG reader-proof); CONJECTURE SEG-RUN
   (DATA ≤ 1.00n).
-- Next: a monotone quantity for SEG (each cut is a relevant σ̄ change or a cycle appearance); or packets for STATIC-DEPTH′ / -REL if routed.
+- Packets: P-N5-SDPRIME-box25 (sha1 54678c38, l-si edc14c51) SIGNED by both, gap map empty; fixes file P-N5-SDPRIME-fixes-box25 (sha1
+  f0bc5f45, l-si fc0312e2; F1-F6). P-N5-REL-box25 (sha1 f79300a2, l-si 07f19760) with the referees after SDPRIME; its fixes file must repeat
+  F1 (W-MONO / Ξ-SUCC citation, λ_W unused) and F2 (the (SW) quote without "…").
+- CONJECTURE L-WAVE (GRUN §5): gaps between non-length cuts ≤ n − 1, 0 violations in ~7,000 gaps (grun/lwave.py). Proof attempt: value-level
+  settling; obstruction = gate competitors off the end-state plays + Even P-changes inside gaps (GRUN §5 READING).
+- Next: L-WAVE (a Bellman-Ford bound for gate competitors), or REL repairs when its reports arrive.
+- Things only I know (s21): --list modes of staticdepth.py / sdprime.py / pieceh.py read only column 1 of alt_all_root.lst (default starts)
+  unless START=1 (sdprime, gstat, gaterise, relseg, lwave, pch, cutkind take START=1). quotecheck.py treats "…" as a separator: write quotes
+  that span a line break WITHOUT "…" (REFEREE-2's checker is strict).
 - Things only I know: pieceh.py counts 872 pieces on alt_all (staticdepth --list skips 9 games with no Odd choice: 863). piececlimb shrinks n
   under CN = 1; use CN < 1 to let it grow. My first commit's session trailer has a typo (S for 5); the right id is in this header.
 

@@ -124,6 +124,13 @@ DATA (grun/relseg.py; every segment with (H4′_rel) checked per vertex and for 
   nothing beyond one wave. READING: within a gap only lengths move at the relevant gates (P fixed, cycle node fixed in the phase), which is
   the Bellman-Ford regime of RESULTS R74 FREEZE-A / FREEZE-G (path weights frozen, lengths settle in < |A| rounds); a proof would extend
   STATIC-DEPTH-REL across length-only gate changes. NOT proved.
+- L-WAVE proof attempt (READING, written 2026-10-29 05:0xZ; no result). Natural route: run STATIC-DEPTH-REL's induction with VALUE-level
+  honest settling ("Ξ_t(v) = Ξ_b(v) for t ≥ s") instead of play-level, since step (A) uses only Ξ-values of y, and step (C) gives
+  Ξ_{t+1}(v) = v ⊕ Ξ_b(y). Even vertices go through unchanged. The obstruction is the Odd step at a gate u with L-cuts: Ξ_t(u) = u ⊕ min over u's
+  options (GATE-RISE's argument), and Ξ_t(u) reaches Ξ_b(u) only when every competing option y has Ξ_t(y) ⊵ Ξ_b(σ̄_b u); competitors are not on
+  the end state's plays, so the recursion must descend into ALL options of the gate, and that graph can be cyclic. Second gap: inside an L-gap,
+  P-changes of Ξ at EVEN vertices are not cuts, so lengths are not the only thing moving. A proof needs a Bellman-Ford-type bound for the
+  competitors' values (the regime of RESULTS R74 FREEZE-A / FREEZE-G), not in hand.
 - Fixed-size SEG climbs (CN 0, 30,000 steps; grun/out/sz*.log): n ≤ 48: SEG 40 at n 47 (0.85n, sz48a, from pftheta34) and 32 at n 48 (from
   so_sor5); n ≤ 64: SEG 40 at n 64 (sz64a, stopped by me at step 20,110 to close the session's work) and 27 at n 64 (sz64b). Best absolute
   SEG grows only from 29 (n 29) to 40 (n 47-64): no sign of super-linear growth from these seeds.
