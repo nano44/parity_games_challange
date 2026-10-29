@@ -1,0 +1,3 @@
+ERR 4 R1 2 R1_fb_on_target_play 2 R1_target_changed 2 R1_target_xi_changed 2 fb 2651 fb_single 1358 games 1396
+R1 ('experiments/new/esc/instances/cond_stuck_symsi3_YE.pg', (13, 18), 32, 12, 13, 15, 14, True, True, True)
+R1 ('experiments/n5-epoch/results/scale/lend_fresh_n24_r2.pg', (2, 27), 24, 3, 6, 8, 20, True, True, True)
