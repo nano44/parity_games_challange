@@ -1,0 +1,22 @@
+MODE files ../R2-N5-STAU/lib41_noref.lst 2
+OP_E_checks: 8420
+OP_O_checks: 2001
+ORB2_checks: 820
+ORB_E_checks: 820
+ORB_O_checks: 820
+WIN_checks: 820
+X_ORBN5: 510
+fallbacks_E: 59
+fallbacks_O: 19
+iterations: 8902
+runs: 820
+stretches_E: 5379
+stretches_O: 2537
+max maxI: 56
+max maxLAM_E: 28
+max maxLAM_O: 24
+max maxSBC_E: 41
+max maxSBC_O: 31
+max maxstretch_E: 56
+max maxstretch_O: 6
+RESULT PASS violations 0

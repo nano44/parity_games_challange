@@ -1,0 +1,22 @@
+MODE random 400 15 30 12 2
+OP_E_checks: 2227
+OP_O_checks: 2297
+ORB2_checks: 1200
+ORB_E_checks: 1200
+ORB_O_checks: 1200
+WIN_checks: 1200
+X_ORBN5: 590
+fallbacks_E: 46
+fallbacks_O: 62
+iterations: 2889
+runs: 1200
+stretches_E: 2995
+stretches_O: 3063
+max maxI: 7
+max maxLAM_E: 6
+max maxLAM_O: 6
+max maxSBC_E: 4
+max maxSBC_O: 4
+max maxstretch_E: 3
+max maxstretch_O: 3
+RESULT PASS violations 0

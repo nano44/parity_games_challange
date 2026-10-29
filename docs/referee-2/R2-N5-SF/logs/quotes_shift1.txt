@@ -1,0 +1,19 @@
+MISS docs/new/N5-ssi-global.md@305cc8be:28-28 | injective priorities: rank(v) = position of v in V sorted by (Ω(v), v); p'(v) = 2·rank(v) 
+MISS docs/new/N5-ssi-global.md@305cc8be:31-31 | order (better for Even): compare reward of c (p'(c) if even, −p'(c) if odd); then P by the
+MISS docs/new/N5-ssi-global.md@305cc8be:33-33 | Ξσ = valuation of every vertex under σ and Odd's OPTIMAL counterstrategy σ̄ (minimising th
+MISS docs/new/N5-ssi-global.md@305cc8be:46-47 | Odd's side: everything on the DUAL game G^d (owner swapped, Ω + 1); τ is an "Even" strateg
+MISS docs/new/N5-ssi-global.md@305cc8be:48-48 | S2 Improving edges: Iσ = {(v, w) : owner(v) = Even, w ≠ σ(v), Ξσ(w) strictly better than Ξ
+MISS docs/new/N5-ssi-global.md@305cc8be:51-51 | S4 Iteration (one iteration = one pass with Iσ ∪ Iτ ≠ ∅; both steps computed from the SAME
+MISS docs/new/N5-ssi-global.md@305cc8be:52-54 | a. If Iσ ≠ ∅: A(v) = {σ(v)} ∪ {w : (v, w) ∈ Iσ} for Even v. Arena H: Even v keeps only edg
+MISS docs/new/N5-ssi-global.md@305cc8be:57-58 | c. FALLBACK, if σ_new = σ and τ_new = τ: if Iσ ≠ ∅, for every Even v with an improving edg
+MISS docs/new/N5-ssi-global.md@305cc8be:89-89 | FIX 3 (S4c, A7). In a fallback iteration with Iσ ≠ ∅ only σ changes (τ_new = τ)
+MISS docs/new/N5-ssi-global.md@305cc8be:60-60 | S5 Stop when Iσ = Iτ = ∅. Output: Even wins v iff the cycle node of Ξσ(v) has even Ω
+MISS docs/RESULTS.md@305cc8be:632-632 | (a) Lemma A: for any non-empty unambiguous set I of improvements of σ (VJ00 §4.4), Ωσ ⊴ Ω_
+MISS docs/RESULTS.md@305cc8be:638-640 | ≺ is a strict partial order on strategies and every non-empty switch of improvements goes 
+MISS docs/RESULTS.md@305cc8be:642-643 | Iσ depends on σ alone (Ωσ is against ⊖'s optimal reply, not against τ).
+MISS docs/RESULTS.md@305cc8be:650-650 | (iii) G-N5T-3 (outside the packet): N5's output correctness at S5 rests on VJ00 Lemma 5.8 
+MISS docs/RESULTS.md@305cc8be:734-737 | Setting: H a one-player game (one player has out-degree 1 everywhere), injective prioritie
+MISS docs/RESULTS.md@305cc8be:744-745 | (c) Theorem PH: in a λ-phase, after n − 1 steps every further in-phase step is value-flat,
+MISS docs/RESULTS.md@305cc8be:748-749 | (e) Corollary 2: on a game in which one player has out-degree 1 everywhere, N5's step for 
+MISS docs/RESULTS.md@305cc8be:629-629 | Notation as there: Ωσ = (Λσ, Πσ)
+tags 18 ok 0 miss 18 SHIFT 1
