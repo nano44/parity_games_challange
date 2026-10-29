@@ -61,7 +61,7 @@ loop (fail (iii)).
 - DATA (experiments/red/mix/):
   | check | games / states | hits | violations | notes |
   | --- | --- | --- | --- | --- |
-  | mgcheck.py, corpus sbcg.lst (L-SI's copy of L-NEW box59, 719 games, S3) | see addendum | | 0 so far | every lock fails (i), (ii) or (iii) |
+  | mgcheck.py, corpus sbcg.lst (L-SI's copy of L-NEW box59, 719 games, S3) | 719 games, 12 340 states | 264 575 | 0 | 337 925 locks; failures (i) 298 749, (ii) 103 070, (iii) 161 581 (a lock can fail several); control 541 789 |
   | mgcheck.py dw_3 | 42 states | 1145 | 0 | 288 locks: all fail (i); control (only (i) fails, claim false) 2383 |
   | mgcheck.py runquad_K8_m30_n192 (mkr, explicit start) | 265 | 1512 | 0 | 40392 locks, all fail (i); control 37682 |
   | mgcheck.py d_hntop_n8 (dual, Odd's long τ-run) | 292 | 5661 | 0 | 43395 locks, all fail (ii): Even's locks use Odd's own improving switches |
@@ -78,7 +78,7 @@ loop (fail (iii)).
   - runquad_K8_m30_n192: one stretch of 264 σ-changes, DONE 22 → 192, with only 16 adding steps. The quadratic stretch is long runs of
     W-rises among undone vertices.
   - dw_5: 38-step stretch, 36 adding steps.
-  - mk_20_80: addendum.
+  - mk_20_80 (R118's FRAME-STRETCH kill): one stretch of 1660 σ-changes, DONE 46 → 486, with only 40 adding steps.
 
 ## 3. What is left (OPEN) and where it points
 - A super-polynomial fixed-τ stretch needs exponentially many W-rises among undone vertices. Each lock that matters reads a lagging Even
@@ -100,7 +100,7 @@ loop (fail (iii)).
   1. READING (lane proof): Lemma MG. Odd's free best reply cannot lower a value below the G_τ optimum along plays that follow τ̄(τ) and
      deviate only outside Iτ. Locks that matter read lagging Even vertices or Odd deviations inside Iτ.
   2. DEAD: plan (b) on CDAG in the mixed frame (any nesting of Odd deviations outside Iτ), not only at τ = τ*.
-  3. DATA: 0 violations of MG (dw_3, runquad_K8, d_hntop_n8; corpus in the addendum); the sampler ceiling is 3 / 4 / 4 at n = 3 / 4 / 5.
+  3. DATA: 0 violations of MG (dw_3, runquad_K8, d_hntop_n8; corpus 719 games, 264 575 hits); the sampler ceiling is 3 / 4 / 4 at n = 3 / 4 / 5.
   4. READING: DONE-MONO. A stretch is at most n DONE-additions apart from W-rise runs among undone vertices (runquad_K8: 16 additions
-     in 264 steps).
+     in 264 steps; mk_20_80: 40 in 1660).
 - NEEDS: none from the owner.

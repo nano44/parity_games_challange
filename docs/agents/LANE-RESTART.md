@@ -169,3 +169,6 @@ Five questions:
 | 2026-10-29 | L-NEW | session_01V5yGRZtUQrbWSSxFF96dQJ (~450k; handover d6fd1979) | session_01V5yGRZhJhpJcRZhDSWTwuE (Opus, D14/D18) | 2 | PENDING (successor's check) |
 | 2026-10-29 | L-SI | session_01V5yGRVhU281YxfobtfdJ8L (~290k; handover aec7e3a6) | session_01V5yGRVp3epWjVsx5aH3qSm (Opus, D15/D18) | 2 | PENDING (successor's check) |
 | 2026-10-29 | L-RED | session_01V5yGRa1utvwvH65mnBBssK (~320k; handover a134e6be) | session_01V5yGRZ2y7KsHSMJMvdKBmF (Opus, D1/D18) | 2 | none (check 9221e775; ls-remote first, stale clone caught) |
+| 2026-10-29 | L-SI | session_01V5yGRVp3epWjVsx5aH3qSm (~250k; handover 88a953f5) | session_01V5yGRXdA7p12A2AFsUdae8 (Opus, D15/D18) | 2 | PENDING (successor's check) |
+| 2026-10-29 | REFEREE-2 | session_01V5yGRW4aXFYpk1wXFkEfTp (~608k; parked after R2-N5-DW d1575e61) | session_01V5yGRZJM5wp2kkELETDyYx (Opus, D1/D15/D18) | 2 | PENDING (successor's check) |
+| 2026-10-29 | L-NEW | session_01V5yGRZhJhpJcRZhDSWTwuE (~200k; handover b66a8565) | (none yet; pacing) | - | - |
