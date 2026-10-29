@@ -60,7 +60,8 @@ deadlock steps. Files: results/C<n>_all.json (exhaustive), results/parts/C4_p<k>
 | random C(6), seed 17, all starts | 20,000 | 14,876,199 | 0 | 4 (0.67) | 4 (5) | 2 | 0 / 0 |
 | random C(7), seed 17, games with ≤ 4,096 start pairs, all starts | 2,000 | 3,902,809 | 0 | 4 (0.57) | 3 (6) | 2 | 0 / 0 |
 | random C(8), seed 17, games with ≤ 4,096 start pairs, all starts | 2,000 | 5,113,064 | 0 | 4 (0.5) | 4 (7) | 2 | 0 / 0 |
-- Pinned extremal games (pin.py: n5 = n5b states, Oink zlk, verify.py, xcheck vs L-SI tools): instances/C3_{exc,seg,gap,f}.pg (+ .start);
+- Pinned extremal games (pin.py: n5 = n5b states, Oink zlk, verify.py, xcheck vs L-SI tools; ALL OK): instances/<table>_{exc,seg,gap,f,dl}.pg
+  (+ .start) for C3, C4p0, R5-R8. E.g. C4p0_gap (sha1 c7d5955a…, gap 3 = n − 1), R6_gap (5ac10b1f…, gap 4), R6_seg (177d2cf3…, SEG 4 at n 6);
   C3_gap (sha1 1d33a760…) has an L-WAVE′ gap of exactly n − 1 = 2.
 - n = 5 exhaustive is out of reach here: |C(5)| = 2^5 · 2^5 · 31^5 ≈ 2.9·10^10 games (≈ 3·10^12 start pairs); n5b costs ≈ 0.3 ms per state.
 - DL-RUN minimal size (Lead 10:36Z): no deadlock step at all (not even at t = r0) in any table above. Upper bound: L-RED's
