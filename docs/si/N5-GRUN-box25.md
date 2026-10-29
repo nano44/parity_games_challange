@@ -114,6 +114,19 @@ DATA (grun/relseg.py; every segment with (H4′_rel) checked per vertex and for 
   DATA (grun/pch.py; grun/pch_alt.txt; 0 failures of the block monotonicity): max PCH of a gate 20 (so_th_n32, XR 33), PCH ≤ 0.66n. Again a
   product; the P-changes are where an exponential lower bound would have to live (a binary-counter on P), and nothing here excludes it.
 
+- Kinds of REL cuts (grun/cutkind.py; grun/cutkind_alt.txt): alt_all 1,163 cuts: 1,123 relevant σ̄ changes (854 with a change of the path
+  set P of Ξ at a changing gate, 236 with a length-only change ("L-cuts"), 33 with Ξ unchanged at every changing gate: ties / cycle /
+  pass-through) and 40 cycle appearances.
+- CONJECTURE L-WAVE (DATA, grun/lwave.py): between two consecutive non-L cuts (P-changes, Ξ-unchanged changes, cycle appearances) or the run's
+  ends there are ≤ n − 1 transitions. 0 violations: alt_all 1,917 gaps (max gap − (n − 1) = −2), pinned starts 2,858 gaps (−1), lib41
+  2,307 gaps (−2); runfam_K10 / K40 and best62_n34 (6 gaps, −14), pg_n64_1 (10 gaps, −16). Non-L cuts per run: ≤ 19 (default starts),
+  ≤ 61 (gate_K64_n581). With L-WAVE, |S| ≤ (N_nonL + 1)(n − 1) + N_nonL: the L-cuts, i.e. length-only moves of the gates' Ξ, would cost
+  nothing beyond one wave. READING: within a gap only lengths move at the relevant gates (P fixed, cycle node fixed in the phase), which is
+  the Bellman-Ford regime of RESULTS R74 FREEZE-A / FREEZE-G (path weights frozen, lengths settle in < |A| rounds); a proof would extend
+  STATIC-DEPTH-REL across length-only gate changes. NOT proved.
+- Fixed-size SEG climbs (CN 0, 30,000 steps; grun/out/sz*.log; status at 04:4xZ, three still running): n ≤ 48: SEG 38 at n 48 (0.79n) from
+  pftheta34, 32 at n 48 from so_sor5; n ≤ 64: SEG 36 and 26 at n 64. SEG at fixed size does not rise above ~0.8n as n grows from 32 to 64.
+
 ## 6. Pins (grun/out/; sha1sum)
 - rdr_K10: runfam_K10 + 25 Odd readers, n 74, run [1, 100] (99), G 91, SEG 9. .pg a7ac4830ddfd9c49a3c0ad1379cae26299a35bee, .start
   f95c5587016a4b572f7e15539342d8c2f8e97aae.

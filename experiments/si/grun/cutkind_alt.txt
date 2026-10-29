@@ -1,0 +1,9 @@
+cut_CY=40 cut_SB=1123 cut_SB_0=33 cut_SB_L=236 cut_SB_P=854 run_L_cuts_max=17 run_P_cuts_max=19
+TOP Pcuts 12 Lcuts 13 n 48 run 35 experiments/red/so/instances/pft35_n48.pg
+TOP Pcuts 15 Lcuts 9 n 40 run 27 experiments/red/so/instances/pft40_n40.pg
+TOP Pcuts 6 Lcuts 17 n 32 run 34 experiments/red/so/instances/pftheta34_n32.pg
+TOP Pcuts 6 Lcuts 16 n 32 run 34 experiments/red/so/instances/pftheta_cex_n32.pg
+TOP Pcuts 9 Lcuts 13 n 32 run 22 experiments/red/xing/instances/x31_rx32.pg
+TOP Pcuts 10 Lcuts 12 n 48 run 22 experiments/red/xing/instances/x31_rx48.pg
+TOP Pcuts 12 Lcuts 9 n 48 run 22 experiments/red/xing/instances/x31_cu48.pg
+TOP Pcuts 15 Lcuts 5 n 32 run 21 experiments/red/xing/instances/x31_cu32.pg
