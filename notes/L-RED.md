@@ -20,7 +20,10 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   n = m + 7; second-wave design obstruction (O-A..O-D: safety p < 0 vs rise p > 0 on the same reader prefix); W can be flipped by an Even
   reader on a gate's tau branch (Even-won W-cycle), tau fixed; f-climbs (fbclimb.py) from lvl1, runfam_K10, rise_fb38, farrise25, pl130,
   long121 all converge to one wave (max 0.78n; long121 8 -> 25 by giving up its reused carries).
-- RESUME POINT (ask the Lead first): R100 §5. (1) Fallback analogue of L-SI's runfam: one Odd gate with options = corridor ends, each wave
+- Box 2 (Lead 02:37Z: route (1), corridor gate): R101 docs/red/R101-route1-corridor-gate.md. NO KILL. Corridor-gate design dies on the R100
+  pair (B's rise reads its own branch); literal runfam variant has no gap under optimal tau. R1 (single-switch fallbacks re-switching a vertex)
+  = 0 on 1,127/1,128 games and every climb (max 1). Pin fb38_n48 (f 38 = 0.79n, new data max; n5 = n5b 66/39, Oink OK).
+- RESUME POINT (ask the Lead first): R101 §5 (multi-switch carries at Theta(n) per phase is the only shape left); older: R100 §5. (1) Fallback analogue of L-SI's runfam: one Odd gate with options = corridor ends, each wave
   flips the gate (new K-configuration), W flipped per wave by tau-branch readers. (2) A long121-style carry cell that detaches Theta(n)
   vertices per carry (reuse happens there with S4a stretches between fallbacks, outside the §3 obstruction's premise).
 - Tools (experiments/red/fb/): fbphase.py (f per phase), dsl.py, lvl1.py, chainclimb.py, topo2.py, fbclimb.py (--owntau; default TAUSTAR =

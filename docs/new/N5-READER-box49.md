@@ -26,6 +26,7 @@ rows() over experiments/new/box21/n5x.py (SPEC S1-S5), imported read-only.
 | §8 | FB-LIN (f ≤ n per phase; L-SI §13's conjecture, routed to L-NEW 22:55Z): no kill (3 climbs, best f − n = −9); a reader-proof configuration count |𝒞°_f| (gates read by another play) stays at its base value under every reader; f per read configuration ≤ 0.78n | DATA + CONJECTURE + OPEN |
 | §9 | FB-LIN through FB-C^K: max |𝒞^K_f| 4 / 5 / 8 (lib41 / L-RED / dressings); MONO-CONF (K-configurations at successive fallback sources never recur after a different one) DEAD on the plain long121_n40 and njb_reabs65_n48; SMALL-CK DEAD by l121_cf_emb12 (|𝒞^K_f| = f = 8) | DATA + DEAD |
 | §10 | One across-configuration attempt for FB-LIN (Lead 00:10Z): the candidate potentials either scale with |𝒞^K_f| or do not rise at every source | OPEN (obstruction recorded) |
+| §11 | L-RED's CONJECTURE R1-ZERO (Lead 03:24Z): DEAD as stated (2 instances, one mechanism: w, then a successor y of w, then w → y); no lemma proved; the reduction it would give for FB-LIN stated | DATA + DEAD + OPEN |
 | §6 | Fallback-free runs: W never falls (DATA, 10,499 transitions); the W*-reach potential F_t stalls at 53% of transitions (xsn43_n48: 43 of 44) | DATA + DEAD |
 
 ## 0. Setting and the definition
@@ -275,3 +276,40 @@ level; every LEV^K_{C′} is non-decreasing on the phase by (MON)):
   C ≠ C′. Any across-configuration argument must supply such a comparison. One candidate, OPEN: if C and C′ differ only at gates whose
   options' values are tied at the source, then LEV^K_C = LEV^K_{C′} there.
 - Status: FB-LIN OPEN. No new statement; no packet. Parked, with the resume point in notes/L-NEW.md.
+
+## 11. L-RED's CONJECTURE R1-ZERO (docs/red/R101-route1-corridor-gate.md §5, claude/l-red 128b384d; Lead's wake-up of 03:24Z, one box)
+Statement (R101): in every phase, no single-switch in-phase fallback re-switches an Even vertex that an earlier single-switch in-phase fallback
+of the same phase switched. A single-switch fallback is an S4c fallback whose switch-all moves exactly one Even vertex w. Then Iσ_t(x) = ∅
+for every Even x ≠ w, and w moves to the (Ξ_t, index)-maximum of Iσ_t(w). Tool: experiments/new/box49/r1scan.py; logs out/r1scan_*.txt.
+- DATA:
+  - Random games via r1scan.py's own generator (S3 start; n 4-12, 20,000 games, seed 11; n 12-20, 6,000 games, seed 12): 643 single-switch
+    fallbacks in all, 0 R1 events.
+  - The fleet corpus: every experiments/**/*.pg under 40 kB with n ≤ 200, own .start or S3; 1,396 games, 4 errors. 2,651 in-phase
+    fallbacks, 1,358 of them single-switch, 2 R1 events.
+- DEAD R1-ZERO as stated. The two R1 events show one mechanism:
+  - experiments/new/esc/instances/cond_stuck_symsi3_YE.pg (sha1 4483eb7c…, S3 start, n 32), phase [13, 18]. Fallback at 13: w = 12, 13 → 0.
+    Fallback at 14: vertex 14, 0 → 15. Fallback at 15: 12, 0 → 14. The new target 14 is a successor of 12, switched by the fallback just
+    before.
+  - experiments/n5-epoch/results/scale/lend_fresh_n24_r2.pg (sha1 b9e0b639…, its .start, n 24), phase [2, 27]. Fallback at 6: w = 3,
+    22 → 19. Fallback at 7: vertex 20 (∈ succ(3)), 19 → 11. Fallback at 8: 3, 19 → 20. Same pattern. (L-RED's survey lists one R1 instance;
+    this second one is from my scan with the game's own .start.)
+  - Obstruction (the exact exception): a single-switch fallback at a successor y of w raises Ξ(y) above w's current choice. The next
+    fallback then moves w to y, a "step back" of the wave onto a vertex it has just passed. In both events: t′ = t + 2, and the target of the
+    re-switch is the vertex switched at t′ − 1.
+- CONJECTURE R1-STEP (DATA: 2 of 2; thin). Every R1 event at t′ re-switches w to the vertex switched by the single-switch fallback at t′ − 1,
+  and that vertex is a successor of w.
+  - It would charge each R1 event injectively to the preceding transition. That bounds R1 by the single-switch fallbacks themselves, so it
+    gives no linear bound on its own. A useful form would need the step-backs not to chain (w → y → w′ → …). No data either way.
+- What R1-ZERO would give, and what remains (READING, elementary):
+  - If no single-switch fallback re-switched a vertex, the single-switch fallbacks of a phase would number ≤ |V_0| ≤ n. Then f ≤ |V_0| +
+    (multi-switch fallbacks).
+  - With R1-STEP instead, the single-switch fallbacks are ≤ |V_0| + R1, and R1 needs its own bound.
+  - Either way the open part is the multi-switch fallbacks. long121_n40 has 8 fallbacks, all multi-switch (R101 §1: Isz 3-8). In my corpus
+    scan 1,293 of 2,651 in-phase fallbacks are multi-switch.
+- Tools named by the Lead, and why they do not close it:
+  - FB-RISE_C / LEV_C (R71) and FB-C^K (R81) count fallbacks per configuration, not per vertex.
+  - RISE-SW (R80) gives a strict Ξ-rise at w per switch, with unbounded range.
+  - SAT-FB (R73) is about saturated sources only.
+  - A proof of a per-vertex statement needs to say why a vertex, once moved by a fallback to its Ξ-best improving option, is not later
+    overtaken there by an option whose value the wave itself raised. The two events are exactly that overtaking.
+- No lemma proved, so no packet. Status: R1-ZERO DEAD as stated; R1-STEP CONJECTURE (thin data); FB-LIN OPEN.

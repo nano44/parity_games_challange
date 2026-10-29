@@ -488,7 +488,7 @@ Successor 30 (Opus 5.5, D14/D18, L40), session_01V5yGRXpuZ54sFHkJS3KYwp. Parked 
    F2-F4 FBCK-N2..N4, F5-F8 N-FBCK-2..5; Corollary (ii) stays an implication.) Was: P-N5-FBCK fixes file once REFEREE-2 has reported. Model:
    P-N5-RESTRICT-fixes-box48.md; quotes with [Q path@commit:lines], experiments/new/box49/quotecheck3.py (--locate, then check, --mut control),
    pin count + control + sha1 in experiments/new/check.sh, guarded NOT RUN if a source commit is absent.
-2. FB-LIN (f ≤ n per phase): OPEN. Obstruction in N5-READER §10: no inequality between LEV^K_C and LEV^K_{C′}. The tie candidate in §10 is untested.
+2. FB-LIN (f ≤ n per phase): OPEN (N5-READER §11: R1-ZERO DEAD, R1-STEP conjecture; multi-switch fallbacks are the open part). Obstruction in N5-READER §10: no inequality between LEV^K_C and LEV^K_{C′}. The tie candidate in §10 is untested.
 3. FB-C° in the read frame (embedded readers): OPEN (FBCK §3).
 
 ## Dead ends (successor 30; also in docs/new/N5-READER-box49.md §5)
@@ -510,6 +510,10 @@ Successor 30 (Opus 5.5, D14/D18, L40), session_01V5yGRXpuZ54sFHkJS3KYwp. Parked 
 
 - MONO-CONF (K-configurations at successive fallback sources never recur): DEAD, plain long121_n40 phase [1,122]: C0 C1 C2 C3 C4 C1 C2 C3
   (σ̄ on gates 0, 1, 6); njb_reabs65_n48 [2,68]: 2 configurations alternating over 29 fallbacks. SMALL-CK: DEAD by l121_cf_emb12 (|𝒞^K_f| = f = 8).
+
+- R1-ZERO (L-RED R101: no single-switch fallback re-switches a vertex an earlier one switched): DEAD, cond_stuck_symsi3_YE (S3; 12: 13→0, then
+  14: 0→15, then 12: 0→14) and lend_fresh_n24_r2 (own start; 3: 22→19, 20: 19→11, 3: 19→20). Obstruction: step-back onto a successor that the
+  previous single fallback raised. CONJECTURE R1-STEP (2 of 2).
 
 ## Things only I know (successor 30)
 - fbconf.py prints its counters in sorted-key order; check.sh greps must not anchor on the first key (an ABA counter broke my FBCK pin once;
