@@ -739,3 +739,12 @@ o=$(python3 -I odd/reent.py odd/inst/d_runquad_K3_m30.pg odd/inst/d_runquad_K3_m
 o=$(python3 -I odd/reent.py ../red/fbr/instances/lev74_n40.pg); grep -q "'ENTPCH': (0, 18, 6, 0, 2, 0)" <<<"$o"; grep -q " charge_LEN 1 " <<<"$o"; grep -q " PASS$" <<<"$o"
 o=$(python3 -I odd/reent.py ../red/fbr/instances/lev74_n40.pg --mut); grep -q " LENTIE_V 1 " <<<"$o"
 echo "si (box 33: ODD-FREEZE / SW-RETURN on Odd re-entries; carry-charge, ENT-NM, ENT-PCH dead; LEN-REENTRY; controls fire): PASS"
+# box 34 (docs/si/N5-CARX-box34.md): d_hntop's NM^U = 2N²+5N−5 as N lane sweeps (N = 3: [7, 11, 10]); CARRY-CLIMB dead on d_hntop_n2;
+# SWEEP-GAIN dead on wide_h16 (Odd) and fc_3 (Even); CARRY-SEG holds there; --mut flips the gain test and must fire on d_hntop_n3.
+o=$(python3 -I odd/carx.py odd/inst/d_hntop_n3.pg odd/inst/d_hntop_n3.start)
+grep -q "^SWEEPS d_hntop_n3.pg vertex d3_3(56) NM 28 sweeps \[7, 11, 10\]$" <<<"$o"
+o=$(python3 -I odd/carx.py odd/inst/d_hntop_n2.pg odd/inst/d_hntop_n2.start); grep -q "CLIMB_V 61 .* ex (4, 0, 7, 38, 35) FAIL" <<<"$o"
+o=$(python3 -I odd/carx.py ../red/n5inj/instances/wide_h16.pg); grep -q "SEG_V 0 .* GAIN_V 3 .* exg (2, 13, 23, 18, 18) FAIL" <<<"$o"
+o=$(SIDE=E python3 -I odd/carx.py ../new/box59/out/fc_3.pg); grep -q "SEG_V 0 .* GAIN_V 12 .* exg (6, 0, 23, 155, 88) FAIL" <<<"$o"
+o=$(python3 -I odd/carx.py odd/inst/d_hntop_n3.pg odd/inst/d_hntop_n3.start --mut); grep -q "GAIN_V 5 " <<<"$o"
+echo "si (box 34: d_hntop sweeps; CARRY-CLIMB, SWEEP-GAIN dead; CARRY-SEG holds on the kills; control fires): PASS"
