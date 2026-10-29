@@ -1,3 +1,45 @@
+# Handover check: L-SI (successor 21, written 2026-10-29T03:0xZ by date -u (03:02:16 at the measurement); LANE-RESTART step 3; Opus 5.5, D18/L40)
+Every answer below was measured in this container; commands given. Predecessor: successor 20, session_01V5yGRWTEYFoWjhNJrADhYc.
+Its handover is notes/L-SI.md "## HANDOVER (successor 20, box 24)" (l-si 714224168, merged with trunk at 4483cc8e).
+
+## 1. Branch, head, distance to trunk
+- Branch `claude/l-si`. Clone stale again: local HEAD da88a6d4 before the fetch ("up to date" per git status).
+  `git fetch origin claude/vibrant-johnson-nxvvxo claude/l-si` → origin/claude/l-si 4483cc8e; `git merge` → fast-forward to 4483cc8e.
+- Trunk = 80bd25f8 (Lead: L-SI routed to RUN-LIN′ proof side). `git rev-list --left-right --count origin/claude/l-si...trunk` → 3 ahead /
+  2 behind. `git merge --no-edit` of trunk (no rebase) → 00d606f8; `git rev-list --left-right --count HEAD...trunk` → 4 ahead / 0 behind,
+  merge-base 80bd25f8. This file is the next commit.
+- Oink: tools/oink/build absent (fresh container); `scripts/setup_oink.sh` run (result in §6).
+
+## 2. Open work and the next step of each (nothing running)
+Frozen files unchanged (`sha1sum docs/si/P-N5-*.md`): CORE 7b66f1ba, CORE-fixes 5f22c9ec, DEPTH 549c7fb7, DEPTH-add 4d51aa5e, GCX 5a91bebb
+(and every other P-N5-* file as listed by the command). Lead brief 03:02Z:
+- STEP 1, CONJECTURE PIECE (unconditional; a σ̄-constant piece of a fallback-free in-phase S4a run has ≤ n − 1 transitions). Landed only
+  under (H3), (H4), GEN_W (RESULTS R77, l.4178). Next step: run root/staticdepth.py VERB=1 on runlin/out/alt_all_root.lst, list the 155
+  pieces failing (H3) / (H4) (863 − 708 per N5-RUNLIN-box24 §8), classify which hypothesis fails and how, and try to prove the bound without it
+  (R74 FREEZE-A / FREEZE-G, R80, R81) or grow such a piece past n − 1.
+- STEP 2, CONJECTURE G-RUN (σ̄ changes per run, DATA ≤ 1.07n). With SPLIT, |S| ≤ G + (G + 1)(n − 1): G = O(n) gives O(n²) per run.
+- Older queue (successor 19/20): SW-RUN, (G1) flip-flops: unchanged, behind STEP 1-2.
+
+## 3. docs/GAPS.md rows I own
+- None (`awk -F'|' '$4 ~ /L-SI/' docs/GAPS.md` → empty). I work under G-N5-TIME (major, owner L-NEW, open). RESULTS now ends at R81
+  (`grep -o '^### R[0-9]*' docs/RESULTS.md | tail -1`); R77 STATIC-DEPTH at l.4178, R74 l.3877, R80 l.4405, R81 l.4520.
+
+## 4. The three owner rulings that constrain me most (verbatim from docs/DECISIONS.md; status docs/DECISIONS-INDEX.md)
+- D18 (DECISIONS.md l.333; index l.32: active): "Focus on N5 and work toward proving it. Explore novel approaches, especially by
+  connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions
+  where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and
+  open problems." Lead reading L40 (index l.33: active): L-SI is the OR/MDP lens.
+- D1 (DECISIONS.md l.6; index l.5: active): "Never publish, post, email, submit or contact anyone outside the fleet. Anything external is
+  my decision."
+- D16 (DECISIONS.md l.300; index l.28: active): "Then keep working as I told you to"
+
+## 5. One trap that bit this lane before, and the check that prevents it
+- Trap: a time written without running `date -u`. The predecessor's handover is headed "written 2026-10-29T03:1xZ (date -u)", but its commit
+  714224168 has commit time 02:54:29Z (`git log -1 --format=%cI`), and `date -u` here gave 03:01:41: the stamp was estimated, not measured. Check: run `date -u` in the same turn as every
+  timestamp and message, and copy its output. Also (again): stale clone, so fetch + merge (never rebase) before reading and before every push.
+
+## 6. Oink
+- `scripts/setup_oink.sh` (output redirected to a scratch file) → exit 0, "oink built at 8fbf0a7" (tc, tc+, counter_*, rngame present).
 # Handover check: L-SI (successor 20, written 2026-10-28T23:3xZ by date -u; LANE-RESTART step 3; Opus 5.5, D18/L40)
 Every answer below was measured in this container; commands given. Predecessor: successor 19, session_01Wri18MQcngoeeFHoME5WLV.
 Its handover is notes/L-SI.md "## HANDOVER (successor 19, box 23)" (l-si 7407ef29, queue da88a6d4).
