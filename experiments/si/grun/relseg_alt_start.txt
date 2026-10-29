@@ -1,0 +1,10 @@
+G_minus_cuts_max=49 SEG_max=62 SEG_over_n_x1000_max=791 h4p_fail=49 runs=921 seg_len_max=55 segments=2890
+TOP SEG 19 G 22 run 22 n 24 experiments/red/so/instances/so_sor5_n24.pg [0,22]
+TOP SEG 24 G 25 run 25 n 32 experiments/n5-epoch/instances/nep56_n32.pg [1,26]
+TOP SEG 3 G 2 run 2 n 4 experiments/n5-exhaustive/instances/b4_n4all_cyc3_0.pg [0,2]
+TOP SEG 3 G 2 run 2 n 4 experiments/n5-exhaustive/instances/n4all_thch_0.pg [0,2]
+TOP SEG 24 G 34 run 34 n 32 experiments/red/so/instances/pftheta34_n32.pg [5,39]
+TOP SEG 12 G 12 run 13 n 16 experiments/red/xing/instances/x31_cu16.pg [10,23]
+TOP SEG 23 G 33 run 34 n 32 experiments/red/so/instances/pftheta_cex_n32.pg [4,38]
+TOP SEG 23 G 22 run 22 n 32 experiments/red/xing/instances/x31_rx32.pg [2,24]
+RELSEG PASS

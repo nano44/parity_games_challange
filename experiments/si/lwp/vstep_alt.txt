@@ -1,0 +1,7 @@
+NEV=110 VS_V=109 gaps=1700 trans=5641
+EXAMPLE ('experiments/n5-epoch/instances/lend27_n24.pg', 5, 7, 5, 7, 6)
+EXAMPLE ('experiments/n5-epoch/instances/lend39f_n32.pg', 2, 3, 2, 3, 2)
+EXAMPLE ('experiments/n5-epoch/instances/lend47_n32.pg', 21, 22, 21, 22, 21)
+EXAMPLE ('experiments/n5-epoch/instances/nep22f_n64.pg', 26, 27, 26, 27, 26)
+PVSTEP PASS
+VSTEP FAIL

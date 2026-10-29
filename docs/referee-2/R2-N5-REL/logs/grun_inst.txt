@@ -1,0 +1,25 @@
+MODE pairs grun.lst inst MUT - RELCAP 60
+ENGXI_checks: 796
+GRC_checks: 79
+GR_changes_CLEAN: 870
+GR_changes_CYC: 9
+GR_changes_TIE: 71
+GR_checks: 870
+GR_norise_CYC: 5
+GR_norise_TIE: 71
+RA_intervals: 3012
+REL_beyond_SDPRIME: 2947
+REL_intervals: 3012
+REL_sbar_moves_off_RO: 2947
+REL_sharp: 5
+RREM_checks: 65
+RS_hyp_runs: 29
+RS_runs: 29
+RS_segments: 407
+S_runs: 29
+runs: 28
+states: 796
+REL_max_len: (33, 'anc_K10.pg#start', 67, 100, 42, 99)
+RS_max_SEG_over_n: (1.0, 'sg_2.pg#S3', 2, 30, 29, 29)
+RS_max_run_over_SEGn: (0.522, 'fx_n24_2.pg#S3', 1, 13, 1, 23)
+RESULT OK violations=0

@@ -105,3 +105,26 @@ step-4 pass, not a TARGET.md claim; G-N5-TIME stays OPEN.
 - FINDINGS: every item SIGNED, no gap; Corollary (ii) SIGNED as an implication with its implicit step (σ̄ unchanged on old vertices) proved
   (FBCK-N1); the K-frame gain is rare in natural data (FBCK-N2).
 - NEEDS: Lead: route FBCK-N1..N4 to L-NEW's fixes file after REFEREE-2 reports; the FBCK §C word when REFEREE-2's report is pushed.
+
+## §C. Comparison with REFEREE-2 (written 2026-10-29T01:06Z by date -u, after the Lead's word of 01:03Z; REFEREE-2's report
+docs/referee-2/R2-N5-FBCK.md, sha1 e2d7eb8d…, commit 30237ebb on trunk; read only after this report was pushed at f2d22ad7)
+Written by REFEREE successor 17, the author. Every verdict is labelled (Opus 5.5, D15).
+- Independence: both clean on FBCK. I opened no REFEREE-2 FBCK file before my push (0 / 0 / 0 at 23:54Z). REFEREE-2 declares one read of
+  R-N5-READER.md l. 1-30 (another packet, READER: the premise of Corollary (ii)); it did not open this report. No effect on any verdict.
+- Verdicts identical: K1-K3, FB-RISE^K, SAT^K, SAT-FB^K, SAT-FB1^K, Theorem FB-C^K, Corollary (i) SIGNED by both; Corollary (ii) SIGNED as an
+  implication by both; quotes 9/9 by both. Joint gap map: EMPTY.
+- FBCK-N1 = N-FBCK-1 in substance (σ̄ on the old vertices is needed for 𝒞^K_f; READER-INV supplies the third bullet only for ONE Odd reader
+  without predecessors). One difference of strength: REFEREE-2 signs by READING σ̄|V into "the run on the old vertices"; I PROVE σ̄′|V = σ̄
+  (and Ξ′|V = Ξ) from the first bullet alone (no old vertex reaches H, so S1's choices at old vertices are unchanged: §3 above). So the
+  joint wording for L-NEW: keep the third bullet for the run, fallbacks and phases, and add the closure argument (or REFEREE-2's reading)
+  for σ̄|V. Both are correct; mine needs no extra hypothesis. REFEREE-2's "(R) at each step / H acyclic" remark for repeated single readers =
+  my "(R) must be read for every Odd vertex of H": ACCEPTED.
+- N-FBCK-2 (the K version is a restriction; SAT-FB^K's Iσ_{t+1} = ∅ is the one step needing K1 + K2): agrees with my §2. Its control open1
+  (non-closed K′ breaks SAT, SAT-FB, SAT-FB1) shows the closure is used, which my controls did not test: ACCEPTED, stronger evidence.
+- N-FBCK-3 (thin spots): agrees with FBCK-N2 (the bound is not approached; the K-gain is rare in undressed data). Its max ratio 0.75 n_K vs my
+  0.781 (farrise25_n32, not in its corpus); its nk1 ((n_K − 1) per configuration) does not bite, my MUT=3 (n_K // 2) bites on farrise25:
+  consistent. Its "SAT-FB^K's 'no later K-C-state' alternative never occurs alone": ACCEPTED as its data (I did not count it).
+- N-FBCK-4 (premise list; R71 (b) first part only; R73's post-R6 last step): agrees with FBCK-N3: ACCEPTED.
+- N-FBCK-5 (§4 count differences): no conflict; my lib41 figure (261 / 259 on 726 runs) differs from both (other starts and n ≤ 48).
+- Mine not in REFEREE-2's: FBCK-N4 (READER-INV has one referee; Corollary (ii) stays an implication until it has two). For routing.
+- Nothing open on FBCK. G-N5-TIME stays OPEN.

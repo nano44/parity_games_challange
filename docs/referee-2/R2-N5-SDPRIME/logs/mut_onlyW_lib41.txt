@@ -1,0 +1,62 @@
+MODE files ../R2-N5-STAU/lib41_noref.lst 3 MUT onlyW SDCAP 60
+ENGXI_checks: 19579
+GEN_used_fail_intervals: 343
+H3p_intervals: 52342
+H4p_fail: 28
+SD_TW_ne_TH: 4850
+SD_intervals: 52141
+SD_lamW_moves: 684
+SD_other_cycles_move: 39
+SD_sharp: 432
+SDng_TW_ne_TH: 165
+SDng_intervals: 173
+SDng_lamW_moves: 6
+STEPA_checks: 8596801
+STEPB_checks: 7609845
+S_runs: 1614
+VIOLATIONS: 368
+V_LEN: 7
+V_SETH: 270
+V_SETW: 78
+V_SIGB: 7
+V_STEPA: 2
+V_STEPB: 4
+WMONO_checks: 11292
+lamW_change_transitions: 657
+pieces: 1812
+runs: 1230
+states: 19579
+SD_max_len: (55, 'experiments/red/xing/instances/x32_rand64.pg#0', 0, 55, 56, 64)
+SDng_max_len: (12, 'experiments/new/box29/instances/u1_n32.pg#0', 0, 12, 15, 32)
+max_piece_len: (55, 'experiments/red/xing/instances/x32_rand64.pg#0', 0, 55, 64)
+VIOLATION SETH: experiments/new/box25/instances/rtt16.pg#2 [0,1] v=0 t=0 dH=0
+VIOLATION SETH: experiments/new/box25/instances/rtt16.pg#2 [0,1] v=2 t=0 dH=0
+VIOLATION SETH: experiments/new/box25/instances/rtt16.pg#2 [0,1] v=3 t=0 dH=0
+VIOLATION SETH: experiments/new/box25/instances/rtt16.pg#2 [0,1] v=4 t=0 dH=0
+VIOLATION SETW: experiments/new/box25/instances/rtt16.pg#2 [0,1] v=5 t=0 dW=0
+VIOLATION SETH: experiments/new/box25/instances/rtt16.pg#2 [0,1] v=5 t=0 dH=0
+VIOLATION SETW: experiments/new/box25/instances/rtt16.pg#2 [0,1] v=6 t=0 dW=0
+VIOLATION SETH: experiments/new/box25/instances/rtt16.pg#2 [0,1] v=6 t=0 dH=0
+VIOLATION SETW: experiments/new/box25/instances/rtt16.pg#2 [0,1] v=8 t=0 dW=0
+VIOLATION SETH: experiments/new/box25/instances/rtt16.pg#2 [0,1] v=8 t=0 dH=0
+VIOLATION SETH: experiments/new/box25/instances/rtt16.pg#2 [0,1] v=10 t=0 dH=0
+VIOLATION SETH: experiments/new/box25/instances/rtt16.pg#2 [0,1] v=13 t=0 dH=0
+VIOLATION SETH: experiments/new/box25/instances/rtt16.pg#2 [0,1] v=14 t=0 dH=0
+VIOLATION SETH: experiments/new/box25/instances/rtt16.pg#2 [0,2] v=0 t=0 dH=0
+VIOLATION SETW: experiments/new/box25/instances/rtt16.pg#2 [0,2] v=1 t=0 dW=0
+VIOLATION SETH: experiments/new/box25/instances/rtt16.pg#2 [0,2] v=1 t=0 dH=0
+VIOLATION SETH: experiments/new/box25/instances/rtt16.pg#2 [0,2] v=2 t=0 dH=0
+VIOLATION SETH: experiments/new/box25/instances/rtt16.pg#2 [0,2] v=3 t=0 dH=0
+VIOLATION SETH: experiments/new/box25/instances/rtt16.pg#2 [0,2] v=4 t=0 dH=0
+VIOLATION SETW: experiments/new/box25/instances/rtt16.pg#2 [0,2] v=5 t=0 dW=0
+VIOLATION SETH: experiments/new/box25/instances/rtt16.pg#2 [0,2] v=5 t=0 dH=0
+VIOLATION SETW: experiments/new/box25/instances/rtt16.pg#2 [0,2] v=6 t=0 dW=0
+VIOLATION SETH: experiments/new/box25/instances/rtt16.pg#2 [0,2] v=6 t=0 dH=0
+VIOLATION SETW: experiments/new/box25/instances/rtt16.pg#2 [0,2] v=8 t=0 dW=0
+VIOLATION SETH: experiments/new/box25/instances/rtt16.pg#2 [0,2] v=8 t=0 dH=0
+VIOLATION SETW: experiments/new/box25/instances/rtt16.pg#2 [0,2] v=9 t=0 dW=0
+VIOLATION SETH: experiments/new/box25/instances/rtt16.pg#2 [0,2] v=9 t=0 dH=0
+VIOLATION SETH: experiments/new/box25/instances/rtt16.pg#2 [0,2] v=10 t=0 dH=0
+VIOLATION SETW: experiments/new/box25/instances/rtt16.pg#2 [0,2] v=11 t=0 dW=0
+VIOLATION SETH: experiments/new/box25/instances/rtt16.pg#2 [0,2] v=11 t=0 dH=0
+RESULT FAIL violations=368

@@ -1,0 +1,53 @@
+MODE files ../R2-N5-STAU/lib41_noref.lst 3 MUT dm1 RELCAP 60
+ENGXI_checks: 19315
+FAIL_noGEN_RSETH: 34
+FAIL_noGEN_RSETW: 34
+GRC_checks: 10733
+GR_changes_CLEAN: 3751
+GR_changes_CYC: 23
+GR_changes_THRU: 109
+GR_changes_TIE: 168
+GR_checks: 3751
+GR_norise_CYC: 8
+GR_norise_TIE: 167
+H4rel_fail: 27
+RA_intervals: 53652
+REL_intervals: 53461
+RELng_intervals: 164
+S_runs: 1612
+VIOLATIONS: 18837
+V_RSETH: 9421
+V_RSETW: 9416
+runs: 1230
+states: 19315
+VIOLATION RSETW: experiments/n5-exhaustive/canonA_0.pg#0 [0,1] v=3 t=0
+VIOLATION RSETH: experiments/n5-exhaustive/canonA_0.pg#0 [0,1] v=3 t=0
+VIOLATION RSETW: experiments/n5-exhaustive/canonA_0.pg#0 [0,2] v=3 t=0
+VIOLATION RSETW: experiments/n5-exhaustive/canonA_0.pg#0 [0,2] v=7 t=1
+VIOLATION RSETW: experiments/n5-exhaustive/canonA_0.pg#0 [0,2] v=13 t=1
+VIOLATION RSETW: experiments/n5-exhaustive/canonA_0.pg#0 [0,2] v=14 t=1
+VIOLATION RSETH: experiments/n5-exhaustive/canonA_0.pg#0 [0,2] v=3 t=0
+VIOLATION RSETH: experiments/n5-exhaustive/canonA_0.pg#0 [0,2] v=7 t=1
+VIOLATION RSETH: experiments/n5-exhaustive/canonA_0.pg#0 [0,2] v=13 t=1
+VIOLATION RSETH: experiments/n5-exhaustive/canonA_0.pg#0 [0,2] v=14 t=1
+VIOLATION RSETW: experiments/n5-exhaustive/canonA_0.pg#0 [0,3] v=3 t=0
+VIOLATION RSETW: experiments/n5-exhaustive/canonA_0.pg#0 [0,3] v=7 t=1
+VIOLATION RSETW: experiments/n5-exhaustive/canonA_0.pg#0 [0,3] v=13 t=1
+VIOLATION RSETW: experiments/n5-exhaustive/canonA_0.pg#0 [0,3] v=14 t=1
+VIOLATION RSETH: experiments/n5-exhaustive/canonA_0.pg#0 [0,3] v=3 t=0
+VIOLATION RSETH: experiments/n5-exhaustive/canonA_0.pg#0 [0,3] v=7 t=1
+VIOLATION RSETH: experiments/n5-exhaustive/canonA_0.pg#0 [0,3] v=13 t=1
+VIOLATION RSETH: experiments/n5-exhaustive/canonA_0.pg#0 [0,3] v=14 t=1
+VIOLATION RSETW: experiments/n5-exhaustive/canonA_1.pg#1 [2,3] v=6 t=2
+VIOLATION RSETH: experiments/n5-exhaustive/canonA_1.pg#1 [2,3] v=6 t=2
+VIOLATION RSETW: experiments/n5-exhaustive/instances/b4_theta_n7.pg#2 [0,1] v=5 t=0
+VIOLATION RSETH: experiments/n5-exhaustive/instances/b4_theta_n7.pg#2 [0,1] v=5 t=0
+VIOLATION RSETW: experiments/n5-exhaustive/instances/b5_o11.pg#0 [0,1] v=3 t=0
+VIOLATION RSETH: experiments/n5-exhaustive/instances/b5_o11.pg#0 [0,1] v=3 t=0
+VIOLATION RSETW: experiments/n5-exhaustive/instances/b5_o11.pg#0 [0,2] v=3 t=0
+VIOLATION RSETW: experiments/n5-exhaustive/instances/b5_o11.pg#0 [0,2] v=9 t=1
+VIOLATION RSETH: experiments/n5-exhaustive/instances/b5_o11.pg#0 [0,2] v=3 t=0
+VIOLATION RSETH: experiments/n5-exhaustive/instances/b5_o11.pg#0 [0,2] v=9 t=1
+VIOLATION RSETW: experiments/n5-exhaustive/instances/b5_o11.pg#0 [0,3] v=1 t=2
+VIOLATION RSETW: experiments/n5-exhaustive/instances/b5_o11.pg#0 [0,3] v=3 t=0
+RESULT FAIL violations=18837

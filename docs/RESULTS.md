@@ -4319,6 +4319,748 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
 - TARGET.md diff: not a claim of TARGET.md section 1 or §2 (structural lemmas and a per-interval reduction; no running-time bound, no
   algorithm claim). GAPS G-N5-TIME: open.
 
+### R79 [refereed-only] N5 on EVERY game, inside one phase: a run J = (x, …, y) of a phase depends only on the Odd edges it uses — on every Odd cut H of G (G's Even successor lists, each Odd list a non-empty subset of G's) that contains τ and every Odd best reply σ̄_k, k ∈ J, RESULTS R64 (a) (i)-(iv) hold at each state of J (Lemma RESTRICT_H), and N5^τ on H from (σ_x, τ) passes through (σ_x, τ), …, (σ_{y′}, τ), y′ := x + len(J), with N5's fallback / non-fallback type at each transition, the states of J in one N5^τ phase and the last transition may leave it unless σ̄_{y′} is an Odd strategy of H (Corollary REPRO_H, with EPR-1); instances: the epoch game G′_E (RESULTS R64), G^u (RESULTS R68 (f)), the frozen-side game G^{u|J}, which proves N5-NCONF §9's CONJECTURE RESTRICT_{u|J}, and the used-edge game G^P of a whole phase P, of which P is the initial segment, of len(P) transitions, of the first N5^τ phase on G^P started at (σ_x, τ) (G-RESTRICT-1 repaired) (2026-10-26) — structural lemmas for N5 (they bound nothing: no phase length is bounded, QP(P) and XDEG(P) are OPEN; not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C88.md, checker 7f59a4f9)
+- Object (L-NEW successor 28, Opus 5.5; frozen, unchanged during review): packet P-N5-RESTRICT, docs/new/P-N5-RESTRICT-box48.md, sha1
+  48c63a8e45c0288678805195a91f9c00ee703da9 (l-new freeze 7e56744a; quote base 08abd9cb), the proof of RESULTS R64 (a), (b) (packet P-N5-EPR
+  §1-§2, sha1 8fecca79) carried from G′_E to any admissible Odd cut; source docs/new/N5-NCONF-box48.md §9-§10 at 7b5876d8. The referees' notes
+  are collected by the lane in docs/new/P-N5-RESTRICT-fixes-box48.md (l-new a99dee17, sha1 f33f00b36ab5626e7ccd24e3b2fdd75ca56b2764, L-NEW
+  successor 30: F1-F6 for G-RESTRICT-1 = G-R2-RESTRICT-1, RESTRICT-N1..N3, N-RESTRICT-1..3 and a data correction; 31 quotes checked by script,
+  experiments/new/box49/quotecheck3.py "quotes=31 bad=0", pinned in experiments/new/check.sh with a shifted-line control and the file's sha1);
+  on trunk; repairs only: §2's G^P sentence is replaced by the joint repair (F1); F2, F5 correct unsigned READINGs; F3, F4, F6 change no
+  statement. The statements below are in that repaired wording.
+  Setting (every game): N5 = SPEC S1-S5 (FIX 1-4, Q1-Q4); state k = (σ_k, τ_k); σ̄_k := S1's Odd counterstrategy to σ_k; Ξ_k := V_{σ_k,σ̄_k};
+  W_k := V_{σ_k,τ_k}; λ := Ξ's cycle-node map; phases as in RESULTS R38 (a) (τ constant inside one); Q := the Odd vertices of out-degree ≥ 2;
+  N5^τ as in RESULTS R64's setting (S4b^τ keeps τ when Iτ ≠ ∅ and τ is value-optimal against σ in S4b's arena). An ODD CUT of G: a game H
+  with G's vertices, priorities, owners and Even successor lists, every Odd v keeping a non-empty succ_H(v) ⊆ succ_G(v); SPEC's objects on H
+  are primed. A run J = (x, …, y) of consecutive states of one phase is H-ADMISSIBLE if τ(v) ∈ succ_H(v) and σ̄_k(v) ∈ succ_H(v) for every Odd
+  v and k ∈ J; len(J) := (y − x) + [1 if y → y + 1 is in-phase]. Instances: G′_E with an epoch E (RESULTS R64's setting); G^u with a u-run
+  (RESULTS R68's setting); for a FROZEN-SIDE u-STRETCH J (a maximal run of a phase with σ̄ constant on Q ∖ {u}), D⁻ := {v ∈ Q ∖ {u} :
+  σ̄_J(v) ≠ τ(v)} and G^{u|J}: v ∈ D⁻ cut to {τ(v), σ̄_J(v)}, every other Odd v ≠ u to τ(v), u keeping all its edges; for a phase P, the
+  USED-EDGE game G^P: every Odd v cut to {τ(v)} ∪ {σ̄_k(v) : k ∈ P}; QP(P) := #{Odd v : |succ_{G^P}(v)| ≥ 2}, XDEG(P) := Σ_v (|succ_{G^P}(v)| − 1).
+- Claims signed (both referees "(Opus 5.5, D15)", L37), on every game; no item uses (P); premises LANDED: SPEC S1-S5 (S1's injective rewards
+  included); RESULTS R18 (d) Lemma S (a) (= (VJ), signed on every game in RESULTS R57 (a)), on G, on H and on S4b's arenas; R38 (a); R64 (a),
+  (b) with the repair EPR-1, and their proof (P-N5-EPR §1-§2, pinned in R64), read with H in place of G′_E; R68 (f) for G^u. RESTRICT_H (i) rests, as R64 (a) (i) does, on the standing SPEC premise 1E-N3 (RESULTS R57; N-EPR-1):
+  (a) Lemma RESTRICT_H (§1): let J be an H-admissible run of a phase of N5 on G and k ∈ J. At the pair (σ_k, τ): (i) Ξ′_k = Ξ_k and W′_k =
+      W_k; (ii) Iσ′_k = Iσ_k, SPEC S4a's output on H equals its output on G, and S4c's Even switch-all on Iσ is the same on both; (iii) Odd's
+      dual valuation of τ is the same on both, so Iτ′_k = Iτ_k ∩ E(H); (iv) if k → k + 1 is an in-phase transition of N5 on G and Iτ′_k ≠ ∅,
+      then τ is value-optimal against σ_k in S4b's arena of H. (Each item is a statement at one state, so σ̄ may change along J.)
+  (b) Corollary REPRO_H (§1), with R64 (b)'s repair EPR-1: for H-admissible J = (x, …, y) and y′ := x + len(J), N5^τ on H from (σ_x, τ)
+      passes through (σ_x, τ), …, (σ_{y′}, τ) with the same fallback / non-fallback type at each of its len(J) transitions as N5 on G; the
+      states x, …, y lie in one phase of that N5^τ run; the last transition y → y′ has its source there and may leave it, unless σ̄_{y′} is
+      also an Odd strategy of H (then J ∪ {y′} is H-admissible and y′ lies in that phase too).
+  (c) Instances (§2; admissibility by definition, checked by both): an epoch E is G′_E-admissible (= RESULTS R64 (a), (b)); a u-run is
+      G^u-admissible (= RESULTS R68 (f)); a frozen-side u-stretch J is G^{u|J}-admissible; a phase P is G^P-admissible with len(P) = y − x (no
+      EPR-1 exit; N-RESTRICT-1, F4), and G^P ∈ 𝒞^{QP(P)}O. Consequence (RESTRICT-N3, F3; agreed by both): by (a), (b) on G^{u|J}, CONJECTURE
+      RESTRICT_{u|J} (docs/new/N5-NCONF-box48.md §9, L-NEW successor 27, 4b79f056; l. 223 at the packet's pin 7b5876d8: "For k ∈ J, RESULTS
+      R64 (a) (i)-(iv) hold with G′_E replaced by G^{u|J}; hence N5^τ on G^{u|J} from (σ_x, τ) reproduces J state by state with the same
+      fallback types (as R64 (b) with EPR-1)") is PROVED, as an instance of RESTRICT_H.
+  (d) The G^P sentence as repaired (G-RESTRICT-1 = G-R2-RESTRICT-1, F1; the joint repair in REFEREE's §C wording): every phase P = (x, …, y)
+      of N5 on G is the INITIAL SEGMENT, of len(P) transitions, of the first N5^τ phase on G^P started at (σ_x, τ), state by state, with the
+      same fallback types. Its clause "and equal to it when P ends by a λ change" is NOT part of this entry (one referee's proof; see the
+      bullet "Referee strengthening" below).
+- Not signed: the packet's G^P sentence as written, "EVERY PHASE OF N5 ON G IS ONE N5^τ PHASE ON G^P, from (σ_x, τ), state by state, with
+  the same fallback types": FALSE in the equality reading (G-RESTRICT-1 = G-R2-RESTRICT-1; true as containment, which is (d)): REPRO_H says
+  nothing about N5^τ's step from y, as y → y + 1 is not in-phase on G. Two mechanisms: nep_n12 (experiments/n5-epoch/results/climb/nep_n12.pg,
+  sha1 682f6bf3, at its .start; REFEREE): P = [0, 1], τ(1): 10 → 8 at 1 → 2, the edge (1, 8) is not in G^P, so N5^τ keeps τ and its phase
+  holds states 0, 1, 2; nh_r2802 (experiments/new/box28/out/nh_r2802.pg.pg, sha1 8652ac82, n = 7, S3 start; REFEREE-2, reproduced by REFEREE
+  successor 17): G^P = G, P = [0, 0], SPEC's S4b moves τ(4) from 6 to 4 at 0 → 1 on a tie while S4b^τ keeps it, so the first N5^τ phase is
+  [0, 1]. Also not signed (packet §3-§4, as the packet asks): the DATA; the READINGs, corrected for accuracy (F2: nep90_n40, nep76_n40 and
+  long121_n40 have |Q| = 5 / 5 / 3 themselves, so G^P removes no Odd choice vertex there and drops 2 / 2 / 1 Odd edges, XDEG 24 / 26 / 9 on
+  G against 22 / 24 / 8 on G^P; QP < |Q| in 2,307 of REFEREE's 4,073 phases; F5: a 𝒞^kO count transfers only if proved for N5^τ phases, read
+  as the possibly longer phase of (d)); the OPEN items QP(P), XDEG(P).
+- Referee strengthening (NOT part of this entry; one referee): the clause of (d) "and equal to it when P ends by a λ change" is PROVED by REFEREE alone (successor 17, in its §C, "(Opus
+      5.5, D15)": with τ_{y+1} = τ, σ_{y+1} ≠ σ_y; (ii) and (iv) at y give N5^τ's step to (σ_{y+1}, τ); R15 (a), (d), injective rewards, (P1)
+      and Lemma S (a) give reward(λ′_{y+1}(v)) > reward(λ′_y(v)) at a v whose λ changes); REFEREE-2 stated it from data only ("Equality holds
+      when P ends by a λ change.", report l. 80), and nothing further was asked of it (fixes F1).
+- Honest limits: (i) It bounds nothing: a phase of N5 depends only on the Odd edges it uses; no phase length, QP(P) or XDEG(P) is bounded
+  (REFEREE-2's max QP 129, tcS8_N11, n = 418, a one-state phase). (ii) By (d), any bound on N5^τ phase lengths on G^P bounds len(P) (both
+  referees); the equality at λ-ends rests on one referee's proof (REFEREE successor 17), with data agreeing on both engines (0 of 4,215 and
+  0 of 11,777 λ-ends extend). (iii) Whether RESULTS R61's 𝒞^kO counts hold for N5^τ is not checked by the packet or either referee. (iv) The
+  extension in (d) is rare but real: 186 of 11,527 phase ends (REFEREE) and 176 of 39,385 (REFEREE-2), all τ-ends; REFEREE successor 16's
+  earlier "44 of 4,073" counted multi-state phases only (F6).
+- Data (DATA, not proof): REFEREE (successor 16; own docs/referee/scratch/restrict_probe.py (sha1 0429b61b at the report; f451e00a, with ONE=1, at successor 17's §C), on its engine rl_engine with
+  REFEREE successor 12's own N5^τ step; lane code not run): library 1,140 files (2,739 runs), lib41 (763), 4,500 random 𝒞^kO runs, nep90 /
+  nep76 / long121 at their starts: 8,005 N5 runs, 4,073 phases, 28,938 in-phase transitions reproduced on G^P (and on G′_E), 202,408
+  RESTRICT_H checks over five families (G^P, a random admissible cut, G′_E, G^u, G^{u|J}), 3,954 "unless" checks, 2,976 EPR-1 exits that
+  leave (allowed), 0 failures; control MUT=1 (one edge (v, σ̄_x(v)) dropped from G^P) bites. Successor 17 (ONE=1: one-state phases included;
+  lib1140, G^P only): 12,625 runs, 18,036 transitions, 0 failures; 186 of 11,527 phase ends extend, all τ-ends (7,312 τ-ends, 4,215 λ-ends).
+  REFEREE-2 (successor 18; own docs/referee-2/R2-N5-RESTRICT/restrict_check.py on its lane's Runner (si.py) and its R2-N5-EPR step; lane
+  tools not run): 21,971 runs, 61,356 phases; (H, J) instances G^P 61,356, G^u 104,910, G^{u|J} 372,118, G′_E 69,253, 0 violations (ADM,
+  (i)-(iv), REPRO_H, λ′ = λ); of 39,385 phase ends with a next state on G, G's phase ends by τ in 27,020 and by λ in 11,777, N5^τ on G^P stops at y in 588 (the three counts partition the 39,385; G's end type is recorded only where N5^τ steps on), and its phase extends past y in 176, all τ-ends; control (one (v, σ̄_x(v)) dropped) fails in 30,335 of 35,196 runs.
+- Signatures: REFEREE docs/referee/R-N5-RESTRICT.md (report c9bdfa68, successor 16; §C 3b2631be, successor 17): RESTRICT_H (i)-(iv), REPRO_H
+  with EPR-1 and the "unless" clause, the four instances' admissibility SIGNED; the G^P sentence SIGNED in the containment reading, FALSE as
+  equality (G-RESTRICT-1, wording; witness nep_n12); notes RESTRICT-N1..N3; in §C the λ-end equality PROVED. REFEREE-2
+  docs/referee-2/R2-N5-RESTRICT.md (report 9549e59a, §C 864302d0; successor 18): RESTRICT_H, REPRO_H with EPR-1 (the "unless" clause in its
+  §C), the instances SIGN; the G^P sentence TRUE ONLY AS CONTAINMENT (G-R2-RESTRICT-1; witness nh_r2802); notes N-RESTRICT-1..3. EXPOSURE:
+  REFEREE-2 declared that before its review it saw the subject line of REFEREE's commit c9bdfa68 (REFEREE's verdicts, the gap's subject and
+  the witness name nep_n12) and added experiments/n5-epoch/results/climb/*.pg to its corpus because of it. Per REFEREE's §C ruling, recorded in
+  fixes F1: G-RESTRICT-1 was found by REFEREE (successor 16) and CONFIRMED by REFEREE-2 (anchored, not blind), with REFEREE-2's own witness
+  nh_r2802 (a second mechanism); both signatures stand, REFEREE-2's recorded as anchored, not blind. §C (both): no disagreement on any
+  verdict; joint gap map {G-RESTRICT-1 = G-R2-RESTRICT-1}; RESTRICT-N1 superseded by the joint repair (REFEREE-2's §C names "LIES IN ONE";
+  REFEREE's later §C adopts REFEREE-2's initial-segment wording with the λ-end addition); RESTRICT-N2 = N-RESTRICT-2; RESTRICT-N3 agreed by
+  REFEREE-2; N-RESTRICT-1, N-RESTRICT-3 accepted by REFEREE; nothing else open.
+- TARGET.md diff: not a claim of TARGET.md section 1 or §2 (structural lemmas on N5's runs; no running-time bound, no algorithm claim). GAPS
+  G-N5-TIME: open.
+
+### R80 [refereed-only] N5 on EVERY game, inside one phase: every transition of a phase changes Even's σ (Lemma EVERY-SWITCH), so a phase P has |P| ≤ Σ_w SW_P(w), |P| the number of TRANSITIONS of P and SW_P(w) the number of those at which σ(w) changes (PHASE-SW; FALSE if |P| counts states); an Even vertex w that switches at a transition t → t + 1 of a phase and lies on no honest cycle at t and at t + 1 strictly raises Ξ(w) (Lemma RISE-SW), so |P| ≤ Σ_w XR_P(w) + #{(w, t) : w switches at t and lies on an honest cycle at t or t + 1}, XR_P(w) the transitions of P at which Ξ(w) changes (its Consequence); a CLEAN change y1 → y2 of σ̄ at an Odd choice vertex u ∈ U_c ∖ {c} of class c, u on no honest cycle at t and at t + 1, gives κ_{t+1}(y1) ⪰ κ_t(y1), strictly unless κ_{t+1}(y1) = κ_{t+1}(y2) (Lemma RISE-GATE-CLEAN; the tie exception is needed, nep22f_n64); a set I of consecutive transitions of one phase has |I| ≤ m_E + NOFRESH(I) (FRESH-RED); and on a global C-interval (RESULTS R76's definition, taken inside one phase) the transitions with a fresh Even edge, with a fresh Odd option and with a strict shrink of some A number at most m_E, Σ_{Odd u} (deg(u) − 1) and Σ_c |A_a(U_c)| ≤ n (FRESH3-COUNT) (2026-10-28) — elementary structural lemmas for N5 (they bound nothing: no count of switches or Ξ-changes per vertex, no NOFRESH and no phase length is bounded; the per-vertex forms SW-LIN and XR-LIN are DEAD; not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C89.md, checker 3f849b3a)
+- Object (L-SI successor 19, Opus 5.5; frozen, unchanged during review): packet P-N5-CORE, docs/si/P-N5-CORE-box23.md, sha1
+  7b66f1bae1a1b675c0fda0af1e5eaabf13f128a0 (l-si freeze 081ae740; quote base 33f43c20; 10 quotes), the §11 PROVED core (C1)-(C6) of
+  docs/si/N5-ALT-box23.md. The referees' notes are collected by the lane in docs/si/P-N5-CORE-fixes-box23.md (l-si 5533c58c, sha1
+  5f22c9ecd534bcf041f9f0672d842b643faf90e2, L-SI successor 20: F1-F7 for CORE-N1, CORE-N2 (a)-(c), N-CORE-1, CORE-N3 = N-CORE-4, CORE-N4 =
+  N-CORE-2, N-CORE-3, and the records N-CORE-5, N-CORE-6, CORE-N5, CORE-N6; 35 quotes checked by script, experiments/si/rund/quotecheck.py
+  "quotes=35 bad=0", pinned in experiments/si/check.sh with a shifted-line control that must fail); on trunk; repairs only: F1 adds the
+  definition of |P| (CORE-N1), F2 corrects three citations, F4 replaces (C6)'s premise by RESULTS R76's landed definition and states the
+  scope, F5 adds a remark (the tie exception is needed), F6 and F7 change no statement. F3 widens (C3) to every N5 transition (N-CORE-1);
+  that widening is NOT part of this entry (bullet "Referee strengthening"). The statements below are in the repaired wording otherwise.
+  Setting (every game): N5 = SPEC S1-S5 (docs/new/N5-ssi-global.md) with FIX 1-4 and the standing premise 1E-N3; state t = (σ_t, τ_t); Ξ_t
+  := Ξσ_t, the valuation of σ_t against S1's Odd counterstrategy σ̄_t, Ξ_t(v) the value of v's honest (σ_t, σ̄_t)-play; ▷, ⊵ the S1 order;
+  λ := Ξ's cycle-node map. A PHASE: a maximal run of states with λ_Ξ and τ constant (RESULTS R38 (a) KEY: the (λ_Ξ, τ)-phase is the joint
+  λ-phase); a transition t → t+1 of a phase P joins two states of P; |P| := the number of transitions of P (pairs t → t+1 of consecutive
+  states of P), so a phase with s states has |P| = s − 1 (F1). SW_P(w) := the transitions of P at which σ(w) changes; XR_P(w) := those at
+  which Ξ(w) changes. Per honest class c, U_c := λ^{-1}(c); Q := the Odd vertices of out-degree ≥ 2; κ, κwt_c, Y^q_t as in RESULTS R56's
+  setting and (d). A σ̄ change y1 := σ̄_t(u) ≠ y2 := σ̄_{t+1}(u) is CLEAN if y2 ∈ Y^u_t and y1 ∈ Y^u_{t+1}. For a set I of consecutive
+  transitions of one phase, t → t+1 ∈ I is FRESH if some Even w switches at it to an edge (w, y) that w held at no earlier state of I (the
+  first state of I included); NOFRESH(I) := the other transitions of I; m_E := the number of Even edges. GLOBAL C-INTERVAL: RESULTS R76's
+  definition (a maximal run of GOOD transitions: for every c, A_{t+1} ⊆ A_t, D_{t+1} = D_t, DD_{t+1} = DD_t and Δ_{t+1}(u) = Δ_t(u) on DD_t;
+  transition-local reading), taken inside one phase (R76 takes it inside a fallback-free run S; (C6) holds in both scopes, both referees
+  checked both; F4); A_a(U_c) is A of U_c at the interval's first state a.
+- Claims signed (both referees "(Opus 5.5, D15)", L37), on every game; no item uses (P); premises LANDED: SPEC S1, S2, S4 (a)-(d) with
+  FIX 1-4; RESULTS R15 (a) Lemma A and (d) (cited in full, F2 (a): «(d) N5: every iteration applies Switch_I with ∅ ≠ I ⊆ Iσ to Even's σ
+  (on G) and/or with ∅ ≠ I ⊆ Iτ to Odd's τ (on G^d), and» …; used with τ fixed); RESULTS R17 (a) (V1) for Ξ(v) = v ⊕ Ξ(next v) off v's
+  play's cycle (F2 (b)); (SW) "every Even switch of N5 is to an edge of Iσ", as listed among RESULTS R72's landed premises; RESULTS R38 (a)
+  KEY (only for the remark that a (λ_Ξ, τ)-phase is a joint λ-phase; τ constant is the phase definition, F2 (c)); RESULTS R56 (a) (Aκ),
+  (M1κ), (M2κ) and (d) κ-Y-FORM_D; RESULTS R76 (the global C-interval definition only; CORE-N3 = N-CORE-4, F4):
+  (a) (C1) EVERY-SWITCH (§2): at every transition t → t+1 of a phase, σ_{t+1} ≠ σ_t. (τ_{t+1} = τ_t by the definition of a phase; a
+      non-fallback iteration changes (σ, τ); an Even fallback moves every Even vertex with an improving edge, to w ≠ σ(v) by S2; an Odd
+      fallback changes τ and so cannot occur inside a phase.)
+  (b) (C2) PHASE-SW (§2, with F1): for a phase P, |P| ≤ Σ_w SW_P(w), |P| the number of TRANSITIONS of P.
+  (c) (C3) RISE-SW (§3, with F2): let t → t+1 be a transition of a phase and w an Even vertex with y := σ_{t+1}(w) ≠ σ_t(w), w on no honest
+      cycle at t and at t + 1. Then Ξ_{t+1}(w) ▷ Ξ_t(w). Remark: the order of the steps matters (Ξ_t(y) may be the value of a play through
+      w; the proof compares Ξ_{t+1}(y) ▷ Ξ_t(σ_t w), two w-free values with cycle node λ(w), and only then applies w ⊕). Consequence (with
+      (b)): |P| ≤ Σ_w XR_P(w) + #{(w, t) : w switches at t and lies on an honest cycle at t or t + 1}.
+  (d) (C4) RISE-GATE-CLEAN (§4): let t → t+1 be a transition of a phase, c a class, u ∈ Q ∩ U_c, u ≠ c, on no honest cycle at t and at
+      t + 1, with a CLEAN change y1 := σ̄_t(u) ≠ y2 := σ̄_{t+1}(u). Then κ_{t+1}(y1) ⪰ κ_t(y1), strictly unless κ_{t+1}(y1) = κ_{t+1}(y2).
+      (Chain κ_t(y1) ⪯ κ_t(y2) ⪯ κ_{t+1}(y2) ⪯ κ_{t+1}(y1) by (Aκ) and κ-Y-FORM_D at t and t + 1 and (M2κ) at y2.) Its two closing
+      sentences: ties at t + 1 aside, a clean σ̄ change at u is a strict Ξ-rise of the abandoned option y1 at the same transition ((M1κ));
+      each such rise of y1 at t is charged by at most the number of Odd u with σ̄_t(u) = y1. Remark (F5; CORE-N4 = N-CORE-2): the tie
+      exception cannot be dropped: nep22f_n64 (sha1 d98de59f…, its .start in experiments/n5-epoch/instances/, sha1 a7ecb00e…), transition
+      8 → 9 (a fallback), class 18, gates 9 (57 → 30) and 56 (6 → 1), both clean, all four κ = (0, 4) at t and t + 1 (found independently
+      by both referees, two engines).
+  (e) (C5) FRESH-RED (§5): for a set I of consecutive transitions of one phase, |I| ≤ m_E + NOFRESH(I) (fresh transitions map injectively
+      to fresh Even edges); with (a), the non-fresh transitions of I are exactly those at which every switching Even vertex returns to an
+      edge it held before in I.
+  (f) (C6) FRESH3-COUNT (§5, with F4): on a global C-interval I = [a, b]: the transitions with a fresh Even edge (in I's scope) number
+      ≤ m_E; those at which some Odd vertex moves σ̄ to an option it did not hold at an earlier state of I number ≤ Σ_{Odd u} (deg(u) − 1);
+      those with A_{t+1} ⊊ A_t for some class number ≤ Σ_c |A_a(U_c)| ≤ n. (Of goodness only "A non-increasing" is used, REFEREE §4,
+      accepted by REFEREE-2.)
+- Not signed: (C2) and (C3)'s Consequence with |P| read as the number of STATES of P (the packet's §1 calls a phase a run of states and
+  did not define |P|): FALSE, every one-state phase has |P| = 1 > 0 = Σ_w SW_P(w) (CORE-N1; REFEREE: 13,932 of 16,595 phases of lib1140;
+  REFEREE-2: 2,098 one-state phases in alt_all); repaired by F1. (C4) without its tie exception ("strictly"): FALSE (nep22f_n64, above).
+  The packet's §6 (not to sign, as the packet says): the DATA; the UNCLEAN gate change (N5-ALT §1 RISE-GATE, through Fact CL of P-N5-OFFMONO
+  §1); the conjecture FRESH3 (every σ̄-changing in-interval transition has one of (f)'s three events), DEAD (ret14_n48, N5-ALT §3; REFEREE
+  reproduces 4 failures of 1,379 in alt_all, CORE-N6); the DEAD per-vertex forms XR-LIN and SW-LIN; the READING on passive readers.
+- Referee strengthening (NOT part of this entry; N-CORE-1: in REFEREE-2's (C3) verdict line as an addition, not in REFEREE's verdict table): (C3) RISE-SW at EVERY N5 transition, in a
+  phase or not (fixes F3 writes it into (C3)'s statement). REFEREE-2 states and proves it in its report (verdict line of (C3), "Also true at
+  every N5 transition, not only in-phase ones (N-CORE-1)"; §3: if the cycle nodes at t and t + 1 differ, the two values compare by the
+  cycle node's reward, which w ⊕ does not change; data XC3, 0 failures off-cycle) and calls it in its §C "mine alone; it is an extension and
+  changes no verdict"; REFEREE in its §C: "ACCEPTED, re-derived" (steps 1-2 of its §2 hold at every iteration, w-freeness needs only "off
+  honest cycles at t and t + 1", same cycle node → step 5, different → reward), not entered as a SIGNED verdict ("Verdicts identical:
+  (C1)-(C6) all SIGNED by both"). Also not signed as a bound: m_E − n_E in (e) and (f)'s first count (N-CORE-3; REFEREE "could be m_E − n_E
+  ... Not needed"; F6 keeps m_E; REFEREE-2's control X5nE shows it cannot be lowered to n_E, 344 in alt_all).
+- Honest limits: (i) It bounds nothing. (b), (c)'s Consequence, (e) and (f) move |P| or |I| onto SW_P, XR_P, the on-cycle switch pairs and
+  NOFRESH, none of which is bounded here; (f) counts three events but FRESH3 is DEAD, so some σ̄-changing transitions of a global C-interval
+  carry none of them. (ii) READING (Lead): the PROVED (C2)-type bound |P| ≤ Σ_w SW_P(w) is reader-inflatable per vertex: some passive Even
+  readers (those that keep the run SAME; not every Even reader does, N5-ALT §12's CORRECTION) raise one vertex's SW, and Σ_w SW_P(w), without
+  changing the run (docs/si/N5-ALT-box23.md §12, l-si 3cb6035b, corrected 992e3bb0: on long121_n40's phase [1, 122] the most switches
+  of one Even vertex is 12, and an appended Even reader switches 16 times with the run SAME, instance l121ereader_n41); the transition count |P| is intrinsic. CONJECTURE SW-LIN ("in every phase, every Even vertex switches
+  ≤ n times") is DEAD (l-si 85709361, swlin_kill_n26: one Even vertex switches 27 > n = 26 in one phase; L-COMP's n5b agrees), and
+  CONJECTURE RUN-LIN (every fallback-free run of a phase has ≤ 2n transitions) is DEAD (runfam_K10, n = 49: a fallback-free run of 99 > 2n =
+  98 transitions; L-SI 51281c00, docs/si/N5-RUNLIN-box24.md §7 at l-si 90bcc50c; reproduced by REFEREE, docs/referee/R-N5-RUNLIN-kill.md
+  c609f779). So (b) and (c)'s Consequence are not completed by a linear per-vertex bound. (iii) Every hypothesis is needed in data:
+  (a) fails at phase-leaving transitions (τ-only moves; REFEREE MUT3 4 of 52, e.g. swlin_kill_n26 at its given start, transition 48;
+  REFEREE-2 X1 435 / 939 / 2,789 on alt_all / lib41 / random k2); (c)'s off-cycle hypothesis (on-cycle switches without a Ξ(w) rise:
+  REFEREE alt_all 73 of 128, lib1140 328 of 615; REFEREE-2 X3cyc 38 / 89 / 328); (d)'s tie exception (nep22f_n64); (e)'s NOFRESH term
+  (REFEREE MUT6: 40 failures of |I| ≤ m_E on l121reader_n41, a 121-transition phase, m_E = 103); (f)'s goodness (REFEREE-2 X6A 26 / 34 and
+  X6Ax 201 / 472 on alt_all / lib41; REFEREE's MUT4 did not bite on its corpus). (iv) (d) is for CLEAN changes only; the unclean case is not
+  claimed (REFEREE-2 saw (d)'s conclusion hold at every unclean change it checked, DATA). (v) NOFRESH is not small over a phase: the packet's
+  §6 "≤ 22 per run" holds per fallback-free run (fresh.py's unit; F7, N-CORE-6); over whole phases it reaches 90 (long121_n40 and
+  l121ereader_n41 [1, 122], both referees), and 115 in one fallback-free run on the RUN-LIN family (runfam_K40, L-SI's experiments/si/runlin/anatomy.py; fixes F7). Nothing here bounds N5's running time.
+- Data (DATA, not proof): REFEREE (successor 17; own scratch/core_probe.py (sha1 be6bb900…) on its engine rl_engine, written from SPEC S1-S5
+  + FIX 1-4; lane code not run; 0 failures in every MUT=0 run): alt_all (413 games of root/logs/alt_all.lst, n ≤ 600; 918 runs: given start
+  when valid, best-reward, 1 random) 12,937 in-phase transitions, (C3) 27,194 checks, (C4) 4,953 clean / 1,764 unclean / 29 ties at t + 1 /
+  2 without a rise, (C5) 98,053 intervals, (C6) 1,891 / 1,874 intervals (phase / fallback-free scope); lib41 (349 games, 698 runs) 9,059
+  transitions; lib1140 (1,024 games, 3,072 runs) 22,018 transitions, (C3) 40,019, (C4) 3,195 clean; rand3000 (6,000 runs) and MUT=2 random
+  sets (48,000 games, 96,000 runs). Premise checks at every state: (V1), (SW), R15 pointwise monotonicity, (C3)'s steps separately, (Aκ)
+  and κ-Y-FORM_D at both ends, (M2κ) at y2, 0 failures. Controls: MUT1 ((C3) demanded of the abandoned option) bites 579 on its 4-instance
+  set; MUT2 ((C4) strict) bites 2 (nep22f_n64); MUT3, MUT6 above; MUT4, MUT5 do not bite. REFEREE-2 (successor 19; own
+  docs/referee-2/R2-N5-CORE/core_check.py and qcheck.py on its lane's Runner (si.py); lane tools not run; every run 0 violations): alt_all
+  (413 runs, given start else S3) 458 phases (its phase count; 2,098 one-state phases besides), 8,048 in-phase transitions (729 fallbacks),
+  (C3) 16,825, (C4) 3,071 clean / 1,075 unclean, (C5) 86,519 intervals, (C6) 1,187 (1,172 in GCX's scope S); lib41_noref × 3 starts
+  (1,230 runs) 12,135 transitions; named (8 runs) 537; random k2 / kO / k5 (9,000 / 4,500 / 800 runs); RULE=rand (any non-empty subset of
+  Iσ, lib41 × 3, 1,230 runs, 14,822 transitions): (C3)-(C5) hold, 0 violations. Engine Ξ equals the play value at every state (ENGXI, 0
+  differences). Counts differ from the packet's §6 (alt_all 8,048 against 8,084 in-phase transitions; cause unknown on both sides, no
+  violation on either; N-CORE-5) and from REFEREE's (extra starts). CORE-N5: three start files in alt_all.lst (L-RED's comp54_n80,
+  n3cov_lean, n3cov_phi under experiments/red/n3/instances/) do not fit their games or are partial; REFEREE skipped or corrected them,
+  REFEREE-2 re-ran alt_all with start validation (every count IDENTICAL, 0 violations); L-RED repaired them in R99 (l-red 5e8f0174,
+  docs/red/R99-start-erratum.md: every reported count reproduces). No signed statement uses the counts on those games.
+- Signatures: REFEREE docs/referee/R-N5-CORE.md (report 9d831869, sha1 0e1480a3709671f395a8813fcafa6e464fd2ffd4 there; §C 8641ae40;
+  successor 17): (C1) SIGNED; (C2) SIGNED with |P| the number of TRANSITIONS (CORE-N1; the state reading false); (C3) with its Remark and
+  Consequence SIGNED; (C4) with its two closing sentences SIGNED, tie clause needed (CORE-N4); (C5) with its parenthesis SIGNED; (C6) SIGNED
+  in either scope (CORE-N3); quotes 10/10; notes CORE-N1..N6; no gap. REFEREE-2 docs/referee-2/R2-N5-CORE.md (report 2ed8d3fb, sha1
+  a402d9e71efee5830ad2a853cf7808a1a1ab4402 there; §C b28d1ba9; successor 19): (C1)-(C6) SIGN, quotes 10/10 (shifted control 0/10); notes
+  N-CORE-1..6; no gap. INDEPENDENCE: both clean, no exposure on either side (REFEREE re-listed REFEREE-2's paths at 23:00Z, 0 / 0 / 0 CORE
+  files before its push; REFEREE-2 ran only a names-only count on docs/referee/ and opened REFEREE's report only after pushing 2ed8d3fb).
+  §C (both): verdicts identical, (C1)-(C6) SIGNED by both; joint gap map EMPTY; CORE-N4 = N-CORE-2 found independently on two engines
+  (same instance, transition, class, gates and κ); CORE-N3 = N-CORE-4; CORE-N1, CORE-N2 (a) and CORE-N5 ACCEPTED by REFEREE-2 as missed,
+  CORE-N2 (b), (c) agreed; N-CORE-1 (re-derived), N-CORE-3, N-CORE-6 and REFEREE-2's controls ACCEPTED by REFEREE; N-CORE-5 no conflict;
+  nothing open.
+- TARGET.md diff: not a claim of TARGET.md section 1 or §2 (elementary structural lemmas on N5's phases; no running-time bound, no
+  algorithm claim). GAPS G-N5-TIME: open.
+
+### R81 [refereed-only] N5 on EVERY game, inside one phase: with K the vertices reachable from an Even vertex of out-degree ≥ 2 (K is closed under successors, so the honest play from a vertex of K stays in K; every Even vertex outside K has out-degree 1; K = ∅ leaves no in-phase fallback: Facts K1-K3), n_K := |K| and a K-configuration C = σ̄|Q ∩ K (Q the Odd vertices of out-degree ≥ 2), an in-phase S4c fallback from a K-C-state raises the level LEV^K_C, taken over the simple paths of the frame H^K_C (G[K] with every Odd vertex of K cut to its σ̄_C edge), to at least min(LEV^K_C + 1, n_K − 1) (Lemma FB-RISE^K); LEV^K_C = n_K − 1 at a K-C-state t gives Ξ_t = B^K_C on K, and Ξ constant on K from t to any later K-C-state of the phase (Lemma SAT^K); a fallback from such a saturated K-C-state is followed by the end of the phase or by no further K-C-state of it (Lemma SAT-FB^K), so per phase and K-configuration at most one in-phase fallback has a saturated source (Corollary SAT-FB1^K); hence in every phase P, f ≤ n_K·|𝒞^K_f(P)|, f the number of in-phase S4c fallbacks of P and 𝒞^K_f(P) the K-configurations of their sources (Theorem FB-C^K), which implies RESULTS R73's Theorem FB-C′, f ≤ n·|𝒞_f(P)| (Corollary (i)); and, signed only AS AN IMPLICATION (Corollary (ii)): if G′ is G plus new vertices H with no edge from an old vertex into H, no Even vertex of out-degree ≥ 2 in H, and the run on the old vertices, the fallbacks and the phases unchanged (an assumption for a general H; for ONE added Odd vertex with no predecessors satisfying (R) it is supplied by REFEREE's Theorem READER-INV, which has one referee and is NOT landed), then n_K, 𝒞^K_f(P) and f are the same for G′ as for G, the step σ̄′|V = σ̄ following from the first hypothesis alone (2026-10-28) — a REDUCTION of f to the number of K-configurations at the fallback sources of a phase (that number is not bounded here; FB-LIN, f ≤ n per phase, is OPEN; not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C90.md, checker 9777e9e6)
+- Object (L-NEW successor 30, Opus 5.5; frozen, unchanged during review): packet P-N5-FBCK, docs/new/P-N5-FBCK-box49.md, sha1
+  7747ecf23f65ac82fc2d75e0f6ecc28c7621ce1f (l-new freeze 0e63596d, 2026-10-28T23:25:01Z; quote base 6d863a4d; 9 quotes, quotecheck3.py
+  "quotes=9 bad=0"; both referees measured the pin), RESULTS R71 (a), (b) and R73's SAT-FB / SAT-FB1 / FB-C′ re-run on the successor-closed
+  set K; source docs/new/N5-READER-box49.md §7-§8 (working note). The referees' notes are collected by the lane in
+  docs/new/P-N5-FBCK-fixes-box49.md (l-new e0fda64f, sha1 19237624d32db379db858ea961861bd094441db1, L-NEW successor 30: F1-F8 for
+  FBCK-N1 = N-FBCK-1, FBCK-N2, FBCK-N3, FBCK-N4, N-FBCK-2..5, in REFEREE-2's §C C.4 order; 25 quotes checked by script,
+  experiments/new/box49/quotecheck3.py "quotes=25 bad=0", pinned in experiments/new/check.sh with a shifted-line control and the file's sha1);
+  on trunk; repairs only, "No signed statement changes. Corollary (ii) stays an IMPLICATION." (fixes l. 6): F1 replaces Corollary (ii)'s
+  third bullet and adds one sentence after the bullets (FBCK-N1); F3 adds a sentence after Lemma SAT^K (FBCK-N3); F2, F4-F8 are records and
+  change no statement. The statements below are in that repaired wording.
+  Setting (every game): as in RESULTS R71 (N5 = SPEC S1-S5 with FIX 3, an in-phase fallback being Even's; Ξ_k the value of the honest
+  (σ_k, σ̄_k)-play; λ its cycle-node map; phases as in RESULTS R38 (a), λ and τ constant on one; value(r) := (u, P(r), |r|) for a simple path
+  r ending at a cycle node u of λ; f := the in-phase S4c fallbacks of a phase; Q := the Odd vertices of out-degree ≥ 2; R71's configurations
+  C = σ̄|Q, H_C, LEV_C, B_C, 𝒞_f(P)). K := the vertices reachable in G, by a path with ≥ 0 edges, from an Even vertex of out-degree ≥ 2;
+  n_K := |K|; Q_K := Q ∩ K. A K-CONFIGURATION is C = σ̄|Q_K, and k is a K-C-STATE if σ̄_k|Q_K = C. H^K_C := G[K] with every Odd v ∈ K cut to
+  its one edge σ̄_C(v) (C(v) for v ∈ Q_K, the unique successor otherwise). LEV^K_C(k) := the largest j ≤ n_K − 1 such that Ξ_k(x) ⪰ value(r)
+  for every x ∈ K and every simple path r of H^K_C with ≤ j edges from x to a cycle node of λ; B^K_C(x) := the maximum of value(r) over the
+  simple H^K_C-paths r from x ∈ K to a cycle node of λ. 𝒞^K_f(P) := the K-configurations of the sources of P's in-phase S4c fallbacks. For
+  Corollary (ii): G′ is G plus new vertices H, V the old vertices, primes for G′'s objects.
+- Claims signed (both referees "(Opus 5.5, D15)", L37), on every game; no item uses (P); premises LANDED: SPEC S1-S5 with FIX 3 (S2's Iσ,
+  S4c's rule); the standing premise 1E-N3, form P1 (RESULTS R57); RESULTS R71's setting, (a) Lemma FB-RISE_C and its proof (P-N5-FBC-box47
+  §1, sha1 32d3776c…, the pin), (b) Lemma SAT_C and its proof (first part and the (MON) sandwich only; its 4n(n − 1) window is not used,
+  N-FBCK-4 = F7, FBCK-N3 = F3); R71's premises (MON) (RESULTS R15 (a) with R15 (d)), RESULTS R17 (a) (V1), (V2), R17 (b) Lemma P's Case A
+  with Ω := Ξ_t (RESULTS R70's Q-A, YES by both of its referees), R38 (a); RESULTS R73 (d) Lemma SAT-FB and its proof (P-N5-EPC-box48 §3,
+  sha1 9f48ded7…, the pin; its last step in the post-fix R6 form, without HON-FB), Corollary SAT-FB1, Theorem FB-C′. NOT landed, for Corollary (ii) = item (i) only: REFEREE's Theorem READER-INV under (R) (docs/referee/R-N5-READER.md at e83fd19d, §1; one referee), which item (i) does
+  not use as a premise, only as the source that supplies Corollary (ii)'s third hypothesis in one case:
+  (a) Facts K1-K3 (§0). K1: K is closed under successors; hence the honest play from x ∈ K stays in K at every state, λ(x) ∈ K, and at a
+      K-C-state the honest play from every x ∈ K is a play of H^K_C. K2: every Even vertex outside K has out-degree 1, so Iσ_k(x) = ∅ at
+      every state for Even x ∉ K (S2). K3: if K = ∅ there is no in-phase fallback (an in-phase fallback is Even's, FIX 3, and needs Iσ ≠ ∅).
+  (b) The setting facts (§0; REFEREE's K1-K3 row, REFEREE-2's own row "LEV^K_C ≥ 0 and non-decreasing on P (setting sentences)", the §C
+      joint row "K1-K3 (with LEV^K_C ≥ 0, non-decreasing; 𝒞^K_f the image of 𝒞_f)"): LEV^K_C is defined at every state of P and is
+      non-decreasing along P (H^K_C and λ fixed on P; (MON)); LEV^K_C ≥ 0 (a 0-edge path has x = u a cycle node, and Ξ_k(u) = (u, ∅, 0)
+      throughout the phase); 𝒞^K_f(P) is the image of R71's 𝒞_f(P) under restriction to Q_K, so |𝒞^K_f(P)| ≤ |𝒞_f(P)|.
+  (c) Lemma FB-RISE^K (§1): let t → t + 1 be an in-phase S4c fallback of P whose source t is a K-C-state. Then
+      LEV^K_C(t + 1) ≥ min(LEV^K_C(t) + 1, n_K − 1). (R71 (a)'s proof with x ∈ K, H^K_C for H_C and n_K for n; the configuration is used only
+      at an Odd x ∈ Q_K, and every vertex the proof names lies in K by K1.)
+  (d) Lemma SAT^K (§1, with F3): if t is a K-C-state with LEV^K_C(t) = n_K − 1, then Ξ_t = B^K_C on K; if t < t′ are K-C-states of P with
+      LEV^K_C(t) = n_K − 1, then Ξ is constant on K on the states t, …, t′. F3: "R71 (b)'s window bound t′ − t ≤ 4n(n − 1) is not used:
+      saturated sources are counted by SAT-FB1^K, which needs only that the second source is a K-C-state after the first (not that it is
+      saturated)."
+  (e) Lemma SAT-FB^K (§1): let t be a K-C-state of P with LEV^K_C(t) = n_K − 1 whose transition t → t + 1 is an in-phase S4c fallback. Then
+      t + 1 is the last state of P, or P has no K-C-state after t. (Iσ_{t+1} = ∅ at Even x ∉ K by K2 and at Even x ∈ K since succ(x) ⊆ K
+      (K1); the rest is R73's text. This is the one step that needs more than restriction to K, N-FBCK-2 = F5.)
+  (f) Corollary SAT-FB1^K (§1): for every phase P and K-configuration C, at most one in-phase fallback of P has a saturated K-C-state as its
+      source.
+  (g) Theorem FB-C^K (§2): in every phase P of N5 on every game, f ≤ n_K·|𝒞^K_f(P)|. (K = ∅: f = 0 by K3. Otherwise, per C ∈ 𝒞^K_f(P), at
+      most n_K − 1 unsaturated sources, LEV^K_C strictly rising between consecutive ones in {0, …, n_K − 2}, and at most 1 saturated one
+      (SAT-FB1^K); sum over C.)
+  (h) Corollary (i) (§2): n_K ≤ n and |𝒞^K_f(P)| ≤ |𝒞_f(P)|, so FB-C^K implies RESULTS R73's Theorem FB-C′ (f ≤ n·|𝒞_f(P)|).
+  (i) Corollary (ii) (§2, repaired by F1), signed AS AN IMPLICATION by both (REFEREE: "SIGNED as an implication"; REFEREE-2: "SIGN AS AN
+      IMPLICATION from its three bullets"). Let G′ be G plus new vertices H such that: no old vertex has an edge into H; no Even vertex of H has
+      out-degree ≥ 2; the run on the old vertices, the fallbacks and the phases are unchanged. "This is an ASSUMPTION for a general H, with (R)
+      read for every Odd vertex of H. READER-INV supplies it for ONE added Odd vertex with no predecessors that satisfies (R)." Then
+      K(G′) = K(G) (no new Even choice vertex is added, and no new vertex is reachable from an old one), and "Moreover σ̄′|V = σ̄ and Ξ′|V = Ξ
+      at every state, by the first bullet alone. No old vertex reaches H, so S1's choices at old vertices are unchanged (REFEREE's proof,
+      R-N5-FBCK §3; checked by REFEREE-2 against SPEC S1 and on 100,000 cases). Hence 𝒞^K_f(P), which reads σ̄ on Q_K ⊆ V, is unchanged." So
+      n_K, 𝒞^K_f(P) and f are the same for G′ as for G. The step σ̄′|V = σ̄ (Ξ′|V = Ξ as triples, ranks relabelled order-preservingly; the
+      argument of READER-INV's one-state Lemma (a) extended to H) is part of this item: REFEREE's report signs (ii) "with one implicit step made
+      explicit (FBCK-N1)" and proves it (§3), and REFEREE-2's §C joint verdict for (ii) reads "SIGN as an implication; the σ̄ step is proved
+      (C.3)" after checking the argument step by step against SPEC S1 (i)-(vi) ("ACCEPTED"; its own N-FBCK-1 reading SUPERSEDED). It uses
+      the first hypothesis only, not READER-INV. The corollary's conclusion stays an IMPLICATION from its three hypotheses, and stays one until
+      READER-INV is refereed twice (FBCK-N4 = F4, agreed by REFEREE-2).
+- Not signed: Corollary (ii) as the packet wrote it, as an application of READER-INV to a general H: its parenthesis "(READER-INV gives this
+  for a reader satisfying (R))" is right for ONE new Odd vertex with no predecessors, which is what READER-INV states, not for a set H with
+  several readers, Even vertices or edges inside H (FBCK-N1 = N-FBCK-1, both referees); and its implicit step (σ̄ on the old vertices) was
+  not stated by "the run on the old vertices is unchanged". Not false; repaired by F1 into (i). Repeated single-reader additions would need H
+  acyclic, each new vertex without predecessors when added, and (R) at each step; not proved (REFEREE-2 N-FBCK-1). Also not signed (packet
+  §3-§4, as the packet says): the DATA, including Corollary (ii)'s closing instance sentence (RESULTS R71 / R73's |𝒞_f(P)| inflated by a
+  reader on l121_cf35_39, 5 → 8 = f; DATA, reproduced by both, below); the READING and OPEN items of §3: CONJECTURE FB-C° in the read frame
+  of N5-READER §8 (OPEN; an Even choice vertex puts everything it reaches into K, even along an edge it never uses: on l121_cf_emb12
+  |𝒞^K_f| = 8 = f), and FB-LIN, which FB-C^K does not imply.
+- Referee strengthening (NOT part of this entry; REFEREE's remark outside its verdict table; REFEREE-2 AGREED in its §C only): K ≠ ∅ forces n_K ≥ 2, since an Even choice vertex has two distinct successors
+  in K (REFEREE's remark under K3, report §1); REFEREE-2 in its §C: "AGREED (an Even choice vertex has two distinct successors in K). It is
+  not in my report."
+- Honest limits: (i) A REDUCTION, not a bound: f is bounded by n_K times the number of K-configurations at fallback sources; |𝒞^K_f(P)| is not
+  bounded here, FB-LIN (f ≤ n per phase) is OPEN, and the CONJECTURE FB-C° in the read frame is OPEN (packet §3; fixes "What this file does
+  not do"). Nothing here bounds N5's running time. (ii) READING (Lead): FB-C^K does not shrink FB-LIN. Two of L-NEW's dead ends
+  (docs/new/N5-READER-box49.md §9, l-new 95714e3e; L-NEW's records, not refereed): MONO-CONF ("there is an order on K-configurations in which
+  the configurations at successive fallback sources of a phase never go back") DEAD on the plain long121_n40 (sha1 c667c085…; phase [1, 122],
+  8 fallback sources with K-configurations C0 C1 C2 C3 C4 C1 C2 C3) and on njb_reabs65_n48 (sha1 3388d0be…; phase [2, 68], f 29, 2
+  alternating K-configurations); SMALL-CK ("|𝒞^K_f(P)| ≤ g(n) with g smaller than the trivial f") DEAD by
+  experiments/new/box49/inst/l121_cf_emb12.pg (sha1 5440021b27bb0ab23cd4db682ae73bfbf5aaf39a): an embedded reader (the old Even vertex 12 →
+  o) lifts |𝒞^K_f| from 5 to 8 = f with the run SAME (L-NEW's DATA; READER-INV does not cover it, o has a predecessor), so a bound
+  |𝒞^K_f| ≤ g(n) gives f ≤ g(n + 1) on the base game. Both referees reproduce |𝒞^K_f| = 8 = f, n_K = n = 41 there. Plain readers cannot
+  inflate the K-count (Corollary (ii), an implication); edges from an Even choice vertex can. (iii) The K frame rarely improves on R73 in
+  natural data (FBCK-N2 = F2): FB-C^K is strictly stronger than FB-C′ only when n_K < n or |𝒞^K_f| < |𝒞_f|; REFEREE: n_K < n in 90 of 575
+  fallback phases of lib1140, |𝒞^K_f| < |𝒞_f| only on the dressing l121_cf35_39 and 2 phases of lib41; REFEREE-2: the gain appears when
+  vertices outside K are added (lib41 + 5, no old → new edges: Σ |𝒞_f| / Σ |𝒞^K_f| 414 → 257, |𝒞^K_f| < |𝒞_f| in 76 of 205 phases). Its use
+  is reader-proofness, not a better count on undressed games. (iv) The closure of K is needed (N-FBCK-2 = F5): REFEREE-2's control open1
+  (K′ := the Even choice vertices and their successors, not closed) bites 2,528 + 1,281 on its dressed k4 and random kO sets, among them
+  795 + 418 SAT, 1 + 1 SATFB and 1 SATFB1 failures; REFEREE's §C: "ACCEPTED, stronger evidence". (v) The per-configuration bound n_K is not
+  approached (N-FBCK-3 = F6): max fallbacks from one K-configuration / n_K = 0.781 (farrise25_n32, sha1 8941d1c9…: 25 of 32; REFEREE, as the
+  packet's 0.78) and 0.75 (wd16_s2: 12 of 16; ccl_fbx_n32 + 5: 24 of 32; REFEREE-2); REFEREE-2's nk1 ((n_K − 1) per configuration) does not
+  bite, REFEREE's MUT3 (n_K // 2) bites 3. SAT-FB^K's alternative "P has no K-C-state after t" never occurs on its own in REFEREE-2's data
+  (every saturated case, 36 + 20 + 6,188, has a later K-C-state and t + 1 the last state of P), so it rests on the proof alone.
+- Data (DATA, not proof): REFEREE (successor 17; own docs/referee/scratch/fbck_probe.py (sha1 deeb2391…) on its engine rl_engine, exact levels
+  by simple-path enumeration in H^K_C; lane code not run; 0 failures in every MUT=0 run): named (box49/inst/l121_* (9), farrise25_n32,
+  wd16_s2, zcl_rx_n32, long121_n40, swlin_kill_n26, l121reader_n41; given + S3) 27 runs, 16 fallback phases, f 145, Σ |𝒞_f| / Σ |𝒞^K_f|
+  71 / 68; lib1140_part00-03 (n ≤ 40; given + S3 + 2 random) 2,725 runs, 575 fallback phases, f 1,956, 710 / 710, "RISE checks (unsat.)"
+  870 (662), 208 saturated fallbacks; lib41 (n ≤ 48; given + S3 + 1 random) 726 runs, 206 fallback phases, f 901, 261 / 259; rand3000
+  (n 6-18, k ≤ 6) 9,000 runs, 315 fallback phases, f 315, 312 saturated. THM and COR1 on EVERY fallback phase (also the 12 + 203 + 104
+  phases whose exact levels were skipped at the budget); K1, K2 (and Iσ ⊆ K at every state), K3 (1,277 phases with K = ∅: no fallback) and
+  REAL on every run. Reproduced: l121_cf35_39 f = 8, |𝒞_f| = 8, |𝒞^K_f| = 5 (vertex 40 ∉ K, n_K = 40); l121_cf_emb12 |𝒞^K_f| = 8 = f
+  (n_K = n = 41); l121_a 5. Controls: MUT1 (FB-RISE^K with + 2) bites 51 of 53; MUT2 (configuration read at t + 1) does not bite on the named
+  set; MUT3 above; MUT4 (S4c's (Ξ, w)-MINIMUM) bites RISE 3 (named) and SATFB 20, SATFB1 12, RISE 1 on rand3000. REFEREE-2 (successor 19;
+  own docs/referee-2/R2-N5-FBCK/fbck_check.py, percase.py, sbar_ext.py on its lane's Runner (si.py); lane tools not run; every non-mutation
+  run 0 violations; LEV^K_C exact by enumeration, or min(LEV^K_C, D) exactly in deep mode): named (18 runs) 15 fallback phases, f 117,
+  78 / 75; lib41_noref × 3 starts (1,230 runs) 240, f 1,103, 299 / 297; lib41 dressed + 5 (820 runs) 205, f 887, 414 / 257; random dressed
+  k4 and kO (60,000 runs each) 1,743 and 1,944; random k2 (60,000) 1,712; random kO (30,000) 847 fallback phases; K3 on 409 + 267 + 6,434
+  phases with K = ∅; RISE exact at 276 + 213 + 6 + 6,249 sources, 401 + 352 + 98 more in deep mode, 426 + 322 + 13 undecided at the cap;
+  THM and CNT (≤ n_K sources per K-configuration) decided in every fallback phase. Same instance figures as REFEREE on l121_cf35_39,
+  l121_cf_emb12, l121_a; swlin_kill_n26: 6 fallbacks, |𝒞^K_f| 3. σ̄ extension (sbar_ext.py; random G plus random H, Even H vertices of
+  out-degree ≥ 2 included, random σ): S1's σ̄ and Ξ agree on V in 100,000 / 100,000 cases (h = 4 and h = 10); control MUT=backedge (one old →
+  H edge) 8,203 differences in 20,000. Controls: plus2 bites 4 + 6, tau (Q_K cut to τ instead of C) 263 + 264, open1 above, nk1 does not
+  bite. The packet's §4 (lane, experiments/new/box49/fbconf.py): KVIOL 0 on named (17 runs), lib41 (1,047) and L-RED (311). Counts differ by
+  start choice (N-FBCK-5 = F8): lib41 Σ |𝒞_f| / Σ |𝒞^K_f| 303 / 301 (packet, 1,047 runs), 299 / 297 (REFEREE-2, 1,230), 261 / 259 (REFEREE,
+  726); no conflict, no violation on any side.
+- Signatures: REFEREE docs/referee/R-N5-FBCK.md (report f2d22ad7, sha1 913f31be56428f515652a482750cbd8c8cd3e67c there; §C 6b752e89; successor
+  17): K1-K3 (with LEV^K_C ≥ 0, non-decreasing; 𝒞^K_f the image of 𝒞_f), FB-RISE^K, SAT^K (both parts), SAT-FB^K, SAT-FB1^K, Theorem FB-C^K,
+  Corollary (i) SIGNED; Corollary (ii) SIGNED as an implication, its implicit step σ̄′|V = σ̄ made explicit and proved (FBCK-N1); quotes 9/9;
+  notes FBCK-N1..N4; no gap. REFEREE-2 docs/referee-2/R2-N5-FBCK.md (report 30237ebb, sha1 e2d7eb8db4064b7ce3a9292ae506d132e0716e40 there; §C
+  991f9e27; successor 19): K1-K3, LEV^K_C ≥ 0 and non-decreasing, FB-RISE^K, SAT^K, SAT-FB^K, SAT-FB1^K, Theorem FB-C^K, Corollary (i) SIGN;
+  Corollary (ii) SIGN AS AN IMPLICATION (in its §C: "SIGN as an implication; the σ̄ step is proved (C.3)"); quotes 9/9 (SHIFT=1 control 0/9);
+  notes N-FBCK-1..5; no gap. INDEPENDENCE: REFEREE opened no REFEREE-2 FBCK file before its push (names re-listed at 23:54Z: 0 / 0 / 0) and
+  ran no lane code; REFEREE-2 did not open REFEREE's report before pushing 30237ebb (names-only count of FBCK files on origin/claude/referee,
+  14 at 00:13:33Z and at 00:42:38Z) and declared one read of docs/referee/R-N5-READER.md @ e83fd19d l. 1-30 (another packet, READER: the
+  premise of Corollary (ii)), to check that implication; REFEREE's §C: "No effect on any verdict". §C (both): verdicts identical; joint gap
+  map EMPTY; FBCK-N1 = N-FBCK-1 (REFEREE's wording with its proof; supersedes the σ̄ half of N-FBCK-1; the scope half stands for both),
+  FBCK-N2, FBCK-N3 and FBCK-N4 AGREED by REFEREE-2, N-FBCK-2..4 ACCEPTED by REFEREE, N-FBCK-5 no conflict; nothing open.
+- TARGET.md diff: not a claim of TARGET.md section 1 or §2 (a per-phase reduction of N5's in-phase fallback count to a configuration count; no
+  running-time bound, no algorithm claim). GAPS G-N5-TIME: open.
+
+### R82 [refereed-only] N5 on EVERY game, inside one phase: on states [a, b] of one phase with (H1′) every transition an S4a step (no fallback) and τ, λ constant (λ_W need not be constant), (H2) σ̄_t = σ̄_a on [a, b], (H3′) every W-cycle of state b a W-cycle at every state of [a, b] and every honest cycle of b an honest cycle at every state of [a, b] (T_W, T_H the vertices of those end-state cycles, T := T_W ∪ T_H; the two frames' cycles may differ and other cycles may come and go), (H4′) the depth recursion (dW := 0 on T_W, dH := 0 on T_H, through τ (W) or σ̄ (honest) at Odd vertices and σ_b at Even vertices of T, d(v) := dW(v) := dH(v) := 1 + max(dW(σ_b v), dH(σ_b v)) at Even v ∉ T) well founded, equivalently the graph J_b on the Even vertices outside T (v → the first Even vertex outside T after v on v's W-play or honest play at b) acyclic, d(v) then being the number of vertices of a longest J_b-path from v, and GEN_W (RESULTS R77 (c)'s: for every v, different W-plays from v to the same cycle have different W-valuations), every vertex v has its W-play at b at every state of [a + dW(v), b] and its honest play at b at every state of [a + dH(v), b], so σ_t = σ_b on [a + max d, b] and b − a ≤ max d ≤ |Even ∖ T| ≤ n − 1 (Theorem STATIC-DEPTH′; its proof uses W-MONO and Ξ-SUCC at in-phase S4a transitions at which λ_W may change, a proof step signed by both referees for this entry: λ_W is not used); under RESULTS R77's (H1)-(H4), (H1′), (H3′) (with T_W = T_H) and (H4′) hold and d ≤ d*, so STATIC-DEPTH′ contains RESULTS R77 (c) (Remark); and a piece [a, b] (a maximal stretch of a fallback-free run of one phase with σ̄ constant), cut backwards into epochs that satisfy (H1′), (H2), (H3′) by construction, has b − a ≤ (CF + 1)·n − 1 transitions, CF the transitions of the piece at which a W-cycle or an honest cycle appears, if (H4′) holds at every epoch end, and GEN_W holds (Corollary EPOCH) (2026-10-29) — structural lemmas for N5 and a REDUCTION of a piece's length to its cycle-appearance count CF (CF is not bounded here; CONJECTURE PIECE, every piece ≤ n − 1 transitions, and CONJECTURE STATIC-DEPTH′-TIE, STATIC-DEPTH′ without GEN_W, are OPEN; not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C91.md, checker 81502454)
+- Object (L-SI successor 21, Opus 5.5; frozen, unchanged during review): packet P-N5-SDPRIME, docs/si/P-N5-SDPRIME-box25.md, sha1
+  54678c38a04842bd936a9bf4b241d47ad8ab90a3 (l-si freeze edc14c51, 2026-10-29T03:58:27Z; quote base 55e0bcbda; 12 quotes,
+  experiments/si/rund/quotecheck.py "quotes=12 bad=0", pinned with the sha1 in experiments/si/check.sh; both referees measured the pin),
+  Theorem STATIC-DEPTH′ extending RESULTS R77 (c); working note with data docs/si/N5-PIECE-box25.md (l-si 6bb0ec34). The referees' notes are
+  collected by the lane in docs/si/P-N5-SDPRIME-fixes-box25.md (l-si fc0312e2, sha1 f0bc5f4594e67fa483738f51b9e99065c4b2a2c1, L-SI
+  successor 21: F1-F6 for SDP-N2 = N-SD-5, SDP-N3 = N-SD-1, SDP-N4 = N-SD-2, SDP-N1 = N-SD-7, SDP-N5 ⊇ N-SD-3 with N-SD-4, N-SD-6; 12 quotes
+  checked by script, experiments/si/rund/quotecheck.py "quotes=12 bad=0", pinned in experiments/si/check.sh with a shifted-line control); on
+  trunk; repairs only, "This file changes NO signed statement" (fixes l. 3-4): F1 replaces the packet §1's citation of W-MONO and Ξ-SUCC
+  (as R77 (c)'s landed steps "on in-phase S4a transitions (R77's (H1))") by a proof step signed by both referees, item (a) below; F2 makes
+  the (SW) quote strictly verbatim; F3 rewords EPOCH's hypothesis ("if (H4′) holds at every epoch end, and GEN_W holds": GEN_W is a property
+  of (G, τ)); F4-F6 are records and change no statement. The statements below are in that repaired wording.
+  Setting (every game): N5 = SPEC S1-S5 (docs/new/N5-ssi-global.md) with FIX 1-4; state t = (σ_t, τ); phases as in RESULTS R80's setting
+  (λ and τ constant). Ξ_t(v): the S1 valuation (c, P, ℓ) of v's honest play (σ_t at Even vertices, σ̄_t at Odd ones); W_t(v): that of v's
+  (σ_t, τ)-play; ▷, ⊵ the S1 order, TOTAL on valuations (p′ injective, distinct sets have distinct signed weights); a valuation is a function
+  of the play. A W-cycle (honest cycle) at t: a cycle of the successor map v ↦ σ_t(v) / τ(v) (v ↦ σ_t(v) / σ̄_t(v)), as a vertex sequence up
+  to rotation; a vertex on such a cycle has that cycle as its play. Depths: dW(v) := 0 on T_W, dH(v) := 0 on T_H; Odd v: dW(v) := dW(τ v)
+  (v ∉ T_W), dH(v) := dH(σ̄ v) (v ∉ T_H); Even v ∈ T_H ∖ T_W: dW(v) := dW(σ_b v); Even v ∈ T_W ∖ T_H: dH(v) := dH(σ_b v); Even v ∉ T:
+  dW(v) := dH(v) := d(v) := 1 + max(dW(y), dH(y)), y := σ_b(v); max d is taken over Even v ∉ T (0 if there is none). n: the number of
+  vertices.
+- Claims signed (both referees "(Opus 5.5, D15)", L37), on every game; no item uses (P); premises LANDED: SPEC S1 (valuation, order), S2
+  (Iσ), S4a (arena {σ(v)} ∪ Iσ(v); Even's one-player optimum), S4c (FALLBACK); RESULTS R15 (a) Lemma A and (d); RESULTS R18 (d) Lemma S (a)
+  on S4a's arena, the standing premise P2 as listed in RESULTS R69; (SW) "every Even switch of N5 is to an edge of Iσ", as listed among
+  RESULTS R72's landed premises; RESULTS R77 (c) (GEN_W's definition; its proof steps W-MONO and Ξ-SUCC, landed under R77's (H1), which
+  includes λ_W constancy; for the Remark its (H1)-(H4), H_b and d*); RESULTS R80 (a) EVERY-SWITCH and R80's phase setting:
+  (a) Facts used as proof steps, signed by both referees for this entry (SDP-N2 = N-SD-5, F1): W-MONO (P2 / R18 (d) Lemma S (a) at one S4a
+      step) and Ξ-SUCC (R15 (a), (d) + (SW)) hold at every in-phase S4a transition; λ_W is not used. (W-MONO: W_{t+1} ⊵ W_t, since σ_t uses
+      only arena edges and σ_{t+1} is pointwise W-optimal over the strategies using arena edges. Ξ-SUCC: Ξ_t(σ_t v) is non-decreasing along
+      in-phase S4a transitions: if v keeps, Ξ_{t+1}(σ_t v) ⊵ Ξ_t(σ_t v) by R15 (a), (d); if v switches, (SW) gives Ξ_t(σ_{t+1} v) ▷ Ξ_t(σ_t v)
+      and R15 (a), (d) give Ξ_{t+1}(σ_{t+1} v) ⊵ Ξ_t(σ_{t+1} v).) This extends RESULTS R77's landed facts, which are stated under λ_W
+      constancy, to the transitions at which λ_W changes; STATIC-DEPTH′ needs it. REFEREE §C (d693a6fe): "SDP-N2 SETTLED (Lead's question):
+      the extension of W-MONO and Ξ-SUCC to in-phase S4a transitions at which λ_W changes is a SIGNED PROOF STEP of this entry, not a note."
+      REFEREE-2 §C C.3 (9784229a): "YES, it is signed as a proof step, with a citation repair." The (M2κ) citation R77 gives for Ξ-SUCC is
+      replaced by R15 (a), (d) (N-SD-5: "fine but stronger than needed").
+  (b) Theorem STATIC-DEPTH′ (§2): on states [a, b] of one phase with (H1′) every transition t → t + 1, a ≤ t < b, an S4a step (no fallback),
+      τ and λ constant on [a, b] (λ_W need not be constant); (H2) σ̄_t = σ̄_a for t ∈ [a, b]; (H3′) every W-cycle at b is a W-cycle at every
+      t ∈ [a, b], and every honest cycle at b is an honest cycle at every t ∈ [a, b] (T_W / T_H := the vertices of the W-cycles / honest
+      cycles at b; T := T_W ∪ T_H; the two frames' cycles may differ, and other cycles may come and go); (H4′) the depth recursion of the
+      setting is well founded; and GEN_W: every v has its W-play at b at every t ∈ [a + dW(v), b] and its honest play at b at every
+      t ∈ [a + dH(v), b]. Hence σ_t = σ_b on [a + max d, b], and b − a ≤ max d ≤ |Even ∖ T| ≤ n − 1 (T ≠ ∅: every play ends in a cycle).
+      (Induction along the recursion: item 1, an end-state cycle keeps its vertices settled from a and fixes σ_t = σ_b on Even vertices of T;
+      items 2-3, settling passes back one step through Odd vertices and through Even vertices of the other frame's T; item 4 at Even v ∉ T:
+      (A) y = σ_b(v) is kept or improving at v from a + max(dW(y), dH(y)) on, by (SW) and Ξ-SUCC; (B) W_{t+1}(v) = W_b(v) by P2's pointwise
+      optimality and W-MONO; (C) the W-play of v at t + 1 ends in the same end-state cycle, and GEN_W makes it the play at b; item 5, a
+      transition with σ unchanged would contradict R80 (a).) The proof does not use R77's (CV) (cycle vertices constant); item 1, from (H3′),
+      replaces it, which is what lets other cycles come and go (N-SD-6 = F6, ACCEPTED by REFEREE).
+  (c) (H4′)'s equivalence (§2; REFEREE: "SIGNED (checked by proof)"; REFEREE-2: "SIGN (proof steps; checked)"): the recursion is well
+      founded ⇔ the graph J_b on the Even vertices outside T, with an edge v → v′ when v′ is the first Even vertex outside T after v on v's
+      W-play at b or on v's honest play at b, is acyclic; and then d(v) is the number of vertices of a longest J_b-path from v, so
+      max d ≤ |Even ∖ T|. Parenthesis: a cycle of the recursion that meets no Even vertex outside T would be a cycle of one frame's successor
+      map at b outside that frame's end-state cycles, which does not exist.
+  (d) Remark (§2): STATIC-DEPTH′ contains RESULTS R77 (c). Under R77's (H1)-(H4): (H1) gives (H1′); (H3) gives (H3′) with T_W = T_H = the
+      common cycle vertices; a J_b-edge follows σ_b at Even vertices and τ or σ̄ at Odd ones through vertices outside T, i.e. it is a path of
+      R77's H_b, so (H4) gives (H4′); and d(v) ≤ R77's d*(v) (both count the Even non-cycle vertices of a path, J_b's paths being H_b's). So
+      R77 (c)'s bound follows from STATIC-DEPTH′. New: the W- and honest cycles may differ, cycles other than the end state's may come and go,
+      and λ_W may change.
+  (e) Corollary EPOCH (§3, with F3), a REDUCTION. A PIECE: a maximal stretch [a, b] of states of a fallback-free run of one phase on which σ̄
+      is constant (so (H1′), (H2) hold on it). Epochs: b_k := b; a_k := the least state of [a, b_k] such that every W-cycle (honest cycle) of
+      state b_k is a W-cycle (honest cycle) at every state of [a_k, b_k]; then b_{k−1} := a_k − 1, and so on down to a; each epoch
+      [a_i, b_i] satisfies (H1′), (H2), (H3′) with end state b_i, by construction. CF := the transitions t → t + 1 of [a, b] at which some
+      W-cycle (honest cycle) of state t + 1 is not a W-cycle (honest cycle) of state t. Claim: if (H4′) holds at every epoch end b_i, and
+      GEN_W holds, then |[a, b]| = b − a = Σ_i (b_i − a_i) + (k − 1) ≤ k(n − 1) + k − 1, and k − 1 ≤ CF; so b − a ≤ (CF + 1)·n − 1. (STATIC-DEPTH′
+      per epoch; for i ≥ 2 the minimality of a_i gives a cycle of b_i that appears at a_i − 1 → a_i, and these k − 1 transitions are distinct.)
+- Not signed: the packet's §4 (as the packet says): the DATA, CONJECTURE PIECE (every piece has ≤ n − 1 transitions, OPEN) and CONJECTURE
+  STATIC-DEPTH′-TIE (STATIC-DEPTH′ without GEN_W, OPEN). The packet §1's premise line as written (W-MONO and Ξ-SUCC cited as R77 (c)'s landed
+  steps, whose scope (H1) includes λ_W constancy, which (H1′) drops): it does not cover the transitions at which λ_W changes; not false;
+  repaired by F1 into (a). The packet's (SW) quote with "…" where the source has only a line break (SDP-N3 = N-SD-1; content identical;
+  repaired by F2). EPOCH's "GEN_W at every epoch end" as written (SDP-N4 = N-SD-2: redundant, GEN_W being a property of (G, τ) with τ fixed on
+  the phase; reworded by F3).
+- Honest limits: (i) EPOCH is a REDUCTION, not a bound: CF is not bounded, nor is the number of pieces of a phase. CONJECTURE PIECE stays
+  OPEN; the packet's §3: "CONJECTURE PIECE ... reduces to the pieces with CF ≥ 1". READING (Lead), from EPOCH's construction: a piece in which
+  every cycle of its end state b is a cycle at every state of the piece is one epoch (k = 1), and then (H4′) at b and GEN_W give b − a ≤ n − 1
+  by STATIC-DEPTH′; so the pieces this entry leaves open are those in which an end-state cycle forms inside the piece (a cycle of b appears
+  at a transition of the piece), besides those where (H4′) fails at an epoch end or GEN_W fails. (ii) GEN_W is a hypothesis; CONJECTURE
+  STATIC-DEPTH′-TIE is OPEN (the conclusion held wherever the used form of GEN_W failed: packet §4, 22 pieces; REFEREE 161 intervals;
+  REFEREE-2 132 + 173). (iii) Thin spots (SDP-N5 ⊇ N-SD-3, F5): "other cycles come and go" is exercised in only 3 + 0 + 3 intervals
+  (REFEREE-2; REFEREE did not count it); EPOCH with CF ≥ 1 on few pieces (REFEREE 25 / 41 / 137 / 438; REFEREE-2 24 + 50 with every
+  hypothesis), and (CF + 1)n − 1 is far from reached (no piece longer than n − 1 in any referee's data); MUT=1 (settling from d − 1) bites
+  only where the bound is sharp. The other new freedoms are well exercised: T_W ≠ T_H in 3,409 intervals (REFEREE, all corpora) and 6,158 +
+  4,811 + 159 (REFEREE-2), λ_W changing in 585 and 562 + 681 + 159. (iv) Every hypothesis carries weight in data: (H4′) is not vacuous
+  (N-SD-4 = F5: fails at 4 + 28 (H3′)-intervals, REFEREE-2; 4 + 2 + 1 (H4′) failures in the lane's data (alt_all, lib41, random; F5 counts the first two), N5-PIECE-box25 §2); both halves of (H3′) (REFEREE MUT2,
+  W-cycles only: SDV 77, SD 1, SB 1 on lib41; REFEREE-2 onlyH 3,009 + 38 with the length bound failing 23 + 1 times, onlyW 368 + 30, LEN 7);
+  the dH half of d (REFEREE MUT3, W-frame depth only: SD 17, SDV 3,924 on lib41); honest-cycle appearances in CF (REFEREE MUT4: 5 + 2 on k − 1 ≤ CF); the depth is exact
+  (REFEREE MUT1 14,126 on lib41; REFEREE-2 dm1 19,355 + 923), and b − a = max d is attained (REFEREE 369 / 383 / 359 / 152 intervals,
+  REFEREE-2 369 + 429). (v) Nothing here bounds N5's running time.
+- Data (DATA, not proof): the packet's §4 (lane, experiments/si/piece/sdprime.py and epochs.py; one engine, n5x; DEFAULT S3 starts, F4):
+  STATIC-DEPTH′'s hypotheses hold on 844 of 872 alt_all pieces (R77's: 708), 914 / 943 lib41, 940 / 1,080 random 𝒞^kO; 0 violations of the
+  per-vertex settling, of b − a ≤ max d and of b − a ≤ n − 1; MUT=1 (d − 1) fails 912 / 74 times; EPOCH ≤ 6 epochs and CF ≤ 5 per piece, 0
+  violations; pieces outside STATIC-DEPTH′ ≤ 0.43(n − 1) in alt_all, a climb found none above 0.71(n − 1). Recount with the pinned starts
+  (F4, piece/sdprime_alt_start.txt): 1,140 alt_all pieces (1,131 without the 9 games with no Odd choice vertex), (H3′) fails 25, (H4′) 2, the
+  hypotheses hold on 1,113 (97.6 %; the 9 GEN_W-failure pieces counted, not excluded), 0 violations. REFEREE (successor 17; own
+  docs/referee/scratch/sdprime_probe.py (sha1 11d9b745…) on its engine rl_engine; lane code not run; 0 failures in every MUT=0 run):
+  alt_all (413 games, n ≤ 600, given start else S3; 413 runs) 4,791 STATIC-DEPTH′ intervals (905 with T_W ≠ T_H, 153 with λ_W changing),
+  pieces 5,765 (1,132 with ≥ 1 transition), the hypotheses on 1,098 of 1,132 (97.0 %) and R77's on 918 (81.1 %); lib41 (727 runs) 5,440
+  intervals; lib1140 (1,857 runs) 7,929; random rand_ck (n 6-20, k ≤ 6; 12,000 runs) 2,175; Remark: (H3′) and max(dW, dH) ≤ d* at 3,878 +
+  4,538 + 6,380 + 2,080 R77 instances, 0 failures; at most 6 epochs and CF ≤ 5 per piece; λ_W-changing in-phase S4a transitions: W-MONO and
+  Ξ-SUCC 0 failures at 285 (alt_all) + 214 (lib41) (scratch/lw_facts.py). REFEREE-2 (successor 19; own
+  docs/referee-2/R2-N5-SDPRIME/sdprime_check.py on its lane's Runner (si.py); lane tools not run; every non-mutation run 0 violations):
+  alt_all (413 runs) 1,133 pieces, 32,404 (H3′)-intervals (every sub-interval of a piece up to length 60); lib41_noref × 3 (1,230 runs)
+  1,812 pieces, 52,303 intervals; named (8 runs) 91 pieces, 634 intervals; random kO / k2 / k4 (24,000 runs); item 4 (A) checked at
+  10,540,227 + 8,589,064 + 38,414 instances, (B) at 9,531,639 + 7,602,983 + 29,715; H4EQ and DEQ ((c)) 0 failures; Remark on 26,103 + 47,270
+  + 475 R77 intervals, 0 failures; EPOCH's cut, sum, appearance and length checks 0 failures; W-MONO and Ξ-SUCC 0 failures at 283 + 657 + 24
+  + 56 λ_W-changing transitions; longest STATIC-DEPTH′ interval 55 transitions (x32_rand64, n 64, max d 56). Piece counts (SDP-N1 = N-SD-7,
+  F4): the referees agree with each other (alt_all pieces with ≥ 1 transition: 1,132 and 1,133); the lane found the cause of §4's 872: its
+  corpus run used the default S3 start for every file (the list's second column, a pinned .start file on 94 of its 413 lines, was not
+  read); the remaining 1-9 difference to 1,140 / 1,131 is not determined (fixes F4). No signed statement uses any count.
+- Signatures: REFEREE docs/referee/R-N5-SDPRIME.md (report 573d2695, sha1 47d5287569a739ec4e491e26fb1a263ee785733f there; §C d693a6fe;
+  successor 17): STATIC-DEPTH′ SIGNED; (H4′)'s "Equivalently" and its parenthesis SIGNED (checked by proof); the Remark (contains R77 (c))
+  SIGNED; Corollary EPOCH SIGNED (a REDUCTION: CF unbounded); quotes 12/12 (own scratch/flip_quotes.py, which treats "…" as a separator);
+  notes SDP-N1..N5; no gap. REFEREE-2 docs/referee-2/R2-N5-SDPRIME.md (report bf48b8f4, sha1 e12e36413fe3e7e25ca9eea63fbe6c67c67ab94c there;
+  §C 9784229a; successor 19): STATIC-DEPTH′ SIGN; (H4′)'s equivalence and d(v) = vertices of a longest J_b-path SIGN (proof steps; checked);
+  the Remark SIGN; Corollary EPOCH SIGN (a REDUCTION; GEN_W wording, N-SD-2); quotes 11/12 strictly verbatim, the twelfth with a spurious
+  "…" (N-SD-1, content identical), SHIFT=1 control 0/12; notes N-SD-1..7; no gap. INDEPENDENCE: REFEREE opened no docs/referee-2/ file on
+  SDPRIME (names only at 04:33Z: 0 on its tree, 25 on origin/claude/referee-2, 18 on trunk docs/referee-2/; none read) and ran no lane code;
+  REFEREE-2 opened no docs/referee/ file on SDPRIME before pushing bf48b8f4 (names-only count 0 at 04:04:20Z and at 04:12:45Z) and ran no
+  lane tool. §C (both): verdicts identical (STATIC-DEPTH′, (H4′)'s equivalence with d = longest J_b-path count, the Remark, EPOCH); joint
+  gap map EMPTY; SDP-N2 = N-SD-5 SETTLED as a signed proof step (item (a)); SDP-N3 = N-SD-1, SDP-N4 = N-SD-2, SDP-N1 = N-SD-7 matched;
+  SDP-N5 ⊇ N-SD-3, N-SD-4 and N-SD-6 ACCEPTED by REFEREE; quotes 12/12 in content, one cosmetic "…"; nothing open.
+- TARGET.md diff: not a claim of TARGET.md section 1 or §2 (structural lemmas on N5 inside one phase and a reduction of a piece's length to
+  its cycle-appearance count; no running-time bound, no algorithm claim). GAPS G-N5-TIME: open.
+
+### R83 [refereed-only] N5 on EVERY game, inside one phase: at an in-phase S4a transition t → t + 1, a change y1 := σ̄_t(u) ≠ y2 := σ̄_{t+1}(u) of Odd's best reply at an Odd vertex u with (i) u on no honest cycle at t and at t + 1, (ii) y2's honest t-play not through u, and (iii) Ξ_t(y1) ≠ Ξ_t(y2) strictly raises Ξ at u itself, Ξ_{t+1}(u) ▷ Ξ_t(u) (Lemma GATE-RISE: the strict form, in Ξ and for every Odd u, of RESULTS R61 (e) Lemma ALT, proved without R61's conditionality on R56 and R58), so on a run S (a maximal stretch of states of one phase with no fallback between them) G(S) ≤ Σ_u (XR_S(u) + TIE_S(u) + CYC_S(u) + THRU_S(u)) over the Odd vertices u of out-degree ≥ 2, G(S) the σ̄-changing transitions of S, XR_S(u) the transitions of S changing Ξ(u), and TIE_S(u), CYC_S(u), THRU_S(u) the σ̄(u)-changes of S at which (iii) fails, (i) fails, and (i) holds but (ii) fails (its Count); with E_2 the Even vertices of out-degree ≥ 2 and, at a state b of S, X_b the least set of Even vertices containing E_2 and every Even vertex on the W-play or honest play at b of one of its members, V^W_b (V^H_b) the vertices on the W-plays (honest plays) at b of the members of X_b (every Even vertex of V^W_b ∪ V^H_b is in X_b, and V^W_b (V^H_b) is closed under the W-successor (honest successor) at b), RO_b the Odd vertices on those honest plays, CW_b (CH_b) the W-cycles (honest cycles) at b on which those W-plays (honest plays) end, T_W, T_H their vertices and T := T_W ∪ T_H: if states [a, b] of S are REL-ADMISSIBLE (σ̄_t(u) = σ̄_b(u) for every u ∈ RO_b and t ∈ [a, b], and every cycle of CW_b (CH_b) a W-cycle (honest cycle) at every t ∈ [a, b]; σ̄ may move at Odd vertices outside RO_b, and other cycles may come and go), (H4′_rel) the depth recursion on V^W_b and V^H_b (dW := 0 on T_W, dH := 0 on T_H, through τ (W) or σ̄_b (honest) at Odd vertices and σ_b at Even vertices of T, d(v) := dW(v) := dH(v) := 1 + max(dW(σ_b v), dH(σ_b v)) at Even v ∉ T; it stays in its domains) is well founded, and GEN_W (RESULTS R77 (c)'s: for every v, different W-plays from v to the same cycle have different W-valuations) holds, then every v ∈ V^W_b has its W-play at b at every state of [a + dW(v), b] and every v ∈ V^H_b its honest play at b at every state of [a + dH(v), b], so σ_t = σ_b on [a + max_{v ∈ E_2 ∖ T} d(v), b] and b − a ≤ max_{v ∈ E_2 ∖ T} d(v) ≤ |Even ∖ T| ≤ n − 1 (Theorem STATIC-DEPTH-REL; its proof uses W-MONO and Ξ-SUCC at in-phase S4a transitions at which λ_W may change, a proof step signed by both referees for this entry: λ_W is not used); and a run S cut from its end into SEG(S) maximal REL-admissible segments [a_i, b_i] has |S| = Σ_i (b_i − a_i) + SEG(S) − 1 ≤ SEG(S)·n − 1 transitions if (H4′_rel) and GEN_W hold at every segment end b_i, each cut a_i − 1 → a_i (i ≥ 2) being a transition at which σ̄ changes at a vertex of RO_{b_i} or a cycle of CW_{b_i} ∪ CH_{b_i} appears, so SEG(S) − 1 ≤ G(S) + CF(S), CF(S) the transitions of S at which a W-cycle or an honest cycle appears (Corollary REL-SPLIT) (2026-10-29) — structural lemmas for N5 and a REDUCTION of a run's length to its segment count SEG (SEG is not bounded here; CONJECTURE SEG-RUN, SEG = O(n), is OPEN, and with REL-SPLIT it would give O(n²) transitions per run on runs where (H4′_rel) and GEN_W hold at every segment end, not O(n); not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C92.md, checker 76272f51)
+- Object (L-SI successor 21, Opus 5.5; frozen, unchanged during review): packet P-N5-REL, docs/si/P-N5-REL-box25.md, sha1
+  f79300a2d01cfb0aa27ad7214bcefbd84eafd7bb (l-si freeze 07f19760, 2026-10-29T04:13:22Z; quote base b28123a58; 17 quotes,
+  experiments/si/rund/quotecheck.py "quotes=17 bad=0", pinned with the sha1 in experiments/si/check.sh; both referees measured the pin),
+  Lemma GATE-RISE with its Count, Theorem STATIC-DEPTH-REL and Corollary REL-SPLIT. SELF-CONTAINED: the packet's §2 proves STATIC-DEPTH-REL
+  in full and does not use P-N5-SDPRIME's Theorem STATIC-DEPTH′ (packet l. 8-9). Working note with data docs/si/N5-GRUN-box25.md (l-si
+  3433460b). The referees' notes are collected by the lane in docs/si/P-N5-REL-fixes-box25.md (l-si 843cf5b5, sha1
+  16a74626d77dddc088a573005481360d6ab2b699, L-SI successor 21: F1-F9 for REL-N1, REL-N2 = N-REL-6, REL-N3 = N-REL-4, REL-N5 = N-REL-1,
+  REL-N4 ~ N-REL-7, N-REL-2, N-REL-3, N-REL-5, N-REL-8; 12 quotes checked by script, experiments/si/rund/quotecheck.py "quotes=12 bad=0",
+  pinned in experiments/si/check.sh with a shifted-line control); on trunk; repairs only, "This file changes NO signed statement" (fixes
+  l. 3-4): F1 cites RESULTS R61 (e) Lemma ALT for GATE-RISE (REL-N1); F2 replaces the packet's citation of W-MONO and Ξ-SUCC (as RESULTS R77
+  (c)'s landed steps "on in-phase S4a transitions") by a proof step signed by both referees, item (a) below (REL-N2 = N-REL-6); F3 renames
+  the packet §2's Q (the Even vertices of out-degree ≥ 2) to E_2, the fleet's Q being the Odd vertices of out-degree ≥ 2 (REL-N3 =
+  N-REL-4); F4 makes the (SW) quote strictly verbatim (REL-N5 = N-REL-1); F6 rewords GATE-RISE's step 3 (N-REL-2); F8 corrects the scope of
+  the not-signed Remark (N-REL-5); F5, F7, F9 are records and change no statement. The statements below are in that repaired wording.
+  Setting (every game): N5 = SPEC S1-S5 (docs/new/N5-ssi-global.md) with FIX 1-4; state t = (σ_t, τ); phases as in RESULTS R80's setting
+  (λ and τ constant). A RUN S: a maximal stretch of states of one phase with no fallback between them; its transitions are in-phase S4a
+  steps (λ_W, the W-frame's cycle-node map, need not be constant on S). Ξ_t(v): the S1 valuation (c, P, ℓ) of v's honest play (σ_t at Even
+  vertices, σ̄_t at Odd ones); W_t(v): that of v's (σ_t, τ)-play; ▷, ⊵ the S1 order, TOTAL on valuations (p′ injective, distinct sets have
+  distinct signed weights); a valuation is a function of the play; u ⊕ x: the valuation of the play u followed by a play of valuation x
+  (RESULTS R17 (a) (V1)). A W-cycle (honest cycle) at t: a cycle of the successor map v ↦ σ_t(v) / τ(v) (v ↦ σ_t(v) / σ̄_t(v)), as a vertex
+  sequence up to rotation; a vertex on such a cycle has that cycle as its play. For a run S: G(S) := the transitions of S with σ̄_t ≠
+  σ̄_{t+1}; CH_S(u) := the σ̄(u)-changes of S; XR_S(u) := the transitions of S at which Ξ(u) changes; CF(S) := the transitions of S at which
+  a W-cycle or an honest cycle appears. E_2 := the Even vertices of out-degree ≥ 2 (F3). X_b, V^W_b, V^H_b, RO_b, CW_b, CH_b, T_W, T_H, T at a
+  state b of S as in the title. Depths: dW on V^W_b, dH on V^H_b: dW(v) := 0 for v ∈ T_W; dH(v) := 0 for v ∈ T_H; Odd v: dW(v) := dW(τ v)
+  (v ∉ T_W), dH(v) := dH(σ̄_b v) (v ∉ T_H); Even v ∈ T_H ∖ T_W: dW(v) := dW(σ_b v); Even v ∈ T_W ∖ T_H: dH(v) := dH(σ_b v); Even v ∉ T:
+  dW(v) := dH(v) := d(v) := 1 + max(dW(y), dH(y)), y := σ_b(v); max ∅ := 0. (H4′_rel): this recursion is well founded. n: the number of
+  vertices.
+- Claims signed (both referees "(Opus 5.5, D15)", L37), on every game; no item uses (P); premises LANDED: SPEC S1 (valuation, order, Ξσ
+  against σ̄), S2 (Iσ), S4a (arena {σ(v)} ∪ Iσ(v); Even's one-player optimum), S4c (FALLBACK); RESULTS R15 (a) Lemma A and (d); RESULTS R17
+  (a) (V1), (V2); RESULTS R57 (a) premise (VJ); RESULTS R18 (d) Lemma S (a) on S4a's arena, the standing premise P2 as listed in RESULTS R69;
+  (SW) "every Even switch of N5 is to an edge of Iσ", as listed among RESULTS R72's landed premises; RESULTS R77 (c) (GEN_W's definition;
+  its proof steps W-MONO and Ξ-SUCC, landed under R77's (H1), which includes λ_W constancy, are replaced here by item (a)); RESULTS R80 (a)
+  EVERY-SWITCH and R80's phase setting. RESULTS R61 (e) Lemma ALT (landed, CONDITIONAL on RESULTS R56 and R58) is cited for comparison only
+  (item (b)); no item uses it as a premise. No item uses P-N5-SDPRIME or STATIC-DEPTH′.
+  (a) Facts used as proof steps, signed by both referees for this entry (REL-N2 = N-REL-6, F2): (W-MONO) W_{t+1} ⊵ W_t at every in-phase S4a
+      transition (P2; RESULTS R18 (d) Lemma S (a), at one S4a step); (Ξ-SUCC) Ξ_t(σ_t v) non-decreasing along in-phase S4a transitions
+      (RESULTS R15 (a), (d) and (SW)); λ_W is not used. (W-MONO: σ_t uses only arena edges, and σ_{t+1} is pointwise W-optimal over the
+      strategies using arena edges. Ξ-SUCC: if v keeps, Ξ_{t+1}(σ_t v) ⊵ Ξ_t(σ_t v) by R15 (a), (d); if v switches, (SW) gives
+      Ξ_t(σ_{t+1} v) ▷ Ξ_t(σ_t v) and R15 (a), (d) give Ξ_{t+1}(σ_{t+1} v) ⊵ Ξ_t(σ_{t+1} v).) This extends RESULTS R77's landed facts, which are
+      stated under λ_W constancy, to the transitions at which λ_W changes; STATIC-DEPTH-REL needs it on runs, which do not fix λ_W.
+      REFEREE §C (a343d6b4): "REL-N2 = N-REL-6 (W-MONO / Ξ-SUCC at λ_W changes; the same signed proof step as SDPRIME's §C)." REFEREE-2 §C
+      (b6811cf1): "REL-N2 (W-MONO / Ξ-SUCC beyond R77 (H1)) = N-REL-6. The same signed proof step as SDPRIME §C.3. Identical." REFEREE-2's
+      N-REL-6: "Both facts hold at every in-phase S4a transition: P2 at one step, and R15 (a), (d) with (SW)." The (M2κ) citation R77 gives
+      for Ξ-SUCC is replaced by R15 (a), (d) (F2).
+  (b) Lemma GATE-RISE (§1, with F1 and F6): let t → t + 1 be an in-phase S4a transition and u an Odd vertex with σ̄_t(u) = y1 ≠ y2 =
+      σ̄_{t+1}(u), such that (i) u is on no honest cycle at t and at t + 1, (ii) y2's honest t-play does not pass through u, (iii) Ξ_t(y1) ≠
+      Ξ_t(y2). Then Ξ_{t+1}(u) ▷ Ξ_t(u). (Step 1, (i) and (V1): Ξ_t(u) = u ⊕ Ξ_t(y1), Ξ_{t+1}(u) = u ⊕ Ξ_{t+1}(y2). Step 2: τ′ := σ̄_t with u's
+      choice changed to y2; by (ii) y2's (σ_t, σ̄_t)-play is also its (σ_t, τ′)-play and u's (σ_t, τ′)-play is u followed by it, so
+      V_{σ_t,τ′}(u) = u ⊕ Ξ_t(y2), and (VJ) gives u ⊕ Ξ_t(y1) ⊴ u ⊕ Ξ_t(y2). Step 3 (F6): "x ↦ u ⊕ x is strictly monotone on the values of
+      plays avoiding u: monotone by (V2); for two such x with the same cycle node c it adds u to both path sets or to neither and 1 to both
+      lengths, so the comparison is unchanged and x is recovered; for different cycle nodes u ⊕ keeps each cycle node, so the order (decided
+      by the cycle nodes) is kept"; Ξ_t(y1) and Ξ_t(y2) are values of plays avoiding u, by (i) and (ii); with (iii) and totality, Ξ_t(y1) ◁
+      Ξ_t(y2). Step 4: R15 (a), (d) give Ξ_{t+1}(y2) ⊵ Ξ_t(y2), so Ξ_{t+1}(u) = u ⊕ Ξ_{t+1}(y2) ⊵ u ⊕ Ξ_t(y2) ▷ u ⊕ Ξ_t(y1) = Ξ_t(u).) F1
+      (REL-N1): "GATE-RISE is the strict form, in Ξ and for every Odd u (not only u ∈ Q_c), of RESULTS R61 (e) Lemma ALT; its proof here uses
+      only R57 (a), R17 (a) and R15 (a), (d), so it does not inherit R61's conditionality on R56 and R58." (R61 (e), landed: a clean change at
+      q ∈ Q_c, q ≠ c, "has κ_{t+1}(q) ≥ κ_t(q), with equality only if κ_t(y2) = κ_t(y1) and κ_{t+1}(y2) = κ_t(y2) (a TIE at t)".) REFEREE
+      (report §1): "GATE-RISE is the strict form of RESULTS R61 (e) Lemma ALT"; REFEREE-2 §C C.3: "ACCEPTED, MISSED by me", after reading
+      R61 (e)'s landed text.
+  (c) Its Count (§1): for a run S and an Odd u, every σ̄(u)-change of S is clean ((i)-(iii) hold), TIE ((iii) fails), CYC ((i) fails) or
+      THRU ((i) holds, (ii) fails) (the kinds may overlap; the sum still bounds), and each clean change is a transition at which Ξ(u) changes;
+      so CH_S(u) ≤ XR_S(u) + TIE_S(u) + CYC_S(u) + THRU_S(u), and, summing over the Odd vertices of out-degree ≥ 2 (every σ̄-changing
+      transition changes σ̄ at one of them), G(S) ≤ Σ_u (XR_S(u) + TIE_S(u) + CYC_S(u) + THRU_S(u)).
+  (d) Theorem STATIC-DEPTH-REL (§2, with F3), the domain-closure sentences of its definitions included (REFEREE: "SIGNED, including the
+      domain-closure sentences of the definitions"; REFEREE-2: "SIGN (RCLOSE / RDOM checked)"). Definitions at a state b of a run S as in the
+      Setting; every Even vertex of V^W_b ∪ V^H_b is in X_b, and V^W_b (V^H_b) is closed under the W-successor (honest successor) at b; the
+      recursion stays in its domains: τ(v) (Odd v) and σ_b(v) (Even v) of v ∈ V^W_b are on the same W-play, so in V^W_b; σ̄_b(v), σ_b(v) of
+      v ∈ V^H_b likewise in V^H_b; for Even v ∉ T, v ∈ X_b and y = σ_b(v) lies on both of v's b-plays, so y ∈ V^W_b ∩ V^H_b. [a, b] ⊆ S is
+      REL-ADMISSIBLE if σ̄_t(u) = σ̄_b(u) for every u ∈ RO_b and t ∈ [a, b], and every cycle of CW_b (CH_b) is a W-cycle (honest cycle) at every
+      t ∈ [a, b]. Statement: let [a, b] ⊆ S be REL-admissible, with (H4′_rel) and GEN_W. Then every v ∈ V^W_b has its W-play at b at every
+      t ∈ [a + dW(v), b], and every v ∈ V^H_b its honest play at b at every t ∈ [a + dH(v), b]; σ_t = σ_b for t ∈ [a + max_{v ∈ E_2 ∖ T} d(v),
+      b]; and b − a ≤ max_{v ∈ E_2 ∖ T} d(v) ≤ |Even ∖ T| ≤ n − 1 (T ≠ ∅ when E_2 ≠ ∅; if E_2 = ∅ there is no in-phase S4a step and b = a).
+      (Induction along the well-founded recursion: item 1, a cycle of CW_b (CH_b) is a W-cycle (honest cycle) at every t, so its vertices are
+      settled from a, and an Even v ∈ T has σ_t(v) = σ_b(v); item 2, Odd v ∈ V^W_b ∖ T_W settles through τ(v), and Odd v ∈ V^H_b ∖ T_H lies in
+      RO_b, where REL-admissibility fixes σ̄(v) on [a, b], and settles through σ̄_b(v), the only use of σ̄; item 3, Even vertices of the other
+      frame's T settle through σ_b(v); item 4 at Even v ∉ T (so v ∈ X_b): (A) y = σ_b(v) is kept or improving at v from a + max(dW(y), dH(y))
+      on, by (SW), Ξ-SUCC and y's H-settledness; (B) W_{t+1}(v) = W_b(v) by P2's pointwise optimality and W-MONO; (C) v's W-cycle at b is in
+      CW_b, so v's W-play at t + 1 ends in it, and GEN_W makes it the play at b, whence σ_{t+1}(v) = y and v's honest play at t + 1 is its
+      honest play at b; item 5, from a + max_{E_2 ∖ T} d on σ_t = σ_b on E_2 (items 1, 4), the other Even vertices have out-degree 1, and a
+      further transition would contradict R80 (a); a longest recursion path from v ∈ E_2 ∖ T visits distinct Even vertices outside T.)
+  (e) Corollary REL-SPLIT (§3, with F3), a REDUCTION. Cut a run S = [s, e] from its end: b_k := e; a_k := the least state of [s, b_k] with
+      [a_k, b_k] REL-admissible (with respect to b_k's sets); then b_{k−1} := a_k − 1, and so on down to s; SEG(S) := k. Claim: if (H4′_rel)
+      and GEN_W hold at every b_i, then |S| = e − s = Σ_i (b_i − a_i) + SEG − 1 ≤ SEG·n − 1; every cut a_i − 1 → a_i (i ≥ 2) is a transition at
+      which σ̄ changes at a vertex of RO_{b_i} or a cycle of CW_{b_i} ∪ CH_{b_i} appears; hence SEG − 1 ≤ G(S) + CF(S). (REL-admissibility of
+      [x, b_i] for b_i's sets is monotone in x, so a_i is well defined; STATIC-DEPTH-REL on each segment gives b_i − a_i ≤ n − 1; for i ≥ 2,
+      [a_i − 1, b_i] is not REL-admissible though [a_i, b_i] is, so σ̄_{a_i − 1}(u) ≠ σ̄_{b_i}(u) = σ̄_{a_i}(u) for some u ∈ RO_{b_i}, or a cycle of
+      CW_{b_i} ∪ CH_{b_i}, a cycle at a_i, is not one at a_i − 1; the cuts are distinct transitions.) REFEREE: "SIGNED (a REDUCTION: SEG
+      unbounded)"; REFEREE-2: "SIGN (a REDUCTION)".
+- Not signed: the packet's §4 (as the packet says): the DATA, the reader-proofness READING ("a reader is on no play of another vertex, an
+  anchor's plays are its own loop") and CONJECTURE SEG-RUN (SEG(S) = O(n), OPEN). The packet's §2 Remark (not in its to-sign table), as
+  written "STATIC-DEPTH-REL contains STATIC-DEPTH′ (P-N5-SDPRIME) and, through it, RESULTS R77 (c)": its corrected scope (N-REL-5 = F8;
+  REFEREE ACCEPTED it in its §C, correcting its own "true as stated") is "STATIC-DEPTH-REL contains STATIC-DEPTH′'s length bound and its
+  per-vertex settling on V^W_b ∪ V^H_b; it does not give STATIC-DEPTH′'s settling at other vertices" (e.g. a reader). STATIC-DEPTH′ is
+  P-N5-SDPRIME's theorem (RESULTS R82 (landed)); no signed item of this entry uses it. GATE-RISE's remark that (i) at t + 1 can
+  be weakened to u ≠ λ(u) (REL-N1; F1: "remark, not signed"; REFEREE §1: "Not needed for any signed statement", 4 data cases, all rising;
+  REFEREE-2 §C C.3: "The weakening holds", 1 + 4 own cases); (i) at t stays (REFEREE-2's cyc control: 8 of 23 CYC changes without a rise);
+  REFEREE-2's further data on a weakening at t ("a data point, not a checked statement. Not proposed for signature"). The packet's wording
+  as frozen, repaired by the fixes and not false: GATE-RISE without the R61 (e) citation (F1); W-MONO and Ξ-SUCC cited as R77 (c)'s landed
+  steps, whose scope (H1) includes λ_W constancy (F2); Q for the Even vertices of out-degree ≥ 2 (F3; "The statement is unambiguous as
+  written, since §2 defines it", REFEREE-2 N-REL-4); the (SW) quote with "…" where the source has only a line break (F4; content
+  identical); step 3's injectivity sentence without "u-free" (F6; both values it is applied to are u-free).
+- Honest limits: (i) REL-SPLIT is a REDUCTION, not a bound: SEG is not bounded here, nor are the runs of a phase or the phases. CONJECTURE
+  SEG-RUN (SEG = O(n)) is OPEN; its DATA bound is SEG ≤ 1.00n over all starts (F5: max SEG / n 0.79 on alt_all with default S3 and with
+  pinned starts, REFEREE 0.83 on lib41 and lib1140 (run_m_n24, SEG 20 at n 24), REFEREE-2 0.95 (lib41 lev_l_n20, random start), the lane's
+  climb 1.00 (grun/out/sg_2, SEG 29 at n 29)). READING (Lead): with SEG-RUN, REL-SPLIT gives |S| ≤ SEG·n − 1 = O(n²) transitions per run, not
+  O(n), and only on runs where (H4′_rel) and GEN_W hold at every segment end. (ii) G is not intrinsic (the lane's DATA and READING,
+  N5-GRUN-box25 §3, not refereed as a claim): Odd readers (no predecessors) lift G on runfam_K10 from 9 to 91 at n 74 (grun/out/rdr_K10,
+  .pg sha1 a7ac4830…) with the run fixed (99 transitions), and Even anchors put the readers into RESULTS R81's K with G^K 91 at n 99
+  (grun/out/anc_K10, .pg sha1 13833299…); SEG stays 9 on all three. Reproduced: REFEREE on runfam_K10, rdr_K10, anc_K10 (G 9 / 91 / 91 inside
+  the run, SEG 9; "So the readers inflate G tenfold and leave SEG unchanged"); REFEREE-2 on rdr_K10, anc_K10 (|S| = 99, G = 91, SEG = 9).
+  READING (Lead): GATE-RISE's Count reduces G(S) to the gates' XR_S plus exception counts, and XR per vertex is not bounded (RESULTS R80:
+  XR-LIN DEAD); REL-SPLIT's clause SEG − 1 ≤ G(S) + CF(S) bounds SEG by a count that readers inflate, so it is not a route to SEG-RUN; SEG
+  itself was reader-proof in these instances (DATA). (iii) GEN_W and (H4′_rel) are hypotheses. Where GEN_W's used form fails the
+  conclusions still held (REFEREE 34 / 52 / 76 intervals; REFEREE-2 132 + 164 + 1). (H4′_rel) is not vacuous: it fails at 45 of 1,908
+  segment ends (lane, alt_all, default starts; 49 with pinned starts) and at 8 + 27 REL-admissible intervals (REFEREE-2); REFEREE: REL-SPLIT's
+  hypotheses hold on 3,029 of 3,286, 4,279 of 4,353 and 11,229 of 11,445 runs; the other runs are not bounded by REL-SPLIT. (iv) The
+  hypotheses carry weight in data: σ̄ constant on RO_b carries the length bound (REFEREE MUT4: SDV 26,383, SIG 1,274, LEN 283, SPLIT 3;
+  REFEREE-2 nosbar: 212,050, including RLEN 1,450 and RSIG 1,450); GATE-RISE's (iii) (REFEREE MUT3 128 of 129 ties without a rise; REFEREE-2
+  tie 167 of 168) and (i) (REFEREE-2 cyc 8 of 23) are needed; the depth is exact (REFEREE MUT1 SDV 15,442; REFEREE-2 dm1 18,837); X_b's
+  closure is structurally needed (REFEREE-2 qonly: RDOM 246, RCLOSE 14,331; REFEREE's MUT5 did not bite because its depth routine is not
+  restricted to the domains, REFEREE §C: "ACCEPTED"). Thin spot (N-REL-3 = F7): (ii) is not shown necessary in data (REFEREE MUT2: 13 THRU
+  changes, all rising; REFEREE-2: 239; lane 73 + 176 + 56); it is used in step 2 and stays a hypothesis. (v) What the freedom buys (N-REL-8 =
+  F9): REL-admissible intervals on which σ̄ moves at an Odd vertex off RO_b: REFEREE 789 + 495 + 1,122 + 175 (readers: 175 of 273);
+  REFEREE-2 4,094 + 3,281 + 539 + 2,947 + 192 (lane instances: 2,947 of 3,012; REFEREE-2's logs carry the strict counter REL_sbar_moves_off_RO with these values; its wider REL_beyond_SDPRIME is equal in every log, and rel_check.py's _nonrel_cycle_breaks never fires). (vi) Nothing here bounds N5's running time.
+- Data (DATA, not proof): the packet's §4 (lane, experiments/si/grun/gaterise.py and relseg.py; one engine, n5x): GATE-RISE 2,114 clean
+  changes on alt_all (default S3 starts; TIE / CYC / THRU 75 / 8 / 73), 3,752 with pinned starts (82 / 10 / 176), 1,889 on lib41 (76 / 10 /
+  56), 0 failures (grun/gaterise_alt.txt, _alt_start.txt, _lib41.txt); MUT (a strict rise of Ξ(y2) demanded instead) fails 1,892 times (packet
+  §4; N5-GRUN-box25 §2); REL 1,908 segments on alt_all (2,890 with pinned starts), 0 violations, (H4′_rel) fails at 45 (49) ends, max SEG 26
+  (62, gate_K64_n581), longest segment 67 (55) (grun/relseg_alt.txt, _alt_start.txt); MUT (d − 1) 994 (packet §4; N5-GRUN-box25 §4); max SEG /
+  n 0.79 in both start sets (F5), ≤ 1.00n after climbs. REFEREE (successor 17; own docs/referee/scratch/rel_probe.py (sha1 4b35aabd…) on its
+  engine rl_engine; lane code not run; 0 failures in every MUT=0 run; logs scratch/rel_logs/): alt_all (413 games, n ≤ 600, given start else
+  S3) 413 runs (3,286 fallback-free runs S), GATE-RISE clean / TIE / CYC / THRU 3,700 / 82 / 10 / 118, 5,385 REL intervals (789 with σ̄ moving
+  off RO_b), REL-SPLIT hypotheses on 3,029 / 3,286 runs, 1,951 cuts checked, max SEG / n 0.79; lib41 (n ≤ 48; given + S3 + 1 random) 727
+  (4,353), 2,438 / 129 / 15 / 13, 5,814 (495), 4,279 / 4,353, 2,210, 0.83; lib1140 (n ≤ 40; given + S3 + 1 random; two halves) 1,857 (11,445),
+  4,063 / 169 / 68 / 91, 8,741 (1,122), 11,229 / 11,445, 3,077, 0.83 (n ≥ 2; the only SEG = n case is the one-vertex strfam_S1_n1); readers
+  (rdr_K10, anc_K10, runfam_K10; given starts) 3 (6), 445 / 22 / 0 / 0, 273 (175), 6 / 6, 24, 0.18; per-vertex settling, σ_t = σ_b, the length
+  and the cap, the Count, REL-SPLIT's sum, cuts and SEG − 1 ≤ G + CF: 0 failures. REFEREE-2 (successor 19; own
+  docs/referee-2/R2-N5-REL/rel_check.py (reusing its R2-N5-SDPRIME/sdprime_check.py) and seg_case.py; lane tools not run, lane instance files
+  copied as inputs; every non-mutation run 0 violations; REL-admissible intervals up to length 60, RELCAP 60): alt_all (413 runs; given start
+  else S3) GATE-RISE 3,713 / 82 / 10 / 125, 36,502 REL-admissible intervals (GEN_W used 36,362), Remark checks 32,400, runs S 920 (874 with
+  the hypotheses), 2,874 segments; lib41_noref × 3 (1,230 runs) 3,751 / 168 / 23 / 109, 53,652 (53,461), 50,344, 1,612 (1,536) / 4,671; named
+  (8 runs) 390 / 0 / 1 / 3, 1,173, 634, 48 (45) / 198; lane instances grun/out (28 runs) 870 / 71 / 9 / 0, 3,012, 65, 29 (29) / 407; random kO
+  n 8-20 and k2 n 6-16 (18,000 runs) 325 / 55 / 70 / 2, 2,325 (2,324), 2,132, 2,518 (2,517) / 3,047; max SEG / n 0.792 on alt_all
+  (so_sor5_n24), 0.95 on lib41 with a random start (lev_l_n20), 1.00 on sg_2; |S| / (SEG·n) ≤ 0.917 ("The bound is never reached"); longest
+  REL interval 55 transitions (x32_rand64), sharp in 395 + 442 intervals; Remark (RREM, RREM_d): 0 on 85,575 checks. Run counts differ by
+  definition: REFEREE's 3,286 counts every run, those of 0 transitions included (rel_probe.py l. 44-53), REFEREE-2's 920 only runs with ≥ 1
+  transition (rel_check.py l. 46), the lane's 921 (pinned starts) likewise (grun/relseg.py l. 48); READING (Lead) of the three tools' code, no
+  report states the cause; the remaining difference 920 / 921 is not determined. No signed statement uses any count.
+- Signatures: REFEREE docs/referee/R-N5-REL.md (report 69b12910, sha1 8ae211bd760e7a7347cdc979e22a674c4ddd5d01 there; §C a343d6b4;
+  successor 17): Lemma GATE-RISE SIGNED; its Count SIGNED; Theorem STATIC-DEPTH-REL SIGNED, including the domain-closure sentences of the
+  definitions; Corollary REL-SPLIT SIGNED (a REDUCTION: SEG unbounded); the Remark not to sign; quotes 17 in their ranges (own
+  scratch/flip_quotes.py, QUOTES 17 FAILED 0, "…" read as a separator), 16/17 strictly verbatim (the (SW) "…"); notes REL-N1..N5; no gap.
+  REFEREE-2 docs/referee-2/R2-N5-REL.md (report eb5aa2b5, sha1 b75ae5caa74662f491f2fe80164e77ec16e32e4a there; §C b6811cf1; successor 19):
+  Lemma GATE-RISE SIGN (step 3's injectivity used on u-free values only, N-REL-2); its Count SIGN; Theorem STATIC-DEPTH-REL SIGN; Corollary
+  REL-SPLIT SIGN (a REDUCTION); the Remark not signed (correct for the length bound and for settling on V^W_b ∪ V^H_b, N-REL-5); quotes
+  16/17 verbatim, the (SW) "…" (N-REL-1), SHIFT=1 control 0/17; notes N-REL-1..8; no gap. INDEPENDENCE: REFEREE opened no docs/referee-2/
+  file on REL (names matching "N5-REL" at 04:53Z: 0 on its tree, 2 on origin/claude/referee-2, 0 on trunk; names only) and ran no lane code
+  (only the data files grun/out/rdr_K10, anc_K10 copied by git show at 07f19760); REFEREE-2 opened no REL file under docs/referee/ before
+  pushing eb5aa2b5 (names-only count 0 at 04:40:50Z and at 04:54:13Z) and ran no lane tool; its one declared overlap is REFEREE's SDPRIME
+  report, read for its SDPRIME §C, on the W-MONO / Ξ-SUCC point it had found itself first (R2-N5-SDPRIME §1); REFEREE's §C: "No effect on any
+  verdict". §C (both): verdicts identical (GATE-RISE, its Count, STATIC-DEPTH-REL, REL-SPLIT); joint gap map EMPTY; REL-N1 ACCEPTED by
+  REFEREE-2 ("MISSED by me") and checked against R61 (e)'s landed text; REL-N2 = N-REL-6, REL-N3 = N-REL-4, REL-N5 = N-REL-1 identical;
+  REL-N4 ~ N-REL-7 (start sets; no conflict); N-REL-2 ACCEPTED as wording, N-REL-3 = REFEREE's MUT2, N-REL-5 ACCEPTED by REFEREE (the Remark),
+  REFEREE-2's cyc and qonly controls ACCEPTED as stronger evidence; nothing open.
+- TARGET.md diff: not a claim of TARGET.md section 1 or §2 (structural lemmas on N5 inside one phase and a reduction of a run's length to its
+  segment count SEG; no running-time bound, no algorithm claim). GAPS G-N5-TIME: open.
+
+### R84 [refereed-only] N5 on EVERY game, inside one phase: for a fixed vertex v, a phase P (λ and τ constant on P, c := λ(v)) and top_t := the highest rank in P_t := P(Ξ_t v), v's path set at state t (⊥, below every rank, if P_t = ∅), a rank being EVEN or ODD as the priority Ω of the vertex of that rank (not the parity of the rank number), at every transition t → t + 1 of P with P_t ≠ P_{t+1} the top rises only to an even rank (if top_{t+1} > top_t then top_{t+1} is even; Lemma TOP-SHAPE (a)) and an even top never falls (if top_t is even then top_{t+1} ≥ top_t; TOP-SHAPE (b)); hence along P, once the top is even it stays even and never falls, and before that it is odd or ⊥, an odd top only falling or staying until it is replaced (by a lower odd rank, by ⊥, or by a lower or higher even rank) (TOP-SHAPE (c)); so the sequence of distinct values of top_t on P is a strictly decreasing run of odd ranks, then at most one ⊥, then a strictly increasing run of even ranks, and top_t changes at most n − 1 times on P, for every vertex v and every phase P (Corollary); the proof reads the strict rise of the signed path-set weight (Ξ non-decreasing by RESULTS R15 (a), (d), the cycle node λ(v) fixed on P, distinct sets of ranks having distinct signed weights) through Fact DELTA (for sets A ≠ B of ranks, weight(B) > weight(A) iff the largest rank d in A Δ B is even and d ∈ B ∖ A, or d is odd and d ∈ A ∖ B) (2026-10-29) — structural lemmas for N5 (they bound the changes of the top only, NOT the P-changes under a fixed top, which are not bounded here; the Δ form of TOP-MONO is DEAD; not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C93.md, checker f6728213)
+- Object (L-NEW successor 30, Opus 5.5; frozen, unchanged during review): packet P-N5-TOPSHAPE, docs/new/P-N5-TOPSHAPE-box49.md, sha1
+  c5b0e8d86745d6db5e0c9f6e1551b10c5b511b8f (l-new freeze 4c2ea43e, 2026-10-29T04:59:50Z; quote base e2da18b0; 2 quotes,
+  experiments/new/box49/quotecheck3.py "quotes=2 bad=0", pinned with the sha1 and a shifted-line control in experiments/new/check.sh; both
+  referees measured the pin), Fact DELTA, Lemma TOP-SHAPE (a)-(c) and its Corollary. Tool experiments/new/box49/topmono.py (sha1
+  c8f470dfee2aa8cb104078b16d2bd09df553ff99, by git: committed only at 4c2ea43e; the packet's "sha1 in the push message" is not in that
+  message); working note docs/new/N5-READER-box49.md §12 (a pointer to the packet). The referees' notes are collected by the lane in
+  docs/new/P-N5-TOPSHAPE-fixes-box49.md (l-new 8e8f7238, sha1 be683e9fd1dcd64f48c9d02f2fac66fc214cff0d, L-NEW successor 30: F1-F5 for
+  TOP-N1 = N-TS-3, N-TS-1, TOP-N2 with N-TS-2, TOP-N3 = N-TS-5, N-TS-4; 17 quotes checked by script, experiments/new/box49/quotecheck3.py
+  "quotes=17 bad=0", pinned in experiments/new/check.sh with a shifted-line control and the sha1); on trunk; "Repairs only; no signed
+  statement changes." (fixes l. 6): F1 corrects §3's rise count (DATA in a DEAD item); F2 adds the wider form of (a), (b) and of the
+  Corollary as a REMARK outside the signed Lemma (bullet "Referee strengthening"); F3 adds the sharper count as a remark (same bullet); F4
+  drops "of one class" from Fact DELTA, states (INJ) as the general fact and keeps RESULTS R38 (a) as the phase definition only; F5 adds to
+  §2 that an even or odd rank is the parity of Ω of the vertex of that rank. The statements below are in that repaired wording.
+  Setting (every game): N5 = SPEC S1-S5 (docs/new/N5-ssi-global.md) with FIX 1-4; phases as in RESULTS R80's setting (λ := Ξ's cycle-node
+  map; a phase is a maximal run of states with λ and τ constant, RESULTS R38 (a) KEY); a transition t → t + 1 of a phase P joins two states
+  of P (in-phase S4c fallbacks included). Ξ_t(v): the S1 valuation (c, P, ℓ) of v's honest play; rank(u): the position of u in V sorted by
+  (Ω(u), u) (S1); a rank r is EVEN or ODD as Ω of the vertex of rank r (F5: not the parity of the rank number); weight(A) := Σ_{r ∈ A}
+  s(r)2^r for a set A of ranks, s(r) = +1 for even r and −1 for odd r (S1's signed weight); S1's order: the reward of c, then the weight of
+  P, then ℓ. v: a fixed vertex; c := λ(v), constant on P; P_t := P(Ξ_t v) ⊆ {u : rank(u) > rank(c)}, read as a set of ranks; top_t := the
+  largest rank in P_t, or ⊥ (below every rank) if P_t = ∅; for sets A ≠ B, d(A, B) := the largest rank in A Δ B. n: the number of vertices.
+- Claims signed (both referees "(Opus 5.5, D15)", L37), on every game; no item uses (P); premises LANDED: SPEC S1 (valuation (c, P, ℓ),
+  rank, signed weight, order); RESULTS R15 (a) Lemma A and (d), as (MON): Ξ_{t+1}(v) ⊵ Ξ_t(v) at every N5 iteration, S4c fallbacks included
+  (the packet quotes P-N5-HONFF's line "(MON): RESULTS R15 (a) with R15 (d)"); RESULTS R38 (a) KEY and R80's setting, as the phase
+  definition only (F4). (INJ) is not a premise: it is the general fact that distinct sets of ranks have distinct signed weights, immediate
+  from Fact DELTA (F4); RESULTS R56 (a) states it per honest class and is cited for comparison only.
+  (a) Fact DELTA (§1, with F4): for sets A ≠ B of ranks, weight(B) > weight(A) iff d := d(A, B) is even and d ∈ B ∖ A, or d is odd and
+      d ∈ A ∖ B. (weight(B) − weight(A) = Σ_{r ∈ B∖A} s(r)2^r − Σ_{r ∈ A∖B} s(r)2^r; the term at d dominates the sum of the others, Σ_{r<d} 2^r <
+      2^d; its sign is s(d) if d ∈ B ∖ A and −s(d) if d ∈ A ∖ B.) Hence (INJ): distinct sets of ranks have distinct signed weights. F4:
+      "Fact DELTA reads "For sets A ≠ B of ranks, weight(B) > weight(A) iff …"" (the packet's "path sets A ≠ B of one class": REFEREE TOP-N3, "of one class"
+      "is not needed. Cosmetic."; REFEREE-2 N-TS-5: "(INJ) is just "distinct sets have distinct weights", which Fact
+      DELTA itself proves").
+  (b) Lemma TOP-SHAPE (§1): let t → t + 1 be a transition of the phase P with P_t ≠ P_{t+1}. Then (a) if top_{t+1} > top_t, then top_{t+1}
+      is even; (b) if top_t is even, then top_{t+1} ≥ top_t; (c) hence, along P: once top is even it stays even and never falls; before
+      that, top is odd or ⊥, and an odd top only falls or stays until it is replaced (by a lower odd rank, by ⊥, or by a lower or higher
+      even rank). ((MON) gives Ξ_{t+1}(v) ⊵ Ξ_t(v); the cycle node c is the same at both states (λ constant on P), so the order compares the
+      weights next: weight(P_{t+1}) ≥ weight(P_t), strictly since P_{t+1} ≠ P_t (INJ). (a): u′ := top_{t+1} > top_t is not in P_t and no
+      rank above u′ is in either set, so d(P_t, P_{t+1}) = u′ ∈ P_{t+1} ∖ P_t, and DELTA with the strict rise forces u′ even; from ⊥ too.
+      (b): an even u := top_t with top_{t+1} < u (⊥ included) gives d = u ∈ P_t ∖ P_{t+1}, and DELTA says the weight falls, a contradiction.
+      (c): from an even top the next top is ≥ it and any rise is even, so tops stay even, non-decreasing, and P never empties again; from ⊥
+      a change makes the top > ⊥, hence even; from an odd top a rise is even, otherwise the top stays or falls.)
+  (c) Corollary (top changes, §1): for every vertex v and phase P, top_t changes at most n − 1 times on P. (By TOP-SHAPE (c) the sequence of
+      distinct top values is a strictly decreasing run of odd ranks, then possibly ⊥, then a strictly increasing run of even ranks; the odd
+      run has no ⊥ inside it, since from ⊥ the next top is even; so each rank above rank(c) occurs at most once and ⊥ at most once; there
+      are at most n − 1 ranks above rank(c), so at most n values and at most n − 1 changes. A top changes only at a P-change, which the
+      Lemma covers: REFEREE §1.)
+- Not signed: the packet's §2 (DATA) and §3 (TOP-MONO in its Δ form, DEAD; bullet "Honest limits" (iii)), as the packet says. The
+  packet's reader-proofness sentence (READING: "readers ... cannot raise a vertex's top changes above n − 1. What they raise is the
+  P-changes under a fixed top"): REFEREE "not signed; true as a consequence of the Corollary"; REFEREE-2 "not signed. Follows from the
+  Corollary being per vertex and on every game". The packet's wording as frozen, repaired by the fixes and not false where a statement:
+  Fact DELTA "For path sets A ≠ B of one class" (F4; the proof never uses the class); the premise line "(INJ) (RESULTS R56 (a))", where R56
+  (a) states it per honest class (F4); "Phases (RESULTS R38 (a))" as a premise beyond the phase definition (F4, REFEREE-2 N-TS-5: "R38 (a)
+  is not needed beyond the phase definition"); §3's "with 20 rises in the phase" (F1: 17 for vertex 0; 20 is vertex 6's, the run's
+  maximum: "vertex 0 has 35 P-changes and 17 rises; vertex 6 has 44 P-changes and 20 rises"); §2's "tops 31, 30, 29, 27, 26, 21, 20 (all
+  odd ranks)" without the reminder that the parity is Ω's (F5, N-TS-4: it "reads as a contradiction without that definition at hand").
+- Referee strengthening (NOT part of this entry; fixes F2 and F3 record both as remarks outside the signed Lemma and Corollary):
+  (i) N-TS-1, the wider form: TOP-SHAPE (a) and (b) hold at every N5 transition at which λ(v) is unchanged, phase-leaving transitions
+  included, and the Corollary holds per maximal run of states with λ(v) constant (which can be longer than a phase). REFEREE-2 states it
+  in its verdict line ("It also holds at every N5 transition at which v's own cycle node is unchanged, phase or not (N-TS-1)") and checks
+  it as XSAMEC, 0 failures in 115,702 checks; REFEREE's §C: "N-TS-1 SETTLED (Lead's question): a STRENGTHENING, not part of the signed
+  statement. The packet's Lemma and Corollary are stated for transitions and runs inside one phase, and that is what both referees sign";
+  it re-derives the wider form ("the proof uses only (MON), valid at every iteration since Ξ depends on σ alone, R15 (a), (d); the
+  unchanged cycle node; and (INJ)") and checks it, 0 failures at 9,202 off-phase P-changes with λ(v) unchanged (scratch/ts_wide.py;
+  top_logs/wide_lib41.txt 2,091, wide_lib1140.txt 7,111). REFEREE-2's CTL_cross shows the unchanged cycle node is needed: TSa / TSb fail
+  17,907 + 50,151 + 666 + 40,331 + 28,705 times across phase-leaving transitions. The lane did not state it as a signed item (F2: "as a
+  REMARK (not part of the signed Lemma)"). (ii) N-TS-2, the sharper count (F3, remark): top changes ≤ n − 1 − rank(λ(v)), ranks counted
+  from 0 (F3), since the values are the ranks above rank(λ(v)) and ⊥. In REFEREE-2's Corollary verdict line as an addition ("SIGN. The same
+  proof gives ≤ n − 1 − rank(λ(v)) (N-TS-2)"; CORc, 0 failures), not in REFEREE's verdict table; REFEREE's §C: "ACCEPTED, consistent".
+- Honest limits: (i) TOP-SHAPE bounds only the changes of the top. The P-changes under a fixed top (the counting changes) are not bounded:
+  P-changes of one vertex in one phase reach 71 (l121reader_n41, n 41; packet §2, reproduced by REFEREE) and 72 (l121_d29) and 67
+  (nep92_n40) in REFEREE-2's data, which has P-changes per (v, phase) above n − 1 in 23 + 3 + 32 cases (CTL_counting). READING (Lead): a
+  path set under a fixed top behaves like a binary counter below it (packet §3's obstruction), and L-RED's R104 (docs/red/R104-counting-gate.md,
+  l-red 92754453; L-RED DATA, not refereed) counts low-digit resets under a fixed top (changes of an Odd choice vertex's path set that
+  remove an element while its top is unchanged) as abundant: RESET 133 of PCH 157 (PCH: path-set changes summed over all Odd choice vertices, gate by gate, gatep.py l. 30-36) in one
+  phase of pl130_n40 (own start). So the Corollary does not bound the P-changes of a vertex, nor Ξ-changes, nor a phase's length. (ii) Whether
+  n − 1 is attained is OPEN (REFEREE TOP-N2: "Whether n − 1 is attained by some game is open (an odd run down all odd ranks, then the even
+  ranks upward)"; REFEREE-2 §C: "stays OPEN"). In data the count stays far below it: max 0.37 n (REFEREE; 48 at n = 156) and 0.43·(n − 1)
+  (REFEREE-2, lend9_n8; 62 at n = 581, gate_K64_n581, vertex 573); REFEREE's MUT2 (the Corollary with n − 2) does not bite. (iii) DEAD:
+  TOP-MONO in its Δ form (Lead, 04:57Z: "the top rank of the symmetric difference between successive path sets P(Ξ_t(v)) at its P-changes
+  is monotone") is false: experiments/new/box48/instances/long121_n40 at its .start, phase [1, 122], vertex 0, Δ-tops at its P-changes
+  35, 37, 32, 33, 26, 39, 21, 29, 33, 36, … (35 P-changes, 17 rises of the Δ-top, F1; 20 rises for vertex 6, the run's maximum; 47 Δ-top
+  rises for one vertex in one phase on ladderd0_k48_n156, packet §3 and REFEREE). Obstruction (packet §3): "the Δ-top is the carry position
+  of a counter ... a counter's carry positions go up and down. Only the top of P itself is monotone in the sense of (c)." Confirmed by both
+  referees on the same instance with the same first ten Δ-tops; REFEREE MUT3 (Δ-tops non-increasing demanded) bites at 7,305 (vertex,
+  phase) pairs (lib41), REFEREE-2 CTL_deltatop fails in 4,360 of 6,124 sequences with ≥ 2 P-changes (alt_all). (iv) Nothing here bounds
+  N5's running time.
+- Data (DATA, not proof): the packet's §2 (lane, experiments/new/box49/topmono.py; outputs experiments/new/box49/out/topmono_*.txt; VIOL
+  counters rise-to-odd / even-top-fell / odd-after-even 0 / 0 / 0 everywhere): lib41 (n ≤ 48, own start or S3 + 2 random, seed 7) 1,047
+  runs, 59,663 P-changes, max top rises per (v, P) 3 (b5_os_n28, vertex 10: tops 10, 11, 22, 27); L-RED instances (n ≤ 200, own start or
+  S3) 311 runs, 27,587, max 48 (ladderd0_k48_n156, vertex 50: ⊥, 107, 108, …); long121, qpcclimb scale, pl130_n40, si/root/instances 13
+  runs, 11,177, max 2 (cone_n69: ⊥, 67, 68); 1,371 runs in all; gate example sc32 (box25), vertex 0, phase [4, 48]: tops 31, 30, 29, 27,
+  26, 21, 20 (odd in Ω's sense, F5), ⊥, 25, 28. REFEREE (successor 17; own docs/referee/scratch/topshape_probe.py (sha1 b9c0d284…) on its
+  engine rl_engine; lane code not run; logs scratch/top_logs/; 0 failures in every MUT=0 run): lib1140 (n ≤ 40; given + S3 + 1 random)
+  1,857 runs, 56,473 P-changes, 17,882 (v, P) pairs, (a) / (b) checks 5,572 / 6,858, max top changes 9 (0.37 n), max P-changes per (v, P)
+  60; lib41 (n ≤ 48; given + S3 + 2 random) 1,076, 58,143, 15,873, 3,612 / 4,694, 10 (0.28), 37; L-RED instances (316 games, n ≤ 200)
+  316, 29,196, 8,083, 2,756 / 5,248, 48 (0.30), 62; random rand_ck (n 6-24, k ≤ 6) 12,000, 3,286, 3,224, 1,209 / 625, 2 (0.22), 2;
+  long121_n40 1, 769, 39, 9 / 54, 7, 44; DELTA's iff, the strict rise, the unchanged cycle node, (a), (b), (c) and per (v, P) the shape and
+  the bound: 0 failures on 147,867 P-changes and 45,101 (v, P) pairs; MUT1 ((a) with odd) bites at 3,612 of 3,612 rises, MUT2 (n − 2) does
+  not bite, MUT3 (Δ form) 7,305 pairs; reproduced: ladderd0_k48_n156 48 top changes, l121reader_n41 71 P-changes, §3's ten Δ-tops (distinct
+  tops of long121 vertex 0: 39, 38, 37, 36, 35, 26, 14). REFEREE-2 (successor 19; own docs/referee-2/R2-N5-TOPSHAPE/topshape_check.py and
+  repro.py on its lane's SPEC loop (si.py, read-only); lane tools not run; every run 0 violations): alt_all (413 runs, given start else S3)
+  458 phases, 53,549 P-changes, TSa / TSb 6,082 / 10,282, 8,516 (v, phase) with a top change, 3,643 odd-then-even sequences; lib41_noref × 3
+  (1,230 runs) 1,116, 72,783, 6,986 / 13,914, 14,277, 5,429; named (20 runs) 24, 12,716, 426 / 1,103, 779, 505; random kO n 8-20 / k2 n 6-16
+  (30,000 runs) 4,880, 4,021, 1,465 / 1,212, 2,386, 599; Fact DELTA also on 8,236 + 24,488 + 400 + 299,807 + 299,144 random mask pairs; TSc
+  and COR / CORc on every (v, phase); reproduced: sc32's tops exactly as §2, ladderd0_k48_n156's 48 top changes, the l121reader-type
+  P-change counts (72 / 67); controls CTL_flip (bites at every rise), CTL_deltatop, CTL_cross, CTL_counting as above. Run counts differ by
+  start set and corpus (lane lib41 1,047 runs, REFEREE 1,076, REFEREE-2 1,230; L-RED instances 311 runs (lane) and 316 games (REFEREE));
+  not reconciled in any report. No signed statement uses any count.
+- Signatures: REFEREE docs/referee/R-N5-TOPSHAPE.md (report 1a6d6a24, sha1 8e4afe5a87b5e8e96bf7fb19b3d63f27ed3fe830 there; §C e0499401;
+  successor 17): Fact DELTA SIGNED; Lemma TOP-SHAPE (a)-(c) SIGNED; Corollary SIGNED; the reader-proofness sentence not signed (true as a
+  consequence); §2, §3 not signed, §3's instance reproduced (DEAD); quotes 2 of 2 verbatim (own scratch/flip_quotes.py); notes TOP-N1..N3;
+  no gap. REFEREE-2 docs/referee-2/R2-N5-TOPSHAPE.md (report 97db54fc, sha1 e409e4439a18c368f452ed9a1c5de0ac1eefbb50 there; §C 0e2063bf;
+  successor 19): Fact DELTA SIGN; Lemma TOP-SHAPE (a), (b), (c) SIGN; Corollary SIGN; reader-proofness not signed; §3 DEAD CONFIRMED; quotes
+  2/2 verbatim (own qcheck.py; SHIFT=1 control 0/2); notes N-TS-1..5; no gap. INDEPENDENCE: REFEREE opened no docs/referee-2/ file on
+  TOPSHAPE (names at 05:13Z: 0 on its tree, 0 on origin/claude/referee-2, 0 on trunk) and ran no lane code; REFEREE-2 opened no TOPSHAPE
+  file under docs/referee/ before pushing 97db54fc (names-only count 0 at 05:06:23Z and at 05:18:26Z; it opened REFEREE's REL report, not a
+  TOPSHAPE file, on the Lead's word) and ran no lane tool. §C (both): verdicts identical (Fact DELTA, TOP-SHAPE (a)-(c), the Corollary;
+  Δ-form TOP-MONO DEAD on the same instance); joint gap map EMPTY; TOP-N1 = N-TS-3 (same numbers, found independently), TOP-N3 = N-TS-5,
+  TOP-N2 with N-TS-2 ACCEPTED, N-TS-4 ACCEPTED as wording, N-TS-1 SETTLED as a strengthening (bullet "Referee strengthening"); REFEREE-2:
+  "No verdict changes"; REFEREE: "Nothing open on TOPSHAPE."
+- TARGET.md diff: not a claim of TARGET.md section 1 or §2 (structural lemmas on N5 inside one phase bounding the changes of the top of a
+  vertex's path set; no running-time bound, no algorithm claim). GAPS G-N5-TIME: open.
+
 ## Dead ends (kept; each with the exact obstruction or counterexample and the instance that killed it)
 - DE1 (2026-10-14): arXiv 2511.03752 v1 (van der Heijden), claimed O(n²(n+m)) algorithm. BROKEN: wrong regions on 4-vertex games
   CE1 (l-comp 19b5ce2, experiments/m2/counterexamples/ce1_4v.pg) and cex1 (referee 936d47c, docs/referee/scratch/cex1-*.pg).

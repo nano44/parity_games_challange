@@ -139,11 +139,63 @@ far end. I worked the design out on paper; this section records what each part n
   one-vertex Odd gate whose options are corridor ends restarts the wave at every σ̄ change (§1). Two such waves over the same long segment
   already give ≈ 2n, and a third partial one gives the excess. A bound of the form c·n needs a bound on the number of LONG pieces per run,
   not on the per-piece length.
+- REFEREE's independent reproduction (docs/referee/R-N5-RUNLIN-kill.md, referee c609f779, own engine; relayed by the Lead 00:36Z): runfam_K10
+  99 > 98, runfam_K40 171 = 2n + 13, Oink zlk and tl agree; the obstruction above judged FAIR, with two precisions (adopted):
+  - (a) gate 5 has 6 options; only 28 is a corridor end. The other end, 25, is one Even step from options 2 and 9.
+  - (b) waves also run along other Even chains (e.g. t = 10-21: 26 → 3 → 36 → … → 21); the corridor 28-34-37 … 48-25 is walked FOUR times, in
+    alternating directions.
 - What survives: every count here is linear in n (run ≤ 2.17n on the family; the family's run − 2n is constant from K = 34 on). So the kill
   is of the constant 2, not of linearity. CONJECTURE RUN-LIN′ (weaker, open): every fallback-free run has O(n) transitions. No constant is
   proposed; whether a third and fourth long wave can be made to grow with n is the open design question (step 2 below).
+- Third wave (DATA, written 00:3xZ): from runfam_K40, subdividing next to vertex 28 instead (chain25.py with U = 28, log out/chain28.log)
+  again alternates +3 / +2 for 30 steps: 251 at n = 110 (run − 2n = +31, 2.28n), still rising at the stop. So stretching both corridor
+  ends in turn keeps a slope of about 2.5 per vertex over the sizes tried; whether it stays above 2 indefinitely is not shown.
+  Continued 60 more steps (out/chain28b.log): 276 (n 120), 302 (130), 327 (140), 352 (150), 377 (160), 403 at n = 170 (2n + 63, 2.37n), still
+  exactly +2.5 per vertex, no saturation in 90 steps. So the family at vertex 28 has run ≈ 2.5n − c: a third long wave that grows with n.
+  The ratio tends to 2.5, a constant: RUN-LIN′ (linear) is untouched. A super-linear run needs the number of long waves to grow with n.
+- Growing the NUMBER of long pieces (Lead 02:04Z; DATA, written 02:4xZ by date -u). Three tries from runfam_K20 (n 59, run 124, G = 9,
+  three long pieces 26 / 36 / 43):
+  - optclone.py (copy an option of gate 5, 7 priority shifts × 3 edge modes per option): no gain (124).
+  - optadd.py (15 rounds × 300 random new Even options of gate 5, 2-4 random successors, random priority; kept only at +3): no gain (best 125).
+  - growclimb.py C = 2 (run − 2n), 3 seeds × ~12,000-17,000 steps: best 135 at n = 59 (x135_n59, 2.29n): G = 11, pieces 1, 13, 1, 1, 31, 6,
+    3, 29, 1, 1, 5, 43, i.e. FOUR pieces ≥ 13. Stretching it (stretchall.py, every two-way Even pair, priorities 0 / 3 / 6, both starts):
+    the best pair adds +3 (138 at n = 60, the old vertex-25 segment) and no pair adds +4. So no segment is walked by more than three
+    growing waves in anything found.
+- READING. In every instance found, one Odd gate makes at most ~3 long waves over a segment, and G stays ≤ 11. A super-linear run would
+  need G to grow with n while the pieces between σ̄ changes stay long; none of the searches produced that. OPEN.
 - Pins: experiments/si/runlin/instances/runfam_base_n39 (.pg 6b6fc369…, .start 24b9c519…), runfam_K10 (.pg faf218f1…, .start 56e4dec6…),
   runfam_K40 (.pg 287a185d…, .start bcbfeed3…); full sha1 in §6.
+
+## 8. Proof side of RUN-LIN′ (Lead 02:53Z): PIECE and G-RUN (written 2026-10-29 03:0xZ by date -u)
+- Definitions. In a fallback-free run S of one phase, a σ̄-CHANGING transition is one with σ̄_t ≠ σ̄_{t+1}; G(S) := their number. A PIECE is a
+  maximal stretch of consecutive states of S with σ̄ constant; its length is its number of transitions.
+- Lemma SPLIT (PROVED, elementary). |S| = G(S) + Σ_pieces |piece|, and S has at most G(S) + 1 pieces. Proof: every transition of S is either
+  σ̄-changing or joins two states of one piece; the σ̄-changing transitions cut S into at most G(S) + 1 pieces. □
+  So |S| ≤ G(S) + (G(S) + 1)·max |piece|.
+- PIECE ("every piece has ≤ n − 1 transitions"): LANDED only CONDITIONALLY. RESULTS R77 (c) Theorem STATIC-DEPTH and (e) Corollary GCI-LEN-ρF
+  give b − a ≤ n − 1 on an interval of a λ_W-constant fallback-free in-phase run with σ̄ constant ((H1), (H2) hold on a piece by definition,
+  given λ_W constant) PROVIDED (H3) the W-cycles and honest cycles coincide and are constant on the interval, (H4) the end-state graph H_b is
+  acyclic off the cycle vertices (implied by every gate being D-direct at b, R77 (d)), and GEN_W (distinct W-plays from a vertex to one cycle
+  have distinct W-valuations). Missing for an unconditional PIECE: exactly (H3), (H4), GEN_W (and λ_W constancy, which R77 (H1) assumes).
+  R74 (FREEZE-A / FREEZE-G) and R80 (C5) FRESH-RED do not bound a piece by themselves (FRESH-RED bounds it by m_E + NOFRESH).
+  - DATA (root/staticdepth.py, unedited, on alt_all; out/staticdepth_alt.txt): 863 pieces; 708 satisfy (H3) + (H4) (R77 applies, GEN_W
+    failures counted separately: 23 occurrences); 29 fail (H4), the rest fail (H3). NO piece exceeds n − 1, whether or not the hypotheses
+    hold: max (length − (n − 1)) = −2; max length 67 (grow_K40_n373). On runfam_K10 / K40 all 7 pieces satisfy (H3) and (H4) (pure at b), so
+    the family's pieces are bounded by the landed theorem; the longest are 33 at n = 49 and 63 at n = 79.
+  - CONJECTURE PIECE (unconditional): every piece has ≤ n − 1 transitions. Not proved here.
+- What PIECE and a bound on G give. With PIECE, |S| ≤ G + (G + 1)(n − 1). So G-RUN (G = O(n)) would give |S| = O(n²) per run, a POLYNOMIAL
+  bound, but NOT RUN-LIN′'s O(n): the reduction is multiplicative. RUN-LIN′ would need G = O(1) or a bound on Σ |piece| that is not a product.
+  (Lead reading of 02:53Z said "RUN-LIN′ reduces to G-RUN"; it reduces to it only up to this factor n.)
+- G-RUN (CONJECTURE, DATA). Among the 44 runs ≥ 0.75n of alt_all the largest G is 34 at n = 32 (pftheta34_n32; so_th_n32 30, pftheta_cex_n32
+  33); the family has G = 9 for every K; mkpp (L-RED R83) has gate 447 changing 48 times in one run at n = 449. So G ≤ 1.07n in data.
+- Toward a monotone quantity (READING; no proof):
+  - (C4) RISE-GATE charges each clean σ̄ change to a strict Ξ-rise of the abandoned option, so G ≤ Σ_y indeg_Odd(y)·XR_S(y) + ties + unclean
+    changes. XR per run is not bounded (XR-LIN DEAD, N5-ALT §8), and the fresh-edge charge of FRESH3 is DEAD (ret14_n48 flip-flop), as is
+    GATE-ONEWAY (pp_K48_n449). So no charging used so far bounds G.
+  - WM-G (RESULTS R62 (d): W never drops at an in-phase S4a step) cannot see σ̄ changes: W uses τ at every gate. A monotone quantity for G
+    has to mix the two frames, e.g. the set of gates in D and the Ξ-gap Ξ(τ u) − Ξ(σ̄ u) at each gate u ∈ D, which only gates of D can
+    carry. In the family the gate visits its options in a "mountain" order (7, 2, 9, 14, 28, 18, 28, 14, 9, 7), each option at most twice;
+    in mkpp a two-option gate alternates 48 times, paid by fresh options of two risers. A bound has to cover both.
 
 ## 5. OPEN and next steps
 1. RUN-LIN and RUN-LIN-OPT are DEAD (§7). OPEN: RUN-LIN′ (O(n) per run). No proof route is in hand. The available pieces bound a run by Σ over σ̄-constant pieces

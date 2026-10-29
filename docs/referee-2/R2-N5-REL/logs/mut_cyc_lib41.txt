@@ -1,0 +1,24 @@
+MODE files ../R2-N5-STAU/lib41_noref.lst 3 MUT cyc RELCAP 60
+ENGXI_checks: 19315
+GRC_checks: 10733
+GR_changes_CLEAN: 3751
+GR_changes_CYC: 23
+GR_changes_THRU: 109
+GR_changes_TIE: 168
+GR_checks: 3751
+GR_norise_CYC: 8
+GR_norise_TIE: 167
+S_runs: 1612
+VIOLATIONS: 8
+V_MUT_cyc: 8
+runs: 1230
+states: 19315
+VIOLATION MUT_cyc: experiments/new/box31/instances/u3ev_n16.pg#0@0 u=2
+VIOLATION MUT_cyc: experiments/red/kl/instances/klcount_n16.pg#0@2 u=0
+VIOLATION MUT_cyc: experiments/red/kl/instances/klcount_n16.pg#1@2 u=0
+VIOLATION MUT_cyc: experiments/red/kl/instances/klcount_n18_base.pg#0@2 u=0
+VIOLATION MUT_cyc: experiments/red/kl/instances/klcount_n18_lvl.pg#0@2 u=0
+VIOLATION MUT_cyc: experiments/red/kl/instances/klcount_n18_lvl.pg#2@2 u=0
+VIOLATION MUT_cyc: experiments/red/so/instances/njb_reabs54_n32.pg#1@1 u=0
+VIOLATION MUT_cyc: experiments/red/tcpert/instances/tcS8_N11.pg#2@7 u=71
+RESULT FAIL violations=8

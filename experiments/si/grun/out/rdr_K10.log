@@ -1,0 +1,26 @@
+base n 49 run 99 G 9
+reader 0 S [14, 22, 25, 32, 35, 36] n 50 run 99 G 22
+reader 1 S [16, 22, 30, 34, 42, 44] n 51 run 99 G 28
+reader 2 S [18, 40, 41] n 52 run 99 G 35
+reader 3 S [6, 8, 25, 30, 37, 41] n 53 run 99 G 41
+reader 4 S [0, 6, 13, 21, 31, 39] n 54 run 99 G 46
+reader 5 S [12, 15, 27, 34, 39, 48] n 55 run 99 G 53
+reader 6 S [7, 13, 24, 25, 32, 45] n 56 run 99 G 55
+reader 7 S [1, 9, 10, 23, 43] n 57 run 99 G 58
+reader 8 S [4, 5, 16, 21, 26, 30] n 58 run 99 G 62
+reader 9 S [8, 21, 27, 33, 38, 47] n 59 run 99 G 65
+reader 10 S [11, 18, 20, 32, 37] n 60 run 99 G 68
+reader 11 S [13, 29, 36] n 61 run 99 G 70
+reader 12 S [14, 16, 28, 33, 43] n 62 run 99 G 73
+reader 13 S [5, 6, 14, 17, 33] n 63 run 99 G 75
+reader 14 S [12, 16, 21, 34, 42, 46] n 64 run 99 G 78
+reader 15 S [12, 25, 28, 47] n 65 run 99 G 81
+reader 16 S [28, 34, 35, 45] n 66 run 99 G 82
+reader 17 S [27, 31, 33] n 67 run 99 G 83
+reader 18 S [0, 18, 30, 41, 44] n 68 run 99 G 84
+reader 19 S [6, 24] n 69 run 99 G 85
+reader 20 S [3, 28, 32, 39] n 70 run 99 G 86
+reader 21 S [18, 31, 32, 38, 43] n 71 run 99 G 87
+reader 22 S [12, 13, 32, 39, 44] n 72 run 99 G 88
+reader 23 S [4, 18, 21, 33, 35, 37] n 73 run 99 G 90
+reader 24 S [41, 44] n 74 run 99 G 91

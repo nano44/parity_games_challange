@@ -1,0 +1,33 @@
+seed (-42.0, -7, -28) n 32
+step 2 score (-33.0, -7, -19) n 32
+step 2 KILLSCORE -19 n 32
+step 17 score (-30.0, -5, -20) n 33
+step 40 score (-23.0, -3, -17) n 34
+step 40 KILLSCORE -17 n 34
+step 42 score (-22.0, -3, -16) n 33
+step 42 KILLSCORE -16 n 33
+step 124 score (-20.0, -2, -16) n 33
+step 474 score (-19.0, -2, -15) n 32
+step 474 KILLSCORE -15 n 32
+step 509 score (-18.0, -2, -14) n 31
+step 509 KILLSCORE -14 n 31
+step 564 score (-16.0, -2, -12) n 31
+step 564 KILLSCORE -12 n 31
+step 1253 score (-14.0, -1, -12) n 32
+step 1313 score (-13.0, -1, -11) n 31
+step 1313 KILLSCORE -11 n 31
+step 1714 score (-10.0, 0, -10) n 31
+step 1714 KILLSCORE -10 n 31
+step 1807 score (-9.0, 0, -9) n 30
+step 1807 KILLSCORE -9 n 30
+step 2696 score (-8.0, 0, -8) n 29
+step 2696 KILLSCORE -8 n 29
+step 3117 score (-7.0, 0, -7) n 28
+step 3117 KILLSCORE -7 n 28
+step 3373 score (-6.0, 0, -6) n 27
+step 3373 KILLSCORE -6 n 27
+step 11234 score (-5.0, 0, -5) n 26
+step 11234 KILLSCORE -5 n 26
+step 12732 score (-4.0, 0, -4) n 25
+step 12732 KILLSCORE -4 n 25
+final (-4.0, 0, -4) n 25 best kill score -4

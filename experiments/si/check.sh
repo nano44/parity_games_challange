@@ -356,3 +356,154 @@ python3 -I runlin/keeper.py runlin/instances/runfam_K10.pg runlin/instances/runf
 t=$(mktemp -d); python3 -I runlin/mkrunfam.py 10 $t/f | grep -q "K 10 n 49 run 99 run-2n 1"
 cmp -s $t/f.pg runlin/instances/runfam_K10.pg; cmp -s $t/f.start runlin/instances/runfam_K10.start; rm -rf $t
 echo "runlin (box 24 §7: DEAD RUN-LIN, runfam_K10 run 99 > 98, n5b identical, generator reproduces the pin): PASS"
+# P-N5-CORE-fixes-box23: 35 quotes verbatim (packet 081ae740, RESULTS 33f43c20 / 84ab5daf, REFEREE 8641ae40, REFEREE-2 b28d1ba9); shifted control fails.
+if git cat-file -e 081ae740 && git cat-file -e 33f43c20 && git cat-file -e 84ab5daf && git cat-file -e 8641ae40 && git cat-file -e b28d1ba9; then
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-CORE-fixes-box23.md | grep -q "quotes=35 bad=0"
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-CORE-fixes-box23.md --mut | grep -q "QUOTES FAIL"
+  echo "root (P-N5-CORE fixes: 35 quotes verbatim; shifted control fails): PASS"
+else
+  echo "root (P-N5-CORE fixes quotes): NOT RUN (a source commit is not in this clone)"
+fi
+# box 25 (docs/si/N5-PIECE-box25.md): Theorem STATIC-DEPTH' data. kw25_n32's piece [0,25] fails R77's (H3) and (H4) and is covered by
+# STATIC-DEPTH' (two-frame form); frz24 has a piece with an end-state cycle formed inside it ((H3') fails) and an epoch split; MUT=1 bites.
+o=$(python3 -I piece/pieceh.py --one ../red/xing/instances/kw25_n32.pg); grep -q "F_len_max=25 " <<<"$o"; grep -q "h4=1 " <<<"$o"; grep -q "PIECE PASS" <<<"$o"
+o=$(python3 -I piece/sdprime.py --one ../red/xing/instances/kw25_n32.pg); grep -q "beyond_len_max=25 checked=2 checked_beyond_H3=1 " <<<"$o"; grep -q "SDPRIME PASS" <<<"$o"
+o=$(python3 -I piece/sdprime.py --one ../red/n5inj/instances/frz24.pg); grep -q "h3p_fail=1 " <<<"$o"; grep -q "SDPRIME PASS" <<<"$o"
+MUT=1 python3 -I piece/sdprime.py --one ../red/n5inj/instances/frz24.pg | grep -q "SDPRIME FAIL"
+o=$(python3 -I piece/epochs.py --one ../red/n5inj/instances/frz24.pg); grep -q "k_max=2 " <<<"$o"; grep -q "EPOCHS PASS" <<<"$o"
+echo "piece (box 25: STATIC-DEPTH' covers kw25 [0,25] outside R77; frz24 (H3') failure and 2 epochs; MUT=1 bites): PASS"
+# box 25 (docs/si/N5-GRUN-box25.md): Lemma GATE-RISE on pftheta34 (MUT bites); G is not intrinsic: runfam_K10 + 25 readers has G 91 at n 74
+# with the run unchanged, + 25 anchors G^K 91 at n 99 (generator reproduces the pin); SEG stays 9; STATIC-DEPTH-REL checks pass.
+python3 -I grun/gaterise.py --one ../red/so/instances/pftheta34_n32.pg | grep -q "GATERISE PASS"
+MUT=1 python3 -I grun/gaterise.py --one ../red/so/instances/pftheta34_n32.pg | grep -q "GATERISE FAIL"
+python3 -I grun/gstat.py --one grun/out/rdr_K10.pg grun/out/rdr_K10.start | grep -q "TOP G 91 n 74 run 99 "
+o=$(python3 -I grun/relseg.py --one grun/out/rdr_K10.pg grun/out/rdr_K10.start); grep -q "SEG_max=9 " <<<"$o"; grep -q "RELSEG PASS" <<<"$o"
+o=$(python3 -I grun/relseg.py --one runlin/instances/runfam_K10.pg runlin/instances/runfam_K10.start); grep -q "SEG_max=9 " <<<"$o"; grep -q "RELSEG PASS" <<<"$o"
+t=$(mktemp -d); python3 -I grun/anchor.py grun/out/rdr_K10.pg grun/out/rdr_K10.start 1 100 $t/a | grep -q "anchors 25 n 99 SAME True readers in K 25 run 99 G 91 G^K 91 SEG 9 fallbacks in \[A,B\] 0"
+cmp -s $t/a.pg grun/out/anc_K10.pg; cmp -s $t/a.start grun/out/anc_K10.start; rm -rf $t
+echo "grun (box 25: GATE-RISE on pftheta34, MUT bites; readers G 9 -> 91 with run 99 fixed, anchors G^K 91, SEG 9; anchor generator reproduces the pin): PASS"
+# P-N5-SDPRIME-box25 (FROZEN, sha1 54678c38a04842bd936a9bf4b241d47ad8ab90a3): 12 quotes verbatim (trunk 55e0bcbda); shifted control fails.
+if git cat-file -e 55e0bcbda; then
+  echo "54678c38a04842bd936a9bf4b241d47ad8ab90a3  ../../docs/si/P-N5-SDPRIME-box25.md" | sha1sum -c --quiet
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-SDPRIME-box25.md | grep -q "quotes=12 bad=0"
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-SDPRIME-box25.md --mut | grep -q "QUOTES FAIL"
+  echo "piece (P-N5-SDPRIME frozen sha1; 12 quotes verbatim; shifted control fails): PASS"
+else
+  echo "piece (P-N5-SDPRIME quotes): NOT RUN (source commit 55e0bcbda not in this clone)"
+fi
+# P-N5-REL-box25 (FROZEN, sha1 f79300a2d01cfb0aa27ad7214bcefbd84eafd7bb): 17 quotes verbatim (trunk b28123a58); shifted control fails.
+if git cat-file -e b28123a58; then
+  echo "f79300a2d01cfb0aa27ad7214bcefbd84eafd7bb  ../../docs/si/P-N5-REL-box25.md" | sha1sum -c --quiet
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-REL-box25.md | grep -q "quotes=17 bad=0"
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-REL-box25.md --mut | grep -q "QUOTES FAIL"
+  echo "grun (P-N5-REL frozen sha1; 17 quotes verbatim; shifted control fails): PASS"
+else
+  echo "grun (P-N5-REL quotes): NOT RUN (source commit b28123a58 not in this clone)"
+fi
+# P-N5-SDPRIME-fixes-box25 (repairs only): 12 quotes verbatim (REFEREE d693a6fe7, REFEREE-2 9784229a2, RESULTS 55e0bcbda / b28123a58); shifted control fails.
+if git cat-file -e d693a6fe7 && git cat-file -e 9784229a2 && git cat-file -e b28123a58; then
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-SDPRIME-fixes-box25.md | grep -q "quotes=12 bad=0"
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-SDPRIME-fixes-box25.md --mut | grep -q "QUOTES FAIL"
+  echo "piece (P-N5-SDPRIME fixes: 12 quotes verbatim; shifted control fails): PASS"
+else
+  echo "piece (P-N5-SDPRIME fixes quotes): NOT RUN (a source commit is not in this clone)"
+fi
+# P-N5-REL-fixes-box25 (repairs only): 12 quotes verbatim (REFEREE a343d6b4, REFEREE-2 b6811cf1, RESULTS ab545081b / b28123a58); shifted control fails.
+if git cat-file -e a343d6b4 && git cat-file -e b6811cf1 && git cat-file -e ab545081b && git cat-file -e b28123a58; then
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-REL-fixes-box25.md | grep -q "quotes=12 bad=0"
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-REL-fixes-box25.md --mut | grep -q "QUOTES FAIL"
+  echo "grun (P-N5-REL fixes: 12 quotes verbatim; shifted control fails): PASS"
+else
+  echo "grun (P-N5-REL fixes quotes): NOT RUN (a source commit is not in this clone)"
+fi
+# box 25 (DEAD.md box 25): DEAD L-WAVE. lwkill_n31: run [2,40] (38), non-L gap [2,39] of 37 > 30 (lwave FAIL), n5b identical; L-WAVE' holds there.
+o=$(python3 -I grun/lwave.py --one grun/instances/lwkill_n31.pg grun/instances/lwkill_n31.start); grep -q "EXAMPLE ('grun/instances/lwkill_n31.pg', 2, 39, 31)" <<<"$o"; grep -q "LWAVE FAIL" <<<"$o"
+python3 -I root/n5bcmp.py grun/instances/lwkill_n31.pg grun/instances/lwkill_n31.start | grep -q "n5b iterations 40 fallbacks 0 states 41 | n5x states 41 | identical state sequences: True"
+PMODE=1 python3 -I grun/lwave.py --one grun/instances/lwkill_n31.pg grun/instances/lwkill_n31.start | grep -q "LWAVE PASS"
+echo "grun (box 25: DEAD L-WAVE, lwkill_n31 gap 37 > 30, n5b identical; L-WAVE' holds there): PASS"
+# box 26 (docs/si/N5-LWP-box26.md): L-WAVE' gap anatomy and the dead candidate invariants. lwp_a's gap [1,26] has 25 = n - 1 transitions:
+# LAST-SWITCH per gap fails there (2 transitions) while SEG-LAST holds on its 3 segments; PV-STEP fails at t = 2; GAP-DEPTH 25 > 23;
+# SEG-LAST fails on cw11_n24's pieces (control) and on whole runs (control); SWL / NEVEN hold on lwp_a.
+o=$(python3 -I lwp/lastsw.py --one grun/out/lwp_a.pg grun/out/lwp_a.start); grep -q "LS_V=2 " <<<"$o"; grep -q "gap_minus_nEven_max_plus1000=1000 " <<<"$o"; ! grep -q "SWL_V" <<<"$o"
+o=$(python3 -I lwp/seglast.py --one grun/out/lwp_a.pg grun/out/lwp_a.start); grep -q "segs=3 trans=23" <<<"$o"; grep -q "SEGLAST PASS" <<<"$o"
+MODE=piece python3 -I lwp/seglast.py --one ../red/kw/instances/cw11_n24.pg | grep -q "SEGLAST FAIL"
+MODE=run python3 -I lwp/seglast.py --one grun/instances/lwkill_n31.pg grun/instances/lwkill_n31.start | grep -q "SEGLAST FAIL"
+python3 -I lwp/vstep.py --one grun/out/lwp_a.pg grun/out/lwp_a.start | grep -q "PV_V=1 "
+python3 -I lwp/gapdepth.py --one grun/out/lwp_a.pg grun/out/lwp_a.start | grep -q "EXAMPLE ('grun/out/lwp_a.pg', 1, 26, 1, 26, 25, 23, 26)"
+echo "lwp (box 26: lwp_a gap n - 1 kills per-gap LAST-SWITCH, PV-STEP, GAP-DEPTH; SEG-LAST holds there, fails on pieces / runs as controls): PASS"
+# box 26 (docs/si/N5-LWP-box26.md §7): Theorem LAST-STEP data. Frontier vertices exist at every step of lwp_a's segments (MUT=1 bites);
+# lwp/instances/cycset_kill_n60 (= climb h4a_k) kills CYC-SET with no frontier vertex at t = 0, while SEG-LAST and SET-STEP hold there.
+python3 -I lwp/laststep.py --one grun/out/lwp_a.pg grun/out/lwp_a.start | grep -q "LASTSTEP PASS"
+MUT=1 python3 -I lwp/laststep.py --one grun/out/lwp_a.pg grun/out/lwp_a.start | grep -q "LASTSTEP FAIL"
+echo "957c7c9e2ce5a6d57890e42b0e8ca0a0911ecefd  lwp/instances/cycset_kill_n60.pg" | sha1sum -c --quiet
+o=$(python3 -I lwp/laststep.py --one lwp/instances/cycset_kill_n60.pg); grep -q "CYCSET_V=1 FR_V=1 FR_V_h4fail=1 " <<<"$o"; grep -q "CYCSET FAIL" <<<"$o"
+o=$(python3 -I lwp/seglast.py --one lwp/instances/cycset_kill_n60.pg); grep -q "SEGLAST PASS" <<<"$o"; ! grep -q "SS_V" <<<"$o"
+echo "lwp (box 26: LAST-STEP frontier on lwp_a, MUT bites; cycset_kill_n60 kills CYC-SET, SEG-LAST / SET-STEP hold): PASS"
+# box 26 (note §8): K-REDUCTION data. karena_kill_n71 kills K-ARENA (one terminal part at t = 0, not arena-complete); SEG-LAST holds.
+echo "8b659497688c47075235957ae1e636b5564ec235  lwp/instances/karena_kill_n71.pg" | sha1sum -c --quiet
+o=$(python3 -I lwp/laststep.py --one lwp/instances/karena_kill_n71.pg); grep -q "KARENA_V=1 " <<<"$o"; grep -q "kar_nontrivial=1 " <<<"$o"; grep -q "KSET PASS" <<<"$o"
+python3 -I lwp/seglast.py --one lwp/instances/karena_kill_n71.pg | grep -q "SEGLAST PASS"
+o=$(python3 -I lwp/laststep.py --one lwp/instances/cycset_kill_n60.pg); grep -q "KARENA PASS" <<<"$o"; grep -q "kar_nontrivial=1 " <<<"$o"
+echo "lwp (box 26: K-REDUCTION holds on cycset_kill_n60's nontrivial part; karena_kill_n71 kills K-ARENA, SEG-LAST holds): PASS"
+# box 26: setstep_kill_n71 kills SET-STEP (SS_V=1) while SEG-LAST holds; WX-ARENA fails on cycset_kill_n60.
+echo "b6360888a8180a9afef84c38845500f46626b548  lwp/instances/setstep_kill_n71.pg" | sha1sum -c --quiet
+o=$(python3 -I lwp/seglast.py --one lwp/instances/setstep_kill_n71.pg); grep -q "SS_V=1 " <<<"$o"; grep -q "SEGLAST PASS" <<<"$o"
+python3 -I lwp/laststep.py --one lwp/instances/cycset_kill_n60.pg | grep -q "WXARENA FAIL"
+echo "lwp (box 26: setstep_kill_n71 kills SET-STEP, SEG-LAST holds; WX-ARENA fails on cycset_kill_n60): PASS"
+# box 27 (docs/si/N5-LAY-box27.md): W-sinks. On the three box-26 kill pins every sink lemma holds (SINK-OFF both frames, H-sinks ready,
+# ready W-sinks keep sigma_b), CONJECTURE WSINK-READY (= W-GROW) holds at every step, and MUT=1 (sinks of the both-frame set N_t,
+# box 26's WX-ARENA notion) bites on each pin: the W-frame sink is what covers the steps with no frontier vertex.
+for p in karena_kill_n71:5:6:6 cycset_kill_n60:4:5:5 setstep_kill_n71:3:3:3; do
+  IFS=: read f tr ws wr <<<"$p"
+  o=$(python3 -I lay/wsink.py --one lwp/instances/$f.pg); grep -q "trans=$tr wsinks=$ws wsinks_ready=$wr" <<<"$o"
+  if grep -q "FAIL" <<<"$o"; then echo "lay: sink lemma or WSINK-READY failure on $f"; exit 1; fi   # (a bare "! grep" is exempt from set -e)
+  MUT=1 python3 -I lay/wsink.py --one lwp/instances/$f.pg | grep -q "^WSR FAIL"
+done
+python3 -I lay/wsink.py --one grun/out/lwp_a.pg grun/out/lwp_a.start | grep -q "steps_with_bothsink=23 trans=23 wsinks=31 wsinks_ready=31"
+echo "lay (box 27: sink lemmas and WSINK-READY on the box-26 kill pins and lwp_a; MUT=1 (N_t-sinks) bites on each pin): PASS"
+# box 27: lay/instances/wgrow_kill_n90 kills W-GROW (WSR_V=1, t = 1: W-sinks 37, 57 unready); n5b gives the identical state sequence;
+# the sink lemmas, H-GROW and SEG-LAST hold there.
+echo "f9a7ef090b3df5bb4293301e6bd1236e33a92cd0  lay/instances/wgrow_kill_n90.pg" | sha1sum -c --quiet
+echo "a4ead4deae5534731a199c8697c072f407643ca2  lay/instances/wgrow_kill_n90.start" | sha1sum -c --quiet
+o=$(python3 -I lay/wsink.py --one lay/instances/wgrow_kill_n90.pg lay/instances/wgrow_kill_n90.start)
+grep -q "WSR_V=1 hsinks=6 segs=1 steps_hsink_switch=3 " <<<"$o"; grep -q "EXAMPLE ('WSR', 'lay/instances/wgrow_kill_n90.pg', 0, 3, 1, \[37, 57\]" <<<"$o"
+for k in WSOFF HSOFF HSR WSL SS NOSINK; do grep -q "^$k PASS" <<<"$o"; done; grep -q "^WSR FAIL" <<<"$o"
+python3 -I lwp/seglast.py --one lay/instances/wgrow_kill_n90.pg lay/instances/wgrow_kill_n90.start | grep -q "SEGLAST PASS"
+python3 -I root/n5bcmp.py lay/instances/wgrow_kill_n90.pg lay/instances/wgrow_kill_n90.start | grep -q "n5b iterations 9 fallbacks 1 states 10 | n5x states 10 | identical state sequences: True"
+echo "lay (box 27: wgrow_kill_n90 kills W-GROW, n5b identical; sink lemmas, H-GROW, SEG-LAST hold): PASS"
+# box 27: lay/instances/hgrow_kill_n89 kills H-GROW (H-sinks switch to target at 1 of 7 steps) while W-GROW, SINK-GROW and SEG-LAST hold;
+# no step has a frontier vertex; n5b gives the identical state sequence.
+echo "998a4a5e770c97b409ebf9f0a9d0ca08fac9bcbd  lay/instances/hgrow_kill_n89.pg" | sha1sum -c --quiet
+echo "5895810a61760e4180d70202911768bd75f2beea  lay/instances/hgrow_kill_n89.start" | sha1sum -c --quiet
+o=$(python3 -I lay/wsink.py --one lay/instances/hgrow_kill_n89.pg lay/instances/hgrow_kill_n89.start)
+grep -q "hsinks=21 segs=1 steps_hsink_switch=1 steps_unready_wsink=0 steps_with_bothsink=0 trans=7 wsinks=14 wsinks_ready=14" <<<"$o"
+if grep -q "FAIL" <<<"$o"; then echo "lay: unexpected failure on hgrow_kill_n89"; exit 1; fi
+python3 -I lwp/seglast.py --one lay/instances/hgrow_kill_n89.pg lay/instances/hgrow_kill_n89.start | grep -q "SEGLAST PASS"
+python3 -I root/n5bcmp.py lay/instances/hgrow_kill_n89.pg lay/instances/hgrow_kill_n89.start | grep -q "n5b iterations 13 fallbacks 0 states 14 | n5x states 14 | identical state sequences: True"
+echo "lay (box 27: hgrow_kill_n89 kills H-GROW, n5b identical; W-GROW, SINK-GROW, SEG-LAST hold): PASS"
+# box 27: lay/instances/seglast_kill_n110 kills CONJECTURE SEG-LAST and SINK-GROW: REL segment [2, 8] of the run [2, 8], t = 2, the only
+# switch is vertex 1, 82 -> 25, and 1 switches again at 7. Reproduced from n5b alone (lay/relcheck.py); observed GEN_W holds.
+echo "8a2201816d3a522cd2c4da238678d9f6b075f68a  lay/instances/seglast_kill_n110.pg" | sha1sum -c --quiet
+echo "107cbf0828cdf1120d8f70b80cdef0e75e9908a4  lay/instances/seglast_kill_n110.start" | sha1sum -c --quiet
+o=$(python3 -I lwp/seglast.py --one lay/instances/seglast_kill_n110.pg lay/instances/seglast_kill_n110.start); grep -q "SEGLAST FAIL" <<<"$o"
+grep -q "EXAMPLE ('lay/instances/seglast_kill_n110.pg', 2, 8, \[2\]" <<<"$o"
+o=$(python3 -I lay/wsink.py --one lay/instances/seglast_kill_n110.pg lay/instances/seglast_kill_n110.start); grep -q "^SS FAIL" <<<"$o"
+for k in WSOFF HSOFF HSR WSL NOSINK; do grep -q "^$k PASS" <<<"$o"; done
+o=$(python3 -I lay/relcheck.py lay/instances/seglast_kill_n110.pg lay/instances/seglast_kill_n110.start 2 8 2)
+grep -q "tau constant on \[a, b\]: True | no fallback at transitions a..b-1: True" <<<"$o"; grep -q "tau_(a-1) == tau_a: False" <<<"$o"
+grep -q "REL-admissible on \[a, b\]: True | REL at a - 1: False" <<<"$o"; grep -q "switchers at t = 2: \[(1, 82, 25, 'switches again at', \[7\])\]" <<<"$o"
+grep -q "SEG-LAST fails at t: True" <<<"$o"; grep -q "observed GEN_W failures on \[a, b\] (S1 rank order): 0" <<<"$o"
+python3 -I root/n5bcmp.py lay/instances/seglast_kill_n110.pg lay/instances/seglast_kill_n110.start | grep -q "n5b iterations 16 fallbacks 0 states 17 | n5x states 17 | identical state sequences: True"
+echo "lay (box 27: seglast_kill_n110 kills SEG-LAST and SINK-GROW, reproduced from n5b alone; sink lemmas hold): PASS"
+# box 27: lay/instances/seglast_kill_n29 (seglast_kill_n110 shrunk by lay/wclimb.py OBJ=M) kills SEG-LAST: run [2, 4] = one REL segment,
+# t = 2: the only switch is vertex 1, 9 -> 23, and 1 switches again at 3 (jointly with 25: SEG-COUNT tight). Reproduced from n5b alone
+# (run boundaries from n5b's own (lambda_Xi, tau) key, the cutting into REL segments, the switch history, observed GEN_W).
+echo "976fc4e88a514b1615ef81caa8b4af17a42b1c5f  lay/instances/seglast_kill_n29.pg" | sha1sum -c --quiet
+echo "9afeb2aaf26dd63460216185b6a405a02b07474f  lay/instances/seglast_kill_n29.start" | sha1sum -c --quiet
+python3 -I lwp/seglast.py --one lay/instances/seglast_kill_n29.pg lay/instances/seglast_kill_n29.start | grep -q "EXAMPLE ('lay/instances/seglast_kill_n29.pg', 2, 4, \[2\], 2, 2, 29)"
+o=$(python3 -I lay/relcheck.py lay/instances/seglast_kill_n29.pg lay/instances/seglast_kill_n29.start 2 4 2)
+grep -q "run containing t (n5b: (lambda_Xi, tau) constant, no fallback): (2, 4) | its REL segments: \[(2, 4)\] | \[a, b\] is one of them: True" <<<"$o"
+grep -q "switchers at t = 2: \[(1, 9, 23, 'switches again at', \[3\])\]" <<<"$o"; grep -q "SEG-LAST fails at t: True" <<<"$o"; grep -q "S1 rank order): 0" <<<"$o"
+o=$(python3 -I lay/relcheck.py lay/instances/seglast_kill_n110.pg lay/instances/seglast_kill_n110.start 2 8 2); grep -q "its REL segments: \[(2, 8)\] | \[a, b\] is one of them: True" <<<"$o"
+python3 -I root/n5bcmp.py lay/instances/seglast_kill_n29.pg lay/instances/seglast_kill_n29.start | grep -q "n5b iterations 9 fallbacks 0 states 10 | n5x states 10 | identical state sequences: True"
+echo "lay (box 27: seglast_kill_n29 kills SEG-LAST, run and segment recomputed from n5b alone): PASS"

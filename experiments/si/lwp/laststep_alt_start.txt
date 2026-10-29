@@ -1,0 +1,6 @@
+CYCSET_V=1 h4len_max_plus1=4 h4p_fail=3 jcyc_vertices=49 kar_nontrivial=0 kar_steps=5384 segs=1249 trans=5384
+EXAMPLE ('CYCSET', 'experiments/red/n3/instances/run34_n40.pg', 11, 14, [7, 8, 10, 12, 14, 15, 18, 19, 20, 21, 24, 27, 34, 38], {7: 14, 8: 14, 10: 13, 12: 14, 14: 14, 15: 14, 18: 14, 19: 14, 20: 14, 21: 14, 24: 14, 27: 13, 34: 14, 38: 12})
+LASTSTEP PASS
+CYCSET FAIL
+KARENA PASS
+KSET PASS

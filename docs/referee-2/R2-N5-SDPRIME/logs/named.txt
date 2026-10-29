@@ -1,0 +1,28 @@
+MODE pairs named.lst ../../../experiments MUT - SDCAP 60
+ENGXI_checks: 567
+EP_epochs: 94
+EP_hyp_pieces: 91
+EP_hyp_pieces_CFpos: 3
+EP_k1_eq_CF: 91
+EP_pieces: 91
+GEN_used_fail_intervals: 1
+H3p_intervals: 634
+NEW_coverage_intervals: 159
+REM_intervals: 475
+SD_TW_ne_TH: 159
+SD_intervals: 634
+SD_lamW_moves: 159
+SD_other_cycles_move: 3
+STEPA_checks: 38414
+STEPB_checks: 29715
+S_runs: 48
+WMONO_checks: 500
+lamW_change_transitions: 24
+pieces: 91
+runs: 8
+states: 567
+EP_max_CF: (1, 2, 'si/root/instances/cone_n65.pg#S3', 1, 5, 65)
+EP_max_k: (2, 1, 'si/root/instances/cone_n65.pg#S3', 1, 5, 65)
+SD_max_len: (17, 'si/root/instances/cone_n69.pg#S3', 2, 19, 21, 69)
+max_piece_len: (18, 'si/root/instances/cone_n69.pg#S3', 2, 20, 69)
+RESULT OK violations=0

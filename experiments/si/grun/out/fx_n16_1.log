@@ -1,0 +1,12 @@
+seed G 0 n 16
+step 698 G 1 n 16 G/n 0.062
+step 2632 G 2 n 16 G/n 0.125
+step 3162 G 3 n 16 G/n 0.188
+step 3184 G 4 n 16 G/n 0.250
+step 7409 G 5 n 15 G/n 0.333
+step 9626 G 6 n 16 G/n 0.375
+step 17324 G 7 n 16 G/n 0.438
+step 24283 G 8 n 16 G/n 0.500
+step 27929 G 9 n 16 G/n 0.562
+step 30050 G 10 n 16 G/n 0.625
+final best G/n 0.667 G 10 n 15

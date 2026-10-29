@@ -1,3 +1,125 @@
+# Handover check: L-SI (successor 23, written 2026-10-29T08:1xZ by date -u (08:11:15 at the measurement); LANE-RESTART step 3; Opus 5.5, D18/L40)
+Every answer below was measured in this container; commands given. Predecessor: successor 22, session_01V5yGRZMmxSubTRSBLM6LGn.
+Its handover is notes/L-SI.md "## HANDOVER (successor 22, box 26)" (l-si 1417b7fb, stamp 484f3f59).
+
+## 1. Branch, head, distance to trunk
+- Branch `claude/l-si`. Clone stale again: local HEAD da88a6d4 before the fetch ("up to date" per git status).
+  `git fetch origin claude/l-si claude/vibrant-johnson-nxvvxo` → origin/claude/l-si 484f3f59; `git merge --ff-only` to it.
+- Trunk = 9c917d95 (Lead: push.sh pushes exactly the verified commit). `git rev-list --left-right --count origin/claude/l-si...trunk`
+  → 2 ahead / 6 behind. `git merge --no-edit` of trunk (no rebase) → c69aa163; `git rev-list --left-right --count HEAD...trunk` → 3 ahead /
+  0 behind, merge-base 9c917d95. This file is the next commit.
+- Oink: tools/oink/build absent (fresh container); `scripts/setup_oink.sh` run (output to a scratch file); result in the commit message.
+
+## 2. Open work and the next step of each (nothing running: `ps -eo pid,args | grep -c "[x]climb"` → 0; tree clean before the merge)
+Pins unchanged (`sha1sum experiments/si/lwp/instances/*.pg`): cycset_kill_n60 957c7c9e, karena_kill_n71 8b659497, lwp_gap_n26 1ad8d003,
+setstep_kill_n71 b6360888 (match note §1, §7, §8).
+- STEP 1 (Lead 08:10Z, queue item 1): layered K-REDUCTION ⇒ CONJECTURE SEG-LAST without (H4′_rel) (GEN_W may stay), or a SEG-LAST failure
+  inside a REL segment. Obstruction (karena_kill_n71, t = 0): 41 ∈ K, σ_0(41) = 50 ≠ 35 = σ_b(41), (41, 35) not improving at 0; 41's honest
+  J_b-successor 35 still switching. Next: read the layering at t = 0 on karena_kill_n71 with lwp/laststep.py, then try a proof by induction
+  on the honest J_b-order inside K (honest J_b-edges in K are acyclic, note §8 READING); measure any new hypothesis on library + kill pins.
+- STEP 2: packet decision (LAST-STEP + K-REDUCTION ± layered form): the one-line statement not implied by R83, to the Lead before freezing.
+- Queue items 2-3 unchanged: L-WAVE′ (OPEN), SEG-RUN, STATIC-DEPTH′-TIE.
+
+## 3. docs/GAPS.md rows I own
+- None (`awk -F'|' '$4 ~ /L-SI/' docs/GAPS.md` → empty). I work under G-N5-TIME (open, GAPS l.11).
+- RESULTS: `grep -n '^### R83' docs/RESULTS.md` → l.4774 (R83 REL now in RESULTS; the predecessor's mismatch is resolved). Last entry R84.
+
+## 4. The three owner rulings that constrain me most (verbatim from docs/DECISIONS.md; status docs/DECISIONS-INDEX.md)
+- D18 (DECISIONS.md l.332; index l.32: active): "Focus on N5 and work toward proving it. Explore novel approaches, especially by
+  connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions
+  where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and
+  open problems." Lead reading L40 (index l.33: active).
+- D16 (DECISIONS.md l.299; index l.28: active): "Then keep working as I told you to"
+- D1 (DECISIONS.md l.6; index l.5: active): "Never publish, post, email, submit or contact anyone outside the fleet. Anything external is
+  my decision."
+
+## 5. One trap that bit this lane before, and the check that prevents it
+- Trap (successor 22): push.sh pushed the branch HEAD at the end of verify, so a commit made during verify would go out unverified. Check:
+  trunk 9c917d95 (merged here) makes push.sh push exactly the verified commit; and I make no commit while push.sh runs.
+- Stale clone again (da88a6d4 "up to date" vs origin 484f3f59): `git fetch` of both branches + `rev-list --left-right --count` before
+  reading the notebook and before every push.
+
+# Handover check: L-SI (successor 22, written 2026-10-29T06:4xZ by date -u (06:40:40 at the measurement); LANE-RESTART step 3; Opus 5.5, D18/L40)
+Every answer below was measured in this container; commands given. Predecessor: successor 21, session_01V5yGRa5b9XuhTGUqNBFGaE.
+Its handover is notes/L-SI.md "## HANDOVER (successor 21, box 25)" (l-si f756e089; head 10ea06e5).
+
+## 1. Branch, head, distance to trunk
+- Branch `claude/l-si`. Clone stale again: local HEAD da88a6d4 before the fetch ("up to date" per git status).
+  `git fetch origin claude/vibrant-johnson-nxvvxo claude/l-si` → origin/claude/l-si 10ea06e5 (commit time 06:20:52Z); `git merge --ff-only`.
+- Trunk = 49af18c7 (Lead: resume point; log). `git rev-list --left-right --count origin/claude/l-si...trunk` → 3 ahead / 6 behind.
+  `git merge --no-edit` of trunk (no rebase) → 2bc26f8b; `git rev-list --left-right --count HEAD...trunk` → 4 ahead / 0 behind, merge-base
+  49af18c7. This file is the next commit.
+- Oink: tools/oink/build absent (fresh container); `scripts/setup_oink.sh` (output to a scratch file) → exit 0, "oink built at 8fbf0a7"
+  (oink, tc, tc+, counter_m, rngame present).
+
+## 2. Open work and the next step of each (nothing running: `ps` shows no gclimb; tree clean before the merge)
+Frozen packets unchanged (`sha1sum docs/si/P-N5-*box25*.md`): SDPRIME 54678c38, SDPRIME-fixes f0bc5f45, REL f79300a2, REL-fixes 16a74626.
+- STEP 1, CONJECTURE L-WAVE′ (N5-GRUN-box25 §5; lwave.py PMODE=1): best kill score 0 (gap = n − 1, grun/out/lwp_a, n 26). Next: one
+  structurally different kill search (not the lwp_a climb), then the proof route (value-level settling across L-gaps; obstruction:
+  gate competitors off the end-state plays, Even P-changes not events).
+- STEP 2: CONJECTURE SEG-RUN (DATA ≤ 1.00n) or CONJECTURE PIECE (CF of Corollary EPOCH), whichever STEP 1 leaves closer.
+
+## 3. docs/GAPS.md rows I own
+- None (`awk -F'|' '$4 ~ /L-SI/' docs/GAPS.md` → empty). I work under G-N5-TIME (open).
+- RESULTS on this trunk: `grep -o '^### R[0-9]*' docs/RESULTS.md | tail -1` → R82 (SDPRIME, l.4653). R83 (REL) is NOT yet in docs/RESULTS.md
+  at trunk 49af18c7 (`grep -n R83 docs/RESULTS.md` → empty; NOW.md 05:46Z: "At CHECKER: R83 REL (C92)"); the Lead's 06:38Z brief says
+  landed. MISMATCH flagged; I treat REL as SIGNED-by-both (packet) until RESULTS shows R83.
+
+## 4. The three owner rulings that constrain me most (verbatim from docs/DECISIONS.md; status docs/DECISIONS-INDEX.md)
+- D18 (DECISIONS.md l.332; index l.32: active): "Focus on N5 and work toward proving it. Explore novel approaches, especially by
+  connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions
+  where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and
+  open problems." Lead reading L40 (index l.33: active).
+- D14 (DECISIONS.md l.244; index l.22: active): "D" / "You know it can also test prveiously not tested approaches, it can come up with it own as well"
+- D1 (DECISIONS.md l.3; index l.5: active): "Never publish, post, email, submit or contact anyone outside the fleet. Anything external is
+  my decision."
+
+## 5. One trap that bit this lane before, and the check that prevents it
+- Trap: a stale clone. Again here: local claude/l-si at da88a6d4 reported "up to date" while origin was at 10ea06e5 (the whole box 25
+  missing). Check: `git fetch` of both branches + `git rev-list --left-right --count` before reading the notebook and before every push.
+  Second trap (predecessor's note): climbs dirty the tree; `ps -eo pid,args | grep gclimb` before ending a turn.
+# Handover check: L-SI (successor 21, written 2026-10-29T03:0xZ by date -u (03:02:16 at the measurement); LANE-RESTART step 3; Opus 5.5, D18/L40)
+Every answer below was measured in this container; commands given. Predecessor: successor 20, session_01V5yGRWTEYFoWjhNJrADhYc.
+Its handover is notes/L-SI.md "## HANDOVER (successor 20, box 24)" (l-si 714224168, merged with trunk at 4483cc8e).
+
+## 1. Branch, head, distance to trunk
+- Branch `claude/l-si`. Clone stale again: local HEAD da88a6d4 before the fetch ("up to date" per git status).
+  `git fetch origin claude/vibrant-johnson-nxvvxo claude/l-si` → origin/claude/l-si 4483cc8e; `git merge` → fast-forward to 4483cc8e.
+- Trunk = 80bd25f8 (Lead: L-SI routed to RUN-LIN′ proof side). `git rev-list --left-right --count origin/claude/l-si...trunk` → 3 ahead /
+  2 behind. `git merge --no-edit` of trunk (no rebase) → 00d606f8; `git rev-list --left-right --count HEAD...trunk` → 4 ahead / 0 behind,
+  merge-base 80bd25f8. This file is the next commit.
+- Oink: tools/oink/build absent (fresh container); `scripts/setup_oink.sh` run (result in §6).
+
+## 2. Open work and the next step of each (nothing running)
+Frozen files unchanged (`sha1sum docs/si/P-N5-*.md`): CORE 7b66f1ba, CORE-fixes 5f22c9ec, DEPTH 549c7fb7, DEPTH-add 4d51aa5e, GCX 5a91bebb
+(and every other P-N5-* file as listed by the command). Lead brief 03:02Z:
+- STEP 1, CONJECTURE PIECE (unconditional; a σ̄-constant piece of a fallback-free in-phase S4a run has ≤ n − 1 transitions). Landed only
+  under (H3), (H4), GEN_W (RESULTS R77, l.4178). Next step: run root/staticdepth.py VERB=1 on runlin/out/alt_all_root.lst, list the 155
+  pieces failing (H3) / (H4) (863 − 708 per N5-RUNLIN-box24 §8), classify which hypothesis fails and how, and try to prove the bound without it
+  (R74 FREEZE-A / FREEZE-G, R80, R81) or grow such a piece past n − 1.
+- STEP 2, CONJECTURE G-RUN (σ̄ changes per run, DATA ≤ 1.07n). With SPLIT, |S| ≤ G + (G + 1)(n − 1): G = O(n) gives O(n²) per run.
+- Older queue (successor 19/20): SW-RUN, (G1) flip-flops: unchanged, behind STEP 1-2.
+
+## 3. docs/GAPS.md rows I own
+- None (`awk -F'|' '$4 ~ /L-SI/' docs/GAPS.md` → empty). I work under G-N5-TIME (major, owner L-NEW, open). RESULTS now ends at R81
+  (`grep -o '^### R[0-9]*' docs/RESULTS.md | tail -1`); R77 STATIC-DEPTH at l.4178, R74 l.3877, R80 l.4405, R81 l.4520.
+
+## 4. The three owner rulings that constrain me most (verbatim from docs/DECISIONS.md; status docs/DECISIONS-INDEX.md)
+- D18 (DECISIONS.md l.333; index l.32: active): "Focus on N5 and work toward proving it. Explore novel approaches, especially by
+  connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions
+  where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and
+  open problems." Lead reading L40 (index l.33: active): L-SI is the OR/MDP lens.
+- D1 (DECISIONS.md l.6; index l.5: active): "Never publish, post, email, submit or contact anyone outside the fleet. Anything external is
+  my decision."
+- D16 (DECISIONS.md l.300; index l.28: active): "Then keep working as I told you to"
+
+## 5. One trap that bit this lane before, and the check that prevents it
+- Trap: a time written without running `date -u`. The predecessor's handover is headed "written 2026-10-29T03:1xZ (date -u)", but its commit
+  714224168 has commit time 02:54:29Z (`git log -1 --format=%cI`), and `date -u` here gave 03:01:41: the stamp was estimated, not measured. Check: run `date -u` in the same turn as every
+  timestamp and message, and copy its output. Also (again): stale clone, so fetch + merge (never rebase) before reading and before every push.
+
+## 6. Oink
+- `scripts/setup_oink.sh` (output redirected to a scratch file) → exit 0, "oink built at 8fbf0a7" (tc, tc+, counter_*, rngame present).
 # Handover check: L-SI (successor 20, written 2026-10-28T23:3xZ by date -u; LANE-RESTART step 3; Opus 5.5, D18/L40)
 Every answer below was measured in this container; commands given. Predecessor: successor 19, session_01Wri18MQcngoeeFHoME5WLV.
 Its handover is notes/L-SI.md "## HANDOVER (successor 19, box 23)" (l-si 7407ef29, queue da88a6d4).

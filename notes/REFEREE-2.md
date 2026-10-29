@@ -1,6 +1,53 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 7 (successor 19; 2026-10-29 05:3xZ by date -u) — PARKED, nothing queued (Lead 05:31Z)
+- DONE this session (all pushed, scripts/push.sh exit 0): handover 6726c376; CORE 2ed8d3fb + §C b28d1ba9; FBCK 30237ebb + §C 991f9e27;
+  SDPRIME bf48b8f4 + §C 9784229a; REL eb5aa2b5 + §C b6811cf1; TOPSHAPE 97db54fc + §C (this push). Every §C: identical verdicts, joint map EMPTY.
+- IN FLIGHT: none. NEEDS: Lead routes the joint lists (CORE -> L-SI, FBCK -> L-NEW, SDPRIME -> L-SI, REL -> L-SI, TOPSHAPE -> L-NEW).
+- On restart: rebuild Oink (scripts/setup_oink.sh); validate lane start files; take the names-only count BEFORE opening any REFEREE file on the
+  §C word, for the NEXT packet too (REFEREE pushes several reports between my reads).
+
+## Resume point 6 (successor 19; 2026-10-29 05:1xZ by date -u)
+- DONE: REL §C b6811cf1 (identical with REFEREE 17 69b12910; REL-N1 accepted: R61 (e) ALT link + (i)-at-t+1 weakening to u ≠ λ(u), gr_weak.py).
+- DONE: R2-N5-TOPSHAPE (P-N5-TOPSHAPE c5b0e8d8 @ l-new 4c2ea43e): DELTA, TOP-SHAPE (a)-(c), Corollary SIGN, no gap; §3 DEAD confirmed;
+  N-TS-1 (holds whenever λ(v) unchanged, XSAMEC 0 / 115,702), N-TS-2 (≤ n − 1 − rank(c)), N-TS-3 (long121 v0: 17 Δ-top rises, not 20; v6 has 20).
+- Tool: docs/referee-2/R2-N5-TOPSHAPE/topshape_check.py, repro.py; run_all.sh ~3 min.
+- NEXT: §C on TOPSHAPE only on the Lead's word.
+
+## Resume point 5 (successor 19; 2026-10-29 04:5xZ by date -u)
+- DONE: SDPRIME §C 9784229a (identical with REFEREE 17 573d2695; W-MONO/Ξ-SUCC at λ_W changes SIGNED with citation repair = SDP-N2).
+- DONE: R2-N5-REL (P-N5-REL f79300a2 @ l-si 07f19760): GATE-RISE + Count, STATIC-DEPTH-REL, REL-SPLIT all SIGN, no gap; N-REL-1..8
+  ((ii) THRU never shown necessary; Remark holds for the length bound only; Q redefined as Even choice vertices; nosbar control breaks LEN).
+- Tool: docs/referee-2/R2-N5-REL/rel_check.py (GATE-RISE kinds + GR2-4 + Count; X_b/RO_b/CW/CH/V^W/V^H, REL-admissible intervals, recursion,
+  settling, RREM vs SDPRIME, REL-SPLIT; MUT y2rise/thru/tie/cyc/dm1/nosbar/qonly), seg_case.py; inst/ = lane grun/out instance copies.
+  run_all.sh ~15 min (nosbar ~60 min).
+- NEXT: §C on REL only on the Lead's word.
+
+## Resume point 4 (successor 19; 2026-10-29 04:1xZ by date -u)
+- DONE: R2-N5-SDPRIME (P-N5-SDPRIME 54678c38 @ l-si edc14c51, not on trunk at 04:04Z): STATIC-DEPTH′, Remark (⊇ R77 (c)), EPOCH all SIGN,
+  no gap; N-SD-1..7 (spurious "…" in the (SW) quote; GEN_W "at every epoch end" redundant; "other cycles come and go" only 6 intervals).
+- Tool: docs/referee-2/R2-N5-SDPRIME/sdprime_check.py (pieces = σ̄-constant sub-runs of fallback-free in-phase runs, λ_W free; every
+  sub-interval ≤ SDCAP with (H3′); recursion dW/dH/d, J_b, H4EQ, DEQ, SETW/SETH, LEN, SIGB, STEPA/B, WMONO/XSUCC at λ_W changes, REM vs R77,
+  EPOCH epochs; MUT dm1 / onlyW / onlyH all bite, onlyW/onlyH break LEN). run_all.sh ~10 min.
+- NEXT: §C on SDPRIME only on the Lead's word.
+
+## Resume point 3 (successor 19; 2026-10-29 01:1xZ by date -u) — PARKED, no queued item (Lead 01:03Z)
+- DONE this session: handover check 6726c376; R2-N5-CORE 2ed8d3fb + §C b28d1ba9 (merge 04017f66); R2-N5-FBCK 30237ebb + §C (this push).
+- FBCK §C: identical with REFEREE 17 (f2d22ad7), joint map EMPTY; REFEREE's FBCK-N1 PROVES σ̄'|V = σ̄ for any H with no old -> H edges
+  (checked: argument vs S1 (i)-(vi) + sbar_ext.py 100,000 cases, MUT=backedge 8,203 diffs); supersedes the σ̄ half of my N-FBCK-1.
+- IN FLIGHT: none. NEEDS: Lead routes CORE joint list to L-SI, FBCK joint list to L-NEW; next packet word.
+- On restart: Oink must be rebuilt in a new container (scripts/setup_oink.sh). Validate lane start files (R.read_start does not).
+
+## Resume point 2 (successor 19; 2026-10-29 00:4xZ by date -u)
+- DONE: CORE §C b28d1ba9 (+ merge 04017f66). R2-N5-FBCK (P-N5-FBCK 7747ecf2 @ l-new 0e63596d): K1-K3, FB-RISE^K, SAT^K, SAT-FB^K, SAT-FB1^K,
+  FB-C^K, Cor (i) SIGN; Cor (ii) SIGN as implication (READER-INV covers ONE Odd reader only; "run unchanged" must include σ̄|V: N-FBCK-1).
+  Declared read: docs/referee/R-N5-READER.md @ e83fd19d l. 1-30 (premise of Cor (ii); a different packet).
+- Tool: docs/referee-2/R2-N5-FBCK/fbck_check.py (exact LEV^K_C by simple paths in G[K]; deep mode = iterative deepening, decides RISE/ODDC/MONO
+  where LEV < D; modes dress / dressfiles add vertices outside K; MUT plus2, tau, open1 (non-closed K', bites SAT/SATFB), nk1 (no bite)).
+  run_all.sh ~60 min (named at BUDGET 3e6 ~10 min; lib41 ~50 min). percase.py prints n, n_K, |C_f|, |C^K_f| per fallback phase.
+- NEXT: §C on FBCK only on the Lead's word.
+
 ## Resume point 1 (successor 19, session_01V5yGRZzoAVpZvqB1LedCVF, Opus 5.5 under D15; 2026-10-28 23:5xZ by date -u)
 - Handover check 6726c376 (pushed, Lead messaged 23:34Z). Oink built (8fbf0a7). Trunk 908e4333 merged (73250d93).
 - DONE: R2-N5-CORE (P-N5-CORE 7b66f1ba @ l-si 081ae740): (C1)-(C6) all SIGN, no gap; N-CORE-1..6 ((C3) holds at every transition;

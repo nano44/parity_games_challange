@@ -67,4 +67,38 @@ if git cat-file -e 3b2631be^{commit} 2>/dev/null && git cat-file -e 864302d0^{co
 else
   echo "RESTRICT-fixes quotes: NOT RUN (3b2631be or 864302d0 not in this clone)"
 fi
+# Box 49 (successor 30): P-N5-FBCK-fixes (frozen): 25 quotes at the §C commits 6b752e89 / 991f9e27 and the freeze 0e63596d, shifted control, sha1.
+if git cat-file -e 6b752e89^{commit} 2>/dev/null && git cat-file -e 991f9e27^{commit} 2>/dev/null; then
+  if python3 -I box49/quotecheck3.py ../../docs/new/P-N5-FBCK-fixes-box49.md | grep -q "quotes=25 bad=0" && \
+     ! python3 -I box49/quotecheck3.py ../../docs/new/P-N5-FBCK-fixes-box49.md --mut >/dev/null && \
+     [ "$(sha1sum ../../docs/new/P-N5-FBCK-fixes-box49.md | cut -d' ' -f1)" = "19237624d32db379db858ea961861bd094441db1" ]; then
+    echo "FBCK-fixes quotes 25 + control, sha1: PASS"
+  else
+    echo "FBCK-fixes checks: FAILED"; exit 1
+  fi
+else
+  echo "FBCK-fixes quotes: NOT RUN (6b752e89 or 991f9e27 not in this clone)"
+fi
+# Box 49 (successor 30): packet P-N5-TOPSHAPE (frozen): quotes (2) + shifted control + sha1, and Lemma TOP-SHAPE's checks on long121 (VIOL absent).
+tq=$(python3 -I box49/topmono.py 0 1 box48/instances/long121_n40.pg)
+if python3 -I box49/quotecheck3.py ../../docs/new/P-N5-TOPSHAPE-box49.md | grep -q "quotes=2 bad=0" && \
+   ! python3 -I box49/quotecheck3.py ../../docs/new/P-N5-TOPSHAPE-box49.md --mut >/dev/null && \
+   [ "$(sha1sum ../../docs/new/P-N5-TOPSHAPE-box49.md | cut -d' ' -f1)" = "c5b0e8d86745d6db5e0c9f6e1551b10c5b511b8f" ] && \
+   echo "$tq" | grep -q "PCH 769 TDOWN" && ! echo "$tq" | grep -q VIOL; then
+  echo "P-N5-TOPSHAPE quotes 2 + control, sha1, TOP-SHAPE on long121: PASS"
+else
+  echo "P-N5-TOPSHAPE checks: FAILED"; exit 1
+fi
+# Box 49 (successor 30): P-N5-TOPSHAPE-fixes (frozen): 17 quotes at the §C commits e0499401 / 0e2063bf and the freeze 4c2ea43e, shifted control, sha1.
+if git cat-file -e e0499401^{commit} 2>/dev/null && git cat-file -e 0e2063bf^{commit} 2>/dev/null; then
+  if python3 -I box49/quotecheck3.py ../../docs/new/P-N5-TOPSHAPE-fixes-box49.md | grep -q "quotes=17 bad=0" && \
+     ! python3 -I box49/quotecheck3.py ../../docs/new/P-N5-TOPSHAPE-fixes-box49.md --mut >/dev/null && \
+     [ "$(sha1sum ../../docs/new/P-N5-TOPSHAPE-fixes-box49.md | cut -d' ' -f1)" = "be683e9fd1dcd64f48c9d02f2fac66fc214cff0d" ]; then
+    echo "TOPSHAPE-fixes quotes 17 + control, sha1: PASS"
+  else
+    echo "TOPSHAPE-fixes checks: FAILED"; exit 1
+  fi
+else
+  echo "TOPSHAPE-fixes quotes: NOT RUN (e0499401 or 0e2063bf not in this clone)"
+fi
 rm -rf "$tmp"

@@ -1,0 +1,2 @@
+gap_minus_n1_max_plus1000=999 gaps=2858 nonL_cuts_max=61
+LWAVE PASS

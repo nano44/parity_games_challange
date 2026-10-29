@@ -1,0 +1,8 @@
+seed (-13, -13, 0) n 32
+step 1 score (-6, -6, 0) n 32
+step 2 score (-4, -4, 0) n 32
+step 5 score (-3, -3, 0) n 32
+step 20 score (-2, -2, 0) n 36
+step 43 score (-1, -1, 0) n 41
+step 44 score (0, 0, 0) n 41
+final (0, 0, 0) n 43 best kill score 0

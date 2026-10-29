@@ -357,3 +357,95 @@ AGAINST_W ('experiments/si/fb2o/instances/tcwult2_against_n8.pg', 0, 1, 0, 4, -1
 - Obstruction: one Odd choice vertex whose options are the two ends of a two-way Even corridor; every σ̄ change restarts a wave along the
   corridor (one Even switch per transition), so the run is a sum of up to G + 1 waves of length up to n − 1; two full waves and a partial
   third already exceed 2n. Linearity is not killed (run ≤ 2.17n on the family).
+
+## DEAD box 25 (L-SI successor 21, 2026-10-29T06:13Z by date -u): CONJECTURE L-WAVE (docs/si/N5-GRUN-box25.md §5)
+- Statement killed: «between two consecutive non-L REL cuts (cuts other than length-only changes of Ξ at the changing gates) of a fallback-free
+  run, or the run's ends, there are ≤ n − 1 transitions».
+- Killer: experiments/si/grun/instances/lwkill_n31 (.pg sha1 4c083c557b69f7ceb263ae492bce33ff1ea6887e, .start sha1
+  177dd289ae04262e5ce63cdbf34bde04bcf6b17c; n 31, one Odd choice vertex u = 5), found by grun/gclimb.py OBJ=LW from run49_n32 in 358 steps.
+  Run [2, 40] (38 transitions, one phase, 0 fallbacks); REL segments [2, 7], [8, 28], [29, 38], [39, 40]; the cuts 7 → 8 and 28 → 29 change
+  only the length of Ξ(5) (path sets 1073741824 and 838860800 unchanged across them), the cut 38 → 39 changes its path set. So the gap [2, 39]
+  has 37 > n − 1 = 30 transitions. n5x = L-COMP's n5b (identical 41 states) = experiments/new/n5.py (40 iterations, 0 fallbacks); check_sol2:
+  zlk OK, strategies verified. Every REL segment is within STATIC-DEPTH-REL's bound (relseg PASS; longest 20).
+- Obstruction: the path set of Ξ(5) changes INSIDE segment [8, 28] (from 1073741824 to 838860800) while σ̄(5) stays on option 28: a P-change of
+  a gate's value without a σ̄ change, which is no cut. L-WAVE counted P-changes only at cuts. Refined CONJECTURE L-WAVE′ (events also at every
+  P-change of Ξ at an Odd choice vertex of RO_b): holds on the killer (max gap 19) and on alt_all (default and pinned starts); OPEN.
+
+## DEAD box 26 (L-SI successor 22, 2026-10-29T07:0xZ by date -u (07:04:10)): candidate invariants for CONJECTURE L-WAVE′ (docs/si/N5-LWP-box26.md §3)
+Lane candidates, never claimed; each would have proved L-WAVE′ (or a 2n form). Gap [x, b] as in the note §0 (b = y − 1 when the gap closes
+at an event y). Engine n5x via root/common.rows; killer pins grun/out/lwp_a (.pg sha1 19d105416929800709707a2489b335a6a936e883, .start
+ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 transitions, one gate u = 4, L-cuts at 5 and 16) and lwp/out/xk_k
+(.pg 1ad8d0036d3d1503b8f672199110d3f41c65030a, .start a2e00ea7c3383b9cd35d21f306c77c8fc3f57684; n 26, gap 24 on [1, 25]).
+- VS-STEP («every transition of a gap makes some vertex value-settled»): lwp_a, 13 of 25 transitions (lwp/vstep.py KEY=V). Obstruction: the
+  L-cut 15 → 16 changes the length of Ξ at 13 vertices, so values reached in the snake are not final.
+- PS-STEP («... (c, P)-settled»): lwp_a t = 2; alt_all 109 (default) / 144 (pinned starts) failing transitions, e.g. lend27_n24 [5, 7] t = 6.
+  Obstruction: vertices pass through intermediate path-set levels (lwp_a: three levels).
+- PV-STEP («... (c, P)- or value-settled», a 2n bound): lwp_a t = 2 (5 Even switches, 6 path-set changes, none to a final level or value).
+  0 failures on alt_all: the killer is the climb instance.
+- GAP-DEPTH («gap ≤ max_Q d at the reference state», STATIC-DEPTH-REL across L-cuts): lwp_a 25 > 23; xk_k 24 > 23; alt_all 8 + 5 gaps
+  (gci2_n12: gap 6, depth 0). Obstruction: the gate's competitors rise off the end-state plays (GRUN §5 READING), and that time is not depth.
+- LAST-SWITCH per gap («every transition of a gap is some Even vertex's last switch in the gap», gap ≤ |Even|): lwp_a t = 2, 3 (23 switching
+  vertices, 25 transitions; the excess equals the 2 L-cuts); xk_k one transition. 0 failures on alt_all and lib41. The per-REL-segment form
+  (CONJECTURE SEG-LAST) and SWL (gap ≤ switchers + L-cuts) survive.
+- Kill searches for L-WAVE′ itself (no kill): note §1.
+- CYC-SET («every J_b-cycle vertex of a REL-admissible segment is W- and H-settled from the segment's start»; would remove (H4′_rel) from
+  Theorem LAST-STEP, note §7): run34_n40 (experiments/red/n3/instances, pinned start), segment [11, 14], 14 cycle vertices settled only from
+  12-14 (lwp/laststep_alt_start.txt); and lwp/out/h4a_k.pg (n 60, sha1 957c7c9e2ce5a6d57890e42b0e8ca0a0911ecefd, default start), segment
+  [0, 4], cycle vertices settled from 1 and NO frontier vertex at t = 0 (found by lwp/xclimb.py OBJ=H4 from dl_4_4). Obstruction: a J_b-cycle
+  settles in one transition with its unsettled Even vertices switching together (1: 28 → 59 and 37: 6 → 58 at t = 0); SEG-LAST holds there.
+- K-ARENA («at every step some terminal part K of J_b on the unsettled set has σ_b(v) in v's S4a arena for all v ∈ K»; with GEN_W it gives
+  SEG-LAST without (H4′_rel), note §8): lwp/instances/karena_kill_n71.pg (n 71, sha1 8b659497688c47075235957ae1e636b5564ec235, default
+  start; found by lwp/xclimb.py OBJ=KA from cycset_kill_n60 in 511 steps). Segment [0, 4], t = 0: the only terminal part is K = {1, 3, 35, 41,
+  46, 50, 64}; 41 has σ_0(41) = 50 ≠ σ_b(41) = 35 and (41, 35) is not improving at 0 (it is at 1, after 35 switched 46 → 50 at 0). K settles in
+  two layers (35, 46, 50 from state 1; the rest from 2). Obstruction: an Even vertex of K whose honest J_b-successor is in K and still
+  switching. SEG-LAST holds there (1 and 35 switch at 0 for the last time).
+- WX-ARENA («at every step some terminal part is a single vertex or has an off-target W-exit vertex, i.e. one whose W-J_b-successor is
+  settled, with its target in the arena»; with the per-vertex Lemma W-EXIT it would give SEG-LAST): lwp/instances/cycset_kill_n60.pg at
+  t = 0 and karena_kill_n71.pg at t = 0 (lwp/laststep.py WX_V=1 on each). Obstruction: there the last switches at t (1 and 37 in
+  cycset_kill_n60) are not W-exits; the step is a joint switch of the part (Theorem K-REDUCTION covers the first instance, nothing covers the
+  second).
+- SET-STEP («at every step of a REL segment some switcher is W- and H-settled from t + 1»; it implies SEG-LAST): lwp/instances/
+  setstep_kill_n71.pg (n 71, sha1 b6360888a8180a9afef84c38845500f46626b548, default start; found by lwp/xclimb.py OBJ=KA from cycset_kill_n60). Segment [1, 4]: at one step no
+  switcher is settled from t + 1 (lwp/seglast.py SS_V=1), while SEG-LAST holds (every step is still some vertex's last switch). Obstruction:
+  the last switch at that step goes to a target whose plays still change later (layered settling of a terminal part of 10 vertices).
+
+## DEAD box 27 (L-SI successor 23, 2026-10-29T08:25Z by date -u (08:24:59)): W-GROW (docs/si/N5-LAY-box27.md §2-§4)
+- W-GROW («in a REL-admissible segment with GEN_W, the W-settled part of E_b grows at every transition»; equivalently, by Theorem SINK-STEP,
+  «some W-sink is arena-ready at every step»; with Theorem SINK-STEP it would prove SEG-LAST without (H4′_rel)): killed by
+  experiments/si/lay/instances/wgrow_kill_n90.pg (n 90, sha1 f9a7ef090b3df5bb4293301e6bd1236e33a92cd0; start = N5's S3 start, written out
+  as wgrow_kill_n90.start, sha1 a4ead4deae5534731a199c8697c072f407643ca2), found by lay/wclimb.py (score: steps with no frontier vertex +
+  unready W-sinks) from lwp/instances/karena_kill_n71 in 10,666 steps. Segment [0, 3], t = 1: the only W-sinks are 37 and 57 (σ_1 = 1, target
+  5 for both; 5 is W-settled from 0 but H-settled only from 2), and (37, 5), (57, 5) are not improving at 1 (Ξ_1(5) ⋫ Ξ_1(1)); they become
+  improving at 2 and both switch then for the last time. Checks: n5b (L-COMP's independent implementation, SPEC mode) gives the identical
+  state sequence (root/n5bcmp.py: 9 iterations, 1 fallback, identical: True); n5b's improving-edge sets equal n5x's at t = 0, 1, 2; W-plays
+  recomputed from (σ_t, τ) directly (τ constant on [0, 3]). Obstruction: the W-sinks' common target 5 is W-final while its honest value
+  still rises at 1 → 2 (its own H-chain), so the arena at 1 excludes it. SEG-LAST holds (43 and 55 switch at 1 for the last time), and so
+  does CONJECTURE H-GROW (the H-sink 55 switches to its target 48 at 1).
+- H-GROW («... the H-settled part of E_b grows at every transition»; equivalently «some H-sink switches to its target at every step»; with
+  Theorem SINK-STEP it would prove SEG-LAST without (H4′_rel)): killed by experiments/si/lay/instances/hgrow_kill_n89.pg (n 89, sha1
+  998a4a5e770c97b409ebf9f0a9d0ca08fac9bcbd; S3 start written out as hgrow_kill_n89.start, sha1 5895810a61760e4180d70202911768bd75f2beea),
+  found by lay/wclimb.py OBJ=H from lwp/instances/cycset_kill_n60 in 1,208 steps. Segment [1, 8]: H-GROW fails at 6 of its 7 steps
+  (t = 1..6): the H-sinks 1, 46, 73 (σ = 27, target 23, ready from t = 1) wait while a W-frame snake settles one W-sink per step
+  (38/70 → 48, 49 → 38, 64 → 49, 77/78 → 64, 22 → 77, 28/33 → 22), and switch only at t = 7, when their W-chain end 34 settles. Checks: n5b
+  state sequence identical (13 iterations, 0 fallbacks); honest successor maps (σ̄) and improving sets equal n5b's at all 14 states.
+  Obstruction: an H-sink's W-chain is still unsettled, so S4a (W-optimal) does not yet take its target. W-GROW, SINK-GROW and SEG-LAST hold.
+- SEG-LAST (CONJECTURE, box 26 §4: «in every maximal REL-admissible segment [a, b], every transition t → t + 1 (a ≤ t < b) is the last
+  switch in [a, b] of some Even vertex»; 0 failures in 3,134 library segments and every box-26 climb) and SINK-GROW (box 27: «at every step
+  of a REL segment the W-settled or the H-settled part of E_b grows»; it implies SEG-LAST by Theorem SINK-STEP): killed by
+  experiments/si/lay/instances/seglast_kill_n110.pg (n 110, sha1 8a2201816d3a522cd2c4da238678d9f6b075f68a; S3 start written out as
+  seglast_kill_n110.start, sha1 107cbf0828cdf1120d8f70b80cdef0e75e9908a4), found by lay/wclimb.py OBJ=S from hgrow_kill_n89 in 6,286 steps.
+  Run = phase [2, 8] (τ changes at 1 → 2, no fallback), one maximal REL segment [2, 8] (6 transitions; (H4′_rel) fails: a 16-vertex
+  J_b-cycle {1, 4, 7, 26, 31, 32, 34, 35, 37, 40, 69, 75, 83, 85, 106, 109}, none settled before 8). At t = 2 the ONLY switch is vertex 1:
+  82 → 25; vertex 1 switches again at t = 7 (25 → 21 = σ_8(1)). So 2 → 3 is no vertex's last switch. Observed GEN_W holds on [2, 8] (0
+  failures, by n5x's W-values and by S1-rank valuations computed from n5b's plays). Checks: n5b (L-COMP, SPEC mode) state sequence identical
+  (16 iterations, 0 fallbacks); lay/relcheck.py recomputes phase, run, REL-admissibility (σ̄ from n5b on RO_b, CW_b, CH_b), maximality,
+  the switch history and observed GEN_W from n5b ALONE (lay/relcheck_seglast_kill_n110.txt). Obstruction (the deadlock of note §5): at
+  t = 2 the only W-sink 37 (target 35) waits for 35's honest value, and the only H-sink 1 (ready, target 21) waits for its W-chain (1 → 31 →
+  … → 37 → 35); S4a breaks it with an INTERMEDIATE switch of 1 (82 → 25), after which 37 is ready (t = 3) and a W-snake 37, 40, 69, 26, 4
+  settles one vertex per step; 1 reaches 21 at t = 7. What survives here: b − a = 6 ≤ 7 = Even vertices switching in [2, 8] (all in E_b,
+  |E_b| = 48), so the COUNT forms (SWL-type) and b − a ≤ n − 1 are not touched.
+- SEG-LAST, smaller killer (box 27): experiments/si/lay/instances/seglast_kill_n29.pg (n 29, sha1 976fc4e88a514b1615ef81caa8b4af17a42b1c5f;
+  .start sha1 9afeb2aaf26dd63460216185b6a405a02b07474f), seglast_kill_n110 shrunk by lay/wclimb.py OBJ=M (keep a SEG-LAST failure, minimise
+  n). Run [2, 4] (phase key (λ_Ξ, τ): τ changes at 1 → 2, λ_Ξ at 4 → 5) is one REL segment; t = 2: the only switch is vertex 1, 9 → 23 (an
+  H-sink, target 19, ready; the only W-sink 25, target 4, not ready); t = 3: 1 → 19 and 25 → 4, both final. Reproduced from n5b alone,
+  run boundaries from n5b's own (λ_Ξ, τ) key included (lay/relcheck_seglast_kill_n29.txt); observed GEN_W holds.

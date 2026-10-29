@@ -1,0 +1,70 @@
+MODE files ../R2-N5-STAU/lib41_noref.lst 3 MUT onlyH SDCAP 60
+ENGXI_checks: 19579
+FAIL_noGEN_LEN: 15
+FAIL_noGEN_SETH: 634
+FAIL_noGEN_SETW: 1279
+FAIL_noGEN_SIGB: 15
+FAIL_noGEN_STEPA: 671
+FAIL_noGEN_STEPB: 82
+GEN_used_fail_intervals: 343
+H3p_intervals: 52423
+H4p_fail: 28
+SD_TW_ne_TH: 4870
+SD_intervals: 52161
+SD_lamW_moves: 740
+SD_other_cycles_move: 59
+SD_sharp: 438
+SDng_TW_ne_TH: 226
+SDng_intervals: 234
+SDng_lamW_moves: 11
+SDng_other_cycles_move: 61
+SDng_sharp: 8
+STEPA_checks: 8595972
+STEPB_checks: 7608194
+S_runs: 1614
+VIOLATIONS: 3009
+V_LEN: 23
+V_SETH: 436
+V_SETW: 1217
+V_SIGB: 23
+V_STEPA: 298
+V_STEPB: 1012
+WMONO_checks: 11292
+lamW_change_transitions: 657
+pieces: 1812
+runs: 1230
+states: 19579
+SD_max_len: (55, 'experiments/red/xing/instances/x32_rand64.pg#0', 0, 55, 56, 64)
+SDng_max_len: (12, 'experiments/new/box29/instances/u1_n32.pg#0', 0, 12, 15, 32)
+max_piece_len: (55, 'experiments/red/xing/instances/x32_rand64.pg#0', 0, 55, 64)
+VIOLATION SETW: experiments/new/box29/instances/u1_n32.pg#1 [3,5] v=2 t=3 dW=0
+VIOLATION SETW: experiments/new/box29/instances/u1_n32.pg#1 [3,5] v=13 t=3 dW=0
+VIOLATION SETW: experiments/new/box29/instances/u1_n32.pg#1 [3,5] v=21 t=3 dW=0
+VIOLATION SETW: experiments/new/box29/instances/u1_n32.pg#1 [3,5] v=23 t=3 dW=0
+VIOLATION SETW: experiments/new/box29/instances/u1_n32.pg#1 [3,5] v=24 t=3 dW=0
+VIOLATION SETW: experiments/new/box29/instances/u1_n32.pg#1 [3,5] v=25 t=3 dW=0
+VIOLATION SETW: experiments/new/box29/instances/u1_n32.pg#1 [3,5] v=27 t=3 dW=0
+VIOLATION SETW: experiments/new/box29/instances/u1_n32.pg#1 [3,5] v=30 t=3 dW=0
+VIOLATION SETW: experiments/new/box29/instances/u1_n32.pg#1 [3,5] v=31 t=3 dW=0
+VIOLATION SETW: experiments/new/box29/instances/u1_n32.pg#1 [4,5] v=2 t=4 dW=0
+VIOLATION SETW: experiments/new/box29/instances/u1_n32.pg#1 [4,5] v=13 t=4 dW=0
+VIOLATION SETW: experiments/new/box29/instances/u1_n32.pg#1 [4,5] v=21 t=4 dW=0
+VIOLATION SETW: experiments/new/box29/instances/u1_n32.pg#1 [4,5] v=23 t=4 dW=0
+VIOLATION SETW: experiments/new/box29/instances/u1_n32.pg#1 [4,5] v=24 t=4 dW=0
+VIOLATION SETW: experiments/new/box29/instances/u1_n32.pg#1 [4,5] v=25 t=4 dW=0
+VIOLATION SETW: experiments/new/box29/instances/u1_n32.pg#1 [4,5] v=27 t=4 dW=0
+VIOLATION SETW: experiments/new/box29/instances/u1_n32.pg#1 [4,5] v=30 t=4 dW=0
+VIOLATION SETW: experiments/new/box29/instances/u1_n32.pg#1 [4,5] v=31 t=4 dW=0
+VIOLATION SETW: experiments/new/box29/instances/u1_n32.pg#2 [3,5] v=2 t=3 dW=0
+VIOLATION SETW: experiments/new/box29/instances/u1_n32.pg#2 [3,5] v=13 t=3 dW=0
+VIOLATION SETW: experiments/new/box29/instances/u1_n32.pg#2 [3,5] v=21 t=3 dW=0
+VIOLATION SETW: experiments/new/box29/instances/u1_n32.pg#2 [3,5] v=23 t=3 dW=0
+VIOLATION SETW: experiments/new/box29/instances/u1_n32.pg#2 [3,5] v=24 t=3 dW=0
+VIOLATION SETW: experiments/new/box29/instances/u1_n32.pg#2 [3,5] v=25 t=3 dW=0
+VIOLATION SETW: experiments/new/box29/instances/u1_n32.pg#2 [3,5] v=27 t=3 dW=0
+VIOLATION SETW: experiments/new/box29/instances/u1_n32.pg#2 [3,5] v=30 t=3 dW=0
+VIOLATION SETW: experiments/new/box29/instances/u1_n32.pg#2 [3,5] v=31 t=3 dW=0
+VIOLATION SETW: experiments/new/box29/instances/u1_n32.pg#2 [4,5] v=2 t=4 dW=0
+VIOLATION SETW: experiments/new/box29/instances/u1_n32.pg#2 [4,5] v=13 t=4 dW=0
+VIOLATION SETW: experiments/new/box29/instances/u1_n32.pg#2 [4,5] v=21 t=4 dW=0
+RESULT FAIL violations=3009

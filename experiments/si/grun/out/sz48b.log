@@ -1,0 +1,16 @@
+seed G 19 n 24
+step 107 G 20 n 47 G/n 0.426
+step 230 G 21 n 48 G/n 0.438
+step 556 G 22 n 48 G/n 0.458
+step 1646 G 23 n 48 G/n 0.479
+step 5646 G 24 n 48 G/n 0.500
+step 7246 G 25 n 48 G/n 0.521
+step 7318 G 26 n 48 G/n 0.542
+step 8007 G 27 n 47 G/n 0.574
+step 9813 G 28 n 48 G/n 0.583
+step 13837 G 29 n 48 G/n 0.604
+step 14881 G 30 n 48 G/n 0.625
+step 16187 G 31 n 48 G/n 0.646
+step 21287 G 32 n 48 G/n 0.667
+step 28516 G 33 n 48 G/n 0.688
+final best G/n 0.792 G 19 n 24

@@ -1,0 +1,30 @@
+MODE pairs ../../../experiments/si/root/logs/alt_all.lst ../../../experiments MUT - RELCAP 60
+ENGXI_checks: 10604
+GRC_checks: 7023
+GR_changes_CLEAN: 3713
+GR_changes_CYC: 10
+GR_changes_THRU: 125
+GR_changes_TIE: 82
+GR_checks: 3713
+GR_norise_CYC: 5
+GR_norise_TIE: 81
+H4rel_fail: 8
+INVALID_START_ENTRIES: 1
+RA_intervals: 36502
+REL_beyond_SDPRIME: 4094
+REL_intervals: 36362
+REL_sbar_moves_off_RO: 4094
+REL_sharp: 395
+RELng_intervals: 132
+RREM_checks: 32400
+RS_hyp_runs: 874
+RS_runs: 920
+RS_segments: 2874
+S_runs: 920
+runs: 413
+states: 10604
+REL_max_len: (55, 'red/xing/instances/x32_rand64.pg#S3', 0, 55, 56, 64)
+RELng_max_len: (15, 'red/fbx/instances/kt6_n58.pg#S3', 5, 20, 19, 58)
+RS_max_SEG_over_n: (0.792, 'red/so/instances/so_sor5_n24.pg#S3', 0, 22, 19, 24)
+RS_max_run_over_SEGn: (0.917, 'red/xing/instances/x32_rand48.pg#S3', 0, 44, 1, 48)
+RESULT OK violations=0

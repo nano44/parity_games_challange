@@ -1,0 +1,46 @@
+MODE files ../R2-N5-STAU/lib41_noref.lst 3 MUT tie RELCAP 60
+ENGXI_checks: 19315
+GRC_checks: 10733
+GR_changes_CLEAN: 3751
+GR_changes_CYC: 23
+GR_changes_THRU: 109
+GR_changes_TIE: 168
+GR_checks: 3751
+GR_norise_CYC: 8
+GR_norise_TIE: 167
+S_runs: 1612
+VIOLATIONS: 167
+V_MUT_tie: 167
+runs: 1230
+states: 19315
+VIOLATION MUT_tie: experiments/n5-exhaustive/instances/n5s_maxph_0.pg#0@0 u=0
+VIOLATION MUT_tie: experiments/n5-exhaustive/instances/n5s_maxph_0.pg#1@0 u=0
+VIOLATION MUT_tie: experiments/n5-exhaustive/instances/n5s_maxph_0.pg#2@0 u=0
+VIOLATION MUT_tie: experiments/new/box34/instances/oneh_cex_n32.pg#1@2 u=27
+VIOLATION MUT_tie: experiments/new/box35/instances/pf_best_3623.pg#0@13 u=0
+VIOLATION MUT_tie: experiments/new/box35/instances/pf_best_3623.pg#2@6 u=0
+VIOLATION MUT_tie: experiments/red/kl/instances/klcount_n16.pg#0@2 u=14
+VIOLATION MUT_tie: experiments/red/kl/instances/klcount_n16.pg#1@2 u=14
+VIOLATION MUT_tie: experiments/red/kl/instances/klcount_n18_base.pg#0@2 u=14
+VIOLATION MUT_tie: experiments/red/kl/instances/klcount_n18_lvl.pg#0@2 u=14
+VIOLATION MUT_tie: experiments/red/kl/instances/klcount_n18_lvl.pg#2@2 u=14
+VIOLATION MUT_tie: experiments/red/so/instances/mn_abs74_n48.pg#2@6 u=0
+VIOLATION MUT_tie: experiments/red/so/instances/post31_n48.pg#0@20 u=0
+VIOLATION MUT_tie: experiments/red/so/instances/so_sor5_n24.pg#0@0 u=2
+VIOLATION MUT_tie: experiments/red/so/instances/so_sor5_n24.pg#0@1 u=2
+VIOLATION MUT_tie: experiments/red/so/instances/so_sor5_n24.pg#0@2 u=2
+VIOLATION MUT_tie: experiments/red/so/instances/so_sor5_n24.pg#0@4 u=2
+VIOLATION MUT_tie: experiments/red/so/instances/so_sor5_n24.pg#0@5 u=2
+VIOLATION MUT_tie: experiments/red/so/instances/so_sor5_n24.pg#0@7 u=2
+VIOLATION MUT_tie: experiments/red/so/instances/so_sor5_n24.pg#0@8 u=2
+VIOLATION MUT_tie: experiments/red/so/instances/so_sor5_n24.pg#0@9 u=2
+VIOLATION MUT_tie: experiments/red/so/instances/so_sor5_n24.pg#0@10 u=2
+VIOLATION MUT_tie: experiments/red/so/instances/so_sor5_n24.pg#0@12 u=2
+VIOLATION MUT_tie: experiments/red/so/instances/so_sor5_n24.pg#0@13 u=2
+VIOLATION MUT_tie: experiments/red/so/instances/so_sor5_n24.pg#0@14 u=2
+VIOLATION MUT_tie: experiments/red/so/instances/so_sor5_n24.pg#0@16 u=2
+VIOLATION MUT_tie: experiments/red/so/instances/so_sor5_n24.pg#0@17 u=2
+VIOLATION MUT_tie: experiments/red/so/instances/so_sor5_n24.pg#0@19 u=2
+VIOLATION MUT_tie: experiments/red/so/instances/so_sor5_n24.pg#0@20 u=2
+VIOLATION MUT_tie: experiments/red/so/instances/so_sor5_n24.pg#1@3 u=2
+RESULT FAIL violations=167

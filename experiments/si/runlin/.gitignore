@@ -1,0 +1,6 @@
+# L-SI box 24: intermediate climb / stretch states (pinned records are in instances/)
+# running logs are ignored; finished logs are added with git add -f
+out/*.pg
+out/*.start
+__pycache__/
+out/*.log

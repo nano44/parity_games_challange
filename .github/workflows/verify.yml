@@ -8,6 +8,9 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
+        with:
+          # full history: the quote checks in experiments/*/check.sh read pinned commits with git show
+          fetch-depth: 0
       - name: Boost
         run: sudo apt-get update -q && sudo apt-get install -y -q libboost-filesystem-dev libboost-iostreams-dev libboost-regex-dev libboost-random-dev
       - uses: actions/setup-python@v5

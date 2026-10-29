@@ -1,0 +1,18 @@
+OK   docs/new/N5-ssi-global.md@b28123a58:28-29 | valuation of v under (σ, σ̄): (c, P, ℓ), c = the most relevant (max p') vertex of the cycl
+OK   docs/new/N5-ssi-global.md@b28123a58:30-31 | order (better for Even): compare reward of c (p'(c) if even, −p'(c) if odd); then P by the
+OK   docs/new/N5-ssi-global.md@b28123a58:32-32 | Ξσ = valuation of every vertex under σ and Odd's OPTIMAL counterstrategy σ̄
+OK   docs/new/N5-ssi-global.md@b28123a58:47-47 | Iσ = {(v, w) : owner(v) = Even, w ≠ σ(v), Ξσ(w) strictly better than Ξσ(σ(v))}
+OK   docs/new/N5-ssi-global.md@b28123a58:51-51 | A(v) = {σ(v)} ∪ {w : (v, w) ∈ Iσ} for Even v
+OK   docs/new/N5-ssi-global.md@b28123a58:53-53 | (Even's one-player optimum against τ among "keep or take an improving edge".)
+OK   docs/new/N5-ssi-global.md@b28123a58:56-56 | FALLBACK, if σ_new = σ and τ_new = τ
+OK   docs/RESULTS.md@b28123a58:631-631 | (a) Lemma A: for any non-empty unambiguous set I of improvements of σ (VJ00 §4.4), Ωσ ⊴ Ω_
+OK   docs/RESULTS.md@b28123a58:640-640 | (d) N5: every iteration applies Switch_I with ∅ ≠ I ⊆ Iσ to Even's σ (on G)
+OK   docs/RESULTS.md@b28123a58:738-738 | (V1)/(V2) (prefix equation and prefix monotonicity of values)
+OK   docs/RESULTS.md@b28123a58:2907-2907 | (a) Premise (VJ), on every game: for every positional σ and every positional Odd strategy 
+OK   docs/RESULTS.md@b28123a58:804-804 | U_τ the pointwise maximum of V_{σ',τ} over Even's σ'
+OK   docs/RESULTS.md@b28123a58:3596-3596 | P2: S4a's step is Even's optimum in its arena
+MISS docs/RESULTS.md@b28123a58:3768-3769 | (SW): every Even switch of N5 is to an edge … of Iσ
+OK   docs/RESULTS.md@b28123a58:4204-4205 | (W-MONO) W_{t+1} ⊵ W_t (P2), (Ξ-SUCC) Ξ_t(σ_t v) non-decreasing ((M2κ), (SW))
+OK   docs/RESULTS.md@b28123a58:4202-4202 | GEN_W (for every v, different W-plays from v to the same cycle have different W-valuations
+OK   docs/RESULTS.md@b28123a58:4433-4433 | (a) (C1) EVERY-SWITCH (§2): at every transition t → t+1 of a phase, σ_{t+1} ≠ σ_t.
+tags 17 ok 16 miss 1 SHIFT 0

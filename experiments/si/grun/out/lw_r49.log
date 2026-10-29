@@ -1,0 +1,4 @@
+seed G -3.0 n 32
+step 73 G 5.0 n 32 G/n 0.156
+step 101 G 6.0 n 31 G/n 0.194
+step 358 G 7.0 n 31 G/n 0.226

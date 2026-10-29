@@ -1,0 +1,66 @@
+MODE dress 20000 8 18 11 4 6 3 MUT tau BUDGET 400000
+C_checked: 1743
+CfK_total: 1743
+Cf_total: 1743
+ENGXI_checks: 186156
+K_empty_phases: 1709
+Kstates: 3627
+RISE_checks: 1745
+RISE_needed: 13
+SATFB_checks: 1732
+SATFB_lastcase: 1732
+SATFB_with_later: 1732
+SAT_checks: 3467
+VIOLATIONS: 263
+V_ODDC: 18
+V_RISE: 9
+V_SAT: 6
+V_SATFB_Is: 2
+V_SAT_const: 3
+V_XIB: 23
+V_XIB_path: 202
+f_total: 1745
+fb_phases: 1743
+fb_phases_nK_below_n: 1743
+nK_total: 673878
+n_total: 1139406
+phases: 179407
+runs: 60000
+sources: 1745
+sources_sat: 1732
+sources_unsat: 13
+states: 186156
+max_CfK: (1, 'dress11:43#0', 1, 1, 11, 18)
+max_f_over_nKCfK: (0.5, 'dress11:3815#1', 2, 1, 2, 1)
+max_src_per_C_over_nK: (0.5, 'dress11:3815#1', 2, 1, 2)
+VIOLATION ODDC: dress11:424#2@1: LEV 2 odd 2
+VIOLATION XIB_path: dress11:424#2@1: x 0
+VIOLATION XIB_path: dress11:424#2@1: x 3
+VIOLATION XIB: dress11:424#2@1: x 4
+VIOLATION XIB_path: dress11:424#2@1: x 4
+VIOLATION XIB_path: dress11:424#2@1: x 5
+VIOLATION XIB_path: dress11:424#2@1: x 8
+VIOLATION XIB_path: dress11:424#2@1: x 9
+VIOLATION XIB: dress11:424#2@1: x 10
+VIOLATION XIB_path: dress11:424#2@1: x 10
+VIOLATION XIB_path: dress11:424#2@1: x 12
+VIOLATION XIB: dress11:424#2@1: x 13
+VIOLATION XIB_path: dress11:424#2@1: x 13
+VIOLATION XIB_path: dress11:424#2@1: x 14
+VIOLATION XIB_path: dress11:424#2@1: x 15
+VIOLATION XIB_path: dress11:424#2@1: x 16
+VIOLATION ODDC: dress11:424#2@2: LEV 2 odd 2
+VIOLATION XIB_path: dress11:424#2@2: x 0
+VIOLATION XIB_path: dress11:424#2@2: x 3
+VIOLATION XIB: dress11:424#2@2: x 4
+VIOLATION XIB_path: dress11:424#2@2: x 4
+VIOLATION XIB_path: dress11:424#2@2: x 5
+VIOLATION XIB_path: dress11:424#2@2: x 8
+VIOLATION XIB_path: dress11:424#2@2: x 9
+VIOLATION XIB: dress11:424#2@2: x 10
+VIOLATION XIB_path: dress11:424#2@2: x 10
+VIOLATION XIB_path: dress11:424#2@2: x 12
+VIOLATION XIB: dress11:424#2@2: x 13
+VIOLATION XIB_path: dress11:424#2@2: x 13
+VIOLATION XIB_path: dress11:424#2@2: x 14
+RESULT FAIL violations=263
