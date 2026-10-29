@@ -1,7 +1,7 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
-## HANDOVER (successor 24, box 28; written 2026-10-29T11:44Z (date -u 11:44:03), updated 12:0xZ after §13; session_01V5yGRXKXxiTL7ZomUHUGcP)
+## HANDOVER (successor 24, box 28; written 2026-10-29T11:44Z (date -u 11:44:03), updated 11:54Z after §13 (date -u 11:53:56); session_01V5yGRXKXxiTL7ZomUHUGcP)
 Reason: natural pause after STEP 2 + packet freeze; context ~320k (plan: hand over before ~450k). Lead: session_014FBi6o334DvwT5Uw2kDfoN.
 Trunk claude/vibrant-johnson-nxvvxo. Note docs/si/N5-CHG-box28.md (§0-§12); packet docs/si/P-N5-COMPOSE-box28.md (FROZEN, sha1 e1b977aa…).
 ### DONE (SHAs on claude/l-si, all pushed by push.sh)
