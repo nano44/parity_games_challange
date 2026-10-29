@@ -1,0 +1,83 @@
+COVX_H3p_L1 13
+COVX_H3p_L2 28
+COVX_H4p_L0 59
+COVX_H4p_L2 1
+COV_R77 5120
+COV_R77_L0 4046
+COV_R77_L1 427
+COV_R77_L2 647
+COV_SDp 6778
+COV_SDp_L0 5477
+COV_SDp_L1 512
+COV_SDp_L2 789
+EP_chk 6892
+EP_hyp 6816
+FF_runs 4353
+GAMES 349
+GENW_used_fail 52
+H4p_fail 2
+MAX_CF 5
+MAX_EPOCHS 6
+MAX_PIECE_minus_n1_plus1000 999
+MAX_SD_len 44
+PIECES 6892
+PIECES_CF1 41
+PIECES_L0 5536
+PIECES_L1 527
+PIECES_L2 829
+REM_chk 4538
+RUNS 727
+SA_chk 512411
+SB_chk 433472
+SDV_FAIL 14126
+SDV_chk 1129825
+SDV_nonGEN 56
+SD_cand 5442
+SD_cand_TWneTH 891
+SD_cand_lamWchg 194
+SD_chk 5440
+SD_chk_TWneTH 891
+SD_chk_lamWchg 194
+SD_sharp 383
+SD_withgate 3547
+skip_big 63
+EX ('SDV', '../../../experiments/n5-exhaustive/canonA_0.pg/0', 0, 1, 3, 0, 0, 1)
+EX ('SDV', '../../../experiments/n5-exhaustive/canonA_0.pg/0', 0, 1, 3, 1, 0, 1)
+EX ('SDV', '../../../experiments/n5-exhaustive/canonA_0.pg/0', 0, 2, 3, 0, 0, 1)
+EX ('SDV', '../../../experiments/n5-exhaustive/canonA_0.pg/0', 0, 2, 3, 1, 0, 1)
+EX ('SDV', '../../../experiments/n5-exhaustive/canonA_0.pg/0', 0, 2, 7, 0, 1, 2)
+EX ('SDV', '../../../experiments/n5-exhaustive/canonA_0.pg/0', 0, 2, 7, 1, 1, 2)
+EX ('SDV', '../../../experiments/n5-exhaustive/canonA_0.pg/0', 0, 2, 13, 0, 1, 2)
+EX ('SDV', '../../../experiments/n5-exhaustive/canonA_0.pg/0', 0, 2, 13, 1, 1, 2)
+EX ('SDV', '../../../experiments/n5-exhaustive/canonA_0.pg/0', 0, 2, 14, 0, 1, 2)
+EX ('SDV', '../../../experiments/n5-exhaustive/canonA_0.pg/0', 0, 2, 14, 1, 1, 2)
+EX ('SDV', '../../../experiments/n5-exhaustive/canonA_0.pg/0', 0, 3, 3, 0, 0, 1)
+EX ('SDV', '../../../experiments/n5-exhaustive/canonA_0.pg/0', 0, 3, 3, 1, 0, 1)
+EX ('SDV', '../../../experiments/n5-exhaustive/canonA_0.pg/0', 0, 3, 7, 0, 1, 2)
+EX ('SDV', '../../../experiments/n5-exhaustive/canonA_0.pg/0', 0, 3, 7, 1, 1, 2)
+EX ('SDV', '../../../experiments/n5-exhaustive/canonA_0.pg/0', 0, 3, 13, 0, 1, 2)
+EX ('SDV', '../../../experiments/n5-exhaustive/canonA_0.pg/0', 0, 3, 13, 1, 1, 2)
+EX ('SDV', '../../../experiments/n5-exhaustive/canonA_0.pg/0', 0, 3, 14, 0, 1, 2)
+EX ('SDV', '../../../experiments/n5-exhaustive/canonA_0.pg/0', 0, 3, 14, 1, 1, 2)
+EX ('SDV', '../../../experiments/n5-exhaustive/canonA_1.pg/1', 1, 2, 6, 0, 1, 1)
+EX ('SDV', '../../../experiments/n5-exhaustive/canonA_1.pg/1', 1, 2, 6, 1, 1, 1)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b4_cyc6_0.pg/0', 0, 1, 5, 0, 0, 1)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b4_cyc6_0.pg/0', 0, 1, 5, 1, 0, 1)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b4_cyc6_0.pg/0', 0, 2, 5, 0, 0, 1)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b4_cyc6_0.pg/0', 0, 2, 5, 1, 0, 1)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b4_n5_other_0.pg/1', 1, 2, 2, 0, 1, 1)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b4_n5_other_0.pg/1', 1, 2, 2, 1, 1, 1)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b4_nohlen5_0.pg/0', 1, 2, 1, 0, 1, 1)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b4_nohlen5_0.pg/0', 1, 2, 1, 1, 1, 1)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b4_nohlen5_0.pg/0', 1, 3, 1, 0, 1, 1)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b4_nohlen5_0.pg/0', 1, 3, 1, 1, 1, 1)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b4_nohlen5_0.pg/0', 1, 3, 9, 0, 2, 2)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b4_nohlen5_0.pg/0', 1, 3, 9, 1, 2, 2)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b4_nohlen5_0.pg/0', 1, 4, 1, 0, 1, 1)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b4_nohlen5_0.pg/0', 1, 4, 1, 1, 1, 1)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b4_nohlen5_0.pg/0', 1, 4, 8, 0, 3, 3)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b4_nohlen5_0.pg/0', 1, 4, 8, 1, 3, 3)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b4_nohlen5_0.pg/0', 1, 4, 9, 0, 2, 2)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b4_nohlen5_0.pg/0', 1, 4, 9, 1, 2, 2)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b4_nohlen5_0.pg/0', 1, 5, 1, 0, 1, 1)
+EX ('SDV', '../../../experiments/n5-exhaustive/instances/b4_nohlen5_0.pg/0', 1, 5, 1, 1, 1, 1)

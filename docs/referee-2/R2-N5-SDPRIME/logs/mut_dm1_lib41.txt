@@ -1,0 +1,54 @@
+MODE files ../R2-N5-STAU/lib41_noref.lst 3 MUT dm1 SDCAP 60
+ENGXI_checks: 19579
+FAIL_noGEN_SETH: 37
+FAIL_noGEN_SETW: 37
+GEN_used_fail_intervals: 343
+H3p_intervals: 52303
+H4p_fail: 28
+SD_TW_ne_TH: 4811
+SD_intervals: 52102
+SD_lamW_moves: 681
+SDng_TW_ne_TH: 165
+SDng_intervals: 173
+SDng_lamW_moves: 6
+S_runs: 1614
+VIOLATIONS: 19355
+V_SETH: 9675
+V_SETW: 9680
+WMONO_checks: 11292
+lamW_change_transitions: 657
+pieces: 1812
+runs: 1230
+states: 19579
+max_piece_len: (55, 'experiments/red/xing/instances/x32_rand64.pg#0', 0, 55, 64)
+VIOLATION SETW: experiments/n5-exhaustive/canonA_0.pg#0 [0,1] v=3 t=0 dW=1
+VIOLATION SETH: experiments/n5-exhaustive/canonA_0.pg#0 [0,1] v=3 t=0 dH=1
+VIOLATION SETW: experiments/n5-exhaustive/canonA_0.pg#0 [0,2] v=3 t=0 dW=1
+VIOLATION SETH: experiments/n5-exhaustive/canonA_0.pg#0 [0,2] v=3 t=0 dH=1
+VIOLATION SETW: experiments/n5-exhaustive/canonA_0.pg#0 [0,2] v=7 t=1 dW=2
+VIOLATION SETH: experiments/n5-exhaustive/canonA_0.pg#0 [0,2] v=7 t=1 dH=2
+VIOLATION SETW: experiments/n5-exhaustive/canonA_0.pg#0 [0,2] v=13 t=1 dW=2
+VIOLATION SETH: experiments/n5-exhaustive/canonA_0.pg#0 [0,2] v=13 t=1 dH=2
+VIOLATION SETW: experiments/n5-exhaustive/canonA_0.pg#0 [0,2] v=14 t=1 dW=2
+VIOLATION SETH: experiments/n5-exhaustive/canonA_0.pg#0 [0,2] v=14 t=1 dH=2
+VIOLATION SETW: experiments/n5-exhaustive/canonA_0.pg#0 [0,3] v=3 t=0 dW=1
+VIOLATION SETH: experiments/n5-exhaustive/canonA_0.pg#0 [0,3] v=3 t=0 dH=1
+VIOLATION SETW: experiments/n5-exhaustive/canonA_0.pg#0 [0,3] v=7 t=1 dW=2
+VIOLATION SETH: experiments/n5-exhaustive/canonA_0.pg#0 [0,3] v=7 t=1 dH=2
+VIOLATION SETW: experiments/n5-exhaustive/canonA_0.pg#0 [0,3] v=13 t=1 dW=2
+VIOLATION SETH: experiments/n5-exhaustive/canonA_0.pg#0 [0,3] v=13 t=1 dH=2
+VIOLATION SETW: experiments/n5-exhaustive/canonA_0.pg#0 [0,3] v=14 t=1 dW=2
+VIOLATION SETH: experiments/n5-exhaustive/canonA_0.pg#0 [0,3] v=14 t=1 dH=2
+VIOLATION SETW: experiments/n5-exhaustive/instances/b5_o11.pg#0 [0,1] v=3 t=0 dW=1
+VIOLATION SETH: experiments/n5-exhaustive/instances/b5_o11.pg#0 [0,1] v=3 t=0 dH=1
+VIOLATION SETW: experiments/n5-exhaustive/instances/b5_o11.pg#0 [0,2] v=3 t=0 dW=1
+VIOLATION SETH: experiments/n5-exhaustive/instances/b5_o11.pg#0 [0,2] v=3 t=0 dH=1
+VIOLATION SETW: experiments/n5-exhaustive/instances/b5_o11.pg#0 [0,2] v=9 t=1 dW=2
+VIOLATION SETH: experiments/n5-exhaustive/instances/b5_o11.pg#0 [0,2] v=9 t=1 dH=2
+VIOLATION SETW: experiments/n5-exhaustive/instances/b5_o11.pg#0 [0,3] v=1 t=2 dW=3
+VIOLATION SETH: experiments/n5-exhaustive/instances/b5_o11.pg#0 [0,3] v=1 t=2 dH=3
+VIOLATION SETW: experiments/n5-exhaustive/instances/b5_o11.pg#0 [0,3] v=3 t=0 dW=1
+VIOLATION SETH: experiments/n5-exhaustive/instances/b5_o11.pg#0 [0,3] v=3 t=0 dH=1
+VIOLATION SETW: experiments/n5-exhaustive/instances/b5_o11.pg#0 [0,3] v=9 t=1 dW=2
+VIOLATION SETH: experiments/n5-exhaustive/instances/b5_o11.pg#0 [0,3] v=9 t=1 dH=2
+RESULT FAIL violations=19355

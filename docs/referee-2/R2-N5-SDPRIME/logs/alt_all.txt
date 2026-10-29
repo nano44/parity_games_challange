@@ -1,0 +1,35 @@
+MODE pairs ../../../experiments/si/root/logs/alt_all.lst ../../../experiments MUT - SDCAP 60
+ENGXI_checks: 10604
+EP_epochs: 1173
+EP_hyp_pieces: 1121
+EP_hyp_pieces_CFpos: 24
+EP_k1_eq_CF: 1133
+EP_nohyp_pieces: 12
+EP_pieces: 1133
+GEN_used_fail_intervals: 230
+H3p_intervals: 32404
+H4p_fail: 4
+INVALID_START_ENTRIES: 1
+NEW_coverage_intervals: 6297
+REM_intervals: 26103
+SD_TW_ne_TH: 6158
+SD_intervals: 32268
+SD_lamW_moves: 562
+SD_other_cycles_move: 3
+SD_sharp: 369
+SDng_TW_ne_TH: 128
+SDng_intervals: 132
+STEPA_checks: 10540227
+STEPB_checks: 9531639
+S_runs: 920
+WMONO_checks: 7319
+lamW_change_transitions: 283
+pieces: 1133
+runs: 413
+states: 10604
+EP_max_CF: (5, 6, 'red/so/instances/tog6a_n32.pg#S3', 4, 9, 32)
+EP_max_k: (6, 5, 'red/so/instances/tog6a_n32.pg#S3', 4, 9, 32)
+SD_max_len: (55, 'red/xing/instances/x32_rand64.pg#S3', 0, 55, 56, 64)
+SDng_max_len: (15, 'red/fbx/instances/kt6_n58.pg#S3', 5, 20, 19, 58)
+max_piece_len: (55, 'red/xing/instances/x32_rand64.pg#S3', 0, 55, 64)
+RESULT OK violations=0

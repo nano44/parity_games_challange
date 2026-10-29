@@ -1,0 +1,47 @@
+COVX_H3p_L1 13
+COVX_H3p_L2 28
+COVX_H4p_L0 59
+COVX_H4p_L2 1
+COV_R77 5120
+COV_R77_L0 4046
+COV_R77_L1 427
+COV_R77_L2 647
+COV_SDp 6778
+COV_SDp_L0 5477
+COV_SDp_L1 512
+COV_SDp_L2 789
+EP_chk 6892
+EP_hyp 6816
+EP_k_MUT4_FAIL 5
+FF_runs 4353
+GAMES 349
+GENW_used_fail 52
+H4p_fail 2
+MAX_CF 5
+MAX_EPOCHS 6
+MAX_PIECE_minus_n1_plus1000 999
+MAX_SD_len 44
+PIECES 6892
+PIECES_CF1 36
+PIECES_L0 5536
+PIECES_L1 527
+PIECES_L2 829
+REM_chk 4538
+RUNS 727
+SA_chk 512411
+SB_chk 433472
+SDV_chk 1111644
+SD_cand 5442
+SD_cand_TWneTH 891
+SD_cand_lamWchg 194
+SD_chk 5440
+SD_chk_TWneTH 891
+SD_chk_lamWchg 194
+SD_sharp 383
+SD_withgate 3547
+skip_big 63
+EX ('EP_k_MUT4', '../../../experiments/new/box25/wdrop_cyc.pg/0', 0, 1, 2, 0)
+EX ('EP_k_MUT4', '../../../experiments/new/box31/instances/nr_u23_n32.pg/1', 4, 6, 2, 0)
+EX ('EP_k_MUT4', '../../../experiments/new/box37/instances/rfroz_cex_n16.pg/0', 0, 1, 2, 0)
+EX ('EP_k_MUT4', '../../../experiments/red/n5/instances/sym_h8_s1.pg/0', 5, 7, 2, 0)
+EX ('EP_k_MUT4', '../../../experiments/red/xing/instances/x31_lem_t32.pg/0', 1, 3, 2, 0)
