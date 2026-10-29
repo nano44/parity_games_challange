@@ -107,6 +107,9 @@ Friedmann's switch-best family (PGSolver port hard-families/pgsolver_port.py swi
 | SBC | 1 | 4 | 11 | 26 | 49 | 56 | 60 | 75 | 92 | 97 |
 | max segment | 11 | 19 | 25 | 31 | 35 | 41 | 47 | 53 | 59 | 65 |
 | PGSolver switch-best (README) | 23 | 61 | 137 | 289 | 593 | 1201 | 2417 | 4849 | | |
+- Extension (written ~15:1xZ by date -u; sf_sbe_12.txt, _14, _16): N = 12, 14, 16 (n 310, 360, 410): N5-SF 684, 750, 928; SBC 138, 179, 232
+  (0.45n, 0.50n, 0.57n); max segment 77, 89, 101. N5 104, 117, 129. SBC/n is still rising: SBC grows faster than linearly in N here, but
+  nothing near PGSolver switch-best's doubling (4849 at N = 8). DATA; SF-POLY stays OPEN.
 - switchallexp N = 1..6: SF 5, 8, 8, 8, 10, 12; N5 5, 8, 7, 8, 10, 12.
 M1 hard families (hf.sh; Oink generators at the pinned 8fbf0a7, PGSolver port; sf_hf.txt). N = 2, 3, 4, 5, 6, 8; SF iterations (N5 in brackets):
 counter_symsi 8, 9, 11, 12, 14, 17 (13, 25, 22, 31, 37, 48); tc 4, 8, 9, 13, 13, 17 (4, 7, 16, 19, 18, 30); counter_rob 5, 7, 9, 11, 13, 17
