@@ -254,6 +254,8 @@ out=$(python3 -I ul/ulx.py --one ul/instances/cxmig_k4_n54.pg ul/instances/cxmig
 out=$(python3 -I fb/lvl1.py 8); [[ "$out" == "m 8 n 15 f, phase, it = (8, 0, 10)" ]] || { echo "lvl1 drifted: $out"; exit 1; }
 out=$(python3 -I fb/fbphase.py so/instances/rise_fb38_n48.pg S3 so/instances/farrise25_n32.pg S3 | tr '\n' ' ')
 [[ "$out" == *"maxf=37 "*"maxf=25 "* ]] || { echo "fbphase drifted: $out"; exit 1; }
+[[ "$(sha1sum fb/instances/fb38_n48.pg | cut -c1-12)" == "bc5858a24505" ]] || { echo "fb38_n48 sha1 changed"; exit 1; }
+out=$(python3 -I fb/fbphase.py fb/instances/fb38_n48.pg fb/instances/fb38_n48.start); [[ "$out" == *"maxf=38 "* ]] || { echo "fb38_n48 drifted: $out"; exit 1; }
 TMPDIR="$t" python3 correspond.py 2 3 4 5 6 > "$t/corr.log" || { cat "$t/corr.log"; exit 1; }
 python3 xcheck.py --games 150 --nmax 7 --seed 7 > "$t/x.log" || { cat "$t/x.log"; exit 1; }
 echo "red check: r2_check PASS (R11), bsolo 4 = 4 tangles/7 iterations (R10); dtl_flipflop F8 = 36/1/5 (R9), Claim P/Q 0 violations; zadeh_lb N2 = 43 (no fixed order, R7); fhz_padded 2 S7 = 16 (R5 kill);  friedmann_Gn 2 S7 = 15; fhz lockstep3/relation/export OK; gated_bland 6 = 63 MSF iterations (regions = Zielonka, strategies verified); Claim F instances; MSF == Bland N<=6; $(tail -1 "$t/x.log")"
