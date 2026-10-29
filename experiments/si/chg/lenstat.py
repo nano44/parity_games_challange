@@ -59,3 +59,13 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+def lscore(g, R):
+    """(max over segments of (b - a) - |E_b|, max of (b - a) - SW, total deadlocks) for chg/cclimb.py OBJ=LE."""
+    global C, EX, BEST
+    save = (C, EX, BEST); C, EX, BEST = Counter(), [], []
+    try:
+        _run(g, R, "x")
+        if not BEST: return -10 ** 6, -10 ** 6, 0
+        return max(z[3] - z[2] - z[4] for z in BEST), max(z[3] - z[2] - z[5] for z in BEST), C["dl_total"]
+    finally: C, EX, BEST = save

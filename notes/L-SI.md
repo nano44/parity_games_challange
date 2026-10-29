@@ -8,7 +8,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
 - STEP 1 (SEG-COUNT charging) CLOSED: SEG-COUNT DEAD by L-RED R105 (Lead 10:30Z). Mine: PROVED (lane) FREEZE, DEADLOCK, BND, NEW-EDGE,
   SW-RETURN, counting (i)-(iv). DEAD: general (a), INTER-JOINT, DL-HSW, DL-NEXT, GROW-PERSIST, DL-RUN, DL-FIRST, NEWFINAL, DL-SEP,
   DL-NOCONSEC, FROZEN-COUNT, DL-SOMEH, ZIG.
-- Redirect (Lead 10:30Z): polynomial REL-segment LENGTH without (H4′_rel). State: b − a ≤ TOT ≤ SW·MAXV; need a per-vertex switch bound
+- Redirect (Lead 10:30Z, 10:48Z): REL-segment LENGTH; LENE, LEN2 DEAD (L-RED runquad, Θ(n²) segments). Target now CONJECTURE SW-RUN /
+  SW-PER-VERTEX (O(n) switches per vertex per run; DATA ≤ 0.667n). Lemma SW-RISE PROVED (lane). Earlier: b − a ≤ TOT ≤ SW·MAXV; need a per-vertex switch bound
   (MAXV) inside a REL segment. LENE (b − a ≤ |E_b|) holds in all data (tight on L-RED's family); L-RED attacks n − 1.
 - Things only I know (s24): chg/ climbs write chg/out/ (NOT gitignored: experiments/*/out/ matches only experiments/si/out/); stop or
   commit them before a push. Run `date -u` alone before send_message (predecessor's trap). cclimb's KILLSCORE counts failures summed over

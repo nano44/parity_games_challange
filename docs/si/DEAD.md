@@ -500,3 +500,9 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
   [(0, 12), …], REL fails at −1 (run start), every listed t is no vertex's last switch, observed GEN_W 0 failures. SEG-COUNT-type counts
   hold there (12 ≤ 26 switchers). Obstruction: deadlocks are not tied to the sink structure; an honest snake of intermediate switches
   can run inside one frozen sink structure.
+- LENE («every maximal REL segment has b − a ≤ |E_b|»; tight on L-RED's R105 family) and LEN2 («b − a ≤ 2·SW + 1»): killed by L-RED's R106
+  pin runquad_K8_m30_n192 (claude/l-red 86f24219, experiments/red/seg/instances; byte-identical copy experiments/si/chg/instances/red/,
+  sha1 ebaa6ac57ec60948fb986210c27479cb3a7961d9, .start 4ba9f8605a1b18891dffb40d508bce929cf7c952): one fallback-free run [0, 263] = one maximal
+  REL segment with |E_b| = 49, SW = 47 switching Even vertices, 218 deadlock steps (chg/lenstat.py). Obstruction: two pivots climbing in
+  alternation drive a reactor chain back and forth; each reactor switches 2K − 1 = 15 times (chg/pervert.py), so switches per vertex, not
+  vertices, carry the length.

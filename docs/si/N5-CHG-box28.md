@@ -21,7 +21,8 @@ Labels (D18 / L40): PROVED (lane) / CONJECTURE / OPEN / DATA / READING / DEAD. C
 | §6 | After SEG-COUNT died (L-RED R105, Lead 10:30Z): the LENGTH of a REL segment. PROVED (lane): b − a = FIN + DL, GR ≤ min(FIN, settle events ≤ 2\|E_b\|), Lemma NEW-EDGE. Conditional bounds: DL-SEP or DL-NOCONSEC ⇒ b − a ≤ 2·FIN ≤ 2\|E_b\|; FROZEN-COUNT ⇒ b − a ≤ 2\|E_b\|² + 3\|E_b\| | PROVED (lane); CONJECTURE; DATA |
 | §6 | DL-SEP, DL-NOCONSEC, FROZEN-COUNT, DL-SOMEH, ZIG and the routes (L2), (L3) | DEAD: chg/instances/dlsep_kill_n70 (8 deadlocks in one segment, n5b-reproduced) |
 | §7 | the length reduces to MAXV (switches of one vertex in one segment); Lemma SW-RETURN | READING; PROVED (lane) |
-| §6 | LENE: b − a ≤ \|E_b\| on every segment of every corpus and of L-RED's family (b − a = 2K = \|E_b\| − 1, tight) | DATA (L-RED attacks the n − 1 form) |
+| §6 | LENE (b − a ≤ \|E_b\|) and LEN2 (b − a ≤ 2·SW + 1) | DEAD: L-RED R106 runquad_K8_m30_n192 (one REL segment of 263 transitions, \|E_b\| = 49, SW = 47) |
+| §8 | Lemma SW-RISE (a switch strictly raises the switcher's own Ξ off its honest cycle); SW-RUN per fallback-free run (Lead: SW-PER-VERTEX) | PROVED (lane); CONJECTURE, DATA ≤ 0.667n |
 
 ## 0. Setting
 As N5-LAY-box27 §0-§1 (sets S^W_t, S^H_t, U^W_t, U^H_t ⊆ E_b, maps jW, jH, W-/H-sinks, readiness, y_v = σ_b(v)) on a maximal
@@ -178,15 +179,42 @@ a maximal run of consecutive non-growth steps (sinks constant on it, Lemma FREEZ
   between its visits); dlsep_kill_n70's vertex 44 returns to 20 after Ξ(20) rose through 20's own switch at 8. This is a recursion, not a
   bound; it is the next proof target, together with L-RED's attempt to exceed n − 1.
 
+## 8. Per-vertex switches per fallback-free run (Lead 10:48Z: CONJECTURE SW-PER-VERTEX, after L-RED R106)
+- DEAD (DEAD.md box 28): LENE («b − a ≤ |E_b|») and LEN2 («b − a ≤ 2·SW + 1»), and with them every per-segment LINEAR length bound in
+  |E_b| or SW: L-RED's runquad_K8_m30_n192 (claude/l-red 86f24219, R106; copy chg/instances/red/, sha1 ebaa6ac5… / 4ba9f860…): one
+  fallback-free run [0, 263] = one maximal REL segment, |E_b| = 49, SW = 47, FIN = 45, DL = 218, TOT = 481 switches (chg/lenstat.py).
+  BND and FROZEN-COUNT still hold there (frozen runs of length 1 and 9). The run length is Θ(n²) on L-RED's family mkr.py (L ≈ n²/144).
+- Lemma SW-RISE (PROVED, lane). Let t → t + 1 be a transition of a fallback-free run and v an Even vertex with σ_{t+1}(v) = w ≠ σ_t(v) = u
+  such that v is on the cycle of neither its honest play at t nor at t + 1. Then Ξ_{t+1}(v) ▷ Ξ_t(v).
+  Proof. v's honest plays at t and t + 1 are v·(u's play) and v·(w's play), and these avoid v. RESULTS R15 (a) (Lemma A, VJ00 Lemma 5.7)
+  gives Ξ_{t+1}(w) ⊵ Ξ_t(w); (SW) gives Ξ_t(w) ▷ Ξ_t(u). Prepending v to a play that avoids v is strictly order-preserving under S1's order
+  (the cycle node is unchanged; v enters both P-sets or neither, so the largest rank of the symmetric difference is unchanged (RESULTS R84
+  Fact DELTA); both lengths grow by 1). So Ξ_{t+1}(v) = v ⊕ Ξ_{t+1}(w) ⊵ v ⊕ Ξ_t(w) ▷ v ⊕ Ξ_t(u) = Ξ_t(v). □
+  DATA (chg/pervert.py, all switches of all fallback-free runs): the only switches with Ξ_{t+1}(v) = Ξ_t(v) are at v's OWN cycle node
+  (R15 (b)'s length-only switches): FLATCN = 7 (alt_all), 8 (alt_all pinned starts), 19 (lib41), 6 (experiments/si instances); SWRISE_V
+  = 0 (no other flat switch) on every corpus, the runquad family (mkr.py (K, m) = (3, 4) … (12, 4), (6, 40)) and dlsep_kill_n70.
+- Corollary. SW(v) ≤ RISE(v) + (own-cycle-node switches of v) in every fallback-free run: switches are bounded by the rises of the
+  switcher's OWN honest value (with Lemma SW-RETURN, also by its successors' rises). It is a reduction, not a bound: RISE(v) ≤ n is FALSE
+  (RISEN: grun/out/gc1 etc., 34 rises in a run of 35 at n 31; alt_all pinned red/so/instances/so_th_n32: 33 > 32): a vertex downstream of
+  everything rises at almost every step. The usable count is the number of DISTINCT successor values Ξ_t(σ_t v) at v's switch times
+  (strictly increasing by (SW) and Ξ-SUCC), which is SW(v) + 1 itself; its P-part is L-LIT's MATCH-Φ count (docs/lit/T33-match-phi.md,
+  trunk): matched P-changes raise the potential Φ (range O(n²)), carries (NM) are the open part.
+- CONJECTURE SW-PER-VERTEX = the fleet's CONJECTURE SW-RUN (every Even vertex switches O(n) times per fallback-free run; Θ(n²) runs would
+  then be tight against runquad). DATA (chg/pervert.py, chg/pervert_*.txt): max SW(v)/n = 0.667 (experiments/si/root/out/swr_sc24_s8, n 21:
+  vertex 0 switches 14 times in a 14-step run, cycling 9 → 12 → 4 four times: each re-entry after the successor's Ξ rose, Lemma SW-RETURN),
+  0.583 (lib41 sc24), 0.308 (ladder k48), (2K − 1)/n ≤ 0.142 on the runquad family; SW(v) ≤ n: 0 failures (PERV PASS) on every corpus.
+  (Per PHASE it is false: SW-LIN DEAD, swlin_kill_n26, fallbacks re-arm; N5-ALT §10.)
+
 ## DONE / FINDINGS / NEEDS
 - DONE: this note; tools chg/suffix.py (SUFFIX-COUNT, BND with MUT, EARLY, INTER-JOINT), chg/dlock.py (deadlock anatomy and candidates),
   chg/cclimb.py (lemma climbs OBJ=IE, GP), chg/ijcheck.py (n5b-only check of an INTER-JOINT failure); pins chg/instances/
   (interjoint_kill_n70, growpers_kill_n73, dlsep_kill_n70; copies of L-RED's R105 pins in chg/instances/red/); chg/lenstat.py (length
-  statistics); data chg/*.txt; climb logs chg/climbs_box28.txt; DEAD.md "box 28"; check.sh "box 28" (5 blocks).
+  statistics), chg/revisit.py, chg/pervert.py (per-vertex switches); data chg/*.txt; climb logs chg/climbs_box28.txt; DEAD.md "box 28"; check.sh "box 28" (5 blocks).
 - FINDINGS: (1) PROVED (lane): FREEZE, DEADLOCK (the zig-zag cycle closes at every deadlock step), BND, NEW-EDGE, the counting (i)-(iv)
   of §6. (2) DEAD: general (a) (wgrow_kill_n90), INTER-JOINT (interjoint_kill_n70), DL-HSW, DL-NEXT, GROW-PERSIST (growpers_kill_n73),
   DL-RUN, DL-FIRST, NEWFINAL (L-RED's segcount_kill_n20 / segfam_k3_n29 / segfam_k8_n79). SEG-COUNT itself: DEAD by L-RED R105 ((b) fails
   exactly as §4 predicted). (3) The length routes (L2) (DL-SEP / DL-NOCONSEC ⇒ b − a ≤ 2·FIN) and (L3) (FROZEN-COUNT ⇒ O(n²)) are DEAD
   (dlsep_kill_n70: 8 deadlocks, 6 consecutive, in one segment); LENE (b − a ≤ |E_b|) and b − a ≤ SW still hold in all data except L-RED's
-  family (b − a = 2K > SW = K + 1). (4) What is left: a per-vertex switch bound (§7); Lemma SW-RETURN PROVED (lane).
+  family (b − a = 2K > SW = K + 1). (4) What is left: a per-vertex switch bound (§7, §8); Lemmas SW-RETURN, SW-RISE PROVED (lane); LENE, LEN2 DEAD (runquad,
+  L-RED R106); SW-RUN DATA ≤ 0.667n.
 - NEEDS: none from the owner.
