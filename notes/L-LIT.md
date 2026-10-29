@@ -1,36 +1,22 @@
 # L-LIT notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point (HANDOVER, 2026-10-29 ~12:2xZ by date -u; successor Opus 5.5, D15/D18; context ~670k, parked on Lead's word)
-DONE this session (all on claude/l-lit, pushed via scripts/push.sh, each VERIFY PASS):
-- a0e73a8f handover check (docs/agents/handover-checks/L-LIT.md).
-- T32 a06dc24a docs/lit/T32-n5-frontier-crossfield.md (cross-field scan; MATCH-Phi first form).
-- T33 f587cb2f docs/lit/T33-match-phi.md (+ T33-match-phi-check.py sha1 6853179b): MATCH-Phi self-contained; ARV transfer (only the
-  free schedule fails; ascending counter NM = 2^(k-2) - 1).
-- T34 f09b2b43 docs/lit/T34-friedmann-vs-n5.md (+ T34-gateshut-check.py sha1 7c33508b): Lemma GATE-SHUT; Friedmann's hiding void
-  under N5; CONJECTURE NO-HIDE.
-- PACKETS: P-N5-MPGS (A = MATCH-Phi + Corollary, B = GATE-SHUT) frozen a23179b0, sha1 24913a7f, quotecheck P-N5-MPGS-quotecheck.py
-  (quotes=9 bad=0). THE REVIEW OBJECT (Lead ruling 11:27Z). BOTH REFEREES SIGNED IT WITH NO GAP (Lead 12:14Z). P-N5-MATCHPHI
-  (12b7d12a) and P-N5-GATESHUT (1298d8b2) are superseded copies, not routed (their fixes files say so).
-- T35 5bdebc10 docs/lit/T35-howard-quadratic-vs-runquad.md (HZ/ACR lane x reset vs runquad; Zhong-Ye refutes HZ conjecture via
-  cycle means, blocked for N5; CONJECTURE CUT-Phi).
-- T36 609b9bac (+ b5fac397) docs/lit/T36-n5-reduction-map.md (owner-facing map: R47 -> R15/R80 -> SW-RETURN -> LEN-MONO -> COMPOSE
-  (l-si f372bc6b) -> MATCH-Phi -> OPEN NM*, NM*^U; VC-BOUND alternative).
-- T37 5d32f637 docs/lit/T37-exponential-families-classified.md (every parity/sink-MDP family is carry-type; 3-ingredient sequencing).
-  Its §3 CONJECTURE is DEAD (L-SI 390d2d8a §13; Dead ends).
-- T38 6e4d5655 docs/lit/T38-one-sink-n5.md (1-sink: one lambda-run, l = |P|, Even-side collapse). Lead deferred a short packet.
-- T39 14f1b4fa docs/lit/T39-tau-changes-per-lambda-run.md (tau-changes reduce to NM*^U via COMPOSE's tau-half; Lead: no packet change
-  needed, he adds the line in the RESULTS entry).
-IN FLIGHT: none.
-NEXT for the successor (Lead's instruction 12:14Z): when BOTH referees' §Cs on P-N5-MPGS are in, write docs/lit/P-N5-MPGS-fixes.md
-items with the referees' joint notes (append only; MPGS-fixes already has F1 (withdrawn) and F2 (Lead ruling 11:27Z: MPGS is the
-review object)). Include REFEREE-2 19's notes N-MP-1..5 on the identical (A) statements (docs/referee-2/R2-N5-MATCHPHI.md,
-referee-2 5ba3e21d): (1) the premise sentence says (MON) is used by Fact 1, but Fact 1 uses only DELTA; (2) the first term is sharp
-(longest MATCHED-only chain = K(K+1)/2, K <= 7); (3) Fact 1 needs the one-line additivity of weight; (4) §3's "max NM 31 on alt_all"
-misses gate_K64_n581 (NM 62), and "157 = 41 + 116" lacks a unit; (5) random games have NM <= 1. Never edit frozen packet text.
+## Resume point (2026-10-29 ~13:0xZ by date -u; successor 2, Opus 5.5, D15/D18; session_01V5yGRXvhKC2cX2To8m3mpV)
+DONE this session (claude/l-lit, each via scripts/push.sh, VERIFY PASS):
+- 394aea76 handover check (docs/agents/handover-checks/L-LIT.md; container was 3889 behind, fast-forwarded).
+- 1bd2a11e P-N5-MPGS-fixes.md F3-F10 (sha1 c0b0a0aa…) + P-N5-MPGS-fixes-quotecheck.py ("quotes=50 bad=0"): every referee note
+  (MPGS-N1..N5, MATCH-N1..N4, N-MPGS-1..6, N-GS-1..5, N-MP-1..5, C.4 items, J1-J15) quoted verbatim and answered; no statement change.
+  New small PROVED remarks there (unrefereed): F9 (a) sharpness at NM = 0 (all-odd chain of length W), F9 (b) additivity / MATCHED raises
+  weight; F6 CONJECTURE H2-FREE (OPEN) with its obstruction. Lead asked whether F9 (a), (b) go to referees.
+- T40 docs/lit/T40-frame-split.md + T40-dominance-check.py (frame split literature; 7 entries; PROVED: STV with τ fixed ≤ |V_0|
+  steps; W-MONO and B-DOM on S4a transitions; DATA: A-dominance over Howard fails 262/263 runquad, ~50% libraries).
+Predecessor's packets (T32-T39, P-N5-MPGS) are listed in git history (e5ae4111 resume point); P-N5-MPGS signed by both referees.
+IN FLIGHT: none. NEXT: Lead's word.
 NEEDS: none from the owner.
 
 ## Queue
+- T40 primaries not opened: Condon 1993 (DIMACS 13), Pollatschek-Avi-Itzhak 1969 (Mgmt Sci 15), van der Wal 1976/1978 (cited via
+  STV p.2 and Bertsekas 2107.10406 §2), Schewe CSL 2008 (via Friedmann §4).
 - Not opened (blocked or paywalled), needed only if a lane depends on them: Friedmann RAIRO 2011 (403); FHZ SODA/STOC 2011;
   Friedmann IPCO 2011; Hansen thesis 2012 (404); Jurdziński-Savani CiE 2008 (abstract only); Halman Algorithmica 2007
   (Dagstuhl abstract only); Matoušek 1994; Gärtner 2002; Obdržálek CAV 2003 + CSL 2007 (Springer bot wall); Fearnley-Lachish
@@ -42,6 +28,8 @@ NEEDS: none from the owner.
 - Open FL09 (self-loop removal) if the REFEREE needs it; Friedmann RAIRO 2011 (publisher 403; try author copy).
 
 ## Things only I know
+- T40 (2026-10-29, successor 2): PDFs in this session's scratchpad dl40/<name>/p.pdf (sha256 in Sources opened); batch logs of
+  T40-dominance-check.py over alt_all and lib41 in scratchpad t40/*3.txt (not committed; re-run: one line per game, minutes).
 - Research agents (my subagents, this session) opened most T2/T3 primaries; their full reports with verbatim quotes and page
   numbers are in my scratchpad dl/agentA|B|C/agent*_report.md (not committed). I re-checked by grep the key quotes:
   CDFJLP Thm 5.1 + Prop. 3.2 + §3.3 "only applies to strong"; ANP Thm 5.1; JMOT p.2; PW23 p.8 + Thm 4.1; CFGO Cor. 6.13;
@@ -327,6 +315,16 @@ NEEDS: none from the owner.
 | arXiv 1008.0530 v1 (HMZ) sha256 f53a6b5127d95078… (re-opened) | Def. 2.6; Thm 6.5 p.11 | 2026-10-29 | T39 |
 | arXiv 1501.06484 v1 (Schewe, Trivedi, Varghese) sha256 7b68cc69de78bd90… | Alg. 2 + Condon sentence p.2; Alg. 3; §4.1 p.9 | 2026-10-29 | T39 |
 | arXiv 2606.29568 v1 (Mei, Sun, Ye) sha256 8bbb42f6834b6738… (re-opened) | Def. 7; Lemma 10, 11 p.15 | 2026-10-29 | T39 |
+| arXiv 1501.06484 v1 (STV) sha256 7b68cc69de78bd90… (re-opened) | Alg. 3 p.2; Def. 2.7; Alg. 5 + Lemma 3.1 p.6; Thm 3.4-3.5; Thm 3.7 p.7; §4.1 p.9-10 (incl. "would imply a proof ... polynomial time") | 2026-10-29 | T40 |
+| arXiv 2309.02223 v1 (van Dijk, Loho, Maat) sha256 10e6794d82aba465… (re-opened) | Prop. 7 p.10 (5-step structure, both players switch), Obs. 8-10 | 2026-10-29 | T40 |
+| arXiv 1306.0386 v4 (Scherrer, PI complexity) sha256 391b6481c8fa903f… | Lemma 1 p.2; Lemma 2 p.6 + proof §5 p.8; Lemma 4 (= Post-Ye Lemma 3.4) p.5; Lemma 8 p.6 + proof p.17; Thm 1 | 2026-10-29 | T40 |
+| arXiv 2107.10406 v4 (Bertsekas, minimax PI) sha256 ee3d5f1a0fcbea33… | abstract; §2 p.10-13: Hoffman-Karp (2.11)-(2.12), Pollatschek-Avi-Itzhak (2.13)-(2.14), Fig. 2.1, van der Wal "[Van76]" oscillation (not in bibliography, which lists [Van78]); §3 p.13 | 2026-10-29 | T40; secondary for PAI/van der Wal (primaries not opened) |
+| HAL hal-01091370 = DOI 10.1016/j.orl.2014.07.006 (Feinberg, Huang, Scherrer, ORL 42 (2014)) sha256 94e00b822393495c… | abstract; Thm 1 p.3; Cor. 2 p.4; Example 1 | 2026-10-29 | T40 |
+| arXiv 1805.07956 v2 (Efroni, Dalal, Scherrer, Mannor) sha256 80dd0a269b5f00e0… | abstract; Thm 1 p.3 (soft update, stepsize threshold); Thm 3, 5, 6 (γ-rates) | 2026-10-29 | T40 |
+| arXiv 1712.06924 v5 (Laroche, Trichelair, Tachet des Combes, SPIBB) sha256 ebb7aa35960e803f… | Π_b definition §2.3; Thm 1, 2 p.3 | 2026-10-29 | T40 |
+| arXiv 1607.03842 v1 (Petrik, Chow, Ghavamzadeh) sha256 5797962546187611… | Def. 2; Thm 6 p.5 (NP-hard) | 2026-10-29 | T40 |
+| arXiv 1205.3054 v2 (Scherrer et al., AMPI) | abstract (arXiv API): "error propagation analyses" and a finite-sample analysis; no iteration counts. PDF not read | 2026-10-29 | T40; cited only as "bounds errors, not counts" |
+| arXiv 1008.0530 v1 (HMZ) sha256 f53a6b5127d95078… (re-downloaded) | not re-read for T40 beyond T39's rows | 2026-10-29 | T40 |
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
 - T17 process dead end: subagent GitHub MCP search outside the repo scope was a rule breach (see Things only I know); never repeat it.
