@@ -12,7 +12,7 @@
   pins experiments/red/sf/instances/dw_3..8.pg, sha1 e5f94c8003241720d5af97681b7912ca42ce5b8f (N = 3),
   eba759c1e811689c2b726f41b1a93a8b66a49c95 (4), c03e3e00578ad79bc2fe7224640f62fecb5e123c (5), 34ad93bc62d02a28d5fae86956ca7a717513bb4c (6),
   6b40922a795078895dfd10e84279c7f5e7c924bd (7), 5a7fe1cc2d782ae3c924e8275fad01110cfd70c4 (8). Start: SPEC S3 default.
-  Counts (DATA): N5-SF iterations 134, 286, 590, 1,198, 2,414, 4,846 at N = 3..8 (= 19·2^N − 18 there), 9,697 at N = 9 (one engine;
+  Counts (DATA): N5-SF iterations 134, 286, 590, 1,198, 2,414, 4,846 at N = 3..8 (= 19·2^N − 18 there), 9,697 at N = 9 (both engines, claude/l-red bc9334f6;
   ratio 2.001); SBC_σ = 2^(N+1) − N − 2 at N = 3..9; LAM 0; no S4c fallback; the σ̄-flip word is a binary counter (h0 flips 2^N − 1
   times). Engines: L-RED's sf2.py and L-NEW's n5sf.py (claude/l-new 9faf17be) agree at N = 3..8; Oink zlk regions = N5-SF's and
   verify.py OK at N = 3..7 (L-RED).
