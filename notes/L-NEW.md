@@ -604,22 +604,23 @@ Every answer measured from the repository; commands named.
    fetched ref, so the pin cannot be checked yet; I checked the packet by sha1 (cbea0739…) against my own commit 1afccb51 instead.
    (iii) The container clock is slow vs the Lead's stamp (07:50 vs 07:53): stamp only from date -u, never ahead of it.
 
-## Resume point (overwritten at handover, LANE-RESTART step 1; successor 32, after box 54, written 2026-10-29 ~14:5xZ by date -u)
-Successor 32 (Opus 5.5, D14/D18, L40), session_01V5yGRXhSqcihcKK7vc7XTd. Context ~375k at writing.
-### DONE (all pushed via scripts/push.sh, VERIFY PASS; SHAs reported to the Lead)
-- Box 51 N5-VCPHASE (db1d3707): Prop. DLC, VC-PHASE / VC-N5 / VC-RUN O(1) DEAD; P-N5-VC-fixes-box50.md F1 frozen (2c2b8960, sha1 9e8b7bd2…).
-- Box 52 N5-RLV (47d48150): Lemma W-SPLIT″, SBCH″ = O(n) DEAD (comparator graft, 2N² + 3N − 3).
-- Box 53 N5-RANK (adaa98db, §3b 0a359611): Lemma CIRCUIT; certified obstructions F24 / F24m / F45 / edge bits; no uniform form.
-- Box 54 N5-SF (this commit): see the box 54 log above.
+## Resume point (overwritten at handover, LANE-RESTART step 1; successor 33, after box 55, written 2026-10-29 ~15:5xZ by date -u)
+Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context ~260k at writing.
+### DONE (all pushed via scripts/push.sh, VERIFY PASS; reported to the Lead)
+- Box 55 (1): P-N5-SF-box55.md FROZEN at l-new 95a7a581 (sha1 dbc2345f…, pinned in check.sh block "Box 55"); RESULTS line approved by the
+  Lead 15:39Z as worded 15:27:39Z; Lead routes it to both referees. Corpus DATA: alt_all 413, sicorpus 276, fam 20, hard 73, all PASS.
+- Box 55 (2): N5-SBC-box55.md (SBC-EQ, NO-TRANSFER PROVED lane; M1-M4 DEAD; P-leapfrog obstruction at switchbestexp vertex 14N + 16).
+- Box 55 (3): N5-SF-gauntlet-box55.md (no step passed in full).
 ### IN FLIGHT
-- Nothing running.
-- After box 54 (15:2xZ): N5-SF ≠ I^glo (diverges at step 22 on H3_F); H_n F start 7n + 49 (n 3..12), DLM 1/2 linear; switchbestexp
-  N = 12, 14, 16 SBC 138, 179, 232 (N5-SF §3, §5). T44 (claude/l-lit 325b7cc2) read.
+- Nothing running. Referee reports on P-N5-SF will come: answers go into a NEW P-N5-SF-fixes-box55.md, never into the frozen packet.
 ### NEXT (the Lead decides)
-1. N5-SF: switchbestexp N = 18..20 (out/switchbestexp_12.pg exists; ~10+ min per run at n 310), Friedmann's other switch-best families; an L-LIT
-   identification of N5-SF's one-sided step (Schewe optimal SI / PGSolver switch_globally_best?); then gauntlet TARGET.md §5 if it survives.
-2. Refine SBC by relevance (box 52's arena-frozen cut, applied to N5-SF's one-sided run).
-3. P-N5-VC referee items into a NEW P-N5-VC-fixes2-box50.md once both referees report.
+1. Read L-LIT T46 (claude/l-lit b6111905, docs/lit/T46-n5sf-literature.md; read §Summary + §1 (a)-(c) at 15:53Z, rest not yet): F ≈ Schewe
+   switch-best / I^glo evaluated with the OLD counterstrategy ("optimistic" I^glo, Friedmann thesis §4.3 intermediate cycles); PGSolver dead
+   rule strimprbyco; Fearnley snare reading (Prop. 12/14: back-edge switch ⇒ SBC event). Kill target for L-RED: friedmannsubexp (not ported).
+2. Possible proof route from T46 (c): split SBC into back-edge events (Fearnley Prop. 14) and the rest; T46 DATA says the non-back-edge share
+   grows with N (1, 4, 12, 26 of 4, 11, 26, 49). Bound either, or kill.
+3. Gauntlet step 2 for N5-SF (Zielonka on 10,000 random, strategy output + verify.py) if routed; step 3 with L-LIT.
+4. Carry-over: switchbestexp N = 18..20; P-N5-VC fixes2 after referees.
 
 ## Dead ends (successor 30; also in docs/new/N5-READER-box49.md §5)
 - PRED-XR / PLAY-XR ("Ξ-changes of vertices with an Even predecessor / on an Even vertex's honest play ≤ 2n per phase"): DEAD,
