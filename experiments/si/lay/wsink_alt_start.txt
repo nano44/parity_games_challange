@@ -1,0 +1,8 @@
+hsinks=8274 segs=1249 steps_hsink_switch=5384 steps_with_bothsink=5384 trans=5384 wsinks=8622 wsinks_ready=8208
+WSOFF PASS
+HSOFF PASS
+HSR PASS
+WSL PASS
+WSR PASS
+SS PASS
+NOSINK PASS

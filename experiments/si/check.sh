@@ -450,3 +450,24 @@ echo "b6360888a8180a9afef84c38845500f46626b548  lwp/instances/setstep_kill_n71.p
 o=$(python3 -I lwp/seglast.py --one lwp/instances/setstep_kill_n71.pg); grep -q "SS_V=1 " <<<"$o"; grep -q "SEGLAST PASS" <<<"$o"
 python3 -I lwp/laststep.py --one lwp/instances/cycset_kill_n60.pg | grep -q "WXARENA FAIL"
 echo "lwp (box 26: setstep_kill_n71 kills SET-STEP, SEG-LAST holds; WX-ARENA fails on cycset_kill_n60): PASS"
+# box 27 (docs/si/N5-LAY-box27.md): W-sinks. On the three box-26 kill pins every sink lemma holds (SINK-OFF both frames, H-sinks ready,
+# ready W-sinks keep sigma_b), CONJECTURE WSINK-READY (= W-GROW) holds at every step, and MUT=1 (sinks of the both-frame set N_t,
+# box 26's WX-ARENA notion) bites on each pin: the W-frame sink is what covers the steps with no frontier vertex.
+for p in karena_kill_n71:5:6:6 cycset_kill_n60:4:5:5 setstep_kill_n71:3:3:3; do
+  IFS=: read f tr ws wr <<<"$p"
+  o=$(python3 -I lay/wsink.py --one lwp/instances/$f.pg); grep -q "trans=$tr wsinks=$ws wsinks_ready=$wr" <<<"$o"
+  if grep -q "FAIL" <<<"$o"; then echo "lay: sink lemma or WSINK-READY failure on $f"; exit 1; fi   # (a bare "! grep" is exempt from set -e)
+  MUT=1 python3 -I lay/wsink.py --one lwp/instances/$f.pg | grep -q "^WSR FAIL"
+done
+python3 -I lay/wsink.py --one grun/out/lwp_a.pg grun/out/lwp_a.start | grep -q "steps_with_bothsink=23 trans=23 wsinks=31 wsinks_ready=31"
+echo "lay (box 27: sink lemmas and WSINK-READY on the box-26 kill pins and lwp_a; MUT=1 (N_t-sinks) bites on each pin): PASS"
+# box 27: lay/instances/wgrow_kill_n90 kills W-GROW (WSR_V=1, t = 1: W-sinks 37, 57 unready); n5b gives the identical state sequence;
+# the sink lemmas, H-GROW and SEG-LAST hold there.
+echo "f9a7ef090b3df5bb4293301e6bd1236e33a92cd0  lay/instances/wgrow_kill_n90.pg" | sha1sum -c --quiet
+echo "a4ead4deae5534731a199c8697c072f407643ca2  lay/instances/wgrow_kill_n90.start" | sha1sum -c --quiet
+o=$(python3 -I lay/wsink.py --one lay/instances/wgrow_kill_n90.pg lay/instances/wgrow_kill_n90.start)
+grep -q "WSR_V=1 hsinks=6 segs=1 steps_hsink_switch=3 " <<<"$o"; grep -q "EXAMPLE ('WSR', 'lay/instances/wgrow_kill_n90.pg', 0, 3, 1, \[37, 57\]" <<<"$o"
+for k in WSOFF HSOFF HSR WSL SS NOSINK; do grep -q "^$k PASS" <<<"$o"; done; grep -q "^WSR FAIL" <<<"$o"
+python3 -I lwp/seglast.py --one lay/instances/wgrow_kill_n90.pg lay/instances/wgrow_kill_n90.start | grep -q "SEGLAST PASS"
+python3 -I root/n5bcmp.py lay/instances/wgrow_kill_n90.pg lay/instances/wgrow_kill_n90.start | grep -q "n5b iterations 9 fallbacks 1 states 10 | n5x states 10 | identical state sequences: True"
+echo "lay (box 27: wgrow_kill_n90 kills W-GROW, n5b identical; sink lemmas, H-GROW, SEG-LAST hold): PASS"
