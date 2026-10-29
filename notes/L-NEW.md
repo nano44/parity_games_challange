@@ -1,6 +1,12 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Box 63 log (successor 34; Lead 19:10Z: ODD-FREEZE for plain N5)
+- docs/new/N5-FREEZE-box63.md. Lemma ODD-FREEZE PROVED (lane) with H1 (or H1' Even CAN) + H2 (disjoint) + H3 (even top above tau(o)'s cycle
+  node); freeze2.py 35780 hits / 0 viol on 719. At-leave-time form DEAD (117 protected-then-return, 48 games, first gci3_n24). Dual families:
+  thousands of unprotected returns (d_hntop_n8 3276). READING: all-protected => #tau-1 <= m => with FRAME-STRETCH, N5 polynomial.
+  Not read: box 21 Thm B, R86, R109.
+
 ## Box 62b log (successor 34; Lead 18:50Z: WHY does plain N5 survive dwN; SF close-out)
 - N5-DW-box62.md §5-§6. mix.py (EOPP tau|sbar x OOPP sigma|tbar): the deciding feature is the Odd strategy in EVEN's arena. tau -> 41/47/55
   (or 19/25/31), sbar -> 134/286/590; the dual dwd mirrors it. Lemma FRAME-tau PROVED (lane): Even cannot trigger its own frame changes in N5.
@@ -695,6 +701,8 @@ Every answer measured from the repository; commands named.
 2. Run mix.py / n5trace.py on L-RED 29's Odd-side / coupled families when relayed (N5 needs both one-sided runs long).
 3. Byte-compare box59/dw.py with L-RED's R116 generator (l-red 6e7acb3b) - not done.
 ### Owned conjectures: FRAME-STRETCH, LOOP, GROUP, EXIT-without-NT (OPEN); N5-SF line closed (N5-SF-CLOSE-box62.md).
+### Box 63 added: Lemma ODD-FREEZE (PROVED lane). Next for a successor: read box 21 Theorem B and R86 NM*/NM*^U and compose them with
+ODD-FREEZE + FRAME-STRETCH; measure FRAME-STRETCH's mirror; test L-RED's CDAG_n + Odd-mask climb with freeze.py / freeze2.py / mix.py.
 
 ## Resume point (HISTORY; successor 33, FINAL after box 58, written 2026-10-29 ~17:0xZ by date -u)
 Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context ~375k at writing. PARKED (Lead's option (C), box 58).
