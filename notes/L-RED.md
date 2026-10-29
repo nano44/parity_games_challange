@@ -1,4 +1,5 @@
 # L-RED notebook (independent adversary lane)
+Successor 25 (session_01V5yGRWodt68VHnvw1bRQmG, Opus 5.5) started 2026-10-29 09:59Z (date -u); handover check 61ab6c66; box item 1 = SEG-COUNT, KILLED (R105); see "Successor 25".
 Successor 24 (session_01V5yGRZAX31ZbgX9Mz7tMR1, Opus 5.5) HANDOVER written 2026-10-29 ~05:25Z (date -u) at ~260k context, PARKED; see "Successor 24 HANDOVER".
 Successor 24 (session_01V5yGRZAX31ZbgX9Mz7tMR1, Opus 5.5) started 2026-10-29 00:28Z (date -u); handover check ebc3e9cb; box 1 = FB-LIN attack, R100; see "Successor 24".
 Successor 23 (session_01YPuTduNL6AQ8rWgPcTtAp3, Opus 5.5) HANDOVER written 2026-10-29 ~00:20Z (date -u) at ~550k context for successor 24; see "Successor 23 HANDOVER".
@@ -14,6 +15,26 @@ Successor 15 PARKED ~09:40Z 2026-10-25 after box 38; RESUME POINT for successor 
 context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older notebook: `git show b0884407:notes/L-RED.md`.
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
+
+## Successor 25 (session_01V5yGRWodt68VHnvw1bRQmG, Opus 5.5, D15/D18; started 2026-10-29 09:59Z, date -u)
+- Handover check: docs/agents/handover-checks/L-RED.md "Successor 25" (61ab6c66); trunk e3b435ab merged (8e7e02ad); Oink built (8fbf0a7).
+- Box (Lead 09:59Z) item 1: CONJECTURE SEG-COUNT (L-SI LAY §6) by construction. KILLED: R105 docs/red/R105-segcount-kill.md.
+  - segcount_kill_n20 (sha1 2783f64d, start 97ba6b29): one REL segment [0, 4], 4 transitions, 3 switchers, EXC +1; deadlocks t = 0, 2 are
+    both intermediate switches of the single H-sink h; joint final at 3. Two engines identical, Oink OK, L-SI relcheck/segsw agree.
+  - Family mkk.py K: EXC = K − 1 at n = 10K − 1 (K ≤ 24 checked); pins segfam_k3_n29 (0d242a9b), segfam_k8_n79 (ddb67eff).
+  - Caveat: explicit start pairs (SPEC S3 allows them); the S3 default start gives EXC 0 on n20.
+- Tools (experiments/red/seg/): segchk.py (own REL/segment/sink checker on n5b only; reproduces L-SI's n29 table), tr.py (named trace with
+  I_sigma, I_tau, sbar != tau, Xi, W-plays), xeng.py (n5b vs n5.py/si.py full state sequences), vrun.sh, mk2d.py (n20 design), mkk.py.
+- Sources opened: docs/si/N5-LAY-box27.md (all, l-si); experiments/n5-second/n5b.py (all); experiments/hard-families/pgsolver_si.py
+  (nvo, rew, best); experiments/new/n5.py (run); experiments/si/lay/{relcheck,wsink,segsw}.py; docs/new/N5-ssi-global.md S3 line 48.
+- Things only I know:
+  - The design method that worked: write the honest values as MARKER SETS above z (S1 order = highest differing vertex), put every
+    W-cycle on an Odd self-loop with tau = self and small odd priority, and get I_tau = ∅ with n29's device: each honest Odd escape leads
+    to an Even vertex that can return to h (h's even priority below z marks the dual return as worse for Odd). tr.py shows I_tau per state.
+  - The obstacle L-SI predicted for a second deadlock (Ξ(c2) must rise THROUGH w1, so h → c2 closes a cycle) is harmless: make that cycle
+    Even-won (MP even marker) and put c2 off RO_b (only h points to it), so Odd's honest choice at c2 just leaves the cycle.
+  - Lengths are a trap: odd z means longer is better for Even, so "alt edge back to h" is improving by length unless a bad (odd) marker
+    sits on h's route before the alt vertex. Most of my v1 failures were τ-instability, all visible in tr.py's Itau column.
 
 ## Successor 24 HANDOVER (written 2026-10-29 ~05:25Z, date -u; ~260k context; parked on the Lead's 04:57Z instruction)
 - DONE (all pushed to claude/l-red; verify PASS each push): five FB-LIN boxes, NO KILL.
