@@ -8,6 +8,12 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   DATA same-pair core: naive injection injective, the 8 non-basin-changing late* transitions are all «w switches out of its basin at s − 1,
   y follows at s»; CONJECTURE R*-TC(SP), INJ1. Tool core/inj.py (SHOW=1 prints the non-BC cases; MUT=lastonly control).
 - Next: prove INJ1 (C1 gap, C2 self-collision; the «w's exit» mechanism is the lead); then TC (multi-gate TRAP-LIN).
+- Later (17:53Z): trunk merged 75984009; Addendum (kill criterion per result) a055773f. Lead 17:35Z: box 32 approved; G2 stays a READING;
+  fixes-file footers are append-only (append a new footer, leave the old). TC: no new result. The «same threshold» view (arena tests
+  entry and exit by Ξ: pre ⊕ α1 against the U-value; the hysteresis is only in S4a's W-choice, α2 ▷ α1) is box 30 §10's READING again,
+  not new. Untried: bound the exit-entry rounds of one vertex by the strict Ξ rises across a round (Ξ_{q2+1}(x) ▷ W_{q2}(x) ⊵ W_{q1+1}(x)
+  ▷ Ξ_{q1}(x)) plus a count of distinct prefix classes.
+- Session id for trailers: session_01V5yGRVhU281YxfobtfdJ8L (2d0ada80 and 62561001 carry a wrong one).
 - check.sh: old «; ! grep» negations are no-ops under set -e; use «if grep …; then exit 1; fi».
 
 ## HANDOVER (successor 27, box 31; written 2026-10-29T17:0xZ (date -u; see commit); session_01V5yGRZ7ZhG6McUPXJVe7zf)

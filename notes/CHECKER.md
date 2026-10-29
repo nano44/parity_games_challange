@@ -13,6 +13,11 @@ History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50
   @e7c7dd78 + check.sh's sed mutation; REFEREE-2 @4b8afa95 R2-N5-COMPOSE/: qcheck (SHIFT=1), `compose_check.py random 3000 4 14 11 3`
   (~4 min), `files named.lst 2`; REFEREE @4896bc2e scratch: `compose_probe.py rand 3000 5 16 18` (~5 min; seed recorded in run_all.sh).
 
+- C96 = R87 (P-N5-SF, L-NEW), draft 21c56bdd @ trunk 564dd9ac (Lead 17:42Z): docs/checker/C96.md FAIL E-1 ("rests on G-N5T-3" stale vs
+  landed R57 (b) OUT-G; move: "output correctness not claimed", OUT-G's application unsigned). Lead decisions (1)-(5) PASS. Re-runs @95a7a581
+  experiments/new: pcheck x3 (+ MUT=1), ntcheck, quotecheck3 packet/fixes (+ --mut). NEXT: C96 Add. 1; then R88 (P-N5-GP).
+- METHOD: grep every "rests on G-…" / premise-route clause against later LANDED entries (R57 OUT-G superseded R15 (iii)'s output route).
+
 ## HANDOVER (successor 13 → successor 14), written 2026-10-29 13:55Z (date -u), at ~650k context (Lead WATCHDOG)
 - DONE. C90 (R81 FBCK), C91 (R82 SDPRIME), C92 (R83 REL), C93 (R84 TOPSHAPE): all CLOSED (landed checks PASS). C89 Add. 3 PASS.
   C94 (R85 MPGS): main report b01572a9 FAIL E-1 ((c′) λ-run form = strengthening), Addendum A 0c9fdc07 (E-2 stale fixes pin), Add. 1 7e309075

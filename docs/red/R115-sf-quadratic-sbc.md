@@ -63,6 +63,11 @@ Engines and checks as in R114 §0 (sf2.py SPEC mode = L-NEW's n5sf.py; Oink zlk 
   stale-escape short-cut. Suffixes 00000011 / 00000111 / 00001111 give 1021 / 1065 / 1140. N = 10: p = 1 → 2313, p = 2 → 2299 (fc10 1753).
   READING: binary resets on a small set of bits buy at most a constant factor; on a growing set N5-SF short-cuts them.
 
+- Lead check (a), 17:49Z: I^glo on fcN (evseq.py --rule glo) gives 215 / 346 σ-changes at N = 4 / 5, the SAME as N5-SF. The shadow
+  differs at only 2 / 3 steps, all of the harmless type (a) (v_i → r_{i+1} vs v_{i+1}; R114 §4). So on fcN F has NO stale-reset lags:
+  N5-SF = I^glo up to tie-type steps. The polynomial ceiling comes from the unary counter itself, not from N5-SF's optimism. Removing
+  f_i → c removes the binary reset for I^glo too. L-NEW §3 condition (ii) holds trivially: no non-top bit ever resets.
+
 ## 3. READING / OPEN
 - Degree 2 is forced (fcN). A higher degree needs nested resets. A reset of a lower block must be triggered by something other than a
   new global maximum, without leaving a stale escape that N5-SF can route into (R114 §4). In fcN only a NEW TOP bit resets, and that
