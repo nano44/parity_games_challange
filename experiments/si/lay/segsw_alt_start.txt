@@ -1,0 +1,10 @@
+exc_max_plus100=100 maxsw_1=984 maxsw_12=2 maxsw_16=1 maxsw_2=209 maxsw_24=2 maxsw_3=32 maxsw_4=10 maxsw_40=1 maxsw_48=1 maxsw_5=1 maxsw_6=5 maxsw_8=1 segs=1249
+EXAMPLE ('MAXSW', 'experiments/n5-epoch/instances/gci3_n24.pg', 1, 21, 3)
+EXAMPLE ('MAXSW', 'experiments/n5-epoch/instances/lcount_n23.pg', 0, 3, 3)
+EXAMPLE ('MAXSW', 'experiments/n5-epoch/instances/lend27_n24.pg', 1, 9, 4)
+EXAMPLE ('MAXSW', 'experiments/n5-epoch/instances/lend27_n24.pg', 10, 16, 4)
+EXAMPLE ('MAXSW', 'experiments/n5-epoch/instances/lend27_n24.pg', 22, 27, 3)
+EXAMPLE ('MAXSW', 'experiments/n5-epoch/instances/lend82_n32.pg', 25, 36, 5)
+EXAMPLE ('MAXSW', 'experiments/n5-exhaustive/instances/b5_os_n24.pg', 0, 14, 3)
+EXAMPLE ('MAXSW', 'experiments/n5-exhaustive/instances/b5_os_n32.pg', 24, 34, 3)
+SEGCOUNT PASS

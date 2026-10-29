@@ -69,7 +69,9 @@ def _run(g, R, name):
             nxt = R[t + 1]["s"]
             if not any(nxt[v] == B["s"][v] != sig[v] for v in WS + HS): C["SS_V"] += 1; EX.append(("SS", name, a, b, t))
             C["steps_hsink_switch"] += any(nxt[v] == B["s"][v] != sig[v] for v in HS)
-            r = sum(1 for v in WS if ready(v)) + sum(1 for v in HS if nxt[v] == B["s"][v] != sig[v])
+            rw = sum(1 for v in WS if ready(v)); rh = sum(1 for v in HS if nxt[v] == B["s"][v] != sig[v]); r = rw + rh
+            if rw == 0: C["znear_w0"] += 300 // (1 + rh)    # shaping for OBJ=S2: a W-blocked step, the fewer H-sink switches the better
+            if rh == 0: C["znear_h0"] += 100 // (1 + rw)
             C["zsupport_inv_x100"] += 100 // (1 + r)          # shaping for lay/wclimb.py OBJ=S: small support = near a SINK-GROW failure
             both = [v for v in WS if v in HS]
             C["steps_with_bothsink"] += bool(both)
@@ -83,7 +85,7 @@ def wsscore(g, R):
         _run(g, R, "x")
         return dict(LEM=sum(C[k] for k in ("WSL_V", "WSOFF_V", "HSOFF_V", "HSR_V", "NOSINK_V")), SS=C["SS_V"], WSR=C["WSR_V"],
                     HG=C["trans"] - C["steps_hsink_switch"], K=C["trans"] - C["steps_with_bothsink"], U=C["wsinks"] - C["wsinks_ready"],
-                    S=C["steps_unready_wsink"], SUP=C["zsupport_inv_x100"])
+                    S=C["steps_unready_wsink"], SUP=C["zsupport_inv_x100"], NEAR=C["znear_w0"] + C["znear_h0"])
     finally: C, EX = save
 
 def run(g, name, start=None):

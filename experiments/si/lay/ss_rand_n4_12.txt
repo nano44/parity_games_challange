@@ -1,0 +1,11 @@
+trial 2000 {'runs': 2000, 'K': 0, 'WSR': 0, 'HG': 0, 'kills': 0}
+trial 4000 {'runs': 4000, 'K': 0, 'WSR': 0, 'HG': 0, 'kills': 0}
+trial 6000 {'runs': 6000, 'K': 0, 'WSR': 0, 'HG': 0, 'kills': 0}
+trial 8000 {'runs': 8000, 'K': 0, 'WSR': 0, 'HG': 0, 'kills': 0}
+trial 10000 {'runs': 10000, 'K': 0, 'WSR': 0, 'HG': 0, 'kills': 0}
+trial 12000 {'runs': 12000, 'K': 0, 'WSR': 0, 'HG': 0, 'kills': 0}
+trial 14000 {'runs': 14000, 'K': 0, 'WSR': 0, 'HG': 0, 'kills': 0}
+trial 16000 {'runs': 16000, 'K': 0, 'WSR': 0, 'HG': 0, 'kills': 0}
+trial 18000 {'runs': 18000, 'K': 0, 'WSR': 0, 'HG': 0, 'kills': 0}
+trial 20000 {'runs': 20000, 'K': 0, 'WSR': 0, 'HG': 0, 'kills': 0}
+trial 22000 {'runs': 22000, 'K': 0, 'WSR': 0, 'HG': 0, 'kills': 0}
