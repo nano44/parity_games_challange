@@ -789,3 +789,7 @@ echo "si (box 38: Lemma SPAN holds; in-window form inflated on tobs, span form n
 # box 38 §6: W-frame windows on hntop_N (N = 3 pinned: one guided stretch of 61; all 31, span 28, out 28 = 2N²+5N−5).
 o=$(python3 -I odd/wret.py odd/inst/hn/hntop_n3.pg odd/inst/hn/hntop_n3.start); grep -q "iter 61 .*WRET_V 0 .*OPT_V 0 maxSW 28 maxWR 31 maxWRspan 28 maxWRout 28 .*PASS$" <<<"$o"
 echo "si (box 38 §6: hntop_3 W-window counts): PASS"
+# box 39 (docs/si/N5-SPANW-box39.md): span P-changes without W-changes (rise_thin51_n40 pair (28, 1): 55 vs 0); co-movement on hntop_3.
+o=$(python3 -I odd/spanw.py ../red/so/instances/rise_thin51_n40.pg); grep -q "PCH 759 CO 388 WCH 388 TQ 759 maxPCH 55 maxDIFF 55 .*ex (28, 1, 9, 55, 0, 0)" <<<"$o"
+o=$(python3 -I odd/spanw.py odd/inst/hn/hntop_n3.pg odd/inst/hn/hntop_n3.start); grep -q "PCH 373 CO 373 WCH 392 .*maxDIFF 0 " <<<"$o"
+echo "si (box 39: span P-changes need not come with W-changes): PASS"

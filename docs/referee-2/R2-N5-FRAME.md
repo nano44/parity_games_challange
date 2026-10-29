@@ -276,7 +276,7 @@ OFBF, EF, CFa-CFe, SM, LR, WM, GPS, FWR, RR, RRsum, SR0-SR3, SRpc, FB56, CONS.
 - N-FR-7 (RESULTS line, REQUIRED). Define Q in the line (§5). Define NM^U_R(e) (precision).
 - N-FR-8 (SUCC-MON, stronger). Ξ_t(σ_t(y)) rises STRICTLY at every transition where σ(y) changes (the proof's last chain is strict).
 - N-FR-9 (COMPOSE-FREEZE (b)). The second inequality is an identity: 1 + PCH + (PCH + 1)(n − 1) = n(PCH + 1).
-- N-FR-10 (DATA, not signed). The lane's 81 ODD-FREEZE hits on dw_3 are states 0-40; there are 84 over all 42 states.
+- N-FR-10 (DATA, not signed). [CORRECTED in R2-N5-FRAME-C.md §C.7: freeze2.py counts box 63 (H1) over all 42 states = 81; (H1′) gives 84 (81 on states 0-40, a coincidence).] Original: the lane's 81 ODD-FREEZE hits on dw_3 are states 0-40; there are 84 over all 42 states.
 
 ## 7. DONE / FINDINGS / NEEDS
 - DONE: this report; docs/referee-2/R2-N5-FRAME/{frame_check.py, fquote.py, mkr.lst, dual.lst, run_all.sh, logs/ (pinned_check.txt
