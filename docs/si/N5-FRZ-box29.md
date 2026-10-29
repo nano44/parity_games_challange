@@ -90,7 +90,7 @@ G_τ (G_σ̄): G with Odd fixed to τ (σ̄), a one-player game of Even; on a σ
 - Kill search (fwclimb.py: score = max over frozen W-phases with |D| ≥ 1 of WCH/(n − 1), kill = FW-BF or FW-LEN failure; mutations of
   chg/cclimb.py): seeds gci3_n24 (0.869), lend13_n16 (0.800), s_elim24_final (0.695, stopped), red/xing/instances/kw25_n32 (0.806):
   no kill. gci3: 46,000 steps, plateau 0.869 (stopped); lend13: 100,000 steps, 0.800; s_elim24: stopped at 0.695; kw25: 0.806 → 0.838 after
-  47,000 steps (still running at the commit; logs frz/out/fw_*.log).
+  47,000 steps, stopped at 67,507 steps (logs and best instances frz/out/fw_*).
 - DEAD: «a W-phase (cut at fallbacks and λ_W changes only, σ̄ free) has ≤ n − 1 W-changing transitions»: runlin/instances/x135_n59 (sha1
   e71e8af0…, start 4afb7e8c…; n5b identical, 136 iterations, 0 fallbacks): W-phase [1, 136], 135 W-changing transitions, n 59, |D| = 1, 11
   σ̄-changes; also red/n3/instances/run49_n32 (49 > 31) and red/so/instances/pftheta_cex_n32 (34 > 31). Its seven frozen W-phases have ≤ 43
