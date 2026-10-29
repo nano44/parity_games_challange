@@ -6,6 +6,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
 - BOX 33 (Odd side of G-N5-TIME): note docs/si/N5-ODD-box33.md (§1 (a), §2 (b), §3 (c), §4 composition); tool experiments/si/odd/reent.py
   (--mut flips H3 and the LEN-REENTRY test); instances experiments/si/odd/inst/ (regenerated with L-RED's hnh1.py N topfix / mkr.py K 30
   + ctl/dualize.py; pins reproduced); DEAD.md «box 33»; check.sh «box 33».
+- BOX 34 (Lead 19:52Z): docs/si/N5-CARX-box34.md; tool experiments/si/odd/carx.py (SIDE=E for Even; SHOW=1 prints the top vertex's
+  P-changes with labels); corpus outputs out/carx_corpus_{O,E}.txt. Open: CONJECTURE CARRY-SEG; bound matched resets per vertex.
+- Never `pkill -f` a pattern that occurs in your own command line (exit 144 killed my shell).
 - Things only I know: SendMessage cannot reach the Lead; use mcp__claude-code-remote__send_message with session_id. sbcg.lst paths are
   relative to experiments/. Corpus reent.py run: ~3 min with xargs -P 3.
 

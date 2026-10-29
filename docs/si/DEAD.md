@@ -563,3 +563,10 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
 - CONJECTURE ENT-NM (ENT_R(o, e) ≤ 1 + NM^U_R(e) per λ^U-run). Kill: d_runquad_K3_m30 (sha1 5c77dea9), run [0, 99], o 42, e 43: 3 entries, NM^U(e) = 1.
 - CONJECTURE ENT-PCH (ENT_R(o, e) ≤ 1 + PCH^U_R(e)). Kill: red/fbr/instances/lev74_n40.pg (sha1 6f13c0b0; S3), run [0, 18], o 6, e 0: 2 entries,
   PCH^U(e) = 0 (a length-only re-entry; Lemma LEN-REENTRY describes it). Also nep87_n40, nep92_n40.
+
+## box 34 (L-SI successor 29, docs/si/N5-CARX-box34.md §3; experiments/si/odd/carx.py, check.sh «box 34»)
+- CARRY-CLIMB (between matched P-changes of U(x) the carries' entering top ranks strictly increase). Kill: experiments/si/odd/inst/
+  d_hntop_n2 (dual of hnh1.py 2 topfix), vertex 4, λ^U-run from 0, t = 7: top 38 then 35.
+- SWEEP-GAIN (R85's Φ just after successive matched P-changes strictly increases in a λ-run). Kills: red/n5inj/instances/wide_h16.pg
+  (sha1 990ecbcf; Odd side, S3), vertex 2, run from 13, t = 23, Φ 18 then 18; new/box59/out/fc_3.pg (9af7ca12; Even side, S3), vertex 6,
+  t = 23, Φ 155 then 88. Obstruction: a reset can land at lower Φ after a carry burst; R85's Φ is not a net-progress potential.
