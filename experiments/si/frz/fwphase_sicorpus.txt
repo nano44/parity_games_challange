@@ -1,0 +1,11 @@
+FWSIL_V=3 SKIPPED_input=1 fwphases=655 phases=345 sbch=1892
+columns: WCH, game, a, b, L, XCH, |D|, n, m
+TOP (123, 'experiments/si/runlin/instances/runfam_K100.pg', 169, 292, 123, 123, 0, 139, 345)
+TOP (115, 'experiments/si/runlin/instances/runfam_K100.pg', 52, 167, 115, 115, 1, 139, 345)
+TOP (83, 'experiments/si/runlin/instances/runfam_K60.pg', 129, 212, 83, 83, 0, 99, 265)
+TOP (75, 'experiments/si/runlin/instances/runfam_K60.pg', 52, 127, 75, 75, 1, 99, 265)
+max WCH/(n-1) = 1.000 (4, 'experiments/si/lwp/out/rs1_64212_0.pg', 0, 4, 4, 4, 0, 5, 10)
+max L/(n+m) = 0.267 (4, 'experiments/si/lwp/out/rs1_64212_0.pg', 0, 4, 4, 4, 0, 5, 10)
+FWBF PASS
+FWLEN PASS
+FWSIL FAIL

@@ -625,3 +625,23 @@ o=$(python3 -I chg/r17.py --one chg/instances/red/runquad_K8_m30_n192.pg chg/ins
 grep -q "TOP (263, 'chg/instances/red/runquad_K8_m30_n192.pg', 0, 263, 481, 263, 0, 3102, (0, 5, 4, 6, 6), 192, 32, 2096, (0, 3, 27, 0, 9))" <<<"$o"
 grep -q "^ESWSB FAIL" <<<"$o"; grep -q "^D0 PASS" <<<"$o"
 echo "si (box 28 §14: R17's Lemma P fails in both frames on runquad with σ̄ constant): PASS"
+# box 29 (docs/si/N5-FRZ-box29.md): W-SPLIT bookkeeping and CN-W on runquad (all 263 transitions change lambda_W, W has 0 P-changes);
+# FW-BF/FW-LEN hold on s_elim24_final's frozen W-phases; the W-phase form dies on x135_n59; SETTLE dies on s_elim24_final, SETTLE_X on the ladder.
+echo "ddb99d6c103e4d60b1b1d4a6b8c3b5ab9070b21b  frz/instances/s_elim24_final.pg" | sha1sum -c --quiet
+o=$(python3 -I frz/phstat.py --one chg/instances/red/runquad_K8_m30_n192.pg chg/instances/red/runquad_K8_m30_n192.start)
+grep -q "TOP (263, 'chg/instances/red/runquad_K8_m30_n192.pg', 0, 263, 0, 263, 0, 0, 0, 192)" <<<"$o"; grep -q "^WSPLIT PASS" <<<"$o"; grep -q "^CNW PASS" <<<"$o"
+python3 -I frz/frozen.py --one chg/instances/red/runquad_K8_m30_n192.pg chg/instances/red/runquad_K8_m30_n192.start | grep -q "EXT (263, 'chg/instances/red/runquad_K8_m30_n192.pg', 0, 263, 32, 0, 0, 0, 15, 1419, 192)"
+o=$(python3 -I frz/fwphase.py --one frz/instances/s_elim24_final.pg frz/instances/s_elim24_final.start)
+grep -q "^fwphases=5 phases=1 sbch=0$" <<<"$o"; grep -q "^FWBF PASS" <<<"$o"; grep -q "^FWLEN PASS" <<<"$o"
+o=$(python3 -I frz/wphase.py --one runlin/instances/x135_n59.pg runlin/instances/x135_n59.start)
+grep -q "TOP (135, 'runlin/instances/x135_n59.pg', 1, 136, 135, 5, 7, 1, 1, 11, 59, 218)" <<<"$o"
+o=$(python3 -I frz/settle.py --one frz/instances/s_elim24_final.pg frz/instances/s_elim24_final.start); grep -q "^SETTLE FAIL" <<<"$o"; grep -q "^SETTLE_X PASS" <<<"$o"
+o=$(python3 -I frz/settle.py --one ../red/ul/instances/ladderd0_k12_n48.pg ../red/ul/instances/ladderd0_k12_n48.start); grep -q "^SETTLE_X FAIL" <<<"$o"; grep -q "^SETTLE PASS" <<<"$o"
+echo "si (box 29: W-SPLIT/CN-W on runquad, FW-BF on s_elim24_final, W-phase form dead on x135_n59, SETTLE/SETTLE_X kills): PASS"
+# box 29 §7: Lemma EPOCH-U holds (R17 on the untrapped part) and TRAP-MONO dies on fbrestart_cex_n12 (play form) and lend107_n32 (value form).
+echo "35223b6c46750b2c1c961d68485025a9a5e69d87  frz/instances/fbrestart_cex_n12.pg" | sha1sum -c --quiet
+o=$(python3 -I frz/epoch.py --one frz/instances/fbrestart_cex_n12.pg frz/instances/fbrestart_cex_n12.start)
+grep -q "^TMONO_P_V=1 fw=2$" <<<"$o"; grep -q "^R17U PASS" <<<"$o"; grep -q "^TMONO_V PASS" <<<"$o"
+o=$(python3 -I frz/epoch.py --one ../n5-epoch/instances/lend107_n32.pg ../n5-epoch/instances/lend107_n32.start)
+grep -q "^TMONO_P_V=3 TMONO_V_V=3 fw=10$" <<<"$o"; grep -q "^R17U PASS" <<<"$o"
+echo "si (box 29 §7: EPOCH-U holds; TRAP-MONO dead on fbrestart_cex_n12 and lend107_n32): PASS"
