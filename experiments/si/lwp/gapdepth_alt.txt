@@ -1,0 +1,10 @@
+GD_V=8 gaps=974 h4p_fail=6 kill_max=-2 slack_min_plus1000=989
+EXAMPLE ('experiments/n5-epoch/instances/gci2_n12.pg', 0, 6, 0, 6, 6, 0, 12)
+EXAMPLE ('experiments/n5-epoch/instances/lend13_n16.pg', 1, 9, 1, 9, 8, 0, 16)
+EXAMPLE ('experiments/n5-epoch/instances/lend47_n32.pg', 3, 19, 6, 19, 13, 3, 32)
+EXAMPLE ('experiments/n5-epoch/instances/lend55_n32.pg', 2, 17, 6, 17, 11, 2, 32)
+EXAMPLE ('experiments/n5-epoch/instances/lend82_n32.pg', 3, 23, 10, 23, 13, 2, 32)
+EXAMPLE ('experiments/n5-exhaustive/instances/b4_n4all_cyc3_0.pg', 0, 1, 0, 1, 1, 0, 4)
+EXAMPLE ('experiments/n5-exhaustive/instances/b5_n5_cyc4_0.pg', 0, 2, 0, 2, 2, 1, 5)
+EXAMPLE ('experiments/n5-exhaustive/instances/n4all_thch_0.pg', 0, 1, 0, 1, 1, 0, 4)
+GAPDEPTH FAIL

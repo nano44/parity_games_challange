@@ -421,3 +421,13 @@ o=$(python3 -I grun/lwave.py --one grun/instances/lwkill_n31.pg grun/instances/l
 python3 -I root/n5bcmp.py grun/instances/lwkill_n31.pg grun/instances/lwkill_n31.start | grep -q "n5b iterations 40 fallbacks 0 states 41 | n5x states 41 | identical state sequences: True"
 PMODE=1 python3 -I grun/lwave.py --one grun/instances/lwkill_n31.pg grun/instances/lwkill_n31.start | grep -q "LWAVE PASS"
 echo "grun (box 25: DEAD L-WAVE, lwkill_n31 gap 37 > 30, n5b identical; L-WAVE' holds there): PASS"
+# box 26 (docs/si/N5-LWP-box26.md): L-WAVE' gap anatomy and the dead candidate invariants. lwp_a's gap [1,26] has 25 = n - 1 transitions:
+# LAST-SWITCH per gap fails there (2 transitions) while SEG-LAST holds on its 3 segments; PV-STEP fails at t = 2; GAP-DEPTH 25 > 23;
+# SEG-LAST fails on cw11_n24's pieces (control) and on whole runs (control); SWL / NEVEN hold on lwp_a.
+o=$(python3 -I lwp/lastsw.py --one grun/out/lwp_a.pg grun/out/lwp_a.start); grep -q "LS_V=2 " <<<"$o"; grep -q "gap_minus_nEven_max_plus1000=1000 " <<<"$o"; ! grep -q "SWL_V" <<<"$o"
+o=$(python3 -I lwp/seglast.py --one grun/out/lwp_a.pg grun/out/lwp_a.start); grep -q "segs=3 trans=23" <<<"$o"; grep -q "SEGLAST PASS" <<<"$o"
+MODE=piece python3 -I lwp/seglast.py --one ../red/kw/instances/cw11_n24.pg | grep -q "SEGLAST FAIL"
+MODE=run python3 -I lwp/seglast.py --one grun/instances/lwkill_n31.pg grun/instances/lwkill_n31.start | grep -q "SEGLAST FAIL"
+python3 -I lwp/vstep.py --one grun/out/lwp_a.pg grun/out/lwp_a.start | grep -q "PV_V=1 "
+python3 -I lwp/gapdepth.py --one grun/out/lwp_a.pg grun/out/lwp_a.start | grep -q "EXAMPLE ('grun/out/lwp_a.pg', 1, 26, 1, 26, 25, 23, 26)"
+echo "lwp (box 26: lwp_a gap n - 1 kills per-gap LAST-SWITCH, PV-STEP, GAP-DEPTH; SEG-LAST holds there, fails on pieces / runs as controls): PASS"

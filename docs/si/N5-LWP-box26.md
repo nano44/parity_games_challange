@@ -1,0 +1,112 @@
+# N5-LWP (box 26): CONJECTURE L-WAVE′ survives four new kill searches; candidate settling invariants killed; CONJECTURE SEG-LAST
+L-SI successor 22 (Opus 5.5; D18, Lead reading L40). Lead's brief 2026-10-29 06:38Z, STEP 1: «CONJECTURE L-WAVE′ (GRUN §5) ... Aim: a proof
+(the READING obstruction: gate competitors are off the end-state plays; Even P-changes are not events), or a kill with an instance. Try one
+structurally different kill search (not more of the same climb from lwp_a) before committing to the proof route». Working note, unrefereed,
+not frozen. Not a TARGET.md claim. Nothing here bounds N5's running time; G-N5-TIME stays OPEN. Labels (D18 / L40): PROVED (lane) /
+CONJECTURE / OPEN / DATA / READING / DEAD. Counts are TRANSITIONS. Tools: experiments/si/lwp/ (gaps.py, rsamp.py, dagclimb.py, xclimb.py,
+gaptrace.py, vstep.py, gapdepth.py, lastsw.py, seglast.py); outputs lwp/*.txt, lwp/out/.
+
+## Summary
+| § | item | label |
+| --- | --- | --- |
+| §1 | four structurally different kill searches for L-WAVE′ (random start pairs on library games; independent small random games; the pure-length regime; a climb on the gap's excess over the end-state depth): no kill; best gap = n − 1 again (xk_k, n 26) | DATA |
+| §2 | anatomy of the n − 1 gaps: a few multi-switch steps, then one "snake" (one Even switch per transition, each to the vertex that switched just before), driven by P-level waves at Even vertices | DATA, READING |
+| §3 | candidate settling invariants that would prove L-WAVE′ (VS-STEP, PS-STEP, PV-STEP, GAP-DEPTH, LAST-SWITCH per gap): all DEAD, killers named | DEAD |
+| §4 | surviving stronger forms: gap ≤ \|Even\| (NEVEN); gap ≤ switching Even vertices + L-cuts (SWL); CONJECTURE SEG-LAST (every transition of a REL segment is some Even vertex's last switch in it), which would drop (H4′_rel) and GEN_W from STATIC-DEPTH-REL | CONJECTURE, DATA |
+| §5 | Lemma P-ARENA (the (c, P)-level form of STATIC-DEPTH′ step (A)) and the monotonicity of settled sets | PROVED (lane), elementary |
+| §6 | where the proof route stands | READING, OPEN |
+
+## 0. Setting
+As N5-GRUN-box25 §0, §4, §5. A run S: a maximal fallback-free stretch of one phase. REL segments, RO_b, X_b, CW_b, CH_b, L-cuts as in GRUN
+§4-§5 (grun/relseg.py, grun/lwave.py). L-WAVE′ EVENTS (grun/lwave.py PMODE=1): the non-L REL cuts and every transition at which the path
+set P of Ξ changes at an Odd choice vertex of RO_b (b the end of the segment holding the transition). A GAP [x, y]: consecutive points of
+{run start, events, run end}; its length y − x (as in lwave.py). CONJECTURE L-WAVE′: every gap has ≤ n − 1 transitions.
+lwp/gaps.py reproduces lwave.py's cutting (same counts on lwp_a, lwkill_n31) and also returns the event and L-cut states. In §3-§4 a gap
+closing at an event y is examined on [x, y − 1] (the closing transition is the event itself; REFERENCE state b := y − 1), else on [x, y].
+
+## 1. Kill searches for L-WAVE′ (DATA; score = max gap − (n − 1), > 0 is a kill)
+| search | what is different from box 25's climbs | size | best score |
+| --- | --- | --- | --- |
+| lwp/rsamp.py MODE=lib (lwp/out/rl1.log, rl2.log) | no game mutation: alt_all games (n ≤ 60) with uniformly random start pairs (σ0, τ0) | ≥ 66,187 + 42,511 trials (stopped by me) | 0, only at n 4-6 (trivial gaps n − 1) |
+| lwp/rsamp.py MODE=rand (rs1.log) | independent random games n 4-7, out-degree ≤ 3, random starts | ≥ 64,212 trials (stopped by me) | 0 at n 5 |
+| lwp/dagclimb.py TAUOPT=1 (dag20.log, dag32.log) | the PURE-LENGTH REGIME: a DAG plus one top even sink g, all other priorities 0, so c = g and P = ∅ at every vertex and state; then no P-event can occur and a run is one gap up to ties; τ0 = Odd's optimal distance strategy, so the whole game is one phase | 2 × 40,000 steps, n 20 fixed and n ≤ 32 | −14 (n 20, run 5), −9 (n 15, run 5): runs ≤ 0.33n |
+| lwp/xclimb.py (OBJ=GD; xa, xr, xk logs) | objective = 2 × (gap − end-state REL depth) + (gap − (n − 1)): grows the time L-cuts add beyond STATIC-DEPTH-REL's depth instead of the raw gap; seeds lwp_a, run49_n32 (default start), lwkill_n31 | 3 × 20,000 steps | 0: xk_k (n 26, gap 25 = n − 1); xa −4 (n 22); xr −4 |
+- CORRECTION (written before the push): the climbs scored the depth excess with an earlier reference rule (a gap closing at an event AT
+  the run end was measured on [x, y], after the event), which inflated it (xk 22, xa 15). Under §0's rule (reference y − 1 whenever y is an
+  event) the excess is 1 on xk_k / xk and 0 on xa (lwp/gapdepth.py). So the GD climb was partly mis-aimed; it still found a second gap of
+  n − 1, and no kill.
+- READING (pure-length regime): a one-switch-per-step wave a_1 ← a_2 ← ... ← a_k needs every edge a_j → a_(j−1) to be non-improving until
+  a_(j−1) switches, i.e. the a_j's initial targets must be longer than the wave's route: a shared slow path of length ≥ k, so a wave uses
+  ≤ about n/2 transitions. The long waves of §2 are P-level waves; lengths alone do not make them.
+- Pins (lwp/out/; sha1sum): xk_k.pg 1ad8d0036d3d1503b8f672199110d3f41c65030a, xk_k.start a2e00ea7c3383b9cd35d21f306c77c8fc3f57684 (gap n − 1,
+  one Odd choice vertex 4); xa.pg d18575db040f26b4bc02c98a15b21550ed4004bf, xa.start 5a951ab112a2896e38a987eaafedca102b559948 (gap n − 5). grun/out/lwp_a.pg 19d105416929800709707a2489b335a6a936e883, .start ebe3da481098f568ee171b061ab70e2d0f786bbd.
+
+## 2. Anatomy of an n − 1 gap (lwp/gaptrace.py on grun/out/lwp_a, n 26, gap [1, 26], one gate u = 4, L-cuts at 5 and 16)
+- Transitions 1-4: several Even vertices switch at once (10, 5, 8, 7 switches), vertex 6 switches 14 > 24 > 14 > 24 and vertex 11 four times.
+- Transitions 5-25: ONE Even switch per transition, each vertex to the one that switched just before (25 → 8, 13 → 25, 24 → 13, ..., 3 → 12):
+  a snake through 21 distinct vertices. Only the switching vertex changes its path set; at the L-cut 15 → 16 the gate's σ̄ moves 0 → 5 and 13
+  vertices change length only.
+- The path sets go through three levels (weights −2^25 → −2^24 → −2^23 in E.weight: plays first avoid vertex 16 (priority 63, odd), then 5
+  (63, odd)); a vertex can pass through an intermediate level before its final one, which is why the settling potentials of §3 fail.
+- A kill needs some Even vertex to switch twice inside one gap on the snake's route; xk_k (n 26) has the same shape.
+
+## 3. Candidate invariants that would prove L-WAVE′: DEAD
+Each would bound a gap by a monotone count (Ξ is monotone, RESULTS R15 (a), and S1's order is lexicographic in (c, P, ℓ), so the sets
+below only grow; §5).
+| candidate | statement (on [x, b], b the reference state) | killer | corpus (alt_all default / pinned starts) |
+| --- | --- | --- | --- |
+| VS-STEP | every transition makes some vertex VALUE-settled (Ξ_(t+1)(v) = Ξ_b(v) ≠ Ξ_t(v)) | lwp_a: 13 of 25 transitions settle nothing (the late L-cut moves every length) | (KEY=V; not re-run) |
+| PS-STEP | ... some vertex (c, P)-settled | lwp_a t = 2; lend27_n24 [5, 7] t = 6 | 109 / 144 failing transitions (lwp/vstep_alt*.txt) |
+| PV-STEP | ... some vertex (c, P)- or value-settled (would give gap ≤ 2n) | lwp_a t = 2 | 0 / 0 (PVSTEP PASS); dead by lwp_a only |
+| GAP-DEPTH | gap ≤ max_Q d at b (STATIC-DEPTH-REL with L-cuts allowed) | lwp_a 25 > 23; xk_k 24 > 23 | 8 / 5 gaps fail (gci2_n12: gap 6, depth 0) (lwp/gapdepth_alt*.txt) |
+| LAST-SWITCH (gap) | every transition is the last switch in the gap of some Even vertex (would give gap ≤ \|Even\|) | lwp_a t = 2, 3; xk_k one transition | 0 / 0 (lwp/lastsw_alt*.txt); lib41 0 |
+- Controls: MODE=run (the same tests on whole runs) fails as it must (VS/PV on lwkill_n31 [2, 40]: 36 transitions; LAST-SWITCH 17).
+
+## 4. Surviving stronger forms (CONJECTURE; DATA)
+- NEVEN: every gap [x, b] has b − x ≤ |Even|. DATA: max (b − x) − |Even| = −1 (alt_all default), 0 (pinned starts, lib41; lwp_a; xk_k −1).
+- SWL: b − x ≤ (Even vertices that switch in [x, b]) + (L-cuts in the gap). 0 violations: alt_all 974 + 1,332 gaps, lib41 1,125 gaps,
+  lwp_a (25 = 23 + 2), xk_k (lwp/lastsw*.txt).
+- CONJECTURE SEG-LAST: in every maximal REL-admissible segment [a, b] (GRUN §4), every transition t → t + 1 (a ≤ t < b) is the last switch in
+  [a, b] of some Even vertex. DATA (lwp/seglast.py): 0 failures on alt_all (907 segments, 4,478 transitions; pinned starts 1,249 / 5,384),
+  lib41 (978 / 4,241), lwp_a, xk_k, lwkill_n31. Controls: on whole runs it fails (144 failing transitions on alt_all), and on σ̄-constant
+  PIECES it fails at 4 transitions (cw11_n24 [0, 3] twice: one vertex switching 3 times, the piece crosses a cycle appearance (N5-PIECE-box25
+  §1); cw11_n24 [12, 14]; cone_n69 [2, 20]): the persistence of the end-state cycles matters. D_t := {v : σ_t(v) ≠ σ_b(v)} is NOT monotone (161 lib41 segments).
+  Kill search (lwp/xclimb.py OBJ=SL, score 10 × failures + max(length − switchers)): from cw11_n24 and pftheta34_n32 (20,000 steps each;
+  lwp/out/sl_*.log): best 0, no failure.
+- What SEG-LAST would give (READING, a REDUCTION): Even vertices on the end-state cycles of a REL segment never switch in it (proof of
+  STATIC-DEPTH′, first item) and out-degree-1 vertices never switch, so SEG-LAST bounds the segment by |Q ∖ (T_W ∪ T_H)| ≤ n − 1 WITHOUT
+  (H4′_rel) and GEN_W: it would cover the 45 + 49 segments where (H4′_rel) fails (GRUN §4) and CONJECTURE STATIC-DEPTH′-TIE for pieces
+  inside one segment.
+
+## 5. PROVED (lane), elementary
+- Monotone settled sets. On states [x, b] of one run (in-phase S4a transitions only), let VS_t := {v : Ξ_t(v) = Ξ_b(v)} and PS_t := {v :
+  (c, P) of Ξ_t(v) = (c, P) of Ξ_b(v)}. Then VS_t ⊆ VS_(t+1) and PS_t ⊆ PS_(t+1). Proof: R15 (a) gives Ξ_t ⊴ Ξ_(t+1) ⊴ Ξ_b pointwise. S1's
+  order compares c (by reward), then P (by weight), then ℓ: so the (c, P) projection is monotone (x ⊴ x′ implies (c, P)(x) ≤ (c, P)(x′)
+  lexicographically), and a value sandwiched between two equal values (or two equal projections) equals them. □
+- Lemma P-ARENA. Let t ≤ b be states of one run, v Even, y := σ_b(v) ≠ σ_t(v) =: z, v not the cycle node of Ξ_t(v) nor of Ξ_b(v), with
+  Ξ_b(v) = v ⊕ Ξ_b(y) and Ξ_t(v) = v ⊕ Ξ_t(z), and y ∈ PS_t. If v ∉ PS_t, then (v, y) ∈ Iσ_t (so y is in v's S4a arena at t).
+  Proof. Otherwise Ξ_t(y) ⊴ Ξ_t(z) (S1's order is total; S2). Write π for the (c, P) projection. The map x ↦ v ⊕ x keeps the cycle node,
+  adds v to P or not according to p′(v) > p′(c) alone, and adds 1 to ℓ (S1; the argument in GATE-RISE, GRUN §2), so π(v ⊕ x) is a function of
+  π(x) and is monotone in it. Then π(v ⊕ Ξ_t(y)) ≤ π(v ⊕ Ξ_t(z)) = π(Ξ_t(v)) ≤ π(Ξ_b(v)) = π(v ⊕ Ξ_b(y)) = π(v ⊕ Ξ_t(y)) (the last step:
+  y ∈ PS_t). So π(Ξ_t(v)) = π(Ξ_b(v)), i.e. v ∈ PS_t: contradiction. □
+- Use: P-ARENA is step (A) of STATIC-DEPTH′ at the (c, P) level (no play-settling of y needed). Step (B) has no (c, P) analogue in hand:
+  S4a chooses in the W-frame, so v may take another arena edge with the same W-value.
+
+## 6. Where the proof route stands (READING; OPEN)
+- The two obstructions of GRUN §5 are both present in the data: (i) GAP-DEPTH fails (13 corpus gaps; gci2_n12: gap 6 at depth 0; lwp_a by 2):
+  L-cuts make gaps outlast the end-state depth, so no induction along the end-state plays alone can work; the competitors' rise (off the end-state plays) is what costs the
+  time. (ii) Even P-changes inside gaps are the snakes of §2.
+- Every successful bound in the data is a COUNT of vertices (NEVEN, SWL, SEG-LAST), not a depth. A proof of L-WAVE′ along these lines would
+  show that each transition of a gap "uses up" one Even vertex for good, up to one extra transition per L-cut (SWL). SWL gives only
+  gap ≤ |Even| + L-cuts, and L-cuts per gap are ≤ Σ_gates (n − 1) (ℓ moves one way inside a P-block, GRUN §5): an O(n·#gates) gap bound, which
+  is weaker than L-WAVE′ but polynomial; it is CONJECTURE (SWL is not proved).
+- Next proof target: SEG-LAST under STATIC-DEPTH′'s hypotheses (one piece, end-state cycles persistent). Its contrapositive: if no vertex has
+  its last switch at t, every switcher of t switches again later; the (c, P)-level tools above do not exclude this.
+
+## DONE / FINDINGS / NEEDS
+- DONE: this note; experiments/si/lwp/ tools and logs; pins in §1; DEAD entries in docs/si/DEAD.md (box 26).
+- FINDINGS: (1) L-WAVE′ survives four structurally different kill searches (random starts, random games, pure-length regime, depth-excess
+  climb); gap = n − 1 is reached again (xk_k) and never beaten. (2) DEAD: VS-STEP, PS-STEP, PV-STEP, GAP-DEPTH, per-gap LAST-SWITCH (lwp_a,
+  xk_k). (3) CONJECTURE SEG-LAST (0 failures in 3,134 segments; kills on pieces and runs as controls) would remove (H4′_rel) and GEN_W from
+  STATIC-DEPTH-REL; SWL and NEVEN hold. (4) PROVED (lane): monotone settled sets; Lemma P-ARENA. L-WAVE′ stays OPEN.
+- NEEDS: none from the owner.

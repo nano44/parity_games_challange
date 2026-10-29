@@ -1,0 +1,6 @@
+seed (-18, 1) n 20
+step 254 score -17 run 2 n 20
+step 2415 score -16 run 3 n 20
+step 20489 score -15 run 4 n 20
+step 26364 score -14 run 5 n 20
+final score -14 run 5 n 20
