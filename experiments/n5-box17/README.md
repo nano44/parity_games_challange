@@ -44,3 +44,26 @@ samples. Labels: CONJECTURE (L-SI's statements), OPEN, DATA.
   subset whose id order is the rank order.
 - L(n) (--labelled): every rank permutation of the ids too (n! · |C(n)|): ALL games on n vertices up to priority values.
 - Start pairs: ALL (σ0, τ0) = ∏_v |succ(v)| per game (every positional pair N5 admits); each state's N5 step is computed once per game.
+
+## Results (DATA; maxima over every run / segment / phase of every listed start; 0 violations of any conjecture so far)
+"EXC" = max SEG-COUNT excess (segments with b > a); "SEG" = max SEG(S) over runs with ≥ 1 transition; "gap" = max L-WAVE′ gap (bound
+n − 1); "f" = max in-phase fallbacks per phase (FB-LIN bound n); "DL" = max deadlock steps t > r0 per segment (DL-RUN); "dead" = all
+deadlock steps. Files: results/C<n>_all.json (exhaustive), results/parts/C4_p<k>of8.json, results/R<n>_all_s17.json (random).
+| table | games | start pairs | EXC | SEG (SEG/n) | gap (n − 1) | f | DL / dead |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| C(1), all starts, exhaustive | 4 | 4 | - | - | - | - | - |
+| C(2), all starts, exhaustive | 144 | 256 | - (no segment with b > a) | 2 (1.0) | 1 (1) | 1 | 0 / 0 |
+| C(3), all starts, exhaustive | 21,952 | 110,592 | 0 | 2 (0.67) | 2 (2) TIGHT | 1 | 0 / 0 |
+| L(3) (all rank orders), all starts, exhaustive | 131,712 | 663,552 | 0 | 2 (0.67) | 2 (2) TIGHT | 1 | 0 / 0 |
+| C(4), all starts, part 0 of 8 (every 8th game) | 1,620,032 | 33,752,384 | 0 | 3 (0.75) | 3 (3) TIGHT | 1 | 0 / 0 |
+| random C(5), seed 17, all starts | 20,000 | 2,298,541 | 0 | 3 (0.6) | 3 (4) | 2 | 0 / 0 |
+| random C(6), seed 17, all starts | 20,000 | 14,876,199 | 0 | 4 (0.67) | 4 (5) | 2 | 0 / 0 |
+| random C(7), seed 17, games with ≤ 4,096 start pairs, all starts | 2,000 | 3,902,809 | 0 | 4 (0.57) | 3 (6) | 2 | 0 / 0 |
+| random C(8), seed 17, games with ≤ 4,096 start pairs, all starts | 2,000 | 5,113,064 | 0 | 4 (0.5) | 4 (7) | 2 | 0 / 0 |
+- Pinned extremal games (pin.py: n5 = n5b states, Oink zlk, verify.py, xcheck vs L-SI tools): instances/C3_{exc,seg,gap,f}.pg (+ .start);
+  C3_gap (sha1 1d33a760…) has an L-WAVE′ gap of exactly n − 1 = 2.
+- n = 5 exhaustive is out of reach here: |C(5)| = 2^5 · 2^5 · 31^5 ≈ 2.9·10^10 games (≈ 3·10^12 start pairs); n5b costs ≈ 0.3 ms per state.
+- DL-RUN minimal size (Lead 10:36Z): no deadlock step at all (not even at t = r0) in any table above. Upper bound: L-RED's
+  segcount_kill_n20 (n 20, explicit start; reproduced: dl 1, deadlock steps [0, 2] of segment [0, 4], r0 = 0). dlshrink.py (greedy:
+  delete a vertex, or a non-start edge, keeping dl > 0) finds no smaller game from it: segcount_kill_n20 is 1-minimal under those moves.
+  So the least n is in [5, 20] for C(n)-type games (n ≤ 4 exhaustive once all 8 parts are in; n 5-8 only sampled).
