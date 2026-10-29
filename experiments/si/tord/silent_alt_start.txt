@@ -1,0 +1,7 @@
+SIL2=9 fw=1125
+maxima: {'tc/wch': (1.0, 1, 1, 'n5-epoch/instances/ffin5_n32.pg', 4, 5, 32), 'silrun': (8, 'red/xing/instances/u23sw64_n32.pg', 1, 9, 1, 32)}
+EXAMPLE ('SIL2', 'red/fbx/instances/kt6_n58.pg', 5, 20, 2, 1, 58)
+EXAMPLE ('SIL2', 'red/kw/instances/cw11_n24.pg', 0, 3, 3, 1, 24)
+EXAMPLE ('SIL2', 'red/kw/instances/cw11_n24.pg', 12, 14, 2, 1, 24)
+EXAMPLE ('SIL2', 'red/xing/instances/u1t_cex_n32.pg', 0, 7, 4, 1, 32)
+EXAMPLE ('SIL2', 'red/xing/instances/u1t_own6_n32.pg', 0, 6, 5, 1, 32)

@@ -1,6 +1,29 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Box 55 log (successor 33, Opus 5.5, D14/D18; Lead brief 15:19Z; STEP 0 answers sent 15:20:17Z, started without waiting as told)
+- STEP 0 (measured): local l-new STALE (840 behind origin); ff-only to 56a42d4f (is-ancestor OK); merge --no-ff trunk 305cc8be -> 202bf1ec
+  (5 ahead / 0 behind; was 4 / 18, merge-base f67f5020). GAPS G-N5-TIME l.11 open, G-N1-LB l.10 open, G-N5-TERM l.16 closed. D1 (INDEX l.5),
+  D14 (l.22), D18 (l.32) active. Answers here because docs/agents/ is Lead-only.
+- (1) Packet docs/new/P-N5-SF-box55.md: SF-TERM, DECOUPLE, ONE-PLAYER, SF-RED (a)-(c). RESULTS line sent 15:27:39Z BEFORE freezing. Change
+  vs box 54: stretch bound b − a ≤ n + m from SIGNED R17 (c), (e) only (constant n + m + 1); converse SBC ≤ 2I added. Checker box55/pcheck.py
+  (+ MUT control), corpus driver box55/corpus.sh; quotes at trunk 305cc8be (18). alt_all 413/413 PASS (box55/pc_alt.txt).
+- (2) docs/new/N5-SBC-box55.md: no polynomial bound. PROVED (lane): SBC-EQ, NO-TRANSFER (from τ* with Iτ* = ∅ N5-SF is the one-sided
+  rule F, I = #σ − 1; Odd's run cannot bound SBC_σ). DEAD: M1 (σ̄ ≺_{G^d}-monotone), M2, M3, M4. Obstruction: P-component leapfrog at the
+  Odd vertex 14N + 16 of switchbestexp_N (2^N − 1 flips for N ≤ 4).
+- (3) docs/new/N5-SF-gauntlet-box55.md: no step passed in full; 1 and 4-correctness partly met; 2, 3, 4-time open.
+### N5-SF exact pseudocode (gauntlet step 1; the definition is P-N5-SF-box55.md §0, which governs; implementation experiments/new/box54/n5sf.py, default MODE)
+Input G, optional start pair; S1 (valuations Ξσ against S1's σ̄(σ); Ξτ, τ̄(τ) on G^d), S2 (Iσ, Iτ), S3 (start) exactly as SPEC
+(docs/new/N5-ssi-global.md). Loop while Iσ ∪ Iτ ≠ ∅ (each pass = one iteration), both steps from the same (σ, τ):
+  a′. if Iσ ≠ ∅: H := G with Even v restricted to {σ(v)} ∪ Iσ(v), Odd v restricted to σ̄(σ)(v); σ_new := Even's optimum of H (S1 procedure on
+      the dual of H against σ̄(σ)); else σ_new := σ.
+  b′. if Iτ ≠ ∅: H′ := G with Odd v restricted to {τ(v)} ∪ Iτ(v), Even v restricted to τ̄(τ)(v); τ_new := Odd's optimum of H′ (S1 on H′
+      against τ̄(τ)); else τ_new := τ.
+  c. if σ_new = σ and τ_new = τ: if Iσ ≠ ∅, every Even v with improving edges takes the (v, w) ∈ Iσ maximising (Ξσ(w), w), τ unchanged
+     (FIX 3); else the same for Odd on Iτ with G^d's valuations.
+  d. σ, τ := σ_new, τ_new.
+Stop (S5) when Iσ = Iτ = ∅: Even wins v iff the cycle node of Ξσ(v) has even Ω; Even's strategy σ on Even's region, Odd's σ̄(σ) on Odd's.
+
 ## Box 51 log (successor 32, Opus 5.5, D14/D18; Lead brief 12:43Z; STEP 0 answers sent 12:44:31Z, started without waiting as told)
 - STEP 0 (measured): local l-new STALE at d4bcdd21; fetched, ff-only to 7ea2826d (is-ancestor OK); merge --no-ff trunk 27365bed → 12ec8621
   (2 ahead / 0 behind; was 1 / 152, merge-base 36fd5bb8). GAPS G-N5-TIME l.11 open, G-N1-LB l.10 open, G-N5-TERM l.16 closed. D18 (INDEX
@@ -18,7 +41,44 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   one phase (N = 3, 4, 6, 8, 10, 12). READING: the graft mirrors pairwise Ξ-leapfrogs, so SBCH″ is not easier than |P|. Lead told 13:31Z.
 - Fixes file P-N5-VC-fixes-box50.md F1 frozen (2c2b8960, sha1 9e8b7bd2…), reported 13:31Z.
 
-## Dead ends (successor 32; also in docs/new/N5-VCPHASE-box51.md §6 and N5-RLV-box52.md §3)
+## Box 53 log (successor 32; Lead 13:47Z: ranking-function synthesis, PR / lexicographic, data before proof)
+- docs/new/N5-RANK-box53.md. Tools box53/ (feat.py, rlp.py [scipy HiGHS, container only], mkcert.py, cert.py [pure Python], revpair.py).
+  Lemma CIRCUIT / Corollary REVERSE-PAIR PROVED (lane). Exact certificates: F24 u23sw64_n32 (5), F24m b5_os_n16 (8), F45 returns_ph64 (12),
+  edge bits lend9_n8 (2: vertex 3 6→7 at t 2, 7→6 at t 5; 89/410 library games). Shared F45 across zcl n32: circuit 18; joint lex STUCK.
+  F45 ranks every long family (cycle / top features). No uniform form, so no CONJECTURE. L-LIT T42 read (its §3 template question: EB DEAD).
+
+## Box 54 log (successor 32; Lead 14:24Z: single-frame N5, N5-SF)
+- docs/new/N5-SF-box54.md. N5-SF = S4a's opponent τ replaced by σ̄ (S4b mirrored): Ξ frame on both sides. PROVED (lane): SF-TERM (R15
+  verbatim), DECOUPLE (Even's distinct-σ sequence depends on σ_0 only), Theorem SF-RED (each (σ̄, λ)-segment is N5 on G_σ̄, < n + m by R17
+  (b), (c); length < 2(n + m)(n² − n + 1 + SBC)). DEAD: NOFB (n3all_maxph_0), W-frame twin N5-SFW cycles (theta_thf16, period 10; 49/413).
+  DATA: correct on 1,038 library + families + hard families; SF ≈ ½ N5; runquad 264 → 2, topfix 7N + 43; switchbestexp N=10 619 vs 89, SBC 97.
+  Open count SBC (CONJECTURE SF-POLY OPEN).
+
+## Dead ends (successor 33; also in docs/new/N5-SBC-box55.md §4)
+- (M1) σ̄(σ^(j)) monotone in R15's ≺ on G^d (either direction): DEAD, experiments/new/box54/out/switchbestexp_2.pg (n 60, sha1 b3d5bc29…,
+  S3 start): σ̄'s G^d-valuation goes down for Odd at vertices 1, 3, 4 at j = 9, 32 and up at j = 28, 41.
+- (M2) O(1) entries of an Odd edge into σ̄: DEAD, switchbestexp_10 (sha1 c26f4387…): 21 entries. (M3) O(deg) σ̄-changes at one Odd vertex:
+  DEAD, switchbestexp_4 (sha1 57b27b74…) vertex 72 (deg 2): 15. (M4) ≤ n distinct Ξ values per vertex: DEAD, switchbestexp_4 vertex 107:
+  120 > n = 110, one cycle node.
+- Route "R15 well-foundedness on G^d bounds SBC_σ": DEAD by Proposition NO-TRANSFER (proved): from τ* with Iτ* = ∅ Odd never moves and
+  SBC_σ is unchanged (checked: box55/ntcheck.py, alt_all box55/nt_alt.txt). Obstruction: DECOUPLE separates the runs.
+- Obstruction to SF-POLY: P-component leapfrog at Odd vertex u = 14N + 16 of switchbestexp_N (successors 14N + 11, 14N + 18): flips
+  2^N − 1 for N ≤ 4, 41 at N = 10; LAM = 0 throughout.
+
+## Things only I know (successor 33)
+- pcheck.py must compare strategies on the player's OWN vertices: red/n3/instances/n3cov_lean.start sets SIGMA0 47:18 on an Odd vertex;
+  start_pair writes it into σ and S1 ignores it, so unprojected sequences differ (a false TAU_V).
+- corpus.sh with xargs -P 3: print each game's block in ONE write, or the lines of parallel jobs interleave (first sicorpus log was garbled).
+- sbc.py's DUAL columns value σ̄ on G^d with Ed.key (larger = better for Odd).
+
+## Dead ends (successor 32; also in docs/new/N5-VCPHASE-box51.md §6, N5-RLV-box52.md §3, N5-RANK-box53.md §5, N5-SF-box54.md §1-§2)
+- N5-SFW (W-frame single-frame variant): DEAD, cycles on red/n5inj/instances/theta_thf16.pg (n 16, sha1 90ed13cf…, S3 start; period 10).
+  Obstruction: W-improving switches need not be Ξ-improving, so R15's order can go down.
+- Lemma NOFB (N5-SF never falls back): DEAD on n5-exhaustive/instances/n3all_maxph_0 (+ .start): a length-improving switch that closes the same
+  odd cycle does not change the value; the arena optimum is σ.
+- Linear / lexicographic ranking functions over F24, F24m, F45, edge bits: DEAD on u23sw64_n32, b5_os_n16, red/n5inj/instances/returns_ph64,
+  n5-epoch/instances/lend9_n8 (exact certificates experiments/new/box53/cert/). Obstruction: S1's top-first order is not a polynomial-weight
+  linear form; N5 makes exact reverse switches.
 - SBCH″ = O(n) per phase (and SBCH′ = O(n)): DEAD, experiments/new/box52/out/topfix_n8_cmp.pg (n 171, sha1 6427c105…; .start): 149 relevant
   σ̄-changes in the phase [0, 241]; family topfix_N_cmp gives 2N² + 3N − 3. Obstruction: an Odd comparator with two observers copies a host
   pair's Ξ-leapfrogs into arena-relevant σ̄-changes.
@@ -37,6 +97,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - One observer cannot see σ̄ flips both ways: the true Ξ is ⊴ the frozen one (σ̄ minimises), so after one cut the reference locks. Use two observers.
 - `until ! pgrep -f "scripts/push.sh"` matches ITSELF and never ends (exit 144 when killed). Wait on push with `ps -eo args | grep -q "^bash scripts/push.sh"`.
 - A parked predecessor pushed during my push (c2df6801): push rejected, merged normally, re-pushed.
+- scipy is NOT in the base container: `pip install scipy` (box 53 LP only); check.sh never needs it (cert.py is pure Python).
+- LP feasibility with per-vertex / per-rank / edge-bit features is overfit at library run lengths (features ≥ transitions); only circuits count.
 
 ## Box 50 log (successor 31, Opus 5.5, D14/D18; Lead brief 09:59Z; STEP 0 answers sent 10:00:48Z, started without waiting as told)
 - STEP 0 (measured): fetched l-new, trunk, l-si; local l-new was 1 commit stale (d4bcdd21 → ff 8e8f7238); trunk merge was a fast-forward to e3b435ab
@@ -542,26 +604,23 @@ Every answer measured from the repository; commands named.
    fetched ref, so the pin cannot be checked yet; I checked the packet by sha1 (cbea0739…) against my own commit 1afccb51 instead.
    (iii) The container clock is slow vs the Lead's stamp (07:50 vs 07:53): stamp only from date -u, never ahead of it.
 
-## Resume point (overwritten at handover, LANE-RESTART step 1; successor 31, box 50, written 12:2xZ 2026-10-29 by date -u)
-Successor 31 (Opus 5.5, D14/D18, L40), session_01V5yGRXWajH5ibiaahj3biF. Context ~385k at writing.
-### DONE (all pushed with scripts/push.sh, VERIFY PASS; SHAs reported to the Lead)
-- docs/new/N5-VC-box50.md (working note) + P-N5-VC-box50.md FROZEN (21f3285a, sha1 078ad604…; 5 quotes pinned at trunk e3b435ab): Lemma SS
-  (Sauer-Shelah, Pajor's form, proved), Theorem VC-BOUND I ≤ Φ_dσ(m_σ) + Φ_dτ(m_τ) − 2, len(P) ≤ Φ_dσ(P)(m) − 1, converse d ≤ log2(I + 1),
-  Corollary RANGE. Lead: referees after P-N5-MPGS. CONJECTURE VC-N5 OPEN (DATA ≤ 3 run, ≤ 4 phase / exec; climbs 4).
-- docs/new/N5-FBLIN-box50.md: a fallback forces neither a P-change nor a carry (FLAT b4_n5_other_0, LENGTH-ONLY nep22f_n64 t 27, MATCHED-ONLY
-  b5_o11 t 7; two engines). Lead 11:47Z: FB-LIN off the critical path (L-SI COMPOSE-RUN). §3b SWCAR 5 → 7 (swc2_vc7).
-- docs/new/N5-PIECECAR-box50.md: carries per vertex live in σ̄-frozen pieces (runquad G = 0, NM = K; b5_os 11); block = two-LP pricing in
-  G_σ̄ (R17 limit (ii)); route NM_P(v) ≤ Φ_dσ(P)(m) − 1, phase VC 3 on runquad K = 3..20.
-- N5-VC §6 (Lead 12:22Z): phase VC vs |D|: ≤ 4 everywhere (b6_xl2_n32 4 at |D| 1; ladders 1 at |D| 50); CONJECTURE VC-PHASE stated.
+## Resume point (overwritten at handover, LANE-RESTART step 1; successor 33, after box 55, written 2026-10-29 ~15:5xZ by date -u)
+Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context ~260k at writing.
+### DONE (all pushed via scripts/push.sh, VERIFY PASS; reported to the Lead)
+- Box 55 (1): P-N5-SF-box55.md FROZEN at l-new 95a7a581 (sha1 dbc2345f…, pinned in check.sh block "Box 55"); RESULTS line approved by the
+  Lead 15:39Z as worded 15:27:39Z; Lead routes it to both referees. Corpus DATA: alt_all 413, sicorpus 276, fam 20, hard 73, all PASS.
+- Box 55 (2): N5-SBC-box55.md (SBC-EQ, NO-TRANSFER PROVED lane; M1-M4 DEAD; P-leapfrog obstruction at switchbestexp vertex 14N + 16).
+- Box 55 (3): N5-SF-gauntlet-box55.md (no step passed in full).
 ### IN FLIGHT
-- Nothing running (climbs vpf4, vsym2, swc1 stopped at handover; their logs and _best files are in experiments/new/box50/out/).
-### NEXT (successor 32; the Lead decides)
-1. If the Lead routes it: P-N5-VC fixes file once both referees have reported (model: P-N5-TOPSHAPE-fixes-box49.md; quotecheck3.py; pin in
-   check.sh with sha1 + guard).
-2. VC-N5, proof side: why oscillating Even vertices in one phase cannot run through all 2^d phase combinations. Start from vpf3_vc4's
-   approximate lap (transitions 7-12 ≈ 20-27) and runquad (phase VC 3 for K = 3..20). A useful lemma would forbid one specific trace
-   pattern on 4 Even edges.
-3. Phase-form VC data on any new L-RED / L-SI family: `python3 -I experiments/new/box50/vcrun.py --one G.pg G.start` (first line: phase_VC_max).
+- Nothing running. Referee reports on P-N5-SF will come: answers go into a NEW P-N5-SF-fixes-box55.md, never into the frozen packet.
+### NEXT (the Lead decides)
+1. Read L-LIT T46 (claude/l-lit b6111905, docs/lit/T46-n5sf-literature.md; read §Summary + §1 (a)-(c) at 15:53Z, rest not yet): F ≈ Schewe
+   switch-best / I^glo evaluated with the OLD counterstrategy ("optimistic" I^glo, Friedmann thesis §4.3 intermediate cycles); PGSolver dead
+   rule strimprbyco; Fearnley snare reading (Prop. 12/14: back-edge switch ⇒ SBC event). Kill target for L-RED: friedmannsubexp (not ported).
+2. Possible proof route from T46 (c): split SBC into back-edge events (Fearnley Prop. 14) and the rest; T46 DATA says the non-back-edge share
+   grows with N (1, 4, 12, 26 of 4, 11, 26, 49). Bound either, or kill.
+3. Gauntlet step 2 for N5-SF (Zielonka on 10,000 random, strategy output + verify.py) if routed; step 3 with L-LIT.
+4. Carry-over: switchbestexp N = 18..20; P-N5-VC fixes2 after referees.
 
 ## Dead ends (successor 30; also in docs/new/N5-READER-box49.md §5)
 - PRED-XR / PLAY-XR ("Ξ-changes of vertices with an Even predecessor / on an Even vertex's honest play ≤ 2n per phase"): DEAD,

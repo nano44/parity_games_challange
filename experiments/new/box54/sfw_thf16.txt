@@ -1,0 +1,13 @@
+ROW red/n5inj/instances/theta_thf16.pg 16 20 1 11 0 True 3 6 8 4
+CYC_V=1 games=1 n5_it=20 sf_it=11
+columns: game, n, N5 it, N5 phases, SF it, SF fb, SF cycle, SBC, LAM, SEG, SEGMAX
+max SF it/n = 0.688 ('red/n5inj/instances/theta_thf16.pg', 16, 20, 1, 11, 0, True, 3, 6, 8, 4)
+max SBC/n = 0.188 ('red/n5inj/instances/theta_thf16.pg', 16, 20, 1, 11, 0, True, 3, 6, 8, 4)
+max SEG/n = 0.500 ('red/n5inj/instances/theta_thf16.pg', 16, 20, 1, 11, 0, True, 3, 6, 8, 4)
+max SEGMAX/n = 0.250 ('red/n5inj/instances/theta_thf16.pg', 16, 20, 1, 11, 0, True, 3, 6, 8, 4)
+max SF/N5 = 0.55 ('red/n5inj/instances/theta_thf16.pg', 16, 20, 1, 11, 0, True, 3, 6, 8, 4)
+WIN PASS
+OPT PASS
+R17 PASS
+FB PASS
+CYC FAIL

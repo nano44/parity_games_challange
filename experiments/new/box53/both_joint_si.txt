@@ -1,0 +1,2 @@
+SKIP experiments/si/instances/dlmm_ML_L6.pg IndexError('tuple index out of range')
+INFEASIBLE both_joint_si 6737 support 18 games ['experiments/si/xing/instances/zcl_fb1_n32.pg', 'experiments/si/xing/instances/zcl_fb2_n32.pg', 'experiments/si/xing/instances/zcl_rx_n32.pg', 'experiments/si/xing/instance

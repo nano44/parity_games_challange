@@ -1,0 +1,414 @@
+REV n5-epoch/instances/ffin12_n32.pg n 32 transitions 33 reverse_pairs 0 first None
+REV n5-epoch/instances/ffin4_n24.pg n 24 transitions 20 reverse_pairs 0 first None
+REV n5-epoch/instances/ffin5_n32.pg n 32 transitions 23 reverse_pairs 1 first (3, 12, [(16, 31, 3)])
+REV n5-epoch/instances/gci2_n12.pg n 12 transitions 10 reverse_pairs 0 first None
+REV n5-epoch/instances/gci3_n24.pg n 24 transitions 21 reverse_pairs 0 first None
+REV n5-epoch/instances/immfail_n14.pg n 14 transitions 6 reverse_pairs 0 first None
+REV n5-epoch/instances/immp_cex_n11.pg n 11 transitions 2 reverse_pairs 0 first None
+REV n5-epoch/instances/lcount_n23.pg n 23 transitions 5 reverse_pairs 0 first None
+REV n5-epoch/instances/lend107_n32.pg n 32 transitions 112 reverse_pairs 25 first (6, 19, [(26, 10, 0)])
+REV n5-epoch/instances/lend13_n16.pg n 16 transitions 14 reverse_pairs 0 first None
+REV n5-epoch/instances/lend15_n48.pg n 48 transitions 27 reverse_pairs 0 first None
+REV n5-epoch/instances/lend27_n24.pg n 24 transitions 32 reverse_pairs 0 first None
+REV n5-epoch/instances/lend39f_n32.pg n 32 transitions 47 reverse_pairs 13 first (9, 20, [(31, 17, 1)])
+REV n5-epoch/instances/lend47_n32.pg n 32 transitions 50 reverse_pairs 7 first (17, 26, [(18, 1, 8)])
+REV n5-epoch/instances/lend55_n32.pg n 32 transitions 58 reverse_pairs 9 first (11, 16, [(14, 10, 16)])
+REV n5-epoch/instances/lend72_n48.pg n 48 transitions 76 reverse_pairs 6 first (13, 51, [(9, 21, 26)])
+REV n5-epoch/instances/lend82_n32.pg n 32 transitions 87 reverse_pairs 12 first (20, 26, [(1, 14, 18)])
+REV n5-epoch/instances/lend9_n8.pg n 8 transitions 10 reverse_pairs 3 first (2, 5, [(3, 6, 7)])
+REV n5-epoch/instances/nconf61_n48.pg n 48 transitions 73 reverse_pairs 7 first (25, 37, [(24, 19, 20)])
+REV n5-epoch/instances/nep13_n24.pg n 24 transitions 35 reverse_pairs 1 first (16, 24, [(10, 5, 22)])
+REV n5-epoch/instances/nep22f_n64.pg n 64 transitions 52 reverse_pairs 1 first (7, 38, [(42, 31, 44)])
+REV n5-epoch/instances/nep56_n32.pg n 32 transitions 57 reverse_pairs 14 first (24, 31, [(23, 29, 16)])
+REV n5-epoch/instances/nep76_n40.pg n 40 transitions 87 reverse_pairs 13 first (26, 29, [(20, 24, 7)])
+REV n5-epoch/instances/nep92_n40.pg n 40 transitions 98 reverse_pairs 16 first (17, 27, [(19, 24, 22)])
+REV n5-epoch/instances/nep94_n48.pg n 48 transitions 100 reverse_pairs 19 first (15, 25, [(19, 24, 22)])
+REV n5-epoch/instances/ret12_n40.pg n 40 transitions 60 reverse_pairs 1 first (21, 59, [(9, 14, 30)])
+REV n5-epoch/instances/ret14_n48.pg n 48 transitions 61 reverse_pairs 1 first (23, 60, [(9, 14, 30)])
+REV n5-epoch/instances/ret14_n64.pg n 64 transitions 65 reverse_pairs 3 first (9, 59, [(13, 2, 33)])
+REV n5-exhaustive/instances/b4_cyc6_0.pg n 11 transitions 5 reverse_pairs 0 first None
+REV n5-exhaustive/instances/b4_cyc6_1.pg n 12 transitions 4 reverse_pairs 0 first None
+REV n5-exhaustive/instances/b4_n4all_cyc3_0.pg n 4 transitions 3 reverse_pairs 0 first None
+REV n5-exhaustive/instances/b4_n5_other_0.pg n 5 transitions 2 reverse_pairs 0 first None
+REV n5-exhaustive/instances/b4_nohlen5_0.pg n 11 transitions 6 reverse_pairs 0 first None
+REV n5-exhaustive/instances/b4_theta_n7.pg n 7 transitions 2 reverse_pairs 0 first None
+REV n5-exhaustive/instances/b5_n5_cyc4_0.pg n 5 transitions 3 reverse_pairs 0 first None
+REV n5-exhaustive/instances/b5_o11.pg n 10 transitions 12 reverse_pairs 1 first (0, 10, [(3, 5, 9)])
+REV n5-exhaustive/instances/b5_os_n12.pg n 12 transitions 18 reverse_pairs 3 first (4, 9, [(0, 1, 2)])
+REV n5-exhaustive/instances/b5_os_n14.pg n 14 transitions 22 reverse_pairs 4 first (5, 11, [(12, 13, 2)])
+REV n5-exhaustive/instances/b5_os_n16.pg n 16 transitions 26 reverse_pairs 4 first (6, 14, [(12, 13, 2)])
+REV n5-exhaustive/instances/b5_os_n20.pg n 20 transitions 34 reverse_pairs 5 first (8, 17, [(17, 18, 16)])
+REV n5-exhaustive/instances/b5_os_n24.pg n 24 transitions 53 reverse_pairs 12 first (21, 26, [(23, 19, 10)])
+REV n5-exhaustive/instances/b5_os_n28.pg n 28 transitions 65 reverse_pairs 7 first (28, 34, [(23, 19, 10)])
+REV n5-exhaustive/instances/b5_os_n32.pg n 32 transitions 71 reverse_pairs 7 first (11, 29, [(19, 28, 16)])
+REV n5-exhaustive/instances/b5_os_n40.pg n 40 transitions 81 reverse_pairs 4 first (6, 20, [(10, 29, 23)])
+REV n5-exhaustive/instances/b6_xl2_n32.pg n 32 transitions 87 reverse_pairs 5 first (12, 47, [(20, 19, 10)])
+REV n5-exhaustive/instances/b6_xl_n32.pg n 32 transitions 85 reverse_pairs 4 first (12, 46, [(20, 19, 10)])
+REV n5-exhaustive/instances/b6_xl_n40.pg n 40 transitions 89 reverse_pairs 2 first (11, 62, [(19, 31, 34)])
+REV n5-exhaustive/instances/b6_xl_n48.pg n 48 transitions 97 reverse_pairs 4 first (18, 51, [(45, 35, 44)])
+REV n5-exhaustive/instances/b6_xs_n24.pg n 24 transitions 21 reverse_pairs 0 first None
+REV n5-exhaustive/instances/b6_xs_n32.pg n 32 transitions 29 reverse_pairs 0 first None
+REV n5-exhaustive/instances/b6_xs_n40.pg n 40 transitions 36 reverse_pairs 0 first None
+REV n5-exhaustive/instances/b6_xs_n48.pg n 48 transitions 37 reverse_pairs 0 first None
+REV n5-exhaustive/instances/b6_xw_n32.pg n 32 transitions 79 reverse_pairs 1 first (34, 63, [(9, 7, 30)])
+REV n5-exhaustive/instances/b6_xw_n40.pg n 40 transitions 80 reverse_pairs 1 first (34, 59, [(9, 7, 30)])
+REV n5-exhaustive/instances/b6_xw_n48.pg n 48 transitions 85 reverse_pairs 0 first None
+REV n5-exhaustive/instances/b6_xw_n56.pg n 56 transitions 85 reverse_pairs 0 first None
+REV n5-exhaustive/instances/canonA_0.pg n 15 transitions 3 reverse_pairs 0 first None
+REV n5-exhaustive/instances/canonA_1.pg n 15 transitions 4 reverse_pairs 0 first None
+REV n5-exhaustive/instances/frz1_n24.pg n 24 transitions 31 reverse_pairs 0 first None
+REV n5-exhaustive/instances/frz2_n24.pg n 24 transitions 25 reverse_pairs 0 first None
+REV n5-exhaustive/instances/frz3_n24.pg n 24 transitions 26 reverse_pairs 0 first None
+REV n5-exhaustive/instances/n3all_maxph_0.pg n 3 transitions 3 reverse_pairs 0 first None
+REV n5-exhaustive/instances/n3all_maxph_1.pg n 3 transitions 3 reverse_pairs 0 first None
+REV n5-exhaustive/instances/n3all_maxph_2.pg n 3 transitions 3 reverse_pairs 0 first None
+REV n5-exhaustive/instances/n4_maxph_0.pg n 4 transitions 2 reverse_pairs 0 first None
+REV n5-exhaustive/instances/n4_maxph_1.pg n 4 transitions 2 reverse_pairs 0 first None
+REV n5-exhaustive/instances/n4_thch_0.pg n 4 transitions 2 reverse_pairs 0 first None
+REV n5-exhaustive/instances/n4all_maxph_0.pg n 4 transitions 4 reverse_pairs 0 first None
+REV n5-exhaustive/instances/n4all_maxph_1.pg n 4 transitions 4 reverse_pairs 0 first None
+REV n5-exhaustive/instances/n4all_tgbad_0.pg n 4 transitions 3 reverse_pairs 0 first None
+REV n5-exhaustive/instances/n4all_thch_0.pg n 4 transitions 3 reverse_pairs 0 first None
+REV n5-exhaustive/instances/n5s_maxph_0.pg n 5 transitions 3 reverse_pairs 0 first None
+REV n5-exhaustive/instances/nh_n8.pg n 8 transitions 4 reverse_pairs 0 first None
+REV n5-exhaustive/instances/thetaA_canon_n12.pg n 12 transitions 3 reverse_pairs 0 first None
+REV n5-exhaustive/instances/thetaA_canon_n8.pg n 8 transitions 3 reverse_pairs 0 first None
+REV n5-exhaustive/instances/thetaA_n17.pg n 17 transitions 5 reverse_pairs 0 first None
+REV n5-exhaustive/instances/thetaA_n6.pg n 6 transitions 3 reverse_pairs 0 first None
+REV n5-exhaustive/instances/thetaA_n7.pg n 7 transitions 3 reverse_pairs 0 first None
+REV n5-exhaustive/instances/thetaA_n9.pg n 9 transitions 4 reverse_pairs 0 first None
+REV n5-exhaustive/instances/wk1_n32.pg n 32 transitions 7 reverse_pairs 0 first None
+REV n5-exhaustive/instances/wk2_n32.pg n 32 transitions 7 reverse_pairs 0 first None
+REV new/box48/instances/long121_n40.pg n 40 transitions 122 reverse_pairs 12 first (20, 30, [(19, 24, 22)])
+REV new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.pg n 64 transitions 93 reverse_pairs 9 first (14, 23, [(19, 24, 22)])
+REV new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.pg n 64 transitions 102 reverse_pairs 7 first (16, 27, [(19, 24, 22)])
+REV new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.pg n 80 transitions 105 reverse_pairs 18 first (16, 26, [(19, 24, 22)])
+REV new/box48/out/qpcclimb/scale/snap_n80_s62.pg n 80 transitions 105 reverse_pairs 18 first (16, 26, [(19, 24, 22)])
+REV red/carry/instances/absmono_viol_n44.pg n 44 transitions 7 reverse_pairs 0 first None
+REV red/carry/instances/carry3_2_2.pg n 47 transitions 2 reverse_pairs 0 first None
+REV red/carry/instances/cm_mdrop_both_n28.pg n 28 transitions 10 reverse_pairs 0 first None
+REV red/carry/instances/cm_mdrop_oink_n28.pg n 28 transitions 3 reverse_pairs 0 first None
+REV red/carry/instances/ctx11_n40.pg n 40 transitions 9 reverse_pairs 0 first None
+REV red/carry/instances/ctx12_n40.pg n 40 transitions 8 reverse_pairs 0 first None
+REV red/carry/instances/ctx13_n40.pg n 40 transitions 17 reverse_pairs 0 first None
+REV red/carry/instances/ctx6_n20.pg n 20 transitions 3 reverse_pairs 0 first None
+REV red/carry/instances/ctx6_n56.pg n 56 transitions 12 reverse_pairs 0 first None
+REV red/carry/instances/ctx7_n30.pg n 30 transitions 11 reverse_pairs 0 first None
+REV red/carry/instances/f1_twodef_n48.pg n 48 transitions 6 reverse_pairs 0 first None
+REV red/carry/instances/f1_twofall_n48.pg n 48 transitions 6 reverse_pairs 0 first None
+REV red/carry/instances/fall3_n76.pg n 76 transitions 8 reverse_pairs 0 first None
+REV red/carry/instances/fall4_n116.pg n 116 transitions 6 reverse_pairs 0 first None
+REV red/carry/instances/fallv_viol_n28.pg n 28 transitions 5 reverse_pairs 0 first None
+REV red/carry/instances/fired10_n20.pg n 20 transitions 6 reverse_pairs 0 first None
+REV red/carry/instances/firedlong667_n20.pg n 20 transitions 4 reverse_pairs 0 first None
+REV red/carry/instances/firedlong667_n43.pg n 43 transitions 3 reverse_pairs 0 first None
+REV red/carry/instances/firedstep13_n76.pg n 76 transitions 8 reverse_pairs 0 first None
+REV red/carry/instances/gapbW_dup_n20.pg n 20 transitions 5 reverse_pairs 0 first None
+REV red/carry/instances/gapb_dup_n20.pg n 20 transitions 8 reverse_pairs 0 first None
+REV red/carry/instances/h4_compound2x2_n44.pg n 44 transitions 10 reverse_pairs 0 first None
+REV red/carry/instances/h4_compound_n44.pg n 44 transitions 4 reverse_pairs 0 first None
+REV red/carry/instances/h4_def2ctx_n20.pg n 20 transitions 6 reverse_pairs 0 first None
+REV red/carry/instances/h4_def7_n28.pg n 28 transitions 3 reverse_pairs 0 first None
+REV red/carry/instances/h4_disjoint_n20.pg n 20 transitions 3 reverse_pairs 0 first None
+REV red/carry/instances/h4_notweaker_n20.pg n 20 transitions 5 reverse_pairs 0 first None
+REV red/carry/instances/kfirst_viol_n13.pg n 13 transitions 0 reverse_pairs 0 first None
+REV red/carry/instances/kin_viol_n29.pg n 29 transitions 5 reverse_pairs 0 first None
+REV red/carry/instances/lalg_dtl_mviol_n20.pg n 20 transitions 5 reverse_pairs 0 first None
+REV red/carry/instances/lemmaS_Mdrop_n20.pg n 20 transitions 6 reverse_pairs 0 first None
+REV red/carry/instances/lemmaS_viol_n20.pg n 20 transitions 4 reverse_pairs 0 first None
+REV red/carry/instances/lex_viol_inj_n28.pg n 28 transitions 6 reverse_pairs 0 first None
+REV red/carry/instances/lex_viol_tie_n28.pg n 28 transitions 7 reverse_pairs 0 first None
+REV red/carry/instances/meet_viol_n17.pg n 17 transitions 0 reverse_pairs 0 first None
+REV red/carry/instances/meet_viol_n29.pg n 29 transitions 11 reverse_pairs 0 first None
+REV red/carry/instances/nosig_2_3.pg n 24 transitions 2 reverse_pairs 0 first None
+REV red/carry/instances/phi_flat_alive_n32.pg n 32 transitions 4 reverse_pairs 0 first None
+REV red/carry/instances/pk_viol_n20.pg n 20 transitions 3 reverse_pairs 0 first None
+REV red/carry/instances/replay4_n32.pg n 32 transitions 4 reverse_pairs 0 first None
+REV red/carry/instances/spp19_oink_n30.pg n 30 transitions 10 reverse_pairs 0 first None
+REV red/carry/instances/spp19_stable_n30.pg n 30 transitions 7 reverse_pairs 0 first None
+REV red/carry/instances/spp22_oink_n40.pg n 40 transitions 8 reverse_pairs 0 first None
+REV red/carry/instances/spp25_oink_n40.pg n 40 transitions 10 reverse_pairs 0 first None
+REV red/carry/instances/stealer_viol_n76.pg n 76 transitions 12 reverse_pairs 0 first None
+REV red/carry/instances/stealonce_both_n45.pg n 45 transitions 4 reverse_pairs 0 first None
+REV red/carry/instances/stealonce_core_n76.pg n 76 transitions 4 reverse_pairs 0 first None
+REV red/carry/instances/stealonce_viol_n76.pg n 76 transitions 12 reverse_pairs 0 first None
+REV red/carry/instances/tstep_near_n20.pg n 20 transitions 5 reverse_pairs 0 first None
+REV red/ctxp/instances/deep1_n13.pg n 13 transitions 1 reverse_pairs 0 first None
+REV red/ctxp/instances/deep1_n21.pg n 21 transitions 3 reverse_pairs 0 first None
+REV red/ctxp/instances/margin1_mc1.pg n 80 transitions 10 reverse_pairs 0 first None
+REV red/ctxp/instances/margin1_mc5.pg n 50 transitions 12 reverse_pairs 0 first None
+REV red/ctxp/instances/margin1_n20.pg n 20 transitions 5 reverse_pairs 0 first None
+REV red/dtl/instances/lalg_dtl_pertop31_n18.pg n 18 transitions 2 reverse_pairs 0 first None
+REV red/dtl/instances/lalg_dtl_restart8_n20.pg n 20 transitions 5 reverse_pairs 0 first None
+REV red/fbr/instances/bghm_k1_gap6_A.pg n 21 transitions 1 reverse_pairs 0 first None
+REV red/fbr/instances/bghm_k3_gap4_A.pg n 45 transitions 1 reverse_pairs 0 first None
+REV red/fbr/instances/fr39_q4_n48.pg n 48 transitions 36 reverse_pairs 0 first None
+REV red/fbr/instances/lev56_n48.pg n 48 transitions 86 reverse_pairs 3 first (6, 24, [(45, 44, 35)])
+REV red/fbr/instances/lev74_n40.pg n 40 transitions 18 reverse_pairs 0 first None
+REV red/fbr/instances/nep80_n40.pg n 40 transitions 22 reverse_pairs 0 first None
+REV red/fbr/instances/rho144_n32.pg n 32 transitions 9 reverse_pairs 0 first None
+REV red/fbr/instances/rho3_253_n32.pg n 32 transitions 11 reverse_pairs 0 first None
+REV red/fbr/instances/rho666_n48.pg n 48 transitions 16 reverse_pairs 0 first None
+REV red/fbr/instances/rho84_n16.pg n 16 transitions 5 reverse_pairs 0 first None
+REV red/fbr/instances/sat4_n20.pg n 20 transitions 6 reverse_pairs 0 first None
+REV red/fbr/instances/sat68_n20.pg n 20 transitions 5 reverse_pairs 0 first None
+REV red/fbr/instances/twowave_L16.pg n 22 transitions 15 reverse_pairs 0 first None
+REV red/fbx/instances/exsw_loop_n15.pg n 15 transitions 1 reverse_pairs 0 first None
+REV red/fbx/instances/kt6_n58.pg n 58 transitions 38 reverse_pairs 0 first None
+REV red/frz/instances/fbcap_eq_u4_n11.pg n 11 transitions 6 reverse_pairs 0 first None
+REV red/frz/instances/fx2_n11.pg n 11 transitions 9 reverse_pairs 0 first None
+REV red/h3/instances/frzgap0_n4.pg n 4 transitions 1 reverse_pairs 0 first None
+REV red/h3/instances/frzgap0_n6.pg n 6 transitions 3 reverse_pairs 0 first None
+REV red/h3/instances/lcount2_n23.pg n 23 transitions 6 reverse_pairs 0 first None
+REV red/h3/instances/lcount_n23.pg n 23 transitions 5 reverse_pairs 0 first None
+REV red/h3/instances/offret_l19_n24.pg n 24 transitions 3 reverse_pairs 0 first None
+REV red/h3/instances/xsnpre36_n48.pg n 48 transitions 33 reverse_pairs 0 first None
+REV red/kl/instances/klcount_n16.pg n 16 transitions 6 reverse_pairs 0 first None
+REV red/kl/instances/klcount_n18_base.pg n 18 transitions 6 reverse_pairs 0 first None
+REV red/kl/instances/klcount_n18_lvl.pg n 18 transitions 6 reverse_pairs 0 first None
+REV red/kl/instances/klglobal_n16.pg n 16 transitions 6 reverse_pairs 0 first None
+REV red/kl/instances/klglobal_n18_lvl.pg n 18 transitions 6 reverse_pairs 0 first None
+REV red/kl/instances/klglobal_n20_lvl2.pg n 20 transitions 6 reverse_pairs 0 first None
+REV red/kl/instances/klmin_n13.pg n 13 transitions 3 reverse_pairs 0 first None
+REV red/kl/instances/r2climb_h13.pg n 13 transitions 4 reverse_pairs 0 first None
+REV red/kl/instances/r2crawl_n14.pg n 14 transitions 5 reverse_pairs 0 first None
+REV red/kl/instances/r2join_h0E_n14.pg n 14 transitions 3 reverse_pairs 0 first None
+REV red/kl/instances/r2lap_best_n22.pg n 22 transitions 5 reverse_pairs 0 first None
+REV red/kl24/instances/HL88_0.pg n 41 transitions 3 reverse_pairs 0 first None
+REV red/kl24/instances/HL88_1.pg n 43 transitions 3 reverse_pairs 0 first None
+REV red/kl24/instances/HL88_2.pg n 45 transitions 3 reverse_pairs 0 first None
+REV red/kl24/instances/HL88_3.pg n 47 transitions 3 reverse_pairs 0 first None
+REV red/kl24/instances/HLg_0.pg n 29 transitions 3 reverse_pairs 0 first None
+REV red/kl24/instances/HLg_1.pg n 35 transitions 3 reverse_pairs 0 first None
+REV red/kl24/instances/HLg_2.pg n 45 transitions 3 reverse_pairs 0 first None
+REV red/kl24/instances/HLg_3.pg n 55 transitions 3 reverse_pairs 0 first None
+REV red/kw/instances/cw11_n24.pg n 24 transitions 17 reverse_pairs 0 first None
+REV red/kw/instances/frzu_tight_n14.pg n 14 transitions 4 reverse_pairs 0 first None
+REV red/kw/instances/kc18_n24.pg n 24 transitions 23 reverse_pairs 0 first None
+REV red/lag/instances/depth2_n39.pg n 39 transitions 3 reverse_pairs 0 first None
+REV red/lag/instances/depth3_n46.pg n 46 transitions 3 reverse_pairs 0 first None
+REV red/lag/instances/depth4_n53.pg n 53 transitions 4 reverse_pairs 0 first None
+REV red/lag/instances/fam_D12_n106.pg n 106 transitions 1 reverse_pairs 0 first None
+REV red/lag/instances/fam_D4_n50.pg n 50 transitions 1 reverse_pairs 0 first None
+REV red/lag/instances/fam_D8_n78.pg n 78 transitions 1 reverse_pairs 0 first None
+REV red/mei/instances/mei_h2.pg n 19 transitions 1 reverse_pairs 0 first None
+REV red/mei/instances/mei_h3.pg n 27 transitions 2 reverse_pairs 0 first None
+REV red/mei/instances/mei_h4.pg n 35 transitions 3 reverse_pairs 0 first None
+REV red/mei/instances/mei_h5.pg n 43 transitions 4 reverse_pairs 0 first None
+REV red/mei/instances/mei_h6.pg n 51 transitions 5 reverse_pairs 0 first None
+REV red/mei/instances/mei_h8.pg n 67 transitions 7 reverse_pairs 0 first None
+REV red/n3/instances/comp54_n80.pg n 80 transitions 55 reverse_pairs 0 first None
+REV red/n3/instances/core41_n40.pg n 40 transitions 42 reverse_pairs 3 first (2, 6, [(17, 4, 6)])
+REV red/n3/instances/lag11_n40.pg n 40 transitions 23 reverse_pairs 0 first None
+REV red/n3/instances/lagx10_n40.pg n 40 transitions 17 reverse_pairs 0 first None
+REV red/n3/instances/long121_n40.pg n 40 transitions 122 reverse_pairs 12 first (20, 30, [(19, 24, 22)])
+REV red/n3/instances/long90_k2_n40.pg n 40 transitions 92 reverse_pairs 11 first (7, 20, [(2, 3, 13)])
+REV red/n3/instances/n3cov_lean.pg n 48 transitions 35 reverse_pairs 0 first None
+REV red/n3/instances/n3cov_phi.pg n 32 transitions 31 reverse_pairs 1 first (4, 11, [(16, 15, 26)])
+REV red/n3/instances/ret22_n40.pg n 40 transitions 94 reverse_pairs 10 first (14, 33, [(33, 17, 6)])
+REV red/n3/instances/run34_n40.pg n 40 transitions 51 reverse_pairs 0 first None
+REV red/n3/instances/run49_n32.pg n 32 transitions 51 reverse_pairs 8 first (15, 31, [(0, 4, 26)])
+REV red/n5/instances/dl_4_4.pg n 42 transitions 8 reverse_pairs 0 first None
+REV red/n5/instances/dl_6_8.pg n 110 transitions 14 reverse_pairs 0 first None
+REV red/n5/instances/dlm2_4.pg n 42 transitions 8 reverse_pairs 0 first None
+REV red/n5/instances/sym_h12_s1.pg n 24 transitions 34 reverse_pairs 0 first None
+REV red/n5/instances/sym_h16_s1.pg n 32 transitions 55 reverse_pairs 6 first (7, 20, [(3, 14, 29)])
+REV red/n5/instances/sym_h8_s1.pg n 16 transitions 25 reverse_pairs 2 first (9, 18, [(3, 12, 13)])
+REV red/n5inj/instances/block_bk20.pg n 24 transitions 27 reverse_pairs 0 first None
+REV red/n5inj/instances/block_bk32.pg n 36 transitions 49 reverse_pairs 1 first (17, 31, [(29, 7, 24)])
+REV red/n5inj/instances/blockph_bp20.pg n 24 transitions 25 reverse_pairs 0 first None
+REV red/n5inj/instances/blockph_bp32.pg n 36 transitions 39 reverse_pairs 0 first None
+REV red/n5inj/instances/bribe_cex_n15.pg n 15 transitions 1 reverse_pairs 0 first None
+REV red/n5inj/instances/elimn_cex_n48.pg n 48 transitions 92 reverse_pairs 12 first (16, 22, [(40, 36, 43)])
+REV red/n5inj/instances/frz24.pg n 24 transitions 39 reverse_pairs 6 first (1, 12, [(4, 16, 15)])
+REV red/n5inj/instances/frz32.pg n 32 transitions 66 reverse_pairs 2 first (4, 11, [(28, 7, 13)])
+REV red/n5inj/instances/frz40.pg n 40 transitions 90 reverse_pairs 2 first (19, 37, [(25, 15, 39)])
+REV red/n5inj/instances/phase2_pk32.pg n 32 transitions 56 reverse_pairs 13 first (17, 30, [(18, 0, 8)])
+REV red/n5inj/instances/phase2_pk48.pg n 48 transitions 72 reverse_pairs 7 first (8, 13, [(43, 8, 37)])
+REV red/n5inj/instances/returns_ph64.pg n 64 transitions 105 reverse_pairs 13 first (6, 17, [(29, 32, 42)])
+REV red/n5inj/instances/returns_rt32.pg n 32 transitions 57 reverse_pairs 14 first (17, 30, [(18, 0, 8)])
+REV red/n5inj/instances/returns_rt48.pg n 48 transitions 80 reverse_pairs 10 first (6, 15, [(29, 32, 42)])
+REV red/n5inj/instances/returns_rt64.pg n 64 transitions 90 reverse_pairs 6 first (26, 33, [(30, 8, 25)])
+REV red/n5inj/instances/theta_thc24.pg n 24 transitions 29 reverse_pairs 0 first None
+REV red/n5inj/instances/theta_thf16.pg n 16 transitions 20 reverse_pairs 0 first None
+REV red/n5inj/instances/theta_tp32.pg n 32 transitions 45 reverse_pairs 0 first None
+REV red/n5inj/instances/theta_tp40.pg n 40 transitions 41 reverse_pairs 0 first None
+REV red/n5inj/instances/wide_h16.pg n 32 transitions 44 reverse_pairs 0 first None
+REV red/nest16/instances/k4L72_n101.pg n 101 transitions 6 reverse_pairs 0 first None
+REV red/nest16/instances/k4L72r_n101.pg n 101 transitions 6 reverse_pairs 0 first None
+REV red/nest16/instances/k4g50_n101.pg n 101 transitions 5 reverse_pairs 0 first None
+REV red/nest16/instances/k4seed_c1_n82.pg n 82 transitions 3 reverse_pairs 0 first None
+REV red/nest16/instances/k4seed_vr_n87.pg n 87 transitions 3 reverse_pairs 0 first None
+REV red/nest16/instances/k4u_n101.pg n 101 transitions 3 reverse_pairs 0 first None
+REV red/nest16/instances/k4y1_n82.pg n 82 transitions 5 reverse_pairs 0 first None
+REV red/nest16/instances/k4y2_n87.pg n 87 transitions 6 reverse_pairs 0 first None
+REV red/nest16/instances/near4_n26.pg n 26 transitions 2 reverse_pairs 0 first None
+REV red/nest16/instances/nest4u_n46.pg n 46 transitions 2 reverse_pairs 0 first None
+REV red/nest16/instances/nest4uu_n51.pg n 51 transitions 2 reverse_pairs 0 first None
+REV red/nest16/instances/nest5_n49.pg n 49 transitions 3 reverse_pairs 0 first None
+REV red/nest16/instances/nest6_n75.pg n 75 transitions 3 reverse_pairs 0 first None
+REV red/nest16/instances/nest6min_n75.pg n 75 transitions 3 reverse_pairs 0 first None
+REV red/nest16/instances/nest6x_n75.pg n 75 transitions 5 reverse_pairs 0 first None
+REV red/nest16/instances/oseg_n26.pg n 26 transitions 3 reverse_pairs 0 first None
+REV red/nest16/instances/w1_n27.pg n 27 transitions 2 reverse_pairs 0 first None
+REV red/nest16/instances/win3_n27.pg n 27 transitions 2 reverse_pairs 0 first None
+REV red/nopre/instances/nopre_viol_n20.pg n 20 transitions 3 reverse_pairs 0 first None
+REV red/o1/instances/f39_n48.pg n 48 transitions 38 reverse_pairs 0 first None
+REV red/o1/instances/iter118_n48.pg n 48 transitions 18 reverse_pairs 0 first None
+REV red/o1/instances/ph45_n32.pg n 32 transitions 21 reverse_pairs 0 first None
+REV red/o1/instances/ph50_n32.pg n 32 transitions 32 reverse_pairs 2 first (4, 24, [(5, 4, 17)])
+REV red/o1/instances/tau18_n24.pg n 24 transitions 12 reverse_pairs 0 first None
+REV red/rec0/instances/fbd0_n4.pg n 4 transitions 0 reverse_pairs 0 first None
+REV red/rec0/instances/lend2_30_n48.pg n 48 transitions 25 reverse_pairs 0 first None
+REV red/rec0/instances/n0_6_n24.pg n 24 transitions 3 reverse_pairs 0 first None
+REV red/rec0/instances/nep24_n20.pg n 20 transitions 15 reverse_pairs 0 first None
+REV red/rec0/instances/nep87_n40.pg n 40 transitions 25 reverse_pairs 0 first None
+REV red/rec0/instances/nep90_n40.pg n 40 transitions 23 reverse_pairs 0 first None
+REV red/sgrow/instances/s20_n20.pg n 20 transitions 8 reverse_pairs 0 first None
+REV red/sgrow/instances/s21_oink_n20.pg n 20 transitions 8 reverse_pairs 0 first None
+REV red/sgrow/instances/s29_n30.pg n 30 transitions 7 reverse_pairs 0 first None
+REV red/sgrow/instances/s32_n60.pg n 60 transitions 8 reverse_pairs 0 first None
+REV red/sgrow/instances/s34_oink_n40.pg n 40 transitions 5 reverse_pairs 0 first None
+REV red/sgrow/instances/s34_oink_n80.pg n 80 transitions 8 reverse_pairs 0 first None
+REV red/sgrow/instances/s35_oink_n80.pg n 80 transitions 5 reverse_pairs 0 first None
+REV red/sgrow/instances/s36_oink_n60.pg n 60 transitions 5 reverse_pairs 0 first None
+REV red/so/instances/beta2_n11.pg n 11 transitions 4 reverse_pairs 0 first None
+REV red/so/instances/epsseg_cex_n16.pg n 16 transitions 11 reverse_pairs 0 first None
+REV red/so/instances/epsseg_cex_n48.pg n 48 transitions 26 reverse_pairs 0 first None
+REV red/so/instances/exitr_cex_n16.pg n 16 transitions 10 reverse_pairs 0 first None
+REV red/so/instances/exitr_cex_n48.pg n 48 transitions 22 reverse_pairs 0 first None
+REV red/so/instances/farrise25_n32.pg n 32 transitions 35 reverse_pairs 0 first None
+REV red/so/instances/mn_abs74_n48.pg n 48 transitions 22 reverse_pairs 0 first None
+REV red/so/instances/njb_reabs54_n32.pg n 32 transitions 40 reverse_pairs 1 first (15, 21, [(8, 4, 13)])
+REV red/so/instances/njb_reabs65_n48.pg n 48 transitions 70 reverse_pairs 0 first None
+REV red/so/instances/nleq33_n48.pg n 48 transitions 40 reverse_pairs 0 first None
+REV red/so/instances/nleq_cex_n48.pg n 48 transitions 10 reverse_pairs 0 first None
+REV red/so/instances/pft35_n48.pg n 48 transitions 41 reverse_pairs 0 first None
+REV red/so/instances/pft40_n40.pg n 40 transitions 54 reverse_pairs 7 first (22, 26, [(13, 0, 3)])
+REV red/so/instances/pftheta34_n32.pg n 32 transitions 39 reverse_pairs 0 first None
+REV red/so/instances/pftheta_cex_n32.pg n 32 transitions 38 reverse_pairs 0 first None
+REV red/so/instances/post31_n48.pg n 48 transitions 36 reverse_pairs 0 first None
+REV red/so/instances/rise_fb38_n48.pg n 48 transitions 53 reverse_pairs 0 first None
+REV red/so/instances/rise_thin51_n40.pg n 40 transitions 78 reverse_pairs 7 first (21, 25, [(20, 24, 7)])
+REV red/so/instances/s4c8_n13.pg n 13 transitions 12 reverse_pairs 1 first (1, 4, [(4, 8, 2)])
+REV red/so/instances/so_j19_n48.pg n 48 transitions 25 reverse_pairs 1 first (2, 14, [(47, 28, 7)])
+REV red/so/instances/so_k2_n32.pg n 32 transitions 20 reverse_pairs 0 first None
+REV red/so/instances/so_sor5_n24.pg n 24 transitions 23 reverse_pairs 0 first None
+REV red/so/instances/so_sorl_n32.pg n 32 transitions 22 reverse_pairs 0 first None
+REV red/so/instances/so_th_n32.pg n 32 transitions 36 reverse_pairs 0 first None
+REV red/so/instances/so_tie13_n24.pg n 24 transitions 16 reverse_pairs 0 first None
+REV red/so/instances/so_tie15_n32.pg n 32 transitions 20 reverse_pairs 0 first None
+REV red/so/instances/tev_cex_n40.pg n 40 transitions 27 reverse_pairs 1 first (3, 7, [(20, 30, 7)])
+REV red/so/instances/tevlast11_n40.pg n 40 transitions 36 reverse_pairs 0 first None
+REV red/so/instances/tevlast7_n32.pg n 32 transitions 41 reverse_pairs 0 first None
+REV red/so/instances/tevlast_cex_n40.pg n 40 transitions 11 reverse_pairs 0 first None
+REV red/so/instances/tog6a_n32.pg n 32 transitions 10 reverse_pairs 0 first None
+REV red/so/instances/tog6b_n32.pg n 32 transitions 8 reverse_pairs 0 first None
+REV red/so/instances/xrun21_n24.pg n 24 transitions 24 reverse_pairs 0 first None
+REV red/so/instances/xrun8_n10.pg n 10 transitions 11 reverse_pairs 0 first None
+REV red/so/instances/xsn29_n32.pg n 32 transitions 29 reverse_pairs 0 first None
+REV red/so/instances/xsn43_n48.pg n 48 transitions 45 reverse_pairs 0 first None
+REV red/so/instances/xsn91_n48.pg n 48 transitions 115 reverse_pairs 6 first (20, 56, [(45, 35, 44)])
+REV red/so/instances/xsnf42_n48.pg n 48 transitions 44 reverse_pairs 0 first None
+REV red/so/instances/xsnf52_n64.pg n 64 transitions 55 reverse_pairs 0 first None
+REV red/tcpert/instances/leanT_N12.pg n 96 transitions 13 reverse_pairs 0 first None
+REV red/tcpert/instances/leanT_N16.pg n 128 transitions 16 reverse_pairs 0 first None
+REV red/tcpert/instances/leanT_N24.pg n 192 transitions 25 reverse_pairs 0 first None
+REV red/tcpert/instances/leanT_N32.pg n 256 transitions 33 reverse_pairs 0 first None
+REV red/tcpert/instances/leanT_N6.pg n 48 transitions 6 reverse_pairs 0 first None
+REV red/tcpert/instances/leanT_N8.pg n 64 transitions 8 reverse_pairs 0 first None
+REV red/tcpert/instances/tcL_N10.pg n 350 transitions 27 reverse_pairs 0 first None
+REV red/tcpert/instances/tcL_N12.pg n 492 transitions 37 reverse_pairs 0 first None
+REV red/tcpert/instances/tcL_N3.pg n 42 transitions 7 reverse_pairs 0 first None
+REV red/tcpert/instances/tcL_N4.pg n 68 transitions 16 reverse_pairs 0 first None
+REV red/tcpert/instances/tcL_N5.pg n 100 transitions 19 reverse_pairs 0 first None
+REV red/tcpert/instances/tcL_N6.pg n 138 transitions 18 reverse_pairs 0 first None
+REV red/tcpert/instances/tcL_N8.pg n 232 transitions 30 reverse_pairs 0 first None
+REV red/tcpert/instances/tcR4_N4.pg n 68 transitions 12 reverse_pairs 0 first None
+REV red/tcpert/instances/tcR4_N5.pg n 100 transitions 14 reverse_pairs 0 first None
+REV red/tcpert/instances/tcR4_N6.pg n 138 transitions 22 reverse_pairs 0 first None
+REV red/tcpert/instances/tcR4_N7.pg n 182 transitions 41 reverse_pairs 0 first None
+REV red/tcpert/instances/tcR4_N8.pg n 232 transitions 33 reverse_pairs 0 first None
+REV red/tcpert/instances/tcS8_N10.pg n 350 transitions 16 reverse_pairs 0 first None
+REV red/tcpert/instances/tcS8_N11.pg n 418 transitions 20 reverse_pairs 0 first None
+REV red/tcpert/instances/tcS8_N6.pg n 138 transitions 17 reverse_pairs 0 first None
+REV red/tcpert/instances/tcS8_N7.pg n 182 transitions 14 reverse_pairs 0 first None
+REV red/tcpert/instances/tcS8_N8.pg n 232 transitions 10 reverse_pairs 0 first None
+REV red/tcpert/instances/tcS8_N9.pg n 288 transitions 36 reverse_pairs 0 first None
+REV red/tpp/instances/tpp_viol_n22.pg n 22 transitions 2 reverse_pairs 0 first None
+REV red/tpp/instances/tpp_viol_n63.pg n 63 transitions 8 reverse_pairs 0 first None
+REV red/ul/instances/cxmig_k16_n138.pg n 138 transitions 24 reverse_pairs 0 first None
+REV red/ul/instances/cxmig_k4_n54.pg n 54 transitions 12 reverse_pairs 0 first None
+REV red/ul/instances/cxmig_k8_n82.pg n 82 transitions 16 reverse_pairs 0 first None
+REV red/ul/instances/ladderd0_k12_n48.pg n 48 transitions 14 reverse_pairs 0 first None
+REV red/ul/instances/ladderd0_k24_n84.pg n 84 transitions 26 reverse_pairs 0 first None
+REV red/ul/instances/ladderd0_k48_n156.pg n 156 transitions 50 reverse_pairs 0 first None
+REV red/ul/instances/ladderent_k12_n48.pg n 48 transitions 14 reverse_pairs 0 first None
+REV red/ul/instances/ladderent_k24_n84.pg n 84 transitions 26 reverse_pairs 0 first None
+REV red/ul/instances/ladderent_k48_n156.pg n 156 transitions 50 reverse_pairs 0 first None
+REV red/ul/instances/reader_L10_n36.pg n 36 transitions 13 reverse_pairs 0 first None
+REV red/ul/instances/reader_L20_n56.pg n 56 transitions 23 reverse_pairs 0 first None
+REV red/ul/instances/reader_L40_n96.pg n 96 transitions 43 reverse_pairs 0 first None
+REV red/usplit/instances/gate_K16_n197.pg n 197 transitions 23 reverse_pairs 0 first None
+REV red/usplit/instances/gate_K64_n581.pg n 581 transitions 71 reverse_pairs 0 first None
+REV red/usplit/instances/grow_K12_n149.pg n 149 transitions 19 reverse_pairs 0 first None
+REV red/usplit/instances/grow_K40_n373.pg n 373 transitions 47 reverse_pairs 0 first None
+REV red/usplit/instances/pairoc_n58.pg n 58 transitions 5 reverse_pairs 0 first None
+REV red/usplit/instances/pp_K12_n161.pg n 161 transitions 19 reverse_pairs 0 first None
+REV red/usplit/instances/pp_K12_n161_dual.pg n 161 transitions 20 reverse_pairs 0 first None
+REV red/usplit/instances/pp_K48_n449.pg n 449 transitions 55 reverse_pairs 0 first None
+REV red/usplit/instances/pp_K48_n449_dual.pg n 449 transitions 56 reverse_pairs 0 first None
+REV red/usplit/instances/usplit_n14.pg n 14 transitions 3 reverse_pairs 0 first None
+REV red/usplit/instances/usplit_n23.pg n 23 transitions 9 reverse_pairs 0 first None
+REV red/usplit/instances/usplit_rd_n24.pg n 24 transitions 4 reverse_pairs 0 first None
+REV red/usplit/instances/usplit_rd_s3_n27.pg n 27 transitions 4 reverse_pairs 0 first None
+REV red/usplit/instances/usplit_s3_n16.pg n 16 transitions 3 reverse_pairs 0 first None
+REV red/xctx/instances/nest3_n20.pg n 20 transitions 2 reverse_pairs 0 first None
+REV red/xctx/instances/nest3_n24.pg n 24 transitions 2 reverse_pairs 0 first None
+REV red/xctx/instances/vrall_viol_n20.pg n 20 transitions 4 reverse_pairs 0 first None
+REV red/xctx/instances/xcov11_n20.pg n 20 transitions 2 reverse_pairs 0 first None
+REV red/xctx/instances/xctx_viol_n20.pg n 20 transitions 5 reverse_pairs 0 first None
+REV red/xing/instances/fbref_cex_n32.pg n 32 transitions 56 reverse_pairs 6 first (13, 21, [(14, 17, 27)])
+REV red/xing/instances/j10_n24.pg n 24 transitions 25 reverse_pairs 0 first None
+REV red/xing/instances/j4_n40.pg n 40 transitions 106 reverse_pairs 20 first (26, 33, [(20, 24, 7)])
+REV red/xing/instances/j5_n16.pg n 16 transitions 30 reverse_pairs 2 first (15, 22, [(15, 11, 8)])
+REV red/xing/instances/j7_n32.pg n 32 transitions 50 reverse_pairs 4 first (21, 34, [(1, 2, 5)])
+REV red/xing/instances/j7_n48.pg n 48 transitions 78 reverse_pairs 6 first (18, 43, [(44, 18, 33)])
+REV red/xing/instances/j8_n32.pg n 32 transitions 54 reverse_pairs 4 first (11, 34, [(4, 8, 7)])
+REV red/xing/instances/j8_n48.pg n 48 transitions 86 reverse_pairs 8 first (30, 48, [(38, 20, 27)])
+REV red/xing/instances/kw25_n32.pg n 32 transitions 29 reverse_pairs 1 first (21, 28, [(10, 6, 12)])
+REV red/xing/instances/kw_n16.pg n 16 transitions 12 reverse_pairs 0 first None
+REV red/xing/instances/kw_n24.pg n 24 transitions 20 reverse_pairs 0 first None
+REV red/xing/instances/kw_n48.pg n 48 transitions 40 reverse_pairs 0 first None
+REV red/xing/instances/obr_eq_n24.pg n 24 transitions 7 reverse_pairs 0 first None
+REV red/xing/instances/obr_n32.pg n 32 transitions 22 reverse_pairs 0 first None
+REV red/xing/instances/u1t_cex_n32.pg n 32 transitions 12 reverse_pairs 0 first None
+REV red/xing/instances/u1t_own6_n32.pg n 32 transitions 9 reverse_pairs 0 first None
+REV red/xing/instances/u23sw64_n32.pg n 32 transitions 16 reverse_pairs 0 first None
+REV red/xing/instances/u2flat73_n32.pg n 32 transitions 16 reverse_pairs 0 first None
+REV red/xing/instances/u2flat_n32.pg n 32 transitions 13 reverse_pairs 0 first None
+REV red/xing/instances/x31_cu16.pg n 16 transitions 23 reverse_pairs 0 first None
+REV red/xing/instances/x31_cu24.pg n 24 transitions 22 reverse_pairs 0 first None
+REV red/xing/instances/x31_cu32.pg n 32 transitions 49 reverse_pairs 0 first None
+REV red/xing/instances/x31_cu32i.pg n 32 transitions 42 reverse_pairs 0 first None
+REV red/xing/instances/x31_cu48.pg n 48 transitions 46 reverse_pairs 0 first None
+REV red/xing/instances/x31_lem_e24.pg n 24 transitions 54 reverse_pairs 7 first (2, 26, [(2, 9, 12)])
+REV red/xing/instances/x31_lem_t32.pg n 32 transitions 65 reverse_pairs 8 first (14, 36, [(29, 16, 20)])
+REV red/xing/instances/x31_nh_e24.pg n 24 transitions 20 reverse_pairs 0 first None
+REV red/xing/instances/x31_nh_r20.pg n 20 transitions 15 reverse_pairs 0 first None
+REV red/xing/instances/x31_re24.pg n 24 transitions 6 reverse_pairs 0 first None
+REV red/xing/instances/x31_ru24.pg n 24 transitions 7 reverse_pairs 0 first None
+REV red/xing/instances/x31_rx32.pg n 32 transitions 55 reverse_pairs 7 first (19, 31, [(14, 27, 23)])
+REV red/xing/instances/x31_rx48.pg n 48 transitions 53 reverse_pairs 6 first (20, 29, [(26, 17, 29)])
+REV red/xing/instances/x32_nest40.pg n 40 transitions 58 reverse_pairs 0 first None
+REV red/xing/instances/x32_rand16.pg n 16 transitions 15 reverse_pairs 0 first None
+REV red/xing/instances/x32_rand24.pg n 24 transitions 20 reverse_pairs 0 first None
+REV red/xing/instances/x32_rand32.pg n 32 transitions 29 reverse_pairs 0 first None
+REV red/xing/instances/x32_rand48.pg n 48 transitions 44 reverse_pairs 0 first None
+REV red/xing/instances/x32_rand64.pg n 64 transitions 56 reverse_pairs 0 first None
+REV red/xing/instances/x32_waves32.pg n 32 transitions 81 reverse_pairs 3 first (34, 57, [(7, 21, 12)])
+REV red/xing/instances/x32_waves48.pg n 48 transitions 89 reverse_pairs 2 first (35, 61, [(46, 17, 29)])
+REV si/root/instances/cone_n65.pg n 65 transitions 12 reverse_pairs 0 first None
+REV si/root/instances/cone_n69.pg n 69 transitions 25 reverse_pairs 0 first None
+REV si/root/instances/ueonce_n27.pg n 27 transitions 12 reverse_pairs 0 first None
+SUMMARY games 413 with a reverse pair 80

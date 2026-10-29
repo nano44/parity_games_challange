@@ -656,3 +656,21 @@ qm=$(mktemp); sed 's/the number of TRANSITIONS t → t + 1/the number of STATES 
 o=$(cd ../.. && python3 -I docs/si/P-N5-COMPOSE-fixes-quotecheck.py "$qm"); rm -f "$qm"
 grep -q "^quotes=19 bad=[1-9]" <<<"$o"
 echo "si (box 28 fixes: 19 quote pins exact; mutated quote caught): PASS"
+# box 30 (docs/si/N5-TORD-box30.md): |D| = 1 prefix frame. PMON / H-P / TORD / TRAP-FIX / FW-D1 hold on oneodd_c16 (5 W> frozen W-phases,
+# one epoch each); the HLP control (H constant from step 1 instead of s) must fail there; kw25_n32 (X>, one epoch, 25 W-changes ≤ 3 + 28²);
+# the abstract two-order climb's best EE instance reproduces 8 W-changing steps = n_abs (tord/logs/out_c8_ee.txt).
+echo "827976e24f9634029595d0f8d957ff8d4bc9308b  ../new/box21/instances/oneodd_c16.pg" | sha1sum -c --quiet
+o=$(python3 -I tord/epoch2.py --one ../new/box21/instances/oneodd_c16.pg)
+grep -q "^checked_TD_epochs=5 ep_TD=5 ep_W>=5 fw1=5 fw1_diff=5$" <<<"$o"
+for k in PMON1 PMON2 HLP LMON CNT TRAPFIX FWD1; do grep -q "^$k PASS$" <<<"$o"; done
+o=$(MUT=hlp0 python3 -I tord/epoch2.py --one ../new/box21/instances/oneodd_c16.pg); grep -q "^HLP FAIL$" <<<"$o"
+echo "607f1cc05b2230b3c2f43d451a6c0518094d953b  ../red/xing/instances/kw25_n32.pg" | sha1sum -c --quiet
+o=$(python3 -I tord/epoch2.py --one ../red/xing/instances/kw25_n32.pg)
+grep -q "'diff_wch': (0.8064516129032258, 25, '../red/xing/instances/kw25_n32.pg', 0, 25, 28, 32)" <<<"$o"; grep -q "^TRAPFIX PASS$" <<<"$o"; grep -q "^FWD1 PASS$" <<<"$o"
+o=$(python3 -I tord/show.py "$(grep best tord/logs/out_c8_ee.txt | tail -1 | cut -d' ' -f6-)" | tail -1); test "$o" = "8 8 STOP"
+echo "si (box 30: PMON, H-P, TORD, TRAP-FIX, FW-D1 on oneodd_c16 and kw25_n32; HLP control fails; abstract EE best = n_abs): PASS"
+# box 30 §11: gate classes (any D): general TRAP-FIX, FW-DG and FW-D hold on lend107_n32 (|D| = 3) and oneodd_c16 (G1 G2 G3).
+o=$(python3 -I tord/gates.py --one ../n5-epoch/instances/lend107_n32.pg ../n5-epoch/instances/lend107_n32.start)
+grep -q "^D3_G3=10 fw=10$" <<<"$o"; for k in GTF GB FWDG FWD; do grep -q "^$k PASS$" <<<"$o"; done
+o=$(python3 -I tord/gates.py --one ../new/box21/instances/oneodd_c16.pg); grep -q "'G1G2G3')" <<<"$o"; grep -q "^FWDG PASS$" <<<"$o"
+echo "si (box 30 §11: gate classes, FW-DG on lend107_n32 and oneodd_c16): PASS"

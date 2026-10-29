@@ -1,0 +1,4 @@
+EN2_V=2 EX2_V=2 RE_V=2 fw_same=445 fw_same_tc>0=257
+maxima: {'tc': (33, 'red/so/instances/nleq33_n48.pg', 5, 38, 48), 'maxent': (2, 'red/xing/instances/x31_re24.pg', 1, 5, 24), 'totcross': (66, 'red/xing/instances/x31_re24.pg', 1, 5, 24), 'maxext': (2, 'red/xing/instances/x31_re24.pg', 1, 5, 24)}
+EXAMPLE ('RE', 'red/xing/instances/x31_re24.pg', 1, 5, [0, 1, 2, 3], [('out', 2), ('in', 3), ('out', 4), ('in', 5)], 24)
+EXAMPLE ('RE', 'red/xing/instances/x31_ru24.pg', 1, 5, [0, 1, 2, 3], [('out', 2), ('in', 3)], 24)

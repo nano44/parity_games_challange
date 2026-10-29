@@ -1,0 +1,8 @@
+FEASIBLE red/seg/instances/runquad_K8_m30_n192.pg 264 {'W_cr': 2}
+FEASIBLE red/seg/instances/hntop_n8.pg 291 {'X_cr': 1230, 'X_tp': 203, 'X_pn': 43, 'W_cr': 2830, 'W_ps': 18, 'W_tp': 121, 'W_ln': -7}
+FEASIBLE new/box52/out/topfix_n8_cmp.pg 291 {'X_cr': 3357, 'X_ps': 164, 'X_pn': -4, 'W_cr': 16872, 'W_ps': -42, 'W_tp': 1267, 'W_pn': 263}
+FEASIBLE si/runlin/instances/runfam_K40.pg 172 {'X_cr': 1952, 'X_ps': 20, 'X_tp': 7419, 'X_pp': 35, 'W_ln': -6, 'nIs': -629}
+FEASIBLE new/box50/out/vpf3_vc4.pg 31 {'X_cr': 37228, 'X_ps': -145, 'X_tp': 36550, 'X_ln': 670, 'W_ps': 1190, 'W_pc': -40521, 'W_pn': -231, 'W_ln': -496, 'nIs': -4652}
+FEASIBLE new/box50/out/ent1_vc6.pg 18 {'X_cr': 44, 'X_pc': -109, 'X_pp': -2, 'X_ln': 20, 'W_ps': 9, 'W_tp': 294, 'W_ln': -57}
+INFEASIBLE n5-exhaustive/instances/b6_xl2_n32.pg 87 support 21 games ['n5-exhaustive/instances/b6_xl2_n32.pg'] inexact
+SUMMARY famL games 7 infeasible 1 smallest [(32, 87, 'n5-exhaustive/instances/b6_xl2_n32.pg')]

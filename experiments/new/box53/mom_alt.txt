@@ -1,0 +1,411 @@
+FEASIBLE n5-epoch/instances/ffin12_n32.pg 33 {'X_m3': np.float64(0.002), 'nIs': np.float64(-1.0)}
+FEASIBLE n5-epoch/instances/ffin4_n24.pg 20 {'X_m3': 215, 'X_m4': -12, 'W_m4': 1}
+FEASIBLE n5-epoch/instances/ffin5_n32.pg 23 {'X_m2': np.float64(-0.003), 'W_m2': np.float64(-0.091), 'W_m3': np.float64(0.007), 'W_cr': np.float64(0.109), 'nIs': np.float64(-1.0), 'nD': np.float64(1.0)}
+FEASIBLE n5-epoch/instances/gci2_n12.pg 10 {'X_m4': 5}
+FEASIBLE n5-epoch/instances/gci3_n24.pg 21 {'W_m2': np.float64(-0.316), 'W_m3': np.float64(0.031), 'W_m4': np.float64(-0.001), 'nIs': np.float64(-0.181)}
+FEASIBLE n5-epoch/instances/immfail_n14.pg 6 {'X_m4': 9, 'W_m4': 1, 'T_m4': 1}
+FEASIBLE n5-epoch/instances/immp_cex_n11.pg 2 {'X_m4': 2, 'W_m4': 1}
+FEASIBLE n5-epoch/instances/lcount_n23.pg 5 {'W_m3': np.float64(-0.005)}
+FEASIBLE n5-epoch/instances/lend107_n32.pg 112 {'X_m0': np.float64(-2923.16), 'X_m1': np.float64(502.138), 'X_m2': np.float64(-31.127), 'X_m3': np.float64(0.843), 'X_m4': np.float64(-0.009), 'X_cr': np.float64(0.501), 'X
+FEASIBLE n5-epoch/instances/lend13_n16.pg 14 {'X_m4': 2, 'X_cr': 2778}
+FEASIBLE n5-epoch/instances/lend15_n48.pg 27 {'X_cr': np.float64(0.045), 'X_ln': np.float64(-0.401), 'W_m2': np.float64(0.081), 'W_m3': np.float64(-0.005), 'W_cr': np.float64(-0.005), 'W_ln': np.float64(-0.189)}
+FEASIBLE n5-epoch/instances/lend27_n24.pg 32 {'X_m2': np.float64(0.169), 'X_m3': np.float64(-0.019), 'X_ln': np.float64(0.937), 'W_m2': np.float64(0.002), 'W_cr': np.float64(0.041), 'nIs': np.float64(-0.063)}
+INFEASIBLE n5-epoch/instances/lend39f_n32.pg 47 support 8 games ['n5-epoch/instances/lend39f_n32.pg'] exact
+FEASIBLE n5-epoch/instances/lend47_n32.pg 50 {'X_m2': np.float64(-24.352), 'X_m3': np.float64(1.581), 'X_m4': np.float64(-0.026), 'X_cr': np.float64(0.218), 'X_ln': np.float64(0.087), 'W_m3': np.float64(0.005), 'W_ln': n
+FEASIBLE n5-epoch/instances/lend55_n32.pg 58 {'X_m2': np.float64(-0.332), 'X_m3': np.float64(0.041), 'X_m4': np.float64(-0.001), 'X_ln': np.float64(-6.65), 'W_m3': np.float64(-0.016), 'W_m4': np.float64(0.001), 'W_cr': n
+INFEASIBLE n5-epoch/instances/lend72_n48.pg 76 support 14 games ['n5-epoch/instances/lend72_n48.pg'] exact
+FEASIBLE n5-epoch/instances/lend82_n32.pg 87 {'X_m2': np.float64(-14.381), 'X_m3': np.float64(1.056), 'X_m4': np.float64(-0.019), 'X_cr': np.float64(4.195), 'W_m2': np.float64(13.387), 'W_m3': np.float64(-0.972), 'W_m4':
+FEASIBLE n5-epoch/instances/lend9_n8.pg 10 {'X_m2': 184, 'X_m4': -5, 'W_m2': 3459, 'W_m3': -1341, 'W_m4': 124, 'W_cr': 1082}
+INFEASIBLE n5-epoch/instances/nconf61_n48.pg 73 support 15 games ['n5-epoch/instances/nconf61_n48.pg'] exact
+FEASIBLE n5-epoch/instances/nep13_n24.pg 35 {'X_m3': np.float64(-0.015), 'X_m4': np.float64(0.001), 'X_cr': np.float64(0.128), 'X_ln': np.float64(0.173), 'W_m2': np.float64(-0.112), 'W_m3': np.float64(0.016), 'W_cr': np.
+FEASIBLE n5-epoch/instances/nep22f_n64.pg 52 {'X_m2': np.float64(0.109), 'X_m3': np.float64(-0.004), 'X_cr': np.float64(0.037), 'X_ln': np.float64(0.111), 'W_m2': np.float64(-0.012), 'W_cr': np.float64(-0.008), 'W_ln': n
+INFEASIBLE n5-epoch/instances/nep56_n32.pg 57 support 15 games ['n5-epoch/instances/nep56_n32.pg'] exact
+INFEASIBLE n5-epoch/instances/nep76_n40.pg 87 support 15 games ['n5-epoch/instances/nep76_n40.pg'] exact
+INFEASIBLE n5-epoch/instances/nep92_n40.pg 98 support 15 games ['n5-epoch/instances/nep92_n40.pg'] exact
+INFEASIBLE n5-epoch/instances/nep94_n48.pg 100 support 15 games ['n5-epoch/instances/nep94_n48.pg'] exact
+INFEASIBLE n5-epoch/instances/ret12_n40.pg 60 support 13 games ['n5-epoch/instances/ret12_n40.pg'] exact
+INFEASIBLE n5-epoch/instances/ret14_n48.pg 61 support 16 games ['n5-epoch/instances/ret14_n48.pg'] exact
+INFEASIBLE n5-epoch/instances/ret14_n64.pg 65 support 15 games ['n5-epoch/instances/ret14_n64.pg'] exact
+FEASIBLE n5-exhaustive/instances/b4_cyc6_0.pg 5 {'X_m4': 21, 'W_m4': -26, 'T_m4': 30}
+FEASIBLE n5-exhaustive/instances/b4_cyc6_1.pg 4 {'X_m4': -2, 'X_ln': 2500, 'W_m4': 2}
+FEASIBLE n5-exhaustive/instances/b4_n4all_cyc3_0.pg 3 {'X_m4': 4, 'T_m4': 1}
+FEASIBLE n5-exhaustive/instances/b4_n5_other_0.pg 2 {'nIs': -1}
+FEASIBLE n5-exhaustive/instances/b4_nohlen5_0.pg 6 {'W_ln': 1, 'nIs': -1}
+FEASIBLE n5-exhaustive/instances/b4_theta_n7.pg 2 {'nIs': -1}
+FEASIBLE n5-exhaustive/instances/b5_n5_cyc4_0.pg 3 {'X_m4': 1, 'T_m4': 1}
+FEASIBLE n5-exhaustive/instances/b5_o11.pg 12 {'X_m2': 24028, 'X_m3': -6389, 'X_m4': 404, 'X_cr': 19575, 'W_m4': 11, 'W_cr': 135, 'nIs': -133306}
+FEASIBLE n5-exhaustive/instances/b5_os_n12.pg 18 {'X_m2': 23304, 'X_m3': -5802, 'X_m4': 339, 'X_cr': 31582, 'W_m2': 7550, 'W_m3': -706}
+FEASIBLE n5-exhaustive/instances/b5_os_n14.pg 22 {'X_m2': np.float64(-0.432), 'X_m3': np.float64(0.019), 'X_m4': np.float64(0.002), 'X_cr': np.float64(0.587), 'W_m2': np.float64(0.632), 'W_m3': np.float64(-0.06), 'W_ln':
+INFEASIBLE n5-exhaustive/instances/b5_os_n16.pg 26 support 8 games ['n5-exhaustive/instances/b5_os_n16.pg'] exact
+INFEASIBLE n5-exhaustive/instances/b5_os_n20.pg 34 support 9 games ['n5-exhaustive/instances/b5_os_n20.pg'] exact
+FEASIBLE n5-exhaustive/instances/b5_os_n24.pg 53 {'X_m1': np.float64(-3.697), 'X_m2': np.float64(1.0), 'X_m3': np.float64(-0.069), 'X_m4': np.float64(0.001), 'X_cr': np.float64(0.758), 'X_ln': np.float64(0.38), 'W_m0': n
+INFEASIBLE n5-exhaustive/instances/b5_os_n28.pg 65 support 11 games ['n5-exhaustive/instances/b5_os_n28.pg'] exact
+INFEASIBLE n5-exhaustive/instances/b5_os_n32.pg 71 support 8 games ['n5-exhaustive/instances/b5_os_n32.pg'] exact
+INFEASIBLE n5-exhaustive/instances/b5_os_n40.pg 81 support 10 games ['n5-exhaustive/instances/b5_os_n40.pg'] exact
+FEASIBLE n5-exhaustive/instances/b6_xl2_n32.pg 87 {'X_m1': np.float64(2.693), 'X_m2': np.float64(-0.456), 'X_m3': np.float64(0.025), 'X_cr': np.float64(4.709), 'X_ln': np.float64(0.107), 'W_m1': np.float64(1.477), 'W_m2'
+FEASIBLE n5-exhaustive/instances/b6_xl_n32.pg 85 {'X_m1': np.float64(5.732), 'X_m2': np.float64(-0.813), 'X_m3': np.float64(0.038), 'X_m4': np.float64(-0.001), 'X_cr': np.float64(5.704), 'X_ln': np.float64(-0.078), 'W_m1
+FEASIBLE n5-exhaustive/instances/b6_xl_n40.pg 89 {'X_m1': np.float64(1.696), 'X_m2': np.float64(-0.258), 'X_m3': np.float64(0.013), 'X_cr': np.float64(5.654), 'X_ln': np.float64(0.101), 'W_m2': np.float64(-0.011), 'W_m3'
+FEASIBLE n5-exhaustive/instances/b6_xl_n48.pg 97 {'X_m0': np.float64(-44.742), 'X_m1': np.float64(9.73), 'X_m2': np.float64(-0.733), 'X_m3': np.float64(0.024), 'X_cr': np.float64(6.166), 'X_ln': np.float64(-0.832), 'W_m0
+FEASIBLE n5-exhaustive/instances/b6_xs_n24.pg 21 {'X_m4': -4}
+FEASIBLE n5-exhaustive/instances/b6_xs_n32.pg 29 {}
+FEASIBLE n5-exhaustive/instances/b6_xs_n40.pg 36 {}
+FEASIBLE n5-exhaustive/instances/b6_xs_n48.pg 37 {'X_m3': np.float64(0.001)}
+INFEASIBLE n5-exhaustive/instances/b6_xw_n32.pg 79 support 13 games ['n5-exhaustive/instances/b6_xw_n32.pg'] exact
+FEASIBLE n5-exhaustive/instances/b6_xw_n40.pg 80 {'X_m1': np.float64(0.33), 'X_m2': np.float64(-0.074), 'X_m3': np.float64(0.005), 'X_cr': np.float64(3.674), 'W_m0': np.float64(-8.623), 'W_m1': np.float64(2.705), 'W_m2':
+INFEASIBLE n5-exhaustive/instances/b6_xw_n48.pg 85 support 14 games ['n5-exhaustive/instances/b6_xw_n48.pg'] exact
+FEASIBLE n5-exhaustive/instances/b6_xw_n56.pg 85 {'X_m1': np.float64(1.392), 'X_m2': np.float64(-0.173), 'X_m3': np.float64(0.007), 'X_cr': np.float64(1.867), 'X_ln': np.float64(-0.579), 'W_m1': np.float64(0.442), 'W_m2'
+FEASIBLE n5-exhaustive/instances/canonA_0.pg 3 {'X_m4': -1}
+FEASIBLE n5-exhaustive/instances/canonA_1.pg 4 {'W_m4': -1, 'T_m4': 2}
+FEASIBLE n5-exhaustive/instances/frz1_n24.pg 31 {'X_m2': np.float64(-0.001), 'X_ln': np.float64(-0.341), 'W_m2': np.float64(-0.053), 'W_m3': np.float64(0.007), 'W_cr': np.float64(0.132)}
+FEASIBLE n5-exhaustive/instances/frz2_n24.pg 25 {'X_m2': np.float64(-0.004), 'X_ln': np.float64(-0.619), 'W_m2': np.float64(0.002)}
+FEASIBLE n5-exhaustive/instances/frz3_n24.pg 26 {'W_m3': np.float64(0.001)}
+FEASIBLE n5-exhaustive/instances/n3all_maxph_0.pg 3 {'T_ln': 1, 'nIs': -1}
+FEASIBLE n5-exhaustive/instances/n3all_maxph_1.pg 3 {'X_m4': 1, 'T_ln': 100, 'nIs': -100}
+FEASIBLE n5-exhaustive/instances/n3all_maxph_2.pg 3 {'T_ln': 1, 'nIs': -1}
+FEASIBLE n5-exhaustive/instances/n4_maxph_0.pg 2 {'X_m4': 1, 'nIs': -1000}
+FEASIBLE n5-exhaustive/instances/n4_maxph_1.pg 2 {'X_m4': 1, 'nIs': -1000}
+FEASIBLE n5-exhaustive/instances/n4_thch_0.pg 2 {'X_m4': 2, 'T_m4': 2}
+FEASIBLE n5-exhaustive/instances/n4all_maxph_0.pg 4 {'X_m4': -10, 'W_m4': 2, 'nIs': -1000}
+FEASIBLE n5-exhaustive/instances/n4all_maxph_1.pg 4 {'X_m4': -10, 'W_m4': 2, 'nIs': -1000}
+FEASIBLE n5-exhaustive/instances/n4all_tgbad_0.pg 3 {'X_ln': 167, 'W_ln': 333, 'T_m4': 3}
+FEASIBLE n5-exhaustive/instances/n4all_thch_0.pg 3 {'X_m4': 4, 'T_m4': 1}
+FEASIBLE n5-exhaustive/instances/n5s_maxph_0.pg 3 {'T_ln': 1, 'nIs': -1}
+FEASIBLE n5-exhaustive/instances/nh_n8.pg 4 {'X_ln': 5, 'nIs': -10}
+FEASIBLE n5-exhaustive/instances/thetaA_canon_n12.pg 3 {'X_m3': 28, 'X_m4': -3}
+FEASIBLE n5-exhaustive/instances/thetaA_canon_n8.pg 3 {'X_m4': -4}
+FEASIBLE n5-exhaustive/instances/thetaA_n17.pg 5 {'X_m3': np.float64(0.001)}
+FEASIBLE n5-exhaustive/instances/thetaA_n6.pg 3 {'X_m4': -3}
+FEASIBLE n5-exhaustive/instances/thetaA_n7.pg 3 {'X_m4': -1}
+FEASIBLE n5-exhaustive/instances/thetaA_n9.pg 4 {'X_m4': -35, 'W_m4': 4}
+FEASIBLE n5-exhaustive/instances/wk1_n32.pg 7 {'X_m3': np.float64(-0.001), 'X_ln': np.float64(0.067), 'W_m3': np.float64(0.001)}
+FEASIBLE n5-exhaustive/instances/wk2_n32.pg 7 {'X_m2': np.float64(0.092), 'X_m3': np.float64(-0.01), 'X_cr': np.float64(0.021), 'X_ln': np.float64(0.091)}
+INFEASIBLE new/box48/instances/long121_n40.pg 122 support 15 games ['new/box48/instances/long121_n40.pg'] exact
+FEASIBLE new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.pg 93 {'X_m0': np.float64(-35.949), 'X_m1': np.float64(10.305), 'X_m2': np.float64(-0.715), 'X_m3': np.float64(0.019), 'X_cr': np.float64(5.033), 'X_ln': np.fl
+INFEASIBLE new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.pg 102 support 15 games ['new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.pg'] exact
+INFEASIBLE new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.pg 105 support 15 games ['new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.pg'] exact
+INFEASIBLE new/box48/out/qpcclimb/scale/snap_n80_s62.pg 105 support 15 games ['new/box48/out/qpcclimb/scale/snap_n80_s62.pg'] exact
+FEASIBLE red/carry/instances/absmono_viol_n44.pg 7 {'T_cr': 2, 'nIs': -100}
+FEASIBLE red/carry/instances/carry3_2_2.pg 2 {}
+FEASIBLE red/carry/instances/cm_mdrop_both_n28.pg 10 {'W_cr': np.float64(0.01)}
+FEASIBLE red/carry/instances/cm_mdrop_oink_n28.pg 3 {}
+FEASIBLE red/carry/instances/ctx11_n40.pg 9 {}
+FEASIBLE red/carry/instances/ctx12_n40.pg 8 {}
+FEASIBLE red/carry/instances/ctx13_n40.pg 17 {'T_m3': np.float64(0.001)}
+FEASIBLE red/carry/instances/ctx6_n20.pg 3 {'X_cr': np.float64(0.031)}
+FEASIBLE red/carry/instances/ctx6_n56.pg 12 {}
+FEASIBLE red/carry/instances/ctx7_n30.pg 11 {}
+FEASIBLE red/carry/instances/f1_twodef_n48.pg 6 {}
+FEASIBLE red/carry/instances/f1_twofall_n48.pg 6 {}
+FEASIBLE red/carry/instances/fall3_n76.pg 8 {}
+FEASIBLE red/carry/instances/fall4_n116.pg 6 {}
+FEASIBLE red/carry/instances/fallv_viol_n28.pg 5 {}
+FEASIBLE red/carry/instances/fired10_n20.pg 6 {'nIs': -1}
+FEASIBLE red/carry/instances/firedlong667_n20.pg 4 {'X_m3': np.float64(0.001)}
+FEASIBLE red/carry/instances/firedlong667_n43.pg 3 {'nIs': -1}
+FEASIBLE red/carry/instances/firedstep13_n76.pg 8 {}
+FEASIBLE red/carry/instances/gapbW_dup_n20.pg 5 {'W_m3': np.float64(-0.007)}
+FEASIBLE red/carry/instances/gapb_dup_n20.pg 8 {'X_m3': 779, 'X_m4': -45, 'W_m3': -264, 'W_m4': 14, 'T_m3': 146, 'T_m4': -8}
+FEASIBLE red/carry/instances/h4_compound2x2_n44.pg 10 {}
+FEASIBLE red/carry/instances/h4_compound_n44.pg 4 {}
+FEASIBLE red/carry/instances/h4_def2ctx_n20.pg 6 {'W_m3': np.float64(0.001)}
+FEASIBLE red/carry/instances/h4_def7_n28.pg 3 {}
+FEASIBLE red/carry/instances/h4_disjoint_n20.pg 3 {}
+FEASIBLE red/carry/instances/h4_notweaker_n20.pg 5 {}
+FEASIBLE red/carry/instances/kin_viol_n29.pg 5 {}
+FEASIBLE red/carry/instances/lalg_dtl_mviol_n20.pg 5 {}
+FEASIBLE red/carry/instances/lemmaS_Mdrop_n20.pg 6 {}
+FEASIBLE red/carry/instances/lemmaS_viol_n20.pg 4 {}
+FEASIBLE red/carry/instances/lex_viol_inj_n28.pg 6 {}
+FEASIBLE red/carry/instances/lex_viol_tie_n28.pg 7 {}
+FEASIBLE red/carry/instances/meet_viol_n29.pg 11 {'W_cr': np.float64(0.007), 'T_cr': np.float64(0.011)}
+FEASIBLE red/carry/instances/nosig_2_3.pg 2 {}
+FEASIBLE red/carry/instances/phi_flat_alive_n32.pg 4 {}
+FEASIBLE red/carry/instances/pk_viol_n20.pg 3 {'nIt': np.float64(-1.0)}
+FEASIBLE red/carry/instances/replay4_n32.pg 4 {}
+FEASIBLE red/carry/instances/spp19_oink_n30.pg 10 {'X_m3': np.float64(-0.001), 'T_m2': np.float64(0.026), 'T_m3': np.float64(-0.002)}
+FEASIBLE red/carry/instances/spp19_stable_n30.pg 7 {}
+FEASIBLE red/carry/instances/spp22_oink_n40.pg 8 {}
+FEASIBLE red/carry/instances/spp25_oink_n40.pg 10 {}
+FEASIBLE red/carry/instances/stealer_viol_n76.pg 12 {}
+FEASIBLE red/carry/instances/stealonce_both_n45.pg 4 {}
+FEASIBLE red/carry/instances/stealonce_core_n76.pg 4 {}
+FEASIBLE red/carry/instances/stealonce_viol_n76.pg 12 {}
+FEASIBLE red/carry/instances/tstep_near_n20.pg 5 {'X_m4': -1, 'W_m4': 1, 'T_m4': 1}
+FEASIBLE red/ctxp/instances/deep1_n13.pg 1 {'W_m4': -3}
+FEASIBLE red/ctxp/instances/deep1_n21.pg 3 {}
+FEASIBLE red/ctxp/instances/margin1_mc1.pg 10 {'nIs': np.float64(-0.25)}
+FEASIBLE red/ctxp/instances/margin1_mc5.pg 12 {}
+FEASIBLE red/ctxp/instances/margin1_n20.pg 5 {}
+FEASIBLE red/dtl/instances/lalg_dtl_pertop31_n18.pg 2 {'X_m4': 2}
+FEASIBLE red/dtl/instances/lalg_dtl_restart8_n20.pg 5 {'W_m3': 110, 'W_m4': -6, 'T_m3': 12}
+FEASIBLE red/fbr/instances/bghm_k1_gap6_A.pg 1 {'X_cr': 1}
+FEASIBLE red/fbr/instances/bghm_k3_gap4_A.pg 1 {'X_cr': 2}
+FEASIBLE red/fbr/instances/fr39_q4_n48.pg 36 {'X_cr': np.float64(0.005), 'W_m2': np.float64(-0.002)}
+FEASIBLE red/fbr/instances/lev56_n48.pg 86 {'X_m0': np.float64(-294.949), 'X_m1': np.float64(44.15), 'X_m2': np.float64(-2.454), 'X_m3': np.float64(0.06), 'X_m4': np.float64(-0.001), 'X_cr': np.float64(1.004), 'X_ln': np
+FEASIBLE red/fbr/instances/lev74_n40.pg 18 {'X_m2': np.float64(-0.001), 'W_m2': np.float64(-0.015), 'W_m3': np.float64(0.001), 'W_cr': np.float64(0.046)}
+FEASIBLE red/fbr/instances/nep80_n40.pg 22 {'X_m2': np.float64(-0.004), 'X_cr': np.float64(0.1), 'W_m2': np.float64(-0.004), 'W_ln': np.float64(-0.04), 'T_ln': np.float64(0.115)}
+FEASIBLE red/fbr/instances/rho144_n32.pg 9 {}
+FEASIBLE red/fbr/instances/rho3_253_n32.pg 11 {'X_m2': np.float64(-0.003), 'T_m3': np.float64(-0.002)}
+FEASIBLE red/fbr/instances/rho666_n48.pg 16 {'X_m2': np.float64(0.001), 'W_m2': np.float64(-0.002), 'W_cr': np.float64(0.015)}
+FEASIBLE red/fbr/instances/rho84_n16.pg 5 {}
+FEASIBLE red/fbr/instances/sat4_n20.pg 6 {'W_m3': np.float64(0.001)}
+FEASIBLE red/fbr/instances/sat68_n20.pg 5 {'X_cr': np.float64(0.025), 'W_cr': np.float64(-0.013)}
+FEASIBLE red/fbr/instances/twowave_L16.pg 15 {'X_m3': -28, 'X_m4': 2}
+FEASIBLE red/fbx/instances/exsw_loop_n15.pg 1 {}
+FEASIBLE red/fbx/instances/kt6_n58.pg 38 {'X_m2': np.float64(0.095), 'X_m3': np.float64(-0.004), 'X_cr': np.float64(2.13), 'X_ln': np.float64(1.542), 'W_cr': np.float64(1.216), 'W_ln': np.float64(-0.042), 'nIs': np.float
+FEASIBLE red/frz/instances/fbcap_eq_u4_n11.pg 6 {'X_m3': -398, 'X_m4': 42, 'W_cr': 714}
+FEASIBLE red/frz/instances/fx2_n11.pg 9 {'W_cr': 2}
+FEASIBLE red/h3/instances/frzgap0_n4.pg 1 {'W_m4': 4}
+FEASIBLE red/h3/instances/frzgap0_n6.pg 3 {'X_m4': 2}
+FEASIBLE red/h3/instances/lcount2_n23.pg 6 {'W_m3': np.float64(0.001)}
+FEASIBLE red/h3/instances/lcount_n23.pg 5 {'W_m3': np.float64(-0.005)}
+FEASIBLE red/h3/instances/offret_l19_n24.pg 3 {'nIt': np.float64(-1.0)}
+FEASIBLE red/h3/instances/xsnpre36_n48.pg 33 {'X_cr': np.float64(0.013)}
+FEASIBLE red/kl/instances/klcount_n16.pg 6 {'X_m3': np.float64(-0.001)}
+FEASIBLE red/kl/instances/klcount_n18_base.pg 6 {}
+FEASIBLE red/kl/instances/klcount_n18_lvl.pg 6 {'X_m3': np.float64(-0.001)}
+FEASIBLE red/kl/instances/klglobal_n16.pg 6 {'X_m4': 1, 'nIt': -56225, 'nD': 43775}
+FEASIBLE red/kl/instances/klglobal_n18_lvl.pg 6 {'X_m4': 1, 'nIt': -56225, 'nD': 43775}
+FEASIBLE red/kl/instances/klglobal_n20_lvl2.pg 6 {'X_m4': 1, 'nIt': -56225, 'nD': 43775}
+FEASIBLE red/kl/instances/klmin_n13.pg 3 {'X_m3': -71, 'X_m4': 7, 'X_cr': 761}
+FEASIBLE red/kl/instances/r2climb_h13.pg 4 {'X_m4': 1, 'W_m4': 1}
+FEASIBLE red/kl/instances/r2crawl_n14.pg 5 {}
+FEASIBLE red/kl/instances/r2join_h0E_n14.pg 3 {'W_m3': np.float64(0.002)}
+FEASIBLE red/kl/instances/r2lap_best_n22.pg 5 {'W_ln': np.float64(-0.166), 'T_ln': np.float64(0.334)}
+FEASIBLE red/kl24/instances/HL88_0.pg 3 {}
+FEASIBLE red/kl24/instances/HL88_1.pg 3 {}
+FEASIBLE red/kl24/instances/HL88_2.pg 3 {}
+FEASIBLE red/kl24/instances/HL88_3.pg 3 {}
+FEASIBLE red/kl24/instances/HLg_0.pg 3 {}
+FEASIBLE red/kl24/instances/HLg_1.pg 3 {}
+FEASIBLE red/kl24/instances/HLg_2.pg 3 {}
+FEASIBLE red/kl24/instances/HLg_3.pg 3 {}
+FEASIBLE red/kw/instances/cw11_n24.pg 17 {'X_m2': np.float64(-0.015), 'X_m3': np.float64(0.003), 'X_cr': np.float64(0.014), 'W_m3': np.float64(-0.01), 'W_m4': np.float64(0.001), 'nIs': np.float64(-1.0)}
+FEASIBLE red/kw/instances/frzu_tight_n14.pg 4 {'X_m2': 71, 'X_m4': -1, 'X_cr': 300}
+FEASIBLE red/kw/instances/kc18_n24.pg 23 {'X_m2': np.float64(-0.121), 'X_m3': np.float64(0.014), 'W_m3': np.float64(-0.004), 'T_m4': np.float64(0.001)}
+FEASIBLE red/lag/instances/depth2_n39.pg 3 {}
+FEASIBLE red/lag/instances/depth3_n46.pg 3 {}
+FEASIBLE red/lag/instances/depth4_n53.pg 4 {}
+FEASIBLE red/lag/instances/fam_D12_n106.pg 1 {}
+FEASIBLE red/lag/instances/fam_D4_n50.pg 1 {}
+FEASIBLE red/lag/instances/fam_D8_n78.pg 1 {}
+FEASIBLE red/mei/instances/mei_h2.pg 1 {}
+FEASIBLE red/mei/instances/mei_h3.pg 2 {}
+FEASIBLE red/mei/instances/mei_h4.pg 3 {}
+FEASIBLE red/mei/instances/mei_h5.pg 4 {}
+FEASIBLE red/mei/instances/mei_h6.pg 5 {}
+FEASIBLE red/mei/instances/mei_h8.pg 7 {}
+INFEASIBLE red/n3/instances/comp54_n80.pg 55 support 14 games ['red/n3/instances/comp54_n80.pg'] exact
+FEASIBLE red/n3/instances/core41_n40.pg 42 {'X_m1': np.float64(1.036), 'X_m2': np.float64(-0.131), 'X_m3': np.float64(0.005), 'W_m1': np.float64(0.36), 'W_m2': np.float64(-0.056), 'W_m3': np.float64(0.003), 'nIs': np.flo
+FEASIBLE red/n3/instances/lag11_n40.pg 23 {'X_cr': np.float64(0.017), 'W_m2': np.float64(0.001), 'nIs': np.float64(-1.0)}
+FEASIBLE red/n3/instances/lagx10_n40.pg 17 {'X_m2': np.float64(-0.005), 'X_cr': np.float64(0.019)}
+INFEASIBLE red/n3/instances/long121_n40.pg 122 support 15 games ['red/n3/instances/long121_n40.pg'] exact
+INFEASIBLE red/n3/instances/long90_k2_n40.pg 92 support 14 games ['red/n3/instances/long90_k2_n40.pg'] exact
+FEASIBLE red/n3/instances/n3cov_lean.pg 35 {}
+FEASIBLE red/n3/instances/n3cov_phi.pg 31 {'X_m0': np.float64(-5.935), 'X_m1': np.float64(1.713), 'X_m2': np.float64(-0.156), 'X_m3': np.float64(0.006), 'X_ln': np.float64(-0.061), 'W_m1': np.float64(0.924), 'W_m2': np.f
+INFEASIBLE red/n3/instances/ret22_n40.pg 94 support 15 games ['red/n3/instances/ret22_n40.pg'] exact
+FEASIBLE red/n3/instances/run34_n40.pg 51 {'X_m2': np.float64(-0.057), 'X_m3': np.float64(0.003), 'X_cr': np.float64(0.246), 'X_ln': np.float64(0.007), 'W_m2': np.float64(-0.097), 'W_m3': np.float64(0.006), 'W_cr': np.fl
+FEASIBLE red/n3/instances/run49_n32.pg 51 {'X_m1': np.float64(11.048), 'X_m2': np.float64(-0.848), 'X_m3': np.float64(0.016), 'W_m1': np.float64(80.048), 'W_m2': np.float64(-8.919), 'W_m3': np.float64(0.331), 'W_m4': np.
+FEASIBLE red/n5/instances/dl_4_4.pg 8 {}
+FEASIBLE red/n5/instances/dl_6_8.pg 14 {}
+FEASIBLE red/n5/instances/dlm2_4.pg 8 {'T_m3': np.float64(0.001)}
+FEASIBLE red/n5/instances/sym_h12_s1.pg 34 {'X_m2': np.float64(0.013), 'X_m3': np.float64(-0.002), 'X_cr': np.float64(0.071), 'W_m2': np.float64(0.002), 'W_cr': np.float64(0.004), 'W_ln': np.float64(0.018), 'T_cr': np.fl
+FEASIBLE red/n5/instances/sym_h16_s1.pg 55 {'X_m1': np.float64(0.065), 'X_m2': np.float64(-0.001), 'X_cr': np.float64(0.43), 'W_m1': np.float64(0.207), 'W_m2': np.float64(-0.032), 'W_m3': np.float64(0.002), 'W_cr': np.fl
+FEASIBLE red/n5/instances/sym_h8_s1.pg 25 {'X_m3': np.float64(0.005), 'X_cr': np.float64(0.131), 'W_m1': np.float64(0.074), 'W_m2': np.float64(0.002), 'W_cr': np.float64(-0.02), 'W_ln': np.float64(-0.104), 'T_m2': np.flo
+FEASIBLE red/n5inj/instances/block_bk20.pg 27 {'X_m3': np.float64(-0.002), 'X_cr': np.float64(0.535), 'X_ln': np.float64(0.2), 'nIs': np.float64(-0.4)}
+FEASIBLE red/n5inj/instances/block_bk32.pg 49 {'X_m2': np.float64(-0.249), 'X_m3': np.float64(0.015), 'X_cr': np.float64(0.915)}
+FEASIBLE red/n5inj/instances/blockph_bp20.pg 25 {'X_m2': np.float64(0.017), 'X_cr': np.float64(0.514), 'X_ln': np.float64(0.5), 'nIs': np.float64(-0.5)}
+FEASIBLE red/n5inj/instances/blockph_bp32.pg 39 {'X_m2': np.float64(-0.098), 'X_m3': np.float64(0.006), 'X_cr': np.float64(0.064), 'X_ln': np.float64(-0.059)}
+FEASIBLE red/n5inj/instances/bribe_cex_n15.pg 1 {'X_m4': -1}
+INFEASIBLE red/n5inj/instances/elimn_cex_n48.pg 92 support 15 games ['red/n5inj/instances/elimn_cex_n48.pg'] exact
+FEASIBLE red/n5inj/instances/frz24.pg 39 {'X_m2': np.float64(0.019), 'X_m3': np.float64(-0.002), 'X_cr': np.float64(0.746), 'X_ln': np.float64(0.128), 'W_m2': np.float64(0.05), 'W_m3': np.float64(-0.007), 'W_cr': np.floa
+FEASIBLE red/n5inj/instances/frz32.pg 66 {'X_m1': np.float64(1.535), 'X_m2': np.float64(-0.225), 'X_m3': np.float64(0.011), 'X_cr': np.float64(1.51), 'X_ln': np.float64(0.116), 'W_m1': np.float64(-1.271), 'W_m2': np.floa
+INFEASIBLE red/n5inj/instances/frz40.pg 90 support 15 games ['red/n5inj/instances/frz40.pg'] exact
+FEASIBLE red/n5inj/instances/phase2_pk32.pg 56 {'X_m3': np.float64(-0.006), 'W_m2': np.float64(-19.199), 'W_m3': np.float64(1.277), 'W_m4': np.float64(-0.021), 'W_cr': np.float64(9.583), 'W_ln': np.float64(1.0), 'T_ln': 
+FEASIBLE red/n5inj/instances/phase2_pk48.pg 72 {'X_m1': np.float64(127.449), 'X_m2': np.float64(-10.839), 'X_m3': np.float64(0.302), 'X_m4': np.float64(-0.003), 'X_cr': np.float64(5.718), 'X_ln': np.float64(2.412), 'W_m0
+INFEASIBLE red/n5inj/instances/returns_ph64.pg 105 support 8 games ['red/n5inj/instances/returns_ph64.pg'] exact
+FEASIBLE red/n5inj/instances/returns_rt32.pg 57 {'X_m2': np.float64(-39.765), 'X_m3': np.float64(2.585), 'X_m4': np.float64(-0.042), 'X_cr': np.float64(5.582), 'X_ln': np.float64(1.0), 'W_cr': np.float64(0.019)}
+INFEASIBLE red/n5inj/instances/returns_rt48.pg 80 support 8 games ['red/n5inj/instances/returns_rt48.pg'] exact
+INFEASIBLE red/n5inj/instances/returns_rt64.pg 90 support 8 games ['red/n5inj/instances/returns_rt64.pg'] exact
+FEASIBLE red/n5inj/instances/theta_thc24.pg 29 {'X_m2': np.float64(-0.031), 'X_m3': np.float64(0.011), 'X_cr': np.float64(0.519), 'W_m2': np.float64(-0.133), 'W_m3': np.float64(0.007), 'W_ln': np.float64(-0.404)}
+FEASIBLE red/n5inj/instances/theta_thf16.pg 20 {'X_m2': np.float64(0.008), 'X_m3': np.float64(-0.001), 'X_cr': np.float64(0.219), 'W_m2': np.float64(-0.305), 'W_m3': np.float64(0.054), 'W_m4': np.float64(-0.002), 'nIs': 
+FEASIBLE red/n5inj/instances/theta_tp32.pg 45 {'X_m2': np.float64(-0.04), 'X_m3': np.float64(0.003), 'X_cr': np.float64(0.104), 'W_m2': np.float64(-0.109), 'W_m3': np.float64(0.009), 'W_cr': np.float64(0.008)}
+FEASIBLE red/n5inj/instances/theta_tp40.pg 41 {'X_m1': np.float64(0.704), 'X_cr': np.float64(0.209), 'X_ln': np.float64(0.556), 'W_m0': np.float64(-3934.675), 'W_m1': np.float64(509.966), 'W_m2': np.float64(-24.599), 'W_
+FEASIBLE red/n5inj/instances/wide_h16.pg 44 {'X_m1': np.float64(-0.061), 'X_m2': np.float64(0.021), 'X_m3': np.float64(-0.001), 'X_cr': np.float64(0.222), 'X_ln': np.float64(-0.084), 'W_m1': np.float64(5.531), 'W_m2': np
+FEASIBLE red/nest16/instances/k4L72_n101.pg 6 {'T_cr': 1, 'nIt': -333}
+FEASIBLE red/nest16/instances/k4L72r_n101.pg 6 {'T_cr': 1, 'nIt': -333}
+FEASIBLE red/nest16/instances/k4g50_n101.pg 5 {'T_cr': 2, 'T_ln': 14}
+FEASIBLE red/nest16/instances/k4seed_c1_n82.pg 3 {'T_cr': 3, 'T_ln': 16}
+FEASIBLE red/nest16/instances/k4seed_vr_n87.pg 3 {'T_cr': 3, 'T_ln': 16}
+FEASIBLE red/nest16/instances/k4u_n101.pg 3 {'T_ln': np.float64(0.016)}
+FEASIBLE red/nest16/instances/k4y1_n82.pg 5 {'T_cr': 2, 'T_ln': 14}
+FEASIBLE red/nest16/instances/k4y2_n87.pg 6 {'nIt': np.float64(-0.25)}
+FEASIBLE red/nest16/instances/near4_n26.pg 2 {'nD': -1}
+FEASIBLE red/nest16/instances/nest4u_n46.pg 2 {'nD': -5}
+FEASIBLE red/nest16/instances/nest4uu_n51.pg 2 {'T_cr': 1}
+FEASIBLE red/nest16/instances/nest5_n49.pg 3 {'nIt': -2}
+FEASIBLE red/nest16/instances/nest6_n75.pg 3 {'nD': -1}
+FEASIBLE red/nest16/instances/nest6min_n75.pg 3 {'T_cr': 3, 'T_ln': 16}
+FEASIBLE red/nest16/instances/nest6x_n75.pg 5 {'T_ln': np.float64(0.077)}
+FEASIBLE red/nest16/instances/oseg_n26.pg 3 {'nD': -1}
+FEASIBLE red/nest16/instances/w1_n27.pg 2 {}
+FEASIBLE red/nest16/instances/win3_n27.pg 2 {'T_cr': 2}
+FEASIBLE red/nopre/instances/nopre_viol_n20.pg 3 {}
+FEASIBLE red/o1/instances/f39_n48.pg 38 {'X_cr': np.float64(0.014)}
+FEASIBLE red/o1/instances/iter118_n48.pg 18 {}
+FEASIBLE red/o1/instances/ph45_n32.pg 21 {'X_cr': np.float64(0.066), 'T_ln': np.float64(-0.017)}
+FEASIBLE red/o1/instances/ph50_n32.pg 32 {'X_m2': np.float64(0.001), 'X_cr': np.float64(0.104), 'W_m2': np.float64(0.002)}
+FEASIBLE red/o1/instances/tau18_n24.pg 12 {'X_cr': np.float64(0.062)}
+FEASIBLE red/rec0/instances/lend2_30_n48.pg 25 {'X_m2': np.float64(-0.002), 'X_cr': np.float64(0.023), 'W_cr': np.float64(0.001)}
+FEASIBLE red/rec0/instances/n0_6_n24.pg 3 {'X_m3': np.float64(0.001)}
+FEASIBLE red/rec0/instances/nep24_n20.pg 15 {}
+FEASIBLE red/rec0/instances/nep87_n40.pg 25 {'X_m2': np.float64(-0.009), 'X_m3': np.float64(0.001), 'X_cr': np.float64(0.061), 'W_m2': np.float64(0.005)}
+FEASIBLE red/rec0/instances/nep90_n40.pg 23 {'W_m2': np.float64(0.009), 'W_cr': np.float64(0.102)}
+FEASIBLE red/sgrow/instances/s20_n20.pg 8 {'X_ln': np.float64(0.009), 'W_ln': np.float64(0.036), 'nIs': np.float64(-0.955)}
+FEASIBLE red/sgrow/instances/s21_oink_n20.pg 8 {'W_m3': np.float64(0.004), 'T_m3': np.float64(-0.002)}
+FEASIBLE red/sgrow/instances/s29_n30.pg 7 {'W_ln': np.float64(-0.003), 'nIt': np.float64(-0.761), 'nD': np.float64(-0.236)}
+FEASIBLE red/sgrow/instances/s32_n60.pg 8 {}
+FEASIBLE red/sgrow/instances/s34_oink_n40.pg 5 {}
+FEASIBLE red/sgrow/instances/s34_oink_n80.pg 8 {}
+FEASIBLE red/sgrow/instances/s35_oink_n80.pg 5 {}
+FEASIBLE red/sgrow/instances/s36_oink_n60.pg 5 {}
+FEASIBLE red/so/instances/beta2_n11.pg 4 {'X_ln': 3}
+FEASIBLE red/so/instances/epsseg_cex_n16.pg 11 {'W_m3': np.float64(0.001)}
+FEASIBLE red/so/instances/epsseg_cex_n48.pg 26 {'X_m2': np.float64(0.002), 'X_cr': np.float64(0.011), 'W_m2': np.float64(0.019), 'W_m3': np.float64(-0.001)}
+FEASIBLE red/so/instances/exitr_cex_n16.pg 10 {'X_m2': 28, 'W_m2': 10, 'W_m3': 103, 'W_m4': -8, 'W_cr': 3055}
+FEASIBLE red/so/instances/exitr_cex_n48.pg 22 {'X_m2': np.float64(-0.003), 'X_cr': np.float64(0.102), 'X_ln': np.float64(0.187), 'W_m2': np.float64(0.002), 'nIs': np.float64(-0.813)}
+FEASIBLE red/so/instances/farrise25_n32.pg 35 {'X_m3': np.float64(0.001)}
+FEASIBLE red/so/instances/mn_abs74_n48.pg 22 {'X_m2': np.float64(-0.055), 'X_m3': np.float64(0.002), 'X_cr': np.float64(0.141), 'W_m2': np.float64(-0.01), 'W_m3': np.float64(0.001), 'nIs': np.float64(-1.0)}
+FEASIBLE red/so/instances/njb_reabs54_n32.pg 40 {'X_m2': np.float64(-0.013), 'X_m3': np.float64(0.002), 'X_cr': np.float64(4.559), 'X_ln': np.float64(-1.234), 'W_m2': np.float64(4.727), 'W_m3': np.float64(-0.327), 'W_m4'
+FEASIBLE red/so/instances/njb_reabs65_n48.pg 70 {'X_cr': np.float64(0.392), 'W_ln': np.float64(0.003), 'nIs': np.float64(-0.054)}
+FEASIBLE red/so/instances/nleq33_n48.pg 40 {'X_cr': np.float64(0.008), 'W_cr': np.float64(0.026), 'W_ln': np.float64(-0.039)}
+FEASIBLE red/so/instances/nleq_cex_n48.pg 10 {'X_m3': np.float64(-0.001), 'X_ln': np.float64(0.5)}
+FEASIBLE red/so/instances/pft35_n48.pg 41 {'X_m0': np.float64(-2398.156), 'X_m1': np.float64(265.101), 'X_m2': np.float64(-10.91), 'X_m3': np.float64(0.198), 'X_m4': np.float64(-0.001), 'X_cr': np.float64(2.427), 'X_ln':
+FEASIBLE red/so/instances/pft40_n40.pg 54 {'X_m1': np.float64(8.092), 'X_m2': np.float64(-0.89), 'X_m3': np.float64(0.032), 'X_cr': np.float64(2.306), 'X_ln': np.float64(0.843), 'W_m1': np.float64(7.11), 'W_m2': np.float
+FEASIBLE red/so/instances/pftheta34_n32.pg 39 {'X_m2': np.float64(-0.408), 'X_m3': np.float64(0.03), 'X_m4': np.float64(-0.001), 'X_ln': np.float64(-0.119), 'W_m2': np.float64(0.224), 'W_m3': np.float64(-0.016), 'W_cr': 
+FEASIBLE red/so/instances/pftheta_cex_n32.pg 38 {'X_m2': np.float64(-0.129), 'X_m3': np.float64(0.009), 'X_cr': np.float64(0.465), 'X_ln': np.float64(-0.098), 'W_m2': np.float64(0.106), 'W_m3': np.float64(-0.007), 'W_ln'
+FEASIBLE red/so/instances/post31_n48.pg 36 {'X_m2': np.float64(0.001), 'X_cr': np.float64(0.022), 'W_m2': np.float64(-0.022), 'W_m3': np.float64(0.002)}
+FEASIBLE red/so/instances/rise_fb38_n48.pg 53 {'X_m2': np.float64(0.081), 'X_m3': np.float64(-0.004), 'X_cr': np.float64(0.434), 'W_ln': np.float64(0.028), 'nIs': np.float64(-0.972), 'nIt': np.float64(-1.0)}
+INFEASIBLE red/so/instances/rise_thin51_n40.pg 78 support 14 games ['red/so/instances/rise_thin51_n40.pg'] exact
+FEASIBLE red/so/instances/s4c8_n13.pg 12 {'X_m3': np.float64(0.013), 'X_m4': np.float64(-0.001), 'X_cr': np.float64(0.092), 'W_m3': np.float64(-0.042), 'W_m4': np.float64(0.005)}
+FEASIBLE red/so/instances/so_j19_n48.pg 25 {'X_cr': np.float64(0.023), 'W_m2': np.float64(0.002)}
+FEASIBLE red/so/instances/so_k2_n32.pg 20 {'X_m2': np.float64(0.006), 'X_m3': np.float64(-0.001), 'X_cr': np.float64(0.135), 'X_ln': np.float64(-0.025), 'W_ln': np.float64(0.15)}
+FEASIBLE red/so/instances/so_sor5_n24.pg 23 {'X_m3': np.float64(0.006)}
+FEASIBLE red/so/instances/so_sorl_n32.pg 22 {}
+FEASIBLE red/so/instances/so_th_n32.pg 36 {'X_m2': np.float64(-0.016), 'X_m3': np.float64(0.001), 'X_cr': np.float64(0.172), 'X_ln': np.float64(0.028), 'W_m2': np.float64(-0.067), 'W_m3': np.float64(0.006), 'W_cr': np.fl
+FEASIBLE red/so/instances/so_tie13_n24.pg 16 {'X_m3': 2189, 'X_m4': -95}
+FEASIBLE red/so/instances/so_tie15_n32.pg 20 {}
+FEASIBLE red/so/instances/tev_cex_n40.pg 27 {'W_m2': np.float64(-0.012), 'W_m3': np.float64(0.001), 'W_cr': np.float64(0.045), 'nIs': np.float64(-1.0)}
+FEASIBLE red/so/instances/tevlast11_n40.pg 36 {'X_m2': np.float64(-0.008), 'X_m3': np.float64(0.001), 'X_cr': np.float64(0.086), 'X_ln': np.float64(0.533), 'W_m2': np.float64(-0.014), 'W_m3': np.float64(0.001), 'W_ln': n
+FEASIBLE red/so/instances/tevlast7_n32.pg 41 {'X_m2': np.float64(0.715), 'X_m3': np.float64(-0.054), 'X_m4': np.float64(0.001), 'X_cr': np.float64(1.072), 'X_ln': np.float64(0.364), 'W_m1': np.float64(-70.887), 'W_m2': n
+FEASIBLE red/so/instances/tevlast_cex_n40.pg 11 {'X_m2': np.float64(0.001), 'X_cr': np.float64(0.026), 'X_ln': np.float64(0.012), 'W_m2': np.float64(-0.017), 'W_m3': np.float64(0.001), 'W_ln': np.float64(0.154)}
+FEASIBLE red/so/instances/tog6a_n32.pg 10 {'X_m3': np.float64(-0.001), 'X_ln': np.float64(0.194), 'nIs': np.float64(-1.0)}
+FEASIBLE red/so/instances/tog6b_n32.pg 8 {'X_ln': np.float64(0.097), 'nIs': np.float64(-1.0)}
+FEASIBLE red/so/instances/xrun21_n24.pg 24 {'X_m3': np.float64(0.001), 'W_cr': np.float64(0.033)}
+FEASIBLE red/so/instances/xrun8_n10.pg 11 {'X_m2': -13523, 'X_m3': 3394, 'X_m4': -154, 'W_m3': 1499, 'W_m4': -199, 'T_m4': 13}
+FEASIBLE red/so/instances/xsn29_n32.pg 29 {}
+FEASIBLE red/so/instances/xsn43_n48.pg 45 {'X_m3': np.float64(-0.001), 'X_cr': np.float64(0.027), 'X_ln': np.float64(-0.077), 'W_ln': np.float64(-0.027)}
+FEASIBLE red/so/instances/xsn91_n48.pg 115 {'X_m0': np.float64(-76.471), 'X_m1': np.float64(12.039), 'X_m2': np.float64(-0.718), 'X_m3': np.float64(0.019), 'X_cr': np.float64(27.888), 'X_ln': np.float64(-0.826), 'W_m1': 
+FEASIBLE red/so/instances/xsnf42_n48.pg 44 {'X_cr': np.float64(0.001), 'nIs': np.float64(-1.0)}
+FEASIBLE red/so/instances/xsnf52_n64.pg 55 {'X_cr': np.float64(0.004), 'nIs': np.float64(-1.0)}
+FEASIBLE red/tcpert/instances/leanT_N12.pg 13 {}
+FEASIBLE red/tcpert/instances/leanT_N16.pg 16 {}
+FEASIBLE red/tcpert/instances/leanT_N24.pg 25 {}
+FEASIBLE red/tcpert/instances/leanT_N32.pg 33 {}
+FEASIBLE red/tcpert/instances/leanT_N6.pg 6 {}
+FEASIBLE red/tcpert/instances/leanT_N8.pg 8 {}
+FEASIBLE red/tcpert/instances/tcL_N10.pg 27 {'X_cr': np.float64(0.001)}
+FEASIBLE red/tcpert/instances/tcL_N12.pg 37 {'X_m1': np.float64(0.005), 'X_cr': np.float64(0.002), 'W_m1': np.float64(0.03), 'T_ln': np.float64(0.001)}
+FEASIBLE red/tcpert/instances/tcL_N3.pg 7 {}
+FEASIBLE red/tcpert/instances/tcL_N4.pg 16 {'X_cr': np.float64(0.003)}
+FEASIBLE red/tcpert/instances/tcL_N5.pg 19 {'X_cr': np.float64(0.002), 'T_cr': np.float64(0.001)}
+FEASIBLE red/tcpert/instances/tcL_N6.pg 18 {'T_cr': np.float64(0.002)}
+FEASIBLE red/tcpert/instances/tcL_N8.pg 30 {'W_ln': np.float64(0.001)}
+FEASIBLE red/tcpert/instances/tcR4_N4.pg 12 {'X_cr': np.float64(0.001)}
+FEASIBLE red/tcpert/instances/tcR4_N5.pg 14 {'X_cr': np.float64(0.001)}
+FEASIBLE red/tcpert/instances/tcR4_N6.pg 22 {'X_cr': np.float64(0.006)}
+FEASIBLE red/tcpert/instances/tcR4_N7.pg 41 {'T_m2': np.float64(0.001)}
+FEASIBLE red/tcpert/instances/tcR4_N8.pg 33 {'X_cr': np.float64(0.006), 'X_ln': np.float64(0.003)}
+FEASIBLE red/tcpert/instances/tcS8_N10.pg 16 {'X_m2': np.float64(0.001), 'W_cr': np.float64(0.001)}
+FEASIBLE red/tcpert/instances/tcS8_N11.pg 20 {'W_ln': np.float64(-0.003), 'T_ln': np.float64(0.004)}
+FEASIBLE red/tcpert/instances/tcS8_N6.pg 17 {'X_cr': np.float64(0.001)}
+FEASIBLE red/tcpert/instances/tcS8_N7.pg 14 {'W_ln': np.float64(-0.005), 'T_ln': np.float64(0.005)}
+FEASIBLE red/tcpert/instances/tcS8_N8.pg 10 {}
+FEASIBLE red/tcpert/instances/tcS8_N9.pg 36 {'X_m2': np.float64(0.004), 'X_cr': np.float64(0.002), 'W_m2': np.float64(0.001), 'W_cr': np.float64(0.001), 'W_ln': np.float64(-0.03), 'T_m2': np.float64(0.002), 'T_ln': np.fl
+FEASIBLE red/tpp/instances/tpp_viol_n22.pg 2 {'W_m3': np.float64(-0.001)}
+FEASIBLE red/tpp/instances/tpp_viol_n63.pg 8 {}
+FEASIBLE red/ul/instances/cxmig_k16_n138.pg 24 {}
+FEASIBLE red/ul/instances/cxmig_k4_n54.pg 12 {}
+FEASIBLE red/ul/instances/cxmig_k8_n82.pg 16 {}
+FEASIBLE red/ul/instances/ladderd0_k12_n48.pg 14 {}
+FEASIBLE red/ul/instances/ladderd0_k24_n84.pg 26 {}
+FEASIBLE red/ul/instances/ladderd0_k48_n156.pg 50 {}
+FEASIBLE red/ul/instances/ladderent_k12_n48.pg 14 {}
+FEASIBLE red/ul/instances/ladderent_k24_n84.pg 26 {}
+FEASIBLE red/ul/instances/ladderent_k48_n156.pg 50 {}
+FEASIBLE red/ul/instances/reader_L10_n36.pg 13 {}
+FEASIBLE red/ul/instances/reader_L20_n56.pg 23 {}
+FEASIBLE red/ul/instances/reader_L40_n96.pg 43 {}
+FEASIBLE red/usplit/instances/gate_K16_n197.pg 23 {}
+FEASIBLE red/usplit/instances/gate_K64_n581.pg 71 {}
+FEASIBLE red/usplit/instances/grow_K12_n149.pg 19 {}
+FEASIBLE red/usplit/instances/grow_K40_n373.pg 47 {}
+FEASIBLE red/usplit/instances/pairoc_n58.pg 5 {}
+FEASIBLE red/usplit/instances/pp_K12_n161.pg 19 {}
+FEASIBLE red/usplit/instances/pp_K12_n161_dual.pg 20 {}
+FEASIBLE red/usplit/instances/pp_K48_n449.pg 55 {}
+FEASIBLE red/usplit/instances/pp_K48_n449_dual.pg 56 {}
+FEASIBLE red/usplit/instances/usplit_n14.pg 3 {'W_m4': 2}
+FEASIBLE red/usplit/instances/usplit_n23.pg 9 {}
+FEASIBLE red/usplit/instances/usplit_rd_n24.pg 4 {}
+FEASIBLE red/usplit/instances/usplit_rd_s3_n27.pg 4 {}
+FEASIBLE red/usplit/instances/usplit_s3_n16.pg 3 {'X_m4': 1}
+FEASIBLE red/xctx/instances/nest3_n20.pg 2 {'T_ln': np.float64(0.2)}
+FEASIBLE red/xctx/instances/nest3_n24.pg 2 {'nD': -1}
+FEASIBLE red/xctx/instances/vrall_viol_n20.pg 4 {'T_cr': 5}
+FEASIBLE red/xctx/instances/xcov11_n20.pg 2 {}
+FEASIBLE red/xctx/instances/xctx_viol_n20.pg 5 {'nIt': np.float64(-0.245), 'nD': np.float64(-0.755)}
+INFEASIBLE red/xing/instances/fbref_cex_n32.pg 56 support 12 games ['red/xing/instances/fbref_cex_n32.pg'] exact
+FEASIBLE red/xing/instances/j10_n24.pg 25 {'X_m1': np.float64(2.215), 'X_m2': np.float64(-0.354), 'X_m3': np.float64(0.019), 'X_cr': np.float64(0.014), 'X_ln': np.float64(-0.988), 'W_m2': np.float64(-0.037), 'W_m3': np.f
+INFEASIBLE red/xing/instances/j4_n40.pg 106 support 14 games ['red/xing/instances/j4_n40.pg'] exact
+FEASIBLE red/xing/instances/j5_n16.pg 30 {'X_m1': np.float64(1.896), 'X_m2': np.float64(-0.703), 'X_m3': np.float64(0.073), 'X_m4': np.float64(-0.002), 'X_cr': np.float64(1.845), 'W_m2': np.float64(0.103), 'W_m3': np.flo
+FEASIBLE red/xing/instances/j7_n32.pg 50 {'X_m2': np.float64(-0.023), 'X_m3': np.float64(0.002), 'X_ln': np.float64(-0.061), 'W_m3': np.float64(0.001), 'W_cr': np.float64(0.616), 'W_ln': np.float64(-0.114), 'T_ln': np.fl
+INFEASIBLE red/xing/instances/j7_n48.pg 78 support 14 games ['red/xing/instances/j7_n48.pg'] exact
+FEASIBLE red/xing/instances/j8_n32.pg 54 {'X_m1': np.float64(20.122), 'X_m2': np.float64(-2.446), 'X_m3': np.float64(0.099), 'X_m4': np.float64(-0.001), 'X_cr': np.float64(2.62), 'X_ln': np.float64(-0.026), 'W_m2': np.fl
+INFEASIBLE red/xing/instances/j8_n48.pg 86 support 14 games ['red/xing/instances/j8_n48.pg'] exact
+FEASIBLE red/xing/instances/kw25_n32.pg 29 {'X_m2': np.float64(0.096), 'X_m3': np.float64(-0.011), 'X_cr': np.float64(0.33), 'W_m2': np.float64(0.171), 'W_m3': np.float64(-0.007), 'nIs': np.float64(-1.0)}
+FEASIBLE red/xing/instances/kw_n16.pg 12 {'X_m4': 2}
+FEASIBLE red/xing/instances/kw_n24.pg 20 {}
+FEASIBLE red/xing/instances/kw_n48.pg 40 {}
+FEASIBLE red/xing/instances/obr_eq_n24.pg 7 {'X_m3': np.float64(-0.012), 'X_m4': np.float64(0.001), 'W_m3': np.float64(-0.001), 'W_ln': np.float64(1.0)}
+FEASIBLE red/xing/instances/obr_n32.pg 22 {'X_m3': np.float64(-0.001), 'X_cr': np.float64(0.118), 'W_m3': np.float64(0.001), 'nIs': np.float64(-1.0)}
+FEASIBLE red/xing/instances/u1t_cex_n32.pg 12 {'X_m2': np.float64(-0.023), 'X_m3': np.float64(0.001), 'X_ln': np.float64(0.111)}
+FEASIBLE red/xing/instances/u1t_own6_n32.pg 9 {'X_cr': np.float64(0.034)}
+FEASIBLE red/xing/instances/u23sw64_n32.pg 16 {'X_m1': np.float64(-1.55), 'X_m2': np.float64(0.274), 'X_m3': np.float64(-0.016), 'X_cr': np.float64(0.281), 'X_ln': np.float64(0.304), 'W_m3': np.float64(-0.009), 'nIs': np
+FEASIBLE red/xing/instances/u2flat73_n32.pg 16 {'X_m2': np.float64(-0.01), 'X_cr': np.float64(0.296), 'X_ln': np.float64(-0.37), 'W_m3': np.float64(0.004)}
+FEASIBLE red/xing/instances/u2flat_n32.pg 13 {'X_m3': np.float64(-0.021), 'X_m4': np.float64(0.001), 'X_cr': np.float64(0.323), 'X_ln': np.float64(0.125), 'W_m3': np.float64(0.024), 'W_m4': np.float64(-0.001), 'W_ln': np
+FEASIBLE red/xing/instances/x31_cu16.pg 23 {'X_m2': 568, 'X_m3': -150, 'X_m4': 6, 'X_cr': 55667, 'W_m2': -21485, 'W_m3': 3379, 'W_m4': -132, 'W_ln': -74826}
+FEASIBLE red/xing/instances/x31_cu24.pg 22 {'X_m1': np.float64(0.069), 'X_m2': np.float64(0.019), 'X_m3': np.float64(-0.003), 'X_cr': np.float64(0.221), 'W_m2': np.float64(-0.045), 'W_m3': np.float64(0.005)}
+FEASIBLE red/xing/instances/x31_cu32.pg 49 {'X_m1': np.float64(0.81), 'X_m2': np.float64(-0.171), 'X_m3': np.float64(0.012), 'X_cr': np.float64(7.55), 'X_ln': np.float64(-0.117), 'W_m1': np.float64(6.363), 'W_m2': np.flo
+FEASIBLE red/xing/instances/x31_cu32i.pg 42 {'X_m0': np.float64(-218.441), 'X_m1': np.float64(42.552), 'X_m2': np.float64(-3.063), 'X_m3': np.float64(0.097), 'X_m4': np.float64(-0.001), 'X_cr': np.float64(0.936), 'X_ln':
+FEASIBLE red/xing/instances/x31_cu48.pg 46 {'X_m1': np.float64(0.276), 'X_m2': np.float64(-0.034), 'X_m3': np.float64(0.001), 'X_cr': np.float64(0.419), 'X_ln': np.float64(-0.027), 'W_m2': np.float64(0.004), 'W_cr': np.f
+FEASIBLE red/xing/instances/x31_lem_e24.pg 54 {'X_m2': np.float64(-0.195), 'X_m3': np.float64(0.009), 'X_cr': np.float64(1.209), 'W_m0': np.float64(-2198.839), 'W_m1': np.float64(560.563), 'W_m2': np.float64(-52.25), 'W_
+INFEASIBLE red/xing/instances/x31_lem_t32.pg 65 support 8 games ['red/xing/instances/x31_lem_t32.pg'] exact
+FEASIBLE red/xing/instances/x31_nh_e24.pg 20 {'X_m2': np.float64(-0.061), 'X_m3': np.float64(0.006)}
+FEASIBLE red/xing/instances/x31_nh_r20.pg 15 {'nIs': np.float64(-1.0)}
+FEASIBLE red/xing/instances/x31_re24.pg 6 {'X_cr': np.float64(0.047)}
+FEASIBLE red/xing/instances/x31_ru24.pg 7 {'X_cr': np.float64(0.029), 'nIs': np.float64(-1.0)}
+FEASIBLE red/xing/instances/x31_rx32.pg 55 {'X_m1': np.float64(46.66), 'X_m2': np.float64(-6.101), 'X_m3': np.float64(0.264), 'X_m4': np.float64(-0.004), 'X_cr': np.float64(12.996), 'X_ln': np.float64(-0.021), 'W_m1': np
+FEASIBLE red/xing/instances/x31_rx48.pg 53 {'X_m1': np.float64(0.88), 'X_m2': np.float64(-0.106), 'X_m3': np.float64(0.004), 'X_cr': np.float64(0.032), 'X_ln': np.float64(0.094), 'W_m0': np.float64(-374.048), 'W_m1': np.
+FEASIBLE red/xing/instances/x32_nest40.pg 58 {'X_m2': np.float64(-0.012), 'X_m3': np.float64(0.001), 'X_cr': np.float64(0.623), 'W_m2': np.float64(0.004), 'W_ln': np.float64(0.053), 'nIs': np.float64(-0.131)}
+FEASIBLE red/xing/instances/x32_rand16.pg 15 {'X_m3': 1112, 'X_m4': -78, 'nIs': -100000}
+FEASIBLE red/xing/instances/x32_rand24.pg 20 {'X_m4': -2}
+FEASIBLE red/xing/instances/x32_rand32.pg 29 {}
+FEASIBLE red/xing/instances/x32_rand48.pg 44 {}
+FEASIBLE red/xing/instances/x32_rand64.pg 56 {'nIs': np.float64(-1.0)}
+FEASIBLE red/xing/instances/x32_waves32.pg 81 {'X_m1': np.float64(14.688), 'X_m2': np.float64(-2.085), 'X_m3': np.float64(0.098), 'X_m4': np.float64(-0.002), 'X_cr': np.float64(24.088), 'X_ln': np.float64(0.901), 'W_m0':
+FEASIBLE red/xing/instances/x32_waves48.pg 89 {'X_m2': np.float64(-83.23), 'X_m3': np.float64(3.627), 'X_m4': np.float64(-0.039), 'X_cr': np.float64(15.225), 'X_ln': np.float64(-14.073), 'W_m1': np.float64(2836.203), 'W_
+FEASIBLE si/root/instances/cone_n65.pg 12 {'X_cr': np.float64(0.082), 'X_ln': np.float64(0.333), 'W_m3': np.float64(-0.001)}
+FEASIBLE si/root/instances/cone_n69.pg 25 {'X_ln': np.float64(0.032), 'T_ln': np.float64(0.007)}
+FEASIBLE si/root/instances/ueonce_n27.pg 12 {'X_cr': np.float64(0.263), 'W_m3': np.float64(-0.001)}
+SUMMARY mom_alt games 410 infeasible 36 smallest [(16, 26, 'n5-exhaustive/instances/b5_os_n16.pg'), (20, 34, 'n5-exhaustive/instances/b5_os_n20.pg'), (28, 65, 'n5-exhaustive/instances/b5_os_n28.pg'), (32, 47, 'n5-epoch/i

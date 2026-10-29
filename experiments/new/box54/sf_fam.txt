@@ -1,0 +1,32 @@
+ROW red/ctl/pivot_demo.pg 11 2 0 1 0 False 1 1 2 1
+ROW new/box54/out/d_pivot_demo.pg 11 2 0 1 0 False 0 1 2 1
+ROW red/seg/instances/runquad_K3_m4_n54.pg 54 21 1 2 0 False 1 1 2 1
+ROW red/seg/instances/runquad_K8_m30_n192.pg 192 264 1 2 0 False 1 1 2 1
+ROW red/seg/instances/s3quad_K3_m4.pg 137 21 1 2 0 False 1 1 2 1
+ROW red/seg/instances/s3quad_K8_m30.pg 479 264 1 2 0 False 1 1 2 1
+ROW new/box54/out/d_runquad_K3.pg 54 21 0 2 0 False 0 0 1 0
+ROW new/box52/out/topfix_n3.pg 63 61 2 64 0 False 6 4 10 19
+ROW new/box52/out/topfix_n4.pg 84 95 2 77 0 False 11 4 15 24
+ROW new/box52/out/topfix_n6.pg 126 181 2 91 0 False 14 4 17 36
+ROW new/box52/out/topfix_n8.pg 168 291 2 105 0 False 16 4 19 48
+ROW new/box52/out/topfix_n10.pg 210 425 2 119 0 False 18 4 21 60
+ROW new/box54/out/d_hntop_n3.pg 63 61 0 64 0 False 0 0 1 0
+ROW new/box52/out/topfix_n8_cmp.pg 171 291 2 105 0 False 47 4 50 48
+ROW new/box51/out/dlc_d2.pg 27 7 1 7 0 False 0 0 1 7
+ROW new/box51/out/dlc_d3.pg 109 15 1 15 0 False 0 0 1 15
+ROW new/box51/out/dlc_d4.pg 455 31 1 31 0 False 0 0 1 31
+ROW new/box54/out/d_dlc_d3.pg 109 15 0 15 0 False 0 0 1 0
+ROW si/runlin/instances/runfam_K10.pg 49 100 1 37 0 False 9 2 10 26
+ROW si/runlin/instances/runfam_K40.pg 79 172 1 39 0 False 9 2 10 28
+games=20 n5_it=2340 sf_it=781
+columns: game, n, N5 it, N5 phases, SF it, SF fb, SF cycle, SBC, LAM, SEG, SEGMAX
+max SF it/n = 1.016 ('new/box54/out/d_hntop_n3.pg', 63, 61, 0, 64, 0, False, 0, 0, 1, 0)
+max SBC/n = 0.275 ('new/box52/out/topfix_n8_cmp.pg', 171, 291, 2, 105, 0, False, 47, 4, 50, 48)
+max SEG/n = 0.292 ('new/box52/out/topfix_n8_cmp.pg', 171, 291, 2, 105, 0, False, 47, 4, 50, 48)
+max SEGMAX/n = 0.531 ('si/runlin/instances/runfam_K10.pg', 49, 100, 1, 37, 0, False, 9, 2, 10, 26)
+max SF/N5 = 1.049 ('new/box54/out/d_hntop_n3.pg', 63, 61, 0, 64, 0, False, 0, 0, 1, 0)
+WIN PASS
+OPT PASS
+R17 PASS
+FB PASS
+CYC PASS

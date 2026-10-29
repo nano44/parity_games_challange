@@ -1,6 +1,6 @@
-# Draft RESULTS R86 (Lead, 2026-10-29 14:00Z by date -u; both reports, both §Cs and the fixes file filled) — to CHECKER C95 (Lead reviewed 14:09Z by date -u: subagent draft; placements accepted (F2, F3 required fixes in the signed wording as in R85; λ-run MATCH-Φ signed inside §6 where both cells carry it; REFEREE C5 recorded); title parenthesis balanced)
+# Draft RESULTS R86 (Lead, 2026-10-29 14:00Z by date -u; both reports, both §Cs and the fixes file filled) — to CHECKER C95 (Lead reviewed 14:09Z by date -u: subagent draft; placements accepted (F2, F3 required fixes in the signed wording as in R85 [superseded at C95: F2's general form is Referee strengthening (0)]; λ-run MATCH-Φ signed inside §6 where both cells carry it; REFEREE C5 recorded); title parenthesis balanced) (rev. 14:30Z by date -u: fixes pin updated to l-si e7c7dd78, sha1 b4c69e11, 164 lines (F11 +3 lines: the Lead's D2/D3 ruling)) (rev. 14:58Z by date -u: C95 E-1 moves 1-4 and E-2 applied verbatim from C95 §3-§4; §5 replacements 1-5 applied; N-1..N-3 not applied) (rev. 15:12Z by date -u: C95 N-4 applied verbatim: title "dually for Odd's switches with λ^U constant" → "dually for Odd's switches in every λ^U-run") — LANDED in RESULTS Results 2026-10-29 15:26Z (CHECKER C95 Add. 2 79f2ba92 PASS), after R85
 
-### R86 [refereed-only] N5 on EVERY game: with λ (λ^U) the cycle-node map of Even's valuation Ξ (Odd's valuation U of τ on G^d), a λ-run (λ^U-run) a maximal run of states with λ (λ^U) constant, and, for a stretch R of consecutive states of one run, ENT_R(v, c) the transitions of R at which v's strategy enters c, SW_R(v) := Σ_c ENT_R(v, c) the switches of v, RISE_R(c) the transitions of R at which Ξ(c) changes and PCH_R(c) those at which c's path set P(Ξ c) changes: ENT_R(v, c) ≤ 1 + RISE_R(c) on every stretch, for every Even v and vertex c (Lemma SW-RETURN; dually for Odd v with U on G^d); RISE_R(c) ≤ PCH_R(c) + (PCH_R(c) + 1)(n − 1) on every stretch R with λ constant (Lemma LEN-MONO; dually with λ^U); so on such a stretch Σ_v SW_R(v) ≤ Σ_{(v, c) ∈ E, v Even, SW_R(v) > 0} (1 + RISE_R(c)) ≤ Σ_{(v, c)} n·(PCH_R(c) + 1) ≤ m_E·n·(P*_R + 1), P*_R := max_c PCH_R(c), and a phase 𝒫 has |𝒫| ≤ Σ_v SW_𝒫(v) ≤ the same sums over 𝒫, |𝒫| := the number of transitions t → t + 1 with t, t + 1 ∈ 𝒫 (Theorem COMPOSE; dually for Odd's switches with λ^U constant); hence every N5 run on every game has T ≤ 2n(n − 1) + (n(n − 1) + 1)·n·(m_E(P* + 1) + m_O(P*^U + 1)) transitions (iterations), P* (P*^U) the most path-set changes of one vertex's Ξ (U) inside one λ-run (λ^U-run) and m_E (m_O) the number of edges leaving Even (Odd) vertices (Corollary COMPOSE-RUN, via RESULTS R47 (a)'s every-game count: at most n(n − 1) transitions change λ and at most n(n − 1) change λ^U); and if MATCH-Φ's bound holds with "phase" replaced by "λ-run" ("λ^U-run" on G^d, read with G^d's parities), then P*_R ≤ (n²/2)(NM*_R + 1) + NM*_R, NM*_R the most carries of one vertex in R, and T is bounded by a polynomial in n, m and the largest carry count NM* = max(NM*_Even, NM*^U) (Corollary COMPOSE-NM, an implication), whose premise both referees sign as holding, with RESULTS R85's MATCH-Φ (landed at trunk 17f51175; landed check pending), because MATCH-Φ's proof reads verbatim on any stretch with v's cycle node fixed (2026-10-29) — a REDUCTION of N5's iteration count to per-vertex path-set changes P*, P*^U and, with MATCH-Φ, to carries NM*, NM*^U (none of which is bounded here; carries of one vertex reach Θ(N²) per phase, and through the dual mirror per λ^U-run, on L-RED's families, DATA only; not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C95.md, checker PENDING)
+### R86 [refereed-only] N5 on EVERY game: with λ (λ^U) the cycle-node map of Even's valuation Ξ (Odd's valuation U of τ on G^d), a λ-run (λ^U-run) a maximal run of states with λ (λ^U) constant, and, for a stretch R of consecutive states of one run, ENT_R(v, c) the transitions of R at which v's strategy enters c, SW_R(v) := Σ_c ENT_R(v, c) the switches of v, RISE_R(c) the transitions of R at which Ξ(c) changes and PCH_R(c) those at which c's path set P(Ξ c) changes: ENT_R(v, c) ≤ 1 + RISE_R(c) on every stretch, for every Even v and vertex c (Lemma SW-RETURN; dually for Odd v with U on G^d); RISE_R(c) ≤ PCH_R(c) + (PCH_R(c) + 1)(n − 1) on every λ-run R and on every phase R = 𝒫 (Lemma LEN-MONO; dually on λ^U-runs with λ^U); so on every λ-run R Σ_v SW_R(v) ≤ Σ_{(v, c) ∈ E, v Even, SW_R(v) > 0} (1 + RISE_R(c)) ≤ Σ_{(v, c)} n·(PCH_R(c) + 1) ≤ m_E·n·(P*_R + 1), P*_R := max_c PCH_R(c), and a phase 𝒫 has |𝒫| ≤ Σ_v SW_𝒫(v) ≤ the same sums over 𝒫, |𝒫| := the number of transitions t → t + 1 with t, t + 1 ∈ 𝒫 (Theorem COMPOSE; dually for Odd's switches in every λ^U-run); hence every N5 run on every game has T ≤ 2n(n − 1) + (n(n − 1) + 1)·n·(m_E(P* + 1) + m_O(P*^U + 1)) transitions (iterations), P* (P*^U) the most path-set changes of one vertex's Ξ (U) inside one λ-run (λ^U-run) and m_E (m_O) the number of edges leaving Even (Odd) vertices (Corollary COMPOSE-RUN, via RESULTS R47 (a)'s every-game count: at most n(n − 1) transitions change λ and at most n(n − 1) change λ^U); and if MATCH-Φ's bound holds with "phase" replaced by "λ-run" ("λ^U-run" on G^d, read with G^d's parities), then P*_R ≤ (n²/2)(NM*_R + 1) + NM*_R, NM*_R the most carries of one vertex in R, and T is bounded by a polynomial in n, m and the largest carry count NM* = max(NM*_Even, NM*^U) (Corollary COMPOSE-NM, an implication), whose premise both referees sign as holding, with RESULTS R85's MATCH-Φ (landed at trunk 17f51175; CHECKER C94 Add. 2 PASS, b7461dd7), because MATCH-Φ's proof reads verbatim on every λ-run (λ^U-run on G^d), where c = λ(v) is fixed (2026-10-29) — a REDUCTION of N5's iteration count to per-vertex path-set changes P*, P*^U and, with MATCH-Φ, to carries NM*, NM*^U (none of which is bounded here; carries of one vertex reach Θ(N²) per phase, and through the dual mirror per λ^U-run, on L-RED's families, DATA only; not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C95.md, checker PENDING)
 - Object (L-SI successor 24, Opus 5.5, D18, Lead reading L40; frozen, unchanged during review): packet P-N5-COMPOSE,
   docs/si/P-N5-COMPOSE-box28.md, sha1 e1b977aa9cf1583d5e0c442a8f87d024230b6524, 141 lines (l-si freeze
   3ca0932d44c407fed38e5fb930744d7107ee79c8, 2026-10-29T11:34:00Z; quote bases b025560c9 (SPEC, RESULTS) and a23179b01 (P-N5-MPGS);
@@ -9,8 +9,10 @@
   both referees measured the packet sha1 and the pins): §1 setting with (F-SW) and (F-MON), §2 Lemma SW-RETURN, §3 Lemma LEN-MONO, §4
   Theorem COMPOSE, §5 Corollary COMPOSE-RUN, §6 Corollary COMPOSE-NM (the implication), §7 DATA. The referees' notes are collected by the
   lane in docs/si/P-N5-COMPOSE-fixes-box28.md (F1-F10: L-SI successor 25, l-si 45778960, sha1 3d63f0ab there; F11-F14 appended by L-SI
-  successor 26 at l-si 4e928f11aeed2bb38954efa785ef6b93989b3cdf, 2026-10-29T13:36:48Z, append-only (git diff 45778960 4e928f11: 55
-  lines added, 0 removed); at 4e928f11 and on trunk sha1 d1d265d71878b2d0bef8a0e029d9e42b21d222bf, 161 lines; 19 quotes checked by
+  successor 26 at l-si 4e928f11aeed2bb38954efa785ef6b93989b3cdf, 2026-10-29T13:36:48Z, append-only (git diff 45778960 4e928f11: 55 lines
+  added, 0 removed; then e7c7dd78, 2026-10-29T14:17:47Z, +3 lines in F11 recording the Lead's 13:43Z ruling "D2 … and D3 … are REQUIRED
+  appended items, the conservative reading", no statement change); at e7c7dd78 and on trunk sha1 b4c69e110d3c57eae73697d36729134f60ab5ea1,
+  164 lines; 19 quotes checked by
   docs/si/P-N5-COMPOSE-fixes-quotecheck.py, sha1 45ff072708e4bd78591174fc556ea19040496470, "quotes=19 bad=0", a mutated quote caught in
   check.sh). The fixes file: "This file changes NO signed statement and NO proof step; every F-item below is APPENDED text that is read
   together with the packet". F1 and F11 define |𝒫| as the number of transitions (COMP-E1, E-item of both referees); F2 reads LEN-MONO and
@@ -39,16 +41,16 @@
   (P). Premises LANDED: SPEC S1 (valuation, order, Ξσ), S2, S4a-c (quote base b025560c9); RESULTS R15 (a) Lemma A ([MON]) and (d)
   ([STEP]); RESULTS R47 (a) Lemma Φ (every game), item (c) only ([Φ]); RESULTS R84 (a) Fact DELTA; RESULTS R38 (a), as the phase
   definition only. Premise for (e) only: RESULTS R85 (A) (P-N5-MPGS; landed at trunk 17f51175,
-  2026-10-29T14:02:36Z, CHECKER C94 Add. 1 7e309075; CHECKER's landed check pending).
+  2026-10-29T14:02:36Z, CHECKER C94 Add. 1 7e309075; landed check C94 Add. 2 PASS, b7461dd7).
   (a) Lemma SW-RETURN (§2): "For every run of states R of an N5 run, every Even v and every vertex c: ENT_R(v, c) ≤ 1 + RISE_R(c).
       Dually for Odd v with U." (Ξ-SUCC: Ξ_t(σ_t v) is non-decreasing in t, by (F-MON), (F-SW) and [S2]. For consecutive entries e < e′
       of v into c and the step s ∈ [e + 1, e′ − 1] at which v leaves c: Ξ_{e′}(c) ▷ Ξ_{e′}(σ_{e′} v) ⊵ Ξ_{s+1}(σ_{s+1} v) ⊵ Ξ_s(σ_{s+1}
       v) ▷ Ξ_s(c) ⊵ Ξ_{e+1}(c), so Ξ(c) changes at a transition in [e + 1, e′ − 1] ⊆ R; these windows are disjoint.) Cells: REFEREE
       "SIGNED", REFEREE-2 "SIGNED"; REFEREE §2: "No phase, no λ, no τ used: it holds on ANY stretch of consecutive states, fallbacks
       included."
-  (b) Lemma LEN-MONO (§3), with F2: "For every λ-run R and every vertex c: RISE_R(c) ≤ PCH_R(c) + (PCH_R(c) + 1)(n − 1). Dually for
+  (b) Lemma LEN-MONO (§3) on every λ-run and, with F2, on every phase 𝒫 (a stretch inside one λ-run, RISE_𝒫 and PCH_𝒫 counted inside 𝒫): "For every λ-run R and every vertex c: RISE_R(c) ≤ PCH_R(c) + (PCH_R(c) + 1)(n − 1). Dually for
       λ^U-runs with U.", F2 appended: "In Lemma LEN-MONO and in Theorem COMPOSE's first statement, "every λ-run R" is to be read as
-      "every stretch R of consecutive states on which λ is constant" (dually λ^U); a λ-run and a phase are such stretches." (On R the
+      "every stretch R of consecutive states on which λ is constant" (dually λ^U); a λ-run and a phase are such stretches." Signed here for λ-runs and phases only; F2's reading for every stretch with λ constant: Referee strengthening (0). (On R the
       cycle node c₀ of Ξ_t(c) is fixed; by (F-MON) and [S1-ord] the weight of P never falls and rises strictly at a P-change ([DELTA]),
       so the P-values form PCH_R(c) + 1 contiguous blocks; inside a block only ℓ changes, strictly in the direction [S1-ord] prefers for
       Ω(c₀), and ℓ ∈ {0, …, n − 1}; so RISE_R(c) ≤ n·PCH_R(c) + n − 1.) Cells: REFEREE "SIGNED" (row "Lemma LEN-MONO (any λ-run /
@@ -56,7 +58,7 @@
       §4, inside its signed phase part: "a phase lies inside one λ-run, so LEN-MONO applies to it (cycle nodes fixed)"; REFEREE §C
       C3: "I agree: the proof never uses maximality" (classed "optional (wording; one word)"); REFEREE-2 §C D2: "Applying the λ-run
       bound to the enclosing λ-run would give PCH_R, not PCH_𝒫, so the phase statement needs the stretch form".
-  (c) Theorem COMPOSE (§4), with F1/F11 and F2: "For every λ-run R of an N5 run on any game, the Even switches inside R satisfy Σ_v
+  (c) Theorem COMPOSE (§4), with F1/F11, and F2 for the phase statement: "For every λ-run R of an N5 run on any game, the Even switches inside R satisfy Σ_v
       SW_R(v) ≤ Σ_{(v, c) ∈ E, owner(v) = Even, SW_R(v) > 0} (1 + RISE_R(c)) ≤ Σ_{(v, c)} n·(PCH_R(c) + 1) ≤ m_E·n·(P*_R + 1). For every
       phase 𝒫 (inside a λ-run R): |𝒫| ≤ Σ_v SW_𝒫(v) ≤ the same sums with R replaced by 𝒫. Dually for Odd's switches in a λ^U-run.";
       F2: "Theorem COMPOSE's phase statement is the first statement applied to the stretch 𝒫, with RISE_𝒫, PCH_𝒫 counted inside 𝒫."
@@ -86,7 +88,7 @@
       VALID (Lead's point (3), §2.5). Read NM^U with G^d's parities (N-C3)". The λ^U-run side: REFEREE's cell names λ-runs; its §6,
       which the cell cites: "on λ^U-runs it holds for U on G^d (G^d is a game with the same ranks; MATCHED is then read with G^d's
       parities)"; REFEREE-2 §2.5: "MATCH-Φ's proof holds for every parity pattern, so the bound holds (N-C3)". Hence, with RESULTS R85's
-      MATCH-Φ (landed at 17f51175, landed check pending): P*_R ≤ (n²/2)(NM*_R + 1) + NM*_R on every λ-run R (and on every λ^U-run,
+      MATCH-Φ (landed at 17f51175, landed check PASS b7461dd7): P*_R ≤ (n²/2)(NM*_R + 1) + NM*_R on every λ-run R (and on every λ^U-run,
       NM^U read on G^d), and T is bounded by a polynomial in n, m and NM*. This is the λ-run form that RESULTS R85 carries as Referee
       strengthening (0), "To be signed with P-N5-COMPOSE, which uses it" (CHECKER C94 §3).
 - Not signed: §7 (DATA; REFEREE "DATA, not signed; reproduced EXACTLY (below)", REFEREE-2 "DATA, not signed. Reproduced EXACTLY
@@ -97,6 +99,11 @@
   "When P-N5-MPGS lands, §6's premise is that entry plus this referees' remark") and F9, F13, F14: lane records ("This file is a lane
   record, not refereed text"). F4-F6 (optional wording): bullet "Referee strengthening" (i), (ii).
 - Referee strengthening (NOT part of this entry; remarks of one or both referees outside the verdict cells, or optional wording):
+  (0) F2's general reading (N-C2 = REFEREE-2 §C D2; the Lead ruled D2 required as appended text, 13:43Z): LEN-MONO and Theorem
+  COMPOSE's first statement on every stretch of consecutive states with λ (λ^U) constant. REFEREE-2 §3 cell: "SIGNED (it holds on any
+  stretch with λ constant: N-C2)"; REFEREE: its §3 row signs "any λ-run / λ^U-run", its §4 applies the Lemma to a phase ("a phase lies
+  inside one λ-run, so LEN-MONO applies to it (cycle nodes fixed)"), and its §C C3 "I agree: the proof never uses maximality", classed
+  "optional (wording; one word)". Not used by any signed item beyond λ-runs and phases.
   (i) COMP-N2 = D5 (F5): RISE_R(c) counts changes of Ξ(c), and by (F-MON) every such change is a strict rise. REFEREE §8: "COMP-N2:
   SW-RETURN's RISE_R(c) counts CHANGES of Ξ(c); by F-MON they are rises."; REFEREE-2 §C D5: "Agreed" (class "opt"). The signed items
   count changes (≠), as defined. (ii) COMP-N3 = D6 (F6): (F-MON)'s set is I := {(v, σ_{t+1}(v)) : σ_{t+1}(v) ≠ σ_t(v)} ⊆ Iσ_t by (F-SW);
@@ -111,8 +118,7 @@
   §6); it can be stated as a remark of the landed MPGS entry rather than an assumption."; REFEREE §C C5 (1680010b): "§6 can land as
   "COMPOSE-RUN with [MΦ] (citing the landed MPGS entry) gives …", the λ-run transfer as a referees' remark."; REFEREE-2 §C D7: "Agreed.
   It is now confirmed by both referees (R2-N5-MPGS-C, "§1b AGREED"), so the packet's ASSUMED label on [MΦ] is resolved once MPGS lands"
-  (opt). Status: this entry states the λ-run form inside item (e) because both §6 verdict cells carry it; whether R85 itself carries it
-  as a remark is the Lead's and CHECKER's call.
+  (opt). Status: this entry states the λ-run form inside item (e) because both §6 verdict cells carry it; R85 as landed carries it as Referee strengthening (0), "To be signed with P-N5-COMPOSE, which uses it"; this entry signs it (item (e)).
 - Honest limits: (i) COMPOSE is a REDUCTION of N5's total iterations to P*, P*^U and, with R85's MATCH-Φ, to the carries NM*, NM*^U.
   None of them is bounded here (packet SCOPE: "P* and the carry counts are NOT bounded here"; REFEREE: "Nothing here bounds P* or NM*").
   The bound is polynomial in n, m and P* (or NM*), and P* is not bounded. NM* and NM*^U are OPEN. DATA only, not refereed: L-RED's R109
@@ -128,7 +134,7 @@
   "neither shows the λ restriction of LEN-MONO is needed". The restriction of the phase bound to phases is needed (REFEREE MUT 4: 423
   violations on whole λ-runs), and so are SW-RETURN's "+1" and LEN-MONO's length term (MUT 1, MUT 3; REFEREE-2 X_SWR0, X_LEN0). (iv)
   Slack (READING, packet §7 and COMP-N5): "the factor n of LEN-MONO and MΦ's n²/2 are the loose links". (v) Not M3, not a step-4 pass,
-  not a TARGET.md claim; G-N5-TIME stays open. Item (e)'s conclusion rests on R85 (A) (landed check pending).
+  not a TARGET.md claim; G-N5-TIME stays open. Item (e)'s conclusion rests on R85 (A) (landed at 17f51175, landed check PASS b7461dd7).
 - Data (DATA, not proof): pinned (packet §7; experiments/si/chg/compose.py, sha1 9fc3b081bff815a72597a394af918786e3d6f2ec, check.sh box
   28 §9), run as `python3 -I` from experiments/si: runquad_K8_m30_n192 "TOP (263, 'chg/instances/red/runquad_K8_m30_n192.pg', 0, 263,
   481, 1016, 195072, 265890048, 8, 15, 15, 15, 192)" (L = 263 ≤ S1 = 481 ≤ S2 = 1,016 ≤ S3 = 195,072 ≤ S4; max NM 8, max PCH = max

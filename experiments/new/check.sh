@@ -165,4 +165,47 @@ if [ $ok = 1 ] && grep -q ", 1, 122, 8, 0, 74, 30, 0, 25, 6, 6, 41)" <<<"$v1" &&
 else
   echo "box 52 RLV checks: FAILED"; exit 1
 fi
+# Box 53 (successor 32): N5-RANK: exact Farkas-circuit certificates (no linear / lexicographic ranking function) for F24, F24m, F45, edge bits; corrupted control.
+v=$(cd ../.. && python3 -I experiments/new/box53/cert.py experiments/new/box53/cert/f0_u23sw64_n32.json experiments/new/box53/cert/f4_b5_os_n16.json experiments/new/box53/cert/f5_returns_ph64.json experiments/new/box53/cert/f6_lend9_n8.json)
+bad=$(mktemp); python3 -c "import json,sys; c=json.load(open('box53/cert/f6_lend9_n8.json')); c['y'][0][1]+=1; json.dump(c,open(sys.argv[1],'w'))" $bad
+if [ "$(grep -c "CERT OK" <<<"$v")" = 4 ] && ! (cd ../.. && python3 -I experiments/new/box53/cert.py $bad >/dev/null); then
+  echo "box 53 RANK: 4 certificates exact (F24 u23sw64_n32 / F24m b5_os_n16 / F45 returns_ph64 / edge bits lend9_n8), control fails: PASS"
+else
+  echo "box 53 RANK checks: FAILED"; exit 1
+fi
+rm -f $bad
+# Box 54 (successor 32): N5-SF: fallback instance (NOFB dead), W-frame twin cycles on theta_thf16, switchbestexp_2 (SF 58 vs N5 32), topfix_3 (SF 64).
+v1=$(python3 -I box54/sfrun.py ../n5-exhaustive/instances/n3all_maxph_0.pg ../n5-exhaustive/instances/n3all_maxph_0.start)
+v2=$(MODE=w python3 -I box54/sfrun.py ../red/n5inj/instances/theta_thf16.pg)
+v3=$(python3 -I box54/sfrun.py box54/out/switchbestexp_2.pg)
+v4=$(python3 -I box54/sfrun.py box52/out/topfix_n3.pg box52/out/topfix_n3.start)
+ok=1; for v in "$v1" "$v3" "$v4"; do for k in WIN OPT R17 CYC; do grep -q "^$k PASS" <<<"$v" || ok=0; done; done
+if [ $ok = 1 ] && grep -q "^ROW ../n5-exhaustive/instances/n3all_maxph_0.pg 3 3 1 2 1 False" <<<"$v1" && grep -q "^CYC FAIL" <<<"$v2" && \
+   grep -q "^ROW box54/out/switchbestexp_2.pg 60 32 2 58 0 False 4 0 5 19" <<<"$v3" && grep -q "^ROW box52/out/topfix_n3.pg 63 61 2 64 0 False" <<<"$v4" && \
+   [ "$(sha1sum ../red/n5inj/instances/theta_thf16.pg | cut -d' ' -f1)" = "90ed13cf9e2c81c1aa3ab3c2058ac736a1ed489b" ]; then
+  echo "box 54 N5-SF: correct on the pins, fallback fires (n3all_maxph_0), W-frame twin cycles (theta_thf16), switchbestexp_2 58 vs 32: PASS"
+else
+  echo "box 54 N5-SF checks: FAILED"; exit 1
+fi
+# Box 55 (successor 33): packet P-N5-SF (docs/new/P-N5-SF-box55.md §4): pcheck on three pins (DECOUPLE orbit, SF-RED step identity, bounds), MUT bites, quotes; NO-TRANSFER on switchbestexp_2.
+w1=$(python3 -I box55/pcheck.py ../n5-exhaustive/instances/n3all_maxph_0.pg ../n5-exhaustive/instances/n3all_maxph_0.start)
+w2=$(python3 -I box55/pcheck.py box54/out/switchbestexp_2.pg)
+w3=$(python3 -I box55/pcheck.py ../red/n3/instances/n3cov_lean.pg ../red/n3/instances/n3cov_lean.start)
+w4=$(MUT=1 python3 -I box55/pcheck.py box54/out/switchbestexp_2.pg || true)
+w5=$(python3 -I box55/ntcheck.py box54/out/switchbestexp_2.pg)
+if grep -q "^CHECK PASS" <<<"$w1" && grep -q "^CHECK PASS" <<<"$w2" && grep -q "^CHECK PASS" <<<"$w3" && \
+   grep -q "^ROW E_ n 3 m 6 values 3 orbit 3 SBC 1 LAM 1 SEG 2 SEGMAX 1$" <<<"$w1" && \
+   grep -q "^ROW E_ n 60 m 130 values 59 orbit 59 SBC 4 LAM 0 SEG 5 SEGMAX 18$" <<<"$w2" && \
+   grep -q "^ROW E_ n 48 m 128 values 29 orbit 29 SBC 11 LAM 4 SEG 12 SEGMAX 6$" <<<"$w3" && \
+   grep -q "^ROW O_ n 48 m 128 values 6 orbit 6 SBC 3 LAM 5 SEG 6 SEGMAX 0$" <<<"$w3" && \
+   grep -q "^E_ORB_V" <<<"$w4" && grep -q "^CHECK FAIL" <<<"$w4" && grep -q "^NT PASS" <<<"$w5" && \
+   [ "$(sha1sum box54/out/switchbestexp_2.pg | cut -d' ' -f1)" = "b3d5bc293d1b76ce5c7ae8dadc4e9b0b51294484" ] && \
+   [ "$(sha1sum ../red/n3/instances/n3cov_lean.pg | cut -d' ' -f1)" = "bcf8dbf64cba48123dc7da849b179793257e13e1" ] && \
+   [ "$(sha1sum ../../docs/new/P-N5-SF-box55.md | cut -d' ' -f1)" = "dbc2345f62454d442e951de025b1b2aef8a35317" ] && \
+   python3 -I box49/quotecheck3.py ../../docs/new/P-N5-SF-box55.md | grep -q "quotes=18 bad=0" && \
+   ! python3 -I box49/quotecheck3.py ../../docs/new/P-N5-SF-box55.md --mut >/dev/null; then
+  echo "box 55 P-N5-SF: pcheck PASS on n3all_maxph_0 (fallback), switchbestexp_2 (SBC 4), n3cov_lean (LAM 4, SBC 11), MUT bites; quotes PASS: PASS"
+else
+  echo "box 55 P-N5-SF checks: FAILED"; exit 1
+fi
 rm -rf "$tmp"
