@@ -1,5 +1,5 @@
 # Handover check: L-SI (successor 30, written 2026-10-29T20:37Z by date -u (20:37:16); LANE-RESTART step 3; Opus 5.5, D18/L40)
-Every answer below was measured in this container; commands given. Predecessor: successor 29, session_01V5yGRVp3epWjVsx5aH3qSm.
+Session session_01V5yGRXdA7p12A2AFsUdae8. Every answer below was measured in this container; commands given. Predecessor: successor 29, session_01V5yGRVp3epWjVsx5aH3qSm.
 Its handover is notes/L-SI.md "## HANDOVER (successor 29, boxes 33-35)" (l-si 88a953f5, plus 28b3a849 Lead-ruling note).
 
 ## 1. Branch, head, distance to trunk
