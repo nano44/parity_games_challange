@@ -124,8 +124,9 @@ DATA (grun/relseg.py; every segment with (H4′_rel) checked per vertex and for 
   nothing beyond one wave. READING: within a gap only lengths move at the relevant gates (P fixed, cycle node fixed in the phase), which is
   the Bellman-Ford regime of RESULTS R74 FREEZE-A / FREEZE-G (path weights frozen, lengths settle in < |A| rounds); a proof would extend
   STATIC-DEPTH-REL across length-only gate changes. NOT proved.
-- Fixed-size SEG climbs (CN 0, 30,000 steps; grun/out/sz*.log; status at 04:4xZ, three still running): n ≤ 48: SEG 38 at n 48 (0.79n) from
-  pftheta34, 32 at n 48 from so_sor5; n ≤ 64: SEG 36 and 26 at n 64. SEG at fixed size does not rise above ~0.8n as n grows from 32 to 64.
+- Fixed-size SEG climbs (CN 0, 30,000 steps; grun/out/sz*.log): n ≤ 48: SEG 40 at n 47 (0.85n, sz48a, from pftheta34) and 32 at n 48 (from
+  so_sor5); n ≤ 64: SEG 40 at n 64 (sz64a, stopped by me at step 20,110 to close the session's work) and 26 at n 64 (sz64b). Best absolute
+  SEG grows only from 29 (n 29) to 40 (n 47-64): no sign of super-linear growth from these seeds.
 
 ## 6. Pins (grun/out/; sha1sum)
 - rdr_K10: runfam_K10 + 25 Odd readers, n 74, run [1, 100] (99), G 91, SEG 9. .pg a7ac4830ddfd9c49a3c0ad1379cae26299a35bee, .start
