@@ -40,6 +40,26 @@ B1′ (i) (P(π) = ∅) is stated for c of either parity, where R17's Case B had
 for both parities: x and the arc vertices of c's cycle are less relevant than c (c is the top of that cycle), and P(π) = ∅ says no vertex of
 π is more relevant than c, so top(Z) = c whatever c's parity, and val_ρ̂(x) = (c, ∅, |π| + 1) = x ⊕ W_k(z).
 
+## G6-G11. REFEREE-2 20's notes N-GP-1..6 (report docs/referee-2/R2-N5-GP.md, referee-2 4835eb3d; SIGNED all, no gap). Appended at the Lead's 17:17Z request
+- G6 (N-GP-1, quote form): agreed; the elision in [CASE-A] is faithful. The elided text is A1's closing parenthetical, in full
+  (docs/new/N5-phase-bound-box10.md lines 34-35 at 2a435f8f4): «(If the cycle node c of Ω_k(ρ_k(x)) differs from u, then value(r') ⪯ Ω_k(ρ_k(x))
+  forces c better than u, and the prefixed values are ordered the same way.)» GP*'s Case A uses it in the same way, through [V2]'s «(or whose
+  cycle nodes differ)».
+- G7 (N-GP-2, standing premises): agreed; this complements G1 (GP-N1) and does not repeat it. W-MON reads S4a's σ_new (S1 on the dual of H_t)
+  as Even's pointwise optimum of H_t. This needs the exact order reversal between G^d and G and the SPEC-conformance premise (R57 (b)); together
+  these are G1's [OPT-H]. XW's first part is R57 (a)'s (VJ) premise: σ̄ minimises S1's order at every vertex at once (G1's [OPT-σ̄], optimality
+  half).
+- G8 (N-GP-3): agreed; see G5 (GP-N5). B1′ (i) covers both parities of c in one formula because [V2] needs no parity. This is the one place
+  where GP*'s Case B is strictly more general than R17's (R17 had P(π) = ∅ only with c odd, forced by improvement).
+- G9 (N-GP-4, cycle shape in B1′): agreed. Z = x, π, then the arc of c's ρ_k-cycle from c back to x, is a simple cycle. Since x ∉ π, π's
+  part on c's cycle (from the vertex where π enters it, up to c) does not contain x. Going around the cycle from c, x therefore comes before
+  that entry vertex, so the arc c → x and π meet only at c.
+- G10 (N-GP-5, §3a wording): agreed. In the §0 table, «each also follows from §3's Case A / Case B directly» means: run §3's induction with
+  «timely (timely⁺) at state k», i.e. «r_{i+1} ∈ ALLOWED(⁺)(r_i, k − 1 − i)», in place of «unblocked at state k». The non-blocked cases of
+  §3a alone do not conclude without that induction. §3a's proof (reduction to GP*) is the one to sign.
+- G11 (N-GP-6, R*_T): agreed; G0 already uses R*_T. R_T (FW-R′ of docs/si/N5-SPC-box31.md §4, adoptions of edges not in ALLOWED⁺) satisfies
+  R_T ≥ R*_T, because every blocked edge is outside ALLOWED⁺ (§3a). So a line stated with R_T would be implied by FW-R*, but weaker.
+
 ## DONE / FINDINGS / NEEDS
-- DONE: G0-G5 above. FINDINGS: GP-E1 is a RESULTS-line wording error (mine, approved at 16:26Z), not a packet error; GP-N1-N5 accepted, no
-  change to any proof. NEEDS: none from the owner.
+- DONE: G0-G5 above (REFEREE 18), G6-G11 (REFEREE-2 20). FINDINGS: GP-E1 is a RESULTS-line wording error (mine, approved at 16:26Z), not a packet error; GP-N1-N5 and N-GP-1..6
+  accepted, no change to any proof. NEEDS: none from the owner.

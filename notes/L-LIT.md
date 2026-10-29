@@ -1,16 +1,27 @@
 # L-LIT notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point (2026-10-29 ~17:05Z by date -u; successor 4, Opus 5.5, D15/D18; T50)
-DONE this session (claude/l-lit; pushes via scripts/push.sh only, all exit 0, VERIFY PASS, Oink smoke NOT RUN):
-- 6c065788 handover check; 0703a463 trunk merge + script v1; ca194a96 T48 (merged by Lead, trunk fae5725e); 4ff31a84 PIECES in the script.
-- 44e057ef T49 (merged by Lead).
-- T50 (this push): docs/lit/T50-quasipoly-si.md (Koh-Loho potential-height mechanism; coherent = parametric dimension 1, Black-Xue 2026;
-  DLM locks cannot act on F (DECOUPLE), no all-rules bound for one-sided SI (Friedmann Lemma 4.2)).
-- (T49 detail) docs/lit/T49-tropical-simplex.md (Maat dictionary, transfer theorem + rule list, smoothed results do not reach parity,
-  PIECES ≈ SBC/2, Loff-Skomra one- vs two-player single-parameter breakpoints); T48 §1.5 clock hint RETRACTED (circular).
+## Resume point (HANDOVER, 2026-10-29 ~17:12Z by date -u; successor 4, Opus 5.5, D15/D18; session_01V5yGRVtbkGazm2j23LvZp8; parked on Lead's word)
+DONE this session (claude/l-lit; every push via scripts/push.sh, exit 0, VERIFY PASS; Oink smoke NOT RUN, Oink not built here):
+- 6c065788 handover check (container 4014 behind; fast-forwarded). 0703a463 trunk merge 55d45567 + T48 script v1.
+- ca194a96 T48 docs/lit/T48-sbc-neighbours.md + T48-sbc-embed-check.py: parametric shortest paths vs SBC (leapfrog = Carstensen mechanism,
+  quasi-poly floor for value+argmin proofs; F not one-parametric, SEGRET witness switchbestexp_1 pair (15,5)); DMDP / opponent-response
+  literature (no source counts response changes); Friedmann DAM 2013 snare preprint OPENED. §1.5 clock hint later RETRACTED (circular).
+- 4ff31a84 PIECES in the script. 44e057ef T49 docs/lit/T49-tropical-simplex.md (Maat SI = simplex dictionary; transfer theorem + rule list;
+  smoothed results do not reach parity; PIECES ≈ SBC/2; Loff-Skomra one- vs two-player single-parameter breakpoints).
+- 6722627d T50 docs/lit/T50-quasipoly-si.md (Koh-Loho potential height; coherent = parametric dimension 1, Black-Xue 2026; DLM locks cannot
+  act on F; no all-rules bound for one-sided SI, Friedmann Lemma 4.2).
 IN FLIGHT: none.
-NEXT: the Lead's word.
+OPEN LEADS for a successor (only on a concrete Lead question):
+- KL-SF (T50 §1): F's step with Koh-Loho tree labels; for L-NEW to define/measure. Literature side: Koh-Loho Prop. 2.5 with roles swapped.
+- Parametric dimension d ≥ 2 of F's runs (T49 §4, T50 §2): no test, no literature; Billera-Sturmfels Fiber polytopes (1992) NOT OPENED.
+- Maat 2509.16075 p.18 open direction (tropical LP where SI = tropical simplex); is F's distinct-σ sequence a subsequence of a monotone
+  single-switch simplex path (T49 §1, OPEN).
+- Loff-Skomra p.7 one-player «at most n break points» is stated without proof there (BEF+11/18 not opened).
+NOT OPENED (owner-optional, paywalled or unreachable): Carstensen 1983 + Michigan thesis; Gusfield JACM 1983; Mulmuley-Shah JCSS 2001;
+Karp-Orlin DAM 1981; Kelner-Nikolova FOCS 2007; Nikolova thesis 2009; Erickson SODA 2010; HKZ SODA 2014; Hansen-Zwick ISAAC 2010 full text;
+Madani-Thorup-Zwick TALG 2010; DAM 2013 published version (preprint opened); journal versions of ABGJ papers; AGJ survey; Goldfarb;
+Borgwardt; Deshpande-Spielman; Boros et al. ICALP'11/Algorithmica'18; Avis-Chvátal; Billera-Sturmfels 1992; Gaubert-Katz-Sergeev EPiC.
 NEEDS: none from the owner.
 
 ## Queue

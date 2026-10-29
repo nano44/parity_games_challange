@@ -62,6 +62,11 @@ def sbev(n, c=6, mode="shift", drop=()):
         add(CSD(i), 6 * i + 13, EVEN, [CS(i), US(i)])
         if i < n - 1:
             add(USH(i), 6 * i + 9, EVEN, [FinalSink, CSD(n - 1)] if i == n - 2 else [USH(i + 1), CSD(i + 1)])
+    if 'obs' in drop:                                     # observer: Odd o -> {P0, P1}; P0/P1 Even -> even/odd lane entries
+        lab["Obs"] = "o"; lab["ObsP0"] = "P0"; lab["ObsP1"] = "P1"
+        add(S("ObsP0"), 0, EVEN, [DLE(i) for i in range(0, c * n + 1, 2)])
+        add(S("ObsP1"), 0, EVEN, [DLE(i) for i in range(1, c * n + 1, 2)])
+        add(S("Obs"), 0, ODD, [S("ObsP0"), S("ObsP1")])
     return g.dumps()
 
 

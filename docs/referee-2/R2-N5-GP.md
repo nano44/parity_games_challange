@@ -33,7 +33,7 @@ TARGET.md claim, no running time.
 | §3a | Corollary GP | SIGNED |
 | §3a | Corollary GP+ | SIGNED |
 | §4 | Corollary FW-R*: WCH ≤ (n − 1)(R*_T + 1) per frozen W-phase | SIGNED |
-| — | approved RESULTS line | NOT CHECKED: its text was not in any file I could read. Requested from the Lead at 16:5xZ (§2.6) |
+| — | approved RESULTS line (Lead 16:46Z, verbatim) | DOES NOT MATCH as worded: its GP* clause drops GP*'s "L ≤ k − a" and so claims more than the signed lemma (false at k = a: instances in §2.6). Fix: add "of at most k − a edges (a := F's first state)" and say "W-cycle node". FW-R* clause and tail match |
 | §5, §6 | READING, DATA | not signed. Pinned checks reproduced EXACTLY (§3.1) |
 
 No gap. No item FALSE. Notes N-GP-1..N-GP-6 (§4).
@@ -129,13 +129,29 @@ No gap. No item FALSE. Notes N-GP-1..N-GP-6 (§4).
   - Max R*_T 40 and max WCH 49 (alt_all). This is the lane's grow_K40_n373 case: R*_T 40, WCH 45 in the lane's count over its own frozen
     phase. My figures are maxima over all phases.
 
-**2.6 The approved RESULTS line.**
-- Not checked: "L-SI's 16:26Z wording" is not in any file on trunk or l-si that I can read. LEAD-STATE (16:23Z) records only the required
-  tail "; per frozen W-phase only, not a bound on the run" and speaks of "FW-R′ WCH ≤ (n−1)(R_T+1)".
-- Two requirements for the line:
-  - It must state FW-R*'s R*_T (transitions adopting a previously BLOCKED edge), or note R*_T ≤ R_T if it keeps R_T.
-  - It must claim nothing beyond W-MON, XW, GP*, GP, GP+ and FW-R* per frozen W-phase.
-- Requested from the Lead; I append the check when it arrives.
+**2.6 The approved RESULTS line** (the Lead's 16:46Z message, verbatim; received 17:15Z). Clause by clause:
+- "In every frozen W-phase F of N5 on any game (N5-FRZ-box29 §0: no S4c fallback; τ, σ̄, λ_Ξ, λ_W constant; W = val(σ, τ))": matches [FRZ].
+- "(Lemma GP*) W_k(x) ⊵ value(r) for every simple path r from x to a cycle node of F's first state none of whose Even edges (r_i, r_{i+1})
+  was BLOCKED at state k−1−i (…)": does NOT match. Two defects:
+  - **(a) The length condition is dropped.** GP* requires L ≤ k − a ("unblocked at state k", §3). That condition is what keeps every state
+    k − 1 − i inside F, where BLOCKED is defined.
+    - Without it, a path with L > k − a has edges whose blocked-ness refers to states before F. Read as "vacuously not blocked", the clause
+      claims W_k(x) ⊵ value(r) for them, and this is FALSE.
+    - At k = a, any one-edge path along an edge of Iσ_a (never BLOCKED) into a W-cycle node is a counterexample whenever x gains by it.
+      line_probe.py (S3 start, state 0 = the first state of its frozen W-phase) finds:
+      - experiments/n5-exhaustive/instances/b4_theta_n7.pg: x = 1, z = 6, (1, 6) ∈ Iσ_0, W_0(1) = (1, ∅, 0) ◁ value(1 → 6) = (6, {rank 5}, 1);
+      - canonA_0.pg: x = 3, z = 4;
+      - b5_os_n28.pg: x = 1, z = 7.
+  - **(b) "a cycle node" should be "a W-cycle node" (λ_W(u) = u).** λ_Ξ and λ_W are both constant on F, but they can differ (D ≠ ∅), and GP*
+    is stated for W's.
+  - Fix (wording): "for every k ∈ F and every simple path r of at most k − a edges (a := F's first state) from x to a W-cycle node of F,
+    none of whose Even edges …".
+- "(Corollary FW-R*) F has at most (n−1)(R*_T+1) W-changing transitions, R*_T := the transitions of F at which some Even vertex adopts an edge
+  blocked at an earlier state of F; so R*_T = 0 ⇒ ≤ n−1": matches §4 (R*_T, not R_T; N-GP-6 is resolved by the Lead's 16:46Z clarification).
+- "— a REDUCTION (R*_T is not bounded here; FW-BF, G-N5-TIME open; per frozen W-phase only, not a bound on the run)": matches.
+- The line omits W-MON, XW, GP and GP+. That is fine: a line may claim less.
+- **Verdict on the line:** with fix (a) it matches the signed content; (b) is a precision fix. The packet's own §3 statement is correct, and
+  only the line's paraphrase overclaims. N-GP-7.
 
 ## 3. Re-runs and own control
 **3.1 Pinned (logs/pinned_check.txt).** check.sh l. 700-710, run as one block with `set -e`: exit 0. Both echo lines print PASS.
@@ -175,7 +191,9 @@ No gap. No item FALSE. Notes N-GP-1..N-GP-6 (§4).
   (from its entry point to c) and the arc c → x meet only at c. One clause; the packet asserts it.
 - N-GP-5 (§3a's table wording). "each also follows from §3's Case A / Case B directly" means the §3 induction run with ALLOWED(⁺) for
   "unblocked". The four non-blocked cases alone do not conclude without that induction. Wording only.
-- N-GP-6 (FW-R*'s R*_T vs the 16:23Z "R_T"). R*_T counts adoptions of previously BLOCKED edges. An R_T over a larger edge class (not in
+- N-GP-7 (RESULTS line, REQUIRED fix). The approved line's GP* clause must restore "of at most k − a edges" and say "W-cycle node" (§2.6;
+  counterexamples to the line as worded, not to the packet: line_probe.py).
+- N-GP-6 (FW-R*'s R*_T vs the 16:23Z "R_T"; resolved by the Lead 16:46Z: the line uses R*_T). R*_T counts adoptions of previously BLOCKED edges. An R_T over a larger edge class (not in
   ALLOWED⁺) is ≥ R*_T, so a line stated with R_T is implied, but weaker. The RESULTS line should use R*_T (§2.6).
 
 ## 5. DONE / FINDINGS / NEEDS
@@ -185,5 +203,6 @@ No gap. No item FALSE. Notes N-GP-1..N-GP-6 (§4).
   - The key point holds: every R17 (b) sub-case is redone without Case B's improvement. Three sub-cases are new (B1′(iii), B2b(ii),
     B2b(iii) with c even), each closed through Case A's A1 or a direct order comparison, and all three occur in data.
   - The pins are reproduced exactly.
-  - The RESULTS line is not yet checked (text not received).
-- NEEDS: Lead: the verbatim RESULTS line; route N-GP-1..6 to L-SI. I write §C after REFEREE's GP report.
+  - The approved RESULTS line OVERCLAIMS: it drops GP*'s L ≤ k − a, which makes it false at k = a (instance: b4_theta_n7). Required
+    wording fix N-GP-7.
+- NEEDS: Lead: fix the RESULTS line's GP* clause (N-GP-7); route N-GP-1..7 to L-SI. I write §C after REFEREE's GP report.
