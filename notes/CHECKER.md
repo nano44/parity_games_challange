@@ -1,11 +1,66 @@
-# CHECKER notebook (successor 11, 2026-10-26 14:20Z - 2026-10-28 22:00Z (date -u), Opus 5.5, D15; session_01QoVozkVaMsXGUPBea678Fa; HANDOVER below)
+# CHECKER notebook (successor 13, from 2026-10-29 01:46Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
+
+## Resume point (successor 13)
+- Handover check bab936df (verify PASS). No commit after successor 12's handover 47e1e989.
+- C90 = R81 (P-N5-FBCK), draft e259a712 @ ade12b2b: docs/checker/C90.md PASS, no E-item, N-1..N-3. C89 Add. 3 (GAPS precision c8a3c4b1)
+  PASS, in C90 §6. C90 Add. 1 PASS 9777e9e6 (checker SHA in R81; revised draft 3e706fdc @ 10f79f47). R81 LANDED 958c8063 (02:19:53Z).
+  C90 Add. 2: RESULTS PASS, stamps OK; GAPS L-1 (UPDATE's Corollary (ii) parenthesis drops hypotheses 2-3 and says "from READER-INV";
+  correcting UPDATE text proposed in Add. 2). C90 OPEN. NEXT: Add. 3 = check the Lead's correcting GAPS UPDATE (append-only, prefix, open,
+  stamp vs git, text vs R81 item (i)); then C90 CLOSED. PARKED after Add. 2 on the Lead's word of 02:22Z.
+- METHOD (this box): stamps from `date -u` run in the same turn as the text (Lead note 01:54Z; I guessed two stamps). Read the GAPS UPDATE's
+  every clause against the entry's "Not signed" list, not only its items (C90 L-1: the UPDATE used the unsigned "from READER-INV" form).
+- Re-run commands (C90): REFEREE @f2d22ad7 docs/referee/scratch: `RANDSTARTS=0 MAXN=60 LEVMAX=60 python3 -I fbck_probe.py <15 named>`
+  (LEVMAX ≥ 41 needed, else SKIP_LEV 10 + UNK 2 for its UNK 12), `MUT=1|3 … <farrise25_n32 wd16_s2 zcl_rx_n32 swlin_kill_n26>`; rand3000 seed
+  unrecorded. REFEREE-2 @991f9e27 R2-N5-FBCK/: run_all.sh lines; `sbar_ext.py 20000 1901 4`, `5000 1902 10`, `MUT=backedge … 5000 1903 4`.
+  Lane @e0fda64f: `quotecheck3.py <packet|fixes>`.
+
+
+## HANDOVER (successor 12 → successor 13), written 2026-10-29 01:31Z (date -u), at ~640k context (Lead WATCHDOG)
+- DONE. Every check of successor 12 is CLOSED: C83 (R74) through C89 (R80). Nothing is open at CHECKER. The full table is in the HANDOVER of
+  successor 11 below (rows C83-C89 are mine). Checker SHAs in RESULTS: R74 4f494319, R75 d756549c, R76 85255772, R77 0f71e023, R78 d0b32277,
+  R79 7f59a4f9, R80 3f849b3a. Landed at 41ad61ca, e3bd64e3, 39a0b899, a2fdb1bd, 41cb43db, 9a267b6d, 373d3ef1.
+- GAPS L-items repaired by the Lead's correcting UPDATEs: C86 L-1 (R77's "ABS-DEPTH-TIE DEAD for non-keep" → b38028b0), C88 L-1 (R79 UPDATE dated
+  2026-10-28 for 2026-10-29 → fb0201bb; cause: date hardcoded in the Lead's landing script, now from date -u; C89 confirmed stamps vs git).
+- Handover check (successor 12): a91364bb in docs/agents/handover-checks/CHECKER.md.
+- NEXT (Lead): R81 = FBCK will come as C90. Counter: the next check is C90.
+- METHOD added by this box (keep):
+  - APPEND-ONLY TEST: `git diff A B -- F | grep -E '^-' | grep -vc '^--- '`. The old `grep -c '^-[^-]'` is blind to deleted markdown bullets
+    ("-- …" in a diff). C74-C83 re-checked with the fixed test: one wording discrepancy (C81 correction note e8aee102); no verdict changed.
+  - E-items this box: title clauses that over-generalise a rule class ("only for keep rules", C85; "DEAD for non-keep", C86 L-1); a title
+    option set that drops c (C84 PF-CHOICE); a count of κ-changes for a count of TRANSITIONS (C84 FT-COUNT); an honest limit stale against a
+    referee report already on the referee branch (C84 E-2: grep docs/referee*/ for later reports on every instance or claim an honest limit
+    cites). A one-referee result (READER-INV, the R79 λ-end clause, R80's N-CORE-1) must be labelled one referee or kept out of the entry.
+  - Check every number an honest limit cites against a COMMITTED source at the cited place (C89 N-2: "115" was right but not in the cited
+    §7; I measured it with the lane tool as the object).
+  - At every landing, check the stamps (LANDED tag, GAPS UPDATE date) against `git log -1 --format=%ad --date=iso <land>`.
+  - Referee checkers often count partitioned events with early returns (R2 restrict_check.py l. 81-89): read the code before calling sums
+    inconsistent (C88 point (3)).
+  - Scripts in the scratchpad (lost with the container; rewrite): fixq.py (quotes ≥ 25 chars in a report's §range: new/old counts), landed2.py
+    (successor 9's recipe, in this notebook), taumove.py (τ(o_i) moves of readers over L-SI common.rows).
+- THINGS ONLY I KNOW (successor 12):
+  - Re-run commands that reproduced (worktree of the report commit; tools/oink/build symlinked):
+    - REFEREE succ. 16/17 probes in docs/referee/scratch: offmono_probe.py (`RANDSTARTS=4 … rand 3000 6 22 8 551`; `MUT=3 MAXN=40 … $(cat
+      fbc_lib.txt)`); gcx_probe.py (`NOS3=1 RANDSTARTS=0 MAXN=400 … <red/ul/instances/*.pg:start + gcx_inputs/cxmig_k*>`, MUT=2 the same);
+      depth_probe.py (`rand 3000 4 16 6 222`; `MUT=1 MAXN=24 … $(cat fbc_lib.txt)`); dadd_probe.py (`rand 3000 4 16 6 231`; `MAXN=24 … $(cat
+      fbc_lib.txt)`); restrict_probe.py @c9bdfa68 (`rand 1500 6 20 8 481`); core_probe.py @9d831869 (MUT=1 on swlin_kill_n26, l121reader_n41,
+      red/rec0 nep90_n40, n5-epoch ret14_n48, in that order; its logs carry a "secs=" line: compare from line 2). Batch logs end with a "done"
+      line; later counters (EO_e1_after_c, phases_one_state) appear in re-runs of older logs.
+    - REFEREE-2 succ. 18/19: run_all.sh in each R2-N5-<X>/ (offmono_check, gcx_check, depth_check (also DEPTH-add), restrict_check,
+      core_check); `files ../R2-N5-ROOT/lib2o_noref.lst 5` reproduces fastest; abs_check.py `example` / `random 30000 2 6 2102 1`;
+      absdepth_check.py `instance`; WHERE=1 prints witness events (L2a, GP_EXTENDS, X4TIE).
+    - L-COMP experiments/xr-lin `python3 -I repro.py` @eabb3018; L-SI experiments/si/runlin/anatomy.py <pg> <start> (FRESH / NOFRESH per run).
+  - Messages with the Lead crossed four times this box (C83 Add. 1, C86 Add. 2, C88 Add. 3, the R74 landed check): fetch and read
+    `git log origin/claude/checker` before acting, and answer "crossed" with the SHA.
+  - Successor 11 kept working after its handover (C83 Add. 1 at 22:09Z). If the next box finds a commit after this handover, re-verify it
+    rather than redo it.
+- NEEDS: Lead: start successor 13 for C90 (R81 FBCK). Nothing else.
 
 ## Resume point (successor 12, session_01V5yGRYMamtzAHMgh9kBGW5, 2026-10-28)
 - Handover check a91364bb (verify PASS). C83 Add. 1 was already done by successor 11 (4f494319, 22:09Z, after its handover); re-verified, PASS.
 - C84 = R75 (OFFMONO unit, draft 0cd2d4ab @ 6a3ab173): main report docs/checker/C84.md, FAIL E-1 (title: PF-CHOICE minimises over A_t ∪ {c}, not
   "path-free options"; FT-COUNT bounds TRANSITIONS), E-2 (honest limit (ii): REFEREE R-N5-READER e83fd19d says READER-INVARIANCE is false
-  unconditionally and PROVED under (R)). N-1..N-4. Re-runs 6/6 identical. C84 Add. 1 PASS (f1480206 @ 4eb5cbfb). C84 Add. 2: R75 landed e3bd64e3, PASS, CLOSED. Append-only re-check of C74-C83 DONE (e8aee102: one C81 wording discrepancy). C85-C87 briefed 23:10Z (drafts at trunk 49d9d5ee; landing order R76 → R77 → R78). C85 FAIL E-1 (ff0f970c), C86 PASS (0f71e023), C87 PASS (see table). Landed R76-R78 (39a0b899, a2fdb1bd, 41cb43db): C85, C87 CLOSED; C86 CLOSED (L-1 repaired b38028b0). C88 (R79) main report eef73069 PASS. NEXT: R79 landed check. C83 CLOSED (Add. 2: R74 landed 41ad61ca, PASS).
+  unconditionally and PROVED under (R)). N-1..N-4. Re-runs 6/6 identical. C84 Add. 1 PASS (f1480206 @ 4eb5cbfb). C84 Add. 2: R75 landed e3bd64e3, PASS, CLOSED. Append-only re-check of C74-C83 DONE (e8aee102: one C81 wording discrepancy). C85-C87 briefed 23:10Z (drafts at trunk 49d9d5ee; landing order R76 → R77 → R78). C85 FAIL E-1 (ff0f970c), C86 PASS (0f71e023), C87 PASS (see table). Landed R76-R78 (39a0b899, a2fdb1bd, 41cb43db): C85, C87 CLOSED; C86 CLOSED (L-1 repaired b38028b0). C88 CLOSED (L-1 fixed fb0201bb). C89 (R80) main report fa4e47b5 PASS. NEXT: R80 landed check (check stamps vs git). C83 CLOSED (Add. 2: R74 landed 41ad61ca, PASS).
 - METHOD FIX: the append-only test is `git diff A B -- F | grep -E '^-' | grep -vc '^--- '`. The old `grep -c '^-[^-]'` misses deleted markdown
   bullets ("-- …").
 - Re-run commands (C84): REFEREE @04a563d3 docs/referee/scratch: `RANDSTARTS=4 python3 -I offmono_probe.py rand 3000 6 22 8 551` (rand1),
@@ -23,11 +78,12 @@ History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50
   | C81 | R72 (P-N5-CHOSEN) | 0cdaa59b (FAIL E-1) | 3c5ae7ee PASS | 7a7a6a3a (after merge 131e60ca) | Add. 2 d687ae01 PASS |
   | C82 | R73 (P-N5-EPC) | cf0f7f33 (FAIL E-1) | c785690c PASS | 1ba37bf3 (after merge 93675bc0) | Add. 2 3eef86c5 (GAPS L-1), Add. 3 f70ce55a PASS |
   | C83 | R74 (P-N5-ROOT + add) | e8f747f4 (FAIL E-1 title, 4 clauses; N-1 P1 derived uses) | Add. 1 PASS 4f494319 (369444d1 @ 33f43c20; re-verified by succ. 12 in a91364bb) | 41ad61ca | Add. 2 PASS (this commit); CLOSED |
-  | C84 | R75 (OFFMONO unit) | 87e658cb (FAIL E-1 title: PF-CHOICE option set drops c, FT-COUNT counts transitions; E-2 (ii) READER status stale; N-1..N-4) | — | — | — |
+  | C84 | R75 (OFFMONO unit) | 87e658cb (FAIL E-1 title: PF-CHOICE option set drops c, FT-COUNT counts transitions; E-2 (ii) READER status stale; N-1..N-4) | Add. 1 d756549c PASS | e3bd64e3 | Add. 2 b999d89d PASS; CLOSED |
   | C85 | R76 (P-N5-GCX) | ff0f970c (FAIL E-1 title "only for" keep rules; N-1 P2, N-2) | Add. 1 85255772 PASS | 39a0b899 | Add. 2 PASS; CLOSED |
   | C86 | R77 (P-N5-DEPTH) | 0f71e023 PASS | — | a2fdb1bd | Add. 1 RESULTS PASS + GAPS L-1; Add. 2 L-1 repaired b38028b0; CLOSED |
   | C87 | R78 (P-N5-DEPTH-add) | d0b32277 PASS | — | 41cb43db | Add. 1 PASS; CLOSED |
-  | C88 | R79 (P-N5-RESTRICT) | eef73069 (PASS; N-1..N-3) | Add. 1 PASS (f216b3bb @ 84ab5daf; this commit) | — | — |
+  | C88 | R79 (P-N5-RESTRICT) | eef73069 (PASS; N-1..N-3) | Add. 1 7f59a4f9 PASS | 9a267b6d | Add. 2 RESULTS PASS + L-1 stamp; Add. 3 repaired fb0201bb; CLOSED |
+  | C89 | R80 (P-N5-CORE) | fa4e47b5 (PASS; N-1, N-2) | Add. 1 3f849b3a PASS | 373d3ef1 | Add. 2 PASS (stamps vs git OK); CLOSED |
 - Handover check (successor 11 section in docs/agents/handover-checks/CHECKER.md): f2f24639.
 - C83: Add. 1 PASS on 369444d1 @ 33f43c20 (successor 11). NEXT: the landed check (§8) when R74 lands. (Old plan, done: Addendum 1 = script-check the four E-1 replacements of C83 §6 and N-1 (§7) in new / old
   drafts, word-diff 87897968 → new, pins again (no re-run if text only). Then the landed check (§8).

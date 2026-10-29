@@ -1,0 +1,28 @@
+MODE random 10000 8 20 14 0 3 MUT - BUDGET 400000
+C_checked: 848
+CfK_total: 848
+Cf_total: 848
+ENGXI_checks: 91619
+K_empty_phases: 561
+Kstates: 1814
+RISE_checks: 848
+RISE_needed: 17
+SATFB_checks: 831
+SATFB_lastcase: 831
+SATFB_with_later: 831
+SAT_checks: 1676
+f_total: 848
+fb_phases: 847
+fb_phases_nK_below_n: 610
+nK_total: 368802
+n_total: 419076
+phases: 86484
+runs: 30000
+sources: 848
+sources_sat: 831
+sources_unsat: 17
+states: 91619
+max_CfK: (2, 'random14:3567#2', 1, 2, 12, 18)
+max_f_over_nKCfK: (0.333, 'random14:8593#1', 1, 1, 3, 1)
+max_src_per_C_over_nK: (0.333, 'random14:8593#1', 1, 1, 3)
+RESULT OK violations=0

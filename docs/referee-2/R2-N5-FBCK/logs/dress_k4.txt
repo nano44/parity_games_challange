@@ -1,0 +1,28 @@
+MODE dress 20000 8 18 11 4 6 3 MUT - BUDGET 400000
+C_checked: 1743
+CfK_total: 1743
+Cf_total: 1743
+ENGXI_checks: 186156
+K_empty_phases: 1709
+Kstates: 3627
+RISE_checks: 1745
+RISE_needed: 16
+SATFB_checks: 1729
+SATFB_lastcase: 1729
+SATFB_with_later: 1729
+SAT_checks: 3470
+f_total: 1745
+fb_phases: 1743
+fb_phases_nK_below_n: 1743
+nK_total: 673878
+n_total: 1139406
+phases: 179407
+runs: 60000
+sources: 1745
+sources_sat: 1729
+sources_unsat: 16
+states: 186156
+max_CfK: (1, 'dress11:43#0', 1, 1, 11, 18)
+max_f_over_nKCfK: (0.5, 'dress11:3815#1', 2, 1, 2, 1)
+max_src_per_C_over_nK: (0.5, 'dress11:3815#1', 2, 1, 2)
+RESULT OK violations=0

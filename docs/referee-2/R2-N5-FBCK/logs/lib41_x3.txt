@@ -1,0 +1,34 @@
+MODE files ../R2-N5-STAU/lib41_noref.lst 3 MUT - BUDGET 400000
+C_checked: 105
+CfK_total: 297
+Cf_total: 299
+DEEP_C: 192
+ENGXI_checks: 19513
+K_empty_phases: 409
+Kstates: 1253
+Kstates_deep: 2310
+RISE_checks: 276
+RISE_checks_deep: 401
+RISE_needed: 240
+RISE_undecided: 426
+SATFB_checks: 36
+SATFB_lastcase: 36
+SATFB_with_later: 36
+SAT_checks: 123
+f_total: 1103
+fb_phases: 240
+fb_phases_nK_below_n: 25
+nK_total: 44712
+n_total: 49374
+phases: 7182
+phases_CfK_below_Cf: 2
+runs: 1230
+sources: 276
+sources_sat: 36
+sources_unsat: 240
+states: 19513
+deep_D_min: (-3, 'experiments/red/carry/instances/absmono_viol_n44.pg#0', 6)
+max_CfK: (4, 'experiments/si/xing/instances/zcl_rx_n32.pg#0', 3, 13, 32, 32)
+max_f_over_nKCfK: (0.75, 'experiments/new/box25/instances/wd16_s2.pg#0', 6, 12, 16, 1)
+max_src_per_C_over_nK: (0.75, 'experiments/new/box25/instances/wd16_s2.pg#0', 6, 12, 16)
+RESULT OK violations=0

@@ -1,0 +1,64 @@
+MODE dress 20000 8 18 11 4 6 3 MUT open1 BUDGET 400000
+C_checked: 1743
+CfK_total: 1743
+Cf_total: 1743
+ENGXI_checks: 186156
+K_empty_phases: 1709
+Kstates: 3629
+RISE_checks: 1745
+RISE_needed: 10
+SATFB_checks: 1735
+SATFB_lastcase: 1734
+SATFB_with_later: 1735
+SAT_checks: 3524
+VIOLATIONS: 2528
+V_SAT: 795
+V_SATFB: 1
+V_SATFB_Is: 4
+V_SAT_const: 101
+V_XIB: 1627
+f_total: 1745
+fb_phases: 1743
+fb_phases_nK_below_n: 1743
+nK_total: 532437
+n_total: 1139406
+phases: 179407
+runs: 60000
+sources: 1745
+sources_sat: 1735
+sources_unsat: 10
+states: 186156
+max_CfK: (1, 'dress11:43#0', 1, 1, 9, 18)
+max_f_over_nKCfK: (0.5, 'dress11:1679#2', 1, 1, 2, 1)
+max_src_per_C_over_nK: (0.5, 'dress11:1679#2', 1, 1, 2)
+VIOLATION XIB: dress11:43#0@1: x 3
+VIOLATION XIB: dress11:43#0@1: x 4
+VIOLATION XIB: dress11:43#0@2: x 3
+VIOLATION XIB: dress11:43#0@2: x 4
+VIOLATION SAT: dress11:43#0@1
+VIOLATION SAT: dress11:43#0@2
+VIOLATION XIB: dress11:104#0@1: x 7
+VIOLATION XIB: dress11:104#0@2: x 7
+VIOLATION SAT: dress11:104#0@1
+VIOLATION SAT: dress11:104#0@2
+VIOLATION XIB: dress11:181#2@1: x 2
+VIOLATION XIB: dress11:181#2@2: x 2
+VIOLATION SAT: dress11:181#2@1
+VIOLATION SAT: dress11:181#2@2
+VIOLATION XIB: dress11:310#2@1: x 5
+VIOLATION XIB: dress11:310#2@2: x 5
+VIOLATION XIB: dress11:310#2@3: x 5
+VIOLATION SAT: dress11:310#2@2
+VIOLATION SAT: dress11:310#2@3
+VIOLATION XIB: dress11:329#2@1: x 7
+VIOLATION XIB: dress11:329#2@2: x 7
+VIOLATION SAT: dress11:329#2@1
+VIOLATION SAT: dress11:329#2@2
+VIOLATION XIB: dress11:424#2@1: x 6
+VIOLATION XIB: dress11:424#2@1: x 10
+VIOLATION XIB: dress11:424#2@1: x 11
+VIOLATION XIB: dress11:424#2@1: x 13
+VIOLATION XIB: dress11:424#2@2: x 4
+VIOLATION XIB: dress11:424#2@2: x 6
+VIOLATION XIB: dress11:424#2@2: x 10
+RESULT FAIL violations=2528

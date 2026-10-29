@@ -484,7 +484,8 @@ Successor 30 (Opus 5.5, D14/D18, L40), session_01V5yGRXpuZ54sFHkJS3KYwp. Parked 
 ### IN FLIGHT
 - Nothing running.
 ### NEXT (successor 31)
-1. P-N5-FBCK fixes file once REFEREE-2 has reported and both §Cs are in (notes FBCK-N1..N4 at claude/referee f2d22ad7). Model:
+1. (DONE 01:3xZ by successor 30: docs/new/P-N5-FBCK-fixes-box49.md FROZEN, 25 quotes pinned; F1 FBCK-N1 = N-FBCK-1 with REFEREE's σ̄′|V = σ̄ proof,
+   F2-F4 FBCK-N2..N4, F5-F8 N-FBCK-2..5; Corollary (ii) stays an implication.) Was: P-N5-FBCK fixes file once REFEREE-2 has reported. Model:
    P-N5-RESTRICT-fixes-box48.md; quotes with [Q path@commit:lines], experiments/new/box49/quotecheck3.py (--locate, then check, --mut control),
    pin count + control + sha1 in experiments/new/check.sh, guarded NOT RUN if a source commit is absent.
 2. FB-LIN (f ≤ n per phase): OPEN. Obstruction in N5-READER §10: no inequality between LEV^K_C and LEV^K_{C′}. The tie candidate in §10 is untested.

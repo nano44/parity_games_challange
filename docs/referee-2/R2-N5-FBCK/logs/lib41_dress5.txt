@@ -1,0 +1,34 @@
+MODE dressfiles ../R2-N5-STAU/lib41_noref.lst 5 2 1931 MUT - BUDGET 400000
+C_checked: 83
+CfK_total: 257
+Cf_total: 414
+DEEP_C: 174
+ENGXI_checks: 14354
+K_empty_phases: 267
+Kstates: 1019
+Kstates_deep: 2042
+RISE_checks: 213
+RISE_checks_deep: 352
+RISE_needed: 193
+RISE_undecided: 322
+SATFB_checks: 20
+SATFB_lastcase: 20
+SATFB_with_later: 20
+SAT_checks: 80
+f_total: 887
+fb_phases: 205
+fb_phases_nK_below_n: 205
+nK_total: 29808
+n_total: 37016
+phases: 5118
+phases_CfK_below_Cf: 76
+runs: 820
+sources: 213
+sources_sat: 20
+sources_unsat: 193
+states: 14354
+deep_D_min: (-3, 'experiments/red/carry/instances/absmono_viol_n44.pg+5#0', 6)
+max_CfK: (4, 'experiments/si/xing/instances/zcl_rx_n32.pg+5#0', 3, 13, 32, 37)
+max_f_over_nKCfK: (0.75, 'experiments/si/xing/instances/ccl_fbx_n32.pg+5#0', 2, 24, 32, 1)
+max_src_per_C_over_nK: (0.75, 'experiments/si/xing/instances/ccl_fbx_n32.pg+5#0', 2, 24, 32)
+RESULT OK violations=0
