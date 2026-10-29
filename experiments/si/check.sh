@@ -780,3 +780,9 @@ o=$(MODE=fg:first python3 -I odd/wret.py ../new/box59/out/fc_3.pg); grep -q "WMO
 o=$(MODE=sa:first python3 -I odd/wret.py ../new/box54/out/switchallexp_3.pg); grep -q "WMON_V 22 WRET_V 39 REENT 377 .* FAIL$" <<<"$o"
 o=$(python3 -I odd/wret.py ../red/so/instances/tog6b_n32.pg); grep -q "WRET_V 0 REENT 4 WPAID 3 SILENT 0 VFORM_V 0 CYC 1 OPT_V 0 .* PASS$" <<<"$o"   # own-cycle-node re-entry excluded
 echo "si (box 37: target forms on R120 pins; W-RETURN holds under S4a, mutation and switch-all control fire): PASS"
+# box 38 (docs/si/N5-SPAN-box38.md): Lemma SPAN (ENT ≤ n(1 + PCH^span), 0 violations); the in-window form is inflated on R121's
+# tobs_K8_m32 (248 MATCHED in one in-window), the out-window and span forms are not (7).
+o=$(SIDE=E python3 -I odd/win.py odd/inst/red/tobs_K8_m32.pg odd/inst/red/tobs_K8_m32.start)
+grep -q "n 233 pairs 96 maxENT 8 SPAN_V 0 .*OUTRISE_V 0 | IN: MAT 248 PCH 263 SEG 2 at (231, 198, 0) OUT: MAT 7 PCH 14 SEG 1 at (102, 104, 0) SPAN: MAT 7 PCH 14 SEG 1" <<<"$o"; grep -q "PASS$" <<<"$o"
+o=$(SIDE=E python3 -I odd/win.py ../red/n5inj/instances/returns_rt32.pg --mut); grep -q "SPAN_V 1 SPAN1 1 .*ex (12, 10, 3, 2, 0)" <<<"$o"   # control: length-only re-entry needs the factor n
+echo "si (box 38: Lemma SPAN holds; in-window form inflated on tobs, span form not): PASS"
