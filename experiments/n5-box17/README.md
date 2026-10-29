@@ -55,7 +55,7 @@ deadlock steps. Files: results/C<n>_all.json (exhaustive), results/parts/C4_p<k>
 | C(2), all starts, exhaustive | 144 | 256 | - (no segment with b > a) | 2 (1.0) | 1 (1) | 1 | 0 / 0 |
 | C(3), all starts, exhaustive | 21,952 | 110,592 | 0 | 2 (0.67) | 2 (2) TIGHT | 1 | 0 / 0 |
 | L(3) (all rank orders), all starts, exhaustive | 131,712 | 663,552 | 0 | 2 (0.67) | 2 (2) TIGHT | 1 | 0 / 0 |
-| C(4), all starts, part 0 of 8 (every 8th game) | 1,620,032 | 33,752,384 | 0 | 3 (0.75) | 3 (3) TIGHT | 1 | 0 / 0 |
+| C(4), all starts, EXHAUSTIVE (8 parts merged, results/C4_all.json) | 12,960,000 | 268,435,456 (= 2^8 · 32^4, every pair) | 0 | 3 (0.75) | 3 (3) TIGHT | 1 | 0 / 0 |
 | random C(5), seed 17, all starts | 20,000 | 2,298,541 | 0 | 3 (0.6) | 3 (4) | 2 | 0 / 0 |
 | random C(6), seed 17, all starts | 20,000 | 14,876,199 | 0 | 4 (0.67) | 4 (5) | 2 | 0 / 0 |
 | random C(7), seed 17, games with ≤ 4,096 start pairs, all starts | 2,000 | 3,902,809 | 0 | 4 (0.57) | 3 (6) | 2 | 0 / 0 |
@@ -67,4 +67,6 @@ deadlock steps. Files: results/C<n>_all.json (exhaustive), results/parts/C4_p<k>
 - DL-RUN minimal size (Lead 10:36Z): no deadlock step at all (not even at t = r0) in any table above. Upper bound: L-RED's
   segcount_kill_n20 (n 20, explicit start; reproduced: dl 1, deadlock steps [0, 2] of segment [0, 4], r0 = 0). dlshrink.py (greedy:
   delete a vertex, or a non-start edge, keeping dl > 0) finds no smaller game from it: segcount_kill_n20 is 1-minimal under those moves.
-  So the least n is in [5, 20] for C(n)-type games (n ≤ 4 exhaustive once all 8 parts are in; n 5-8 only sampled).
+  So the least n is in [5, 20] for C(n)-type games (n ≤ 4 exhaustive, all 268M start pairs at n 4; n 5-8 only sampled).
+- C(4) histograms (per trajectory max): EXC −1: 757,070, 0: 10,465,712; SEG 1/2/3: 11,128,674 / 7,659,734 / 12,896; L-WAVE′ gap 1/2/3:
+  18,511,416 / 289,504 / 384 (the gap = n − 1 = 3 occurs on 384 trajectories); f 0/1: 17,905,316 / 8,850,642.
