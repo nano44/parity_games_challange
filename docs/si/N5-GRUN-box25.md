@@ -132,6 +132,7 @@ DATA (grun/relseg.py; every segment with (H4′_rel) checked per vertex and for 
 - CONJECTURE L-WAVE′ (OPEN; grun/lwave.py PMODE=1): the same with events also at every transition at which the path set of Ξ changes at an Odd
   choice vertex of RO_b (b the end of the segment containing the transition). DATA: holds on lwkill_n31 (max gap 19 at n 31) and on alt_all
   with default and pinned starts. If true, |S| ≤ (N_P + 1)(n − 1) + N_P with N_P the number of such events.
+  Kill search (gclimb OBJ=LW PMODE=1; grun/out/lwp_*.log, lwq_*.log): best score 0, i.e. a gap of exactly n − 1 (grun/out/lwp_a, n 26); no kill.
 - L-WAVE proof attempt (READING, written 2026-10-29 05:0xZ; no result; for the dead form, kept as the record). Natural route: run STATIC-DEPTH-REL's induction with VALUE-level
   honest settling ("Ξ_t(v) = Ξ_b(v) for t ≥ s") instead of play-level, since step (A) uses only Ξ-values of y, and step (C) gives
   Ξ_{t+1}(v) = v ⊕ Ξ_b(y). Even vertices go through unchanged. The obstruction is the Odd step at a gate u with L-cuts: Ξ_t(u) = u ⊕ min over u's

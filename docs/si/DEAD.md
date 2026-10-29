@@ -370,3 +370,26 @@ AGAINST_W ('experiments/si/fb2o/instances/tcwult2_against_n8.pg', 0, 1, 0, 4, -1
 - Obstruction: the path set of Ξ(5) changes INSIDE segment [8, 28] (from 1073741824 to 838860800) while σ̄(5) stays on option 28: a P-change of
   a gate's value without a σ̄ change, which is no cut. L-WAVE counted P-changes only at cuts. Refined CONJECTURE L-WAVE′ (events also at every
   P-change of Ξ at an Odd choice vertex of RO_b): holds on the killer (max gap 19) and on alt_all (default and pinned starts); OPEN.
+
+## DEAD box 26 (L-SI successor 22, 2026-10-29T07:0xZ by date -u (07:04:10)): candidate invariants for CONJECTURE L-WAVE′ (docs/si/N5-LWP-box26.md §3)
+Lane candidates, never claimed; each would have proved L-WAVE′ (or a 2n form). Gap [x, b] as in the note §0 (b = y − 1 when the gap closes
+at an event y). Engine n5x via root/common.rows; killer pins grun/out/lwp_a (.pg sha1 19d105416929800709707a2489b335a6a936e883, .start
+ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 transitions, one gate u = 4, L-cuts at 5 and 16) and lwp/out/xk_k
+(.pg 1ad8d0036d3d1503b8f672199110d3f41c65030a, .start a2e00ea7c3383b9cd35d21f306c77c8fc3f57684; n 26, gap 24 on [1, 25]).
+- VS-STEP («every transition of a gap makes some vertex value-settled»): lwp_a, 13 of 25 transitions (lwp/vstep.py KEY=V). Obstruction: the
+  L-cut 15 → 16 changes the length of Ξ at 13 vertices, so values reached in the snake are not final.
+- PS-STEP («... (c, P)-settled»): lwp_a t = 2; alt_all 109 (default) / 144 (pinned starts) failing transitions, e.g. lend27_n24 [5, 7] t = 6.
+  Obstruction: vertices pass through intermediate path-set levels (lwp_a: three levels).
+- PV-STEP («... (c, P)- or value-settled», a 2n bound): lwp_a t = 2 (5 Even switches, 6 path-set changes, none to a final level or value).
+  0 failures on alt_all: the killer is the climb instance.
+- GAP-DEPTH («gap ≤ max_Q d at the reference state», STATIC-DEPTH-REL across L-cuts): lwp_a 25 > 23; xk_k 24 > 23; alt_all 8 + 5 gaps
+  (gci2_n12: gap 6, depth 0). Obstruction: the gate's competitors rise off the end-state plays (GRUN §5 READING), and that time is not depth.
+- LAST-SWITCH per gap («every transition of a gap is some Even vertex's last switch in the gap», gap ≤ |Even|): lwp_a t = 2, 3 (23 switching
+  vertices, 25 transitions; the excess equals the 2 L-cuts); xk_k one transition. 0 failures on alt_all and lib41. The per-REL-segment form
+  (CONJECTURE SEG-LAST) and SWL (gap ≤ switchers + L-cuts) survive.
+- Kill searches for L-WAVE′ itself (no kill): note §1.
+- CYC-SET («every J_b-cycle vertex of a REL-admissible segment is W- and H-settled from the segment's start»; would remove (H4′_rel) from
+  Theorem LAST-STEP, note §7): run34_n40 (experiments/red/n3/instances, pinned start), segment [11, 14], 14 cycle vertices settled only from
+  12-14 (lwp/laststep_alt_start.txt); and lwp/out/h4a_k.pg (n 60, sha1 957c7c9e2ce5a6d57890e42b0e8ca0a0911ecefd, default start), segment
+  [0, 4], cycle vertices settled from 1 and NO frontier vertex at t = 0 (found by lwp/xclimb.py OBJ=H4 from dl_4_4). Obstruction: a J_b-cycle
+  settles in one transition with its unsettled Even vertices switching together (1: 28 → 59 and 37: 6 → 58 at t = 0); SEG-LAST holds there.

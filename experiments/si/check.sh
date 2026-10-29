@@ -421,3 +421,21 @@ o=$(python3 -I grun/lwave.py --one grun/instances/lwkill_n31.pg grun/instances/l
 python3 -I root/n5bcmp.py grun/instances/lwkill_n31.pg grun/instances/lwkill_n31.start | grep -q "n5b iterations 40 fallbacks 0 states 41 | n5x states 41 | identical state sequences: True"
 PMODE=1 python3 -I grun/lwave.py --one grun/instances/lwkill_n31.pg grun/instances/lwkill_n31.start | grep -q "LWAVE PASS"
 echo "grun (box 25: DEAD L-WAVE, lwkill_n31 gap 37 > 30, n5b identical; L-WAVE' holds there): PASS"
+# box 26 (docs/si/N5-LWP-box26.md): L-WAVE' gap anatomy and the dead candidate invariants. lwp_a's gap [1,26] has 25 = n - 1 transitions:
+# LAST-SWITCH per gap fails there (2 transitions) while SEG-LAST holds on its 3 segments; PV-STEP fails at t = 2; GAP-DEPTH 25 > 23;
+# SEG-LAST fails on cw11_n24's pieces (control) and on whole runs (control); SWL / NEVEN hold on lwp_a.
+o=$(python3 -I lwp/lastsw.py --one grun/out/lwp_a.pg grun/out/lwp_a.start); grep -q "LS_V=2 " <<<"$o"; grep -q "gap_minus_nEven_max_plus1000=1000 " <<<"$o"; ! grep -q "SWL_V" <<<"$o"
+o=$(python3 -I lwp/seglast.py --one grun/out/lwp_a.pg grun/out/lwp_a.start); grep -q "segs=3 trans=23" <<<"$o"; grep -q "SEGLAST PASS" <<<"$o"
+MODE=piece python3 -I lwp/seglast.py --one ../red/kw/instances/cw11_n24.pg | grep -q "SEGLAST FAIL"
+MODE=run python3 -I lwp/seglast.py --one grun/instances/lwkill_n31.pg grun/instances/lwkill_n31.start | grep -q "SEGLAST FAIL"
+python3 -I lwp/vstep.py --one grun/out/lwp_a.pg grun/out/lwp_a.start | grep -q "PV_V=1 "
+python3 -I lwp/gapdepth.py --one grun/out/lwp_a.pg grun/out/lwp_a.start | grep -q "EXAMPLE ('grun/out/lwp_a.pg', 1, 26, 1, 26, 25, 23, 26)"
+echo "lwp (box 26: lwp_a gap n - 1 kills per-gap LAST-SWITCH, PV-STEP, GAP-DEPTH; SEG-LAST holds there, fails on pieces / runs as controls): PASS"
+# box 26 (docs/si/N5-LWP-box26.md §7): Theorem LAST-STEP data. Frontier vertices exist at every step of lwp_a's segments (MUT=1 bites);
+# lwp/instances/cycset_kill_n60 (= climb h4a_k) kills CYC-SET with no frontier vertex at t = 0, while SEG-LAST and SET-STEP hold there.
+python3 -I lwp/laststep.py --one grun/out/lwp_a.pg grun/out/lwp_a.start | grep -q "LASTSTEP PASS"
+MUT=1 python3 -I lwp/laststep.py --one grun/out/lwp_a.pg grun/out/lwp_a.start | grep -q "LASTSTEP FAIL"
+echo "957c7c9e2ce5a6d57890e42b0e8ca0a0911ecefd  lwp/instances/cycset_kill_n60.pg" | sha1sum -c --quiet
+o=$(python3 -I lwp/laststep.py --one lwp/instances/cycset_kill_n60.pg); grep -q "CYCSET_V=1 FR_V=1 FR_V_h4fail=1 " <<<"$o"; grep -q "CYCSET FAIL" <<<"$o"
+o=$(python3 -I lwp/seglast.py --one lwp/instances/cycset_kill_n60.pg); grep -q "SEGLAST PASS" <<<"$o"; ! grep -q "SS_V" <<<"$o"
+echo "lwp (box 26: LAST-STEP frontier on lwp_a, MUT bites; cycset_kill_n60 kills CYC-SET, SEG-LAST / SET-STEP hold): PASS"

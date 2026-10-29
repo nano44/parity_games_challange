@@ -1,3 +1,42 @@
+# Handover check: L-SI (successor 22, written 2026-10-29T06:4xZ by date -u (06:40:40 at the measurement); LANE-RESTART step 3; Opus 5.5, D18/L40)
+Every answer below was measured in this container; commands given. Predecessor: successor 21, session_01V5yGRa5b9XuhTGUqNBFGaE.
+Its handover is notes/L-SI.md "## HANDOVER (successor 21, box 25)" (l-si f756e089; head 10ea06e5).
+
+## 1. Branch, head, distance to trunk
+- Branch `claude/l-si`. Clone stale again: local HEAD da88a6d4 before the fetch ("up to date" per git status).
+  `git fetch origin claude/vibrant-johnson-nxvvxo claude/l-si` → origin/claude/l-si 10ea06e5 (commit time 06:20:52Z); `git merge --ff-only`.
+- Trunk = 49af18c7 (Lead: resume point; log). `git rev-list --left-right --count origin/claude/l-si...trunk` → 3 ahead / 6 behind.
+  `git merge --no-edit` of trunk (no rebase) → 2bc26f8b; `git rev-list --left-right --count HEAD...trunk` → 4 ahead / 0 behind, merge-base
+  49af18c7. This file is the next commit.
+- Oink: tools/oink/build absent (fresh container); `scripts/setup_oink.sh` (output to a scratch file) → exit 0, "oink built at 8fbf0a7"
+  (oink, tc, tc+, counter_m, rngame present).
+
+## 2. Open work and the next step of each (nothing running: `ps` shows no gclimb; tree clean before the merge)
+Frozen packets unchanged (`sha1sum docs/si/P-N5-*box25*.md`): SDPRIME 54678c38, SDPRIME-fixes f0bc5f45, REL f79300a2, REL-fixes 16a74626.
+- STEP 1, CONJECTURE L-WAVE′ (N5-GRUN-box25 §5; lwave.py PMODE=1): best kill score 0 (gap = n − 1, grun/out/lwp_a, n 26). Next: one
+  structurally different kill search (not the lwp_a climb), then the proof route (value-level settling across L-gaps; obstruction:
+  gate competitors off the end-state plays, Even P-changes not events).
+- STEP 2: CONJECTURE SEG-RUN (DATA ≤ 1.00n) or CONJECTURE PIECE (CF of Corollary EPOCH), whichever STEP 1 leaves closer.
+
+## 3. docs/GAPS.md rows I own
+- None (`awk -F'|' '$4 ~ /L-SI/' docs/GAPS.md` → empty). I work under G-N5-TIME (open).
+- RESULTS on this trunk: `grep -o '^### R[0-9]*' docs/RESULTS.md | tail -1` → R82 (SDPRIME, l.4653). R83 (REL) is NOT yet in docs/RESULTS.md
+  at trunk 49af18c7 (`grep -n R83 docs/RESULTS.md` → empty; NOW.md 05:46Z: "At CHECKER: R83 REL (C92)"); the Lead's 06:38Z brief says
+  landed. MISMATCH flagged; I treat REL as SIGNED-by-both (packet) until RESULTS shows R83.
+
+## 4. The three owner rulings that constrain me most (verbatim from docs/DECISIONS.md; status docs/DECISIONS-INDEX.md)
+- D18 (DECISIONS.md l.332; index l.32: active): "Focus on N5 and work toward proving it. Explore novel approaches, especially by
+  connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions
+  where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and
+  open problems." Lead reading L40 (index l.33: active).
+- D14 (DECISIONS.md l.244; index l.22: active): "D" / "You know it can also test prveiously not tested approaches, it can come up with it own as well"
+- D1 (DECISIONS.md l.3; index l.5: active): "Never publish, post, email, submit or contact anyone outside the fleet. Anything external is
+  my decision."
+
+## 5. One trap that bit this lane before, and the check that prevents it
+- Trap: a stale clone. Again here: local claude/l-si at da88a6d4 reported "up to date" while origin was at 10ea06e5 (the whole box 25
+  missing). Check: `git fetch` of both branches + `git rev-list --left-right --count` before reading the notebook and before every push.
+  Second trap (predecessor's note): climbs dirty the tree; `ps -eo pid,args | grep gclimb` before ending a turn.
 # Handover check: L-SI (successor 21, written 2026-10-29T03:0xZ by date -u (03:02:16 at the measurement); LANE-RESTART step 3; Opus 5.5, D18/L40)
 Every answer below was measured in this container; commands given. Predecessor: successor 20, session_01V5yGRWTEYFoWjhNJrADhYc.
 Its handover is notes/L-SI.md "## HANDOVER (successor 20, box 24)" (l-si 714224168, merged with trunk at 4483cc8e).

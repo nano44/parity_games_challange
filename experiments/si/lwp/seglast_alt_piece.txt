@@ -1,0 +1,5 @@
+SL_V=4 segs=872 trans=4063
+EXAMPLE ('experiments/red/kw/instances/cw11_n24.pg', 0, 3, [0, 1], 3, 1, 24)
+EXAMPLE ('experiments/red/kw/instances/cw11_n24.pg', 12, 14, [12], 2, 1, 24)
+EXAMPLE ('experiments/si/root/instances/cone_n69.pg', 2, 20, [8], 18, 26, 69)
+SEGLAST FAIL

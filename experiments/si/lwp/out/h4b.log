@@ -1,0 +1,4 @@
+seed (2, 2, 0) n 42
+step 817 score (3, 3, 0) n 48
+step 1414 score (13, 3, 1) n 48
+step 1414 KILLSCORE 1 n 48

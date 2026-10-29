@@ -1,0 +1,8 @@
+seed (4.0, 2, 0) n 26
+step 19246 score (18.0, 13, -8) n 26
+step 19304 score (20.0, 14, -8) n 26
+step 19329 score (21.0, 14, -7) n 25
+step 19355 score (22.0, 14, -6) n 24
+step 19398 score (25.0, 15, -5) n 23
+step 19660 score (26.0, 15, -4) n 22
+final (26.0, 15, -4) n 22 best kill score 0

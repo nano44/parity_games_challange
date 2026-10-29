@@ -1,0 +1,2 @@
+excess_max_plus1000=1000 gap_minus_nEven_max_plus1000=1000 gaps=1332 trans=5321
+LASTSW PASS

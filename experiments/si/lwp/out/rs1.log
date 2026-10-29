@@ -1,0 +1,5 @@
+trial 3 best -4 n 6
+trial 20 best -2 n 4
+trial 4821 best -1 n 4
+trial 64212 score 0 n 5
+trial 64212 best 0 n 5
