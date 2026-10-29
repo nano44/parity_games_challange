@@ -649,3 +649,10 @@ echo "si (box 29 §7: EPOCH-U holds; TRAP-MONO dead on fbrestart_cex_n12 and len
 echo "e1b977aa9cf1583d5e0c442a8f87d024230b6524  ../../docs/si/P-N5-COMPOSE-box28.md" | sha1sum -c --quiet
 grep -q "^## F1 (COMP-E1" ../../docs/si/P-N5-COMPOSE-fixes-box28.md
 echo "si (box 28 fixes: P-N5-COMPOSE unchanged, fixes file present): PASS"
+# box 28 fixes, successor 26: quote pins of P-N5-COMPOSE-fixes-box28.md (19 quotes, 0 bad); a mutated quote must fail.
+o=$(cd ../.. && python3 -I docs/si/P-N5-COMPOSE-fixes-quotecheck.py)
+grep -q "^quotes=19 bad=0$" <<<"$o"
+qm=$(mktemp); sed 's/the number of TRANSITIONS t → t + 1/the number of STATES t → t + 1/' ../../docs/si/P-N5-COMPOSE-fixes-box28.md > "$qm"
+o=$(cd ../.. && python3 -I docs/si/P-N5-COMPOSE-fixes-quotecheck.py "$qm"); rm -f "$qm"
+grep -q "^quotes=19 bad=[1-9]" <<<"$o"
+echo "si (box 28 fixes: 19 quote pins exact; mutated quote caught): PASS"

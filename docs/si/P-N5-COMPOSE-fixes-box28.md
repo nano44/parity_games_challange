@@ -104,3 +104,58 @@ record, not refereed text.
   COMP-N5/N-C5, COMP-N6). Packet sha1 e1b977aa… unchanged.
 - FINDINGS: no signed statement changes; COMP-E1's definition (|R| = transitions) is what the proof and both checkers use.
 - NEEDS: none from the owner.
+
+## Appended by successor 26 (2026-10-29T13:34Z by date -u (13:34:15); Lead brief 13:15Z): F11-F14, quote pins, quote check
+F1-F10 above are unchanged. The items below cover what F1-F10 left without an F-item: the definition line in the Lead's form, REFEREE's
+re-worded §C C5 (claude/referee 1680010b, after F7 quoted c6011b70), REFEREE §C C11 = REFEREE-2 §C D11, and REFEREE-2 §C D12.
+
+## F11 (COMP-E1, report §1 wording; Lead 13:15Z). The definition line
+- Note, verbatim (REFEREE §1): «COMP-E1 (E-item). |𝒫| (§4) is used but never defined. It must be the number of TRANSITIONS t → t + 1 with t, t + 1 ∈ 𝒫 (compose.py's L = j − i).»
+- Appended text (definition line; same content as F1, in the form the Lead asked for): «|𝒫| := number of transitions t → t + 1 with t, t + 1 ∈ 𝒫.»
+  Read as the number of states, the phase part is FALSE (REFEREE §1: a one-state phase gives 1 ≤ 0).
+
+## F12 (REFEREE §C C5, re-worded at 1680010b)
+- Note, verbatim (REFEREE §C C5 at 1680010b): «UPDATED: [MΦ] is now SIGNED by both referees with an empty joint map (R-N5-MPGS §C 8da7b717, R2-N5-MPGS 0c4524f0); §6 can land as "COMPOSE-RUN with [MΦ] (citing the landed MPGS entry) gives …", the λ-run transfer as a referees' remark.»
+- No change, because F7's appended text names no RESULTS entry; it already says «When P-N5-MPGS lands, §6's premise is that entry plus this
+  referees' remark». F7's «Update» quote is the c6011b70 wording («R85-or-whichever entry»); the current wording is the one above.
+
+## F13 (REFEREE §C C11 = REFEREE-2 §C D11). Is the λ-constant restriction of LEN-MONO needed?
+- Notes, verbatim. REFEREE §C C11: «OPEN in data, not a finding (the proof uses it; LEN-MONO across a λ-change compares different cycle nodes)».
+  REFEREE-2 §C D11: «Complementary. REFEREE shows the phase restriction is needed; neither shows the λ restriction of LEN-MONO is needed».
+- No change, because the packet states and proves LEN-MONO only on stretches with λ constant (F2), which is all that Theorem COMPOSE uses.
+  Recorded as OPEN (data): LEN-MONO across a λ-change (X_LENfull) did not bite in REFEREE-2's control; no proof and no counterexample.
+
+## F14 (REFEREE-2 §C D12). Data scale
+- Note, verbatim (REFEREE-2 §C D12): «REFEREE: 10,778 runs (763 library + 15 pins + 6,000 + 4,000 random), Odd-side λ^U NM data new.»
+- No change, because §7 is DATA. Recorded: REFEREE's §C says «mine 6,778 runs»; the two figures differ by REFEREE's 4,000 MPHI runs (its
+  report table: 763 + 15 + 6,000 runs for the COMPOSE control, plus 4,000 runs of the MPHI control). Lane reading; no conflict.
+
+## Quote pins (every verbatim note above, with its source lines)
+Check: `python3 -I docs/si/P-N5-COMPOSE-fixes-quotecheck.py` from the repository root. Each pinned quote must (a) equal, whitespace
+collapsed, a substring of lines a..b of the source at the commit, and (b) occur, whitespace collapsed, in this file above this section.
+- [Q docs/referee/R-N5-COMPOSE.md@4896bc2e:116-116] «COMP-E1 (E-item, §1): define |𝒫| := #{t : t, t + 1 ∈ 𝒫} (transitions). Under "states" the phase part of Theorem COMPOSE is false.»
+- [Q docs/referee-2/R2-N5-COMPOSE.md@4b8afa95:168-169] «N-C2 (LEN-MONO / COMPOSE scope). The proofs need only "λ constant on R", not maximality. Theorem COMPOSE's phase statement applies LEN-MONO to a phase, which is a sub-stretch of a λ-run. Say "any stretch with λ (λ^U) constant" in LEN-MONO and Theorem COMPOSE. One word.»
+- [Q docs/referee-2/R2-N5-COMPOSE.md@4b8afa95:170-171] «N-C3 (§6, Odd side). For λ^U-runs on G^d, MATCHED / CARRY / NM^U are read with G^d's parities (Ω + 1, same ranks). "NM* over both players" should say so. The bound holds because MATCH-Φ is parity-agnostic. My check reads them that way: NM_O, 0 violations.»
+- [Q docs/referee/R-N5-COMPOSE.md@4896bc2e:117-117] «COMP-N1: the title defines P* but its formula also uses P*^U.»
+- [Q docs/referee/R-N5-COMPOSE.md@4896bc2e:118-118] «COMP-N2: SW-RETURN's RISE_R(c) counts CHANGES of Ξ(c); by F-MON they are rises. Say so where RISE is defined (the name suggests it, the definition says ≠).»
+- [Q docs/referee/R-N5-COMPOSE.md@4896bc2e:119-120] «COMP-N3: F-MON's "I is unambiguous: σ_{t+1} is a strategy" — say that I := {(v, σ_{t+1}(v)) : σ_{t+1}(v) ≠ σ_t(v)} ⊆ Iσ_t by F-SW (the link from S4a's arena to R15 (d)'s "Switch_I with I ⊆ Iσ" is [STEP] itself; one clause).»
+- [Q docs/referee/R-N5-COMPOSE.md@4896bc2e:121-122] «COMP-N4 (§6 note): the λ-run reading of [MΦ] is now confirmed by the first referee twice (R-N5-MPGS §1b, here §6); it can be stated as a remark of the landed MPGS entry rather than an assumption.»
+- [Q docs/referee-2/R2-N5-COMPOSE.md@4b8afa95:172-173] «N-C4 (§6 status). [MΦ] is signed by REFEREE-2 (record: R2-N5-MPGS.md, successor 19). REFEREE's MPGS report is not yet out (name count 0 at 11:54Z). So §6 stays an implication until [MΦ] lands, as the packet labels it.»
+- [Q docs/referee/R-N5-COMPOSE.md@c6011b70:151-151] «[MΦ] is now SIGNED by both referees with an empty joint map (R-N5-MPGS §C 8da7b717, R2-N5-MPGS 0c4524f0); §6 can land as "COMPOSE-RUN with [MΦ] (R85-or-whichever entry) gives …", the λ-run transfer as a referees' remark.»
+- [Q docs/referee-2/R2-N5-COMPOSE.md@4b8afa95:166-167] «N-C1 (quote form). [MΦ]'s quote joins MPGS l. 97 and 98 with "…" and drops "**". The lane's checker accepts it; my strict one does not. The content is faithful. This is the recurring "… over a line break" theme; quote the two lines separately.»
+- [Q docs/referee/R-N5-COMPOSE.md@4896bc2e:123-124] «COMP-N5 (slack, DATA): Σ SW / Σ(1 + RISE) = 0.10 overall on the library, 0.28 on random games; the factor n of LEN-MONO and MΦ's n²/2 are the loose links, as §7's READING says.»
+- [Q docs/referee-2/R2-N5-COMPOSE.md@4b8afa95:174-175] «N-C5 (READING §7 "L/S1 ≤ 1, S1/S2 ≤ 0.75 per phase"). My max S1/S2 is 0.8 on lib41 λ^U-runs (Odd side on λ^U-runs, not phases). That is not the packet's quantity, so there is no conflict. Noted because the packet's 0.75 is a per-phase Even figure.»
+- [Q docs/referee/R-N5-COMPOSE.md@4896bc2e:125-125] «COMP-N6 (premise): F-MON on the Odd side is [MON] applied to G^d, as in R47's Lemma Φ (b) citation chain (PHI-N1 = N-PHI-2); no new premise.»
+- [Q docs/referee/R-N5-COMPOSE.md@4896bc2e:31-31] «COMP-E1 (E-item). |𝒫| (§4) is used but never defined. It must be the number of TRANSITIONS t → t + 1 with t, t + 1 ∈ 𝒫 (compose.py's L = j − i).»
+- [Q docs/referee/R-N5-COMPOSE.md@1680010b:151-151] «UPDATED: [MΦ] is now SIGNED by both referees with an empty joint map (R-N5-MPGS §C 8da7b717, R2-N5-MPGS 0c4524f0); §6 can land as "COMPOSE-RUN with [MΦ] (citing the landed MPGS entry) gives …", the λ-run transfer as a referees' remark.»
+- [Q docs/referee/R-N5-COMPOSE.md@1680010b:157-157] «OPEN in data, not a finding (the proof uses it; LEN-MONO across a λ-change compares different cycle nodes)»
+- [Q docs/referee-2/R2-N5-COMPOSE.md@ee549524:225-225] «Complementary. REFEREE shows the phase restriction is needed; neither shows the λ restriction of LEN-MONO is needed»
+- [Q docs/referee-2/R2-N5-COMPOSE.md@ee549524:226-226] «REFEREE: 10,778 runs (763 library + 15 pins + 6,000 + 4,000 random), Odd-side λ^U NM data new.»
+- [Q docs/referee/R-N5-COMPOSE.md@1680010b:141-141] «mine 6,778 runs»
+
+## DONE / FINDINGS / NEEDS (successor 26)
+- DONE: F11-F14 appended; 19 quote pins; docs/si/P-N5-COMPOSE-fixes-quotecheck.py (quotes=19 bad=0; a mutated quote gives bad=1, check.sh).
+  F1-F10 and the frozen packet (sha1 e1b977aa…) unchanged.
+- FINDINGS: every verbatim note in F1-F10 is a literal substring of the referee report at its commit; F7's C5 quote is the pre-1680010b
+  wording (F12). No signed statement changes.
+- NEEDS: none from the owner.
