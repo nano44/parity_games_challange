@@ -456,3 +456,26 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
   the switches are 1: 14 → 48 (intermediate) and 29: 8 → 31 (final, but 29 is neither a W-sink nor an H-sink, so nothing becomes settled
   in either frame), and the only W-sink 24 stays unready: PSI1 = 24 at 2 and at 3. n5b state sequence identical (9 iterations, 1
   fallback). Obstruction: a final switch of a non-sink vertex is progress PSI1 does not see. SEG-LAST, SEG-COUNT hold there.
+
+## DEAD box 28 (L-SI successor 24, 2026-10-29T10:28Z by date -u (10:28:08)): (a) of the SEG-COUNT charging, INTER-JOINT, DL-HSW, DL-NEXT, GROW-PERSIST (docs/si/N5-CHG-box28.md §3, §5)
+- (a) in its general form EARLY («an H-sink h that is not a W-sink makes its last switch exactly at s_h = fW(jW h) − 1, together with its
+  W-chain»; needed by box 27 Corollary JOINT to charge a deadlock step): killed by the box-27 pin experiments/si/lay/instances/wgrow_kill_n90.pg
+  (sha1 f9a7ef090b3df5bb4293301e6bd1236e33a92cd0, .start a4ead4de…), segment [0, 3]: H-sinks 34, 47, 61 at t = 0 switch at 0 to their
+  targets for the last time, their W-chain settles at 3 (s_h = 2); 55 at t = 1 likewise. chg/suffix.py EARLY FAIL. It holds on
+  psidrop_kill_n70 and on the ladders k12/k24/k48. Obstruction: an H-sink may go straight to its target before the target's W-play is final.
+- INTER-JOINT («such an h that makes an INTERMEDIATE switch, to neither σ_t(h) nor σ_b(h), finalizes exactly at s_h»; the ladder's pattern):
+  killed by experiments/si/chg/instances/interjoint_kill_n70.pg (n 70, sha1 79a7c76af6e44bce47a6bd2c8e52b47ddf926d23; .start sha1
+  9b313151306069cb9c1f470bf0846730ae111331), found by chg/cclimb.py OBJ=IE from red/ul/instances/ladderd0_k12_n48 (pinned start) in 2,971
+  steps. REL segment [1, 7] = the fallback-free run; H-sink 10: σ = 32, 21, 36, 24, 24, 28, 28 on [1, 7], target 28, jW(10) = 0 W-settled
+  only at 7, so s_h = 6, but L(10) = 5; about 25 H-sinks with target 28 do the same. Checks: n5b state sequence identical (root/n5bcmp.py:
+  10 iterations, 1 fallback); chg/ijcheck.py from n5b alone (run (1, 7), REL segments [(1, 7)], REL fails at 0, sink status, L = 5, s_h = 6,
+  observed GEN_W 0 failures). SEG-COUNT holds there. What the proof needs instead: no early finalization must come from the deadlock
+  condition (CONJECTURE DL-JOINT, 15/15) or the charging must avoid it (CONJECTURE DL-RUN).
+- DL-HSW («at a deadlock step only H-sinks switch»): killed by experiments/si/lay/out/c_sk.pg (box-27 climb output, committed), segment
+  [5, 14], t = 5: 1, 41, 48, 127, 131 switch, only 1 is an H-sink (also lay/out/d29a, d29c, ll29). Not needed.
+- DL-NEXT («the step after a deadlock step is a W-growth step»): killed by experiments/si/lay/out/d29a.pg (default start), segment [4, 20],
+  t = 4: at 5 no W-sink is ready (30 finalizes, a non-sink); also d29c, d29d, p29. Not needed.
+- GROW-PERSIST («after the first growth step of a REL segment every step is a growth step»; all 13 deadlock segments of the box-27 climbs have
+  the pattern D F* G*): killed by experiments/si/chg/instances/growpers_kill_n73.pg (n 73, sha1 ff73bab1641c7f5b8f0756b25df2b24709d1bcdb;
+  .start b496c9b9dffb33880c4fe632ad47d606ef8ffd84), chg/cclimb.py OBJ=GP from psidrop_kill_n70 in 5 steps: segment [2, 5], pattern G F G
+  (t = 3: vertex 1 finalizes, no sink settles); n5b state sequence identical (9 iterations, 1 fallback).

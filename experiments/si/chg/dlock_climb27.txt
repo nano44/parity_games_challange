@@ -1,0 +1,21 @@
+DLHS_V=4 DLNEXT_V=4 deadlock=13 finalsteps=296 growsteps=282 maxdead_1=13 ngrun_1=9 ngrun_2=4 ngrun_4=1 ngrun_6=1 segs_with_deadlock=13
+EXAMPLE ('DLHS', 'experiments/si/lay/out/c_sk.pg', 5, 14, 5, [1, 41, 48, 127, 131], [1])
+EXAMPLE ('DLHS', 'experiments/si/lay/out/d29a.pg', 4, 20, 4, [1, 30, 56], [56])
+EXAMPLE ('DLNEXT', 'experiments/si/lay/out/d29a.pg', 4, 20, 4)
+EXAMPLE ('DLHS', 'experiments/si/lay/out/d29c.pg', 4, 12, 4, [21, 24], [24])
+EXAMPLE ('DLNEXT', 'experiments/si/lay/out/d29c.pg', 4, 12, 4)
+EXAMPLE ('DLNEXT', 'experiments/si/lay/out/d29d.pg', 5, 19, 5)
+EXAMPLE ('DLHS', 'experiments/si/lay/out/ll29.pg', 3, 7, 3, [1, 31], [1])
+EXAMPLE ('DLNEXT', 'experiments/si/lay/out/p29.pg', 3, 6, 3)
+DLHS FAIL
+DLSOMEH PASS
+DLNEXT FAIL
+DLEND PASS
+NOEARLY PASS
+MATCH PASS
+ZIG PASS
+DLSEP PASS
+GROWFIN PASS
+GROWPERS PASS
+DLFIRST PASS
+DLRUN PASS

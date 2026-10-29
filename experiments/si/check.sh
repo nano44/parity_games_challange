@@ -516,3 +516,39 @@ python3 -I lwp/seglast.py --one lay/instances/psidrop_kill_n70.pg lay/instances/
 python3 -I root/n5bcmp.py lay/instances/psidrop_kill_n70.pg lay/instances/psidrop_kill_n70.start | grep -q "n5b iterations 9 fallbacks 1 states 10 | n5x states 10 | identical state sequences: True"
 python3 -I lay/psi.py --one lay/instances/seglast_kill_n29.pg lay/instances/seglast_kill_n29.start | grep -q "^PSI0_V=1 steps=2$"
 echo "lay (box 27: psidrop_kill_n70 kills PSI-DROP, n5b identical; seglast_kill_n29: PSI0 fails at the deadlock, PSI1 drops): PASS"
+# box 28 (docs/si/N5-CHG-box28.md): SEG-COUNT charging. Corollary BND (L(v) <= max(fW(jW v) - 1, fH(jH v))) and SUFFIX-COUNT hold on the
+# box-27 kill pins and the ladder; MUT=1 (bound lowered by one) bites. General (a) (EARLY) fails on wgrow_kill_n90 (H-sink 34 at t = 0).
+for i in seglast_kill_n29 seglast_kill_n110 psidrop_kill_n70; do
+  o=$(python3 -I chg/suffix.py --one lay/instances/$i.pg lay/instances/$i.start); for k in BND SUFFIX JOINTX INTEREARLY; do grep -q "^$k PASS" <<<"$o"; done
+done
+L=../red/ul/instances/ladderd0_k12_n48
+o=$(python3 -I chg/suffix.py --one $L.pg $L.start); for k in BND SUFFIX EARLY JOINTX INTEREARLY; do grep -q "^$k PASS" <<<"$o"; done; grep -q "hsink_inter=11 " <<<"$o"
+if ! MUT=1 python3 -I chg/suffix.py --one $L.pg $L.start | grep -q "^BND FAIL"; then echo "box 28 BND MUT did not bite"; exit 1; fi
+if ! MUT=1 python3 -I chg/suffix.py --one lay/instances/seglast_kill_n29.pg lay/instances/seglast_kill_n29.start | grep -q "^BND FAIL"; then echo "box 28 BND MUT n29"; exit 1; fi
+o=$(python3 -I chg/suffix.py --one lay/instances/wgrow_kill_n90.pg lay/instances/wgrow_kill_n90.start); grep -q "^EARLY FAIL" <<<"$o"
+grep -q "EXAMPLE ('EARLY', 'lay/instances/wgrow_kill_n90.pg', 0, 3, 0, 34, 0, 2)" <<<"$o"
+echo "si (box 28: BND and SUFFIX-COUNT on kill pins and ladder, MUT bites; general (a) dead on wgrow_kill_n90): PASS"
+# box 28: chg/instances/interjoint_kill_n70 kills INTER-JOINT: H-sink 10 (intermediate switches at 1, 2, 3) finalizes at 5 < s_h = 6;
+# n5b state sequence identical; chg/ijcheck.py recomputes run, REL segment, sink status and L(h) from n5b alone.
+echo "79a7c76af6e44bce47a6bd2c8e52b47ddf926d23  chg/instances/interjoint_kill_n70.pg" | sha1sum -c --quiet
+echo "9b313151306069cb9c1f470bf0846730ae111331  chg/instances/interjoint_kill_n70.start" | sha1sum -c --quiet
+o=$(python3 -I chg/suffix.py --one chg/instances/interjoint_kill_n70.pg chg/instances/interjoint_kill_n70.start); grep -q "^INTEREARLY FAIL" <<<"$o"
+grep -q "EXAMPLE ('INTEREARLY', 'chg/instances/interjoint_kill_n70.pg', 1, 7, 1, 10, 5, 6)" <<<"$o"; grep -q "^SUFFIX PASS" <<<"$o"
+o=$(python3 -I chg/ijcheck.py chg/instances/interjoint_kill_n70.pg chg/instances/interjoint_kill_n70.start 1 7 1 10)
+grep -q "its REL segments: \[(1, 7)\] | \[a, b\] is one of them: True" <<<"$o"; grep -q "REL-admissible on \[a, b\]: True | REL at a - 1: False" <<<"$o"
+grep -q "sigma_k(h) for k in \[a, b\]: \[32, 21, 36, 24, 24, 28, 28\] | y_h = 28" <<<"$o"; grep -q "jW(h) = 0 first W-settled state of jW(h): 7" <<<"$o"
+grep -q "h H-unsettled at t: True | jH(h) H-settled at t (h an H-sink): True | jW(h) W-unsettled at t (h not a W-sink): True" <<<"$o"
+grep -q "intermediate switch at t: True | L(h) = 5 | s_h = fW(jW h) - 1 = 6" <<<"$o"; grep -q "S1 rank order): 0" <<<"$o"
+python3 -I root/n5bcmp.py chg/instances/interjoint_kill_n70.pg chg/instances/interjoint_kill_n70.start | grep -q "n5b iterations 10 fallbacks 1 states 11 | n5x states 11 | identical state sequences: True"
+echo "si (box 28: interjoint_kill_n70 kills INTER-JOINT, reproduced from n5b alone): PASS"
+# box 28: chg/instances/growpers_kill_n73 kills GROW-PERSIST (segment [2, 5], pattern G F G); n5b identical. CONJECTURE DL-RUN (deadlock
+# steps only at run starts), DL-FIRST, DL-JOINT (NOEARLY), DL-SOMEH, ZIG on the 48 box-27 climb instances (13 deadlock steps); MUT=1 bites.
+echo "ff73bab1641c7f5b8f0756b25df2b24709d1bcdb  chg/instances/growpers_kill_n73.pg" | sha1sum -c --quiet
+echo "b496c9b9dffb33880c4fe632ad47d606ef8ffd84  chg/instances/growpers_kill_n73.start" | sha1sum -c --quiet
+o=$(python3 -I chg/dlock.py --one chg/instances/growpers_kill_n73.pg chg/instances/growpers_kill_n73.start); grep -q "^GROWPERS FAIL" <<<"$o"
+grep -q "EXAMPLE ('GROWPERS', 'chg/instances/growpers_kill_n73.pg', 2, 5, 'GFG')" <<<"$o"
+python3 -I root/n5bcmp.py chg/instances/growpers_kill_n73.pg chg/instances/growpers_kill_n73.start | grep -q "n5b iterations 9 fallbacks 1 states 10 | n5x states 10 | identical state sequences: True"
+o=$(START=1 python3 -I chg/dlock.py --list chg/climbcorpus_box27.lst); grep -q "deadlock=13 " <<<"$o"
+for k in DLRUN DLFIRST NOEARLY DLSOMEH ZIG DLSEP GROWFIN MATCH; do grep -q "^$k PASS" <<<"$o"; done; grep -q "^DLHS FAIL" <<<"$o"; grep -q "^DLNEXT FAIL" <<<"$o"
+if ! MUT=1 python3 -I chg/dlock.py --one lay/instances/seglast_kill_n29.pg lay/instances/seglast_kill_n29.start | grep -q "^DLRUN FAIL"; then echo "box 28 DLRUN MUT"; exit 1; fi
+echo "si (box 28: growpers_kill_n73 kills GROW-PERSIST; DL-RUN, DL-FIRST, DL-JOINT hold on 13 climb deadlocks, MUT bites): PASS"
