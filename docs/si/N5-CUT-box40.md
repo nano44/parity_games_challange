@@ -113,3 +113,14 @@ quickly." Working note, unrefereed, not a TARGET.md claim. G-N5-TIME OPEN. Label
   4. DATA: 52% of re-entries are FRESH; FC ≤ 4 per pair (0.125n) while B_vc reaches 25 (0.52n); 0 failures of W-RETURN-G.
   5. CONJECTURE FC-LIN (FC ≤ n − 1 per pair per λ-run).
 - NEEDS: none from the owner.
+
+## Addendum (after L-RED R123, Lead 22:57Z relay): spanobs_K12_m48
+- Pin copied read-only from l-red 11ccc5e4's tree (origin/claude/l-red, experiments/red/span/instances/) to
+  experiments/si/odd/inst/red/: spanobs_K12_m48.pg sha1 5384eab66ea4, .start sha1 af48ece49891.
+- cuts.py with the .start, both frames (DATA): n 346, 612 iterations, 0 cuts, 98 pairs, 1,077 re-entries, ALL W-paid; FC 0, silent 0,
+  CYC 0; W-RETURN-G 0 failures; most entries of one pair 12.
+- READING: R123's large span counts (span MAT 482, PCH 502) are P-changes of the observer o. They are not re-entries: ENT per pair is
+  ≤ 12 and each one is paid by a same-frame W-change. FC-LIN and CUT-CHARGE are untouched; R123 is a family where Lemma SPAN's Ξ-branch
+  is the costly one and the W-branch is cheap (R123: WCH 11 on the pair (e, o)).
+- R123 (4)'s equivalence (PCH^span ≤ poly ⇔ G-N5-TIME, given Lemma SPAN and R47) applies to FC-LIN's route as well: FC ≤ ENT, so
+  FC-LIN carries content only through its linear exponent.
