@@ -19,7 +19,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   F1 (W-MONO / Ξ-SUCC citation, λ_W unused) and F2 (the (SW) quote without "…").
 - CONJECTURE L-WAVE (GRUN §5): gaps between non-length cuts ≤ n − 1, 0 violations in ~7,000 gaps (grun/lwave.py). Proof attempt: value-level
   settling; obstruction = gate competitors off the end-state plays + Even P-changes inside gaps (GRUN §5 READING).
-- Next: L-WAVE (a Bellman-Ford bound for gate competitors), or REL repairs when its reports arrive.
+- REL SIGNED by both (gap map empty); fixes file P-N5-REL-fixes-box25 (sha1 16a74626, l-si 843cf5b5; F1-F9: GATE-RISE = strict R61 (e) ALT,
+  Q renamed E_2, SEG data bound 1.00n over all starts).
+- Next: L-WAVE (a Bellman-Ford bound for gate competitors).
 - Things only I know (s21): --list modes of staticdepth.py / sdprime.py / pieceh.py read only column 1 of alt_all_root.lst (default starts)
   unless START=1 (sdprime, gstat, gaterise, relseg, lwave, pch, cutkind take START=1). quotecheck.py treats "…" as a separator: write quotes
   that span a line break WITHOUT "…" (REFEREE-2's checker is strict).
