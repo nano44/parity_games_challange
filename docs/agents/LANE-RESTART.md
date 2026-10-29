@@ -148,4 +148,4 @@ Five questions:
 | 2026-10-29 | L-RED | session_01V5yGRZAX31ZbgX9Mz7tMR1 (parked 05:22Z; handover l-red 92754453) | session_01V5yGRWodt68VHnvw1bRQmG (Opus, D1/D18) | 2 | none (check 61ab6c66) |
 | 2026-10-29 | L-COMP | session_01JPReGnoQGuUgg6d59WzGYS (parked 2026-10-28 22:14Z; resume point l-comp 9b029d23) | session_01V5yGRZrRdwiCSQqHfS2zGE (Opus, D15/L37) | 2 | none (check 76a57b40) |
 | 2026-10-29 | L-LIT | session_01BHfSXDDqsBQ27C9uYvBQVP (parked 2026-10-24; resume point l-lit dedbbe7e) | session_01V5yGRXhHuM2pqfXJ6ZB8RM (Opus, D18) | 2 | none (check l-lit a0e73a8f) |
-| 2026-10-29 | L-SI | session_01V5yGRYvskmpjWeFYKqryuH (~380k; handover a9960e64, head 28f558df) | session_01V5yGRXKXxiTL7ZomUHUGcP (Opus, D15/L37) | 2 | PENDING (successor's check) |
+| 2026-10-29 | L-SI | session_01V5yGRYvskmpjWeFYKqryuH (~380k; handover a9960e64, head 28f558df) | session_01V5yGRXKXxiTL7ZomUHUGcP (Opus, D15/L37) | 2 | none (check d55a1e4e; stale clone caught again) |
