@@ -1,0 +1,5 @@
+seed G 34 n 32
+step 8210 G 34 n 31 G/n 1.097
+step 12044 G 35 n 31 G/n 1.129
+step 24909 G 36 n 31 G/n 1.161
+final best G/n 1.161 G 36 n 31

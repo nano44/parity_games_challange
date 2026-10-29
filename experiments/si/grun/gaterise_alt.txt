@@ -1,0 +1,2 @@
+XR_gate_max=35 XR_gate_over_n_x1000_max=1062 changes=2270 clean=2114 cyc=8 runs=745 thru=73 tie=75
+GATERISE PASS

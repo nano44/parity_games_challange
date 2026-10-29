@@ -10,7 +10,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
     (R77 708), 914/943 lib41, 940/1080 random; 0 violations; MUT bites. Corollary EPOCH (REDUCTION): |piece| ≤ (CF + 1)n − 1.
   - Left: pieces where an end-state cycle forms inside the piece ((H3′) fails) + (H4′) failures; all short (≤ 0.43(n − 1)). Kill search:
     none (best uncovered 10 at n 15).
-- Next: STEP 2 G-RUN.
+- STEP 2 (G-RUN): note docs/si/N5-GRUN-box25.md; tools experiments/si/grun/ (gstat, gaterise, readerg, anchor, relseg, gclimb).
+  G not intrinsic (readers: runfam_K10 G 9 -> 91 at n 74, run 99 fixed; anchors put readers into K: G^K 91); G 35 at n 29 by climb (1.21n).
+  PROVED (lane): GATE-RISE (gate's own Ξ rises), STATIC-DEPTH-REL + REL-SPLIT (|S| ≤ SEG·n − 1, SEG reader-proof); CONJECTURE SEG-RUN
+  (DATA ≤ 1.00n).
+- Next: a monotone quantity for SEG (each cut is a relevant σ̄ change or a cycle appearance); or packets for STATIC-DEPTH′ / -REL if routed.
 - Things only I know: pieceh.py counts 872 pieces on alt_all (staticdepth --list skips 9 games with no Odd choice: 863). piececlimb shrinks n
   under CN = 1; use CN < 1 to let it grow. My first commit's session trailer has a typo (S for 5); the right id is in this header.
 

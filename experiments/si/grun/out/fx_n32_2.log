@@ -1,0 +1,15 @@
+seed G 0 n 32
+step 10 G 1 n 31 G/n 0.032
+step 617 G 2 n 31 G/n 0.065
+step 3071 G 3 n 32 G/n 0.094
+step 12930 G 4 n 32 G/n 0.125
+step 13825 G 5 n 32 G/n 0.156
+step 14365 G 6 n 32 G/n 0.188
+step 16389 G 7 n 32 G/n 0.219
+step 30331 G 8 n 32 G/n 0.250
+step 31124 G 9 n 32 G/n 0.281
+step 31353 G 10 n 31 G/n 0.323
+step 31755 G 11 n 32 G/n 0.344
+step 35420 G 12 n 32 G/n 0.375
+step 37618 G 13 n 32 G/n 0.406
+final best G/n 0.419 G 13 n 31

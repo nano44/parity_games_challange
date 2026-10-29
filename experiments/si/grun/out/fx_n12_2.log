@@ -1,0 +1,6 @@
+seed G 0 n 12
+step 88 G 1 n 12 G/n 0.083
+step 6000 G 2 n 12 G/n 0.167
+step 7808 G 3 n 12 G/n 0.250
+step 9747 G 4 n 12 G/n 0.333
+final best G/n 0.400 G 4 n 10
