@@ -1,0 +1,4 @@
+SIL2=2 SKIPPED_input=1 fw=655
+maxima: {'tc/wch': (1.0, 1, 1, 'experiments/si/coarse/instances/box9/cl9_mn_a.pg', 17, 18, 32), 'silrun': (3, 'experiments/si/kw15/climb/best_wonce2_1523.pg', 1, 4, 0, 12)}
+EXAMPLE ('SIL2', 'experiments/si/kw15/climb/best_wonce2_1523.pg', 1, 4, 3, 0, 12)
+EXAMPLE ('SIL2', 'experiments/si/kw15/climb/best_wonce2_1524.pg', 1, 4, 3, 0, 17)
