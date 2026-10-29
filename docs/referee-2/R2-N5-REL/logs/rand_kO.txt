@@ -1,0 +1,30 @@
+MODE random 3000 8 20 2601 0 3 MUT - RELCAP 60
+ENGXI_checks: 27672
+GRC_checks: 4978
+GR_changes_CLEAN: 187
+GR_changes_CYC: 45
+GR_changes_THRU: 2
+GR_changes_TIE: 32
+GR_checks: 187
+GR_norise_CYC: 18
+GR_norise_TIE: 32
+RA_intervals: 1076
+REL_beyond_SDPRIME: 87
+REL_intervals: 1075
+REL_sbar_moves_off_RO: 87
+REL_sharp: 156
+RELng_beyond_SDPRIME: 1
+RELng_intervals: 1
+RELng_sbar_moves_off_RO: 1
+RREM_checks: 988
+RS_hyp_runs: 1198
+RS_runs: 1199
+RS_segments: 1477
+S_runs: 1199
+runs: 9000
+states: 27672
+REL_max_len: (3, 'random2601:940#0', 2, 5, 5, 14)
+RELng_max_len: (1, 'random2601:490#1', 1, 2, 6, 17)
+RS_max_SEG_over_n: (0.333, 'random2601:2166#1', 0, 2, 3, 9)
+RS_max_run_over_SEGn: (0.25, 'random2601:603#1', 0, 2, 1, 8)
+RESULT OK violations=0

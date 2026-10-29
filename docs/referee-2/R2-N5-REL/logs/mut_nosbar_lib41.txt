@@ -1,0 +1,58 @@
+MODE files ../R2-N5-STAU/lib41_noref.lst 3 MUT nosbar RELCAP 60
+ENGXI_checks: 19315
+GRC_checks: 10733
+GR_changes_CLEAN: 3751
+GR_changes_CYC: 23
+GR_changes_THRU: 109
+GR_changes_TIE: 168
+GR_checks: 3751
+GR_norise_CYC: 8
+GR_norise_TIE: 167
+H4rel_fail: 103
+RA_intervals: 90634
+REL_beyond_SDPRIME: 3422
+REL_intervals: 90367
+REL_sbar_moves_off_RO: 3422
+REL_sharp: 915
+RELng_intervals: 164
+S_runs: 1612
+VIOLATIONS: 212050
+V_RLEN: 1450
+V_RSETH: 170357
+V_RSETW: 38793
+V_RSIG: 1450
+runs: 1230
+states: 19315
+REL_max_len: (55, 'experiments/red/xing/instances/x32_rand64.pg#0', 0, 55, 56, 64)
+RELng_max_len: (12, 'experiments/new/box29/instances/u1_n32.pg#0', 0, 12, 15, 32)
+VIOLATION RSETH: experiments/n5-exhaustive/instances/b4_n4all_cyc3_0.pg#2 [1,2] v=3 t=1
+VIOLATION RSETH: experiments/n5-exhaustive/instances/b4_n4all_cyc3_0.pg#2 [0,2] v=1 t=1
+VIOLATION RSETH: experiments/n5-exhaustive/instances/b4_n4all_cyc3_0.pg#2 [0,2] v=3 t=0
+VIOLATION RSETH: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0 [11,16] v=0 t=15
+VIOLATION RSETH: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0 [10,16] v=0 t=14
+VIOLATION RSETH: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0 [10,16] v=6 t=15
+VIOLATION RSETH: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0 [9,16] v=0 t=13
+VIOLATION RSETH: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0 [9,16] v=5 t=15
+VIOLATION RSETH: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0 [9,16] v=6 t=14
+VIOLATION RSETH: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0 [9,16] v=8 t=15
+VIOLATION RSETH: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0 [8,16] v=0 t=12
+VIOLATION RSETH: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0 [8,16] v=5 t=14
+VIOLATION RSETH: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0 [8,16] v=6 t=13
+VIOLATION RSETH: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0 [8,16] v=8 t=14
+VIOLATION RSETH: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0 [8,16] v=16 t=15
+VIOLATION RSETH: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0 [8,16] v=23 t=15
+VIOLATION RSETH: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0 [8,16] v=26 t=15
+VIOLATION RSETH: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0 [7,16] v=0 t=11
+VIOLATION RSETH: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0 [7,16] v=5 t=13
+VIOLATION RSETH: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0 [7,16] v=6 t=12
+VIOLATION RSETH: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0 [7,16] v=8 t=13
+VIOLATION RSETH: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0 [7,16] v=16 t=14
+VIOLATION RSETH: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0 [7,16] v=22 t=15
+VIOLATION RSETH: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0 [7,16] v=23 t=14
+VIOLATION RSETH: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0 [7,16] v=26 t=14
+VIOLATION RSETH: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0 [7,16] v=28 t=15
+VIOLATION RSETH: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0 [6,16] v=0 t=10
+VIOLATION RSETH: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0 [6,16] v=4 t=15
+VIOLATION RSETH: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0 [6,16] v=5 t=12
+VIOLATION RSETH: experiments/n5-exhaustive/instances/b6_xl2_n32.pg#0 [6,16] v=6 t=11
+RESULT FAIL violations=212050

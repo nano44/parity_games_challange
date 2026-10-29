@@ -1,0 +1,29 @@
+MODE files ../R2-N5-STAU/lib41_noref.lst 3 MUT - RELCAP 60
+ENGXI_checks: 19315
+GRC_checks: 10733
+GR_changes_CLEAN: 3751
+GR_changes_CYC: 23
+GR_changes_THRU: 109
+GR_changes_TIE: 168
+GR_checks: 3751
+GR_norise_CYC: 8
+GR_norise_TIE: 167
+H4rel_fail: 27
+RA_intervals: 53652
+REL_beyond_SDPRIME: 3281
+REL_intervals: 53461
+REL_sbar_moves_off_RO: 3281
+REL_sharp: 442
+RELng_intervals: 164
+RREM_checks: 50344
+RS_hyp_runs: 1536
+RS_runs: 1612
+RS_segments: 4671
+S_runs: 1612
+runs: 1230
+states: 19315
+REL_max_len: (55, 'experiments/red/xing/instances/x32_rand64.pg#0', 0, 55, 56, 64)
+RELng_max_len: (12, 'experiments/new/box29/instances/u1_n32.pg#0', 0, 12, 15, 32)
+RS_max_SEG_over_n: (0.95, 'experiments/si/orlens/instances/lev_l_n20.pg#2', 2, 20, 19, 20)
+RS_max_run_over_SEGn: (0.917, 'experiments/red/xing/instances/x32_rand48.pg#0', 0, 44, 1, 48)
+RESULT OK violations=0
