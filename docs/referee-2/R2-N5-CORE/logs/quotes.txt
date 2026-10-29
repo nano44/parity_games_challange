@@ -1,0 +1,11 @@
+OK   docs/RESULTS.md@33f43c20:1825-1826 | (a) Remark KEY (every game): λ_U is a function of τ alone, so on every run of states with 
+OK   docs/new/N5-ssi-global.md@33f43c20:47-47 | Iσ = {(v, w) : owner(v) = Even, w ≠ σ(v), Ξσ(w) strictly better than Ξσ(σ(v))}
+OK   docs/new/N5-ssi-global.md@33f43c20:50-50 | S4 Iteration (one iteration = one pass with Iσ ∪ Iτ ≠ ∅
+OK   docs/new/N5-ssi-global.md@33f43c20:56-57 | c. FALLBACK, if σ_new = σ and τ_new = τ: if Iσ ≠ ∅, for every Even v with an improving edg
+OK   docs/RESULTS.md@33f43c20:3768-3769 | (SW): every Even switch of N5 is to an edge of Iσ
+OK   docs/RESULTS.md@33f43c20:631-631 | (a) Lemma A: for any non-empty unambiguous set I of improvements of σ (VJ00 §4.4), Ωσ ⊴ Ω_
+OK   docs/RESULTS.md@33f43c20:640-640 | (d) N5: every iteration applies Switch_I with ∅ ≠ I ⊆ Iσ to Even's σ
+OK   docs/RESULTS.md@33f43c20:2851-2851 | (a) Facts (Aκ), (A0κ), (M1κ), (M2κ), (INJ), (SP′) per honest class
+OK   docs/new/P-N5-FBRED-box44.md@3732ab55:49-50 | (Aκ): for z ∈ U_c ∖ {c}: λ_t(z) = c ≠ z, so (V1) gives Ξ_t(z) = z ⊕ Ξ_t(next_t z) with cyc
+OK   docs/RESULTS.md@33f43c20:2858-2859 | (d) κ-Y-FORM_D (per q ∈ Q ∩ U_c, q ≠ c, at a state t where q lies on no honest cycle): κ_t
+tags 10 ok 10 miss 0 SHIFT 0

@@ -1,0 +1,46 @@
+X4TIE experiments/red/ctxp/instances/margin1_mc1.pg#2 0 c 68 u 12 y1 25 y2 61 (0, 7) (0, 7) (0, 7) (0, 7)
+X4TIE experiments/red/tcpert/instances/tcL_N5.pg#2 2 c 99 u 16 y1 18 y2 17 (0, 10) (0, 10) (0, 10) (0, 10)
+X4TIE experiments/red/tcpert/instances/tcR4_N6.pg#0 2 c 124 u 16 y1 0 y2 14 (0, 10) (0, 10) (0, 10) (0, 10)
+X4TIE experiments/red/tcpert/instances/tcS8_N10.pg#2 2 c 328 u 32 y1 33 y2 34 (0, 5) (0, 5) (0, 5) (0, 5)
+X4TIE experiments/red/tcpert/instances/tcS8_N10.pg#2 2 c 328 u 122 y1 119 y2 120 (0, 5) (0, 5) (0, 5) (0, 5)
+X4TIE experiments/red/tcpert/instances/tcS8_N7.pg#0 4 c 164 u 49 y1 154 y2 156 (0, 16) (0, 16) (0, 16) (0, 16)
+X4TIE experiments/red/tcpert/instances/tcS8_N7.pg#0 4 c 164 u 97 y1 96 y2 157 (0, 16) (0, 16) (0, 16) (0, 16)
+X4TIE experiments/red/tcpert/instances/tcS8_N7.pg#0 4 c 164 u 98 y1 96 y2 156 (0, 16) (0, 16) (0, 16) (0, 16)
+X4TIE experiments/red/tcpert/instances/tcS8_N8.pg#0 2 c 212 u 31 y1 30 y2 29 (0, 17) (0, 17) (0, 17) (0, 17)
+MODE files ../R2-N5-STAU/lib41_noref.lst 3 RULE rand
+AK_checks: 23028
+C1_checks: 14822
+C2_checks: 2071
+C2_tight: 581
+C3_checks: 35118
+C3_oncyc_switches: 497
+C3cons_checks: 2071
+C4_changes: 13364
+C4_checks: 9274
+C4_half1_only: 3398
+C4_half2_only: 399
+C4_strict: 9265
+C4_tie_at_t1: 455
+C4_unclean: 4090
+C5_checks: 166215
+ENGXI_checks: 21872
+MONO_checks: 14822
+X3cyc: 133
+X3y: 25687
+X3y_checks: 35615
+X4strict: 9
+X4tie: 9
+X5nE: 3
+XC3_checks: 27901
+XC3_checks_oncyc: 8826
+XC3_fail_oncyc: 199
+X_cross_transitions: 5820
+YF_checks: 199475
+phases: 2071
+runs: 1230
+states: 21872
+transitions: 14822
+max_NOFRESH: (26, 'experiments/red/so/instances/so_th_n32.pg#1', 7, 56)
+max_SW_over_P: (55.0, 'experiments/red/tcpert/instances/tcL_N12.pg#1', 1, 2)
+max_fresh_over_mE: (0.375, 'experiments/n5-exhaustive/instances/thetaA_n6.pg#2', 0, 3)
+RESULT OK violations=0

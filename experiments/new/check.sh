@@ -41,4 +41,30 @@ else
   echo "N5-READER checks: FAILED"; exit 1
 fi
 rm -rf "$t49"
+# Box 49 (successor 30): packet P-N5-FBCK (frozen): quotes (9) with the shifted-line control, its sha1, and Theorem FB-C^K's data check on
+# the plain reader l121_cf35_39 (|C_f| 8, |C^K_f| 5, KVIOL absent).
+if git cat-file -e e83fd19d^{commit} 2>/dev/null; then
+  if python3 -I box49/quotecheck3.py ../../docs/new/P-N5-FBCK-box49.md | grep -q "quotes=9 bad=0" && \
+     ! python3 -I box49/quotecheck3.py ../../docs/new/P-N5-FBCK-box49.md --mut >/dev/null && \
+     [ "$(sha1sum ../../docs/new/P-N5-FBCK-box49.md | cut -d' ' -f1)" = "7747ecf23f65ac82fc2d75e0f6ecc28c7621ce1f" ] && \
+     fk=$(python3 -I box49/fbconf.py 0 1 box49/inst/l121_cf35_39.pg) && echo "$fk" | grep -q "^Cf 8 Cf_K 5 " && ! echo "$fk" | grep -q KVIOL; then
+    echo "P-N5-FBCK quotes 9 + control, sha1, FB-C^K on l121_cf35_39: PASS"
+  else
+    echo "P-N5-FBCK checks: FAILED"; exit 1
+  fi
+else
+  echo "P-N5-FBCK quotes: NOT RUN (e83fd19d not in this clone)"
+fi
+# Box 49 (successor 30): P-N5-RESTRICT-fixes (frozen): 31 quotes at the §C commits 3b2631be / 864302d0 and the freeze 7e56744a, shifted control, sha1.
+if git cat-file -e 3b2631be^{commit} 2>/dev/null && git cat-file -e 864302d0^{commit} 2>/dev/null; then
+  if python3 -I box49/quotecheck3.py ../../docs/new/P-N5-RESTRICT-fixes-box48.md | grep -q "quotes=31 bad=0" && \
+     ! python3 -I box49/quotecheck3.py ../../docs/new/P-N5-RESTRICT-fixes-box48.md --mut >/dev/null && \
+     [ "$(sha1sum ../../docs/new/P-N5-RESTRICT-fixes-box48.md | cut -d' ' -f1)" = "f33f00b36ab5626e7ccd24e3b2fdd75ca56b2764" ]; then
+    echo "RESTRICT-fixes quotes 31 + control, sha1: PASS"
+  else
+    echo "RESTRICT-fixes checks: FAILED"; exit 1
+  fi
+else
+  echo "RESTRICT-fixes quotes: NOT RUN (3b2631be or 864302d0 not in this clone)"
+fi
 rm -rf "$tmp"

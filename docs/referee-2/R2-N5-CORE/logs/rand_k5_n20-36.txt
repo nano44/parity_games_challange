@@ -1,0 +1,51 @@
+MODE random 400 20 36 1903 5 2 RULE n5
+AK_checks: 814
+C1_checks: 213
+C2_checks: 191
+C2_tight: 137
+C3_checks: 240
+C3_oncyc_switches: 59
+C3cons_checks: 191
+C4_changes: 41
+C4_checks: 36
+C4_half1_only: 5
+C4_strict: 36
+C4_tie_at_t1: 5
+C4_unclean: 5
+C5_checks: 237
+C6S_intervals: 130
+C6S_nonzero_Ashrink: 3
+C6S_nonzero_fresh: 130
+C6S_nonzero_oddopt: 2
+C6_cuts: 38
+C6_intervals: 160
+C6_nonzero_Ashrink: 3
+C6_nonzero_fresh: 160
+C6_nonzero_oddopt: 2
+ENGXI_checks: 2839
+MONO_checks: 213
+X1: 273
+X3cyc: 43
+X3y: 269
+X3y_checks: 299
+X6Ax: 19
+XC3_checks: 2626
+XC3_checks_oncyc: 1438
+XC3_fail_oncyc: 37
+X_cross_transitions: 1826
+YF_checks: 1625
+fallback_transitions: 37
+phases: 191
+runs: 800
+states: 2839
+transitions: 213
+C6S_max_Ashrink: (1, 19, 'random1903:140#1', 3, 4)
+C6S_max_len: (2, 'random1903:9#0', 2, 4)
+C6S_max_oddopt: (1, 7, 'random1903:326#0', 1, 2)
+C6_max_Ashrink: (1, 19, 'random1903:140#1', 3, 4)
+C6_max_len: (3, 'random1903:9#0', 2, 5)
+C6_max_oddopt: (1, 7, 'random1903:326#0', 1, 2)
+max_NOFRESH: (0, 'random1903:2#0', 0, 1)
+max_SW_over_P: (5.0, 'random1903:290#1', 1, 2)
+max_fresh_over_mE: (0.1, 'random1903:253#0', 1, 2)
+RESULT OK violations=0
