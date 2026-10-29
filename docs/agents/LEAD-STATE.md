@@ -1817,3 +1817,4 @@
 - 23:48Z (date -u): R78 LANDED (C87 PASS, checker d0b32277): RESULTS block = R78 draft lines 3-end with one fill; GAPS UPDATE; NOW counters.
 - 23:53Z (date -u): REFEREE-2 19 CORE report 2ed8d3fb (all SIGN, no gap, no exposure); CORE §C words to both. L-NEW RESTRICT fixes a99dee17 (sha1 f33f00b3; joint repair, exposure ruling recorded). R79 (RESTRICT) draft delegated to a subagent (docs/agents/R79-draft.md; Lead review before C88). L-NEW → FB-LIN via |𝒞^K_f|.
 - 23:58Z (date -u): R79 (RESTRICT) draft reviewed: one-referee λ-end clause moved out of title and (d) into 'Referee strengthening (NOT part of this entry)', per the two-signature rule. To CHECKER as C88.
+- 00:03Z (date -u, 2026-10-29): C88 sent (R79 a78a4546 at fd8c4e91). SLIP: the C88 message's stamp was the estimate '00:0xZ', not a date -u reading (this line's 00:03Z is the reading).
