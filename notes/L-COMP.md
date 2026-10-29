@@ -1,6 +1,36 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point -- PARKED: successor 7 (session_01V5yGRZrRdwiCSQqHfS2zGE, Opus 5.5), 2026-10-29 ~18:xxZ by date -u. Lead 17:49Z: box 22 last, then park; no successor for now.
+- Handover check 76a57b40 (successor 7's answers in docs/agents/handover-checks/L-COMP.md). Boxes this session: 17-22, all under experiments/n5-box17..22/
+  (one README per box: definitions, cross-checks, every table, every pinned sha1). Every push via scripts/push.sh, verify PASS each time.
+### DONE (all DATA unless labelled)
+- BOX 17 (exhaustive small-n tables of L-SI's quantities): box17.py = my implementation on n5b of REL cutting / SEG-COUNT EXC / SEG(S) /
+  L-WAVE' gap / f per phase / DL-RUN deadlocks; xcheck.py = field-by-field equality with L-SI's own tools (seglast.segs, segsw, relseg,
+  lwave PMODE=1, chg/dlock.py) on all L-SI/L-RED pins + 4,000 random games: 0 mismatches. Model C(n) (all owners, parity patterns, successor
+  sets; ids in rank order; privar.py: priorities matter only by rank+parity). EXHAUSTIVE n <= 4 with ALL start pairs (C(4): 12,960,000 games,
+  268,435,456 pairs), L(3) all rank orders; random n 5-8. 0 violations; max EXC 0, SEG 3, L-WAVE' gap 3 = n - 1 (tight on 384 trajectories),
+  f 1, no deadlock step at all (least n with DL-RUN in [5, 20]; segcount_kill_n20 is 1-minimal under vertex/edge deletion, dlshrink.py).
+- BOX 18 (T32): nm.py carries (= T32 and T33 brute force on all K=6 pairs, all parities; = L-RED gatep.py counts). NM <= 1.18n (pl130_n40);
+  LIP DEAD (ladderd0_k12_n48 [0,13] v 14); HAM-MONO DEAD in all forms; NEST-FACE (ii) PROVED (mine, unrefereed) from R84 monotonicity.
+- BOX 19: CUT-Φ DEAD (b4_n5_other_0, n 5: cycle-appearance cut with no path-set change; wk1_n32 σ̄-type).
+- BOX 20: N5-SF SBC tables (sf20.py on L-NEW's n5sf.py verbatim copy, n5-box20/lnew_box54 @ l-new 56a42d4f): n <= 3 exhaustive, C(4) every
+  16th game, random n 5-8: 0 cycle/region/opt violations, max SBC/n 1.17.
+- BOX 21: PGSolver friedmannsubexp / fearnleysubexp ported (hard-families/pgsolver_port.py); byte-identical to L-LIT's T47 generator on 36
+  (family, N) pairs N 1..12 (+ friedmann N 13..20); NOT diffed vs the PGSolver binary (build refused by the permission classifier).
+  N5 linear (friedmann 4N+3 S3 / 4N+13 lastedge, N <= 16); N5-SF SBC ~ 0.08n on friedmannsubexp N <= 20 (DSB = SBC + 1, no cycle-centre
+  counter). check.sh gate n5-box21/check.sh.
+- BOX 22: see n5-box22/README.md (fcN from own port = L-RED sha1s; sfb.py = N5-SF on n5b, second engine).
+### IN FLIGHT: nothing after the box-22 push (see that README for the final numbers).
+### Things only I know (successor 7)
+- An experiments/n5-box17/enum.py name shadowed stdlib `enum` (any `import re` broke): never name a module after a stdlib module (renamed exh17.py).
+- pgrep -f in an until-loop matches its own command line (bit me again 10:3xZ): wait on files/line counts, not process names.
+- run_parts.sh N P: resumable parts (skips existing JSON); merge.py merges; parts' .log files are in .git/info/exclude locally only.
+- n5x (L-SI/L-NEW engine) is ~2x faster than n5b for N5-SF; sf20.py caches each state's step per game, so all-start tables cost ~ #states.
+- Building PGSolver (ocaml/dune) is refused by the auto-mode classifier ("Code from External"); apt install of ocaml was allowed.
+- Oink must be rebuilt per container (scripts/setup_oink.sh, ~5 min); verify.sh needs it.
+- L-SI's rows() uses n5x; its "fb" is the flag of the transition LEAVING a state; runs() splits at k with fb; phases need j > i.
+
 ## Resume point -- PARKED: successor 6 (session_01JPReGnoQGuUgg6d59WzGYS), 2026-10-28 22:1xZ by date -u. Lead 22:06Z: BOX 16 CLOSED, park.
 - Last pushes: aeff7b04 (box 16 §4/§5), eabb3018 (XR-LIN repro), d9197efe, 973520df. Both 973520df and aeff7b04 merged by the Lead.
 - No background jobs. Oink was built in this container (gitignored; rebuild with scripts/setup_oink.sh).
@@ -366,6 +396,7 @@ AM9 Lemma 3's proof sets D_{dbar} = D cap U_{dtilde} (tex:345), probably a typo 
 | arXiv 2108.13338v5 (LaTeX e-print, sha256 7189eb2f...5c816c; abs page lists v1 2021-08-30 .. v5 2025-06-15) | §2 (prelim.tex: ordered/universal trees, labels, feasibility, violated/tight/loose, Tighten, lift, Prop. 2.6 lattice fixed points); §3 (strategy-iteration.tex: Algorithm 1, admissible arcs, Thm 3.1 correctness, base nodes, Thm 3.3 MinBottleneckCycles); §4 (label-setting.tex: Algorithm 2 Dijkstra, Lemma 4.1, Thm 4.2, Cor. 4.3; §4.1 Algorithm 3 LabelSetting, Thm 4.4, Rem. 4.5) | 2026-10-23 | N8d second implementation; theorem numbers are my count in source order, the .tex uses labels (thm:correctness, thm:dijkstra, cor:dijkstra, thm:label-setting) |
 | arXiv 1106.0778 (pdf sha256 46c96f44775aa2b07cad20912cb325b177e38c94cb2e40297df66b6047679611 = L-NEW's), O. Friedmann, LMCS 7(3:19) 2011 | §2 (Ω injective, l.132 of pdftotext), §3, §4 (I^glo), §5 (1-sink), §8.1 Table 5 / Fig. 7 / Lemma 8.1, §8.2 Fig. 8, §8.3 Table 6 / Fig. 9 / Lemma 8.2, §8.4 Table 7 / Fact 8.1 / start ι_{H_n} / Fig. 10 / Lemma 8.3, §8.5 Theorem 8.4, Fig. 11 | 2026-10-26 | box 16 H_n. Table 7 gate priorities collide with the lane (d2_n = t1 = 8n+3 etc.); Fig. 10/8/9 use 8i-5..8i+2: hn.py mode fig. Text says lane length 6n-3, Table 7 has i <= 6n-2 (= m of §8.1): 6n-2 used |
 
+| github.com/tcsprojects/pgsolver @ d3cd624 | src/lib/generators/policyiter/generators/friedmannsubexp.ml (90 lines), fearnleysubexp.ml (86 lines), stratimprgenerators.ml SymbolicParityGame | 2026-10-29 | code, not a paper; box 21 ports |
 ## Dead ends
 - 2026-10-18 (method note): watcher loops counting 'done' lines never end when a run crashes before printing 'done'; count
   log lines or processes instead (three stale watchers hit their time limits this box, no data affected).
@@ -380,3 +411,10 @@ AM9 Lemma 3's proof sets D_{dbar} = D cap U_{dtilde} (tex:345), probably a typo 
   vertices the opponent can force into lower-priority parts, but player(d) (here Odd) can dodge A' on a
   cycle that never returns to U^k, and that cycle can be won by the opponent. Instance: experiments/m2/counterexamples/ce1_4v.pg
   (4 vertices, all Odd's; Even wins all; the algorithm gives all to Odd via A(G,1) = V). Trace in that folder's README.
+- 2026-10-29 (box 18): CONJECTURE LIP (T32 E1 (b), all three readings) DEAD. Obstruction: a vertex can switch many times while its jW / jH
+  successor is fixed or ⊥. Instance: red/ul/instances/ladderd0_k12_n48 (+ .start), REL segment [0, 13], vertex 14 switches 12 times,
+  jW(14) = 1 switches once, jH(14) = ⊥.
+- 2026-10-29 (box 18): HAM-MONO (T32 E7; strict, weak, even-only, odd-only) DEAD. Obstruction: path sets move back toward the phase start.
+  Instances: gci3_n24 S3 (phase [3, 15], v 8, |PΔP_i| 6 → 5) and lend107_n32 S3 (odd part 5 → 4).
+- 2026-10-29 (box 19): CONJECTURE CUT-Φ (T35 §4) DEAD. Obstruction: a REL cut can change no path set at all (cycle appearance or σ̄ change
+  with ℓ-only effect). Instance: n5-exhaustive/instances/b4_n5_other_0.pg (n 5, S3), cut 0 → 1.
