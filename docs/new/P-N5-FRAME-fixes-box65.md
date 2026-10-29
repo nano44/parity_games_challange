@@ -76,3 +76,7 @@ docs/new/P-N5-FRAME-fixes-box65.md. Append-only; the packet stays frozen.» Writ
 - DONE: this file; docs/new/P-N5-FRAME-box65-line-H0.txt (corrected RESULTS line).
 - FINDINGS: one required line fix (Q and NM^U_R(e) defined); 16 clarifications; no signed statement changes; the packet stays frozen.
 - NEEDS: none from the owner.
+
+## H17 (appended 2026-10-29 ~22:12Z; replaces H16, which stays above unedited; REFEREE-2 21 §C.7, referee-2 b8aea44b) — DATA
+- REFEREE-2, verbatim: "freeze2.py counts box 63's (H1) (σ_e = τ̄) over all 42 states: 81; the packet's (H1′) gives 84 over all states (81 on 0-40)."
+- DATA only: no verdict changes, and no pinned check is affected (check.sh's "states 42 hyp-hits 81" is freeze2.py's (H1) count, as stated).

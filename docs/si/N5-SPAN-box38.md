@@ -80,6 +80,38 @@ TARGET.md claim. G-N5-TIME OPEN. Labels: PROVED (lane) / CONJECTURE / DATA / DEA
   | Odd | SPAN | 0.06 (mei_h8); 4 (tcS8_N9) | 0.16 (wide_h16); 8 (tcL_N12) | 0.16; 5 |
 - PCH^span exceeds n on rise_thin51_n40 (55 at n 40): PCH-QUAD-S needs its n², not n. RESET-LIN-S has its largest ratio 0.70 there.
 
+## 6. Windows in the W-frame, and the hntop_N family for W-VPOLY (Lead 21:41Z (1), (2))
+- (1) W-ENT is already a window statement (READING of box 37 §2's proof).
+  - The W-rise of w that pays for a re-entry lies in [k + 1, j]: from v's leave of w to v's re-entry, i.e. v's OUT-window.
+  - So W-ENT holds with WCH counted only there: ENT_Q(v, w) ≤ 1 + WCH^out_Q(v, w) + SIL + CYC, and WCH^out ≤ WCH^span (windows are
+    disjoint and lie in the span). PROVED (lane): the same proof, reading where the charged change sits.
+  - With box 37 §5 (CN-W, LEN-MONO in W) per span this gives the observer-proof W form:
+    CONJECTURE W-VPOLY-S: WCH^span_Q(v, w) ≤ n² per pair per guided stretch ⇒ |Q| ≤ m_E(1 + n²) + SIL + CYC.
+  - An entered-and-never-left target contributes 1.
+- (2) DATA, wret.py on hntop_N (red/seg/hnh1.py N topfix; N = 8 equals the pin red/seg/instances/hntop_n8, sha1 f71291a3; instances in
+  experiments/si/odd/inst/hn/; output odd/out/wret_hntop.txt). Every run is ONE guided stretch; W-RETURN and OPT hold (0 violations).
+
+  | N | n = 21N | stretch | max W-changes of one vertex (all) | max over pairs, span | max over pairs, out-windows | max switches of one vertex |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | 2 | 42 | 33 | 15 | 13 | 13 | 13 |
+  | 3 | 63 | 61 | 31 | 28 | 28 | 28 |
+  | 4 | 84 | 95 | 51 | 48 | 47 | 47 |
+  | 5 | 105 | 135 | 75 | 72 | 70 | 70 |
+  | 6 | 126 | 181 | 103 | 100 | 97 | 97 |
+  | 7 | 147 | 233 | 135 | 132 | 128 | 128 |
+  | 8 | 168 | 291 | 171 | 168 | 163 | 163 |
+
+  - Exact fits on all 7 sizes:
+    - all-vertex count 2N² + 6N − 5;
+    - out-window count 2N² + 5N − 5, equal to the most switches of one vertex. That is d_hntop's NM^U formula, box 34 §2.
+  - The span count is 2N² + 6N − 8 for N ≥ 3 (N = 2: 13).
+  - So W-changes of one vertex are Θ(N²) = Θ(n²/221). W-VLIN is dead, and W-VPOLY (≤ n²) holds with constant ≈ 1/220. No sign of
+    super-quadratic growth.
+  - Observers: tobs_K8_m32 and wobs_K8_m32 have all-vertex 17 / 16, span 13 / 13, out-window 8 / 8 (stretch 280 each). No inflation
+    in the W-frame, because τ is frozen and the observer's W changes only with its fixed successor's.
+- Composition: per guided stretch, the W route needs W-VPOLY-S. Its extremal family so far is H_n, quadratic; R120/R121 observers do
+  not inflate it.
+
 ## DONE / FINDINGS / NEEDS
 - DONE: odd/win.py; R121 pin copied; corpus runs; check.sh «box 38»; this note.
 - FINDINGS:
@@ -88,4 +120,5 @@ TARGET.md claim. G-N5-TIME OPEN. Labels: PROVED (lane) / CONJECTURE / DATA / DEA
   3. PROVED (lane): Lemma SPAN, ENT_R(v, c) ≤ n(1 + PCH^span_R(v, c)).
   4. Span COMPOSE: T = O(n³ m (1 + S*)).
   5. CONJECTURES RESET-LIN-S, CARRY-SEG-S, PCH-QUAD-S.
+  6. §6: W-ENT in out-window form (PROVED lane); CONJECTURE W-VPOLY-S; hntop_N exact fits 2N²+6N−5 (all), 2N²+5N−5 (out-windows).
 - NEEDS: none from the owner.
