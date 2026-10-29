@@ -64,6 +64,14 @@ OPEN. Not a TARGET.md claim, not a proof. G-N5-TIME stays OPEN.
   - So both clocks must live in the SAME winning region: an Odd clock in an Odd-winning region (equivalently, the dual of an Even
     clock in an Even-winning region). mkr's W-loops rely on z being odd (Odd self-loops of low odd priority beat z for Even), so this
     needs a new clock design, not a relabelling. OPEN; this is the resume point.
+- Same-region Odd clock: DONE (DATA). cpl/ewin.py moves mkr into an EVEN-winning region by priorities only (structural < z, now even <
+  loops, now even with their order reversed < h, h′ < markers unchanged). On mkr K, m = (3, 4), (6, 24), (8, 30) the run is state by state
+  identical (21, 162, 264 iterations). Its dual (ctl/dualize.py) is an Odd clock in an ODD-winning region, the region mkr lives in:
+  instances/dewin_runquad_K3_m4 (from runquad_K3_m4_n54): 21 iterations, 21 τ-changes, 0 σ-changes, every Ξ- and U-cycle node over the
+  run has odd priority; n5b = n5.py state sequences; Oink zlk OK, both strategies. check.sh gate.
+- Next (resume point): mkr ⊎ dewin with one-shot cross holders. The holder's two options must END IN THE SAME CYCLE in the valuation
+  that gates it (cycle nodes are compared first; across copies they differ), and its W must fall below the W-sink's loop only at the
+  release. So the two copies' loop priorities have to be interleaved by hand against mkr's W-loop schedule. Not done.
 - Climb DATA (cpl/search.py, MODE=flip: fitness = min(most switches of one Even vertex, of one Odd vertex) inside one joint λ-run;
   n 12, 16, 20, two seeds each, ≤ 30,000 steps, explicit starts): best 6 / 7 (n 16), 8 / 6 (n 20). cause.py on the n 12 best (Even
   vertex 7 visits 10, 3, 0, 8, 10, 3, 0; Odd vertex 2 visits 8, 11, 5, 8, 0, 8; one joint λ-run, 8 iterations, 0 fallbacks): every
