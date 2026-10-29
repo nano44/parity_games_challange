@@ -547,3 +547,11 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
   rlin_cex_n40.start (sha1 e488c00fe1359818b9a665a415cc7b2962015318), frozen W-phase [1, 11], n 40, |D| = 1 (gate not tail-disjoint): R = 129
   in 10 transitions (core/gp.py PLUS=1, core/late.py); n5b identical (13 iterations). Found by core/spclimb.py SCORE=r from
   n5-epoch/instances/lend13_n16. Obstruction: many vertices adopt in one transition; the per-transition count R_T (FW-R′) replaces R.
+
+## DEAD box 32 (L-SI successor 28, 2026-10-29T17:37Z by date -u 17:37:12): CONJECTURE R*-TC in every frozen W-phase (docs/si/N5-RTC-box32.md §2)
+- CONJECTURE R*-TC («R*_T ≤ TC in every frozen W-phase», docs/si/N5-SPC-box31.md §6): killed by experiments/red/fbx/instances/kt6_n58.pg
+  (sha1 41d4f7cbe8644ac77bac9e2fd03a17ed4b2c7915), S3 start written out as experiments/si/core/instances/kt6_n58_S3.start (sha1
+  3ec0dab4b7769651de02ae86effec0318cfe7056); frozen W-phase [5, 20], n 58, D = {18}, λ_Ξ(18) = 18 ≠ λ_W(18) = 0, U = ∅: R*_T = 5, TC = 0
+  (core/inj.py); n5b identical (38 iterations). Obstruction: c₁ ≠ c₂ forces TC = 0 (TRAP-FIX) while blocked edges inside the single basin are
+  adopted later (no prefix comparison across different tails). What survives: R*-TC restricted to the same-pair core (CONJECTURE R*-TC(SP),
+  0 failures on 255 phases) and Lemma LATE-BASIN.

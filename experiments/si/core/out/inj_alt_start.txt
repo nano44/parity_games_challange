@@ -1,0 +1,14 @@
+NSP_MATCH_FAIL=7 NSP_RT=20 NSP_RT>TC=7 NSP_TC=18 NSP_late_noBC=12 NSP_noBC_empty=12 NSP_phases=15 SP_RT=192 SP_TC=540 SP_late_noBC=6 SP_phases=120
+columns: value, R*_T, TC, matching, n, |D|, game, a, b
+MAX NSP RT (5, 5, 0, 0, 58, 1, 'red/fbx/instances/kt6_n58.pg', 5, 20)
+MAX NSP RT/(TC+1) (5.0, 5, 0, 0, 58, 1, 'red/fbx/instances/kt6_n58.pg', 5, 20)
+MAX NSP naive_mult (1, 1, 1, 1, 80, 5, 'red/n3/instances/comp54_n80.pg', 7, 11)
+MAX SP RT (40, 40, 42, 40, 373, 4, 'red/usplit/instances/grow_K40_n373.pg', 0, 45)
+MAX SP RT/(TC+1) (0.9302325581395349, 40, 42, 40, 373, 4, 'red/usplit/instances/grow_K40_n373.pg', 0, 45)
+MAX SP naive_mult (1, 1, 1, 1, 32, 2, 'n5-epoch/instances/lend47_n32.pg', 7, 19)
+EXAMPLE ('empty(not same-pair G3* at t)', 'n5-exhaustive/instances/wk2_n32.pg', 1, 4, 3, [(12, 13, (2, 27, False))])
+EXAMPLE ('MATCH_FAIL', 'n5-exhaustive/instances/wk2_n32.pg', 1, 4, 1, 0, 0)
+EXAMPLE ('empty(not same-pair G3* at t)', 'red/fbx/instances/kt6_n58.pg', 5, 20, 6, [(5, 30, (5, 18, False))])
+EXAMPLE ('empty(not same-pair G3* at t)', 'red/fbx/instances/kt6_n58.pg', 5, 20, 10, [(38, 57, (9, 18, False))])
+EXAMPLE ('empty(not same-pair G3* at t)', 'red/fbx/instances/kt6_n58.pg', 5, 20, 13, [(21, 4, (12, 18, False))])
+EXAMPLE ('empty(not same-pair G3* at t)', 'red/fbx/instances/kt6_n58.pg', 5, 20, 16, [(6, 29, (15, 18, False))])

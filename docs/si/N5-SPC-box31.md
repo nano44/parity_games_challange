@@ -163,7 +163,7 @@ and held at k + 1, hence adopted at some τ ∈ (t, k] (a blocked edge is not ρ
   (red/so/instances/xrun8_n10, 1 at n 10). rlin_cex_n40 has R* = 0 (FW-BF proved there); ccl_w48_n48 has R* = 12 in R*_T = 1 transition.
 - DATA (core/late.py STAR=1, outputs core/out/latestar_*.txt): R*_T ≤ TC in every one of the 1,754 same-pair frozen W-phases. Of the 348
   late-adoption* transitions, 340 change some basin; the other 8 (all with tail-disjoint gates) do not, so the inequality is not a
-  per-transition fact. CONJECTURE R*-TC: R*_T ≤ TC in every frozen W-phase. With FW-R* it gives WCH ≤ (n − 1)(TC + 1), i.e. the epoch count
+  per-transition fact. CONJECTURE R*-TC: R*_T ≤ TC in every frozen W-phase (DEAD in this generality, box 32 N5-RTC §2: kt6_n58; survives as R*-TC(SP)). With FW-R* it gives WCH ≤ (n − 1)(TC + 1), i.e. the epoch count
   again (box 30 TORD (i) + EPOCH-U give the same for |D| = 1, TD); the frontier stays TC (CONJECTURE TRAP-LIN and its multi-gate form).
 - PACKET: docs/si/P-N5-GP-box31.md (GP*, GP, GP+, FW-R*, with W-MON and XW), FROZEN at l-si d072bb28, sha1 cd4866df18b55f44b3ef3d52de65943eeffe9140
   (Lead 16:24Z / 16:31Z).

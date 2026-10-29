@@ -1,0 +1,14 @@
+NSP_MATCH_FAIL=8 NSP_RT=10 NSP_RT>TC=8 NSP_TC=8 NSP_late_noBC=9 NSP_noBC_empty=9 NSP_phases=9 SP_RT=104 SP_TC=424 SP_phases=87
+columns: value, R*_T, TC, matching, n, |D|, game, a, b
+MAX NSP RT (2, 2, 0, 0, 32, 1, '../experiments/red/xing/instances/u1t_cex_n32.pg', 0, 7)
+MAX NSP RT/(TC+1) (2.0, 2, 0, 0, 32, 1, '../experiments/red/xing/instances/u1t_cex_n32.pg', 0, 7)
+MAX NSP naive_mult (1, 1, 8, 1, 40, 4, '../experiments/red/n5inj/instances/frz40.pg', 27, 35)
+MAX SP RT (3, 3, 20, 3, 48, 1, '../experiments/new/box28/instances/x48_rt48_final.pg', 62, 83)
+MAX SP RT/(TC+1) (0.5, 2, 3, 2, 32, 1, '../experiments/n5-exhaustive/instances/b6_xl2_n32.pg', 82, 85)
+MAX SP naive_mult (1, 1, 4, 1, 32, 1, '../experiments/n5-exhaustive/instances/b6_xl2_n32.pg', 67, 72)
+EXAMPLE ('empty(not same-pair G3* at t)', '../experiments/new/box32/instances/nowake_cex_n32.pg', 0, 3, 1, [(15, 0, (0, 27, False))])
+EXAMPLE ('MATCH_FAIL', '../experiments/new/box32/instances/nowake_cex_n32.pg', 0, 3, 1, 0, 0)
+EXAMPLE ('empty(not same-pair G3* at t)', '../experiments/new/box35/instances/fbrestart_cex_n24.pg', 0, 2, 1, [(22, 4, (0, 19, False))])
+EXAMPLE ('MATCH_FAIL', '../experiments/new/box35/instances/fbrestart_cex_n24.pg', 0, 2, 1, 0, 0)
+EXAMPLE ('empty(not same-pair G3* at t)', '../experiments/new/box35/instances/fbrestart_cex_n24.pg', 14, 17, 16, [(22, 4, (15, 19, False))])
+EXAMPLE ('MATCH_FAIL', '../experiments/new/box35/instances/fbrestart_cex_n24.pg', 14, 17, 1, 0, 0)
