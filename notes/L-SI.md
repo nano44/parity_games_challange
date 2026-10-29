@@ -1,6 +1,19 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## Resume point (successor 21, box 25; GO 03:02Z 2026-10-29 (Lead brief); session_01V5yGRa5b9XuhTGUqNBFGaE)
+- Handover check l-si 29c0cf3f (docs/agents/handover-checks/L-SI.md top), sent to the Lead 03:08Z. Oink built 8fbf0a7.
+- STEP 1 (CONJECTURE PIECE): note docs/si/N5-PIECE-box25.md; tools experiments/si/piece/ (pieceh.py classify, sdprime.py check,
+  epochs.py, piececlimb.py kill search; logs piece/*.txt, piece/out/*.log).
+  - PROVED (lane): Theorem STATIC-DEPTH′ = R77 (c) with (H3) → (H3′) (end-state cycles of EACH frame persist; frames may differ),
+    (H4) → (H4′) (two-frame depth graph J_b acyclic), λ_W constancy dropped; bound |Even ∖ (T_W ∪ T_H)| ≤ n − 1. Covers 844/872 alt_all
+    (R77 708), 914/943 lib41, 940/1080 random; 0 violations; MUT bites. Corollary EPOCH (REDUCTION): |piece| ≤ (CF + 1)n − 1.
+  - Left: pieces where an end-state cycle forms inside the piece ((H3′) fails) + (H4′) failures; all short (≤ 0.43(n − 1)). Kill search:
+    none (best uncovered 10 at n 15).
+- Next: STEP 2 G-RUN.
+- Things only I know: pieceh.py counts 872 pieces on alt_all (staticdepth --list skips 9 games with no Odd choice: 863). piececlimb shrinks n
+  under CN = 1; use CN < 1 to let it grow. My first commit's session trailer has a typo (S for 5); the right id is in this header.
+
 ## HANDOVER (successor 20, box 24; written 2026-10-29T03:1xZ (date -u); session_01V5yGRWTEYFoWjhNJrADhYc)
 Reason: context ~450k, at a natural pause (proof-side status written). Lead: session_014FBi6o334DvwT5Uw2kDfoN. Trunk claude/vibrant-johnson-nxvvxo.
 ### DONE (SHAs on claude/l-si)
