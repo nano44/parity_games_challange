@@ -1,0 +1,15 @@
+PREINC=564 phases=445 phases_TD=435 round_A=60 rounds=60
+columns: value, n, phase length, TD, game, a, b
+MAX GC (1, 40, 1, True, 'red/n5inj/instances/theta_tp40.pg', 2, 3)
+MAX entries/vertex (2, 24, 4, True, 'red/xing/instances/x31_re24.pg', 1, 5)
+MAX preinc/vertex (3, 64, 5, True, 'red/n5inj/instances/returns_ph64.pg', 2, 7)
+MAX preinc_total/(n-1) (1.4782608695652173, 24, 4, True, 'red/xing/instances/x31_re24.pg', 1, 5)
+MAX rounds/vertex (2, 24, 4, True, 'red/xing/instances/x31_re24.pg', 1, 5)
+EXAMPLE ('red/xing/instances/x31_re24.pg', 1, 5, 'x', 0, 'q1', 1, 'q2', 2, 'A')
+EXAMPLE ('red/xing/instances/x31_re24.pg', 1, 5, 'x', 0, 'q1', 3, 'q2', 4, 'A')
+EXAMPLE ('red/xing/instances/x31_re24.pg', 1, 5, 'x', 1, 'q1', 1, 'q2', 2, 'A')
+EXAMPLE ('red/xing/instances/x31_re24.pg', 1, 5, 'x', 1, 'q1', 3, 'q2', 4, 'A')
+EXAMPLE ('red/xing/instances/x31_re24.pg', 1, 5, 'x', 2, 'q1', 1, 'q2', 2, 'A')
+EXAMPLE ('red/xing/instances/x31_re24.pg', 1, 5, 'x', 2, 'q1', 3, 'q2', 4, 'A')
+EXAMPLE ('red/xing/instances/x31_re24.pg', 1, 5, 'x', 3, 'q1', 1, 'q2', 4, 'A')
+EXAMPLE ('red/xing/instances/x31_re24.pg', 1, 5, 'x', 4, 'q1', 1, 'q2', 4, 'A')

@@ -117,3 +117,79 @@ MUT=lastonly (candidates {s} only, the per-transition form) must fail on a phase
 - The «w's exit» pattern (§2) is DATA, not a claim; a same-pair non-basin-changing late* transition charged to y's entry would end it.
 - Fixes-file footer (Lead 17:35Z note): in docs/si/P-N5-GP-fixes-box31.md I edited the existing DONE / FINDINGS / NEEDS footer when adding
   G12 (2d0ada80) instead of appending a new one. Noted; later fixes items append a new footer and leave the old one in place.
+
+## 5. TC (Lead 18:04Z: «go on TC with your untried idea: bound one vertex's exit-entry rounds by its strict Ξ rises across a round, plus a count of distinct prefix classes ... If TC stalls ... write a precise statement of what the bound needs (the missing lemma, with a kill instance if one is visible) and park»). Written 2026-10-29T18:1xZ by date -u, see commit
+Setting: a frozen W-phase F = [a, b] with D = {o}, λ_Ξ(o) = λ_W(o) = c (c₁ = c₂) and TD at every state (τ(o), σ̄(o) ∉ S_k). S_k := the
+vertices whose (ρ_k, τ)-play meets o. For x ∈ S_k (GATE-FORM, box 30 §11): W_k(x) = pre_k(x) ⊕ α2_k and Ξ_k(x) = pre_k(x) ⊕ α1_k, with
+α2_k := W_k(o), α1_k := Ξ_k(o) and pre_k(x) the ρ_k-path from x up to o (excluding o; the same in both frames because σ̄ = τ off D).
+p ⊕ A := (c, P_A ∪ hp, ℓ_A + |p|), hp := the vertices of p more relevant than c. The PREFIX ORDER compares (weight(hp), ±|p|) with c's
+length polarity. Fact CMP: if hp, hq are disjoint from P_A and P_B, then p ⊕ A vs q ⊕ A is ordered as p vs q, and p ⊕ A vs p ⊕ B is ordered as
+A vs B. Reason: the signed weight is additive over disjoint sets, and the key is lexicographic (reward(c), weight, ±length). A ROUND of x is
+an exit at q1 → q1 + 1 (x ∈ S_{q1} ∖ S_{q1+1}) followed by the next entry at q2 → q2 + 1 (q1 < q2, x ∈ S_{q2+1} ∖ S_{q2}).
+
+### 5.1 PROVED (lane): Lemma ROUND
+Lemma ROUND. Let (q1, q2) be a round of x, p1 := pre_{q1}(x), p2 := pre_{q2+1}(x). Then at least one of the following holds:
+(B) GATE CROSSING: α1_{q2+1} ▷ α2_{q1}.
+(M) TAIL CAPTURE: hp2 meets P(α2_{q1}), i.e. some vertex more relevant than c lies on x's new prefix and on the gate's W-tail play at q1.
+(A) PREFIX CLIMB: p2 ⊵ p1 in the prefix order.
+Proof. W-MON: W_{q2}(x) ⊵ W_{q1}(x) = p1 ⊕ α2_{q1}. x ∈ U_{q2}, so Ξ_{q2}(x) = W_{q2}(x) by XW. Ξ is monotone along N5's steps:
+Ξ_{q2+1} ⊵ Ξ_{q2} pointwise. This is VJ00's improvement theorem for switches to improving edges, the premise used in box 30's PMON and
+SIL-EXIT proofs. Hence p2 ⊕ α1_{q2+1} = Ξ_{q2+1}(x) ⊵ p1 ⊕ α2_{q1}. hp1 is disjoint from P(α2_{q1}), and hp2 from P(α1_{q2+1}), because each
+play is simple. Suppose neither (B) nor (M) holds. Then α1_{q2+1} ⊴ α2_{q1}, and hp2 is disjoint from both tails. By CMP:
+p2 ⊕ α2_{q1} ⊵ p2 ⊕ α1_{q2+1} ⊵ p1 ⊕ α2_{q1}. Both sides now carry the common tail α2_{q1}, so CMP gives p2 ⊵ p1. □
+- Kill: a round that is none of A, B, M. That would refute W-MON, XW or Ξ-monotonicity; core/rounds.py would count it as ORD_V or as a
+  class outside {A, B, M, L}.
+
+### 5.2 DATA (core/rounds.py; the three corpora; outputs core/out/rounds_*.txt)
+| corpus | \|D\| = 1, c₁ = c₂ phases (TD) | rounds | class A / B / M / L | strict prefix increases (PREINC) | prefix decreases (PREDEC) | max rounds per vertex | max entries per vertex |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| alt_all | 445 (435) | 60 | 60 / 0 / 0 / 0 | 564 | 0 | 2 (x31_re24) | 2 |
+| lib41 | 519 (512) | 63 | 63 / 0 / 0 / 0 | 686 | 0 | 2 (x31_re24) | 2 |
+| experiments/si | 279 (271) | 3 | 3 / 0 / 0 / 0 | 703 | 0 | 1 | 1 |
+- Every round is a STRICT prefix climb: class A with the top of the symmetric difference inside the prefixes, and the new side strictly above
+  (ORD_V = 0). No gate crossing or tail capture ever decides a round. Gate crossings occur, at most 2 per phase (si/lwp/out/xa), but never
+  inside a round.
+- PREDEC = 0 everywhere: over ALL states at which x ∈ S (within stays, across epoch boundaries and across rounds) the prefix of x never
+  decreases. Control: MUT=rev (flag increases instead) fires on x31_re24 (PREDEC 34). So the check has teeth.
+- Strict prefix increases per vertex per phase: at most 11 (new/box25/instances/rtt16, n 16, 11 transitions). In total per phase: at most
+  2.83(n − 1) (new/box25/instances/rttf48, n 48, 10 transitions).
+
+### 5.3 What the bound needs (precise), and the reduction it would give
+- CONJECTURE PRE-MON. In a |D| = 1, c₁ = c₂, TD frozen W-phase, pre_k(x) is non-decreasing in the prefix order over all k with x ∈ S_k.
+  - Proved pieces: inside an epoch, PMON (box 30). Across a round, Lemma ROUND gives case A unless B or M.
+  - Missing:
+    - (i) a stay of x across a basin change of other vertices, while α1 and α2 move. The tails are U values; they rise, and they can absorb
+      prefix vertices.
+    - (ii) excluding B and M as the deciding case of a round.
+    - (iii) strictness at a round.
+  - DATA: 0 decreases in 1,243 phases.
+  - Kill: a phase with PREDEC > 0, or a round of class B or M (rounds.py).
+- CONJECTURE PRE-P (the missing lemma). In such a phase every vertex's prefix strictly increases at most n − 1 times.
+  - DATA: at most 11 at n 16.
+  - Kill: a vertex with more than n − 1 strict prefix increases (rounds.py «preinc/vertex»).
+  - The SUMMED form, at most n − 1 increases per phase over all vertices, is false on the data: rttf48 has 2.83(n − 1).
+- Reduction. PROVED (lane) as an implication; the inputs are the two conjectures.
+  - From PRE-MON with strictness: each round of x is a strict prefix increase, so rounds(x) ≤ preinc(x).
+  - Every entry of x except possibly the first ends a round, and every exit except possibly the last starts one. So TC ≤ Σ_x (entries(x) +
+    exits(x)) ≤ Σ_x (2·preinc(x) + 2).
+  - With PRE-P this gives TC ≤ 2n². Corollary SEG's first inequality (WCH ≤ (TC + 1)(n − 1), proved) then gives WCH ≤ (2n² + 1)(n − 1)
+    per frozen W-phase: a polynomial FW-BF for |D| = 1, c₁ = c₂, TD.
+  - X2 (entries ≤ 2) would need preinc at rounds ≤ 1. That is false on the data: x31_re24 has 2 rounds per vertex with 3 stays (in, out,
+    in, out, in). X2 itself still holds there (2 entries).
+- Why this stalls here. PRE-P is a Lemma P in the prefix frame (paths into o through S) ACROSS epochs. Inside S no edge is ever blocked
+  (GP+ case: the prefix comparison makes Ξ and W agree there). Still, the paths available into o change as vertices enter and leave S. A
+  Bellman-Ford argument across epochs meets the same F1/F2 walls as box 30 §9. Bounding PI = Σ preinc through W-changes is circular:
+  PI ≤ n·WCH, and WCH ≤ (n − 1)(TC + 1).
+- Composition (the G-N5-TIME question): the same as §4. PRE-MON + PRE-P would bound TC, hence L*, for |D| = 1 TD c₁ = c₂ frozen W-phases
+  only. That feeds W-SPLIT. Nothing here reaches NM* / NM*^U, FB or SBCH′. Multi-gate TC would need the per-gate version, with the gates'
+  basins interacting through U.
+
+## DONE / FINDINGS / NEEDS (box 32, after §5)
+- DONE: §5; experiments/si/core/rounds.py (MUT=rev control); core/out/rounds_*.txt; check.sh «box 32 §5» block.
+- FINDINGS:
+  - (1) PROVED (lane): Lemma ROUND (A / B / M dichotomy).
+  - (2) DATA: every round is a strict prefix climb; prefixes never decrease (1,243 phases, control bites).
+  - (3) CONJECTURES PRE-MON and PRE-P, with the reduction TC ≤ Σ (2·preinc + 2) ≤ 2n² ⇒ WCH = O(n³) for |D| = 1, c₁ = c₂, TD.
+  - (4) DEAD on data: the summed form «PI ≤ n − 1» (rttf48, 2.83(n − 1)), and «rounds per vertex ≤ 1» (x31_re24).
+  - (5) TC is parked at PRE-P, a prefix-frame Lemma P across epochs.
+- NEEDS: none from the owner.

@@ -717,3 +717,8 @@ o=$(MUT=lastonly python3 -I core/inj.py --one ../n5-epoch/instances/lend47_n32.p
 o=$(python3 -I core/inj.py --one ../red/fbx/instances/kt6_n58.pg core/instances/kt6_n58_S3.start)
 grep -q "^NSP_MATCH_FAIL=1 NSP_RT=5 NSP_RT>TC=1 NSP_TC=0 NSP_late_noBC=5 NSP_noBC_empty=5 NSP_phases=1$" <<<"$o"; if grep -q "LEMMA_VIOL" <<<"$o"; then exit 1; fi
 echo "si (box 32: LATE-BASIN + matching on lend47_n32, lastonly control fails; general R*-TC dead on kt6_n58): PASS"
+# box 32 §5: rounds of one vertex (|D| = 1, c1 = c2): on x31_re24 every one of the 33 rounds is a strict prefix climb (class A) and prefixes
+# never decrease (34 strict increases); MUT=rev (flag increases as decreases) must fire.
+o=$(python3 -I core/rounds.py --one ../red/xing/instances/x31_re24.pg); grep -q "^PREINC=34 phases=1 phases_TD=1 round_A=33 rounds=33$" <<<"$o"
+o=$(MUT=rev python3 -I core/rounds.py --one ../red/xing/instances/x31_re24.pg); grep -q "PREDEC_round=33 PREDEC_stay=1" <<<"$o"
+echo "si (box 32 §5: rounds all class A, prefixes monotone on x31_re24; MUT=rev control fires): PASS"

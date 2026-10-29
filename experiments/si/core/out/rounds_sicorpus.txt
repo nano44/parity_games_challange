@@ -1,0 +1,10 @@
+PREINC=703 SKIPPED_input=1 phases=279 phases_TD=271 round_A=3 rounds=3
+columns: value, n, phase length, TD, game, a, b
+MAX GC (2, 22, 9, True, 'experiments/si/lwp/out/xa.pg', 1, 10)
+MAX entries/vertex (1, 32, 1, True, 'experiments/si/coarse/instances/box9/cl9_mn_a.pg', 17, 18)
+MAX preinc/vertex (3, 38, 3, True, 'experiments/si/root/out/sw_rt48_s3.pg', 2, 5)
+MAX preinc_total/(n-1) (0.855072463768116, 139, 115, True, 'experiments/si/runlin/instances/runfam_K100.pg', 52, 167)
+MAX rounds/vertex (1, 48, 6, True, 'experiments/si/xing/instances/zcl_rx_n48.pg', 19, 25)
+EXAMPLE ('experiments/si/xing/instances/zcl_rx_n48.pg', 19, 25, 'x', 20, 'q1', 21, 'q2', 22, 'A')
+EXAMPLE ('experiments/si/xing/instances/zcl_rx_n48.pg', 19, 25, 'x', 27, 'q1', 19, 'q2', 23, 'A')
+EXAMPLE ('experiments/si/xing/instances/zcl_rx_n48.pg', 19, 25, 'x', 35, 'q1', 20, 'q2', 22, 'A')
