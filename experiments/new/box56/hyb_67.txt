@@ -1,0 +1,4 @@
+CLS g steps 1198 glo_steps_used 26 patterns 121 distinct 64
+GLO  steps 1198 glo_steps_used  patterns 117 distinct 64
+CLS g steps 2414 glo_steps_used 57 patterns 248 distinct 128
+GLO  steps 2414 glo_steps_used  patterns 243 distinct 128

@@ -1,0 +1,8 @@
+NSP_RT=5 NSP_TC=19 NSP_phases=5 SKIPPED_input=1 SP_RT=52 SP_TC=146 SP_late_noBC=2 SP_phases=48
+columns: value, R*_T, TC, matching, n, |D|, game, a, b
+MAX NSP RT (1, 1, 1, 1, 71, 11, 'experiments/si/lwp/instances/setstep_kill_n71.pg', 1, 4)
+MAX NSP RT/(TC+1) (0.5, 1, 1, 1, 71, 11, 'experiments/si/lwp/instances/setstep_kill_n71.pg', 1, 4)
+MAX NSP naive_mult (1, 1, 1, 1, 71, 11, 'experiments/si/lwp/instances/setstep_kill_n71.pg', 1, 4)
+MAX SP RT (2, 2, 4, 2, 60, 5, 'experiments/si/lay/out/d29b.pg', 3, 7)
+MAX SP RT/(TC+1) (0.5, 1, 1, 1, 32, 1, 'experiments/si/coarse/instances/cls_rel_lev.pg', 11, 14)
+MAX SP naive_mult (1, 1, 1, 1, 32, 1, 'experiments/si/coarse/instances/cls_rel_lev.pg', 11, 14)

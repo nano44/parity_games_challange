@@ -187,4 +187,68 @@ if [ $ok = 1 ] && grep -q "^ROW ../n5-exhaustive/instances/n3all_maxph_0.pg 3 3 
 else
   echo "box 54 N5-SF checks: FAILED"; exit 1
 fi
+# Box 55 (successor 33): packet P-N5-SF (docs/new/P-N5-SF-box55.md §4): pcheck on three pins (DECOUPLE orbit, SF-RED step identity, bounds), MUT bites, quotes; NO-TRANSFER on switchbestexp_2.
+w1=$(python3 -I box55/pcheck.py ../n5-exhaustive/instances/n3all_maxph_0.pg ../n5-exhaustive/instances/n3all_maxph_0.start)
+w2=$(python3 -I box55/pcheck.py box54/out/switchbestexp_2.pg)
+w3=$(python3 -I box55/pcheck.py ../red/n3/instances/n3cov_lean.pg ../red/n3/instances/n3cov_lean.start)
+w4=$(MUT=1 python3 -I box55/pcheck.py box54/out/switchbestexp_2.pg || true)
+w5=$(python3 -I box55/ntcheck.py box54/out/switchbestexp_2.pg)
+if grep -q "^CHECK PASS" <<<"$w1" && grep -q "^CHECK PASS" <<<"$w2" && grep -q "^CHECK PASS" <<<"$w3" && \
+   grep -q "^ROW E_ n 3 m 6 values 3 orbit 3 SBC 1 LAM 1 SEG 2 SEGMAX 1$" <<<"$w1" && \
+   grep -q "^ROW E_ n 60 m 130 values 59 orbit 59 SBC 4 LAM 0 SEG 5 SEGMAX 18$" <<<"$w2" && \
+   grep -q "^ROW E_ n 48 m 128 values 29 orbit 29 SBC 11 LAM 4 SEG 12 SEGMAX 6$" <<<"$w3" && \
+   grep -q "^ROW O_ n 48 m 128 values 6 orbit 6 SBC 3 LAM 5 SEG 6 SEGMAX 0$" <<<"$w3" && \
+   grep -q "^E_ORB_V" <<<"$w4" && grep -q "^CHECK FAIL" <<<"$w4" && grep -q "^NT PASS" <<<"$w5" && \
+   [ "$(sha1sum box54/out/switchbestexp_2.pg | cut -d' ' -f1)" = "b3d5bc293d1b76ce5c7ae8dadc4e9b0b51294484" ] && \
+   [ "$(sha1sum ../red/n3/instances/n3cov_lean.pg | cut -d' ' -f1)" = "bcf8dbf64cba48123dc7da849b179793257e13e1" ] && \
+   [ "$(sha1sum ../../docs/new/P-N5-SF-box55.md | cut -d' ' -f1)" = "dbc2345f62454d442e951de025b1b2aef8a35317" ] && \
+   python3 -I box49/quotecheck3.py ../../docs/new/P-N5-SF-box55.md | grep -q "quotes=18 bad=0" && \
+   ! python3 -I box49/quotecheck3.py ../../docs/new/P-N5-SF-box55.md --mut >/dev/null; then
+  echo "box 55 P-N5-SF: pcheck PASS on n3all_maxph_0 (fallback), switchbestexp_2 (SBC 4), n3cov_lean (LAM 4, SBC 11), MUT bites; quotes PASS: PASS"
+else
+  echo "box 55 P-N5-SF checks: FAILED"; exit 1
+fi
+# Box 56 (successor 33): Theorem EXIT / Lemma LOC-OPT on 400 random class games (half with H-EXIT broken), switchbestexp_2 classes, GROUP on switchbestexp_2.
+x1=$(python3 -I box56/exit.py --rand 400 2 0.5)
+x2=$(python3 -I box56/exit.py box54/out/switchbestexp_2.pg)
+x3=$(python3 -I box55/grp.py box54/out/switchbestexp_2.pg)
+if grep -q "^EXIT PASS" <<<"$x1" && grep -q "EXIT_V=0 FLIPMAX=3 FLIPMAX_GOOD=1 GOOD=2285 LOC_V=0 TIES=298" <<<"$x1" && \
+   grep -q "^n=60 CH=2 EXIT=1 TOP=0 GOOD=0 TIES=0 FLIPMAX_GOOD=0 FLIPMAX=3 LOC_V=0 EXIT_V=0 values=59 SBC=4$" <<<"$x2" && \
+   grep -q "groups 4 GVCmax 20 stretches_of_it 2 GSTEPmax 20 GVC>n-1 0" <<<"$x3"; then
+  echo "box 56 EXIT: LOC-OPT 0 violations, EXIT flips <= 1 (2285 good vertices), switchbestexp_2 CC fails H-TOP, GROUP 20 <= 59: PASS"
+else
+  echo "box 56 EXIT checks: FAILED"; exit 1
+fi
+# Box 57 (successor 33): N5-CARRY: on switchbestexp_4, F 258 steps; the CLS=g hybrid (I^glo's step at the 4 stale-reset lags) restores I^glo's 286; forced strictly on switchbestexp_5 at 217.
+y1=$(CLS=g python3 -I box56/hybrid.py box54/out/switchbestexp_4.pg CLS | head -1)
+y2=$(python3 -I box56/hybrid.py box54/out/switchbestexp_4.pg F | head -1)
+y3=$(python3 -I box56/forced.py box54/out/switchbestexp_5.pg 217)
+if grep -q "^CLS g steps 286 glo_steps_used 4 patterns 27 distinct 16$" <<<"$y1" && grep -q "^F  steps 258 " <<<"$y2" && \
+   [ "$(grep -c "stale frame: F-option STRICTLY better | true frame: F-option STRICTLY worse" <<<"$y3")" = 2 ]; then
+  echo "box 57 CARRY: switchbestexp_4 F 258, hybrid with 4 stale-reset corrections 286 (= I^glo), lags strict in both frames: PASS"
+else
+  echo "box 57 CARRY checks: FAILED"; exit 1
+fi
+# P-N5-SF fixes file (successor 33): the quotes of F7-F13 hold at trunk e251d147; the shifted control fails.
+if python3 -I box49/quotecheck3.py ../../docs/new/P-N5-SF-fixes-box55.md | grep -q "quotes=6 bad=0" && \
+   ! python3 -I box49/quotecheck3.py ../../docs/new/P-N5-SF-fixes-box55.md --mut >/dev/null; then
+  echo "P-N5-SF fixes F7-F13: quotes PASS: PASS"
+else
+  echo "P-N5-SF fixes quotes: FAILED"; exit 1
+fi
+# Box 58 (successor 33): look-ahead LA_1 = I^glo on switchbestexp_4 (286), F 258, LAG_1 155.
+z1=$(python3 -I box58/la.py box54/out/switchbestexp_4.pg 1); z2=$(python3 -I box58/la.py box54/out/switchbestexp_4.pg 0); z3=$(LAG=1 python3 -I box58/la.py box54/out/switchbestexp_4.pg 0)
+if grep -q "steps 286 distinct_sbar 16" <<<"$z1" && grep -q "steps 258 distinct_sbar 16" <<<"$z2" && grep -q "steps 155 distinct_sbar 14" <<<"$z3"; then
+  echo "box 58 LA: switchbestexp_4 LA_1 286 (= I^glo), F 258, LAG_1 155: PASS"
+else
+  echo "box 58 LA checks: FAILED"; exit 1
+fi
+# Box 59 (successor 34): N5-FC: fcN's flip word is W_N with cascades only after records (fc_4, sha1 3562ec4d); PV data line on so_sor5_n24.
+w1=$(python3 -I box59/fcword.py box59/out/fc_4.pg 4); w2=$(python3 -I box59/frec.py ../red/so/instances/so_sor5_n24.pg)
+if grep -q "^FCWORD N 4 n 110 SBC 16 W PASS C PASS$" <<<"$w1" && grep -q "^FCOPEN N 4 PASS" <<<"$w1" && grep -q "^FCLAT N 4 PASS" <<<"$w1" && \
+   grep -q "n 24 k 1 orbit 23 SBC 22 maxflips 22 " <<<"$w2" && [ "$(sha1sum box59/out/fc_4.pg | cut -c1-12)" = 3562ec4d15eb ]; then
+  echo "box 59 FC: fc_4 word W_4 (SBC 16), FCOPEN, FCLAT; so_sor5_n24 maxflips 22 <= n 24: PASS"
+else
+  echo "box 59 FC checks: FAILED"; exit 1
+fi
 rm -rf "$tmp"

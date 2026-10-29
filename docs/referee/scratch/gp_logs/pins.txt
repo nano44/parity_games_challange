@@ -1,0 +1,15 @@
+FRZ 71
+FRZ_Dnonempty 67
+FRZ_len 578
+FWR_chk 71
+GAMES 3
+GPS_capped 69765
+GPS_chk 100483
+RT_max 1
+RT_pos 3
+RUNS 5
+TRANS 644
+WCH_max 123
+WMON_chk 78030
+XW_chk 83459
+VIOLATIONS 0

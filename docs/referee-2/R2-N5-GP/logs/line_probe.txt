@@ -1,0 +1,4 @@
+INSTANCE experiments/n5-exhaustive/canonA_0.pg (S3 start, state 0 = first state of its frozen W-phase): x=3 z=4 (x,z) in I_sigma_0; W_0(x)=(4, 20320, 9) < value(x->z)=(4, 1024, 1)
+INSTANCE experiments/n5-exhaustive/instances/b4_theta_n7.pg (S3 start, state 0 = first state of its frozen W-phase): x=1 z=6 (x,z) in I_sigma_0; W_0(x)=(1, 0, 0) < value(x->z)=(6, 32, 1)
+INSTANCE experiments/n5-exhaustive/instances/b5_os_n28.pg (S3 start, state 0 = first state of its frozen W-phase): x=1 z=7 (x,z) in I_sigma_0; W_0(x)=(21, 46137600, 4) < value(x->z)=(7, 8388608, 1)
+found 3

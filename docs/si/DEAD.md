@@ -532,3 +532,26 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
   n5-epoch/instances/lend107_n32 (sha1 ab4c9811b311e303e5d41a9e923766a4b3fdae33, start 9df4ea2ceafe43c4a7d88ef1e1f262101d7f0c35), frozen
   W-phase [27, 38], vertices 1, 18 leave at t = 28 (frz/epoch.py); n5b identical on both (5 iterations / 2 fallbacks; 112 / 10).
   Obstruction: a trapped vertex can find an honest D-free route at least as good as its optimistic one; the epoch count is not ≤ n.
+
+## DEAD box 31 (L-SI successor 27, 2026-10-29T15:59Z by date -u): the gap-step Lemma P and three single-frame variants (docs/si/N5-SPC-box31.md §2)
+- GAP-STEP Lemma P («in a same-pair frozen W-phase, W_k(x) ⊵ value(r) for every simple G_τ path r to a cycle node of the phase start
+  with |r| ≤ k − a − TC_k, TC_k = basin-changing transitions before k»; the Lead's untried idea in its natural form), and the same with Ξ_k
+  vs G_σ̄ paths, W_k vs G_σ̄ paths, W_k vs paths of the edges admitted at some state: killed by
+  experiments/si/runlin/instances/runfam_K100.pg (sha1 86cf1884919b223c18f982eed6a00a4256a501dd), start runfam_K100.start (sha1
+  843b9f4e83a21d8ee5bd56df97f7b43f59edc394), frozen W-phase [52, 167], n 139, D = {5}, c₁ = c₂ = 20: lag 113 with TC = 2 (forms: 109 / 108 /
+  108); core/sp.py; n5b identical (root/n5bcmp.py: 293 states). Obstruction: a long-lived F1 refusal (vertex 26 refused (26, 27), W-better
+  from state 69 at the latest, adopted at 164 → 165) during a trapped wave; W never changes at 26 meanwhile, so no single-frame Lemma P
+  holds, while WCH = 115 < n − 1. What survives: the timely Lemma P (GP / GP+, §3) and FW-R (§4).
+- CONJECTURE R-LIN (box 31 §5: «a frozen W-phase has at most n − 1 late adoptions», R counted per (vertex, transition); stated in
+  l-si 76c83301): killed by experiments/si/core/instances/rlin_cex_n40.pg (sha1 670ba1ffc22c8f9b170e11ca3e43c33cee9329ca), start
+  rlin_cex_n40.start (sha1 e488c00fe1359818b9a665a415cc7b2962015318), frozen W-phase [1, 11], n 40, |D| = 1 (gate not tail-disjoint): R = 129
+  in 10 transitions (core/gp.py PLUS=1, core/late.py); n5b identical (13 iterations). Found by core/spclimb.py SCORE=r from
+  n5-epoch/instances/lend13_n16. Obstruction: many vertices adopt in one transition; the per-transition count R_T (FW-R′) replaces R.
+
+## DEAD box 32 (L-SI successor 28, 2026-10-29T17:37Z by date -u 17:37:12): CONJECTURE R*-TC in every frozen W-phase (docs/si/N5-RTC-box32.md §2)
+- CONJECTURE R*-TC («R*_T ≤ TC in every frozen W-phase», docs/si/N5-SPC-box31.md §6): killed by experiments/red/fbx/instances/kt6_n58.pg
+  (sha1 41d4f7cbe8644ac77bac9e2fd03a17ed4b2c7915), S3 start written out as experiments/si/core/instances/kt6_n58_S3.start (sha1
+  3ec0dab4b7769651de02ae86effec0318cfe7056); frozen W-phase [5, 20], n 58, D = {18}, λ_Ξ(18) = 18 ≠ λ_W(18) = 0, U = ∅: R*_T = 5, TC = 0
+  (core/inj.py); n5b identical (38 iterations). Obstruction: c₁ ≠ c₂ forces TC = 0 (TRAP-FIX) while blocked edges inside the single basin are
+  adopted later (no prefix comparison across different tails). What survives: R*-TC restricted to the same-pair core (CONJECTURE R*-TC(SP),
+  0 failures on 255 phases) and Lemma LATE-BASIN.

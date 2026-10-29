@@ -10,9 +10,14 @@ HOLDING (Lead 13:08Z): next packet P-N5-VC deferred (its §4 CONJECTURE VC-N5 re
 | handover check | handover-checks/REFEREE.md "successor 18" 3a3d4f35 | — | sent 12:25Z |
 | MPGS §C | R-N5-MPGS.md §C 8da7b717 vs R2-N5-MPGS.md 0c4524f0 (+ s20 c5f9e76e) | done | verdicts identical, map empty, no E-items; joint notes J1-J15 |
 | P-N5-COMPOSE (l-si 3ca0932d, e1b977aa), first | R-N5-COMPOSE.md 4896bc2e | §C c6011b70 vs R2 4b8afa95: identical, map empty | all SIGNED; E-item COMP-E1 (|𝒫| = transitions); COMP-N1..N6 |
+| P-N5-SF (l-new 95a7a581, dbc2345f), first | R-N5-SF.md 500b51d7 | PENDING (Lead's word; no R2 SF file opened) | all SIGNED, no gap; SF-N1..N7 |
+| SF §C | R-N5-SF-C.md 6bbf0aed vs R2 3ae22a6d | done (§3 F7-F13 PENDING the Lead's SHA) | identical, map empty; F1-F6 clarifications; P1′ (F1/F7 cite R57 (b)) |
+| P-N5-GP (l-si d072bb28, cd4866df), first | R-N5-GP.md 7dffab64 | §C fee33b06 vs R2 894a1971: identical; line = GP-E1 ∪ N-GP-7, final 17:23Z line OK; G12 byte check PENDING; G2 widening | all SIGNED; E-item GP-E1 on the approved RESULTS line (drops L ≤ k − a and G_τ) |
 ### Things only I know
 - scratch/compose_probe.py (MUT 1-4, MPHI=1 adds MATCH-Φ per λ-run for both players via matchphi_probe.corollary; keep MPHI to n ≤ 40).
   rand n 16-30 on rl_engine is too slow (stopped after 22 min): keep random batches at n ≤ 20.
+- scratch/sf_probe.py: own N5-SF (MUT 1 = N5's S4a, bites; MUT 2 = stretch n - 1, never bites); sf_inputs/ = box54/55 families.
+- scratch/gp_probe.py: frozen W-phases, GP* by capped DFS (CAP), MUT 1 (no L ≤ k − a), 2 (Odd off τ), 3 (no blocked cond.) all bite.
 - TRAP (new): `pkill -f <pattern>` kills the bash -c wrapper of the calling shell itself (exit 144); kill by pid.
 
 ## HANDOVER (successor 17 -> successor 18), written 2026-10-29T11:28Z by date -u, context ~560k (Opus 5.5 under D15; label "(Opus 5.5, D15)")

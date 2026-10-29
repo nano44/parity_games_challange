@@ -424,7 +424,7 @@ echo "grun (box 25: DEAD L-WAVE, lwkill_n31 gap 37 > 30, n5b identical; L-WAVE' 
 # box 26 (docs/si/N5-LWP-box26.md): L-WAVE' gap anatomy and the dead candidate invariants. lwp_a's gap [1,26] has 25 = n - 1 transitions:
 # LAST-SWITCH per gap fails there (2 transitions) while SEG-LAST holds on its 3 segments; PV-STEP fails at t = 2; GAP-DEPTH 25 > 23;
 # SEG-LAST fails on cw11_n24's pieces (control) and on whole runs (control); SWL / NEVEN hold on lwp_a.
-o=$(python3 -I lwp/lastsw.py --one grun/out/lwp_a.pg grun/out/lwp_a.start); grep -q "LS_V=2 " <<<"$o"; grep -q "gap_minus_nEven_max_plus1000=1000 " <<<"$o"; ! grep -q "SWL_V" <<<"$o"
+o=$(python3 -I lwp/lastsw.py --one grun/out/lwp_a.pg grun/out/lwp_a.start); grep -q "LS_V=2 " <<<"$o"; grep -q "gap_minus_nEven_max_plus1000=1000 " <<<"$o"; if grep -q "SWL_V" <<<"$o"; then exit 1; fi
 o=$(python3 -I lwp/seglast.py --one grun/out/lwp_a.pg grun/out/lwp_a.start); grep -q "segs=3 trans=23" <<<"$o"; grep -q "SEGLAST PASS" <<<"$o"
 MODE=piece python3 -I lwp/seglast.py --one ../red/kw/instances/cw11_n24.pg | grep -q "SEGLAST FAIL"
 MODE=run python3 -I lwp/seglast.py --one grun/instances/lwkill_n31.pg grun/instances/lwkill_n31.start | grep -q "SEGLAST FAIL"
@@ -437,7 +437,7 @@ python3 -I lwp/laststep.py --one grun/out/lwp_a.pg grun/out/lwp_a.start | grep -
 MUT=1 python3 -I lwp/laststep.py --one grun/out/lwp_a.pg grun/out/lwp_a.start | grep -q "LASTSTEP FAIL"
 echo "957c7c9e2ce5a6d57890e42b0e8ca0a0911ecefd  lwp/instances/cycset_kill_n60.pg" | sha1sum -c --quiet
 o=$(python3 -I lwp/laststep.py --one lwp/instances/cycset_kill_n60.pg); grep -q "CYCSET_V=1 FR_V=1 FR_V_h4fail=1 " <<<"$o"; grep -q "CYCSET FAIL" <<<"$o"
-o=$(python3 -I lwp/seglast.py --one lwp/instances/cycset_kill_n60.pg); grep -q "SEGLAST PASS" <<<"$o"; ! grep -q "SS_V" <<<"$o"
+o=$(python3 -I lwp/seglast.py --one lwp/instances/cycset_kill_n60.pg); grep -q "SEGLAST PASS" <<<"$o"; if grep -q "SS_V" <<<"$o"; then exit 1; fi
 echo "lwp (box 26: LAST-STEP frontier on lwp_a, MUT bites; cycset_kill_n60 kills CYC-SET, SEG-LAST / SET-STEP hold): PASS"
 # box 26 (note §8): K-REDUCTION data. karena_kill_n71 kills K-ARENA (one terminal part at t = 0, not arena-complete); SEG-LAST holds.
 echo "8b659497688c47075235957ae1e636b5564ec235  lwp/instances/karena_kill_n71.pg" | sha1sum -c --quiet
@@ -674,3 +674,46 @@ o=$(python3 -I tord/gates.py --one ../n5-epoch/instances/lend107_n32.pg ../n5-ep
 grep -q "^D3_G3=10 fw=10$" <<<"$o"; for k in GTF GB FWDG FWD; do grep -q "^$k PASS$" <<<"$o"; done
 o=$(python3 -I tord/gates.py --one ../new/box21/instances/oneodd_c16.pg); grep -q "'G1G2G3')" <<<"$o"; grep -q "^FWDG PASS$" <<<"$o"
 echo "si (box 30 §11: gate classes, FW-DG on lend107_n32 and oneodd_c16): PASS"
+# box 31 (docs/si/N5-SPC-box31.md): same-pair core. §2 DEAD: runfam_K100 (pinned start) frozen W-phase [52, 167] lags R17's W-frame
+# Lemma P by 113 steps with TC = 2 (gap-step form dead; Ξ / mixed / admitted forms 109 / 108 / 108). §3-§4: Lemma GP+ and Corollary FW-R
+# hold on ccl_w48_n48 (R = 12); the plain W-frame Lemma P (MUT=all) must fail there.
+echo "86cf1884919b223c18f982eed6a00a4256a501dd  runlin/instances/runfam_K100.pg" | sha1sum -c --quiet
+echo "843b9f4e83a21d8ee5bd56df97f7b43f59edc394  runlin/instances/runfam_K100.start" | sha1sum -c --quiet
+o=$(python3 -I core/sp.py --one runlin/instances/runfam_K100.pg runlin/instances/runfam_K100.start)
+grep -q "^MAX D1:def (113, 'runlin/instances/runfam_K100.pg', 52, 167, 139, 1, 115, 2, 115, 113, 133, False, 109, 108, 108, 127)$" <<<"$o"
+grep -q "^CTRL PASS$" <<<"$o"
+echo "a7056dea01cd9c6398e054ef6edaaa40f60dabb1  xing/instances/ccl_w48_n48.pg" | sha1sum -c --quiet
+o=$(PLUS=1 python3 -I core/gp.py --one xing/instances/ccl_w48_n48.pg)
+grep -q "'D1': (12, 3, 3, 48, 1, 'xing/instances/ccl_w48_n48.pg', 15, 18)" <<<"$o"; for k in GP RED RLIN; do grep -q "^$k PASS$" <<<"$o"; done
+o=$(MUT=all PLUS=1 python3 -I core/gp.py --one xing/instances/ccl_w48_n48.pg); grep -q "^GP FAIL$" <<<"$o"
+echo "si (box 31: gap-step Lemma P dead on runfam_K100; GP+, FW-R on ccl_w48_n48; plain W-frame Lemma P control fails): PASS"
+# box 31 §5: R-LIN dead on rlin_cex_n40 (R = 129 > 39 in 10 transitions); FW-R and FW-R′ (R_T = 9) hold there; n5b identical.
+echo "670ba1ffc22c8f9b170e11ca3e43c33cee9329ca  core/instances/rlin_cex_n40.pg" | sha1sum -c --quiet
+echo "e488c00fe1359818b9a665a415cc7b2962015318  core/instances/rlin_cex_n40.start" | sha1sum -c --quiet
+o=$(PLUS=1 python3 -I core/gp.py --one core/instances/rlin_cex_n40.pg core/instances/rlin_cex_n40.start)
+grep -q "'D1:R_T/(n-1)': (0.23076923076923078, 9, 10, 40, 1, 'core/instances/rlin_cex_n40.pg', 1, 11)" <<<"$o"
+grep -q "'D1': (129, 10, 10, 40, 1, 'core/instances/rlin_cex_n40.pg', 1, 11)" <<<"$o"
+grep -q "^RLIN FAIL$" <<<"$o"; grep -q "^RED PASS$" <<<"$o"; grep -q "^GP PASS$" <<<"$o"
+o=$(python3 -I root/n5bcmp.py core/instances/rlin_cex_n40.pg core/instances/rlin_cex_n40.start | head -1); grep -q "identical state sequences: True" <<<"$o"
+echo "si (box 31 §5: R-LIN dead on rlin_cex_n40; FW-R, FW-R′ hold; n5b identical): PASS"
+# box 31 §6: GP* / FW-R* (only blocked edges excluded): rlin_cex_n40 has R* = 0 (FW-BF proved there by FW-R*), ccl_w48_n48 R*_T = 1;
+# the plain W-frame Lemma P (MUT=all) still fails on ccl_w48_n48.
+o=$(STAR=1 python3 -I core/gp.py --one core/instances/rlin_cex_n40.pg core/instances/rlin_cex_n40.start)
+grep -q "'D1': (0, 10, 10, 40, 1, 'core/instances/rlin_cex_n40.pg', 1, 11)" <<<"$o"; for k in GP RED RLIN; do grep -q "^$k PASS$" <<<"$o"; done
+o=$(STAR=1 python3 -I core/gp.py --one xing/instances/ccl_w48_n48.pg)
+grep -q "'D1:R_T/(n-1)': (0.02127659574468085, 1, 3, 48, 1, 'xing/instances/ccl_w48_n48.pg', 15, 18)" <<<"$o"; grep -q "^GP PASS$" <<<"$o"
+o=$(MUT=all STAR=1 python3 -I core/gp.py --one xing/instances/ccl_w48_n48.pg); grep -q "^GP FAIL$" <<<"$o"
+echo "si (box 31 §6: GP*, FW-R* on rlin_cex_n40 and ccl_w48_n48; MUT=all control fails): PASS"
+# box 31 packet docs/si/P-N5-GP-box31.md (frozen): its 14 verbatim quotes hold at their pinned commit; shifting every line range by one fails.
+o=$(python3 -I rund/quotecheck.py ../../docs/si/P-N5-GP-box31.md); grep -q "^quotes=14 bad=0$" <<<"$o"; grep -q "^QUOTES PASS$" <<<"$o"
+o=$(python3 -I rund/quotecheck.py ../../docs/si/P-N5-GP-box31.md --mut); grep -q "^QUOTES FAIL$" <<<"$o"
+echo "si (box 31 packet P-N5-GP: 14 quotes exact; shifted control fails): PASS"
+# box 32 (docs/si/N5-RTC-box32.md): R*-TC by injection. Same-pair core: lend47_n32 (pinned start) has a non-basin-changing late*
+# transition (s = 8) charged to the basin change at 7; matching exists, Lemma LATE-BASIN holds; MUT=lastonly (per-transition form) fails.
+# General R*-TC DEAD: kt6_n58 (S3 start, written out as core/instances/kt6_n58_S3.start), D = {18}, c1 ≠ c2: R*_T = 5 > TC = 0.
+o=$(python3 -I core/inj.py --one ../n5-epoch/instances/lend47_n32.pg ../n5-epoch/instances/lend47_n32.start)
+grep -q "^SP_RT=3 SP_TC=15 SP_late_noBC=1 SP_phases=2$" <<<"$o"; if grep -q "MATCH_FAIL\|LEMMA_VIOL" <<<"$o"; then exit 1; fi
+o=$(MUT=lastonly python3 -I core/inj.py --one ../n5-epoch/instances/lend47_n32.pg ../n5-epoch/instances/lend47_n32.start); grep -q "SP_MATCH_FAIL=1" <<<"$o"
+o=$(python3 -I core/inj.py --one ../red/fbx/instances/kt6_n58.pg core/instances/kt6_n58_S3.start)
+grep -q "^NSP_MATCH_FAIL=1 NSP_RT=5 NSP_RT>TC=1 NSP_TC=0 NSP_late_noBC=5 NSP_noBC_empty=5 NSP_phases=1$" <<<"$o"; if grep -q "LEMMA_VIOL" <<<"$o"; then exit 1; fi
+echo "si (box 32: LATE-BASIN + matching on lend47_n32, lastonly control fails; general R*-TC dead on kt6_n58): PASS"
