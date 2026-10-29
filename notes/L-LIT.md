@@ -13,6 +13,8 @@ DONE this session (claude/l-lit, each via scripts/push.sh, VERIFY PASS):
 Predecessor's packets (T32-T39, P-N5-MPGS) are listed in git history (e5ae4111 resume point); P-N5-MPGS signed by both referees.
 - T41 docs/lit/T41-moving-target.md + T41-target-check.py (S4a vs fixed σ^c_τ per phase; topfix d1_n leaves its target n²+2n−2
   times in one phase; library MISS ~45%, AWAY ≤ 7). Lead: F9 (a), (b) stay remarks in R85 (no referee round).
+- T41b docs/lit/T41b-frozen-wphases.md (+ check script): departures from c inside frozen W-phases, O(n) per frozen W-phase.
+- T42 docs/lit/T42-ranking-functions.md: ranking-function synthesis scan for L-NEW BOX 53 (12 entries).
 IN FLIGHT: none. NEXT: Lead's word.
 NEEDS: none from the owner.
 
@@ -327,6 +329,17 @@ NEEDS: none from the owner.
 | arXiv 1607.03842 v1 (Petrik, Chow, Ghavamzadeh) sha256 5797962546187611… | Def. 2; Thm 6 p.5 (NP-hard) | 2026-10-29 | T40 |
 | arXiv 1205.3054 v2 (Scherrer et al., AMPI) | abstract (arXiv API): "error propagation analyses" and a finite-sample analysis; no iteration counts. PDF not read | 2026-10-29 | T40; cited only as "bounds errors, not counts" |
 | arXiv 1008.0530 v1 (HMZ) sha256 f53a6b5127d95078… (re-downloaded) | not re-read for T40 beyond T39's rows | 2026-10-29 | T40 |
+| arXiv 1208.4041 v4 (Ben-Amram, Genaim, JACM) sha256 cce1ca84b940d1b8… | Thm 3.1 p.10, 3.17, 3.19 p.16; Cor. 4.25 p.27; Cor. 5.12 p.33; §5.4 + Thm 5.37 p.48; p.25 (PR04 via LP) | 2026-10-29 | T42 |
+| arXiv 1504.05018 v1 (Ben-Amram, Genaim, BMS-LLRF) sha256 c6547c7522892ce9… | abstract; Table 1 p.3; Cor. 1, Thm 1 p.7; Thm 3 p.9; Thm 4 p.11 | 2026-10-29 | T42 |
+| arXiv 1703.07547 v2 (Ben-Amram, Genaim, MΦRF) sha256 29c0b9064915207f… | abstract; Thm 3.4, 3.5 p.12; Thm 4.4 p.15; Thm 5.6, 6.1 p.18; Ex. 7.1, Lemma 7.2, Thm 7.4 p.19-21 | 2026-10-29 | T42 |
+| arXiv 1811.07340 v2 (Ben-Amram, Doménech, Genaim) sha256 f7682cc87a5ce648… | abstract | 2026-10-29 | T42 |
+| arXiv 2509.06752 v3 (Ben-Amram, Genaim, Ouaknine, Worrell, survey) sha256 21e65378dcc4bb1b… | Thm 4.1 (PR04) p.51; Thm 4.13 (ADFG) p.71; Thm 4.14 (BMS) p.74; Thm 4.23 + 'remains open' p.79; §4.2.5 polyranking p.80 | 2026-10-29 | T42 |
+| arXiv 1503.00193 v2 (Leike, Heizmann, LMCS 11(1:16)) sha256 50ced19c25758b53… | abstract; §1 (Motzkin, exponential-time [GV88]); Thm 4.4, 4.5 p.8 | 2026-10-29 | T42 |
+| arXiv 1408.5955 v1 (Ben-Amram, lasso LRF hardness) sha256 6bf89bdfdd23d60a… | abstract (EXPSPACE-hard Z, PSPACE-hard Q) | 2026-10-29 | T42 |
+| arXiv 1702.05051 v3 (Jurdziński, Lazić) sha256 7411fd3816d4d229… | abstract; §1.2 p.2; Thm 7 p.14; lifting Table 1 | 2026-10-29 | T42 |
+| arXiv 1709.04037 v1 (Agrawal, Chatterjee, Novotný) sha256 fcbaa71a4e08986c… | abstract; Thm 5.1 p.17; Fig. 2 p.16; Thm 7.2 p.23 | 2026-10-29 | T42 |
+| arXiv 1204.1147 v1 (Gawlitza, Seidl) sha256 df5c0793acd36a2c… | abstract; Thm 1 p.27 (+ conjecture); Thm 4 p.39 | 2026-10-29 | T42 |
+| Podelski-Rybalchenko VMCAI 2004; Bradley-Manna-Sipma ICALP 2005; Alias et al. SAS 2010 | NOT opened (author/publisher URLs return HTML); cited via the survey 2509.06752 and BG14 only | 2026-10-29 | T42 |
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
 - T17 process dead end: subagent GitHub MCP search outside the repo scope was a rule breach (see Things only I know); never repeat it.
