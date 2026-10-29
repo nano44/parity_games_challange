@@ -20,7 +20,7 @@ def fstats(g, start, cap=10 ** 5):
             if cur > best[0]: best = (cur, a)
     return best[0], best[1], it
 
-MODE_RF = 2   # 1: RF = in-phase fallbacks re-switching a vertex already fallback-switched in the phase; 2: R1 = the same over single-switch fallbacks only; 3: FM = in-phase fallbacks switching >= 2 vertices (carries); 0: vertices switched >= 2 times
+MODE_RF = 2   # 1: RF = in-phase fallbacks re-switching a vertex already fallback-switched in the phase; 2: R1 = the same over single-switch fallbacks only; 3: FM = in-phase fallbacks switching >= 2 vertices (carries); 4: CR = multi-switch fallbacks re-switching a vertex any earlier in-phase fallback switched; 0: vertices switched >= 2 times
 def reuse(g, start, cap=10 ** 5):
     """(f, R): f as fstats; R = number of Even vertices switched by in-phase fallbacks >= 2 times inside the phase with the largest R."""
     states = []; it, fb, ph, mp, s, t, hist = T.run(g, start, cap=cap, log=lambda *a: None, states=states)
@@ -35,6 +35,7 @@ def reuse(g, start, cap=10 ** 5):
             if MODE_RF == 1 and any(v in cnt for v in sw): rf += 1
             if MODE_RF == 2 and len(sw) == 1 and sw[0] in cnt: rf += 1
             if MODE_RF == 3 and len(sw) >= 2: rf += 1
+            if MODE_RF == 4 and len(sw) >= 2 and any(v in cnt for v in sw): rf += 1
             if MODE_RF != 2 or len(sw) == 1:
                 for v in sw: cnt[v] = cnt.get(v, 0) + 1
             bestR = max(bestR, rf) if MODE_RF else max(bestR, sum(1 for c in cnt.values() if c >= 2))
