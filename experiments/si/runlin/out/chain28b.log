@@ -1,0 +1,9 @@
+start run 251 n 110 pair (28, 109)
+step 1 run 254 n 111 run-2n 32 prio 0
+step 2 run 256 n 112 run-2n 32 prio 0
+step 3 run 259 n 113 run-2n 33 prio 0
+step 4 run 261 n 114 run-2n 33 prio 0
+step 5 run 264 n 115 run-2n 34 prio 0
+step 6 run 266 n 116 run-2n 34 prio 0
+step 7 run 269 n 117 run-2n 35 prio 0
+step 8 run 271 n 118 run-2n 35 prio 0
