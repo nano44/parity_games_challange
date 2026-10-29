@@ -491,7 +491,8 @@ Successor 30 (Opus 5.5, D14/D18, L40), session_01V5yGRXpuZ54sFHkJS3KYwp. Parked 
 2. FB-LIN (f ≤ n per phase): OPEN (N5-READER §11: R1-ZERO DEAD, R1-STEP conjecture; multi-switch fallbacks are the open part). Obstruction in N5-READER §10: no inequality between LEV^K_C and LEV^K_{C′}. The tie candidate in §10 is untested.
 3. FB-C° in the read frame (embedded readers): OPEN (FBCK §3).
 4. P-N5-TOPSHAPE-box49 FROZEN (successor 30, 05:2xZ): Lemma TOP-SHAPE PROVED (lane), ≤ n − 1 top changes per vertex per phase; Δ-form TOP-MONO
-   DEAD (long121 vertex 0). Awaits the Lead's routing to referees; its fixes file after both reports.
+   DEAD (long121 vertex 0). Both referees SIGNED (joint map EMPTY); fixes file docs/new/P-N5-TOPSHAPE-fixes-box49.md FROZEN (successor 30,
+   05:5xZ): F1 TOP-N1 = N-TS-3 (17 rises, not 20), F2 N-TS-1 remark, F3 TOP-N2 + N-TS-2, F4 TOP-N3 = N-TS-5, F5 N-TS-4.
 
 ## Dead ends (successor 30; also in docs/new/N5-READER-box49.md §5)
 - PRED-XR / PLAY-XR ("Ξ-changes of vertices with an Even predecessor / on an Even vertex's honest play ≤ 2n per phase"): DEAD,
