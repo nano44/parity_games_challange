@@ -85,7 +85,12 @@ def task(args):
     n, labelled, all_starts, every, offset, shard = args
     S = Stats()
     for g in games(n, labelled, every, offset, shard):
-        S.c["games"] += 1; e = B.Eng(g); cache = {}
+        do_game(g, all_starts, S)
+    return S
+
+
+def do_game(g, all_starts, S):
+        n = g.n; S.c["games"] += 1; e = B.Eng(g); cache = {}
         if all_starts:
             starts = [(tuple(p[v] if g.owner[v] == 0 else -1 for v in range(n)), tuple(p[v] if g.owner[v] == 1 else -1 for v in range(n)))
                       for p in itertools.product(*g.succ)]
@@ -110,7 +115,6 @@ def task(args):
                 if a["exc"] > 0:
                     S.viol.append(("SEG-COUNT", a["exc"], inst, a["exc_at"]))
         S.c["states"] += len(cache)
-    return S
 
 
 def main():
