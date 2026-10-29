@@ -536,3 +536,38 @@ Measured from the repository at the time of writing (commands named), not recall
   `git ls-tree --name-only -r origin/claude/referee docs/referee/ | grep -ic <key>`, run in the push turn, number copied from its output.
 - Recurring content trap (succ. 18 GCX, DEPTH, DEPTH-add): "any deterministic rule" claims fail for non-keep tie rules; per-class intervals not cut
   at freeze; telescoping lemmas need "at or before c". Check: each CORE item is tested with keep / flip / random tie rules and at freeze cuts.
+
+## successor 20 (2026-10-29T11:20Z by date -u; Opus 5.5 under D15/L37; predecessor successor 19 session_01V5yGRZzoAVpZvqB1LedCVF, handover c5ee7fc3)
+Measured from the repository at the time of writing (commands named), not recalled.
+
+### 1. Branch, head, distance to trunk
+- `git fetch origin claude/referee-2 claude/vibrant-johnson-nxvvxo claude/l-lit`; local was 864302d0 (stale), `git merge --ff-only` -> HEAD =
+  origin/claude/referee-2 = c5ee7fc3 (predecessor's handover).
+- `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` -> 2 ahead, 9 behind (trunk 1ccf04f1; merge-base 81264723).
+  Merged trunk with a merge commit 04ab4a72 (`git merge --no-edit`, no rebase).
+
+### 2. Open work and next step of each
+- Predecessor DONE table ends with P-N5-MATCHPHI (report 5ba3e21d, §C NOT YET). P-N5-MATCHPHI is superseded by P-N5-MPGS (trunk a23179b0,
+  Lead 1ccf04f1), so its §C folds into the MPGS §C.
+- NOW: packet P-N5-MPGS, docs/lit/P-N5-MPGS.md @ a23179b0. Part (A): diff against P-N5-MATCHPHI @ 12b7d12a; carry identical verdicts.
+  Part (B) GATE-SHUT: full review, re-run T34-gateshut-check.py and P-N5-MPGS-quotecheck.py, own control. Output docs/referee-2/R2-N5-MPGS.md.
+- `git ls-tree --name-only -r origin/claude/referee docs/referee/ | grep -ic mpgs` -> 0 (REFEREE has no MPGS file yet; not opened anyway).
+- Oink NOT built in this container (`ls tools/oink/build` -> no such directory).
+
+### 3. docs/GAPS.md rows relevant to me
+- `grep -n REFEREE-2 docs/GAPS.md` -> 6 lines, all as attester inside rows owned by other lanes (GAP-A, G-N5-TIME, G-Bthr, G-K5, G-STR, G-DOM).
+  REFEREE-2 owns no row.
+
+### 4. Three owner rulings that most constrain me (verbatim), with DECISIONS-INDEX status
+1. D1 (index row 5: active), docs/DECISIONS.md:7-8:
+   > A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own, as wrong until it passes the gauntlet below.
+   > Never downgrade the referee to save money.
+2. D15 (index row 26: active), docs/DECISIONS.md:278:
+   > q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it
+3. D18 (index row 32: active), docs/DECISIONS.md:333:
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+
+### 5. One trap that bit this lane, and the check that prevents it
+- Trap (succ. 19, trap 5): pinned lane scripts read the packet from the working tree, so a run on a later tree checks the wrong text.
+  Check: run T34-gateshut-check.py and P-N5-MPGS-quotecheck.py in a detached worktree at a23179b0, sha1 of each script compared first.
+- Also this session: local branch stale (864302d0 vs origin c5ee7fc3); checked `git rev-parse HEAD origin/claude/referee-2` equal after ff.

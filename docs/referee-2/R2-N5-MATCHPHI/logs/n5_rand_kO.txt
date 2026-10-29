@@ -1,0 +1,12 @@
+MODE n5 random 3000 8 20 3303 0 3 BF 8
+COR_checks: 1201
+NM_total: 349
+Pchanges: 1221
+matched: 872
+phases: 1435
+runs: 9000
+max_NM: (1, 'random3303:965#0', 0, 1, 13, 20, 1)
+max_NM_over_n: (0.125, 'random3303:928#1', 1, 2, 2, 8, 1)
+max_PCH: (2, 'random3303:55#2', 2, 4, 5, 18, 1)
+max_PCH_over_bound: (1.0, 'random3303:918#1', 0, 1, 14, 1, 0, 1)
+RESULT OK violations=0

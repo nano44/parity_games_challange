@@ -1,0 +1,32 @@
+MODE files ../R2-N5-STAU/lib41_noref.lst 2 RSUB 20
+CMP_E_checks: 4127
+CMP_O_checks: 2056
+LEN_E_checks: 224771
+LEN_O_checks: 148346
+NM_E_checks: 41235
+NM_O_checks: 16347
+RUN_checks: 820
+SWR_E_checks: 222336
+SWR_O_checks: 74742
+X_LEN0_E: 16270
+X_LEN0_O: 7231
+X_RUN0: 227
+X_SWR0_E: 19628
+X_SWR0_O: 9265
+kind1: 2516
+kind2: 10299
+kind3: 344
+kind4: 274
+phases: 791
+runs: 820
+transitions: 13433
+max S1/S2_E: 0.5
+max S1/S2_O: 0.8
+max maxNM_E: 22
+max maxNM_O: 11
+max maxPCH_E: 37
+max maxPCH_O: 13
+max maxT: 115
+max max_lUruns: 32
+max max_lruns: 29
+RESULT PASS violations 0

@@ -1,0 +1,10 @@
+MODE files hn.lst 4 PCAP 64 FB1 200
+B1_pairs: 3131
+ENGXI_checks: 57792
+FLIP: 80
+GS_paths: 2348
+GS_triples: 2348
+H1fail_triples: 32
+X1: 32
+states: 585
+RESULT PASS violations 0

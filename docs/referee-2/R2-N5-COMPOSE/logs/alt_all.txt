@@ -1,0 +1,34 @@
+MODE files ../../../experiments/si/root/logs/alt_all.lst 0 experiments/ RSUB 20
+CMP_E_checks: 403
+CMP_O_checks: 181
+LEN_E_checks: 19407
+LEN_O_checks: 9082
+NM_E_checks: 9091
+NM_O_checks: 319
+RUN_checks: 93
+SWR_E_checks: 51412
+SWR_O_checks: 2663
+X_LEN0_E: 1486
+X_LEN0_O: 195
+X_RUN0: 12
+X_SWR0_E: 4200
+X_SWR0_O: 541
+kind1: 182
+kind2: 3067
+kind3: 49
+kind4: 25
+phases: 128
+runs: 93
+starts_INVALID_skipped: 1
+starts_valid: 93
+transitions: 3323
+max S1/S2_E: 0.6
+max S1/S2_O: 0.5
+max maxNM_E: 62
+max maxNM_O: 4
+max maxPCH_E: 67
+max maxPCH_O: 7
+max maxT: 122
+max max_lUruns: 20
+max max_lruns: 20
+RESULT PASS violations 0

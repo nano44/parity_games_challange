@@ -1,0 +1,12 @@
+DEG2_V=2 DEG_V=69 ENTER2_V=2 enter_max_1=943 enter_max_2=33 enter_max_3=1 enter_max_5=1 maxv_max=14 segs=978
+EXAMPLE ('ENTER2', 'experiments/new/box25/instances/rtt16.pg', 0, 11, [(8, 11), (8, 12)], 3)
+EXAMPLE ('DEG', 'experiments/new/box25/instances/rtt16.pg', 0, 11, 14, 3, 2)
+EXAMPLE ('DEG', 'experiments/new/box25/instances/rtt24.pg', 1, 11, 17, 6, 4)
+EXAMPLE ('DEG', 'experiments/new/box25/instances/rtt24.pg', 1, 11, 22, 3, 2)
+EXAMPLE ('DEG', 'experiments/new/box25/instances/rtt24.pg', 1, 11, 14, 3, 2)
+EXAMPLE ('DEG', 'experiments/new/box25/instances/rttf48.pg', 1, 11, 6, 3, 2)
+EXAMPLE ('DEG', 'experiments/new/box25/instances/rttf48.pg', 1, 11, 3, 6, 4)
+EXAMPLE ('DEG', 'experiments/new/box25/instances/rttf48.pg', 1, 11, 22, 3, 2)
+ENTER2 FAIL
+DEG FAIL
+DEG2 FAIL

@@ -10,6 +10,8 @@ Top three, always:
 2. Overage: get_session on the Lead; if rate_limit_info.isUsingOverage is true, run the Stop procedure now and tell the owner.
 3. Read the WATCHDOG's last message, if any. For each roster session that is "working": get_session (never list). Flag: idle with work announced but not done,
    failed status_bucket, context_usage above 600k (plan a handover). Read its branch head (git fetch) and notes/<LANE>.md resume point.
+3a. Count WORKING lanes (gate roles CHECKER/REFEREE/REFEREE-2 excluded). Fewer than 5 is an exception (D17/L39, L38 (4)): start successors
+   with self-generated boxes from the frontier in NOW the same hour. (Added 2026-10-29 after a Lead miss: one working lane 05:48Z-09:59Z.)
 4. Act on exceptions only: one self-contained message to a stalled session; nothing to idle or parked sessions.
 5. Check CI on lane heads (GitHub MCP actions_list). Red CI on a lane head is that lane's work now; tell it once.
 6. Daily owner line (until M2 is done): if the last line in docs/agents/LEAD-STATE.md "Owner lines" is older than 24h,

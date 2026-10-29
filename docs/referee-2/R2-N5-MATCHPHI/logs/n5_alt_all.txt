@@ -1,0 +1,13 @@
+MODE n5 pairs ../../../experiments/si/root/logs/alt_all.lst ../../../experiments BF 8
+COR_checks: 12734
+INVALID_START_ENTRIES: 1
+NM_total: 30219
+Pchanges: 53549
+matched: 23330
+phases: 458
+runs: 413
+max_NM: (62, 'red/usplit/instances/gate_K64_n581.pg#start', 0, 71, 578, 581, 63)
+max_NM_over_n: (0.9, 'red/n3/instances/ret22_n40.pg#start', 7, 90, 1, 40, 48)
+max_PCH: (67, 'new/box48/out/qpcclimb/scale/snap_n80_s62.pg#start', 5, 105, 17, 80, 41)
+max_PCH_over_bound: (1.0, 'red/xing/instances/x32_rand48.pg#S3', 0, 44, 47, 1, 0, 1)
+RESULT OK violations=0

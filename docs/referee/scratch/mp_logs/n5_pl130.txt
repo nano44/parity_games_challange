@@ -1,0 +1,8 @@
+MAX_NM_over_n (1.175, ('../../../experiments/red/sel/instances/pl130_n40.pg', 40, 1, (1, 131), 62, 47))
+MAX_NM 47
+MAX_PCH 62
+N5_chk 80
+NM 688
+PCH 962
+RUNS 1
+VP 38
