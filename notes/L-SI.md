@@ -9,7 +9,12 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   (READING, §4). STEP 2 (CORE fixes) waits for REFEREE-2.
 - RUN-LIN DEAD (note §7, DEAD.md box 24): stretching best62_n34's thrice-walked corridor (stretchiter.py, then mkrunfam.py next to vertex 25)
   gives runfam_K: n = 39 + K, run = 74 + ⌊5K/2⌋ (K ≤ 34), then 2n + 13; runfam_K10 (n 49) run 99 > 98. Three engines, check_sol2 OK, I_τ = ∅.
-  Linearity not killed. Next: grow a third / fourth long wave (stretchiter from runfam_K40, out/stretch40.log).
+  Linearity not killed. REFEREE reproduced the kill independently (docs/referee/R-N5-RUNLIN-kill.md, c609f779; precisions in §7).
+  Chain at vertex 28 from runfam_K40: +2.5 per vertex to n = 170 (403 = 2n + 63), no saturation (out/chain28b.log; n5x only).
+- CORE fixes DONE: docs/si/P-N5-CORE-fixes-box23.md sha1 5f22c9ec (l-si 5533c58c), FROZEN; 35 quotes pinned.
+- NOW (Lead 02:04Z): RUN-LIN′ — make the NUMBER of long σ̄-constant pieces grow. runfam_K20 anatomy: gate 5 (options 2, 7, 9, 14, 18, 28;
+  τ = 7) runs σ̄ 7, 2, 9, 14, 28, 18, 28, 14, 9, 7; long pieces at σ̄ = 28 (26), 14 (36), 7 (43). Tries running: optadd.py (random new options
+  of gate 5, keep if run +3; out/optadd.log), growclimb C=2 from runfam_K20 (out/w91-93.log). optclone.py (copy an option): no gain.
 - Things only I know: pkill -f / pgrep|xargs kill on a pattern that is in my own command line kills my shell (exit 144): kill by pid from
   `ps -eo pid,args | grep "[g]rowclimb"`. growclimb.py saves the best RATIO state, so out/*.pg can be a smaller n than the last log line.
 
