@@ -8,8 +8,10 @@ check.sh «box 31» block; tools experiments/si/core/ (sp.py, gp.py, mono.py, lo
 - Handover check abedb01f (pushed). STEP 1 (same-pair core): data (§1), gap-step Lemma P DEAD on runfam_K100 (§2), Lemma GP / GP+ PROVED
   (lane) (§3), Corollary FW-R WCH ≤ (n − 1)(R + 1) PROVED (lane) (§4), R = 0 on 1,441 / 1,754 same-pair phases (pushed 76c83301).
 - 5864963b: CONJECTURE R-LIN DEAD (core/instances/rlin_cex_n40, R = 129 in 10 transitions); FW-R′ (R_T). Lead answered (b) 16:17Z.
-- §6: Lemma GP* (only BLOCKED edges excluded) and FW-R* (WCH ≤ (n − 1)(R*_T + 1)), R*_T = 0 on 1,499 / 1,754. Packet (Lead ask (a)) waits
-  for the Lead's OK on the RESULTS line (GP* version sent 16:3xZ).
+- §6: Lemma GP* (only BLOCKED edges excluded) and FW-R* (WCH ≤ (n − 1)(R*_T + 1)), R*_T = 0 on 1,499 / 1,754 (2a435f8f).
+- PACKET P-N5-GP-box31 FROZEN d072bb28, sha1 cd4866df (GP*, Corollaries GP, GP+, FW-R*; W-MON, XW proofs; 14 quotes). Reported 16:38Z.
+  Repairs go to a NEW file docs/si/P-N5-GP-fixes-box31.md; never edit the packet.
+- DATA: R*_T ≤ TC on all 1,754 (CONJECTURE R*-TC); 8 late-adoption* transitions without basin change.
 - Climbs core/climb/ (spclimb.py, same-pair WCH/(n − 1)): 100k steps from lend13_n16, ccl_fbx_n32, x31_re24 plateau at 0.800; gci3_n24 and
   x32_waves48 (NMAX 64, 300k) running at 16:3xZ.
 ### QUEUE

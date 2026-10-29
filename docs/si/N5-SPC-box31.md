@@ -160,6 +160,12 @@ and held at k + 1, hence adopted at some τ ∈ (t, k] (a blocked edge is not ρ
   R*_T = 0 in 1,499 of the 1,754 same-pair frozen W-phases (alt_all 635 of 755, lib41 462 of 549, experiments/si 402 of 450): FW-BF is
   proved for each of these by FW-R*. Largest R*_T: 40 (grow_K40_n373, |D| = 4, WCH 45; R*_T/(n − 1) = 0.11); |D| = 1: R*_T/(n − 1) ≤ 0.11
   (red/so/instances/xrun8_n10, 1 at n 10). rlin_cex_n40 has R* = 0 (FW-BF proved there); ccl_w48_n48 has R* = 12 in R*_T = 1 transition.
+- DATA (core/late.py STAR=1, outputs core/out/latestar_*.txt): R*_T ≤ TC in every one of the 1,754 same-pair frozen W-phases. Of the 348
+  late-adoption* transitions, 340 change some basin; the other 8 (all with tail-disjoint gates) do not, so the inequality is not a
+  per-transition fact. CONJECTURE R*-TC: R*_T ≤ TC in every frozen W-phase. With FW-R* it gives WCH ≤ (n − 1)(TC + 1), i.e. the epoch count
+  again (box 30 TORD (i) + EPOCH-U give the same for |D| = 1, TD); the frontier stays TC (CONJECTURE TRAP-LIN and its multi-gate form).
+- PACKET: docs/si/P-N5-GP-box31.md (GP*, GP, GP+, FW-R*, with W-MON and XW), FROZEN at l-si d072bb28, sha1 cd4866df18b55f44b3ef3d52de65943eeffe9140
+  (Lead 16:24Z / 16:31Z).
 - READING. FW-R* is the cleanest form of the reduction: the W-frame Bellman-Ford of R17 runs undisturbed except across F1 refusals, and
   every W-changing transition beyond n − 1 is paid for by a resolved F1 refusal within the last n − 1 transitions. The open quantity is
   R*_T, the number of transitions in which a previously blocked edge is taken. A polynomial bound on R*_T gives a polynomial bound on WCH per
