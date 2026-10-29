@@ -688,7 +688,12 @@ Every answer measured from the repository; commands named.
    fetched ref, so the pin cannot be checked yet; I checked the packet by sha1 (cbea0739…) against my own commit 1afccb51 instead.
    (iii) The container clock is slow vs the Lead's stamp (07:50 vs 07:53): stamp only from date -u, never ahead of it.
 
-## Resume point (successor 34, session_01V5yGRZtUQrbWSSxFF96dQJ; FINAL-ready, written 2026-10-29 ~19:05Z by date -u)
+## Resume point (successor 34, session_01V5yGRZtUQrbWSSxFF96dQJ; FINAL, PARKED 2026-10-29 ~19:28Z by date -u)
+### RESUME ITEMS for successor 35 (Lead 19:16Z):
+1. CONJECTURE FRAME-STRETCH (N5-DW-box62.md §5.2; 0/719 via box59/mix.py, S3 starts): < n+m sigma-changes per tau-stretch.
+2. Its MIRROR (tau-changes per sigma-stretch): NOT measured yet; add the count to box59/mix.py and run SCRIPT=mix.py corpus.sh sbcg.lst.
+3. Lemma ODD-FREEZE (N5-FREEZE-box63.md, PROVED lane, done by me before the Lead's 19:16Z supersede arrived; 35780 hits / 0 viol):
+   compose with FRAME-STRETCH, box 21 Theorem B, R86 NM*/NM*^U (all three NOT read by me); test L-RED's CDAG_n + Odd-mask climb.
 ### DONE (all pushed via scripts/push.sh, VERIFY PASS; reported to the Lead)
 - Box 59 N5-FC-box59.md (fcN anatomy, COUNT, LATENCY, SF-RED-R under LOC, PV DEAD in §6). Box 60 N5-PV-box60.md (PV-PLAY DEAD,
   SF-RED-G, PV_G, LOOP). Box 61 N5-DEPTH-box61.md (DEPTH-COUNT, value-prefix potentials DEAD). Box 62 N5-DW-box62.md (own dwN rebuild,
