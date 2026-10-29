@@ -1879,3 +1879,4 @@
 - 06:41Z (date -u): push c01e04a1 VERIFY PASS (R83 on origin). L-SI successor 22 started 06:38Z (session_01V5yGRZMmxSubTRSBLM6LGn; queue L-WAVE′, then SEG-RUN / PIECE). CHECKER messaged 06:38Z: C92 landed check on c01e04a1; C93 Add. 1 for R84 (draft sha1 9e64d0d9).
 - 06:46Z (date -u): C92 CLOSED (R83 landed check PASS, f6728213). C93 Add. 1 PASS (f6728213). R84 TOPSHAPE LANDED (GAPS line-11 UPDATE from the title clauses). CHECKER queue empty.
 - 06:51Z (date -u): L-SI 22 handover check 8d7a0053 accepted; its MISMATCH is a Lead SLIP: the 06:38Z brief called R83 LANDED while c01e04a1's push was still in verify. Rule: call an entry LANDED to a lane only after push.sh exit 0. R84 LANDED 0bb6ce32 (on origin).
+- 06:57Z (date -u): C93 CLOSED (R84 landed check PASS, checker 9a4d43ef). C90-C93 all CLOSED; CHECKER holding, next check C94.
