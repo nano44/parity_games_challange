@@ -1,0 +1,26 @@
+MODE files ../../../experiments/si/root/logs/alt_all.lst 0 experiments/ PCAP 300 RANDH 3 MAXF 400
+B1: 9087
+B1p_i: 18
+B1p_iii: 4
+B2a: 83
+B2b_ii: 41
+B2b_iii_even: 66
+F1H_checks: 9299
+FWR_checks: 1970
+F_RT0: 1926
+F_checked: 1970
+GPS_paths: 887036
+NOTBL_checks: 159321
+WMON_checks: 2817
+XW_checks: 251891
+X_BLK: 327
+X_GPall: 125338
+frozen_phases: 1970
+runs: 93
+starts_INVALID_skipped: 1
+starts_valid: 93
+transitions: 3356
+max maxF: 49
+max maxRT: 40
+max maxWCH: 49
+RESULT PASS violations 0

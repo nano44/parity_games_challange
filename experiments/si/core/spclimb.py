@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """L-SI box 31 (docs/si/N5-SPC-box31.md §5): kill search in the SAME-PAIR CORE (frozen W-phases with D != {} and lambda_Xi(d) = lambda_W(d)
 at every gate). SCORE=wch (default): 1000 * kill + floor(1000 * max WCH / (n - 1)), kill := WCH > n - 1 (FW-BF in the core) or R > n - 1;
-SCORE=r: the same with R / (n - 1) (CONJECTURE R-LIN, DEAD; R = late adoptions, core/late.py); SCORE=rstar: R*_T / (n - 1) (note §6). Mutations, acceptance, saving as frz/fwclimb.py.
+SCORE=r: the same with R / (n - 1) (CONJECTURE R-LIN, DEAD; R = late adoptions, core/late.py); SCORE=rstar: R*_T / (n - 1) (note §6); SCORE=seg: direction segments of S / (n - 1), |D| = 1 (note §7). Mutations, acceptance, saving as frz/fwclimb.py.
 Usage: spclimb.py SEED.pg SEED.start|- STEPS RNGSEED NMAX OUT"""
 import sys, os, random
 os.environ["PMODE"] = "1"
@@ -50,6 +50,13 @@ def sc(g, st):
             v = wch
             if MODE == "r": v = late(E, g, R, a, b, D)
             if MODE == "rstar": v = late(E, g, R, a, b, D, star=True)
+            if MODE == "seg":                       # direction segments of S (note §7), |D| = 1 only; score SEG / (n - 1)
+                if len(D) != 1: continue
+                F = [basins(R[t]["wn"], D, n) for t in range(a, b + 1)]; v, cur = 0, 0
+                for q in range(b - a):
+                    ent = any(F[q][x] == -1 and F[q + 1][x] != -1 for x in range(n)); ext = any(F[q][x] != -1 and F[q + 1][x] == -1 for x in range(n))
+                    d = 2 if ent and ext else (1 if ent else (-1 if ext else 0))
+                    if d and (d != cur or d == 2): v += 1; cur = d
             if wch > n - 1 or v > n - 1: kill = 1
             best = max(best, v / (n - 1))
     return (1000 * kill + int(1000 * best), int(1000 * best), kill)

@@ -85,8 +85,23 @@ None of F1-F6 widens a statement. F1-F6 are ACCEPTED.
 
 When the Lead sends F7-F13's SHA, I check them against this list and append the result here as C.5.
 
-## C.5 F7-F13
-Pending (the Lead will send the SHA).
+## C.5 F7-F13 (l-new e9daffde, fixes file sha1 d937c8a9…; checked 17:1xZ by date -u)
+- The packet is unchanged: `git diff 95a7a581 e9daffde -- docs/new/P-N5-SF-box55.md` is empty (sha1 dbc2345f).
+- The 6 new quotes are 6/6 verbatim by my strict qcheck (R2-N5-CORE/qcheck.py at e9daffde).
+
+| item | answers | content check | clarification or widening? |
+| --- | --- | --- | --- |
+| F7 | SF-N1, C.4 item 3 | Names both standing premises of ONE-PLAYER (a): G-N5T-1, and R57 (b)'s "S1's procedure realises an optimal σ̄" (quoted at l. 2915-2916, verbatim). It replaces Remark 2's "nothing about σ̄ beyond its being a function of σ". Not the G-N5T-3 premise. Correct | CLARIFICATION. It names premises already used. Remark 2 was not signed, and F7 makes it more accurate, not wider |
+| F8 | SF-N2 (E) | Cites box10 §3 Theorem PH proof l. 69-72 verbatim ("it switches only vertices x that are their own cycle nodes …", "no valuation changes …"). An S4c step switches each such own-cycle-node x to an Ω-best improving successor (the Remark after Theorem PH), so it is a step of that kind | CLARIFICATION (citation). **E-item SF-N2 DISCHARGED** |
+| F9 | SF-N3 (E) | The full S4a quote l. 51-53, ending "Else σ_new = σ.", verbatim | CLARIFICATION (quote). **E-item SF-N3 DISCHARGED** |
+| F10 | SF-N4 | "The same arena H" = same ids, owners, priorities and increasing-index lists (S1 l. 44, verbatim). Correct | CLARIFICATION |
+| F11 | SF-N5 | n3cov_lean.start's SIGMA0 47:18 is on an Odd vertex and has no effect: S1 reads σ only at Even vertices. The two referees' runs differ as starts, not as a disagreement. Consistent with my reproduction (S3 fill + listed entries) | CLARIFICATION (DATA) |
+| F12 | SF-N6 | Stretches stay below n − 1 in all data (lane: max 101 at n = 410). A sharper "n − 1" would be a new claim for both referees, and F12 does not make it | CLARIFICATION (DATA). It explicitly does NOT widen |
+| F13 | SF-N7 | The LAM argument is self-contained (R15 (a), S1's order, injective p′). R47 is deliberately not cited | CLARIFICATION |
+
+- None of F7-F13 widens a statement. **F7-F13 ACCEPTED.**
+- All REFEREE-2 E-items of this §C are discharged: SF-N2 (F8), SF-N3 (F9), and F1 extended to Remark 2 (F7).
+- With F1-F13, the P-N5-SF joint gap map stays EMPTY and has no open E-item.
 
 ## C.6 DONE / FINDINGS / NEEDS
 - DONE: this §C. sf_check.py gained the X_SEGn1 control; logs lib41, alt_all, fam and hard re-run, all RESULT PASS.
@@ -94,4 +109,4 @@ Pending (the Lead will send the SHA).
   - The joint gap map is EMPTY, and every item is SIGNED by both referees.
   - E-items: SF-N2 (citation; my report missed it) and SF-N3 (quote). F1-F6 are all clarifications and are accepted.
   - Neither data set shows a stretch longer than n − 1.
-- NEEDS: Lead: send the SHA of F7-F13. I recommend the optional RESULTS clause.
+- NEEDS: (C.5 done) none. I recommend the optional RESULTS clause "(and SPEC S1 conformance, as R57 (b))", which F7 supports.
