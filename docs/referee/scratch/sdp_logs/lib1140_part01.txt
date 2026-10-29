@@ -1,0 +1,31 @@
+NOTE start file ../../../experiments/new/box45/instances/div_n8.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file ../../../experiments/new/box45/out/div_s13_1.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file ../../../experiments/new/box45/out/div_s15_1.start invalid for its game (move not an edge, or missing); given start skipped
+COV_R77 2672
+COV_SDp 3921
+EP_chk 4040
+EP_hyp 3960
+FF_runs 2975
+GAMES 251
+GENW_used_fail 36
+H4p_fail 7
+MAX_CF 4
+MAX_EPOCHS 5
+MAX_PIECE_minus_n1_plus1000 999
+MAX_SD_len 36
+PIECES 4040
+PIECES_CF1 43
+REM_chk 2182
+RUNS 572
+SA_chk 175025
+SB_chk 140645
+SDV_chk 387665
+SD_cand 3019
+SD_cand_TWneTH 817
+SD_cand_lamWchg 118
+SD_chk 3012
+SD_chk_TWneTH 810
+SD_chk_lamWchg 114
+SD_sharp 211
+SD_withgate 1891
+skip_big 29

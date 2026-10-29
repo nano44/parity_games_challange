@@ -1,0 +1,47 @@
+NOTE start file ../../../experiments/red/n3/instances/comp54_n80.start gives forced vertex 11 -> 51; using 11
+NOTE start file ../../../experiments/red/n3/instances/n3cov_lean.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file ../../../experiments/red/n3/instances/n3cov_phi.start invalid for its game (move not an edge, or missing); given start skipped
+COVX_H3p_L1 6
+COVX_H3p_L2 19
+COVX_H4p_L0 264
+COVX_H4p_L1 1
+COVX_H4p_L2 1
+COV_R77 3913
+COV_R77_L0 2995
+COV_R77_L1 358
+COV_R77_L2 560
+COV_SDp 5467
+COV_SDp_L0 4369
+COV_SDp_L1 424
+COV_SDp_L2 674
+EP_chk 5765
+EP_hyp 5491
+EP_k_MUT4_FAIL 2
+FF_runs 3286
+GAMES 413
+GENW_used_fail 34
+H4p_fail 3
+MAX_CF 5
+MAX_EPOCHS 6
+MAX_PIECE_minus_n1_plus1000 999
+MAX_SD_len 55
+PIECES 5765
+PIECES_CF1 23
+PIECES_L0 4633
+PIECES_L1 432
+PIECES_L2 700
+REM_chk 3878
+RUNS 413
+SA_chk 1034304
+SB_chk 927230
+SDV_chk 2274195
+SD_cand 4794
+SD_cand_TWneTH 907
+SD_cand_lamWchg 153
+SD_chk 4791
+SD_chk_TWneTH 905
+SD_chk_lamWchg 153
+SD_sharp 369
+SD_withgate 3719
+EX ('EP_k_MUT4', 'red/n5/instances/sym_h8_s1.pg/0', 5, 7, 2, 0)
+EX ('EP_k_MUT4', 'red/xing/instances/x31_lem_t32.pg/0', 1, 3, 2, 0)
