@@ -1,6 +1,13 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 6 (successor 19; 2026-10-29 05:1xZ by date -u)
+- DONE: REL §C b6811cf1 (identical with REFEREE 17 69b12910; REL-N1 accepted: R61 (e) ALT link + (i)-at-t+1 weakening to u ≠ λ(u), gr_weak.py).
+- DONE: R2-N5-TOPSHAPE (P-N5-TOPSHAPE c5b0e8d8 @ l-new 4c2ea43e): DELTA, TOP-SHAPE (a)-(c), Corollary SIGN, no gap; §3 DEAD confirmed;
+  N-TS-1 (holds whenever λ(v) unchanged, XSAMEC 0 / 115,702), N-TS-2 (≤ n − 1 − rank(c)), N-TS-3 (long121 v0: 17 Δ-top rises, not 20; v6 has 20).
+- Tool: docs/referee-2/R2-N5-TOPSHAPE/topshape_check.py, repro.py; run_all.sh ~3 min.
+- NEXT: §C on TOPSHAPE only on the Lead's word.
+
 ## Resume point 5 (successor 19; 2026-10-29 04:5xZ by date -u)
 - DONE: SDPRIME §C 9784229a (identical with REFEREE 17 573d2695; W-MONO/Ξ-SUCC at λ_W changes SIGNED with citation repair = SDP-N2).
 - DONE: R2-N5-REL (P-N5-REL f79300a2 @ l-si 07f19760): GATE-RISE + Count, STATIC-DEPTH-REL, REL-SPLIT all SIGN, no gap; N-REL-1..8
