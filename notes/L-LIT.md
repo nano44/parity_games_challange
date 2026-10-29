@@ -6,6 +6,9 @@ DONE this session (claude/l-lit; every push via scripts/push.sh):
 - dbaf814b handover check (container started 4009 behind; fast-forwarded). VERIFY PASS, Oink smoke NOT RUN (not built).
 - T44 docs/lit/T44-single-frame-variants.md + T44-sf-variants.py + T44-sfw-cycle-check.py + T44-rcyc10.pg (single-frame N5 variants for
   L-NEW 32 BOX 54): SF-Ξ = Friedmann I^glo (Thm 8.4; H3-H5 107/235/491), SF-W cycles (dlm1 n 5-7, dlm2 n 2-4, 10-vertex random), SF-SSI = SSI.
+- T45 3c5c6eca (T44 §6: n5sf ≠ SF-Ξ, opponent frozen to σ̄(σ) vs free; dlm1 n=2 state 0).
+- T46 docs/lit/T46-n5sf-literature.md + T46-backedge-sbc.py: N5-SF = I^glo in the OLD-counterstrategy frame; PGSolver dead strimprbyco;
+  Fearnley snare SI (READING); SBC: 53/53 back-edge steps change σ̄; kill target friedmannsubexp (DAM 2013 NOT opened, unported).
 IN FLIGHT: none. NEXT: the Lead's word.
 Predecessor's resume point (successor 2, parked 14:25Z): in git history at 6e1b01fe.
 
@@ -343,6 +346,10 @@ Predecessor's resume point (successor 2, parked 14:25Z): in git history at 6e1b0
 | arXiv 1204.1147 v1 (Gawlitza, Seidl) sha256 df5c0793acd36a2c… | abstract; Thm 1 p.27 (+ conjecture); Thm 4 p.39 | 2026-10-29 | T42 |
 | Podelski-Rybalchenko VMCAI 2004; Bradley-Manna-Sipma ICALP 2005; Alias et al. SAS 2010 | NOT opened (author/publisher URLs return HTML); cited via the survey 2509.06752 and BG14 only | 2026-10-29 | T42 |
 | arXiv 1106.0778 v1 (sha256 a35e4ef6e2c4d0b9…) and v2 (sha256 46c96f44775aa2b0…, = L-COMP's file) (Friedmann, LMCS 7(3:19)) | §3 improvement arena A_{G,σ} (p.5-6); §4 I^loc, I^glo definitions (p.6-7), Thm 4.2 [Sch08]; Thm 6.14 (I^loc, G_n); Thm 8.4 (I^glo, H_n, ≥ 2^n steps from ι_{H_n}) | 2026-10-29 | T44; superscripts dropped by pdftotext |
+| arXiv 1003.2976 v1 (Fearnley, Non-oblivious SI, LPAR 2010), sha256 7ac44213b8d8d633… | Def. 2, 3, 10, 11; Thm 4; Prop. 12, 14, 15, 16; Alg. 1; §8.1-8.2 p.11-13 | 2026-10-29 | T46 |
+| Friedmann PhD (edoc 13294, sha256 68748f53…), re-opened | Table 4.2 p.94; §4.3 p.101-104 (intermediate cycles, simple cycle gadget Fig. 4.4-4.7); §4.6.2 p.139-140; Thm 4.41, 4.43, 4.45, 4.50 (p.149) | 2026-10-29 | T46 |
+| github.com/tcsprojects/pgsolver @ d3cd624 (git clone) | stratimpralgs/switch_locally_best.ml l.21-45 (improvement_policy_by_counterstrategy), stratimpralgs.ml l.136-145, switch_internal.ml l.490-494 (strimprbyco commented out), git log -S (f2ea8b0, 2013); generators/policyiter list incl. friedmannsubexp.ml, fearnleysubexp.ml | 2026-10-29 | T46 |
+| DOI 10.1016/j.dam.2013.02.007 (Friedmann, snare memorization, DAM 161 (2013) 1317-1337) | NOT OPENED: Crossref metadata only; publisher fetch refused in-session; not on arXiv | 2026-10-29 | T46 |
 
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
