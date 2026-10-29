@@ -72,3 +72,32 @@ define no initial strategy, and Friedmann's papers' specified starts were not op
   LE increments: …, 7, 9, 7, 4, 8, 4, 19. So SBC/N = 4.0 (N 8), 4.4 (N 10), 5.2 (N 12) from S3, and 5.5, 5.6, 6.6 from LE.
   In the game size n (≈ 4.5N² + 10.5N + 5), SBC/n FALLS (S3: 0.085 at N 8, 0.080 at N 12). This is DATA on N ≤ 12 only; the trend could be
   N log N, quadratic in N (= linear in n), or noise. fearnleysubexp SBC stays ≈ 2.3-2.7 N.
+
+## N5-SF anatomy on friedmannsubexp, N = 1..20, both starts (Lead 16:46Z; sbcanat.py; results/sbcanat.log)
+N = 13..20 instances are byte-identical to T47's generator. Every run: no cycle, regions = Oink zlk. Per N (S3 / LE): SF it, SBC_σ, DSB
+(distinct σ̄ values), SBC/n.
+| N | n | SF it | SBC_σ | DSB | SBC/n |
+| --- | --- | --- | --- | --- | --- |
+| 8 | 377 | 33 / 46 | 32 / 44 | 33 / 45 | 0.085 / 0.117 |
+| 10 | 560 | 49 / 59 | 44 / 56 | 45 / 57 | 0.079 / 0.100 |
+| 12 | 779 | 68 / 81 | 62 / 79 | 63 / 80 | 0.080 / 0.101 |
+| 14 | 1,034 | 100 / 94 | 97 / 92 | 98 / 93 | 0.094 / 0.089 |
+| 16 | 1,325 | 111 / 107 | 108 / 104 | 109 / 105 | 0.082 / 0.078 |
+| 17 | 1,484 | 120 / 124 | 118 / 121 | 119 / 122 | 0.080 / 0.082 |
+| 18 | 1,652 | 148 / 130 | 141 / 129 | 142 / 130 | 0.085 / 0.078 |
+| 19 | 1,829 | 170 / 146 | 167 / 145 | 168 / 146 | 0.091 / 0.079 |
+| 20 | 2,015 | 162 / 159 | 158 / 158 | 159 / 159 | 0.078 / 0.078 |
+(all N in the log.)
+- SBC/n does NOT rise. S3: 0.077-0.094 for N = 8..20, no trend (bumps at N 14, 19). LE: falls from 0.14 (N 3) to 0.078 (N 20).
+- Least-squares fits of SBC_σ on N = 3..20 (RSS; residuals at N = 17..20):
+  - S3: 9.43N − 38.2 (RSS 2,303; −4, 9, 26, 8); 2.82 N ln N − 12.6 (RSS 1,326; −5, 7, 22, 1); 0.410N² + 5.0 (RSS 535; −6, 3, 14, −11).
+  - LE: 8.43N − 23.3 (RSS 625; 1, 1, 8, 13); 2.51 N ln N + 0.0 (RSS 262; 0, −2, 5, 8); 0.361N² + 16.2 (RSS 385; 1, −4, −1, −3).
+  - N² fits best from S3, N ln N from LE. Both are consistent with SBC = Θ(n) (n ≈ 4.5N²), i.e. SBC ≈ 0.08n, and the fit cannot
+    separate N ln N from N² on N ≤ 20. DATA only.
+- DSB = SBC_σ + 1 in every run: σ̄ never returns to an earlier value. Every σ̄ change is to a NEW best reply.
+- Where σ̄ changes (counted as (transition, vertex) pairs): only at the classes e (cycle centres), v and w (bad-entry selectors), on
+  both starts. At N = 20 S3: e 358, v 1,406, w 1,720. Several vertices change per SBC transition (≈ 22 at N 20).
+- Cycle-centre word (bit i = σ̄(e_i) = d(i,1)): NO binary counter. From S3 it starts at 2^N − 1 (all closed) and moves through
+  e_words_count distinct values: 132 at N 20, far below 2^N. Consecutive words are never consecutive integers (e_binary_counter
+  false for every N ≥ 2, both starts). From S3 at N 8 the words run 255, 254, 252, 249, 248, 242, 241, 228, …, 3, 1, 3, 0, 1, 0. They
+  mostly fall, with a few re-openings at the end, so no counter completes.
