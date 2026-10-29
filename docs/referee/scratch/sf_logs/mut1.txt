@@ -1,0 +1,45 @@
+CONF_chk 35137
+ITER 1474
+ONEP_chk 1993
+ONEPb_V 120
+ORB_V 113
+ORB_chk 2000
+RUNS 1000
+SBC_max 4
+SEG_chk 3493
+SEG_fb_in 86
+TAU_E_V 119
+TAU_chk 1000
+TOT_chk 2000
+segmax 3
+VIOLATIONS 352
+EX ('ORB', 'rand6', 'E', 3, 4)
+EX ('ONEPb', 'rand6', 'E', 0)
+EX ('TAU_E', 'rand7')
+EX ('ORB', 'rand7', 'E', 2, 3)
+EX ('ONEPb', 'rand7', 'E', 0)
+EX ('TAU_E', 'rand7')
+EX ('ORB', 'rand8', 'E', 4, 4)
+EX ('ONEPb', 'rand8', 'E', 0)
+EX ('TAU_E', 'rand8')
+EX ('ORB', 'rand10', 'E', 5, 4)
+EX ('ONEPb', 'rand10', 'E', 0)
+EX ('TAU_E', 'rand10')
+EX ('TAU_E', 'rand12')
+EX ('TAU_E', 'rand20')
+EX ('TAU_E', 'rand22')
+EX ('ORB', 'rand23', 'E', 4, 4)
+EX ('ONEPb', 'rand23', 'E', 0)
+EX ('ONEPb', 'rand23', 'E', 2)
+EX ('TAU_E', 'rand23')
+EX ('TAU_E', 'rand25')
+EX ('TAU_E', 'rand29')
+EX ('ORB', 'rand36', 'E', 2, 3)
+EX ('ONEPb', 'rand36', 'E', 0)
+EX ('TAU_E', 'rand36')
+EX ('ORB', 'rand39', 'E', 3, 3)
+EX ('ONEPb', 'rand39', 'E', 0)
+EX ('TAU_E', 'rand39')
+EX ('ORB', 'rand39', 'E', 3, 3)
+EX ('ONEPb', 'rand39', 'E', 0)
+EX ('TAU_E', 'rand39')

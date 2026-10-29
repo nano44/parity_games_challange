@@ -1,20 +1,16 @@
 # L-LIT notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point (HANDOVER, 2026-10-29 ~15:50Z by date -u; successor 3, Opus 5.5, D15/D18; session_01V5yGRZ7SzNwVcgLkYDDxY7; parked on Lead's word)
-DONE this session (claude/l-lit; every push via scripts/push.sh, exit 0, VERIFY PASS; Oink smoke NOT RUN, Oink not built here):
-- dbaf814b handover check (container started 4009 behind; fast-forwarded).
-- 325b7cc2 T44 docs/lit/T44-single-frame-variants.md + T44-sf-variants.py + T44-sfw-cycle-check.py + T44-rcyc10.pg: SF-Ξ = Friedmann
-  I^glo (PROVED reduction; Thm 8.4; H3-H5 107/235/491), SF-W cycles (dlm1 n 5-7, dlm2 n 2-4, 10-vertex random), SF-SSI = SSI (DLM).
-- 3c5c6eca T45 (T44 §6 + T45-sf-diff.py): L-NEW's n5sf (057a08eb) ≠ SF-Ξ: opponent frozen to σ̄(σ) vs free; dlm1 n=2 state 0.
-- b6111905 T46 docs/lit/T46-n5sf-literature.md + T46-backedge-sbc.py: N5-SF = I^glo in the OLD-counterstrategy frame (thesis p.101),
-  PGSolver dead strimprbyco, Fearnley snare SI (READING); SBC: 53/53 back-edge steps change σ̄; non-back-edge SBC grows.
-- T47 (this push) docs/lit/T47-snare-families-spec.md + T47-gen-pgsolver-snare.py: specs of PGSolver friedmannsubexp / fearnleysubexp
-  (d3cd624, line numbers), pinned sha1s n = 1..5, start = best reward (snare solver). For L-COMP's independent port.
+## Resume point (2026-10-29 ~16:25Z by date -u; successor 4, Opus 5.5, D15/D18; T48)
+DONE this session (claude/l-lit; pushes via scripts/push.sh only):
+- 6c065788 handover check (container 4014 behind; fast-forwarded); push exit 0, VERIFY PASS (Oink smoke NOT RUN).
+- 55d45567 merge of trunk 51f52b57 (merge commit, no rebase); 0703a463 T48-sbc-embed-check.py (first form).
+- T48 (this push): docs/lit/T48-sbc-neighbours.md + T48-sbc-embed-check.py (SEGRET added): parametric shortest paths vs SBC (leapfrog =
+  parametric mechanism, quasi-poly floor for value+argmin proofs; F's run not one-parametric, SEGRET witness switchbestexp_1 (15,5));
+  DMDP/opponent-response literature (none counts response changes; Mei-Sun-Ye 2026 p.10 names it); Friedmann snare preprint OPENED.
 IN FLIGHT: none.
-NEXT for a successor: the Lead's word. Offered: (i) if L-COMP's port disagrees with T47's sha1s, re-read the OCaml lines cited there;
-(ii) DAM 2013 (DOI 10.1016/j.dam.2013.02.007) stays NOT OPENED (owner-optional, Lead 15:39Z: no access request).
-NEEDS: none from the owner.
+NEXT: the Lead's word.
+NEEDS: none from the owner (paywalled originals owner-optional).
 
 ## Queue
 - T40 primaries not opened: Condon 1993 (DIMACS 13), Pollatschek-Avi-Itzhak 1969 (Mgmt Sci 15), van der Wal 1976/1978 (cited via
@@ -30,6 +26,12 @@ NEEDS: none from the owner.
 - Open FL09 (self-loop removal) if the REFEREE needs it; Friedmann RAIRO 2011 (publisher 403; try author copy).
 
 ## Things only I know
+- Successor 4 (T48): source PDFs in scratchpad t48/A (parametric), t48/B (DMDP), t48/C (Friedmann/Fearnley), each with .txt; Gusfield 1980
+  thesis is a scan without text layer, pages read as PNG (t48/Aimg/gus3 = printed pp.83-87). Lost with the container; URLs + sha256 in Sources.
+- Friedmann snare preprint URL oliverfriedmann.com/downloads/papers/fearnley_lower_bound.pdf (HTTP 200 though his page marks it broken);
+  oliverfriedmann.de resets. Do not fetch sciencedirect.
+- T48-sbc-embed-check.py runs from the repo root (needs trunk's experiments/new/box54, box21, si, harness); WIT=1 prints the first SEGRET witness.
+  snare instances: T47 generator into scratchpad t48/inst. switchbestexp_5 with SEGRET takes a few minutes.
 - Successor 3: PGSolver clone at d3cd624 lives in scratchpad dl46/pgsolver (lost with the container; re-clone github.com/tcsprojects/pgsolver,
   checkout d3cd624). No OCaml toolchain here, so no binary check of T47. Friedmann thesis + Fearnley PDFs in scratchpad dl46/ (sha256 in Sources).
 - L-NEW's n5sf.py computes ROOT from its own path: to run a copy from the scratchpad, pre-insert experiments/new/box21 etc. into sys.path
@@ -358,7 +360,32 @@ NEEDS: none from the owner.
 | arXiv 1003.2976 v1 (Fearnley, Non-oblivious SI, LPAR 2010), sha256 7ac44213b8d8d633… | Def. 2, 3, 10, 11; Thm 4; Prop. 12, 14, 15, 16; Alg. 1; §8.1-8.2 p.11-13 | 2026-10-29 | T46 |
 | Friedmann PhD (edoc 13294, sha256 68748f53…), re-opened | Table 4.2 p.94; §4.3 p.101-104 (intermediate cycles, simple cycle gadget Fig. 4.4-4.7); §4.6.2 p.139-140; Thm 4.41, 4.43, 4.45, 4.50 (p.149) | 2026-10-29 | T46 |
 | github.com/tcsprojects/pgsolver @ d3cd624 (git clone) | stratimpralgs/switch_locally_best.ml l.21-45 (improvement_policy_by_counterstrategy), stratimpralgs.ml l.136-145, switch_internal.ml l.490-494 (strimprbyco commented out), git log -S (f2ea8b0, 2013); generators/policyiter list incl. friedmannsubexp.ml, fearnleysubexp.ml | 2026-10-29 | T46 |
-| DOI 10.1016/j.dam.2013.02.007 (Friedmann, snare memorization, DAM 161 (2013) 1317-1337) | NOT OPENED: Crossref metadata only; publisher fetch refused in-session; not on arXiv | 2026-10-29 | T46 |
+| DOI 10.1016/j.dam.2013.02.007 (Friedmann, snare memorization, DAM 161 (2013) 1317-1337) | (T48: author preprint now OPENED, see below) NOT OPENED: Crossref metadata only; publisher fetch refused in-session; not on arXiv | 2026-10-29 | T46 |
+| T48 (2026-10-29) sources below: opened by my subagents A/B/C, key quotes re-checked by grep by me (marked *) | | | |
+| Gusfield, PhD thesis UC Berkeley 1980, ERL M80/22 (www2.eecs.berkeley.edu/Pubs/TechRpts/1980/Archive/ERL-m-80-22.pdf) sha256 7a77e3926d6ce0d8… | Thm 4.1 printed p.59 (0/1 slopes: n-1 s-t breakpoints, n(n-1)/2 s-to-all); Thm 4.4 pp.83-86 (G_{n×c}, halving at A); Thm 4.5 p.86 ((2n+1)^(log n+1)/2); p.87 remark «any cost function with the property that no path is minimum for more than one contiguous range of λ» | 2026-10-29 | * read from page images by me (pp.83-87) |
+| arXiv 1811.05115 v3 (Gajjar-Radhakrishnan) sha256 79208b4f… | Thm 1 p.2; p.2 Carstensen / Mulmuley-Shah / Gusfield statements; Thm 3 | 2026-10-29 | * p.2 re-grepped |
+| arXiv cs/0205041 (Young-Tarjan-Orlin, Networks 1991) sha256 15898b5e26c94971… | §2: «at most n^2 trees», «no vertex acquires a new path more than n − 1 times»; §5 p.16 (Kn^2 trees) | 2026-10-29 | * |
+| Nikolova-Kelner-Brand-Mitzenmacher ESA 2006 (author PDF eecs.harvard.edu/~michaelm/postscripts/esa2006c.pdf) sha256 2cd7c54b45e6d1b3… | §2.2; Lemma 1 (breakpoints = shadow extreme points); Cor. 1 n^Θ(log n) | 2026-10-29 | agent A |
+| arXiv 1001.3749 v2 (Chakraborty-Fischer-Lachish-Yuster) sha256 45398534db333c8b… | pp.170-171: Carstensen example with a_e, b_e positive; tightness | 2026-10-29 | agent A |
+| arXiv 2501.11544 (Nemesch-Ruzika-Thielen-Wittmann survey) sha256 3bd371745579cad8… | §4.1 p.11-12 | 2026-10-29 | agent A |
+| arXiv 2607.21055 (Chillara-Gajjar) sha256 32ee94e1aab6eecd… | abstract; Thm 2 p.5: n^O(d log n), matching lower bound | 2026-10-29 | agent A |
+| arXiv 2609.29234 (Nishida, parametric min cycle mean) sha256 ca9af90fc532c74a… | p.2, §2 p.6: O(n^2 W) breakpoints; per-vertex path changes ≤ 2(n−1)W | 2026-10-29 | agent A |
+| arXiv 1311.5935 v2 (Disser-Skutella) sha256 b298d3e9… | Cor. 3, 4 p.4 (counting shadow vertices NP-hard) | 2026-10-29 | agent A |
+| arXiv 2604.08892, 1904.01082 | abstracts: no one-parameter count bound | 2026-10-29 | agent A |
+| arXiv 1208.5083 v2 (Post-Ye) sha256 c51876ebf5c3cdb0… | Thm 3.7 p.9, Thm 4.8 p.12, p.2 «do not extend to policy iteration», §5 p.12 | 2026-10-29 | * p.2 |
+| arXiv 1008.0530 v1 (HMZ) sha256 f53a6b5127d95078… | Thm 6.5 p.11; p.9 best response black box; Lemma 6.4 | 2026-10-29 | * |
+| arXiv 2606.29568 v1 (Mei-Sun-Ye) sha256 8bbb42f6834b6738… | Thm 1 p.16; Prop. 2; Alg. 1 p.10; p.10 «each such pivot may change Player 2's optimal response» | 2026-10-29 | * |
+| Björklund-Vorobyov DAM 155 (2007) author PDF (dbai.tuwien.ac.at) sha256 95a6b406f01db6b4… | §6, Thm 6.1, journal pp.221-222: «the sum of all n_i's does not exceed n^2·W» | 2026-10-29 | * |
+| arXiv 2506.12254 v1 (Asadi-Chatterjee-de Raaij) sha256 78c4ee071961b89e… | Thm 3.2 p.4 | 2026-10-29 | agent B |
+| arXiv 1003.3418 v1 (Fearnley ICALP 2010) sha256 0964f029… | Thm 17, 18 p.12 | 2026-10-29 | agent B (re-open) |
+| arXiv 2102.04922 v2, 1501.06484 v1, 2309.02223 v1, 2405.02479, 1705.02313, 1901.05316 | best-response remarks only; no count of opponent changes | 2026-10-29 | agent B |
+| Hansen-Zwick ISAAC 2010 abstract (Aarhus Pure) | abstract «Ω(n^2) iterations» | 2026-10-29 | agent B; full text NOT OPENED |
+| Friedmann, «A Superpolynomial Lower Bound for Strategy Iteration based on Snare Memorization», author preprint «February 13, 2013» (oliverfriedmann.com/downloads/papers/fearnley_lower_bound.pdf) sha256 8ea13895373a8e9a… (= DAM 161 (2013), DOI 10.1016/j.dam.2013.02.007; not diffed) | abstract p.1; p.2; p.6; Thm 11 p.9; p.13-14; Lemma 12 p.15; Lemma 14 p.20; Lemma 15 p.21; Thm 26 p.25 | 2026-10-29 | * Lemma 14, 15, Thm 11, 26 re-grepped |
+| Friedmann thesis (edoc 13294) sha256 68748f5388a94151… | p.84 Thm 4.9; p.98; pp.101-104 (§4.3, p.104 «only role that player 1 has»); p.118-119 Lemma 4.27; Thm 4.41 p.134; pp.139-149 (H_n, stubborn cycle, Thm 4.50) | 2026-10-29 | agent C |
+| arXiv 1106.0778 (Friedmann LMCS) sha256 46c96f44775aa2b0… | Lemma 6.1 p.10; Lemmas 6.8, 6.11, 6.12 pp.18-22 | 2026-10-29 | agent C |
+| arXiv 1003.2976 v1 (Fearnley non-oblivious) sha256 7ac44213b8d8d633… | Def. 2, 3, 13; Prop. 14, 15, 16; p.10, p.12, p.13 | 2026-10-29 | agent C |
+| NOT opened (T48) | Gusfield JACM 1983 (ACM 403); Carstensen Math. Prog. 1983 (Springer login/429) and Michigan thesis (not online); Mulmuley-Shah JCSS 2001 (403; author page TLS/503); Karp-Orlin DAM 1981 (403); Kelner-Nikolova FOCS 2007 (TLS/503); Nikolova thesis (429); Erickson SODA 2010 (404); HKZ SODA 2014 (SIAM 403); Hansen-Zwick ISAAC 2010 full text (Springer); Madani-Thorup-Zwick TALG 2010 (ACM 403); DAM 2013 published version (sciencedirect not fetched, by rule) | 2026-10-29 | |
+| T48 search (opponent best-response change counts): arXiv API queries abs:"best response" AND abs:"strategy iteration" (0), abs:"counter strategy" AND abs:"strategy improvement" (0), abs:"Hoffman-Karp", abs:"symmetric strategy improvement", au:Strozecki, au:Hansen AND au:Zwick; extended web search | nothing found | 2026-10-29 | agent B |
 
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
@@ -375,6 +402,10 @@ NEEDS: none from the owner.
 - T44 (2026-10-29): SF-W ("arena by W, choose by W", single-frame N5) is NOT an algorithm: it cycles. Obstruction: simultaneous one-step
   W-improvements of both players undo each other (no potential). Instances: docs/lit/T44-rcyc10.pg (period 4 from S3 start), dlm1 n = 5
   (period 37). SF-Ξ dies on Friedmann's H_n (Thm 8.4), SF-SSI on DLM (Thm 1).
+
+- T48 (2026-10-29): Gusfield's n^O(log n) route for SBC (embed F's run in a one-parameter family): DEAD. Obstruction: play SEGMENTS x -> y
+  return after being replaced (SEGRET > 0), impossible for strict optima under affine costs; witness switchbestexp_1 pair (15, 5), Even vertex 16
+  5 -> 14 -> 5 (docs/lit/T48-sbc-neighbours.md §1.4). Faithful embedding (edge availability by weights) dead by EVRET (switchbestexp_8: 5340).
 
 ## Corrections log
 - 2026-10-23 (T26): N8d-barrier.md §0 and R54 §0 put Lemma 4.75 / Thm 4.76 on p.187; opened PDF: printed p.186 (PDF p.202). Reported as caveat 4.

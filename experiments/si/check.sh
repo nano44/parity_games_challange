@@ -696,3 +696,11 @@ grep -q "'D1': (129, 10, 10, 40, 1, 'core/instances/rlin_cex_n40.pg', 1, 11)" <<
 grep -q "^RLIN FAIL$" <<<"$o"; grep -q "^RED PASS$" <<<"$o"; grep -q "^GP PASS$" <<<"$o"
 o=$(python3 -I root/n5bcmp.py core/instances/rlin_cex_n40.pg core/instances/rlin_cex_n40.start | head -1); grep -q "identical state sequences: True" <<<"$o"
 echo "si (box 31 §5: R-LIN dead on rlin_cex_n40; FW-R, FW-R′ hold; n5b identical): PASS"
+# box 31 §6: GP* / FW-R* (only blocked edges excluded): rlin_cex_n40 has R* = 0 (FW-BF proved there by FW-R*), ccl_w48_n48 R*_T = 1;
+# the plain W-frame Lemma P (MUT=all) still fails on ccl_w48_n48.
+o=$(STAR=1 python3 -I core/gp.py --one core/instances/rlin_cex_n40.pg core/instances/rlin_cex_n40.start)
+grep -q "'D1': (0, 10, 10, 40, 1, 'core/instances/rlin_cex_n40.pg', 1, 11)" <<<"$o"; for k in GP RED RLIN; do grep -q "^$k PASS$" <<<"$o"; done
+o=$(STAR=1 python3 -I core/gp.py --one xing/instances/ccl_w48_n48.pg)
+grep -q "'D1:R_T/(n-1)': (0.02127659574468085, 1, 3, 48, 1, 'xing/instances/ccl_w48_n48.pg', 15, 18)" <<<"$o"; grep -q "^GP PASS$" <<<"$o"
+o=$(MUT=all STAR=1 python3 -I core/gp.py --one xing/instances/ccl_w48_n48.pg); grep -q "^GP FAIL$" <<<"$o"
+echo "si (box 31 §6: GP*, FW-R* on rlin_cex_n40 and ccl_w48_n48; MUT=all control fails): PASS"

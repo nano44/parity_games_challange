@@ -6,7 +6,12 @@ Lead: session_014FBi6o334DvwT5Uw2kDfoN. Trunk claude/vibrant-johnson-nxvvxo. Not
 check.sh «box 31» block; tools experiments/si/core/ (sp.py, gp.py, mono.py, look.py, diag.py), outputs core/out/.
 ### DONE
 - Handover check abedb01f (pushed). STEP 1 (same-pair core): data (§1), gap-step Lemma P DEAD on runfam_K100 (§2), Lemma GP / GP+ PROVED
-  (lane) (§3), Corollary FW-R WCH ≤ (n − 1)(R + 1) PROVED (lane) (§4), R = 0 on 1,441 / 1,754 same-pair phases; CONJECTURE R-LIN (R ≤ n − 1).
+  (lane) (§3), Corollary FW-R WCH ≤ (n − 1)(R + 1) PROVED (lane) (§4), R = 0 on 1,441 / 1,754 same-pair phases (pushed 76c83301).
+- 5864963b: CONJECTURE R-LIN DEAD (core/instances/rlin_cex_n40, R = 129 in 10 transitions); FW-R′ (R_T). Lead answered (b) 16:17Z.
+- §6: Lemma GP* (only BLOCKED edges excluded) and FW-R* (WCH ≤ (n − 1)(R*_T + 1)), R*_T = 0 on 1,499 / 1,754. Packet (Lead ask (a)) waits
+  for the Lead's OK on the RESULTS line (GP* version sent 16:3xZ).
+- Climbs core/climb/ (spclimb.py, same-pair WCH/(n − 1)): 100k steps from lend13_n16, ccl_fbx_n32, x31_re24 plateau at 0.800; gci3_n24 and
+  x32_waves48 (NMAX 64, 300k) running at 16:3xZ.
 ### QUEUE
 1. Bound R (late adoptions): per edge, per vertex; relation to TC; kill search on R/(n − 1) and WCH/(n − 1) (seeds lend13_n16, grow_K40_n373,
    ccl_w48_n48, ccl_fbx_n32, runfam_K100).

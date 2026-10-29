@@ -1,7 +1,13 @@
-R>TC=16 cls_S>S'=103 cls_U>S=201 cls_same=37 perv>1=10 phases_R>0=144 wchg_at_adoption=341 zS_at_tau=330
+R>TC=16 RT=265 RT>TC=2 RT_noTC=26 RT_noTC_G3=14 cls_S>S'=103 cls_U>S=201 cls_same=37 perv>1=10 phases_R>0=144 wchg_at_adoption=341 zS_at_tau=330
 columns: value, R, TC, per-vertex max, per-edge max, n, |D|, game, a, b
 MAX R (40, 40, 42, 40, 1, 373, 4, 'red/usplit/instances/grow_K40_n373.pg', 0, 45)
 MAX R-TC (6, 6, 0, 1, 1, 32, 1, 'n5-epoch/instances/ffin5_n32.pg', 14, 21)
 MAX R/(n-1) (0.7333333333333333, 11, 12, 1, 1, 16, 2, 'n5-epoch/instances/lend13_n16.pg', 1, 13)
 MAX pere (1, 6, 0, 1, 1, 32, 1, 'n5-epoch/instances/ffin5_n32.pg', 14, 21)
 MAX perv (40, 40, 42, 40, 1, 373, 4, 'red/usplit/instances/grow_K40_n373.pg', 0, 45)
+EXAMPLE ('late-no-TC', 'n5-epoch/instances/ffin5_n32.pg', 14, 21, 15, 32, 1, 'notG3')
+EXAMPLE ('late-no-TC', 'n5-epoch/instances/ffin5_n32.pg', 14, 21, 16, 32, 1, 'notG3')
+EXAMPLE ('late-no-TC', 'n5-epoch/instances/ffin5_n32.pg', 14, 21, 17, 32, 1, 'notG3')
+EXAMPLE ('late-no-TC', 'n5-epoch/instances/ffin5_n32.pg', 14, 21, 18, 32, 1, 'notG3')
+EXAMPLE ('late-no-TC', 'n5-epoch/instances/ffin5_n32.pg', 14, 21, 19, 32, 1, 'notG3')
+EXAMPLE ('late-no-TC', 'n5-epoch/instances/ffin5_n32.pg', 14, 21, 20, 32, 1, 'notG3')

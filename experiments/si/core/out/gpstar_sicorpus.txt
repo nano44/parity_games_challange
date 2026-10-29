@@ -1,0 +1,5 @@
+D1=279 D1_GP_V=0 D1_R>0=33 D1_late>0=0 D2+=171 D2+_GP_V=0 D2+_R>0=15 D2+_late>0=0 SKIPPED_input=1 ctrl=133 ctrl_GP_V=0 ctrl_R>0=0 ctrl_late>0=0
+max R (R, WCH, L, n, |D|, game, a, b): {'ctrl:R_T/(n-1)': (0.0, 0, 1, 70, 0, 'experiments/si/chg/out/ie_sk29.pg', 5, 6), 'ctrl:R/(n-1)': (0.0, 0, 1, 70, 0, 'experiments/si/chg/out/ie_sk29.pg', 5, 6), 'ctrl': (0, 1, 1, 70, 0, 'experiments/si/chg/out/ie_sk29.pg', 5, 6), 'D1:R_T/(n-1)': (0.06451612903225806, 2, 8, 32, 1, 'experiments/si/xing/instances/zcl_fb1_n32.pg', 18, 26), 'D1:R/(n-1)': (0.3225806451612903, 10, 2, 32, 1, 'experiments/si/xing/instances/ccl_fbx_n32.pg', 5, 7), 'D1': (12, 3, 3, 48, 1, 'experiments/si/xing/instances/ccl_w48_n48.pg', 15, 18), 'D2+:R_T/(n-1)': (0.05, 2, 3, 41, 3, 'experiments/si/root/instances/l121ereader_n41.pg', 91, 94), 'D2+:R/(n-1)': (0.075, 3, 3, 41, 3, 'experiments/si/root/instances/l121ereader_n41.pg', 91, 94), 'D2+': (3, 3, 3, 41, 3, 'experiments/si/root/instances/l121ereader_n41.pg', 91, 94)}
+GP PASS
+RED PASS
+RLIN PASS
