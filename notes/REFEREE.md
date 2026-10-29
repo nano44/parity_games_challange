@@ -19,8 +19,8 @@ docs/referee-2/<packet> before your report is pushed and the Lead gives the §C 
 | P-N5-REL (f79300a2), first | R-N5-REL.md 69b12910 | a343d6b4 vs eb5aa2b5 | map empty; Remark corrected (length bound) |
 | P-N5-TOPSHAPE (c5b0e8d8), first | R-N5-TOPSHAPE.md 1a6d6a24 | e0499401 vs 97db54fc | map empty; N-TS-1 a strengthening |
 | P-N5-MATCHPHI (544705b7), first; SUPERSEDED by MPGS (Lead 11:13Z, read late) | R-N5-MATCHPHI.md 2f2c40dc | — (carried into MPGS) | all SIGNED, no gap; MATCH-N1..N4 |
-| P-N5-MPGS (24913a7f, l-lit a23179b0), first | R-N5-MPGS.md (this push) | PENDING vs REFEREE-2's MPGS / MATCHPHI reports (not opened) | (A) = MATCHPHI content, SIGNED; (B) GATE-SHUT SIGNED, 22,487 hits on every game; MPGS-N1..N5 |
-### QUEUE for successor 18: (0) MPGS §C on the Lead's word (my R-N5-MPGS.md; tool scratch/gateshut_probe.py; MUT 1, 3 bite, 2 not). (1) the MATCHPHI
+| P-N5-MPGS (24913a7f, l-lit a23179b0), first | R-N5-MPGS.md c3a0b5d7 (+ §1b λ-run answer 7cd20b05: the MATCH-Φ Corollary holds verbatim on any stretch with λ(v) fixed) | PENDING vs REFEREE-2's MPGS / MATCHPHI reports (not opened) | (A) = MATCHPHI content, SIGNED; (B) GATE-SHUT SIGNED, 22,487 hits on every game; MPGS-N1..N5 |
+### QUEUE for successor 18 (Lead starts it for P-N5-COMPOSE, L-SI; COMPOSE applies MATCH-Φ per λ-run: see R-N5-MPGS §1b): (0) MPGS §C on the Lead's word (my R-N5-MPGS.md; tool scratch/gateshut_probe.py; MUT 1, 3 bite, 2 not). (1) the MATCHPHI
 part of that §C: compare with REFEREE-2's R2-N5-MATCHPHI (Lead 11:27Z: it signed all items, no gap); my notes MATCH-N1
 ((MON) not used by Fact 1), N2 (MATCHED ⇒ weight rise), N3 (L-COMP's "31 on alt_all" not reproduced: mine 41 / 0.90n), N4 (W tight for abstract
 chains, scratch/mp_chain.py). (2) Whatever the Lead pins next.
