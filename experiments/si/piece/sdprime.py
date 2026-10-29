@@ -80,7 +80,9 @@ def main():
         ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
         for line in open(a[1]):
             f = line.split()[0] if line.strip() and not line.startswith("#") else None
-            if f: run(load(os.path.join(ROOT, f)), f)
+            if f:
+                q = line.split()                          # env START=1: use the list's second column (pinned start) when present
+                run(load(os.path.join(ROOT, f)), f, readstart(os.path.join(ROOT, q[1])) if len(q) > 1 and os.environ.get("START") == "1" else None)
     print(" ".join(f"{k}={v}" for k, v in sorted(C.items())))
     for x in EX[:12]: print("EXAMPLE", x)
     print("SDPRIME PASS" if not any(k in C for k in ("SET_V", "LEN_V", "N1_V")) else "SDPRIME FAIL")
