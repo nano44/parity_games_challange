@@ -13,14 +13,15 @@ MODE=run: Corollary COMPOSE-RUN on the whole run (Even switches on lambda_Xi-run
 U of tau on G^d): RUNI0_V (run length > Even + Odd switches), EI1/OI1, ELDIR/OLDIR, ELBLK/OLBLK; TOP columns then read L, game, 0, T,
 switches + B, sum (1 + RISE) + B, sum n (PCH + 1) + B, -, Even switches, Odd switches, B_Xi, B_U, n (B = lambda-change transitions).
 fall_dK / fallmax_dK: P-changes at which Phi_d := sum of signed pos^d (d = 1, 2, 3) does not rise (all, and the most for one
-vertex in one phase); CONJECTURE PHI-d-MONO would say fall_dK = 0 under S4a for some fixed d (it would bound PCH by the range n^(d+1)).
+vertex in one phase); LONLY_V: a vertex with more than n - 1 length-only rises in one phase (candidate LEN-TOTAL, sharpening LEN-MONO).
+CONJECTURE PHI-d-MONO would say fall_dK = 0 under S4a for some fixed d (it would bound PCH by the range n^(d+1)).
 Prints per phase the sums S1 = sum_v SW(v), S2 = sum_(v,c) (1 + RISE(c)), S3 = sum_(v,c) (1 + PCH(c) + (PCH(c)+1)(n-1)),
 S4 = the same with the MATCH-Phi bound for PCH; and the maxima of NM, PCH, RISE. Usage: compose.py --list FILE | --one GAME [START]"""
 import sys, os
 from collections import Counter
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "root"))
 from common import rows, load, readstart, phases, Engine, dual
-C = Counter(); EX = []; TOP = []
+C = Counter(); EX = []; TOP = []; LTOP = []
 
 def maxmatch(L, Rr, ok):
     own = {}
@@ -48,7 +49,7 @@ def bits(m):
 def _run(E, g, R, name):
     n = g.n; rk2v = {E.rank[v]: v for v in range(n)}; odd = lambda r: E.par[rk2v[r]] == 1
     for i, j in phases(R):
-        L = j - i; sw = Counter(); ent = Counter(); rise = Counter(); pch = Counter(); nm = Counter(); fall = Counter()
+        L = j - i; sw = Counter(); ent = Counter(); rise = Counter(); pch = Counter(); nm = Counter(); fall = Counter(); lonly = Counter()
         for t in range(i, j):
             A, B = R[t], R[t + 1]
             for v in range(n):
@@ -62,6 +63,7 @@ def _run(E, g, R, name):
                 if b[0] != c: C["LDIR_V"] += 1; EX.append(("LDIR", name, i, j, t, x, "cycle node")); continue
                 if a[1] != b[1]:
                     pch[x] += 1; blk = 0
+                    if (b[2] > a[2]) if E.par[c] == 0 else (b[2] < a[2]): C["lwrong_at_pchange"] += 1
                     if E.weight(b[1]) <= E.weight(a[1]): C["LDIR_V"] += 1; EX.append(("LDIR", name, i, j, t, x, "P falls"))
                     rc = E.rank[c]; w = lambda r: (r - rc) if not odd(r) else -(r - rc)
                     if not matched(bits(a[1]), bits(b[1]), w, odd): nm[x] += 1
@@ -69,7 +71,7 @@ def _run(E, g, R, name):
                         wd = lambda r: (r - rc) ** d if not odd(r) else -((r - rc) ** d)
                         if sum(map(wd, bits(b[1]))) - sum(map(wd, bits(a[1]))) <= 0: C["fall_d%d" % d] += 1; fall[(d, x)] += 1
                 else:
-                    blk += 1
+                    blk += 1; lonly[x] += 1
                     better = (b[2] < a[2]) if E.par[c] == 0 else (b[2] > a[2])
                     if not better: C["LDIR_V"] += 1; EX.append(("LDIR", name, i, j, t, x, "length", a[2], b[2]))
                     if blk > n - 1: C["LBLK_V"] += 1
@@ -88,6 +90,9 @@ def _run(E, g, R, name):
             K = sum(1 for r in range(n) if r > E.rank[R[i]["vs"][c][0]]); return (K * (K + 1) // 2) * (nm[c] + 1) + nm[c]
         S4 = sum(1 + mb(c) + (mb(c) + 1) * (n - 1) for v, c in pairs)
         for d in (1, 2, 3): C["fallmax_d%d" % d] = max(C["fallmax_d%d" % d], max((fall[(d, x)] for x in range(n)), default=0))
+        C["lonly_max"] = max(C["lonly_max"], max(lonly.values(), default=0)); C["lonly_total"] += sum(lonly.values())
+        if lonly: LTOP.append((round(max(lonly.values()) / n, 3), name, i, j, max(lonly, key=lambda x: lonly[x]), max(lonly.values()), n))
+        if any(lonly[x] > n - 1 for x in range(n)): C["LONLY_V"] += 1; EX.append(("LONLY", name, i, j, max(lonly.values()), n))
         C["phases"] += 1; C["nm_max"] = max(C["nm_max"], max(nm.values(), default=0)); C["pch_max"] = max(C["pch_max"], max(pch.values(), default=0))
         TOP.append((L, name, i, j, S1, S2, S3, S4, max(nm.values(), default=0), max(pch.values(), default=0), max(rise.values(), default=0), max(sw.values(), default=0), n))
 
@@ -163,9 +168,10 @@ def main():
     if TOP and os.environ.get("MODE") != "run":
         z = max(TOP, key=lambda z: (z[8] / z[12], z[1])); print("NMTOP (max NM / n)", round(z[8] / z[12], 3), z)
         z = max(TOP, key=lambda z: (z[9] / z[12], z[1])); print("PCHTOP (max PCH / n)", round(z[9] / z[12], 3), z)
+    if LTOP: print("LONLYTOP (max length-only rises / n)", max(LTOP, key=lambda z: (z[0], z[1])))
     if TOP: print("MAXRATIO L/S1 %.3f  S1/S2 %.3f" % (max(z[0] / max(1, z[4]) for z in TOP), max(z[4] / max(1, z[5]) for z in TOP)))
     for z in EX[:8]: print("EXAMPLE", z)
-    ks = ("RUNI0", "R47", "EI1", "OI1", "ELDIR", "OLDIR", "ELBLK", "OLBLK") if os.environ.get("MODE") == "run" else ("I0", "I1", "LDIR", "LBLK", "I2", "I3")
+    ks = ("RUNI0", "R47", "EI1", "OI1", "ELDIR", "OLDIR", "ELBLK", "OLBLK") if os.environ.get("MODE") == "run" else ("I0", "I1", "LDIR", "LBLK", "I2", "I3", "LONLY")
     for k in ks: print(k, "PASS" if k + "_V" not in C else "FAIL")
 
 if __name__ == "__main__":

@@ -1,0 +1,10 @@
+MODE pairs hn.lst ../../../experiments PCAP_LEN 6 PCAP 40
+B1_checks: 746800
+CORB_checks: 22412
+CTL_noH1: 28
+CTL_noH1_checks: 28
+DENG_checks: 3734
+GS_checks: 22798
+runs: 71
+states: 3734
+RESULT OK violations=0

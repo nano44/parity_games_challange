@@ -24,6 +24,7 @@ Labels (D18 / L40): PROVED (lane) / CONJECTURE / OPEN / DATA / READING / DEAD. C
 | §6 | LENE (b − a ≤ \|E_b\|) and LEN2 (b − a ≤ 2·SW + 1) | DEAD: L-RED R106 runquad_K8_m30_n192 (one REL segment of 263 transitions, \|E_b\| = 49, SW = 47) |
 | §9 | Theorem COMPOSE: every phase has ≤ Σ_{(v,c)} n(PCH(c) + 1) ≤ m·n·(max PCH + 1) transitions (Lemmas SW-RETURN, LEN-MONO); with MATCH-Φ (L-LIT, under review) ≤ m·n·((n²/2)(NM + 1) + NM + 1); Corollary COMPOSE-RUN (R47 (a), both players): the whole N5 run on any game is polynomial IF the carry counts are | PROVED (lane), a REDUCTION; DATA slack |
 | §10 | where carries come from (runquad: one high Odd rank swapped for a lower one plus the reactor chain); polynomial re-weightings Φ_d (d ≤ 3) keep the carries | DATA, READING |
+| §11 | CONJECTURE LEN-TOTAL (≤ n − 1 length-only rises per vertex per phase; would sharpen COMPOSE to m_E·(P* + n)) | CONJECTURE; DATA ≤ 0.875n |
 | §8 | Lemma SW-RISE (a switch strictly raises the switcher's own Ξ off its honest cycle); SW-RUN per fallback-free run (Lead: SW-PER-VERTEX) | PROVED (lane); CONJECTURE, DATA ≤ 0.667n |
 
 ## 0. Setting
@@ -280,6 +281,15 @@ for any sequence of subsets of R_c (c fixed), the number of changes is ≤ (K(K+
   in runquad each carry of vertex 18 is caused by ONE pivot step (a high marker leaves 18's honest play and the reactor chain enters it).
   The natural S4a-specific target is therefore «carries of one vertex per λ-run ≤ (pivot steps that change its honest play's top
   segment)», i.e. a count of a different kind (cycle-node-near events, not P-sets). Not attempted yet.
+
+## 11. LEN-MONO's factor n (proposal (i), 11:19Z): CONJECTURE LEN-TOTAL (DATA)
+- CONJECTURE LEN-TOTAL: a vertex has at most n − 1 LENGTH-ONLY rises (P unchanged) in one phase in total, not just per P-block. With it,
+  LEN-MONO's bound improves to RISE(c) ≤ PCH(c) + n − 1, and Theorem COMPOSE (a) to |𝒫| ≤ Σ_{(v,c)} (PCH(c) + n) ≤ m_E·(P* + n).
+- DATA (chg/compose.py LONLY): 0 failures; most length-only rises of one vertex in one phase: 28 at n 32 (red/xing/instances/x31_rx32,
+  phase [2, 55], vertex 0; 0.875n), 28 (lib41, same order), 25 at n 31 (grun/out/gc2); 0 on runquad (all its rises are P-changes), 1 on
+  dlsep_kill_n70. Totals: 5,632 (alt_all pinned), 6,770 (lib41), 6,481 (experiments/si).
+- No proof route yet: the length does NOT move monotonically across P-changes (it moves against S1's preferred direction at 738 P-changes
+  of runquad_K8_m30_n192 and 105 of dlsep_kill_n70; counter lwrong_at_pchange), so the per-block argument of LEN-MONO does not chain.
 
 ## DONE / FINDINGS / NEEDS
 - DONE: this note; tools chg/suffix.py (SUFFIX-COUNT, BND with MUT, EARLY, INTER-JOINT), chg/dlock.py (deadlock anatomy and candidates),

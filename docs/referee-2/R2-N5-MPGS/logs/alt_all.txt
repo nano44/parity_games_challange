@@ -1,0 +1,15 @@
+MODE pairs ../../../experiments/si/root/logs/alt_all.lst ../../../experiments PCAP_LEN 6 PCAP 40
+B1_checks: 1851342
+CORB_checks: 4820
+CTL_flip_nohyp: 684
+CTL_noH1: 871
+CTL_noH1_checks: 104971
+CTL_noH2_checks: 4450
+CTL_noH3: 1064
+CTL_noH3_checks: 239267
+DENG_checks: 10604
+GS_checks: 12713
+INVALID_START_ENTRIES: 1
+runs: 413
+states: 10604
+RESULT OK violations=0
