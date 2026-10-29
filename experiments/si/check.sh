@@ -356,3 +356,11 @@ python3 -I runlin/keeper.py runlin/instances/runfam_K10.pg runlin/instances/runf
 t=$(mktemp -d); python3 -I runlin/mkrunfam.py 10 $t/f | grep -q "K 10 n 49 run 99 run-2n 1"
 cmp -s $t/f.pg runlin/instances/runfam_K10.pg; cmp -s $t/f.start runlin/instances/runfam_K10.start; rm -rf $t
 echo "runlin (box 24 §7: DEAD RUN-LIN, runfam_K10 run 99 > 98, n5b identical, generator reproduces the pin): PASS"
+# P-N5-CORE-fixes-box23: 35 quotes verbatim (packet 081ae740, RESULTS 33f43c20 / 84ab5daf, REFEREE 8641ae40, REFEREE-2 b28d1ba9); shifted control fails.
+if git cat-file -e 081ae740 && git cat-file -e 33f43c20 && git cat-file -e 84ab5daf && git cat-file -e 8641ae40 && git cat-file -e b28d1ba9; then
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-CORE-fixes-box23.md | grep -q "quotes=35 bad=0"
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-CORE-fixes-box23.md --mut | grep -q "QUOTES FAIL"
+  echo "root (P-N5-CORE fixes: 35 quotes verbatim; shifted control fails): PASS"
+else
+  echo "root (P-N5-CORE fixes quotes): NOT RUN (a source commit is not in this clone)"
+fi
