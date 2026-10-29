@@ -1,0 +1,3 @@
+ROW friedmann-hn/instances/H8.pg 168 73 2 105 0 False 17 0 18 47
+ROW friedmann-hn/instances/H10.pg 210 90 2 119 0 False 19 0 20 59
+ROW friedmann-hn/instances/H12.pg 252 107 2 133 0 False 21 0 22 71

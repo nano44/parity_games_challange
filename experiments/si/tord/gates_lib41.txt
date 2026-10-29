@@ -1,0 +1,6 @@
+D1_G1G2=64 D1_G1G2G3=82 D1_G2=7 D1_G2G3=512 D2_G1=1 D2_G1G2=1 D2_G2=2 D2_G3=23 D3_G3=6 D4_G1G3=1 D4_G3=1 checked_FWDG=82 fw=700
+maxima: {'wch_D1': (0.8064516129032258, 25, '../experiments/red/xing/instances/kw25_n32.pg', 0, 25, 1, 32, 'G1G2'), 'wch_D4': (0.20512820512820512, 8, '../experiments/red/n5inj/instances/frz40.pg', 27, 35, 4, 40, 'G1G3'), 'wch_D2': (0.3548387096774194, 11, '../experiments/red/n5inj/instances/phase2_pk32.pg', 8, 19, 2, 32, 'G3'), 'wch_D3': (0.23076923076923078, 9, '../experiments/red/n5inj/instances/frz40.pg', 62, 71, 3, 40, 'G3')}
+GTF PASS
+GB PASS
+FWDG PASS
+FWD PASS

@@ -573,8 +573,10 @@ Successor 32 (Opus 5.5, D14/D18, L40), session_01V5yGRXhSqcihcKK7vc7XTd. Context
 - Box 54 N5-SF (this commit): see the box 54 log above.
 ### IN FLIGHT
 - Nothing running.
+- After box 54 (15:2xZ): N5-SF ≠ I^glo (diverges at step 22 on H3_F); H_n F start 7n + 49 (n 3..12), DLM 1/2 linear; switchbestexp
+  N = 12, 14, 16 SBC 138, 179, 232 (N5-SF §3, §5). T44 (claude/l-lit 325b7cc2) read.
 ### NEXT (the Lead decides)
-1. N5-SF: switchbestexp N = 12..20 (out/switchbestexp_12.pg exists; ~10+ min per run at n 310), Friedmann's other switch-best families; an L-LIT
+1. N5-SF: switchbestexp N = 18..20 (out/switchbestexp_12.pg exists; ~10+ min per run at n 310), Friedmann's other switch-best families; an L-LIT
    identification of N5-SF's one-sided step (Schewe optimal SI / PGSolver switch_globally_best?); then gauntlet TARGET.md §5 if it survives.
 2. Refine SBC by relevance (box 52's arena-frozen cut, applied to N5-SF's one-sided run).
 3. P-N5-VC referee items into a NEW P-N5-VC-fixes2-box50.md once both referees report.
