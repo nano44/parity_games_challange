@@ -1,0 +1,39 @@
+N1 vs Zielonka, 40 random games: PASS
+N1 pinned switchallexp N=3 (42), xcheck: PASS
+anneal_c vs anneal.py (30 games): PASS
+renum identity = vjfast zadeh (271): PASS
+OFFMONO-fixes quotes 76 + shifted control: PASS
+OFFMONO-fixes frozen sha1: PASS
+N5-READER: embedded reader (run SAME, XR 86), NOSW, SW-AMORT on long121: PASS
+P-N5-FBCK quotes 9 + control, sha1, FB-C^K on l121_cf35_39: PASS
+RESTRICT-fixes quotes 31 + control, sha1: PASS
+FBCK-fixes quotes 25 + control, sha1: PASS
+P-N5-TOPSHAPE quotes 2 + control, sha1, TOP-SHAPE on long121: PASS
+TOPSHAPE-fixes quotes 17 + control, sha1: PASS
+box 50 VC: VC-BOUND 0 violations, runfam_K10 / anc_K10 dsig 3 (VCbar 1 -> 4), MUT bites, pins vpf3_vc4 (run VC 4) and ent1_vc6 (ENT 6, VC 3): PASS
+P-N5-VC quotes 5 + control, sha1: PASS
+box 51 DLC: d = 1..4 one phase, trace formula, phase VC = d; n5b identical (d 3); runquad_K3 alt 10; pins sha1: PASS
+P-N5-VC-fixes quotes 3 + control, sha1: PASS
+box 52 RLV: SBCH'' reader-proof (74 -> 30 = 30), topfix_3 graft 24 = 2N^2+3N-3, checks PASS
+box 53 RANK: 4 certificates exact (F24 u23sw64_n32 / F24m b5_os_n16 / F45 returns_ph64 / edge bits lend9_n8), control fails: PASS
+box 54 N5-SF: correct on the pins, fallback fires (n3all_maxph_0), W-frame twin cycles (theta_thf16), switchbestexp_2 58 vs 32: PASS
+box 55 P-N5-SF: pcheck PASS on n3all_maxph_0 (fallback), switchbestexp_2 (SBC 4), n3cov_lean (LAM 4, SBC 11), MUT bites; quotes PASS: PASS
+box 56 EXIT: LOC-OPT 0 violations, EXIT flips <= 1 (2285 good vertices), switchbestexp_2 CC fails H-TOP, GROUP 20 <= 59: PASS
+box 57 CARRY: switchbestexp_4 F 258, hybrid with 4 stale-reset corrections 286 (= I^glo), lags strict in both frames: PASS
+P-N5-SF fixes F7-F13: quotes PASS: PASS
+box 58 LA: switchbestexp_4 LA_1 286 (= I^glo), F 258, LAG_1 155: PASS
+box 59 FC: fc_4 word W_4 (SBC 16), FCOPEN, FCLAT; so_sor5_n24 maxflips 22 <= n 24: PASS
+box 59 REL: fcobs_3 raw SBC 111, SBC_R 9, SF-RED-R checks (LOC, VAL, SEG, TOT): PASS
+box 60 PV-PLAY counterexample: fcobsP_3 on-play flips 108 > n 90: PASS
+box 60 SBC_G: fcobsP_3 raw SBC 111, SBC_G 8 (= fc_3), segments within SF-RED-G (a): PASS
+box 61 DEPTH: fc_3 I 121, SBC_G 8, needed depth 5, coarse (K=1) records 10 miss 5 segments: PASS
+box 62 DW: dw_4 N5-SF 286 = 19*2^4-18, sbar binary counter, lane-first gap at every set: PASS
+box 62 FRAME: dw_3 with tau in Even's arena (N5) 41, with sbar(sigma) 134: PASS
+box 63 ODD-FREEZE: dw_3 81 hypothesis hits, 0 improving: PASS
+box 64 STRETCH: dw_3 longest tau-stretch 26 = 4 frozen phases (3 sbar cuts); d_runquad_K8 mirror 264 tau-changes, sigma constant: PASS
+box 64 FRAME-STRETCH DEAD family: mk_4_16 one tau-stretch of 76 sigma-changes: PASS
+box 64 GP*-RUN: dw_3 one W-run of 26 W-changing transitions, 4 late adoptions, FW-R* holds: PASS
+
+real	1m34.060s
+user	1m30.864s
+sys	0m1.658s

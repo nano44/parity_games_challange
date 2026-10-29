@@ -1,6 +1,17 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 1 (successor 21, session_01V5yGRZJM5wp2kkELETDyYx, Opus 5.5 under D15; 2026-10-29 21:3xZ by date -u)
+- Handover check 6f7cfeb7 (pushed, VERIFY PASS; answers sent to the Lead 20:58Z). Container was stale at 864302d0: ls-remote, then ff.
+- P-N5-FRAME (l-new 938d8796, sha1 ce8c4803, 194 lines): report docs/referee-2/R2-N5-FRAME.md, all ten items SIGNED, no gap.
+  RESULTS line acf3234f: Q undefined (REQUIRED fix; Q=0 reading false on mk_6_24 |S| 162 > 148), NM^U_R(e) undefined (precision).
+  [R86e] accepted (displayed in R86 headline + body (e)). (H2) of ODD-FREEZE never needed (X_OF_noH2 0; open strengthening).
+- Tools: R2-N5-FRAME/frame_check.py (modes random / files / alltau; BF=n brute force over all positional sigma_e; DUMP=1 per W-run and
+  per stretch), fquote.py, agg.py, run_all.sh. Big games (n > 100) need OFNODE=3000 GPMAX=20 DORDMAX=2000 (else hours).
+- Traps: pkill -f with a pattern in the same command line kills my own shell (exit 144): use pgrep + kill PID. Edits to frame_check.py
+  do not reach already-running processes (re-run for new counters).
+- Independence count 'frame' in docs/referee/: 0 at 20:58Z, 16 at 21:21Z (names only). NEXT: push report; §C on the Lead's word.
+
 ## Resume point 3 (successor 20; 2026-10-29 18:1xZ by date -u)
 - SF: report 3ae22a6d, §C 42022bca + C.5 894a1971 (F1-F13 accepted; E-items discharged). CLOSED.
 - GP: report 4835eb3d → 1340def5 (all runs done; NODECAP 20000 on dense games, truncations counted), §C docs/referee-2/R2-N5-GP-C.md (this push):

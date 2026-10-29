@@ -1,0 +1,719 @@
+PIVOT fc_3.pg side E n 85 iter 41 changes 706 INH_V 0 SW 675 RP 31 rp_car 31 seg_max 18 PD_V 339 DP_V 420 ED_V 168 TQ_MAT 2 at (72, 0, 23) ex {'PD': (1, 0, 25, 3, [1, 3]), 'DP': (1, 0, 25, 3, 1, (3, 1, (3, 8))), 'ED': (4, 0, 20, (4, 1))} PASS
+PIVOT fc_4.pg side E n 110 iter 47 changes 956 INH_V 0 SW 911 RP 45 rp_car 45 seg_max 20 PD_V 454 DP_V 568 ED_V 220 TQ_MAT 1 at (3, 0, 0) ex {'PD': (1, 0, 25, 3, [1, 3]), 'DP': (1, 0, 25, 3, 1, (3, 1, (3, 9))), 'ED': (4, 0, 20, (4, 1))} PASS
+PIVOT fc_5.pg side E n 135 iter 55 changes 1246 INH_V 0 SW 1187 RP 59 rp_car 59 seg_max 23 PD_V 596 DP_V 738 ED_V 294 TQ_MAT 1 at (3, 0, 0) ex {'PD': (1, 0, 27, 3, [1, 3]), 'DP': (1, 0, 27, 3, 1, (3, 1, (3, 10))), 'ED': (4, 0, 22, (4, 1))} PASS
+PIVOT fc_6.pg side E n 160 iter 62 changes 1524 INH_V 0 SW 1451 RP 73 rp_car 73 seg_max 25 PD_V 736 DP_V 908 ED_V 363 TQ_MAT 1 at (3, 0, 0) ex {'PD': (1, 0, 28, 3, [1, 3]), 'DP': (1, 0, 28, 3, 1, (3, 1, (3, 11))), 'ED': (4, 0, 23, (4, 1))} PASS
+PIVOT fc_7.pg side E n 185 iter 68 changes 1803 INH_V 0 SW 1716 RP 87 rp_car 87 seg_max 27 PD_V 866 DP_V 1079 ED_V 419 TQ_MAT 1 at (3, 0, 0) ex {'PD': (1, 0, 28, 3, [1, 3]), 'DP': (1, 0, 28, 3, 1, (3, 1, (3, 12))), 'ED': (4, 0, 23, (4, 1))} PASS
+PIVOT fc_8.pg side E n 210 iter 77 changes 2148 INH_V 0 SW 2047 RP 101 rp_car 101 seg_max 30 PD_V 1052 DP_V 1308 ED_V 522 TQ_MAT 1 at (3, 0, 0) ex {'PD': (1, 0, 31, 3, [1, 3]), 'DP': (1, 0, 31, 3, 1, (3, 1, (3, 13))), 'ED': (4, 0, 26, (4, 1))} PASS
+PIVOT fcobsR_3.pg side E n 90 iter 41 changes 800 INH_V 0 SW 731 RP 69 rp_car 66 seg_max 18 PD_V 402 DP_V 483 ED_V 197 TQ_MAT 2 at (72, 0, 23) ex {'PD': (1, 0, 25, 3, [1, 3]), 'DP': (1, 0, 25, 3, 1, (3, 1, (3, 8))), 'ED': (4, 0, 20, (4, 1))} PASS
+PIVOT fcobsR_4.pg side E n 115 iter 47 changes 1062 INH_V 0 SW 973 RP 89 rp_car 86 seg_max 23 PD_V 529 DP_V 643 ED_V 255 TQ_MAT 1 at (3, 0, 0) ex {'PD': (1, 0, 25, 3, [1, 3]), 'DP': (1, 0, 25, 3, 1, (3, 1, (3, 9))), 'ED': (4, 0, 20, (4, 1))} PASS
+PIVOT fcobs_3.pg side E n 88 iter 41 changes 800 INH_V 0 SW 731 RP 69 rp_car 66 seg_max 18 PD_V 402 DP_V 483 ED_V 197 TQ_MAT 2 at (72, 0, 23) ex {'PD': (1, 0, 25, 3, [1, 3]), 'DP': (1, 0, 25, 3, 1, (3, 1, (3, 8))), 'ED': (4, 0, 20, (4, 1))} PASS
+PIVOT fcobs_4.pg side E n 113 iter 47 changes 1062 INH_V 0 SW 973 RP 89 rp_car 86 seg_max 23 PD_V 529 DP_V 643 ED_V 255 TQ_MAT 1 at (3, 0, 0) ex {'PD': (1, 0, 25, 3, [1, 3]), 'DP': (1, 0, 25, 3, 1, (3, 1, (3, 9))), 'ED': (4, 0, 20, (4, 1))} PASS
+PIVOT ffin12_n32.pg side E n 32 iter 16 changes 50 INH_V 0 SW 25 RP 25 rp_car 3 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 2 at (0, 4, 6) ex {} PASS
+PIVOT ffin4_n24.pg side E n 24 iter 3 changes 3 INH_V 0 SW 3 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT ffin5_n32.pg side E n 32 iter 10 changes 5 INH_V 0 SW 5 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (19, 4, 8) ex {} PASS
+PIVOT gci2_n12.pg side E n 12 iter 7 changes 9 INH_V 0 SW 9 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (2, 0, 5) ex {} PASS
+PIVOT immfail_n14.pg side E n 14 iter 6 changes 6 INH_V 0 SW 6 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (4, 0, 0) ex {} PASS
+PIVOT immp_cex_n11.pg side E n 11 iter 1 changes 1 INH_V 0 SW 1 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT gci3_n24.pg side E n 24 iter 16 changes 14 INH_V 0 SW 14 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (8, 2, 14) ex {} PASS
+PIVOT lcount_n23.pg side E n 23 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT lend13_n16.pg side E n 16 iter 11 changes 10 INH_V 0 SW 10 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (0, 0, 6) ex {} PASS
+PIVOT lend27_n24.pg side E n 24 iter 7 changes 1 INH_V 0 SW 1 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (16, 4, 5) ex {} PASS
+PIVOT lend107_n32.pg side E n 32 iter 26 changes 137 INH_V 0 SW 89 RP 48 rp_car 0 seg_max 2 PD_V 2 DP_V 3 ED_V 0 TQ_MAT 6 at (9, 2, 25) ex {'DP': (14, 2, 7, 14, 0, (16, 1, (16, 8))), 'PD': (15, 2, 11, 15, [15])} PASS
+PIVOT lend15_n48.pg side E n 48 iter 11 changes 48 INH_V 0 SW 25 RP 23 rp_car 23 seg_max 2 PD_V 0 DP_V 14 ED_V 0 TQ_MAT 1 at (23, 0, 0) ex {'DP': (3, 4, 5, 3, 0, (25, 6, (25, 30)))} PASS
+PIVOT lend39f_n32.pg side E n 32 iter 13 changes 14 INH_V 0 SW 14 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (0, 0, 0) ex {} PASS
+PIVOT lend47_n32.pg side E n 32 iter 22 changes 81 INH_V 0 SW 56 RP 25 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 3 at (0, 2, 19) ex {} PASS
+PIVOT lend55_n32.pg side E n 32 iter 18 changes 69 INH_V 0 SW 40 RP 29 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 3 at (21, 2, 17) ex {} PASS
+PIVOT lend9_n8.pg side E n 8 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT lend82_n32.pg side E n 32 iter 24 changes 96 INH_V 0 SW 66 RP 30 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 4 at (10, 3, 23) ex {} PASS
+PIVOT lend72_n48.pg side E n 48 iter 13 changes 96 INH_V 0 SW 28 RP 68 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 2 at (0, 2, 12) ex {} PASS
+PIVOT nep13_n24.pg side E n 24 iter 12 changes 15 INH_V 0 SW 14 RP 1 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (7, 2, 2) ex {} PASS
+PIVOT nconf61_n48.pg side E n 48 iter 47 changes 491 INH_V 0 SW 234 RP 257 rp_car 91 seg_max 8 PD_V 75 DP_V 113 ED_V 17 TQ_MAT 18 at (0, 1, 43) ex {'PD': (0, 1, 2, 0, [0]), 'DP': (0, 1, 2, 0, 0, (0, 0, (0, 13))), 'ED': (2, 1, 41, (2, 13))} PASS
+PIVOT nep56_n32.pg side E n 32 iter 18 changes 63 INH_V 0 SW 48 RP 15 rp_car 3 seg_max 2 PD_V 2 DP_V 2 ED_V 0 TQ_MAT 4 at (0, 3, 10) ex {'PD': (17, 3, 6, 17, [17]), 'DP': (17, 3, 6, 17, 0, (17, 0, (17, 26)))} PASS
+PIVOT nep22f_n64.pg side E n 64 iter 51 changes 277 INH_V 0 SW 134 RP 143 rp_car 23 seg_max 2 PD_V 7 DP_V 7 ED_V 0 TQ_MAT 5 at (14, 6, 25) ex {'PD': (5, 6, 16, 5, [5]), 'DP': (5, 6, 16, 5, 0, (5, 0, (5, 23)))} PASS
+PIVOT nep76_n40.pg side E n 40 iter 18 changes 195 INH_V 0 SW 132 RP 63 rp_car 23 seg_max 5 PD_V 28 DP_V 40 ED_V 1 TQ_MAT 4 at (1, 4, 16) ex {'PD': (0, 4, 5, 0, [0]), 'DP': (0, 4, 5, 0, 0, (0, 0, (0, 25))), 'ED': (6, 4, 13, (6, 0))} PASS
+PIVOT nep94_n48.pg side E n 48 iter 18 changes 198 INH_V 0 SW 116 RP 82 rp_car 40 seg_max 8 PD_V 43 DP_V 52 ED_V 1 TQ_MAT 3 at (6, 3, 13) ex {'PD': (0, 3, 4, 0, [0]), 'DP': (0, 3, 4, 0, 0, (0, 0, (0, 13))), 'ED': (13, 3, 11, (13, 33))} PASS
+PIVOT nep92_n40.pg side E n 40 iter 13 changes 133 INH_V 0 SW 82 RP 51 rp_car 49 seg_max 5 PD_V 9 DP_V 31 ED_V 2 TQ_MAT 1 at (1, 3, 6) ex {'DP': (0, 3, 4, 0, 0, (16, 4, (16, 18))), 'PD': (0, 3, 8, 0, [16, 0, 13]), 'ED': (6, 3, 6, (6, 30))} PASS
+PIVOT ret12_n40.pg side E n 40 iter 13 changes 145 INH_V 0 SW 89 RP 56 rp_car 24 seg_max 7 PD_V 24 DP_V 34 ED_V 2 TQ_MAT 2 at (2, 4, 11) ex {'PD': (0, 4, 5, 0, [0]), 'DP': (0, 4, 5, 0, 0, (0, 0, (0, 24))), 'ED': (17, 4, 8, (17, 9))} PASS
+PIVOT b4_cyc6_0.pg side E n 11 iter 2 changes 9 INH_V 0 SW 4 RP 5 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (1, 0, 0) ex {} PASS
+PIVOT b4_cyc6_1.pg side E n 12 iter 4 changes 12 INH_V 0 SW 11 RP 1 rp_car 1 seg_max 2 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (0, 0, 0) ex {} PASS
+PIVOT b4_n4all_cyc3_0.pg side E n 4 iter 2 changes 1 INH_V 0 SW 1 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (0, 0, 0) ex {} PASS
+PIVOT b4_n5_other_0.pg side E n 5 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT b4_nohlen5_0.pg side E n 11 iter 1 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT ret14_n48.pg side E n 48 iter 17 changes 193 INH_V 0 SW 105 RP 88 rp_car 67 seg_max 6 PD_V 58 DP_V 64 ED_V 2 TQ_MAT 3 at (6, 3, 14) ex {'PD': (0, 3, 4, 0, [0]), 'DP': (0, 3, 4, 0, 0, (0, 0, (0, 7))), 'ED': (14, 3, 11, (14, 27))} PASS
+PIVOT ret14_n64.pg side E n 64 iter 14 changes 201 INH_V 0 SW 135 RP 66 rp_car 19 seg_max 4 PD_V 8 DP_V 43 ED_V 0 TQ_MAT 2 at (2, 2, 10) ex {'PD': (0, 2, 3, 0, [0]), 'DP': (0, 2, 3, 0, 0, (0, 0, (0, 24)))} PASS
+PIVOT b4_theta_n7.pg side E n 7 iter 1 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT b5_n5_cyc4_0.pg side E n 5 iter 3 changes 4 INH_V 0 SW 4 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 2 at (0, 0, 1) ex {} PASS
+PIVOT b5_o11.pg side E n 10 iter 12 changes 15 INH_V 0 SW 15 RP 0 rp_car 0 seg_max 2 PD_V 1 DP_V 1 ED_V 0 TQ_MAT 3 at (1, 0, 8) ex {'PD': (3, 0, 10, 3, [3]), 'DP': (3, 0, 10, 3, 0, (3, 0, (3, 5)))} PASS
+PIVOT b5_os_n12.pg side E n 12 iter 18 changes 25 INH_V 0 SW 25 RP 0 rp_car 0 seg_max 3 PD_V 5 DP_V 5 ED_V 1 TQ_MAT 2 at (0, 0, 9) ex {'PD': (1, 0, 6, 1, [1]), 'DP': (1, 0, 6, 1, 0, (1, 0, (1, 9))), 'ED': (10, 0, 14, (10, 3))} PASS
+PIVOT b5_os_n14.pg side E n 14 iter 22 changes 35 INH_V 0 SW 35 RP 0 rp_car 0 seg_max 4 PD_V 10 DP_V 12 ED_V 2 TQ_MAT 2 at (12, 0, 11) ex {'PD': (1, 0, 8, 1, [1]), 'DP': (1, 0, 8, 1, 0, (1, 0, (1, 9))), 'ED': (10, 0, 18, (10, 3))} PASS
+PIVOT b5_os_n16.pg side E n 16 iter 26 changes 44 INH_V 0 SW 44 RP 0 rp_car 0 seg_max 4 PD_V 17 DP_V 20 ED_V 2 TQ_MAT 2 at (9, 0, 11) ex {'PD': (0, 0, 13, 1, [0, 1]), 'DP': (0, 0, 13, 1, 1, (1, 1, (1, 7))), 'ED': (1, 0, 13, (1, 14))} PASS
+PIVOT b5_os_n20.pg side E n 20 iter 34 changes 64 INH_V 0 SW 64 RP 0 rp_car 0 seg_max 3 PD_V 8 DP_V 9 ED_V 0 TQ_MAT 3 at (17, 0, 17) ex {'PD': (1, 0, 12, 1, [1]), 'DP': (1, 0, 12, 1, 0, (1, 0, (1, 14)))} PASS
+PIVOT b5_os_n24.pg side E n 24 iter 53 changes 109 INH_V 0 SW 109 RP 0 rp_car 0 seg_max 11 PD_V 35 DP_V 40 ED_V 15 TQ_MAT 2 at (18, 0, 17) ex {'PD': (1, 0, 15, 1, [1]), 'DP': (1, 0, 15, 1, 0, (1, 0, (1, 14))), 'ED': (9, 0, 23, (9, 10))} PASS
+PIVOT b5_os_n28.pg side E n 28 iter 65 changes 154 INH_V 0 SW 154 RP 0 rp_car 0 seg_max 11 PD_V 58 DP_V 64 ED_V 25 TQ_MAT 3 at (25, 0, 43) ex {'PD': (1, 0, 14, 1, [1]), 'DP': (1, 0, 14, 1, 0, (1, 0, (1, 0))), 'ED': (3, 0, 23, (3, 24))} PASS
+PIVOT b5_os_n32.pg side E n 32 iter 71 changes 194 INH_V 0 SW 194 RP 0 rp_car 0 seg_max 10 PD_V 39 DP_V 51 ED_V 5 TQ_MAT 6 at (19, 0, 53) ex {'PD': (1, 0, 24, 1, [1]), 'DP': (1, 0, 24, 1, 0, (1, 0, (1, 29))), 'ED': (10, 0, 36, (10, 29))} PASS
+PIVOT b5_os_n40.pg side E n 40 iter 81 changes 300 INH_V 0 SW 300 RP 0 rp_car 0 seg_max 8 PD_V 80 DP_V 98 ED_V 20 TQ_MAT 5 at (9, 0, 56) ex {'PD': (0, 0, 2, 0, [0]), 'DP': (0, 0, 2, 0, 0, (0, 0, (0, 1))), 'ED': (0, 0, 23, (0, 1))} PASS
+PIVOT b6_xl2_n32.pg side E n 32 iter 87 changes 342 INH_V 0 SW 275 RP 67 rp_car 7 seg_max 6 PD_V 41 DP_V 45 ED_V 6 TQ_MAT 8 at (0, 4, 85) ex {'PD': (0, 4, 74, 21, [21]), 'DP': (0, 4, 74, 21, 1, (21, 1, (21, 22))), 'ED': (4, 4, 25, (4, 28))} PASS
+PIVOT b6_xl_n32.pg side E n 32 iter 85 changes 340 INH_V 0 SW 269 RP 71 rp_car 8 seg_max 5 PD_V 31 DP_V 39 ED_V 2 TQ_MAT 10 at (0, 4, 83) ex {'PD': (0, 4, 72, 21, [21]), 'DP': (0, 4, 72, 21, 1, (21, 1, (21, 22))), 'ED': (28, 4, 55, (28, 16))} PASS
+PIVOT b6_xl_n40.pg side E n 40 iter 89 changes 544 INH_V 0 SW 404 RP 140 rp_car 73 seg_max 7 PD_V 67 DP_V 89 ED_V 5 TQ_MAT 9 at (8, 2, 83) ex {'PD': (0, 2, 50, 0, [0, 28]), 'DP': (0, 2, 50, 0, 0, (28, 1, (28, 30))), 'ED': (0, 2, 55, (0, 28))} PASS
+PIVOT b6_xs_n24.pg side E n 24 iter 21 changes 21 INH_V 0 SW 21 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT b6_xs_n32.pg side E n 32 iter 29 changes 29 INH_V 0 SW 29 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT b6_xl_n48.pg side E n 48 iter 97 changes 685 INH_V 0 SW 499 RP 186 rp_car 100 seg_max 7 PD_V 87 DP_V 143 ED_V 10 TQ_MAT 9 at (6, 3, 95) ex {'PD': (0, 3, 45, 0, [0]), 'DP': (0, 3, 45, 0, 0, (0, 0, (0, 2))), 'ED': (1, 3, 71, (1, 0))} PASS
+PIVOT b6_xs_n40.pg side E n 40 iter 36 changes 37 INH_V 0 SW 37 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT b6_xw_n32.pg side E n 32 iter 79 changes 459 INH_V 0 SW 349 RP 110 rp_car 66 seg_max 6 PD_V 61 DP_V 82 ED_V 1 TQ_MAT 9 at (15, 4, 55) ex {'DP': (0, 4, 21, 28, 1, (5, 3, (5, 25))), 'PD': (0, 4, 73, 0, [0]), 'ED': (15, 4, 50, (15, 31))} PASS
+PIVOT b6_xs_n48.pg side E n 48 iter 37 changes 52 INH_V 0 SW 52 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (8, 0, 0) ex {} PASS
+PIVOT b6_xw_n40.pg side E n 40 iter 80 changes 563 INH_V 0 SW 419 RP 144 rp_car 128 seg_max 8 PD_V 84 DP_V 107 ED_V 12 TQ_MAT 8 at (5, 4, 74) ex {'PD': (0, 4, 14, 0, [0]), 'DP': (0, 4, 14, 0, 0, (0, 0, (0, 21))), 'ED': (4, 4, 19, (4, 2))} PASS
+PIVOT canonA_0.pg side E n 15 iter 3 changes 10 INH_V 0 SW 10 RP 0 rp_car 0 seg_max 2 PD_V 1 DP_V 1 ED_V 0 TQ_MAT 0 at None ex {'PD': (12, 0, 2, 12, [12]), 'DP': (12, 0, 2, 12, 0, (12, 0, (12, 0)))} PASS
+PIVOT b6_xw_n48.pg side E n 48 iter 85 changes 728 INH_V 0 SW 542 RP 186 rp_car 165 seg_max 12 PD_V 125 DP_V 174 ED_V 25 TQ_MAT 8 at (37, 5, 79) ex {'PD': (0, 5, 16, 0, [0]), 'DP': (0, 5, 16, 0, 0, (0, 0, (0, 21))), 'ED': (0, 5, 25, (0, 21))} PASS
+PIVOT canonA_1.pg side E n 15 iter 4 changes 27 INH_V 0 SW 23 RP 4 rp_car 2 seg_max 2 PD_V 0 DP_V 1 ED_V 0 TQ_MAT 2 at (2, 0, 3) ex {'DP': (10, 0, 1, 10, 0, (0, 5, (0, 1)))} PASS
+PIVOT b6_xw_n56.pg side E n 56 iter 85 changes 780 INH_V 0 SW 602 RP 178 rp_car 40 seg_max 7 PD_V 90 DP_V 114 ED_V 14 TQ_MAT 13 at (31, 4, 83) ex {'PD': (0, 4, 24, 0, [0, 1]), 'DP': (0, 4, 24, 0, 0, (1, 3, (1, 25))), 'ED': (1, 4, 66, (1, 0))} PASS
+PIVOT frz1_n24.pg side E n 24 iter 31 changes 86 INH_V 0 SW 76 RP 10 rp_car 10 seg_max 8 PD_V 28 DP_V 33 ED_V 11 TQ_MAT 2 at (15, 2, 23) ex {'PD': (0, 2, 14, 0, [0]), 'DP': (0, 2, 14, 0, 0, (0, 0, (0, 11))), 'ED': (4, 2, 28, (8, 5))} PASS
+PIVOT frz2_n24.pg side E n 24 iter 25 changes 96 INH_V 0 SW 60 RP 36 rp_car 33 seg_max 5 PD_V 19 DP_V 31 ED_V 4 TQ_MAT 2 at (20, 1, 23) ex {'PD': (0, 1, 9, 0, [0]), 'DP': (0, 1, 9, 0, 0, (0, 0, (0, 13))), 'ED': (5, 1, 21, (5, 14))} PASS
+PIVOT n3all_maxph_0.pg side E n 3 iter 0 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT n3all_maxph_1.pg side E n 3 iter 0 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT frz3_n24.pg side E n 24 iter 26 changes 74 INH_V 0 SW 59 RP 15 rp_car 12 seg_max 5 PD_V 19 DP_V 22 ED_V 6 TQ_MAT 3 at (23, 1, 16) ex {'PD': (1, 1, 18, 1, [1]), 'DP': (1, 1, 18, 1, 0, (1, 0, (1, 9))), 'ED': (1, 1, 20, (1, 9))} PASS
+PIVOT n3all_maxph_2.pg side E n 3 iter 0 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT n4_maxph_1.pg side E n 4 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT n4_maxph_0.pg side E n 4 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT n4_thch_0.pg side E n 4 iter 2 changes 2 INH_V 0 SW 1 RP 1 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (0, 0, 0) ex {} PASS
+PIVOT n4all_maxph_0.pg side E n 4 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT n4all_maxph_1.pg side E n 4 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT n4all_tgbad_0.pg side E n 4 iter 1 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT n4all_thch_0.pg side E n 4 iter 2 changes 1 INH_V 0 SW 1 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (0, 0, 0) ex {} PASS
+PIVOT n5s_maxph_0.pg side E n 5 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT nh_n8.pg side E n 8 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT thetaA_canon_n8.pg side E n 8 iter 3 changes 5 INH_V 0 SW 5 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (1, 0, 0) ex {} PASS
+PIVOT thetaA_canon_n12.pg side E n 12 iter 3 changes 7 INH_V 0 SW 7 RP 0 rp_car 0 seg_max 2 PD_V 1 DP_V 1 ED_V 0 TQ_MAT 0 at None ex {'PD': (9, 0, 2, 9, [9]), 'DP': (9, 0, 2, 9, 0, (9, 0, (9, 0)))} PASS
+PIVOT thetaA_n17.pg side E n 17 iter 1 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT thetaA_n6.pg side E n 6 iter 1 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT thetaA_n9.pg side E n 9 iter 1 changes 1 INH_V 0 SW 1 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT thetaA_n7.pg side E n 7 iter 1 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT wk1_n32.pg side E n 32 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT wk2_n32.pg side E n 32 iter 7 changes 12 INH_V 0 SW 12 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (1, 1, 1) ex {} PASS
+PIVOT long121_n40.pg side E n 40 iter 23 changes 219 INH_V 0 SW 146 RP 73 rp_car 56 seg_max 6 PD_V 40 DP_V 59 ED_V 7 TQ_MAT 3 at (1, 2, 15) ex {'DP': (0, 2, 7, 0, 0, (19, 1, (19, 25))), 'PD': (1, 2, 18, 23, [23]), 'ED': (2, 2, 18, (2, 13))} PASS
+PIVOT best_qpc_nep76_n40_s63.pg side E n 64 iter 9 changes 25 INH_V 0 SW 20 RP 5 rp_car 3 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (38, 1, 1) ex {} PASS
+PIVOT best_qpc_nep90_n40_s61.pg side E n 64 iter 23 changes 486 INH_V 0 SW 249 RP 237 rp_car 94 seg_max 8 PD_V 80 DP_V 131 ED_V 15 TQ_MAT 5 at (45, 2, 21) ex {'PD': (0, 2, 3, 0, [0]), 'DP': (0, 2, 3, 0, 0, (0, 0, (0, 27))), 'ED': (0, 2, 8, (0, 24))} PASS
+PIVOT absmono_viol_n44.pg side E n 44 iter 7 changes 26 INH_V 0 SW 26 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (1, 2, 3) ex {} PASS
+PIVOT best_qpc_nep90_n40_s62.pg side E n 80 iter 20 changes 360 INH_V 0 SW 190 RP 170 rp_car 129 seg_max 6 PD_V 38 DP_V 58 ED_V 5 TQ_MAT 3 at (0, 3, 12) ex {'PD': (0, 3, 4, 0, [0]), 'DP': (0, 3, 4, 0, 0, (0, 0, (0, 20))), 'ED': (1, 3, 6, (1, 32))} PASS
+PIVOT carry3_2_2.pg side E n 47 iter 2 changes 3 INH_V 0 SW 3 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT cm_mdrop_both_n28.pg side E n 28 iter 10 changes 20 INH_V 0 SW 15 RP 5 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (1, 3, 5) ex {} PASS
+PIVOT cm_mdrop_oink_n28.pg side E n 28 iter 3 changes 8 INH_V 0 SW 8 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (4, 2, 2) ex {} PASS
+PIVOT snap_n80_s62.pg side E n 80 iter 20 changes 360 INH_V 0 SW 190 RP 170 rp_car 129 seg_max 6 PD_V 38 DP_V 58 ED_V 5 TQ_MAT 3 at (0, 3, 12) ex {'PD': (0, 3, 4, 0, [0]), 'DP': (0, 3, 4, 0, 0, (0, 0, (0, 20))), 'ED': (1, 3, 6, (1, 32))} PASS
+PIVOT ctx11_n40.pg side E n 40 iter 9 changes 22 INH_V 0 SW 21 RP 1 rp_car 1 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (1, 7, 7) ex {} PASS
+PIVOT ctx6_n20.pg side E n 20 iter 3 changes 1 INH_V 0 SW 1 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (15, 0, 0) ex {} PASS
+PIVOT ctx12_n40.pg side E n 40 iter 8 changes 15 INH_V 0 SW 3 RP 12 rp_car 2 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 2 at (3, 6, 7) ex {} PASS
+PIVOT ctx13_n40.pg side E n 40 iter 17 changes 45 INH_V 0 SW 34 RP 11 rp_car 4 seg_max 2 PD_V 1 DP_V 1 ED_V 0 TQ_MAT 2 at (9, 8, 13) ex {'PD': (0, 8, 11, 0, [0]), 'DP': (0, 8, 11, 0, 0, (0, 0, (0, 23)))} PASS
+PIVOT ctx7_n30.pg side E n 30 iter 11 changes 15 INH_V 0 SW 15 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (13, 3, 3) ex {} PASS
+PIVOT f1_twodef_n48.pg side E n 48 iter 6 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT ctx6_n56.pg side E n 56 iter 12 changes 34 INH_V 0 SW 20 RP 14 rp_car 8 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (33, 1, 1) ex {} PASS
+PIVOT f1_twofall_n48.pg side E n 48 iter 6 changes 1 INH_V 0 SW 1 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (41, 3, 3) ex {} PASS
+PIVOT fallv_viol_n28.pg side E n 28 iter 5 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT fall3_n76.pg side E n 76 iter 8 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT fired10_n20.pg side E n 20 iter 6 changes 4 INH_V 0 SW 4 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT firedlong667_n20.pg side E n 20 iter 4 changes 1 INH_V 0 SW 1 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (15, 0, 0) ex {} PASS
+PIVOT firedlong667_n43.pg side E n 43 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT gapbW_dup_n20.pg side E n 20 iter 5 changes 9 INH_V 0 SW 9 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 2 at (15, 2, 4) ex {} PASS
+PIVOT gapb_dup_n20.pg side E n 20 iter 8 changes 3 INH_V 0 SW 2 RP 1 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (9, 0, 0) ex {} PASS
+PIVOT firedstep13_n76.pg side E n 76 iter 8 changes 29 INH_V 0 SW 24 RP 5 rp_car 1 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (28, 6, 6) ex {} PASS
+PIVOT fall4_n116.pg side E n 116 iter 6 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT h4_compound2x2_n44.pg side E n 44 iter 10 changes 20 INH_V 0 SW 15 RP 5 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (22, 2, 3) ex {} PASS
+PIVOT h4_def2ctx_n20.pg side E n 20 iter 6 changes 1 INH_V 0 SW 1 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT h4_compound_n44.pg side E n 44 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT h4_def7_n28.pg side E n 28 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT h4_disjoint_n20.pg side E n 20 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT kfirst_viol_n13.pg side E n 13 iter 0 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT h4_notweaker_n20.pg side E n 20 iter 5 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT kin_viol_n29.pg side E n 29 iter 5 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT lemmaS_Mdrop_n20.pg side E n 20 iter 6 changes 1 INH_V 0 SW 1 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT lalg_dtl_mviol_n20.pg side E n 20 iter 5 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT lemmaS_viol_n20.pg side E n 20 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT lex_viol_inj_n28.pg side E n 28 iter 6 changes 1 INH_V 0 SW 1 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (21, 3, 3) ex {} PASS
+PIVOT meet_viol_n17.pg side E n 17 iter 0 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT lex_viol_tie_n28.pg side E n 28 iter 7 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT nosig_2_3.pg side E n 24 iter 2 changes 6 INH_V 0 SW 6 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT pk_viol_n20.pg side E n 20 iter 3 changes 6 INH_V 0 SW 6 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (4, 0, 1) ex {} PASS
+PIVOT phi_flat_alive_n32.pg side E n 32 iter 4 changes 6 INH_V 0 SW 6 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (2, 0, 0) ex {} PASS
+PIVOT meet_viol_n29.pg side E n 29 iter 11 changes 14 INH_V 0 SW 7 RP 7 rp_car 0 seg_max 2 PD_V 1 DP_V 1 ED_V 0 TQ_MAT 1 at (0, 7, 9) ex {'PD': (11, 7, 8, 11, [11]), 'DP': (11, 7, 8, 11, 0, (11, 0, (11, 16)))} PASS
+PIVOT replay4_n32.pg side E n 32 iter 4 changes 7 INH_V 0 SW 5 RP 2 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (2, 0, 0) ex {} PASS
+PIVOT spp19_oink_n30.pg side E n 30 iter 10 changes 10 INH_V 0 SW 9 RP 1 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (3, 4, 4) ex {} PASS
+PIVOT spp19_stable_n30.pg side E n 30 iter 7 changes 24 INH_V 0 SW 12 RP 12 rp_car 12 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT spp22_oink_n40.pg side E n 40 iter 8 changes 8 INH_V 0 SW 8 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT spp25_oink_n40.pg side E n 40 iter 10 changes 47 INH_V 0 SW 44 RP 3 rp_car 2 seg_max 2 PD_V 0 DP_V 8 ED_V 0 TQ_MAT 1 at (9, 5, 6) ex {'DP': (2, 5, 9, 6, 1, (21, 11, (21, 38)))} PASS
+PIVOT stealonce_both_n45.pg side E n 45 iter 4 changes 7 INH_V 0 SW 7 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT stealonce_core_n76.pg side E n 76 iter 4 changes 9 INH_V 0 SW 9 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT tstep_near_n20.pg side E n 20 iter 5 changes 11 INH_V 0 SW 8 RP 3 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (3, 4, 4) ex {} PASS
+PIVOT stealer_viol_n76.pg side E n 76 iter 12 changes 6 INH_V 0 SW 6 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT deep1_n13.pg side E n 13 iter 1 changes 1 INH_V 0 SW 1 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (12, 0, 0) ex {} PASS
+PIVOT deep1_n21.pg side E n 21 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT margin1_mc5.pg side E n 50 iter 12 changes 7 INH_V 0 SW 7 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (22, 1, 2) ex {} PASS
+PIVOT margin1_mc1.pg side E n 80 iter 10 changes 1 INH_V 0 SW 1 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (48, 5, 5) ex {} PASS
+PIVOT margin1_n20.pg side E n 20 iter 5 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT lalg_dtl_pertop31_n18.pg side E n 18 iter 2 changes 6 INH_V 0 SW 6 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (0, 1, 1) ex {} PASS
+PIVOT stealonce_viol_n76.pg side E n 76 iter 12 changes 7 INH_V 0 SW 7 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT bghm_k1_gap6_A.pg side E n 21 iter 1 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT bghm_k3_gap4_A.pg side E n 45 iter 1 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT lalg_dtl_restart8_n20.pg side E n 20 iter 5 changes 2 INH_V 0 SW 2 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (18, 2, 4) ex {} PASS
+PIVOT lev74_n40.pg side E n 40 iter 18 changes 163 INH_V 0 SW 108 RP 55 rp_car 15 seg_max 4 PD_V 13 DP_V 26 ED_V 4 TQ_MAT 2 at (0, 2, 7) ex {'PD': (0, 2, 3, 0, [0]), 'DP': (0, 2, 3, 0, 0, (0, 0, (0, 9))), 'ED': (0, 2, 4, (0, 9))} PASS
+PIVOT fr39_q4_n48.pg side E n 48 iter 36 changes 38 INH_V 0 SW 38 RP 0 rp_car 0 seg_max 2 PD_V 2 DP_V 2 ED_V 0 TQ_MAT 1 at (17, 2, 2) ex {'PD': (33, 2, 27, 33, [33]), 'DP': (33, 2, 27, 33, 0, (33, 0, (33, 0)))} PASS
+PIVOT lev56_n48.pg side E n 48 iter 86 changes 555 INH_V 0 SW 423 RP 132 rp_car 40 seg_max 6 PD_V 70 DP_V 121 ED_V 1 TQ_MAT 15 at (43, 10, 84) ex {'PD': (0, 10, 26, 0, [0]), 'DP': (0, 10, 26, 0, 0, (0, 0, (0, 21))), 'ED': (22, 10, 37, (26, 24))} PASS
+PIVOT rho144_n32.pg side E n 32 iter 9 changes 93 INH_V 0 SW 13 RP 80 rp_car 54 seg_max 3 PD_V 1 DP_V 1 ED_V 0 TQ_MAT 1 at (0, 3, 5) ex {'PD': (19, 3, 5, 19, [19]), 'DP': (19, 3, 5, 19, 0, (19, 0, (19, 11)))} PASS
+PIVOT rho3_253_n32.pg side E n 32 iter 11 changes 125 INH_V 0 SW 15 RP 110 rp_car 39 seg_max 2 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 3 at (0, 3, 6) ex {} PASS
+PIVOT rho84_n16.pg side E n 16 iter 5 changes 40 INH_V 0 SW 15 RP 25 rp_car 25 seg_max 3 PD_V 3 DP_V 3 ED_V 0 TQ_MAT 1 at (0, 0, 2) ex {'PD': (0, 0, 1, 0, [0]), 'DP': (0, 0, 1, 0, 0, (0, 0, (0, 1)))} PASS
+PIVOT sat4_n20.pg side E n 20 iter 6 changes 1 INH_V 0 SW 1 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT nep80_n40.pg side E n 40 iter 22 changes 221 INH_V 0 SW 107 RP 114 rp_car 18 seg_max 3 PD_V 11 DP_V 33 ED_V 2 TQ_MAT 5 at (17, 3, 20) ex {'PD': (0, 3, 4, 0, [0]), 'DP': (0, 3, 4, 0, 0, (0, 0, (0, 24))), 'ED': (1, 3, 6, (1, 0))} PASS
+PIVOT rho666_n48.pg side E n 48 iter 16 changes 203 INH_V 0 SW 74 RP 129 rp_car 102 seg_max 5 PD_V 30 DP_V 50 ED_V 1 TQ_MAT 1 at (0, 3, 10) ex {'PD': (0, 3, 7, 0, [0]), 'DP': (0, 3, 7, 0, 0, (0, 0, (0, 28))), 'ED': (4, 3, 8, (4, 28))} PASS
+PIVOT sat68_n20.pg side E n 20 iter 5 changes 5 INH_V 0 SW 5 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT exsw_loop_n15.pg side E n 15 iter 1 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT twowave_L16.pg side E n 22 iter 15 changes 15 INH_V 0 SW 15 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT kt6_n58.pg side E n 58 iter 38 changes 57 INH_V 0 SW 57 RP 0 rp_car 0 seg_max 2 PD_V 2 DP_V 2 ED_V 0 TQ_MAT 1 at (4, 1, 1) ex {'PD': (53, 5, 15, 54, [54]), 'DP': (53, 5, 15, 54, 1, (54, 1, (54, 1)))} PASS
+PIVOT fbcap_eq_u4_n11.pg side E n 11 iter 6 changes 2 INH_V 0 SW 2 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (3, 2, 3) ex {} PASS
+PIVOT fx2_n11.pg side E n 11 iter 9 changes 8 INH_V 0 SW 8 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (0, 0, 0) ex {} PASS
+PIVOT frzgap0_n4.pg side E n 4 iter 1 changes 1 INH_V 0 SW 1 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (0, 0, 0) ex {} PASS
+PIVOT frzgap0_n6.pg side E n 6 iter 3 changes 3 INH_V 0 SW 3 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (0, 0, 1) ex {} PASS
+PIVOT lcount2_n23.pg side E n 23 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT lcount_n23.pg side E n 23 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT offret_l19_n24.pg side E n 24 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT klcount_n16.pg side E n 16 iter 6 changes 2 INH_V 0 SW 2 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT klcount_n18_base.pg side E n 18 iter 6 changes 2 INH_V 0 SW 2 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT klcount_n18_lvl.pg side E n 18 iter 6 changes 2 INH_V 0 SW 2 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT klglobal_n16.pg side E n 16 iter 6 changes 8 INH_V 0 SW 8 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (0, 3, 4) ex {} PASS
+PIVOT xsnpre36_n48.pg side E n 48 iter 33 changes 37 INH_V 0 SW 37 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT klglobal_n18_lvl.pg side E n 18 iter 6 changes 8 INH_V 0 SW 8 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (0, 3, 4) ex {} PASS
+PIVOT klglobal_n20_lvl2.pg side E n 20 iter 6 changes 8 INH_V 0 SW 8 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (0, 3, 4) ex {} PASS
+PIVOT klmin_n13.pg side E n 13 iter 3 changes 3 INH_V 0 SW 3 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r2climb_h13.pg side E n 13 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r2join_h0E_n14.pg side E n 14 iter 3 changes 2 INH_V 0 SW 1 RP 1 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (4, 0, 0) ex {} PASS
+PIVOT r2crawl_n14.pg side E n 14 iter 5 changes 1 INH_V 0 SW 1 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (9, 1, 1) ex {} PASS
+PIVOT r2lap_best_n22.pg side E n 22 iter 5 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT HL88_0.pg side E n 41 iter 3 changes 3 INH_V 0 SW 3 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT HL88_1.pg side E n 43 iter 3 changes 3 INH_V 0 SW 3 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT HL88_2.pg side E n 45 iter 3 changes 3 INH_V 0 SW 3 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT HLg_0.pg side E n 29 iter 3 changes 3 INH_V 0 SW 3 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT HL88_3.pg side E n 47 iter 3 changes 3 INH_V 0 SW 3 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT HLg_1.pg side E n 35 iter 3 changes 3 INH_V 0 SW 3 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT HLg_2.pg side E n 45 iter 3 changes 3 INH_V 0 SW 3 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT HLg_3.pg side E n 55 iter 3 changes 3 INH_V 0 SW 3 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT cw11_n24.pg side E n 24 iter 17 changes 44 INH_V 0 SW 44 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 6 at (7, 4, 13) ex {} PASS
+PIVOT frzu_tight_n14.pg side E n 14 iter 4 changes 4 INH_V 0 SW 4 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (4, 0, 0) ex {} PASS
+PIVOT depth2_n39.pg side E n 39 iter 3 changes 6 INH_V 0 SW 6 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (16, 1, 2) ex {} PASS
+PIVOT kc18_n24.pg side E n 24 iter 23 changes 59 INH_V 0 SW 59 RP 0 rp_car 0 seg_max 2 PD_V 1 DP_V 1 ED_V 0 TQ_MAT 3 at (6, 1, 20) ex {'PD': (18, 1, 19, 18, [18]), 'DP': (18, 1, 19, 18, 0, (18, 0, (18, 5)))} PASS
+PIVOT depth3_n46.pg side E n 46 iter 3 changes 3 INH_V 0 SW 3 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (20, 1, 1) ex {} PASS
+PIVOT fam_D4_n50.pg side E n 50 iter 1 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT depth4_n53.pg side E n 53 iter 4 changes 15 INH_V 0 SW 15 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (20, 1, 2) ex {} PASS
+PIVOT fam_D12_n106.pg side E n 106 iter 1 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT mei_h2.pg side E n 19 iter 1 changes 4 INH_V 0 SW 3 RP 1 rp_car 1 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT fam_D8_n78.pg side E n 78 iter 1 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT mei_h3.pg side E n 27 iter 2 changes 11 INH_V 0 SW 7 RP 4 rp_car 2 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (1, 0, 0) ex {} PASS
+PIVOT mei_h4.pg side E n 35 iter 3 changes 29 INH_V 0 SW 17 RP 12 rp_car 5 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (0, 0, 0) ex {} PASS
+PIVOT mei_h5.pg side E n 43 iter 4 changes 52 INH_V 0 SW 27 RP 25 rp_car 6 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (0, 0, 0) ex {} PASS
+PIVOT mei_h6.pg side E n 51 iter 5 changes 82 INH_V 0 SW 43 RP 39 rp_car 9 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (0, 0, 0) ex {} PASS
+PIVOT mei_h8.pg side E n 67 iter 7 changes 165 INH_V 0 SW 92 RP 73 rp_car 24 seg_max 3 PD_V 3 DP_V 3 ED_V 1 TQ_MAT 1 at (0, 0, 0) ex {'PD': (19, 0, 2, 19, [19]), 'DP': (19, 0, 2, 19, 0, (19, 0, (19, 21))), 'ED': (19, 0, 3, (19, 21))} PASS
+PIVOT core41_n40.pg side E n 40 iter 11 changes 96 INH_V 0 SW 87 RP 9 rp_car 6 seg_max 3 PD_V 0 DP_V 22 ED_V 0 TQ_MAT 1 at (0, 2, 6) ex {'DP': (0, 2, 5, 0, 0, (22, 5, (22, 14)))} PASS
+PIVOT lagx10_n40.pg side E n 40 iter 17 changes 99 INH_V 0 SW 79 RP 20 rp_car 19 seg_max 4 PD_V 16 DP_V 28 ED_V 0 TQ_MAT 5 at (39, 1, 9) ex {'PD': (1, 1, 13, 1, [1]), 'DP': (1, 1, 13, 1, 0, (1, 0, (1, 28)))} PASS
+PIVOT lag11_n40.pg side E n 40 iter 17 changes 111 INH_V 0 SW 86 RP 25 rp_car 25 seg_max 3 PD_V 14 DP_V 27 ED_V 0 TQ_MAT 2 at (17, 5, 11) ex {'DP': (0, 5, 7, 7, 2, (30, 3, (30, 32))), 'PD': (0, 5, 8, 7, [30, 7])} PASS
+PIVOT comp54_n80.pg side E n 80 iter 11 changes 186 INH_V 0 SW 146 RP 40 rp_car 26 seg_max 5 PD_V 8 DP_V 30 ED_V 1 TQ_MAT 2 at (9, 3, 8) ex {'PD': (0, 3, 5, 0, [0]), 'DP': (0, 3, 5, 0, 0, (0, 0, (0, 19))), 'ED': (0, 3, 7, (0, 19))} PASS
+PIVOT long90_k2_n40.pg side E n 40 iter 18 changes 148 INH_V 0 SW 133 RP 15 rp_car 12 seg_max 5 PD_V 16 DP_V 41 ED_V 3 TQ_MAT 2 at (36, 1, 15) ex {'DP': (0, 1, 3, 0, 0, (13, 1, (13, 33))), 'PD': (0, 1, 15, 0, [0, 13]), 'ED': (2, 1, 14, (13, 33))} PASS
+PIVOT long121_n40.pg side E n 40 iter 23 changes 219 INH_V 0 SW 146 RP 73 rp_car 56 seg_max 6 PD_V 40 DP_V 59 ED_V 7 TQ_MAT 3 at (1, 2, 15) ex {'DP': (0, 2, 7, 0, 0, (19, 1, (19, 25))), 'PD': (1, 2, 18, 23, [23]), 'ED': (2, 2, 18, (2, 13))} PASS
+PIVOT n3cov_lean.pg side E n 48 iter 18 changes 100 INH_V 0 SW 39 RP 61 rp_car 13 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 2 at (9, 7, 15) ex {} PASS
+PIVOT n3cov_phi.pg side E n 32 iter 10 changes 108 INH_V 0 SW 33 RP 75 rp_car 46 seg_max 4 PD_V 8 DP_V 18 ED_V 2 TQ_MAT 1 at (0, 2, 2) ex {'DP': (0, 2, 5, 0, 0, (5, 2, (5, 2))), 'PD': (5, 2, 4, 5, [5]), 'ED': (7, 2, 5, (7, 0))} PASS
+PIVOT run49_n32.pg side E n 32 iter 20 changes 70 INH_V 0 SW 63 RP 7 rp_car 0 seg_max 2 PD_V 2 DP_V 2 ED_V 0 TQ_MAT 2 at (3, 6, 15) ex {'PD': (8, 6, 18, 8, [8]), 'DP': (8, 6, 18, 8, 0, (8, 0, (8, 1)))} PASS
+PIVOT ret22_n40.pg side E n 40 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT run34_n40.pg side E n 40 iter 40 changes 224 INH_V 0 SW 118 RP 106 rp_car 30 seg_max 4 PD_V 26 DP_V 30 ED_V 0 TQ_MAT 6 at (1, 4, 35) ex {'PD': (2, 4, 35, 3, [14, 3]), 'DP': (2, 4, 35, 3, 7, (3, 7, (3, 28)))} PASS
+PIVOT dl_4_4.pg side E n 42 iter 8 changes 95 INH_V 0 SW 36 RP 59 rp_car 34 seg_max 3 PD_V 7 DP_V 21 ED_V 0 TQ_MAT 1 at (0, 0, 4) ex {'PD': (0, 0, 3, 3, [3]), 'DP': (0, 0, 3, 3, 5, (3, 5, (3, 5)))} PASS
+PIVOT dlm2_4.pg side E n 42 iter 5 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT sym_h12_s1.pg side E n 24 iter 34 changes 33 INH_V 0 SW 14 RP 19 rp_car 8 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 2 at (21, 22, 25) ex {} PASS
+PIVOT sym_h8_s1.pg side E n 16 iter 25 changes 3 INH_V 0 SW 3 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (8, 12, 14) ex {} PASS
+PIVOT sym_h16_s1.pg side E n 32 iter 55 changes 119 INH_V 0 SW 53 RP 66 rp_car 23 seg_max 2 PD_V 3 DP_V 3 ED_V 0 TQ_MAT 1 at (0, 8, 9) ex {'PD': (1, 22, 25, 18, [18]), 'DP': (1, 22, 25, 18, 2, (18, 2, (18, 12)))} PASS
+PIVOT block_bk20.pg side E n 24 iter 27 changes 26 INH_V 0 SW 26 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 2 at (4, 5, 6) ex {} PASS
+PIVOT blockph_bp20.pg side E n 24 iter 25 changes 34 INH_V 0 SW 34 RP 0 rp_car 0 seg_max 3 PD_V 9 DP_V 11 ED_V 2 TQ_MAT 1 at (5, 1, 1) ex {'PD': (4, 1, 7, 4, [4]), 'DP': (4, 1, 7, 4, 0, (4, 0, (4, 15))), 'ED': (4, 1, 19, (4, 15))} PASS
+PIVOT block_bk32.pg side E n 36 iter 49 changes 42 INH_V 0 SW 42 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 2 at (4, 8, 19) ex {} PASS
+PIVOT bribe_cex_n15.pg side E n 15 iter 1 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT blockph_bp32.pg side E n 36 iter 39 changes 51 INH_V 0 SW 51 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 3 at (12, 1, 20) ex {} PASS
+PIVOT frz24.pg side E n 24 iter 39 changes 36 INH_V 0 SW 36 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (4, 1, 1) ex {} PASS
+PIVOT elimn_cex_n48.pg side E n 48 iter 92 changes 265 INH_V 0 SW 258 RP 7 rp_car 3 seg_max 3 PD_V 8 DP_V 18 ED_V 0 TQ_MAT 7 at (37, 2, 52) ex {'DP': (1, 2, 32, 41, 2, (15, 6, (15, 21))), 'PD': (8, 2, 33, 8, [8, 15])} PASS
+PIVOT frz32.pg side E n 32 iter 8 changes 35 INH_V 0 SW 35 RP 0 rp_car 0 seg_max 2 PD_V 0 DP_V 13 ED_V 0 TQ_MAT 1 at (2, 2, 3) ex {'DP': (0, 2, 4, 26, 4, (12, 6, (12, 23)))} PASS
+PIVOT dl_6_8.pg side E n 110 iter 14 changes 322 INH_V 0 SW 92 RP 230 rp_car 125 seg_max 4 PD_V 42 DP_V 85 ED_V 11 TQ_MAT 2 at (38, 0, 8) ex {'PD': (0, 0, 7, 3, [3]), 'DP': (0, 0, 7, 3, 9, (3, 9, (3, 45))), 'ED': (4, 0, 8, (7, 9))} PASS
+PIVOT frz40.pg side E n 40 iter 90 changes 253 INH_V 0 SW 199 RP 54 rp_car 24 seg_max 5 PD_V 21 DP_V 26 ED_V 6 TQ_MAT 7 at (27, 44, 77) ex {'DP': (3, 1, 16, 3, 0, (19, 3, (19, 14))), 'PD': (4, 1, 7, 4, [4]), 'ED': (2, 44, 75, (2, 25))} PASS
+PIVOT phase2_pk32.pg side E n 32 iter 56 changes 94 INH_V 0 SW 55 RP 39 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 4 at (12, 3, 53) ex {} PASS
+PIVOT returns_rt32.pg side E n 32 iter 57 changes 81 INH_V 0 SW 55 RP 26 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 3 at (0, 3, 52) ex {} PASS
+PIVOT phase2_pk48.pg side E n 48 iter 72 changes 142 INH_V 0 SW 118 RP 24 rp_car 24 seg_max 5 PD_V 26 DP_V 33 ED_V 7 TQ_MAT 3 at (32, 15, 52) ex {'DP': (15, 9, 11, 15, 0, (14, 3, (14, 3))), 'PD': (1, 15, 40, 1, [1]), 'ED': (1, 15, 49, (1, 19))} PASS
+PIVOT returns_ph64.pg side E n 64 iter 105 changes 340 INH_V 0 SW 339 RP 1 rp_car 1 seg_max 5 PD_V 30 DP_V 47 ED_V 6 TQ_MAT 10 at (26, 2, 93) ex {'PD': (0, 2, 23, 0, [0, 56]), 'DP': (0, 2, 23, 0, 0, (56, 3, (56, 50))), 'ED': (8, 2, 34, (8, 45))} PASS
+PIVOT returns_rt48.pg side E n 48 iter 80 changes 210 INH_V 0 SW 209 RP 1 rp_car 1 seg_max 7 PD_V 28 DP_V 31 ED_V 9 TQ_MAT 6 at (32, 2, 47) ex {'PD': (1, 2, 43, 1, [1]), 'DP': (1, 2, 43, 1, 0, (1, 0, (1, 19))), 'ED': (1, 2, 64, (1, 19))} PASS
+PIVOT theta_thc24.pg side E n 24 iter 29 changes 53 INH_V 0 SW 53 RP 0 rp_car 0 seg_max 2 PD_V 1 DP_V 1 ED_V 0 TQ_MAT 2 at (0, 1, 12) ex {'PD': (13, 1, 13, 13, [13]), 'DP': (13, 1, 13, 13, 0, (13, 0, (13, 6)))} PASS
+PIVOT theta_thf16.pg side E n 16 iter 20 changes 85 INH_V 0 SW 43 RP 42 rp_car 19 seg_max 4 PD_V 10 DP_V 15 ED_V 3 TQ_MAT 7 at (0, 2, 15) ex {'DP': (0, 2, 13, 0, 0, (15, 1, (15, 5))), 'PD': (1, 2, 11, 1, [1, 15]), 'ED': (1, 2, 14, (1, 15))} PASS
+PIVOT theta_tp32.pg side E n 32 iter 45 changes 197 INH_V 0 SW 110 RP 87 rp_car 12 seg_max 4 PD_V 27 DP_V 30 ED_V 11 TQ_MAT 10 at (0, 4, 42) ex {'PD': (1, 4, 20, 1, [1]), 'DP': (1, 4, 20, 1, 0, (1, 0, (1, 15))), 'ED': (1, 4, 23, (1, 15))} PASS
+PIVOT returns_rt64.pg side E n 64 iter 90 changes 262 INH_V 0 SW 260 RP 2 rp_car 1 seg_max 5 PD_V 22 DP_V 24 ED_V 5 TQ_MAT 6 at (32, 2, 49) ex {'PD': (8, 2, 17, 8, [8]), 'DP': (8, 2, 17, 8, 0, (8, 0, (8, 45))), 'ED': (8, 2, 25, (8, 45))} PASS
+PIVOT wide_h16.pg side E n 32 iter 44 changes 227 INH_V 0 SW 93 RP 134 rp_car 87 seg_max 5 PD_V 15 DP_V 35 ED_V 0 TQ_MAT 1 at (7, 4, 4) ex {'DP': (4, 6, 13, 8, 1, (22, 2, (22, 29))), 'PD': (0, 16, 21, 7, [7])} PASS
+PIVOT theta_tp40.pg side E n 40 iter 41 changes 104 INH_V 0 SW 104 RP 0 rp_car 0 seg_max 3 PD_V 7 DP_V 14 ED_V 0 TQ_MAT 2 at (0, 2, 13) ex {'DP': (0, 2, 6, 23, 1, (3, 5, (3, 10))), 'PD': (3, 2, 9, 3, [3])} PASS
+PIVOT k4L72_n101.pg side E n 101 iter 6 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT k4L72r_n101.pg side E n 101 iter 6 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT k4seed_c1_n82.pg side E n 82 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT k4g50_n101.pg side E n 101 iter 5 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT k4seed_vr_n87.pg side E n 87 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT k4u_n101.pg side E n 101 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT k4y1_n82.pg side E n 82 iter 5 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT k4y2_n87.pg side E n 87 iter 6 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT near4_n26.pg side E n 26 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT nest4u_n46.pg side E n 46 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT nest4uu_n51.pg side E n 51 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT nest5_n49.pg side E n 49 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT nest6_n75.pg side E n 75 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT nest6min_n75.pg side E n 75 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT oseg_n26.pg side E n 26 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT nest6x_n75.pg side E n 75 iter 5 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT w1_n27.pg side E n 27 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT win3_n27.pg side E n 27 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT nopre_viol_n20.pg side E n 20 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT ph45_n32.pg side E n 32 iter 21 changes 1 INH_V 0 SW 1 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT ph50_n32.pg side E n 32 iter 32 changes 1 INH_V 0 SW 1 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (5, 4, 4) ex {} PASS
+PIVOT f39_n48.pg side E n 48 iter 38 changes 37 INH_V 0 SW 37 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT tau18_n24.pg side E n 24 iter 12 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT iter118_n48.pg side E n 48 iter 18 changes 127 INH_V 0 SW 61 RP 66 rp_car 19 seg_max 4 PD_V 4 DP_V 8 ED_V 1 TQ_MAT 2 at (0, 6, 16) ex {'DP': (5, 6, 14, 5, 0, (0, 1, (0, 2))), 'PD': (9, 6, 11, 9, [9]), 'ED': (9, 6, 13, (9, 7))} PASS
+PIVOT fbd0_n4.pg side E n 4 iter 0 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT n0_6_n24.pg side E n 24 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT nep24_n20.pg side E n 20 iter 15 changes 22 INH_V 0 SW 16 RP 6 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 2 at (4, 1, 2) ex {} PASS
+PIVOT lend2_30_n48.pg side E n 48 iter 25 changes 83 INH_V 0 SW 45 RP 38 rp_car 38 seg_max 4 PD_V 7 DP_V 8 ED_V 1 TQ_MAT 0 at None ex {'DP': (4, 6, 7, 4, 0, (43, 1, (43, 1))), 'PD': (4, 6, 9, 4, [43, 4]), 'ED': (19, 6, 14, (19, 31))} PASS
+PIVOT s20_n20.pg side E n 20 iter 8 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT nep87_n40.pg side E n 40 iter 25 changes 203 INH_V 0 SW 122 RP 81 rp_car 26 seg_max 5 PD_V 36 DP_V 53 ED_V 4 TQ_MAT 6 at (0, 3, 15) ex {'PD': (0, 3, 4, 0, [0]), 'DP': (0, 3, 4, 0, 0, (0, 0, (0, 23))), 'ED': (6, 3, 9, (6, 25))} PASS
+PIVOT s21_oink_n20.pg side E n 20 iter 8 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT nep90_n40.pg side E n 40 iter 23 changes 247 INH_V 0 SW 120 RP 127 rp_car 23 seg_max 4 PD_V 16 DP_V 40 ED_V 0 TQ_MAT 5 at (0, 3, 12) ex {'PD': (0, 3, 4, 0, [0]), 'DP': (0, 3, 4, 0, 0, (0, 0, (0, 24)))} PASS
+PIVOT s29_n30.pg side E n 30 iter 7 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT s34_oink_n40.pg side E n 40 iter 5 changes 42 INH_V 0 SW 40 RP 2 rp_car 2 seg_max 2 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (0, 2, 2) ex {} PASS
+PIVOT s32_n60.pg side E n 60 iter 8 changes 2 INH_V 0 SW 2 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (48, 4, 4) ex {} PASS
+PIVOT s35_oink_n80.pg side E n 80 iter 5 changes 21 INH_V 0 SW 21 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (3, 3, 3) ex {} PASS
+PIVOT s36_oink_n60.pg side E n 60 iter 5 changes 15 INH_V 0 SW 15 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (3, 3, 3) ex {} PASS
+PIVOT s34_oink_n80.pg side E n 80 iter 8 changes 50 INH_V 0 SW 50 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (32, 1, 3) ex {} PASS
+PIVOT beta2_n11.pg side E n 11 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT epsseg_cex_n16.pg side E n 16 iter 11 changes 55 INH_V 0 SW 33 RP 22 rp_car 10 seg_max 4 PD_V 14 DP_V 14 ED_V 3 TQ_MAT 3 at (3, 0, 9) ex {'PD': (3, 0, 3, 3, [3]), 'DP': (3, 0, 3, 3, 0, (3, 0, (3, 9))), 'ED': (3, 0, 5, (3, 9))} PASS
+PIVOT exitr_cex_n16.pg side E n 16 iter 10 changes 33 INH_V 0 SW 19 RP 14 rp_car 8 seg_max 4 PD_V 8 DP_V 8 ED_V 2 TQ_MAT 2 at (9, 1, 8) ex {'PD': (3, 1, 3, 4, [4]), 'DP': (3, 1, 3, 4, 1, (4, 1, (4, 9))), 'ED': (3, 1, 6, (4, 9))} PASS
+PIVOT epsseg_cex_n48.pg side E n 48 iter 26 changes 331 INH_V 0 SW 60 RP 271 rp_car 153 seg_max 5 PD_V 80 DP_V 85 ED_V 0 TQ_MAT 7 at (0, 7, 24) ex {'PD': (0, 7, 9, 0, [0]), 'DP': (0, 7, 9, 0, 0, (0, 0, (0, 9)))} PASS
+PIVOT exitr_cex_n48.pg side E n 48 iter 22 changes 356 INH_V 0 SW 78 RP 278 rp_car 131 seg_max 5 PD_V 39 DP_V 42 ED_V 0 TQ_MAT 8 at (8, 3, 20) ex {'PD': (0, 3, 5, 0, [0]), 'DP': (0, 3, 5, 0, 0, (0, 0, (0, 28)))} PASS
+PIVOT mn_abs74_n48.pg side E n 48 iter 22 changes 238 INH_V 0 SW 234 RP 4 rp_car 0 seg_max 4 PD_V 21 DP_V 42 ED_V 0 TQ_MAT 4 at (0, 6, 16) ex {'DP': (1, 6, 14, 46, 1, (2, 4, (2, 23))), 'PD': (6, 6, 14, 6, [6, 2])} PASS
+PIVOT farrise25_n32.pg side E n 32 iter 35 changes 61 INH_V 0 SW 59 RP 2 rp_car 2 seg_max 2 PD_V 0 DP_V 2 ED_V 0 TQ_MAT 2 at (7, 7, 33) ex {'DP': (0, 7, 33, 0, 0, (4, 1, (4, 1)))} PASS
+PIVOT njb_reabs54_n32.pg side E n 32 iter 40 changes 212 INH_V 0 SW 142 RP 70 rp_car 37 seg_max 3 PD_V 2 DP_V 18 ED_V 0 TQ_MAT 7 at (0, 5, 19) ex {'DP': (2, 5, 11, 2, 0, (0, 2, (0, 13))), 'PD': (6, 5, 14, 6, [0, 6])} PASS
+PIVOT nleq_cex_n48.pg side E n 48 iter 10 changes 44 INH_V 0 SW 44 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (1, 3, 6) ex {} PASS
+PIVOT njb_reabs65_n48.pg side E n 48 iter 70 changes 246 INH_V 0 SW 242 RP 4 rp_car 0 seg_max 2 PD_V 0 DP_V 4 ED_V 0 TQ_MAT 5 at (46, 2, 42) ex {'DP': (13, 2, 39, 13, 0, (2, 2, (2, 23)))} PASS
+PIVOT nleq33_n48.pg side E n 48 iter 40 changes 84 INH_V 0 SW 84 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 2 at (15, 4, 23) ex {} PASS
+PIVOT pftheta34_n32.pg side E n 32 iter 39 changes 170 INH_V 0 SW 97 RP 73 rp_car 1 seg_max 3 PD_V 14 DP_V 15 ED_V 1 TQ_MAT 9 at (0, 4, 37) ex {'PD': (2, 4, 34, 2, [2]), 'DP': (2, 4, 34, 2, 0, (2, 0, (2, 18))), 'ED': (3, 4, 26, (3, 7))} PASS
+PIVOT pft35_n48.pg side E n 48 iter 41 changes 444 INH_V 0 SW 178 RP 266 rp_car 72 seg_max 6 PD_V 21 DP_V 34 ED_V 9 TQ_MAT 15 at (0, 2, 37) ex {'DP': (3, 2, 5, 3, 0, (0, 2, (0, 24))), 'PD': (4, 2, 11, 4, [4]), 'ED': (13, 2, 15, (43, 28))} PASS
+PIVOT pft40_n40.pg side E n 40 iter 54 changes 435 INH_V 0 SW 169 RP 266 rp_car 101 seg_max 8 PD_V 64 DP_V 73 ED_V 10 TQ_MAT 16 at (0, 7, 52) ex {'PD': (0, 7, 50, 0, [0]), 'DP': (0, 7, 50, 0, 0, (0, 0, (0, 23))), 'ED': (4, 7, 49, (23, 22))} PASS
+PIVOT pftheta_cex_n32.pg side E n 32 iter 38 changes 157 INH_V 0 SW 96 RP 61 rp_car 1 seg_max 3 PD_V 11 DP_V 11 ED_V 0 TQ_MAT 8 at (0, 3, 36) ex {'PD': (2, 3, 34, 2, [2]), 'DP': (2, 3, 34, 2, 0, (2, 0, (2, 18)))} PASS
+PIVOT post31_n48.pg side E n 48 iter 36 changes 329 INH_V 0 SW 82 RP 247 rp_car 101 seg_max 4 PD_V 51 DP_V 63 ED_V 0 TQ_MAT 6 at (5, 4, 34) ex {'PD': (0, 4, 5, 0, [0]), 'DP': (0, 4, 5, 0, 0, (0, 0, (0, 12)))} PASS
+PIVOT rise_thin51_n40.pg side E n 40 iter 78 changes 773 INH_V 0 SW 373 RP 400 rp_car 188 seg_max 15 PD_V 166 DP_V 215 ED_V 58 TQ_MAT 29 at (0, 9, 73) ex {'PD': (0, 9, 12, 0, [0]), 'DP': (0, 9, 12, 0, 0, (0, 0, (0, 34))), 'ED': (2, 9, 64, (2, 13))} PASS
+PIVOT s4c8_n13.pg side E n 13 iter 12 changes 16 INH_V 0 SW 16 RP 0 rp_car 0 seg_max 2 PD_V 0 DP_V 4 ED_V 0 TQ_MAT 1 at (4, 1, 1) ex {'DP': (0, 1, 10, 0, 0, (12, 3, (12, 3)))} PASS
+PIVOT rise_fb38_n48.pg side E n 48 iter 53 changes 123 INH_V 0 SW 99 RP 24 rp_car 12 seg_max 3 PD_V 37 DP_V 54 ED_V 9 TQ_MAT 1 at (0, 4, 12) ex {'PD': (1, 4, 13, 1, [1]), 'DP': (1, 4, 13, 1, 0, (1, 0, (1, 9))), 'ED': (1, 4, 35, (1, 9))} PASS
+PIVOT so_k2_n32.pg side E n 32 iter 20 changes 109 INH_V 0 SW 27 RP 82 rp_car 22 seg_max 2 PD_V 9 DP_V 9 ED_V 0 TQ_MAT 6 at (6, 8, 17) ex {'PD': (2, 8, 13, 27, [27]), 'DP': (2, 8, 13, 27, 5, (27, 5, (27, 20)))} PASS
+PIVOT so_sor5_n24.pg side E n 24 iter 23 changes 60 INH_V 0 SW 43 RP 17 rp_car 1 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 3 at (6, 0, 18) ex {} PASS
+PIVOT so_sorl_n32.pg side E n 32 iter 22 changes 26 INH_V 0 SW 26 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (0, 0, 1) ex {} PASS
+PIVOT so_j19_n48.pg side E n 48 iter 25 changes 365 INH_V 0 SW 45 RP 320 rp_car 160 seg_max 4 PD_V 60 DP_V 60 ED_V 0 TQ_MAT 10 at (0, 5, 22) ex {'PD': (0, 5, 15, 0, [0]), 'DP': (0, 5, 15, 0, 0, (0, 0, (0, 46)))} PASS
+PIVOT so_tie13_n24.pg side E n 24 iter 16 changes 28 INH_V 0 SW 27 RP 1 rp_car 1 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (1, 0, 14) ex {} PASS
+PIVOT so_th_n32.pg side E n 32 iter 36 changes 266 INH_V 0 SW 113 RP 153 rp_car 14 seg_max 3 PD_V 14 DP_V 22 ED_V 0 TQ_MAT 15 at (21, 1, 32) ex {'PD': (0, 1, 16, 0, [0]), 'DP': (0, 1, 16, 0, 0, (0, 0, (0, 15)))} PASS
+PIVOT so_tie15_n32.pg side E n 32 iter 20 changes 24 INH_V 0 SW 24 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (0, 1, 1) ex {} PASS
+PIVOT tevlast7_n32.pg side E n 32 iter 41 changes 149 INH_V 0 SW 85 RP 64 rp_car 30 seg_max 2 PD_V 0 DP_V 15 ED_V 0 TQ_MAT 4 at (1, 4, 40) ex {'DP': (1, 4, 39, 1, 0, (0, 6, (0, 18)))} PASS
+PIVOT tev_cex_n40.pg side E n 40 iter 27 changes 127 INH_V 0 SW 56 RP 71 rp_car 63 seg_max 4 PD_V 33 DP_V 33 ED_V 0 TQ_MAT 1 at (0, 3, 22) ex {'PD': (0, 3, 24, 0, [0]), 'DP': (0, 3, 24, 0, 0, (0, 0, (0, 26)))} PASS
+PIVOT tevlast11_n40.pg side E n 40 iter 36 changes 133 INH_V 0 SW 81 RP 52 rp_car 18 seg_max 3 PD_V 4 DP_V 5 ED_V 0 TQ_MAT 4 at (3, 4, 35) ex {'DP': (0, 4, 8, 0, 0, (8, 3, (8, 26))), 'PD': (0, 4, 19, 0, [8, 0])} PASS
+PIVOT tog6a_n32.pg side E n 32 iter 10 changes 1 INH_V 0 SW 1 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT tevlast_cex_n40.pg side E n 40 iter 11 changes 119 INH_V 0 SW 54 RP 65 rp_car 56 seg_max 4 PD_V 24 DP_V 25 ED_V 0 TQ_MAT 1 at (0, 3, 6) ex {'PD': (0, 3, 8, 0, [0]), 'DP': (0, 3, 8, 0, 0, (0, 0, (0, 26)))} PASS
+PIVOT tog6b_n32.pg side E n 32 iter 8 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT xrun8_n10.pg side E n 10 iter 11 changes 28 INH_V 0 SW 11 RP 17 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 3 at (1, 2, 9) ex {} PASS
+PIVOT xrun21_n24.pg side E n 24 iter 24 changes 35 INH_V 0 SW 35 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 2 at (14, 1, 4) ex {} PASS
+PIVOT xsn29_n32.pg side E n 32 iter 29 changes 29 INH_V 0 SW 29 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT xsn43_n48.pg side E n 48 iter 45 changes 43 INH_V 0 SW 43 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (2, 1, 6) ex {} PASS
+PIVOT xsnf42_n48.pg side E n 48 iter 44 changes 42 INH_V 0 SW 42 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT xsn91_n48.pg side E n 48 iter 115 changes 779 INH_V 0 SW 580 RP 199 rp_car 34 seg_max 5 PD_V 92 DP_V 126 ED_V 5 TQ_MAT 15 at (8, 3, 113) ex {'PD': (0, 3, 27, 28, [28]), 'DP': (0, 3, 27, 28, 1, (28, 1, (28, 1))), 'ED': (4, 3, 105, (4, 28))} PASS
+PIVOT xsnf52_n64.pg side E n 64 iter 55 changes 54 INH_V 0 SW 54 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (1, 2, 8) ex {} PASS
+PIVOT leanT_N12.pg side E n 96 iter 13 changes 225 INH_V 0 SW 5 RP 220 rp_car 220 seg_max 5 PD_V 12 DP_V 42 ED_V 0 TQ_MAT 0 at None ex {'DP': (36, 7, 8, 36, 0, (45, 2, (45, 21))), 'PD': (36, 7, 9, 36, [45, 36])} PASS
+PIVOT leanT_N16.pg side E n 128 iter 16 changes 531 INH_V 0 SW 9 RP 522 rp_car 522 seg_max 9 PD_V 24 DP_V 136 ED_V 0 TQ_MAT 0 at None ex {'DP': (28, 6, 7, 57, 1, (58, 3, (58, 47))), 'PD': (48, 6, 13, 48, [58, 62, 63, 50, 52, 53, 48])} PASS
+PIVOT leanT_N6.pg side E n 48 iter 6 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT leanT_N8.pg side E n 64 iter 8 changes 61 INH_V 0 SW 2 RP 59 rp_car 59 seg_max 2 PD_V 3 DP_V 6 ED_V 0 TQ_MAT 0 at None ex {'PD': (26, 5, 6, 26, [26]), 'DP': (26, 5, 6, 26, 0, (26, 0, (26, 21)))} PASS
+PIVOT leanT_N24.pg side E n 192 iter 25 changes 1752 INH_V 0 SW 14 RP 1738 rp_car 1738 seg_max 9 PD_V 36 DP_V 842 ED_V 0 TQ_MAT 0 at None ex {'DP': (0, 7, 8, 89, 47, (85, 49, (85, 52))), 'PD': (79, 7, 10, 79, [85, 89, 79])} PASS
+PIVOT tcL_N10.pg side E n 350 iter 27 changes 2232 INH_V 0 SW 1158 RP 1074 rp_car 929 seg_max 6 PD_V 39 DP_V 638 ED_V 9 TQ_MAT 1 at (9, 2, 2) ex {'DP': (1, 7, 9, 3, 2, (277, 6, (277, 329))), 'PD': (7, 7, 11, 7, [277, 220, 7]), 'ED': (26, 7, 11, (84, 312))} PASS
+PIVOT tcL_N3.pg side E n 42 iter 7 changes 27 INH_V 0 SW 13 RP 14 rp_car 14 seg_max 2 PD_V 0 DP_V 2 ED_V 0 TQ_MAT 0 at None ex {'DP': (2, 2, 5, 2, 0, (1, 1, (1, 15)))} PASS
+PIVOT tcL_N4.pg side E n 68 iter 16 changes 228 INH_V 0 SW 137 RP 91 rp_car 76 seg_max 3 PD_V 6 DP_V 19 ED_V 0 TQ_MAT 1 at (2, 2, 2) ex {'PD': (8, 7, 9, 8, [8]), 'DP': (8, 7, 9, 8, 0, (8, 0, (8, 54)))} PASS
+PIVOT tcL_N5.pg side E n 100 iter 19 changes 424 INH_V 0 SW 225 RP 199 rp_car 148 seg_max 5 PD_V 9 DP_V 70 ED_V 0 TQ_MAT 1 at (0, 2, 2) ex {'DP': (4, 6, 7, 27, 3, (54, 6, (54, 85))), 'PD': (54, 6, 7, 54, [54])} PASS
+PIVOT tcL_N6.pg side E n 138 iter 18 changes 446 INH_V 0 SW 232 RP 214 rp_car 151 seg_max 4 PD_V 10 DP_V 109 ED_V 0 TQ_MAT 1 at (2, 3, 5) ex {'DP': (1, 3, 5, 5, 3, (103, 24, (103, 101))), 'PD': (49, 3, 9, 49, [49])} PASS
+PIVOT leanT_N32.pg side E n 256 iter 33 changes 2457 INH_V 0 SW 21 RP 2436 rp_car 2436 seg_max 21 PD_V 60 DP_V 690 ED_V 0 TQ_MAT 0 at None ex {'DP': (96, 11, 12, 110, 24, (116, 26, (116, 93))), 'PD': (96, 11, 25, 96, [116, 110, 112, 118, 127, 99, 104, 114, 120, 125, 124, 119, 126, 96])} PASS
+PIVOT tcR4_N4.pg side E n 68 iter 12 changes 193 INH_V 0 SW 60 RP 133 rp_car 84 seg_max 2 PD_V 1 DP_V 36 ED_V 0 TQ_MAT 1 at (1, 2, 2) ex {'DP': (0, 5, 9, 0, 0, (45, 13, (45, 46))), 'PD': (46, 5, 7, 46, [46])} PASS
+PIVOT tcR4_N5.pg side E n 100 iter 14 changes 358 INH_V 0 SW 216 RP 142 rp_car 122 seg_max 5 PD_V 10 DP_V 101 ED_V 0 TQ_MAT 1 at (0, 2, 2) ex {'DP': (1, 4, 5, 42, 8, (65, 21, (65, 67))), 'PD': (35, 4, 7, 35, [65, 4, 35])} PASS
+PIVOT tcL_N8.pg side E n 232 iter 30 changes 2766 INH_V 0 SW 1301 RP 1465 rp_car 1320 seg_max 8 PD_V 158 DP_V 824 ED_V 30 TQ_MAT 1 at (0, 3, 4) ex {'DP': (2, 3, 6, 85, 13, (107, 21, (107, 210))), 'PD': (8, 3, 6, 85, [8, 85, 107]), 'ED': (19, 3, 7, (19, 200))} PASS
+PIVOT tcR4_N6.pg side E n 138 iter 22 changes 792 INH_V 0 SW 460 RP 332 rp_car 284 seg_max 4 PD_V 14 DP_V 280 ED_V 0 TQ_MAT 1 at (0, 2, 2) ex {'DP': (2, 5, 6, 2, 0, (47, 1, (47, 122))), 'PD': (102, 5, 8, 102, [78, 102])} PASS
+PIVOT tcR4_N7.pg side E n 182 iter 41 changes 2141 INH_V 0 SW 1044 RP 1097 rp_car 982 seg_max 11 PD_V 67 DP_V 1037 ED_V 6 TQ_MAT 1 at (2, 2, 2) ex {'DP': (1, 4, 6, 137, 25, (127, 33, (127, 167))), 'PD': (4, 4, 8, 142, [142, 127, 137]), 'ED': (83, 4, 14, (83, 158))} PASS
+PIVOT tcR4_N8.pg side E n 232 iter 33 changes 2243 INH_V 0 SW 1108 RP 1135 rp_car 1083 seg_max 8 PD_V 105 DP_V 1075 ED_V 6 TQ_MAT 1 at (5, 2, 2) ex {'DP': (0, 5, 7, 161, 45, (136, 51, (136, 213))), 'PD': (104, 5, 6, 136, [136]), 'ED': (104, 16, 22, (104, 198))} PASS
+PIVOT tcL_N12.pg side E n 492 iter 37 changes 5400 INH_V 0 SW 3010 RP 2390 rp_car 1771 seg_max 7 PD_V 280 DP_V 1288 ED_V 45 TQ_MAT 1 at (14, 5, 5) ex {'DP': (0, 7, 8, 224, 9, (339, 14, (339, 467))), 'PD': (19, 7, 11, 89, [85, 68, 69, 89]), 'ED': (20, 7, 10, (20, 18))} PASS
+PIVOT tcS8_N6.pg side E n 138 iter 17 changes 460 INH_V 0 SW 235 RP 225 rp_car 138 seg_max 2 PD_V 1 DP_V 32 ED_V 0 TQ_MAT 1 at (1, 2, 2) ex {'DP': (0, 8, 9, 123, 1, (83, 8, (83, 73))), 'PD': (13, 8, 9, 13, [13])} PASS
+PIVOT tcS8_N10.pg side E n 350 iter 16 changes 338 INH_V 0 SW 107 RP 231 rp_car 199 seg_max 2 PD_V 5 DP_V 68 ED_V 0 TQ_MAT 1 at (238, 2, 2) ex {'DP': (79, 13, 14, 79, 0, (150, 15, (150, 318))), 'PD': (151, 13, 14, 199, [199])} PASS
+PIVOT tcS8_N7.pg side E n 182 iter 14 changes 337 INH_V 0 SW 155 RP 182 rp_car 10 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (0, 3, 4) ex {} PASS
+PIVOT tcS8_N8.pg side E n 232 iter 10 changes 274 INH_V 0 SW 256 RP 18 rp_car 4 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (2, 4, 4) ex {} PASS
+PIVOT tpp_viol_n22.pg side E n 22 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT tpp_viol_n63.pg side E n 63 iter 8 changes 37 INH_V 0 SW 34 RP 3 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (2, 2, 2) ex {} PASS
+PIVOT tcS8_N11.pg side E n 418 iter 20 changes 28 INH_V 0 SW 1 RP 27 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (3, 2, 2) ex {} PASS
+PIVOT cxmig_k4_n54.pg side E n 54 iter 12 changes 39 INH_V 0 SW 33 RP 6 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 5 at (17, 0, 10) ex {} PASS
+PIVOT cxmig_k16_n138.pg side E n 138 iter 24 changes 135 INH_V 0 SW 117 RP 18 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 17 at (41, 0, 22) ex {} PASS
+PIVOT cxmig_k8_n82.pg side E n 82 iter 16 changes 71 INH_V 0 SW 61 RP 10 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 9 at (25, 0, 14) ex {} PASS
+PIVOT ladderd0_k12_n48.pg side E n 48 iter 14 changes 40 INH_V 0 SW 14 RP 26 rp_car 14 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (0, 0, 11) ex {} PASS
+PIVOT ladderd0_k24_n84.pg side E n 84 iter 26 changes 76 INH_V 0 SW 26 RP 50 rp_car 26 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (0, 0, 23) ex {} PASS
+PIVOT tcS8_N9.pg side E n 288 iter 36 changes 354 INH_V 0 SW 145 RP 209 rp_car 154 seg_max 4 PD_V 9 DP_V 62 ED_V 0 TQ_MAT 1 at (0, 2, 2) ex {'DP': (21, 19, 21, 219, 7, (220, 8, (220, 264))), 'PD': (123, 19, 21, 162, [162])} PASS
+PIVOT ladderent_k12_n48.pg side E n 48 iter 14 changes 40 INH_V 0 SW 14 RP 26 rp_car 14 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (0, 0, 11) ex {} PASS
+PIVOT ladderent_k24_n84.pg side E n 84 iter 26 changes 76 INH_V 0 SW 26 RP 50 rp_car 26 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (0, 0, 23) ex {} PASS
+PIVOT reader_L10_n36.pg side E n 36 iter 13 changes 23 INH_V 0 SW 16 RP 7 rp_car 5 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (0, 0, 9) ex {} PASS
+PIVOT reader_L20_n56.pg side E n 56 iter 23 changes 33 INH_V 0 SW 26 RP 7 rp_car 5 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (0, 0, 19) ex {} PASS
+PIVOT ladderd0_k48_n156.pg side E n 156 iter 50 changes 148 INH_V 0 SW 50 RP 98 rp_car 50 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (0, 0, 47) ex {} PASS
+PIVOT reader_L40_n96.pg side E n 96 iter 43 changes 53 INH_V 0 SW 46 RP 7 rp_car 5 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (0, 0, 39) ex {} PASS
+PIVOT gate_K16_n197.pg side E n 197 iter 23 changes 243 INH_V 0 SW 154 RP 89 rp_car 0 seg_max 2 PD_V 9 DP_V 9 ED_V 0 TQ_MAT 1 at (3, 0, 20) ex {'PD': (183, 0, 1, 183, [183]), 'DP': (183, 0, 1, 183, 0, (183, 0, (183, 110)))} PASS
+PIVOT ladderent_k48_n156.pg side E n 156 iter 50 changes 148 INH_V 0 SW 50 RP 98 rp_car 50 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (0, 0, 47) ex {} PASS
+PIVOT grow_K12_n149.pg side E n 149 iter 18 changes 158 INH_V 0 SW 99 RP 59 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 2 at (124, 0, 16) ex {} PASS
+PIVOT pairoc_n58.pg side E n 58 iter 4 changes 43 INH_V 0 SW 26 RP 17 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 2 at (54, 0, 2) ex {} PASS
+PIVOT pp_K12_n161.pg side E n 161 iter 20 changes 184 INH_V 0 SW 108 RP 76 rp_car 8 seg_max 2 PD_V 6 DP_V 6 ED_V 0 TQ_MAT 1 at (3, 0, 16) ex {'PD': (153, 0, 1, 153, [153]), 'DP': (153, 0, 1, 153, 0, (153, 0, (153, 94)))} PASS
+PIVOT pp_K12_n161_dual.pg side E n 161 iter 20 changes 74 INH_V 0 SW 68 RP 6 rp_car 6 seg_max 2 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (157, 0, 19) ex {} PASS
+PIVOT grow_K40_n373.pg side E n 373 iter 46 changes 438 INH_V 0 SW 267 RP 171 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 2 at (292, 0, 44) ex {} PASS
+PIVOT pp_K48_n449.pg side E n 449 iter 56 changes 544 INH_V 0 SW 324 RP 220 rp_car 8 seg_max 2 PD_V 6 DP_V 6 ED_V 0 TQ_MAT 1 at (3, 0, 52) ex {'PD': (441, 0, 1, 441, [441]), 'DP': (441, 0, 1, 441, 0, (441, 0, (441, 238)))} PASS
+PIVOT usplit_n14.pg side E n 14 iter 3 changes 7 INH_V 0 SW 5 RP 2 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (4, 0, 1) ex {} PASS
+PIVOT usplit_n23.pg side E n 23 iter 9 changes 17 INH_V 0 SW 15 RP 2 rp_car 0 seg_max 2 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (4, 0, 7) ex {} PASS
+PIVOT usplit_rd_n24.pg side E n 24 iter 3 changes 12 INH_V 0 SW 10 RP 2 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (3, 0, 1) ex {} PASS
+PIVOT usplit_rd_s3_n27.pg side E n 27 iter 4 changes 14 INH_V 0 SW 12 RP 2 rp_car 2 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (4, 0, 2) ex {} PASS
+PIVOT usplit_s3_n16.pg side E n 16 iter 3 changes 8 INH_V 0 SW 6 RP 2 rp_car 2 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (14, 0, 0) ex {} PASS
+PIVOT nest3_n20.pg side E n 20 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT nest3_n24.pg side E n 24 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT vrall_viol_n20.pg side E n 20 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT xcov11_n20.pg side E n 20 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT xctx_viol_n20.pg side E n 20 iter 5 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT fbref_cex_n32.pg side E n 32 iter 56 changes 309 INH_V 0 SW 257 RP 52 rp_car 2 seg_max 9 PD_V 77 DP_V 107 ED_V 17 TQ_MAT 5 at (0, 4, 53) ex {'PD': (0, 4, 27, 0, [0]), 'DP': (0, 4, 27, 0, 0, (0, 0, (0, 7))), 'ED': (2, 4, 33, (2, 27))} PASS
+PIVOT j10_n24.pg side E n 24 iter 25 changes 155 INH_V 0 SW 59 RP 96 rp_car 37 seg_max 4 PD_V 17 DP_V 25 ED_V 1 TQ_MAT 8 at (3, 1, 23) ex {'PD': (0, 1, 20, 0, [0]), 'DP': (0, 1, 20, 0, 0, (0, 0, (0, 12))), 'ED': (19, 1, 18, (19, 15))} PASS
+PIVOT j4_n40.pg side E n 40 iter 106 changes 635 INH_V 0 SW 338 RP 297 rp_car 62 seg_max 6 PD_V 48 DP_V 65 ED_V 15 TQ_MAT 20 at (0, 3, 104) ex {'PD': (0, 3, 79, 0, [0]), 'DP': (0, 3, 79, 0, 0, (0, 0, (0, 22))), 'ED': (2, 3, 41, (2, 10))} PASS
+PIVOT j5_n16.pg side E n 16 iter 30 changes 79 INH_V 0 SW 39 RP 40 rp_car 4 seg_max 3 PD_V 8 DP_V 8 ED_V 1 TQ_MAT 6 at (0, 6, 27) ex {'PD': (2, 6, 10, 2, [2]), 'DP': (2, 6, 10, 2, 0, (2, 0, (2, 13))), 'ED': (2, 6, 26, (2, 13))} PASS
+PIVOT j7_n32.pg side E n 32 iter 50 changes 204 INH_V 0 SW 110 RP 94 rp_car 6 seg_max 2 PD_V 5 DP_V 6 ED_V 0 TQ_MAT 10 at (0, 1, 46) ex {'DP': (1, 1, 19, 1, 0, (2, 1, (2, 28))), 'PD': (11, 1, 43, 11, [11])} PASS
+PIVOT j7_n48.pg side E n 48 iter 78 changes 417 INH_V 0 SW 224 RP 193 rp_car 22 seg_max 3 PD_V 34 DP_V 47 ED_V 0 TQ_MAT 12 at (7, 1, 74) ex {'PD': (0, 1, 21, 0, [0]), 'DP': (0, 1, 21, 0, 0, (0, 0, (0, 29)))} PASS
+PIVOT j8_n32.pg side E n 32 iter 54 changes 211 INH_V 0 SW 120 RP 91 rp_car 15 seg_max 3 PD_V 8 DP_V 9 ED_V 0 TQ_MAT 8 at (7, 1, 50) ex {'PD': (0, 1, 34, 0, [0]), 'DP': (0, 1, 34, 0, 0, (0, 0, (0, 4)))} PASS
+PIVOT j8_n48.pg side E n 48 iter 86 changes 401 INH_V 0 SW 223 RP 178 rp_car 30 seg_max 2 PD_V 23 DP_V 26 ED_V 0 TQ_MAT 11 at (0, 1, 84) ex {'PD': (0, 1, 27, 0, [0]), 'DP': (0, 1, 27, 0, 0, (0, 0, (0, 29)))} PASS
+PIVOT kw25_n32.pg side E n 32 iter 29 changes 67 INH_V 0 SW 64 RP 3 rp_car 0 seg_max 2 PD_V 2 DP_V 2 ED_V 0 TQ_MAT 3 at (11, 0, 24) ex {'PD': (3, 0, 9, 3, [3]), 'DP': (3, 0, 9, 3, 0, (3, 0, (3, 22)))} PASS
+PIVOT kw_n16.pg side E n 16 iter 12 changes 12 INH_V 0 SW 12 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (3, 0, 0) ex {} PASS
+PIVOT kw_n24.pg side E n 24 iter 20 changes 20 INH_V 0 SW 20 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (1, 0, 5) ex {} PASS
+PIVOT kw_n48.pg side E n 48 iter 40 changes 48 INH_V 0 SW 48 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 3 at (4, 0, 36) ex {} PASS
+PIVOT obr_eq_n24.pg side E n 24 iter 7 changes 6 INH_V 0 SW 6 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (13, 1, 1) ex {} PASS
+PIVOT obr_n32.pg side E n 32 iter 22 changes 46 INH_V 0 SW 46 RP 0 rp_car 0 seg_max 3 PD_V 8 DP_V 8 ED_V 4 TQ_MAT 2 at (26, 0, 11) ex {'PD': (1, 0, 4, 1, [1]), 'DP': (1, 0, 4, 1, 0, (1, 0, (1, 12))), 'ED': (1, 0, 14, (1, 12))} PASS
+PIVOT u1t_cex_n32.pg side E n 32 iter 12 changes 107 INH_V 0 SW 107 RP 0 rp_car 0 seg_max 2 PD_V 0 DP_V 1 ED_V 0 TQ_MAT 4 at (10, 0, 6) ex {'DP': (18, 0, 3, 18, 0, (4, 1, (4, 30)))} PASS
+PIVOT u1t_own6_n32.pg side E n 32 iter 9 changes 48 INH_V 0 SW 48 RP 0 rp_car 0 seg_max 4 PD_V 7 DP_V 8 ED_V 2 TQ_MAT 2 at (6, 0, 5) ex {'PD': (6, 0, 1, 6, [6]), 'DP': (6, 0, 1, 6, 0, (6, 0, (6, 24))), 'ED': (6, 0, 3, (6, 24))} PASS
+PIVOT u23sw64_n32.pg side E n 32 iter 16 changes 80 INH_V 0 SW 80 RP 0 rp_car 0 seg_max 2 PD_V 5 DP_V 7 ED_V 0 TQ_MAT 3 at (5, 1, 7) ex {'PD': (2, 1, 5, 2, [2]), 'DP': (2, 1, 5, 2, 0, (2, 0, (2, 6)))} PASS
+PIVOT u2flat73_n32.pg side E n 32 iter 16 changes 83 INH_V 0 SW 83 RP 0 rp_car 0 seg_max 2 PD_V 10 DP_V 10 ED_V 0 TQ_MAT 1 at (1, 0, 1) ex {'PD': (2, 0, 1, 20, [20]), 'DP': (2, 0, 1, 20, 1, (20, 1, (20, 25)))} PASS
+PIVOT u2flat_n32.pg side E n 32 iter 13 changes 5 INH_V 0 SW 5 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (11, 3, 3) ex {} PASS
+PIVOT x31_cu16.pg side E n 16 iter 23 changes 101 INH_V 0 SW 43 RP 58 rp_car 4 seg_max 3 PD_V 5 DP_V 6 ED_V 1 TQ_MAT 12 at (0, 2, 22) ex {'PD': (6, 2, 11, 6, [6]), 'DP': (6, 2, 11, 6, 0, (6, 0, (6, 10))), 'ED': (15, 2, 16, (15, 5))} PASS
+PIVOT gate_K64_n581.pg side E n 581 iter 71 changes 723 INH_V 0 SW 442 RP 281 rp_car 0 seg_max 2 PD_V 9 DP_V 9 ED_V 0 TQ_MAT 1 at (3, 0, 68) ex {'PD': (567, 0, 1, 567, [567]), 'DP': (567, 0, 1, 567, 0, (567, 0, (567, 302)))} PASS
+PIVOT x31_cu24.pg side E n 24 iter 22 changes 154 INH_V 0 SW 154 RP 0 rp_car 0 seg_max 3 PD_V 7 DP_V 33 ED_V 0 TQ_MAT 8 at (2, 2, 17) ex {'DP': (2, 2, 6, 11, 1, (6, 2, (6, 21))), 'PD': (4, 2, 7, 4, [4])} PASS
+PIVOT x31_cu32.pg side E n 32 iter 49 changes 395 INH_V 0 SW 138 RP 257 rp_car 56 seg_max 4 PD_V 47 DP_V 59 ED_V 2 TQ_MAT 19 at (12, 6, 46) ex {'DP': (0, 6, 12, 0, 0, (27, 1, (27, 30))), 'PD': (0, 6, 13, 0, [27, 0]), 'ED': (28, 6, 16, (28, 5))} PASS
+PIVOT x31_cu32i.pg side E n 32 iter 42 changes 433 INH_V 0 SW 152 RP 281 rp_car 43 seg_max 4 PD_V 31 DP_V 33 ED_V 5 TQ_MAT 22 at (0, 3, 40) ex {'PD': (1, 3, 6, 1, [1]), 'DP': (1, 3, 6, 1, 0, (1, 0, (1, 8))), 'ED': (1, 3, 22, (1, 8))} PASS
+PIVOT pp_K48_n449_dual.pg side E n 449 iter 56 changes 218 INH_V 0 SW 212 RP 6 rp_car 6 seg_max 2 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (445, 0, 55) ex {} PASS
+PIVOT x31_lem_e24.pg side E n 24 iter 54 changes 91 INH_V 0 SW 91 RP 0 rp_car 0 seg_max 3 PD_V 8 DP_V 8 ED_V 0 TQ_MAT 4 at (2, 2, 36) ex {'PD': (3, 2, 8, 3, [3]), 'DP': (3, 2, 8, 3, 0, (3, 0, (3, 10)))} PASS
+PIVOT x31_lem_t32.pg side E n 32 iter 65 changes 177 INH_V 0 SW 176 RP 1 rp_car 1 seg_max 4 PD_V 24 DP_V 30 ED_V 1 TQ_MAT 6 at (15, 6, 60) ex {'DP': (0, 6, 58, 0, 0, (24, 1, (24, 2))), 'PD': (1, 6, 10, 1, [1]), 'ED': (5, 6, 39, (5, 28))} PASS
+PIVOT x31_nh_r20.pg side E n 20 iter 15 changes 13 INH_V 0 SW 13 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (0, 1, 12) ex {} PASS
+PIVOT x31_cu48.pg side E n 48 iter 46 changes 563 INH_V 0 SW 219 RP 344 rp_car 71 seg_max 3 PD_V 28 DP_V 31 ED_V 0 TQ_MAT 16 at (0, 4, 44) ex {'PD': (0, 4, 27, 0, [0]), 'DP': (0, 4, 27, 0, 0, (0, 0, (0, 28)))} PASS
+PIVOT x31_nh_e24.pg side E n 24 iter 20 changes 22 INH_V 0 SW 22 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (0, 0, 2) ex {} PASS
+PIVOT x31_ru24.pg side E n 24 iter 7 changes 56 INH_V 0 SW 56 RP 0 rp_car 0 seg_max 3 PD_V 1 DP_V 8 ED_V 0 TQ_MAT 1 at (0, 1, 1) ex {'DP': (2, 1, 3, 2, 0, (1, 4, (1, 21))), 'PD': (19, 1, 4, 19, [19])} PASS
+PIVOT x31_re24.pg side E n 24 iter 6 changes 49 INH_V 0 SW 49 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 2 at (0, 1, 4) ex {} PASS
+PIVOT x31_rx32.pg side E n 32 iter 55 changes 262 INH_V 0 SW 166 RP 96 rp_car 9 seg_max 3 PD_V 13 DP_V 16 ED_V 0 TQ_MAT 15 at (0, 2, 54) ex {'PD': (3, 2, 16, 3, [3]), 'DP': (3, 2, 16, 3, 0, (3, 0, (3, 15)))} PASS
+PIVOT x32_rand16.pg side E n 16 iter 15 changes 13 INH_V 0 SW 13 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT x31_rx48.pg side E n 48 iter 53 changes 537 INH_V 0 SW 293 RP 244 rp_car 99 seg_max 5 PD_V 72 DP_V 88 ED_V 12 TQ_MAT 14 at (0, 2, 45) ex {'PD': (0, 2, 6, 0, [0]), 'DP': (0, 2, 6, 0, 0, (0, 0, (0, 28))), 'ED': (2, 2, 12, (2, 27))} PASS
+PIVOT x32_nest40.pg side E n 40 iter 58 changes 368 INH_V 0 SW 204 RP 164 rp_car 19 seg_max 3 PD_V 42 DP_V 46 ED_V 0 TQ_MAT 12 at (0, 5, 56) ex {'PD': (0, 5, 11, 0, [0]), 'DP': (0, 5, 11, 0, 0, (0, 0, (0, 39)))} PASS
+PIVOT x32_rand24.pg side E n 24 iter 20 changes 20 INH_V 0 SW 20 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (0, 0, 2) ex {} PASS
+PIVOT x32_rand32.pg side E n 32 iter 29 changes 29 INH_V 0 SW 29 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT x32_rand48.pg side E n 48 iter 44 changes 44 INH_V 0 SW 44 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (0, 0, 33) ex {} PASS
+PIVOT x32_waves32.pg side E n 32 iter 81 changes 429 INH_V 0 SW 319 RP 110 rp_car 10 seg_max 4 PD_V 30 DP_V 41 ED_V 1 TQ_MAT 13 at (6, 4, 79) ex {'PD': (0, 4, 72, 0, [0]), 'DP': (0, 4, 72, 0, 0, (0, 0, (0, 28))), 'ED': (1, 4, 67, (1, 10))} PASS
+PIVOT cone_n65.pg side E n 65 iter 12 changes 21 INH_V 0 SW 21 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (4, 1, 3) ex {} PASS
+PIVOT x32_rand64.pg side E n 64 iter 56 changes 57 INH_V 0 SW 57 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (0, 0, 23) ex {} PASS
+PIVOT x32_waves48.pg side E n 48 iter 89 changes 193 INH_V 0 SW 192 RP 1 rp_car 1 seg_max 2 PD_V 3 DP_V 4 ED_V 0 TQ_MAT 4 at (0, 4, 80) ex {'PD': (8, 4, 66, 8, [8]), 'DP': (8, 4, 66, 8, 0, (8, 0, (8, 10)))} PASS
+PIVOT ueonce_n27.pg side E n 27 iter 12 changes 38 INH_V 0 SW 32 RP 6 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 2 at (1, 0, 9) ex {} PASS
+PIVOT cone_n69.pg side E n 69 iter 25 changes 67 INH_V 0 SW 67 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 2 at (3, 1, 19) ex {} PASS
+PIVOT switchbestexp_1.pg side E n 35 iter 20 changes 123 INH_V 0 SW 120 RP 3 rp_car 3 seg_max 6 PD_V 51 DP_V 59 ED_V 15 TQ_MAT 1 at (3, 0, 0) ex {'PD': (3, 0, 5, 27, [27]), 'DP': (3, 0, 5, 27, 4, (27, 4, (27, 15))), 'ED': (15, 0, 14, (16, 14))} PASS
+PIVOT switchbestexp_2.pg side E n 60 iter 32 changes 419 INH_V 0 SW 402 RP 17 rp_car 17 seg_max 13 PD_V 220 DP_V 241 ED_V 117 TQ_MAT 2 at (53, 0, 20) ex {'PD': (1, 0, 24, 3, [1, 3]), 'DP': (1, 0, 24, 3, 1, (3, 1, (3, 7))), 'ED': (4, 0, 17, (4, 1))} PASS
+PIVOT switchbestexp_3.pg side E n 85 iter 41 changes 718 INH_V 0 SW 687 RP 31 rp_car 31 seg_max 19 PD_V 354 DP_V 434 ED_V 179 TQ_MAT 2 at (72, 0, 23) ex {'PD': (1, 0, 27, 3, [1, 3]), 'DP': (1, 0, 27, 3, 1, (3, 1, (3, 8))), 'ED': (4, 0, 20, (4, 1))} PASS
+PIVOT switchbestexp_4.pg side E n 110 iter 47 changes 976 INH_V 0 SW 931 RP 45 rp_car 45 seg_max 21 PD_V 473 DP_V 589 ED_V 235 TQ_MAT 1 at (3, 0, 0) ex {'PD': (1, 0, 27, 3, [1, 3]), 'DP': (1, 0, 27, 3, 1, (3, 1, (3, 9))), 'ED': (4, 0, 20, (4, 1))} PASS
+PIVOT switchbestexp_5.pg side E n 135 iter 55 changes 1274 INH_V 0 SW 1215 RP 59 rp_car 59 seg_max 24 PD_V 622 DP_V 766 ED_V 313 TQ_MAT 1 at (3, 0, 0) ex {'PD': (1, 0, 29, 3, [1, 3]), 'DP': (1, 0, 29, 3, 1, (3, 1, (3, 10))), 'ED': (4, 0, 22, (4, 1))} PASS
+PIVOT switchbestexp_6.pg side E n 160 iter 62 changes 1560 INH_V 0 SW 1487 RP 73 rp_car 73 seg_max 26 PD_V 763 DP_V 943 ED_V 386 TQ_MAT 1 at (3, 0, 0) ex {'PD': (1, 0, 30, 3, [1, 3]), 'DP': (1, 0, 30, 3, 1, (3, 1, (3, 11))), 'ED': (4, 0, 23, (4, 1))} PASS
+PIVOT switchbestexp_7.pg side E n 185 iter 68 changes 1847 INH_V 0 SW 1760 RP 87 rp_car 87 seg_max 28 PD_V 897 DP_V 1121 ED_V 446 TQ_MAT 1 at (3, 0, 0) ex {'PD': (1, 0, 30, 3, [1, 3]), 'DP': (1, 0, 30, 3, 1, (3, 1, (3, 12))), 'ED': (4, 0, 23, (4, 1))} PASS
+PIVOT switchbestexp_8.pg side E n 210 iter 77 changes 2200 INH_V 0 SW 2099 RP 101 rp_car 101 seg_max 31 PD_V 1087 DP_V 1357 ED_V 553 TQ_MAT 1 at (3, 0, 0) ex {'PD': (1, 0, 33, 3, [1, 3]), 'DP': (1, 0, 33, 3, 1, (3, 1, (3, 13))), 'ED': (4, 0, 26, (4, 1))} PASS
+PIVOT switchallexp_1.pg side E n 21 iter 5 changes 36 INH_V 0 SW 34 RP 2 rp_car 2 seg_max 3 PD_V 7 DP_V 7 ED_V 0 TQ_MAT 1 at (4, 0, 0) ex {'PD': (4, 0, 4, 4, [4]), 'DP': (4, 0, 4, 4, 0, (4, 0, (4, 1)))} PASS
+PIVOT switchallexp_2.pg side E n 35 iter 8 changes 84 INH_V 0 SW 72 RP 12 rp_car 12 seg_max 4 PD_V 12 DP_V 25 ED_V 4 TQ_MAT 1 at (5, 0, 0) ex {'PD': (1, 0, 6, 1, [1]), 'DP': (1, 0, 6, 1, 0, (1, 0, (1, 4))), 'ED': (3, 0, 5, (21, 24))} PASS
+PIVOT switchallexp_3.pg side E n 49 iter 7 changes 155 INH_V 0 SW 141 RP 14 rp_car 14 seg_max 5 PD_V 27 DP_V 52 ED_V 3 TQ_MAT 1 at (6, 0, 0) ex {'PD': (1, 0, 5, 1, [1]), 'DP': (1, 0, 5, 1, 0, (1, 0, (1, 5))), 'ED': (4, 0, 5, (37, 40))} PASS
+PIVOT switchallexp_4.pg side E n 63 iter 8 changes 235 INH_V 0 SW 219 RP 16 rp_car 16 seg_max 6 PD_V 56 DP_V 90 ED_V 3 TQ_MAT 1 at (7, 0, 0) ex {'PD': (1, 0, 5, 1, [1]), 'DP': (1, 0, 5, 1, 0, (1, 0, (1, 6))), 'ED': (5, 0, 5, (51, 54))} PASS
+PIVOT switchallexp_5.pg side E n 77 iter 10 changes 306 INH_V 0 SW 288 RP 18 rp_car 18 seg_max 7 PD_V 65 DP_V 114 ED_V 3 TQ_MAT 1 at (8, 0, 0) ex {'PD': (1, 0, 5, 1, [1]), 'DP': (1, 0, 5, 1, 0, (1, 0, (1, 7))), 'ED': (6, 0, 5, (65, 68))} PASS
+PIVOT switchallexp_6.pg side E n 91 iter 12 changes 395 INH_V 0 SW 375 RP 20 rp_car 20 seg_max 9 PD_V 77 DP_V 149 ED_V 3 TQ_MAT 1 at (9, 0, 0) ex {'PD': (1, 0, 5, 1, [1]), 'DP': (1, 0, 5, 1, 0, (1, 0, (1, 8))), 'ED': (7, 0, 6, (79, 82))} PASS
+PIVOT counter_core_2.pg side E n 15 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_core_3.pg side E n 21 iter 6 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_core_4.pg side E n 27 iter 8 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_core_5.pg side E n 33 iter 10 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_core_6.pg side E n 39 iter 12 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_core_8.pg side E n 51 iter 16 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_dp_2.pg side E n 12 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_dp_3.pg side E n 16 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_dp_4.pg side E n 20 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_dp_5.pg side E n 24 iter 6 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_dp_6.pg side E n 28 iter 6 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_dp_8.pg side E n 36 iter 8 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_m_2.pg side E n 9 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_m_3.pg side E n 12 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_m_4.pg side E n 15 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_m_5.pg side E n 18 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_m_6.pg side E n 21 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_m_8.pg side E n 27 iter 5 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_ortl_2.pg side E n 11 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_ortl_3.pg side E n 16 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_ortl_4.pg side E n 21 iter 5 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_ortl_5.pg side E n 26 iter 6 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_ortl_6.pg side E n 31 iter 7 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_ortl_8.pg side E n 41 iter 9 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_qpt_2.pg side E n 4 iter 1 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_qpt_3.pg side E n 6 iter 1 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_qpt_4.pg side E n 8 iter 1 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_qpt_5.pg side E n 10 iter 1 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_qpt_6.pg side E n 12 iter 1 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_qpt_8.pg side E n 16 iter 1 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_rob_2.pg side E n 31 iter 5 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_rob_3.pg side E n 54 iter 7 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_rob_4.pg side E n 83 iter 10 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_rob_5.pg side E n 118 iter 13 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_rob_6.pg side E n 159 iter 16 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_rob_8.pg side E n 259 iter 22 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_rr_2.pg side E n 8 iter 1 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_rr_3.pg side E n 12 iter 1 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_rr_4.pg side E n 16 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_rr_5.pg side E n 20 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_rr_6.pg side E n 24 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_rr_8.pg side E n 32 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT counter_symsi_2.pg side E n 22 iter 13 changes 9 INH_V 0 SW 5 RP 4 rp_car 4 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (4, 6, 6) ex {} PASS
+PIVOT counter_symsi_3.pg side E n 32 iter 25 changes 65 INH_V 0 SW 36 RP 29 rp_car 23 seg_max 3 PD_V 7 DP_V 18 ED_V 0 TQ_MAT 1 at (0, 1, 3) ex {'PD': (3, 1, 4, 12, [12]), 'DP': (3, 1, 4, 12, 2, (12, 2, (12, 14)))} PASS
+PIVOT counter_symsi_4.pg side E n 42 iter 22 changes 63 INH_V 0 SW 37 RP 26 rp_car 12 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (0, 4, 5) ex {} PASS
+PIVOT counter_symsi_5.pg side E n 52 iter 31 changes 218 INH_V 0 SW 114 RP 104 rp_car 82 seg_max 2 PD_V 0 DP_V 1 ED_V 0 TQ_MAT 4 at (4, 14, 18) ex {'DP': (14, 14, 19, 14, 0, (28, 3, (28, 29)))} PASS
+PIVOT counter_symsi_6.pg side E n 62 iter 37 changes 345 INH_V 0 SW 187 RP 158 rp_car 126 seg_max 3 PD_V 5 DP_V 38 ED_V 0 TQ_MAT 4 at (0, 15, 22) ex {'DP': (1, 15, 21, 8, 1, (13, 6, (13, 14))), 'PD': (3, 15, 23, 3, [13, 3])} PASS
+PIVOT counter_symsi_8.pg side E n 82 iter 48 changes 603 INH_V 0 SW 315 RP 288 rp_car 232 seg_max 4 PD_V 2 DP_V 50 ED_V 0 TQ_MAT 6 at (6, 18, 30) ex {'DP': (1, 18, 28, 8, 1, (22, 8, (22, 23))), 'PD': (13, 18, 30, 13, [22, 13])} PASS
+PIVOT recursiveladder_2.pg side E n 10 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT recursiveladder_3.pg side E n 15 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT recursiveladder_4.pg side E n 20 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT recursiveladder_5.pg side E n 25 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT recursiveladder_6.pg side E n 30 iter 6 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT tc_2.pg side E n 22 iter 4 changes 5 INH_V 0 SW 1 RP 4 rp_car 1 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (11, 0, 0) ex {} PASS
+PIVOT tc_3.pg side E n 42 iter 7 changes 27 INH_V 0 SW 13 RP 14 rp_car 14 seg_max 2 PD_V 0 DP_V 2 ED_V 0 TQ_MAT 0 at None ex {'DP': (2, 2, 5, 2, 0, (1, 1, (1, 15)))} PASS
+PIVOT tc_4.pg side E n 68 iter 16 changes 228 INH_V 0 SW 137 RP 91 rp_car 76 seg_max 3 PD_V 6 DP_V 19 ED_V 0 TQ_MAT 1 at (2, 2, 2) ex {'PD': (8, 7, 9, 8, [8]), 'DP': (8, 7, 9, 8, 0, (8, 0, (8, 54)))} PASS
+PIVOT tc_5.pg side E n 100 iter 19 changes 424 INH_V 0 SW 225 RP 199 rp_car 148 seg_max 5 PD_V 9 DP_V 70 ED_V 0 TQ_MAT 1 at (0, 2, 2) ex {'DP': (4, 6, 7, 27, 3, (54, 6, (54, 85))), 'PD': (54, 6, 7, 54, [54])} PASS
+PIVOT tc_6.pg side E n 138 iter 18 changes 446 INH_V 0 SW 232 RP 214 rp_car 151 seg_max 4 PD_V 10 DP_V 109 ED_V 0 TQ_MAT 1 at (2, 3, 5) ex {'DP': (1, 3, 5, 5, 3, (103, 24, (103, 101))), 'PD': (49, 3, 9, 49, [49])} PASS
+PIVOT tc_8.pg side E n 232 iter 30 changes 2766 INH_V 0 SW 1301 RP 1465 rp_car 1320 seg_max 8 PD_V 158 DP_V 824 ED_V 30 TQ_MAT 1 at (0, 3, 4) ex {'DP': (2, 3, 6, 85, 13, (107, 21, (107, 210))), 'PD': (8, 3, 6, 85, [8, 85, 107]), 'ED': (19, 3, 7, (19, 200))} PASS
+PIVOT pivot_demo.pg side E n 11 iter 0 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT d_pivot_demo.pg side E n 11 iter 0 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT runquad_K3_m4_n54.pg side E n 54 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT runquad_K8_m30_n192.pg side E n 192 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT s3quad_K3_m4.pg side E n 137 iter 21 changes 332 INH_V 0 SW 332 RP 0 rp_car 0 seg_max 2 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 3 at (4, 0, 19) ex {} PASS
+PIVOT s3quad_K8_m30.pg side E n 479 iter 264 changes 4361 INH_V 0 SW 4361 RP 0 rp_car 0 seg_max 2 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 8 at (4, 0, 262) ex {} PASS
+PIVOT d_runquad_K3.pg side E n 54 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT topfix_n3.pg side E n 63 iter 22 changes 196 INH_V 0 SW 192 RP 4 rp_car 4 seg_max 7 PD_V 66 DP_V 68 ED_V 16 TQ_MAT 1 at (4, 0, 0) ex {'DP': (5, 0, 1, 21, 1, (3, 2, (3, 0))), 'PD': (5, 6, 7, 21, [21]), 'ED': (36, 6, 11, (36, 37))} PASS
+PIVOT topfix_n4.pg side E n 84 iter 28 changes 307 INH_V 0 SW 301 RP 6 rp_car 6 seg_max 11 PD_V 126 DP_V 128 ED_V 39 TQ_MAT 1 at (4, 0, 0) ex {'DP': (5, 0, 1, 27, 1, (3, 2, (3, 0))), 'PD': (5, 6, 7, 27, [27]), 'ED': (48, 6, 11, (48, 49))} PASS
+PIVOT topfix_n6.pg side E n 126 iter 40 changes 589 INH_V 0 SW 579 RP 10 rp_car 10 seg_max 19 PD_V 306 DP_V 308 ED_V 115 TQ_MAT 1 at (4, 0, 0) ex {'DP': (5, 0, 1, 39, 1, (3, 2, (3, 0))), 'PD': (5, 6, 7, 39, [39]), 'ED': (72, 6, 11, (72, 73))} PASS
+PIVOT topfix_n8.pg side E n 168 iter 52 changes 951 INH_V 0 SW 937 RP 14 rp_car 14 seg_max 27 PD_V 566 DP_V 568 ED_V 231 TQ_MAT 1 at (4, 0, 0) ex {'DP': (5, 0, 1, 51, 1, (3, 2, (3, 0))), 'PD': (5, 6, 7, 51, [51]), 'ED': (96, 6, 11, (96, 97))} PASS
+PIVOT topfix_n10.pg side E n 210 iter 64 changes 1393 INH_V 0 SW 1375 RP 18 rp_car 18 seg_max 35 PD_V 906 DP_V 908 ED_V 387 TQ_MAT 1 at (4, 0, 0) ex {'DP': (5, 0, 1, 63, 1, (3, 2, (3, 0))), 'PD': (5, 6, 7, 63, [63]), 'ED': (120, 6, 11, (120, 121))} PASS
+PIVOT d_hntop_n3.pg side E n 63 iter 22 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT topfix_n8_cmp.pg side E n 171 iter 52 changes 956 INH_V 0 SW 938 RP 18 rp_car 18 seg_max 27 PD_V 568 DP_V 570 ED_V 231 TQ_MAT 1 at (4, 0, 0) ex {'DP': (5, 0, 1, 51, 1, (3, 2, (3, 0))), 'PD': (168, 0, 1, 168, [168]), 'ED': (96, 6, 11, (96, 97))} PASS
+PIVOT dlc_d2.pg side E n 27 iter 7 changes 20 INH_V 0 SW 20 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 3 at (1, 0, 6) ex {} PASS
+PIVOT dlc_d3.pg side E n 109 iter 15 changes 99 INH_V 0 SW 99 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 7 at (1, 0, 14) ex {} PASS
+PIVOT dlc_d4.pg side E n 455 iter 31 changes 442 INH_V 0 SW 442 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 15 at (1, 0, 30) ex {} PASS
+PIVOT d_dlc_d3.pg side E n 109 iter 15 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT runfam_K10.pg side E n 49 iter 97 changes 232 INH_V 0 SW 179 RP 53 rp_car 4 seg_max 2 PD_V 4 DP_V 4 ED_V 0 TQ_MAT 5 at (12, 4, 96) ex {'PD': (8, 4, 32, 8, [8]), 'DP': (8, 4, 32, 8, 0, (8, 0, (8, 6)))} PASS
+PIVOT runfam_K40.pg side E n 79 iter 163 changes 412 INH_V 0 SW 329 RP 83 rp_car 4 seg_max 2 PD_V 4 DP_V 4 ED_V 0 TQ_MAT 5 at (12, 4, 162) ex {'PD': (8, 4, 38, 8, [8]), 'DP': (8, 4, 38, 8, 0, (8, 0, (8, 6)))} PASS
+PIVOT r100_n40.pg side E n 40 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r101_n50.pg side E n 50 iter 4 changes 26 INH_V 0 SW 26 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r102_n60.pg side E n 60 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r103_n70.pg side E n 70 iter 5 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r104_n80.pg side E n 80 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r105_n20.pg side E n 20 iter 5 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r106_n30.pg side E n 30 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r107_n40.pg side E n 40 iter 3 changes 1 INH_V 0 SW 1 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r108_n50.pg side E n 50 iter 3 changes 6 INH_V 0 SW 6 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (5, 0, 0) ex {} PASS
+PIVOT r109_n60.pg side E n 60 iter 4 changes 1 INH_V 0 SW 1 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r10_n50.pg side E n 50 iter 4 changes 3 INH_V 0 SW 3 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r110_n70.pg side E n 70 iter 5 changes 15 INH_V 0 SW 14 RP 1 rp_car 1 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (3, 3, 3) ex {} PASS
+PIVOT r111_n80.pg side E n 80 iter 7 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r112_n20.pg side E n 20 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r113_n30.pg side E n 30 iter 3 changes 2 INH_V 0 SW 2 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r114_n40.pg side E n 40 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r115_n50.pg side E n 50 iter 5 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r116_n60.pg side E n 60 iter 4 changes 2 INH_V 0 SW 2 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (11, 3, 3) ex {} PASS
+PIVOT r117_n70.pg side E n 70 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r118_n80.pg side E n 80 iter 6 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r119_n20.pg side E n 20 iter 1 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r11_n60.pg side E n 60 iter 5 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r120_n30.pg side E n 30 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r121_n40.pg side E n 40 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r122_n50.pg side E n 50 iter 5 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r123_n60.pg side E n 60 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r124_n70.pg side E n 70 iter 7 changes 27 INH_V 0 SW 18 RP 9 rp_car 5 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (3, 0, 0) ex {} PASS
+PIVOT r125_n80.pg side E n 80 iter 6 changes 25 INH_V 0 SW 18 RP 7 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (9, 0, 0) ex {} PASS
+PIVOT r126_n20.pg side E n 20 iter 5 changes 2 INH_V 0 SW 2 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r127_n30.pg side E n 30 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r128_n40.pg side E n 40 iter 3 changes 1 INH_V 0 SW 1 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (20, 2, 2) ex {} PASS
+PIVOT r129_n50.pg side E n 50 iter 3 changes 1 INH_V 0 SW 1 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (27, 2, 2) ex {} PASS
+PIVOT r12_n70.pg side E n 70 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r130_n60.pg side E n 60 iter 3 changes 5 INH_V 0 SW 4 RP 1 rp_car 1 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (7, 2, 2) ex {} PASS
+PIVOT r131_n70.pg side E n 70 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r132_n80.pg side E n 80 iter 5 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r133_n20.pg side E n 20 iter 2 changes 3 INH_V 0 SW 3 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (4, 0, 0) ex {} PASS
+PIVOT r134_n30.pg side E n 30 iter 2 changes 3 INH_V 0 SW 3 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (17, 1, 1) ex {} PASS
+PIVOT r135_n40.pg side E n 40 iter 2 changes 1 INH_V 0 SW 1 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r136_n50.pg side E n 50 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r137_n60.pg side E n 60 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r138_n70.pg side E n 70 iter 4 changes 32 INH_V 0 SW 32 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r139_n80.pg side E n 80 iter 3 changes 1 INH_V 0 SW 1 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (35, 2, 2) ex {} PASS
+PIVOT r13_n80.pg side E n 80 iter 3 changes 11 INH_V 0 SW 8 RP 3 rp_car 2 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (15, 0, 1) ex {} PASS
+PIVOT r140_n20.pg side E n 20 iter 1 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r141_n30.pg side E n 30 iter 4 changes 3 INH_V 0 SW 3 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (6, 3, 3) ex {} PASS
+PIVOT r142_n40.pg side E n 40 iter 5 changes 1 INH_V 0 SW 1 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (16, 3, 4) ex {} PASS
+PIVOT r143_n50.pg side E n 50 iter 1 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r144_n60.pg side E n 60 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r145_n70.pg side E n 70 iter 7 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r146_n80.pg side E n 80 iter 7 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r147_n20.pg side E n 20 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r148_n30.pg side E n 30 iter 2 changes 2 INH_V 0 SW 2 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (11, 1, 1) ex {} PASS
+PIVOT r149_n40.pg side E n 40 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r14_n20.pg side E n 20 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r150_n50.pg side E n 50 iter 6 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r151_n60d2.pg side E n 60 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r152_n60d2.pg side E n 60 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r153_n60d2.pg side E n 60 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r154_n60d2.pg side E n 60 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r155_n60d2.pg side E n 60 iter 5 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r156_n60d2.pg side E n 60 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r157_n60d2.pg side E n 60 iter 5 changes 53 INH_V 0 SW 29 RP 24 rp_car 24 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (2, 2, 4) ex {} PASS
+PIVOT r158_n60d2.pg side E n 60 iter 2 changes 69 INH_V 0 SW 69 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (3, 0, 1) ex {} PASS
+PIVOT r159_n60d2.pg side E n 60 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r15_n30.pg side E n 30 iter 2 changes 10 INH_V 0 SW 5 RP 5 rp_car 5 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r160_n60d2.pg side E n 60 iter 3 changes 3 INH_V 0 SW 3 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r161_n60d2.pg side E n 60 iter 4 changes 2 INH_V 0 SW 2 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r162_n60d2.pg side E n 60 iter 5 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r163_n60d2.pg side E n 60 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r164_n60d2.pg side E n 60 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r165_n60d2.pg side E n 60 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r166_n60d2.pg side E n 60 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r167_n60d2.pg side E n 60 iter 3 changes 3 INH_V 0 SW 3 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (11, 2, 2) ex {} PASS
+PIVOT r168_n60d2.pg side E n 60 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r169_n60d2.pg side E n 60 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r16_n40.pg side E n 40 iter 3 changes 2 INH_V 0 SW 2 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (8, 2, 2) ex {} PASS
+PIVOT r170_n60d2.pg side E n 60 iter 5 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r171_n60d2.pg side E n 60 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r172_n60d2.pg side E n 60 iter 3 changes 4 INH_V 0 SW 2 RP 2 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (25, 0, 0) ex {} PASS
+PIVOT r173_n60d2.pg side E n 60 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r174_n60d2.pg side E n 60 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r175_n60d2.pg side E n 60 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r176_n60d2.pg side E n 60 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r177_n60d2.pg side E n 60 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r178_n60d2.pg side E n 60 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r179_n60d2.pg side E n 60 iter 4 changes 3 INH_V 0 SW 3 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (26, 3, 3) ex {} PASS
+PIVOT r17_n50.pg side E n 50 iter 5 changes 26 INH_V 0 SW 20 RP 6 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (0, 0, 0) ex {} PASS
+PIVOT r180_n60d2.pg side E n 60 iter 2 changes 2 INH_V 0 SW 2 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r181_n60d2.pg side E n 60 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r182_n60d2.pg side E n 60 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r183_n60d2.pg side E n 60 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r184_n60d2.pg side E n 60 iter 4 changes 45 INH_V 0 SW 42 RP 3 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (1, 1, 1) ex {} PASS
+PIVOT r185_n60d2.pg side E n 60 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r186_n60d2.pg side E n 60 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r187_n60d2.pg side E n 60 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r188_n60d2.pg side E n 60 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r189_n60d2.pg side E n 60 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r18_n60.pg side E n 60 iter 3 changes 1 INH_V 0 SW 1 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r190_n60d2.pg side E n 60 iter 2 changes 2 INH_V 0 SW 1 RP 1 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (32, 1, 1) ex {} PASS
+PIVOT r191_n60d2.pg side E n 60 iter 6 changes 2 INH_V 0 SW 2 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r192_n60d2.pg side E n 60 iter 5 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r193_n60d2.pg side E n 60 iter 2 changes 13 INH_V 0 SW 13 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (13, 0, 0) ex {} PASS
+PIVOT r194_n60d2.pg side E n 60 iter 5 changes 3 INH_V 0 SW 3 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r195_n60d2.pg side E n 60 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r196_n60d2.pg side E n 60 iter 2 changes 6 INH_V 0 SW 6 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r197_n60d2.pg side E n 60 iter 5 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r198_n60d2.pg side E n 60 iter 5 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r199_n60d2.pg side E n 60 iter 2 changes 3 INH_V 0 SW 3 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (4, 0, 0) ex {} PASS
+PIVOT r19_n70.pg side E n 70 iter 5 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r1_n30.pg side E n 30 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r200_n60d2.pg side E n 60 iter 2 changes 3 INH_V 0 SW 3 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (4, 0, 0) ex {} PASS
+PIVOT r20_n80.pg side E n 80 iter 3 changes 2 INH_V 0 SW 2 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (14, 2, 2) ex {} PASS
+PIVOT r21_n20.pg side E n 20 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r22_n30.pg side E n 30 iter 2 changes 1 INH_V 0 SW 1 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (9, 1, 1) ex {} PASS
+PIVOT r23_n40.pg side E n 40 iter 5 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r24_n50.pg side E n 50 iter 3 changes 1 INH_V 0 SW 1 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (16, 1, 1) ex {} PASS
+PIVOT r25_n60.pg side E n 60 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r26_n70.pg side E n 70 iter 6 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r27_n80.pg side E n 80 iter 5 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r28_n20.pg side E n 20 iter 1 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r29_n30.pg side E n 30 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r2_n40.pg side E n 40 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r30_n40.pg side E n 40 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r31_n50.pg side E n 50 iter 3 changes 1 INH_V 0 SW 1 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r32_n60.pg side E n 60 iter 3 changes 4 INH_V 0 SW 4 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (27, 1, 1) ex {} PASS
+PIVOT r33_n70.pg side E n 70 iter 6 changes 5 INH_V 0 SW 5 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (14, 2, 2) ex {} PASS
+PIVOT r34_n80.pg side E n 80 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r35_n20.pg side E n 20 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r36_n30.pg side E n 30 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r37_n40.pg side E n 40 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r38_n50.pg side E n 50 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r39_n60.pg side E n 60 iter 5 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r3_n50.pg side E n 50 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r40_n70.pg side E n 70 iter 5 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r41_n80.pg side E n 80 iter 4 changes 2 INH_V 0 SW 2 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (4, 3, 3) ex {} PASS
+PIVOT r42_n20.pg side E n 20 iter 0 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r43_n30.pg side E n 30 iter 4 changes 9 INH_V 0 SW 7 RP 2 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (2, 0, 2) ex {} PASS
+PIVOT r44_n40.pg side E n 40 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r45_n50.pg side E n 50 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r46_n60.pg side E n 60 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r47_n70.pg side E n 70 iter 5 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r48_n80.pg side E n 80 iter 6 changes 53 INH_V 0 SW 32 RP 21 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (0, 0, 0) ex {} PASS
+PIVOT r49_n20.pg side E n 20 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r4_n60.pg side E n 60 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r50_n30.pg side E n 30 iter 1 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r51_n40.pg side E n 40 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r52_n50.pg side E n 50 iter 4 changes 5 INH_V 0 SW 1 RP 4 rp_car 4 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r53_n60.pg side E n 60 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r54_n70.pg side E n 70 iter 5 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r55_n80.pg side E n 80 iter 5 changes 2 INH_V 0 SW 2 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (10, 3, 3) ex {} PASS
+PIVOT r56_n20.pg side E n 20 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r57_n30.pg side E n 30 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r58_n40.pg side E n 40 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r59_n50.pg side E n 50 iter 7 changes 2 INH_V 0 SW 2 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (22, 1, 2) ex {} PASS
+PIVOT r5_n70.pg side E n 70 iter 8 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r60_n60.pg side E n 60 iter 4 changes 30 INH_V 0 SW 25 RP 5 rp_car 5 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r61_n70.pg side E n 70 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r62_n80.pg side E n 80 iter 10 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r63_n20.pg side E n 20 iter 1 changes 1 INH_V 0 SW 1 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r64_n30.pg side E n 30 iter 1 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r65_n40.pg side E n 40 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r66_n50.pg side E n 50 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r67_n60.pg side E n 60 iter 5 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r68_n70.pg side E n 70 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r69_n80.pg side E n 80 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r6_n80.pg side E n 80 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r70_n20.pg side E n 20 iter 2 changes 1 INH_V 0 SW 1 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (5, 1, 1) ex {} PASS
+PIVOT r71_n30.pg side E n 30 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r72_n40.pg side E n 40 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r73_n50.pg side E n 50 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r74_n60.pg side E n 60 iter 3 changes 26 INH_V 0 SW 26 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (1, 1, 2) ex {} PASS
+PIVOT r75_n70.pg side E n 70 iter 5 changes 3 INH_V 0 SW 2 RP 1 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (5, 1, 1) ex {} PASS
+PIVOT r76_n80.pg side E n 80 iter 5 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r77_n20.pg side E n 20 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r78_n30.pg side E n 30 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r79_n40.pg side E n 40 iter 4 changes 2 INH_V 0 SW 2 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (2, 3, 3) ex {} PASS
+PIVOT r7_n20.pg side E n 20 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r80_n50.pg side E n 50 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r81_n60.pg side E n 60 iter 5 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r82_n70.pg side E n 70 iter 3 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r83_n80.pg side E n 80 iter 4 changes 1 INH_V 0 SW 1 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r84_n20.pg side E n 20 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r85_n30.pg side E n 30 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r86_n40.pg side E n 40 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r87_n50.pg side E n 50 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r88_n60.pg side E n 60 iter 2 changes 1 INH_V 0 SW 1 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r89_n70.pg side E n 70 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r8_n30.pg side E n 30 iter 5 changes 3 INH_V 0 SW 3 RP 0 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (17, 4, 4) ex {} PASS
+PIVOT r90_n80.pg side E n 80 iter 5 changes 1 INH_V 0 SW 1 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (31, 0, 1) ex {} PASS
+PIVOT r91_n20.pg side E n 20 iter 3 changes 1 INH_V 0 SW 1 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (8, 0, 2) ex {} PASS
+PIVOT r92_n30.pg side E n 30 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r93_n40.pg side E n 40 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r94_n50.pg side E n 50 iter 5 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r95_n60.pg side E n 60 iter 6 changes 33 INH_V 0 SW 5 RP 28 rp_car 0 seg_max 1 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 1 at (0, 1, 1) ex {} PASS
+PIVOT r96_n70.pg side E n 70 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r97_n80.pg side E n 80 iter 4 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r98_n20.pg side E n 20 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r99_n30.pg side E n 30 iter 2 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT r9_n40.pg side E n 40 iter 5 changes 0 INH_V 0 SW 0 RP 0 rp_car 0 seg_max 0 PD_V 0 DP_V 0 ED_V 0 TQ_MAT 0 at None ex {} PASS
+PIVOT fcobsP_3.pg side E n 90 iter 41 changes 841 INH_V 0 SW 734 RP 107 rp_car 101 seg_max 18 PD_V 434 DP_V 515 ED_V 226 TQ_MAT 2 at (72, 0, 23) ex {'PD': (1, 0, 25, 3, [1, 3]), 'DP': (1, 0, 25, 3, 1, (3, 1, (3, 8))), 'ED': (4, 0, 20, (4, 1))} PASS
+PIVOT fcobsP_4.pg side E n 115 iter 47 changes 1109 INH_V 0 SW 976 RP 133 rp_car 127 seg_max 23 PD_V 567 DP_V 681 ED_V 290 TQ_MAT 1 at (3, 0, 0) ex {'PD': (1, 0, 25, 3, [1, 3]), 'DP': (1, 0, 25, 3, 1, (3, 1, (3, 9))), 'ED': (4, 0, 20, (4, 1))} PASS
+PIVOT fcobs_6.pg side E n 163 iter 62 changes 1660 INH_V 0 SW 1529 RP 131 rp_car 128 seg_max 35 PD_V 840 DP_V 1012 ED_V 412 TQ_MAT 1 at (3, 0, 0) ex {'PD': (1, 0, 28, 3, [1, 3]), 'DP': (1, 0, 28, 3, 1, (3, 1, (3, 11))), 'ED': (4, 0, 23, (4, 1))} PASS
