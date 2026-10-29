@@ -67,7 +67,7 @@ define no initial strategy, and Friedmann's papers' specified starts were not op
 | 11 | 665 | 47 / 57 | 53 / 62 | 51 / 60 | 335 | 33 / 28 | 33 / 29 | 26 / 26 |
 | 12 | 779 | 51 / 61 | 68 / 81 | 62 / 79 | 383 | 36 / 30 | 36 / 36 | 28 / 32 |
 - SBC_τ = 0 and N5 fallbacks = 0 in every run. N5 phases: friedmann 3 (LE: 0, 1, 1, then 3); fearnley 2 (LE: 0, then 1).
-- N5 stays linear in N for both starts: friedmann 4N + 3 (S3, N ≥ 3) and 4N + 13 (LE, N ≥ 5); fearnley 3N (S3, N ≥ 7) and 2N + 6 (LE, N ≥ 3).
+- N5 stays linear in N for both starts: friedmann 4N + 3 (S3, N ≥ 3) and 4N + 13 (LE, N ≥ 6); fearnley 3N (S3, N ≥ 7) and 2N + 6 (LE, N ≥ 4).
 - N5-SF's SBC on friedmannsubexp grows FASTER than linearly in N at the top of the range. S3 increments by N: 4, 4, 3, 4, 4, 6, 6, 4, 8, 7, 11.
   LE increments: …, 7, 9, 7, 4, 8, 4, 19. So SBC/N = 4.0 (N 8), 4.4 (N 10), 5.2 (N 12) from S3, and 5.5, 5.6, 6.6 from LE.
   In the game size n (≈ 4.5N² + 10.5N + 5), SBC/n FALLS (S3: 0.085 at N 8, 0.080 at N 12). This is DATA on N ≤ 12 only; the trend could be
