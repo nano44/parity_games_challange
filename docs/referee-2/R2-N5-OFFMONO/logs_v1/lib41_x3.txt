@@ -1,0 +1,51 @@
+MODE files ../R2-N5-STAU/lib41_noref.lst 3
+AK_checks: 992438
+CC0_checks: 13550
+CC1_checks: 13550
+CC2_checks: 13550
+CC3_checks: 13550
+CSUM_checks: 26718
+CTL_cc3m: 1032
+CTL_noexit: 637
+CTL_part: 567
+CTL_sign: 1067
+CTL_tbidx: 1975
+CTL_tbrev: 6983
+CTL_tbseq_ceven: 55
+CYC_total: 896
+ENGXI_checks: 19538
+FTK_checks: 12678
+FT_total: 1895
+OMP_caseL1: 1
+OMP_caseL2: 1211
+OMP_caseL2_P0: 1211
+OMP_checks: 1212
+OMP_parent_changed: 6
+OMP_strict: 26
+OM_caseL: 99
+OM_caseN: 25407
+OM_checks: 25506
+OM_parent_changed: 1045
+OM_strict: 4779
+PFC_checks: 81717
+PFC_checks_multi: 53028
+ZC2_total: 44
+ZCH_CEVEN: 94
+ZCH_ODDC: 1
+ZCH_STRICT: 53
+ZCH_TIE: 5
+ZCH_total: 153
+ZC_checks: 14420
+ZC_total: 63
+classes: 14772
+phases: 7170
+runs: 1230
+states: 19538
+transitions: 12368
+max_EXIT_per_x: (6, 'experiments/red/n5inj/instances/elimn_cex_n48.pg#1', 27)
+max_FT_per_phase_class: (44, 'experiments/red/xing/instances/x32_rand48.pg#0', 36)
+max_ODDC_per_phase_class: (1, 'experiments/new/box31/instances/u3ev_n16.pg#0', 2)
+max_TIE_per_phase_class: (1, 'experiments/n5-exhaustive/instances/n5s_maxph_0.pg#2', 4)
+max_ZCH_per_phase_class: (6, 'experiments/red/so/instances/tog6a_n32.pg#0', 13)
+max_kappa_changes_q: (51, 'experiments/si/orlens/instances/lev_l_x.pg#0', 30, 0, 51, 52)
+RESULT OK violations=0

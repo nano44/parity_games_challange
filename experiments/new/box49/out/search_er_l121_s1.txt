@@ -1,0 +1,7 @@
+it 3 count 12 |S| 6 S [4, 7, 8, 24, 31, 36]
+it 7 count 14 |S| 7 S [4, 7, 8, 24, 31, 34, 36]
+it 55 count 16 |S| 6 S [4, 10, 19, 32, 34, 36]
+it 126 count 17 |S| 6 S [4, 6, 19, 20, 21, 34]
+it 165 count 18 |S| 7 S [4, 6, 17, 19, 32, 34, 38]
+it 294 count 19 |S| 7 S [6, 8, 17, 19, 25, 27, 34]
+BEST class 11 kind evenreader count 19 S 6,8,17,19,25,27,34 phase (1, 122) length 121 n_dressed 41

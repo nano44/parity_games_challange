@@ -1,0 +1,55 @@
+EO_chk 12813
+EO_e1_after_c 4
+EO_windows 4247
+MR_post_FAIL 16
+MR_post_chk 395
+MR_pre_chk 116623
+PLSW_chk 497
+PLX_frozen 76
+PL_FAIL 76
+PL_chk 497
+PURE_ints 497
+PURE_withgate 62
+RUNS 592
+skip_big 98
+EX ('MR_post', '../../../experiments/new/instances/n5adv/best_fb_n32_seed132.pg/0', 0, 3, 12, 23)
+EX ('MR_post', '../../../experiments/new/instances/n5adv/best_fb_n32_seed132.pg/0', 0, 3, 14, 23)
+EX ('MR_post', '../../../experiments/new/instances/n5adv/best_fb_n32_seed132.pg/0', 0, 3, 19, 23)
+EX ('MR_post', '../../../experiments/new/instances/n5adv/best_fb_n32_seed132.pg/0', 3, 3, 12, 23)
+EX ('MR_post', '../../../experiments/new/instances/n5adv/best_fb_n32_seed132.pg/0', 3, 3, 14, 23)
+EX ('MR_post', '../../../experiments/new/instances/n5adv/best_fb_n32_seed132.pg/0', 3, 3, 19, 23)
+EX ('PL', '../../../experiments/new/instances/n5adv/best_fb_n32_seed132.pg/0', 5, 8, 12, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/new/instances/n5adv/best_n24_seed24.pg/0', 11, 12, 11, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/new/instances/n5adv/best_n8_seed8.pg/0', 0, 1, 0, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/new/instances/n5b9/sg2.pg/0', 13, 14, 11, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/new/instances/n5b9/sg3.pg/0', 15, 16, 11, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/new/instances/n5b9/sg4.pg/0', 14, 15, 11, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/new/instances/n5b9/sg5.pg/0', 15, 16, 11, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/new/instances/n5b9/tc1.pg/0', 15, 16, 11, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/new/instances/n5b9/tc1.pg/2', 5, 6, 11, 1, 0, 0, 0, 0, 'frozen')
+EX ('MR_post', '../../../experiments/new/instances/n5seg/seg_n16_seed716.pg/1', 1, 0, 1, 9)
+EX ('MR_post', '../../../experiments/new/instances/n5seg/seg_n16_seed716.pg/1', 1, 0, 2, 9)
+EX ('MR_post', '../../../experiments/new/instances/n5seg/seg_n16_seed716.pg/1', 1, 0, 4, 9)
+EX ('MR_post', '../../../experiments/new/instances/n5seg/seg_n16_seed716.pg/1', 1, 0, 7, 9)
+EX ('MR_post', '../../../experiments/new/instances/n5seg/seg_n16_seed716.pg/1', 1, 0, 13, 9)
+EX ('MR_post', '../../../experiments/new/instances/n5seg/seg_n16_seed716.pg/1', 1, 0, 14, 9)
+EX ('PL', '../../../experiments/new/instances/phase/fl_r24.pg/0', 1, 4, 5, 2, 1, 0, 0, 2, 'frozen')
+EX ('PL', '../../../experiments/new/instances/phase/fl_r24.pg/1', 3, 8, 5, 2, 1, 0, 0, 2, 'frozen')
+EX ('PL', '../../../experiments/new/instances/phase/fl_r24.pg/2', 1, 8, 5, 2, 1, 0, 0, 2, 'frozen')
+EX ('PL', '../../../experiments/new/instances/sbalt/sbalt_n32_seed1032.pg/0', 5, 6, 1, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/new/instances/sbalt/sbalt_n32_seed1032.pg/0', 7, 8, 1, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/new/instances/sbalt/sbalt_n32_seed1032.pg/2', 3, 4, 1, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/new/instances/seg10/seg_g12.pg/0', 11, 14, 1, 2, 1, 0, 0, 2, 'frozen')
+EX ('PL', '../../../experiments/new/instances/seg10/seg_r16_s167.pg/0', 10, 15, 12, 2, 1, 0, 0, 2, 'frozen')
+EX ('PL', '../../../experiments/red/carry/instances/ctx6_n20.pg/2', 1, 2, 9, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/red/carry/instances/gapbW_dup_n20.pg/0', 3, 5, 4, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/red/carry/instances/gapbW_dup_n20.pg/1', 4, 6, 4, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/red/carry/instances/phi_flat_alive_n32.pg/1', 8, 9, 25, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/red/carry/instances/phi_flat_alive_n32.pg/1', 8, 9, 29, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/red/carry/instances/spp22_oink_n40.pg/1', 10, 12, 23, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/red/carry/instances/spp22_oink_n40.pg/1', 10, 12, 31, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/red/carry/instances/spp22_oink_n40.pg/2', 7, 9, 23, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/red/carry/instances/spp22_oink_n40.pg/2', 7, 9, 31, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/red/carry/instances/spp25_oink_n40.pg/0', 7, 10, 23, 1, 0, 0, 0, 0, 'frozen')
+EX ('PL', '../../../experiments/red/carry/instances/spp25_oink_n40.pg/0', 7, 10, 31, 1, 0, 0, 0, 0, 'frozen')
+done

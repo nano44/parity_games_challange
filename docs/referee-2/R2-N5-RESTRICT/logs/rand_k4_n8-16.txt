@@ -1,0 +1,63 @@
+GP_EXTENDS random4812:1#0 phase 0 0 G ends by tau n 13
+GP_EXTENDS random4812:107#0 phase 0 0 G ends by tau n 9
+GP_EXTENDS random4812:248#2 phase 0 0 G ends by tau n 10
+GP_EXTENDS random4812:428#2 phase 1 1 G ends by tau n 16
+GP_EXTENDS random4812:458#1 phase 0 0 G ends by tau n 12
+GP_EXTENDS random4812:530#0 phase 0 0 G ends by tau n 11
+GP_EXTENDS random4812:621#2 phase 2 2 G ends by tau n 12
+GP_EXTENDS random4812:700#1 phase 2 2 G ends by tau n 10
+GP_EXTENDS random4812:736#1 phase 0 0 G ends by tau n 14
+GP_EXTENDS random4812:875#2 phase 1 1 G ends by tau n 9
+GP_EXTENDS random4812:895#2 phase 1 1 G ends by tau n 16
+GP_EXTENDS random4812:1014#2 phase 2 2 G ends by tau n 11
+GP_EXTENDS random4812:1021#2 phase 0 0 G ends by tau n 12
+GP_EXTENDS random4812:1028#1 phase 0 0 G ends by tau n 14
+GP_EXTENDS random4812:1090#2 phase 0 0 G ends by tau n 13
+GP_EXTENDS random4812:1211#1 phase 2 2 G ends by tau n 11
+GP_EXTENDS random4812:1232#1 phase 0 0 G ends by tau n 16
+GP_EXTENDS random4812:1263#0 phase 0 0 G ends by tau n 11
+GP_EXTENDS random4812:1263#1 phase 0 0 G ends by tau n 11
+GP_EXTENDS random4812:1519#1 phase 0 0 G ends by tau n 9
+GP_EXTENDS random4812:1541#2 phase 1 1 G ends by tau n 14
+GP_EXTENDS random4812:1591#0 phase 0 0 G ends by tau n 16
+GP_EXTENDS random4812:1713#1 phase 1 1 G ends by tau n 14
+GP_EXTENDS random4812:1735#1 phase 1 1 G ends by tau n 14
+GP_EXTENDS random4812:1750#1 phase 0 0 G ends by tau n 15
+GP_EXTENDS random4812:1755#0 phase 1 1 G ends by tau n 15
+GP_EXTENDS random4812:1822#2 phase 0 0 G ends by tau n 10
+GP_EXTENDS random4812:1870#0 phase 0 0 G ends by tau n 13
+GP_EXTENDS random4812:1878#0 phase 0 0 G ends by tau n 11
+GP_EXTENDS random4812:1878#2 phase 1 1 G ends by tau n 11
+MODE random 2000 8 16 4812 4 3
+CTL_GP_bites: 8253
+CTL_GP_runs: 9718
+GE_REP_steps: 799
+GE_RIV_checks: 7
+GE_RI_checks: 17029
+GE_instances: 16332
+GP_G_phase_ends_by_lambda: 1806
+GP_G_phase_ends_by_tau: 8236
+GP_Hstops_at_y: 188
+GP_REP_steps: 799
+GP_RIV_checks: 64
+GP_RI_checks: 17029
+GP_extends: 30
+GP_extends_G_by_tau: 30
+GP_instances: 16230
+GP_phase_end_checks: 10230
+GUJ_REP_steps: 3196
+GUJ_RIV_checks: 129
+GUJ_RI_checks: 68116
+GUJ_instances: 65253
+GU_REP_steps: 2768
+GU_RIV_checks: 70
+GU_RI_checks: 32997
+GU_instances: 30369
+QP_ge2: 5536
+QP_le1: 10694
+phases: 16230
+phases_ge2: 756
+runs: 6000
+GP_extends_example: (16, 'random4812:428#2', 1, 1, 'tau')
+max_QP: (4, 'random4812:2#1', 1, 1, 11)
+RESULT OK violations=0

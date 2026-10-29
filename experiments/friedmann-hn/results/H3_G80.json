@@ -1,0 +1,47 @@
+{
+"name": "H3_G80",
+"n": 3,
+"mode": "fig",
+"V": 63,
+"m": 149,
+"sha1": "f7bdd38ab04751ce891d481b98a3ffec09b8dc8e",
+"start_sha1": "76be428ed8f993b7ae8343be148a2847bbb703fb",
+"it": 18,
+"fb": 0,
+"phases": 1,
+"longest": 18,
+"tau_changes": 0,
+"lamXi_changes": 0,
+"lamW_changes": 0,
+"viol": [],
+"ok": true,
+"checks": {
+"n5_eq_n5b": true,
+"rows_eq": true,
+"oink": "zlk",
+"oink_eq": true,
+"verify_n5": true,
+"verify_n5b": true
+},
+"phases_detail": [
+{
+"p": 0,
+"a": 0,
+"b": 18,
+"len": 18,
+"end": "final",
+"ntau": 0,
+"dW": 0,
+"f": 0,
+"N_ep": 3,
+"NCONF": 2,
+"NCONF2": 0,
+"S": 1,
+"ALT": 2,
+"ALTsum": 2,
+"SBG": 2,
+"sbQ": 2,
+"D": 1
+}
+]
+}

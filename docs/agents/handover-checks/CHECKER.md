@@ -265,3 +265,44 @@ handover 1e2b39f5 (notes/CHECKER.md "## HANDOVER (successor 10 → successor 11)
   signed item's hypotheses and reference points; fix texts are then script-checked (quoted strings ≥ 25 chars, whitespace-normalised) in new and old drafts.
 - Also carried: stale clone with "up to date" (caught again here); addenda appended only (`cat >>`, then `git diff HEAD -- docs/checker/C79.md | grep -c '^-[^-]' || true` = 0);
   stamps from `date -u`; checker SHA ancestor of the landing commit; every commit of a landing checked.
+
+## Handover check (successor 12)
+Written 2026-10-28 22:17Z (date -u). CHECKER successor 12 (Opus 5.5, D15), this session. Predecessor: successor 11, session_01QoVozkVaMsXGUPBea678Fa,
+handover b88e5bd0 (notes/CHECKER.md "## HANDOVER (successor 11 → successor 12)"). Every answer is measured from the repository, and each names its command.
+
+### 1. Branch, head, ahead/behind trunk
+- The clone started at b88e5bd0 and reported "up to date" before `git fetch origin`. The fetch moved origin/claude/checker b88e5bd0 → 4f494319: successor 11
+  pushed 50c3d11e (trunk merge) and 4f494319 (C83 Add. 1) at 22:09:47-48Z, AFTER its handover. `git merge --ff-only origin/claude/checker` → 4f494319.
+- Trunk = claude/vibrant-johnson-nxvvxo, head 2143027b ("Lead: routing after SW-LIN dead, READER-INV; L-COMP parks; NOW; log").
+  4f494319 and b88e5bd0 are NOT ancestors of trunk (`merge-base --is-ancestor`: exit 1 each). Before merging, 3 commits were ahead (b88e5bd0, 50c3d11e, 4f494319).
+- `git merge --no-ff origin/claude/vibrant-johnson-nxvvxo` → d53774c5. `git rev-list --left-right --count HEAD...trunk` = 4 ahead / 0 behind; this file's commit makes 5 / 0.
+
+### 2. Open work and the next step of each
+- C79-C82 CLOSED (R70-R73 landed; table in the handover).
+- C83 = R74: main report e8f747f4 (FAIL E-1, N-1). Add. 1 PASS 4f494319 (successor 11, on 369444d1 @ 33f43c20).
+  I re-checked Add. 1 independently. Draft sha1 369444d1 at 33f43c20 and at trunk 2143027b, with no draft commit after 33f43c20. Script check of the
+  10 quoted texts in C83 §6-§7 (whitespace-normalised): every replacement text new=1 old=0, every replaced text new=0 old=1. Word-diff 87897968 → 33f43c20:
+  only the header rev tag, the four title replacements and N-1. Pins (packet d3788bc0, addendum af1c7ad4, fixes c8d01a25, REFEREE c9ed883d,
+  REFEREE-2 a8ed3e63) have the same sha1 on trunk, l-si, referee and referee-2 heads. Agreed: PASS. Next: the landed check (C83 §8) when R74 lands.
+- C84 = R75 (OFFMONO unit), draft sha1 0cd2d4ab at 6a3ab173 (also at trunk 2143027b). Not started at writing. Next: the main report docs/checker/C84.md
+  (points 1-7 of the brief).
+- Oink: built with scripts/setup_oink.sh in this container (exit 0; "oink built at 8fbf0a7"; tools/oink/build/oink present).
+
+### 3. docs/GAPS.md rows I own
+- `awk -F'|' '$4 ~ /CHECKER/' docs/GAPS.md`: none. Landing side: G-N5-TIME (l. 11, major, open). An R74 or R75 landing appends to it, so
+  the old row minus " |" must be a prefix of the new one, its status must stay open, and the other rows must be equal.
+
+### 4. The three owner rulings that most constrain me, verbatim (docs/DECISIONS.md, `grep -n -F`), with index status
+- D1 (DECISIONS l. 7; DECISIONS-INDEX l. 5 "active"): "A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim,
+  including the fleet's own, as wrong until it passes the gauntlet below."
+- D15 (l. 278; index l. 26 "active"): "q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it"
+- D18 (l. 333; index l. 32 "active"): "Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of
+  mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and
+  proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems."
+
+### 5. One trap, and the check that prevents it
+- Trap, new in this handover: the predecessor kept working after its handover. Successor 11 wrote C83 Add. 1 at 22:09Z, while the Lead's brief
+  (22:16Z) gave it to me as STEP 1. Check: fetch, then `git log origin/claude/checker` before every check, so done work is re-verified, not redone.
+  I told the Lead at 22:16Z and asked it to confirm successor 11 is parked before I start C84.
+- Carried trap: the E-items of C79-C83 were all title clauses wider than the signed items. Check: split the title into clauses, diff each one against
+  the signed item's hypotheses, and script-check the fix texts in the new and old drafts.

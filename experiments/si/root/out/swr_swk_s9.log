@@ -1,0 +1,12 @@
+seed score (-20, 8, -26) k 3 n 26
+step 35 score (-18, 8, -25) n 25
+step 199 score (-17, 7, -24) n 24
+step 213 score (-16, 7, -23) n 23
+step 377 score (-15, 7, -22) n 22
+step 404 score (-14, 8, -21) n 21
+step 426 score (-13, 8, -20) n 20
+step 1674 score (-12, 9, -19) n 19
+step 3547 score (-11, 7, -18) n 18
+step 3601 score (-10, 7, -17) n 17
+step 4376 score (-9, 7, -16) n 16
+final (-9, 7, -16)

@@ -1,0 +1,24 @@
+sigma True tau True fallbacks True sigma-bar True Xi (as vertex sets) True
+SAME states 123 123 n 41
+phases_equal True
+phase [1,122] len 121 XR_o 86 XR_max 86 (vertex 40) 2n 82 XR_o > 2n: True
+sigma True tau True fallbacks True sigma-bar True Xi (as vertex sets) True
+SAME states 123 123 n 46
+phases_equal True
+== new/box48/instances/long121_n40.pg new/box48/instances/long121_n40.start
+EXC_run_gates=2 EXC_run_max_plus1000=1001 MAXCH_run=3 RET_phase=35 RET_phase_AG=6 RET_phase_DCH=6 RET_phase_DDSET=5 RET_phase_OSB=16 RET_phase_in=2 RET_run=13 RET_run_AG=2 RET_run_DCH=1 RET_run_DDSET=3 RET_run_OSB=6 RET_run_in=1 gch_AG=11 gch_DCH=6 gch_DDSET=5 gch_OSB=17 gch_in=2 rise_M=41 runs=9 trans_AG=17 trans_DCH=4 trans_DDSET=11 trans_OSB=13 trans_OVAL=8 trans_in=60 y2_strictly_below_y1=41
+E1_chk=14 ESW_in=91 EXIT_at_cut=23 EXIT_in=8 K_max=10 K_sum=53 LASTSW_max=5 SBG_at_cut=39 SBG_in=2 SB_at_cut=39 SB_in=2 cut_AG=17 cut_DCH=4 cut_DDSET=11 cut_OSB=13 cut_OVAL=8 lastsw_minus_U_max_plus1000=965 pure_lastsw_max=5 runs=9 sw_in_impure=35 sw_in_pure=25 trans_at_cut=53 trans_in=60
+== si/root/instances/l121reader_n41.pg si/root/instances/l121reader_n41.start
+EXC_run_gates=2 EXC_run_max_plus1000=1001 MAXCH_run=11 RET_phase=93 RET_phase_AG=14 RET_phase_DCH=34 RET_phase_DDSET=10 RET_phase_OSB=7 RET_phase_OVAL=4 RET_phase_in=24 RET_run=29 RET_run_AG=3 RET_run_DCH=13 RET_run_DDSET=3 RET_run_in=10 gch_AG=22 gch_DCH=36 gch_DDSET=11 gch_OSB=9 gch_OVAL=4 gch_in=28 rise_M=110 runs=9 trans_AG=17 trans_DCH=19 trans_DDSET=10 trans_OSB=5 trans_OVAL=6 trans_in=56 y2_strictly_below_y1=110
+E1_chk=14 ESW_in=87 EXIT_at_cut=41 EXIT_in=15 K_max=10 K_sum=57 LASTSW_max=5 SBG_at_cut=82 SBG_in=28 SB_at_cut=82 SB_in=28 cut_AG=17 cut_DCH=19 cut_DDSET=10 cut_OSB=5 cut_OVAL=6 lastsw_minus_U_max_plus1000=964 pure_lastsw_max=0 runs=9 sw_in_impure=55 sw_in_pure=1 trans_at_cut=57 trans_in=56
+== si/root/instances/l121reader6_n46.pg si/root/instances/l121reader6_n46.start
+EXC_run_gates=27 EXC_run_max_plus1000=1004 MAXCH_run=5 RET_phase=109 RET_phase_AG=55 RET_phase_DCH=53 RET_phase_in=1 RET_run=50 RET_run_AG=29 RET_run_DCH=20 RET_run_in=1 gch_AG=61 gch_DCH=57 gch_in=1 rise_M=119 runs=9 trans_AG=35 trans_DCH=37 trans_DDSET=1 trans_in=40 y2_strictly_below_y1=119
+E1_chk=14 ESW_in=55 EXIT_at_cut=57 EXIT_in=3 K_max=14 K_sum=73 LASTSW_max=4 SBG_at_cut=118 SBG_in=1 SB_at_cut=118 SB_in=1 cut_AG=35 cut_DCH=37 cut_DDSET=1 lastsw_minus_U_max_plus1000=958 pure_lastsw_max=2 runs=9 sw_in_impure=25 sw_in_pure=15 trans_at_cut=73 trans_in=40
+sigma True tau True fallbacks True sigma-bar True Xi (as vertex sets) True
+SAME states 123 123 n 41
+condition (R): True | reader tau moves {40: []} | old tau changes [0]
+phases_equal True
+sigma True tau True fallbacks True sigma-bar True Xi (as vertex sets) True
+SAME states 123 123 n 46
+condition (R): True | reader tau moves {40: [], 41: [], 42: [0], 43: [], 44: [0], 45: []} | old tau changes [0]
+phases_equal True

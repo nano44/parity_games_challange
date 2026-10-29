@@ -1,0 +1,47 @@
+{
+"name": "H4_G176",
+"n": 4,
+"mode": "fig",
+"V": 84,
+"m": 214,
+"sha1": "66afd1d7ab80381763df9465b29c0b8358bcfd0a",
+"start_sha1": "d7404f4b59864f170805cb4763b2b1b12cac8c17",
+"it": 25,
+"fb": 0,
+"phases": 1,
+"longest": 25,
+"tau_changes": 0,
+"lamXi_changes": 0,
+"lamW_changes": 0,
+"viol": [],
+"ok": true,
+"checks": {
+"n5_eq_n5b": true,
+"rows_eq": true,
+"oink": "zlk",
+"oink_eq": true,
+"verify_n5": true,
+"verify_n5b": true
+},
+"phases_detail": [
+{
+"p": 0,
+"a": 0,
+"b": 25,
+"len": 25,
+"end": "final",
+"ntau": 0,
+"dW": 0,
+"f": 0,
+"N_ep": 4,
+"NCONF": 3,
+"NCONF2": 0,
+"S": 1,
+"ALT": 3,
+"ALTsum": 3,
+"SBG": 3,
+"sbQ": 3,
+"D": 1
+}
+]
+}

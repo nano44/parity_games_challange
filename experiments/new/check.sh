@@ -18,4 +18,53 @@ if command -v g++ >/dev/null; then
 else
   echo "g++ not found: renum check skipped"
 fi
+# Box 49 (successor 30): P-N5-OFFMONO-fixes quotes (76, at the referee §C commits 96b2cd9a / c040084a and the packet freezes), with the
+# shifted-line control that must fail. NOT RUN (named) if a source commit is absent from this clone.
+if git cat-file -e 96b2cd9a^{commit} 2>/dev/null && git cat-file -e c040084a^{commit} 2>/dev/null; then
+  if python3 -I box49/quotecheck3.py ../../docs/new/P-N5-OFFMONO-fixes-box49.md | grep -q "quotes=76 bad=0" && \
+     ! python3 -I box49/quotecheck3.py ../../docs/new/P-N5-OFFMONO-fixes-box49.md --mut >/dev/null; then
+    echo "OFFMONO-fixes quotes 76 + shifted control: PASS"
+    [ "$(sha1sum ../../docs/new/P-N5-OFFMONO-fixes-box49.md | cut -d' ' -f1)" = "490fc7f3ff31605062ac4239c3387873c06276e9" ] && echo "OFFMONO-fixes frozen sha1: PASS" || { echo "OFFMONO-fixes frozen sha1: FAILED"; exit 1; }
+  else
+    echo "OFFMONO-fixes quotes: FAILED"; exit 1
+  fi
+else
+  echo "OFFMONO-fixes quotes: NOT RUN (96b2cd9a or c040084a not in this clone)"
+fi
+# Box 49 (successor 30), N5-READER: the embedded reader l121_d29 keeps long121's run and has XR 86 > 2n; NOSW and SW-AMORT hold on long121.
+t49=$(mktemp -d)
+d49=$(python3 -I box49/dress.py box48/instances/long121_n40.pg box48/instances/long121_n40.start "$t49/d29" "1:0:0,1,2,5,6,7,8,17,20,22,23,24,30,36,39:5" "EDGE:29:h0")
+if echo "$d49" | grep -q "^SAME" && echo "$d49" | grep -q "(40, 1, 86, 74)" && \
+   python3 -I box49/cross.py 0 1 box48/instances/long121_n40.pg | grep -q "NOSW 0 PASS 303 SW 246 SWAMORT_viol 0"; then
+  echo "N5-READER: embedded reader (run SAME, XR 86), NOSW, SW-AMORT on long121: PASS"
+else
+  echo "N5-READER checks: FAILED"; exit 1
+fi
+rm -rf "$t49"
+# Box 49 (successor 30): packet P-N5-FBCK (frozen): quotes (9) with the shifted-line control, its sha1, and Theorem FB-C^K's data check on
+# the plain reader l121_cf35_39 (|C_f| 8, |C^K_f| 5, KVIOL absent).
+if git cat-file -e e83fd19d^{commit} 2>/dev/null; then
+  if python3 -I box49/quotecheck3.py ../../docs/new/P-N5-FBCK-box49.md | grep -q "quotes=9 bad=0" && \
+     ! python3 -I box49/quotecheck3.py ../../docs/new/P-N5-FBCK-box49.md --mut >/dev/null && \
+     [ "$(sha1sum ../../docs/new/P-N5-FBCK-box49.md | cut -d' ' -f1)" = "7747ecf23f65ac82fc2d75e0f6ecc28c7621ce1f" ] && \
+     fk=$(python3 -I box49/fbconf.py 0 1 box49/inst/l121_cf35_39.pg) && echo "$fk" | grep -q " Cf 8 Cf_K 5 " && ! echo "$fk" | grep -q KVIOL; then
+    echo "P-N5-FBCK quotes 9 + control, sha1, FB-C^K on l121_cf35_39: PASS"
+  else
+    echo "P-N5-FBCK checks: FAILED"; exit 1
+  fi
+else
+  echo "P-N5-FBCK quotes: NOT RUN (e83fd19d not in this clone)"
+fi
+# Box 49 (successor 30): P-N5-RESTRICT-fixes (frozen): 31 quotes at the §C commits 3b2631be / 864302d0 and the freeze 7e56744a, shifted control, sha1.
+if git cat-file -e 3b2631be^{commit} 2>/dev/null && git cat-file -e 864302d0^{commit} 2>/dev/null; then
+  if python3 -I box49/quotecheck3.py ../../docs/new/P-N5-RESTRICT-fixes-box48.md | grep -q "quotes=31 bad=0" && \
+     ! python3 -I box49/quotecheck3.py ../../docs/new/P-N5-RESTRICT-fixes-box48.md --mut >/dev/null && \
+     [ "$(sha1sum ../../docs/new/P-N5-RESTRICT-fixes-box48.md | cut -d' ' -f1)" = "f33f00b36ab5626e7ccd24e3b2fdd75ca56b2764" ]; then
+    echo "RESTRICT-fixes quotes 31 + control, sha1: PASS"
+  else
+    echo "RESTRICT-fixes checks: FAILED"; exit 1
+  fi
+else
+  echo "RESTRICT-fixes quotes: NOT RUN (3b2631be or 864302d0 not in this clone)"
+fi
 rm -rf "$tmp"

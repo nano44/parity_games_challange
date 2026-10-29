@@ -1,0 +1,58 @@
+MODE random 15000 5 10 1813 0 4
+AK_checks: 1111698
+CC0_checks: 13718
+CC1_checks: 13718
+CC2_checks: 13718
+CC3_checks: 13718
+CMP_D_CC0_lt_CC3: 2
+CMP_sum_CC0_lt_CC3: 11
+CMP_sum_CC1_lt_CC3: 9
+CMP_sum_CC2_lt_CC3: 9
+CSUM_checks: 13748
+CTL_cc3m: 1076
+CTL_noexit: 33
+CTL_part: 31
+CTL_sign: 735
+CTL_tbidx: 418
+CTL_tbrev: 10255
+CTL_tbseq_ceven: 204
+CYC_total: 2673
+ENGXI_checks: 145371
+FTK_checks: 8196
+FT_total: 3768
+OMP_caseL2: 3372
+OMP_caseL2_P0: 3371
+OMP_caseL2_P1: 1
+OMP_checks: 3372
+OMP_parent_changed: 33
+OMP_strict: 97
+OM_caseL: 5
+OM_caseN: 10371
+OM_checks: 10376
+OM_parent_changed: 374
+OM_strict: 1076
+PFC_checks: 274730
+PFC_checks_multi: 142685
+ZC2_total: 351
+ZCH_CEVEN: 2478
+ZCH_ODDC: 46
+ZCH_STRICT: 592
+ZCH_TIE: 35
+ZCH_total: 3151
+ZC_checks: 8813
+ZC_total: 1233
+classes: 249621
+phases: 137195
+runs: 60000
+states: 145371
+transitions: 8176
+CMPX_sum_CC0: (1, 'random1813:83#0', 4, 1, 1, 1, 2)
+CMPX_sum_CC1: (1, 'random1813:83#0', 4, 1, 1, 1, 2)
+CMPX_sum_CC2: (1, 'random1813:83#0', 4, 1, 1, 1, 2)
+max_EXIT_per_x: (2, 'random1813:6201#1', 2)
+max_FT_per_phase_class: (3, 'random1813:686#2', 0)
+max_ODDC_per_phase_class: (1, 'random1813:271#2', 5)
+max_TIE_per_phase_class: (1, 'random1813:326#1', 8)
+max_ZCH_per_phase_class: (2, 'random1813:199#3', 1)
+max_kappa_changes_q: (2, 'random1813:1625#2', 8, 0, 2, 3)
+RESULT OK violations=0

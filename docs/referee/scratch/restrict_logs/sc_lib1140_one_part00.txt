@@ -1,0 +1,26 @@
+GP_END_lam 431
+GP_END_tau 1833
+GP_EXT 27
+GP_EXT_ex 3
+GP_EXT_tau 27
+GP_EXTchk 2416
+GP_R4chk 612
+GP_REPchk 2416
+GP_REPtrans 1719
+GP_Rchk 4135
+GP_runs 2416
+MAX_NQ 19
+MAX_QP 13
+MAX_XDEG 24
+RUNS 743
+inphase_trans 1719
+longph_ex 1
+phases 284
+phases1 2132
+phases_QP2 104
+phases_QP_lt_NQ 205
+skip_big 39
+EX ('GP_EXT', 'h3_inputs/pft34_h3u_P32.pg/2', 2, 2)
+EX ('GP_EXT', 'hon_logs/climb_n12_k3.pg/0', 0, 0)
+EX ('GP_EXT', 'rl_climb_out/rlc_best_88003.pg/2', 1, 1)
+EX ('LONGPHASE', '../../../experiments/n5-epoch/instances/nep76_n40.pg/0', 9, 87, 'QP', 5, 'NQ', 5, 'XDEG', 24)

@@ -79,3 +79,45 @@ no honest cycle at t), CC (CHAIN-COUNT on J := the phase, with D := the actual m
 - OFFMONO-N4 (data on the hypothesis). OFFSET-MONO's conclusion also held at all 4,006 (t, q) with q on an honest cycle at t (n ≤ 40 library);
   a CONJECTURE that the hypothesis can be dropped would be the natural next item; it is not proved here (Case N's κ-Y-FORM_D and Case L's
   "q before c" both use it).
+
+## §C (unit: OFFMONO + add1 + add2 + add3). Comparison with REFEREE-2 (written 2026-10-28T21:07Z by date -u, after the Lead's word of 21:05Z;
+REFEREE-2's unit report docs/referee-2/R2-N5-OFFMONO.md at origin/claude/referee-2 4e9a6372, read only after all four REFEREE reports were pushed:
+R-N5-OFFMONO 04a563d3 and R-N5-OFFMONO-add c2a97189 (successor 15), R-N5-OFFMONO-add2 d6e07396 and R-N5-OFFMONO-add3 907e21b9 (successor 16))
+Written by REFEREE successor 16: as SUCCESSOR to the author (successor 15) for OFFMONO and add1, as author for add2 and add3. For the first two
+I re-read the reports, the packets' statements and REFEREE-2's report; the data cited below for them are my predecessor's, and the
+OFFSET-MONO⁺ and add2 probes I ran (add2_probe.py, add3_probe.py) re-check OFFSET-MONO and CHAIN-SUM along the way. Every verdict is
+labelled (Opus 5.5, D15).
+### Verdicts
+| file § | item | REFEREE | REFEREE-2 (4e9a6372) | joint |
+| --- | --- | --- | --- | --- |
+| OFFMONO §1 | OFFSET-MONO | SIGNED | SIGN | SIGNED |
+| OFFMONO §2 | CHAIN-SUM, CHAIN-COUNT | SIGNED | SIGN | SIGNED |
+| add1 §0 | (CYC-ID), (CYC-SHAPE) | SIGNED | CORRECT | SIGNED |
+| add1 §1-§2 | Z-CONST, CHAIN-COUNT′ (Step A, forms, Remarks) | SIGNED (OFFADD-N1 on Remark (i)) | SIGN | SIGNED |
+| add1 §3 | ZCH-COUNT and its Corollary | SIGNED | SIGN ("c Even / Odd" = owner, N-OFF-5) | SIGNED, owner reading |
+| add2 §0-§3 | (A-F), FT-COUNT, FT-CONST, CHAIN-COUNT″ | SIGNED | SIGN (FT-CONST's offset clause for x ∈ Q, N-OFF-3) | SIGNED, with N-OFF-3 |
+| add2 §4 | PF-CHOICE, TIE-CHARGE (code-level, si.py e688b963) | SIGNED | SIGN | SIGNED |
+| add3 §1-§2 | OFFSET-MONO⁺, CHAIN-COUNT‴ | SIGNED | SIGN | SIGNED |
+| quotes | all | OFFMONO 12, add1 15, add2 23, add3 9 verbatim | 53 of 55 verbatim; the 2 REFEREE-file quotes in add3 left to its §C | all verbatim: I checked those 2 at c2a97189 (R-N5-OFFMONO-add3 header) |
+Verdicts identical on every item. Joint gap map: EMPTY.
+### Notes, matched
+| REFEREE | REFEREE-2 | joint |
+| --- | --- | --- |
+| OFFMONO-N3 (Case L uses Lemma S (a) through 1E-N3) | its §0 premise column (Lemma S (a), standing premise 1E-N3) | same |
+| OFFMONO-N4, OFFADD-N2 (on-cycle levels: conjecture) | N-OFF-7, N-OFF-9 | ANSWERED by add3's OFFSET-MONO⁺ (signed by both); mark both "PROVED by add3" (ADD3-N3) |
+| OFFMONO-N1, N2 (data: parent changes; D large on lane instances) | N-OFF-8 (max EXIT per level 6), §2 (sum form tight in 2,857 cases) | compatible data notes |
+| OFFADD-N1 (CHAIN-COUNT′ ⇒ CHAIN-COUNT goes through the sum form) | N-OFF-6 (the sum forms are the sharper statements; the D forms need D ≥ 1) | compatible; both accepted |
+| ADD2-N1 (per vertex ≤ n F-touching changes, by contiguity of F: proof) | N-OFF-8 (FT-COUNT's factor 2 never needed in data, CTL_ft1 0) | compatible: mine is the proof, REFEREE-2's the data |
+| ADD2-N2 (TIE-CHARGE's Even step: x′ ∈ U_c from (Aκ), not from add1's "on Z_{t+1}(c)") | its §1.4 makes the same step ("next_{t+1}(z) ∈ U_c by (Aκ)") without a note | REFEREE's citation note, consistent with REFEREE-2's reading |
+| ADD2-N3 (si.py executed as the object), ADD2-N4 (cut ZC″ sound, not shown necessary) | N-OFF-2 (cut versions' bounds) | compatible |
+| — | N-OFF-1 (R38 (a) KEY's quoted sentence is about λ_U; λ_Ξ constancy comes from the phase definition) | ACCEPTED (I read KEY's text: its quoted clause is λ_U's; the (λ_Ξ, τ)-phase fixes λ_Ξ by definition) |
+| — (my add2 probe evaluates par at every vertex of Z_t(c)) | N-OFF-3 (FT-CONST's offset clause: par is defined for q ∈ Q ∩ U only; read x ∈ Z_t(c) ∩ Q) | ACCEPTED (OFFMONO §0 defines par for Q only; Step A″ uses only x ∈ Q) |
+| — | N-OFF-4 (the minimum is attained by R56 (d) with (Aκ)) | ACCEPTED |
+| — (my predecessor's zch_probe uses the owner of c) | N-OFF-5 (CEVEN / ODDC by the OWNER of c) | ACCEPTED |
+| my add3 report §2: "the three earlier corollaries follow" from CHAIN-COUNT‴ | N-OFF-2: true of the ROUTE, not of the NUMBERS (a cut version's sum bound is lower in 15 / 10 / 12 of 27,395 pairs; e.g. tcS8_N9 J = 19..21, 39 against 55) | ACCEPTED; I withdraw my wording. Splitting a piece at a cut can lower Σ(v − 1) by one per x, and the cut forms add |ZC| once, not once per x; so the cut bounds do not follow numerically from ‴'s. Suggested wording: "are no longer needed" (add3 §3 is a READING, unsigned) |
+| ADD3-N1 (y2 ≠ q: say it) | — (its §1.5 uses it silently) | REFEREE's one-clause note |
+| ADD3-N2 (Case L2a never occurs in my data) | N-OFF-7 (L2a with P(Ξ_t y2) ≠ ∅ occurs 2 times in its thin-spot search, and holds) | CORRECTED: L2a is exercised, twice, in REFEREE-2's data only; L1 once in each referee's data (mine: harm_n12_seed412); the landing text can say "L2a exercised twice" |
+### Data
+Both own engines, 0 failures of every signed item. REFEREE-2's corpus (23,959 runs, 142,287 phase-class pairs) and mine (add2 112,872 runs, add3
+103,872 runs) overlap only in lib41. Both find TIE and ODDC rare, the ZC / ZC″ cuts never needed, FT-COUNT's factor 2 unused, and L1 once.
+Both PF-CHOICE tie-break controls bite (mine 568, REFEREE-2 2,585 / 13,369 / 645). No disagreement; nothing open between the referees on the unit.

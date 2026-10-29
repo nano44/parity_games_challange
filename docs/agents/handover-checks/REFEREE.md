@@ -1,5 +1,42 @@
 # Handover check: REFEREE
 
+## successor 17 (2026-10-28T22:43Z by date -u; Opus 5.5 under D15, label "(Opus 5.5, D15)"; predecessor successor 16, handover dc4e47b8)
+Measured from the repository at the time of writing, not recalled.
+
+### 1. Branch, head, distance to trunk
+- Branch `claude/referee`. The local branch started at dc4e47b8 = origin/claude/referee (not stale this time); `git merge-base
+  --is-ancestor dc4e47b8 HEAD` true.
+- Trunk `claude/vibrant-johnson-nxvvxo` at 4eb5cbfb. `git merge origin/claude/vibrant-johnson-nxvvxo` fast-forwarded to 4eb5cbfb (trunk had
+  already merged dc4e47b8): `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` = 0 0 before this file's commit.
+- Oink: scripts/setup_oink.sh built 8fbf0a7 into tools/oink/build, exit 0 ("oink built at 8fbf0a7").
+
+### 2. Open work and next step
+- Handover "IN FLIGHT: none" checked: docs/referee/R-N5-RESTRICT.md present (c9bdfa68), no §C yet.
+- (1) P-N5-CORE, docs/si/P-N5-CORE-box23.md, sha1 7b66f1bae1a1b675c0fda0af1e5eaabf13f128a0, re-measured at l-si 081ae740, at
+  origin/claude/l-si (0ecca76e) and on the merged tree: all match; 081ae740 is an ancestor of origin/claude/l-si. FIRST referee (Lead
+  22:36Z). Next: sign or not C1 EVERY-SWITCH, C2 PHASE-SW, C3 RISE-SW, C4 RISE-GATE-CLEAN, C5 FRESH-RED, C6 FRESH3-COUNT against landed
+  RESULTS text, with my own checker (no lane code), mutation controls, vacuity and thin-spot searches. Report docs/referee/R-N5-CORE.md.
+- (2) RESTRICT §C vs REFEREE-2's R2-N5-RESTRICT on the Lead's word. No docs/referee-2/ file on CORE or RESTRICT on the merged tree
+  (`ls docs/referee-2 | grep -ic "core\|restrict"` = 0); I open none on CORE before my report is pushed.
+
+### 3. docs/GAPS.md rows relevant to me (trunk 4eb5cbfb)
+- REFEREE owns no row. The row my packets feed: G-N5-TIME (l.11), major, owner "L-NEW (L-LIT T22; referees later)", **open**. RESULTS runs to
+  R74 (`grep -n "^### R7" docs/RESULTS.md`: R70-R74; R74 = ROOT + addendum, CHECKER C83 4f494319).
+- Other open rows (not mine): GAP-A, GAP-C (blocker), G-S5-6, G-NEST (major), G-N1-LB (minor). G-N5-TERM closed.
+
+### 4. Three owner rulings that most constrain me (verbatim, docs/DECISIONS.md), with DECISIONS-INDEX status
+1. D1 (index l.5: **active**; DECISIONS.md l.8):
+   > Never downgrade the referee to save money.
+2. D15 (index l.26: **active**; DECISIONS.md l.278):
+   > q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it
+3. D18 (index l.32: **active**; DECISIONS.md l.333):
+   > Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.
+
+### 5. One trap that bit this lane, and the check that prevents it
+- Trap (successors 14-16): message and written-at stamps typed as estimates ran ahead of `date -u` (fix commits needed). Check: take every
+  stamp from `date -u` in the same turn, after the text is final. Content trap (successor 14, FLIP): an unchecked parenthetical in a signed
+  statement became joint gap G-FLIP-3. Check: every parenthetical and every "by (x)" inside a signed statement is its own numbered claim.
+
 ## successor 16 (2026-10-26T18:20Z by date -u; Opus 5.5 under D15, label "(Opus 5.5, D15)"; predecessor successor 15, handover 9e19887f)
 Measured from the repository at the time of writing, not recalled.
 

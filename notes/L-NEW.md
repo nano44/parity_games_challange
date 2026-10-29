@@ -1,6 +1,33 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Box 49 log (successor 30, Opus 5.5, D14/D18; Lead brief 21:27Z; STEP 0 answers sent 21:28Z, started without waiting as told)
+- STEP 0: trunk merged (fast-forward to 291cb132); frozen sha1s match; §C commits 96b2cd9a (claude/referee) and c040084a (claude/referee-2) NOT on
+  trunk at 21:28Z; Oink built (setup_oink.sh rc 0).
+- TASK 1: docs/new/P-N5-OFFMONO-fixes-box49.md, FROZEN, sha1 490fc7f3ff31605062ac4239c3387873c06276e9. F1-F14 cover all 22 notes (REFEREE
+  OFFMONO-N1..N4, OFFADD-N1..N2, ADD2-N1..N4, ADD3-N1..N3; REFEREE-2 N-OFF-1..9). 76 «…» quotes checked at lines by
+  experiments/new/box49/quotecheck3.py (copy of L-SI's rund/quotecheck.py + --locate); pinned in experiments/new/check.sh (count 76, --mut must
+  fail, sha1), NOT RUN if the two §C commits are absent from the clone.
+- Lead 22:17Z: SWE-LIN = SW-LIN DEAD; REFEREE's READER-INV PROVED under (R), false without (G-READ-1); NEXT: potential for fallback-free run
+  length or fallbacks per phase (done as N5-READER §6: W-MONO DATA, W*-REACH DEAD; fallbacks OPEN).
+- Lead 22:36Z GO fallbacks per phase (§7: CF-SMALL DEAD); Lead 22:55Z: FB-LIN (f ≤ n) is mine, RUN-LIN is L-SI's. §8: read configurations
+  𝒞°_f (reader-proof on instances), CONJECTURE FB-C°, climbs no kill (best f − n = −9). runfbclimb.py run from scratch copy (not on trunk).
+- Lead 23:21Z GO FB-C° proof attempt: frozen packet docs/new/P-N5-FBCK-box49.md (sha1 7747ecf2…): Theorem FB-C^K, f ≤ n_K·|𝒞^K_f|, K =
+  reachable from an Even choice vertex (plain readers drop out; embedded readers do not: FB-C° in the read frame stays OPEN). KVIOL 0 on all data.
+  Then RESTRICT fixes on the Lead's word (REFEREE-2 9549e59a in; §Cs pending).
+- Lead 23:44Z: P-N5-FBCK to REFEREE now, REFEREE-2 after CORE. GO RESTRICT fixes: docs/new/P-N5-RESTRICT-fixes-box48.md FROZEN (sha1
+  f33f00b3…): F1 joint repair (initial segment; λ-end equality = REFEREE's proof; exposure: found by REFEREE, CONFIRMED anchored by REFEREE-2),
+  F2 RESTRICT-N2 = N-RESTRICT-2, F3 RESTRICT-N3, F4 N-RESTRICT-1, F5 N-RESTRICT-3, F6 data 44 → 186 / 11,527. 31 quotes pinned.
+- TASK 1 pushed: l-new 34d176ab (VERIFY PASS); reported to the Lead 21:39Z.
+- Lead 21:35Z: REFEREE on RESTRICT (claude/referee c9bdfa68, docs/referee/R-N5-RESTRICT.md): all SIGNED; gap G-RESTRICT-1 (G^P's "IS one
+  N5^τ phase" holds only as "LIES IN one"; nep_n12, 44 of 4,073 phases extend); notes RESTRICT-N1..N3. Lead: "Do NOT write the RESTRICT fixes
+  file until REFEREE-2 has reported on RESTRICT; I will tell you." Lead 21:43Z: 34d176ab merged; trunk 5da4017d holds both §C commits, pin runs.
+- TASK 2 (D14/D18, reader-proof counts): docs/new/N5-READER-box49.md (working note, not frozen). Tools experiments/new/box49/ dress.py,
+  search.py, pairs.py, coresw.py, cross.py, runall.sh; instances box49/inst/l121_{a,b,c,d29,e100,er19,er_6_19}. Results: §1 five DEAD
+  restrictions (Even predecessor, on an Even play, core predecessor / quotient, every vertex with a predecessor; XR 86 > 2n with the run SAME);
+  §2 NOSW and SW-AMORT PROVED (lane, elementary, CHECKED 0 violations), CONJECTURE SWE-LIN (every Even vertex ≤ n switches per phase; data
+  ≤ 0.58n plain, Even gadgets ≤ 19 at n 41); §3 DS-route DEAD (pair (6, 19) of long121 flips 22 times). No packet frozen.
+
 ## Box 48 log (successor 27, session_01Eb3V637FARpmtRkvarA5Jx; handover check 6ef1a695 (5/5, Lead 13:13Z); GO 13:13Z, Lead's stamp)
 - Container stale at 5961101a; ff to d362e158; trunk 87d72d98 merged (3a5c0d02). Oink built (rc 0, 8fbf0a7). First push.sh: VERIFY PASS, then GitHub
   "remote rejected … fatal error in commit_refs_rules"; retry clean.
@@ -463,9 +490,38 @@ Successor 29 (Opus 5.5, D14/D18, L40), session_01NiWP12P8PXMiCBMBQxs3rM. Handove
    counted only when p ≠ c, q has a Q-vertex on its (t+1)-play, and par_t(q) ≠ p; N4: hypothesis never bites, now a theorem by add3);
    R-N5-OFFMONO-add.md c2a97189, OFFADD-N1 (name the sum form for Remark (i)), OFFADD-N2 (answered by add3). Template P-N5-EPC-fixes-box48.md;
    quotecheck2.py with REV:FILE at each §C commit.
-2. P-N5-RESTRICT-fixes after its reviews; carry successor 28's §4 correction (§4's first READING uninformative on nep90/nep76/long121).
+2. (DONE by successor 30: docs/new/P-N5-RESTRICT-fixes-box48.md.) P-N5-RESTRICT-fixes after its reviews; carry successor 28's §4 correction (§4's first READING uninformative on nep90/nep76/long121).
 3. Proposed (not routed): N5 on Friedmann's H_n ([F] §8.4), counting phases / τ changes / λ_W changes / ALT per phase (N5-ALTLIT §4).
 4. Not routed: G-N1-LB.
+
+## Dead ends (successor 30; also in docs/new/N5-READER-box49.md §5)
+- PRED-XR / PLAY-XR ("Ξ-changes of vertices with an Even predecessor / on an Even vertex's honest play ≤ 2n per phase"): DEAD,
+  experiments/new/box49/inst/l121_b.pg (sha1 6c751e71…): Odd reader o plus a forced Even e → o on long121_n40; run SAME; XR(o) = XR(e) = 86 > 84.
+- QUOT-XR ("… with a core predecessor / outside the predecessor-free quotient / every vertex has a predecessor"): DEAD, inst/l121_d29.pg
+  (408438fe…; old Even 29 gets a never-improving edge 29 → o; XR 86 > 82) and inst/l121_e100.pg (989544fc…; o ↔ e, e Even priority 100; 86 > 84).
+- DS-ROUTE (few pairwise crossings of Ξ-trajectories, so envelope counts near-linear): DEAD, long121_n40 pair (6, 19): 22 order flips in
+  its one phase (n 40); lib41 max 20 (red/xing/instances/j4_n40).
+
+- SWE-LIN (my §2 conjecture) = L-SI's SW-LIN: DEAD, experiments/si/root/instances/swlin_kill_n26.pg (l-si 85709361, sha1 e2f769e1…): one Even
+  vertex 27 > 26 switches in a 46-transition phase (re-measured with coresw.py); fallback re-arming. Lead's correction 22:17Z.
+- W*-REACH (F_t := {v : W_t(v) = W*(v)} grows at every fallback-free transition): DEAD, red/so/instances/xsn43_n48 run [1, 44] (43 stalls of 44),
+  long121 run [6, 23] (17 of 17). Obstruction: the arena is Ξ-cut; σ*'s edges are not Ξ-improving.
+
+- CF-SMALL ("|𝒞_f(P)| is small / easier to bound than f"): DEAD, experiments/new/box49/inst/l121_cf35_39.pg (36a86755…): reader o → {35, 39} on
+  long121; run SAME, (R) holds (τ(o) fixed); |𝒞_f| 5 → 8 = f. Embedded: inst/l121_cf_emb12.pg (5440021b…). Obstruction: configurations count
+  passive gates.
+
+- MONO-CONF (K-configurations at successive fallback sources never recur): DEAD, plain long121_n40 phase [1,122]: C0 C1 C2 C3 C4 C1 C2 C3
+  (σ̄ on gates 0, 1, 6); njb_reabs65_n48 [2,68]: 2 configurations alternating over 29 fallbacks. SMALL-CK: DEAD by l121_cf_emb12 (|𝒞^K_f| = f = 8).
+
+## Things only I know (successor 30)
+- An edge that is never improving (Ξ(o) ⊲ Ξ(σ_t p) at every t) embeds a reader at any Even vertex p of long121: all 36 Even vertices accept
+  it with the run SAME. In a class with Ω(c) even, o ⊕ lengthens, so o ⊕ min over S ∪ succ(p) is always worse for Even than p's choice.
+- Even readers switch far less than their Ξ-leader changes (pair {6, 19}: 22 flips, 11 switches): S4a picks the W-optimum of the arena, a
+  second order. This is the only per-vertex count I found that no gadget pushed near n.
+- In dress.py's EDGE: spec the edge is appended to the old vertex's list; si.py sorts succ, so tie-breaks by index can shift; the
+  comparison is the test.
+- rows() of common.py runs ~0.2 s on long121; a dress compare re-runs the base each call (pairs.py is ~800 compares).
 
 ## Dead ends (successor 29; also in N5-KPOLY §12 (iii))
 - FRZ_c ("M(κ(z)) frozen from the (|U_c| − 1)-th transition of a fallback-free run, every z ∈ U_c ∖ {c}"): DEAD. Instance

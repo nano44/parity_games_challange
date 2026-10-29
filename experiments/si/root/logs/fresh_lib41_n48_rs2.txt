@@ -1,5 +1,6 @@
-# fresh.py --list experiments/new/box41/lib41.txt (NMAX=48, RS=2), 2026-10-26T19:17:17Z
-NOFRESH2_gci_gch=1 NOFRESH3_gci=566 NOFRESH3_gci_gch=0 NOFRESH_gci=635 NOFRESH_gci_gch=20 NOFRESH_ph=3441 NOFRESH_run=1856 NOFRESH_run_gch=753 NOFRESH_run_max=22 RET_EVEN_run=3514 gci_gch=1095 gci_gch_oddonly=19 gci_kind_=566 gci_kind_A=49 gci_kind_A_gch=1 gci_kind_E=4314 gci_kind_EA=1748 gci_kind_EA_gch=5 gci_kind_EOA_gch=754 gci_kind_EO_gch=312 gci_kind_E_gch=4 gci_kind_OA_gch=9 gci_kind_O_gch=10 noswitch=0 runs=1410 trans=10344 trans_gci=7772
+# fresh.py --list experiments/new/box41/lib41.txt (NMAX=48, RS=2), 2026-10-26T19:33:33Z
+NOFRESH2_gci_gch=1 NOFRESH3_gci=566 NOFRESH3_gci_gch=0 NOFRESH_gci=635 NOFRESH_gci_gch=20 NOFRESH_gci_per_interval_max=22 NOFRESH_ph=3441 NOFRESH_run=1856 NOFRESH_run_gch=753 NOFRESH_run_max=22 RET_EVEN_run=3514 gci_gch=1095 gci_gch_oddonly=19 gci_kind_=566 gci_kind_A=49 gci_kind_A_gch=1 gci_kind_E=4314 gci_kind_EA=1748 gci_kind_EA_gch=5 gci_kind_EOA_gch=754 gci_kind_EO_gch=312 gci_kind_E_gch=4 gci_kind_OA_gch=9 gci_kind_O_gch=10 noswitch=0 runs=1410 trans=10344 trans_gci=7772
+GCI_NOFRESH_MAX (game, phase, run, transition, count, n) ('experiments/red/xing/instances/x32_rand48.pg', 0, 0, 41, 22, 48)
 EXAMPLE ('NF', 'experiments/red/xing/instances/x32_rand48.pg', 0, 0, 44, 22, 48)
 EXAMPLE ('NF', 'experiments/red/so/instances/pftheta34_n32.pg', 4, 5, 39, 21, 32)
 EXAMPLE ('NF', 'experiments/red/so/instances/pftheta_cex_n32.pg', 3, 4, 38, 20, 32)

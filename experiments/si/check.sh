@@ -289,3 +289,70 @@ if git cat-file -e ced5cf27 && git cat-file -e 829003b2 && git cat-file -e 7ea3d
 else
   echo "root (P-N5-ROOT fixes quotes): NOT RUN (a source commit is not in this clone)"
 fi
+# box 23 §8 (docs/si/N5-ALT-box23.md): DEAD XR-LIN. long121_n40 + one Odd reader (l121reader_n41): the run on the old vertices is unchanged
+# (SAME) and the reader's Xi changes 86 > 2n = 82 times in phase [1, 122]. Six readers (l121reader6_n46): SAME, and C-cuts 53 -> 73.
+o=$(python3 -I root/orcheck.py ../new/box48/instances/long121_n40.pg ../new/box48/instances/long121_n40.start root/instances/l121reader_n41.pg root/instances/l121reader_n41.start)
+grep -q "^SAME " <<<"$o"; grep -q "phases_equal True" <<<"$o"; grep -q "XR_o 86 " <<<"$o"
+o=$(python3 -I root/orcheck.py ../new/box48/instances/long121_n40.pg ../new/box48/instances/long121_n40.start root/instances/l121reader6_n46.pg root/instances/l121reader6_n46.start)
+grep -q "^SAME " <<<"$o"
+python3 -I root/evenside.py --one root/instances/l121reader6_n46.pg root/instances/l121reader6_n46.start | grep -q "K_sum=73 "
+echo "root (box 23 §8: XR-LIN dead on l121reader_n41, run unchanged; six readers raise K 53 -> 73 with the run unchanged): PASS"
+# box 23 §10: DEAD SW-LIN on swlin_kill_n26 (Even vertex 19 switches 27 > n = 26 times in phase [1, 47]); L-COMP's independent n5b (spec mode)
+# gives the identical state sequence.
+o=$(python3 -I root/n5bcmp.py root/instances/swlin_kill_n26.pg root/instances/swlin_kill_n26.start)
+grep -q "identical state sequences: True" <<<"$o"; grep -q "switching 27 times; n = 26; > n: True" <<<"$o"
+echo "root (box 23 §10: SW-LIN dead on swlin_kill_n26, n5b agrees): PASS"
+# box 23 §12: an Even reader on long121_n40 (l121ereader_n41) leaves the run SAME (fallbacks included) and switches 16 times in phase [1, 122]
+# (base maximum 12).
+python3 -I root/ereader.py ../new/box48/instances/long121_n40.pg ../new/box48/instances/long121_n40.start 1,10,13,14,16,17,20,23,30,31,32,34,38 30 | grep -q "^SAME .* (16, 3, (1, 122))"
+echo "root (box 23 §12: Even reader on long121 clean, 16 switches > base 12): PASS"
+# P-N5-GCX-fixes-box21 (repairs to P-N5-GCX 5a91bebb): 29 quotes verbatim (packet at 02240121; REFEREE e01bdec6 / 159c8f04; REFEREE-2 fe04ca32 /
+# fc63f1f1); shifted control fails.
+if git cat-file -e 02240121 && git cat-file -e e01bdec6 && git cat-file -e 159c8f04 && git cat-file -e fe04ca32 && git cat-file -e fc63f1f1; then
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-GCX-fixes-box21.md | grep -q "quotes=29 bad=0"
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-GCX-fixes-box21.md --mut | grep -q "QUOTES FAIL"
+  echo "root (P-N5-GCX fixes: 29 quotes verbatim; shifted control fails): PASS"
+else
+  echo "root (P-N5-GCX fixes quotes): NOT RUN (a source commit is not in this clone)"
+fi
+# box 23 §8 (REFEREE R-N5-READER, e83fd19d): condition (R) of Theorem READER-INV holds for l121reader_n41 and all six readers of l121reader6_n46.
+for r in l121reader_n41 l121reader6_n46; do
+  python3 -I root/orcheck.py ../new/box48/instances/long121_n40.pg ../new/box48/instances/long121_n40.start root/instances/$r.pg root/instances/$r.start | grep -q "^condition (R): True"
+done
+echo "root (box 23 §8: condition (R) holds on both reader instances): PASS"
+# P-N5-CORE-box23: 10 quotes verbatim (RESULTS and SPEC at trunk 33f43c20, FBRED at 3732ab55); shifted control fails. corecheck on nep90_n40:
+# (C1), (C3), (C4) hold (202 switches, 105 clean gate changes); control MUT=1 bites (167).
+if git cat-file -e 33f43c20 && git cat-file -e 3732ab55; then
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-CORE-box23.md | grep -q "quotes=10 bad=0"
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-CORE-box23.md --mut | grep -q "QUOTES FAIL"
+  echo "root (packet P-N5-CORE-box23: 10 quotes verbatim; shifted control fails): PASS"
+else
+  echo "root (packet P-N5-CORE-box23 quotes): NOT RUN (a source commit is not in this clone)"
+fi
+o=$(python3 -I root/corecheck.py --one ../red/rec0/instances/nep90_n40.pg rund/instances/nep90_n40.start); grep -q "C3=202 C4_clean=105 " <<<"$o"; grep -q "CORE PASS" <<<"$o"
+MUT=1 python3 -I root/corecheck.py --one ../red/rec0/instances/nep90_n40.pg rund/instances/nep90_n40.start | grep -q "C3_V=167 "
+echo "root (corecheck: P-N5-CORE (C1), (C3), (C4) on nep90; control bites): PASS"
+# P-N5-DEPTH-fixes-box22 (14 quotes) and P-N5-DEPTH-add-fixes-box22 (20 quotes): verbatim at 2201aa2d / aa6061d1 (packets), dc4e47b8 (REFEREE),
+# 4eb5cbfb (REFEREE-2); shifted controls fail.
+if git cat-file -e 2201aa2d && git cat-file -e aa6061d1 && git cat-file -e dc4e47b8 && git cat-file -e 4eb5cbfb; then
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-DEPTH-fixes-box22.md | grep -q "quotes=14 bad=0"
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-DEPTH-fixes-box22.md --mut | grep -q "QUOTES FAIL"
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-DEPTH-add-fixes-box22.md | grep -q "quotes=20 bad=0"
+  python3 -I rund/quotecheck.py ../../docs/si/P-N5-DEPTH-add-fixes-box22.md --mut | grep -q "QUOTES FAIL"
+  echo "root (P-N5-DEPTH and DEPTH-add fixes: 14 + 20 quotes verbatim; shifted controls fail): PASS"
+else
+  echo "root (P-N5-DEPTH / DEPTH-add fixes quotes): NOT RUN (a source commit is not in this clone)"
+fi
+# box 24 (docs/si/N5-RUNLIN-box24.md): the pinned RUN-LIN records (longest fallback-free run, two engines) and I_tau = empty along them.
+o=$(python3 -I runlin/anatomy.py runlin/instances/best60_n34.pg runlin/instances/best60_n34.start); grep -q "run \[1,61\] len 60 " <<<"$o"
+python3 -I root/n5bcmp.py runlin/instances/best60_n34.pg runlin/instances/best60_n34.start | grep -q "identical state sequences: True"
+python3 -I runlin/keeper.py ../red/n3/instances/run49_n32.pg ../red/n3/instances/run49_n32.start | grep -q "with I_tau nonempty 0 "
+echo "runlin (box 24: best60_n34 run 60, n5b identical; run49 I_tau empty along its run): PASS"
+# box 24 §7: DEAD RUN-LIN. runfam_K10 (n 49): one phase, 0 fallbacks, fallback-free run 99 > 2n = 98 (n5x; n5b identical); the generator
+# reproduces the pinned instance; I_tau empty along the run.
+o=$(python3 -I runlin/anatomy.py runlin/instances/runfam_K10.pg runlin/instances/runfam_K10.start); grep -q "phase \[1,100\] run \[1,100\] len 99 " <<<"$o"
+python3 -I root/n5bcmp.py runlin/instances/runfam_K10.pg runlin/instances/runfam_K10.start | grep -q "n5b iterations 100 fallbacks 0 states 101 | n5x states 101 | identical state sequences: True"
+python3 -I runlin/keeper.py runlin/instances/runfam_K10.pg runlin/instances/runfam_K10.start | grep -q "with I_tau nonempty 0 "
+t=$(mktemp -d); python3 -I runlin/mkrunfam.py 10 $t/f | grep -q "K 10 n 49 run 99 run-2n 1"
+cmp -s $t/f.pg runlin/instances/runfam_K10.pg; cmp -s $t/f.start runlin/instances/runfam_K10.start; rm -rf $t
+echo "runlin (box 24 §7: DEAD RUN-LIN, runfam_K10 run 99 > 98, n5b identical, generator reproduces the pin): PASS"

@@ -1,0 +1,47 @@
+{
+"name": "H5_G368",
+"n": 5,
+"mode": "fig",
+"V": 105,
+"m": 286,
+"sha1": "700e3b2ab3e947ad501079c9fd424452684b3564",
+"start_sha1": "47ad6dfdac42034b62b0d2ce6330f3d99beef5d2",
+"it": 32,
+"fb": 0,
+"phases": 1,
+"longest": 32,
+"tau_changes": 0,
+"lamXi_changes": 0,
+"lamW_changes": 0,
+"viol": [],
+"ok": true,
+"checks": {
+"n5_eq_n5b": true,
+"rows_eq": true,
+"oink": "zlk",
+"oink_eq": true,
+"verify_n5": true,
+"verify_n5b": true
+},
+"phases_detail": [
+{
+"p": 0,
+"a": 0,
+"b": 32,
+"len": 32,
+"end": "final",
+"ntau": 0,
+"dW": 0,
+"f": 0,
+"N_ep": 5,
+"NCONF": 4,
+"NCONF2": 0,
+"S": 1,
+"ALT": 4,
+"ALTsum": 4,
+"SBG": 4,
+"sbQ": 4,
+"D": 1
+}
+]
+}

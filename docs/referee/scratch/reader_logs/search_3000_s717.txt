@@ -1,0 +1,6 @@
+saved 187 n 5 fallback state 1 S [0, 2] tau0(o) 2
+PHASE_differs 27
+RUN_differs 21
+games 3000
+readers 180
+with_even_fallback 90

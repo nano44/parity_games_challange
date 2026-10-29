@@ -1,0 +1,6 @@
+ENVX 207 L 11461 NOSW 0 PASS 23943 SW 21619 SWAMORT_viol 0 X 275214 phases 1012 runs 1047 sbch 3505
+max L (112, ('experiments/red/so/instances/xsn91_n48.pg', (3, 115), 48))
+max PASS_over_L (31.0, ('experiments/red/xing/instances/u2flat73_n32.pg', (0, 2), 32, 62, 2))
+max maxSW_over_n (0.5833333333333334, ('experiments/new/box25/instances/sc24.pg', (0, 20), 24, 14))
+max s (20, ('experiments/red/xing/instances/j4_n40.pg', (3, 106), 40))
+max s_over_n (0.5, ('experiments/red/xing/instances/j4_n40.pg', (3, 106), 40, 20))

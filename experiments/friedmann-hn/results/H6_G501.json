@@ -1,0 +1,47 @@
+{
+"name": "H6_G501",
+"n": 6,
+"mode": "fig",
+"V": 126,
+"m": 365,
+"sha1": "6f6bb32c156c5e68722d566dd698d463395001a6",
+"start_sha1": "b0293f550ee9eb8ca6033fdbf04954bb193ba78a",
+"it": 41,
+"fb": 0,
+"phases": 1,
+"longest": 41,
+"tau_changes": 0,
+"lamXi_changes": 0,
+"lamW_changes": 0,
+"viol": [],
+"ok": true,
+"checks": {
+"n5_eq_n5b": true,
+"rows_eq": true,
+"oink": "zlk",
+"oink_eq": true,
+"verify_n5": true,
+"verify_n5b": true
+},
+"phases_detail": [
+{
+"p": 0,
+"a": 0,
+"b": 41,
+"len": 41,
+"end": "final",
+"ntau": 0,
+"dW": 0,
+"f": 0,
+"N_ep": 7,
+"NCONF": 6,
+"NCONF2": 0,
+"S": 1,
+"ALT": 6,
+"ALTsum": 6,
+"SBG": 6,
+"sbQ": 6,
+"D": 1
+}
+]
+}

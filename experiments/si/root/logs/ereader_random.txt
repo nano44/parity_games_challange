@@ -1,0 +1,6 @@
+== new/box48/instances/long121_n40.pg new/box48/instances/long121_n40.start
+random Even readers: SAME 60 of 60 | first divergence: {}
+== n5-epoch/instances/lend107_n32.pg n5-epoch/instances/lend107_n32.start
+random Even readers: SAME 45 of 60 | first divergence: {'base fallback at the first divergence': 15}
+== si/root/instances/swlin_kill_n26.pg si/root/instances/swlin_kill_n26.start
+random Even readers: SAME 58 of 60 | first divergence: {'length only': 1, 'base fallback at the first divergence': 1}

@@ -1,0 +1,7 @@
+OK   docs/si/P-N5-ROOT-box20.md@78bc0e6a8:88-88 | (b) For t ∈ [s, e] and z ∈ A_t: M_t(z) ≤ MoptA_t(z). Hence for s + L ≤ t ≤ t′ ≤ e and z ∈ 
+OK   docs/si/P-N5-ROOT-box20.md@78bc0e6a8:114-115 | (R-LEN) On [s + L, e], Ξ on A_t changes only in its length … with lengths in [1, |U| − 1].
+OK   docs/new/P-N5-OFFMONO-add-box49.md@78bc0e6a8:89-89 | Statement. In a phase P, for the class c: |ZCH_c(P)| ≤ (n − 1)·|U_c| + TIE_c + ODDC_c.
+OK   docs/new/P-N5-OFFMONO-box49.md@78bc0e6a8:52-53 | Statement. Let t → t + 1 be an in-phase transition of P, q ∈ Q ∩ U with q ≠ c and q on no 
+OK   docs/RESULTS.md@78bc0e6a8:2858-2858 | κ_t(q) = κwt_c(q) + min over y ∈ Y^q_t of κ_t(y)
+tagged quotes 5 ok 5 missing 0
+«-quotes without a [Q] tag right before them: 2

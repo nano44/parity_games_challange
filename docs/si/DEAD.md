@@ -324,3 +324,36 @@ AGAINST_W ('experiments/si/fb2o/instances/tcwult2_against_n8.pg', 0, 1, 0, 4, -1
 - Instance: nep90_n40 at its start (experiments/red/rec0/instances/nep90_n40.pg, experiments/si/rund/instances/nep90_n40.start):
   exitx.py counter PEM_drop_ret = 6 (of 45 returns). Also 5 / 4 / 8 / 7 / 10 drops on nep76, long121 and L-NEW's three climbs
   (experiments/si/root/logs/exitx_long10.txt).
+
+## DEAD box 23a (L-SI successor 19, 2026-10-28T23:1xZ by date -u; Lead 23:10Z): CONJECTURE ABS-DEPTH-TIE for general (non-keep) tie rules
+- Statement killed (a lane CONJECTURE, P-N5-DEPTH-box22 §6, never signed): in the cyclic abstract model, the run is fixed within max d* steps
+  without GEN, for any deterministic tie rule.
+- Obstruction: a NON-KEEP tie rule (one that may leave a current choice that is still a maximiser) lets a vertex change while all its inputs
+  (arena values, viability) are constant. The depth argument charges each step to a successor's change, so it fails.
+- Instances (both referees, independently):
+  - REFEREE, docs/referee/R-N5-DEPTH.md §3, DEPTH-N2: the one-vertex LOC game of R-N5-GCX (docs/referee/scratch/loc_cex.py; one non-terminal v,
+    w(v) = 0, terminals a (h 0, T 0), b (h 1, T 5), c (h 2, T 5), s_0(v) = a), max d* = 1, fixed only after 2 steps under the rules "anti" and
+    "sizedep" (and a hash rule in random models).
+  - REFEREE-2, docs/referee-2/R2-N5-DEPTH.md §3, N-DEPTH-3: non-terminals 0, 1; terminals T2 (h 0, T 2), T3 (h 2, T 2); succ(0) = {T2},
+    succ(1) = {0, T2, T3}; w = (−2, −1); start s(1) = 0; under rule "flip" the run s(1) = 0 → T2 → T3 is fixed after 2 steps, against max d* = 1.
+- Survivor: CONJECTURE ABS-DEPTH-TIE_keep (for tie rules that keep a maximal current choice) stays OPEN; no counterexample in either referee's
+  data (P-N5-DEPTH-fixes-box22 F2). CONJECTURE STATIC-DEPTH-TIE (N5's own S1 rule) is not touched. Same mechanism as G-GCX-1 (LOC).
+
+## DEAD box 23b (L-SI successor 19, 2026-10-28): index of the box 23 dead ends recorded in docs/si/N5-ALT-box23.md (instances and obstructions there)
+- XR-LIN (§8): l121reader_n41, an Odd READER's Ξ changes 86 > 2n = 82 times in one phase (run unchanged; condition (R) of REFEREE's READER-INV holds).
+- SW-LIN (§10): swlin_kill_n26, one Even vertex switches 27 > n = 26 times in one phase; fallbacks re-arm its option cycle (n5b agrees).
+- GATE-ONEWAY (§4): pp_K48_n449, gate 447 (out-degree 3) alternates 48 times in one global C-interval.
+- TOP-ONCE (§4): lev_l_sc, z = 0, the same top change 7 times in one run (counter recursion live).
+- FRESH at run scope (§4): x32_rand48, 22 return-only transitions (a D = ∅ wave, not alternation).
+- FRESH2 (§4): post31_n48 t = 20. FRESH3 (§3): ret14_n48 t = 21 (one-vertex flip-flop of Even 27 and gate 0).
+
+## DEAD box 24 (L-SI successor 20, 2026-10-29T00:1xZ by date -u): CONJECTURE RUN-LIN (and RUN-LIN-OPT)
+- Statement killed: «every fallback-free run of a phase has ≤ 2n transitions» (N5-ALT-box23 §13), and its τ-optimal form RUN-LIN-OPT
+  (docs/si/N5-RUNLIN-box24.md §3).
+- Instance: experiments/si/runlin/instances/runfam_K10.pg (sha1 faf218f125d1516d4677393991d53a08a9f4f3bb; start runfam_K10.start,
+  56e4dec67323e6f5b832ac2d95ef832d6ce3a013), n = 49: one phase [1, 100], 0 fallbacks, a fallback-free run of 99 > 98 transitions; I_τ = ∅ at
+  every state. n5x = L-COMP's n5b (identical 101 states) = experiments/new/n5.py (100 iterations, 0 fallbacks); check_sol2: zlk OK, strategies
+  verified. Family mkrunfam.py K: run = 74 + ⌊5K/2⌋ (K ≤ 34), then 2n + 13 (n = 39 + K); runfam_K40 (n 79): 171.
+- Obstruction: one Odd choice vertex whose options are the two ends of a two-way Even corridor; every σ̄ change restarts a wave along the
+  corridor (one Even switch per transition), so the run is a sum of up to G + 1 waves of length up to n − 1; two full waves and a partial
+  third already exceed 2n. Linearity is not killed (run ≤ 2.17n on the family).
