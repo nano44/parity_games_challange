@@ -11,10 +11,14 @@ Counters (each *_V is a failure of the named candidate):
   ZIG_V     a deadlock step where no switching H-sink h has a W-sink at t whose H-chain ends at h      (candidate DL-ZIG)
   DLSOMEH_V a deadlock step where no H-sink switches                                         (candidate DL-SOMEH)
   DLSEP_V   two deadlock steps of one segment with no growth step (W-GROW or H-GROW) between them    (candidate DL-SEP)
+  DLCONSEC_V two CONSECUTIVE deadlock steps                                                       (candidate DL-NOCONSEC)
+  FRZLEN_V  a frozen run (maximal run of non-growth steps) longer than the Even vertices switching in it (candidate FROZEN-COUNT)
   GROWFIN_V a growth step that is not a final step (Theorem SINK-STEP says never)
   GROWPERS_V a segment with a non-growth step after a growth step                                  (candidate GROW-PERSIST)
   DLFIRST_V  a segment with a deadlock step t > a                                                  (candidate DL-FIRST)
   DLRUN_V    a deadlock step t > r0, r0 the first state of its fallback-free run                    (candidate DL-RUN; implies DL-FIRST)
+  NEWEDGE_V  a transition t > r0 (t - 1 in the run) that is not W-flat and uses no edge outside the arena of t - 1 (Lemma NEW-EDGE says never)
+  NEWFINAL_V a transition t > r0 where no switch to a NEW arena edge (not in A(t - 1)) is a last switch                       (candidate NEWFINAL)
   ngrun_k   maximal runs of k consecutive non-growth steps
 VERB=1 prints every deadlock step. Usage: dlock.py --list FILE | --one GAME [START]   (START=1 reads list column 2)"""
 import sys, os
@@ -74,7 +78,17 @@ def _run(g, R, name):
                       f" F(t+1)={sorted(v for v in L if L[v] == t + 1)} zigends={sorted(ends)}")
         grow = [t for t in range(a, b) if any(fW[v] == t + 1 or fH[v] == t + 1 for v in Ev)]
         for t1, t2 in zip(D, D[1:]):
+            if t2 == t1 + 1: C["DLCONSEC_V"] += 1; EX.append(("DLCONSEC", name, a, b, t1))
             if not any(t1 < x < t2 for x in grow): C["DLSEP_V"] += 1; EX.append(("DLSEP", name, a, b, t1, t2))
+        t = a
+        while t < b:                                   # FROZEN-COUNT: a frozen run is no longer than its switching Even vertices
+            if t in grow: t += 1; continue
+            u = t
+            while u < b and u not in grow: u += 1
+            fz = {v for x in range(t, u) for v in range(g.n) if g.owner[v] == 0 and R[x]["s"][v] != R[x + 1]["s"][v]}
+            if u - t > len(fz): C["FRZLEN_V"] += 1; EX.append(("FRZLEN", name, a, b, t, u, len(fz)))
+            C["zfrozen_excess_plus9"] = max(C["zfrozen_excess_plus9"], 9 + (u - t) - len(fz))
+            t = u
         run = 0
         for t in range(a, b + 1):
             if t < b and t not in grow: run += 1
@@ -85,6 +99,22 @@ def _run(g, R, name):
             C["GROWPERS_V"] += 1; EX.append(("GROWPERS", name, a, b, "".join("G" if t in grow else ("F" if F[t] else "D") for t in range(a, b))))
         if any(t > a for t in D): C["DLFIRST_V"] += 1; EX.append(("DLFIRST", name, a, b, D))
         r0 = [x for x in RS if x[0] <= a <= x[1]][0][0]
+        Icache = {}
+        def arena(t):
+            if t not in Icache:
+                I = set(EN.improving(tuple(R[t]["s"]), R[t]["vs"])); Icache[t] = I
+            return Icache[t]
+        for t in range(max(a, r0 + 1), b):                  # NEW-EDGE / NEWFINAL (note §6): t - 1 lies in the same run
+            sw = [v for v in range(g.n) if g.owner[v] == 0 and R[t]["s"][v] != R[t + 1]["s"][v]]
+            if not sw: continue
+            A0, A1 = arena(t - 1), arena(t)
+            new = [v for v in sw if R[t + 1]["s"][v] != R[t - 1]["s"][v] and (v, R[t + 1]["s"][v]) not in A0]
+            flat = all(R[t + 1]["W"][v] == R[t]["W"][v] for v in range(g.n))
+            C["late_trans"] += 1; C["late_flat"] += flat
+            if not new and not flat: C["NEWEDGE_V"] += 1; EX.append(("NEWEDGE", name, a, b, t))
+            if new and not any(L.get(v) == t for v in new): C["NEWFINAL_V"] += 1; EX.append(("NEWFINAL", name, a, b, t, sorted(new), sorted(v for v in L if L[v] == t)))
+        for t in range(max(a, r0 + 1), b):                  # shaping for chg/cclimb.py OBJ=GP: late non-growth steps, few finalizers
+            if t not in grow: C["zlate_ng"] += 1; C["zlate_ng_inv"] += 12 // F[t] if F[t] else 24
         if any(t > r0 - MUT for t in D): C["DLRUN_V"] += 1; EX.append(("DLRUN", name, a, b, r0, D))
         C["growsteps"] += len(grow); C["finalsteps"] += len(F)
         if any(t in grow and F[t] == 0 for t in range(a, b)): C["GROWFIN_V"] += 1     # SINK-STEP: a growth step is a final step
@@ -112,7 +142,7 @@ def main():
                 except Exception as e: C["SKIPPED_input"] += 1; print("SKIP", p[0], type(e).__name__, file=sys.stderr)
     print(" ".join(f"{k}={v}" for k, v in sorted(C.items())))
     for z in EX[:12]: print("EXAMPLE", z)
-    for k in ("DLHS", "DLSOMEH", "DLNEXT", "DLEND", "NOEARLY", "MATCH", "ZIG", "DLSEP", "GROWFIN", "GROWPERS", "DLFIRST", "DLRUN"): print(k, "PASS" if k + "_V" not in C else "FAIL")
+    for k in ("DLHS", "DLSOMEH", "DLNEXT", "DLEND", "NOEARLY", "MATCH", "ZIG", "DLSEP", "GROWFIN", "GROWPERS", "DLFIRST", "DLRUN", "NEWEDGE", "NEWFINAL", "DLCONSEC", "FRZLEN"): print(k, "PASS" if k + "_V" not in C else "FAIL")
 
 if __name__ == "__main__":
     main()

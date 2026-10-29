@@ -1,0 +1,15 @@
+# box 28 lemma-climb logs, last lines (stopped by L-SI successor 24; .log/.pg/.start in chg/out/)
+chg/out/gp2_d29a.log: seed (191, 5, 0) n 60
+chg/out/gp2_gk.log: step 733 score (43, 1, 0) n 109
+chg/out/gp2_psi.log: step 11031 score (74, 2, 0) n 109
+chg/out/gp2_sk110.log: seed (6, 0, 0) n 110
+chg/out/gp3_d29a.log: step 5376 score (533, 6, 0) n 100
+chg/out/gp3_k3.log: step 22300 KILLSCORE 19 n 70
+chg/out/gp3_n20.log: step 28526 score (6656, 6, 6) n 59
+chg/out/gp_d29a.log: step 5458 score (13, 8, 0) n 90
+chg/out/gp_psi.log: step 364 score (7, 2, 0) n 100
+chg/out/gp_sk29.log: step 14101 score (7, 2, 0) n 70
+chg/out/ie_d29a.log: step 5676 score (108, 30, 0) n 90
+chg/out/ie_lad.log: step 11449 KILLSCORE 101 n 70
+chg/out/ie_sk29.log: step 13625 score (81, 25, 0) n 70
+chg/out/ie_wg.log: step 1036 score (20, 0, 0) n 110
