@@ -1,0 +1,3 @@
+round 0 run 171 n 79
+round 1 pair (28, 34) run 174 n 80 run-2n 14 ratio 2.175
+round 2 pair (28, 79) run 177 n 81 run-2n 15 ratio 2.185
