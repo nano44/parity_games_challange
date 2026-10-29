@@ -121,3 +121,12 @@ L-SI successor 29 (Opus 5.5), D15 / D18, Lead reading L40. Lead's brief 2026-10-
   5. DATA: §3 table and fits.
   6. Implication (PROVED lane, premise CONJECTURE FRAME-STRETCH): G-N5-TIME ⇐ FRAME-STRETCH + polynomial NM*^U.
 - NEEDS: none from the owner.
+
+## Addendum (Lead 19:52Z): §4 restated (FRAME-STRETCH is DEAD as stated)
+- L-RED R118 (l-red 747da675): mkr K m from its designed start gives ONE fixed-τ stretch of K(m + 3) − 1 σ-changes, which is Θ(n²)
+  (mk_20_80: 1660 > n + m = 1213). So §4's premise FRAME-STRETCH is false, and §4's bound T ≤ (n + m + 1)(τch + 1) has no premise.
+- Restated implication (PROVED lane, premise CONJECTURE FRAME-STRETCH-P: every fixed-τ stretch has ≤ p(n, m) σ-changes, p a polynomial):
+  T ≤ (p(n, m) + 1)(τch + 1), and τch is bounded as in §4 by the Odd half of R86 (d) and R85 / R86 (e). So G-N5-TIME ⇐ FRAME-STRETCH-P
+  + a polynomial bound on NM*^U. The proof is §4's, with n + m replaced by p(n, m).
+- L-RED's correction, noted: a fixed-τ stretch is N5 under a mixed frame (honest arena, choice against the fixed τ), not one-player N5
+  on G_τ. So R17's one-player bound does not give FRAME-STRETCH-P.
