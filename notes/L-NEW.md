@@ -511,6 +511,9 @@ Successor 29 (Opus 5.5, D14/D18, L40), session_01NiWP12P8PXMiCBMBQxs3rM. Handove
   long121; run SAME, (R) holds (τ(o) fixed); |𝒞_f| 5 → 8 = f. Embedded: inst/l121_cf_emb12.pg (5440021b…). Obstruction: configurations count
   passive gates.
 
+- MONO-CONF (K-configurations at successive fallback sources never recur): DEAD, plain long121_n40 phase [1,122]: C0 C1 C2 C3 C4 C1 C2 C3
+  (σ̄ on gates 0, 1, 6); njb_reabs65_n48 [2,68]: 2 configurations alternating over 29 fallbacks. SMALL-CK: DEAD by l121_cf_emb12 (|𝒞^K_f| = f = 8).
+
 ## Things only I know (successor 30)
 - An edge that is never improving (Ξ(o) ⊲ Ξ(σ_t p) at every t) embeds a reader at any Even vertex p of long121: all 36 Even vertices accept
   it with the run SAME. In a class with Ω(c) even, o ⊕ lengthens, so o ⊕ min over S ∪ succ(p) is always worse for Even than p's choice.

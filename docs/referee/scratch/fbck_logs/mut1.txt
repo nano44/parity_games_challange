@@ -1,0 +1,62 @@
+COR1_chk 8
+F 75
+K_chk 13
+MAX_CFK 4
+MAX_FC_x1000_over_nK 781
+MONO_chk 12
+PHASES 64
+PH_FB 8
+REAL_chk 309
+RISE_FAIL 51
+RISE_chk 53
+RISE_unsat 53
+RUNS 13
+SATB_chk 4
+SATFB1_chk 12
+SATW_chk 4
+SAT_FB 0
+SUM_CF 17
+SUM_CFK 17
+THM_chk 12
+THMtot_chk 8
+UNK_PHASES 3
+EX ('RISE', '../../../experiments/red/so/instances/farrise25_n32.pg/0', 7, (4,), 3, 4)
+EX ('RISE', '../../../experiments/red/so/instances/farrise25_n32.pg/0', 8, (4,), 4, 5)
+EX ('RISE', '../../../experiments/red/so/instances/farrise25_n32.pg/0', 9, (4,), 5, 6)
+EX ('RISE', '../../../experiments/red/so/instances/farrise25_n32.pg/0', 10, (4,), 6, 7)
+EX ('RISE', '../../../experiments/red/so/instances/farrise25_n32.pg/0', 11, (4,), 7, 8)
+EX ('RISE', '../../../experiments/red/so/instances/farrise25_n32.pg/0', 12, (4,), 8, 9)
+EX ('RISE', '../../../experiments/red/so/instances/farrise25_n32.pg/0', 13, (4,), 9, 10)
+EX ('RISE', '../../../experiments/red/so/instances/farrise25_n32.pg/0', 14, (4,), 10, 11)
+EX ('RISE', '../../../experiments/red/so/instances/farrise25_n32.pg/0', 15, (4,), 11, 12)
+EX ('RISE', '../../../experiments/red/so/instances/farrise25_n32.pg/0', 16, (4,), 12, 13)
+EX ('RISE', '../../../experiments/red/so/instances/farrise25_n32.pg/0', 17, (4,), 13, 14)
+EX ('RISE', '../../../experiments/red/so/instances/farrise25_n32.pg/0', 18, (4,), 14, 15)
+EX ('RISE', '../../../experiments/red/so/instances/farrise25_n32.pg/0', 19, (4,), 15, 16)
+EX ('RISE', '../../../experiments/red/so/instances/farrise25_n32.pg/0', 20, (4,), 16, 17)
+EX ('RISE', '../../../experiments/red/so/instances/farrise25_n32.pg/0', 21, (4,), 17, 18)
+EX ('RISE', '../../../experiments/red/so/instances/farrise25_n32.pg/0', 22, (4,), 18, 19)
+EX ('RISE', '../../../experiments/red/so/instances/farrise25_n32.pg/0', 23, (4,), 19, 20)
+EX ('RISE', '../../../experiments/red/so/instances/farrise25_n32.pg/0', 24, (4,), 20, 21)
+EX ('RISE', '../../../experiments/red/so/instances/farrise25_n32.pg/0', 25, (4,), 21, 22)
+EX ('RISE', '../../../experiments/red/so/instances/farrise25_n32.pg/0', 26, (4,), 22, 23)
+EX ('RISE', '../../../experiments/red/so/instances/farrise25_n32.pg/0', 27, (4,), 23, 24)
+EX ('RISE', '../../../experiments/red/so/instances/farrise25_n32.pg/0', 28, (4,), 24, 25)
+EX ('RISE', '../../../experiments/red/so/instances/farrise25_n32.pg/0', 29, (4,), 25, 26)
+EX ('RISE', '../../../experiments/red/so/instances/farrise25_n32.pg/0', 30, (4,), 26, 27)
+EX ('RISE', '../../../experiments/red/so/instances/farrise25_n32.pg/0', 31, (4,), 27, 28)
+EX ('RISE', '../../../experiments/new/box25/instances/wd16_s2.pg/0', 3, (3,), 1, 2)
+EX ('RISE', '../../../experiments/new/box25/instances/wd16_s2.pg/0', 6, (3,), 0, 1)
+EX ('RISE', '../../../experiments/new/box25/instances/wd16_s2.pg/0', 7, (3,), 1, 2)
+EX ('RISE', '../../../experiments/new/box25/instances/wd16_s2.pg/0', 8, (3,), 2, 3)
+EX ('RISE', '../../../experiments/new/box25/instances/wd16_s2.pg/0', 9, (3,), 3, 4)
+EX ('RISE', '../../../experiments/new/box25/instances/wd16_s2.pg/0', 10, (3,), 4, 5)
+EX ('RISE', '../../../experiments/new/box25/instances/wd16_s2.pg/0', 11, (3,), 5, 6)
+EX ('RISE', '../../../experiments/new/box25/instances/wd16_s2.pg/0', 12, (3,), 6, 7)
+EX ('RISE', '../../../experiments/new/box25/instances/wd16_s2.pg/0', 13, (3,), 7, 8)
+EX ('RISE', '../../../experiments/new/box25/instances/wd16_s2.pg/0', 14, (3,), 8, 9)
+EX ('RISE', '../../../experiments/new/box25/instances/wd16_s2.pg/0', 15, (3,), 9, 10)
+EX ('RISE', '../../../experiments/new/box25/instances/wd16_s2.pg/0', 16, (3,), 10, 11)
+EX ('RISE', '../../../experiments/new/box25/instances/wd16_s2.pg/1', 4, (3,), 3, 4)
+EX ('RISE', '../../../experiments/new/box25/instances/wd16_s2.pg/1', 5, (3,), 4, 5)
+EX ('RISE', '../../../experiments/new/box25/instances/wd16_s2.pg/1', 6, (3,), 5, 6)

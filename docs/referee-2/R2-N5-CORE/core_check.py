@@ -84,6 +84,7 @@ def run_game(gp, s, t, st, name, rng):
         k1 = k0
         while k1 + 1 < len(I) and key[k1 + 1] == key[k0]: k1 += 1
         if k1 > k0: check_phase(ctx, g, I, fbs, k0, k1, st, name, rng)
+        else: st.inc("phases_one_state")   # CORE-N1: |P| as a STATE count would be 1 > 0 = sum SW here
         k0 = k1 + 1
 
 
@@ -308,7 +309,11 @@ def main():
     elif a[0] == "pairs":   # each line: pg [start], relative to a[2]; the given start if present, else S3
         for line in [l.split() for l in open(a[1]) if l.strip()]:
             gp = pg.read(os.path.join(a[2], line[0]))
-            if len(line) > 1: s, t = R.read_start(gp, os.path.join(a[2], line[1]))
+            if len(line) > 1:
+                s, t = R.read_start(gp, os.path.join(a[2], line[1]))
+                for v in range(gp.n):   # validation (added after REFEREE's CORE-N5): a non-edge in a start file -> first successor
+                    x = s if gp.owner[v] == 0 else t
+                    if x[v] not in gp.succ[v]: st.inc("INVALID_START_ENTRIES"); print("INVALID_START", line[0], v, x[v], flush=True); x[v] = gp.succ[v][0]
             else: s, t = starts(gp, 0, None)
             run_game(gp, s, t, st, line[0] + ("#start" if len(line) > 1 else "#S3"), rng)
     elif a[0] == "random":
