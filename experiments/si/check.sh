@@ -608,3 +608,14 @@ echo "si (box 28 §9: COMPOSE and COMPOSE-RUN inequalities hold with their slack
 python3 -I rund/quotecheck.py ../../docs/si/P-N5-COMPOSE-box28.md | grep -q "quotes=16 bad=0"
 python3 -I rund/quotecheck.py ../../docs/si/P-N5-COMPOSE-box28.md --mut | grep -q "QUOTES FAIL"
 echo "si (box 28: P-N5-COMPOSE quotes verbatim, shifted control fails): PASS"
+# box 28 §12: Lemma INHERIT (a vertex's carry is the carry of the switch where its honest play diverges): 0 failures on runquad and dlsep.
+o=$(python3 -I chg/carrysrc.py --one chg/instances/red/runquad_K8_m30_n192.pg chg/instances/red/runquad_K8_m30_n192.start)
+grep -q "^carries=856 nm_max=8 phases=1 src_even=856 srcs_max_per_phase=256$" <<<"$o"; grep -q "^INH PASS" <<<"$o"
+o=$(python3 -I chg/carrysrc.py --one chg/instances/dlsep_kill_n70.pg chg/instances/dlsep_kill_n70.start); grep -q "src_odd=26" <<<"$o"; grep -q "^INH PASS" <<<"$o"
+echo "si (box 28 §12: INHERIT holds on runquad (856 carries) and dlsep_kill_n70): PASS"
+# box 28 §13: carries with no gate reopening and no open Odd gate on the vertex's plays (L-LIT T37 §3's CONJECTURE, multiplicative form):
+# all 121 carrying (vertex, λ-run) pairs of runquad_K8_m30_n192 and all 67 of L-RED's s3quad_K3_m4 (copy, S3 default start).
+echo "675778af8ea65724a053fe1e4cbbf8b8fe33f8ad  chg/instances/red/s3quad_K3_m4.pg" | sha1sum -c --quiet
+python3 -I chg/reopen.py --one chg/instances/red/runquad_K8_m30_n192.pg chg/instances/red/runquad_K8_m30_n192.start | grep -q "^carrying_vertex_runs=121 nm_zero_max=8 ratio_max_x100=800 zero_reopen=121$"
+python3 -I chg/reopen.py --one chg/instances/red/s3quad_K3_m4.pg | grep -q "^carrying_vertex_runs=67 nm_zero_max=3 ratio_max_x100=300 zero_reopen=67$"
+echo "si (box 28 §13: carries without reopenings on runquad (121/121) and s3quad_K3_m4 (67/67)): PASS"

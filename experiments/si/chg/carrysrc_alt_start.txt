@@ -1,0 +1,2 @@
+carries=30425 nm_max=62 phases=457 src_even=19931 src_odd=10494 srcs_max_per_phase=362
+INH PASS
