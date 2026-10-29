@@ -41,3 +41,11 @@ define no initial strategy, and Friedmann's papers' specified starts were not op
 - The box-17 quantities on these runs: max SEG 13, EXC ≤ 0, L-WAVE′ gap ≤ 3, f 0.
 - Honest limit: Friedmann's lower bounds hold for the snare-memorising rules from their own initial strategy. Nothing here says
   what N5 does from that start. S3 is N5's specified start.
+
+## Byte check (Lead 16:03Z / 16:10Z): PASS against L-LIT T47
+- docs/lit/T47-gen-pgsolver-snare.py (l-lit 02034f74; written independently of this port) vs hard-families/pgsolver_port.py, cmp of the
+  full .pg: IDENTICAL for friedmannsubexp, fearnleysubexp and fearnleysubexp-nogadget at N = 1..12 (36 pairs), and the N = 1..5 sha1
+  prefixes in the Lead's 16:03Z message match. Two independent transcriptions agree byte for byte. A PGSolver binary diff is still NOT RUN.
+- Start (T47 §4): the generators define none, and PGSolver's snare solver starts from initial_strategy_by_best_reward (= SPEC S3 for
+  Even), so the S3 runs above are the intended start. T47 and T46 name no designed (ι-type) start. Extra start run here: "lastedge"
+  (PGSolver initial_strategy_by_last_edge for Even, S3 dual for Odd; run21.py --start lastedge).
