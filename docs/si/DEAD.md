@@ -388,3 +388,8 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
   vertices, 25 transitions; the excess equals the 2 L-cuts); xk_k one transition. 0 failures on alt_all and lib41. The per-REL-segment form
   (CONJECTURE SEG-LAST) and SWL (gap ≤ switchers + L-cuts) survive.
 - Kill searches for L-WAVE′ itself (no kill): note §1.
+- CYC-SET («every J_b-cycle vertex of a REL-admissible segment is W- and H-settled from the segment's start»; would remove (H4′_rel) from
+  Theorem LAST-STEP, note §7): run34_n40 (experiments/red/n3/instances, pinned start), segment [11, 14], 14 cycle vertices settled only from
+  12-14 (lwp/laststep_alt_start.txt); and lwp/out/h4a_k.pg (n 60, sha1 957c7c9e2ce5a6d57890e42b0e8ca0a0911ecefd, default start), segment
+  [0, 4], cycle vertices settled from 1 and NO frontier vertex at t = 0 (found by lwp/xclimb.py OBJ=H4 from dl_4_4). Obstruction: a J_b-cycle
+  settles in one transition with its unsettled Even vertices switching together (1: 28 → 59 and 37: 6 → 58 at t = 0); SEG-LAST holds there.

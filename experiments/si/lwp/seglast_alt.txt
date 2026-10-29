@@ -1,2 +1,2 @@
-segs=907 trans=4478
+DMONO_V=155 DSTRICT_V=155 ex_max_plus1000=1000 segs=907 trans=4478
 SEGLAST PASS

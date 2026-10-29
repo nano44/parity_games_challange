@@ -15,6 +15,7 @@ gaptrace.py, vstep.py, gapdepth.py, lastsw.py, seglast.py); outputs lwp/*.txt, l
 | §4 | surviving stronger forms: gap ≤ \|Even\| (NEVEN); gap ≤ switching Even vertices + L-cuts (SWL); CONJECTURE SEG-LAST (every transition of a REL segment is some Even vertex's last switch in it), which would drop (H4′_rel) and GEN_W from STATIC-DEPTH-REL | CONJECTURE, DATA |
 | §5 | Lemma P-ARENA (the (c, P)-level form of STATIC-DEPTH′ step (A)) and the monotonicity of settled sets | PROVED (lane), elementary |
 | §6 | where the proof route stands | READING, OPEN |
+| §7 | Theorem LAST-STEP: SEG-LAST holds under STATIC-DEPTH-REL's hypotheses ((H4′_rel), GEN_W), by a frontier argument; the frontier exists at every step of all 3,134 library segments; CONJECTURE CYC-SET (which would remove (H4′_rel)) DEAD; CONJECTURE SET-STEP open | PROVED (lane); DATA; DEAD; CONJECTURE |
 
 ## 0. Setting
 As N5-GRUN-box25 §0, §4, §5. A run S: a maximal fallback-free stretch of one phase. REL segments, RO_b, X_b, CW_b, CH_b, L-cuts as in GRUN
@@ -38,7 +39,7 @@ closing at an event y is examined on [x, y − 1] (the closing transition is the
 - READING (pure-length regime): a one-switch-per-step wave a_1 ← a_2 ← ... ← a_k needs every edge a_j → a_(j−1) to be non-improving until
   a_(j−1) switches, i.e. the a_j's initial targets must be longer than the wave's route: a shared slow path of length ≥ k, so a wave uses
   ≤ about n/2 transitions. The long waves of §2 are P-level waves; lengths alone do not make them.
-- Pins (lwp/out/; sha1sum): xk_k.pg 1ad8d0036d3d1503b8f672199110d3f41c65030a, xk_k.start a2e00ea7c3383b9cd35d21f306c77c8fc3f57684 (gap n − 1,
+- Pins (lwp/out/; sha1sum; frozen copies of xk_k as lwp/instances/lwp_gap_n26.*): xk_k.pg 1ad8d0036d3d1503b8f672199110d3f41c65030a, xk_k.start a2e00ea7c3383b9cd35d21f306c77c8fc3f57684 (gap n − 1,
   one Odd choice vertex 4); xa.pg d18575db040f26b4bc02c98a15b21550ed4004bf, xa.start 5a951ab112a2896e38a987eaafedca102b559948 (gap n − 5). grun/out/lwp_a.pg 19d105416929800709707a2489b335a6a936e883, .start ebe3da481098f568ee171b061ab70e2d0f786bbd.
 
 ## 2. Anatomy of an n − 1 gap (lwp/gaptrace.py on grun/out/lwp_a, n 26, gap [1, 26], one gate u = 4, L-cuts at 5 and 16)
@@ -103,10 +104,62 @@ below only grow; §5).
 - Next proof target: SEG-LAST under STATIC-DEPTH′'s hypotheses (one piece, end-state cycles persistent). Its contrapositive: if no vertex has
   its last switch at t, every switcher of t switches again later; the (c, P)-level tools above do not exclude this.
 
+## 7. Theorem LAST-STEP (PROVED, lane): SEG-LAST under STATIC-DEPTH-REL's hypotheses (STEP 2, box 26)
+Premises: RESULTS R82 (STATIC-DEPTH′) and R83 (STATIC-DEPTH-REL) as LANDED, their proof steps (signed there) used locally, and RESULTS R80 (a)
+EVERY-SWITCH. Notation of GRUN §4 at the segment end b: X_b, RO_b, CW_b, CH_b, T_W, T_H, T := T_W ∪ T_H, J_b (restricted to X_b, (H4′_rel)).
+S^W_s (S^H_s): the vertices whose W-play (honest play) at every state of [s, b] equals the one at b; S_s := S^W_s ∩ S^H_s. These grow with s.
+Statement. Let [a, b] be REL-admissible, with (H4′_rel) and GEN_W. Then for every t ∈ [a, b) some Even v ∈ X_b ∖ T switches at t → t + 1 and
+never again in [a, b] (CONJECTURE SEG-LAST holds on [a, b]). Hence b − a ≤ the number of Even vertices of X_b ∖ T that switch in [a, b].
+Local facts (each is a step of the STATIC-DEPTH′ / STATIC-DEPTH-REL proof, used with an arbitrary start s instead of a + d):
+- (F1) T_W ⊆ S^W_a, T_H ⊆ S^H_a, and an Even vertex of T has σ_t = σ_b on [a, b].
+- (F2) Odd v ∉ T_W on the W-play of a member of X_b: τ(v) ∈ S^W_s implies v ∈ S^W_s; Odd v ∉ T_H in RO_b: σ̄(v) ∈ S^H_s implies v ∈ S^H_s.
+  Even v ∈ T_H ∖ T_W: σ_b(v) ∈ S^W_s implies v ∈ S^W_s; Even v ∈ T_W ∖ T_H: likewise for H.
+- (F3) Even v ∈ X_b ∖ T, y := σ_b(v) ∈ S_s (s ≤ b): σ_u(v) = y for every u ∈ [s + 1, b], and if also σ_s(v) = y then v ∈ S_s.
+  (Steps (A), (B) and the GEN_W step of STATIC-DEPTH′ for t ∈ [s, b − 1]; the second part: v's plays at u ∈ [s, b] are v followed by y's,
+  which are y's plays at b and avoid v since v ∉ T.)
+Proof. Fix t < b. Call v a FRONTIER vertex if v is Even in X_b ∖ T, σ_t(v) ≠ σ_b(v) and σ_b(v) ∈ S_t. By (F3) with s = t a frontier vertex
+has σ_(t+1)(v) = σ_b(v) ≠ σ_t(v) and σ constant on [t + 1, b]: it switches at t for the last time. So it suffices that a frontier vertex
+exists. Suppose not, and let N := (X_b ∩ Even) ∖ (T ∪ S_t).
+- N ≠ ∅: otherwise every Even vertex of X_b ∖ T is in S_t, so its σ is σ_b on [t, b] (the first step of its W-play); Even vertices of T keep
+  σ_b (F1); Even vertices outside X_b are not in Q (X_b ⊇ Q) and have out-degree 1. So σ_t = σ_(t+1), against EVERY-SWITCH.
+- Every v ∈ N has σ_b(v) ∉ S_t: if σ_b(v) ∈ S_t then σ_t(v) = σ_b(v) (v is not a frontier vertex) and (F3) gives v ∈ S_t.
+- Every v ∈ N has a J_b-successor in N. Let y := σ_b(v); say y ∉ S^W_t (the case y ∉ S^H_t is the same with honest plays, σ̄ and T_H).
+  Walk along v's W-play at b from y. If it reached T_W passing only Odd vertices and Even vertices of T_H ∖ T_W, then (F1) and (F2), applied
+  backwards from the first vertex of T_W, would put y in S^W_t. So it meets an Even vertex v′ ∉ T first, which is v's J_b-successor; and
+  v′ ∉ S^W_t (else (F2) backwards puts y in S^W_t again). v′ is on the W-play of a member of X_b, hence v′ ∈ X_b; so v′ ∈ N.
+- So J_b restricted to N has no sink, and N is finite and non-empty: J_b has a cycle, against (H4′_rel). □
+- Remarks. (o) This strengthens the conclusion of STATIC-DEPTH-REL (b − a ≤ max d) to one per-transition statement; it uses the same
+  hypotheses, so it removes nothing yet. (i) The bound "b − a ≤ switchers" is a count, not a depth; both are ≤ |Q ∖ T| ≤ n − 1. (ii) The proof uses (H4′_rel) ONLY in
+  the last line: a J_b-cycle whose vertices are all unsettled at t. So SEG-LAST without (H4′_rel) reduces to: (H4″) no J_b-cycle lies in
+  N_t at any t < b. A J_b-cycle mixes the frames (an all-W cycle would be a W-cycle at b, in T_W), so it contains Odd vertices o, o′ with
+  τ(o) ≠ σ̄(o) on its W-legs and on its honest legs; nothing proved here excludes that it stays unsettled.
+DATA (lwp/laststep.py; FR_V = steps without a frontier vertex, FRL_V = frontier vertices whose last switch is not at t; MUT=1 asks for
+σ_b(v) ∈ S_(t−1) and must bite: it does on lwp_a and dl_6_8):
+| corpus | segments | transitions | (H4′_rel) fails | FR_V | FRL_V | J_b-cycle vertices not settled from a (CYCSET_V) |
+| --- | --- | --- | --- | --- | --- | --- |
+| alt_all, default starts (lwp/laststep_alt.txt) | 907 | 4,478 | 5 | 0 | 0 | 0 (77 cycle vertices) |
+| alt_all, pinned starts (lwp/laststep_alt_start.txt) | 1,249 | 5,384 | 3 | 0 | 0 | 1 (run34_n40 [11, 14]; frontier still present) |
+| lib41 (lwp/laststep_lib41.txt) | 978 | 4,241 | 2 | 0 | 0 | 0 (39) |
+- So in the library a frontier vertex exists at EVERY step, also in the 10 segments where (H4′_rel) fails (dl_6_8 [1, 7]: 28 J_b-cycle vertices,
+  all settled from a). CONJECTURE CYC-SET («every J_b-cycle vertex of a REL segment is settled from its start»; with it the proof above needs
+  no (H4′_rel)) is DEAD, already in the library (run34_n40 with its pinned start, segment [11, 14]: 14 cycle vertices settled only from
+  12-14, while a frontier vertex exists at every step), and with no frontier vertex by lwp/xclimb.py OBJ=H4 (score: long (H4′_rel)-failing segments; kill = SEG-LAST or frontier failure) from dl_4_4 found
+  lwp/out/h4a_k.pg (n 60, sha1 957c7c9e2ce5a6d57890e42b0e8ca0a0911ecefd, default start; frozen copy lwp/instances/cycset_kill_n60.pg; segment [0, 4], J_b-cycle vertices 1, 3, 34, 37, 48, 58, 59
+  settled only from 1, no frontier vertex at t = 0) and h4b_k.pg (n 48, e97f88d5ea74f45822aeec7dd5e146cb40d91ce3; segment [1, 4], cycle
+  vertices 31, 33, 34, 35 settled from 2). SEG-LAST still holds on both.
+- What happens there (DATA, h4a_k t = 0): the unsettled J_b-cycle vertices 1 and 37 switch TOGETHER at t = 0 (1: 28 → 59, 37: 6 → 58), both for
+  the last time, and the whole cycle is settled from t + 1. CONJECTURE SET-STEP («at every t of a REL segment some switcher of t is in
+  S_(t+1)»; it implies SEG-LAST): 0 failures in the 3,134 segments (lwp/seglast.py SS_V) and on h4a_k, h4b_k. The proof route: a terminal
+  strongly connected part K of J_b on N_t settles in one transition; step (A) (arena membership) is what is missing, since the targets'
+  honest values are not final before K settles.
+
 ## DONE / FINDINGS / NEEDS
-- DONE: this note; experiments/si/lwp/ tools and logs; pins in §1; DEAD entries in docs/si/DEAD.md (box 26).
+- DONE: this note; experiments/si/lwp/ tools and logs; pins in §1, §7 (lwp/instances/); DEAD entries in docs/si/DEAD.md (box 26);
+  check.sh blocks "box 26".
 - FINDINGS: (1) L-WAVE′ survives four structurally different kill searches (random starts, random games, pure-length regime, depth-excess
   climb); gap = n − 1 is reached again (xk_k) and never beaten. (2) DEAD: VS-STEP, PS-STEP, PV-STEP, GAP-DEPTH, per-gap LAST-SWITCH (lwp_a,
-  xk_k). (3) CONJECTURE SEG-LAST (0 failures in 3,134 segments; kills on pieces and runs as controls) would remove (H4′_rel) and GEN_W from
-  STATIC-DEPTH-REL; SWL and NEVEN hold. (4) PROVED (lane): monotone settled sets; Lemma P-ARENA. L-WAVE′ stays OPEN.
+  xk_k), CYC-SET (run34_n40, cycset_kill_n60). (3) CONJECTURE SEG-LAST (0 failures in 3,134 segments; it fails on pieces and runs, which serve as controls)
+  would remove (H4′_rel) and GEN_W from STATIC-DEPTH-REL; SWL, NEVEN and SET-STEP hold in the data. (4) PROVED (lane): monotone settled sets;
+  Lemma P-ARENA; Theorem LAST-STEP (SEG-LAST under (H4′_rel) + GEN_W, by a frontier argument that uses (H4′_rel) only to exclude an
+  unsettled J_b-cycle). L-WAVE′, SEG-LAST without (H4′_rel), STATIC-DEPTH′-TIE stay OPEN.
 - NEEDS: none from the owner.

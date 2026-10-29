@@ -1,0 +1,3 @@
+h4len_max_plus1=7 h4p_fail=5 jcyc_vertices=77 segs=907 trans=4478
+LASTSTEP PASS
+CYCSET PASS

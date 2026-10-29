@@ -3,7 +3,8 @@
 (grun/relseg.py's cutting), every transition t -> t+1 (a <= t < b) contains the last switch in [a, b] of some Even vertex. It would give
 b - a <= the number of Even vertices switching in [a, b]. MODE=piece: the same on sigma-bar-constant pieces; MODE=run: on whole runs
 (control: must fail). Also DMONO_V / DSTRICT_V: segments where D_t = {v : sigma_t(v) != sigma_b(v)} fails to shrink / to shrink
-strictly at every transition (DSTRICT would give the bound with |D_a|). Usage: seglast.py --list FILE | --one GAME [START]"""
+strictly at every transition (DSTRICT would give the bound with |D_a|). SS_V: transitions where no switcher becomes W- and H-settled
+(play-level, both frames) from t + 1 (SET-STEP, which implies SEG-LAST). Usage: seglast.py --list FILE | --one GAME [START]"""
 import sys, os
 from collections import Counter
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
@@ -13,6 +14,7 @@ from staticdepth import walk
 from trace import runs
 from relseg import cycof
 from pieceh import norm
+from staticdepth import walk
 C = Counter(); EX = []; MODE = os.environ.get("MODE", "seg")
 
 def segs(g, R):
@@ -60,6 +62,11 @@ def _run(g, R, name):
         if any(not D[k + 1] <= D[k] for k in range(b - a)): C["DMONO_V"] += 1     # D_t = {v : sigma_t(v) != sigma_b(v)} shrinks?
         if any(not D[k + 1] < D[k] for k in range(b - a)): C["DSTRICT_V"] += 1
         C["ex_max_plus1000"] = max(C.get("ex_max_plus1000", 0), 1000 + (b - a) - len(last))
+        # SET-STEP: some switcher of t is W- and H-settled from t + 1 (plays at every s in [t+1, b] equal its plays at b)
+        for t in range(a, b):
+            sw = [v for v in range(g.n) if g.owner[v] == 0 and R[t]["s"][v] != R[t + 1]["s"][v]]
+            if not any(all(walk(R[u]["wn"], v) == walk(R[b]["wn"], v) and walk(R[u]["nxt"], v) == walk(R[b]["nxt"], v) for u in range(t + 1, b + 1)) for v in sw):
+                C["SS_V"] += 1; EX.append(("SS", name, a, b, t))
         lt = set(last.values()); bad = [t for t in range(a, b) if t not in lt]
         if bad: C["SL_V"] += len(bad); EX.append((name, a, b, bad[:4], b - a, len(last), g.n))
 

@@ -431,3 +431,11 @@ MODE=run python3 -I lwp/seglast.py --one grun/instances/lwkill_n31.pg grun/insta
 python3 -I lwp/vstep.py --one grun/out/lwp_a.pg grun/out/lwp_a.start | grep -q "PV_V=1 "
 python3 -I lwp/gapdepth.py --one grun/out/lwp_a.pg grun/out/lwp_a.start | grep -q "EXAMPLE ('grun/out/lwp_a.pg', 1, 26, 1, 26, 25, 23, 26)"
 echo "lwp (box 26: lwp_a gap n - 1 kills per-gap LAST-SWITCH, PV-STEP, GAP-DEPTH; SEG-LAST holds there, fails on pieces / runs as controls): PASS"
+# box 26 (docs/si/N5-LWP-box26.md §7): Theorem LAST-STEP data. Frontier vertices exist at every step of lwp_a's segments (MUT=1 bites);
+# lwp/instances/cycset_kill_n60 (= climb h4a_k) kills CYC-SET with no frontier vertex at t = 0, while SEG-LAST and SET-STEP hold there.
+python3 -I lwp/laststep.py --one grun/out/lwp_a.pg grun/out/lwp_a.start | grep -q "LASTSTEP PASS"
+MUT=1 python3 -I lwp/laststep.py --one grun/out/lwp_a.pg grun/out/lwp_a.start | grep -q "LASTSTEP FAIL"
+echo "957c7c9e2ce5a6d57890e42b0e8ca0a0911ecefd  lwp/instances/cycset_kill_n60.pg" | sha1sum -c --quiet
+o=$(python3 -I lwp/laststep.py --one lwp/instances/cycset_kill_n60.pg); grep -q "CYCSET_V=1 FR_V=1 FR_V_h4fail=1 " <<<"$o"; grep -q "CYCSET FAIL" <<<"$o"
+o=$(python3 -I lwp/seglast.py --one lwp/instances/cycset_kill_n60.pg); grep -q "SEGLAST PASS" <<<"$o"; ! grep -q "SS_V" <<<"$o"
+echo "lwp (box 26: LAST-STEP frontier on lwp_a, MUT bites; cycset_kill_n60 kills CYC-SET, SEG-LAST / SET-STEP hold): PASS"
