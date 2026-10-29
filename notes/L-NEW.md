@@ -5,6 +5,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - docs/new/N5-PV-box60.md. PV DEAD (smallest: fcobs_3, n 88, 108 flips). PV-PLAY (flips only while u is on a play from an Even branching
   vertex) DEAD: reach2.py puts o on E0's play (E0 -> {o, Z}, Z top odd self-loop); fcobsP_3 108 > 90, run unchanged. Plan fails at (iii):
   only coarse records are <= n; flips need fine ones (= T48 barrier). READING: bound I directly.
+- Addendum (Lead 18:10Z: PV_rel, loops). N5-PV-box60.md §3-§4. Theorem SF-RED-G PROVED (lane, no LOC): greedy one-player segments
+  (sbar* = reply at segment start; boundary where F differs from N5 on G*); I polynomial iff SBC_G. sbcg.py 719/719 PASS; SBC_G immune
+  to observers (= N^2 - 1). CONJECTURE PV_G (Gflips <= n) 0/719, max 0.708n. READING / CONJECTURE LOOP: L1 lambda-change / L2 unused /
+  L3 F-relevant sbar-change at the Odd break.
 
 ## Box 59 log (successor 34, Opus 5.5, D14/D18; Lead brief 17:15Z; STEP 0 answers sent 17:16:54Z, started without waiting as told)
 - STEP 0 (measured): local clone STALE again (868 behind; my first fetch named a non-existent ref `main` and git aborted the WHOLE fetch
@@ -665,7 +669,7 @@ Every answer measured from the repository; commands named.
 ### IN FLIGHT: nothing running.
 ### NEXT (the Lead decides): the informative count is I (cubic on fcN). Options: relcheck.py / iteration counts on L-RED 28's nested
 families; the finer (play-)relevance version of SF-RED-R (§6.2, OPEN); an I-degree bound via stretch length x SBC^R.
-### Owned conjectures: SF-POLY, SBC-QP, GROUP, EXIT-without-NT, CARRY-CUT (OPEN); PV DEAD (§6.1).
+### Owned conjectures: SF-POLY, SBC-QP, GROUP, EXIT-without-NT, CARRY-CUT, PV_G, LOOP (OPEN); PV, PV-PLAY DEAD.
 
 ## Resume point (HISTORY; successor 33, FINAL after box 58, written 2026-10-29 ~17:0xZ by date -u)
 Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context ~375k at writing. PARKED (Lead's option (C), box 58).
