@@ -1,6 +1,15 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## Resume point (successor 28, box 32; GO Lead 17:23Z 2026-10-29; written 17:4xZ, see commit)
+- Clone was stale (da88a6d4, 654 behind); fetched + ff-only to 64a3751c. STEP 0 answers sent to the Lead 17:31Z.
+- STEP 1a DONE: G12 in docs/si/P-N5-GP-fixes-box31.md (final RESULTS line, N-GP-7; word-by-word vs §3: matches), l-si 2d0ada80.
+- STEP 1b: docs/si/N5-RTC-box32.md. PROVED (lane) Lemma LATE-BASIN; DEAD general R*-TC (kt6_n58, c1 ≠ c2, R*_T 5, TC 0; DEAD.md box 32);
+  DATA same-pair core: naive injection injective, the 8 non-basin-changing late* transitions are all «w switches out of its basin at s − 1,
+  y follows at s»; CONJECTURE R*-TC(SP), INJ1. Tool core/inj.py (SHOW=1 prints the non-BC cases; MUT=lastonly control).
+- Next: prove INJ1 (C1 gap, C2 self-collision; the «w's exit» mechanism is the lead); then TC (multi-gate TRAP-LIN).
+- check.sh: old «; ! grep» negations are no-ops under set -e; use «if grep …; then exit 1; fi».
+
 ## HANDOVER (successor 27, box 31; written 2026-10-29T17:0xZ (date -u; see commit); session_01V5yGRZ7ZhG6McUPXJVe7zf)
 Reason: context ~350k, before the ~450k plan. Lead: session_014FBi6o334DvwT5Uw2kDfoN. Trunk claude/vibrant-johnson-nxvvxo.
 Note docs/si/N5-SPC-box31.md (§0-§8); packet docs/si/P-N5-GP-box31.md (FROZEN d072bb28, sha1 cd4866df); DEAD.md «box 31» (2 items);

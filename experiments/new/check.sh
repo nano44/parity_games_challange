@@ -243,4 +243,12 @@ if grep -q "steps 286 distinct_sbar 16" <<<"$z1" && grep -q "steps 258 distinct_
 else
   echo "box 58 LA checks: FAILED"; exit 1
 fi
+# Box 59 (successor 34): N5-FC: fcN's flip word is W_N with cascades only after records (fc_4, sha1 3562ec4d); PV data line on so_sor5_n24.
+w1=$(python3 -I box59/fcword.py box59/out/fc_4.pg 4); w2=$(python3 -I box59/frec.py ../red/so/instances/so_sor5_n24.pg)
+if grep -q "^FCWORD N 4 n 110 SBC 16 W PASS C PASS$" <<<"$w1" && grep -q "^FCOPEN N 4 PASS" <<<"$w1" && grep -q "^FCLAT N 4 PASS" <<<"$w1" && \
+   grep -q "n 24 k 1 orbit 23 SBC 22 maxflips 22 " <<<"$w2" && [ "$(sha1sum box59/out/fc_4.pg | cut -c1-12)" = 3562ec4d15eb ]; then
+  echo "box 59 FC: fc_4 word W_4 (SBC 16), FCOPEN, FCLAT; so_sor5_n24 maxflips 22 <= n 24: PASS"
+else
+  echo "box 59 FC checks: FAILED"; exit 1
+fi
 rm -rf "$tmp"

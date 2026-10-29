@@ -1,0 +1,8 @@
+NOBC n5-epoch/instances/lend47_n32.pg 7 19 s 8 late [(19, 9, 7)] cand [7] gap 1
+NOBC red/usplit/instances/usplit_n14.pg 0 2 s 1 late [(13, 12, 0)] cand [0] gap 1
+NOBC red/usplit/instances/usplit_n23.pg 0 8 s 4 late [(22, 21, 3)] cand [3] gap 1
+NOBC red/usplit/instances/usplit_rd_n24.pg 0 2 s 1 late [(23, 22, 0)] cand [0] gap 1
+NOBC red/usplit/instances/usplit_rd_s3_n27.pg 0 2 s 1 late [(26, 25, 0)] cand [0] gap 1
+NOBC red/usplit/instances/usplit_s3_n16.pg 0 2 s 1 late [(15, 14, 0)] cand [0] gap 1
+NOBC experiments/si/lay/out/s_ka.pg 0 5 s 2 late [(58, 21, 1)] cand [1] gap 1
+NOBC experiments/si/rund/instances/usplit_rd_s3_n27.pg 0 2 s 1 late [(26, 25, 0)] cand [0] gap 1
