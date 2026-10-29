@@ -407,3 +407,7 @@ Answered from the record (RESULTS R51-R73, Lead report 18:25Z). Relayed to the L
 > Give me a status update about N5
 
 Answered from trunk e3b435ab2 (2026-10-29 09:27Z; NOW.md header 06:46Z), RESULTS R74-R84, roster. Relayed to the Lead (asked why only L-SI is WORKING).
+
+## 2026-10-29T10:02Z Lead report (09:58Z)
+Roster accurate; not throttled on purpose; Lead miss: after the 10-28 21:05Z restart lanes parked as boxes ended and no successors were started (against D17/L39, L38). Usage fine: no overage, five-hour limit "allowed". Restarting L-NEW, L-RED, L-COMP, L-LIT on N5 now (five working lanes with L-SI).
+Owner line (verbatim): "N5 status: RESULTS R74–R84 landed today (all structural lemmas or reductions, two referees + CHECKER each). N5's running time (G-N5-TIME) is still OPEN: no polynomial bound is proved. Live CONJECTURES: SEG-COUNT, L-WAVE′, FB-LIN. Killed today: L-WAVE, SEG-LAST, SINK-GROW. I under-ran the fleet since last night (one working lane, not five) and am restarting four lanes now."
