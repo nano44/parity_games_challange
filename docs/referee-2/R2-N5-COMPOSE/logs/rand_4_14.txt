@@ -1,0 +1,32 @@
+MODE random 3000 4 14 11 3 RSUB 20
+CMP_E_checks: 22588
+CMP_O_checks: 21054
+LEN_E_checks: 212395
+LEN_O_checks: 197988
+NM_E_checks: 3551
+NM_O_checks: 2926
+RUN_checks: 12000
+SWR_E_checks: 174178
+SWR_O_checks: 174155
+X_LEN0_E: 6529
+X_LEN0_O: 4750
+X_RUN0: 7494
+X_SWR0_E: 73712
+X_SWR0_O: 72502
+kind1: 8991
+kind2: 4120
+kind3: 4196
+kind4: 1784
+phases: 1597
+runs: 12000
+transitions: 19091
+max S1/S2_E: 0.667
+max S1/S2_O: 0.667
+max maxNM_E: 2
+max maxNM_O: 2
+max maxPCH_E: 3
+max maxPCH_O: 2
+max maxT: 7
+max max_lUruns: 7
+max max_lruns: 7
+RESULT PASS violations 0

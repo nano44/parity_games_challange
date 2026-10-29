@@ -1,0 +1,77 @@
+game experiments/red/seg/instances/segfam_k8_n79.pg sha1 ddb67effe8a6021a5bf57eee43b4b9ee7afbfdc2
+start experiments/red/seg/instances/segfam_k8_n79.start sha1 eb865b58554f6fe6db3f7409d64b5b61a4eeee6d
+n5b iterations 18 fallbacks 0 evals 75
+RESULT mode=n5 n=79 iterations=18 fallback=0 capped=0 evals=20 secs=0.03
+n5b: states 19 iterations 18 fallbacks 0 | n5.py (si.py engine): iterations 18 fallbacks 0 states logged 19
+state sequences identical: True
+n5b solution: zielonka(oink zlk) OK strategies verified
+n5.py solution: zielonka(oink zlk) OK strategies verified
+seg [0, 16] L 16 switchers 9 EXC 7 deadlock [0, 2, 4, 6, 8, 10, 12, 14]
+  deadlock t=0: 3:0->26(I)
+  deadlock t=2: 3:26->47(I)
+  deadlock t=4: 3:47->52(I)
+  deadlock t=6: 3:52->57(I)
+  deadlock t=8: 3:57->62(I)
+  deadlock t=10: 3:62->67(I)
+  deadlock t=12: 3:67->72(I)
+  deadlock t=14: 3:72->77(I)
+  E_b [3, 4, 7, 10, 13, 16, 19, 22, 23, 25, 45, 50, 55, 60, 65, 70, 75] T [0, 27, 28, 30, 32, 34, 36, 38, 40] jW {65: None, 3: 25, 4: None, 70: None, 7: None, 10: None, 75: None, 45: None, 13: None, 16: None, 50: None, 19: None, 23: None, 22: None, 55: None, 25: None, 60: None} jH {65: None, 3: 23, 4: 3, 70: None, 7: 3, 10: 3, 75: None, 45: None, 13: 3, 16: 3, 50: None, 19: 3, 23: None, 22: 3, 55: None, 25: 3, 60: None}
+  t=0 Wsinks [(4, 2, 27, 'u'), (7, 5, 28, 'u'), (10, 8, 30, 'u'), (13, 11, 32, 'u'), (16, 14, 34, 'u'), (19, 17, 36, 'u'), (22, 20, 38, 'u'), (25, 23, 40, 'u')] Hsinks [(3, 0, 78, 26)] switches 3:0->26
+  t=1 Wsinks [(4, 2, 27, 'R'), (7, 5, 28, 'u'), (10, 8, 30, 'u'), (13, 11, 32, 'u'), (16, 14, 34, 'u'), (19, 17, 36, 'u'), (22, 20, 38, 'u'), (25, 23, 40, 'u')] Hsinks [(3, 26, 78, 26)] switches 4:2->27L
+  t=2 Wsinks [(7, 5, 28, 'u'), (10, 8, 30, 'u'), (13, 11, 32, 'u'), (16, 14, 34, 'u'), (19, 17, 36, 'u'), (22, 20, 38, 'u'), (25, 23, 40, 'u')] Hsinks [(3, 26, 78, 47)] switches 3:26->47
+  t=3 Wsinks [(7, 5, 28, 'R'), (10, 8, 30, 'u'), (13, 11, 32, 'u'), (16, 14, 34, 'u'), (19, 17, 36, 'u'), (22, 20, 38, 'u'), (25, 23, 40, 'u')] Hsinks [(3, 47, 78, 47)] switches 7:5->28L
+  t=4 Wsinks [(10, 8, 30, 'u'), (13, 11, 32, 'u'), (16, 14, 34, 'u'), (19, 17, 36, 'u'), (22, 20, 38, 'u'), (25, 23, 40, 'u')] Hsinks [(3, 47, 78, 52)] switches 3:47->52
+  t=5 Wsinks [(10, 8, 30, 'R'), (13, 11, 32, 'u'), (16, 14, 34, 'u'), (19, 17, 36, 'u'), (22, 20, 38, 'u'), (25, 23, 40, 'u')] Hsinks [(3, 52, 78, 52)] switches 10:8->30L
+  t=6 Wsinks [(13, 11, 32, 'u'), (16, 14, 34, 'u'), (19, 17, 36, 'u'), (22, 20, 38, 'u'), (25, 23, 40, 'u')] Hsinks [(3, 52, 78, 57)] switches 3:52->57
+  t=7 Wsinks [(13, 11, 32, 'R'), (16, 14, 34, 'u'), (19, 17, 36, 'u'), (22, 20, 38, 'u'), (25, 23, 40, 'u')] Hsinks [(3, 57, 78, 57)] switches 13:11->32L
+  t=8 Wsinks [(16, 14, 34, 'u'), (19, 17, 36, 'u'), (22, 20, 38, 'u'), (25, 23, 40, 'u')] Hsinks [(3, 57, 78, 62)] switches 3:57->62
+  t=9 Wsinks [(16, 14, 34, 'R'), (19, 17, 36, 'u'), (22, 20, 38, 'u'), (25, 23, 40, 'u')] Hsinks [(3, 62, 78, 62)] switches 16:14->34L
+  t=10 Wsinks [(19, 17, 36, 'u'), (22, 20, 38, 'u'), (25, 23, 40, 'u')] Hsinks [(3, 62, 78, 67)] switches 3:62->67
+  t=11 Wsinks [(19, 17, 36, 'R'), (22, 20, 38, 'u'), (25, 23, 40, 'u')] Hsinks [(3, 67, 78, 67)] switches 19:17->36L
+  t=12 Wsinks [(22, 20, 38, 'u'), (25, 23, 40, 'u')] Hsinks [(3, 67, 78, 72)] switches 3:67->72
+  t=13 Wsinks [(22, 20, 38, 'R'), (25, 23, 40, 'u')] Hsinks [(3, 72, 78, 72)] switches 22:20->38L
+  t=14 Wsinks [(25, 23, 40, 'u')] Hsinks [(3, 72, 78, 77)] switches 3:72->77
+  t=15 Wsinks [(25, 23, 40, 'R')] Hsinks [(3, 77, 78, 78)] switches 3:77->78L 25:23->40L
+n 79 iterations 18 fallbacks 0 segments 1 maxEXC 7 max deadlocks/segment 8
+--- L-SI lay/relcheck.py 0 16 0
+n 79 states 19 fallback flags [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+tau constant on [a, b]: True | no fallback at transitions a..b-1: True
+phase/run boundary before a: tau_(a-1) == tau_a: False | fallback at a-1: False
+run containing t (n5b: (lambda_Xi, tau) constant, no fallback): (0, 16) | its REL segments: [(0, 16)] | [a, b] is one of them: True
+|X_b| 18 |RO_b| 25 |CW_b| 9 |CH_b| 1
+REL-admissible on [a, b]: True | REL at a - 1: False
+switchers at t = 0: [(3, 0, 26, 'switches again at', [2, 4, 6, 8, 10, 12, 14, 15])]
+SEG-LAST fails at t: True
+observed GEN_W failures on [a, b] (S1 rank order): 0
+--- L-SI lay/relcheck.py 0 16 8
+n 79 states 19 fallback flags [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+tau constant on [a, b]: True | no fallback at transitions a..b-1: True
+phase/run boundary before a: tau_(a-1) == tau_a: False | fallback at a-1: False
+run containing t (n5b: (lambda_Xi, tau) constant, no fallback): (0, 16) | its REL segments: [(0, 16)] | [a, b] is one of them: True
+|X_b| 18 |RO_b| 25 |CW_b| 9 |CH_b| 1
+REL-admissible on [a, b]: True | REL at a - 1: False
+switchers at t = 8: [(3, 57, 62, 'switches again at', [10, 12, 14, 15])]
+SEG-LAST fails at t: True
+observed GEN_W failures on [a, b] (S1 rank order): 0
+--- L-SI lay/relcheck.py 0 16 14
+n 79 states 19 fallback flags [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+tau constant on [a, b]: True | no fallback at transitions a..b-1: True
+phase/run boundary before a: tau_(a-1) == tau_a: False | fallback at a-1: False
+run containing t (n5b: (lambda_Xi, tau) constant, no fallback): (0, 16) | its REL segments: [(0, 16)] | [a, b] is one of them: True
+|X_b| 18 |RO_b| 25 |CW_b| 9 |CH_b| 1
+REL-admissible on [a, b]: True | REL at a - 1: False
+switchers at t = 14: [(3, 72, 77, 'switches again at', [15])]
+SEG-LAST fails at t: True
+observed GEN_W failures on [a, b] (S1 rank order): 0
+--- L-SI lay/segsw.py
+SEGCOUNT_V=1 deadlock_steps=8 exc_max_plus100=107 maxsw_9=1 segs=1 surplus=1
+SEGCOUNT FAIL
+--- L-SI lay/wsink.py
+SS_V=8 WSR_V=8 hsinks=16 segs=1 steps_hsink_switch=1 steps_unready_wsink=15 steps_with_bothsink=0 trans=16 wsinks=72 wsinks_ready=8 znear_h0=1150 znear_w0=2400 zsupport_inv_x100=1183
+WSOFF PASS
+HSOFF PASS
+HSR PASS
+WSL PASS
+WSR FAIL
+SS FAIL
+NOSINK PASS

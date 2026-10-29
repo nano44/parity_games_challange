@@ -1,0 +1,6 @@
+OK   docs/new/N5-ssi-global.md@6abea2e6:27-27 | injective priorities: rank(v) = position of v in V sorted by (Ω(v), v); p'(v) = 2·rank(v) 
+OK   docs/new/N5-ssi-global.md@6abea2e6:28-28 | valuation of v under (σ, σ̄): (c, P, ℓ), c = the most relevant (max p') vertex of the cycl
+OK   docs/new/N5-ssi-global.md@6abea2e6:31-31 | Σ_{u∈P} (+2^rank(u) if Ω(u) even else −2^rank(u)); then ℓ: if c is odd, longer is better f
+OK   docs/RESULTS.md@6abea2e6:4967-4967 | (a) Fact DELTA (§1, with F4): for sets A ≠ B of ranks, weight(B) > weight(A) iff d := d(A,
+OK   docs/RESULTS.md@6abea2e6:4960-4960 | P, then ℓ. v: a fixed vertex; c := λ(v), constant on P; P_t := P(Ξ_t v) ⊆ {u : rank(u) > r
+tags 5 ok 5 miss 0 SHIFT 0

@@ -1,0 +1,28 @@
+B1_chk 748527
+COR_MUT3_FAIL 66
+COR_chk 18429
+GAMES 152
+HYP 20384
+LEMMA_MUT3_FAIL 576
+PAIRS 98907
+RUNS 631
+EX ('LEMMA_MUT3', 'gs_inputs/hn_fig_n3.pg/2', 0, 48, 45, [45, 46, 47])
+EX ('COR_MUT3', 'gs_inputs/hn_fig_n3.pg/2', 0, 48, 45)
+EX ('LEMMA_MUT3', 'gs_inputs/hn_fig_n3.pg/3', 0, 39, 36, [36, 37, 38])
+EX ('COR_MUT3', 'gs_inputs/hn_fig_n3.pg/3', 0, 39, 36)
+EX ('LEMMA_MUT3', 'gs_inputs/hn_fig_n4.pg/1', 0, 60, 57, [57, 58, 59])
+EX ('COR_MUT3', 'gs_inputs/hn_fig_n4.pg/1', 0, 60, 57)
+EX ('LEMMA_MUT3', 'gs_inputs/hn_fig_n4.pg/2', 0, 51, 48, [48, 49, 50])
+EX ('COR_MUT3', 'gs_inputs/hn_fig_n4.pg/2', 0, 51, 48)
+EX ('LEMMA_MUT3', 'gs_inputs/hn_fig_n4.pg/2', 0, 69, 66, [66, 67, 68])
+EX ('COR_MUT3', 'gs_inputs/hn_fig_n4.pg/2', 0, 69, 66)
+EX ('LEMMA_MUT3', 'gs_inputs/hn_fig_n4.pg/3', 0, 51, 48, [48, 49, 50])
+EX ('COR_MUT3', 'gs_inputs/hn_fig_n4.pg/3', 0, 51, 48)
+EX ('LEMMA_MUT3', 'gs_inputs/hn_fig_n4.pg/3', 0, 60, 57, [57, 58, 59])
+EX ('COR_MUT3', 'gs_inputs/hn_fig_n4.pg/3', 0, 60, 57)
+EX ('LEMMA_MUT3', '../../../experiments/new/box21/instances/oneodd_c24.pg/0', 0, 22, 9, [9, 0])
+EX ('LEMMA_MUT3', '../../../experiments/new/box21/instances/oneodd_c24.pg/0', 1, 22, 9, [9, 0])
+EX ('LEMMA_MUT3', '../../../experiments/new/box21/instances/oneodd_c24.pg/0', 2, 22, 9, [9, 0])
+EX ('LEMMA_MUT3', '../../../experiments/new/box21/instances/oneodd_c24.pg/0', 3, 22, 9, [9, 0])
+EX ('LEMMA_MUT3', '../../../experiments/new/box21/instances/oneodd_c24.pg/0', 4, 22, 9, [9, 0])
+EX ('LEMMA_MUT3', '../../../experiments/new/box21/instances/oneodd_c24.pg/0', 5, 22, 9, [9, 0])

@@ -1,0 +1,4 @@
+counter_symsi_16 dsig_max=3 dtau_max=2 exec_ENT_max=3 exec_REPEAT=1 exec_VC_max=3 exec_VCbar_max=3 exec_len_max=78 execs=1 joint_VC_max=3 phase_ENT_max=2 phase_VC_max=2 phase_VCbar_max=2 phase_len_max=15 phases=2 run_ENT_max=1 run_VC_max=1 run_VCbar_max=2 run_len_max=10 runs=3
+counter_symsi_20 dsig_max=3 dtau_max=2 exec_ENT_max=3 exec_REPEAT=1 exec_VC_max=3 exec_VCbar_max=3 exec_len_max=94 execs=1 joint_VC_max=3 phase_ENT_max=2 phase_VC_max=2 phase_VCbar_max=2 phase_len_max=17 phases=2 run_ENT_max=1 run_VC_max=1 run_VCbar_max=2 run_len_max=12 runs=3
+counter_rob_16 dsig_max=3 dtau_max=1 exec_ENT_max=3 exec_VC_max=3 exec_VCbar_max=2 exec_len_max=46 execs=1 joint_VC_max=3
+counter_rob_20

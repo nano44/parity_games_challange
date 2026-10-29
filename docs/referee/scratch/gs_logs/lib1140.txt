@@ -1,0 +1,21 @@
+NOTE start file ../../../experiments/new/box45/instances/div_n8.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file ../../../experiments/new/box45/out/div_s13_1.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file ../../../experiments/new/box45/out/div_s15_1.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file ../../../experiments/red/n3/instances/n3cov_phi.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file ../../../experiments/red/n3/out/c3/best_3.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file ../../../experiments/red/n3/out/ph1/best_1.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file ../../../experiments/red/n3/out/ph2/best_2.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file ../../../experiments/red/n3/out/ph3/best_3.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file ../../../experiments/red/n3/out/ph4/best_4.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file ../../../experiments/red/n3/out/ph5/best_5.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file ../../../experiments/red/n3/out/ph6/best_6.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file ../../../experiments/red/n3/out/ph7/best_7.start invalid for its game (move not an edge, or missing); given start skipped
+B1_chk 1588339
+B2_chk 10198
+COR_chk 9052
+GAMES 870
+HYP 10198
+HYP_m2 5996
+PAIRS 334123
+RUNS 1857
+skip_big 270

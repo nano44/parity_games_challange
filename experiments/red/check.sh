@@ -256,6 +256,19 @@ out=$(python3 -I fb/fbphase.py so/instances/rise_fb38_n48.pg S3 so/instances/far
 [[ "$out" == *"maxf=37 "*"maxf=25 "* ]] || { echo "fbphase drifted: $out"; exit 1; }
 [[ "$(sha1sum fb/instances/fb38_n48.pg | cut -c1-12)" == "bc5858a24505" ]] || { echo "fb38_n48 sha1 changed"; exit 1; }
 out=$(python3 -I fb/fbphase.py fb/instances/fb38_n48.pg fb/instances/fb38_n48.start); [[ "$out" == *"maxf=38 "* ]] || { echo "fb38_n48 drifted: $out"; exit 1; }
+# R105 (successor 25): SEG-COUNT kill (designed gadget + family); generators reproduce the pins, segchk.py gives EXC 1 / 2
+python3 -I seg/mk2d.py "$t/s20.pg" "$t/s20.start" > /dev/null; cmp -s "$t/s20.pg" seg/instances/segcount_kill_n20.pg && cmp -s "$t/s20.start" seg/instances/segcount_kill_n20.start || { echo "mk2d drifted from segcount_kill_n20"; exit 1; }
+python3 -I seg/mkk.py 3 "$t/k3.pg" "$t/k3.start" > /dev/null; cmp -s "$t/k3.pg" seg/instances/segfam_k3_n29.pg || { echo "mkk 3 drifted from segfam_k3_n29"; exit 1; }
+[[ "$(sha1sum seg/instances/segcount_kill_n20.pg | cut -c1-12)" == "2783f64d82f2" ]] || { echo "segcount_kill_n20 sha1 changed"; exit 1; }
+out=$(python3 -I seg/segchk.py seg/instances/segcount_kill_n20.pg seg/instances/segcount_kill_n20.start | tail -1); [[ "$out" == *"maxEXC 1 max deadlocks/segment 2" ]] || { echo "segcount_kill_n20 drifted: $out"; exit 1; }
+out=$(python3 -I seg/segchk.py seg/instances/segfam_k3_n29.pg seg/instances/segfam_k3_n29.start | tail -1); [[ "$out" == *"maxEXC 2 max deadlocks/segment 3" ]] || { echo "segfam_k3_n29 drifted: $out"; exit 1; }
+# R106 (successor 25): quadratic fallback-free run = one REL segment (mkr.py); generator reproduces the pins; K 3 m 4: L 20 at n 54
+python3 -I seg/mkr.py 3 4 "$t/q.pg" "$t/q.start" > /dev/null; cmp -s "$t/q.pg" seg/instances/runquad_K3_m4_n54.pg && cmp -s "$t/q.start" seg/instances/runquad_K3_m4_n54.start || { echo "mkr drifted from runquad_K3_m4_n54"; exit 1; }
+python3 -I seg/mkr.py 8 30 "$t/q8.pg" "$t/q8.start" > /dev/null; cmp -s "$t/q8.pg" seg/instances/runquad_K8_m30_n192.pg || { echo "mkr drifted from runquad_K8_m30_n192"; exit 1; }
+out=$(python3 -I seg/segchk.py seg/instances/runquad_K3_m4_n54.pg seg/instances/runquad_K3_m4_n54.start | head -1); [[ "$out" == "seg [0, 20] L 20 switchers 11 EXC 9 "*"FAILS" ]] || { echo "runquad_K3_m4_n54 drifted: $out"; exit 1; }
+# R107 (successor 26): s3embed of runquad_K3_m4_n54 reproduces the pin; N5 from the S3 DEFAULT start (no start file) makes 21 iterations
+python3 -I seg/s3embed.py seg/instances/runquad_K3_m4_n54.pg seg/instances/runquad_K3_m4_n54.start "$t/e.pg" "$t/e.start" > /dev/null; cmp -s "$t/e.pg" seg/instances/s3quad_K3_m4.pg || { echo "s3embed drifted from s3quad_K3_m4"; exit 1; }
+out=$(python3 -I ../n5-second/n5b.py seg/instances/s3quad_K3_m4.pg "$t/e.sol" --mode spec); [[ "$out" == "n5b iterations 21 fallbacks 0 "* ]] || { echo "s3quad_K3_m4 drifted: $out"; exit 1; }
 TMPDIR="$t" python3 correspond.py 2 3 4 5 6 > "$t/corr.log" || { cat "$t/corr.log"; exit 1; }
 python3 xcheck.py --games 150 --nmax 7 --seed 7 > "$t/x.log" || { cat "$t/x.log"; exit 1; }
 echo "red check: r2_check PASS (R11), bsolo 4 = 4 tangles/7 iterations (R10); dtl_flipflop F8 = 36/1/5 (R9), Claim P/Q 0 violations; zadeh_lb N2 = 43 (no fixed order, R7); fhz_padded 2 S7 = 16 (R5 kill);  friedmann_Gn 2 S7 = 15; fhz lockstep3/relation/export OK; gated_bland 6 = 63 MSF iterations (regions = Zielonka, strategies verified); Claim F instances; MSF == Bland N<=6; $(tail -1 "$t/x.log")"
