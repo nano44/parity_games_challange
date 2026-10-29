@@ -131,6 +131,15 @@ count here is polynomial (quadratic).
   (Θ(n)). A super-quadratic run needs a vertex with super-linearly many Ξ-changes, i.e. a source whose value climbs through many path
   sets at polynomial cost (a counter). STEP 2 works on that.
 
+## 6. Concordance with R106's addendum (successor 25, l-red 011c6e3e, pushed while this note was in review)
+- successor 25's whole.py reports the same iteration counts at every shared row (S3: 3; designed start: 22 / 76 / 162 / 280 / 264) and the same
+  per-vertex maxima (2K whole, 2K − 1 in the run).
+- Phase counts differ by definition only. whole.py cuts phases at τ changes only, giving "1 phase" (designed start) and "3 phases" (S3).
+  r107.py cuts at changes of τ, λ_σ or λ_τ (phsw.py's definition), and counts the final state after the λ-changing last transition as
+  its own (empty) phase: 2 and 4.
+- New here, beyond the addendum: the S3 question it left OPEN ("whether some prefix leads N5 from S3 into the designed start") is
+  answered for this family by s3embed.py (§3). The run is reached from S3 with no prefix at all, at a factor 2.5 in n.
+
 ## DONE / FINDINGS / NEEDS
 - DONE: r107.py; s3embed.py; pins s3quad_K3_m4 (check.sh gate) and s3quad_K8_m30; the tables above. Every row was run on both engines;
   Oink was run on the two pins.
