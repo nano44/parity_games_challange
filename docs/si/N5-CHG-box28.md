@@ -25,6 +25,7 @@ Labels (D18 / L40): PROVED (lane) / CONJECTURE / OPEN / DATA / READING / DEAD. C
 | §9 | Theorem COMPOSE: every phase has ≤ Σ_{(v,c)} n(PCH(c) + 1) ≤ m·n·(max PCH + 1) transitions (Lemmas SW-RETURN, LEN-MONO); with MATCH-Φ (L-LIT, under review) ≤ m·n·((n²/2)(NM + 1) + NM + 1); Corollary COMPOSE-RUN (R47 (a), both players): the whole N5 run on any game is polynomial IF the carry counts are | PROVED (lane), a REDUCTION; DATA slack |
 | §10 | where carries come from (runquad: one high Odd rank swapped for a lower one plus the reactor chain); polynomial re-weightings Φ_d (d ≤ 3) keep the carries | DATA, READING |
 | §11 | CONJECTURE LEN-TOTAL (≤ n − 1 length-only rises per vertex per phase; would sharpen COMPOSE to m_E·(P* + n)) | CONJECTURE; DATA ≤ 0.875n |
+| §12 | Lemma INHERIT: a vertex's carry is the carry of the switch where its honest play diverges | PROVED (lane, generic case); DATA 0 failures |
 | §8 | Lemma SW-RISE (a switch strictly raises the switcher's own Ξ off its honest cycle); SW-RUN per fallback-free run (Lead: SW-PER-VERTEX) | PROVED (lane); CONJECTURE, DATA ≤ 0.667n |
 
 ## 0. Setting
@@ -290,6 +291,22 @@ for any sequence of subsets of R_c (c fixed), the number of changes is ≤ (K(K+
   dlsep_kill_n70. Totals: 5,632 (alt_all pinned), 6,770 (lib41), 6,481 (experiments/si).
 - No proof route yet: the length does NOT move monotonically across P-changes (it moves against S1's preferred direction at 738 P-changes
   of runquad_K8_m30_n192 and 105 of dlsep_kill_n70; counter lwrong_at_pchange), so the per-block argument of LEN-MONO does not chain.
+
+## 12. (ii) carries under S4a: they are inherited from the divergence point (Lemma INHERIT; DATA)
+- Lemma INHERIT (PROVED, lane, generic case). Let y have a P-change at t → t + 1 inside a phase, and let x be the first vertex of y's honest
+  play at t whose honest successor changes (so y's plays at t and t + 1 share the prefix Π = y … x). If x's honest plays at t and t + 1 avoid
+  Π ∖ {x} before reaching the cycle node c (the generic case: no new cycle through Π), then P(Ξ y) = Q ∪ P(Ξ x) at both states, Q := the
+  vertices of Π ∖ {x} above c, disjoint from both P(Ξ_t x), P(Ξ_{t+1} x); so y's and x's P-changes have the same symmetric difference and the
+  same R_c (same c, λ constant), and y's P-change is a CARRY iff x's is. □
+- DATA (chg/carrysrc.py; every carry of every vertex, its divergence vertex x): INHERIT 0 failures (INH PASS) on runquad_K8_m30_n192 (856 carries,
+  all with an Even source), runquad_K3_m4_n54 (75), dlsep_kill_n70 (144: 118 Even, 26 Odd sources; an Odd source is a σ̄ change); alt_all pinned starts
+  30,425 carries (19,931 Even / 10,494 Odd sources), lib41 20,773, experiments/si 15,300 (chg/carrysrc_*.txt): 0 failures. In runquad_K8_m30_n192 the single phase has 256 distinct source carries (t, x) in 263 transitions: almost every reactor
+  switch is a carry AT THE SWITCHER, while any one vertex inherits only ≤ 8 (= K) of them.
+- READING (what a bound on NM needs). Carries are created at switches (an Even switch whose own P-change is not decomposable, or a σ̄ change)
+  and copied upstream along honest plays. NM(y) ≤ #{t : y's honest play diverges at t at a carry source}. So NM per vertex is a statement
+  about how often one vertex's honest play is redirected through a carry-creating switch — in runquad once per pivot climb (the reactor chain
+  enters y's play), while the reactors themselves create carries at nearly every step. No S4a-specific bound is in sight; this is the open
+  core of G-N5-TIME after COMPOSE.
 
 ## DONE / FINDINGS / NEEDS
 - DONE: this note; tools chg/suffix.py (SUFFIX-COUNT, BND with MUT, EARLY, INTER-JOINT), chg/dlock.py (deadlock anatomy and candidates),

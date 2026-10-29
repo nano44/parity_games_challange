@@ -608,3 +608,8 @@ echo "si (box 28 §9: COMPOSE and COMPOSE-RUN inequalities hold with their slack
 python3 -I rund/quotecheck.py ../../docs/si/P-N5-COMPOSE-box28.md | grep -q "quotes=16 bad=0"
 python3 -I rund/quotecheck.py ../../docs/si/P-N5-COMPOSE-box28.md --mut | grep -q "QUOTES FAIL"
 echo "si (box 28: P-N5-COMPOSE quotes verbatim, shifted control fails): PASS"
+# box 28 §12: Lemma INHERIT (a vertex's carry is the carry of the switch where its honest play diverges): 0 failures on runquad and dlsep.
+o=$(python3 -I chg/carrysrc.py --one chg/instances/red/runquad_K8_m30_n192.pg chg/instances/red/runquad_K8_m30_n192.start)
+grep -q "^carries=856 nm_max=8 phases=1 src_even=856 srcs_max_per_phase=256$" <<<"$o"; grep -q "^INH PASS" <<<"$o"
+o=$(python3 -I chg/carrysrc.py --one chg/instances/dlsep_kill_n70.pg chg/instances/dlsep_kill_n70.start); grep -q "src_odd=26" <<<"$o"; grep -q "^INH PASS" <<<"$o"
+echo "si (box 28 §12: INHERIT holds on runquad (856 carries) and dlsep_kill_n70): PASS"
