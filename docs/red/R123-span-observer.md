@@ -1,4 +1,4 @@
-# R123: CONJECTURE RESET-LIN-S is false. A switcher that leaves and re-enters R120's wave observer once per pivot cycle puts all of the observer's MATCHED P-changes inside one span: #MAT^span = (K − 2)(m − 1) + K, 482 > n = 346 at K = 12 (fallback-free, τ constant). PCH-QUAD-S is not touched (PCH^span ≈ n²/196). READING: PCH-QUAD-S can only fail on a λ-run longer than n² + n
+# R123: CONJECTURES RESET-LIN-S and CARRY-SEG-S are false (§4: 541 carries in one span, n − 1 = 345). A switcher that leaves and re-enters R120's wave observer once per pivot cycle puts all of the observer's MATCHED P-changes inside one span: #MAT^span = (K − 2)(m − 1) + K, 482 > n = 346 at K = 12 (fallback-free, τ constant). PCH-QUAD-S is not touched (PCH^span ≈ n²/196). READING: PCH-QUAD-S can only fail on a λ-run longer than n² + n
 L-RED successor 31 (Opus 5.5; D1/D18; Lead 2026-10-29 22:19Z STEP 1: "attack the fleet's cleanest single target for G-N5-TIME ...
 CONJECTURE PCH-QUAD-S ... Also RESET-LIN-S, CARRY-SEG-S and MIN-QUAD ... What a kill needs: one pair (v, c) where v leaves c and
 re-enters it later ... Report at the first super-quadratic sign, or at a clear obstruction."). Written 2026-10-29 from 22:49Z (date -u).
@@ -59,11 +59,38 @@ Not a TARGET.md claim. G-N5-TIME stays OPEN: everything here is quadratic.
      PCH-QUAD-S beyond G-N5-TIME is the exponent.
 - OPEN, next: a super-quadratic λ-run (a third factor). Nothing in this box approaches it.
 
+## 4. CARRY-SEG-S is false too (DATA; experiments/red/span/carryobs.py; written 23:07Z, date -u)
+- R120 §3's Even observer (obs2.py OWNER=0 ABOVE=a: o Even, q_j just above the a-markers) has carries in every wave step (each step adds
+  the newly flipped reactor's odd a-marker with no odd rank leaving) and one MATCHED change per cycle, at the reactor flip
+  (η_(i+1) leaves, ν_(i+1) enters: covered). So bursts were m < n − 1.
+- carryobs.py gives each b-link b_j an odd marker β_j between the a-markers and the q_j, DECREASING in j (increasing breaks mkr: an
+  unflipped r_(j−1) then lifts r_j onto a at once; measured: 16 iterations instead of 76 at K = 4). At the flip the observer now gains
+  two odd ranks (ν_(i+1), β_m) against one higher odd rank leaving (η_(i+1)): a carry. mkr's run is unchanged (76 / 612 iterations).
+- Switcher: e -> {o, d}, d -> yd -> h′, yd an even marker q_d just above q_m. q_d is needed because N5's Even step is a best response in
+  the restricted game: at the h′-step the reactors flip in the same step, so W(o) already carries q_m + β_m + W(h′) (first version with
+  d -> h′: e never left). e leaves o at every h′-step and re-enters at the first wave step.
+  | K | m | n | spanc.py SEG^span(e, o) / PCH^span / MAT^span | win.py SEG (span) | CARRY-SEG-S (SEG ≤ n − 1) |
+  | --- | --- | --- | --- | --- | --- |
+  | 4 | 16 | 122 | 53 / 54 / 1 | 52 | holds |
+  | 8 | 32 | 234 | 233 (win.py + 1) | 232 | holds (233 = n − 1) |
+  | 12 | 48 | 346 | 541 / 542 / 1 | 540 (CARRYSEGS FAIL) | FAILS |
+- Fit: SEG^span = (K − 1)(m + 1) + 2 (spanc). Fails from K = 9.
+- spanw.py at K = 12: every span P-change co-occurs with a W-change (PCH = CO = WCH, max min(PCH, WCH) = 541 = 1.56n). MIN-QUAD
+  (≤ n²) holds; a LINEAR W-form per pair would fail here as on hntop (box 38 §6).
+- Pin experiments/red/span/instances/carryobs_K12_m48.pg (sha1 73e337d2e437da8f04723fc5153d13ec11796fbc), .start
+  (ed0b879921443aee63946d735ce7a9124a5f751b). vrun_carryobs_K12_m48.txt: n5b SPEC 612 iterations, 0 fallbacks; n5.py 612, 0; states
+  identical (xeng.py); both solutions Oink zlk OK, strategies verified. check.sh gate: pin regenerates; K = 4 SEG 53.
+- READING: both premises of box 35's arithmetic (PCH-QUAD-S ⇐ RESET-LIN-S ∧ CARRY-SEG-S) are false, on different devices. PCH-QUAD-S
+  itself holds on both (PCH^span ≤ |λ-run| ≈ n²/200). The span is reader-inflatable for any per-pair count that a single observer can
+  make linear-in-run: MATCHED (§2) and carries (§4) alike.
+
 ## DONE / FINDINGS / NEEDS
-- DONE: span/spanobs.py (device), span/spanc.py (second span counter), pin spanobs_K12_m48 + vrun output, check.sh gate, this note.
+- DONE: span/spanobs.py, span/carryobs.py (devices), span/spanc.py (second span counter, with SEG), pins spanobs_K12_m48 and
+  carryobs_K12_m48 + vrun outputs, check.sh gates, this note.
 - FINDINGS:
   1. DATA: span(e, o) MAT = (K − 2)(m − 1) + K; 482 (spanc) / 481 (win.py) > n = 346 at K = 12; two engines state by state, Oink OK.
   2. DEAD: CONJECTURE RESET-LIN-S. Also the fallback-free form of "PCH^span ≤ WCH^span + O(n)" (491 > n).
-  3. DATA: CARRY-SEG-S, MIN-QUAD, PCH-QUAD-S hold on the family (SEG 1, MIN 22, PCH^span ≈ n²/196).
+  2b. DEAD (§4): CONJECTURE CARRY-SEG-S: carryobs_K12_m48, SEG^span(e, o) 541 (spanc) / 540 (win.py) > n − 1 = 345; two engines, Oink.
+  3. DATA: MIN-QUAD and PCH-QUAD-S hold on both families (MIN ≤ 541 = 1.56n, PCH^span ≈ n²/200).
   4. READING: a PCH-QUAD-S kill needs a λ-run > n² + n; two-factor designs give ≤ n²/4; PCH-poly-S ⇔ G-N5-TIME given Lemma SPAN + R47.
 - NEEDS: none from the owner.
