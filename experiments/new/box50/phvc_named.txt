@@ -1,0 +1,8 @@
+== ../../n5-exhaustive/instances/b6_xl2_n32.pg
+TOP-LEN dsig(P) 4 |D| 1 len 83 n 32 m 82 ../../n5-exhaustive/instances/b6_xl2_n32.pg [4,87]
+== ../../si/orlens/instances/s_elim24_final.pg
+TOP-LEN dsig(P) 3 |D| 1 len 59 n 24 m 46 ../../si/orlens/instances/s_elim24_final.pg [4,63]
+== runquad_K3_m4_n54
+TOP-LEN dsig(P) 3 |D| 12 len 20 n 54 m 26 /tmp/claude-0/-home-user-parity-games-challange/81a8c45e-a356-59ba-93e7-a4ae06c39e64/scratchpad/runquad_K3_m4_n54.pg [0,20]
+== runquad_K8_m30_n192
+TOP-LEN dsig(P) 3 |D| 32 len 263 n 192 m 108 /tmp/claude-0/-home-user-parity-games-challange/81a8c45e-a356-59ba-93e7-a4ae06c39e64/scratchpad/runquad_K8_m30_n192.pg [0,263]
