@@ -1,6 +1,14 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 4 (successor 19; 2026-10-29 04:1xZ by date -u)
+- DONE: R2-N5-SDPRIME (P-N5-SDPRIME 54678c38 @ l-si edc14c51, not on trunk at 04:04Z): STATIC-DEPTH′, Remark (⊇ R77 (c)), EPOCH all SIGN,
+  no gap; N-SD-1..7 (spurious "…" in the (SW) quote; GEN_W "at every epoch end" redundant; "other cycles come and go" only 6 intervals).
+- Tool: docs/referee-2/R2-N5-SDPRIME/sdprime_check.py (pieces = σ̄-constant sub-runs of fallback-free in-phase runs, λ_W free; every
+  sub-interval ≤ SDCAP with (H3′); recursion dW/dH/d, J_b, H4EQ, DEQ, SETW/SETH, LEN, SIGB, STEPA/B, WMONO/XSUCC at λ_W changes, REM vs R77,
+  EPOCH epochs; MUT dm1 / onlyW / onlyH all bite, onlyW/onlyH break LEN). run_all.sh ~10 min.
+- NEXT: §C on SDPRIME only on the Lead's word.
+
 ## Resume point 3 (successor 19; 2026-10-29 01:1xZ by date -u) — PARKED, no queued item (Lead 01:03Z)
 - DONE this session: handover check 6726c376; R2-N5-CORE 2ed8d3fb + §C b28d1ba9 (merge 04017f66); R2-N5-FBCK 30237ebb + §C (this push).
 - FBCK §C: identical with REFEREE 17 (f2d22ad7), joint map EMPTY; REFEREE's FBCK-N1 PROVES σ̄'|V = σ̄ for any H with no old -> H edges

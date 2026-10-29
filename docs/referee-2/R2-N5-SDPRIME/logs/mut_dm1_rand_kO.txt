@@ -1,0 +1,48 @@
+MODE random 3000 8 20 2501 0 3 MUT dm1 SDCAP 60
+ENGXI_checks: 27628
+GEN_used_fail_intervals: 142
+H3p_intervals: 968
+SD_TW_ne_TH: 93
+SD_intervals: 968
+SD_lamW_moves: 1
+S_runs: 1189
+VIOLATIONS: 923
+V_SETH: 464
+V_SETW: 459
+WMONO_checks: 1259
+lamW_change_transitions: 56
+pieces: 1028
+runs: 9000
+states: 27628
+max_piece_len: (3, 'random2501:2742#1', 0, 3, 11)
+VIOLATION SETW: random2501:28#1 [1,2] v=12 t=1 dW=1
+VIOLATION SETH: random2501:28#1 [1,2] v=12 t=1 dH=1
+VIOLATION SETW: random2501:30#0 [0,1] v=11 t=0 dW=1
+VIOLATION SETH: random2501:30#0 [0,1] v=11 t=0 dH=1
+VIOLATION SETW: random2501:30#0 [0,1] v=17 t=0 dW=1
+VIOLATION SETH: random2501:30#0 [0,1] v=17 t=0 dH=1
+VIOLATION SETW: random2501:30#1 [1,2] v=11 t=1 dW=1
+VIOLATION SETH: random2501:30#1 [1,2] v=11 t=1 dH=1
+VIOLATION SETW: random2501:30#2 [2,3] v=11 t=2 dW=1
+VIOLATION SETH: random2501:30#2 [2,3] v=11 t=2 dH=1
+VIOLATION SETW: random2501:30#2 [2,3] v=17 t=2 dW=1
+VIOLATION SETH: random2501:30#2 [2,3] v=17 t=2 dH=1
+VIOLATION SETW: random2501:62#2 [1,2] v=11 t=1 dW=1
+VIOLATION SETH: random2501:62#2 [1,2] v=11 t=1 dH=1
+VIOLATION SETW: random2501:63#1 [1,2] v=8 t=1 dW=1
+VIOLATION SETH: random2501:63#1 [1,2] v=8 t=1 dH=1
+VIOLATION SETW: random2501:65#1 [0,1] v=9 t=0 dW=1
+VIOLATION SETH: random2501:65#1 [0,1] v=9 t=0 dH=1
+VIOLATION SETW: random2501:65#1 [0,1] v=14 t=0 dW=1
+VIOLATION SETW: random2501:79#0 [2,3] v=4 t=2 dW=1
+VIOLATION SETH: random2501:79#0 [2,3] v=4 t=2 dH=1
+VIOLATION SETW: random2501:79#1 [1,2] v=4 t=1 dW=1
+VIOLATION SETH: random2501:79#1 [1,2] v=4 t=1 dH=1
+VIOLATION SETW: random2501:79#2 [0,1] v=10 t=0 dW=1
+VIOLATION SETH: random2501:79#2 [0,1] v=10 t=0 dH=1
+VIOLATION SETW: random2501:79#2 [2,3] v=4 t=2 dW=1
+VIOLATION SETH: random2501:79#2 [2,3] v=4 t=2 dH=1
+VIOLATION SETW: random2501:87#0 [1,2] v=10 t=1 dW=1
+VIOLATION SETH: random2501:87#0 [1,2] v=10 t=1 dH=1
+VIOLATION SETW: random2501:110#0 [2,3] v=4 t=2 dW=1
+RESULT FAIL violations=923

@@ -1,0 +1,13 @@
+MISS docs/new/N5-ssi-global.md@55e0bcbda:29-30 | valuation of v under (σ, σ̄): (c, P, ℓ), c = the most relevant (max p') vertex of the cycl
+MISS docs/new/N5-ssi-global.md@55e0bcbda:31-32 | order (better for Even): compare reward of c (p'(c) if even, −p'(c) if odd); then P by the
+MISS docs/new/N5-ssi-global.md@55e0bcbda:48-48 | Iσ = {(v, w) : owner(v) = Even, w ≠ σ(v), Ξσ(w) strictly better than Ξσ(σ(v))}
+MISS docs/new/N5-ssi-global.md@55e0bcbda:52-52 | A(v) = {σ(v)} ∪ {w : (v, w) ∈ Iσ} for Even v
+MISS docs/new/N5-ssi-global.md@55e0bcbda:54-54 | (Even's one-player optimum against τ among "keep or take an improving edge".)
+MISS docs/new/N5-ssi-global.md@55e0bcbda:57-57 | FALLBACK, if σ_new = σ and τ_new = τ
+MISS docs/RESULTS.md@55e0bcbda:805-805 | U_τ the pointwise maximum of V_{σ',τ} over Even's σ'
+MISS docs/RESULTS.md@55e0bcbda:3597-3597 | P2: S4a's step is Even's optimum in its arena
+MISS docs/RESULTS.md@55e0bcbda:3769-3770 | (SW): every Even switch of N5 is to an edge … of Iσ
+MISS docs/RESULTS.md@55e0bcbda:4205-4206 | (W-MONO) W_{t+1} ⊵ W_t (P2), (Ξ-SUCC) Ξ_t(σ_t v) non-decreasing ((M2κ), (SW))
+MISS docs/RESULTS.md@55e0bcbda:4203-4203 | GEN_W (for every v, different W-plays from v to the same cycle have different W-valuations
+MISS docs/RESULTS.md@55e0bcbda:4434-4434 | (a) (C1) EVERY-SWITCH (§2): at every transition t → t+1 of a phase, σ_{t+1} ≠ σ_t.
+tags 12 ok 0 miss 12 SHIFT 1
