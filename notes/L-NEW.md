@@ -1,6 +1,30 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Box 51 log (successor 32, Opus 5.5, D14/D18; Lead brief 12:43Z; STEP 0 answers sent 12:44:31Z, started without waiting as told)
+- STEP 0 (measured): local l-new STALE at d4bcdd21; fetched, ff-only to 7ea2826d (is-ancestor OK); merge --no-ff trunk 27365bed → 12ec8621
+  (2 ahead / 0 behind; was 1 / 152, merge-base 36fd5bb8). GAPS G-N5-TIME l.11 open, G-N1-LB l.10 open, G-N5-TERM l.16 closed. D18 (INDEX
+  l.32), D14 (l.22), D1 (l.5) active. Oink built (setup_oink.sh rc 0). Answers here because docs/agents/ is Lead-only.
+- BOX 51: docs/new/N5-VCPHASE-box51.md. Tool: DS / sign-pattern view. Lemma DS-VC PROVED (pairwise alt ≤ s+1 ⇒ 2^d ≤ 2 + s·C(d,2)).
+  DS-PAIR DEAD on data (hntop_n8 alt 311, runquad 10 → 30). Then Proposition DLC PROVED (lane): one-player family DLC_d (box51/vcgad.py),
+  one fallback-free phase of 2^(d+1) − 1 transitions, |D| = 0, shatters d edges, n < 2^(2d+1): CONJECTURE VC-PHASE / VC-N5 / VC-RUN (O(1))
+  DEAD. DATA: dlccheck PASS d = 1..5 (phase VC exactly 1..5), n5b identical d = 2..5. READING: the Sauer route caps at quasi-polynomial.
+  Lead told 12:58:13Z (before the note).
+
+## Dead ends (successor 32; also in docs/new/N5-VCPHASE-box51.md §6)
+- DS-PAIR(s), every constant s: DEAD, hntop_n8 (L-RED, experiments/red/seg/instances) run [0, 241]: alt((159,160), (160,161)) = 311.
+  Obstruction: relay chains copy oscillations, locked pairs alternate without bound (VC stays ≤ 4).
+- VC-PHASE / VC-N5 / VC-RUN (O(1)): DEAD, experiments/new/box51/out/dlc_d4.pg (n 455, sha1 f77955fd…, phase VC 4) and dlc_d5.pg (n 1897,
+  sha1 345fae4c…, phase VC 5). Proved for every d (Prop. DLC). Obstruction: private delay lines give independent oscillators; VC is
+  blind to their cost (≈ 4^d vertices).
+
+## Things only I know (successor 32)
+- The arena optimum of S4a sees ONE hop ahead: a gadget whose events are 1 iteration apart loses a bit (first vcgad version, d = 4: VC 3).
+  Space events by ≥ 2.
+- Chained delay lines leak: once links form, W is exact, so all gaps close in parallel. Each event needs its own line.
+- dlccheck.py rewrites box51/out/dlc_dN.pg on every run (deterministic; check.sh pins the sha1 of d4, d5).
+- d = 5 (n 1897) takes about 3 min per engine; kept out of check.sh.
+
 ## Box 50 log (successor 31, Opus 5.5, D14/D18; Lead brief 09:59Z; STEP 0 answers sent 10:00:48Z, started without waiting as told)
 - STEP 0 (measured): fetched l-new, trunk, l-si; local l-new was 1 commit stale (d4bcdd21 → ff 8e8f7238); trunk merge was a fast-forward to e3b435ab
   (0 / 0 vs trunk; 8e8f7238 ancestor). GAPS: G-N5-TIME (l.11, open), G-N1-LB (l.10, open), G-N5-TERM (l.16, closed). D18, D14, D1 active.
