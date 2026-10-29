@@ -2,10 +2,10 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-29 ~11:3xZ (successor, Opus 5.5): T35 DONE docs/lit/T35-howard-quadratic-vs-runquad.md: runquad = Hansen-Zwick/ACR lane x reset
-moved from gain level (new cycle = new N5 phase) to bias level (in-phase); Zhong-Ye Thm 6.1 refutes HZ's <= m conjecture via a cycle-mean
-counter, blocked for N5 (<= n cycle-node values, R47 Lemma Phi); no upper-bound template for SW-PER-VERTEX; CONJECTURE CUT-Phi. Packet
-P-N5-MPGS frozen a23179b0 (sha1 24913a7f). Next: Lead's routing.
+2026-10-29 ~11:4xZ (successor, Opus 5.5): T36 DONE docs/lit/T36-n5-reduction-map.md (owner-facing map: R47 -> R15/R80 -> SW-RETURN ->
+LEN-MONO -> COMPOSE (l-si f372bc6b, lane) -> MATCH-PHI (REFEREE-2 signed 5ba3e21d) -> OPEN NM*, NM*^U; alt chains; VC-BOUND af20b1e1).
+Packets: P-N5-MATCHPHI 12b7d12a (routed; REFEREE-2 notes N-MP-1..5 to go into P-N5-MATCHPHI-fixes when both reports are in),
+P-N5-GATESHUT 1298d8b2 (frozen), P-N5-MPGS withdrawn. Next: Lead's routing.
 
 ## Queue
 - Not opened (blocked or paywalled), needed only if a lane depends on them: Friedmann RAIRO 2011 (403); FHZ SODA/STOC 2011;
