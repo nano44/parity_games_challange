@@ -2,9 +2,9 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
 ## Resume point
-2026-10-29 ~11:0xZ (successor, Opus 5.5): packet docs/lit/P-N5-MATCHPHI.md FROZEN at push (sha1 544705b7; quotecheck
-P-N5-MATCHPHI-quotecheck.py quotes=5 bad=0; pinned check T33-match-phi-check.py sha1 6853179b). Later text -> P-N5-MATCHPHI-fixes.md.
-NEST-FACE (i) dropped (undefined "realizable"). Before: T34 f09b2b43, T33 f587cb2f, T32 a06dc24a. Next: Lead's routing.
+2026-10-29 ~11:1xZ (successor, Opus 5.5): packet docs/lit/P-N5-MPGS.md FROZEN at push ((A) MATCH-Φ + Corollary, (B) GATE-SHUT +
+Corollary; quotecheck P-N5-MPGS-quotecheck.py quotes=9 bad=0; pinned checks T33-match-phi-check.py 6853179b, T34-gateshut-check.py
+7c33508b). P-N5-MATCHPHI superseded (fixes F1). Next: T35 (Hansen-Zwick Howard lower bound vs L-RED's runquad; SW-PER-VERTEX).
 
 ## Queue
 - Not opened (blocked or paywalled), needed only if a lane depends on them: Friedmann RAIRO 2011 (403); FHZ SODA/STOC 2011;
