@@ -1840,3 +1840,4 @@
 - 02:09Z (date -u): C90 PASS (R81, checker d262c1de; C89 Add. 3 PASS) with optional N-2 (label inexact) and N-3 (wording) → applied verbatim; N-1 not applied (no change needed per CHECKER); C90 Add. 1 requested.
 - 02:19Z (date -u): R81 LANDED (C90 Add. 1 PASS, checker 9777e9e6); GAPS UPDATE; NOW counters R17-R81.
 - 02:31Z (date -u): C90 Add. 2 (R81 landed check 6c1c9cba): RESULTS PASS; GAPS L-1 (my R81 UPDATE widened Corollary (ii)) → correcting UPDATE appended verbatim. LESSON (Lead): third GAPS L-item from paraphrase (C86, C88 date, C90); from now on GAPS UPDATE text is built from the entry's title clauses, not paraphrased.
+- 02:36Z (date -u): L-RED R100 899b274d (FB-LIN: no kill; climbs converge to one wave; 4 second-wave designs die on the reader-prefix inequality pair, READING) → next route (1) fallback analogue of runfam.
