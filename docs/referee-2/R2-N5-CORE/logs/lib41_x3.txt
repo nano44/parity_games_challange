@@ -1,0 +1,54 @@
+MODE files ../R2-N5-STAU/lib41_noref.lst 3 RULE n5
+AK_checks: 16165
+C1_checks: 12135
+C2_checks: 1163
+C2_tight: 378
+C3_checks: 22591
+C3_oncyc_switches: 166
+C3cons_checks: 1163
+C4_changes: 3939
+C4_checks: 1590
+C4_half1_only: 2225
+C4_half2_only: 85
+C4_strict: 1590
+C4_tie_at_t1: 17
+C4_unclean: 2349
+C5_checks: 134769
+C6S_intervals: 2012
+C6S_nonzero_Ashrink: 732
+C6S_nonzero_fresh: 2012
+C6S_nonzero_oddopt: 431
+C6_cuts: 3613
+C6_intervals: 2097
+C6_nonzero_Ashrink: 824
+C6_nonzero_fresh: 2097
+C6_nonzero_oddopt: 475
+ENGXI_checks: 19390
+MONO_checks: 12135
+X1: 939
+X3cyc: 89
+X3y: 18444
+X3y_checks: 22757
+X5nE: 97
+X6A: 34
+X6Ax: 472
+XC3_checks: 21269
+XC3_checks_oncyc: 6417
+XC3_fail_oncyc: 126
+X_cross_transitions: 6025
+YF_checks: 32107
+fallback_transitions: 988
+phases: 1163
+runs: 1230
+states: 19390
+transitions: 12135
+C6S_max_Ashrink: (40, 46, 'experiments/red/so/instances/xsn43_n48.pg#0', 1, 41)
+C6S_max_len: (55, 'experiments/red/xing/instances/x32_rand64.pg#0', 0, 55)
+C6S_max_oddopt: (19, 22, 'experiments/red/so/instances/so_sorl_n32.pg#0', 0, 21)
+C6_max_Ashrink: (40, 46, 'experiments/red/so/instances/xsn43_n48.pg#0', 1, 41)
+C6_max_len: (56, 'experiments/red/xing/instances/x32_rand64.pg#0', 0, 56)
+C6_max_oddopt: (19, 22, 'experiments/red/so/instances/so_sorl_n32.pg#0', 0, 21)
+max_NOFRESH: (78, 'experiments/red/so/instances/xsn91_n48.pg#0', 3, 115)
+max_SW_over_P: (17.0, 'experiments/red/xing/instances/u2flat73_n32.pg#0', 0, 2)
+max_fresh_over_mE: (0.5, 'experiments/n5-exhaustive/instances/b5_o11.pg#0', 0, 8)
+RESULT OK violations=0
