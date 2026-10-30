@@ -822,3 +822,7 @@ echo "si (box 45: plain-wave and REP-PLAIN kills): PASS"
 # box 46 (docs/si/N5-SUB-box46.md): Corollary LOC-R* (WCH <= (n-1)(RLOC+1) per W-run) on runfam_K40; latew is pinned in «box 45».
 o=$(python3 -I odd/repchain.py runlin/instances/runfam_K40.pg); grep -q "WCHW 159 RTW 8 RLOCW 8 REPW 1 LOC_V 0" <<<"$o"
 echo "si (box 46: local late adoptions): PASS"
+# box 47 (docs/si/N5-READ-box47.md): READ-CHARGE (every W-change has a switching cause on the play: RC_V 0); chain depth on runfam_K40.
+o=$(python3 -I odd/readch.py runlin/instances/runfam_K40.pg); grep -q "wchg 343 roots 8 maxdepth 73 WRUN 5 RC_V 0" <<<"$o"
+o=$(python3 -I odd/readch.py ../red/so/instances/so_th_n32.pg); grep -q "wchg 93 roots 10 maxdepth 21 WRUN 15 RC_V 0" <<<"$o"
+echo "si (box 47: reader chains): PASS"
