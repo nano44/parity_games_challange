@@ -13,6 +13,8 @@ DONE (claude/l-lit; pushes via scripts/push.sh, exit 0, VERIFY PASS; Oink smoke 
   LexBFS (25 diffs), not LBFS+ (180); RETURN-ANCESTOR, LAYER-WINDOW, COUNTER Pi(1+m_d) PROVED mod Claim RG). LexBFS sources in t55/A.
 - T56: docs/lit/T56-path-algebra.md (ISO/DIOID/CIRC: fixed-c VJ valuation = max-plus over Z, n-bit weights; k-stable <=> 0-stable;
   no adversarial-order count in any opened path-algebra source). Sources in scratchpad t56/A.
+- T57: docs/lit/T57-tropical-pivots.md (tropical pivot = one exchange; N5 switches sets, u23sw64_n32 17/15/6/...; S1 tie-break ~
+  ABGJ symbolic perturbation (READING); no transfer). Sources in scratchpad t57/A.
 IN FLIGHT: none. OPEN LEADS: CN-POLY, EVEN-POLY (must use S2 Xi-offers), PASS-BIP; Claim RG (VJ restriction invariant) not re-proved.
 Older leads (T48-T53 handover): KL-SF; parametric dimension >= 2; Maat open direction; Loff-Skomra n-breakpoints.
 NEEDS: none from the owner (optional library access: Cunningham 1979, GHK 1990, Orlin 1997, Johnson 1973, Kershenbaum 1981, AMO).
@@ -494,6 +496,12 @@ NEEDS: none from the owner.
   Sobrinho ToN 13(5) 2005 (485afb236a5ddf7e; Thm 1, 3, Prop 1); Daggitt-Gurney-Griffin arXiv 2106.01184v2 (5a96dd3de66fdb62; Def 19-21,
   Thm 1, 3, 5, p. 15); Daggitt-Griffin ICNP 2018 (376beef0cd5b17bc; Thm 1 p. 11, p. 1, p. 7). NOT OPENED: Gondran-Minoux 2008 (Springer JS
   challenge), Carre 1971 (OUP 403), Metarouting 2005 (404), Karloff SODA 2004.
+
+- T57 (2026-10-30). OPENED: ABGJ arXiv 1308.0454v2 (6e7f8188f3e51249; Thm 1, Alg 1 p. 3, Prop-Def 19, Thm 36, p. 36-37); ABGJ arXiv
+  1309.5925v2 (6ef1312e6a4875f1; Thm 2.1, p. 7, Prop 3.6, Lemma 3.7, Thm 3.12, p. 13, Prop 4.1, Thm 4.2, Cor 4.3); ABG arXiv 1406.5433v2
+  (7deeec2eaf73d0c0; p. 2, 5, Thm 7, 11, 13, Assumption B); ABGJ arXiv 1708.01544v2 (9608058cb6fa98a3; Thm 15, 25, 30, Cor 31); Loho arXiv
+  1612.01890v2 (1696fd594ef26715; Thm 13, Ex 14, Thm 63, 65, Cor 67, Thm 79, pp. 53-54); Loho-Vegh arXiv 1906.06686v2 (498512dd76f0ff9c);
+  Koh-Loho arXiv 2108.13338 (21ee0e4336252f7e; p. 3, App. A p. 35).
 
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).

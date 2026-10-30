@@ -887,3 +887,8 @@ echo "si (box 51b §8: LAYER-RESET): PASS"
 # box 51b §10: Lemma RETURN-CHARGE (RCV 0, RCX 0 on u23sw64's 31 returns), XCI 8.
 python3 -I gate/layer.py ../red/xing/instances/u23sw64_n32.pg | grep -q "RET 31 UNX 0 RETL2 0 DEPTH 10 FLAT 8 RCV 0 RCX 0 XCI 8"
 echo "si (box 51b §10: RETURN-CHARGE): PASS"
+# box 51b §11-§12: RETURN-CHARGE' over whole runs (Even and Odd), SEG-XCH W-run bound, T-bound; charge OFF kill (cw11_n24).
+python3 -I gate/retx.py ../red/xing/instances/u23sw64_n32.pg | grep -q "T 16 MONO_V 0 IMP_V 0 RET 70 RCV 0 FB_V 0 SLACK 247 LMAX 8 OMONO_V 0 OIMP_V 0 ORET 0 ORCV 0 TB_V 0"
+grep -q "RETX" gate/retx_sbcg.txt && ! grep -q "RCV [1-9]\|FB_V [1-9]\|TB_V [1-9]\|MONO_V [1-9]\|IMP_V [1-9]" gate/retx_sbcg.txt gate/retx_alt.txt gate/retx_red.txt
+python3 -I gate/charge.py ../red/kw/instances/cw11_n24.pg | grep -q "D4_OFF 1 D4_SELF 0 ALL_ON 6 ALL_OFF 4 ALL_SELF 12"
+echo "si (box 51b §11-§12: RETURN-CHARGE', SEG-XCH, charge OFF): PASS"

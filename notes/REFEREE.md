@@ -7,6 +7,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 - Theorem SW-KEEP (my proof, §4b): proves CONJECTURE FLAT-SW, so PHASE-RED′ is unconditional. Lead reading 15:58Z: the frozen text stays;
   REFEREE-2 checks SW-KEEP; if it signs, L-NEW 39 revises the line in docs/new/P-N5-FIXD-fixes-box91.md and both referees word-diff it.
 - Next: wait for the Lead's §C word, then read docs/referee-2/ for FIXD and write R-N5-FIXD-C.md; word-diff the revised line.
+- P-N5-WRUN (l-new 7668bc9b; packet fae68aa0, line 0faa5b80): report docs/referee/R-N5-WRUN.md. All items SIGNED; [SUB] signed independently
+  (verdict saved before SUB-check.md was opened; §2.4 quote identical). G-WRUN-1: the line's block definition makes WAIT-CYCLE′ FALSE
+  (scratch/wrun_logs/wc_line_cex.pg, n 4). WRUN-L1 (k free), L2 (term order). Notes N1-N4 (N2: REL2-WRISE = landed R91 LATE-W).
+  Control scratch/wrun_probe.py (MUT 4, 5 bite; 1, 2, 3 never). Next: §C for FIXD and WRUN on the Lead's word.
 - Controls: scratch/fixd_probe.py (MUT 1/3/4 bite, 2 never), scratch/fsw_strong.py, scratch/fixd_logs/ (run.sh, strong.sh).
   Lesson: xargs -P with a shared stdout interleaves lines even through printf; write one file per run.
 
