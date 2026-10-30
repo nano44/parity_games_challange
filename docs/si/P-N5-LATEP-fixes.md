@@ -146,3 +146,42 @@ L-SI successor 32 (Opus 5.5; D15 / D18). Written from 2026-10-30 06:50Z (date -u
 - FINDINGS: every referee note is accepted. LINE-REQ: F1, F2. LINE-PREC: F3, F4. DATA: F5, F6. NOTE-READ: F7, F14. NOTE-ACC: F8-F13, F15.
   No signed statement changes.
 - NEEDS: both referees' §C and their word-diff of the new line (F0); then the Lead's landing. Owner: none.
+
+## F16. Lead 07:46Z (the R92 drafter's strict symbol test of line F1, a85759a2): REPEAT′ ⊆ LATE′ in the line; W-MON → R90 (b) W-MON′
+L-SI successor 32, written 2026-10-30 07:5xZ (date -u; see commit). New line: docs/si/P-N5-LATEP-line-F16.txt
+(sha1 65277addc8be558922dcdcc7d035426ba3062b8e).
+- (1) LINE-REQ, the same class as F1: REPEAT′.
+  - F1 read «a REPEAT′ if (y, z) has an earlier LATE′ adoption in F». Literally, that makes any adoption of such an edge a REPEAT′.
+  - The packet (§2: «A LATE′ adoption is FIRST′ if … REPEAT′ otherwise») and every proof have REPEAT′ ⊆ LATE′. Under the literal reading,
+    REP′_F ≤ n_E·R*′_T need not hold (a non-LATE′ adoption is in no LATE′ transition), and X′_F's «earliest blocked state» need not exist.
+  - Accepted. The line now reads «a REPEAT′ if it is LATE′ and (y, z) has an earlier LATE′ adoption in F».
+- (2) LINE-REQ: the W-MON label.
+  - RESULTS R88's W-MON is stated for transitions inside a phase (λ_Ξ and τ constant). On a W-run, λ_Ξ may change.
+  - The landed W-run form is RESULTS R90 (b) Lemma W-MON′: «At an S4a step t → t + 1 with τ* := τ_t: W^{τ*}_{t+1} ⊵ W^{τ*}_t pointwise.»
+  - Every transition of a W-run F is an S4a step with τ_{t+1} = τ_t = τ: no fallback, τ constant on F, and σ changes, else the run
+    stops by [STEP]. So W^{τ*} = W and W-MON′ gives W_{t+1} ⊵ W_t at every transition of F.
+  - Accepted. The line names «R90 (Lemmas OPT-OFF (ii), W-MON′, W-SUCC)» and drops «W-MON» from R88's list; XW, GP* and FW-R* stay.
+  - Check of every use of W-MON in §3-§7 (packet line numbers):
+    - §5 GAP-CLIMB (l. 99): «W_{t_b}(z) ⊴ W_s(z) (W-MON)», t_b ≤ s inside F. Covered: W-MON′ at each transition of [t_b, s].
+    - §6 CHAIN (l. 109): «on F, W-MON gives W_{t+1}(v) ⊵ W_t(v)». Covered: W-MON′ at the transition t → t + 1 of F.
+    - §3 FW-R*′ uses R88's proof of FW-R*, whose step «W_{k+1}(x) ⊵ W_k(x) (W-MON)» is carried to W-runs by R89 GP*-RUN, a landed lemma
+      named in the line. Covered (GP*-RUN's own proof is W-MON′'s case τ_{t+1} = τ_t).
+    - §4 LATE-SPLIT′ uses R90's W-SUCC, whose proof uses W-MON′. Covered.
+    - §7 TXC-DESCENT / TXC-RED use no W-monotonicity. The packet's §1 premise list (l. 38) should read «R88: Lemma XW, Lemma GP*,
+      Corollary FW-R*; R90 (b): Lemma W-MON′»; the frozen packet is not edited.
+- (3) Precisions (the Lead's optional items, both included):
+  - «RESULTS R15 (a), (d)»: (a) Lemma A, improving switches do not lower Ξ; (d) every N5 iteration applies such switches. Together they
+    give Ξ non-decreasing along the run (§5, §7 TXC-RED).
+  - «R57 (a) (premise (VJ))»: XW's first part, Ξσ ⊴ V_{σ,τ′} for every Odd τ′, is R57 (a)'s (VJ) premise, as R88 names it (P-N5-GP G7).
+- Word-diff F1 → F16 (git diff --no-index --word-diff), all of it:
+  - «[-R15,-]{+R15 (a), (d),+}»
+  - «{+R57 (a) (premise (VJ)),+}»
+  - «[-W-MON,-]» (in R88's list)
+  - «{+W-MON′,+}» (in R90's list)
+  - «{+it is LATE′ and+}»
+- Strict symbol test of F16: F-SYM's table holds unchanged, with three additions:
+  - «R15 (a), (d)», «R57 (a) (premise (VJ))» and «R90 (… W-MON′ …)» are named landed RESULTS items;
+  - REPEAT′'s «it» is the adoption of (y, z) at u being defined.
+  Result: no free symbol, no unlanded source.
+- DONE: F16, line F16. FINDINGS: two LINE-REQ items accepted; no signed statement changes. NEEDS: the R92 drafter / referees' word-diff of
+  F16 against F1 (five changes above). Owner: none.
