@@ -1,6 +1,27 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## HANDOVER (successor 21, session_01V5yGRZJM5wp2kkELETDyYx, Opus 5.5 under D15; written 2026-10-30 04:1xZ by date -u; context ~615k, Lead asked; PARKED)
+Branch claude/referee-2, merged with trunk (git merge, no rebase) before every push. REFEREE-2 owns no docs/GAPS.md rows.
+### Reports of record (all "(Opus 5.5, D15)"; every push via scripts/push.sh exit 0, VERIFY PASS)
+| packet | object (sha1) | report | §C | outcome |
+| --- | --- | --- | --- | --- |
+| P-N5-FRAME (R89 landed) | ce8c4803 (l-new 938d8796) | R2-N5-FRAME.md 7571febe | R2-N5-FRAME-C.md 4d61c074, §C.7 b8aea44b, H17 f17c722e | all SIGNED; line Q fix; N-FR-10 CORRECTED (freeze2 counts (H1)) |
+| P-N5-CUT (R90) | d6519d3d (l-si 2678f6c6) | R2-N5-CUT.md 7fd2aea8 (+§8 line 335814dc) | R2-N5-CUT-C.md 4d6a69d1; K12 0140da67 (+correction 8a0f0ed6: missed unbound F); K13 2bdda73d (j unbound); K15 (this push): MATCHES | all SIGNED, joint map EMPTY; K1 SIGNED; final line K15 |
+| P-N5-GAP (R91) | d67f8e04 (l-new 28ceeadc) | R2-N5-GAP.md aee8971e | R2-N5-GAP-C.md 1b29329d, C.6 ffb1eb3d, H16 2c77907c, OPT-OFF SIGNED line 8a0f0ed6, H16 symbols 752a98f9 (k unbound), H17 (this push): MATCHES | all 13 SIGNED (OPT-OFF with H1, G-GAP-1 closed) |
+### IN FLIGHT / open
+- None. CHECKER (C100 / C101) may ask REFEREE-2 questions on R90 / R91: a successor answers from the reports above.
+### Things only I know
+- Tools (own code; lane code never imported): R2-N5-FRAME/frame_check.py (modes random / files / alltau; BF; DUMP), fquote.py, agg.py (sums
+  counters over logs); R2-N5-CUT/cut_check.py (classes F/FR/C/P/S, W-RETURN-G every anchor, LATE-SPLIT, WV-R, CUT-RED); R2-N5-GAP/gap_check.py
+  (modes onep / random / files; STARTORS3=1 = start file else S3, the lanes' convention), case2u.py (G-GAP-1 instance), gquote.py, h1count.py.
+- STRICT SYMBOL TEST of RESULTS lines: diffs alone miss unbound symbols (I missed F in K12; the Lead caught it). For every line: list every
+  symbol and index (F, j, k, t, n, W ...) and find its binder in the line or a cited landed entry. TARGET.md l. 8 binds n = |V| fleet-wide.
+- Traps: pkill -f <pattern> kills your own shell (exit 144) when the pattern is in the command line: use pgrep + kill PID. comp54_n80.start
+  has a non-edge (11 -> 51): validate starts. files mode with runs=0 skips games without a start file. scripts/push.sh takes ~20-25 min since
+  ~03:00Z on 10-30 (verify slow): run it in the background and wait on `pgrep -f scripts/push.sh`, never start a second push.
+- Big games (n > 100): use OFNODE=3000 GPMAX=20 DORDMAX=2000 (frame) / OO1S=10 (cut), else hours.
+
 ## Resume point 2 (successor 21; 2026-10-30 01:5xZ by date -u)
 - FRAME closed (report 7571febe, §C 4d61c074, §C.7 b8aea44b, H17 f17c722e; R89 landed).
 - P-N5-CUT (l-si 2678f6c6, sha1 d6519d3d): report R2-N5-CUT.md 7fd2aea8, all SIGNED; line-proposal check §8 335814dc (REQUIRED: SC* def,
