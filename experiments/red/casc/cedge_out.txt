@@ -1,0 +1,14 @@
+# R150: L-NEW retcause.py at l-new 457e41fe, UNCHANGED, run from a git archive (/tmp/claude-0/lnew102), on red/casc/instances/cedge_n32 (date -u ~23:4xZ)
+RUN 5-31 F 26 returns 60 edges 48 targets 22 max_per_target 8 norise 0 wch_in_window 60 rises_per_return {1: 9, 2: 31, 3: 12, 4: 4, 6: 1, 7: 3} classes {'EVS': 139, 'ODF': 11}
+  top roots (kind, x, w, q) [(('FRESH', 20, 7, 9), 13), (('FRESH', 10, 19, 11), 5), (('FRESH', 22, 31, 13), 5)]
+  EROOT kinds {'FRESH': 60} distinct roots 22 max returns per root 13 chain depth {0: 38, 1: 16, 2: 3, 3: 3} max children per node 3 max children per return node 3 mE 86
+  PERROOT max returns of one Even X per root 4 (X 7 deg 2) max returns of one edge per root 2 max (returns of X per root)/deg X 2.0 max returns of X per root leaving one target 2 max returns of X per root with one (left, entered) pair 2 max returns of one edge per (root, depth) 1
+## XTRACE=7
+  XTRACE return k 8: 7 20 -> 26 (window from 5, first rise 6) root ('FRESH', 26, 27, 6) depth 0
+  XTRACE return k 14: 7 26 -> 20 (window from 8, first rise 9) root ('FRESH', 20, 7, 9) depth 0
+  XTRACE return k 17: 7 20 -> 26 (window from 14, first rise 14) root ('FRESH', 20, 7, 9) depth 1
+  XTRACE return k 20: 7 26 -> 20 (window from 17, first rise 18) root ('FRESH', 20, 7, 9) depth 2
+  XTRACE return k 22: 7 20 -> 26 (window from 20, first rise 21) root ('FRESH', 20, 7, 9) depth 3
+## seed pftheta34_n32 (default start), same tool
+RUN 5-39 F 34 returns 42 edges 34 targets 21 max_per_target 6 norise 0 wch_in_window 42 rises_per_return {1: 8, 2: 27, 3: 3, 4: 2, 5: 1, 9: 1} classes {'EVS': 84, 'ODF': 9}
+  PERROOT max returns of one Even X per root 2 (X 3 deg 2) max returns of one edge per root 2 max (returns of X per root)/deg X 1.0 max returns of X per root leaving one target 2 max returns of X per root with one (left, entered) pair 2 max returns of one edge per (root, depth) 1

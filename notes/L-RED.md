@@ -58,6 +58,9 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - R149 (Lead 22:17Z) docs/red/R149-narrow.md: CONJECTURE NARROW (L-NEW box 100) DEAD in both clauses. narrow_n10 (topfix_n10 + one clone
   per returner): branching chain 49 = 6N − 11. casctf: 211 children. per-(X, root) dead on topfix_N (2N − 3). R148's depth figures are void
   (old memo bug). Reading: every return-entry bound is inflated by passive clones. Charge ACTIVE returns or transitions instead.
+- P-N5-SRC fixes entries 1-3, lines L-1 059d2733, L-2 9fcb5790, L-3 5736d8ab (ONE-STEP signed by both referees).
+- R150 (Lead 23:10Z) docs/red/R150-cedge.md: CONJECTURE CASC-EDGE DEAD, cedge_n32 (Even 7, deg 2, 4 returns under root 20 → 7 @ 9, depths
+  0-3, a ping-pong through X's own successor). Found by casc/ovclimb.py from pftheta34_n32. LEVEL-ONCE survives (climbs, 4 × ~12k steps).
 - L-NEW 2311683e tools run from /tmp/claude-0/lnew100 (git archive); my copies casc/retcause_xr.py (b376575c + XROOT) and
   casc/retcause_br.py (2311683e + BRCHAIN) need LNEW_BOX21=<archive>/experiments/new/box21.
 - L-NEW tools run unchanged from /tmp/claude-0/lnew99 (git archive of l-new b376575c: experiments/new, harness, n5-second, hard-families, si).
