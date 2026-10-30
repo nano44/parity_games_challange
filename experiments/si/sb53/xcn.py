@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""L-SI box 53 §6: own-cycle-node sbar-flips (XCN) per W-run. xcn.py GAME.pg [START]: XCN_TR (most XCN transitions in one W-run), XCN_V (most at one vertex), XCN_RUN_ALL (whole run). xcnrs.py SEED COUNT N DMAX BIAS: random search for the most XCN transitions in one W-run."""
+"""L-SI box 53 §6: own-cycle-node sbar-flips (XCN) per W-run. xcn.py GAME.pg [START]: XCN_TR (most XCN transitions in one W-run), XCN_V (most at one vertex), XCN_RUN_ALL (whole run). Whole-run transition counts: XA (an own-node flip where o is its own Xi-cycle node at exactly one of k, k+1), XB (own at both: a DFS re-order), LAMCH (transitions changing lambda_Xi; RESULTS R47 Lemma PHI bounds them by n(n-1)), XANL (XA transitions with lambda_Xi unchanged; impossible, a control). xcnrs.py SEED COUNT N DMAX BIAS: random search for the most XCN transitions in one W-run."""
 import sys, os
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "new", "box21"))
 from n5x import load, step, start_pair, readstart, Engine, dual
@@ -31,4 +31,8 @@ for p, q in runs:
         for o in f: per[o] = per.get(o, 0) + 1
     xt = max(xt, tr); xv = max(xv, max(per.values(), default=0)); wr = max(wr, q - p)
 xa = sum(1 for k in range(len(S) - 1) for o in ODD if EV[k][1][o] != EV[k + 1][1][o] and (EV[k][0][o][0] == o or EV[k + 1][0][o][0] == o))
-print(os.path.basename(a[0]), "n", n, "T", len(S) - 1, "LMAX", wr, "XCN_TR", xt, "XCN_V", xv, "XCN_RUN_ALL", xa)
+XB = sum(1 for k in range(len(S) - 1) if any(EV[k][1][o] != EV[k + 1][1][o] and EV[k][0][o][0] == o and EV[k + 1][0][o][0] == o for o in ODD))
+XA = sum(1 for k in range(len(S) - 1) if any(EV[k][1][o] != EV[k + 1][1][o] and (EV[k][0][o][0] == o) != (EV[k + 1][0][o][0] == o) for o in ODD))
+LAM = sum(1 for k in range(len(S) - 1) if [x[0] for x in EV[k][0]] != [x[0] for x in EV[k + 1][0]])
+XANL = sum(1 for k in range(len(S) - 1) if any(EV[k][1][o] != EV[k + 1][1][o] and (EV[k][0][o][0] == o) != (EV[k + 1][0][o][0] == o) for o in ODD) and [x[0] for x in EV[k][0]] == [x[0] for x in EV[k + 1][0]])
+print(os.path.basename(a[0]), "n", n, "T", len(S) - 1, "LMAX", wr, "XCN_TR", xt, "XCN_V", xv, "XCN_RUN_ALL", xa, "XA", XA, "XB", XB, "LAMCH", LAM, "XANL", XANL)

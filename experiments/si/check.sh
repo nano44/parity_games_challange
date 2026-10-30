@@ -961,6 +961,19 @@ case "$o" in *"FT 65 ORDX 0 ORDX0 5 PAIRTIE 0 UMAX 32 UPMAX 90 NORD 77 RREP 0"*)
 [ "$(cat sb53/ord_*.txt | grep -c ORDCHG)" = 1134 ] || { echo "box 53 §5: orderchg outputs incomplete"; exit 1; }
 if grep -q "ORDX [1-9]\|PAIRTIE [1-9]" sb53/ord_*.txt; then echo "box 53 §5: ORDER-CHG' corpus violation"; exit 1; fi
 echo "si (box 53 SBF §5: ORDER-CHG' data, fixed-set NO-REPEAT DEAD, |U| linear): PASS"
+# box 53 SBF §2.6 / §6: ONE-STEP-O (ONEX 0, case beta occurs), XCN-ONE DEAD (xcn2_n8 kind A, xcnb2_n12 kind B; n5b agrees), KIND-A control.
+o=$(python3 -I sb53/rootflip.py ../red/n3/instances/ret22_n40.pg ../red/n3/instances/ret22_n40.start)
+case "$o" in *"ROOTX2 0 ONEX 0 OBETA 18"*) ;; *) echo "box 53 §2.6: ret22_n40: $o"; exit 1;; esac
+if grep -q "ONEX [1-9]" sb53/root_*.txt; then echo "box 53 §2.6: ONE-STEP-O corpus violation"; exit 1; fi
+o=$(python3 -I sb53/xcn.py sb53/inst/xcn2_n8.pg sb53/inst/xcn2_n8.start)
+case "$o" in *"LMAX 3 XCN_TR 2 XCN_V 1 XCN_RUN_ALL 2 XA 2 XB 0 LAMCH 2 XANL 0"*) ;; *) echo "box 53 §6: xcn2_n8: $o"; exit 1;; esac
+o=$(python3 -I sb53/xcn.py sb53/inst/xcnb2_n12.pg sb53/inst/xcnb2_n12.start)
+case "$o" in *"LMAX 3 XCN_TR 2 XCN_V 2 XCN_RUN_ALL 2 XA 0 XB 2 LAMCH 0 XANL 0"*) ;; *) echo "box 53 §6: xcnb2_n12: $o"; exit 1;; esac
+o=$(python3 -I heads52/flipx.py sb53/inst/xcnb2_n12.pg sb53/inst/xcnb2_n12.start)
+case "$o" in *"FLIP k 0 o 3 tau 9 old 9 new 11 "*"FLIP k 2 o 3 tau 9 old 11 new 9 "*) ;; *) echo "box 53 §6: xcnb2_n12 n5b: $o"; exit 1;; esac
+[ "$(cat sb53/xcn_*.txt | grep -c XCN_TR)" = 1134 ] || { echo "box 53 §6: xcn outputs incomplete"; exit 1; }
+if grep -q "XANL [1-9]" sb53/xcn_*.txt; then echo "box 53 §6: kind A without a lambda change"; exit 1; fi
+echo "si (box 53 SBF §2.6 / §6: ONE-STEP-O, XCN-ONE DEAD, KIND-A): PASS"
 # P-N5-SETTLE line revision L-1 (fixes entry 1; both referees word-diff it): must not change.
 echo "997e39eee8d72ae94be4764bb1e3841914ffc78e  ../../docs/si/P-N5-SETTLE-line-L1.txt" | sha1sum -c --quiet
 echo "si (P-N5-SETTLE L-1 pinned): PASS"
