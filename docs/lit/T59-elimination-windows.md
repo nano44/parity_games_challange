@@ -247,7 +247,19 @@ experiments/red/free/instances/fx_K8_m32.pg (sha1 e995709e…). switchbestexp fr
 - Corpus (§4.4): the same script over the repo's instance directories.
 
 ### 4.4 Corpus run
-- IN FLIGHT at this push: the corpus run (892 games, 30 s each) is still going; results follow in the next push.
+- Scope: 892 .pg files under experiments/{red,si,n5-exhaustive,n5-box17,n5-box21,n5-box22,n5-epoch,friedmann-hn,new/instances}
+  (.../instances/), each with its .start if present, 30 s timeout each. Run 2026-10-30 18:06Z-18:11Z (date -u), output scratchpad
+  t59/corpus3.out.
+  - 873 finished. 18 timed out (rc 124). 1 failed: experiments/si/instances/dlmm_ML_L6.pg, whose .start file the T58 reader cannot parse.
+- Sanity: STEPV 0, GAPV 0, MONV 0 over 15,986 states with gap > 0 (660 games with a W-run of length ≥ 1). So Lemma DZ-W's step (2),
+  [ZY]'s (7.2) and W-monotonicity hold on every measured state. ZERO_A (W-flat states with gap > 0): 24.
+- BLOCK-RATIO: KMAX ≤ 1 on 476 of 659 games; KMAX > n² on 30.
+  - Largest: fc14 (n 360, |F| 91) 1.3·10¹³ (HB 44); fc12 2.1·10¹¹; fc11 2.6·10¹⁰; fc9 4.0·10⁸; fc8 and dw_8 5.0·10⁷; obs_K12_m24 1.7·10⁷.
+  - On the fc family it grows by about 2^3.4 per step of the parameter. Blocked reference residuals occur at 6,197 of the 15,986 states.
+- WINC = |F| on 502 games. On short runs this is trivial (the run ends before the gap can fall by n²), so it is not evidence by itself.
+  The evidence is the fx and fc rows.
+- Reading: on most of the corpus BLOCK-RATIO holds with K ≤ 1. Where W-runs are long relative to n (fx, fc, obs), the blocked residual
+  is exponentially larger. That is the regime ELIM-WIN must cover.
 
 ## 5. (d) Table
 | source (opened) | setting / rule | window or elimination statement | (R) reference | (P) flux window | (C) supplied by | undiscounted? | what it gives N5 |
