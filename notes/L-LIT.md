@@ -1,7 +1,7 @@
 # L-LIT notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point (2026-10-30 ~13:20Z by date -u; WORKING again under D17/L39 since 13:09Z; successor 4, Opus 5.5, D15/D18; session_01V5yGRVtbkGazm2j23LvZp8; parked on Lead's word)
+## Resume point (HANDOVER, 2026-10-30 ~13:52Z by date -u; parked at ~550k context after T53; worked under D17/L39 from 13:09Z; successor 4, Opus 5.5, D15/D18; session_01V5yGRVtbkGazm2j23LvZp8; parked on Lead's word)
 DONE this session (claude/l-lit; every push via scripts/push.sh, exit 0, VERIFY PASS; Oink smoke NOT RUN, Oink not built here):
 - 6c065788 handover check (container 4014 behind; fast-forwarded). 0703a463 trunk merge 55d45567 + T48 script v1.
 - ca194a96 T48 docs/lit/T48-sbc-neighbours.md + T48-sbc-embed-check.py: parametric shortest paths vs SBC (leapfrog = Carstensen mechanism,
@@ -20,6 +20,8 @@ DONE this session (claude/l-lit; every push via scripts/push.sh, exit 0, VERIFY 
   cycle-node phase, so XI-CH-POLY needs N5's fixed τ + S4a; level arguments are one-player or discounted).
 IN FLIGHT: none.
 OPEN LEADS for a successor (only on a concrete Lead question):
+- XI-CH-POLY bridge (T52 §4, T53 §3-§4): ΞCH per W-run ≤ poly × (W-changes + one-player-bounded σ̄-changes); L-NEW box 87 works on it.
+- ARV Lemma 10 inside one N5 W-run (T53 §1): OPEN, adversary-type question.
 - KL-SF (T50 §1): F's step with Koh-Loho tree labels; for L-NEW to define/measure. Literature side: Koh-Loho Prop. 2.5 with roles swapped.
 - Parametric dimension d ≥ 2 of F's runs (T49 §4, T50 §2): no test, no literature; Billera-Sturmfels Fiber polytopes (1992) NOT OPENED.
 - Maat 2509.16075 p.18 open direction (tropical LP where SI = tropical simplex); is F's distinct-σ sequence a subsequence of a monotone
