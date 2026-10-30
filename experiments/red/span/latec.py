@@ -33,4 +33,28 @@ for t in range(T):
     if lat: rs += 1; tot += len(lat); cnt.update(lat)
     if cut[t] or t == T - 1:
         best = max(best, rs); per = max([per] + list(cnt.values())); rep = max(rep, sum(cnt.values()) - len(cnt)); rs = 0; seen = set(); cnt = Counter()
+if os.environ.get("DEPTH") == "1":                # R130: box 48 window depth, recomputed on the n5b trace (L-SI repchain.py's definitions)
+    Wk = []
+    for t in range(T + 1):
+        si, wv = W(t); Wk.append(wv)
+    md = 0; runs = [0] + [t + 1 for t in range(T) if cut[t]] + [T + 1]
+    for a, b in zip(runs, runs[1:]):
+        seen = set(); first = set(); late_at = {}; dep = {}
+        for t in range(a, b - 1):
+            seen |= blocked[t]
+            for v in ev:
+                z = tr[t + 1][0][v]
+                if z != tr[t][0][v] and (v, z) in seen: late_at.setdefault(t, []).append((v, z))
+        lt = sorted(late_at)
+        for t in lt:
+            for (v, z) in late_at[t]:
+                if (v, z) not in first: first.add((v, z)); continue
+                ks = [k for k in range(a, t) if tr[k][0][v] == z and tr[k + 1][0][v] != z]
+                if not ks: continue
+                k = ks[-1]; ch = [x for x in range(k + 1, t) if Wk[x + 1][z] != Wk[x][z]]
+                if not ch: continue
+                ts = ch[-1]; Ls = [L for L in lt if L <= ts]
+                d = 1 + (max([dep.get((L, e), 0) for L in Ls[-1:] for e in late_at[L]]) if Ls else 0)
+                dep[(t, (v, z))] = d; md = max(md, d)
+    print(f"DEPTH max window depth {md}")
 print(f"LATEC {os.path.basename(sys.argv[1])} n {g.n} iter {T} cuts {sum(cut)} fallbacks {len(fbs)} R* {best} late {tot} max-per-edge-Wrun {per}" + (f" REP {rep}" if os.environ.get("REP") == "1" else ""))

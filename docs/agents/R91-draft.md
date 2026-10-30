@@ -1,11 +1,11 @@
-# Draft RESULTS R91 (Lead, 2026-10-30 02:58Z by date -u; subagent draft; packet, both reports, both §Cs and the fixes file H1-H16 filled; NO referee H16 line on origin yet) — to CHECKER C101
+# Draft RESULTS R91 (Lead, 2026-10-30 02:58Z by date -u; subagent draft; packet, both reports, both §Cs and the fixes file H1-H16 filled; REVISED 03:24Z by date -u by the Lead: both H16 lines and REFEREE-2's explicit OPT-OFF signature recorded, see (2), (3)) — to CHECKER C101
 to check: (1) TITLE. The title is the H16 line file docs/new/P-N5-GAP-box69-line-H16.txt (l-new 996d9a57, sha1 e3a23a9ae8091817576a88ade9d85ea07543719a,
 = trunk = l-new head), verbatim: one line, no outer quotes, no final period, 2,988 characters (3,070 bytes plus the newline). It ALREADY carries
 " (2026-10-30)" right before " — a REDUCTION" (as R89's H0 line did), so no date is inserted. The checker fill ", CHECKER PASS
 (docs/checker/C101.md, checker PENDING)" is appended as in R89. The line contains "|" four times (|Z_a| and |Z_{k+1} ∖ Z_k|): harmless in the
 heading; the GAPS proposal below writes them without "|". Re-measured: `git diff --no-index --word-diff` of H14 (a9e8bcae…) against H16 shows
 one replacement only, «H_t);» → «H_t, H_t := S4a's arena at t (Even keeps σ_t ∪ Iσ_t, Odd follows τ_t));», as H16 (fixes l. 137-142) states.
-(2) H16 IS NOT YET CHECKED BY EITHER REFEREE. At the fetch of 02:53Z (date -u), origin/claude/referee head is 40fd25a3 (CUT K12 line) and
+(2) H16 CHECKED BY BOTH (Lead revision 03:24Z): REFEREE ab32b618, R-N5-GAP-C.md appended line «H16 = H14 + GAP-L4 exactly; every symbol defined or cited; MATCHES»; REFEREE-2 2c77907c, R2-N5-GAP-C.md appended line (difflib word diff vs H14: exactly the H_t insertion; «MATCHES»). The subagent's text that follows is history from the 02:53Z fetch: At the fetch of 02:53Z (date -u), origin/claude/referee head is 40fd25a3 (CUT K12 line) and
 R-N5-GAP-C.md is unchanged since d21723b5; origin/claude/referee-2 head is 0140da67 and R2-N5-GAP-C.md is unchanged since ffb1eb3d; neither
 file contains "H16" (git grep on both heads and on trunk). Both checked H14: REFEREE §C §5 l. 96-97 «It is complete once GAP-L4 is added: a
 five-word edit, which I will word-diff check»; REFEREE-2 §C.6 l. 124 «H14 MATCHES … every symbol is defined or cited … Landable» (it did not
@@ -14,8 +14,7 @@ flag H_t; see (8)). LEAD-STATE 02:54Z: «GAP H16 … → both referees word-diff
 aee8971e l. 24-35). OPT-OFF's path is recorded in item (d) with the cells and §C sentences quoted. Exactness point: REFEREE's cell (l. 21) reads
 «STATEMENT TRUE; PROOF HAS A HOLE (G-GAP-1, …); SIGNED WITH MY REPAIR GAP-R1», not the words "SIGNED WITH GAP"; REFEREE-2's cell (l. 27) reads
 «SIGNED with gap G-GAP-1». REFEREE's §C says in words that OPT-OFF is now SIGNED (l. 44-45, l. 101); REFEREE-2's §C says «G-GAP-1 CLOSED»
-(C.2 l. 51; C.6 l. 102, l. 125) and does not repeat "OPT-OFF SIGNED"; the draft reads its "SIGNED with gap" plus "gap CLOSED" as SIGNED (Lead
-reading, for CHECKER to judge). One-referee notes and readings are under Referee strengthening only. (4) PREMISE LABELS (grep of
+(C.2 l. 51; C.6 l. 102, l. 125) and does not repeat "OPT-OFF SIGNED"; SUPERSEDED (Lead revision 03:24Z): REFEREE-2 now signs explicitly, R2-N5-GAP-C.md l. 127 at claude/referee-2 8a0f0ed6: «Lemma OPT-OFF (§2.4): SIGNED (Opus 5.5, D15) — statement as in the packet, with the proof of fixes H1 (l-new 15044625 / c1aa183d), which closes G-GAP-1 (§C.2)»; no Lead reading is needed. One-referee notes and readings are under Referee strengthening only. (4) PREMISE LABELS (grep of
 docs/RESULTS.md at trunk c46f4bb8): R15 (a) l. 631 Lemma A and (d) l. 640 «N5: every iteration applies Switch_I …»: match; R17 (a) l. 738
 (F1) «the optimum of a one-player game dominates every strategy of that game pointwise»: match; R21 (a) l. 933 Lemma XW: match in content, but
 R21's setting line (l. 929) is 𝒞^1O; the packet says so (§2.1 l. 70) and carries the game-general proof, and both referees sign XW on every game;
@@ -98,7 +97,7 @@ first).
   nothing more. GAP-L1, L2 and L3 are present. It is complete once GAP-L4 is added»); REFEREE-2 §C.6 l. 113-124 («H14 MATCHES §1-§5 with
   H1-H13 … Landable»). (4) H16 (fixes l. 137-142): docs/new/P-N5-GAP-box69-line-H16.txt, sha1 e3a23a9ae8091817576a88ade9d85ea07543719a, =
   H14 + one insertion defining H_t (GAP-L4, REFEREE §C §5 l. 93-95: «Precision, not an E-item»); re-measured for this draft (word diff: that
-  replacement only). H16 supersedes H14 and H9; the title is the H16 line verbatim. H16 is NOT YET CHECKED by either referee (to check (2)).
+  replacement only). H16 supersedes H14 and H9; the title is the H16 line verbatim. H16 MATCHES at both referees (REFEREE ab32b618; REFEREE-2 2c77907c).
   No E-item was raised on any version of the line by either referee.
   Setting (every game): N5 = SPEC S1-S5 with FIX 1-4; G = (V, E, Ω, owner), n = |V|; a run is the sequence of states (σ_t, τ_t), a
   TRANSITION is t → t + 1. [S1-val], [S1-ord] (⊴, ◁ strict; distinct triples distinct by RESULTS R84 (a) Fact DELTA), [S1-Xi] (Ξ_t := Ξ_{σ_t},
@@ -201,7 +200,7 @@ first).
   (comp54_n80 non-edge start quarantined; corrected counts; N-GAP-7). H9 CORRECTED LINE (superseded by H14, then H16). H10 MAPPING (GAP-R1 onto
   H1; REFEREE-2 «a correspondence between the two repairs»). H11 CLARIFICATION (= H2 with R57 (a) named; GAP-N1). H12 CLARIFICATION ([V2] as a
   statement about triples; GAP-N2; REFEREE «exactly my GAP-N2: correct»). H13 = H6 (GAP-N3). H14 COMPLETE CORRECTED LINE (GAP-L1..L3;
-  superseded by H16). H15 = H8 (DATA). H16 LINE CORRECTION (GAP-L4: H_t defined; one insertion), NOT YET CHECKED by either referee. Neither
+  superseded by H16). H15 = H8 (DATA). H16 LINE CORRECTION (GAP-L4: H_t defined; one insertion), MATCHES at both referees (REFEREE ab32b618; REFEREE-2 2c77907c). Neither
   referee finds a widening: REFEREE §C §5 l. 86: «With §3: H2-H15 are clarifications, one narrowing (H5), one precision (H4) and DATA (H8 /
   H15). No signed statement widens.»; REFEREE-2 §C.6 l. 112: «None widens a signed statement.» The statements above are in the frozen
   wording, read with H1, H2, H4, H6, H11, H12, H13. No quote check is pinned for the fixes file.
@@ -294,14 +293,14 @@ first).
   docs/referee/R-N5-GAP-C.md (0f3caaabda5efb42eb759d931e122b6042c7e04e, 2026-10-30T02:23:14Z, sha1 1ed56613d890a567403d5273dc1b38ab66fd0ce9
   there, 85 lines; §5 addendum d21723b5056b4deae38bfbb9c2a8f5e09e79ea59, 02:32:32Z, `git diff --numstat 0f3caaab d21723b5`: 20 added, 1
   removed (the old NEEDS line, replaced), sha1 dcbd5d3dca69f063d900c7be6abbfd5ec2516e24, 104 lines, = referee head 40fd25a3 = trunk); H16
-  line: NOT YET (to check (2)). REFEREE-2 docs/referee-2/R2-N5-GAP.md (report 6e645c5acacabfb2f27078d94b083cd4e776bd65, 2026-10-30T01:48:04Z,
+  line: MATCHES (ab32b618). REFEREE-2 docs/referee-2/R2-N5-GAP.md (report 6e645c5acacabfb2f27078d94b083cd4e776bd65, 2026-10-30T01:48:04Z,
   merged on claude/referee-2 as aee8971e0f304c119f2e8b12d77fc17d2bf6e6bc, 01:48:05Z, the SHA the Lead, REFEREE §C and REFEREE-2 §C cite; sha1
   84a495d7270a825f350718d1d7dcde5e5ef1a667, 163 lines, = trunk; successor 21): §1 well formed; twelve items SIGNED, OPT-OFF «SIGNED with gap
   G-GAP-1»; «One gap, G-GAP-1: a proof step of OPT-OFF, repaired here; the statement is not in doubt. Nothing FALSE. Notes N-GAP-1..N-GAP-7.»
   (l. 39). §C docs/referee-2/R2-N5-GAP-C.md (949be74e73c6eaa763e1c396de40ceebd6b06fa5, 02:22:46Z, merged as 1b29329d, sha1
   1554be21abdb3ca948f0774f91aa034d4e65b59c there, 95 lines; §C.6 899d98384342681a90aebed82e6e46c7bbe2c23e, 02:32:51Z, merged as ffb1eb3d,
   02:32:52Z, `git diff --numstat 1b29329d ffb1eb3d`: 30 added, 0 removed; sha1 f6898956e35c4d84878448370349daea7b5290d0, 125 lines, = trunk;
-  unchanged at referee-2 head 0140da67); H16 line: NOT YET. INDEPENDENCE: REFEREE l. 7: «Independence: no docs/referee-2/ file opened.»;
+  unchanged at referee-2 head 0140da67); H16 line: MATCHES (2c77907c); OPT-OFF explicit signature l. 127 (8a0f0ed6). INDEPENDENCE: REFEREE l. 7: «Independence: no docs/referee-2/ file opened.»;
   REFEREE §C l. 3-4: its report «pushed BEFORE I opened any REFEREE-2 GAP file», REFEREE-2's «opened 02:21Z after the Lead's word». REFEREE-2
   l. 12-13: «`git ls-tree --name-only -r origin/claude/referee docs/referee/ | grep -ic gap`: 0 at 01:41Z and at push time (see commit). Names
   only; nothing opened; no `git log` on origin/claude/referee.»; REFEREE-2 §C l. 4: REFEREE's report «opened only after the word». No review

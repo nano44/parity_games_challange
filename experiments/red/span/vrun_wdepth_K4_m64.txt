@@ -1,0 +1,8 @@
+game sha1 611677a75f6f42218b479e572977387b2aa209f5
+start sha1 c36b5ffbd048b93365c3456430ac40b6e612afd7
+n5b iterations 268 fallbacks 0 evals 1075
+RESULT mode=n5 n=410 iterations=268 fallback=0 capped=0 evals=270 secs=7.60
+n5b: states 269 iterations 268 fallbacks 0 | n5.py (si.py engine): iterations 268 fallbacks 0 states logged 269
+state sequences identical: True
+n5b solution: zielonka(oink zlk) OK strategies verified
+n5.py solution: zielonka(oink zlk) OK strategies verified
