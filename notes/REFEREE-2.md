@@ -1,6 +1,31 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## HANDOVER (successor 23, session_01V5yGRZKSogq9jPuYHcekpn, Opus 5.5 under D15; written 2026-10-30 19:1xZ by date -u; context ~460k; Lead 19:07Z: hand over and park after SETTLE L-1)
+Branch claude/referee-2, merged with trunk (git merge, no rebase) before every push. REFEREE-2 owns no docs/GAPS.md rows.
+### Reports of record (all "(Opus 5.5, D15)"; every push via scripts/push.sh, VERIFY PASS)
+| packet | object (sha1) | report | §C / line | outcome |
+| --- | --- | --- | --- | --- |
+| P-N5-FIXD (R94 LANDED, C104) | 2050e167 (l-new 5027c17c) | R2-N5-FIXD.md 4a960ef9 | R2-N5-FIXD-C.md 73d44f3b; L-3 MATCHES 4d9a4318 | all SIGNED; FLAT-SW proved twice: my Lemma OWN (signed by REFEREE) + REFEREE SW-KEEP (signed by me, C.4); my N-1 comp54 WITHDRAWN (vertex 11 is ODD: tau(11)) |
+| P-N5-WRUN | fae68aa0 (l-new 7668bc9b) | R2-N5-WRUN.md a281189a | R2-N5-WRUN-C.md 1ca64032; L-2 (superseded) c2bfcc4c; L3check d671d516; L-3 284014ad (WRUN-L5); L-4 MATCHES 9784fde6 | all SIGNED by both; [SUB] double-signed (Lemma SUB in line L-4); G-WRUN-1 (REFEREE) reproduced by my line0_cex.py; all line items closed; to CHECKER |
+| P-N5-SETTLE | aef403c3 (l-si 6a70a520) | R2-N5-SETTLE.md 301042bb | R2-N5-SETTLE-C.md (this push) | all SIGNED by both; line REQUIRED F, T, k (REFEREE L3), Iσ_k (mine); L-SI 35 writes SETTLE line L-1 |
+### IN FLIGHT / open
+- SETTLE line L-1 (L-SI 35): word-diff it if it arrives before park; else successor 24 does it (joint required set in R2-N5-SETTLE-C.md C.2).
+### Things only I know
+- New tools (own code; lane code never imported): R2-N5-FIXD/fixd_check.py (phases, DEPTH, FLATTR, FLAT-SW, OWNC/SWS; LZC=1; PERRUN=1 per-run
+  totals), own_check.py (Lemma OWN on random strategy pairs); R2-N5-WRUN/wrun_check.py (XI-RUN, returns REG/E0/FREE, WAIT-CYCLE′ sampled,
+  GAP-DEV, PREFIX-MON, NO-DEV, BIP-RED, SUBF, strict releases; PINS=1), line0_cex.py; R2-N5-SETTLE/settle_check.py (events, blocks, S/X,
+  PLAY-CAUSE, IDX/LEX choice rule, case split, T-XCH). wrun_check sets L.run_game at import: other tools must wrap WR._orig_run_game.
+- Start files: wrun_check.read_start fills unlisted vertices with the best-reward start and repairs FORCED vertices (comp54_n80 vertex 11,
+  Odd, «11:51» non-edge) -> 55 / 22 / 32 = lane = REFEREE. REFEREE's probes skip n > 100 (MAXN) and reject partial start files: run-set
+  differences, not engine differences.
+- Recurring line defects both referees missed until a second pass: F / vertices defined but not quantified (WRUN-L3, SETTLE-L1); τ or k used
+  free in one clause; «with [SUB]» status ambiguity. Do a clause-by-clause binder pass on every line, every revision.
+- «y ⊕ · preserves/reflects ⊴» (WRUN Fact EXT, SETTLE §1) is false when y is in exactly one path set; always check uses avoid y.
+- Lead readings: L41 = a referee-originated proof counts when its author signs it and the other referee independently signs it; line files
+  carry no heading (landing heading «### R9x [refereed-only] » + line + CHECKER fill).
+- Worktrees in $SCRATCH (wfd, wwr, wst): container-local.
+
 ## Resume point 6 (successor 23; 2026-10-30 18:5xZ by date -u; context ~420k)
 - R94 FIXD LANDED (C104). WRUN: L-3 word-diff (284014ad) REQUIRED WRUN-L5 («with [SUB]»); Lead chose (a) unconditional; L-NEW 39 writes L-4 -> word-diff.
 - P-N5-SETTLE (l-si 6a70a520, packet aef403c3, line 6aa094e3): report docs/referee-2/R2-N5-SETTLE.md: all SIGNED (RG′, PLAY-CAUSE, W-MON, PATH,
