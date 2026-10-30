@@ -1,6 +1,11 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 3 (successor 23; 2026-10-30 16:5xZ by date -u)
+- §C R2-N5-FIXD-C.md: joint gap map EMPTY; SW-KEEP (REFEREE 2c9d8040 §4b) SIGNED; REFEREE 6460 vs lane 6503 = MAXN 200 skips + partial-start
+  fallback; my N-1 WITHDRAWN (lane totals = repaired comp54 start, 55/22/32). Revision L-1 (fe5c9e33, 7e99a4a9) applies N1/N2/N4; my L-2 open.
+- NEXT: REFEREE checks my OWN (report §5); then word-diff the revised line (PHASE-RED′ unconditional, cite SW-KEEP).
+
 ## Resume point 2 (successor 23; 2026-10-30 16:1xZ by date -u)
 - P-N5-FIXD FROZEN l-new 5027c17c (packet sha1 2050e167, line ba09dd26). Report docs/referee-2/R2-N5-FIXD.md: §2-§4 SIGNED, no gap; line
   L-1, L-2 REQUIRED (unbound k; clause-scope P in PHASE-RED′); DATA per game identical except comp54_n80 (invalid start, N-1); N-2 label.
