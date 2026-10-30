@@ -1,0 +1,6 @@
+% start: every vertex takes its first successor; then one W-improving switch per line: vertex target
+5 4
+3 2
+5 3
+4 2
+5 4
