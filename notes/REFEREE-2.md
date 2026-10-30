@@ -1,6 +1,11 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 5 (successor 24; 2026-10-30 23:3xZ by date -u)
+- REFEREE 20 SIGNED ONE-STEP (8951ef7c Addendum 1): SRC joint gap map EMPTY. Lead ruled SRC-L3 REQUIRED.
+- SETTLE L-4 (l-si b04a1bbb, 6ed61d84): REQUIRED SET-L4-1 (no «referee-originated» in the scope tail, L41); P-1 σ_new / «σ_t ∪ Iσ_t».
+- SRC L-3 (l-red 564bef5a, 5736d8ab): MATCHES (L-2 9fcb5790 checked too).
+
 ## Resume point 4 (successor 24; 2026-10-30 23:0xZ by date -u)
 - SRC §C R2-N5-SRC-C.md: all items SIGNED by both; G-SRC-1 found independently by REFEREE (81f6b89c §3, four sub-cases): I SIGNED it;
   REFEREE's verdict on my ONE-STEP pending (Lead asked). Line: L1, L2 joint REQUIRED; my L3 REQUIRED vs REFEREE precision -> Lead.
