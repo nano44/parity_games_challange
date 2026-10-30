@@ -1,7 +1,14 @@
 # L-LIT notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point (successor T59 -> T60, 2026-10-30 18:55Z by date -u; same session)
+## Resume point (T61, 2026-10-30 20:02Z by date -u; same session)
+T60 pushed (54584c0c, 2b120701; Lead logged 20:01Z). T61 (support for L-NEW 40 box 97): docs/lit/T61-order-charging.md + T61-heads-check.py.
+- GH (original arXiv 0712.1765 = LMCS 5(2:9)) + ABS Thm 23/26/29/30 template S0-S5 mapped to N5:
+  - S0, S3, S4 transfer; S4 = HEAD-RED.
+  - S1 needs U-FIX. S2 fails for the pure order (VJ transit rewards, Sec. 3 example) and needs TYPE-DET.
+  - S5a NO-REPEAT DEAD (gate_K64_n581: 5 orders, 60 returns). S5b quantum = XI-CH-POLY. UMAX 64 on latew_K8_m32.
+
+## Previous resume point (successor T59 -> T60, 2026-10-30 18:55Z by date -u; same session)
 T59 pushed (c7dc03db, d3535a23; Lead logged it 18:54Z). T60 (Lead 18:54Z): opponent best-reply flips SB_F.
 T60 (this push): docs/lit/T60-best-reply-flips.md + T60-sc-check.py.
 - STV/vDLM give no count. HMZ bounds best replies only through the total count. Auger et al. Thm 29 / Gimbert-Horn: order changes of
@@ -558,6 +565,11 @@ NEEDS: none from the owner.
   6.4 p.11. NOT OPENED: Topkis 1978; Milgrom-Shannon 1994 (JSTOR); Hoffman-Karp 1966; Condon 1993; Bjorklund-Vorobyov 2007;
   Quah-Strulovici 2009.
 
+- T61 (2026-10-30). OPENED: Gimbert-Horn arXiv 0712.1765 = LMCS 5(2:9) 2009 (6245096fb6e3d427; p.5, Def. 2.1 p.6, Sec. 2.1-2.2 pp.6-7,
+  Prop. 2.2 p.7, Def. 3.2-3.3 p.8, Thm 3.1, 3.4, Lemma 3.7, Sec. 4.1-4.2 pp.13-14, Alg. 2, Thm 4.1 p.14, Lemma 4.2, 4.4 pp.15-16);
+  Auger-Badin de Montjoye-Strozecki arXiv 2102.04922 (c992c3f4f49d4b74; Prop. 7 p.4, Def. 10 p.6, Lemma 11-12 pp.6-7, Lemma 14, Prop. 18,
+  Prop. 21 p.10, Thm 22 p.12, Thm 23 p.13, Thm 26 + Def. 27 + Lemma 28 pp.15-16, Thm 29 + proof pp.16-17, Sec. 5.1 p.17, Thm 30 p.18).
+
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
 - T17 process dead end: subagent GitHub MCP search outside the repo scope was a rule breach (see Things only I know); never repeat it.
@@ -603,6 +615,10 @@ NEEDS: none from the owner.
 - T60: DEAD as a route: "SB_F(o) <= deg(o) - 1 via Topkis / Milgrom-Shannon single crossing in time". latew_K16_m32: an Odd vertex of
   out-degree 2 flips sigma-bar 32 times in one W-run, and its successor pair reverses its Xi-order 32 times (2K; K = 8 gives 16).
   switchbestexp_6: PF 3. Also dead: DS bounds on sigma-bar sequences at degree-2 vertices.
+
+- T61: DEAD the [GH]/[ABS] NO-REPEAT closing for N5's heads: gate_K64_n581 W-run (71 transitions) has 5 distinct head orders with
+  60 returns (34 types, 31 returns) and 64 sigma-bar-changing transitions. Obstruction: Even's sigma is not a function of the head type.
+  Pure ORDER-DET fails in principle (VJ transit carries path sets; T61 Sec. 3 example).
 
 ## Corrections log
 - 2026-10-23 (T26): N8d-barrier.md §0 and R54 §0 put Lemma 4.75 / Thm 4.76 on p.187; opened PDF: printed p.186 (PDF p.202). Reported as caveat 4.
