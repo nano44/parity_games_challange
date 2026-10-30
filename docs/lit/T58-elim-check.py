@@ -8,7 +8,8 @@ p..q, Xi_end := Xi_q (Xi is non-decreasing along F, R15). For an Even edge e = (
   VIOLX: the same with the threshold Xi_t(v) |> v (+) Xi_end(w) (si.Engine.extend); BMON: beta falls somewhere (must be 0).
 Per W-run: ADOPT (adoptions), RETMAX (max adoptions of one edge), WIN (max over states t of F of the number of transitions until some
 edge e in sigma_t that is not in sigma_q gets eliminated, with T_e := min of the two thresholds; HMZ-shaped "window"; the rest of the
-run if none is), WINB (the same with the beta threshold only), ELIMS (edges eliminated while in use), LEN (transitions). Output: maxima over W-runs, VIOL summed. Usage (repo root): python3 -I docs/lit/T58-elim-check.py GAME.pg [START]"""
+run if none is), WINB (the same with the beta threshold only), HW (the TRUE window, no threshold: max over t of min over e in sigma_t, e not in
+sigma_q, of (last state at which e is in sigma) + 1 - t; HMZ Lemma 6.4's quantity), ELIMS (edges eliminated while in use), LEN (transitions). Output: maxima over W-runs, VIOL summed. Usage (repo root): python3 -I docs/lit/T58-elim-check.py GAME.pg [START]"""
 import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
 sys.path.insert(0, os.path.join(ROOT, "experiments", "new", "box21"))
@@ -37,7 +38,7 @@ def wruns(g, start=None):
 
 def run(g, start=None):
     n = g.n; own = g.owner; E = Engine(g)
-    c = dict(VIOL=0, VIOLX=0, BMON=0, ADOPT=0, RETMAX=0, WIN=-1, WINB=-1, ELIMS=0, LEN=0, RUNS=0)
+    c = dict(VIOL=0, VIOLX=0, BMON=0, ADOPT=0, RETMAX=0, WIN=-1, WINB=-1, HW=-1, ELIMS=0, LEN=0, RUNS=0)
     for F in wruns(g, start):
         if len(F) < 2: continue
         c['RUNS'] += 1; c['LEN'] = max(c['LEN'], len(F) - 1)
@@ -67,6 +68,13 @@ def run(g, start=None):
                 nxt = [TT[e] - i for e in used if TT[e] is not None and TT[e] > i]
                 if nxt: c[name] = max(c[name], min(nxt))
                 elif used: c[name] = max(c[name], len(F) - 1 - i)
+        lastuse = {}
+        for i in range(len(F)):
+            for v in range(n):
+                if own[v] == 0: lastuse[(v, F[i][v])] = i
+        for i in range(len(F)):
+            ws = [lastuse[(v, F[i][v])] + 1 - i for v in range(n) if own[v] == 0 and F[i][v] != last[v]]
+            if ws: c['HW'] = max(c['HW'], min(ws))
         c['ELIMS'] = max(c['ELIMS'], sum(1 for e, te in TM.items() if te is not None and any(F[i][e[0]] == e[1] for i in range(te))))
     return c
 
