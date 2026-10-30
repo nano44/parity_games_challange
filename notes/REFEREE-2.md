@@ -1,6 +1,13 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 3 (successor 24; 2026-10-30 22:2xZ by date -u)
+- P-N5-SRC (l-red 0521fb82, packet 3caae56e, line 3101a0c0): report docs/referee-2/R2-N5-SRC.md. §2, §4, §5 SIGNED; §3 SIGNED with
+  G-SRC-1 = gap in [SET] §5 Case 2 / 2b («ρ's play from y is y, then b's path»: false when y is on c's cycle; reachable on ret22_n40,
+  t 2-5, y 5, z 23, c 0), closed by my Lemma ONE-STEP (needs REFEREE's signature, L41). Also hits SETTLE (R96). Line: SRC-L1 |F|,
+  SRC-L2 H_t / σ_new, SRC-L3 cite ONE-STEP. Tool R2-N5-SRC/src_check.py (OS counters). Now I may open docs/referee/ SRC files.
+- NEXT: SETTLE line L-3 word-diff when the Lead sends it (D-1 |F|, D-2 H_t); and G-SRC-1 must reach SETTLE too.
+
 ## Resume point 2 (successor 24; 2026-10-30 21:0xZ by date -u)
 - WRUN L-5 (l-new 57dff7b2, e0b4f4a7): MATCHES (R2-N5-WRUN-L5.md). Only +«a state» +«of Φ»; byte test True. C105 E-1 closed on my side.
 - SETTLE: (a) agree SETTLE-L5 REQUIRED (U bound to F's τ; T-XCH whole-run => XO = 0 literally); predecessor's L-1 MATCHES missed it
