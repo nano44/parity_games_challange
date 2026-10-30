@@ -1,7 +1,16 @@
 # L-LIT notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point (successor T59, 2026-10-30 from 17:49Z by date -u; session_01V5yGRY1xa1eQQyQ64QZ58e; D18)
+## Resume point (successor T59 -> T60, 2026-10-30 18:55Z by date -u; same session)
+T59 pushed (c7dc03db, d3535a23; Lead logged it 18:54Z). T60 (Lead 18:54Z): opponent best-reply flips SB_F.
+T60 (this push): docs/lit/T60-best-reply-flips.md + T60-sc-check.py.
+- STV/vDLM give no count. HMZ bounds best replies only through the total count. Auger et al. Thm 29 / Gimbert-Horn: order changes of
+  r values (r q^r, r!) -> N5 analogue with heads U needs ORDER-DET + NO-REPEAT (OPEN).
+- Friedmann LMCS Lemma 6.1: rule-free bounds are impossible (sigma-bar(e_1) flips 2^n under switch-all).
+- Topkis/Milgrom-Shannon single crossing: DEAD (latew_K16_m32: deg-2 Odd vertex, 32 flips, pair reverses 32 times). PAIR-CROSS PROVED.
+OPEN LEADS: ORDER-DET / NO-REPEAT (FPT in max |U_k|); ELIM-WIN combinatorial; why H_n dies in N5 (L-NEW box 95).
+
+## Previous resume point (successor T59, 2026-10-30 from 17:49Z by date -u; session_01V5yGRY1xa1eQQyQ64QZ58e; D18)
 START: origin/claude/l-lit = d78e1815 (is-ancestor checked; branch pushed only by L-LIT); merged trunk 8e1a605c (local 3bfa38e7).
 T59 (this push): docs/lit/T59-elimination-windows.md + T59-dz-check.py.
 - (a) Undiscounted window = Zhong-Ye 2609.40147 Thm 7.1 (Dantzig, (7.2)-(7.6), 1 - 1/N^2). Howard: none (ZY Thm 6.1; Scherrer p.6).
@@ -540,6 +549,15 @@ NEEDS: none from the owner.
   Thm 1 p.6; context only). Abstract only: arXiv 2503.04203 (954879a0). NOT OPENED: HKZ SODA 2014 (SIAM); Hansen-Zwick ISAAC paper;
   Hansen PhD 2012; Jurdzinski/Puri parity->MPG reduction (used as standard in T59 Sec. 2.2 READING).
 
+- T60 (2026-10-30). OPENED (scratchpad t60/A): Schewe-Trivedi-Varghese arXiv 1501.06484v1 (7b68cc69de78bd90; Alg. 2-3 p.2, Alg. 5 p.6,
+  Lemma 3.1, Thm 3.4-3.5, Sec. 4 pp.8-9); van Dijk-Loho-Maat arXiv 2309.02223v1 (10e6794d82aba465; Thm 1 p.2, p.3, pp.11-12, Thm 13 and
+  Discussion p.15); Dell'Erba-Dumas-Schewe arXiv 2404.04124 (da74ce1ed5b56648; abstract); Auger-Badin de Montjoye-Strozecki arXiv
+  2102.04922 (c992c3f4f49d4b74; Prop. 7 p.4, Thm 29 + proof pp.16-17, Sec. 5, 5.1 p.17); Gimbert-Horn arXiv 0712.1765 = LMCS 5(2:9)
+  (6245096fb6e3d427; title page only, content via ABS Sec. 5.1); Etessami-Papadimitriou-Rubinstein-Yannakakis arXiv 1909.03210
+  (f03c9ea079f71ff0; Sec. 5.1 p.22, Sec. 6); Friedmann 1106.0778v2 Lemma 6.1 p.10; HMZ 1008.0530v1 Lemma 3.7 p.6, algorithm p.9, Lemma
+  6.4 p.11. NOT OPENED: Topkis 1978; Milgrom-Shannon 1994 (JSTOR); Hoffman-Karp 1966; Condon 1993; Bjorklund-Vorobyov 2007;
+  Quah-Strulovici 2009.
+
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
 - T17 process dead end: subagent GitHub MCP search outside the repo scope was a rule breach (see Things only I know); never repeat it.
@@ -580,6 +598,11 @@ NEEDS: none from the owner.
   embedding. On fx_K16_m16, BLOCK-RATIO = 2^32 (the max reference residual sits on a blocked edge) and the gap never falls by n^2 before
   the last transition (WINC = |F| = 304), while HW = 17. Also: ARENA-MAX alone cannot give ELIM-WIN, because Friedmann H_n (1106.0778
   Thm 8.4) beats the arena-optimum rule I^glo with stubborn cycles.
+
+
+- T60: DEAD as a route: "SB_F(o) <= deg(o) - 1 via Topkis / Milgrom-Shannon single crossing in time". latew_K16_m32: an Odd vertex of
+  out-degree 2 flips sigma-bar 32 times in one W-run, and its successor pair reverses its Xi-order 32 times (2K; K = 8 gives 16).
+  switchbestexp_6: PF 3. Also dead: DS bounds on sigma-bar sequences at degree-2 vertices.
 
 ## Corrections log
 - 2026-10-23 (T26): N8d-barrier.md §0 and R54 §0 put Lemma 4.75 / Thm 4.76 on p.187; opened PDF: printed p.186 (PDF p.202). Reported as caveat 4.
