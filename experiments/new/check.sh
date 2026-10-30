@@ -312,4 +312,10 @@ if grep -q "^WRUN dw_3.pg .* worst-frozen-phase {'len': 26, 'wch': 26, 'flat': 0
 else
   echo "box 64 wrun check: FAILED"; exit 1
 fi
+w16=$(python3 -I box66/latepair.py ../n5-exhaustive/instances/b6_xl2_n32.pg)
+if grep -q "max-per-lambda-run-edge 4 max-per-piece-edge 1 .* viol 0$" <<<"$w16"; then
+  echo "box 66 LATE: b6_xl2_n32 one edge late-adopted 4 times in one lambda-run, 1 per piece (boundary obstruction): PASS"
+else
+  echo "box 66 LATE check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
