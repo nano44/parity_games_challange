@@ -11,6 +11,9 @@ ROOT of a return: its first Xi(g)-rise in the window, traced back: EVS divergenc
 target earlier in F) the root is that fresh entry, if it is itself a return, recurse into that return's first rise; ODF divergence at o
 -> recurse into the rise of o's old target at the same q (L-SI ROOT-FLIP), or TIE if the old target did not rise. Prints root kinds,
 distinct roots, max returns per root and the chain depths.
+EROOT (box 100): the same with the EVEN root map: from a change of Xi(z) at q, x := the first Even vertex on z's OLD play that switches at
+q; FRESH entry -> root, a return -> recurse into its window's first rise. 'children per node' = returns whose first rise is at q and whose
+first switching Even vertex is x, per (x, q).
 Usage: retcause.py GAME.pg [START]   (TOP=k prints k top divergence vertices; default 8)"""
 import sys, os
 from collections import Counter
@@ -67,29 +70,64 @@ for a, b in runs:
             if S[k + 1][y] != S[k][y] and (y, S[k + 1][y]) not in hl: fresh_at[(y, S[k + 1][y], k)] = True
         hl |= {(y, S[k + 1][y]) for y in EVN}
     memo = {}
-    def cause(q, z, depth=0, vis=None):
-        # root of the rise of Xi(z) at q -> q + 1: ('FRESH', x, w, q) | ('TIE', o, q) | ('CYC', ...) | ('OUT', ...)
+    def cause(q, z, vis=None):
+        # root of the change of Xi(z) at q -> q + 1 via the FIRST DIVERGENCE; returns (root tuple, relative depth)
         if (q, z) in memo: return memo[(q, z)]
         vis = vis or set()
-        if (q, z) in vis or depth > 4 * n: return ('LOOP', z, q, depth)
+        if (q, z) in vis: return (('LOOP', z, q), 0)
         vis.add((q, z))
         c, x, o, nw = diverge(q, z)
         if c == 'EVS':
-            if (x, nw, q) in fresh_at: res = ('FRESH', x, nw, q, depth)
+            if (x, nw, q) in fresh_at: res = (('FRESH', x, nw, q), 0)
             elif (x, nw, q) in retidx:
                 jj = retidx[(x, nw, q)]; rr = [qq for qq in range(jj, q) if EV(qq)[0][nw] != EV(qq + 1)[0][nw]]
-                res = cause(rr[0], nw, depth + 1, vis) if rr else ('NORISE', x, nw, q, depth)
-            else: res = ('OUT', x, nw, q, depth)
+                if rr:
+                    sub, d = cause(rr[0], nw, vis); res = (sub, d + 1)
+                else: res = (('NORISE', x, nw, q), 0)
+            else: res = (('OUT', x, nw, q), 0)
         elif c == 'ODF':
-            res = cause(q, o, depth + 1, vis) if EV(q)[0][o] != EV(q + 1)[0][o] else ('TIE', x, q, depth)
-        else: res = ('CYC', x, q, depth)
+            if EV(q)[0][o] != EV(q + 1)[0][o]:
+                sub, d = cause(q, o, vis); res = (sub, d + 1)
+            else: res = (('TIE', x, q), 0)
+        else: res = (('CYC', x, q), 0)
         memo[(q, z)] = res; return res
+    def firstev(q, z):
+        # first Even vertex on z's OLD (sigma_q, sbar_q)-play that switches at q -> q + 1 (box 100 Lemma EVEN-ON-PLAY: exists if Xi(z) changes)
+        x = z; seen = set()
+        while x not in seen:
+            seen.add(x)
+            if own[x] == 0 and S[q + 1][x] != S[q][x]: return x
+            x = nxt(q, x)
+        return None
+    memoE = {}
+    def causeE(q, z):
+        # returns (root tuple without depth, relative depth)
+        if (q, z) in memoE: return memoE[(q, z)]
+        x = firstev(q, z)
+        if x is None: res = (('NOEVEN', z, q), 0)
+        else:
+            w = S[q + 1][x]
+            if (x, w, q) in fresh_at: res = (('FRESH', x, w, q), 0)
+            else:
+                jj = retidx[(x, w, q)]; rr = [qq for qq in range(jj, q) if EV(qq)[0][w] != EV(qq + 1)[0][w]]
+                if rr:
+                    sub, d = causeE(rr[0], w); res = (sub, d + 1)
+                else: res = (('NORISE', x, w, q), 0)
+        memoE[(q, z)] = res; return res
+    rootsE = Counter(); kindE = Counter(); depE = Counter(); kids = Counter()
+    for y, z, j, k in rets:
+        rr = [q for q in range(j, k) if EV(q)[0][z] != EV(q + 1)[0][z]]
+        if not rr: continue
+        x = firstev(rr[0], z)
+        if x is not None: kids[(x, rr[0])] += 1
+        rt, d = causeE(rr[0], z); kindE[rt[0]] += 1; depE[d] += 1
+        rootsE[rt] += 1
     roots = Counter(); rkind = Counter(); dep = Counter()
     for y, z, j, k in rets:
         rr = [q for q in range(j, k) if EV(q)[0][z] != EV(q + 1)[0][z]]
         if not rr: continue
-        rt = cause(rr[0], z); rkind[rt[0]] += 1; dep[rt[-1]] += 1
-        roots[rt[:4] if rt[0] == 'FRESH' else rt[:2]] += 1
+        rt, d = cause(rr[0], z); rkind[rt[0]] += 1; dep[d] += 1
+        roots[rt] += 1
     cls = Counter(); dv = Counter(); flip = Counter(); per_g = Counter(); nr = Counter(); wch = 0; norise = 0; cache = {}
     for y, z, j, k in rets:
         per_g[z] += 1
@@ -109,3 +147,7 @@ for a, b in runs:
     if flip: print("  top Odd flips (o, old, new)", flip.most_common(TOP))
     print(f"  ROOT kinds {dict(rkind)} distinct roots {len(roots)} max returns per root {max(roots.values()) if roots else 0} chain depth {dict(sorted(dep.items()))}")
     print("  top roots (kind, x, w, q)", roots.most_common(TOP))
+    print(f"  EROOT kinds {dict(kindE)} distinct roots {len(rootsE)} max returns per root {max(rootsE.values()) if rootsE else 0} "
+          f"chain depth {dict(sorted(depE.items()))} max children per node {max(kids.values()) if kids else 0} "
+          f"max children per return node {max([v for (x, q), v in kids.items() if (x, S[q + 1][x], q) not in fresh_at] or [0])} mE {sum(len(set(g.succ[v])) for v in EVN)}")
+    if os.environ.get("DBG"): print("  DBG", rootsE.most_common(3), kids.most_common(3))

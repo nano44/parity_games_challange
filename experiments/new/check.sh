@@ -517,4 +517,10 @@ if grep -q "RUN 0-152 F 152 returns 450 edges 60 targets 60 max_per_target 8 nor
 else
   echo "box 99 QRET check: FAILED"; exit 1
 fi
+w50=$(cd .. && python3 -I new/box99/retcause.py new/box52/out/topfix_n10.pg; TOP=1 python3 -I new/box99/retcause.py new/box97/inst/obs_K12_m24.pg new/box97/inst/obs_K12_m24.start)
+if grep -q "EROOT kinds {'FRESH': 252} distinct roots 27 max returns per root 50 chain depth {.*49: 1} max children per node 1 max children per return node 1 mE 651" <<<"$w50" && grep -q "EROOT kinds {'FRESH': 818} distinct roots 25 max returns per root 71 chain depth {0: 301, 1: 506, 2: 11} max children per node 24 max children per return node 2 mE 149" <<<"$w50"; then
+  echo "box 100 CASC: EVEN root map total (all FRESH); topfix_n10 root chain depth 49 with width 1 (depth O(1) DEAD); obs_K12_m24 depth 2, return-node width 2: PASS"
+else
+  echo "box 100 CASC check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

@@ -22,6 +22,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - DATA: sbq2 / obs / latew returns all FREE (box84 retclass); rooted at the K fresh ticks of ONE clock vertex 4 (deg K+1, period m+3), ~3m
   returns per tick. PROVED (lane): FRESH-ROOT (cases c, d-off-cycle; DATA 9,455/9,455 FRESH), CASCADE-EQ (WRUN-POLY <=> CASC-POLY).
   CONJECTURE CASCADE-LIN: CASC <= n/2 (max 0.483n); chain depth <= 2 on the corpus. L-RED target: deep root chains / one fresh entry > n returns.
+### Box 99 pushed b376575c, reported 21:43Z. Its depth claim (<= 2) was a memo bug: CORRECTED in box 100.
+### Box 100 N5-CASC (Lead 21:49Z: close FRESH-ROOT, attack CASCADE-LIN): docs/new/N5-CASC-box100.md
+- PROVED (lane): EVEN-ON-PLAY ([R57] + R15), WINDOW-RISE, FRESH-ROOT in full (Even root map), CHILD (node (x,q) <= one child per edge with
+  x on g's old play), TREE. DEAD: depth O(1) (topfix_N depth 6N-11, width 1). CONJECTURE NARROW (return nodes O(1) children; corpus <= 6).
+  CASCADE-LIN still CONJECTURE (0.483n).
 ### Things only I know (successor 40): sb53 tools (rootflip.py etc.) and T60 are only on origin/claude/l-si / l-lit; I read them via git show.
   orderdet.py on latew_K16_m32 takes ~50 s; runod.sh ~6 min on 4 cores.
 
@@ -1716,7 +1721,7 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
 - (succ. 38, box 87) [ARV] H. Ackermann, H. Röglin, B. Vöcking, ECCC TR06-067: Def. 2, Thm 3 + proof, Lemma 4 + proof, Thm 7 and the
   1-1-exchange paragraph (full PDF text read).
 - (succ. 38, box 89) T. Ralphs, IE411 Lecture 11 (Lehigh, coral.ise.lehigh.edu/~ted/files/ie411/lectures-python/Lecture11.pdf), slide 3 (PDF text read).
-- (succ. 40) L-LIT T60 (l-lit 54584c0c, docs/lit/T60-best-reply-flips.md §3.3, ORDER-DET / NO-REPEAT statements); L-SI box 53 (l-si aeb8c311, docs/si/N5-SBF-box53.md §2.1-§2.5, §3); P-N5-SETTLE §1-§2 (l-si a0970d36). [ABS] 2102.04922 and [GH] NOT opened (only T60's quotes; no theorem of theirs used).
+- (succ. 40) L-LIT T61 (l-lit 1ad851ee, docs/lit/T61-order-charging.md §2.6, S5a data). L-LIT T60 (l-lit 54584c0c, docs/lit/T60-best-reply-flips.md §3.3, ORDER-DET / NO-REPEAT statements); L-SI box 53 (l-si aeb8c311, docs/si/N5-SBF-box53.md §2.1-§2.5, §3); P-N5-SETTLE §1-§2 (l-si a0970d36). [ABS] 2102.04922 and [GH] NOT opened (only T60's quotes; no theorem of theirs used).
 ## Dead ends
 - (box 47, successor 26, 11:13Z) CONJECTURE XD-1 (≤ 1 X_dir per {u, u′}-run): FALSE on experiments/new/box47/instances/pp2_n19.pg (sha1 97b5b132…),
   𝒞^2O, S3, phase [1, 3], D = {1}, {0}, {1}; length-only values (cycle node 9). Obstruction: each X_dir needs only an Even switch on each
@@ -1909,6 +1914,7 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
 ## Dead ends (successor 40, box 97; also in docs/new/N5-ORD-box97.md)
 - ORDER-DET-U (sbar a function of the Xi-order on R143's U_k): n5s_maxph_0 (n 5), states 0-1, U = {2} both, sbar(0) 1 -> 2 (tau(0) = 1 is not a head).
 - NO-REPEAT (head / A_F orders never recur in a W-run): thetaA_n7 (n 7), refined order of A_F = {1,2,5} at state 0 recurs at state 3, sbar(6) 5,5,1,5.
+- Root-chain depth O(1) (box 100): topfix_N (new/box52/out, default start), depth 6N - 11 (49 at N = 10), width 1.
 - SB_F <= f(order-set size) (the [GH] r! count): gate_K16_n197 / gate_K64_n581 (.start), SBT 16 / 64 at max|U_k| 6, |A_F| 11, 6 distinct orders.
 
 ## Things only I know (earlier successors)
