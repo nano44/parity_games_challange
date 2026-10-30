@@ -403,4 +403,10 @@ if grep -q "WCHPK tog6b_n32.pg n 32 wruns 1 {'returns': 4, 'paid-W': 3, 'TT': 1,
 else
   echo "box 79 WCH check: FAILED"; exit 1
 fi
+w31=$(cd .. && python3 -I new/box79/flatsrc.py n5-epoch/instances/nep92_n40.pg n5-epoch/instances/nep92_n40.start)
+if grep -q "{'K-rise': 20, 'FLATTR': 73, 'FSW': 73} max-FLATTR-phase 73 max-FLATSW-(x,phase) 8" <<<"$w31"; then
+  echo "box 79 FLATSRC: nep92_n40 all 73 flat transitions carry a flat Even switch (<= 8 per vertex): PASS"
+else
+  echo "box 79 FLATSRC check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
