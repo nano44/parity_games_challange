@@ -884,3 +884,6 @@ echo "si (box 51b §6-§7: DEEP_4 split, REVISIT): PASS"
 python3 -I gate/layer.py ../red/xing/instances/u23sw64_n32.pg | grep -q "RET 31 UNX 0 RETL2 0 DEPTH 10 FLAT 8"
 MUT=1 python3 -I gate/layer.py ../red/xing/instances/u23sw64_n32.pg | grep -q "RET 31 UNX 6 "
 echo "si (box 51b §8: LAYER-RESET): PASS"
+# box 51b §10: Lemma RETURN-CHARGE (RCV 0, RCX 0 on u23sw64's 31 returns), XCI 8.
+python3 -I gate/layer.py ../red/xing/instances/u23sw64_n32.pg | grep -q "RET 31 UNX 0 RETL2 0 DEPTH 10 FLAT 8 RCV 0 RCX 0 XCI 8"
+echo "si (box 51b §10: RETURN-CHARGE): PASS"
