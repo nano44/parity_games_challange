@@ -187,3 +187,5 @@ TARGET.md claim; G-N5-TIME stays open)»
   - «re-entries {+j − 1 → j+} of Even edges in R»
   - «(W [-read against τ_{j−1},-] {+:= the [S1-val] valuation of the (σ_t, τ_{j−1})-plays,+} smallest anchor)»
 - No other word changes. K16 supersedes K13, K14 and K15 as the line to land.
+
+Lead decision 04:16Z: K15 is the line to land; K16 is superseded (it restores the free V, REFEREE fe9d0cf1).
