@@ -1,7 +1,7 @@
 # L-LIT notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point (successor T54, 2026-10-30 ~15:00Z by date -u; session_01V5yGRX5Hhq2A6bW6tNFG1o; D18; WORKING)
+## Resume point (HANDOVER, successor T54-T58, 2026-10-30 ~17:30Z by date -u; session_01V5yGRX5Hhq2A6bW6tNFG1o; D18; PARKED on Lead's word after T58)
 DONE (claude/l-lit; pushes via scripts/push.sh, exit 0, VERIFY PASS; Oink smoke NOT RUN):
 - 57e40069: trunk 7446d3d2 merged; T54-tiebreak-check.py; merge of c30c1850 (local clone had started at stale dedbbe7e1: first push was
   rejected non-fast-forward, nothing went out; fixed by a merge, no rebase).
@@ -15,7 +15,10 @@ DONE (claude/l-lit; pushes via scripts/push.sh, exit 0, VERIFY PASS; Oink smoke 
   no adversarial-order count in any opened path-algebra source). Sources in scratchpad t56/A.
 - T57: docs/lit/T57-tropical-pivots.md (tropical pivot = one exchange; N5 switches sets, u23sw64_n32 17/15/6/...; S1 tie-break ~
   ABGJ symbolic perturbation (READING); no transfer). Sources in scratchpad t57/A.
-IN FLIGHT: none. OPEN LEADS: CN-POLY, EVEN-POLY (must use S2 Xi-offers), PASS-BIP; Claim RG (VJ restriction invariant) not re-proved.
+- T58: docs/lit/T58-action-elimination.md, T58-elim-check.py (elimination anatomy R/P/C; BETA-MON, ELIM-ORD-beta PROVED; extend form
+  DEAD (13 corpus violations); HMZ window HW = m+1 on fx (K-independent); CONJECTURE ELIM-WIN; counting |F| <= (m_E+1) HW).
+IN FLIGHT: none (a latew_K20_m32 HW run was still going at park; not needed). OPEN LEADS: ELIM-WIN (HW <= p(n)); the contraction lemma (C)
+  for S4a on BIP stretches; CN-POLY, EVEN-POLY (must use S2 Xi-offers), PASS-BIP; Claim RG (VJ restriction invariant) not re-proved.
 Older leads (T48-T53 handover): KL-SF; parametric dimension >= 2; Maat open direction; Loff-Skomra n-breakpoints.
 NEEDS: none from the owner (optional library access: Cunningham 1979, GHK 1990, Orlin 1997, Johnson 1973, Kershenbaum 1981, AMO).
 
@@ -65,6 +68,10 @@ NEEDS: none from the owner.
 - Open FL09 (self-loop removal) if the REFEREE needs it; Friedmann RAIRO 2011 (publisher 403; try author copy).
 
 ## Things only I know
+- T58: fx_K_m regenerate with l-red span/mkrw.py K m then free/obsx.py under ABOVE=a OWNER=0 BLK=2 (K8 m32 = pin sha1 e995709e).
+  l-red worktree in scratchpad t58/lred; instances t58/inst; family outputs t58/fam5.txt; corpus t54/t58_*.txt (script v3, no HW column).
+  Do not pkill -f with a pattern that appears in your own command line (kills the shell, exit 144); kill by PID.
+  push.sh pushes the commit verified at its start; commits made meanwhile need another push.
 - T54: downloads in scratchpad t54/{A,B,C,D} (A network simplex, B PI, C Avis-Friedmann, D label-correcting), each with .txt;
   lost with the container; URLs and sha256 prefixes in docs/lit/T54-stalling.md. t54/lsi = detached worktree of origin/claude/l-si.
   T54-tiebreak-check.py runs from the repo root; corpus wrapper scratchpad t54/run.sh (sbcg + alt + latew/fx copied from l-si gate/inst);
@@ -503,6 +510,10 @@ NEEDS: none from the owner.
   1612.01890v2 (1696fd594ef26715; Thm 13, Ex 14, Thm 63, 65, Cor 67, Thm 79, pp. 53-54); Loho-Vegh arXiv 1906.06686v2 (498512dd76f0ff9c);
   Koh-Loho arXiv 2108.13338 (21ee0e4336252f7e; p. 3, App. A p. 35).
 
+- T58 (2026-10-30). OPENED: Ye MOR 2011 author final web.stanford.edu/~yyye/SimplexMDP4.pdf (5825bfe4; Lemma 3.1, 3.2, 4.1, 4.2, Thm 4.1,
+  4.2, Cor 4.1, pp. 5-9); HMZ arXiv 1008.0530v1 (f53a6b51; Lemma 3.10, 3.12, 5.3-5.5, 6.1-6.4, Thm 6.5; J. ACM numbering not checked); Scherrer
+  arXiv 1306.0386v4 (391b6481; Lemma 2, 3, 5-8, 12, 13, Thm 3, 4, 6, 7); Post-Ye arXiv 1208.5083v2 (c51876eb; Lemma 3.1-3.6, Thm 3.7).
+
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
 - T17 process dead end: subagent GitHub MCP search outside the repo scope was a rule breach (see Things only I know); never repeat it.
@@ -534,6 +545,9 @@ NEEDS: none from the owner.
 
 - T54: DEAD as a bound for [P-INT]: the lex-BFS key potential of S1's EVEN branch alone (abstract LEX-ARENA, width 2: longest runs
   2, 8, 22, 52, 114 = 2^(L+1) - 2L - 2 for L = 2..6; docs/lit/T54-lexarena.py). Obstruction: adversarial arenas; a bound must use S2.
+
+- T58: DEAD the extend form of ordinal elimination (Xi_t(v) |> v (+) Xi_end(w) => never re-adopted): 13 corpus violations
+  (tog6a_n32, tog6b_n32, kt6_n58, x31_lem_t32, gci3_n24). DEAD any per-edge return bound inside a W-run: fx_K_m, K*m/4+1 adoptions of one edge.
 
 ## Corrections log
 - 2026-10-23 (T26): N8d-barrier.md §0 and R54 §0 put Lemma 4.75 / Thm 4.76 on p.187; opened PDF: printed p.186 (PDF p.202). Reported as caveat 4.
