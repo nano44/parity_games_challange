@@ -640,3 +640,8 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
 - «a σ̄(o)-flip needs a Ξ-change at the old target σ̄_k(o)»: DEAD. Instance experiments/n5-epoch/instances/nep13_n24.pg + .start, transition
   11 → 12, o = 15 (its own Ξ-cycle node). o re-picks its cycle edge 0 → 12 because Ξ(12)'s length falls 4 → 1, and Ξ(0) is unchanged
   (si/heads52/flipc.py NOX 1). The weaker CONJECTURE FLIP-CAUSE″ (old or new target) has 0 violations in 7,525 flips.
+- CONJECTURE FLIP-CAUSE″ (a σ̄-flip needs a Ξ-change at the old target (EXI), at the old or new target (MOV), or at τ(o) (ENT)): DEAD.
+  Instances experiments/si/heads52/inst/flipnone_n14.pg + .start (Odd 12, its own Ξ-cycle node, 6 → 1 at 1 → 2, no event (iii)) and
+  flipnonex_a_n10.pg + .start (Odd 8 in S1's BFS branch, 9 → 4 at 1 → 2, tied targets re-ordered by 9's own flip). Engines n5x and n5b
+  agree (heads52/flipx.py; red/seg/xeng.py states identical). Obstruction: S1's tie-breaks (DFS at own cycle nodes, BFS discovery
+  order) depend on the strategy below, not on the targets' values. Weaker CONJECTURE FLIP-EV stands (0 violations).

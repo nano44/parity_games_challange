@@ -1,4 +1,4 @@
-# N5-HEADS (box 52): Theorem RUN-SETTLE (PROVED, lane). Inside a W-run, every stretch with no σ̄-flip, no W-cycle-node switch and no Ξ-change at an upward head has ≤ n − 1 transitions. A Bellman–Ford front in W-length proves it, so |F| ≤ n(E_F + 1) − 1. Hence polynomial W-runs ⟺ polynomial per-vertex counts of σ̄-flips, CN switches and HEAD Ξ-changes (Theorem HEAD-RED); with CONJECTURE FLIP-CAUSE″, the σ̄-flips drop out. Odd side of SEG-XCH PROVED (lane)
+# N5-HEADS (box 52): Theorem RUN-SETTLE (PROVED, lane). Inside a W-run, every stretch with no σ̄-flip, no W-cycle-node switch and no Ξ-change at an upward head has ≤ n − 1 transitions. A Bellman–Ford front in W-length proves it, so |F| ≤ n(E_F + 1) − 1. Hence polynomial W-runs ⟺ polynomial per-vertex counts of σ̄-flips, CN switches and HEAD Ξ-changes (Theorem HEAD-RED); with CONJECTURE FLIP-EV, only cycle-node σ̄-flips stay. Odd side of SEG-XCH PROVED (lane)
 L-SI successor 34 (Opus 5.5), D18. Lead 2026-10-30 16:59Z, BOX 52: «XI-CH-POLY via heads … Try to prove HX_F ≤ p(n) per W-run, or the
 exact obstruction with an instance. D18 angle: heads are where the two players' strategies disagree (σ̄ ≠ τ) … Queue item 3: the Odd-side
 dual proof of SEG-XCH». Written 2026-10-30 from 17:00Z (date -u). This is a working note: unrefereed, and not a TARGET.md claim.
@@ -170,7 +170,7 @@ Labels: PROVED (lane) / CONJECTURE / DATA / DEAD / READING.
   - latew_K16_m32: E_F = 528 of |F| = 560, with (i) 513 and (iii) 512. Its events are quadratic in number but linear per vertex:
     SB ≤ 32 per vertex (dset), HX ≤ 32 per head (§13 of box 51b).
 
-## 3. The defect set D_k (Lead's D18 angle): σ̄-flips follow head changes. CONJECTURE FLIP-CAUSE″
+## 3. The defect set D_k (Lead's D18 angle): σ̄-flips follow head changes up to cycle-node tie-breaks. FLIP-CAUSE″ DEAD, CONJECTURE FLIP-EV
 - DATA (dset.py, 1,134 runs). D_k is NOT monotone inside a W-run.
   - latew_K16_m32: one vertex enters D 16 times and re-enters after an exit 15 times. Its σ̄ flips 32 times in one W-run.
   - Corpus maxima: re-entries 30, σ̄-flips per vertex 62.
@@ -191,19 +191,43 @@ Labels: PROVED (lane) / CONJECTURE / DATA / DEAD / READING.
     - That target is a head at state 12, so the flip is still a head event.
   - So the plain form «a σ̄-flip needs a Ξ-change at the old target» is DEAD (nep13_n24, one MOV flip).
   - Every EXI flip has a Ξ-change at its old target, a head of U_k (2,581 / 2,581). Every ENT flip has one at τ(o) (NOXENT 0).
-- CONJECTURE FLIP-CAUSE″. At a σ̄(o)-flip k → k + 1:
-  - EXI: Ξ changes at σ̄_k(o);
-  - MOV: Ξ changes at σ̄_k(o) or at σ̄_(k+1)(o);
-  - ENT: Ξ changes at τ(o).
-  - DATA: 0 violations in 7,525 flips. Not proved: S1's σ̄ is a global VJ counterstrategy with tie-breaks, and its stability under a fixed
-    old-target value is not shown.
-- Corollary FLIP-RED (PROVED, lane, from FLIP-CAUSE″). EXI and MOV flips occur only at (iii)-transitions. ENT and EXI alternate per o, so
-  ENT_F(o) ≤ EXI_F(o) + 1, and Σ_o EXI_F(o) ≤ n_O·E⁽ⁱⁱⁱ⁾_F. Hence:
-  - E_F ≤ (n_O + 1)·E⁽ⁱⁱⁱ⁾_F + n_O + CN_F;
-  - |F| ≤ n((n_O + 1)(E⁽ⁱⁱⁱ⁾_F + 1) + CN_F) − 1, with E⁽ⁱⁱⁱ⁾_F ≤ Σ_u HXU_F(u).
-  - So, given FLIP-CAUSE″, polynomial W-runs ⟸ per-head Ξ-changes polynomial ∧ CN switches polynomial.
-  - The defect dynamics (D_k) is slaved to the head values. This is the exact sense in which «heads are where the strategies disagree»
-    carries the whole W-run.
+- CONJECTURE FLIP-CAUSE″ (as first stated, on the corpus data): at a σ̄(o)-flip k → k + 1, Ξ changes at the old target σ̄_k(o)
+  (EXI), at the old or the new target (MOV), or at τ(o) (ENT). Corpus: 0 violations in 7,525 flips.
+- FLIP-CAUSE″ is DEAD, by random search (17:5xZ). Every instance below is in experiments/si/heads52/inst/ with its .start. A second engine
+  agrees on each: L-COMP's n5b SPEC (si/heads52/flipx.py computes σ̄ by SpecSI.evaluate_choice), and red/seg/xeng.py gives identical
+  states.
+  - flipnone_n14, transition 1 → 2. Odd 12 is its OWN Ξ-cycle node (Ξ(12) = (12, ∅, 0), priority 13). It leaves D: 6 → τ(12) = 1, with
+    Ξ(6), Ξ(1) fixed (lengths 5, 3), while σ switches at 2, 8, 9.
+    - S1's choice at an Odd own Ξ-cycle node is the first cycle-closing successor of a DFS, so the arena below re-orders it. This is the
+      Odd analogue of the CN branch (box 51b §10.2).
+    - No event (iii) occurs at that transition (rwin EIII 0). flipnone_n10 (o = 7) and nep13_n24 (o = 15) are the same kind of vertex.
+  - flipnonex_a_n10, transition 1 → 2, Odd 8: NOT its own cycle node (Ξ(8) = (5, ∅, 4), cycle node 5 odd, so S1's BFS branch).
+    - 8 leaves D: 9 → τ(8) = 4, with Ξ(9) = Ξ(4) = (5, ∅, 3) tied and fixed.
+    - The cause sits one level down. 9 itself flips 0 → 6 (Ξ(0) rose; 6 is tied with the old value), so 9's BFS-tree path changes,
+      8's keys re-order, and the first-discovered tied candidate changes.
+    - flipnonex_b_n10 (o = 8, cycle node 0 odd) is the same.
+    - Here the transition DOES carry a head event: 9's old target 0 is a head. flipc.py: NONEX 1, EVX 0 on both instances.
+- READING (proof sketch from si.Engine.evaluate, not refereed). For o not its own Ξ-cycle node, in its cycle node's round:
+  - EVEN cycle node (longest()): σ̄(o) is the least-index remaining successor of maximal dist. If the Claim RG-type statement for this
+    Odd-side computation holds (remaining edges = the Ξ-tight ones), that is the least-index Ξ-tight successor.
+  - Ξ only rises. While Ξ(o) is fixed, the tight set can only lose members, so a flip needs the old target to leave it, i.e. Ξ(old)
+    changes. FLIP-CAUSE holds in this branch.
+  - ODD cycle node (BFS): the first-discovered tied successor. The kill above sits in this branch.
+- CONJECTURE FLIP-EV (the form the count needs). Every EXI or MOV flip at an Odd o that is not its own Ξ-cycle node (at k or k + 1)
+  occurs at a transition with an event (iii).
+  - DATA, corpus re-run (flipc.py, 1,134 runs, 7,525 flips): EVX 0. NONE 0 on the corpus; own-node flips OWNCN 5.
+  - DATA, random search (scratch search, the flipc criteria in-process: random games n 8 / 10 / 12 / 14 / 16, random owners,
+    priorities, out-degree 1-4, random starts; 100,000 games each; W-runs as heads.py): 0 non-own-node EXI / MOV flips without an event
+    (iii).
+  - Not proved.
+- Corollary FLIP-RED (PROVED, lane, from FLIP-EV). Let XCN_F := the σ̄-flips of F at Odd vertices that are their own Ξ-cycle node at k or
+  k + 1.
+  - (i)-only transitions carry only ENT flips or own-node flips.
+  - ENT and EXI alternate per o, so ENT_F(o) ≤ EXI_F(o) + 1. Also Σ_o EXI_F(o) ≤ n_O·E⁽ⁱⁱⁱ⁾_F + XCN_F.
+  - Hence E_F ≤ (n_O + 1)·E⁽ⁱⁱⁱ⁾_F + n_O + CN_F + 2·XCN_F, and |F| ≤ n(E_F + 1) − 1, with E⁽ⁱⁱⁱ⁾_F ≤ Σ_u HXU_F(u).
+  - So, given FLIP-EV, polynomial W-runs ⟸ per-head Ξ-changes polynomial ∧ cycle-node choices polynomial: CN_F for Even, XCN_F for Odd.
+  - The defect dynamics D_k is then slaved to the head values, up to the cycle-node tie-breaks. This is the exact sense in which «heads
+    are where the strategies disagree» carries the whole W-run.
 - READING (D18, cross-field; no source opened, nothing imported). A W-run is distance-vector routing in the one-player τ-arena:
   - W is the routing metric. The heads' Ξ-values are boundary costs that the routing does not control.
   - Between boundary changes, offers only improve (Ξ only rises), and RUN-SETTLE is the "good news travels in diameter rounds" bound of
@@ -214,7 +238,7 @@ Labels: PROVED (lane) / CONJECTURE / DATA / DEAD / READING.
 ## 4. What is open, exactly (HX_F ≤ p(n) NOT proved)
 - HX-POLY: per W-run and per vertex u, the Ξ-changes of u at times when u is an upward head are polynomial.
   - DATA: linear on every family (2K on mkrw; m = 24 on obs_K12_m24; 16 on fx_K8_m32); corpus max 32.
-- By HEAD-RED, HX-POLY ∧ SB-POLY ∧ CN-POLY ⟺ polynomial W-runs. With FLIP-CAUSE″, SB-POLY is implied.
+- By HEAD-RED, HX-POLY ∧ SB-POLY ∧ CN-POLY ⟺ polynomial W-runs. With FLIP-EV, SB-POLY reduces to XCN-POLY (Odd own-cycle-node flips).
 - CN-POLY per W-run: data 37 CN-switch transitions in the whole corpus (cw11_n24 has 11).
 - Kill target for L-RED (READING). Make one head change Ξ super-polynomially often inside one W-run.
   - Requirement from RUN-SETTLE: between two head events, everything settles within n − 1 transitions.
@@ -269,10 +293,11 @@ Labels: PROVED (lane) / CONJECTURE / DATA / DEAD / READING.
   4. DEAD: the Ξ-distance front (ladderd0_k12_n48, 11 violations; family linear).
   5. DEAD: «σ̄ avoids I_τ» (lend107_n32 + start, 106); «D only shrinks» (latew_K16_m32, re-entries 15 per vertex); «a σ̄-flip needs an
      old-target Ξ-change» (nep13_n24 + start, o = 15 at 11 → 12).
-  6. CONJECTURE FLIP-CAUSE″ (0 / 7,525). With it (Corollary FLIP-RED, PROVED from it), polynomial W-runs ⟸ HX-POLY ∧ CN-POLY.
+  6. DEAD: FLIP-CAUSE″ (flipnone_n14: own Ξ-cycle node, no head event; flipnonex_a_n10: BFS-branch tie, a head event present).
+     CONJECTURE FLIP-EV. With it (Corollary FLIP-RED, PROVED from it), polynomial W-runs ⟸ HX-POLY ∧ CN-POLY ∧ XCN-POLY.
   7. PROVED (lane): Odd side of SEG-XCH (RETURN-CHARGE′-O, SEG-XCH-O, T-XCH). G-N5-TIME ⟺ XE, XO polynomial.
   8. OPEN: HX-POLY (data linear). Kill target in §4.
 - NEEDS: none from the owner. Lead:
   - route RUN-SETTLE + HEAD-RED (with Claim RG′) to the referees if it is useful;
-  - L-RED: the §4 target (a head feedback clock), and an attack on FLIP-CAUSE″;
+  - L-RED: the §4 target (a head feedback clock), and an attack on FLIP-EV;
   - L-NEW: compare HEAD-RED with XI-RUN's table.

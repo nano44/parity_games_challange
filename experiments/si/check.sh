@@ -916,3 +916,10 @@ for f in rwin:RWIN swcase:SWC bffront:BFF flipc:FLIPC; do
 done
 cat heads52/rwin_*.txt | awk '{for(i=1;i<=NF;i++){if($i=="n")n=$(i+1); if($i=="WALL")w=$(i+1)}; if(w>=n-1) bad=1} END{exit bad}' || { echo "box 52: a window reaches n - 1"; exit 1; }
 echo "si (box 52: RUN-SETTLE front, Xi-front DEAD, proof cases, defect set, flips): PASS"
+# box 52 §3 (17:5xZ): FLIP-CAUSE'' DEAD on two kinds of vertex (n5b agrees: heads52/flipx.py), FLIP-EV data (corpus EVX 0).
+python3 -I heads52/flipc.py heads52/inst/flipnone_n14.pg heads52/inst/flipnone_n14.start | grep -q "NONE 1 ENTX 0 OWNCN 1 NONEX 0 EXIX 0 EVX 1 EVXC 1"
+python3 -I heads52/flipc.py heads52/inst/flipnonex_a_n10.pg heads52/inst/flipnonex_a_n10.start | grep -q "NONE 1 ENTX 0 OWNCN 0 NONEX 1 EXIX 1 EVX 0 "
+python3 -I heads52/flipx.py heads52/inst/flipnonex_a_n10.pg heads52/inst/flipnonex_a_n10.start | grep -q "FLIP k 1 o 8 tau 4 old 9 new 4 oldXi_changed False newXi_changed False"
+python3 -I heads52/flipx.py heads52/inst/flipnone_n14.pg heads52/inst/flipnone_n14.start | grep -q "FLIP k 1 o 12 tau 1 old 6 new 1 oldXi_changed False newXi_changed False"
+if grep -q "EVX [1-9]" heads52/flipc_*.txt; then echo "box 52: FLIP-EV corpus violation"; exit 1; fi
+echo "si (box 52 §3: FLIP-CAUSE'' DEAD, FLIP-EV data): PASS"

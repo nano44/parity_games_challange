@@ -12,13 +12,14 @@ STEP 0: local clone stale at da88a6d4 AGAIN; ff to 0730ee5e, trunk merged 3d33d7
     - Case 3c (re-route) is closed by an ARENA-MAX cycle argument.
   - Theorem HEAD-RED: polynomial W-runs ⟺ per-vertex σ̄-flips, CN switches and Ξ-changes at upward heads are polynomial.
   - Odd side of SEG-XCH: RETURN-CHARGE′-O, SEG-XCH-O, T-XCH.
-- CONJECTURE FLIP-CAUSE″ (0 / 7,525): a σ̄-flip needs a Ξ-change at the old target (EXI) / old or new (MOV) / τ(o) (ENT). With it,
-  σ̄-flips are slaved to head events (FLIP-RED).
+- FLIP-CAUSE″ DEAD (random search; n5b agrees): flipnone_n14 (Odd own Ξ-cycle node, DFS choice, no head event) and flipnonex_a_n10 (BFS
+  branch, tied candidates re-ordered by a flip below; a head event is present). CONJECTURE FLIP-EV: an EXI / MOV flip at a non-own-node o
+  happens only at an event-(iii) transition (corpus EVX 0; 5 x 100k random games 0). FLIP-RED: given FLIP-EV, poly W-runs ⟸ HX ∧ CN ∧ XCN.
 - DEAD: the Ξ-distance front (ladderd0_k12_n48); σ̄ avoids I_τ (lend107_n32); D only shrinks (latew); old-target flip cause (nep13_n24).
 - OPEN: HX-POLY (data linear), CN-POLY per W-run (37 transitions in the corpus).
 ### Queue
-1. Prove FLIP-CAUSE″ from S1's counterstrategy code (n5b evaluate_choice / si.Engine.evaluate's tau): what makes σ̄(o) move when its
-   targets' Ξ are fixed. nep13's flip is the own-cycle-node length case.
+1. Prove FLIP-EV. EVEN-cycle branch: least-index tight successor (sketch in note §3). ODD branch: a re-order of tied BFS keys needs a
+   value-preserving path change below, which bottoms out in a caused flip, i.e. a head event. Own-node flips: the XCN term.
 2. HX-POLY: head feedback (R143 §2). Use RUN-SETTLE: between head events everything settles in ≤ n − 1 steps, so count head events by
    what a settled state can re-open.
 3. CN-POLY per W-run (CN switches charge to Ξ-rises of non-heads; is there a head form?).
@@ -2145,7 +2146,7 @@ in experiments/si/orlens/instances/ (all Oink zlk OK, strategies verified). Oink
   (docs/red/R139-xich-funnel.md). P-N5-WRUN §3 headings (docs/new/P-N5-WRUN-box92.md l. 140-160; XI-RUN, WRUN-EQ). No external source.
 
 ## Dead ends (details in docs/si/DEAD.md)
-- box 52 (s34): Ξ-distance BF front DEAD (ladderd0_k12_n48, 11); σ̄ avoids I_τ DEAD (lend107_n32 + start, INIT 106); D only shrinks DEAD
+- box 52 (s34): FLIP-CAUSE″ DEAD (heads52/inst/flipnone_n14, flipnonex_a_n10). Ξ-distance BF front DEAD (ladderd0_k12_n48, 11); σ̄ avoids I_τ DEAD (lend107_n32 + start, INIT 106); D only shrinks DEAD
   (latew_K16_m32, REN 15); old-target flip cause DEAD (nep13_n24 + start, o = 15 at 11 → 12).
 - box 51b (s33): gate / Φ potentials for ZFL DEAD (u23sw64_n32 [2, 10], all gate data constant); Bellman-Ford in G_I DEAD (u2flat73_n32 XNGRD 11).
 - (successor 23, box 27) W-GROW (wgrow_kill_n90, f9a7ef09: W-sinks wait for their target's honest value), H-GROW (hgrow_kill_n89,
