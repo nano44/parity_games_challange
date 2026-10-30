@@ -7,6 +7,7 @@ Fitness = (max over the run's W-runs of R*_F, sum over W-runs of R*_F, |F| of th
 A FREE-RED violation (|F| > (n-1)(R*_F+1) + FL_F) or an incl != strict W-run stops the climb and is written to OUT_viol.
 Start: random game (out-degree 1..3, owners and priorities 0..n uniform) with S3 start, or --seed-pg FILE.pg[:START] padded with
 Even self-loop vertices to n. Budget --secs and/or --steps. Output: OUT.pg + OUT.start of the best; log 'BEST step fit', 'END ...'.
+--fit F: maximise the longest W-run |F| instead (fit = (|F|, its R*_F, its FL_F)).
 --s3: the start is always S3 of the current game (plain N5 from its own start).
 Usage: climb23.py N SEED --secs S [--steps K] [--seed-pg FILE.pg[:START]] [--s3] --out OUTPREFIX"""
 import argparse
@@ -28,6 +29,9 @@ class Cap(Exception):
     pass
 
 
+FIT = "rs"
+
+
 def score(g, s, t):
     e = rstar.Eng(g); x = (tuple(s), tuple(t)); states, fbs, data = [], [], []; seen = set()
     try:
@@ -46,6 +50,9 @@ def score(g, s, t):
         return (10 ** 9, 0, 0), bad
     if not runs:
         return (0, 0, 0), runs
+    if FIT == "F":   # --fit F: the longest W-run (fit = (|F|, R*_F of it, FL_F of it))
+        top = max(runs, key=lambda r: (r["F"], r["rs"]))
+        return (top["F"], top["rs"], top["fl"]), runs
     top = max(runs, key=lambda r: (r["rs"], r["F"]))
     return (top["rs"], sum(r["rs"] for r in runs), top["F"]), runs
 
@@ -92,7 +99,8 @@ def main():
     ap.add_argument("n", type=int); ap.add_argument("seed", type=int); ap.add_argument("--secs", type=float, default=600)
     ap.add_argument("--steps", type=int, default=10 ** 9); ap.add_argument("--seed-pg"); ap.add_argument("--out", required=True)
     ap.add_argument("--s3", action="store_true", help="start pair is always SPEC S3 of the current game (never mutated)")
-    a = ap.parse_args(); rng = random.Random(a.seed)
+    ap.add_argument("--fit", choices=["rs", "F"], default="rs")
+    a = ap.parse_args(); rng = random.Random(a.seed); global FIT; FIT = a.fit
     if a.seed_pg:
         path, _, st = a.seed_pg.partition(":")
         g0 = pg.read(path); e0 = rstar.Eng(g0)
