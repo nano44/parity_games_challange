@@ -31,6 +31,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 ### Box 101 N5-CEDGE (Lead 22:17Z): docs/new/N5-CEDGE-box101.md. CONJECTURE CASC-EDGE RET(X; e) <= deg X (0 viol., tight 1.0 on obs);
   PROVED (lane) CASC-EDGE => |F| <= (m_E - n_E)(1 + m_E). DEAD: once-per-root (obs 24), edge O(1) per root (topfix 17), left-target injection
   (pftheta34_n32). cascl66 not on l-red yet (not run).
+### Box 101 pushed 6e725d15, reported 22:33Z.
+### Box 102 N5-OVT (Lead 22:42Z): docs/new/N5-OVT-box102.md. DEAD overtake-once-per-root and (left, entered)-pair injection (pftheta34_n32,
+  vertex 3 re-enters 7 from 13 under root (7->20 @6) at depths 0 and 2). CONJECTURE LEVEL-ONCE (604/604); LEVEL-ONCE => RET <= deg X (D_e+1).
 ### Things only I know (successor 40): sb53 tools (rootflip.py etc.) and T60 are only on origin/claude/l-si / l-lit; I read them via git show.
   orderdet.py on latew_K16_m32 takes ~50 s; runod.sh ~6 min on 4 cores.
 
@@ -1919,6 +1922,7 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
 - ORDER-DET-U (sbar a function of the Xi-order on R143's U_k): n5s_maxph_0 (n 5), states 0-1, U = {2} both, sbar(0) 1 -> 2 (tau(0) = 1 is not a head).
 - NO-REPEAT (head / A_F orders never recur in a W-run): thetaA_n7 (n 7), refined order of A_F = {1,2,5} at state 0 recurs at state 3, sbar(6) 5,5,1,5.
 - (box 101) X returns once per root: obs_K12_m24 X 247, 24 returns; edge O(1) per root: topfix_n10 edge of 193, 17; distinct left targets per root: pftheta34_n32 X 3.
+- (box 102) successor overtakes X's target at most once per root / distinct (left, entered) pairs per root: pftheta34_n32 vertex 3, k 11 and 26 under root (7->20 @6).
 - Root-chain depth O(1) (box 100): topfix_N (new/box52/out, default start), depth 6N - 11 (49 at N = 10), width 1.
 - SB_F <= f(order-set size) (the [GH] r! count): gate_K16_n197 / gate_K64_n581 (.start), SBT 16 / 64 at max|U_k| 6, |A_F| 11, 6 distinct orders.
 

@@ -114,7 +114,7 @@ for a, b in runs:
                     sub, d = causeE(rr[0], w); res = (sub, d + 1)
                 else: res = (('NORISE', x, w, q), 0)
         memoE[(q, z)] = res; return res
-    rootsE = Counter(); kindE = Counter(); depE = Counter(); kids = Counter(); perX = Counter(); perE = Counter(); perL = Counter()
+    rootsE = Counter(); kindE = Counter(); depE = Counter(); kids = Counter(); perX = Counter(); perE = Counter(); perL = Counter(); perP = Counter(); perD = Counter()
     for y, z, j, k in rets:
         rr = [q for q in range(j, k) if EV(q)[0][z] != EV(q + 1)[0][z]]
         if not rr: continue
@@ -124,6 +124,9 @@ for a, b in runs:
         rootsE[rt] += 1
         perX[(y, rt)] += 1; perE[(y, z, rt)] += 1
         perL[(y, S[k][y], rt)] += 1
+        perP[(y, S[k][y], z, rt)] += 1
+        perD[(y, z, rt, d)] += 1
+        if os.environ.get("XTRACE") and y == int(os.environ["XTRACE"]): print(f"  XTRACE return k {k}: {y} {S[k][y]} -> {z} (window from {j}, first rise {rr[0]}) root {rt} depth {d}")
     roots = Counter(); rkind = Counter(); dep = Counter()
     for y, z, j, k in rets:
         rr = [q for q in range(j, k) if EV(q)[0][z] != EV(q + 1)[0][z]]
@@ -155,5 +158,5 @@ for a, b in runs:
     mxX = max(perX.values()); mxE = max(perE.values()); degr = max(perX[k] / len(set(g.succ[k[0]])) for k in perX)
     wX = [k for k in perX if perX[k] == mxX][0]
     print(f"  PERROOT max returns of one Even X per root {mxX} (X {wX[0]} deg {len(set(g.succ[wX[0]]))}) max returns of one edge per root {mxE} "
-          f"max (returns of X per root)/deg X {round(degr, 3)} max returns of X per root leaving one target {max(perL.values())}")
+          f"max (returns of X per root)/deg X {round(degr, 3)} max returns of X per root leaving one target {max(perL.values())} max returns of X per root with one (left, entered) pair {max(perP.values())} max returns of one edge per (root, depth) {max(perD.values())}")
     if os.environ.get("DBG"): print("  DBG", rootsE.most_common(3), kids.most_common(3))
