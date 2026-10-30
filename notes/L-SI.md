@@ -14,13 +14,13 @@ STEP 0: clone stale at da88a6d4 AGAIN; ff to 051eb196, trunk merged c6c30141. Or
   check.sh). L-3 is with both referees for word-diff (Lead 22:01Z). Its source note still says «entries 1-2», by the Lead's «nothing else
   may change»; a one-word L-4 if the Lead wants it.
 - §6 XCN data: XCN-ONE (≤ 1 per W-run; 0 on mkrw / latew / gate / fx; 70k random games max 1). CONJECTURE.
-- SETTLE fixes entry 4 + L-4 (6ed61d84; G-SRC-1 closed by ONE-STEP, signed by REFEREE 8951ef7c) DONE. PARKED again after it (Lead 23:10Z).
+- SETTLE fixes entry 4 + L-4 (6ed61d84; G-SRC-1 closed by ONE-STEP, signed by REFEREE 8951ef7c); entry 5 + L-5 (39e44fe2; SETTLE-L6, L7, G-SRC-1 named). PARKED (Lead 23:41Z).
 - §2.6 ERRATUM: ONE-STEP-O (Odd mirror of G-SRC-1; ONEX 0, OBETA 11,129). §6: XCN-ONE DEAD (xcn2_n8, xcnb2_n12); KIND-A ≤ n(n − 1) (R47); XB-POLY OPEN.
 ### Queue
 1. XB-POLY (N5-SBF-box53.md §6): bound kind-B own-node flips per W-run (S1's DFS re-orders at an own Ξ-cycle node; xcnb2_n12 shows
    σ̄(3) 9 → 11 → 9), or kill it with super-polynomial growth. Kind A is done (KIND-A, ≤ n(n − 1) per run from R47). Then polynomial
    W-runs ⟺ CN-POLY ∧ HX′-POLY ∧ XB-POLY.
-2. P-N5-SETTLE: L-4 (6ed61d84) is with both referees for word-diff. Answer them in P-N5-SETTLE-fixes.md entry 5+ (append-only, no
+2. P-N5-SETTLE: L-5 (39e44fe2) is with both referees for word-diff. Answer them in P-N5-SETTLE-fixes.md entry 6+ (append-only, no
    heading marker on line files, assert each diff).
 3. L-RED R146 (a) on ROOT-FLIP / HEAD-RED′ / ORDER-CHG′ / ONE-STEP-O: answer any findings.
 4. HX′-POLY (Ξ-changes at U ∪ τ(Odd) per W-run; data linear) and the PAIR-TIE case of ORDER-CHG′ (data 0).
