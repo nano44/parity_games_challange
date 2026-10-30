@@ -451,4 +451,10 @@ if grep -q "DEPTH n 197 runs 1 {'prefix_viol': 0} maxima {'depth': 2, 'd1': 1, '
 else
   echo "box 87 ARV check: FAILED"; exit 1
 fi
+w39=$(cd .. && python3 -I new/box88/release.py red/usplit/instances/gate_K16_n197.pg red/usplit/instances/gate_K16_n197.start; python3 -I new/box88/release.py red/so/instances/pftheta34_n32.pg)
+if grep -q "RELEASE n 197 runs 1 {'late': 18, 'ODD': 3, 'EVEN': 15, 'kept': 15} maxima {'F': 23, 'rstar': 16, 'sb': 16, 'dv': 16, 'wch_tr': 23, 'n': 197}" <<<"$w39" && grep -q "RELEASE n 32 runs 1 {'late': 7, 'ODD': 7, 'EVEN': 0, 'kept': 0} maxima {'F': 34, 'rstar': 4, 'sb': 34, 'dv': 34, 'wch_tr': 34, 'n': 32}" <<<"$w39"; then
+  echo "box 88 ONEP: release classes (ODD / EVEN) on gate_K16_n197 and pftheta34_n32: PASS"
+else
+  echo "box 88 ONEP check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
