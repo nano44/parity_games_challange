@@ -1,5 +1,5 @@
 # L-RED notebook (independent adversary lane)
-Successor 32 (session_01V5yGRXGW9KqMY5gaypMTs2, Opus 5.5) started 2026-10-30 05:28Z (date -u); R131 TIED-RB DEAD (011213ef); R132 (A) not built, obstruction TWO-SOURCE / PREFIX; R133 N5-LZC bench (no kill); R134 ZXC observer (ZXC = |F| - 2K + 1, no amplification); see "Successor 32".
+Successor 32 (session_01V5yGRXGW9KqMY5gaypMTs2, Opus 5.5) started 2026-10-30 05:28Z (date -u); R131 TIED-RB DEAD (011213ef); R132 (A) not built, obstruction TWO-SOURCE / PREFIX; R133 N5-LZC bench (no kill); R134 ZXC observer (ZXC = |F| - 2K + 1, no amplification); PARKED ~08:50Z (Lead 08:06Z); see "Successor 32 PARK".
 Successor 31 (session_01V5yGRZfrtk7CRqezo1wAzp, Opus 5.5) woken 2026-10-30 00:09Z; R126-R129; PARKED 01:40Z; woken 03:13Z for R130 (WD-BOUNDED DEAD), PARKED again ~03:30Z; see "Successor 31 PARK".
 Successor 31 (session_01V5yGRZfrtk7CRqezo1wAzp, Opus 5.5) HANDOVER written 2026-10-29 ~23:50Z (date -u), PARKED; see "Successor 31 HANDOVER".
 Successor 31 (session_01V5yGRZfrtk7CRqezo1wAzp, Opus 5.5) started 2026-10-29 22:19Z (date -u); handover check d6ae7cda; STEP 1 = R123, R124, R125; see "Successor 31".
@@ -30,6 +30,38 @@ Successor 15 PARKED ~09:40Z 2026-10-25 after box 38; RESUME POINT for successor 
 context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older notebook: `git show b0884407:notes/L-RED.md`.
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
+
+## Successor 32 PARK (2026-10-30 ~08:50Z, date -u; ~420k context; Lead 08:06Z: "write your handover now and PARK")
+- DONE (claude/l-red, push.sh VERIFY PASS each push):
+  - 011213ef R131: TIED-RB DEAD. Family tree/mktied.py K m (mkrw LATE=1 + y_J -> {v_J, z_J}, z_J Even -> {a_(J+1), c_(J+1)}; TARGET=odd and
+    ONE=1 variants) gives (K-1)(m-2) untied re-blocked REPEATs per W-run. Pin tree/instances/tiedrb_K8_m16 (98 at n 270). Counters:
+    l-si tied.py = tree/tiedc.py (n5b); tree/tiedlib.py (importable). Addendum 7e85ead2: L-SI box-51 pin tiedmut_so_th_n32_11 is
+    Oink OK, xeng identical, tiedc agrees.
+  - 125c7b15 R132: (A) binary reader tree NOT built. Lemmas TWO-SOURCE, PREFIX, DAG-tau* (lane). Device tree tree/scratch/mkrt.py
+    TREE=D gives REP = (K-1)(2^D - 1) (gated D 3: 21). DAG check tree/scratch/dagtest.py (gated 200 games). Ladders flat.
+  - 5d78e948 R133: N5-LZC bench. lzc/n5lzb.py (engine B), lzc/lzcmp.py, lzc/bench.py -> lzc/bench_out.txt (112 runs, A = B, Oink OK on all),
+    lzc/lzrand.py. Pins lzc/instances/lazyhurt_n5/n7/n9 (gate n9: 3 vs 6). Hazard: l-new box72/n5lz.py `_wc` cache is keyed by tau
+    only.
+  - 59008d24 R134: zxc/zxc.py (ZXC/TXC per W-run), zxc/obsread.py. R120 observer on mkrw: ZXC = Km + K + 1 (gate K4 m16 69/76).
+    Lemma GAP-IN-PREFIX (lane).
+- THE WALL (the exact statement a proof must beat, or an adversary must break):
+  - Inside one W-run (tau fixed, lambda_W fixed, no fallback), W and Xi are pointwise monotone.
+  - Every Even switch y: z -> a needs W(a) to overtake W(z) by a switch on a's private prefix (TWO-SOURCE / PREFIX).
+  - Every block needs a W/Xi divergence on a private prefix (GAP-IN-PREFIX).
+  - Hence any amplification (REP, LATE', ZXC per vertex) is capped by |F|, and |F| reaches Theta(n^2) only as clock x chain (pivot
+    ladder x reactor wave, R124).
+  - A third factor needs one waiting gate that is re-closed and re-opened once per event of a sub-clock inside the W-run. In a ladder
+    that is a desynchronising gate per pair per event.
+  - R108 §4: a gate that must re-close without any W decrease has its closed option W-follow the newest source. Its Xi then sits in the
+    older band, and the gated link's honest value collapses into that band.
+  - No design has beaten this. No proof says none can.
+- Untried designs: R108 §6 (A) tau-ticks (re-close at a phase boundary inside one lambda-run); (B) length thresholds (equal path sets
+  decided by play length); (C) digit-parity worlds (a clock whose two worlds are the parities of one counter digit); a gated observer
+  pair whose divergences sit on DIFFERENT private prefixes (R134 §3: needed by GAP-IN-PREFIX; my one parameter sweep, scratch
+  gateobs.py, got 0); R125 §4 (A') hop-reader with a permanent support.
+- Things only I know: worktrees /tmp/claude-0/lsi (l-si) and /tmp/claude-0/lnew (l-new; LNEW env for lzc/zxc --lzc); scratch
+  /tmp/claude-0/r131. In this container `pkill -f PATTERN` kills the calling shell when PATTERN occurs in its own command line; use
+  pgrep -f "[x]yz". push.sh takes ~25-35 min here.
 
 ## Successor 32 (session_01V5yGRXGW9KqMY5gaypMTs2, Opus 5.5, D1/D17/D18; started 2026-10-30 05:28Z, date -u)
 - Start: claude/l-red ff to 448a1bf9, trunk f16749dc merged. Oink built (8fbf0a7). l-si worktree /tmp/claude-0/lsi @ 4fb0bfba (tied.py,
