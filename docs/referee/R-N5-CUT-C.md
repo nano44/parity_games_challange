@@ -90,3 +90,5 @@ Verdict: K2-K11 are clarifications / readings; none widens a signed statement. K
 - FINDINGS: verdicts identical with REFEREE-2, gap map empty, every PROVED item signed by both; K0 MATCHES (CUT-E1, CUT-E2 discharged, 4
   symbols supplied; optional precisions K0-P1..P3); K1 SIGNED as written; K2-K11 clarifications only. I missed N-CUT-4 (§0's row); recorded.
 - NEEDS: Lead: K0 is ready for CHECKER as far as I am concerned (optionally with K0-P2: define REP_F / cite R88 for R*_T in the parenthetical).
+
+- K12 check (Lead 02:41Z; l-si fd1cb0bc docs/si/P-N5-CUT-fixes-box43.md sha1 95584f7e3e7c928e1aadf1ea684ebb9d764e3927 re-measured; my own word diff of the K0 and K12 lines, whitespace-normalised, written 02:42Z by date -u): K12 = K0 + P1-P3 exactly; MATCHES (Opus 5.5, D15).
