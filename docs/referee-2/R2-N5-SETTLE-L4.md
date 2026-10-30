@@ -22,7 +22,7 @@
 | symbol | binder |
 | --- | --- |
 | t in H_t, σ_t, Iσ_t, τ_t | the parameter of «H_t := S4a's arena at t» (Iσ_t by «for a state k: Iσ_k := …») |
-| \|F\| | «|F| its number of transitions», F bound by «every W-run F of it» |
+| \|F\| | «\|F\| its number of transitions», F bound by «every W-run F of it» |
 | ONE-STEP, G-SRC-1 | named lemmas with file, section and commit, like the line's other cited labels |
 No new free symbol.
 

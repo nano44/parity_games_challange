@@ -2,11 +2,11 @@
 - Object: docs/red/P-N5-SRC-line-L3.txt @ l-red 564bef5a, sha1 5736d8ab828d8244c6466abbc08d4fa8d8c03b41 (re-hashed: match).
 - Compared with L-2 (sha1 9fcb5790, re-hashed) and with the frozen line (0521fb82, sha1 3101a0c0).
 
-## 1. Frozen line → L-2 (not diffed by me before; checked here): five changes
+## 1. Frozen line → L-2 (not diffed by me before; checked here): four changes
 | change | item | check |
 | --- | --- | --- |
 | «for S4a, σ_new … H_t)» → «for S4a at a transition k → k + 1, σ_(k+1) … H_k)» | SRC-L2 | ✓ H_k is the line's own («for a state k of F») |
-| + «|F| := the number of transitions of F;» | SRC-L1 | ✓ |
+| + «\|F\| := the number of transitions of F;» | SRC-L1 | ✓ |
 | «not events,» → «not source events (unless they change Ξ at a source),» | N-1 | ✓ my wording |
 | + «; fixes docs/red/P-N5-SRC-fixes.md entries 1-2» | bookkeeping | ✓ |
 
