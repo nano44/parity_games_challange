@@ -1,0 +1,26 @@
+MODE files /tmp/claude-0/-home-user-parity-games-challange/c5131569-13ae-5464-8cfa-fc746dffc9b4/scratchpad/wr/alst.lst 0 experiments/ MAXT 5000 BF 0
+WRUNS: 663
+WRUN_transitions: 2842
+XIPLAY_checks: 256371
+X_DEEP1: 15726
+X_DEEP2: 10755
+X_DEEP3: 7132
+X_E0: 0
+X_EXT_GLOBAL: 298
+X_FREE: 414
+X_NODEV_runs: 68
+X_REG: 111
+X_REG_blocks_checked: 50547
+X_blocked_records: 39893
+runs: 94
+starts_valid: 94
+transitions: 3411
+max max_F: (71, 'red/usplit/instances/gate_K64_n581.pg#start')
+max max_LCT_run: 19
+max max_NODEV_F: (20, 'n5-epoch/instances/gci3_n24.pg#start')
+max max_Rstar: (64, 'red/usplit/instances/gate_K64_n581.pg#start')
+max max_SB: (64, 'red/usplit/instances/gate_K64_n581.pg#start')
+max max_Wconst_interval: (1, 'n5-epoch/instances/nep22f_n64.pg#start')
+max max_XiCH: (63, 'red/usplit/instances/gate_K64_n581.pg#start')
+max max_ratio_F_bound_x1000: (272, 'n5-exhaustive/instances/thetaA_n6.pg#start')
+RESULT PASS violations 0
