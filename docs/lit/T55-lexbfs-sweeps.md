@@ -143,6 +143,27 @@ strictly fall at a switched vertex; key(x) = key(σ(x))·x).
 | Corneil-Olariu-Stewart 2009 (SECONDARY) | interval; 5 LBFS + 1 modified | no | none |
 | this note §4 | S1 itself (LEX-MONO) | — | EV-part ≤ Π_d (1 + m_d) − 1, polynomial iff the switching depth is O(1) |
 
+## 6. Addendum (Lead 15:22Z): sweeps restricted to value-improving edges
+- Input (lane-level, l-si a0d6f79b §10, not opened in detail here):
+  - L-SI 33 proves Claim RG under R57's premise, so IDX-MONO, LEX-BFS, LEX-MONO and §4 rest on R57 only.
+  - A switch p → q needs both key(q) < key(p) (S1) and Ξ(q) ▷ Ξ(p) (S2).
+  - Lemma RETURN-CHARGE: each carry forces a strict Ξ-rise of the returned-to vertex. Corollary INT-XCH reduces [P-INT] to in-interval
+    Ξ-change counts.
+- Question: does any multi-sweep bound of §2 survive when each sweep may only use value-improving edges?
+- Answer (READING, against the opened statements): no.
+  - Every result in §2 (Charbit et al. Thm 4.1, 4.2, 4.5, Cor 4.11; Gao-Xu Thm 3.2; Dusart-Habib Thm 1.1, SECONDARY) is about the sweep map
+    σ ↦ LexBFS+(G, σ) on ONE fixed undirected graph G of a structured class. The proofs rest on that class's ordering properties, e.g. the
+    Flipping Lemma «for every non-edge uv: u ≺σ v ⇔ v ≺τ u» (CDHK 2016 via Gao-Xu Lemma 2.3), which is a statement about non-edges of the
+    fixed G.
+  - A restriction to edges that are value-improving at the current state makes the graph depend on the state. Then the sweep map is no
+    longer a map on the orders of one graph, and LexCycle is not defined.
+  - None of the opened sources considers searches on edge sets that change with the order, or a value monotone along the sweeps.
+  - So nothing survives. The restriction moves the question back to T54's literature (degenerate pivots / label-correcting with
+    value-improving entering edges), where polynomial bounds need a cyclic history rule, alternation, an oracle or bounded labels.
+- What the restriction does give is L-SI's RETURN-CHARGE. Combined with §4 (LAYER-WINDOW), the carries of COUNTER are paid by strict
+  Ξ-rises. So EVEN-POLY ⇐ (in-interval Ξ-changes per vertex ≤ p(n)), which is INT-XCH, the in-interval form of T52's XI-CH-POLY.
+  The literature of T52 (DS sequences, wqo, matroid rank) and T53 is the relevant one for that count, not graph search.
+
 ## DONE / FINDINGS / NEEDS
 - DONE: this note; docs/lit/T55-sweep-check.py (corpus run in the scratchpad, outputs summarised in §3); notes/L-LIT.md.
 - FINDINGS:
@@ -154,5 +175,8 @@ strictly fall at a switched vertex; key(x) = key(σ(x))·x).
   3. PROVED (modulo Claim RG): RETURN-ANCESTOR (weak LAYER-RESET), LAYER-WINDOW and Corollary COUNTER. L-SI's counter bound holds
      unconditionally; it is polynomial for bounded switching depth only.
   4. READING: INT-LIN / EVEN-POLY must use S2's Ξ-offers to forbid carries. Graph-search literature cannot supply this.
+  5. §6 (Lead 15:22Z): no multi-sweep bound survives the restriction to value-improving edges. Every opened result is about one fixed
+     graph, and the restriction makes the graph state-dependent. With L-SI's RETURN-CHARGE, the question becomes INT-XCH (in-interval
+     Ξ-change counts), which belongs to T52/T53 literature.
 - NEEDS: none from the owner. Optional (owner, library access): Corneil 2004 survey, RTL 1976, Corneil-Krueger 2008, Dusart-Habib 2017,
   Corneil-Olariu-Stewart 2009.
