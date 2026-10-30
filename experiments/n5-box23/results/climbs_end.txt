@@ -1,3 +1,7 @@
+climbs/rs_Ffresh_n10_r1.log END steps 148009 best (10, 6, 0) n 10 secs 900 -> ./climbs/rs_Ffresh_n10_r1.pg
+climbs/rs_Ffresh_n15_r1.log END steps 62710 best (20, 9, 0) n 15 secs 900 -> ./climbs/rs_Ffresh_n15_r1.pg
+climbs/rs_Ffresh_n20_r1.log END steps 40687 best (24, 11, 0) n 20 secs 900 -> ./climbs/rs_Ffresh_n20_r1.pg
+climbs/rs_Ffresh_n30_r1.log END steps 26072 best (21, 17, 0) n 30 secs 900 -> ./climbs/rs_Ffresh_n30_r1.pg
 climbs/rs_chain_n30_r1.log END steps 29489 best (31, 31, 34) n 30 secs 1800 -> ./climbs/rs_chain_n30_r1.pg
 climbs/rs_chain_n40_r1.log END steps 14923 best (36, 36, 39) n 40 secs 1800 -> ./climbs/rs_chain_n40_r1.pg
 climbs/rs_chain_n60_r1.log END steps 6395 best (42, 42, 44) n 60 secs 1800 -> ./climbs/rs_chain_n60_r1.pg
@@ -7,3 +11,7 @@ climbs/rs_fresh_n20_r1.log END steps 43974 best (17, 17, 21) n 20 secs 900 -> ./
 climbs/rs_fresh_n30_r1.log END steps 24620 best (16, 16, 27) n 30 secs 900 -> ./climbs/rs_fresh_n30_r1.pg
 climbs/rs_fresh_n40_r1.log END steps 30344 best (13, 13, 15) n 40 secs 900 -> ./climbs/rs_fresh_n40_r1.pg
 climbs/rs_fresh_n60_r1.log END steps 6916 best (12, 12, 13) n 60 secs 900 -> ./climbs/rs_fresh_n60_r1.pg
+climbs/rs_s3fresh_n10_r1.log END steps 243493 best (4, 4, 5) n 10 secs 900 -> ./climbs/rs_s3fresh_n10_r1.pg
+climbs/rs_s3fresh_n15_r1.log END steps 143964 best (5, 5, 8) n 15 secs 900 -> ./climbs/rs_s3fresh_n15_r1.pg
+climbs/rs_s3fresh_n20_r1.log END steps 62561 best (12, 12, 14) n 20 secs 900 -> ./climbs/rs_s3fresh_n20_r1.pg
+climbs/rs_s3fresh_n30_r1.log END steps 46664 best (10, 10, 12) n 30 secs 900 -> ./climbs/rs_s3fresh_n30_r1.pg

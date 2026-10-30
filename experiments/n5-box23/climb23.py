@@ -7,7 +7,7 @@ Fitness = (max over the run's W-runs of R*_F, sum over W-runs of R*_F, |F| of th
 A FREE-RED violation (|F| > (n-1)(R*_F+1) + FL_F) or an incl != strict W-run stops the climb and is written to OUT_viol.
 Start: random game (out-degree 1..3, owners and priorities 0..n uniform) with S3 start, or --seed-pg FILE.pg[:START] padded with
 Even self-loop vertices to n. Budget --secs and/or --steps. Output: OUT.pg + OUT.start of the best; log 'BEST step fit', 'END ...'.
---fit F: maximise the longest W-run |F| instead (fit = (|F|, its R*_F, its FL_F)).
+--fit F: maximise the longest W-run |F| instead (fit = (|F|, its R*_F, its FL_F)); --fit fl: maximise FL_F (fit = (FL_F, |F|, R*_F)).
 --s3: the start is always S3 of the current game (plain N5 from its own start).
 Usage: climb23.py N SEED --secs S [--steps K] [--seed-pg FILE.pg[:START]] [--s3] --out OUTPREFIX"""
 import argparse
@@ -50,6 +50,9 @@ def score(g, s, t):
         return (10 ** 9, 0, 0), bad
     if not runs:
         return (0, 0, 0), runs
+    if FIT == "fl":   # --fit fl: the W-run with most FL_F (fit = (FL_F, |F| of it, R*_F of it))
+        top = max(runs, key=lambda r: (r["fl"], r["F"]))
+        return (top["fl"], top["F"], top["rs"]), runs
     if FIT == "F":   # --fit F: the longest W-run (fit = (|F|, R*_F of it, FL_F of it))
         top = max(runs, key=lambda r: (r["F"], r["rs"]))
         return (top["F"], top["rs"], top["fl"]), runs
@@ -99,7 +102,7 @@ def main():
     ap.add_argument("n", type=int); ap.add_argument("seed", type=int); ap.add_argument("--secs", type=float, default=600)
     ap.add_argument("--steps", type=int, default=10 ** 9); ap.add_argument("--seed-pg"); ap.add_argument("--out", required=True)
     ap.add_argument("--s3", action="store_true", help="start pair is always SPEC S3 of the current game (never mutated)")
-    ap.add_argument("--fit", choices=["rs", "F"], default="rs")
+    ap.add_argument("--fit", choices=["rs", "F", "fl"], default="rs")
     a = ap.parse_args(); rng = random.Random(a.seed); global FIT; FIT = a.fit
     if a.seed_pg:
         path, _, st = a.seed_pg.partition(":")
