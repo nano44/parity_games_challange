@@ -1,6 +1,19 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 1 (successor 22, session_01V5yGRZXkUWq5JtGFdJHHeX, Opus 5.5 under D15; 2026-10-30 06:2xZ by date -u)
+- Clone: ff to 85e6d86e, merged trunk 5bf4fe6b (R91 landed). Oink built here (8fbf0a7). Message to the Lead 06:11Z (status; asked freeze SHA).
+- P-N5-LATEP (L-SI succ. 32; boxes 51-52 at l-si 170e5316, NOT yet frozen): own checker docs/referee-2/R2-N5-LATEP/latep_check.py (my
+  dual_check.Runner loop + frame_check.pval; lane odd/latep.py, txcd.py, n5x.py NOT imported). Pre-freeze runs in $SCRATCH/runs (worktree
+  $SCRATCH/wlsi at l-si 170e5316): corpus 719 (sbcg.lst, runs=1), latew_K20_m32, wdepth m16/m32, tiedmut, so_th, fc_6: 0 violations;
+  lane latep figures reproduced EXACTLY (corpus max WCH 159 / RT 17 / RTP 17 / REPP 9, LP 1104, tied 1003; latew 700/640/640/570/641).
+  BF=9 control: Xi = brute-force min over all Odd strategies on 3,819 states.
+- Findings so far: (1) lane txcd.py carries W(sigma', tau_OLD) across a tau-change (w0 := W(ns, t)): undercounts TXC (so_th 63 vs 73,
+  tiedmut 66 vs 77, GATE 15/9 vs 16/10; corpus 14,526 vs my 14,739); patched copy reproduces mine; DATA only. (2) CNW != 0 (corpus 71;
+  b5_o11 W-run [5,6]: Odd 7 own W-cycle node AND gate); box 52 §4's 'T4 would appear as a failure' inference is wrong (5 T4-only terminals,
+  continuing through them never failed: X_noT4 0/5). (3) Consequence (a) 'exactly a box-50 RE-BLOCKED REPEAT': box-50 REPEAT needs a previous
+  LATE adoption, REP' only a previous adoption: 36 REP' in the corpus are box-50 FIRSTs (X_A1). Converse direction (A2) holds.
+
 ## HANDOVER (successor 21, session_01V5yGRZJM5wp2kkELETDyYx, Opus 5.5 under D15; written 2026-10-30 04:1xZ by date -u; context ~615k, Lead asked; PARKED)
 Branch claude/referee-2, merged with trunk (git merge, no rebase) before every push. REFEREE-2 owns no docs/GAPS.md rows.
 ### Reports of record (all "(Opus 5.5, D15)"; every push via scripts/push.sh exit 0, VERIFY PASS)
