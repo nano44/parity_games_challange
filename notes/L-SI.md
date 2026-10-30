@@ -14,7 +14,7 @@ STEP 0: clone stale at da88a6d4 AGAIN; ff to 051eb196, trunk merged c6c30141. Or
   check.sh). L-3 is with both referees for word-diff (Lead 22:01Z). Its source note still says «entries 1-2», by the Lead's «nothing else
   may change»; a one-word L-4 if the Lead wants it.
 - §6 XCN data: XCN-ONE (≤ 1 per W-run; 0 on mkrw / latew / gate / fx; 70k random games max 1). CONJECTURE.
-- Un-parked 22:31Z (Lead): SETTLE fix round 4 waits for REFEREE to sign REFEREE-2 ONE-STEP (G-SRC-1, R2-N5-SRC §3.2 e8c1b62d); then entry 4 + L-4.
+- SETTLE fixes entry 4 + L-4 (6ed61d84; G-SRC-1 closed by ONE-STEP, signed by REFEREE 8951ef7c) DONE. PARKED again after it (Lead 23:10Z).
 - §2.6 ERRATUM: ONE-STEP-O (Odd mirror of G-SRC-1; ONEX 0, OBETA 11,129). §6: XCN-ONE DEAD (xcn2_n8, xcnb2_n12); KIND-A ≤ n(n − 1) (R47); XB-POLY OPEN.
 ### Queue
 1. Answer the SETTLE referee findings in docs/si/P-N5-SETTLE-fixes.md (append-only, no heading markers on line revisions, L41).

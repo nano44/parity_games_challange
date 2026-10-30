@@ -94,3 +94,99 @@ N5 on EVERY game (SPEC S1-S5, under the standing SPEC premise of RESULTS R57 (1E
 ### Line revision L-3 (= docs/si/P-N5-SETTLE-line-L3.txt)
 
 N5 on EVERY game (SPEC S1-S5, under the standing SPEC premise of RESULTS R57 (1E-N3: S1's procedure realises the pointwise optimum; for S4a, σ_new is the pointwise optimum of the one-player arena H_t, H_t := S4a's arena at t (Even keeps σ_t ∪ Iσ_t, Odd follows τ_t)); premises RESULTS R15 (a), (d) and R86 (a)), with: a run is the sequence of states (σ_k, τ_k), a transition is written k → k + 1 (states k, k + 1), and an Even vertex y switches at k if σ_(k+1)(y) ≠ σ_k(y); n := |V|, m_E (m_O) := the number of edges leaving Even (Odd) vertices; values (c, P, ℓ) (cycle node, path set, length) as in SPEC S1, ⊴, ◁, ⊵, ▷ the SPEC S1 order (better for Even) and its strict and reverse forms, and x ⊕ (c, Q, ℓ) := (c, Q ∪ {x if x is more relevant than c}, ℓ + 1) (as in RESULTS R93 TIE); for a state k: Ξ_k := Ξ_{σ_k}, σ̄_k := S1's Odd counterstrategy to σ_k, and Iσ_k := Even's improving edges at k (SPEC S2: {(y, z) : Ξ_k(z) ▷ Ξ_k(σ_k(y))}); W-run F := RESULTS R89's (a maximal run of consecutive states of one τ-stretch none of whose transitions is an S4c fallback or changes λ_W, the cycle-node map of W), with τ and C := {v : λ_W(v) = v} fixed on F and |F| its number of transitions; for a state k of F: W_k := the [S1-val] valuation of the (σ_k, τ)-plays and ℓ_k(x) its length component at x; D_k := {Odd o : σ̄_k(o) ≠ τ(o)}; U_k := {σ̄_k(g) : g ∈ D_k} ∪ {the Ξ-successor of c (σ_k(c), or σ̄_k(c) if c is Odd) : c ∈ C} (L-RED R143's upward heads); H_k := S4a's arena at k (Even v keeps {σ_k(v)} ∪ Iσ_k(v), Odd follows τ); dist and the remaining edges at k := those of S4a's evaluation of H_k (si.py Engine.evaluate on the dual of H_k with dual-Even fixed to τ); for a transition k → k + 1 of F: (y, z) is W_(k+1)-tight at Even y ∉ C iff y ⊕ W_(k+1)(z) = W_(k+1)(y); an EVENT := a transition k → k + 1 of F at which (i) σ̄ changes, (ii) σ changes at some Even c ∈ C, or (iii) Ξ changes at some vertex of U_k ∪ U_(k+1), and a transition is EVENT-FREE iff it is not an EVENT; E_F := the number of events of F; for Odd o, c ∈ C and u ∈ V: SB_F(o), CN_F(c), HXU_F(u) := the numbers of transitions of F at which σ̄(o) changes, at which the Even vertex c switches, and at which u ∈ U_k ∪ U_(k+1) and Ξ(u) changes; Ξ^d_k := Odd's valuation of τ_k on G^d at state k (RESULTS R86's U): for every N5 run on every game and every W-run F of it: (Claim RG′) at every S4a step k → k + 1 of F, in the round of cycle node c, the remaining edges (x, y), x ≠ c, with dist(y) = dist(x) − 1 are exactly the W_(k+1)-tight arena edges of x with W_(k+1)-cycle node c; (Theorem RUN-SETTLE) if the transitions k0, …, k1 − 1 of F are all event-free, then for k0 ≤ k < k1 every Even vertex v switching at k and every vertex v whose Ξ changes at k has ℓ_(k+1)(v) ≥ k − k0 + 1, so k1 − k0 ≤ n − 1 (proof: induction on k − k0 with a least-ℓ violator, using R15 (a), Claim RG′, ARENA-MAX (L-RED R140, l-red 47000632; the S4a half of the R57 premise above) and L-LIT T54's LEX-BFS / IDX-MONO as signed in this packet's review, read at one S4a evaluation with W_(k+1)); (Corollary RUN-COUNT) |F| ≤ n(E_F + 1) − 1; (Theorem HEAD-RED, an EQUIVALENCE) E_F ≤ Σ_(Odd o) SB_F(o) + Σ_(c ∈ C) CN_F(c) + Σ_(u ∈ V) HXU_F(u), so |F| ≤ n(1 + n·max_(Odd o) SB_F(o) + n·max_(c ∈ C) CN_F(c) + n·max_(u ∈ V) HXU_F(u)) − 1, and, as each count is ≤ |F|, for every family of games every W-run has polynomially many transitions iff max SB_F, max CN_F and max HXU_F are polynomial over all W-runs F; and (Corollary T-XCH, an EQUIVALENCE from RESULTS R86 (a) SW-RETURN on both sides and R15 (d)) every N5 run, with T its number of transitions (N5 iterations), has T ≤ m_E(1 + XE) + m_O(1 + XO), XE (XO) the most changes of one vertex's Ξ_k (Ξ^d_k) over the whole run, and, for every family of games, T is polynomial over all runs iff XE and XO are (2026-10-30) — a REDUCTION (no count is bounded here; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim; not to sign: CONJECTURES FLIP-EV (DEAD, fixes F0), HX-POLY, CN-POLY, XCN-POLY) (P-N5-SETTLE, docs/si/P-N5-SETTLE-box52.md; L-SI successor 34; fixes docs/si/P-N5-SETTLE-fixes.md entries 1-2)
+
+## Entry 4 (2026-10-30, date -u in the commit; L-SI successor 35): G-SRC-1, a proof-text gap in packet §5 Case 2 / Case 2b (REFEREE-2 24, R2-N5-SRC §3.2, claude/referee-2 e8c1b62d), CLOSED by REFEREE-2's referee-originated Lemma ONE-STEP; REFEREE 20 confirms the gap and SIGNS ONE-STEP and both instantiations (R-N5-SETTLE Addendum 1, claude/referee 8951ef7c). Lead 23:10Z: «GO for SETTLE fixes entry 4 and line L-4.»
+- No theorem statement of the frozen packet changes. RUN-SETTLE stays SIGNED with Case 2 = ONE-STEP(t = k − 1, z = b) and Case 2b = ONE-STEP(t = k, z = a); Case 2c is unaffected (both referees).
+- The packet's §5 text is read through ONE-STEP at those two steps (frozen file unchanged). L-1, L-2, L-3 stay as filed.
+- Quotes below are verbatim, line for line, from the two reports at the SHAs named.
+
+### E4.1 REFEREE-2 24, R2-N5-SRC §3.2 (claude/referee-2 e8c1b62d): G-SRC-1 and Lemma ONE-STEP
+
+```
+### 3.2 G-SRC-1 (a proof-text gap in [SET] §5, inherited by §3): CLOSED by Lemma ONE-STEP (referee-originated)
+- Case 2 of [SET] §5 reads: «ρ := σ_k with y ↦ b is a strategy of H_(k−1). Its play from y is y, then b's (σ_k, τ)-path, which avoids
+  y.» It then uses val(ρ, τ)(y) = y ⊕ W_k(b).
+- That holds only up to c. After c, ρ follows c's (σ_k, τ)-cycle Z_c. y ∉ C does NOT keep y off Z_c: a non-top vertex of c's cycle has
+  λ_W = c and is not in C.
+- If y ∈ Z_c, the ρ-play runs c → … → y → b → … → c, a different cycle. Its top z* may be a vertex of b's path more relevant than c.
+  Then val(ρ, τ)(y) has cycle node z* ≠ c, and the written equality is false.
+- Case 2b's «ρ′ := σ_(k+1) with y ↦ a … its play from y is y, then a's (σ_(k+1), τ)-path» has the same gap, with c's
+  (σ_(k+1), τ)-cycle.
+- [SET]'s two reports did not raise it. Successor 23's §2.5 reads «ARENA-MAX, W-MON, and reflection by y ⊕ · … ✓».
+- REACHABLE. My tool finds 4 states (red/n3/instances/ret22_n40.pg with its start file, t = 2-5, y 5, z 23, c 0) where y lies on c's
+  cycle, z ∈ H_t(y), z's path avoids y, and the ρ-play's cycle top is 23 (odd), not c.
+  - Example: ρ-value (23, ∅, 1) against the written y ⊕ W(z) = (0, {23}, 2).
+  - In none of them does y then switch to z, so no instance of Case 2 or 2b itself is wrong. The sentence is false on reachable
+    states; the conclusion it feeds is true, by the lemma below.
+- **Lemma ONE-STEP** (REFEREE-2 24, PROVED).
+  - Statement. Let t → t + 1 be a transition of a W-run F, y ∉ C an Even vertex, c := λ_W(y), z ∈ H_t(y) with λ_W(z) = c, and z's
+    (σ_(t+1), τ)-path to c avoiding y. Then y ⊕ W_(t+1)(z) ⊴ W_(t+1)(y).
+  - Proof.
+    - ρ := σ_(t+1) with y ↦ z is a strategy of H_t: σ_(t+1)(v) ∈ H_t(v) for every Even v, and z ∈ H_t(y). By ARENA-MAX,
+      W_(t+1)(y) ⊵ val(ρ, τ)(y). The ρ-play from y is y, then z's path to c (ρ = σ_(t+1) there), then from c along c's
+      (σ_(t+1), τ)-cycle Z_c.
+    - (α) y ∉ Z_c: the play ends in Z_c with top c, so val(ρ, τ)(y) = y ⊕ W_(t+1)(z). Done.
+    - (β) y ∈ Z_c: write Z_c = c → … → y → σ_(t+1)(y) → … → c.
+      - z's path meets Z_c only after y: entering the c … y segment would lead to y before c.
+      - So Z′ := (the segment of Z_c from c to y) ∪ (z's path) is a simple cycle. Its top z* is c or the most relevant vertex of z's
+        path, because c is the top of Z_c.
+      - z* = c: val(ρ, τ)(y) = y ⊕ W_(t+1)(z). Done.
+      - z* ≠ c, even: reward(z*) = p′(z*) > p′(c) ≥ reward(c), so val(ρ, τ)(y) ▷ W_(t+1)(y). That contradicts ARENA-MAX, so this
+        case does not occur.
+      - z* ≠ c, odd: y's W_(t+1)-path is the segment of Z_c from y to c, so P(W_(t+1)(y)) = ∅, and y is less relevant than c. Also
+        z* ∈ P(W_(t+1)(z)), and z* is its most relevant vertex. So y ⊕ W_(t+1)(z) = (c, P(W_(t+1)(z)), ·) loses to (c, ∅, ·) at the
+        odd z*: y ⊕ W_(t+1)(z) ◁ W_(t+1)(y). □
+- Use.
+  - Case 2 is ONE-STEP at t = k − 1 with z = b. b ∈ H_(k−1)(y) is Case 2's own hypothesis; λ_W(b) = c; b's σ_k-path avoids y. It gives
+    exactly «W_k(y) ⊵ y ⊕ W_k(b)», and the chain of Case 2 then reads as written.
+  - Case 2b is ONE-STEP at t = k with z = a. It gives «y ⊕ W_(k+1)(a) ⊴ W_(k+1)(y)».
+  - Case 2c already closes Z before c. Case 1 uses no ρ. TAIL uses ARENA-MAX only with actual strategies σ_(k+1), σ_(k+2).
+  - ONE-STEP reads only one state's strategy, so it holds with C switching (SRC) and without (SETTLE).
+```
+
+### E4.2 REFEREE 20, R-N5-SETTLE Addendum 1 (claude/referee 8951ef7c): verdict and instantiations
+
+```
+## Addendum 1 (2026-10-30 ~22:50Z by date -u): G-SRC-1 and Lemma ONE-STEP
+- (1) G-SRC-1 CONFIRMED, as a proof-text gap in [SET] §5 Case 2 and Case 2b.
+  - I found it independently in R-N5-SRC §3 (claude/referee 81f6b89c, written before I saw REFEREE-2's R2-N5-SRC or the Lead's 22:29Z
+    message).
+  - Case 2 writes val(ρ, τ)(y) = y ⊕ W_k(b) for ρ = σ_k[y ↦ b]. That holds only if y is not on c's σ_k-cycle. If y ≠ c lies on that cycle,
+    the ρ-play closes a new cycle y → b's path → c → c's old arc → y, whose top can be above c. Case 2b has the same pattern with σ_(k+1),
+    a and ρ′.
+  - My signature of [SET] §5 (§5 above, «Case 2 ✓», «Case 2b ✓») missed this. It was a joint miss with REFEREE-2 23. The theorem is not
+    affected (below).
+- (2) Lemma ONE-STEP (REFEREE-2 24, docs/referee-2/R2-N5-SRC.md §3.2, claude/referee-2 e8c1b62d, confirmed an ancestor of origin): SIGNED
+  (Opus 5.5, D15).
+  - Statement: for a transition t → t + 1 of a W-run F, an Even y ∉ C, and z ∈ H_t(y) with λ_W(z) = λ_W(y) = c whose (σ_(t+1), τ)-path
+    avoids y: y ⊕ W_(t+1)(z) ⊴ W_(t+1)(y).
+  - My check. ρ′ := σ_(t+1)[y ↦ z] ∈ H_t, and ARENA-MAX gives W_(t+1)(y) ⊵ val(ρ′, τ)(y). The ρ′-play from y is y, then z's path to c
+    (avoiding y), then c's σ_(t+1)-cycle.
+    - y not on that cycle: val(ρ′, τ)(y) = y ⊕ W_(t+1)(z). Done.
+    - y on it, so W_(t+1)(y) = (c, ∅, ℓ_y). The new cycle's top is the top of {c} ∪ P(W_(t+1)(z)); y and the old arc rank below c.
+      - Top c (P = ∅): val = (c, ∅, 1 + ℓ(z)) = y ⊕ W_(t+1)(z). ARENA-MAX gives the claim.
+      - Top m even: val(ρ′, τ)(y) has cycle node m with reward(m) > reward(c), against ARENA-MAX. Impossible.
+      - Top m odd: P(W(z)) has top m odd. y is not added (it is below c), so y ⊕ W_(t+1)(z) = (c, P(W(z)), ·) ◁ (c, ∅, ℓ_y) = W_(t+1)(y).
+    - ⊕ is applied to W(z) with y ∉ P(W(z)), because z's path avoids y (E1.12's proviso holds).
+  - This is the same four-way split as my R-N5-SRC §3, organised by the top of the new cycle.
+  - Own DATA: R-N5-SRC §7 counted the configuration «switched y ∉ C, b ∈ H_(k−1)(y), y on c's σ_k-cycle» 3 times on the n ≤ 100 run set,
+    all with top c. REFEREE-2's OS = 0 on 852,572 instances is consistent with this.
+- Instantiations (both CONFIRMED):
+  - Case 2 = ONE-STEP at t = k − 1 with z = b. Its hypotheses: b ∈ H_(k−1)(y) (Case 2), λ_W(b) = c (y → b on y's W_(k+1)-path, and λ_W is
+    fixed), and b's σ_k-path avoids y (shown before Case 1). The conclusion y ⊕ W_k(b) ⊴ W_k(y) is exactly the first inequality of
+    Case 2's chain.
+  - Case 2b = ONE-STEP at t = k with z = a. Its hypotheses: a = σ_k(y) ∈ H_k(y), λ_W(a) = c, and a's σ_(k+1)-path avoids y (the Case 2b
+    hypothesis). The conclusion y ⊕ W_(k+1)(a) ⊴ W_(k+1)(y) is exactly Case 2b's first inequality.
+  - Case 2c is unaffected: there the ρ′-play is analysed explicitly (it closes Z).
+- Verdict: [SET] §5 (RUN-SETTLE) stays SIGNED, with Case 2 and Case 2b read through ONE-STEP. The same holds for SRC §3.
+```
+
+### E4.3 Line revision L-4 = L-3 (ae695c9e…) plus exactly two changes (difflib on L-3 → L-4: 2 non-equal opcodes, asserted)
+- The RUN-SETTLE proof note exists in L-3. The citation is inserted as its last clause, before its closing parenthesis, i.e. right after «… read at one S4a evaluation with W_(k+1)»: «Cases 2, 2b via Lemma ONE-STEP (REFEREE-2 R2-N5-SRC §3.2, claude/referee-2 e8c1b62d; signed by REFEREE R-N5-SETTLE Addendum 1, claude/referee 8951ef7c)».
+- The source note «fixes docs/si/P-N5-SETTLE-fixes.md entries 1-2)» → «… entries 1-4)» (it had stayed at 1-2 in L-3 by the Lead's «nothing else may change»).
+- No heading marker (L41).
+- Related lane note (not part of the packet): the Odd mirror of G-SRC-1 in L-SI's box-53 proofs is repaired by Lemma ONE-STEP-O, docs/si/N5-SBF-box53.md §2.6.
+
+### Line revision L-4 (= docs/si/P-N5-SETTLE-line-L4.txt)
+
+N5 on EVERY game (SPEC S1-S5, under the standing SPEC premise of RESULTS R57 (1E-N3: S1's procedure realises the pointwise optimum; for S4a, σ_new is the pointwise optimum of the one-player arena H_t, H_t := S4a's arena at t (Even keeps σ_t ∪ Iσ_t, Odd follows τ_t)); premises RESULTS R15 (a), (d) and R86 (a)), with: a run is the sequence of states (σ_k, τ_k), a transition is written k → k + 1 (states k, k + 1), and an Even vertex y switches at k if σ_(k+1)(y) ≠ σ_k(y); n := |V|, m_E (m_O) := the number of edges leaving Even (Odd) vertices; values (c, P, ℓ) (cycle node, path set, length) as in SPEC S1, ⊴, ◁, ⊵, ▷ the SPEC S1 order (better for Even) and its strict and reverse forms, and x ⊕ (c, Q, ℓ) := (c, Q ∪ {x if x is more relevant than c}, ℓ + 1) (as in RESULTS R93 TIE); for a state k: Ξ_k := Ξ_{σ_k}, σ̄_k := S1's Odd counterstrategy to σ_k, and Iσ_k := Even's improving edges at k (SPEC S2: {(y, z) : Ξ_k(z) ▷ Ξ_k(σ_k(y))}); W-run F := RESULTS R89's (a maximal run of consecutive states of one τ-stretch none of whose transitions is an S4c fallback or changes λ_W, the cycle-node map of W), with τ and C := {v : λ_W(v) = v} fixed on F and |F| its number of transitions; for a state k of F: W_k := the [S1-val] valuation of the (σ_k, τ)-plays and ℓ_k(x) its length component at x; D_k := {Odd o : σ̄_k(o) ≠ τ(o)}; U_k := {σ̄_k(g) : g ∈ D_k} ∪ {the Ξ-successor of c (σ_k(c), or σ̄_k(c) if c is Odd) : c ∈ C} (L-RED R143's upward heads); H_k := S4a's arena at k (Even v keeps {σ_k(v)} ∪ Iσ_k(v), Odd follows τ); dist and the remaining edges at k := those of S4a's evaluation of H_k (si.py Engine.evaluate on the dual of H_k with dual-Even fixed to τ); for a transition k → k + 1 of F: (y, z) is W_(k+1)-tight at Even y ∉ C iff y ⊕ W_(k+1)(z) = W_(k+1)(y); an EVENT := a transition k → k + 1 of F at which (i) σ̄ changes, (ii) σ changes at some Even c ∈ C, or (iii) Ξ changes at some vertex of U_k ∪ U_(k+1), and a transition is EVENT-FREE iff it is not an EVENT; E_F := the number of events of F; for Odd o, c ∈ C and u ∈ V: SB_F(o), CN_F(c), HXU_F(u) := the numbers of transitions of F at which σ̄(o) changes, at which the Even vertex c switches, and at which u ∈ U_k ∪ U_(k+1) and Ξ(u) changes; Ξ^d_k := Odd's valuation of τ_k on G^d at state k (RESULTS R86's U): for every N5 run on every game and every W-run F of it: (Claim RG′) at every S4a step k → k + 1 of F, in the round of cycle node c, the remaining edges (x, y), x ≠ c, with dist(y) = dist(x) − 1 are exactly the W_(k+1)-tight arena edges of x with W_(k+1)-cycle node c; (Theorem RUN-SETTLE) if the transitions k0, …, k1 − 1 of F are all event-free, then for k0 ≤ k < k1 every Even vertex v switching at k and every vertex v whose Ξ changes at k has ℓ_(k+1)(v) ≥ k − k0 + 1, so k1 − k0 ≤ n − 1 (proof: induction on k − k0 with a least-ℓ violator, using R15 (a), Claim RG′, ARENA-MAX (L-RED R140, l-red 47000632; the S4a half of the R57 premise above) and L-LIT T54's LEX-BFS / IDX-MONO as signed in this packet's review, read at one S4a evaluation with W_(k+1); Cases 2, 2b via Lemma ONE-STEP (REFEREE-2 R2-N5-SRC §3.2, claude/referee-2 e8c1b62d; signed by REFEREE R-N5-SETTLE Addendum 1, claude/referee 8951ef7c)); (Corollary RUN-COUNT) |F| ≤ n(E_F + 1) − 1; (Theorem HEAD-RED, an EQUIVALENCE) E_F ≤ Σ_(Odd o) SB_F(o) + Σ_(c ∈ C) CN_F(c) + Σ_(u ∈ V) HXU_F(u), so |F| ≤ n(1 + n·max_(Odd o) SB_F(o) + n·max_(c ∈ C) CN_F(c) + n·max_(u ∈ V) HXU_F(u)) − 1, and, as each count is ≤ |F|, for every family of games every W-run has polynomially many transitions iff max SB_F, max CN_F and max HXU_F are polynomial over all W-runs F; and (Corollary T-XCH, an EQUIVALENCE from RESULTS R86 (a) SW-RETURN on both sides and R15 (d)) every N5 run, with T its number of transitions (N5 iterations), has T ≤ m_E(1 + XE) + m_O(1 + XO), XE (XO) the most changes of one vertex's Ξ_k (Ξ^d_k) over the whole run, and, for every family of games, T is polynomial over all runs iff XE and XO are (2026-10-30) — a REDUCTION (no count is bounded here; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim; not to sign: CONJECTURES FLIP-EV (DEAD, fixes F0), HX-POLY, CN-POLY, XCN-POLY) (P-N5-SETTLE, docs/si/P-N5-SETTLE-box52.md; L-SI successor 34; fixes docs/si/P-N5-SETTLE-fixes.md entries 1-4)
