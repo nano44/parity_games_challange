@@ -11,7 +11,6 @@ HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.abspath(os.pat
 sys.path.insert(0, os.path.join(ROOT, "experiments", "new", "box21"))
 from n5x import Engine, dual
 import pg
-_wc = {}
 CYC = '--lzc' in sys.argv   # also lazy at W*-cycle nodes v: keep sigma(v) if W*(sigma v) = (v, empty, l)
 def step(g, E, Ed, sigma, tau):
     n = g.n
@@ -27,7 +26,7 @@ def step(g, E, Ed, sigma, tau):
         _, best = Er.evaluate(tuple(tau[v] if g.owner[v] == 1 else -1 for v in range(n)))
         for v in range(n):
             if g.owner[v] == 0: ns[v] = best[v]
-        tk = tuple(tau)
+        tk = tuple(tau); _wc = g.__dict__.setdefault("_n5lz_wc", {})   # per-game cache (L-RED R133 hazard: was keyed by tau only)
         if tk not in _wc: _wc[tk] = Engine(pg.Game(list(g.prio), list(g.owner), [[tau[v]] if g.owner[v] == 1 else g.succ[v] for v in range(n)]))
         Ew = _wc[tk]; Ws = Ew.evaluate(tuple(ns))[0]
         for v in range(n):

@@ -1,0 +1,13 @@
+START (66, 100)
+BEST 106 (67, 100) ratio 0.838
+BEST 134 (68, 98) ratio 0.850
+BEST 368 (68, 100) ratio 0.850
+BEST 952 (69, 100) ratio 0.863
+BEST 1362 (71, 100) ratio 0.887
+BEST 1366 (73, 98) ratio 0.912
+BEST 1757 (73, 99) ratio 0.912
+BEST 1803 (73, 100) ratio 0.912
+BEST 1843 (74, 101) ratio 0.925
+BEST 1912 (76, 101) ratio 0.950
+BEST 2719 (78, 102) ratio 0.975
+FINAL (78, 102) ratio 0.975 steps 2792
