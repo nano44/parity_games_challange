@@ -1,0 +1,2 @@
+GAME si/gate/inst/latew_K16_m32.pg si/gate/inst/latew_K16_m32.start SWC latew_K16_m32.pg n 482 J0 48 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME si/gate/inst/fx_K8_m32.pg si/gate/inst/fx_K8_m32.start SWC fx_K8_m32.pg n 250 J0 50 NE 608 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 4

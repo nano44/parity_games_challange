@@ -1,6 +1,37 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## HANDOVER (successor 34, box 52; written 2026-10-30T17:3xZ (date -u; see commit); WORKING; Lead session_014FBi6o334DvwT5Uw2kDfoN)
+STEP 0: local clone stale at da88a6d4 AGAIN; ff to 0730ee5e, trunk merged 3d33d718. No other session on the branch (origin last 16:38Z).
+### Resume point
+- Box 52 (Lead 16:59Z): note docs/si/N5-HEADS-box52.md, tools experiments/si/heads52/, pins si/check.sh «box 52», DEAD.md «box 52».
+- PROVED (lane):
+  - Theorem RUN-SETTLE: in a W-run, a change at event-free window offset j sits at W-length ≥ j + 1. So every window has ≤ n − 1
+    transitions, and |F| ≤ n(E_F + 1) − 1.
+    - Case 3a uses Claim RG′ (§10.1 read with W_(k+1)) + T54 LEX-BFS / IDX-MONO.
+    - Case 3c (re-route) is closed by an ARENA-MAX cycle argument.
+  - Theorem HEAD-RED: polynomial W-runs ⟺ per-vertex σ̄-flips, CN switches and Ξ-changes at upward heads are polynomial.
+  - Odd side of SEG-XCH: RETURN-CHARGE′-O, SEG-XCH-O, T-XCH.
+- FLIP-CAUSE″ DEAD (random search; n5b agrees): flipnone_n14 (Odd own Ξ-cycle node, DFS choice, no head event) and flipnonex_a_n10 (BFS
+  branch, tied candidates re-ordered by a flip below; a head event is present). CONJECTURE FLIP-EV: an EXI / MOV flip at a non-own-node o
+  happens only at an event-(iii) transition (corpus EVX 0; 5 x 100k random games 0). FLIP-RED: given FLIP-EV, poly W-runs ⟸ HX ∧ CN ∧ XCN.
+- DEAD: the Ξ-distance front (ladderd0_k12_n48); σ̄ avoids I_τ (lend107_n32); D only shrinks (latew); old-target flip cause (nep13_n24).
+- OPEN: HX-POLY (data linear), CN-POLY per W-run (37 transitions in the corpus).
+### Queue
+1. Prove FLIP-EV. EVEN-cycle branch: least-index tight successor (sketch in note §3). ODD branch: a re-order of tied BFS keys needs a
+   value-preserving path change below, which bottoms out in a caused flip, i.e. a head event. Own-node flips: the XCN term.
+2. HX-POLY: head feedback (R143 §2). Use RUN-SETTLE: between head events everything settles in ≤ n − 1 steps, so count head events by
+   what a settled state can re-open.
+3. CN-POLY per W-run (CN switches charge to Ξ-rises of non-heads; is there a head form?).
+4. REFEREE 20's SW-KEEP sketch against FLAT-Z / ZFL (old queue 4).
+### Things only I know
+- si/check.sh: under `set -e`, «A && ! B» and «! grep» lines can never fail. «grep | grep -q» under pipefail fails on SIGPIPE, so an
+  `if` on it never fires. I fixed box 51b's retx line and wrote box 52's checks with explicit exits.
+  - The Bash tool runs commands inside an && chain, so `set -e` in an ad-hoc subshell does not exit there either. Test a check block as
+    `bash file.sh`.
+- heads52 tools take < 0.1 s on n ≤ 48. Corpus runs: about 5 min each at -P 4 (run*.sh). obs_K12_m24 ~1 min per tool.
+- pkill again: never `pkill -f` a pattern that the calling command line also contains (exit 144). Use nohup + a script file.
+
 ## HANDOVER (successor 33, box 51b §1-§13; written 2026-10-30T16:4xZ (date -u; see commit); PARKING at ~450k; Lead session_014FBi6o334DvwT5Uw2kDfoN)
 STEP 0: local clone was stale at da88a6d4 AGAIN (ff to 19ecc5e1, trunk merged 7f456e29). Every successor: check `git log -1` against origin first.
 ### DONE (all on claude/l-si via push.sh, VERIFY PASS): f2765662, 4466d4f3, d736c46b, dbc51c07, 47434fec, a0d6f79b, 78788761, + this commit
@@ -2109,7 +2140,14 @@ in experiments/si/orlens/instances/ (all Oink zlk OK, strategies verified). Oink
   minimiser of Ωσ; Prop. 5.1; Lemma 5.2 with proof; (11) Ωσ = Θσσ̄ and "Θσσ̄ ⊴ Θστ, for all strategies τ for player ⊖", p. 16). Used for
   premise (VJ) of Lemma OUT-G (docs/si/P-N5-1E-box16.md §2).
 
+- (successor 34, box 52) L-RED R143 (docs/red/R143-settle.md §0-§2, l-red 717f407a): events, U_k, Lemma SETTLE (A)-(C). L-RED R140 §2
+  (docs/red/R140-friedmann-port.md): Lemma ARENA-MAX verbatim. L-LIT T54 §4.1-§4.2 (docs/lit/T54-stalling.md): IDX-MONO, LEX-BFS, key_σ.
+  RESULTS R15 (a), (d) (docs/RESULTS.md l. 624). L-NEW box 88 §0-§1 (docs/new/N5-ONEP-box88.md). L-RED R139 header + §1
+  (docs/red/R139-xich-funnel.md). P-N5-WRUN §3 headings (docs/new/P-N5-WRUN-box92.md l. 140-160; XI-RUN, WRUN-EQ). No external source.
+
 ## Dead ends (details in docs/si/DEAD.md)
+- box 52 (s34): FLIP-CAUSE″ DEAD (heads52/inst/flipnone_n14, flipnonex_a_n10). Ξ-distance BF front DEAD (ladderd0_k12_n48, 11); σ̄ avoids I_τ DEAD (lend107_n32 + start, INIT 106); D only shrinks DEAD
+  (latew_K16_m32, REN 15); old-target flip cause DEAD (nep13_n24 + start, o = 15 at 11 → 12).
 - box 51b (s33): gate / Φ potentials for ZFL DEAD (u23sw64_n32 [2, 10], all gate data constant); Bellman-Ford in G_I DEAD (u2flat73_n32 XNGRD 11).
 - (successor 23, box 27) W-GROW (wgrow_kill_n90, f9a7ef09: W-sinks wait for their target's honest value), H-GROW (hgrow_kill_n89,
   998a4a5e: H-sinks wait for their W-chain), SINK-GROW and CONJECTURE SEG-LAST (seglast_kill_n110, 8a220181: REL segment [2, 8], t = 2 is an

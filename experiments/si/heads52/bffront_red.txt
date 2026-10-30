@@ -1,0 +1,2 @@
+GAME si/gate/inst/latew_K16_m32.pg si/gate/inst/latew_K16_m32.start BFF latew_K16_m32.pg n 482 CH 1600 MINF0 1 MINF1 1 NOD 0 BAD1 0 BAD0 0 MINW1 3 BADW 0 SWB 0
+GAME si/gate/inst/fx_K8_m32.pg si/gate/inst/fx_K8_m32.start BFF fx_K8_m32.pg n 250 CH 1433 MINF0 -28 MINF1 1 NOD 0 BAD1 0 BAD0 680 MINW1 3 BADW 0 SWB 0

@@ -1,0 +1,2 @@
+GAME si/gate/inst/latew_K16_m32.pg si/gate/inst/latew_K16_m32.start RWIN latew_K16_m32.pg n 482 LMAX 560 E 528 WMAX 1 WN 0.002 EI 513 EII 0 EIII 512 WALL 1
+GAME si/gate/inst/fx_K8_m32.pg si/gate/inst/fx_K8_m32.start RWIN fx_K8_m32.pg n 250 LMAX 280 E 16 WMAX 32 WN 0.128 EI 1 EII 0 EIII 16 WALL 32
