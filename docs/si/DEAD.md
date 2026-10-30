@@ -609,3 +609,8 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
 ## box 46 (L-SI successor 31, docs/si/N5-SUB-box46.md)
 - CONJECTURE REP-LIN (box 42; REPEAT late adoptions ≤ n per W-run): DEAD. Instance experiments/si/odd/inst/red/latew_K20_m32.pg + .start
   (L-RED, sha1 063d173c2de7): 570 > 538 in one W-run (repchain.py REPW). Obstruction: one FIRST late adoption re-enables Θ(n) edges.
+
+## box 48 / 49 (L-SI successor 31; killed by L-RED R130)
+- CONJECTURE WD-BOUNDED (docs/si/N5-WDEPTH-box48.md §4; window depth D_F ≤ a constant per W-run): DEAD. Instance family wdepth_K4_m{16,32,64}
+  (L-RED, l-red 448a1bf9, docs/red/R130-window-depth.md; span/mkrw.py LATE=2): D_F = (m − 1)/2 = 7 / 15 / 31 at n 146 / 234 / 410 in one W-run,
+  two counters (repchain.py, latec.py). REP linear there. P-N5-REPD frozen, not refereed (docs/si/P-N5-REPD-status.md).
