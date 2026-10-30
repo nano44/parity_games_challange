@@ -1,7 +1,22 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 37, Opus 5.5, session_01V5yGRZkHnkiiyz6Auz6KAE; FINAL, PARKED 2026-10-30 ~11:4xZ by date -u, ~470k context)
+## Resume point (successor 38, Opus 5.5, started 2026-10-30 12:02Z by date -u; handover check: origin head 1169bb3d, trunk merged)
+### Box 84 N5-WAIT (Lead brief after 12:02Z: R3-POLY via R135's WAIT-CYCLE triple count): docs/new/N5-WAIT-box84.md
+- PROVED (lane): Lemma WAIT-CYCLE′ (R135's lemma for every REG block, X on its own cycle included when pi enters the cycle at X; the only
+  exception is E0 = X its own top cycle node and pi below X); Corollaries DEAD-CYCLE (pattern-free) and CHARGE (a REG return is paid by a
+  switch of a transitive reader on pi); Lemma E0-BOUND (<= n E0 returns per Even edge, whole run; via SUCC-MON + CONVEX interval);
+  Theorem TRIPLE-RED (R3-POLY <= ALT-POLY (REG returns) and FREE-POLY; => given polynomial TT).
+- DATA: 0 WAIT-CYCLE′ violations in 434,925 corpus REG blocks; returns REG 1005 / E0 0 / FREE 5260 (FREE 84%); REG <= 3, FREE <= 17
+  per (F, X, g); patterns per (X, g) per W-run up to 25 (pftheta34_n32) with 3 returns; corpus max WCH 48 (ladderd0_k48) has 0 returns.
+- Step (2) NOT proved. Obstruction: the CHARGE recursion along "reads" (REG(X) <= sum over readers of their switches, which are again
+  returns); no potential on "reads"; no real-N5 instance (depth <= 2, FAN <= 2 random).
+- Things only I know: the first block test let pi meet X's cycle before X (68 false DEADC at n 8); fixed by requiring pi to avoid Z*.
+  waits.py xoncyc counts REG and E0 blocks together. retclass.py classifies REG > E0 > FREE by blocks strictly between leave and return.
+  altcheck.py classifies alternations by the FIRST prior block (so alt_e0 > 0 there while retclass E0 = 0 on the corpus).
+- OPEN LIST (owned): R3-POLY, ALT-POLY, FREE-POLY (new); the box-83 list below otherwise unchanged. P-N5-FIXD packet queued, not frozen.
+
+## Resume point (HISTORY; successor 37, Opus 5.5, session_01V5yGRZkHnkiiyz6Auz6KAE; FINAL, PARKED 2026-10-30 ~11:4xZ by date -u, ~470k context)
 ### FINAL summary (successor 37)
 - P-N5-WCH: frozen 2ad78f51 (packet sha1 31caa72e, line 9ac6fdba); SIGNED by both referees, no gap; fixes W1 c930e26f (fixes 8377a1b8, line
   W1 00f9e375; OPT-ONLY kept «under ASSUMPTION» in the line per Lead 10:44Z option (a)); with referees for word-diff, then R93 -> CHECKER.
@@ -1544,6 +1559,8 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
   honest limit (i), R89 (h), (i); docs/red/R76-late-fallbacks.md, docs/red/R126-cut-premises.md (rho-POLY kill attempts).
 - (succ. 36, box 78-79) l-lit 09eed297 docs/lit/T51-parametric-best-reply.md (Summary, §3-§4; no theorem used); l-red 1c8d8667
   notes/L-RED.md "Successor 32 PARK" (TWO-SOURCE / PREFIX / GAP-IN-PREFIX, quoted in N5-FLATSRC-box79 §3).
+- (succ. 38, box 84) l-red fc450c7d docs/red/R135-desync-gate.md §3-§5 + Addendum 1, experiments/red/desync/wcrand.py; RESULTS R89
+  (SUCC-MON, LATE-RISE); R93 / P-N5-WCH-box79.md §4.1 NEW-BOUND, §4.2 RET-WCH; SPEC N5-ssi-global.md S1, S2, S4, Termination.
 ## Dead ends
 - (box 47, successor 26, 11:13Z) CONJECTURE XD-1 (≤ 1 X_dir per {u, u′}-run): FALSE on experiments/new/box47/instances/pp2_n19.pg (sha1 97b5b132…),
   𝒞^2O, S3, phase [1, 3], D = {1}, {0}, {1}; length-only values (cycle node 9). Obstruction: each X_dir needs only an Even switch on each
@@ -1721,6 +1738,8 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
   (c) (WF) under hypothesis (h): i1h_fts_best16 already; smaller: fbh_drop9.pg (n 9, sha1 f25c999053aa…, throttled state).
   Also dead as a potential: the count of complete vertices (Ξ = U_τ) on fts_best16 is constant for 23 transitions.
   Obstruction for all: trust routing (docs/new/N5-1Ocyc-box25.md §5).
+- (succ. 38, box 84) Distinct route patterns per (X, g) as the R3-POLY potential: over-counts (pftheta34_n32, n 32: 25 patterns of one
+  edge in one W-run, 3 REG returns). Replaced by REG returns (TRIPLE-RED). Not a kill of R3-POLY.
 ## Things only I know (earlier successors)
 - (succ. 8) Pitfalls in box 21:
   - `pkill -f "climb_fix.py ..."` killed my own shell (exit 144). Kill by `ps -eo pid,args | awk '$2=="python3" && $3==...'`.
