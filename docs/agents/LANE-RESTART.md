@@ -183,3 +183,4 @@ Five questions:
 | 2026-10-30 | L-NEW | session_01V5yGRXhFvQKMGvnKST38br (~420k; FINAL 30b686e4) | session_01V5yGRZkHnkiiyz6Auz6KAE (Opus, D14/D18) | 2 | PENDING (successor's check) |
 | 2026-10-30 | L-RED | session_01V5yGRXGW9KqMY5gaypMTs2 (~430k; handover 1c8d8667) | session_01V5yGRVhKai3aZNje4fNgzH (Opus, D1/D18) | 2 | PENDING (successor's check) |
 | 2026-10-30 | L-NEW | session_01V5yGRZkHnkiiyz6Auz6KAE (~470k; FINAL 1169bb3d) | session_01V5yGRWPFRQsUTroeihw8wg (Opus, D14/D18) | 2 | PENDING (successor's check) |
+| 2026-10-30 | L-COMP | session_01V5yGRZrRdwiCSQqHfS2zGE (~517k; handover dc40806d) | session_01V5yGRWL1xbdLiUMMLuy7vR (Opus, D17/D18) | 2 | PENDING (successor's check) |
