@@ -1,0 +1,413 @@
+GAME n5-epoch/instances/gci2_n12.pg n5-epoch/instances/gci2_n12.start RWIN gci2_n12.pg n 12 LMAX 10 E 1 WMAX 9 WN 0.75 EI 1 EII 0 EIII 1 WALL 9
+GAME n5-epoch/instances/ffin12_n32.pg n5-epoch/instances/ffin12_n32.start RWIN ffin12_n32.pg n 32 LMAX 7 E 2 WMAX 5 WN 0.219 EI 3 EII 0 EIII 4 WALL 7
+GAME n5-epoch/instances/ffin5_n32.pg n5-epoch/instances/ffin5_n32.start RWIN ffin5_n32.pg n 32 LMAX 7 E 0 WMAX 7 WN 0.219 EI 2 EII 0 EIII 2 WALL 7
+GAME n5-epoch/instances/ffin4_n24.pg n5-epoch/instances/ffin4_n24.start RWIN ffin4_n24.pg n 24 LMAX 8 E 1 WMAX 7 WN 0.292 EI 2 EII 0 EIII 3 WALL 7
+GAME n5-epoch/instances/gci3_n24.pg n5-epoch/instances/gci3_n24.start RWIN gci3_n24.pg n 24 LMAX 20 E 0 WMAX 20 WN 0.833 EI 0 EII 0 EIII 0 WALL 20
+GAME n5-epoch/instances/immfail_n14.pg RWIN immfail_n14.pg n 14 LMAX 2 E 0 WMAX 2 WN 0.143 EI 1 EII 0 EIII 0 WALL 2
+GAME n5-epoch/instances/immp_cex_n11.pg n5-epoch/instances/immp_cex_n11.start RWIN immp_cex_n11.pg n 11 LMAX 2 E 2 WMAX 0 WN 0.0 EI 2 EII 0 EIII 1 WALL 0
+GAME n5-epoch/instances/lcount_n23.pg n5-epoch/instances/lcount_n23.start RWIN lcount_n23.pg n 23 LMAX 4 E 1 WMAX 3 WN 0.13 EI 1 EII 0 EIII 1 WALL 3
+GAME n5-epoch/instances/lend13_n16.pg n5-epoch/instances/lend13_n16.start RWIN lend13_n16.pg n 16 LMAX 13 E 1 WMAX 12 WN 0.75 EI 1 EII 0 EIII 1 WALL 12
+GAME n5-epoch/instances/lend15_n48.pg n5-epoch/instances/lend15_n48.start RWIN lend15_n48.pg n 48 LMAX 3 E 1 WMAX 2 WN 0.042 EI 2 EII 0 EIII 4 WALL 2
+GAME n5-epoch/instances/lend27_n24.pg n5-epoch/instances/lend27_n24.start RWIN lend27_n24.pg n 24 LMAX 8 E 0 WMAX 8 WN 0.333 EI 0 EII 0 EIII 1 WALL 8
+GAME n5-epoch/instances/lend39f_n32.pg n5-epoch/instances/lend39f_n32.start RWIN lend39f_n32.pg n 32 LMAX 8 E 0 WMAX 8 WN 0.25 EI 3 EII 0 EIII 2 WALL 8
+GAME n5-epoch/instances/lend47_n32.pg n5-epoch/instances/lend47_n32.start RWIN lend47_n32.pg n 32 LMAX 19 E 5 WMAX 13 WN 0.406 EI 3 EII 0 EIII 5 WALL 13
+GAME n5-epoch/instances/lend55_n32.pg n5-epoch/instances/lend55_n32.start RWIN lend55_n32.pg n 32 LMAX 11 E 1 WMAX 10 WN 0.312 EI 0 EII 0 EIII 2 WALL 10
+GAME n5-epoch/instances/lend107_n32.pg n5-epoch/instances/lend107_n32.start RWIN lend107_n32.pg n 32 LMAX 15 E 1 WMAX 14 WN 0.438 EI 0 EII 0 EIII 1 WALL 14
+GAME n5-epoch/instances/lend9_n8.pg n5-epoch/instances/lend9_n8.start RWIN lend9_n8.pg n 8 LMAX 2 E 0 WMAX 2 WN 0.25 EI 1 EII 0 EIII 2 WALL 2
+GAME n5-epoch/instances/nep13_n24.pg n5-epoch/instances/nep13_n24.start RWIN nep13_n24.pg n 24 LMAX 12 E 12 WMAX 0 WN 0.0 EI 15 EII 0 EIII 13 WALL 0
+GAME n5-epoch/instances/lend82_n32.pg n5-epoch/instances/lend82_n32.start RWIN lend82_n32.pg n 32 LMAX 14 E 1 WMAX 13 WN 0.406 EI 0 EII 0 EIII 2 WALL 13
+GAME n5-epoch/instances/lend72_n48.pg n5-epoch/instances/lend72_n48.start RWIN lend72_n48.pg n 48 LMAX 14 E 1 WMAX 13 WN 0.271 EI 1 EII 0 EIII 8 WALL 13
+GAME n5-epoch/instances/nep56_n32.pg n5-epoch/instances/nep56_n32.start RWIN nep56_n32.pg n 32 LMAX 25 E 25 WMAX 0 WN 0.031 EI 52 EII 0 EIII 52 WALL 1
+GAME n5-epoch/instances/nep22f_n64.pg n5-epoch/instances/nep22f_n64.start RWIN nep22f_n64.pg n 64 LMAX 3 E 3 WMAX 0 WN 0.0 EI 11 EII 2 EIII 10 WALL 0
+GAME n5-epoch/instances/nep76_n40.pg n5-epoch/instances/nep76_n40.start RWIN nep76_n40.pg n 40 LMAX 15 E 15 WMAX 0 WN 0.025 EI 71 EII 0 EIII 68 WALL 1
+GAME n5-epoch/instances/nconf61_n48.pg n5-epoch/instances/nconf61_n48.start RWIN nconf61_n48.pg n 48 LMAX 13 E 13 WMAX 0 WN 0.021 EI 56 EII 0 EIII 58 WALL 1
+GAME n5-epoch/instances/ret12_n40.pg n5-epoch/instances/ret12_n40.start RWIN ret12_n40.pg n 40 LMAX 14 E 14 WMAX 0 WN 0.05 EI 44 EII 0 EIII 42 WALL 2
+GAME n5-epoch/instances/nep94_n48.pg n5-epoch/instances/nep94_n48.start RWIN nep94_n48.pg n 48 LMAX 14 E 14 WMAX 0 WN 0.0 EI 86 EII 0 EIII 83 WALL 0
+GAME n5-epoch/instances/nep92_n40.pg n5-epoch/instances/nep92_n40.start RWIN nep92_n40.pg n 40 LMAX 14 E 14 WMAX 0 WN 0.05 EI 84 EII 0 EIII 82 WALL 2
+GAME n5-epoch/instances/ret14_n48.pg n5-epoch/instances/ret14_n48.start RWIN ret14_n48.pg n 48 LMAX 6 E 6 WMAX 0 WN 0.042 EI 36 EII 0 EIII 34 WALL 2
+GAME n5-exhaustive/instances/b4_cyc6_0.pg n5-exhaustive/instances/b4_cyc6_0.start RWIN b4_cyc6_0.pg n 11 LMAX 2 E 0 WMAX 2 WN 0.182 EI 0 EII 0 EIII 0 WALL 2
+GAME n5-exhaustive/instances/b4_cyc6_1.pg RWIN b4_cyc6_1.pg n 12 LMAX 4 E 1 WMAX 3 WN 0.25 EI 1 EII 0 EIII 1 WALL 3
+GAME n5-exhaustive/instances/b4_n5_other_0.pg RWIN b4_n5_other_0.pg n 5 LMAX 1 E 1 WMAX 0 WN 0.0 EI 0 EII 0 EIII 1 WALL 0
+GAME n5-exhaustive/instances/b4_nohlen5_0.pg n5-exhaustive/instances/b4_nohlen5_0.start RWIN b4_nohlen5_0.pg n 11 LMAX 4 E 0 WMAX 4 WN 0.364 EI 0 EII 0 EIII 0 WALL 4
+GAME n5-exhaustive/instances/b4_n4all_cyc3_0.pg n5-exhaustive/instances/b4_n4all_cyc3_0.start RWIN b4_n4all_cyc3_0.pg n 4 LMAX 1 E 1 WMAX 0 WN 0.0 EI 1 EII 0 EIII 1 WALL 0
+GAME n5-exhaustive/instances/b5_o11.pg RWIN b5_o11.pg n 10 LMAX 4 E 0 WMAX 4 WN 0.4 EI 0 EII 0 EIII 1 WALL 4
+GAME n5-exhaustive/instances/b4_theta_n7.pg n5-exhaustive/instances/b4_theta_n7.start RWIN b4_theta_n7.pg n 7 LMAX 1 E 1 WMAX 0 WN 0.0 EI 1 EII 1 EIII 1 WALL 0
+GAME n5-exhaustive/instances/b5_n5_cyc4_0.pg RWIN b5_n5_cyc4_0.pg n 5 LMAX 1 E 0 WMAX 1 WN 0.2 EI 0 EII 0 EIII 0 WALL 1
+GAME n5-exhaustive/instances/b5_os_n12.pg RWIN b5_os_n12.pg n 12 LMAX 5 E 0 WMAX 5 WN 0.417 EI 0 EII 0 EIII 1 WALL 5
+GAME n5-epoch/instances/ret14_n64.pg n5-epoch/instances/ret14_n64.start RWIN ret14_n64.pg n 64 LMAX 14 E 13 WMAX 1 WN 0.016 EI 50 EII 0 EIII 49 WALL 1
+GAME n5-exhaustive/instances/b5_os_n14.pg RWIN b5_os_n14.pg n 14 LMAX 7 E 1 WMAX 6 WN 0.429 EI 0 EII 0 EIII 2 WALL 6
+GAME n5-exhaustive/instances/b5_os_n16.pg RWIN b5_os_n16.pg n 16 LMAX 8 E 1 WMAX 7 WN 0.438 EI 0 EII 0 EIII 2 WALL 7
+GAME n5-exhaustive/instances/b5_os_n20.pg RWIN b5_os_n20.pg n 20 LMAX 10 E 0 WMAX 10 WN 0.5 EI 0 EII 0 EIII 1 WALL 10
+GAME n5-exhaustive/instances/b5_os_n24.pg RWIN b5_os_n24.pg n 24 LMAX 14 E 1 WMAX 12 WN 0.5 EI 0 EII 0 EIII 2 WALL 12
+GAME n5-exhaustive/instances/b5_os_n28.pg RWIN b5_os_n28.pg n 28 LMAX 13 E 1 WMAX 12 WN 0.429 EI 0 EII 0 EIII 2 WALL 12
+GAME n5-exhaustive/instances/b5_os_n32.pg RWIN b5_os_n32.pg n 32 LMAX 14 E 1 WMAX 13 WN 0.406 EI 0 EII 0 EIII 2 WALL 13
+GAME n5-exhaustive/instances/b5_os_n40.pg RWIN b5_os_n40.pg n 40 LMAX 17 E 1 WMAX 16 WN 0.4 EI 0 EII 0 EIII 2 WALL 16
+GAME n5-exhaustive/instances/b6_xl2_n32.pg RWIN b6_xl2_n32.pg n 32 LMAX 22 E 6 WMAX 10 WN 0.312 EI 11 EII 0 EIII 18 WALL 10
+GAME n5-exhaustive/instances/b6_xs_n24.pg RWIN b6_xs_n24.pg n 24 LMAX 21 E 0 WMAX 21 WN 0.875 EI 0 EII 0 EIII 0 WALL 21
+GAME n5-exhaustive/instances/b6_xl_n32.pg RWIN b6_xl_n32.pg n 32 LMAX 22 E 6 WMAX 10 WN 0.312 EI 12 EII 0 EIII 17 WALL 10
+GAME n5-exhaustive/instances/b6_xs_n32.pg RWIN b6_xs_n32.pg n 32 LMAX 29 E 0 WMAX 29 WN 0.906 EI 0 EII 0 EIII 0 WALL 29
+GAME n5-exhaustive/instances/b6_xs_n40.pg RWIN b6_xs_n40.pg n 40 LMAX 36 E 0 WMAX 36 WN 0.9 EI 0 EII 0 EIII 0 WALL 36
+GAME n5-exhaustive/instances/b6_xl_n40.pg RWIN b6_xl_n40.pg n 40 LMAX 25 E 5 WMAX 15 WN 0.375 EI 14 EII 0 EIII 20 WALL 15
+GAME n5-exhaustive/instances/b6_xl_n48.pg RWIN b6_xl_n48.pg n 48 LMAX 24 E 4 WMAX 11 WN 0.229 EI 13 EII 0 EIII 18 WALL 11
+GAME n5-exhaustive/instances/b6_xs_n48.pg RWIN b6_xs_n48.pg n 48 LMAX 37 E 0 WMAX 37 WN 0.771 EI 0 EII 0 EIII 0 WALL 37
+GAME n5-exhaustive/instances/b6_xw_n32.pg RWIN b6_xw_n32.pg n 32 LMAX 21 E 5 WMAX 9 WN 0.281 EI 11 EII 0 EIII 18 WALL 9
+GAME n5-exhaustive/instances/canonA_0.pg RWIN canonA_0.pg n 15 LMAX 3 E 0 WMAX 3 WN 0.2 EI 0 EII 0 EIII 0 WALL 3
+GAME n5-exhaustive/instances/b6_xw_n40.pg RWIN b6_xw_n40.pg n 40 LMAX 22 E 5 WMAX 9 WN 0.225 EI 11 EII 0 EIII 18 WALL 9
+GAME n5-exhaustive/instances/canonA_1.pg RWIN canonA_1.pg n 15 LMAX 3 E 2 WMAX 1 WN 0.067 EI 2 EII 0 EIII 1 WALL 1
+GAME n5-exhaustive/instances/frz1_n24.pg n5-exhaustive/instances/frz1_n24.start RWIN frz1_n24.pg n 24 LMAX 24 E 2 WMAX 8 WN 0.333 EI 1 EII 0 EIII 2 WALL 8
+GAME n5-exhaustive/instances/frz2_n24.pg n5-exhaustive/instances/frz2_n24.start RWIN frz2_n24.pg n 24 LMAX 23 E 7 WMAX 7 WN 0.292 EI 7 EII 0 EIII 5 WALL 7
+GAME n5-exhaustive/instances/n3all_maxph_0.pg n5-exhaustive/instances/n3all_maxph_0.start RWIN n3all_maxph_0.pg n 3 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME n5-exhaustive/instances/frz3_n24.pg n5-exhaustive/instances/frz3_n24.start RWIN frz3_n24.pg n 24 LMAX 24 E 7 WMAX 7 WN 0.292 EI 5 EII 0 EIII 6 WALL 7
+GAME n5-exhaustive/instances/b6_xw_n48.pg RWIN b6_xw_n48.pg n 48 LMAX 22 E 4 WMAX 10 WN 0.208 EI 11 EII 0 EIII 16 WALL 10
+GAME n5-exhaustive/instances/n3all_maxph_1.pg n5-exhaustive/instances/n3all_maxph_1.start RWIN n3all_maxph_1.pg n 3 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME n5-exhaustive/instances/n3all_maxph_2.pg n5-exhaustive/instances/n3all_maxph_2.start RWIN n3all_maxph_2.pg n 3 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME n5-exhaustive/instances/b6_xw_n56.pg RWIN b6_xw_n56.pg n 56 LMAX 23 E 4 WMAX 10 WN 0.179 EI 11 EII 0 EIII 16 WALL 10
+GAME n5-exhaustive/instances/n4_maxph_1.pg RWIN n4_maxph_1.pg n 4 LMAX 1 E 0 WMAX 1 WN 0.25 EI 0 EII 0 EIII 0 WALL 1
+GAME n5-exhaustive/instances/n4_maxph_0.pg RWIN n4_maxph_0.pg n 4 LMAX 1 E 0 WMAX 1 WN 0.25 EI 0 EII 0 EIII 0 WALL 1
+GAME n5-exhaustive/instances/n4_thch_0.pg RWIN n4_thch_0.pg n 4 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME n5-exhaustive/instances/n4all_maxph_0.pg n5-exhaustive/instances/n4all_maxph_0.start RWIN n4all_maxph_0.pg n 4 LMAX 2 E 0 WMAX 2 WN 0.5 EI 0 EII 0 EIII 0 WALL 2
+GAME n5-exhaustive/instances/n4all_maxph_1.pg n5-exhaustive/instances/n4all_maxph_1.start RWIN n4all_maxph_1.pg n 4 LMAX 2 E 0 WMAX 2 WN 0.5 EI 0 EII 0 EIII 0 WALL 2
+GAME n5-exhaustive/instances/n4all_tgbad_0.pg n5-exhaustive/instances/n4all_tgbad_0.start RWIN n4all_tgbad_0.pg n 4 LMAX 1 E 0 WMAX 1 WN 0.25 EI 0 EII 0 EIII 0 WALL 1
+GAME n5-exhaustive/instances/n4all_thch_0.pg n5-exhaustive/instances/n4all_thch_0.start RWIN n4all_thch_0.pg n 4 LMAX 1 E 1 WMAX 0 WN 0.0 EI 1 EII 0 EIII 1 WALL 0
+GAME n5-exhaustive/instances/n5s_maxph_0.pg RWIN n5s_maxph_0.pg n 5 LMAX 1 E 1 WMAX 0 WN 0.0 EI 1 EII 0 EIII 0 WALL 0
+GAME n5-exhaustive/instances/nh_n8.pg n5-exhaustive/instances/nh_n8.start RWIN nh_n8.pg n 8 LMAX 3 E 0 WMAX 3 WN 0.375 EI 0 EII 0 EIII 0 WALL 3
+GAME n5-exhaustive/instances/thetaA_canon_n8.pg RWIN thetaA_canon_n8.pg n 8 LMAX 3 E 0 WMAX 3 WN 0.375 EI 0 EII 0 EIII 0 WALL 3
+GAME n5-exhaustive/instances/thetaA_canon_n12.pg RWIN thetaA_canon_n12.pg n 12 LMAX 3 E 0 WMAX 3 WN 0.25 EI 0 EII 0 EIII 0 WALL 3
+GAME n5-exhaustive/instances/thetaA_n6.pg n5-exhaustive/instances/thetaA_n6.start RWIN thetaA_n6.pg n 6 LMAX 3 E 1 WMAX 2 WN 0.333 EI 1 EII 0 EIII 1 WALL 2
+GAME n5-exhaustive/instances/thetaA_n17.pg n5-exhaustive/instances/thetaA_n17.start RWIN thetaA_n17.pg n 17 LMAX 3 E 0 WMAX 3 WN 0.176 EI 0 EII 0 EIII 0 WALL 3
+GAME n5-exhaustive/instances/thetaA_n7.pg n5-exhaustive/instances/thetaA_n7.start RWIN thetaA_n7.pg n 7 LMAX 3 E 2 WMAX 1 WN 0.143 EI 2 EII 0 EIII 1 WALL 1
+GAME n5-exhaustive/instances/thetaA_n9.pg n5-exhaustive/instances/thetaA_n9.start RWIN thetaA_n9.pg n 9 LMAX 3 E 0 WMAX 3 WN 0.333 EI 0 EII 0 EIII 0 WALL 3
+GAME n5-exhaustive/instances/wk1_n32.pg n5-exhaustive/instances/wk1_n32.start RWIN wk1_n32.pg n 32 LMAX 2 E 0 WMAX 2 WN 0.062 EI 2 EII 0 EIII 2 WALL 2
+GAME n5-exhaustive/instances/wk2_n32.pg n5-exhaustive/instances/wk2_n32.start RWIN wk2_n32.pg n 32 LMAX 3 E 0 WMAX 3 WN 0.094 EI 1 EII 0 EIII 1 WALL 3
+GAME new/box48/instances/long121_n40.pg new/box48/instances/long121_n40.start RWIN long121_n40.pg n 40 LMAX 17 E 6 WMAX 5 WN 0.15 EI 33 EII 0 EIII 49 WALL 6
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.pg new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.start RWIN best_qpc_nep90_n40_s61.pg n 64 LMAX 15 E 12 WMAX 1 WN 0.016 EI 70 EII 0 EIII 73 WALL 1
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.pg new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.start RWIN best_qpc_nep76_n40_s63.pg n 64 LMAX 16 E 15 WMAX 1 WN 0.016 EI 69 EII 0 EIII 66 WALL 1
+GAME red/carry/instances/absmono_viol_n44.pg RWIN absmono_viol_n44.pg n 44 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/carry/instances/carry3_2_2.pg RWIN carry3_2_2.pg n 47 LMAX 1 E 0 WMAX 1 WN 0.021 EI 0 EII 0 EIII 0 WALL 1
+GAME red/carry/instances/cm_mdrop_both_n28.pg RWIN cm_mdrop_both_n28.pg n 28 LMAX 3 E 2 WMAX 1 WN 0.036 EI 2 EII 0 EIII 2 WALL 1
+GAME red/carry/instances/cm_mdrop_oink_n28.pg RWIN cm_mdrop_oink_n28.pg n 28 LMAX 1 E 0 WMAX 1 WN 0.036 EI 0 EII 0 EIII 0 WALL 1
+GAME red/carry/instances/ctx11_n40.pg RWIN ctx11_n40.pg n 40 LMAX 2 E 1 WMAX 1 WN 0.025 EI 1 EII 0 EIII 1 WALL 1
+GAME red/carry/instances/ctx12_n40.pg RWIN ctx12_n40.pg n 40 LMAX 1 E 1 WMAX 0 WN 0.0 EI 1 EII 0 EIII 1 WALL 0
+GAME red/carry/instances/ctx6_n20.pg RWIN ctx6_n20.pg n 20 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/carry/instances/ctx13_n40.pg RWIN ctx13_n40.pg n 40 LMAX 5 E 2 WMAX 2 WN 0.05 EI 3 EII 0 EIII 2 WALL 2
+GAME red/carry/instances/ctx6_n56.pg RWIN ctx6_n56.pg n 56 LMAX 1 E 0 WMAX 1 WN 0.018 EI 0 EII 0 EIII 0 WALL 1
+GAME red/carry/instances/ctx7_n30.pg RWIN ctx7_n30.pg n 30 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/carry/instances/f1_twodef_n48.pg RWIN f1_twodef_n48.pg n 48 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.pg new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.start RWIN best_qpc_nep90_n40_s62.pg n 80 LMAX 15 E 14 WMAX 1 WN 0.05 EI 75 EII 0 EIII 80 WALL 4
+GAME red/carry/instances/f1_twofall_n48.pg RWIN f1_twofall_n48.pg n 48 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME new/box48/out/qpcclimb/scale/snap_n80_s62.pg new/box48/out/qpcclimb/scale/snap_n80_s62.start RWIN snap_n80_s62.pg n 80 LMAX 15 E 14 WMAX 1 WN 0.05 EI 75 EII 0 EIII 80 WALL 4
+GAME red/carry/instances/fallv_viol_n28.pg RWIN fallv_viol_n28.pg n 28 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/carry/instances/fired10_n20.pg RWIN fired10_n20.pg n 20 LMAX 1 E 0 WMAX 1 WN 0.05 EI 0 EII 0 EIII 0 WALL 1
+GAME red/carry/instances/fall3_n76.pg RWIN fall3_n76.pg n 76 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/carry/instances/firedlong667_n20.pg RWIN firedlong667_n20.pg n 20 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/carry/instances/firedlong667_n43.pg RWIN firedlong667_n43.pg n 43 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/carry/instances/gapbW_dup_n20.pg RWIN gapbW_dup_n20.pg n 20 LMAX 2 E 0 WMAX 2 WN 0.1 EI 0 EII 0 EIII 0 WALL 2
+GAME red/carry/instances/firedstep13_n76.pg RWIN firedstep13_n76.pg n 76 LMAX 2 E 2 WMAX 0 WN 0.0 EI 2 EII 0 EIII 2 WALL 0
+GAME red/carry/instances/gapb_dup_n20.pg RWIN gapb_dup_n20.pg n 20 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/carry/instances/fall4_n116.pg RWIN fall4_n116.pg n 116 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/carry/instances/h4_compound2x2_n44.pg RWIN h4_compound2x2_n44.pg n 44 LMAX 3 E 1 WMAX 1 WN 0.023 EI 1 EII 0 EIII 1 WALL 1
+GAME red/carry/instances/h4_compound_n44.pg RWIN h4_compound_n44.pg n 44 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/carry/instances/h4_def2ctx_n20.pg RWIN h4_def2ctx_n20.pg n 20 LMAX 1 E 0 WMAX 1 WN 0.05 EI 0 EII 0 EIII 0 WALL 1
+GAME red/carry/instances/h4_disjoint_n20.pg RWIN h4_disjoint_n20.pg n 20 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/carry/instances/h4_def7_n28.pg RWIN h4_def7_n28.pg n 28 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/carry/instances/kfirst_viol_n13.pg RWIN kfirst_viol_n13.pg n 13 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/carry/instances/h4_notweaker_n20.pg RWIN h4_notweaker_n20.pg n 20 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/carry/instances/lalg_dtl_mviol_n20.pg RWIN lalg_dtl_mviol_n20.pg n 20 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/carry/instances/lemmaS_viol_n20.pg RWIN lemmaS_viol_n20.pg n 20 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/carry/instances/kin_viol_n29.pg RWIN kin_viol_n29.pg n 29 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/carry/instances/lex_viol_inj_n28.pg RWIN lex_viol_inj_n28.pg n 28 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/carry/instances/lemmaS_Mdrop_n20.pg RWIN lemmaS_Mdrop_n20.pg n 20 LMAX 1 E 0 WMAX 1 WN 0.05 EI 0 EII 0 EIII 0 WALL 1
+GAME red/carry/instances/lex_viol_tie_n28.pg RWIN lex_viol_tie_n28.pg n 28 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/carry/instances/meet_viol_n17.pg RWIN meet_viol_n17.pg n 17 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/carry/instances/nosig_2_3.pg RWIN nosig_2_3.pg n 24 LMAX 1 E 0 WMAX 1 WN 0.042 EI 0 EII 0 EIII 0 WALL 1
+GAME red/carry/instances/meet_viol_n29.pg RWIN meet_viol_n29.pg n 29 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/carry/instances/phi_flat_alive_n32.pg RWIN phi_flat_alive_n32.pg n 32 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/carry/instances/replay4_n32.pg RWIN replay4_n32.pg n 32 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/carry/instances/pk_viol_n20.pg RWIN pk_viol_n20.pg n 20 LMAX 1 E 0 WMAX 1 WN 0.05 EI 0 EII 0 EIII 0 WALL 1
+GAME red/carry/instances/spp19_stable_n30.pg RWIN spp19_stable_n30.pg n 30 LMAX 2 E 1 WMAX 1 WN 0.033 EI 1 EII 0 EIII 1 WALL 1
+GAME red/carry/instances/spp19_oink_n30.pg RWIN spp19_oink_n30.pg n 30 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/carry/instances/spp22_oink_n40.pg RWIN spp22_oink_n40.pg n 40 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/carry/instances/stealonce_both_n45.pg RWIN stealonce_both_n45.pg n 45 LMAX 1 E 0 WMAX 1 WN 0.022 EI 0 EII 0 EIII 0 WALL 1
+GAME red/carry/instances/spp25_oink_n40.pg RWIN spp25_oink_n40.pg n 40 LMAX 3 E 1 WMAX 1 WN 0.025 EI 1 EII 0 EIII 1 WALL 1
+GAME red/carry/instances/tstep_near_n20.pg RWIN tstep_near_n20.pg n 20 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/carry/instances/stealonce_core_n76.pg RWIN stealonce_core_n76.pg n 76 LMAX 1 E 0 WMAX 1 WN 0.013 EI 0 EII 0 EIII 0 WALL 1
+GAME red/carry/instances/stealer_viol_n76.pg RWIN stealer_viol_n76.pg n 76 LMAX 1 E 0 WMAX 1 WN 0.013 EI 0 EII 0 EIII 0 WALL 1
+GAME red/ctxp/instances/deep1_n13.pg RWIN deep1_n13.pg n 13 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/ctxp/instances/deep1_n21.pg RWIN deep1_n21.pg n 21 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/carry/instances/stealonce_viol_n76.pg RWIN stealonce_viol_n76.pg n 76 LMAX 1 E 0 WMAX 1 WN 0.013 EI 0 EII 0 EIII 0 WALL 1
+GAME red/ctxp/instances/margin1_n20.pg RWIN margin1_n20.pg n 20 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/dtl/instances/lalg_dtl_pertop31_n18.pg RWIN lalg_dtl_pertop31_n18.pg n 18 LMAX 1 E 0 WMAX 1 WN 0.056 EI 0 EII 0 EIII 0 WALL 1
+GAME red/ctxp/instances/margin1_mc5.pg RWIN margin1_mc5.pg n 50 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/ctxp/instances/margin1_mc1.pg RWIN margin1_mc1.pg n 80 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/dtl/instances/lalg_dtl_restart8_n20.pg RWIN lalg_dtl_restart8_n20.pg n 20 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/fbr/instances/bghm_k3_gap4_A.pg RWIN bghm_k3_gap4_A.pg n 45 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/fbr/instances/bghm_k1_gap6_A.pg RWIN bghm_k1_gap6_A.pg n 21 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/fbr/instances/lev74_n40.pg RWIN lev74_n40.pg n 40 LMAX 3 E 2 WMAX 1 WN 0.025 EI 4 EII 0 EIII 4 WALL 1
+GAME red/fbr/instances/nep80_n40.pg RWIN nep80_n40.pg n 40 LMAX 4 E 4 WMAX 0 WN 0.0 EI 8 EII 0 EIII 7 WALL 0
+GAME red/fbr/instances/fr39_q4_n48.pg RWIN fr39_q4_n48.pg n 48 LMAX 32 E 3 WMAX 23 WN 0.479 EI 2 EII 0 EIII 3 WALL 23
+GAME red/fbr/instances/rho3_253_n32.pg RWIN rho3_253_n32.pg n 32 LMAX 4 E 3 WMAX 1 WN 0.031 EI 3 EII 0 EIII 3 WALL 1
+GAME red/fbr/instances/rho144_n32.pg RWIN rho144_n32.pg n 32 LMAX 2 E 2 WMAX 0 WN 0.0 EI 2 EII 0 EIII 2 WALL 0
+GAME red/fbr/instances/lev56_n48.pg RWIN lev56_n48.pg n 48 LMAX 15 E 7 WMAX 5 WN 0.104 EI 32 EII 0 EIII 34 WALL 5
+GAME red/fbr/instances/rho666_n48.pg RWIN rho666_n48.pg n 48 LMAX 7 E 6 WMAX 1 WN 0.042 EI 6 EII 0 EIII 4 WALL 2
+GAME red/fbr/instances/rho84_n16.pg RWIN rho84_n16.pg n 16 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/fbr/instances/sat68_n20.pg RWIN sat68_n20.pg n 20 LMAX 1 E 0 WMAX 1 WN 0.05 EI 0 EII 0 EIII 0 WALL 1
+GAME red/fbr/instances/sat4_n20.pg RWIN sat4_n20.pg n 20 LMAX 1 E 0 WMAX 1 WN 0.05 EI 0 EII 0 EIII 0 WALL 1
+GAME red/fbx/instances/exsw_loop_n15.pg RWIN exsw_loop_n15.pg n 15 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/fbr/instances/twowave_L16.pg RWIN twowave_L16.pg n 22 LMAX 15 E 0 WMAX 15 WN 0.682 EI 0 EII 0 EIII 0 WALL 15
+GAME red/frz/instances/fbcap_eq_u4_n11.pg RWIN fbcap_eq_u4_n11.pg n 11 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/frz/instances/fx2_n11.pg RWIN fx2_n11.pg n 11 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/h3/instances/frzgap0_n4.pg RWIN frzgap0_n4.pg n 4 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/h3/instances/frzgap0_n6.pg RWIN frzgap0_n6.pg n 6 LMAX 2 E 0 WMAX 2 WN 0.333 EI 0 EII 0 EIII 0 WALL 2
+GAME red/fbx/instances/kt6_n58.pg RWIN kt6_n58.pg n 58 LMAX 18 E 2 WMAX 15 WN 0.259 EI 2 EII 1 EIII 3 WALL 15
+GAME red/h3/instances/lcount_n23.pg red/h3/instances/lcount_n23.start RWIN lcount_n23.pg n 23 LMAX 4 E 1 WMAX 3 WN 0.13 EI 1 EII 0 EIII 1 WALL 3
+GAME red/h3/instances/lcount2_n23.pg red/h3/instances/lcount2_n23.start RWIN lcount2_n23.pg n 23 LMAX 3 E 0 WMAX 3 WN 0.13 EI 0 EII 0 EIII 0 WALL 3
+GAME red/h3/instances/offret_l19_n24.pg RWIN offret_l19_n24.pg n 24 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/kl/instances/klcount_n16.pg RWIN klcount_n16.pg n 16 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/kl/instances/klcount_n18_base.pg RWIN klcount_n18_base.pg n 18 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/kl/instances/klglobal_n16.pg RWIN klglobal_n16.pg n 16 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/h3/instances/xsnpre36_n48.pg RWIN xsnpre36_n48.pg n 48 LMAX 30 E 0 WMAX 30 WN 0.625 EI 0 EII 0 EIII 0 WALL 30
+GAME red/kl/instances/klcount_n18_lvl.pg RWIN klcount_n18_lvl.pg n 18 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/kl/instances/klglobal_n18_lvl.pg RWIN klglobal_n18_lvl.pg n 18 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/kl/instances/klglobal_n20_lvl2.pg RWIN klglobal_n20_lvl2.pg n 20 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/kl/instances/klmin_n13.pg RWIN klmin_n13.pg n 13 LMAX 1 E 0 WMAX 1 WN 0.077 EI 0 EII 0 EIII 0 WALL 1
+GAME red/kl/instances/r2climb_h13.pg RWIN r2climb_h13.pg n 13 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/kl/instances/r2crawl_n14.pg RWIN r2crawl_n14.pg n 14 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/kl/instances/r2lap_best_n22.pg RWIN r2lap_best_n22.pg n 22 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/kl/instances/r2join_h0E_n14.pg RWIN r2join_h0E_n14.pg n 14 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/kl24/instances/HL88_0.pg RWIN HL88_0.pg n 41 LMAX 1 E 0 WMAX 1 WN 0.024 EI 0 EII 0 EIII 0 WALL 1
+GAME red/kl24/instances/HL88_1.pg RWIN HL88_1.pg n 43 LMAX 1 E 0 WMAX 1 WN 0.023 EI 0 EII 0 EIII 0 WALL 1
+GAME red/kl24/instances/HL88_2.pg RWIN HL88_2.pg n 45 LMAX 1 E 0 WMAX 1 WN 0.022 EI 0 EII 0 EIII 0 WALL 1
+GAME red/kl24/instances/HL88_3.pg RWIN HL88_3.pg n 47 LMAX 1 E 0 WMAX 1 WN 0.021 EI 0 EII 0 EIII 0 WALL 1
+GAME red/kl24/instances/HLg_1.pg RWIN HLg_1.pg n 35 LMAX 1 E 0 WMAX 1 WN 0.029 EI 0 EII 0 EIII 0 WALL 1
+GAME red/kl24/instances/HLg_0.pg RWIN HLg_0.pg n 29 LMAX 1 E 0 WMAX 1 WN 0.034 EI 0 EII 0 EIII 0 WALL 1
+GAME red/kl24/instances/HLg_2.pg RWIN HLg_2.pg n 45 LMAX 1 E 0 WMAX 1 WN 0.022 EI 0 EII 0 EIII 0 WALL 1
+GAME red/kw/instances/cw11_n24.pg RWIN cw11_n24.pg n 24 LMAX 4 E 4 WMAX 0 WN 0.042 EI 0 EII 11 EIII 3 WALL 1
+GAME red/kl24/instances/HLg_3.pg RWIN HLg_3.pg n 55 LMAX 1 E 0 WMAX 1 WN 0.018 EI 0 EII 0 EIII 0 WALL 1
+GAME red/kw/instances/kc18_n24.pg RWIN kc18_n24.pg n 24 LMAX 18 E 0 WMAX 18 WN 0.75 EI 0 EII 0 EIII 0 WALL 18
+GAME red/kw/instances/frzu_tight_n14.pg RWIN frzu_tight_n14.pg n 14 LMAX 2 E 0 WMAX 2 WN 0.143 EI 0 EII 0 EIII 0 WALL 2
+GAME red/lag/instances/depth3_n46.pg RWIN depth3_n46.pg n 46 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/lag/instances/depth2_n39.pg RWIN depth2_n39.pg n 39 LMAX 1 E 0 WMAX 1 WN 0.026 EI 0 EII 0 EIII 0 WALL 1
+GAME red/lag/instances/depth4_n53.pg RWIN depth4_n53.pg n 53 LMAX 1 E 0 WMAX 1 WN 0.019 EI 0 EII 0 EIII 0 WALL 1
+GAME red/lag/instances/fam_D12_n106.pg RWIN fam_D12_n106.pg n 106 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/mei/instances/mei_h2.pg RWIN mei_h2.pg n 19 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/lag/instances/fam_D4_n50.pg RWIN fam_D4_n50.pg n 50 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/lag/instances/fam_D8_n78.pg RWIN fam_D8_n78.pg n 78 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/mei/instances/mei_h3.pg RWIN mei_h3.pg n 27 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/mei/instances/mei_h4.pg RWIN mei_h4.pg n 35 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/mei/instances/mei_h6.pg RWIN mei_h6.pg n 51 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/mei/instances/mei_h5.pg RWIN mei_h5.pg n 43 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/mei/instances/mei_h8.pg RWIN mei_h8.pg n 67 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/n3/instances/core41_n40.pg red/n3/instances/core41_n40.start RWIN core41_n40.pg n 40 LMAX 7 E 4 WMAX 2 WN 0.05 EI 9 EII 0 EIII 23 WALL 2
+GAME red/n3/instances/lag11_n40.pg red/n3/instances/lag11_n40.start RWIN lag11_n40.pg n 40 LMAX 14 E 9 WMAX 2 WN 0.05 EI 9 EII 0 EIII 7 WALL 2
+GAME red/n3/instances/lagx10_n40.pg red/n3/instances/lagx10_n40.start RWIN lagx10_n40.pg n 40 LMAX 11 E 3 WMAX 7 WN 0.175 EI 3 EII 0 EIII 1 WALL 7
+GAME red/n3/instances/n3cov_lean.pg red/n3/instances/n3cov_lean.start RWIN n3cov_lean.pg n 48 LMAX 30 E 8 WMAX 6 WN 0.125 EI 8 EII 0 EIII 8 WALL 6
+GAME red/n3/instances/long90_k2_n40.pg red/n3/instances/long90_k2_n40.start RWIN long90_k2_n40.pg n 40 LMAX 13 E 3 WMAX 6 WN 0.15 EI 18 EII 0 EIII 28 WALL 6
+GAME red/n3/instances/comp54_n80.pg red/n3/instances/comp54_n80.start RWIN comp54_n80.pg n 80 LMAX 12 E 8 WMAX 2 WN 0.037 EI 19 EII 0 EIII 33 WALL 3
+GAME red/n3/instances/n3cov_phi.pg red/n3/instances/n3cov_phi.start RWIN n3cov_phi.pg n 32 LMAX 9 E 6 WMAX 1 WN 0.062 EI 16 EII 0 EIII 16 WALL 2
+GAME red/n3/instances/long121_n40.pg red/n3/instances/long121_n40.start RWIN long121_n40.pg n 40 LMAX 17 E 6 WMAX 5 WN 0.15 EI 33 EII 0 EIII 49 WALL 6
+GAME red/n5/instances/dl_4_4.pg red/n5/instances/dl_4_4.start RWIN dl_4_4.pg n 42 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/n3/instances/run34_n40.pg red/n3/instances/run34_n40.start RWIN run34_n40.pg n 40 LMAX 32 E 18 WMAX 4 WN 0.1 EI 20 EII 0 EIII 22 WALL 4
+GAME red/n3/instances/run49_n32.pg red/n3/instances/run49_n32.start RWIN run49_n32.pg n 32 LMAX 49 E 4 WMAX 11 WN 0.344 EI 3 EII 0 EIII 4 WALL 11
+GAME red/n5/instances/dlm2_4.pg red/n5/instances/dlm2_4.start RWIN dlm2_4.pg n 42 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/n5/instances/sym_h12_s1.pg RWIN sym_h12_s1.pg n 24 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/n3/instances/ret22_n40.pg red/n3/instances/ret22_n40.start RWIN ret22_n40.pg n 40 LMAX 19 E 13 WMAX 3 WN 0.1 EI 53 EII 0 EIII 53 WALL 4
+GAME red/n5/instances/sym_h8_s1.pg RWIN sym_h8_s1.pg n 16 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/n5inj/instances/block_bk20.pg RWIN block_bk20.pg n 24 LMAX 9 E 0 WMAX 9 WN 0.375 EI 0 EII 0 EIII 0 WALL 9
+GAME red/n5/instances/dl_6_8.pg red/n5/instances/dl_6_8.start RWIN dl_6_8.pg n 110 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/n5inj/instances/blockph_bp20.pg RWIN blockph_bp20.pg n 24 LMAX 19 E 0 WMAX 19 WN 0.792 EI 0 EII 0 EIII 0 WALL 19
+GAME red/n5inj/instances/block_bk32.pg RWIN block_bk32.pg n 36 LMAX 21 E 0 WMAX 21 WN 0.583 EI 0 EII 0 EIII 0 WALL 21
+GAME red/n5/instances/sym_h16_s1.pg RWIN sym_h16_s1.pg n 32 LMAX 1 E 1 WMAX 0 WN 0.0 EI 0 EII 0 EIII 1 WALL 0
+GAME red/n5inj/instances/bribe_cex_n15.pg RWIN bribe_cex_n15.pg n 15 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/n5inj/instances/blockph_bp32.pg RWIN blockph_bp32.pg n 36 LMAX 30 E 0 WMAX 30 WN 0.833 EI 0 EII 0 EIII 0 WALL 30
+GAME red/n5inj/instances/frz24.pg red/n5inj/instances/frz24.start RWIN frz24.pg n 24 LMAX 7 E 0 WMAX 7 WN 0.292 EI 0 EII 0 EIII 0 WALL 7
+GAME red/n5inj/instances/frz32.pg red/n5inj/instances/frz32.start RWIN frz32.pg n 32 LMAX 12 E 1 WMAX 10 WN 0.312 EI 3 EII 0 EIII 8 WALL 10
+GAME red/n5inj/instances/phase2_pk32.pg RWIN phase2_pk32.pg n 32 LMAX 19 E 3 WMAX 8 WN 0.344 EI 2 EII 0 EIII 4 WALL 11
+GAME red/n5inj/instances/frz40.pg red/n5inj/instances/frz40.start RWIN frz40.pg n 40 LMAX 18 E 6 WMAX 4 WN 0.25 EI 9 EII 0 EIII 16 WALL 10
+GAME red/n5inj/instances/elimn_cex_n48.pg RWIN elimn_cex_n48.pg n 48 LMAX 14 E 2 WMAX 9 WN 0.188 EI 5 EII 0 EIII 7 WALL 9
+GAME red/n5inj/instances/returns_rt32.pg RWIN returns_rt32.pg n 32 LMAX 18 E 3 WMAX 7 WN 0.281 EI 3 EII 0 EIII 4 WALL 9
+GAME red/n5inj/instances/phase2_pk48.pg RWIN phase2_pk48.pg n 48 LMAX 12 E 1 WMAX 11 WN 0.229 EI 1 EII 0 EIII 2 WALL 11
+GAME red/n5inj/instances/returns_ph64.pg RWIN returns_ph64.pg n 64 LMAX 16 E 2 WMAX 11 WN 0.172 EI 1 EII 0 EIII 3 WALL 11
+GAME red/n5inj/instances/theta_thc24.pg RWIN theta_thc24.pg n 24 LMAX 12 E 7 WMAX 3 WN 0.125 EI 9 EII 0 EIII 9 WALL 3
+GAME red/n5inj/instances/returns_rt48.pg RWIN returns_rt48.pg n 48 LMAX 15 E 2 WMAX 11 WN 0.229 EI 1 EII 0 EIII 3 WALL 11
+GAME red/n5inj/instances/theta_thf16.pg RWIN theta_thf16.pg n 16 LMAX 12 E 9 WMAX 2 WN 0.125 EI 10 EII 0 EIII 13 WALL 2
+GAME red/n5inj/instances/theta_tp32.pg RWIN theta_tp32.pg n 32 LMAX 25 E 11 WMAX 10 WN 0.312 EI 14 EII 0 EIII 16 WALL 10
+GAME red/n5inj/instances/theta_tp40.pg RWIN theta_tp40.pg n 40 LMAX 20 E 0 WMAX 20 WN 0.5 EI 9 EII 0 EIII 9 WALL 20
+GAME red/nest16/instances/k4L72_n101.pg RWIN k4L72_n101.pg n 101 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/n5inj/instances/wide_h16.pg RWIN wide_h16.pg n 32 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/nest16/instances/k4L72r_n101.pg RWIN k4L72r_n101.pg n 101 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/nest16/instances/k4g50_n101.pg RWIN k4g50_n101.pg n 101 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/nest16/instances/k4seed_vr_n87.pg RWIN k4seed_vr_n87.pg n 87 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/nest16/instances/k4seed_c1_n82.pg RWIN k4seed_c1_n82.pg n 82 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/n5inj/instances/returns_rt64.pg RWIN returns_rt64.pg n 64 LMAX 17 E 3 WMAX 11 WN 0.172 EI 2 EII 0 EIII 3 WALL 11
+GAME red/nest16/instances/k4u_n101.pg RWIN k4u_n101.pg n 101 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/nest16/instances/k4y1_n82.pg RWIN k4y1_n82.pg n 82 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/nest16/instances/k4y2_n87.pg RWIN k4y2_n87.pg n 87 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/nest16/instances/nest4u_n46.pg RWIN nest4u_n46.pg n 46 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/nest16/instances/near4_n26.pg RWIN near4_n26.pg n 26 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/nest16/instances/nest4uu_n51.pg RWIN nest4uu_n51.pg n 51 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/nest16/instances/nest5_n49.pg RWIN nest5_n49.pg n 49 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/nest16/instances/nest6min_n75.pg RWIN nest6min_n75.pg n 75 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/nest16/instances/nest6_n75.pg RWIN nest6_n75.pg n 75 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/nest16/instances/nest6x_n75.pg RWIN nest6x_n75.pg n 75 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/nest16/instances/oseg_n26.pg RWIN oseg_n26.pg n 26 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/nest16/instances/win3_n27.pg RWIN win3_n27.pg n 27 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/nest16/instances/w1_n27.pg RWIN w1_n27.pg n 27 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/nopre/instances/nopre_viol_n20.pg RWIN nopre_viol_n20.pg n 20 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/o1/instances/ph45_n32.pg RWIN ph45_n32.pg n 32 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/o1/instances/iter118_n48.pg RWIN iter118_n48.pg n 48 LMAX 12 E 3 WMAX 4 WN 0.083 EI 3 EII 0 EIII 3 WALL 4
+GAME red/o1/instances/ph50_n32.pg RWIN ph50_n32.pg n 32 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/o1/instances/f39_n48.pg RWIN f39_n48.pg n 48 LMAX 33 E 0 WMAX 33 WN 0.688 EI 0 EII 0 EIII 0 WALL 33
+GAME red/rec0/instances/fbd0_n4.pg RWIN fbd0_n4.pg n 4 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/o1/instances/tau18_n24.pg RWIN tau18_n24.pg n 24 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/rec0/instances/n0_6_n24.pg RWIN n0_6_n24.pg n 24 LMAX 1 E 1 WMAX 0 WN 0.0 EI 1 EII 0 EIII 1 WALL 0
+GAME red/rec0/instances/nep24_n20.pg RWIN nep24_n20.pg n 20 LMAX 1 E 1 WMAX 0 WN 0.0 EI 1 EII 0 EIII 1 WALL 0
+GAME red/rec0/instances/nep87_n40.pg RWIN nep87_n40.pg n 40 LMAX 8 E 7 WMAX 1 WN 0.025 EI 12 EII 0 EIII 12 WALL 1
+GAME red/sgrow/instances/s20_n20.pg RWIN s20_n20.pg n 20 LMAX 1 E 0 WMAX 1 WN 0.05 EI 0 EII 0 EIII 0 WALL 1
+GAME red/rec0/instances/lend2_30_n48.pg RWIN lend2_30_n48.pg n 48 LMAX 13 E 2 WMAX 11 WN 0.229 EI 2 EII 0 EIII 2 WALL 11
+GAME red/sgrow/instances/s29_n30.pg RWIN s29_n30.pg n 30 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/sgrow/instances/s21_oink_n20.pg RWIN s21_oink_n20.pg n 20 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/rec0/instances/nep90_n40.pg RWIN nep90_n40.pg n 40 LMAX 8 E 8 WMAX 0 WN 0.0 EI 13 EII 0 EIII 13 WALL 0
+GAME red/sgrow/instances/s32_n60.pg RWIN s32_n60.pg n 60 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/sgrow/instances/s34_oink_n40.pg RWIN s34_oink_n40.pg n 40 LMAX 2 E 0 WMAX 2 WN 0.05 EI 0 EII 0 EIII 0 WALL 2
+GAME red/sgrow/instances/s35_oink_n80.pg RWIN s35_oink_n80.pg n 80 LMAX 1 E 0 WMAX 1 WN 0.013 EI 0 EII 0 EIII 0 WALL 1
+GAME red/so/instances/epsseg_cex_n16.pg RWIN epsseg_cex_n16.pg n 16 LMAX 6 E 4 WMAX 2 WN 0.125 EI 4 EII 0 EIII 3 WALL 2
+GAME red/sgrow/instances/s36_oink_n60.pg RWIN s36_oink_n60.pg n 60 LMAX 1 E 0 WMAX 1 WN 0.017 EI 0 EII 0 EIII 0 WALL 1
+GAME red/so/instances/beta2_n11.pg RWIN beta2_n11.pg n 11 LMAX 1 E 0 WMAX 1 WN 0.091 EI 0 EII 0 EIII 0 WALL 1
+GAME red/sgrow/instances/s34_oink_n80.pg RWIN s34_oink_n80.pg n 80 LMAX 1 E 0 WMAX 1 WN 0.013 EI 0 EII 0 EIII 0 WALL 1
+GAME red/so/instances/exitr_cex_n16.pg RWIN exitr_cex_n16.pg n 16 LMAX 7 E 5 WMAX 2 WN 0.125 EI 5 EII 0 EIII 4 WALL 2
+GAME red/so/instances/farrise25_n32.pg RWIN farrise25_n32.pg n 32 LMAX 3 E 2 WMAX 1 WN 0.031 EI 1 EII 0 EIII 2 WALL 1
+GAME red/so/instances/exitr_cex_n48.pg RWIN exitr_cex_n48.pg n 48 LMAX 3 E 3 WMAX 0 WN 0.021 EI 3 EII 0 EIII 3 WALL 1
+GAME red/so/instances/epsseg_cex_n48.pg RWIN epsseg_cex_n48.pg n 48 LMAX 4 E 3 WMAX 1 WN 0.021 EI 4 EII 0 EIII 4 WALL 1
+GAME red/so/instances/njb_reabs54_n32.pg RWIN njb_reabs54_n32.pg n 32 LMAX 4 E 3 WMAX 1 WN 0.031 EI 9 EII 0 EIII 9 WALL 1
+GAME red/so/instances/mn_abs74_n48.pg RWIN mn_abs74_n48.pg n 48 LMAX 4 E 2 WMAX 2 WN 0.042 EI 5 EII 0 EIII 6 WALL 2
+GAME red/so/instances/nleq33_n48.pg RWIN nleq33_n48.pg n 48 LMAX 33 E 1 WMAX 32 WN 0.667 EI 0 EII 0 EIII 1 WALL 32
+GAME red/so/instances/nleq_cex_n48.pg RWIN nleq_cex_n48.pg n 48 LMAX 2 E 0 WMAX 2 WN 0.042 EI 0 EII 0 EIII 1 WALL 2
+GAME red/so/instances/njb_reabs65_n48.pg RWIN njb_reabs65_n48.pg n 48 LMAX 19 E 0 WMAX 19 WN 0.396 EI 5 EII 0 EIII 6 WALL 19
+GAME red/so/instances/pftheta34_n32.pg RWIN pftheta34_n32.pg n 32 LMAX 34 E 34 WMAX 0 WN 0.0 EI 34 EII 0 EIII 34 WALL 0
+GAME red/so/instances/pftheta_cex_n32.pg RWIN pftheta_cex_n32.pg n 32 LMAX 34 E 33 WMAX 1 WN 0.031 EI 33 EII 0 EIII 33 WALL 1
+GAME red/so/instances/pft35_n48.pg RWIN pft35_n48.pg n 48 LMAX 35 E 35 WMAX 0 WN 0.0 EI 38 EII 0 EIII 38 WALL 0
+GAME red/so/instances/pft40_n40.pg RWIN pft40_n40.pg n 40 LMAX 27 E 24 WMAX 3 WN 0.075 EI 39 EII 0 EIII 40 WALL 3
+GAME red/so/instances/post31_n48.pg RWIN post31_n48.pg n 48 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/so/instances/rise_fb38_n48.pg RWIN rise_fb38_n48.pg n 48 LMAX 4 E 0 WMAX 4 WN 0.083 EI 2 EII 0 EIII 2 WALL 4
+GAME red/so/instances/s4c8_n13.pg RWIN s4c8_n13.pg n 13 LMAX 1 E 0 WMAX 1 WN 0.077 EI 0 EII 0 EIII 1 WALL 1
+GAME red/so/instances/so_sor5_n24.pg RWIN so_sor5_n24.pg n 24 LMAX 21 E 21 WMAX 0 WN 0.0 EI 21 EII 0 EIII 21 WALL 0
+GAME red/so/instances/so_k2_n32.pg RWIN so_k2_n32.pg n 32 LMAX 5 E 5 WMAX 0 WN 0.094 EI 6 EII 0 EIII 6 WALL 3
+GAME red/so/instances/so_j19_n48.pg RWIN so_j19_n48.pg n 48 LMAX 20 E 19 WMAX 1 WN 0.021 EI 19 EII 0 EIII 19 WALL 1
+GAME red/so/instances/so_sorl_n32.pg RWIN so_sorl_n32.pg n 32 LMAX 22 E 22 WMAX 0 WN 0.0 EI 22 EII 0 EIII 22 WALL 0
+GAME red/so/instances/so_th_n32.pg RWIN so_th_n32.pg n 32 LMAX 21 E 20 WMAX 1 WN 0.031 EI 18 EII 0 EIII 16 WALL 1
+GAME red/so/instances/so_tie13_n24.pg RWIN so_tie13_n24.pg n 24 LMAX 16 E 15 WMAX 1 WN 0.042 EI 15 EII 0 EIII 15 WALL 1
+GAME red/so/instances/rise_thin51_n40.pg RWIN rise_thin51_n40.pg n 40 LMAX 13 E 12 WMAX 1 WN 0.025 EI 52 EII 0 EIII 60 WALL 1
+GAME red/so/instances/so_tie15_n32.pg RWIN so_tie15_n32.pg n 32 LMAX 19 E 18 WMAX 1 WN 0.031 EI 18 EII 0 EIII 18 WALL 1
+GAME red/so/instances/tevlast_cex_n40.pg RWIN tevlast_cex_n40.pg n 40 LMAX 5 E 4 WMAX 1 WN 0.025 EI 3 EII 0 EIII 4 WALL 1
+GAME red/so/instances/tev_cex_n40.pg RWIN tev_cex_n40.pg n 40 LMAX 5 E 4 WMAX 1 WN 0.025 EI 3 EII 0 EIII 4 WALL 1
+GAME red/so/instances/tevlast7_n32.pg RWIN tevlast7_n32.pg n 32 LMAX 29 E 5 WMAX 15 WN 0.469 EI 4 EII 0 EIII 5 WALL 15
+GAME red/so/instances/tog6a_n32.pg RWIN tog6a_n32.pg n 32 LMAX 5 E 5 WMAX 0 WN 0.0 EI 0 EII 2 EIII 4 WALL 0
+GAME red/so/instances/tog6b_n32.pg RWIN tog6b_n32.pg n 32 LMAX 6 E 5 WMAX 1 WN 0.031 EI 1 EII 2 EIII 4 WALL 1
+GAME red/so/instances/tevlast11_n40.pg RWIN tevlast11_n40.pg n 40 LMAX 30 E 5 WMAX 15 WN 0.375 EI 3 EII 0 EIII 6 WALL 15
+GAME red/so/instances/xrun21_n24.pg RWIN xrun21_n24.pg n 24 LMAX 21 E 0 WMAX 21 WN 0.875 EI 0 EII 0 EIII 0 WALL 21
+GAME red/so/instances/xrun8_n10.pg RWIN xrun8_n10.pg n 10 LMAX 7 E 3 WMAX 2 WN 0.2 EI 2 EII 0 EIII 3 WALL 2
+GAME red/so/instances/xsn29_n32.pg RWIN xsn29_n32.pg n 32 LMAX 29 E 0 WMAX 29 WN 0.906 EI 0 EII 0 EIII 0 WALL 29
+GAME red/so/instances/xsn43_n48.pg RWIN xsn43_n48.pg n 48 LMAX 43 E 3 WMAX 21 WN 0.438 EI 3 EII 0 EIII 3 WALL 21
+GAME red/so/instances/xsnf42_n48.pg RWIN xsnf42_n48.pg n 48 LMAX 42 E 0 WMAX 42 WN 0.875 EI 0 EII 0 EIII 0 WALL 42
+GAME red/so/instances/xsnf52_n64.pg RWIN xsnf52_n64.pg n 64 LMAX 52 E 0 WMAX 52 WN 0.812 EI 0 EII 0 EIII 0 WALL 52
+GAME red/tcpert/instances/leanT_N12.pg RWIN leanT_N12.pg n 96 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/so/instances/xsn91_n48.pg RWIN xsn91_n48.pg n 48 LMAX 25 E 6 WMAX 11 WN 0.229 EI 14 EII 0 EIII 22 WALL 11
+GAME red/tcpert/instances/leanT_N16.pg RWIN leanT_N16.pg n 128 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/tcpert/instances/leanT_N6.pg RWIN leanT_N6.pg n 48 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/tcpert/instances/leanT_N8.pg RWIN leanT_N8.pg n 64 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/tcpert/instances/leanT_N24.pg RWIN leanT_N24.pg n 192 LMAX 3 E 3 WMAX 0 WN 0.0 EI 3 EII 0 EIII 3 WALL 0
+GAME red/tcpert/instances/tcL_N3.pg RWIN tcL_N3.pg n 42 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/tcpert/instances/tcL_N10.pg RWIN tcL_N10.pg n 350 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/tcpert/instances/tcL_N4.pg RWIN tcL_N4.pg n 68 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/tcpert/instances/tcL_N5.pg RWIN tcL_N5.pg n 100 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/tcpert/instances/tcL_N6.pg RWIN tcL_N6.pg n 138 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/tcpert/instances/tcR4_N4.pg RWIN tcR4_N4.pg n 68 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/tcpert/instances/tcR4_N5.pg RWIN tcR4_N5.pg n 100 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/tcpert/instances/leanT_N32.pg RWIN leanT_N32.pg n 256 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/tcpert/instances/tcL_N8.pg RWIN tcL_N8.pg n 232 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/tcpert/instances/tcR4_N6.pg RWIN tcR4_N6.pg n 138 LMAX 1 E 1 WMAX 0 WN 0.0 EI 1 EII 0 EIII 1 WALL 0
+GAME red/tcpert/instances/tcR4_N7.pg RWIN tcR4_N7.pg n 182 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/tcpert/instances/tcL_N12.pg RWIN tcL_N12.pg n 492 LMAX 2 E 0 WMAX 2 WN 0.004 EI 0 EII 0 EIII 0 WALL 2
+GAME red/tcpert/instances/tcR4_N8.pg RWIN tcR4_N8.pg n 232 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/tcpert/instances/tcS8_N10.pg RWIN tcS8_N10.pg n 350 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/tcpert/instances/tcS8_N6.pg RWIN tcS8_N6.pg n 138 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/tcpert/instances/tcS8_N7.pg RWIN tcS8_N7.pg n 182 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/tpp/instances/tpp_viol_n22.pg RWIN tpp_viol_n22.pg n 22 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/tcpert/instances/tcS8_N8.pg RWIN tcS8_N8.pg n 232 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/tpp/instances/tpp_viol_n63.pg RWIN tpp_viol_n63.pg n 63 LMAX 1 E 1 WMAX 0 WN 0.0 EI 1 EII 0 EIII 0 WALL 0
+GAME red/ul/instances/cxmig_k4_n54.pg red/ul/instances/cxmig_k4_n54.start RWIN cxmig_k4_n54.pg n 54 LMAX 12 E 5 WMAX 7 WN 0.13 EI 1 EII 0 EIII 5 WALL 7
+GAME red/ul/instances/cxmig_k8_n82.pg red/ul/instances/cxmig_k8_n82.start RWIN cxmig_k8_n82.pg n 82 LMAX 16 E 9 WMAX 7 WN 0.085 EI 1 EII 0 EIII 9 WALL 7
+GAME red/tcpert/instances/tcS8_N11.pg RWIN tcS8_N11.pg n 418 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/ul/instances/ladderd0_k12_n48.pg red/ul/instances/ladderd0_k12_n48.start RWIN ladderd0_k12_n48.pg n 48 LMAX 14 E 1 WMAX 13 WN 0.271 EI 1 EII 0 EIII 1 WALL 13
+GAME red/ul/instances/cxmig_k16_n138.pg red/ul/instances/cxmig_k16_n138.start RWIN cxmig_k16_n138.pg n 138 LMAX 24 E 17 WMAX 7 WN 0.051 EI 1 EII 0 EIII 17 WALL 7
+GAME red/ul/instances/ladderd0_k24_n84.pg red/ul/instances/ladderd0_k24_n84.start RWIN ladderd0_k24_n84.pg n 84 LMAX 26 E 1 WMAX 25 WN 0.298 EI 1 EII 0 EIII 1 WALL 25
+GAME red/tcpert/instances/tcS8_N9.pg RWIN tcS8_N9.pg n 288 LMAX 2 E 2 WMAX 0 WN 0.0 EI 2 EII 0 EIII 2 WALL 0
+GAME red/ul/instances/ladderent_k12_n48.pg red/ul/instances/ladderent_k12_n48.start RWIN ladderent_k12_n48.pg n 48 LMAX 14 E 13 WMAX 1 WN 0.021 EI 13 EII 0 EIII 1 WALL 1
+GAME red/ul/instances/reader_L10_n36.pg red/ul/instances/reader_L10_n36.start RWIN reader_L10_n36.pg n 36 LMAX 13 E 1 WMAX 11 WN 0.306 EI 1 EII 0 EIII 1 WALL 11
+GAME red/ul/instances/reader_L20_n56.pg red/ul/instances/reader_L20_n56.start RWIN reader_L20_n56.pg n 56 LMAX 23 E 1 WMAX 21 WN 0.375 EI 1 EII 0 EIII 1 WALL 21
+GAME red/ul/instances/ladderent_k24_n84.pg red/ul/instances/ladderent_k24_n84.start RWIN ladderent_k24_n84.pg n 84 LMAX 26 E 25 WMAX 1 WN 0.012 EI 25 EII 0 EIII 1 WALL 1
+GAME red/ul/instances/reader_L40_n96.pg red/ul/instances/reader_L40_n96.start RWIN reader_L40_n96.pg n 96 LMAX 43 E 1 WMAX 41 WN 0.427 EI 1 EII 0 EIII 1 WALL 41
+GAME red/usplit/instances/gate_K16_n197.pg red/usplit/instances/gate_K16_n197.start RWIN gate_K16_n197.pg n 197 LMAX 23 E 16 WMAX 3 WN 0.015 EI 16 EII 0 EIII 9 WALL 3
+GAME red/ul/instances/ladderd0_k48_n156.pg red/ul/instances/ladderd0_k48_n156.start RWIN ladderd0_k48_n156.pg n 156 LMAX 50 E 1 WMAX 49 WN 0.314 EI 1 EII 0 EIII 1 WALL 49
+GAME red/usplit/instances/grow_K12_n149.pg red/usplit/instances/grow_K12_n149.start RWIN grow_K12_n149.pg n 149 LMAX 19 E 2 WMAX 17 WN 0.114 EI 2 EII 0 EIII 2 WALL 17
+GAME red/usplit/instances/pairoc_n58.pg red/usplit/instances/pairoc_n58.start RWIN pairoc_n58.pg n 58 LMAX 5 E 2 WMAX 3 WN 0.052 EI 2 EII 0 EIII 2 WALL 3
+GAME red/usplit/instances/pp_K12_n161.pg red/usplit/instances/pp_K12_n161.start RWIN pp_K12_n161.pg n 161 LMAX 19 E 14 WMAX 3 WN 0.019 EI 14 EII 0 EIII 14 WALL 3
+GAME red/ul/instances/ladderent_k48_n156.pg red/ul/instances/ladderent_k48_n156.start RWIN ladderent_k48_n156.pg n 156 LMAX 50 E 49 WMAX 1 WN 0.006 EI 49 EII 0 EIII 1 WALL 1
+GAME red/usplit/instances/pp_K12_n161_dual.pg RWIN pp_K12_n161_dual.pg n 161 LMAX 1 E 0 WMAX 1 WN 0.006 EI 0 EII 0 EIII 0 WALL 1
+GAME red/usplit/instances/grow_K40_n373.pg red/usplit/instances/grow_K40_n373.start RWIN grow_K40_n373.pg n 373 LMAX 47 E 2 WMAX 45 WN 0.121 EI 2 EII 0 EIII 2 WALL 45
+GAME red/usplit/instances/usplit_n14.pg red/usplit/instances/usplit_n14.start RWIN usplit_n14.pg n 14 LMAX 3 E 1 WMAX 2 WN 0.143 EI 1 EII 0 EIII 1 WALL 2
+GAME red/usplit/instances/usplit_n23.pg red/usplit/instances/usplit_n23.start RWIN usplit_n23.pg n 23 LMAX 9 E 1 WMAX 8 WN 0.348 EI 1 EII 0 EIII 1 WALL 8
+GAME red/usplit/instances/usplit_rd_n24.pg red/usplit/instances/usplit_rd_n24.start RWIN usplit_rd_n24.pg n 24 LMAX 4 E 2 WMAX 2 WN 0.083 EI 2 EII 0 EIII 2 WALL 2
+GAME red/usplit/instances/usplit_rd_s3_n27.pg RWIN usplit_rd_s3_n27.pg n 27 LMAX 4 E 2 WMAX 2 WN 0.074 EI 2 EII 0 EIII 2 WALL 2
+GAME red/usplit/instances/usplit_s3_n16.pg RWIN usplit_s3_n16.pg n 16 LMAX 3 E 1 WMAX 2 WN 0.125 EI 1 EII 0 EIII 1 WALL 2
+GAME red/xctx/instances/nest3_n20.pg RWIN nest3_n20.pg n 20 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/xctx/instances/nest3_n24.pg RWIN nest3_n24.pg n 24 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/xctx/instances/vrall_viol_n20.pg RWIN vrall_viol_n20.pg n 20 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/xctx/instances/xcov11_n20.pg RWIN xcov11_n20.pg n 20 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/xctx/instances/xctx_viol_n20.pg RWIN xctx_viol_n20.pg n 20 LMAX 0 E 0 WMAX 0 WN 0.0 EI 0 EII 0 EIII 0 WALL 0
+GAME red/xing/instances/fbref_cex_n32.pg RWIN fbref_cex_n32.pg n 32 LMAX 16 E 3 WMAX 4 WN 0.156 EI 6 EII 0 EIII 9 WALL 5
+GAME red/xing/instances/j10_n24.pg RWIN j10_n24.pg n 24 LMAX 15 E 11 WMAX 1 WN 0.083 EI 17 EII 0 EIII 17 WALL 2
+GAME red/xing/instances/j4_n40.pg RWIN j4_n40.pg n 40 LMAX 31 E 12 WMAX 8 WN 0.2 EI 32 EII 0 EIII 37 WALL 8
+GAME red/xing/instances/j5_n16.pg RWIN j5_n16.pg n 16 LMAX 11 E 7 WMAX 2 WN 0.25 EI 7 EII 0 EIII 7 WALL 4
+GAME red/xing/instances/j7_n32.pg RWIN j7_n32.pg n 32 LMAX 23 E 9 WMAX 6 WN 0.312 EI 12 EII 0 EIII 13 WALL 10
+GAME red/xing/instances/j7_n48.pg RWIN j7_n48.pg n 48 LMAX 20 E 5 WMAX 5 WN 0.229 EI 14 EII 0 EIII 16 WALL 11
+GAME red/xing/instances/j8_n32.pg RWIN j8_n32.pg n 32 LMAX 21 E 5 WMAX 8 WN 0.25 EI 15 EII 0 EIII 16 WALL 8
+GAME red/usplit/instances/pp_K48_n449.pg red/usplit/instances/pp_K48_n449.start RWIN pp_K48_n449.pg n 449 LMAX 55 E 50 WMAX 3 WN 0.007 EI 50 EII 0 EIII 50 WALL 3
+GAME red/xing/instances/j8_n48.pg RWIN j8_n48.pg n 48 LMAX 20 E 5 WMAX 8 WN 0.229 EI 14 EII 0 EIII 16 WALL 11
+GAME red/xing/instances/kw25_n32.pg RWIN kw25_n32.pg n 32 LMAX 25 E 0 WMAX 25 WN 0.781 EI 1 EII 0 EIII 1 WALL 25
+GAME red/xing/instances/kw_n16.pg RWIN kw_n16.pg n 16 LMAX 12 E 0 WMAX 12 WN 0.75 EI 0 EII 0 EIII 0 WALL 12
+GAME red/xing/instances/kw_n24.pg RWIN kw_n24.pg n 24 LMAX 20 E 0 WMAX 20 WN 0.833 EI 0 EII 0 EIII 0 WALL 20
+GAME red/xing/instances/obr_eq_n24.pg RWIN obr_eq_n24.pg n 24 LMAX 4 E 0 WMAX 4 WN 0.167 EI 0 EII 0 EIII 0 WALL 4
+GAME red/xing/instances/kw_n48.pg RWIN kw_n48.pg n 48 LMAX 40 E 0 WMAX 40 WN 0.833 EI 0 EII 0 EIII 0 WALL 40
+GAME red/xing/instances/obr_n32.pg RWIN obr_n32.pg n 32 LMAX 15 E 0 WMAX 15 WN 0.469 EI 0 EII 0 EIII 0 WALL 15
+GAME red/usplit/instances/pp_K48_n449_dual.pg RWIN pp_K48_n449_dual.pg n 449 LMAX 1 E 0 WMAX 1 WN 0.002 EI 0 EII 0 EIII 0 WALL 1
+GAME red/xing/instances/u1t_cex_n32.pg RWIN u1t_cex_n32.pg n 32 LMAX 7 E 0 WMAX 7 WN 0.219 EI 0 EII 0 EIII 0 WALL 7
+GAME red/xing/instances/u1t_own6_n32.pg RWIN u1t_own6_n32.pg n 32 LMAX 6 E 0 WMAX 6 WN 0.188 EI 1 EII 0 EIII 1 WALL 6
+GAME red/xing/instances/u23sw64_n32.pg RWIN u23sw64_n32.pg n 32 LMAX 8 E 0 WMAX 8 WN 0.25 EI 1 EII 0 EIII 3 WALL 8
+GAME red/xing/instances/x31_cu16.pg RWIN x31_cu16.pg n 16 LMAX 13 E 13 WMAX 0 WN 0.0 EI 18 EII 0 EIII 20 WALL 0
+GAME red/xing/instances/u2flat73_n32.pg RWIN u2flat73_n32.pg n 32 LMAX 3 E 0 WMAX 3 WN 0.094 EI 0 EII 0 EIII 0 WALL 3
+GAME red/xing/instances/u2flat_n32.pg RWIN u2flat_n32.pg n 32 LMAX 2 E 1 WMAX 1 WN 0.031 EI 0 EII 0 EIII 1 WALL 1
+GAME red/xing/instances/x31_cu24.pg RWIN x31_cu24.pg n 24 LMAX 8 E 8 WMAX 0 WN 0.042 EI 0 EII 0 EIII 16 WALL 1
+GAME red/xing/instances/x31_cu32i.pg RWIN x31_cu32i.pg n 32 LMAX 21 E 21 WMAX 0 WN 0.0 EI 37 EII 0 EIII 38 WALL 0
+GAME red/xing/instances/x31_cu32.pg RWIN x31_cu32.pg n 32 LMAX 21 E 21 WMAX 0 WN 0.0 EI 39 EII 0 EIII 40 WALL 0
+GAME red/xing/instances/x31_cu48.pg RWIN x31_cu48.pg n 48 LMAX 22 E 22 WMAX 0 WN 0.0 EI 40 EII 0 EIII 41 WALL 0
+GAME red/xing/instances/x31_lem_e24.pg RWIN x31_lem_e24.pg n 24 LMAX 14 E 0 WMAX 14 WN 0.583 EI 0 EII 0 EIII 0 WALL 14
+GAME red/xing/instances/x31_nh_r20.pg RWIN x31_nh_r20.pg n 20 LMAX 13 E 0 WMAX 13 WN 0.65 EI 0 EII 0 EIII 0 WALL 13
+GAME red/xing/instances/x31_nh_e24.pg RWIN x31_nh_e24.pg n 24 LMAX 20 E 0 WMAX 20 WN 0.833 EI 0 EII 0 EIII 0 WALL 20
+GAME red/xing/instances/x31_lem_t32.pg RWIN x31_lem_t32.pg n 32 LMAX 12 E 0 WMAX 12 WN 0.375 EI 1 EII 0 EIII 2 WALL 12
+GAME red/xing/instances/x31_ru24.pg RWIN x31_ru24.pg n 24 LMAX 4 E 0 WMAX 4 WN 0.167 EI 0 EII 0 EIII 0 WALL 4
+GAME red/xing/instances/x31_re24.pg RWIN x31_re24.pg n 24 LMAX 4 E 0 WMAX 4 WN 0.167 EI 0 EII 0 EIII 0 WALL 4
+GAME red/xing/instances/x31_rx32.pg RWIN x31_rx32.pg n 32 LMAX 22 E 22 WMAX 0 WN 0.031 EI 46 EII 0 EIII 49 WALL 1
+GAME red/xing/instances/x31_rx48.pg RWIN x31_rx48.pg n 48 LMAX 22 E 22 WMAX 0 WN 0.021 EI 42 EII 0 EIII 45 WALL 1
+GAME red/xing/instances/x32_rand16.pg RWIN x32_rand16.pg n 16 LMAX 13 E 0 WMAX 13 WN 0.812 EI 0 EII 0 EIII 0 WALL 13
+GAME red/xing/instances/x32_nest40.pg RWIN x32_nest40.pg n 40 LMAX 26 E 9 WMAX 9 WN 0.225 EI 17 EII 0 EIII 19 WALL 9
+GAME red/xing/instances/x32_rand24.pg RWIN x32_rand24.pg n 24 LMAX 20 E 0 WMAX 20 WN 0.833 EI 0 EII 0 EIII 0 WALL 20
+GAME red/xing/instances/x32_rand32.pg RWIN x32_rand32.pg n 32 LMAX 29 E 0 WMAX 29 WN 0.906 EI 0 EII 0 EIII 0 WALL 29
+GAME red/xing/instances/x32_rand48.pg RWIN x32_rand48.pg n 48 LMAX 44 E 0 WMAX 44 WN 0.917 EI 0 EII 0 EIII 0 WALL 44
+GAME red/xing/instances/x32_rand64.pg RWIN x32_rand64.pg n 64 LMAX 55 E 0 WMAX 55 WN 0.859 EI 0 EII 0 EIII 0 WALL 55
+GAME si/root/instances/cone_n65.pg RWIN cone_n65.pg n 65 LMAX 2 E 1 WMAX 1 WN 0.015 EI 1 EII 0 EIII 1 WALL 1
+GAME red/xing/instances/x32_waves32.pg RWIN x32_waves32.pg n 32 LMAX 22 E 4 WMAX 9 WN 0.281 EI 11 EII 0 EIII 16 WALL 9
+GAME si/root/instances/ueonce_n27.pg RWIN ueonce_n27.pg n 27 LMAX 10 E 1 WMAX 9 WN 0.333 EI 1 EII 0 EIII 1 WALL 9
+GAME si/root/instances/cone_n69.pg RWIN cone_n69.pg n 69 LMAX 1 E 1 WMAX 0 WN 0.0 EI 0 EII 0 EIII 1 WALL 0
+GAME red/xing/instances/x32_waves48.pg RWIN x32_waves48.pg n 48 LMAX 26 E 1 WMAX 25 WN 0.521 EI 1 EII 0 EIII 3 WALL 25
+GAME red/usplit/instances/gate_K64_n581.pg red/usplit/instances/gate_K64_n581.start RWIN gate_K64_n581.pg n 581 LMAX 71 E 64 WMAX 3 WN 0.005 EI 64 EII 0 EIII 33 WALL 3
