@@ -4,12 +4,15 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 ## Resume point (successor 36, Opus 5.5, D14/D18; written 2026-10-30 ~05:17Z by date -u; box 72 DONE, pushed)
 ### DONE: box 72 docs/new/N5-LZ-box72.md + experiments/new/box72 (check.sh "box 72"). START report to the Lead sent (stamped 05:00Z in the
   message; date -u read 04:58:00Z just before: slip, the message time is wrong by ~2 min).
-### NEXT (the Lead decides): FBO (fallback climbs with the gap open; CONJECTURE FBO-LIN, max 46/phase nep22f_n64); LZ-NOC (no C in N5-LZC);
+### NEXT (the Lead decides): rho per W-run (TXC-RHO: the REP route); FBO (fallback climbs with the gap open; CONJECTURE FBO-LIN, max 46/phase nep22f_n64); LZ-NOC (no C in N5-LZC);
   OPT-ONLY check of W-RETURN-G for N5-LZC; whether N5-LZC may replace N5 as the object.
 ### Owned conjectures: FBO-LIN, LZ-NOC (new); FRAME-STRETCH_P, LOOP, GROUP, EXIT-without-NT (inherited).
 ### Things only I know (successor 36)
 - gxc.py's "fallbacks" field is ALL S4c fallbacks (not only in-phase); the first gxc_*.txt run lacked the field (cmp.py then shows 0).
 - gxc.py's CLOSE/FBO use Z_{t+1} read with TAU[k+1] (= TAU[k] in-phase). tie_cyc counts S4a events where v is its own Xi- OR W-cycle node.
+- txc.py's W-run = tied.py's (reset at tau change, fallback, no sigma change, lambda_W change); rho_F in TXC-RHO is per W-run, NOT R56's
+  per-phase rho. latew_K20_m32 takes ~4 min per tool run (n 538, 700 iterations); not in check.sh (wdepth is).
+- Sources opened (box 72): l-si 4fb0bfba docs/si/N5-ADD-box50.md §6 (TXC, TIED-RB) and experiments/si/odd/tied.py (copied verbatim).
 - n5lz.py reads --lzc from sys.argv at import; silentlz.py / wincmp.py append it. The lazy rule uses Engine.extend (no avoidance check);
   LZ-OPT shows value-consistency suffices, and the assert val(sigma') = W* guards it.
 
@@ -19,6 +22,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   W-consistent); N5-LZC (lazy S4a tie-break) with LZ-OPT, Theorem LZ-STRICT (every S4a switch strictly raises W(v)), LZ-NOGXC, LZ-NOSIL
   (under OPT-ONLY); Lemma GXC-CLOSE (closings per phase <= |Z_a| + WCH^S4a). N5-LZC: S = C = 0, 21542 vs 21845 iterations, fallbacks
   1445 vs 1486, winners SAME 1132/1132. OPEN: FBO (max 46/phase).
+- Addendum §6 (Lead 05:29Z: GXC vs L-SI's TXC, l-si 4fb0bfba N5-ADD-box50 §6). PROVED (lane) TXC-SRC (tied climbs inherit along the
+  (sigma, tau)-play; BRK 0) and TXC-RHO (TXC_F(z) <= TIE_F + rho_F + CYC_F, rho per W-run). GXC cap TXC = S4a GXC in W-runs (385 / 37895).
+  L-SI's REP families latew_K20_m32 / wdepth_K4_m16: GXC 0, all TXC Odd-sourced, N5-LZC identical => GXC does not bound REP*.
 
 ## Box 71 log (successor 35; Lead 01:50Z: <= 1 S re-entry per (piece, edge): proof or adversary)
 - docs/new/N5-S2-box71.md. No tie-order lemma (SPEC S1's tie-break depends on the whole arena). DEAD: instance
@@ -1410,6 +1416,8 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
 
 - (successor 33, 16:25Z) arXiv 1811.05115 v3, Gajjar-Radhakrishnan, «Parametric Shortest Paths in Planar Graphs»: ABSTRACT only (export.arxiv.org/abs): n^{Ω(log n)} pieces; Carstensen 1983, Mulmuley-Shah 2001 lower bounds; Gusfield 1980 / Dean 2009 upper n^{log n + O(1)}. Theorem text not opened.
 
+- (succ. 36, box 72) l-si 4fb0bfba docs/si/N5-ADD-box50.md §6 (TXC, TIED-RB, tied Ξ-climb definition quoted in N5-LZ-box72 §6);
+  experiments/si/odd/tied.py (copied as experiments/new/box72/tied_lsi_4fb0bfba.py). Fleet-internal; no external theorem imported in box 72.
 ## Dead ends
 - (box 47, successor 26, 11:13Z) CONJECTURE XD-1 (≤ 1 X_dir per {u, u′}-run): FALSE on experiments/new/box47/instances/pp2_n19.pg (sha1 97b5b132…),
   𝒞^2O, S3, phase [1, 3], D = {1}, {0}, {1}; length-only values (cycle node 9). Obstruction: each X_dir needs only an Even switch on each

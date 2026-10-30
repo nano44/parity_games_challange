@@ -355,4 +355,10 @@ if grep -q "iters 10 classes {'F': 12} max-S-per-edge 0 max-C-per-edge 0" <<<"$w
 else
   echo "box 72 LZ cw11 check: FAILED"; exit 1
 fi
+w23=$(cd .. && python3 -I new/box72/txc.py new/box72/inst/wdepth_K4_m16.pg new/box72/inst/wdepth_K4_m16.start; python3 -I new/box72/runlzc.py new/box72/tied_lsi_4fb0bfba.py new/box72/inst/wdepth_K4_m16.pg new/box72/inst/wdepth_K4_m16.start)
+if grep -q "txc 184 .* gxc 0 .* src {'SBAR': 93, 'WIT': 91}" <<<"$w23" && grep -q "rep 21 tied 21 untied 0 reblk 21" <<<"$w23"; then
+  echo "box 72 TXC: wdepth_K4_m16 184 tied climbs, all Odd-sourced (SBAR 93, WIT 91), GXC 0; 21 tied REPEATs also on N5-LZC: PASS"
+else
+  echo "box 72 TXC check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

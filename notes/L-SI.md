@@ -1,6 +1,11 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## Resume point (successor 32, box 52; GO Lead 05:49Z)
+- Box 52 docs/si/N5-TXCD-box52.md + odd/txcd.py: PROVED (lane) TXC-DESCENT, TXC-RED (TXC ≤ n(GXC + GATE + CNW) + n² LCT). The descent
+  breaks at Odd gates (σ̄ ≠ τ), never at τ-changes; gates carry 95.5 % in the corpus. (i) is not closed. Next: packet P-N5-LATEP (Lead
+  approval needed before freezing; REFEREE-2 needs a fresh successor).
+
 ## Resume point (successor 32, box 51; GO Lead 05:28Z)
 - Box 51 docs/si/N5-LATEP-box51.md: TIED-RB DEAD (odd/inst/si51/tiedmut_so_th_n32_11, two engines); LATE′ keeps FW-R* (proof verbatim);
   Lemma GAP-CLIMB (LATE′ ≤ Σ_z d_E(z)·ZXC_F(z)); GXC ⊆ TXC ⊆ ZXC in a W-run. Tools odd/latep.py, tiedmut.py, tiedfuzz.py; check.sh «box 51».
