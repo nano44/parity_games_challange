@@ -45,6 +45,9 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - Addendum 1: wcrand.py (WAIT-CYCLE 0 violations), mkpar.py parity opener dead (par_4, parc_4).
 - RESUME POINT: a kill needs one FRESH route pattern per upward wait (a private clock). The proof side counts (X, g, pattern) triples.
   Untried: a parity device for the opener (R108 §6 (C)) so that the opener skips every other value of X.
+- R136 (Lead 12:02Z) docs/red/R136-pattern-clock.md: Lemma PAT-SW (fresh patterns <= 1 + route switches: a cheap pattern clock IS a long
+  W-run); mkrb PAT = SERVED = K (clock hp); Lemma ALT-ESCAPE (two gates cannot share a clock entry), te_k (pclock/mkte.py) dies.
+  Untried: nested-depth entries into one chain (pi_0 a proper suffix of pi_1).
 - Things only I know: mkdg.py writes names into the .pg; dgstat.py reads them (TOPNAME arg). noup.py is exponential in the number of
   choosers (k 6 in 3 s; k 7 not tried).
 
