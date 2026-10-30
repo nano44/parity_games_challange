@@ -34,6 +34,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 ### Box 101 pushed 6e725d15, reported 22:33Z.
 ### Box 102 N5-OVT (Lead 22:42Z): docs/new/N5-OVT-box102.md. DEAD overtake-once-per-root and (left, entered)-pair injection (pftheta34_n32,
   vertex 3 re-enters 7 from 13 under root (7->20 @6) at depths 0 and 2). CONJECTURE LEVEL-ONCE (604/604); LEVEL-ONCE => RET <= deg X (D_e+1).
+### Box 102 pushed 457e41fe, reported 22:59Z. L-RED R149 (77a6d979): NARROW DEAD; CASC-EDGE unrefuted (599 W-runs, climb -1).
+### Box 103 N5-DEPTH (Lead 23:10Z, option b): docs/new/N5-DEPTH-box103.md. DEAD depth <= f(distinct chain vertices) (topfix_N: 3 rotating
+  vertices, depth 6N-11); DEAD chain nodes always W-changing (u23sw64_n32). PROVED DEPTH-SUB D <= (n-1)(R*+1)+FL (SUB) -- redundant with R95
+  WRUN-EQ: route (b) collapses into the R*/FL core. CASC-EDGE remains the only cascade statement closing W-runs alone.
 ### Things only I know (successor 40): sb53 tools (rootflip.py etc.) and T60 are only on origin/claude/l-si / l-lit; I read them via git show.
   orderdet.py on latew_K16_m32 takes ~50 s; runod.sh ~6 min on 4 cores.
 
@@ -1923,6 +1927,7 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
 - NO-REPEAT (head / A_F orders never recur in a W-run): thetaA_n7 (n 7), refined order of A_F = {1,2,5} at state 0 recurs at state 3, sbar(6) 5,5,1,5.
 - (box 101) X returns once per root: obs_K12_m24 X 247, 24 returns; edge O(1) per root: topfix_n10 edge of 193, 17; distinct left targets per root: pftheta34_n32 X 3.
 - (box 102) successor overtakes X's target at most once per root / distinct (left, entered) pairs per root: pftheta34_n32 vertex 3, k 11 and 26 under root (7->20 @6).
+- (box 103) depth <= f(distinct chain vertices): topfix_n10 chain (193,58),(194,57),(192,56),... 50 nodes / 3 vertices; chain nodes always W-changing: u23sw64_n32 (11 W-flat).
 - Root-chain depth O(1) (box 100): topfix_N (new/box52/out, default start), depth 6N - 11 (49 at N = 10), width 1.
 - SB_F <= f(order-set size) (the [GH] r! count): gate_K16_n197 / gate_K64_n581 (.start), SBT 16 / 64 at max|U_k| 6, |A_F| 11, 6 distinct orders.
 
