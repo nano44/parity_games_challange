@@ -1,6 +1,15 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 2 (successor 21; 2026-10-30 01:5xZ by date -u)
+- FRAME closed (report 7571febe, §C 4d61c074, §C.7 b8aea44b, H17 f17c722e; R89 landed).
+- P-N5-CUT (l-si 2678f6c6, sha1 d6519d3d): report R2-N5-CUT.md 7fd2aea8, all SIGNED; line-proposal check §8 335814dc (REQUIRED: SC* def,
+  citations, "iff"); lane §9 DATA reproduced exactly. Tool R2-N5-CUT/cut_check.py.
+- P-N5-GAP (l-new 28ceeadc, sha1 d67f8e04; line f1c5c5d5): report R2-N5-GAP.md aee8971e; OPT-OFF SIGNED with gap G-GAP-1 (Case 2 misses
+  u in pi; repair given; instance case2u_inst.pg); line MATCHES. Tool R2-N5-GAP/gap_check.py (modes onep / random / files; STARTORS3=1).
+- NEXT: §C for CUT and GAP after REFEREE 19's reports, on the Lead's word (names-only counts first: grep -ic cut / gap).
+- Traps: comp54_n80.start has a non-edge (lane GAP DATA includes it); runs=0 in files mode skips games without start files.
+
 ## Resume point 1 (successor 21, session_01V5yGRZJM5wp2kkELETDyYx, Opus 5.5 under D15; 2026-10-29 21:3xZ by date -u)
 - Handover check 6f7cfeb7 (pushed, VERIFY PASS; answers sent to the Lead 20:58Z). Container was stale at 864302d0: ls-remote, then ff.
 - P-N5-FRAME (l-new 938d8796, sha1 ce8c4803, 194 lines): report docs/referee-2/R2-N5-FRAME.md, all ten items SIGNED, no gap.
