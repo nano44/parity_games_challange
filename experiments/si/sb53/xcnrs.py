@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""L-SI box 53 §6: own-cycle-node sbar-flips (XCN) per W-run. xcn.py GAME.pg [START]: XCN_TR (most XCN transitions in one W-run), XCN_V (most at one vertex), XCN_RUN_ALL (whole run). xcnrs.py SEED COUNT N DMAX BIAS: random search for the most XCN transitions in one W-run."""
+"""L-SI box 53 §6: own-cycle-node sbar-flips (XCN) per W-run. xcn.py GAME.pg [START]: XCN_TR (most XCN transitions in one W-run), XCN_V (most at one vertex), XCN_RUN_ALL (whole run). xcnrs.py SEED COUNT N DMAX BIAS: random search for the most XCN transitions in one W-run. BIAS 1: vertex 0 Odd with the top odd priority; BIAS 2: the same, and the other vertices Even with probability 0.75."""
 import sys, os, random
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "new", "box21"))
 from n5x import step, start_pair, Engine, dual
 import pg
 seed, cnt, N, D, B = map(int, sys.argv[1:6]); rng = random.Random(seed); best = (0, None)
 for i in range(cnt):
-    n = N; own = [rng.randint(0, 1) for _ in range(n)]; pr = [rng.randint(0, n) for _ in range(n)]
+    n = N; own = [rng.randint(0, 1) if B < 2 else int(rng.random() < 0.25) for _ in range(n)]; pr = [rng.randint(0, n) for _ in range(n)]
     if B: own[0] = 1; pr[0] = (max(pr) + 1) | 1
     succ = [rng.sample(range(n), rng.randint(1, D)) for _ in range(n)]; g = pg.Game(pr, own, succ)
     E, Ed = Engine(g), Engine(dual(g))
