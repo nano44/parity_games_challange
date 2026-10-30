@@ -7269,6 +7269,482 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   FBO events and Z-flat fallbacks to residual counts and the premise [P-WCHτ], none bounded; no bound on a run, no running-time bound, no
   algorithm claim). GAPS G-N5-TIME: open.
 
+### R94 [refereed-only] N5 on EVERY game (SPEC S1-S5, under the standing SPEC premise of RESULTS R57; premises RESULTS R15 (a), (d), R38 (a) and R93 (a) (Fact LEX, COMMON PREFIX); a run is the sequence of states (σ_t, τ_t); a transition is written t → t + 1 (states t, t + 1); n the number of vertices of the game; Ξ_t := Ξ_{σ_t} (SPEC S1: the valuation of every vertex under σ_t and Odd's optimal counterstrategy σ̄_t), λ_Ξ its cycle-node map; ⊴, ◁, ⊵, ▷ the SPEC S1 order (better for Even) and its strict and reverse forms; a phase P = [a, b] as in RESULTS R38 (a) (a maximal run of consecutive states a, …, b with (λ_Ξ, τ_t) constant), |P| := b − a its transitions; CS(x) the coordinate sequence of a value x of RESULTS R93 Fact LEX (reward of the cycle node; for each rank r from n − 1 down to 0, +1, −1 or 0 as the vertex of rank r is in the path set with even priority, with odd priority, or not; length, negated when the cycle node has even priority), in which the SPEC S1 order is lexicographic; for a phase P = [a, b], a state t ∈ P and a vertex v, DEPTH_t(v) := the length of the longest common prefix of CS(Ξ_t(v)) and CS(Ξ_b(v)) (n + 2 iff Ξ_t(v) = Ξ_b(v)) and K_t := Σ_v DEPTH_t(v) ∈ [0, n(n + 2)]; CH_P := the transitions of P at which Ξ changes at some vertex; FLATTR_P := the transitions of P at which Ξ changes at some vertex and K does not change; an Even vertex x is switched at k if σ_{k+1}(x) ≠ σ_k(x); FLATSW_P(x) := the transitions k → k + 1 counted in FLATTR_P at which the Even vertex x is switched and Ξ_{k+1}(x) ≠ Ξ_k(x)): (Lemma FIXD-MON) for states t ≤ t′ of a phase P and every vertex v, DEPTH_{t′}(v) ≥ DEPTH_t(v), so K is non-decreasing inside every phase; (Theorem PHASE-RED) every phase P has |P| ≤ (4n(n − 1) + 1)·(CH_P + 1) and CH_P ≤ n(n + 2) + FLATTR_P, so |P| ≤ (4n(n − 1) + 1)·(n(n + 2) + FLATTR_P + 1); and (Theorem FLAT-SW, proof of record Theorem SW-KEEP (REFEREE R-N5-FIXD §4b, claude/referee 2c9d8040; signed by REFEREE-2 R2-N5-FIXD-C §C.4, claude/referee-2 73d44f3b), from RESULTS R15 (a), (d), the standing SPEC premise of RESULTS R57 and R93 (a)) every transition k → k + 1 of every N5 run at which Ξ changes at some vertex, in particular every transition counted in FLATTR_P for any phase P, has an Even vertex x switched at k with Ξ_{k+1}(x) ≠ Ξ_k(x); and (Corollary PHASE-RED′) every phase P has FLATTR_P ≤ Σ_{x Even} FLATSW_P(x) and |P| ≤ (4n(n − 1) + 1)·(n(n + 2) + Σ_{x Even} FLATSW_P(x) + 1) (2026-10-30) — a REDUCTION (FLATTR_P and FLATSW_P are not bounded here; FLAT-SW is proved by a referee-originated proof, SW-KEEP, signed by both referees; G-N5-TIME stays open; not M3, not a step-4 pass, not a TARGET.md claim), CHECKER PASS (docs/checker/C104.md, checker 5c4d6e45)
+- Object (L-NEW successor 38, Opus 5.5, D14 / D18, Lead reading L40; frozen, unchanged during review): packet P-N5-FIXD,
+  docs/new/P-N5-FIXD-box91.md, sha1 2050e167a300c676d54178cdc34ccf2daec87036, 89 lines (l-new freeze 5027c17c3dfda150dbaf5f03ba003acd51945b30,
+  2026-10-30T15:37:22Z, the file's only commit; identical at l-new head 85c12579, at origin trunk d1400cac and at the local trunk head
+  8e1a605c; first on trunk by d8e6cf31, 15:58:32Z). Both referees measured the sha1 at 5027c17c (REFEREE l. 3-5; REFEREE-2 l. 2-4, «in a
+  detached worktree at 5027c17c: match»). The Lead's freeze word is quoted at l. 2-5 («Lead 2026-10-30 15:33Z: «Your short box is BOX
+  91, a freeze … GO: freeze P-N5-FIXD now as a packet for the two referees. Contents: FIX-DEPTH, FIXD-MON, PHASE-RED with FLATTR.
+  PHASE-RED′ goes in only as conditional on CONJECTURE FLAT-SW. …»»). Status (l. 8-9): «REDUCTION only. FLATTR_P (equivalently Σ FLATSW
+  under FLAT-SW) is NOT bounded here. G-N5-TIME stays OPEN. Not M3, not a step-4 pass, not a TARGET.md claim. Object: N5 only (SPEC
+  S1-S5). Nothing is claimed for N5-LZC.» Sources (l. 6-7): working notes N5-FIXD-box77 §1-§2 and N5-FLATSRC-box79 §1, §3, «unrefereed;
+  THIS packet governs where they differ; none is cited as a proof»; not refereed here. Sections: §0 what to sign (l. 11-17), §1 setting
+  and premises (l. 19-33: N5, run, transition, Ξ_t, λ_Ξ, the order; PHASE per R38 (a), |P| := b − a; [LEX] = R93 (a) quoted; [R15] (a),
+  (d) quoted; MON «Ξ_{t+1} ⊵ Ξ_t pointwise at every transition»; Ωσ = Ξ_σ, Ωτ a function of τ), §2 FIX-DEPTH and FIXD-MON (l. 35-43),
+  §3 PHASE-RED (l. 45-59), §4 PHASE-RED′ under CONJECTURE FLAT-SW (l. 61-69), §5 DATA, DEAD, READING (l. 71-85), §6 symbols (l. 87-89).
+  The RESULTS line, history: (1) the frozen line docs/new/P-N5-FIXD-box91-line.txt (5027c17c), sha1
+  ba09dd261d5c885441845e09104f5e60bf0a81ed, the line both referees reviewed (REFEREE l. 4-5; REFEREE-2 l. 2-3); REFEREE l. 26 «MATCHES
+  §2-§4 and claims nothing more» with FIXD-N1 (free k), FIXD-N2 (premise), FIXD-N4 (citation); REFEREE-2 l. 22 «MATCHES §2-§4 in content»
+  with L-1, L-2 REQUIRED (symbol binding) and L-3 optional. (2) L-1 7e99a4a9593cc9aa0d21efbe82dd647606a8ac59 (fe5c9e33). (3) L-2
+  d553bbba9a996d5d400efa0bdd53947785ffd5f7 (9460f011), REFEREE §C l. 75 «L-2 MATCHES». (4) L-3 7d22165a7e0cbd1a556cb546d8d3c53efa640956
+  (59d58d0d) = L-2 with PHASE-RED′ unconditional through Theorem FLAT-SW; REFEREE §C l. 107 and REFEREE-2 L3 l. 39: MATCHES (Opus 5.5,
+  D15). L-3 supersedes the earlier lines; the title is L-3 verbatim with its own date, less its lane tag (to check (1)). No gap and no
+  FALSE item was raised on any version by either referee; the REQUIRED fixes bind symbols and add the standing premise (REFEREE l. 141-142
+  «This is a disclosure, not a widening»; REFEREE-2 l. 24 «symbol binding only; no change of content»).
+  Setting (packet §1): N5 = SPEC S1-S5 (FIX 1-4), any parity game, V = {0, …, n − 1}; a PHASE P = [a, b] a maximal run of consecutive
+  states with (λ_Ξ, τ) constant (R38 (a)), |P| := b − a; CS(x) := (rew(c); s_{n−1}, …, s_0; ℓ̂) for x = (c, P, ℓ) (R93 (a), n + 2
+  coordinates); MON from R15 (a), (d) with Ξ_σ = Ωσ (the standing premise, FIXD-N2). §1 cells: REFEREE «CHECKED. MON is R15 (a) applied
+  at every σ-changing transition (R15 (d): I ⊆ Iσ, one edge per vertex), and is trivial at the others. Ξ_σ = Ωσ is the standing SPEC
+  premise of R57, which the line must carry (FIXD-N2)» (l. 20); REFEREE-2 «CHECKED» (l. 17; §2.1 l. 28-32).
+- Claims signed (both referees "(Opus 5.5, D15)": REFEREE successor 20, REFEREE-2 successor 23). Items (a), (b), (d) are SIGNED in both
+  verdict tables (REFEREE "## Verdicts" l. 17-27 of R-N5-FIXD.md; REFEREE-2 "## 1. Verdict table" l. 14-24 of R2-N5-FIXD.md) and «agree»
+  / «SIGNED by both, no gap» in both §Cs (REFEREE §C l. 9-11; REFEREE-2 §C C.1 l. 13-15); item (c) is signed by both under the Lead
+  reading quoted in to-check (4) (SW-KEEP: REFEREE author, REFEREE-2 §C.4; OWN: REFEREE-2 author, REFEREE §C §3). All four are about N5
+  on every game. Premises LANDED (as line L-3 names them): SPEC S1-S5; RESULTS R15 (a), (d); R38 (a) (phase); R93 (a) (Fact LEX, COMMON
+  PREFIX; Fact REW for the injectivity of CS); standing premise: RESULTS R57's SPEC premise (S1's procedure realises the pointwise
+  optimum), used by MON (Ξ_σ = Ωσ) and by SW-KEEP (2), (4). The code's match to SPEC is DATA (R15 G-N5T-1). No item uses a count.
+  (a) Definition FIX-DEPTH and Lemma FIXD-MON (§2, l. 35-43; any phase of any N5 run): fin(v) := Ξ_b(v); «DEPTH_t(v) is the length of
+      the longest common prefix of CS(Ξ_t(v)) and CS(fin(v)), so DEPTH_t(v) = n + 2 iff Ξ_t(v) = fin(v). K_t := Σ_v DEPTH_t(v) ∈ [0,
+      n(n + 2)].»; «Lemma FIXD-MON. For states t ≤ t′ of a phase P and every vertex v: DEPTH_{t′}(v) ≥ DEPTH_t(v). Hence K_{t′} ≥ K_t.»
+      Proof: MON along t, …, t′, …, b and COMMON PREFIX. Cells: REFEREE «SIGNED» (l. 21; §2 l. 29-40: CS injective, «I re-derived COMMON
+      PREFIX myself»); REFEREE-2 «SIGNED», «none; N-3 (sharper range)» (l. 18; §2.2 l. 33-40).
+  (b) Theorem PHASE-RED (§3, l. 45-59): CH_P := «the transitions of P at which Ξ changes at some vertex»; FLATTR_P := «the transitions of
+      P at which Ξ changes at some vertex and K does not change»; «For every phase P of every N5 run: |P| ≤ (4n(n − 1) + 1)·(CH_P + 1) and
+      CH_P ≤ n(n + 2) + FLATTR_P; so |P| ≤ (4n(n − 1) + 1)·(n(n + 2) + FLATTR_P + 1).» Proof (i) K rises at most n(n + 2) times; (ii) R15
+      (d) on the Ξ-unchanged runs (τ constant in a phase, so Ωτ unchanged). Cells: REFEREE «SIGNED» (l. 22; §3 l. 42-50); REFEREE-2
+      «SIGNED», «none; N-3 (sharper constants)» (l. 19; §2.3 l. 41-47 «Arithmetic checked. Combination checked.»).
+  (c) Theorem FLAT-SW: at every transition k → k + 1 of every N5 run at which Ξ changes at some vertex (in particular at every FLATTR_P
+      transition) some Even vertex x switched at k has Ξ_{k+1}(x) ≠ Ξ_k(x). Not a packet item (packet §4 l. 62-63 states it as CONJECTURE
+      FLAT-SW, «FLAT-SW itself NOT to sign»; superseded by fixes entry 3 l. 125-127). Proof of record, Theorem SW-KEEP (REFEREE report
+      §4b, l. 57-98, quoted verbatim in fixes entry 3 l. 74-112): «Let I be a non-empty set of Ξ_σ-improving edges with at most one edge
+      per vertex, σ′ := Switch_I(σ), and S the set of switched vertices. If Ξ_σ′(x) = Ξ_σ(x) for every x ∈ S, then Ξ_σ′ = Ξ_σ. Moreover,
+      every x ∈ S with Ξ_σ′(x) = Ξ_σ(x) is its own cycle node under both σ and σ′.» (premises l. 58-59: R15 (a) and the standing SPEC
+      premise of R57; Fact F, cases (1a)-(1c), (2) by COMMON PREFIX, (3) play surgery, (4) optimality and R15 (a)); «Corollary FLAT-SW
+      … It holds on every N5 run» (l. 87-91: a Ξ-changing transition changes σ; by R15 (d) σ_{k+1} = Switch_I(σ_k) with ∅ ≠ I ⊆ Iσ_k,
+      one edge per vertex). Cells: REFEREE: author (l. 24, l. 87-98; §C §5 l. 89-100: «the clause is SW-KEEP's contrapositive»);
+      REFEREE-2: «## C.4 Theorem SW-KEEP (REFEREE §4b): SIGNED (Opus 5.5, D15)» (§C l. 58; step by step l. 61-79, «All landed. No
+      gap.»), L3 l. 14-26. Second proof, in-phase form (REFEREE-2 report §5, l. 96-135): «Lemma OWN. Let σ, σ′ be Even strategies that
+      differ only on a set X of Even vertices, and let every x ∈ X be its own Ξ-cycle node under σ and under σ′. Then Ξ_σ = Ξ_σ′, and
+      S1's procedure returns the same choice at every Odd vertex.» (proof from the SPEC S1 procedure, l. 33-44; «No improvement hypothesis
+      is used»); «Corollary FLAT-SW (strong form). At every in-phase transition k → k + 1 of N5 with Ξ_{k+1} ≠ Ξ_k there is a switched
+      Even x with Ξ_{k+1}(x) ▷ Ξ_k(x).» (through λ_Ξ constant on the phase, OWN, and R91 (i) SW-IN's argument). Cells: REFEREE-2: author
+      (l. 20, l. 97); REFEREE: «Lemma OWN: SIGNED (Opus 5.5, D15).» (§C l. 35), «Corollary FLAT-SW (strong form, in-phase): SIGNED.»
+      (§C l. 48). The line states FLAT-SW only; it cites SW-KEEP as the proof of record and does not state SW-KEEP's general form, OWN,
+      or the strict rise.
+  (d) Corollary PHASE-RED′ (§4, l. 61-69, with its hypothesis discharged by (c)): FLATSW_P(x) := «the transitions k → k + 1 counted in
+      FLATTR_P at which the Even vertex x is switched and Ξ_{k+1}(x) ≠ Ξ_k(x)»; for every phase P: «FLATTR_P ≤ Σ_x FLATSW_P(x), and so
+      |P| ≤ (4n(n − 1) + 1)·(n(n + 2) + Σ_{x Even} FLATSW_P(x) + 1).» Cells, the implication: REFEREE «SIGNED» (l. 23; §4 l. 52-55);
+      REFEREE-2 «SIGNED (implication)» (l. 20; §2.4 l. 48-50). Unconditional: REFEREE l. 92-93 and §C l. 106 («The packet's §4 proof
+      applies verbatim with the hypothesis discharged.»); REFEREE-2 l. 130-131 («Consequence (given a second signature)»); both L-3
+      verdicts MATCHES.
+  Gap maps: REFEREE l. 27 «No gap in §2-§4. Nothing FALSE. Notes FIXD-N1..N4.»; REFEREE-2 l. 24 «No gap. Nothing FALSE. Two REQUIRED line
+  fixes (symbol binding only; no change of content).»; REFEREE-2 §C l. 20 «Joint gap map for §2-§4: EMPTY. Nothing FALSE on either
+  side.»; on the proofs of FLAT-SW: REFEREE-2 §C l. 79 «No gap.» (SW-KEEP); REFEREE §C l. 42 «Note FIXD-C1 (exposition, not a gap)»
+  (OWN).
+  The RESULTS line (L-3) claims less than the reports: FIXD-MON without its Remark (any transition kind); PHASE-RED with the packet's
+  constants, not N-3's n(n + 1) and 2n(n − 1); FLAT-SW without the strict rise, without SW-KEEP's general form and without N5-LZC;
+  PHASE-RED′ without «FLATSW_P(x) ≤ SW_P(x)». Every clause it states is one of (a)-(d).
+- Fixes (docs/new/P-N5-FIXD-fixes-box91.md, L-NEW successor 39, APPEND-ONLY, three entries, three commits each +N/−0: fe5c9e33
+  (+31/−0, sha1 dbb6f66a65c4e157abf796f9f1ed495a8177349f), 9460f011 (+39/−0, sha1 11118fff4a67e456dad5e641c840c250a7b15e73), 59d58d0d
+  (+78/−0, sha1 eb3bd874bb91da35a901a14d1bfadb496c2c34f9, 148 lines; = l-new head 85c12579 = origin trunk d1400cac; the last commit
+  touching the file)). Header (l. 1-2): «Frozen packet … and line … are NOT edited; revisions are given here.»; «Each entry quotes the
+  referee verbatim, then the change.» Each item, with the referees' words:
+  - Entry 1 (l. 4-31; REFEREE 2c9d8040): FIXD-N1 (free k; = R2-L-1) applied in L-1; FIXD-N2 (standing premise of R57) applied in L-1,
+    «A disclosure; the claims are unchanged.» (l. 16); FIXD-N3 (DATA label) as an erratum to §5, «not in the line» (l. 21-22); FIXD-N4
+    («R93 (a) (Fact LEX, COMMON PREFIX)») applied in L-1; «Not applied (Lead 16:22Z): PHASE-RED′ stays an IMPLICATION» (l. 27).
+  - Entry 2 (l. 33-70; REFEREE-2 4a960ef9): R2-L-1 «Already applied in line L-1»; R2-L-2 («then every phase P has») applied in L-2;
+    R2-L-3 (τ → τ_t) applied in L-2, σ̄_t wording left (l. 50-51); N-1 erratum (corrected totals 9596 / 6475; VOID in entry 3); N-2
+    erratum («6568 of 16183 in-phase transitions … Ξ-changing transitions 16118»).
+  - Entry 3 (l. 72-148): SW-KEEP quoted verbatim (l. 74-112) with REFEREE-2's signature (l. 114-122); «Status change: CONJECTURE FLAT-SW
+    (packet §4) → Theorem FLAT-SW, two-referee proved, with SW-KEEP (a REFEREE-originated proof, not the lane's) as the proof of record.
+    Packet §4's «FLAT-SW itself NOT to sign» is superseded.» (l. 125-126); REFEREE-2's N-1 correction quoted (l. 129-135) and entry 2's
+    N-1 erratum VOID (l. 136-138); remaining notes: comp54_n80.start (L-RED's file) and n5x.py's start reader, «a lane TODO, not done in
+    this entry» (l. 139-141); L-3 (l. 143-148).
+  No fix changes a signed statement of the packet: N1, N2, R2-L-1..3 bind symbols or disclose the premise; N3, N-2 are DATA labels; N-1
+  is void; entry 3 replaces the hypothesis of (d) by Theorem (c), signed by both.
+- Not signed: §1 (setting and premises; «CHECKED» by both); §5 DATA, DEAD and READING (Data below; DEAD items: «"K rises at least once
+  per O(1) transitions": snap_n80_s62 stalls 36 consecutive transitions, returns_ph64 stalls 91» and «FLAT-LIN (per-vertex dead-branch
+  climbs FLAT_P(v) ≤ n): nep92_n40 (above), vertex 0, 66 = 1.65n in one phase» (l. 80-82), lane DEAD, reproduced as DATA by both
+  referees (REFEREE l. 111, l. 121; REFEREE-2 l. 82-85), not a refereed dead end of this entry; READING l. 83-85); the packet §1 Remark
+  and §4 Note; FLAT-SW for N5-LZC; N-3's sharper constants; the frozen line ba09dd26 and L-1, L-2 (history); the working notes box 77
+  and box 79 (l. 6-7). Lane and referee work after the freeze, other than the FIXD fixes commits, is not part of this entry: P-N5-WRUN
+  (box 92) and both referees' WRUN reports.
+- Referee strengthening (NOT part of this entry; remarks of one referee, remarks of both outside the verdict cells, readings):
+  (i) N-3 (REFEREE-2 l. 93-94): «In a phase λ_Ξ is constant, so every DEPTH_t(v) ≥ 1 and at most n(n + 1) transitions raise K; and with τ
+  constant only φ (not φ^d) can rise on a Ξ-unchanged run, so 2n(n − 1) would do in (ii) via R15 (c).»; REFEREE §C l. 18 «both are
+  correct (I re-derived them). Precision only». Not in the line.
+  (ii) FLAT-SW for N5-LZC: REFEREE l. 87 «the same proof covers N5-LZC»; REFEREE-2 l. 131-132 and §C l. 77. The packet and the line
+  claim nothing for N5-LZC.
+  (iii) The strong form: «in every Ξ-changing in-phase transition (flat or not) a switched Even vertex strictly rises, and Ξ-unchanged
+  in-phase transitions are exactly those whose switched vertices are all their own cycle nodes» (REFEREE-2 l. 133-135); REFEREE §C l.
+  59-60: «SW-KEEP's step (1) gives the same strict rise for the non-own-cycle-node switch».
+  (iv) SW-KEEP vs R15 (b): «This is the converse direction to R15 (b) (Lemma B)» (REFEREE l. 94-95); REFEREE-2 l. 135 «That is R15 (b)
+  (Lemma B) seen from the other side.»
+  (v) Comparison of the two proofs (REFEREE §C l. 55-60; REFEREE-2 §C l. 80-84): «SW-KEEP needs no phase hypothesis, because case (1a)
+  disposes of the mixed case directly … SW-KEEP is therefore slightly more general (every Ξ-changing transition of the run)».
+  (vi) Self-corrections: REFEREE §C l. 13 (R2-L-2): «I agree; I missed it.»; REFEREE-2 §C l. 48 (FIXD-N2): «AGREE. I missed it.»;
+  REFEREE-2 §C l. 34-40 (N-1 withdrawn); REFEREE-2 L3 l. 41-44 (τ(11)).
+  (vii) Controls that bite (DATA): REFEREE MUT 1 (reference Ξ_a instead of fin) bites KM 69 and PR3 1 on nep92_n40, MUT 3 (drop n(n + 2))
+  bites PR2 2, MUT 4 (FLAT-SW only through x with an Even old successor) bites SW 1; MUT 2 (stall bound n) never bites (l. 108-109).
+  REFEREE own_check.py: OWN 1963 pairs, 0 violations; control «own cycle node under σ only» 3927 / 3927 differ (§C l. 46-47). REFEREE-2
+  own_check.py: 4,083 pairs, 0 violations; control X_ONE 8,104 / 8,104 (l. 119-121); X_KSTALL 267 phases, X_OWNC 65 (N5) / 51 (N5-LZC)
+  (l. 78-79).
+  (viii) READING (packet §5 l. 83-85): «Under FLAT-SW the count moves to Even's per-vertex flat decisions. Inside W-runs those are paid by
+  W-changes of targets (R93 RET-WCH)». Not signed.
+- Honest limits: (i) A REDUCTION. The line bounds the length of every phase by its Ξ-changing transitions without a DEPTH rise (FLATTR_P),
+  and these by per-vertex flat Even switches (FLATSW_P); neither is bounded here (packet l. 8; REFEREE l. 14-15; REFEREE-2 l. 12). (ii)
+  FLAT-SW is proved by a referee-originated proof (SW-KEEP), not by the lane; its two-referee status is a Lead reading (to-check (4)).
+  (iii) Standing premise: R57's SPEC premise (S1's procedure realises the pointwise optimum), through MON and SW-KEEP (2), (4); the code's
+  match to SPEC is DATA (R15 G-N5T-1). (iv) Nothing is claimed for N5-LZC. (v) Counts are transitions, not bit operations; no
+  running-time bound. (vi) Not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open.
+- Data (DATA, not proof): pinned (packet §5 l. 77: «Pins (check.sh "box 77", "box 79")»). experiments/new/check.sh at 5027c17c: sha1
+  af2427b3e1d3e4677d4ffcfdfa6966f68aec883f, 472 lines; at 59d58d0d: sha1 b5201cec45715a837722c5d3b14020fba79e2b74, 478 lines (+6: the
+  box 92 WRUN block l. 472-477, excluded); the two blocks of this entry, «box 77 FIXD» l. 388-393 and «box 79 FLATSRC» l. 406-411, are
+  identical at 5027c17c, 59d58d0d and l-new head 85c12579 (l. 400-405 is R93's «box 79 WCH» block). Files (identical at 5027c17c and
+  59d58d0d): experiments/n5-epoch/instances/nep92_n40.pg ce224ec31e56e18103290d4aac81a9f225f76bfc (41 lines; = packet l. 77 and both
+  referees' re-hash, REFEREE l. 111, REFEREE-2 l. 84), nep92_n40.start 10fdf3a3c76c80cdae106d428729c480b165a797, box77/fixdepth.py
+  23fdc21c030b14f51f47a773f4c28b16bf8c1bf4 (last changed 50724c74), box79/flatsrc.py 1a50b622db55c30fea096a081f6c905b08b2ccc6 (last
+  changed c50a4985), box79/flatsrc_sbcg.txt 5cb24fe4f2b40f9acaccfbd3c34c579f9a242e2a (719 lines), box79/flatsrc_alt.txt
+  64330e7aad6b8b5595bb92121c60b5feb3eb92c8 (413 lines), box77/fixd_sbcg.txt e37503da3416e372179823befd95975b6234df4c (719 lines),
+  box77/fixd_alt.txt 121a714f4eff35432d5c258d3fdb05d17b723396 (413 lines). Re-run for this draft from a `git archive` of each commit
+  (experiments/ and docs/new/; `python3 -I`; outputs to scratch files; exit codes read): 59d58d0d l. 388-393 and l. 406-411 under `set
+  -euo pipefail`, 17:38:21Z-17:38:22Z by date -u (read before and after): «box 77 FIXD: nep92_n40 FIX-DEPTH monotone, 66 = 1.65n
+  dead-branch climbs at v 0 in one phase (FLAT-LIN DEAD): PASS», «box 79 FLATSRC: nep92_n40 all 73 flat transitions carry a flat Even
+  switch (<= 8 per vertex): PASS», rc 0; 5027c17c, the same two blocks, both PASS, rc 0 (date -u 17:44:49Z read after). Tool output
+  (59d58d0d archive): «FIXD nep92_n40.pg n 40 iters 98 phases 6 mono-viol 0 trans 93 strict 20 flat 73 max-stall 34 longest-phase (len,
+  strict, stall, gain) (92, 19, 34, 1551) max-flat-changes-per-(v,phase) (66, 0, 5, 92)», rc 0; «FLATSRC nep92_n40.pg n 40 iters 98
+  {'K-rise': 20, 'FLATTR': 73, 'FSW': 73} max-FLATTR-phase 73 max-FLATSW-(x,phase) 8», rc 0.
+  DATA OF RECORD (packet §5 l. 72-79 with the errata of fixes entries 1-3; corpus box59/sbcg.lst (719) + si/root/logs/alt_all.lst (413),
+  N5): FIXD-MON 0 decreases of K in any phase; in-phase transitions 16183 = K-rise 9615 + FLATTR 6503 + 65 Ξ-unchanged; Ξ-changing 16118;
+  FLATTR 6503, all with a flat Even switch (FSW 6503: FLAT-SW 0 exceptions); max FLATTR per phase 91 (red/n5inj returns_ph64, n 64); max
+  FLATSW per (x, phase) 14 (returns_rt64, n 64). Re-summed for this draft: equal (to check (9)). N5-LZC (DATA only, not claimed): K-rise
+  9454, FLATTR 6379 = FSW, Ξ-flat 51. Totals 9615 / 6503 are totals of valid runs: REFEREE §C l. 23-27 («the lane's totals (9615 / 6503)
+  are totals of genuine runs») and REFEREE-2's N-1 withdrawal (§C l. 34-40, 73d44f3b: «So the lane's totals 9615 / 6503 ARE the totals
+  of valid runs (the repaired start).»; «N-1 is withdrawn as a data correction.»).
+  REFEREE (successor 20; own docs/referee/scratch/fixd_probe.py on rl_engine and fsw_strong.py; no lane code): pins nep92_n40 «FLAT(v0) =
+  66 in a 92-transition phase [6, 98]; FLATTR 73; FSW 73; flat switches ≤ 8 per vertex», returns_ph64 91, returns_rt64 14 (returns_rt48
+  ties), nep94_n48 69 — «all MATCH» (l. 110-114); corpus 1132 × 2 runs, every one RC 0, «ZERO violation lines of XM, KM, ST, PR1, PR2,
+  PR3, PRp or SW in either engine»; N5 15275 in-phase transitions, 15210 Ξ-changing, 8750 with a K-rise, FLATTR 6460 = FSW; N5-LZC 14979
+  / 14928 / 8592 / 6336 (l. 115-122); SW-KEEP strong form over the 719 distinct games, both engines: «27586 τ-constant transitions,
+  27504 of them Ξ-changing; 0 STRONG violations. 96 switched vertices kept Ξ, all of them own cycle nodes» (l. 123-124). Run set
+  reconciled: MAXN 200 and partial starts (§C l. 30-32).
+  REFEREE-2 (successor 23; own docs/referee-2/R2-N5-FIXD/fixd_check.py, «the lane's box77 / box79 code NOT imported», l. 74-76): corpus
+  as the lane's, N5 and N5-LZC «0 violations of every check» (l. 77-78); per game against box79/flatsrc_*.txt: sbcg 719 / 719 identical,
+  alt_all 412 / 413 (comp54_n80, N-1, later withdrawn) (l. 80-81); maxima 91, 14, 69, 1.65n, K stall 91 (l. 82-83); pin nep92_n40 «phase
+  [6, 98], |P| 92, K-rise 19, FLATTR 73, all with a flat Even switch, FLATSW ≤ 8 per vertex, FLAT_P(0) = 66» (l. 84-85); §C l. 42-43:
+  «Maxima agree on all three sides»; s3quad_K8_m30 (n > 200) has the longest phase, 263, 0 violations. No signed statement uses any count.
+- Signatures: REFEREE docs/referee/R-N5-FIXD.md (report 2c9d8040f50d516d9e43619f9d6a72db9dc7379d, 2026-10-30T16:01:45Z, committed directly
+  on claude/referee, first on trunk by 7c7eaec4 (16:21:35Z); sha1 427de472cca14ecdded2db5d90be88f0cee09db6, 163 lines, unchanged since
+  (= referee head 345fcea9 = local and origin trunk); successor 20): §1 CHECKED; §2, §3, §4 SIGNED; FLAT-SW proved (SW-KEEP, §4b); «No
+  gap in §2-§4. Nothing FALSE. Notes FIXD-N1..N4.» (l. 27). §C docs/referee/R-N5-FIXD-C.md (a3aa5b68907ae7c2bc9a2afa3de795f64070c9e3,
+  2026-10-30T16:47:28Z, new file, 72 lines, sha1 b62f10e43fd8e944394db29a76ebf32169b71a1d; first on trunk by 4e57e225, 17:11:42Z):
+  cross-map «agree» on §2-§4 (l. 9-11), Lemma OWN and the strong form SIGNED (l. 35, l. 48); §4 ed3bd9453cf9c354bafa6fdd1420ce560162922e
+  (17:01:58Z, +17/−2, sha1 4c9e2f0d5680b753b5225bcba4604cf7ff1f0c32, 87 lines; first on trunk by f7abc761, 17:23:39Z): «L-2 MATCHES»
+  (l. 75); §5 345fcea9a0af0b1754b28b3e42cdde6bd548b090 (17:17:01Z, +30/−0, sha1 ef2cc86859660a6460b781baa0795f10d484d93a, 117 lines, =
+  origin referee head = the last commit touching the file; merged into the LOCAL trunk by 5523052e (17:35:59Z), not on origin trunk
+  d1400cac at 17:42:05Z): «L-3 MATCHES … (Opus 5.5, D15).» (l. 107). REFEREE-2 docs/referee-2/R2-N5-FIXD.md (report
+  4a960ef92364e06f35517ea3b66d8eefae8f5898, 2026-10-30T16:07:59Z, committed directly on claude/referee-2 (parent 64bd0d24, its own
+  pre-freeze commit 15:54:59Z with the OWN draft), first on trunk by 0251cc86 (16:34:10Z); sha1 ed082af9abf58ae5c7f0de98cba32f8f94431d01,
+  143 lines, unchanged since (= referee-2 head 4d9a4318); successor 23): §1 CHECKED; §2, §3, §4 (implication) SIGNED; «No gap. Nothing
+  FALSE.» (l. 24); FLAT-SW proved (OWN, §5). §C docs/referee-2/R2-N5-FIXD-C.md (73d44f3b629e0d77c7d345078acb6e542cc93058,
+  2026-10-30T16:37:15Z, +103/−0, sha1 f32205a031a8fcafc424e830feffb97da3184f48, 103 lines, = referee-2 head; first on trunk by 5fcc420d,
+  16:59:13Z): «Joint gap map for §2-§4: EMPTY.» (l. 20); «## C.4 Theorem SW-KEEP (REFEREE §4b): SIGNED (Opus 5.5, D15)» (l. 58); N-1
+  withdrawn (l. 34-40). L-3 verdict docs/referee-2/R2-N5-FIXD-L3.md (4d9a43189265f9d59a3179f8de6d1c1dba676666, 2026-10-30T17:20:00Z, new
+  file, 44 lines, sha1 7c9a7b279f71ce8aab9c9408c24ba688adae144f; parent d2b74403, a merge of trunk into the branch; = origin referee-2 head;
+  on NO trunk at 17:42:05Z): «L-3 (7d22165a): **MATCHES** (Opus 5.5, D15).» (l. 39).
+  INDEPENDENCE: REFEREE l. 7: «Independence: I opened no docs/referee-2/ file for this packet.»; REFEREE §C l. 3-4: «I opened
+  docs/referee-2/R2-N5-FIXD.md @ 4a960ef9 (143 lines) only after that word, and after my report R-N5-FIXD.md (2c9d8040) was pushed.»
+  REFEREE-2 l. 4-6: «Independence: written before opening any docs/referee/ file for this packet; the count of «fixd» in docs/referee/ on
+  trunk was 0 at 15:58Z. REFEREE's FLAT-SW proof «SW-KEEP» (Lead 15:58Z) is not read: my own proof of FLAT-SW (§5) was committed at
+  64bd0d24 (15:54:59Z), before that message.» (64bd0d24 checked: 2026-10-30T15:54:59Z, adds R2-N5-FIXD/own_proof-draft.md, 33 lines);
+  REFEREE-2 §C l. 2-3: its report pushed «before I opened any docs/referee/ file for this packet», REFEREE's report «opened 16:34Z on the
+  Lead's word». No review imported lane code (REFEREE: own rl_engine; REFEREE-2 l. 74-76); the lane's scripts ran only as the pinned
+  blocks. The two proofs of FLAT-SW were written independently (SW-KEEP before 16:01:45Z; OWN at 15:54:59Z) and each was checked by the
+  other referee after both reports were pushed.
+  §C (both): verdicts on §2-§4 identical; no disagreement in substance. One difference of reading, resolved: R2-L-2 (REFEREE §C l. 13
+  «I agree; I missed it»; REFEREE-2 §C l. 52-55 keeps it REQUIRED; applied in L-2). Notes map (REFEREE §C l. 12-19; REFEREE-2 §C C.3 l.
+  45-56): FIXD-N1 = L-1, FIXD-N3 = N-2; REFEREE only FIXD-N2 (agreed by REFEREE-2 §C l. 48), FIXD-N4 (agreed, l. 51); REFEREE-2 only
+  L-2 (agreed), L-3 and N-3 (optional), N-1 (withdrawn).
+- TARGET.md diff: «n the number of vertices of the game» is TARGET.md §1 l. 8's n («n = |V|, m = |E|»); games are TARGET.md §1 games
+  (REFEREE-2 l. 66-67). The line makes no M4 claim and no TARGET claim; its own scope clause reads «a REDUCTION (FLATTR_P and FLATSW_P are
+  not bounded here; FLAT-SW is proved by a referee-originated proof, SW-KEEP, signed by both referees; G-N5-TIME stays open; not M3, not a
+  step-4 pass, not a TARGET.md claim)». REFEREE-2 l. 66 «the line claims nothing about M4»; REFEREE l. 14-15 «Not a TARGET.md claim».
+  Not a claim of TARGET.md section 1 or §2 (lemmas and inequalities about N5 runs on every game; a REDUCTION of phase length to FLATTR_P
+  and FLATSW_P, neither bounded; no bound on a run, no running-time bound, no algorithm claim). GAPS G-N5-TIME: open.
+
+### R95 [refereed-only] N5 on EVERY game (SPEC S1-S5, under the standing SPEC premise of RESULTS R57 (1E-N3: S1's procedure realises the pointwise optimum; for S4a, σ_new is the pointwise optimum of the one-player arena H_t, H_t := S4a's arena at t (Even v keeps {σ_t(v)} ∪ Iσ_t(v), Odd follows τ_t)); premises RESULTS R15 (a), (b), (d), R86 (a) (Lemma SW-RETURN), R88 (Lemma GP*, Corollary FW-R*), R89 (Lemmas SUCC-MON, GP*-RUN, Corollary R*-RISE), R91 (Lemmas XW, W-MON, W-SUCC, LATE-W) and R93 (Fact LEX, Lemma NEW-BOUND); a run is the sequence of states (σ_t, τ_t) from any start pair; a transition is written t → t + 1 (states t, t + 1); n the number of vertices, n_E the number of Even vertices, m_E the number of edges leaving Even vertices and d_E(c) the number of Even vertices with an edge to c; v is switched at t if σ_{t+1}(v) ≠ σ_t(v), and then enters (adopts) σ_{t+1}(v) and leaves σ_t(v); Ξ_t := Ξ_{σ_t} (SPEC S1: the [S1-val] valuation of the (σ_t, σ̄_t)-plays, σ̄_t Odd's pointwise-optimal counterstrategy to σ_t), a value (c, P, ℓ) having cycle node λ = c, path set P and length ℓ; W_t := the [S1-val] valuation of the (σ_t, τ_t)-plays and val(ρ, τ) that of the (ρ, τ)-plays; λ_W the cycle-node map of W_t; ⊴, ◁, ⊵, ▷ the SPEC S1 order (better for Even) and its strict and reverse forms; Iσ_t Even's improving edges (SPEC S2); a τ-stretch and a W-run F = [a, b] as in RESULTS R89, |F| := b − a its transitions; blocked edges, late adoptions and R*_F (R88's R*_T read on F) as in RESULTS R88 / R89; for a stretch R of consecutive states, ENT_R(v, c), SW_R(v) and RISE_R(c) as in RESULTS R86 (entries of v into c, switches of v, transitions changing Ξ(c)), |R| its transitions; for a W-run F, ΞCH_F(c) := RISE_F(c), WCH_F(c) the transitions of F changing W(c), WCH_F those changing W somewhere, FL_F those changing W nowhere, TIE_F as in RESULTS R93, PCH_F(c) the transitions of F changing the path set of Ξ(c) but not its cycle node, P*_F := max_c PCH_F(c); for a per-W-run quantity Q_F (maximised over vertices or edges when indexed by them), Q-POLY means: there is a polynomial p with Q_F ≤ p(n) for every W-run F of every N5 run on every game from every start pair, and WRUN-POLY := |F|-POLY, XI-CH-POLY := (max_c ΞCH_F(c))-POLY; for an Even edge (X, g), a return of X to g is a transition of F at which X enters g having held g at an earlier state of F, RET_F(X, g) their number, and REG_F(X, g), E0_F(X, g), FREE_F(X, g) the returns whose window (from X's last leave of g) contains a state with a REG (that is, not E0) self-routed block of (X, g), else an E0 one, else neither (P-N5-WRUN §4.1: a self-routed block of (X, g) at state t: (X, g) not improving, g ≠ σ_t(X), and the (σ_t, σ̄_t)-play from g reaching X, its vertices before X (the route) pairwise distinct and, when X lies on the cycle of its own (σ_t, σ̄_t)-play, avoiding that cycle; E0 iff X is the cycle node of Ξ_t(X) and every vertex of the route is below X in the SPEC S1 rank); a change of the path set of Ξ(v) with fixed cycle node has depth the number of path-set vertices above the most relevant vertex of the symmetric difference, and, for every k ≥ 1, DEEP_{k,F}(v) counts the changes of depth ≥ k in F; a frozen stretch Φ of F is a maximal interval of states of F with σ̄ constant, SB_F the transitions of F changing σ̄, R°_Φ the transitions of Φ adopting an edge blocked at an earlier state of Φ and R° := max_Φ R°_Φ; [SUB] := for every sub-interval F′ of every W-run, at most (n − 1)(R*_T(F′) + 1) transitions of F′ change W, R*_T(F′) the transitions of F′ adopting an edge blocked at an earlier state of F′; a W-constant interval I of F is a maximal run of states of F with W constant, XCH_I(d) the transitions of I changing Ξ(d); R*-POLY, FL-POLY, P*-POLY, DEEP_k-POLY, TIE-POLY, SB-POLY and R°-POLY are Q-POLY for these Q, R3-POLY := (max_e WCH_F(e))-POLY, ALT-POLY := (max REG_F)-POLY, FREE-POLY := (max FREE_F)-POLY and [P-INT] := there is a polynomial p such that every W-constant interval of every W-run has at most p(n) transitions): for every N5 run on every game, every W-run F = [a, b] of it, every Even edge (X, g) and every vertex v: (Theorem XI-RUN) every stretch R of consecutive states of a W-run has |R| ≤ Σ_{v′} SW_R(v′) ≤ m_E + Σ_c d_E(c)·RISE_R(c), so every W-run F has |F| ≤ m_E + Σ_c d_E(c)·ΞCH_F(c) and every W-constant interval I has |I| ≤ m_E + Σ_d d_E(d)·XCH_I(d) (Corollary INT-XCH⁰); (Lemmas WAIT-CYCLE′, E0-BOUND, Theorem TRIPLE-RED) after a REG (not E0) self-routed block of (X, g) with route π, σ never again has X → g together with the block's choices on π, E0_F(X, g) ≤ n, and |F| ≤ m_E + Σ_{(X′, g′)} RET_F(X′, g′) ≤ m_E(n + 1) + Σ_{(X′, g′)} REG_F(X′, g′) + Σ_{(X′, g′)} FREE_F(X′, g′); (Lemma RET-ΞRISE, Theorem FREE-RED) RET_F(X, g) ≤ ΞCH_F(g) and FREE_F(X, g) ≤ RET_F(X, g) ≤ |F| ≤ (n − 1)(R*_F + 1) + FL_F; (Lemmas GAP-DEV, ΞCH-PCH, Theorem RSTAR-PCH) the target z of every Even edge blocked at a state q of F has Ξ_q(z) ◁ W_q(z) and an Odd vertex o with σ̄_q(o) ≠ τ_q(o) on its (σ_q, σ̄_q)-play, every vertex z has ΞCH_F(z) ≤ n(n + 1 + PCH_F(z)), and R*_F ≤ Σ_{(y, z) Even edge} ΞCH_F(z) ≤ m_E·n·(n + 1 + P*_F); (Lemmas LEX-SIGN, PREFIX-MON, Theorem LEVEL-RED) for every k ≥ 1: while the cycle node of Ξ_t(v) is fixed over consecutive states t of the run, the first k terms of the path set of Ξ_t(v) in decreasing rank, each signed + (even priority) or − (odd priority), padded with NONE and compared lexicographically with terms ordered by (r, +) above (r′, +) iff r > r′, every (r, +) above NONE above every (r′, −), and (r, −) below (r′, −) iff r > r′, are non-decreasing in t and take at most (2n + 1)^k values, and PCH_F(v) ≤ n(2n + 1)^k + DEEP_{k,F}(v); (Lemmas BIP-MON, NO-DEV) on a frozen stretch of a W-run with σ̄ ≡ ρ and τ_t ≡ τ (the W-run's Odd strategy) both val(σ_t, ρ) and val(σ_t, τ) are non-decreasing, and if Ξ_t = W_t at every state of F then R*_F = 0 and |F| ≤ (n − 1) + 4n²(n − 1); (Lemma SUB, signed by both referees: REFEREE-2 docs/referee-2/SUB-check.md, claude/referee-2 a11c2868, and REFEREE R-N5-WRUN §9.1, claude/referee 8c0b2e69) [SUB] holds, and (Theorem BIP-RED) |F| ≤ SB_F + (SB_F + 1)(n − 1)(R° + 1) + FL_F; (Lemma REL2-WRISE, under (A1) y not its own W-cycle node on [s + 1, q2] and (A2) the (σ_{s+1}[y → z], τ_s)-play from z avoiding y, σ_{s+1}[y → z] being σ_{s+1} changed at y to z) if (y, z) is adopted at a transition of a frozen stretch Φ at which it had been blocked at an earlier state of Φ (a strict release), y leaves z at a state s of Φ and (y, z) is blocked again at q2 > s in Φ, then W_q2(z) ▷ W_{s+1}(z) (a special case of RESULTS R91 Lemma LATE-W, which needs neither (A2) nor the frozen stretch); and (Corollary WRUN-EQ) WRUN-POLY ⇔ XI-CH-POLY ⇔ P*-POLY ⇔ DEEP_k-POLY (each fixed k ≥ 1) ⇔ R*-POLY ∧ FL-POLY ⇔ ALT-POLY ∧ FREE-POLY ⇔ R3-POLY ∧ TIE-POLY ⇔ R*-POLY ∧ [P-INT], and ⇔ SB-POLY ∧ R°-POLY ∧ FL-POLY, while XI-CH-POLY ⇒ R*-POLY, FL-POLY, SB-POLY and WRUN-POLY ⇒ R3-POLY are proved in one direction only (2026-10-30) — REDUCTIONS and EQUIVALENCES (none of these quantities is bounded here; WRUN-POLY, XI-CH-POLY, BIP-POLY, INT-LIN and the other POLY statements are open; CONJECTURE BIP-REL-1 is DEAD (L-RED R143, rel2_R2_n82, l-red 717f407a); W-runs are not whole runs; G-N5-TIME stays open; not M3, not a step-4 pass, not a TARGET.md claim), CHECKER PASS (docs/checker/C105.md, checker 3c59333c)
+- Object (L-NEW successor 39, Opus 5.5, D14 / D18, Lead reading L40; frozen, unchanged during review): packet P-N5-WRUN,
+  docs/new/P-N5-WRUN-box92.md, sha1 fae68aa004015c26e2f1f6d8803a6c45d7464dfa, 371 lines (l-new freeze
+  7668bc9b8dc4b96223cb4cf52aa8a8645358ddb1, 2026-10-30T16:10:23Z, the file's only commit; identical at l-new head c49a0927, at origin trunk
+  3be9bc44 and at the local trunk head 6727c6ea; first on trunk by db55c9d6, 16:21:35Z). Both referees measured the sha1 at 7668bc9b
+  (REFEREE l. 3-5 «Both equal the Lead's figures.»; REFEREE-2 l. 2-5, «(detached worktree at 7668bc9b; …): match the Lead's 16:59Z
+  figures»). The Lead's freeze word is quoted at l. 2-5 («(B) MAIN BOX 92: freeze P-N5-WRUN, the within-W-run reduction chain, as a packet
+  for the referees, following your predecessor's outline. … Bind every symbol (strict symbol test). State exactly which claims are
+  equivalences ("⇔ polynomial W-runs") and which are one-way implications. Mark every CONJECTURE (BIP-REL-1, INT-LIN, XI-CH-POLY, …) as not
+  to sign.»). Status (l. 9-10): «Status: REDUCTIONS and EQUIVALENCES only. No residual is bounded here. G-N5-TIME stays OPEN. Not M3, not a
+  step-4 pass, not a TARGET.md claim. Object: N5 only (SPEC S1-S5). Nothing is claimed for N5-LZC, N5-SF or any other variant.» Sources (l.
+  6-8): working notes boxes 84-90 (L-NEW successor 38), «unrefereed; THIS packet governs where they differ; none is cited as a proof»; not
+  refereed here. Sections: §0 what to sign (l. 12-27), §1 setting and landed premises (l. 29-70: N5, run, transition, switched / adopts /
+  leaves, Ξ_t, values, W_t, val, H_t; [R57], [R15] (a), (b), (d) with MON, [R89], [R88], [R86] SW-RETURN, [R91], [R93] LEX and NEW-BOUND;
+  Fact STEP-SW; Fact EXT), §2 other lanes' statements, verbatim (l. 72-138), §3 XI-RUN and WRUN-EQ (l. 140-179), §4 box 84 (l. 181-226), §5
+  box 85 (l. 228-241), §6 box 86 (l. 243-258), §7 box 87 (l. 260-280), §8 box 88 (l. 282-303), §9 BIP-RED (l. 305-314), §10 REL2-WRISE (l.
+  316-324), §11 INT-XCH⁰ (l. 326-331), §12 CONJECTURES (l. 333-341), §13 DATA, DEAD, READING (l. 343-363), §14 symbols (l. 365-371).
+  Other lanes' texts inside the packet, checked byte for byte for this draft (scratch script; packet «> » stripped): §2.1 ARENA-MAX l. 74-78
+  = l-red 47000632 docs/red/R140-friedmann-port.md l. 42-46 (5 lines; the file is unchanged on trunk, sha1 4cbf3637…); §2.2 INTERVAL-SI /
+  TIGHT-VALUE / FL-INT l. 82-107 = l-si a0d6f79b docs/si/N5-GATE-box51b.md l. 22-47 (26 lines); §2.3 RETURN-CHARGE / INT-XCH l. 110-128 =
+  the same file l. 276-294 (19 lines; both ranges unchanged on trunk, where the file has grown +72/−2); §2.4 [SUB] l. 132-138 =
+  docs/referee-2/SUB-check.md l. 5-11 at a11c2868 (7 lines). All equal. REFEREE l. 18-21 and REFEREE-2 l. 21-22 found the same.
+  The RESULTS line, history: (1) the frozen line docs/new/P-N5-WRUN-box92-line.txt (7668bc9b), sha1
+  0faa5b80393bac1a6a3f6130926a4e18e3cf6129, the line REFEREE reviewed (l. 4-5): «does NOT match yet» (l. 45), with GAP G-WRUN-1 (the block
+  definition drops «g ≠ σ_t(X)» and the cycle-avoidance clause, so «as worded, the line's WAIT-CYCLE′ is FALSE», instance
+  docs/referee/scratch/wrun_logs/wc_line_cex.pg, sha1 a8a5013bbb4860a2d700b0f554b065b08487d65a, n 4, l. 187-203), WRUN-L1 (k free), WRUN-L2
+  (term order unbound), WRUN-N4. (2) L-1 d92521f7c7ffa28e0ebafeb1f8aeca3d3258b82f (02a12a10): REFEREE's items applied; REFEREE-2's candidate
+  (l. 3-5, l. 36): «MATCHES §3-§11 in content» with R2-L-1 REQUIRED. (3) L-2 8ab101e5c8b38caf504d64237034534b0fd0afd1 (85c12579): REFEREE §C
+  l. 93 REQUIRED WRUN-L3, WRUN-L4; REFEREE-2 L3check l. 37 the same. (4) L-3 cbba7a1b67340aebda613dcf8a71dc0b445f5e5a (fb976deb): REFEREE §C
+  l. 117 MATCHES; REFEREE-2 L3 l. 41 REQUIRED WRUN-L5. (5) L-4 98d9a50c0268e82754b87f2c6db9b14e49f22d34 (5462315f): REFEREE §C l. 132 and
+  REFEREE-2 L4 l. 16: MATCHES (Opus 5.5, D15). L-4 supersedes the earlier lines; the title is L-4 verbatim with its own date (to check (1)).
+  The only FALSE statement either referee found is in line 0faa5b80 (G-WRUN-1; REFEREE-2 §C l. 28-29), closed in L-1; the other REQUIRED
+  items bind symbols or state [SUB].
+  Setting (packet §1): N5 = SPEC S1-S5 (FIX 1-4), any parity game, V = {0, …, n − 1}; a run from any start pair; W_t := the [S1-val]
+  valuation of the (σ_t, τ_t)-plays; a W-run as in R89 (τ constant, no S4c fallback, λ_W constant); MON «Ξ_{t+1} ⊵ Ξ_t pointwise at every
+  transition» from R15 (a), (d); Fact STEP-SW «Every transition of a W-run F switches at least one Even vertex.» (l. 64), with every
+  switched vertex taking an edge of H_t ([R57]). §1 cells: REFEREE «CHECKED. STEP-SW ✓. Fact EXT is true only for arguments whose path sets
+  do not contain y (WRUN-N1). Every use satisfies this» (l. 28); REFEREE-2 «CHECKED; STEP-SW correct» (l. 20).
+- Claims signed (both referees "(Opus 5.5, D15)": REFEREE successor 20, REFEREE-2 successor 23; Lemma SUB also REFEREE-2 successor 22).
+  Items (a)-(n) are SIGNED in both verdict tables (REFEREE "## Verdicts" l. 25-46 of R-N5-WRUN.md; REFEREE-2 "## 1. Verdict table" l. 17-39
+  of R2-N5-WRUN.md) and in both §C cross-maps (REFEREE §C l. 9-33; REFEREE-2 §C C.1 l. 9-29); the table is to-check (4). All are about N5 on
+  every game, inside W-runs. Premises LANDED (as L-4 names them): SPEC S1-S5; RESULTS R15 (a), (b), (d); R86 (a) SW-RETURN; R88 GP*, FW-R*;
+  R89 SUCC-MON, GP*-RUN, R*-RISE; R91 XW, W-MON, W-SUCC, LATE-W; R93 Fact LEX, NEW-BOUND; standing premise: RESULTS R57's SPEC premise
+  (1E-N3), used by STEP-SW, WAIT-CYCLE′ (σ̄_t optimal), the BIP identification, BIP-MON and REL2-WRISE (ARENA-MAX read as [R57], packet l.
+  79-80). The code's match to SPEC is DATA (R15 G-N5T-1). No item uses a count.
+  (a) Theorem XI-RUN (§3.2, l. 148-153): «For every W-run F, and more generally for every stretch R of consecutive states of a W-run (R ⊆ F,
+      |R| its transitions): |R| ≤ Σ_{v Even} SW_R(v) ≤ m_E + Σ_c d_E(c)·RISE_R(c). For R = F: |F| ≤ m_E + Σ_c d_E(c)·ΞCH_F(c) ≤ m_E·(1 +
+      max_c ΞCH_F(c)).» Proof: STEP-SW, then R86 SW-RETURN on any stretch per Even edge, Σ_c d_E(c) = m_E. Cells: REFEREE «SIGNED» (l. 31;
+      §3 l. 58-60 «XI-RUN ✓»); REFEREE-2 «SIGNED», «none» (l. 23; §2.2 l. 55-57). L-4 states the first two forms, not «≤ m_E·(1 + max_c
+      ΞCH_F(c))».
+  (b) Corollary INT-XCH⁰ (§11, l. 326-329): «For every W-constant interval I of a W-run F (§2.2), with XCH_I(d) the transitions of I at
+      which Ξ(d) changes: |I| ≤ m_E + Σ_d d_E(d)·XCH_I(d).» Proof: XI-RUN with R = I. Cells: REFEREE «SIGNED» (l. 43; l. 60 «INT-XCH⁰ is R =
+      I ✓»); REFEREE-2 «SIGNED», «none» (l. 34; l. 120).
+  (c) Lemma WAIT-CYCLE′ (§4.2, l. 192-207), for the self-routed block of §4.1 (l. 183-187: «X Even, g ∈ succ(X), g ≠ σ_t(X), (X, g) ∉ Iσ_t,
+      and the (σ_t, σ̄_t)-play from g reaches X with the vertices strictly before X pairwise distinct»; «If X lies on the cycle Z* of its
+      own (σ_t, σ̄_t)-play, π is also required to avoid Z*.»), = L-4's definition since L-1: «Let (X, g) have a REG block at t1 with route π
+      and pattern Pat. Then at no state t > t1 of the run do σ_t(X) = g and σ_t|Even(π) = Pat hold together.» Proof: Claim A, Cases 1-3 (the
+      simple cycle X → g → π → X has top z with rew(z) < rew(c*)), then the play under ρ′ and σ̄_t's optimality against MON. Cells: REFEREE
+      «SIGNED, for the §4.1 definition of a self-routed block» (l. 33; §4 l. 83-93); REFEREE-2 «SIGNED», «none» (l. 25; §2.4 l. 70-81).
+  (d) Lemma E0-BOUND (§4.3, l. 212-220): «For every Even edge (X, g) and every W-run F, E0_F(X, g) ≤ n.» Cells: REFEREE «SIGNED» (l. 34; l.
+      94-99); REFEREE-2 «SIGNED», «none» (l. 26; §2.5 l. 83-86).
+  (e) Theorem TRIPLE-RED (§4.4, l. 221-226): «For every W-run F: |F| ≤ m_E + Σ_{(X, g)} RET_F(X, g) ≤ m_E(n + 1) + Σ_{(X, g)} REG_F(X, g) +
+      Σ_{(X, g)} FREE_F(X, g).» (L-4: primed sum indices.) Cells: REFEREE «SIGNED» (l. 35; l. 100-101); REFEREE-2 «SIGNED», «none» (l. 27;
+      l. 87).
+  (f) Lemma RET-ΞRISE (§5.1, l. 229-236): «In every W-run F, for every Even edge (X, g): RET_F(X, g) ≤ ΞCH_F(g).» (the count form; L-4 does
+      not state the per-return chain). Cells: REFEREE «SIGNED. DEDUPE ✓: it is R86 SW-RETURN's chain started at the leave» (l. 36; l.
+      104-106); REFEREE-2 «SIGNED», «none» (l. 28; §2.6 l. 89-90).
+  (g) Theorem FREE-RED (§5.2, l. 237-240): «For every W-run F and Even edge (X, g): FREE_F(X, g) ≤ RET_F(X, g) ≤ |F| ≤ (n − 1)(R*_F + 1) +
+      FL_F.» Cells: REFEREE «SIGNED» (l. 37; l. 107); REFEREE-2 «SIGNED», «none» (l. 28; l. 90).
+  (h) Lemmas GAP-DEV, ΞCH-PCH, Theorem RSTAR-PCH (§6, l. 243-258): «If (y, z) is BLOCKED at a state q of a W-run (τ = τ_q), then Ξ_q(z) ◁
+      W_q(z), and the (σ_q, σ̄_q)-play from z contains an Odd vertex o with σ̄_q(o) ≠ τ(o).»; «For every W-run F and vertex z: ΞCH_F(z) ≤ (n
+      − 1) + PCH_F(z) + (n + PCH_F(z))(n − 1) ≤ n(n + 1 + PCH_F(z)).»; «For every W-run F: R*_F ≤ Σ_{(y, z) Even edge} ΞCH_F(z) ≤ m_E·n·(n +
+      1 + P*_F).» Cells: REFEREE «SIGNED» (l. 38; l. 108-113); REFEREE-2 «SIGNED», «none» (l. 29; §2.7 l. 92-96).
+  (i) Lemma PREFIX-MON and Theorem LEVEL-RED (§7.2-§7.3, l. 264-280): «While λ(Ξ_t(v)) is constant, pre_k(P(Ξ_t(v))) is non-decreasing in t,
+      and strictly increases at every change of depth < k. It takes at most (2n + 1)^k values.» (L-4 states the monotonicity and the count,
+      not the strictness); «For every W-run F, vertex v and k ≥ 1: PCH_F(v) ≤ n·((2n + 1)^k − 1) + DEEP_{k,F}(v) ≤ n(2n + 1)^k +
+      DEEP_{k,F}(v).» Lemma LEX-SIGN (§7.1, l. 261-263) is named in L-4's label and not stated (to check (4)). Cells: REFEREE «SIGNED» (l.
+      39; l. 114-119, «I re-derived the three cases»); REFEREE-2 «SIGNED», «none» (l. 30; §2.8 l. 98-102, «I checked the six comparisons»).
+  (j) Lemma BIP-MON on a frozen stretch and Lemma NO-DEV, corrected (§8, l. 282-303): the identification «A FROZEN STRETCH Φ of a W-run F is
+      a maximal interval of states of F on which σ̄_t is constant, = ρ. On Φ, N5's step is BIP(ρ, τ)'s (SPEC S1-S2: Ξ_t = val(σ_t, ρ), Iσ_t
+      = Iρ_t; [R57]).» with «Along BIP(ρ, τ), val(σ_t, ρ) and val(σ_t, τ) are pointwise non-decreasing.»; «If Ξ_t = W_t at every state t of
+      a W-run F, then R*_F = 0, WCH_F ≤ n − 1, every run of consecutive FL transitions of F has at most 4n(n − 1) transitions, and |F| ≤ (n
+      − 1) + n·4n(n − 1).» (L-4 states R*_F = 0 and the bound on |F|). The CORRECTION (l. 300-303): box 88's FL_F = 0 and |F| ≤ n − 1 had no
+      proof. Cells: REFEREE «SIGNED. The correction is right: …» (l. 40; l. 122-128 «I agree that the old bound ≤ n − 1 had no proof: R15
+      (b) leaves exactly the own-cycle-node length switches.»); REFEREE-2 «SIGNED», «N-3 (the correction note)» (l. 31; §2.9 l. 104-111).
+  (k) Lemma SUB (packet §2.4, l. 131-138; §9 l. 310): «For every W-run F = [a, b] and every sub-interval F′ = [a′, b′] with a ≤ a′ ≤ b′ ≤ b
+      (consecutive states of F), WCH_{F′} ≤ (n − 1)(R*_T(F′) + 1).» with R*_T(F′) the late adoptions relative to F′. Proof of record: R88's
+      GP* / FW-R* proofs (P-N5-GP-box31.md @ d072bb28, §3-§4) read on [a′, b′]; λ_W constant and W-MON on F ⊇ F′; «Maximality of F appears
+      nowhere.» (SUB-check l. 25). Cells: REFEREE-2 successor 22 «## Verdict: TRUE (Opus 5.5, D15)» (SUB-check.md l. 5; reasons l. 13-26;
+      a11c2868, 15:13:18Z); REFEREE successor 20, independently, «Verdict: TRUE, SIGNED (Opus 5.5, D15).» (§9.1 l. 147; l. 148-161, own
+      reading of GP* and FW-R* on F′; written before opening SUB-check.md, l. 9-10); REFEREE-2 successor 23 counts the two signatures (l.
+      22; §C l. 14). See to-check (5) on Lead reading L41.
+  (l) Theorem BIP-RED, unconditional (§9, l. 305-313): «Under [SUB], every W-run F has |F| ≤ SB_F + (SB_F + 1)·(n − 1)·(R° + 1) + FL_F.»,
+      with (k) discharging [SUB]. Cells: REFEREE «SIGNED; unconditional now that [SUB] is signed by both referees» (l. 41; l. 129-133);
+      REFEREE-2 «SIGNED (implication; unconditional with [SUB] double-signed)» (l. 32; §2.10 l. 113-114, «R*_T(Φ) = R°_Φ (the definitions
+      coincide word for word)»); REFEREE §C l. 17 and REFEREE-2 §C l. 23 «SIGNED by both, unconditional».
+  (m) Lemma REL2-WRISE under (A1), (A2) (§10, l. 316-324): in a frozen stretch Φ, (y, z) with a strict release, y leaving z at s, (y, z)
+      blocked again at q2 > s: «W_q2(z) ▷ W_{s+1}(z), and Ξ_q2(z) ⊴ Ξ_q2(h2).» (L-4 states the first conclusion, «a special case of RESULTS
+      R91 Lemma LATE-W, which needs neither (A2) nor the frozen stretch»; used by no reduction, packet l. 316). Cells: REFEREE «SIGNED. Its
+      conclusion W_q2(z) ▷ W_{s+1}(z) is already landed: RESULTS R91 Lemma LATE-W, …» (l. 42; l. 134-142); REFEREE-2 «SIGNED», «uses Fact
+      EXT only where N-1's hypothesis holds» (l. 33; l. 115-119: «The line's parenthesis «a special case of RESULTS R91 Lemma LATE-W» is
+      correct»). Range of s: to-check (7), a doubt.
+  (n) Corollary WRUN-EQ (§3.3, l. 154-173): rows E1-E8 are EQUIVALENCES (E1 WRUN-POLY ⇔ XI-CH-POLY; E2 ⇔ P*-POLY; E3 ⇔ DEEP_k-POLY for each
+      fixed k; E4 ⇔ R*-POLY ∧ FL-POLY; E5 ⇔ ALT-POLY ∧ FREE-POLY; E6 ⇔ R3-POLY ∧ TIE-POLY; E7 ⇔ R*-POLY ∧ [P-INT]; E8 ⇔ SB-POLY ∧ R°-POLY ∧
+      FL-POLY, unconditional by (k)); E9 (R*-, FL-, SB-POLY ⇐ XI-CH-POLY) and E13 (WRUN-POLY ⇒ R3-POLY) ONE-WAY, «proved in one direction
+      only» (WRUN-N4). E7's sufficiency uses FL-INT's counting step (§2.2 l. 105-106: «FL_F = Σ_I |I| over the W-constant intervals I of F.
+      Their number is WCH_F + 1»), signed by both as part of E7. Cells: REFEREE «SIGNED, every row in the direction(s) marked. …» (l. 32;
+      row by row l. 61-78); REFEREE-2 «SIGNED (each row, both directions as marked)» (l. 24; §2.3 l. 59-68). E10 (vacuous), E11 and E12 as
+      rows are not in L-4.
+  Gap maps: REFEREE l. 46 «One gap, G-WRUN-1, in the line only: … Nothing in the packet is FALSE. Notes WRUN-N1..N4, WRUN-L1..L2.»;
+  REFEREE-2 l. 38-39 «No gap. Nothing FALSE among the items to sign. One statement in the setting (Fact EXT) is FALSE as worded and TRUE
+  with the hypothesis its uses satisfy (N-1).»; REFEREE §C l. 36 «Packet items to sign (§3-§11): EMPTY on both sides. Nothing FALSE.»;
+  REFEREE-2 §C l. 28 «Joint gap map for the packet: EMPTY.»
+  The RESULTS line (L-4) claims less than the reports: no DEAD-CYCLE, CHARGE, BIP(ρ, τ) as a process, per-return RET-ΞRISE chain, NO-DEV's
+  WCH and FL-run bounds, PREFIX-MON strictness, REL2-WRISE's second conclusion, XI-RUN's last form, rows E10-E12 as rows. Every clause it
+  states is one of (a)-(n).
+- Fixes (docs/new/P-N5-WRUN-fixes-box92.md, L-NEW successor 39, APPEND-ONLY, five entries, five commits each +N/−0: 9460f011 (+59/−0, sha1
+  9e3734c4…, opened with the FIXD entry 2 commit), 02a12a10 (+67/−0, e71be605…), 85c12579 (+45/−0, a14403f2…), fb976deb (+37/−0, d8956c9e…),
+  5462315f (+39/−0, sha1 9f7f78973e1734b65940596c9239ae967555b2f1, 247 lines; = l-new head c49a0927 = origin trunk 3be9bc44 = local
+  6727c6ea; the last commit touching the file)). Header (l. 1): «Frozen packet … and line … are NOT edited; errata and cross-reads are given
+  here.» Every referee and lane text the file quotes as verbatim was checked for this draft by script against its source at the cited SHA
+  and lines (R143-settle.md l. 121-130 and l. 39-47 at 717f407a; N5-GATE-box51b.md l. 308-318 at 78788761; R-N5-WRUN.md, R2-N5-WRUN.md,
+  R-N5-WRUN-C.md, R2-N5-WRUN-L3.md): all equal. Each item, with the referees' words:
+  - Entry 1 (l. 4-59; 16:34Z): CONJECTURE BIP-REL-1 DEAD (L-RED R143 §5, l-red 717f407a): «One W-run, two strict releases of edge (81, 80)
+    in one frozen stretch: BIP-REL-1 is DEAD.» (l. 20), on experiments/red/rel2/instances/rel2_R2_n82.pg sha1
+    064a8309e6fe1052a09c929f5f02d5118de7731d, .start 2988324fb0f300b4407bc076e1473d5ce16deb7e (re-hashed for this draft at 717f407a: equal);
+    errata: §12 BIP-REL-1 DEAD; row E10 «still a true implication, now VACUOUS (its premise is false)»; §9's last bullet void; «Row E8 … is
+    unaffected»; §13 DEAD row. Cross-reads (l. 32-59, «NOT packet changes»).
+  - Entry 2 (l. 61-126; REFEREE 8c0b2e69): G-WRUN-1 «GAP in the line; the packet is right», applied in L-1 («= packet §4.1. Recorded as a
+    line error of successor 39 (the packet was right).», l. 82); WRUN-L1, WRUN-L2, WRUN-N2 (LATE-W parenthesis), WRUN-N4 applied in L-1;
+    WRUN-N1 (Fact EXT) and WRUN-N3 ([P-INT] «of every W-run») as packet errata; status parenthesis: BIP-REL-1 DEAD.
+  - Entry 3 (l. 128-171; REFEREE-2 a281189a): R2-L-1 (REQUIRED; «strict release» defined, hypothesis kept as signed), R2-L-2 (τ_q, the
+    W-run's τ), R2-L-3 («there is a polynomial p such that»), R2-L-4 («Even edge»), R2-L-5 («that is, not E0») applied in L-2; R2-N-1 (Fact
+    EXT «FALSE as worded», erratum «for values x, x′ with y ∉ P(x) ∪ P(x′)», «The line does not state EXT»); R2-N-2 (R3-POLY's definition)
+    as a packet erratum.
+  - Entry 4 (l. 173-208; REFEREE 6e83247a): WRUN-L3 (REQUIRED; one global binder, ΞCH-PCH for every z, PREFIX-MON's t), WRUN-L4 (REQUIRED;
+    τ_s in (A2)), REFEREE's optional «with [SUB]», applied in L-3.
+  - Entry 5 (l. 210-247; REFEREE-2 284014ad, REFEREE ac78fb08): WRUN-L5 (REQUIRED) option (a), the Lead's decision («Lead 18:43Z: «My
+    decision is option (a), unconditional …»», l. 210): «(Lemma SUB, signed by both referees: …) [SUB] holds, and (Theorem BIP-RED)» and
+    WRUN-EQ «and ⇔ SB-POLY ∧ R°-POLY ∧ FL-POLY»; «Packet §9 / row E8: BIP-RED and E8 are now unconditional.» (l. 230); the optional primed
+    sums and «over consecutive states t of the run» (l. 239-241); the heading marker dropped (l. 244).
+  No fix changes a signed statement of the packet: G-WRUN-1 restores the packet's own definition in the line; WRUN-L1..L4 and R2-L-1..L-5
+  bind symbols; WRUN-L5 states Lemma SUB, which both referees signed ((k)); WRUN-N1 / R2-N-1, WRUN-N3 and R2-N-2 are packet-text errata
+  outside the signed statements; the BIP-REL-1 errata touch only a CONJECTURE and the vacuous row E10.
+- Not signed: §1 (setting and premises; «CHECKED» by both); §2 other lanes' texts: ARENA-MAX, INTERVAL-SI, TIGHT-VALUE, RETURN-CHARGE,
+  INT-XCH (L-SI's, with RX_I) «quoted verbatim. Not signed as packet items: the Lead has not routed them.» (REFEREE l. 29; REFEREE-2 l. 21
+  «not signed (not routed)»; FL-INT's counting step signed inside E7 only); the packet errata items (Fact EXT as worded, «FALSE as worded»
+  per REFEREE-2 l. 46; [P-INT] at l. 108; R3-POLY in the body); the items signed by both but not stated by L-4 (to check (4)); §12
+  CONJECTURES, «NOT to sign; none is claimed» (l. 333): WRUN-POLY and its equivalent forms, R*-POLY, FL-POLY, ALT-POLY, FREE-POLY, R3-POLY,
+  TIE-POLY, [P-INT], SB-POLY, R°-POLY separately, BIP-POLY («every BIP(ρ, τ) run … has at most p(n) steps», l. 338; NOT killed, fixes l.
+  30), INT-LIN («|I| ≤ n − 1 for every W-constant interval I», l. 339), NT-1 / GAP-1 / IMM-1 (l. 340); §13 DATA, DEAD, READING (Data below).
+  DEAD, each with the instance that killed it: CONJECTURE BIP-REL-1 («in every frozen stretch Φ of every W-run, each Even edge has at most
+  one strict release (so R°_Φ ≤ m_E)», l. 337): rel2_R2_n82 (n 82, 10 iterations), edge (81, 80) twice in one frozen stretch; obstruction
+  (L-RED, fixes l. 21): «box 90's one-line obstruction realised with one-player delay chains as a clock (τ-branch climb, then ρ-branch
+  climb, twice)»; family «R strict releases of ONE edge in ONE stretch at n ≈ 20R², so R° ≥ ⌊√(n/20)⌋» (fixes l. 15); reproduced by
+  REFEREE-2 (l. 166-167) and L-NEW (fixes l. 17-21); REFEREE did not re-run it (l. 232). Lane DEAD items of the packet (l. 354-359), not
+  refereed dead ends of this entry: DEV-CAP (gate_K16_n197, R*_F 16 > 5), SHALLOW-k (switchbestexp_N depth 3N + 3; counter_symsi_8 depth
+  42), FLIP-c (fx family, K + 1), non-strict BIP-REL-1 (ueonce_n27, edge (10, 23) twice), SB-LIN (pftheta34_n32 34 > 32; latew_K16_m32 513 >
+  482). READING (l. 360-363). Lane and referee work after the freeze other than the WRUN fixes commits is not part of this entry (to check
+  (12)).
+- Referee strengthening (NOT part of this entry; remarks of one referee, remarks of both outside the verdict cells, readings):
+  (i) WRUN-N2 (REFEREE l. 139-142): REL2-WRISE's conclusion «is REL2-WRISE's conclusion without (A2) and without the frozen-stretch /
+      strict-release setting» in landed R91 LATE-W; REFEREE-2 l. 117-119 «(y, z) cannot be blocked at s + 1 (by (i), W_{s+1}(h) ⊵
+      W_{s+1}(z)), so q2 ≥ s + 2 is a «later state» in LATE-W's sense»; REFEREE §C l. 19 «REFEREE-2's q2 ≥ s + 2 remark makes LATE-W's
+      «later state» explicit».
+  (ii) REFEREE-2 N-3 (l. 108-111): at a Ξ-unchanged transition «all switched vertices keep Ξ and are their own cycle nodes, so the corrected
+      bound is the right form» (through R94's SW-KEEP); REFEREE §C l. 16 «consistent».
+  (iii) MUT 1 (REFEREE l. 179): the clause «π avoids Z*» was never needed in the corpus («0 recurrences over 283,077 blocks»), while the
+      proof needs it (Case 2); REFEREE-2 §C C.4 l. 68-70 «Both clauses stay in.»
+  (iv) [SUB] data: REFEREE «82,358 sub-interval checks on n ≤ 100, plus 201,323 on the three large pins, 0 violations» (l. 162); its MUT 3
+      «did not bite» (l. 162-163: «The (n − 1) factor is not tight in these data, so this mutation is not a usable control for [SUB]»);
+      REFEREE-2 22: «57,726 sub-interval checks, 0 violations of SUB and 0 of GPB», «218 sub-intervals have WCH_{F′} > n − 1» (SUB-check l.
+      35-36).
+  (v) Self-corrections: REFEREE §C l. 28 (R2-L-1): «My leniency was the miss.»; REFEREE §C l. 72-73 (WRUN-L3): «REFEREE-2 (on L-1) and I (on
+      0faa5b80) both passed them.»; REFEREE-2 L3check l. 6 «I missed it on L-1»; REFEREE-2 §C l. 46 (WRUN-N3) «I missed this point in the
+      packet text, but the line is right.»
+  (vi) READING (packet l. 360-363): «After E1 the whole within-W-run problem is ONE per-vertex count: how often Ξ(c) can change inside one
+      W-run.»; «Largest known: max ΞCH_F(c) = 137 at n 250 (0.55n); no super-linear family.» Not signed.
+- Honest limits: (i) REDUCTIONS and EQUIVALENCES inside W-runs: no residual is bounded; WRUN-POLY, XI-CH-POLY and every POLY statement stay
+  open. (ii) W-runs are not whole runs: «WRUN-POLY does not by itself bound N5's runs: τ-changes, S4c fallbacks and λ_W-changes cut runs
+  into W-runs ([R89] STRETCH-RED's Q and fb_S, RESULTS R90's B*, O*). Not claimed here.» (packet l. 174-175). (iii) Lemma SUB's proofs are
+  referee-written readings of landed R88's proofs on sub-intervals; [SUB] has no biting mutation control (Referee strengthening (iv)); its
+  two-referee status is to-check (5). (iv) Standing premise: R57's SPEC premise (1E-N3); the code's match to SPEC is DATA (R15 G-N5T-1). (v)
+  Nothing is claimed for N5-LZC, N5-SF or any variant (packet l. 10). (vi) CONJECTURE BIP-REL-1 is DEAD; row E10 is vacuous and not in the
+  line. (vii) Counts are transitions, not bit operations; no running-time bound. (viii) Not M3, not a step-4 pass, not a TARGET.md claim;
+  G-N5-TIME stays open.
+- Data (DATA, not proof): pinned (packet l. 178: «Pins (check.sh "box 92"): pftheta34_n32 |F| 34, max ΞCH 34, bound 1010; fx_K8_m32 |F| 280,
+  max ΞCH 137, bound 2005.»). experiments/new/check.sh at 7668bc9b: sha1 b5201cec45715a837722c5d3b14020fba79e2b74, 478 lines; at 5462315f:
+  sha1 41f07659572c3c940a1c47bc7477e6ec33ed5e93, 490 lines (+12: the box 93 and box 94 blocks l. 478-489, excluded); the block of this
+  entry, «box 92 WRUN» l. 472-477, is identical at both (cmp). Files (identical at 7668bc9b and 5462315f): experiments/new/box92/xirun.py
+  3ca31da4dfcc9b08705431ac5c1003bb915155e9 (46 lines), experiments/red/so/instances/pftheta34_n32.pg
+  b291d7bb23c4f795b991a44d8f0b9e43ccb24a79 (= packet l. 359; REFEREE-2 l. 162 «sha1 b291d7bb…»; REFEREE l. 180 «sha1s equal the packet's»),
+  experiments/red/free/instances/fx_K8_m32.pg e995709e256b55aa40cb94896a7dcb52446baf57 (= packet l. 351, REFEREE l. 182, REFEREE-2 l. 164),
+  fx_K8_m32.start a82cc63e297789363ef1736a6ab7cc74fc6b8f75, box92/xirun_sbcg.txt 96cb683ef5b5c2c3172bfbd8ad6ec6823482b924 (719 lines),
+  box92/xirun_alt.txt c85916d2459979854fda80cbab308675dac54273 (413 lines), box92/run.sh edd05b5738c3ce9d8403b8c388c82c2bcc580ba5. Re-run
+  for this draft from a `git archive` of each commit (experiments/ and docs/new/; `python3 -I`; outputs to scratch files; exit codes read):
+  l. 472-477 alone under `set -euo pipefail`, at 7668bc9b 19:13:25Z-19:13:32Z and at 5462315f 19:13:32Z-19:13:39Z by date -u (read before
+  and after): «box 92 WRUN: XI-RUN |F| <= m_E + sum d_E XICH on pftheta34_n32 and fx_K8_m32: PASS», rc 0 each. Tool output (5462315f
+  archive, from experiments/): «XIRUN n 32 mE 80 runs 1 {'noswitch': 0, 'viol_sw': 0, 'viol_ent': 0, 'viol_xirun': 0} maxima {'F': 34,
+  'xich': 34, 'bound': 1010, 'ratio': 0.034}», rc 0; «XIRUN n 250 mE 151 runs 1 {'noswitch': 0, 'viol_sw': 0, 'viol_ent': 0, 'viol_xirun':
+  0} maxima {'F': 280, 'xich': 137, 'bound': 2005, 'ratio': 0.14}», rc 0.
+  DATA OF RECORD (packet §3.3 l. 176-179 and §13 l. 343-363, with fixes entry 1's errata; corpus box59/sbcg.lst (719) +
+  si/root/logs/alt_all.lst (413), N5, S3 starts): XI-RUN 0 violations, STEP-SW 0 transitions without an Even switch, SW-RETURN per edge 0
+  violations over 1132 runs and 1692 W-runs; max |F| / (m_E + Σ_c d_E(c)·ΞCH_F(c)) = 0.273 (thetaA_n6); WAIT-CYCLE′ 0 violations in 434,925
+  REG blocks; returns REG 1,005 / E0 0 / FREE 5,260; GAP-DEV 0 violations in 116,086 blocked (edge, state) records; ΞCH-PCH, RSTAR-PCH 0;
+  PREFIX-MON 0 (k = 1, 2, 3); BIP-REL-1 0 violations on the corpus only (fixes l. 27); largest R*_F 64 and ΞCH_F 63 (gate_K64_n581, sha1
+  a93c7c8b…), |F| 560 and SB_F 513 (latew_K16_m32, sha1 6d34c161…), fx_K8_m32 |F| 280, ΞCH 137. Re-summed for this draft (box 92 files
+  only): equal (to check (10)).
+  REFEREE (successor 20; own docs/referee/scratch/wrun_probe.py, `python3 -I`; no lane code): run set box 83's lists, n ≤ 100: «813 runs
+  (740 games, 73 skipped for n > 100), all RC 0: 4949 W-runs, 8066 W-run transitions, 269,250 REG blocks tested for WAIT-CYCLE′ against
+  every later state, 69,979 blocked (edge, state) records for GAP-DEV, 189 NO-DEV W-runs.» «VIOLATIONS 0 for every check.» (l. 175-177);
+  maxima ratio 0.272 (thetaA_n6), NO-DEV |F| 55 (x32_rand64), R*_F 17, SB_F 35 (l. 178); MUT 4 (XI-RUN without m_E) bites, MUT 5 (the frozen
+  line's block definition) bites at once (l. 179); pins pftheta34_n32 |F| 34, fx_K8_m32 280, latew_K16_m32 560 and SB_F 513, gate_K64_n581
+  R*_F 64, sha1s equal the packet's (l. 180-184); G-WRUN-1's probe: «21 such recurrences on nep92_n40 and 8 on 100 random games of n ≤ 6.
+  With the packet's definition: 0.» (l. 200-201).
+  REFEREE-2 (successor 23; own docs/referee-2/R2-N5-WRUN/wrun_check.py, «the lane's box84-box92 scripts NOT imported», l. 150-151): corpus
+  1132 runs, 14,028 W-run transitions, «**0 violations of every check**»; «Returns REG 1,005 / E0 0 / FREE 5,260: exactly the packet's §13
+  figures.»; WAIT-CYCLE′ 286,472 sampled REG blocks, 0; GAP-DEV 192,083 records, 0; PREFIX-MON 0 at k = 1, 2, 3 over 37,462 / 29,778 /
+  24,172 deep changes; NO-DEV on 1,551 W-runs, longest 58 (topfix_n10); max XI-RUN ratio 0.272 (l. 155-161); pins pftheta34_n32 34 / 34 /
+  1010, gate_K64_n581 71 / 63 / R*_F 64, fx_K8_m32 280 / 137 / 2005, latew_K16_m32 560 / 4389 (l. 162-165); BIP-REL-1 kill reproduced on
+  rel2_R2_n82 (l. 166-167); G-WRUN-1 reproduced on wc_line_cex.pg with its own engine (§C l. 32-36). Run sets reconciled in the §Cs (REFEREE
+  §C l. 33; REFEREE-2 §C C.5 l. 73-81). No signed statement uses any count.
+- Signatures: REFEREE docs/referee/R-N5-WRUN.md (report 8c0b2e69c2c5685c27cda7bc060a517c8c90c70f, 2026-10-30T16:30:11Z, committed directly
+  on claude/referee (parent 2c9d8040), first on trunk by 210f6c7d (16:46:28Z); sha1 657530fedd2c10bd0ef437e26aa7a66d506579b2, 238 lines;
+  Addendum 1 a3aa5b68907ae7c2bc9a2afa3de795f64070c9e3 (16:47:28Z, +10/−0 inserted before the DONE block, l. 1-229 unchanged; sha1
+  c4f1834034cb25ad601e4ac03659bbfa57033d2e, 248 lines, = referee head fcea02e3 = local and origin trunk; first on trunk by 4e57e225,
+  17:11:42Z); successor 20): §1 CHECKED; §3-§11 SIGNED; [SUB] SIGNED independently (§9.1 l. 147); «Nothing in the packet is FALSE.» (l. 46).
+  §C docs/referee/R-N5-WRUN-C.md (3296e98f05ad58ad306ff984402f0402db647ccc, 2026-10-30T17:33:49Z, new file, 68 lines, sha1
+  d8177951c11d69c1376cc50888a44fd93bdbd264; first on trunk by c505334c, 17:49:06Z): cross-map «agree» on every item (l. 9-33), joint gap map
+  EMPTY (l. 36); §4 6e83247a9a2093447365d1caad90d4f5c977e0b4 (17:48:45Z, +35/−1, 102 lines, 33ad0135…; trunk 7d42e47b, 18:13:40Z): L-2
+  REQUIRED WRUN-L3, WRUN-L4 (l. 93); §5 ac78fb08eb94cef30ffdff9c3ded3767d5f0ffdf (18:28:22Z, +25/−2, 125 lines, 42931813…; trunk 9a381f97,
+  18:54:18Z): «Verdict on L-3: MATCHES» (l. 117); §6 fcea02e3e6fa0e4bd55b7f10708ac0eff5132fd0 (19:02:57Z, +15/−0, sha1
+  b34ca86e82e7a0f6dd24d013d272df52e80a7961, 140 lines, the last commit touching the file (= origin referee head at 19:22:03Z; at the
+  19:32:49Z fetch the head is ea05b574, SETTLE §C only); merged into the LOCAL trunk by 808772c9 (19:21:11Z), not on origin trunk 3be9bc44
+  at 19:22:03Z): «Verdict on L-4: MATCHES (Opus 5.5, D15).» (l. 132). REFEREE-2 docs/referee-2/R2-N5-WRUN.md (report
+  a281189a5ff95b1951d933f8ea0b7dbc0f0b7ae8, 2026-10-30T17:06:36Z, committed directly on claude/referee-2 (parent d8ad2f46), first on trunk
+  by 7cca4463 (17:23:40Z); sha1 99f9dd34ad67db7266845f6d2205256e04a14186, 176 lines, unchanged since; successor 23): §1 CHECKED; §3-§11
+  SIGNED; «No gap. Nothing FALSE among the items to sign.» (l. 38). §C docs/referee-2/R2-N5-WRUN-C.md
+  (1ca64032dacd12230017688f62585219506e3c53, 2026-10-30T17:33:42Z, new file, 89 lines, sha1 82a21cb897d1d2e86762774f257a27e90e640b70,
+  unchanged since; first on trunk by eb7af024, 18:00:45Z): «Joint gap map for the packet: EMPTY.» (l. 28); G-WRUN-1 «CONFIRMED
+  independently» (l. 32). Line files: R2-N5-WRUN-L2.md (c2bfcc4c6d7aca41048b9063134a341a5ab172c8, 17:48:35Z, 22 lines, c5362b59…; MATCHES,
+  superseded); R2-N5-WRUN-L3check.md (d671d51621c84691ab44ec25ca5d09d28a0af6c1, 18:14:22Z, 38 lines, 6501754f…; L-2 REQUIRED WRUN-L3,
+  WRUN-L4); R2-N5-WRUN-L3.md (284014add5de308bac59f620801b1ef2db825bbc, 18:28:08Z, 42 lines, 370fa233…; L-3 REQUIRED WRUN-L5);
+  R2-N5-WRUN-L4.md (9784fde6e500d22bf97b267550692217cbcd4be2, 19:00:29Z, 16 lines, sha1 4eb9d8aaae1d022065f9d41a16e9db385ff2a184; the last
+  commit touching the WRUN files (= origin referee-2 head at 19:22:03Z; at 19:32:49Z the head is 04020305, SETTLE §C and a merge only);
+  merged into the LOCAL trunk by 5719f4df (19:21:11Z), not on origin trunk 3be9bc44 at 19:22:03Z): «L-4 (98d9a50c): **MATCHES** (Opus 5.5,
+  D15). No required change.» (l. 16). [SUB]: REFEREE-2 successor 22 docs/referee-2/SUB-check.md (a11c28688518bf5c84eb4d223edc0754ea1912c6,
+  2026-10-30T15:13:18Z, 51 lines, sha1 253b8a57e1235816a79ad77ff7df935aabf79269, unchanged since; first on trunk by 0c37050d, 15:33:14Z):
+  «## Verdict: TRUE (Opus 5.5, D15)» (l. 5).
+  INDEPENDENCE: REFEREE l. 8 «I opened no docs/referee-2/ file for this packet.»; l. 9-10 ([SUB]) «my verdict in §9.1 was written and saved
+  BEFORE I opened docs/referee-2/SUB-check.md, and I opened it only to quote-check §2.4»; REFEREE §C l. 3-4 «I opened
+  docs/referee-2/R2-N5-WRUN.md @ a281189a (176 lines) only after that word, and after my report R-N5-WRUN.md (8c0b2e69, Addendum 1 a3aa5b68)
+  was pushed.» REFEREE-2 l. 6-7 «Independence: written before opening docs/referee/R-N5-WRUN.md. Revision L-1 applies REFEREE's first-report
+  items; I read the line text only, not REFEREE's report.»; REFEREE-2 §C l. 2-3: its report «pushed before I opened any docs/referee/ file
+  for this packet», REFEREE's report «opened 17:24Z on the Lead's word». No review imported lane code (REFEREE wrun_probe.py; REFEREE-2 l.
+  150-151); the lane's scripts ran only as the pinned block.
+  §C (both): verdicts on every packet item identical; no disagreement in substance. One difference of reading, resolved: R2-L-1 («strict
+  release» unbound: REFEREE «acceptable» at first, l. 218-219; REFEREE §C l. 28 «I agree with REFEREE-2 … REQUIRED for L-2»; applied in
+  L-2). Notes map (REFEREE §C l. 21-32; REFEREE-2 §C C.2-C.4 l. 31-70): WRUN-N1 = N-1 (Fact EXT; the same point, REFEREE-2's «the clean
+  form», REFEREE §C l. 21); REFEREE only G-WRUN-1 (confirmed by REFEREE-2), WRUN-L1, WRUN-L2, WRUN-N2, WRUN-N3 (agreed), WRUN-N4, MUT 1;
+  REFEREE-2 only R2-L-1..L-5 (agreed), N-2 (agreed), N-3. Later: WRUN-L3, WRUN-L4 (REFEREE §4; agreed REQUIRED by REFEREE-2 L3check),
+  WRUN-L5 (REFEREE-2 L3; REFEREE §6 signs L-4's form).
+- TARGET.md diff: «n the number of vertices» is TARGET.md §1 l. 8's n («n = |V|, m = |E|, d = |pr(V)| ≤ n + 1.»); m_E (edges leaving Even
+  vertices) is at most TARGET's m; games are TARGET.md §1 games (REFEREE-2 l. 144). The line makes no M4 claim and no TARGET claim; its own
+  scope clause reads «REDUCTIONS and EQUIVALENCES (none of these quantities is bounded here; WRUN-POLY, XI-CH-POLY, BIP-POLY, INT-LIN and
+  the other POLY statements are open; CONJECTURE BIP-REL-1 is DEAD (L-RED R143, rel2_R2_n82, l-red 717f407a); W-runs are not whole runs;
+  G-N5-TIME stays open; not M3, not a step-4 pass, not a TARGET.md claim)». REFEREE-2 l. 144-145 «TARGET.md diff: no claim about M4; n is
+  TARGET.md's n; games are TARGET.md §1 games, read through SPEC S1. «W-runs are not whole runs» is stated. ✓»; REFEREE l. 22-23 «Scope
+  (D1): REDUCTIONS and EQUIVALENCES inside W-runs of N5. No residual is bounded. W-runs are not whole runs. G-N5-TIME stays OPEN. Not a
+  TARGET.md claim.» Not a claim of TARGET.md §1 or §2 (lemmas, inequalities and equivalences about W-runs of N5 runs on every game; no bound
+  on a W-run, on a run or on running time; no algorithm claim). GAPS G-N5-TIME: open.
+
 ## Dead ends (kept; each with the exact obstruction or counterexample and the instance that killed it)
 - DE1 (2026-10-14): arXiv 2511.03752 v1 (van der Heijden), claimed O(n²(n+m)) algorithm. BROKEN: wrong regions on 4-vertex games
   CE1 (l-comp 19b5ce2, experiments/m2/counterexamples/ce1_4v.pg) and cex1 (referee 936d47c, docs/referee/scratch/cex1-*.pg).

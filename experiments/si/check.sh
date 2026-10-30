@@ -887,3 +887,86 @@ echo "si (box 51b §8: LAYER-RESET): PASS"
 # box 51b §10: Lemma RETURN-CHARGE (RCV 0, RCX 0 on u23sw64's 31 returns), XCI 8.
 python3 -I gate/layer.py ../red/xing/instances/u23sw64_n32.pg | grep -q "RET 31 UNX 0 RETL2 0 DEPTH 10 FLAT 8 RCV 0 RCX 0 XCI 8"
 echo "si (box 51b §10: RETURN-CHARGE): PASS"
+# box 51b §11-§12: RETURN-CHARGE' over whole runs (Even and Odd), SEG-XCH W-run bound, T-bound; charge OFF kill (cw11_n24).
+python3 -I gate/retx.py ../red/xing/instances/u23sw64_n32.pg | grep -q "T 16 MONO_V 0 IMP_V 0 RET 70 RCV 0 FB_V 0 SLACK 247 LMAX 8 OMONO_V 0 OIMP_V 0 ORET 0 ORCV 0 TB_V 0"
+# (box 52 fix: the old form «grep && ! grep» could not fail under set -e; same test, explicit exit)
+grep -q "RETX" gate/retx_sbcg.txt
+if grep -q "RCV [1-9]\|FB_V [1-9]\|TB_V [1-9]\|MONO_V [1-9]\|IMP_V [1-9]" gate/retx_sbcg.txt gate/retx_alt.txt gate/retx_red.txt; then echo "box 51b: retx violation"; exit 1; fi
+python3 -I gate/charge.py ../red/kw/instances/cw11_n24.pg | grep -q "D4_OFF 1 D4_SELF 0 ALL_ON 6 ALL_OFF 4 ALL_SELF 12"
+echo "si (box 51b §11-§12: RETURN-CHARGE', SEG-XCH, charge OFF): PASS"
+# box 51b §13: head Xi-changes per W-run (mkrw LATE=1 K 4 m 16: HX 8 = 2K).
+t=$(mktemp -d); LATE=1 python3 -I ../red/span/mkrw.py 4 16 $t/w.pg $t/w.start >/dev/null
+python3 -I gate/heads.py $t/w.pg $t/w.start | grep -q "HX 8 XX 9 NHEAD 32 SUMHX 125 LMAX 76"
+echo "si (box 51b §13: heads): PASS"
+# box 52 (docs/si/N5-HEADS-box52.md): Theorem RUN-SETTLE's front (BADW 0; MUT=1 control bites on gci2_n12), the Xi-distance front DEAD
+# (ladderd0_k12_n48 BAD1 11), proof cases on u23sw64 (TT 5, RR 0, OT 0, no violations), x32_rand48 one window of 44 at n 48,
+# sbar avoids I_tau DEAD (lend107_n32 INIT 106), one old-target-fixed flip (nep13_n24 NOX 1, NONE 0); corpus outputs carry no violation.
+python3 -I heads52/bffront.py ../red/ul/instances/ladderd0_k12_n48.pg ../red/ul/instances/ladderd0_k12_n48.start | grep -q "BAD1 11 BAD0 22 MINW1 2 BADW 0 SWB 11"
+python3 -I heads52/bffront.py ../n5-epoch/instances/gci2_n12.pg ../n5-epoch/instances/gci2_n12.start | grep -q "MINW1 1 BADW 0 "
+MUT=1 python3 -I heads52/bffront.py ../n5-epoch/instances/gci2_n12.pg ../n5-epoch/instances/gci2_n12.start | grep -q "MINW1 1 BADW 2 "
+python3 -I heads52/swcase.py ../red/xing/instances/u23sw64_n32.pg | grep -q "NE 44 WR 0 TT 5 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 3"
+python3 -I heads52/rwin.py ../red/xing/instances/x32_rand48.pg | grep -q "LMAX 44 E 0 WMAX 44 .* WALL 44"
+python3 -I heads52/dset.py ../n5-epoch/instances/lend107_n32.pg ../n5-epoch/instances/lend107_n32.start | grep -q "INIT 106 WSB 106 WSE 0 WSW 212"
+python3 -I heads52/flipc.py ../n5-epoch/instances/nep13_n24.pg ../n5-epoch/instances/nep13_n24.start | grep -q "FLIPS 20 OLDX 19 NOX 1 .* NONE 0 "
+if grep -q "BADW [1-9]" heads52/bffront_*.txt; then echo "box 52: BADW violation in corpus output"; exit 1; fi
+if grep -q "V[A-Z]* [1-9]\|RR [1-9]\|OT [1-9]" heads52/swcase_*.txt; then echo "box 52: swcase violation"; exit 1; fi
+if grep -q "NONE [1-9]" heads52/flipc_*.txt; then echo "box 52: flip NONE"; exit 1; fi
+for f in rwin:RWIN swcase:SWC bffront:BFF flipc:FLIPC; do
+  [ "$(cat heads52/${f%%:*}_*.txt | grep -c "${f##*:}")" = 1134 ] || { echo "box 52: ${f%%:*} outputs incomplete"; exit 1; }
+done
+cat heads52/rwin_*.txt | awk '{for(i=1;i<=NF;i++){if($i=="n")n=$(i+1); if($i=="WALL")w=$(i+1)}; if(w>=n-1) bad=1} END{exit bad}' || { echo "box 52: a window reaches n - 1"; exit 1; }
+echo "si (box 52: RUN-SETTLE front, Xi-front DEAD, proof cases, defect set, flips): PASS"
+# box 52 §3 (17:5xZ): FLIP-CAUSE'' DEAD on two kinds of vertex (n5b agrees: heads52/flipx.py), FLIP-EV data (corpus EVX 0).
+python3 -I heads52/flipc.py heads52/inst/flipnone_n14.pg heads52/inst/flipnone_n14.start | grep -q "NONE 1 ENTX 0 OWNCN 1 NONEX 0 EXIX 0 EVX 1 EVXC 1"
+python3 -I heads52/flipc.py heads52/inst/flipnonex_a_n10.pg heads52/inst/flipnonex_a_n10.start | grep -q "NONE 1 ENTX 0 OWNCN 0 NONEX 1 EXIX 1 EVX 0 "
+python3 -I heads52/flipx.py heads52/inst/flipnonex_a_n10.pg heads52/inst/flipnonex_a_n10.start | grep -q "FLIP k 1 o 8 tau 4 old 9 new 4 oldXi_changed False newXi_changed False"
+python3 -I heads52/flipx.py heads52/inst/flipnone_n14.pg heads52/inst/flipnone_n14.start | grep -q "FLIP k 1 o 12 tau 1 old 6 new 1 oldXi_changed False newXi_changed False"
+if grep -q "EVX [1-9]" heads52/flipc_*.txt; then echo "box 52: FLIP-EV corpus violation"; exit 1; fi
+echo "si (box 52 §3: FLIP-CAUSE'' DEAD, FLIP-EV data): PASS"
+# box 52 packet P-N5-SETTLE FROZEN (Lead 18:14Z): the packet and its line file must not change (repairs go to P-N5-SETTLE-fixes.md).
+echo "aef403c3d8a003bcfc6742c4d1da084a1e21669f  ../../docs/si/P-N5-SETTLE-box52.md" | sha1sum -c --quiet
+echo "6aa094e32b03317797a551ac2fc719749cf59ca7  ../../docs/si/P-N5-SETTLE-line.txt" | sha1sum -c --quiet
+echo "si (box 52: P-N5-SETTLE frozen): PASS"
+# box 52 §3 (18:5xZ): FLIP-EV DEAD on flipev_n20 (EXI at non-own node 10, no event (iii) in the W-run; n5b agrees).
+python3 -I heads52/flipc.py heads52/inst/flipev_n20.pg heads52/inst/flipev_n20.start | grep -q "NONEX 1 EXIX 1 EVX 1 EVXC 0 "
+python3 -I heads52/rwin.py heads52/inst/flipev_n20.pg heads52/inst/flipev_n20.start | grep -q "EIII 0 "
+python3 -I heads52/flipx.py heads52/inst/flipev_n20.pg heads52/inst/flipev_n20.start | grep -q "FLIP k 2 o 10 tau 4 old 1 new 4 oldXi_changed False newXi_changed False"
+python3 -I heads52/flipx.py heads52/inst/flipev_n20.pg heads52/inst/flipev_n20.start | grep -q "FLIP k 2 o 14 tau 8 old 8 new 11 oldXi_changed True newXi_changed False"
+echo "si (box 52 §3: FLIP-EV DEAD, flipev_n20): PASS"
+# box 53 SBF (docs/si/N5-SBF-box53.md, Lead 18:55Z): Topkis / any fixed order on Odd strategies DEAD (thetaA_n7: sbar(6) 5 -> 1 -> 5
+# in one W-run; n5b agrees); Theorem ROOT-FLIP lemma checks (SEL, NOCLOSE, TIE, DESCENT; MUT=1 control bites); corpus and random search.
+o=$(python3 -I sb53/topkis.py ../n5-exhaustive/instances/thetaA_n7.pg ../n5-exhaustive/instances/thetaA_n7.start)
+case "$o" in *"PROFREV 1 PVREV 1 FLIPT 2 ROOTX 0 EVX2 0 TXR 1 FIRST 0 3 F 0 3"*) ;; *) echo "box 53: thetaA_n7 topkis: $o"; exit 1;; esac
+o=$(python3 -I heads52/flipx.py ../n5-exhaustive/instances/thetaA_n7.pg ../n5-exhaustive/instances/thetaA_n7.start)
+case "$o" in *"FLIP k 1 o 6 tau 5 old 5 new 1 "*"FLIP k 2 o 6 tau 5 old 1 new 5 "*) ;; *) echo "box 53: thetaA_n7 n5b: $o"; exit 1;; esac
+o=$(python3 -I sb53/rootflip.py heads52/inst/flipev_n20.pg heads52/inst/flipev_n20.start)
+case "$o" in *"NONOWN 66 NOTT 0 SELX 0 NCX 0 FLIPS 4 TIES 1 TIEX 0 EVENX 0 DESCX 0 ROOTX2 0"*) ;; *) echo "box 53: rootflip flipev_n20: $o"; exit 1;; esac
+o=$(MUT=1 python3 -I sb53/rootflip.py heads52/inst/flipev_n20.pg heads52/inst/flipev_n20.start)
+case "$o" in *"SELX 7 "*) ;; *) echo "box 53: MUT control did not bite: $o"; exit 1;; esac
+o=$(python3 -I sb53/rootflip.py ../n5-epoch/instances/nep22f_n64.pg ../n5-epoch/instances/nep22f_n64.start)
+case "$o" in *"NONOWN 1641 NOTT 0 SELX 0 NCX 0 FLIPS 120 TIES 2 TIEX 0 EVENX 0 DESCX 0 ROOTX2 0"*) ;; *) echo "box 53: rootflip nep22f: $o"; exit 1;; esac
+[ "$(cat sb53/root_*.txt | grep -c ROOTFLIP)" = 1134 ] || { echo "box 53: rootflip outputs incomplete"; exit 1; }
+[ "$(cat sb53/topk_*.txt | grep -c TOPKIS)" = 1134 ] || { echo "box 53: topkis outputs incomplete"; exit 1; }
+if grep -q "NOTT [1-9]\|SELX [1-9]\|NCX [1-9]\|TIEX [1-9]\|EVENX [1-9]\|DESCX [1-9]\|ROOTX2 [1-9]" sb53/root_*.txt; then echo "box 53: rootflip corpus violation"; exit 1; fi
+if grep -q "ROOTX [1-9]\|EVX2 [1-9]" sb53/topk_*.txt; then echo "box 53: topkis corpus violation"; exit 1; fi
+[ "$(grep -c "BAD 0$" sb53/rs_out.txt)" = 10 ] || { echo "box 53: random search not 10 x BAD 0"; exit 1; }
+echo "si (box 53 SBF: fixed-order DEAD, ROOT-FLIP checks): PASS"
+# box 53 SBF §5 (Lead 20:00Z, T60 §3.3): ORDER-CHG' data (ORDX 0, PAIRTIE 0), NO-REPEAT on a fixed head set DEAD (exitr_cex_n16),
+# max |U_k| = 4K + 16 on mkrw (K = 4: 32).
+o=$(python3 -I sb53/orderchg.py ../red/so/instances/exitr_cex_n16.pg)
+case "$o" in *"FT 5 ORDX 0 ORDX0 3 PAIRTIE 0 UMAX 2 UPMAX 4 NORD 3 RREP 1"*) ;; *) echo "box 53 §5: exitr_cex_n16: $o"; exit 1;; esac
+t=$(mktemp -d); LATE=1 python3 -I ../red/span/mkrw.py 4 16 $t/w.pg $t/w.start >/dev/null
+o=$(python3 -I sb53/orderchg.py $t/w.pg $t/w.start)
+case "$o" in *"FT 65 ORDX 0 ORDX0 5 PAIRTIE 0 UMAX 32 UPMAX 90 NORD 77 RREP 0"*) ;; *) echo "box 53 §5: mkrw K4: $o"; exit 1;; esac
+[ "$(cat sb53/ord_*.txt | grep -c ORDCHG)" = 1134 ] || { echo "box 53 §5: orderchg outputs incomplete"; exit 1; }
+if grep -q "ORDX [1-9]\|PAIRTIE [1-9]" sb53/ord_*.txt; then echo "box 53 §5: ORDER-CHG' corpus violation"; exit 1; fi
+echo "si (box 53 SBF §5: ORDER-CHG' data, fixed-set NO-REPEAT DEAD, |U| linear): PASS"
+# P-N5-SETTLE line revision L-1 (fixes entry 1; both referees word-diff it): must not change.
+echo "997e39eee8d72ae94be4764bb1e3841914ffc78e  ../../docs/si/P-N5-SETTLE-line-L1.txt" | sha1sum -c --quiet
+echo "si (P-N5-SETTLE L-1 pinned): PASS"
+# P-N5-SETTLE line revision L-2 (fixes entry 2, SETTLE-L5): must not change.
+echo "1fcb33c5d96a20eb70abe06c29154ef343b33ae0  ../../docs/si/P-N5-SETTLE-line-L2.txt" | sha1sum -c --quiet
+echo "si (P-N5-SETTLE L-2 pinned): PASS"
+# P-N5-SETTLE line revision L-3 (fixes entry 3, D-1 / D-2): must not change.
+echo "ae695c9eeaf9d40bdba2ed8574c238a107c68d52  ../../docs/si/P-N5-SETTLE-line-L3.txt" | sha1sum -c --quiet
+echo "si (P-N5-SETTLE L-3 pinned): PASS"

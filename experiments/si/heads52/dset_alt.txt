@@ -1,0 +1,413 @@
+GAME n5-epoch/instances/gci2_n12.pg n5-epoch/instances/gci2_n12.start DSET gci2_n12.pg n 12 RUNS 1 LMAX 10 DMAX 1 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 10 DEVS 10
+GAME n5-epoch/instances/ffin4_n24.pg n5-epoch/instances/ffin4_n24.start DSET ffin4_n24.pg n 24 RUNS 3 LMAX 8 DMAX 3 ENT 1 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 15 DEVS 15
+GAME n5-epoch/instances/ffin12_n32.pg n5-epoch/instances/ffin12_n32.start DSET ffin12_n32.pg n 32 RUNS 5 LMAX 7 DMAX 4 ENT 1 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 7 WSW 16 DEVS 23
+GAME n5-epoch/instances/ffin5_n32.pg n5-epoch/instances/ffin5_n32.start DSET ffin5_n32.pg n 32 RUNS 3 LMAX 7 DMAX 1 ENT 1 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 12 WSW 0 DEVS 12
+GAME n5-epoch/instances/immp_cex_n11.pg n5-epoch/instances/immp_cex_n11.start DSET immp_cex_n11.pg n 11 RUNS 1 LMAX 2 DMAX 1 ENT 1 EXT 1 REN 0 SBF 2 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 1 DEVS 1
+GAME n5-epoch/instances/immfail_n14.pg DSET immfail_n14.pg n 14 RUNS 2 LMAX 2 DMAX 1 ENT 1 EXT 0 REN 0 SBF 1 SUMREN 0 INIT 1 WSB 1 WSE 0 WSW 0 DEVS 1
+GAME n5-epoch/instances/lcount_n23.pg n5-epoch/instances/lcount_n23.start DSET lcount_n23.pg n 23 RUNS 1 LMAX 4 DMAX 3 ENT 1 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 1 WSB 1 WSE 0 WSW 13 DEVS 14
+GAME n5-epoch/instances/gci3_n24.pg n5-epoch/instances/gci3_n24.start DSET gci3_n24.pg n 24 RUNS 1 LMAX 20 DMAX 1 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 21 DEVS 21
+GAME n5-epoch/instances/lend13_n16.pg n5-epoch/instances/lend13_n16.start DSET lend13_n16.pg n 16 RUNS 1 LMAX 13 DMAX 2 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 27 DEVS 27
+GAME n5-epoch/instances/lend27_n24.pg n5-epoch/instances/lend27_n24.start DSET lend27_n24.pg n 24 RUNS 6 LMAX 8 DMAX 4 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 29 WSB 29 WSE 0 WSW 85 DEVS 114
+GAME n5-epoch/instances/lend15_n48.pg n5-epoch/instances/lend15_n48.start DSET lend15_n48.pg n 48 RUNS 5 LMAX 3 DMAX 7 ENT 1 EXT 1 REN 0 SBF 2 SUMREN 0 INIT 32 WSB 32 WSE 16 WSW 64 DEVS 112
+GAME n5-epoch/instances/lend39f_n32.pg n5-epoch/instances/lend39f_n32.start DSET lend39f_n32.pg n 32 RUNS 9 LMAX 8 DMAX 5 ENT 1 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 92 WSB 92 WSE 0 WSW 52 DEVS 144
+GAME n5-epoch/instances/lend47_n32.pg n5-epoch/instances/lend47_n32.start DSET lend47_n32.pg n 32 RUNS 6 LMAX 19 DMAX 2 ENT 0 EXT 1 REN 0 SBF 2 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 96 DEVS 96
+GAME n5-epoch/instances/lend107_n32.pg n5-epoch/instances/lend107_n32.start DSET lend107_n32.pg n 32 RUNS 10 LMAX 15 DMAX 3 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 106 WSB 106 WSE 0 WSW 212 DEVS 318
+GAME n5-epoch/instances/lend9_n8.pg n5-epoch/instances/lend9_n8.start DSET lend9_n8.pg n 8 RUNS 4 LMAX 2 DMAX 2 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 17 DEVS 17
+GAME n5-epoch/instances/lend55_n32.pg n5-epoch/instances/lend55_n32.start DSET lend55_n32.pg n 32 RUNS 10 LMAX 11 DMAX 4 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 54 WSB 54 WSE 0 WSW 162 DEVS 216
+GAME n5-epoch/instances/lend82_n32.pg n5-epoch/instances/lend82_n32.start DSET lend82_n32.pg n 32 RUNS 10 LMAX 14 DMAX 3 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 81 WSB 81 WSE 0 WSW 162 DEVS 243
+GAME n5-epoch/instances/lend72_n48.pg n5-epoch/instances/lend72_n48.start DSET lend72_n48.pg n 48 RUNS 11 LMAX 14 DMAX 3 ENT 0 EXT 0 REN 0 SBF 1 SUMREN 0 INIT 73 WSB 73 WSE 0 WSW 146 DEVS 219
+GAME n5-epoch/instances/nep13_n24.pg n5-epoch/instances/nep13_n24.start DSET nep13_n24.pg n 24 RUNS 3 LMAX 12 DMAX 9 ENT 1 EXT 1 REN 1 SBF 6 SUMREN 1 INIT 18 WSB 18 WSE 17 WSW 100 DEVS 135
+GAME n5-epoch/instances/nep56_n32.pg n5-epoch/instances/nep56_n32.start DSET nep56_n32.pg n 32 RUNS 4 LMAX 25 DMAX 2 ENT 1 EXT 1 REN 0 SBF 23 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 97 DEVS 97
+GAME n5-epoch/instances/nep22f_n64.pg n5-epoch/instances/nep22f_n64.start DSET nep22f_n64.pg n 64 RUNS 7 LMAX 3 DMAX 26 ENT 1 EXT 1 REN 1 SBF 2 SUMREN 2 INIT 100 WSB 100 WSE 11 WSW 270 DEVS 381
+GAME n5-epoch/instances/nconf61_n48.pg n5-epoch/instances/nconf61_n48.start DSET nconf61_n48.pg n 48 RUNS 7 LMAX 13 DMAX 6 ENT 2 EXT 2 REN 2 SBF 9 SUMREN 10 INIT 0 WSB 0 WSE 12 WSW 282 DEVS 294
+GAME n5-epoch/instances/nep76_n40.pg n5-epoch/instances/nep76_n40.start DSET nep76_n40.pg n 40 RUNS 7 LMAX 15 DMAX 4 ENT 2 EXT 3 REN 2 SBF 11 SUMREN 9 INIT 0 WSB 0 WSE 0 WSW 220 DEVS 220
+GAME n5-epoch/instances/nep92_n40.pg n5-epoch/instances/nep92_n40.start DSET nep92_n40.pg n 40 RUNS 9 LMAX 14 DMAX 6 ENT 3 EXT 2 REN 2 SBF 11 SUMREN 18 INIT 0 WSB 0 WSE 0 WSW 332 DEVS 332
+GAME n5-epoch/instances/ret12_n40.pg n5-epoch/instances/ret12_n40.start DSET ret12_n40.pg n 40 RUNS 5 LMAX 14 DMAX 5 ENT 3 EXT 3 REN 2 SBF 10 SUMREN 13 INIT 0 WSB 0 WSE 0 WSW 155 DEVS 155
+GAME n5-exhaustive/instances/b4_cyc6_0.pg n5-exhaustive/instances/b4_cyc6_0.start DSET b4_cyc6_0.pg n 11 RUNS 1 LMAX 2 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME n5-epoch/instances/nep94_n48.pg n5-epoch/instances/nep94_n48.start DSET nep94_n48.pg n 48 RUNS 8 LMAX 14 DMAX 8 ENT 3 EXT 2 REN 2 SBF 12 SUMREN 16 INIT 0 WSB 0 WSE 0 WSW 466 DEVS 466
+GAME n5-exhaustive/instances/b4_cyc6_1.pg DSET b4_cyc6_1.pg n 12 RUNS 1 LMAX 4 DMAX 1 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 1 DEVS 1
+GAME n5-exhaustive/instances/b4_n4all_cyc3_0.pg n5-exhaustive/instances/b4_n4all_cyc3_0.start DSET b4_n4all_cyc3_0.pg n 4 RUNS 1 LMAX 1 DMAX 1 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 1 DEVS 1
+GAME n5-epoch/instances/ret14_n48.pg n5-epoch/instances/ret14_n48.start DSET ret14_n48.pg n 48 RUNS 13 LMAX 6 DMAX 5 ENT 2 EXT 2 REN 2 SBF 5 SUMREN 4 INIT 40 WSB 40 WSE 0 WSW 142 DEVS 182
+GAME n5-exhaustive/instances/b4_nohlen5_0.pg n5-exhaustive/instances/b4_nohlen5_0.start DSET b4_nohlen5_0.pg n 11 RUNS 1 LMAX 4 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME n5-epoch/instances/ret14_n64.pg n5-epoch/instances/ret14_n64.start DSET ret14_n64.pg n 64 RUNS 6 LMAX 14 DMAX 9 ENT 3 EXT 3 REN 2 SBF 10 SUMREN 9 INIT 0 WSB 0 WSE 0 WSW 209 DEVS 209
+GAME n5-exhaustive/instances/b4_n5_other_0.pg DSET b4_n5_other_0.pg n 5 RUNS 1 LMAX 1 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME n5-exhaustive/instances/b5_n5_cyc4_0.pg DSET b5_n5_cyc4_0.pg n 5 RUNS 1 LMAX 1 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME n5-exhaustive/instances/b5_o11.pg DSET b5_o11.pg n 10 RUNS 4 LMAX 4 DMAX 1 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 11 DEVS 11
+GAME n5-exhaustive/instances/b4_theta_n7.pg n5-exhaustive/instances/b4_theta_n7.start DSET b4_theta_n7.pg n 7 RUNS 1 LMAX 1 DMAX 1 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 1 WSW 0 DEVS 1
+GAME n5-exhaustive/instances/b5_os_n12.pg DSET b5_os_n12.pg n 12 RUNS 4 LMAX 5 DMAX 1 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 14 DEVS 14
+GAME n5-exhaustive/instances/b5_os_n14.pg DSET b5_os_n14.pg n 14 RUNS 6 LMAX 7 DMAX 1 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 18 DEVS 18
+GAME n5-exhaustive/instances/b5_os_n16.pg DSET b5_os_n16.pg n 16 RUNS 6 LMAX 8 DMAX 1 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 20 DEVS 20
+GAME n5-exhaustive/instances/b5_os_n20.pg DSET b5_os_n20.pg n 20 RUNS 9 LMAX 10 DMAX 1 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 31 DEVS 31
+GAME n5-exhaustive/instances/b5_os_n24.pg DSET b5_os_n24.pg n 24 RUNS 9 LMAX 14 DMAX 1 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 49 DEVS 49
+GAME n5-exhaustive/instances/b5_os_n32.pg DSET b5_os_n32.pg n 32 RUNS 10 LMAX 14 DMAX 1 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 67 DEVS 67
+GAME n5-exhaustive/instances/b5_os_n28.pg DSET b5_os_n28.pg n 28 RUNS 11 LMAX 13 DMAX 1 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 59 DEVS 59
+GAME n5-exhaustive/instances/b5_os_n40.pg DSET b5_os_n40.pg n 40 RUNS 13 LMAX 17 DMAX 1 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 73 DEVS 73
+GAME n5-exhaustive/instances/b6_xl2_n32.pg DSET b6_xl2_n32.pg n 32 RUNS 6 LMAX 22 DMAX 1 ENT 0 EXT 1 REN 0 SBF 4 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 77 DEVS 77
+GAME n5-exhaustive/instances/b6_xs_n24.pg DSET b6_xs_n24.pg n 24 RUNS 1 LMAX 21 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME n5-exhaustive/instances/b6_xl_n32.pg DSET b6_xl_n32.pg n 32 RUNS 6 LMAX 22 DMAX 1 ENT 0 EXT 1 REN 0 SBF 4 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 75 DEVS 75
+GAME n5-exhaustive/instances/b6_xs_n32.pg DSET b6_xs_n32.pg n 32 RUNS 1 LMAX 29 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME n5-exhaustive/instances/b6_xl_n40.pg DSET b6_xl_n40.pg n 40 RUNS 6 LMAX 25 DMAX 1 ENT 0 EXT 1 REN 0 SBF 4 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 81 DEVS 81
+GAME n5-exhaustive/instances/b6_xs_n40.pg DSET b6_xs_n40.pg n 40 RUNS 1 LMAX 36 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME n5-exhaustive/instances/b6_xs_n48.pg DSET b6_xs_n48.pg n 48 RUNS 1 LMAX 37 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME n5-exhaustive/instances/b6_xl_n48.pg DSET b6_xl_n48.pg n 48 RUNS 10 LMAX 24 DMAX 1 ENT 0 EXT 1 REN 0 SBF 4 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 93 DEVS 93
+GAME n5-exhaustive/instances/b6_xw_n32.pg DSET b6_xw_n32.pg n 32 RUNS 7 LMAX 21 DMAX 1 ENT 0 EXT 1 REN 0 SBF 4 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 70 DEVS 70
+GAME n5-exhaustive/instances/canonA_0.pg DSET canonA_0.pg n 15 RUNS 1 LMAX 3 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME n5-exhaustive/instances/b6_xw_n40.pg DSET b6_xw_n40.pg n 40 RUNS 7 LMAX 22 DMAX 1 ENT 0 EXT 1 REN 0 SBF 4 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 71 DEVS 71
+GAME n5-exhaustive/instances/canonA_1.pg DSET canonA_1.pg n 15 RUNS 1 LMAX 3 DMAX 1 ENT 1 EXT 1 REN 0 SBF 2 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 1 DEVS 1
+GAME n5-exhaustive/instances/frz1_n24.pg n5-exhaustive/instances/frz1_n24.start DSET frz1_n24.pg n 24 RUNS 2 LMAX 24 DMAX 1 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 21 DEVS 21
+GAME n5-exhaustive/instances/frz2_n24.pg n5-exhaustive/instances/frz2_n24.start DSET frz2_n24.pg n 24 RUNS 1 LMAX 23 DMAX 3 ENT 1 EXT 2 REN 1 SBF 4 SUMREN 2 INIT 0 WSB 0 WSE 0 WSW 36 DEVS 36
+GAME n5-exhaustive/instances/b6_xw_n48.pg DSET b6_xw_n48.pg n 48 RUNS 7 LMAX 22 DMAX 1 ENT 0 EXT 1 REN 0 SBF 4 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 76 DEVS 76
+GAME n5-exhaustive/instances/n3all_maxph_0.pg n5-exhaustive/instances/n3all_maxph_0.start DSET n3all_maxph_0.pg n 3 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME n5-exhaustive/instances/b6_xw_n56.pg DSET b6_xw_n56.pg n 56 RUNS 7 LMAX 23 DMAX 1 ENT 0 EXT 1 REN 0 SBF 4 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 77 DEVS 77
+GAME n5-exhaustive/instances/n3all_maxph_1.pg n5-exhaustive/instances/n3all_maxph_1.start DSET n3all_maxph_1.pg n 3 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME n5-exhaustive/instances/frz3_n24.pg n5-exhaustive/instances/frz3_n24.start DSET frz3_n24.pg n 24 RUNS 1 LMAX 24 DMAX 2 ENT 1 EXT 2 REN 1 SBF 4 SUMREN 1 INIT 0 WSB 0 WSE 0 WSW 32 DEVS 32
+GAME n5-exhaustive/instances/n3all_maxph_2.pg n5-exhaustive/instances/n3all_maxph_2.start DSET n3all_maxph_2.pg n 3 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME n5-exhaustive/instances/n4_maxph_0.pg DSET n4_maxph_0.pg n 4 RUNS 1 LMAX 1 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME n5-exhaustive/instances/n4_maxph_1.pg DSET n4_maxph_1.pg n 4 RUNS 1 LMAX 1 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME n5-exhaustive/instances/n4_thch_0.pg DSET n4_thch_0.pg n 4 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME n5-exhaustive/instances/n4all_maxph_1.pg n5-exhaustive/instances/n4all_maxph_1.start DSET n4all_maxph_1.pg n 4 RUNS 1 LMAX 2 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME n5-exhaustive/instances/n4all_maxph_0.pg n5-exhaustive/instances/n4all_maxph_0.start DSET n4all_maxph_0.pg n 4 RUNS 1 LMAX 2 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME n5-exhaustive/instances/n4all_tgbad_0.pg n5-exhaustive/instances/n4all_tgbad_0.start DSET n4all_tgbad_0.pg n 4 RUNS 1 LMAX 1 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME n5-exhaustive/instances/n4all_thch_0.pg n5-exhaustive/instances/n4all_thch_0.start DSET n4all_thch_0.pg n 4 RUNS 1 LMAX 1 DMAX 1 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 1 DEVS 1
+GAME n5-exhaustive/instances/nh_n8.pg n5-exhaustive/instances/nh_n8.start DSET nh_n8.pg n 8 RUNS 1 LMAX 3 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME n5-exhaustive/instances/thetaA_canon_n12.pg DSET thetaA_canon_n12.pg n 12 RUNS 1 LMAX 3 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME n5-exhaustive/instances/n5s_maxph_0.pg DSET n5s_maxph_0.pg n 5 RUNS 1 LMAX 1 DMAX 1 ENT 1 EXT 0 REN 0 SBF 1 SUMREN 0 INIT 1 WSB 1 WSE 0 WSW 0 DEVS 1
+GAME n5-exhaustive/instances/thetaA_canon_n8.pg DSET thetaA_canon_n8.pg n 8 RUNS 1 LMAX 3 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME n5-exhaustive/instances/thetaA_n17.pg n5-exhaustive/instances/thetaA_n17.start DSET thetaA_n17.pg n 17 RUNS 1 LMAX 3 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME n5-exhaustive/instances/thetaA_n6.pg n5-exhaustive/instances/thetaA_n6.start DSET thetaA_n6.pg n 6 RUNS 1 LMAX 3 DMAX 1 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 1 DEVS 1
+GAME n5-exhaustive/instances/thetaA_n7.pg n5-exhaustive/instances/thetaA_n7.start DSET thetaA_n7.pg n 7 RUNS 1 LMAX 3 DMAX 1 ENT 1 EXT 1 REN 0 SBF 2 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 1 DEVS 1
+GAME n5-exhaustive/instances/wk1_n32.pg n5-exhaustive/instances/wk1_n32.start DSET wk1_n32.pg n 32 RUNS 3 LMAX 2 DMAX 1 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 5 WSW 1 DEVS 6
+GAME n5-exhaustive/instances/wk2_n32.pg n5-exhaustive/instances/wk2_n32.start DSET wk2_n32.pg n 32 RUNS 2 LMAX 3 DMAX 1 ENT 0 EXT 0 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 6 WSW 0 DEVS 6
+GAME n5-exhaustive/instances/thetaA_n9.pg n5-exhaustive/instances/thetaA_n9.start DSET thetaA_n9.pg n 9 RUNS 1 LMAX 3 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME new/box48/instances/long121_n40.pg new/box48/instances/long121_n40.start DSET long121_n40.pg n 40 RUNS 9 LMAX 17 DMAX 3 ENT 1 EXT 1 REN 0 SBF 3 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 289 DEVS 289
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.pg new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.start DSET best_qpc_nep76_n40_s63.pg n 64 RUNS 7 LMAX 16 DMAX 16 ENT 3 EXT 3 REN 2 SBF 8 SUMREN 32 INIT 0 WSB 0 WSE 0 WSW 589 DEVS 589
+GAME red/carry/instances/absmono_viol_n44.pg DSET absmono_viol_n44.pg n 44 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/carry/instances/carry3_2_2.pg DSET carry3_2_2.pg n 47 RUNS 1 LMAX 1 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.pg new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.start DSET best_qpc_nep90_n40_s61.pg n 64 RUNS 8 LMAX 15 DMAX 15 ENT 2 EXT 3 REN 2 SBF 9 SUMREN 17 INIT 0 WSB 0 WSE 0 WSW 577 DEVS 577
+GAME red/carry/instances/cm_mdrop_both_n28.pg DSET cm_mdrop_both_n28.pg n 28 RUNS 1 LMAX 3 DMAX 4 ENT 1 EXT 1 REN 0 SBF 2 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 8 DEVS 8
+GAME red/carry/instances/cm_mdrop_oink_n28.pg DSET cm_mdrop_oink_n28.pg n 28 RUNS 1 LMAX 1 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/carry/instances/ctx11_n40.pg DSET ctx11_n40.pg n 40 RUNS 1 LMAX 2 DMAX 1 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 1 DEVS 1
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.pg new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.start DSET best_qpc_nep90_n40_s62.pg n 80 RUNS 8 LMAX 15 DMAX 24 ENT 3 EXT 2 REN 2 SBF 11 SUMREN 22 INIT 0 WSB 0 WSE 0 WSW 922 DEVS 922
+GAME red/carry/instances/ctx6_n20.pg DSET ctx6_n20.pg n 20 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/carry/instances/ctx12_n40.pg DSET ctx12_n40.pg n 40 RUNS 1 LMAX 1 DMAX 4 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 2 WSB 2 WSE 0 WSW 4 DEVS 6
+GAME red/carry/instances/ctx13_n40.pg DSET ctx13_n40.pg n 40 RUNS 2 LMAX 5 DMAX 3 ENT 1 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 1 WSB 1 WSE 0 WSW 9 DEVS 10
+GAME red/carry/instances/ctx7_n30.pg DSET ctx7_n30.pg n 30 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/carry/instances/ctx6_n56.pg DSET ctx6_n56.pg n 56 RUNS 1 LMAX 1 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME new/box48/out/qpcclimb/scale/snap_n80_s62.pg new/box48/out/qpcclimb/scale/snap_n80_s62.start DSET snap_n80_s62.pg n 80 RUNS 8 LMAX 15 DMAX 24 ENT 3 EXT 2 REN 2 SBF 11 SUMREN 22 INIT 0 WSB 0 WSE 0 WSW 922 DEVS 922
+GAME red/carry/instances/f1_twofall_n48.pg DSET f1_twofall_n48.pg n 48 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/carry/instances/f1_twodef_n48.pg DSET f1_twodef_n48.pg n 48 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/carry/instances/fall3_n76.pg DSET fall3_n76.pg n 76 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/carry/instances/fallv_viol_n28.pg DSET fallv_viol_n28.pg n 28 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/carry/instances/fired10_n20.pg DSET fired10_n20.pg n 20 RUNS 1 LMAX 1 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/carry/instances/firedlong667_n20.pg DSET firedlong667_n20.pg n 20 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/carry/instances/firedlong667_n43.pg DSET firedlong667_n43.pg n 43 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/carry/instances/fall4_n116.pg DSET fall4_n116.pg n 116 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/carry/instances/gapbW_dup_n20.pg DSET gapbW_dup_n20.pg n 20 RUNS 1 LMAX 2 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/carry/instances/h4_compound2x2_n44.pg DSET h4_compound2x2_n44.pg n 44 RUNS 1 LMAX 3 DMAX 1 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 2 DEVS 2
+GAME red/carry/instances/gapb_dup_n20.pg DSET gapb_dup_n20.pg n 20 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/carry/instances/firedstep13_n76.pg DSET firedstep13_n76.pg n 76 RUNS 1 LMAX 2 DMAX 4 ENT 1 EXT 1 REN 0 SBF 2 SUMREN 0 INIT 0 WSB 0 WSE 6 WSW 4 DEVS 10
+GAME red/carry/instances/h4_def2ctx_n20.pg DSET h4_def2ctx_n20.pg n 20 RUNS 1 LMAX 1 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/carry/instances/h4_compound_n44.pg DSET h4_compound_n44.pg n 44 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/carry/instances/h4_def7_n28.pg DSET h4_def7_n28.pg n 28 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/carry/instances/h4_notweaker_n20.pg DSET h4_notweaker_n20.pg n 20 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/carry/instances/h4_disjoint_n20.pg DSET h4_disjoint_n20.pg n 20 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/carry/instances/kin_viol_n29.pg DSET kin_viol_n29.pg n 29 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/carry/instances/kfirst_viol_n13.pg DSET kfirst_viol_n13.pg n 13 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/carry/instances/lalg_dtl_mviol_n20.pg DSET lalg_dtl_mviol_n20.pg n 20 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/carry/instances/lemmaS_viol_n20.pg DSET lemmaS_viol_n20.pg n 20 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/carry/instances/lemmaS_Mdrop_n20.pg DSET lemmaS_Mdrop_n20.pg n 20 RUNS 1 LMAX 1 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/carry/instances/lex_viol_inj_n28.pg DSET lex_viol_inj_n28.pg n 28 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/carry/instances/lex_viol_tie_n28.pg DSET lex_viol_tie_n28.pg n 28 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/carry/instances/meet_viol_n17.pg DSET meet_viol_n17.pg n 17 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/carry/instances/nosig_2_3.pg DSET nosig_2_3.pg n 24 RUNS 1 LMAX 1 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/carry/instances/meet_viol_n29.pg DSET meet_viol_n29.pg n 29 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/carry/instances/replay4_n32.pg DSET replay4_n32.pg n 32 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/carry/instances/phi_flat_alive_n32.pg DSET phi_flat_alive_n32.pg n 32 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/carry/instances/pk_viol_n20.pg DSET pk_viol_n20.pg n 20 RUNS 1 LMAX 1 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/carry/instances/spp19_oink_n30.pg DSET spp19_oink_n30.pg n 30 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/carry/instances/spp22_oink_n40.pg DSET spp22_oink_n40.pg n 40 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/carry/instances/spp19_stable_n30.pg DSET spp19_stable_n30.pg n 30 RUNS 1 LMAX 2 DMAX 6 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 6 DEVS 6
+GAME red/carry/instances/spp25_oink_n40.pg DSET spp25_oink_n40.pg n 40 RUNS 1 LMAX 3 DMAX 1 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 2 DEVS 2
+GAME red/carry/instances/stealonce_both_n45.pg DSET stealonce_both_n45.pg n 45 RUNS 1 LMAX 1 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/carry/instances/stealonce_core_n76.pg DSET stealonce_core_n76.pg n 76 RUNS 1 LMAX 1 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/carry/instances/stealer_viol_n76.pg DSET stealer_viol_n76.pg n 76 RUNS 1 LMAX 1 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/carry/instances/tstep_near_n20.pg DSET tstep_near_n20.pg n 20 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/ctxp/instances/deep1_n13.pg DSET deep1_n13.pg n 13 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/ctxp/instances/deep1_n21.pg DSET deep1_n21.pg n 21 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/carry/instances/stealonce_viol_n76.pg DSET stealonce_viol_n76.pg n 76 RUNS 1 LMAX 1 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/ctxp/instances/margin1_n20.pg DSET margin1_n20.pg n 20 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/ctxp/instances/margin1_mc5.pg DSET margin1_mc5.pg n 50 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/ctxp/instances/margin1_mc1.pg DSET margin1_mc1.pg n 80 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/fbr/instances/bghm_k1_gap6_A.pg DSET bghm_k1_gap6_A.pg n 21 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/fbr/instances/bghm_k3_gap4_A.pg DSET bghm_k3_gap4_A.pg n 45 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/dtl/instances/lalg_dtl_pertop31_n18.pg DSET lalg_dtl_pertop31_n18.pg n 18 RUNS 1 LMAX 1 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/dtl/instances/lalg_dtl_restart8_n20.pg DSET lalg_dtl_restart8_n20.pg n 20 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/fbr/instances/fr39_q4_n48.pg DSET fr39_q4_n48.pg n 48 RUNS 1 LMAX 32 DMAX 1 ENT 0 EXT 1 REN 0 SBF 2 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 9 DEVS 9
+GAME red/fbr/instances/lev74_n40.pg DSET lev74_n40.pg n 40 RUNS 3 LMAX 3 DMAX 2 ENT 1 EXT 1 REN 0 SBF 2 SUMREN 0 INIT 4 WSB 4 WSE 0 WSW 6 DEVS 10
+GAME red/fbr/instances/rho144_n32.pg DSET rho144_n32.pg n 32 RUNS 1 LMAX 2 DMAX 1 ENT 0 EXT 1 REN 0 SBF 2 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 2 DEVS 2
+GAME red/fbr/instances/nep80_n40.pg DSET nep80_n40.pg n 40 RUNS 4 LMAX 4 DMAX 3 ENT 1 EXT 1 REN 0 SBF 3 SUMREN 0 INIT 2 WSB 2 WSE 0 WSW 24 DEVS 26
+GAME red/fbr/instances/rho3_253_n32.pg DSET rho3_253_n32.pg n 32 RUNS 1 LMAX 4 DMAX 3 ENT 1 EXT 1 REN 0 SBF 2 SUMREN 0 INIT 3 WSB 3 WSE 0 WSW 4 DEVS 7
+GAME red/fbr/instances/rho666_n48.pg DSET rho666_n48.pg n 48 RUNS 2 LMAX 7 DMAX 4 ENT 2 EXT 1 REN 1 SBF 3 SUMREN 1 INIT 0 WSB 0 WSE 0 WSW 19 DEVS 19
+GAME red/fbr/instances/rho84_n16.pg DSET rho84_n16.pg n 16 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/fbr/instances/lev56_n48.pg DSET lev56_n48.pg n 48 RUNS 10 LMAX 15 DMAX 3 ENT 2 EXT 3 REN 2 SBF 5 SUMREN 9 INIT 0 WSB 0 WSE 0 WSW 166 DEVS 166
+GAME red/fbr/instances/sat4_n20.pg DSET sat4_n20.pg n 20 RUNS 1 LMAX 1 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/fbr/instances/sat68_n20.pg DSET sat68_n20.pg n 20 RUNS 1 LMAX 1 DMAX 1 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 2 WSW 0 DEVS 2
+GAME red/fbr/instances/twowave_L16.pg DSET twowave_L16.pg n 22 RUNS 1 LMAX 15 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/fbx/instances/exsw_loop_n15.pg DSET exsw_loop_n15.pg n 15 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/frz/instances/fbcap_eq_u4_n11.pg DSET fbcap_eq_u4_n11.pg n 11 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/h3/instances/frzgap0_n4.pg DSET frzgap0_n4.pg n 4 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/frz/instances/fx2_n11.pg DSET fx2_n11.pg n 11 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/fbx/instances/kt6_n58.pg DSET kt6_n58.pg n 58 RUNS 3 LMAX 18 DMAX 1 ENT 1 EXT 0 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 20 DEVS 20
+GAME red/h3/instances/frzgap0_n6.pg DSET frzgap0_n6.pg n 6 RUNS 1 LMAX 2 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/h3/instances/lcount2_n23.pg red/h3/instances/lcount2_n23.start DSET lcount2_n23.pg n 23 RUNS 1 LMAX 3 DMAX 2 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 4 WSB 4 WSE 0 WSW 4 DEVS 8
+GAME red/h3/instances/lcount_n23.pg red/h3/instances/lcount_n23.start DSET lcount_n23.pg n 23 RUNS 1 LMAX 4 DMAX 3 ENT 1 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 1 WSB 1 WSE 0 WSW 13 DEVS 14
+GAME red/h3/instances/offret_l19_n24.pg DSET offret_l19_n24.pg n 24 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/kl/instances/klcount_n16.pg DSET klcount_n16.pg n 16 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/kl/instances/klcount_n18_base.pg DSET klcount_n18_base.pg n 18 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/kl/instances/klcount_n18_lvl.pg DSET klcount_n18_lvl.pg n 18 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/kl/instances/klglobal_n16.pg DSET klglobal_n16.pg n 16 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/kl/instances/klglobal_n18_lvl.pg DSET klglobal_n18_lvl.pg n 18 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/h3/instances/xsnpre36_n48.pg DSET xsnpre36_n48.pg n 48 RUNS 1 LMAX 30 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/kl/instances/klglobal_n20_lvl2.pg DSET klglobal_n20_lvl2.pg n 20 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/kl/instances/klmin_n13.pg DSET klmin_n13.pg n 13 RUNS 1 LMAX 1 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/kl/instances/r2join_h0E_n14.pg DSET r2join_h0E_n14.pg n 14 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/kl/instances/r2climb_h13.pg DSET r2climb_h13.pg n 13 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/kl/instances/r2crawl_n14.pg DSET r2crawl_n14.pg n 14 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/kl/instances/r2lap_best_n22.pg DSET r2lap_best_n22.pg n 22 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/kl24/instances/HL88_2.pg DSET HL88_2.pg n 45 RUNS 1 LMAX 1 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/kl24/instances/HL88_0.pg DSET HL88_0.pg n 41 RUNS 1 LMAX 1 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/kl24/instances/HL88_1.pg DSET HL88_1.pg n 43 RUNS 1 LMAX 1 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/kl24/instances/HL88_3.pg DSET HL88_3.pg n 47 RUNS 1 LMAX 1 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/kl24/instances/HLg_0.pg DSET HLg_0.pg n 29 RUNS 1 LMAX 1 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/kl24/instances/HLg_2.pg DSET HLg_2.pg n 45 RUNS 1 LMAX 1 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/kl24/instances/HLg_1.pg DSET HLg_1.pg n 35 RUNS 1 LMAX 1 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/kw/instances/cw11_n24.pg DSET cw11_n24.pg n 24 RUNS 5 LMAX 4 DMAX 1 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 13 WSW 4 DEVS 17
+GAME red/kl24/instances/HLg_3.pg DSET HLg_3.pg n 55 RUNS 1 LMAX 1 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/kw/instances/frzu_tight_n14.pg DSET frzu_tight_n14.pg n 14 RUNS 2 LMAX 2 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/lag/instances/depth2_n39.pg DSET depth2_n39.pg n 39 RUNS 1 LMAX 1 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/lag/instances/depth3_n46.pg DSET depth3_n46.pg n 46 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/kw/instances/kc18_n24.pg DSET kc18_n24.pg n 24 RUNS 2 LMAX 18 DMAX 1 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 21 DEVS 21
+GAME red/lag/instances/depth4_n53.pg DSET depth4_n53.pg n 53 RUNS 1 LMAX 1 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/lag/instances/fam_D12_n106.pg DSET fam_D12_n106.pg n 106 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/lag/instances/fam_D4_n50.pg DSET fam_D4_n50.pg n 50 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/lag/instances/fam_D8_n78.pg DSET fam_D8_n78.pg n 78 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/mei/instances/mei_h2.pg DSET mei_h2.pg n 19 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/mei/instances/mei_h3.pg DSET mei_h3.pg n 27 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/mei/instances/mei_h4.pg DSET mei_h4.pg n 35 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/mei/instances/mei_h5.pg DSET mei_h5.pg n 43 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/mei/instances/mei_h6.pg DSET mei_h6.pg n 51 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/mei/instances/mei_h8.pg DSET mei_h8.pg n 67 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/n3/instances/core41_n40.pg red/n3/instances/core41_n40.start DSET core41_n40.pg n 40 RUNS 7 LMAX 7 DMAX 2 ENT 0 EXT 1 REN 0 SBF 3 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 80 DEVS 80
+GAME red/n3/instances/lag11_n40.pg red/n3/instances/lag11_n40.start DSET lag11_n40.pg n 40 RUNS 2 LMAX 14 DMAX 6 ENT 2 EXT 2 REN 2 SBF 5 SUMREN 3 INIT 0 WSB 0 WSE 16 WSW 33 DEVS 49
+GAME red/n3/instances/lagx10_n40.pg red/n3/instances/lagx10_n40.start DSET lagx10_n40.pg n 40 RUNS 1 LMAX 11 DMAX 3 ENT 1 EXT 0 REN 0 SBF 2 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 33 DEVS 33
+GAME red/n3/instances/n3cov_lean.pg red/n3/instances/n3cov_lean.start DSET n3cov_lean.pg n 48 RUNS 1 LMAX 30 DMAX 8 ENT 1 EXT 2 REN 1 SBF 5 SUMREN 2 INIT 0 WSB 0 WSE 0 WSW 128 DEVS 128
+GAME red/n3/instances/n3cov_phi.pg red/n3/instances/n3cov_phi.start DSET n3cov_phi.pg n 32 RUNS 3 LMAX 9 DMAX 15 ENT 2 EXT 2 REN 2 SBF 4 SUMREN 18 INIT 14 WSB 14 WSE 0 WSW 262 DEVS 276
+GAME red/n3/instances/comp54_n80.pg red/n3/instances/comp54_n80.start DSET comp54_n80.pg n 80 RUNS 7 LMAX 12 DMAX 5 ENT 0 EXT 1 REN 0 SBF 4 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 259 DEVS 259
+GAME red/n3/instances/long90_k2_n40.pg red/n3/instances/long90_k2_n40.start DSET long90_k2_n40.pg n 40 RUNS 9 LMAX 13 DMAX 2 ENT 0 EXT 1 REN 0 SBF 3 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 176 DEVS 176
+GAME red/n3/instances/run34_n40.pg red/n3/instances/run34_n40.start DSET run34_n40.pg n 40 RUNS 2 LMAX 32 DMAX 6 ENT 2 EXT 3 REN 2 SBF 7 SUMREN 5 INIT 0 WSB 0 WSE 0 WSW 188 DEVS 188
+GAME red/n3/instances/long121_n40.pg red/n3/instances/long121_n40.start DSET long121_n40.pg n 40 RUNS 9 LMAX 17 DMAX 3 ENT 1 EXT 1 REN 0 SBF 3 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 289 DEVS 289
+GAME red/n3/instances/run49_n32.pg red/n3/instances/run49_n32.start DSET run49_n32.pg n 32 RUNS 1 LMAX 49 DMAX 1 ENT 0 EXT 1 REN 0 SBF 3 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 40 DEVS 40
+GAME red/n5/instances/dl_4_4.pg red/n5/instances/dl_4_4.start DSET dl_4_4.pg n 42 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/n5/instances/dlm2_4.pg red/n5/instances/dlm2_4.start DSET dlm2_4.pg n 42 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/n3/instances/ret22_n40.pg red/n3/instances/ret22_n40.start DSET ret22_n40.pg n 40 RUNS 10 LMAX 19 DMAX 4 ENT 2 EXT 2 REN 1 SBF 7 SUMREN 4 INIT 0 WSB 0 WSE 0 WSW 229 DEVS 229
+GAME red/n5/instances/sym_h12_s1.pg DSET sym_h12_s1.pg n 24 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/n5/instances/sym_h8_s1.pg DSET sym_h8_s1.pg n 16 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/n5/instances/dl_6_8.pg red/n5/instances/dl_6_8.start DSET dl_6_8.pg n 110 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/n5inj/instances/block_bk20.pg DSET block_bk20.pg n 24 RUNS 3 LMAX 9 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/n5/instances/sym_h16_s1.pg DSET sym_h16_s1.pg n 32 RUNS 1 LMAX 1 DMAX 2 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 4 DEVS 4
+GAME red/n5inj/instances/blockph_bp20.pg DSET blockph_bp20.pg n 24 RUNS 2 LMAX 19 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/n5inj/instances/blockph_bp32.pg DSET blockph_bp32.pg n 36 RUNS 1 LMAX 30 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/n5inj/instances/block_bk32.pg DSET block_bk32.pg n 36 RUNS 1 LMAX 21 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/n5inj/instances/bribe_cex_n15.pg DSET bribe_cex_n15.pg n 15 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/n5inj/instances/frz24.pg red/n5inj/instances/frz24.start DSET frz24.pg n 24 RUNS 5 LMAX 7 DMAX 1 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 19 WSW 0 DEVS 19
+GAME red/n5inj/instances/frz32.pg red/n5inj/instances/frz32.start DSET frz32.pg n 32 RUNS 11 LMAX 12 DMAX 3 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 85 DEVS 85
+GAME red/n5inj/instances/phase2_pk32.pg DSET phase2_pk32.pg n 32 RUNS 7 LMAX 19 DMAX 2 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 88 DEVS 88
+GAME red/n5inj/instances/frz40.pg red/n5inj/instances/frz40.start DSET frz40.pg n 40 RUNS 9 LMAX 18 DMAX 4 ENT 1 EXT 1 REN 0 SBF 2 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 186 DEVS 186
+GAME red/n5inj/instances/elimn_cex_n48.pg DSET elimn_cex_n48.pg n 48 RUNS 12 LMAX 14 DMAX 3 ENT 1 EXT 1 REN 0 SBF 2 SUMREN 0 INIT 40 WSB 40 WSE 0 WSW 107 DEVS 147
+GAME red/n5inj/instances/returns_rt32.pg DSET returns_rt32.pg n 32 RUNS 8 LMAX 18 DMAX 2 ENT 1 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 85 DEVS 85
+GAME red/n5inj/instances/phase2_pk48.pg DSET phase2_pk48.pg n 48 RUNS 12 LMAX 12 DMAX 2 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 4 WSB 4 WSE 47 WSW 7 DEVS 58
+GAME red/n5inj/instances/theta_thc24.pg DSET theta_thc24.pg n 24 RUNS 2 LMAX 12 DMAX 1 ENT 1 EXT 1 REN 1 SBF 6 SUMREN 1 INIT 1 WSB 1 WSE 0 WSW 10 DEVS 11
+GAME red/n5inj/instances/returns_rt48.pg DSET returns_rt48.pg n 48 RUNS 14 LMAX 15 DMAX 1 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 66 DEVS 66
+GAME red/n5inj/instances/theta_thf16.pg DSET theta_thf16.pg n 16 RUNS 2 LMAX 12 DMAX 1 ENT 0 EXT 1 REN 0 SBF 7 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 17 DEVS 17
+GAME red/n5inj/instances/returns_ph64.pg DSET returns_ph64.pg n 64 RUNS 16 LMAX 16 DMAX 1 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 92 DEVS 92
+GAME red/n5inj/instances/theta_tp32.pg DSET theta_tp32.pg n 32 RUNS 2 LMAX 25 DMAX 1 ENT 0 EXT 1 REN 0 SBF 9 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 39 DEVS 39
+GAME red/n5inj/instances/theta_tp40.pg DSET theta_tp40.pg n 40 RUNS 3 LMAX 20 DMAX 1 ENT 1 EXT 1 REN 1 SBF 6 SUMREN 1 INIT 1 WSB 1 WSE 0 WSW 10 DEVS 11
+GAME red/nest16/instances/k4L72_n101.pg DSET k4L72_n101.pg n 101 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/nest16/instances/k4L72r_n101.pg DSET k4L72r_n101.pg n 101 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/n5inj/instances/returns_rt64.pg DSET returns_rt64.pg n 64 RUNS 15 LMAX 17 DMAX 1 ENT 1 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 1 WSB 1 WSE 0 WSW 75 DEVS 76
+GAME red/n5inj/instances/wide_h16.pg DSET wide_h16.pg n 32 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/nest16/instances/k4g50_n101.pg DSET k4g50_n101.pg n 101 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/nest16/instances/k4u_n101.pg DSET k4u_n101.pg n 101 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/nest16/instances/k4seed_vr_n87.pg DSET k4seed_vr_n87.pg n 87 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/nest16/instances/k4y1_n82.pg DSET k4y1_n82.pg n 82 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/nest16/instances/k4seed_c1_n82.pg DSET k4seed_c1_n82.pg n 82 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/nest16/instances/near4_n26.pg DSET near4_n26.pg n 26 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/nest16/instances/k4y2_n87.pg DSET k4y2_n87.pg n 87 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/nest16/instances/nest4uu_n51.pg DSET nest4uu_n51.pg n 51 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/nest16/instances/nest4u_n46.pg DSET nest4u_n46.pg n 46 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/nest16/instances/nest6_n75.pg DSET nest6_n75.pg n 75 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/nest16/instances/nest5_n49.pg DSET nest5_n49.pg n 49 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/nest16/instances/nest6min_n75.pg DSET nest6min_n75.pg n 75 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/nest16/instances/nest6x_n75.pg DSET nest6x_n75.pg n 75 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/nest16/instances/w1_n27.pg DSET w1_n27.pg n 27 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/nest16/instances/oseg_n26.pg DSET oseg_n26.pg n 26 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/nest16/instances/win3_n27.pg DSET win3_n27.pg n 27 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/nopre/instances/nopre_viol_n20.pg DSET nopre_viol_n20.pg n 20 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/o1/instances/ph45_n32.pg DSET ph45_n32.pg n 32 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/o1/instances/iter118_n48.pg DSET iter118_n48.pg n 48 RUNS 2 LMAX 12 DMAX 1 ENT 0 EXT 1 REN 0 SBF 3 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 13 DEVS 13
+GAME red/o1/instances/ph50_n32.pg DSET ph50_n32.pg n 32 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/rec0/instances/fbd0_n4.pg DSET fbd0_n4.pg n 4 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/o1/instances/f39_n48.pg DSET f39_n48.pg n 48 RUNS 1 LMAX 33 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/o1/instances/tau18_n24.pg DSET tau18_n24.pg n 24 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/rec0/instances/n0_6_n24.pg DSET n0_6_n24.pg n 24 RUNS 1 LMAX 1 DMAX 1 ENT 1 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 1 WSW 1 DEVS 2
+GAME red/rec0/instances/nep24_n20.pg DSET nep24_n20.pg n 20 RUNS 1 LMAX 1 DMAX 1 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 1 DEVS 1
+GAME red/rec0/instances/lend2_30_n48.pg DSET lend2_30_n48.pg n 48 RUNS 1 LMAX 13 DMAX 8 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 20 DEVS 20
+GAME red/sgrow/instances/s20_n20.pg DSET s20_n20.pg n 20 RUNS 1 LMAX 1 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/rec0/instances/nep87_n40.pg DSET nep87_n40.pg n 40 RUNS 3 LMAX 8 DMAX 4 ENT 1 EXT 1 REN 0 SBF 6 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 46 DEVS 46
+GAME red/sgrow/instances/s21_oink_n20.pg DSET s21_oink_n20.pg n 20 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/sgrow/instances/s29_n30.pg DSET s29_n30.pg n 30 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/rec0/instances/nep90_n40.pg DSET nep90_n40.pg n 40 RUNS 3 LMAX 8 DMAX 4 ENT 1 EXT 1 REN 0 SBF 7 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 42 DEVS 42
+GAME red/sgrow/instances/s34_oink_n40.pg DSET s34_oink_n40.pg n 40 RUNS 1 LMAX 2 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/sgrow/instances/s32_n60.pg DSET s32_n60.pg n 60 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/so/instances/beta2_n11.pg DSET beta2_n11.pg n 11 RUNS 1 LMAX 1 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/sgrow/instances/s36_oink_n60.pg DSET s36_oink_n60.pg n 60 RUNS 1 LMAX 1 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/sgrow/instances/s34_oink_n80.pg DSET s34_oink_n80.pg n 80 RUNS 1 LMAX 1 DMAX 2 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 4 WSW 0 DEVS 4
+GAME red/sgrow/instances/s35_oink_n80.pg DSET s35_oink_n80.pg n 80 RUNS 1 LMAX 1 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/so/instances/epsseg_cex_n16.pg DSET epsseg_cex_n16.pg n 16 RUNS 1 LMAX 6 DMAX 1 ENT 1 EXT 2 REN 1 SBF 4 SUMREN 1 INIT 0 WSB 0 WSE 0 WSW 3 DEVS 3
+GAME red/so/instances/exitr_cex_n16.pg DSET exitr_cex_n16.pg n 16 RUNS 1 LMAX 7 DMAX 1 ENT 1 EXT 2 REN 1 SBF 5 SUMREN 1 INIT 0 WSB 0 WSE 0 WSW 4 DEVS 4
+GAME red/so/instances/farrise25_n32.pg DSET farrise25_n32.pg n 32 RUNS 2 LMAX 3 DMAX 1 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 4 DEVS 4
+GAME red/so/instances/epsseg_cex_n48.pg DSET epsseg_cex_n48.pg n 48 RUNS 3 LMAX 4 DMAX 1 ENT 0 EXT 1 REN 0 SBF 3 SUMREN 0 INIT 0 WSB 0 WSE 1 WSW 7 DEVS 8
+GAME red/so/instances/mn_abs74_n48.pg DSET mn_abs74_n48.pg n 48 RUNS 4 LMAX 4 DMAX 1 ENT 0 EXT 0 REN 0 SBF 3 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 14 DEVS 14
+GAME red/so/instances/exitr_cex_n48.pg DSET exitr_cex_n48.pg n 48 RUNS 2 LMAX 3 DMAX 1 ENT 0 EXT 1 REN 0 SBF 3 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 5 DEVS 5
+GAME red/so/instances/njb_reabs54_n32.pg DSET njb_reabs54_n32.pg n 32 RUNS 4 LMAX 4 DMAX 1 ENT 0 EXT 0 REN 0 SBF 4 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 16 DEVS 16
+GAME red/so/instances/nleq_cex_n48.pg DSET nleq_cex_n48.pg n 48 RUNS 3 LMAX 2 DMAX 1 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 5 DEVS 5
+GAME red/so/instances/nleq33_n48.pg DSET nleq33_n48.pg n 48 RUNS 1 LMAX 33 DMAX 1 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 34 DEVS 34
+GAME red/so/instances/njb_reabs65_n48.pg DSET njb_reabs65_n48.pg n 48 RUNS 5 LMAX 19 DMAX 1 ENT 0 EXT 0 REN 0 SBF 3 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 42 DEVS 42
+GAME red/so/instances/pftheta_cex_n32.pg DSET pftheta_cex_n32.pg n 32 RUNS 1 LMAX 34 DMAX 1 ENT 0 EXT 1 REN 0 SBF 33 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 34 DEVS 34
+GAME red/so/instances/pftheta34_n32.pg DSET pftheta34_n32.pg n 32 RUNS 1 LMAX 34 DMAX 1 ENT 0 EXT 1 REN 0 SBF 34 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 34 DEVS 34
+GAME red/so/instances/pft35_n48.pg DSET pft35_n48.pg n 48 RUNS 2 LMAX 35 DMAX 1 ENT 0 EXT 1 REN 0 SBF 35 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 39 DEVS 39
+GAME red/so/instances/pft40_n40.pg DSET pft40_n40.pg n 40 RUNS 4 LMAX 27 DMAX 1 ENT 0 EXT 1 REN 0 SBF 24 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 46 DEVS 46
+GAME red/so/instances/post31_n48.pg DSET post31_n48.pg n 48 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/so/instances/rise_fb38_n48.pg DSET rise_fb38_n48.pg n 48 RUNS 3 LMAX 4 DMAX 1 ENT 0 EXT 0 REN 0 SBF 2 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 11 DEVS 11
+GAME red/so/instances/s4c8_n13.pg DSET s4c8_n13.pg n 13 RUNS 2 LMAX 1 DMAX 1 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 4 DEVS 4
+GAME red/so/instances/so_k2_n32.pg DSET so_k2_n32.pg n 32 RUNS 3 LMAX 5 DMAX 1 ENT 0 EXT 1 REN 0 SBF 5 SUMREN 0 INIT 0 WSB 0 WSE 7 WSW 5 DEVS 12
+GAME red/so/instances/so_sor5_n24.pg DSET so_sor5_n24.pg n 24 RUNS 1 LMAX 21 DMAX 1 ENT 0 EXT 1 REN 0 SBF 21 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 21 DEVS 21
+GAME red/so/instances/so_sorl_n32.pg DSET so_sorl_n32.pg n 32 RUNS 1 LMAX 22 DMAX 1 ENT 0 EXT 1 REN 0 SBF 22 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 22 DEVS 22
+GAME red/so/instances/so_j19_n48.pg DSET so_j19_n48.pg n 48 RUNS 2 LMAX 20 DMAX 1 ENT 0 EXT 1 REN 0 SBF 19 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 21 DEVS 21
+GAME red/so/instances/rise_thin51_n40.pg DSET rise_thin51_n40.pg n 40 RUNS 8 LMAX 13 DMAX 1 ENT 0 EXT 1 REN 0 SBF 11 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 70 DEVS 70
+GAME red/so/instances/so_tie13_n24.pg DSET so_tie13_n24.pg n 24 RUNS 1 LMAX 16 DMAX 1 ENT 0 EXT 1 REN 0 SBF 15 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 16 DEVS 16
+GAME red/so/instances/so_th_n32.pg DSET so_th_n32.pg n 32 RUNS 2 LMAX 21 DMAX 1 ENT 4 EXT 5 REN 4 SBF 18 SUMREN 4 INIT 0 WSB 0 WSE 0 WSW 18 DEVS 18
+GAME red/so/instances/so_tie15_n32.pg DSET so_tie15_n32.pg n 32 RUNS 1 LMAX 19 DMAX 1 ENT 0 EXT 1 REN 0 SBF 18 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 19 DEVS 19
+GAME red/so/instances/tev_cex_n40.pg DSET tev_cex_n40.pg n 40 RUNS 3 LMAX 5 DMAX 1 ENT 0 EXT 1 REN 0 SBF 3 SUMREN 0 INIT 0 WSB 0 WSE 7 WSW 2 DEVS 9
+GAME red/so/instances/tevlast_cex_n40.pg DSET tevlast_cex_n40.pg n 40 RUNS 2 LMAX 5 DMAX 1 ENT 0 EXT 1 REN 0 SBF 3 SUMREN 0 INIT 0 WSB 0 WSE 5 WSW 2 DEVS 7
+GAME red/so/instances/tevlast11_n40.pg DSET tevlast11_n40.pg n 40 RUNS 2 LMAX 30 DMAX 1 ENT 0 EXT 1 REN 0 SBF 3 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 32 DEVS 32
+GAME red/so/instances/tevlast7_n32.pg DSET tevlast7_n32.pg n 32 RUNS 2 LMAX 29 DMAX 1 ENT 0 EXT 1 REN 0 SBF 4 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 37 DEVS 37
+GAME red/so/instances/xrun8_n10.pg DSET xrun8_n10.pg n 10 RUNS 1 LMAX 7 DMAX 1 ENT 0 EXT 1 REN 0 SBF 2 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 6 DEVS 6
+GAME red/so/instances/xrun21_n24.pg DSET xrun21_n24.pg n 24 RUNS 1 LMAX 21 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/so/instances/tog6b_n32.pg DSET tog6b_n32.pg n 32 RUNS 1 LMAX 6 DMAX 1 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 2 DEVS 2
+GAME red/so/instances/tog6a_n32.pg DSET tog6a_n32.pg n 32 RUNS 1 LMAX 5 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/so/instances/xsn29_n32.pg DSET xsn29_n32.pg n 32 RUNS 1 LMAX 29 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/so/instances/xsn43_n48.pg DSET xsn43_n48.pg n 48 RUNS 1 LMAX 43 DMAX 1 ENT 0 EXT 1 REN 0 SBF 3 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 41 DEVS 41
+GAME red/so/instances/xsnf42_n48.pg DSET xsnf42_n48.pg n 48 RUNS 1 LMAX 42 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/so/instances/xsnf52_n64.pg DSET xsnf52_n64.pg n 64 RUNS 1 LMAX 52 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/tcpert/instances/leanT_N12.pg DSET leanT_N12.pg n 96 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/so/instances/xsn91_n48.pg DSET xsn91_n48.pg n 48 RUNS 9 LMAX 25 DMAX 1 ENT 0 EXT 1 REN 0 SBF 4 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 110 DEVS 110
+GAME red/tcpert/instances/leanT_N16.pg DSET leanT_N16.pg n 128 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/tcpert/instances/leanT_N6.pg DSET leanT_N6.pg n 48 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/tcpert/instances/leanT_N8.pg DSET leanT_N8.pg n 64 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/tcpert/instances/leanT_N24.pg DSET leanT_N24.pg n 192 RUNS 1 LMAX 3 DMAX 4 ENT 0 EXT 1 REN 0 SBF 2 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 9 DEVS 9
+GAME red/tcpert/instances/tcL_N3.pg DSET tcL_N3.pg n 42 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/tcpert/instances/tcL_N4.pg DSET tcL_N4.pg n 68 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/tcpert/instances/tcL_N10.pg DSET tcL_N10.pg n 350 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/tcpert/instances/tcL_N5.pg DSET tcL_N5.pg n 100 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/tcpert/instances/tcL_N6.pg DSET tcL_N6.pg n 138 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/tcpert/instances/tcR4_N4.pg DSET tcR4_N4.pg n 68 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/tcpert/instances/tcR4_N5.pg DSET tcR4_N5.pg n 100 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/tcpert/instances/leanT_N32.pg DSET leanT_N32.pg n 256 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/tcpert/instances/tcR4_N6.pg DSET tcR4_N6.pg n 138 RUNS 1 LMAX 1 DMAX 13 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 2 WSB 2 WSE 0 WSW 19 DEVS 21
+GAME red/tcpert/instances/tcL_N8.pg DSET tcL_N8.pg n 232 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/tcpert/instances/tcS8_N10.pg DSET tcS8_N10.pg n 350 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/tcpert/instances/tcR4_N8.pg DSET tcR4_N8.pg n 232 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/tcpert/instances/tcR4_N7.pg DSET tcR4_N7.pg n 182 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/tcpert/instances/tcS8_N6.pg DSET tcS8_N6.pg n 138 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/tcpert/instances/tcS8_N7.pg DSET tcS8_N7.pg n 182 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/tcpert/instances/tcS8_N8.pg DSET tcS8_N8.pg n 232 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/tpp/instances/tpp_viol_n22.pg DSET tpp_viol_n22.pg n 22 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/tcpert/instances/tcL_N12.pg DSET tcL_N12.pg n 492 RUNS 1 LMAX 2 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/tpp/instances/tpp_viol_n63.pg DSET tpp_viol_n63.pg n 63 RUNS 1 LMAX 1 DMAX 1 ENT 1 EXT 0 REN 0 SBF 1 SUMREN 0 INIT 1 WSB 1 WSE 0 WSW 0 DEVS 1
+GAME red/ul/instances/cxmig_k4_n54.pg red/ul/instances/cxmig_k4_n54.start DSET cxmig_k4_n54.pg n 54 RUNS 1 LMAX 12 DMAX 5 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 60 DEVS 60
+GAME red/ul/instances/cxmig_k8_n82.pg red/ul/instances/cxmig_k8_n82.start DSET cxmig_k8_n82.pg n 82 RUNS 1 LMAX 16 DMAX 9 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 144 DEVS 144
+GAME red/ul/instances/ladderd0_k12_n48.pg red/ul/instances/ladderd0_k12_n48.start DSET ladderd0_k12_n48.pg n 48 RUNS 1 LMAX 14 DMAX 14 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 196 DEVS 196
+GAME red/tcpert/instances/tcS8_N9.pg DSET tcS8_N9.pg n 288 RUNS 1 LMAX 2 DMAX 31 ENT 1 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 3 WSB 3 WSE 0 WSW 84 DEVS 87
+GAME red/tcpert/instances/tcS8_N11.pg DSET tcS8_N11.pg n 418 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/ul/instances/cxmig_k16_n138.pg red/ul/instances/cxmig_k16_n138.start DSET cxmig_k16_n138.pg n 138 RUNS 1 LMAX 24 DMAX 17 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 408 DEVS 408
+GAME red/ul/instances/ladderd0_k24_n84.pg red/ul/instances/ladderd0_k24_n84.start DSET ladderd0_k24_n84.pg n 84 RUNS 1 LMAX 26 DMAX 26 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 676 DEVS 676
+GAME red/ul/instances/ladderent_k12_n48.pg red/ul/instances/ladderent_k12_n48.start DSET ladderent_k12_n48.pg n 48 RUNS 1 LMAX 14 DMAX 14 ENT 1 EXT 1 REN 0 SBF 2 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 118 DEVS 118
+GAME red/ul/instances/reader_L10_n36.pg red/ul/instances/reader_L10_n36.start DSET reader_L10_n36.pg n 36 RUNS 1 LMAX 13 DMAX 3 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 36 DEVS 36
+GAME red/ul/instances/ladderent_k24_n84.pg red/ul/instances/ladderent_k24_n84.start DSET ladderent_k24_n84.pg n 84 RUNS 1 LMAX 26 DMAX 26 ENT 1 EXT 1 REN 0 SBF 2 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 376 DEVS 376
+GAME red/ul/instances/reader_L20_n56.pg red/ul/instances/reader_L20_n56.start DSET reader_L20_n56.pg n 56 RUNS 1 LMAX 23 DMAX 3 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 66 DEVS 66
+GAME red/ul/instances/reader_L40_n96.pg red/ul/instances/reader_L40_n96.start DSET reader_L40_n96.pg n 96 RUNS 1 LMAX 43 DMAX 3 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 126 DEVS 126
+GAME red/usplit/instances/gate_K16_n197.pg red/usplit/instances/gate_K16_n197.start DSET gate_K16_n197.pg n 197 RUNS 1 LMAX 23 DMAX 5 ENT 7 EXT 7 REN 6 SBF 14 SUMREN 6 INIT 0 WSB 0 WSE 0 WSW 98 DEVS 98
+GAME red/ul/instances/ladderd0_k48_n156.pg red/ul/instances/ladderd0_k48_n156.start DSET ladderd0_k48_n156.pg n 156 RUNS 1 LMAX 50 DMAX 50 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 2500 DEVS 2500
+GAME red/usplit/instances/grow_K12_n149.pg red/usplit/instances/grow_K12_n149.start DSET grow_K12_n149.pg n 149 RUNS 1 LMAX 19 DMAX 4 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 73 DEVS 73
+GAME red/usplit/instances/pairoc_n58.pg red/usplit/instances/pairoc_n58.start DSET pairoc_n58.pg n 58 RUNS 1 LMAX 5 DMAX 5 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 21 DEVS 21
+GAME red/usplit/instances/pp_K12_n161.pg red/usplit/instances/pp_K12_n161.start DSET pp_K12_n161.pg n 161 RUNS 1 LMAX 19 DMAX 6 ENT 0 EXT 1 REN 0 SBF 13 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 111 DEVS 111
+GAME red/usplit/instances/pp_K12_n161_dual.pg DSET pp_K12_n161_dual.pg n 161 RUNS 1 LMAX 1 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/ul/instances/ladderent_k48_n156.pg red/ul/instances/ladderent_k48_n156.start DSET ladderent_k48_n156.pg n 156 RUNS 1 LMAX 50 DMAX 50 ENT 1 EXT 1 REN 0 SBF 2 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 1324 DEVS 1324
+GAME red/usplit/instances/grow_K40_n373.pg red/usplit/instances/grow_K40_n373.start DSET grow_K40_n373.pg n 373 RUNS 1 LMAX 47 DMAX 4 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 185 DEVS 185
+GAME red/usplit/instances/usplit_n14.pg red/usplit/instances/usplit_n14.start DSET usplit_n14.pg n 14 RUNS 1 LMAX 3 DMAX 1 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 3 DEVS 3
+GAME red/usplit/instances/usplit_n23.pg red/usplit/instances/usplit_n23.start DSET usplit_n23.pg n 23 RUNS 1 LMAX 9 DMAX 1 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 9 DEVS 9
+GAME red/usplit/instances/usplit_rd_n24.pg red/usplit/instances/usplit_rd_n24.start DSET usplit_rd_n24.pg n 24 RUNS 1 LMAX 4 DMAX 2 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 7 DEVS 7
+GAME red/usplit/instances/usplit_rd_s3_n27.pg DSET usplit_rd_s3_n27.pg n 27 RUNS 1 LMAX 4 DMAX 2 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 7 DEVS 7
+GAME red/usplit/instances/usplit_s3_n16.pg DSET usplit_s3_n16.pg n 16 RUNS 1 LMAX 3 DMAX 1 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 3 DEVS 3
+GAME red/xctx/instances/nest3_n20.pg DSET nest3_n20.pg n 20 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/xctx/instances/nest3_n24.pg DSET nest3_n24.pg n 24 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/xctx/instances/vrall_viol_n20.pg DSET vrall_viol_n20.pg n 20 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/xctx/instances/xcov11_n20.pg DSET xcov11_n20.pg n 20 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/xctx/instances/xctx_viol_n20.pg DSET xctx_viol_n20.pg n 20 RUNS 0 LMAX 0 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/xing/instances/fbref_cex_n32.pg DSET fbref_cex_n32.pg n 32 RUNS 7 LMAX 16 DMAX 1 ENT 0 EXT 1 REN 0 SBF 2 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 48 DEVS 48
+GAME red/xing/instances/j10_n24.pg DSET j10_n24.pg n 24 RUNS 2 LMAX 15 DMAX 1 ENT 1 EXT 1 REN 0 SBF 11 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 22 DEVS 22
+GAME red/xing/instances/j4_n40.pg DSET j4_n40.pg n 40 RUNS 5 LMAX 31 DMAX 1 ENT 0 EXT 1 REN 0 SBF 11 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 102 DEVS 102
+GAME red/xing/instances/j5_n16.pg DSET j5_n16.pg n 16 RUNS 5 LMAX 11 DMAX 1 ENT 0 EXT 1 REN 0 SBF 7 SUMREN 0 INIT 0 WSB 0 WSE 2 WSW 20 DEVS 22
+GAME red/xing/instances/j7_n32.pg DSET j7_n32.pg n 32 RUNS 3 LMAX 23 DMAX 1 ENT 1 EXT 1 REN 0 SBF 8 SUMREN 0 INIT 0 WSB 0 WSE 10 WSW 34 DEVS 44
+GAME red/xing/instances/j7_n48.pg DSET j7_n48.pg n 48 RUNS 8 LMAX 20 DMAX 1 ENT 0 EXT 1 REN 0 SBF 9 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 74 DEVS 74
+GAME red/usplit/instances/pp_K48_n449.pg red/usplit/instances/pp_K48_n449.start DSET pp_K48_n449.pg n 449 RUNS 1 LMAX 55 DMAX 6 ENT 0 EXT 1 REN 0 SBF 49 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 327 DEVS 327
+GAME red/xing/instances/j8_n32.pg DSET j8_n32.pg n 32 RUNS 4 LMAX 21 DMAX 1 ENT 1 EXT 1 REN 0 SBF 11 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 46 DEVS 46
+GAME red/xing/instances/kw25_n32.pg DSET kw25_n32.pg n 32 RUNS 3 LMAX 25 DMAX 1 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 27 DEVS 27
+GAME red/xing/instances/j8_n48.pg DSET j8_n48.pg n 48 RUNS 9 LMAX 20 DMAX 1 ENT 0 EXT 1 REN 0 SBF 9 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 84 DEVS 84
+GAME red/xing/instances/kw_n16.pg DSET kw_n16.pg n 16 RUNS 1 LMAX 12 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/xing/instances/kw_n24.pg DSET kw_n24.pg n 24 RUNS 1 LMAX 20 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/usplit/instances/pp_K48_n449_dual.pg DSET pp_K48_n449_dual.pg n 449 RUNS 1 LMAX 1 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/xing/instances/obr_eq_n24.pg DSET obr_eq_n24.pg n 24 RUNS 1 LMAX 4 DMAX 1 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 5 DEVS 5
+GAME red/xing/instances/kw_n48.pg DSET kw_n48.pg n 48 RUNS 1 LMAX 40 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/xing/instances/obr_n32.pg DSET obr_n32.pg n 32 RUNS 2 LMAX 15 DMAX 1 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 16 WSW 0 DEVS 16
+GAME red/xing/instances/u1t_own6_n32.pg DSET u1t_own6_n32.pg n 32 RUNS 2 LMAX 6 DMAX 1 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 8 DEVS 8
+GAME red/xing/instances/u1t_cex_n32.pg DSET u1t_cex_n32.pg n 32 RUNS 1 LMAX 7 DMAX 1 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 8 DEVS 8
+GAME red/xing/instances/u23sw64_n32.pg DSET u23sw64_n32.pg n 32 RUNS 3 LMAX 8 DMAX 1 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 11 WSW 0 DEVS 11
+GAME red/xing/instances/u2flat73_n32.pg DSET u2flat73_n32.pg n 32 RUNS 5 LMAX 3 DMAX 1 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 14 DEVS 14
+GAME red/xing/instances/u2flat_n32.pg DSET u2flat_n32.pg n 32 RUNS 6 LMAX 2 DMAX 1 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 13 WSW 0 DEVS 13
+GAME red/xing/instances/x31_cu16.pg DSET x31_cu16.pg n 16 RUNS 2 LMAX 13 DMAX 1 ENT 0 EXT 1 REN 0 SBF 12 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 21 DEVS 21
+GAME red/xing/instances/x31_cu24.pg DSET x31_cu24.pg n 24 RUNS 3 LMAX 8 DMAX 1 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 18 DEVS 18
+GAME red/xing/instances/x31_cu32i.pg DSET x31_cu32i.pg n 32 RUNS 2 LMAX 21 DMAX 1 ENT 0 EXT 1 REN 0 SBF 20 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 39 DEVS 39
+GAME red/xing/instances/x31_cu32.pg DSET x31_cu32.pg n 32 RUNS 2 LMAX 21 DMAX 1 ENT 0 EXT 1 REN 0 SBF 21 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 41 DEVS 41
+GAME red/xing/instances/x31_cu48.pg DSET x31_cu48.pg n 48 RUNS 2 LMAX 22 DMAX 1 ENT 0 EXT 1 REN 0 SBF 22 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 42 DEVS 42
+GAME red/xing/instances/x31_lem_e24.pg DSET x31_lem_e24.pg n 24 RUNS 5 LMAX 14 DMAX 1 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 51 DEVS 51
+GAME red/xing/instances/x31_nh_e24.pg DSET x31_nh_e24.pg n 24 RUNS 1 LMAX 20 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/xing/instances/x31_nh_r20.pg DSET x31_nh_r20.pg n 20 RUNS 1 LMAX 13 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/xing/instances/x31_re24.pg DSET x31_re24.pg n 24 RUNS 1 LMAX 4 DMAX 1 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 5 DEVS 5
+GAME red/xing/instances/x31_ru24.pg DSET x31_ru24.pg n 24 RUNS 1 LMAX 4 DMAX 1 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 5 DEVS 5
+GAME red/xing/instances/x31_lem_t32.pg DSET x31_lem_t32.pg n 32 RUNS 7 LMAX 12 DMAX 1 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 56 DEVS 56
+GAME red/xing/instances/x31_rx32.pg DSET x31_rx32.pg n 32 RUNS 4 LMAX 22 DMAX 1 ENT 0 EXT 1 REN 0 SBF 22 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 53 DEVS 53
+GAME red/xing/instances/x32_rand16.pg DSET x32_rand16.pg n 16 RUNS 1 LMAX 13 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/xing/instances/x32_nest40.pg DSET x32_nest40.pg n 40 RUNS 3 LMAX 26 DMAX 1 ENT 0 EXT 1 REN 0 SBF 9 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 54 DEVS 54
+GAME red/xing/instances/x32_rand24.pg DSET x32_rand24.pg n 24 RUNS 1 LMAX 20 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/xing/instances/x31_rx48.pg DSET x31_rx48.pg n 48 RUNS 4 LMAX 22 DMAX 1 ENT 0 EXT 1 REN 0 SBF 22 SUMREN 0 INIT 0 WSB 0 WSE 9 WSW 41 DEVS 50
+GAME red/xing/instances/x32_rand32.pg DSET x32_rand32.pg n 32 RUNS 1 LMAX 29 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/xing/instances/x32_rand64.pg DSET x32_rand64.pg n 64 RUNS 1 LMAX 55 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/xing/instances/x32_rand48.pg DSET x32_rand48.pg n 48 RUNS 1 LMAX 44 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME si/root/instances/cone_n65.pg DSET cone_n65.pg n 65 RUNS 2 LMAX 2 DMAX 2 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 5 DEVS 5
+GAME red/xing/instances/x32_waves32.pg DSET x32_waves32.pg n 32 RUNS 9 LMAX 22 DMAX 1 ENT 0 EXT 1 REN 0 SBF 4 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 75 DEVS 75
+GAME red/xing/instances/x32_waves48.pg DSET x32_waves48.pg n 48 RUNS 7 LMAX 26 DMAX 1 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 64 DEVS 64
+GAME si/root/instances/ueonce_n27.pg DSET ueonce_n27.pg n 27 RUNS 1 LMAX 10 DMAX 2 ENT 0 EXT 1 REN 0 SBF 1 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 2 DEVS 2
+GAME si/root/instances/cone_n69.pg DSET cone_n69.pg n 69 RUNS 1 LMAX 1 DMAX 0 ENT 0 EXT 0 REN 0 SBF 0 SUMREN 0 INIT 0 WSB 0 WSE 0 WSW 0 DEVS 0
+GAME red/usplit/instances/gate_K64_n581.pg red/usplit/instances/gate_K64_n581.start DSET gate_K64_n581.pg n 581 RUNS 1 LMAX 71 DMAX 5 ENT 31 EXT 31 REN 30 SBF 62 SUMREN 30 INIT 0 WSB 0 WSE 0 WSW 314 DEVS 314

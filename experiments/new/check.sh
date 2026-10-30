@@ -469,4 +469,64 @@ if grep -q "SBV n 32 runs 1 maxima {'sb': 34, 'sbv': 34, 'ret': 18, 'F': 34} sb/
 else
   echo "box 90 REL check: FAILED"; exit 1
 fi
+w42=$(cd .. && python3 -I new/box92/xirun.py red/so/instances/pftheta34_n32.pg; python3 -I new/box92/xirun.py red/free/instances/fx_K8_m32.pg red/free/instances/fx_K8_m32.start)
+if grep -q "XIRUN n 32 mE 80 runs 1 {'noswitch': 0, 'viol_sw': 0, 'viol_ent': 0, 'viol_xirun': 0} maxima {'F': 34, 'xich': 34, 'bound': 1010, 'ratio': 0.034}" <<<"$w42" && grep -q "XIRUN n 250 mE 151 runs 1 {'noswitch': 0, 'viol_sw': 0, 'viol_ent': 0, 'viol_xirun': 0} maxima {'F': 280, 'xich': 137, 'bound': 2005, 'ratio': 0.14}" <<<"$w42"; then
+  echo "box 92 WRUN: XI-RUN |F| <= m_E + sum d_E XICH on pftheta34_n32 and fx_K8_m32: PASS"
+else
+  echo "box 92 WRUN check: FAILED"; exit 1
+fi
+w43=$(cd .. && python3 -I hard-families/pgsolver_port.py switchallexp 4 > "$tmp/sae_4.pg" && python3 -I new/box93/swall_hw.py "$tmp/sae_4.pg"; python3 -I new/box93/elimwin.py red/so/instances/pftheta34_n32.pg)
+if grep -q "SWALL sae_4.pg n 63 mE 117 iterations 150 bmon_viol 0 elim_viol 0 xi_flat_steps 0 HW 35 count_ok True" <<<"$w43" && grep -q "ELIMWIN n 32 mE 80 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 32, 'ncert': 0} maxima {'F': 34, 'HW': 7, 'revisit': 18, 'xiw': 2}" <<<"$w43"; then
+  echo "box 93 ELIM: switch-all on switchallexp_4 keeps BETA-MON / ELIM-ORD-beta with HW 35; ELIM-WIN counting on pftheta34_n32: PASS"
+else
+  echo "box 93 ELIM check: FAILED"; exit 1
+fi
+w44=$(cd .. && python3 -I new/box94/kcount.py red/usplit/instances/gate_K64_n581.pg; python3 -I new/box90/sbv.py red/usplit/instances/gate_K64_n581.pg red/usplit/instances/gate_K64_n581.start)
+if grep -q "KCOUNT red/usplit/instances/gate_K64_n581.pg n 581 k 5" <<<"$w44" && grep -q "SBV n 581 runs 1 maxima {'sb': 64, 'sbv': 62, 'ret': 61, 'F': 71}" <<<"$w44"; then
+  echo "box 94 KO: gate_K64_n581 is in C^5O (prod deg 32) with 64 sbar-changes in one W-run (NO-REPEAT-kO DEAD): PASS"
+else
+  echo "box 94 KO check: FAILED"; exit 1
+fi
+w45=$(cd .. && python3 -I hard-families/pgsolver_port.py switchbestexp 3 > "$tmp/sbe_3.pg" && python3 -I new/box95/firstdiv.py "$tmp/sbe_3.pg")
+if grep -q "FIRSTDIV sbe_3.pg n 85 N5_iter 41 first_div_GLO 14 first_div_V1 14 N5_tau_changes 3 first_tau_change 13" <<<"$w45"; then
+  echo "box 95 HN: N5 = I^glo on switchbestexp_3 until its first tau-change (12 -> 13), split at state 14: PASS"
+else
+  echo "box 95 HN check: FAILED"; exit 1
+fi
+w46=$(cd .. && python3 -I hard-families/pgsolver_port.py switchbestexp 3 > "$tmp/sbe_3.pg" && python3 -I new/box96/taustart.py "$tmp/sbe_3.pg" OPT)
+if grep -q "TAUSTART sbe_3.pg n 85 OPT iterations 19 tau_changes 0 fallbacks 0 maxWrun 19" <<<"$w46"; then
+  echo "box 96 TAU: N5 on switchbestexp_3 with tau_0 = tau_end (tau never moves): 19 iterations, one W-run: PASS"
+else
+  echo "box 96 TAU check: FAILED"; exit 1
+fi
+w47=$(cd .. && python3 -I new/box97/orderdet.py n5-exhaustive/instances/n5s_maxph_0.pg; python3 -I new/box97/orderdet.py n5-exhaustive/instances/thetaA_n7.pg n5-exhaustive/instances/thetaA_n7.start; PERRUN=1 python3 -I new/box97/orderdet.py red/usplit/instances/gate_K64_n581.pg red/usplit/instances/gate_K64_n581.start)
+if grep -q "ORDDET n5s_maxph_0.pg n 5 STATES 4 WRUNS 1 REFMINX 0 REFMINUX 0 ODU 1 ODA 0 ODR 0" <<<"$w47" && grep -q "ORDDET thetaA_n7.pg n 7 STATES 4 WRUNS 1 REFMINX 0 REFMINUX 0 ODU 0 ODA 0 ODR 0 NRU 1 NRA 1 NRR 1 NRRS 1" <<<"$w47" && grep -q "RUN 0-71 F 71 maxU 6 A 11 OF 5 SBT 64 ORDCH 64 ORD 6" <<<"$w47"; then
+  echo "box 97 ORD: ORDER-DET U-form DEAD (n5s_maxph_0), NO-REPEAT DEAD (thetaA_n7), gate_K64: 64 sbar-change transitions over 6 refined orders on |A_F| = 11: PASS"
+else
+  echo "box 97 ORD check: FAILED"; exit 1
+fi
+w48=$(cd .. && python3 -I new/box98/retpay.py red/usplit/instances/gate_K64_n581.pg red/usplit/instances/gate_K64_n581.start)
+if grep -q "RUN 0-71 F 71 mE 1119 entries 542 FRESH 71 RET 0 NORET 71 ORDRET 59 ORDRET_NR 59 ORDRET_FR 59 FLIPS 64 |A| 11" <<<"$w48"; then
+  echo "box 98 RET: gate_K64 W-run has 59 order returns, 64 sbar-changes and no Even-edge return (all paid by fresh entries): PASS"
+else
+  echo "box 98 RET check: FAILED"; exit 1
+fi
+w49=$(cd .. && TOP=1 python3 -I new/box99/retcause.py new/box97/inst/sbq2_K8_m16.pg new/box97/inst/sbq2_K8_m16.start)
+if grep -q "RUN 0-152 F 152 returns 450 edges 60 targets 60 max_per_target 8 norise 0 wch_in_window 450" <<<"$w49" && grep -q "ROOT kinds {'FRESH': 450} distinct roots 15 max returns per root 45" <<<"$w49" && grep -q "('FRESH', 4, 66, 17), 45" <<<"$w49"; then
+  echo "box 99 QRET: sbq2_K8_m16 returns all rooted at fresh entries, clock vertex 4's ticks root 45 = 3m - 3 each: PASS"
+else
+  echo "box 99 QRET check: FAILED"; exit 1
+fi
+w50=$(cd .. && python3 -I new/box99/retcause.py new/box52/out/topfix_n10.pg; TOP=1 python3 -I new/box99/retcause.py new/box97/inst/obs_K12_m24.pg new/box97/inst/obs_K12_m24.start)
+if grep -q "EROOT kinds {'FRESH': 252} distinct roots 27 max returns per root 50 chain depth {.*49: 1} max children per node 1 max children per return node 1 mE 651" <<<"$w50" && grep -q "EROOT kinds {'FRESH': 818} distinct roots 25 max returns per root 71 chain depth {0: 301, 1: 506, 2: 11} max children per node 24 max children per return node 2 mE 149" <<<"$w50"; then
+  echo "box 100 CASC: EVEN root map total (all FRESH); topfix_n10 root chain depth 49 with width 1 (depth O(1) DEAD); obs_K12_m24 depth 2, return-node width 2: PASS"
+else
+  echo "box 100 CASC check: FAILED"; exit 1
+fi
+w51=$(cd .. && TOP=1 python3 -I new/box99/retcause.py new/box97/inst/obs_K12_m24.pg new/box97/inst/obs_K12_m24.start; python3 -I new/box99/retcause.py new/box52/out/topfix_n10.pg; python3 -I new/box99/retcause.py red/so/instances/pftheta34_n32.pg)
+if grep -q "PERROOT max returns of one Even X per root 24 (X 247 deg 24) max returns of one edge per root 1 max (returns of X per root)/deg X 1.0" <<<"$w51" && grep -q "PERROOT max returns of one Even X per root 17 (X 193 deg 18) max returns of one edge per root 17" <<<"$w51" && grep -q "PERROOT max returns of one Even X per root 2 (X 3 deg 2) max returns of one edge per root 2 max (returns of X per root)/deg X 1.0 max returns of X per root leaving one target 2" <<<"$w51"; then
+  echo "box 101 CEDGE: RET(X; e) <= deg X tight on obs (24/24); once-per-root DEAD (obs), edge-O(1) DEAD (topfix 17), left-target injection DEAD (pftheta34): PASS"
+else
+  echo "box 101 CEDGE check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

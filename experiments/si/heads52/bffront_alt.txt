@@ -1,0 +1,413 @@
+GAME n5-epoch/instances/gci2_n12.pg n5-epoch/instances/gci2_n12.start BFF gci2_n12.pg n 12 CH 14 MINF0 -6 MINF1 1 NOD 0 BAD1 0 BAD0 7 MINW1 1 BADW 0 SWB 0
+GAME n5-epoch/instances/ffin4_n24.pg n5-epoch/instances/ffin4_n24.start BFF ffin4_n24.pg n 24 CH 40 MINF0 0 MINF1 1 NOD 0 BAD1 0 BAD0 2 MINW1 1 BADW 0 SWB 0
+GAME n5-epoch/instances/ffin12_n32.pg n5-epoch/instances/ffin12_n32.start BFF ffin12_n32.pg n 32 CH 24 MINF0 -5 MINF1 2 NOD 0 BAD1 0 BAD0 9 MINW1 2 BADW 0 SWB 0
+GAME n5-epoch/instances/ffin5_n32.pg n5-epoch/instances/ffin5_n32.start BFF ffin5_n32.pg n 32 CH 17 MINF0 -3 MINF1 1 NOD 0 BAD1 0 BAD0 4 MINW1 3 BADW 0 SWB 0
+GAME n5-epoch/instances/gci3_n24.pg n5-epoch/instances/gci3_n24.start BFF gci3_n24.pg n 24 CH 53 MINF0 -15 MINF1 1 NOD 0 BAD1 0 BAD0 28 MINW1 1 BADW 0 SWB 0
+GAME n5-epoch/instances/immp_cex_n11.pg n5-epoch/instances/immp_cex_n11.start BFF immp_cex_n11.pg n 11 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME n5-epoch/instances/immfail_n14.pg BFF immfail_n14.pg n 14 CH 3 MINF0 2 MINF1 4 NOD 0 BAD1 0 BAD0 0 MINW1 4 BADW 0 SWB 0
+GAME n5-epoch/instances/lcount_n23.pg n5-epoch/instances/lcount_n23.start BFF lcount_n23.pg n 23 CH 16 MINF0 0 MINF1 1 NOD 0 BAD1 0 BAD0 2 MINW1 1 BADW 0 SWB 0
+GAME n5-epoch/instances/lend13_n16.pg n5-epoch/instances/lend13_n16.start BFF lend13_n16.pg n 16 CH 12 MINF0 -9 MINF1 2 NOD 0 BAD1 0 BAD0 10 MINW1 3 BADW 0 SWB 0
+GAME n5-epoch/instances/lend27_n24.pg n5-epoch/instances/lend27_n24.start BFF lend27_n24.pg n 24 CH 53 MINF0 -2 MINF1 3 NOD 0 BAD1 0 BAD0 7 MINW1 3 BADW 0 SWB 0
+GAME n5-epoch/instances/lend15_n48.pg n5-epoch/instances/lend15_n48.start BFF lend15_n48.pg n 48 CH 19 MINF0 1 MINF1 4 NOD 0 BAD1 0 BAD0 0 MINW1 5 BADW 0 SWB 0
+GAME n5-epoch/instances/lend39f_n32.pg n5-epoch/instances/lend39f_n32.start BFF lend39f_n32.pg n 32 CH 66 MINF0 -3 MINF1 1 NOD 0 BAD1 0 BAD0 10 MINW1 1 BADW 0 SWB 0
+GAME n5-epoch/instances/lend107_n32.pg n5-epoch/instances/lend107_n32.start BFF lend107_n32.pg n 32 CH 170 MINF0 -8 MINF1 1 NOD 0 BAD1 0 BAD0 35 MINW1 3 BADW 0 SWB 0
+GAME n5-epoch/instances/lend47_n32.pg n5-epoch/instances/lend47_n32.start BFF lend47_n32.pg n 32 CH 69 MINF0 -8 MINF1 1 NOD 0 BAD1 0 BAD0 19 MINW1 2 BADW 0 SWB 0
+GAME n5-epoch/instances/lend55_n32.pg n5-epoch/instances/lend55_n32.start BFF lend55_n32.pg n 32 CH 64 MINF0 -6 MINF1 1 NOD 0 BAD1 0 BAD0 14 MINW1 3 BADW 0 SWB 0
+GAME n5-epoch/instances/lend9_n8.pg n5-epoch/instances/lend9_n8.start BFF lend9_n8.pg n 8 CH 3 MINF0 0 MINF1 2 NOD 0 BAD1 0 BAD0 1 MINW1 2 BADW 0 SWB 0
+GAME n5-epoch/instances/nep13_n24.pg n5-epoch/instances/nep13_n24.start BFF nep13_n24.pg n 24 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME n5-epoch/instances/lend82_n32.pg n5-epoch/instances/lend82_n32.start BFF lend82_n32.pg n 32 CH 135 MINF0 -8 MINF1 1 NOD 0 BAD1 0 BAD0 28 MINW1 3 BADW 0 SWB 0
+GAME n5-epoch/instances/lend72_n48.pg n5-epoch/instances/lend72_n48.start BFF lend72_n48.pg n 48 CH 122 MINF0 -5 MINF1 1 NOD 0 BAD1 0 BAD0 22 MINW1 3 BADW 0 SWB 0
+GAME n5-epoch/instances/nep56_n32.pg n5-epoch/instances/nep56_n32.start BFF nep56_n32.pg n 32 CH 1 MINF0 3 MINF1 14 NOD 0 BAD1 0 BAD0 0 MINW1 14 BADW 0 SWB 0
+GAME n5-epoch/instances/nconf61_n48.pg n5-epoch/instances/nconf61_n48.start BFF nconf61_n48.pg n 48 CH 12 MINF0 2 MINF1 5 NOD 0 BAD1 0 BAD0 0 MINW1 5 BADW 0 SWB 0
+GAME n5-epoch/instances/nep22f_n64.pg n5-epoch/instances/nep22f_n64.start BFF nep22f_n64.pg n 64 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME n5-epoch/instances/nep76_n40.pg n5-epoch/instances/nep76_n40.start BFF nep76_n40.pg n 40 CH 1 MINF0 15 MINF1 23 NOD 0 BAD1 0 BAD0 0 MINW1 23 BADW 0 SWB 0
+GAME n5-epoch/instances/ret12_n40.pg n5-epoch/instances/ret12_n40.start BFF ret12_n40.pg n 40 CH 13 MINF0 3 MINF1 3 NOD 0 BAD1 0 BAD0 0 MINW1 4 BADW 0 SWB 0
+GAME n5-epoch/instances/nep92_n40.pg n5-epoch/instances/nep92_n40.start BFF nep92_n40.pg n 40 CH 12 MINF0 1 MINF1 1 NOD 0 BAD1 0 BAD0 0 MINW1 3 BADW 0 SWB 0
+GAME n5-exhaustive/instances/b4_cyc6_0.pg n5-exhaustive/instances/b4_cyc6_0.start BFF b4_cyc6_0.pg n 11 CH 11 MINF0 2 MINF1 1 NOD 0 BAD1 0 BAD0 0 MINW1 1 BADW 0 SWB 0
+GAME n5-exhaustive/instances/b4_cyc6_1.pg BFF b4_cyc6_1.pg n 12 CH 8 MINF0 1 MINF1 4 NOD 0 BAD1 0 BAD0 0 MINW1 4 BADW 0 SWB 0
+GAME n5-epoch/instances/ret14_n48.pg n5-epoch/instances/ret14_n48.start BFF ret14_n48.pg n 48 CH 13 MINF0 2 MINF1 4 NOD 0 BAD1 0 BAD0 0 MINW1 4 BADW 0 SWB 0
+GAME n5-exhaustive/instances/b4_n4all_cyc3_0.pg n5-exhaustive/instances/b4_n4all_cyc3_0.start BFF b4_n4all_cyc3_0.pg n 4 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME n5-exhaustive/instances/b4_n5_other_0.pg BFF b4_n5_other_0.pg n 5 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME n5-exhaustive/instances/b4_nohlen5_0.pg n5-exhaustive/instances/b4_nohlen5_0.start BFF b4_nohlen5_0.pg n 11 CH 4 MINF0 1 MINF1 4 NOD 0 BAD1 0 BAD0 0 MINW1 4 BADW 0 SWB 0
+GAME n5-epoch/instances/nep94_n48.pg n5-epoch/instances/nep94_n48.start BFF nep94_n48.pg n 48 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME n5-exhaustive/instances/b4_theta_n7.pg n5-exhaustive/instances/b4_theta_n7.start BFF b4_theta_n7.pg n 7 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME n5-exhaustive/instances/b5_n5_cyc4_0.pg BFF b5_n5_cyc4_0.pg n 5 CH 2 MINF0 1 MINF1 3 NOD 0 BAD1 0 BAD0 0 MINW1 3 BADW 0 SWB 0
+GAME n5-exhaustive/instances/b5_os_n12.pg BFF b5_os_n12.pg n 12 CH 9 MINF0 -2 MINF1 3 NOD 0 BAD1 0 BAD0 2 MINW1 3 BADW 0 SWB 0
+GAME n5-exhaustive/instances/b5_o11.pg BFF b5_o11.pg n 10 CH 6 MINF0 -1 MINF1 3 NOD 0 BAD1 0 BAD0 1 MINW1 3 BADW 0 SWB 0
+GAME n5-exhaustive/instances/b5_os_n14.pg BFF b5_os_n14.pg n 14 CH 13 MINF0 -3 MINF1 1 NOD 0 BAD1 0 BAD0 4 MINW1 1 BADW 0 SWB 0
+GAME n5-exhaustive/instances/b5_os_n20.pg BFF b5_os_n20.pg n 20 CH 29 MINF0 -7 MINF1 1 NOD 0 BAD1 0 BAD0 8 MINW1 1 BADW 0 SWB 0
+GAME n5-exhaustive/instances/b5_os_n16.pg BFF b5_os_n16.pg n 16 CH 18 MINF0 -4 MINF1 1 NOD 0 BAD1 0 BAD0 4 MINW1 1 BADW 0 SWB 0
+GAME n5-epoch/instances/ret14_n64.pg n5-epoch/instances/ret14_n64.start BFF ret14_n64.pg n 64 CH 5 MINF0 2 MINF1 3 NOD 0 BAD1 0 BAD0 0 MINW1 4 BADW 0 SWB 0
+GAME n5-exhaustive/instances/b5_os_n24.pg BFF b5_os_n24.pg n 24 CH 63 MINF0 -10 MINF1 2 NOD 0 BAD1 0 BAD0 14 MINW1 2 BADW 0 SWB 0
+GAME n5-exhaustive/instances/b5_os_n28.pg BFF b5_os_n28.pg n 28 CH 84 MINF0 -10 MINF1 2 NOD 0 BAD1 0 BAD0 12 MINW1 2 BADW 0 SWB 0
+GAME n5-exhaustive/instances/b5_os_n32.pg BFF b5_os_n32.pg n 32 CH 130 MINF0 -10 MINF1 3 NOD 0 BAD1 0 BAD0 15 MINW1 3 BADW 0 SWB 0
+GAME n5-exhaustive/instances/b5_os_n40.pg BFF b5_os_n40.pg n 40 CH 164 MINF0 -13 MINF1 2 NOD 0 BAD1 0 BAD0 17 MINW1 2 BADW 0 SWB 0
+GAME n5-exhaustive/instances/b6_xl2_n32.pg BFF b6_xl2_n32.pg n 32 CH 100 MINF0 -5 MINF1 1 NOD 0 BAD1 0 BAD0 11 MINW1 2 BADW 0 SWB 0
+GAME n5-exhaustive/instances/b6_xl_n32.pg BFF b6_xl_n32.pg n 32 CH 89 MINF0 -5 MINF1 1 NOD 0 BAD1 0 BAD0 16 MINW1 2 BADW 0 SWB 0
+GAME n5-exhaustive/instances/b6_xs_n24.pg BFF b6_xs_n24.pg n 24 CH 25 MINF0 -17 MINF1 1 NOD 0 BAD1 0 BAD0 17 MINW1 1 BADW 0 SWB 0
+GAME n5-exhaustive/instances/b6_xs_n32.pg BFF b6_xs_n32.pg n 32 CH 36 MINF0 -25 MINF1 1 NOD 0 BAD1 0 BAD0 24 MINW1 1 BADW 0 SWB 0
+GAME n5-exhaustive/instances/b6_xs_n40.pg BFF b6_xs_n40.pg n 40 CH 48 MINF0 -32 MINF1 1 NOD 0 BAD1 0 BAD0 32 MINW1 1 BADW 0 SWB 0
+GAME n5-exhaustive/instances/b6_xs_n48.pg BFF b6_xs_n48.pg n 48 CH 59 MINF0 -32 MINF1 1 NOD 0 BAD1 0 BAD0 36 MINW1 1 BADW 0 SWB 0
+GAME n5-exhaustive/instances/b6_xl_n40.pg BFF b6_xl_n40.pg n 40 CH 93 MINF0 -8 MINF1 1 NOD 0 BAD1 0 BAD0 27 MINW1 2 BADW 0 SWB 0
+GAME n5-exhaustive/instances/b6_xl_n48.pg BFF b6_xl_n48.pg n 48 CH 187 MINF0 -6 MINF1 1 NOD 0 BAD1 0 BAD0 22 MINW1 2 BADW 0 SWB 0
+GAME n5-exhaustive/instances/b6_xw_n32.pg BFF b6_xw_n32.pg n 32 CH 108 MINF0 -4 MINF1 1 NOD 0 BAD1 0 BAD0 14 MINW1 2 BADW 0 SWB 0
+GAME n5-exhaustive/instances/b6_xw_n40.pg BFF b6_xw_n40.pg n 40 CH 112 MINF0 -4 MINF1 1 NOD 0 BAD1 0 BAD0 14 MINW1 2 BADW 0 SWB 0
+GAME n5-exhaustive/instances/canonA_0.pg BFF canonA_0.pg n 15 CH 10 MINF0 2 MINF1 1 NOD 0 BAD1 0 BAD0 0 MINW1 1 BADW 0 SWB 0
+GAME n5-exhaustive/instances/canonA_1.pg BFF canonA_1.pg n 15 CH 6 MINF0 7 MINF1 2 NOD 0 BAD1 0 BAD0 0 MINW1 2 BADW 0 SWB 0
+GAME n5-exhaustive/instances/frz1_n24.pg n5-exhaustive/instances/frz1_n24.start BFF frz1_n24.pg n 24 CH 48 MINF0 -6 MINF1 1 NOD 0 BAD1 0 BAD0 9 MINW1 2 BADW 0 SWB 0
+GAME n5-exhaustive/instances/frz2_n24.pg n5-exhaustive/instances/frz2_n24.start BFF frz2_n24.pg n 24 CH 29 MINF0 -1 MINF1 1 NOD 0 BAD1 0 BAD0 2 MINW1 2 BADW 0 SWB 0
+GAME n5-exhaustive/instances/frz3_n24.pg n5-exhaustive/instances/frz3_n24.start BFF frz3_n24.pg n 24 CH 33 MINF0 -2 MINF1 1 NOD 0 BAD1 0 BAD0 4 MINW1 2 BADW 0 SWB 0
+GAME n5-exhaustive/instances/n3all_maxph_0.pg n5-exhaustive/instances/n3all_maxph_0.start BFF n3all_maxph_0.pg n 3 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME n5-exhaustive/instances/b6_xw_n56.pg BFF b6_xw_n56.pg n 56 CH 202 MINF0 -5 MINF1 1 NOD 0 BAD1 0 BAD0 35 MINW1 2 BADW 0 SWB 0
+GAME n5-exhaustive/instances/n3all_maxph_1.pg n5-exhaustive/instances/n3all_maxph_1.start BFF n3all_maxph_1.pg n 3 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME n5-exhaustive/instances/b6_xw_n48.pg BFF b6_xw_n48.pg n 48 CH 194 MINF0 -5 MINF1 1 NOD 0 BAD1 0 BAD0 29 MINW1 2 BADW 0 SWB 0
+GAME n5-exhaustive/instances/n3all_maxph_2.pg n5-exhaustive/instances/n3all_maxph_2.start BFF n3all_maxph_2.pg n 3 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME n5-exhaustive/instances/n4_maxph_0.pg BFF n4_maxph_0.pg n 4 CH 1 MINF0 3 MINF1 2 NOD 0 BAD1 0 BAD0 0 MINW1 2 BADW 0 SWB 0
+GAME n5-exhaustive/instances/n4_maxph_1.pg BFF n4_maxph_1.pg n 4 CH 1 MINF0 3 MINF1 2 NOD 0 BAD1 0 BAD0 0 MINW1 2 BADW 0 SWB 0
+GAME n5-exhaustive/instances/n4_thch_0.pg BFF n4_thch_0.pg n 4 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME n5-exhaustive/instances/n4all_maxph_0.pg n5-exhaustive/instances/n4all_maxph_0.start BFF n4all_maxph_0.pg n 4 CH 3 MINF0 0 MINF1 1 NOD 0 BAD1 0 BAD0 1 MINW1 1 BADW 0 SWB 0
+GAME n5-exhaustive/instances/n4all_tgbad_0.pg n5-exhaustive/instances/n4all_tgbad_0.start BFF n4all_tgbad_0.pg n 4 CH 2 MINF0 2 MINF1 1 NOD 0 BAD1 0 BAD0 0 MINW1 1 BADW 0 SWB 0
+GAME n5-exhaustive/instances/n4all_maxph_1.pg n5-exhaustive/instances/n4all_maxph_1.start BFF n4all_maxph_1.pg n 4 CH 3 MINF0 0 MINF1 1 NOD 0 BAD1 0 BAD0 1 MINW1 1 BADW 0 SWB 0
+GAME n5-exhaustive/instances/thetaA_canon_n12.pg BFF thetaA_canon_n12.pg n 12 CH 7 MINF0 2 MINF1 1 NOD 0 BAD1 0 BAD0 0 MINW1 1 BADW 0 SWB 0
+GAME n5-exhaustive/instances/nh_n8.pg n5-exhaustive/instances/nh_n8.start BFF nh_n8.pg n 8 CH 5 MINF0 1 MINF1 4 NOD 0 BAD1 0 BAD0 0 MINW1 4 BADW 0 SWB 0
+GAME n5-exhaustive/instances/n4all_thch_0.pg n5-exhaustive/instances/n4all_thch_0.start BFF n4all_thch_0.pg n 4 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME n5-exhaustive/instances/n5s_maxph_0.pg BFF n5s_maxph_0.pg n 5 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME n5-exhaustive/instances/thetaA_canon_n8.pg BFF thetaA_canon_n8.pg n 8 CH 5 MINF0 1 MINF1 2 NOD 0 BAD1 0 BAD0 0 MINW1 2 BADW 0 SWB 0
+GAME n5-exhaustive/instances/thetaA_n17.pg n5-exhaustive/instances/thetaA_n17.start BFF thetaA_n17.pg n 17 CH 13 MINF0 1 MINF1 1 NOD 0 BAD1 0 BAD0 0 MINW1 1 BADW 0 SWB 0
+GAME n5-exhaustive/instances/thetaA_n6.pg n5-exhaustive/instances/thetaA_n6.start BFF thetaA_n6.pg n 6 CH 3 MINF0 1 MINF1 2 NOD 0 BAD1 0 BAD0 0 MINW1 2 BADW 0 SWB 0
+GAME n5-exhaustive/instances/thetaA_n7.pg n5-exhaustive/instances/thetaA_n7.start BFF thetaA_n7.pg n 7 CH 2 MINF0 2 MINF1 1 NOD 0 BAD1 0 BAD0 0 MINW1 1 BADW 0 SWB 0
+GAME n5-exhaustive/instances/thetaA_n9.pg n5-exhaustive/instances/thetaA_n9.start BFF thetaA_n9.pg n 9 CH 5 MINF0 2 MINF1 1 NOD 0 BAD1 0 BAD0 0 MINW1 1 BADW 0 SWB 0
+GAME n5-exhaustive/instances/wk1_n32.pg n5-exhaustive/instances/wk1_n32.start BFF wk1_n32.pg n 32 CH 10 MINF0 2 MINF1 2 NOD 0 BAD1 0 BAD0 0 MINW1 2 BADW 0 SWB 0
+GAME n5-exhaustive/instances/wk2_n32.pg n5-exhaustive/instances/wk2_n32.start BFF wk2_n32.pg n 32 CH 12 MINF0 -1 MINF1 2 NOD 0 BAD1 0 BAD0 1 MINW1 2 BADW 0 SWB 0
+GAME new/box48/instances/long121_n40.pg new/box48/instances/long121_n40.start BFF long121_n40.pg n 40 CH 98 MINF0 -3 MINF1 1 NOD 0 BAD1 0 BAD0 11 MINW1 2 BADW 0 SWB 0
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.pg new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.start BFF best_qpc_nep90_n40_s61.pg n 64 CH 22 MINF0 1 MINF1 1 NOD 0 BAD1 0 BAD0 0 MINW1 2 BADW 0 SWB 0
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.pg new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.start BFF best_qpc_nep76_n40_s63.pg n 64 CH 14 MINF0 8 MINF1 3 NOD 0 BAD1 0 BAD0 0 MINW1 4 BADW 0 SWB 0
+GAME red/carry/instances/carry3_2_2.pg BFF carry3_2_2.pg n 47 CH 3 MINF0 25 MINF1 28 NOD 0 BAD1 0 BAD0 0 MINW1 28 BADW 0 SWB 0
+GAME red/carry/instances/cm_mdrop_both_n28.pg BFF cm_mdrop_both_n28.pg n 28 CH 3 MINF0 4 MINF1 1 NOD 0 BAD1 0 BAD0 0 MINW1 11 BADW 0 SWB 0
+GAME red/carry/instances/absmono_viol_n44.pg BFF absmono_viol_n44.pg n 44 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/carry/instances/cm_mdrop_oink_n28.pg BFF cm_mdrop_oink_n28.pg n 28 CH 8 MINF0 7 MINF1 6 NOD 0 BAD1 0 BAD0 0 MINW1 6 BADW 0 SWB 0
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.pg new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.start BFF best_qpc_nep90_n40_s62.pg n 80 CH 34 MINF0 1 MINF1 2 NOD 0 BAD1 0 BAD0 0 MINW1 4 BADW 0 SWB 0
+GAME red/carry/instances/ctx11_n40.pg BFF ctx11_n40.pg n 40 CH 3 MINF0 1 MINF1 14 NOD 0 BAD1 0 BAD0 0 MINW1 14 BADW 0 SWB 0
+GAME red/carry/instances/ctx12_n40.pg BFF ctx12_n40.pg n 40 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/carry/instances/ctx6_n20.pg BFF ctx6_n20.pg n 20 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/carry/instances/ctx13_n40.pg BFF ctx13_n40.pg n 40 CH 11 MINF0 0 MINF1 4 NOD 0 BAD1 0 BAD0 2 MINW1 4 BADW 0 SWB 0
+GAME red/carry/instances/ctx6_n56.pg BFF ctx6_n56.pg n 56 CH 2 MINF0 9 MINF1 14 NOD 0 BAD1 0 BAD0 0 MINW1 14 BADW 0 SWB 0
+GAME red/carry/instances/ctx7_n30.pg BFF ctx7_n30.pg n 30 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/carry/instances/f1_twofall_n48.pg BFF f1_twofall_n48.pg n 48 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/carry/instances/f1_twodef_n48.pg BFF f1_twodef_n48.pg n 48 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/carry/instances/fall3_n76.pg BFF fall3_n76.pg n 76 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/carry/instances/fallv_viol_n28.pg BFF fallv_viol_n28.pg n 28 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/carry/instances/fired10_n20.pg BFF fired10_n20.pg n 20 CH 4 MINF0 9 MINF1 3 NOD 0 BAD1 0 BAD0 0 MINW1 3 BADW 0 SWB 0
+GAME red/carry/instances/fall4_n116.pg BFF fall4_n116.pg n 116 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/carry/instances/firedlong667_n20.pg BFF firedlong667_n20.pg n 20 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME new/box48/out/qpcclimb/scale/snap_n80_s62.pg new/box48/out/qpcclimb/scale/snap_n80_s62.start BFF snap_n80_s62.pg n 80 CH 34 MINF0 1 MINF1 2 NOD 0 BAD1 0 BAD0 0 MINW1 4 BADW 0 SWB 0
+GAME red/carry/instances/firedlong667_n43.pg BFF firedlong667_n43.pg n 43 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/carry/instances/gapbW_dup_n20.pg BFF gapbW_dup_n20.pg n 20 CH 9 MINF0 3 MINF1 4 NOD 0 BAD1 0 BAD0 0 MINW1 4 BADW 0 SWB 0
+GAME red/carry/instances/gapb_dup_n20.pg BFF gapb_dup_n20.pg n 20 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/carry/instances/firedstep13_n76.pg BFF firedstep13_n76.pg n 76 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/carry/instances/h4_def7_n28.pg BFF h4_def7_n28.pg n 28 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/carry/instances/h4_compound_n44.pg BFF h4_compound_n44.pg n 44 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/carry/instances/h4_compound2x2_n44.pg BFF h4_compound2x2_n44.pg n 44 CH 7 MINF0 1 MINF1 11 NOD 0 BAD1 0 BAD0 0 MINW1 11 BADW 0 SWB 0
+GAME red/carry/instances/h4_def2ctx_n20.pg BFF h4_def2ctx_n20.pg n 20 CH 1 MINF0 6 MINF1 6 NOD 0 BAD1 0 BAD0 0 MINW1 6 BADW 0 SWB 0
+GAME red/carry/instances/h4_disjoint_n20.pg BFF h4_disjoint_n20.pg n 20 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/carry/instances/h4_notweaker_n20.pg BFF h4_notweaker_n20.pg n 20 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/carry/instances/kfirst_viol_n13.pg BFF kfirst_viol_n13.pg n 13 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/carry/instances/kin_viol_n29.pg BFF kin_viol_n29.pg n 29 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/carry/instances/lalg_dtl_mviol_n20.pg BFF lalg_dtl_mviol_n20.pg n 20 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/carry/instances/lemmaS_Mdrop_n20.pg BFF lemmaS_Mdrop_n20.pg n 20 CH 1 MINF0 6 MINF1 6 NOD 0 BAD1 0 BAD0 0 MINW1 6 BADW 0 SWB 0
+GAME red/carry/instances/lemmaS_viol_n20.pg BFF lemmaS_viol_n20.pg n 20 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/carry/instances/lex_viol_inj_n28.pg BFF lex_viol_inj_n28.pg n 28 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/carry/instances/meet_viol_n17.pg BFF meet_viol_n17.pg n 17 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/carry/instances/lex_viol_tie_n28.pg BFF lex_viol_tie_n28.pg n 28 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/carry/instances/meet_viol_n29.pg BFF meet_viol_n29.pg n 29 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/carry/instances/nosig_2_3.pg BFF nosig_2_3.pg n 24 CH 4 MINF0 12 MINF1 4 NOD 0 BAD1 0 BAD0 0 MINW1 4 BADW 0 SWB 0
+GAME red/carry/instances/phi_flat_alive_n32.pg BFF phi_flat_alive_n32.pg n 32 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/carry/instances/pk_viol_n20.pg BFF pk_viol_n20.pg n 20 CH 1 MINF0 7 MINF1 8 NOD 0 BAD1 0 BAD0 0 MINW1 8 BADW 0 SWB 0
+GAME red/carry/instances/spp19_oink_n30.pg BFF spp19_oink_n30.pg n 30 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/carry/instances/replay4_n32.pg BFF replay4_n32.pg n 32 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/carry/instances/spp19_stable_n30.pg BFF spp19_stable_n30.pg n 30 CH 7 MINF0 1 MINF1 6 NOD 0 BAD1 0 BAD0 0 MINW1 6 BADW 0 SWB 0
+GAME red/carry/instances/spp22_oink_n40.pg BFF spp22_oink_n40.pg n 40 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/carry/instances/spp25_oink_n40.pg BFF spp25_oink_n40.pg n 40 CH 6 MINF0 13 MINF1 10 NOD 0 BAD1 0 BAD0 0 MINW1 10 BADW 0 SWB 0
+GAME red/carry/instances/stealonce_core_n76.pg BFF stealonce_core_n76.pg n 76 CH 9 MINF0 5 MINF1 7 NOD 0 BAD1 0 BAD0 0 MINW1 7 BADW 0 SWB 0
+GAME red/carry/instances/stealonce_both_n45.pg BFF stealonce_both_n45.pg n 45 CH 7 MINF0 5 MINF1 7 NOD 0 BAD1 0 BAD0 0 MINW1 7 BADW 0 SWB 0
+GAME red/ctxp/instances/deep1_n13.pg BFF deep1_n13.pg n 13 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/carry/instances/stealer_viol_n76.pg BFF stealer_viol_n76.pg n 76 CH 6 MINF0 5 MINF1 8 NOD 0 BAD1 0 BAD0 0 MINW1 8 BADW 0 SWB 0
+GAME red/carry/instances/tstep_near_n20.pg BFF tstep_near_n20.pg n 20 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/ctxp/instances/deep1_n21.pg BFF deep1_n21.pg n 21 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/carry/instances/stealonce_viol_n76.pg BFF stealonce_viol_n76.pg n 76 CH 7 MINF0 5 MINF1 8 NOD 0 BAD1 0 BAD0 0 MINW1 8 BADW 0 SWB 0
+GAME red/ctxp/instances/margin1_mc1.pg BFF margin1_mc1.pg n 80 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/ctxp/instances/margin1_n20.pg BFF margin1_n20.pg n 20 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/dtl/instances/lalg_dtl_pertop31_n18.pg BFF lalg_dtl_pertop31_n18.pg n 18 CH 6 MINF0 1 MINF1 3 NOD 0 BAD1 0 BAD0 0 MINW1 3 BADW 0 SWB 0
+GAME red/ctxp/instances/margin1_mc5.pg BFF margin1_mc5.pg n 50 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/dtl/instances/lalg_dtl_restart8_n20.pg BFF lalg_dtl_restart8_n20.pg n 20 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/fbr/instances/bghm_k1_gap6_A.pg BFF bghm_k1_gap6_A.pg n 21 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/fbr/instances/bghm_k3_gap4_A.pg BFF bghm_k3_gap4_A.pg n 45 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/fbr/instances/lev74_n40.pg BFF lev74_n40.pg n 40 CH 6 MINF0 15 MINF1 17 NOD 0 BAD1 0 BAD0 0 MINW1 17 BADW 0 SWB 0
+GAME red/fbr/instances/fr39_q4_n48.pg BFF fr39_q4_n48.pg n 48 CH 32 MINF0 -17 MINF1 9 NOD 0 BAD1 0 BAD0 19 MINW1 9 BADW 0 SWB 0
+GAME red/fbr/instances/nep80_n40.pg BFF nep80_n40.pg n 40 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/fbr/instances/rho144_n32.pg BFF rho144_n32.pg n 32 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/fbr/instances/lev56_n48.pg BFF lev56_n48.pg n 48 CH 63 MINF0 0 MINF1 1 NOD 0 BAD1 0 BAD0 2 MINW1 2 BADW 0 SWB 0
+GAME red/fbr/instances/rho3_253_n32.pg BFF rho3_253_n32.pg n 32 CH 2 MINF0 3 MINF1 21 NOD 0 BAD1 0 BAD0 0 MINW1 21 BADW 0 SWB 0
+GAME red/fbr/instances/rho84_n16.pg BFF rho84_n16.pg n 16 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/fbr/instances/rho666_n48.pg BFF rho666_n48.pg n 48 CH 19 MINF0 1 MINF1 18 NOD 0 BAD1 0 BAD0 0 MINW1 18 BADW 0 SWB 0
+GAME red/fbr/instances/sat68_n20.pg BFF sat68_n20.pg n 20 CH 2 MINF0 1 MINF1 4 NOD 0 BAD1 0 BAD0 0 MINW1 4 BADW 0 SWB 0
+GAME red/fbr/instances/sat4_n20.pg BFF sat4_n20.pg n 20 CH 1 MINF0 6 MINF1 6 NOD 0 BAD1 0 BAD0 0 MINW1 6 BADW 0 SWB 0
+GAME red/fbr/instances/twowave_L16.pg BFF twowave_L16.pg n 22 CH 15 MINF0 -12 MINF1 4 NOD 0 BAD1 0 BAD0 7 MINW1 4 BADW 0 SWB 0
+GAME red/frz/instances/fbcap_eq_u4_n11.pg BFF fbcap_eq_u4_n11.pg n 11 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/fbx/instances/exsw_loop_n15.pg BFF exsw_loop_n15.pg n 15 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/h3/instances/frzgap0_n4.pg BFF frzgap0_n4.pg n 4 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/frz/instances/fx2_n11.pg BFF fx2_n11.pg n 11 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/h3/instances/frzgap0_n6.pg BFF frzgap0_n6.pg n 6 CH 2 MINF0 0 MINF1 4 NOD 0 BAD1 0 BAD0 1 MINW1 4 BADW 0 SWB 0
+GAME red/fbx/instances/kt6_n58.pg BFF kt6_n58.pg n 58 CH 60 MINF0 -5 MINF1 1 NOD 0 BAD1 0 BAD0 4 MINW1 2 BADW 0 SWB 0
+GAME red/h3/instances/lcount2_n23.pg red/h3/instances/lcount2_n23.start BFF lcount2_n23.pg n 23 CH 24 MINF0 0 MINF1 1 NOD 0 BAD1 0 BAD0 2 MINW1 2 BADW 0 SWB 0
+GAME red/h3/instances/lcount_n23.pg red/h3/instances/lcount_n23.start BFF lcount_n23.pg n 23 CH 16 MINF0 0 MINF1 1 NOD 0 BAD1 0 BAD0 2 MINW1 1 BADW 0 SWB 0
+GAME red/h3/instances/offret_l19_n24.pg BFF offret_l19_n24.pg n 24 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/kl/instances/klcount_n16.pg BFF klcount_n16.pg n 16 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/kl/instances/klcount_n18_base.pg BFF klcount_n18_base.pg n 18 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/kl/instances/klcount_n18_lvl.pg BFF klcount_n18_lvl.pg n 18 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/kl/instances/klglobal_n16.pg BFF klglobal_n16.pg n 16 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/h3/instances/xsnpre36_n48.pg BFF xsnpre36_n48.pg n 48 CH 48 MINF0 -24 MINF1 4 NOD 0 BAD1 0 BAD0 28 MINW1 4 BADW 0 SWB 0
+GAME red/kl/instances/klglobal_n18_lvl.pg BFF klglobal_n18_lvl.pg n 18 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/kl/instances/r2climb_h13.pg BFF r2climb_h13.pg n 13 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/kl/instances/klmin_n13.pg BFF klmin_n13.pg n 13 CH 3 MINF0 3 MINF1 6 NOD 0 BAD1 0 BAD0 0 MINW1 6 BADW 0 SWB 0
+GAME red/kl/instances/klglobal_n20_lvl2.pg BFF klglobal_n20_lvl2.pg n 20 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/kl/instances/r2crawl_n14.pg BFF r2crawl_n14.pg n 14 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/kl/instances/r2join_h0E_n14.pg BFF r2join_h0E_n14.pg n 14 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/kl/instances/r2lap_best_n22.pg BFF r2lap_best_n22.pg n 22 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/kl24/instances/HL88_0.pg BFF HL88_0.pg n 41 CH 3 MINF0 4 MINF1 21 NOD 0 BAD1 0 BAD0 0 MINW1 21 BADW 0 SWB 0
+GAME red/kl24/instances/HL88_1.pg BFF HL88_1.pg n 43 CH 3 MINF0 4 MINF1 21 NOD 0 BAD1 0 BAD0 0 MINW1 21 BADW 0 SWB 0
+GAME red/kl24/instances/HL88_2.pg BFF HL88_2.pg n 45 CH 3 MINF0 4 MINF1 21 NOD 0 BAD1 0 BAD0 0 MINW1 21 BADW 0 SWB 0
+GAME red/kl24/instances/HL88_3.pg BFF HL88_3.pg n 47 CH 3 MINF0 4 MINF1 21 NOD 0 BAD1 0 BAD0 0 MINW1 21 BADW 0 SWB 0
+GAME red/kl24/instances/HLg_0.pg BFF HLg_0.pg n 29 CH 3 MINF0 4 MINF1 15 NOD 0 BAD1 0 BAD0 0 MINW1 15 BADW 0 SWB 0
+GAME red/kl24/instances/HLg_1.pg BFF HLg_1.pg n 35 CH 3 MINF0 4 MINF1 17 NOD 0 BAD1 0 BAD0 0 MINW1 17 BADW 0 SWB 0
+GAME red/kl24/instances/HLg_3.pg BFF HLg_3.pg n 55 CH 3 MINF0 4 MINF1 25 NOD 0 BAD1 0 BAD0 0 MINW1 25 BADW 0 SWB 0
+GAME red/kl24/instances/HLg_2.pg BFF HLg_2.pg n 45 CH 3 MINF0 4 MINF1 21 NOD 0 BAD1 0 BAD0 0 MINW1 21 BADW 0 SWB 0
+GAME red/kw/instances/cw11_n24.pg BFF cw11_n24.pg n 24 CH 1 MINF0 2 MINF1 1 NOD 0 BAD1 0 BAD0 0 MINW1 9 BADW 0 SWB 0
+GAME red/kw/instances/frzu_tight_n14.pg BFF frzu_tight_n14.pg n 14 CH 4 MINF0 3 MINF1 3 NOD 0 BAD1 0 BAD0 0 MINW1 3 BADW 0 SWB 0
+GAME red/lag/instances/depth2_n39.pg BFF depth2_n39.pg n 39 CH 6 MINF0 13 MINF1 3 NOD 0 BAD1 0 BAD0 0 MINW1 3 BADW 0 SWB 0
+GAME red/kw/instances/kc18_n24.pg BFF kc18_n24.pg n 24 CH 43 MINF0 -16 MINF1 1 NOD 0 BAD1 0 BAD0 18 MINW1 1 BADW 0 SWB 0
+GAME red/lag/instances/depth3_n46.pg BFF depth3_n46.pg n 46 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/lag/instances/depth4_n53.pg BFF depth4_n53.pg n 53 CH 3 MINF0 13 MINF1 9 NOD 0 BAD1 0 BAD0 0 MINW1 9 BADW 0 SWB 0
+GAME red/lag/instances/fam_D4_n50.pg BFF fam_D4_n50.pg n 50 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/lag/instances/fam_D12_n106.pg BFF fam_D12_n106.pg n 106 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/lag/instances/fam_D8_n78.pg BFF fam_D8_n78.pg n 78 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/mei/instances/mei_h2.pg BFF mei_h2.pg n 19 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/mei/instances/mei_h3.pg BFF mei_h3.pg n 27 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/mei/instances/mei_h4.pg BFF mei_h4.pg n 35 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/mei/instances/mei_h5.pg BFF mei_h5.pg n 43 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/mei/instances/mei_h6.pg BFF mei_h6.pg n 51 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/mei/instances/mei_h8.pg BFF mei_h8.pg n 67 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/n3/instances/lag11_n40.pg red/n3/instances/lag11_n40.start BFF lag11_n40.pg n 40 CH 56 MINF0 2 MINF1 5 NOD 0 BAD1 0 BAD0 0 MINW1 5 BADW 0 SWB 0
+GAME red/n3/instances/core41_n40.pg red/n3/instances/core41_n40.start BFF core41_n40.pg n 40 CH 44 MINF0 2 MINF1 1 NOD 0 BAD1 0 BAD0 0 MINW1 3 BADW 0 SWB 0
+GAME red/n3/instances/lagx10_n40.pg red/n3/instances/lagx10_n40.start BFF lagx10_n40.pg n 40 CH 34 MINF0 1 MINF1 3 NOD 0 BAD1 0 BAD0 0 MINW1 3 BADW 0 SWB 0
+GAME red/n3/instances/n3cov_lean.pg red/n3/instances/n3cov_lean.start BFF n3cov_lean.pg n 48 CH 30 MINF0 -2 MINF1 1 NOD 0 BAD1 0 BAD0 6 MINW1 4 BADW 0 SWB 0
+GAME red/n3/instances/comp54_n80.pg red/n3/instances/comp54_n80.start BFF comp54_n80.pg n 80 CH 85 MINF0 1 MINF1 1 NOD 0 BAD1 0 BAD0 0 MINW1 3 BADW 0 SWB 0
+GAME red/n3/instances/long90_k2_n40.pg red/n3/instances/long90_k2_n40.start BFF long90_k2_n40.pg n 40 CH 123 MINF0 0 MINF1 1 NOD 0 BAD1 0 BAD0 3 MINW1 3 BADW 0 SWB 0
+GAME red/n3/instances/n3cov_phi.pg red/n3/instances/n3cov_phi.start BFF n3cov_phi.pg n 32 CH 8 MINF0 1 MINF1 1 NOD 0 BAD1 0 BAD0 0 MINW1 4 BADW 0 SWB 0
+GAME red/n3/instances/long121_n40.pg red/n3/instances/long121_n40.start BFF long121_n40.pg n 40 CH 98 MINF0 -3 MINF1 1 NOD 0 BAD1 0 BAD0 11 MINW1 2 BADW 0 SWB 0
+GAME red/n5/instances/dl_4_4.pg red/n5/instances/dl_4_4.start BFF dl_4_4.pg n 42 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/n3/instances/run34_n40.pg red/n3/instances/run34_n40.start BFF run34_n40.pg n 40 CH 23 MINF0 0 MINF1 1 NOD 0 BAD1 0 BAD0 1 MINW1 3 BADW 0 SWB 0
+GAME red/n3/instances/run49_n32.pg red/n3/instances/run49_n32.start BFF run49_n32.pg n 32 CH 81 MINF0 -7 MINF1 1 NOD 0 BAD1 0 BAD0 23 MINW1 2 BADW 0 SWB 0
+GAME red/n5/instances/dlm2_4.pg red/n5/instances/dlm2_4.start BFF dlm2_4.pg n 42 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/n5/instances/sym_h12_s1.pg BFF sym_h12_s1.pg n 24 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/n3/instances/ret22_n40.pg red/n3/instances/ret22_n40.start BFF ret22_n40.pg n 40 CH 59 MINF0 0 MINF1 1 NOD 0 BAD1 0 BAD0 2 MINW1 3 BADW 0 SWB 0
+GAME red/n5/instances/sym_h8_s1.pg BFF sym_h8_s1.pg n 16 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/n5inj/instances/block_bk20.pg BFF block_bk20.pg n 24 CH 28 MINF0 -3 MINF1 7 NOD 0 BAD1 0 BAD0 3 MINW1 7 BADW 0 SWB 0
+GAME red/n5/instances/dl_6_8.pg red/n5/instances/dl_6_8.start BFF dl_6_8.pg n 110 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/n5inj/instances/blockph_bp20.pg BFF blockph_bp20.pg n 24 CH 37 MINF0 -13 MINF1 2 NOD 0 BAD1 0 BAD0 20 MINW1 2 BADW 0 SWB 0
+GAME red/n5/instances/sym_h16_s1.pg BFF sym_h16_s1.pg n 32 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/n5inj/instances/block_bk32.pg BFF block_bk32.pg n 36 CH 43 MINF0 -1 MINF1 10 NOD 0 BAD1 0 BAD0 4 MINW1 10 BADW 0 SWB 0
+GAME red/n5inj/instances/blockph_bp32.pg BFF blockph_bp32.pg n 36 CH 52 MINF0 -19 MINF1 3 NOD 0 BAD1 0 BAD0 36 MINW1 3 BADW 0 SWB 0
+GAME red/n5inj/instances/bribe_cex_n15.pg BFF bribe_cex_n15.pg n 15 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/n5inj/instances/frz24.pg red/n5inj/instances/frz24.start BFF frz24.pg n 24 CH 30 MINF0 -1 MINF1 3 NOD 0 BAD1 0 BAD0 1 MINW1 5 BADW 0 SWB 0
+GAME red/n5inj/instances/frz32.pg red/n5inj/instances/frz32.start BFF frz32.pg n 32 CH 84 MINF0 -4 MINF1 2 NOD 0 BAD1 0 BAD0 8 MINW1 2 BADW 0 SWB 0
+GAME red/n5inj/instances/phase2_pk32.pg BFF phase2_pk32.pg n 32 CH 51 MINF0 -5 MINF1 1 NOD 0 BAD1 0 BAD0 6 MINW1 3 BADW 0 SWB 0
+GAME red/n5inj/instances/elimn_cex_n48.pg BFF elimn_cex_n48.pg n 48 CH 161 MINF0 -4 MINF1 1 NOD 0 BAD1 0 BAD0 4 MINW1 4 BADW 0 SWB 0
+GAME red/n5inj/instances/frz40.pg red/n5inj/instances/frz40.start BFF frz40.pg n 40 CH 106 MINF0 -7 MINF1 1 NOD 0 BAD1 0 BAD0 20 MINW1 2 BADW 0 SWB 0
+GAME red/n5inj/instances/phase2_pk48.pg BFF phase2_pk48.pg n 48 CH 61 MINF0 -8 MINF1 1 NOD 0 BAD1 0 BAD0 15 MINW1 4 BADW 0 SWB 0
+GAME red/n5inj/instances/returns_rt32.pg BFF returns_rt32.pg n 32 CH 44 MINF0 -3 MINF1 1 NOD 0 BAD1 0 BAD0 4 MINW1 3 BADW 0 SWB 0
+GAME red/n5inj/instances/theta_thc24.pg BFF theta_thc24.pg n 24 CH 29 MINF0 1 MINF1 8 NOD 0 BAD1 0 BAD0 0 MINW1 8 BADW 0 SWB 0
+GAME red/n5inj/instances/returns_rt48.pg BFF returns_rt48.pg n 48 CH 143 MINF0 -7 MINF1 1 NOD 0 BAD1 0 BAD0 9 MINW1 3 BADW 0 SWB 0
+GAME red/n5inj/instances/theta_thf16.pg BFF theta_thf16.pg n 16 CH 5 MINF0 2 MINF1 2 NOD 0 BAD1 0 BAD0 0 MINW1 3 BADW 0 SWB 0
+GAME red/n5inj/instances/returns_ph64.pg BFF returns_ph64.pg n 64 CH 243 MINF0 -7 MINF1 1 NOD 0 BAD1 0 BAD0 12 MINW1 3 BADW 0 SWB 0
+GAME red/n5inj/instances/theta_tp32.pg BFF theta_tp32.pg n 32 CH 28 MINF0 -8 MINF1 4 NOD 0 BAD1 0 BAD0 12 MINW1 4 BADW 0 SWB 0
+GAME red/n5inj/instances/theta_tp40.pg BFF theta_tp40.pg n 40 CH 64 MINF0 -11 MINF1 2 NOD 0 BAD1 0 BAD0 12 MINW1 2 BADW 0 SWB 0
+GAME red/n5inj/instances/wide_h16.pg BFF wide_h16.pg n 32 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/nest16/instances/k4L72_n101.pg BFF k4L72_n101.pg n 101 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/nest16/instances/k4L72r_n101.pg BFF k4L72r_n101.pg n 101 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/nest16/instances/k4g50_n101.pg BFF k4g50_n101.pg n 101 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/n5inj/instances/returns_rt64.pg BFF returns_rt64.pg n 64 CH 159 MINF0 -5 MINF1 1 NOD 0 BAD1 0 BAD0 10 MINW1 7 BADW 0 SWB 0
+GAME red/nest16/instances/k4seed_c1_n82.pg BFF k4seed_c1_n82.pg n 82 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/nest16/instances/k4seed_vr_n87.pg BFF k4seed_vr_n87.pg n 87 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/nest16/instances/k4y1_n82.pg BFF k4y1_n82.pg n 82 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/nest16/instances/k4u_n101.pg BFF k4u_n101.pg n 101 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/nest16/instances/k4y2_n87.pg BFF k4y2_n87.pg n 87 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/nest16/instances/near4_n26.pg BFF near4_n26.pg n 26 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/nest16/instances/nest4uu_n51.pg BFF nest4uu_n51.pg n 51 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/nest16/instances/nest4u_n46.pg BFF nest4u_n46.pg n 46 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/nest16/instances/nest5_n49.pg BFF nest5_n49.pg n 49 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/nest16/instances/nest6_n75.pg BFF nest6_n75.pg n 75 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/nest16/instances/nest6min_n75.pg BFF nest6min_n75.pg n 75 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/nest16/instances/w1_n27.pg BFF w1_n27.pg n 27 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/nest16/instances/oseg_n26.pg BFF oseg_n26.pg n 26 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/nest16/instances/nest6x_n75.pg BFF nest6x_n75.pg n 75 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/nest16/instances/win3_n27.pg BFF win3_n27.pg n 27 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/nopre/instances/nopre_viol_n20.pg BFF nopre_viol_n20.pg n 20 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/o1/instances/iter118_n48.pg BFF iter118_n48.pg n 48 CH 32 MINF0 0 MINF1 1 NOD 0 BAD1 0 BAD0 2 MINW1 2 BADW 0 SWB 0
+GAME red/o1/instances/ph45_n32.pg BFF ph45_n32.pg n 32 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/o1/instances/ph50_n32.pg BFF ph50_n32.pg n 32 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/o1/instances/f39_n48.pg BFF f39_n48.pg n 48 CH 37 MINF0 -26 MINF1 7 NOD 0 BAD1 0 BAD0 28 MINW1 7 BADW 0 SWB 0
+GAME red/o1/instances/tau18_n24.pg BFF tau18_n24.pg n 24 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/rec0/instances/fbd0_n4.pg BFF fbd0_n4.pg n 4 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/rec0/instances/n0_6_n24.pg BFF n0_6_n24.pg n 24 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/rec0/instances/nep24_n20.pg BFF nep24_n20.pg n 20 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/sgrow/instances/s20_n20.pg BFF s20_n20.pg n 20 CH 1 MINF0 9 MINF1 10 NOD 0 BAD1 0 BAD0 0 MINW1 10 BADW 0 SWB 0
+GAME red/rec0/instances/lend2_30_n48.pg BFF lend2_30_n48.pg n 48 CH 41 MINF0 -8 MINF1 1 NOD 0 BAD1 0 BAD0 16 MINW1 5 BADW 0 SWB 0
+GAME red/rec0/instances/nep90_n40.pg BFF nep90_n40.pg n 40 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/rec0/instances/nep87_n40.pg BFF nep87_n40.pg n 40 CH 1 MINF0 15 MINF1 17 NOD 0 BAD1 0 BAD0 0 MINW1 17 BADW 0 SWB 0
+GAME red/sgrow/instances/s21_oink_n20.pg BFF s21_oink_n20.pg n 20 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/sgrow/instances/s29_n30.pg BFF s29_n30.pg n 30 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/sgrow/instances/s32_n60.pg BFF s32_n60.pg n 60 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/sgrow/instances/s34_oink_n40.pg BFF s34_oink_n40.pg n 40 CH 10 MINF0 2 MINF1 2 NOD 0 BAD1 0 BAD0 0 MINW1 2 BADW 0 SWB 0
+GAME red/sgrow/instances/s35_oink_n80.pg BFF s35_oink_n80.pg n 80 CH 2 MINF0 3 MINF1 3 NOD 0 BAD1 0 BAD0 0 MINW1 3 BADW 0 SWB 0
+GAME red/so/instances/beta2_n11.pg BFF beta2_n11.pg n 11 CH 8 MINF0 1 MINF1 3 NOD 0 BAD1 0 BAD0 0 MINW1 3 BADW 0 SWB 0
+GAME red/sgrow/instances/s36_oink_n60.pg BFF s36_oink_n60.pg n 60 CH 2 MINF0 3 MINF1 3 NOD 0 BAD1 0 BAD0 0 MINW1 3 BADW 0 SWB 0
+GAME red/sgrow/instances/s34_oink_n80.pg BFF s34_oink_n80.pg n 80 CH 31 MINF0 3 MINF1 3 NOD 0 BAD1 0 BAD0 0 MINW1 3 BADW 0 SWB 0
+GAME red/so/instances/epsseg_cex_n16.pg BFF epsseg_cex_n16.pg n 16 CH 9 MINF0 1 MINF1 3 NOD 0 BAD1 0 BAD0 0 MINW1 3 BADW 0 SWB 0
+GAME red/so/instances/exitr_cex_n16.pg BFF exitr_cex_n16.pg n 16 CH 6 MINF0 1 MINF1 3 NOD 0 BAD1 0 BAD0 0 MINW1 3 BADW 0 SWB 0
+GAME red/so/instances/farrise25_n32.pg BFF farrise25_n32.pg n 32 CH 4 MINF0 1 MINF1 3 NOD 0 BAD1 0 BAD0 0 MINW1 3 BADW 0 SWB 0
+GAME red/so/instances/mn_abs74_n48.pg BFF mn_abs74_n48.pg n 48 CH 10 MINF0 3 MINF1 2 NOD 0 BAD1 0 BAD0 0 MINW1 4 BADW 0 SWB 0
+GAME red/so/instances/exitr_cex_n48.pg BFF exitr_cex_n48.pg n 48 CH 1 MINF0 5 MINF1 4 NOD 0 BAD1 0 BAD0 0 MINW1 4 BADW 0 SWB 0
+GAME red/so/instances/epsseg_cex_n48.pg BFF epsseg_cex_n48.pg n 48 CH 6 MINF0 2 MINF1 1 NOD 0 BAD1 0 BAD0 0 MINW1 3 BADW 0 SWB 0
+GAME red/so/instances/njb_reabs54_n32.pg BFF njb_reabs54_n32.pg n 32 CH 5 MINF0 3 MINF1 2 NOD 0 BAD1 0 BAD0 0 MINW1 4 BADW 0 SWB 0
+GAME red/so/instances/nleq_cex_n48.pg BFF nleq_cex_n48.pg n 48 CH 34 MINF0 0 MINF1 2 NOD 0 BAD1 0 BAD0 2 MINW1 3 BADW 0 SWB 0
+GAME red/so/instances/njb_reabs65_n48.pg BFF njb_reabs65_n48.pg n 48 CH 66 MINF0 -15 MINF1 2 NOD 0 BAD1 0 BAD0 34 MINW1 4 BADW 0 SWB 0
+GAME red/so/instances/nleq33_n48.pg BFF nleq33_n48.pg n 48 CH 38 MINF0 -29 MINF1 5 NOD 0 BAD1 0 BAD0 34 MINW1 5 BADW 0 SWB 0
+GAME red/so/instances/pft35_n48.pg BFF pft35_n48.pg n 48 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/so/instances/pftheta34_n32.pg BFF pftheta34_n32.pg n 32 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/so/instances/pftheta_cex_n32.pg BFF pftheta_cex_n32.pg n 32 CH 2 MINF0 16 MINF1 4 NOD 0 BAD1 0 BAD0 0 MINW1 6 BADW 0 SWB 0
+GAME red/so/instances/pft40_n40.pg BFF pft40_n40.pg n 40 CH 5 MINF0 0 MINF1 4 NOD 0 BAD1 0 BAD0 1 MINW1 5 BADW 0 SWB 0
+GAME red/so/instances/rise_fb38_n48.pg BFF rise_fb38_n48.pg n 48 CH 14 MINF0 -1 MINF1 2 NOD 0 BAD1 0 BAD0 2 MINW1 4 BADW 0 SWB 0
+GAME red/so/instances/s4c8_n13.pg BFF s4c8_n13.pg n 13 CH 1 MINF0 4 MINF1 3 NOD 0 BAD1 0 BAD0 0 MINW1 4 BADW 0 SWB 0
+GAME red/so/instances/post31_n48.pg BFF post31_n48.pg n 48 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/so/instances/so_k2_n32.pg BFF so_k2_n32.pg n 32 CH 16 MINF0 -1 MINF1 2 NOD 0 BAD1 0 BAD0 1 MINW1 2 BADW 0 SWB 0
+GAME red/so/instances/so_sor5_n24.pg BFF so_sor5_n24.pg n 24 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/so/instances/so_j19_n48.pg BFF so_j19_n48.pg n 48 CH 2 MINF0 2 MINF1 5 NOD 0 BAD1 0 BAD0 0 MINW1 5 BADW 0 SWB 0
+GAME red/so/instances/so_sorl_n32.pg BFF so_sorl_n32.pg n 32 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/so/instances/rise_thin51_n40.pg BFF rise_thin51_n40.pg n 40 CH 9 MINF0 1 MINF1 1 NOD 0 BAD1 0 BAD0 0 MINW1 2 BADW 0 SWB 0
+GAME red/so/instances/so_th_n32.pg BFF so_th_n32.pg n 32 CH 17 MINF0 2 MINF1 3 NOD 0 BAD1 0 BAD0 0 MINW1 3 BADW 0 SWB 0
+GAME red/so/instances/so_tie13_n24.pg BFF so_tie13_n24.pg n 24 CH 1 MINF0 4 MINF1 1 NOD 0 BAD1 0 BAD0 0 MINW1 4 BADW 0 SWB 0
+GAME red/so/instances/so_tie15_n32.pg BFF so_tie15_n32.pg n 32 CH 1 MINF0 3 MINF1 5 NOD 0 BAD1 0 BAD0 0 MINW1 5 BADW 0 SWB 0
+GAME red/so/instances/tev_cex_n40.pg BFF tev_cex_n40.pg n 40 CH 11 MINF0 3 MINF1 2 NOD 0 BAD1 0 BAD0 0 MINW1 3 BADW 0 SWB 0
+GAME red/so/instances/tevlast_cex_n40.pg BFF tevlast_cex_n40.pg n 40 CH 6 MINF0 6 MINF1 3 NOD 0 BAD1 0 BAD0 0 MINW1 4 BADW 0 SWB 0
+GAME red/so/instances/tevlast7_n32.pg BFF tevlast7_n32.pg n 32 CH 50 MINF0 -11 MINF1 1 NOD 0 BAD1 0 BAD0 18 MINW1 3 BADW 0 SWB 0
+GAME red/so/instances/tevlast11_n40.pg BFF tevlast11_n40.pg n 40 CH 35 MINF0 -11 MINF1 1 NOD 0 BAD1 0 BAD0 10 MINW1 3 BADW 0 SWB 0
+GAME red/so/instances/tog6a_n32.pg BFF tog6a_n32.pg n 32 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/so/instances/tog6b_n32.pg BFF tog6b_n32.pg n 32 CH 8 MINF0 9 MINF1 5 NOD 0 BAD1 0 BAD0 0 MINW1 5 BADW 0 SWB 0
+GAME red/so/instances/xrun21_n24.pg BFF xrun21_n24.pg n 24 CH 28 MINF0 -18 MINF1 2 NOD 0 BAD1 0 BAD0 17 MINW1 2 BADW 0 SWB 0
+GAME red/so/instances/xsn29_n32.pg BFF xsn29_n32.pg n 32 CH 42 MINF0 -25 MINF1 1 NOD 0 BAD1 0 BAD0 25 MINW1 1 BADW 0 SWB 0
+GAME red/so/instances/xrun8_n10.pg BFF xrun8_n10.pg n 10 CH 5 MINF0 0 MINF1 1 NOD 0 BAD1 0 BAD0 1 MINW1 3 BADW 0 SWB 0
+GAME red/so/instances/xsn43_n48.pg BFF xsn43_n48.pg n 48 CH 42 MINF0 -18 MINF1 2 NOD 0 BAD1 0 BAD0 30 MINW1 3 BADW 0 SWB 0
+GAME red/so/instances/xsnf42_n48.pg BFF xsnf42_n48.pg n 48 CH 85 MINF0 -37 MINF1 2 NOD 0 BAD1 0 BAD0 36 MINW1 2 BADW 0 SWB 0
+GAME red/so/instances/xsnf52_n64.pg BFF xsnf52_n64.pg n 64 CH 88 MINF0 -46 MINF1 2 NOD 0 BAD1 0 BAD0 48 MINW1 2 BADW 0 SWB 0
+GAME red/tcpert/instances/leanT_N12.pg BFF leanT_N12.pg n 96 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/so/instances/xsn91_n48.pg BFF xsn91_n48.pg n 48 CH 171 MINF0 -7 MINF1 1 NOD 0 BAD1 0 BAD0 34 MINW1 2 BADW 0 SWB 0
+GAME red/tcpert/instances/leanT_N6.pg BFF leanT_N6.pg n 48 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/tcpert/instances/leanT_N16.pg BFF leanT_N16.pg n 128 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/tcpert/instances/leanT_N8.pg BFF leanT_N8.pg n 64 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/tcpert/instances/leanT_N24.pg BFF leanT_N24.pg n 192 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/tcpert/instances/tcL_N3.pg BFF tcL_N3.pg n 42 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/tcpert/instances/tcL_N4.pg BFF tcL_N4.pg n 68 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/tcpert/instances/tcL_N5.pg BFF tcL_N5.pg n 100 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/tcpert/instances/tcL_N10.pg BFF tcL_N10.pg n 350 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/tcpert/instances/tcL_N6.pg BFF tcL_N6.pg n 138 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/tcpert/instances/tcR4_N4.pg BFF tcR4_N4.pg n 68 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/tcpert/instances/tcR4_N5.pg BFF tcR4_N5.pg n 100 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/tcpert/instances/tcL_N8.pg BFF tcL_N8.pg n 232 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/tcpert/instances/tcR4_N6.pg BFF tcR4_N6.pg n 138 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/tcpert/instances/leanT_N32.pg BFF leanT_N32.pg n 256 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/tcpert/instances/tcR4_N7.pg BFF tcR4_N7.pg n 182 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/tcpert/instances/tcS8_N10.pg BFF tcS8_N10.pg n 350 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/tcpert/instances/tcS8_N6.pg BFF tcS8_N6.pg n 138 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/tcpert/instances/tcL_N12.pg BFF tcL_N12.pg n 492 CH 197 MINF0 1 MINF1 24 NOD 0 BAD1 0 BAD0 0 MINW1 24 BADW 0 SWB 0
+GAME red/tcpert/instances/tcR4_N8.pg BFF tcR4_N8.pg n 232 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/tcpert/instances/tcS8_N8.pg BFF tcS8_N8.pg n 232 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/tcpert/instances/tcS8_N7.pg BFF tcS8_N7.pg n 182 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/tpp/instances/tpp_viol_n22.pg BFF tpp_viol_n22.pg n 22 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/tpp/instances/tpp_viol_n63.pg BFF tpp_viol_n63.pg n 63 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/ul/instances/cxmig_k4_n54.pg red/ul/instances/cxmig_k4_n54.start BFF cxmig_k4_n54.pg n 54 CH 10 MINF0 -4 MINF1 1 NOD 0 BAD1 0 BAD0 5 MINW1 6 BADW 0 SWB 0
+GAME red/tcpert/instances/tcS8_N11.pg BFF tcS8_N11.pg n 418 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/ul/instances/cxmig_k8_n82.pg red/ul/instances/cxmig_k8_n82.start BFF cxmig_k8_n82.pg n 82 CH 10 MINF0 -4 MINF1 1 NOD 0 BAD1 0 BAD0 5 MINW1 10 BADW 0 SWB 0
+GAME red/tcpert/instances/tcS8_N9.pg BFF tcS8_N9.pg n 288 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/ul/instances/ladderd0_k12_n48.pg red/ul/instances/ladderd0_k12_n48.start BFF ladderd0_k12_n48.pg n 48 CH 25 MINF0 -10 MINF1 -10 NOD 0 BAD1 11 BAD0 22 MINW1 2 BADW 0 SWB 11
+GAME red/ul/instances/ladderent_k12_n48.pg red/ul/instances/ladderent_k12_n48.start BFF ladderent_k12_n48.pg n 48 CH 1 MINF0 2 MINF1 14 NOD 0 BAD1 0 BAD0 0 MINW1 14 BADW 0 SWB 0
+GAME red/ul/instances/ladderd0_k24_n84.pg red/ul/instances/ladderd0_k24_n84.start BFF ladderd0_k24_n84.pg n 84 CH 49 MINF0 -22 MINF1 -22 NOD 0 BAD1 23 BAD0 46 MINW1 2 BADW 0 SWB 23
+GAME red/ul/instances/cxmig_k16_n138.pg red/ul/instances/cxmig_k16_n138.start BFF cxmig_k16_n138.pg n 138 CH 10 MINF0 -4 MINF1 1 NOD 0 BAD1 0 BAD0 5 MINW1 18 BADW 0 SWB 0
+GAME red/ul/instances/reader_L10_n36.pg red/ul/instances/reader_L10_n36.start BFF reader_L10_n36.pg n 36 CH 14 MINF0 -8 MINF1 -7 NOD 0 BAD1 2 BAD0 11 MINW1 2 BADW 0 SWB 2
+GAME red/ul/instances/ladderent_k24_n84.pg red/ul/instances/ladderent_k24_n84.start BFF ladderent_k24_n84.pg n 84 CH 1 MINF0 2 MINF1 26 NOD 0 BAD1 0 BAD0 0 MINW1 26 BADW 0 SWB 0
+GAME red/ul/instances/reader_L20_n56.pg red/ul/instances/reader_L20_n56.start BFF reader_L20_n56.pg n 56 CH 24 MINF0 -18 MINF1 -17 NOD 0 BAD1 2 BAD0 21 MINW1 2 BADW 0 SWB 2
+GAME red/ul/instances/reader_L40_n96.pg red/ul/instances/reader_L40_n96.start BFF reader_L40_n96.pg n 96 CH 44 MINF0 -38 MINF1 -37 NOD 0 BAD1 2 BAD0 41 MINW1 2 BADW 0 SWB 2
+GAME red/usplit/instances/gate_K16_n197.pg red/usplit/instances/gate_K16_n197.start BFF gate_K16_n197.pg n 197 CH 44 MINF0 -1 MINF1 2 NOD 0 BAD1 0 BAD0 16 MINW1 2 BADW 0 SWB 0
+GAME red/ul/instances/ladderd0_k48_n156.pg red/ul/instances/ladderd0_k48_n156.start BFF ladderd0_k48_n156.pg n 156 CH 97 MINF0 -46 MINF1 -46 NOD 0 BAD1 47 BAD0 94 MINW1 2 BADW 0 SWB 47
+GAME red/usplit/instances/grow_K12_n149.pg red/usplit/instances/grow_K12_n149.start BFF grow_K12_n149.pg n 149 CH 130 MINF0 -15 MINF1 2 NOD 0 BAD1 0 BAD0 108 MINW1 2 BADW 0 SWB 0
+GAME red/usplit/instances/pairoc_n58.pg red/usplit/instances/pairoc_n58.start BFF pairoc_n58.pg n 58 CH 26 MINF0 -1 MINF1 2 NOD 0 BAD1 0 BAD0 10 MINW1 2 BADW 0 SWB 0
+GAME red/usplit/instances/pp_K12_n161.pg red/usplit/instances/pp_K12_n161.start BFF pp_K12_n161.pg n 161 CH 26 MINF0 -1 MINF1 2 NOD 0 BAD1 0 BAD0 12 MINW1 2 BADW 0 SWB 0
+GAME red/ul/instances/ladderent_k48_n156.pg red/ul/instances/ladderent_k48_n156.start BFF ladderent_k48_n156.pg n 156 CH 1 MINF0 2 MINF1 50 NOD 0 BAD1 0 BAD0 0 MINW1 50 BADW 0 SWB 0
+GAME red/usplit/instances/pp_K12_n161_dual.pg BFF pp_K12_n161_dual.pg n 161 CH 4 MINF0 7 MINF1 6 NOD 0 BAD1 0 BAD0 0 MINW1 6 BADW 0 SWB 0
+GAME red/usplit/instances/grow_K40_n373.pg red/usplit/instances/grow_K40_n373.start BFF grow_K40_n373.pg n 373 CH 382 MINF0 -43 MINF1 2 NOD 0 BAD1 0 BAD0 332 MINW1 2 BADW 0 SWB 0
+GAME red/usplit/instances/usplit_n14.pg red/usplit/instances/usplit_n14.start BFF usplit_n14.pg n 14 CH 5 MINF0 0 MINF1 2 NOD 0 BAD1 0 BAD0 1 MINW1 2 BADW 0 SWB 0
+GAME red/usplit/instances/usplit_n23.pg red/usplit/instances/usplit_n23.start BFF usplit_n23.pg n 23 CH 14 MINF0 -6 MINF1 2 NOD 0 BAD1 0 BAD0 12 MINW1 2 BADW 0 SWB 0
+GAME red/usplit/instances/usplit_rd_n24.pg red/usplit/instances/usplit_rd_n24.start BFF usplit_rd_n24.pg n 24 CH 7 MINF0 0 MINF1 2 NOD 0 BAD1 0 BAD0 2 MINW1 2 BADW 0 SWB 0
+GAME red/usplit/instances/usplit_rd_s3_n27.pg BFF usplit_rd_s3_n27.pg n 27 CH 6 MINF0 0 MINF1 3 NOD 0 BAD1 0 BAD0 2 MINW1 3 BADW 0 SWB 0
+GAME red/usplit/instances/usplit_s3_n16.pg BFF usplit_s3_n16.pg n 16 CH 4 MINF0 0 MINF1 3 NOD 0 BAD1 0 BAD0 1 MINW1 3 BADW 0 SWB 0
+GAME red/xctx/instances/nest3_n20.pg BFF nest3_n20.pg n 20 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/xctx/instances/nest3_n24.pg BFF nest3_n24.pg n 24 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/xctx/instances/vrall_viol_n20.pg BFF vrall_viol_n20.pg n 20 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/xctx/instances/xcov11_n20.pg BFF xcov11_n20.pg n 20 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/xctx/instances/xctx_viol_n20.pg BFF xctx_viol_n20.pg n 20 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/xing/instances/fbref_cex_n32.pg BFF fbref_cex_n32.pg n 32 CH 116 MINF0 -2 MINF1 1 NOD 0 BAD1 0 BAD0 5 MINW1 3 BADW 0 SWB 0
+GAME red/xing/instances/j10_n24.pg BFF j10_n24.pg n 24 CH 11 MINF0 1 MINF1 2 NOD 0 BAD1 0 BAD0 0 MINW1 5 BADW 0 SWB 0
+GAME red/xing/instances/j4_n40.pg BFF j4_n40.pg n 40 CH 97 MINF0 -6 MINF1 1 NOD 0 BAD1 0 BAD0 4 MINW1 2 BADW 0 SWB 0
+GAME red/xing/instances/j5_n16.pg BFF j5_n16.pg n 16 CH 16 MINF0 -1 MINF1 2 NOD 0 BAD1 0 BAD0 2 MINW1 3 BADW 0 SWB 0
+GAME red/xing/instances/j7_n32.pg BFF j7_n32.pg n 32 CH 49 MINF0 -7 MINF1 1 NOD 0 BAD1 0 BAD0 10 MINW1 3 BADW 0 SWB 0
+GAME red/xing/instances/j7_n48.pg BFF j7_n48.pg n 48 CH 107 MINF0 -4 MINF1 1 NOD 0 BAD1 0 BAD0 11 MINW1 2 BADW 0 SWB 0
+GAME red/xing/instances/j8_n32.pg BFF j8_n32.pg n 32 CH 81 MINF0 -5 MINF1 1 NOD 0 BAD1 0 BAD0 10 MINW1 1 BADW 0 SWB 0
+GAME red/usplit/instances/pp_K48_n449.pg red/usplit/instances/pp_K48_n449.start BFF pp_K48_n449.pg n 449 CH 26 MINF0 -1 MINF1 2 NOD 0 BAD1 0 BAD0 12 MINW1 2 BADW 0 SWB 0
+GAME red/xing/instances/kw25_n32.pg BFF kw25_n32.pg n 32 CH 51 MINF0 -15 MINF1 1 NOD 0 BAD1 0 BAD0 30 MINW1 3 BADW 0 SWB 0
+GAME red/usplit/instances/pp_K48_n449_dual.pg BFF pp_K48_n449_dual.pg n 449 CH 4 MINF0 7 MINF1 6 NOD 0 BAD1 0 BAD0 0 MINW1 6 BADW 0 SWB 0
+GAME red/xing/instances/kw_n16.pg BFF kw_n16.pg n 16 CH 14 MINF0 -9 MINF1 2 NOD 0 BAD1 0 BAD0 11 MINW1 2 BADW 0 SWB 0
+GAME red/xing/instances/kw_n24.pg BFF kw_n24.pg n 24 CH 25 MINF0 -18 MINF1 2 NOD 0 BAD1 0 BAD0 18 MINW1 2 BADW 0 SWB 0
+GAME red/xing/instances/j8_n48.pg BFF j8_n48.pg n 48 CH 123 MINF0 -7 MINF1 1 NOD 0 BAD1 0 BAD0 11 MINW1 2 BADW 0 SWB 0
+GAME red/xing/instances/obr_eq_n24.pg BFF obr_eq_n24.pg n 24 CH 6 MINF0 0 MINF1 1 NOD 0 BAD1 0 BAD0 3 MINW1 1 BADW 0 SWB 0
+GAME red/xing/instances/kw_n48.pg BFF kw_n48.pg n 48 CH 62 MINF0 -35 MINF1 2 NOD 0 BAD1 0 BAD0 43 MINW1 2 BADW 0 SWB 0
+GAME red/xing/instances/obr_n32.pg BFF obr_n32.pg n 32 CH 40 MINF0 -8 MINF1 1 NOD 0 BAD1 0 BAD0 20 MINW1 4 BADW 0 SWB 0
+GAME red/xing/instances/u1t_own6_n32.pg BFF u1t_own6_n32.pg n 32 CH 26 MINF0 3 MINF1 3 NOD 0 BAD1 0 BAD0 0 MINW1 5 BADW 0 SWB 0
+GAME red/xing/instances/u1t_cex_n32.pg BFF u1t_cex_n32.pg n 32 CH 88 MINF0 3 MINF1 3 NOD 0 BAD1 0 BAD0 0 MINW1 5 BADW 0 SWB 0
+GAME red/xing/instances/u23sw64_n32.pg BFF u23sw64_n32.pg n 32 CH 81 MINF0 1 MINF1 3 NOD 0 BAD1 0 BAD0 0 MINW1 3 BADW 0 SWB 0
+GAME red/xing/instances/u2flat_n32.pg BFF u2flat_n32.pg n 32 CH 14 MINF0 1 MINF1 3 NOD 0 BAD1 0 BAD0 0 MINW1 3 BADW 0 SWB 0
+GAME red/xing/instances/u2flat73_n32.pg BFF u2flat73_n32.pg n 32 CH 83 MINF0 3 MINF1 3 NOD 0 BAD1 0 BAD0 0 MINW1 5 BADW 0 SWB 0
+GAME red/xing/instances/x31_cu16.pg BFF x31_cu16.pg n 16 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/xing/instances/x31_cu24.pg BFF x31_cu24.pg n 24 CH 1 MINF0 5 MINF1 3 NOD 0 BAD1 0 BAD0 0 MINW1 3 BADW 0 SWB 0
+GAME red/xing/instances/x31_cu32i.pg BFF x31_cu32i.pg n 32 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/xing/instances/x31_cu32.pg BFF x31_cu32.pg n 32 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/xing/instances/x31_lem_e24.pg BFF x31_lem_e24.pg n 24 CH 77 MINF0 -9 MINF1 3 NOD 0 BAD1 0 BAD0 21 MINW1 3 BADW 0 SWB 0
+GAME red/xing/instances/x31_nh_e24.pg BFF x31_nh_e24.pg n 24 CH 42 MINF0 -17 MINF1 1 NOD 0 BAD1 0 BAD0 16 MINW1 1 BADW 0 SWB 0
+GAME red/xing/instances/x31_cu48.pg BFF x31_cu48.pg n 48 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/xing/instances/x31_nh_r20.pg BFF x31_nh_r20.pg n 20 CH 24 MINF0 -10 MINF1 2 NOD 0 BAD1 0 BAD0 10 MINW1 2 BADW 0 SWB 0
+GAME red/xing/instances/x31_re24.pg BFF x31_re24.pg n 24 CH 68 MINF0 -1 MINF1 1 NOD 0 BAD1 0 BAD0 2 MINW1 2 BADW 0 SWB 0
+GAME red/xing/instances/x31_lem_t32.pg BFF x31_lem_t32.pg n 32 CH 140 MINF0 -2 MINF1 1 NOD 0 BAD1 0 BAD0 7 MINW1 3 BADW 0 SWB 0
+GAME red/xing/instances/x31_ru24.pg BFF x31_ru24.pg n 24 CH 56 MINF0 -1 MINF1 1 NOD 0 BAD1 0 BAD0 4 MINW1 1 BADW 0 SWB 0
+GAME red/xing/instances/x31_rx32.pg BFF x31_rx32.pg n 32 CH 1 MINF0 4 MINF1 6 NOD 0 BAD1 0 BAD0 0 MINW1 6 BADW 0 SWB 0
+GAME red/xing/instances/x32_nest40.pg BFF x32_nest40.pg n 40 CH 58 MINF0 -4 MINF1 1 NOD 0 BAD1 0 BAD0 6 MINW1 2 BADW 0 SWB 0
+GAME red/xing/instances/x31_rx48.pg BFF x31_rx48.pg n 48 CH 3 MINF0 3 MINF1 4 NOD 0 BAD1 0 BAD0 0 MINW1 4 BADW 0 SWB 0
+GAME red/xing/instances/x32_rand16.pg BFF x32_rand16.pg n 16 CH 13 MINF0 -9 MINF1 1 NOD 0 BAD1 0 BAD0 8 MINW1 1 BADW 0 SWB 0
+GAME red/xing/instances/x32_rand24.pg BFF x32_rand24.pg n 24 CH 36 MINF0 -16 MINF1 2 NOD 0 BAD1 0 BAD0 16 MINW1 2 BADW 0 SWB 0
+GAME red/xing/instances/x32_rand32.pg BFF x32_rand32.pg n 32 CH 39 MINF0 -25 MINF1 1 NOD 0 BAD1 0 BAD0 25 MINW1 1 BADW 0 SWB 0
+GAME red/xing/instances/x32_rand48.pg BFF x32_rand48.pg n 48 CH 89 MINF0 -39 MINF1 2 NOD 0 BAD1 0 BAD0 39 MINW1 2 BADW 0 SWB 0
+GAME red/xing/instances/x32_rand64.pg BFF x32_rand64.pg n 64 CH 97 MINF0 -50 MINF1 2 NOD 0 BAD1 0 BAD0 53 MINW1 2 BADW 0 SWB 0
+GAME red/xing/instances/x32_waves48.pg BFF x32_waves48.pg n 48 CH 80 MINF0 -20 MINF1 1 NOD 0 BAD1 0 BAD0 45 MINW1 3 BADW 0 SWB 0
+GAME red/xing/instances/x32_waves32.pg BFF x32_waves32.pg n 32 CH 148 MINF0 -4 MINF1 1 NOD 0 BAD1 0 BAD0 13 MINW1 2 BADW 0 SWB 0
+GAME si/root/instances/cone_n65.pg BFF cone_n65.pg n 65 CH 19 MINF0 2 MINF1 4 NOD 0 BAD1 0 BAD0 0 MINW1 4 BADW 0 SWB 0
+GAME si/root/instances/ueonce_n27.pg BFF ueonce_n27.pg n 27 CH 32 MINF0 -3 MINF1 4 NOD 0 BAD1 0 BAD0 6 MINW1 4 BADW 0 SWB 0
+GAME si/root/instances/cone_n69.pg BFF cone_n69.pg n 69 CH 0 MINF0 1000000000 MINF1 1000000000 NOD 0 BAD1 0 BAD0 0 MINW1 1000000000 BADW 0 SWB 0
+GAME red/usplit/instances/gate_K64_n581.pg red/usplit/instances/gate_K64_n581.start BFF gate_K64_n581.pg n 581 CH 44 MINF0 -1 MINF1 2 NOD 0 BAD1 0 BAD0 16 MINW1 2 BADW 0 SWB 0

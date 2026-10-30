@@ -1,0 +1,2 @@
+GAME si/gate/inst/latew_K16_m32.pg si/gate/inst/latew_K16_m32.start HEADS latew_K16_m32.pg n 482 HX 32 XX 33 NHEAD 96 SUMHX 1521 LMAX 560 HXV 60
+GAME si/gate/inst/fx_K8_m32.pg si/gate/inst/fx_K8_m32.start HEADS fx_K8_m32.pg n 250 HX 16 XX 137 NHEAD 33 SUMHX 257 LMAX 280 HXV 36

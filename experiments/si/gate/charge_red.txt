@@ -1,0 +1,2 @@
+GAME si/gate/inst/latew_K16_m32.pg si/gate/inst/latew_K16_m32.start CHARGE latew_K16_m32.pg n 482 D4_ON 0 D4_OFF 0 D4_SELF 0 ALL_ON 2673 ALL_OFF 0 ALL_SELF 6624
+GAME si/gate/inst/fx_K8_m32.pg si/gate/inst/fx_K8_m32.start CHARGE fx_K8_m32.pg n 250 D4_ON 0 D4_OFF 0 D4_SELF 0 ALL_ON 532 ALL_OFF 0 ALL_SELF 2499

@@ -1,0 +1,18 @@
+MODE files experiments/new/box59/sbcg.lst 1 experiments/ MAXT 5000 BF 0
+BLOCKS: 971
+CASE1: 8896
+CASE2a: 6
+CASE_WR: 19
+CN_in_block: 3
+OS_checks: 452450
+OS_cyc: 3457
+WRUNS: 5419
+WRUN_transitions: 6921
+XIPLAY_checks: 1025751
+runs: 719
+transitions: 11621
+max max_ES: (48, 'red/ul/instances/ladderent_k48_n156.pg#0')
+max max_LCT_run: 30
+max max_block: (67, 'red/usplit/instances/gate_K64_n581.pg#0')
+max max_tail: (1, 'red/so/instances/tog6b_n32.pg#0')
+RESULT PASS violations 0
