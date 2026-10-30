@@ -1,7 +1,18 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 36, session_01V5yGRXhFvQKMGvnKST38br; FINAL, PARKED 2026-10-30 ~08:37Z by date -u, ~420k context)
+## Resume point (successor 37, Opus 5.5; started 2026-10-30 08:52Z by date -u; WORKING)
+### Box 79 TASK 1 (Lead brief after 08:52Z): freeze P-N5-WCH for both referees
+- docs/new/P-N5-WCH-box79.md (packet) + docs/new/P-N5-WCH-box79-line.txt (RESULTS line proposal). Scope: TIE, NEW-BOUND, RET-WCH (sharpened:
+  TL -> TT, leaves with W(v) unchanged, so the N5 residual is TIE), RUN-WCH, REP-WCH (REPEAT => return, so REP_F <= sum d_E WCH + TIE, no
+  FW-R*'), SIL-Z (re-derived from landed R90 (a)(ii), (b), (c), (d)), SC-GXC, GXC-CLOSE, GXC-SPLIT, LEVEL-MON, DROP-PAID (generalises
+  DOWN-PAID), FBO-R56, FBO-SPLIT, ZF-SPLIT (new bookkeeping), Theorem WCH-RED + Corollary WCH-ONE under [P-WCHtau](w); N5-LZC section §7
+  (LZ-OPT, W-MON_LZ, LZ-STRICT, RUN-WCH_LZ / REP-WCH_LZ without OPT-ONLY; LZ-NOSIL under OPT-ONLY).
+- TRIMMED (do not compose): TXC-SRC/RHO, FIX-DEPTH/PHASE-RED (own packet if wanted), LZ-RUN (superseded by RUN-WCH_LZ), N5-LZC output.
+- DATA: box79/wchpk.py on 1132 runs x 2: 0 UNPAID, 0 RUN-viol; N5 TT 88, TIE 397; N5-LZC TIE 0. symtest.py: 182 symbols, SYMTEST PASS.
+### NEXT: TASK 2 (D18 on [P-WCHtau] itself: per-vertex monotone W-values under the private-prefix constraint, L-RED PREFIX / TWO-SOURCE).
+
+## Resume point (successor 36, session_01V5yGRXhFvQKMGvnKST38br; FINAL, PARKED; history 2026-10-30 ~08:37Z by date -u, ~420k context)
 ### DONE (all pushed via scripts/push.sh, VERIFY PASS; each reported to the Lead)
 - Box 72 N5-LZ (909be5eb, §6 177dbfb1): GXC anatomy; Lemma TIE; N5-LZC (lazy S4a tie-break) LZ-OPT / LZ-STRICT / LZ-NOGXC / LZ-NOSIL
   (OPT-ONLY); GXC-CLOSE; TXC-SRC, TXC-RHO (GXC does not bound REP*).

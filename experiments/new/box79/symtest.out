@@ -1,0 +1,187 @@
+| symbol | uses | status | binding (verbatim phrase in the line) |
+| --- | --- | --- | --- |
+| 1E-N3 | 1 | OK | in: 1E-N3: S1's procedure realises the pointwise optimum |
+| < | 1 | OK | in: t < t′ |
+| > | 1 | OK | in: > |
+| ASSUMPTION | 1 | OK | in: ASSUMPTION OPT-ONLY |
+| B | 1 | OK | in: R90 Fact B |
+| B_R | 3 | OK | in: B_R (the boundaries inside the λ-run R) |
+| Corollaries | 3 | OK | word:  |
+| Corollary | 3 | OK | word:  |
+| DROP-PAID | 1 | OK | in: Corollaries DROP-PAID |
+| DROP_P | 3 | OK | in: number at most (n + 1)(1 + WCH^S4a_P(v)) (DROP_P(v)) |
+| EVERY | 1 | OK | in: on EVERY game |
+| Even | 14 | OK | in: Even vertices |
+| F | 9 | OK | in: for a W-run F, |F| |
+| F1 | 1 | OK | in: R17 (a) (F1) |
+| FBO | 1 | OK | in: FBO_P the GXC events of P at in-phase fallbacks |
+| FBO-R56 | 1 | OK | in: FBO-R56 |
+| FBO-SPLIT | 1 | OK | in: FBO-SPLIT |
+| FBOS_P | 4 | OK | in: FBOS_P the FBO events of P with LEV_{t+1}(v) = LEV_t(v) |
+| FBO_P | 6 | OK | in: FBO_P the GXC events of P at in-phase fallbacks with v ∈ Z_{t+1} |
+| Fact | 1 | OK | in: R90 Fact B |
+| G-N5-TIME | 1 | OK | in: G-N5-TIME stays open |
+| GXC | 3 | OK | in: a GXC event is a pair (v, t) |
+| GXC-CLOSE | 1 | OK | in: (Lemma GXC-CLOSE |
+| GXC-SPLIT | 1 | OK | in: Theorem GXC-SPLIT) |
+| GXC_P | 3 | OK | in: GXC_X the GXC events with t, t + 1 in X |
+| GXC_R | 1 | OK | in: GXC_X the GXC events with t, t + 1 in X |
+| GXC_X | 1 | OK | in: GXC_X the GXC events with t, t + 1 in X |
+| H_t | 3 | OK | in: H_t := S4a's arena at t |
+| Iσ_t | 2 | OK | in: Iσ_t the improving edges of σ_t (SPEC S2) |
+| LEV | 1 | OK | in: with LEV_t(v), for v ∈ Z_t |
+| LEVEL-MON | 1 | OK | in: (Lemma LEVEL-MON |
+| LEV_k | 1 | OK | in: LEV_{k+1}(v) > LEV_k(v) |
+| LEV_t | 3 | OK | in: with LEV_t(v), for v ∈ Z_t, the position of the first coordinate at which Ξ_t(v) and W |
+| LEV_{k+1} | 1 | OK | in: LEV_{k+1}(v) > LEV_k(v) |
+| LEV_{t+1} | 1 | OK | in: LEV_{t+1}(v) = LEV_t(v) |
+| LEV_{t′} | 1 | OK | in: LEV_{t′}(v) ≥ LEV_t(v) for states t < t′ of a phase P |
+| LZ-NOSIL | 1 | OK | in: (Corollary LZ-NOSIL, under ASSUMPTION OPT-ONLY |
+| LZ-OPT | 1 | OK | in: (Lemma LZ-OPT |
+| LZ-STRICT | 1 | OK | in: Theorem LZ-STRICT |
+| Lemma | 7 | OK | word:  |
+| M3 | 1 | OK | in: not M3 |
+| N5 | 3 | OK | in: N5 on EVERY game (SPEC S1-S5 |
+| N5-LZC | 4 | OK | in: for the labelled VARIANT N5-LZC (N5 with S4a's output σ* replaced by σ′ |
+| NC_R | 4 | OK | in: NC_R (NT_R) the class-S re-entries j − 1 → j of R |
+| NEW-BOUND | 1 | OK | in: (Lemma NEW-BOUND |
+| NT_R | 4 | OK | in: NC_R (NT_R) the class-S re-entries j − 1 → j of R |
+| NZ_P | 4 | OK | in: NZ_P the Z-flat in-phase fallbacks of P all of whose switched Even vertices |
+| OPT-ONLY | 1 | OK | in: ASSUMPTION OPT-ONLY that RESULTS R90 Fact B and (a) (ii), (b), (c), (d) hold verbatim  |
+| Odd | 1 | OK | in: Odd follows τ_t |
+| P | 13 | OK | in: of the phase P |
+| Q | 4 | OK | in: path set Q, |
+| R | 4 | OK | in: the λ-run R |
+| R15 | 1 | OK | in: R15 (a), (d) |
+| R17 | 1 | OK | in: R17 (a) (F1) |
+| R38 | 1 | OK | in: RESULTS R38 (a) |
+| R56 | 2 | OK | in: R56 |
+| R57 | 1 | OK | in: RESULTS R57 |
+| R86 | 2 | OK | in: R86 |
+| R88 | 2 | OK | in: R88 (f) |
+| R89 | 2 | OK | in: R89 |
+| R90 | 4 | OK | in: R90 (a)-(e), (g) |
+| R91 | 2 | OK | in: R91 (a)-(c), (h), (i), (k), (m) |
+| REDUCTION | 1 | OK | in: a REDUCTION |
+| REP* | 2 | OK | in: REP* := max_F REP_F |
+| REP-WCH | 1 | OK | in: Corollaries RUN-WCH and REP-WCH |
+| REP-WCH_LZ | 1 | OK | in: Corollaries RUN-WCH_LZ, REP-WCH_LZ) |
+| REPEATs | 1 | OK | in: REPEATs, REP_F and REP* |
+| REP_F | 4 | OK | in: REP_F and REP* := max_F REP_F |
+| RESULTS | 10 | OK | in: RESULTS R57 |
+| RET-WCH | 1 | OK | in: (Theorem RET-WCH) |
+| RUN-WCH | 1 | OK | in: Corollaries RUN-WCH and REP-WCH |
+| RUN-WCH_LZ | 1 | OK | in: Corollaries RUN-WCH_LZ, REP-WCH_LZ) |
+| S | 2 | OK | in: every τ-stretch S |
+| S1 | 4 | OK | in: SPEC S1 |
+| S1-S5 | 1 | OK | in: SPEC S1-S5 |
+| S2 | 1 | OK | in: (SPEC S2) |
+| S4a | 11 | OK | in: SPEC S1-S5 |
+| S4c | 1 | OK | in: SPEC S1-S5 |
+| SC-GXC | 1 | OK | in: Corollary SC-GXC) |
+| SIL-Z | 1 | OK | in: (Lemma SIL-Z |
+| SIL_R | 2 | OK | in: class-S re-entries and SIL_R as in RESULTS R90 (e) |
+| SPEC | 6 | OK | in: SPEC S1-S5 |
+| TARGET.md | 1 | OK | in: not a TARGET.md claim |
+| TIE | 2 | OK | in: (Lemma TIE) at an S4a step |
+| TIE* | 3 | OK | in: TIE* := max_F TIE_F |
+| TIE_F | 6 | OK | in: TIE_F the pairs (v, t), t → t + 1 a transition of F and v switched at t with W_{t+1}(v |
+| TIE_P | 3 | OK | in: TIE_P the pairs (v, t) with t → t + 1 an in-phase S4a transition of P |
+| TT_F | 3 | OK | in: TT_F(v, e) the transitions k → k + 1 of F at which v leaves e |
+| Theorem | 4 | OK | word:  |
+| VARIANT | 1 | OK | in: labelled VARIANT |
+| W | 6 | OK | in: W(v) := W_t(v) at the state in question |
+| W* | 2 | OK | in: W*, the [S1-val] valuation of the (σ*, τ_t)-plays |
+| W-run | 5 | OK | in: a W-run and, for a W-run F |
+| WCH-ONE | 1 | OK | in: Corollary WCH-ONE) |
+| WCH-RED | 1 | OK | in: (Theorem WCH-RED |
+| WCH^S4a_P | 3 | OK | in: f_P, ZF_P and WCH^S4a_P(v) as in RESULTS R91 |
+| WCH_F | 6 | OK | in: WCH_F(e) the transitions of F at which W(e) changes |
+| W_k | 1 | OK | in: with W_{k+1}(v) = W_k(v) |
+| W_t | 9 | OK | in: W_t := the [S1-val] valuation of the (σ_t, τ_t)-plays |
+| W_{k+1} | 1 | OK | in: with W_{k+1}(v) = W_k(v) |
+| W_{t+1} | 3 | OK | in: W_{t+1}(v) = W_t(v) |
+| W′ | 6 | OK | in: W′ the [S1-val] valuation of the (σ⁺, τ_t)-plays |
+| W′-cycle | 1 | OK | in: for a valuation Ω (Ξ_t, W_t, or W′ below) |
+| X | 1 | OK | in: with t, t + 1 in X |
+| Z-flat | 2 | OK | in: those k → k + 1 with Z_{k+1} = Z_k |
+| ZF-SPLIT | 1 | OK | in: ZF-SPLIT) |
+| ZFS_P | 4 | OK | in: ZFS_P the other Z-flat in-phase fallbacks of P |
+| ZF_P | 4 | OK | in: f_P, ZF_P and WCH^S4a_P(v) as in RESULTS R91 |
+| Z_k | 2 | OK | in: those k → k + 1 with Z_{k+1} = Z_k |
+| Z_t | 4 | OK | in: Z_t := {v : Ξ_t(v) ≠ W_t(v)} the gap set |
+| Z_{k+1} | 2 | OK | in: those k → k + 1 with Z_{k+1} = Z_k |
+| Z_{t+1} | 1 | OK | in: with v ∈ Z_{t+1} |
+| Z_{t′} | 1 | OK | in: v ∈ Z_t ∩ Z_{t′} |
+| [P-WCHτ] | 2 | OK | in: (premise [P-WCHτ](w), not proved here) |
+| [S1-val] | 3 | OK | in: SPEC S1 |
+| a | 17 | OK | in: with first state a |
+| c | 5 | OK | in: cycle node c, |
+| class-S | 3 | OK | in: class-S re-entries and SIL_R as in RESULTS R90 (e) |
+| d | 1 | OK | in: d := σ_t(v) |
+| d_E | 5 | OK | in: d_E(e) the number of Even vertices with an edge to the vertex e |
+| e | 10 | OK | in: for every Even v and successor e |
+| f_P | 2 | OK | in: f_P, ZF_P and WCH^S4a_P(v) as in RESULTS R91 |
+| j | 4 | OK | in: re-entries j − 1 → j of R |
+| k | 8 | OK | in: those k → k + 1 |
+| m_E | 5 | OK | in: m_E the number of edges leaving Even vertices |
+| max_F | 2 | OK | in: REP* := max_F REP_F |
+| max_P | 1 | OK | in: max_P GXC_P + NC_R + NT_R (P over the phases inside R) |
+| n | 18 | OK | in: n the number of vertices of the game |
+| n_E | 2 | OK | in: n_E the number of its Even vertices |
+| r | 2 | OK | in: for each rank r from n − 1 down to 0 |
+| t | 23 | OK | in: a transition is written t → t + 1 |
+| t′ | 1 | OK | in: for states t < t′ of a phase P |
+| u | 2 | OK | in: transitions u → u + 1 of F |
+| v | 72 | OK | in: v is switched at t |
+| w | 8 | OK | in: at most w(n) S4a steps inside S changing W(e) |
+| x | 3 | OK | in: x ⊕ (c, Q, ℓ) := |
+| |F| | 4 | OK | in: |F| (its transitions) |
+| |Z_a| | 1 | OK | in: every phase P with first state a |
+| · | 6 | OK | in: d_E(e)·WCH_F(e) |
+| Ξ-cycle | 3 | OK | in: v is its own Ω-cycle node if the cycle node of Ω(v) is v |
+| Ξ_t | 5 | OK | in: Ξ_t := Ξ_{σ_t} (SPEC S1) |
+| Ξ_{t+1} | 1 | OK | in: Ξ_{t+1}(v) ▷ Ξ_t(v) |
+| Ξ_{σ_t} | 1 | OK | in: Ξ_t := Ξ_{σ_t} (SPEC S1) |
+| Σ_e | 4 | OK | in: Σ_e d_E(e)·WCH_F(e) |
+| Σ_v | 3 | OK | in: Σ_v WCH^S4a_P(v) |
+| Ω | 2 | OK | in: for a valuation Ω |
+| Ω-cycle | 1 | OK | in: v is its own Ω-cycle node if the cycle node of Ω(v) is v |
+| λ-run | 3 | OK | in: a λ-run as in RESULTS R86 |
+| λ_W | 1 | OK | in: λ_W its cycle-node map |
+| λ_Ξ | 2 | OK | in: λ_Ξ its cycle-node map |
+| ρ | 1 | OK | in: RESULTS R56's ρ |
+| ρ_P | 3 | OK | in: ρ_P := RESULTS R56's ρ of the phase P |
+| σ* | 3 | OK | in: S4a's output σ* |
+| σ_k | 1 | OK | in: (σ_k(v) = e ≠ σ_{k+1}(v)) |
+| σ_new | 1 | OK | in: σ_new is the pointwise optimum of the one-player arena H_t |
+| σ_t | 7 | OK | in: the sequence of states (σ_t, τ_t) |
+| σ_u | 1 | OK | in: σ_{u+1}(v) = e ≠ σ_u(v) |
+| σ_{k+1} | 1 | OK | in: (σ_k(v) = e ≠ σ_{k+1}(v)) |
+| σ_{t+1} | 1 | OK | in: v is switched at t if σ_{t+1}(v) ≠ σ_t(v) |
+| σ_{u+1} | 1 | OK | in: σ_{u+1}(v) = e ≠ σ_u(v) |
+| σ′ | 2 | OK | in: replaced by σ′, which keeps σ_t(v) |
+| σ⁺ | 3 | OK | in: for any pointwise-optimal Even strategy σ⁺ of H_t |
+| τ-stretch | 3 | OK | in: a τ-stretch, a W-run and, for a W-run F, |F| (its transitions) as in RESULTS R89 |
+| τ_j | 1 | OK | in: τ_j ≠ τ_{j−1} |
+| τ_t | 8 | OK | in: the sequence of states (σ_t, τ_t) |
+| τ_{j−1} | 1 | OK | in: τ_j ≠ τ_{j−1} |
+| τ_{t+1} | 1 | OK | in: τ_{t+1} = τ_t |
+| ℓ | 4 | OK | in: length ℓ) |
+| → | 9 | OK | in: a transition is written t → t + 1 |
+| ∈ | 5 | OK | in: ∈ |
+| − | 4 | OK | in: − |
+| −1 | 1 | OK | in: +1, −1 or 0 |
+| ∩ | 2 | OK | in: Z_t ∩ Z_{t′} |
+| ∪ | 2 | OK | in: Q ∪ {x if |
+| ≠ | 6 | OK | in: ≠ |
+| ≤ | 16 | OK | in: ≤ |
+| ≥ | 1 | OK | in: ≥ |
+| ⊕ | 2 | OK | in: the prefix operation x ⊕ (c, Q, ℓ) := (c, Q ∪ {x if x is more relevant than c}, ℓ + 1) |
+| ⊴ | 2 | OK | in: ⊴, ◁, ⊵, ▷ the SPEC S1 order |
+| ⊵ | 1 | OK | in: ⊴, ◁, ⊵, ▷ the SPEC S1 order |
+| ▷ | 2 | OK | in: ⊴, ◁, ⊵, ▷ the SPEC S1 order |
+| ◁ | 1 | OK | in: ⊴, ◁, ⊵, ▷ the SPEC S1 order |
+
+symbols 182, failures 0: []
+SYMTEST PASS
