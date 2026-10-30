@@ -2,8 +2,10 @@
 """L-LIT T58 (docs/lit/T58-action-elimination.md §3): an ordinal analogue of action elimination inside one W-run of N5.
 W-runs as in l-si gate.py / docs/lit/T54-tiebreak-check.py (tau fixed, no fallback, W's cycle nodes fixed). For a W-run F with states
 p..q, Xi_end := Xi_q (Xi is non-decreasing along F, R15). For an Even edge e = (v, w):
-  T_e := the first state t of F with Xi_t(v) |> v (+) Xi_end(w)  (si.Engine.extend; e is then "eliminated");
+  beta_t(v) := Xi_t(sigma_t(v)) (non-decreasing along F, T58 §3);
+  T_e := the first state t of F with beta_t(v) >= Xi_end(w) (e is then "eliminated");
   Lemma ELIM-ORD (T58 §3): no adoption of e (sigma_{s+1}(v) = w != sigma_s(v)) at any s >= T_e.  VIOL counts failures (must be 0).
+  VIOLX: the same with the threshold Xi_t(v) |> v (+) Xi_end(w) (si.Engine.extend); BMON: beta falls somewhere (must be 0).
 Per W-run: ADOPT (adoptions), RETMAX (max adoptions of one edge), WIN (max over states t of F of the number of transitions until some
 edge e in sigma_t that is not in sigma_q gets eliminated; HMZ-shaped "window"; -1 if none ever is), ELIMS (edges eliminated while
 in use), LEN (transitions). Output: maxima over W-runs, VIOL summed. Usage (repo root): python3 -I docs/lit/T58-elim-check.py GAME.pg [START]"""
@@ -35,23 +37,27 @@ def wruns(g, start=None):
 
 def run(g, start=None):
     n = g.n; own = g.owner; E = Engine(g)
-    c = dict(VIOL=0, ADOPT=0, RETMAX=0, WIN=-1, ELIMS=0, LEN=0, RUNS=0)
+    c = dict(VIOL=0, VIOLX=0, BMON=0, ADOPT=0, RETMAX=0, WIN=-1, ELIMS=0, LEN=0, RUNS=0)
     for F in wruns(g, start):
         if len(F) < 2: continue
         c['RUNS'] += 1; c['LEN'] = max(c['LEN'], len(F) - 1)
         X = [E.evaluate(s)[0] for s in F]; K = [[E.key(x) for x in xs] for xs in X]; end = X[-1]
-        T = {}
+        T, TX = {}, {}
         for v in range(n):
             if own[v] != 0: continue
+            for i in range(len(F) - 1):
+                if K[i + 1][F[i + 1][v]] < K[i][F[i][v]]: c['BMON'] += 1
             for w in g.succ[v]:
-                th = E.key(E.extend(v, end[w]))
-                T[(v, w)] = next((i for i in range(len(F)) if K[i][v] > th), None)
+                th, thx = K[-1][w], E.key(E.extend(v, end[w]))
+                T[(v, w)] = next((i for i in range(len(F)) if K[i][F[i][v]] >= th), None)
+                TX[(v, w)] = next((i for i in range(len(F)) if K[i][v] > thx), None)
         cnt = {}
         for i in range(len(F) - 1):
             for v in range(n):
                 if own[v] == 0 and F[i + 1][v] != F[i][v]:
                     e = (v, F[i + 1][v]); c['ADOPT'] += 1; cnt[e] = cnt.get(e, 0) + 1
                     if T[e] is not None and i >= T[e]: c['VIOL'] += 1
+                    if TX[e] is not None and i >= TX[e]: c['VIOLX'] += 1
         c['RETMAX'] = max([c['RETMAX']] + list(cnt.values()))
         last = F[-1]
         for i in range(len(F)):
