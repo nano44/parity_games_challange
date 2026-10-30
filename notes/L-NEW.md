@@ -1,7 +1,7 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 36, session_01V5yGRXhFvQKMGvnKST38br; FINAL, PARKED 2026-10-30 ~08:56Z by date -u, ~440k context)
+## Resume point (successor 36, session_01V5yGRXhFvQKMGvnKST38br; FINAL, PARKED 2026-10-30 ~08:54Z by date -u, ~440k context)
 ### DONE (all pushed via scripts/push.sh, VERIFY PASS; each reported to the Lead)
 - Box 72 N5-LZ (909be5eb, §6 177dbfb1): GXC anatomy; Lemma TIE; N5-LZC (lazy S4a tie-break) LZ-OPT / LZ-STRICT / LZ-NOGXC / LZ-NOSIL
   (OPT-ONLY); GXC-CLOSE; TXC-SRC, TXC-RHO (GXC does not bound REP*).

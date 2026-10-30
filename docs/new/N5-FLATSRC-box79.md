@@ -1,7 +1,7 @@
 # N5-FLATSRC (box 79): every flat transition carries a FLAT EVEN SWITCH (12882 / 12882, CONJECTURE FLAT-SW), so phase length reduces to Even's per-vertex flat decisions (≤ 14 per (vertex, phase) in data)
 L-NEW successor 36 (Opus 5.5), D14 / D18, Lead reading L40. Lead 08:41Z (read 08:48Z, after box 78 RET-WCH was pushed): «BOX 78: GO on
 FLAT-SRC. Measure the inheritance sources of dead-branch climbs first, then attempt the charge. Compare with L-RED's wall … TWO-SOURCE /
-PREFIX / GAP-IN-PREFIX … Then park with a FINAL resume point.» Numbered 79. Written 08:49Z-08:56Z (date -u). Working note, unrefereed, not
+PREFIX / GAP-IN-PREFIX … Then park with a FINAL resume point.» Numbered 79. Written 08:49Z-08:54Z (date -u). Working note, unrefereed, not
 a TARGET.md claim. G-N5-TIME OPEN.
 - Tool box79/flatsrc.py; run.sh gives flatsrc_*.txt (1132 runs × N5 and N5-LZC).
 
