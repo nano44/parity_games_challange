@@ -499,4 +499,10 @@ if grep -q "TAUSTART sbe_3.pg n 85 OPT iterations 19 tau_changes 0 fallbacks 0 m
 else
   echo "box 96 TAU check: FAILED"; exit 1
 fi
+w47=$(cd .. && python3 -I new/box97/orderdet.py n5-exhaustive/instances/n5s_maxph_0.pg; python3 -I new/box97/orderdet.py n5-exhaustive/instances/thetaA_n7.pg n5-exhaustive/instances/thetaA_n7.start; PERRUN=1 python3 -I new/box97/orderdet.py red/usplit/instances/gate_K64_n581.pg red/usplit/instances/gate_K64_n581.start)
+if grep -q "ORDDET n5s_maxph_0.pg n 5 STATES 4 WRUNS 1 REFMINX 0 REFMINUX 0 ODU 1 ODA 0 ODR 0" <<<"$w47" && grep -q "ORDDET thetaA_n7.pg n 7 STATES 4 WRUNS 1 REFMINX 0 REFMINUX 0 ODU 0 ODA 0 ODR 0 NRU 1 NRA 1 NRR 1 NRRS 1" <<<"$w47" && grep -q "RUN 0-71 F 71 maxU 6 A 11 OF 5 SBT 64 ORDCH 64 ORD 6" <<<"$w47"; then
+  echo "box 97 ORD: ORDER-DET U-form DEAD (n5s_maxph_0), NO-REPEAT DEAD (thetaA_n7), gate_K64: 64 sbar-change transitions over 6 refined orders on |A_F| = 11: PASS"
+else
+  echo "box 97 ORD check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

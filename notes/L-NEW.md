@@ -1,7 +1,21 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 39, Opus 5.5, session_01V5yGRWZiUTdfQjnywZGM8z; FINAL, PARKED 2026-10-30 ~19:3xZ by date -u, ~65% context)
+## Resume point (successor 40, Opus 5.5, session_01V5yGRaRG5NjEeJEbjinuUs, started 2026-10-30 20:00Z by date -u; commit 508a8711 trailer wrongly names succ. 39 session (not amended); handover: local clone was STALE at d4bcdd21, fast-forwarded to origin 185422e0, trunk 5e4f1301 merged)
+### Box 97 N5-ORD (Lead brief after 20:00Z: L-LIT T60 order template, ORDER-DET + NO-REPEAT): docs/new/N5-ORD-box97.md
+- ORDER-DET literal: TRUE but empty (sbar_k = S1(sigma_k)). U-form (order of Xi on U_k alone): DEAD, n5s_maxph_0 (n 5): flip out of tau(o),
+  tau(o) not a head. PROVED (lane, given L-SI SEL + NOCLOSE + [R57]): ORDER-DET-R, sbar_k(o) = refined-least of succ(o) n X for any X containing
+  sbar_k(o) (X = A_F := U_F u tau(O_F), or U'_k); Corollary FLIP-ORD: SBT_F <= ORDCH_F + XCN_F.
+- NO-REPEAT: DEAD, thetaA_n7 (n 7; refined A_F-order at state 0 recurs at 3, sbar(6) 5,5,1,5); corpus NRRS 89 runs. Holds on sbq2 / obs / latew,
+  but there |A_F| ~ 0.4n.
+- Any SBT_F <= f(max|U_k|) or f(|A_F|): DEAD, gate_K16 -> gate_K64 (SBT 16 -> 64, max|U| 6, |A_F| 11, 6 distinct orders). (3): no FPT, no
+  subclass; even both lemmas bound only the SB term, which HEAD-RED' already removed (residual = Xi-changes at heads, not order changes).
+- DATA: box97/orderdet.py on 1,132 corpus runs + 3 pins: REFMINX 0, REFMINUX 0, ODR 0, ODA 0; ODU 20 runs. Pins check.sh «box 97 ORD».
+### Box 97 pushed 508a8711 (VERIFY PASS), reported to the Lead 20:23Z.
+### Things only I know (successor 40): sb53 tools (rootflip.py etc.) and T60 are only on origin/claude/l-si / l-lit; I read them via git show.
+  orderdet.py on latew_K16_m32 takes ~50 s; runod.sh ~6 min on 4 cores.
+
+## Resume point (HISTORY; successor 39, Opus 5.5, session_01V5yGRWZiUTdfQjnywZGM8z; FINAL, PARKED 2026-10-30 ~19:3xZ by date -u, ~65% context)
 ### FINAL summary (successor 39): boxes 92-96 + all FIXD / WRUN fixes, every push via scripts/push.sh (VERIFY PASS), each reported to the Lead
 - 92 P-N5-WRUN frozen (7668bc9b; packet fae68aa0, line 0faa5b80): XI-RUN (|F| <= m_E + sum d_E XICH_F, from R86 SW-RETURN), WRUN-EQ table.
   Both referees signed every item; fixes entries 1-5, lines L-1..L-4 (L-4 98d9a50c, 5462315f, MATCHES at both referees); goes to CHECKER as R95.
@@ -1692,6 +1706,7 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
 - (succ. 38, box 87) [ARV] H. Ackermann, H. Röglin, B. Vöcking, ECCC TR06-067: Def. 2, Thm 3 + proof, Lemma 4 + proof, Thm 7 and the
   1-1-exchange paragraph (full PDF text read).
 - (succ. 38, box 89) T. Ralphs, IE411 Lecture 11 (Lehigh, coral.ise.lehigh.edu/~ted/files/ie411/lectures-python/Lecture11.pdf), slide 3 (PDF text read).
+- (succ. 40) L-LIT T60 (l-lit 54584c0c, docs/lit/T60-best-reply-flips.md §3.3, ORDER-DET / NO-REPEAT statements); L-SI box 53 (l-si aeb8c311, docs/si/N5-SBF-box53.md §2.1-§2.5, §3); P-N5-SETTLE §1-§2 (l-si a0970d36). [ABS] 2102.04922 and [GH] NOT opened (only T60's quotes; no theorem of theirs used).
 ## Dead ends
 - (box 47, successor 26, 11:13Z) CONJECTURE XD-1 (≤ 1 X_dir per {u, u′}-run): FALSE on experiments/new/box47/instances/pp2_n19.pg (sha1 97b5b132…),
   𝒞^2O, S3, phase [1, 3], D = {1}, {0}, {1}; length-only values (cycle node 9). Obstruction: each X_dir needs only an Even switch on each
@@ -1881,6 +1896,11 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
   si/root/instances/ueonce_n27 (edge (10, 23) twice) and new/box48/instances/long121_n40 (S3 start); blocks inherited from an earlier sigmabar.
 - (succ. 38, box 90) CONJECTURE SB-LIN (sigmabar changes per W-run <= n): FALSE on red/so/instances/pftheta34_n32.pg (S3 start; 34 > 32)
   and L-RED latew_K16_m32 (513 > 482).
+## Dead ends (successor 40, box 97; also in docs/new/N5-ORD-box97.md)
+- ORDER-DET-U (sbar a function of the Xi-order on R143's U_k): n5s_maxph_0 (n 5), states 0-1, U = {2} both, sbar(0) 1 -> 2 (tau(0) = 1 is not a head).
+- NO-REPEAT (head / A_F orders never recur in a W-run): thetaA_n7 (n 7), refined order of A_F = {1,2,5} at state 0 recurs at state 3, sbar(6) 5,5,1,5.
+- SB_F <= f(order-set size) (the [GH] r! count): gate_K16_n197 / gate_K64_n581 (.start), SBT 16 / 64 at max|U_k| 6, |A_F| 11, 6 distinct orders.
+
 ## Things only I know (earlier successors)
 - (succ. 8) Pitfalls in box 21:
   - `pkill -f "climb_fix.py ..."` killed my own shell (exit 144). Kill by `ps -eo pid,args | awk '$2=="python3" && $3==...'`.
