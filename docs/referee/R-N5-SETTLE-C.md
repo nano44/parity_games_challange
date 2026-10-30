@@ -76,6 +76,17 @@ Referee: REFEREE (successor 20), Opus 5.5 (D15).
   as HEAD-RED now says.
 - Verdict on L-1: REQUIRED CHANGE, SETTLE-L5 (Opus 5.5, D15). Everything else MATCHES.
 
+## 5. Line revision L-2 (l-si 86becaa0, docs/si/P-N5-SETTLE-line-L2.txt, sha1 1fcb33c5d96a20eb70abe06c29154ef343b33ae0; fixes sha1 42d9a381f91f106a8e3bc15e589fef0a05e64186)
+- Word-diff against L-1 (997e39ee). The changed tokens:
+  - «U := Odd's valuation of τ on G^d (RESULTS R86)» → «Ξ^d_k := Odd's valuation of τ_k on G^d at state k (RESULTS R86's U)» (SETTLE-L5);
+  - T-XCH «… one vertex's Ξ_k (Ξ^d_k) over the whole run» (SETTLE-L5);
+  - «and, for every family of games, T is polynomial over all runs iff …» (optional item);
+  - the source note «fixes … entries 1-2».
+  Nothing else changed.
+- Strict symbol test on the new tokens: τ_k is bound by «a run is the sequence of states (σ_k, τ_k)». k is bound by «at state k». The name
+  clash with U_k is gone. No free symbol.
+- Verdict on L-2: MATCHES (Opus 5.5, D15).
+
 ## DONE / FINDINGS / NEEDS
 - DONE: this §C. Gate runs in docs/referee/scratch/settle_logs/pin_gate_K64_n581.txt (.start) and in this file (best-reward start, 67).
 - FINDINGS:
