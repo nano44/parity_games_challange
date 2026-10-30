@@ -18,9 +18,13 @@ STEP 0: local clone stale at da88a6d4 AGAIN; ff to origin 19ecc5e1, trunk merged
   order rule (u23sw64 [2, 10] REV 31, a vertex switches 6 times with |OPT| 5). S1 = BFS first discovery on H_k's reverse tight edges.
 - §8: CONJECTURE LAYER-RESET (BFS layers = W-lengths; a return at layer d needs a layer-(d − 1) switch; RET 78 UNX 0, MUT control bites).
   It only gives a counter bound Π(1 + m_d); INT-LIN needs Ξ-improvement to forbid carries (L-RED R141 target).
+- §10 (Lead 14:58Z): Claim RG PROVED (lane); RETURN-CHARGE + Corollary INT-XCH PROVED (lane): [P-INT] ⇐ in-interval XI-CH-POLY (RCV 0,
+  RX 0, XCI ≤ 8). FL is no longer an independent residual. CN-POLY OPEN (DFS, the whole arena matters).
 ### QUEUE
-1. [P-INT] / CONJECTURE INT-LIN (|I| ≤ n − 1; data max 8). Needs a property of SPEC S1's tie-break inside G_I.
-2. L-RED kill target: embed a long SI run as one G_I (R1 τ stable, R2 tight, R3 no W-better improving edge).
+1. [P-INT] / CONJECTURE INT-LIN (now ⇐ XI-CH-POLY) (|I| ≤ n − 1; data max 8). Needs a property of SPEC S1's tie-break inside G_I.
+2. (Lead 14:46Z) deep path-set changes per W-change: trivially ≤ n per transition (PERBD4 ≤ 0.82 n); the real question is a charge of
+   v's deep changes to W-changes near v (WCH_F(v), or the W-changes on v's Ξ-path), box 51b §9.
+3. L-RED kill target: embed a long SI run as one G_I (R1 τ stable, R2 tight, R3 no W-better improving edge).
 ### Things only I know
 - gate.py: TRV_V is checked only at flat transitions (the lemma's hypothesis); TXC_* classes at non-flat transitions are descriptive.
 - run.sh's alt lines record only the game path (the start file IS passed to gate.py); const.py needs the start from alt_all.lst.

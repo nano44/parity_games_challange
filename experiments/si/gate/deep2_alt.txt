@@ -1,0 +1,413 @@
+GAME n5-epoch/instances/gci2_n12.pg n5-epoch/instances/gci2_n12.start DEEPINT gci2_n12.pg n 12 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 10
+GAME n5-epoch/instances/ffin4_n24.pg n5-epoch/instances/ffin4_n24.start DEEPINT ffin4_n24.pg n 24 N1_IN 0 N1_BD 37 N4_IN 0 N4_BD 1 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 1 BDT 15
+GAME n5-epoch/instances/ffin12_n32.pg n5-epoch/instances/ffin12_n32.start DEEPINT ffin12_n32.pg n 32 N1_IN 0 N1_BD 35 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 17
+GAME n5-epoch/instances/ffin5_n32.pg n5-epoch/instances/ffin5_n32.start DEEPINT ffin5_n32.pg n 32 N1_IN 0 N1_BD 23 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 12
+GAME n5-epoch/instances/immfail_n14.pg DEEPINT immfail_n14.pg n 14 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 3
+GAME n5-epoch/instances/gci3_n24.pg n5-epoch/instances/gci3_n24.start DEEPINT gci3_n24.pg n 24 N1_IN 0 N1_BD 19 N4_IN 0 N4_BD 1 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 1 BDT 20
+GAME n5-epoch/instances/immp_cex_n11.pg n5-epoch/instances/immp_cex_n11.start DEEPINT immp_cex_n11.pg n 11 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 2
+GAME n5-epoch/instances/lcount_n23.pg n5-epoch/instances/lcount_n23.start DEEPINT lcount_n23.pg n 23 N1_IN 0 N1_BD 15 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 4
+GAME n5-epoch/instances/lend13_n16.pg n5-epoch/instances/lend13_n16.start DEEPINT lend13_n16.pg n 16 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 13
+GAME n5-epoch/instances/lend15_n48.pg n5-epoch/instances/lend15_n48.start DEEPINT lend15_n48.pg n 48 N1_IN 0 N1_BD 37 N4_IN 0 N4_BD 2 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 1 BDT 11
+GAME n5-epoch/instances/lend27_n24.pg n5-epoch/instances/lend27_n24.start DEEPINT lend27_n24.pg n 24 N1_IN 0 N1_BD 30 N4_IN 0 N4_BD 12 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 6 BDT 23
+GAME n5-epoch/instances/lend107_n32.pg n5-epoch/instances/lend107_n32.start DEEPINT lend107_n32.pg n 32 N1_IN 0 N1_BD 94 N4_IN 0 N4_BD 4 D4 2 D4_IN 0 D4_BD 2 FLAT 0 PERFLAT4 0 PERBD4 1 BDT 96
+GAME n5-epoch/instances/lend39f_n32.pg n5-epoch/instances/lend39f_n32.start DEEPINT lend39f_n32.pg n 32 N1_IN 0 N1_BD 49 N4_IN 0 N4_BD 4 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 2 BDT 36
+GAME n5-epoch/instances/lend47_n32.pg n5-epoch/instances/lend47_n32.start DEEPINT lend47_n32.pg n 32 N1_IN 0 N1_BD 26 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 44
+GAME n5-epoch/instances/lend55_n32.pg n5-epoch/instances/lend55_n32.start DEEPINT lend55_n32.pg n 32 N1_IN 0 N1_BD 25 N4_IN 0 N4_BD 1 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 1 BDT 44
+GAME n5-epoch/instances/lend9_n8.pg n5-epoch/instances/lend9_n8.start DEEPINT lend9_n8.pg n 8 N1_IN 0 N1_BD 6 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 5
+GAME n5-epoch/instances/nep13_n24.pg n5-epoch/instances/nep13_n24.start DEEPINT nep13_n24.pg n 24 N1_IN 0 N1_BD 2 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 1 PERFLAT4 0 PERBD4 0 BDT 14
+GAME n5-epoch/instances/lend82_n32.pg n5-epoch/instances/lend82_n32.start DEEPINT lend82_n32.pg n 32 N1_IN 0 N1_BD 70 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 71
+GAME n5-epoch/instances/lend72_n48.pg n5-epoch/instances/lend72_n48.start DEEPINT lend72_n48.pg n 48 N1_IN 0 N1_BD 176 N4_IN 0 N4_BD 22 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 17 BDT 62
+GAME n5-epoch/instances/nep56_n32.pg n5-epoch/instances/nep56_n32.start DEEPINT nep56_n32.pg n 32 N1_IN 0 N1_BD 303 N4_IN 0 N4_BD 80 D4 6 D4_IN 0 D4_BD 6 FLAT 0 PERFLAT4 0 PERBD4 20 BDT 53
+GAME n5-epoch/instances/nep22f_n64.pg n5-epoch/instances/nep22f_n64.start DEEPINT nep22f_n64.pg n 64 N1_IN 10 N1_BD 47 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 2 PERFLAT4 0 PERBD4 0 BDT 9
+GAME n5-epoch/instances/nconf61_n48.pg n5-epoch/instances/nconf61_n48.start DEEPINT nconf61_n48.pg n 48 N1_IN 0 N1_BD 554 N4_IN 0 N4_BD 226 D4 10 D4_IN 0 D4_BD 10 FLAT 0 PERFLAT4 0 PERBD4 15 BDT 61
+GAME n5-epoch/instances/nep76_n40.pg n5-epoch/instances/nep76_n40.start DEEPINT nep76_n40.pg n 40 N1_IN 0 N1_BD 522 N4_IN 0 N4_BD 149 D4 8 D4_IN 0 D4_BD 8 FLAT 0 PERFLAT4 0 PERBD4 12 BDT 72
+GAME n5-epoch/instances/ret12_n40.pg n5-epoch/instances/ret12_n40.start DEEPINT ret12_n40.pg n 40 N1_IN 0 N1_BD 419 N4_IN 0 N4_BD 143 D4 10 D4_IN 0 D4_BD 10 FLAT 0 PERFLAT4 0 PERBD4 16 BDT 51
+GAME n5-epoch/instances/nep92_n40.pg n5-epoch/instances/nep92_n40.start DEEPINT nep92_n40.pg n 40 N1_IN 0 N1_BD 755 N4_IN 0 N4_BD 287 D4 9 D4_IN 0 D4_BD 9 FLAT 0 PERFLAT4 0 PERBD4 19 BDT 87
+GAME n5-exhaustive/instances/b4_cyc6_0.pg n5-exhaustive/instances/b4_cyc6_0.start DEEPINT b4_cyc6_0.pg n 11 N1_IN 0 N1_BD 3 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 2
+GAME n5-exhaustive/instances/b4_cyc6_1.pg DEEPINT b4_cyc6_1.pg n 12 N1_IN 0 N1_BD 5 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 4
+GAME n5-epoch/instances/ret14_n48.pg n5-epoch/instances/ret14_n48.start DEEPINT ret14_n48.pg n 48 N1_IN 0 N1_BD 499 N4_IN 0 N4_BD 109 D4 4 D4_IN 0 D4_BD 4 FLAT 0 PERFLAT4 0 PERBD4 13 BDT 41
+GAME n5-exhaustive/instances/b4_n4all_cyc3_0.pg n5-exhaustive/instances/b4_n4all_cyc3_0.start DEEPINT b4_n4all_cyc3_0.pg n 4 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 1
+GAME n5-epoch/instances/nep94_n48.pg n5-epoch/instances/nep94_n48.start DEEPINT nep94_n48.pg n 48 N1_IN 0 N1_BD 951 N4_IN 0 N4_BD 419 D4 9 D4_IN 0 D4_BD 9 FLAT 0 PERFLAT4 0 PERBD4 18 BDT 86
+GAME n5-exhaustive/instances/b4_n5_other_0.pg DEEPINT b4_n5_other_0.pg n 5 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 1
+GAME n5-exhaustive/instances/b4_nohlen5_0.pg n5-exhaustive/instances/b4_nohlen5_0.start DEEPINT b4_nohlen5_0.pg n 11 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 4
+GAME n5-exhaustive/instances/b4_theta_n7.pg n5-exhaustive/instances/b4_theta_n7.start DEEPINT b4_theta_n7.pg n 7 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 1
+GAME n5-exhaustive/instances/b5_n5_cyc4_0.pg DEEPINT b5_n5_cyc4_0.pg n 5 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 1
+GAME n5-exhaustive/instances/b5_o11.pg DEEPINT b5_o11.pg n 10 N1_IN 0 N1_BD 2 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 7
+GAME n5-epoch/instances/ret14_n64.pg n5-epoch/instances/ret14_n64.start DEEPINT ret14_n64.pg n 64 N1_IN 0 N1_BD 813 N4_IN 0 N4_BD 287 D4 9 D4_IN 0 D4_BD 9 FLAT 0 PERFLAT4 0 PERBD4 26 BDT 56
+GAME n5-exhaustive/instances/b5_os_n12.pg DEEPINT b5_os_n12.pg n 12 N1_IN 0 N1_BD 8 N4_IN 0 N4_BD 2 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 1 BDT 10
+GAME n5-exhaustive/instances/b5_os_n14.pg DEEPINT b5_os_n14.pg n 14 N1_IN 0 N1_BD 10 N4_IN 0 N4_BD 5 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 3 BDT 14
+GAME n5-exhaustive/instances/b5_os_n16.pg DEEPINT b5_os_n16.pg n 16 N1_IN 0 N1_BD 12 N4_IN 0 N4_BD 3 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 2 BDT 16
+GAME n5-exhaustive/instances/b5_os_n20.pg DEEPINT b5_os_n20.pg n 20 N1_IN 0 N1_BD 21 N4_IN 0 N4_BD 5 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 4 BDT 24
+GAME n5-exhaustive/instances/b5_os_n24.pg DEEPINT b5_os_n24.pg n 24 N1_IN 0 N1_BD 51 N4_IN 0 N4_BD 7 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 3 BDT 43
+GAME n5-exhaustive/instances/b5_os_n28.pg DEEPINT b5_os_n28.pg n 28 N1_IN 0 N1_BD 66 N4_IN 0 N4_BD 10 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 3 BDT 52
+GAME n5-exhaustive/instances/b5_os_n32.pg DEEPINT b5_os_n32.pg n 32 N1_IN 0 N1_BD 103 N4_IN 0 N4_BD 20 D4 2 D4_IN 0 D4_BD 2 FLAT 0 PERFLAT4 0 PERBD4 4 BDT 60
+GAME n5-exhaustive/instances/b5_os_n40.pg DEEPINT b5_os_n40.pg n 40 N1_IN 0 N1_BD 129 N4_IN 0 N4_BD 80 D4 2 D4_IN 0 D4_BD 2 FLAT 0 PERFLAT4 0 PERBD4 19 BDT 63
+GAME n5-exhaustive/instances/b6_xl2_n32.pg DEEPINT b6_xl2_n32.pg n 32 N1_IN 0 N1_BD 203 N4_IN 0 N4_BD 28 D4 2 D4_IN 0 D4_BD 2 FLAT 0 PERFLAT4 0 PERBD4 8 BDT 73
+GAME n5-exhaustive/instances/b6_xl_n32.pg DEEPINT b6_xl_n32.pg n 32 N1_IN 0 N1_BD 194 N4_IN 0 N4_BD 5 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 1 BDT 71
+GAME n5-exhaustive/instances/b6_xs_n24.pg DEEPINT b6_xs_n24.pg n 24 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 21
+GAME n5-exhaustive/instances/b6_xs_n32.pg DEEPINT b6_xs_n32.pg n 32 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 29
+GAME n5-exhaustive/instances/b6_xl_n40.pg DEEPINT b6_xl_n40.pg n 40 N1_IN 0 N1_BD 267 N4_IN 0 N4_BD 50 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 23 BDT 77
+GAME n5-exhaustive/instances/b6_xs_n40.pg DEEPINT b6_xs_n40.pg n 40 N1_IN 0 N1_BD 1 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 36
+GAME n5-exhaustive/instances/b6_xs_n48.pg DEEPINT b6_xs_n48.pg n 48 N1_IN 0 N1_BD 13 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 37
+GAME n5-exhaustive/instances/b6_xl_n48.pg DEEPINT b6_xl_n48.pg n 48 N1_IN 0 N1_BD 416 N4_IN 0 N4_BD 98 D4 3 D4_IN 0 D4_BD 3 FLAT 0 PERFLAT4 0 PERBD4 31 BDT 85
+GAME n5-exhaustive/instances/b6_xw_n32.pg DEEPINT b6_xw_n32.pg n 32 N1_IN 0 N1_BD 304 N4_IN 0 N4_BD 68 D4 3 D4_IN 0 D4_BD 3 FLAT 0 PERFLAT4 0 PERBD4 15 BDT 65
+GAME n5-exhaustive/instances/canonA_0.pg DEEPINT canonA_0.pg n 15 N1_IN 0 N1_BD 1 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 3
+GAME n5-exhaustive/instances/b6_xw_n40.pg DEEPINT b6_xw_n40.pg n 40 N1_IN 0 N1_BD 399 N4_IN 0 N4_BD 76 D4 4 D4_IN 0 D4_BD 4 FLAT 0 PERFLAT4 0 PERBD4 20 BDT 66
+GAME n5-exhaustive/instances/canonA_1.pg DEEPINT canonA_1.pg n 15 N1_IN 0 N1_BD 7 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 3
+GAME n5-exhaustive/instances/frz1_n24.pg n5-exhaustive/instances/frz1_n24.start DEEPINT frz1_n24.pg n 24 N1_IN 0 N1_BD 33 N4_IN 0 N4_BD 7 D4 2 D4_IN 0 D4_BD 2 FLAT 0 PERFLAT4 0 PERBD4 2 BDT 28
+GAME n5-exhaustive/instances/b6_xw_n48.pg DEEPINT b6_xw_n48.pg n 48 N1_IN 0 N1_BD 522 N4_IN 0 N4_BD 116 D4 4 D4_IN 0 D4_BD 4 FLAT 0 PERFLAT4 0 PERBD4 28 BDT 71
+GAME n5-exhaustive/instances/frz2_n24.pg n5-exhaustive/instances/frz2_n24.start DEEPINT frz2_n24.pg n 24 N1_IN 0 N1_BD 39 N4_IN 0 N4_BD 5 D4 2 D4_IN 0 D4_BD 2 FLAT 0 PERFLAT4 0 PERBD4 2 BDT 23
+GAME n5-exhaustive/instances/frz3_n24.pg n5-exhaustive/instances/frz3_n24.start DEEPINT frz3_n24.pg n 24 N1_IN 0 N1_BD 32 N4_IN 0 N4_BD 7 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 3 BDT 24
+GAME n5-exhaustive/instances/n3all_maxph_0.pg n5-exhaustive/instances/n3all_maxph_0.start DEEPINT n3all_maxph_0.pg n 3 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME n5-exhaustive/instances/n3all_maxph_1.pg n5-exhaustive/instances/n3all_maxph_1.start DEEPINT n3all_maxph_1.pg n 3 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME n5-exhaustive/instances/b6_xw_n56.pg DEEPINT b6_xw_n56.pg n 56 N1_IN 0 N1_BD 554 N4_IN 0 N4_BD 103 D4 4 D4_IN 0 D4_BD 4 FLAT 0 PERFLAT4 0 PERBD4 30 BDT 72
+GAME n5-exhaustive/instances/n3all_maxph_2.pg n5-exhaustive/instances/n3all_maxph_2.start DEEPINT n3all_maxph_2.pg n 3 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME n5-exhaustive/instances/n4_maxph_0.pg DEEPINT n4_maxph_0.pg n 4 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 1
+GAME n5-exhaustive/instances/n4_maxph_1.pg DEEPINT n4_maxph_1.pg n 4 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 1
+GAME n5-exhaustive/instances/n4_thch_0.pg DEEPINT n4_thch_0.pg n 4 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME n5-exhaustive/instances/n4all_tgbad_0.pg n5-exhaustive/instances/n4all_tgbad_0.start DEEPINT n4all_tgbad_0.pg n 4 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 1
+GAME n5-exhaustive/instances/n4all_maxph_0.pg n5-exhaustive/instances/n4all_maxph_0.start DEEPINT n4all_maxph_0.pg n 4 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 2
+GAME n5-exhaustive/instances/n4all_thch_0.pg n5-exhaustive/instances/n4all_thch_0.start DEEPINT n4all_thch_0.pg n 4 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 1
+GAME n5-exhaustive/instances/n4all_maxph_1.pg n5-exhaustive/instances/n4all_maxph_1.start DEEPINT n4all_maxph_1.pg n 4 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 2
+GAME n5-exhaustive/instances/n5s_maxph_0.pg DEEPINT n5s_maxph_0.pg n 5 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 1
+GAME n5-exhaustive/instances/nh_n8.pg n5-exhaustive/instances/nh_n8.start DEEPINT nh_n8.pg n 8 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 3
+GAME n5-exhaustive/instances/thetaA_canon_n8.pg DEEPINT thetaA_canon_n8.pg n 8 N1_IN 0 N1_BD 1 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 3
+GAME n5-exhaustive/instances/thetaA_canon_n12.pg DEEPINT thetaA_canon_n12.pg n 12 N1_IN 0 N1_BD 1 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 3
+GAME n5-exhaustive/instances/thetaA_n17.pg n5-exhaustive/instances/thetaA_n17.start DEEPINT thetaA_n17.pg n 17 N1_IN 0 N1_BD 5 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 3
+GAME n5-exhaustive/instances/thetaA_n6.pg n5-exhaustive/instances/thetaA_n6.start DEEPINT thetaA_n6.pg n 6 N1_IN 0 N1_BD 2 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 3
+GAME n5-exhaustive/instances/thetaA_n9.pg n5-exhaustive/instances/thetaA_n9.start DEEPINT thetaA_n9.pg n 9 N1_IN 0 N1_BD 2 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 3
+GAME n5-exhaustive/instances/thetaA_n7.pg n5-exhaustive/instances/thetaA_n7.start DEEPINT thetaA_n7.pg n 7 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 3
+GAME n5-exhaustive/instances/wk2_n32.pg n5-exhaustive/instances/wk2_n32.start DEEPINT wk2_n32.pg n 32 N1_IN 0 N1_BD 11 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 4
+GAME n5-exhaustive/instances/wk1_n32.pg n5-exhaustive/instances/wk1_n32.start DEEPINT wk1_n32.pg n 32 N1_IN 0 N1_BD 10 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 4
+GAME new/box48/instances/long121_n40.pg new/box48/instances/long121_n40.start DEEPINT long121_n40.pg n 40 N1_IN 0 N1_BD 508 N4_IN 0 N4_BD 157 D4 3 D4_IN 0 D4_BD 3 FLAT 0 PERFLAT4 0 PERBD4 29 BDT 113
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.pg new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.start DEEPINT best_qpc_nep76_n40_s63.pg n 64 N1_IN 0 N1_BD 883 N4_IN 0 N4_BD 331 D4 6 D4_IN 0 D4_BD 6 FLAT 0 PERFLAT4 0 PERBD4 39 BDT 80
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.pg new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.start DEEPINT best_qpc_nep90_n40_s61.pg n 64 N1_IN 0 N1_BD 1173 N4_IN 0 N4_BD 528 D4 9 D4_IN 0 D4_BD 9 FLAT 0 PERFLAT4 0 PERBD4 49 BDT 90
+GAME red/carry/instances/absmono_viol_n44.pg DEEPINT absmono_viol_n44.pg n 44 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/carry/instances/carry3_2_2.pg DEEPINT carry3_2_2.pg n 47 N1_IN 0 N1_BD 3 N4_IN 0 N4_BD 3 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 3 BDT 1
+GAME red/carry/instances/cm_mdrop_both_n28.pg DEEPINT cm_mdrop_both_n28.pg n 28 N1_IN 0 N1_BD 1 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 3
+GAME red/carry/instances/cm_mdrop_oink_n28.pg DEEPINT cm_mdrop_oink_n28.pg n 28 N1_IN 0 N1_BD 8 N4_IN 0 N4_BD 1 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 1 BDT 1
+GAME red/carry/instances/ctx11_n40.pg DEEPINT ctx11_n40.pg n 40 N1_IN 0 N1_BD 12 N4_IN 0 N4_BD 2 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 2 BDT 2
+GAME red/carry/instances/ctx12_n40.pg DEEPINT ctx12_n40.pg n 40 N1_IN 0 N1_BD 5 N4_IN 0 N4_BD 1 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 1 BDT 1
+GAME red/carry/instances/ctx6_n20.pg DEEPINT ctx6_n20.pg n 20 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/carry/instances/ctx13_n40.pg DEEPINT ctx13_n40.pg n 40 N1_IN 0 N1_BD 6 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 8
+GAME red/carry/instances/ctx7_n30.pg DEEPINT ctx7_n30.pg n 30 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.pg new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.start DEEPINT best_qpc_nep90_n40_s62.pg n 80 N1_IN 0 N1_BD 1615 N4_IN 0 N4_BD 644 D4 8 D4_IN 0 D4_BD 8 FLAT 0 PERFLAT4 0 PERBD4 43 BDT 93
+GAME red/carry/instances/ctx6_n56.pg DEEPINT ctx6_n56.pg n 56 N1_IN 0 N1_BD 2 N4_IN 0 N4_BD 2 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 2 BDT 1
+GAME red/carry/instances/f1_twodef_n48.pg DEEPINT f1_twodef_n48.pg n 48 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/carry/instances/f1_twofall_n48.pg DEEPINT f1_twofall_n48.pg n 48 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/carry/instances/fallv_viol_n28.pg DEEPINT fallv_viol_n28.pg n 28 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/carry/instances/fall3_n76.pg DEEPINT fall3_n76.pg n 76 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/carry/instances/fired10_n20.pg DEEPINT fired10_n20.pg n 20 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 1
+GAME red/carry/instances/firedlong667_n20.pg DEEPINT firedlong667_n20.pg n 20 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME new/box48/out/qpcclimb/scale/snap_n80_s62.pg new/box48/out/qpcclimb/scale/snap_n80_s62.start DEEPINT snap_n80_s62.pg n 80 N1_IN 0 N1_BD 1615 N4_IN 0 N4_BD 644 D4 8 D4_IN 0 D4_BD 8 FLAT 0 PERFLAT4 0 PERBD4 43 BDT 93
+GAME red/carry/instances/firedlong667_n43.pg DEEPINT firedlong667_n43.pg n 43 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/carry/instances/fall4_n116.pg DEEPINT fall4_n116.pg n 116 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/carry/instances/h4_compound2x2_n44.pg DEEPINT h4_compound2x2_n44.pg n 44 N1_IN 0 N1_BD 5 N4_IN 0 N4_BD 5 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 5 BDT 3
+GAME red/carry/instances/firedstep13_n76.pg DEEPINT firedstep13_n76.pg n 76 N1_IN 0 N1_BD 19 N4_IN 0 N4_BD 2 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 2 BDT 2
+GAME red/carry/instances/gapbW_dup_n20.pg DEEPINT gapbW_dup_n20.pg n 20 N1_IN 0 N1_BD 9 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 2
+GAME red/carry/instances/gapb_dup_n20.pg DEEPINT gapb_dup_n20.pg n 20 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/carry/instances/h4_def2ctx_n20.pg DEEPINT h4_def2ctx_n20.pg n 20 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 1
+GAME red/carry/instances/h4_def7_n28.pg DEEPINT h4_def7_n28.pg n 28 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/carry/instances/h4_compound_n44.pg DEEPINT h4_compound_n44.pg n 44 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/carry/instances/h4_disjoint_n20.pg DEEPINT h4_disjoint_n20.pg n 20 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/carry/instances/h4_notweaker_n20.pg DEEPINT h4_notweaker_n20.pg n 20 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/carry/instances/kfirst_viol_n13.pg DEEPINT kfirst_viol_n13.pg n 13 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/carry/instances/lalg_dtl_mviol_n20.pg DEEPINT lalg_dtl_mviol_n20.pg n 20 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/carry/instances/kin_viol_n29.pg DEEPINT kin_viol_n29.pg n 29 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/carry/instances/lemmaS_viol_n20.pg DEEPINT lemmaS_viol_n20.pg n 20 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/carry/instances/lex_viol_tie_n28.pg DEEPINT lex_viol_tie_n28.pg n 28 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/carry/instances/lemmaS_Mdrop_n20.pg DEEPINT lemmaS_Mdrop_n20.pg n 20 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 1
+GAME red/carry/instances/meet_viol_n17.pg DEEPINT meet_viol_n17.pg n 17 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/carry/instances/lex_viol_inj_n28.pg DEEPINT lex_viol_inj_n28.pg n 28 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/carry/instances/meet_viol_n29.pg DEEPINT meet_viol_n29.pg n 29 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/carry/instances/nosig_2_3.pg DEEPINT nosig_2_3.pg n 24 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 1
+GAME red/carry/instances/phi_flat_alive_n32.pg DEEPINT phi_flat_alive_n32.pg n 32 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/carry/instances/pk_viol_n20.pg DEEPINT pk_viol_n20.pg n 20 N1_IN 0 N1_BD 1 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 1
+GAME red/carry/instances/replay4_n32.pg DEEPINT replay4_n32.pg n 32 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/carry/instances/spp19_oink_n30.pg DEEPINT spp19_oink_n30.pg n 30 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/carry/instances/spp19_stable_n30.pg DEEPINT spp19_stable_n30.pg n 30 N1_IN 0 N1_BD 9 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 2
+GAME red/carry/instances/spp22_oink_n40.pg DEEPINT spp22_oink_n40.pg n 40 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/carry/instances/stealonce_both_n45.pg DEEPINT stealonce_both_n45.pg n 45 N1_IN 0 N1_BD 2 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 1
+GAME red/carry/instances/stealonce_core_n76.pg DEEPINT stealonce_core_n76.pg n 76 N1_IN 0 N1_BD 2 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 1
+GAME red/carry/instances/spp25_oink_n40.pg DEEPINT spp25_oink_n40.pg n 40 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 3
+GAME red/carry/instances/tstep_near_n20.pg DEEPINT tstep_near_n20.pg n 20 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/ctxp/instances/deep1_n13.pg DEEPINT deep1_n13.pg n 13 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/carry/instances/stealer_viol_n76.pg DEEPINT stealer_viol_n76.pg n 76 N1_IN 0 N1_BD 5 N4_IN 0 N4_BD 1 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 1 BDT 1
+GAME red/ctxp/instances/deep1_n21.pg DEEPINT deep1_n21.pg n 21 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/carry/instances/stealonce_viol_n76.pg DEEPINT stealonce_viol_n76.pg n 76 N1_IN 0 N1_BD 6 N4_IN 0 N4_BD 2 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 2 BDT 1
+GAME red/dtl/instances/lalg_dtl_pertop31_n18.pg DEEPINT lalg_dtl_pertop31_n18.pg n 18 N1_IN 0 N1_BD 2 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 1
+GAME red/ctxp/instances/margin1_n20.pg DEEPINT margin1_n20.pg n 20 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/ctxp/instances/margin1_mc1.pg DEEPINT margin1_mc1.pg n 80 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/ctxp/instances/margin1_mc5.pg DEEPINT margin1_mc5.pg n 50 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/fbr/instances/bghm_k1_gap6_A.pg DEEPINT bghm_k1_gap6_A.pg n 21 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/dtl/instances/lalg_dtl_restart8_n20.pg DEEPINT lalg_dtl_restart8_n20.pg n 20 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/fbr/instances/bghm_k3_gap4_A.pg DEEPINT bghm_k3_gap4_A.pg n 45 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/fbr/instances/fr39_q4_n48.pg DEEPINT fr39_q4_n48.pg n 48 N1_IN 0 N1_BD 3 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 32
+GAME red/fbr/instances/lev74_n40.pg DEEPINT lev74_n40.pg n 40 N1_IN 0 N1_BD 30 N4_IN 0 N4_BD 7 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 4 BDT 6
+GAME red/fbr/instances/nep80_n40.pg DEEPINT nep80_n40.pg n 40 N1_IN 0 N1_BD 69 N4_IN 0 N4_BD 24 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 13 BDT 9
+GAME red/fbr/instances/rho144_n32.pg DEEPINT rho144_n32.pg n 32 N1_IN 0 N1_BD 51 N4_IN 0 N4_BD 40 D4 2 D4_IN 0 D4_BD 2 FLAT 0 PERFLAT4 0 PERBD4 21 BDT 2
+GAME red/fbr/instances/rho3_253_n32.pg DEEPINT rho3_253_n32.pg n 32 N1_IN 0 N1_BD 74 N4_IN 0 N4_BD 41 D4 3 D4_IN 0 D4_BD 3 FLAT 0 PERFLAT4 0 PERBD4 16 BDT 4
+GAME red/fbr/instances/rho84_n16.pg DEEPINT rho84_n16.pg n 16 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/fbr/instances/sat4_n20.pg DEEPINT sat4_n20.pg n 20 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 1
+GAME red/fbr/instances/lev56_n48.pg DEEPINT lev56_n48.pg n 48 N1_IN 0 N1_BD 436 N4_IN 0 N4_BD 27 D4 2 D4_IN 0 D4_BD 2 FLAT 0 PERFLAT4 0 PERBD4 6 BDT 70
+GAME red/fbr/instances/rho666_n48.pg DEEPINT rho666_n48.pg n 48 N1_IN 0 N1_BD 86 N4_IN 0 N4_BD 24 D4 3 D4_IN 0 D4_BD 3 FLAT 0 PERFLAT4 0 PERBD4 10 BDT 9
+GAME red/fbr/instances/sat68_n20.pg DEEPINT sat68_n20.pg n 20 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 1
+GAME red/fbx/instances/exsw_loop_n15.pg DEEPINT exsw_loop_n15.pg n 15 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/fbr/instances/twowave_L16.pg DEEPINT twowave_L16.pg n 22 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 15
+GAME red/frz/instances/fbcap_eq_u4_n11.pg DEEPINT fbcap_eq_u4_n11.pg n 11 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/frz/instances/fx2_n11.pg DEEPINT fx2_n11.pg n 11 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/h3/instances/frzgap0_n4.pg DEEPINT frzgap0_n4.pg n 4 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/h3/instances/frzgap0_n6.pg DEEPINT frzgap0_n6.pg n 6 N1_IN 0 N1_BD 1 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 2
+GAME red/fbx/instances/kt6_n58.pg DEEPINT kt6_n58.pg n 58 N1_IN 2 N1_BD 26 N4_IN 0 N4_BD 1 D4 1 D4_IN 0 D4_BD 1 FLAT 2 PERFLAT4 0 PERBD4 1 BDT 27
+GAME red/h3/instances/offret_l19_n24.pg DEEPINT offret_l19_n24.pg n 24 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/h3/instances/lcount2_n23.pg red/h3/instances/lcount2_n23.start DEEPINT lcount2_n23.pg n 23 N1_IN 0 N1_BD 6 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 3
+GAME red/h3/instances/lcount_n23.pg red/h3/instances/lcount_n23.start DEEPINT lcount_n23.pg n 23 N1_IN 0 N1_BD 15 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 4
+GAME red/kl/instances/klcount_n16.pg DEEPINT klcount_n16.pg n 16 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/h3/instances/xsnpre36_n48.pg DEEPINT xsnpre36_n48.pg n 48 N1_IN 0 N1_BD 3 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 30
+GAME red/kl/instances/klcount_n18_base.pg DEEPINT klcount_n18_base.pg n 18 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/kl/instances/klcount_n18_lvl.pg DEEPINT klcount_n18_lvl.pg n 18 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/kl/instances/klglobal_n16.pg DEEPINT klglobal_n16.pg n 16 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/kl/instances/klglobal_n18_lvl.pg DEEPINT klglobal_n18_lvl.pg n 18 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/kl/instances/klglobal_n20_lvl2.pg DEEPINT klglobal_n20_lvl2.pg n 20 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/kl/instances/klmin_n13.pg DEEPINT klmin_n13.pg n 13 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 1
+GAME red/kl/instances/r2climb_h13.pg DEEPINT r2climb_h13.pg n 13 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/kl/instances/r2lap_best_n22.pg DEEPINT r2lap_best_n22.pg n 22 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/kl24/instances/HL88_0.pg DEEPINT HL88_0.pg n 41 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 1
+GAME red/kl/instances/r2crawl_n14.pg DEEPINT r2crawl_n14.pg n 14 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/kl/instances/r2join_h0E_n14.pg DEEPINT r2join_h0E_n14.pg n 14 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/kl24/instances/HL88_1.pg DEEPINT HL88_1.pg n 43 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 1
+GAME red/kl24/instances/HL88_2.pg DEEPINT HL88_2.pg n 45 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 1
+GAME red/kl24/instances/HL88_3.pg DEEPINT HL88_3.pg n 47 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 1
+GAME red/kl24/instances/HLg_0.pg DEEPINT HLg_0.pg n 29 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 1
+GAME red/kl24/instances/HLg_1.pg DEEPINT HLg_1.pg n 35 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 1
+GAME red/kl24/instances/HLg_2.pg DEEPINT HLg_2.pg n 45 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 1
+GAME red/kl24/instances/HLg_3.pg DEEPINT HLg_3.pg n 55 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 1
+GAME red/kw/instances/cw11_n24.pg DEEPINT cw11_n24.pg n 24 N1_IN 6 N1_BD 18 N4_IN 1 N4_BD 1 D4 1 D4_IN 1 D4_BD 1 FLAT 7 PERFLAT4 1 PERBD4 1 BDT 5
+GAME red/kw/instances/frzu_tight_n14.pg DEEPINT frzu_tight_n14.pg n 14 N1_IN 0 N1_BD 2 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 3
+GAME red/kw/instances/kc18_n24.pg DEEPINT kc18_n24.pg n 24 N1_IN 0 N1_BD 22 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 19
+GAME red/lag/instances/depth2_n39.pg DEEPINT depth2_n39.pg n 39 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 1
+GAME red/lag/instances/depth3_n46.pg DEEPINT depth3_n46.pg n 46 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/lag/instances/depth4_n53.pg DEEPINT depth4_n53.pg n 53 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 1
+GAME red/lag/instances/fam_D12_n106.pg DEEPINT fam_D12_n106.pg n 106 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/lag/instances/fam_D4_n50.pg DEEPINT fam_D4_n50.pg n 50 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/lag/instances/fam_D8_n78.pg DEEPINT fam_D8_n78.pg n 78 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/mei/instances/mei_h2.pg DEEPINT mei_h2.pg n 19 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/mei/instances/mei_h3.pg DEEPINT mei_h3.pg n 27 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/mei/instances/mei_h4.pg DEEPINT mei_h4.pg n 35 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/mei/instances/mei_h5.pg DEEPINT mei_h5.pg n 43 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/mei/instances/mei_h6.pg DEEPINT mei_h6.pg n 51 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/mei/instances/mei_h8.pg DEEPINT mei_h8.pg n 67 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/n3/instances/core41_n40.pg red/n3/instances/core41_n40.start DEEPINT core41_n40.pg n 40 N1_IN 0 N1_BD 183 N4_IN 0 N4_BD 19 D4 2 D4_IN 0 D4_BD 2 FLAT 0 PERFLAT4 0 PERBD4 6 BDT 35
+GAME red/n3/instances/lag11_n40.pg red/n3/instances/lag11_n40.start DEEPINT lag11_n40.pg n 40 N1_IN 0 N1_BD 98 N4_IN 0 N4_BD 51 D4 7 D4_IN 0 D4_BD 7 FLAT 0 PERFLAT4 0 PERBD4 13 BDT 15
+GAME red/n3/instances/lagx10_n40.pg red/n3/instances/lagx10_n40.start DEEPINT lagx10_n40.pg n 40 N1_IN 0 N1_BD 39 N4_IN 0 N4_BD 12 D4 4 D4_IN 0 D4_BD 4 FLAT 0 PERFLAT4 0 PERBD4 5 BDT 11
+GAME red/n3/instances/n3cov_lean.pg red/n3/instances/n3cov_lean.start DEEPINT n3cov_lean.pg n 48 N1_IN 0 N1_BD 88 N4_IN 0 N4_BD 23 D4 2 D4_IN 0 D4_BD 2 FLAT 0 PERFLAT4 0 PERBD4 11 BDT 30
+GAME red/n3/instances/comp54_n80.pg red/n3/instances/comp54_n80.start DEEPINT comp54_n80.pg n 80 N1_IN 0 N1_BD 762 N4_IN 0 N4_BD 331 D4 7 D4_IN 0 D4_BD 7 FLAT 0 PERFLAT4 0 PERBD4 36 BDT 48
+GAME red/n3/instances/long90_k2_n40.pg red/n3/instances/long90_k2_n40.start DEEPINT long90_k2_n40.pg n 40 N1_IN 0 N1_BD 295 N4_IN 0 N4_BD 57 D4 2 D4_IN 0 D4_BD 2 FLAT 0 PERFLAT4 0 PERBD4 12 BDT 82
+GAME red/n3/instances/n3cov_phi.pg red/n3/instances/n3cov_phi.start DEEPINT n3cov_phi.pg n 32 N1_IN 0 N1_BD 216 N4_IN 0 N4_BD 33 D4 3 D4_IN 0 D4_BD 3 FLAT 0 PERFLAT4 0 PERBD4 17 BDT 23
+GAME red/n3/instances/long121_n40.pg red/n3/instances/long121_n40.start DEEPINT long121_n40.pg n 40 N1_IN 0 N1_BD 508 N4_IN 0 N4_BD 157 D4 3 D4_IN 0 D4_BD 3 FLAT 0 PERFLAT4 0 PERBD4 29 BDT 113
+GAME red/n3/instances/run49_n32.pg red/n3/instances/run49_n32.start DEEPINT run49_n32.pg n 32 N1_IN 0 N1_BD 93 N4_IN 0 N4_BD 4 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 4 BDT 49
+GAME red/n3/instances/run34_n40.pg red/n3/instances/run34_n40.start DEEPINT run34_n40.pg n 40 N1_IN 0 N1_BD 144 N4_IN 0 N4_BD 25 D4 3 D4_IN 0 D4_BD 3 FLAT 0 PERFLAT4 0 PERBD4 14 BDT 43
+GAME red/n5/instances/dl_4_4.pg red/n5/instances/dl_4_4.start DEEPINT dl_4_4.pg n 42 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/n5/instances/dlm2_4.pg red/n5/instances/dlm2_4.start DEEPINT dlm2_4.pg n 42 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/n3/instances/ret22_n40.pg red/n3/instances/ret22_n40.start DEEPINT ret22_n40.pg n 40 N1_IN 0 N1_BD 650 N4_IN 0 N4_BD 193 D4 5 D4_IN 0 D4_BD 5 FLAT 0 PERFLAT4 0 PERBD4 27 BDT 82
+GAME red/n5/instances/sym_h12_s1.pg DEEPINT sym_h12_s1.pg n 24 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/n5/instances/sym_h8_s1.pg DEEPINT sym_h8_s1.pg n 16 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/n5inj/instances/block_bk20.pg DEEPINT block_bk20.pg n 24 N1_IN 0 N1_BD 6 N4_IN 0 N4_BD 1 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 1 BDT 17
+GAME red/n5/instances/sym_h16_s1.pg DEEPINT sym_h16_s1.pg n 32 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 1
+GAME red/n5inj/instances/block_bk32.pg DEEPINT block_bk32.pg n 36 N1_IN 0 N1_BD 42 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 21
+GAME red/n5/instances/dl_6_8.pg red/n5/instances/dl_6_8.start DEEPINT dl_6_8.pg n 110 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/n5inj/instances/blockph_bp20.pg DEEPINT blockph_bp20.pg n 24 N1_IN 0 N1_BD 2 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 22
+GAME red/n5inj/instances/bribe_cex_n15.pg DEEPINT bribe_cex_n15.pg n 15 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/n5inj/instances/blockph_bp32.pg DEEPINT blockph_bp32.pg n 36 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 30
+GAME red/n5inj/instances/frz24.pg red/n5inj/instances/frz24.start DEEPINT frz24.pg n 24 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 22
+GAME red/n5inj/instances/frz32.pg red/n5inj/instances/frz32.start DEEPINT frz32.pg n 32 N1_IN 0 N1_BD 55 N4_IN 0 N4_BD 12 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 10 BDT 43
+GAME red/n5inj/instances/phase2_pk32.pg DEEPINT phase2_pk32.pg n 32 N1_IN 0 N1_BD 11 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 44
+GAME red/n5inj/instances/frz40.pg red/n5inj/instances/frz40.start DEEPINT frz40.pg n 40 N1_IN 0 N1_BD 143 N4_IN 0 N4_BD 32 D4 2 D4_IN 0 D4_BD 2 FLAT 0 PERFLAT4 0 PERBD4 13 BDT 74
+GAME red/n5inj/instances/elimn_cex_n48.pg DEEPINT elimn_cex_n48.pg n 48 N1_IN 0 N1_BD 180 N4_IN 0 N4_BD 8 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 2 BDT 79
+GAME red/n5inj/instances/phase2_pk48.pg DEEPINT phase2_pk48.pg n 48 N1_IN 0 N1_BD 38 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 40
+GAME red/n5inj/instances/returns_rt32.pg DEEPINT returns_rt32.pg n 32 N1_IN 0 N1_BD 1 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 44
+GAME red/n5inj/instances/theta_thc24.pg DEEPINT theta_thc24.pg n 24 N1_IN 0 N1_BD 15 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 16
+GAME red/n5inj/instances/theta_thf16.pg DEEPINT theta_thf16.pg n 16 N1_IN 0 N1_BD 71 N4_IN 0 N4_BD 21 D4 3 D4_IN 0 D4_BD 3 FLAT 0 PERFLAT4 0 PERBD4 6 BDT 17
+GAME red/n5inj/instances/returns_rt48.pg DEEPINT returns_rt48.pg n 48 N1_IN 0 N1_BD 128 N4_IN 0 N4_BD 10 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 3 BDT 64
+GAME red/n5inj/instances/returns_ph64.pg DEEPINT returns_ph64.pg n 64 N1_IN 0 N1_BD 223 N4_IN 0 N4_BD 3 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 2 BDT 88
+GAME red/n5inj/instances/theta_tp32.pg DEEPINT theta_tp32.pg n 32 N1_IN 0 N1_BD 97 N4_IN 0 N4_BD 3 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 2 BDT 40
+GAME red/n5inj/instances/theta_tp40.pg DEEPINT theta_tp40.pg n 40 N1_IN 0 N1_BD 51 N4_IN 0 N4_BD 14 D4 4 D4_IN 0 D4_BD 4 FLAT 0 PERFLAT4 0 PERBD4 10 BDT 36
+GAME red/n5inj/instances/wide_h16.pg DEEPINT wide_h16.pg n 32 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/nest16/instances/k4L72_n101.pg DEEPINT k4L72_n101.pg n 101 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/n5inj/instances/returns_rt64.pg DEEPINT returns_rt64.pg n 64 N1_IN 0 N1_BD 93 N4_IN 0 N4_BD 6 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 2 BDT 73
+GAME red/nest16/instances/k4g50_n101.pg DEEPINT k4g50_n101.pg n 101 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/nest16/instances/k4L72r_n101.pg DEEPINT k4L72r_n101.pg n 101 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/nest16/instances/k4seed_c1_n82.pg DEEPINT k4seed_c1_n82.pg n 82 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/nest16/instances/k4seed_vr_n87.pg DEEPINT k4seed_vr_n87.pg n 87 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/nest16/instances/k4u_n101.pg DEEPINT k4u_n101.pg n 101 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/nest16/instances/k4y1_n82.pg DEEPINT k4y1_n82.pg n 82 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/nest16/instances/k4y2_n87.pg DEEPINT k4y2_n87.pg n 87 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/nest16/instances/near4_n26.pg DEEPINT near4_n26.pg n 26 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/nest16/instances/nest4u_n46.pg DEEPINT nest4u_n46.pg n 46 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/nest16/instances/nest4uu_n51.pg DEEPINT nest4uu_n51.pg n 51 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/nest16/instances/nest5_n49.pg DEEPINT nest5_n49.pg n 49 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/nest16/instances/nest6x_n75.pg DEEPINT nest6x_n75.pg n 75 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/nest16/instances/oseg_n26.pg DEEPINT oseg_n26.pg n 26 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/nest16/instances/nest6_n75.pg DEEPINT nest6_n75.pg n 75 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/nest16/instances/nest6min_n75.pg DEEPINT nest6min_n75.pg n 75 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/nest16/instances/win3_n27.pg DEEPINT win3_n27.pg n 27 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/nest16/instances/w1_n27.pg DEEPINT w1_n27.pg n 27 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/nopre/instances/nopre_viol_n20.pg DEEPINT nopre_viol_n20.pg n 20 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/o1/instances/ph50_n32.pg DEEPINT ph50_n32.pg n 32 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/o1/instances/iter118_n48.pg DEEPINT iter118_n48.pg n 48 N1_IN 0 N1_BD 82 N4_IN 0 N4_BD 13 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 12 BDT 13
+GAME red/o1/instances/ph45_n32.pg DEEPINT ph45_n32.pg n 32 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/o1/instances/tau18_n24.pg DEEPINT tau18_n24.pg n 24 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/o1/instances/f39_n48.pg DEEPINT f39_n48.pg n 48 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 33
+GAME red/rec0/instances/fbd0_n4.pg DEEPINT fbd0_n4.pg n 4 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/rec0/instances/n0_6_n24.pg DEEPINT n0_6_n24.pg n 24 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 1
+GAME red/rec0/instances/nep24_n20.pg DEEPINT nep24_n20.pg n 20 N1_IN 0 N1_BD 2 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 1
+GAME red/rec0/instances/lend2_30_n48.pg DEEPINT lend2_30_n48.pg n 48 N1_IN 0 N1_BD 82 N4_IN 0 N4_BD 20 D4 2 D4_IN 0 D4_BD 2 FLAT 0 PERFLAT4 0 PERBD4 19 BDT 13
+GAME red/sgrow/instances/s20_n20.pg DEEPINT s20_n20.pg n 20 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 1
+GAME red/sgrow/instances/s21_oink_n20.pg DEEPINT s21_oink_n20.pg n 20 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/rec0/instances/nep87_n40.pg DEEPINT nep87_n40.pg n 40 N1_IN 0 N1_BD 82 N4_IN 0 N4_BD 20 D4 5 D4_IN 0 D4_BD 5 FLAT 0 PERFLAT4 0 PERBD4 5 BDT 13
+GAME red/sgrow/instances/s29_n30.pg DEEPINT s29_n30.pg n 30 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/rec0/instances/nep90_n40.pg DEEPINT nep90_n40.pg n 40 N1_IN 0 N1_BD 100 N4_IN 0 N4_BD 39 D4 4 D4_IN 0 D4_BD 4 FLAT 0 PERFLAT4 0 PERBD4 17 BDT 13
+GAME red/sgrow/instances/s34_oink_n40.pg DEEPINT s34_oink_n40.pg n 40 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 2
+GAME red/sgrow/instances/s32_n60.pg DEEPINT s32_n60.pg n 60 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/so/instances/beta2_n11.pg DEEPINT beta2_n11.pg n 11 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 1
+GAME red/sgrow/instances/s34_oink_n80.pg DEEPINT s34_oink_n80.pg n 80 N1_IN 0 N1_BD 31 N4_IN 0 N4_BD 19 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 19 BDT 1
+GAME red/sgrow/instances/s35_oink_n80.pg DEEPINT s35_oink_n80.pg n 80 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 1
+GAME red/sgrow/instances/s36_oink_n60.pg DEEPINT s36_oink_n60.pg n 60 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 1
+GAME red/so/instances/epsseg_cex_n16.pg DEEPINT epsseg_cex_n16.pg n 16 N1_IN 0 N1_BD 4 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 6
+GAME red/so/instances/exitr_cex_n16.pg DEEPINT exitr_cex_n16.pg n 16 N1_IN 0 N1_BD 10 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 7
+GAME red/so/instances/farrise25_n32.pg DEEPINT farrise25_n32.pg n 32 N1_IN 0 N1_BD 4 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 4
+GAME red/so/instances/epsseg_cex_n48.pg DEEPINT epsseg_cex_n48.pg n 48 N1_IN 0 N1_BD 11 N4_IN 0 N4_BD 6 D4 2 D4_IN 0 D4_BD 2 FLAT 0 PERFLAT4 0 PERBD4 5 BDT 6
+GAME red/so/instances/exitr_cex_n48.pg DEEPINT exitr_cex_n48.pg n 48 N1_IN 0 N1_BD 3 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 4
+GAME red/so/instances/mn_abs74_n48.pg DEEPINT mn_abs74_n48.pg n 48 N1_IN 0 N1_BD 128 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 10
+GAME red/so/instances/njb_reabs54_n32.pg DEEPINT njb_reabs54_n32.pg n 32 N1_IN 0 N1_BD 132 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 12
+GAME red/so/instances/nleq33_n48.pg DEEPINT nleq33_n48.pg n 48 N1_IN 0 N1_BD 42 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 33
+GAME red/so/instances/nleq_cex_n48.pg DEEPINT nleq_cex_n48.pg n 48 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 4
+GAME red/so/instances/njb_reabs65_n48.pg DEEPINT njb_reabs65_n48.pg n 48 N1_IN 0 N1_BD 126 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 37
+GAME red/so/instances/pft35_n48.pg DEEPINT pft35_n48.pg n 48 N1_IN 0 N1_BD 230 N4_IN 0 N4_BD 23 D4 3 D4_IN 0 D4_BD 3 FLAT 0 PERFLAT4 0 PERBD4 9 BDT 38
+GAME red/so/instances/pftheta34_n32.pg DEEPINT pftheta34_n32.pg n 32 N1_IN 0 N1_BD 129 N4_IN 0 N4_BD 19 D4 3 D4_IN 0 D4_BD 3 FLAT 0 PERFLAT4 0 PERBD4 10 BDT 34
+GAME red/so/instances/pftheta_cex_n32.pg DEEPINT pftheta_cex_n32.pg n 32 N1_IN 0 N1_BD 67 N4_IN 0 N4_BD 9 D4 2 D4_IN 0 D4_BD 2 FLAT 0 PERFLAT4 0 PERBD4 5 BDT 34
+GAME red/so/instances/pft40_n40.pg DEEPINT pft40_n40.pg n 40 N1_IN 0 N1_BD 339 N4_IN 0 N4_BD 75 D4 6 D4_IN 0 D4_BD 6 FLAT 0 PERFLAT4 0 PERBD4 17 BDT 43
+GAME red/so/instances/rise_fb38_n48.pg DEEPINT rise_fb38_n48.pg n 48 N1_IN 0 N1_BD 60 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 8
+GAME red/so/instances/post31_n48.pg DEEPINT post31_n48.pg n 48 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/so/instances/s4c8_n13.pg DEEPINT s4c8_n13.pg n 13 N1_IN 0 N1_BD 8 N4_IN 0 N4_BD 1 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 1 BDT 2
+GAME red/so/instances/so_k2_n32.pg DEEPINT so_k2_n32.pg n 32 N1_IN 0 N1_BD 25 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 10
+GAME red/so/instances/so_sor5_n24.pg DEEPINT so_sor5_n24.pg n 24 N1_IN 0 N1_BD 21 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 21
+GAME red/so/instances/rise_thin51_n40.pg DEEPINT rise_thin51_n40.pg n 40 N1_IN 0 N1_BD 668 N4_IN 0 N4_BD 359 D4 10 D4_IN 0 D4_BD 10 FLAT 0 PERFLAT4 0 PERBD4 17 BDT 64
+GAME red/so/instances/so_sorl_n32.pg DEEPINT so_sorl_n32.pg n 32 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 22
+GAME red/so/instances/so_j19_n48.pg DEEPINT so_j19_n48.pg n 48 N1_IN 0 N1_BD 248 N4_IN 0 N4_BD 26 D4 2 D4_IN 0 D4_BD 2 FLAT 0 PERFLAT4 0 PERBD4 14 BDT 21
+GAME red/so/instances/so_tie13_n24.pg DEEPINT so_tie13_n24.pg n 24 N1_IN 0 N1_BD 2 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 16
+GAME red/so/instances/so_th_n32.pg DEEPINT so_th_n32.pg n 32 N1_IN 0 N1_BD 82 N4_IN 0 N4_BD 11 D4 3 D4_IN 0 D4_BD 3 FLAT 0 PERFLAT4 0 PERBD4 5 BDT 22
+GAME red/so/instances/so_tie15_n32.pg DEEPINT so_tie15_n32.pg n 32 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 19
+GAME red/so/instances/tev_cex_n40.pg DEEPINT tev_cex_n40.pg n 40 N1_IN 0 N1_BD 72 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 7
+GAME red/so/instances/tevlast_cex_n40.pg DEEPINT tevlast_cex_n40.pg n 40 N1_IN 0 N1_BD 78 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 6
+GAME red/so/instances/tevlast7_n32.pg DEEPINT tevlast7_n32.pg n 32 N1_IN 0 N1_BD 129 N4_IN 0 N4_BD 3 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 3 BDT 36
+GAME red/so/instances/tog6a_n32.pg DEEPINT tog6a_n32.pg n 32 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 1 PERFLAT4 0 PERBD4 0 BDT 4
+GAME red/so/instances/tevlast11_n40.pg DEEPINT tevlast11_n40.pg n 40 N1_IN 0 N1_BD 75 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 31
+GAME red/so/instances/tog6b_n32.pg DEEPINT tog6b_n32.pg n 32 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 1 PERFLAT4 0 PERBD4 0 BDT 5
+GAME red/so/instances/xrun8_n10.pg DEEPINT xrun8_n10.pg n 10 N1_IN 0 N1_BD 10 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 7
+GAME red/so/instances/xrun21_n24.pg DEEPINT xrun21_n24.pg n 24 N1_IN 0 N1_BD 8 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 21
+GAME red/so/instances/xsn29_n32.pg DEEPINT xsn29_n32.pg n 32 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 29
+GAME red/so/instances/xsn43_n48.pg DEEPINT xsn43_n48.pg n 48 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 43
+GAME red/so/instances/xsnf42_n48.pg DEEPINT xsnf42_n48.pg n 48 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 42
+GAME red/so/instances/xsnf52_n64.pg DEEPINT xsnf52_n64.pg n 64 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 52
+GAME red/tcpert/instances/leanT_N12.pg DEEPINT leanT_N12.pg n 96 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/so/instances/xsn91_n48.pg DEEPINT xsn91_n48.pg n 48 N1_IN 0 N1_BD 463 N4_IN 0 N4_BD 106 D4 3 D4_IN 0 D4_BD 3 FLAT 0 PERFLAT4 0 PERBD4 34 BDT 103
+GAME red/tcpert/instances/leanT_N16.pg DEEPINT leanT_N16.pg n 128 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/tcpert/instances/leanT_N6.pg DEEPINT leanT_N6.pg n 48 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/tcpert/instances/leanT_N8.pg DEEPINT leanT_N8.pg n 64 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/tcpert/instances/leanT_N24.pg DEEPINT leanT_N24.pg n 192 N1_IN 0 N1_BD 36 N4_IN 0 N4_BD 10 D4 3 D4_IN 0 D4_BD 3 FLAT 0 PERFLAT4 0 PERBD4 6 BDT 3
+GAME red/tcpert/instances/tcL_N3.pg DEEPINT tcL_N3.pg n 42 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/tcpert/instances/tcL_N4.pg DEEPINT tcL_N4.pg n 68 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/tcpert/instances/tcL_N5.pg DEEPINT tcL_N5.pg n 100 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/tcpert/instances/tcL_N10.pg DEEPINT tcL_N10.pg n 350 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/tcpert/instances/tcL_N6.pg DEEPINT tcL_N6.pg n 138 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/tcpert/instances/tcR4_N4.pg DEEPINT tcR4_N4.pg n 68 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/tcpert/instances/tcR4_N5.pg DEEPINT tcR4_N5.pg n 100 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/tcpert/instances/leanT_N32.pg DEEPINT leanT_N32.pg n 256 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/tcpert/instances/tcL_N8.pg DEEPINT tcL_N8.pg n 232 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/tcpert/instances/tcR4_N6.pg DEEPINT tcR4_N6.pg n 138 N1_IN 0 N1_BD 117 N4_IN 0 N4_BD 19 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 19 BDT 1
+GAME red/tcpert/instances/tcR4_N7.pg DEEPINT tcR4_N7.pg n 182 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/tcpert/instances/tcS8_N10.pg DEEPINT tcS8_N10.pg n 350 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/tcpert/instances/tcR4_N8.pg DEEPINT tcR4_N8.pg n 232 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/tcpert/instances/tcL_N12.pg DEEPINT tcL_N12.pg n 492 N1_IN 0 N1_BD 197 N4_IN 0 N4_BD 153 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 153 BDT 2
+GAME red/tcpert/instances/tcS8_N6.pg DEEPINT tcS8_N6.pg n 138 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/tcpert/instances/tcS8_N7.pg DEEPINT tcS8_N7.pg n 182 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/tpp/instances/tpp_viol_n22.pg DEEPINT tpp_viol_n22.pg n 22 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/tcpert/instances/tcS8_N8.pg DEEPINT tcS8_N8.pg n 232 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/tpp/instances/tpp_viol_n63.pg DEEPINT tpp_viol_n63.pg n 63 N1_IN 0 N1_BD 1 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 1
+GAME red/ul/instances/cxmig_k4_n54.pg red/ul/instances/cxmig_k4_n54.start DEEPINT cxmig_k4_n54.pg n 54 N1_IN 0 N1_BD 9 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 12
+GAME red/ul/instances/cxmig_k8_n82.pg red/ul/instances/cxmig_k8_n82.start DEEPINT cxmig_k8_n82.pg n 82 N1_IN 0 N1_BD 17 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 16
+GAME red/ul/instances/ladderd0_k12_n48.pg red/ul/instances/ladderd0_k12_n48.start DEEPINT ladderd0_k12_n48.pg n 48 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 14
+GAME red/tcpert/instances/tcS8_N11.pg DEEPINT tcS8_N11.pg n 418 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/ul/instances/cxmig_k16_n138.pg red/ul/instances/cxmig_k16_n138.start DEEPINT cxmig_k16_n138.pg n 138 N1_IN 0 N1_BD 33 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 24
+GAME red/tcpert/instances/tcS8_N9.pg DEEPINT tcS8_N9.pg n 288 N1_IN 0 N1_BD 100 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 2
+GAME red/ul/instances/ladderent_k12_n48.pg red/ul/instances/ladderent_k12_n48.start DEEPINT ladderent_k12_n48.pg n 48 N1_IN 0 N1_BD 12 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 14
+GAME red/ul/instances/ladderd0_k24_n84.pg red/ul/instances/ladderd0_k24_n84.start DEEPINT ladderd0_k24_n84.pg n 84 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 26
+GAME red/ul/instances/ladderent_k24_n84.pg red/ul/instances/ladderent_k24_n84.start DEEPINT ladderent_k24_n84.pg n 84 N1_IN 0 N1_BD 24 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 26
+GAME red/ul/instances/reader_L10_n36.pg red/ul/instances/reader_L10_n36.start DEEPINT reader_L10_n36.pg n 36 N1_IN 0 N1_BD 1 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 13
+GAME red/ul/instances/reader_L20_n56.pg red/ul/instances/reader_L20_n56.start DEEPINT reader_L20_n56.pg n 56 N1_IN 0 N1_BD 1 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 23
+GAME red/usplit/instances/gate_K16_n197.pg red/usplit/instances/gate_K16_n197.start DEEPINT gate_K16_n197.pg n 197 N1_IN 0 N1_BD 79 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 23
+GAME red/ul/instances/reader_L40_n96.pg red/ul/instances/reader_L40_n96.start DEEPINT reader_L40_n96.pg n 96 N1_IN 0 N1_BD 1 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 43
+GAME red/usplit/instances/grow_K12_n149.pg red/usplit/instances/grow_K12_n149.start DEEPINT grow_K12_n149.pg n 149 N1_IN 0 N1_BD 53 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 19
+GAME red/ul/instances/ladderd0_k48_n156.pg red/ul/instances/ladderd0_k48_n156.start DEEPINT ladderd0_k48_n156.pg n 156 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 50
+GAME red/usplit/instances/pairoc_n58.pg red/usplit/instances/pairoc_n58.start DEEPINT pairoc_n58.pg n 58 N1_IN 0 N1_BD 7 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 5
+GAME red/usplit/instances/pp_K12_n161.pg red/usplit/instances/pp_K12_n161.start DEEPINT pp_K12_n161.pg n 161 N1_IN 0 N1_BD 59 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 19
+GAME red/ul/instances/ladderent_k48_n156.pg red/ul/instances/ladderent_k48_n156.start DEEPINT ladderent_k48_n156.pg n 156 N1_IN 0 N1_BD 48 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 50
+GAME red/usplit/instances/pp_K12_n161_dual.pg DEEPINT pp_K12_n161_dual.pg n 161 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 1
+GAME red/usplit/instances/grow_K40_n373.pg red/usplit/instances/grow_K40_n373.start DEEPINT grow_K40_n373.pg n 373 N1_IN 0 N1_BD 165 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 47
+GAME red/usplit/instances/usplit_n14.pg red/usplit/instances/usplit_n14.start DEEPINT usplit_n14.pg n 14 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 3
+GAME red/usplit/instances/usplit_n23.pg red/usplit/instances/usplit_n23.start DEEPINT usplit_n23.pg n 23 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 9
+GAME red/usplit/instances/usplit_rd_n24.pg red/usplit/instances/usplit_rd_n24.start DEEPINT usplit_rd_n24.pg n 24 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 4
+GAME red/usplit/instances/usplit_rd_s3_n27.pg DEEPINT usplit_rd_s3_n27.pg n 27 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 4
+GAME red/usplit/instances/usplit_s3_n16.pg DEEPINT usplit_s3_n16.pg n 16 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 3
+GAME red/xctx/instances/nest3_n20.pg DEEPINT nest3_n20.pg n 20 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/xctx/instances/nest3_n24.pg DEEPINT nest3_n24.pg n 24 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/xctx/instances/vrall_viol_n20.pg DEEPINT vrall_viol_n20.pg n 20 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/xctx/instances/xcov11_n20.pg DEEPINT xcov11_n20.pg n 20 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/xctx/instances/xctx_viol_n20.pg DEEPINT xctx_viol_n20.pg n 20 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 0
+GAME red/xing/instances/fbref_cex_n32.pg DEEPINT fbref_cex_n32.pg n 32 N1_IN 0 N1_BD 241 N4_IN 0 N4_BD 57 D4 2 D4_IN 0 D4_BD 2 FLAT 0 PERFLAT4 0 PERBD4 23 BDT 42
+GAME red/xing/instances/j10_n24.pg DEEPINT j10_n24.pg n 24 N1_IN 0 N1_BD 115 N4_IN 0 N4_BD 34 D4 5 D4_IN 0 D4_BD 5 FLAT 0 PERFLAT4 0 PERBD4 6 BDT 23
+GAME red/xing/instances/j4_n40.pg DEEPINT j4_n40.pg n 40 N1_IN 0 N1_BD 459 N4_IN 0 N4_BD 174 D4 6 D4_IN 0 D4_BD 6 FLAT 0 PERFLAT4 0 PERBD4 22 BDT 99
+GAME red/xing/instances/j5_n16.pg DEEPINT j5_n16.pg n 16 N1_IN 0 N1_BD 35 N4_IN 0 N4_BD 4 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 1 BDT 20
+GAME red/xing/instances/j7_n32.pg DEEPINT j7_n32.pg n 32 N1_IN 0 N1_BD 83 N4_IN 0 N4_BD 12 D4 2 D4_IN 0 D4_BD 2 FLAT 0 PERFLAT4 0 PERBD4 4 BDT 46
+GAME red/xing/instances/j7_n48.pg DEEPINT j7_n48.pg n 48 N1_IN 0 N1_BD 262 N4_IN 0 N4_BD 45 D4 2 D4_IN 0 D4_BD 2 FLAT 0 PERFLAT4 0 PERBD4 11 BDT 70
+GAME red/usplit/instances/pp_K48_n449.pg red/usplit/instances/pp_K48_n449.start DEEPINT pp_K48_n449.pg n 449 N1_IN 0 N1_BD 203 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 55
+GAME red/xing/instances/j8_n32.pg DEEPINT j8_n32.pg n 32 N1_IN 0 N1_BD 109 N4_IN 0 N4_BD 25 D4 3 D4_IN 0 D4_BD 3 FLAT 0 PERFLAT4 0 PERBD4 10 BDT 49
+GAME red/xing/instances/kw25_n32.pg DEEPINT kw25_n32.pg n 32 N1_IN 0 N1_BD 16 N4_IN 0 N4_BD 3 D4 2 D4_IN 0 D4_BD 2 FLAT 0 PERFLAT4 0 PERBD4 2 BDT 27
+GAME red/xing/instances/j8_n48.pg DEEPINT j8_n48.pg n 48 N1_IN 0 N1_BD 255 N4_IN 0 N4_BD 92 D4 4 D4_IN 0 D4_BD 4 FLAT 0 PERFLAT4 0 PERBD4 26 BDT 77
+GAME red/xing/instances/kw_n16.pg DEEPINT kw_n16.pg n 16 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 12
+GAME red/xing/instances/kw_n24.pg DEEPINT kw_n24.pg n 24 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 20
+GAME red/usplit/instances/pp_K48_n449_dual.pg DEEPINT pp_K48_n449_dual.pg n 449 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 1
+GAME red/xing/instances/obr_eq_n24.pg DEEPINT obr_eq_n24.pg n 24 N1_IN 0 N1_BD 2 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 4
+GAME red/xing/instances/kw_n48.pg DEEPINT kw_n48.pg n 48 N1_IN 0 N1_BD 5 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 40
+GAME red/xing/instances/u1t_cex_n32.pg DEEPINT u1t_cex_n32.pg n 32 N1_IN 53 N1_BD 35 N4_IN 18 N4_BD 0 D4 3 D4_IN 3 D4_BD 0 FLAT 5 PERFLAT4 6 PERBD4 0 BDT 2
+GAME red/xing/instances/obr_n32.pg DEEPINT obr_n32.pg n 32 N1_IN 0 N1_BD 11 N4_IN 0 N4_BD 2 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 2 BDT 16
+GAME red/xing/instances/u1t_own6_n32.pg DEEPINT u1t_own6_n32.pg n 32 N1_IN 21 N1_BD 6 N4_IN 2 N4_BD 1 D4 3 D4_IN 2 D4_BD 1 FLAT 5 PERFLAT4 1 PERBD4 1 BDT 2
+GAME red/xing/instances/u2flat73_n32.pg DEEPINT u2flat73_n32.pg n 32 N1_IN 48 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 7 PERFLAT4 0 PERBD4 0 BDT 2
+GAME red/xing/instances/u23sw64_n32.pg DEEPINT u23sw64_n32.pg n 32 N1_IN 72 N1_BD 0 N4_IN 30 N4_BD 0 D4 5 D4_IN 5 D4_BD 0 FLAT 8 PERFLAT4 10 PERBD4 0 BDT 5
+GAME red/xing/instances/u2flat_n32.pg DEEPINT u2flat_n32.pg n 32 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 1 PERFLAT4 0 PERBD4 0 BDT 6
+GAME red/xing/instances/x31_cu16.pg DEEPINT x31_cu16.pg n 16 N1_IN 0 N1_BD 85 N4_IN 0 N4_BD 15 D4 3 D4_IN 0 D4_BD 3 FLAT 0 PERFLAT4 0 PERBD4 7 BDT 20
+GAME red/xing/instances/x31_cu24.pg DEEPINT x31_cu24.pg n 24 N1_IN 0 N1_BD 150 N4_IN 0 N4_BD 60 D4 7 D4_IN 0 D4_BD 7 FLAT 0 PERFLAT4 0 PERBD4 14 BDT 17
+GAME red/xing/instances/x31_cu32.pg DEEPINT x31_cu32.pg n 32 N1_IN 0 N1_BD 298 N4_IN 0 N4_BD 111 D4 6 D4_IN 0 D4_BD 6 FLAT 0 PERFLAT4 0 PERBD4 18 BDT 40
+GAME red/xing/instances/x31_cu32i.pg DEEPINT x31_cu32i.pg n 32 N1_IN 0 N1_BD 326 N4_IN 0 N4_BD 139 D4 9 D4_IN 0 D4_BD 9 FLAT 0 PERFLAT4 0 PERBD4 17 BDT 38
+GAME red/xing/instances/x31_lem_e24.pg DEEPINT x31_lem_e24.pg n 24 N1_IN 0 N1_BD 63 N4_IN 0 N4_BD 2 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 1 BDT 46
+GAME red/xing/instances/x31_cu48.pg DEEPINT x31_cu48.pg n 48 N1_IN 0 N1_BD 473 N4_IN 0 N4_BD 178 D4 10 D4_IN 0 D4_BD 10 FLAT 0 PERFLAT4 0 PERBD4 19 BDT 41
+GAME red/xing/instances/x31_nh_e24.pg DEEPINT x31_nh_e24.pg n 24 N1_IN 0 N1_BD 2 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 20
+GAME red/xing/instances/x31_lem_t32.pg DEEPINT x31_lem_t32.pg n 32 N1_IN 0 N1_BD 137 N4_IN 0 N4_BD 82 D4 2 D4_IN 0 D4_BD 2 FLAT 0 PERFLAT4 0 PERBD4 12 BDT 56
+GAME red/xing/instances/x31_nh_r20.pg DEEPINT x31_nh_r20.pg n 20 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 13
+GAME red/xing/instances/x31_re24.pg DEEPINT x31_re24.pg n 24 N1_IN 0 N1_BD 26 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 4
+GAME red/xing/instances/x31_ru24.pg DEEPINT x31_ru24.pg n 24 N1_IN 0 N1_BD 19 N4_IN 0 N4_BD 11 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0 PERBD4 11 BDT 4
+GAME red/xing/instances/x31_rx32.pg DEEPINT x31_rx32.pg n 32 N1_IN 0 N1_BD 258 N4_IN 0 N4_BD 39 D4 5 D4_IN 0 D4_BD 5 FLAT 0 PERFLAT4 0 PERBD4 10 BDT 50
+GAME red/xing/instances/x31_rx48.pg DEEPINT x31_rx48.pg n 48 N1_IN 0 N1_BD 462 N4_IN 0 N4_BD 144 D4 8 D4_IN 0 D4_BD 8 FLAT 0 PERFLAT4 0 PERBD4 28 BDT 47
+GAME red/xing/instances/x32_nest40.pg DEEPINT x32_nest40.pg n 40 N1_IN 0 N1_BD 204 N4_IN 0 N4_BD 55 D4 3 D4_IN 0 D4_BD 3 FLAT 0 PERFLAT4 0 PERBD4 12 BDT 53
+GAME red/xing/instances/x32_rand16.pg DEEPINT x32_rand16.pg n 16 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 13
+GAME red/xing/instances/x32_rand24.pg DEEPINT x32_rand24.pg n 24 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 20
+GAME red/xing/instances/x32_rand32.pg DEEPINT x32_rand32.pg n 32 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 29
+GAME red/xing/instances/x32_rand48.pg DEEPINT x32_rand48.pg n 48 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 44
+GAME red/xing/instances/x32_rand64.pg DEEPINT x32_rand64.pg n 64 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 55
+GAME red/xing/instances/x32_waves32.pg DEEPINT x32_waves32.pg n 32 N1_IN 0 N1_BD 297 N4_IN 0 N4_BD 57 D4 2 D4_IN 0 D4_BD 2 FLAT 0 PERFLAT4 0 PERBD4 15 BDT 68
+GAME red/xing/instances/x32_waves48.pg DEEPINT x32_waves48.pg n 48 N1_IN 0 N1_BD 77 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 66
+GAME si/root/instances/cone_n65.pg DEEPINT cone_n65.pg n 65 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 3
+GAME si/root/instances/ueonce_n27.pg DEEPINT ueonce_n27.pg n 27 N1_IN 0 N1_BD 4 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 10
+GAME si/root/instances/cone_n69.pg DEEPINT cone_n69.pg n 69 N1_IN 0 N1_BD 0 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 1
+GAME red/usplit/instances/gate_K64_n581.pg red/usplit/instances/gate_K64_n581.start DEEPINT gate_K64_n581.pg n 581 N1_IN 0 N1_BD 271 N4_IN 0 N4_BD 0 D4 0 D4_IN 0 D4_BD 0 FLAT 0 PERFLAT4 0 PERBD4 0 BDT 71
