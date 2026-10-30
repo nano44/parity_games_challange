@@ -1,4 +1,4 @@
 GAME cascl_K4_m8_N100 RUN 0-44 F 44 returns 798 edges 228 targets 28 max_per_target 404 norise 0 wch_in_window 798 rises_per_return {1: 759, 2: 39} classes {'EVS': 801, 'ODF': 36}
 GAME cascl_K4_m8_N100   ROOT kinds {'FRESH': 798} distinct roots 7 max returns per root 121 chain depth {0: 759, 1: 39}
 GAME cascl_K4_m8_N100   EROOT kinds {'FRESH': 798} distinct roots 7 max returns per root 121 chain depth {0: 777, 1: 21} max children per node 114 max children per return node 1 mE 259
-GAME cascl_K4_m8_N100   PERROOT max returns of one Even X per root 2 (X 66 deg 2) max returns of one edge per root 1 max (returns of X per root)/deg X 1.0 max returns of X per root leaving one target 1
+GAME cascl_K4_m8_N100   PERROOT max returns of one Even X per root 2 (X 66 deg 2) max returns of one edge per root 1 max (returns of X per root)/deg X 1.0 max returns of X per root leaving one target 1 max returns of X per root with one (left, entered) pair 1 max returns of one edge per (root, depth) 1

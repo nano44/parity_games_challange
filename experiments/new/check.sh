@@ -529,4 +529,10 @@ if grep -q "PERROOT max returns of one Even X per root 24 (X 247 deg 24) max ret
 else
   echo "box 101 CEDGE check: FAILED"; exit 1
 fi
+w52=$(cd .. && XTRACE=3 python3 -I new/box99/retcause.py red/so/instances/pftheta34_n32.pg)
+if grep -q "XTRACE return k 11: 3 13 -> 7 (window from 5, first rise 6) root ('FRESH', 7, 20, 6) depth 0" <<<"$w52" && grep -q "XTRACE return k 26: 3 13 -> 7 (window from 13, first rise 15) root ('FRESH', 7, 20, 6) depth 2" <<<"$w52" && grep -q "with one (left, entered) pair 2 max returns of one edge per (root, depth) 1" <<<"$w52"; then
+  echo "box 102 OVT: pftheta34_n32 vertex 3 re-enters 7 from 13 twice under root (7 -> 20 @ 6) at depths 0 and 2 (overtake-once DEAD), LEVEL-ONCE holds: PASS"
+else
+  echo "box 102 OVT check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
