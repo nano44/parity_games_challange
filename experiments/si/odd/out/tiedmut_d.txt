@@ -1,0 +1,2 @@
+CEX 172 [(131, 134, 18, 31), (131, 134, 37, 50)] /home/user/parity_games_challange/experiments/si/odd/out/tiedmut_wdepth_K4_m16_14
+TIEDMUT wdepth_K4_m16.pg 14 trials 173 rep 1207 reblk 1192 untied 12 untied_reblk 2
