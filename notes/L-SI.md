@@ -21,7 +21,10 @@ Reason: Lead 06:27Z «PARK now with an updated handover … Reason: the D1 cap o
   docs/si/P-N5-LATEP-line.txt (sha1 4a68934d832c483c5b28c552fd26526f7de4abea). §8 READING on R90 (R1-R3; not to sign); §9 symbol test.
   Draft fd8c2231 preceded it.
 ### IN FLIGHT
-- P-N5-LATEP with REFEREE 19 and REFEREE-2 successor 22. Repairs go ONLY to docs/si/P-N5-LATEP-fixes.md (Lead's name; no -box53 suffix).
+- 06:49Z woken: both referees SIGNED every item, no gap (REFEREE 5bdd5d6d, REFEREE-2 e7b538a9). Fixes F0-F15 + F-SYM in
+  docs/si/P-N5-LATEP-fixes.md; corrected line docs/si/P-N5-LATEP-line-F1.txt; txcd.py fixed (τ frame after a τ-change; T4 / CNW);
+  «box 52» pin re-derived. Waiting for both §Cs and the word-diff of the F1 line, then landing. Re-parked.
+- (earlier) P-N5-LATEP with REFEREE 19 and REFEREE-2 successor 22. Repairs go ONLY to docs/si/P-N5-LATEP-fixes.md (Lead's name; no -box53 suffix).
   Quotes pinned in si/check.sh «box 53» at base 170e5316.
 ### OPEN / QUEUE
 1. Answer referee notes on P-N5-LATEP in the fixes file (the Lead wakes me or a successor).
