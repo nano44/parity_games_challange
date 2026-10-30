@@ -1,7 +1,18 @@
 # L-LIT notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point (HANDOVER, successor T54-T58, 2026-10-30 ~17:30Z by date -u; session_01V5yGRX5Hhq2A6bW6tNFG1o; D18; PARKED on Lead's word after T58)
+## Resume point (successor T59, 2026-10-30 from 17:49Z by date -u; session_01V5yGRY1xa1eQQyQ64QZ58e; D18)
+START: origin/claude/l-lit = d78e1815 (is-ancestor checked; branch pushed only by L-LIT); merged trunk 8e1a605c (local 3bfa38e7).
+T59 (this push): docs/lit/T59-elimination-windows.md + T59-dz-check.py.
+- (a) Undiscounted window = Zhong-Ye 2609.40147 Thm 7.1 (Dantzig, (7.2)-(7.6), 1 - 1/N^2). Howard: none (ZY Thm 6.1; Scherrer p.6).
+  The rest is VI domination (pseudo-poly). Mukherjee-Kalyanakrishnan: threshold gamma_Q + root separation.
+- (b) HW-LB PROVED: HW >= T/(m0+1). ARENA-MAX kills the lane families but not Friedmann H_n (I^glo = arena optimum; stubborn
+  cycles = Xi-blocked closures). N5 on switchbestexp N = 4, 6, 8: HW 1-3.
+- (c) C-DISC (discounted shadow, needs GREEDY-IN) and DZ-W (conditional on BLOCK-RATIO_K) PROVED. DATA: BLOCK-RATIO = 2^(2K) on fx_K_m16,
+  WINC = |F| -> gap-contraction route DEAD.
+OPEN LEADS: ELIM-WIN by a combinatorial (GP*-type) count; why H_n dies in N5 (tau frame vs tau steps); ARENA-MAX analysis of ZY Thm 6.1.
+
+## Previous resume point (HANDOVER, successor T54-T58, 2026-10-30 ~17:30Z by date -u; session_01V5yGRX5Hhq2A6bW6tNFG1o; D18; PARKED on Lead's word after T58)
 DONE (claude/l-lit; pushes via scripts/push.sh, exit 0, VERIFY PASS; Oink smoke NOT RUN):
 - 57e40069: trunk 7446d3d2 merged; T54-tiebreak-check.py; merge of c30c1850 (local clone had started at stale dedbbe7e1: first push was
   rejected non-fast-forward, nothing went out; fixed by a merge, no rebase).
@@ -68,6 +79,9 @@ NEEDS: none from the owner.
 - Open FL09 (self-loop removal) if the REFEREE needs it; Friedmann RAIRO 2011 (publisher 403; try author copy).
 
 ## Things only I know
+- T59: sources in scratchpad t59/A (lost with the container; sha256 prefixes in Sources). fx_K_m16 (K = 4, 8, 16) and fx_K8_m32 regenerated in
+  t59/inst (l-red worktree t59/lred at 717f407a); switchbestexp N via experiments/hard-families/pgsolver_port.py switchbestexp N > out.pg.
+  Corpus wrapper t59/one.sh (30 s timeout per game, start file = same basename .start), list t59/list.txt (892 games), output t59/corpus3.out.
 - T58: fx_K_m regenerate with l-red span/mkrw.py K m then free/obsx.py under ABOVE=a OWNER=0 BLK=2 (K8 m32 = pin sha1 e995709e).
   l-red worktree in scratchpad t58/lred; instances t58/inst; family outputs t58/fam5.txt; corpus t54/t58_*.txt (script v3, no HW column).
   Do not pkill -f with a pattern that appears in your own command line (kills the shell, exit 144); kill by PID.
@@ -514,6 +528,18 @@ NEEDS: none from the owner.
   4.2, Cor 4.1, pp. 5-9); HMZ arXiv 1008.0530v1 (f53a6b51; Lemma 3.10, 3.12, 5.3-5.5, 6.1-6.4, Thm 6.5; J. ACM numbering not checked); Scherrer
   arXiv 1306.0386v4 (391b6481; Lemma 2, 3, 5-8, 12, 13, Thm 3, 4, 6, 7); Post-Ye arXiv 1208.5083v2 (c51876eb; Lemma 3.1-3.6, Thm 3.7).
 
+- T59 (2026-10-30). OPENED (scratchpad t59/A): Zhong-Ye arXiv 2609.40147v2 (dafeb81816af6582; Table 1 p.2, p.2 HZ conjecture
+  disproved, Thm 6.1, Thm 7.1 + proof (7.1)-(7.6) PDF pp.31-32, Thm 7.2 + proof p.33); Asadi-Chatterjee-de Raaij arXiv 2506.12254v1
+  (78c4ee071961b89e; Table 1, p.2 PI <= VI <= O(n^3 W), Thm 3.2 p.4, policies + sequence (1) p.4, Lemma 4.1 p.5); Zwick-Paterson TCS 158
+  (people.irisa.fr copy, 84243c35fc5b57b4; Thm 2.3 p.5, Fig. 1 p.6, Thm 5.2 pp.10-11); Mukherjee-Kalyanakrishnan arXiv 2505.00795v1
+  (7b856cc9010c6c06; Thm 1.2 p.2, threshold gamma_Q p.2 and Sec. 4, Thm 3.1 p.5); Hansen-Zwick slides (1ff1ee804ac47c08; pp.14, 15,
+  19); Friedmann arXiv 1106.0778v2 (46c96f44775aa2b0; p.7 I^glo, Thm 6.14, Lemma 8.1 p.28, Sec. 8.2 pp.28-29, Thm 8.4 p.33); Friedmann
+  0901.2731v1 (6c56adb2; Sec. 4 pp.4-5, Thm 8 p.6); Fearnley 1003.3418v1 (0964f029; Prop. 2, 4, Sec. 4.2 p.6); HMZ 1008.0530v1
+  (f53a6b51; Lemma 5.3, 5.5 p.10, 6.4 p.11, Sec. 7 p.11); Scherrer 1306.0386v4 (391b6481; Lemma 8 p.6 + proof Sec. 10, pp.6-7 on HZ,
+  p.4); Hollanders PhD thesis UCLouvain (c068ce34261ce6a9; Ch. 2 printed pp.31-32); AGKS arXiv 2206.09044v2 (678d078799de8f9d; p.2,
+  Thm 1 p.6; context only). Abstract only: arXiv 2503.04203 (954879a0). NOT OPENED: HKZ SODA 2014 (SIAM); Hansen-Zwick ISAAC paper;
+  Hansen PhD 2012; Jurdzinski/Puri parity->MPG reduction (used as standard in T59 Sec. 2.2 READING).
+
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
 - T17 process dead end: subagent GitHub MCP search outside the repo scope was a rule breach (see Things only I know); never repeat it.
@@ -548,6 +574,12 @@ NEEDS: none from the owner.
 
 - T58: DEAD the extend form of ordinal elimination (Xi_t(v) |> v (+) Xi_end(w) => never re-adopted): 13 corpus violations
   (tog6a_n32, tog6b_n32, kt6_n58, x31_lem_t32, gci3_n24). DEAD any per-edge return bound inside a W-run: fx_K_m, K*m/4+1 adoptions of one edge.
+
+
+- T59: DEAD as a route to ELIM-WIN: contraction of the end-referenced W-gap (Zhong-Ye / Post-Ye / HMZ template) in si.py's additive
+  embedding. On fx_K16_m16, BLOCK-RATIO = 2^32 (the max reference residual sits on a blocked edge) and the gap never falls by n^2 before
+  the last transition (WINC = |F| = 304), while HW = 17. Also: ARENA-MAX alone cannot give ELIM-WIN, because Friedmann H_n (1106.0778
+  Thm 8.4) beats the arena-optimum rule I^glo with stubborn cycles.
 
 ## Corrections log
 - 2026-10-23 (T26): N8d-barrier.md §0 and R54 §0 put Lemma 4.75 / Thm 4.76 on p.187; opened PDF: printed p.186 (PDF p.202). Reported as caveat 4.
