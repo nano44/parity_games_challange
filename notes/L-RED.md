@@ -49,6 +49,18 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   - DATA: corpus 1,130 games, all checks 0. XCN 4 / CN 3 at one vertex in one W-run (pins xcn4_n12, cn3_n9; xeng, Oink OK). No
     super-linear family was built.
   - Tools: experiments/red/xcn/ (xcn, xsearch, xclimb, srcsettle, srcrand, runsrc.sh).
+- P-N5-SRC FROZEN (Lead 21:38Z): docs/red/P-N5-SRC.md sha1 3caae56e…, line P-N5-SRC-line.txt sha1 3101a0c0…, pushed 0521fb82.
+- R148 (Lead 21:49Z retarget) docs/red/R148-cascade.md: CONJECTURE CASCADE-LIN (L-NEW box 99) DEAD, cascl_K4_m8_N100 (mkrw K4 m8 + 100
+  passive clones of Even 63, n 222): one FRESH clock tick roots 121 > 111 (L-NEW retcause.py unchanged; xeng, Oink). Clones add one return
+  per root each, ratio → 1. Also dead: CASC ≤ n (cascl66, 321 at n 272) and per-(X, root) O(1) (topfix_N: 2N − 3; casctf_n10_N210: 3,620 =
+  8.6n). Corpus XROOT: casc/xr_corpus.txt. Shape (ii) not attempted.
+  docs/red/R148-hxs.md (the first R148 target, superseded): HXS at one source = K(m + 1) (Odd observer); SRC dichotomy; gated-ladder design.
+- R149 (Lead 22:17Z) docs/red/R149-narrow.md: CONJECTURE NARROW (L-NEW box 100) DEAD in both clauses. narrow_n10 (topfix_n10 + one clone
+  per returner): branching chain 49 = 6N − 11. casctf: 211 children. per-(X, root) dead on topfix_N (2N − 3). R148's depth figures are void
+  (old memo bug). Reading: every return-entry bound is inflated by passive clones. Charge ACTIVE returns or transitions instead.
+- L-NEW 2311683e tools run from /tmp/claude-0/lnew100 (git archive); my copies casc/retcause_xr.py (b376575c + XROOT) and
+  casc/retcause_br.py (2311683e + BRCHAIN) need LNEW_BOX21=<archive>/experiments/new/box21.
+- L-NEW tools run unchanged from /tmp/claude-0/lnew99 (git archive of l-new b376575c: experiments/new, harness, n5-second, hard-families, si).
 - RESUME POINT: the residual is HXS-POLY, i.e. Ξ(g) at deviating Odd g, or Ξ(c) at a W-cycle node, rising super-polynomially often in one
   W-run. Ξ(g) = min over succ(g), so a kill needs Odd's optimal value at one deviator to be pushed up many times. Ask the Lead whether
   SRC-SETTLE goes to a packet (it is a word-diff of P-N5-SETTLE §4-§5).
