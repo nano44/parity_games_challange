@@ -457,4 +457,10 @@ if grep -q "RELEASE n 197 runs 1 {'late': 18, 'ODD': 3, 'EVEN': 15, 'kept': 15} 
 else
   echo "box 88 ONEP check: FAILED"; exit 1
 fi
+w40=$(cd .. && python3 -I new/box89/relpe.py si/root/instances/ueonce_n27.pg; STRICT=1 python3 -I new/box89/relpe.py si/root/instances/ueonce_n27.pg; python3 -I new/box89/bipprobe.py red/usplit/instances/gate_K16_n197.pg red/usplit/instances/gate_K16_n197.start)
+if grep -q "RELPE n 27 mE 80 runs 1 maxima {'late_edge': 2, 'rstar': 4, 'F': 10, 'frozen_edge': 2} argmax-edge (10, 23)" <<<"$w40" && grep -q "RELPE n 27 mE 80 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 10, 'frozen_edge': 0} argmax-edge None" <<<"$w40" && grep -q "BIPPROBE n 197 {'single_dev': 1, 'no_driver_W': 1, 'lift_before': 1, 'lifter_plain': 1} maxima {'stretch': 3, 'rel': 1, 'nvals': 2, 'depth': 1}" <<<"$w40"; then
+  echo "box 89 BIP: non-strict BIP-REL-1 DEAD on ueonce_n27 (2), strict form 0; release anatomy on gate_K16_n197: PASS"
+else
+  echo "box 89 BIP check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

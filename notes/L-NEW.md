@@ -2,6 +2,15 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point (successor 38, Opus 5.5, started 2026-10-30 12:02Z by date -u; handover check: origin head 1169bb3d, trunk merged)
+### Box 89 N5-BIP (Lead 14:34Z: BIP-POLY under a frozen sigmabar): docs/new/N5-BIP-box89.md
+- DATA: Even releases lifted by plain climbs below the first deviation (obs/fx all after; corpus 386 after / 199 before); depth <= 2;
+  Xi(z) rises once between block and release.
+- CONJECTURE BIP-REL-1 (strict: <= 1 release per edge per frozen stretch): 0 violations (1132 runs + pins). Non-strict DEAD:
+  si/root/instances/ueonce_n27 (sha1 c90d5ab8), long121_n40 (blocks inherited from an earlier sigmabar).
+- PROVED (lane, under premise [SUB]: FW-R* on sub-intervals of a W-run) Theorem BIP-RED: |F| <= SB_F + (SB_F+1)(n-1)(R°+1) + FL_F.
+  Polynomial W-runs <= BIP-REL-1 + SB-POLY + FL-POLY + [SUB].
+- Opened: Ralphs IE411 Lecture 11 slide 3 (generic label-correcting O(n^2 C); fixed-order scanning strongly polynomial).
+- Things only I know: relpe.py STRICT=1 resets the blocked set at every sigmabar change; non-strict keeps it across the W-run. Context ~60%.
 ### Box 88 N5-ONEP (Lead 13:57Z re-aim of box 87: |F| of one W-run vs the one-player tau-arena): docs/new/N5-ONEP-box88.md
 - PROVED (lane): NO-DEV (Xi = W along F => R* = FL = 0, |F| <= n-1); BIP-MON; definition BIP(rho, tau) (N5 on frozen-sigmabar stretches).
 - DATA: two mechanisms. (O) latew_K16_m32: sigmabar changes 513/560 transitions, 480/513 releases Odd re-routings. (B) obs_K12_m24:
@@ -1599,6 +1608,7 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
   Prop. 6.3, Remark 6.4 (full PDF text read). [Fr09] O. Friedmann arXiv 0901.2731: abstract only. RESULTS R86 (LEN-MONO, COMPOSE-RUN, COMPOSE-NM).
 - (succ. 38, box 87) [ARV] H. Ackermann, H. Röglin, B. Vöcking, ECCC TR06-067: Def. 2, Thm 3 + proof, Lemma 4 + proof, Thm 7 and the
   1-1-exchange paragraph (full PDF text read).
+- (succ. 38, box 89) T. Ralphs, IE411 Lecture 11 (Lehigh, coral.ise.lehigh.edu/~ted/files/ie411/lectures-python/Lecture11.pdf), slide 3 (PDF text read).
 ## Dead ends
 - (box 47, successor 26, 11:13Z) CONJECTURE XD-1 (≤ 1 X_dir per {u, u′}-run): FALSE on experiments/new/box47/instances/pp2_n19.pg (sha1 97b5b132…),
   𝒞^2O, S3, phase [1, 3], D = {1}, {0}, {1}; length-only values (cycle node 9). Obstruction: each X_dir needs only an Even switch on each
@@ -1784,6 +1794,8 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
   for the lexicographic order; Xi's order is lexicographic with dimension ~ n).
 - (succ. 38, box 87) CONJECTURE SHALLOW-k (every Xi path-set change in a W-run has depth < k, k constant): FALSE, new/box54/out/
   switchbestexp_N depth 3N+3 (N 2..8), counter_symsi_8 depth 42. CONJECTURE FLIP-c: FALSE, fx_K_m (BLK 2) FLIP = K+1. Neither kills XI-CH-POLY.
+- (succ. 38, box 89) Non-strict BIP-REL-1 (<= 1 release per edge per frozen stretch, blocks counted anywhere in F): FALSE on
+  si/root/instances/ueonce_n27 (edge (10, 23) twice) and new/box48/instances/long121_n40 (S3 start); blocks inherited from an earlier sigmabar.
 ## Things only I know (earlier successors)
 - (succ. 8) Pitfalls in box 21:
   - `pkill -f "climb_fix.py ..."` killed my own shell (exit 144). Kill by `ps -eo pid,args | awk '$2=="python3" && $3==...'`.
