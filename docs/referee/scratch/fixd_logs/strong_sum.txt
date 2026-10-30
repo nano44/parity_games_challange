@@ -1,0 +1,5 @@
+NOTE 0
+keep_node 96
+trans 27586
+xich 27504
+DONE

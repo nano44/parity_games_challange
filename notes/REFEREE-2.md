@@ -1,6 +1,98 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## HANDOVER (successor 23, session_01V5yGRZKSogq9jPuYHcekpn, Opus 5.5 under D15; written 2026-10-30 19:1xZ by date -u; context ~460k; Lead 19:07Z: hand over and park after SETTLE L-1)
+Branch claude/referee-2, merged with trunk (git merge, no rebase) before every push. REFEREE-2 owns no docs/GAPS.md rows.
+### Reports of record (all "(Opus 5.5, D15)"; every push via scripts/push.sh, VERIFY PASS)
+| packet | object (sha1) | report | §C / line | outcome |
+| --- | --- | --- | --- | --- |
+| P-N5-FIXD (R94 LANDED, C104) | 2050e167 (l-new 5027c17c) | R2-N5-FIXD.md 4a960ef9 | R2-N5-FIXD-C.md 73d44f3b; L-3 MATCHES 4d9a4318 | all SIGNED; FLAT-SW proved twice: my Lemma OWN (signed by REFEREE) + REFEREE SW-KEEP (signed by me, C.4); my N-1 comp54 WITHDRAWN (vertex 11 is ODD: tau(11)) |
+| P-N5-WRUN | fae68aa0 (l-new 7668bc9b) | R2-N5-WRUN.md a281189a | R2-N5-WRUN-C.md 1ca64032; L-2 (superseded) c2bfcc4c; L3check d671d516; L-3 284014ad (WRUN-L5); L-4 MATCHES 9784fde6 | all SIGNED by both; [SUB] double-signed (Lemma SUB in line L-4); G-WRUN-1 (REFEREE) reproduced by my line0_cex.py; all line items closed; to CHECKER |
+| P-N5-SETTLE | aef403c3 (l-si 6a70a520) | R2-N5-SETTLE.md 301042bb | R2-N5-SETTLE-C.md (this push) | all SIGNED by both; line REQUIRED F, T, k (REFEREE L3), Iσ_k (mine); L-SI 35 writes SETTLE line L-1 |
+### IN FLIGHT / open
+- SETTLE line L-1 (l-si a0970d36, 997e39ee): MATCHES (R2-N5-SETTLE-L1.md). Nothing open on my side. PARKED.
+### Things only I know
+- New tools (own code; lane code never imported): R2-N5-FIXD/fixd_check.py (phases, DEPTH, FLATTR, FLAT-SW, OWNC/SWS; LZC=1; PERRUN=1 per-run
+  totals), own_check.py (Lemma OWN on random strategy pairs); R2-N5-WRUN/wrun_check.py (XI-RUN, returns REG/E0/FREE, WAIT-CYCLE′ sampled,
+  GAP-DEV, PREFIX-MON, NO-DEV, BIP-RED, SUBF, strict releases; PINS=1), line0_cex.py; R2-N5-SETTLE/settle_check.py (events, blocks, S/X,
+  PLAY-CAUSE, IDX/LEX choice rule, case split, T-XCH). wrun_check sets L.run_game at import: other tools must wrap WR._orig_run_game.
+- Start files: wrun_check.read_start fills unlisted vertices with the best-reward start and repairs FORCED vertices (comp54_n80 vertex 11,
+  Odd, «11:51» non-edge) -> 55 / 22 / 32 = lane = REFEREE. REFEREE's probes skip n > 100 (MAXN) and reject partial start files: run-set
+  differences, not engine differences.
+- Recurring line defects both referees missed until a second pass: F / vertices defined but not quantified (WRUN-L3, SETTLE-L1); τ or k used
+  free in one clause; «with [SUB]» status ambiguity. Do a clause-by-clause binder pass on every line, every revision.
+- «y ⊕ · preserves/reflects ⊴» (WRUN Fact EXT, SETTLE §1) is false when y is in exactly one path set; always check uses avoid y.
+- Lead readings: L41 = a referee-originated proof counts when its author signs it and the other referee independently signs it; line files
+  carry no heading (landing heading «### R9x [refereed-only] » + line + CHECKER fill).
+- Worktrees in $SCRATCH (wfd, wwr, wst): container-local.
+
+## Resume point 6 (successor 23; 2026-10-30 18:5xZ by date -u; context ~420k)
+- R94 FIXD LANDED (C104). WRUN: L-3 word-diff (284014ad) REQUIRED WRUN-L5 («with [SUB]»); Lead chose (a) unconditional; L-NEW 39 writes L-4 -> word-diff.
+- P-N5-SETTLE (l-si 6a70a520, packet aef403c3, line 6aa094e3): report docs/referee-2/R2-N5-SETTLE.md: all SIGNED (RG′, PLAY-CAUSE, W-MON, PATH,
+  RUN-SETTLE, RUN-COUNT, HEAD-RED, T-XCH; T54 IDX/LEX as used); line L-1 F unquantified, L-2 Iσ_k, L-3 T REQUIRED; N-1 ⊕-reflection needs y∉P;
+  N-2 ARENA-MAX quote list marker; N-3 longest block 67 vs packet 44. Tool R2-N5-SETTLE/settle_check.py (0 violations; case split = lane).
+  Do NOT open docs/referee/ SETTLE files before this report is pushed. Worktree $SCRATCH/wst.
+
+## Resume point 5 (successor 23; 2026-10-30 17:4xZ by date -u)
+- FIXD line L-3 (59d58d0d, 7d22165a) word-diff MATCHES (R2-N5-FIXD-L3.md, 4d9a4318). comp54 vertex 11 is ODD: tau(11), not sigma(11).
+- WRUN §C R2-N5-WRUN-C.md: joint gap map EMPTY; REFEREE's G-WRUN-1 (line 0faa5b80 block def) CONFIRMED with my line0_cex.py, CLOSED in L-1;
+  Fact EXT N-1 = WRUN-N1; open: my L-1 «strict release» (REFEREE: acceptable) -> Lead decides. NEXT: word-diff WRUN line L-2.
+
+## Resume point 4 (successor 23; 2026-10-30 17:3xZ by date -u)
+- P-N5-WRUN FROZEN l-new 7668bc9b (packet fae68aa0, line 0faa5b80; candidate L-1 02a12a10 d92521f7). Report docs/referee-2/R2-N5-WRUN.md:
+  every item SIGNED, no gap; line L-1 REQUIRED («strict release» unbound in REL2-WRISE), L-2..L-5 precision; N-1 Fact EXT false as worded
+  (x=(c,{y},l), x'=(c,∅,l)), true with y ∉ P(x)∪P(x'); N-2 R3-POLY undefined in packet body. Tool R2-N5-WRUN/wrun_check.py: corpus 0
+  violations; REG/E0/FREE 1005/0/5260 = lane; pins pftheta34, fx_K8_m32, latew_K16_m32, gate_K64_n581 match; BIP-REL-1 kill reproduced.
+  Do NOT open docs/referee/R-N5-WRUN.md before this report is pushed. Frozen worktree $SCRATCH/wwr.
+- FIXD: waiting for L-NEW 39's line L-3 (PHASE-RED′ unconditional, citing SW-KEEP) for a word-diff.
+
+## Resume point 3 (successor 23; 2026-10-30 16:5xZ by date -u)
+- §C R2-N5-FIXD-C.md: joint gap map EMPTY; SW-KEEP (REFEREE 2c9d8040 §4b) SIGNED; REFEREE 6460 vs lane 6503 = MAXN 200 skips + partial-start
+  fallback; my N-1 WITHDRAWN (lane totals = repaired comp54 start, 55/22/32). Revision L-1 (fe5c9e33, 7e99a4a9) applies N1/N2/N4; my L-2 open.
+- NEXT: REFEREE checks my OWN (report §5); then word-diff the revised line (PHASE-RED′ unconditional, cite SW-KEEP).
+
+## Resume point 2 (successor 23; 2026-10-30 16:1xZ by date -u)
+- P-N5-FIXD FROZEN l-new 5027c17c (packet sha1 2050e167, line ba09dd26). Report docs/referee-2/R2-N5-FIXD.md: §2-§4 SIGNED, no gap; line
+  L-1, L-2 REQUIRED (unbound k; clause-scope P in PHASE-RED′); DATA per game identical except comp54_n80 (invalid start, N-1); N-2 label.
+  FINDING: FLAT-SW TRUE (Lemma OWN + R91 SW-IN), one referee. NEXT: Lead's word for §C; then check REFEREE's SW-KEEP (Lead 15:58Z).
+  Frozen worktree $SCRATCH/wfd.
+
+## Resume point 1 (successor 23, session_01V5yGRZKSogq9jPuYHcekpn, Opus 5.5 under D15; 2026-10-30 16:0xZ by date -u)
+- Start checks done (head ed25c008, no other pusher; trunk merged b8807d9d); message to the Lead 15:46Z. Oink built here.
+- P-N5-FIXD: NOT yet frozen (l-new head 83021322 = box 90). Pre-freeze tools: R2-N5-FIXD/fixd_check.py (FIXD-MON, PHASE-RED, FLATTR,
+  FLAT-SW, PHASE-RED', my Lemma OWN on runs; LZC=1 for N5-LZC), own_check.py (Lemma OWN on random strategy pairs: 0 violations).
+  nep92_n40 pins reproduced (len 92, FLATTR 73, FLAT(0) 66 by the per-transition definition, FLATSW 8).
+- Own finding (one referee, not a result): Lemma OWN (switching only own-Xi-cycle-node Even vertices, own under both strategies, leaves Xi
+  unchanged; SPEC S1 procedure induction) + R91 SW-IN's argument => FLAT-SW on every in-phase transition. Draft proof in scratch own_proof.md;
+  goes into the report as a FINDING. Do not open docs/referee/ FIXD files before my report is pushed.
+
+## HANDOVER (successor 22, session_01V5yGRZXkUWq5JtGFdJHHeX, Opus 5.5 under D15; written 2026-10-30 15:3xZ by date -u; context ~490k, Lead asked; PARKED)
+Branch claude/referee-2, merged with trunk (git merge, no rebase) before every push. REFEREE-2 owns no docs/GAPS.md rows.
+### Reports of record (all "(Opus 5.5, D15)"; every push via scripts/push.sh, VERIFY PASS)
+| packet | object (sha1) | report | §C | outcome |
+| --- | --- | --- | --- | --- |
+| P-N5-LATEP (R92 landed) | b15223e5 (l-si b63f2554) | R2-N5-LATEP.md e7b538a9 | R2-N5-LATEP-C.md 917b32d4; C.5 fixes 42ab528b; C.6 line F16 aa366149 | all SIGNED, joint gap map EMPTY; my L-1 (line LATE′ window) REQUIRED; F16's REPEAT′ / W-MON scope MISSED by both referees |
+| P-N5-WCH (R93) | 31caa72e (l-new 2ad78f51) | R2-N5-WCH.md 24f32388 | R2-N5-WCH-C.md 6ff5d18a; C.6 line W1 (c930e26f, 00f9e375) MATCHES 14bfa3cc | all SIGNED, joint EMPTY; OPT-ONLY double-refereed TRUE (option (a): label kept); C103 CLOSED |
+| [SUB] (L-NEW box 89) | — | SUB-check.md a11c2868 | — | TRUE, no added hypothesis (one referee's check) |
+### IN FLIGHT / open
+- P-N5-FIXD (L-NEW 38, box 91: FIX-DEPTH, FIXD-MON, PHASE-RED with FLATTR; PHASE-RED′ conditional on FLAT-SW): comes to REFEREE-2 AFTER
+  REFEREE's first report. Successor 23 does it. Do NOT open docs/referee/ FIXD files before your own report is pushed.
+### Things only I know
+- Tools (own code; lane code never imported): R2-N5-LATEP/latep_check.py (W-runs, LATE′, REPEAT′ = earlier LATE′, GAP-CLIMB, CHAIN,
+  TXC-DESCENT; BF=n brute-force Ξ control); R2-N5-WCH/wch_check.py (returns / TT / TIE, Lemma TIE, R90 (e) classes F/FR/C/P/S with smallest
+  anchor, SIL-Z, GXC-CLOSE/SPLIT, LEVEL-MON on all pairs, DROP, FBO, ZF-SPLIT; LZC=1 runs the VARIANT N5-LZC with my own keep rule);
+  R2-SUB/sub_check.py (FW-R* on sub-intervals). All build on R2-N5-DUAL/dual_check.Runner + R2-N5-FRAME/frame_check.pval.
+- Corpora: lane «corpus» = new/box59/sbcg.lst (719, S3) + si/root/logs/alt_all.lst (413; ONLY 94 have start files: run the 319 start-less
+  lines separately with runs=1; comp54_n80.start is INVALID (non-edge 11 → 51), skip). files mode with runs=0 skips start-less games.
+- Strict symbol test by hand catches what lane symtest.py tools miss (clause-scope binders, e.g. k in NZ_P; LATE′ window «(any t of F if
+  none)»). Diff every RESULTS line token-level (difflib over whitespace tokens) against the previous line.
+- Recurring patterns: case splits «v on π's cycle / path part» must be «reached before / after the cycle node» (G-GAP-1, WCH N-1);
+  R88's W-MON is per PHASE — on W-runs cite R90 (b) W-MON′ or R91 (b); SPEC line tags drift by one (cite S1 at l. 27-32 of N5-ssi-global.md).
+- Traps: push.sh takes ~10-25 min: run `scripts/push.sh > log 2>&1; echo "push.sh exit $?" >> log` with run_in_background and wait on the
+  log line (never a second push). A wait loop `until for …; do … || exit 1; done` kills itself. Shell cwd resets after cd into the scratch
+  worktrees: use absolute paths. Oink must be built per container (scripts/setup_oink.sh, ~3 min).
+- Worktrees in the scratchpad (wlsi, wfz, wfx, wwch, ww1): container-local; a new container has none.
+
 ## Resume point 4 (successor 22; 2026-10-30 10:5xZ by date -u) — HOLDING for CHECKER C103 (Lead 10:53Z)
 - WCH closed on my side: report 24f32388, §C 6ff5d18a (joint gap map EMPTY; OPT-ONLY double-refereed TRUE, carried as option (a)), §C.6
   line W1 (c930e26f, 00f9e375…) MATCHES (this push). CHECKER C103 may ask questions: answer from R2-N5-WCH.md / -C.md.

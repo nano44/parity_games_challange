@@ -1,0 +1,2 @@
+GAME si/gate/inst/latew_K16_m32.pg si/gate/inst/latew_K16_m32.start RETX latew_K16_m32.pg n 482 T 560 MONO_V 0 IMP_V 0 RET 1922 RCV 0 FB_V 0 SLACK 3829 LMAX 560 OMONO_V 0 OIMP_V 0 ORET 0 ORCV 0 TB_V 0
+GAME si/gate/inst/fx_K8_m32.pg si/gate/inst/fx_K8_m32.start RETX fx_K8_m32.pg n 250 T 280 MONO_V 0 IMP_V 0 RET 836 RCV 0 FB_V 0 SLACK 1725 LMAX 280 OMONO_V 0 OIMP_V 0 ORET 0 ORCV 0 TB_V 0

@@ -463,4 +463,40 @@ if grep -q "RELPE n 27 mE 80 runs 1 maxima {'late_edge': 2, 'rstar': 4, 'F': 10,
 else
   echo "box 89 BIP check: FAILED"; exit 1
 fi
+w41=$(cd .. && python3 -I new/box90/sbv.py red/so/instances/pftheta34_n32.pg; python3 -I new/box90/relrand.py 8 300 5)
+if grep -q "SBV n 32 runs 1 maxima {'sb': 34, 'sbv': 34, 'ret': 18, 'F': 34} sb/n 1.06" <<<"$w41" && grep -q "RELRAND n 8 trials 300 seed 5 max-strict-per-edge 0" <<<"$w41"; then
+  echo "box 90 REL: SB-LIN DEAD on pftheta34_n32 (34 > 32); random strict-release search 0: PASS"
+else
+  echo "box 90 REL check: FAILED"; exit 1
+fi
+w42=$(cd .. && python3 -I new/box92/xirun.py red/so/instances/pftheta34_n32.pg; python3 -I new/box92/xirun.py red/free/instances/fx_K8_m32.pg red/free/instances/fx_K8_m32.start)
+if grep -q "XIRUN n 32 mE 80 runs 1 {'noswitch': 0, 'viol_sw': 0, 'viol_ent': 0, 'viol_xirun': 0} maxima {'F': 34, 'xich': 34, 'bound': 1010, 'ratio': 0.034}" <<<"$w42" && grep -q "XIRUN n 250 mE 151 runs 1 {'noswitch': 0, 'viol_sw': 0, 'viol_ent': 0, 'viol_xirun': 0} maxima {'F': 280, 'xich': 137, 'bound': 2005, 'ratio': 0.14}" <<<"$w42"; then
+  echo "box 92 WRUN: XI-RUN |F| <= m_E + sum d_E XICH on pftheta34_n32 and fx_K8_m32: PASS"
+else
+  echo "box 92 WRUN check: FAILED"; exit 1
+fi
+w43=$(cd .. && python3 -I hard-families/pgsolver_port.py switchallexp 4 > "$tmp/sae_4.pg" && python3 -I new/box93/swall_hw.py "$tmp/sae_4.pg"; python3 -I new/box93/elimwin.py red/so/instances/pftheta34_n32.pg)
+if grep -q "SWALL sae_4.pg n 63 mE 117 iterations 150 bmon_viol 0 elim_viol 0 xi_flat_steps 0 HW 35 count_ok True" <<<"$w43" && grep -q "ELIMWIN n 32 mE 80 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 32, 'ncert': 0} maxima {'F': 34, 'HW': 7, 'revisit': 18, 'xiw': 2}" <<<"$w43"; then
+  echo "box 93 ELIM: switch-all on switchallexp_4 keeps BETA-MON / ELIM-ORD-beta with HW 35; ELIM-WIN counting on pftheta34_n32: PASS"
+else
+  echo "box 93 ELIM check: FAILED"; exit 1
+fi
+w44=$(cd .. && python3 -I new/box94/kcount.py red/usplit/instances/gate_K64_n581.pg; python3 -I new/box90/sbv.py red/usplit/instances/gate_K64_n581.pg red/usplit/instances/gate_K64_n581.start)
+if grep -q "KCOUNT red/usplit/instances/gate_K64_n581.pg n 581 k 5" <<<"$w44" && grep -q "SBV n 581 runs 1 maxima {'sb': 64, 'sbv': 62, 'ret': 61, 'F': 71}" <<<"$w44"; then
+  echo "box 94 KO: gate_K64_n581 is in C^5O (prod deg 32) with 64 sbar-changes in one W-run (NO-REPEAT-kO DEAD): PASS"
+else
+  echo "box 94 KO check: FAILED"; exit 1
+fi
+w45=$(cd .. && python3 -I hard-families/pgsolver_port.py switchbestexp 3 > "$tmp/sbe_3.pg" && python3 -I new/box95/firstdiv.py "$tmp/sbe_3.pg")
+if grep -q "FIRSTDIV sbe_3.pg n 85 N5_iter 41 first_div_GLO 14 first_div_V1 14 N5_tau_changes 3 first_tau_change 13" <<<"$w45"; then
+  echo "box 95 HN: N5 = I^glo on switchbestexp_3 until its first tau-change (12 -> 13), split at state 14: PASS"
+else
+  echo "box 95 HN check: FAILED"; exit 1
+fi
+w46=$(cd .. && python3 -I hard-families/pgsolver_port.py switchbestexp 3 > "$tmp/sbe_3.pg" && python3 -I new/box96/taustart.py "$tmp/sbe_3.pg" OPT)
+if grep -q "TAUSTART sbe_3.pg n 85 OPT iterations 19 tau_changes 0 fallbacks 0 maxWrun 19" <<<"$w46"; then
+  echo "box 96 TAU: N5 on switchbestexp_3 with tau_0 = tau_end (tau never moves): 19 iterations, one W-run: PASS"
+else
+  echo "box 96 TAU check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
