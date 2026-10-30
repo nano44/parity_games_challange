@@ -1,5 +1,5 @@
 # L-RED notebook (independent adversary lane)
-Successor 31 (session_01V5yGRZfrtk7CRqezo1wAzp, Opus 5.5) woken 2026-10-30 00:09Z; R126-R129; see "Successor 31 HANDOVER, update 2".
+Successor 31 (session_01V5yGRZfrtk7CRqezo1wAzp, Opus 5.5) woken 2026-10-30 00:09Z; R126-R129; PARKED 01:40Z; see "Successor 31 PARK".
 Successor 31 (session_01V5yGRZfrtk7CRqezo1wAzp, Opus 5.5) HANDOVER written 2026-10-29 ~23:50Z (date -u), PARKED; see "Successor 31 HANDOVER".
 Successor 31 (session_01V5yGRZfrtk7CRqezo1wAzp, Opus 5.5) started 2026-10-29 22:19Z (date -u); handover check d6ae7cda; STEP 1 = R123, R124, R125; see "Successor 31".
 Successor 30 (session_01V5yGRZ2y7KsHSMJMvdKBmF, Opus 5.5) HANDOVER written 2026-10-29 ~21:35Z (date -u); see "Successor 30 HANDOVER".
@@ -29,6 +29,21 @@ Successor 15 PARKED ~09:40Z 2026-10-25 after box 38; RESUME POINT for successor 
 context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older notebook: `git show b0884407:notes/L-RED.md`.
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
+
+## Successor 31 PARK (2026-10-30 ~01:40Z, date -u; ~415k context; Lead 01:38Z: "write your handover and PARK now")
+- Generators and pins (all under experiments/red/span/, check.sh gates on each):
+  - mkrb.py K m: bidirectional chain (R124); pin instances/bidir_K8_m32; longest lambda-run 2K(m-1).
+  - mkrw.py K m [LATE=1]: one-world mkr (R127); loops -> even path markers; whole run one W-run; LATE=1 adds v_J/c_J/d_J late adopters,
+    R* = K*m, REP = (K-1)(m-2), n = 14K + 8m + 2. Pins instances/latew_K8_m32 (R127), instances/latew_K20_m32 (R128 REP-LIN kill).
+  - dbidir = ctl/dualize.py of mkrb.py output (R129); pin instances/dbidir_K12_m48 (O* 1128, TB* 1176 at n 294).
+  - spanobs.py / carryobs.py (R123), mk3f.py (R125, collapses). Counters: spanc.py, latec.py (REP=1), ostar.py, cut/cutsl.py.
+- Mirror reading (R129 §3): by R111, the run on G^d is the state-by-state mirror, so O* (and B*'s tau part) on G = sigma-changes per
+  lambda-run on G^d: O* >= n^2 IS RUN-QUAD. Every CUT-RED premise is <= the lambda-run length or its mirror and reaches Theta(n^2) on
+  these families; a super-polynomial kill of any of them is an exponential lambda-run.
+- Routes for a successor (all OPEN, none tried): (A') a hop-reader that blocks Even's best reply with a permanent support (R125 §4,
+  R113 §3 (i)); (B) length thresholds (equal path sets decided by play length, R108 §6); (C) digit-parity worlds (R108 §6). Tried and
+  dead: (A) tau-ticks with observer-fed W-gates (R125: never U-stable); constants (two-factor <= w n^2/(4ab), R124).
+- Restart triggers (Lead): referees' notes on P-N5-CUT / P-N5-GAP, or a new lane claim.
 
 ## Successor 31 HANDOVER, update 2 (2026-10-30 ~01:30Z, date -u; ~410k context; woken from park 00:09Z)
 - DONE since 0393967a (push.sh VERIFY PASS each): 694bcda2 R126 (box-40 premises: LATE + BA <= FC <= boundaries in span <= ENT <= |R|;
