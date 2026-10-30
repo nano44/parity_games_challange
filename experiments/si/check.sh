@@ -842,3 +842,11 @@ echo "si (box 50: window DAG): PASS"
 # box 50 §6: re-blocked REPEATs paid by tied Xi-climbs (wdepth m 16 all re-blocked and tied).
 o=$(python3 -I odd/tied.py odd/inst/red50/wdepth_K4_m16.pg odd/inst/red50/wdepth_K4_m16.start); grep -q "rep 21 tied 21 untied 0 reblk 21 untied_reblk 0 tsh 1" <<<"$o"
 echo "si (box 50 §6: tied climbs): PASS"
+# box 51 (docs/si/N5-LATEP-box51.md): TIED-RB DEAD (two engines); LATE' keeps FW-R* (FWV 0), no W-silent LATE' repeat (XP 0), GAP-CLIMB (GAPV 0, GTOKV 0).
+C=odd/inst/si51/tiedmut_so_th_n32_11
+python3 -I ../red/seg/xeng.py $C.pg $C.start | grep -q "state sequences identical: True"
+o=$(python3 -I odd/tied.py $C.pg $C.start); grep -q "rep 1 tied 0 untied 1 reblk 1 untied_reblk 1" <<<"$o"
+o=$(python3 -I odd/latep.py $C.pg $C.start); grep -q "RTP 4 REPP 1 XP 0 FWV 0 RSUB_V 0 LP 6 GAPV 0 GTOKV 0 TIEDG 4" <<<"$o"
+o=$(python3 -I odd/latep.py odd/inst/red50/wdepth_K4_m16.pg odd/inst/red50/wdepth_K4_m16.start); grep -q "RT 36 RTP 36 REPP 21 XP 0 FWV 0 RSUB_V 0 LP 37 GAPV 0 GTOKV 0 TIEDG 35" <<<"$o"
+o=$(python3 -I odd/latep.py ../new/box59/out/fc_6.pg); grep -q "RT 4 RTP 3 REPP 0 XP 0 FWV 0" <<<"$o"
+echo "si (box 51: LATE', GAP-CLIMB, TIED-RB dead): PASS"

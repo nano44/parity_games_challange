@@ -1,6 +1,13 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## Resume point (successor 32, box 51; GO Lead 05:28Z)
+- Box 51 docs/si/N5-LATEP-box51.md: TIED-RB DEAD (odd/inst/si51/tiedmut_so_th_n32_11, two engines); LATE′ keeps FW-R* (proof verbatim);
+  Lemma GAP-CLIMB (LATE′ ≤ Σ_z d_E(z)·ZXC_F(z)); GXC ⊆ TXC ⊆ ZXC in a W-run. Tools odd/latep.py, tiedmut.py, tiedfuzz.py; check.sh «box 51».
+- Next candidates: (i) TXC ≤ poly·(GXC + 1) (descent along the Ξ-play); (ii) WZ per W-run; (iii) a referee packet for LATE′ + GAP-CLIMB.
+- Things only I know: tiedmut.py stops at the first counterexample (stats are per run up to it). Never `pkill -f tiedmut.py` from a
+  command line that contains the string: it kills the calling shell (exit 144).
+
 ## Resume point (successor 32, box 50; GO Lead 04:57Z 2026-10-30; session_01V5yGRVw7Z4gdE77JnWktHs)
 - STEP 0: trunk f7fc6962 merged; HEAD contains bba03405. Start message sent to the Lead at 04:57Z.
 - Box 50 docs/si/N5-ADD-box50.md + odd/windag.py (window DAG); si/check.sh «box 50»; odd/inst/red50/wdepth_K4_m16 / m32 regenerated with

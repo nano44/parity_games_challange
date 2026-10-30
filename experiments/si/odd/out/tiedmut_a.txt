@@ -1,0 +1,2 @@
+CEX 1754 [(0, 10, 10, 13)] /home/user/parity_games_challange/experiments/si/odd/out/tiedmut_so_th_n32_11
+TIEDMUT so_th_n32.pg 11 trials 1755 rep 827 reblk 302 untied 170 untied_reblk 1
