@@ -102,3 +102,4 @@ None widens a signed statement.
   - K2-K11 are clarifications or readings; none widens.
 - NEEDS: Lead: K0 is landable as written (with K1). GAP §C after REFEREE 19's GAP report.
 - K12 (l-si fd1cb0bc, fixes sha1 95584f7e…, +19/−0 over cc84e54c): K12 = K0 + P1-P3 exactly (difflib on the «…» line: «(SPEC S1-S5)»; «, with RESULTS R15 (d), R17 (a) and R47 (a):»; «; REP_F the REPEATs in F, R*_T as in R88),»); MATCHES. (2026-10-30 02:4xZ by date -u)
+- Correction (03:0xZ by date -u): my K12 line above checked only K12 = K0 + P1-P3; it MISSED that «F» is unbound in the "via" parenthetical («R*_T ≤ m_E + REP_F; REP_F the REPEATs in F …» with no F introduced), found by the Lead's symbol test. K12 is therefore NOT landable as written; K13 (K12 + «per W-run F» + «R*_T as in R88, read on F») will be word-diffed when its SHA arrives.

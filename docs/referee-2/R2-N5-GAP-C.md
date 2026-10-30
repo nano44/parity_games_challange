@@ -123,3 +123,5 @@ The fixes file is append-only: `git diff 15044625 c1aa183d` adds 38 lines (H10-H
   - The premises named are those both referees used. The scope tail is unchanged.
   - **H14 MATCHES §1-§5 with H1-H13**; every symbol is defined or cited; it claims nothing beyond. Landable.
 - Final: P-N5-GAP's only gap G-GAP-1 is CLOSED by H1, and H14 is the line to land.
+- H16 line (l-new 996d9a57, sha1 e3a23a9a…): = H14 + GAP-L4 exactly (difflib: «H_t);» → «H_t, H_t := S4a's arena at t (Even keeps σ_t ∪ Iσ_t, Odd follows τ_t));», nothing else; = §1's PIECE / H_t definition); MATCHES. (2026-10-30 02:5xZ by date -u)
+- **Lemma OPT-OFF (§2.4): SIGNED (Opus 5.5, D15)** — statement as in the packet, with the proof of fixes H1 (l-new 15044625 / c1aa183d), which closes G-GAP-1 (§C.2). REFEREE-2's signature table for P-N5-GAP is now: all 13 items SIGNED (XW, W-MON, FB-W, OPT-OFF with H1, W-SUCC, LATE-W, LATE-PIECE, GAP-MON, SW-IN, Z-FLAT, REOPEN-W + REOPEN-CHARGE, Theorem GAP-RED). Line H16 (sha1 e3a23a9a): MATCHES (see above).
