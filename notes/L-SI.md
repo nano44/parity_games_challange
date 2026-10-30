@@ -20,8 +20,11 @@ STEP 0: local clone stale at da88a6d4 AGAIN; ff to origin 19ecc5e1, trunk merged
   It only gives a counter bound Π(1 + m_d); INT-LIN needs Ξ-improvement to forbid carries (L-RED R141 target).
 - §10 (Lead 14:58Z): Claim RG PROVED (lane); RETURN-CHARGE + Corollary INT-XCH PROVED (lane): [P-INT] ⇐ in-interval XI-CH-POLY (RCV 0,
   RX 0, XCI ≤ 8). FL is no longer an independent residual. CN-POLY OPEN (DFS, the whole arena matters).
+- §11 (Lead 16:10Z): RETURN-CHARGE′ needs NO hypothesis (Ξ_j(σ_j(v)) non-decreasing); Corollary SEG-XCH: Even-switching transitions
+  ≤ m_E + Σ d_E(d) XCH(d) on any segment ⇒ XI-CH-POLY alone gives polynomial W-runs; CN-POLY covered. Data 30,622 / 2,963 returns, 0 viol.
+- §12: «W-change on v's Ξ-play» DEAD (cw11_n24, OFF 64); the split is R92's TXC ⊔ WZ.
 ### QUEUE
-1. [P-INT] / CONJECTURE INT-LIN (now ⇐ XI-CH-POLY) (|I| ≤ n − 1; data max 8). Needs a property of SPEC S1's tie-break inside G_I.
+1. XI-CH-POLY (in-interval and per W-run) is now THE target of this line; [P-INT], CN-POLY, FL-POLY all reduce to it (|I| ≤ n − 1; data max 8). Needs a property of SPEC S1's tie-break inside G_I.
 2. (Lead 14:46Z) deep path-set changes per W-change: trivially ≤ n per transition (PERBD4 ≤ 0.82 n); the real question is a charge of
    v's deep changes to W-changes near v (WCH_F(v), or the W-changes on v's Ξ-path), box 51b §9.
 3. L-RED kill target: embed a long SI run as one G_I (R1 τ stable, R2 tight, R3 no W-better improving edge).

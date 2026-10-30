@@ -302,6 +302,49 @@ dist(y) = dist(x) − 1 are exactly the W-tight arena edges of x».
   - In N5 a switch of x from p to q needs BOTH key(q) < key(p) (LEX-BFS) AND Ξ(q) ▷ Ξ(p) (S2). The adversarial model keeps only the
     first.
 
+## 11. Lead 16:10Z: CN-POLY. RETURN-CHARGE holds with NO hypothesis, so CN-POLY needs no DFS analysis
+- Inputs noted, not used for this step: L-LIT T55 (l-lit cd671830; RETURN-ANCESTOR, LAYER-WINDOW, COUNTER), L-LIT T56 (l-lit 0569df31;
+  ISO / DIOID / CIRC) and REFEREE 20's SW-KEEP sketch (not yet on claude/referee when read). All relayed by the Lead, none opened here.
+- Lemma RETURN-CHARGE′ (PROVED, lane). In ANY stretch of an N5 run (S4a steps, τ-changes and S4c fallbacks alike), let Even v leave d at k1
+  and re-adopt d at k2 > k1. Then Ξ_{k2}(d) ▷ Ξ_{k1}(d).
+  - The hypotheses of §10.3 (λ_Ξ fixed, v not its own Ξ-cycle node) are dropped.
+  - Proof. Every Even switch at j goes to an edge of Iσ_j: S4a's arena is σ_j ∪ Iσ_j, and S4c picks from Iσ_j (n5x.py step()). So the
+    sequence j ↦ Ξ_j(σ_j(v)) is non-decreasing.
+    - Without a switch at j, it is one vertex, and Ξ is pointwise non-decreasing (R15 (a), (d)).
+    - With a switch a → b at j: Ξ_{j+1}(b) ⊵ Ξ_j(b) ▷ Ξ_j(a).
+  - Hence Ξ_{k2}(d) ▷ Ξ_{k2}(σ_{k2}(v)) ⊵ Ξ_{k1+1}(σ_{k1+1}(v)) ▷ Ξ_{k1}(d). □ (This replaces §10.3's reflection through v ⊕ ·.)
+- Corollary SEG-XCH (PROVED, lane). For every segment [p, q] of a run, let SWT := the transitions of [p, q] that switch some Even vertex.
+  Then SWT ≤ m_E + Σ_d d_E(d)·XCH_{[p,q]}(d).
+  - A switch either adopts an edge v has not held in [p, q] (≤ deg(v) − 1 per v), or is a return.
+  - The return windows [k1, k2) of one (v, d) are disjoint, and each contains a change of Ξ(d).
+- Consequences.
+  - (i) For a W-run F every transition moves σ, so |F| ≤ m_E + Σ_d d_E(d)·XCH_F(d) ≤ m_E(1 + max_d XCH_F(d)). XI-CH-POLY ALONE gives
+    polynomial W-runs. This sharpens R139's «XI-CH-POLY ∧ FL-POLY ⇔ polynomial W-runs» (FL-POLY is implied; Lead to check against
+    R139's text).
+  - (ii) INT-XCH holds with RX_I = 0, so CN-POLY needs no separate argument: CN switches are counted like all others. CN-POLY ⇐
+    in-interval XI-CH-POLY. The LIFO-DFS rule (§10.2) does not matter.
+  - (iii) READING, Odd side by the dual symmetry (not re-proved for Odd; DATA below): every Odd switch is in It and Ξ^U is monotone for Odd, so the
+    τ-switching transitions are ≤ m_O(1 + max_u XCH^U(u)).
+    - Every N5 transition switches σ or τ, hence T ≤ m_E(1 + XE) + m_O(1 + XO), with XE / XO the most changes of one vertex's Ξ / Ξ^U
+      over the whole run.
+    - T is polynomial ⟺ per-vertex Ξ- and Ξ^U-change counts over the run are; the converse is trivial since each is ≤ T. G-N5-TIME is
+      equivalent to that per-vertex count, run-wide. This is a reformulation, not progress on the bound.
+- DATA (si/gate/retx.py, whole runs, 1,134 runs: sbcg + alt + latew + fx):
+  - 30,622 Even returns: RCV 0, MONO_V 0, IMP_V 0.
+  - W-run bound (i): FB_V 0; min slack 5 (4- and 5-vertex games).
+  - Odd side: 2,963 Odd returns, ORCV 0, OMONO_V 0, OIMP_V 0. T-bound (iii): TB_V 0 on all 1,134 runs.
+
+## 12. The §9 charge form (DATA): «a W-change on v's Ξ-play» is not universal; the split is R92's ZXC = TXC ⊔ WZ
+- At W-changing transitions of W-runs (si/gate/charge.py, 1,134 runs), each Ξ-change of v is classified SELF (W(v) itself changes), ON (a
+  W-change at some other vertex of v's Ξ-play at q or q + 1) or OFF (neither).
+  - All changes: SELF 75,611, ON 40,510, OFF 64. Depth ≥ 4: SELF 13,729, ON 9,732, OFF 4.
+- DEAD: «every Ξ-change at a W-changing transition sees a W-change on its own Ξ-play». Instances red/kw/instances/cw11_n24.pg (OFF 4,
+  one of depth ≥ 4) and red/xing/instances/u1t_own6_n32.pg (OFF 2, one deep). Also wk1_n32, wk2_n32, kt6_n58, lcount2_n23, u1t_cex_n32,
+  x31_re24.
+- READING. SELF is R92's WZ (W(v) changes) and ON / OFF are TXC at W-changing transitions. A per-vertex count charge gains nothing over
+  WCH_F, because one transition is one change per vertex. The charge that matters is to WCH_F(v) (R93's per-vertex premise [P-WCHτ])
+  plus TXC, i.e. R92's existing split. Nothing new beyond the OFF kill.
+
 ## DONE / FINDINGS / NEEDS
 - DONE: experiments/si/gate/ (gate.py, const.py, agg.py, run.sh, inst/ copies, outputs); si/check.sh «box 51b»; this note.
 - FINDINGS:
@@ -329,8 +372,11 @@ dist(y) = dist(x) − 1 are exactly the W-tight arena edges of x».
   13. PROVED (lane, §10.3): Lemma RETURN-CHARGE. A return of v to d needs a strict Ξ-rise of d in between. Corollary INT-XCH:
       |I| ≤ m_E + Σ_d d_E(d)·XCH_I(d) + RX_I, so [P-INT] ⇐ in-interval XI-CH-POLY. FL-POLY ⇐ R*-POLY ∧ XI-CH-POLY ∧ RX-POLY. DATA: RCV 0,
       RX 0 over 78 returns.
-  14. READING (§10.3): T54's counter in N5 needs exponential in-interval Ξ-changes. The dropped condition is S2's Ξ-offer. CN-POLY OPEN
-      (§10.2).
+  14. READING (§10.3): T54's counter in N5 needs exponential in-interval Ξ-changes. The dropped condition is S2's Ξ-offer.
+  15. PROVED (lane, §11): RETURN-CHARGE′ with no hypothesis. Corollary SEG-XCH: Even-switching transitions of any segment are
+      ≤ m_E + Σ_d d_E(d)·XCH(d). So XI-CH-POLY alone gives polynomial W-runs (sharpens R139), and CN-POLY ⇐ in-interval XI-CH-POLY with no
+      DFS argument. READING: T ≤ m_E(1 + XE) + m_O(1 + XO).
+  16. DEAD (§12): «a W-change on v's Ξ-play at every Ξ-change at W-changing transitions» (cw11_n24, u1t_own6_n32; OFF 64 of 116,185).
 - NEEDS: none from the owner. Lead:
   - L-LIT: open a source on network-simplex stalling and anti-stalling rules (Cunningham), and on SI with arbitrary improving-subset
     rules on games with fixed cycle nodes.
