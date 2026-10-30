@@ -645,3 +645,9 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
   flipnonex_a_n10.pg + .start (Odd 8 in S1's BFS branch, 9 → 4 at 1 → 2, tied targets re-ordered by 9's own flip). Engines n5x and n5b
   agree (heads52/flipx.py; red/seg/xeng.py states identical). Obstruction: S1's tie-breaks (DFS at own cycle nodes, BFS discovery
   order) depend on the strategy below, not on the targets' values. Weaker CONJECTURE FLIP-EV stands (0 violations).
+- CONJECTURE FLIP-EV (every EXI / MOV σ̄-flip at an Odd vertex that is not its own Ξ-cycle node happens at a transition with an event
+  (iii), i.e. a Ξ-change at an upward head): DEAD. Instance experiments/si/heads52/inst/flipev_n20.pg + .start, transition 2 → 3.
+  - Odd 10 leaves D (1 → τ(10) = 4, both values fixed) in a W-run with no event (iii).
+  - Cause: Odd 14 enters D (8 → 11) because Ξ(τ(14) = 8) rose; 11 is tied, so the BFS keys above re-order.
+  - n5x and n5b agree (heads52/flipx.py; xeng states identical). Found by a tie-biased random search (top odd priority at vertex 0).
+  - Obstruction: τ-targets of non-deviating Odd vertices also drive σ̄; they are not upward heads.

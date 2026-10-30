@@ -1,7 +1,7 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
-## HANDOVER (successor 34, box 52; written 2026-10-30T17:3xZ (date -u; see commit); WORKING; Lead session_014FBi6o334DvwT5Uw2kDfoN)
+## HANDOVER (successor 34, box 52; written 2026-10-30T17:3xZ, updated 18:5xZ (date -u; see commit); PARKED at ~470k; Lead session_014FBi6o334DvwT5Uw2kDfoN)
 STEP 0: local clone stale at da88a6d4 AGAIN; ff to 0730ee5e, trunk merged 3d33d718. No other session on the branch (origin last 16:38Z).
 ### Resume point
 - Box 52 (Lead 16:59Z): note docs/si/N5-HEADS-box52.md, tools experiments/si/heads52/, pins si/check.sh «box 52», DEAD.md «box 52».
@@ -11,24 +11,32 @@ STEP 0: local clone stale at da88a6d4 AGAIN; ff to 0730ee5e, trunk merged 3d33d7
     - Case 3a uses Claim RG′ (§10.1 read with W_(k+1)) + T54 LEX-BFS / IDX-MONO.
     - Case 3c (re-route) is closed by an ARENA-MAX cycle argument.
   - Theorem HEAD-RED: polynomial W-runs ⟺ per-vertex σ̄-flips, CN switches and Ξ-changes at upward heads are polynomial.
-  - Odd side of SEG-XCH: RETURN-CHARGE′-O, SEG-XCH-O, T-XCH.
+  - Odd side of SEG-XCH: RETURN-CHARGE′-O, SEG-XCH-O, T-XCH. CORRECTION: these are landed RESULTS R86 (a) SW-RETURN (both sides, any
+    stretch). Only T-XCH's composition with R15 (d) is new.
+- PACKET P-N5-SETTLE FROZEN (Lead 18:14Z): docs/si/P-N5-SETTLE-box52.md sha1 aef403c3d8a003bcfc6742c4d1da084a1e21669f (248 lines); line
+  docs/si/P-N5-SETTLE-line.txt sha1 6aa094e32b03317797a551ac2fc719749cf59ca7. To sign: RG′, PLAY-CAUSE, RUN-SETTLE / RUN-COUNT, HEAD-RED,
+  T-XCH (composition). Repairs go to docs/si/P-N5-SETTLE-fixes.md, never into the frozen file.
 - FLIP-CAUSE″ DEAD (random search; n5b agrees): flipnone_n14 (Odd own Ξ-cycle node, DFS choice, no head event) and flipnonex_a_n10 (BFS
   branch, tied candidates re-ordered by a flip below; a head event is present). CONJECTURE FLIP-EV: an EXI / MOV flip at a non-own-node o
   happens only at an event-(iii) transition (corpus EVX 0; 5 x 100k random games 0). FLIP-RED: given FLIP-EV, poly W-runs ⟸ HX ∧ CN ∧ XCN.
 - DEAD: the Ξ-distance front (ladderd0_k12_n48); σ̄ avoids I_τ (lend107_n32); D only shrinks (latew); old-target flip cause (nep13_n24).
 - OPEN: HX-POLY (data linear), CN-POLY per W-run (37 transitions in the corpus).
 ### Queue
-1. Prove FLIP-EV. EVEN-cycle branch: least-index tight successor (sketch in note §3). ODD branch: a re-order of tied BFS keys needs a
-   value-preserving path change below, which bottoms out in a caused flip, i.e. a head event. Own-node flips: the XCN term.
-2. HX-POLY: head feedback (R143 §2). Use RUN-SETTLE: between head events everything settles in ≤ n − 1 steps, so count head events by
+1. FLIP-EV is DEAD (flipev_n20 + start: the predicted gap, built by a tie-biased search with vertex 0 Odd at the top, odd priority; see
+   DEAD.md, P-N5-SETTLE-fixes F0). FLIP-RED is void, and HEAD-RED keeps its SB term. Next idea (READING): add the τ-targets of Odd vertices
+   to the head set; an (i)-only transition's lowest flip cause is an ENT (Ξ(τ o′) rose) or an own-node flip. Unproved and unmeasured.
+2. P-N5-SETTLE with the referees (Lead routes): answer their notes ONLY in docs/si/P-N5-SETTLE-fixes.md.
+3. HX-POLY: head feedback (R143 §2). Use RUN-SETTLE: between head events everything settles in ≤ n − 1 steps, so count head events by
    what a settled state can re-open.
-3. CN-POLY per W-run (CN switches charge to Ξ-rises of non-heads; is there a head form?).
-4. REFEREE 20's SW-KEEP sketch against FLAT-Z / ZFL (old queue 4).
+4. CN-POLY per W-run (CN switches charge to Ξ-rises of non-heads; is there a head form?).
+5. REFEREE 20's SW-KEEP sketch against FLAT-Z / ZFL (old queue 4).
 ### Things only I know
 - si/check.sh: under `set -e`, «A && ! B» and «! grep» lines can never fail. «grep | grep -q» under pipefail fails on SIGPIPE, so an
   `if` on it never fires. I fixed box 51b's retx line and wrote box 52's checks with explicit exits.
   - The Bash tool runs commands inside an && chain, so `set -e` in an ad-hoc subshell does not exit there either. Test a check block as
     `bash file.sh`.
+- Scratch searches (not in the repo): flip searches at n 8-24, tie-biased at n 10-20 (vertex 0 Odd, top odd priority). The fs5 form
+  found flipev_n14 / flipev_n20 in ~100k tries; the unbiased one found none in 580k.
 - heads52 tools take < 0.1 s on n ≤ 48. Corpus runs: about 5 min each at -P 4 (run*.sh). obs_K12_m24 ~1 min per tool.
 - pkill again: never `pkill -f` a pattern that the calling command line also contains (exit 144). Use nohup + a script file.
 
