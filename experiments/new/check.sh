@@ -361,4 +361,10 @@ if grep -q "txc 184 .* gxc 0 .* src {'SBAR': 93, 'WIT': 91}" <<<"$w23" && grep -
 else
   echo "box 72 TXC check: FAILED"; exit 1
 fi
+w24=$(cd .. && python3 -I new/box73/fbo.py new/box73/inst/cf_n24.pg new/box73/inst/cf_n24.start)
+if grep -q "fbo 96 per-phase 96 per-v-phase 9 rel {'SAME-C-fixed': 96} .* fb 9 rho 0 " <<<"$w24"; then
+  echo "box 73 FBO: cf_n24 96 = 4n FBO events in one phase (rho 0, 9 fallbacks; FBO-LIN DEAD): PASS"
+else
+  echo "box 73 FBO check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

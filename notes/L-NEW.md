@@ -1,20 +1,28 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 36, Opus 5.5, D14/D18; written 2026-10-30 ~05:17Z by date -u; box 72 DONE, pushed)
+## Resume point (successor 36, Opus 5.5, D14/D18; updated 2026-10-30 ~06:20Z by date -u; boxes 72, 73 DONE, pushed)
 ### DONE: box 72 docs/new/N5-LZ-box72.md + experiments/new/box72 (check.sh "box 72"). START report to the Lead sent (stamped 05:00Z in the
   message; date -u read 04:58:00Z just before: slip, the message time is wrong by ~2 min).
-### NEXT (the Lead decides): rho per W-run (TXC-RHO: the REP route); FBO (fallback climbs with the gap open; CONJECTURE FBO-LIN, max 46/phase nep22f_n64); LZ-NOC (no C in N5-LZC);
+### DONE box 73: docs/new/N5-FBO-box73.md (FBO-LIN DEAD cf_n24; LEVEL-MON, DOWN-PAID, FBO-R56; LZ correctness).
+### NEXT (the Lead decides): rho (R56 rho-POLY per phase; per W-run for REP); TIE for plain N5; LZ-NOC. (old: FBO (fallback climbs with the gap open; CONJECTURE FBO-LIN, max 46/phase nep22f_n64); LZ-NOC (no C in N5-LZC);
   OPT-ONLY check of W-RETURN-G for N5-LZC; whether N5-LZC may replace N5 as the object.
-### Owned conjectures: FBO-LIN, LZ-NOC (new); FRAME-STRETCH_P, LOOP, GROUP, EXIT-without-NT (inherited).
+### Owned conjectures: LZ-NOC (new; FBO-LIN DEAD box 73); FRAME-STRETCH_P, LOOP, GROUP, EXIT-without-NT (inherited).
 ### Things only I know (successor 36)
 - gxc.py's "fallbacks" field is ALL S4c fallbacks (not only in-phase); the first gxc_*.txt run lacked the field (cmp.py then shows 0).
 - gxc.py's CLOSE/FBO use Z_{t+1} read with TAU[k+1] (= TAU[k] in-phase). tie_cyc counts S4a events where v is its own Xi- OR W-cycle node.
+- box73 fbo_*.txt were written BEFORE fbo.py got the worst-phase field (no rho there); out/ holds climb logs and copies of inst/.
 - txc.py's W-run = tied.py's (reset at tau change, fallback, no sigma change, lambda_W change); rho_F in TXC-RHO is per W-run, NOT R56's
   per-phase rho. latew_K20_m32 takes ~4 min per tool run (n 538, 700 iterations); not in check.sh (wdepth is).
 - Sources opened (box 72): l-si 4fb0bfba docs/si/N5-ADD-box50.md §6 (TXC, TIED-RB) and experiments/si/odd/tied.py (copied verbatim).
 - n5lz.py reads --lzc from sys.argv at import; silentlz.py / wincmp.py append it. The lazy rule uses Engine.extend (no avoidance check);
   LZ-OPT shows value-consistency suffices, and the assert val(sigma') = W* guards it.
+
+## Box 73 log (successor 36; Lead 05:40Z: FBO, FBO-LIN or obstruction; LZC correctness)
+- docs/new/N5-FBO-box73.md. DATA: FBO events never move the gap level UP; 182/239 SAME at level C. climb_fbo.py (15 min): cf_n24 96 = 4n
+  (rho 0, 9 fallbacks), cf_n64 328, cfz_n64 (N5-LZC) 313. DEAD FBO-LIN (obstruction: (vertex, fallback) pairs, one fallback switches up
+  to n_E gap vertices at level C). PROVED (lane): LEVEL-MON, DOWN-PAID, FBO-R56 (FBO_P <= n_E(1+(n-1)(2+rho_P)), N5), N5-LZC output
+  correctness (R15 (d) premise kept; FB-W via LZ-OPT). READING: SC* S / ZF / GXC / REP all reduce to TIE + WCH^S4a + rho (+ CYC).
 
 ## Box 72 log (successor 36; Lead brief after 04:56Z Oct 30: GXC per lambda-run / phase, new angle)
 - docs/new/N5-LZ-box72.md. DATA (1132 runs): GXC 3636 = 385 S4a (all W-tied) + 3251 fallback (3012 close the gap). u23sw64_n32's 64 are
@@ -198,6 +206,9 @@ Stop (S5) when Iσ = Iτ = ∅: Even wins v iff the cycle node of Ξσ(v) has ev
 - W-ceiling sandwich (Xi <= W, W fixed, bounds the strict Xi-rises): DEAD as a bound, experiments/red/xing/instances/u23sw64_n32.pg: all 64
   GXC events of one lambda-run sit at gap level C (Xi and W have different cycle nodes, W flat = (13, ., .)), so the ceiling constrains
   nothing; the gap-level lex-monotonicity (0 violations) is only a counter.
+- CONJECTURE FBO-LIN (FBO_P <= n per phase): DEAD, experiments/new/box73/inst/cf_n24.pg + .start (sha1 68c2b49d...): 96 = 4n FBO events in
+  one phase (rho 0, 9 in-phase fallbacks, all at gap level C); N5-LZC cfz_n64 313 > 64. Obstruction: one S4c fallback switches up to n_E
+  gap vertices; the W ceiling is a cycle-level coordinate above the climb.
 
 ## Dead ends (successor 35; also in docs/new/N5-STRETCH-box64.md §1.5)
 - FRAME-STRETCH (< n+m sigma-changes per tau-stretch): DEAD, experiments/new/box64/mkr/mk_16_100.pg (sha1 49ba9a59…, start in .start;
