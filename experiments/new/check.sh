@@ -336,4 +336,10 @@ if grep -q "classes {'S': 31} .* SCrun 31 max-S-per-piece-edge 1 S-at-Wflat 31/3
 else
   echo "box 70 SC check: FAILED"; exit 1
 fi
+w20=$(cd .. && python3 -I new/box70/silent.py new/box71/inst/s2piece_n32.pg new/box71/inst/s2piece_n32.start)
+if grep -q "classes {'S': 26} max-S-per-edge 2 .* max-S-per-piece-edge 2 S-at-Wflat 26/26" <<<"$w20"; then
+  echo "box 71 S2: s2piece_n32 two S re-entries of (15, 8) in one piece (<= 1 per (piece, edge) DEAD): PASS"
+else
+  echo "box 71 S2 check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

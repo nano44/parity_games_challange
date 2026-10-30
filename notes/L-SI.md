@@ -16,11 +16,12 @@ Reason: queue items (1)-(3) and the Lead's steps (1)-(2) are done; context ~285k
 - Box 44 3a972c85, docs/si/N5-REPCH-box44.md: repeat cause chains depth 1 (41/41 plain-switch parents); W-length rank DEAD; CONJECTURE REP-PLAIN.
 - Box 45 (this commit), docs/si/N5-PLAIN-box45.md: plain-wave lemma (transition form) DEAD on runfam_K40; REP-PLAIN DEAD on latew_K20_m32;
   depth 1 everywhere, breadth grows (agrees with L-RED R127).
+- Box 46, docs/si/N5-SUB-box46.md: PROVED (lane) GP*-SUB, LOC-R*; every late adoption is local; REP-LIN DEAD (latew 570 > 538 per W-run).
 ### IN FLIGHT
 - Nothing running. P-N5-CUT waits for the Lead's referee routing.
 ### OPEN / QUEUE
 1. P-N5-CUT referee notes → fixes file (never edit the packet).
-2. [P-REP]: plain-wave lemma DEAD (box 45); REP-PLAIN DEAD. Live: 'each FIRST adoption re-enables ≤ p(n) repeats' (breadth). Untried idea: GP*-RUN on a SUB-interval
+2. [P-REP]: plain-wave lemma DEAD (box 45); REP-PLAIN DEAD. Live: 'each FIRST adoption re-enables ≤ p(n) repeats' (breadth). Tried (box 46, no REP bound): GP*-RUN on a SUB-interval
    of a W-run with lateness read relative to the sub-interval (its proof seems to use only properties inherited by sub-intervals; check).
 3. Lead 00:52Z ask, not done: reader-chain lemma (WCH(c) ≤ switches(v) + rest of c's play, recursion over the reader graph; L-RED R127).
 4. [P-SC] (SIL + CYC per λ-run), [P-B] (fallbacks + τ-changes per λ-run; other lanes' frontier), [P-ODD].

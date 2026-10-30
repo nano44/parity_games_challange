@@ -605,3 +605,7 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
   experiments/si/runlin/instances/runfam_K40.pg (sha1 287a185d6b82, S3 start): 151 > 78 in one W-run. Obstruction: many GP* waves per W-run.
 - CONJECTURE REP-PLAIN (box 44): DEAD. Instance experiments/si/odd/inst/red/latew_K20_m32.pg + .start (L-RED, sha1 063d173c2de7): all 570
   repeats have a FIRST late adoption as the parent of their target's last W-rise.
+
+## box 46 (L-SI successor 31, docs/si/N5-SUB-box46.md)
+- CONJECTURE REP-LIN (box 42; REPEAT late adoptions ≤ n per W-run): DEAD. Instance experiments/si/odd/inst/red/latew_K20_m32.pg + .start
+  (L-RED, sha1 063d173c2de7): 570 > 538 in one W-run (repchain.py REPW). Obstruction: one FIRST late adoption re-enables Θ(n) edges.
