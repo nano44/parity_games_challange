@@ -1,0 +1,10 @@
+LATEPAIR mk_4_16.pg n 102 late 9 max-per-lambda-run-edge 1 max-per-piece-edge 1 max-per-Wrun-edge 1 LATE-W checked 0 viol 0
+LATEPAIR mk_8_32.pg n 198 late 17 max-per-lambda-run-edge 1 max-per-piece-edge 1 max-per-Wrun-edge 1 LATE-W checked 0 viol 0
+LATEPAIR d_hntop_n8.pg n 168 late 0 max-per-lambda-run-edge 0 max-per-piece-edge 0 max-per-Wrun-edge 0 LATE-W checked 0 viol 0
+LATEPAIR d_runquad_K8_m30_n192.pg n 192 late 0 max-per-lambda-run-edge 0 max-per-piece-edge 0 max-per-Wrun-edge 0 LATE-W checked 0 viol 0
+LATEPAIR d_s3quad_K3_m4.pg n 137 late 0 max-per-lambda-run-edge 0 max-per-piece-edge 0 max-per-Wrun-edge 0 LATE-W checked 0 viol 0
+LATEPAIR dewin_runquad_K3_m4.pg n 54 late 0 max-per-lambda-run-edge 0 max-per-piece-edge 0 max-per-Wrun-edge 0 LATE-W checked 0 viol 0
+LATEPAIR ewin_runquad_K3_m4.pg n 54 late 0 max-per-lambda-run-edge 0 max-per-piece-edge 0 max-per-Wrun-edge 0 LATE-W checked 0 viol 0
+LATEPAIR relay_L10.pg n 84 late 0 max-per-lambda-run-edge 0 max-per-piece-edge 0 max-per-Wrun-edge 0 LATE-W checked 0 viol 0
+LATEPAIR relay_L10_s3.pg n 209 late 0 max-per-lambda-run-edge 0 max-per-piece-edge 0 max-per-Wrun-edge 0 LATE-W checked 0 viol 0
+LATEPAIR relay_L3.pg n 28 late 0 max-per-lambda-run-edge 0 max-per-piece-edge 0 max-per-Wrun-edge 0 LATE-W checked 0 viol 0
