@@ -1,24 +1,65 @@
-# Draft RESULTS R90 (Lead, 2026-10-30 02:48Z by date -u; subagent draft; packet, both reports, both §Cs and the fixes file K0-K12 filled; NO referee K12 line on origin yet) — to CHECKER C100
-to check: (1) TITLE. The title is K12's line, docs/si/P-N5-CUT-fixes-box43.md l. 82-92 at l-si fd1cb0bc (fixes sha1 95584f7e…, = trunk
-357930cc = l-si head), verbatim: the file wraps it over 11 lines; it is joined here at each line break with one space, the outer «…» are
-stripped, and it has no final period. Re-measured: `git diff --no-index --word-diff=plain` of K0 (l. 9-19) against K12 (l. 82-92), both
-joined the same way, shows exactly the three changes K12 lists (K0-P1 «{+(SPEC S1-S5)+}»; K0-P3 «counterstrategy), {+with RESULTS R15 (d),
-R17 (a) and R47 (a):+}»; K0-P2 «REP_F{+; REP_F the REPEATs in F, R*_T as in R88+})») and nothing else; K12's text inside the quotes is 1,468
-characters (1,500 bytes). K12 carries NO date, so " (2026-10-30)" is inserted immediately before " — a REDUCTION" (as R89's line has its
-date; the freeze 2678f6c6 and K12 fd1cb0bc are both 2026-10-30); this is the only change to the K12 text. The checker fill ", CHECKER PASS
-(docs/checker/C100.md, checker PENDING)" is appended as in R89. The line contains "|" twice ("n = |V|"): harmless in the heading; the GAPS
-proposal below writes "n the number of vertices" instead. (2) K12 NOT YET CONFIRMED BY EITHER REFEREE. At the fetch of 02:42Z (date -u),
-origin/claude/referee head is d21723b5 (02:32:32Z, R-N5-GAP-C) and docs/referee/R-N5-CUT-C.md is unchanged since 1a4e7571; origin/claude/
-referee-2 head is 1b29329d (02:22:46Z) and docs/referee-2/R2-N5-CUT-C.md is unchanged since 4d6a69d1. Neither file has a K12 line. Both §Cs
-say K0 MATCHES (REFEREE §C §2 l. 65-66; REFEREE-2 §C C.3 l. 67-71); K0-P1..P3 are REFEREE's own optional precisions (§C §2 l. 43, 59, 62,
-66: «optional precisions, not blockers»). NOW (02:43Z) lists "K12 word-diff" as WORKING for both referees. The entry cites K12's line as
-the title on the strength of K0's two MATCHES plus this draft's word diff; CHECKER: wait for both K12 lines, or judge. (3) CLAIMS SIGNED =
-the twelve items (a)-(l) below, each SIGNED in BOTH verdict tables (REFEREE "## Verdicts" l. 19-38; REFEREE-2 "## 0. Verdicts" l. 24-41),
-both §C tables "SIGNED by both" (REFEREE §C l. 10-22; REFEREE-2 §C C.1 l. 9-27), and K1 SIGNED in both §Cs (REFEREE §C §3 l. 68-71;
-REFEREE-2 §C C.4 l. 73-79). Checked cell by cell for this draft; no item is signed by one referee only. One-referee notes and readings, and
-the CONJECTURE REP-WPAID, are under Referee strengthening only. (4) PREMISE LABELS (stale-label test, C96 lesson). RESULTS is unchanged since
-4d85668e (R89 landed 2026-10-29 23:27Z); no entry after R89 exists, so no later entry changes a cited label. Each label used by the line or
-by the fixes, grepped in docs/RESULTS.md at 357930cc:
+# Draft RESULTS R90 (Lead, 2026-10-30 02:48Z by date -u; subagent draft; packet, both reports, both §Cs and the fixes file K0-K12 filled; NO referee K12 line on origin yet; Lead revision 2026-10-30 04:31Z by date -u (subagent): title K12 → K15 per the Lead decision of 04:16Z (K16 superseded), both referees' K12 / K13 / K15 lines, fixes K0-K16, §C pins re-measured at the origin heads fetched 04:31Z) — to CHECKER C100
+to check: (1) TITLE. The title is K15's line, docs/si/P-N5-CUT-fixes-box43.md l. 155-165 (under "## K15", l. 153) at l-si
+4e6cc43d917ec167a5081be404586bacff15c9fa (2026-10-30T03:46:52Z; fixes sha1 b24e45102f18437e4d35562363ce400d99f6047c, 169 lines, = trunk
+5754f213; `git diff --numstat 902b5b4f 4e6cc43d`: 54 added, 0 removed), verbatim: the file wraps it over 11 lines; it is joined here at each
+line break with one space, the outer «…» are stripped, and it has no final period. The K15 text is unchanged at l-si db7c9e43 and bba03405
+(append-only: +20/−0, +2/−0). Lead decision, docs/agents/LEAD-STATE.md (entry stamped 04:17Z; trunk commit 5754f213, 04:16:40Z, «Lead: K15
+decided as R90 title (K16 superseded)»): «Lead decision: K15 is R90's title; K16 superseded (reopens free V) — L-SI to record one line.»
+K15's text inside the quotes is 1,607 characters (1,645 bytes) and contains no "|" (K12-K14's «n = |V|» is gone). K15 carries NO date,
+so " (2026-10-30)" is inserted immediately before " — a REDUCTION" (one occurrence; as R89's line has its date; the freeze 2678f6c6 and K15
+4e6cc43d are both 2026-10-30); this is the only change to the K15 text. The checker fill ", CHECKER PASS (docs/checker/C100.md, checker
+PENDING)" is appended as in R89. Checked by script (04:3xZ): the heading line equals "### R90 [refereed-only] " + that construction, byte
+for byte. Word diffs re-measured (`git diff --no-index --word-diff`, both lines joined the same way; [-removed-] {+added+}): K13 (l.
+101-111, 902b5b4f) → K15: exactly three edits, «n [-= |V|,-] {+the number of vertices of the game,+}», «re-entries {+j − 1 → j+} of Even
+edges in R» (K14's edit, l. 131) and «(W [-read against τ_{j−1},-] {+:= the [S1-val] valuation of the (σ, τ_{j−1})-plays, σ the Even
+strategy at the state compared;+} smallest anchor)» (the first and third are K15's, l. 166-168); nothing else. K12 (l. 82-92, fd1cb0bc) →
+K15: those three plus K13's two, «per [-W-run,-] {+W-run F,+} R*_T» and «R*_T {+(one symbol)+} as in [-R88),-] {+R88, read on F),+}», five
+in all; nothing else. K0 (l. 9-19) → K12 (first draft, unchanged): exactly K0-P1, K0-P2, K0-P3 (fixes l. 93-96).
+(2) K15 CONFIRMED BY BOTH REFEREES. Fetch 04:31Z (date -u): origin/claude/referee fe9d0cf1 (04:06:52Z), origin/claude/referee-2 85e6d86e
+(04:06:58Z), origin/claude/l-si bba03405 (04:16:51Z), trunk origin/claude/vibrant-johnson-nxvvxo 5754f213 (04:16:40Z). Each referee's line
+on each step, with the commit that added it. REFEREE successor 19, docs/referee/R-N5-CUT-C.md: K12, l. 94, 40fd25a3 (02:42:04Z): «K12 = K0 +
+P1-P3 exactly; MATCHES (Opus 5.5, D15).»; K13, l. 95, a455907e (03:24:13Z): «K13 = K12 + the two edits exactly («W-run F,», «R*_T (one
+symbol) as in R88, read on F),»); every symbol bound (F by «per W-run F»; my K12 check had missed the unbound F, the Lead's catch); MATCHES
+(Opus 5.5, D15).»; K15, l. 96, fe9d0cf1 (04:06:52Z; its own word diff K13 → K15): «exactly three edits» (the three above); «The W wording is
+equivalent to my suggested σ_t form (it is §4's W^{τ_{j−1}}_t), and it is correct. Strict symbol test over the whole K15 line: every symbol
+is bound in the line (T, n, m_E, K, B*, REP*, SC*, O*, R, j, W, σ, F, REP_F, R*_T, REPEAT) or by a named source (SPEC S1-S5: τ, S4c,
+[S1-val]; R86: λ-, λ^U-runs; R88 / R89: W-run, late adoption, R*_T; P-N5-CUT §4: class S / C, anchor). No free symbol. MATCHES (Opus 5.5,
+D15).» REFEREE-2 successor 21, docs/referee-2/R2-N5-CUT-C.md: K12, l. 104, b93dc4a7 (02:43:02Z; branch head 0140da67): «K12 = K0 + P1-P3
+exactly (…); MATCHES.»; correction, l. 105, 1f5a9fbe (03:03:41Z; head 8a0f0ed6): «my K12 line above checked only K12 = K0 + P1-P3; it MISSED
+that «F» is unbound in the "via" parenthetical (…), found by the Lead's symbol test. K12 is therefore NOT landable as written»; K13 with its
+strict test, l. 106, 0aae9be6 (03:24:28Z; head 2bdda73d): «F is now bound. Full symbol test of the whole K13 line: … ONE DEFECT left, the
+same kind as F: «τ_{j−1}» in the SC* clause uses j, never introduced in the line. Fix: «of re-entries j − 1 → j of Even edges in R …» (…).
+With that edit: MATCHES.»; K15, l. 107, 895d7709 (04:06:57Z; head 85e6d86e): «K15 = K13 + exactly «n the number of vertices of the game»
+(for «n = |V|»), «j − 1 → j» after «re-entries», and «(W := the [S1-val] valuation of the (σ, τ_{j−1})-plays, σ the Even strategy at the
+state compared; smallest anchor)» (…) (difflib vs K13, nothing else). Strict symbol test of the whole K15 line: T, n, m_E, K, B*, REP*, SC*
+(R, j, W, σ bound inside), O*, F, REP_F, R*_T bound; τ from SPEC; «anchor» via the cited §4. No unbound symbol. MATCHES.» REFEREE-2 is
+PARKED: handover notes/REFEREE-2.md (895d7709, head 85e6d86e; «PARKED»): «IN FLIGHT / open … None. CHECKER (C100 / C101) may ask REFEREE-2
+questions on R90 / R91: a successor answers from the reports above.» Strict symbol tests, history: K12's unbound F was found by the Lead
+(LEAD-STATE 03:05Z) and missed by both referees' K12 lines (REFEREE l. 95 and REFEREE-2 l. 105 say so); K13's unbound j was found by
+REFEREE-2 (l. 106); LEAD-STATE 04:00Z also records «REFEREE 19 on K13 found W unbound too (with j)», but REFEREE's own K13 line (l. 95) says
+«every symbol bound»: that finding is on file only through LEAD-STATE, the K16 heading («REFEREE 19's single replacement (binds j and W;
+Lead 03:55Z)») and the K15 line's «my suggested σ_t form»; K14's unbound V and W were found by L-SI's own strict test (fixes l. 133-151:
+«two unbound symbols remain in K14 (V, W)»). On V the referees reason differently: REFEREE treats it as free (its H17 check,
+docs/referee/R-N5-GAP-C.md l. 107, same commit fe9d0cf1: «SPEC's input line defines V = {0..n−1}, but that is not S1-S5; L-SI's K15 replaced
+the same «n = |V|» for this reason»); REFEREE-2's K13 line lists V among the bound symbols and its handover says «TARGET.md l. 8 binds n =
+|V| fleet-wide». K15 contains no V, so it passes both tests. K16 SUPERSEDED: l-si db7c9e43 (03:57:55Z) appended «## K16. K13 with REFEREE
+19's single replacement (binds j and W; Lead 03:55Z) — the line to land» (fixes l. 171-189; sha1 267eb196da78f58641335da45664e36da1039440,
+189 lines), saying «K14 and K15 are superseded. Per both referees, V comes from the SPEC, so K15's V edit is not needed.» Word diff K15 →
+K16: «n [-the number of vertices of the game,-] {+= |V|,+}» and «valuation of the [-(σ,-] {+(σ_t,+} τ_{j−1})-plays, [-σ the Even strategy at
+the state compared;-] smallest anchor)»; nothing else. Lead decision 04:16Z: K15 lands; K16 is superseded because it restores «n = |V|»,
+whose V REFEREE's strict test at fe9d0cf1 flags as free (in the H17 line above; no referee line checks K16 itself: neither §C file mentions
+K16). L-SI recorded it at bba03405 (04:16:51Z), fixes l. 191 (sha1 e30153d3a3cf8b068f4f8a0bc6dea335451cf29b, 191 lines; `git diff --numstat
+4e6cc43d bba03405`: 22 added, 0 removed): «Lead decision 04:16Z: K15 is the line to land; K16 is superseded (it restores the free V, REFEREE
+fe9d0cf1).» bba03405 is not yet on trunk 5754f213 (whose fixes file is the 4e6cc43d version).
+(3) CLAIMS SIGNED = the twelve items (a)-(l) below, each SIGNED in BOTH verdict tables (REFEREE "## Verdicts" l. 19-38; REFEREE-2 "## 0.
+Verdicts" l. 24-41), both §C tables "SIGNED by both" (REFEREE §C l. 10-22; REFEREE-2 §C C.1 l. 9-27), and K1 SIGNED in both §Cs (REFEREE §C
+§3 l. 68-71; REFEREE-2 §C C.4 l. 73-79). Checked cell by cell for the first draft; the K13 / K15 lines appended since change no verdict cell
+(each §C commit after 1a4e7571 / 443cf523 is +1 or +2 lines, 0 removed). No item is signed by one referee only. One-referee notes and
+readings, and the CONJECTURE REP-WPAID, are under Referee strengthening only. (4) PREMISE LABELS (stale-label test, C96 lesson; re-run
+04:3xZ). docs/RESULTS.md is unchanged since 4d85668e (R89 landed 2026-10-29 23:27Z): sha1 4d8d7fdfb1b6207de88e9c0895cfbad6e7ed5187, 6,636
+lines, identical at 357930cc, at trunk 5754f213 and at the working head 54b8526f; the last entry heading is R89 (l. 5854), so no later entry
+changes a cited label, and every line number below was re-printed and still holds. K15 cites the same labels as K12 (R15 (d), R17 (a), R47
+(a), R57, R86, R88, R89). Each label used by the line or by the fixes, grepped in docs/RESULTS.md (at 357930cc, re-checked at 5754f213):
 | label | where in RESULTS | says | verdict |
 | --- | --- | --- | --- |
 | R15 (d) | l. 640-643 | every iteration applies Switch_I (∅ ≠ I ⊆ Iσ) to σ and/or (∅ ≠ I ⊆ Iτ) to τ and changes at least one of them | ✓ = packet [R15d] |
@@ -29,18 +70,19 @@ by the fixes, grepped in docs/RESULTS.md at 357930cc:
 | R51 (d) (K2 only) | l. 2591-2596 | Lemma OUT on 𝒞^1O; it does not itself name "1E-N3" or a standing premise (R57 (b) says «Standing premise, as in R51 (d)»; R51's limits l. 2606: code = SPEC is DATA) | minor: K2's "R57 / R51 (d) (1E-N3 …)" follows R57 (b)'s wording; not in the title |
 | R84 (a) Fact DELTA (packet §1, K4) | l. 4967 | Fact DELTA (weights decided by the top differing rank) | ✓ |
 | R86 (λ-run, λ^U-run; ENT_R, SW_R; m_E; COMPOSE-RUN) | headline l. 5269; l. 5276, 5291 | λ-run (λ^U-run) a maximal run of states with λ (λ^U) constant; ENT_R(v, c), SW_R(v); m_E | ✓ = packet [R86] and §8's bookkeeping |
-| R88 (late adoption, BLOCKED, R*_T) | (f) l. 5738-5740 | «A LATE ADOPTION in F …», R*_T := the transitions of F containing at least one late adoption, F a FROZEN W-phase | ✓; on a W-run it is R88's definition read on F per RESULTS R89 (h) GP*-RUN (H6), as [GPR] says; the line's "R*_T as in R88" inside "per W-run" relies on that reading |
+| R88 (late adoption, BLOCKED, R*_T) | (f) l. 5738-5740 | «A LATE ADOPTION in F …», R*_T := the transitions of F containing at least one late adoption, F a FROZEN W-phase | ✓; on a W-run it is R88's definition read on F per RESULTS R89 (h) GP*-RUN (H6), as [GPR] says; K15 states that reading in the line («R*_T (one symbol) as in R88, read on F», K13) |
 | R89 (W-run; DUAL-ORDER; GP*-RUN; STRETCH-RED's λ_W item) | headline l. 5854; (b) l. 5924; (h) l. 5959; (j) l. 5978-5986 (λ_W item l. 5983) | W-run := a maximal run of consecutive states of one τ-stretch none of whose transitions is an S4c fallback or changes λ_W; "blocked edges and late adoptions as in RESULTS R88" | ✓ = packet [DO], [GPR], [SR-λ]; K3: read "RESULTS R89 (landed, 4d85668e)" for "R89 draft" |
 No mismatch that changes a claim. Three minor points recorded: R47 (a) vs its sub-item (c); K2's R57 (a) gloss; K2's R51 (d). (5) SYMBOL
-TEST. Every symbol of the title line and where it is defined (IN = in the line; CITE = a RESULTS entry the line names; PKT = the cited
-packet section P-N5-CUT §n, docs/si/P-N5-CUT-box43.md at 2678f6c6; STD = SPEC, TARGET.md or GAPS):
-| symbol | status |
+TEST, re-run on K15 (04:3xZ). Every symbol of the title line and where it is bound (IN = in the line; CITE = a RESULTS entry the line names;
+PKT = the cited packet section P-N5-CUT §n, docs/si/P-N5-CUT-box43.md at 2678f6c6; STD = SPEC, TARGET.md or GAPS):
+| symbol | status (K15) |
 | --- | --- |
-| N5, SPEC S1-S5, Even S4c fallback | STD (SPEC docs/new/N5-ssi-global.md; [S4c] quoted in packet §1 l. 47-49) |
+| N5, SPEC S1-S5, Even S4c fallback, [S1-val] | STD (SPEC docs/new/N5-ssi-global.md; [S1-val] and [S4c] quoted in packet §1 l. 29-49) |
 | standing SPEC premise | CITE R57 (headline, (b)), and stated IN the line |
 | R15 (d), R17 (a), R47 (a) | CITE (table above) |
 | T | IN («the number of transitions (iterations) of the run») |
-| n, V | IN («n = \|V\|»); V the vertex set (TARGET.md §1) |
+| n | IN («n the number of vertices of the game», K15); the same n as TARGET.md §1 l. 8 («n = \|V\|») |
+| V | not in K15 (K12-K14's «n = \|V\|» is replaced by K15) |
 | m_E | IN |
 | K | IN (= §8's K(n, m_E, REP*)) |
 | B*, REP*, SC*, O* | IN (each "the largest number of …") |
@@ -48,34 +90,48 @@ packet section P-N5-CUT §n, docs/si/P-N5-CUT-box43.md at 2678f6c6; STD = SPEC, 
 | W-run | CITE R89 |
 | late adoption | CITE R88 (f) / R89 |
 | REPEAT | IN («a second or later late adoption of the same Even edge») |
-| τ, τ-changing transition | STD (SPEC: Odd's strategy) |
+| τ, τ-changing transition, τ_{j−1} | STD (SPEC: Odd's strategy; τ_{j−1} is τ at state j − 1, j IN) |
 | R (inside SC*) | IN («over λ-runs R») |
-| re-entry, class S (W-silent), class C (own-cycle), W, τ_{j−1} (j), smallest anchor | PKT §4 l. 125-131 (classes, smallest anchor, frame), §3 l. 116-118 (anchor), §1 l. 72-83 (W^τ_t, leave / re-entry, span); named IN the line; K8 (frame τ_{j−1}, incl. W*_j) |
+| j | IN («re-entries j − 1 → j», K14) |
+| W (in «W-silent» and «W := …») | IN («W := the [S1-val] valuation of the (σ, τ_{j−1})-plays», K15; [S1-val] STD); = PKT §1 l. 72-83 W^τ_t with τ = τ_{j−1} |
+| σ | IN («σ the Even strategy at the state compared», K15); the state is not named in the line: it is the state at which the cited §4 compares W (REFEREE l. 96: «it is §4's W^{τ_{j−1}}_t») |
+| re-entry, class S (W-silent), class C (own-cycle), anchor, smallest anchor | PKT §4 l. 125-131 (classes, smallest anchor, frame), §3 l. 116-118 (anchor), §1 l. 72-83 (leave / re-entry, span); named IN the line; K8 (frame τ_{j−1}, incl. W*_j) |
 | Theorem CUT-RED; Lemmas OPT-OFF, W-RETURN-G, LATE-SPLIT, WV-R; Corollary CUT-CHARGE; Corollary CUT-POLY | PKT §8, §2, §3, §6, §7, §4, §8 (named, not restated) |
-| "first late adoptions" | IN («≤ m_E per W-run»; = §6 (i) FIRST) |
-| R*_T | CITE R88 («R*_T as in R88»), read on a W-run per R89 (h); NOTE: the subscript T is R88's label and is not the count T the line defines |
-| REP_F, F | REP_F IN («the REPEATs in F»); F is not bound in the line; reading: F a W-run (from «per W-run»), as in §6 (R*-REP) |
+| F | IN («per W-run F», K13) |
+| "first late adoptions" | IN («≤ m_E per W-run F»; = §6 (i) FIRST) |
+| REP_F | IN («REP_F the REPEATs in F») |
+| R*_T | CITE R88 («R*_T (one symbol) as in R88, read on F», K13), read on a W-run per R89 (h); «(one symbol)» settles the first draft's note on the subscript T |
 | "polynomial" | PKT §8 CUT-POLY (bounded by a polynomial in n on every run of every game; REFEREE-2 §C C.3 l. 69-70, optional precision); K7: m_E ≤ n² |
 | converse, fixes K1 | fixes K1 (l. 23-26), signed by both |
 | REDUCTION; not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME | STD (TARGET.md, GAPS) |
 | CONJECTURE REP-LIN, L-RED R128, latew_K20_m32 | docs/red/R128-rep-lin.md (l-red 0e91e875, addendum e55592d9); experiments/red/span/instances/latew_K20_m32.pg sha1 063d173c… (= trunk); REP-LIN := REP ≤ n per W-run (R128 l. 1; packet §8 l. 201) |
-Two notes for CHECKER, neither found by a referee: the subscript clash "T" (count) / "R*_T" (R88's label); "F" unbound in K0-P2's
-insertion. Both are inside the "via" parenthetical; the inequality and the four counts do not use them. (6) FIXES. K0-K12 are each listed
-below with a class and the referees' words; K1 is a NEW STATEMENT signed by both, not a clarification (REFEREE §C l. 86: «K1 is the only new
-signed statement; K0 the only line»); the class list clarification / reading / correction does not fit it, so it is labelled "addition
-(signed)". (7) REP-LIN: DEAD (L-RED R128); the packet does not depend on it (REFEREE l. 37-38; REFEREE-2 §C l. 30). REP-LIN is not in
-RESULTS "## Dead ends" (grep: 0 hits in docs/RESULTS.md); it is recorded in docs/red/R128-rep-lin.md and NOW only. (8) EXCLUDED: no lane
-work after the freeze 2678f6c6 is in the entry except the fixes file (cc84e54c, fd1cb0bc): L-SI boxes 44-47, L-RED R129 and L-NEW boxes
-70-71 are out. The only post-freeze sources cited are K6's second citation docs/si/N5-SUB-box46.md (inside the fixes file; REFEREE-2 §C C.5:
-«not opened by me; R128 suffices») and R128's addendum e55592d9 (00:58:24Z, 11 min after the freeze; it adds the K 24 point only). (9)
-PINS re-run for this draft (below, Data): all pass. (10) Small discrepancies, recorded: REFEREE §C l. 2 says «written 02:03Z-02:08Z», its
-commit 1a4e7571 is 02:03:59Z; REFEREE pins «l. 796-813», REFEREE-2 «l. 797-813» (l. 796 is the block's comment line); REFEREE counts the
-quotes 13/13 «by fragments», REFEREE-2 10/13 strict + 3 faithful elisions, the lane's quotecheck.py 13 / bad 0.
+Result: no free symbol in K15; the same symbols as both referees' K15 strict tests (REFEREE l. 96, REFEREE-2 l. 107). The first draft's two
+notes for CHECKER are settled in the line: «F» unbound (K13: «per W-run F») and the subscript clash T / R*_T (K13: «(one symbol)»); j (K14),
+W and V (K15) likewise. One wording point, not a free symbol: «the state compared» (the σ clause) is fixed only by the cited §4. (6) FIXES.
+K0-K16 are each listed below with a class and the referees' words; K1 is a NEW STATEMENT signed by both, not a clarification (REFEREE §C l.
+86: «K1 is the only new signed statement; K0 the only line»); the class list clarification / reading / correction does not fit it, so it is
+labelled "addition (signed)" (LEAD-STATE 03:05Z: «Lead ruling: K1 class 'ADDITION (signed by both)'.»). K12-K15 are successive CORRECTIONS
+of the RESULTS line (precisions; F; j; V, W); K16 is SUPERSEDED. (7) REP-LIN: DEAD (L-RED R128); the packet does not depend on it (REFEREE
+l. 37-38; REFEREE-2 §C l. 30). REP-LIN is not in RESULTS "## Dead ends" (grep: 0 hits in docs/RESULTS.md, re-run at 5754f213); it is
+recorded in docs/red/R128-rep-lin.md and NOW only. (8) EXCLUDED: no lane work after the freeze 2678f6c6 is in the entry except the fixes
+file (cc84e54c, fd1cb0bc, 902b5b4f, 4e6cc43d; K16 db7c9e43 and the note bba03405 only as superseded history): L-SI boxes 44-49 (incl.
+P-N5-REPD, box 49, frozen, not refereed, a84e7eb5), L-RED R129-R130 and L-NEW boxes 70-71 are out. The only post-freeze sources cited are
+K6's second citation docs/si/N5-SUB-box46.md (inside the fixes file; REFEREE-2 §C C.5: «not opened by me; R128 suffices») and R128's
+addendum e55592d9 (00:58:24Z, 11 min after the freeze; it adds the K 24 point only). (9) PINS: re-run for the first draft (below, Data): all
+pass. NOT re-run for this revision; re-measured instead (04:3xZ): the packet sha1 d6519d3d… at 2678f6c6, trunk 5754f213 and l-si bba03405
+(same blob); the five pinned scripts have the same blob at 2678f6c6 and 5754f213; check.sh at 5754f213 adds 22 lines after l. 813 (`git diff
+--numstat 2678f6c6 5754f213`: 22 added, 0 removed; 15 at 357930cc) and its l. 796-813 are byte-identical to 2678f6c6. (10) Small
+discrepancies, recorded: REFEREE §C l. 2 says «written 02:03Z-02:08Z», its commit 1a4e7571 is 02:03:59Z; REFEREE pins «l. 796-813»,
+REFEREE-2 «l. 797-813» (l. 796 is the block's comment line); REFEREE counts the quotes 13/13 «by fragments», REFEREE-2 10/13 strict + 3
+faithful elisions, the lane's quotecheck.py 13 / bad 0; the Lead decision is «04:16Z» in L-SI's note and the brief, its LEAD-STATE entry is
+stamped 04:17Z; REFEREE-2's K12-K15 lines carry no «(Opus 5.5, D15)» tag of their own (its handover: «Reports of record (all "(Opus 5.5,
+D15)"; …»).
 
-### R90 [refereed-only] N5 (SPEC S1-S5) on EVERY game, under the standing SPEC premise of RESULTS R57 (S1's procedure realises the optimal counterstrategy), with RESULTS R15 (d), R17 (a) and R47 (a): T ≤ 2n(n−1) + (n(n−1)+1)·(m_E·[1 + 2B* + (B*+1)·K] + SC* + O*), K := n(n−1) + (n(n−1)+1)(n−1)(m_E + REP* + 1), where T is the number of transitions (iterations) of the run, n = |V|, m_E the number of edges leaving Even vertices, λ-runs and λ^U-runs are as in RESULTS R86, W-runs as in RESULTS R89 and late adoptions as in RESULTS R88 / R89; B* := the largest number of transitions inside one λ-run that are Even S4c fallbacks or change τ; REP* := the largest number of REPEAT late adoptions (a second or later late adoption of the same Even edge) inside one W-run; SC* := the largest number, over λ-runs R, of re-entries of Even edges in R of class S (W-silent) or C (own-cycle) of P-N5-CUT §4 (W read against τ_{j−1}, smallest anchor); O* := the largest number of τ-changing transitions inside one λ^U-run (Theorem CUT-RED, via Lemmas OPT-OFF, W-RETURN-G, LATE-SPLIT (first late adoptions ≤ m_E per W-run, R*_T ≤ m_E + REP_F; REP_F the REPEATs in F, R*_T as in R88), WV-R and Corollary CUT-CHARGE); so T is polynomial if and only if B*, REP*, SC* and O* are (Corollary CUT-POLY and its converse, fixes K1) (2026-10-30) — a REDUCTION (none of B*, REP*, SC*, O* is bounded here; CONJECTURE REP-LIN is DEAD (L-RED R128, latew_K20_m32); not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C100.md, checker PENDING)
+### R90 [refereed-only] N5 (SPEC S1-S5) on EVERY game, under the standing SPEC premise of RESULTS R57 (S1's procedure realises the optimal counterstrategy), with RESULTS R15 (d), R17 (a) and R47 (a): T ≤ 2n(n−1) + (n(n−1)+1)·(m_E·[1 + 2B* + (B*+1)·K] + SC* + O*), K := n(n−1) + (n(n−1)+1)(n−1)(m_E + REP* + 1), where T is the number of transitions (iterations) of the run, n the number of vertices of the game, m_E the number of edges leaving Even vertices, λ-runs and λ^U-runs are as in RESULTS R86, W-runs as in RESULTS R89 and late adoptions as in RESULTS R88 / R89; B* := the largest number of transitions inside one λ-run that are Even S4c fallbacks or change τ; REP* := the largest number of REPEAT late adoptions (a second or later late adoption of the same Even edge) inside one W-run; SC* := the largest number, over λ-runs R, of re-entries j − 1 → j of Even edges in R of class S (W-silent) or C (own-cycle) of P-N5-CUT §4 (W := the [S1-val] valuation of the (σ, τ_{j−1})-plays, σ the Even strategy at the state compared; smallest anchor); O* := the largest number of τ-changing transitions inside one λ^U-run (Theorem CUT-RED, via Lemmas OPT-OFF, W-RETURN-G, LATE-SPLIT (first late adoptions ≤ m_E per W-run F, R*_T ≤ m_E + REP_F; REP_F the REPEATs in F, R*_T (one symbol) as in R88, read on F), WV-R and Corollary CUT-CHARGE); so T is polynomial if and only if B*, REP*, SC* and O* are (Corollary CUT-POLY and its converse, fixes K1) (2026-10-30) — a REDUCTION (none of B*, REP*, SC*, O* is bounded here; CONJECTURE REP-LIN is DEAD (L-RED R128, latew_K20_m32); not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open), CHECKER PASS (docs/checker/C100.md, checker PENDING)
 - Object (L-SI successor 31, Opus 5.5, D15/D18, Lead reading L40; frozen, unchanged during review): packet P-N5-CUT,
   docs/si/P-N5-CUT-box43.md, sha1 d6519d3d72d67d25bafd21b7034092eaa4315457, 221 lines (l-si freeze 2678f6c6a343909bf51a2611e17cef8d4e6a288c,
-  2026-10-30T00:47:30Z; the file is identical at l-si head fd1cb0bc and at trunk 357930cc; both referees measured the sha1 at 2678f6c6:
+  2026-10-30T00:47:30Z; the file is identical at l-si fd1cb0bc and trunk 357930cc (first draft) and at l-si head bba03405 and trunk 5754f213
+  (re-measured 04:3xZ); both referees measured the sha1 at 2678f6c6:
   REFEREE l. 3-4, REFEREE-2 l. 6-7). Lead brief quoted at l. 3-6 («Freeze packet P-N5-CUT for the two referees … written as a REDUCTION in
   the style of R89's STRETCH-RED: every symbol defined, every hypothesis carried»). Quote base: SPEC docs/new/N5-ssi-global.md@7039eb524,
   P-N5-FRAME@938d87967, experiments/new/box64/late.py@9905dac36; 13 quotes, checked by experiments/si/rund/quotecheck.py (pinned «box 43»,
@@ -95,8 +151,20 @@ quotes 13/13 «by fragments», REFEREE-2 10/13 strict + 3 faithful elisions, the
   appended at fd1cb0bc7e985f9ec885fcdf07a327e07f641364, 2026-10-30T02:25:26Z; `git diff --numstat cc84e54c fd1cb0bc`: 19 added, 0 removed;
   sha1 95584f7e3e7c928e1aadf1ea684ebb9d764e3927, 97 lines): «K0 with REFEREE 19's three optional precisions (R-N5-CUT-C.md §2: K0-P1,
   K0-P2, K0-P3) and nothing else (Lead 02:21Z)»; «K12 supersedes it as the line to land.» (l. 97). Word diff re-measured (to check (1)).
-  Referee confirmation of K12: PENDING (to check (2)). The title is K12's line verbatim with the date inserted; K0 and the 00:56Z text are
-  superseded and are not this entry's title.
+  Referee K12 lines: REFEREE 40fd25a3 and REFEREE-2 b93dc4a7, both «MATCHES»; REFEREE-2's correction 1f5a9fbe: it «MISSED that «F» is
+  unbound» (to check (2)). (5) K13 (fixes l. 99-115, 902b5b4f0b3733e6c56e1c24c99685a93d83a958, 2026-10-30T03:03:59Z; +18/−0 over fd1cb0bc;
+  sha1 51764d300e9f81029835f106426902b1e13927ca, 115 lines): «K12 with the Lead's two edits (03:03Z: F unbound in the "via" parenthetical;
+  R*_T is one symbol) and nothing else»; REFEREE a455907e «MATCHES»; REFEREE-2 0aae9be6: F bound, «ONE DEFECT left»: j unbound. (6) K14
+  (fixes l. 117-131, 4e6cc43d917ec167a5081be404586bacff15c9fa, 2026-10-30T03:46:52Z): «K13 with REFEREE-2's one edit (claude/referee-2
+  2bdda73d: j unbound in the SC* clause) and nothing else (Lead 03:45Z)»; L-SI's strict symbol test of K14 (l. 133-151): «two unbound
+  symbols remain in K14 (V, W)». No referee line checks K14 alone (both word-diffed K13 → K15). (7) K15 (fixes l. 153-169, same commit
+  4e6cc43d; +54/−0 over 902b5b4f; sha1 b24e45102f18437e4d35562363ce400d99f6047c, 169 lines): «K14 with the two edits of the symbol test
+  above (proposed by L-SI; for both referees' word-diff)»; «If both referees accept, K15 supersedes K14 as the line to land» (l. 169);
+  REFEREE fe9d0cf1 «No free symbol. MATCHES (Opus 5.5, D15).»; REFEREE-2 895d7709 «No unbound symbol. MATCHES.»; Lead decision 04:16Z: K15
+  is R90's title. (8) K16 (fixes l. 171-189, db7c9e438a1bccfbc574f2e9596bc3307b2770df, 2026-10-30T03:57:55Z; +20/−0 over 4e6cc43d; sha1
+  267eb196da78f58641335da45664e36da1039440, 189 lines): SUPERSEDED by the Lead decision of 04:16Z (it restores «n = |V|», V free per
+  REFEREE fe9d0cf1); L-SI's note bba03405, l. 191 (to check (2)). The title is K15's line verbatim with the date inserted; the 00:56Z
+  text, K0, K12, K13, K14 and K16 are superseded and are not this entry's title.
   Setting (every game): N5 = SPEC S1-S5 with FIX 1-4; G = (V, E, Ω, owner), n = |V|, m_E (m_O) the edges leaving Even (Odd) vertices; a run
   is the sequence of states (σ_t, τ_t), a TRANSITION is t → t + 1, T the transitions of the run (l. 26-28). [S1-val], [S1-ord], [S1-Xi],
   [S1-dual], [S2], [S4a], [S4b], [S4c] quoted (l. 29-49). Packet symbols (l. 71-83): W^τ_t := the [S1-val] valuation of the (σ_t, τ)-plays
@@ -180,17 +248,19 @@ quotes 13/13 «by fragments», REFEREE-2 10/13 strict + 3 faithful elisions, the
       REFEREE §C §3 l. 69: «SIGNED (Opus 5.5, D15)» (and §10b l. 198: «The converse is TRUE and one line, which I sign»); REFEREE-2 §C C.4
       l. 73-79: «SIGNED (Opus 5.5, D15)» … «SIGNED as written in K1» (and §8 l. 289: «I sign it as stated here»). With (k) it backs the
       line's «if and only if».
-  The RESULTS line (K12) states CUT-RED's inequality, the four counts and CUT-POLY with its converse; it names OPT-OFF, W-RETURN-G,
+  The RESULTS line (K15) states CUT-RED's inequality, the four counts and CUT-POLY with its converse; it names OPT-OFF, W-RETURN-G,
   LATE-SPLIT (with R*-REP's bound), WV-R and CUT-CHARGE as the route and omits W-MON′, W-SUCC and FRESH-SPLIT (it claims less; they are
   signed items (b), (c), (f) above).
 - Not signed: §8 «Notes on the premises (what implies them; READING, not signed)» (l. 197-202), with K6 replacing the stale [P-REP] note;
   §9 READING and DATA (Data below); the working notes N5-CUT-box40, N5-WVP-box41, N5-LATE-box42; L-NEW's box 66 lemmas (LATE-W,
-  LATE-PIECE, l-new 78e1fd24), «cited as lane input only and used nowhere» (l. 11); the superseded line texts (00:56Z proposal, K0).
-  Lane work after the freeze, other than the fixes file, is not part of this entry (L-SI boxes 44-47, L-RED R129, L-NEW boxes 70-71).
-- Fixes (docs/si/P-N5-CUT-fixes-box43.md, L-SI successor 31; K0-K11 at cc84e54c, K12 appended at fd1cb0bc; header l. 5: «Every item below
+  LATE-PIECE, l-new 78e1fd24), «cited as lane input only and used nowhere» (l. 11); the superseded line texts (00:56Z proposal, K0,
+  K12, K13, K14, K16). Lane work after the freeze, other than the fixes file, is not part of this entry (L-SI boxes 44-49 incl. P-N5-REPD,
+  L-RED R129-R130, L-NEW boxes 70-71).
+- Fixes (docs/si/P-N5-CUT-fixes-box43.md, L-SI successor 31; K0-K11 at cc84e54c, K12 appended at fd1cb0bc, K13 at 902b5b4f, K14 (with
+  L-SI's strict symbol test) and K15 at 4e6cc43d, K16 at db7c9e43, the Lead-decision note at bba03405 (l. 191); header l. 5: «Every item below
   is a CLARIFICATION or a READING unless marked "to sign"; no signed statement of the packet changes.»; no quote check is pinned for the fixes
   file). Classes in the referees' words (REFEREE §C §4 table l. 74-86; REFEREE-2 §C C.5 l. 81-94):
-  - K0: CORRECTION of the RESULTS line (REQUIRED items of both; «K0 MATCHES», both §Cs, see Object (3)); superseded by K12.
+  - K0: CORRECTION of the RESULTS line (REQUIRED items of both; «K0 MATCHES», both §Cs, see Object (3)); superseded by K12 (then K13, K14, K15).
   - K1: ADDITION, signed by both (the converse of CUT-POLY, item (l)); «K1 is the only new signed statement» (REFEREE §C l. 86).
   - K2: CLARIFICATION, the standing premise named (CUT-N1 = N-CUT-2): REFEREE «no (names a premise; answers CUT-N1 / N-CUT-2)»; REFEREE-2
     «clarification».
@@ -214,7 +284,19 @@ quotes 13/13 «by fragments», REFEREE-2 10/13 strict + 3 faithful elisions, the
     labelled open».
   - K12: CORRECTION of the RESULTS line: K0 plus REFEREE's optional precisions K0-P1 (N5 (SPEC S1-S5)), K0-P2 (REP_F and R*_T defined in
     the "via" parenthetical), K0-P3 (R15 (d), R17 (a), R47 (a) named) «and nothing else» (l. 80, 97). REFEREE §C §2 called them «optional
-    precisions, not blockers» (l. 66). No referee K12 line yet (to check (2)).
+    precisions, not blockers» (l. 66). REFEREE 40fd25a3 and REFEREE-2 b93dc4a7: «MATCHES»; REFEREE-2 1f5a9fbe: «it MISSED that «F» is
+    unbound … K12 is therefore NOT landable as written». Superseded by K13.
+  - K13: CORRECTION of the RESULTS line (F bound): K12 plus the Lead's two edits, «per W-run F» and «R*_T (one symbol) as in R88, read on
+    F» (l. 99, 112-115). REFEREE a455907e: «every symbol bound … MATCHES (Opus 5.5, D15).»; REFEREE-2 0aae9be6: «F is now bound … ONE
+    DEFECT left … j, never introduced in the line … With that edit: MATCHES.» Superseded by K14.
+  - K14: CORRECTION (j): «of re-entries {+j − 1 → j+} of Even edges in R» (l. 131), REFEREE-2's edit (2bdda73d), «and nothing else»
+    (l. 117); with L-SI's strict symbol test (l. 133-151): V and W still unbound. No referee line on K14 alone. Superseded by K15.
+  - K15: CORRECTION (V, W): «n the number of vertices of the game» for «n = |V|» and «W := the [S1-val] valuation of the (σ, τ_{j−1})-plays,
+    σ the Even strategy at the state compared;» for «W read against τ_{j−1},» (l. 166-168). REFEREE fe9d0cf1: «No free symbol. MATCHES
+    (Opus 5.5, D15).»; REFEREE-2 895d7709: «No unbound symbol. MATCHES.» THE LINE TO LAND (Lead decision 04:16Z); this entry's title.
+  - K16: SUPERSEDED (K13 + j + «W := the [S1-val] valuation of the (σ_t, τ_{j−1})-plays,», keeping «n = |V|»; l. 171-189, db7c9e43):
+    by the Lead decision of 04:16Z, because it restores the free V (REFEREE fe9d0cf1); L-SI's note l. 191 (bba03405): «Lead decision
+    04:16Z: K15 is the line to land; K16 is superseded (it restores the free V, REFEREE fe9d0cf1).» No referee line on K16.
   Both §Cs: «K2-K11 are clarifications / readings; none widens a signed statement.» (REFEREE §C l. 86); «None widens a signed statement.»
   (REFEREE-2 §C C.5 l. 94).
 - Referee strengthening (NOT part of this entry; notes or readings of one referee, conjectures, and premise notes; none is in a verdict
@@ -281,9 +363,13 @@ quotes 13/13 «by fragments», REFEREE-2 10/13 strict + 3 faithful elisions, the
 - Signatures: REFEREE docs/referee/R-N5-CUT.md (report ff5a6f815ea82932f10be6fb45b53a891ba6ef62, 2026-10-30T01:30:28Z, sha1
   63d1f86b52e3f5e9ea5fc90ce2a25349b8ea5e91 there, 191 lines; §10b line check 8a7818a0067bca5a162bb5f3f3abdc74d1dde138, 01:40:15Z,
   append-only (`git diff --numstat ff5a6f81 8a7818a0`: 38 added, 0 removed; no verdict line changed), sha1
-  bd4208e295e3096443752e75b6f59145fde86aa1, 229 lines, = trunk = referee head d21723b5; successor 19): §1 CHECKED; every PROVED item SIGNED;
+  bd4208e295e3096443752e75b6f59145fde86aa1, 229 lines, = trunk 5754f213 = referee head fe9d0cf1 (re-measured 04:3xZ; last commit touching
+  it 8a7818a0); successor 19): §1 CHECKED; every PROVED item SIGNED;
   «No gap. Nothing FALSE. Notes CUT-N1..N7.» (l. 37). §C docs/referee/R-N5-CUT-C.md (1a4e757165c09dc94561d411f01d70aa79de2417,
-  02:03:59Z, sha1 d8aedd5af80fdc155c342071c6b379c775e918ae, 92 lines, = trunk = referee head; no K12 line): «Verdicts identical. Gap map
+  02:03:59Z, sha1 d8aedd5af80fdc155c342071c6b379c775e918ae, 92 lines there; then append-only: K12 line l. 94 at 40fd25a3 (+2/−0), K13 line
+  l. 95 at a455907e (+1/−0), K15 line l. 96 at fe9d0cf1 (+1/−0); measured at referee head fe9d0cf1 (fetch 04:31Z): sha1
+  1bdf40901e2ad84470b32b69d7296354b73865e9, 96 lines, last commit touching it fe9d0cf1199e85c4765b94551dd2aebedc5b42dee (04:06:52Z); trunk
+  5754f213 still has the a455907e version, sha1 4bc6129fe5c982e1bf395895e4fdbec7d5c08988, 95 lines (fe9d0cf1 not merged yet)): «Verdicts identical. Gap map
   EMPTY (neither referee lists a gap; nothing FALSE). No disagreement on any proof step.» (l. 22); K0 MATCHES; K1 SIGNED; «K2-K11 are
   clarifications / readings; none widens a signed statement» (l. 86); «I missed N-CUT-4 (§0's row); recorded.» (l. 91). REFEREE-2
   docs/referee-2/R2-N5-CUT.md (report 6270f74532e69269f43bc5a1f07f791fb14fd2a6, 01:21:53Z, merged as
@@ -292,7 +378,12 @@ quotes 13/13 «by fragments», REFEREE-2 10/13 strict + 3 faithful elisions, the
   removed), sha1 ace5e691baa42fd62fec100986243fa5fb52f934, 303 lines, = trunk; successor 21): all items SIGNED, CUT-POLY as an
   implication; «No gap. Nothing FALSE. Notes N-CUT-1..N-CUT-10 (§6).» (l. 41). §C docs/referee-2/R2-N5-CUT-C.md
   (443cf523dbefd3b4c51cde87bb2553ba3b36856f, 02:07:16Z, merged as 4d6a69d18ed4107bfb62de2815d5ba20b6b474de, sha1
-  d33962fb90b3ba67b4e3aa23c9841681928c9391, 103 lines, = trunk = referee-2 head 1b29329d; no K12 line): «Joint gap map: EMPTY. Every item is
+  d33962fb90b3ba67b4e3aa23c9841681928c9391, 103 lines there; then append-only: K12 line l. 104 at b93dc4a7 (head 0140da67), correction
+  l. 105 at 1f5a9fbe (head 8a0f0ed6), K13 line l. 106 at 0aae9be6 (head 2bdda73d), K15 line l. 107 at 895d7709 (head 85e6d86e), each
+  +1/−0; measured at referee-2 head 85e6d86e (fetch 04:31Z): sha1 2d48a870d5467481b9e1196e5b05c944bb65f009, 107 lines, last commit touching
+  it 895d770964463b69999e2ba3c6445b4707fdc13e (04:06:57Z; merged into the branch as 85e6d86e95caa223d3c426502153325c7cba18c8, 04:06:58Z);
+  trunk 5754f213 has the 0aae9be6 version, sha1 00abe55da9554211e2e3ab5347c5719bf574b3c1, 106 lines (85e6d86e not merged there; the local
+  working head 54b8526f, not on origin at the fetch, has the 107-line version); REFEREE-2 21 PARKED at 85e6d86e): «Joint gap map: EMPTY. Every item is
   signed by both referees; neither lists a gap.» (l. 27, bold in the source); K0 MATCHES; K1 SIGNED; «None widens a signed statement.»
   (l. 94). INDEPENDENCE: REFEREE l. 7: «Independence: no docs/referee-2/ file opened.»; REFEREE §C l. 3-4: its report and §10b were
   «pushed BEFORE I opened any docs/referee-2/ file», REFEREE-2's report «opened 02:02Z after the Lead's word». REFEREE-2 l. 16-19: CUT name
@@ -305,15 +396,16 @@ quotes 13/13 «by fragments», REFEREE-2 10/13 strict + 3 faithful elisions, the
   GAPS G-N5-TIME: open.
 
 Proposed GAPS line-11 UPDATE (append-only), after the R89 UPDATE of G-N5-TIME (GAPS l. 11), built only from the title clauses (landing time
-and CHECKER addendum to be filled at landing; no "|": "n = |V|" is written "n the number of vertices"; the "via" parenthetical's inner
-clause on R*_T and REP_F is dropped): «UPDATE 2026-10-30 <HH:MM>Z: RESULTS R90 (P-N5-CUT; CHECKER C100 Add. <k>) [refereed-only] LANDED:
-N5 (SPEC S1-S5) on every game, under the standing SPEC premise of RESULTS R57 (S1's procedure realises the optimal counterstrategy), with
-RESULTS R15 (d), R17 (a) and R47 (a): T ≤ 2n(n−1) + (n(n−1)+1)·(m_E·[1 + 2B* + (B*+1)·K] + SC* + O*), K := n(n−1) +
-(n(n−1)+1)(n−1)(m_E + REP* + 1), T the number of transitions (iterations) of the run, n the number of vertices, m_E the number of edges
-leaving Even vertices, λ-runs and λ^U-runs as in RESULTS R86, W-runs as in RESULTS R89, late adoptions as in RESULTS R88 / R89; B* the
-largest number of transitions inside one λ-run that are Even S4c fallbacks or change τ; REP* the largest number of REPEAT late adoptions (a
-second or later late adoption of the same Even edge) inside one W-run; SC* the largest number, over λ-runs R, of re-entries of Even edges in
-R of class S (W-silent) or C (own-cycle) of P-N5-CUT §4 (W read against τ_{j−1}, smallest anchor); O* the largest number of τ-changing
-transitions inside one λ^U-run (Theorem CUT-RED, via Lemmas OPT-OFF, W-RETURN-G, LATE-SPLIT, WV-R and Corollary CUT-CHARGE); so T is
-polynomial if and only if B*, REP*, SC* and O* are (Corollary CUT-POLY and its converse, fixes K1): a REDUCTION; none of B*, REP*, SC*, O* is
-bounded here; CONJECTURE REP-LIN is DEAD (L-RED R128, latew_K20_m32). G-N5-TIME stays open.»
+and CHECKER addendum to be filled at landing; K15 has no "|"; the "via" parenthetical's inner clause on F, R*_T and REP_F is dropped; Lead
+revision 04:31Z: brought to K15's wording, the three K13 → K15 edits; K13's own two lie inside the dropped clause): «UPDATE 2026-10-30 <HH:MM>Z: RESULTS
+R90 (P-N5-CUT; CHECKER C100 Add. <k>) [refereed-only] LANDED: N5 (SPEC S1-S5) on every game, under the standing SPEC premise of RESULTS R57
+(S1's procedure realises the optimal counterstrategy), with RESULTS R15 (d), R17 (a) and R47 (a): T ≤ 2n(n−1) + (n(n−1)+1)·(m_E·[1 + 2B* +
+(B*+1)·K] + SC* + O*), K := n(n−1) + (n(n−1)+1)(n−1)(m_E + REP* + 1), T the number of transitions (iterations) of the run, n the number of
+vertices of the game, m_E the number of edges leaving Even vertices, λ-runs and λ^U-runs as in RESULTS R86, W-runs as in RESULTS R89, late
+adoptions as in RESULTS R88 / R89; B* the largest number of transitions inside one λ-run that are Even S4c fallbacks or change τ; REP* the
+largest number of REPEAT late adoptions (a second or later late adoption of the same Even edge) inside one W-run; SC* the largest number,
+over λ-runs R, of re-entries j − 1 → j of Even edges in R of class S (W-silent) or C (own-cycle) of P-N5-CUT §4 (W := the [S1-val] valuation
+of the (σ, τ_{j−1})-plays, σ the Even strategy at the state compared; smallest anchor); O* the largest number of τ-changing transitions
+inside one λ^U-run (Theorem CUT-RED, via Lemmas OPT-OFF, W-RETURN-G, LATE-SPLIT, WV-R and Corollary CUT-CHARGE); so T is polynomial if and
+only if B*, REP*, SC* and O* are (Corollary CUT-POLY and its converse, fixes K1): a REDUCTION; none of B*, REP*, SC*, O* is bounded here;
+CONJECTURE REP-LIN is DEAD (L-RED R128, latew_K20_m32). G-N5-TIME stays open.»
