@@ -59,3 +59,9 @@ G-N5-TIME OPEN. Labels: PROVED (lane) / CONJECTURE / DATA / DEAD / READING.
   3. DATA: 1,100 of 1,141 late adoptions are FIRST; REPEAT ≤ 6 per game; LATE-SPLIT (ii) 0 failures.
   4. CONJECTURE REP-LIN.
 - NEEDS: none from the owner.
+
+## Correction (box 43, while freezing P-N5-CUT)
+- §1 (ii) as written assumed a blocked state t after the leave k. The late-adoption definition (late.py's `last` set, R89 GP*-RUN) needs only
+  SOME earlier blocked state of the W-run, possibly before the previous adoption. Correct form (P-N5-CUT §6 (ii)-(iii)): a REPEAT has a change
+  of W(z) on [k + 1, u₂ + 1], or is W-silent, or y is its own W-cycle node; the strict rise before t holds when (y, z) is re-blocked after k.
+  So #REPEAT_F(y, z) ≤ WCH_F(z) + SIL + CYC. The data (RV 0: no W-silent repeat) and every other statement of this note are unchanged.
