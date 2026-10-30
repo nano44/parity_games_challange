@@ -114,6 +114,25 @@ for a, b in runs:
                     sub, d = causeE(rr[0], w); res = (sub, d + 1)
                 else: res = (('NORISE', x, w, q), 0)
         memoE[(q, z)] = res; return res
+    def chainE(q, z):
+        # the node sequence (x, q) of the Even root chain from the change of Xi(z) at q
+        out = []
+        while True:
+            x = firstev(q, z)
+            if x is None: return out
+            out.append((x, q)); w = S[q + 1][x]
+            if (x, w, q) in fresh_at: return out
+            jj = retidx[(x, w, q)]; rr = [qq for qq in range(jj, q) if EV(qq)[0][w] != EV(qq + 1)[0][w]]
+            if not rr: return out
+            q, z = rr[0], w
+    chstat = Counter(); chmax = [0, 0, None]
+    stepseen = set(); lcache = {}
+    def blocked(t, y, w):
+        Wt = Wv(t, tau); Xt = EV(t)[0]
+        return S[t][y] != w and E.key(Wt[w]) > E.key(Wt[S[t][y]]) and not E.key(Xt[w]) > E.key(Xt[S[t][y]])
+    def late(y, w, q):
+        if (y, w, q) not in lcache: lcache[(y, w, q)] = any(blocked(t, y, w) for t in range(a, q + 1))
+        return lcache[(y, w, q)]
     rootsE = Counter(); kindE = Counter(); depE = Counter(); kids = Counter(); perX = Counter(); perE = Counter(); perL = Counter(); perP = Counter(); perD = Counter()
     for y, z, j, k in rets:
         rr = [q for q in range(j, k) if EV(q)[0][z] != EV(q + 1)[0][z]]
@@ -126,6 +145,16 @@ for a, b in runs:
         perL[(y, S[k][y], rt)] += 1
         perP[(y, S[k][y], z, rt)] += 1
         perD[(y, z, rt, d)] += 1
+        ch = chainE(rr[0], z); xs = [x for x, _ in ch]; rep = len(xs) - len(set(xs))
+        for (cx, cq) in ch:
+            if (cx, cq) in stepseen: continue
+            stepseen.add((cx, cq)); w = S[cq + 1][cx]
+            chstat['steps'] += 1
+            if Wv(cq, tau) != Wv(cq + 1, tau): chstat['wch'] += 1
+            if late(cx, w, cq): chstat['late'] += 1
+        chstat['chains'] += 1; chstat['rep'] += rep > 0
+        if len(ch) > chmax[0]: chmax[:] = [len(ch), len(set(xs)), ch[:12]]
+        chstat['maxrep'] = max(chstat['maxrep'], rep)
         if os.environ.get("XTRACE") and y == int(os.environ["XTRACE"]): print(f"  XTRACE return k {k}: {y} {S[k][y]} -> {z} (window from {j}, first rise {rr[0]}) root {rt} depth {d}")
     roots = Counter(); rkind = Counter(); dep = Counter()
     for y, z, j, k in rets:
@@ -159,4 +188,7 @@ for a, b in runs:
     wX = [k for k in perX if perX[k] == mxX][0]
     print(f"  PERROOT max returns of one Even X per root {mxX} (X {wX[0]} deg {len(set(g.succ[wX[0]]))}) max returns of one edge per root {mxE} "
           f"max (returns of X per root)/deg X {round(degr, 3)} max returns of X per root leaving one target {max(perL.values())} max returns of X per root with one (left, entered) pair {max(perP.values())} max returns of one edge per (root, depth) {max(perD.values())}")
+    print(f"  CHAINSTEP distinct chain nodes {chstat['steps']} with a W-change at q {chstat['wch']} late adoptions (blocked at an earlier state of F) {chstat['late']}")
+    print(f"  CHAIN chains {chstat['chains']} with a repeated Even vertex {chstat['rep']} max repeats {chstat['maxrep']} longest {chmax[0]} distinct {chmax[1]}")
+    if os.environ.get("CHAINS"): print("  CHAIN longest", chmax[2])
     if os.environ.get("DBG"): print("  DBG", rootsE.most_common(3), kids.most_common(3))

@@ -535,4 +535,10 @@ if grep -q "XTRACE return k 11: 3 13 -> 7 (window from 5, first rise 6) root ('F
 else
   echo "box 102 OVT check: FAILED"; exit 1
 fi
+w53=$(cd .. && CHAINS=1 python3 -I new/box99/retcause.py new/box52/out/topfix_n10.pg)
+if grep -q "CHAIN chains 252 with a repeated Even vertex 208 max repeats 47 longest 50 distinct 3" <<<"$w53" && grep -q "CHAIN longest \[(193, 58), (194, 57), (192, 56), (193, 55)" <<<"$w53" && grep -q "CHAINSTEP distinct chain nodes 252 with a W-change at q 252 late adoptions (blocked at an earlier state of F) 0" <<<"$w53"; then
+  echo "box 103 DEPTH: topfix_n10 root chain of 50 nodes on 3 rotating Even vertices (depth <= distinct vertices DEAD), all W-changing, no late adoption: PASS"
+else
+  echo "box 103 DEPTH check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
