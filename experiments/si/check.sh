@@ -927,3 +927,9 @@ echo "si (box 52 §3: FLIP-CAUSE'' DEAD, FLIP-EV data): PASS"
 echo "aef403c3d8a003bcfc6742c4d1da084a1e21669f  ../../docs/si/P-N5-SETTLE-box52.md" | sha1sum -c --quiet
 echo "6aa094e32b03317797a551ac2fc719749cf59ca7  ../../docs/si/P-N5-SETTLE-line.txt" | sha1sum -c --quiet
 echo "si (box 52: P-N5-SETTLE frozen): PASS"
+# box 52 §3 (18:5xZ): FLIP-EV DEAD on flipev_n20 (EXI at non-own node 10, no event (iii) in the W-run; n5b agrees).
+python3 -I heads52/flipc.py heads52/inst/flipev_n20.pg heads52/inst/flipev_n20.start | grep -q "NONEX 1 EXIX 1 EVX 1 EVXC 0 "
+python3 -I heads52/rwin.py heads52/inst/flipev_n20.pg heads52/inst/flipev_n20.start | grep -q "EIII 0 "
+python3 -I heads52/flipx.py heads52/inst/flipev_n20.pg heads52/inst/flipev_n20.start | grep -q "FLIP k 2 o 10 tau 4 old 1 new 4 oldXi_changed False newXi_changed False"
+python3 -I heads52/flipx.py heads52/inst/flipev_n20.pg heads52/inst/flipev_n20.start | grep -q "FLIP k 2 o 14 tau 8 old 8 new 11 oldXi_changed True newXi_changed False"
+echo "si (box 52 §3: FLIP-EV DEAD, flipev_n20): PASS"

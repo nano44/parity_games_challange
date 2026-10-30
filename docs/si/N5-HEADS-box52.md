@@ -220,6 +220,38 @@ Labels: PROVED (lane) / CONJECTURE / DATA / DEAD / READING.
     priorities, out-degree 1-4, random starts; 100,000 games each; W-runs as heads.py): 0 non-own-node EXI / MOV flips without an event
     (iii).
   - Not proved.
+- FLIP-EV: partial proof and the exact gap (READING, 18:4xZ; not refereed). Let o, not its own Ξ-cycle node, have an EXI or MOV flip
+  t1 := σ̄_k(o) → t2 := σ̄_(k+1)(o) at k → k + 1. Then t1 ∈ U_k, so a change of Ξ(t1) is an event (iii). For MOV, t2 ∈ U_(k+1), and the
+  same holds for Ξ(t2).
+  - Step 1 (values only rise; Ξ(o) = o ⊕ the Odd-minimum over succ(o)). If Ξ(t1) is fixed, a flip to t2 needs
+    Ξ_(k+1)(t2) = Ξ_(k+1)(t1), because t2 cannot overtake an unchanged t1 by rising. Since t1 was minimal at k, Ξ_k(t2) ⊵ Ξ_k(t1)
+    = Ξ_(k+1)(t2) ⊵ Ξ_k(t2). So Ξ(t2) is fixed too, and the flip is a TIE RE-ORDER between two fixed, equal values.
+  - Step 2 (EVEN cycle node). By the RG-type statement for the Odd-side computation, σ̄(o) is the least-index tight successor. The tight
+    set only loses members while Ξ(o) is fixed, so a tie re-order is impossible there.
+  - Step 3 (ODD cycle node, BFS). σ̄(o) is the tied successor with the lex-least BFS key, read on its (σ, σ̄)-path to the cycle node. A
+    re-order needs that path to change below t1 or t2 while their values stay fixed.
+    - A non-cycle-node Even switch on the path raises every value above it on that path, so it cannot be the cause.
+    - So the change is an Odd flip below, again with tied values, and recursively the LOWEST such flip, at o′, is a flip whose old target
+      changes, or an own-cycle-node flip.
+    - If o′ ∈ D_k, its old target is a head of U_k and changed: an event (iii). Done.
+  - THE GAP: the lowest flip is an ENT flip at o′ ∉ D_k. τ(o′)'s Ξ rose, and its new target h′ ∈ U_(k+1) is tied and fixed. Nothing
+    above forces an event (iii) at that transition.
+    - Kill recipe for L-RED: an Odd o in an ODD-cycle round with two tied tight successors, whose BFS keys are ordered through an Odd o′
+      that ENTERS D at the same transition because τ(o′) rose.
+    - In flipnonex_a_n10 the lowest flip (9: 0 → 6) is an EXI, so the head 0 changed. Not this gap.
+    - The random search (n ≤ 16, 500k games) found no instance of the gap.
+- FLIP-EV is DEAD (18:5xZ). A tie-biased search (vertex 0 Odd with the top, odd priority; so S1's BFS branch and many tied lengths)
+  BUILT THE GAP. Instance experiments/si/heads52/inst/flipev_n20.pg + .start, transition 2 → 3, W-run with no event (iii) at all
+  (rwin EIII 0; flipc EVX 1, EVXC 0):
+  - Odd 10, not its own Ξ-cycle node, LEAVES D: 1 → τ(10) = 4, with both values fixed;
+  - below it, Odd 14 ENTERS D: τ(14) = 8 → 11, because Ξ(8) rose; 11 is tied and fixed; σ switches only at 8.
+  - n5b SPEC agrees (heads52/flipx.py), and xeng's states are identical.
+  - Also flipev_n14 + start (o = 6, below it 2 and 13 with old target 8).
+  - So FLIP-RED's premise is dead. HEAD-RED (unconditional, with the SB term) is unaffected.
+- READING (Steps 1-3 above, now with the gap realised). In a (i)-only transition, the lowest cause of every σ̄-flip is an ENT flip
+  (Ξ(τ(o′)) rose) or an own-cycle-node flip.
+  - So the natural head set for the defect dynamics is U_k ∪ τ(Odd), i.e. the Odd vertices' τ-targets as well.
+  - This is a reformulation, not a bound: ENT flips are not bounded by head changes.
 - Corollary FLIP-RED (PROVED, lane, from FLIP-EV). Let XCN_F := the σ̄-flips of F at Odd vertices that are their own Ξ-cycle node at k or
   k + 1.
   - (i)-only transitions carry only ENT flips or own-node flips.
@@ -298,7 +330,8 @@ Labels: PROVED (lane) / CONJECTURE / DATA / DEAD / READING.
   5. DEAD: «σ̄ avoids I_τ» (lend107_n32 + start, 106); «D only shrinks» (latew_K16_m32, re-entries 15 per vertex); «a σ̄-flip needs an
      old-target Ξ-change» (nep13_n24 + start, o = 15 at 11 → 12).
   6. DEAD: FLIP-CAUSE″ (flipnone_n14: own Ξ-cycle node, no head event; flipnonex_a_n10: BFS-branch tie, a head event present).
-     CONJECTURE FLIP-EV. With it (Corollary FLIP-RED, PROVED from it), polynomial W-runs ⟸ HX-POLY ∧ CN-POLY ∧ XCN-POLY.
+     DEAD: CONJECTURE FLIP-EV (flipev_n20 + start: an EXI at a non-own node with no event (iii), caused by an ENT flip below).
+     FLIP-RED is void. HEAD-RED keeps its SB term.
   7. PROVED (lane): Odd side of SEG-XCH (RETURN-CHARGE′-O, SEG-XCH-O, T-XCH). G-N5-TIME ⟺ XE, XO polynomial.
   8. OPEN: HX-POLY (data linear). Kill target in §4.
 - NEEDS: none from the owner. Lead:
