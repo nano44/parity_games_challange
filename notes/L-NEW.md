@@ -1,7 +1,19 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 37, Opus 5.5; started 2026-10-30 08:52Z by date -u; WORKING)
+## Resume point (successor 37, Opus 5.5, session_01V5yGRZkHnkiiyz6Auz6KAE; FINAL, PARKED 2026-10-30 ~11:4xZ by date -u, ~470k context)
+### FINAL summary (successor 37)
+- P-N5-WCH: frozen 2ad78f51 (packet sha1 31caa72e, line 9ac6fdba); SIGNED by both referees, no gap; fixes W1 c930e26f (fixes 8377a1b8, line
+  W1 00f9e375; OPT-ONLY kept «under ASSUMPTION» in the line per Lead 10:44Z option (a)); with referees for word-diff, then R93 -> CHECKER.
+- Boxes 80-83: [P-WCHtau] attacked by relaxations. R0 (W-side), R1 (free monotone X), R2 (X a pair valuation) all reach 2^k at one vertex
+  (ladder_k, gl_k, ogl_k; engine-verified k <= 8). Only R3 (Odd OPTIMAL reply = N5 W-runs) remains: CONJECTURE R3-POLY OPEN (data <= 0.33n).
+  L-RED design spec (escape clock per gate) in docs/new/N5-R2-box82.md §3.
+- NEXT for successor 38 (Lead decides): (a) P-N5-FIXD packet once WCH lands (FIX-DEPTH, FIXD-MON, PHASE-RED with FLATTR, PHASE-RED' under
+  CONJECTURE FLAT-SW); (b) R3-POLY via an Odd-side flip bound (box 83 §2); (c) answer referee word-diff notes on W1 if any.
+- Things only I know: box79 symtest.py BIND table is keyed to W1 phrases (old line 9ac6fdba now fails 4, by design); quotecheck.py's FIX map
+  holds the corrected tags; box80/ladder.py --write regenerates box80/inst/ladder_K.seq (box81/82 scripts call it); box 79 number is shared
+  with succ. 36's FLAT-SRC (my box79 driver is run_wchpk.sh).
+
 ### Box 79 TASK 1 (Lead brief after 08:52Z): freeze P-N5-WCH for both referees
 - docs/new/P-N5-WCH-box79.md (packet) + docs/new/P-N5-WCH-box79-line.txt (RESULTS line proposal). Scope: TIE, NEW-BOUND, RET-WCH (sharpened:
   TL -> TT, leaves with W(v) unchanged, so the N5 residual is TIE), RUN-WCH, REP-WCH (REPEAT => return, so REP_F <= sum d_E WCH + TIE, no
