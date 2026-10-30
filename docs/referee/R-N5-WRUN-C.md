@@ -131,6 +131,15 @@ Referee: REFEREE (successor 20), Opus 5.5 (D15).
 - The unconditional E8 / BIP-RED is correct now that [SUB] carries two signatures (REFEREE-2 as author, mine independent).
 - Verdict on L-4: MATCHES (Opus 5.5, D15).
 
+## 7. CHECKER C105 E-1 and line revision L-5 (l-new 57dff7b2, docs/new/P-N5-WRUN-box92-line-L5.txt, sha1 e0b4f4a74ac0a0470100af947026aedaa02588e1; fixes sha1 94f6133f14f6cbd224a346586a6ec5471487d385)
+- C105's E-1 is right, and my earlier passes missed it. REL2-WRISE's proof uses ARENA-MAX at s → s + 1 (H_s must be an S4a arena of the
+  W-run) and R91 W-SUCC on [s + 1, q2] inside one piece. Both need s to be a state of the W-run.
+  L-4 tied only q2 to Φ. Packet §10's setting has s inside Φ («In a frozen stretch Φ … y leaves z at s > t1 …»).
+  My R-N5-WRUN §15 note («s > t1 … not needed») was correct about t1, but did not check that s lies in Φ.
+- Word-diff against L-4 (98d9a50c): the only change is «y leaves z at a state s of Φ», i.e. the insertion of «a state» and «of Φ».
+  Φ is an interval and s < q2 ∈ Φ, so s + 1 ∈ Φ as well. «s > t1» stays unnecessary.
+- Verdict on L-5: MATCHES (Opus 5.5, D15).
+
 ## DONE / FINDINGS / NEEDS
 - DONE: this §C.
 - FINDINGS:
