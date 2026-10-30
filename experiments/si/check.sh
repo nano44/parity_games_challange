@@ -892,3 +892,7 @@ python3 -I gate/retx.py ../red/xing/instances/u23sw64_n32.pg | grep -q "T 16 MON
 grep -q "RETX" gate/retx_sbcg.txt && ! grep -q "RCV [1-9]\|FB_V [1-9]\|TB_V [1-9]\|MONO_V [1-9]\|IMP_V [1-9]" gate/retx_sbcg.txt gate/retx_alt.txt gate/retx_red.txt
 python3 -I gate/charge.py ../red/kw/instances/cw11_n24.pg | grep -q "D4_OFF 1 D4_SELF 0 ALL_ON 6 ALL_OFF 4 ALL_SELF 12"
 echo "si (box 51b §11-§12: RETURN-CHARGE', SEG-XCH, charge OFF): PASS"
+# box 51b §13: head Xi-changes per W-run (mkrw LATE=1 K 4 m 16: HX 8 = 2K).
+t=$(mktemp -d); LATE=1 python3 -I ../red/span/mkrw.py 4 16 $t/w.pg $t/w.start >/dev/null
+python3 -I gate/heads.py $t/w.pg $t/w.start | grep -q "HX 8 XX 9 NHEAD 32 SUMHX 125 LMAX 76"
+echo "si (box 51b §13: heads): PASS"
