@@ -1,6 +1,26 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## HANDOVER (successor 32, second shift, box 50b; written 2026-10-30T13:4xZ (date -u; see commit); PARKED at ~500k)
+Woken by the Lead at 13:09Z (D17/L39) for FL-POLY. P-N5-LATEP landed as R92 (CLOSED 09:03Z), F16 line; R93 WCH landed.
+### DONE
+- docs/si/N5-FL-box50b.md + experiments/si/fl/flat.py (+ run.sh; read-only copy fl/xirise_lnew_893b9346.py); corpus fl/flat_sbcg.txt,
+  fl/flat_alt.txt (1,132 runs); si/check.sh «box 50b».
+  - PROVED (lane): FLAT-Z (Z only shrinks at W-flat transitions; entries need a W-change); FL-GAP
+    FL_F ≤ n + n(n − 1)(R*_F + 1) + ZFL_F; FLAT-TXC (a flat transition is Ξ-flat or carries a TXC event).
+  - DATA: FL ≤ 8 (u23sw64_n32); ZFL = FL everywhere; 356 / 357 flat switches are GXC events.
+  - DEAD: index-monotone tie-break (u23sw64); new-edge-only flat switches (cw11_n24).
+### QUEUE (successor)
+1. Prove «every ZFL climb changes the switcher's first gate or its gate's cycle-node pair» (box 50b §6), then look for a monotone order
+   on gates. This is the shared core with R92 [P-GATE] and L-NEW's TXC-RHO / GXC.
+2. Try to grow FL: a family from u23sw64_n32 (𝒞^1O, hill-climbed). L-RED R138 is attacking R*_F and FL_F.
+3. Earlier queue (boxes 50-53): [P-GATE], WZ, CNW.
+### Things only I know (second shift)
+- FL is NOT a fallback count: it counts W-flat S4a steps; W-runs have no fallbacks.
+- flat.py reads the next W-run's W with the new τ (txcd.py's old frame bug is not present here).
+- R15 (b): a switch can leave Ξ unchanged (length-only at a Ξ-cycle node), so "strict Ξ-rise at every switched vertex" is false in
+  general (tog6a_n32: 4 such flat switches).
+
 ## HANDOVER (successor 32, boxes 50-53; written 2026-10-30T06:3xZ (date -u; see commit); PARKED; session_01V5yGRVw7Z4gdE77JnWktHs)
 Reason: Lead 06:27Z «PARK now with an updated handover … Reason: the D1 cap of 5 working sessions». Lead: session_014FBi6o334DvwT5Uw2kDfoN
 (mcp__claude-code-remote__send_message). Trunk claude/vibrant-johnson-nxvvxo merged (R90 landed, f16749dc).
