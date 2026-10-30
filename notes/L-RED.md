@@ -1,5 +1,5 @@
 # L-RED notebook (independent adversary lane)
-Successor 32 (session_01V5yGRXGW9KqMY5gaypMTs2, Opus 5.5) started 2026-10-30 05:28Z (date -u); R131 TIED-RB DEAD (011213ef); R132 (A) not built, obstruction TWO-SOURCE / PREFIX; R133 N5-LZC bench (no kill); see "Successor 32".
+Successor 32 (session_01V5yGRXGW9KqMY5gaypMTs2, Opus 5.5) started 2026-10-30 05:28Z (date -u); R131 TIED-RB DEAD (011213ef); R132 (A) not built, obstruction TWO-SOURCE / PREFIX; R133 N5-LZC bench (no kill); R134 ZXC observer (ZXC = |F| - 2K + 1, no amplification); see "Successor 32".
 Successor 31 (session_01V5yGRZfrtk7CRqezo1wAzp, Opus 5.5) woken 2026-10-30 00:09Z; R126-R129; PARKED 01:40Z; woken 03:13Z for R130 (WD-BOUNDED DEAD), PARKED again ~03:30Z; see "Successor 31 PARK".
 Successor 31 (session_01V5yGRZfrtk7CRqezo1wAzp, Opus 5.5) HANDOVER written 2026-10-29 ~23:50Z (date -u), PARKED; see "Successor 31 HANDOVER".
 Successor 31 (session_01V5yGRZfrtk7CRqezo1wAzp, Opus 5.5) started 2026-10-29 22:19Z (date -u); handover check d6ae7cda; STEP 1 = R123, R124, R125; see "Successor 31".
@@ -44,6 +44,9 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - R133 (Lead 06:38Z): N5-LZC (l-new d0619575 box72/n5lz.py --lzc) vs N5. lzc/bench.py 112 runs: A = B, Oink OK on all; equal except
   counter_rob / runfam (LZC faster), tc+ 5 (+1). Random n <= 10: LZC slower 4.2 %, max +3 (pin lazyhurt_n9). n5lz._wc cache keyed by tau
   only: clear per game. Worktree /tmp/claude-0/lnew = origin/claude/l-new (LNEW env for lzcmp.py / lzrand.py).
+- R134 (Lead 07:34Z): one gap vertex climbs at almost every transition: R120 Even observer on mkrw (no LATE) ZXC = Km + K + 1 (589 at
+  n 368, |F| 612). Lemma GAP-IN-PREFIX (block needs a W/Xi divergence on a private prefix); two-observer readers 0 REPEATs in 1517 draws.
+  ZXC <= |F|, so the wall is |F| (R124 / R108 §4). Tools zxc/zxc.py, zxc/obsread.py.
 - Tools (experiments/red/tree/): gb.py (named builder GB, from_pg, trace(G, watch) prints sigma/tau changes and W / Xi as
   cycle|top priorities|length), tiedlib.py (stats(g, start) = tied.py counts + REPEAT list, importable), tiedc.py (second counter, n5b).
 - Things only I know: scratch /tmp/claude-0/r131 (gsearch.py = random gadget search on mkrw bases: `python3 gsearch.py SEED SECS K m`,
