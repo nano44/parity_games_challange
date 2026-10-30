@@ -1,7 +1,18 @@
 # L-LIT notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point (successor T54, 2026-10-30 ~15:00Z by date -u; session_01V5yGRX5Hhq2A6bW6tNFG1o; D18; WORKING)
+## Resume point (successor T59, 2026-10-30 from 17:49Z by date -u; session_01V5yGRY1xa1eQQyQ64QZ58e; D18)
+START: origin/claude/l-lit = d78e1815 (is-ancestor checked; branch pushed only by L-LIT); merged trunk 8e1a605c (local 3bfa38e7).
+T59 (this push): docs/lit/T59-elimination-windows.md + T59-dz-check.py.
+- (a) Undiscounted window = Zhong-Ye 2609.40147 Thm 7.1 (Dantzig, (7.2)-(7.6), 1 - 1/N^2). Howard: none (ZY Thm 6.1; Scherrer p.6).
+  The rest is VI domination (pseudo-poly). Mukherjee-Kalyanakrishnan: threshold gamma_Q + root separation.
+- (b) HW-LB PROVED: HW >= T/(m0+1). ARENA-MAX kills the lane families but not Friedmann H_n (I^glo = arena optimum; stubborn
+  cycles = Xi-blocked closures). N5 on switchbestexp N = 4, 6, 8: HW 1-3.
+- (c) C-DISC (discounted shadow, needs GREEDY-IN) and DZ-W (conditional on BLOCK-RATIO_K) PROVED. DATA: BLOCK-RATIO = 2^(2K) on fx_K_m16,
+  WINC = |F| -> gap-contraction route DEAD.
+OPEN LEADS: ELIM-WIN by a combinatorial (GP*-type) count; why H_n dies in N5 (tau frame vs tau steps); ARENA-MAX analysis of ZY Thm 6.1.
+
+## Previous resume point (HANDOVER, successor T54-T58, 2026-10-30 ~17:30Z by date -u; session_01V5yGRX5Hhq2A6bW6tNFG1o; D18; PARKED on Lead's word after T58)
 DONE (claude/l-lit; pushes via scripts/push.sh, exit 0, VERIFY PASS; Oink smoke NOT RUN):
 - 57e40069: trunk 7446d3d2 merged; T54-tiebreak-check.py; merge of c30c1850 (local clone had started at stale dedbbe7e1: first push was
   rejected non-fast-forward, nothing went out; fixed by a merge, no rebase).
@@ -11,7 +22,14 @@ DONE (claude/l-lit; pushes via scripts/push.sh, exit 0, VERIFY PASS; Oink smoke 
   Orlin OCW l7, Bertsekas); §4 S1 tie-break on G_I: IDX-MONO (ODD), LEX-BFS/LEX-MONO (EVEN), CN open; abstract LEX-ARENA exponential.
 - T55: docs/lit/T55-lexbfs-sweeps.md, T55-sweep-check.py (S1 EVEN = plain BFS F-tree, static index ties, changing arena; not
   LexBFS (25 diffs), not LBFS+ (180); RETURN-ANCESTOR, LAYER-WINDOW, COUNTER Pi(1+m_d) PROVED mod Claim RG). LexBFS sources in t55/A.
-IN FLIGHT: none. OPEN LEADS: CN-POLY, EVEN-POLY (must use S2 Xi-offers), PASS-BIP; Claim RG (VJ restriction invariant) not re-proved.
+- T56: docs/lit/T56-path-algebra.md (ISO/DIOID/CIRC: fixed-c VJ valuation = max-plus over Z, n-bit weights; k-stable <=> 0-stable;
+  no adversarial-order count in any opened path-algebra source). Sources in scratchpad t56/A.
+- T57: docs/lit/T57-tropical-pivots.md (tropical pivot = one exchange; N5 switches sets, u23sw64_n32 17/15/6/...; S1 tie-break ~
+  ABGJ symbolic perturbation (READING); no transfer). Sources in scratchpad t57/A.
+- T58: docs/lit/T58-action-elimination.md, T58-elim-check.py (elimination anatomy R/P/C; BETA-MON, ELIM-ORD-beta PROVED; extend form
+  DEAD (13 corpus violations); HMZ window HW = m+1 on fx (K-independent); CONJECTURE ELIM-WIN; counting |F| <= (m_E+1) HW).
+IN FLIGHT: none (a latew_K20_m32 HW run was still going at park; not needed). OPEN LEADS: ELIM-WIN (HW <= p(n)); the contraction lemma (C)
+  for S4a on BIP stretches; CN-POLY, EVEN-POLY (must use S2 Xi-offers), PASS-BIP; Claim RG (VJ restriction invariant) not re-proved.
 Older leads (T48-T53 handover): KL-SF; parametric dimension >= 2; Maat open direction; Loff-Skomra n-breakpoints.
 NEEDS: none from the owner (optional library access: Cunningham 1979, GHK 1990, Orlin 1997, Johnson 1973, Kershenbaum 1981, AMO).
 
@@ -61,6 +79,13 @@ NEEDS: none from the owner.
 - Open FL09 (self-loop removal) if the REFEREE needs it; Friedmann RAIRO 2011 (publisher 403; try author copy).
 
 ## Things only I know
+- T59: sources in scratchpad t59/A (lost with the container; sha256 prefixes in Sources). fx_K_m16 (K = 4, 8, 16) and fx_K8_m32 regenerated in
+  t59/inst (l-red worktree t59/lred at 717f407a); switchbestexp N via experiments/hard-families/pgsolver_port.py switchbestexp N > out.pg.
+  Corpus wrapper t59/one.sh (30 s timeout per game, start file = same basename .start), list t59/list.txt (892 games), output t59/corpus3.out.
+- T58: fx_K_m regenerate with l-red span/mkrw.py K m then free/obsx.py under ABOVE=a OWNER=0 BLK=2 (K8 m32 = pin sha1 e995709e).
+  l-red worktree in scratchpad t58/lred; instances t58/inst; family outputs t58/fam5.txt; corpus t54/t58_*.txt (script v3, no HW column).
+  Do not pkill -f with a pattern that appears in your own command line (kills the shell, exit 144); kill by PID.
+  push.sh pushes the commit verified at its start; commits made meanwhile need another push.
 - T54: downloads in scratchpad t54/{A,B,C,D} (A network simplex, B PI, C Avis-Friedmann, D label-correcting), each with .txt;
   lost with the container; URLs and sha256 prefixes in docs/lit/T54-stalling.md. t54/lsi = detached worktree of origin/claude/l-si.
   T54-tiebreak-check.py runs from the repo root; corpus wrapper scratchpad t54/run.sh (sbcg + alt + latew/fx copied from l-si gate/inst);
@@ -487,6 +512,34 @@ NEEDS: none from the owner.
   abstract); Scheffler arXiv 2206.14556v1 (25f8e3032b60ca0d; Problem 3, Thm 6, 11). NOT OPENED: RTL 1976 (SIAM 403), Corneil WG 2004
   (Springer 429), Corneil-Krueger 2008, Corneil-Dalton-Habib 2013, Dusart-Habib DAM 2017, Corneil-Olariu-Stewart 2009, CDHK 2016.
 
+- T56 (2026-10-30). OPENED: Minoux RAIRO-RO 10(V2) 1976 33-62 (numdam; 9f41d65c; pp. 38-53, Thm 2-6, A2); Mohri JALC 7(3) 2002 preprint
+  (1d609fa6b97bf2ff; Def 6, 8, Thm 1, Thm 2, pp. 13-20); Rote, Path problems in graphs, preprint 1989 (28b94592bb8ad919; pp. 9, 18, 24);
+  Sobrinho ToN 13(5) 2005 (485afb236a5ddf7e; Thm 1, 3, Prop 1); Daggitt-Gurney-Griffin arXiv 2106.01184v2 (5a96dd3de66fdb62; Def 19-21,
+  Thm 1, 3, 5, p. 15); Daggitt-Griffin ICNP 2018 (376beef0cd5b17bc; Thm 1 p. 11, p. 1, p. 7). NOT OPENED: Gondran-Minoux 2008 (Springer JS
+  challenge), Carre 1971 (OUP 403), Metarouting 2005 (404), Karloff SODA 2004.
+
+- T57 (2026-10-30). OPENED: ABGJ arXiv 1308.0454v2 (6e7f8188f3e51249; Thm 1, Alg 1 p. 3, Prop-Def 19, Thm 36, p. 36-37); ABGJ arXiv
+  1309.5925v2 (6ef1312e6a4875f1; Thm 2.1, p. 7, Prop 3.6, Lemma 3.7, Thm 3.12, p. 13, Prop 4.1, Thm 4.2, Cor 4.3); ABG arXiv 1406.5433v2
+  (7deeec2eaf73d0c0; p. 2, 5, Thm 7, 11, 13, Assumption B); ABGJ arXiv 1708.01544v2 (9608058cb6fa98a3; Thm 15, 25, 30, Cor 31); Loho arXiv
+  1612.01890v2 (1696fd594ef26715; Thm 13, Ex 14, Thm 63, 65, Cor 67, Thm 79, pp. 53-54); Loho-Vegh arXiv 1906.06686v2 (498512dd76f0ff9c);
+  Koh-Loho arXiv 2108.13338 (21ee0e4336252f7e; p. 3, App. A p. 35).
+
+- T58 (2026-10-30). OPENED: Ye MOR 2011 author final web.stanford.edu/~yyye/SimplexMDP4.pdf (5825bfe4; Lemma 3.1, 3.2, 4.1, 4.2, Thm 4.1,
+  4.2, Cor 4.1, pp. 5-9); HMZ arXiv 1008.0530v1 (f53a6b51; Lemma 3.10, 3.12, 5.3-5.5, 6.1-6.4, Thm 6.5; J. ACM numbering not checked); Scherrer
+  arXiv 1306.0386v4 (391b6481; Lemma 2, 3, 5-8, 12, 13, Thm 3, 4, 6, 7); Post-Ye arXiv 1208.5083v2 (c51876eb; Lemma 3.1-3.6, Thm 3.7).
+
+- T59 (2026-10-30). OPENED (scratchpad t59/A): Zhong-Ye arXiv 2609.40147v2 (dafeb81816af6582; Table 1 p.2, p.2 HZ conjecture
+  disproved, Thm 6.1, Thm 7.1 + proof (7.1)-(7.6) PDF pp.31-32, Thm 7.2 + proof p.33); Asadi-Chatterjee-de Raaij arXiv 2506.12254v1
+  (78c4ee071961b89e; Table 1, p.2 PI <= VI <= O(n^3 W), Thm 3.2 p.4, policies + sequence (1) p.4, Lemma 4.1 p.5); Zwick-Paterson TCS 158
+  (people.irisa.fr copy, 84243c35fc5b57b4; Thm 2.3 p.5, Fig. 1 p.6, Thm 5.2 pp.10-11); Mukherjee-Kalyanakrishnan arXiv 2505.00795v1
+  (7b856cc9010c6c06; Thm 1.2 p.2, threshold gamma_Q p.2 and Sec. 4, Thm 3.1 p.5); Hansen-Zwick slides (1ff1ee804ac47c08; pp.14, 15,
+  19); Friedmann arXiv 1106.0778v2 (46c96f44775aa2b0; p.7 I^glo, Thm 6.14, Lemma 8.1 p.28, Sec. 8.2 pp.28-29, Thm 8.4 p.33); Friedmann
+  0901.2731v1 (6c56adb2; Sec. 4 pp.4-5, Thm 8 p.6); Fearnley 1003.3418v1 (0964f029; Prop. 2, 4, Sec. 4.2 p.6); HMZ 1008.0530v1
+  (f53a6b51; Lemma 5.3, 5.5 p.10, 6.4 p.11, Sec. 7 p.11); Scherrer 1306.0386v4 (391b6481; Lemma 8 p.6 + proof Sec. 10, pp.6-7 on HZ,
+  p.4); Hollanders PhD thesis UCLouvain (c068ce34261ce6a9; Ch. 2 printed pp.31-32); AGKS arXiv 2206.09044v2 (678d078799de8f9d; p.2,
+  Thm 1 p.6; context only). Abstract only: arXiv 2503.04203 (954879a0). NOT OPENED: HKZ SODA 2014 (SIAM); Hansen-Zwick ISAAC paper;
+  Hansen PhD 2012; Jurdzinski/Puri parity->MPG reduction (used as standard in T59 Sec. 2.2 READING).
+
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
 - T17 process dead end: subagent GitHub MCP search outside the repo scope was a rule breach (see Things only I know); never repeat it.
@@ -518,6 +571,15 @@ NEEDS: none from the owner.
 
 - T54: DEAD as a bound for [P-INT]: the lex-BFS key potential of S1's EVEN branch alone (abstract LEX-ARENA, width 2: longest runs
   2, 8, 22, 52, 114 = 2^(L+1) - 2L - 2 for L = 2..6; docs/lit/T54-lexarena.py). Obstruction: adversarial arenas; a bound must use S2.
+
+- T58: DEAD the extend form of ordinal elimination (Xi_t(v) |> v (+) Xi_end(w) => never re-adopted): 13 corpus violations
+  (tog6a_n32, tog6b_n32, kt6_n58, x31_lem_t32, gci3_n24). DEAD any per-edge return bound inside a W-run: fx_K_m, K*m/4+1 adoptions of one edge.
+
+
+- T59: DEAD as a route to ELIM-WIN: contraction of the end-referenced W-gap (Zhong-Ye / Post-Ye / HMZ template) in si.py's additive
+  embedding. On fx_K16_m16, BLOCK-RATIO = 2^32 (the max reference residual sits on a blocked edge) and the gap never falls by n^2 before
+  the last transition (WINC = |F| = 304), while HW = 17. Also: ARENA-MAX alone cannot give ELIM-WIN, because Friedmann H_n (1106.0778
+  Thm 8.4) beats the arena-optimum rule I^glo with stubborn cycles.
 
 ## Corrections log
 - 2026-10-23 (T26): N8d-barrier.md §0 and R54 §0 put Lemma 4.75 / Thm 4.76 on p.187; opened PDF: printed p.186 (PDF p.202). Reported as caveat 4.

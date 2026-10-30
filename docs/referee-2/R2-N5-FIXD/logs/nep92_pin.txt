@@ -1,0 +1,26 @@
+PHASE n5-epoch/instances/nep92_n40.pg#start 0 0 len 0 Krise 0 FLATTR 0 maxFLAT 0 v 0 maxFSW 0 Kstall 0
+PHASE n5-epoch/instances/nep92_n40.pg#start 1 1 len 0 Krise 0 FLATTR 0 maxFLAT 0 v 0 maxFSW 0 Kstall 0
+PHASE n5-epoch/instances/nep92_n40.pg#start 2 2 len 0 Krise 0 FLATTR 0 maxFLAT 0 v 0 maxFSW 0 Kstall 0
+PHASE n5-epoch/instances/nep92_n40.pg#start 3 3 len 0 Krise 0 FLATTR 0 maxFLAT 0 v 0 maxFSW 0 Kstall 0
+PHASE n5-epoch/instances/nep92_n40.pg#start 4 5 len 1 Krise 1 FLATTR 0 maxFLAT 0 v 0 maxFSW 0 Kstall 0
+PHASE n5-epoch/instances/nep92_n40.pg#start 6 98 len 92 Krise 19 FLATTR 73 maxFLAT 66 v 0 maxFSW 8 Kstall 34
+MODE files /tmp/claude-0/-home-user-parity-games-challange/c5131569-13ae-5464-8cfa-fc746dffc9b4/scratchpad/nep92.lst 0 experiments/ MAXT 5000 LZC False
+LEXK_checks: 7
+X_KSTALL: 1
+Xi_flat_tr: 0
+n_CH: 93
+n_FLATTR: 73
+n_Krise: 20
+phases: 6
+runs: 1
+starts_valid: 1
+transitions: 98
+max max_FLATSW_x: (8, 'n5-epoch/instances/nep92_n40.pg#start')
+max max_FLATTR: (73, 'n5-epoch/instances/nep92_n40.pg#start')
+max max_FLAT_over_n: (1.65, 'n5-epoch/instances/nep92_n40.pg#start')
+max max_FLAT_v: (66, 'n5-epoch/instances/nep92_n40.pg#start')
+max max_FLATin_v: (59, 'n5-epoch/instances/nep92_n40.pg#start')
+max max_Kstall: (34, 'n5-epoch/instances/nep92_n40.pg#start')
+max max_Xi_unchanged_run: (0, 'n5-epoch/instances/nep92_n40.pg#start')
+max max_phase_len: (92, 'n5-epoch/instances/nep92_n40.pg#start')
+RESULT PASS violations 0

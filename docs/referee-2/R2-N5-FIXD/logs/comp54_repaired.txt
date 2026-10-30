@@ -1,0 +1,1 @@
+comp54_n80 with repaired start (vertex 11 forced to 11 -> 11): RUN experiments/red/n3/instances/comp54_n80.pg#start iters 55 Krise 22 FLATTR 32 RESULT PASS violations 0 
