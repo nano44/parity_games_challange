@@ -17,11 +17,14 @@ STEP 0: clone stale at da88a6d4 AGAIN; ff to 051eb196, trunk merged c6c30141. Or
 - SETTLE fixes entry 4 + L-4 (6ed61d84; G-SRC-1 closed by ONE-STEP, signed by REFEREE 8951ef7c) DONE. PARKED again after it (Lead 23:10Z).
 - §2.6 ERRATUM: ONE-STEP-O (Odd mirror of G-SRC-1; ONEX 0, OBETA 11,129). §6: XCN-ONE DEAD (xcn2_n8, xcnb2_n12); KIND-A ≤ n(n − 1) (R47); XB-POLY OPEN.
 ### Queue
-1. Answer the SETTLE referee findings in docs/si/P-N5-SETTLE-fixes.md (append-only, no heading markers on line revisions, L41).
-2. XCN-ONE (§6): prove ≤ 1 own-node flip transition per W-run, or kill it (search bias: Odd vertices that are their own cycle node,
-   with several less-relevant cycles below). Then the W-run question is CN-POLY ∧ HX′-POLY.
-3. HX′-POLY: Ξ-changes at τ(Odd) ∪ U per W-run (data linear).
-4. If the Lead wants it: a packet for ROOT-FLIP + HEAD-RED′ (premises: R57, R15 (a)/(d), RG′/T54 transfer).
+1. XB-POLY (N5-SBF-box53.md §6): bound kind-B own-node flips per W-run (S1's DFS re-orders at an own Ξ-cycle node; xcnb2_n12 shows
+   σ̄(3) 9 → 11 → 9), or kill it with super-polynomial growth. Kind A is done (KIND-A, ≤ n(n − 1) per run from R47). Then polynomial
+   W-runs ⟺ CN-POLY ∧ HX′-POLY ∧ XB-POLY.
+2. P-N5-SETTLE: L-4 (6ed61d84) is with both referees for word-diff. Answer them in P-N5-SETTLE-fixes.md entry 5+ (append-only, no
+   heading marker on line files, assert each diff).
+3. L-RED R146 (a) on ROOT-FLIP / HEAD-RED′ / ORDER-CHG′ / ONE-STEP-O: answer any findings.
+4. HX′-POLY (Ξ-changes at U ∪ τ(Odd) per W-run; data linear) and the PAIR-TIE case of ORDER-CHG′ (data 0).
+
 ### Things only I know
 - rsearch.py is in-process (≈ 1 s per 1,000 games at n 12); ties (the descent case) are about 1 in 1,000 flips.
 - topkis.py / rootflip.py corpus runs take about 5 min each at -P 4 (runtopk.sh / runroot.sh); runrs.sh about 15 min at -P 3.
