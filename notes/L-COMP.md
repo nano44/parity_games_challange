@@ -415,7 +415,7 @@ AM9 Lemma 3's proof sets D_{dbar} = D cap U_{dtilde} (tex:345), probably a typo 
 | github.com/tcsprojects/pgsolver @ d3cd624 | src/lib/generators/policyiter/generators/friedmannsubexp.ml (90 lines), fearnleysubexp.ml (86 lines), stratimprgenerators.ml SymbolicParityGame | 2026-10-29 | code, not a paper; box 21 ports |
 ## Dead ends
 - 2026-10-30 (box 23): "R*_F = O(n) per W-run" (any reading of box 85's R*-POLY as linear) DEAD on L-RED's latew_K20_m32 (sha1
-  063d173c…; LATE=1 red/span/mkrw.py 20 32): one W-run, R*_F 640 > n = 538 (rstar.py on n5b = xirise.py). Exact on 7 sizes: R*_F = K·m,
+  063d173c…; LATE=1 red/span/mkrw.py 20 32): one W-run, R*_F 640 > n = 538 (rstar.py on n5b = xirise.py; first shown by L-RED R138, l-red 5374e0a5, so mine is an independent reproduction). Exact on 7 sizes: R*_F = K·m,
   |F| = K(m + 3), n = 14K + 8m + 2, so Θ(n²) balanced. Not a kill of R*-POLY.
 - 2026-10-30 (box 23, method): hill climbs on R*_F saturate near n (best 42 at n 60), far below the construction; climb fits are not growth laws.
 - 2026-10-18 (method note): watcher loops counting 'done' lines never end when a run crashes before printing 'done'; count
