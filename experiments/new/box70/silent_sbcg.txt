@@ -1,0 +1,719 @@
+GAME new/box59/out/fc_3.pg SILENT fc_3.pg n 85 iters 41 classes {'P': 69, 'FR': 97} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/fc_4.pg SILENT fc_4.pg n 110 iters 47 classes {'P': 82, 'FR': 132} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/fc_5.pg SILENT fc_5.pg n 135 iters 55 classes {'P': 96, 'FR': 170} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/fc_6.pg SILENT fc_6.pg n 160 iters 62 classes {'P': 112, 'FR': 209} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/fcobsR_3.pg SILENT fcobsR_3.pg n 90 iters 41 classes {'P': 82, 'FR': 110} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/fc_7.pg SILENT fc_7.pg n 185 iters 68 classes {'P': 127, 'FR': 244} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/fcobsR_4.pg SILENT fcobsR_4.pg n 115 iters 47 classes {'P': 93, 'FR': 147} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/fcobs_3.pg SILENT fcobs_3.pg n 88 iters 41 classes {'P': 82, 'FR': 110} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-epoch/instances/ffin12_n32.pg SILENT ffin12_n32.pg n 32 iters 16 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-epoch/instances/ffin4_n24.pg SILENT ffin4_n24.pg n 24 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-epoch/instances/ffin5_n32.pg SILENT ffin5_n32.pg n 32 iters 10 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-epoch/instances/gci2_n12.pg SILENT gci2_n12.pg n 12 iters 7 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-epoch/instances/immfail_n14.pg SILENT immfail_n14.pg n 14 iters 6 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-epoch/instances/immp_cex_n11.pg SILENT immp_cex_n11.pg n 11 iters 1 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-epoch/instances/gci3_n24.pg SILENT gci3_n24.pg n 24 iters 16 classes {'FR': 1, 'P': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-epoch/instances/lcount_n23.pg SILENT lcount_n23.pg n 23 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-epoch/instances/lend13_n16.pg SILENT lend13_n16.pg n 16 iters 11 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-epoch/instances/lend27_n24.pg SILENT lend27_n24.pg n 24 iters 7 classes {'FR': 2} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/fcobs_4.pg SILENT fcobs_4.pg n 113 iters 47 classes {'P': 93, 'FR': 147} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-epoch/instances/lend107_n32.pg SILENT lend107_n32.pg n 32 iters 26 classes {'P': 17} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-epoch/instances/lend15_n48.pg SILENT lend15_n48.pg n 48 iters 11 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-epoch/instances/lend39f_n32.pg SILENT lend39f_n32.pg n 32 iters 13 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-epoch/instances/lend47_n32.pg SILENT lend47_n32.pg n 32 iters 22 classes {'FR': 1, 'P': 5} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-epoch/instances/lend55_n32.pg SILENT lend55_n32.pg n 32 iters 18 classes {'P': 3} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-epoch/instances/lend9_n8.pg SILENT lend9_n8.pg n 8 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-epoch/instances/lend82_n32.pg SILENT lend82_n32.pg n 32 iters 24 classes {'P': 14} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-epoch/instances/lend72_n48.pg SILENT lend72_n48.pg n 48 iters 13 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-epoch/instances/nep13_n24.pg SILENT nep13_n24.pg n 24 iters 12 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-epoch/instances/nep56_n32.pg SILENT nep56_n32.pg n 32 iters 18 classes {'P': 2} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-epoch/instances/nconf61_n48.pg SILENT nconf61_n48.pg n 48 iters 47 classes {'FR': 39, 'F': 8, 'P': 2} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 8 S-not-GXC 0
+GAME n5-epoch/instances/nep22f_n64.pg SILENT nep22f_n64.pg n 64 iters 51 classes {'F': 18, 'FR': 10} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 44 S-not-GXC 0
+GAME n5-epoch/instances/nep76_n40.pg SILENT nep76_n40.pg n 40 iters 18 classes {'P': 12, 'FR': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-epoch/instances/nep92_n40.pg SILENT nep92_n40.pg n 40 iters 13 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-epoch/instances/nep94_n48.pg SILENT nep94_n48.pg n 48 iters 18 classes {'P': 5} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/fc_8.pg SILENT fc_8.pg n 210 iters 77 classes {'P': 146, 'FR': 279} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-exhaustive/instances/b4_cyc6_0.pg SILENT b4_cyc6_0.pg n 11 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-epoch/instances/ret12_n40.pg SILENT ret12_n40.pg n 40 iters 13 classes {'FR': 2, 'P': 2} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-exhaustive/instances/b4_cyc6_1.pg SILENT b4_cyc6_1.pg n 12 iters 4 classes {'P': 2} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-exhaustive/instances/b4_n4all_cyc3_0.pg SILENT b4_n4all_cyc3_0.pg n 4 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-exhaustive/instances/b4_n5_other_0.pg SILENT b4_n5_other_0.pg n 5 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-exhaustive/instances/b4_nohlen5_0.pg SILENT b4_nohlen5_0.pg n 11 iters 1 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-exhaustive/instances/b4_theta_n7.pg SILENT b4_theta_n7.pg n 7 iters 1 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-epoch/instances/ret14_n48.pg SILENT ret14_n48.pg n 48 iters 17 classes {'FR': 4, 'P': 8} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-exhaustive/instances/b5_n5_cyc4_0.pg SILENT b5_n5_cyc4_0.pg n 5 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-epoch/instances/ret14_n64.pg SILENT ret14_n64.pg n 64 iters 14 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-exhaustive/instances/b5_o11.pg SILENT b5_o11.pg n 10 iters 12 classes {'F': 2, 'FR': 2} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 4 S-not-GXC 0
+GAME n5-exhaustive/instances/b5_os_n12.pg SILENT b5_os_n12.pg n 12 iters 18 classes {'F': 4, 'FR': 3} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 6 S-not-GXC 0
+GAME n5-exhaustive/instances/b5_os_n14.pg SILENT b5_os_n14.pg n 14 iters 22 classes {'F': 5, 'FR': 3} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 8 S-not-GXC 0
+GAME n5-exhaustive/instances/b5_os_n16.pg SILENT b5_os_n16.pg n 16 iters 26 classes {'F': 8, 'P': 2, 'FR': 4} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 11 S-not-GXC 0
+GAME n5-exhaustive/instances/b5_os_n20.pg SILENT b5_os_n20.pg n 20 iters 34 classes {'F': 10, 'P': 2, 'FR': 10} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 13 S-not-GXC 0
+GAME n5-exhaustive/instances/b5_os_n24.pg SILENT b5_os_n24.pg n 24 iters 53 classes {'F': 7, 'P': 7, 'FR': 23} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 10 S-not-GXC 0
+GAME n5-exhaustive/instances/b5_os_n28.pg SILENT b5_os_n28.pg n 28 iters 65 classes {'F': 10, 'FR': 42, 'P': 9} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 16 S-not-GXC 0
+GAME n5-exhaustive/instances/b5_os_n32.pg SILENT b5_os_n32.pg n 32 iters 71 classes {'F': 11, 'P': 13, 'FR': 55} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 16 S-not-GXC 0
+GAME n5-exhaustive/instances/b5_os_n40.pg SILENT b5_os_n40.pg n 40 iters 81 classes {'FR': 78, 'F': 13, 'P': 15} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 29 S-not-GXC 0
+GAME n5-exhaustive/instances/b6_xl2_n32.pg SILENT b6_xl2_n32.pg n 32 iters 87 classes {'FR': 61, 'P': 36, 'F': 18} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 23 S-not-GXC 0
+GAME n5-exhaustive/instances/b6_xl_n32.pg SILENT b6_xl_n32.pg n 32 iters 85 classes {'FR': 55, 'P': 32, 'F': 16} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 23 S-not-GXC 0
+GAME n5-exhaustive/instances/b6_xs_n24.pg SILENT b6_xs_n24.pg n 24 iters 21 classes {'P': 2} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-exhaustive/instances/b6_xs_n32.pg SILENT b6_xs_n32.pg n 32 iters 29 classes {'P': 3} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-exhaustive/instances/b6_xl_n40.pg SILENT b6_xl_n40.pg n 40 iters 89 classes {'FR': 61, 'P': 42, 'F': 23} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 29 S-not-GXC 0
+GAME n5-exhaustive/instances/b6_xs_n40.pg SILENT b6_xs_n40.pg n 40 iters 36 classes {'P': 5} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-exhaustive/instances/b6_xs_n48.pg SILENT b6_xs_n48.pg n 48 iters 37 classes {'P': 6} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-exhaustive/instances/b6_xw_n32.pg SILENT b6_xw_n32.pg n 32 iters 79 classes {'FR': 54, 'P': 30, 'F': 17} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 23 S-not-GXC 0
+GAME n5-exhaustive/instances/b6_xl_n48.pg SILENT b6_xl_n48.pg n 48 iters 97 classes {'FR': 78, 'P': 49, 'F': 18} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 26 S-not-GXC 0
+GAME n5-exhaustive/instances/canonA_0.pg SILENT canonA_0.pg n 15 iters 3 classes {'P': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-exhaustive/instances/canonA_1.pg SILENT canonA_1.pg n 15 iters 4 classes {'P': 2} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-exhaustive/instances/b6_xw_n40.pg SILENT b6_xw_n40.pg n 40 iters 80 classes {'FR': 56, 'P': 32, 'F': 17} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 28 S-not-GXC 0
+GAME n5-exhaustive/instances/frz1_n24.pg SILENT frz1_n24.pg n 24 iters 31 classes {'FR': 13, 'P': 14} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 9 S-not-GXC 0
+GAME n5-exhaustive/instances/frz2_n24.pg SILENT frz2_n24.pg n 24 iters 25 classes {'FR': 5, 'P': 14} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 7 S-not-GXC 0
+GAME n5-exhaustive/instances/n3all_maxph_0.pg SILENT n3all_maxph_0.pg n 3 iters 0 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-exhaustive/instances/n3all_maxph_1.pg SILENT n3all_maxph_1.pg n 3 iters 0 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-exhaustive/instances/b6_xw_n48.pg SILENT b6_xw_n48.pg n 48 iters 85 classes {'FR': 68, 'P': 44, 'F': 20} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 35 S-not-GXC 0
+GAME n5-exhaustive/instances/b6_xw_n56.pg SILENT b6_xw_n56.pg n 56 iters 85 classes {'FR': 65, 'P': 42, 'F': 19} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 35 S-not-GXC 0
+GAME n5-exhaustive/instances/n3all_maxph_2.pg SILENT n3all_maxph_2.pg n 3 iters 0 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-exhaustive/instances/frz3_n24.pg SILENT frz3_n24.pg n 24 iters 26 classes {'P': 11, 'FR': 6} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 5 S-not-GXC 0
+GAME n5-exhaustive/instances/n4_maxph_1.pg SILENT n4_maxph_1.pg n 4 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-exhaustive/instances/n4_thch_0.pg SILENT n4_thch_0.pg n 4 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-exhaustive/instances/n4_maxph_0.pg SILENT n4_maxph_0.pg n 4 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-exhaustive/instances/n4all_maxph_0.pg SILENT n4all_maxph_0.pg n 4 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-exhaustive/instances/n4all_tgbad_0.pg SILENT n4all_tgbad_0.pg n 4 iters 1 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-exhaustive/instances/n4all_thch_0.pg SILENT n4all_thch_0.pg n 4 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-exhaustive/instances/n4all_maxph_1.pg SILENT n4all_maxph_1.pg n 4 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-exhaustive/instances/nh_n8.pg SILENT nh_n8.pg n 8 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-exhaustive/instances/n5s_maxph_0.pg SILENT n5s_maxph_0.pg n 5 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-exhaustive/instances/thetaA_canon_n8.pg SILENT thetaA_canon_n8.pg n 8 iters 3 classes {'P': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-exhaustive/instances/thetaA_canon_n12.pg SILENT thetaA_canon_n12.pg n 12 iters 3 classes {'P': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-exhaustive/instances/thetaA_n17.pg SILENT thetaA_n17.pg n 17 iters 1 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-exhaustive/instances/thetaA_n6.pg SILENT thetaA_n6.pg n 6 iters 1 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-exhaustive/instances/thetaA_n9.pg SILENT thetaA_n9.pg n 9 iters 1 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-exhaustive/instances/thetaA_n7.pg SILENT thetaA_n7.pg n 7 iters 1 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-exhaustive/instances/wk1_n32.pg SILENT wk1_n32.pg n 32 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME n5-exhaustive/instances/wk2_n32.pg SILENT wk2_n32.pg n 32 iters 7 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 2 S-not-GXC 0
+GAME new/box48/instances/long121_n40.pg SILENT long121_n40.pg n 40 iters 23 classes {'P': 12, 'FR': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.pg SILENT best_qpc_nep76_n40_s63.pg n 64 iters 9 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/absmono_viol_n44.pg SILENT absmono_viol_n44.pg n 44 iters 7 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.pg SILENT best_qpc_nep90_n40_s61.pg n 64 iters 23 classes {'FR': 22, 'F': 2, 'P': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 4 S-not-GXC 0
+GAME red/carry/instances/carry3_2_2.pg SILENT carry3_2_2.pg n 47 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/cm_mdrop_oink_n28.pg SILENT cm_mdrop_oink_n28.pg n 28 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/cm_mdrop_both_n28.pg SILENT cm_mdrop_both_n28.pg n 28 iters 10 classes {'P': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.pg SILENT best_qpc_nep90_n40_s62.pg n 80 iters 20 classes {'P': 4, 'FR': 5} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/ctx11_n40.pg SILENT ctx11_n40.pg n 40 iters 9 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/ctx6_n20.pg SILENT ctx6_n20.pg n 20 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/ctx12_n40.pg SILENT ctx12_n40.pg n 40 iters 8 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/ctx13_n40.pg SILENT ctx13_n40.pg n 40 iters 17 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box48/out/qpcclimb/scale/snap_n80_s62.pg SILENT snap_n80_s62.pg n 80 iters 20 classes {'P': 4, 'FR': 5} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/ctx7_n30.pg SILENT ctx7_n30.pg n 30 iters 11 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/f1_twodef_n48.pg SILENT f1_twodef_n48.pg n 48 iters 6 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/f1_twofall_n48.pg SILENT f1_twofall_n48.pg n 48 iters 6 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/ctx6_n56.pg SILENT ctx6_n56.pg n 56 iters 12 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/fallv_viol_n28.pg SILENT fallv_viol_n28.pg n 28 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/fired10_n20.pg SILENT fired10_n20.pg n 20 iters 6 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/fall3_n76.pg SILENT fall3_n76.pg n 76 iters 8 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/firedlong667_n20.pg SILENT firedlong667_n20.pg n 20 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/firedlong667_n43.pg SILENT firedlong667_n43.pg n 43 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/gapbW_dup_n20.pg SILENT gapbW_dup_n20.pg n 20 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/gapb_dup_n20.pg SILENT gapb_dup_n20.pg n 20 iters 8 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/firedstep13_n76.pg SILENT firedstep13_n76.pg n 76 iters 8 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/h4_compound2x2_n44.pg SILENT h4_compound2x2_n44.pg n 44 iters 10 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/h4_def2ctx_n20.pg SILENT h4_def2ctx_n20.pg n 20 iters 6 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/h4_compound_n44.pg SILENT h4_compound_n44.pg n 44 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/fall4_n116.pg SILENT fall4_n116.pg n 116 iters 6 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/h4_def7_n28.pg SILENT h4_def7_n28.pg n 28 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/h4_disjoint_n20.pg SILENT h4_disjoint_n20.pg n 20 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/kfirst_viol_n13.pg SILENT kfirst_viol_n13.pg n 13 iters 0 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/h4_notweaker_n20.pg SILENT h4_notweaker_n20.pg n 20 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/kin_viol_n29.pg SILENT kin_viol_n29.pg n 29 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/lemmaS_Mdrop_n20.pg SILENT lemmaS_Mdrop_n20.pg n 20 iters 6 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/lalg_dtl_mviol_n20.pg SILENT lalg_dtl_mviol_n20.pg n 20 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/lemmaS_viol_n20.pg SILENT lemmaS_viol_n20.pg n 20 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/lex_viol_inj_n28.pg SILENT lex_viol_inj_n28.pg n 28 iters 6 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/meet_viol_n17.pg SILENT meet_viol_n17.pg n 17 iters 0 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/lex_viol_tie_n28.pg SILENT lex_viol_tie_n28.pg n 28 iters 7 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/nosig_2_3.pg SILENT nosig_2_3.pg n 24 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/pk_viol_n20.pg SILENT pk_viol_n20.pg n 20 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/phi_flat_alive_n32.pg SILENT phi_flat_alive_n32.pg n 32 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/replay4_n32.pg SILENT replay4_n32.pg n 32 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/meet_viol_n29.pg SILENT meet_viol_n29.pg n 29 iters 11 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/spp19_oink_n30.pg SILENT spp19_oink_n30.pg n 30 iters 10 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/spp19_stable_n30.pg SILENT spp19_stable_n30.pg n 30 iters 7 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/spp22_oink_n40.pg SILENT spp22_oink_n40.pg n 40 iters 8 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/spp25_oink_n40.pg SILENT spp25_oink_n40.pg n 40 iters 10 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/stealonce_both_n45.pg SILENT stealonce_both_n45.pg n 45 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/tstep_near_n20.pg SILENT tstep_near_n20.pg n 20 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/stealonce_core_n76.pg SILENT stealonce_core_n76.pg n 76 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/ctxp/instances/deep1_n13.pg SILENT deep1_n13.pg n 13 iters 1 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/ctxp/instances/deep1_n21.pg SILENT deep1_n21.pg n 21 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/stealer_viol_n76.pg SILENT stealer_viol_n76.pg n 76 iters 12 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/ctxp/instances/margin1_mc5.pg SILENT margin1_mc5.pg n 50 iters 12 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/ctxp/instances/margin1_mc1.pg SILENT margin1_mc1.pg n 80 iters 10 classes {'FR': 2} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/ctxp/instances/margin1_n20.pg SILENT margin1_n20.pg n 20 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/dtl/instances/lalg_dtl_pertop31_n18.pg SILENT lalg_dtl_pertop31_n18.pg n 18 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/fbr/instances/bghm_k1_gap6_A.pg SILENT bghm_k1_gap6_A.pg n 21 iters 1 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/fbr/instances/bghm_k3_gap4_A.pg SILENT bghm_k3_gap4_A.pg n 45 iters 1 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/dtl/instances/lalg_dtl_restart8_n20.pg SILENT lalg_dtl_restart8_n20.pg n 20 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/carry/instances/stealonce_viol_n76.pg SILENT stealonce_viol_n76.pg n 76 iters 12 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/fbr/instances/lev74_n40.pg SILENT lev74_n40.pg n 40 iters 18 classes {'FR': 3, 'P': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/fbr/instances/fr39_q4_n48.pg SILENT fr39_q4_n48.pg n 48 iters 36 classes {'P': 5} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/fbr/instances/rho144_n32.pg SILENT rho144_n32.pg n 32 iters 9 classes {'FR': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/fbr/instances/rho84_n16.pg SILENT rho84_n16.pg n 16 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/fbr/instances/rho3_253_n32.pg SILENT rho3_253_n32.pg n 32 iters 11 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/fbr/instances/sat4_n20.pg SILENT sat4_n20.pg n 20 iters 6 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/fbr/instances/lev56_n48.pg SILENT lev56_n48.pg n 48 iters 86 classes {'FR': 62, 'F': 17, 'P': 28} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 28 S-not-GXC 0
+GAME red/fbr/instances/sat68_n20.pg SILENT sat68_n20.pg n 20 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 3 S-not-GXC 0
+GAME red/fbr/instances/nep80_n40.pg SILENT nep80_n40.pg n 40 iters 22 classes {'FR': 2, 'P': 1, 'F': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 2 S-not-GXC 0
+GAME red/fbr/instances/rho666_n48.pg SILENT rho666_n48.pg n 48 iters 16 classes {'P': 2, 'FR': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/fbx/instances/exsw_loop_n15.pg SILENT exsw_loop_n15.pg n 15 iters 1 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/fbr/instances/twowave_L16.pg SILENT twowave_L16.pg n 22 iters 15 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/frz/instances/fbcap_eq_u4_n11.pg SILENT fbcap_eq_u4_n11.pg n 11 iters 6 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 2 S-not-GXC 0
+GAME red/frz/instances/fx2_n11.pg SILENT fx2_n11.pg n 11 iters 9 classes {'P': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/h3/instances/frzgap0_n4.pg SILENT frzgap0_n4.pg n 4 iters 1 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/fbx/instances/kt6_n58.pg SILENT kt6_n58.pg n 58 iters 38 classes {'F': 1, 'P': 8} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 3 S-not-GXC 0
+GAME red/h3/instances/frzgap0_n6.pg SILENT frzgap0_n6.pg n 6 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/h3/instances/lcount2_n23.pg SILENT lcount2_n23.pg n 23 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/h3/instances/lcount_n23.pg SILENT lcount_n23.pg n 23 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/h3/instances/offret_l19_n24.pg SILENT offret_l19_n24.pg n 24 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/kl/instances/klcount_n16.pg SILENT klcount_n16.pg n 16 iters 6 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/kl/instances/klcount_n18_base.pg SILENT klcount_n18_base.pg n 18 iters 6 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/kl/instances/klcount_n18_lvl.pg SILENT klcount_n18_lvl.pg n 18 iters 6 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/kl/instances/klglobal_n16.pg SILENT klglobal_n16.pg n 16 iters 6 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/kl/instances/klglobal_n18_lvl.pg SILENT klglobal_n18_lvl.pg n 18 iters 6 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/h3/instances/xsnpre36_n48.pg SILENT xsnpre36_n48.pg n 48 iters 33 classes {'P': 5} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/kl/instances/klglobal_n20_lvl2.pg SILENT klglobal_n20_lvl2.pg n 20 iters 6 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/kl/instances/klmin_n13.pg SILENT klmin_n13.pg n 13 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/kl/instances/r2climb_h13.pg SILENT r2climb_h13.pg n 13 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/kl/instances/r2join_h0E_n14.pg SILENT r2join_h0E_n14.pg n 14 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/kl/instances/r2crawl_n14.pg SILENT r2crawl_n14.pg n 14 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/kl/instances/r2lap_best_n22.pg SILENT r2lap_best_n22.pg n 22 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/kl24/instances/HL88_0.pg SILENT HL88_0.pg n 41 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/kl24/instances/HL88_2.pg SILENT HL88_2.pg n 45 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/kl24/instances/HL88_1.pg SILENT HL88_1.pg n 43 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/kl24/instances/HLg_0.pg SILENT HLg_0.pg n 29 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/kl24/instances/HL88_3.pg SILENT HL88_3.pg n 47 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/kl24/instances/HLg_1.pg SILENT HLg_1.pg n 35 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/kl24/instances/HLg_2.pg SILENT HLg_2.pg n 45 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/kl24/instances/HLg_3.pg SILENT HLg_3.pg n 55 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/kw/instances/frzu_tight_n14.pg SILENT frzu_tight_n14.pg n 14 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/kw/instances/cw11_n24.pg SILENT cw11_n24.pg n 24 iters 17 classes {'F': 12, 'C': 3, 'FR': 2} max-S-per-edge 0 max-C-per-edge 3 SCrun 3 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 24 S-not-GXC 0
+GAME red/lag/instances/depth2_n39.pg SILENT depth2_n39.pg n 39 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/kw/instances/kc18_n24.pg SILENT kc18_n24.pg n 24 iters 23 classes {'FR': 1, 'P': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 2 S-not-GXC 0
+GAME red/lag/instances/depth3_n46.pg SILENT depth3_n46.pg n 46 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/lag/instances/fam_D4_n50.pg SILENT fam_D4_n50.pg n 50 iters 1 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/lag/instances/depth4_n53.pg SILENT depth4_n53.pg n 53 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/lag/instances/fam_D12_n106.pg SILENT fam_D12_n106.pg n 106 iters 1 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/mei/instances/mei_h2.pg SILENT mei_h2.pg n 19 iters 1 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/lag/instances/fam_D8_n78.pg SILENT fam_D8_n78.pg n 78 iters 1 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/mei/instances/mei_h3.pg SILENT mei_h3.pg n 27 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/mei/instances/mei_h4.pg SILENT mei_h4.pg n 35 iters 3 classes {'FR': 2} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/mei/instances/mei_h5.pg SILENT mei_h5.pg n 43 iters 4 classes {'FR': 2} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/mei/instances/mei_h6.pg SILENT mei_h6.pg n 51 iters 5 classes {'FR': 4} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/mei/instances/mei_h8.pg SILENT mei_h8.pg n 67 iters 7 classes {'FR': 12} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/n3/instances/core41_n40.pg SILENT core41_n40.pg n 40 iters 11 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/n3/instances/lagx10_n40.pg SILENT lagx10_n40.pg n 40 iters 17 classes {'P': 12, 'FR': 3} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 1 S-not-GXC 0
+GAME red/n3/instances/lag11_n40.pg SILENT lag11_n40.pg n 40 iters 17 classes {'FR': 5, 'P': 4} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/n3/instances/long90_k2_n40.pg SILENT long90_k2_n40.pg n 40 iters 18 classes {'P': 8} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/n3/instances/comp54_n80.pg SILENT comp54_n80.pg n 80 iters 11 classes {'P': 3} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/n3/instances/long121_n40.pg SILENT long121_n40.pg n 40 iters 23 classes {'P': 12, 'FR': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/n3/instances/n3cov_phi.pg SILENT n3cov_phi.pg n 32 iters 10 classes {'FR': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/n3/instances/n3cov_lean.pg SILENT n3cov_lean.pg n 48 iters 18 classes {'P': 4} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/n3/instances/run49_n32.pg SILENT run49_n32.pg n 32 iters 20 classes {'P': 1, 'F': 1, 'FR': 3} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 5 S-not-GXC 0
+GAME red/n3/instances/ret22_n40.pg SILENT ret22_n40.pg n 40 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/n5/instances/dl_4_4.pg SILENT dl_4_4.pg n 42 iters 8 classes {'P': 1, 'FR': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/n5/instances/dlm2_4.pg SILENT dlm2_4.pg n 42 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/n3/instances/run34_n40.pg SILENT run34_n40.pg n 40 iters 40 classes {'FR': 14, 'F': 2, 'P': 4} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 7 S-not-GXC 0
+GAME red/n5/instances/sym_h12_s1.pg SILENT sym_h12_s1.pg n 24 iters 34 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/n5/instances/sym_h8_s1.pg SILENT sym_h8_s1.pg n 16 iters 25 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 1 S-not-GXC 0
+GAME red/n5inj/instances/block_bk20.pg SILENT block_bk20.pg n 24 iters 27 classes {'P': 7} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/n5inj/instances/blockph_bp20.pg SILENT blockph_bp20.pg n 24 iters 25 classes {'P': 12} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/n5/instances/sym_h16_s1.pg SILENT sym_h16_s1.pg n 32 iters 55 classes {'FR': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/n5inj/instances/bribe_cex_n15.pg SILENT bribe_cex_n15.pg n 15 iters 1 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/n5inj/instances/block_bk32.pg SILENT block_bk32.pg n 36 iters 49 classes {'P': 17} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/n5inj/instances/blockph_bp32.pg SILENT blockph_bp32.pg n 36 iters 39 classes {'P': 17} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/n5inj/instances/frz24.pg SILENT frz24.pg n 24 iters 39 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 7 S-not-GXC 0
+GAME red/n5inj/instances/frz32.pg SILENT frz32.pg n 32 iters 8 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/n5inj/instances/frz40.pg SILENT frz40.pg n 40 iters 90 classes {'FR': 28, 'P': 3, 'F': 4} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 8 S-not-GXC 0
+GAME red/n5/instances/dl_6_8.pg SILENT dl_6_8.pg n 110 iters 14 classes {'FR': 3, 'P': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/n5inj/instances/elimn_cex_n48.pg SILENT elimn_cex_n48.pg n 48 iters 92 classes {'FR': 94, 'F': 9, 'P': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 28 S-not-GXC 0
+GAME red/n5inj/instances/returns_rt32.pg SILENT returns_rt32.pg n 32 iters 57 classes {'FR': 26, 'F': 5} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 13 S-not-GXC 0
+GAME red/n5inj/instances/phase2_pk32.pg SILENT phase2_pk32.pg n 32 iters 56 classes {'FR': 25, 'F': 5} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 13 S-not-GXC 0
+GAME red/n5inj/instances/phase2_pk48.pg SILENT phase2_pk48.pg n 48 iters 72 classes {'FR': 28, 'P': 8, 'F': 4} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 19 S-not-GXC 0
+GAME red/n5inj/instances/theta_thc24.pg SILENT theta_thc24.pg n 24 iters 29 classes {'FR': 7, 'P': 7} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/n5inj/instances/returns_rt48.pg SILENT returns_rt48.pg n 48 iters 80 classes {'FR': 69, 'F': 11, 'P': 3} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 34 S-not-GXC 0
+GAME red/n5inj/instances/theta_thf16.pg SILENT theta_thf16.pg n 16 iters 20 classes {'FR': 7, 'P': 7, 'F': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 2 S-not-GXC 0
+GAME red/n5inj/instances/theta_tp32.pg SILENT theta_tp32.pg n 32 iters 45 classes {'P': 27, 'FR': 19, 'F': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 3 S-not-GXC 0
+GAME red/n5inj/instances/returns_ph64.pg SILENT returns_ph64.pg n 64 iters 105 classes {'P': 8, 'FR': 103, 'F': 13} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 41 S-not-GXC 0
+GAME red/n5inj/instances/theta_tp40.pg SILENT theta_tp40.pg n 40 iters 41 classes {'FR': 8, 'P': 12} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/n5inj/instances/wide_h16.pg SILENT wide_h16.pg n 32 iters 44 classes {'FR': 3} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/nest16/instances/k4L72_n101.pg SILENT k4L72_n101.pg n 101 iters 6 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/nest16/instances/k4L72r_n101.pg SILENT k4L72r_n101.pg n 101 iters 6 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/nest16/instances/k4seed_c1_n82.pg SILENT k4seed_c1_n82.pg n 82 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/nest16/instances/k4g50_n101.pg SILENT k4g50_n101.pg n 101 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/nest16/instances/k4seed_vr_n87.pg SILENT k4seed_vr_n87.pg n 87 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/nest16/instances/k4u_n101.pg SILENT k4u_n101.pg n 101 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/n5inj/instances/returns_rt64.pg SILENT returns_rt64.pg n 64 iters 90 classes {'FR': 76, 'F': 12, 'P': 3} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 38 S-not-GXC 0
+GAME red/nest16/instances/k4y1_n82.pg SILENT k4y1_n82.pg n 82 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/nest16/instances/k4y2_n87.pg SILENT k4y2_n87.pg n 87 iters 6 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/nest16/instances/near4_n26.pg SILENT near4_n26.pg n 26 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/nest16/instances/nest4u_n46.pg SILENT nest4u_n46.pg n 46 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/nest16/instances/nest4uu_n51.pg SILENT nest4uu_n51.pg n 51 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/nest16/instances/nest5_n49.pg SILENT nest5_n49.pg n 49 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/nest16/instances/nest6_n75.pg SILENT nest6_n75.pg n 75 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/nest16/instances/nest6min_n75.pg SILENT nest6min_n75.pg n 75 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/nest16/instances/oseg_n26.pg SILENT oseg_n26.pg n 26 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/nest16/instances/nest6x_n75.pg SILENT nest6x_n75.pg n 75 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/nest16/instances/w1_n27.pg SILENT w1_n27.pg n 27 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/nest16/instances/win3_n27.pg SILENT win3_n27.pg n 27 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/nopre/instances/nopre_viol_n20.pg SILENT nopre_viol_n20.pg n 20 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/o1/instances/ph45_n32.pg SILENT ph45_n32.pg n 32 iters 21 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/o1/instances/ph50_n32.pg SILENT ph50_n32.pg n 32 iters 32 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/o1/instances/tau18_n24.pg SILENT tau18_n24.pg n 24 iters 12 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/o1/instances/f39_n48.pg SILENT f39_n48.pg n 48 iters 38 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/rec0/instances/fbd0_n4.pg SILENT fbd0_n4.pg n 4 iters 0 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/o1/instances/iter118_n48.pg SILENT iter118_n48.pg n 48 iters 18 classes {'P': 4} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/rec0/instances/nep24_n20.pg SILENT nep24_n20.pg n 20 iters 15 classes {'FR': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/rec0/instances/n0_6_n24.pg SILENT n0_6_n24.pg n 24 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/sgrow/instances/s20_n20.pg SILENT s20_n20.pg n 20 iters 8 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/sgrow/instances/s21_oink_n20.pg SILENT s21_oink_n20.pg n 20 iters 8 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/rec0/instances/nep87_n40.pg SILENT nep87_n40.pg n 40 iters 25 classes {'FR': 7, 'P': 6, 'F': 2} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 2 S-not-GXC 0
+GAME red/sgrow/instances/s29_n30.pg SILENT s29_n30.pg n 30 iters 7 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/rec0/instances/lend2_30_n48.pg SILENT lend2_30_n48.pg n 48 iters 25 classes {'P': 7, 'FR': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/rec0/instances/nep90_n40.pg SILENT nep90_n40.pg n 40 iters 23 classes {'FR': 2, 'P': 8, 'F': 3} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 3 S-not-GXC 0
+GAME red/sgrow/instances/s34_oink_n40.pg SILENT s34_oink_n40.pg n 40 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/sgrow/instances/s32_n60.pg SILENT s32_n60.pg n 60 iters 8 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/sgrow/instances/s35_oink_n80.pg SILENT s35_oink_n80.pg n 80 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/sgrow/instances/s36_oink_n60.pg SILENT s36_oink_n60.pg n 60 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/so/instances/beta2_n11.pg SILENT beta2_n11.pg n 11 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 2 S-not-GXC 0
+GAME red/so/instances/epsseg_cex_n16.pg SILENT epsseg_cex_n16.pg n 16 iters 11 classes {'P': 4, 'FR': 5} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/sgrow/instances/s34_oink_n80.pg SILENT s34_oink_n80.pg n 80 iters 8 classes {'FR': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/so/instances/exitr_cex_n16.pg SILENT exitr_cex_n16.pg n 16 iters 10 classes {'P': 3} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/so/instances/epsseg_cex_n48.pg SILENT epsseg_cex_n48.pg n 48 iters 26 classes {'P': 6} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/so/instances/exitr_cex_n48.pg SILENT exitr_cex_n48.pg n 48 iters 22 classes {'FR': 6, 'P': 3} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/so/instances/mn_abs74_n48.pg SILENT mn_abs74_n48.pg n 48 iters 22 classes {'FR': 29, 'F': 6, 'P': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 33 S-not-GXC 0
+GAME red/so/instances/nleq_cex_n48.pg SILENT nleq_cex_n48.pg n 48 iters 10 classes {'FR': 3} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 13 S-not-GXC 0
+GAME red/so/instances/njb_reabs54_n32.pg SILENT njb_reabs54_n32.pg n 32 iters 40 classes {'FR': 14, 'F': 10} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 35 S-not-GXC 0
+GAME red/so/instances/farrise25_n32.pg SILENT farrise25_n32.pg n 32 iters 35 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 25 S-not-GXC 0
+GAME red/so/instances/pftheta34_n32.pg SILENT pftheta34_n32.pg n 32 iters 39 classes {'P': 42, 'FR': 8} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 9 S-not-GXC 0
+GAME red/so/instances/nleq33_n48.pg SILENT nleq33_n48.pg n 48 iters 40 classes {'FR': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 3 S-not-GXC 0
+GAME red/so/instances/njb_reabs65_n48.pg SILENT njb_reabs65_n48.pg n 48 iters 70 classes {'FR': 44, 'P': 10, 'F': 27} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 52 S-not-GXC 0
+GAME red/so/instances/pftheta_cex_n32.pg SILENT pftheta_cex_n32.pg n 32 iters 38 classes {'P': 36, 'FR': 7} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 8 S-not-GXC 0
+GAME red/so/instances/pft35_n48.pg SILENT pft35_n48.pg n 48 iters 41 classes {'P': 43, 'FR': 19, 'F': 3} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 15 S-not-GXC 0
+GAME red/so/instances/pft40_n40.pg SILENT pft40_n40.pg n 40 iters 54 classes {'FR': 30, 'P': 28, 'F': 4} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 17 S-not-GXC 0
+GAME red/so/instances/post31_n48.pg SILENT post31_n48.pg n 48 iters 36 classes {'P': 8} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/so/instances/s4c8_n13.pg SILENT s4c8_n13.pg n 13 iters 12 classes {'F': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 8 S-not-GXC 0
+GAME red/so/instances/so_k2_n32.pg SILENT so_k2_n32.pg n 32 iters 20 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/so/instances/rise_fb38_n48.pg SILENT rise_fb38_n48.pg n 48 iters 53 classes {'FR': 17, 'F': 17} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 56 S-not-GXC 0
+GAME red/so/instances/so_sor5_n24.pg SILENT so_sor5_n24.pg n 24 iters 23 classes {'P': 14} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/so/instances/so_sorl_n32.pg SILENT so_sorl_n32.pg n 32 iters 22 classes {'P': 4} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/so/instances/so_tie13_n24.pg SILENT so_tie13_n24.pg n 24 iters 16 classes {'P': 5} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/so/instances/so_j19_n48.pg SILENT so_j19_n48.pg n 48 iters 25 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/so/instances/rise_thin51_n40.pg SILENT rise_thin51_n40.pg n 40 iters 78 classes {'FR': 92, 'P': 19, 'F': 14} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 25 S-not-GXC 0
+GAME red/so/instances/so_tie15_n32.pg SILENT so_tie15_n32.pg n 32 iters 20 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/so/instances/so_th_n32.pg SILENT so_th_n32.pg n 32 iters 36 classes {'P': 38} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/so/instances/tev_cex_n40.pg SILENT tev_cex_n40.pg n 40 iters 27 classes {'FR': 1, 'F': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 17 S-not-GXC 0
+GAME red/so/instances/tevlast7_n32.pg SILENT tevlast7_n32.pg n 32 iters 41 classes {'FR': 12, 'P': 18} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 7 S-not-GXC 0
+GAME red/so/instances/tevlast11_n40.pg SILENT tevlast11_n40.pg n 40 iters 36 classes {'FR': 6, 'P': 9} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 8 S-not-GXC 0
+GAME red/so/instances/tog6a_n32.pg SILENT tog6a_n32.pg n 32 iters 10 classes {'P': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/so/instances/tevlast_cex_n40.pg SILENT tevlast_cex_n40.pg n 40 iters 11 classes {'P': 2, 'FR': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 5 S-not-GXC 0
+GAME red/so/instances/tog6b_n32.pg SILENT tog6b_n32.pg n 32 iters 8 classes {'P': 3, 'C': 1} max-S-per-edge 0 max-C-per-edge 1 SCrun 1 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/so/instances/xrun8_n10.pg SILENT xrun8_n10.pg n 10 iters 11 classes {'P': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/so/instances/xrun21_n24.pg SILENT xrun21_n24.pg n 24 iters 24 classes {'P': 3, 'FR': 2} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/so/instances/xsn29_n32.pg SILENT xsn29_n32.pg n 32 iters 29 classes {'P': 3} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/so/instances/xsn43_n48.pg SILENT xsn43_n48.pg n 48 iters 45 classes {'P': 2} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/so/instances/xsnf42_n48.pg SILENT xsnf42_n48.pg n 48 iters 44 classes {'P': 9} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/so/instances/xsnf52_n64.pg SILENT xsnf52_n64.pg n 64 iters 55 classes {'P': 14} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/tcpert/instances/leanT_N12.pg SILENT leanT_N12.pg n 96 iters 13 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/tcpert/instances/leanT_N6.pg SILENT leanT_N6.pg n 48 iters 6 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/so/instances/xsn91_n48.pg SILENT xsn91_n48.pg n 48 iters 115 classes {'FR': 95, 'P': 67, 'F': 18} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 27 S-not-GXC 0
+GAME red/tcpert/instances/leanT_N8.pg SILENT leanT_N8.pg n 64 iters 8 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/tcpert/instances/leanT_N16.pg SILENT leanT_N16.pg n 128 iters 16 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/tcpert/instances/tcL_N3.pg SILENT tcL_N3.pg n 42 iters 7 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/tcpert/instances/tcL_N4.pg SILENT tcL_N4.pg n 68 iters 16 classes {'FR': 3} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/tcpert/instances/tcL_N5.pg SILENT tcL_N5.pg n 100 iters 19 classes {'FR': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/tcpert/instances/tcL_N6.pg SILENT tcL_N6.pg n 138 iters 18 classes {'FR': 2} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/tcpert/instances/leanT_N24.pg SILENT leanT_N24.pg n 192 iters 25 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/tcpert/instances/tcR4_N4.pg SILENT tcR4_N4.pg n 68 iters 12 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/tcpert/instances/tcL_N10.pg SILENT tcL_N10.pg n 350 iters 27 classes {'FR': 5} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/tcpert/instances/tcR4_N5.pg SILENT tcR4_N5.pg n 100 iters 14 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/tcpert/instances/tcR4_N6.pg SILENT tcR4_N6.pg n 138 iters 22 classes {'FR': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/tcpert/instances/tcL_N8.pg SILENT tcL_N8.pg n 232 iters 30 classes {'FR': 24} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/tcpert/instances/tcR4_N7.pg SILENT tcR4_N7.pg n 182 iters 41 classes {'FR': 2} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/tcpert/instances/tcR4_N8.pg SILENT tcR4_N8.pg n 232 iters 33 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/tcpert/instances/tcS8_N6.pg SILENT tcS8_N6.pg n 138 iters 17 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/tcpert/instances/leanT_N32.pg SILENT leanT_N32.pg n 256 iters 33 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/tcpert/instances/tcS8_N7.pg SILENT tcS8_N7.pg n 182 iters 14 classes {'FR': 2} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/tcpert/instances/tcS8_N8.pg SILENT tcS8_N8.pg n 232 iters 10 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/tpp/instances/tpp_viol_n22.pg SILENT tpp_viol_n22.pg n 22 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/tcpert/instances/tcS8_N10.pg SILENT tcS8_N10.pg n 350 iters 16 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/tpp/instances/tpp_viol_n63.pg SILENT tpp_viol_n63.pg n 63 iters 8 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/ul/instances/cxmig_k4_n54.pg SILENT cxmig_k4_n54.pg n 54 iters 12 classes {'P': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/tcpert/instances/tcS8_N11.pg SILENT tcS8_N11.pg n 418 iters 20 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/ul/instances/cxmig_k16_n138.pg SILENT cxmig_k16_n138.pg n 138 iters 24 classes {'P': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/ul/instances/ladderd0_k12_n48.pg SILENT ladderd0_k12_n48.pg n 48 iters 14 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/ul/instances/cxmig_k8_n82.pg SILENT cxmig_k8_n82.pg n 82 iters 16 classes {'P': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/ul/instances/ladderd0_k24_n84.pg SILENT ladderd0_k24_n84.pg n 84 iters 26 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/ul/instances/ladderent_k12_n48.pg SILENT ladderent_k12_n48.pg n 48 iters 14 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/tcpert/instances/tcL_N12.pg SILENT tcL_N12.pg n 492 iters 37 classes {'FR': 23} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/ul/instances/reader_L10_n36.pg SILENT reader_L10_n36.pg n 36 iters 13 classes {'FR': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/ul/instances/reader_L20_n56.pg SILENT reader_L20_n56.pg n 56 iters 23 classes {'FR': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/ul/instances/ladderent_k24_n84.pg SILENT ladderent_k24_n84.pg n 84 iters 26 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/tcpert/instances/tcS8_N9.pg SILENT tcS8_N9.pg n 288 iters 36 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 2 S-not-GXC 0
+GAME red/usplit/instances/gate_K16_n197.pg SILENT gate_K16_n197.pg n 197 iters 23 classes {'FR': 3} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/ul/instances/reader_L40_n96.pg SILENT reader_L40_n96.pg n 96 iters 43 classes {'FR': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/usplit/instances/grow_K12_n149.pg SILENT grow_K12_n149.pg n 149 iters 18 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/usplit/instances/pairoc_n58.pg SILENT pairoc_n58.pg n 58 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/usplit/instances/pp_K12_n161.pg SILENT pp_K12_n161.pg n 161 iters 20 classes {'FR': 2} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/usplit/instances/pp_K12_n161_dual.pg SILENT pp_K12_n161_dual.pg n 161 iters 20 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/ul/instances/ladderd0_k48_n156.pg SILENT ladderd0_k48_n156.pg n 156 iters 50 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/ul/instances/ladderent_k48_n156.pg SILENT ladderent_k48_n156.pg n 156 iters 50 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/usplit/instances/usplit_n14.pg SILENT usplit_n14.pg n 14 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/usplit/instances/usplit_n23.pg SILENT usplit_n23.pg n 23 iters 9 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/usplit/instances/usplit_rd_n24.pg SILENT usplit_rd_n24.pg n 24 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/usplit/instances/usplit_rd_s3_n27.pg SILENT usplit_rd_s3_n27.pg n 27 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/usplit/instances/usplit_s3_n16.pg SILENT usplit_s3_n16.pg n 16 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/xctx/instances/nest3_n20.pg SILENT nest3_n20.pg n 20 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/xctx/instances/nest3_n24.pg SILENT nest3_n24.pg n 24 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/xctx/instances/vrall_viol_n20.pg SILENT vrall_viol_n20.pg n 20 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/xctx/instances/xcov11_n20.pg SILENT xcov11_n20.pg n 20 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/xctx/instances/xctx_viol_n20.pg SILENT xctx_viol_n20.pg n 20 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/xing/instances/fbref_cex_n32.pg SILENT fbref_cex_n32.pg n 32 iters 56 classes {'F': 10, 'P': 10, 'FR': 39} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 26 S-not-GXC 0
+GAME red/xing/instances/j10_n24.pg SILENT j10_n24.pg n 24 iters 25 classes {'FR': 11, 'F': 5, 'P': 3} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 7 S-not-GXC 0
+GAME red/xing/instances/j4_n40.pg SILENT j4_n40.pg n 40 iters 106 classes {'P': 68, 'FR': 75, 'F': 8} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 21 S-not-GXC 0
+GAME red/xing/instances/j5_n16.pg SILENT j5_n16.pg n 16 iters 30 classes {'FR': 10} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 7 S-not-GXC 0
+GAME red/xing/instances/j7_n32.pg SILENT j7_n32.pg n 32 iters 50 classes {'P': 12, 'FR': 23} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 4 S-not-GXC 0
+GAME red/usplit/instances/grow_K40_n373.pg SILENT grow_K40_n373.pg n 373 iters 46 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/xing/instances/j7_n48.pg SILENT j7_n48.pg n 48 iters 78 classes {'FR': 47, 'P': 11, 'F': 7} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 23 S-not-GXC 0
+GAME red/xing/instances/j8_n32.pg SILENT j8_n32.pg n 32 iters 54 classes {'F': 3, 'P': 9, 'FR': 25} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 6 S-not-GXC 0
+GAME red/xing/instances/kw25_n32.pg SILENT kw25_n32.pg n 32 iters 29 classes {'P': 10} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/xing/instances/j8_n48.pg SILENT j8_n48.pg n 48 iters 86 classes {'FR': 62, 'F': 5, 'P': 8} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 25 S-not-GXC 0
+GAME red/xing/instances/kw_n16.pg SILENT kw_n16.pg n 16 iters 12 classes {'P': 2} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/xing/instances/kw_n24.pg SILENT kw_n24.pg n 24 iters 20 classes {'P': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/xing/instances/obr_eq_n24.pg SILENT obr_eq_n24.pg n 24 iters 7 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 3 S-not-GXC 0
+GAME red/xing/instances/kw_n48.pg SILENT kw_n48.pg n 48 iters 40 classes {'P': 7} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/xing/instances/obr_n32.pg SILENT obr_n32.pg n 32 iters 22 classes {'P': 8} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/xing/instances/u1t_cex_n32.pg SILENT u1t_cex_n32.pg n 32 iters 12 classes {'P': 1, 'S': 4} max-S-per-edge 1 max-C-per-edge 0 SCrun 4 max-S-per-piece-edge 1 S-at-Wflat 4/4 GXCrun 17 S-not-GXC 0
+GAME red/xing/instances/u1t_own6_n32.pg SILENT u1t_own6_n32.pg n 32 iters 9 classes {'S': 6} max-S-per-edge 1 max-C-per-edge 0 SCrun 6 max-S-per-piece-edge 1 S-at-Wflat 6/6 GXCrun 15 S-not-GXC 0
+GAME red/xing/instances/u23sw64_n32.pg SILENT u23sw64_n32.pg n 32 iters 16 classes {'S': 31} max-S-per-edge 1 max-C-per-edge 0 SCrun 31 max-S-per-piece-edge 1 S-at-Wflat 31/31 GXCrun 64 S-not-GXC 0
+GAME red/xing/instances/u2flat73_n32.pg SILENT u2flat73_n32.pg n 32 iters 16 classes {'S': 1} max-S-per-edge 1 max-C-per-edge 0 SCrun 1 max-S-per-piece-edge 1 S-at-Wflat 1/1 GXCrun 34 S-not-GXC 0
+GAME red/xing/instances/u2flat_n32.pg SILENT u2flat_n32.pg n 32 iters 13 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 2 S-not-GXC 0
+GAME red/xing/instances/x31_cu16.pg SILENT x31_cu16.pg n 16 iters 23 classes {'FR': 9, 'P': 8} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 3 S-not-GXC 0
+GAME red/xing/instances/x31_cu24.pg SILENT x31_cu24.pg n 24 iters 22 classes {'P': 19, 'FR': 10} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 3 S-not-GXC 0
+GAME red/xing/instances/x31_cu32.pg SILENT x31_cu32.pg n 32 iters 49 classes {'FR': 14, 'P': 35} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 4 S-not-GXC 0
+GAME red/xing/instances/x31_cu32i.pg SILENT x31_cu32i.pg n 32 iters 42 classes {'P': 35, 'FR': 14} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 4 S-not-GXC 0
+GAME red/usplit/instances/pp_K48_n449.pg SILENT pp_K48_n449.pg n 449 iters 56 classes {'FR': 2} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/xing/instances/x31_lem_e24.pg SILENT x31_lem_e24.pg n 24 iters 54 classes {'P': 6, 'FR': 32} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 12 S-not-GXC 0
+GAME red/xing/instances/x31_lem_t32.pg SILENT x31_lem_t32.pg n 32 iters 65 classes {'P': 15, 'FR': 48} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 9 S-not-GXC 0
+GAME red/xing/instances/x31_nh_r20.pg SILENT x31_nh_r20.pg n 20 iters 15 classes {'P': 5} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/xing/instances/x31_cu48.pg SILENT x31_cu48.pg n 48 iters 46 classes {'P': 61, 'FR': 22} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 4 S-not-GXC 0
+GAME red/xing/instances/x31_nh_e24.pg SILENT x31_nh_e24.pg n 24 iters 20 classes {'P': 8} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/xing/instances/x31_ru24.pg SILENT x31_ru24.pg n 24 iters 7 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/xing/instances/x31_re24.pg SILENT x31_re24.pg n 24 iters 6 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 1 S-not-GXC 0
+GAME red/xing/instances/x31_rx32.pg SILENT x31_rx32.pg n 32 iters 55 classes {'P': 26, 'FR': 34, 'F': 4} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 6 S-not-GXC 0
+GAME red/xing/instances/x32_rand16.pg SILENT x32_rand16.pg n 16 iters 15 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/xing/instances/x31_rx48.pg SILENT x31_rx48.pg n 48 iters 53 classes {'P': 25, 'FR': 32, 'F': 4} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 8 S-not-GXC 0
+GAME red/xing/instances/x32_nest40.pg SILENT x32_nest40.pg n 40 iters 58 classes {'P': 45, 'FR': 28, 'F': 2} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 3 S-not-GXC 0
+GAME red/xing/instances/x32_rand24.pg SILENT x32_rand24.pg n 24 iters 20 classes {'P': 6} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/xing/instances/x32_rand32.pg SILENT x32_rand32.pg n 32 iters 29 classes {'P': 4} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/xing/instances/x32_rand48.pg SILENT x32_rand48.pg n 48 iters 44 classes {'P': 22} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/xing/instances/x32_waves32.pg SILENT x32_waves32.pg n 32 iters 81 classes {'FR': 59, 'P': 32, 'F': 19} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 25 S-not-GXC 0
+GAME si/root/instances/cone_n65.pg SILENT cone_n65.pg n 65 iters 12 classes {'P': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/xing/instances/x32_rand64.pg SILENT x32_rand64.pg n 64 iters 56 classes {'P': 17} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/usplit/instances/pp_K48_n449_dual.pg SILENT pp_K48_n449_dual.pg n 449 iters 56 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME si/root/instances/ueonce_n27.pg SILENT ueonce_n27.pg n 27 iters 12 classes {'P': 2, 'FR': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/xing/instances/x32_waves48.pg SILENT x32_waves48.pg n 48 iters 89 classes {'F': 38, 'FR': 40, 'P': 3} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 54 S-not-GXC 0
+GAME si/root/instances/cone_n69.pg SILENT cone_n69.pg n 69 iters 25 classes {'P': 4} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/switchbestexp_1.pg SILENT switchbestexp_1.pg n 35 iters 20 classes {'P': 12, 'FR': 11} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/switchbestexp_2.pg SILENT switchbestexp_2.pg n 60 iters 32 classes {'P': 48, 'FR': 64} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/switchbestexp_3.pg SILENT switchbestexp_3.pg n 85 iters 41 classes {'P': 69, 'FR': 101} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/switchbestexp_4.pg SILENT switchbestexp_4.pg n 110 iters 47 classes {'P': 84, 'FR': 136} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/switchbestexp_5.pg SILENT switchbestexp_5.pg n 135 iters 55 classes {'P': 99, 'FR': 175} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/switchbestexp_6.pg SILENT switchbestexp_6.pg n 160 iters 62 classes {'P': 116, 'FR': 215} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/usplit/instances/gate_K64_n581.pg SILENT gate_K64_n581.pg n 581 iters 71 classes {'FR': 3} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/switchallexp_1.pg SILENT switchallexp_1.pg n 21 iters 5 classes {'P': 3, 'FR': 2} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/switchallexp_2.pg SILENT switchallexp_2.pg n 35 iters 8 classes {'FR': 4, 'P': 2} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/switchallexp_3.pg SILENT switchallexp_3.pg n 49 iters 7 classes {'FR': 6} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/switchallexp_4.pg SILENT switchallexp_4.pg n 63 iters 8 classes {'FR': 8} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/switchallexp_5.pg SILENT switchallexp_5.pg n 77 iters 10 classes {'FR': 9} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/switchallexp_6.pg SILENT switchallexp_6.pg n 91 iters 12 classes {'FR': 11} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/switchbestexp_7.pg SILENT switchbestexp_7.pg n 185 iters 68 classes {'P': 132, 'FR': 251} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_core_2.pg SILENT counter_core_2.pg n 15 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_core_3.pg SILENT counter_core_3.pg n 21 iters 6 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_core_4.pg SILENT counter_core_4.pg n 27 iters 8 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_core_5.pg SILENT counter_core_5.pg n 33 iters 10 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_core_6.pg SILENT counter_core_6.pg n 39 iters 12 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_core_8.pg SILENT counter_core_8.pg n 51 iters 16 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_dp_2.pg SILENT counter_dp_2.pg n 12 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_dp_3.pg SILENT counter_dp_3.pg n 16 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_dp_4.pg SILENT counter_dp_4.pg n 20 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_dp_5.pg SILENT counter_dp_5.pg n 24 iters 6 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_dp_6.pg SILENT counter_dp_6.pg n 28 iters 6 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_dp_8.pg SILENT counter_dp_8.pg n 36 iters 8 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_m_2.pg SILENT counter_m_2.pg n 9 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_m_3.pg SILENT counter_m_3.pg n 12 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_m_4.pg SILENT counter_m_4.pg n 15 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_m_5.pg SILENT counter_m_5.pg n 18 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_m_6.pg SILENT counter_m_6.pg n 21 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_m_8.pg SILENT counter_m_8.pg n 27 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_ortl_2.pg SILENT counter_ortl_2.pg n 11 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_ortl_3.pg SILENT counter_ortl_3.pg n 16 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_ortl_4.pg SILENT counter_ortl_4.pg n 21 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_ortl_5.pg SILENT counter_ortl_5.pg n 26 iters 6 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_ortl_6.pg SILENT counter_ortl_6.pg n 31 iters 7 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_ortl_8.pg SILENT counter_ortl_8.pg n 41 iters 9 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_qpt_2.pg SILENT counter_qpt_2.pg n 4 iters 1 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_qpt_3.pg SILENT counter_qpt_3.pg n 6 iters 1 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_qpt_4.pg SILENT counter_qpt_4.pg n 8 iters 1 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_qpt_5.pg SILENT counter_qpt_5.pg n 10 iters 1 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_qpt_6.pg SILENT counter_qpt_6.pg n 12 iters 1 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_qpt_8.pg SILENT counter_qpt_8.pg n 16 iters 1 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_rob_2.pg SILENT counter_rob_2.pg n 31 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_rob_3.pg SILENT counter_rob_3.pg n 54 iters 7 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_rob_4.pg SILENT counter_rob_4.pg n 83 iters 10 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_rob_5.pg SILENT counter_rob_5.pg n 118 iters 13 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_rob_6.pg SILENT counter_rob_6.pg n 159 iters 16 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_rr_2.pg SILENT counter_rr_2.pg n 8 iters 1 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_rr_3.pg SILENT counter_rr_3.pg n 12 iters 1 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_rob_8.pg SILENT counter_rob_8.pg n 259 iters 22 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_rr_4.pg SILENT counter_rr_4.pg n 16 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_rr_5.pg SILENT counter_rr_5.pg n 20 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_rr_6.pg SILENT counter_rr_6.pg n 24 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_rr_8.pg SILENT counter_rr_8.pg n 32 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_symsi_2.pg SILENT counter_symsi_2.pg n 22 iters 13 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 2 S-not-GXC 0
+GAME new/box54/out/hf/counter_symsi_3.pg SILENT counter_symsi_3.pg n 32 iters 25 classes {'F': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 3 S-not-GXC 0
+GAME new/box54/out/hf/counter_symsi_4.pg SILENT counter_symsi_4.pg n 42 iters 22 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_symsi_5.pg SILENT counter_symsi_5.pg n 52 iters 31 classes {'FR': 6} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 8 S-not-GXC 0
+GAME new/box54/out/hf/counter_symsi_6.pg SILENT counter_symsi_6.pg n 62 iters 37 classes {'FR': 6, 'P': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 9 S-not-GXC 0
+GAME new/box54/out/hf/recursiveladder_2.pg SILENT recursiveladder_2.pg n 10 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/recursiveladder_3.pg SILENT recursiveladder_3.pg n 15 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/recursiveladder_4.pg SILENT recursiveladder_4.pg n 20 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/recursiveladder_5.pg SILENT recursiveladder_5.pg n 25 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/counter_symsi_8.pg SILENT counter_symsi_8.pg n 82 iters 48 classes {'FR': 8} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 11 S-not-GXC 0
+GAME new/box54/out/hf/recursiveladder_6.pg SILENT recursiveladder_6.pg n 30 iters 6 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/tc_2.pg SILENT tc_2.pg n 22 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/tc_3.pg SILENT tc_3.pg n 42 iters 7 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/tc_4.pg SILENT tc_4.pg n 68 iters 16 classes {'FR': 3} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/tc_5.pg SILENT tc_5.pg n 100 iters 19 classes {'FR': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/tc_6.pg SILENT tc_6.pg n 138 iters 18 classes {'FR': 2} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/ctl/pivot_demo.pg SILENT pivot_demo.pg n 11 iters 0 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/d_pivot_demo.pg SILENT d_pivot_demo.pg n 11 iters 0 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/switchbestexp_8.pg SILENT switchbestexp_8.pg n 210 iters 77 classes {'P': 158, 'FR': 281} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/seg/instances/runquad_K3_m4_n54.pg SILENT runquad_K3_m4_n54.pg n 54 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/seg/instances/runquad_K8_m30_n192.pg SILENT runquad_K8_m30_n192.pg n 192 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/seg/instances/s3quad_K3_m4.pg SILENT s3quad_K3_m4.pg n 137 iters 21 classes {'P': 16} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/d_runquad_K3.pg SILENT d_runquad_K3.pg n 54 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/hf/tc_8.pg SILENT tc_8.pg n 232 iters 30 classes {'FR': 24} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box52/out/topfix_n3.pg SILENT topfix_n3.pg n 63 iters 22 classes {'P': 14} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box52/out/topfix_n4.pg SILENT topfix_n4.pg n 84 iters 28 classes {'P': 30} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box52/out/topfix_n6.pg SILENT topfix_n6.pg n 126 iters 40 classes {'P': 80} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box52/out/topfix_n8.pg SILENT topfix_n8.pg n 168 iters 52 classes {'P': 154} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/d_hntop_n3.pg SILENT d_hntop_n3.pg n 63 iters 22 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box52/out/topfix_n8_cmp.pg SILENT topfix_n8_cmp.pg n 171 iters 52 classes {'P': 154} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box51/out/dlc_d2.pg SILENT dlc_d2.pg n 27 iters 7 classes {'P': 2} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box52/out/topfix_n10.pg SILENT topfix_n10.pg n 210 iters 64 classes {'P': 252} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box51/out/dlc_d3.pg SILENT dlc_d3.pg n 109 iters 15 classes {'P': 8} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box54/out/d_dlc_d3.pg SILENT d_dlc_d3.pg n 109 iters 15 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME si/runlin/instances/runfam_K10.pg SILENT runfam_K10.pg n 49 iters 97 classes {'P': 72} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME si/runlin/instances/runfam_K40.pg SILENT runfam_K40.pg n 79 iters 163 classes {'P': 114} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r100_n40.pg SILENT r100_n40.pg n 40 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box51/out/dlc_d4.pg SILENT dlc_d4.pg n 455 iters 31 classes {'P': 22} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r101_n50.pg SILENT r101_n50.pg n 50 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r102_n60.pg SILENT r102_n60.pg n 60 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r104_n80.pg SILENT r104_n80.pg n 80 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r103_n70.pg SILENT r103_n70.pg n 70 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r105_n20.pg SILENT r105_n20.pg n 20 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r106_n30.pg SILENT r106_n30.pg n 30 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r107_n40.pg SILENT r107_n40.pg n 40 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r108_n50.pg SILENT r108_n50.pg n 50 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r109_n60.pg SILENT r109_n60.pg n 60 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r10_n50.pg SILENT r10_n50.pg n 50 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r110_n70.pg SILENT r110_n70.pg n 70 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r111_n80.pg SILENT r111_n80.pg n 80 iters 7 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r112_n20.pg SILENT r112_n20.pg n 20 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r113_n30.pg SILENT r113_n30.pg n 30 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r114_n40.pg SILENT r114_n40.pg n 40 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r115_n50.pg SILENT r115_n50.pg n 50 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r116_n60.pg SILENT r116_n60.pg n 60 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r117_n70.pg SILENT r117_n70.pg n 70 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r118_n80.pg SILENT r118_n80.pg n 80 iters 6 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r119_n20.pg SILENT r119_n20.pg n 20 iters 1 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r11_n60.pg SILENT r11_n60.pg n 60 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r120_n30.pg SILENT r120_n30.pg n 30 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r121_n40.pg SILENT r121_n40.pg n 40 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r122_n50.pg SILENT r122_n50.pg n 50 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r123_n60.pg SILENT r123_n60.pg n 60 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r124_n70.pg SILENT r124_n70.pg n 70 iters 7 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r125_n80.pg SILENT r125_n80.pg n 80 iters 6 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r126_n20.pg SILENT r126_n20.pg n 20 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r127_n30.pg SILENT r127_n30.pg n 30 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r128_n40.pg SILENT r128_n40.pg n 40 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r129_n50.pg SILENT r129_n50.pg n 50 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r12_n70.pg SILENT r12_n70.pg n 70 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r130_n60.pg SILENT r130_n60.pg n 60 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r131_n70.pg SILENT r131_n70.pg n 70 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r132_n80.pg SILENT r132_n80.pg n 80 iters 5 classes {'FR': 2} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r133_n20.pg SILENT r133_n20.pg n 20 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r134_n30.pg SILENT r134_n30.pg n 30 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r135_n40.pg SILENT r135_n40.pg n 40 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r136_n50.pg SILENT r136_n50.pg n 50 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r137_n60.pg SILENT r137_n60.pg n 60 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r138_n70.pg SILENT r138_n70.pg n 70 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r139_n80.pg SILENT r139_n80.pg n 80 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r13_n80.pg SILENT r13_n80.pg n 80 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r140_n20.pg SILENT r140_n20.pg n 20 iters 1 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r141_n30.pg SILENT r141_n30.pg n 30 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r142_n40.pg SILENT r142_n40.pg n 40 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r143_n50.pg SILENT r143_n50.pg n 50 iters 1 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r145_n70.pg SILENT r145_n70.pg n 70 iters 7 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r144_n60.pg SILENT r144_n60.pg n 60 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r147_n20.pg SILENT r147_n20.pg n 20 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r146_n80.pg SILENT r146_n80.pg n 80 iters 7 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r148_n30.pg SILENT r148_n30.pg n 30 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r149_n40.pg SILENT r149_n40.pg n 40 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r14_n20.pg SILENT r14_n20.pg n 20 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r150_n50.pg SILENT r150_n50.pg n 50 iters 6 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r151_n60d2.pg SILENT r151_n60d2.pg n 60 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r152_n60d2.pg SILENT r152_n60d2.pg n 60 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r153_n60d2.pg SILENT r153_n60d2.pg n 60 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r154_n60d2.pg SILENT r154_n60d2.pg n 60 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r155_n60d2.pg SILENT r155_n60d2.pg n 60 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r156_n60d2.pg SILENT r156_n60d2.pg n 60 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r157_n60d2.pg SILENT r157_n60d2.pg n 60 iters 5 classes {'FR': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r158_n60d2.pg SILENT r158_n60d2.pg n 60 iters 2 classes {'FR': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r159_n60d2.pg SILENT r159_n60d2.pg n 60 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r15_n30.pg SILENT r15_n30.pg n 30 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r160_n60d2.pg SILENT r160_n60d2.pg n 60 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r161_n60d2.pg SILENT r161_n60d2.pg n 60 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r162_n60d2.pg SILENT r162_n60d2.pg n 60 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r163_n60d2.pg SILENT r163_n60d2.pg n 60 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r164_n60d2.pg SILENT r164_n60d2.pg n 60 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r165_n60d2.pg SILENT r165_n60d2.pg n 60 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r166_n60d2.pg SILENT r166_n60d2.pg n 60 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r167_n60d2.pg SILENT r167_n60d2.pg n 60 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r168_n60d2.pg SILENT r168_n60d2.pg n 60 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r16_n40.pg SILENT r16_n40.pg n 40 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r169_n60d2.pg SILENT r169_n60d2.pg n 60 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r170_n60d2.pg SILENT r170_n60d2.pg n 60 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r171_n60d2.pg SILENT r171_n60d2.pg n 60 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r172_n60d2.pg SILENT r172_n60d2.pg n 60 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r173_n60d2.pg SILENT r173_n60d2.pg n 60 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r175_n60d2.pg SILENT r175_n60d2.pg n 60 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r174_n60d2.pg SILENT r174_n60d2.pg n 60 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r177_n60d2.pg SILENT r177_n60d2.pg n 60 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r176_n60d2.pg SILENT r176_n60d2.pg n 60 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r178_n60d2.pg SILENT r178_n60d2.pg n 60 iters 3 classes {'FR': 1} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r179_n60d2.pg SILENT r179_n60d2.pg n 60 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r17_n50.pg SILENT r17_n50.pg n 50 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r180_n60d2.pg SILENT r180_n60d2.pg n 60 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r182_n60d2.pg SILENT r182_n60d2.pg n 60 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r181_n60d2.pg SILENT r181_n60d2.pg n 60 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r183_n60d2.pg SILENT r183_n60d2.pg n 60 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r184_n60d2.pg SILENT r184_n60d2.pg n 60 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r185_n60d2.pg SILENT r185_n60d2.pg n 60 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r186_n60d2.pg SILENT r186_n60d2.pg n 60 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r187_n60d2.pg SILENT r187_n60d2.pg n 60 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r188_n60d2.pg SILENT r188_n60d2.pg n 60 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r189_n60d2.pg SILENT r189_n60d2.pg n 60 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r18_n60.pg SILENT r18_n60.pg n 60 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r190_n60d2.pg SILENT r190_n60d2.pg n 60 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r191_n60d2.pg SILENT r191_n60d2.pg n 60 iters 6 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r192_n60d2.pg SILENT r192_n60d2.pg n 60 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r193_n60d2.pg SILENT r193_n60d2.pg n 60 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r194_n60d2.pg SILENT r194_n60d2.pg n 60 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r195_n60d2.pg SILENT r195_n60d2.pg n 60 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r196_n60d2.pg SILENT r196_n60d2.pg n 60 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r197_n60d2.pg SILENT r197_n60d2.pg n 60 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r198_n60d2.pg SILENT r198_n60d2.pg n 60 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r199_n60d2.pg SILENT r199_n60d2.pg n 60 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r19_n70.pg SILENT r19_n70.pg n 70 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r1_n30.pg SILENT r1_n30.pg n 30 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r200_n60d2.pg SILENT r200_n60d2.pg n 60 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r20_n80.pg SILENT r20_n80.pg n 80 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r21_n20.pg SILENT r21_n20.pg n 20 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r22_n30.pg SILENT r22_n30.pg n 30 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r23_n40.pg SILENT r23_n40.pg n 40 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r24_n50.pg SILENT r24_n50.pg n 50 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r25_n60.pg SILENT r25_n60.pg n 60 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r26_n70.pg SILENT r26_n70.pg n 70 iters 6 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r27_n80.pg SILENT r27_n80.pg n 80 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r28_n20.pg SILENT r28_n20.pg n 20 iters 1 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r29_n30.pg SILENT r29_n30.pg n 30 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r2_n40.pg SILENT r2_n40.pg n 40 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r30_n40.pg SILENT r30_n40.pg n 40 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r31_n50.pg SILENT r31_n50.pg n 50 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r32_n60.pg SILENT r32_n60.pg n 60 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r33_n70.pg SILENT r33_n70.pg n 70 iters 6 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r35_n20.pg SILENT r35_n20.pg n 20 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r34_n80.pg SILENT r34_n80.pg n 80 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r36_n30.pg SILENT r36_n30.pg n 30 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r37_n40.pg SILENT r37_n40.pg n 40 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r38_n50.pg SILENT r38_n50.pg n 50 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r39_n60.pg SILENT r39_n60.pg n 60 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r3_n50.pg SILENT r3_n50.pg n 50 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r40_n70.pg SILENT r40_n70.pg n 70 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r41_n80.pg SILENT r41_n80.pg n 80 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r42_n20.pg SILENT r42_n20.pg n 20 iters 0 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r43_n30.pg SILENT r43_n30.pg n 30 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r44_n40.pg SILENT r44_n40.pg n 40 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r45_n50.pg SILENT r45_n50.pg n 50 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r46_n60.pg SILENT r46_n60.pg n 60 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r47_n70.pg SILENT r47_n70.pg n 70 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r48_n80.pg SILENT r48_n80.pg n 80 iters 6 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r49_n20.pg SILENT r49_n20.pg n 20 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r4_n60.pg SILENT r4_n60.pg n 60 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r50_n30.pg SILENT r50_n30.pg n 30 iters 1 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r51_n40.pg SILENT r51_n40.pg n 40 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r52_n50.pg SILENT r52_n50.pg n 50 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r53_n60.pg SILENT r53_n60.pg n 60 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r54_n70.pg SILENT r54_n70.pg n 70 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r55_n80.pg SILENT r55_n80.pg n 80 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r56_n20.pg SILENT r56_n20.pg n 20 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r57_n30.pg SILENT r57_n30.pg n 30 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r58_n40.pg SILENT r58_n40.pg n 40 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r59_n50.pg SILENT r59_n50.pg n 50 iters 7 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 2 S-not-GXC 0
+GAME new/box59/out/rnd/r5_n70.pg SILENT r5_n70.pg n 70 iters 8 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r60_n60.pg SILENT r60_n60.pg n 60 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r61_n70.pg SILENT r61_n70.pg n 70 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r62_n80.pg SILENT r62_n80.pg n 80 iters 10 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 1 S-not-GXC 0
+GAME new/box59/out/rnd/r63_n20.pg SILENT r63_n20.pg n 20 iters 1 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r64_n30.pg SILENT r64_n30.pg n 30 iters 1 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r65_n40.pg SILENT r65_n40.pg n 40 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r66_n50.pg SILENT r66_n50.pg n 50 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r67_n60.pg SILENT r67_n60.pg n 60 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r68_n70.pg SILENT r68_n70.pg n 70 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r69_n80.pg SILENT r69_n80.pg n 80 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r70_n20.pg SILENT r70_n20.pg n 20 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r6_n80.pg SILENT r6_n80.pg n 80 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r71_n30.pg SILENT r71_n30.pg n 30 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r72_n40.pg SILENT r72_n40.pg n 40 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r73_n50.pg SILENT r73_n50.pg n 50 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r74_n60.pg SILENT r74_n60.pg n 60 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r75_n70.pg SILENT r75_n70.pg n 70 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r76_n80.pg SILENT r76_n80.pg n 80 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r77_n20.pg SILENT r77_n20.pg n 20 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r78_n30.pg SILENT r78_n30.pg n 30 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r79_n40.pg SILENT r79_n40.pg n 40 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r7_n20.pg SILENT r7_n20.pg n 20 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r80_n50.pg SILENT r80_n50.pg n 50 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r81_n60.pg SILENT r81_n60.pg n 60 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r82_n70.pg SILENT r82_n70.pg n 70 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r83_n80.pg SILENT r83_n80.pg n 80 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r84_n20.pg SILENT r84_n20.pg n 20 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r85_n30.pg SILENT r85_n30.pg n 30 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r86_n40.pg SILENT r86_n40.pg n 40 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r87_n50.pg SILENT r87_n50.pg n 50 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r89_n70.pg SILENT r89_n70.pg n 70 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r88_n60.pg SILENT r88_n60.pg n 60 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r90_n80.pg SILENT r90_n80.pg n 80 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r8_n30.pg SILENT r8_n30.pg n 30 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r91_n20.pg SILENT r91_n20.pg n 20 iters 3 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r92_n30.pg SILENT r92_n30.pg n 30 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r93_n40.pg SILENT r93_n40.pg n 40 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r95_n60.pg SILENT r95_n60.pg n 60 iters 6 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r94_n50.pg SILENT r94_n50.pg n 50 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r96_n70.pg SILENT r96_n70.pg n 70 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r98_n20.pg SILENT r98_n20.pg n 20 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r97_n80.pg SILENT r97_n80.pg n 80 iters 4 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r99_n30.pg SILENT r99_n30.pg n 30 iters 2 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/rnd/r9_n40.pg SILENT r9_n40.pg n 40 iters 5 classes {} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/fcobsP_3.pg SILENT fcobsP_3.pg n 90 iters 41 classes {'P': 82, 'FR': 110} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/fcobsP_4.pg SILENT fcobsP_4.pg n 115 iters 47 classes {'P': 93, 'FR': 147} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME red/seg/instances/s3quad_K8_m30.pg SILENT s3quad_K8_m30.pg n 479 iters 264 classes {'P': 420} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0
+GAME new/box59/out/fcobs_6.pg SILENT fcobs_6.pg n 163 iters 62 classes {'P': 119, 'FR': 231} max-S-per-edge 0 max-C-per-edge 0 SCrun 0 max-S-per-piece-edge 0 S-at-Wflat 0/0 GXCrun 0 S-not-GXC 0

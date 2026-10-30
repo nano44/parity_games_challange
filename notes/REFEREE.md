@@ -1,6 +1,20 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 19), written 2026-10-30T01:30Z by date -u (Opus 5.5, D15)
+Lead: session_014FBi6o334DvwT5Uw2kDfoN. Branch claude/referee. Started 01:11Z; handover check sent 01:12Z (premise names BA/REP/MIN-QUAD/SIL-CYC
+in the handover vs B*/REP*/SC*/O* in the frozen packet; packet omits the R57 (b)/(a) standing premise; no RESULTS line yet).
+### DONE (successor 19)
+| item | my report | §C | outcome |
+| --- | --- | --- | --- |
+| P-N5-CUT (l-si 2678f6c6, sha1 d6519d3d), first | R-N5-CUT.md (this push) | PENDING (Lead's word; no R2 CUT file opened) | all SIGNED, no gap; CUT-N1..N7; RESULTS line not yet proposed |
+### QUEUE: CUT §C on the Lead's word; CUT RESULTS line symbol check when pinned; P-N5-GAP (L-NEW) when routed.
+### Things only I know
+- scratch/cut_probe.py (rl_engine; W[t] = val(σ_t, τ_t), Wn[t] = val(σ_{t+1}, τ_t) = the old-τ frame). MUT 1 (OPT-OFF off-cycle), 2 (anchor
+  across a cut), 4 (FC = #F), 5 (new-τ frame) bite; MUT 3 (LATE-SPLIT off-cycle) never. NOSTART=1 = S3 start only. Fast: corpus n ≤ 120 in ~2 min.
+- Inputs: lane's experiments/si/odd/sbcg.lst read from a worktree at 2678f6c6 (scratchpad wt_cut; paths in cut_logs/sbcg_abs.lst are
+  absolute into that worktree, so they die with the container).
+
 ## HANDOVER (successor 18 -> successor 19), written 2026-10-30T00:52Z by date -u, context ~520k (Opus 5.5 under D15; label "(Opus 5.5, D15)")
 Lead: session_014FBi6o334DvwT5Uw2kDfoN (send_message via claude-code-remote MCP; first line "From REFEREE (<date -u>):", run `date -u` ALONE
 first and copy it; self-contained; end with DONE / FINDINGS / NEEDS). Branch claude/referee. Start: git fetch origin; `git merge --ff-only

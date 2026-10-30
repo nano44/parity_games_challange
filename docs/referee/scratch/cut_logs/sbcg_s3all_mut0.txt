@@ -1,0 +1,33 @@
+NOTE start file /tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/red/n3/instances/comp54_n80.start gives forced vertex 11 -> 51; using 11
+NOTE start file /tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/red/n3/instances/n3cov_lean.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file /tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/red/n3/instances/n3cov_phi.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file /tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/new/box52/out/topfix_n8_cmp.start invalid for its game (move not an edge, or missing); given start skipped
+CC_chk 19667
+CLS_C 4
+CLS_F 557
+CLS_FR 6031
+CLS_P 5035
+CLS_S 42
+CLS_first 16229
+FS_LATE 313
+GAMES 719
+LS3_chk 4
+LS_chk 41
+LS_late 1141
+LS_rep 41
+LS_sil 0
+OPT1_chk 82998
+OPT2_chk 647486
+RUNS 719
+THM_chk 719
+TRANS 11621
+WMONX_chk 1871
+WMON_chk 890116
+WV_chk 62891
+WV_max_ratio_x1000 285
+max_Bstar 55
+max_Ostar 55
+max_REPstar 6
+max_SCstar 31
+max_T 264
+VIOLATIONS 0

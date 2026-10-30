@@ -7,7 +7,8 @@ y's last leave of z at k -> k+1): t* := the last transition t in [k+1, u] with W
 the (sigma_{t*+1}, tau)-play from z (z included) with sigma_{t*+1}(x) != sigma_{t*}(x). PARENT: a REPEAT late adoption among the causes if
 any, else a FIRST one ("F"), else a plain switch ("S"). DEPTH: 1 + DEPTH(parent) for a REPEAT parent, else 1. LDEC: the parent switch x
 has W-length l(x) < l(z) at t*+1 (l = steps to the cycle node); LDEC_V counts parents with l(x) >= l(z). Counters: rep, silent, parF,
-parR, parS, maxdepth, LDEC_V. Usage: repchain.py GAME.pg [START]"""
+parR, parS, maxdepth, LDEC_V; PLAINW = the largest number, over W-runs, of W-changing transitions at which no late
+adoption happens (the "plain-wave" lemma would say <= n - 1); PLAINV = the same per vertex (most W-changes of one vertex at plain transitions in one W-run). Usage: repchain.py GAME.pg [START]"""
 import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
 sys.path.insert(0, os.path.join(ROOT, "experiments", "new", "box21"))
@@ -28,10 +29,10 @@ def play(s, t, z):
     seen, out, x = set(), [], z
     while x not in seen: seen.add(x); out.append(x); x = s[x] if g.owner[x] == 0 else t[x]
     return out
-c = dict(rep=0, silent=0, parF=0, parR=0, parS=0, maxdepth=0, LDEC_V=0, late=0)
+c = dict(rep=0, silent=0, parF=0, parR=0, parS=0, maxdepth=0, LDEC_V=0, late=0, PLAINW=0, PLAINV=0)
 # W-run state
 def reset(s, t):
-    w, wk = W(s, t); return dict(S=[s], WV=[w], WK=[wk], bl=set(blocked(s, t, wk)), late={}, adopt={}, leave={})
+    w, wk = W(s, t); return dict(S=[s], WV=[w], WK=[wk], bl=set(blocked(s, t, wk)), late={}, adopt={}, leave={}, pw=0, pv=[0] * n)
 R = reset(s, t)
 while True:
     r = step(g, E, Ed, list(s), list(t))
@@ -66,5 +67,10 @@ while True:
                     if x is not None and not WV1[x][2] < WV1[z][2]: c["LDEC_V"] += 1
                 c["maxdepth"] = max(c["maxdepth"], rec["depth"])
             R["adopt"][(y, z)] = k + 1; R["late"][(u, y)] = rec
+    if not any((u, y) in R["late"] for y in ev):
+        ch = [x for x in range(n) if wk2[x] != R["WK"][-1][x]]
+        if ch:
+            R["pw"] += 1; c["PLAINW"] = max(c["PLAINW"], R["pw"])
+            for x in ch: R["pv"][x] += 1; c["PLAINV"] = max(c["PLAINV"], R["pv"][x])
     R["S"].append(ns); R["WV"].append(w2); R["WK"].append(wk2); R["bl"] |= blocked(ns, t, wk2); s = ns
 print(f"REPCH {os.path.basename(args[0])} n {n} " + " ".join(f"{k} {v}" for k, v in c.items()))

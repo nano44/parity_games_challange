@@ -14,13 +14,16 @@ Reason: queue items (1)-(3) and the Lead's steps (1)-(2) are done; context ~285k
 - Box 43 2678f6c6: packet docs/si/P-N5-CUT-box43.md FROZEN, sha1 d6519d3d72d67d25bafd21b7034092eaa4315457 (221 lines; 13 quotes, quotecheck
   pinned). Theorem CUT-RED: T ≤ 2n(n−1) + (n(n−1)+1)(m_E[1 + 2B* + (B*+1)K(n, m_E, REP*)] + SC* + O*). Repairs → docs/si/P-N5-CUT-fixes-box43.md.
 - Box 44 3a972c85, docs/si/N5-REPCH-box44.md: repeat cause chains depth 1 (41/41 plain-switch parents); W-length rank DEAD; CONJECTURE REP-PLAIN.
+- Box 45 (this commit), docs/si/N5-PLAIN-box45.md: plain-wave lemma (transition form) DEAD on runfam_K40; REP-PLAIN DEAD on latew_K20_m32;
+  depth 1 everywhere, breadth grows (agrees with L-RED R127).
 ### IN FLIGHT
 - Nothing running. P-N5-CUT waits for the Lead's referee routing.
 ### OPEN / QUEUE
 1. P-N5-CUT referee notes → fixes file (never edit the packet).
-2. [P-REP]: a "plain-wave" GP* lemma (W-changes driven only by never-blocked edges ≤ n − 1 per W-run). Untried idea: GP*-RUN on a SUB-interval
+2. [P-REP]: plain-wave lemma DEAD (box 45); REP-PLAIN DEAD. Live: 'each FIRST adoption re-enables ≤ p(n) repeats' (breadth). Untried idea: GP*-RUN on a SUB-interval
    of a W-run with lateness read relative to the sub-interval (its proof seems to use only properties inherited by sub-intervals; check).
-3. [P-SC] (SIL + CYC per λ-run), [P-B] (fallbacks + τ-changes per λ-run; other lanes' frontier), [P-ODD].
+3. Lead 00:52Z ask, not done: reader-chain lemma (WCH(c) ≤ switches(v) + rest of c's play, recursion over the reader graph; L-RED R127).
+4. [P-SC] (SIL + CYC per λ-run), [P-B] (fallbacks + τ-changes per λ-run; other lanes' frontier), [P-ODD].
 ### Things only I know
 - Tools in experiments/si/odd/: cuts.py (FR=1 = old-τ frame; MUT=nofresh / off1 controls), cutsx.py (FRESH split), laterep.py (copy of L-NEW's
   late.py + FIRST/REPEAT), repchain.py (cause chains). Corpus runs ~3-6 min at -P 3. L-NEW's box64/frozen.py --wrun gives max R* per game
