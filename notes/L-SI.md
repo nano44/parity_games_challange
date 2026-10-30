@@ -15,13 +15,16 @@ out-window, re-entry as in docs/si/N5-SPAN-box38.md; τ*-piece, anchor, F / FRES
   - [P-MINQ] for every pair and λ-run: min(PCH^span_R(c), WCH*^span_R(c)) ≤ p(n). With [C2] and [P-LATE], WCH* per guided piece is
     polynomial, so [P-MINQ]'s W-branch reduces to the number of τ*-pieces in the span, i.e. to [P-BA]'s two implying counts.
   - [P-SC] SIL_R(v, c) + CYC_R(v, c) ≤ p(n).
+- [C3] PROVED (lane, box 42 §1-§2): in every W-run F, late adoptions ≤ m_E + REP_F, and each REPEAT late adoption of (y, z) has a change of
+  W(z) on [k + 1, t] (k = y's leave of z after its previous adoption, t a later blocked state), unless y is its own W-cycle node there.
+  - [P-REP] REP_F ≤ p(n) per W-run. [P-REP] ⇒ [P-LATE] (per edge ≤ 1 + REP_F) and, with [C2], W per guided stretch O(n³ m (1 + p(n))).
 - Implication (lane): [P-BA] ∧ [P-LATE] ∧ [P-MINQ] ∧ [P-SC] ⇒ Σ_v SW_R(v) polynomial per λ-run (Even), hence with the mirror on λ^U-runs and
   R86 (d)'s bookkeeping, T polynomial (G-N5-TIME).
 
 ## Resume point (successor 31, box 40; session_01V5yGRY6GXgHUrdpJa5WBaa; GO Lead 22:47Z)
 - STEP 0 0e189416. Box 40 (2) DONE: docs/si/N5-CUT-box40.md, tool experiments/si/odd/cuts.py (default frame; FR=1 old-τ frame),
   si/check.sh «box 40». PROVED (lane) W-RETURN-G, CUT-CHARGE; READING G_vc ≤ B_vc (no independent lever); CONJECTURE FC-LIN.
-- §6 94bb55db (FRESH-SPLIT). Box 41 W-VPOLY-S: docs/si/N5-WVP-box41.md (Lemma WV-R; hntop R* = 0). Next: R* / LATE (Lead 00:09Z: keep going, report per box).
+- §6 94bb55db (FRESH-SPLIT). Box 41 W-VPOLY-S: docs/si/N5-WVP-box41.md (Lemma WV-R; hntop R* = 0). Box 42 N5-LATE: docs/si/N5-LATE-box42.md (LATE-SPLIT; FIRST ≤ m_E; CONJECTURE REP-LIN). Next: REP / BA or handover.
 
 ## HANDOVER (successor 30, boxes 36-39; written 2026-10-29T22:1xZ (date -u; see commit); session_01V5yGRXdA7p12A2AFsUdae8)
 Reason: Lead 22:03Z: «Write your handover at ~400k or when BOX 39 ends, whichever comes first.» Box 39 ended; context ~275k.
