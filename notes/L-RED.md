@@ -52,7 +52,8 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - P-N5-SRC FROZEN (Lead 21:38Z): docs/red/P-N5-SRC.md sha1 3caae56e…, line P-N5-SRC-line.txt sha1 3101a0c0…, pushed 0521fb82.
 - R148 (Lead 21:49Z retarget) docs/red/R148-cascade.md: CONJECTURE CASCADE-LIN (L-NEW box 99) DEAD, cascl_K4_m8_N100 (mkrw K4 m8 + 100
   passive clones of Even 63, n 222): one FRESH clock tick roots 121 > 111 (L-NEW retcause.py unchanged; xeng, Oink). Clones add one return
-  per root each, ratio → 1. Proposed CASCADE-LIN′ (≤ 1 return per (X, root), CASC ≤ n_E). Shape (ii) not attempted.
+  per root each, ratio → 1. Also dead: CASC ≤ n (cascl66, 321 at n 272) and per-(X, root) O(1) (topfix_N: 2N − 3; casctf_n10_N210: 3,620 =
+  8.6n). Corpus XROOT: casc/xr_corpus.txt. Shape (ii) not attempted.
   docs/red/R148-hxs.md (the first R148 target, superseded): HXS at one source = K(m + 1) (Odd observer); SRC dichotomy; gated-ladder design.
 - L-NEW tools run unchanged from /tmp/claude-0/lnew99 (git archive of l-new b376575c: experiments/new, harness, n5-second, hard-families, si).
 - RESUME POINT: the residual is HXS-POLY, i.e. Ξ(g) at deviating Odd g, or Ξ(c) at a W-cycle node, rising super-polynomially often in one

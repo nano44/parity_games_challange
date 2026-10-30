@@ -26,3 +26,13 @@ RUN 0-44 F 44 returns 798 edges 228 targets 28 max_per_target 404 norise 0 wch_i
   top targets [(65, 404), (64, 303), (68, 4), (71, 4), (74, 4), (77, 4), (80, 4), (83, 4)]
   ROOT kinds {'FRESH': 798} distinct roots 7 max returns per root 121 chain depth {0: 780, 1: 18}
   top roots (kind, x, w, q) [(('FRESH', 4, 38, 9), 121), (('FRESH', 4, 45, 20), 121), (('FRESH', 4, 52, 31), 121), (('FRESH', 4, 58, 42), 114), (('FRESH', 3, 16, 11), 107), (('FRESH', 3, 18, 22), 107), (('FRESH', 3, 20, 33), 107)]
+== red/casc/instances/cascl66_K4_m8_N150 (retcause_xr.py = L-NEW retcause + XROOT)
+RUN 0-44 F 44 returns 1148 edges 328 targets 28 max_per_target 604 norise 0 wch_in_window 1148 rises_per_return {1: 659, 2: 489} classes {'EVS': 1601, 'ODF': 36}
+  ROOT kinds {'FRESH': 1148} distinct roots 7 max returns per root 321 chain depth {0: 1130, 1: 18}
+  top roots (kind, x, w, q) [(('FRESH', 4, 38, 9), 321), (('FRESH', 4, 45, 20), 321), (('FRESH', 4, 52, 31), 321)]
+  XROOT max returns of one Even X per root 2 top [((66, ('FRESH', 4, 38, 9)), 2), ((69, ('FRESH', 4, 38, 9)), 2), ((72, ('FRESH', 4, 38, 9)), 2)]
+== red/casc/instances/casctf_n10_N210 (with its default-start file)
+RUN 6-64 F 58 returns 3822 edges 254 targets 44 max_per_target 3587 norise 0 wch_in_window 3822 rises_per_return {1: 3813, 2: 9} classes {'EVS': 3831}
+  ROOT kinds {'FRESH': 3822} distinct roots 27 max returns per root 3620 chain depth {0: 3822}
+  top roots (kind, x, w, q) [(('FRESH', 194, 195, 9), 3620), (('FRESH', 185, 186, 9), 44), (('FRESH', 176, 177, 9), 38)]
+  XROOT max returns of one Even X per root 17 top [((193, ('FRESH', 194, 195, 9)), 17), ((210, ('FRESH', 194, 195, 9)), 17), ((211, ('FRESH', 194, 195, 9)), 17)]

@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """L-RED R148: add N passive clones of Even vertex X: same priority (ties broken by index, SPEC A1), same successors, no in-edges, start
 sigma0 = X's. A clone changes no other vertex's play, so the (sigma, tau)-run on the original vertices is unchanged (checked by the caller
-against the original trace). Usage: clone.py IN.pg IN.start X N OUT.pg OUT.start"""
+against the original trace). START "-" = no start file (default start; a clone's default equals X's, same successors and priority class).
+Usage: clone.py IN.pg IN.start|- X N OUT.pg OUT.start|-"""
 import sys, re
 src, sst, X, N, out, ost = sys.argv[1], sys.argv[2], int(sys.argv[3]), int(sys.argv[4]), sys.argv[5], sys.argv[6]
 rows = []
@@ -13,6 +14,7 @@ for i in range(N): rows.append([n + i, rows[X][1], 0, rows[X][3], f"clone{i}"])
 with open(out, "w") as f:
     f.write(f"parity {len(rows) - 1};\n")
     for v, p, o, s, lab in rows: f.write(f"{v} {p} {o} {s}" + (f' "{lab}"' if lab else "") + ";\n")
+if sst == "-": sys.exit(0)
 lines = open(sst).read().splitlines(); sx = None
 for l in lines:
     if l.startswith("SIGMA0"):

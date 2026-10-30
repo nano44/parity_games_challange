@@ -1,4 +1,4 @@
-# R148: CONJECTURE CASCADE-LIN (L-NEW 40, box 99) is DEAD as stated. On cascl_K4_m8_N100 (n 222) one FRESH entry (a tick of the clock vertex 4) roots 121 > n/2 = 111 returns, 0.545n. The instance is mkrw LATE=1 K4 m8 plus 100 passive clones of one returning Even vertex. Each clone adds exactly one return to every root, so the ratio tends to 1. CASCADE-EQ's use is untouched: |F| is unchanged (44) and CASC ≤ n here. Shape (ii) (growing root depth) is not attempted
+# R148: CONJECTURE CASCADE-LIN (L-NEW 40, box 99) is DEAD as stated, and so is every «CASC = O(n)» form. One FRESH entry roots 121 > n/2 (cascl_K4_m8_N100, n 222), 321 > n (cascl66_K4_m8_N150, n 272), and 3,620 = 8.6n (casctf_n10_N210, n 420). The instances are passive clones of an Even vertex that returns 1, 2 or 2N − 3 times per root (topfix_N, L-NEW box 52), so CASC can be Θ(n²) while |F| is linear. CASCADE-EQ stays a valid reduction, but its target must charge transitions, not return entries. Shape (ii) (growing root depth) is not attempted
 L-RED successor 35 (Opus 5.5; D1/D18). Lead 2026-10-30 21:49Z: «Make it R148, ahead of your HXS idea. Two kill shapes: (i) one fresh entry
 rooting > n/2 returns; (ii) root chains of growing depth … Use L-NEW's box99/retcause.py root map (read only), and say whether your
 construction's roots are FRESH.» Written 2026-10-30 from 21:50Z (date -u).
@@ -40,18 +40,31 @@ construction's roots are FRESH.» Written 2026-10-30 from 21:50Z (date -u).
   - CASCADE-EQ, |F| ≤ (m_E − n_E)(1 + max CASC), stays true. The kill does not threaten WRUN-POLY. It only shows that «n/2» is not the
     constant.
 
-## 3. What survives, and the repaired target (CONJECTURE / READING)
-- CONJECTURE CASCADE-LIN′ (L-RED, data only): in every W-run, every Even vertex X returns at most once per root, so CASC_F(e) ≤ n_E.
-  - On the five instances of §2 every clone and every original returner has exactly one return per root.
-  - Not measured on the corpus: retcause.py does not print per-(X, root) counts, and I did not modify it.
-- A kill of CASCADE-LIN′ in shape (i) needs one Even X with ≥ 2 returns rooted at the same fresh entry: an oscillation p → q → p of X
-  inside one root's cascade (depth ≥ 1, a second return driven by another return of the same root). Clones of such an X would then give
-  CASC / n → 2. Not built.
-- Shape (ii) (root chains of growing depth, the counter shape) is not attempted. As the Lead notes, ARENA-MAX and SETTLE stopped every
-  counter so far. In P-N5-SRC's terms each depth step is a source event whose block must re-wave the lower bits, which is R148-hxs §2's
-  reset obstacle (L3).
+## 3. Beyond n/2: CASC is not O(n) for any constant (DATA, DEAD forms)
+- «CASC ≤ n» is DEAD as well. casc/instances/cascl66_K4_m8_N150 (n 272) is mkrw K4 m8 plus 150 clones of Even 66, which returns TWICE per
+  root. One FRESH tick (('FRESH', 4, 38, 9)) roots 321 > n returns. xeng identical, Oink OK.
+- Per-(X, root) counts on the corpus (casc/retcause_xr.py = L-NEW's retcause.py plus one XROOT output line; casc/runxr.sh →
+  casc/xr_corpus.txt; 599 W-runs with returns, 0 errors):
+  - max returns of one Even X per root: 1 in 530 W-runs, 2 in 52, 3 in 12, and 5, 9, 13, 17 on topfix_n4, n6, n8, n10 (L-NEW box 52);
+  - topfix_N: 2N − 3 at n ≈ 21N (n10: 17 at n 210; n12, run separately: 21 at n 252, Even 235, root ('FRESH', 236, 237, 9), depth 0).
+- So the repair «each Even X returns O(1) times per root» is DEAD too: the count grows linearly along topfix_N.
+- With clones, CASC grows quadratically. casc/instances/casctf_n10_N210 (n 420) is topfix_n10 plus 210 clones of Even 193, default start
+  written out by casc/defstart.py.
+  - One FRESH root (('FRESH', 194, 195, 9)) has 3,620 = 50 + 210·17 returns, 8.6n. Chain depth 0. xeng identical, Oink OK.
+  - Along topfix_N with M = n_0 clones: CASC ≈ n_0·(2N − 3) ≈ n²/42. Not built beyond n10. The two factors, clones and topfix's per-X
+    count, are each pinned.
+- Reading:
+  - |F| is untouched in every case: clones are passive, and topfix's W-run is 58 transitions at n 210.
+  - So CASCADE-EQ, |F| ≤ (m_E − n_E)(1 + max CASC), remains a valid REDUCTION, but max CASC can be Θ(n²) while |F| is linear.
+  - CASC-POLY as a TARGET is therefore not sharper than the trivial CASC ≤ n_E·|F|. The cascade count conflates «many returns» with «many
+    transitions».
+  - A useful version must charge transitions, not return entries. For example: the number of TRANSITIONS containing a return rooted at e
+    (RETT per root, box 98's unit). In casctf it is ≤ |F| = 58, whatever the clones do.
+- Shape (ii) (root chains of growing depth) is not attempted. Corpus depth ≤ 1 on every instance here. As the Lead notes, ARENA-MAX and
+  SETTLE stopped every counter so far.
 
 ## 4. Pins (experiments/red/check.sh «R148»)
-- casc/instances/cascl_K4_m8_N100: regenerated from mkrw + clone.py and compared (cmp); casc/retx.py output; xeng; Oink.
+- casc/instances/cascl_K4_m8_N100, cascl66_K4_m8_N150, casctf_n10_N210: regenerated (mkrw or L-NEW's topfix_n10, then clone.py and
+  defstart.py) and compared (cmp); casc/retx.py return counts; xeng; Oink.
 - L-NEW's retcause output is kept as data (casc/retcause_out.txt). retcause.py is not on claude/l-red (not yet merged to the trunk), so
   check.sh does not run it.
