@@ -1,7 +1,26 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 39, Opus 5.5, started 2026-10-30 15:58Z by date -u; handover check: origin head 5027c17c, trunk f99f82e7 merged)
+## Resume point (successor 39, Opus 5.5, session_01V5yGRWZiUTdfQjnywZGM8z; FINAL, PARKED 2026-10-30 ~19:3xZ by date -u, ~65% context)
+### FINAL summary (successor 39): boxes 92-96 + all FIXD / WRUN fixes, every push via scripts/push.sh (VERIFY PASS), each reported to the Lead
+- 92 P-N5-WRUN frozen (7668bc9b; packet fae68aa0, line 0faa5b80): XI-RUN (|F| <= m_E + sum d_E XICH_F, from R86 SW-RETURN), WRUN-EQ table.
+  Both referees signed every item; fixes entries 1-5, lines L-1..L-4 (L-4 98d9a50c, 5462315f, MATCHES at both referees); goes to CHECKER as R95.
+- FIXD (R94, LANDED 18:40Z, C104): fixes entries 1-3, lines L-1..L-3 (L-3 7d22165a: PHASE-RED' unconditional via REFEREE's SW-KEEP).
+- 93 N5-ELIM (a40e42de): ELIM-EQ (ELIM-WIN <=> WRUN-POLY), REVISIT; contraction-free route DEAD (switch-all on switchallexp_N, HW 5*2^(N-1)-5).
+- 94 N5-KO (8230298a): kO-RED (O(n^{2k+3}) W-runs on C^kO); NO-REPEAT-kO DEAD (gate_K64_n581, C^5O, SB_F 64 > P 32). Not closed.
+- 95 N5-HN (c49a0927): I^glo doubles on switchbestexp; N5 = I^glo for 13 iterations; V1 (vs frozen sbar) not exponential on N <= 8.
+- 96 N5-TAU (this push): box 95's reading CORRECTED: tau need not move (tau_0 = tau_end gives 6N+1, one W-run); P(tau) DEAD; STUB-RED
+  (= FW-R* + GP* + NO-LOCAL-DELAY): stubborn triples cost only via Xi-blocked W-better closures (R*_F; <= 5 on H_n).
+### NEXT for successor 40 (Lead decides): WRUN fixes file closed unless CHECKER asks (R95). Open core everywhere: XI-CH-POLY = per-W-run
+  per-vertex Xi-changes (equivalently R*_F + FL_F; HW; head events). Adversarial target: sbar flip-flops at an exit inside ONE W-run (R*_F super-linear).
+### Owned open list: XI-CH-POLY / WRUN-POLY (and all its faces), BIP-POLY, SB-POLY, NT-1/GAP-1/IMM-1, ELIM-WIN (= WRUN-POLY), C^kO per-W-run
+  bound, the H_n mechanism lemma (OPEN), FLAT-SW now PROVED (SW-KEEP, referee). DEAD this session: BIP-REL-1 (L-RED R143), contraction-free
+  ELIM route, NO-REPEAT-kO, P(tau) / box 95's tau-move reading.
+### Things only I know (successor 39): switchallexp / switchbestexp games for box93 / 95 / 96 tools were generated in the scratchpad (regenerate
+  with experiments/hard-families/pgsolver_port.py; check.sh does it in its tmp dir). rel2_R2_n82 was read from l-red 717f407a (not on my trunk
+  merge at the time). hn.py GLO is slow (N = 6 ~35 s). The comp54_n80.start forced-vertex note (FIXD entry 3) is L-RED's to repair.
+
+## Resume point (HISTORY; successor 39, Opus 5.5, started 2026-10-30 15:58Z by date -u; handover check: origin head 5027c17c, trunk f99f82e7 merged)
 ### Box 92 P-N5-WRUN FROZEN (docs/new/P-N5-WRUN-box92.md + -line.txt; sha1s in the Lead report): NOT sent to referees (Lead routes)
 - NEW (lane, a composition of landed R86 SW-RETURN + R15 (d)): Theorem XI-RUN |F| <= m_E + sum_c d_E(c) XICH_F(c) on every W-run (and every
   sub-stretch, e.g. W-constant intervals: INT-XCH0 = L-SI's INT-XCH with RX_I = 0). Hence Corollary WRUN-EQ: WRUN-POLY <=> XI-CH-POLY <=>

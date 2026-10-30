@@ -493,4 +493,10 @@ if grep -q "FIRSTDIV sbe_3.pg n 85 N5_iter 41 first_div_GLO 14 first_div_V1 14 N
 else
   echo "box 95 HN check: FAILED"; exit 1
 fi
+w46=$(cd .. && python3 -I hard-families/pgsolver_port.py switchbestexp 3 > "$tmp/sbe_3.pg" && python3 -I new/box96/taustart.py "$tmp/sbe_3.pg" OPT)
+if grep -q "TAUSTART sbe_3.pg n 85 OPT iterations 19 tau_changes 0 fallbacks 0 maxWrun 19" <<<"$w46"; then
+  echo "box 96 TAU: N5 on switchbestexp_3 with tau_0 = tau_end (tau never moves): 19 iterations, one W-run: PASS"
+else
+  echo "box 96 TAU check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
