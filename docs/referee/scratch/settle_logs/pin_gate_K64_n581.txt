@@ -1,0 +1,8 @@
+GAMES 1
+LEX_chk 40754
+PC_chk 44
+trans 71
+wruns 1
+STAT maxblock 3
+VIOLATIONS 0
+RC 0
