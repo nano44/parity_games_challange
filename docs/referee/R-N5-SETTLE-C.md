@@ -111,6 +111,30 @@ Referee: REFEREE (successor 20), Opus 5.5 (D15).
   - L-2 already defines ⊕, so ONE-STEP may also be stated in the line.
 - Verdict on L-3: MATCHES D-1 and D-2. REQUIRED SETTLE-L6 (σ_new) and the ONE-STEP citation, both for L-4. (Opus 5.5, D15)
 
+## 7. Line revision L-4 (l-si b04a1bbb, docs/si/P-N5-SETTLE-line-L4.txt, sha1 6ed61d848613df4b501b785e9418c3e2c1e8fc43; fixes sha1 5c1088d7…, entries 3-4) (successor 21, 23:40Z by date -u)
+- Word-diff against L-2 (1fcb33c5, MATCHES by both referees, §5). The changed tokens:
+  - «H_t);» → «H_t, H_t := S4a's arena at t (Even keeps σ_t ∪ Iσ_t, Odd follows τ_t));» (D-2);
+  - «fixed on F;» → «fixed on F and |F| its number of transitions;» (D-1);
+  - the RUN-SETTLE proof note «… read at one S4a evaluation with W_(k+1))» → «… with W_(k+1); Cases 2, 2b via Lemma ONE-STEP (REFEREE-2
+    R2-N5-SRC §3.2, claude/referee-2 e8c1b62d; signed by REFEREE R-N5-SETTLE Addendum 1, claude/referee 8951ef7c))» (entry 4);
+  - the source note changes «entries 1-2» → «entries 1-4».
+  Nothing else changed. This equals the Lead's description and fixes entries 3-4.
+- Strict symbol test on the new tokens:
+  - |F|, H_t, σ_t, Iσ_t and τ_t are bound (§6).
+  - «Cases 2, 2b» are RUN-SETTLE's cases (this packet's §5).
+  - ONE-STEP is pinned by SHA and section; e8c1b62d and 8951ef7c are on origin.
+- REQUIRED changes that remain:
+  - SETTLE-L6 (§6, sent to the Lead 23:25Z after L-4 was frozen): «σ_new» is still free in the R57 gloss («for S4a, σ_new is the
+    pointwise optimum of the one-player arena H_t, …»). SRC L-2 / L-3 already have the fix. Fix: «for S4a at a transition t → t + 1,
+    σ_(t+1) is the pointwise optimum of the one-player arena H_t, H_t := … (as is)».
+  - SETTLE-L7 (L41): ONE-STEP is a referee-originated proof that the line now relies on for RUN-SETTLE, so L41 requires the scope tail to
+    say so. SRC L-3 has «; Lemma ONE-STEP is referee-originated»; L-4's tail does not. Fix: add the same clause to the scope tail, e.g.
+    after «XCN-POLY» → «…, XCN-POLY; Lemma ONE-STEP (Cases 2, 2b) is referee-originated)».
+  - Optional, in the same edit: name G-SRC-1 in the citation, as SRC L-3 does («which closes gap G-SRC-1 (REFEREE R-N5-SRC §3, claude/referee
+    81f6b89c)»). That lists the gap the citation closes.
+- Verdict on L-4: does NOT yet match. REQUIRED SETTLE-L6 and SETTLE-L7; everything else MATCHES (Opus 5.5, D15). Both fixes are insertions
+  of one clause each; I word-diff L-5.
+
 ## DONE / FINDINGS / NEEDS
 - DONE: this §C. Gate runs in docs/referee/scratch/settle_logs/pin_gate_K64_n581.txt (.start) and in this file (best-reward start, 67).
 - FINDINGS:
