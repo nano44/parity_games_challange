@@ -933,3 +933,21 @@ python3 -I heads52/rwin.py heads52/inst/flipev_n20.pg heads52/inst/flipev_n20.st
 python3 -I heads52/flipx.py heads52/inst/flipev_n20.pg heads52/inst/flipev_n20.start | grep -q "FLIP k 2 o 10 tau 4 old 1 new 4 oldXi_changed False newXi_changed False"
 python3 -I heads52/flipx.py heads52/inst/flipev_n20.pg heads52/inst/flipev_n20.start | grep -q "FLIP k 2 o 14 tau 8 old 8 new 11 oldXi_changed True newXi_changed False"
 echo "si (box 52 §3: FLIP-EV DEAD, flipev_n20): PASS"
+# box 53 SBF (docs/si/N5-SBF-box53.md, Lead 18:55Z): Topkis / any fixed order on Odd strategies DEAD (thetaA_n7: sbar(6) 5 -> 1 -> 5
+# in one W-run; n5b agrees); Theorem ROOT-FLIP lemma checks (SEL, NOCLOSE, TIE, DESCENT; MUT=1 control bites); corpus and random search.
+o=$(python3 -I sb53/topkis.py ../n5-exhaustive/instances/thetaA_n7.pg ../n5-exhaustive/instances/thetaA_n7.start)
+case "$o" in *"PROFREV 1 PVREV 1 FLIPT 2 ROOTX 0 EVX2 0 TXR 1 FIRST 0 3 F 0 3"*) ;; *) echo "box 53: thetaA_n7 topkis: $o"; exit 1;; esac
+o=$(python3 -I heads52/flipx.py ../n5-exhaustive/instances/thetaA_n7.pg ../n5-exhaustive/instances/thetaA_n7.start)
+case "$o" in *"FLIP k 1 o 6 tau 5 old 5 new 1 "*"FLIP k 2 o 6 tau 5 old 1 new 5 "*) ;; *) echo "box 53: thetaA_n7 n5b: $o"; exit 1;; esac
+o=$(python3 -I sb53/rootflip.py heads52/inst/flipev_n20.pg heads52/inst/flipev_n20.start)
+case "$o" in *"NONOWN 66 NOTT 0 SELX 0 NCX 0 FLIPS 4 TIES 1 TIEX 0 EVENX 0 DESCX 0 ROOTX2 0"*) ;; *) echo "box 53: rootflip flipev_n20: $o"; exit 1;; esac
+o=$(MUT=1 python3 -I sb53/rootflip.py heads52/inst/flipev_n20.pg heads52/inst/flipev_n20.start)
+case "$o" in *"SELX 7 "*) ;; *) echo "box 53: MUT control did not bite: $o"; exit 1;; esac
+o=$(python3 -I sb53/rootflip.py ../n5-epoch/instances/nep22f_n64.pg ../n5-epoch/instances/nep22f_n64.start)
+case "$o" in *"NONOWN 1641 NOTT 0 SELX 0 NCX 0 FLIPS 120 TIES 2 TIEX 0 EVENX 0 DESCX 0 ROOTX2 0"*) ;; *) echo "box 53: rootflip nep22f: $o"; exit 1;; esac
+[ "$(cat sb53/root_*.txt | grep -c ROOTFLIP)" = 1134 ] || { echo "box 53: rootflip outputs incomplete"; exit 1; }
+[ "$(cat sb53/topk_*.txt | grep -c TOPKIS)" = 1134 ] || { echo "box 53: topkis outputs incomplete"; exit 1; }
+if grep -q "NOTT [1-9]\|SELX [1-9]\|NCX [1-9]\|TIEX [1-9]\|EVENX [1-9]\|DESCX [1-9]\|ROOTX2 [1-9]" sb53/root_*.txt; then echo "box 53: rootflip corpus violation"; exit 1; fi
+if grep -q "ROOTX [1-9]\|EVX2 [1-9]" sb53/topk_*.txt; then echo "box 53: topkis corpus violation"; exit 1; fi
+[ "$(grep -c "BAD 0$" sb53/rs_out.txt)" = 10 ] || { echo "box 53: random search not 10 x BAD 0"; exit 1; }
+echo "si (box 53 SBF: fixed-order DEAD, ROOT-FLIP checks): PASS"

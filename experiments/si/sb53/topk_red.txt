@@ -1,0 +1,2 @@
+GAME si/gate/inst/latew_K16_m32.pg si/gate/inst/latew_K16_m32.start TOPKIS latew_K16_m32.pg n 482 RUNS 1 PROFREV 1 PVREV 31 FLIPT 513 ROOTX 0 EVX2 0 TXR 32 FIRST 0 33 F 0 560
+GAME si/gate/inst/fx_K8_m32.pg si/gate/inst/fx_K8_m32.start TOPKIS fx_K8_m32.pg n 250 RUNS 1 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 16
