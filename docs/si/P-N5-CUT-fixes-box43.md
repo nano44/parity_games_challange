@@ -113,3 +113,57 @@ TARGET.md claim; G-N5-TIME stays open)»
   - «first late adoptions ≤ m_E per [-W-run,-] {+W-run F,+} R*_T ≤ m_E + REP_F»
   - «R*_T {+(one symbol)+} as in [-R88),-] {+R88, read on F),+}»
 - No other word changes. K13 supersedes K12 as the line to land; K0 and K12 stay unchanged above.
+
+## K14. K13 with REFEREE-2's one edit (claude/referee-2 2bdda73d: j unbound in the SC* clause) and nothing else (Lead 03:45Z)
+The K13 phrase is exactly «of re-entries of Even edges in R» (one occurrence), so the referee's wording applies unadapted.
+Line:
+«N5 (SPEC S1-S5) on EVERY game, under the standing SPEC premise of RESULTS R57 (S1's procedure realises the optimal counterstrategy), with RESULTS R15 (d), R17 (a) and R47 (a): T ≤ 2n(n−1) +
+(n(n−1)+1)·(m_E·[1 + 2B* + (B*+1)·K] + SC* + O*), K := n(n−1) + (n(n−1)+1)(n−1)(m_E + REP* + 1), where T is the number of transitions
+(iterations) of the run, n = |V|, m_E the number of edges leaving Even vertices, λ-runs and λ^U-runs are as in RESULTS R86, W-runs as in
+RESULTS R89 and late adoptions as in RESULTS R88 / R89; B* := the largest number of transitions inside one λ-run that are Even S4c
+fallbacks or change τ; REP* := the largest number of REPEAT late adoptions (a second or later late adoption of the same Even edge) inside
+one W-run; SC* := the largest number, over λ-runs R, of re-entries j − 1 → j of Even edges in R of class S (W-silent) or C (own-cycle) of
+P-N5-CUT §4 (W read against τ_{j−1}, smallest anchor); O* := the largest number of τ-changing transitions inside one λ^U-run (Theorem
+CUT-RED, via Lemmas OPT-OFF, W-RETURN-G, LATE-SPLIT (first late adoptions ≤ m_E per W-run F, R*_T ≤ m_E + REP_F; REP_F the REPEATs in F, R*_T (one symbol) as in R88, read on F), WV-R and Corollary
+CUT-CHARGE); so T is polynomial if and only if B*, REP*, SC* and O* are (Corollary CUT-POLY and its converse, fixes K1) — a REDUCTION
+(none of B*, REP*, SC*, O* is bounded here; CONJECTURE REP-LIN is DEAD (L-RED R128, latew_K20_m32); not M3, not a step-4 pass, not a
+TARGET.md claim; G-N5-TIME stays open)»
+- Word diff against K13: «of re-entries {+j − 1 → j+} of Even edges in R». No other word changes.
+
+## K14 strict symbol test (L-SI, every symbol of the K14 line and where it is bound)
+| symbol / term | bound by |
+| --- | --- |
+| N5, S1-S5, S4c, σ, τ (strategies of the state), transition / run | SPEC S1-S5 (cited in the line); RESULTS R86 / R89 usage |
+| R57's standing premise, R15 (d), R17 (a), R47 (a), R86, R88, R89, R128 | RESULTS entries / L-RED report (cited by number) |
+| T | "the number of transitions (iterations) of the run" (in the line) |
+| n | «n = |V|»: **V is not introduced in the line (UNBOUND)** → K15 edit 1 |
+| m_E | in the line |
+| λ-run, λ^U-run | RESULTS R86 (cited) |
+| W-run; late adoption; REPEAT | RESULTS R89; R88 / R89; in the line |
+| B*, REP*, O*, K | in the line |
+| SC*, R, j (K14), class S / C, anchor, smallest anchor | in the line; P-N5-CUT §4 (cited) |
+| W (in «W read against τ_{j−1}») | **not introduced in the line (UNBOUND; R89's W_t is the run's valuation, not the τ_{j−1} frame)** → K15 edit 2 |
+| τ_{j−1} | τ at state j − 1 (j bound by K14) |
+| OPT-OFF, W-RETURN-G, LATE-SPLIT, WV-R, CUT-CHARGE, CUT-RED, CUT-POLY | P-N5-CUT §2-§8 (cited by name) |
+| F, R*_T, REP_F, FIRST ("first late adoptions") | in the parenthetical (K13); R88 |
+| K1 | this file |
+| M3, step 4, TARGET.md, G-N5-TIME | fleet terms (TARGET.md, docs/GAPS.md) |
+- Result: two unbound symbols remain in K14 (V, W). K15 below fixes exactly these two and nothing else.
+
+## K15. K14 with the two edits of the symbol test above (proposed by L-SI; for both referees' word-diff)
+Line:
+«N5 (SPEC S1-S5) on EVERY game, under the standing SPEC premise of RESULTS R57 (S1's procedure realises the optimal counterstrategy), with RESULTS R15 (d), R17 (a) and R47 (a): T ≤ 2n(n−1) +
+(n(n−1)+1)·(m_E·[1 + 2B* + (B*+1)·K] + SC* + O*), K := n(n−1) + (n(n−1)+1)(n−1)(m_E + REP* + 1), where T is the number of transitions
+(iterations) of the run, n the number of vertices of the game, m_E the number of edges leaving Even vertices, λ-runs and λ^U-runs are as in RESULTS R86, W-runs as in
+RESULTS R89 and late adoptions as in RESULTS R88 / R89; B* := the largest number of transitions inside one λ-run that are Even S4c
+fallbacks or change τ; REP* := the largest number of REPEAT late adoptions (a second or later late adoption of the same Even edge) inside
+one W-run; SC* := the largest number, over λ-runs R, of re-entries j − 1 → j of Even edges in R of class S (W-silent) or C (own-cycle) of
+P-N5-CUT §4 (W := the [S1-val] valuation of the (σ, τ_{j−1})-plays, σ the Even strategy at the state compared; smallest anchor); O* := the largest number of τ-changing transitions inside one λ^U-run (Theorem
+CUT-RED, via Lemmas OPT-OFF, W-RETURN-G, LATE-SPLIT (first late adoptions ≤ m_E per W-run F, R*_T ≤ m_E + REP_F; REP_F the REPEATs in F, R*_T (one symbol) as in R88, read on F), WV-R and Corollary
+CUT-CHARGE); so T is polynomial if and only if B*, REP*, SC* and O* are (Corollary CUT-POLY and its converse, fixes K1) — a REDUCTION
+(none of B*, REP*, SC*, O* is bounded here; CONJECTURE REP-LIN is DEAD (L-RED R128, latew_K20_m32); not M3, not a step-4 pass, not a
+TARGET.md claim; G-N5-TIME stays open)»
+- Word diff against K14:
+  - «n [-= |V|,-] {+the number of vertices of the game,+}»
+  - «(W [-read against τ_{j−1},-] {+:= the [S1-val] valuation of the (σ, τ_{j−1})-plays, σ the Even strategy at the state compared;+} smallest anchor)»
+- No other word changes. If both referees accept, K15 supersedes K14 as the line to land; otherwise K14 stands with the two symbols noted.
