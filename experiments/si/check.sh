@@ -964,3 +964,6 @@ echo "si (box 53 SBF §5: ORDER-CHG' data, fixed-set NO-REPEAT DEAD, |U| linear)
 # P-N5-SETTLE line revision L-1 (fixes entry 1; both referees word-diff it): must not change.
 echo "997e39eee8d72ae94be4764bb1e3841914ffc78e  ../../docs/si/P-N5-SETTLE-line-L1.txt" | sha1sum -c --quiet
 echo "si (P-N5-SETTLE L-1 pinned): PASS"
+# P-N5-SETTLE line revision L-2 (fixes entry 2, SETTLE-L5): must not change.
+echo "1fcb33c5d96a20eb70abe06c29154ef343b33ae0  ../../docs/si/P-N5-SETTLE-line-L2.txt" | sha1sum -c --quiet
+echo "si (P-N5-SETTLE L-2 pinned): PASS"
