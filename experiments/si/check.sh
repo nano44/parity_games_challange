@@ -951,3 +951,6 @@ if grep -q "NOTT [1-9]\|SELX [1-9]\|NCX [1-9]\|TIEX [1-9]\|EVENX [1-9]\|DESCX [1
 if grep -q "ROOTX [1-9]\|EVX2 [1-9]" sb53/topk_*.txt; then echo "box 53: topkis corpus violation"; exit 1; fi
 [ "$(grep -c "BAD 0$" sb53/rs_out.txt)" = 10 ] || { echo "box 53: random search not 10 x BAD 0"; exit 1; }
 echo "si (box 53 SBF: fixed-order DEAD, ROOT-FLIP checks): PASS"
+# P-N5-SETTLE line revision L-1 (fixes entry 1; both referees word-diff it): must not change.
+echo "997e39eee8d72ae94be4764bb1e3841914ffc78e  ../../docs/si/P-N5-SETTLE-line-L1.txt" | sha1sum -c --quiet
+echo "si (P-N5-SETTLE L-1 pinned): PASS"
