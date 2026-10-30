@@ -1,0 +1,413 @@
+GAME n5-epoch/instances/gci2_n12.pg n5-epoch/instances/gci2_n12.start SWC gci2_n12.pg n 12 J0 4 NE 9 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1
+GAME n5-epoch/instances/ffin12_n32.pg n5-epoch/instances/ffin12_n32.start SWC ffin12_n32.pg n 32 J0 6 NE 14 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME n5-epoch/instances/ffin4_n24.pg n5-epoch/instances/ffin4_n24.start SWC ffin4_n24.pg n 24 J0 15 NE 17 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1
+GAME n5-epoch/instances/ffin5_n32.pg n5-epoch/instances/ffin5_n32.start SWC ffin5_n32.pg n 32 J0 7 NE 6 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 6
+GAME n5-epoch/instances/gci3_n24.pg n5-epoch/instances/gci3_n24.start SWC gci3_n24.pg n 24 J0 11 NE 24 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1
+GAME n5-epoch/instances/immfail_n14.pg SWC immfail_n14.pg n 14 J0 1 NE 1 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 4
+GAME n5-epoch/instances/immp_cex_n11.pg n5-epoch/instances/immp_cex_n11.start SWC immp_cex_n11.pg n 11 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME n5-epoch/instances/lcount_n23.pg n5-epoch/instances/lcount_n23.start SWC lcount_n23.pg n 23 J0 4 NE 5 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 3
+GAME n5-epoch/instances/lend13_n16.pg n5-epoch/instances/lend13_n16.start SWC lend13_n16.pg n 16 J0 1 NE 11 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 3
+GAME n5-epoch/instances/lend27_n24.pg n5-epoch/instances/lend27_n24.start SWC lend27_n24.pg n 24 J0 15 NE 25 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 3
+GAME n5-epoch/instances/lend15_n48.pg n5-epoch/instances/lend15_n48.start SWC lend15_n48.pg n 48 J0 7 NE 6 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 5
+GAME n5-epoch/instances/lend107_n32.pg n5-epoch/instances/lend107_n32.start SWC lend107_n32.pg n 32 J0 13 NE 110 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 4
+GAME n5-epoch/instances/lend39f_n32.pg n5-epoch/instances/lend39f_n32.start SWC lend39f_n32.pg n 32 J0 9 NE 31 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1
+GAME n5-epoch/instances/lend47_n32.pg n5-epoch/instances/lend47_n32.start SWC lend47_n32.pg n 32 J0 17 NE 33 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME n5-epoch/instances/lend55_n32.pg n5-epoch/instances/lend55_n32.start SWC lend55_n32.pg n 32 J0 11 NE 39 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 3
+GAME n5-epoch/instances/lend9_n8.pg n5-epoch/instances/lend9_n8.start SWC lend9_n8.pg n 8 J0 2 NE 1 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME n5-epoch/instances/nep13_n24.pg n5-epoch/instances/nep13_n24.start SWC nep13_n24.pg n 24 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME n5-epoch/instances/lend82_n32.pg n5-epoch/instances/lend82_n32.start SWC lend82_n32.pg n 32 J0 18 NE 80 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 3
+GAME n5-epoch/instances/lend72_n48.pg n5-epoch/instances/lend72_n48.start SWC lend72_n48.pg n 48 J0 26 NE 54 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 4
+GAME n5-epoch/instances/nep56_n32.pg n5-epoch/instances/nep56_n32.start SWC nep56_n32.pg n 32 J0 1 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME n5-epoch/instances/nep22f_n64.pg n5-epoch/instances/nep22f_n64.start SWC nep22f_n64.pg n 64 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME n5-epoch/instances/nconf61_n48.pg n5-epoch/instances/nconf61_n48.start SWC nconf61_n48.pg n 48 J0 7 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME n5-epoch/instances/nep76_n40.pg n5-epoch/instances/nep76_n40.start SWC nep76_n40.pg n 40 J0 1 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME n5-epoch/instances/nep92_n40.pg n5-epoch/instances/nep92_n40.start SWC nep92_n40.pg n 40 J0 6 NE 2 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 4
+GAME n5-epoch/instances/ret12_n40.pg n5-epoch/instances/ret12_n40.start SWC ret12_n40.pg n 40 J0 8 NE 4 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 8
+GAME n5-exhaustive/instances/b4_cyc6_0.pg n5-exhaustive/instances/b4_cyc6_0.start SWC b4_cyc6_0.pg n 11 J0 2 NE 1 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 3
+GAME n5-exhaustive/instances/b4_cyc6_1.pg SWC b4_cyc6_1.pg n 12 J0 3 NE 2 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 4
+GAME n5-epoch/instances/ret14_n48.pg n5-epoch/instances/ret14_n48.start SWC ret14_n48.pg n 48 J0 8 NE 1 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 21
+GAME n5-epoch/instances/nep94_n48.pg n5-epoch/instances/nep94_n48.start SWC nep94_n48.pg n 48 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME n5-exhaustive/instances/b4_n4all_cyc3_0.pg n5-exhaustive/instances/b4_n4all_cyc3_0.start SWC b4_n4all_cyc3_0.pg n 4 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME n5-exhaustive/instances/b4_n5_other_0.pg SWC b4_n5_other_0.pg n 5 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME n5-exhaustive/instances/b4_nohlen5_0.pg n5-exhaustive/instances/b4_nohlen5_0.start SWC b4_nohlen5_0.pg n 11 J0 1 NE 3 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 4
+GAME n5-exhaustive/instances/b4_theta_n7.pg n5-exhaustive/instances/b4_theta_n7.start SWC b4_theta_n7.pg n 7 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME n5-exhaustive/instances/b5_n5_cyc4_0.pg SWC b5_n5_cyc4_0.pg n 5 J0 1 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME n5-exhaustive/instances/b5_os_n12.pg SWC b5_os_n12.pg n 12 J0 3 NE 6 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 3
+GAME n5-exhaustive/instances/b5_o11.pg SWC b5_o11.pg n 10 J0 3 NE 3 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 3
+GAME n5-exhaustive/instances/b5_os_n16.pg SWC b5_os_n16.pg n 16 J0 5 NE 10 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 3
+GAME n5-exhaustive/instances/b5_os_n14.pg SWC b5_os_n14.pg n 14 J0 5 NE 8 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 3
+GAME n5-epoch/instances/ret14_n64.pg n5-epoch/instances/ret14_n64.start SWC ret14_n64.pg n 64 J0 4 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME n5-exhaustive/instances/b5_os_n20.pg SWC b5_os_n20.pg n 20 J0 8 NE 17 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 3
+GAME n5-exhaustive/instances/b5_os_n24.pg SWC b5_os_n24.pg n 24 J0 14 NE 40 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 3
+GAME n5-exhaustive/instances/b5_os_n28.pg SWC b5_os_n28.pg n 28 J0 19 NE 49 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 3
+GAME n5-exhaustive/instances/b5_os_n32.pg SWC b5_os_n32.pg n 32 J0 21 NE 78 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 3
+GAME n5-exhaustive/instances/b6_xl2_n32.pg SWC b6_xl2_n32.pg n 32 J0 35 NE 46 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME n5-exhaustive/instances/b6_xl_n32.pg SWC b6_xl_n32.pg n 32 J0 28 NE 44 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME n5-exhaustive/instances/b5_os_n40.pg SWC b5_os_n40.pg n 40 J0 26 NE 81 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 4
+GAME n5-exhaustive/instances/b6_xs_n24.pg SWC b6_xs_n24.pg n 24 J0 5 NE 20 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1
+GAME n5-exhaustive/instances/b6_xl_n40.pg SWC b6_xl_n40.pg n 40 J0 29 NE 51 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME n5-exhaustive/instances/b6_xs_n32.pg SWC b6_xs_n32.pg n 32 J0 7 NE 28 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1
+GAME n5-exhaustive/instances/b6_xs_n40.pg SWC b6_xs_n40.pg n 40 J0 9 NE 36 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1
+GAME n5-exhaustive/instances/b6_xs_n48.pg SWC b6_xs_n48.pg n 48 J0 15 NE 38 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1
+GAME n5-exhaustive/instances/b6_xw_n32.pg SWC b6_xw_n32.pg n 32 J0 35 NE 39 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME n5-exhaustive/instances/b6_xw_n40.pg SWC b6_xw_n40.pg n 40 J0 32 NE 43 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME n5-exhaustive/instances/b6_xl_n48.pg SWC b6_xl_n48.pg n 48 J0 62 NE 67 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME n5-exhaustive/instances/canonA_0.pg SWC canonA_0.pg n 15 J0 2 NE 2 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1
+GAME n5-exhaustive/instances/b6_xw_n48.pg SWC b6_xw_n48.pg n 48 J0 52 NE 60 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME n5-exhaustive/instances/canonA_1.pg SWC canonA_1.pg n 15 J0 3 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME n5-exhaustive/instances/frz2_n24.pg n5-exhaustive/instances/frz2_n24.start SWC frz2_n24.pg n 24 J0 7 NE 15 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME n5-exhaustive/instances/frz1_n24.pg n5-exhaustive/instances/frz1_n24.start SWC frz1_n24.pg n 24 J0 11 NE 26 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME n5-exhaustive/instances/frz3_n24.pg n5-exhaustive/instances/frz3_n24.start SWC frz3_n24.pg n 24 J0 8 NE 15 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME n5-exhaustive/instances/n3all_maxph_0.pg n5-exhaustive/instances/n3all_maxph_0.start SWC n3all_maxph_0.pg n 3 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME n5-exhaustive/instances/n3all_maxph_2.pg n5-exhaustive/instances/n3all_maxph_2.start SWC n3all_maxph_2.pg n 3 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME n5-exhaustive/instances/n3all_maxph_1.pg n5-exhaustive/instances/n3all_maxph_1.start SWC n3all_maxph_1.pg n 3 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME n5-exhaustive/instances/n4_maxph_0.pg SWC n4_maxph_0.pg n 4 J0 1 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME n5-exhaustive/instances/b6_xw_n56.pg SWC b6_xw_n56.pg n 56 J0 47 NE 54 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME n5-exhaustive/instances/n4_thch_0.pg SWC n4_thch_0.pg n 4 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME n5-exhaustive/instances/n4all_maxph_0.pg n5-exhaustive/instances/n4all_maxph_0.start SWC n4all_maxph_0.pg n 4 J0 1 NE 1 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1
+GAME n5-exhaustive/instances/n4_maxph_1.pg SWC n4_maxph_1.pg n 4 J0 1 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME n5-exhaustive/instances/n4all_maxph_1.pg n5-exhaustive/instances/n4all_maxph_1.start SWC n4all_maxph_1.pg n 4 J0 1 NE 1 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1
+GAME n5-exhaustive/instances/n4all_tgbad_0.pg n5-exhaustive/instances/n4all_tgbad_0.start SWC n4all_tgbad_0.pg n 4 J0 1 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME n5-exhaustive/instances/n4all_thch_0.pg n5-exhaustive/instances/n4all_thch_0.start SWC n4all_thch_0.pg n 4 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME n5-exhaustive/instances/n5s_maxph_0.pg SWC n5s_maxph_0.pg n 5 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME n5-exhaustive/instances/nh_n8.pg n5-exhaustive/instances/nh_n8.start SWC nh_n8.pg n 8 J0 1 NE 2 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 5
+GAME n5-exhaustive/instances/thetaA_canon_n12.pg SWC thetaA_canon_n12.pg n 12 J0 2 NE 2 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1
+GAME n5-exhaustive/instances/thetaA_canon_n8.pg SWC thetaA_canon_n8.pg n 8 J0 2 NE 2 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME n5-exhaustive/instances/thetaA_n6.pg n5-exhaustive/instances/thetaA_n6.start SWC thetaA_n6.pg n 6 J0 1 NE 1 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 3
+GAME n5-exhaustive/instances/thetaA_n17.pg n5-exhaustive/instances/thetaA_n17.start SWC thetaA_n17.pg n 17 J0 4 NE 4 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1
+GAME n5-exhaustive/instances/thetaA_n7.pg n5-exhaustive/instances/thetaA_n7.start SWC thetaA_n7.pg n 7 J0 2 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME n5-exhaustive/instances/thetaA_n9.pg n5-exhaustive/instances/thetaA_n9.start SWC thetaA_n9.pg n 9 J0 2 NE 2 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1
+GAME n5-exhaustive/instances/wk1_n32.pg n5-exhaustive/instances/wk1_n32.start SWC wk1_n32.pg n 32 J0 1 NE 2 WR 0 TT 1 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME n5-exhaustive/instances/wk2_n32.pg n5-exhaustive/instances/wk2_n32.start SWC wk2_n32.pg n 32 J0 2 NE 4 WR 2 TT 1 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME new/box48/instances/long121_n40.pg new/box48/instances/long121_n40.start SWC long121_n40.pg n 40 J0 43 NE 46 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.pg new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.start SWC best_qpc_nep76_n40_s63.pg n 64 J0 12 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.pg new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.start SWC best_qpc_nep90_n40_s61.pg n 64 J0 16 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/absmono_viol_n44.pg SWC absmono_viol_n44.pg n 44 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/carry3_2_2.pg SWC carry3_2_2.pg n 47 J0 1 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/cm_mdrop_both_n28.pg SWC cm_mdrop_both_n28.pg n 28 J0 1 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/cm_mdrop_oink_n28.pg SWC cm_mdrop_oink_n28.pg n 28 J0 2 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/ctx11_n40.pg SWC ctx11_n40.pg n 40 J0 1 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.pg new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.start SWC best_qpc_nep90_n40_s62.pg n 80 J0 13 NE 3 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 9
+GAME red/carry/instances/ctx12_n40.pg SWC ctx12_n40.pg n 40 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/ctx6_n20.pg SWC ctx6_n20.pg n 20 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/ctx13_n40.pg SWC ctx13_n40.pg n 40 J0 5 NE 3 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 4
+GAME red/carry/instances/ctx6_n56.pg SWC ctx6_n56.pg n 56 J0 1 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/ctx7_n30.pg SWC ctx7_n30.pg n 30 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/f1_twodef_n48.pg SWC f1_twodef_n48.pg n 48 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME new/box48/out/qpcclimb/scale/snap_n80_s62.pg new/box48/out/qpcclimb/scale/snap_n80_s62.start SWC snap_n80_s62.pg n 80 J0 13 NE 3 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 9
+GAME red/carry/instances/f1_twofall_n48.pg SWC f1_twofall_n48.pg n 48 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/fall3_n76.pg SWC fall3_n76.pg n 76 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/firedlong667_n20.pg SWC firedlong667_n20.pg n 20 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/fallv_viol_n28.pg SWC fallv_viol_n28.pg n 28 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/fired10_n20.pg SWC fired10_n20.pg n 20 J0 2 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/firedlong667_n43.pg SWC firedlong667_n43.pg n 43 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/gapbW_dup_n20.pg SWC gapbW_dup_n20.pg n 20 J0 3 NE 1 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 4
+GAME red/carry/instances/firedstep13_n76.pg SWC firedstep13_n76.pg n 76 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/fall4_n116.pg SWC fall4_n116.pg n 116 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/gapb_dup_n20.pg SWC gapb_dup_n20.pg n 20 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/h4_compound_n44.pg SWC h4_compound_n44.pg n 44 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/h4_compound2x2_n44.pg SWC h4_compound2x2_n44.pg n 44 J0 2 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/h4_def2ctx_n20.pg SWC h4_def2ctx_n20.pg n 20 J0 1 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/h4_def7_n28.pg SWC h4_def7_n28.pg n 28 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/kfirst_viol_n13.pg SWC kfirst_viol_n13.pg n 13 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/h4_disjoint_n20.pg SWC h4_disjoint_n20.pg n 20 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/h4_notweaker_n20.pg SWC h4_notweaker_n20.pg n 20 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/kin_viol_n29.pg SWC kin_viol_n29.pg n 29 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/lemmaS_Mdrop_n20.pg SWC lemmaS_Mdrop_n20.pg n 20 J0 1 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/lalg_dtl_mviol_n20.pg SWC lalg_dtl_mviol_n20.pg n 20 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/lemmaS_viol_n20.pg SWC lemmaS_viol_n20.pg n 20 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/meet_viol_n17.pg SWC meet_viol_n17.pg n 17 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/lex_viol_inj_n28.pg SWC lex_viol_inj_n28.pg n 28 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/lex_viol_tie_n28.pg SWC lex_viol_tie_n28.pg n 28 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/meet_viol_n29.pg SWC meet_viol_n29.pg n 29 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/nosig_2_3.pg SWC nosig_2_3.pg n 24 J0 4 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/phi_flat_alive_n32.pg SWC phi_flat_alive_n32.pg n 32 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/pk_viol_n20.pg SWC pk_viol_n20.pg n 20 J0 1 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/replay4_n32.pg SWC replay4_n32.pg n 32 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/spp19_oink_n30.pg SWC spp19_oink_n30.pg n 30 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/spp19_stable_n30.pg SWC spp19_stable_n30.pg n 30 J0 2 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/spp25_oink_n40.pg SWC spp25_oink_n40.pg n 40 J0 2 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/spp22_oink_n40.pg SWC spp22_oink_n40.pg n 40 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/stealonce_both_n45.pg SWC stealonce_both_n45.pg n 45 J0 2 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/stealonce_core_n76.pg SWC stealonce_core_n76.pg n 76 J0 2 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/ctxp/instances/deep1_n13.pg SWC deep1_n13.pg n 13 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/tstep_near_n20.pg SWC tstep_near_n20.pg n 20 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/stealer_viol_n76.pg SWC stealer_viol_n76.pg n 76 J0 2 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/ctxp/instances/deep1_n21.pg SWC deep1_n21.pg n 21 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/carry/instances/stealonce_viol_n76.pg SWC stealonce_viol_n76.pg n 76 J0 2 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/ctxp/instances/margin1_n20.pg SWC margin1_n20.pg n 20 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/dtl/instances/lalg_dtl_pertop31_n18.pg SWC lalg_dtl_pertop31_n18.pg n 18 J0 4 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/ctxp/instances/margin1_mc5.pg SWC margin1_mc5.pg n 50 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/dtl/instances/lalg_dtl_restart8_n20.pg SWC lalg_dtl_restart8_n20.pg n 20 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/ctxp/instances/margin1_mc1.pg SWC margin1_mc1.pg n 80 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/fbr/instances/bghm_k1_gap6_A.pg SWC bghm_k1_gap6_A.pg n 21 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/fbr/instances/bghm_k3_gap4_A.pg SWC bghm_k3_gap4_A.pg n 45 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/fbr/instances/lev74_n40.pg SWC lev74_n40.pg n 40 J0 2 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/fbr/instances/nep80_n40.pg SWC nep80_n40.pg n 40 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/fbr/instances/fr39_q4_n48.pg SWC fr39_q4_n48.pg n 48 J0 3 NE 26 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 9
+GAME red/fbr/instances/rho144_n32.pg SWC rho144_n32.pg n 32 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/fbr/instances/lev56_n48.pg SWC lev56_n48.pg n 48 J0 28 NE 16 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 5
+GAME red/fbr/instances/rho3_253_n32.pg SWC rho3_253_n32.pg n 32 J0 1 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/fbr/instances/rho84_n16.pg SWC rho84_n16.pg n 16 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/fbr/instances/sat4_n20.pg SWC sat4_n20.pg n 20 J0 1 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/fbr/instances/rho666_n48.pg SWC rho666_n48.pg n 48 J0 2 NE 1 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 25
+GAME red/fbx/instances/exsw_loop_n15.pg SWC exsw_loop_n15.pg n 15 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/fbr/instances/sat68_n20.pg SWC sat68_n20.pg n 20 J0 1 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/fbr/instances/twowave_L16.pg SWC twowave_L16.pg n 22 J0 1 NE 14 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 4
+GAME red/frz/instances/fbcap_eq_u4_n11.pg SWC fbcap_eq_u4_n11.pg n 11 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/h3/instances/frzgap0_n4.pg SWC frzgap0_n4.pg n 4 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/h3/instances/frzgap0_n6.pg SWC frzgap0_n6.pg n 6 J0 1 NE 1 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 4
+GAME red/frz/instances/fx2_n11.pg SWC fx2_n11.pg n 11 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/h3/instances/lcount2_n23.pg red/h3/instances/lcount2_n23.start SWC lcount2_n23.pg n 23 J0 5 NE 5 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME red/fbx/instances/kt6_n58.pg SWC kt6_n58.pg n 58 J0 12 NE 31 WR 6 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME red/h3/instances/offret_l19_n24.pg SWC offret_l19_n24.pg n 24 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/h3/instances/lcount_n23.pg red/h3/instances/lcount_n23.start SWC lcount_n23.pg n 23 J0 4 NE 5 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 3
+GAME red/kl/instances/klcount_n16.pg SWC klcount_n16.pg n 16 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/kl/instances/klcount_n18_base.pg SWC klcount_n18_base.pg n 18 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/kl/instances/klglobal_n16.pg SWC klglobal_n16.pg n 16 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/kl/instances/klcount_n18_lvl.pg SWC klcount_n18_lvl.pg n 18 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/h3/instances/xsnpre36_n48.pg SWC xsnpre36_n48.pg n 48 J0 9 NE 32 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 4
+GAME red/kl/instances/klglobal_n18_lvl.pg SWC klglobal_n18_lvl.pg n 18 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/kl/instances/klglobal_n20_lvl2.pg SWC klglobal_n20_lvl2.pg n 20 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/kl/instances/r2climb_h13.pg SWC r2climb_h13.pg n 13 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/kl/instances/klmin_n13.pg SWC klmin_n13.pg n 13 J0 1 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/kl/instances/r2join_h0E_n14.pg SWC r2join_h0E_n14.pg n 14 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/kl/instances/r2crawl_n14.pg SWC r2crawl_n14.pg n 14 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/kl/instances/r2lap_best_n22.pg SWC r2lap_best_n22.pg n 22 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/kl24/instances/HL88_0.pg SWC HL88_0.pg n 41 J0 1 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/kl24/instances/HL88_3.pg SWC HL88_3.pg n 47 J0 1 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/kl24/instances/HL88_1.pg SWC HL88_1.pg n 43 J0 1 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/kl24/instances/HL88_2.pg SWC HL88_2.pg n 45 J0 1 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/kl24/instances/HLg_0.pg SWC HLg_0.pg n 29 J0 1 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/kl24/instances/HLg_2.pg SWC HLg_2.pg n 45 J0 1 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/kl24/instances/HLg_3.pg SWC HLg_3.pg n 55 J0 1 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/kl24/instances/HLg_1.pg SWC HLg_1.pg n 35 J0 1 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/kw/instances/frzu_tight_n14.pg SWC frzu_tight_n14.pg n 14 J0 3 NE 1 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 4
+GAME red/kw/instances/cw11_n24.pg SWC cw11_n24.pg n 24 J0 1 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/lag/instances/depth2_n39.pg SWC depth2_n39.pg n 39 J0 2 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/kw/instances/kc18_n24.pg SWC kc18_n24.pg n 24 J0 7 NE 17 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1
+GAME red/lag/instances/depth3_n46.pg SWC depth3_n46.pg n 46 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/lag/instances/depth4_n53.pg SWC depth4_n53.pg n 53 J0 1 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/lag/instances/fam_D12_n106.pg SWC fam_D12_n106.pg n 106 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/lag/instances/fam_D4_n50.pg SWC fam_D4_n50.pg n 50 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/lag/instances/fam_D8_n78.pg SWC fam_D8_n78.pg n 78 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/mei/instances/mei_h2.pg SWC mei_h2.pg n 19 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/mei/instances/mei_h3.pg SWC mei_h3.pg n 27 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/mei/instances/mei_h5.pg SWC mei_h5.pg n 43 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/mei/instances/mei_h4.pg SWC mei_h4.pg n 35 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/mei/instances/mei_h6.pg SWC mei_h6.pg n 51 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/mei/instances/mei_h8.pg SWC mei_h8.pg n 67 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/n3/instances/lagx10_n40.pg red/n3/instances/lagx10_n40.start SWC lagx10_n40.pg n 40 J0 8 NE 12 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 5
+GAME red/n3/instances/lag11_n40.pg red/n3/instances/lag11_n40.start SWC lag11_n40.pg n 40 J0 9 NE 4 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 8
+GAME red/n3/instances/core41_n40.pg red/n3/instances/core41_n40.start SWC core41_n40.pg n 40 J0 18 NE 2 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 15
+GAME red/n3/instances/comp54_n80.pg red/n3/instances/comp54_n80.start SWC comp54_n80.pg n 80 J0 29 NE 6 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 16
+GAME red/n3/instances/n3cov_lean.pg red/n3/instances/n3cov_lean.start SWC n3cov_lean.pg n 48 J0 11 NE 16 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 5
+GAME red/n3/instances/n3cov_phi.pg red/n3/instances/n3cov_phi.start SWC n3cov_phi.pg n 32 J0 6 NE 2 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 4
+GAME red/n3/instances/long90_k2_n40.pg red/n3/instances/long90_k2_n40.start SWC long90_k2_n40.pg n 40 J0 42 NE 42 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 4
+GAME red/n3/instances/run34_n40.pg red/n3/instances/run34_n40.start SWC run34_n40.pg n 40 J0 9 NE 10 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 11
+GAME red/n3/instances/long121_n40.pg red/n3/instances/long121_n40.start SWC long121_n40.pg n 40 J0 43 NE 46 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME red/n3/instances/run49_n32.pg red/n3/instances/run49_n32.start SWC run49_n32.pg n 32 J0 19 NE 43 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME red/n5/instances/dl_4_4.pg red/n5/instances/dl_4_4.start SWC dl_4_4.pg n 42 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/n3/instances/ret22_n40.pg red/n3/instances/ret22_n40.start SWC ret22_n40.pg n 40 J0 26 NE 12 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 4
+GAME red/n5/instances/dlm2_4.pg red/n5/instances/dlm2_4.start SWC dlm2_4.pg n 42 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/n5/instances/sym_h12_s1.pg SWC sym_h12_s1.pg n 24 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/n5/instances/dl_6_8.pg red/n5/instances/dl_6_8.start SWC dl_6_8.pg n 110 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/n5/instances/sym_h8_s1.pg SWC sym_h8_s1.pg n 16 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/n5inj/instances/block_bk20.pg SWC block_bk20.pg n 24 J0 7 NE 19 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 7
+GAME red/n5/instances/sym_h16_s1.pg SWC sym_h16_s1.pg n 32 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/n5inj/instances/blockph_bp20.pg SWC blockph_bp20.pg n 24 J0 4 NE 30 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME red/n5inj/instances/blockph_bp32.pg SWC blockph_bp32.pg n 36 J0 2 NE 45 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 3
+GAME red/n5inj/instances/block_bk32.pg SWC block_bk32.pg n 36 J0 2 NE 37 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 10
+GAME red/n5inj/instances/bribe_cex_n15.pg SWC bribe_cex_n15.pg n 15 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/n5inj/instances/frz24.pg red/n5inj/instances/frz24.start SWC frz24.pg n 24 J0 7 NE 19 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 5
+GAME red/n5inj/instances/phase2_pk32.pg SWC phase2_pk32.pg n 32 J0 11 NE 32 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 3
+GAME red/n5inj/instances/frz32.pg red/n5inj/instances/frz32.start SWC frz32.pg n 32 J0 17 NE 33 WR 3 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME red/n5inj/instances/frz40.pg red/n5inj/instances/frz40.start SWC frz40.pg n 40 J0 41 NE 46 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 3
+GAME red/n5inj/instances/returns_rt32.pg SWC returns_rt32.pg n 32 J0 14 NE 28 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 3
+GAME red/n5inj/instances/elimn_cex_n48.pg SWC elimn_cex_n48.pg n 48 J0 29 NE 74 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 6
+GAME red/n5inj/instances/phase2_pk48.pg SWC phase2_pk48.pg n 48 J0 16 NE 33 WR 1 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 4
+GAME red/n5inj/instances/theta_thc24.pg SWC theta_thc24.pg n 24 J0 4 NE 4 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 8
+GAME red/n5inj/instances/returns_rt48.pg SWC returns_rt48.pg n 48 J0 25 NE 70 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 3
+GAME red/n5inj/instances/theta_thf16.pg SWC theta_thf16.pg n 16 J0 4 NE 1 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 10
+GAME red/n5inj/instances/theta_tp32.pg SWC theta_tp32.pg n 32 J0 6 NE 21 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 4
+GAME red/n5inj/instances/returns_ph64.pg SWC returns_ph64.pg n 64 J0 29 NE 107 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 3
+GAME red/nest16/instances/k4L72_n101.pg SWC k4L72_n101.pg n 101 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/n5inj/instances/theta_tp40.pg SWC theta_tp40.pg n 40 J0 7 NE 26 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME red/n5inj/instances/wide_h16.pg SWC wide_h16.pg n 32 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/nest16/instances/k4L72r_n101.pg SWC k4L72r_n101.pg n 101 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/nest16/instances/k4g50_n101.pg SWC k4g50_n101.pg n 101 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/n5inj/instances/returns_rt64.pg SWC returns_rt64.pg n 64 J0 27 NE 77 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 7
+GAME red/nest16/instances/k4seed_vr_n87.pg SWC k4seed_vr_n87.pg n 87 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/nest16/instances/k4seed_c1_n82.pg SWC k4seed_c1_n82.pg n 82 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/nest16/instances/k4u_n101.pg SWC k4u_n101.pg n 101 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/nest16/instances/near4_n26.pg SWC near4_n26.pg n 26 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/nest16/instances/nest4u_n46.pg SWC nest4u_n46.pg n 46 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/nest16/instances/k4y1_n82.pg SWC k4y1_n82.pg n 82 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/nest16/instances/k4y2_n87.pg SWC k4y2_n87.pg n 87 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/nest16/instances/nest5_n49.pg SWC nest5_n49.pg n 49 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/nest16/instances/nest4uu_n51.pg SWC nest4uu_n51.pg n 51 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/nest16/instances/nest6min_n75.pg SWC nest6min_n75.pg n 75 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/nest16/instances/oseg_n26.pg SWC oseg_n26.pg n 26 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/nest16/instances/nest6_n75.pg SWC nest6_n75.pg n 75 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/nest16/instances/nest6x_n75.pg SWC nest6x_n75.pg n 75 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/nest16/instances/w1_n27.pg SWC w1_n27.pg n 27 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/nopre/instances/nopre_viol_n20.pg SWC nopre_viol_n20.pg n 20 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/nest16/instances/win3_n27.pg SWC win3_n27.pg n 27 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/o1/instances/ph45_n32.pg SWC ph45_n32.pg n 32 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/o1/instances/iter118_n48.pg SWC iter118_n48.pg n 48 J0 12 NE 12 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 5
+GAME red/o1/instances/ph50_n32.pg SWC ph50_n32.pg n 32 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/o1/instances/f39_n48.pg SWC f39_n48.pg n 48 J0 1 NE 32 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 7
+GAME red/o1/instances/tau18_n24.pg SWC tau18_n24.pg n 24 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/rec0/instances/fbd0_n4.pg SWC fbd0_n4.pg n 4 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/rec0/instances/n0_6_n24.pg SWC n0_6_n24.pg n 24 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/rec0/instances/nep24_n20.pg SWC nep24_n20.pg n 20 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/rec0/instances/lend2_30_n48.pg SWC lend2_30_n48.pg n 48 J0 3 NE 22 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 5
+GAME red/sgrow/instances/s20_n20.pg SWC s20_n20.pg n 20 J0 1 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/rec0/instances/nep90_n40.pg SWC nep90_n40.pg n 40 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/sgrow/instances/s21_oink_n20.pg SWC s21_oink_n20.pg n 20 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/rec0/instances/nep87_n40.pg SWC nep87_n40.pg n 40 J0 1 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/sgrow/instances/s29_n30.pg SWC s29_n30.pg n 30 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/sgrow/instances/s34_oink_n40.pg SWC s34_oink_n40.pg n 40 J0 2 NE 1 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 6
+GAME red/sgrow/instances/s35_oink_n80.pg SWC s35_oink_n80.pg n 80 J0 2 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/sgrow/instances/s32_n60.pg SWC s32_n60.pg n 60 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/sgrow/instances/s34_oink_n80.pg SWC s34_oink_n80.pg n 80 J0 1 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/sgrow/instances/s36_oink_n60.pg SWC s36_oink_n60.pg n 60 J0 2 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/so/instances/epsseg_cex_n16.pg SWC epsseg_cex_n16.pg n 16 J0 2 NE 3 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 3
+GAME red/so/instances/beta2_n11.pg SWC beta2_n11.pg n 11 J0 1 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/so/instances/exitr_cex_n16.pg SWC exitr_cex_n16.pg n 16 J0 3 NE 2 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 3
+GAME red/so/instances/epsseg_cex_n48.pg SWC epsseg_cex_n48.pg n 48 J0 6 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/so/instances/farrise25_n32.pg SWC farrise25_n32.pg n 32 J0 4 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/so/instances/mn_abs74_n48.pg SWC mn_abs74_n48.pg n 48 J0 5 NE 1 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 5
+GAME red/so/instances/njb_reabs54_n32.pg SWC njb_reabs54_n32.pg n 32 J0 5 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/so/instances/exitr_cex_n48.pg SWC exitr_cex_n48.pg n 48 J0 1 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/so/instances/nleq_cex_n48.pg SWC nleq_cex_n48.pg n 48 J0 12 NE 1 WR 1 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 6
+GAME red/so/instances/njb_reabs65_n48.pg SWC njb_reabs65_n48.pg n 48 J0 21 NE 31 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 9
+GAME red/so/instances/nleq33_n48.pg SWC nleq33_n48.pg n 48 J0 1 NE 34 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 5
+GAME red/so/instances/pft35_n48.pg SWC pft35_n48.pg n 48 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/so/instances/pftheta34_n32.pg SWC pftheta34_n32.pg n 32 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/so/instances/pftheta_cex_n32.pg SWC pftheta_cex_n32.pg n 32 J0 1 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/so/instances/pft40_n40.pg SWC pft40_n40.pg n 40 J0 2 NE 2 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 6
+GAME red/so/instances/s4c8_n13.pg SWC s4c8_n13.pg n 13 J0 1 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/so/instances/rise_fb38_n48.pg SWC rise_fb38_n48.pg n 48 J0 8 NE 4 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 7
+GAME red/so/instances/post31_n48.pg SWC post31_n48.pg n 48 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/so/instances/so_k2_n32.pg SWC so_k2_n32.pg n 32 J0 5 NE 4 WR 2 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME red/so/instances/so_sor5_n24.pg SWC so_sor5_n24.pg n 24 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/so/instances/so_sorl_n32.pg SWC so_sorl_n32.pg n 32 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/so/instances/so_j19_n48.pg SWC so_j19_n48.pg n 48 J0 2 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/so/instances/so_th_n32.pg SWC so_th_n32.pg n 32 J0 7 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/so/instances/so_tie13_n24.pg SWC so_tie13_n24.pg n 24 J0 1 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/so/instances/rise_thin51_n40.pg SWC rise_thin51_n40.pg n 40 J0 9 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/so/instances/so_tie15_n32.pg SWC so_tie15_n32.pg n 32 J0 1 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/so/instances/tev_cex_n40.pg SWC tev_cex_n40.pg n 40 J0 4 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/so/instances/tevlast7_n32.pg SWC tevlast7_n32.pg n 32 J0 17 NE 26 WR 3 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 3
+GAME red/so/instances/tevlast_cex_n40.pg SWC tevlast_cex_n40.pg n 40 J0 5 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/so/instances/tevlast11_n40.pg SWC tevlast11_n40.pg n 40 J0 9 NE 23 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 3
+GAME red/so/instances/tog6a_n32.pg SWC tog6a_n32.pg n 32 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/so/instances/tog6b_n32.pg SWC tog6b_n32.pg n 32 J0 4 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/so/instances/xrun8_n10.pg SWC xrun8_n10.pg n 10 J0 4 NE 1 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 5
+GAME red/so/instances/xsn29_n32.pg SWC xsn29_n32.pg n 32 J0 10 NE 28 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1
+GAME red/so/instances/xrun21_n24.pg SWC xrun21_n24.pg n 24 J0 4 NE 21 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME red/so/instances/xsn43_n48.pg SWC xsn43_n48.pg n 48 J0 6 NE 36 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 4
+GAME red/so/instances/xsnf42_n48.pg SWC xsnf42_n48.pg n 48 J0 18 NE 41 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME red/so/instances/xsnf52_n64.pg SWC xsnf52_n64.pg n 64 J0 26 NE 51 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME red/tcpert/instances/leanT_N12.pg SWC leanT_N12.pg n 96 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/tcpert/instances/leanT_N16.pg SWC leanT_N16.pg n 128 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/so/instances/xsn91_n48.pg SWC xsn91_n48.pg n 48 J0 55 NE 84 WR 1 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME red/tcpert/instances/leanT_N6.pg SWC leanT_N6.pg n 48 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/tcpert/instances/leanT_N8.pg SWC leanT_N8.pg n 64 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/tcpert/instances/leanT_N24.pg SWC leanT_N24.pg n 192 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/tcpert/instances/tcL_N3.pg SWC tcL_N3.pg n 42 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/tcpert/instances/tcL_N4.pg SWC tcL_N4.pg n 68 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/tcpert/instances/tcL_N5.pg SWC tcL_N5.pg n 100 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/tcpert/instances/tcL_N10.pg SWC tcL_N10.pg n 350 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/tcpert/instances/tcL_N6.pg SWC tcL_N6.pg n 138 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/tcpert/instances/tcR4_N4.pg SWC tcR4_N4.pg n 68 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/tcpert/instances/tcR4_N5.pg SWC tcR4_N5.pg n 100 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/tcpert/instances/tcL_N8.pg SWC tcL_N8.pg n 232 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/tcpert/instances/tcR4_N6.pg SWC tcR4_N6.pg n 138 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/tcpert/instances/leanT_N32.pg SWC leanT_N32.pg n 256 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/tcpert/instances/tcR4_N7.pg SWC tcR4_N7.pg n 182 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/tcpert/instances/tcR4_N8.pg SWC tcR4_N8.pg n 232 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/tcpert/instances/tcS8_N10.pg SWC tcS8_N10.pg n 350 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/tcpert/instances/tcS8_N6.pg SWC tcS8_N6.pg n 138 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/tcpert/instances/tcL_N12.pg SWC tcL_N12.pg n 492 J0 1 NE 1 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 25
+GAME red/tcpert/instances/tcS8_N7.pg SWC tcS8_N7.pg n 182 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/tpp/instances/tpp_viol_n22.pg SWC tpp_viol_n22.pg n 22 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/tcpert/instances/tcS8_N8.pg SWC tcS8_N8.pg n 232 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/tpp/instances/tpp_viol_n63.pg SWC tpp_viol_n63.pg n 63 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/ul/instances/cxmig_k4_n54.pg red/ul/instances/cxmig_k4_n54.start SWC cxmig_k4_n54.pg n 54 J0 3 NE 7 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 6
+GAME red/tcpert/instances/tcS8_N11.pg SWC tcS8_N11.pg n 418 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/ul/instances/cxmig_k8_n82.pg red/ul/instances/cxmig_k8_n82.start SWC cxmig_k8_n82.pg n 82 J0 3 NE 7 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 10
+GAME red/ul/instances/ladderd0_k12_n48.pg red/ul/instances/ladderd0_k12_n48.start SWC ladderd0_k12_n48.pg n 48 J0 2 NE 12 WR 11 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME red/ul/instances/ladderd0_k24_n84.pg red/ul/instances/ladderd0_k24_n84.start SWC ladderd0_k24_n84.pg n 84 J0 2 NE 24 WR 23 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME red/tcpert/instances/tcS8_N9.pg SWC tcS8_N9.pg n 288 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/ul/instances/cxmig_k16_n138.pg red/ul/instances/cxmig_k16_n138.start SWC cxmig_k16_n138.pg n 138 J0 3 NE 7 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 18
+GAME red/ul/instances/ladderent_k12_n48.pg red/ul/instances/ladderent_k12_n48.start SWC ladderent_k12_n48.pg n 48 J0 1 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/ul/instances/reader_L10_n36.pg red/ul/instances/reader_L10_n36.start SWC reader_L10_n36.pg n 36 J0 2 NE 11 WR 1 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME red/ul/instances/reader_L20_n56.pg red/ul/instances/reader_L20_n56.start SWC reader_L20_n56.pg n 56 J0 2 NE 21 WR 1 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME red/ul/instances/ladderent_k24_n84.pg red/ul/instances/ladderent_k24_n84.start SWC ladderent_k24_n84.pg n 84 J0 1 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/ul/instances/reader_L40_n96.pg red/ul/instances/reader_L40_n96.start SWC reader_L40_n96.pg n 96 J0 2 NE 41 WR 1 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME red/usplit/instances/gate_K16_n197.pg red/usplit/instances/gate_K16_n197.start SWC gate_K16_n197.pg n 197 J0 17 NE 21 WR 2 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME red/usplit/instances/grow_K12_n149.pg red/usplit/instances/grow_K12_n149.start SWC grow_K12_n149.pg n 149 J0 6 NE 100 WR 12 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME red/ul/instances/ladderd0_k48_n156.pg red/ul/instances/ladderd0_k48_n156.start SWC ladderd0_k48_n156.pg n 156 J0 2 NE 48 WR 47 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME red/usplit/instances/pairoc_n58.pg red/usplit/instances/pairoc_n58.start SWC pairoc_n58.pg n 58 J0 8 NE 13 WR 2 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME red/usplit/instances/pp_K12_n161.pg red/usplit/instances/pp_K12_n161.start SWC pp_K12_n161.pg n 161 J0 10 NE 14 WR 1 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME red/ul/instances/ladderent_k48_n156.pg red/ul/instances/ladderent_k48_n156.start SWC ladderent_k48_n156.pg n 156 J0 1 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/usplit/instances/pp_K12_n161_dual.pg SWC pp_K12_n161_dual.pg n 161 J0 2 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/usplit/instances/grow_K40_n373.pg red/usplit/instances/grow_K40_n373.start SWC grow_K40_n373.pg n 373 J0 6 NE 296 WR 40 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME red/usplit/instances/usplit_n14.pg red/usplit/instances/usplit_n14.start SWC usplit_n14.pg n 14 J0 3 NE 2 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME red/usplit/instances/usplit_n23.pg red/usplit/instances/usplit_n23.start SWC usplit_n23.pg n 23 J0 2 NE 11 WR 1 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME red/usplit/instances/usplit_rd_n24.pg red/usplit/instances/usplit_rd_n24.start SWC usplit_rd_n24.pg n 24 J0 4 NE 3 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME red/usplit/instances/usplit_rd_s3_n27.pg SWC usplit_rd_s3_n27.pg n 27 J0 3 NE 3 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 3
+GAME red/usplit/instances/usplit_s3_n16.pg SWC usplit_s3_n16.pg n 16 J0 2 NE 2 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 3
+GAME red/xctx/instances/nest3_n20.pg SWC nest3_n20.pg n 20 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/xctx/instances/nest3_n24.pg SWC nest3_n24.pg n 24 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/xctx/instances/vrall_viol_n20.pg SWC vrall_viol_n20.pg n 20 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/xctx/instances/xcov11_n20.pg SWC xcov11_n20.pg n 20 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/xctx/instances/xctx_viol_n20.pg SWC xctx_viol_n20.pg n 20 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/xing/instances/fbref_cex_n32.pg SWC fbref_cex_n32.pg n 32 J0 28 NE 25 WR 1 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 3
+GAME red/xing/instances/j10_n24.pg SWC j10_n24.pg n 24 J0 8 NE 1 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 6
+GAME red/xing/instances/j4_n40.pg SWC j4_n40.pg n 40 J0 49 NE 37 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 3
+GAME red/xing/instances/j5_n16.pg SWC j5_n16.pg n 16 J0 10 NE 6 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 3
+GAME red/xing/instances/j7_n32.pg SWC j7_n32.pg n 32 J0 17 NE 28 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 3
+GAME red/xing/instances/j7_n48.pg SWC j7_n48.pg n 48 J0 34 NE 48 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME red/xing/instances/j8_n32.pg SWC j8_n32.pg n 32 J0 22 NE 30 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1
+GAME red/xing/instances/j8_n48.pg SWC j8_n48.pg n 48 J0 34 NE 57 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME red/xing/instances/kw25_n32.pg SWC kw25_n32.pg n 32 J0 11 NE 32 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 4
+GAME red/xing/instances/kw_n16.pg SWC kw_n16.pg n 16 J0 3 NE 11 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 4
+GAME red/usplit/instances/pp_K48_n449.pg red/usplit/instances/pp_K48_n449.start SWC pp_K48_n449.pg n 449 J0 10 NE 14 WR 1 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME red/xing/instances/kw_n24.pg SWC kw_n24.pg n 24 J0 5 NE 19 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 3
+GAME red/xing/instances/obr_eq_n24.pg SWC obr_eq_n24.pg n 24 J0 1 NE 3 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1
+GAME red/usplit/instances/pp_K48_n449_dual.pg SWC pp_K48_n449_dual.pg n 449 J0 2 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/xing/instances/kw_n48.pg SWC kw_n48.pg n 48 J0 13 NE 44 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 3
+GAME red/xing/instances/obr_n32.pg SWC obr_n32.pg n 32 J0 10 NE 22 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 8
+GAME red/xing/instances/u1t_cex_n32.pg SWC u1t_cex_n32.pg n 32 J0 9 NE 16 WR 2 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 5
+GAME red/xing/instances/u23sw64_n32.pg SWC u23sw64_n32.pg n 32 J0 19 NE 44 WR 0 TT 5 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 3
+GAME red/xing/instances/u1t_own6_n32.pg SWC u1t_own6_n32.pg n 32 J0 5 NE 13 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 5
+GAME red/xing/instances/u2flat73_n32.pg SWC u2flat73_n32.pg n 32 J0 41 NE 34 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 5
+GAME red/xing/instances/x31_cu16.pg SWC x31_cu16.pg n 16 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/xing/instances/u2flat_n32.pg SWC u2flat_n32.pg n 32 J0 11 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/xing/instances/x31_cu24.pg SWC x31_cu24.pg n 24 J0 1 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/xing/instances/x31_cu32i.pg SWC x31_cu32i.pg n 32 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/xing/instances/x31_cu32.pg SWC x31_cu32.pg n 32 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/xing/instances/x31_lem_e24.pg SWC x31_lem_e24.pg n 24 J0 11 NE 48 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 3
+GAME red/xing/instances/x31_nh_e24.pg SWC x31_nh_e24.pg n 24 J0 9 NE 21 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1
+GAME red/xing/instances/x31_lem_t32.pg SWC x31_lem_t32.pg n 32 J0 18 NE 82 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 3
+GAME red/xing/instances/x31_cu48.pg SWC x31_cu48.pg n 48 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/xing/instances/x31_re24.pg SWC x31_re24.pg n 24 J0 4 NE 8 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME red/xing/instances/x31_nh_r20.pg SWC x31_nh_r20.pg n 20 J0 7 NE 12 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME red/xing/instances/x31_ru24.pg SWC x31_ru24.pg n 24 J0 3 NE 7 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME red/xing/instances/x32_nest40.pg SWC x32_nest40.pg n 40 J0 20 NE 30 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME red/xing/instances/x31_rx32.pg SWC x31_rx32.pg n 32 J0 1 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/xing/instances/x32_rand24.pg SWC x32_rand24.pg n 24 J0 8 NE 21 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME red/xing/instances/x32_rand16.pg SWC x32_rand16.pg n 16 J0 1 NE 12 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1
+GAME red/xing/instances/x31_rx48.pg SWC x31_rx48.pg n 48 J0 3 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/xing/instances/x32_rand32.pg SWC x32_rand32.pg n 32 J0 10 NE 28 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1
+GAME red/xing/instances/x32_rand48.pg SWC x32_rand48.pg n 48 J0 24 NE 50 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME red/xing/instances/x32_rand64.pg SWC x32_rand64.pg n 64 J0 24 NE 65 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME red/xing/instances/x32_waves32.pg SWC x32_waves32.pg n 32 J0 54 NE 47 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
+GAME red/xing/instances/x32_waves48.pg SWC x32_waves48.pg n 48 J0 11 NE 65 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 3
+GAME si/root/instances/ueonce_n27.pg SWC ueonce_n27.pg n 27 J0 12 NE 16 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 4
+GAME si/root/instances/cone_n65.pg SWC cone_n65.pg n 65 J0 6 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME si/root/instances/cone_n69.pg SWC cone_n69.pg n 69 J0 0 NE 0 WR 0 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 1000000000
+GAME red/usplit/instances/gate_K64_n581.pg red/usplit/instances/gate_K64_n581.start SWC gate_K64_n581.pg n 581 J0 17 NE 21 WR 2 TT 0 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT 0 MINJ 2
