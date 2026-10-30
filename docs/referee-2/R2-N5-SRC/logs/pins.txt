@@ -1,0 +1,17 @@
+MODE files /tmp/claude-0/-home-user-parity-games-challange/6818e6dd-24e8-54a7-b5bf-dc0c0a4d1c69/scratchpad/pins.lst 0 MAXT 5000 BF 0
+BLOCKS: 2
+CASE1: 1
+CN_in_block: 2
+OS_checks: 47
+OS_cyc: 6
+WRUNS: 3
+WRUN_transitions: 7
+XIPLAY_checks: 108
+runs: 2
+starts_valid: 2
+transitions: 8
+max max_ES: (2, '/tmp/claude-0/-home-user-parity-games-challange/6818e6dd-24e8-54a7-b5bf-dc0c0a4d1c69/scratchpad/pins/xcn4_n12.pg#start')
+max max_LCT_run: 1
+max max_block: (3, '/tmp/claude-0/-home-user-parity-games-challange/6818e6dd-24e8-54a7-b5bf-dc0c0a4d1c69/scratchpad/pins/cn3_n9.pg#start')
+max max_tail: (2, '/tmp/claude-0/-home-user-parity-games-challange/6818e6dd-24e8-54a7-b5bf-dc0c0a4d1c69/scratchpad/pins/cn3_n9.pg#start')
+RESULT PASS violations 0
