@@ -1,7 +1,7 @@
 # L-LIT notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point (HANDOVER, 2026-10-30 ~07:30Z by date -u; woken for T51, then parked again; successor 4, Opus 5.5, D15/D18; session_01V5yGRVtbkGazm2j23LvZp8; parked on Lead's word)
+## Resume point (2026-10-30 ~13:20Z by date -u; WORKING again under D17/L39 since 13:09Z; successor 4, Opus 5.5, D15/D18; session_01V5yGRVtbkGazm2j23LvZp8; parked on Lead's word)
 DONE this session (claude/l-lit; every push via scripts/push.sh, exit 0, VERIFY PASS; Oink smoke NOT RUN, Oink not built here):
 - 6c065788 handover check (container 4014 behind; fast-forwarded). 0703a463 trunk merge 55d45567 + T48 script v1.
 - ca194a96 T48 docs/lit/T48-sbc-neighbours.md + T48-sbc-embed-check.py: parametric shortest paths vs SBC (leapfrog = Carstensen mechanism,
@@ -14,6 +14,8 @@ DONE this session (claude/l-lit; every push via scripts/push.sh, exit 0, VERIFY 
 - 2026-10-30 T51 (this push): docs/lit/T51-parametric-best-reply.md (exact models of Gusfield / Carstensen / Mulmuley-Shah; monotone
   non-linear costs give no bound (elementary); no source counts distinct best replies; Carstensen count does not transfer; plain-N5
   SEGRET data; thetaA_n7 one-parameter-consistent). PLAIN=1 mode added to T48-sbc-embed-check.py. Trunk merged 8bb9799d.
+- 2026-10-30 T52 (this push): docs/lit/T52-adoption-sequence-bounds.md (DS / forbidden matrices / wqo / matroid rank trick /
+  sorting vs per-W-run adoption sequences; DS per vertex DEAD by R137; one missing lemma XI-CH-POLY ⇒ R*-POLY via R*-RISE). Trunk d4d9165f.
 IN FLIGHT: none.
 OPEN LEADS for a successor (only on a concrete Lead question):
 - KL-SF (T50 §1): F's step with Koh-Loho tree labels; for L-NEW to define/measure. Literature side: Koh-Loho Prop. 2.5 with roles swapped.
@@ -429,6 +431,14 @@ NEEDS: none from the owner.
 | arXiv 2002.10888 v2 (Pellissier-Seiller, Lower bounds for algebraic machines, semantically) sha256 30c2f8f25f8030fd… | §III Mulmuley's PRAM-without-bit-operations assumptions (numeric / non-numeric data, indirect references not numeric-dependent, quoting Mulmuley 1999); §VII Def. 35 parametric complexity = breakpoints of an affine parametrization | 2026-10-30 | |
 | arXiv 1811.05115 v3 (Gajjar-Radhakrishnan) (re-grep) | p.2 ϕ(n,β) definitions, Carstensen ϕ(n,∞), Mulmuley-Shah ϕ(n,O((log n)^3)); §1 Consequences: Claim 4 (PRAM without bit operations, n^α processors, ǫ log n steps), the preceding sentence says «with» (typo); Thm 2 (polynomial weights), Thm 3 | 2026-10-30 | |
 | NOT opened (T51) | Mulmuley-Shah JCSS 2001 (re-tried: no copy found); Shah PhD dissertation (Chicago 2001) abstract page mailman.cs.uchicago.edu: curl TLS fail, WebFetch 503 | 2026-10-30 | |
+| T52 (2026-10-30) sources, opened by me | | | |
+| arXiv 1204.1086 (Pettie, Sharp bounds on DS sequences of every order) sha256 3762a7639c255734… | p.1 footnote (lower envelope ⇒ DS); p.3 Ex / λ_s definitions; PDF p.4 Theorem 1.2 (λ_3, λ_4, λ_s bounds) | 2026-10-30 | |
+| arXiv 0807.0484 (Nivasch, Improved bounds … DS sequences and their generalizations) sha256 429a9d5dbc44eb96… | §1.1 generalized DS, Ex_u(n), r-sparsity necessary; §1.2 Klazar Ex_u ≤ F_{r,s−1} ≤ n·2^O(α^(s−3)); PDF p.5 Thm 1.5 | 2026-10-30 | |
+| arXiv 1310.8378 (Fox, Stanley-Wilf limits are typically exponential) sha256 2c02c587e1a477db… | p.3: ex(n, P) definition, Füredi-Hajnal conjecture, Marcus-Tardos bound (1) ex(n, π) ≤ 2k⁴·C(k²,k)·n; super-additivity | 2026-10-30 | Marcus-Tardos JCTA 2004 NOT OPENED |
+| arXiv 1007.2989 (Figueira-Figueira-Schmitz-Schnoebelen, Dickson) sha256 e1ff8e173fc1e788… | p.2 controlled bad sequences, L_{k,f}; F_k for linear control, F_{γ+k−1} | 2026-10-30 | |
+| arXiv 1103.4399 (Schmitz-Schnoebelen, Higman) sha256 3879925798864930… | abstract; multiply-recursive bounds; Main Theorem §5 (not re-derived) | 2026-10-30 | |
+| ECCC TR06-067 (Ackermann-Röglin-Vöcking; JACM 55(6) 2008, DOI 10.1145/1455248.1455249) sha256 d13b2032bc8f8721… | abstract; Thm 3 + Lemma 4 + proof (PDF p.5): ≤ n²·m·rk(Γ) best responses via ranks; «independent of the delay functions»; Thm 7 (PDF p.7) exponential for non-matroid classes | 2026-10-30 | |
+| NOT opened (T52) | Marcus-Tardos JCTA 2004; Füredi-Hajnal 1992; Pettie 0-1 matrix papers; Sharir-Agarwal book; no source for sorting / monotone-circuit item | 2026-10-30 | |
 
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
@@ -454,6 +464,8 @@ NEEDS: none from the owner.
 - T49: "F's run is a 2-D shadow (shadow-vertex path)": DEAD, PIECES > 1 from switchbestexp_1 (2), switchbestexp_6 needs 29 pieces.
 - T50 (2026-10-29): "adapt DLM's mutual counter locks to N5-SF's F": DEAD. Obstruction: DECOUPLE (F's arena and opponent are functions of
   σ alone, so τ-gated locks have no effect); "all-rules lower bound for F": DEAD by Friedmann thesis Lemma 4.2 (one-sided SI has a ≤ |V| rule).
+- T52 (2026-10-30): DS bound per vertex per W-run (fixed alternation order s): DEAD. Obstruction: R137's chooser X → {O1, O2} returns to one edge
+  128 times in one W-run (n 362), so s grows with n. Higman / Dickson route: DEAD for polynomiality (run is a good chain; F_k-level bounds).
 
 ## Corrections log
 - 2026-10-23 (T26): N8d-barrier.md §0 and R54 §0 put Lemma 4.75 / Thm 4.76 on p.187; opened PDF: printed p.186 (PDF p.202). Reported as caveat 4.
