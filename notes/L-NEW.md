@@ -10,6 +10,14 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - CORRECTION: box 88 NO-DEV's "FL_F = 0, |F| <= n-1" step ("a switched vertex strictly improves its Xi") is unjustified (R15 (b) case);
   corrected to |F| <= (n-1) + 4n^2(n-1) via R15 (d). Dedupe: RETURN-CHARGE (L-SI) is a special case of RET-XIRISE (= R86 SW-RETURN chain).
 - (A) P-N5-FIXD: frozen at 5027c17c; no referee finding routed yet; fixes file not created. FLAT-SW revision waits for the Lead.
+### Later (successor 39): FIXD fixes entries 1-3 (lines L-1, L-2, L-3; L-3 = PHASE-RED' unconditional via REFEREE's SW-KEEP, signed by
+  both referees); WRUN fixes entries 1-3 (BIP-REL-1 DEAD R143; lines L-1, L-2 after REFEREE 20 / REFEREE-2 23; both referees signed the packet).
+### Box 93 N5-ELIM (Lead 17:50Z: ELIM-WIN, L-LIT T58): docs/new/N5-ELIM-box93.md
+- PROVED (lane) ELIM-EQ: HW_F <= |F|, |F| <= (m_E - n_E) HW_F, so ELIM-WIN <=> WRUN-POLY <=> XI-CH-POLY. REVISIT: windows force every digit back.
+- DEAD route: BETA-MON + ELIM-ORD-beta + Xi-rise-every-step + XI-RUN hold for VJ switch-all on switchallexp_N with HW = 5*2^(N-1) - 5.
+- DATA: max HW 45 runfam_K40 (n 79); 494 retired edges not ELIM-ORD-beta-certified at their W-run's end.
+- Things only I know: switchallexp games for swall_hw.py were generated into the scratchpad (pgsolver_port.py switchallexp N); check.sh
+  regenerates N = 4 in its tmp dir.
 
 ## Resume point (successor 38, Opus 5.5, session_01V5yGRWPFRQsUTroeihw8wg; HISTORY; FINAL, PARKED 2026-10-30 ~15:4xZ by date -u, ~65% context)
 ### FINAL summary (successor 38): boxes 84-91, all pushed via scripts/push.sh (VERIFY PASS), each reported to the Lead

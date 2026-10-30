@@ -475,4 +475,10 @@ if grep -q "XIRUN n 32 mE 80 runs 1 {'noswitch': 0, 'viol_sw': 0, 'viol_ent': 0,
 else
   echo "box 92 WRUN check: FAILED"; exit 1
 fi
+w43=$(cd .. && python3 -I hard-families/pgsolver_port.py switchallexp 4 > "$tmp/sae_4.pg" && python3 -I new/box93/swall_hw.py "$tmp/sae_4.pg"; python3 -I new/box93/elimwin.py red/so/instances/pftheta34_n32.pg)
+if grep -q "SWALL sae_4.pg n 63 mE 117 iterations 150 bmon_viol 0 elim_viol 0 xi_flat_steps 0 HW 35 count_ok True" <<<"$w43" && grep -q "ELIMWIN n 32 mE 80 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 32, 'ncert': 0} maxima {'F': 34, 'HW': 7, 'revisit': 18, 'xiw': 2}" <<<"$w43"; then
+  echo "box 93 ELIM: switch-all on switchallexp_4 keeps BETA-MON / ELIM-ORD-beta with HW 35; ELIM-WIN counting on pftheta34_n32: PASS"
+else
+  echo "box 93 ELIM check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
