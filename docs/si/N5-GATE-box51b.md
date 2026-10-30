@@ -200,6 +200,36 @@ G-N5-TIME stays OPEN. Labels: PROVED (lane) / CONJECTURE / DATA / DEAD / READING
   potential (CONJECTURE, untested): the BFS discovery rank of σ_k(v) inside its W-length layer, ordered by layer from the cycle node
   outward.
 
+## 8. [P-INT]: the BFS-layer mechanism. CONJECTURE LAYER-RESET (DATA, control bites) and the counter it allows
+- Layers. On a W-constant interval I, layer(v) := the length of W(v), which is fixed on I. A tight Even edge goes from layer d to layer
+  d − 1 (TIGHT-VALUE's proof).
+- READING (a proof sketch, not checked against every step of si.py; restrict() is assumed to keep all tight edges). Case: even W-cycle
+  node, i.e. S1's BFS branch (SPEC A5).
+  - The BFS from the cycle node over H_k's reverse edges discovers layer d in order of (position of the discovering layer-(d − 1)
+    vertex, pred-list index). Non-tight arena edges never discover.
+  - So σ_{k+1}(v) is the BFS-earliest arena successor of v in layer d − 1, and σ_k(v) ∈ H_k(v) is a candidate. The layer-1 order is
+    fixed on I (the pred-list index order of the cycle node).
+  - Hence: while the orders of the layers below d do not change, every layer-d vertex moves only EARLIER in a fixed order. It makes at
+    most |OPT(v)| − 1 switches and no return. A layer-d order changes only when a vertex of a lower layer switches.
+- CONJECTURE LAYER-RESET. Every return of a layer-d Even vertex to an edge it left inside I (at k1, back at k2) has a switch of some
+  other Even vertex of layer d − 1 in (k1, k2].
+  - DATA (si/gate/layer.py; all games with flat transitions, sbcg + alt lists, 21 runs; layer_flat.txt): RET 78, UNX 0 (returns without
+    such a switch). RETL2 0: no vertex of layer ≤ 2 ever returns.
+  - Control MUT=1 (ask for the switch at layer d − 2 instead): UNX 6 / 2 / 1 on u23sw64_n32 / u1t_own6_n32 / u1t_cex_n32. The test bites.
+- What LAYER-RESET gives, and what it does not.
+  - With S_d := the switches of layer-d vertices in I and m_d := Σ_{v ∈ layer d} (|OPT(v)| − 1):
+    S_d ≤ (1 + Σ_{d′<d} S_{d′})·m_d.
+  - That is a mixed-radix COUNTER bound: |I| ≤ Π_d (1 + m_d), exponential in the number of layers. It proves nothing polynomial.
+  - It is the exact shape of the remaining freedom: a layer-d vertex can sweep its successors again only after each lower-layer
+    reorder.
+  - INT-LIN therefore needs the Ξ-improvement condition (every switch strictly raises Ξ, §1 (iii)) to forbid the carries. That is
+    where Ξ's gap at the cycle-node level (§3, LEV = 0) enters.
+- Kill target for L-RED R141 (READING). Build a counter inside one interval: layer-1 vertices that reorder twice, each reorder making a
+  layer-2 vertex sweep back, and so on, with each sweep Ξ-improving. Data depth so far: switched vertices up to layer 11 (u1t_cex_n32),
+  but returns only from layer ≥ 3 and few carries (RET 31 at most per interval).
+- Cross-check, L-RED R141 (l-red 505ac980, commit subject only, not opened in detail): a search at n 8-16 finds W-constant intervals ≤ 3,
+  and the static-order tie-break lemma is DEAD (u23sw64_n32, 26 / 64 upward switches). Both are independent of §7 and agree with it. No kill.
+
 ## DONE / FINDINGS / NEEDS
 - DONE: experiments/si/gate/ (gate.py, const.py, agg.py, run.sh, inst/ copies, outputs); si/check.sh «box 51b»; this note.
 - FINDINGS:
@@ -220,6 +250,9 @@ G-N5-TIME stays OPEN. Labels: PROVED (lane) / CONJECTURE / DATA / DEAD / READING
      killers are all BD.
   10. DEAD (§7): S1 as a fixed per-vertex order rule (u23sw64_n32 [2, 10]: REV 31; 6 switches with |OPT| = 5). S1 is BFS-first discovery,
       with an order that depends on the state.
+  11. CONJECTURE LAYER-RESET (§8): a return at layer d needs a switch at layer d − 1 in between. DATA RET 78, UNX 0; the control bites.
+      READING: it gives only a counter bound Π_d(1 + m_d). INT-LIN needs the Ξ-improvement condition to forbid carries. That is the
+      L-RED R141 target.
 - NEEDS: none from the owner. Lead:
   - L-LIT: open a source on network-simplex stalling and anti-stalling rules (Cunningham), and on SI with arbitrary improving-subset
     rules on games with fixed cycle nodes.

@@ -880,3 +880,7 @@ python3 -I gate/deepint.py ../new/box59/out/fcobs_6.pg | grep -q "N4_IN 0 N4_BD 
 python3 -I gate/deepint.py ../red/xing/instances/u23sw64_n32.pg | grep -q "D4_IN 5 .* FLAT 8 PERFLAT4 10"
 python3 -I gate/revisit.py ../red/xing/instances/u23sw64_n32.pg | grep -q "interval \[2, 10\] flat 8 REV 31 SWV 6 OPT 5 BRANCH even"
 echo "si (box 51b §6-§7: DEEP_4 split, REVISIT): PASS"
+# box 51b §8: CONJECTURE LAYER-RESET data (UNX 0) and its control (MUT=1 must give UNX > 0).
+python3 -I gate/layer.py ../red/xing/instances/u23sw64_n32.pg | grep -q "RET 31 UNX 0 RETL2 0 DEPTH 10 FLAT 8"
+MUT=1 python3 -I gate/layer.py ../red/xing/instances/u23sw64_n32.pg | grep -q "RET 31 UNX 6 "
+echo "si (box 51b §8: LAYER-RESET): PASS"
