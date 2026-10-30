@@ -24,6 +24,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - DEAD R1-POLY: gated ladder gl_k (private single-successor gates, n 6k), monotone X <= W, offers of the [S2] form: 2^k W-values (gl_8 256).
 - READING: Xi is a pair valuation (consistency), so single-successor gates are transparent; only Odd choice gates (sigmabar != tau) are free.
   Next: CONJECTURE R2-POLY (X = val(sigma, rho) for some Odd rho).
+### P-N5-WCH: SIGNED by both referees (Lead 10:32Z); fixes W1 c930e26f (fixes sha1 8377a1b8, line W1 sha1 00f9e375); R93 -> CHECKER next.
+### Box 82 R2-POLY: docs/new/N5-R2-box82.md. DEAD (ogl_k Odd gates, 2^k, engine k <= 8); GATE-COLLAPSE under sigmabar; L-RED spec (escape
+  clock interleaving the ladder once per step); next CONJECTURE R3-POLY (R2 + Odd optimality).
 ### Sources opened (succ. 37): l-red docs/red/R132-reader-tree.md §2 (TWO-SOURCE, PREFIX, ladder remark); RESULTS R86-R91 entries.
 
 ## Resume point (successor 36, session_01V5yGRXhFvQKMGvnKST38br; FINAL, PARKED 2026-10-30 ~08:54Z by date -u, ~440k context)
