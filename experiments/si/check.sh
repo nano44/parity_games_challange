@@ -817,7 +817,7 @@ o=$(python3 -I odd/repchain.py ../new/box59/out/fc_8.pg); grep -q "rep 6 silent 
 echo "si (box 44: repeat cause chains): PASS"
 # box 45 (docs/si/N5-PLAIN-box45.md): plain-wave transition form DEAD (runfam_K10 85 > 48); REP-PLAIN DEAD on latew_K20_m32 (570 FIRST parents).
 o=$(python3 -I odd/repchain.py runlin/instances/runfam_K10.pg); grep -q "late 19 PLAINW 85 PLAINV 5" <<<"$o"
-o=$(python3 -I odd/repchain.py odd/inst/red/latew_K20_m32.pg odd/inst/red/latew_K20_m32.start); grep -q "rep 570 silent 0 parF 570 parR 0 parS 0 maxdepth 1 .*late 641 PLAINW 60 PLAINV 39 WCHW 700 RTW 640 RLOCW 640 REPW 570 LOC_V 0" <<<"$o"
+o=$(python3 -I odd/repchain.py odd/inst/red/latew_K20_m32.pg odd/inst/red/latew_K20_m32.start); grep -q "rep 570 silent 0 parF 570 parR 0 parS 0 maxdepth 1 .*late 641 PLAINW 60 PLAINV 39 WCHW 700 RTW 640 RLOCW 640 REPW 570 LOC_V 0 WIN0 0 WINF 570 WINR 0 PERWIN 30 WINCH_V 0 MAXWD 1 SELF 0" <<<"$o"
 echo "si (box 45: plain-wave and REP-PLAIN kills): PASS"
 # box 46 (docs/si/N5-SUB-box46.md): Corollary LOC-R* (WCH <= (n-1)(RLOC+1) per W-run) on runfam_K40; latew is pinned in «box 45».
 o=$(python3 -I odd/repchain.py runlin/instances/runfam_K40.pg); grep -q "WCHW 159 RTW 8 RLOCW 8 REPW 1 LOC_V 0" <<<"$o"
@@ -826,3 +826,6 @@ echo "si (box 46: local late adoptions): PASS"
 o=$(python3 -I odd/readch.py runlin/instances/runfam_K40.pg); grep -q "wchg 343 roots 8 maxdepth 73 WRUN 5 RC_V 0" <<<"$o"
 o=$(python3 -I odd/readch.py ../red/so/instances/so_th_n32.pg); grep -q "wchg 93 roots 10 maxdepth 21 WRUN 15 RC_V 0" <<<"$o"
 echo "si (box 47: reader chains): PASS"
+# box 48 (docs/si/N5-WDEPTH-box48.md): windows of late adoptions; a REPEAT-opened window feeds a repeat (so_th_n32, depth 2); Lemma WIN.
+o=$(python3 -I odd/repchain.py ../red/so/instances/so_th_n32.pg); grep -q "WIN0 0 WINF 1 WINR 1 PERWIN 1 WINCH_V 0 MAXWD 2 SELF 0" <<<"$o"
+echo "si (box 48: window depth): PASS"
