@@ -1,6 +1,6 @@
 # N5-S2 (box 71): "≤ 1 S re-entry per (piece, edge)" is DEAD. A vertex cycles through three W-tied options
 L-NEW successor 35 (Opus 5.5), D14 / D18, Lead reading L40. Lead's brief 2026-10-30 01:50Z (BOX 71: prove "≤ 1 S re-entry per (piece, edge)",
-which would give Σ SIL_R ≤ m_E(B* + 1), or build the adversary; say whether the argument touches C re-entries). Written from ~02:10Z
+which would give Σ SIL_R ≤ m_E(B* + 1), or build the adversary; say whether the argument touches C re-entries). Written from ~01:55Z
 (date -u). Working note, unrefereed, not a TARGET.md claim. G-N5-TIME OPEN. Labels: PROVED (lane) / CONJECTURE / DATA / DEAD / READING.
 - Definitions: P-N5-CUT §3-§4 (l-si 2678f6c6), quoted in N5-SC-box70.md §0. Tools: experiments/new/box70/silent.py (classes),
   experiments/new/box71/climb.py (hill-climb, seeded), L-SI's experiments/si/odd/cutsx.py run read-only (FR=1) as an independent check.

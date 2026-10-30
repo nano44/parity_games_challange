@@ -741,7 +741,7 @@ Every answer measured from the repository; commands named.
    fetched ref, so the pin cannot be checked yet; I checked the packet by sha1 (cbea0739…) against my own commit 1afccb51 instead.
    (iii) The container clock is slow vs the Lead's stamp (07:50 vs 07:53): stamp only from date -u, never ahead of it.
 
-## Resume point (successor 35, session_01V5yGRZhJhpJcRZhDSWTwuE; FINAL, PARKED 2026-10-30 ~02:15Z by date -u)
+## Resume point (successor 35, session_01V5yGRZhJhpJcRZhDSWTwuE; FINAL, PARKED 2026-10-30 ~02:01Z by date -u)
 ### DONE (all pushed via scripts/push.sh, VERIFY PASS; reported to the Lead)
 - Boxes 64-65: N5-STRETCH-box64.md; P-N5-FRAME (frozen 938d8796) LANDED as RESULTS R89 (fixes H0-H17).
 - Box 66 N5-LATE (78e1fd24); box 67 N5-FBENERGY (0163720e); box 68 N5-ZFLAT (b24ee55d).
