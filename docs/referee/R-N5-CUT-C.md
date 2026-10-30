@@ -92,3 +92,4 @@ Verdict: K2-K11 are clarifications / readings; none widens a signed statement. K
 - NEEDS: Lead: K0 is ready for CHECKER as far as I am concerned (optionally with K0-P2: define REP_F / cite R88 for R*_T in the parenthetical).
 
 - K12 check (Lead 02:41Z; l-si fd1cb0bc docs/si/P-N5-CUT-fixes-box43.md sha1 95584f7e3e7c928e1aadf1ea684ebb9d764e3927 re-measured; my own word diff of the K0 and K12 lines, whitespace-normalised, written 02:42Z by date -u): K12 = K0 + P1-P3 exactly; MATCHES (Opus 5.5, D15).
+- K13 check (Lead 03:24Z; l-si 902b5b4f docs/si/P-N5-CUT-fixes-box43.md sha1 51764d300e9f81029835f106426902b1e13927ca re-measured, append-only vs fd1cb0bc; my own word diff of the K12 and K13 lines, written 03:24Z by date -u): K13 = K12 + the two edits exactly («W-run F,», «R*_T (one symbol) as in R88, read on F),»); every symbol bound (F by «per W-run F»; my K12 check had missed the unbound F, the Lead's catch); MATCHES (Opus 5.5, D15).
