@@ -1,7 +1,79 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 38, Opus 5.5, started 2026-10-30 12:02Z by date -u; handover check: origin head 1169bb3d, trunk merged)
+## Resume point (successor 39, Opus 5.5, started 2026-10-30 15:58Z by date -u; handover check: origin head 5027c17c, trunk f99f82e7 merged)
+### Box 92 P-N5-WRUN FROZEN (docs/new/P-N5-WRUN-box92.md + -line.txt; sha1s in the Lead report): NOT sent to referees (Lead routes)
+- NEW (lane, a composition of landed R86 SW-RETURN + R15 (d)): Theorem XI-RUN |F| <= m_E + sum_c d_E(c) XICH_F(c) on every W-run (and every
+  sub-stretch, e.g. W-constant intervals: INT-XCH0 = L-SI's INT-XCH with RX_I = 0). Hence Corollary WRUN-EQ: WRUN-POLY <=> XI-CH-POLY <=>
+  P*-POLY <=> DEEP_k-POLY <=> R*-POLY & FL-POLY <=> ALT & FREE <=> R3 & TIE <=> R* & [P-INT] (<=> SB & R° & FL under [SUB]); one-way:
+  BIP-REL-1 route, NO-DEV, WRUN => R3. DATA box92/xirun.py on corpus (1692 W-runs): 0 violations, max ratio 0.273; check.sh "box 92".
+- CORRECTION: box 88 NO-DEV's "FL_F = 0, |F| <= n-1" step ("a switched vertex strictly improves its Xi") is unjustified (R15 (b) case);
+  corrected to |F| <= (n-1) + 4n^2(n-1) via R15 (d). Dedupe: RETURN-CHARGE (L-SI) is a special case of RET-XIRISE (= R86 SW-RETURN chain).
+- (A) P-N5-FIXD: frozen at 5027c17c; no referee finding routed yet; fixes file not created. FLAT-SW revision waits for the Lead.
+
+## Resume point (successor 38, Opus 5.5, session_01V5yGRWPFRQsUTroeihw8wg; HISTORY; FINAL, PARKED 2026-10-30 ~15:4xZ by date -u, ~65% context)
+### FINAL summary (successor 38): boxes 84-91, all pushed via scripts/push.sh (VERIFY PASS), each reported to the Lead
+- 84 N5-WAIT (246f1687): WAIT-CYCLE′ (X on own cycle incl.; exception E0), E0-BOUND, TRIPLE-RED. 85 N5-FREE (893b9346): FREE classes,
+  RET-XIRISE, FREE-RED. 86 N5-RSTAR (584e6e19): GAP-DEV, RSTAR-PCH, DEV-CAP DEAD. 87 N5-ARV (b46f7759): LEX-SIGN, PREFIX-MON, LEVEL-RED,
+  SHALLOW-k / FLIP-c DEAD. 88 N5-ONEP (e975c729): NO-DEV, BIP(rho, tau), BIP-MON, mechanisms O / B. 89 N5-BIP (d44b6499): BIP-REL-1
+  (strict) CONJECTURE, BIP-RED under [SUB] ([SUB] TRUE per REFEREE-2 22 one-referee check, l-referee-2 a11c2868). 90 N5-REL (83021322):
+  REL2-WRISE, SB-LIN DEAD. 91: P-N5-FIXD FROZEN (this push; docs/new/P-N5-FIXD-box91.md + -line.txt; sha1s in the commit message / Lead
+  report) for both referees.
+- Note: commit 246f1687's Claude-Session trailer carries L-RED's id by mistake (reported; no rewrite).
+### NEXT for successor 39 (Lead decides): freeze P-N5-WRUN (outline below); answer referee notes on P-N5-FIXD (fixes file
+  docs/new/P-N5-FIXD-fixes-box91.md, append-only).
+### P-N5-WRUN outline (one paragraph, for successor 39 to freeze)
+P-N5-WRUN collects the within-W-run reduction chain (all on W-runs F of R89: tau fixed, no S4c, lambda_W fixed). Core statement: |F| <=
+SB_F + (SB_F + 1)(n - 1)(R° + 1) + FL_F (BIP-RED, box 89 §3, premise [SUB] checked TRUE by REFEREE-2 22, docs/referee-2/SUB-check.md,
+l-referee-2 a11c2868), with R° <= m_E under CONJECTURE BIP-REL-1, plus the supporting reductions: TRIPLE-RED (box 84 §4: |F| <= m_E(n + 1) +
+Σ REG + Σ FREE, with WAIT-CYCLE′ and E0-BOUND), FREE-RED (box 85 §3: returns <= |F| <= (n - 1)(R*_F + 1) + FL_F), RET-XIRISE (box 85 §2) =
+L-SI's RETURN-CHARGE (dedupe; mine has no lambda_Xi premise), GAP-DEV and RSTAR-PCH (box 86 §1, §3: R*_F <= m_E n (n + 1 + P*_F)), LEX-SIGN /
+PREFIX-MON / LEVEL-RED (box 87 §2: PCH_F(v) <= n(2n + 1)^k + DEEP_k), NO-DEV and BIP-MON (box 88 §1-§2), REL2-WRISE (box 90 §1, premises
+(A1), (A2)), and the other lanes' lemmas it cites: ARENA-MAX (L-RED R140, l-red 47000632, docs/red/R140-friedmann-port.md: W_{t+1}(v) >=
+val(rho, tau_t)(v) for every arena strategy; needs L-RED's text, or a re-proof from [F1] = R17 (a) since S4a's sigma_new is the arena's
+pointwise optimum), INTERVAL-SI and INT-XCH (L-SI 33, l-si a0d6f79b, docs/si/N5-GATE-box51b.md §10: |I| <= m_E + Σ_d d_E(d) XCH_I(d) + RX_I;
+needs L-SI's text; INTERVAL-SI's exact statement must be quoted from there), RETURN-CHARGE (L-SI, same file). Mark as REDUCTIONS only;
+CONJECTURES (BIP-REL-1, ALT-POLY, FREE-POLY, R*-POLY, XI-CH-POLY, SB-POLY) are NOT to sign. DEAD with instances go to a DATA section
+(DEV-CAP gate_K16_n197; SHALLOW-k switchbestexp_N; FLIP-c fx_K_m; non-strict BIP-REL-1 ueonce_n27; SB-LIN pftheta34_n32). Own-lane items:
+everything from boxes 84-90; other lanes' items: ARENA-MAX (L-RED), INTERVAL-SI / INT-XCH / RETURN-CHARGE (L-SI), [SUB] check (REFEREE-2).
+### Owned open list: BIP-REL-1, SB-POLY (= Odd face of XI-CH-POLY), XI-CH-POLY / DEEP_k, R*-POLY, ALT-POLY, FREE-POLY, NT-1 / GAP-1 /
+  IMM-1, R3-POLY; FLAT-SW (P-N5-FIXD §4); earlier: LZ-NOC, TIE for plain N5, RETR-POLY.
+### Things only I know (successor 38): l-red pins (latew_K16_m32, fx_K8_m32, obs_K12_m24) were read from origin/claude/l-red into the
+  scratchpad (gone with the container); regenerate fx with git archive of l-red span/mkrw.py + free/obsx.py (BLK=2 OWNER=0 ABOVE=a).
+  relpe.py STRICT=1 resets blocks at sigmabar changes. depth_*.txt (box 87 corpus) lack the 'flip' field.
+
+## Resume point (HISTORY; successor 38, Opus 5.5, started 2026-10-30 12:02Z by date -u; handover check: origin head 1169bb3d, trunk merged)
+### Box 90 N5-REL (Lead 15:10Z: prove BIP-REL-1 strict, else obstruction + SB-POLY): docs/new/N5-REL-box90.md
+- PROVED (lane, under (A1) y not its own W-cycle node, (A2) z's tau-play under the arena strategy avoids y) Lemma REL2-WRISE: a second
+  strict release forces a strict W(z)-rise after y leaves z (ARENA-MAX + W-succ monotonicity + Fact EXT).
+- BIP-REL-1 NOT proved. Obstruction: tau-branch and rho-branch of a deviation climb independently under frozen rho. Random search n <= 12: 0.
+- DEAD SB-LIN: pftheta34_n32 SB_F 34 > 32; latew 513 > 482 (quadratic family). Per-Odd-vertex flips <= 62 (gate_K64), mostly returns.
+- READING: non-tie sigmabar flips <= successors' Xi-changes; SB-POLY is the Odd-side face of XI-CH-POLY.
+### Box 89 N5-BIP (Lead 14:34Z: BIP-POLY under a frozen sigmabar): docs/new/N5-BIP-box89.md
+- DATA: Even releases lifted by plain climbs below the first deviation (obs/fx all after; corpus 386 after / 199 before); depth <= 2;
+  Xi(z) rises once between block and release.
+- CONJECTURE BIP-REL-1 (strict: <= 1 release per edge per frozen stretch): 0 violations (1132 runs + pins). Non-strict DEAD:
+  si/root/instances/ueonce_n27 (sha1 c90d5ab8), long121_n40 (blocks inherited from an earlier sigmabar).
+- PROVED (lane, under premise [SUB]: FW-R* on sub-intervals of a W-run) Theorem BIP-RED: |F| <= SB_F + (SB_F+1)(n-1)(R°+1) + FL_F.
+  Polynomial W-runs <= BIP-REL-1 + SB-POLY + FL-POLY + [SUB].
+- Opened: Ralphs IE411 Lecture 11 slide 3 (generic label-correcting O(n^2 C); fixed-order scanning strongly polynomial).
+- Things only I know: relpe.py STRICT=1 resets the blocked set at every sigmabar change; non-strict keeps it across the W-run. Context ~60%.
+### Box 88 N5-ONEP (Lead 13:57Z re-aim of box 87: |F| of one W-run vs the one-player tau-arena): docs/new/N5-ONEP-box88.md
+- PROVED (lane): NO-DEV (Xi = W along F => R* = FL = 0, |F| <= n-1); BIP-MON; definition BIP(rho, tau) (N5 on frozen-sigmabar stretches).
+- DATA: two mechanisms. (O) latew_K16_m32: sigmabar changes 513/560 transitions, 480/513 releases Odd re-routings. (B) obs_K12_m24:
+  sigmabar changes once, 25/25 releases Even-side, poison kept, |F| 324 > n-1. Corpus ODD 1704 / EVEN 903.
+- CONJECTURE BIP-POLY OPEN (two fixed Odd strategies: offers by rho, steps by tau). Label-correcting lower bounds (Johnson 1973) NOT opened.
+- R140 (Friedmann port) not yet pushed at 14:40Z: (ii) unchecked.
+- Things only I know: obs_K12_m24 read from origin/claude/l-red into the scratchpad (sha1 7df541fb). release.py 'kept' counts every
+  release whose deviations on the old play are unchanged (ODD releases included).
+### Box 87 N5-ARV (Lead 13:34Z: XI-CH-POLY via the ARV rank trick): docs/new/N5-ARV-box87.md
+- ARV (ECCC TR06-067) Thm 3 / Lemma 4 opened: rank a fixed list of <= n m delays; 1-1 exchange keeps improvements strict.
+- PROVED (lane): LEX-SIGN (path-set order = lex on signed vector), PREFIX-MON (k-term signed prefix monotone, <= (2n+1)^k values),
+  Theorem LEVEL-RED (PCH_F(v) <= n(2n+1)^k + DEEP_k; XI-CH-POLY <= DEEP_k-POLY for one constant k).
+- DATA: latew_K16_m32 and fx family depth <= 3 (fully ranked). DEAD: SHALLOW-k (switchbestexp_N depth 3N+3; counter_symsi_8 depth 42),
+  FLIP-c (fx: K+1). Break: ARV Lemma 4's 1-1 exchange vs lexicographic 1-to-many. XI-CH-POLY OPEN (max 0.32n).
+- Things only I know: fx family regenerated in the scratchpad from l-red span/mkrw.py + free/obsx.py (git archive of origin/claude/l-red;
+  BLK=2 OWNER=0 ABOVE=a); not committed. Corpus depth_*.txt lack the 'flip' field (added after the run).
 ### Box 86 N5-RSTAR (Lead 13:06Z: R*-POLY; D18 screen of >= 2 outside approaches): docs/new/N5-RSTAR-box86.md
 - R137 line: fx_K8_m32 one W-run, FREE 836 all LAT (64 at one edge), R*_F 16, FL_F 0, |F| 280.
 - PROVED (lane): GAP-DEV (blocked target => Xi < W, Odd deviation sigmabar != tau on its play); RSTAR-PCH (R*_F <= m_E n (n + 1 + P*_F);
@@ -1581,6 +1653,9 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
   (SUCC-MON, LATE-RISE); R93 / P-N5-WCH-box79.md §4.1 NEW-BOUND, §4.2 RET-WCH; SPEC N5-ssi-global.md S1, S2, S4, Termination.
 - (succ. 38, box 86) [FFSS] D. Figueira, S. Figueira, S. Schmitz, Ph. Schnoebelen, arXiv 1007.2989 (LICS 2011): introduction, Prop. 5.2,
   Prop. 6.3, Remark 6.4 (full PDF text read). [Fr09] O. Friedmann arXiv 0901.2731: abstract only. RESULTS R86 (LEN-MONO, COMPOSE-RUN, COMPOSE-NM).
+- (succ. 38, box 87) [ARV] H. Ackermann, H. Röglin, B. Vöcking, ECCC TR06-067: Def. 2, Thm 3 + proof, Lemma 4 + proof, Thm 7 and the
+  1-1-exchange paragraph (full PDF text read).
+- (succ. 38, box 89) T. Ralphs, IE411 Lecture 11 (Lehigh, coral.ise.lehigh.edu/~ted/files/ie411/lectures-python/Lecture11.pdf), slide 3 (PDF text read).
 ## Dead ends
 - (box 47, successor 26, 11:13Z) CONJECTURE XD-1 (≤ 1 X_dir per {u, u′}-run): FALSE on experiments/new/box47/instances/pp2_n19.pg (sha1 97b5b132…),
   𝒞^2O, S3, phase [1, 3], D = {1}, {0}, {1}; length-only values (cycle node 9). Obstruction: each X_dir needs only an Even switch on each
@@ -1764,6 +1839,12 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
   + .start (R*_F 16, 5 deviation edges); 60 corpus W-runs. Obstruction: one deviation edge poisons a lateral fan released one per step.
 - (succ. 38, box 86) WQO / Dickson route to R*-POLY: dead for polynomial bounds ([FFSS] Prop. 6.3: F_{gamma+k-1} lower bounds, tight even
   for the lexicographic order; Xi's order is lexicographic with dimension ~ n).
+- (succ. 38, box 87) CONJECTURE SHALLOW-k (every Xi path-set change in a W-run has depth < k, k constant): FALSE, new/box54/out/
+  switchbestexp_N depth 3N+3 (N 2..8), counter_symsi_8 depth 42. CONJECTURE FLIP-c: FALSE, fx_K_m (BLK 2) FLIP = K+1. Neither kills XI-CH-POLY.
+- (succ. 38, box 89) Non-strict BIP-REL-1 (<= 1 release per edge per frozen stretch, blocks counted anywhere in F): FALSE on
+  si/root/instances/ueonce_n27 (edge (10, 23) twice) and new/box48/instances/long121_n40 (S3 start); blocks inherited from an earlier sigmabar.
+- (succ. 38, box 90) CONJECTURE SB-LIN (sigmabar changes per W-run <= n): FALSE on red/so/instances/pftheta34_n32.pg (S3 start; 34 > 32)
+  and L-RED latew_K16_m32 (513 > 482).
 ## Things only I know (earlier successors)
 - (succ. 8) Pitfalls in box 21:
   - `pkill -f "climb_fix.py ..."` killed my own shell (exit 144). Kill by `ps -eo pid,args | awk '$2=="python3" && $3==...'`.

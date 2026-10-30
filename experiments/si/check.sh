@@ -863,3 +863,36 @@ echo "si (box 53: P-N5-LATEP quotes): PASS"
 o=$(python3 -I fl/flat.py ../red/xing/instances/u23sw64_n32.pg); grep -q "ZFL 8 ZA 32 ZSHR_V 0 ZIN_V 0 FLGAP_V 0 FL 8 FLI 8 FLV 6 LCTFL 0 SW 64 NOTZ_V 0 NOCL_V 0 WCH_V 0 GXC 64" <<<"$o"
 o=$(python3 -I fl/flat.py ../red/kw/instances/cw11_n24.pg); grep -q "ZSHR_V 0 ZIN_V 0 FLGAP_V 0" <<<"$o"
 echo "si (box 50b: FL, FLAT-Z): PASS"
+# box 51b (docs/si/N5-GATE-box51b.md): Lemma GATE classes (no SPD climb without a gate climb, TRV_V 0), INTERVAL-SI checks (TIGHT_V, IMP_V 0),
+# LEV-FLAT (MONO_V 0); u23sw64: 8 ZFL all SUB (Phi constant), gate data constant on [2, 10]; mkrw LATE=1: TXV 2K, XCV 2K + 1; L-RED copies.
+o=$(python3 -I gate/gate.py ../red/xing/instances/u23sw64_n32.pg); grep -q "ZFL 8 SUB 8 PR 0 WCI 4 FLAT 8 TRV_V 0 ZZ_V 0 MONO_V 0 XFL 0 TIGHT_V 0 IMP_V 0 FLI 8 DMAX 1 TXC 72 TXV 8 XCV 8 NSPW 72 XGRD 60 XNGRD 4 LAZY 23" <<<"$o"
+grep -q "ALL_GSELF 0 ALL_NOG 0 ALL_GCH 0 ALL_NDEC 0 ALL_NSP 72 ALL_SPD 0" <<<"$o"
+python3 -I gate/const.py ../red/xing/instances/u23sw64_n32.pg | grep -q "interval \[2, 10\] flat 8 changes none"
+o=$(python3 -I gate/gate.py ../red/xing/instances/u2flat73_n32.pg); grep -q "TRV_V 0 .* XGRD 62 XNGRD 11 LAZY 0" <<<"$o"
+t=$(mktemp -d); LATE=1 python3 -I ../red/span/mkrw.py 4 16 $t/w.pg $t/w.start >/dev/null; LATE=1 python3 -I ../red/span/mkrw.py 8 16 $t/v.pg $t/v.start >/dev/null
+python3 -I gate/gate.py $t/w.pg $t/w.start | grep -q "FLAT 0 .* TXV 8 XCV 9 "
+python3 -I gate/gate.py $t/v.pg $t/v.start | grep -q "FLAT 0 .* TXV 16 XCV 17 "
+echo "6d34c1617bb410ce78c392eb360ca28b6afea90f  gate/inst/latew_K16_m32.pg" | sha1sum -c --quiet
+echo "e995709e256b55aa40cb94896a7dcb52446baf57  gate/inst/fx_K8_m32.pg" | sha1sum -c --quiet
+echo "si (box 51b: GATE, INTERVAL-SI, potentials dead): PASS"
+# box 51b §6-§7: DEEP_4 split (fcobs_6 all at W-changing transitions, D4 = box 87's 42); S1 not a fixed-order rule (u23sw64 REV 31).
+python3 -I gate/deepint.py ../new/box59/out/fcobs_6.pg | grep -q "N4_IN 0 N4_BD 634 D4 42 D4_IN 0 D4_BD 42 FLAT 0"
+python3 -I gate/deepint.py ../red/xing/instances/u23sw64_n32.pg | grep -q "D4_IN 5 .* FLAT 8 PERFLAT4 10"
+python3 -I gate/revisit.py ../red/xing/instances/u23sw64_n32.pg | grep -q "interval \[2, 10\] flat 8 REV 31 SWV 6 OPT 5 BRANCH even"
+echo "si (box 51b §6-§7: DEEP_4 split, REVISIT): PASS"
+# box 51b §8: CONJECTURE LAYER-RESET data (UNX 0) and its control (MUT=1 must give UNX > 0).
+python3 -I gate/layer.py ../red/xing/instances/u23sw64_n32.pg | grep -q "RET 31 UNX 0 RETL2 0 DEPTH 10 FLAT 8"
+MUT=1 python3 -I gate/layer.py ../red/xing/instances/u23sw64_n32.pg | grep -q "RET 31 UNX 6 "
+echo "si (box 51b §8: LAYER-RESET): PASS"
+# box 51b §10: Lemma RETURN-CHARGE (RCV 0, RCX 0 on u23sw64's 31 returns), XCI 8.
+python3 -I gate/layer.py ../red/xing/instances/u23sw64_n32.pg | grep -q "RET 31 UNX 0 RETL2 0 DEPTH 10 FLAT 8 RCV 0 RCX 0 XCI 8"
+echo "si (box 51b §10: RETURN-CHARGE): PASS"
+# box 51b §11-§12: RETURN-CHARGE' over whole runs (Even and Odd), SEG-XCH W-run bound, T-bound; charge OFF kill (cw11_n24).
+python3 -I gate/retx.py ../red/xing/instances/u23sw64_n32.pg | grep -q "T 16 MONO_V 0 IMP_V 0 RET 70 RCV 0 FB_V 0 SLACK 247 LMAX 8 OMONO_V 0 OIMP_V 0 ORET 0 ORCV 0 TB_V 0"
+grep -q "RETX" gate/retx_sbcg.txt && ! grep -q "RCV [1-9]\|FB_V [1-9]\|TB_V [1-9]\|MONO_V [1-9]\|IMP_V [1-9]" gate/retx_sbcg.txt gate/retx_alt.txt gate/retx_red.txt
+python3 -I gate/charge.py ../red/kw/instances/cw11_n24.pg | grep -q "D4_OFF 1 D4_SELF 0 ALL_ON 6 ALL_OFF 4 ALL_SELF 12"
+echo "si (box 51b §11-§12: RETURN-CHARGE', SEG-XCH, charge OFF): PASS"
+# box 51b §13: head Xi-changes per W-run (mkrw LATE=1 K 4 m 16: HX 8 = 2K).
+t=$(mktemp -d); LATE=1 python3 -I ../red/span/mkrw.py 4 16 $t/w.pg $t/w.start >/dev/null
+python3 -I gate/heads.py $t/w.pg $t/w.start | grep -q "HX 8 XX 9 NHEAD 32 SUMHX 125 LMAX 76"
+echo "si (box 51b §13: heads): PASS"

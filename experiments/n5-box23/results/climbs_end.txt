@@ -1,0 +1,5 @@
+climbs/rs_fresh_n10_r1.log END steps 158888 best (8, 8, 10) n 10 secs 900 -> ./climbs/rs_fresh_n10_r1.pg
+climbs/rs_fresh_n15_r1.log END steps 63234 best (13, 13, 14) n 15 secs 900 -> ./climbs/rs_fresh_n15_r1.pg
+climbs/rs_fresh_n20_r1.log END steps 43974 best (17, 17, 21) n 20 secs 900 -> ./climbs/rs_fresh_n20_r1.pg
+climbs/rs_fresh_n30_r1.log END steps 24620 best (16, 16, 27) n 30 secs 900 -> ./climbs/rs_fresh_n30_r1.pg
+climbs/rs_fresh_n40_r1.log END steps 30344 best (13, 13, 15) n 40 secs 900 -> ./climbs/rs_fresh_n40_r1.pg

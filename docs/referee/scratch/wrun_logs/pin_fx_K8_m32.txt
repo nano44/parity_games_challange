@@ -1,0 +1,10 @@
+GAMES 1
+GD_chk 2782
+SUB_chk 39340
+trans 280
+wruns 5
+STAT maxRstar 16
+STAT maxSB 1
+STAT xr_ratio_x1000 139
+VIOLATIONS 0
+RC 0

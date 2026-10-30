@@ -445,4 +445,34 @@ if grep -q "RSTAR n 197 runs 1 {'gapdev_viol': 0, 'cap_viol': 1, 'blocked': 205}
 else
   echo "box 86 RSTAR check: FAILED"; exit 1
 fi
+w38=$(cd .. && python3 -I new/box87/depth.py red/usplit/instances/gate_K16_n197.pg red/usplit/instances/gate_K16_n197.start; python3 -I new/box87/depth.py new/box54/out/switchbestexp_4.pg)
+if grep -q "DEPTH n 197 runs 1 {'prefix_viol': 0} maxima {'depth': 2, 'd1': 1, 'd2': 1, 'd4': 0, 'xich': 15, 'flip': 1}" <<<"$w38" && grep -q "DEPTH n 110 runs 2 {'prefix_viol': 0} maxima {'depth': 15, 'd1': 14, 'd2': 14, 'd4': 13, 'xich': 15, 'flip': 2}" <<<"$w38"; then
+  echo "box 87 ARV: PREFIX-MON 0 violations; SHALLOW-k DEAD on switchbestexp_4 (depth 15, DEEP_4 13): PASS"
+else
+  echo "box 87 ARV check: FAILED"; exit 1
+fi
+w39=$(cd .. && python3 -I new/box88/release.py red/usplit/instances/gate_K16_n197.pg red/usplit/instances/gate_K16_n197.start; python3 -I new/box88/release.py red/so/instances/pftheta34_n32.pg)
+if grep -q "RELEASE n 197 runs 1 {'late': 18, 'ODD': 3, 'EVEN': 15, 'kept': 15} maxima {'F': 23, 'rstar': 16, 'sb': 16, 'dv': 16, 'wch_tr': 23, 'n': 197}" <<<"$w39" && grep -q "RELEASE n 32 runs 1 {'late': 7, 'ODD': 7, 'EVEN': 0, 'kept': 0} maxima {'F': 34, 'rstar': 4, 'sb': 34, 'dv': 34, 'wch_tr': 34, 'n': 32}" <<<"$w39"; then
+  echo "box 88 ONEP: release classes (ODD / EVEN) on gate_K16_n197 and pftheta34_n32: PASS"
+else
+  echo "box 88 ONEP check: FAILED"; exit 1
+fi
+w40=$(cd .. && python3 -I new/box89/relpe.py si/root/instances/ueonce_n27.pg; STRICT=1 python3 -I new/box89/relpe.py si/root/instances/ueonce_n27.pg; python3 -I new/box89/bipprobe.py red/usplit/instances/gate_K16_n197.pg red/usplit/instances/gate_K16_n197.start)
+if grep -q "RELPE n 27 mE 80 runs 1 maxima {'late_edge': 2, 'rstar': 4, 'F': 10, 'frozen_edge': 2} argmax-edge (10, 23)" <<<"$w40" && grep -q "RELPE n 27 mE 80 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 10, 'frozen_edge': 0} argmax-edge None" <<<"$w40" && grep -q "BIPPROBE n 197 {'single_dev': 1, 'no_driver_W': 1, 'lift_before': 1, 'lifter_plain': 1} maxima {'stretch': 3, 'rel': 1, 'nvals': 2, 'depth': 1}" <<<"$w40"; then
+  echo "box 89 BIP: non-strict BIP-REL-1 DEAD on ueonce_n27 (2), strict form 0; release anatomy on gate_K16_n197: PASS"
+else
+  echo "box 89 BIP check: FAILED"; exit 1
+fi
+w41=$(cd .. && python3 -I new/box90/sbv.py red/so/instances/pftheta34_n32.pg; python3 -I new/box90/relrand.py 8 300 5)
+if grep -q "SBV n 32 runs 1 maxima {'sb': 34, 'sbv': 34, 'ret': 18, 'F': 34} sb/n 1.06" <<<"$w41" && grep -q "RELRAND n 8 trials 300 seed 5 max-strict-per-edge 0" <<<"$w41"; then
+  echo "box 90 REL: SB-LIN DEAD on pftheta34_n32 (34 > 32); random strict-release search 0: PASS"
+else
+  echo "box 90 REL check: FAILED"; exit 1
+fi
+w42=$(cd .. && python3 -I new/box92/xirun.py red/so/instances/pftheta34_n32.pg; python3 -I new/box92/xirun.py red/free/instances/fx_K8_m32.pg red/free/instances/fx_K8_m32.start)
+if grep -q "XIRUN n 32 mE 80 runs 1 {'noswitch': 0, 'viol_sw': 0, 'viol_ent': 0, 'viol_xirun': 0} maxima {'F': 34, 'xich': 34, 'bound': 1010, 'ratio': 0.034}" <<<"$w42" && grep -q "XIRUN n 250 mE 151 runs 1 {'noswitch': 0, 'viol_sw': 0, 'viol_ent': 0, 'viol_xirun': 0} maxima {'F': 280, 'xich': 137, 'bound': 2005, 'ratio': 0.14}" <<<"$w42"; then
+  echo "box 92 WRUN: XI-RUN |F| <= m_E + sum d_E XICH on pftheta34_n32 and fx_K8_m32: PASS"
+else
+  echo "box 92 WRUN check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

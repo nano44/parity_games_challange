@@ -1,0 +1,34 @@
+{
+ "model": "C",
+ "n": 1,
+ "maxdeg": 99,
+ "random": 0,
+ "seed": null,
+ "maxstates": 0,
+ "every": 1,
+ "offset": 0,
+ "counts": {
+  "games": 4,
+  "states": 4,
+  "heads": 0,
+  "chains_rs_pos": 0,
+  "chains_fl_pos": 0,
+  "viol_freered": 0,
+  "incl_ne_strict": 0
+ },
+ "best": {
+  "rs": null,
+  "fl": null,
+  "F": null,
+  "la": null,
+  "sig0": null
+ },
+ "hist": {
+  "rs": {},
+  "fl": {},
+  "F": {},
+  "la": {},
+  "sig0": {}
+ },
+ "seconds": 0
+}
