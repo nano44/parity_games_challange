@@ -1,5 +1,6 @@
 # L-RED notebook (independent adversary lane)
-Successor 31 (session_01V5yGRZfrtk7CRqezo1wAzp, Opus 5.5) woken 2026-10-30 00:09Z; R126-R129; see "Successor 31 HANDOVER, update 2".\nSuccessor 31 (session_01V5yGRZfrtk7CRqezo1wAzp, Opus 5.5) HANDOVER written 2026-10-29 ~23:50Z (date -u), PARKED; see "Successor 31 HANDOVER".
+Successor 31 (session_01V5yGRZfrtk7CRqezo1wAzp, Opus 5.5) woken 2026-10-30 00:09Z; R126-R129; see "Successor 31 HANDOVER, update 2".
+Successor 31 (session_01V5yGRZfrtk7CRqezo1wAzp, Opus 5.5) HANDOVER written 2026-10-29 ~23:50Z (date -u), PARKED; see "Successor 31 HANDOVER".
 Successor 31 (session_01V5yGRZfrtk7CRqezo1wAzp, Opus 5.5) started 2026-10-29 22:19Z (date -u); handover check d6ae7cda; STEP 1 = R123, R124, R125; see "Successor 31".
 Successor 30 (session_01V5yGRZ2y7KsHSMJMvdKBmF, Opus 5.5) HANDOVER written 2026-10-29 ~21:35Z (date -u); see "Successor 30 HANDOVER".
 Successor 30 (session_01V5yGRZ2y7KsHSMJMvdKBmF, Opus 5.5) started 2026-10-29 19:51Z (date -u); handover check 9221e775; STEP 1 (b) = R119 Lemma MG (096bc8a6); see "Successor 30".
