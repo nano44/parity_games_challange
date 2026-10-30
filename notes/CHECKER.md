@@ -12,7 +12,12 @@ History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50
   commands, identical). C101 Add. 1 PASS bc947940 (R91 draft 67b0586f @ 84663829, title H18); Add. 2 labels vs landed R90 PASS (06fe52f9);
   OPT-OFF / W-SUCC clauses recommended (Lead to decide). C100 = R90 (P-N5-CUT) draft 3ae16ca6 @ b416503c: PASS 2b010c91; R90 LANDED f16749dc
   (05:17:45Z): C100 Add. 1 PASS + CI 5266 green: C100 CLOSED. C101 Add. 3 PASS c17ff164 (name clauses, 371db257); R91 LANDED 5bf4fe6b (06:00:08Z): C101 Add. 4 PASS (727cd568) + CI 5279 green:
-  C101 CLOSED. Nothing open at CHECKER. HOLD (Lead 06:08Z): next packets L-SI P-N5-LATEP, maybe L-NEW's. Counter: next check is C102. Prep (kept):
+  C101 CLOSED.
+- C102 = R92 (P-N5-LATEP, L-SI 32), draft 45a8909a @ e8d911f2: PASS c13477c2 (title F16; pins box 51-53 at b63f2554 and 17a3ecec;
+  DATA-of-record sum; Lead (a) W-MON′ PASS). R92 LANDED 9ebff160 (09:03:52Z): Add. 1 PASS (6ff37091) + CI 5326 green: C102 CLOSED.
+- C103 = R93 (P-N5-WCH, L-NEW 37), draft c6de401b @ 9ffcbdac: PASS cdef102a (title W1; WCH block at 2ad78f51 and c930e26f; §8.4 re-sum;
+  Lead (a) |F| and (b) R90 (e) labels = notes, no W2). R93 LANDED 31f8c8a7 (11:51:50Z): Add. 1 PASS (068bf0ec) + CI 5353 green: C103 CLOSED.
+  Nothing open at CHECKER. HOLD for C104 (Lead 12:04Z). Prep (kept):
   - Pins measured: packet 938d8796 ce8c4803 (= l-new head content); fixes 9631bbc5 eb5bd5e1 (H0-H16 at d3d98d1c b1127e57, H17 appended
     9631bbc5); line-H0 ab1ee38a (a file sha1, not a commit); old line acf3234f. Reports: REFEREE e9b32f72 (R-N5-FRAME.md 90c2ca4d), §C
     0b080b2c (9a00c9b2; its §4 reviews fixes at d3d98d1c: H17 NOT reviewed by REFEREE); REFEREE-2 a1142a46 / 7571febe (report), §C 1008d66e,

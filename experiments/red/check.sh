@@ -344,6 +344,66 @@ out=$(python3 -I lzc/n5lzb.py lzc/instances/lazyhurt_n9.pg "$t/lh.sol" --start l
 # R134 (successor 32): ZXC per W-run (zxc/zxc.py): R120's Even wave observer on one-world mkr (span/mkrw.py 4 16 + mix/obs2.py OWNER=0 ABOVE=a): ZXC(obs) = Km + K + 1 = 69 of |F| = 76
 python3 -I span/mkrw.py 4 16 "$t/zw.pg" "$t/zw.start" > /dev/null; OWNER=0 ABOVE=a python3 -I mix/obs2.py "$t/zw.pg" "$t/zw.start" "$t/zo.pg" "$t/zo.start" > /dev/null
 out=$(python3 -I zxc/zxc.py "$t/zo.pg" "$t/zo.start" | cut -d' ' -f1-13); [[ "$out" == "ZXC zo.pg n 128 iter 76 fallbacks 0 longest-W-run 76 top obs:69/76E(TXC 0)" ]] || { echo "zxc observer drifted: $out"; exit 1; }
+# R135 (successor 33): box 82's escape in real N5. dg_k (desync/mkdg.py): lateral desync gate, tau fixed, 4 iterations for every k; pins
+# dg_16 / dgu_4 / dga_4 (UP=1 upward variants, Lemma WAIT-CYCLE branches); box 80 ladders: upward waits; no-upward-wait max T-rises k + 2
+sha1sum -c --quiet desync/ladder.sha1 || { echo "box80 ladder copies changed"; exit 1; }
+python3 -I desync/mkdg.py 16 "$t/dg16.pg" "$t/dg16.start" > /dev/null; cmp -s "$t/dg16.pg" desync/instances/dg_16.pg && cmp -s "$t/dg16.start" desync/instances/dg_16.start || { echo "mkdg drifted from dg_16"; exit 1; }
+UP=1 python3 -I desync/mkdg.py 4 "$t/du.pg" "$t/du.start" > /dev/null; cmp -s "$t/du.pg" desync/instances/dgu_4.pg || { echo "mkdg UP drifted from dgu_4"; exit 1; }
+UP=1 UPTO=A python3 -I desync/mkdg.py 4 "$t/da.pg" "$t/da.start" > /dev/null; cmp -s "$t/da.pg" desync/instances/dga_4.pg || { echo "mkdg UPTO=A drifted from dga_4"; exit 1; }
+out=$(python3 -I desync/dgstat.py desync/instances/dg_16.pg desync/instances/dg_16.start); [[ "$out" == "DGSTAT dg_16.pg n 94 iterations 4 fallbacks 0 tau-changes 0 W-runs 1 W(T)-values 4 max-WCH-in-a-W-run 3 (B4) W-cycle-nodes ['sink'] Xi-cycle-nodes ['sink']" ]] || { echo "dgstat dg_16 drifted: $out"; exit 1; }
+out=$(python3 -I desync/dgstat.py desync/instances/dga_4.pg desync/instances/dga_4.start); [[ "$out" == *"iterations 3 fallbacks 0 tau-changes 1 "*"Xi-cycle-nodes ['h3_0', 'sink']" ]] || { echo "dgstat dga_4 drifted: $out"; exit 1; }
+out=$(python3 -I seg/xeng.py desync/instances/dg_16.pg desync/instances/dg_16.start | tail -1); [[ "$out" == "state sequences identical: True" ]] || { echo "xeng dg_16: $out"; exit 1; }
+out=$(python3 -I desync/upwait.py desync/ladder/ladder_8.pg desync/ladder/ladder_8.seq); [[ "$out" == "UPWAIT ladder_8.pg steps 749 upward-blocked 4914 lateral-blocked 1408 vertices-with-upward-waits 14" ]] || { echo "upwait drifted: $out"; exit 1; }
+out=$(python3 -I desync/noup.py desync/ladder/ladder_5.pg); [[ "$out" == "NOUP ladder_5.pg max T-rises: no-upward-waits 7, unrestricted 31" ]] || { echo "noup drifted: $out"; exit 1; }
+python3 -I desync/wcrand.py 1 400 4 9 | grep -qx "WCRAND seed 1 runs 400 self-routed-blocks 360 violations 0" || { echo "wcrand drifted"; exit 1; }
+OPEN0=1 python3 -I desync/mkpar.py 4 "$t/pa.pg" "$t/pa.start" > /dev/null; cmp -s "$t/pa.pg" desync/instances/par_4.pg && cmp -s "$t/pa.start" desync/instances/par_4.start || { echo "mkpar drifted from par_4"; exit 1; }
+python3 -I desync/mkpar.py 4 "$t/pc.pg" "$t/pc.start" > /dev/null; cmp -s "$t/pc.start" desync/instances/parc_4.start || { echo "mkpar drifted from parc_4"; exit 1; }
+# R136 (successor 33): pattern clock. pclock/patcount.py on mkrb K 4 m 8: PAT = SERVED = K = 4 (clock hp, 3 switches; PAT-SW checked online);
+# shared T clock pclock/mkte.py (Lemma ALT-ESCAPE): te_8 pin, 9 iterations, 0 served waits
+python3 -I span/mkrb.py 4 8 "$t/rb48.pg" "$t/rb48.start" > /dev/null; out=$(python3 -I pclock/patcount.py "$t/rb48.pg" "$t/rb48.start"); [[ "$out" == "PATCOUNT rb48.pg n 78 iterations 72 self-routed-blocks 519 served-waits 57 max-PAT 4 max-SERVED 4 at-max-PAT: busiest route vertex hp with 3 switches" ]] || { echo "patcount rb48 drifted: $out"; exit 1; }
+python3 -I pclock/mkte.py 8 "$t/te8.pg" "$t/te8.start" > /dev/null; cmp -s "$t/te8.pg" pclock/instances/te_8.pg && cmp -s "$t/te8.start" pclock/instances/te_8.start || { echo "mkte drifted from te_8"; exit 1; }
+out=$(python3 -I pclock/patcount.py pclock/instances/te_8.pg pclock/instances/te_8.start); [[ "$out" == "PATCOUNT te_8.pg n 82 iterations 9 self-routed-blocks 2 served-waits 0 "* ]] || { echo "patcount te_8 drifted: $out"; exit 1; }
+# R137 (successor 33): FREE returns at one edge, quadratic: free/obsx.py (two interleaved R120 observers, BLK=2, + chooser X) on mkrw K m:
+# returns per edge K*m/4 in one W-run (K 4 m 16: 16; pin fx_K8_m32: 64)
+python3 -I span/mkrw.py 4 16 "$t/fw4.pg" "$t/fw4.start" > /dev/null; BLK=2 OWNER=0 ABOVE=a python3 -I free/obsx.py "$t/fw4.pg" "$t/fw4.start" "$t/f4.pg" "$t/f4.start" > /dev/null
+out=$(python3 -I free/xret.py "$t/f4.pg" "$t/f4.start"); [[ "$out" == "XRET f4.pg n 130 iterations 76 fallbacks 0 tau-changes 0 X-switches 33 returns-per-edge [16, 16]" ]] || { echo "xret f4 drifted: $out"; exit 1; }
+python3 -I span/mkrw.py 8 32 "$t/fw8.pg" "$t/fw8.start" > /dev/null; BLK=2 OWNER=0 ABOVE=a python3 -I free/obsx.py "$t/fw8.pg" "$t/fw8.start" "$t/f8.pg" "$t/f8.start" > /dev/null
+cmp -s "$t/f8.pg" free/instances/fx_K8_m32.pg && cmp -s "$t/f8.start" free/instances/fx_K8_m32.start || { echo "obsx drifted from fx_K8_m32"; exit 1; }
+# R138 (successor 33): R*_F = K*m in one W-run on mkrw LATE=1 (L-NEW box 85 xirise.py; latec.py second counter): K 4 m 8: R* 32; pin
+# rstar/instances/latew_K16_m32 (R* 512 > n 482; regenerated and sha1-checked)
+LATE=1 python3 -I span/mkrw.py 4 8 "$t/l48.pg" "$t/l48.start" > /dev/null; out=$(python3 -I span/latec.py "$t/l48.pg" "$t/l48.start"); [[ "$out" == "LATEC l48.pg n 122 iter 44 cuts 0 fallbacks 0 R* 32 late 33 max-per-edge-Wrun 4" ]] || { echo "latec l48 drifted: $out"; exit 1; }
+sha1sum -c --quiet rstar/latew_K16_m32.sha1 || { echo "latew_K16_m32 pin changed"; exit 1; }
+LATE=1 python3 -I span/mkrw.py 16 32 "$t/l1632.pg" "$t/l1632.start" > /dev/null; cmp -s "$t/l1632.pg" rstar/instances/latew_K16_m32.pg && cmp -s "$t/l1632.start" rstar/instances/latew_K16_m32.start || { echo "mkrw drifted from latew_K16_m32"; exit 1; }
+# R139 (successor 33): XICH at ONE vertex quadratic: R120 Even wave observer on mkrw (mix/obs2.py OWNER=0 ABOVE=a): XICH(obs) = Km + K + 1
+# (xich/xichc.py, n5b); K 4 m 8: 37; pin xich/instances/obs_K12_m24 (301 at n 272)
+python3 -I span/mkrw.py 4 8 "$t/xw4.pg" "$t/xw4.start" > /dev/null; OWNER=0 ABOVE=a python3 -I mix/obs2.py "$t/xw4.pg" "$t/xw4.start" "$t/xo4.pg" "$t/xo4.start" > /dev/null
+out=$(python3 -I xich/xichc.py "$t/xo4.pg" "$t/xo4.start"); [[ "$out" == "XICHC xo4.pg n 96 iterations 44 max-XICH 37 at obs (W-run length so far 44)" ]] || { echo "xichc drifted: $out"; exit 1; }
+sha1sum -c --quiet xich/obs_K12_m24.sha1 || { echo "obs_K12_m24 pin changed"; exit 1; }
+python3 -I span/mkrw.py 12 24 "$t/xw12.pg" "$t/xw12.start" > /dev/null; OWNER=0 ABOVE=a python3 -I mix/obs2.py "$t/xw12.pg" "$t/xw12.start" "$t/xo12.pg" "$t/xo12.start" > /dev/null
+cmp -s "$t/xo12.pg" xich/instances/obs_K12_m24.pg && cmp -s "$t/xo12.start" xich/instances/obs_K12_m24.start || { echo "obs2 drifted from obs_K12_m24"; exit 1; }
+# R140 (successor 33): Friedmann 0901.2731 / PGSolver switchallexp: switch-all V0 70 iterations at N 3, S4a arena optimum vs sigma-bar V1 8
+# (fried/hybrid.py, Lemma ARENA-MAX); pins fried/instances/switchallexp_4/_6 (N5 8 / 12 iterations, xeng identical)
+python3 ../hard-families/pgsolver_port.py switchallexp 3 > "$t/sa3.pg"
+out=$(python3 -I fried/hybrid.py "$t/sa3.pg" V0); [[ "$out" == "HYBRID sa3.pg V0 iterations 70" ]] || { echo "hybrid V0 drifted: $out"; exit 1; }
+out=$(python3 -I fried/hybrid.py "$t/sa3.pg" V1); [[ "$out" == "HYBRID sa3.pg V1 iterations 8" ]] || { echo "hybrid V1 drifted: $out"; exit 1; }
+sha1sum -c --quiet fried/pins.sha1 || { echo "fried pins changed"; exit 1; }
+python3 ../hard-families/pgsolver_port.py switchallexp 4 | cmp -s - fried/instances/switchallexp_4.pg || { echo "switchallexp 4 drifted"; exit 1; }
+out=$(python3 -I seg/xeng.py fried/instances/switchallexp_4.pg fried/instances/switchallexp_4.start | tr '\n' ' '); [[ "$out" == "n5b: states 9 iterations 8 "*"identical: True " ]] || { echo "xeng switchallexp_4: $out"; exit 1; }
+# R141 (successor 33): W-constant intervals (L-SI box 51b [P-INT]): wint/wint.py gives 8 on u23sw64_n32 (L-SI's max); idxmono: 26 of 64 upward
+out=$(python3 -I wint/wint.py xing/instances/u23sw64_n32.pg); [[ "$out" == "WINT u23sw64_n32.pg n 32 longest-W-constant-interval 8 iterations 16" ]] || { echo "wint drifted: $out"; exit 1; }
+out=$(python3 -I wint/idxmono.py xing/instances/u23sw64_n32.pg | cut -d' ' -f1-6); [[ "$out" == "IDXMONO u23sw64_n32.pg interval-switches 64 upward 26" ]] || { echo "idxmono drifted: $out"; exit 1; }
+# R142 (successor 33): BIP(rho, tau) (L-NEW box 88). bip/bip.py (n5b) = bip/bip2.py (si.py) on the search pins: 24 steps at n 12, 13 at n 8
+sha1sum -c --quiet bip/pins.sha1 || { echo "bip pins changed"; exit 1; }
+for p in "bipsearch_n12 24" "bipsearch_n8 13"; do set -- $p
+  a=$(python3 -I bip/bip.py bip/instances/$1.pg bip/instances/$1.start); b=$(python3 -I bip/bip2.py bip/instances/$1.pg bip/instances/$1.start)
+  [[ "$a" == "BIP $1.pg n "*" steps $2" && "$b" == "BIP2 $1.pg n "*" steps $2" ]] || { echo "bip $1 drifted: $a / $b"; exit 1; }
+done
+# R142b (successor 33): lagged-clone fx (free/fxlag.py) against BIP-REL-1: sigma-bar re-routes (71 frozen stretches in 76 iterations), max strict
+# releases of one edge in one frozen stretch 1 (bip/strictrel.py); pin free/instances/fxlag_K4_m16 (xeng identical, Oink OK)
+sha1sum -c --quiet free/fxlag.sha1 || { echo "fxlag pin changed"; exit 1; }
+python3 -I span/mkrw.py 4 16 "$t/fl.pg" "$t/fl.start" > /dev/null; python3 -I free/fxlag.py "$t/fl.pg" "$t/fl.start" "$t/flx.pg" "$t/flx.start" > /dev/null
+cmp -s "$t/flx.pg" free/instances/fxlag_K4_m16.pg && cmp -s "$t/flx.start" free/instances/fxlag_K4_m16.start || { echo "fxlag drifted"; exit 1; }
+out=$(python3 -I bip/strictrel.py free/instances/fxlag_K4_m16.pg free/instances/fxlag_K4_m16.start); [[ "$out" == "STRICTREL fxlag_K4_m16.pg n 234 iterations 76 frozen-stretches 71 max-strict-releases-one-edge-one-stretch 1 at ('w1', 'T1')" ]] || { echo "strictrel drifted: $out"; exit 1; }
 TMPDIR="$t" python3 correspond.py 2 3 4 5 6 > "$t/corr.log" || { cat "$t/corr.log"; exit 1; }
 python3 xcheck.py --games 150 --nmax 7 --seed 7 > "$t/x.log" || { cat "$t/x.log"; exit 1; }
-echo "red check: R134 ZXC(obs) 69/76; R133 lazyhurt_n9 3 vs 6; R132 mkrt REP 21, DAG-tau* 200/200; R131 tiedrb_K8_m16 pin, untied re-blocked 18 at K 4 m 8; R130 wdepth_K4_m64 pin, depth 7 at m 16; R127 latew_K8_m32 pin, R* 64 at K 4; R124 mkrb K3 30, bidir_K8_m32 pin; R123 spanobs_K12_m48 pin, span(e, o) MAT 34 at K 4; carryobs_K12_m48 pin, SEG 53 at K 4; R122 FG 119/28; R121 tobs_K8_m32 pin, target #MAT 60; R120 wobs_K8_m32 pin, observer #MAT 60 at K 4; R119 mgcheck dw_3 0/1145, mixgate 3 300 1 = 2; R118 mk_20_80 pin, tstretch 21; R116 dw_3 134/11, dw_4 286/26; R114 sf2/fsubexp OK; R115 fc3 121/9; r2_check PASS (R11), bsolo 4 = 4 tangles/7 iterations (R10); dtl_flipflop F8 = 36/1/5 (R9), Claim P/Q 0 violations; zadeh_lb N2 = 43 (no fixed order, R7); fhz_padded 2 S7 = 16 (R5 kill);  friedmann_Gn 2 S7 = 15; fhz lockstep3/relation/export OK; gated_bland 6 = 63 MSF iterations (regions = Zielonka, strategies verified); Claim F instances; MSF == Bland N<=6; $(tail -1 "$t/x.log")"
+echo "red check: R142 bip 24 at n 12; R141 wint 8 / up 26; R140 switchallexp 3 V0 70 / V1 8; R139 XICH(obs) 37 at K4 m8; R138 R* 32 at K4 m8; R137 FREE 16/edge at K4 m16; R136 rb48 PAT 4, te_8 0 served; R135 dg_16 4 iterations, noup k5 7 vs 31; R134 ZXC(obs) 69/76; R133 lazyhurt_n9 3 vs 6; R132 mkrt REP 21, DAG-tau* 200/200; R131 tiedrb_K8_m16 pin, untied re-blocked 18 at K 4 m 8; R130 wdepth_K4_m64 pin, depth 7 at m 16; R127 latew_K8_m32 pin, R* 64 at K 4; R124 mkrb K3 30, bidir_K8_m32 pin; R123 spanobs_K12_m48 pin, span(e, o) MAT 34 at K 4; carryobs_K12_m48 pin, SEG 53 at K 4; R122 FG 119/28; R121 tobs_K8_m32 pin, target #MAT 60; R120 wobs_K8_m32 pin, observer #MAT 60 at K 4; R119 mgcheck dw_3 0/1145, mixgate 3 300 1 = 2; R118 mk_20_80 pin, tstretch 21; R116 dw_3 134/11, dw_4 286/26; R114 sf2/fsubexp OK; R115 fc3 121/9; r2_check PASS (R11), bsolo 4 = 4 tangles/7 iterations (R10); dtl_flipflop F8 = 36/1/5 (R9), Claim P/Q 0 violations; zadeh_lb N2 = 43 (no fixed order, R7); fhz_padded 2 S7 = 16 (R5 kill);  friedmann_Gn 2 S7 = 15; fhz lockstep3/relation/export OK; gated_bland 6 = 63 MSF iterations (regions = Zielonka, strategies verified); Claim F instances; MSF == Bland N<=6; $(tail -1 "$t/x.log")"

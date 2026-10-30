@@ -397,10 +397,76 @@ if grep -q "RETWCH tog6b_n32.pg n 32 wruns 1 {'returns': 4, 'paid-W': 3, 'paid-t
 else
   echo "box 78 RETWCH check: FAILED"; exit 1
 fi
-w30=$(cd .. && python3 -I new/box79/flatsrc.py n5-epoch/instances/nep92_n40.pg n5-epoch/instances/nep92_n40.start)
-if grep -q "{'K-rise': 20, 'FLATTR': 73, 'FSW': 73} max-FLATTR-phase 73 max-FLATSW-(x,phase) 8" <<<"$w30"; then
+w30=$(cd .. && python3 -I new/box79/wchpk.py red/so/instances/tog6b_n32.pg; python3 -I new/box79/wchpk.py red/so/instances/tog6b_n32.pg --lzc; python3 -I new/box79/symtest.py ../docs/new/P-N5-WCH-box79-line-W1.txt | tail -1; python3 -I new/box79/quotecheck.py | tail -1)
+if grep -q "WCHPK tog6b_n32.pg n 32 wruns 1 {'returns': 4, 'paid-W': 3, 'TT': 1, 'TIE': 2} " <<<"$w30" && grep -q "WCHPK tog6b_n32.pg n 32 wruns 1 {'returns': 3, 'paid-W': 3, 'TIE': 0} " <<<"$w30" && grep -q "^SYMTEST PASS" <<<"$w30" && grep -q "^QUOTECHECK PASS" <<<"$w30"; then
+  echo "box 79 WCH: P-N5-WCH RET-WCH (TT form) on tog6b_n32 (N5 TT 1, N5-LZC TIE 0); line W1 strict symbol test PASS; SPEC quote check PASS"
+else
+  echo "box 79 WCH check: FAILED"; exit 1
+fi
+w31=$(cd .. && python3 -I new/box79/flatsrc.py n5-epoch/instances/nep92_n40.pg n5-epoch/instances/nep92_n40.start)
+if grep -q "{'K-rise': 20, 'FLATTR': 73, 'FSW': 73} max-FLATTR-phase 73 max-FLATSW-(x,phase) 8" <<<"$w31"; then
   echo "box 79 FLATSRC: nep92_n40 all 73 flat transitions carry a flat Even switch (<= 8 per vertex): PASS"
 else
   echo "box 79 FLATSRC check: FAILED"; exit 1
+fi
+w32=$(cd .. && python3 -I new/box80/ladder.py 8)
+if grep -q "LADDER k 8 n 18 switches 749 T-rises 255 (2^k-1 = 255) distinct-T 256 strict True non-improving-switches 0 monotonicity-violations 0 cycle-nodes \[0\]" <<<"$w32"; then
+  echo "box 80 LADDER: ladder_8 (n 18) one vertex takes 256 W-values under single improving switches (relaxation R0): PASS"
+else
+  echo "box 80 LADDER check: FAILED"; exit 1
+fi
+w33=$(cd .. && python3 -I new/box81/gladder.py 6; python3 -I new/box81/ladder_r1.py 4)
+if grep -q "GLADDER k 6 n 36 steps 177 T-values 64 (2^k = 64) {'X>W': 0, 'X-decrease': 0, 'offer-mismatch': 0, 'non-improving': 0, 'W-decrease': 0}" <<<"$w33" && grep -q "LADDER-R1 k 4 n 10 max-T-rises from all-0 start 4 from any start 4 " <<<"$w33"; then
+  echo "box 81 R1: ungated ladder_4 only 4 rises under ranking offers; gated gl_6 64 W-values under R1 (R1-POLY DEAD): PASS"
+else
+  echo "box 81 R1 check: FAILED"; exit 1
+fi
+w34=$(cd .. && python3 -I new/box82/ogladder.py 6)
+if grep -q "OGLADDER k 6 n 36 odd-gates 22 steps 177 T-values 64 (2^k = 64) cycle-nodes \[0\] {'X>W': 0, 'X-decrease': 0, 'offer-mismatch': 0, 'non-improving': 0, 'W-decrease': 0}" <<<"$w34"; then
+  echo "box 82 R2: Odd-gated ogl_6 64 W-values with X a pair valuation (R2-POLY DEAD): PASS"
+else
+  echo "box 82 R2 check: FAILED"; exit 1
+fi
+w35=$(cd .. && python3 -I new/box84/waits.py --rand 8 300 1 | head -1; python3 -I new/box84/altcheck.py 10 300 7 | tail -1; python3 -I new/box84/retclass.py red/so/instances/pftheta34_n32.pg | tail -1)
+if grep -q "WAITS-RAND n 8 trials 300 seed 1 totals {'viol': 0, 'e0ret': 0, 'deadc': 0, 'reg': 601, 'e0': 85, 'xoncyc': 276}" <<<"$w35" && grep -q "ALTCHECK n 10 trials 300 seed 7 {'alt_reg': 8, 'alt_e0': 8, 'e0_max': 1, 'rise_viol': 0, 'charge_viol': 0," <<<"$w35" && grep -q "RETCLASS n 32 mE 80 runs 1 totals {'REG': 26, 'E0': 0, 'FREE': 16, 'sw': 74, 'bound_viol': 0} maxima {'REG': 3, 'E0': 0, 'FREE': 3, 'F': 34, 'wch': 7}" <<<"$w35"; then
+  echo "box 84 WAIT: WAIT-CYCLE' 0 violations, DEADC 0, E0-BOUND / RISE / CHARGE 0 violations, return classes on pftheta34_n32: PASS"
+else
+  echo "box 84 WAIT check: FAILED"; exit 1
+fi
+w36=$(cd .. && python3 -I new/box85/freeclass.py red/so/instances/pftheta34_n32.pg | tail -1; python3 -I new/box85/xirise.py new/box52/out/topfix_n6.pg | tail -1)
+if grep -q "FREECLASS n 32 mE 80 runs 1 totals {'REG': 26, 'E0': 0, 'FREE': 16, 'sw': 74, 'bound_viol': 0, 'F-LAT': 13, 'F-paidW': 16, 'F-TT': 0, 'F-GAP': 1, 'F-NT': 2}" <<<"$w36" && grep -q "XIRISE n 126 runs 2 {'ret': 80, 'viol_edge': 0, 'viol_rise': 0, 'viol_fr': 0} maxima {'ret': 9, 'xich': 20, 'wch': 20, 'rstar': 0, 'fl': 0, 'F': 34}" <<<"$w36"; then
+  echo "box 85 FREE: FREE classes on pftheta34_n32; RET-XIRISE and FREE-RED 0 violations on topfix_n6: PASS"
+else
+  echo "box 85 FREE check: FAILED"; exit 1
+fi
+w37=$(cd .. && python3 -I new/box86/rstar.py red/usplit/instances/gate_K16_n197.pg red/usplit/instances/gate_K16_n197.start; python3 -I new/box86/pch.py red/xing/instances/j10_n24.pg)
+if grep -q "RSTAR n 197 runs 1 {'gapdev_viol': 0, 'cap_viol': 1, 'blocked': 205} maxima {'rstar': 16, 'dev': 5, 'devch': 16, 'F': 23, 'n': 197}" <<<"$w37" && grep -q "PCH n 24 runs 2 {'lam_viol': 0, 'len_viol': 0, 'xich_viol': 0, 'rstar_viol': 0} maxima {'lch': 0, 'pch': 11, 'len': 1, 'xich': 11, 'rstar': 10, 'n': 24}" <<<"$w37"; then
+  echo "box 86 RSTAR: GAP-DEV 0 violations, DEV-CAP DEAD on gate_K16_n197 (R* 16 > 5 deviation edges), RSTAR-PCH 0 violations on j10_n24: PASS"
+else
+  echo "box 86 RSTAR check: FAILED"; exit 1
+fi
+w38=$(cd .. && python3 -I new/box87/depth.py red/usplit/instances/gate_K16_n197.pg red/usplit/instances/gate_K16_n197.start; python3 -I new/box87/depth.py new/box54/out/switchbestexp_4.pg)
+if grep -q "DEPTH n 197 runs 1 {'prefix_viol': 0} maxima {'depth': 2, 'd1': 1, 'd2': 1, 'd4': 0, 'xich': 15, 'flip': 1}" <<<"$w38" && grep -q "DEPTH n 110 runs 2 {'prefix_viol': 0} maxima {'depth': 15, 'd1': 14, 'd2': 14, 'd4': 13, 'xich': 15, 'flip': 2}" <<<"$w38"; then
+  echo "box 87 ARV: PREFIX-MON 0 violations; SHALLOW-k DEAD on switchbestexp_4 (depth 15, DEEP_4 13): PASS"
+else
+  echo "box 87 ARV check: FAILED"; exit 1
+fi
+w39=$(cd .. && python3 -I new/box88/release.py red/usplit/instances/gate_K16_n197.pg red/usplit/instances/gate_K16_n197.start; python3 -I new/box88/release.py red/so/instances/pftheta34_n32.pg)
+if grep -q "RELEASE n 197 runs 1 {'late': 18, 'ODD': 3, 'EVEN': 15, 'kept': 15} maxima {'F': 23, 'rstar': 16, 'sb': 16, 'dv': 16, 'wch_tr': 23, 'n': 197}" <<<"$w39" && grep -q "RELEASE n 32 runs 1 {'late': 7, 'ODD': 7, 'EVEN': 0, 'kept': 0} maxima {'F': 34, 'rstar': 4, 'sb': 34, 'dv': 34, 'wch_tr': 34, 'n': 32}" <<<"$w39"; then
+  echo "box 88 ONEP: release classes (ODD / EVEN) on gate_K16_n197 and pftheta34_n32: PASS"
+else
+  echo "box 88 ONEP check: FAILED"; exit 1
+fi
+w40=$(cd .. && python3 -I new/box89/relpe.py si/root/instances/ueonce_n27.pg; STRICT=1 python3 -I new/box89/relpe.py si/root/instances/ueonce_n27.pg; python3 -I new/box89/bipprobe.py red/usplit/instances/gate_K16_n197.pg red/usplit/instances/gate_K16_n197.start)
+if grep -q "RELPE n 27 mE 80 runs 1 maxima {'late_edge': 2, 'rstar': 4, 'F': 10, 'frozen_edge': 2} argmax-edge (10, 23)" <<<"$w40" && grep -q "RELPE n 27 mE 80 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 10, 'frozen_edge': 0} argmax-edge None" <<<"$w40" && grep -q "BIPPROBE n 197 {'single_dev': 1, 'no_driver_W': 1, 'lift_before': 1, 'lifter_plain': 1} maxima {'stretch': 3, 'rel': 1, 'nvals': 2, 'depth': 1}" <<<"$w40"; then
+  echo "box 89 BIP: non-strict BIP-REL-1 DEAD on ueonce_n27 (2), strict form 0; release anatomy on gate_K16_n197: PASS"
+else
+  echo "box 89 BIP check: FAILED"; exit 1
+fi
+w41=$(cd .. && python3 -I new/box90/sbv.py red/so/instances/pftheta34_n32.pg; python3 -I new/box90/relrand.py 8 300 5)
+if grep -q "SBV n 32 runs 1 maxima {'sb': 34, 'sbv': 34, 'ret': 18, 'F': 34} sb/n 1.06" <<<"$w41" && grep -q "RELRAND n 8 trials 300 seed 5 max-strict-per-edge 0" <<<"$w41"; then
+  echo "box 90 REL: SB-LIN DEAD on pftheta34_n32 (34 > 32); random strict-release search 0: PASS"
+else
+  echo "box 90 REL check: FAILED"; exit 1
 fi
 rm -rf "$tmp"
