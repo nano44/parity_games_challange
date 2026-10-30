@@ -60,3 +60,5 @@ Joint position on the line: MATCHES, no REQUIRED fix. Precisions for W1: L-1 (bi
 - FINDINGS: verdicts identical; gap map EMPTY; every item SIGNED by both; OPT-ONLY TRUE is a JOINT finding, checked independently by both and
   transferring nothing to N5; L-4 (R84 (a) not cited) was missed by me.
 - NEEDS: Lead: the W1 line and fixes SHA for a word-diff.
+
+- W1 check (Lead 10:53Z; l-new c930e26f docs/new/P-N5-WCH-box79-line-W1.txt sha1 00f9e375c448153f19b7620037a2723f6d10a0b1, fixes sha1 8377a1b8baa0e53cb4df509d1aa91f427628983d, re-measured; packet unchanged 31caa72e; my own word diff 9ac6fdba → W1, written 10:55Z by date -u): exactly the four changes. L-4: «R84 (a) (Fact DELTA),» added to the premises. L-1: «k → k + 1» bound inside NZ_P's clause. L-2: «for a function w : ℕ → ℕ». L-3: σ′ defined directly, and the inlined rule equals §7.1's three cases verbatim in content (length ≥ 1 and v ⊕ W*(σ_t v) = W*(v); W*(v) = (v, ∅, 0) with W*(σ_t v) of cycle node v and empty path set; else σ*(v)). OPT-ONLY label kept (Lead option (a)). Strict symbol test of the whole W1 line: no free symbol, no unlanded source. MATCHES (Opus 5.5, D15).
