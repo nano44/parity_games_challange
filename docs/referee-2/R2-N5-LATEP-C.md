@@ -103,6 +103,28 @@ si/check.sh «box 51»-«box 53», set -euo pipefail): three PASS lines, exit 0,
 - REFEREE's 36 / 110 come from a different run set (given start and S3, n ≤ 120); F6 says so.
 - N-7 and N-8: CLOSED.
 
+## C.6 Line F16 (l-si baa8a48a, docs/si/P-N5-LATEP-line-F16.txt sha1 65277add…, fixes sha1 66c85a16…; both re-hashed: match)
+- Word-diff F1 (a85759a2) → F16, my own (difflib over tokens, 529 → 539), all of it: «R15» → «R15 (a), (d)»; «+ R57 (a) (premise (VJ)),»;
+  «− W-MON,» (R88's list); «+ W-MON′,» (R90's list); «a REPEAT′ if» → «a REPEAT′ if it is LATE′ and». Exactly F16's five changes, nothing else;
+  every displayed inequality, date and scope tail token-identical.
+- Use-by-use check, against the frozen packet and RESULTS. Every W-monotonicity use in §3-§7 is covered by a landed W-run form:
+  - The packet cites «W-MON» explicitly only at §1 l. 38, §5 l. 99 and §6 l. 109.
+  - R88's W-MON (P-N5-GP §2 l. 72) is stated «inside a phase», and λ_Ξ may change on a W-run.
+  - R90 (b) W-MON′ (RESULTS l. 6188: «At an S4a step t → t + 1 with τ* := τ_t: W^{τ*}_{t+1} ⊵ W^{τ*}_t pointwise») covers every transition
+    of F, because every transition of F is an S4a step with τ kept. That covers l. 99 (chained over [t_b, s]) and l. 109.
+  - §3's W-MON sits inside R88's FW-R* proof, which R89 GP*-RUN carries to W-runs.
+  - §4 uses W-SUCC (R90), not W-MON.
+  - §7 uses [V1], [V2] and λ_W-constancy, with no W-monotonicity.
+  - My data agree: WMON 0 violations on every W-run.
+- REPEAT′ (F16 (1)): a real line defect that BOTH referees MISSED. F1's «a REPEAT′ if (y, z) has an earlier LATE′ adoption» classifies
+  adoptions, not LATE′ adoptions. My checker coded the packet's reading (REPEAT′ ⊆ LATE′), so it never exposed the difference.
+- W-MON scope (F16 (2)): BOTH referees MISSED it too. Both reports accepted «W-MON on F» without checking that R88's form is per phase.
+  The packet's proofs remain correct with R90 (b) W-MON′ in its place, so no verdict changes.
+- My strict symbol test of F16 (every symbol): as in C.5.2, plus three items. «it» is the adoption of (y, z) at u being classified. R15 (a),
+  (d) is landed (RESULTS R15 l. 640 (d)). R57 (a) premise (VJ) is landed (RESULTS l. 2907). R90 (b) W-MON′ is landed (l. 6188). With REPEAT′ ⊆
+  LATE′, X′_F's «the earliest blocked state as in the definition of LATE′» always exists. No free symbol, no unlanded binder.
+- Verdict (Opus 5.5, D15): line F16 MATCHES §3-§7. F16's two items are corrections, with no widening; the REPEAT′ change narrows the line.
+
 ## DONE / FINDINGS / NEEDS
 - DONE: this §C.
 - FINDINGS: (1) joint proof-gap map EMPTY: every item of §2-§7 SIGNED by both referees; (2) the line needs TWO required fixes: J-1 (mine,
