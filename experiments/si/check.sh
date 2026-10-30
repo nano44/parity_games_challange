@@ -815,3 +815,7 @@ echo "si (box 43: P-N5-CUT quotes, hntop_n3 R* 0): PASS"
 o=$(python3 -I odd/repchain.py ../red/so/instances/so_th_n32.pg); grep -q "rep 2 silent 0 parF 0 parR 0 parS 2 maxdepth 1 LDEC_V 2 late 6" <<<"$o"
 o=$(python3 -I odd/repchain.py ../new/box59/out/fc_8.pg); grep -q "rep 6 silent 0 parF 0 parR 0 parS 6 maxdepth 1 LDEC_V 0 late 30" <<<"$o"
 echo "si (box 44: repeat cause chains): PASS"
+# box 45 (docs/si/N5-PLAIN-box45.md): plain-wave transition form DEAD (runfam_K10 85 > 48); REP-PLAIN DEAD on latew_K20_m32 (570 FIRST parents).
+o=$(python3 -I odd/repchain.py runlin/instances/runfam_K10.pg); grep -q "late 19 PLAINW 85 PLAINV 5" <<<"$o"
+o=$(python3 -I odd/repchain.py odd/inst/red/latew_K20_m32.pg odd/inst/red/latew_K20_m32.start); grep -q "rep 570 silent 0 parF 570 parR 0 parS 0 maxdepth 1 .*late 641 PLAINW 60 PLAINV 39" <<<"$o"
+echo "si (box 45: plain-wave and REP-PLAIN kills): PASS"
