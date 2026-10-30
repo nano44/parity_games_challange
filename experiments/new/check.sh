@@ -505,4 +505,10 @@ if grep -q "ORDDET n5s_maxph_0.pg n 5 STATES 4 WRUNS 1 REFMINX 0 REFMINUX 0 ODU 
 else
   echo "box 97 ORD check: FAILED"; exit 1
 fi
+w48=$(cd .. && python3 -I new/box98/retpay.py red/usplit/instances/gate_K64_n581.pg red/usplit/instances/gate_K64_n581.start)
+if grep -q "RUN 0-71 F 71 mE 1119 entries 542 FRESH 71 RET 0 NORET 71 ORDRET 59 ORDRET_NR 59 ORDRET_FR 59 FLIPS 64 |A| 11" <<<"$w48"; then
+  echo "box 98 RET: gate_K64 W-run has 59 order returns, 64 sbar-changes and no Even-edge return (all paid by fresh entries): PASS"
+else
+  echo "box 98 RET check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

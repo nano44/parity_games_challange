@@ -12,6 +12,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   subclass; even both lemmas bound only the SB term, which HEAD-RED' already removed (residual = Xi-changes at heads, not order changes).
 - DATA: box97/orderdet.py on 1,132 corpus runs + 3 pins: REFMINX 0, REFMINUX 0, ODR 0, ODA 0; ODU 20 runs. Pins check.sh «box 97 ORD».
 ### Box 97 pushed 508a8711 (VERIFY PASS), reported to the Lead 20:23Z.
+### WRUN fixes entry 6 / line L-5 (57dff7b2; CHECKER C105 E-1 verbatim; L-5 = L-4 + «a state s of Φ»; fixes 94f6133f, L-5 e0b4f4a7). Referees word-diff L-5.
+### Box 98 N5-RET (Lead 20:42Z: what pays for a head-type return, T61): docs/new/N5-RET-box98.md
+- PROVED (lane) Lemma PAY: every W-run transition has a fresh Even entry or an Even-edge return; head-type returns <= |F| <= (m_E - n_E) + RETT_F.
+- DATA: gate_K / pp_K: RET 0, all order returns paid by fresh entries; sbq2 / obs / latew: 0 order returns, RETT ~0.8-0.9|F|. Corpus 1,695
+  W-runs, 0 violations. READING: the missing charge is for Even-edge returns (XI-CH-POLY via RET-XIRISE), not type returns.
 ### Things only I know (successor 40): sb53 tools (rootflip.py etc.) and T60 are only on origin/claude/l-si / l-lit; I read them via git show.
   orderdet.py on latew_K16_m32 takes ~50 s; runod.sh ~6 min on 4 cores.
 
