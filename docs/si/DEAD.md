@@ -594,3 +594,8 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
   needs only some cycle through it (the VJ00 5.8 own-cycle-node trap).
 - W-VLIN (≤ n W-changes of one vertex per guided stretch). Kill: red/seg/instances/hntop_n8.pg + .start (n 168): 171 in one
   291-transition guided stretch. Obstruction: H_n's lane sweeps.
+
+## box 39 (L-SI successor 30, docs/si/N5-SPANW-box39.md §2; odd/spanw.py)
+- Span version of W-ENT, PCH^span ≤ WCH^span + O(n). Kill: red/so/instances/rise_thin51_n40.pg (S3), pair (28, 1), λ-run from 9: one
+  out-window [14, 77), τ constant, 55 P-changes of Ξ(1) and 0 changes of W(1). Obstruction: Ξ follows σ̄'s play, W follows τ's; S4c
+  fallbacks cut the window into 8 guided stretches, so W-RETURN does not apply.

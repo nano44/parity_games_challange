@@ -780,3 +780,25 @@ o=$(MODE=fg:first python3 -I odd/wret.py ../new/box59/out/fc_3.pg); grep -q "WMO
 o=$(MODE=sa:first python3 -I odd/wret.py ../new/box54/out/switchallexp_3.pg); grep -q "WMON_V 22 WRET_V 39 REENT 377 .* FAIL$" <<<"$o"
 o=$(python3 -I odd/wret.py ../red/so/instances/tog6b_n32.pg); grep -q "WRET_V 0 REENT 4 WPAID 3 SILENT 0 VFORM_V 0 CYC 1 OPT_V 0 .* PASS$" <<<"$o"   # own-cycle-node re-entry excluded
 echo "si (box 37: target forms on R120 pins; W-RETURN holds under S4a, mutation and switch-all control fire): PASS"
+# box 38 (docs/si/N5-SPAN-box38.md): Lemma SPAN (ENT ≤ n(1 + PCH^span), 0 violations); the in-window form is inflated on R121's
+# tobs_K8_m32 (248 MATCHED in one in-window), the out-window and span forms are not (7).
+o=$(SIDE=E python3 -I odd/win.py odd/inst/red/tobs_K8_m32.pg odd/inst/red/tobs_K8_m32.start)
+grep -q "n 233 pairs 96 maxENT 8 SPAN_V 0 .*OUTRISE_V 0 | IN: MAT 248 PCH 263 SEG 2 at (231, 198, 0) OUT: MAT 7 PCH 14 SEG 1 at (102, 104, 0) SPAN: MAT 7 PCH 14 SEG 1" <<<"$o"; grep -q "PASS$" <<<"$o"
+o=$(SIDE=E python3 -I odd/win.py ../red/n5inj/instances/returns_rt32.pg --mut); grep -q "SPAN_V 1 SPAN1 1 .*ex (12, 10, 3, 2, 0)" <<<"$o"   # control: length-only re-entry needs the factor n
+echo "si (box 38: Lemma SPAN holds; in-window form inflated on tobs, span form not): PASS"
+# box 38 §6: W-frame windows on hntop_N (N = 3 pinned: one guided stretch of 61; all 31, span 28, out 28 = 2N²+5N−5).
+o=$(python3 -I odd/wret.py odd/inst/hn/hntop_n3.pg odd/inst/hn/hntop_n3.start); grep -q "iter 61 .*WRET_V 0 .*OPT_V 0 maxSW 28 maxWR 31 maxWRspan 28 maxWRout 28 .*PASS$" <<<"$o"
+echo "si (box 38 §6: hntop_3 W-window counts): PASS"
+# box 39 (docs/si/N5-SPANW-box39.md): span P-changes without W-changes (rise_thin51_n40 pair (28, 1): 55 vs 0); co-movement on hntop_3.
+o=$(python3 -I odd/spanw.py ../red/so/instances/rise_thin51_n40.pg); grep -q "PCH 759 CO 388 WCH 388 TQ 759 maxPCH 55 maxDIFF 55 .*ex (28, 1, 9, 55, 0, 0)" <<<"$o"
+o=$(python3 -I odd/spanw.py odd/inst/hn/hntop_n3.pg odd/inst/hn/hntop_n3.start); grep -q "PCH 373 CO 373 WCH 392 .*maxDIFF 0 " <<<"$o"
+echo "si (box 39: span P-changes need not come with W-changes): PASS"
+# box 40 (docs/si/N5-CUT-box40.md): Lemma W-RETURN-G (anchored re-entries are W-paid or silent), classes of re-entries across cuts.
+o=$(python3 -I odd/cuts.py ../red/so/instances/rise_thin51_n40.pg); grep -q "REENT 125 CUTRE 14 FRESH 92 CYC 0 WPAID 19 SILENT 0 VIOL 0 .*LRISE_V 0 .*maxFRESHCUT 4 .* PASS" <<<"$o"
+o=$(FR=1 python3 -I odd/cuts.py ../new/box59/out/fc_3.pg); grep -q "REENT 166 CUTRE 0 FRESH 97 .*VIOL 0 .* PASS" <<<"$o"
+o=$(FR=1 MUT=nofresh python3 -I odd/cuts.py ../red/so/instances/rise_thin51_n40.pg); grep -q "VIOL 16 .* FAIL" <<<"$o"
+o=$(MUT=off1 python3 -I odd/cuts.py ../red/so/instances/rise_thin51_n40.pg); grep -q "VIOL 92 .* FAIL" <<<"$o"
+o=$(python3 -I odd/cuts.py odd/inst/red/spanobs_K12_m48.pg odd/inst/red/spanobs_K12_m48.start); grep -q "REENT 1077 CUTRE 0 FRESH 0 CYC 0 WPAID 1077 SILENT 0 VIOL 0 .* PASS" <<<"$o"
+o=$(python3 -I odd/cuts.py odd/inst/red/carryobs_K12_m48.pg odd/inst/red/carryobs_K12_m48.start); grep -q "REENT 1609 CUTRE 0 FRESH 0 CYC 0 WPAID 1609 SILENT 0 VIOL 0 .* PASS" <<<"$o"
+o=$(FR=1 python3 -I odd/cutsx.py ../red/so/instances/rise_thin51_n40.pg); grep -q "FR_WC 68 FR_GAIN 24 FR_SAME 0 FR_GAIN0 9 FR_CYC 0 FR_LATE 15 FR_LATE_V 0" <<<"$o"
+echo "si (box 40: W-RETURN-G and cut-attached re-entries): PASS"

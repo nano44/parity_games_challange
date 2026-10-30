@@ -172,3 +172,6 @@ Five questions:
 | 2026-10-29 | L-SI | session_01V5yGRVp3epWjVsx5aH3qSm (~250k; handover 88a953f5) | session_01V5yGRXdA7p12A2AFsUdae8 (Opus, D15/D18) | 2 | PENDING (successor's check) |
 | 2026-10-29 | REFEREE-2 | session_01V5yGRW4aXFYpk1wXFkEfTp (~608k; parked after R2-N5-DW d1575e61) | session_01V5yGRZJM5wp2kkELETDyYx (Opus, D1/D15/D18) | 2 | PENDING (successor's check) |
 | 2026-10-29 | L-NEW | session_01V5yGRZhJhpJcRZhDSWTwuE (~200k; handover b66a8565) | (none yet; pacing) | - | - |
+| 2026-10-29 | L-RED | session_01V5yGRZ2y7KsHSMJMvdKBmF (~376k; handover 033dcab8 + 1e07ddfc) | session_01V5yGRZfrtk7CRqezo1wAzp (Opus, D1/D18) | 2 | none (check d6ae7cda; stale clone caught) |
+| 2026-10-29 | CHECKER | session_01V5yGRWsgxPbSEv7BN3RzX4 (~515k; handover ec4c25ca) | session_01V5yGRa9pQWTf3AmjVLrkK8 (Opus) | 2 | none (check 35f52a02; stale clone caught) |
+| 2026-10-29 | L-SI | session_01V5yGRXdA7p12A2AFsUdae8 (~270k; handover dab44572) | session_01V5yGRY6GXgHUrdpJa5WBaa (Opus, D15/D18) | 2 | none (check 0e189416; stale clone caught) |

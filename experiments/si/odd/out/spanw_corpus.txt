@@ -1,0 +1,719 @@
+SPANW fc_3.pg n 85 iter 41 pairs 107 PCH 358 CO 350 WCH 437 TQ 276 maxPCH 8 maxDIFF 2 maxRATIO 1.50 maxMIN 8 maxENT 3 ex (3, 6, 0, 3, 1, 1)
+SPANW fc_4.pg n 110 iter 47 pairs 137 PCH 450 CO 440 WCH 548 TQ 332 maxPCH 8 maxDIFF 2 maxRATIO 1.50 maxMIN 8 maxENT 3 ex (3, 6, 0, 3, 1, 1)
+SPANW fc_5.pg n 135 iter 55 pairs 167 PCH 561 CO 546 WCH 676 TQ 405 maxPCH 9 maxDIFF 3 maxRATIO 1.50 maxMIN 8 maxENT 3 ex (119, 121, 0, 9, 6, 6)
+SPANW fc_6.pg n 160 iter 62 pairs 198 PCH 670 CO 653 WCH 810 TQ 475 maxPCH 9 maxDIFF 3 maxRATIO 1.50 maxMIN 8 maxENT 4 ex (144, 146, 0, 9, 6, 6)
+SPANW fcobsR_3.pg n 90 iter 41 pairs 121 PCH 447 CO 439 WCH 539 TQ 340 maxPCH 8 maxDIFF 2 maxRATIO 1.50 maxMIN 8 maxENT 3 ex (3, 6, 0, 3, 1, 1)
+SPANW fcobsR_4.pg n 115 iter 47 pairs 151 PCH 539 CO 529 WCH 650 TQ 390 maxPCH 8 maxDIFF 2 maxRATIO 1.50 maxMIN 8 maxENT 3 ex (3, 6, 0, 3, 1, 1)
+SPANW fc_7.pg n 185 iter 68 pairs 228 PCH 770 CO 751 WCH 927 TQ 524 maxPCH 9 maxDIFF 3 maxRATIO 1.50 maxMIN 8 maxENT 4 ex (169, 171, 0, 9, 6, 6)
+SPANW fcobs_3.pg n 88 iter 41 pairs 121 PCH 447 CO 439 WCH 539 TQ 340 maxPCH 8 maxDIFF 2 maxRATIO 1.50 maxMIN 8 maxENT 3 ex (3, 6, 0, 3, 1, 1)
+SPANW ffin12_n32.pg n 32 iter 16 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW ffin4_n24.pg n 24 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW ffin5_n32.pg n 32 iter 10 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW gci2_n12.pg n 12 iter 7 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW immfail_n14.pg n 14 iter 6 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW immp_cex_n11.pg n 11 iter 1 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW gci3_n24.pg n 24 iter 16 pairs 2 PCH 2 CO 2 WCH 2 TQ 2 maxPCH 1 maxDIFF 0 maxRATIO 0.50 maxMIN 1 maxENT 1 ex None
+SPANW lcount_n23.pg n 23 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW fcobs_4.pg n 113 iter 47 pairs 151 PCH 539 CO 529 WCH 650 TQ 390 maxPCH 8 maxDIFF 2 maxRATIO 1.50 maxMIN 8 maxENT 3 ex (3, 6, 0, 3, 1, 1)
+SPANW lend13_n16.pg n 16 iter 11 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW lend27_n24.pg n 24 iter 7 pairs 2 PCH 0 CO 0 WCH 2 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 1 ex None
+SPANW lend107_n32.pg n 32 iter 26 pairs 17 PCH 32 CO 32 WCH 32 TQ 32 maxPCH 5 maxDIFF 0 maxRATIO 0.83 maxMIN 5 maxENT 2 ex None
+SPANW lend15_n48.pg n 48 iter 11 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW lend39f_n32.pg n 32 iter 13 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW lend47_n32.pg n 32 iter 22 pairs 6 PCH 11 CO 11 WCH 12 TQ 11 maxPCH 2 maxDIFF 0 maxRATIO 0.67 maxMIN 2 maxENT 1 ex None
+SPANW lend9_n8.pg n 8 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW lend55_n32.pg n 32 iter 18 pairs 3 PCH 3 CO 3 WCH 3 TQ 3 maxPCH 1 maxDIFF 0 maxRATIO 0.50 maxMIN 1 maxENT 1 ex None
+SPANW lend82_n32.pg n 32 iter 24 pairs 14 PCH 25 CO 25 WCH 25 TQ 25 maxPCH 4 maxDIFF 0 maxRATIO 0.80 maxMIN 4 maxENT 2 ex None
+SPANW lend72_n48.pg n 48 iter 13 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW nep13_n24.pg n 24 iter 12 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW nep56_n32.pg n 32 iter 18 pairs 2 PCH 3 CO 3 WCH 3 TQ 3 maxPCH 2 maxDIFF 0 maxRATIO 0.67 maxMIN 2 maxENT 1 ex None
+SPANW nconf61_n48.pg n 48 iter 47 pairs 42 PCH 195 CO 121 WCH 126 TQ 169 maxPCH 29 maxDIFF 22 maxRATIO 20.00 maxMIN 7 maxENT 3 ex (39, 1, 1, 29, 7, 6)
+SPANW nep22f_n64.pg n 64 iter 51 pairs 21 PCH 72 CO 32 WCH 35 TQ 72 maxPCH 7 maxDIFF 7 maxRATIO 7.00 maxMIN 5 maxENT 3 ex (48, 28, 6, 7, 0, 0)
+SPANW nep76_n40.pg n 40 iter 18 pairs 13 PCH 30 CO 30 WCH 30 TQ 29 maxPCH 4 maxDIFF 0 maxRATIO 0.80 maxMIN 4 maxENT 1 ex None
+SPANW nep94_n48.pg n 48 iter 18 pairs 5 PCH 17 CO 11 WCH 12 TQ 17 maxPCH 8 maxDIFF 6 maxRATIO 2.67 maxMIN 3 maxENT 2 ex (17, 0, 3, 8, 2, 2)
+SPANW nep92_n40.pg n 40 iter 13 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW b4_cyc6_0.pg n 11 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW b4_cyc6_1.pg n 12 iter 4 pairs 2 PCH 2 CO 2 WCH 2 TQ 2 maxPCH 1 maxDIFF 0 maxRATIO 0.50 maxMIN 1 maxENT 1 ex None
+SPANW ret12_n40.pg n 40 iter 13 pairs 4 PCH 5 CO 5 WCH 5 TQ 3 maxPCH 2 maxDIFF 0 maxRATIO 0.67 maxMIN 2 maxENT 2 ex None
+SPANW b4_n4all_cyc3_0.pg n 4 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW b4_n5_other_0.pg n 5 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW b4_nohlen5_0.pg n 11 iter 1 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW ret14_n48.pg n 48 iter 17 pairs 12 PCH 18 CO 16 WCH 16 TQ 14 maxPCH 4 maxDIFF 2 maxRATIO 1.33 maxMIN 2 maxENT 2 ex (6, 25, 3, 4, 2, 2)
+SPANW ret14_n64.pg n 64 iter 14 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW b4_theta_n7.pg n 7 iter 1 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW b5_n5_cyc4_0.pg n 5 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW b5_o11.pg n 10 iter 12 pairs 4 PCH 10 CO 10 WCH 10 TQ 10 maxPCH 3 maxDIFF 0 maxRATIO 0.75 maxMIN 3 maxENT 1 ex None
+SPANW b5_os_n12.pg n 12 iter 18 pairs 7 PCH 18 CO 17 WCH 17 TQ 18 maxPCH 4 maxDIFF 1 maxRATIO 1.00 maxMIN 4 maxENT 2 ex (11, 7, 0, 1, 0, 0)
+SPANW b5_os_n14.pg n 14 iter 22 pairs 8 PCH 23 CO 22 WCH 23 TQ 23 maxPCH 4 maxDIFF 1 maxRATIO 1.00 maxMIN 4 maxENT 2 ex (11, 7, 0, 1, 0, 0)
+SPANW b5_os_n16.pg n 16 iter 26 pairs 14 PCH 39 CO 38 WCH 38 TQ 39 maxPCH 4 maxDIFF 1 maxRATIO 1.00 maxMIN 4 maxENT 2 ex (11, 7, 0, 1, 0, 0)
+SPANW b5_os_n20.pg n 20 iter 34 pairs 22 PCH 57 CO 56 WCH 56 TQ 57 maxPCH 5 maxDIFF 1 maxRATIO 1.00 maxMIN 5 maxENT 2 ex (11, 7, 0, 1, 0, 0)
+SPANW fc_8.pg n 210 iter 77 pairs 261 PCH 921 CO 894 WCH 1091 TQ 624 maxPCH 10 maxDIFF 4 maxRATIO 1.60 maxMIN 9 maxENT 4 ex (194, 196, 0, 10, 6, 6)
+SPANW b5_os_n24.pg n 24 iter 53 pairs 23 PCH 95 CO 94 WCH 94 TQ 95 maxPCH 11 maxDIFF 1 maxRATIO 1.00 maxMIN 11 maxENT 4 ex (15, 11, 0, 1, 0, 0)
+SPANW b5_os_n28.pg n 28 iter 65 pairs 38 PCH 173 CO 170 WCH 170 TQ 173 maxPCH 10 maxDIFF 1 maxRATIO 1.00 maxMIN 10 maxENT 5 ex (1, 11, 0, 3, 2, 2)
+SPANW b5_os_n32.pg n 32 iter 71 pairs 47 PCH 248 CO 246 WCH 249 TQ 248 maxPCH 12 maxDIFF 1 maxRATIO 1.00 maxMIN 12 maxENT 5 ex (11, 7, 0, 1, 0, 0)
+SPANW b5_os_n40.pg n 40 iter 81 pairs 60 PCH 332 CO 328 WCH 328 TQ 332 maxPCH 12 maxDIFF 1 maxRATIO 1.00 maxMIN 12 maxENT 5 ex (1, 11, 0, 3, 2, 2)
+SPANW b6_xl_n32.pg n 32 iter 85 pairs 55 PCH 398 CO 334 WCH 401 TQ 398 maxPCH 13 maxDIFF 12 maxRATIO 12.00 maxMIN 13 maxENT 5 ex (6, 0, 4, 12, 0, 0)
+SPANW b6_xl2_n32.pg n 32 iter 87 pairs 57 PCH 421 CO 357 WCH 428 TQ 421 maxPCH 12 maxDIFF 12 maxRATIO 12.00 maxMIN 12 maxENT 5 ex (6, 0, 4, 12, 0, 0)
+SPANW b6_xs_n24.pg n 24 iter 21 pairs 2 PCH 2 CO 2 WCH 2 TQ 2 maxPCH 1 maxDIFF 0 maxRATIO 0.50 maxMIN 1 maxENT 1 ex None
+SPANW b6_xs_n32.pg n 32 iter 29 pairs 3 PCH 3 CO 3 WCH 4 TQ 3 maxPCH 1 maxDIFF 0 maxRATIO 0.50 maxMIN 1 maxENT 1 ex None
+SPANW b6_xl_n40.pg n 40 iter 89 pairs 63 PCH 541 CO 408 WCH 408 TQ 541 maxPCH 19 maxDIFF 12 maxRATIO 12.00 maxMIN 16 maxENT 5 ex (6, 0, 2, 12, 0, 0)
+SPANW b6_xs_n40.pg n 40 iter 36 pairs 5 PCH 5 CO 5 WCH 6 TQ 5 maxPCH 1 maxDIFF 0 maxRATIO 0.50 maxMIN 1 maxENT 1 ex None
+SPANW b6_xs_n48.pg n 48 iter 37 pairs 6 PCH 9 CO 9 WCH 10 TQ 9 maxPCH 2 maxDIFF 0 maxRATIO 0.67 maxMIN 2 maxENT 1 ex None
+SPANW b6_xw_n32.pg n 32 iter 79 pairs 52 PCH 513 CO 378 WCH 378 TQ 513 maxPCH 20 maxDIFF 13 maxRATIO 13.00 maxMIN 15 maxENT 4 ex (5, 0, 4, 13, 0, 0)
+SPANW canonA_0.pg n 15 iter 3 pairs 1 PCH 1 CO 1 WCH 1 TQ 1 maxPCH 1 maxDIFF 0 maxRATIO 0.50 maxMIN 1 maxENT 1 ex None
+SPANW b6_xl_n48.pg n 48 iter 97 pairs 70 PCH 668 CO 512 WCH 512 TQ 668 maxPCH 20 maxDIFF 13 maxRATIO 13.00 maxMIN 17 maxENT 5 ex (6, 0, 3, 13, 0, 0)
+SPANW canonA_1.pg n 15 iter 4 pairs 2 PCH 2 CO 2 WCH 2 TQ 2 maxPCH 1 maxDIFF 0 maxRATIO 0.50 maxMIN 1 maxENT 1 ex None
+SPANW b6_xw_n40.pg n 40 iter 80 pairs 60 PCH 493 CO 367 WCH 367 TQ 493 maxPCH 19 maxDIFF 13 maxRATIO 13.00 maxMIN 13 maxENT 5 ex (5, 0, 4, 13, 0, 0)
+SPANW frz1_n24.pg n 24 iter 31 pairs 20 PCH 50 CO 44 WCH 44 TQ 50 maxPCH 6 maxDIFF 1 maxRATIO 1.00 maxMIN 6 maxENT 3 ex (0, 12, 2, 1, 0, 0)
+SPANW frz2_n24.pg n 24 iter 25 pairs 15 PCH 39 CO 34 WCH 34 TQ 39 maxPCH 6 maxDIFF 1 maxRATIO 1.00 maxMIN 6 maxENT 3 ex (0, 12, 1, 1, 0, 0)
+SPANW b6_xw_n48.pg n 48 iter 85 pairs 73 PCH 563 CO 442 WCH 442 TQ 563 maxPCH 19 maxDIFF 11 maxRATIO 11.00 maxMIN 14 maxENT 4 ex (5, 0, 5, 11, 0, 0)
+SPANW n3all_maxph_0.pg n 3 iter 0 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW n3all_maxph_1.pg n 3 iter 0 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW n3all_maxph_2.pg n 3 iter 0 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW frz3_n24.pg n 24 iter 26 pairs 15 PCH 38 CO 33 WCH 34 TQ 38 maxPCH 6 maxDIFF 2 maxRATIO 1.20 maxMIN 4 maxENT 2 ex (5, 23, 1, 6, 4, 3)
+SPANW b6_xw_n56.pg n 56 iter 85 pairs 69 PCH 528 CO 418 WCH 418 TQ 528 maxPCH 18 maxDIFF 11 maxRATIO 11.00 maxMIN 13 maxENT 4 ex (5, 0, 4, 11, 0, 0)
+SPANW n4_maxph_1.pg n 4 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW n4_maxph_0.pg n 4 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW n4_thch_0.pg n 4 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW n4all_maxph_0.pg n 4 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW n4all_maxph_1.pg n 4 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW n4all_tgbad_0.pg n 4 iter 1 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW n4all_thch_0.pg n 4 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW n5s_maxph_0.pg n 5 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW nh_n8.pg n 8 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW thetaA_canon_n8.pg n 8 iter 3 pairs 1 PCH 1 CO 1 WCH 1 TQ 1 maxPCH 1 maxDIFF 0 maxRATIO 0.50 maxMIN 1 maxENT 1 ex None
+SPANW thetaA_canon_n12.pg n 12 iter 3 pairs 1 PCH 1 CO 1 WCH 1 TQ 1 maxPCH 1 maxDIFF 0 maxRATIO 0.50 maxMIN 1 maxENT 1 ex None
+SPANW thetaA_n17.pg n 17 iter 1 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW thetaA_n6.pg n 6 iter 1 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW thetaA_n9.pg n 9 iter 1 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW thetaA_n7.pg n 7 iter 1 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW wk1_n32.pg n 32 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW wk2_n32.pg n 32 iter 7 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW long121_n40.pg n 40 iter 23 pairs 12 PCH 38 CO 30 WCH 32 TQ 37 maxPCH 7 maxDIFF 2 maxRATIO 1.17 maxMIN 5 maxENT 2 ex (39, 1, 2, 7, 5, 5)
+SPANW best_qpc_nep76_n40_s63.pg n 64 iter 9 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW absmono_viol_n44.pg n 44 iter 7 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW carry3_2_2.pg n 47 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW best_qpc_nep90_n40_s61.pg n 64 iter 23 pairs 23 PCH 79 CO 61 WCH 62 TQ 48 maxPCH 13 maxDIFF 8 maxRATIO 2.17 maxMIN 5 maxENT 3 ex (39, 1, 2, 13, 5, 5)
+SPANW cm_mdrop_both_n28.pg n 28 iter 10 pairs 1 PCH 2 CO 2 WCH 2 TQ 2 maxPCH 2 maxDIFF 0 maxRATIO 0.67 maxMIN 2 maxENT 1 ex None
+SPANW cm_mdrop_oink_n28.pg n 28 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW ctx11_n40.pg n 40 iter 9 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW best_qpc_nep90_n40_s62.pg n 80 iter 20 pairs 9 PCH 21 CO 18 WCH 18 TQ 18 maxPCH 5 maxDIFF 3 maxRATIO 1.67 maxMIN 3 maxENT 2 ex (13, 33, 3, 5, 2, 2)
+SPANW ctx6_n20.pg n 20 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW ctx12_n40.pg n 40 iter 8 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW ctx13_n40.pg n 40 iter 17 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW ctx7_n30.pg n 30 iter 11 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW snap_n80_s62.pg n 80 iter 20 pairs 9 PCH 21 CO 18 WCH 18 TQ 18 maxPCH 5 maxDIFF 3 maxRATIO 1.67 maxMIN 3 maxENT 2 ex (13, 33, 3, 5, 2, 2)
+SPANW f1_twodef_n48.pg n 48 iter 6 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW f1_twofall_n48.pg n 48 iter 6 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW fallv_viol_n28.pg n 28 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW ctx6_n56.pg n 56 iter 12 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW fall3_n76.pg n 76 iter 8 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW fired10_n20.pg n 20 iter 6 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW firedlong667_n20.pg n 20 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW firedlong667_n43.pg n 43 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW gapbW_dup_n20.pg n 20 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW gapb_dup_n20.pg n 20 iter 8 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW firedstep13_n76.pg n 76 iter 8 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW h4_compound2x2_n44.pg n 44 iter 10 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW h4_def2ctx_n20.pg n 20 iter 6 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW h4_def7_n28.pg n 28 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW h4_compound_n44.pg n 44 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW h4_disjoint_n20.pg n 20 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW kfirst_viol_n13.pg n 13 iter 0 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW fall4_n116.pg n 116 iter 6 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW h4_notweaker_n20.pg n 20 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW kin_viol_n29.pg n 29 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW lemmaS_Mdrop_n20.pg n 20 iter 6 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW lalg_dtl_mviol_n20.pg n 20 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW lemmaS_viol_n20.pg n 20 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW lex_viol_inj_n28.pg n 28 iter 6 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW meet_viol_n17.pg n 17 iter 0 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW lex_viol_tie_n28.pg n 28 iter 7 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW nosig_2_3.pg n 24 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW pk_viol_n20.pg n 20 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW phi_flat_alive_n32.pg n 32 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW meet_viol_n29.pg n 29 iter 11 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW replay4_n32.pg n 32 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW spp19_oink_n30.pg n 30 iter 10 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW spp19_stable_n30.pg n 30 iter 7 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW spp22_oink_n40.pg n 40 iter 8 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW spp25_oink_n40.pg n 40 iter 10 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW stealonce_both_n45.pg n 45 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW stealonce_core_n76.pg n 76 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW tstep_near_n20.pg n 20 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW deep1_n13.pg n 13 iter 1 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW deep1_n21.pg n 21 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW margin1_mc5.pg n 50 iter 12 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW margin1_mc1.pg n 80 iter 10 pairs 2 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 1 ex None
+SPANW stealer_viol_n76.pg n 76 iter 12 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW margin1_n20.pg n 20 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW lalg_dtl_pertop31_n18.pg n 18 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW bghm_k1_gap6_A.pg n 21 iter 1 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW bghm_k3_gap4_A.pg n 45 iter 1 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW lalg_dtl_restart8_n20.pg n 20 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW stealonce_viol_n76.pg n 76 iter 12 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW lev74_n40.pg n 40 iter 18 pairs 4 PCH 14 CO 10 WCH 12 TQ 9 maxPCH 8 maxDIFF 2 maxRATIO 1.14 maxMIN 6 maxENT 2 ex (39, 1, 2, 8, 6, 4)
+SPANW rho144_n32.pg n 32 iter 9 pairs 1 PCH 1 CO 1 WCH 1 TQ 1 maxPCH 1 maxDIFF 0 maxRATIO 0.50 maxMIN 1 maxENT 1 ex None
+SPANW rho3_253_n32.pg n 32 iter 11 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW fr39_q4_n48.pg n 48 iter 36 pairs 5 PCH 6 CO 6 WCH 7 TQ 6 maxPCH 2 maxDIFF 0 maxRATIO 0.67 maxMIN 2 maxENT 1 ex None
+SPANW rho84_n16.pg n 16 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW sat4_n20.pg n 20 iter 6 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW lev56_n48.pg n 48 iter 86 pairs 57 PCH 447 CO 315 WCH 332 TQ 447 maxPCH 22 maxDIFF 10 maxRATIO 10.00 maxMIN 16 maxENT 5 ex (33, 0, 10, 10, 0, 0)
+SPANW sat68_n20.pg n 20 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW rho666_n48.pg n 48 iter 16 pairs 3 PCH 4 CO 4 WCH 5 TQ 4 maxPCH 2 maxDIFF 0 maxRATIO 0.50 maxMIN 2 maxENT 2 ex None
+SPANW nep80_n40.pg n 40 iter 22 pairs 4 PCH 7 CO 7 WCH 7 TQ 5 maxPCH 3 maxDIFF 0 maxRATIO 0.75 maxMIN 3 maxENT 1 ex None
+SPANW exsw_loop_n15.pg n 15 iter 1 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW twowave_L16.pg n 22 iter 15 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW fbcap_eq_u4_n11.pg n 11 iter 6 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW fx2_n11.pg n 11 iter 9 pairs 1 PCH 1 CO 1 WCH 1 TQ 1 maxPCH 1 maxDIFF 0 maxRATIO 0.50 maxMIN 1 maxENT 1 ex None
+SPANW kt6_n58.pg n 58 iter 38 pairs 9 PCH 2 CO 2 WCH 15 TQ 2 maxPCH 1 maxDIFF 0 maxRATIO 0.50 maxMIN 1 maxENT 1 ex None
+SPANW frzgap0_n4.pg n 4 iter 1 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW frzgap0_n6.pg n 6 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW lcount2_n23.pg n 23 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW lcount_n23.pg n 23 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW offret_l19_n24.pg n 24 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW klcount_n16.pg n 16 iter 6 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW klcount_n18_base.pg n 18 iter 6 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW klcount_n18_lvl.pg n 18 iter 6 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW klglobal_n16.pg n 16 iter 6 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW klglobal_n18_lvl.pg n 18 iter 6 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW klglobal_n20_lvl2.pg n 20 iter 6 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW klmin_n13.pg n 13 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW xsnpre36_n48.pg n 48 iter 33 pairs 5 PCH 5 CO 5 WCH 7 TQ 5 maxPCH 1 maxDIFF 0 maxRATIO 0.50 maxMIN 1 maxENT 1 ex None
+SPANW r2climb_h13.pg n 13 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r2join_h0E_n14.pg n 14 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r2crawl_n14.pg n 14 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r2lap_best_n22.pg n 22 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW HL88_0.pg n 41 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW HL88_2.pg n 45 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW HL88_1.pg n 43 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW HLg_0.pg n 29 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW HL88_3.pg n 47 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW HLg_1.pg n 35 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW HLg_2.pg n 45 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW HLg_3.pg n 55 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW frzu_tight_n14.pg n 14 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW cw11_n24.pg n 24 iter 17 pairs 13 PCH 18 CO 11 WCH 11 TQ 18 maxPCH 4 maxDIFF 1 maxRATIO 1.00 maxMIN 3 maxENT 3 ex (1, 10, 4, 1, 0, 0)
+SPANW depth2_n39.pg n 39 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW depth3_n46.pg n 46 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW kc18_n24.pg n 24 iter 23 pairs 2 PCH 2 CO 2 WCH 2 TQ 2 maxPCH 1 maxDIFF 0 maxRATIO 0.50 maxMIN 1 maxENT 2 ex None
+SPANW fam_D4_n50.pg n 50 iter 1 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW depth4_n53.pg n 53 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW fam_D12_n106.pg n 106 iter 1 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW mei_h2.pg n 19 iter 1 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW fam_D8_n78.pg n 78 iter 1 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW mei_h3.pg n 27 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW mei_h4.pg n 35 iter 3 pairs 2 PCH 2 CO 2 WCH 2 TQ 0 maxPCH 1 maxDIFF 0 maxRATIO 0.50 maxMIN 1 maxENT 2 ex None
+SPANW mei_h5.pg n 43 iter 4 pairs 2 PCH 2 CO 2 WCH 2 TQ 0 maxPCH 1 maxDIFF 0 maxRATIO 0.50 maxMIN 1 maxENT 2 ex None
+SPANW mei_h6.pg n 51 iter 5 pairs 4 PCH 6 CO 6 WCH 6 TQ 0 maxPCH 3 maxDIFF 0 maxRATIO 0.75 maxMIN 3 maxENT 2 ex None
+SPANW mei_h8.pg n 67 iter 7 pairs 8 PCH 20 CO 20 WCH 20 TQ 0 maxPCH 5 maxDIFF 0 maxRATIO 0.83 maxMIN 5 maxENT 4 ex None
+SPANW core41_n40.pg n 40 iter 11 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW lagx10_n40.pg n 40 iter 17 pairs 12 PCH 20 CO 20 WCH 20 TQ 20 maxPCH 4 maxDIFF 0 maxRATIO 0.80 maxMIN 4 maxENT 3 ex None
+SPANW lag11_n40.pg n 40 iter 17 pairs 9 PCH 11 CO 11 WCH 12 TQ 7 maxPCH 3 maxDIFF 0 maxRATIO 0.75 maxMIN 3 maxENT 2 ex None
+SPANW comp54_n80.pg n 80 iter 11 pairs 3 PCH 5 CO 5 WCH 5 TQ 5 maxPCH 2 maxDIFF 0 maxRATIO 0.67 maxMIN 2 maxENT 1 ex None
+SPANW long90_k2_n40.pg n 40 iter 18 pairs 8 PCH 19 CO 15 WCH 15 TQ 19 maxPCH 5 maxDIFF 3 maxRATIO 1.67 maxMIN 4 maxENT 2 ex (39, 1, 1, 5, 2, 2)
+SPANW long121_n40.pg n 40 iter 23 pairs 12 PCH 38 CO 30 WCH 32 TQ 37 maxPCH 7 maxDIFF 2 maxRATIO 1.17 maxMIN 5 maxENT 2 ex (39, 1, 2, 7, 5, 5)
+SPANW n3cov_lean.pg n 48 iter 18 pairs 4 PCH 6 CO 6 WCH 8 TQ 6 maxPCH 2 maxDIFF 0 maxRATIO 0.67 maxMIN 2 maxENT 2 ex None
+SPANW n3cov_phi.pg n 32 iter 10 pairs 1 PCH 3 CO 2 WCH 2 TQ 0 maxPCH 3 maxDIFF 1 maxRATIO 1.00 maxMIN 2 maxENT 1 ex (9, 5, 2, 3, 2, 2)
+SPANW run49_n32.pg n 32 iter 20 pairs 5 PCH 9 CO 8 WCH 8 TQ 9 maxPCH 3 maxDIFF 1 maxRATIO 1.00 maxMIN 3 maxENT 2 ex (30, 15, 6, 2, 1, 1)
+SPANW ret22_n40.pg n 40 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW dl_4_4.pg n 42 iter 8 pairs 2 PCH 2 CO 2 WCH 2 TQ 1 maxPCH 1 maxDIFF 0 maxRATIO 0.50 maxMIN 1 maxENT 2 ex None
+SPANW dlm2_4.pg n 42 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW run34_n40.pg n 40 iter 40 pairs 18 PCH 41 CO 33 WCH 38 TQ 39 maxPCH 5 maxDIFF 3 maxRATIO 3.00 maxMIN 5 maxENT 2 ex (25, 0, 4, 3, 0, 0)
+SPANW sym_h8_s1.pg n 16 iter 25 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW sym_h12_s1.pg n 24 iter 34 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW block_bk20.pg n 24 iter 27 pairs 7 PCH 12 CO 12 WCH 12 TQ 12 maxPCH 3 maxDIFF 0 maxRATIO 0.75 maxMIN 3 maxENT 2 ex None
+SPANW blockph_bp20.pg n 24 iter 25 pairs 12 PCH 19 CO 19 WCH 19 TQ 19 maxPCH 5 maxDIFF 0 maxRATIO 0.83 maxMIN 5 maxENT 2 ex None
+SPANW bribe_cex_n15.pg n 15 iter 1 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW sym_h16_s1.pg n 32 iter 55 pairs 1 PCH 0 CO 0 WCH 2 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 1 ex None
+SPANW block_bk32.pg n 36 iter 49 pairs 17 PCH 23 CO 23 WCH 23 TQ 23 maxPCH 2 maxDIFF 0 maxRATIO 0.67 maxMIN 2 maxENT 2 ex None
+SPANW blockph_bp32.pg n 36 iter 39 pairs 16 PCH 25 CO 25 WCH 25 TQ 25 maxPCH 3 maxDIFF 0 maxRATIO 0.75 maxMIN 3 maxENT 2 ex None
+SPANW frz24.pg n 24 iter 39 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW frz32.pg n 32 iter 8 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW elimn_cex_n48.pg n 48 iter 92 pairs 59 PCH 268 CO 259 WCH 262 TQ 265 maxPCH 11 maxDIFF 2 maxRATIO 2.00 maxMIN 11 maxENT 5 ex (11, 14, 2, 2, 0, 0)
+SPANW frz40.pg n 40 iter 90 pairs 30 PCH 86 CO 50 WCH 51 TQ 86 maxPCH 7 maxDIFF 7 maxRATIO 7.00 maxMIN 3 maxENT 3 ex (5, 27, 44, 7, 0, 0)
+SPANW dl_6_8.pg n 110 iter 14 pairs 4 PCH 6 CO 5 WCH 5 TQ 3 maxPCH 3 maxDIFF 1 maxRATIO 1.00 maxMIN 2 maxENT 2 ex (30, 5, 0, 3, 2, 2)
+SPANW phase2_pk32.pg n 32 iter 56 pairs 28 PCH 40 CO 40 WCH 56 TQ 40 maxPCH 3 maxDIFF 0 maxRATIO 0.67 maxMIN 3 maxENT 3 ex None
+SPANW returns_rt32.pg n 32 iter 57 pairs 28 PCH 41 CO 41 WCH 61 TQ 40 maxPCH 3 maxDIFF 0 maxRATIO 0.67 maxMIN 3 maxENT 3 ex None
+SPANW phase2_pk48.pg n 48 iter 72 pairs 33 PCH 89 CO 86 WCH 89 TQ 89 maxPCH 6 maxDIFF 0 maxRATIO 0.86 maxMIN 6 maxENT 3 ex None
+SPANW theta_thc24.pg n 24 iter 29 pairs 14 PCH 29 CO 29 WCH 29 TQ 27 maxPCH 5 maxDIFF 0 maxRATIO 0.83 maxMIN 5 maxENT 2 ex None
+SPANW returns_rt48.pg n 48 iter 80 pairs 57 PCH 188 CO 182 WCH 189 TQ 188 maxPCH 9 maxDIFF 2 maxRATIO 2.00 maxMIN 9 maxENT 5 ex (11, 14, 2, 2, 0, 0)
+SPANW theta_thf16.pg n 16 iter 20 pairs 14 PCH 36 CO 27 WCH 27 TQ 36 maxPCH 9 maxDIFF 9 maxRATIO 9.00 maxMIN 3 maxENT 2 ex (7, 0, 2, 9, 0, 0)
+SPANW theta_tp32.pg n 32 iter 45 pairs 40 PCH 137 CO 110 WCH 110 TQ 137 maxPCH 10 maxDIFF 10 maxRATIO 10.00 maxMIN 6 maxENT 3 ex (7, 0, 4, 10, 0, 0)
+SPANW returns_ph64.pg n 64 iter 105 pairs 81 PCH 289 CO 283 WCH 296 TQ 289 maxPCH 10 maxDIFF 2 maxRATIO 2.00 maxMIN 10 maxENT 5 ex (11, 14, 2, 2, 0, 0)
+SPANW theta_tp40.pg n 40 iter 41 pairs 20 PCH 40 CO 40 WCH 40 TQ 38 maxPCH 5 maxDIFF 0 maxRATIO 0.83 maxMIN 5 maxENT 2 ex None
+SPANW wide_h16.pg n 32 iter 44 pairs 2 PCH 6 CO 6 WCH 10 TQ 3 maxPCH 5 maxDIFF 0 maxRATIO 0.50 maxMIN 5 maxENT 2 ex None
+SPANW k4L72_n101.pg n 101 iter 6 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW k4L72r_n101.pg n 101 iter 6 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW k4seed_c1_n82.pg n 82 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW k4g50_n101.pg n 101 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW k4seed_vr_n87.pg n 87 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW k4u_n101.pg n 101 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW returns_rt64.pg n 64 iter 90 pairs 61 PCH 209 CO 203 WCH 203 TQ 209 maxPCH 9 maxDIFF 2 maxRATIO 2.00 maxMIN 9 maxENT 5 ex (11, 14, 2, 2, 0, 0)
+SPANW k4y1_n82.pg n 82 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW k4y2_n87.pg n 87 iter 6 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW near4_n26.pg n 26 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW nest4u_n46.pg n 46 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW nest4uu_n51.pg n 51 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW nest5_n49.pg n 49 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW nest6_n75.pg n 75 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW nest6min_n75.pg n 75 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW oseg_n26.pg n 26 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW nest6x_n75.pg n 75 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW w1_n27.pg n 27 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW win3_n27.pg n 27 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW nopre_viol_n20.pg n 20 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW ph45_n32.pg n 32 iter 21 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW ph50_n32.pg n 32 iter 32 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW tau18_n24.pg n 24 iter 12 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW fbd0_n4.pg n 4 iter 0 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW f39_n48.pg n 48 iter 38 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW n0_6_n24.pg n 24 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW iter118_n48.pg n 48 iter 18 pairs 4 PCH 9 CO 7 WCH 7 TQ 9 maxPCH 4 maxDIFF 1 maxRATIO 1.00 maxMIN 3 maxENT 2 ex (5, 9, 6, 4, 3, 3)
+SPANW nep24_n20.pg n 20 iter 15 pairs 1 PCH 1 CO 1 WCH 1 TQ 0 maxPCH 1 maxDIFF 0 maxRATIO 0.50 maxMIN 1 maxENT 1 ex None
+SPANW s20_n20.pg n 20 iter 8 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW s21_oink_n20.pg n 20 iter 8 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW lend2_30_n48.pg n 48 iter 25 pairs 8 PCH 10 CO 10 WCH 11 TQ 10 maxPCH 3 maxDIFF 0 maxRATIO 0.75 maxMIN 3 maxENT 2 ex None
+SPANW nep87_n40.pg n 40 iter 25 pairs 13 PCH 39 CO 27 WCH 27 TQ 26 maxPCH 15 maxDIFF 11 maxRATIO 3.00 maxMIN 4 maxENT 2 ex (39, 1, 3, 15, 4, 4)
+SPANW nep90_n40.pg n 40 iter 23 pairs 12 PCH 26 CO 25 WCH 25 TQ 25 maxPCH 4 maxDIFF 1 maxRATIO 1.00 maxMIN 4 maxENT 2 ex (23, 0, 3, 1, 0, 0)
+SPANW s29_n30.pg n 30 iter 7 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW s34_oink_n40.pg n 40 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW s32_n60.pg n 60 iter 8 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW s35_oink_n80.pg n 80 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW s36_oink_n60.pg n 60 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW beta2_n11.pg n 11 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW epsseg_cex_n16.pg n 16 iter 11 pairs 8 PCH 21 CO 20 WCH 20 TQ 16 maxPCH 5 maxDIFF 1 maxRATIO 1.00 maxMIN 5 maxENT 2 ex (12, 15, 0, 4, 3, 3)
+SPANW exitr_cex_n16.pg n 16 iter 10 pairs 3 PCH 6 CO 5 WCH 5 TQ 6 maxPCH 2 maxDIFF 1 maxRATIO 1.00 maxMIN 2 maxENT 2 ex (4, 9, 1, 2, 1, 1)
+SPANW s34_oink_n80.pg n 80 iter 8 pairs 1 PCH 0 CO 0 WCH 2 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 1 ex None
+SPANW epsseg_cex_n48.pg n 48 iter 26 pairs 6 PCH 21 CO 9 WCH 9 TQ 21 maxPCH 9 maxDIFF 6 maxRATIO 2.50 maxMIN 3 maxENT 1 ex (16, 28, 7, 9, 3, 3)
+SPANW mn_abs74_n48.pg n 48 iter 22 pairs 27 PCH 91 CO 65 WCH 66 TQ 91 maxPCH 7 maxDIFF 4 maxRATIO 4.00 maxMIN 6 maxENT 3 ex (6, 0, 6, 4, 0, 0)
+SPANW exitr_cex_n48.pg n 48 iter 22 pairs 9 PCH 50 CO 19 WCH 19 TQ 48 maxPCH 12 maxDIFF 9 maxRATIO 3.00 maxMIN 3 maxENT 1 ex (22, 23, 3, 12, 3, 3)
+SPANW farrise25_n32.pg n 32 iter 35 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW nleq_cex_n48.pg n 48 iter 10 pairs 3 PCH 3 CO 3 WCH 3 TQ 3 maxPCH 1 maxDIFF 0 maxRATIO 0.50 maxMIN 1 maxENT 1 ex None
+SPANW njb_reabs54_n32.pg n 32 iter 40 pairs 21 PCH 89 CO 48 WCH 49 TQ 89 maxPCH 10 maxDIFF 8 maxRATIO 8.00 maxMIN 8 maxENT 3 ex (16, 0, 5, 8, 0, 0)
+SPANW pftheta34_n32.pg n 32 iter 39 pairs 37 PCH 121 CO 104 WCH 104 TQ 121 maxPCH 9 maxDIFF 6 maxRATIO 4.00 maxMIN 7 maxENT 3 ex (16, 8, 4, 8, 2, 2)
+SPANW nleq33_n48.pg n 48 iter 40 pairs 1 PCH 2 CO 1 WCH 1 TQ 2 maxPCH 2 maxDIFF 1 maxRATIO 1.00 maxMIN 1 maxENT 1 ex (15, 36, 4, 2, 1, 1)
+SPANW njb_reabs65_n48.pg n 48 iter 70 pairs 55 PCH 201 CO 162 WCH 189 TQ 201 maxPCH 7 maxDIFF 3 maxRATIO 3.00 maxMIN 7 maxENT 3 ex (1, 0, 2, 3, 0, 0)
+SPANW pftheta_cex_n32.pg n 32 iter 38 pairs 31 PCH 96 CO 88 WCH 88 TQ 96 maxPCH 8 maxDIFF 3 maxRATIO 3.00 maxMIN 7 maxENT 3 ex (8, 0, 3, 3, 0, 0)
+SPANW pft35_n48.pg n 48 iter 41 pairs 45 PCH 202 CO 132 WCH 132 TQ 202 maxPCH 12 maxDIFF 10 maxRATIO 5.00 maxMIN 6 maxENT 4 ex (35, 7, 2, 12, 2, 2)
+SPANW pft40_n40.pg n 40 iter 54 pairs 45 PCH 249 CO 140 WCH 140 TQ 249 maxPCH 18 maxDIFF 15 maxRATIO 15.00 maxMIN 8 maxENT 4 ex (21, 32, 7, 15, 0, 0)
+SPANW post31_n48.pg n 48 iter 36 pairs 8 PCH 17 CO 16 WCH 16 TQ 17 maxPCH 3 maxDIFF 1 maxRATIO 1.00 maxMIN 3 maxENT 1 ex (39, 28, 4, 2, 1, 1)
+SPANW s4c8_n13.pg n 13 iter 12 pairs 1 PCH 1 CO 1 WCH 1 TQ 1 maxPCH 1 maxDIFF 0 maxRATIO 0.50 maxMIN 1 maxENT 1 ex None
+SPANW so_k2_n32.pg n 32 iter 20 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW so_sor5_n24.pg n 24 iter 23 pairs 14 PCH 22 CO 22 WCH 22 TQ 22 maxPCH 2 maxDIFF 0 maxRATIO 0.67 maxMIN 2 maxENT 2 ex None
+SPANW rise_fb38_n48.pg n 48 iter 53 pairs 34 PCH 57 CO 45 WCH 49 TQ 57 maxPCH 3 maxDIFF 1 maxRATIO 1.00 maxMIN 3 maxENT 2 ex (1, 35, 4, 1, 0, 0)
+SPANW rise_thin51_n40.pg n 40 iter 78 pairs 65 PCH 759 CO 388 WCH 388 TQ 759 maxPCH 55 maxDIFF 55 maxRATIO 55.00 maxMIN 15 maxENT 5 ex (28, 1, 9, 55, 0, 0)
+SPANW so_sorl_n32.pg n 32 iter 22 pairs 4 PCH 4 CO 4 WCH 5 TQ 4 maxPCH 1 maxDIFF 0 maxRATIO 0.50 maxMIN 1 maxENT 1 ex None
+SPANW so_tie13_n24.pg n 24 iter 16 pairs 5 PCH 7 CO 7 WCH 7 TQ 7 maxPCH 2 maxDIFF 0 maxRATIO 0.67 maxMIN 2 maxENT 1 ex None
+SPANW so_th_n32.pg n 32 iter 36 pairs 30 PCH 126 CO 84 WCH 95 TQ 126 maxPCH 14 maxDIFF 6 maxRATIO 2.00 maxMIN 8 maxENT 3 ex (25, 3, 1, 10, 4, 3)
+SPANW so_tie15_n32.pg n 32 iter 20 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW so_j19_n48.pg n 48 iter 25 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW tevlast7_n32.pg n 32 iter 41 pairs 30 PCH 74 CO 56 WCH 60 TQ 74 maxPCH 4 maxDIFF 1 maxRATIO 1.00 maxMIN 3 maxENT 2 ex (1, 24, 4, 2, 1, 1)
+SPANW tev_cex_n40.pg n 40 iter 27 pairs 2 PCH 3 CO 3 WCH 3 TQ 3 maxPCH 2 maxDIFF 0 maxRATIO 0.67 maxMIN 2 maxENT 1 ex None
+SPANW tog6a_n32.pg n 32 iter 10 pairs 1 PCH 0 CO 0 WCH 1 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 1 ex None
+SPANW tevlast_cex_n40.pg n 40 iter 11 pairs 3 PCH 5 CO 3 WCH 3 TQ 5 maxPCH 2 maxDIFF 1 maxRATIO 1.00 maxMIN 1 maxENT 1 ex (15, 21, 3, 2, 1, 1)
+SPANW tog6b_n32.pg n 32 iter 8 pairs 4 PCH 0 CO 0 WCH 5 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 1 ex None
+SPANW tevlast11_n40.pg n 40 iter 36 pairs 15 PCH 30 CO 27 WCH 28 TQ 30 maxPCH 3 maxDIFF 3 maxRATIO 3.00 maxMIN 3 maxENT 1 ex (3, 0, 4, 3, 0, 0)
+SPANW xrun8_n10.pg n 10 iter 11 pairs 1 PCH 2 CO 2 WCH 2 TQ 2 maxPCH 2 maxDIFF 0 maxRATIO 0.67 maxMIN 2 maxENT 1 ex None
+SPANW xrun21_n24.pg n 24 iter 24 pairs 5 PCH 9 CO 9 WCH 14 TQ 9 maxPCH 4 maxDIFF 0 maxRATIO 0.67 maxMIN 4 maxENT 2 ex None
+SPANW xsn29_n32.pg n 32 iter 29 pairs 3 PCH 3 CO 3 WCH 4 TQ 3 maxPCH 1 maxDIFF 0 maxRATIO 0.50 maxMIN 1 maxENT 1 ex None
+SPANW xsnf42_n48.pg n 48 iter 44 pairs 9 PCH 9 CO 9 WCH 18 TQ 9 maxPCH 1 maxDIFF 0 maxRATIO 0.33 maxMIN 1 maxENT 1 ex None
+SPANW xsn43_n48.pg n 48 iter 45 pairs 2 PCH 2 CO 2 WCH 2 TQ 2 maxPCH 1 maxDIFF 0 maxRATIO 0.50 maxMIN 1 maxENT 1 ex None
+SPANW xsnf52_n64.pg n 64 iter 55 pairs 14 PCH 14 CO 14 WCH 21 TQ 14 maxPCH 1 maxDIFF 0 maxRATIO 0.50 maxMIN 1 maxENT 1 ex None
+SPANW leanT_N12.pg n 96 iter 13 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW leanT_N6.pg n 48 iter 6 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW leanT_N8.pg n 64 iter 8 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW xsn91_n48.pg n 48 iter 115 pairs 81 PCH 795 CO 581 WCH 581 TQ 795 maxPCH 22 maxDIFF 15 maxRATIO 15.00 maxMIN 17 maxENT 6 ex (6, 0, 3, 15, 0, 0)
+SPANW leanT_N16.pg n 128 iter 16 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW tcL_N3.pg n 42 iter 7 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW tcL_N4.pg n 68 iter 16 pairs 3 PCH 5 CO 4 WCH 4 TQ 0 maxPCH 2 maxDIFF 1 maxRATIO 1.00 maxMIN 2 maxENT 1 ex (26, 30, 7, 2, 1, 1)
+SPANW tcL_N5.pg n 100 iter 19 pairs 1 PCH 2 CO 1 WCH 1 TQ 0 maxPCH 2 maxDIFF 1 maxRATIO 1.00 maxMIN 1 maxENT 1 ex (53, 68, 9, 2, 1, 1)
+SPANW tcL_N6.pg n 138 iter 18 pairs 2 PCH 4 CO 2 WCH 3 TQ 0 maxPCH 2 maxDIFF 1 maxRATIO 1.00 maxMIN 2 maxENT 1 ex (100, 117, 3, 2, 1, 1)
+SPANW leanT_N24.pg n 192 iter 25 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW tcR4_N4.pg n 68 iter 12 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW tcR4_N5.pg n 100 iter 14 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW tcL_N10.pg n 350 iter 27 pairs 5 PCH 10 CO 5 WCH 5 TQ 0 maxPCH 2 maxDIFF 1 maxRATIO 1.00 maxMIN 1 maxENT 2 ex (196, 205, 7, 2, 1, 1)
+SPANW tcR4_N6.pg n 138 iter 22 pairs 1 PCH 3 CO 1 WCH 1 TQ 1 maxPCH 3 maxDIFF 2 maxRATIO 1.50 maxMIN 1 maxENT 1 ex (74, 107, 5, 3, 1, 1)
+SPANW tcL_N8.pg n 232 iter 30 pairs 21 PCH 50 CO 32 WCH 36 TQ 0 maxPCH 5 maxDIFF 3 maxRATIO 2.00 maxMIN 3 maxENT 2 ex (151, 199, 10, 4, 1, 1)
+SPANW tcR4_N7.pg n 182 iter 41 pairs 2 PCH 7 CO 5 WCH 5 TQ 0 maxPCH 4 maxDIFF 2 maxRATIO 1.50 maxMIN 4 maxENT 1 ex (140, 85, 4, 3, 1, 1)
+SPANW tcR4_N8.pg n 232 iter 33 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW leanT_N32.pg n 256 iter 33 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW tcS8_N6.pg n 138 iter 17 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW tcS8_N7.pg n 182 iter 14 pairs 2 PCH 0 CO 0 WCH 2 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 1 ex None
+SPANW tcS8_N8.pg n 232 iter 10 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW tpp_viol_n22.pg n 22 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW tpp_viol_n63.pg n 63 iter 8 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW tcS8_N10.pg n 350 iter 16 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW cxmig_k4_n54.pg n 54 iter 12 pairs 1 PCH 1 CO 1 WCH 1 TQ 1 maxPCH 1 maxDIFF 0 maxRATIO 0.50 maxMIN 1 maxENT 1 ex None
+SPANW tcS8_N11.pg n 418 iter 20 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW cxmig_k16_n138.pg n 138 iter 24 pairs 1 PCH 1 CO 1 WCH 1 TQ 1 maxPCH 1 maxDIFF 0 maxRATIO 0.50 maxMIN 1 maxENT 1 ex None
+SPANW cxmig_k8_n82.pg n 82 iter 16 pairs 1 PCH 1 CO 1 WCH 1 TQ 1 maxPCH 1 maxDIFF 0 maxRATIO 0.50 maxMIN 1 maxENT 1 ex None
+SPANW ladderd0_k12_n48.pg n 48 iter 14 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW tcL_N12.pg n 492 iter 37 pairs 23 PCH 31 CO 23 WCH 27 TQ 0 maxPCH 3 maxDIFF 2 maxRATIO 1.50 maxMIN 2 maxENT 2 ex (190, 448, 23, 3, 1, 1)
+SPANW ladderd0_k24_n84.pg n 84 iter 26 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW ladderent_k12_n48.pg n 48 iter 14 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW reader_L10_n36.pg n 36 iter 13 pairs 1 PCH 2 CO 1 WCH 1 TQ 2 maxPCH 2 maxDIFF 1 maxRATIO 1.00 maxMIN 1 maxENT 1 ex (14, 18, 0, 2, 1, 1)
+SPANW reader_L20_n56.pg n 56 iter 23 pairs 1 PCH 2 CO 1 WCH 1 TQ 2 maxPCH 2 maxDIFF 1 maxRATIO 1.00 maxMIN 1 maxENT 1 ex (24, 28, 0, 2, 1, 1)
+SPANW ladderent_k24_n84.pg n 84 iter 26 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW tcS8_N9.pg n 288 iter 36 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW reader_L40_n96.pg n 96 iter 43 pairs 1 PCH 2 CO 1 WCH 1 TQ 2 maxPCH 2 maxDIFF 1 maxRATIO 1.00 maxMIN 1 maxENT 1 ex (44, 48, 0, 2, 1, 1)
+SPANW gate_K16_n197.pg n 197 iter 23 pairs 3 PCH 4 CO 4 WCH 6 TQ 3 maxPCH 2 maxDIFF 0 maxRATIO 0.67 maxMIN 2 maxENT 1 ex None
+SPANW grow_K12_n149.pg n 149 iter 18 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW pairoc_n58.pg n 58 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW pp_K12_n161.pg n 161 iter 20 pairs 2 PCH 2 CO 2 WCH 4 TQ 2 maxPCH 1 maxDIFF 0 maxRATIO 0.33 maxMIN 1 maxENT 1 ex None
+SPANW pp_K12_n161_dual.pg n 161 iter 20 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW ladderd0_k48_n156.pg n 156 iter 50 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW ladderent_k48_n156.pg n 156 iter 50 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW usplit_n14.pg n 14 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW usplit_n23.pg n 23 iter 9 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW usplit_rd_n24.pg n 24 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW usplit_rd_s3_n27.pg n 27 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW usplit_s3_n16.pg n 16 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW nest3_n20.pg n 20 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW nest3_n24.pg n 24 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW vrall_viol_n20.pg n 20 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW xcov11_n20.pg n 20 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW xctx_viol_n20.pg n 20 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW fbref_cex_n32.pg n 32 iter 56 pairs 35 PCH 205 CO 160 WCH 160 TQ 205 maxPCH 14 maxDIFF 7 maxRATIO 7.00 maxMIN 11 maxENT 4 ex (5, 0, 4, 7, 0, 0)
+SPANW j10_n24.pg n 24 iter 25 pairs 18 PCH 57 CO 31 WCH 31 TQ 57 maxPCH 10 maxDIFF 9 maxRATIO 5.00 maxMIN 6 maxENT 2 ex (9, 5, 1, 10, 1, 1)
+SPANW j4_n40.pg n 40 iter 106 pairs 66 PCH 539 CO 385 WCH 431 TQ 539 maxPCH 25 maxDIFF 23 maxRATIO 19.00 maxMIN 14 maxENT 7 ex (26, 8, 3, 25, 2, 1)
+SPANW j5_n16.pg n 16 iter 30 pairs 9 PCH 23 CO 18 WCH 18 TQ 23 maxPCH 4 maxDIFF 2 maxRATIO 2.00 maxMIN 3 maxENT 3 ex (12, 0, 6, 2, 0, 0)
+SPANW j7_n32.pg n 32 iter 50 pairs 31 PCH 105 CO 71 WCH 79 TQ 105 maxPCH 6 maxDIFF 6 maxRATIO 6.00 maxMIN 4 maxENT 3 ex (14, 0, 1, 6, 0, 0)
+SPANW grow_K40_n373.pg n 373 iter 46 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW j8_n32.pg n 32 iter 54 pairs 34 PCH 117 CO 79 WCH 86 TQ 117 maxPCH 7 maxDIFF 7 maxRATIO 7.00 maxMIN 4 maxENT 3 ex (21, 0, 1, 7, 0, 0)
+SPANW j7_n48.pg n 48 iter 78 pairs 52 PCH 229 CO 180 WCH 182 TQ 229 maxPCH 10 maxDIFF 6 maxRATIO 6.00 maxMIN 9 maxENT 3 ex (17, 0, 1, 6, 0, 0)
+SPANW kw25_n32.pg n 32 iter 29 pairs 10 PCH 15 CO 15 WCH 16 TQ 15 maxPCH 2 maxDIFF 0 maxRATIO 0.67 maxMIN 2 maxENT 2 ex None
+SPANW kw_n16.pg n 16 iter 12 pairs 2 PCH 2 CO 2 WCH 2 TQ 2 maxPCH 1 maxDIFF 0 maxRATIO 0.50 maxMIN 1 maxENT 1 ex None
+SPANW j8_n48.pg n 48 iter 86 pairs 57 PCH 268 CO 211 WCH 218 TQ 268 maxPCH 13 maxDIFF 8 maxRATIO 6.00 maxMIN 9 maxENT 3 ex (37, 36, 1, 13, 5, 5)
+SPANW kw_n24.pg n 24 iter 20 pairs 1 PCH 1 CO 1 WCH 1 TQ 1 maxPCH 1 maxDIFF 0 maxRATIO 0.50 maxMIN 1 maxENT 1 ex None
+SPANW kw_n48.pg n 48 iter 40 pairs 7 PCH 9 CO 9 WCH 11 TQ 9 maxPCH 2 maxDIFF 0 maxRATIO 0.67 maxMIN 2 maxENT 2 ex None
+SPANW obr_eq_n24.pg n 24 iter 7 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW obr_n32.pg n 32 iter 22 pairs 7 PCH 14 CO 14 WCH 14 TQ 14 maxPCH 3 maxDIFF 0 maxRATIO 0.75 maxMIN 3 maxENT 2 ex None
+SPANW u1t_cex_n32.pg n 32 iter 12 pairs 5 PCH 8 CO 0 WCH 0 TQ 8 maxPCH 3 maxDIFF 3 maxRATIO 3.00 maxMIN 0 maxENT 2 ex (14, 25, 0, 3, 0, 0)
+SPANW u1t_own6_n32.pg n 32 iter 9 pairs 6 PCH 7 CO 0 WCH 0 TQ 7 maxPCH 2 maxDIFF 2 maxRATIO 2.00 maxMIN 0 maxENT 2 ex (6, 10, 0, 2, 0, 0)
+SPANW u23sw64_n32.pg n 32 iter 16 pairs 31 PCH 46 CO 0 WCH 0 TQ 46 maxPCH 3 maxDIFF 3 maxRATIO 3.00 maxMIN 0 maxENT 2 ex (15, 8, 1, 3, 0, 0)
+SPANW u2flat73_n32.pg n 32 iter 16 pairs 1 PCH 1 CO 0 WCH 0 TQ 1 maxPCH 1 maxDIFF 1 maxRATIO 1.00 maxMIN 0 maxENT 1 ex (0, 22, 6, 1, 0, 0)
+SPANW u2flat_n32.pg n 32 iter 13 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW x31_cu16.pg n 16 iter 23 pairs 17 PCH 42 CO 32 WCH 32 TQ 42 maxPCH 9 maxDIFF 9 maxRATIO 9.00 maxMIN 3 maxENT 2 ex (2, 0, 2, 9, 0, 0)
+SPANW x31_cu24.pg n 24 iter 22 pairs 19 PCH 77 CO 77 WCH 77 TQ 77 maxPCH 9 maxDIFF 0 maxRATIO 0.90 maxMIN 9 maxENT 3 ex None
+SPANW x31_cu32.pg n 32 iter 49 pairs 30 PCH 196 CO 141 WCH 141 TQ 196 maxPCH 12 maxDIFF 6 maxRATIO 3.00 maxMIN 8 maxENT 4 ex (13, 20, 6, 11, 5, 5)
+SPANW x31_cu32i.pg n 32 iter 42 pairs 31 PCH 220 CO 120 WCH 122 TQ 220 maxPCH 18 maxDIFF 15 maxRATIO 4.50 maxMIN 7 maxENT 3 ex (1, 8, 3, 18, 3, 3)
+SPANW pp_K48_n449.pg n 449 iter 56 pairs 2 PCH 2 CO 2 WCH 4 TQ 2 maxPCH 1 maxDIFF 0 maxRATIO 0.33 maxMIN 1 maxENT 1 ex None
+SPANW x31_lem_e24.pg n 24 iter 54 pairs 26 PCH 96 CO 96 WCH 96 TQ 96 maxPCH 8 maxDIFF 0 maxRATIO 0.89 maxMIN 8 maxENT 4 ex None
+SPANW x31_lem_t32.pg n 32 iter 65 pairs 35 PCH 185 CO 185 WCH 185 TQ 185 maxPCH 10 maxDIFF 0 maxRATIO 0.91 maxMIN 10 maxENT 4 ex None
+SPANW x31_nh_r20.pg n 20 iter 15 pairs 5 PCH 5 CO 5 WCH 9 TQ 5 maxPCH 1 maxDIFF 0 maxRATIO 0.50 maxMIN 1 maxENT 1 ex None
+SPANW x31_cu48.pg n 48 iter 46 pairs 49 PCH 239 CO 190 WCH 230 TQ 239 maxPCH 12 maxDIFF 4 maxRATIO 2.50 maxMIN 11 maxENT 4 ex (20, 8, 4, 5, 1, 1)
+SPANW x31_nh_e24.pg n 24 iter 20 pairs 8 PCH 9 CO 9 WCH 15 TQ 9 maxPCH 2 maxDIFF 0 maxRATIO 0.67 maxMIN 2 maxENT 1 ex None
+SPANW x31_ru24.pg n 24 iter 7 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW x31_re24.pg n 24 iter 6 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW x31_rx32.pg n 32 iter 55 pairs 42 PCH 214 CO 177 WCH 207 TQ 214 maxPCH 10 maxDIFF 10 maxRATIO 10.00 maxMIN 9 maxENT 3 ex (12, 0, 2, 10, 0, 0)
+SPANW x32_rand16.pg n 16 iter 15 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW x31_rx48.pg n 48 iter 53 pairs 39 PCH 216 CO 165 WCH 165 TQ 216 maxPCH 11 maxDIFF 11 maxRATIO 11.00 maxMIN 8 maxENT 3 ex (12, 23, 2, 11, 0, 0)
+SPANW pp_K48_n449_dual.pg n 449 iter 56 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW x32_rand24.pg n 24 iter 20 pairs 6 PCH 6 CO 6 WCH 10 TQ 6 maxPCH 1 maxDIFF 0 maxRATIO 0.50 maxMIN 1 maxENT 1 ex None
+SPANW x32_nest40.pg n 40 iter 58 pairs 55 PCH 227 CO 215 WCH 215 TQ 227 maxPCH 12 maxDIFF 2 maxRATIO 1.33 maxMIN 11 maxENT 5 ex (14, 17, 5, 4, 2, 2)
+SPANW x32_rand32.pg n 32 iter 29 pairs 4 PCH 4 CO 4 WCH 6 TQ 4 maxPCH 1 maxDIFF 0 maxRATIO 0.50 maxMIN 1 maxENT 1 ex None
+SPANW x32_rand48.pg n 48 iter 44 pairs 22 PCH 22 CO 22 WCH 43 TQ 22 maxPCH 1 maxDIFF 0 maxRATIO 0.50 maxMIN 1 maxENT 1 ex None
+SPANW x32_waves32.pg n 32 iter 81 pairs 58 PCH 478 CO 353 WCH 395 TQ 478 maxPCH 18 maxDIFF 11 maxRATIO 11.00 maxMIN 15 maxENT 4 ex (5, 0, 4, 11, 0, 0)
+SPANW cone_n65.pg n 65 iter 12 pairs 1 PCH 1 CO 1 WCH 1 TQ 1 maxPCH 1 maxDIFF 0 maxRATIO 0.50 maxMIN 1 maxENT 1 ex None
+SPANW x32_rand64.pg n 64 iter 56 pairs 17 PCH 16 CO 16 WCH 27 TQ 16 maxPCH 1 maxDIFF 0 maxRATIO 0.50 maxMIN 1 maxENT 2 ex None
+SPANW x32_waves48.pg n 48 iter 89 pairs 63 PCH 162 CO 159 WCH 162 TQ 162 maxPCH 5 maxDIFF 2 maxRATIO 2.00 maxMIN 5 maxENT 3 ex (39, 14, 4, 2, 0, 0)
+SPANW ueonce_n27.pg n 27 iter 12 pairs 3 PCH 4 CO 4 WCH 5 TQ 4 maxPCH 2 maxDIFF 0 maxRATIO 0.50 maxMIN 2 maxENT 2 ex None
+SPANW cone_n69.pg n 69 iter 25 pairs 4 PCH 4 CO 4 WCH 4 TQ 4 maxPCH 1 maxDIFF 0 maxRATIO 0.50 maxMIN 1 maxENT 1 ex None
+SPANW switchbestexp_1.pg n 35 iter 20 pairs 23 PCH 40 CO 40 WCH 40 TQ 39 maxPCH 3 maxDIFF 0 maxRATIO 0.75 maxMIN 3 maxENT 2 ex None
+SPANW switchbestexp_2.pg n 60 iter 32 pairs 75 PCH 231 CO 225 WCH 264 TQ 179 maxPCH 6 maxDIFF 2 maxRATIO 1.50 maxMIN 6 maxENT 3 ex (3, 6, 0, 3, 1, 1)
+SPANW switchbestexp_3.pg n 85 iter 41 pairs 110 PCH 370 CO 359 WCH 445 TQ 284 maxPCH 8 maxDIFF 2 maxRATIO 1.50 maxMIN 8 maxENT 3 ex (3, 6, 0, 3, 1, 1)
+SPANW switchbestexp_4.pg n 110 iter 47 pairs 141 PCH 473 CO 458 WCH 570 TQ 348 maxPCH 8 maxDIFF 2 maxRATIO 1.50 maxMIN 7 maxENT 3 ex (3, 6, 0, 3, 1, 1)
+SPANW switchbestexp_5.pg n 135 iter 55 pairs 172 PCH 601 CO 576 WCH 712 TQ 435 maxPCH 9 maxDIFF 3 maxRATIO 1.50 maxMIN 8 maxENT 3 ex (119, 121, 0, 9, 6, 6)
+SPANW switchbestexp_6.pg n 160 iter 62 pairs 204 PCH 724 CO 698 WCH 854 TQ 506 maxPCH 9 maxDIFF 3 maxRATIO 1.50 maxMIN 8 maxENT 4 ex (144, 146, 0, 9, 6, 6)
+SPANW gate_K64_n581.pg n 581 iter 71 pairs 3 PCH 4 CO 4 WCH 6 TQ 3 maxPCH 2 maxDIFF 0 maxRATIO 0.67 maxMIN 2 maxENT 1 ex None
+SPANW switchallexp_1.pg n 21 iter 5 pairs 5 PCH 5 CO 5 WCH 5 TQ 4 maxPCH 1 maxDIFF 0 maxRATIO 0.50 maxMIN 1 maxENT 2 ex None
+SPANW switchallexp_2.pg n 35 iter 8 pairs 6 PCH 9 CO 8 WCH 8 TQ 5 maxPCH 3 maxDIFF 1 maxRATIO 1.00 maxMIN 3 maxENT 2 ex (7, 9, 0, 2, 1, 1)
+SPANW switchallexp_3.pg n 49 iter 7 pairs 6 PCH 11 CO 10 WCH 10 TQ 5 maxPCH 4 maxDIFF 1 maxRATIO 1.00 maxMIN 3 maxENT 2 ex (32, 35, 0, 4, 3, 3)
+SPANW switchallexp_4.pg n 63 iter 8 pairs 8 PCH 13 CO 12 WCH 12 TQ 3 maxPCH 4 maxDIFF 1 maxRATIO 1.00 maxMIN 3 maxENT 2 ex (40, 49, 0, 4, 3, 3)
+SPANW switchbestexp_7.pg n 185 iter 68 pairs 235 PCH 838 CO 808 WCH 994 TQ 563 maxPCH 9 maxDIFF 3 maxRATIO 1.50 maxMIN 8 maxENT 4 ex (169, 171, 0, 9, 6, 6)
+SPANW switchallexp_5.pg n 77 iter 10 pairs 9 PCH 14 CO 13 WCH 13 TQ 1 maxPCH 4 maxDIFF 1 maxRATIO 1.00 maxMIN 3 maxENT 2 ex (54, 63, 0, 4, 3, 3)
+SPANW counter_core_2.pg n 15 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_core_3.pg n 21 iter 6 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW switchallexp_6.pg n 91 iter 12 pairs 11 PCH 20 CO 15 WCH 15 TQ 1 maxPCH 5 maxDIFF 2 maxRATIO 2.00 maxMIN 4 maxENT 2 ex (50, 53, 0, 2, 0, 0)
+SPANW counter_core_4.pg n 27 iter 8 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_core_5.pg n 33 iter 10 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_core_6.pg n 39 iter 12 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_dp_2.pg n 12 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_core_8.pg n 51 iter 16 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_dp_3.pg n 16 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_dp_4.pg n 20 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_dp_5.pg n 24 iter 6 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_dp_6.pg n 28 iter 6 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_dp_8.pg n 36 iter 8 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_m_2.pg n 9 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_m_3.pg n 12 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_m_5.pg n 18 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_m_4.pg n 15 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_m_6.pg n 21 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_m_8.pg n 27 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_ortl_2.pg n 11 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_ortl_3.pg n 16 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_ortl_4.pg n 21 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_ortl_5.pg n 26 iter 6 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_ortl_6.pg n 31 iter 7 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_ortl_8.pg n 41 iter 9 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_qpt_2.pg n 4 iter 1 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_qpt_3.pg n 6 iter 1 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_qpt_4.pg n 8 iter 1 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_qpt_5.pg n 10 iter 1 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_qpt_6.pg n 12 iter 1 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_qpt_8.pg n 16 iter 1 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_rob_2.pg n 31 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_rob_3.pg n 54 iter 7 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_rob_4.pg n 83 iter 10 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_rob_5.pg n 118 iter 13 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_rob_6.pg n 159 iter 16 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_rr_2.pg n 8 iter 1 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_rr_3.pg n 12 iter 1 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_rr_4.pg n 16 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_rob_8.pg n 259 iter 22 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_rr_5.pg n 20 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_rr_6.pg n 24 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_rr_8.pg n 32 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_symsi_2.pg n 22 iter 13 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_symsi_3.pg n 32 iter 25 pairs 1 PCH 1 CO 0 WCH 0 TQ 1 maxPCH 1 maxDIFF 1 maxRATIO 1.00 maxMIN 0 maxENT 1 ex (14, 15, 9, 1, 0, 0)
+SPANW counter_symsi_4.pg n 42 iter 22 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_symsi_5.pg n 52 iter 31 pairs 6 PCH 13 CO 6 WCH 9 TQ 13 maxPCH 4 maxDIFF 3 maxRATIO 3.00 maxMIN 3 maxENT 1 ex (12, 13, 14, 3, 0, 0)
+SPANW counter_symsi_6.pg n 62 iter 37 pairs 7 PCH 19 CO 8 WCH 11 TQ 19 maxPCH 6 maxDIFF 4 maxRATIO 3.00 maxMIN 3 maxENT 2 ex (14, 12, 15, 6, 2, 2)
+SPANW recursiveladder_2.pg n 10 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW recursiveladder_3.pg n 15 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW recursiveladder_4.pg n 20 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW recursiveladder_5.pg n 25 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW recursiveladder_6.pg n 30 iter 6 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW tc_2.pg n 22 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW counter_symsi_8.pg n 82 iter 48 pairs 8 PCH 24 CO 8 WCH 13 TQ 24 maxPCH 6 maxDIFF 5 maxRATIO 5.00 maxMIN 4 maxENT 1 ex (22, 23, 18, 5, 0, 0)
+SPANW tc_3.pg n 42 iter 7 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW tc_4.pg n 68 iter 16 pairs 3 PCH 5 CO 4 WCH 4 TQ 0 maxPCH 2 maxDIFF 1 maxRATIO 1.00 maxMIN 2 maxENT 1 ex (26, 30, 7, 2, 1, 1)
+SPANW tc_5.pg n 100 iter 19 pairs 1 PCH 2 CO 1 WCH 1 TQ 0 maxPCH 2 maxDIFF 1 maxRATIO 1.00 maxMIN 1 maxENT 1 ex (53, 68, 9, 2, 1, 1)
+SPANW tc_6.pg n 138 iter 18 pairs 2 PCH 4 CO 2 WCH 3 TQ 0 maxPCH 2 maxDIFF 1 maxRATIO 1.00 maxMIN 2 maxENT 1 ex (100, 117, 3, 2, 1, 1)
+SPANW pivot_demo.pg n 11 iter 0 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW d_pivot_demo.pg n 11 iter 0 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW runquad_K3_m4_n54.pg n 54 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW runquad_K8_m30_n192.pg n 192 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW s3quad_K3_m4.pg n 137 iter 21 pairs 8 PCH 22 CO 22 WCH 22 TQ 22 maxPCH 4 maxDIFF 0 maxRATIO 0.80 maxMIN 4 maxENT 3 ex None
+SPANW switchbestexp_8.pg n 210 iter 77 pairs 269 PCH 1016 CO 976 WCH 1179 TQ 678 maxPCH 10 maxDIFF 4 maxRATIO 1.60 maxMIN 9 maxENT 4 ex (194, 196, 0, 10, 6, 6)
+SPANW d_runquad_K3.pg n 54 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW tc_8.pg n 232 iter 30 pairs 21 PCH 50 CO 32 WCH 36 TQ 0 maxPCH 5 maxDIFF 3 maxRATIO 2.00 maxMIN 3 maxENT 2 ex (151, 199, 10, 4, 1, 1)
+SPANW topfix_n3.pg n 63 iter 22 pairs 9 PCH 21 CO 21 WCH 21 TQ 21 maxPCH 5 maxDIFF 0 maxRATIO 0.83 maxMIN 5 maxENT 4 ex None
+SPANW topfix_n4.pg n 84 iter 28 pairs 14 PCH 49 CO 49 WCH 49 TQ 49 maxPCH 9 maxDIFF 0 maxRATIO 0.90 maxMIN 9 maxENT 6 ex None
+SPANW topfix_n6.pg n 126 iter 40 pairs 24 PCH 141 CO 141 WCH 141 TQ 141 maxPCH 17 maxDIFF 0 maxRATIO 0.94 maxMIN 17 maxENT 10 ex None
+SPANW topfix_n8.pg n 168 iter 52 pairs 34 PCH 281 CO 281 WCH 281 TQ 281 maxPCH 25 maxDIFF 0 maxRATIO 0.96 maxMIN 25 maxENT 14 ex None
+SPANW d_hntop_n3.pg n 63 iter 22 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW topfix_n8_cmp.pg n 171 iter 52 pairs 34 PCH 281 CO 281 WCH 281 TQ 281 maxPCH 25 maxDIFF 0 maxRATIO 0.96 maxMIN 25 maxENT 14 ex None
+SPANW dlc_d2.pg n 27 iter 7 pairs 2 PCH 2 CO 2 WCH 2 TQ 2 maxPCH 1 maxDIFF 0 maxRATIO 0.50 maxMIN 1 maxENT 2 ex None
+SPANW topfix_n10.pg n 210 iter 64 pairs 44 PCH 469 CO 469 WCH 469 TQ 469 maxPCH 33 maxDIFF 0 maxRATIO 0.97 maxMIN 33 maxENT 18 ex None
+SPANW dlc_d3.pg n 109 iter 15 pairs 4 PCH 8 CO 8 WCH 8 TQ 8 maxPCH 3 maxDIFF 0 maxRATIO 0.75 maxMIN 3 maxENT 4 ex None
+SPANW d_dlc_d3.pg n 109 iter 15 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW runfam_K10.pg n 49 iter 97 pairs 62 PCH 210 CO 169 WCH 180 TQ 210 maxPCH 6 maxDIFF 2 maxRATIO 1.50 maxMIN 6 maxENT 3 ex (6, 15, 4, 3, 1, 1)
+SPANW runfam_K40.pg n 79 iter 163 pairs 98 PCH 360 CO 289 WCH 306 TQ 360 maxPCH 6 maxDIFF 2 maxRATIO 1.50 maxMIN 6 maxENT 3 ex (6, 15, 4, 3, 1, 1)
+SPANW r100_n40.pg n 40 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r101_n50.pg n 50 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r102_n60.pg n 60 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW dlc_d4.pg n 455 iter 31 pairs 6 PCH 22 CO 22 WCH 22 TQ 22 maxPCH 7 maxDIFF 0 maxRATIO 0.88 maxMIN 7 maxENT 8 ex None
+SPANW r103_n70.pg n 70 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r104_n80.pg n 80 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r105_n20.pg n 20 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r106_n30.pg n 30 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r107_n40.pg n 40 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r108_n50.pg n 50 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r10_n50.pg n 50 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r109_n60.pg n 60 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r110_n70.pg n 70 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r112_n20.pg n 20 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r111_n80.pg n 80 iter 7 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r114_n40.pg n 40 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r113_n30.pg n 30 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r115_n50.pg n 50 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r116_n60.pg n 60 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r117_n70.pg n 70 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r118_n80.pg n 80 iter 6 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r119_n20.pg n 20 iter 1 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r11_n60.pg n 60 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r120_n30.pg n 30 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r121_n40.pg n 40 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r122_n50.pg n 50 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r123_n60.pg n 60 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r124_n70.pg n 70 iter 7 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r126_n20.pg n 20 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r125_n80.pg n 80 iter 6 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r127_n30.pg n 30 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r128_n40.pg n 40 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r129_n50.pg n 50 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r12_n70.pg n 70 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r130_n60.pg n 60 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r132_n80.pg n 80 iter 5 pairs 2 PCH 0 CO 0 WCH 4 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 1 ex None
+SPANW r131_n70.pg n 70 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r133_n20.pg n 20 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r134_n30.pg n 30 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r135_n40.pg n 40 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r136_n50.pg n 50 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r137_n60.pg n 60 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r138_n70.pg n 70 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r139_n80.pg n 80 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r140_n20.pg n 20 iter 1 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r13_n80.pg n 80 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r142_n40.pg n 40 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r141_n30.pg n 30 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r143_n50.pg n 50 iter 1 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r144_n60.pg n 60 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r145_n70.pg n 70 iter 7 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r146_n80.pg n 80 iter 7 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r147_n20.pg n 20 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r148_n30.pg n 30 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r149_n40.pg n 40 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r14_n20.pg n 20 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r151_n60d2.pg n 60 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r150_n50.pg n 50 iter 6 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r152_n60d2.pg n 60 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r153_n60d2.pg n 60 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r154_n60d2.pg n 60 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r155_n60d2.pg n 60 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r156_n60d2.pg n 60 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r157_n60d2.pg n 60 iter 5 pairs 1 PCH 1 CO 1 WCH 1 TQ 0 maxPCH 1 maxDIFF 0 maxRATIO 0.50 maxMIN 1 maxENT 1 ex None
+SPANW r159_n60d2.pg n 60 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r158_n60d2.pg n 60 iter 2 pairs 1 PCH 1 CO 1 WCH 1 TQ 0 maxPCH 1 maxDIFF 0 maxRATIO 0.50 maxMIN 1 maxENT 1 ex None
+SPANW r15_n30.pg n 30 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r160_n60d2.pg n 60 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r161_n60d2.pg n 60 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r162_n60d2.pg n 60 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r163_n60d2.pg n 60 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r165_n60d2.pg n 60 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r164_n60d2.pg n 60 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r167_n60d2.pg n 60 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r166_n60d2.pg n 60 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r168_n60d2.pg n 60 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r169_n60d2.pg n 60 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r16_n40.pg n 40 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r170_n60d2.pg n 60 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r171_n60d2.pg n 60 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r172_n60d2.pg n 60 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r173_n60d2.pg n 60 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r175_n60d2.pg n 60 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r174_n60d2.pg n 60 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r176_n60d2.pg n 60 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r178_n60d2.pg n 60 iter 3 pairs 1 PCH 0 CO 0 WCH 1 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 1 ex None
+SPANW r177_n60d2.pg n 60 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r179_n60d2.pg n 60 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r17_n50.pg n 50 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r180_n60d2.pg n 60 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r181_n60d2.pg n 60 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r182_n60d2.pg n 60 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r183_n60d2.pg n 60 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r184_n60d2.pg n 60 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r185_n60d2.pg n 60 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r186_n60d2.pg n 60 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r187_n60d2.pg n 60 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r188_n60d2.pg n 60 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r189_n60d2.pg n 60 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r18_n60.pg n 60 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r190_n60d2.pg n 60 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r191_n60d2.pg n 60 iter 6 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r192_n60d2.pg n 60 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r193_n60d2.pg n 60 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r194_n60d2.pg n 60 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r195_n60d2.pg n 60 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r196_n60d2.pg n 60 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r198_n60d2.pg n 60 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r197_n60d2.pg n 60 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r199_n60d2.pg n 60 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r19_n70.pg n 70 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r1_n30.pg n 30 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r200_n60d2.pg n 60 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r20_n80.pg n 80 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r21_n20.pg n 20 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r22_n30.pg n 30 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r23_n40.pg n 40 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r24_n50.pg n 50 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r25_n60.pg n 60 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r26_n70.pg n 70 iter 6 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r28_n20.pg n 20 iter 1 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r27_n80.pg n 80 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r29_n30.pg n 30 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r2_n40.pg n 40 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r30_n40.pg n 40 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r31_n50.pg n 50 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r32_n60.pg n 60 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r33_n70.pg n 70 iter 6 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r35_n20.pg n 20 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r34_n80.pg n 80 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r36_n30.pg n 30 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r37_n40.pg n 40 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r39_n60.pg n 60 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r38_n50.pg n 50 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r3_n50.pg n 50 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r40_n70.pg n 70 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r41_n80.pg n 80 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r42_n20.pg n 20 iter 0 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r43_n30.pg n 30 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r44_n40.pg n 40 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r45_n50.pg n 50 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r46_n60.pg n 60 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r47_n70.pg n 70 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r48_n80.pg n 80 iter 6 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r49_n20.pg n 20 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r50_n30.pg n 30 iter 1 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r4_n60.pg n 60 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r51_n40.pg n 40 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r52_n50.pg n 50 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r53_n60.pg n 60 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r54_n70.pg n 70 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r55_n80.pg n 80 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r56_n20.pg n 20 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r57_n30.pg n 30 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r58_n40.pg n 40 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r59_n50.pg n 50 iter 7 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r5_n70.pg n 70 iter 8 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r60_n60.pg n 60 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r61_n70.pg n 70 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r63_n20.pg n 20 iter 1 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r62_n80.pg n 80 iter 10 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r64_n30.pg n 30 iter 1 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r65_n40.pg n 40 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r66_n50.pg n 50 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r67_n60.pg n 60 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r68_n70.pg n 70 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r69_n80.pg n 80 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r6_n80.pg n 80 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r70_n20.pg n 20 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r71_n30.pg n 30 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r72_n40.pg n 40 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r73_n50.pg n 50 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r74_n60.pg n 60 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r75_n70.pg n 70 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r77_n20.pg n 20 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r76_n80.pg n 80 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r78_n30.pg n 30 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r79_n40.pg n 40 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r7_n20.pg n 20 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r80_n50.pg n 50 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r81_n60.pg n 60 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r82_n70.pg n 70 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r84_n20.pg n 20 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r83_n80.pg n 80 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r85_n30.pg n 30 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r86_n40.pg n 40 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r87_n50.pg n 50 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r88_n60.pg n 60 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r89_n70.pg n 70 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r8_n30.pg n 30 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r91_n20.pg n 20 iter 3 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r90_n80.pg n 80 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r92_n30.pg n 30 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r93_n40.pg n 40 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r94_n50.pg n 50 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r95_n60.pg n 60 iter 6 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r96_n70.pg n 70 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r97_n80.pg n 80 iter 4 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r98_n20.pg n 20 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r9_n40.pg n 40 iter 5 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW r99_n30.pg n 30 iter 2 pairs 0 PCH 0 CO 0 WCH 0 TQ 0 maxPCH 0 maxDIFF 0 maxRATIO 0.00 maxMIN 0 maxENT 0 ex None
+SPANW fcobsP_3.pg n 90 iter 41 pairs 121 PCH 447 CO 439 WCH 539 TQ 340 maxPCH 8 maxDIFF 2 maxRATIO 1.50 maxMIN 8 maxENT 3 ex (3, 6, 0, 3, 1, 1)
+SPANW fcobsP_4.pg n 115 iter 47 pairs 151 PCH 539 CO 529 WCH 650 TQ 390 maxPCH 8 maxDIFF 2 maxRATIO 1.50 maxMIN 8 maxENT 3 ex (3, 6, 0, 3, 1, 1)
+SPANW s3quad_K8_m30.pg n 479 iter 264 pairs 60 PCH 623 CO 623 WCH 623 TQ 623 maxPCH 14 maxDIFF 0 maxRATIO 0.93 maxMIN 14 maxENT 8 ex None
+SPANW fcobs_6.pg n 163 iter 62 pairs 212 PCH 762 CO 745 WCH 915 TQ 524 maxPCH 9 maxDIFF 3 maxRATIO 1.50 maxMIN 8 maxENT 4 ex (144, 146, 0, 9, 6, 6)
