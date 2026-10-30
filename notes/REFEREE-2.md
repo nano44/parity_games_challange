@@ -1,6 +1,11 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 5 (successor 23; 2026-10-30 17:4xZ by date -u)
+- FIXD line L-3 (59d58d0d, 7d22165a) word-diff MATCHES (R2-N5-FIXD-L3.md, 4d9a4318). comp54 vertex 11 is ODD: tau(11), not sigma(11).
+- WRUN §C R2-N5-WRUN-C.md: joint gap map EMPTY; REFEREE's G-WRUN-1 (line 0faa5b80 block def) CONFIRMED with my line0_cex.py, CLOSED in L-1;
+  Fact EXT N-1 = WRUN-N1; open: my L-1 «strict release» (REFEREE: acceptable) -> Lead decides. NEXT: word-diff WRUN line L-2.
+
 ## Resume point 4 (successor 23; 2026-10-30 17:3xZ by date -u)
 - P-N5-WRUN FROZEN l-new 7668bc9b (packet fae68aa0, line 0faa5b80; candidate L-1 02a12a10 d92521f7). Report docs/referee-2/R2-N5-WRUN.md:
   every item SIGNED, no gap; line L-1 REQUIRED («strict release» unbound in REL2-WRISE), L-2..L-5 precision; N-1 Fact EXT false as worded

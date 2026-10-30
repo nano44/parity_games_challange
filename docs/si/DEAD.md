@@ -626,3 +626,22 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
   arena edge (LAZY).
 - Box 50b's pure form «a flat climb needs a gate change or a non-same-pair gate»: not what the prefix argument proves. Lemma GATE adds case
   (c), the gate climbs. No instance with (c) at a flat transition (SPD 0 in 1,132 runs), so the pure form is OPEN, not dead.
+
+## box 52 (L-SI successor 34; docs/si/N5-HEADS-box52.md)
+- Bellman–Ford front along the Ξ-play: «a Ξ-change at window offset j sits at Ξ-distance ≥ j + 1 from D ∪ C», where Ξ-distance counts the
+  steps of x's Ξ-play before its first vertex of D ∪ C (the W-length form is Theorem RUN-SETTLE, PROVED). DEAD. Instance
+  experiments/red/ul/instances/ladderd0_k12_n48.pg + .start: 11 violations, MINF1 −10 (si/heads52/bffront.py). The family is linear:
+  k24_n84 has 23, k48_n156 has 47. Obstruction: a W-rise beyond a gate g, in τ(g)'s continuation, pulls an Even vertex onto g. Ξ does not
+  read that continuation.
+- «σ̄ never uses an edge of I_τ inside a W-run» (equivalently, every deviation is W*-non-improving for Odd): DEAD. Instance
+  experiments/n5-epoch/instances/lend107_n32.pg + .start: 106 deviation-state pairs use an I_τ edge (si/heads52/dset.py INIT 106).
+- «D_k only shrinks inside a W-run» (no re-entry after an exit): DEAD. Instance experiments/si/gate/inst/latew_K16_m32.pg + .start: one
+  vertex re-enters D 15 times in one W-run (dset.py REN 15). Corpus max 30.
+- «a σ̄(o)-flip needs a Ξ-change at the old target σ̄_k(o)»: DEAD. Instance experiments/n5-epoch/instances/nep13_n24.pg + .start, transition
+  11 → 12, o = 15 (its own Ξ-cycle node). o re-picks its cycle edge 0 → 12 because Ξ(12)'s length falls 4 → 1, and Ξ(0) is unchanged
+  (si/heads52/flipc.py NOX 1). The weaker CONJECTURE FLIP-CAUSE″ (old or new target) has 0 violations in 7,525 flips.
+- CONJECTURE FLIP-CAUSE″ (a σ̄-flip needs a Ξ-change at the old target (EXI), at the old or new target (MOV), or at τ(o) (ENT)): DEAD.
+  Instances experiments/si/heads52/inst/flipnone_n14.pg + .start (Odd 12, its own Ξ-cycle node, 6 → 1 at 1 → 2, no event (iii)) and
+  flipnonex_a_n10.pg + .start (Odd 8 in S1's BFS branch, 9 → 4 at 1 → 2, tied targets re-ordered by 9's own flip). Engines n5x and n5b
+  agree (heads52/flipx.py; red/seg/xeng.py states identical). Obstruction: S1's tie-breaks (DFS at own cycle nodes, BFS discovery
+  order) depend on the strategy below, not on the targets' values. Weaker CONJECTURE FLIP-EV stands (0 violations).
