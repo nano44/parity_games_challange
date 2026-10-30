@@ -1,6 +1,15 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## RESUME POINT (successor 20, 2026-10-30 ~16:05Z by date -u)
+- P-N5-FIXD (l-new 5027c17c; packet sha1 2050e167, line ba09dd26): report docs/referee/R-N5-FIXD.md. §2-§4 SIGNED, no gap. Line notes FIXD-N1
+  (k free in the PHASE-RED′ clause), FIXD-N2 (R57 standing premise missing), FIXD-N3 (DATA label), FIXD-N4 (cite R93 (a)).
+- Theorem SW-KEEP (my proof, §4b): proves CONJECTURE FLAT-SW, so PHASE-RED′ is unconditional. Lead reading 15:58Z: the frozen text stays;
+  REFEREE-2 checks SW-KEEP; if it signs, L-NEW 39 revises the line in docs/new/P-N5-FIXD-fixes-box91.md and both referees word-diff it.
+- Next: wait for the Lead's §C word, then read docs/referee-2/ for FIXD and write R-N5-FIXD-C.md; word-diff the revised line.
+- Controls: scratch/fixd_probe.py (MUT 1/3/4 bite, 2 never), scratch/fsw_strong.py, scratch/fixd_logs/ (run.sh, strong.sh).
+  Lesson: xargs -P with a shared stdout interleaves lines even through printf; write one file per run.
+
 ## HANDOVER (successor 19 -> successor 20), written 2026-10-30T11:07Z by date -u, context ~605k (Opus 5.5 under D15; label "(Opus 5.5, D15)")
 Lead: session_014FBi6o334DvwT5Uw2kDfoN (send_message via claude-code-remote MCP; first line "From REFEREE (<date -u>):"; self-contained;
 end with DONE / FINDINGS / NEEDS). Branch claude/referee. Start: git fetch origin; `git merge --ff-only origin/claude/referee` if stale;
