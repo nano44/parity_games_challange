@@ -1,0 +1,58 @@
+NOTE start file /tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_latep/experiments/red/n3/instances/comp54_n80.start gives forced vertex 11 -> 51; using 11
+NOTE start file /tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_latep/experiments/red/n3/instances/n3cov_lean.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file /tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_latep/experiments/red/n3/instances/n3cov_phi.start invalid for its game (move not an edge, or missing); given start skipped
+CNW 110
+GAMES 672
+GATE 5517
+GCTOK_V 2
+GC_chk 1500
+GCmut_V 490
+GXC 198
+LATE88 1520
+LATEP 1500
+LCT 50
+LS_chk 2
+REPP 2
+RUNS 767
+TD_T1 497
+TD_T2 319
+TD_T3 23123
+TD_T4 36
+TRANS 13205
+TXC 23975
+WRUNS 1089
+WZ 4139
+XP 0
+ZXC 28114
+skip_big 49
+VIOLATIONS 492
+EX ('GCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_latep/experiments/new/box59/out/fc_3.pg', 3, 6, 25, 22)
+EX ('GCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_latep/experiments/new/box59/out/fc_3.pg', 9, 11, 25, 22)
+EX ('GCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_latep/experiments/new/box59/out/fc_3.pg', 10, 12, 25, 19)
+EX ('GCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_latep/experiments/new/box59/out/fc_3.pg', 62, 65, 25, 20)
+EX ('GCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_latep/experiments/new/box59/out/fc_4.pg', 3, 6, 25, 22)
+EX ('GCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_latep/experiments/new/box59/out/fc_4.pg', 10, 12, 25, 22)
+EX ('GCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_latep/experiments/new/box59/out/fc_4.pg', 11, 13, 25, 19)
+EX ('GCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_latep/experiments/new/box59/out/fc_4.pg', 76, 79, 25, 20)
+EX ('GCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_latep/experiments/new/box59/out/fc_4.pg', 78, 90, 25, 20)
+EX ('GCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_latep/experiments/new/box59/out/fcobsR_3.pg', 3, 6, 25, 22)
+EX ('GCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_latep/experiments/new/box59/out/fcobsR_3.pg', 9, 11, 25, 22)
+EX ('GCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_latep/experiments/new/box59/out/fcobsR_3.pg', 10, 12, 25, 19)
+EX ('GCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_latep/experiments/new/box59/out/fcobsR_3.pg', 62, 65, 25, 20)
+EX ('GCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_latep/experiments/new/box59/out/fcobsR_4.pg', 3, 6, 25, 22)
+EX ('GCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_latep/experiments/new/box59/out/fcobsR_4.pg', 10, 12, 25, 22)
+EX ('GCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_latep/experiments/new/box59/out/fcobsR_4.pg', 11, 13, 25, 19)
+EX ('GCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_latep/experiments/new/box59/out/fcobsR_4.pg', 76, 79, 25, 20)
+EX ('GCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_latep/experiments/new/box59/out/fcobsR_4.pg', 78, 90, 25, 20)
+EX ('GCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_latep/experiments/new/box59/out/fcobs_3.pg', 3, 6, 25, 22)
+EX ('GCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_latep/experiments/new/box59/out/fcobs_3.pg', 9, 11, 25, 22)
+EX ('GCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_latep/experiments/new/box59/out/fcobs_3.pg', 10, 12, 25, 19)
+EX ('GCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_latep/experiments/new/box59/out/fcobs_3.pg', 62, 65, 25, 20)
+EX ('GCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_latep/experiments/new/box59/out/fcobs_4.pg', 3, 6, 25, 22)
+EX ('GCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_latep/experiments/new/box59/out/fcobs_4.pg', 10, 12, 25, 22)
+EX ('GCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_latep/experiments/new/box59/out/fcobs_4.pg', 11, 13, 25, 19)
+EX ('GCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_latep/experiments/new/box59/out/fcobs_4.pg', 76, 79, 25, 20)
+EX ('GCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_latep/experiments/new/box59/out/fcobs_4.pg', 78, 90, 25, 20)
+EX ('GCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_latep/experiments/n5-epoch/instances/nconf61_n48.pg', 40, 7, 10, 7)
+EX ('GCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_latep/experiments/n5-epoch/instances/nconf61_n48.pg', 18, 39, 11, 8)
+EX ('GCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_latep/experiments/n5-epoch/instances/nep56_n32.pg', 8, 7, 13, 3)
