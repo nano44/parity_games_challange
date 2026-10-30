@@ -829,3 +829,7 @@ echo "si (box 47: reader chains): PASS"
 # box 48 (docs/si/N5-WDEPTH-box48.md): windows of late adoptions; a REPEAT-opened window feeds a repeat (so_th_n32, depth 2); Lemma WIN.
 o=$(python3 -I odd/repchain.py ../red/so/instances/so_th_n32.pg); grep -q "WIN0 0 WINF 1 WINR 1 PERWIN 1 WINCH_V 0 MAXWD 2 SELF 0" <<<"$o"
 echo "si (box 48: window depth): PASS"
+# box 49 (docs/si/P-N5-REPD-box49.md, FROZEN packet): quotes verbatim (shifted control must fail). Data pins: «box 45», «box 46», «box 48».
+python3 -I rund/quotecheck.py ../../docs/si/P-N5-REPD-box49.md | grep -q "quotes=3 bad=0"
+python3 -I rund/quotecheck.py ../../docs/si/P-N5-REPD-box49.md --mut | grep -q "QUOTES FAIL"
+echo "si (box 49: P-N5-REPD quotes): PASS"
