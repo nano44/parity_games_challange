@@ -55,6 +55,9 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   at n 538; gate_K64's 64 = K (R84 mkgate). R*_F <= |F|: R*-POLY + FL-POLY is EQUIVALENT to polynomial W-runs. FL target not built.
 - R139 (Lead 13:34Z) docs/red/R139-xich-funnel.md: XICH(obs) = Km + K + 1 at ONE vertex (R120 observer = funnel), 529 = 1.47n at n 360;
   XICH <= |F| makes XI-CH-POLY equivalent to polynomial W-runs. Tool xich/xichc.py; pin xich/instances/obs_K12_m24.
+- R140 (Lead 13:57Z) docs/red/R140-friedmann-port.md: switchallexp (0901.2731): switch-all 70..630, S4a arena vs sigma-bar 8..14 linear;
+  blocker (ii) alone, at iteration 1 (all e_i -> h_i). Lemma ARENA-MAX + DECEL-RED: a port needs R*_F >= 2^N/(n-1) Xi-blocked closures.
+  NEXT (untried): a Xi-deceleration lane (R135 gate + fresh patterns per release).
 - Things only I know: mkdg.py writes names into the .pg; dgstat.py reads them (TOPNAME arg). noup.py is exponential in the number of
   choosers (k 6 in 3 s; k 7 not tried).
 
