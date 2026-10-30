@@ -11,7 +11,11 @@ STEP 0: local clone stale at da88a6d4 AGAIN; ff to 0730ee5e, trunk merged 3d33d7
     - Case 3a uses Claim RG′ (§10.1 read with W_(k+1)) + T54 LEX-BFS / IDX-MONO.
     - Case 3c (re-route) is closed by an ARENA-MAX cycle argument.
   - Theorem HEAD-RED: polynomial W-runs ⟺ per-vertex σ̄-flips, CN switches and Ξ-changes at upward heads are polynomial.
-  - Odd side of SEG-XCH: RETURN-CHARGE′-O, SEG-XCH-O, T-XCH.
+  - Odd side of SEG-XCH: RETURN-CHARGE′-O, SEG-XCH-O, T-XCH. CORRECTION: these are landed RESULTS R86 (a) SW-RETURN (both sides, any
+    stretch). Only T-XCH's composition with R15 (d) is new.
+- PACKET P-N5-SETTLE FROZEN (Lead 18:14Z): docs/si/P-N5-SETTLE-box52.md sha1 aef403c3d8a003bcfc6742c4d1da084a1e21669f (248 lines); line
+  docs/si/P-N5-SETTLE-line.txt sha1 6aa094e32b03317797a551ac2fc719749cf59ca7. To sign: RG′, PLAY-CAUSE, RUN-SETTLE / RUN-COUNT, HEAD-RED,
+  T-XCH (composition). Repairs go to docs/si/P-N5-SETTLE-fixes.md, never into the frozen file.
 - FLIP-CAUSE″ DEAD (random search; n5b agrees): flipnone_n14 (Odd own Ξ-cycle node, DFS choice, no head event) and flipnonex_a_n10 (BFS
   branch, tied candidates re-ordered by a flip below; a head event is present). CONJECTURE FLIP-EV: an EXI / MOV flip at a non-own-node o
   happens only at an event-(iii) transition (corpus EVX 0; 5 x 100k random games 0). FLIP-RED: given FLIP-EV, poly W-runs ⟸ HX ∧ CN ∧ XCN.

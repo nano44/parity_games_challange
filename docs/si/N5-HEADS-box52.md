@@ -247,6 +247,10 @@ Labels: PROVED (lane) / CONJECTURE / DATA / DEAD / READING.
   - The chain-propagation cost of a window is already paid (≤ n − 1).
 
 ## 5. Queue item 3: the Odd side of SEG-XCH (PROVED, lane)
+- CORRECTION (18:3xZ, found while freezing P-N5-SETTLE). This section duplicates LANDED work. RESULTS R86 (a) Lemma SW-RETURN reads
+  «For every run of states R of an N5 run, every Even v and every vertex c: ENT_R(v, c) ≤ 1 + RISE_R(c). Dually for Odd v with U.»
+  - RETURN-CHARGE′-O and SEG-XCH-O are that lemma's Odd half (as box 51b's RETURN-CHARGE′ is its Even half).
+  - T-XCH is R86 (a) composed with R15 (d). Only that one-line composition is new; P-N5-SETTLE §7 says so.
 - Lemma RETURN-CHARGE′-O. In any stretch of an N5 run, let Odd o leave d at k1 (τ_(k1)(o) = d ≠ τ_(k1+1)(o)) and re-adopt d at k2 > k1.
   Then Ξ^U_(k2)(d) ◁ Ξ^U_(k1)(d), i.e. strictly better for Odd. Here Ξ^U_j := val(Even's optimal reply to τ_j, τ_j), the valuation
   si.Engine computes on G^d, ordered by Even's ⊴.

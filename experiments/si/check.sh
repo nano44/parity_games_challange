@@ -923,3 +923,7 @@ python3 -I heads52/flipx.py heads52/inst/flipnonex_a_n10.pg heads52/inst/flipnon
 python3 -I heads52/flipx.py heads52/inst/flipnone_n14.pg heads52/inst/flipnone_n14.start | grep -q "FLIP k 1 o 12 tau 1 old 6 new 1 oldXi_changed False newXi_changed False"
 if grep -q "EVX [1-9]" heads52/flipc_*.txt; then echo "box 52: FLIP-EV corpus violation"; exit 1; fi
 echo "si (box 52 §3: FLIP-CAUSE'' DEAD, FLIP-EV data): PASS"
+# box 52 packet P-N5-SETTLE FROZEN (Lead 18:14Z): the packet and its line file must not change (repairs go to P-N5-SETTLE-fixes.md).
+echo "aef403c3d8a003bcfc6742c4d1da084a1e21669f  ../../docs/si/P-N5-SETTLE-box52.md" | sha1sum -c --quiet
+echo "6aa094e32b03317797a551ac2fc719749cf59ca7  ../../docs/si/P-N5-SETTLE-line.txt" | sha1sum -c --quiet
+echo "si (box 52: P-N5-SETTLE frozen): PASS"
