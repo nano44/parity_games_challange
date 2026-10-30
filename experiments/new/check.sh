@@ -373,4 +373,10 @@ if grep -q "n 24 |Q| 10 .* max-len 17 .* max-rho 162 max-rho-per-q 17 max-sbq 32
 else
   echo "box 74 RHO check: FAILED"; exit 1
 fi
+w26=$(cd .. && python3 -I new/box75/sbq.py n5-exhaustive/instances/thetaA_n7.pg n5-exhaustive/instances/thetaA_n7.start)
+if grep -q "n 7 |Q| 1 sum(deg-1) 1 iters 3 phases 1 .* revisits 1 vec-returns 1 " <<<"$w26"; then
+  echo "box 75 SBAR: thetaA_n7 sbar(6) = 5 -> 1 -> 5 in one phase (no sbar-potential): PASS"
+else
+  echo "box 75 SBAR check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
