@@ -10,10 +10,15 @@ STEP 0: clone stale at da88a6d4 AGAIN; ff to 051eb196, trunk merged c6c30141. Or
   Ξ-changes at τ(Odd) ∪ U plus own-node flips XCN). SEL is engine-level: Claim RG′ and T54 read on S1's own evaluate (a READING to sign).
 - §5 (Lead 20:00Z, T60): ORDER-CHG′ PROVED up to PAIR-TIE (data 0); fixed-set NO-REPEAT DEAD (exitr_cex_n16); |U| = 4K + 16 on mkrw.
 - Data: corpus 0 violations of all seven checks; rsearch 10 × 100k BAD 0 (TIES 14-138 per batch, 528 in all). TXR max 36.
-- P-N5-SETTLE: no referee findings routed yet; fixes.md has F0 only.
+- P-N5-SETTLE: both referees SIGNED. Fixes entries 1-3 with line revisions L-1 997e39ee, L-2 1fcb33c5, L-3 ae695c9e (all pinned in
+  check.sh). L-3 is with both referees for word-diff (Lead 22:01Z). Its source note still says «entries 1-2», by the Lead's «nothing else
+  may change»; a one-word L-4 if the Lead wants it.
+- §6 XCN data: XCN-ONE (≤ 1 per W-run; 0 on mkrw / latew / gate / fx; 70k random games max 1). CONJECTURE.
+- PARKED 2026-10-30 ~22:3xZ at ~300k (Lead: «continue box 53 or park, as your context dictates»).
 ### Queue
 1. Answer the SETTLE referee findings in docs/si/P-N5-SETTLE-fixes.md (append-only, no heading markers on line revisions, L41).
-2. XCN-POLY: own-cycle-node flips (S1's DFS first cycle-closing successor). No kill attempted; corpus 5.
+2. XCN-ONE (§6): prove ≤ 1 own-node flip transition per W-run, or kill it (search bias: Odd vertices that are their own cycle node,
+   with several less-relevant cycles below). Then the W-run question is CN-POLY ∧ HX′-POLY.
 3. HX′-POLY: Ξ-changes at τ(Odd) ∪ U per W-run (data linear).
 4. If the Lead wants it: a packet for ROOT-FLIP + HEAD-RED′ (premises: R57, R15 (a)/(d), RG′/T54 transfer).
 ### Things only I know
