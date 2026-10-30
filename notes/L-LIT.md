@@ -9,6 +9,8 @@ DONE (claude/l-lit; pushes via scripts/push.sh, exit 0, VERIFY PASS; Oink smoke 
   Muramatsu L5, Kukharenko-Sanita Thm 1, Tarjan TR-187-88, GGT TR-193-88, Avis-Friedmann opened); (b) fixed-gain PI (Zhong-Ye 2609.40147
   eq 7.6, Post-Ye, Scherrer L8, Goenka Cor 1, FHZ, Friedmann 1-sink, Bjorklund-Vorobyov); (d) label-correcting (Shier-Witzgall R5-R8,
   Orlin OCW l7, Bertsekas); §4 S1 tie-break on G_I: IDX-MONO (ODD), LEX-BFS/LEX-MONO (EVEN), CN open; abstract LEX-ARENA exponential.
+- T55: docs/lit/T55-lexbfs-sweeps.md, T55-sweep-check.py (S1 EVEN = plain BFS F-tree, static index ties, changing arena; not
+  LexBFS (25 diffs), not LBFS+ (180); RETURN-ANCESTOR, LAYER-WINDOW, COUNTER Pi(1+m_d) PROVED mod Claim RG). LexBFS sources in t55/A.
 IN FLIGHT: none. OPEN LEADS: CN-POLY, EVEN-POLY (must use S2 Xi-offers), PASS-BIP; Claim RG (VJ restriction invariant) not re-proved.
 Older leads (T48-T53 handover): KL-SF; parametric dimension >= 2; Maat open direction; Loff-Skomra n-breakpoints.
 NEEDS: none from the owner (optional library access: Cunningham 1979, GHK 1990, Orlin 1997, Johnson 1973, Kershenbaum 1981, AMO).
@@ -477,6 +479,13 @@ NEEDS: none from the owner.
   Linear Network Optimization 1991 (ac86b2c0c822e1f9; pp. 75-76); Bertsekas SLF Networks 1993 (cee42f9ad81fd35b; §1). NOT OPENED: Cunningham
   1976, 1979; GHK 1990; Goldfarb-Hao 1990/1992; Orlin 1985 MP Study, 1997; Tarjan MP 1997; AOSS 2002; Johnson 1973/1977; Kershenbaum 1981;
   AMO; HKZ SODA 2014; Hansen-Zwick 2010; MTZ 2010; Veinott 1969 (all paywalled/403/429/bot wall).
+
+- T55 (2026-10-30). OPENED: Corneil-Dusart-Habib-Mamcarz-de Montgolfier arXiv 1501.06148v1 (12a502cc76009a0d; Thm 3.7, 4.4, 4.6, p. 4);
+  Charbit-Habib-Mouatadid-Naserasr arXiv 1702.02133 (5081bcefc2d3ee10; pp. 2-3, Def 2.1, Cor 3.6, Thm 4.1, 4.2, 4.5, Cor 4.11, Prop 2.4);
+  Gao-Xu arXiv 1904.08076v5 (77afbca5537444fc; Lemma 2.2, Thm 3.2); Dusart-Habib-Corneil arXiv 1611.02002v1 (b5200cea9f29a432; p. 3);
+  Beisegel et al. arXiv 1811.09249v2 (e2f99ac33c39513a; Def 3, Table 1, Thm 8); Beisegel et al. arXiv 1810.12253v5 (ae9ad4f434d19eaa;
+  abstract); Scheffler arXiv 2206.14556v1 (25f8e3032b60ca0d; Problem 3, Thm 6, 11). NOT OPENED: RTL 1976 (SIAM 403), Corneil WG 2004
+  (Springer 429), Corneil-Krueger 2008, Corneil-Dalton-Habib 2013, Dusart-Habib DAM 2017, Corneil-Olariu-Stewart 2009, CDHK 2016.
 
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
