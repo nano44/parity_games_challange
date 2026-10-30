@@ -1,7 +1,9 @@
 # P-N5-LATEP (box 53): late adoptions that forget a block at each adoption (LATE′); FW-R*′; LATE-SPLIT′; GAP-CLIMB; GXC ⊆ TXC ⊆ ZXC; TXC-DESCENT and TXC-RED
-L-SI successor 32 (Opus 5.5; D15 / D18, Lead reading L40). DRAFT, NOT FROZEN: the Lead approves the item list before the freeze (Lead
-2026-10-30 05:49Z: «freeze ONE packet, P-N5-LATEP: LATE′ + FW-R*′ + LATE-SPLIT′ + GAP-CLIMB + the inclusion chain, plus (i) if it closes.
-Every symbol bound, and a line file. Ask me before freezing»). After the freeze, repairs go in docs/si/P-N5-LATEP-fixes-box53.md.
+L-SI successor 32 (Opus 5.5; D15 / D18, Lead reading L40). FROZEN at its push (Lead 2026-10-30 06:11Z: «P-N5-LATEP: GO, with your item
+list §1-§6 as proposed, plus two edits: (a) Add a §7 READING, explicitly NOT TO SIGN: R90's REP* and LATE term may be read with LATE′ …
+(b) The line file must bind every symbol in the line … Freeze it with a sha1 … Fixes go to docs/si/P-N5-LATEP-fixes.md.»). The Lead's
+«§1-§6» are my 06:02Z items, here §2-§7; the Lead's «§7 READING» is §8 here. Repairs go in docs/si/P-N5-LATEP-fixes.md, never into this
+file. The line to land: docs/si/P-N5-LATEP-line.txt (its symbol test is §9).
 Working notes with data: docs/si/N5-ADD-box50.md, N5-LATEP-box51.md, N5-TXCD-box52.md.
 SCOPE (D1): lemmas about one W-run of N5 on every game. Each one is a REDUCTION or a structural fact. No count is bounded here; G-N5-TIME
 stays OPEN. Not a TARGET.md claim, not an algorithm claim. Labels: PROVED (lane, unrefereed) / DATA / READING.
@@ -16,7 +18,9 @@ Every [Q path@commit:lines] «…» is verbatim (experiments/si/rund/quotecheck.
 | §5 | Lemma GAP-CLIMB | PROVED (to sign) |
 | §6 | Proposition CHAIN: GXC_F ⊆ TXC_F ⊆ ZXC_F; ZXC = TXC + WZ | PROVED (to sign) |
 | §7 | Lemma TXC-DESCENT and Corollary TXC-RED | PROVED (to sign) |
-| §8 | READING and DATA | NOT to sign |
+| §8 | READING: R90 read with LATE′ (the Lead's edit (a)) | NOT to sign |
+| §9 | strict symbol test of the line file (the Lead's edit (b)) | check |
+| §10 | DATA, pins | NOT to sign |
 
 ## 1. Setting, symbols, premises
 - N5 = SPEC S1-S5 (docs/new/N5-ssi-global.md) with FIX 1-4, on any game G = (V, E, Ω, owner); n := |V|, n_E := the Even vertices,
@@ -49,8 +53,9 @@ Every [Q path@commit:lines] «…» is verbatim (experiments/si/rund/quotecheck.
   some Even y switches, ρ_{τ+1}(y) = z ≠ ρ_τ(y), to an edge (y, z) that was blocked at some state t ∈ [a, τ).»
 - LATE′. The same sentence, with «t ∈ [a, τ)» replaced by «t ∈ [max(a, p + 1), τ), p the previous adoption transition of (y, z) in F (no
   constraint if there is none)». R*′_T(F) := the number of transitions of F containing at least one LATE′ adoption.
-- Every LATE′ adoption is late in R88's sense, so R*′_T ≤ R*_T. A LATE′ adoption is FIRST′ if (y, z) has no earlier adoption in F,
-  REPEAT′ otherwise; REP′_F := the REPEAT′ adoptions of F.
+- Every LATE′ adoption is late in R88's sense, so R*′_T ≤ R*_T. A LATE′ adoption is FIRST′ if (y, z) has no earlier LATE′ adoption in F,
+  REPEAT′ otherwise; REP′_F := the REPEAT′ adoptions of F. An earlier LATE′ adoption is an earlier R88-late one, so every REPEAT′ is a
+  REPEAT of P-N5-CUT §6 and REP′_F ≤ REP_F.
 
 ## 3. Corollary FW-R*′ (PROVED, lane)
 - Statement. Every W-run F has WCH_F ≤ (n − 1)(R*′_T(F) + 1), WCH_F := the transitions t → t + 1 of F with W_{t+1} ≠ W_t.
@@ -139,19 +144,61 @@ Every [Q path@commit:lines] «…» is verbatim (experiments/si/rund/quotecheck.
     per vertex, and each λ_Ξ-changing transition changes at least one vertex. □
 - With §5 and §6: Σ LATE′_F ≤ n_E·TXC_F + Σ_z d_E(z)·WZ_F(z) ≤ n_E·[n(GXC_F + GATE_F + CNW_F) + n² LCT_F] + Σ_z d_E(z)·WZ_F(z).
 
-## 8. READING and DATA (NOT to sign)
-- READING: the descent breaks only at Odd gates (σ̄ ≠ τ) and own W-cycle nodes, never at τ-changes (τ is constant on F). The live terms are
-  GATE (tied Ξ-climbs at gates) and WZ (the W-change circle at gap climbs).
-- READING (for a separate check, not part of this packet): RESULTS R90's REP* and P-N5-CUT's LATE term may be read with LATE′. Box 40's
-  LATE re-entries are LATE′, since σ_{j−1}(v) ≠ c forces p + 1 ≤ j − 2.
+## 8. READING (NOT TO SIGN): RESULTS R90 read with LATE′
+- R90 (landed) uses late adoptions as in R88 / R89 in exactly one chain: P-N5-CUT §6 Corollary R*-REP (R*_T ≤ m_E + REP_F) feeds §7 Lemma
+  WV-R's second form, WCH_Q(w) ≤ Λ_Q + (Λ_Q + 1)(n − 1)(m_E + REP*_Q + 1), and that gives K(n, m_E, REP*) in §8 Theorem CUT-RED. P-N5-CUT §4's
+  CUT-CHARGE has no separate LATE term (LATE re-entries are inside WCH*).
+- With LATE′, three inequalities would change. None is edited here; each is what the referees would judge:
+  - (R1) P-N5-CUT §6 Corollary R*-REP becomes R*′_T(F) ≤ m_E + REP′_F (§4 here).
+  - (R2) P-N5-CUT §7 Lemma WV-R becomes WCH_Q(w) ≤ Λ_Q + (Λ_Q + 1)(n − 1)(R*′_Q + 1) ≤ Λ_Q + (Λ_Q + 1)(n − 1)(m_E + REP′*_Q + 1). Its proof
+    uses only FW-R* per W-run, which §3 gives in the primed form.
+  - (R3) P-N5-CUT §8: T ≤ 2n(n − 1) + (n(n − 1) + 1)·(m_E·[1 + 2B* + (B* + 1)·K(n, m_E, REP′*)] + SC* + O*), with REP′* := max_F REP′_F ≤ REP*.
+    CUT-POLY's [P-REP] would become [P-REP′]: REP′* ≤ p(n). The converse (fixes K1) is unaffected, since REP′* ≤ REP* ≤ T.
+- Unchanged: B*, SC*, O*, Λ_Q, the bookkeeping, and CUT-CHARGE. Since REP′* ≤ REP*, the primed bound is never weaker.
+- Also READING: box 40's LATE re-entries ([C1]) are LATE′. σ_{j−1}(v) ≠ c and the block at j − 2 force the previous adoption p to satisfy
+  p + 1 ≤ j − 2.
+
+## 9. Strict symbol test of the line file (docs/si/P-N5-LATEP-line.txt)
+| symbol / term in the line | bound by (in the line) |
+| --- | --- |
+| F, W-run | «W-run … as in RESULTS R89: τ and λ_W constant on F, no S4c fallback» |
+| N5, SPEC S1-S5, R57 premise | named; landed |
+| W_t, λ_W | «as in RESULTS R89» |
+| Ξ_t, σ̄_t, Iσ_t, ⊴, ▷ | «as in SPEC S1-S2» |
+| λ_Ξ | «the cycle-node map of Ξ_t» |
+| BLOCKED | «as in RESULTS R88» |
+| n, n_E, m_E, d_E(z) | «n the number of vertices, n_E of Even vertices, m_E of Even edges, d_E(z) of Even edges into z» |
+| adoption at u | «σ_{u+1}(y) = z ≠ σ_u(y)» |
+| LATE′, p, t | «blocked at some state t of F with p + 1 ≤ t < u, p its previous adoption in F» |
+| REPEAT′ | «has an earlier LATE′ adoption in F» |
+| R*′_T, REP′_F | «the transitions of F containing a LATE′ adoption», «the REPEAT′s of F» |
+| X′_F, k, off-cycle | «y is not off-cycle for τ (P-N5-CUT §2) at some state of [k + 1, t], k the last k < u with σ_k(y) = z ≠ σ_{k+1}(y)» |
+| WCH_F, WCH_F(z) | «the W-changing transitions of F and WCH_F(z) those changing W(z)» |
+| Z_s, D_s | defined in the line |
+| s, transition of F | «the transitions s → s + 1 of F (s, s + 1 in F)» |
+| ZXC_F(z), TXC_F(z), WZ_F(z) | defined in the line |
+| GXC_F | «the GXC events (v, s) of L-NEW box 70 §3 (docs/new/N5-SC-box70.md) with s, s + 1 in F» |
+| GATE_F, CNW_F, LCT_F | defined in the line |
+| TXC_F, ZXC_F (as sets) | «the sets of pairs (z, s) with s in TXC_F(z), resp. ZXC_F(z)» |
+| set used as a number | «in every inequality a set stands for its number of elements» |
+| τ (in D_s, X′_F) | F's constant τ («τ … constant on F») |
+| o, x, v, y, z, u | bound where introduced («(o, s) with o Odd …», «(x, s) with λ_W(x) = x», «GXC events (v, s)», «the Even edge (y, z) at u») |
+- Result: every symbol of the line is bound in the line or by a named, landed source. Run by hand (L-SI, 2026-10-30), as in P-N5-CUT K14 /
+  K15.
+
+## 10. DATA and pins (NOT to sign)
+- READING: the descent of §7 breaks only at Odd gates (σ̄ ≠ τ) and own W-cycle nodes, never at τ-changes (τ is constant on F). The live
+  terms are GATE (tied Ξ-climbs at gates) and WZ (the W-change circle at gap climbs).
 - DATA (experiments/si/odd/latep.py, txcd.py; corpus of 719 games + latew_K20_m32 + wdepth_K4_m16):
-  - FW-R*′ violations 0; LATE′ adoptions that are not R88-late 0; W-silent REPEAT′ 0;
+  - FW-R*′ violations 0; LATE′ adoptions that are not R88-late 0;
+  - latep.py's REPP counts LATE′ adoptions of an edge with ANY earlier adoption in F. That is ≥ REP′_F. Its W-silent count among them is
+    0 (consistent with §4);
   - GAP-CLIMB violations 0, repeated tokens 0;
-  - TXC descent failures 0; terminals: 13,878 gates, 292 GXC, 356 λ_Ξ changes, 0 T4 (corpus).
+  - TXC descent failures 0. Terminals (corpus): 13,878 gates, 292 GXC, 356 λ_Ξ changes, 0 T4.
   - TIED-RB (TXC alone pays every REPEAT′) is DEAD: odd/inst/si51/tiedmut_so_th_n32_11 (two engines identical; Oink NOT RUN).
 - Pinned checks: si/check.sh «box 51», «box 52», «box 53».
 
 ## DONE / FINDINGS / NEEDS
-- DONE: draft packet (this file); line file docs/si/P-N5-LATEP-line.txt; quotes checked; si/check.sh «box 53».
-- FINDINGS: the items of §0, all PROVED (lane), none refereed.
-- NEEDS: Lead's GO to freeze; two referees (REFEREE-2 needs a fresh successor, Lead 05:49Z).
+- DONE: packet (this file, FROZEN); line file docs/si/P-N5-LATEP-line.txt; quotes checked; si/check.sh «box 53».
+- FINDINGS: the items of §0 (§2-§7), all PROVED (lane), none refereed; §8 READING and §10 DATA not to sign.
+- NEEDS: two referees (REFEREE 19, REFEREE-2 successor 22; Lead 06:11Z).
