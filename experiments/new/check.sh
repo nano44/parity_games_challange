@@ -511,4 +511,10 @@ if grep -q "RUN 0-71 F 71 mE 1119 entries 542 FRESH 71 RET 0 NORET 71 ORDRET 59 
 else
   echo "box 98 RET check: FAILED"; exit 1
 fi
+w49=$(cd .. && TOP=1 python3 -I new/box99/retcause.py new/box97/inst/sbq2_K8_m16.pg new/box97/inst/sbq2_K8_m16.start)
+if grep -q "RUN 0-152 F 152 returns 450 edges 60 targets 60 max_per_target 8 norise 0 wch_in_window 450" <<<"$w49" && grep -q "ROOT kinds {'FRESH': 450} distinct roots 15 max returns per root 45" <<<"$w49" && grep -q "('FRESH', 4, 66, 17), 45" <<<"$w49"; then
+  echo "box 99 QRET: sbq2_K8_m16 returns all rooted at fresh entries, clock vertex 4's ticks root 45 = 3m - 3 each: PASS"
+else
+  echo "box 99 QRET check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

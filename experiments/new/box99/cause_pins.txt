@@ -1,0 +1,17 @@
+GAME sbq2_K8_m16 RUN 0-152 F 152 returns 450 edges 60 targets 60 max_per_target 8 norise 0 wch_in_window 450 rises_per_return {1: 247, 2: 203} classes {'EVS': 457, 'ODF': 196}
+GAME sbq2_K8_m16   top targets [(121, 8), (124, 8), (127, 8), (130, 8), (133, 8), (136, 8), (139, 8), (142, 8)]
+GAME sbq2_K8_m16   top divergence vertices (v, owner, Odd-head) [((4, 'E', '-'), 240), ((119, 'E', '-'), 14), ((122, 'E', '-'), 14), ((125, 'E', '-'), 14), ((128, 'E', '-'), 14), ((131, 'E', '-'), 14), ((134, 'E', '-'), 14), ((137, 'E', '-'), 14)]
+GAME sbq2_K8_m16   top Odd flips (o, old, new) [((170, 171, 122), 7), ((170, 122, 171), 7), ((175, 176, 125), 7), ((175, 125, 176), 7), ((180, 181, 128), 7), ((180, 128, 181), 7), ((185, 186, 131), 7), ((185, 131, 186), 7)]
+GAME sbq2_K8_m16   ROOT kinds {'FRESH': 450} distinct roots 15 max returns per root 45 chain depth {0: 352, 1: 98}
+GAME sbq2_K8_m16   top roots (kind, x, w, q) [(('FRESH', 4, 66, 17), 45), (('FRESH', 4, 73, 36), 45), (('FRESH', 4, 80, 55), 45), (('FRESH', 4, 87, 74), 45), (('FRESH', 4, 94, 93), 45), (('FRESH', 4, 101, 112), 45), (('FRESH', 4, 108, 131), 45), (('FRESH', 4, 114, 150), 30)]
+GAME obs_K12_m24 RUN 0-324 F 324 returns 818 edges 72 targets 72 max_per_target 12 norise 0 wch_in_window 818 rises_per_return {1: 312, 2: 506} classes {'EVS': 1324}
+GAME obs_K12_m24   top targets [(248, 12), (271, 12), (177, 12), (180, 12), (183, 12), (186, 12), (189, 12), (192, 12)]
+GAME obs_K12_m24   top divergence vertices (v, owner, Odd-head) [((4, 'E', '-'), 288), ((175, 'E', '-'), 45), ((178, 'E', '-'), 44), ((181, 'E', '-'), 44), ((184, 'E', '-'), 44), ((187, 'E', '-'), 44), ((190, 'E', '-'), 44), ((193, 'E', '-'), 44)]
+GAME obs_K12_m24   ROOT kinds {'FRESH': 818} distinct roots 25 max returns per root 71 chain depth {0: 818}
+GAME obs_K12_m24   top roots (kind, x, w, q) [(('FRESH', 4, 94, 25), 71), (('FRESH', 4, 101, 52), 71), (('FRESH', 4, 108, 79), 71), (('FRESH', 4, 115, 106), 71), (('FRESH', 4, 122, 133), 71), (('FRESH', 4, 129, 160), 71), (('FRESH', 4, 136, 187), 71), (('FRESH', 4, 143, 214), 71)]
+GAME latew_K16_m32 RUN 0-560 F 560 returns 1922 edges 124 targets 124 max_per_target 16 norise 0 wch_in_window 1922 rises_per_return {1: 1007, 2: 915} classes {'EVS': 1937, 'ODF': 900}
+GAME latew_K16_m32   top targets [(233, 16), (236, 16), (239, 16), (242, 16), (245, 16), (248, 16), (251, 16), (254, 16)]
+GAME latew_K16_m32   top divergence vertices (v, owner, Odd-head) [((4, 'E', '-'), 992), ((231, 'E', '-'), 30), ((234, 'E', '-'), 30), ((237, 'E', '-'), 30), ((240, 'E', '-'), 30), ((243, 'E', '-'), 30), ((246, 'E', '-'), 30), ((249, 'E', '-'), 30)]
+GAME latew_K16_m32   top Odd flips (o, old, new) [((330, 331, 234), 15), ((330, 234, 331), 15), ((335, 336, 237), 15), ((335, 237, 336), 15), ((340, 341, 240), 15), ((340, 240, 341), 15), ((345, 346, 243), 15), ((345, 243, 346), 15)]
+GAME latew_K16_m32   ROOT kinds {'FRESH': 1922} distinct roots 31 max returns per root 93 chain depth {0: 1472, 1: 450}
+GAME latew_K16_m32   top roots (kind, x, w, q) [(('FRESH', 4, 122, 33), 93), (('FRESH', 4, 129, 68), 93), (('FRESH', 4, 136, 103), 93), (('FRESH', 4, 143, 138), 93), (('FRESH', 4, 150, 173), 93), (('FRESH', 4, 157, 208), 93), (('FRESH', 4, 164, 243), 93), (('FRESH', 4, 171, 278), 93)]
