@@ -11,7 +11,7 @@ concentrate it ... a single funnel vertex upstream of the fan. (3) If concentrat
   - L-RED's new xich/xichc.py (n5b SPEC valuations, independent of n5x).
 
 ## 1. Step (1): spread or concentrated? (DATA)
-- latew_K16_m32 (R138, R*_F = 512): max ΞCH per vertex = 33 (xirise.py), so max ΞCH ≈ 2m + 1. Spread: the quadratic R*_F sits over
+- latew_K16_m32 (R138, R*_F = 512): max ΞCH per vertex = 33 (xirise.py), so max ΞCH = 2K + 1 (K 16; K 4 m 16 gives 9; corrected 2026-10-30 14:12Z from "≈ 2m + 1", which was wrong: 2m + 1 = 65). Spread: the quadratic R*_F sits over
   many late adopters, each with a linear count.
 - fx_K8_m32 (R137): max ΞCH = 137 at one observer (pch.py; PCH 137, LCH 0, LEN 0). Concentrated: K·m/2 + K + 1, because each of the two
   observers reads half the reactors.
