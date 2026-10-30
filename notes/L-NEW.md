@@ -1,7 +1,17 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 38, Opus 5.5, session_01V5yGRWPFRQsUTroeihw8wg; FINAL, PARKED 2026-10-30 ~15:4xZ by date -u, ~65% context)
+## Resume point (successor 39, Opus 5.5, started 2026-10-30 15:58Z by date -u; handover check: origin head 5027c17c, trunk f99f82e7 merged)
+### Box 92 P-N5-WRUN FROZEN (docs/new/P-N5-WRUN-box92.md + -line.txt; sha1s in the Lead report): NOT sent to referees (Lead routes)
+- NEW (lane, a composition of landed R86 SW-RETURN + R15 (d)): Theorem XI-RUN |F| <= m_E + sum_c d_E(c) XICH_F(c) on every W-run (and every
+  sub-stretch, e.g. W-constant intervals: INT-XCH0 = L-SI's INT-XCH with RX_I = 0). Hence Corollary WRUN-EQ: WRUN-POLY <=> XI-CH-POLY <=>
+  P*-POLY <=> DEEP_k-POLY <=> R*-POLY & FL-POLY <=> ALT & FREE <=> R3 & TIE <=> R* & [P-INT] (<=> SB & R° & FL under [SUB]); one-way:
+  BIP-REL-1 route, NO-DEV, WRUN => R3. DATA box92/xirun.py on corpus (1692 W-runs): 0 violations, max ratio 0.273; check.sh "box 92".
+- CORRECTION: box 88 NO-DEV's "FL_F = 0, |F| <= n-1" step ("a switched vertex strictly improves its Xi") is unjustified (R15 (b) case);
+  corrected to |F| <= (n-1) + 4n^2(n-1) via R15 (d). Dedupe: RETURN-CHARGE (L-SI) is a special case of RET-XIRISE (= R86 SW-RETURN chain).
+- (A) P-N5-FIXD: frozen at 5027c17c; no referee finding routed yet; fixes file not created. FLAT-SW revision waits for the Lead.
+
+## Resume point (successor 38, Opus 5.5, session_01V5yGRWPFRQsUTroeihw8wg; HISTORY; FINAL, PARKED 2026-10-30 ~15:4xZ by date -u, ~65% context)
 ### FINAL summary (successor 38): boxes 84-91, all pushed via scripts/push.sh (VERIFY PASS), each reported to the Lead
 - 84 N5-WAIT (246f1687): WAIT-CYCLE′ (X on own cycle incl.; exception E0), E0-BOUND, TRIPLE-RED. 85 N5-FREE (893b9346): FREE classes,
   RET-XIRISE, FREE-RED. 86 N5-RSTAR (584e6e19): GAP-DEV, RSTAR-PCH, DEV-CAP DEAD. 87 N5-ARV (b46f7759): LEX-SIGN, PREFIX-MON, LEVEL-RED,
