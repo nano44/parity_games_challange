@@ -469,4 +469,10 @@ if grep -q "SBV n 32 runs 1 maxima {'sb': 34, 'sbv': 34, 'ret': 18, 'F': 34} sb/
 else
   echo "box 90 REL check: FAILED"; exit 1
 fi
+w42=$(cd .. && python3 -I new/box92/xirun.py red/so/instances/pftheta34_n32.pg; python3 -I new/box92/xirun.py red/free/instances/fx_K8_m32.pg red/free/instances/fx_K8_m32.start)
+if grep -q "XIRUN n 32 mE 80 runs 1 {'noswitch': 0, 'viol_sw': 0, 'viol_ent': 0, 'viol_xirun': 0} maxima {'F': 34, 'xich': 34, 'bound': 1010, 'ratio': 0.034}" <<<"$w42" && grep -q "XIRUN n 250 mE 151 runs 1 {'noswitch': 0, 'viol_sw': 0, 'viol_ent': 0, 'viol_xirun': 0} maxima {'F': 280, 'xich': 137, 'bound': 2005, 'ratio': 0.14}" <<<"$w42"; then
+  echo "box 92 WRUN: XI-RUN |F| <= m_E + sum d_E XICH on pftheta34_n32 and fx_K8_m32: PASS"
+else
+  echo "box 92 WRUN check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
