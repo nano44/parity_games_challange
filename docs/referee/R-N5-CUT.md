@@ -168,6 +168,44 @@ WCH_Q, Λ_Q; K(n, m_E, r); B*, REP*, SC*, O*; m_E; T. Scope words: REDUCTION; B*
 G-N5-TIME open; not M3, not a step-4 pass, not a TARGET.md claim. Premises: R15 (d), R17 (a) (F1), R47 (a), R57 (a), R86, R88, R89 (incl.
 DUAL-ORDER, GP*-RUN, STRETCH-RED's λ_W item). I check the line symbol by symbol when the Lead pins it.
 
+## 10b. RESULTS-line check (proposal docs/agents/P-N5-CUT-line-proposal.md at trunk 09d6f0c4, sha1 10e91e67…; Lead brief 01:22Z; checked 01:40Z by date -u)
+Every symbol of the line, and where it is defined (IN = in the line; CITE = defined by a landed entry the line should name; MISSING = neither):
+| symbol | status | fix |
+| --- | --- | --- |
+| N5 | CITE (SPEC S1-S5, R15) | say "N5 (SPEC S1-S5)", as R89 |
+| "EVERY game" / which run | IN for games; the run is implicit | say "every run (any start pair) on every game"; the maxima are over that run's λ-runs, W-runs, λ^U-runs |
+| T | MISSING | "T := the number of transitions (iterations) of the run" |
+| n | standard (TARGET.md §1) | — |
+| m_E | MISSING | "m_E := the number of edges leaving Even vertices" (as R86) |
+| K | IN | ✓ = §8's K(n, m_E, REP*) |
+| B* (Even S4c fallbacks plus τ-changing transitions inside one λ-run) | IN, with λ-run CITE R86 | ✓ (no transition is both: an Even fallback keeps τ); "inside" = both states in the λ-run, as R86 |
+| λ-run, λ^U-run | CITE R86 | name R86 |
+| W-run | CITE R89 | name R89 |
+| late adoption | CITE R88 / R89 | name R88 |
+| REP* ("a second or later late adoption of the same Even edge inside one W-run") | IN | ✓ = §6's REPEAT, §8's REP* |
+| re-entry | MISSING | "a transition of the λ-run at which σ(v) becomes c after a leave of c in the same λ-run" |
+| W-silent, own-cycle (SC*) | MISSING — E-item CUT-E1 | see below |
+| O* | IN | ✓ |
+| W (inside "W-silent") | MISSING | W^τ_t := val(σ_t, τ) on G_τ, read in the frame τ_{j−1} |
+- CUT-E1 (SC* is not defined by the line). §8's SC* sums §4's classes S and C, which depend on the smallest ANCHOR q (a state with max(s, a) ≤
+  q − 1 ≤ j − 2 and (v, c) ∈ H_{q−1}, [a, b] the τ_{j−1}-piece of j − 1), on the frame τ_{j−1}, and on the window [q, j]: C = an anchor exists and
+  v is its own τ_{j−1}-cycle node at some state of [q, j]; S = an anchor exists, v is off-cycle on [q, j] and W^{τ_{j−1}}(c) is constant on
+  [q, j]. "W-silent plus own-cycle re-entries" read naively (e.g. own-cycle "at j", or own-cycle without an anchor) can give a SMALLER count
+  than §8's SC*, and then the displayed bound is not what §8 proves. Fix: carry §4's definitions in the line (anchor, smallest q, frame
+  τ_{j−1}, window [q, j]), or define SC* as "Σ over Even edges (v, c) of the anchored re-entries of v into c in one λ-run at which either v is
+  its own cycle node (for τ_{j−1}) somewhere between the anchor and the re-entry, or W(c) is constant there (P-N5-CUT §4)". A superset
+  reading (any re-entry W-silent at j, or own-cycle anywhere in its window) keeps the bound true but is not what was signed; name §4.
+- CUT-E2 ("polynomial iff they are"): Corollary CUT-POLY proves one direction only. The converse is TRUE and one line, which I sign: every
+  count is a count of events of the run, and each transition carries at most |V_E| ≤ n of them: B* ≤ T and O* ≤ T (transitions); REP* ≤ n·T and
+  SC* ≤ n·T (each late adoption / re-entry is a pair (transition, Even vertex)). So T ≤ q(n) on every run ⇒ all four ≤ n·q(n). Either add this
+  sentence to the fixes file and cite it, or drop "iff" ("polynomial if they are").
+- Premises the line should name (as R89 does): R15 (d), R17 (a) (F1) with R57 (a) (VJ) (CUT-N1), R47 (a), R86, R88, R89 (DUAL-ORDER,
+  GP*-RUN, STRETCH-RED's λ_W item). Scope words present ✓ (REDUCTION; none bounded; not M3; not a TARGET.md claim; G-N5-TIME open). Add
+  "CONJECTURE REP-LIN (REP_F ≤ n) DEAD (L-RED R128)" if the line mentions REP-LIN anywhere (it does not now: fine).
+- The displayed inequality equals §8's (1 + B* + B* = 1 + 2B*) ✓; "(first late adoptions ≤ m_E per W-run)" = LATE-SPLIT (i) ✓.
+Verdict on the line (Opus 5.5, D15): NOT YET — two E-items (CUT-E1 undefined SC* classes; CUT-E2 "iff" beyond CUT-POLY, converse supplied
+here) and four MISSING symbols (T, m_E, re-entry, W). With those fixed it matches §8 and claims nothing more.
+
 ## Notes (for docs/si/P-N5-CUT-fixes-box43.md; none changes a verdict)
 - CUT-N1 (standing premise, citation): OPT-OFF (i) is R17 (a) (F1) on the one-player arena A, with R57 (a) (VJ) that S1's Ξ is VJ00's Ω, plus
   G-N5T-1 (code = SPEC) for every DATA line. The packet cites only [S1-Xi] + [DO]. Same item as SF F7, GP G1, FRAME H1.
