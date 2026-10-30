@@ -50,16 +50,17 @@ BIND = {
  "LEV_{t′}": ("in", "LEV_{t′}(v) ≥ LEV_t(v) for states t < t′ of a phase P"), "t′": ("in", "for states t < t′ of a phase P"), "Z_{t′}": ("in", "v ∈ Z_t ∩ Z_{t′}"), "∩": ("in", "Z_t ∩ Z_{t′}"),
  "r": ("in", "for each rank r from n − 1 down to 0"), "LEV_{k+1}": ("in", "LEV_{k+1}(v) > LEV_k(v)"), "LEV_k": ("in", "LEV_{k+1}(v) > LEV_k(v)"),
  "DROP_P": ("in", "number at most (n + 1)(1 + WCH^S4a_P(v)) (DROP_P(v))"), "FBOS_P": ("in", "FBOS_P the FBO events of P with LEV_{t+1}(v) = LEV_t(v)"), "LEV_{t+1}": ("in", "LEV_{t+1}(v) = LEV_t(v)"),
- "FBO": ("in", "FBO_P the GXC events of P at in-phase fallbacks"), "NZ_P": ("in", "NZ_P the Z-flat in-phase fallbacks of P all of whose switched Even vertices"),
+ "FBO": ("in", "FBO_P the GXC events of P at in-phase fallbacks"), "NZ_P": ("in", "NZ_P the Z-flat in-phase fallbacks k → k + 1 of P all of whose switched Even vertices"),
  "ZFS_P": ("in", "ZFS_P the other Z-flat in-phase fallbacks of P"), "Z-flat": ("in", "those k → k + 1 with Z_{k+1} = Z_k"),
- "WCH-RED": ("in", "(Theorem WCH-RED"), "WCH-ONE": ("in", "Corollary WCH-ONE)"), "S": ("in", "every τ-stretch S"), "w": ("in", "at most w(n) S4a steps inside S changing W(e)"),
+ "WCH-RED": ("in", "(Theorem WCH-RED"), "WCH-ONE": ("in", "Corollary WCH-ONE)"), "S": ("in", "every τ-stretch S"), "w": ("in", "for a function w : ℕ → ℕ"),
  "[P-WCHτ]": ("in", "(premise [P-WCHτ](w), not proved here)"), "TIE*": ("in", "TIE* := max_F TIE_F"),
- "N5-LZC": ("in", "for the labelled VARIANT N5-LZC (N5 with S4a's output σ* replaced by σ′"), "σ*": ("in", "S4a's output σ*"), "σ′": ("in", "replaced by σ′, which keeps σ_t(v)"),
- "W*": ("in", "W*, the [S1-val] valuation of the (σ*, τ_t)-plays"), "LZ-OPT": ("in", "(Lemma LZ-OPT"), "LZ-STRICT": ("in", "Theorem LZ-STRICT"),
+ "N5-LZC": ("in", "for the labelled VARIANT N5-LZC (N5 with S4a's output σ* replaced by σ′"), "σ*": ("in", "S4a's output σ*"), "σ′": ("in", "replaced by σ′, which, with W* the [S1-val] valuation of the (σ*, τ_t)-plays, keeps σ_t(v)"),
+ "W*": ("in", "with W* the [S1-val] valuation of the (σ*, τ_t)-plays"), "LZ-OPT": ("in", "(Lemma LZ-OPT"), "LZ-STRICT": ("in", "Theorem LZ-STRICT"),
  "RUN-WCH_LZ": ("in", "Corollaries RUN-WCH_LZ, REP-WCH_LZ)"), "REP-WCH_LZ": ("in", "Corollaries RUN-WCH_LZ, REP-WCH_LZ)"),
  "LZ-NOSIL": ("in", "(Corollary LZ-NOSIL, under ASSUMPTION OPT-ONLY"), "OPT-ONLY": ("in", "ASSUMPTION OPT-ONLY that RESULTS R90 Fact B and (a) (ii), (b), (c), (d) hold verbatim for N5-LZC runs"),
  "G-N5-TIME": ("in", "G-N5-TIME stays open"), "M3": ("in", "not M3"), "TARGET.md": ("in", "not a TARGET.md claim"), "REDUCTION": ("in", "a REDUCTION"),
  "VARIANT": ("in", "labelled VARIANT"), "ASSUMPTION": ("in", "ASSUMPTION OPT-ONLY"), "EVERY": ("in", "on EVERY game"), "Even": ("in", "Even vertices"), "Odd": ("in", "Odd follows τ_t"),
+ "R84": ("in", "R84 (a) (Fact DELTA)"), "DELTA": ("in", "R84 (a) (Fact DELTA)"), "ℕ": ("in", "for a function w : ℕ → ℕ"), "∅": ("in", "(v, ∅, 0)"),
  "Lemma": ("word", ""), "Theorem": ("word", ""), "Corollary": ("word", ""), "Corollaries": ("word", ""), "Fact": ("in", "R90 Fact B"), "B": ("in", "R90 Fact B"),
  "(a)": ("word", ""), "≠": ("in", "≠"), "∈": ("in", "∈"), "+1": ("in", "+1, −1 or 0"), "−1": ("in", "+1, −1 or 0"), "−": ("in", "−"), "=": ("word", ""), ":=": ("word", ""),
  "<": ("in", "t < t′"), ">": ("in", ">"), "e": ("in", "for every Even v and successor e"),
@@ -67,7 +68,7 @@ BIND = {
  "Ω-cycle": ("in", "v is its own Ω-cycle node if the cycle node of Ω(v) is v"), "Ω": ("in", "for a valuation Ω"), "|Z_a|": ("in", "every phase P with first state a"),
  "REPEATs": ("in", "REPEATs, REP_F and REP*"), "τ_{j−1}": ("in", "τ_j ≠ τ_{j−1}"), "Ξ_{σ_t}": ("in", "Ξ_t := Ξ_{σ_t} (SPEC S1)"), "v": ("in", "v is switched at t"),
 }
-GREEK = "αβγδεζηθικλμνξοπρστυφχψωΞΣΩΛΔΓΠΦΨℓ"
+GREEK = "αβγδεζηθικλμνξοπρστυφχψωΞΣΩΛΔΓΠΦΨℓℕ∅"
 OPS = "⊴◁⊵▷⊕∪∩≤≥≠∈→·<>"
 line_t = re.sub(r"'s\b", "", line)
 line_t = re.sub(r"\(([a-m]|i{1,3}|iv)\)", " ", line_t)       # item labels (a)-(m), (ii) of cited RESULTS items
