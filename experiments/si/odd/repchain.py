@@ -8,7 +8,10 @@ the (sigma_{t*+1}, tau)-play from z (z included) with sigma_{t*+1}(x) != sigma_{
 any, else a FIRST one ("F"), else a plain switch ("S"). DEPTH: 1 + DEPTH(parent) for a REPEAT parent, else 1. LDEC: the parent switch x
 has W-length l(x) < l(z) at t*+1 (l = steps to the cycle node); LDEC_V counts parents with l(x) >= l(z). Counters: rep, silent, parF,
 parR, parS, maxdepth, LDEC_V; PLAINW = the largest number, over W-runs, of W-changing transitions at which no late
-adoption happens (the "plain-wave" lemma would say <= n - 1); PLAINV = the same per vertex (most W-changes of one vertex at plain transitions in one W-run). Usage: repchain.py GAME.pg [START]"""
+adoption happens (the "plain-wave" lemma would say <= n - 1); PLAINV = the same per vertex (most W-changes of one vertex at plain transitions in one W-run). Box 46 (LOCAL): per W-run, WCH (W-changing
+transitions), RT (transitions with a late adoption), RLOC (transitions with a LOCAL late adoption: the edge was blocked at some state
+>= u - n + 1 of the W-run, u the adoption transition), REPW (REPEATs in the W-run); maxima over W-runs: WCHW, RTW, RLOCW, REPW;
+LOC_V counts W-runs with WCH > (n - 1)(RLOC + 1) (Corollary LOC-R*, must be 0). Usage: repchain.py GAME.pg [START]"""
 import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
 sys.path.insert(0, os.path.join(ROOT, "experiments", "new", "box21"))
@@ -29,25 +32,34 @@ def play(s, t, z):
     seen, out, x = set(), [], z
     while x not in seen: seen.add(x); out.append(x); x = s[x] if g.owner[x] == 0 else t[x]
     return out
-c = dict(rep=0, silent=0, parF=0, parR=0, parS=0, maxdepth=0, LDEC_V=0, late=0, PLAINW=0, PLAINV=0)
+c = dict(rep=0, silent=0, parF=0, parR=0, parS=0, maxdepth=0, LDEC_V=0, late=0, PLAINW=0, PLAINV=0, WCHW=0, RTW=0, RLOCW=0, REPW=0, LOC_V=0)
 # W-run state
 def reset(s, t):
-    w, wk = W(s, t); return dict(S=[s], WV=[w], WK=[wk], bl=set(blocked(s, t, wk)), late={}, adopt={}, leave={}, pw=0, pv=[0] * n)
+    w, wk = W(s, t); return dict(S=[s], WV=[w], WK=[wk], bl=set(blocked(s, t, wk)), late={}, adopt={}, leave={}, pw=0, pv=[0] * n, wch=0, rt=0, rloc=0, rep=0, bt={})
 R = reset(s, t)
+for e in R['bl']: R['bt'][e] = 0
+def close(R):
+    c['WCHW'] = max(c['WCHW'], R['wch']); c['RTW'] = max(c['RTW'], R['rt']); c['RLOCW'] = max(c['RLOCW'], R['rloc']); c['REPW'] = max(c['REPW'], R['rep'])
+    if R['wch'] > (n - 1) * (R['rloc'] + 1): c['LOC_V'] += 1
 while True:
     r = step(g, E, Ed, list(s), list(t))
     if r is None: break
     ns, nt, _, _, fb, _, _ = r; ns, nt = tuple(ns), tuple(nt)
     w2, wk2 = W(ns, t)
     if nt != t or ns == s or fb or any(w2[x][0] != R["WV"][-1][x][0] for x in range(n)):
-        s, t = ns, nt; R = reset(s, t); continue
+        close(R); s, t = ns, nt; R = reset(s, t)
+        for e in R['bl']: R['bt'][e] = 0
+        continue
     u = len(R["S"]) - 1                                         # transition u -> u+1 inside the W-run (local indices)
+    anylate = anyloc = False
     for y in ev:
         if ns[y] == s[y]: continue
         R["leave"][(y, s[y])] = u
         z = ns[y]
         if (y, z) in R["bl"]:
-            c["late"] += 1; k = R["adopt"].get((y, z), 0)
+            c["late"] += 1; k = R["adopt"].get((y, z), 0); anylate = True
+            if R['bt'][(y, z)] >= u - n + 1: anyloc = True
+            if k: R['rep'] += 1
             rec = dict(kind="F" if k == 0 else "R", depth=1)
             if k:
                 c["rep"] += 1; kl = R["leave"].get((y, z))
@@ -72,5 +84,9 @@ while True:
         if ch:
             R["pw"] += 1; c["PLAINW"] = max(c["PLAINW"], R["pw"])
             for x in ch: R["pv"][x] += 1; c["PLAINV"] = max(c["PLAINV"], R["pv"][x])
-    R["S"].append(ns); R["WV"].append(w2); R["WK"].append(wk2); R["bl"] |= blocked(ns, t, wk2); s = ns
+    R['rt'] += anylate; R['rloc'] += anyloc; R['wch'] += wk2 != R['WK'][-1]
+    nb = blocked(ns, t, wk2)
+    for e in nb: R['bt'][e] = u + 1
+    R["S"].append(ns); R["WV"].append(w2); R["WK"].append(wk2); R["bl"] |= nb; s = ns
+close(R)
 print(f"REPCH {os.path.basename(args[0])} n {n} " + " ".join(f"{k} {v}" for k, v in c.items()))
