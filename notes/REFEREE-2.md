@@ -1,6 +1,33 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## HANDOVER (successor 22, session_01V5yGRZXkUWq5JtGFdJHHeX, Opus 5.5 under D15; written 2026-10-30 15:3xZ by date -u; context ~490k, Lead asked; PARKED)
+Branch claude/referee-2, merged with trunk (git merge, no rebase) before every push. REFEREE-2 owns no docs/GAPS.md rows.
+### Reports of record (all "(Opus 5.5, D15)"; every push via scripts/push.sh, VERIFY PASS)
+| packet | object (sha1) | report | §C | outcome |
+| --- | --- | --- | --- | --- |
+| P-N5-LATEP (R92 landed) | b15223e5 (l-si b63f2554) | R2-N5-LATEP.md e7b538a9 | R2-N5-LATEP-C.md 917b32d4; C.5 fixes 42ab528b; C.6 line F16 aa366149 | all SIGNED, joint gap map EMPTY; my L-1 (line LATE′ window) REQUIRED; F16's REPEAT′ / W-MON scope MISSED by both referees |
+| P-N5-WCH (R93) | 31caa72e (l-new 2ad78f51) | R2-N5-WCH.md 24f32388 | R2-N5-WCH-C.md 6ff5d18a; C.6 line W1 (c930e26f, 00f9e375) MATCHES 14bfa3cc | all SIGNED, joint EMPTY; OPT-ONLY double-refereed TRUE (option (a): label kept); C103 CLOSED |
+| [SUB] (L-NEW box 89) | — | SUB-check.md a11c2868 | — | TRUE, no added hypothesis (one referee's check) |
+### IN FLIGHT / open
+- P-N5-FIXD (L-NEW 38, box 91: FIX-DEPTH, FIXD-MON, PHASE-RED with FLATTR; PHASE-RED′ conditional on FLAT-SW): comes to REFEREE-2 AFTER
+  REFEREE's first report. Successor 23 does it. Do NOT open docs/referee/ FIXD files before your own report is pushed.
+### Things only I know
+- Tools (own code; lane code never imported): R2-N5-LATEP/latep_check.py (W-runs, LATE′, REPEAT′ = earlier LATE′, GAP-CLIMB, CHAIN,
+  TXC-DESCENT; BF=n brute-force Ξ control); R2-N5-WCH/wch_check.py (returns / TT / TIE, Lemma TIE, R90 (e) classes F/FR/C/P/S with smallest
+  anchor, SIL-Z, GXC-CLOSE/SPLIT, LEVEL-MON on all pairs, DROP, FBO, ZF-SPLIT; LZC=1 runs the VARIANT N5-LZC with my own keep rule);
+  R2-SUB/sub_check.py (FW-R* on sub-intervals). All build on R2-N5-DUAL/dual_check.Runner + R2-N5-FRAME/frame_check.pval.
+- Corpora: lane «corpus» = new/box59/sbcg.lst (719, S3) + si/root/logs/alt_all.lst (413; ONLY 94 have start files: run the 319 start-less
+  lines separately with runs=1; comp54_n80.start is INVALID (non-edge 11 → 51), skip). files mode with runs=0 skips start-less games.
+- Strict symbol test by hand catches what lane symtest.py tools miss (clause-scope binders, e.g. k in NZ_P; LATE′ window «(any t of F if
+  none)»). Diff every RESULTS line token-level (difflib over whitespace tokens) against the previous line.
+- Recurring patterns: case splits «v on π's cycle / path part» must be «reached before / after the cycle node» (G-GAP-1, WCH N-1);
+  R88's W-MON is per PHASE — on W-runs cite R90 (b) W-MON′ or R91 (b); SPEC line tags drift by one (cite S1 at l. 27-32 of N5-ssi-global.md).
+- Traps: push.sh takes ~10-25 min: run `scripts/push.sh > log 2>&1; echo "push.sh exit $?" >> log` with run_in_background and wait on the
+  log line (never a second push). A wait loop `until for …; do … || exit 1; done` kills itself. Shell cwd resets after cd into the scratch
+  worktrees: use absolute paths. Oink must be built per container (scripts/setup_oink.sh, ~3 min).
+- Worktrees in the scratchpad (wlsi, wfz, wfx, wwch, ww1): container-local; a new container has none.
+
 ## Resume point 4 (successor 22; 2026-10-30 10:5xZ by date -u) — HOLDING for CHECKER C103 (Lead 10:53Z)
 - WCH closed on my side: report 24f32388, §C 6ff5d18a (joint gap map EMPTY; OPT-ONLY double-refereed TRUE, carried as option (a)), §C.6
   line W1 (c930e26f, 00f9e375…) MATCHES (this push). CHECKER C103 may ask questions: answer from R2-N5-WCH.md / -C.md.
