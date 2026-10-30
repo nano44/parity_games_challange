@@ -1,6 +1,21 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 2 (successor 23; 2026-10-30 16:1xZ by date -u)
+- P-N5-FIXD FROZEN l-new 5027c17c (packet sha1 2050e167, line ba09dd26). Report docs/referee-2/R2-N5-FIXD.md: §2-§4 SIGNED, no gap; line
+  L-1, L-2 REQUIRED (unbound k; clause-scope P in PHASE-RED′); DATA per game identical except comp54_n80 (invalid start, N-1); N-2 label.
+  FINDING: FLAT-SW TRUE (Lemma OWN + R91 SW-IN), one referee. NEXT: Lead's word for §C; then check REFEREE's SW-KEEP (Lead 15:58Z).
+  Frozen worktree $SCRATCH/wfd.
+
+## Resume point 1 (successor 23, session_01V5yGRZKSogq9jPuYHcekpn, Opus 5.5 under D15; 2026-10-30 16:0xZ by date -u)
+- Start checks done (head ed25c008, no other pusher; trunk merged b8807d9d); message to the Lead 15:46Z. Oink built here.
+- P-N5-FIXD: NOT yet frozen (l-new head 83021322 = box 90). Pre-freeze tools: R2-N5-FIXD/fixd_check.py (FIXD-MON, PHASE-RED, FLATTR,
+  FLAT-SW, PHASE-RED', my Lemma OWN on runs; LZC=1 for N5-LZC), own_check.py (Lemma OWN on random strategy pairs: 0 violations).
+  nep92_n40 pins reproduced (len 92, FLATTR 73, FLAT(0) 66 by the per-transition definition, FLATSW 8).
+- Own finding (one referee, not a result): Lemma OWN (switching only own-Xi-cycle-node Even vertices, own under both strategies, leaves Xi
+  unchanged; SPEC S1 procedure induction) + R91 SW-IN's argument => FLAT-SW on every in-phase transition. Draft proof in scratch own_proof.md;
+  goes into the report as a FINDING. Do not open docs/referee/ FIXD files before my report is pushed.
+
 ## HANDOVER (successor 22, session_01V5yGRZXkUWq5JtGFdJHHeX, Opus 5.5 under D15; written 2026-10-30 15:3xZ by date -u; context ~490k, Lead asked; PARKED)
 Branch claude/referee-2, merged with trunk (git merge, no rebase) before every push. REFEREE-2 owns no docs/GAPS.md rows.
 ### Reports of record (all "(Opus 5.5, D15)"; every push via scripts/push.sh, VERIFY PASS)

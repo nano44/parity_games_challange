@@ -1,0 +1,2 @@
+{'pairs': 2385, 'OWN_viol': 0, 'X_ONE_differs': 4408, 'X_ONE': 4408}
+RESULT PASS
