@@ -59,10 +59,44 @@ Referee: REFEREE (successor 20), Opus 5.5 (D15).
 - Verdict on L-1: every item of mine is applied correctly, and nothing else changed. L-1 does NOT yet match, only because of REFEREE-2's
   required L-1 and L-2 (§2). I will word-diff L-2 when it is frozen.
 
+## 4. Line revision L-2 (l-new 85c12579, docs/new/P-N5-WRUN-box92-line-L2.txt, sha1 8ab101e5c8b38caf504d64237034534b0fd0afd1; fixes sha1 a14403f28c5322cc75f8dc96b615b814c56a9a64)
+- Word-diff against L-1 (d92521f7). The changed tokens are exactly REFEREE-2's L-1 to L-5:
+  - «(that is, not E0)» and «REG (not E0)» (L-5);
+  - «there is a polynomial p such that» (L-3);
+  - «at a state q of a W-run», «τ_q(o)» (L-2);
+  - «(y, z) Even edge» (L-4);
+  - «on a frozen stretch of a W-run with σ̄ ≡ ρ and τ_t ≡ τ (the W-run's Odd strategy)» (L-2);
+  - «if (y, z) is adopted at a transition of a frozen stretch Φ at which it had been blocked at an earlier state of Φ (a strict release),
+    … in Φ» (L-1).
+  Each is correct against the packet. Nothing else changed.
+- Strict symbol test, second pass clause by clause («is every quantifier's range the packet's?»). This finds two binding defects that were
+  already present in 0faa5b80 and L-1. REFEREE-2 (on L-1) and I (on 0faa5b80) both passed them. Both are REQUIRED.
+  - WRUN-L3 (REQUIRED): F and the vertices are unquantified in six clauses. The parenthesis defines quantities «for a W-run F», but these
+    clauses use F (and X, g, z, v) with no quantifier:
+    - «E0_F(X, g) ≤ n, and |F| ≤ m_E + Σ RET_F ≤ …» (TRIPLE-RED);
+    - «RET_F(X, g) ≤ ΞCH_F(g) and FREE_F(X, g) ≤ RET_F(X, g) ≤ |F| ≤ …» (RET-ΞRISE, FREE-RED);
+    - «ΞCH_F(z) ≤ n(n + 1 + PCH_F(z)) and R*_F ≤ …» (ΞCH-PCH, RSTAR-PCH). Here z is bound only as «a target z of an edge blocked at a state
+      q» from GAP-DEV's half, which would wrongly restrict ΞCH-PCH to blocked targets. The packet's §6.2 holds «for every W-run F and
+      vertex z»;
+    - «while the cycle node of Ξ(v) is fixed … PCH_F(v) ≤ n(2n + 1)^k + DEEP_{k,F}(v)» (PREFIX-MON, LEVEL-RED: v, F and t);
+    - «if Ξ_t = W_t at every state of F then …» (NO-DEV);
+    - «|F| ≤ SB_F + …» (BIP-RED).
+    Fix: one global binder before the claims, e.g. «… ): for every N5 run, every W-run F = [a, b] of it, every Even edge (X, g) and all
+    vertices v, z: (Theorem XI-RUN) …». Alternatively put «every W-run F has» / «for every vertex z» into each of the six clauses, as
+    XI-RUN's clause already does («every W-run F has …»). This is the K12 pattern («F unbound»).
+  - WRUN-L4 (REQUIRED): τ in (A2). REL2-WRISE's «(A2) the τ-play from z under σ_{s+1} with y → z avoiding y»: τ is bound only inside the
+    BIP-MON clause («τ_t ≡ τ (the W-run's Odd strategy)»), which is another clause. Fix: «the τ_{s+1}-play» or «the (σ_{s+1}[y → z], τ_s)-play
+    from z avoiding y». This is the same kind of item as REFEREE-2's L-2, which L-2 applied to GAP-DEV and BIP-MON.
+- Optional: «(Theorem BIP-RED, an implication from [SUB])» may now drop the condition, since [SUB] carries two referee signatures. As an
+  implication it is still true.
+- Content: unchanged against the packet's §3-§11. The ⇔ chain is E1-E8, the one-direction list is E9 and E13, and BIP-REL-1 is DEAD.
+- Verdict on L-2: REQUIRED CHANGES, WRUN-L3 and WRUN-L4 (Opus 5.5, D15). Everything else MATCHES.
+
 ## DONE / FINDINGS / NEEDS
 - DONE: this §C.
 - FINDINGS:
   1. WRUN: both referees SIGN every packet item; the joint gap map for the packet is empty.
   2. Line: my items are closed by L-1. REFEREE-2's «strict release» unbound and τ unbound are required for L-2; I missed both.
   3. Fact EXT: one finding, two forms (N1 / N-1).
-- NEEDS: Lead: L-2 with R2's L-1 and L-2 (plus L-3 to L-5 if the lane takes them); I word-diff it.
+- NEEDS: Lead: L-3 with WRUN-L3 (global W-run / vertex binder) and WRUN-L4 (τ in (A2)); I word-diff it. REFEREE-2 should
+  re-check WRUN-L3, which both of us passed earlier.
