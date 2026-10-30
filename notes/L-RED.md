@@ -58,6 +58,8 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - R140 (Lead 13:57Z) docs/red/R140-friedmann-port.md: switchallexp (0901.2731): switch-all 70..630, S4a arena vs sigma-bar 8..14 linear;
   blocker (ii) alone, at iteration 1 (all e_i -> h_i). Lemma ARENA-MAX + DECEL-RED: a port needs R*_F >= 2^N/(n-1) Xi-blocked closures.
   NEXT (untried): a Xi-deceleration lane (R135 gate + fresh patterns per release).
+- R141 docs/red/R141-wconst-interval.md: INT-LIN search (best 3 at n 10), static-order tie-break DEAD (u23sw64 26/64 up),
+  common-exit embedding READING (Xi-ceiling vs tau-bar stability). Open: per-edge compensation for odd targets.
 - Things only I know: mkdg.py writes names into the .pg; dgstat.py reads them (TOPNAME arg). noup.py is exponential in the number of
   choosers (k 6 in 3 s; k 7 not tried).
 
