@@ -76,3 +76,22 @@ TARGET.md claim; G-N5-TIME stays open)»
 - DONE: K0-K11 (one REQUIRED line correction K0, one to-sign converse K1, clarifications K2-K11).
 - FINDINGS: no gap; the line now defines every symbol and its "iff" rests on K1.
 - NEEDS: none from the owner. Lead: route K0 / K1 to both referees for §C.
+
+## K12. K0 with REFEREE 19's three optional precisions (R-N5-CUT-C.md §2: K0-P1, K0-P2, K0-P3) and nothing else (Lead 02:21Z)
+Line:
+«N5 (SPEC S1-S5) on EVERY game, under the standing SPEC premise of RESULTS R57 (S1's procedure realises the optimal counterstrategy), with RESULTS R15 (d), R17 (a) and R47 (a): T ≤ 2n(n−1) +
+(n(n−1)+1)·(m_E·[1 + 2B* + (B*+1)·K] + SC* + O*), K := n(n−1) + (n(n−1)+1)(n−1)(m_E + REP* + 1), where T is the number of transitions
+(iterations) of the run, n = |V|, m_E the number of edges leaving Even vertices, λ-runs and λ^U-runs are as in RESULTS R86, W-runs as in
+RESULTS R89 and late adoptions as in RESULTS R88 / R89; B* := the largest number of transitions inside one λ-run that are Even S4c
+fallbacks or change τ; REP* := the largest number of REPEAT late adoptions (a second or later late adoption of the same Even edge) inside
+one W-run; SC* := the largest number, over λ-runs R, of re-entries of Even edges in R of class S (W-silent) or C (own-cycle) of
+P-N5-CUT §4 (W read against τ_{j−1}, smallest anchor); O* := the largest number of τ-changing transitions inside one λ^U-run (Theorem
+CUT-RED, via Lemmas OPT-OFF, W-RETURN-G, LATE-SPLIT (first late adoptions ≤ m_E per W-run, R*_T ≤ m_E + REP_F; REP_F the REPEATs in F, R*_T as in R88), WV-R and Corollary
+CUT-CHARGE); so T is polynomial if and only if B*, REP*, SC* and O* are (Corollary CUT-POLY and its converse, fixes K1) — a REDUCTION
+(none of B*, REP*, SC*, O* is bounded here; CONJECTURE REP-LIN is DEAD (L-RED R128, latew_K20_m32); not M3, not a step-4 pass, not a
+TARGET.md claim; G-N5-TIME stays open)»
+- Word diff against K0 (git diff --no-index --word-diff=plain on the two lines, whitespace-normalised; [-removed-] {+added+}):
+  - K0-P1: «N5 {+(SPEC S1-S5)+} on EVERY game»
+  - K0-P3: «optimal [-counterstrategy):-] {+counterstrategy), with RESULTS R15 (d), R17 (a) and R47 (a):+}»
+  - K0-P2: «R*_T ≤ m_E + [-REP_F),-] {+REP_F; REP_F the REPEATs in F, R*_T as in R88),+}»
+- No other word changes. K0 itself (above) is unchanged; K12 supersedes it as the line to land.
