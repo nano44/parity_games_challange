@@ -152,10 +152,28 @@ Labels as in T59. Notation as in P-N5-SETTLE §1: F a W-run (τ fixed, λ_W fixe
   - Also dead: any Davenport-Schinzel bound on the sequence σ̄_t(o) at a degree-2 vertex (the sequence alternates a b a b … 2K times;
     T52's DS route was already DEAD on the Even side, R137).
 - Where single crossing holds (SCOK), OVER = 0 on these instances: S1's tie selection did not add flips beyond deg − 1 there.
-- Corpus: §4.4.
+- Corpus: §4.4 (gate_K64_n581: SB 62 at out-degree 2, PF 61).
 
 ### 4.4 Corpus
-CORPUS60_PLACEHOLDER
+- Scope: the same 892 games as T59 §4.4 (each with its .start if present), 30 s timeout each. Run 2026-10-30 19:12Z-19:17Z (date -u),
+  output scratchpad t59/c60b.out.
+  - 877 finished; 14 timed out (rc 124); 1 failed (dlmm_ML_L6, unparsable .start).
+  - The timeouts include latew_K16_m32, which was run separately above (61 s).
+- Totals: 663 games have a W-run of length ≥ 1; 404 have a σ̄-flip; 8,717 flips.
+  - Over the (run, Odd o) pairs with SB > 0: SC1 1,677 (some successor pair reverses more than once), CYC 0, SCOK 1,811.
+  - 259 games have a pair reversing more than once.
+- Largest SB:
+  - gate_K64_n581: 62 at out-degree 2, PF 61 (the corpus maximum L-SI box 52 reports);
+  - pp_K48_n449: 49 at out-degree 3, PF 49;
+  - pft35_n48: 35 at out-degree 25, PF 5;
+  - pftheta34_n32: 34 at out-degree 19, PF 6.
+- OVER (SB > deg − 1 although a single-crossing order exists) occurs 3 times: nep13_n24 (6 at degree 6), nep22f_n64 (2 at degree 2),
+  run34_n40 (7 at degree 4). These are tie-selection flips, i.e. PAIR-CROSS's TIE term. nep13_n24 is L-SI's own-cycle-node instance.
+- Reading:
+  - Single crossing fails at about half of the flipping vertices.
+  - At the high-SB degree-2/3 vertices (gate, pp, latew) one successor pair simply leapfrogs SB times.
+  - At high-degree vertices (pft*), SB is spread over many pairs with ≤ 7 reversals each.
+  - A per-vertex bound has to bound leapfrogging (Ξ-changes of the two successors, i.e. HEAD-RED's HXU), not exploit an order.
 
 ## 5. Table (the brief's per-source questions)
 | source (opened) | exact hypothesis | does N5's (σ_t, σ̄_t) inside a W-run meet it? | missing lemma | bound it would give for SB_F |
