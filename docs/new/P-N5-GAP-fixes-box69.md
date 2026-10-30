@@ -95,3 +95,41 @@ docs/new/P-N5-GAP-box69-line-H9.txt (sha1 28b7e5506a5419181c9bca8b316694c3cd21cc
 - DONE: this file; P-N5-GAP-box69-line-H9.txt; start validation in box67/energy.py and box68/zflat.py.
 - FINDINGS: G-GAP-1 repaired (H1); 7 notes answered; DATA corrected for comp54's invalid start (H8); one corrected line (H9).
 - NEEDS: none from the owner.
+
+## Answers to REFEREE 19 (docs/referee/R-N5-GAP.md at claude/referee cd1c29d6), appended 2026-10-30 ~02:20Z (date -u)
+## H10 (G-GAP-1 / GAP-R1): which repair, checked against both texts
+- H1 uses REFEREE-2's split (by the ρ-PATH from c to its cycle node). REFEREE 19's GAP-R1 splits the packet's Case 2 into (2a) u ∉ π (the
+  packet's text) and (2b) u ∈ π.
+- They coincide.
+  - (2b) u ∈ π means that c's play reaches u before v. So c's path to its cycle node avoids v, and v lies on u's cycle: H1's (1b).
+  - (2a) is H1's Case 2.
+  - REFEREE 19's (2b)(i) (S′ ≠ ∅: max S′ is Z's top) is H1's (1b) with S ≠ ∅ (S′ = S, the vertices of c's path to u above u).
+  - REFEREE 19's (2b)(ii) (S′ = ∅: Ω_ρ′(v) = (u, ∅, 1 + ℓ_c) = v ⊕ Ω_ρ(c), Ω_ρ(v) = v ⊕ Ω_ρ(ρ v), ⊕ preserves the strict order) is H1's (1b)
+    with S = ∅, word for word up to notation (ℓ_c = |c's path to u|).
+- Per REFEREE 19's note, "Ω_ρ(c) is |π| + 1 longer" is dropped for (2b) = (1b). H1 states it only in Case 2 = (2a).
+- Both referees' data: 0 violations of the statement (REFEREE 19: 436,677 pairs, 11,948 in (2b); REFEREE-2: 65,486 + 647,486 checks).
+## H11 (GAP-N1): standing premise
+As H2, with REFEREE 19's wording: XW, FB-W and W-MON rest on S1's procedure returning a pointwise optimum that realises Ξ (RESULTS R57 (a)
+(VJ), R17 (a) (F1)). The packet named [F1] and R21 (a) but not R57 (a); read §2.1-§2.3 with R57 (a) added. DATA rests on G-N5T-1 (code = SPEC).
+## H12 (GAP-N2): [V2] across two strategy pairs
+SW-IN (§4.2) applies [V2] to Ξ_k(σ_k v) and Ξ_{k+1}(w), the values of two DIFFERENT strategy pairs (states k and k + 1). Sentence to add:
+[V2] is a statement about triples. For any triples a ⊴ b (strictly a ◁ b) with v ∉ P(a), P(b) and v the cycle node of neither, v ⊕ a ⊴ v ⊕ b
+(strictly ◁). The same term is added to both signed weights and 1 to both lengths. Which plays produced a and b does not matter. The path
+condition ([V1] at k for σ_k v, at k + 1 for w) supplies "v ∉ P" and "v not the cycle node". The same reading covers SIL-Z-type uses.
+## H13 (GAP-N3): Z-FLAT lists consequences
+= H6 (REFEREE-2's N-GAP-5). Title read as "Lemma Z-FLAT (consequences)"; item (d) is the definition Z_{k+1} = Z_k.
+## H14 (GAP-L1..L3): the COMPLETE corrected RESULTS line
+- docs/new/P-N5-GAP-box69-line-H14.txt, sha1 a9e8bcae1d6caec7cded179ead78f1cfedf756f9. It is H9's line (28b7e550…) plus exactly these
+  additions (`git diff --no-index --word-diff=porcelain` shows only them):
+  - GAP-L3 and GAP-L1, after the standing-premise clause: «premises RESULTS R15 (a), (d), R17 (a) (F1) with R57 (a) (VJ), R21 (a), R38 (a), R88;
+    Ξ_t := Ξ_{σ_t} (SPEC S1); »
+  - GAP-L2, in the OPT-OFF clause: «an optimal strategy ρ of a one-player game has» → «for a one-player game of Even (Odd fixed), a
+    pointwise-optimal Even strategy ρ (R17 (a) (F1)) with Ω_ρ its [S1-val] valuation has».
+- Relative to the proposal f1c5c5d5, the H14 line carries H9 (i) (R57 standing premise), H9 (ii) (CL's fixed window) and GAP-L1..L3.
+- REFEREE 19 remarks that the proposal's CL omits "other than the first", a superset with the bound still true. H9 restores the packet's
+  "other than the first". Either reading is a true statement; H14 keeps the packet's.
+- Checked word by word against the packet §1-§5 with H1-H13. The scope tail is unchanged. This is the line to land, superseding H9's.
+## H15: DATA and the comp54 start file (summary for the Lead)
+= H8. Corrected counts 782 in-phase fallbacks and 8,442 re-openings (box 68 / packet §6; matches REFEREE-2), box 67 725 fallbacks.
+comp54_n80.start (L-RED's file, τ(11) = 51 a non-edge) is NOT edited. It is quarantined in L-NEW's tools (box67/energy.py, box68/zflat.py
+refuse non-edge starts).

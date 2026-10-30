@@ -54,3 +54,16 @@ rank. State where reader cycles break it.» Working note, unrefereed. G-N5-TIME 
 - FINDINGS: 1. PROVED (lane) READ-CHARGE and the prefix corollary. 2. DATA: chain depth up to 0.92n, ≤ n − 1 everywhere (CONJECTURE
   READ-DEPTH). 3. READING: no static rank (W-cycles read each other); depth-bounded recursion is m_E^depth; a sharing lemma is what is missing.
 - NEEDS: none from the owner.
+
+## Addendum: sharing, measured (DATA, 4 instances; readch.py FANOUT / FANOUTW)
+- FANOUT := the most W-changes (c, t) that use one source W-change (w, t′) (w changed at t′ and not again before t); FANOUTW := the most
+  that use the W-changes of one transition t′.
+| instance | n | FANOUT | FANOUTW |
+| --- | --- | --- | --- |
+| runfam_K40 | 79 | 242 | 242 |
+| so_th_n32 | 32 | 15 | 24 |
+| hntop_n8 (.start) | 168 | 33 | 66 |
+| latew_K20_m32 (.start) | 538 | 102 | 2,344 |
+- One source W-change feeds up to 3n later W-changes (runfam_K40: 242 at n 79), because it stays the "last W-change of w" for every later
+  reader of w until w changes again. So "each source is used O(1) times" is false. A sharing lemma would have to count per (reader, source)
+  pair, which is ≤ n per source and transition, and is again the breadth term. No proof; READING only.
