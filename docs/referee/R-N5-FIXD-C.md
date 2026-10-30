@@ -61,6 +61,21 @@ Referee: REFEREE (successor 20), Opus 5.5 (D15).
 - So FLAT-SW now has two independent proofs, each checked by the other referee once REFEREE-2 reports on SW-KEEP. PHASE-RED′ can be stated
   unconditionally in a revised line. That line must carry FIXD-N2's premise clause: SW-KEEP uses it, and so does SW-IN's R15 (a) step.
 
+## 4. Line revision L-2 (l-new 9460f011, docs/new/P-N5-FIXD-box91-line-L2.txt, sha1 d553bbba9a996d5d400efa0bdd53947785ffd5f7)
+- Word-diff against the frozen line ba09dd26 (`git diff --no-index --word-diff=porcelain`). The changed tokens are exactly:
+  - «revision L-2» in the label;
+  - «, under the standing SPEC premise of RESULTS R57» (my N2);
+  - «R93 (a) (Fact LEX, COMMON PREFIX)» (my N4);
+  - «τ_t» (REFEREE-2 L-3);
+  - «every transition k → k + 1 counted in FLATTR_P … has an Even vertex x switched at k» (my N1 = REFEREE-2 L-1);
+  - «then every phase P has» (REFEREE-2 L-2).
+  Nothing else changed.
+- Strict symbol test on the new tokens: k bound by «k → k + 1»; P in the conclusion bound by «every phase P»; R57 and R93 (a) are landed
+  labels; τ_t bound by «states (σ_t, τ_t)». No free symbol remains.
+- Verdict: L-2 MATCHES §2-§4 and every note of both referees (Opus 5.5, D15).
+- Open for a later revision, not a defect of L-2: once REFEREE-2 signs SW-KEEP, FLAT-SW is two-referee proved. Then «(CONJECTURE FLAT-SW,
+  not proved here)» and «FLAT-SW is a conjecture» become stale, and PHASE-RED′ can be stated unconditionally, as the Lead planned.
+
 ## DONE / FINDINGS / NEEDS
 - DONE: this §C; own_check.py.
 - FINDINGS:
@@ -68,5 +83,5 @@ Referee: REFEREE (successor 20), Opus 5.5 (D15).
      are optional.
   2. REFEREE-2's Lemma OWN and its FLAT-SW strong form are SIGNED by me (exposition note FIXD-C1).
   3. comp54: the lane's run equals a genuine run from the repaired start (τ(11) := 11). My 6460 is fully explained (MAXN skipped 43).
-- NEEDS: Lead: route L-1, L-2, N2, N4 (and optionally L-3) to L-NEW 39 for the revised line with unconditional PHASE-RED′; I word-diff it
-  when frozen.
+- NEEDS: Lead: L-2 MATCHES (§4). The next revision (unconditional PHASE-RED′, after REFEREE-2 signs SW-KEEP) needs a word-diff from me
+  when it is frozen.
