@@ -427,4 +427,10 @@ if grep -q "OGLADDER k 6 n 36 odd-gates 22 steps 177 T-values 64 (2^k = 64) cycl
 else
   echo "box 82 R2 check: FAILED"; exit 1
 fi
+w35=$(cd .. && python3 -I new/box84/waits.py --rand 8 300 1 | head -1; python3 -I new/box84/altcheck.py 10 300 7 | tail -1; python3 -I new/box84/retclass.py red/so/instances/pftheta34_n32.pg | tail -1)
+if grep -q "WAITS-RAND n 8 trials 300 seed 1 totals {'viol': 0, 'e0ret': 0, 'deadc': 0, 'reg': 601, 'e0': 85, 'xoncyc': 276}" <<<"$w35" && grep -q "ALTCHECK n 10 trials 300 seed 7 {'alt_reg': 8, 'alt_e0': 8, 'e0_max': 1, 'rise_viol': 0, 'charge_viol': 0," <<<"$w35" && grep -q "RETCLASS n 32 mE 80 runs 1 totals {'REG': 26, 'E0': 0, 'FREE': 16, 'sw': 74, 'bound_viol': 0} maxima {'REG': 3, 'E0': 0, 'FREE': 3, 'F': 34, 'wch': 7}" <<<"$w35"; then
+  echo "box 84 WAIT: WAIT-CYCLE' 0 violations, DEADC 0, E0-BOUND / RISE / CHARGE 0 violations, return classes on pftheta34_n32: PASS"
+else
+  echo "box 84 WAIT check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
