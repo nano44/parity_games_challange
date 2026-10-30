@@ -967,3 +967,6 @@ echo "si (P-N5-SETTLE L-1 pinned): PASS"
 # P-N5-SETTLE line revision L-2 (fixes entry 2, SETTLE-L5): must not change.
 echo "1fcb33c5d96a20eb70abe06c29154ef343b33ae0  ../../docs/si/P-N5-SETTLE-line-L2.txt" | sha1sum -c --quiet
 echo "si (P-N5-SETTLE L-2 pinned): PASS"
+# P-N5-SETTLE line revision L-3 (fixes entry 3, D-1 / D-2): must not change.
+echo "ae695c9eeaf9d40bdba2ed8574c238a107c68d52  ../../docs/si/P-N5-SETTLE-line-L3.txt" | sha1sum -c --quiet
+echo "si (P-N5-SETTLE L-3 pinned): PASS"
