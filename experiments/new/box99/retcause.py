@@ -114,7 +114,7 @@ for a, b in runs:
                     sub, d = causeE(rr[0], w); res = (sub, d + 1)
                 else: res = (('NORISE', x, w, q), 0)
         memoE[(q, z)] = res; return res
-    rootsE = Counter(); kindE = Counter(); depE = Counter(); kids = Counter()
+    rootsE = Counter(); kindE = Counter(); depE = Counter(); kids = Counter(); perX = Counter(); perE = Counter(); perL = Counter()
     for y, z, j, k in rets:
         rr = [q for q in range(j, k) if EV(q)[0][z] != EV(q + 1)[0][z]]
         if not rr: continue
@@ -122,6 +122,8 @@ for a, b in runs:
         if x is not None: kids[(x, rr[0])] += 1
         rt, d = causeE(rr[0], z); kindE[rt[0]] += 1; depE[d] += 1
         rootsE[rt] += 1
+        perX[(y, rt)] += 1; perE[(y, z, rt)] += 1
+        perL[(y, S[k][y], rt)] += 1
     roots = Counter(); rkind = Counter(); dep = Counter()
     for y, z, j, k in rets:
         rr = [q for q in range(j, k) if EV(q)[0][z] != EV(q + 1)[0][z]]
@@ -150,4 +152,8 @@ for a, b in runs:
     print(f"  EROOT kinds {dict(kindE)} distinct roots {len(rootsE)} max returns per root {max(rootsE.values()) if rootsE else 0} "
           f"chain depth {dict(sorted(depE.items()))} max children per node {max(kids.values()) if kids else 0} "
           f"max children per return node {max([v for (x, q), v in kids.items() if (x, S[q + 1][x], q) not in fresh_at] or [0])} mE {sum(len(set(g.succ[v])) for v in EVN)}")
+    mxX = max(perX.values()); mxE = max(perE.values()); degr = max(perX[k] / len(set(g.succ[k[0]])) for k in perX)
+    wX = [k for k in perX if perX[k] == mxX][0]
+    print(f"  PERROOT max returns of one Even X per root {mxX} (X {wX[0]} deg {len(set(g.succ[wX[0]]))}) max returns of one edge per root {mxE} "
+          f"max (returns of X per root)/deg X {round(degr, 3)} max returns of X per root leaving one target {max(perL.values())}")
     if os.environ.get("DBG"): print("  DBG", rootsE.most_common(3), kids.most_common(3))

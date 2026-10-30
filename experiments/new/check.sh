@@ -523,4 +523,10 @@ if grep -q "EROOT kinds {'FRESH': 252} distinct roots 27 max returns per root 50
 else
   echo "box 100 CASC check: FAILED"; exit 1
 fi
+w51=$(cd .. && TOP=1 python3 -I new/box99/retcause.py new/box97/inst/obs_K12_m24.pg new/box97/inst/obs_K12_m24.start; python3 -I new/box99/retcause.py new/box52/out/topfix_n10.pg; python3 -I new/box99/retcause.py red/so/instances/pftheta34_n32.pg)
+if grep -q "PERROOT max returns of one Even X per root 24 (X 247 deg 24) max returns of one edge per root 1 max (returns of X per root)/deg X 1.0" <<<"$w51" && grep -q "PERROOT max returns of one Even X per root 17 (X 193 deg 18) max returns of one edge per root 17" <<<"$w51" && grep -q "PERROOT max returns of one Even X per root 2 (X 3 deg 2) max returns of one edge per root 2 max (returns of X per root)/deg X 1.0 max returns of X per root leaving one target 2" <<<"$w51"; then
+  echo "box 101 CEDGE: RET(X; e) <= deg X tight on obs (24/24); once-per-root DEAD (obs), edge-O(1) DEAD (topfix 17), left-target injection DEAD (pftheta34): PASS"
+else
+  echo "box 101 CEDGE check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
