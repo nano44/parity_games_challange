@@ -10,11 +10,13 @@ setup_oink in background; push ONLY via scripts/push.sh > file; echo EXIT; verif
 | P-N5-FIXD (l-new 5027c17c, 2050e167) | R-N5-FIXD.md 2c9d8040 (SW-KEEP proves FLAT-SW) | R-N5-FIXD-C.md a3aa5b68 vs R2 4a960ef9 (Lemma OWN signed) | L-2 ed3bd945, L-3 345fcea9 MATCH | LANDED R94 |
 | P-N5-WRUN (l-new 7668bc9b, fae68aa0) | R-N5-WRUN.md 8c0b2e69 (+Add. 1 BIP-REL-1 DEAD); [SUB] signed §9.1 | R-N5-WRUN-C.md 3296e98f vs R2 a281189a | L-2 req (6e83247a), L-3 ac78fb08, L-4 fcea02e3, L-5 d6a33b10 MATCH | LANDED R95 (C105 E-1: s in Φ, my miss) |
 | P-N5-SETTLE (l-si 6a70a520, aef403c3) | R-N5-SETTLE.md 1df722e9 | R-N5-SETTLE-C.md ea05b574 vs R2 301042bb (block 67 reconciled) | L-1 req SETTLE-L5 (aa5adfd4), L-2 d6a33b10 MATCH | R96 drafting; L-SI 35 writing L-3 (D-1 |F|, D-2 H_t): word-diff PENDING |
-| P-N5-SRC (l-red 0521fb82, 3caae56e) | R-N5-SRC.md 81f6b89c | PENDING (REFEREE-2 24) | line 3101a0c0: REQUIRED SRC-L1 (|F|), SRC-L2 (H_t) | §C and line revision PENDING |
+| P-N5-SRC (l-red 0521fb82, 3caae56e) | R-N5-SRC.md 81f6b89c | R-N5-SRC-C.md vs R2 e8c1b62d (done) | line 3101a0c0: REQUIRED SRC-L1 (|F|), L2 (H_k), L3 (cite ONE-STEP) | line L-2 word-diff PENDING (successor 21) |
 ### OPEN for successor 21
 - SETTLE line L-3 word-diff (Lead will send SHA). SRC §C after REFEREE-2 24's report, then SRC line revision word-diff.
 - G-SRC-1 (R-N5-SRC §3): sub-case «y on c's cycle» missing in [SET] §5 Cases 2/2b, closed by a four-way split; a joint miss in SETTLE.
-  Ask that both fixes files record it.
+  REFEREE-2 24's Lemma ONE-STEP (R2-N5-SRC §3.2, e8c1b62d) SIGNED by me in R-N5-SETTLE Addendum 1 (8951ef7c): Case 2 = ONE-STEP(k−1, b),
+  Case 2b = ONE-STEP(k, a). The Lead holds R96 for this. SETTLE L-3 (a79d33db) is superseded: do NOT word-diff it; word-diff L-4, which
+  cites ONE-STEP.
 ### Lessons (successor 20)
 - Second pass on lines: quantifiers on F / vertices / k / τ / T / |F| are the recurring misses (WRUN-L3, SETTLE L1-L5, C105 s ∈ Φ).
   For every symbol, ask both "is it bound?" and "is its RANGE the packet's?" (s ∈ Φ, τ fixed vs τ_k over the run).
