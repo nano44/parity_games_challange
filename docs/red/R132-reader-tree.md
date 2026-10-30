@@ -136,3 +136,14 @@ Facts used:
   4. PROVED (lane) + DATA: on acyclic games with τ₀ optimal, N5 stops in ≤ height + 1 iterations (3000 random games).
   5. DATA: switch-best family with τ₀ optimal gives one linear W-run (7N + 3), REP 0.
 - NEEDS: none from the owner.
+
+## Addendum (Lead 05:49Z: LATE′ and Lemma GAP-CLIMB, L-SI box 51; READING, written 06:40Z)
+- With GAP-CLIMB, a counter must make one target z's Ξ climb 2^Θ(n) times inside one W-run while z stays in the gap.
+- Inside a W-run every Even step switches only Ξ-improving edges, so the W-run is a standard SI run with the S4a selection rule, and Ξ
+  is strictly monotone. Each Ξ-climb of z is a switch on z's Ξ-play (its BR-play). §2's PREFIX argument applies verbatim to Ξ (fixed
+  cycle nodes assumed): a climb of z that changes the order of z against a competitor needs a switch on z's private Ξ-prefix.
+- So the exponential count needs a switcher on z's Ξ-play with 2^Θ(n) switches. Each of its switches is a W-optimum choice, so
+  TWO-SOURCE applies to it, and the regress is again a ladder whose pairs must desynchronise once per event. That is §2's wall, now on
+  the Ξ side.
+- Not tried in this box: a design aimed directly at Ξ-climbs of one gap vertex (the R131 readers z_J climb 2 times per pivot cycle,
+  2(K − 1) in total).
