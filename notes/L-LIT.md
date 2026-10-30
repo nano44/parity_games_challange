@@ -1,7 +1,18 @@
 # L-LIT notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point (T61, 2026-10-30 20:02Z by date -u; same session)
+## Resume point (HANDOVER, successor T59-T62, 2026-10-30 ~21:10Z by date -u; session_01V5yGRY1xa1eQQyQ64QZ58e; D18; PARKED after T62)
+DONE (claude/l-lit; every push via scripts/push.sh, exit 0, VERIFY PASS; lean and Oink smoke NOT RUN):
+- c7dc03db, d3535a23 T59 (elimination windows; HW-LB; ARENA-MAX vs H_n; C-DISC, DZ-W; gap-contraction DEAD on fx).
+- 54584c0c, 2b120701 T60 (best-reply flips; Topkis DEAD on latew/gate; PAIR-CROSS).
+- 1ad851ee T61 (GH/ABS order-charging template; NO-REPEAT DEAD on gate_K64_n581).
+- T62 (this push): docs/lit/T62-open-core.md, a synthesis for the human-expert packet (no new claims).
+IN FLIGHT: none. OPEN LEADS (only on a Lead question): TYPE-DET (T61 S2) as a lemma for L-NEW; a charge for head-type RETURNS; ELIM-WIN by
+  a combinatorial count; R95 landing changes T62 §3's "pending" row to "landed" (update then).
+NEEDS: none from the owner (optional library: HKZ SODA 2014, Hansen-Zwick ISAAC 2010, Hansen PhD 2012, Milgrom-Shannon 1994, Topkis 1978,
+  Hoffman-Karp 1966, Condon 1993).
+
+## Previous resume point (T61, 2026-10-30 20:02Z by date -u; same session)
 T60 pushed (54584c0c, 2b120701; Lead logged 20:01Z). T61 (support for L-NEW 40 box 97): docs/lit/T61-order-charging.md + T61-heads-check.py.
 - GH (original arXiv 0712.1765 = LMCS 5(2:9)) + ABS Thm 23/26/29/30 template S0-S5 mapped to N5:
   - S0, S3, S4 transfer; S4 = HEAD-RED.
