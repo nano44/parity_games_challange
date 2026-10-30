@@ -1,12 +1,13 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 36, Opus 5.5, D14/D18; updated 2026-10-30 ~06:52Z by date -u; boxes 72, 73, 74 DONE, pushed)
+## Resume point (successor 36, Opus 5.5, D14/D18; updated 2026-10-30 ~07:10Z by date -u; boxes 72-75 DONE, pushed)
 ### DONE: box 72 docs/new/N5-LZ-box72.md + experiments/new/box72 (check.sh "box 72"). START report to the Lead sent (stamped 05:00Z in the
   message; date -u read 04:58:00Z just before: slip, the message time is wrong by ~2 min).
 ### DONE box 73: docs/new/N5-FBO-box73.md (FBO-LIN DEAD cf_n24; LEVEL-MON, DOWN-PAID, FBO-R56; LZ correctness).
 ### DONE box 74: docs/new/N5-RHO-box74.md (rho per W-run = breadth, cr_n80 698 = 8.7n; RHO-LEN, LZ-RUN; REP circle gain (n-1)m_E).
-### NEXT (the Lead decides): SBQ-2 (sbar-changes at Q per W-run <= 2n; climb first); TIE for plain N5; LZ-NOC; FBO. (old: FBO (fallback climbs with the gap open; CONJECTURE FBO-LIN, max 46/phase nep22f_n64); LZ-NOC (no C in N5-LZC);
+### DONE box 75: docs/new/N5-SBAR-box75.md (rho per phase 1198 = 15n corpus; no sbar-potential: thetaA_n7 sbar(6) 5->1->5 in one phase).
+### NEXT (the Lead decides): TIE for plain N5; LZ-NOC; phase length via a (sigma, sbar) pair potential; SBQ-2; L-LIT parametric shortest paths. (old: FBO (fallback climbs with the gap open; CONJECTURE FBO-LIN, max 46/phase nep22f_n64); LZ-NOC (no C in N5-LZC);
   OPT-ONLY check of W-RETURN-G for N5-LZC; whether N5-LZC may replace N5 as the object.
 ### Owned conjectures: LZ-NOC, SBQ-2 (new; FBO-LIN DEAD box 73, rho-lin per W-run and SBQ<=n DEAD box 74); FRAME-STRETCH_P, LOOP, GROUP, EXIT-without-NT (inherited).
 ### Things only I know (successor 36)
@@ -18,6 +19,12 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - Sources opened (box 72): l-si 4fb0bfba docs/si/N5-ADD-box50.md §6 (TXC, TIED-RB) and experiments/si/odd/tied.py (copied verbatim).
 - n5lz.py reads --lzc from sys.argv at import; silentlz.py / wincmp.py append it. The lazy rule uses Engine.extend (no avoidance check);
   LZ-OPT shows value-consistency suffices, and the assert val(sigma') = W* guards it.
+
+## Box 75 log (successor 36; Lead 06:38Z, read 07:03Z: rho-POLY per phase; sbar as polytope path / basis exchange / lattice chain?)
+- docs/new/N5-SBAR-box75.md. DATA: rho per phase up to 1198 = 15n (snap_n80_s62), SBQ <= 4.3n, gate_K64 13.2 x sum(deg-1); revisits 3951,
+  vector returns 1706. DEAD: every strictly monotone potential of sbar alone (thetaA_n7 + start, n 7, one Odd choice vertex, sbar(6)
+  5 -> 1 -> 5 in one phase): leapfrog obstruction. PROVED (trivial): rho_P <= |Q||P|. FALSE (my draft): SBQ <= rho per (phase, q), 352 ties.
+  READING: parametric shortest paths (NOT opened, not cited; L-LIT request).
 
 ## Box 74 log (successor 36; Lead 06:08Z brief, crossed box 73: rho per W-run, REP route)
 - docs/new/N5-RHO-box74.md. Landed: R56 FB-RED (rho per phase unbounded in data, 218), R89 (h)/(i); red R76/R126 (no rho-POLY kill).
@@ -220,6 +227,8 @@ Stop (S5) when Iσ = Iτ = ∅: Even wins v iff the cycle node of Ξσ(v) has ev
   W-run (|Q| 47, |Q||F| 705). Obstruction: breadth (every Odd choice vertex changes Xi at almost every step).
 - SBQ <= n (sbar-changes at Odd choice vertices per W-run): DEAD, experiments/red/n3/instances/n3cov_phi.pg (sha1 50d416db..., S3 start):
   42 > 32.
+- Any strictly monotone potential of sbar alone in a phase (polytope path / basis exchange / lattice chain on sbar): DEAD,
+  experiments/n5-exhaustive/instances/thetaA_n7.pg + thetaA_n7.start (sha1 cd2a3bc8...): sbar(6) = 5 -> 1 -> 5 in one phase.
 
 ## Dead ends (successor 35; also in docs/new/N5-STRETCH-box64.md §1.5)
 - FRAME-STRETCH (< n+m sigma-changes per tau-stretch): DEAD, experiments/new/box64/mkr/mk_16_100.pg (sha1 49ba9a59…, start in .start;
