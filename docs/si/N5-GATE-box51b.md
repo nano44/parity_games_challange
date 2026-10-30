@@ -230,6 +230,13 @@ G-N5-TIME stays OPEN. Labels: PROVED (lane) / CONJECTURE / DATA / DEAD / READING
 - Cross-check, L-RED R141 (l-red 505ac980, commit subject only, not opened in detail): a search at n 8-16 finds W-constant intervals ≤ 3,
   and the static-order tie-break lemma is DEAD (u23sw64_n32, 26 / 64 upward switches). Both are independent of §7 and agree with it. No kill.
 
+## 9. Lead 14:46Z queue item: deep path-set changes per W-change (DATA, and a remark on the form of the question)
+- Per transition, Ξ(v) changes at most once for each v. So the depth ≥ k changes at ONE W-changing transition are trivially ≤ n.
+  - deepint.py PERBD4: max 153 (tcL_N12, n 492); largest ratio 0.82 n (counter_symsi_8). Outputs deep2_*.txt.
+  - The non-trivial form is a CHARGE: per (F, v), are v's deep changes ≤ poly(n)·X for a count X polynomially smaller than |F|? R139
+    makes «X = |F|» an equivalence with polynomial W-runs.
+  - Candidates for X: WCH_F(v), or the W-changes on v's Ξ-path. QUEUE, next box; not measured here.
+
 ## DONE / FINDINGS / NEEDS
 - DONE: experiments/si/gate/ (gate.py, const.py, agg.py, run.sh, inst/ copies, outputs); si/check.sh «box 51b»; this note.
 - FINDINGS:
