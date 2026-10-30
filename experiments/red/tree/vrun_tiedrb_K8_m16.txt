@@ -1,0 +1,9 @@
+game sha1 88350dbea171dea54738465e86718dc6ad182b2b
+start sha1 478bc835c808e5d67265882a1f431c9f0a24533d
+n5b: states 154 iterations 153 fallbacks 0 | n5.py (si.py engine): iterations 153 fallbacks 0 states logged 154
+state sequences identical: True
+n5b iterations 153 fallbacks 0 evals 615
+zielonka(oink zlk) OK strategies verified
+WINDAG f_8_16.pg n 270 runs 1 RT 128 REP 196 X 0 NWIN 129 BETA 14 INDEG 2 NPATH 14 LONG 15 TOK 196 TOKSH 1 ETOK_V 0 SELFL 0 CHREP 0 EPATH 1
+TIEDC tiedrb_K8_m16.pg n 270 iter 153 fallbacks 0 runs 1 rep 196 tied 98 untied 98 reblk 196 untied_reblk 98
+TIED tiedrb_K8_m16.pg n 270 rep 196 tied 98 untied 98 reblk 196 untied_reblk 98 tsh 1

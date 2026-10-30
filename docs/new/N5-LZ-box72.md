@@ -148,10 +148,67 @@ transition of P and W_{t+1}(x) ▷ W_t(x). Then CL_P ≤ |Z_a| + WCH^S4a_P.
     R15 (d) transfers, since σ' differs from σ_t only on improving edges);
   - TIE_P for N5 itself: it is the S1 procedure's tie-break (box 71), unbounded by this note.
 
+## 6. GXC against L-SI's TXC (Lead 2026-10-30 05:29Z; l-si 4fb0bfba docs/si/N5-ADD-box50.md §6, odd/tied.py)
+Written ~05:43Z (date -u). Tools:
+- box72/txc.py: TXC, GXC, overlap and the SOURCE of each TXC event. The W-run is as in tied.py (τ fixed, no S4c, σ changes, W's
+  cycle-node map fixed).
+- tied_lsi_4fb0bfba.py: L-SI's tied.py, copied byte for byte.
+- runlzc.py: runs any script on N5-LZC.
+- run_txc.sh, txcsum.py; outputs txc_*.txt (1132 runs).
+- L-SI's families copied to box72/inst: latew_K20_m32 (.pg sha1 063d173c…) and wdepth_K4_m16 (.pg sha1 8f1ab64d…), with their .start files.
+- [Q l-si 4fb0bfba N5-ADD-box50.md §6] «A TIED Ξ-CLIMB of z at s ∈ [k, u − 1] is a transition with Ξ_{s+1}(z) ▷ Ξ_s(z) and W_{s+1}(z) = W_s(z).»
+  TXC_F(z) := the tied Ξ-climbs of z in the W-run F.
+### 6.1 Exact relation
+- (E1) GXC ∩ TXC = the GXC events at S4a transitions inside W-runs.
+  - A GXC event at an S4a step has W_{t+1}(v) = W_t(v) (F1). In a W-run it is a TXC event at z = v.
+  - A GXC event at a fallback is never TXC: W-runs contain no S4c transition.
+  - A TXC event is GXC only if z is Even and switched, and λ_Ξ is fixed. z ∈ Z_s holds automatically (L-SI §6).
+  - DATA: all 385 S4a GXC events of N5 lie in W-runs and are TXC; the 3251 fallback GXC are not. TXC has 37895 events in all, so
+    GXC ∩ TXC is 1.0 % of TXC.
+- (E2) Lemma TXC-SRC (PROVED, lane). Let (z, s) be a TXC event in a W-run. Follow the INHERITANCE CHAIN from x := z: if x is Even and not
+  switched, step to σ_s(x); if x is Odd with σ̄_s(x) = σ̄_{s+1}(x) = τ(x), step to τ(x). Every vertex of the chain carries a tied climb.
+  The chain ends at a SOURCE x of one of these types:
+  - EVEN-TIE: x is Even and switched at s, Ξ(x) rises, W(x) is fixed. These are exactly Lemma TIE's events at x.
+  - SBAR: x is Odd and σ̄_s(x) ≠ σ̄_{s+1}(x).
+  - WIT: x is Odd with σ̄_s(x) = σ̄_{s+1}(x) ≠ τ(x).
+  - CYC: x is its own Ξ- or W-cycle node at s or s + 1.
+  - Proof. Let x be off its own cycle nodes with chain successor y, and put ρ := σ_s (Even) or τ (Odd). Then [V1] at s and s + 1 gives
+    Ξ(x) = x ⊕ Ξ(y) and W(x) = x ⊕ W(y), with paths avoiding x. W's cycle-node map is fixed in a W-run, so x ⊕ · is injective on the two
+    W-values: W_s(y) = W_{s+1}(y). Ξ_{s+1}(x) ≠ Ξ_s(x) forces Ξ_{s+1}(y) ≠ Ξ_s(y), and R15 makes it a strict rise. So y carries a tied
+    climb (the chain never BREAKS).
+  - The chain follows the (σ_s, τ)-play, so it ends at a source or at the W-cycle (CYC). □
+  - DATA: BRK = 0 in 1132 runs.
+- (E3) Corollary TXC-RHO (PROVED, lane). SBAR and WIT sources are Odd CHOICE vertices (σ̄ ≠ σ̄′ or σ̄ ≠ τ needs two successors) whose Ξ
+  changes at s. So they are ρ-type events: RESULTS R56's «Ξ-changes at Odd choice vertices», counted here per W-run, not per phase. A W-run can
+  cross λ_Ξ-changes, so ρ_F is not R56's per-phase ρ. Each TXC event (z, s) has exactly one
+  source, at the same s, so for every z and W-run F:
+  TXC_F(z) ≤ TIE_F + ρ_F + CYC_F,
+  with all three counted as (vertex, transition) events in F. In N5-LZC, TIE_F = 0 (LZ-STRICT; DATA: EVEN-TIE = 0).
+  - With L-SI's CONJECTURE TIED-RB and TOK1-type injectivity: re-blocked REP_F ≤ Σ_z d_E(z)·TXC_F(z) ≤ m_E·(TIE_F + ρ_F + CYC_F).
+- DATA, sources (1132 runs):
+  | | TXC | SBAR | WIT | CYC | EVEN-TIE | max TXC per (z, W-run) | max per W-run |
+  | --- | --- | --- | --- | --- | --- | --- | --- |
+  | N5 | 37895 | 29667 | 6632 | 1035 | 561 | 50 (pp_K48_n449) | 483 (pft35_n48) |
+  | N5-LZC | 38749 | 30146 | 7137 | 1466 | 0 | 50 | 483 |
+- DATA, L-SI's REP families (the ones that drive REP):
+  | instance | n | iterations N5 / N5-LZC | GXC | TXC | sources | tied.py REPEATs, tied / reblk |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | wdepth_K4_m16 | 146 | 76 / 76 | 0 | 184 | SBAR 93, WIT 91 | 21, 21 / 21 |
+  | latew_K20_m32 | 538 | 700 / 700 | 0 | 3941 | SBAR 938, WIT 3003 | 570, 570 / 570 |
+  - tied.py gives the same counts on N5 and N5-LZC. Winning regions are SAME.
+  - Corpus tied.py, 1132 runs: rep 50, tied 13, untied 37, reblk 5, untied_reblk 0, on both N5 and N5-LZC.
+### 6.2 READING
+- A GXC bound does NOT bound REP*. On both REP families GXC = 0 and the tied climbs that pay the 591 re-blocked REPEATs are all
+  Odd-sourced (SBAR / WIT). N5-LZC leaves those runs unchanged, so the lazy tie-break does not touch REP.
+- So TIED-RB, if proved, charges re-blocked REP to ρ (Odd-choice Ξ-changes per W-run) plus CYC, not to GXC. That is a per-W-run form of R56's
+  ρ-POLY, the premise FB-RED already needs. The two premises would then coincide, a possible economy, but not a closing.
+- GXC (S4a part) and TXC meet only in Lemma TIE's events (E1). These are 1 % of TXC on the corpus and 0 on the REP families.
+
 ## DONE / FINDINGS / NEEDS
 - DONE:
   - box72/gxc.py, n5lz.py, silentlz.py, wincmp.py, cmp.py, run*.sh;
   - outputs gxc_*, gxclz_*, gxclzc_*, silentlz_*, wincmp.txt (1132 runs each);
+  - §6: txc.py, runlzc.py, tied_lsi_4fb0bfba.py, run_txc.sh, txcsum.py, txc_*.txt, inst/ (L-SI's latew_K20_m32, wdepth_K4_m16);
   - this note; check.sh "box 72".
 - FINDINGS:
   1. DATA: GXC = 385 S4a events (all W-tied) + 3251 fallback events (3012 close the gap). The record u23sw64_n32's 64 are all S4a ties at
@@ -162,5 +219,9 @@ transition of P and W_{t+1}(x) ▷ W_t(x). Then CL_P ≤ |Z_a| + WCH^S4a_P.
   4. PROVED (lane): Lemma GXC-CLOSE. Gap-closing GXC events per phase ≤ |Z_a| + WCH^S4a_P (N5 and N5-LZC).
   5. DATA: N5-LZC makes fewer iterations (21542 vs 21845) and fewer S4c fallbacks (1445 vs 1486), has the same winners, and has S = C = 0.
   6. OPEN: FBO (fallback climbs that keep the gap open), max 46 per phase. CONJECTURE FBO-LIN, CONJECTURE LZ-NOC.
+  7. §6 PROVED (lane): TXC-SRC and TXC-RHO. GXC ∩ TXC = S4a GXC events in W-runs (385 / 37895). Every tied climb inherits from an
+     EVEN-TIE, Odd-choice (ρ) or CYC source, and TXC_F(z) ≤ TIE_F + ρ_F + CYC_F.
+     DATA: L-SI's REP families have GXC = 0, all sources Odd (SBAR / WIT), identical under N5-LZC. So GXC does not bound REP*;
+     TIED-RB would charge REP to ρ.
 - NEEDS: none from the owner. From the Lead: a ruling on whether N5-LZC (a different S4a tie-break) may replace N5 as the lane's object
   for the SC* / GXC premises, and a referee check of OPT-ONLY.
