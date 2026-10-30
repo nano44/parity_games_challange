@@ -156,6 +156,80 @@ G-N5-TIME stays OPEN. Labels: PROVED (lane) / CONJECTURE / DATA / DEAD / READING
   - My one-line sketch fails at (R1): routing every Odd vertex of the simulated game to one sink makes the simulated Odd edges
     Odd-improving, because they are longer to an Even-favourable cycle node.
 
+## 6. Lead 14:09Z (a): L-NEW's DEEP_4 restricted to W-constant intervals (DATA). The deep residual sits at the boundaries
+- Tool: si/gate/deepint.py. It keeps box 87's definitions verbatim (read-only copy gate/depth_lnew_b46f7759.py, l-new b46f7759) and splits
+  every path-set change of depth ≥ 4 by its transition:
+  - IN: W-flat, i.e. inside a W-constant interval;
+  - BD: W-changing, i.e. at an interval boundary.
+- Control: D4 (IN + BD per (F, v)) reproduces box 87's DEEP_4 exactly: 42 on fcobs_6, and 10, 12, 13, 15, 17, 19, 21 on
+  switchbestexp_2..8. L-NEW's own script, run on fcobs_6, prints d4 42.
+
+| corpus | depth ≥ 4: IN / BD | depth ≥ 1: IN / BD | max per (F, v): D4_IN / D4_BD |
+| --- | --- | --- | --- |
+| 1,132 runs (deep_sbcg.txt, deep_alt.txt) | 102 / 23,465 | 424 / 66,651 | 5 (u23sw64_n32) / 42 (fcobs_6) |
+| switchbestexp_2..8, counter_symsi_8 (deep_extra.txt) | 0 / 4,204 | 0 / 6,061 | 0 / 21 (switchbestexp_8) |
+
+- READING: 99.6 % of the deep changes, and all of box 87's SHALLOW-k killers, happen at transitions that change W.
+  - Inside intervals there are at most 10 deep changes per flat transition (u23sw64).
+  - So the deep residual of LEVEL-RED is a boundary phenomenon, as far as data go. A bound on it must use what W's change does to Ξ,
+    not the tie-break stalling of §1.
+  - [P-INT] and DEEP_k-POLY look like two separate residuals.
+
+## 7. Lead 14:09Z (b): is S1's tie-break a known anti-stalling rule in disguise? A fixed-order (Bland-type) rule is DEAD
+- What S1 is. SPEC table row A5 (docs/new/N5-ssi-global.md), quoted: «SPEC's σ' is the counterstrategy of the VJ procedure (longest-path ties
+  to the smallest index; BFS first discovery; DFS cycle choice at the cycle node)».
+  - In S4a this runs on the dual of the arena H_k. W's cycle node even (in the original game) gives the BFS branch; odd gives the
+    longest-path branch.
+  - Inside a W-constant interval, σ_{k+1}(v) is therefore the BFS-first-discovered tight successor in H_k. In 14 of the 18 intervals of
+    revisit_flat.txt every cycle node of W is even; the other 4 mix even and odd.
+  - The BFS discovery order runs over H_k's reverse edges, which depend on Iσ_k at OTHER vertices. So the order on OPT(v) is
+    state-dependent: S1 is a fixed deterministic map H_k ↦ σ_{k+1}, not a fixed order.
+- Fact (trivial, PROVED lane). Suppose a rule picks σ_{k+1}(v) as the minimum of a fixed order <_v on OPT(v) ∩ H_k(v). Since σ_k(v) ∈ H_k(v)
+  always, the rule only moves down <_v. So no vertex returns to an edge it left within the interval, and each vertex switches at most
+  |OPT(v)| − 1 times; that would give |I| ≤ m_E.
+- DEAD: «S1 restricted to a W-constant interval is a fixed per-vertex order rule (Bland-type)». Instance u23sw64_n32, interval [2, 10]:
+  - REV 31: returns of a vertex to an edge it left inside the interval;
+  - one vertex switches 6 times with |OPT(v)| = 5.
+  - Also REV 5 on u1t_own6_n32 [2, 7], 2 on u1t_cex_n32 [4, 8], 1 on u2flat73_n32 [7, 10]; tool si/gate/revisit.py, outputs
+    gate/revisit_flat.txt.
+  - A global fixed order on strategies is consistent with the data, but it bounds |I| only by the number of strategies, so it gives
+    nothing.
+- Anti-CYCLING is not the issue: Ξ strictly rises, so SI cannot cycle. The relevant notion is anti-STALLING. Whether S1's BFS-first-
+  discovery rule is an instance of a strongly-feasible-tree rule waits on L-LIT T54's opened source. No claim here.
+- Next for [P-INT]: the structure left is «BFS-first discovery on the reverse tight arena, with layers = W-lengths fixed». Candidate
+  potential (CONJECTURE, untested): the BFS discovery rank of σ_k(v) inside its W-length layer, ordered by layer from the cycle node
+  outward.
+
+## 8. [P-INT]: the BFS-layer mechanism. CONJECTURE LAYER-RESET (DATA, control bites) and the counter it allows
+- Layers. On a W-constant interval I, layer(v) := the length of W(v), which is fixed on I. A tight Even edge goes from layer d to layer
+  d − 1 (TIGHT-VALUE's proof).
+- READING (a proof sketch, not checked against every step of si.py; restrict() is assumed to keep all tight edges). Case: even W-cycle
+  node, i.e. S1's BFS branch (SPEC A5).
+  - The BFS from the cycle node over H_k's reverse edges discovers layer d in order of (position of the discovering layer-(d − 1)
+    vertex, pred-list index). Non-tight arena edges never discover.
+  - So σ_{k+1}(v) is the BFS-earliest arena successor of v in layer d − 1, and σ_k(v) ∈ H_k(v) is a candidate. The layer-1 order is
+    fixed on I (the pred-list index order of the cycle node).
+  - Hence: while the orders of the layers below d do not change, every layer-d vertex moves only EARLIER in a fixed order. It makes at
+    most |OPT(v)| − 1 switches and no return. A layer-d order changes only when a vertex of a lower layer switches.
+- CONJECTURE LAYER-RESET. Every return of a layer-d Even vertex to an edge it left inside I (at k1, back at k2) has a switch of some
+  other Even vertex of layer d − 1 in (k1, k2].
+  - DATA (si/gate/layer.py; all games with flat transitions, sbcg + alt lists, 21 runs; layer_flat.txt): RET 78, UNX 0 (returns without
+    such a switch). RETL2 0: no vertex of layer ≤ 2 ever returns.
+  - Control MUT=1 (ask for the switch at layer d − 2 instead): UNX 6 / 2 / 1 on u23sw64_n32 / u1t_own6_n32 / u1t_cex_n32. The test bites.
+- What LAYER-RESET gives, and what it does not.
+  - With S_d := the switches of layer-d vertices in I and m_d := Σ_{v ∈ layer d} (|OPT(v)| − 1):
+    S_d ≤ (1 + Σ_{d′<d} S_{d′})·m_d.
+  - That is a mixed-radix COUNTER bound: |I| ≤ Π_d (1 + m_d), exponential in the number of layers. It proves nothing polynomial.
+  - It is the exact shape of the remaining freedom: a layer-d vertex can sweep its successors again only after each lower-layer
+    reorder.
+  - INT-LIN therefore needs the Ξ-improvement condition (every switch strictly raises Ξ, §1 (iii)) to forbid the carries. That is
+    where Ξ's gap at the cycle-node level (§3, LEV = 0) enters.
+- Kill target for L-RED R141 (READING). Build a counter inside one interval: layer-1 vertices that reorder twice, each reorder making a
+  layer-2 vertex sweep back, and so on, with each sweep Ξ-improving. Data depth so far: switched vertices up to layer 11 (u1t_cex_n32),
+  but returns only from layer ≥ 3 and few carries (RET 31 at most per interval).
+- Cross-check, L-RED R141 (l-red 505ac980, commit subject only, not opened in detail): a search at n 8-16 finds W-constant intervals ≤ 3,
+  and the static-order tie-break lemma is DEAD (u23sw64_n32, 26 / 64 upward switches). Both are independent of §7 and agree with it. No kill.
+
 ## DONE / FINDINGS / NEEDS
 - DONE: experiments/si/gate/ (gate.py, const.py, agg.py, run.sh, inst/ copies, outputs); si/check.sh «box 51b»; this note.
 - FINDINGS:
@@ -172,6 +246,13 @@ G-N5-TIME stays OPEN. Labels: PROVED (lane) / CONJECTURE / DATA / DEAD / READING
      2K + 1, linear and independent of m.
   7. READING: FL steps are degenerate pivots (stalling). N5-LZC (R93) is the anti-stalling rule and has FL = 0.
   8. CONJECTURE INT-LIN (|I| ≤ n − 1).
+  9. DATA (§6): DEEP_4 lies at interval boundaries: depth ≥ 4 changes IN 102 / BD 23,465. Per (F, v) D4_IN ≤ 5, D4_BD ≤ 42. The SHALLOW-k
+     killers are all BD.
+  10. DEAD (§7): S1 as a fixed per-vertex order rule (u23sw64_n32 [2, 10]: REV 31; 6 switches with |OPT| = 5). S1 is BFS-first discovery,
+      with an order that depends on the state.
+  11. CONJECTURE LAYER-RESET (§8): a return at layer d needs a switch at layer d − 1 in between. DATA RET 78, UNX 0; the control bites.
+      READING: it gives only a counter bound Π_d(1 + m_d). INT-LIN needs the Ξ-improvement condition to forbid carries. That is the
+      L-RED R141 target.
 - NEEDS: none from the owner. Lead:
   - L-LIT: open a source on network-simplex stalling and anti-stalling rules (Cunningham), and on SI with arbitrary improving-subset
     rules on games with fixed cycle nodes.

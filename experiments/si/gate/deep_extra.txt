@@ -1,0 +1,8 @@
+GAME new/box54/out/switchbestexp_2.pg DEEPINT switchbestexp_2.pg n 60 N1_IN 0 N1_BD 265 N4_IN 0 N4_BD 199 D4 10 D4_IN 0 D4_BD 10 FLAT 0 PERFLAT4 0
+GAME new/box54/out/switchbestexp_3.pg DEEPINT switchbestexp_3.pg n 85 N1_IN 0 N1_BD 471 N4_IN 0 N4_BD 311 D4 12 D4_IN 0 D4_BD 12 FLAT 0 PERFLAT4 0
+GAME new/box54/out/switchbestexp_4.pg DEEPINT switchbestexp_4.pg n 110 N1_IN 0 N1_BD 635 N4_IN 0 N4_BD 420 D4 13 D4_IN 0 D4_BD 13 FLAT 0 PERFLAT4 0
+GAME new/box54/out/switchbestexp_5.pg DEEPINT switchbestexp_5.pg n 135 N1_IN 0 N1_BD 836 N4_IN 0 N4_BD 566 D4 15 D4_IN 0 D4_BD 15 FLAT 0 PERFLAT4 0
+GAME new/box54/out/switchbestexp_6.pg DEEPINT switchbestexp_6.pg n 160 N1_IN 0 N1_BD 1019 N4_IN 0 N4_BD 694 D4 17 D4_IN 0 D4_BD 17 FLAT 0 PERFLAT4 0
+GAME new/box54/out/switchbestexp_7.pg DEEPINT switchbestexp_7.pg n 185 N1_IN 0 N1_BD 1184 N4_IN 0 N4_BD 804 D4 19 D4_IN 0 D4_BD 19 FLAT 0 PERFLAT4 0
+GAME new/box54/out/switchbestexp_8.pg DEEPINT switchbestexp_8.pg n 210 N1_IN 0 N1_BD 1428 N4_IN 0 N4_BD 993 D4 21 D4_IN 0 D4_BD 21 FLAT 0 PERFLAT4 0
+GAME new/box54/out/hf/counter_symsi_8.pg DEEPINT counter_symsi_8.pg n 82 N1_IN 0 N1_BD 223 N4_IN 0 N4_BD 217 D4 1 D4_IN 0 D4_BD 1 FLAT 0 PERFLAT4 0

@@ -1,7 +1,19 @@
 # L-LIT notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point (HANDOVER, 2026-10-30 ~13:52Z by date -u; parked at ~550k context after T53; worked under D17/L39 from 13:09Z; successor 4, Opus 5.5, D15/D18; session_01V5yGRVtbkGazm2j23LvZp8; parked on Lead's word)
+## Resume point (successor T54, 2026-10-30 ~15:00Z by date -u; session_01V5yGRX5Hhq2A6bW6tNFG1o; D18; WORKING)
+DONE (claude/l-lit; pushes via scripts/push.sh, exit 0, VERIFY PASS; Oink smoke NOT RUN):
+- 57e40069: trunk 7446d3d2 merged; T54-tiebreak-check.py; merge of c30c1850 (local clone had started at stale dedbbe7e1: first push was
+  rejected non-fast-forward, nothing went out; fixed by a merge, no rebase).
+- T54 (this push): docs/lit/T54-stalling.md, T54-lexarena.py. (a) network-simplex stalling (Cunningham primaries NOT OPENED; Orlin CWI,
+  Muramatsu L5, Kukharenko-Sanita Thm 1, Tarjan TR-187-88, GGT TR-193-88, Avis-Friedmann opened); (b) fixed-gain PI (Zhong-Ye 2609.40147
+  eq 7.6, Post-Ye, Scherrer L8, Goenka Cor 1, FHZ, Friedmann 1-sink, Bjorklund-Vorobyov); (d) label-correcting (Shier-Witzgall R5-R8,
+  Orlin OCW l7, Bertsekas); §4 S1 tie-break on G_I: IDX-MONO (ODD), LEX-BFS/LEX-MONO (EVEN), CN open; abstract LEX-ARENA exponential.
+IN FLIGHT: none. OPEN LEADS: CN-POLY, EVEN-POLY (must use S2 Xi-offers), PASS-BIP; Claim RG (VJ restriction invariant) not re-proved.
+Older leads (T48-T53 handover): KL-SF; parametric dimension >= 2; Maat open direction; Loff-Skomra n-breakpoints.
+NEEDS: none from the owner (optional library access: Cunningham 1979, GHK 1990, Orlin 1997, Johnson 1973, Kershenbaum 1981, AMO).
+
+## Previous resume point (T48-T53)
 DONE this session (claude/l-lit; every push via scripts/push.sh, exit 0, VERIFY PASS; Oink smoke NOT RUN, Oink not built here):
 - 6c065788 handover check (container 4014 behind; fast-forwarded). 0703a463 trunk merge 55d45567 + T48 script v1.
 - ca194a96 T48 docs/lit/T48-sbc-neighbours.md + T48-sbc-embed-check.py: parametric shortest paths vs SBC (leapfrog = Carstensen mechanism,
@@ -47,6 +59,10 @@ NEEDS: none from the owner.
 - Open FL09 (self-loop removal) if the REFEREE needs it; Friedmann RAIRO 2011 (publisher 403; try author copy).
 
 ## Things only I know
+- T54: downloads in scratchpad t54/{A,B,C,D} (A network simplex, B PI, C Avis-Friedmann, D label-correcting), each with .txt;
+  lost with the container; URLs and sha256 prefixes in docs/lit/T54-stalling.md. t54/lsi = detached worktree of origin/claude/l-si.
+  T54-tiebreak-check.py runs from the repo root; corpus wrapper scratchpad t54/run.sh (sbcg + alt + latew/fx copied from l-si gate/inst);
+  outputs t54/t54_*.txt, aggregator t54/agg.py. Corpus run ~10 min with -P 4. verify.sh takes ~10 min here.
 - Successor 4 (T48): source PDFs in scratchpad t48/A (parametric), t48/B (DMDP), t48/C (Friedmann/Fearnley), each with .txt; Gusfield 1980
   thesis is a scan without text layer, pages read as PNG (t48/Aimg/gus3 = printed pp.83-87). Lost with the container; URLs + sha256 in Sources.
 - Friedmann snare preprint URL oliverfriedmann.com/downloads/papers/fearnley_lower_bound.pdf (HTTP 200 though his page marks it broken);
@@ -448,6 +464,20 @@ NEEDS: none from the owner.
 | ECCC TR06-067 (ARV) re-read | PDF p.7 1-1-exchange insight; Def. 8 1-2-exchange; Lemma 9 (non-matroid ⇒ 1-2-exchange); Lemma 10; Thm 7 | 2026-10-30 | |
 | arXiv 2108.13338 (Koh-Loho) re-read | Algorithm 4 (Bellman-Ford on tree labels, n − 1 iterations), Thm 5.3 | 2026-10-30 | |
 
+- T54 (2026-10-30, successor T54). OPENED (sha256 prefix; pages): Avis-Friedmann arXiv 1305.3944v1 (d1fafb8b5d0b822c; pp. 1-11, 29-31:
+  Thm 3, 4, 7, open problem p. 31); Orlin CWI OS-R8504 (7013d22e08ad66b7; p. 6, 27-28); Muramatsu JORSJ 43(1) 2000 (c0d592ed6de03944;
+  pp. 153-155, Def. 3, Lemma 5, Thm 6); Kukharenko-Sanita arXiv 2311.15799v4 (ed8b82ac21486367; pp. 1-7, Thm 1); Tarjan Princeton
+  CS-TR-187-88 (e77c6f6cff419f55; pp. 1-18, L4.3, Thm 4.6, 4.10); Goldberg-Grigoriadis-Tarjan CS-TR-193-88 (da51e931b8479f8c; pp. 4-5);
+  Holzhauser-Krumke-Thielen arXiv 1607.02284 (c887a49026e670e3; pp. 8-10); Zhong-Ye arXiv 2609.40147v2 (dafeb81816af6582; pp. 22-23,
+  31-33, eq. 7.6, Thm 6.1, 7.1); Post-Ye arXiv 1208.5083 (c51876ebf5c3cdb0; L3.4, Thm 3.7); Scherrer arXiv 1306.0386v4 (391b6481c8fa903f;
+  Lemma 8); Goenka et al. arXiv 2211.15602v2 (e62fb2eceb298d98; Cor. 1); FHZ arXiv 1410.7530 (c337feb64e808a3e; Thm 6.3, 8.1);
+  Friedmann arXiv 1106.0778 (46c96f44775aa2b0; 1-sink def. p. 9, Thm 6.14, 8.4); Bjorklund-Vorobyov DAM 2007 author PDF (95a6b406f01db6b4;
+  Thm 5.1, 7.1, §8, §10); Shier-Witzgall J. Res. NBS 86(3) 1981 (d6f521adbf106c21; pp. 317-318, 326-329, Results 5-8, Lemma 3); Orlin MIT OCW
+  15.082J lec07 (446b0a03776f308e; slides 9, 12, 20); Bertsekas Network Optimization 1998 (9b4a0d6b4536ced0; pp. 59-60, 73-75); Bertsekas
+  Linear Network Optimization 1991 (ac86b2c0c822e1f9; pp. 75-76); Bertsekas SLF Networks 1993 (cee42f9ad81fd35b; §1). NOT OPENED: Cunningham
+  1976, 1979; GHK 1990; Goldfarb-Hao 1990/1992; Orlin 1985 MP Study, 1997; Tarjan MP 1997; AOSS 2002; Johnson 1973/1977; Kershenbaum 1981;
+  AMO; HKZ SODA 2014; Hansen-Zwick 2010; MTZ 2010; Veinott 1969 (all paywalled/403/429/bot wall).
+
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
 - T17 process dead end: subagent GitHub MCP search outside the repo scope was a rule breach (see Things only I know); never repeat it.
@@ -476,6 +506,9 @@ NEEDS: none from the owner.
   128 times in one W-run (n 362), so s grows with n. Higman / Dickson route: DEAD for polynomiality (run is a good chain; F_k-level bounds).
 - T53 (2026-10-30): "XI-CH-POLY from Ξ-monotonicity + constant cycle node": DEAD as a template. Obstruction: Friedmann 0901.2731 G_n,
   switch-all, cycle node q fixed, 13·2^n − 9 iterations, so some vertex has exponentially many Ξ changes in one phase.
+
+- T54: DEAD as a bound for [P-INT]: the lex-BFS key potential of S1's EVEN branch alone (abstract LEX-ARENA, width 2: longest runs
+  2, 8, 22, 52, 114 = 2^(L+1) - 2L - 2 for L = 2..6; docs/lit/T54-lexarena.py). Obstruction: adversarial arenas; a bound must use S2.
 
 ## Corrections log
 - 2026-10-23 (T26): N8d-barrier.md §0 and R54 §0 put Lemma 4.75 / Thm 4.76 on p.187; opened PDF: printed p.186 (PDF p.202). Reported as caveat 4.

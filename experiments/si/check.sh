@@ -875,3 +875,12 @@ python3 -I gate/gate.py $t/v.pg $t/v.start | grep -q "FLAT 0 .* TXV 16 XCV 17 "
 echo "6d34c1617bb410ce78c392eb360ca28b6afea90f  gate/inst/latew_K16_m32.pg" | sha1sum -c --quiet
 echo "e995709e256b55aa40cb94896a7dcb52446baf57  gate/inst/fx_K8_m32.pg" | sha1sum -c --quiet
 echo "si (box 51b: GATE, INTERVAL-SI, potentials dead): PASS"
+# box 51b §6-§7: DEEP_4 split (fcobs_6 all at W-changing transitions, D4 = box 87's 42); S1 not a fixed-order rule (u23sw64 REV 31).
+python3 -I gate/deepint.py ../new/box59/out/fcobs_6.pg | grep -q "N4_IN 0 N4_BD 634 D4 42 D4_IN 0 D4_BD 42 FLAT 0"
+python3 -I gate/deepint.py ../red/xing/instances/u23sw64_n32.pg | grep -q "D4_IN 5 .* FLAT 8 PERFLAT4 10"
+python3 -I gate/revisit.py ../red/xing/instances/u23sw64_n32.pg | grep -q "interval \[2, 10\] flat 8 REV 31 SWV 6 OPT 5 BRANCH even"
+echo "si (box 51b §6-§7: DEEP_4 split, REVISIT): PASS"
+# box 51b §8: CONJECTURE LAYER-RESET data (UNX 0) and its control (MUT=1 must give UNX > 0).
+python3 -I gate/layer.py ../red/xing/instances/u23sw64_n32.pg | grep -q "RET 31 UNX 0 RETL2 0 DEPTH 10 FLAT 8"
+MUT=1 python3 -I gate/layer.py ../red/xing/instances/u23sw64_n32.pg | grep -q "RET 31 UNX 6 "
+echo "si (box 51b §8: LAYER-RESET): PASS"
