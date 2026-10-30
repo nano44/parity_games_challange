@@ -1,0 +1,413 @@
+GAME n5-epoch/instances/gci2_n12.pg WCHMAX gci2_n12.pg n 12 wruns 1 {'returns': 3, 'paid-W': 3, 'TIE': 0} max-WCH 2 max-WCH-over-n 0.17
+GAME n5-epoch/instances/ffin4_n24.pg WCHMAX ffin4_n24.pg n 24 wruns 3 {'returns': 8, 'paid-W': 8, 'TIE': 0} max-WCH 3 max-WCH-over-n 0.12
+GAME n5-epoch/instances/ffin12_n32.pg WCHMAX ffin12_n32.pg n 32 wruns 5 {'returns': 1, 'paid-W': 1, 'TIE': 0} max-WCH 2 max-WCH-over-n 0.06
+GAME n5-epoch/instances/ffin5_n32.pg WCHMAX ffin5_n32.pg n 32 wruns 3 {'TIE': 0} max-WCH 2 max-WCH-over-n 0.06
+GAME n5-epoch/instances/gci3_n24.pg WCHMAX gci3_n24.pg n 24 wruns 1 {'returns': 12, 'paid-W': 12, 'TIE': 0} max-WCH 4 max-WCH-over-n 0.17
+GAME n5-epoch/instances/immfail_n14.pg WCHMAX immfail_n14.pg n 14 wruns 2 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.07
+GAME n5-epoch/instances/lcount_n23.pg WCHMAX lcount_n23.pg n 23 wruns 1 {'returns': 2, 'paid-W': 2, 'TIE': 0} max-WCH 3 max-WCH-over-n 0.13
+GAME n5-epoch/instances/immp_cex_n11.pg WCHMAX immp_cex_n11.pg n 11 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.09
+GAME n5-epoch/instances/lend13_n16.pg WCHMAX lend13_n16.pg n 16 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.06
+GAME n5-epoch/instances/lend27_n24.pg WCHMAX lend27_n24.pg n 24 wruns 6 {'returns': 10, 'paid-W': 10, 'TIE': 0} max-WCH 5 max-WCH-over-n 0.21
+GAME n5-epoch/instances/lend15_n48.pg WCHMAX lend15_n48.pg n 48 wruns 5 {'TIE': 0} max-WCH 2 max-WCH-over-n 0.04
+GAME n5-epoch/instances/lend39f_n32.pg WCHMAX lend39f_n32.pg n 32 wruns 9 {'TIE': 0, 'returns': 1, 'paid-W': 1} max-WCH 2 max-WCH-over-n 0.06
+GAME n5-epoch/instances/lend107_n32.pg WCHMAX lend107_n32.pg n 32 wruns 10 {'returns': 3, 'paid-W': 3, 'TIE': 0} max-WCH 3 max-WCH-over-n 0.09
+GAME n5-epoch/instances/lend47_n32.pg WCHMAX lend47_n32.pg n 32 wruns 6 {'returns': 3, 'paid-W': 3, 'TIE': 0} max-WCH 2 max-WCH-over-n 0.06
+GAME n5-epoch/instances/lend9_n8.pg WCHMAX lend9_n8.pg n 8 wruns 4 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.12
+GAME n5-epoch/instances/lend55_n32.pg WCHMAX lend55_n32.pg n 32 wruns 10 {'TIE': 0} max-WCH 2 max-WCH-over-n 0.06
+GAME n5-epoch/instances/lend82_n32.pg WCHMAX lend82_n32.pg n 32 wruns 10 {'returns': 6, 'paid-W': 6, 'TIE': 0} max-WCH 5 max-WCH-over-n 0.16
+GAME n5-epoch/instances/lend72_n48.pg WCHMAX lend72_n48.pg n 48 wruns 11 {'returns': 5, 'paid-W': 5, 'TIE': 0} max-WCH 3 max-WCH-over-n 0.06
+GAME n5-epoch/instances/nep13_n24.pg WCHMAX nep13_n24.pg n 24 wruns 3 {'TIE': 1, 'returns': 2, 'paid-W': 2} max-WCH 2 max-WCH-over-n 0.08
+GAME n5-epoch/instances/nep56_n32.pg WCHMAX nep56_n32.pg n 32 wruns 4 {'returns': 21, 'paid-W': 21, 'TIE': 0} max-WCH 6 max-WCH-over-n 0.19
+GAME n5-epoch/instances/nconf61_n48.pg WCHMAX nconf61_n48.pg n 48 wruns 7 {'TIE': 0, 'returns': 5, 'paid-W': 5} max-WCH 3 max-WCH-over-n 0.06
+GAME n5-epoch/instances/nep22f_n64.pg WCHMAX nep22f_n64.pg n 64 wruns 7 {'TIE': 2} max-WCH 2 max-WCH-over-n 0.03
+GAME n5-epoch/instances/nep76_n40.pg WCHMAX nep76_n40.pg n 40 wruns 7 {'returns': 20, 'paid-W': 20, 'TIE': 0} max-WCH 5 max-WCH-over-n 0.12
+GAME n5-epoch/instances/ret12_n40.pg WCHMAX ret12_n40.pg n 40 wruns 5 {'returns': 23, 'paid-W': 23, 'TIE': 0} max-WCH 6 max-WCH-over-n 0.15
+GAME n5-epoch/instances/nep92_n40.pg WCHMAX nep92_n40.pg n 40 wruns 9 {'TIE': 0, 'returns': 9, 'paid-W': 9} max-WCH 6 max-WCH-over-n 0.15
+GAME n5-exhaustive/instances/b4_cyc6_0.pg WCHMAX b4_cyc6_0.pg n 11 wruns 1 {'TIE': 0} max-WCH 2 max-WCH-over-n 0.18
+GAME n5-exhaustive/instances/b4_cyc6_1.pg WCHMAX b4_cyc6_1.pg n 12 wruns 1 {'returns': 2, 'paid-W': 2, 'TIE': 0} max-WCH 3 max-WCH-over-n 0.25
+GAME n5-exhaustive/instances/b4_n4all_cyc3_0.pg WCHMAX b4_n4all_cyc3_0.pg n 4 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.25
+GAME n5-exhaustive/instances/b4_n5_other_0.pg WCHMAX b4_n5_other_0.pg n 5 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.20
+GAME n5-epoch/instances/nep94_n48.pg WCHMAX nep94_n48.pg n 48 wruns 8 {'returns': 13, 'paid-W': 13, 'TIE': 0} max-WCH 5 max-WCH-over-n 0.10
+GAME n5-exhaustive/instances/b4_theta_n7.pg WCHMAX b4_theta_n7.pg n 7 wruns 1 {'TIE': 1} max-WCH 1 max-WCH-over-n 0.14
+GAME n5-exhaustive/instances/b4_nohlen5_0.pg WCHMAX b4_nohlen5_0.pg n 11 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.09
+GAME n5-epoch/instances/ret14_n48.pg WCHMAX ret14_n48.pg n 48 wruns 13 {'TIE': 0, 'returns': 3, 'paid-W': 3} max-WCH 3 max-WCH-over-n 0.06
+GAME n5-exhaustive/instances/b5_n5_cyc4_0.pg WCHMAX b5_n5_cyc4_0.pg n 5 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.20
+GAME n5-exhaustive/instances/b5_o11.pg WCHMAX b5_o11.pg n 10 wruns 4 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.10
+GAME n5-exhaustive/instances/b5_os_n12.pg WCHMAX b5_os_n12.pg n 12 wruns 4 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.08
+GAME n5-epoch/instances/ret14_n64.pg WCHMAX ret14_n64.pg n 64 wruns 6 {'TIE': 0, 'returns': 41, 'paid-W': 41} max-WCH 6 max-WCH-over-n 0.09
+GAME n5-exhaustive/instances/b5_os_n14.pg WCHMAX b5_os_n14.pg n 14 wruns 6 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.07
+GAME n5-exhaustive/instances/b5_os_n16.pg WCHMAX b5_os_n16.pg n 16 wruns 6 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.06
+GAME n5-exhaustive/instances/b5_os_n20.pg WCHMAX b5_os_n20.pg n 20 wruns 9 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.05
+GAME n5-exhaustive/instances/b5_os_n24.pg WCHMAX b5_os_n24.pg n 24 wruns 9 {'returns': 6, 'paid-W': 6, 'TIE': 0} max-WCH 3 max-WCH-over-n 0.12
+GAME n5-exhaustive/instances/b5_os_n28.pg WCHMAX b5_os_n28.pg n 28 wruns 11 {'returns': 5, 'paid-W': 5, 'TIE': 0} max-WCH 2 max-WCH-over-n 0.07
+GAME n5-exhaustive/instances/b5_os_n32.pg WCHMAX b5_os_n32.pg n 32 wruns 10 {'returns': 11, 'paid-W': 11, 'TIE': 0} max-WCH 3 max-WCH-over-n 0.09
+GAME n5-exhaustive/instances/b6_xl2_n32.pg WCHMAX b6_xl2_n32.pg n 32 wruns 6 {'returns': 35, 'paid-W': 35, 'TIE': 0} max-WCH 4 max-WCH-over-n 0.12
+GAME n5-exhaustive/instances/b6_xl_n32.pg WCHMAX b6_xl_n32.pg n 32 wruns 6 {'returns': 31, 'paid-W': 31, 'TIE': 0} max-WCH 5 max-WCH-over-n 0.16
+GAME n5-exhaustive/instances/b5_os_n40.pg WCHMAX b5_os_n40.pg n 40 wruns 13 {'TIE': 0, 'returns': 7, 'paid-W': 7} max-WCH 3 max-WCH-over-n 0.07
+GAME n5-exhaustive/instances/b6_xs_n24.pg WCHMAX b6_xs_n24.pg n 24 wruns 1 {'returns': 2, 'paid-W': 2, 'TIE': 0} max-WCH 2 max-WCH-over-n 0.08
+GAME n5-exhaustive/instances/b6_xs_n32.pg WCHMAX b6_xs_n32.pg n 32 wruns 1 {'returns': 3, 'paid-W': 3, 'TIE': 0} max-WCH 2 max-WCH-over-n 0.06
+GAME n5-exhaustive/instances/b6_xl_n40.pg WCHMAX b6_xl_n40.pg n 40 wruns 6 {'returns': 39, 'paid-W': 39, 'TIE': 0} max-WCH 5 max-WCH-over-n 0.12
+GAME n5-exhaustive/instances/b6_xs_n40.pg WCHMAX b6_xs_n40.pg n 40 wruns 1 {'returns': 5, 'paid-W': 5, 'TIE': 0} max-WCH 2 max-WCH-over-n 0.05
+GAME n5-exhaustive/instances/b6_xs_n48.pg WCHMAX b6_xs_n48.pg n 48 wruns 1 {'returns': 6, 'paid-W': 6, 'TIE': 0} max-WCH 2 max-WCH-over-n 0.04
+GAME n5-exhaustive/instances/b6_xl_n48.pg WCHMAX b6_xl_n48.pg n 48 wruns 10 {'returns': 45, 'paid-W': 45, 'TIE': 0} max-WCH 6 max-WCH-over-n 0.12
+GAME n5-exhaustive/instances/b6_xw_n32.pg WCHMAX b6_xw_n32.pg n 32 wruns 7 {'returns': 27, 'paid-W': 27, 'TIE': 0} max-WCH 5 max-WCH-over-n 0.16
+GAME n5-exhaustive/instances/b6_xw_n40.pg WCHMAX b6_xw_n40.pg n 40 wruns 7 {'returns': 29, 'paid-W': 29, 'TIE': 0} max-WCH 5 max-WCH-over-n 0.12
+GAME n5-exhaustive/instances/canonA_0.pg WCHMAX canonA_0.pg n 15 wruns 1 {'returns': 1, 'paid-W': 1, 'TIE': 0} max-WCH 2 max-WCH-over-n 0.13
+GAME n5-exhaustive/instances/canonA_1.pg WCHMAX canonA_1.pg n 15 wruns 1 {'returns': 2, 'paid-W': 2, 'TIE': 0} max-WCH 2 max-WCH-over-n 0.13
+GAME n5-exhaustive/instances/frz1_n24.pg WCHMAX frz1_n24.pg n 24 wruns 2 {'returns': 14, 'paid-W': 14, 'TIE': 0} max-WCH 5 max-WCH-over-n 0.21
+GAME n5-exhaustive/instances/frz2_n24.pg WCHMAX frz2_n24.pg n 24 wruns 1 {'returns': 14, 'paid-W': 14, 'TIE': 0} max-WCH 5 max-WCH-over-n 0.21
+GAME n5-exhaustive/instances/b6_xw_n48.pg WCHMAX b6_xw_n48.pg n 48 wruns 7 {'returns': 38, 'paid-W': 38, 'TIE': 0} max-WCH 5 max-WCH-over-n 0.10
+GAME n5-exhaustive/instances/n3all_maxph_0.pg WCHMAX n3all_maxph_0.pg n 3 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME n5-exhaustive/instances/frz3_n24.pg WCHMAX frz3_n24.pg n 24 wruns 1 {'returns': 12, 'paid-W': 12, 'TIE': 0} max-WCH 5 max-WCH-over-n 0.21
+GAME n5-exhaustive/instances/n3all_maxph_1.pg WCHMAX n3all_maxph_1.pg n 3 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME n5-exhaustive/instances/n3all_maxph_2.pg WCHMAX n3all_maxph_2.pg n 3 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME n5-exhaustive/instances/n4_maxph_0.pg WCHMAX n4_maxph_0.pg n 4 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.25
+GAME n5-exhaustive/instances/n4_maxph_1.pg WCHMAX n4_maxph_1.pg n 4 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.25
+GAME n5-exhaustive/instances/n4_thch_0.pg WCHMAX n4_thch_0.pg n 4 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME n5-exhaustive/instances/b6_xw_n56.pg WCHMAX b6_xw_n56.pg n 56 wruns 7 {'returns': 38, 'paid-W': 38, 'TIE': 0} max-WCH 6 max-WCH-over-n 0.11
+GAME n5-exhaustive/instances/n4all_maxph_0.pg WCHMAX n4all_maxph_0.pg n 4 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.25
+GAME n5-exhaustive/instances/n4all_maxph_1.pg WCHMAX n4all_maxph_1.pg n 4 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.25
+GAME n5-exhaustive/instances/n4all_thch_0.pg WCHMAX n4all_thch_0.pg n 4 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.25
+GAME n5-exhaustive/instances/n4all_tgbad_0.pg WCHMAX n4all_tgbad_0.pg n 4 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.25
+GAME n5-exhaustive/instances/n5s_maxph_0.pg WCHMAX n5s_maxph_0.pg n 5 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.20
+GAME n5-exhaustive/instances/nh_n8.pg WCHMAX nh_n8.pg n 8 wruns 1 {'TIE': 0} max-WCH 2 max-WCH-over-n 0.25
+GAME n5-exhaustive/instances/thetaA_canon_n8.pg WCHMAX thetaA_canon_n8.pg n 8 wruns 1 {'returns': 1, 'paid-W': 1, 'TIE': 0} max-WCH 2 max-WCH-over-n 0.25
+GAME n5-exhaustive/instances/thetaA_n17.pg WCHMAX thetaA_n17.pg n 17 wruns 1 {'returns': 2, 'paid-W': 2, 'TIE': 0} max-WCH 2 max-WCH-over-n 0.12
+GAME n5-exhaustive/instances/thetaA_canon_n12.pg WCHMAX thetaA_canon_n12.pg n 12 wruns 1 {'returns': 1, 'paid-W': 1, 'TIE': 0} max-WCH 2 max-WCH-over-n 0.17
+GAME n5-exhaustive/instances/thetaA_n6.pg WCHMAX thetaA_n6.pg n 6 wruns 1 {'returns': 1, 'paid-W': 1, 'TIE': 0} max-WCH 2 max-WCH-over-n 0.33
+GAME n5-exhaustive/instances/thetaA_n7.pg WCHMAX thetaA_n7.pg n 7 wruns 1 {'returns': 1, 'paid-W': 1, 'TIE': 0} max-WCH 2 max-WCH-over-n 0.29
+GAME n5-exhaustive/instances/thetaA_n9.pg WCHMAX thetaA_n9.pg n 9 wruns 1 {'returns': 1, 'paid-W': 1, 'TIE': 0} max-WCH 2 max-WCH-over-n 0.22
+GAME n5-exhaustive/instances/wk1_n32.pg WCHMAX wk1_n32.pg n 32 wruns 3 {'TIE': 2} max-WCH 1 max-WCH-over-n 0.03
+GAME n5-exhaustive/instances/wk2_n32.pg WCHMAX wk2_n32.pg n 32 wruns 2 {'TIE': 2} max-WCH 1 max-WCH-over-n 0.03
+GAME new/box48/instances/long121_n40.pg WCHMAX long121_n40.pg n 40 wruns 9 {'TIE': 0, 'returns': 13, 'paid-W': 13} max-WCH 4 max-WCH-over-n 0.10
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.pg WCHMAX best_qpc_nep76_n40_s63.pg n 64 wruns 7 {'returns': 28, 'paid-W': 28, 'TIE': 0} max-WCH 6 max-WCH-over-n 0.09
+GAME red/carry/instances/absmono_viol_n44.pg WCHMAX absmono_viol_n44.pg n 44 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/carry/instances/carry3_2_2.pg WCHMAX carry3_2_2.pg n 47 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.02
+GAME red/carry/instances/cm_mdrop_both_n28.pg WCHMAX cm_mdrop_both_n28.pg n 28 wruns 1 {'returns': 1, 'paid-W': 1, 'TIE': 0} max-WCH 2 max-WCH-over-n 0.07
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.pg WCHMAX best_qpc_nep90_n40_s61.pg n 64 wruns 8 {'returns': 7, 'paid-W': 7, 'TIE': 0} max-WCH 5 max-WCH-over-n 0.08
+GAME red/carry/instances/cm_mdrop_oink_n28.pg WCHMAX cm_mdrop_oink_n28.pg n 28 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.04
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.pg WCHMAX best_qpc_nep90_n40_s62.pg n 80 wruns 8 {'returns': 15, 'paid-W': 15, 'TIE': 0} max-WCH 6 max-WCH-over-n 0.07
+GAME red/carry/instances/ctx11_n40.pg WCHMAX ctx11_n40.pg n 40 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.03
+GAME red/carry/instances/ctx6_n20.pg WCHMAX ctx6_n20.pg n 20 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/carry/instances/ctx12_n40.pg WCHMAX ctx12_n40.pg n 40 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.03
+GAME red/carry/instances/ctx13_n40.pg WCHMAX ctx13_n40.pg n 40 wruns 2 {'TIE': 0} max-WCH 2 max-WCH-over-n 0.05
+GAME red/carry/instances/ctx7_n30.pg WCHMAX ctx7_n30.pg n 30 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/carry/instances/f1_twodef_n48.pg WCHMAX f1_twodef_n48.pg n 48 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/carry/instances/f1_twofall_n48.pg WCHMAX f1_twofall_n48.pg n 48 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/carry/instances/ctx6_n56.pg WCHMAX ctx6_n56.pg n 56 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.02
+GAME red/carry/instances/fallv_viol_n28.pg WCHMAX fallv_viol_n28.pg n 28 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/carry/instances/fall3_n76.pg WCHMAX fall3_n76.pg n 76 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/carry/instances/fall4_n116.pg WCHMAX fall4_n116.pg n 116 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/carry/instances/fired10_n20.pg WCHMAX fired10_n20.pg n 20 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.05
+GAME red/carry/instances/firedlong667_n20.pg WCHMAX firedlong667_n20.pg n 20 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/carry/instances/firedlong667_n43.pg WCHMAX firedlong667_n43.pg n 43 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/carry/instances/gapbW_dup_n20.pg WCHMAX gapbW_dup_n20.pg n 20 wruns 1 {'TIE': 0} max-WCH 2 max-WCH-over-n 0.10
+GAME red/carry/instances/gapb_dup_n20.pg WCHMAX gapb_dup_n20.pg n 20 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/carry/instances/h4_compound2x2_n44.pg WCHMAX h4_compound2x2_n44.pg n 44 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.02
+GAME new/box48/out/qpcclimb/scale/snap_n80_s62.pg WCHMAX snap_n80_s62.pg n 80 wruns 8 {'returns': 15, 'paid-W': 15, 'TIE': 0} max-WCH 6 max-WCH-over-n 0.07
+GAME red/carry/instances/firedstep13_n76.pg WCHMAX firedstep13_n76.pg n 76 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.01
+GAME red/carry/instances/h4_compound_n44.pg WCHMAX h4_compound_n44.pg n 44 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/carry/instances/h4_def2ctx_n20.pg WCHMAX h4_def2ctx_n20.pg n 20 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.05
+GAME red/carry/instances/h4_disjoint_n20.pg WCHMAX h4_disjoint_n20.pg n 20 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/carry/instances/h4_def7_n28.pg WCHMAX h4_def7_n28.pg n 28 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/carry/instances/h4_notweaker_n20.pg WCHMAX h4_notweaker_n20.pg n 20 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/carry/instances/kfirst_viol_n13.pg WCHMAX kfirst_viol_n13.pg n 13 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/carry/instances/lalg_dtl_mviol_n20.pg WCHMAX lalg_dtl_mviol_n20.pg n 20 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/carry/instances/kin_viol_n29.pg WCHMAX kin_viol_n29.pg n 29 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/carry/instances/lex_viol_inj_n28.pg WCHMAX lex_viol_inj_n28.pg n 28 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/carry/instances/lex_viol_tie_n28.pg WCHMAX lex_viol_tie_n28.pg n 28 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/carry/instances/lemmaS_viol_n20.pg WCHMAX lemmaS_viol_n20.pg n 20 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/carry/instances/lemmaS_Mdrop_n20.pg WCHMAX lemmaS_Mdrop_n20.pg n 20 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.05
+GAME red/carry/instances/nosig_2_3.pg WCHMAX nosig_2_3.pg n 24 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.04
+GAME red/carry/instances/phi_flat_alive_n32.pg WCHMAX phi_flat_alive_n32.pg n 32 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/carry/instances/meet_viol_n17.pg WCHMAX meet_viol_n17.pg n 17 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/carry/instances/meet_viol_n29.pg WCHMAX meet_viol_n29.pg n 29 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/carry/instances/pk_viol_n20.pg WCHMAX pk_viol_n20.pg n 20 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.05
+GAME red/carry/instances/replay4_n32.pg WCHMAX replay4_n32.pg n 32 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/carry/instances/spp19_oink_n30.pg WCHMAX spp19_oink_n30.pg n 30 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/carry/instances/spp22_oink_n40.pg WCHMAX spp22_oink_n40.pg n 40 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/carry/instances/spp19_stable_n30.pg WCHMAX spp19_stable_n30.pg n 30 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.03
+GAME red/carry/instances/spp25_oink_n40.pg WCHMAX spp25_oink_n40.pg n 40 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.03
+GAME red/carry/instances/stealonce_both_n45.pg WCHMAX stealonce_both_n45.pg n 45 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.02
+GAME red/carry/instances/stealonce_core_n76.pg WCHMAX stealonce_core_n76.pg n 76 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.01
+GAME red/carry/instances/tstep_near_n20.pg WCHMAX tstep_near_n20.pg n 20 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/ctxp/instances/deep1_n21.pg WCHMAX deep1_n21.pg n 21 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/ctxp/instances/deep1_n13.pg WCHMAX deep1_n13.pg n 13 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/carry/instances/stealer_viol_n76.pg WCHMAX stealer_viol_n76.pg n 76 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.01
+GAME red/carry/instances/stealonce_viol_n76.pg WCHMAX stealonce_viol_n76.pg n 76 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.01
+GAME red/ctxp/instances/margin1_mc5.pg WCHMAX margin1_mc5.pg n 50 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/ctxp/instances/margin1_mc1.pg WCHMAX margin1_mc1.pg n 80 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/ctxp/instances/margin1_n20.pg WCHMAX margin1_n20.pg n 20 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/dtl/instances/lalg_dtl_pertop31_n18.pg WCHMAX lalg_dtl_pertop31_n18.pg n 18 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.06
+GAME red/dtl/instances/lalg_dtl_restart8_n20.pg WCHMAX lalg_dtl_restart8_n20.pg n 20 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/fbr/instances/bghm_k1_gap6_A.pg WCHMAX bghm_k1_gap6_A.pg n 21 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/fbr/instances/bghm_k3_gap4_A.pg WCHMAX bghm_k3_gap4_A.pg n 45 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/fbr/instances/nep80_n40.pg WCHMAX nep80_n40.pg n 40 wruns 4 {'TIE': 0} max-WCH 2 max-WCH-over-n 0.05
+GAME red/fbr/instances/lev74_n40.pg WCHMAX lev74_n40.pg n 40 wruns 3 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.03
+GAME red/fbr/instances/rho144_n32.pg WCHMAX rho144_n32.pg n 32 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.03
+GAME red/fbr/instances/fr39_q4_n48.pg WCHMAX fr39_q4_n48.pg n 48 wruns 1 {'returns': 5, 'paid-W': 5, 'TIE': 0} max-WCH 2 max-WCH-over-n 0.04
+GAME red/fbr/instances/lev56_n48.pg WCHMAX lev56_n48.pg n 48 wruns 10 {'TIE': 0, 'returns': 26, 'paid-W': 26} max-WCH 4 max-WCH-over-n 0.08
+GAME red/fbr/instances/rho84_n16.pg WCHMAX rho84_n16.pg n 16 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/fbr/instances/rho3_253_n32.pg WCHMAX rho3_253_n32.pg n 32 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.03
+GAME red/fbr/instances/sat4_n20.pg WCHMAX sat4_n20.pg n 20 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.05
+GAME red/fbr/instances/sat68_n20.pg WCHMAX sat68_n20.pg n 20 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.05
+GAME red/fbr/instances/twowave_L16.pg WCHMAX twowave_L16.pg n 22 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.05
+GAME red/fbx/instances/exsw_loop_n15.pg WCHMAX exsw_loop_n15.pg n 15 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/fbr/instances/rho666_n48.pg WCHMAX rho666_n48.pg n 48 wruns 2 {'returns': 2, 'paid-W': 2, 'TIE': 0} max-WCH 3 max-WCH-over-n 0.06
+GAME red/frz/instances/fbcap_eq_u4_n11.pg WCHMAX fbcap_eq_u4_n11.pg n 11 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/frz/instances/fx2_n11.pg WCHMAX fx2_n11.pg n 11 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/fbx/instances/kt6_n58.pg WCHMAX kt6_n58.pg n 58 wruns 3 {'returns': 9, 'paid-W': 9, 'TIE': 4} max-WCH 3 max-WCH-over-n 0.05
+GAME red/h3/instances/frzgap0_n4.pg WCHMAX frzgap0_n4.pg n 4 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/h3/instances/lcount2_n23.pg WCHMAX lcount2_n23.pg n 23 wruns 1 {'TIE': 1} max-WCH 3 max-WCH-over-n 0.13
+GAME red/h3/instances/frzgap0_n6.pg WCHMAX frzgap0_n6.pg n 6 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.17
+GAME red/h3/instances/offret_l19_n24.pg WCHMAX offret_l19_n24.pg n 24 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/h3/instances/lcount_n23.pg WCHMAX lcount_n23.pg n 23 wruns 1 {'returns': 2, 'paid-W': 2, 'TIE': 0} max-WCH 3 max-WCH-over-n 0.13
+GAME red/kl/instances/klcount_n18_base.pg WCHMAX klcount_n18_base.pg n 18 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/kl/instances/klcount_n16.pg WCHMAX klcount_n16.pg n 16 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/kl/instances/klcount_n18_lvl.pg WCHMAX klcount_n18_lvl.pg n 18 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/h3/instances/xsnpre36_n48.pg WCHMAX xsnpre36_n48.pg n 48 wruns 1 {'returns': 5, 'paid-W': 5, 'TIE': 0} max-WCH 2 max-WCH-over-n 0.04
+GAME red/kl/instances/klglobal_n16.pg WCHMAX klglobal_n16.pg n 16 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/kl/instances/klglobal_n18_lvl.pg WCHMAX klglobal_n18_lvl.pg n 18 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/kl/instances/klmin_n13.pg WCHMAX klmin_n13.pg n 13 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.08
+GAME red/kl/instances/klglobal_n20_lvl2.pg WCHMAX klglobal_n20_lvl2.pg n 20 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/kl/instances/r2climb_h13.pg WCHMAX r2climb_h13.pg n 13 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/kl/instances/r2crawl_n14.pg WCHMAX r2crawl_n14.pg n 14 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/kl/instances/r2join_h0E_n14.pg WCHMAX r2join_h0E_n14.pg n 14 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/kl/instances/r2lap_best_n22.pg WCHMAX r2lap_best_n22.pg n 22 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/kl24/instances/HL88_0.pg WCHMAX HL88_0.pg n 41 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.02
+GAME red/kl24/instances/HL88_1.pg WCHMAX HL88_1.pg n 43 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.02
+GAME red/kl24/instances/HL88_3.pg WCHMAX HL88_3.pg n 47 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.02
+GAME red/kl24/instances/HL88_2.pg WCHMAX HL88_2.pg n 45 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.02
+GAME red/kl24/instances/HLg_0.pg WCHMAX HLg_0.pg n 29 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.03
+GAME red/kl24/instances/HLg_1.pg WCHMAX HLg_1.pg n 35 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.03
+GAME red/kw/instances/frzu_tight_n14.pg WCHMAX frzu_tight_n14.pg n 14 wruns 2 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.07
+GAME red/kl24/instances/HLg_2.pg WCHMAX HLg_2.pg n 45 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.02
+GAME red/kl24/instances/HLg_3.pg WCHMAX HLg_3.pg n 55 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.02
+GAME red/kw/instances/cw11_n24.pg WCHMAX cw11_n24.pg n 24 wruns 5 {'TIE': 12, 'returns': 1, 'TT': 1} max-WCH 2 max-WCH-over-n 0.08
+GAME red/lag/instances/depth4_n53.pg WCHMAX depth4_n53.pg n 53 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.02
+GAME red/lag/instances/depth2_n39.pg WCHMAX depth2_n39.pg n 39 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.03
+GAME red/lag/instances/depth3_n46.pg WCHMAX depth3_n46.pg n 46 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/kw/instances/kc18_n24.pg WCHMAX kc18_n24.pg n 24 wruns 2 {'returns': 1, 'paid-W': 1, 'TIE': 0} max-WCH 2 max-WCH-over-n 0.08
+GAME red/lag/instances/fam_D12_n106.pg WCHMAX fam_D12_n106.pg n 106 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/lag/instances/fam_D4_n50.pg WCHMAX fam_D4_n50.pg n 50 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/mei/instances/mei_h2.pg WCHMAX mei_h2.pg n 19 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/lag/instances/fam_D8_n78.pg WCHMAX fam_D8_n78.pg n 78 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/mei/instances/mei_h3.pg WCHMAX mei_h3.pg n 27 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/mei/instances/mei_h5.pg WCHMAX mei_h5.pg n 43 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/mei/instances/mei_h4.pg WCHMAX mei_h4.pg n 35 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/mei/instances/mei_h8.pg WCHMAX mei_h8.pg n 67 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/mei/instances/mei_h6.pg WCHMAX mei_h6.pg n 51 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/n3/instances/lag11_n40.pg WCHMAX lag11_n40.pg n 40 wruns 2 {'returns': 23, 'paid-W': 23, 'TIE': 0} max-WCH 11 max-WCH-over-n 0.28
+GAME red/n3/instances/lagx10_n40.pg WCHMAX lagx10_n40.pg n 40 wruns 1 {'returns': 12, 'paid-W': 12, 'TIE': 0} max-WCH 10 max-WCH-over-n 0.25
+GAME red/n3/instances/core41_n40.pg WCHMAX core41_n40.pg n 40 wruns 7 {'TIE': 0, 'returns': 8, 'paid-W': 8} max-WCH 3 max-WCH-over-n 0.07
+GAME red/n3/instances/n3cov_lean.pg WCHMAX n3cov_lean.pg n 48 wruns 1 {'returns': 11, 'paid-W': 11, 'TIE': 0} max-WCH 4 max-WCH-over-n 0.08
+GAME red/n3/instances/comp54_n80.pg WCHMAX comp54_n80.pg n 80 wruns 7 {'returns': 19, 'paid-W': 19, 'TIE': 0} max-WCH 4 max-WCH-over-n 0.05
+GAME red/n3/instances/long90_k2_n40.pg WCHMAX long90_k2_n40.pg n 40 wruns 9 {'TIE': 0, 'returns': 3, 'paid-W': 3} max-WCH 4 max-WCH-over-n 0.10
+GAME red/n3/instances/n3cov_phi.pg WCHMAX n3cov_phi.pg n 32 wruns 3 {'TIE': 0, 'returns': 6, 'paid-W': 6} max-WCH 5 max-WCH-over-n 0.16
+GAME red/n3/instances/long121_n40.pg WCHMAX long121_n40.pg n 40 wruns 9 {'TIE': 0, 'returns': 13, 'paid-W': 13} max-WCH 4 max-WCH-over-n 0.10
+GAME red/n3/instances/run49_n32.pg WCHMAX run49_n32.pg n 32 wruns 1 {'returns': 31, 'paid-W': 31, 'TIE': 0} max-WCH 4 max-WCH-over-n 0.12
+GAME red/n5/instances/dl_4_4.pg WCHMAX dl_4_4.pg n 42 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/n3/instances/run34_n40.pg WCHMAX run34_n40.pg n 40 wruns 2 {'TIE': 0, 'returns': 23, 'paid-W': 23} max-WCH 6 max-WCH-over-n 0.15
+GAME red/n5/instances/dlm2_4.pg WCHMAX dlm2_4.pg n 42 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/n5/instances/sym_h12_s1.pg WCHMAX sym_h12_s1.pg n 24 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/n3/instances/ret22_n40.pg WCHMAX ret22_n40.pg n 40 wruns 10 {'returns': 35, 'paid-W': 35, 'TIE': 0} max-WCH 7 max-WCH-over-n 0.17
+GAME red/n5/instances/sym_h8_s1.pg WCHMAX sym_h8_s1.pg n 16 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/n5/instances/dl_6_8.pg WCHMAX dl_6_8.pg n 110 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/n5/instances/sym_h16_s1.pg WCHMAX sym_h16_s1.pg n 32 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.03
+GAME red/n5inj/instances/block_bk20.pg WCHMAX block_bk20.pg n 24 wruns 3 {'returns': 7, 'paid-W': 7, 'TIE': 0} max-WCH 3 max-WCH-over-n 0.12
+GAME red/n5inj/instances/blockph_bp20.pg WCHMAX blockph_bp20.pg n 24 wruns 2 {'returns': 12, 'paid-W': 12, 'TIE': 0} max-WCH 5 max-WCH-over-n 0.21
+GAME red/n5inj/instances/bribe_cex_n15.pg WCHMAX bribe_cex_n15.pg n 15 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/n5inj/instances/blockph_bp32.pg WCHMAX blockph_bp32.pg n 36 wruns 1 {'returns': 17, 'paid-W': 17, 'TIE': 0} max-WCH 4 max-WCH-over-n 0.11
+GAME red/n5inj/instances/block_bk32.pg WCHMAX block_bk32.pg n 36 wruns 1 {'returns': 17, 'paid-W': 17, 'TIE': 0} max-WCH 4 max-WCH-over-n 0.11
+GAME red/n5inj/instances/frz24.pg WCHMAX frz24.pg n 24 wruns 5 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.04
+GAME red/n5inj/instances/frz32.pg WCHMAX frz32.pg n 32 wruns 11 {'returns': 12, 'paid-W': 12, 'TIE': 0} max-WCH 4 max-WCH-over-n 0.12
+GAME red/n5inj/instances/frz40.pg WCHMAX frz40.pg n 40 wruns 9 {'returns': 10, 'paid-W': 10, 'TIE': 0} max-WCH 3 max-WCH-over-n 0.07
+GAME red/n5inj/instances/phase2_pk32.pg WCHMAX phase2_pk32.pg n 32 wruns 7 {'TIE': 0} max-WCH 2 max-WCH-over-n 0.06
+GAME red/n5inj/instances/elimn_cex_n48.pg WCHMAX elimn_cex_n48.pg n 48 wruns 12 {'TIE': 0, 'returns': 1, 'paid-W': 1} max-WCH 2 max-WCH-over-n 0.04
+GAME red/n5inj/instances/phase2_pk48.pg WCHMAX phase2_pk48.pg n 48 wruns 12 {'TIE': 0, 'returns': 8, 'paid-W': 8} max-WCH 2 max-WCH-over-n 0.04
+GAME red/n5inj/instances/returns_rt32.pg WCHMAX returns_rt32.pg n 32 wruns 8 {'TIE': 0} max-WCH 2 max-WCH-over-n 0.06
+GAME red/n5inj/instances/theta_thc24.pg WCHMAX theta_thc24.pg n 24 wruns 2 {'TIE': 0, 'returns': 7, 'paid-W': 7} max-WCH 5 max-WCH-over-n 0.21
+GAME red/n5inj/instances/returns_ph64.pg WCHMAX returns_ph64.pg n 64 wruns 16 {'returns': 8, 'paid-W': 8, 'TIE': 0} max-WCH 3 max-WCH-over-n 0.05
+GAME red/n5inj/instances/theta_thf16.pg WCHMAX theta_thf16.pg n 16 wruns 2 {'returns': 7, 'paid-W': 7, 'TIE': 0} max-WCH 3 max-WCH-over-n 0.19
+GAME red/n5inj/instances/returns_rt48.pg WCHMAX returns_rt48.pg n 48 wruns 14 {'returns': 3, 'paid-W': 3, 'TIE': 0} max-WCH 3 max-WCH-over-n 0.06
+GAME red/n5inj/instances/theta_tp32.pg WCHMAX theta_tp32.pg n 32 wruns 2 {'returns': 26, 'paid-W': 26, 'TIE': 0} max-WCH 5 max-WCH-over-n 0.16
+GAME red/nest16/instances/k4L72_n101.pg WCHMAX k4L72_n101.pg n 101 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/n5inj/instances/theta_tp40.pg WCHMAX theta_tp40.pg n 40 wruns 3 {'TIE': 0, 'returns': 12, 'paid-W': 12} max-WCH 5 max-WCH-over-n 0.12
+GAME red/nest16/instances/k4L72r_n101.pg WCHMAX k4L72r_n101.pg n 101 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/n5inj/instances/wide_h16.pg WCHMAX wide_h16.pg n 32 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/n5inj/instances/returns_rt64.pg WCHMAX returns_rt64.pg n 64 wruns 15 {'returns': 3, 'paid-W': 3, 'TIE': 0} max-WCH 3 max-WCH-over-n 0.05
+GAME red/nest16/instances/k4seed_c1_n82.pg WCHMAX k4seed_c1_n82.pg n 82 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/nest16/instances/k4g50_n101.pg WCHMAX k4g50_n101.pg n 101 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/nest16/instances/k4seed_vr_n87.pg WCHMAX k4seed_vr_n87.pg n 87 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/nest16/instances/k4u_n101.pg WCHMAX k4u_n101.pg n 101 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/nest16/instances/k4y1_n82.pg WCHMAX k4y1_n82.pg n 82 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/nest16/instances/near4_n26.pg WCHMAX near4_n26.pg n 26 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/nest16/instances/k4y2_n87.pg WCHMAX k4y2_n87.pg n 87 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/nest16/instances/nest4u_n46.pg WCHMAX nest4u_n46.pg n 46 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/nest16/instances/nest4uu_n51.pg WCHMAX nest4uu_n51.pg n 51 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/nest16/instances/nest5_n49.pg WCHMAX nest5_n49.pg n 49 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/nest16/instances/nest6min_n75.pg WCHMAX nest6min_n75.pg n 75 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/nest16/instances/nest6x_n75.pg WCHMAX nest6x_n75.pg n 75 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/nest16/instances/nest6_n75.pg WCHMAX nest6_n75.pg n 75 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/nest16/instances/oseg_n26.pg WCHMAX oseg_n26.pg n 26 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/nest16/instances/w1_n27.pg WCHMAX w1_n27.pg n 27 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/nest16/instances/win3_n27.pg WCHMAX win3_n27.pg n 27 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/nopre/instances/nopre_viol_n20.pg WCHMAX nopre_viol_n20.pg n 20 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/o1/instances/ph45_n32.pg WCHMAX ph45_n32.pg n 32 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/o1/instances/iter118_n48.pg WCHMAX iter118_n48.pg n 48 wruns 2 {'TIE': 0, 'returns': 4, 'paid-W': 4} max-WCH 3 max-WCH-over-n 0.06
+GAME red/o1/instances/f39_n48.pg WCHMAX f39_n48.pg n 48 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.02
+GAME red/o1/instances/ph50_n32.pg WCHMAX ph50_n32.pg n 32 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/o1/instances/tau18_n24.pg WCHMAX tau18_n24.pg n 24 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/rec0/instances/fbd0_n4.pg WCHMAX fbd0_n4.pg n 4 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/rec0/instances/n0_6_n24.pg WCHMAX n0_6_n24.pg n 24 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.04
+GAME red/rec0/instances/nep24_n20.pg WCHMAX nep24_n20.pg n 20 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.05
+GAME red/rec0/instances/nep90_n40.pg WCHMAX nep90_n40.pg n 40 wruns 3 {'returns': 6, 'paid-W': 6, 'TIE': 0} max-WCH 5 max-WCH-over-n 0.12
+GAME red/rec0/instances/nep87_n40.pg WCHMAX nep87_n40.pg n 40 wruns 3 {'returns': 5, 'paid-W': 5, 'TIE': 0} max-WCH 4 max-WCH-over-n 0.10
+GAME red/rec0/instances/lend2_30_n48.pg WCHMAX lend2_30_n48.pg n 48 wruns 1 {'returns': 10, 'paid-W': 10, 'TIE': 0} max-WCH 4 max-WCH-over-n 0.08
+GAME red/sgrow/instances/s20_n20.pg WCHMAX s20_n20.pg n 20 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.05
+GAME red/sgrow/instances/s29_n30.pg WCHMAX s29_n30.pg n 30 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/sgrow/instances/s34_oink_n40.pg WCHMAX s34_oink_n40.pg n 40 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.03
+GAME red/sgrow/instances/s21_oink_n20.pg WCHMAX s21_oink_n20.pg n 20 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/sgrow/instances/s32_n60.pg WCHMAX s32_n60.pg n 60 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/so/instances/beta2_n11.pg WCHMAX beta2_n11.pg n 11 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.09
+GAME red/sgrow/instances/s36_oink_n60.pg WCHMAX s36_oink_n60.pg n 60 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.02
+GAME red/sgrow/instances/s35_oink_n80.pg WCHMAX s35_oink_n80.pg n 80 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.01
+GAME red/so/instances/epsseg_cex_n16.pg WCHMAX epsseg_cex_n16.pg n 16 wruns 1 {'returns': 2, 'paid-W': 2, 'TIE': 0} max-WCH 4 max-WCH-over-n 0.25
+GAME red/sgrow/instances/s34_oink_n80.pg WCHMAX s34_oink_n80.pg n 80 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.01
+GAME red/so/instances/exitr_cex_n16.pg WCHMAX exitr_cex_n16.pg n 16 wruns 1 {'returns': 1, 'paid-W': 1, 'TIE': 0} max-WCH 3 max-WCH-over-n 0.19
+GAME red/so/instances/exitr_cex_n48.pg WCHMAX exitr_cex_n48.pg n 48 wruns 2 {'TIE': 0} max-WCH 2 max-WCH-over-n 0.04
+GAME red/so/instances/epsseg_cex_n48.pg WCHMAX epsseg_cex_n48.pg n 48 wruns 3 {'TIE': 0} max-WCH 2 max-WCH-over-n 0.04
+GAME red/so/instances/farrise25_n32.pg WCHMAX farrise25_n32.pg n 32 wruns 2 {'TIE': 0} max-WCH 2 max-WCH-over-n 0.06
+GAME red/so/instances/mn_abs74_n48.pg WCHMAX mn_abs74_n48.pg n 48 wruns 4 {'TIE': 0} max-WCH 3 max-WCH-over-n 0.06
+GAME red/so/instances/njb_reabs54_n32.pg WCHMAX njb_reabs54_n32.pg n 32 wruns 4 {'TIE': 0} max-WCH 2 max-WCH-over-n 0.06
+GAME red/so/instances/nleq_cex_n48.pg WCHMAX nleq_cex_n48.pg n 48 wruns 3 {'TIE': 0} max-WCH 2 max-WCH-over-n 0.04
+GAME red/so/instances/nleq33_n48.pg WCHMAX nleq33_n48.pg n 48 wruns 1 {'TIE': 0} max-WCH 2 max-WCH-over-n 0.04
+GAME red/so/instances/njb_reabs65_n48.pg WCHMAX njb_reabs65_n48.pg n 48 wruns 5 {'returns': 10, 'paid-W': 10, 'TIE': 0} max-WCH 3 max-WCH-over-n 0.06
+GAME red/so/instances/pft40_n40.pg WCHMAX pft40_n40.pg n 40 wruns 4 {'returns': 25, 'paid-W': 25, 'TIE': 0} max-WCH 5 max-WCH-over-n 0.12
+GAME red/so/instances/pftheta34_n32.pg WCHMAX pftheta34_n32.pg n 32 wruns 1 {'returns': 42, 'paid-W': 42, 'TIE': 0} max-WCH 7 max-WCH-over-n 0.22
+GAME red/so/instances/pft35_n48.pg WCHMAX pft35_n48.pg n 48 wruns 2 {'TIE': 0, 'returns': 43, 'paid-W': 43} max-WCH 5 max-WCH-over-n 0.10
+GAME red/so/instances/pftheta_cex_n32.pg WCHMAX pftheta_cex_n32.pg n 32 wruns 1 {'returns': 36, 'paid-W': 36, 'TIE': 0} max-WCH 7 max-WCH-over-n 0.22
+GAME red/so/instances/s4c8_n13.pg WCHMAX s4c8_n13.pg n 13 wruns 2 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.08
+GAME red/so/instances/rise_fb38_n48.pg WCHMAX rise_fb38_n48.pg n 48 wruns 3 {'TIE': 0} max-WCH 2 max-WCH-over-n 0.04
+GAME red/so/instances/post31_n48.pg WCHMAX post31_n48.pg n 48 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/so/instances/rise_thin51_n40.pg WCHMAX rise_thin51_n40.pg n 40 wruns 8 {'TIE': 0, 'returns': 19, 'paid-W': 19} max-WCH 5 max-WCH-over-n 0.12
+GAME red/so/instances/so_k2_n32.pg WCHMAX so_k2_n32.pg n 32 wruns 3 {'TIE': 0} max-WCH 2 max-WCH-over-n 0.06
+GAME red/so/instances/so_sorl_n32.pg WCHMAX so_sorl_n32.pg n 32 wruns 1 {'returns': 4, 'paid-W': 4, 'TIE': 0} max-WCH 2 max-WCH-over-n 0.06
+GAME red/so/instances/so_sor5_n24.pg WCHMAX so_sor5_n24.pg n 24 wruns 1 {'returns': 14, 'paid-W': 14, 'TIE': 0} max-WCH 4 max-WCH-over-n 0.17
+GAME red/so/instances/so_th_n32.pg WCHMAX so_th_n32.pg n 32 wruns 2 {'returns': 28, 'paid-W': 28, 'TIE': 0} max-WCH 9 max-WCH-over-n 0.28
+GAME red/so/instances/so_j19_n48.pg WCHMAX so_j19_n48.pg n 48 wruns 2 {'TIE': 0} max-WCH 2 max-WCH-over-n 0.04
+GAME red/so/instances/so_tie13_n24.pg WCHMAX so_tie13_n24.pg n 24 wruns 1 {'returns': 5, 'paid-W': 5, 'TIE': 0} max-WCH 3 max-WCH-over-n 0.12
+GAME red/so/instances/so_tie15_n32.pg WCHMAX so_tie15_n32.pg n 32 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.03
+GAME red/so/instances/tevlast7_n32.pg WCHMAX tevlast7_n32.pg n 32 wruns 2 {'TIE': 0, 'returns': 18, 'paid-W': 18} max-WCH 3 max-WCH-over-n 0.09
+GAME red/so/instances/tev_cex_n40.pg WCHMAX tev_cex_n40.pg n 40 wruns 3 {'TIE': 0} max-WCH 2 max-WCH-over-n 0.05
+GAME red/so/instances/tevlast11_n40.pg WCHMAX tevlast11_n40.pg n 40 wruns 2 {'TIE': 0, 'returns': 8, 'paid-W': 8} max-WCH 3 max-WCH-over-n 0.07
+GAME red/so/instances/tog6a_n32.pg WCHMAX tog6a_n32.pg n 32 wruns 1 {'returns': 1, 'paid-W': 1, 'TIE': 2} max-WCH 2 max-WCH-over-n 0.06
+GAME red/so/instances/tog6b_n32.pg WCHMAX tog6b_n32.pg n 32 wruns 1 {'returns': 4, 'paid-W': 3, 'TT': 1, 'TIE': 2} max-WCH 3 max-WCH-over-n 0.09
+GAME red/so/instances/tevlast_cex_n40.pg WCHMAX tevlast_cex_n40.pg n 40 wruns 2 {'returns': 2, 'paid-W': 2, 'TIE': 0} max-WCH 2 max-WCH-over-n 0.05
+GAME red/so/instances/xrun21_n24.pg WCHMAX xrun21_n24.pg n 24 wruns 1 {'returns': 2, 'paid-W': 2, 'TIE': 0} max-WCH 3 max-WCH-over-n 0.12
+GAME red/so/instances/xrun8_n10.pg WCHMAX xrun8_n10.pg n 10 wruns 1 {'returns': 1, 'paid-W': 1, 'TIE': 0} max-WCH 2 max-WCH-over-n 0.20
+GAME red/so/instances/xsn29_n32.pg WCHMAX xsn29_n32.pg n 32 wruns 1 {'returns': 3, 'paid-W': 3, 'TIE': 0} max-WCH 2 max-WCH-over-n 0.06
+GAME red/so/instances/xsn43_n48.pg WCHMAX xsn43_n48.pg n 48 wruns 1 {'returns': 2, 'paid-W': 2, 'TIE': 0} max-WCH 2 max-WCH-over-n 0.04
+GAME red/so/instances/xsnf42_n48.pg WCHMAX xsnf42_n48.pg n 48 wruns 1 {'returns': 9, 'paid-W': 9, 'TIE': 0} max-WCH 2 max-WCH-over-n 0.04
+GAME red/so/instances/xsnf52_n64.pg WCHMAX xsnf52_n64.pg n 64 wruns 1 {'returns': 14, 'paid-W': 14, 'TIE': 0} max-WCH 2 max-WCH-over-n 0.03
+GAME red/tcpert/instances/leanT_N12.pg WCHMAX leanT_N12.pg n 96 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/so/instances/xsn91_n48.pg WCHMAX xsn91_n48.pg n 48 wruns 9 {'returns': 61, 'paid-W': 61, 'TIE': 0} max-WCH 4 max-WCH-over-n 0.08
+GAME red/tcpert/instances/leanT_N6.pg WCHMAX leanT_N6.pg n 48 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/tcpert/instances/leanT_N16.pg WCHMAX leanT_N16.pg n 128 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/tcpert/instances/leanT_N8.pg WCHMAX leanT_N8.pg n 64 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/tcpert/instances/leanT_N24.pg WCHMAX leanT_N24.pg n 192 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.01
+GAME red/tcpert/instances/tcL_N3.pg WCHMAX tcL_N3.pg n 42 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/tcpert/instances/tcL_N4.pg WCHMAX tcL_N4.pg n 68 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/tcpert/instances/tcL_N5.pg WCHMAX tcL_N5.pg n 100 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/tcpert/instances/tcL_N6.pg WCHMAX tcL_N6.pg n 138 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/tcpert/instances/tcL_N10.pg WCHMAX tcL_N10.pg n 350 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/tcpert/instances/tcR4_N4.pg WCHMAX tcR4_N4.pg n 68 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/tcpert/instances/tcR4_N5.pg WCHMAX tcR4_N5.pg n 100 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/tcpert/instances/leanT_N32.pg WCHMAX leanT_N32.pg n 256 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/tcpert/instances/tcR4_N6.pg WCHMAX tcR4_N6.pg n 138 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.01
+GAME red/tcpert/instances/tcL_N8.pg WCHMAX tcL_N8.pg n 232 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/tcpert/instances/tcR4_N7.pg WCHMAX tcR4_N7.pg n 182 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/tcpert/instances/tcL_N12.pg WCHMAX tcL_N12.pg n 492 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.00
+GAME red/tcpert/instances/tcS8_N6.pg WCHMAX tcS8_N6.pg n 138 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/tcpert/instances/tcS8_N10.pg WCHMAX tcS8_N10.pg n 350 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/tcpert/instances/tcR4_N8.pg WCHMAX tcR4_N8.pg n 232 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/tcpert/instances/tcS8_N7.pg WCHMAX tcS8_N7.pg n 182 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/tpp/instances/tpp_viol_n22.pg WCHMAX tpp_viol_n22.pg n 22 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/tcpert/instances/tcS8_N8.pg WCHMAX tcS8_N8.pg n 232 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/tpp/instances/tpp_viol_n63.pg WCHMAX tpp_viol_n63.pg n 63 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.02
+GAME red/ul/instances/cxmig_k4_n54.pg WCHMAX cxmig_k4_n54.pg n 54 wruns 1 {'TIE': 0} max-WCH 4 max-WCH-over-n 0.07
+GAME red/ul/instances/cxmig_k8_n82.pg WCHMAX cxmig_k8_n82.pg n 82 wruns 1 {'TIE': 0} max-WCH 8 max-WCH-over-n 0.10
+GAME red/ul/instances/ladderd0_k12_n48.pg WCHMAX ladderd0_k12_n48.pg n 48 wruns 1 {'TIE': 0} max-WCH 12 max-WCH-over-n 0.25
+GAME red/tcpert/instances/tcS8_N11.pg WCHMAX tcS8_N11.pg n 418 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/ul/instances/cxmig_k16_n138.pg WCHMAX cxmig_k16_n138.pg n 138 wruns 1 {'TIE': 0} max-WCH 16 max-WCH-over-n 0.12
+GAME red/ul/instances/ladderd0_k24_n84.pg WCHMAX ladderd0_k24_n84.pg n 84 wruns 1 {'TIE': 0} max-WCH 24 max-WCH-over-n 0.29
+GAME red/ul/instances/ladderent_k12_n48.pg WCHMAX ladderent_k12_n48.pg n 48 wruns 1 {'TIE': 0} max-WCH 12 max-WCH-over-n 0.25
+GAME red/tcpert/instances/tcS8_N9.pg WCHMAX tcS8_N9.pg n 288 wruns 1 {'TIE': 0} max-WCH 2 max-WCH-over-n 0.01
+GAME red/ul/instances/reader_L10_n36.pg WCHMAX reader_L10_n36.pg n 36 wruns 1 {'returns': 1, 'paid-W': 1, 'TIE': 0} max-WCH 2 max-WCH-over-n 0.06
+GAME red/ul/instances/ladderent_k24_n84.pg WCHMAX ladderent_k24_n84.pg n 84 wruns 1 {'TIE': 0} max-WCH 24 max-WCH-over-n 0.29
+GAME red/ul/instances/reader_L20_n56.pg WCHMAX reader_L20_n56.pg n 56 wruns 1 {'returns': 1, 'paid-W': 1, 'TIE': 0} max-WCH 2 max-WCH-over-n 0.04
+GAME red/usplit/instances/gate_K16_n197.pg WCHMAX gate_K16_n197.pg n 197 wruns 1 {'TIE': 0} max-WCH 9 max-WCH-over-n 0.05
+GAME red/ul/instances/reader_L40_n96.pg WCHMAX reader_L40_n96.pg n 96 wruns 1 {'returns': 1, 'paid-W': 1, 'TIE': 0} max-WCH 2 max-WCH-over-n 0.02
+GAME red/ul/instances/ladderd0_k48_n156.pg WCHMAX ladderd0_k48_n156.pg n 156 wruns 1 {'TIE': 0} max-WCH 48 max-WCH-over-n 0.31
+GAME red/usplit/instances/grow_K12_n149.pg WCHMAX grow_K12_n149.pg n 149 wruns 1 {'TIE': 0} max-WCH 12 max-WCH-over-n 0.08
+GAME red/usplit/instances/pairoc_n58.pg WCHMAX pairoc_n58.pg n 58 wruns 1 {'TIE': 0} max-WCH 3 max-WCH-over-n 0.05
+GAME red/usplit/instances/pp_K12_n161.pg WCHMAX pp_K12_n161.pg n 161 wruns 1 {'TIE': 0} max-WCH 7 max-WCH-over-n 0.04
+GAME red/usplit/instances/pp_K12_n161_dual.pg WCHMAX pp_K12_n161_dual.pg n 161 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.01
+GAME red/ul/instances/ladderent_k48_n156.pg WCHMAX ladderent_k48_n156.pg n 156 wruns 1 {'TIE': 0} max-WCH 48 max-WCH-over-n 0.31
+GAME red/usplit/instances/grow_K40_n373.pg WCHMAX grow_K40_n373.pg n 373 wruns 1 {'TIE': 0} max-WCH 40 max-WCH-over-n 0.11
+GAME red/usplit/instances/usplit_n14.pg WCHMAX usplit_n14.pg n 14 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.07
+GAME red/usplit/instances/usplit_n23.pg WCHMAX usplit_n23.pg n 23 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.04
+GAME red/usplit/instances/usplit_rd_n24.pg WCHMAX usplit_rd_n24.pg n 24 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.04
+GAME red/usplit/instances/usplit_rd_s3_n27.pg WCHMAX usplit_rd_s3_n27.pg n 27 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.04
+GAME red/usplit/instances/usplit_s3_n16.pg WCHMAX usplit_s3_n16.pg n 16 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.06
+GAME red/xctx/instances/nest3_n20.pg WCHMAX nest3_n20.pg n 20 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/xctx/instances/nest3_n24.pg WCHMAX nest3_n24.pg n 24 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/xctx/instances/vrall_viol_n20.pg WCHMAX vrall_viol_n20.pg n 20 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/xctx/instances/xcov11_n20.pg WCHMAX xcov11_n20.pg n 20 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/xctx/instances/xctx_viol_n20.pg WCHMAX xctx_viol_n20.pg n 20 wruns 0 {} max-WCH 0 max-WCH-over-n 0.00
+GAME red/xing/instances/fbref_cex_n32.pg WCHMAX fbref_cex_n32.pg n 32 wruns 7 {'TIE': 0, 'returns': 8, 'paid-W': 8} max-WCH 3 max-WCH-over-n 0.09
+GAME red/xing/instances/j10_n24.pg WCHMAX j10_n24.pg n 24 wruns 2 {'TIE': 0, 'returns': 3, 'paid-W': 3} max-WCH 3 max-WCH-over-n 0.12
+GAME red/xing/instances/j4_n40.pg WCHMAX j4_n40.pg n 40 wruns 5 {'returns': 57, 'paid-W': 57, 'TIE': 0} max-WCH 5 max-WCH-over-n 0.12
+GAME red/xing/instances/j5_n16.pg WCHMAX j5_n16.pg n 16 wruns 5 {'TIE': 0} max-WCH 2 max-WCH-over-n 0.12
+GAME red/xing/instances/j7_n32.pg WCHMAX j7_n32.pg n 32 wruns 3 {'returns': 11, 'paid-W': 11, 'TIE': 0} max-WCH 4 max-WCH-over-n 0.12
+GAME red/xing/instances/j7_n48.pg WCHMAX j7_n48.pg n 48 wruns 8 {'returns': 11, 'paid-W': 11, 'TIE': 0} max-WCH 3 max-WCH-over-n 0.06
+GAME red/xing/instances/j8_n32.pg WCHMAX j8_n32.pg n 32 wruns 4 {'returns': 9, 'paid-W': 9, 'TIE': 0} max-WCH 4 max-WCH-over-n 0.12
+GAME red/xing/instances/j8_n48.pg WCHMAX j8_n48.pg n 48 wruns 9 {'TIE': 0, 'returns': 8, 'paid-W': 8} max-WCH 3 max-WCH-over-n 0.06
+GAME red/xing/instances/kw25_n32.pg WCHMAX kw25_n32.pg n 32 wruns 3 {'returns': 10, 'paid-W': 10, 'TIE': 0} max-WCH 4 max-WCH-over-n 0.12
+GAME red/xing/instances/kw_n16.pg WCHMAX kw_n16.pg n 16 wruns 1 {'returns': 2, 'paid-W': 2, 'TIE': 0} max-WCH 2 max-WCH-over-n 0.12
+GAME red/xing/instances/kw_n24.pg WCHMAX kw_n24.pg n 24 wruns 1 {'returns': 1, 'paid-W': 1, 'TIE': 0} max-WCH 2 max-WCH-over-n 0.08
+GAME red/xing/instances/kw_n48.pg WCHMAX kw_n48.pg n 48 wruns 1 {'returns': 7, 'paid-W': 7, 'TIE': 0} max-WCH 4 max-WCH-over-n 0.08
+GAME red/xing/instances/obr_eq_n24.pg WCHMAX obr_eq_n24.pg n 24 wruns 1 {'TIE': 0} max-WCH 2 max-WCH-over-n 0.08
+GAME red/usplit/instances/pp_K48_n449_dual.pg WCHMAX pp_K48_n449_dual.pg n 449 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.00
+GAME red/xing/instances/obr_n32.pg WCHMAX obr_n32.pg n 32 wruns 2 {'returns': 8, 'paid-W': 8, 'TIE': 0} max-WCH 4 max-WCH-over-n 0.12
+GAME red/xing/instances/u1t_cex_n32.pg WCHMAX u1t_cex_n32.pg n 32 wruns 1 {'returns': 5, 'paid-W': 1, 'TT': 4, 'TIE': 17} max-WCH 2 max-WCH-over-n 0.06
+GAME red/xing/instances/u1t_own6_n32.pg WCHMAX u1t_own6_n32.pg n 32 wruns 2 {'returns': 6, 'TT': 6, 'TIE': 15} max-WCH 1 max-WCH-over-n 0.03
+GAME red/xing/instances/u23sw64_n32.pg WCHMAX u23sw64_n32.pg n 32 wruns 3 {'returns': 31, 'TT': 31, 'TIE': 64} max-WCH 2 max-WCH-over-n 0.06
+GAME red/xing/instances/u2flat_n32.pg WCHMAX u2flat_n32.pg n 32 wruns 6 {'TIE': 2} max-WCH 2 max-WCH-over-n 0.06
+GAME red/xing/instances/u2flat73_n32.pg WCHMAX u2flat73_n32.pg n 32 wruns 5 {'TIE': 73, 'returns': 1, 'TT': 1} max-WCH 1 max-WCH-over-n 0.03
+GAME red/usplit/instances/pp_K48_n449.pg WCHMAX pp_K48_n449.pg n 449 wruns 1 {'TIE': 0} max-WCH 25 max-WCH-over-n 0.06
+GAME red/xing/instances/x31_cu16.pg WCHMAX x31_cu16.pg n 16 wruns 2 {'TIE': 0, 'returns': 7, 'paid-W': 7} max-WCH 3 max-WCH-over-n 0.19
+GAME red/xing/instances/x31_cu24.pg WCHMAX x31_cu24.pg n 24 wruns 3 {'returns': 19, 'paid-W': 19, 'TIE': 0} max-WCH 8 max-WCH-over-n 0.33
+GAME red/xing/instances/x31_cu32i.pg WCHMAX x31_cu32i.pg n 32 wruns 2 {'returns': 35, 'paid-W': 35, 'TIE': 0} max-WCH 6 max-WCH-over-n 0.19
+GAME red/xing/instances/x31_cu48.pg WCHMAX x31_cu48.pg n 48 wruns 2 {'returns': 56, 'paid-W': 56, 'TIE': 0} max-WCH 7 max-WCH-over-n 0.15
+GAME red/xing/instances/x31_cu32.pg WCHMAX x31_cu32.pg n 32 wruns 2 {'returns': 33, 'paid-W': 33, 'TIE': 0} max-WCH 5 max-WCH-over-n 0.16
+GAME red/xing/instances/x31_lem_e24.pg WCHMAX x31_lem_e24.pg n 24 wruns 5 {'TIE': 0, 'returns': 4, 'paid-W': 4} max-WCH 3 max-WCH-over-n 0.12
+GAME red/xing/instances/x31_nh_e24.pg WCHMAX x31_nh_e24.pg n 24 wruns 1 {'returns': 8, 'paid-W': 8, 'TIE': 0} max-WCH 3 max-WCH-over-n 0.12
+GAME red/xing/instances/x31_nh_r20.pg WCHMAX x31_nh_r20.pg n 20 wruns 1 {'returns': 5, 'paid-W': 5, 'TIE': 0} max-WCH 2 max-WCH-over-n 0.10
+GAME red/xing/instances/x31_lem_t32.pg WCHMAX x31_lem_t32.pg n 32 wruns 7 {'TIE': 0, 'returns': 13, 'paid-W': 13} max-WCH 3 max-WCH-over-n 0.09
+GAME red/xing/instances/x31_re24.pg WCHMAX x31_re24.pg n 24 wruns 1 {'TIE': 1} max-WCH 3 max-WCH-over-n 0.12
+GAME red/xing/instances/x31_ru24.pg WCHMAX x31_ru24.pg n 24 wruns 1 {'TIE': 0} max-WCH 4 max-WCH-over-n 0.17
+GAME red/xing/instances/x31_rx32.pg WCHMAX x31_rx32.pg n 32 wruns 4 {'returns': 24, 'paid-W': 24, 'TIE': 0} max-WCH 5 max-WCH-over-n 0.16
+GAME red/xing/instances/x32_rand16.pg WCHMAX x32_rand16.pg n 16 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.06
+GAME red/xing/instances/x32_rand24.pg WCHMAX x32_rand24.pg n 24 wruns 1 {'returns': 6, 'paid-W': 6, 'TIE': 0} max-WCH 3 max-WCH-over-n 0.12
+GAME red/xing/instances/x31_rx48.pg WCHMAX x31_rx48.pg n 48 wruns 4 {'returns': 25, 'paid-W': 25, 'TIE': 0} max-WCH 5 max-WCH-over-n 0.10
+GAME red/xing/instances/x32_nest40.pg WCHMAX x32_nest40.pg n 40 wruns 3 {'TIE': 0, 'returns': 44, 'paid-W': 44} max-WCH 6 max-WCH-over-n 0.15
+GAME red/xing/instances/x32_rand32.pg WCHMAX x32_rand32.pg n 32 wruns 1 {'returns': 4, 'paid-W': 4, 'TIE': 0} max-WCH 2 max-WCH-over-n 0.06
+GAME red/xing/instances/x32_rand48.pg WCHMAX x32_rand48.pg n 48 wruns 1 {'returns': 22, 'paid-W': 22, 'TIE': 0} max-WCH 3 max-WCH-over-n 0.06
+GAME red/xing/instances/x32_rand64.pg WCHMAX x32_rand64.pg n 64 wruns 1 {'returns': 17, 'paid-W': 17, 'TIE': 0} max-WCH 3 max-WCH-over-n 0.05
+GAME red/xing/instances/x32_waves32.pg WCHMAX x32_waves32.pg n 32 wruns 9 {'returns': 28, 'paid-W': 28, 'TIE': 0} max-WCH 5 max-WCH-over-n 0.16
+GAME si/root/instances/cone_n65.pg WCHMAX cone_n65.pg n 65 wruns 2 {'TIE': 0} max-WCH 2 max-WCH-over-n 0.03
+GAME si/root/instances/cone_n69.pg WCHMAX cone_n69.pg n 69 wruns 1 {'TIE': 0} max-WCH 1 max-WCH-over-n 0.01
+GAME red/xing/instances/x32_waves48.pg WCHMAX x32_waves48.pg n 48 wruns 7 {'returns': 3, 'paid-W': 3, 'TIE': 0} max-WCH 2 max-WCH-over-n 0.04
+GAME si/root/instances/ueonce_n27.pg WCHMAX ueonce_n27.pg n 27 wruns 1 {'returns': 2, 'paid-W': 2, 'TIE': 0} max-WCH 3 max-WCH-over-n 0.11
+GAME red/usplit/instances/gate_K64_n581.pg WCHMAX gate_K64_n581.pg n 581 wruns 1 {'TIE': 0} max-WCH 33 max-WCH-over-n 0.06
