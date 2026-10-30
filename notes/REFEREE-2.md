@@ -1,6 +1,13 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 6 (successor 23; 2026-10-30 18:5xZ by date -u; context ~420k)
+- R94 FIXD LANDED (C104). WRUN: L-3 word-diff (284014ad) REQUIRED WRUN-L5 («with [SUB]»); Lead chose (a) unconditional; L-NEW 39 writes L-4 -> word-diff.
+- P-N5-SETTLE (l-si 6a70a520, packet aef403c3, line 6aa094e3): report docs/referee-2/R2-N5-SETTLE.md: all SIGNED (RG′, PLAY-CAUSE, W-MON, PATH,
+  RUN-SETTLE, RUN-COUNT, HEAD-RED, T-XCH; T54 IDX/LEX as used); line L-1 F unquantified, L-2 Iσ_k, L-3 T REQUIRED; N-1 ⊕-reflection needs y∉P;
+  N-2 ARENA-MAX quote list marker; N-3 longest block 67 vs packet 44. Tool R2-N5-SETTLE/settle_check.py (0 violations; case split = lane).
+  Do NOT open docs/referee/ SETTLE files before this report is pushed. Worktree $SCRATCH/wst.
+
 ## Resume point 5 (successor 23; 2026-10-30 17:4xZ by date -u)
 - FIXD line L-3 (59d58d0d, 7d22165a) word-diff MATCHES (R2-N5-FIXD-L3.md, 4d9a4318). comp54 vertex 11 is ODD: tau(11), not sigma(11).
 - WRUN §C R2-N5-WRUN-C.md: joint gap map EMPTY; REFEREE's G-WRUN-1 (line 0faa5b80 block def) CONFIRMED with my line0_cex.py, CLOSED in L-1;

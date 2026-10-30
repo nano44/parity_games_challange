@@ -1,0 +1,19 @@
+MODE files /tmp/claude-0/-home-user-parity-games-challange/c5131569-13ae-5464-8cfa-fc746dffc9b4/scratchpad/sbcg.lst 1 experiments/ MAXT 5000 BF 0
+BLOCKS: 956
+CASE1: 8791
+CASE2a: 6
+CASE_WR: 19
+EV_i: 1757
+EV_ii: 18
+EV_iii: 1692
+IDX_checks: 91098
+LEX_checks: 325253
+WRUNS: 5419
+WRUN_transitions: 6921
+XIPLAY_checks: 1025751
+runs: 719
+transitions: 11621
+max max_E_F: (48, 'red/ul/instances/ladderent_k48_n156.pg#0')
+max max_LCT_run: 30
+max max_block: (67, 'red/usplit/instances/gate_K64_n581.pg#0')
+RESULT PASS violations 0
