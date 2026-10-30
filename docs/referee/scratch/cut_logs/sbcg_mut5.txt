@@ -1,0 +1,54 @@
+NOTE start file /tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/red/n3/instances/n3cov_phi.start invalid for its game (move not an edge, or missing); given start skipped
+CC_chk 7257
+CLS_C 4
+CLS_F 454
+CLS_FR 2491
+CLS_P 1520
+CLS_S 42
+CLS_first 5716
+FS_LATE 301
+GAMES 375
+LS3_chk 1
+LS_chk 11
+LS_late 776
+LS_rep 11
+LS_sil 0
+OPT1_chk 34541
+OPT2_chk 189299
+RUNS 437
+THM_chk 437
+TRANS 6829
+WMON5_V 22
+WMONX_chk 663
+WMON_chk 189834
+WV_chk 22988
+WV_max_ratio_x1000 400
+max_Bstar 25
+max_Ostar 19
+max_REPstar 2
+max_SCstar 31
+max_T 122
+skip_big 344
+VIOLATIONS 22
+EX ('WMON5', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/n5-epoch/instances/lend39f_n32.pg', 2)
+EX ('WMON5', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/red/carry/instances/ctx11_n40.pg', 3)
+EX ('WMON5', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/red/carry/instances/ctx12_n40.pg', 2)
+EX ('WMON5', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/red/carry/instances/ctx7_n30.pg', 0)
+EX ('WMON5', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/red/carry/instances/fallv_viol_n28.pg', 3)
+EX ('WMON5', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/red/carry/instances/lex_viol_tie_n28.pg', 0)
+EX ('WMON5', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/red/carry/instances/phi_flat_alive_n32.pg', 0)
+EX ('WMON5', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/red/carry/instances/meet_viol_n29.pg', 3)
+EX ('WMON5', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/red/carry/instances/replay4_n32.pg', 0)
+EX ('WMON5', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/red/carry/instances/spp25_oink_n40.pg', 0)
+EX ('WMON5', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/red/n3/instances/lag11_n40.pg', 1)
+EX ('WMON5', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/red/n3/instances/run34_n40.pg', 0)
+EX ('WMON5', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/red/n5/instances/sym_h12_s1.pg', 4)
+EX ('WMON5', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/red/n5/instances/sym_h16_s1.pg', 1)
+EX ('WMON5', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/red/sgrow/instances/s20_n20.pg', 1)
+EX ('WMON5', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/red/sgrow/instances/s20_n20.pg', 2)
+EX ('WMON5', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/red/sgrow/instances/s21_oink_n20.pg', 0)
+EX ('WMON5', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/red/sgrow/instances/s29_n30.pg', 1)
+EX ('WMON5', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/new/box59/out/rnd/r128_n40.pg', 0)
+EX ('WMON5', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/new/box59/out/rnd/r65_n40.pg', 0)
+EX ('WMON5', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/new/box59/out/rnd/r79_n40.pg', 0)
+EX ('WMON5', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/new/box59/out/rnd/r9_n40.pg', 0)
