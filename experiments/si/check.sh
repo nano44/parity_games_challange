@@ -833,3 +833,12 @@ echo "si (box 48: window depth): PASS"
 python3 -I rund/quotecheck.py ../../docs/si/P-N5-REPD-box49.md | grep -q "quotes=3 bad=0"
 python3 -I rund/quotecheck.py ../../docs/si/P-N5-REPD-box49.md --mut | grep -q "QUOTES FAIL"
 echo "si (box 49: P-N5-REPD quotes): PASS"
+# box 50 (docs/si/N5-ADD-box50.md): window DAG; R130's chain is a path (depth 7 at m 16), no (z, t*) token shared, no edge twice on a chain.
+t=$(mktemp -d); LATE=2 python3 -I ../red/span/mkrw.py 4 16 $t/w.pg $t/w.start >/dev/null
+cmp -s $t/w.pg odd/inst/red50/wdepth_K4_m16.pg
+o=$(python3 -I odd/windag.py odd/inst/red50/wdepth_K4_m16.pg odd/inst/red50/wdepth_K4_m16.start); grep -q "RT 36 REP 21 X 0 NWIN 37 BETA 1 INDEG 1 NPATH 1 LONG 7 TOK 21 TOKSH 1 ETOK_V 0 SELFL 0 CHREP 0 EPATH 1" <<<"$o"
+o=$(python3 -I odd/windag.py ../red/so/instances/so_th_n32.pg); grep -q "LONG 2 TOK 2 TOKSH 1 ETOK_V 0 SELFL 1 CHREP 0 EPATH 2" <<<"$o"
+echo "si (box 50: window DAG): PASS"
+# box 50 §6: re-blocked REPEATs paid by tied Xi-climbs (wdepth m 16 all re-blocked and tied).
+o=$(python3 -I odd/tied.py odd/inst/red50/wdepth_K4_m16.pg odd/inst/red50/wdepth_K4_m16.start); grep -q "rep 21 tied 21 untied 0 reblk 21 untied_reblk 0 tsh 1" <<<"$o"
+echo "si (box 50 §6: tied climbs): PASS"
