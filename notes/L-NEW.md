@@ -1,6 +1,11 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Box 71 log (successor 35; Lead 01:50Z: <= 1 S re-entry per (piece, edge): proof or adversary)
+- docs/new/N5-S2-box71.md. No tie-order lemma (SPEC S1's tie-break depends on the whole arena). DEAD: instance
+  experiments/new/box71/inst/s2piece_n32.pg + .start (sha1 aec03e16...): v 15 cycles 8 -> 2 -> 10 -> 8 through three W*-tied options, two
+  S re-entries of (15, 8) in one piece (silent.py and L-SI's cutsx.py agree). SIL-Z/SC-GXC stand; SC* not killed; C untouched.
+
 ## Box 70 log (successor 35; Lead 01:23Z: premise SC* of L-SI's P-N5-CUT)
 - docs/new/N5-SC-box70.md. silent.py re-implements P-N5-CUT §4 classes (matches cutsx: S 42, C 4 on 719). SC* record 31 (u23sw64_n32, one S
   per edge, all on W-flat transitions). PROVED (lane) SIL-Z: an S re-entry is a strict Xi-climb at a gap vertex with W(v) fixed (old successor
@@ -736,13 +741,13 @@ Every answer measured from the repository; commands named.
    fetched ref, so the pin cannot be checked yet; I checked the packet by sha1 (cbea0739…) against my own commit 1afccb51 instead.
    (iii) The container clock is slow vs the Lead's stamp (07:50 vs 07:53): stamp only from date -u, never ahead of it.
 
-## Resume point (successor 35, session_01V5yGRZhJhpJcRZhDSWTwuE; FINAL, PARKED 2026-10-30 ~01:05Z by date -u)
+## Resume point (successor 35, session_01V5yGRZhJhpJcRZhDSWTwuE; FINAL, PARKED 2026-10-30 ~02:01Z by date -u)
 ### DONE (all pushed via scripts/push.sh, VERIFY PASS; reported to the Lead)
-- Boxes 64-65: N5-STRETCH-box64.md; packet P-N5-FRAME (frozen 938d8796) LANDED as RESULTS R89 (fixes file H0-H17).
-- Box 66 N5-LATE-box66.md (78e1fd24); box 67 N5-FBENERGY-box67.md (0163720e, 9b0fc279); box 68 N5-ZFLAT-box68.md (b24ee55d).
-- Box 69: packet docs/new/P-N5-GAP-box69.md FROZEN at 28ceeadc, sha1 d67f8e04...; RESULTS line proposal P-N5-GAP-box69-line.txt.
-### IN FLIGHT: P-N5-GAP with REFEREE 19 / REFEREE-2 21 (Lead 01:23Z). Box 70 done (N5-SC-box70.md). Nothing running.
-- If the Lead edits the line: the packet is frozen, so any mismatch goes into a fixes file P-N5-GAP-fixes-box69.md (append-only).
+- Boxes 64-65: N5-STRETCH-box64.md; P-N5-FRAME (frozen 938d8796) LANDED as RESULTS R89 (fixes H0-H17).
+- Box 66 N5-LATE (78e1fd24); box 67 N5-FBENERGY (0163720e); box 68 N5-ZFLAT (b24ee55d).
+- Box 69: P-N5-GAP FROZEN 28ceeadc (sha1 d67f8e04...), line proposal P-N5-GAP-box69-line.txt (f1c5c5d5...); with REFEREE 19 / REFEREE-2 21.
+- Box 70 N5-SC (c90503a9): SIL-Z, SC-GXC (S part of [P-SC] and FB-LIN's ZF fold into GXC). Box 71 N5-S2: "<= 1 S per (piece, edge)" DEAD.
+### IN FLIGHT: P-N5-GAP under review (fixes, if any, go to P-N5-GAP-fixes-box69.md, append-only). Nothing running.
 ### NEXT (the Lead decides)
 1. Referee fixes for P-N5-FRAME go in a fixes file P-N5-FRAME-fixes-box65.md (never into the frozen packet).
 2. Remaining target per §5.5: Even's P* (NM* via MATCH-Phi) and NM^U on unprotected Odd targets (COMPOSE-FREEZE (e)).
