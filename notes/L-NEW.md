@@ -2,6 +2,14 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point (successor 38, Opus 5.5, started 2026-10-30 12:02Z by date -u; handover check: origin head 1169bb3d, trunk merged)
+### Box 87 N5-ARV (Lead 13:34Z: XI-CH-POLY via the ARV rank trick): docs/new/N5-ARV-box87.md
+- ARV (ECCC TR06-067) Thm 3 / Lemma 4 opened: rank a fixed list of <= n m delays; 1-1 exchange keeps improvements strict.
+- PROVED (lane): LEX-SIGN (path-set order = lex on signed vector), PREFIX-MON (k-term signed prefix monotone, <= (2n+1)^k values),
+  Theorem LEVEL-RED (PCH_F(v) <= n(2n+1)^k + DEEP_k; XI-CH-POLY <= DEEP_k-POLY for one constant k).
+- DATA: latew_K16_m32 and fx family depth <= 3 (fully ranked). DEAD: SHALLOW-k (switchbestexp_N depth 3N+3; counter_symsi_8 depth 42),
+  FLIP-c (fx: K+1). Break: ARV Lemma 4's 1-1 exchange vs lexicographic 1-to-many. XI-CH-POLY OPEN (max 0.32n).
+- Things only I know: fx family regenerated in the scratchpad from l-red span/mkrw.py + free/obsx.py (git archive of origin/claude/l-red;
+  BLK=2 OWNER=0 ABOVE=a); not committed. Corpus depth_*.txt lack the 'flip' field (added after the run).
 ### Box 86 N5-RSTAR (Lead 13:06Z: R*-POLY; D18 screen of >= 2 outside approaches): docs/new/N5-RSTAR-box86.md
 - R137 line: fx_K8_m32 one W-run, FREE 836 all LAT (64 at one edge), R*_F 16, FL_F 0, |F| 280.
 - PROVED (lane): GAP-DEV (blocked target => Xi < W, Odd deviation sigmabar != tau on its play); RSTAR-PCH (R*_F <= m_E n (n + 1 + P*_F);
@@ -1581,6 +1589,8 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
   (SUCC-MON, LATE-RISE); R93 / P-N5-WCH-box79.md §4.1 NEW-BOUND, §4.2 RET-WCH; SPEC N5-ssi-global.md S1, S2, S4, Termination.
 - (succ. 38, box 86) [FFSS] D. Figueira, S. Figueira, S. Schmitz, Ph. Schnoebelen, arXiv 1007.2989 (LICS 2011): introduction, Prop. 5.2,
   Prop. 6.3, Remark 6.4 (full PDF text read). [Fr09] O. Friedmann arXiv 0901.2731: abstract only. RESULTS R86 (LEN-MONO, COMPOSE-RUN, COMPOSE-NM).
+- (succ. 38, box 87) [ARV] H. Ackermann, H. Röglin, B. Vöcking, ECCC TR06-067: Def. 2, Thm 3 + proof, Lemma 4 + proof, Thm 7 and the
+  1-1-exchange paragraph (full PDF text read).
 ## Dead ends
 - (box 47, successor 26, 11:13Z) CONJECTURE XD-1 (≤ 1 X_dir per {u, u′}-run): FALSE on experiments/new/box47/instances/pp2_n19.pg (sha1 97b5b132…),
   𝒞^2O, S3, phase [1, 3], D = {1}, {0}, {1}; length-only values (cycle node 9). Obstruction: each X_dir needs only an Even switch on each
@@ -1764,6 +1774,8 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
   + .start (R*_F 16, 5 deviation edges); 60 corpus W-runs. Obstruction: one deviation edge poisons a lateral fan released one per step.
 - (succ. 38, box 86) WQO / Dickson route to R*-POLY: dead for polynomial bounds ([FFSS] Prop. 6.3: F_{gamma+k-1} lower bounds, tight even
   for the lexicographic order; Xi's order is lexicographic with dimension ~ n).
+- (succ. 38, box 87) CONJECTURE SHALLOW-k (every Xi path-set change in a W-run has depth < k, k constant): FALSE, new/box54/out/
+  switchbestexp_N depth 3N+3 (N 2..8), counter_symsi_8 depth 42. CONJECTURE FLIP-c: FALSE, fx_K_m (BLK 2) FLIP = K+1. Neither kills XI-CH-POLY.
 ## Things only I know (earlier successors)
 - (succ. 8) Pitfalls in box 21:
   - `pkill -f "climb_fix.py ..."` killed my own shell (exit 144). Kill by `ps -eo pid,args | awk '$2=="python3" && $3==...'`.
