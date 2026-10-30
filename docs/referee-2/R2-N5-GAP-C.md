@@ -141,3 +141,4 @@ The fixes file is append-only: `git diff 15044625 c1aa183d` adds 38 lines (H10-H
   - **n: acceptable as is.** TARGET.md §1 l. 8 fixes «n = |V|, m = |E|» for the whole fleet, and R88 / R89 leave it implicit. Binding it
     («n = |V|») costs three words and may ride the same H17 edit, but it is not required.
   - Verdict: H16 MATCHES §1-§5 except for the unbound k. With H17 = H16 + the k clause, MATCHES.
+- H17 line (l-new f997177d, sha1 fa565370…; Lead 04:06Z): = H16 + exactly «a transition is written k → k + 1 (states k, k + 1); n = |V|;» inserted after «… the gap set;» (difflib, nothing else). k and n now bound; strict symbol test of the whole line: no unbound symbol. MATCHES. (04:06Z by date -u)
