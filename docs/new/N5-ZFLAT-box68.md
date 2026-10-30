@@ -71,3 +71,7 @@ vertex-W-changes (new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62, n 80). Ma
   So re-openings land in the WCH ↔ R* circle, unifying FB-LIN's (2) with (c′).
   (4) READING: FB-LIN ⇐ WCH per vertex per phase poly ∧ Ξ-climbs in a saturated gap poly.
 - NEEDS: none from the owner.
+
+## Addendum (2026-10-30, REFEREE-2 N-GAP-5 via P-N5-GAP fixes H6)
+- "Characterisation" in §2 and FINDINGS (2) is withdrawn: the items are consequences of Z_{k+1} = Z_k, with no converse.
+- DATA correction (N-GAP-7, fixes H8): comp54_n80's start file has a non-edge (11 -> 51); without it, 782 fallbacks and 8,442 re-openings (ZF 56 unchanged).

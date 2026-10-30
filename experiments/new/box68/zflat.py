@@ -16,6 +16,9 @@ import pg
 p = sys.argv[1]; g = load(p); n = g.n
 start = readstart(sys.argv[2]) if len(sys.argv) > 2 else None
 E, Ed = Engine(g), Engine(dual(g)); s, t = start_pair(g, E, Ed, start); s, t = tuple(s), tuple(t)
+bad = [(v, w) for d in (start or ({}, {})) for v, w in d.items() if w not in g.succ[v]]
+if bad:                                   # P-N5-GAP fixes H8 (REFEREE-2 N-GAP-7): a start pair must use edges of G
+    print(f"INVALID-START {os.path.basename(p)} non-edges {bad}"); sys.exit(2)
 Wc = {}
 def W(s, t):
     if t not in Wc: Wc[t] = Engine(pg.Game(list(g.prio), list(g.owner), [[t[v]] if g.owner[v] == 1 else g.succ[v] for v in range(n)]))
