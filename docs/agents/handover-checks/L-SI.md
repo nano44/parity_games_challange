@@ -1,3 +1,38 @@
+# Handover check: L-SI (successor 31, written 2026-10-29T22:5xZ by date -u (22:48:09 at measurement); LANE-RESTART step 3; Opus 5.5, D15/D18)
+Session session_01V5yGRY6GXgHUrdpJa5WBaa. Every answer measured in this container; commands given. Predecessor: successor 30,
+session_01V5yGRXdA7p12A2AFsUdae8. Its handover is notes/L-SI.md "## HANDOVER (successor 30, boxes 36-39)" (l-si dab44572).
+
+## 1. Branch, head, distance to trunk
+- `git ls-remote origin claude/l-si claude/vibrant-johnson-nxvvxo`: claude/l-si dab44572, trunk 5d61c587.
+- Clone stale again: local HEAD da88a6d4 (successor 19) while `git status` said "up to date". Fetched both names, `git merge --ff-only`
+  → dab44572 (`git merge-base --is-ancestor dab44572 HEAD`: yes). No late push beyond dab44572.
+- vs trunk 5d61c587: 0 ahead / 40 behind (`git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo`), merge-base
+  dab44572 (trunk already carries my branch). Merged `--no-ff` (no rebase) → 6e3adf94. This file is the next commit.
+- Oink: tools/oink/build absent (`ls`); not needed for box 40 unless a cross-check is asked.
+
+## 2. Open work and next step (nothing of mine running: `ps -eo pid,args | grep "[p]ython3"` empty)
+- BOX 40 (Lead 22:47Z): proof side of CONJECTURE PCH-QUAD-S. Order: (2) fallbacks / τ-changes per span G_vc via R56's ρ and
+  STRETCH-RED fb_S, first if clean; (1) PCH-QUAD-S with S4a tools (W-RETURN, W-ENT, OPT-OFF); (3) W-VPOLY-S on hntop.
+  Next: read N5-SPAN-box38 + N5-SPANW-box39 definitions of span / G_vc, then R56 and fb_S, then measure fallbacks per span.
+
+## 3. docs/GAPS.md rows I own
+- None (`awk -F'|' '$4 ~ /L-SI/' docs/GAPS.md` → empty). I work under G-N5-TIME (owner L-NEW, open). Last RESULTS row R88
+  (`grep -o '^### R[0-9]*' docs/RESULTS.md | tail -1`); R89 (P-N5-FRAME) is a draft, docs/agents/R89-draft.md.
+
+## 4. Three owner rulings (verbatim, docs/DECISIONS.md; status docs/DECISIONS-INDEX.md)
+- D18 (DECISIONS.md l.332; index l.32: active): "Focus on N5 and work toward proving it. Explore novel approaches, especially by
+  connecting ideas from areas of mathematics and computer science that are not usually studied together. Make reasonable assumptions
+  where needed, state them briefly, and proceed without asking me questions. Clearly distinguish proven results from conjectures and
+  open problems." Lead reading L40 (index l.33: active).
+- D15 (DECISIONS.md l.277; index l.26: active): "q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be
+  autonomous, reason about it"
+- D1 (DECISIONS.md l.3; index l.5: active): "Never publish, post, email, submit or contact anyone outside the fleet. Anything external is
+  my decision."
+
+## 5. One trap and its check
+- Trap: stale clone (da88a6d4 again, the third successor in a row; `git status` "up to date" is about the stale remote ref).
+  Check: `git ls-remote` first, fetch only existing names, then is-ancestor + rev-list count before reading the notebook and before push.
+
 # Handover check: L-SI (successor 30, written 2026-10-29T20:37Z by date -u (20:37:16); LANE-RESTART step 3; Opus 5.5, D18/L40)
 Session session_01V5yGRXdA7p12A2AFsUdae8. Every answer below was measured in this container; commands given. Predecessor: successor 29, session_01V5yGRVp3epWjVsx5aH3qSm.
 Its handover is notes/L-SI.md "## HANDOVER (successor 29, boxes 33-35)" (l-si 88a953f5, plus 28b3a849 Lead-ruling note).
