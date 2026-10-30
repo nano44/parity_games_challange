@@ -833,3 +833,24 @@ echo "si (box 48: window depth): PASS"
 python3 -I rund/quotecheck.py ../../docs/si/P-N5-REPD-box49.md | grep -q "quotes=3 bad=0"
 python3 -I rund/quotecheck.py ../../docs/si/P-N5-REPD-box49.md --mut | grep -q "QUOTES FAIL"
 echo "si (box 49: P-N5-REPD quotes): PASS"
+# box 50 (docs/si/N5-ADD-box50.md): window DAG; R130's chain is a path (depth 7 at m 16), no (z, t*) token shared, no edge twice on a chain.
+t=$(mktemp -d); LATE=2 python3 -I ../red/span/mkrw.py 4 16 $t/w.pg $t/w.start >/dev/null
+cmp -s $t/w.pg odd/inst/red50/wdepth_K4_m16.pg
+o=$(python3 -I odd/windag.py odd/inst/red50/wdepth_K4_m16.pg odd/inst/red50/wdepth_K4_m16.start); grep -q "RT 36 REP 21 X 0 NWIN 37 BETA 1 INDEG 1 NPATH 1 LONG 7 TOK 21 TOKSH 1 ETOK_V 0 SELFL 0 CHREP 0 EPATH 1" <<<"$o"
+o=$(python3 -I odd/windag.py ../red/so/instances/so_th_n32.pg); grep -q "LONG 2 TOK 2 TOKSH 1 ETOK_V 0 SELFL 1 CHREP 0 EPATH 2" <<<"$o"
+echo "si (box 50: window DAG): PASS"
+# box 50 §6: re-blocked REPEATs paid by tied Xi-climbs (wdepth m 16 all re-blocked and tied).
+o=$(python3 -I odd/tied.py odd/inst/red50/wdepth_K4_m16.pg odd/inst/red50/wdepth_K4_m16.start); grep -q "rep 21 tied 21 untied 0 reblk 21 untied_reblk 0 tsh 1" <<<"$o"
+echo "si (box 50 §6: tied climbs): PASS"
+# box 51 (docs/si/N5-LATEP-box51.md): TIED-RB DEAD (two engines); LATE' keeps FW-R* (FWV 0), no W-silent LATE' repeat (XP 0), GAP-CLIMB (GAPV 0, GTOKV 0).
+C=odd/inst/si51/tiedmut_so_th_n32_11
+python3 -I ../red/seg/xeng.py $C.pg $C.start | grep -q "state sequences identical: True"
+o=$(python3 -I odd/tied.py $C.pg $C.start); grep -q "rep 1 tied 0 untied 1 reblk 1 untied_reblk 1" <<<"$o"
+o=$(python3 -I odd/latep.py $C.pg $C.start); grep -q "RTP 4 REPP 1 XP 0 FWV 0 RSUB_V 0 LP 6 GAPV 0 GTOKV 0 TIEDG 4" <<<"$o"
+o=$(python3 -I odd/latep.py odd/inst/red50/wdepth_K4_m16.pg odd/inst/red50/wdepth_K4_m16.start); grep -q "RT 36 RTP 36 REPP 21 XP 0 FWV 0 RSUB_V 0 LP 37 GAPV 0 GTOKV 0 TIEDG 35" <<<"$o"
+o=$(python3 -I odd/latep.py ../new/box59/out/fc_6.pg); grep -q "RT 4 RTP 3 REPP 0 XP 0 FWV 0" <<<"$o"
+echo "si (box 51: LATE', GAP-CLIMB, TIED-RB dead): PASS"
+# box 52 (docs/si/N5-TXCD-box52.md): TXC-DESCENT (0 descent failures); gates carry the tied climbs (no GXC event on wdepth).
+o=$(python3 -I odd/txcd.py ../red/so/instances/so_th_n32.pg); grep -q "TXC 63 T1 0 T2G 0 T2L 0 T3 63 DESC_V 0 CYC_V 0 TERM_V 0 GXC 0 GATE 15 MULT 13" <<<"$o"
+o=$(python3 -I odd/txcd.py odd/inst/red50/wdepth_K4_m16.pg odd/inst/red50/wdepth_K4_m16.start); grep -q "TXC 184 T1 0 T2G 0 T2L 0 T3 184 DESC_V 0 CYC_V 0 TERM_V 0 GXC 0 GATE 93 MULT 32" <<<"$o"
+echo "si (box 52: TXC descent): PASS"

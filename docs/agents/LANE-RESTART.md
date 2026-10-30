@@ -176,3 +176,7 @@ Five questions:
 | 2026-10-29 | CHECKER | session_01V5yGRWsgxPbSEv7BN3RzX4 (~515k; handover ec4c25ca) | session_01V5yGRa9pQWTf3AmjVLrkK8 (Opus) | 2 | none (check 35f52a02; stale clone caught) |
 | 2026-10-29 | L-SI | session_01V5yGRXdA7p12A2AFsUdae8 (~270k; handover dab44572) | session_01V5yGRY6GXgHUrdpJa5WBaa (Opus, D15/D18) | 2 | none (check 0e189416; stale clone caught) |
 | 2026-10-30 | REFEREE | session_01V5yGRWhY1hPQJuromKjMnv (~521k; handover f16f541a) | session_01V5yGRZ2HSimVbtTSYmKBK6 (Opus, D1/D15/D18) | 2 | PENDING (successor's check) |
+| 2026-10-30 | L-SI | session_01V5yGRY6GXgHUrdpJa5WBaa (~506k; handover notes/L-SI.md, bba03405) | session_01V5yGRVw7Z4gdE77JnWktHs (Opus, D15/D17/D18) | 2 | PENDING (successor's check) |
+| 2026-10-30 | L-NEW | session_01V5yGRZhJhpJcRZhDSWTwuE (~490k; resume point FINAL, 248d9360) | session_01V5yGRXhFvQKMGvnKST38br (Opus, D14/D17/D18) | 2 | PENDING (successor's check) |
+| 2026-10-30 | L-RED | session_01V5yGRZfrtk7CRqezo1wAzp (~445k; handover ce547aa2 + PARK 448a1bf9) | session_01V5yGRXGW9KqMY5gaypMTs2 (Opus, D1/D17/D18) | 2 | PENDING (successor's check) |
+| 2026-10-30 | REFEREE-2 | session_01V5yGRZJM5wp2kkELETDyYx (~620k; handover 85e6d86e) | session_01V5yGRZXkUWq5JtGFdJHHeX (Opus, D1/D15/D18) | 2 | PENDING (successor's check) |

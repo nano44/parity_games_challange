@@ -1,15 +1,37 @@
-# Draft RESULTS R91 (Lead, 2026-10-30 02:58Z by date -u; subagent draft; packet, both reports, both §Cs and the fixes file H1-H16 filled; REVISED 03:24Z by date -u by the Lead: both H16 lines and REFEREE-2's explicit OPT-OFF signature recorded, see (2), (3)) — to CHECKER C101
-to check: (1) TITLE. The title is the H16 line file docs/new/P-N5-GAP-box69-line-H16.txt (l-new 996d9a57, sha1 e3a23a9ae8091817576a88ade9d85ea07543719a,
-= trunk = l-new head), verbatim: one line, no outer quotes, no final period, 2,988 characters (3,070 bytes plus the newline). It ALREADY carries
-" (2026-10-30)" right before " — a REDUCTION" (as R89's H0 line did), so no date is inserted. The checker fill ", CHECKER PASS
-(docs/checker/C101.md, checker PENDING)" is appended as in R89. The line contains "|" four times (|Z_a| and |Z_{k+1} ∖ Z_k|): harmless in the
-heading; the GAPS proposal below writes them without "|". Re-measured: `git diff --no-index --word-diff` of H14 (a9e8bcae…) against H16 shows
-one replacement only, «H_t);» → «H_t, H_t := S4a's arena at t (Even keeps σ_t ∪ Iσ_t, Odd follows τ_t));», as H16 (fixes l. 137-142) states.
+# Draft RESULTS R91 (Lead, 2026-10-30 02:58Z by date -u; subagent draft; packet, both reports, both §Cs and the fixes file H1-H16 filled; REVISED 03:24Z by date -u by the Lead: both H16 lines and REFEREE-2's explicit OPT-OFF signature recorded, see (2), (3); Lead revision 05:00Z by date -u (subagent): title H16 → H18 (l-new 248d9360; fixes H1-H18), the referee lines on H17 and H18, §C pins re-measured at the origin heads fetched 04:59Z, word diffs H14 → H16 → H17 → H18, symbol test and stale-label test re-run, see (1), (2), (5), (11)) — to CHECKER C101 Add. 1 — LANDED in RESULTS Results 2026-10-30 05:59Z (CHECKER C101 Add. 3 c17ff164 PASS), after R90
+to check: (1) TITLE (Lead revision 05:00Z). The title is the H18 line file docs/new/P-N5-GAP-box69-line-H18.txt (l-new 248d9360,
+2026-10-30T04:16:52Z, sha1 d86446daf3df3d78a364837734a6da56db14a4d6, = trunk f7fc6962 = l-new head; merged into trunk by 39b4288d), verbatim:
+one line, no outer quotes, no final period, 3,079 characters (3,163 bytes plus the newline). It ALREADY carries " (2026-10-30)" right before
+" — a REDUCTION" (exactly once, by script), so no date is inserted. The checker fill ", CHECKER PASS (docs/checker/C101.md, checker PENDING)"
+is appended as in R89. Heading checked by the script
+/tmp/claude-0/-home-user-parity-games-challange/43a29ffc-0674-5391-84c1-1d3918a14b5d/scratchpad/check_heading.py (the entry heading = the
+level-3 marker, then "R91 [refereed-only] ", then the H18 file at origin/claude/l-new without its newline, then the fill: PASS). The line contains "|" four times (|Z_a| and
+|Z_{k+1} ∖ Z_k|; H17's «|V|» is gone, 0 occurrences of "|V|" and of a free "V" in H18): harmless in the heading; the GAPS proposal below writes
+them without "|". Word diffs, re-measured (`git diff --no-index --word-diff=porcelain`, plus an exact string-replacement script on the files):
+H14 (a9e8bcae…) → H16 (e3a23a9a…): one replacement only, «H_t);» → «H_t, H_t := S4a's arena at t (Even keeps σ_t ∪ Iσ_t, Odd follows τ_t));»,
+as H16 (fixes l. 137-142) states. H16 → H17 (l-new f997177d, 03:56:08Z, sha1 fa5653705e3f9938fb6732369a7c917e8f1456d8): one insertion only,
+right after «the gap set; »: «a transition is written k → k + 1 (states k, k + 1); n = |V|; » (fixes H17 l. 144-151; git's porcelain prints
+it as the added words "transition is written k → k + 1 (states k, k + 1); n = |V|; a" after the line's own "a", the same text). H17 → H18:
+one replacement only, «n = |V|;» → «n the number of vertices of the game;» (porcelain: "-= |V|;" "+the number of vertices of the game;";
+fixes H18 l. 153-156). H14 → H18 is exactly these three edits.
 (2) H16 CHECKED BY BOTH (Lead revision 03:24Z): REFEREE ab32b618, R-N5-GAP-C.md appended line «H16 = H14 + GAP-L4 exactly; every symbol defined or cited; MATCHES»; REFEREE-2 2c77907c, R2-N5-GAP-C.md appended line (difflib word diff vs H14: exactly the H_t insertion; «MATCHES»). The subagent's text that follows is history from the 02:53Z fetch: At the fetch of 02:53Z (date -u), origin/claude/referee head is 40fd25a3 (CUT K12 line) and
 R-N5-GAP-C.md is unchanged since d21723b5; origin/claude/referee-2 head is 0140da67 and R2-N5-GAP-C.md is unchanged since ffb1eb3d; neither
 file contains "H16" (git grep on both heads and on trunk). Both checked H14: REFEREE §C §5 l. 96-97 «It is complete once GAP-L4 is added: a
 five-word edit, which I will word-diff check»; REFEREE-2 §C.6 l. 124 «H14 MATCHES … every symbol is defined or cited … Landable» (it did not
 flag H_t; see (8)). LEAD-STATE 02:54Z: «GAP H16 … → both referees word-diff». Landing waits for both H16 lines, to be recorded in Signatures.
+(2b) H17 AND H18 (Lead revision 05:00Z; quoted from the §C files at the origin heads fetched 04:59Z). REFEREE-2, strict symbol test of the
+whole H16 line, R2-N5-GAP-C.md l. 128-143 (7ace2441, merged as 752a98f9): k is unbound («use k, and no clause introduces it»); minimal edit
+«a transition is written k → k + 1 (states k, k + 1);»; «n: acceptable as is.» (bold in the source; TARGET.md §1 l. 8: «n = |V|, m = |E|»);
+verdict «H16 MATCHES §1-§5 except for the unbound k. With H17 = H16 + the k clause, MATCHES.» REFEREE, H17 check, R-N5-GAP-C.md l. 107
+(fe9d0cf1): «exactly one insertion»; k now bound; V in the new n = |V| not bound («SPEC's input line defines V = {0..n−1}, but that is not
+S1-S5»); «This is a precision, not an E-item. MATCHES otherwise (Opus 5.5, D15).» REFEREE-2, H17 line, R2-N5-GAP-C.md l. 144 (895d7709,
+merged as 85e6d86e): «k and n now bound; strict symbol test of the whole line: no unbound symbol. MATCHES.» REFEREE, H18 check,
+R-N5-GAP-C.md l. 108 (e10edaf8): «With my H17 strict test, every symbol of H18 is now bound. MATCHES (Opus 5.5, D15).» REFEREE-2 did NOT
+check H18: it is PARKED (notes/REFEREE-2.md l. 4 at 85e6d86e, its handover commit). Recorded honestly: H18 differs from H17, which MATCHES
+at both referees, by one definitional replacement («n = |V|;» → «n the number of vertices of the game;»), checked by REFEREE 19 (e10edaf8)
+and to be checked by CHECKER (Lead decision, LEAD-STATE 04:28Z: «REFEREE-2 parked; H18 differs from the doubly-MATCHED H17 by that one
+definitional replacement; CHECKER verifies the diff»). l-new after 996d9a57: only f997177d (fixes +9/−0, line-H17 file +1) and 248d9360
+(fixes +5/−0, line-H18 file +1); experiments/ unchanged (`git diff --stat 996d9a57 248d9360 -- experiments/` empty), so the re-runs stand.
 (3) Claims signed = the 13 items (a)-(m), each SIGNED in both verdict tables, re-read for this draft (REFEREE cd1c29d6 l. 18-29; REFEREE-2
 aee8971e l. 24-35). OPT-OFF's path is recorded in item (d) with the cells and §C sentences quoted. Exactness point: REFEREE's cell (l. 21) reads
 «STATEMENT TRUE; PROOF HAS A HOLE (G-GAP-1, …); SIGNED WITH MY REPAIR GAP-R1», not the words "SIGNED WITH GAP"; REFEREE-2's cell (l. 27) reads
@@ -26,39 +48,46 @@ pointwise optimum of the one-player arena H_t …)». R57 states 1E-N3 only for 
 σ̄ is VJ00 §6 plus SPEC conformance»); the S4a form is RESULTS R67's P2 (l. 3462-3463) and R88's [OPT-H] (l. 5689-5692, «the standing SPEC
 premise 1E-N3 (RESULTS R57 (b) …) in the form RESULTS R67 calls P2»). So the label is right as a name (1E-N3), and the S4a form is R67's/R88's
 reading of it, not R57's text. R88 and R89 already cite it so; both referees accept it (REFEREE-2 l. 25 «standing SPEC premise of R57: S4a's
-σ_new is the optimum of H_t»). (5) SYMBOL TEST of the title (IN = defined in the line; else the carrier):
+σ_new is the optimum of H_t»). (5) SYMBOL TEST of the title, RE-RUN FOR H18 (Lead revision 05:00Z; every symbol of the H18 line; IN = bound in the line; else the carrier):
 | symbol | where |
 | --- | --- |
-| N5, SPEC S1-S5, S4a, S4c, σ_new, S1's procedure | SPEC (quoted in packet §1 l. 30-43, quote base da3fa7fa) |
+| N5, SPEC S1-S5, S4a, S4c, S4a step, σ_new, S1's procedure | SPEC (quoted in packet §1 l. 30-43, quote base da3fa7fa) |
+| Even, Odd | SPEC (owner of a vertex; packet §1 l. 28 G = (V, E, Ω, owner)) |
 | 1E-N3, pointwise optimum | RESULTS R57 (b) l. 2915-2916 (σ̄ form); S4a form R67 P2 / R88 [OPT-H] (see (4)); R17 (a) (F1) |
-| H_t | IN (H16) |
-| σ_t, τ_t, Iσ_t | SPEC S1, S2 (packet §1 l. 28-29 runs and states, l. 38 [S2]) |
 | R15 (a), (d), R17 (a) (F1), R57 (a) (VJ), R21 (a), R38 (a), R88 | cited premises, see (4) |
+| t | a generic state of the run, through the definitions of H_t, Ξ_t, W_t, Z_t (REFEREE-2 752a98f9 l. 129: «t a generic state») |
+| σ_t, τ_t, Iσ_t, Iσ | SPEC S1, S2 (packet §1 l. 28-29 runs and states, l. 38 [S2]) |
+| H_t | IN (H16) |
 | Ξ_t | IN («Ξ_t := Ξ_{σ_t} (SPEC S1)») |
 | W_t, [S1-val] | IN; [S1-val] is SPEC S1 (packet l. 30-32) |
+| Ξ, W (no index) | the maps t ↦ Ξ_t, W_t (IN) |
 | Z_t, gap set | IN |
+| k, k + 1 | IN (H17: «a transition is written k → k + 1 (states k, k + 1)»); this also names the step behind «(read with τ_t)» (fixes H17 l. 149; REFEREE-2 752a98f9 l. 139-140) |
+| Z_k, Z_{k+1} | IN (Z_t at the states k, k + 1) |
+| n | IN (H18: «n the number of vertices of the game»); = TARGET.md §1 l. 8 «n = \|V\|»; no V in the line |
 | phase, in-phase transition | IN (phase via RESULTS R38 (a)) |
 | τ-fixed Even fallback | IN |
-| piece, S4a step | IN (S4a step: SPEC S4a) |
+| piece | IN |
 | blocked | IN by citation, RESULTS R88 (c) l. 5712-5713 (see (4)) |
-| ⊴, ▷ | SPEC S1 [S1-ord] (packet l. 33-35); not in the line, as in R88 and R89 |
+| ⊴, ▷ | SPEC S1 [S1-ord] (packet l. 33-35); not defined in the line, as in R88 and R89 |
 | "read with τ_t" | packet §2.2 (W^τ := val(σ, τ) on G_τ) |
 | one-player game of Even, ρ, Ω_ρ, Ω_ρ-cycle node | IN |
+| v, c | IN, quantified in each clause («for every edge (v, c) at every Even v», «v leaves c», «a vertex switched there», «puts v into Z») |
 | own W-cycle node, own Ξ-cycle node | by use; packet §1 l. 54-55 |
 | [p, q] | IN |
 | s → s + 1, "leaves", t′ | IN (LATE-W clause) |
 | re-blocked late adoption, Q | IN (parenthetical) |
 | WCH_Q(c), CL_Q(v, c), u → u + 1 | IN |
-| k, Z_k, Z_{k+1} | by use: k → k + 1 the fallback or step of the clause (packet §4.1-§4.4); k itself is not named in the line |
 | P, a, f_P, \|Z_a\|, RO_P, WCH^S4a_P(v), ZF_P | IN |
-| n | not in the line; packet §1 l. 28 (n = \|V\|); R88's and R89's titles use n the same way |
-| Σ_v | by use, over V |
+| Σ_v | v over the vertices of the game (n of them), by use |
 | CONJECTURE FB-LIN | scope tail only; packet §5 l. 148 (≤ n in-phase fallbacks per phase), RESULTS R81 l. 4596 «FB-LIN (f ≤ n per phase) is OPEN» |
 | G-N5-TIME, M3, step-4 | GAPS l. 11, TARGET.md |
-Every symbol is defined in the line or carried by SPEC, a cited RESULTS entry or a packet section; the two soft spots are k (by use) and n
-(standard), both as in landed titles. (6) GAPS: FB-LIN has no row of its own; it is a CONJECTURE inside G-N5-TIME (GAPS l. 11, the R81 UPDATE:
+Every symbol of H18 is bound in the line or carried by SPEC, a cited RESULTS entry or a packet section. C101 N-1 (k by use) is discharged:
+H17 binds k in the line. n is bound in the line without V (H18). As REFEREE e10edaf8 l. 108 says: «every symbol of H18 is now bound». Before
+this revision the two soft spots were k (by use) and n (standard), both as in landed titles. (6) GAPS: FB-LIN has no row of its own; it is a CONJECTURE inside G-N5-TIME (GAPS l. 11, the R81 UPDATE:
 «CONJECTURE FB-LIN open»). A line-11 UPDATE is proposed below, after R90's UPDATE (R90's draft proposes one), built from the title clauses only,
-with no "|". (7) DATA of record is H8 / H15's corrected count set (782 / 8,442 / ZF 56; alt_all only 725), with the comp54_n80 start quarantined;
+with no "|" (Lead revision 05:00Z: it now carries H18's «a transition is written k → k + 1 (states k, k + 1); n the number of vertices of
+the game;» after «the gap set;», as the title does). (7) DATA of record is H8 / H15's corrected count set (782 / 8,442 / ZF 56; alt_all only 725), with the comp54_n80 start quarantined;
 the packet's 788 / 8,532 / 731 appear only as superseded. The LATE-W «182 checks» and the nep22f_n64 record are packet figures that H8 does not
 revise (H8 does not say whether comp54 entered the 182). (8) Discrepancies, recorded for CHECKER, no verdict affected: REFEREE-2 report l. 112
 writes «sets σ(11) = 51» for comp54_n80; vertex 11 is Odd and the start's TAU0 sets τ(11) = 51 (REFEREE-2 §C C.3 l. 67 and H8 say τ;
@@ -68,18 +97,27 @@ fixes file; L-NEW boxes 70-71 (c90503a9, 2f21ea01, 6b1466dc) are out, and so are
 («The same reading covers SIL-Z-type uses», l. 118), which point at box 70. H8's start-file validation in box67/energy.py and
 box68/zflat.py (+3 lines each, at 15044625) is part of the fixes commit and is recorded. (10) Placement: after R90 (Lead brief: R90 lands
 first).
+(11) STALE-LABEL TEST, RE-RUN (Lead revision 05:00Z, origin trunk f7fc6962 fetched 04:59Z). docs/RESULTS.md, docs/GAPS.md and TARGET.md are
+unchanged since C101's object trunk bf56449f (`git diff --stat bf56449f f7fc6962` on the three files: empty; the last RESULTS commit is
+4d85668e, the R89 landing), so every label of (4) and C101 §4 stands: «FB-LIN (f ≤ n per phase) is OPEN» at R81 l. 4596, GAPS l. 11
+«CONJECTURE FB-LIN open»; R21 (a) XW stated for 𝒞^1O; R21 (h)'s different Lemma FB-W disclosed in item (c) (C101 N-2); R88's W-MON in-phase.
+R90 is NOT landed: no "### R90" heading in RESULTS.md at f7fc6962; R90 (P-N5-CUT, title K15) is at CHECKER C100 (docs/agents/R90-draft.md,
+LEAD-STATE line stamped 04:41Z, corrected to 04:36Z by the slip line after it: «→ CHECKER C100»). The entry's mentions of P-N5-CUT are
+READINGs (H7, Referee strengthening (iii)). If R90 lands first as drafted, its title (R90 draft l. 130) names «Lemmas OPT-OFF, W-RETURN-G,
+LATE-SPLIT» (P-N5-CUT §2's OPT-OFF (i), (ii)), the same name as this entry's OPT-OFF (a general one-player statement; H7: CUT's (ii) in general
+form); the re-test at landing should check that clash, as C101 N-2 did for FB-W.
 
-### R91 [refereed-only] N5 on EVERY game (SPEC S1-S5, under the standing SPEC premise of RESULTS R57 (1E-N3: S1's procedure realises the pointwise optimum; for S4a, σ_new is the pointwise optimum of the one-player arena H_t, H_t := S4a's arena at t (Even keeps σ_t ∪ Iσ_t, Odd follows τ_t)); premises RESULTS R15 (a), (d), R17 (a) (F1) with R57 (a) (VJ), R21 (a), R38 (a), R88; Ξ_t := Ξ_{σ_t} (SPEC S1); W_t := the [S1-val] valuation of the (σ_t, τ_t)-plays; Z_t := {v : Ξ_t(v) ≠ W_t(v)} the gap set; a phase as in RESULTS R38 (a), an in-phase transition one with both states in one phase; a τ-fixed Even fallback an S4c transition with Iσ ≠ ∅; a piece a maximal run of consecutive states with τ constant all of whose transitions are S4a steps; blocked edges as in RESULTS R88): (Lemmas XW, W-MON, FB-W, OPT-OFF, W-SUCC) Ξ_t ⊴ W_t pointwise, W does not fall at an S4a step (read with τ_t) and does not rise at a τ-fixed Even fallback, for a one-player game of Even (Odd fixed), a pointwise-optimal Even strategy ρ (R17 (a) (F1)) with Ω_ρ its [S1-val] valuation has Ω_ρ(c) ⊴ Ω_ρ(ρ(v)) for every edge (v, c) at every Even v that is not its own Ω_ρ-cycle node, and W_t(σ_t(v)) is non-decreasing on an interval [p, q] of a piece on which v is not its own W-cycle node at any state of [p + 1, q]; (Lemma LATE-W) in a piece, if v leaves c at s → s + 1 and (v, c) is blocked at a later state t′ of the piece, with v not its own W-cycle node on [s + 1, t′], then W_{t′}(c) ▷ W_{s+1}(c), so (Corollary LATE-PIECE) the re-blocked late adoptions of (v, c) in a piece Q (S4a transitions of Q switching v to c at which (v, c) was blocked at some state of Q since v's latest leave of c in Q, or, if v has not left c in Q, at some earlier state of Q) number at most 1 + WCH_Q(c) + CL_Q(v, c) (WCH_Q(c) the transitions of Q changing W(c), CL_Q(v, c) those, other than the first, whose window [s + 1, t′] — u → u + 1 the adoption, s → s + 1 the latest leave of c by v with s + 1 ≤ u, t′ the earliest state of [s + 1, u] at which (v, c) is blocked — contains some state at which v is its own W-cycle node); (Lemma GAP-MON) at a τ-fixed Even fallback Z_{k+1} ⊆ Z_k and Ξ, W are unchanged outside Z_k; (Lemma SW-IN) a vertex switched there that is its own Ξ-cycle node at neither state has a strict Ξ-rise and lies in Z_k; (Lemma Z-FLAT) at a fallback with Z_{k+1} = Z_k all changes of Ξ and W lie in Z_k, W only falls and Ξ only rises; (Lemma REOPEN-W) an in-phase S4a step puts v into Z only with a strict rise of W(v); and (Theorem GAP-RED) every phase P with first state a has f_P ≤ |Z_a| + RO_P + ZF_P ≤ n + Σ_v WCH^S4a_P(v) + ZF_P, with f_P its in-phase (Even S4c) fallbacks, RO_P := Σ over its in-phase S4a transitions of |Z_{k+1} ∖ Z_k|, WCH^S4a_P(v) its in-phase S4a transitions changing W(v), and ZF_P its in-phase fallbacks with Z_{k+1} = Z_k (2026-10-30) — a REDUCTION of CONJECTURE FB-LIN (Σ_v WCH^S4a_P(v) and ZF_P are not bounded here; FB-LIN and G-N5-TIME stay open; not M3, not a step-4 pass, not a TARGET.md claim), CHECKER PASS (docs/checker/C101.md, checker PENDING)
+### R91 [refereed-only] N5 on EVERY game (SPEC S1-S5, under the standing SPEC premise of RESULTS R57 (1E-N3: S1's procedure realises the pointwise optimum; for S4a, σ_new is the pointwise optimum of the one-player arena H_t, H_t := S4a's arena at t (Even keeps σ_t ∪ Iσ_t, Odd follows τ_t)); premises RESULTS R15 (a), (d), R17 (a) (F1) with R57 (a) (VJ), R21 (a), R38 (a), R88; Ξ_t := Ξ_{σ_t} (SPEC S1); W_t := the [S1-val] valuation of the (σ_t, τ_t)-plays; Z_t := {v : Ξ_t(v) ≠ W_t(v)} the gap set; a transition is written k → k + 1 (states k, k + 1); n the number of vertices of the game; a phase as in RESULTS R38 (a), an in-phase transition one with both states in one phase; a τ-fixed Even fallback an S4c transition with Iσ ≠ ∅; a piece a maximal run of consecutive states with τ constant all of whose transitions are S4a steps; blocked edges as in RESULTS R88): (Lemmas XW, W-MON, FB-W, OPT-OFF, W-SUCC) Ξ_t ⊴ W_t pointwise, W does not fall at an S4a step (read with τ_t) and does not rise at a τ-fixed Even fallback, for a one-player game of Even (Odd fixed), a pointwise-optimal Even strategy ρ (R17 (a) (F1)) with Ω_ρ its [S1-val] valuation has Ω_ρ(c) ⊴ Ω_ρ(ρ(v)) for every edge (v, c) at every Even v that is not its own Ω_ρ-cycle node, and W_t(σ_t(v)) is non-decreasing on an interval [p, q] of a piece on which v is not its own W-cycle node at any state of [p + 1, q]; (Lemma LATE-W) in a piece, if v leaves c at s → s + 1 and (v, c) is blocked at a later state t′ of the piece, with v not its own W-cycle node on [s + 1, t′], then W_{t′}(c) ▷ W_{s+1}(c), so (Corollary LATE-PIECE) the re-blocked late adoptions of (v, c) in a piece Q (S4a transitions of Q switching v to c at which (v, c) was blocked at some state of Q since v's latest leave of c in Q, or, if v has not left c in Q, at some earlier state of Q) number at most 1 + WCH_Q(c) + CL_Q(v, c) (WCH_Q(c) the transitions of Q changing W(c), CL_Q(v, c) those, other than the first, whose window [s + 1, t′] — u → u + 1 the adoption, s → s + 1 the latest leave of c by v with s + 1 ≤ u, t′ the earliest state of [s + 1, u] at which (v, c) is blocked — contains some state at which v is its own W-cycle node); (Lemma GAP-MON) at a τ-fixed Even fallback Z_{k+1} ⊆ Z_k and Ξ, W are unchanged outside Z_k; (Lemma SW-IN) a vertex switched there that is its own Ξ-cycle node at neither state has a strict Ξ-rise and lies in Z_k; (Lemma Z-FLAT) at a fallback with Z_{k+1} = Z_k all changes of Ξ and W lie in Z_k, W only falls and Ξ only rises; (Lemma REOPEN-W) an in-phase S4a step puts v into Z only with a strict rise of W(v); and (Theorem GAP-RED) every phase P with first state a has f_P ≤ |Z_a| + RO_P + ZF_P ≤ n + Σ_v WCH^S4a_P(v) + ZF_P, with f_P its in-phase (Even S4c) fallbacks, RO_P := Σ over its in-phase S4a transitions of |Z_{k+1} ∖ Z_k|, WCH^S4a_P(v) its in-phase S4a transitions changing W(v), and ZF_P its in-phase fallbacks with Z_{k+1} = Z_k (2026-10-30) — a REDUCTION of CONJECTURE FB-LIN (Σ_v WCH^S4a_P(v) and ZF_P are not bounded here; FB-LIN and G-N5-TIME stay open; not M3, not a step-4 pass, not a TARGET.md claim), CHECKER PASS (docs/checker/C101.md, checker PENDING)
 - Object (L-NEW successor 35, Opus 5.5, D14/D18, Lead reading L40; frozen, unchanged during review): packet P-N5-GAP,
   docs/new/P-N5-GAP-box69.md, sha1 d67f8e04b54d5621ebecf27e7fe7151ce57793cd, 175 lines (l-new freeze
-  28ceeadc39b1e4bc92f07b98acef08bfbfe90fad, 2026-10-30T00:55:29Z, the file's first commit; identical at l-new head 996d9a57 and at trunk
-  c46f4bb8; the Lead's freeze word is quoted at l. 2-4 as «Lead 2026-10-30 00:52Z»; quote base l-new da3fa7fa (2026-10-30T00:52:35Z; «SPEC
+  28ceeadc39b1e4bc92f07b98acef08bfbfe90fad, 2026-10-30T00:55:29Z, the file's first commit; identical at l-new head 248d9360 and at trunk
+  f7fc6962, re-measured at the 04:59Z fetch (earlier at 996d9a57 and c46f4bb8); the Lead's freeze word is quoted at l. 2-4 as «Lead 2026-10-30 00:52Z»; quote base l-new da3fa7fa (2026-10-30T00:52:35Z; «SPEC
   docs/new/N5-ssi-global.md lines 28-57 unchanged since 2a435f8f4», l. 6)): §0 what to sign (l. 10-25), §1 setting, premises, definitions (l.
   27-65), §2 carried lemmas (XW, W-MON, FB-W, OPT-OFF, W-SUCC), §3 late adoptions inside a piece (LATE-W, LATE-PIECE), §4 the gap set
   (GAP-MON, SW-IN, Z-FLAT, REOPEN-W, REOPEN-CHARGE), §5 Theorem GAP-RED, §6 DEAD, DATA, READING («NOT to sign», l. 25, l. 153-170). Packet
   l. 7-8: «No file of L-SI's box 40 / 42 (P-N5-CUT, LATE-SPLIT, REP-LIN) is used as a proof. L-SI's box 37 lemmas OPT-OFF and W-SUCC are NOT
   cited: both are re-proved here (§2.4, §2.5).» No quote check and no sha1 assertion for the packet is pinned in experiments/new/check.sh
-  (`grep -c "d67f8e04\|P-N5-GAP"` = 0 at 996d9a57). Quotes: REFEREE l. 9-10 («the 6 [Q SPEC] quotes: 6/6 verbatim by my script», «the 3
+  (`grep -c "d67f8e04\|P-N5-GAP"` = 0 at 996d9a57 and at 248d9360). Quotes: REFEREE l. 9-10 («the 6 [Q SPEC] quotes: 6/6 verbatim by my script», «the 3
   RESULTS quotes verbatim», box10 [⊕], [V1], [V2] «verbatim»); REFEREE-2 l. 23 («11/11 quotes verbatim (gquote.py; SHIFT=1 0/6 SPEC
   quotes)»); re-checked for this draft by a whitespace-insensitive script on da3fa7fa's SPEC, RESULTS and box10: 6/6, 3/3, 2/2. Both referees
   measured the packet sha1 at 28ceeadc (REFEREE l. 3-4; REFEREE-2 l. 6).
@@ -97,8 +135,20 @@ first).
   nothing more. GAP-L1, L2 and L3 are present. It is complete once GAP-L4 is added»); REFEREE-2 §C.6 l. 113-124 («H14 MATCHES §1-§5 with
   H1-H13 … Landable»). (4) H16 (fixes l. 137-142): docs/new/P-N5-GAP-box69-line-H16.txt, sha1 e3a23a9ae8091817576a88ade9d85ea07543719a, =
   H14 + one insertion defining H_t (GAP-L4, REFEREE §C §5 l. 93-95: «Precision, not an E-item»); re-measured for this draft (word diff: that
-  replacement only). H16 supersedes H14 and H9; the title is the H16 line verbatim. H16 MATCHES at both referees (REFEREE ab32b618; REFEREE-2 2c77907c).
-  No E-item was raised on any version of the line by either referee.
+  replacement only). H16 supersedes H14 and H9. H16 MATCHES at both referees (REFEREE ab32b618; REFEREE-2 2c77907c).
+  (5) H17 (fixes l. 144-151): docs/new/P-N5-GAP-box69-line-H17.txt (l-new f997177d, 03:56:08Z), sha1
+  fa5653705e3f9938fb6732369a7c917e8f1456d8, = H16 + one insertion after «the gap set; »: «a transition is written k → k + 1 (states k, k + 1);
+  n = |V|; » (k bound: REFEREE-2's strict test of H16, R2-N5-GAP-C.md l. 128-143 at 752a98f9, and CHECKER C101 N-1; n = |V| added at the
+  Lead's request, fixes l. 148-149). REFEREE fe9d0cf1 (l. 107): «MATCHES otherwise (Opus 5.5, D15)», V in n = |V| not bound, «a precision,
+  not an E-item»; REFEREE-2 85e6d86e (l. 144): «k and n now bound; strict symbol test of the whole line: no unbound symbol. MATCHES.»
+  (6) H18 (fixes l. 153-156): docs/new/P-N5-GAP-box69-line-H18.txt (l-new 248d9360, 04:16:52Z), sha1
+  d86446daf3df3d78a364837734a6da56db14a4d6, = H17 with one replacement, «n = |V|;» → «n the number of vertices of the game;». REFEREE
+  e10edaf8 (l. 108): «With my H17 strict test, every symbol of H18 is now bound. MATCHES (Opus 5.5, D15).» REFEREE-2 did not check H18: it
+  is PARKED (handover 85e6d86e). H18 differs from the doubly-MATCHED H17 by that one definitional replacement, checked by REFEREE 19 and to
+  be checked by CHECKER (Lead decision, LEAD-STATE 04:28Z). Word diffs H14 → H16 → H17 → H18 re-measured for this revision: the three edits
+  above, nothing else. H18 supersedes H17, H16, H14 and H9; the title is the H18 line verbatim.
+  No E-item was raised on any version of the line by either referee (REFEREE-2's strict test called the unbound k a «DEFECT (k)», bold in
+  the source, with a minimal edit: H17; REFEREE called the free V «a precision, not an E-item»: H18).
   Setting (every game): N5 = SPEC S1-S5 with FIX 1-4; G = (V, E, Ω, owner), n = |V|; a run is the sequence of states (σ_t, τ_t), a
   TRANSITION is t → t + 1. [S1-val], [S1-ord] (⊴, ◁ strict; distinct triples distinct by RESULTS R84 (a) Fact DELTA), [S1-Xi] (Ξ_t := Ξ_{σ_t},
   σ̄_t, λ_Ξ), [S2], [S4a], [S4c], quoted at da3fa7fa (l. 30-43); [R15], [F1] (RESULTS R17 (a)); [V1], [V2], [⊕] from R17's object
@@ -130,7 +180,7 @@ first).
   (c) Lemma FB-W (§2.3, l. 75-78; box 21 §2.5 Lemma W, fallback half, not landed; not RESULTS R21 (h)'s Lemma FB-W, a different statement (CHECKER C101 N-2)): "If k → k + 1 is a τ-fixed Even fallback, then W_{k+1} ⊴
       W_k pointwise." (S4c fires only if σ_new = σ_k, so σ_k is optimal in H_k; σ_{k+1} is a strategy of H_k; τ kept; [F1].) Cells: REFEREE
       «SIGNED» (l. 20); REFEREE-2 «SIGNED (same premise)» (l. 26).
-  (d) Lemma OPT-OFF (§2.4, l. 79-93; statement unchanged, proof as repaired by H1, with H3 and H10): "Let H be a one-player game of Even (Odd
+  (d) Lemma OPT-OFF (§2.4, l. 79-93; statement unchanged, proof as repaired by H1, with H3 and H10); not RESULTS R90 (a)'s Lemma OPT-OFF (P-N5-CUT, stated at an N5 S4a step); their relation is H7's READING, Referee strengthening (iii): "Let H be a one-player game of Even (Odd
       fixed), ρ an optimal strategy of H, Ω_ρ its valuation, v an Even vertex that is not its own Ω_ρ-cycle node, and (v, c) an edge of H.
       Then Ω_ρ(c) ⊴ Ω_ρ(ρ(v))." The path to this signature, quoted:
       - Reports. REFEREE (l. 21): «STATEMENT TRUE; PROOF HAS A HOLE (G-GAP-1, Case 2 (ii) when c's ρ-play meets v's cycle node u before v);
@@ -153,7 +203,7 @@ first).
       So OPT-OFF was SIGNED WITH GAP G-GAP-1 in both reports (REFEREE: with its repair GAP-R1), H1 closes the gap in both §Cs, and OPT-OFF is
       SIGNED. Both referees' data: 0 violations of the statement (REFEREE 436,677 (v, c) pairs, 11,948 in (2b); REFEREE-2 65,486 one-player +
       647,486 run checks).
-  (e) Lemma W-SUCC (§2.5, l. 94-98): "On an interval [p, q] of one piece with τ := its τ, if v is not its own W-cycle node at any state of
+  (e) Lemma W-SUCC (§2.5, l. 94-98; the name is shared with RESULTS R90 (c)'s Lemma W-SUCC (P-N5-CUT's; each entry signs its own text)): "On an interval [p, q] of one piece with τ := its τ, if v is not its own W-cycle node at any state of
       [p + 1, q], then W_t(σ_t v) is non-decreasing (⊴) for t ∈ [p, q]." (W-MON; OPT-OFF in H_t at t + 1.) Cells: REFEREE «SIGNED (given
       OPT-OFF as repaired)» (l. 22); REFEREE-2 «SIGNED (uses OPT-OFF's statement, which holds)» (l. 28).
   (f) Lemma LATE-W (§3.1, l. 101-105): "Let Q be a piece. Let v leave c at s → s + 1 in Q (σ_s(v) = c ≠ σ_{s+1}(v)). Let t′ > s be a state of
@@ -186,12 +236,14 @@ first).
       GAP-MON, REOPEN-W, [R15] only)» (l. 29); REFEREE-2 «SIGNED. The bullet after the proof overstates: FB-LIN (≤ n) does not follow from
       polynomial bounds, only a polynomial form does (N-GAP-4; not in the line)» (l. 35); REFEREE-2 §C l. 23: «I agree it does not use
       OPT-OFF». The bullet (l. 148-151) is not signed: see Not signed and H5.
-  The RESULTS line: H16 claims less than the packet. It omits Corollary REOPEN-CHARGE by name (RO_P is defined inside GAP-RED's clause),
+  The RESULTS line: H18 claims less than the packet (its H17 / H18 clause only names a transition and n). It omits Corollary REOPEN-CHARGE by name (RO_P is defined inside GAP-RED's clause),
   Z-FLAT's (b) and (d), and the §5 bullet. Every clause it states is one of (a)-(m).
 - Fixes (docs/new/P-N5-GAP-fixes-box69.md, L-NEW successor 35, APPEND-ONLY): H1-H9 at l-new 15044625 (2026-10-30T02:10:17Z, sha1
   1e223dc2e08daf88ee40e46421f2d859889230a7, 97 lines); H10-H15 at c1aa183d (02:18:12Z, `git diff --numstat 15044625 c1aa183d`: 38 added, 0
   removed; sha1 955bcea2c5dae4c6016d5f9cfeaa8bae004587e0, 135 lines); H16 at 996d9a57 (02:42:07Z, 7 added, 0 removed; sha1
-  3de5bc3e5b4284c17a87c754fb78d93a214beef8, 142 lines, = trunk = l-new head). Header (l. 7-8): «H1 repairs a proof step (G-GAP-1); the
+  3de5bc3e5b4284c17a87c754fb78d93a214beef8, 142 lines); H17 at f997177d (03:56:08Z, `git diff --numstat 996d9a57 f997177d`: 9 added, 0
+  removed; sha1 22732bf1e59dbbaf3c5b37ecd90502dcff1bdb89, 151 lines; merged into trunk by b73cfaf3); H18 at 248d9360 (04:16:52Z, 5 added, 0
+  removed; sha1 6b5f793b8c18efe88a94a0df6991bcbcfc706c62, 156 lines, = l-new head = trunk f7fc6962; merged into trunk by 39b4288d). Header (l. 7-8): «H1 repairs a proof step (G-GAP-1); the
   statement of OPT-OFF is unchanged. H2-H8 are clarifications or DATA corrections. H9 is the corrected RESULTS line. No signed statement
   changes.» Each item with its class (REFEREE §C §3 l. 48-57 and §5 l. 84-86; REFEREE-2 §C C.3 l. 55-64 and C.6 l. 106-112):
   H1 PROOF REPAIR of OPT-OFF (G-GAP-1; statement unchanged; closes the gap, item (d)). H2 CLARIFICATION (standing premise named; GAP-N1 =
@@ -199,10 +251,15 @@ first).
   the proof leaves free … Not a widening») / clarification (REFEREE-2) (CL's t′, N-GAP-3). H5 NARROWING of the unsigned §5 bullet (N-GAP-4;
   REFEREE «a NARROWING of an unsigned READING bullet; correct»). H6 CLARIFICATION (Z-FLAT = consequences; GAP-N3 = N-GAP-5). H7 READING
   (REFEREE: «READING; correct (CUT's Case 3 = H1's (1b))») / clarification (REFEREE-2) (relation to P-N5-CUT, N-GAP-6). H8 DATA CORRECTION
-  (comp54_n80 non-edge start quarantined; corrected counts; N-GAP-7). H9 CORRECTED LINE (superseded by H14, then H16). H10 MAPPING (GAP-R1 onto
+  (comp54_n80 non-edge start quarantined; corrected counts; N-GAP-7). H9 CORRECTED LINE (superseded by H14, then H16, H17, H18). H10 MAPPING (GAP-R1 onto
   H1; REFEREE-2 «a correspondence between the two repairs»). H11 CLARIFICATION (= H2 with R57 (a) named; GAP-N1). H12 CLARIFICATION ([V2] as a
   statement about triples; GAP-N2; REFEREE «exactly my GAP-N2: correct»). H13 = H6 (GAP-N3). H14 COMPLETE CORRECTED LINE (GAP-L1..L3;
-  superseded by H16). H15 = H8 (DATA). H16 LINE CORRECTION (GAP-L4: H_t defined; one insertion), MATCHES at both referees (REFEREE ab32b618; REFEREE-2 2c77907c). Neither
+  superseded by H16). H15 = H8 (DATA). H16 LINE CORRECTION (GAP-L4: H_t defined; one insertion), MATCHES at both referees (REFEREE ab32b618; REFEREE-2 2c77907c);
+  superseded by H17. H17 LINE CORRECTION (k bound, REFEREE-2's strict test 752a98f9 and CHECKER C101 N-1, plus n = |V|; one insertion),
+  MATCHES at both referees (REFEREE fe9d0cf1 «MATCHES otherwise», V free; REFEREE-2 85e6d86e); superseded by H18. H18 LINE CORRECTION
+  («n = |V|;» → «n the number of vertices of the game;», REFEREE fe9d0cf1's V point; one replacement), MATCHES at REFEREE (e10edaf8); not
+  checked by REFEREE-2 (PARKED); CHECKER checks the diff (Lead decision, LEAD-STATE 04:28Z). H16-H18 change only the line, not a signed
+  statement. Neither
   referee finds a widening: REFEREE §C §5 l. 86: «With §3: H2-H15 are clarifications, one narrowing (H5), one precision (H4) and DATA (H8 /
   H15). No signed statement widens.»; REFEREE-2 §C.6 l. 112: «None widens a signed statement.» The statements above are in the frozen
   wording, read with H1, H2, H4, H6, H11, H12, H13. No quote check is pinned for the fixes file.
@@ -228,6 +285,9 @@ first).
   referee). H12's last sentence («The same reading covers SIL-Z-type uses») refers to post-freeze box 70 and is not part of this entry.
   (v) GAP-L4: REFEREE §C §5 l. 94: «Precision, not an E-item: "for S4a" makes the reading natural.» REFEREE-2 did not raise it.
   (vi) Self-corrections: REFEREE §C l. 24-25 «N-GAP-3 … I MISSED it», «N-GAP-4 … I MISSED it».
+  (vii) n and V (Lead revision 05:00Z): REFEREE-2's strict test of H16 (752a98f9, l. 141-142): «n: acceptable as is.» (TARGET.md §1 l. 8);
+  REFEREE's H17 check (fe9d0cf1, l. 107) found V free in H17's n = |V| («SPEC's input line defines V = {0..n−1}, but that is not S1-S5») and
+  proposed «n the number of vertices of the game», which H18 adopts. One referee each; the strictness differs, no verdict does.
 - Honest limits: (i) A REDUCTION of CONJECTURE FB-LIN. GAP-RED bounds the in-phase fallbacks of one phase by n + Σ_v WCH^S4a_P(v) + ZF_P;
   neither Σ_v WCH^S4a_P(v) nor ZF_P is bounded here. Packet l. 5: «Status: REDUCTION only. FB-LIN and G-N5-TIME stay OPEN. Not a TARGET.md
   claim.» REFEREE l. 11-12, REFEREE-2 l. 17-18: the same. Polynomial bounds on both would give a POLYNOMIAL form of FB-LIN, not FB-LIN itself
@@ -238,7 +298,7 @@ first).
   bit operations; no running-time bound. (vi) Not M3, not a step-4 pass, not a TARGET.md claim; FB-LIN and G-N5-TIME stay open.
 - Data (DATA, not proof): pinned (packet §6 l. 170: «experiments/new/check.sh blocks "box 66", "box 67", "box 68"»; check.sh at 28ceeadc sha1
   44f4d83a07e54130a531828004d0cf368968a809, 333 lines, blocks at l. 315-332; at 996d9a57 check.sh adds 12 lines after l. 332 (box 70, 71
-  pins, excluded) and leaves l. 315-332 unchanged). "box 66" l. 315-320 (box66/latepair.py on ../n5-exhaustive/instances/b6_xl2_n32.pg);
+  pins, excluded) and leaves l. 315-332 unchanged; experiments/ is identical at l-new head 248d9360, `git diff --stat 996d9a57 248d9360 -- experiments/` empty). "box 66" l. 315-320 (box66/latepair.py on ../n5-exhaustive/instances/b6_xl2_n32.pg);
   "box 67" l. 321-326 (box67/energy.py on n5-epoch/instances/lend9_n8.pg with .start); "box 68" l. 327-332 (box68/zflat.py on
   n5-epoch/instances/nep22f_n64.pg with .start). Files at 28ceeadc: latepair.py e76a3c8566ddc3703c69e376f8c54efe2f0de5a9 (unchanged at
   996d9a57), energy.py 60bb23b8245325f74883ce230fd462fe60bbba46 (13a1b845b52e9b92bc7d0aae955b48f7693036b6 at 15044625 and 996d9a57: +3 lines,
@@ -294,13 +354,13 @@ first).
   WITH MY REPAIR GAP-R1»; «One gap (G-GAP-1), in a proof, with a repair; the statement is true and nothing FALSE is claimed.» (l. 32). §C
   docs/referee/R-N5-GAP-C.md (0f3caaabda5efb42eb759d931e122b6042c7e04e, 2026-10-30T02:23:14Z, sha1 1ed56613d890a567403d5273dc1b38ab66fd0ce9
   there, 85 lines; §5 addendum d21723b5056b4deae38bfbb9c2a8f5e09e79ea59, 02:32:32Z, `git diff --numstat 0f3caaab d21723b5`: 20 added, 1
-  removed (the old NEEDS line, replaced), sha1 dcbd5d3dca69f063d900c7be6abbfd5ec2516e24 there, 104 lines; H16 line ab32b618, 02:52:56Z, 2 added, 0 removed, sha1 27419e3075c02ad39f056656d66ef79e343eec51, 106 lines, = trunk, unchanged at referee head a455907e); H16 line: MATCHES (ab32b618). REFEREE-2 docs/referee-2/R2-N5-GAP.md (report 6e645c5acacabfb2f27078d94b083cd4e776bd65, 2026-10-30T01:48:04Z,
+  removed (the old NEEDS line, replaced), sha1 dcbd5d3dca69f063d900c7be6abbfd5ec2516e24 there, 104 lines; H16 line ab32b618, 02:52:56Z, 2 added, 0 removed, sha1 27419e3075c02ad39f056656d66ef79e343eec51, 106 lines; H17 line fe9d0cf1, 04:06:52Z, 1 added, 0 removed (l. 107), sha1 ab22736a7249e46ccbe389c51c0d67bd8b5d6dab, 107 lines; H18 line e10edaf8, 04:27:09Z, 1 added, 0 removed (l. 108), sha1 f8f86039d59a0690b95bbd15170f9142b3d0bfce, 108 lines: the last commit touching the file, = referee head e10edaf8 (REFEREE commits directly on claude/referee, so the file commit is also the branch commit; no merge commit there), merged into trunk by 677c7be4 (04:36:26Z), = trunk f7fc6962; re-measured at the 04:59Z fetch); H16 line: MATCHES (ab32b618); H17 line: MATCHES otherwise, V free (fe9d0cf1); H18 line: MATCHES (e10edaf8). REFEREE-2 docs/referee-2/R2-N5-GAP.md (report 6e645c5acacabfb2f27078d94b083cd4e776bd65, 2026-10-30T01:48:04Z,
   merged on claude/referee-2 as aee8971e0f304c119f2e8b12d77fc17d2bf6e6bc, 01:48:05Z, the SHA the Lead, REFEREE §C and REFEREE-2 §C cite; sha1
   84a495d7270a825f350718d1d7dcde5e5ef1a667, 163 lines, = trunk; successor 21): §1 well formed; twelve items SIGNED, OPT-OFF «SIGNED with gap
   G-GAP-1»; «One gap, G-GAP-1: a proof step of OPT-OFF, repaired here; the statement is not in doubt. Nothing FALSE. Notes N-GAP-1..N-GAP-7.»
   (l. 39). §C docs/referee-2/R2-N5-GAP-C.md (949be74e73c6eaa763e1c396de40ceebd6b06fa5, 02:22:46Z, merged as 1b29329d, sha1
   1554be21abdb3ca948f0774f91aa034d4e65b59c there, 95 lines; §C.6 899d98384342681a90aebed82e6e46c7bbe2c23e, 02:32:51Z, merged as ffb1eb3d,
-  02:32:52Z, `git diff --numstat 1b29329d ffb1eb3d`: 30 added, 0 removed; sha1 f6898956e35c4d84878448370349daea7b5290d0 there, 125 lines; H16 line e9aaaa6e, 02:53:15Z, merged as 2c77907c, 1 added, 0 removed, sha1 f10479f7e04c632527cb1cf568146a5b5140860e, 126 lines; OPT-OFF explicit signature 1f5a9fbe, 03:03:41Z, merged as 8a0f0ed6, 1 added, 0 removed (l. 127), sha1 6ae1c91e8863b725d226ab9517c14f1373ebe3c7, 127 lines, = trunk = referee-2 head 8a0f0ed6); H16 line: MATCHES (2c77907c); OPT-OFF explicit signature l. 127 (8a0f0ed6). INDEPENDENCE: REFEREE l. 7: «Independence: no docs/referee-2/ file opened.»;
+  02:32:52Z, `git diff --numstat 1b29329d ffb1eb3d`: 30 added, 0 removed; sha1 f6898956e35c4d84878448370349daea7b5290d0 there, 125 lines; H16 line e9aaaa6e, 02:53:15Z, merged as 2c77907c, 1 added, 0 removed, sha1 f10479f7e04c632527cb1cf568146a5b5140860e, 126 lines; OPT-OFF explicit signature 1f5a9fbe, 03:03:41Z, merged as 8a0f0ed6, 1 added, 0 removed (l. 127), sha1 6ae1c91e8863b725d226ab9517c14f1373ebe3c7, 127 lines; strict symbol test of H16 7ace2441, 03:45:57Z, merged as 752a98f9, 03:45:58Z, `git diff --numstat 8a0f0ed6 752a98f9`: 16 added, 0 removed (l. 128-143), sha1 06fcceea0f39bf8ae1dbf1a1be53f50699311aff, 143 lines; H17 line 895d7709, 04:06:57Z, merged as 85e6d86e, 04:06:58Z, 1 added, 0 removed (l. 144), sha1 3044d59dacf5ed7bb158bc4d045fa6334bc58d36, 144 lines: file commit 895d7709, merge commit 85e6d86e = referee-2 head (its handover; PARKED), merged into trunk by ac5244ea (04:26:51Z), = trunk f7fc6962; re-measured at the 04:59Z fetch); H16 line: MATCHES (2c77907c); OPT-OFF explicit signature l. 127 (8a0f0ed6); strict test of H16: k unbound, n acceptable (752a98f9); H17 line: MATCHES (85e6d86e); H18: not checked (PARKED). INDEPENDENCE: REFEREE l. 7: «Independence: no docs/referee-2/ file opened.»;
   REFEREE §C l. 3-4: its report «pushed BEFORE I opened any REFEREE-2 GAP file», REFEREE-2's «opened 02:21Z after the Lead's word». REFEREE-2
   l. 12-13: «`git ls-tree --name-only -r origin/claude/referee docs/referee/ | grep -ic gap`: 0 at 01:41Z and at push time (see commit). Names
   only; nothing opened; no `git log` on origin/claude/referee.»; REFEREE-2 §C l. 4: REFEREE's report «opened only after the word». No review
@@ -311,17 +371,20 @@ first).
   widens a signed statement.»; §5 l. 86 (quoted under Fixes); REFEREE-2 §C.6 l. 106-112 «H2-H15: clarifications only … None widens a signed
   statement.»; l. 125 «Final: P-N5-GAP's only gap G-GAP-1 is CLOSED by H1, and H14 is the line to land.» Two discrepancies, no verdict
   affected: REFEREE-2 l. 112 «sets σ(11) = 51» (τ(11) = 51: §C C.3 l. 67, H8); REFEREE-2 §C.6 l. 124 «every symbol is defined or cited» for
-  H14, which lacked H_t's definition (REFEREE's GAP-L4, added by H16).
-- TARGET.md diff: not a claim of TARGET.md section 1 or §2 (structural lemmas on N5 inside a phase and inside a piece, and a REDUCTION of the
+  H14, which lacked H_t's definition (REFEREE's GAP-L4, added by H16). Line tests (Lead revision 05:00Z), no verdict affected: both H16 lines
+  said MATCHES (REFEREE ab32b618 «every symbol now defined or cited») with k bound by use only; REFEREE-2's strict test (752a98f9) found k
+  unbound (H17). REFEREE-2's H17 line (85e6d86e) found «no unbound symbol», reading n = |V| through TARGET.md (752a98f9 l. 141); REFEREE
+  (fe9d0cf1) found V free (H18). The §C «Final» lines above name H14 as the line to land; H16, H17 and H18 supersede it.
+- TARGET.md diff: H18's «n the number of vertices of the game» is TARGET.md §1 l. 8's n («n = |V|, m = |E|»). Not a claim of TARGET.md section 1 or §2 (structural lemmas on N5 inside a phase and inside a piece, and a REDUCTION of the
   in-phase fallbacks of one phase to Σ_v WCH^S4a_P(v) and ZF_P, neither of which is bounded; no bound on a run, no running-time bound, no
   algorithm claim). GAPS G-N5-TIME: open; CONJECTURE FB-LIN: open.
 
 Proposed GAPS line-11 UPDATE (append-only), after R90's UPDATE of G-N5-TIME (GAPS l. 11; after the R89 UPDATE if R90 adds none), built only
-from the title clauses (landing time and CHECKER addendum to be filled at landing; no "|": |Z_a| is written "the size of Z_a" and |Z_{k+1} ∖
+from the title clauses (Lead revision 05:00Z: H18's k / n clause added after «the gap set;»; landing time and CHECKER addendum to be filled at landing; no "|": |Z_a| is written "the size of Z_a" and |Z_{k+1} ∖
 Z_k| "the number of vertices of Z_{k+1} ∖ Z_k"): «UPDATE 2026-10-30 <HH:MM>Z: RESULTS R91 (P-N5-GAP; CHECKER C101 Add. <k>) [refereed-only]
 LANDED: on every game, under the standing SPEC premise of RESULTS R57 (1E-N3; for S4a, σ_new is the pointwise optimum of the one-player arena
 H_t, S4a's arena at t: Even keeps σ_t ∪ Iσ_t, Odd follows τ_t) (Ξ_t := Ξ_{σ_t}; W_t the [S1-val] valuation of the (σ_t, τ_t)-plays; Z_t :=
-{v : Ξ_t(v) ≠ W_t(v)} the gap set; a phase as in RESULTS R38 (a), an in-phase transition one with both states in one phase; a τ-fixed Even
+{v : Ξ_t(v) ≠ W_t(v)} the gap set; a transition is written k → k + 1 (states k, k + 1); n the number of vertices of the game; a phase as in RESULTS R38 (a), an in-phase transition one with both states in one phase; a τ-fixed Even
 fallback an S4c transition with Iσ ≠ ∅; a piece a maximal run of consecutive states with τ constant all of whose transitions are S4a steps;
 blocked edges as in RESULTS R88), Ξ_t ⊴ W_t pointwise, W does not fall at an S4a step (read with τ_t) and does not rise at a τ-fixed Even
 fallback, for a one-player game of Even (Odd fixed) a pointwise-optimal Even strategy ρ with Ω_ρ its [S1-val] valuation has Ω_ρ(c) ⊴
