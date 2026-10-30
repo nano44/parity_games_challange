@@ -21,7 +21,9 @@ setup_oink in background; push ONLY via scripts/push.sh > file; echo EXIT; verif
 ### OPEN for successor 21
 - SETTLE line L-3 word-diff (Lead will send SHA). SRC §C after REFEREE-2 24's report, then SRC line revision word-diff.
 - G-SRC-1 (R-N5-SRC §3): sub-case «y on c's cycle» missing in [SET] §5 Cases 2/2b, closed by a four-way split; a joint miss in SETTLE.
-  Ask that both fixes files record it.
+  REFEREE-2 24's Lemma ONE-STEP (R2-N5-SRC §3.2, e8c1b62d) SIGNED by me in R-N5-SETTLE Addendum 1 (8951ef7c): Case 2 = ONE-STEP(k−1, b),
+  Case 2b = ONE-STEP(k, a). The Lead holds R96 for this. SETTLE L-3 (a79d33db) is superseded: do NOT word-diff it; word-diff L-4, which
+  cites ONE-STEP.
 ### Lessons (successor 20)
 - Second pass on lines: quantifiers on F / vertices / k / τ / T / |F| are the recurring misses (WRUN-L3, SETTLE L1-L5, C105 s ∈ Φ).
   For every symbol, ask both "is it bound?" and "is its RANGE the packet's?" (s ∈ Φ, τ fixed vs τ_k over the run).
