@@ -3,7 +3,7 @@ L-RED successor 31 (Opus 5.5; D1/D18). Lead 2026-10-30 01:01Z: "Next box, R129: 
 λ-run (inside B*) or per λ^U-run (O*) super-linear, and if possible ≥ n², on a growing family ... Use R125's τ-tick gate obstruction
 (τ-stability) as the starting point: either it blocks this too, so state why exactly, or it can be circumvented. Two engines; check
 faithfulness against the packet's definitions." Packet: l-si 2678f6c6, docs/si/P-N5-CUT-box43.md §8 (read only). Written 2026-10-30
-from 01:14Z (date -u). Labels: DATA / READING / OPEN. Not a TARGET.md claim; G-N5-TIME OPEN.
+from 01:05Z (date -u). Labels: DATA / READING / OPEN. Not a TARGET.md claim; G-N5-TIME OPEN.
 
 ## 1. Counter (span/ostar.py, sha1 shown in the commit), from P-N5-CUT §8's definitions
 - O* := max over λ^U-runs R′ of the transitions t -> t + 1 with t, t + 1 ∈ R′ at which τ changes. λ^U = the cycle-node map of Odd's

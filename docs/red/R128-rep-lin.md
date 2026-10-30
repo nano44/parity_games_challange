@@ -56,6 +56,6 @@ Labels: DEAD / DATA / READING / OPEN. Not a TARGET.md claim; G-N5-TIME OPEN.
 - laterep.py on (K, m) = (24, 40) finished after the first push (0e91e875): late 961, FIRST 87, REPEAT 874, RV 0, cyc 0, MAXE 24, which
   equals latec.py's REP 874. The table row is filled in.
 - Sanity read of P-N5-CUT's slack (Lead 01:01Z; l-si 2678f6c6 §8; not a kill). On latew, REP* = (K − 1)(m − 2) = Θ(n²) and m_E = Θ(n).
-  So K(n, m_E, REP*) = n(n − 1) + (n(n − 1) + 1)(n − 1)(m_E + REP* + 1) = Θ(n⁵), against Θ(n⁴) with REP* = O(n). The measured
-  W-changes per vertex in the one guided stretch are at most about 2K + 2 = O(n) (pivots: K levels each). So the K term overstates
-  latew's per-stretch W-changes by a factor of about n⁴.
+  So K(n, m_E, REP*) = n(n − 1) + (n(n − 1) + 1)(n − 1)(m_E + REP* + 1) = Θ(n⁵), against Θ(n⁴) with REP* = O(n). Measured on
+  latew_K8_m32 (n 370; n5x trace, si.py W on G_τ, τ constant): at most 16 = 2K W-changes of one vertex in the one guided stretch (vertex
+  G1). So the K term overstates latew's per-stretch W-changes by a factor of about n⁴.
