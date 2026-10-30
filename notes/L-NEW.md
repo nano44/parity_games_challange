@@ -17,6 +17,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - PROVED (lane) Lemma PAY: every W-run transition has a fresh Even entry or an Even-edge return; head-type returns <= |F| <= (m_E - n_E) + RETT_F.
 - DATA: gate_K / pp_K: RET 0, all order returns paid by fresh entries; sbq2 / obs / latew: 0 order returns, RETT ~0.8-0.9|F|. Corpus 1,695
   W-runs, 0 violations. READING: the missing charge is for Even-edge returns (XI-CH-POLY via RET-XIRISE), not type returns.
+### Box 98 pushed a4c1cbb8 (VERIFY PASS), reported 21:06Z.
+### Box 99 N5-QRET (Lead 21:21Z: one mechanism behind quadratic Even-edge returns): docs/new/N5-QRET-box99.md
+- DATA: sbq2 / obs / latew returns all FREE (box84 retclass); rooted at the K fresh ticks of ONE clock vertex 4 (deg K+1, period m+3), ~3m
+  returns per tick. PROVED (lane): FRESH-ROOT (cases c, d-off-cycle; DATA 9,455/9,455 FRESH), CASCADE-EQ (WRUN-POLY <=> CASC-POLY).
+  CONJECTURE CASCADE-LIN: CASC <= n/2 (max 0.483n); chain depth <= 2 on the corpus. L-RED target: deep root chains / one fresh entry > n returns.
 ### Things only I know (successor 40): sb53 tools (rootflip.py etc.) and T60 are only on origin/claude/l-si / l-lit; I read them via git show.
   orderdet.py on latew_K16_m32 takes ~50 s; runod.sh ~6 min on 4 cores.
 
