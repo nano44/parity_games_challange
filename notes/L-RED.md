@@ -52,7 +52,8 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   flipevr_n10 random S3; n5b flipev.py VIOL 1 = L-SI flipc EVX 1, xeng, Oink). Mechanism: ENT flip from a non-head rise, tie, BFS
   re-order, EXI elsewhere. FLIP-EV' (or an ENT flip elsewhere) open: corpus 4,962 candidates 0. (b) SAME-HEAD lemma; clock = nested
   leapfrog counter vs ARENA-MAX, not built. L-SI's flipc.py runs from /tmp/claude-0/lsi (git archive of l-si 71d1d0ac) with PYTHONPATH
-  experiments/new:harness:new/box21. Never pkill -f a pattern that occurs in the same command line (it kills the shell).
+  experiments/new:harness:new/box21. (c) SB at ONE Odd vertex (degree 2) = K*m in one W-run: mkrw + obs2 + flipev/obs3.py, pin
+  sbq2_K8_m16 (128; L-NEW sbv agrees). L-NEW's box90/sbv.py runs from /tmp/claude-0/lnew2 the same way. Never pkill -f a pattern that occurs in the same command line (it kills the shell).
 - RESUME POINT: a super-quadratic kill needs (a) exponentially many upward events (Xi-changes at deviation targets) in one interval, or
   (b) a clock whose rises are not paid by fresh vertices. Untried: reuse ONE delay chain for many rises (a ladder whose top reads several
   depths); feed an upward head from the mkrel2 clocks inside a W-constant interval.
