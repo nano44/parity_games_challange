@@ -397,10 +397,22 @@ if grep -q "RETWCH tog6b_n32.pg n 32 wruns 1 {'returns': 4, 'paid-W': 3, 'paid-t
 else
   echo "box 78 RETWCH check: FAILED"; exit 1
 fi
-w30=$(cd .. && python3 -I new/box79/flatsrc.py n5-epoch/instances/nep92_n40.pg n5-epoch/instances/nep92_n40.start)
-if grep -q "{'K-rise': 20, 'FLATTR': 73, 'FSW': 73} max-FLATTR-phase 73 max-FLATSW-(x,phase) 8" <<<"$w30"; then
+w30=$(cd .. && python3 -I new/box79/wchpk.py red/so/instances/tog6b_n32.pg; python3 -I new/box79/wchpk.py red/so/instances/tog6b_n32.pg --lzc; python3 -I new/box79/symtest.py ../docs/new/P-N5-WCH-box79-line.txt | tail -1)
+if grep -q "WCHPK tog6b_n32.pg n 32 wruns 1 {'returns': 4, 'paid-W': 3, 'TT': 1, 'TIE': 2} " <<<"$w30" && grep -q "WCHPK tog6b_n32.pg n 32 wruns 1 {'returns': 3, 'paid-W': 3, 'TIE': 0} " <<<"$w30" && grep -q "^SYMTEST PASS" <<<"$w30"; then
+  echo "box 79 WCH: P-N5-WCH RET-WCH (TT form) on tog6b_n32 (N5 TT 1, N5-LZC TIE 0); line-file strict symbol test PASS"
+else
+  echo "box 79 WCH check: FAILED"; exit 1
+fi
+w31=$(cd .. && python3 -I new/box79/flatsrc.py n5-epoch/instances/nep92_n40.pg n5-epoch/instances/nep92_n40.start)
+if grep -q "{'K-rise': 20, 'FLATTR': 73, 'FSW': 73} max-FLATTR-phase 73 max-FLATSW-(x,phase) 8" <<<"$w31"; then
   echo "box 79 FLATSRC: nep92_n40 all 73 flat transitions carry a flat Even switch (<= 8 per vertex): PASS"
 else
   echo "box 79 FLATSRC check: FAILED"; exit 1
+fi
+w32=$(cd .. && python3 -I new/box80/ladder.py 8)
+if grep -q "LADDER k 8 n 18 switches 749 T-rises 255 (2^k-1 = 255) distinct-T 256 strict True non-improving-switches 0 monotonicity-violations 0 cycle-nodes \[0\]" <<<"$w32"; then
+  echo "box 80 LADDER: ladder_8 (n 18) one vertex takes 256 W-values under single improving switches (relaxation R0): PASS"
+else
+  echo "box 80 LADDER check: FAILED"; exit 1
 fi
 rm -rf "$tmp"

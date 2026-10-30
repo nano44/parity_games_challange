@@ -1,6 +1,26 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Resume point (successor 37, Opus 5.5; started 2026-10-30 08:52Z by date -u; WORKING)
+### Box 79 TASK 1 (Lead brief after 08:52Z): freeze P-N5-WCH for both referees
+- docs/new/P-N5-WCH-box79.md (packet) + docs/new/P-N5-WCH-box79-line.txt (RESULTS line proposal). Scope: TIE, NEW-BOUND, RET-WCH (sharpened:
+  TL -> TT, leaves with W(v) unchanged, so the N5 residual is TIE), RUN-WCH, REP-WCH (REPEAT => return, so REP_F <= sum d_E WCH + TIE, no
+  FW-R*'), SIL-Z (re-derived from landed R90 (a)(ii), (b), (c), (d)), SC-GXC, GXC-CLOSE, GXC-SPLIT, LEVEL-MON, DROP-PAID (generalises
+  DOWN-PAID), FBO-R56, FBO-SPLIT, ZF-SPLIT (new bookkeeping), Theorem WCH-RED + Corollary WCH-ONE under [P-WCHtau](w); N5-LZC section §7
+  (LZ-OPT, W-MON_LZ, LZ-STRICT, RUN-WCH_LZ / REP-WCH_LZ without OPT-ONLY; LZ-NOSIL under OPT-ONLY).
+- TRIMMED (do not compose): TXC-SRC/RHO, FIX-DEPTH/PHASE-RED (own packet if wanted), LZ-RUN (superseded by RUN-WCH_LZ), N5-LZC output.
+- DATA: box79/wchpk.py on 1132 runs x 2: 0 UNPAID, 0 RUN-viol; N5 TT 88, TIE 397; N5-LZC TIE 0. symtest.py: 182 symbols, SYMTEST PASS.
+- Box-number clash: succ. 36 pushed docs/new/N5-FLATSRC-box79.md (FLAT-SRC) after its park; my packet also uses box 79 (files
+  P-N5-WCH-box79*, box79/wchpk.py, symtest.py, run_wchpk.sh). TASK 2 is box 80.
+### Box 80 TASK 2 (D18 on [P-WCHtau]): docs/new/N5-WCHT-box80.md
+- PROVED (lane) Proposition LADDER: one-player ladder_k (n = 2k+2), single W-improving switches (lead-follow pairs), W(T) takes 2^k
+  values; DP-optimal, replayed with si.py Engine (ladder_8: 255 rises, n 18). DEAD: bounding [P-WCHtau] from W-side structure (monotone W,
+  one-player-optimal steps, lambda_W fixed, PREFIX / TWO-SOURCE). Imports (monotone subsequences, VC, sorting networks) give nothing.
+- PROVED (lane) Lemma TWIN-SYNC: same successor set + same current successor => W'-equal successors at an S4a step (kills the lead step).
+- CONJECTURE R1-POLY (open): offers from one monotone potential X <= W (the Xi rule) force poly per-vertex W-changes. Next: search R1 with a
+  bounded X alphabet, or design the X schedule (would be an L-RED spec).
+### Sources opened (succ. 37): l-red docs/red/R132-reader-tree.md §2 (TWO-SOURCE, PREFIX, ladder remark); RESULTS R86-R91 entries.
+
 ## Resume point (successor 36, session_01V5yGRXhFvQKMGvnKST38br; FINAL, PARKED 2026-10-30 ~08:54Z by date -u, ~440k context)
 ### DONE (all pushed via scripts/push.sh, VERIFY PASS; each reported to the Lead)
 - Box 72 N5-LZ (909be5eb, §6 177dbfb1): GXC anatomy; Lemma TIE; N5-LZC (lazy S4a tie-break) LZ-OPT / LZ-STRICT / LZ-NOGXC / LZ-NOSIL
