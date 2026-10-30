@@ -1,10 +1,27 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## Conditionals (successor 31, boxes 40-41; exact statements for L-RED and referees to diff)
+Setting for all: N5 (SPEC S1-S5, FIX 1-4), any game, Even side; R a λ-run (Ξ's cycle-node map constant); (v, c) an Even edge; span,
+out-window, re-entry as in docs/si/N5-SPAN-box38.md; τ*-piece, anchor, F / FRESH / G0 / LATE / SAME as in docs/si/N5-CUT-box40.md §1-§2, §6.
+- [C1] PROVED (lane, box 40 §6): ENT_R(v, c) ≤ 1 + BA_R(v, c) + WCH*^span_R(c) + LATE_R(v, c) + SIL_R(v, c) + CYC_R(v, c), where BA = re-entries
+  made by an Even S4c fallback, or FRESH with j − 1 = a, or FRESH-SAME; WCH*^span_R(c) = transitions t → t + 1 of span(v, c) with
+  val(σ_t, τ_t)(c) ≠ val(σ_{t+1}, τ_t)(c); LATE = FRESH re-entries with (v, c) BLOCKED (R88 sense) at j − 2, v off-cycle at j − 1, j.
+- [C2] PROVED (lane, box 41 §1): on a guided stretch Q, WCH_Q(w) ≤ Λ_Q + (Λ_Q + 1)(n − 1)(R*_Q + 1), Λ_Q ≤ n(n − 1).
+- Premises still needed (each OPEN; L-RED kill targets):
+  - [P-BA] BA_R(v, c) ≤ p(n) for every pair and λ-run. Implied by: Even fallbacks per phase ≤ p₁(n) ∧ τ-changing transitions per λ-run ≤ p₂(n).
+  - [P-LATE] for every W-run F (R89) and every Even edge (y, z): late adoptions of (y, z) in F ≤ p(n). Equivalent up to a factor m for
+    the count R*_T(F) ≤ p(n)·m (R*_T counts transitions, LATE per edge counts adoptions).
+  - [P-MINQ] for every pair and λ-run: min(PCH^span_R(c), WCH*^span_R(c)) ≤ p(n). With [C2] and [P-LATE], WCH* per guided piece is
+    polynomial, so [P-MINQ]'s W-branch reduces to the number of τ*-pieces in the span, i.e. to [P-BA]'s two implying counts.
+  - [P-SC] SIL_R(v, c) + CYC_R(v, c) ≤ p(n).
+- Implication (lane): [P-BA] ∧ [P-LATE] ∧ [P-MINQ] ∧ [P-SC] ⇒ Σ_v SW_R(v) polynomial per λ-run (Even), hence with the mirror on λ^U-runs and
+  R86 (d)'s bookkeeping, T polynomial (G-N5-TIME).
+
 ## Resume point (successor 31, box 40; session_01V5yGRY6GXgHUrdpJa5WBaa; GO Lead 22:47Z)
 - STEP 0 0e189416. Box 40 (2) DONE: docs/si/N5-CUT-box40.md, tool experiments/si/odd/cuts.py (default frame; FR=1 old-τ frame),
   si/check.sh «box 40». PROVED (lane) W-RETURN-G, CUT-CHARGE; READING G_vc ≤ B_vc (no independent lever); CONJECTURE FC-LIN.
-- Next: (1) PCH-QUAD-S / FC-LIN proof attempt; (3) W-VPOLY-S.
+- §6 94bb55db (FRESH-SPLIT). Box 41 W-VPOLY-S: docs/si/N5-WVP-box41.md (Lemma WV-R; hntop R* = 0). Next: R* / LATE (Lead 00:09Z: keep going, report per box).
 
 ## HANDOVER (successor 30, boxes 36-39; written 2026-10-29T22:1xZ (date -u; see commit); session_01V5yGRXdA7p12A2AFsUdae8)
 Reason: Lead 22:03Z: «Write your handover at ~400k or when BOX 39 ends, whichever comes first.» Box 39 ended; context ~275k.
