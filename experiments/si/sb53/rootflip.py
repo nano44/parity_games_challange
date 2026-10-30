@@ -8,7 +8,8 @@ end);  NCX Lemma NOCLOSE fails (a successor y whose play path contains o with NO
 Per transition, flips at o non-own at k and k+1:  TIEX Lemma TIE fails (old target's Xi fixed, but Xi(o) or Xi(new) changes, or the
 new target is not tied at k);  EVENX a tie flip (old target fixed) in an even-cycle-node round;  DESCX a tie flip with no flipping
 non-own w, Xi(w) fixed, on t1's or t2's k-path or (k+1)-path;  ROOTX2 a transition with a non-own flip but no non-own flip whose old
-target's Xi changed.  MUT=1 (control): SEL checked against max in place of min; SELX must become > 0.  Counts: STATES, NONOWN (pairs), FLIPS (non-own), TIES.  Usage: rootflip.py GAME.pg [START]"""
+target's Xi changed.  ONEX: Lemma ONE-STEP-O (§2.6) fails (Xi_k(o) not <= o (+) Xi_k(t) for a successor t of cycle node c whose path avoids o); OBETA: such
+(o, t) with o on c's cycle and a vertex of t's path more relevant than c (the case (beta) with z* != c).  MUT=1 (control): SEL checked against max in place of min; SELX must become > 0.  Counts: STATES, NONOWN (pairs), FLIPS (non-own), TIES.  Usage: rootflip.py GAME.pg [START]"""
 import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, os.path.join(HERE, "..", "..", "new", "box21"))
 from n5x import load, step, start_pair, readstart, Engine, dual
@@ -29,7 +30,7 @@ def path(k, y):
     return p
 def key(k, y): return tuple(reversed(path(k, y)[:-1]))
 def nonown(k, o): return EV[k][0][o][0] != o
-c = dict(STATES=len(S), NONOWN=0, NOTT=0, SELX=0, NCX=0, FLIPS=0, TIES=0, TIEX=0, EVENX=0, DESCX=0, ROOTX2=0)
+c = dict(STATES=len(S), NONOWN=0, NOTT=0, SELX=0, NCX=0, FLIPS=0, TIES=0, TIEX=0, EVENX=0, DESCX=0, ROOTX2=0, ONEX=0, OBETA=0)
 for k in range(len(S)):
     val, sb = EV[k]
     for o in ODD:
@@ -42,6 +43,12 @@ for k in range(len(S)):
         if best != sb[o]: c['SELX'] += 1
         for y in SU[o]:
             if o in path(k, y)[1:] and not E.key(val[y]) > E.key(val[sb[o]]): c['NCX'] += 1
+        cyc = set(); x = S[k][cn] if own[cn] == 0 else sb[cn]; cyc.add(cn)
+        while x != cn: cyc.add(x); x = S[k][x] if own[x] == 0 else sb[x]
+        for y in SU[o]:
+            if val[y][0] != cn or o in path(k, y): continue
+            if E.key(val[o]) > E.key(E.extend(o, val[y])): c['ONEX'] += 1
+            if o in cyc and any(E.rank[z] > E.rank[cn] for z in path(k, y)[:-1]): c['OBETA'] += 1
 for k in range(len(S) - 1):
     (v0, b0), (v1, b1) = EV[k], EV[k + 1]
     fl = [o for o in ODD if b0[o] != b1[o] and nonown(k, o) and nonown(k + 1, o)]

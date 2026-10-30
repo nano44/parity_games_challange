@@ -1,0 +1,413 @@
+GAME n5-epoch/instances/gci2_n12.pg n5-epoch/instances/gci2_n12.start gci2_n12.pg n 12 T 10 LMAX 10 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME n5-epoch/instances/ffin5_n32.pg n5-epoch/instances/ffin5_n32.start ffin5_n32.pg n 32 T 23 LMAX 7 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 0 XB 1 LAMCH 4 XANL 0
+GAME n5-epoch/instances/ffin4_n24.pg n5-epoch/instances/ffin4_n24.start ffin4_n24.pg n 24 T 20 LMAX 8 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME n5-epoch/instances/ffin12_n32.pg n5-epoch/instances/ffin12_n32.start ffin12_n32.pg n 32 T 33 LMAX 7 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME n5-epoch/instances/immfail_n14.pg immfail_n14.pg n 14 T 6 LMAX 2 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME n5-epoch/instances/lcount_n23.pg n5-epoch/instances/lcount_n23.start lcount_n23.pg n 23 T 5 LMAX 4 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 1 XANL 0
+GAME n5-epoch/instances/gci3_n24.pg n5-epoch/instances/gci3_n24.start gci3_n24.pg n 24 T 21 LMAX 20 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 2 XA 1 XB 0 LAMCH 1 XANL 0
+GAME n5-epoch/instances/immp_cex_n11.pg n5-epoch/instances/immp_cex_n11.start immp_cex_n11.pg n 11 T 2 LMAX 2 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME n5-epoch/instances/lend13_n16.pg n5-epoch/instances/lend13_n16.start lend13_n16.pg n 16 T 14 LMAX 13 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME n5-epoch/instances/lend39f_n32.pg n5-epoch/instances/lend39f_n32.start lend39f_n32.pg n 32 T 47 LMAX 8 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 3 XANL 0
+GAME n5-epoch/instances/lend47_n32.pg n5-epoch/instances/lend47_n32.start lend47_n32.pg n 32 T 50 LMAX 19 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME n5-epoch/instances/lend15_n48.pg n5-epoch/instances/lend15_n48.start lend15_n48.pg n 48 T 27 LMAX 3 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 3 XA 2 XB 0 LAMCH 6 XANL 0
+GAME n5-epoch/instances/lend27_n24.pg n5-epoch/instances/lend27_n24.start lend27_n24.pg n 24 T 32 LMAX 8 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 2 XANL 0
+GAME n5-epoch/instances/lend55_n32.pg n5-epoch/instances/lend55_n32.start lend55_n32.pg n 32 T 58 LMAX 11 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME n5-epoch/instances/lend9_n8.pg n5-epoch/instances/lend9_n8.start lend9_n8.pg n 8 T 10 LMAX 2 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 1 XANL 0
+GAME n5-epoch/instances/lend107_n32.pg n5-epoch/instances/lend107_n32.start lend107_n32.pg n 32 T 112 LMAX 15 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME n5-epoch/instances/lend72_n48.pg n5-epoch/instances/lend72_n48.start lend72_n48.pg n 48 T 76 LMAX 14 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME n5-epoch/instances/lend82_n32.pg n5-epoch/instances/lend82_n32.start lend82_n32.pg n 32 T 87 LMAX 14 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME n5-epoch/instances/nep13_n24.pg n5-epoch/instances/nep13_n24.start nep13_n24.pg n 24 T 35 LMAX 12 XCN_TR 1 XCN_V 1 XCN_RUN_ALL 2 XA 1 XB 1 LAMCH 8 XANL 0
+GAME n5-epoch/instances/nep22f_n64.pg n5-epoch/instances/nep22f_n64.start nep22f_n64.pg n 64 T 52 LMAX 3 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 3 XA 2 XB 1 LAMCH 3 XANL 0
+GAME n5-epoch/instances/nep56_n32.pg n5-epoch/instances/nep56_n32.start nep56_n32.pg n 32 T 57 LMAX 25 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME n5-epoch/instances/nconf61_n48.pg n5-epoch/instances/nconf61_n48.start nconf61_n48.pg n 48 T 73 LMAX 13 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 4 XANL 0
+GAME n5-epoch/instances/nep76_n40.pg n5-epoch/instances/nep76_n40.start nep76_n40.pg n 40 T 87 LMAX 15 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 9 XANL 0
+GAME n5-epoch/instances/nep92_n40.pg n5-epoch/instances/nep92_n40.start nep92_n40.pg n 40 T 98 LMAX 14 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 4 XANL 0
+GAME n5-epoch/instances/ret14_n48.pg n5-epoch/instances/ret14_n48.start ret14_n48.pg n 48 T 61 LMAX 6 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 5 XANL 0
+GAME n5-epoch/instances/ret12_n40.pg n5-epoch/instances/ret12_n40.start ret12_n40.pg n 40 T 60 LMAX 14 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 4 XANL 0
+GAME n5-exhaustive/instances/b4_cyc6_0.pg n5-exhaustive/instances/b4_cyc6_0.start b4_cyc6_0.pg n 11 T 5 LMAX 2 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME n5-epoch/instances/ret14_n64.pg n5-epoch/instances/ret14_n64.start ret14_n64.pg n 64 T 65 LMAX 14 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 3 XANL 0
+GAME n5-exhaustive/instances/b4_cyc6_1.pg b4_cyc6_1.pg n 12 T 4 LMAX 4 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME n5-exhaustive/instances/b4_n4all_cyc3_0.pg n5-exhaustive/instances/b4_n4all_cyc3_0.start b4_n4all_cyc3_0.pg n 4 T 3 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME n5-exhaustive/instances/b4_n5_other_0.pg b4_n5_other_0.pg n 5 T 2 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME n5-epoch/instances/nep94_n48.pg n5-epoch/instances/nep94_n48.start nep94_n48.pg n 48 T 100 LMAX 14 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 4 XANL 0
+GAME n5-exhaustive/instances/b5_n5_cyc4_0.pg b5_n5_cyc4_0.pg n 5 T 3 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME n5-exhaustive/instances/b4_nohlen5_0.pg n5-exhaustive/instances/b4_nohlen5_0.start b4_nohlen5_0.pg n 11 T 6 LMAX 4 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME n5-exhaustive/instances/b4_theta_n7.pg n5-exhaustive/instances/b4_theta_n7.start b4_theta_n7.pg n 7 T 2 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME n5-exhaustive/instances/b5_o11.pg b5_o11.pg n 10 T 12 LMAX 4 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 1 XANL 0
+GAME n5-exhaustive/instances/b5_os_n12.pg b5_os_n12.pg n 12 T 18 LMAX 5 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 2 XANL 0
+GAME n5-exhaustive/instances/b5_os_n14.pg b5_os_n14.pg n 14 T 22 LMAX 7 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 1 XANL 0
+GAME n5-exhaustive/instances/b5_os_n16.pg b5_os_n16.pg n 16 T 26 LMAX 8 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 1 XANL 0
+GAME n5-exhaustive/instances/b5_os_n24.pg b5_os_n24.pg n 24 T 53 LMAX 14 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 2 XANL 0
+GAME n5-exhaustive/instances/b5_os_n20.pg b5_os_n20.pg n 20 T 34 LMAX 10 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 1 XANL 0
+GAME n5-exhaustive/instances/b5_os_n32.pg b5_os_n32.pg n 32 T 71 LMAX 14 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 2 XANL 0
+GAME n5-exhaustive/instances/b5_os_n28.pg b5_os_n28.pg n 28 T 65 LMAX 13 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 2 XANL 0
+GAME n5-exhaustive/instances/b6_xl_n32.pg b6_xl_n32.pg n 32 T 85 LMAX 22 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 4 XANL 0
+GAME n5-exhaustive/instances/b6_xl2_n32.pg b6_xl2_n32.pg n 32 T 87 LMAX 22 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 4 XANL 0
+GAME n5-exhaustive/instances/b5_os_n40.pg b5_os_n40.pg n 40 T 81 LMAX 17 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 2 XANL 0
+GAME n5-exhaustive/instances/b6_xs_n24.pg b6_xs_n24.pg n 24 T 21 LMAX 21 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME n5-exhaustive/instances/b6_xs_n32.pg b6_xs_n32.pg n 32 T 29 LMAX 29 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME n5-exhaustive/instances/b6_xl_n40.pg b6_xl_n40.pg n 40 T 89 LMAX 25 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME n5-exhaustive/instances/b6_xs_n40.pg b6_xs_n40.pg n 40 T 36 LMAX 36 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME n5-exhaustive/instances/b6_xs_n48.pg b6_xs_n48.pg n 48 T 37 LMAX 37 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME n5-exhaustive/instances/b6_xl_n48.pg b6_xl_n48.pg n 48 T 97 LMAX 24 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 3 XANL 0
+GAME n5-exhaustive/instances/b6_xw_n32.pg b6_xw_n32.pg n 32 T 79 LMAX 21 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 4 XANL 0
+GAME n5-exhaustive/instances/canonA_0.pg canonA_0.pg n 15 T 3 LMAX 3 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME n5-exhaustive/instances/canonA_1.pg canonA_1.pg n 15 T 4 LMAX 3 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME n5-exhaustive/instances/frz1_n24.pg n5-exhaustive/instances/frz1_n24.start frz1_n24.pg n 24 T 31 LMAX 24 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME n5-exhaustive/instances/frz2_n24.pg n5-exhaustive/instances/frz2_n24.start frz2_n24.pg n 24 T 25 LMAX 23 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME n5-exhaustive/instances/frz3_n24.pg n5-exhaustive/instances/frz3_n24.start frz3_n24.pg n 24 T 26 LMAX 24 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 2 XANL 0
+GAME n5-exhaustive/instances/b6_xw_n40.pg b6_xw_n40.pg n 40 T 80 LMAX 22 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 4 XANL 0
+GAME n5-exhaustive/instances/n3all_maxph_0.pg n5-exhaustive/instances/n3all_maxph_0.start n3all_maxph_0.pg n 3 T 3 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 1 XANL 0
+GAME n5-exhaustive/instances/n3all_maxph_1.pg n5-exhaustive/instances/n3all_maxph_1.start n3all_maxph_1.pg n 3 T 3 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 1 XANL 0
+GAME n5-exhaustive/instances/n3all_maxph_2.pg n5-exhaustive/instances/n3all_maxph_2.start n3all_maxph_2.pg n 3 T 3 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 1 XANL 0
+GAME n5-exhaustive/instances/n4_maxph_1.pg n4_maxph_1.pg n 4 T 2 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME n5-exhaustive/instances/n4_maxph_0.pg n4_maxph_0.pg n 4 T 2 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME n5-exhaustive/instances/n4all_maxph_0.pg n5-exhaustive/instances/n4all_maxph_0.start n4all_maxph_0.pg n 4 T 4 LMAX 2 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME n5-exhaustive/instances/n4all_maxph_1.pg n5-exhaustive/instances/n4all_maxph_1.start n4all_maxph_1.pg n 4 T 4 LMAX 2 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME n5-exhaustive/instances/n4_thch_0.pg n4_thch_0.pg n 4 T 2 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME n5-exhaustive/instances/b6_xw_n56.pg b6_xw_n56.pg n 56 T 85 LMAX 23 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 4 XANL 0
+GAME n5-exhaustive/instances/n4all_tgbad_0.pg n5-exhaustive/instances/n4all_tgbad_0.start n4all_tgbad_0.pg n 4 T 3 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME n5-exhaustive/instances/n5s_maxph_0.pg n5s_maxph_0.pg n 5 T 3 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME n5-exhaustive/instances/b6_xw_n48.pg b6_xw_n48.pg n 48 T 85 LMAX 22 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 5 XANL 0
+GAME n5-exhaustive/instances/n4all_thch_0.pg n5-exhaustive/instances/n4all_thch_0.start n4all_thch_0.pg n 4 T 3 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME n5-exhaustive/instances/nh_n8.pg n5-exhaustive/instances/nh_n8.start nh_n8.pg n 8 T 4 LMAX 3 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME n5-exhaustive/instances/thetaA_canon_n8.pg thetaA_canon_n8.pg n 8 T 3 LMAX 3 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME n5-exhaustive/instances/thetaA_canon_n12.pg thetaA_canon_n12.pg n 12 T 3 LMAX 3 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME n5-exhaustive/instances/thetaA_n6.pg n5-exhaustive/instances/thetaA_n6.start thetaA_n6.pg n 6 T 3 LMAX 3 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME n5-exhaustive/instances/thetaA_n17.pg n5-exhaustive/instances/thetaA_n17.start thetaA_n17.pg n 17 T 5 LMAX 3 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME n5-exhaustive/instances/thetaA_n7.pg n5-exhaustive/instances/thetaA_n7.start thetaA_n7.pg n 7 T 3 LMAX 3 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME n5-exhaustive/instances/thetaA_n9.pg n5-exhaustive/instances/thetaA_n9.start thetaA_n9.pg n 9 T 4 LMAX 3 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME n5-exhaustive/instances/wk1_n32.pg n5-exhaustive/instances/wk1_n32.start wk1_n32.pg n 32 T 7 LMAX 2 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 4 XANL 0
+GAME n5-exhaustive/instances/wk2_n32.pg n5-exhaustive/instances/wk2_n32.start wk2_n32.pg n 32 T 7 LMAX 3 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 3 XANL 0
+GAME new/box48/instances/long121_n40.pg new/box48/instances/long121_n40.start long121_n40.pg n 40 T 122 LMAX 17 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.pg new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.start best_qpc_nep90_n40_s61.pg n 64 T 102 LMAX 15 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 3 XANL 0
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.pg new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.start best_qpc_nep76_n40_s63.pg n 64 T 93 LMAX 16 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 6 XANL 0
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.pg new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.start best_qpc_nep90_n40_s62.pg n 80 T 105 LMAX 15 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 3 XANL 0
+GAME red/carry/instances/absmono_viol_n44.pg absmono_viol_n44.pg n 44 T 7 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 1 XANL 0
+GAME red/carry/instances/cm_mdrop_oink_n28.pg cm_mdrop_oink_n28.pg n 28 T 3 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME red/carry/instances/carry3_2_2.pg carry3_2_2.pg n 47 T 2 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/carry/instances/cm_mdrop_both_n28.pg cm_mdrop_both_n28.pg n 28 T 10 LMAX 3 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 5 XANL 0
+GAME red/carry/instances/ctx11_n40.pg ctx11_n40.pg n 40 T 9 LMAX 2 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 6 XA 4 XB 0 LAMCH 6 XANL 0
+GAME red/carry/instances/ctx6_n20.pg ctx6_n20.pg n 20 T 3 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 0 XB 1 LAMCH 1 XANL 0
+GAME red/carry/instances/ctx12_n40.pg ctx12_n40.pg n 40 T 8 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 5 XA 4 XB 0 LAMCH 6 XANL 0
+GAME red/carry/instances/ctx6_n56.pg ctx6_n56.pg n 56 T 12 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 2 XA 2 XB 0 LAMCH 6 XANL 0
+GAME red/carry/instances/ctx13_n40.pg ctx13_n40.pg n 40 T 17 LMAX 5 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 2 XA 2 XB 0 LAMCH 6 XANL 0
+GAME red/carry/instances/f1_twodef_n48.pg f1_twodef_n48.pg n 48 T 6 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 5 XANL 0
+GAME red/carry/instances/ctx7_n30.pg ctx7_n30.pg n 30 T 11 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 2 XA 1 XB 1 LAMCH 3 XANL 0
+GAME red/carry/instances/f1_twofall_n48.pg f1_twofall_n48.pg n 48 T 6 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 4 XANL 0
+GAME red/carry/instances/fall3_n76.pg fall3_n76.pg n 76 T 8 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 8 XANL 0
+GAME new/box48/out/qpcclimb/scale/snap_n80_s62.pg new/box48/out/qpcclimb/scale/snap_n80_s62.start snap_n80_s62.pg n 80 T 105 LMAX 15 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 3 XANL 0
+GAME red/carry/instances/fired10_n20.pg fired10_n20.pg n 20 T 6 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME red/carry/instances/firedlong667_n20.pg firedlong667_n20.pg n 20 T 4 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME red/carry/instances/fallv_viol_n28.pg fallv_viol_n28.pg n 28 T 5 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 4 XANL 0
+GAME red/carry/instances/firedlong667_n43.pg firedlong667_n43.pg n 43 T 3 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME red/carry/instances/firedstep13_n76.pg firedstep13_n76.pg n 76 T 8 LMAX 2 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 4 XA 2 XB 0 LAMCH 6 XANL 0
+GAME red/carry/instances/fall4_n116.pg fall4_n116.pg n 116 T 6 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 6 XANL 0
+GAME red/carry/instances/gapb_dup_n20.pg gapb_dup_n20.pg n 20 T 8 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 3 XANL 0
+GAME red/carry/instances/gapbW_dup_n20.pg gapbW_dup_n20.pg n 20 T 5 LMAX 2 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 3 XA 2 XB 0 LAMCH 2 XANL 0
+GAME red/carry/instances/h4_compound_n44.pg h4_compound_n44.pg n 44 T 4 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 2 XA 2 XB 0 LAMCH 3 XANL 0
+GAME red/carry/instances/h4_def2ctx_n20.pg h4_def2ctx_n20.pg n 20 T 6 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 2 XA 2 XB 0 LAMCH 5 XANL 0
+GAME red/carry/instances/h4_def7_n28.pg h4_def7_n28.pg n 28 T 3 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 3 XANL 0
+GAME red/carry/instances/h4_compound2x2_n44.pg h4_compound2x2_n44.pg n 44 T 10 LMAX 3 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 2 XA 2 XB 0 LAMCH 5 XANL 0
+GAME red/carry/instances/h4_notweaker_n20.pg h4_notweaker_n20.pg n 20 T 5 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 5 XANL 0
+GAME red/carry/instances/h4_disjoint_n20.pg h4_disjoint_n20.pg n 20 T 3 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 3 XANL 0
+GAME red/carry/instances/kin_viol_n29.pg kin_viol_n29.pg n 29 T 5 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 5 XANL 0
+GAME red/carry/instances/lalg_dtl_mviol_n20.pg lalg_dtl_mviol_n20.pg n 20 T 5 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 5 XANL 0
+GAME red/carry/instances/lemmaS_Mdrop_n20.pg lemmaS_Mdrop_n20.pg n 20 T 6 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 5 XANL 0
+GAME red/carry/instances/lemmaS_viol_n20.pg lemmaS_viol_n20.pg n 20 T 4 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 3 XANL 0
+GAME red/carry/instances/lex_viol_inj_n28.pg lex_viol_inj_n28.pg n 28 T 6 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 4 XANL 0
+GAME red/carry/instances/kfirst_viol_n13.pg kfirst_viol_n13.pg n 13 T 0 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/carry/instances/meet_viol_n17.pg meet_viol_n17.pg n 17 T 0 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/carry/instances/nosig_2_3.pg nosig_2_3.pg n 24 T 2 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/carry/instances/lex_viol_tie_n28.pg lex_viol_tie_n28.pg n 28 T 7 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 6 XANL 0
+GAME red/carry/instances/meet_viol_n29.pg meet_viol_n29.pg n 29 T 11 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 3 XA 3 XB 0 LAMCH 5 XANL 0
+GAME red/carry/instances/phi_flat_alive_n32.pg phi_flat_alive_n32.pg n 32 T 4 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME red/carry/instances/pk_viol_n20.pg pk_viol_n20.pg n 20 T 3 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/carry/instances/replay4_n32.pg replay4_n32.pg n 32 T 4 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 2 XA 1 XB 0 LAMCH 1 XANL 0
+GAME red/carry/instances/spp19_oink_n30.pg spp19_oink_n30.pg n 30 T 10 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 2 XA 1 XB 0 LAMCH 4 XANL 0
+GAME red/carry/instances/spp19_stable_n30.pg spp19_stable_n30.pg n 30 T 7 LMAX 2 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 2 XA 1 XB 0 LAMCH 4 XANL 0
+GAME red/carry/instances/spp25_oink_n40.pg spp25_oink_n40.pg n 40 T 10 LMAX 3 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 4 XA 3 XB 0 LAMCH 5 XANL 0
+GAME red/carry/instances/spp22_oink_n40.pg spp22_oink_n40.pg n 40 T 8 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 5 XANL 0
+GAME red/carry/instances/stealonce_both_n45.pg stealonce_both_n45.pg n 45 T 4 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 3 XANL 0
+GAME red/carry/instances/stealonce_core_n76.pg stealonce_core_n76.pg n 76 T 4 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 3 XANL 0
+GAME red/carry/instances/tstep_near_n20.pg tstep_near_n20.pg n 20 T 5 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 4 XANL 0
+GAME red/ctxp/instances/deep1_n21.pg deep1_n21.pg n 21 T 3 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME red/carry/instances/stealer_viol_n76.pg stealer_viol_n76.pg n 76 T 12 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 10 XANL 0
+GAME red/carry/instances/stealonce_viol_n76.pg stealonce_viol_n76.pg n 76 T 12 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 10 XANL 0
+GAME red/ctxp/instances/deep1_n13.pg deep1_n13.pg n 13 T 1 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/ctxp/instances/margin1_mc1.pg margin1_mc1.pg n 80 T 10 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 2 XANL 0
+GAME red/ctxp/instances/margin1_mc5.pg margin1_mc5.pg n 50 T 12 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 2 XA 2 XB 0 LAMCH 3 XANL 0
+GAME red/dtl/instances/lalg_dtl_restart8_n20.pg lalg_dtl_restart8_n20.pg n 20 T 5 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 1 XANL 0
+GAME red/ctxp/instances/margin1_n20.pg margin1_n20.pg n 20 T 5 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 3 XANL 0
+GAME red/fbr/instances/bghm_k1_gap6_A.pg bghm_k1_gap6_A.pg n 21 T 1 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME red/dtl/instances/lalg_dtl_pertop31_n18.pg lalg_dtl_pertop31_n18.pg n 18 T 2 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME red/fbr/instances/bghm_k3_gap4_A.pg bghm_k3_gap4_A.pg n 45 T 1 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME red/fbr/instances/fr39_q4_n48.pg fr39_q4_n48.pg n 48 T 36 LMAX 32 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 2 XANL 0
+GAME red/fbr/instances/lev56_n48.pg lev56_n48.pg n 48 T 86 LMAX 15 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 7 XANL 0
+GAME red/fbr/instances/lev74_n40.pg lev74_n40.pg n 40 T 18 LMAX 3 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME red/fbr/instances/rho144_n32.pg rho144_n32.pg n 32 T 9 LMAX 2 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 3 XANL 0
+GAME red/fbr/instances/rho84_n16.pg rho84_n16.pg n 16 T 5 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 1 XANL 0
+GAME red/fbr/instances/rho3_253_n32.pg rho3_253_n32.pg n 32 T 11 LMAX 4 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 5 XANL 0
+GAME red/fbr/instances/rho666_n48.pg rho666_n48.pg n 48 T 16 LMAX 7 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 2 XA 2 XB 0 LAMCH 3 XANL 0
+GAME red/fbr/instances/sat4_n20.pg sat4_n20.pg n 20 T 6 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 2 XA 2 XB 0 LAMCH 5 XANL 0
+GAME red/fbr/instances/sat68_n20.pg sat68_n20.pg n 20 T 5 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 3 XANL 0
+GAME red/fbx/instances/exsw_loop_n15.pg exsw_loop_n15.pg n 15 T 1 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME red/frz/instances/fbcap_eq_u4_n11.pg fbcap_eq_u4_n11.pg n 11 T 6 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 4 XANL 0
+GAME red/fbr/instances/twowave_L16.pg twowave_L16.pg n 22 T 15 LMAX 15 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/fbr/instances/nep80_n40.pg nep80_n40.pg n 40 T 22 LMAX 4 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 3 XANL 0
+GAME red/h3/instances/frzgap0_n4.pg frzgap0_n4.pg n 4 T 1 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/frz/instances/fx2_n11.pg fx2_n11.pg n 11 T 9 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 2 XANL 0
+GAME red/h3/instances/frzgap0_n6.pg frzgap0_n6.pg n 6 T 3 LMAX 2 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/fbx/instances/kt6_n58.pg kt6_n58.pg n 58 T 38 LMAX 18 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 9 XANL 0
+GAME red/h3/instances/lcount2_n23.pg red/h3/instances/lcount2_n23.start lcount2_n23.pg n 23 T 6 LMAX 3 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME red/h3/instances/lcount_n23.pg red/h3/instances/lcount_n23.start lcount_n23.pg n 23 T 5 LMAX 4 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 1 XANL 0
+GAME red/h3/instances/offret_l19_n24.pg offret_l19_n24.pg n 24 T 3 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 2 XA 1 XB 0 LAMCH 2 XANL 0
+GAME red/kl/instances/klcount_n18_base.pg klcount_n18_base.pg n 18 T 6 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 2 XA 2 XB 0 LAMCH 3 XANL 0
+GAME red/h3/instances/xsnpre36_n48.pg xsnpre36_n48.pg n 48 T 33 LMAX 30 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 3 XANL 0
+GAME red/kl/instances/klglobal_n16.pg klglobal_n16.pg n 16 T 6 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 2 XA 2 XB 0 LAMCH 2 XANL 0
+GAME red/kl/instances/klcount_n18_lvl.pg klcount_n18_lvl.pg n 18 T 6 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 2 XA 2 XB 0 LAMCH 3 XANL 0
+GAME red/kl/instances/klglobal_n18_lvl.pg klglobal_n18_lvl.pg n 18 T 6 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 2 XA 2 XB 0 LAMCH 2 XANL 0
+GAME red/kl/instances/klmin_n13.pg klmin_n13.pg n 13 T 3 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME red/kl/instances/r2climb_h13.pg r2climb_h13.pg n 13 T 4 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 2 XANL 0
+GAME red/kl/instances/klcount_n16.pg klcount_n16.pg n 16 T 6 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 2 XA 2 XB 0 LAMCH 3 XANL 0
+GAME red/kl/instances/klglobal_n20_lvl2.pg klglobal_n20_lvl2.pg n 20 T 6 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 2 XA 2 XB 0 LAMCH 2 XANL 0
+GAME red/kl/instances/r2lap_best_n22.pg r2lap_best_n22.pg n 22 T 5 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 2 XA 2 XB 0 LAMCH 4 XANL 0
+GAME red/kl/instances/r2join_h0E_n14.pg r2join_h0E_n14.pg n 14 T 3 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME red/kl/instances/r2crawl_n14.pg r2crawl_n14.pg n 14 T 5 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 3 XANL 0
+GAME red/kl24/instances/HL88_0.pg HL88_0.pg n 41 T 3 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME red/kl24/instances/HL88_1.pg HL88_1.pg n 43 T 3 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME red/kl24/instances/HL88_2.pg HL88_2.pg n 45 T 3 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME red/kl24/instances/HLg_0.pg HLg_0.pg n 29 T 3 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME red/kl24/instances/HL88_3.pg HL88_3.pg n 47 T 3 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME red/kl24/instances/HLg_2.pg HLg_2.pg n 45 T 3 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME red/kl24/instances/HLg_3.pg HLg_3.pg n 55 T 3 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME red/kw/instances/frzu_tight_n14.pg frzu_tight_n14.pg n 14 T 4 LMAX 2 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME red/kw/instances/cw11_n24.pg cw11_n24.pg n 24 T 17 LMAX 4 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 2 XANL 0
+GAME red/kl24/instances/HLg_1.pg HLg_1.pg n 35 T 3 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME red/kw/instances/kc18_n24.pg kc18_n24.pg n 24 T 23 LMAX 18 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 3 XANL 0
+GAME red/lag/instances/depth2_n39.pg depth2_n39.pg n 39 T 3 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME red/lag/instances/fam_D12_n106.pg fam_D12_n106.pg n 106 T 1 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME red/lag/instances/depth3_n46.pg depth3_n46.pg n 46 T 3 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME red/lag/instances/depth4_n53.pg depth4_n53.pg n 53 T 4 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME red/lag/instances/fam_D4_n50.pg fam_D4_n50.pg n 50 T 1 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME red/mei/instances/mei_h2.pg mei_h2.pg n 19 T 1 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/lag/instances/fam_D8_n78.pg fam_D8_n78.pg n 78 T 1 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME red/mei/instances/mei_h3.pg mei_h3.pg n 27 T 2 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/mei/instances/mei_h4.pg mei_h4.pg n 35 T 3 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/mei/instances/mei_h5.pg mei_h5.pg n 43 T 4 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/mei/instances/mei_h6.pg mei_h6.pg n 51 T 5 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/mei/instances/mei_h8.pg mei_h8.pg n 67 T 7 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/n3/instances/lagx10_n40.pg red/n3/instances/lagx10_n40.start lagx10_n40.pg n 40 T 17 LMAX 11 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 3 XANL 0
+GAME red/n3/instances/lag11_n40.pg red/n3/instances/lag11_n40.start lag11_n40.pg n 40 T 23 LMAX 14 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 4 XANL 0
+GAME red/n3/instances/core41_n40.pg red/n3/instances/core41_n40.start core41_n40.pg n 40 T 42 LMAX 7 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/n3/instances/n3cov_lean.pg red/n3/instances/n3cov_lean.start n3cov_lean.pg n 48 T 35 LMAX 30 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 0 XB 1 LAMCH 5 XANL 0
+GAME red/n3/instances/n3cov_phi.pg red/n3/instances/n3cov_phi.start n3cov_phi.pg n 32 T 31 LMAX 9 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 3 XANL 0
+GAME red/n3/instances/long90_k2_n40.pg red/n3/instances/long90_k2_n40.start long90_k2_n40.pg n 40 T 92 LMAX 13 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME red/n3/instances/long121_n40.pg red/n3/instances/long121_n40.start long121_n40.pg n 40 T 122 LMAX 17 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME red/n3/instances/comp54_n80.pg red/n3/instances/comp54_n80.start comp54_n80.pg n 80 T 55 LMAX 12 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/n5/instances/dl_4_4.pg red/n5/instances/dl_4_4.start dl_4_4.pg n 42 T 8 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/n3/instances/run49_n32.pg red/n3/instances/run49_n32.start run49_n32.pg n 32 T 51 LMAX 49 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME red/n5/instances/dlm2_4.pg red/n5/instances/dlm2_4.start dlm2_4.pg n 42 T 8 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/n3/instances/run34_n40.pg red/n3/instances/run34_n40.start run34_n40.pg n 40 T 51 LMAX 32 XCN_TR 1 XCN_V 1 XCN_RUN_ALL 2 XA 2 XB 0 LAMCH 4 XANL 0
+GAME red/n5/instances/sym_h12_s1.pg sym_h12_s1.pg n 24 T 34 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 2 XA 2 XB 0 LAMCH 14 XANL 0
+GAME red/n5/instances/sym_h8_s1.pg sym_h8_s1.pg n 16 T 25 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 8 XANL 0
+GAME red/n5inj/instances/block_bk20.pg block_bk20.pg n 24 T 27 LMAX 9 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 10 XANL 0
+GAME red/n3/instances/ret22_n40.pg red/n3/instances/ret22_n40.start ret22_n40.pg n 40 T 94 LMAX 19 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 2 XA 2 XB 0 LAMCH 4 XANL 0
+GAME red/n5inj/instances/blockph_bp20.pg blockph_bp20.pg n 24 T 25 LMAX 19 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 3 XANL 0
+GAME red/n5inj/instances/blockph_bp32.pg blockph_bp32.pg n 36 T 39 LMAX 30 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 9 XANL 0
+GAME red/n5/instances/sym_h16_s1.pg sym_h16_s1.pg n 32 T 55 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 17 XANL 0
+GAME red/n5/instances/dl_6_8.pg red/n5/instances/dl_6_8.start dl_6_8.pg n 110 T 14 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/n5inj/instances/block_bk32.pg block_bk32.pg n 36 T 49 LMAX 21 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 28 XANL 0
+GAME red/n5inj/instances/bribe_cex_n15.pg bribe_cex_n15.pg n 15 T 1 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 1 XANL 0
+GAME red/n5inj/instances/frz24.pg red/n5inj/instances/frz24.start frz24.pg n 24 T 39 LMAX 7 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 10 XANL 0
+GAME red/n5inj/instances/frz32.pg red/n5inj/instances/frz32.start frz32.pg n 32 T 66 LMAX 12 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 9 XANL 0
+GAME red/n5inj/instances/phase2_pk32.pg phase2_pk32.pg n 32 T 56 LMAX 19 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 4 XANL 0
+GAME red/n5inj/instances/frz40.pg red/n5inj/instances/frz40.start frz40.pg n 40 T 90 LMAX 18 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 19 XANL 0
+GAME red/n5inj/instances/elimn_cex_n48.pg elimn_cex_n48.pg n 48 T 92 LMAX 14 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME red/n5inj/instances/phase2_pk48.pg phase2_pk48.pg n 48 T 72 LMAX 12 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 10 XANL 0
+GAME red/n5inj/instances/returns_ph64.pg returns_ph64.pg n 64 T 105 LMAX 16 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME red/n5inj/instances/returns_rt32.pg returns_rt32.pg n 32 T 57 LMAX 18 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 4 XANL 0
+GAME red/n5inj/instances/returns_rt48.pg returns_rt48.pg n 48 T 80 LMAX 15 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME red/n5inj/instances/theta_thc24.pg theta_thc24.pg n 24 T 29 LMAX 12 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 12 XANL 0
+GAME red/n5inj/instances/theta_thf16.pg theta_thf16.pg n 16 T 20 LMAX 12 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME red/n5inj/instances/theta_tp32.pg theta_tp32.pg n 32 T 45 LMAX 25 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 3 XANL 0
+GAME red/nest16/instances/k4L72_n101.pg k4L72_n101.pg n 101 T 6 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/n5inj/instances/theta_tp40.pg theta_tp40.pg n 40 T 41 LMAX 20 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 4 XANL 0
+GAME red/nest16/instances/k4g50_n101.pg k4g50_n101.pg n 101 T 5 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/n5inj/instances/wide_h16.pg wide_h16.pg n 32 T 44 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 3 XA 3 XB 0 LAMCH 7 XANL 0
+GAME red/n5inj/instances/returns_rt64.pg returns_rt64.pg n 64 T 90 LMAX 17 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME red/nest16/instances/k4L72r_n101.pg k4L72r_n101.pg n 101 T 6 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/nest16/instances/k4u_n101.pg k4u_n101.pg n 101 T 3 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/nest16/instances/k4y1_n82.pg k4y1_n82.pg n 82 T 5 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/nest16/instances/k4seed_vr_n87.pg k4seed_vr_n87.pg n 87 T 3 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/nest16/instances/k4seed_c1_n82.pg k4seed_c1_n82.pg n 82 T 3 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/nest16/instances/nest4u_n46.pg nest4u_n46.pg n 46 T 2 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/nest16/instances/nest5_n49.pg nest5_n49.pg n 49 T 3 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/nest16/instances/near4_n26.pg near4_n26.pg n 26 T 2 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/nest16/instances/nest6_n75.pg nest6_n75.pg n 75 T 3 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/nest16/instances/k4y2_n87.pg k4y2_n87.pg n 87 T 6 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/nest16/instances/nest4uu_n51.pg nest4uu_n51.pg n 51 T 2 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/nest16/instances/nest6min_n75.pg nest6min_n75.pg n 75 T 3 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/nest16/instances/win3_n27.pg win3_n27.pg n 27 T 2 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/nest16/instances/nest6x_n75.pg nest6x_n75.pg n 75 T 5 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/nest16/instances/oseg_n26.pg oseg_n26.pg n 26 T 3 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/nopre/instances/nopre_viol_n20.pg nopre_viol_n20.pg n 20 T 3 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 3 XANL 0
+GAME red/o1/instances/ph45_n32.pg ph45_n32.pg n 32 T 21 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 20 XANL 0
+GAME red/o1/instances/ph50_n32.pg ph50_n32.pg n 32 T 32 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 3 XA 2 XB 1 LAMCH 30 XANL 0
+GAME red/nest16/instances/w1_n27.pg w1_n27.pg n 27 T 2 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/o1/instances/iter118_n48.pg iter118_n48.pg n 48 T 18 LMAX 12 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 5 XANL 0
+GAME red/o1/instances/f39_n48.pg f39_n48.pg n 48 T 38 LMAX 33 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 4 XANL 0
+GAME red/rec0/instances/fbd0_n4.pg fbd0_n4.pg n 4 T 0 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/rec0/instances/n0_6_n24.pg n0_6_n24.pg n 24 T 3 LMAX 1 XCN_TR 1 XCN_V 1 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 3 XANL 0
+GAME red/rec0/instances/lend2_30_n48.pg lend2_30_n48.pg n 48 T 25 LMAX 13 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 9 XANL 0
+GAME red/rec0/instances/nep24_n20.pg nep24_n20.pg n 20 T 15 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME red/rec0/instances/nep87_n40.pg nep87_n40.pg n 40 T 25 LMAX 8 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 3 XANL 0
+GAME red/sgrow/instances/s20_n20.pg s20_n20.pg n 20 T 8 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME red/rec0/instances/nep90_n40.pg nep90_n40.pg n 40 T 23 LMAX 8 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 3 XANL 0
+GAME red/sgrow/instances/s29_n30.pg s29_n30.pg n 30 T 7 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 3 XANL 0
+GAME red/o1/instances/tau18_n24.pg tau18_n24.pg n 24 T 12 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 11 XANL 0
+GAME red/sgrow/instances/s32_n60.pg s32_n60.pg n 60 T 8 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 7 XANL 0
+GAME red/sgrow/instances/s34_oink_n40.pg s34_oink_n40.pg n 40 T 5 LMAX 2 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME red/sgrow/instances/s35_oink_n80.pg s35_oink_n80.pg n 80 T 5 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME red/sgrow/instances/s34_oink_n80.pg s34_oink_n80.pg n 80 T 8 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 3 XANL 0
+GAME red/sgrow/instances/s36_oink_n60.pg s36_oink_n60.pg n 60 T 5 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME red/so/instances/beta2_n11.pg beta2_n11.pg n 11 T 4 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME red/sgrow/instances/s21_oink_n20.pg s21_oink_n20.pg n 20 T 8 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME red/so/instances/epsseg_cex_n16.pg epsseg_cex_n16.pg n 16 T 11 LMAX 6 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME red/so/instances/exitr_cex_n16.pg exitr_cex_n16.pg n 16 T 10 LMAX 7 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME red/so/instances/farrise25_n32.pg farrise25_n32.pg n 32 T 35 LMAX 3 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 6 XANL 0
+GAME red/so/instances/mn_abs74_n48.pg mn_abs74_n48.pg n 48 T 22 LMAX 4 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 8 XANL 0
+GAME red/so/instances/exitr_cex_n48.pg exitr_cex_n48.pg n 48 T 22 LMAX 3 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 3 XANL 0
+GAME red/so/instances/epsseg_cex_n48.pg epsseg_cex_n48.pg n 48 T 26 LMAX 4 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 7 XANL 0
+GAME red/so/instances/nleq33_n48.pg nleq33_n48.pg n 48 T 40 LMAX 33 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 6 XANL 0
+GAME red/so/instances/njb_reabs54_n32.pg njb_reabs54_n32.pg n 32 T 40 LMAX 4 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 7 XANL 0
+GAME red/so/instances/nleq_cex_n48.pg nleq_cex_n48.pg n 48 T 10 LMAX 2 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 5 XANL 0
+GAME red/so/instances/pftheta34_n32.pg pftheta34_n32.pg n 32 T 39 LMAX 34 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 4 XANL 0
+GAME red/so/instances/njb_reabs65_n48.pg njb_reabs65_n48.pg n 48 T 70 LMAX 19 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 4 XANL 0
+GAME red/so/instances/pftheta_cex_n32.pg pftheta_cex_n32.pg n 32 T 38 LMAX 34 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 3 XANL 0
+GAME red/so/instances/pft35_n48.pg pft35_n48.pg n 48 T 41 LMAX 35 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME red/so/instances/post31_n48.pg post31_n48.pg n 48 T 36 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 5 XANL 0
+GAME red/so/instances/pft40_n40.pg pft40_n40.pg n 40 T 54 LMAX 27 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 7 XANL 0
+GAME red/so/instances/rise_fb38_n48.pg rise_fb38_n48.pg n 48 T 53 LMAX 4 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 6 XANL 0
+GAME red/so/instances/s4c8_n13.pg s4c8_n13.pg n 13 T 12 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME red/so/instances/so_k2_n32.pg so_k2_n32.pg n 32 T 20 LMAX 5 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 2 XA 2 XB 0 LAMCH 6 XANL 0
+GAME red/so/instances/so_sor5_n24.pg so_sor5_n24.pg n 24 T 23 LMAX 21 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/so/instances/so_j19_n48.pg so_j19_n48.pg n 48 T 25 LMAX 20 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 4 XANL 0
+GAME red/so/instances/rise_thin51_n40.pg rise_thin51_n40.pg n 40 T 78 LMAX 13 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 8 XANL 0
+GAME red/so/instances/so_th_n32.pg so_th_n32.pg n 32 T 36 LMAX 21 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 2 XANL 0
+GAME red/so/instances/so_tie15_n32.pg so_tie15_n32.pg n 32 T 20 LMAX 19 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME red/so/instances/so_sorl_n32.pg so_sorl_n32.pg n 32 T 22 LMAX 22 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/so/instances/so_tie13_n24.pg so_tie13_n24.pg n 24 T 16 LMAX 16 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/so/instances/tev_cex_n40.pg tev_cex_n40.pg n 40 T 27 LMAX 5 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 4 XANL 0
+GAME red/so/instances/tevlast7_n32.pg tevlast7_n32.pg n 32 T 41 LMAX 29 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 4 XANL 0
+GAME red/so/instances/tevlast_cex_n40.pg tevlast_cex_n40.pg n 40 T 11 LMAX 5 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 4 XANL 0
+GAME red/so/instances/tevlast11_n40.pg tevlast11_n40.pg n 40 T 36 LMAX 30 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 4 XANL 0
+GAME red/so/instances/xrun8_n10.pg xrun8_n10.pg n 10 T 11 LMAX 7 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME red/so/instances/tog6a_n32.pg tog6a_n32.pg n 32 T 10 LMAX 5 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 3 XANL 0
+GAME red/so/instances/tog6b_n32.pg tog6b_n32.pg n 32 T 8 LMAX 6 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME red/so/instances/xsn29_n32.pg xsn29_n32.pg n 32 T 29 LMAX 29 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/so/instances/xrun21_n24.pg xrun21_n24.pg n 24 T 24 LMAX 21 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME red/so/instances/xsnf52_n64.pg xsnf52_n64.pg n 64 T 55 LMAX 52 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME red/so/instances/xsn43_n48.pg xsn43_n48.pg n 48 T 45 LMAX 43 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 2 XANL 0
+GAME red/so/instances/xsnf42_n48.pg xsnf42_n48.pg n 48 T 44 LMAX 42 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME red/tcpert/instances/leanT_N12.pg leanT_N12.pg n 96 T 13 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 7 XANL 0
+GAME red/so/instances/xsn91_n48.pg xsn91_n48.pg n 48 T 115 LMAX 25 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 3 XANL 0
+GAME red/tcpert/instances/leanT_N16.pg leanT_N16.pg n 128 T 16 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 6 XANL 0
+GAME red/tcpert/instances/leanT_N6.pg leanT_N6.pg n 48 T 6 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 5 XANL 0
+GAME red/tcpert/instances/leanT_N8.pg leanT_N8.pg n 64 T 8 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 5 XANL 0
+GAME red/tcpert/instances/leanT_N24.pg leanT_N24.pg n 192 T 25 LMAX 3 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 9 XANL 0
+GAME red/tcpert/instances/tcL_N3.pg tcL_N3.pg n 42 T 7 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 3 XANL 0
+GAME red/tcpert/instances/tcL_N4.pg tcL_N4.pg n 68 T 16 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 7 XANL 0
+GAME red/tcpert/instances/tcL_N10.pg tcL_N10.pg n 350 T 27 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 10 XANL 0
+GAME red/tcpert/instances/tcL_N5.pg tcL_N5.pg n 100 T 19 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 7 XANL 0
+GAME red/tcpert/instances/tcL_N6.pg tcL_N6.pg n 138 T 18 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 8 XANL 0
+GAME red/tcpert/instances/tcR4_N4.pg tcR4_N4.pg n 68 T 12 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 4 XANL 0
+GAME red/tcpert/instances/tcR4_N5.pg tcR4_N5.pg n 100 T 14 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 5 XANL 0
+GAME red/tcpert/instances/tcR4_N6.pg tcR4_N6.pg n 138 T 22 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 9 XANL 0
+GAME red/tcpert/instances/tcL_N8.pg tcL_N8.pg n 232 T 30 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 9 XANL 0
+GAME red/tcpert/instances/leanT_N32.pg leanT_N32.pg n 256 T 33 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 11 XANL 0
+GAME red/tcpert/instances/tcR4_N7.pg tcR4_N7.pg n 182 T 41 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 5 XANL 0
+GAME red/tcpert/instances/tcS8_N10.pg tcS8_N10.pg n 350 T 16 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 9 XANL 0
+GAME red/tcpert/instances/tcS8_N6.pg tcS8_N6.pg n 138 T 17 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 7 XANL 0
+GAME red/tcpert/instances/tcR4_N8.pg tcR4_N8.pg n 232 T 33 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 8 XANL 0
+GAME red/tcpert/instances/tcS8_N7.pg tcS8_N7.pg n 182 T 14 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 7 XANL 0
+GAME red/tcpert/instances/tcS8_N8.pg tcS8_N8.pg n 232 T 10 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 7 XANL 0
+GAME red/tpp/instances/tpp_viol_n22.pg tpp_viol_n22.pg n 22 T 2 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/tcpert/instances/tcL_N12.pg tcL_N12.pg n 492 T 37 LMAX 2 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 12 XANL 0
+GAME red/tpp/instances/tpp_viol_n63.pg tpp_viol_n63.pg n 63 T 8 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 4 XANL 0
+GAME red/ul/instances/cxmig_k4_n54.pg red/ul/instances/cxmig_k4_n54.start cxmig_k4_n54.pg n 54 T 12 LMAX 12 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/tcpert/instances/tcS8_N11.pg tcS8_N11.pg n 418 T 20 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 10 XANL 0
+GAME red/ul/instances/cxmig_k8_n82.pg red/ul/instances/cxmig_k8_n82.start cxmig_k8_n82.pg n 82 T 16 LMAX 16 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/tcpert/instances/tcS8_N9.pg tcS8_N9.pg n 288 T 36 LMAX 2 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 8 XANL 0
+GAME red/ul/instances/ladderd0_k12_n48.pg red/ul/instances/ladderd0_k12_n48.start ladderd0_k12_n48.pg n 48 T 14 LMAX 14 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME red/ul/instances/ladderd0_k24_n84.pg red/ul/instances/ladderd0_k24_n84.start ladderd0_k24_n84.pg n 84 T 26 LMAX 26 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME red/ul/instances/cxmig_k16_n138.pg red/ul/instances/cxmig_k16_n138.start cxmig_k16_n138.pg n 138 T 24 LMAX 24 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/ul/instances/ladderent_k12_n48.pg red/ul/instances/ladderent_k12_n48.start ladderent_k12_n48.pg n 48 T 14 LMAX 14 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME red/ul/instances/reader_L10_n36.pg red/ul/instances/reader_L10_n36.start reader_L10_n36.pg n 36 T 13 LMAX 13 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME red/ul/instances/ladderent_k24_n84.pg red/ul/instances/ladderent_k24_n84.start ladderent_k24_n84.pg n 84 T 26 LMAX 26 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME red/ul/instances/reader_L20_n56.pg red/ul/instances/reader_L20_n56.start reader_L20_n56.pg n 56 T 23 LMAX 23 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME red/ul/instances/reader_L40_n96.pg red/ul/instances/reader_L40_n96.start reader_L40_n96.pg n 96 T 43 LMAX 43 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME red/usplit/instances/gate_K16_n197.pg red/usplit/instances/gate_K16_n197.start gate_K16_n197.pg n 197 T 23 LMAX 23 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/ul/instances/ladderd0_k48_n156.pg red/ul/instances/ladderd0_k48_n156.start ladderd0_k48_n156.pg n 156 T 50 LMAX 50 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME red/usplit/instances/grow_K12_n149.pg red/usplit/instances/grow_K12_n149.start grow_K12_n149.pg n 149 T 19 LMAX 19 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/usplit/instances/pairoc_n58.pg red/usplit/instances/pairoc_n58.start pairoc_n58.pg n 58 T 5 LMAX 5 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/usplit/instances/pp_K12_n161.pg red/usplit/instances/pp_K12_n161.start pp_K12_n161.pg n 161 T 19 LMAX 19 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/usplit/instances/pp_K12_n161_dual.pg pp_K12_n161_dual.pg n 161 T 20 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/ul/instances/ladderent_k48_n156.pg red/ul/instances/ladderent_k48_n156.start ladderent_k48_n156.pg n 156 T 50 LMAX 50 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME red/usplit/instances/grow_K40_n373.pg red/usplit/instances/grow_K40_n373.start grow_K40_n373.pg n 373 T 47 LMAX 47 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/usplit/instances/usplit_n14.pg red/usplit/instances/usplit_n14.start usplit_n14.pg n 14 T 3 LMAX 3 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/usplit/instances/usplit_n23.pg red/usplit/instances/usplit_n23.start usplit_n23.pg n 23 T 9 LMAX 9 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/usplit/instances/usplit_rd_n24.pg red/usplit/instances/usplit_rd_n24.start usplit_rd_n24.pg n 24 T 4 LMAX 4 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/usplit/instances/usplit_rd_s3_n27.pg usplit_rd_s3_n27.pg n 27 T 4 LMAX 4 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/usplit/instances/usplit_s3_n16.pg usplit_s3_n16.pg n 16 T 3 LMAX 3 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/xctx/instances/nest3_n20.pg nest3_n20.pg n 20 T 2 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/xctx/instances/nest3_n24.pg nest3_n24.pg n 24 T 2 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/xctx/instances/vrall_viol_n20.pg vrall_viol_n20.pg n 20 T 4 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/xctx/instances/xcov11_n20.pg xcov11_n20.pg n 20 T 2 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/xctx/instances/xctx_viol_n20.pg xctx_viol_n20.pg n 20 T 5 LMAX 0 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/xing/instances/fbref_cex_n32.pg fbref_cex_n32.pg n 32 T 56 LMAX 16 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 6 XANL 0
+GAME red/xing/instances/j10_n24.pg j10_n24.pg n 24 T 25 LMAX 15 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME red/xing/instances/j4_n40.pg j4_n40.pg n 40 T 106 LMAX 31 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 3 XANL 0
+GAME red/xing/instances/j5_n16.pg j5_n16.pg n 16 T 30 LMAX 11 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 5 XANL 0
+GAME red/usplit/instances/pp_K48_n449_dual.pg pp_K48_n449_dual.pg n 449 T 56 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/xing/instances/j7_n32.pg j7_n32.pg n 32 T 50 LMAX 23 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME red/usplit/instances/pp_K48_n449.pg red/usplit/instances/pp_K48_n449.start pp_K48_n449.pg n 449 T 55 LMAX 55 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/xing/instances/j8_n32.pg j8_n32.pg n 32 T 54 LMAX 21 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME red/xing/instances/j7_n48.pg j7_n48.pg n 48 T 78 LMAX 20 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME red/xing/instances/kw25_n32.pg kw25_n32.pg n 32 T 29 LMAX 25 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME red/xing/instances/kw_n16.pg kw_n16.pg n 16 T 12 LMAX 12 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/xing/instances/j8_n48.pg j8_n48.pg n 48 T 86 LMAX 20 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME red/xing/instances/kw_n48.pg kw_n48.pg n 48 T 40 LMAX 40 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/xing/instances/kw_n24.pg kw_n24.pg n 24 T 20 LMAX 20 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/xing/instances/obr_eq_n24.pg obr_eq_n24.pg n 24 T 7 LMAX 4 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 2 XANL 0
+GAME red/xing/instances/obr_n32.pg obr_n32.pg n 32 T 22 LMAX 15 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 4 XANL 0
+GAME red/xing/instances/u1t_cex_n32.pg u1t_cex_n32.pg n 32 T 12 LMAX 7 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 3 XANL 0
+GAME red/xing/instances/u23sw64_n32.pg u23sw64_n32.pg n 32 T 16 LMAX 8 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 3 XANL 0
+GAME red/xing/instances/u1t_own6_n32.pg u1t_own6_n32.pg n 32 T 9 LMAX 6 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME red/xing/instances/u2flat73_n32.pg u2flat73_n32.pg n 32 T 16 LMAX 3 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 7 XANL 0
+GAME red/xing/instances/x31_cu16.pg x31_cu16.pg n 16 T 23 LMAX 13 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME red/xing/instances/u2flat_n32.pg u2flat_n32.pg n 32 T 13 LMAX 2 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 6 XANL 0
+GAME red/xing/instances/x31_cu24.pg x31_cu24.pg n 24 T 22 LMAX 8 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 4 XANL 0
+GAME red/xing/instances/x31_cu32.pg x31_cu32.pg n 32 T 49 LMAX 21 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 8 XANL 0
+GAME red/xing/instances/x31_cu48.pg x31_cu48.pg n 48 T 46 LMAX 22 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 3 XANL 0
+GAME red/xing/instances/x31_cu32i.pg x31_cu32i.pg n 32 T 42 LMAX 21 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 3 XANL 0
+GAME red/xing/instances/x31_lem_e24.pg x31_lem_e24.pg n 24 T 54 LMAX 14 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 4 XANL 0
+GAME red/xing/instances/x31_nh_e24.pg x31_nh_e24.pg n 24 T 20 LMAX 20 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/xing/instances/x31_nh_r20.pg x31_nh_r20.pg n 20 T 15 LMAX 13 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 1 XANL 0
+GAME red/xing/instances/x31_re24.pg x31_re24.pg n 24 T 6 LMAX 4 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME red/xing/instances/x31_ru24.pg x31_ru24.pg n 24 T 7 LMAX 4 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME red/xing/instances/x31_rx32.pg x31_rx32.pg n 32 T 55 LMAX 22 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME red/xing/instances/x31_lem_t32.pg x31_lem_t32.pg n 32 T 65 LMAX 12 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 4 XANL 0
+GAME red/xing/instances/x32_nest40.pg x32_nest40.pg n 40 T 58 LMAX 26 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 1 XA 1 XB 0 LAMCH 4 XANL 0
+GAME red/xing/instances/x32_rand16.pg x32_rand16.pg n 16 T 15 LMAX 13 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME red/xing/instances/x32_rand24.pg x32_rand24.pg n 24 T 20 LMAX 20 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/xing/instances/x31_rx48.pg x31_rx48.pg n 48 T 53 LMAX 22 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 3 XANL 0
+GAME red/xing/instances/x32_rand48.pg x32_rand48.pg n 48 T 44 LMAX 44 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/xing/instances/x32_rand32.pg x32_rand32.pg n 32 T 29 LMAX 29 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/xing/instances/x32_rand64.pg x32_rand64.pg n 64 T 56 LMAX 55 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME red/xing/instances/x32_waves32.pg x32_waves32.pg n 32 T 81 LMAX 22 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 4 XANL 0
+GAME red/xing/instances/x32_waves48.pg x32_waves48.pg n 48 T 89 LMAX 26 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 4 XANL 0
+GAME si/root/instances/cone_n65.pg cone_n65.pg n 65 T 12 LMAX 2 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 5 XANL 0
+GAME si/root/instances/ueonce_n27.pg ueonce_n27.pg n 27 T 12 LMAX 10 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 1 XANL 0
+GAME si/root/instances/cone_n69.pg cone_n69.pg n 69 T 25 LMAX 1 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 2 XANL 0
+GAME red/usplit/instances/gate_K64_n581.pg red/usplit/instances/gate_K64_n581.start gate_K64_n581.pg n 581 T 71 LMAX 71 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
