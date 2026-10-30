@@ -811,3 +811,7 @@ python3 -I rund/quotecheck.py ../../docs/si/P-N5-CUT-box43.md | grep -q "quotes=
 python3 -I rund/quotecheck.py ../../docs/si/P-N5-CUT-box43.md --mut | grep -q "QUOTES FAIL"
 o=$(cd ../new && python3 -I box64/frozen.py ../si/odd/inst/hn/hntop_n3.pg --start --wrun | tail -1); grep -q "its-phases 13 .*'lw': 12.*'R': 0} FWR-viol 0" <<<"$o"
 echo "si (box 43: P-N5-CUT quotes, hntop_n3 R* 0): PASS"
+# box 44 (docs/si/N5-REPCH-box44.md): REPEAT cause chains have depth 1, plain-switch parents.
+o=$(python3 -I odd/repchain.py ../red/so/instances/so_th_n32.pg); grep -q "rep 2 silent 0 parF 0 parR 0 parS 2 maxdepth 1 LDEC_V 2 late 6" <<<"$o"
+o=$(python3 -I odd/repchain.py ../new/box59/out/fc_8.pg); grep -q "rep 6 silent 0 parF 0 parR 0 parS 6 maxdepth 1 LDEC_V 0 late 30" <<<"$o"
+echo "si (box 44: repeat cause chains): PASS"
