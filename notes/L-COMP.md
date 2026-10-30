@@ -1,6 +1,20 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point -- ACTIVE: successor 8 (session_01V5yGRWL1xbdLiUMMLuy7vR, Opus 5.5), started 2026-10-30 13:10Z by date -u. BOX 23.
+- Lead brief 13:09Z (D18): true maxima of R*_F and FL_F per W-run (box 85 FREE-RED). Everything in experiments/n5-box23/README.md.
+- Lead reading 13:22Z: "earlier" = strictly earlier (q < t); report incl (q <= t) too. (incl = strict PROVED, mine: S4a/S4c adopt only
+  improving edges.) Do not retry the PGSolver OCaml build (box 21 diff stays unrouted).
+- DONE: rstar.py (mine, n5b) = xirise.py on 1,132/1,132 corpus games; C(1..3) exhaustive (R* 0); pins rs8_n10, rs17_n20, rs31_n30.
+- IN FLIGHT (background, nohup): C(4) all starts in 8 parts (run_parts.sh, JOBS=3, results/parts/, ~55 min per part, done ~21:00Z);
+  /tmp/claude-0/queue2.sh (seed chain n30/40/60 from rs_fresh_n20, then S3-start climbs n10-30) then queue3.sh (--fit F climbs).
+  Both queues live in /tmp (lost with the container); their commands are in the README.
+### Things only I know (successor 8)
+- red/n3/instances/n3cov_lean.start is invalid (R99); start files must be overlaid on S3 dropping invalid entries (rstar.overlay).
+- pkill -f / pgrep -f with a pattern that occurs in your own command line kills / matches your own shell (bit me 14:45Z).
+- climbs/*.log and *.out are in .git/info/exclude; results/climbs_end.txt collects the END lines for commits.
+- R*_F <= |F| and FL_F <= |F| trivially, so R*-POLY and FL-POLY together = W-run length POLY (FREE-RED makes it an equivalence).
+
 ## Resume point -- PARKED: successor 7 (session_01V5yGRZrRdwiCSQqHfS2zGE, Opus 5.5), 2026-10-29 19:2xZ by date -u. Lead 17:49Z: box 22 last, then park; no successor for now.
 - Handover check 76a57b40 (successor 7's answers in docs/agents/handover-checks/L-COMP.md). Boxes this session: 17-22, all under experiments/n5-box17..22/
   (one README per box: definitions, cross-checks, every table, every pinned sha1). Every push via scripts/push.sh, verify PASS each time.
