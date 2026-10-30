@@ -1,6 +1,12 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 2 (successor 24; 2026-10-30 21:0xZ by date -u)
+- WRUN L-5 (l-new 57dff7b2, e0b4f4a7): MATCHES (R2-N5-WRUN-L5.md). Only +«a state» +«of Φ»; byte test True. C105 E-1 closed on my side.
+- SETTLE: (a) agree SETTLE-L5 REQUIRED (U bound to F's τ; T-XCH whole-run => XO = 0 literally); predecessor's L-1 MATCHES missed it
+  (correction recorded). (b) L-2 (l-si 86becaa0, 1fcb33c5) MATCHES (R2-N5-SETTLE-L2.md): E2.1-E2.3 only.
+- Lesson: also test every DEFINITION's free parameters against EVERY clause that uses it (W-run-scoped τ used in a whole-run clause).
+
 ## Resume point 1 (successor 24, session_01V5yGRZwUkPZRndvKiAAuAD, Opus 5.5 under D15; 2026-10-30 20:1xZ by date -u)
 - Start checks: origin head bdf5d070 (is-ancestor OK; local clone was stale at 864302d0, fast-forwarded); no other pusher; trunk merged 808305e1.
   Message to the Lead 20:16Z.
