@@ -433,4 +433,10 @@ if grep -q "WAITS-RAND n 8 trials 300 seed 1 totals {'viol': 0, 'e0ret': 0, 'dea
 else
   echo "box 84 WAIT check: FAILED"; exit 1
 fi
+w36=$(cd .. && python3 -I new/box85/freeclass.py red/so/instances/pftheta34_n32.pg | tail -1; python3 -I new/box85/xirise.py new/box52/out/topfix_n6.pg | tail -1)
+if grep -q "FREECLASS n 32 mE 80 runs 1 totals {'REG': 26, 'E0': 0, 'FREE': 16, 'sw': 74, 'bound_viol': 0, 'F-LAT': 13, 'F-paidW': 16, 'F-TT': 0, 'F-GAP': 1, 'F-NT': 2}" <<<"$w36" && grep -q "XIRISE n 126 runs 2 {'ret': 80, 'viol_edge': 0, 'viol_rise': 0, 'viol_fr': 0} maxima {'ret': 9, 'xich': 20, 'wch': 20, 'rstar': 0, 'fl': 0, 'F': 34}" <<<"$w36"; then
+  echo "box 85 FREE: FREE classes on pftheta34_n32; RET-XIRISE and FREE-RED 0 violations on topfix_n6: PASS"
+else
+  echo "box 85 FREE check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
