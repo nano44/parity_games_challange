@@ -72,3 +72,12 @@ or report the obstruction." Written 2026-10-30 from 06:35Z (date -u). Labels: DE
      only by (edge, W-change) tokens, which puts them back in the circle. An Odd, never-switching target fails the same way.
   3. DATA: on this family, box 50 §5's LDEC reading fails (LDEC_V 98) and the window DAG has INDEG 2.
 - NEEDS: none from the owner.
+
+## Addendum (Lead 05:49Z ask, written 06:40Z): Oink check of L-SI's box-51 TIED-RB kill
+- Instance: l-si b63f2554 experiments/si/odd/inst/si51/tiedmut_so_th_n32_11.pg (sha1 4ce2df5704937437f9f8617ab580b85053c35aba), .start
+  (sha1 c3430f635c928e59a84e75423d9bf75867164f02), n 32.
+- n5b SPEC: 34 iterations, 0 fallbacks. Its solution checked by experiments/new/check_sol2.py: "zielonka(oink zlk) OK strategies
+  verified".
+- seg/xeng.py: n5b = n5.py state by state (identical; 34 iterations, 0 fallbacks). Both engines therefore end in the same solution.
+- tree/tiedc.py (second counter): 15 W-runs, 1 REPEAT, untied and re-blocked (vertex 0 -> 10, k 11, u 14). This agrees with box 51.
+- So L-SI's kill and R131's family are two independent TIED-RB kills: box 51 is one REPEAT at n 32; R131 is Θ(n²) per W-run.
