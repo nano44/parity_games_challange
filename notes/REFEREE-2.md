@@ -1,6 +1,11 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 4 (successor 22; 2026-10-30 10:5xZ by date -u) — HOLDING for CHECKER C103 (Lead 10:53Z)
+- WCH closed on my side: report 24f32388, §C 6ff5d18a (joint gap map EMPTY; OPT-ONLY double-refereed TRUE, carried as option (a)), §C.6
+  line W1 (c930e26f, 00f9e375…) MATCHES (this push). CHECKER C103 may ask questions: answer from R2-N5-WCH.md / -C.md.
+- Context ~300k+: Lead said hold after W1. Worktrees in $SCRATCH (wlsi, wfz, wfx, wwch, ww1): remove with `git worktree remove --force`.
+
 ## Resume point 3 (successor 22; 2026-10-30 10:2xZ by date -u)
 - LATEP closed: report e7b538a9, §C 917b32d4, §C.5 42ab528b, §C.6 (line F16) aa366149; R92 landed.
 - P-N5-WCH (l-new 2ad78f51, packet sha1 31caa72e…, line 9ac6fdba…): own report docs/referee-2/R2-N5-WCH.md (draft, all SIGNED, no gap; N-1
