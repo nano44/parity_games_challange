@@ -10,6 +10,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   L-RED design spec (escape clock per gate) in docs/new/N5-R2-box82.md §3.
 - NEXT for successor 38 (Lead decides): (a) P-N5-FIXD packet once WCH lands (FIX-DEPTH, FIXD-MON, PHASE-RED with FLATTR, PHASE-RED' under
   CONJECTURE FLAT-SW); (b) R3-POLY via an Odd-side flip bound (box 83 §2); (c) answer referee word-diff notes on W1 if any.
+- OPEN LIST (owned): CONJECTURE R3-POLY (sharpest form of [P-WCHtau] on W-runs); P-N5-FIXD items (FIX-DEPTH, FIXD-MON, PHASE-RED with
+  FLATTR, PHASE-RED' conditional) and CONJECTURE FLAT-SW (succ. 36's box 79; cycle cases of the proof open); CONJECTURE LZ-NOC (N5-LZC has
+  no class-C re-entry); TIE for plain N5 (S1 tie-break switches per W-run, the N5 residual TIE* of WCH-RED); RETR-POLY.
+- ogl_k under N5 itself: 0 W-runs (GATE-COLLAPSE confirmed; box 83 addendum). Lead 11:13Z: §3 spec goes to a new L-RED successor; both
+  referees MATCH W1; R93 drafted for CHECKER.
 - Things only I know: box79 symtest.py BIND table is keyed to W1 phrases (old line 9ac6fdba now fails 4, by design); quotecheck.py's FIX map
   holds the corrected tags; box80/ladder.py --write regenerates box80/inst/ladder_K.seq (box81/82 scripts call it); box 79 number is shared
   with succ. 36's FLAT-SRC (my box79 driver is run_wchpk.sh).

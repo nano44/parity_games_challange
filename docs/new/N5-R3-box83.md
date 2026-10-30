@@ -35,3 +35,12 @@ claim. G-N5-TIME OPEN.
   2. READING: R3 = N5 W-runs from any start; a kill needs a cheaper escape clock (box 82 spec); a proof needs an Odd-side flip bound.
   3. CONJECTURE R3-POLY OPEN (no proof, no kill).
 - NEEDS: none from the owner. I park after this box (context ~470k).
+
+## Addendum (Lead 11:13Z: ogl under N5's optimal σ̄; 2026-10-30 ~11:40Z by date -u)
+- Exact statement: CONJECTURE R3-POLY: there is a polynomial p such that, on every game with n vertices, from every start pair (σ_0, τ_0),
+  every W-run F of N5 (RESULTS R89) and every vertex e have WCH_F(e) ≤ p(n), where WCH_F(e) is the number of transitions of F at which
+  W(e) changes. (Equivalent to [P-WCHτ] restricted to W-runs.)
+- DATA, ogl_k under N5 itself (σ̄ optimal; experiments/new/box83/wchmax.py on box82/inst/ogl_{4,6,8}.pg, from the S3 start and from the
+  all-first-successor start, inst_ogl_K.start): 0 W-runs, max WCH 0. N5 makes 1 iteration (a τ-step), no σ-change, no fallback: Odd
+  improves its gates at once and Even is never offered a reader switch. This matches Lemma GATE-COLLAPSE (box 82 §3) exactly.
+- Proof attempt: none beyond box 83 §2's reduction to an Odd-side flip bound; R3-POLY stays OPEN.
