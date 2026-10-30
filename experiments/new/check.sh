@@ -397,9 +397,9 @@ if grep -q "RETWCH tog6b_n32.pg n 32 wruns 1 {'returns': 4, 'paid-W': 3, 'paid-t
 else
   echo "box 78 RETWCH check: FAILED"; exit 1
 fi
-w30=$(cd .. && python3 -I new/box79/wchpk.py red/so/instances/tog6b_n32.pg; python3 -I new/box79/wchpk.py red/so/instances/tog6b_n32.pg --lzc; python3 -I new/box79/symtest.py ../docs/new/P-N5-WCH-box79-line.txt | tail -1)
-if grep -q "WCHPK tog6b_n32.pg n 32 wruns 1 {'returns': 4, 'paid-W': 3, 'TT': 1, 'TIE': 2} " <<<"$w30" && grep -q "WCHPK tog6b_n32.pg n 32 wruns 1 {'returns': 3, 'paid-W': 3, 'TIE': 0} " <<<"$w30" && grep -q "^SYMTEST PASS" <<<"$w30"; then
-  echo "box 79 WCH: P-N5-WCH RET-WCH (TT form) on tog6b_n32 (N5 TT 1, N5-LZC TIE 0); line-file strict symbol test PASS"
+w30=$(cd .. && python3 -I new/box79/wchpk.py red/so/instances/tog6b_n32.pg; python3 -I new/box79/wchpk.py red/so/instances/tog6b_n32.pg --lzc; python3 -I new/box79/symtest.py ../docs/new/P-N5-WCH-box79-line-W1.txt | tail -1; python3 -I new/box79/quotecheck.py | tail -1)
+if grep -q "WCHPK tog6b_n32.pg n 32 wruns 1 {'returns': 4, 'paid-W': 3, 'TT': 1, 'TIE': 2} " <<<"$w30" && grep -q "WCHPK tog6b_n32.pg n 32 wruns 1 {'returns': 3, 'paid-W': 3, 'TIE': 0} " <<<"$w30" && grep -q "^SYMTEST PASS" <<<"$w30" && grep -q "^QUOTECHECK PASS" <<<"$w30"; then
+  echo "box 79 WCH: P-N5-WCH RET-WCH (TT form) on tog6b_n32 (N5 TT 1, N5-LZC TIE 0); line W1 strict symbol test PASS; SPEC quote check PASS"
 else
   echo "box 79 WCH check: FAILED"; exit 1
 fi
