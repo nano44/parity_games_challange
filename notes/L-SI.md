@@ -8,6 +8,7 @@ STEP 0: clone stale at da88a6d4 AGAIN; ff to 051eb196, trunk merged c6c30141. Or
 - DEAD: σ̄ monotone in any FIXED partial order (Topkis angle). thetaA_n7: σ̄(6) 5 → 1 → 5 in one W-run (n5b agrees).
 - PROVED (lane): NOCLOSE, TIE, DESCENT, Theorem ROOT-FLIP (any N5 transition), EVEN-ROOT, HEAD-RED′ (the SB term is replaced by
   Ξ-changes at τ(Odd) ∪ U plus own-node flips XCN). SEL is engine-level: Claim RG′ and T54 read on S1's own evaluate (a READING to sign).
+- §5 (Lead 20:00Z, T60): ORDER-CHG′ PROVED up to PAIR-TIE (data 0); fixed-set NO-REPEAT DEAD (exitr_cex_n16); |U| = 4K + 16 on mkrw.
 - Data: corpus 0 violations of all seven checks; rsearch 10 × 100k BAD 0 (TIES 14-138 per batch, 528 in all). TXR max 36.
 - P-N5-SETTLE: no referee findings routed yet; fixes.md has F0 only.
 ### Queue

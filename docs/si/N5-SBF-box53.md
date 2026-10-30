@@ -202,6 +202,50 @@ Written 19:0xZ-19:4xZ (date -u; see commit).
     parent's label rises, or a re-parenting below re-orders its ties.
   - The dynamic-SSSP literature (incremental shortest paths) has this as a folklore invariant. NOT opened; no claim is imported.
 
+## 5. The [ABS] / [GH] order-charging route (Lead 20:00Z; L-LIT T60 §3.3, l-lit 54584c0c): ROOT-FLIP gives the one-step order change; NO-REPEAT on a fixed head set is DEAD; |U| is linear
+- T60's ORDER-DET as written («σ̄_k is determined by σ_k and the ⊴-ORDER of Ξ_k on U_k») is vacuous: S1 computes σ̄_k from σ_k alone.
+  The form that the [ABS] Thm 29 charging needs is ORDER-CHG: «σ̄ changes only at transitions where the weak ⊴-order of Ξ on the heads
+  changes». (T60's NO-REPEAT of (σ-pattern, order) pairs is vacuous too: σ never repeats in an N5 run, since Ξ strictly rises at each
+  improving switch, R15 (a).) The order-only forms are the ones tested below.
+- Corollary ORDER-CHG′ (PROVED, lane, from ROOT-FLIP, NOCLOSE and [R57]).
+  - Setting: a transition k → k + 1 of a W-run with a σ̄-flip at a non-own Odd vertex, and o* the root flip given by ROOT-FLIP
+    (non-own at k and k + 1, old target t1 with Ξ(t1) changed, new target t2).
+  - Statement: unless Ξ_k(t1) = Ξ_k(t2) AND Ξ_(k+1)(t1) = Ξ_(k+1)(t2) (a PAIR-TIE), the weak ⊴-order of Ξ on {t1, t2} ⊆ U′_k ∪ U′_(k+1)
+    changes at k → k + 1.
+  - Proof.
+    - t1 ∈ U_k if o* ∈ D_k, and t1 = τ(o*) otherwise. Likewise t2 ∈ U_(k+1) or t2 = τ(o*). So {t1, t2} ⊆ U′_k ∪ U′_(k+1).
+    - At k: Ξ_k(t1) ⊴ Ξ_k(t2). This is [R57] if t2's path avoids o*, and NOCLOSE (strict) otherwise.
+    - At k + 1: Ξ_(k+1)(t2) ⊴ Ξ_(k+1)(t1), in the same way.
+    - So the sign of the comparison of t1 with t2 goes from ≤ 0 to ≥ 0. It is unchanged only if it is 0 at both times. □
+  - The PAIR-TIE case (both targets tied before and after, both rising together) is NOT excluded by the proof.
+  - DATA (orderchg.py, 1,134 runs):
+    - PAIRTIE 0.
+    - ORDX 0: every flip transition with no own-node flip and no CN switch changes the weak order on U′_k ∪ U′_(k+1). 4,613
+      transitions.
+    - With U alone in place of U′ the order is unchanged at 917 of them (ORDX0; thetaA_n7: both flips). So τ(Odd) must be among the
+      heads, as in HEAD-RED′.
+- DEAD: NO-REPEAT for orders on a fixed head set.
+  - Statement killed: «inside a W-run, the weak order of Ξ on a fixed head set never recurs after a different one, and σ̄ is a function
+    of it».
+  - Instance: experiments/red/so/instances/exitr_cex_n16.pg (L-RED; read, not edited; default start). It has one W-run, states 1-8,
+    with fixed head set H_1 := U′_1 = {3, 4, 8, 11}.
+    - The weak order on H_1 is the same at states 1, 5, 6 and 7, with a different order at states 2-4 in between.
+    - σ̄ of the second Odd vertex is 3, 7, 3, 13 at those four states.
+  - So the order on a fixed set neither avoids repeats nor determines σ̄. The heads that decide (7, 13) enter U′ later.
+  - Corpus: RREP in 128 W-runs (orderchg.py).
+- The parameter is not small. max_k |U_k| is linear in n on L-RED's mkrw family (LATE=1, m = 16): K = 4 / 8 / 12 / 16 gives UMAX
+  32 / 48 / 64 / 80 = 4K + 16 at n = 14K + 130.
+  - It is also 96 on latew_K16_m32 (n 482). |U′| is up to 385 on the corpus.
+  - Distinct head orders per W-run ≈ the W-run length (NORD 19K + 1 on mkrw; 561 on latew).
+  - So «FPT in max |U_k|» gives 2^Θ(n) or Θ(n)! on these families: nothing.
+- Answer to the Lead's question. ROOT-FLIP IS the one-step part of ORDER-CHG: every non-own σ̄-flip comes with an order change on
+  U′_k ∪ U′_(k+1), up to the PAIR-TIE case. This is PROVED (lane) except for PAIR-TIE (data 0).
+  - It does NOT give a count: the counting half of [ABS] / [GH] (no repeat, or a value quantum, over a SMALL fixed set) fails on two
+    counts:
+    - the set is not small (Θ(n));
+    - the order on a fixed set does recur (exitr_cex_n16).
+  - A quantum is XI-CH-POLY again, as T60 says.
+
 ## DONE / FINDINGS / NEEDS
 - DONE: this note; experiments/si/sb53/ (topkis.py, rootflip.py, rsearch.py, runtopk.sh, runroot.sh, runrs.sh, topk_*.txt,
   root_*.txt, rs_out.txt); pins in si/check.sh «box 53 SBF». SHA: see the commit.
@@ -212,5 +256,7 @@ Written 19:0xZ-19:4xZ (date -u; see commit).
     (REDUCTION: SB term → τ(Odd)-head Ξ-changes + own-node flips). SEL is proved modulo the reading «RG′ and T54 apply to S1's own
     evaluation».
   - CONJECTURE (data only): HX′-POLY, XCN-POLY.
+  - §5 (Lead 20:00Z): Corollary ORDER-CHG′ PROVED (lane) up to PAIR-TIE (data 0). DEAD: NO-REPEAT / order-determination on a fixed
+    head set (exitr_cex_n16). max |U_k| = 4K + 16 on mkrw, so FPT in |U| is empty.
 - NEEDS: Lead: route ROOT-FLIP (§2) and HEAD-RED′ (§3) to L-RED for a kill attempt, and, if wanted, to a packet. L-LIT T60: Topkis
   sources are now only needed for §1's framing; the kill does not depend on them.
