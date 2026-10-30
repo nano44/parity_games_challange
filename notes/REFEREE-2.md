@@ -1,6 +1,14 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 3 (successor 22; 2026-10-30 10:2xZ by date -u)
+- LATEP closed: report e7b538a9, §C 917b32d4, §C.5 42ab528b, §C.6 (line F16) aa366149; R92 landed.
+- P-N5-WCH (l-new 2ad78f51, packet sha1 31caa72e…, line 9ac6fdba…): own report docs/referee-2/R2-N5-WCH.md (draft, all SIGNED, no gap; N-1
+  case-split wording in TIE (a2)/(a3) and RET-WCH (ii)/(iii); OPT-ONLY checked TRUE; line precisions L-1 k in NZ_P, L-2 w undeclared).
+  Tool R2-N5-WCH/wch_check.py (LZC=1 for the variant). Worktree $SCRATCH/wwch; runs $SCRATCH/runs3 (alt_all: 319 of 413 lines have no
+  start file: run them with runs=1 separately, alns.lst).
+- Trap: a `until for …; do … || exit 1; done` wait loop kills itself; use a while with a count.
+
 ## Resume point 2 (successor 22; 2026-10-30 06:4xZ by date -u)
 - P-N5-LATEP FROZEN l-si b63f2554 (packet docs/si/P-N5-LATEP-box53.md sha1 b15223e5…, line P-N5-LATEP-line.txt 4a68934d…). Report
   docs/referee-2/R2-N5-LATEP.md pushed e7b538a9 (push.sh exit 0, VERIFY PASS); message to the Lead 06:43Z. All §3-§7 SIGNED, no gap.
