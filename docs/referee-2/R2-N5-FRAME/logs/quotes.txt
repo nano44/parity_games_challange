@@ -1,0 +1,10 @@
+OK   SPEC:28-29 valuation of v under (σ, σ̄): (c, P, ℓ), c = the most relevant (max p'
+OK   SPEC:30-31 order (better for Even): compare reward of c (p'(c) if even, −p'(c) if
+OK   SPEC:32-32 Ξσ = valuation of every vertex under σ and Odd's OPTIMAL counterstrate
+OK   SPEC:45-46 Odd's side: everything on the DUAL game G^d (owner swapped, Ω + 1); τ 
+OK   SPEC:47-47 Improving edges: Iσ = {(v, w) : owner(v) = Even, w ≠ σ(v), Ξσ(w) stric
+OK   SPEC:51-53 a. If Iσ ≠ ∅: A(v) = {σ(v)} ∪ {w : (v, w) ∈ Iσ} for Even v. Arena H: E
+OK   SPEC:54-55 b. If Iτ ≠ ∅: A(v) = {τ(v)} ∪ {w : (v, w) ∈ Iτ} for Odd v. Arena H': O
+OK   SPEC:56-57 c. FALLBACK, if σ_new = σ and τ_new = τ: if Iσ ≠ ∅, for every Even v w
+OK   RESULTS:5108-5109 (c) Added statement (A), Corollary (A2): "PCH_𝒫(v) ≤ (K(K+1)/2)(NM_𝒫(v
+quotes=9 ok=9 SHIFT=0

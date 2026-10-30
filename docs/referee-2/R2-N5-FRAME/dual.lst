@@ -1,0 +1,8 @@
+red/ctl/instances/d_hntop_n8.pg red/ctl/instances/d_hntop_n8.start
+red/ctl/instances/d_runquad_K8_m30_n192.pg red/ctl/instances/d_runquad_K8_m30_n192.start
+red/ctl/instances/d_s3quad_K3_m4.pg
+red/cpl/instances/dewin_runquad_K3_m4.pg red/cpl/instances/dewin_runquad_K3_m4.start
+red/cpl/instances/ewin_runquad_K3_m4.pg
+red/cpl/instances/relay_L10.pg red/cpl/instances/relay_L10.start
+red/cpl/instances/relay_L10_s3.pg
+red/cpl/instances/relay_L3.pg red/cpl/instances/relay_L3.start
