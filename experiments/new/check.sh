@@ -330,4 +330,10 @@ if grep -q "'fb': 10, 'zflat': 10, 'zflat_wch': 10, 'swout': 0, 'reop': 0, 'reop
 else
   echo "box 68 ZFLAT check: FAILED"; exit 1
 fi
+w19=$(cd .. && python3 -I new/box70/silent.py red/xing/instances/u23sw64_n32.pg)
+if grep -q "classes {'S': 31} .* SCrun 31 max-S-per-piece-edge 1 S-at-Wflat 31/31 GXCrun 64 S-not-GXC 0$" <<<"$w19"; then
+  echo "box 70 SC: u23sw64_n32 31 W-silent re-entries in one lambda-run, all GXC events (SIL-Z): PASS"
+else
+  echo "box 70 SC check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

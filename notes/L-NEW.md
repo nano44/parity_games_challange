@@ -1,6 +1,12 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Box 70 log (successor 35; Lead 01:23Z: premise SC* of L-SI's P-N5-CUT)
+- docs/new/N5-SC-box70.md. silent.py re-implements P-N5-CUT §4 classes (matches cutsx: S 42, C 4 on 719). SC* record 31 (u23sw64_n32, one S
+  per edge, all on W-flat transitions). PROVED (lane) SIL-Z: an S re-entry is a strict Xi-climb at a gap vertex with W(v) fixed (old successor
+  also in the gap). Corollary SC-GXC: sum SIL <= GXC + NC + NT and FB-LIN's ZF <= GXC + NZ: one premise GXC. OPEN: GXC (Xi-route), C class,
+  CONJECTURE <= 1 S per (piece, edge) (0/1132).
+
 ## Box 69 log (successor 35; Lead 00:52Z: freeze P-N5-GAP)
 - docs/new/P-N5-GAP-box69.md FROZEN at l-new 28ceeadc (sha1 d67f8e04b54d5621ebecf27e7fe7151ce57793cd): 13 items (XW, W-MON, FB-W,
   OPT-OFF, W-SUCC carried with proofs; LATE-W, LATE-PIECE, GAP-MON, SW-IN, Z-FLAT, REOPEN-W/CHARGE, Theorem GAP-RED). RESULTS line
@@ -735,7 +741,7 @@ Every answer measured from the repository; commands named.
 - Boxes 64-65: N5-STRETCH-box64.md; packet P-N5-FRAME (frozen 938d8796) LANDED as RESULTS R89 (fixes file H0-H17).
 - Box 66 N5-LATE-box66.md (78e1fd24); box 67 N5-FBENERGY-box67.md (0163720e, 9b0fc279); box 68 N5-ZFLAT-box68.md (b24ee55d).
 - Box 69: packet docs/new/P-N5-GAP-box69.md FROZEN at 28ceeadc, sha1 d67f8e04...; RESULTS line proposal P-N5-GAP-box69-line.txt.
-### IN FLIGHT: P-N5-GAP's RESULTS line awaits the Lead's approval; referees next. Nothing running.
+### IN FLIGHT: P-N5-GAP with REFEREE 19 / REFEREE-2 21 (Lead 01:23Z). Box 70 done (N5-SC-box70.md). Nothing running.
 - If the Lead edits the line: the packet is frozen, so any mismatch goes into a fixes file P-N5-GAP-fixes-box69.md (append-only).
 ### NEXT (the Lead decides)
 1. Referee fixes for P-N5-FRAME go in a fixes file P-N5-FRAME-fixes-box65.md (never into the frozen packet).
