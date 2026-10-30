@@ -1,0 +1,413 @@
+GAME n5-epoch/instances/gci2_n12.pg n5-epoch/instances/gci2_n12.start HEADS gci2_n12.pg n 12 HX 1 XX 3 NHEAD 1 SUMHX 1 LMAX 10 HXV 2
+GAME n5-epoch/instances/ffin4_n24.pg n5-epoch/instances/ffin4_n24.start HEADS ffin4_n24.pg n 24 HX 1 XX 3 NHEAD 4 SUMHX 3 LMAX 8 HXV 0
+GAME n5-epoch/instances/ffin5_n32.pg n5-epoch/instances/ffin5_n32.start HEADS ffin5_n32.pg n 32 HX 2 XX 2 NHEAD 2 SUMHX 2 LMAX 7 HXV 11
+GAME n5-epoch/instances/ffin12_n32.pg n5-epoch/instances/ffin12_n32.start HEADS ffin12_n32.pg n 32 HX 1 XX 2 NHEAD 5 SUMHX 3 LMAX 7 HXV 25
+GAME n5-epoch/instances/gci3_n24.pg n5-epoch/instances/gci3_n24.start HEADS gci3_n24.pg n 24 HX 0 XX 4 NHEAD 2 SUMHX 0 LMAX 20 HXV -
+GAME n5-epoch/instances/immfail_n14.pg HEADS immfail_n14.pg n 14 HX 0 XX 1 NHEAD 1 SUMHX 0 LMAX 2 HXV -
+GAME n5-epoch/instances/immp_cex_n11.pg n5-epoch/instances/immp_cex_n11.start HEADS immp_cex_n11.pg n 11 HX 1 XX 2 NHEAD 2 SUMHX 1 LMAX 2 HXV 5
+GAME n5-epoch/instances/lcount_n23.pg n5-epoch/instances/lcount_n23.start HEADS lcount_n23.pg n 23 HX 1 XX 4 NHEAD 3 SUMHX 1 LMAX 4 HXV 18
+GAME n5-epoch/instances/lend13_n16.pg n5-epoch/instances/lend13_n16.start HEADS lend13_n16.pg n 16 HX 1 XX 2 NHEAD 2 SUMHX 1 LMAX 13 HXV 12
+GAME n5-epoch/instances/lend15_n48.pg n5-epoch/instances/lend15_n48.start HEADS lend15_n48.pg n 48 HX 2 XX 3 NHEAD 9 SUMHX 9 LMAX 3 HXV 30
+GAME n5-epoch/instances/lend27_n24.pg n5-epoch/instances/lend27_n24.start HEADS lend27_n24.pg n 24 HX 1 XX 5 NHEAD 4 SUMHX 3 LMAX 8 HXV 0
+GAME n5-epoch/instances/lend39f_n32.pg n5-epoch/instances/lend39f_n32.start HEADS lend39f_n32.pg n 32 HX 1 XX 2 NHEAD 7 SUMHX 5 LMAX 8 HXV 13
+GAME n5-epoch/instances/lend47_n32.pg n5-epoch/instances/lend47_n32.start HEADS lend47_n32.pg n 32 HX 3 XX 4 NHEAD 4 SUMHX 6 LMAX 19 HXV 31
+GAME n5-epoch/instances/lend107_n32.pg n5-epoch/instances/lend107_n32.start HEADS lend107_n32.pg n 32 HX 1 XX 3 NHEAD 3 SUMHX 3 LMAX 15 HXV 11
+GAME n5-epoch/instances/lend55_n32.pg n5-epoch/instances/lend55_n32.start HEADS lend55_n32.pg n 32 HX 1 XX 2 NHEAD 5 SUMHX 3 LMAX 11 HXV 20
+GAME n5-epoch/instances/lend9_n8.pg n5-epoch/instances/lend9_n8.start HEADS lend9_n8.pg n 8 HX 1 XX 1 NHEAD 2 SUMHX 1 LMAX 2 HXV 4
+GAME n5-epoch/instances/lend82_n32.pg n5-epoch/instances/lend82_n32.start HEADS lend82_n32.pg n 32 HX 1 XX 5 NHEAD 4 SUMHX 3 LMAX 14 HXV 11
+GAME n5-epoch/instances/lend72_n48.pg n5-epoch/instances/lend72_n48.start HEADS lend72_n48.pg n 48 HX 2 XX 3 NHEAD 4 SUMHX 6 LMAX 14 HXV 7
+GAME n5-epoch/instances/nep13_n24.pg n5-epoch/instances/nep13_n24.start HEADS nep13_n24.pg n 24 HX 3 XX 9 NHEAD 13 SUMHX 15 LMAX 12 HXV 20
+GAME n5-epoch/instances/nep56_n32.pg n5-epoch/instances/nep56_n32.start HEADS nep56_n32.pg n 32 HX 12 XX 23 NHEAD 15 SUMHX 36 LMAX 25 HXV 4
+GAME n5-epoch/instances/nep22f_n64.pg n5-epoch/instances/nep22f_n64.start HEADS nep22f_n64.pg n 64 HX 2 XX 2 NHEAD 25 SUMHX 8 LMAX 3 HXV 12
+GAME n5-epoch/instances/nconf61_n48.pg n5-epoch/instances/nconf61_n48.start HEADS nconf61_n48.pg n 48 HX 10 XX 11 NHEAD 20 SUMHX 32 LMAX 13 HXV 0
+GAME n5-epoch/instances/nep76_n40.pg n5-epoch/instances/nep76_n40.start HEADS nep76_n40.pg n 40 HX 6 XX 12 NHEAD 15 SUMHX 25 LMAX 15 HXV 17
+GAME n5-epoch/instances/nep92_n40.pg n5-epoch/instances/nep92_n40.start HEADS nep92_n40.pg n 40 HX 9 XX 11 NHEAD 17 SUMHX 32 LMAX 14 HXV 21
+GAME n5-epoch/instances/ret12_n40.pg n5-epoch/instances/ret12_n40.start HEADS ret12_n40.pg n 40 HX 7 XX 12 NHEAD 13 SUMHX 24 LMAX 14 HXV 12
+GAME n5-exhaustive/instances/b4_cyc6_0.pg n5-exhaustive/instances/b4_cyc6_0.start HEADS b4_cyc6_0.pg n 11 HX 0 XX 2 NHEAD 1 SUMHX 0 LMAX 2 HXV -
+GAME n5-epoch/instances/nep94_n48.pg n5-epoch/instances/nep94_n48.start HEADS nep94_n48.pg n 48 HX 12 XX 13 NHEAD 19 SUMHX 45 LMAX 14 HXV 12
+GAME n5-exhaustive/instances/b4_cyc6_1.pg HEADS b4_cyc6_1.pg n 12 HX 1 XX 3 NHEAD 2 SUMHX 1 LMAX 4 HXV 2
+GAME n5-epoch/instances/ret14_n48.pg n5-epoch/instances/ret14_n48.start HEADS ret14_n48.pg n 48 HX 5 XX 6 NHEAD 10 SUMHX 19 LMAX 6 HXV 0
+GAME n5-exhaustive/instances/b4_n4all_cyc3_0.pg n5-exhaustive/instances/b4_n4all_cyc3_0.start HEADS b4_n4all_cyc3_0.pg n 4 HX 1 XX 1 NHEAD 2 SUMHX 1 LMAX 1 HXV 1
+GAME n5-exhaustive/instances/b4_n5_other_0.pg HEADS b4_n5_other_0.pg n 5 HX 1 XX 1 NHEAD 1 SUMHX 1 LMAX 1 HXV 1
+GAME n5-exhaustive/instances/b4_nohlen5_0.pg n5-exhaustive/instances/b4_nohlen5_0.start HEADS b4_nohlen5_0.pg n 11 HX 0 XX 1 NHEAD 2 SUMHX 0 LMAX 4 HXV -
+GAME n5-exhaustive/instances/b4_theta_n7.pg n5-exhaustive/instances/b4_theta_n7.start HEADS b4_theta_n7.pg n 7 HX 1 XX 1 NHEAD 2 SUMHX 2 LMAX 1 HXV 5
+GAME n5-exhaustive/instances/b5_o11.pg HEADS b5_o11.pg n 10 HX 1 XX 1 NHEAD 2 SUMHX 1 LMAX 4 HXV 2
+GAME n5-exhaustive/instances/b5_n5_cyc4_0.pg HEADS b5_n5_cyc4_0.pg n 5 HX 0 XX 1 NHEAD 1 SUMHX 0 LMAX 1 HXV -
+GAME n5-exhaustive/instances/b5_os_n12.pg HEADS b5_os_n12.pg n 12 HX 1 XX 1 NHEAD 2 SUMHX 1 LMAX 5 HXV 2
+GAME n5-exhaustive/instances/b5_os_n14.pg HEADS b5_os_n14.pg n 14 HX 1 XX 1 NHEAD 2 SUMHX 1 LMAX 7 HXV 2
+GAME n5-exhaustive/instances/b5_os_n16.pg HEADS b5_os_n16.pg n 16 HX 1 XX 1 NHEAD 1 SUMHX 1 LMAX 8 HXV 2
+GAME n5-epoch/instances/ret14_n64.pg n5-epoch/instances/ret14_n64.start HEADS ret14_n64.pg n 64 HX 11 XX 11 NHEAD 17 SUMHX 33 LMAX 14 HXV 39
+GAME n5-exhaustive/instances/b5_os_n20.pg HEADS b5_os_n20.pg n 20 HX 1 XX 1 NHEAD 1 SUMHX 1 LMAX 10 HXV 2
+GAME n5-exhaustive/instances/b5_os_n24.pg HEADS b5_os_n24.pg n 24 HX 1 XX 3 NHEAD 1 SUMHX 1 LMAX 14 HXV 2
+GAME n5-exhaustive/instances/b5_os_n28.pg HEADS b5_os_n28.pg n 28 HX 1 XX 2 NHEAD 1 SUMHX 1 LMAX 13 HXV 2
+GAME n5-exhaustive/instances/b5_os_n32.pg HEADS b5_os_n32.pg n 32 HX 1 XX 3 NHEAD 2 SUMHX 1 LMAX 14 HXV 2
+GAME n5-exhaustive/instances/b6_xl2_n32.pg HEADS b6_xl2_n32.pg n 32 HX 3 XX 6 NHEAD 4 SUMHX 6 LMAX 22 HXV 28
+GAME n5-exhaustive/instances/b6_xl_n32.pg HEADS b6_xl_n32.pg n 32 HX 2 XX 6 NHEAD 4 SUMHX 6 LMAX 22 HXV 21
+GAME n5-exhaustive/instances/b5_os_n40.pg HEADS b5_os_n40.pg n 40 HX 1 XX 3 NHEAD 1 SUMHX 1 LMAX 17 HXV 2
+GAME n5-exhaustive/instances/b6_xs_n24.pg HEADS b6_xs_n24.pg n 24 HX 0 XX 2 NHEAD 1 SUMHX 0 LMAX 21 HXV -
+GAME n5-exhaustive/instances/b6_xs_n32.pg HEADS b6_xs_n32.pg n 32 HX 0 XX 2 NHEAD 1 SUMHX 0 LMAX 29 HXV -
+GAME n5-exhaustive/instances/b6_xl_n40.pg HEADS b6_xl_n40.pg n 40 HX 2 XX 7 NHEAD 5 SUMHX 5 LMAX 25 HXV 21
+GAME n5-exhaustive/instances/b6_xs_n40.pg HEADS b6_xs_n40.pg n 40 HX 0 XX 2 NHEAD 1 SUMHX 0 LMAX 36 HXV -
+GAME n5-exhaustive/instances/b6_xs_n48.pg HEADS b6_xs_n48.pg n 48 HX 0 XX 2 NHEAD 1 SUMHX 0 LMAX 37 HXV -
+GAME n5-exhaustive/instances/b6_xw_n32.pg HEADS b6_xw_n32.pg n 32 HX 3 XX 6 NHEAD 4 SUMHX 5 LMAX 21 HXV 28
+GAME n5-exhaustive/instances/b6_xw_n40.pg HEADS b6_xw_n40.pg n 40 HX 3 XX 6 NHEAD 4 SUMHX 5 LMAX 22 HXV 28
+GAME n5-exhaustive/instances/b6_xl_n48.pg HEADS b6_xl_n48.pg n 48 HX 2 XX 7 NHEAD 4 SUMHX 4 LMAX 24 HXV 28
+GAME n5-exhaustive/instances/canonA_1.pg HEADS canonA_1.pg n 15 HX 1 XX 2 NHEAD 2 SUMHX 1 LMAX 3 HXV 8
+GAME n5-exhaustive/instances/canonA_0.pg HEADS canonA_0.pg n 15 HX 0 XX 2 NHEAD 1 SUMHX 0 LMAX 3 HXV -
+GAME n5-exhaustive/instances/frz2_n24.pg n5-exhaustive/instances/frz2_n24.start HEADS frz2_n24.pg n 24 HX 3 XX 6 NHEAD 5 SUMHX 8 LMAX 23 HXV 18
+GAME n5-exhaustive/instances/frz1_n24.pg n5-exhaustive/instances/frz1_n24.start HEADS frz1_n24.pg n 24 HX 2 XX 5 NHEAD 1 SUMHX 2 LMAX 24 HXV 18
+GAME n5-exhaustive/instances/b6_xw_n48.pg HEADS b6_xw_n48.pg n 48 HX 2 XX 6 NHEAD 4 SUMHX 4 LMAX 22 HXV 28
+GAME n5-exhaustive/instances/frz3_n24.pg n5-exhaustive/instances/frz3_n24.start HEADS frz3_n24.pg n 24 HX 3 XX 7 NHEAD 4 SUMHX 8 LMAX 24 HXV 10
+GAME n5-exhaustive/instances/b6_xw_n56.pg HEADS b6_xw_n56.pg n 56 HX 2 XX 7 NHEAD 4 SUMHX 4 LMAX 23 HXV 28
+GAME n5-exhaustive/instances/n3all_maxph_1.pg n5-exhaustive/instances/n3all_maxph_1.start HEADS n3all_maxph_1.pg n 3 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME n5-exhaustive/instances/n3all_maxph_0.pg n5-exhaustive/instances/n3all_maxph_0.start HEADS n3all_maxph_0.pg n 3 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME n5-exhaustive/instances/n3all_maxph_2.pg n5-exhaustive/instances/n3all_maxph_2.start HEADS n3all_maxph_2.pg n 3 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME n5-exhaustive/instances/n4_maxph_0.pg HEADS n4_maxph_0.pg n 4 HX 0 XX 1 NHEAD 1 SUMHX 0 LMAX 1 HXV -
+GAME n5-exhaustive/instances/n4_maxph_1.pg HEADS n4_maxph_1.pg n 4 HX 0 XX 1 NHEAD 1 SUMHX 0 LMAX 1 HXV -
+GAME n5-exhaustive/instances/n4_thch_0.pg HEADS n4_thch_0.pg n 4 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME n5-exhaustive/instances/n4all_maxph_1.pg n5-exhaustive/instances/n4all_maxph_1.start HEADS n4all_maxph_1.pg n 4 HX 0 XX 1 NHEAD 1 SUMHX 0 LMAX 2 HXV -
+GAME n5-exhaustive/instances/n4all_maxph_0.pg n5-exhaustive/instances/n4all_maxph_0.start HEADS n4all_maxph_0.pg n 4 HX 0 XX 1 NHEAD 1 SUMHX 0 LMAX 2 HXV -
+GAME n5-exhaustive/instances/n4all_tgbad_0.pg n5-exhaustive/instances/n4all_tgbad_0.start HEADS n4all_tgbad_0.pg n 4 HX 0 XX 1 NHEAD 1 SUMHX 0 LMAX 1 HXV -
+GAME n5-exhaustive/instances/nh_n8.pg n5-exhaustive/instances/nh_n8.start HEADS nh_n8.pg n 8 HX 0 XX 2 NHEAD 1 SUMHX 0 LMAX 3 HXV -
+GAME n5-exhaustive/instances/n5s_maxph_0.pg HEADS n5s_maxph_0.pg n 5 HX 0 XX 1 NHEAD 1 SUMHX 0 LMAX 1 HXV -
+GAME n5-exhaustive/instances/n4all_thch_0.pg n5-exhaustive/instances/n4all_thch_0.start HEADS n4all_thch_0.pg n 4 HX 1 XX 1 NHEAD 2 SUMHX 1 LMAX 1 HXV 1
+GAME n5-exhaustive/instances/thetaA_canon_n12.pg HEADS thetaA_canon_n12.pg n 12 HX 0 XX 2 NHEAD 1 SUMHX 0 LMAX 3 HXV -
+GAME n5-exhaustive/instances/thetaA_canon_n8.pg HEADS thetaA_canon_n8.pg n 8 HX 0 XX 2 NHEAD 1 SUMHX 0 LMAX 3 HXV -
+GAME n5-exhaustive/instances/thetaA_n17.pg n5-exhaustive/instances/thetaA_n17.start HEADS thetaA_n17.pg n 17 HX 0 XX 2 NHEAD 1 SUMHX 0 LMAX 3 HXV -
+GAME n5-exhaustive/instances/thetaA_n6.pg n5-exhaustive/instances/thetaA_n6.start HEADS thetaA_n6.pg n 6 HX 1 XX 2 NHEAD 2 SUMHX 1 LMAX 3 HXV 5
+GAME n5-exhaustive/instances/thetaA_n7.pg n5-exhaustive/instances/thetaA_n7.start HEADS thetaA_n7.pg n 7 HX 1 XX 2 NHEAD 2 SUMHX 1 LMAX 3 HXV 1
+GAME n5-exhaustive/instances/thetaA_n9.pg n5-exhaustive/instances/thetaA_n9.start HEADS thetaA_n9.pg n 9 HX 0 XX 2 NHEAD 1 SUMHX 0 LMAX 3 HXV -
+GAME n5-exhaustive/instances/wk1_n32.pg n5-exhaustive/instances/wk1_n32.start HEADS wk1_n32.pg n 32 HX 1 XX 1 NHEAD 2 SUMHX 1 LMAX 2 HXV 28
+GAME n5-exhaustive/instances/wk2_n32.pg n5-exhaustive/instances/wk2_n32.start HEADS wk2_n32.pg n 32 HX 1 XX 1 NHEAD 1 SUMHX 1 LMAX 3 HXV 22
+GAME new/box48/instances/long121_n40.pg new/box48/instances/long121_n40.start HEADS long121_n40.pg n 40 HX 4 XX 7 NHEAD 6 SUMHX 13 LMAX 17 HXV 23
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.pg new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.start HEADS best_qpc_nep76_n40_s63.pg n 64 HX 6 XX 8 NHEAD 26 SUMHX 46 LMAX 16 HXV 12
+GAME red/carry/instances/absmono_viol_n44.pg HEADS absmono_viol_n44.pg n 44 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.pg new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.start HEADS best_qpc_nep90_n40_s61.pg n 64 HX 8 XX 10 NHEAD 28 SUMHX 61 LMAX 15 HXV 52
+GAME red/carry/instances/carry3_2_2.pg HEADS carry3_2_2.pg n 47 HX 0 XX 1 NHEAD 0 SUMHX 0 LMAX 1 HXV -
+GAME red/carry/instances/cm_mdrop_both_n28.pg HEADS cm_mdrop_both_n28.pg n 28 HX 2 XX 2 NHEAD 5 SUMHX 5 LMAX 3 HXV 11
+GAME red/carry/instances/cm_mdrop_oink_n28.pg HEADS cm_mdrop_oink_n28.pg n 28 HX 0 XX 1 NHEAD 1 SUMHX 0 LMAX 1 HXV -
+GAME red/carry/instances/ctx11_n40.pg HEADS ctx11_n40.pg n 40 HX 1 XX 1 NHEAD 2 SUMHX 1 LMAX 2 HXV 5
+GAME red/carry/instances/ctx12_n40.pg HEADS ctx12_n40.pg n 40 HX 1 XX 1 NHEAD 4 SUMHX 3 LMAX 1 HXV 14
+GAME red/carry/instances/ctx6_n20.pg HEADS ctx6_n20.pg n 20 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.pg new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.start HEADS best_qpc_nep90_n40_s62.pg n 80 HX 11 XX 12 NHEAD 34 SUMHX 118 LMAX 15 HXV 69
+GAME red/carry/instances/ctx13_n40.pg HEADS ctx13_n40.pg n 40 HX 1 XX 2 NHEAD 3 SUMHX 1 LMAX 5 HXV 20
+GAME red/carry/instances/ctx6_n56.pg HEADS ctx6_n56.pg n 56 HX 0 XX 1 NHEAD 1 SUMHX 0 LMAX 1 HXV -
+GAME red/carry/instances/ctx7_n30.pg HEADS ctx7_n30.pg n 30 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/carry/instances/f1_twodef_n48.pg HEADS f1_twodef_n48.pg n 48 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/carry/instances/f1_twofall_n48.pg HEADS f1_twofall_n48.pg n 48 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/carry/instances/fall3_n76.pg HEADS fall3_n76.pg n 76 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/carry/instances/fallv_viol_n28.pg HEADS fallv_viol_n28.pg n 28 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME new/box48/out/qpcclimb/scale/snap_n80_s62.pg new/box48/out/qpcclimb/scale/snap_n80_s62.start HEADS snap_n80_s62.pg n 80 HX 11 XX 12 NHEAD 34 SUMHX 118 LMAX 15 HXV 69
+GAME red/carry/instances/fall4_n116.pg HEADS fall4_n116.pg n 116 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/carry/instances/fired10_n20.pg HEADS fired10_n20.pg n 20 HX 0 XX 1 NHEAD 1 SUMHX 0 LMAX 1 HXV -
+GAME red/carry/instances/firedlong667_n20.pg HEADS firedlong667_n20.pg n 20 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/carry/instances/firedlong667_n43.pg HEADS firedlong667_n43.pg n 43 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/carry/instances/gapbW_dup_n20.pg HEADS gapbW_dup_n20.pg n 20 HX 0 XX 2 NHEAD 0 SUMHX 0 LMAX 2 HXV -
+GAME red/carry/instances/gapb_dup_n20.pg HEADS gapb_dup_n20.pg n 20 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/carry/instances/firedstep13_n76.pg HEADS firedstep13_n76.pg n 76 HX 1 XX 2 NHEAD 6 SUMHX 3 LMAX 2 HXV 45
+GAME red/carry/instances/h4_compound2x2_n44.pg HEADS h4_compound2x2_n44.pg n 44 HX 1 XX 2 NHEAD 3 SUMHX 1 LMAX 3 HXV 25
+GAME red/carry/instances/h4_compound_n44.pg HEADS h4_compound_n44.pg n 44 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/carry/instances/h4_def2ctx_n20.pg HEADS h4_def2ctx_n20.pg n 20 HX 0 XX 1 NHEAD 1 SUMHX 0 LMAX 1 HXV -
+GAME red/carry/instances/h4_def7_n28.pg HEADS h4_def7_n28.pg n 28 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/carry/instances/h4_disjoint_n20.pg HEADS h4_disjoint_n20.pg n 20 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/carry/instances/h4_notweaker_n20.pg HEADS h4_notweaker_n20.pg n 20 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/carry/instances/kfirst_viol_n13.pg HEADS kfirst_viol_n13.pg n 13 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/carry/instances/kin_viol_n29.pg HEADS kin_viol_n29.pg n 29 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/carry/instances/lalg_dtl_mviol_n20.pg HEADS lalg_dtl_mviol_n20.pg n 20 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/carry/instances/lemmaS_Mdrop_n20.pg HEADS lemmaS_Mdrop_n20.pg n 20 HX 0 XX 1 NHEAD 1 SUMHX 0 LMAX 1 HXV -
+GAME red/carry/instances/lemmaS_viol_n20.pg HEADS lemmaS_viol_n20.pg n 20 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/carry/instances/lex_viol_tie_n28.pg HEADS lex_viol_tie_n28.pg n 28 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/carry/instances/lex_viol_inj_n28.pg HEADS lex_viol_inj_n28.pg n 28 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/carry/instances/meet_viol_n17.pg HEADS meet_viol_n17.pg n 17 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/carry/instances/nosig_2_3.pg HEADS nosig_2_3.pg n 24 HX 0 XX 1 NHEAD 1 SUMHX 0 LMAX 1 HXV -
+GAME red/carry/instances/meet_viol_n29.pg HEADS meet_viol_n29.pg n 29 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/carry/instances/phi_flat_alive_n32.pg HEADS phi_flat_alive_n32.pg n 32 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/carry/instances/pk_viol_n20.pg HEADS pk_viol_n20.pg n 20 HX 0 XX 1 NHEAD 0 SUMHX 0 LMAX 1 HXV -
+GAME red/carry/instances/replay4_n32.pg HEADS replay4_n32.pg n 32 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/carry/instances/spp19_oink_n30.pg HEADS spp19_oink_n30.pg n 30 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/carry/instances/spp19_stable_n30.pg HEADS spp19_stable_n30.pg n 30 HX 1 XX 1 NHEAD 5 SUMHX 4 LMAX 2 HXV 7
+GAME red/carry/instances/spp22_oink_n40.pg HEADS spp22_oink_n40.pg n 40 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/carry/instances/stealonce_both_n45.pg HEADS stealonce_both_n45.pg n 45 HX 0 XX 1 NHEAD 2 SUMHX 0 LMAX 1 HXV -
+GAME red/carry/instances/spp25_oink_n40.pg HEADS spp25_oink_n40.pg n 40 HX 1 XX 1 NHEAD 4 SUMHX 1 LMAX 3 HXV 5
+GAME red/carry/instances/stealonce_core_n76.pg HEADS stealonce_core_n76.pg n 76 HX 0 XX 1 NHEAD 5 SUMHX 0 LMAX 1 HXV -
+GAME red/carry/instances/tstep_near_n20.pg HEADS tstep_near_n20.pg n 20 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/ctxp/instances/deep1_n13.pg HEADS deep1_n13.pg n 13 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/carry/instances/stealer_viol_n76.pg HEADS stealer_viol_n76.pg n 76 HX 0 XX 1 NHEAD 1 SUMHX 0 LMAX 1 HXV -
+GAME red/carry/instances/stealonce_viol_n76.pg HEADS stealonce_viol_n76.pg n 76 HX 0 XX 1 NHEAD 1 SUMHX 0 LMAX 1 HXV -
+GAME red/ctxp/instances/deep1_n21.pg HEADS deep1_n21.pg n 21 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/dtl/instances/lalg_dtl_pertop31_n18.pg HEADS lalg_dtl_pertop31_n18.pg n 18 HX 0 XX 1 NHEAD 1 SUMHX 0 LMAX 1 HXV -
+GAME red/ctxp/instances/margin1_n20.pg HEADS margin1_n20.pg n 20 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/ctxp/instances/margin1_mc5.pg HEADS margin1_mc5.pg n 50 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/ctxp/instances/margin1_mc1.pg HEADS margin1_mc1.pg n 80 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/fbr/instances/bghm_k3_gap4_A.pg HEADS bghm_k3_gap4_A.pg n 45 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/fbr/instances/bghm_k1_gap6_A.pg HEADS bghm_k1_gap6_A.pg n 21 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/dtl/instances/lalg_dtl_restart8_n20.pg HEADS lalg_dtl_restart8_n20.pg n 20 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/fbr/instances/fr39_q4_n48.pg HEADS fr39_q4_n48.pg n 48 HX 2 XX 4 NHEAD 3 SUMHX 3 LMAX 32 HXV 38
+GAME red/fbr/instances/lev74_n40.pg HEADS lev74_n40.pg n 40 HX 2 XX 2 NHEAD 4 SUMHX 4 LMAX 3 HXV 0
+GAME red/fbr/instances/nep80_n40.pg HEADS nep80_n40.pg n 40 HX 2 XX 4 NHEAD 4 SUMHX 6 LMAX 4 HXV 1
+GAME red/fbr/instances/rho144_n32.pg HEADS rho144_n32.pg n 32 HX 1 XX 2 NHEAD 4 SUMHX 2 LMAX 2 HXV 22
+GAME red/fbr/instances/rho3_253_n32.pg HEADS rho3_253_n32.pg n 32 HX 2 XX 3 NHEAD 7 SUMHX 6 LMAX 4 HXV 18
+GAME red/fbr/instances/lev56_n48.pg HEADS lev56_n48.pg n 48 HX 4 XX 8 NHEAD 8 SUMHX 10 LMAX 15 HXV 9
+GAME red/fbr/instances/rho84_n16.pg HEADS rho84_n16.pg n 16 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/fbr/instances/sat4_n20.pg HEADS sat4_n20.pg n 20 HX 0 XX 1 NHEAD 1 SUMHX 0 LMAX 1 HXV -
+GAME red/fbr/instances/rho666_n48.pg HEADS rho666_n48.pg n 48 HX 1 XX 5 NHEAD 5 SUMHX 4 LMAX 7 HXV 8
+GAME red/fbr/instances/sat68_n20.pg HEADS sat68_n20.pg n 20 HX 0 XX 1 NHEAD 1 SUMHX 0 LMAX 1 HXV -
+GAME red/fbx/instances/exsw_loop_n15.pg HEADS exsw_loop_n15.pg n 15 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/fbr/instances/twowave_L16.pg HEADS twowave_L16.pg n 22 HX 0 XX 1 NHEAD 1 SUMHX 0 LMAX 15 HXV -
+GAME red/frz/instances/fbcap_eq_u4_n11.pg HEADS fbcap_eq_u4_n11.pg n 11 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/frz/instances/fx2_n11.pg HEADS fx2_n11.pg n 11 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/h3/instances/frzgap0_n4.pg HEADS frzgap0_n4.pg n 4 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/h3/instances/frzgap0_n6.pg HEADS frzgap0_n6.pg n 6 HX 0 XX 1 NHEAD 0 SUMHX 0 LMAX 2 HXV -
+GAME red/fbx/instances/kt6_n58.pg HEADS kt6_n58.pg n 58 HX 2 XX 4 NHEAD 3 SUMHX 4 LMAX 18 HXV 45
+GAME red/h3/instances/offret_l19_n24.pg HEADS offret_l19_n24.pg n 24 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/h3/instances/lcount_n23.pg red/h3/instances/lcount_n23.start HEADS lcount_n23.pg n 23 HX 1 XX 4 NHEAD 3 SUMHX 1 LMAX 4 HXV 18
+GAME red/h3/instances/lcount2_n23.pg red/h3/instances/lcount2_n23.start HEADS lcount2_n23.pg n 23 HX 0 XX 3 NHEAD 3 SUMHX 0 LMAX 3 HXV -
+GAME red/kl/instances/klcount_n18_base.pg HEADS klcount_n18_base.pg n 18 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/kl/instances/klcount_n16.pg HEADS klcount_n16.pg n 16 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/kl/instances/klcount_n18_lvl.pg HEADS klcount_n18_lvl.pg n 18 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/h3/instances/xsnpre36_n48.pg HEADS xsnpre36_n48.pg n 48 HX 0 XX 2 NHEAD 1 SUMHX 0 LMAX 30 HXV -
+GAME red/kl/instances/klglobal_n16.pg HEADS klglobal_n16.pg n 16 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/kl/instances/klglobal_n18_lvl.pg HEADS klglobal_n18_lvl.pg n 18 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/kl/instances/klglobal_n20_lvl2.pg HEADS klglobal_n20_lvl2.pg n 20 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/kl/instances/klmin_n13.pg HEADS klmin_n13.pg n 13 HX 0 XX 1 NHEAD 1 SUMHX 0 LMAX 1 HXV -
+GAME red/kl/instances/r2climb_h13.pg HEADS r2climb_h13.pg n 13 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/kl/instances/r2crawl_n14.pg HEADS r2crawl_n14.pg n 14 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/kl/instances/r2join_h0E_n14.pg HEADS r2join_h0E_n14.pg n 14 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/kl24/instances/HL88_0.pg HEADS HL88_0.pg n 41 HX 0 XX 1 NHEAD 0 SUMHX 0 LMAX 1 HXV -
+GAME red/kl/instances/r2lap_best_n22.pg HEADS r2lap_best_n22.pg n 22 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/kl24/instances/HL88_1.pg HEADS HL88_1.pg n 43 HX 0 XX 1 NHEAD 2 SUMHX 0 LMAX 1 HXV -
+GAME red/kl24/instances/HL88_2.pg HEADS HL88_2.pg n 45 HX 0 XX 1 NHEAD 4 SUMHX 0 LMAX 1 HXV -
+GAME red/kl24/instances/HL88_3.pg HEADS HL88_3.pg n 47 HX 0 XX 1 NHEAD 6 SUMHX 0 LMAX 1 HXV -
+GAME red/kl24/instances/HLg_0.pg HEADS HLg_0.pg n 29 HX 0 XX 1 NHEAD 0 SUMHX 0 LMAX 1 HXV -
+GAME red/kl24/instances/HLg_1.pg HEADS HLg_1.pg n 35 HX 0 XX 1 NHEAD 2 SUMHX 0 LMAX 1 HXV -
+GAME red/kl24/instances/HLg_2.pg HEADS HLg_2.pg n 45 HX 0 XX 1 NHEAD 4 SUMHX 0 LMAX 1 HXV -
+GAME red/kl24/instances/HLg_3.pg HEADS HLg_3.pg n 55 HX 0 XX 1 NHEAD 6 SUMHX 0 LMAX 1 HXV -
+GAME red/kw/instances/cw11_n24.pg HEADS cw11_n24.pg n 24 HX 1 XX 4 NHEAD 5 SUMHX 1 LMAX 4 HXV 23
+GAME red/lag/instances/depth2_n39.pg HEADS depth2_n39.pg n 39 HX 0 XX 1 NHEAD 1 SUMHX 0 LMAX 1 HXV -
+GAME red/kw/instances/frzu_tight_n14.pg HEADS frzu_tight_n14.pg n 14 HX 0 XX 1 NHEAD 1 SUMHX 0 LMAX 2 HXV -
+GAME red/kw/instances/kc18_n24.pg HEADS kc18_n24.pg n 24 HX 0 XX 2 NHEAD 3 SUMHX 0 LMAX 18 HXV -
+GAME red/lag/instances/depth3_n46.pg HEADS depth3_n46.pg n 46 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/lag/instances/fam_D12_n106.pg HEADS fam_D12_n106.pg n 106 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/lag/instances/depth4_n53.pg HEADS depth4_n53.pg n 53 HX 0 XX 1 NHEAD 1 SUMHX 0 LMAX 1 HXV -
+GAME red/lag/instances/fam_D4_n50.pg HEADS fam_D4_n50.pg n 50 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/lag/instances/fam_D8_n78.pg HEADS fam_D8_n78.pg n 78 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/mei/instances/mei_h2.pg HEADS mei_h2.pg n 19 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/mei/instances/mei_h3.pg HEADS mei_h3.pg n 27 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/mei/instances/mei_h4.pg HEADS mei_h4.pg n 35 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/mei/instances/mei_h5.pg HEADS mei_h5.pg n 43 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/mei/instances/mei_h8.pg HEADS mei_h8.pg n 67 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/mei/instances/mei_h6.pg HEADS mei_h6.pg n 51 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/n3/instances/lag11_n40.pg red/n3/instances/lag11_n40.start HEADS lag11_n40.pg n 40 HX 4 XX 11 NHEAD 7 SUMHX 12 LMAX 14 HXV 3
+GAME red/n3/instances/core41_n40.pg red/n3/instances/core41_n40.start HEADS core41_n40.pg n 40 HX 5 XX 5 NHEAD 4 SUMHX 10 LMAX 7 HXV 23
+GAME red/n3/instances/lagx10_n40.pg red/n3/instances/lagx10_n40.start HEADS lagx10_n40.pg n 40 HX 1 XX 10 NHEAD 2 SUMHX 1 LMAX 11 HXV 0
+GAME red/n3/instances/n3cov_lean.pg red/n3/instances/n3cov_lean.start HEADS n3cov_lean.pg n 48 HX 4 XX 6 NHEAD 13 SUMHX 26 LMAX 30 HXV 16
+GAME red/n3/instances/comp54_n80.pg red/n3/instances/comp54_n80.start HEADS comp54_n80.pg n 80 HX 6 XX 8 NHEAD 9 SUMHX 22 LMAX 12 HXV 23
+GAME red/n3/instances/n3cov_phi.pg red/n3/instances/n3cov_phi.start HEADS n3cov_phi.pg n 32 HX 7 XX 7 NHEAD 18 SUMHX 52 LMAX 9 HXV 22
+GAME red/n3/instances/long90_k2_n40.pg red/n3/instances/long90_k2_n40.start HEADS long90_k2_n40.pg n 40 HX 4 XX 5 NHEAD 4 SUMHX 8 LMAX 13 HXV 23
+GAME red/n3/instances/run49_n32.pg red/n3/instances/run49_n32.start HEADS run49_n32.pg n 32 HX 2 XX 7 NHEAD 3 SUMHX 4 LMAX 49 HXV 14
+GAME red/n3/instances/run34_n40.pg red/n3/instances/run34_n40.start HEADS run34_n40.pg n 40 HX 4 XX 13 NHEAD 13 SUMHX 33 LMAX 32 HXV 21
+GAME red/n3/instances/long121_n40.pg red/n3/instances/long121_n40.start HEADS long121_n40.pg n 40 HX 4 XX 7 NHEAD 6 SUMHX 13 LMAX 17 HXV 23
+GAME red/n5/instances/dl_4_4.pg red/n5/instances/dl_4_4.start HEADS dl_4_4.pg n 42 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/n5/instances/dlm2_4.pg red/n5/instances/dlm2_4.start HEADS dlm2_4.pg n 42 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/n5/instances/sym_h12_s1.pg HEADS sym_h12_s1.pg n 24 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/n3/instances/ret22_n40.pg red/n3/instances/ret22_n40.start HEADS ret22_n40.pg n 40 HX 10 XX 11 NHEAD 10 SUMHX 27 LMAX 19 HXV 23
+GAME red/n5/instances/dl_6_8.pg red/n5/instances/dl_6_8.start HEADS dl_6_8.pg n 110 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/n5/instances/sym_h8_s1.pg HEADS sym_h8_s1.pg n 16 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/n5inj/instances/block_bk20.pg HEADS block_bk20.pg n 24 HX 0 XX 3 NHEAD 4 SUMHX 0 LMAX 9 HXV -
+GAME red/n5/instances/sym_h16_s1.pg HEADS sym_h16_s1.pg n 32 HX 1 XX 1 NHEAD 3 SUMHX 1 LMAX 1 HXV 4
+GAME red/n5inj/instances/bribe_cex_n15.pg HEADS bribe_cex_n15.pg n 15 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/n5inj/instances/blockph_bp20.pg HEADS blockph_bp20.pg n 24 HX 0 XX 5 NHEAD 4 SUMHX 0 LMAX 19 HXV -
+GAME red/n5inj/instances/block_bk32.pg HEADS block_bk32.pg n 36 HX 0 XX 4 NHEAD 3 SUMHX 0 LMAX 21 HXV -
+GAME red/n5inj/instances/blockph_bp32.pg HEADS blockph_bp32.pg n 36 HX 0 XX 4 NHEAD 3 SUMHX 0 LMAX 30 HXV -
+GAME red/n5inj/instances/frz24.pg red/n5inj/instances/frz24.start HEADS frz24.pg n 24 HX 0 XX 1 NHEAD 3 SUMHX 0 LMAX 7 HXV -
+GAME red/n5inj/instances/frz32.pg red/n5inj/instances/frz32.start HEADS frz32.pg n 32 HX 2 XX 4 NHEAD 4 SUMHX 4 LMAX 12 HXV 20
+GAME red/n5inj/instances/frz40.pg red/n5inj/instances/frz40.start HEADS frz40.pg n 40 HX 3 XX 6 NHEAD 7 SUMHX 11 LMAX 18 HXV 33
+GAME red/n5inj/instances/phase2_pk32.pg HEADS phase2_pk32.pg n 32 HX 2 XX 2 NHEAD 4 SUMHX 4 LMAX 19 HXV 27
+GAME red/n5inj/instances/phase2_pk48.pg HEADS phase2_pk48.pg n 48 HX 1 XX 2 NHEAD 3 SUMHX 2 LMAX 12 HXV 3
+GAME red/n5inj/instances/elimn_cex_n48.pg HEADS elimn_cex_n48.pg n 48 HX 1 XX 3 NHEAD 3 SUMHX 2 LMAX 14 HXV 30
+GAME red/n5inj/instances/returns_rt32.pg HEADS returns_rt32.pg n 32 HX 2 XX 2 NHEAD 4 SUMHX 4 LMAX 18 HXV 27
+GAME red/n5inj/instances/theta_thc24.pg HEADS theta_thc24.pg n 24 HX 2 XX 11 NHEAD 4 SUMHX 6 LMAX 12 HXV 12
+GAME red/n5inj/instances/theta_thf16.pg HEADS theta_thf16.pg n 16 HX 3 XX 9 NHEAD 5 SUMHX 9 LMAX 12 HXV 4
+GAME red/n5inj/instances/returns_rt48.pg HEADS returns_rt48.pg n 48 HX 2 XX 3 NHEAD 1 SUMHX 2 LMAX 15 HXV 3
+GAME red/n5inj/instances/returns_ph64.pg HEADS returns_ph64.pg n 64 HX 2 XX 3 NHEAD 1 SUMHX 2 LMAX 16 HXV 3
+GAME red/n5inj/instances/theta_tp32.pg HEADS theta_tp32.pg n 32 HX 4 XX 12 NHEAD 5 SUMHX 11 LMAX 25 HXV 15
+GAME red/n5inj/instances/theta_tp40.pg HEADS theta_tp40.pg n 40 HX 2 XX 11 NHEAD 4 SUMHX 6 LMAX 20 HXV 12
+GAME red/n5inj/instances/wide_h16.pg HEADS wide_h16.pg n 32 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/nest16/instances/k4L72_n101.pg HEADS k4L72_n101.pg n 101 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/n5inj/instances/returns_rt64.pg HEADS returns_rt64.pg n 64 HX 2 XX 3 NHEAD 1 SUMHX 2 LMAX 17 HXV 3
+GAME red/nest16/instances/k4g50_n101.pg HEADS k4g50_n101.pg n 101 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/nest16/instances/k4L72r_n101.pg HEADS k4L72r_n101.pg n 101 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/nest16/instances/k4seed_c1_n82.pg HEADS k4seed_c1_n82.pg n 82 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/nest16/instances/k4seed_vr_n87.pg HEADS k4seed_vr_n87.pg n 87 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/nest16/instances/k4u_n101.pg HEADS k4u_n101.pg n 101 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/nest16/instances/k4y1_n82.pg HEADS k4y1_n82.pg n 82 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/nest16/instances/k4y2_n87.pg HEADS k4y2_n87.pg n 87 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/nest16/instances/near4_n26.pg HEADS near4_n26.pg n 26 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/nest16/instances/nest4u_n46.pg HEADS nest4u_n46.pg n 46 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/nest16/instances/nest4uu_n51.pg HEADS nest4uu_n51.pg n 51 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/nest16/instances/nest5_n49.pg HEADS nest5_n49.pg n 49 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/nest16/instances/nest6_n75.pg HEADS nest6_n75.pg n 75 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/nest16/instances/nest6x_n75.pg HEADS nest6x_n75.pg n 75 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/nest16/instances/oseg_n26.pg HEADS oseg_n26.pg n 26 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/nest16/instances/nest6min_n75.pg HEADS nest6min_n75.pg n 75 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/nest16/instances/w1_n27.pg HEADS w1_n27.pg n 27 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/nopre/instances/nopre_viol_n20.pg HEADS nopre_viol_n20.pg n 20 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/nest16/instances/win3_n27.pg HEADS win3_n27.pg n 27 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/o1/instances/iter118_n48.pg HEADS iter118_n48.pg n 48 HX 1 XX 5 NHEAD 4 SUMHX 3 LMAX 12 HXV 28
+GAME red/o1/instances/ph50_n32.pg HEADS ph50_n32.pg n 32 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/o1/instances/ph45_n32.pg HEADS ph45_n32.pg n 32 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/rec0/instances/fbd0_n4.pg HEADS fbd0_n4.pg n 4 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/o1/instances/f39_n48.pg HEADS f39_n48.pg n 48 HX 0 XX 1 NHEAD 1 SUMHX 0 LMAX 33 HXV -
+GAME red/o1/instances/tau18_n24.pg HEADS tau18_n24.pg n 24 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/rec0/instances/n0_6_n24.pg HEADS n0_6_n24.pg n 24 HX 1 XX 1 NHEAD 2 SUMHX 1 LMAX 1 HXV 18
+GAME red/rec0/instances/nep24_n20.pg HEADS nep24_n20.pg n 20 HX 1 XX 1 NHEAD 2 SUMHX 1 LMAX 1 HXV 8
+GAME red/sgrow/instances/s20_n20.pg HEADS s20_n20.pg n 20 HX 0 XX 1 NHEAD 1 SUMHX 0 LMAX 1 HXV -
+GAME red/rec0/instances/lend2_30_n48.pg HEADS lend2_30_n48.pg n 48 HX 2 XX 5 NHEAD 7 SUMHX 7 LMAX 13 HXV 21
+GAME red/rec0/instances/nep90_n40.pg HEADS nep90_n40.pg n 40 HX 7 XX 7 NHEAD 10 SUMHX 18 LMAX 8 HXV 0
+GAME red/rec0/instances/nep87_n40.pg HEADS nep87_n40.pg n 40 HX 6 XX 6 NHEAD 9 SUMHX 15 LMAX 8 HXV 0
+GAME red/sgrow/instances/s21_oink_n20.pg HEADS s21_oink_n20.pg n 20 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/sgrow/instances/s29_n30.pg HEADS s29_n30.pg n 30 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/sgrow/instances/s34_oink_n40.pg HEADS s34_oink_n40.pg n 40 HX 0 XX 1 NHEAD 1 SUMHX 0 LMAX 2 HXV -
+GAME red/sgrow/instances/s32_n60.pg HEADS s32_n60.pg n 60 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/sgrow/instances/s34_oink_n80.pg HEADS s34_oink_n80.pg n 80 HX 0 XX 1 NHEAD 3 SUMHX 0 LMAX 1 HXV -
+GAME red/sgrow/instances/s36_oink_n60.pg HEADS s36_oink_n60.pg n 60 HX 0 XX 1 NHEAD 1 SUMHX 0 LMAX 1 HXV -
+GAME red/so/instances/beta2_n11.pg HEADS beta2_n11.pg n 11 HX 0 XX 1 NHEAD 1 SUMHX 0 LMAX 1 HXV -
+GAME red/so/instances/epsseg_cex_n16.pg HEADS epsseg_cex_n16.pg n 16 HX 2 XX 4 NHEAD 3 SUMHX 3 LMAX 6 HXV 3
+GAME red/sgrow/instances/s35_oink_n80.pg HEADS s35_oink_n80.pg n 80 HX 0 XX 1 NHEAD 1 SUMHX 0 LMAX 1 HXV -
+GAME red/so/instances/exitr_cex_n16.pg HEADS exitr_cex_n16.pg n 16 HX 2 XX 5 NHEAD 4 SUMHX 4 LMAX 7 HXV 3
+GAME red/so/instances/epsseg_cex_n48.pg HEADS epsseg_cex_n48.pg n 48 HX 1 XX 4 NHEAD 4 SUMHX 3 LMAX 4 HXV 42
+GAME red/so/instances/farrise25_n32.pg HEADS farrise25_n32.pg n 32 HX 2 XX 2 NHEAD 2 SUMHX 2 LMAX 3 HXV 4
+GAME red/so/instances/exitr_cex_n48.pg HEADS exitr_cex_n48.pg n 48 HX 1 XX 3 NHEAD 4 SUMHX 3 LMAX 3 HXV 13
+GAME red/so/instances/mn_abs74_n48.pg HEADS mn_abs74_n48.pg n 48 HX 1 XX 3 NHEAD 5 SUMHX 3 LMAX 4 HXV 43
+GAME red/so/instances/njb_reabs54_n32.pg HEADS njb_reabs54_n32.pg n 32 HX 2 XX 4 NHEAD 4 SUMHX 4 LMAX 4 HXV 8
+GAME red/so/instances/nleq_cex_n48.pg HEADS nleq_cex_n48.pg n 48 HX 0 XX 2 NHEAD 2 SUMHX 0 LMAX 2 HXV -
+GAME red/so/instances/nleq33_n48.pg HEADS nleq33_n48.pg n 48 HX 1 XX 2 NHEAD 2 SUMHX 1 LMAX 33 HXV 10
+GAME red/so/instances/njb_reabs65_n48.pg HEADS njb_reabs65_n48.pg n 48 HX 1 XX 3 NHEAD 4 SUMHX 3 LMAX 19 HXV 43
+GAME red/so/instances/pft35_n48.pg HEADS pft35_n48.pg n 48 HX 3 XX 35 NHEAD 23 SUMHX 35 LMAX 35 HXV 43
+GAME red/so/instances/pftheta34_n32.pg HEADS pftheta34_n32.pg n 32 HX 6 XX 34 NHEAD 17 SUMHX 34 LMAX 34 HXV 21
+GAME red/so/instances/pftheta_cex_n32.pg HEADS pftheta_cex_n32.pg n 32 HX 5 XX 33 NHEAD 17 SUMHX 33 LMAX 34 HXV 21
+GAME red/so/instances/pft40_n40.pg HEADS pft40_n40.pg n 40 HX 4 XX 24 NHEAD 13 SUMHX 24 LMAX 27 HXV 19
+GAME red/so/instances/s4c8_n13.pg HEADS s4c8_n13.pg n 13 HX 1 XX 1 NHEAD 2 SUMHX 1 LMAX 1 HXV 7
+GAME red/so/instances/post31_n48.pg HEADS post31_n48.pg n 48 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/so/instances/rise_fb38_n48.pg HEADS rise_fb38_n48.pg n 48 HX 1 XX 2 NHEAD 3 SUMHX 2 LMAX 4 HXV 2
+GAME red/so/instances/so_k2_n32.pg HEADS so_k2_n32.pg n 32 HX 1 XX 5 NHEAD 6 SUMHX 5 LMAX 5 HXV 11
+GAME red/so/instances/so_sor5_n24.pg HEADS so_sor5_n24.pg n 24 HX 3 XX 7 NHEAD 17 SUMHX 21 LMAX 21 HXV 14
+GAME red/so/instances/so_j19_n48.pg HEADS so_j19_n48.pg n 48 HX 1 XX 19 NHEAD 20 SUMHX 19 LMAX 20 HXV 41
+GAME red/so/instances/so_sorl_n32.pg HEADS so_sorl_n32.pg n 32 HX 2 XX 4 NHEAD 20 SUMHX 22 LMAX 22 HXV 2
+GAME red/so/instances/rise_thin51_n40.pg HEADS rise_thin51_n40.pg n 40 HX 2 XX 12 NHEAD 11 SUMHX 12 LMAX 13 HXV 9
+GAME red/so/instances/so_th_n32.pg HEADS so_th_n32.pg n 32 HX 4 XX 21 NHEAD 9 SUMHX 16 LMAX 21 HXV 12
+GAME red/so/instances/so_tie13_n24.pg HEADS so_tie13_n24.pg n 24 HX 2 XX 3 NHEAD 14 SUMHX 15 LMAX 16 HXV 12
+GAME red/so/instances/so_tie15_n32.pg HEADS so_tie15_n32.pg n 32 HX 1 XX 1 NHEAD 19 SUMHX 18 LMAX 19 HXV 0
+GAME red/so/instances/tev_cex_n40.pg HEADS tev_cex_n40.pg n 40 HX 2 XX 4 NHEAD 4 SUMHX 4 LMAX 5 HXV 2
+GAME red/so/instances/tevlast7_n32.pg HEADS tevlast7_n32.pg n 32 HX 2 XX 6 NHEAD 4 SUMHX 5 LMAX 29 HXV 15
+GAME red/so/instances/tevlast11_n40.pg HEADS tevlast11_n40.pg n 40 HX 3 XX 5 NHEAD 4 SUMHX 5 LMAX 30 HXV 7
+GAME red/so/instances/tevlast_cex_n40.pg HEADS tevlast_cex_n40.pg n 40 HX 2 XX 4 NHEAD 4 SUMHX 4 LMAX 5 HXV 2
+GAME red/so/instances/tog6a_n32.pg HEADS tog6a_n32.pg n 32 HX 2 XX 2 NHEAD 2 SUMHX 4 LMAX 5 HXV 31
+GAME red/so/instances/tog6b_n32.pg HEADS tog6b_n32.pg n 32 HX 2 XX 3 NHEAD 3 SUMHX 5 LMAX 6 HXV 21
+GAME red/so/instances/xrun8_n10.pg HEADS xrun8_n10.pg n 10 HX 2 XX 4 NHEAD 3 SUMHX 3 LMAX 7 HXV 1
+GAME red/so/instances/xrun21_n24.pg HEADS xrun21_n24.pg n 24 HX 0 XX 3 NHEAD 0 SUMHX 0 LMAX 21 HXV -
+GAME red/so/instances/xsn29_n32.pg HEADS xsn29_n32.pg n 32 HX 0 XX 2 NHEAD 1 SUMHX 0 LMAX 29 HXV -
+GAME red/so/instances/xsn43_n48.pg HEADS xsn43_n48.pg n 48 HX 1 XX 4 NHEAD 4 SUMHX 3 LMAX 43 HXV 3
+GAME red/so/instances/xsnf42_n48.pg HEADS xsnf42_n48.pg n 48 HX 0 XX 2 NHEAD 1 SUMHX 0 LMAX 42 HXV -
+GAME red/so/instances/xsnf52_n64.pg HEADS xsnf52_n64.pg n 64 HX 0 XX 2 NHEAD 1 SUMHX 0 LMAX 52 HXV -
+GAME red/tcpert/instances/leanT_N12.pg HEADS leanT_N12.pg n 96 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/so/instances/xsn91_n48.pg HEADS xsn91_n48.pg n 48 HX 3 XX 7 NHEAD 4 SUMHX 6 LMAX 25 HXV 28
+GAME red/tcpert/instances/leanT_N16.pg HEADS leanT_N16.pg n 128 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/tcpert/instances/leanT_N6.pg HEADS leanT_N6.pg n 48 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/tcpert/instances/leanT_N8.pg HEADS leanT_N8.pg n 64 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/tcpert/instances/leanT_N24.pg HEADS leanT_N24.pg n 192 HX 3 XX 3 NHEAD 7 SUMHX 9 LMAX 3 HXV 136
+GAME red/tcpert/instances/tcL_N3.pg HEADS tcL_N3.pg n 42 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/tcpert/instances/tcL_N4.pg HEADS tcL_N4.pg n 68 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/tcpert/instances/tcL_N5.pg HEADS tcL_N5.pg n 100 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/tcpert/instances/tcL_N10.pg HEADS tcL_N10.pg n 350 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/tcpert/instances/tcL_N6.pg HEADS tcL_N6.pg n 138 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/tcpert/instances/tcR4_N4.pg HEADS tcR4_N4.pg n 68 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/tcpert/instances/tcR4_N5.pg HEADS tcR4_N5.pg n 100 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/tcpert/instances/tcL_N8.pg HEADS tcL_N8.pg n 232 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/tcpert/instances/tcR4_N6.pg HEADS tcR4_N6.pg n 138 HX 1 XX 1 NHEAD 9 SUMHX 8 LMAX 1 HXV 58
+GAME red/tcpert/instances/leanT_N32.pg HEADS leanT_N32.pg n 256 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/tcpert/instances/tcR4_N7.pg HEADS tcR4_N7.pg n 182 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/tcpert/instances/tcS8_N10.pg HEADS tcS8_N10.pg n 350 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/tcpert/instances/tcR4_N8.pg HEADS tcR4_N8.pg n 232 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/tcpert/instances/tcL_N12.pg HEADS tcL_N12.pg n 492 HX 0 XX 1 NHEAD 1 SUMHX 0 LMAX 2 HXV -
+GAME red/tcpert/instances/tcS8_N6.pg HEADS tcS8_N6.pg n 138 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/tcpert/instances/tcS8_N7.pg HEADS tcS8_N7.pg n 182 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/tpp/instances/tpp_viol_n22.pg HEADS tpp_viol_n22.pg n 22 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/tpp/instances/tpp_viol_n63.pg HEADS tpp_viol_n63.pg n 63 HX 0 XX 1 NHEAD 1 SUMHX 0 LMAX 1 HXV -
+GAME red/tcpert/instances/tcS8_N8.pg HEADS tcS8_N8.pg n 232 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/ul/instances/cxmig_k4_n54.pg red/ul/instances/cxmig_k4_n54.start HEADS cxmig_k4_n54.pg n 54 HX 2 XX 5 NHEAD 6 SUMHX 9 LMAX 12 HXV 39
+GAME red/ul/instances/cxmig_k8_n82.pg red/ul/instances/cxmig_k8_n82.start HEADS cxmig_k8_n82.pg n 82 HX 2 XX 9 NHEAD 10 SUMHX 17 LMAX 16 HXV 55
+GAME red/tcpert/instances/tcS8_N11.pg HEADS tcS8_N11.pg n 418 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/ul/instances/ladderd0_k12_n48.pg red/ul/instances/ladderd0_k12_n48.start HEADS ladderd0_k12_n48.pg n 48 HX 1 XX 13 NHEAD 2 SUMHX 1 LMAX 14 HXV 17
+GAME red/ul/instances/cxmig_k16_n138.pg red/ul/instances/cxmig_k16_n138.start HEADS cxmig_k16_n138.pg n 138 HX 2 XX 17 NHEAD 18 SUMHX 33 LMAX 24 HXV 87
+GAME red/tcpert/instances/tcS8_N9.pg HEADS tcS8_N9.pg n 288 HX 2 XX 2 NHEAD 24 SUMHX 17 LMAX 2 HXV 21
+GAME red/ul/instances/ladderent_k12_n48.pg red/ul/instances/ladderent_k12_n48.start HEADS ladderent_k12_n48.pg n 48 HX 1 XX 13 NHEAD 3 SUMHX 2 LMAX 14 HXV 17
+GAME red/ul/instances/ladderd0_k24_n84.pg red/ul/instances/ladderd0_k24_n84.start HEADS ladderd0_k24_n84.pg n 84 HX 1 XX 25 NHEAD 2 SUMHX 1 LMAX 26 HXV 29
+GAME red/ul/instances/reader_L10_n36.pg red/ul/instances/reader_L10_n36.start HEADS reader_L10_n36.pg n 36 HX 1 XX 3 NHEAD 2 SUMHX 1 LMAX 13 HXV 16
+GAME red/ul/instances/reader_L20_n56.pg red/ul/instances/reader_L20_n56.start HEADS reader_L20_n56.pg n 56 HX 1 XX 3 NHEAD 2 SUMHX 1 LMAX 23 HXV 26
+GAME red/ul/instances/ladderent_k24_n84.pg red/ul/instances/ladderent_k24_n84.start HEADS ladderent_k24_n84.pg n 84 HX 1 XX 25 NHEAD 3 SUMHX 2 LMAX 26 HXV 29
+GAME red/usplit/instances/gate_K16_n197.pg red/usplit/instances/gate_K16_n197.start HEADS gate_K16_n197.pg n 197 HX 7 XX 15 NHEAD 6 SUMHX 11 LMAX 23 HXV 188
+GAME red/ul/instances/reader_L40_n96.pg red/ul/instances/reader_L40_n96.start HEADS reader_L40_n96.pg n 96 HX 1 XX 3 NHEAD 2 SUMHX 1 LMAX 43 HXV 46
+GAME red/ul/instances/ladderd0_k48_n156.pg red/ul/instances/ladderd0_k48_n156.start HEADS ladderd0_k48_n156.pg n 156 HX 1 XX 49 NHEAD 2 SUMHX 1 LMAX 50 HXV 53
+GAME red/usplit/instances/grow_K12_n149.pg red/usplit/instances/grow_K12_n149.start HEADS grow_K12_n149.pg n 149 HX 1 XX 13 NHEAD 5 SUMHX 4 LMAX 19 HXV 3
+GAME red/usplit/instances/pairoc_n58.pg red/usplit/instances/pairoc_n58.start HEADS pairoc_n58.pg n 58 HX 1 XX 4 NHEAD 6 SUMHX 5 LMAX 5 HXV 3
+GAME red/usplit/instances/pp_K12_n161.pg red/usplit/instances/pp_K12_n161.start HEADS pp_K12_n161.pg n 161 HX 8 XX 14 NHEAD 9 SUMHX 31 LMAX 19 HXV 153
+GAME red/ul/instances/ladderent_k48_n156.pg red/ul/instances/ladderent_k48_n156.start HEADS ladderent_k48_n156.pg n 156 HX 1 XX 49 NHEAD 3 SUMHX 2 LMAX 50 HXV 53
+GAME red/usplit/instances/pp_K12_n161_dual.pg HEADS pp_K12_n161_dual.pg n 161 HX 0 XX 1 NHEAD 0 SUMHX 0 LMAX 1 HXV -
+GAME red/usplit/instances/grow_K40_n373.pg red/usplit/instances/grow_K40_n373.start HEADS grow_K40_n373.pg n 373 HX 1 XX 41 NHEAD 5 SUMHX 4 LMAX 47 HXV 3
+GAME red/usplit/instances/usplit_n14.pg red/usplit/instances/usplit_n14.start HEADS usplit_n14.pg n 14 HX 1 XX 1 NHEAD 2 SUMHX 1 LMAX 3 HXV 3
+GAME red/usplit/instances/usplit_n23.pg red/usplit/instances/usplit_n23.start HEADS usplit_n23.pg n 23 HX 1 XX 1 NHEAD 2 SUMHX 1 LMAX 9 HXV 3
+GAME red/usplit/instances/usplit_rd_n24.pg red/usplit/instances/usplit_rd_n24.start HEADS usplit_rd_n24.pg n 24 HX 1 XX 2 NHEAD 3 SUMHX 2 LMAX 4 HXV 3
+GAME red/usplit/instances/usplit_rd_s3_n27.pg HEADS usplit_rd_s3_n27.pg n 27 HX 1 XX 2 NHEAD 3 SUMHX 2 LMAX 4 HXV 4
+GAME red/usplit/instances/usplit_s3_n16.pg HEADS usplit_s3_n16.pg n 16 HX 1 XX 1 NHEAD 2 SUMHX 1 LMAX 3 HXV 4
+GAME red/xctx/instances/nest3_n20.pg HEADS nest3_n20.pg n 20 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/xctx/instances/nest3_n24.pg HEADS nest3_n24.pg n 24 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/xctx/instances/vrall_viol_n20.pg HEADS vrall_viol_n20.pg n 20 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/xctx/instances/xcov11_n20.pg HEADS xcov11_n20.pg n 20 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/xctx/instances/xctx_viol_n20.pg HEADS xctx_viol_n20.pg n 20 HX 0 XX 0 NHEAD 0 SUMHX 0 LMAX 0 HXV -
+GAME red/xing/instances/fbref_cex_n32.pg HEADS fbref_cex_n32.pg n 32 HX 2 XX 5 NHEAD 4 SUMHX 3 LMAX 16 HXV 2
+GAME red/xing/instances/j10_n24.pg HEADS j10_n24.pg n 24 HX 2 XX 11 NHEAD 11 SUMHX 11 LMAX 15 HXV 7
+GAME red/xing/instances/j4_n40.pg HEADS j4_n40.pg n 40 HX 3 XX 13 NHEAD 8 SUMHX 12 LMAX 31 HXV 19
+GAME red/xing/instances/j5_n16.pg HEADS j5_n16.pg n 16 HX 2 XX 7 NHEAD 7 SUMHX 7 LMAX 11 HXV 4
+GAME red/xing/instances/j7_n32.pg HEADS j7_n32.pg n 32 HX 2 XX 9 NHEAD 8 SUMHX 9 LMAX 23 HXV 26
+GAME red/xing/instances/j7_n48.pg HEADS j7_n48.pg n 48 HX 2 XX 9 NHEAD 9 SUMHX 9 LMAX 20 HXV 29
+GAME red/xing/instances/j8_n32.pg HEADS j8_n32.pg n 32 HX 2 XX 11 NHEAD 10 SUMHX 11 LMAX 21 HXV 28
+GAME red/usplit/instances/pp_K48_n449.pg red/usplit/instances/pp_K48_n449.start HEADS pp_K48_n449.pg n 449 HX 26 XX 50 NHEAD 9 SUMHX 103 LMAX 55 HXV 441
+GAME red/usplit/instances/pp_K48_n449_dual.pg HEADS pp_K48_n449_dual.pg n 449 HX 0 XX 1 NHEAD 0 SUMHX 0 LMAX 1 HXV -
+GAME red/xing/instances/kw25_n32.pg HEADS kw25_n32.pg n 32 HX 1 XX 4 NHEAD 2 SUMHX 1 LMAX 25 HXV 8
+GAME red/xing/instances/kw_n16.pg HEADS kw_n16.pg n 16 HX 0 XX 2 NHEAD 1 SUMHX 0 LMAX 12 HXV -
+GAME red/xing/instances/kw_n24.pg HEADS kw_n24.pg n 24 HX 0 XX 2 NHEAD 0 SUMHX 0 LMAX 20 HXV -
+GAME red/xing/instances/j8_n48.pg HEADS j8_n48.pg n 48 HX 2 XX 9 NHEAD 9 SUMHX 9 LMAX 20 HXV 44
+GAME red/xing/instances/obr_n32.pg HEADS obr_n32.pg n 32 HX 0 XX 4 NHEAD 3 SUMHX 0 LMAX 15 HXV -
+GAME red/xing/instances/obr_eq_n24.pg HEADS obr_eq_n24.pg n 24 HX 0 XX 2 NHEAD 2 SUMHX 0 LMAX 4 HXV -
+GAME red/xing/instances/kw_n48.pg HEADS kw_n48.pg n 48 HX 0 XX 4 NHEAD 0 SUMHX 0 LMAX 40 HXV -
+GAME red/xing/instances/u1t_own6_n32.pg HEADS u1t_own6_n32.pg n 32 HX 1 XX 6 NHEAD 2 SUMHX 1 LMAX 6 HXV 12
+GAME red/xing/instances/u1t_cex_n32.pg HEADS u1t_cex_n32.pg n 32 HX 0 XX 7 NHEAD 2 SUMHX 0 LMAX 7 HXV -
+GAME red/xing/instances/u23sw64_n32.pg HEADS u23sw64_n32.pg n 32 HX 1 XX 8 NHEAD 1 SUMHX 1 LMAX 8 HXV 4
+GAME red/xing/instances/u2flat_n32.pg HEADS u2flat_n32.pg n 32 HX 1 XX 2 NHEAD 2 SUMHX 2 LMAX 2 HXV 8
+GAME red/xing/instances/u2flat73_n32.pg HEADS u2flat73_n32.pg n 32 HX 0 XX 2 NHEAD 2 SUMHX 0 LMAX 3 HXV -
+GAME red/xing/instances/x31_cu16.pg HEADS x31_cu16.pg n 16 HX 3 XX 13 NHEAD 11 SUMHX 13 LMAX 13 HXV 5
+GAME red/xing/instances/x31_cu24.pg HEADS x31_cu24.pg n 24 HX 8 XX 8 NHEAD 2 SUMHX 8 LMAX 8 HXV 23
+GAME red/xing/instances/x31_cu32.pg HEADS x31_cu32.pg n 32 HX 3 XX 21 NHEAD 14 SUMHX 21 LMAX 21 HXV 27
+GAME red/xing/instances/x31_cu32i.pg HEADS x31_cu32i.pg n 32 HX 3 XX 21 NHEAD 13 SUMHX 21 LMAX 21 HXV 26
+GAME red/xing/instances/x31_lem_e24.pg HEADS x31_lem_e24.pg n 24 HX 0 XX 3 NHEAD 1 SUMHX 0 LMAX 14 HXV -
+GAME red/xing/instances/x31_cu48.pg HEADS x31_cu48.pg n 48 HX 3 XX 22 NHEAD 16 SUMHX 22 LMAX 22 HXV 5
+GAME red/xing/instances/x31_lem_t32.pg HEADS x31_lem_t32.pg n 32 HX 2 XX 3 NHEAD 3 SUMHX 2 LMAX 12 HXV 24
+GAME red/xing/instances/x31_nh_e24.pg HEADS x31_nh_e24.pg n 24 HX 0 XX 3 NHEAD 1 SUMHX 0 LMAX 20 HXV -
+GAME red/xing/instances/x31_nh_r20.pg HEADS x31_nh_r20.pg n 20 HX 0 XX 2 NHEAD 1 SUMHX 0 LMAX 13 HXV -
+GAME red/xing/instances/x31_re24.pg HEADS x31_re24.pg n 24 HX 0 XX 4 NHEAD 1 SUMHX 0 LMAX 4 HXV -
+GAME red/xing/instances/x31_ru24.pg HEADS x31_ru24.pg n 24 HX 0 XX 4 NHEAD 1 SUMHX 0 LMAX 4 HXV -
+GAME red/xing/instances/x31_rx32.pg HEADS x31_rx32.pg n 32 HX 3 XX 22 NHEAD 13 SUMHX 22 LMAX 22 HXV 1
+GAME red/xing/instances/x32_nest40.pg HEADS x32_nest40.pg n 40 HX 4 XX 10 NHEAD 6 SUMHX 10 LMAX 26 HXV 7
+GAME red/xing/instances/x31_rx48.pg HEADS x31_rx48.pg n 48 HX 3 XX 22 NHEAD 12 SUMHX 22 LMAX 22 HXV 27
+GAME red/xing/instances/x32_rand16.pg HEADS x32_rand16.pg n 16 HX 0 XX 1 NHEAD 1 SUMHX 0 LMAX 13 HXV -
+GAME red/xing/instances/x32_rand24.pg HEADS x32_rand24.pg n 24 HX 0 XX 3 NHEAD 1 SUMHX 0 LMAX 20 HXV -
+GAME red/xing/instances/x32_rand32.pg HEADS x32_rand32.pg n 32 HX 0 XX 2 NHEAD 1 SUMHX 0 LMAX 29 HXV -
+GAME red/xing/instances/x32_rand48.pg HEADS x32_rand48.pg n 48 HX 0 XX 3 NHEAD 1 SUMHX 0 LMAX 44 HXV -
+GAME red/xing/instances/x32_rand64.pg HEADS x32_rand64.pg n 64 HX 0 XX 3 NHEAD 1 SUMHX 0 LMAX 55 HXV -
+GAME red/xing/instances/x32_waves48.pg HEADS x32_waves48.pg n 48 HX 2 XX 2 NHEAD 2 SUMHX 2 LMAX 26 HXV 3
+GAME red/xing/instances/x32_waves32.pg HEADS x32_waves32.pg n 32 HX 2 XX 6 NHEAD 4 SUMHX 4 LMAX 22 HXV 28
+GAME si/root/instances/cone_n65.pg HEADS cone_n65.pg n 65 HX 1 XX 2 NHEAD 3 SUMHX 1 LMAX 2 HXV 40
+GAME si/root/instances/ueonce_n27.pg HEADS ueonce_n27.pg n 27 HX 1 XX 3 NHEAD 3 SUMHX 2 LMAX 10 HXV 4
+GAME si/root/instances/cone_n69.pg HEADS cone_n69.pg n 69 HX 1 XX 1 NHEAD 2 SUMHX 1 LMAX 1 HXV 23
+GAME red/usplit/instances/gate_K64_n581.pg red/usplit/instances/gate_K64_n581.start HEADS gate_K64_n581.pg n 581 HX 31 XX 63 NHEAD 6 SUMHX 35 LMAX 71 HXV 572

@@ -345,6 +345,29 @@ dist(y) = dist(x) − 1 are exactly the W-tight arena edges of x».
   WCH_F, because one transition is one change per vertex. The charge that matters is to WCH_F(v) (R93's per-vertex premise [P-WCHτ])
   plus TXC, i.e. R92's existing split. Nothing new beyond the OFF kill.
 
+## 13. Lead 16:36Z (last box): Ξ-changes at heads within one W-run (DATA; no bound proved)
+- Inputs, relayed by the Lead, not opened here:
+  - L-RED R143 (l-red 717f407a), Lemma SETTLE: |I| ≤ (D + 1)(E_I + 1) − 1, with E_I = σ̄-flips + CN switches + Ξ-changes at upward heads.
+  - L-NEW 39's Theorem XI-RUN (l-new 7668bc9b) = SEG-XCH (i), derived independently; Lead 16:36Z.
+- Heads at state k: HD_k := {σ̄_k(g) : g ∈ D_k} ∪ {σ_k(c) : Even c with λ_W(c) = c}. HX_F(h) := the transitions of F at which h ∈ HD_k and
+  Ξ(h) changes. Tool si/gate/heads.py; outputs heads_*.txt (1,134 runs, all finished).
+
+| instance | n | max_h HX_F(h) | max per-vertex Ξ-changes XX_F | distinct heads in F | longest W-run |
+| --- | --- | --- | --- | --- | --- |
+| mkrw LATE=1 K 4 / 8 / 16 / 16, m 16 / 16 / 16 / 32 | 186 / 242 / 354 / 482 | 8 / 16 / 32 / 32 (= 2K) | 9 / 17 / 33 / 33 | 32 / 48 / 80 / 96 | 76 / 152 / 304 / 560 |
+| fx_K8_m32 | 250 | 16 | 137 | 33 | 280 |
+| switchbestexp_2 / 4 / 6 / 8 | 60 / 110 / 160 / 210 | 2 / 4 / 5 / 5 | 11 / 15 / 19 / 23 | 2 / 4 / 6 / 8 | 18 / 31 / 44 / 57 |
+| fcobs_6 | 163 | 21 | 44 | 7 | 44 |
+| u23sw64_n32 | 32 | 1 | 8 | 1 | 8 |
+
+- Corpus: max HX 32 (latew_K16_m32); largest HX / n 0.375 (nep56_n32).
+- READING.
+  - Head Ξ-changes per W-run are LINEAR in every family. On mkrw they carry essentially all of a vertex's Ξ-changes (HX = XX − 1); on
+    fx they do not (16 vs 137).
+  - With SETTLE this is consistent with polynomial W-constant intervals, but nothing here bounds HX.
+  - A head h = σ̄(g) has Ξ(g) = g ⊕ Ξ(h) (g not its own Ξ-cycle node). So HX at Odd deviation targets is the Ξ-change count of the
+    deviating Odd gates seen one step later: R92's GATE_F object and box 88's GAP-DEV. That is the same core, and it is OPEN.
+
 ## DONE / FINDINGS / NEEDS
 - DONE: experiments/si/gate/ (gate.py, const.py, agg.py, run.sh, inst/ copies, outputs); si/check.sh «box 51b»; this note.
 - FINDINGS:
@@ -376,6 +399,7 @@ dist(y) = dist(x) − 1 are exactly the W-tight arena edges of x».
   15. PROVED (lane, §11): RETURN-CHARGE′ with no hypothesis. Corollary SEG-XCH: Even-switching transitions of any segment are
       ≤ m_E + Σ_d d_E(d)·XCH(d). So XI-CH-POLY alone gives polynomial W-runs (sharpens R139), and CN-POLY ⇐ in-interval XI-CH-POLY with no
       DFS argument. READING: T ≤ m_E(1 + XE) + m_O(1 + XO).
+  17. DATA (§13): Ξ-changes at heads per W-run are linear (2K on mkrw, 16 on fx_K8_m32, ≤ 5 on switchbestexp); corpus max 32. OPEN.
   16. DEAD (§12): «a W-change on v's Ξ-play at every Ξ-change at W-changing transitions» (cw11_n24, u1t_own6_n32; OFF 64 of 116,185).
 - NEEDS: none from the owner. Lead:
   - L-LIT: open a source on network-simplex stalling and anti-stalling rules (Cunningham), and on SI with arbitrary improving-subset
