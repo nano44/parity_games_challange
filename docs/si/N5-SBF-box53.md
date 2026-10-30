@@ -246,6 +246,17 @@ Written 19:0xZ-19:4xZ (date -u; see commit).
     - the order on a fixed set does recur (exitr_cex_n16).
   - A quantum is XI-CH-POLY again, as T60 says.
 
+## 6. XCN data (own-cycle-node σ̄-flips; DATA only, CONJECTURE XCN-ONE)
+- Tools: experiments/si/sb53/xcn.py (per game) and xcnrs.py (random search).
+- XCN transitions per W-run are 0 on every growing family checked:
+  - mkrw (LATE=1, m 16) for K = 4, 8, 12, 16;
+  - latew_K16_m32, gate_K64_n581 and fx_K8_m32.
+- nep13_n24: 1 in a W-run (2 over the whole run).
+- Random search: 70,000 games, n 10-16, biased and unbiased. The most XCN transitions in one W-run is 1.
+- CONJECTURE XCN-ONE (data only): every W-run has at most one transition with an own-cycle-node σ̄-flip.
+  - With it, HEAD-RED′'s XCN term is ≤ 1, and polynomial W-runs ⟺ CN-POLY ∧ HX′-POLY.
+  - Not proved; no proof idea yet. S1's DFS choice at an own node changes only if the less-relevant cycle structure below o changes.
+
 ## DONE / FINDINGS / NEEDS
 - DONE: this note; experiments/si/sb53/ (topkis.py, rootflip.py, rsearch.py, runtopk.sh, runroot.sh, runrs.sh, topk_*.txt,
   root_*.txt, rs_out.txt); pins in si/check.sh «box 53 SBF». SHA: see the commit.
@@ -255,7 +266,7 @@ Written 19:0xZ-19:4xZ (date -u; see commit).
   - PROVED (lane): Lemmas NOCLOSE, TIE, DESCENT; Theorem ROOT-FLIP (any N5 transition); Corollary EVEN-ROOT; Corollary HEAD-RED′
     (REDUCTION: SB term → τ(Odd)-head Ξ-changes + own-node flips). SEL is proved modulo the reading «RG′ and T54 apply to S1's own
     evaluation».
-  - CONJECTURE (data only): HX′-POLY, XCN-POLY.
+  - CONJECTURE (data only): HX′-POLY, XCN-POLY; §6 XCN-ONE (≤ 1 own-node flip transition per W-run; 0 on all growing families).
   - §5 (Lead 20:00Z): Corollary ORDER-CHG′ PROVED (lane) up to PAIR-TIE (data 0). DEAD: NO-REPEAT / order-determination on a fixed
     head set (exitr_cex_n16). max |U_k| = 4K + 16 on mkrw, so FPT in |U| is empty.
 - NEEDS: Lead: route ROOT-FLIP (§2) and HEAD-RED′ (§3) to L-RED for a kill attempt, and, if wanted, to a packet. L-LIT T60: Topkis
