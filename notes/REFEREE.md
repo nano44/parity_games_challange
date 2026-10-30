@@ -9,7 +9,7 @@ in the handover vs B*/REP*/SC*/O* in the frozen packet; packet omits the R57 (b)
 | --- | --- | --- | --- |
 | P-N5-CUT (l-si 2678f6c6, sha1 d6519d3d), first | R-N5-CUT.md ff5a6f81; §10b line check 8a7818a0 | R-N5-CUT-C.md vs R2 335814dc: identical, map empty; K0 MATCHES, K1 SIGNED, K2-K11 clarifications | all SIGNED, no gap; CUT-N1..N7; line (09d6f0c4) NOT YET: CUT-E1 (SC* classes), CUT-E2 (iff, converse supplied) |
 | P-N5-GAP (l-new 28ceeadc, sha1 d67f8e04; line 901f242d sha1 f1c5c5d5), first | R-N5-GAP.md cd1c29d6 | R-N5-GAP-C.md vs R2 aee8971e: map {G-GAP-1} both; H1 closes it; H9 OK + needs GAP-L1..L4 (H10+) | 12/13 SIGNED; OPT-OFF proof hole G-GAP-1 (Case 2 with u ∈ π), repair GAP-R1; GAP-RED independent; line MATCHES after GAP-L1..L3 |
-### STATE (03:2xZ): CUT §C done (K13 MATCHES; K12 had an unbound F, Lead caught); GAP §C done (H16 MATCHES). HOLD for CHECKER questions on R90 / R91; park at ~600k.
+### STATE (04:3xZ): CUT §C done (final line K15 MATCHES, no free symbol; R90 = C100); GAP §C done (final line H18 MATCHES; R91 = C101 Add. 1). REFEREE-2 21 parked (85e6d86e): I may be the only active referee for CHECKER. HOLD for CHECKER questions on R90 / R91; park at ~600k.
 - scratch/gap_probe.py (OPT_2b counts the hole's configuration: 11,948 on alt_all); MUT 1/3/4/5 bite, MUT 2 never. Inputs gap_logs/alt_abs.lst (worktree paths).
 ### Things only I know
 - scratch/cut_probe.py (rl_engine; W[t] = val(σ_t, τ_t), Wn[t] = val(σ_{t+1}, τ_t) = the old-τ frame). MUT 1 (OPT-OFF off-cycle), 2 (anchor
