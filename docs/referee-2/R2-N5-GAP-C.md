@@ -93,3 +93,33 @@ None widens a signed statement.
   - H2-H8 are clarifications or DATA corrections. H8's corrected counts (782 / 8,442 / 56; 725) equal mine.
   - H9 matches. REFEREE's GAP-L1..L3 are still to be added (H10+).
 - NEEDS: Lead: send the H10+ line SHA for a word-diff check. The K12 word-diff for CUT also comes when ready.
+
+## C.6 Addendum: complete fixes H1-H15 and line H14 (Lead 02:32Z; written 02:3xZ by date -u)
+Objects, measured with `git show c1aa183d:<path> | sha1sum` (both equal the Lead's):
+- docs/new/P-N5-GAP-fixes-box69.md: 955bcea2c5dae4c6016d5f9cfeaa8bae004587e0;
+- docs/new/P-N5-GAP-box69-line-H14.txt: a9e8bcae1d6caec7cded179ead78f1cfedf756f9.
+The fixes file is append-only: `git diff 15044625 c1aa183d` adds 38 lines (H10-H15) and deletes 0, so H1-H9 are as checked in C.2-C.4.
+- **H1 closes G-GAP-1: YES** (C.2).
+  - H10 maps REFEREE 19's GAP-R1 onto H1 correctly: (2b) u ∈ π = H1's (1b); (2a) = H1's Case 2; (2b)(i), (ii) = (1b) with S ≠ ∅, S = ∅.
+  - The «|π| + 1 longer» clause is kept only for Case 2 = (2a), where it is true.
+- **H8 / H15 DATA = mine** (782 / 8,442 / ZF 56; alt_all-only 725). C.3.
+- **H2-H15: clarifications only.**
+  - H10 is a correspondence between the two repairs.
+  - H11 = H2 with REFEREE's wording (premise named).
+  - H12 states [V2] as a statement about triples, which is how both referees used it. It is correct: equal cycle nodes, v in neither P-set,
+    so the same term is added to both weights and 1 to both lengths; for different cycle nodes, the rewards are unchanged.
+  - H13 = H6. H14 is the line. H15 = H8.
+  - None widens a signed statement.
+- **H14, word by word** (difflib):
+  - Against H9: exactly three insertions/replacements and nothing else:
+    - (L3 + L1) after the premise clause: «premises RESULTS R15 (a), (d), R17 (a) (F1) with R57 (a) (VJ), R21 (a), R38 (a), R88;
+      Ξ_t := Ξ_{σ_t} (SPEC S1);»;
+    - (L2) «an optimal strategy ρ of a one-player game has» → «for a one-player game of Even (Odd fixed), a pointwise-optimal Even strategy
+      ρ (R17 (a) (F1)) with Ω_ρ its [S1-val] valuation has».
+  - Against the original proposal f1c5c5d5: H9 (i) and (ii) plus these, nothing else.
+  - The OPT-OFF clause now reads «for a one-player game of Even (Odd fixed), a pointwise-optimal Even strategy ρ … has Ω_ρ(c) ⊴ Ω_ρ(ρ(v)) for
+    every edge (v, c) at every Even v that is not its own Ω_ρ-cycle node» = §2.4's statement. ✓
+  - CL keeps «other than the first» (the packet's form). ✓
+  - The premises named are those both referees used. The scope tail is unchanged.
+  - **H14 MATCHES §1-§5 with H1-H13**; every symbol is defined or cited; it claims nothing beyond. Landable.
+- Final: P-N5-GAP's only gap G-GAP-1 is CLOSED by H1, and H14 is the line to land.
