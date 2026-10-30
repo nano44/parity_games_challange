@@ -19,6 +19,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - PROVED (lane) Lemma TWIN-SYNC: same successor set + same current successor => W'-equal successors at an S4a step (kills the lead step).
 - CONJECTURE R1-POLY (open): offers from one monotone potential X <= W (the Xi rule) force poly per-vertex W-changes. Next: search R1 with a
   bounded X alphabet, or design the X schedule (would be an L-RED spec).
+### Box 81 R1-POLY (Lead 09:49Z GO): docs/new/N5-R1-box81.md
+- DATA: ungated ladder under ANY ranking-offer rule: exactly k rises (k <= 5 exhaustive) -> not reachable under N5's offer rule.
+- DEAD R1-POLY: gated ladder gl_k (private single-successor gates, n 6k), monotone X <= W, offers of the [S2] form: 2^k W-values (gl_8 256).
+- READING: Xi is a pair valuation (consistency), so single-successor gates are transparent; only Odd choice gates (sigmabar != tau) are free.
+  Next: CONJECTURE R2-POLY (X = val(sigma, rho) for some Odd rho).
 ### Sources opened (succ. 37): l-red docs/red/R132-reader-tree.md §2 (TWO-SOURCE, PREFIX, ladder remark); RESULTS R86-R91 entries.
 
 ## Resume point (successor 36, session_01V5yGRXhFvQKMGvnKST38br; FINAL, PARKED 2026-10-30 ~08:54Z by date -u, ~440k context)
