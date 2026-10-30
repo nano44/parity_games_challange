@@ -1,0 +1,2 @@
+SETTLE n3cov_lean.pg n 48 it 35 intervals 0 maxLEN 0 maxE 0 VIOL 0 OVERBOUND 0 
+SETTLE n3cov_phi.pg n 32 it 31 intervals 0 maxLEN 0 maxE 0 VIOL 0 OVERBOUND 0 
