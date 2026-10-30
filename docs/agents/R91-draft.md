@@ -180,7 +180,7 @@ form); the re-test at landing should check that clash, as C101 N-2 did for FB-W.
   (c) Lemma FB-W (§2.3, l. 75-78; box 21 §2.5 Lemma W, fallback half, not landed; not RESULTS R21 (h)'s Lemma FB-W, a different statement (CHECKER C101 N-2)): "If k → k + 1 is a τ-fixed Even fallback, then W_{k+1} ⊴
       W_k pointwise." (S4c fires only if σ_new = σ_k, so σ_k is optimal in H_k; σ_{k+1} is a strategy of H_k; τ kept; [F1].) Cells: REFEREE
       «SIGNED» (l. 20); REFEREE-2 «SIGNED (same premise)» (l. 26).
-  (d) Lemma OPT-OFF (§2.4, l. 79-93; statement unchanged, proof as repaired by H1, with H3 and H10): "Let H be a one-player game of Even (Odd
+  (d) Lemma OPT-OFF (§2.4, l. 79-93; statement unchanged, proof as repaired by H1, with H3 and H10); not RESULTS R90 (a)'s Lemma OPT-OFF (P-N5-CUT, stated at an N5 S4a step); their relation is H7's READING, Referee strengthening (iii): "Let H be a one-player game of Even (Odd
       fixed), ρ an optimal strategy of H, Ω_ρ its valuation, v an Even vertex that is not its own Ω_ρ-cycle node, and (v, c) an edge of H.
       Then Ω_ρ(c) ⊴ Ω_ρ(ρ(v))." The path to this signature, quoted:
       - Reports. REFEREE (l. 21): «STATEMENT TRUE; PROOF HAS A HOLE (G-GAP-1, Case 2 (ii) when c's ρ-play meets v's cycle node u before v);
@@ -203,7 +203,7 @@ form); the re-test at landing should check that clash, as C101 N-2 did for FB-W.
       So OPT-OFF was SIGNED WITH GAP G-GAP-1 in both reports (REFEREE: with its repair GAP-R1), H1 closes the gap in both §Cs, and OPT-OFF is
       SIGNED. Both referees' data: 0 violations of the statement (REFEREE 436,677 (v, c) pairs, 11,948 in (2b); REFEREE-2 65,486 one-player +
       647,486 run checks).
-  (e) Lemma W-SUCC (§2.5, l. 94-98): "On an interval [p, q] of one piece with τ := its τ, if v is not its own W-cycle node at any state of
+  (e) Lemma W-SUCC (§2.5, l. 94-98; the name is shared with RESULTS R90 (c)'s Lemma W-SUCC (P-N5-CUT's; each entry signs its own text)): "On an interval [p, q] of one piece with τ := its τ, if v is not its own W-cycle node at any state of
       [p + 1, q], then W_t(σ_t v) is non-decreasing (⊴) for t ∈ [p, q]." (W-MON; OPT-OFF in H_t at t + 1.) Cells: REFEREE «SIGNED (given
       OPT-OFF as repaired)» (l. 22); REFEREE-2 «SIGNED (uses OPT-OFF's statement, which holds)» (l. 28).
   (f) Lemma LATE-W (§3.1, l. 101-105): "Let Q be a piece. Let v leave c at s → s + 1 in Q (σ_s(v) = c ≠ σ_{s+1}(v)). Let t′ > s be a state of
