@@ -850,3 +850,7 @@ o=$(python3 -I odd/latep.py $C.pg $C.start); grep -q "RTP 4 REPP 1 XP 0 FWV 0 RS
 o=$(python3 -I odd/latep.py odd/inst/red50/wdepth_K4_m16.pg odd/inst/red50/wdepth_K4_m16.start); grep -q "RT 36 RTP 36 REPP 21 XP 0 FWV 0 RSUB_V 0 LP 37 GAPV 0 GTOKV 0 TIEDG 35" <<<"$o"
 o=$(python3 -I odd/latep.py ../new/box59/out/fc_6.pg); grep -q "RT 4 RTP 3 REPP 0 XP 0 FWV 0" <<<"$o"
 echo "si (box 51: LATE', GAP-CLIMB, TIED-RB dead): PASS"
+# box 52 (docs/si/N5-TXCD-box52.md): TXC-DESCENT (0 descent failures); gates carry the tied climbs (no GXC event on wdepth).
+o=$(python3 -I odd/txcd.py ../red/so/instances/so_th_n32.pg); grep -q "TXC 63 T1 0 T2G 0 T2L 0 T3 63 DESC_V 0 CYC_V 0 TERM_V 0 GXC 0 GATE 15 MULT 13" <<<"$o"
+o=$(python3 -I odd/txcd.py odd/inst/red50/wdepth_K4_m16.pg odd/inst/red50/wdepth_K4_m16.start); grep -q "TXC 184 T1 0 T2G 0 T2L 0 T3 184 DESC_V 0 CYC_V 0 TERM_V 0 GXC 0 GATE 93 MULT 32" <<<"$o"
+echo "si (box 52: TXC descent): PASS"
