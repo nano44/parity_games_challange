@@ -133,7 +133,7 @@ for a, b in runs:
     def late(y, w, q):
         if (y, w, q) not in lcache: lcache[(y, w, q)] = any(blocked(t, y, w) for t in range(a, q + 1))
         return lcache[(y, w, q)]
-    rootsE = Counter(); kindE = Counter(); depE = Counter(); kids = Counter(); perX = Counter(); perE = Counter(); perL = Counter(); perP = Counter(); perD = Counter()
+    rootsE = Counter(); kindE = Counter(); depE = Counter(); kids = Counter(); perX = Counter(); perE = Counter(); perL = Counter(); perP = Counter(); perD = Counter(); sfs = Counter(); sfX = Counter(); nsX = Counter()
     for y, z, j, k in rets:
         rr = [q for q in range(j, k) if EV(q)[0][z] != EV(q + 1)[0][z]]
         if not rr: continue
@@ -145,6 +145,22 @@ for a, b in runs:
         perL[(y, S[k][y], rt)] += 1
         perP[(y, S[k][y], z, rt)] += 1
         perD[(y, z, rt, d)] += 1
+        pl = []; xx = z; sn = set()
+        while xx not in sn: sn.add(xx); pl.append(xx); xx = nxt(k, xx)
+        selff = y in sn
+        if selff:
+            sfs['self'] += 1; sfX[(y, rt)] += 1
+            if firstev(rr[0], z) == y: sfs['first_is_X'] += 1
+            if EV(k)[0][y][0] != EV(k + 1)[0][y][0]: sfs['lamXi_change'] += 1
+            if Wv(k, tau)[y] != Wv(k + 1, tau)[y]: sfs['W_X_change'] += 1
+            if Wv(k, tau)[y][0] != Wv(k + 1, tau)[y][0]: sfs['lamW_change'] += 1
+            # self-fed: X on g's (sigma_k, sbar_k)-play at the state k just before the return; X on the cycle of its own (sigma_{k+1}, sbar_{k+1})-play after the return
+            xx = y; sn2 = []
+            while xx not in sn2: sn2.append(xx); xx = nxt(k + 1, xx)
+            if y in sn2[sn2.index(xx):]: sfs['X_on_own_cycle_after'] += 1
+            if EV(k + 1)[0][y][0] == y: sfs['X_own_cycle_node_after'] += 1
+        else:
+            nsX[(y, rt)] += 1
         ch = chainE(rr[0], z); xs = [x for x, _ in ch]; rep = len(xs) - len(set(xs))
         for (cx, cq) in ch:
             if (cx, cq) in stepseen: continue
@@ -188,6 +204,8 @@ for a, b in runs:
     wX = [k for k in perX if perX[k] == mxX][0]
     print(f"  PERROOT max returns of one Even X per root {mxX} (X {wX[0]} deg {len(set(g.succ[wX[0]]))}) max returns of one edge per root {mxE} "
           f"max (returns of X per root)/deg X {round(degr, 3)} max returns of X per root leaving one target {max(perL.values())} max returns of X per root with one (left, entered) pair {max(perP.values())} max returns of one edge per (root, depth) {max(perD.values())}")
+    nsr = max([nsX[k2] / len(set(g.succ[k2[0]])) for k2 in nsX] or [0])
+    print(f"  SELFFED (X on g's play at state k) returns {sfs['self']} of {len(rets)}: first switching Even vertex is X {sfs['first_is_X']}, X on its own Xi-cycle after {sfs['X_on_own_cycle_after']}, X own cycle node after {sfs['X_own_cycle_node_after']}, lambda(Xi(X)) changes {sfs['lamXi_change']}, W(X) changes {sfs['W_X_change']}, lambda_W(X) changes {sfs['lamW_change']}; max self-fed returns of X per root {max(sfX.values()) if sfX else 0}; NONSELF max (returns of X per root)/deg X {round(nsr, 3)}")
     print(f"  CHAINSTEP distinct chain nodes {chstat['steps']} with a W-change at q {chstat['wch']} late adoptions (blocked at an earlier state of F) {chstat['late']}")
     print(f"  CHAIN chains {chstat['chains']} with a repeated Even vertex {chstat['rep']} max repeats {chstat['maxrep']} longest {chmax[0]} distinct {chmax[1]}")
     if os.environ.get("CHAINS"): print("  CHAIN longest", chmax[2])
