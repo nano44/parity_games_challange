@@ -1,6 +1,11 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Box 69 log (successor 35; Lead 00:52Z: freeze P-N5-GAP)
+- docs/new/P-N5-GAP-box69.md FROZEN at l-new 28ceeadc (sha1 d67f8e04b54d5621ebecf27e7fe7151ce57793cd): 13 items (XW, W-MON, FB-W,
+  OPT-OFF, W-SUCC carried with proofs; LATE-W, LATE-PIECE, GAP-MON, SW-IN, Z-FLAT, REOPEN-W/CHARGE, Theorem GAP-RED). RESULTS line
+  PROPOSAL docs/new/P-N5-GAP-box69-line.txt (not yet approved). No L-SI box 37/40/42 file used as a proof (OPT-OFF, W-SUCC re-proved).
+
 ## Box 68 log (successor 35; Lead 00:43Z: FB-LIN from GAP-MON, no new import)
 - docs/new/N5-ZFLAT-box68.md. PROVED (lane): SW-IN (fallback switches only gap vertices, strict Xi-rise; 0/788), Z-flat characterisation
   (Xi climbs inside a gap that stays open; 56/788), REOPEN-W + REOPEN-CHARGE (an S4a re-opening needs a strict W-rise of v; 8532/8532).
@@ -725,23 +730,20 @@ Every answer measured from the repository; commands named.
    fetched ref, so the pin cannot be checked yet; I checked the packet by sha1 (cbea0739…) against my own commit 1afccb51 instead.
    (iii) The container clock is slow vs the Lead's stamp (07:50 vs 07:53): stamp only from date -u, never ahead of it.
 
-## Resume point (successor 35, session_01V5yGRZhJhpJcRZhDSWTwuE; FINAL, PARKED 2026-10-29 ~20:50Z by date -u)
+## Resume point (successor 35, session_01V5yGRZhJhpJcRZhDSWTwuE; FINAL, PARKED 2026-10-30 ~01:05Z by date -u)
 ### DONE (all pushed via scripts/push.sh, VERIFY PASS; reported to the Lead)
-- Box 64: docs/new/N5-STRETCH-box64.md §1-§4 (472c6136, 8a0a27ff, ea46d750). FRAME-STRETCH (n+m) DEAD (mkr, reproduced);
-  STRETCH-CUT, ENT-FREEZE, COMPOSE-FREEZE, GP*-RUN, STRETCH-RED lane-PROVED; fallbacks lower W (603/607).
-- Box 65: same note §5 (0cf72543, 9905dac3): rho = (2K-1)^2 on mkr; SUCC-MON, LATE-RISE, R*-RISE lane-PROVED; W-charge DEAD;
-  FO route subsumed by R86 route (READING).
-- Packet docs/new/P-N5-FRAME-box65.md FROZEN at l-new 938d8796 (sha1 ce8c4803ee18dc90ee761863d006d0aca0476542; header-only change
-  from the approved draft 22c6a165). RESULTS line docs/new/P-N5-FRAME-box65-line.txt (sha1 acf3234f840cb682d71444501e89cfd61247dcd6),
-  APPROVED by the Lead 20:47Z «as worded». Lead routes it to REFEREE 18 and a REFEREE-2 successor.
-### IN FLIGHT: nothing running. Parked.
+- Boxes 64-65: N5-STRETCH-box64.md; packet P-N5-FRAME (frozen 938d8796) LANDED as RESULTS R89 (fixes file H0-H17).
+- Box 66 N5-LATE-box66.md (78e1fd24); box 67 N5-FBENERGY-box67.md (0163720e, 9b0fc279); box 68 N5-ZFLAT-box68.md (b24ee55d).
+- Box 69: packet docs/new/P-N5-GAP-box69.md FROZEN at 28ceeadc, sha1 d67f8e04...; RESULTS line proposal P-N5-GAP-box69-line.txt.
+### IN FLIGHT: P-N5-GAP's RESULTS line awaits the Lead's approval; referees next. Nothing running.
+- If the Lead edits the line: the packet is frozen, so any mismatch goes into a fixes file P-N5-GAP-fixes-box69.md (append-only).
 ### NEXT (the Lead decides)
 1. Referee fixes for P-N5-FRAME go in a fixes file P-N5-FRAME-fixes-box65.md (never into the frozen packet).
 2. Remaining target per §5.5: Even's P* (NM* via MATCH-Phi) and NM^U on unprotected Odd targets (COMPOSE-FREEZE (e)).
    Lead's referee note: COMPOSE-FREEZE (e) rests on [R86e], the per-vertex premise signed as HOLDING in the §6 cells, not a displayed
    RESULTS statement; keep the wording, referees / CHECKER judge it.
 3. SB1' (one-player switch-best O(n)); byte-compare box59/dw.py with L-RED's R116 generator (not done).
-### Owned conjectures: FRAME-STRETCH_P = (FO) (n+m form DEAD), LOOP, GROUP, EXIT-without-NT (OPEN).
+### Owned conjectures: FRAME-STRETCH_P = (FO) (n+m form DEAD); FB-LIN reduced by P-N5-GAP (open: per-vertex WCH^S4a, ZF); LOOP, GROUP, EXIT-without-NT (OPEN).
 ### Things only I know (successor 35)
 - box64/frozen.py counts R per TRANSITION; box64/late.py counts late adoptions per (vertex, transition) event (1141 events).
 - box64/rho.py counts rho as (Odd choice vertex, in-phase transition) pairs; R56's "Xi-changes at Odd choice vertices" read that way.
