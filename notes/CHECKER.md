@@ -9,7 +9,9 @@ History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50
 - C101 = R91 (P-N5-GAP, L-NEW 35), draft 71777fa3 @ trunk bf56449f (Lead 03:25Z): docs/checker/C101.md (ab7ae928) FAIL E-1 (stale §C pins:
   REFEREE 27419e30/106 after H16 ab32b618; REFEREE-2 6ae1c91e/127 after e9aaaa6e + 1f5a9fbe); (a) R57/1E-N3 S4a form = landed R67 P2 PASS;
   (b) DATA 782/8,442/56/725 PASS; N-2 FB-W name clash with R21 (h). Re-runs: worktrees scratchpad/wg_28ceeadc, wg_996d9a57 (box 66-68
-  commands, identical). NEXT: C101 Add. 1 on the revised draft (re-test labels vs R90 if landed); C100 (R90, P-N5-CUT) pending from Lead. Prep (kept):
+  commands, identical). C101 Add. 1 PASS bc947940 (R91 draft 67b0586f @ 84663829, title H18); Add. 2 labels vs landed R90 PASS (06fe52f9);
+  OPT-OFF / W-SUCC clauses recommended (Lead to decide). C100 = R90 (P-N5-CUT) draft 3ae16ca6 @ b416503c: PASS 2b010c91; R90 LANDED f16749dc
+  (05:17:45Z): C100 Add. 1 PASS + CI 5266 green: C100 CLOSED. NEXT: R91 landing (after any OPT-OFF/W-SUCC clause re-check), then C101 landed check. Prep (kept):
   - Pins measured: packet 938d8796 ce8c4803 (= l-new head content); fixes 9631bbc5 eb5bd5e1 (H0-H16 at d3d98d1c b1127e57, H17 appended
     9631bbc5); line-H0 ab1ee38a (a file sha1, not a commit); old line acf3234f. Reports: REFEREE e9b32f72 (R-N5-FRAME.md 90c2ca4d), §C
     0b080b2c (9a00c9b2; its §4 reviews fixes at d3d98d1c: H17 NOT reviewed by REFEREE); REFEREE-2 a1142a46 / 7571febe (report), §C 1008d66e,
