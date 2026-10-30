@@ -875,3 +875,8 @@ python3 -I gate/gate.py $t/v.pg $t/v.start | grep -q "FLAT 0 .* TXV 16 XCV 17 "
 echo "6d34c1617bb410ce78c392eb360ca28b6afea90f  gate/inst/latew_K16_m32.pg" | sha1sum -c --quiet
 echo "e995709e256b55aa40cb94896a7dcb52446baf57  gate/inst/fx_K8_m32.pg" | sha1sum -c --quiet
 echo "si (box 51b: GATE, INTERVAL-SI, potentials dead): PASS"
+# box 51b §6-§7: DEEP_4 split (fcobs_6 all at W-changing transitions, D4 = box 87's 42); S1 not a fixed-order rule (u23sw64 REV 31).
+python3 -I gate/deepint.py ../new/box59/out/fcobs_6.pg | grep -q "N4_IN 0 N4_BD 634 D4 42 D4_IN 0 D4_BD 42 FLAT 0"
+python3 -I gate/deepint.py ../red/xing/instances/u23sw64_n32.pg | grep -q "D4_IN 5 .* FLAT 8 PERFLAT4 10"
+python3 -I gate/revisit.py ../red/xing/instances/u23sw64_n32.pg | grep -q "interval \[2, 10\] flat 8 REV 31 SWV 6 OPT 5 BRANCH even"
+echo "si (box 51b §6-§7: DEEP_4 split, REVISIT): PASS"

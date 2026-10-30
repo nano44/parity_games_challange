@@ -14,6 +14,8 @@ STEP 0: local clone stale at da88a6d4 AGAIN; ff to origin 19ecc5e1, trunk merged
   not switch-all: u23sw64 LAZY 23).
 - DATA: latew_K16_m32, fx_K8_m32: FL = ZFL = 0 (ZFL ⊆ FL: they cannot grow ZFL). mkrw LATE=1: TXV = 2K, XCV = 2K + 1 per W-run (linear).
 - READING: flat steps = degenerate pivots (stalling); N5-LZC (R93) = anti-stalling, FL = 0. L-LIT to open Cunningham.
+- Lead 14:09Z adds (§6-§7): DEEP_4 is a boundary phenomenon (depth ≥ 4: IN 102 / BD 23,465; fcobs_6 all BD); S1 is not a fixed per-vertex
+  order rule (u23sw64 [2, 10] REV 31, a vertex switches 6 times with |OPT| 5). S1 = BFS first discovery on H_k's reverse tight edges.
 ### QUEUE
 1. [P-INT] / CONJECTURE INT-LIN (|I| ≤ n − 1; data max 8). Needs a property of SPEC S1's tie-break inside G_I.
 2. L-RED kill target: embed a long SI run as one G_I (R1 τ stable, R2 tight, R3 no W-better improving edge).
