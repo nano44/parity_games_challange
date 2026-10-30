@@ -1,0 +1,13 @@
+LEX_chk 266486
+multi_tight 470
+CYC_case2 3
+trans 8066
+IDX_chk 27157
+PC_chk 12729
+wruns 1060
+GAMES 740
+skip_big 73
+RC0 813
+maxblock 63
+maxtail 1
+DONE 1
