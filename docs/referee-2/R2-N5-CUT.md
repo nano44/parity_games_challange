@@ -253,3 +253,51 @@ Data WS (per step, whenever v is off-cycle at t + 1): 0 violations.
   - The line's formula matches. Its definitions behind "…" must include the six items in §5 (SC*'s frame and classes above all).
 - NEEDS: Lead: send the full proposed RESULTS line for a word-by-word check; route N-CUT-1..10 to L-SI. §C on your word after REFEREE 19's
   report.
+
+## 8. Addendum: the RESULTS-line proposal, symbol by symbol (Lead 01:22Z; written 01:3xZ by date -u)
+Object: docs/agents/P-N5-CUT-line-proposal.md at trunk 09d6f0c4, the lane's text (verbatim per the Lead), checked against §1-§8.
+| symbol / clause | in the line | verdict |
+| --- | --- | --- |
+| formula and K | «T ≤ 2n(n−1) + (n(n−1)+1)·(m_E·[1 + 2B* + (B*+1)·K] + SC* + O*), K := n(n−1) + (n(n−1)+1)(n−1)(m_E + REP* + 1)» | = Theorem CUT-RED with K(n, m_E, REP*) ✓ |
+| T, n, m_E | not defined | precision: "T the transitions (iterations) of the run, m_E the edges leaving Even vertices" |
+| λ-run, λ^U-run | not defined, no citation | REQUIRED: "as in RESULTS R86" |
+| B* | «the largest number of Even S4c fallbacks plus τ-changing transitions inside one λ-run» | ✓ = §8 B* (BOUNDARY; "inside" = both ends in R) |
+| REP* | «repeat late adoptions (a second or later late adoption of the same Even edge) inside one W-run» | ✓ = §6 REPEAT. But W-run and late adoption are not defined or cited. REQUIRED: "W-run as in RESULTS R89, late adoption as in RESULTS R88 / R89" |
+| SC* | «the largest number of W-silent plus own-cycle re-entries of Even edges in one λ-run» | **UNDERDEFINED; REQUIRED fix** (below) |
+| O* | «τ-changing transitions inside one λ^U-run» | ✓ = §8 O* |
+| "via … LATE-SPLIT (first late adoptions ≤ m_E per W-run)" | | ✓ (§6 (i)) |
+| scope: «polynomial iff they are, Corollary CUT-POLY» | | **claims more than CUT-POLY** (below) |
+
+- **SC* (REQUIRED).** "W-silent re-entry" and "own-cycle re-entry" are §4's classes S and C, which the line does not define. They depend on:
+  - the τ*-piece of j − 1 and the frame τ* := τ_{j−1}, applied also at state j (N-CUT-7);
+  - an anchor and the SMALLEST anchor q;
+  - C: v its own W*-cycle node at SOME state of [q, j]; S: the rest of the anchored, off-cycle-throughout re-entries with W*(c) constant on
+    [q, j].
+  Natural readings of the line's words give different, possibly SMALLER, counts, and SC* is an upper-bound parameter, so a smaller count
+  would not support the theorem:
+  - "W-silent" in the frame τ_j, or with no anchor requirement;
+  - "own-cycle" at j only;
+  - §6's per-W-run SIL_F / CYC_F, which carry the same names (N-CUT-9).
+  I cannot exhibit a numerical failure (the theorem's bound is far from tight: max T 1,072 against bounds of order 10⁸ on my corpora). This is
+  a definitional defect, not a demonstrated falsity.
+  Fix: "SC* := the largest, over λ-runs R, number of re-entries of Even edges in R of class S (W-silent) or C (own-cycle) of P-N5-CUT §4
+  (frame τ_{j−1}, smallest anchor)", or spell §4's definitions out.
+- **"polynomial iff they are".** CUT-POLY proves only "if". The converse is TRUE and short, but not in the packet. For every run:
+  - B* ≤ T and O* ≤ T;
+  - REP* ≤ the late adoptions ≤ n·T (each transition has at most one adoption per Even vertex);
+  - SC* ≤ the re-entries ≤ n·T (each re-entry is a transition at which one Even vertex switches).
+  So T ≤ q(n) gives all four ≤ n·q(n). Fix: add the converse to the fixes file (I sign it as stated here), or drop "iff" and write "polynomial
+  if they are". As the line stands, it claims more than the packet.
+- **Standing premise (R57 (b) / G-N5T-1), the Lead's question, judged independently.**
+  - OPT-OFF (i) needs that S4a's σ_new is the POINTWISE OPTIMUM of the one-player arena A and that its values are realised by the
+    (σ_new, τ*)-plays.
+  - Optimality of the VJ00 counterstrategy is RESULTS R57 (a) (VJ). That SPEC S1's procedure realises it is the standing SPEC premise of
+    R57 / R51 (d) (1E-N3; R57's own words: «that S1's procedure realises an optimal σ̄ is VJ00 §6 …»). R88's W-MON and R89's ODD-FREEZE use
+    the same premise (my N-GP-2; R89 FR-N1 / H1).
+  - So YES: OPT-OFF (i), and through it every later item, uses that standing premise. The packet should name it (my N-CUT-2), and the line
+    may say "under the standing SPEC premise of RESULTS R57" as R57's own line does.
+  - G-N5T-1 (the code link n5.py ↔ SPEC, DATA) is NOT used by any proof. It matters only for the lane's data.
+  - My checker tests the premise directly as DATA on its runs. OO1: Wn_t is ⊵ every single-switch and random strategy inside H_t, 0
+    violations in 222,000+ checks (§4.2).
+- **Verdict on the line.** The formula MATCHES. Three things are REQUIRED before landing: SC*'s definition, citations for λ-run / λ^U-run /
+  W-run / late adoption, and "iff" either proved in the fixes or dropped. Precision: T, m_E, and naming the standing premise.
