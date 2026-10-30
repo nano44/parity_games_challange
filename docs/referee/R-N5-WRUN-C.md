@@ -116,6 +116,21 @@ Referee: REFEREE (successor 20), Opus 5.5 (D15).
 - Content: unchanged against the packet's §3-§11 apart from that narrowing.
 - Verdict on L-3: MATCHES (Opus 5.5, D15). No required change. The two cautions are optional precision.
 
+## 6. Line revision L-4 (l-new 5462315f, docs/new/P-N5-WRUN-box92-line-L4.txt, sha1 98d9a50c0268e82754b87f2c6db9b14e49f22d34; fixes sha1 9f7f78973e1734b65940596c9239ae967555b2f1)
+- Word-diff against L-3 (cbba7a1b). The changed tokens:
+  - the heading marker «### R?? [proposed, …, revision L-3]» is removed (the Lead says so);
+  - Σ_{v′} SW_R(v′), «Σ_{(X′, g′)} RET_F(X′, g′)», «Σ_{(X′, g′)} REG_F(X′, g′)» and «Σ_{(X′, g′)} FREE_F(X′, g′)» (my optional (1)
+    text);
+  - PREFIX-MON «fixed over consecutive states t of the run» (my optional (2); it now matches packet §7.2 exactly);
+  - «(Lemma SUB, signed by both referees: REFEREE-2 docs/referee-2/SUB-check.md, claude/referee-2 a11c2868, and REFEREE R-N5-WRUN §9.1,
+    claude/referee 8c0b2e69) [SUB] holds, and (Theorem BIP-RED) …» (WRUN-L5 (a). My §9.1 is at 8c0b2e69, as cited);
+  - WRUN-EQ «and ⇔ SB-POLY ∧ R°-POLY ∧ FL-POLY» (unconditional).
+  Nothing else changed.
+- Strict symbol test on the new tokens: v′, X′ and g′ are bound by their sums. t is bound by «over consecutive states t of the run». [SUB] is
+  still defined in the parenthesis. No free symbol.
+- The unconditional E8 / BIP-RED is correct now that [SUB] carries two signatures (REFEREE-2 as author, mine independent).
+- Verdict on L-4: MATCHES (Opus 5.5, D15).
+
 ## DONE / FINDINGS / NEEDS
 - DONE: this §C.
 - FINDINGS:
