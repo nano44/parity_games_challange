@@ -28,8 +28,8 @@ that.» Working note, unrefereed. G-N5-TIME OPEN. Labels: PROVED (lane) / CONJEC
 | --- | --- | --- | --- | --- | --- | --- |
 | latew_K20_m32 (L-RED, .start) | 538 | 700 | 640 | 640 | 570 | 0 |
 | runfam_K40 | 79 | 159 | 8 | 8 | 1 | 0 |
-| corpus (719 games) | | | max 17 (so_j19_n48) | = R*_T in every game | max 6 | 0 |
-- Every late adoption measured is LOCAL (RLOC = R*_T in all 720 runs). So the sub-interval and local forms sharpen nothing in the data.
+| corpus (719 games) | | | max 17 (so_j19_n48) | max = max R*_T in every game | max 6 | 0 |
+- In every game measured (720 runs) the largest RLOC of a W-run equals the largest R*_T (RLOCW = RTW); on latew and runfam every late adoption is local. So the sub-interval and local forms sharpen nothing in the data.
 - REP: they give no bound on REP* per W-run. A repeat of (y, z) can be local (latew: all 570 are), and LOC-R* only bounds W-changes by local
   late transitions, the same circle as before (REP ≤ WCH(z) + SIL + CYC, P-N5-CUT §6).
 - Plain-wave bound: no. Between two local late transitions the W-run has at most n − 1 W-changes (that is LOC-R*); the plain waves of box 45
@@ -46,6 +46,6 @@ that.» Working note, unrefereed. G-N5-TIME OPEN. Labels: PROVED (lane) / CONJEC
 
 ## DONE / FINDINGS / NEEDS
 - DONE: repchain.py counters; corpus re-run; si/check.sh «box 45» pin extended, «box 46» pin; DEAD.md «box 46»; this note.
-- FINDINGS: 1. PROVED (lane): GP*-SUB, Corollary LOC-R*. 2. DATA: every late adoption is local (corpus and latew). 3. DEAD: REP-LIN
+- FINDINGS: 1. PROVED (lane): GP*-SUB, Corollary LOC-R*. 2. DATA: RLOCW = RTW in every game (corpus, latew). 3. DEAD: REP-LIN
   (latew_K20_m32, 570 > 538 in one W-run). 4. No REP bound and no plain-wave bound from the sub-interval form.
 - NEEDS: none from the owner.
