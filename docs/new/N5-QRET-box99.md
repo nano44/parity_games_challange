@@ -1,4 +1,4 @@
-# N5-QRET (box 99): one mechanism behind the quadratic Even-edge returns. In sbq2_K8_m16, obs_K12_m24 and latew_K16_m32 every return is FREE (box 84: REG 0, E0 0). Every return traces back to a FRESH Even entry. The dominant roots are the K fresh ticks of ONE clock vertex (vertex 4, out-degree K + 1, walking monotonically through its successors, period m + 3), and each tick roots ≈ 3m returns. Theorem CASCADE-EQ (PROVED, lane, modulo one case of FRESH-ROOT): WRUN-POLY ⇔ «returns rooted at one fresh entry are polynomial». CONJECTURE CASCADE-LIN: ≤ n/2 (corpus max 0.483n, 9,455 returns, every root FRESH, chain depth ≤ 2)
+# N5-QRET (box 99): one mechanism behind the quadratic Even-edge returns. In sbq2_K8_m16, obs_K12_m24 and latew_K16_m32 every return is FREE (box 84: REG 0, E0 0). Every return traces back to a FRESH Even entry. The dominant roots are the K fresh ticks of ONE clock vertex (vertex 4, out-degree K + 1, walking monotonically through its successors, period m + 3), and each tick roots ≈ 3m returns. Theorem CASCADE-EQ (PROVED, lane, modulo one case of FRESH-ROOT): WRUN-POLY ⇔ «returns rooted at one fresh entry are polynomial». CONJECTURE CASCADE-LIN: ≤ n/2 (corpus max 0.483n, 9,455 returns, every root FRESH; the depth figure in §2.4 / §3 is CORRECTED in box 100)
 L-NEW successor 40 (Opus 5.5), D14 / D18, Lead reading L40. Lead 21:21Z: «BOX 99: the REG/FREE classification of latew_K16_m32's 496 return
 transitions. Which targets g are re-entered, how often per g, and what raises Ξ(g) between consecutive entries … Do the same on sbq2_K8_m16
 … and obs_K12_m24 … Goal: identify the ONE mechanism … If so, state it as a lemma candidate («each Ξ-rise at a re-entered target g is caused
@@ -90,12 +90,15 @@ DATA / READING. Not a TARGET.md claim. G-N5-TIME stays OPEN; no W-run count is b
   - An exponential W-run would need a counter.
   - With canonical roots, a counter's lower bits re-enter because of higher bits' RETURNS. That means chain depth ≥ 2 repeated, and a
     cascade that grows with the depth.
-  - The corpus has chain depth ≤ 2 (8,738 / 709 / 8 returns at depth 0 / 1 / 2).
+  - The corpus has chain depth ≤ 2 (8,738 / 709 / 8 returns at depth 0 / 1 / 2). CORRECTED in box 100: false, a tool bug; depth
+    reaches 49 on topfix_N (width 1 there).
   - L-RED kill target: one W-run whose root chains have unbounded depth, or one fresh entry rooting > n returns.
 
 ## 3. DATA: corpus (runcause.sh, 2026-10-30 21:2xZ by date -u)
 - Scope: box 50b's corpus (719 sbcg + 413 alt) + 3 pins. 602 W-runs with returns, 9,455 return entries. 0 errors, 0 timeouts at 300 s.
 - Root kinds: FRESH 9,455. Chain depth: 0 for 8,738, 1 for 709, 2 for 8.
+  - CORRECTED in box 100 (N5-CASC-box100.md §2.3): these depths were a tool bug (absolute-depth memo). The true depths reach 49
+    (topfix_N). Roots and CASC are unaffected.
 - Largest cascades: latew 93, obs 71, fc_8 / switchbestexp_8 66 (n 135 / 148), topfix_n10 50.
   - topfix_N grows linearly: 8, 14, 26, 38, 50 for N = 3, 4, 6, 8, 10.
 - Largest CASC / n: 0.483.

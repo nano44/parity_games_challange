@@ -517,4 +517,16 @@ if grep -q "RUN 0-152 F 152 returns 450 edges 60 targets 60 max_per_target 8 nor
 else
   echo "box 99 QRET check: FAILED"; exit 1
 fi
+w50=$(cd .. && python3 -I new/box99/retcause.py new/box52/out/topfix_n10.pg; TOP=1 python3 -I new/box99/retcause.py new/box97/inst/obs_K12_m24.pg new/box97/inst/obs_K12_m24.start)
+if grep -q "EROOT kinds {'FRESH': 252} distinct roots 27 max returns per root 50 chain depth {.*49: 1} max children per node 1 max children per return node 1 mE 651" <<<"$w50" && grep -q "EROOT kinds {'FRESH': 818} distinct roots 25 max returns per root 71 chain depth {0: 301, 1: 506, 2: 11} max children per node 24 max children per return node 2 mE 149" <<<"$w50"; then
+  echo "box 100 CASC: EVEN root map total (all FRESH); topfix_n10 root chain depth 49 with width 1 (depth O(1) DEAD); obs_K12_m24 depth 2, return-node width 2: PASS"
+else
+  echo "box 100 CASC check: FAILED"; exit 1
+fi
+w51=$(cd .. && TOP=1 python3 -I new/box99/retcause.py new/box97/inst/obs_K12_m24.pg new/box97/inst/obs_K12_m24.start; python3 -I new/box99/retcause.py new/box52/out/topfix_n10.pg; python3 -I new/box99/retcause.py red/so/instances/pftheta34_n32.pg)
+if grep -q "PERROOT max returns of one Even X per root 24 (X 247 deg 24) max returns of one edge per root 1 max (returns of X per root)/deg X 1.0" <<<"$w51" && grep -q "PERROOT max returns of one Even X per root 17 (X 193 deg 18) max returns of one edge per root 17" <<<"$w51" && grep -q "PERROOT max returns of one Even X per root 2 (X 3 deg 2) max returns of one edge per root 2 max (returns of X per root)/deg X 1.0 max returns of X per root leaving one target 2" <<<"$w51"; then
+  echo "box 101 CEDGE: RET(X; e) <= deg X tight on obs (24/24); once-per-root DEAD (obs), edge-O(1) DEAD (topfix 17), left-target injection DEAD (pftheta34): PASS"
+else
+  echo "box 101 CEDGE check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
