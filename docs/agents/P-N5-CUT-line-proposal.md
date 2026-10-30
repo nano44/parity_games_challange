@@ -7,3 +7,5 @@ Lead notes for the referees (not part of the line):
 - Symbols to find defined in the line or carried: T, n, m_E, λ-run, W-run, λ^U-run, late adoption, re-entry, W-silent, own-cycle, τ-changing transition, S4c fallback.
 - Standing premise (REFEREE 19 handover check, 01:12Z): R57 (b) (S1 returns an optimal counterstrategy realising Ξ) and G-N5T-1 are not named in the packet; OPT-OFF (i) uses the former. Expect an item.
 - "polynomial iff they are": the converse direction must be justified or the word "iff" dropped.
+
+SUPERSEDED 2026-10-30 02:00Z (date -u): both referees returned the line above NOT YET (REFEREE 19 §10b 8a7818a0; REFEREE-2 §8 335814dc). The lane's corrected line is H-item K0 in docs/si/P-N5-CUT-fixes-box43.md at l-si cc84e54c (file sha1 ff994621…), with K1 (converse, for "iff"). K0 is the only candidate line; the text above is history.
