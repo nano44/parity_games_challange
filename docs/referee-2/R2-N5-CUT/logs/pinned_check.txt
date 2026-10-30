@@ -1,0 +1,7 @@
+PASSLINE si (box 40: W-RETURN-G and cut-attached re-entries): PASS
+PASSLINE si (box 42: late adoptions FIRST / REPEAT): PASS
+PASSLINE si (box 43: P-N5-CUT quotes, hntop_n3 R* 0): PASS
+
+real	1m20.943s
+user	1m19.378s
+sys	0m0.483s

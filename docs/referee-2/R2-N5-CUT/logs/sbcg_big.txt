@@ -1,0 +1,101 @@
+DONE-FILE new/box59/out/fc_4.pg
+DONE-FILE new/box59/out/fc_5.pg
+DONE-FILE new/box59/out/fc_6.pg
+DONE-FILE new/box59/out/fc_7.pg
+DONE-FILE new/box59/out/fc_8.pg
+DONE-FILE new/box59/out/fcobsR_4.pg
+DONE-FILE new/box59/out/fcobs_4.pg
+DONE-FILE red/carry/instances/fall4_n116.pg
+DONE-FILE red/lag/instances/fam_D12_n106.pg
+DONE-FILE red/n5/instances/dl_6_8.pg
+DONE-FILE red/tcpert/instances/leanT_N16.pg
+DONE-FILE red/tcpert/instances/leanT_N24.pg
+DONE-FILE red/tcpert/instances/tcL_N10.pg
+DONE-FILE red/tcpert/instances/tcL_N6.pg
+DONE-FILE red/tcpert/instances/leanT_N32.pg
+DONE-FILE red/tcpert/instances/tcL_N8.pg
+DONE-FILE red/tcpert/instances/tcR4_N6.pg
+DONE-FILE red/tcpert/instances/tcR4_N7.pg
+DONE-FILE red/tcpert/instances/tcR4_N8.pg
+DONE-FILE red/tcpert/instances/tcL_N12.pg
+DONE-FILE red/tcpert/instances/tcS8_N6.pg
+DONE-FILE red/tcpert/instances/tcS8_N10.pg
+DONE-FILE red/tcpert/instances/tcS8_N7.pg
+DONE-FILE red/tcpert/instances/tcS8_N8.pg
+DONE-FILE red/tcpert/instances/tcS8_N11.pg
+DONE-FILE red/ul/instances/cxmig_k16_n138.pg
+DONE-FILE red/tcpert/instances/tcS8_N9.pg
+DONE-FILE red/ul/instances/ladderd0_k48_n156.pg
+DONE-FILE red/usplit/instances/gate_K16_n197.pg
+DONE-FILE red/ul/instances/ladderent_k48_n156.pg
+DONE-FILE red/usplit/instances/grow_K12_n149.pg
+DONE-FILE red/usplit/instances/pp_K12_n161.pg
+DONE-FILE red/usplit/instances/pp_K12_n161_dual.pg
+DONE-FILE red/usplit/instances/grow_K40_n373.pg
+DONE-FILE red/usplit/instances/pp_K48_n449.pg
+DONE-FILE red/usplit/instances/gate_K64_n581.pg
+DONE-FILE red/usplit/instances/pp_K48_n449_dual.pg
+DONE-FILE new/box54/out/switchbestexp_4.pg
+DONE-FILE new/box54/out/switchbestexp_5.pg
+DONE-FILE new/box54/out/switchbestexp_6.pg
+DONE-FILE new/box54/out/switchbestexp_7.pg
+DONE-FILE new/box54/out/switchbestexp_8.pg
+DONE-FILE new/box54/out/hf/counter_rob_5.pg
+DONE-FILE new/box54/out/hf/counter_rob_6.pg
+DONE-FILE new/box54/out/hf/counter_rob_8.pg
+DONE-FILE new/box54/out/hf/tc_6.pg
+DONE-FILE new/box54/out/hf/tc_8.pg
+DONE-FILE red/seg/instances/runquad_K8_m30_n192.pg
+DONE-FILE red/seg/instances/s3quad_K3_m4.pg
+DONE-FILE red/seg/instances/s3quad_K8_m30.pg
+DONE-FILE new/box52/out/topfix_n6.pg
+DONE-FILE new/box52/out/topfix_n8.pg
+DONE-FILE new/box52/out/topfix_n10.pg
+DONE-FILE new/box52/out/topfix_n8_cmp.pg
+DONE-FILE new/box51/out/dlc_d3.pg
+DONE-FILE new/box51/out/dlc_d4.pg
+DONE-FILE new/box54/out/d_dlc_d3.pg
+DONE-FILE new/box59/out/fcobsP_4.pg
+DONE-FILE new/box59/out/fcobs_6.pg
+MODE files /tmp/claude-0/-home-user-parity-games-challange/dcf76fbb-3694-56a4-b493-c44b27344cc8/scratchpad/cs_big 1 experiments/ OO1N 60 OO1S 10 RANDH 2 MAXT 3000
+CC3_checks: 8402
+CL_C: 0
+CL_F: 0
+CL_FR: 2862
+CL_P: 2658
+CL_S: 0
+CR_checks: 59
+CR_pair_checks: 8402
+FB_checks: 2327
+FS_G0: 1158
+FS_LATE: 30
+FS_SAME: 1
+FS_WC: 1673
+FS_late_checks: 30
+LS2_checks: 27
+LS3_checks: 3
+OO1_checks: 17358
+OO1_sampled_steps: 700
+OO2_checks: 318123
+RREP_checks: 1089
+WM_checks: 2175
+WS_checks: 235118
+WV_checks: 164249
+X_OO2_own: 138
+X_REP_rise: 27
+X_WRG_cut: 104
+late_adoptions: 260
+late_first: 233
+late_repeat: 27
+reentries: 5520
+runs: 59
+transitions: 2327
+wruns: 1089
+max max_Bstar: 55
+max max_ENT: 18
+max max_Ostar: 55
+max max_REPstar: 6
+max max_SCstar: 0
+max max_T: 264
+max max_WCHstar: 34
+RESULT PASS violations 0

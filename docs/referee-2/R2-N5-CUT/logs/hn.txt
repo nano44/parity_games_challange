@@ -1,0 +1,47 @@
+RUN si/odd/inst/hn/hntop_n2.pg#start n 42 mE 71 T 33 B* 0 REP* 0 SC* 0 O* 0 E* 80
+RUN si/odd/inst/hn/hntop_n2.pg#0 n 42 mE 71 T 16 B* 0 REP* 0 SC* 0 O* 0 E* 30
+RUN si/odd/inst/hn/hntop_n3.pg#start n 63 mE 119 T 61 B* 0 REP* 0 SC* 0 O* 0 E* 243
+RUN si/odd/inst/hn/hntop_n3.pg#0 n 63 mE 119 T 22 B* 0 REP* 0 SC* 0 O* 0 E* 65
+RUN si/odd/inst/hn/hntop_n4.pg#start n 84 mE 174 T 95 B* 0 REP* 0 SC* 0 O* 0 E* 515
+RUN si/odd/inst/hn/hntop_n4.pg#0 n 84 mE 174 T 28 B* 0 REP* 0 SC* 0 O* 0 E* 112
+RUN si/odd/inst/hn/hntop_n5.pg#start n 105 mE 236 T 135 B* 0 REP* 0 SC* 0 O* 0 E* 920
+RUN si/odd/inst/hn/hntop_n5.pg#0 n 105 mE 236 T 34 B* 0 REP* 0 SC* 0 O* 0 E* 171
+RUN si/odd/inst/hn/hntop_n6.pg#start n 126 mE 305 T 181 B* 0 REP* 0 SC* 0 O* 0 E* 1482
+RUN si/odd/inst/hn/hntop_n6.pg#0 n 126 mE 305 T 40 B* 0 REP* 0 SC* 0 O* 0 E* 242
+RUN si/odd/inst/hn/hntop_n7.pg#start n 147 mE 381 T 233 B* 0 REP* 0 SC* 0 O* 0 E* 2225
+RUN si/odd/inst/hn/hntop_n7.pg#0 n 147 mE 381 T 46 B* 0 REP* 0 SC* 0 O* 0 E* 325
+RUN si/odd/inst/hn/hntop_n8.pg#start n 168 mE 464 T 291 B* 0 REP* 0 SC* 0 O* 0 E* 3173
+RUN si/odd/inst/hn/hntop_n8.pg#0 n 168 mE 464 T 52 B* 0 REP* 0 SC* 0 O* 0 E* 420
+MODE files hn.lst 1 experiments/ OO1N 60 OO1S 30 RANDH 2 MAXT 3000
+CC3_checks: 3742
+CL_C: 0
+CL_F: 0
+CL_FR: 0
+CL_P: 8282
+CL_S: 0
+CR_checks: 14
+CR_pair_checks: 3742
+FB_checks: 1267
+OO1_checks: 15962
+OO1_sampled_steps: 103
+OO2_checks: 108717
+RREP_checks: 182
+WM_checks: 1267
+WS_checks: 92484
+WV_checks: 1470
+late_adoptions: 0
+late_first: 0
+late_repeat: 0
+reentries: 8282
+runs: 14
+starts_valid: 7
+transitions: 1267
+wruns: 182
+max max_Bstar: 0
+max max_ENT: 78
+max max_Ostar: 0
+max max_REPstar: 0
+max max_SCstar: 0
+max max_T: 291
+max max_WCHstar: 168
+RESULT PASS violations 0

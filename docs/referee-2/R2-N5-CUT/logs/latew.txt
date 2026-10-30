@@ -1,0 +1,40 @@
+RUN docs/referee-2/R2-N5-CUT/inst/latew_K8_m32.pg#start n 370 mE 179 T 280 B* 0 REP* 210 SC* 0 O* 0 E* 1025
+RUN docs/referee-2/R2-N5-CUT/inst/latew_K8_m32.pg#0 n 370 mE 179 T 3 B* 2 REP* 0 SC* 0 O* 0 E* 20
+RUN docs/referee-2/R2-N5-CUT/inst/latew_K20_m32.pg#start n 538 mE 251 T 700 B* 0 REP* 570 SC* 0 O* 0 E* 2561
+RUN docs/referee-2/R2-N5-CUT/inst/latew_K20_m32.pg#0 n 538 mE 251 T 3 B* 2 REP* 0 SC* 0 O* 0 E* 26
+MODE files latew.lst 1 OO1N 60 OO1S 30 RANDH 2 MAXT 3000
+CC3_checks: 408
+CL_C: 0
+CL_F: 0
+CL_FR: 0
+CL_P: 3348
+CL_S: 0
+CR_checks: 4
+CR_pair_checks: 408
+FB_checks: 986
+LS2_checks: 780
+LS3_checks: 12870
+OO1_checks: 19325
+OO1_sampled_steps: 232
+OO2_checks: 117516
+RREP_checks: 10
+WM_checks: 984
+WS_checks: 97346
+WV_checks: 3632
+X_REP_rise: 780
+late_adoptions: 898
+late_first: 118
+late_repeat: 780
+reentries: 3348
+runs: 4
+starts_valid: 2
+transitions: 986
+wruns: 10
+max max_Bstar: 2
+max max_ENT: 20
+max max_Ostar: 0
+max max_REPstar: 570
+max max_SCstar: 0
+max max_T: 700
+max max_WCHstar: 38
+RESULT PASS violations 0
