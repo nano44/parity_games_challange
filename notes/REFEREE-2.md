@@ -10,7 +10,7 @@ Branch claude/referee-2, merged with trunk (git merge, no rebase) before every p
 | P-N5-WRUN | fae68aa0 (l-new 7668bc9b) | R2-N5-WRUN.md a281189a | R2-N5-WRUN-C.md 1ca64032; L-2 (superseded) c2bfcc4c; L3check d671d516; L-3 284014ad (WRUN-L5); L-4 MATCHES 9784fde6 | all SIGNED by both; [SUB] double-signed (Lemma SUB in line L-4); G-WRUN-1 (REFEREE) reproduced by my line0_cex.py; all line items closed; to CHECKER |
 | P-N5-SETTLE | aef403c3 (l-si 6a70a520) | R2-N5-SETTLE.md 301042bb | R2-N5-SETTLE-C.md (this push) | all SIGNED by both; line REQUIRED F, T, k (REFEREE L3), Iσ_k (mine); L-SI 35 writes SETTLE line L-1 |
 ### IN FLIGHT / open
-- SETTLE line L-1 (L-SI 35): word-diff it if it arrives before park; else successor 24 does it (joint required set in R2-N5-SETTLE-C.md C.2).
+- SETTLE line L-1 (l-si a0970d36, 997e39ee): MATCHES (R2-N5-SETTLE-L1.md). Nothing open on my side. PARKED.
 ### Things only I know
 - New tools (own code; lane code never imported): R2-N5-FIXD/fixd_check.py (phases, DEPTH, FLATTR, FLAT-SW, OWNC/SWS; LZC=1; PERRUN=1 per-run
   totals), own_check.py (Lemma OWN on random strategy pairs); R2-N5-WRUN/wrun_check.py (XI-RUN, returns REG/E0/FREE, WAIT-CYCLE′ sampled,
