@@ -9,7 +9,7 @@ W-run F = [a, b]: maximal, every transition inside has no fallback, keeps tau an
 BLOCKED at t (R88 §3): (y, z) Even edge, z != sigma_t(y), W_t(z) > W_t(sigma_t y), (y, z) not in I_sigma_t.
 Adoption of (y, z) at u: sigma_{u+1}(y) = z != sigma_u(y). p := previous adoption transition of (y, z) in F.
   LATE88: blocked at some t in [a, u).   LATE': blocked at some t in [max(a, p + 1), u).
-  REP' := LATE' adoptions with p defined. Box-50 REPEAT := LATE88 adoption with an earlier LATE88 adoption of the edge in F;
+  REP' := LATE' adoptions with an earlier LATE' adoption of the edge in F (frozen packet §2); REPA := LATE' with p defined (the tool's REPP). Box-50 REPEAT := LATE88 adoption with an earlier LATE88 adoption of the edge in F;
   re-blocked := blocked at some state of [k + 1, u - 1] (k = y's last leave of z before u); STALE := box-50 REPEAT not re-blocked.
 Checks (each must be 0):
   XIPLAY  Xi_t(v) = play value of (sigma_t, sbar_t) from v          XW     Xi_t <= W_t pointwise       XIMON  Xi non-decreasing (whole run)
@@ -20,6 +20,7 @@ Checks (each must be 0):
   C0      no STALE REPEAT is LATE'
   LSP     LATE-SPLIT' (b): every REP' at u, y off-cycle (lambda_W(y) != y), every blocked state t_b in [k+1, u-1]: W_{t_b}(z) > W_{k+1}(z)
           (proof steps counted: LSP_opt  W_{k+1}(sigma_{k+1} y) >= W_{k+1}(z);  LSP_succ  W_{t_b}(sigma_{t_b} y) >= W_{k+1}(sigma_{k+1} y))
+  REPSUB  every REPEAT' is a P-N5-CUT §6 REPEAT, and REP'_F <= REP_F per W-run
   XSIL    a W-silent REP' (no W(z) change on [k+1, u-1]) whose y is off-cycle
   CIR1..CIR3  CIRCLE': REP' <= n_E R*'_T;  R*'_T <= m_E + REP';  REP' <= X' + sum_z d_E(z) WCH_F(z)   (X' := own-cycle REP')
   GC      GAP-CLIMB: t_b := last blocked state in [max(a, p+1), u); s := first transition of [t_b, u-1] with Xi(z) change: exists, strict
@@ -29,7 +30,8 @@ Checks (each must be 0):
           (CYC), a T2 terminal at a lambda_Xi-fixed transition is a GXC event (T2G)
   RED     TXC-RED: TXC_F <= n (GXC_F + GATE_F + CNW_F) + n^2 LCT_F
 Controls (X_*, expected nonzero somewhere): X_noT3 / X_noT2 / X_noT4 (continue the descent through that terminal kind: next vertex
-not TXC), X_GXCstrict / X_TXCstrict (strict inclusions), X_LSP_own (LATE-SPLIT' conclusion fails at an own-cycle y), X_A1.
+not TXC), X_GXCstrict / X_TXCstrict (strict inclusions), X_LSP_own (LATE-SPLIT' conclusion fails at an own-cycle y),
+X_A3 (box-50 re-blocked REPEATs that are not REPEAT'), X_REPA_gt_REPP_wruns (W-runs where the tool's REPP exceeds REP').
 BF=n: at every state of games with n <= BF, Xi_t(v) = min over ALL positional Odd strategies of the play value (independent of si.py).
 Usage: latep_check.py random N nmin nmax seed [starts] | files list.txt [runs [prefix]]   (DUMP=1 prints one line per W-run)"""
 import sys, os, random, itertools
@@ -132,8 +134,8 @@ def wrun(g, E, info, a, b, st, name, Even, nE, mE, dE):
     if TXC - GXC: st.inc("X_GXCstrict")
     if ZXC - TXC: st.inc("X_TXCstrict")
     # ---- adoptions
-    lastad, lastlate88, lastleave = {}, {}, {}
-    RT = RTP = REPP = XP = LP = 0; lateP = {}; tok = set()
+    lastad, lastlate88, lastleave, lastlateP = {}, {}, {}, {}
+    RT = RTP = REPP = XP = LP = REPA = REP88 = 0; lateP = {}; tok = set()
     for u in range(a, b):
         A, B = info[u], info[u + 1]; is88 = isP = False
         for y in Even:
@@ -148,10 +150,12 @@ def wrun(g, E, info, a, b, st, name, Even, nE, mE, dE):
             if LP_ and not L88: st.bad("RSUB", f"{name} {e}@{u}")
             k = lastleave.get(e) if p is not None else None   # y's last leave of z before u (exists if p exists)
             rep50 = L88 and e in lastlate88
+            REP88 += rep50
             if rep50:
                 k50 = lastleave[e]; reblk = any(blocked(t, y, z) for t in range(k50 + 1, u))
                 st.inc("REP50"); st.inc("REP50_reblocked" if reblk else "REP50_stale")
                 if reblk and not (LP_ and p is not None): st.bad("A2", f"{name} {e}@{u}")
+                if reblk and e not in lastlateP: st.inc("X_A3_reblk_not_REPEATprime")
                 if not reblk and LP_: st.bad("C0", f"{name} {e}@{u}")
             if LP_:
                 LP += 1; lateP[e] = lateP.get(e, 0) + 1
@@ -163,9 +167,10 @@ def wrun(g, E, info, a, b, st, name, Even, nE, mE, dE):
                     if (e, sc[0]) in tok: st.bad("GTOK", f"{name} {e} s={sc[0]}")
                     tok.add((e, sc[0]))
                     st.inc("GC_tied" if not wchg(sc[0], z) else "GC_WZ")
-                if p is not None:
+                if p is not None: REPA += 1   # the tool's REPP: LATE' with ANY earlier adoption
+                if e in lastlateP:              # REPEAT' (frozen packet §2): an earlier LATE' adoption of e in F
                     REPP += 1
-                    if not rep50: st.inc("X_A1")
+                    if not rep50: st.bad("REPSUB", f"{name} {e}@{u} REPEAT' not a P-N5-CUT REPEAT")
                     own = lamW[y] == y
                     silent = not any(wchg(t, z) for t in range(k + 1, u))
                     if own: XP += 1
@@ -183,6 +188,7 @@ def wrun(g, E, info, a, b, st, name, Even, nE, mE, dE):
                         if K(Wk[info[k + 1]["sg"][y]]) < K(Wk[z]): st.bad("LSP_opt", f"{name} {e}@{u}")
                         if K(Wt[info[tbb]["sg"][y]]) < K(Wk[info[k + 1]["sg"][y]]): st.bad("LSP_succ", f"{name} {e}@{u}")
             if L88: lastlate88[e] = u
+            if LP_: lastlateP[e] = u
             lastad[e] = u
         RT += is88; RTP += isP
     st.inc("FWR_checks")
@@ -191,6 +197,9 @@ def wrun(g, E, info, a, b, st, name, Even, nE, mE, dE):
     if REPP > nE * RTP: st.bad("CIR1", f"{name} F[{a},{b}]")
     if RTP > mE + REPP: st.bad("CIR2", f"{name} F[{a},{b}]")
     if REPP > XP + sum(dE[z] * WCHz[z] for z in range(n)): st.bad("CIR3", f"{name} F[{a},{b}]")
+    if REPP > REP88: st.bad("REPSUB", f"{name} F[{a},{b}] REP' {REPP} > REP {REP88}")
+    st.inc("REPA_sum", REPA); st.inc("REP88_sum", REP88); st.mxu("REPA", REPA)
+    if REPA > REPP: st.inc("X_REPA_gt_REPP_wruns")
     zxcz = [sum(1 for (x, t) in ZXC if x == z) for z in range(n)]
     for (y, z), c in lateP.items():
         st.inc("GCE_checks")
@@ -278,7 +287,7 @@ def main():
     for k in sorted(st.c): print(f"{k}: {st.c[k]}")
     for k in sorted(st.mx): print(f"max {k}: {st.mx[k]}")
     keys = ("XIPLAY", "XW", "XIMON", "LCT", "WMON", "RSUB", "FWR", "FWP", "A2", "C0", "LSP", "LSP_opt", "LSP_succ", "XSIL", "CIR1", "CIR2",
-            "CIR3", "GC", "GTOK", "GCE", "GCS", "INC", "DESC", "CYC", "T2G", "RED", "BF")
+            "CIR3", "REPSUB", "GC", "GTOK", "GCE", "GCS", "INC", "DESC", "CYC", "T2G", "RED", "BF")
     bad = sum(st.c.get(k, 0) for k in keys)
     print("RESULT", "PASS" if bad == 0 else "FAIL", "violations", bad)
 
