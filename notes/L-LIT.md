@@ -16,6 +16,8 @@ DONE this session (claude/l-lit; every push via scripts/push.sh, exit 0, VERIFY 
   SEGRET data; thetaA_n7 one-parameter-consistent). PLAIN=1 mode added to T48-sbc-embed-check.py. Trunk merged 8bb9799d.
 - 2026-10-30 T52 (this push): docs/lit/T52-adoption-sequence-bounds.md (DS / forbidden matrices / wqo / matroid rank trick /
   sorting vs per-W-run adoption sequences; DS per vertex DEAD by R137; one missing lemma XI-CH-POLY ⇒ R*-POLY via R*-RISE). Trunk d4d9165f.
+- 2026-10-30 T53 (this push): docs/lit/T53-arv-friedmann-levels.md (ARV Thm 7 = 1-2-exchange; Friedmann 0901.2731 counter lives in one
+  cycle-node phase, so XI-CH-POLY needs N5's fixed τ + S4a; level arguments are one-player or discounted).
 IN FLIGHT: none.
 OPEN LEADS for a successor (only on a concrete Lead question):
 - KL-SF (T50 §1): F's step with Koh-Loho tree labels; for L-NEW to define/measure. Literature side: Koh-Loho Prop. 2.5 with roles swapped.
@@ -439,6 +441,10 @@ NEEDS: none from the owner.
 | arXiv 1103.4399 (Schmitz-Schnoebelen, Higman) sha256 3879925798864930… | abstract; multiply-recursive bounds; Main Theorem §5 (not re-derived) | 2026-10-30 | |
 | ECCC TR06-067 (Ackermann-Röglin-Vöcking; JACM 55(6) 2008, DOI 10.1145/1455248.1455249) sha256 d13b2032bc8f8721… | abstract; Thm 3 + Lemma 4 + proof (PDF p.5): ≤ n²·m·rk(Γ) best responses via ranks; «independent of the delay functions»; Thm 7 (PDF p.7) exponential for non-matroid classes | 2026-10-30 | |
 | NOT opened (T52) | Marcus-Tardos JCTA 2004; Füredi-Hajnal 1992; Pettie 0-1 matrix papers; Sharir-Agarwal book; no source for sorting / monotone-circuit item | 2026-10-30 | |
+| T53 (2026-10-30) sources | | | |
+| arXiv 0901.2731 v1 (Friedmann, LICS 2009 «as we know it») sha256 6c56adb207f38468… | abstract (quadratic size); PDF p.6: first and third valuation components unaltered, cycle node q, binary counter; §3 deceleration lane / simple cycles; Thm 8 (PDF p.9): 13·2^n − 9 iterations, locally optimizing | 2026-10-30 | |
+| ECCC TR06-067 (ARV) re-read | PDF p.7 1-1-exchange insight; Def. 8 1-2-exchange; Lemma 9 (non-matroid ⇒ 1-2-exchange); Lemma 10; Thm 7 | 2026-10-30 | |
+| arXiv 2108.13338 (Koh-Loho) re-read | Algorithm 4 (Bellman-Ford on tree labels, n − 1 iterations), Thm 5.3 | 2026-10-30 | |
 
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
@@ -466,6 +472,8 @@ NEEDS: none from the owner.
   σ alone, so τ-gated locks have no effect); "all-rules lower bound for F": DEAD by Friedmann thesis Lemma 4.2 (one-sided SI has a ≤ |V| rule).
 - T52 (2026-10-30): DS bound per vertex per W-run (fixed alternation order s): DEAD. Obstruction: R137's chooser X → {O1, O2} returns to one edge
   128 times in one W-run (n 362), so s grows with n. Higman / Dickson route: DEAD for polynomiality (run is a good chain; F_k-level bounds).
+- T53 (2026-10-30): "XI-CH-POLY from Ξ-monotonicity + constant cycle node": DEAD as a template. Obstruction: Friedmann 0901.2731 G_n,
+  switch-all, cycle node q fixed, 13·2^n − 9 iterations, so some vertex has exponentially many Ξ changes in one phase.
 
 ## Corrections log
 - 2026-10-23 (T26): N8d-barrier.md §0 and R54 §0 put Lemma 4.75 / Thm 4.76 on p.187; opened PDF: printed p.186 (PDF p.202). Reported as caveat 4.
