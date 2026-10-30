@@ -1,4 +1,5 @@
 # L-RED notebook (independent adversary lane)
+Successor 32 (session_01V5yGRXGW9KqMY5gaypMTs2, Opus 5.5) started 2026-10-30 05:28Z (date -u); R131 TIED-RB DEAD; see "Successor 32".
 Successor 31 (session_01V5yGRZfrtk7CRqezo1wAzp, Opus 5.5) woken 2026-10-30 00:09Z; R126-R129; PARKED 01:40Z; woken 03:13Z for R130 (WD-BOUNDED DEAD), PARKED again ~03:30Z; see "Successor 31 PARK".
 Successor 31 (session_01V5yGRZfrtk7CRqezo1wAzp, Opus 5.5) HANDOVER written 2026-10-29 ~23:50Z (date -u), PARKED; see "Successor 31 HANDOVER".
 Successor 31 (session_01V5yGRZfrtk7CRqezo1wAzp, Opus 5.5) started 2026-10-29 22:19Z (date -u); handover check d6ae7cda; STEP 1 = R123, R124, R125; see "Successor 31".
@@ -29,6 +30,19 @@ Successor 15 PARKED ~09:40Z 2026-10-25 after box 38; RESUME POINT for successor 
 context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older notebook: `git show b0884407:notes/L-RED.md`.
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
+
+## Successor 32 (session_01V5yGRXGW9KqMY5gaypMTs2, Opus 5.5, D1/D17/D18; started 2026-10-30 05:28Z, date -u)
+- Start: claude/l-red ff to 448a1bf9, trunk f16749dc merged. Oink built (8fbf0a7). l-si worktree /tmp/claude-0/lsi @ 4fb0bfba (tied.py,
+  windag.py read only). Lead targets (from L-SI box 50): (A) a binary causal reader tree in one W-run (REP 2^Theta(n)); (B) TIED-RB.
+- (B) DONE: R131 docs/red/R131-tied-rb.md. TIED-RB DEAD: tree/mktied.py (mkrw LATE=1 + y_J -> {v_J, z_J}, z_J Even -> {a_(J+1), c_(J+1)})
+  gives (K-1)(m-2) untied re-blocked REPEATs per W-run (210 at n 382); tied.py = tiedc.py; xeng identical; Oink OK. TARGET=odd (target
+  never switches) fails the same way. Release climb is on the SHARED PREFIX of z's W-play and Xi-play -> paid by a W-change (CIRCLE (c)).
+- Tools (experiments/red/tree/): gb.py (named builder GB, from_pg, trace(G, watch) prints sigma/tau changes and W / Xi as
+  cycle|top priorities|length), tiedlib.py (stats(g, start) = tied.py counts + REPEAT list, importable), tiedc.py (second counter, n5b).
+- Things only I know: scratch /tmp/claude-0/r131 (gsearch.py = random gadget search on mkrw bases: `python3 gsearch.py SEED SECS K m`,
+  prints hits and pickles the GB; tg*.py = family probes). Random plain games (rsearch.py, n <= 9) gave no re-blocked REPEAT in 10 min.
+  DAG games with tau optimal: an N5 W-run is <= depth long (lowest suboptimal Even vertex has a Xi- and W-improving optimal edge); stable
+  gaps need cycles (mkrw's EQ / EQp pair).
 
 ## Successor 31 PARK (2026-10-30 ~01:40Z, date -u; ~415k context; Lead 01:38Z: "write your handover and PARK now")
 - Generators and pins (all under experiments/red/span/, check.sh gates on each):
