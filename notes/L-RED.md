@@ -45,6 +45,9 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - R143 §5 (b): BIP-REL-1 DEAD. rel2/mkrel2.py (delay chains D(k, lo, hi), nested; rises >= 2 apart because of ARENA-MAX look-ahead):
   rel2_R2_n82 2 strict releases of (y, oz) in one frozen stretch, rel2_R4_n322 4 (strictrel = relpe STRICT=1, xeng identical, Oink OK).
   Family R at n ~ 20R^2 (polynomial, BIP-POLY not killed).
+- R144 (Lead 16:36Z) docs/red/R144-compose.md: rel3 (rel2/mkrel3.py, chains in sequence) R strict releases at n = 54R - 20 (R <= 16;
+  pin rel3_R4_n196, all checks); latew stretches <= 2 long, 0 strict releases; Lemma ADD (sum R°_Phi <= |F| - SB). Costs add. swcount.py.
+  R = 32 not finished (n5b > 900 s).
 - RESUME POINT: a super-quadratic kill needs (a) exponentially many upward events (Xi-changes at deviation targets) in one interval, or
   (b) a clock whose rises are not paid by fresh vertices. Untried: reuse ONE delay chain for many rises (a ladder whose top reads several
   depths); feed an upward head from the mkrel2 clocks inside a W-constant interval.

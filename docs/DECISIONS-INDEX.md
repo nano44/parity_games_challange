@@ -31,3 +31,4 @@
 | L39 | 2026-10-24 | Lead reading of D17: use the allowance; 5 working lanes (L-RED, L-NEW, L-LIT, L-COMP, new L-SI); gate roles (CHECKER, referees) above 5 with justification | active | docs/DECISIONS.md#d17 |
 | D18 | 2026-10-24 | Owner: "Focus on N5 and work toward proving it. Explore novel approaches ... Clearly distinguish proven results from conjectures and open problems." | active | docs/DECISIONS.md#d18 |
 | L40 | 2026-10-24 | Lead reading of D18: all 5 lanes on N5 (L-NEW designer, L-RED adversary, L-COMP exhaustive, L-SI OR/MDP lens, L-LIT T28 cross-field techniques); DTL paused; labels PROVED/CONJECTURE/OPEN | active | docs/DECISIONS.md#d18 |
+| L41 | 2026-10-30 | Lead reading: a referee-originated proof counts as two-referee signed when its author signs it and the other referee independently signs it (both quoted, scope tail says so); line files carry no heading marker | active | docs/DECISIONS.md#lead-reading-l41 |

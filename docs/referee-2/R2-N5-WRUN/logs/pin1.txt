@@ -1,0 +1,24 @@
+MODE files /tmp/claude-0/-home-user-parity-games-challange/c5131569-13ae-5464-8cfa-fc746dffc9b4/scratchpad/wr/p1.lst 1 experiments/ MAXT 5000 BF 0
+WRUNS: 6
+WRUN_transitions: 34
+XIPLAY_checks: 1280
+X_DEEP1: 129
+X_DEEP2: 84
+X_DEEP3: 56
+X_E0: 0
+X_EXT_GLOBAL: 3
+X_FREE: 16
+X_NODEV_runs: 1
+X_REG: 26
+X_REG_blocks_checked: 106
+X_blocked_records: 164
+runs: 1
+transitions: 39
+max max_F: (34, 'red/so/instances/pftheta34_n32.pg#0')
+max max_LCT_run: 4
+max max_NODEV_F: (0, 'red/so/instances/pftheta34_n32.pg#0')
+max max_Rstar: (4, 'red/so/instances/pftheta34_n32.pg#0')
+max max_SB: (34, 'red/so/instances/pftheta34_n32.pg#0')
+max max_XiCH: (34, 'red/so/instances/pftheta34_n32.pg#0')
+max max_ratio_F_bound_x1000: (33, 'red/so/instances/pftheta34_n32.pg#0')
+RESULT PASS violations 0

@@ -351,3 +351,10 @@ Lead reading L40 (2026-10-24 13:11Z by date -u):
 (4) Labels, strictly: PROVED (with who checked it: lane / referees / Lean), CONJECTURE (with the data behind it), OPEN. This extends the
     existing [refereed-only] / DATA / READING scheme; reports to the owner use exactly these three words.
 (5) D17/L39 stand: five working lanes; CHECKER and referees run on top when a claim needs them.
+
+Lead reading L41 (2026-10-30 18:40Z by date -u):
+Referee-originated proofs. A proof written by one referee counts toward "two referees signed it with its gaps listed" (CLAUDE.md) when
+the author referee signs it in its report and the OTHER referee independently checks and signs it; both signatures and the joint gap map
+are quoted in the RESULTS entry, whose scope tail says the proof is referee-originated. Applied first to FLAT-SW in R94 (SW-KEEP by
+REFEREE 20, signed by REFEREE-2 23; OWN by REFEREE-2 23, signed by REFEREE 20); CHECKER C104 5c4d6e45 found it meets the rule (its N-3:
+weaker than lane-authored plus two non-author checks for the general form). Lanes write line files without a heading marker (C104 N-1).

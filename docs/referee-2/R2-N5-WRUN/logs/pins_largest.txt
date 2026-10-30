@@ -1,0 +1,4 @@
+/tmp/claude-0/-home-user-parity-games-challange/c5131569-13ae-5464-8cfa-fc746dffc9b4/scratchpad/wr/pin2.log:PINDONE
+/tmp/claude-0/-home-user-parity-games-challange/c5131569-13ae-5464-8cfa-fc746dffc9b4/scratchpad/wr/pin1.log:PIN red/so/instances/pftheta34_n32.pg#0 F[5,39] |F| 34 maxXiCH 34 bound 1010
+/tmp/claude-0/-home-user-parity-games-challange/c5131569-13ae-5464-8cfa-fc746dffc9b4/scratchpad/wr/pin2.log:PIN red/free/instances/fx_K8_m32.pg#start F[0,280] |F| 280 maxXiCH 137 bound 2005
+/tmp/claude-0/-home-user-parity-games-challange/c5131569-13ae-5464-8cfa-fc746dffc9b4/scratchpad/wr/pin2.log:PIN red/rstar/instances/latew_K16_m32.pg#start F[0,560] |F| 560 maxXiCH 33 bound 4389

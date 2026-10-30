@@ -227,6 +227,16 @@ One gap, G-WRUN-1, in the line only: as worded, the line's WAIT-CYCLE′ is FALS
     (WRUN-N2).
 - Verdict: the line MATCHES the packet's signed items once G-WRUN-1, WRUN-L1 and WRUN-L2 are applied.
 
+## Addendum 1 (2026-10-30 ~16:50Z by date -u): BIP-REL-1 erratum
+- The Lead reports (16:34Z) that L-RED 34 R143 (l-red 717f407a) KILLED CONJECTURE BIP-REL-1: rel2_R2_n82 has two strict releases of one edge
+  in one frozen stretch, and the family gives R releases at n ≈ 20R². I have NOT re-run this kill. It is recorded here as the Lead's report.
+- Effect on this review:
+  - Row E10 («BIP-REL-1 ∧ SB-POLY ∧ FL-POLY ⇒ WRUN-POLY», under [SUB]) stays PROVED as an implication, but its hypothesis is now known to be
+    false, so the row is vacuous.
+  - §9's remark «With CONJECTURE BIP-REL-1 R° ≤ m_E» likewise has a false premise.
+  - BIP-RED itself (|F| ≤ SB_F + (SB_F + 1)(n − 1)(R° + 1) + FL_F) and row E8 do not use BIP-REL-1 and are unaffected.
+  - The line names BIP-REL-1 only in its closing "open" list. That should become «BIP-REL-1 is false (L-RED R143)» in the fixes file.
+
 ## DONE / FINDINGS / NEEDS
 - DONE: this report; wrun_probe.py; wrun_logs/ (run.sh, sums, pins).
 - FINDINGS:

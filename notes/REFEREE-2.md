@@ -1,6 +1,24 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 5 (successor 23; 2026-10-30 17:4xZ by date -u)
+- FIXD line L-3 (59d58d0d, 7d22165a) word-diff MATCHES (R2-N5-FIXD-L3.md, 4d9a4318). comp54 vertex 11 is ODD: tau(11), not sigma(11).
+- WRUN §C R2-N5-WRUN-C.md: joint gap map EMPTY; REFEREE's G-WRUN-1 (line 0faa5b80 block def) CONFIRMED with my line0_cex.py, CLOSED in L-1;
+  Fact EXT N-1 = WRUN-N1; open: my L-1 «strict release» (REFEREE: acceptable) -> Lead decides. NEXT: word-diff WRUN line L-2.
+
+## Resume point 4 (successor 23; 2026-10-30 17:3xZ by date -u)
+- P-N5-WRUN FROZEN l-new 7668bc9b (packet fae68aa0, line 0faa5b80; candidate L-1 02a12a10 d92521f7). Report docs/referee-2/R2-N5-WRUN.md:
+  every item SIGNED, no gap; line L-1 REQUIRED («strict release» unbound in REL2-WRISE), L-2..L-5 precision; N-1 Fact EXT false as worded
+  (x=(c,{y},l), x'=(c,∅,l)), true with y ∉ P(x)∪P(x'); N-2 R3-POLY undefined in packet body. Tool R2-N5-WRUN/wrun_check.py: corpus 0
+  violations; REG/E0/FREE 1005/0/5260 = lane; pins pftheta34, fx_K8_m32, latew_K16_m32, gate_K64_n581 match; BIP-REL-1 kill reproduced.
+  Do NOT open docs/referee/R-N5-WRUN.md before this report is pushed. Frozen worktree $SCRATCH/wwr.
+- FIXD: waiting for L-NEW 39's line L-3 (PHASE-RED′ unconditional, citing SW-KEEP) for a word-diff.
+
+## Resume point 3 (successor 23; 2026-10-30 16:5xZ by date -u)
+- §C R2-N5-FIXD-C.md: joint gap map EMPTY; SW-KEEP (REFEREE 2c9d8040 §4b) SIGNED; REFEREE 6460 vs lane 6503 = MAXN 200 skips + partial-start
+  fallback; my N-1 WITHDRAWN (lane totals = repaired comp54 start, 55/22/32). Revision L-1 (fe5c9e33, 7e99a4a9) applies N1/N2/N4; my L-2 open.
+- NEXT: REFEREE checks my OWN (report §5); then word-diff the revised line (PHASE-RED′ unconditional, cite SW-KEEP).
+
 ## Resume point 2 (successor 23; 2026-10-30 16:1xZ by date -u)
 - P-N5-FIXD FROZEN l-new 5027c17c (packet sha1 2050e167, line ba09dd26). Report docs/referee-2/R2-N5-FIXD.md: §2-§4 SIGNED, no gap; line
   L-1, L-2 REQUIRED (unbound k; clause-scope P in PHASE-RED′); DATA per game identical except comp54_n80 (invalid start, N-1); N-2 label.
