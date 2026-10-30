@@ -55,10 +55,31 @@ Referee: REFEREE (successor 20), Opus 5.5 (D15).
 - Line, precision: my L4 rest (event-free, ⊕, sum ranges, «for every family of games»); R2 L-4 (ℓ_(k+1)(v)); L-5 (proof note); L-6 (the
   honest-limits tail).
 
+## 4. Line revision L-1 (l-si a0970d36, docs/si/P-N5-SETTLE-line-L1.txt, sha1 997e39eee8d72ae94be4764bb1e3841914ffc78e; fixes sha1 87f48e2cc6737cf78cd6f9d4b00291685299fc85)
+- Word-diff against 6aa094e3. Every required item of the joint gap map (§3) is applied, plus all precision items:
+  - F: «for every N5 run on every game and every W-run F of it:»;
+  - T: «with T its number of transitions (N5 iterations)»;
+  - k: «at every S4a step k → k + 1 of F», with H_k / dist / tightness defined «for a state k of F» and «for a transition k → k + 1 of F»;
+  - Iσ_k: «Iσ_k := Even's improving edges at k (SPEC S2: …)»;
+  - also: run / transition / switch, values, ⊴, ⊕ (as R93 TIE), «EVENT-FREE iff it is not an EVENT», the sum and max ranges, «for every
+    family of games …», «ℓ_(k+1)(v)», the ARENA-MAX SHA and its R57 reading, «as signed in this packet's review», the honest-limits tail,
+    FLIP-EV DEAD, and the premises R15 (a), (d), R86 (a).
+  Nothing else changed. The content equals the packet's §3, §5-§7.
+- Strict symbol test, second pass. One REQUIRED item remains; it was already present in 6aa094e3:
+  - SETTLE-L5 (REQUIRED; scope of τ in U). The line defines «U := Odd's valuation of τ on G^d (RESULTS R86)». Here τ is the W-run's fixed
+    τ (bound by «τ and C … fixed on F»). T-XCH, however, is a whole-run statement: «XE (XO) the most changes of one vertex's Ξ (U) over the
+    whole run». Over the whole run τ changes, so U must be read at each state with τ_k. As written, «changes of U over the whole run» is
+    the change count of a fixed function, which is 0. The letter U also collides with R143's upward heads U_k in the same line.
+    Exact fix: replace «U := Odd's valuation of τ on G^d (RESULTS R86)» by «Ξ^d_k := Odd's valuation of τ_k on G^d at state k (RESULTS R86's
+    U)», and in T-XCH write «XE (XO) the most changes of one vertex's Ξ_k (Ξ^d_k) over the whole run».
+- Precision (optional): «T is polynomial iff XE and XO are» → «for every family of games, T is polynomial over all runs iff XE and XO are»,
+  as HEAD-RED now says.
+- Verdict on L-1: REQUIRED CHANGE, SETTLE-L5 (Opus 5.5, D15). Everything else MATCHES.
+
 ## DONE / FINDINGS / NEEDS
 - DONE: this §C. Gate runs in docs/referee/scratch/settle_logs/pin_gate_K64_n581.txt (.start) and in this file (best-reward start, 67).
 - FINDINGS:
   1. SETTLE: both referees SIGN every item; the joint gap map for the packet is empty.
   2. Required line fixes, union of both reports: F, T, k, Iσ_k.
   3. Longest block reconciled: 67 (gate, best-reward start) on all three engines. The packet's «44» is a ratio mislabel, and REFEREE-2's «+ start» label is a slip.
-- NEEDS: Lead: SETTLE line L-1 with the four required binders; I word-diff it.
+- NEEDS: Lead: SETTLE line L-2 with SETTLE-L5 (U scope and name); I word-diff it.
