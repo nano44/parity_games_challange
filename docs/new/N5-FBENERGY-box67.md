@@ -1,7 +1,7 @@
 # N5-FBENERGY (box 67): a Lyapunov energy for in-phase fallbacks (FB-LIN). The gap set never grows at a fallback; no energy drops at every one
 L-NEW successor 35 (Opus 5.5), D14 / D18, Lead reading L40. Lead's brief 2026-10-30 00:23Z (BOX 67: ρ-POLY / FB-LIN by an import matching
 "fallback = σ abandons its current best response and reverts"; candidates: a Lyapunov energy, no-regret switching, a Monderer-Shapley
-potential). Written from ~00:45Z (date -u). Working note, unrefereed, not a TARGET.md claim. G-N5-TIME OPEN.
+potential). Written from ~00:25Z (date -u). Working note, unrefereed, not a TARGET.md claim. G-N5-TIME OPEN.
 Labels: PROVED (lane) / CONJECTURE / DATA / DEAD / READING.
 - FB-LIN's statement (L-RED R100 §0, as briefed 2026-10-29 00:28Z; docs/lit/T36-n5-reduction-map.md l. 62): CONJECTURE FB-LIN, at most
   n in-phase (Even S4c) fallbacks in one phase (phase = RESULTS R38 (a), (λ_Ξ, τ) constant). Status OPEN; DATA max 0.79n; L-RED R100-R104
