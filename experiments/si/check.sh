@@ -802,3 +802,7 @@ o=$(python3 -I odd/cuts.py odd/inst/red/spanobs_K12_m48.pg odd/inst/red/spanobs_
 o=$(python3 -I odd/cuts.py odd/inst/red/carryobs_K12_m48.pg odd/inst/red/carryobs_K12_m48.start); grep -q "REENT 1609 CUTRE 0 FRESH 0 CYC 0 WPAID 1609 SILENT 0 VIOL 0 .* PASS" <<<"$o"
 o=$(FR=1 python3 -I odd/cutsx.py ../red/so/instances/rise_thin51_n40.pg); grep -q "FR_WC 68 FR_GAIN 24 FR_SAME 0 FR_GAIN0 9 FR_CYC 0 FR_LATE 15 FR_LATE_V 0" <<<"$o"
 echo "si (box 40: W-RETURN-G and cut-attached re-entries): PASS"
+# box 42 (docs/si/N5-LATE-box42.md): late adoptions FIRST / REPEAT; a REPEAT needs a W-rise of z since the leave (RV 0).
+o=$(python3 -I odd/laterep.py ../red/so/instances/so_th_n32.pg); grep -q "'late': 6, .*'first': 4, 'repeat': 2, 'RV': 0, 'cyc': 0, 'MAXE': 3" <<<"$o"
+o=$(python3 -I odd/laterep.py ../red/so/instances/rise_thin51_n40.pg); grep -q "'late': 23, .*'first': 23, 'repeat': 0, 'RV': 0" <<<"$o"
+echo "si (box 42: late adoptions FIRST / REPEAT): PASS"
