@@ -17,6 +17,8 @@ Reason: queue items (1)-(3) and the Lead's steps (1)-(2) are done; context ~285k
 - Box 45 (this commit), docs/si/N5-PLAIN-box45.md: plain-wave lemma (transition form) DEAD on runfam_K40; REP-PLAIN DEAD on latew_K20_m32;
   depth 1 everywhere, breadth grows (agrees with L-RED R127).
 - P-N5-CUT fixes K0-K11 cc84e54c (docs/si/P-N5-CUT-fixes-box43.md, sha1 ff994621): corrected RESULTS line K0, converse K1.
+- K12 fd1cb0bc (fixes sha1 95584f7e): K0 + K0-P1..P3. Box 48, docs/si/N5-WDEPTH-box48.md: Lemma WIN, Theorem REP-DEPTH (PROVED lane);
+  [P-REP] ⇐ [P-WD] (window depth ≤ const) ∧ [P-X]; data D ≤ 2. CONJECTURE WD-BOUNDED (L-RED target: growing window chains).
 - Box 47, docs/si/N5-READ-box47.md: READ-CHARGE (PROVED lane); reader-chain depth up to 0.92n (CONJECTURE READ-DEPTH ≤ n − 1); no static rank.
 - Box 46, docs/si/N5-SUB-box46.md: PROVED (lane) GP*-SUB, LOC-R*; every late adoption is local; REP-LIN DEAD (latew 570 > 538 per W-run).
 ### IN FLIGHT
