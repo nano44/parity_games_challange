@@ -463,4 +463,10 @@ if grep -q "RELPE n 27 mE 80 runs 1 maxima {'late_edge': 2, 'rstar': 4, 'F': 10,
 else
   echo "box 89 BIP check: FAILED"; exit 1
 fi
+w41=$(cd .. && python3 -I new/box90/sbv.py red/so/instances/pftheta34_n32.pg; python3 -I new/box90/relrand.py 8 300 5)
+if grep -q "SBV n 32 runs 1 maxima {'sb': 34, 'sbv': 34, 'ret': 18, 'F': 34} sb/n 1.06" <<<"$w41" && grep -q "RELRAND n 8 trials 300 seed 5 max-strict-per-edge 0" <<<"$w41"; then
+  echo "box 90 REL: SB-LIN DEAD on pftheta34_n32 (34 > 32); random strict-release search 0: PASS"
+else
+  echo "box 90 REL check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
