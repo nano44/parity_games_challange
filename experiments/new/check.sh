@@ -391,4 +391,10 @@ if grep -q "mono-viol 0 trans 93 strict 20 flat 73 max-stall 34 .* max-flat-chan
 else
   echo "box 77 FIXD check: FAILED"; exit 1
 fi
+w29=$(cd .. && python3 -I new/box78/retwch.py red/so/instances/tog6b_n32.pg; python3 -I new/box78/retwch.py si/runlin/instances/runfam_K10.pg --lzc)
+if grep -q "RETWCH tog6b_n32.pg n 32 wruns 1 {'returns': 4, 'paid-W': 3, 'paid-tie': 1} " <<<"$w29" && grep -q "RETWCH runfam_K10.pg n 49 wruns 1 {'returns': 71, 'paid-W': 71} " <<<"$w29"; then
+  echo "box 78 RETWCH: every Even return paid by a W-change of its target or a tie-leave (tog6b_n32 N5; runfam_K10 N5-LZC 71/71): PASS"
+else
+  echo "box 78 RETWCH check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

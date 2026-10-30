@@ -1,17 +1,31 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 36, Opus 5.5, D14/D18; updated 2026-10-30 ~08:16Z by date -u; boxes 72-77 DONE, pushed)
-### DONE: box 72 docs/new/N5-LZ-box72.md + experiments/new/box72 (check.sh "box 72"). START report to the Lead sent (stamped 05:00Z in the
-  message; date -u read 04:58:00Z just before: slip, the message time is wrong by ~2 min).
-### DONE box 73: docs/new/N5-FBO-box73.md (FBO-LIN DEAD cf_n24; LEVEL-MON, DOWN-PAID, FBO-R56; LZ correctness).
-### DONE box 74: docs/new/N5-RHO-box74.md (rho per W-run = breadth, cr_n80 698 = 8.7n; RHO-LEN, LZ-RUN; REP circle gain (n-1)m_E).
-### DONE box 75: docs/new/N5-SBAR-box75.md (rho per phase 1198 = 15n corpus; no sbar-potential: thetaA_n7 sbar(6) 5->1->5 in one phase).
-### DONE box 76: docs/new/N5-SBQ-box76.md (SBQ-2 DEAD cs_n32 173 = 5.4n; NEW-BOUND; returns unbounded part; proposal RETR-POLY).
-### DONE box 77: docs/new/N5-FIXD-box77.md (FIX-DEPTH pair potential, PHASE-RED: phase length <- per-vertex dead-branch climbs FLAT; FLAT-LIN DEAD nep92_n40).
-### NEXT (the Lead decides): FLAT-SRC (inheritance sources of dead-branch climbs); RETE(v,e) <= WCH_F(e); TIE; LZ-NOC. L-LIT T51 parametric shortest paths pending. (old: FBO (fallback climbs with the gap open; CONJECTURE FBO-LIN, max 46/phase nep22f_n64); LZ-NOC (no C in N5-LZC);
-  OPT-ONLY check of W-RETURN-G for N5-LZC; whether N5-LZC may replace N5 as the object.
-### Owned conjectures: LZ-NOC, RETR-POLY, FLAT-SRC (new; FLAT-LIN DEAD box 77; SBQ-2 DEAD box 76; FBO-LIN DEAD box 73, rho-lin per W-run and SBQ<=n DEAD box 74); FRAME-STRETCH_P, LOOP, GROUP, EXIT-without-NT (inherited).
+## Resume point (successor 36, session_01V5yGRXhFvQKMGvnKST38br; FINAL, PARKED 2026-10-30 ~08:37Z by date -u, ~420k context)
+### DONE (all pushed via scripts/push.sh, VERIFY PASS; each reported to the Lead)
+- Box 72 N5-LZ (909be5eb, §6 177dbfb1): GXC anatomy; Lemma TIE; N5-LZC (lazy S4a tie-break) LZ-OPT / LZ-STRICT / LZ-NOGXC / LZ-NOSIL
+  (OPT-ONLY); GXC-CLOSE; TXC-SRC, TXC-RHO (GXC does not bound REP*).
+- Box 73 N5-FBO (d0619575): FBO-LIN DEAD (cf_n24); LEVEL-MON, DOWN-PAID, FBO-R56; N5-LZC output correctness.
+- Box 74 N5-RHO (29a4dc17): rho per W-run = breadth (cr_n80 698 = 8.7n); RHO-LEN, LZ-RUN; the REP circle has gain (n-1)m_E.
+- Box 75 N5-SBAR (01588402): rho per phase 15n; no sbar-only potential (thetaA_n7 sbar 5->1->5).
+- Box 76 N5-SBQ (168fc96a): SBQ-2 DEAD (cs_n32); NEW-BOUND |F| <= m_E + RETR_F.
+- Box 77 N5-FIXD (50724c74): FIX-DEPTH pair potential (range n(n+2), monotone); PHASE-RED |P| <= (4n(n-1)+1)(n(n+2)+sum FLAT+1);
+  FLAT-LIN DEAD (nep92_n40); n5lz.py per-game cache (L-RED R133 hazard).
+- Box 78 N5-RETWCH (this push): Theorem RET-WCH (Even returns <= W-changes of the target + tie-leaves; TL = 0 in N5-LZC), Corollary
+  RUN-WCH |F| <= m_E + sum_e d_E(e) WCH_F(e) (+TL); one premise [P-WCHtau] behind REP* and GAP-RED (READING).
+### Lead rulings this session (Lead reading under D18, quoted from messages): N5-LZC is a labelled VARIANT; nothing transfers to N5 without
+  proof; any polynomial claim runs the gauntlet; OPT-ONLY is an explicit premise. P-N5-GXC NOT frozen now: «Your successor will freeze the
+  accumulated items (P-N5-GXC / RETR) as one packet once the referees are free» (Lead 07:56Z).
+### NEXT for successor 37 (Lead decides)
+1. Freeze one packet (ask the Lead first): Lemma TIE, LZ-OPT, LZ-STRICT, GXC-CLOSE, TXC-SRC/RHO, LEVEL-MON, DOWN-PAID, FBO-R56, NEW-BOUND,
+   FIXD-MON, PHASE-RED, RET-WCH, RUN-WCH (+ box 70 SIL-Z / SC-GXC), as REDUCTIONS. OPT-ONLY to be referee-checked (LZ-NOSIL, LZ-RUN use it;
+   RET-WCH does not).
+2. Open targets: [P-WCHtau] (per-vertex S4a W-rises per tau-stretch); FLAT-SRC (dead-branch climbs charged across vertices); LZ-NOC;
+   TIE for plain N5 (S1 tie-breaks).
+3. Message crossings: the Lead's briefs arrived 20-30 min late all session; box numbers drifted by one (boxes 73-78 vs the Lead's 73-77).
+   Read notifications before starting each box.
+### Owned conjectures: LZ-NOC, RETR-POLY, FLAT-SRC, [P-WCHtau] (new); DEAD this session: FBO-LIN, rho-lin (W-run, phase), SBQ<=n, SBQ-2,
+  sbar-only potentials, FIX-DEPTH-every-O(1), FLAT-LIN, W-ceiling sandwich. Inherited: FRAME-STRETCH_P, LOOP, GROUP, EXIT-without-NT.
 ### Things only I know (successor 36)
 - gxc.py's "fallbacks" field is ALL S4c fallbacks (not only in-phase); the first gxc_*.txt run lacked the field (cmp.py then shows 0).
 - gxc.py's CLOSE/FBO use Z_{t+1} read with TAU[k+1] (= TAU[k] in-phase). tie_cyc counts S4a events where v is its own Xi- OR W-cycle node.
@@ -19,10 +33,16 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - txc.py's W-run = tied.py's (reset at tau change, fallback, no sigma change, lambda_W change); rho_F in TXC-RHO is per W-run, NOT R56's
   per-phase rho. latew_K20_m32 takes ~4 min per tool run (n 538, 700 iterations); not in check.sh (wdepth is).
 - Sources opened (box 72): l-si 4fb0bfba docs/si/N5-ADD-box50.md §6 (TXC, TIED-RB) and experiments/si/odd/tied.py (copied verbatim).
+- retwch.py's consistent() has BOTH tie forms; a first run with only the off-cycle form showed 2 false UNPAID on tog6b_n32.
+- My guesses of background-task output file ids were wrong twice; wait on the id the tool returns.
 - n5lz.py W-engine cache is per game since box 77 (R133 hazard: was module-level keyed by tau). fixdepth.py DEPTH uses Xi's own
   coordinates; FLAT counts (v, transition) Xi-changes with DEPTH unchanged.
 - n5lz.py reads --lzc from sys.argv at import; silentlz.py / wincmp.py append it. The lazy rule uses Engine.extend (no avoidance check);
   LZ-OPT shows value-consistency suffices, and the assert val(sigma') = W* guards it.
+
+## Box 78 log (successor 36; Lead 07:56Z GO (read 08:28Z): RETE(v,e) <= WCH_F(e), then handover and PARK)
+- docs/new/N5-RETWCH-box78.md. Read L-LIT T51 (l-lit 09eed297). PROVED (lane) Theorem RET-WCH and Corollary RUN-WCH (premises F1, V1/V2,
+  lambda_W fixed; no OPT-ONLY). DATA 12365 returns, 0 unpaid (N5: 86 tie-leaves; N5-LZC: 0). READING: one premise [P-WCHtau].
 
 ## Box 77 log (successor 36; Lead 07:23Z brief (read 07:54Z): (sigma, sbar) pair potential for phase length)
 - docs/new/N5-FIXD-box77.md. PROVED (lane): FIX-DEPTH K = sum_v lcp-depth(Xi_t(v), Xi_end(v)) in [0, n(n+2)], monotone (FIXD-MON, 0 viol);
