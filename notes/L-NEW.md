@@ -1,6 +1,12 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Box 67 log (successor 35; Lead 00:23Z: FB-LIN / rho-POLY by a cross-area import)
+- docs/new/N5-FBENERGY-box67.md. Lyapunov import: 6 energies (incl. Lead's E1 = #Xi-suboptimal sigma-edges) all DEAD as energies (none
+  drops at every in-phase fallback; best E3 = |{Xi != W}| fails 56/731; smallest kill lend9_n8). PROVED (lane) GAP-MON: at an Even fallback
+  with tau fixed the gap set Z = {Xi != W} never grows and Xi, W are frozen outside it (0/731). READING: Monderer-Shapley potential is
+  lambda_Xi-blind in a phase; no-regret needs laziness. Sources: imports used as templates only, no theorem cited, none opened.
+
 ## Box 66 log (successor 35, woken 00:09Z Oct 30; Lead: bound FRESH-SPLIT's LATE per edge by an imported argument)
 - docs/new/N5-LATE-box66.md. PROVED (lane) LATE-W / LATE-PIECE: inside a piece, repeat re-blocked late adoptions of an edge are W-paid
   (rise of W(c) between leave and block; 182 checks, 0 viol). Import = list-update inversion potential (blocked edge = W/Xi inversion):
