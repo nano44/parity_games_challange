@@ -1,4 +1,4 @@
-# R147: own-node σ̄-flips (XCN) and W-cycle-node switches (CN) drop out of the reduction. Theorem SRC-SETTLE (PROVED, lane): with the heads taken at the deviation SOURCES S_k := D_k ∪ D_(k+1) ∪ C instead of their targets, every block of a W-run with no Ξ-change on S_k has at most (n − 1) + m_C transitions (m_C := Σ_(c ∈ C Even) (|succ(c)| − 1)). So polynomial W-runs ⟺ polynomial Ξ-changes at D ∪ C. No σ̄-flip term, no XCN, no CN, and ROOT-FLIP is not needed. XCN and CN do repeat in one W-run (3 and 2 at one vertex, n ≤ 12). No super-linear family was built.
+# R147: own-node σ̄-flips (XCN) and W-cycle-node switches (CN) drop out of the reduction. Theorem SRC-SETTLE (PROVED, lane): with the heads taken at the deviation SOURCES S_k := D_k ∪ D_(k+1) ∪ C instead of their targets, every block of a W-run with no Ξ-change on S_k has at most (n − 1) + m_C transitions (m_C := Σ_(c ∈ C Even) (|succ(c)| − 1)). So polynomial W-runs ⟺ polynomial Ξ-changes at D ∪ C. No σ̄-flip term, no XCN, no CN, and ROOT-FLIP is not needed. XCN and CN do repeat in one W-run (4 and 3 at one vertex, n ≤ 12). No super-linear family was built.
 L-RED successor 35 (Opus 5.5; D1/D18). Lead 2026-10-30 ~20:42Z, FIRST BOX R147 (b): «Target HEAD-RED′'s smallest-looking term, XCN
 (own-cycle-node σ̄-flips) … Build a family where XCN or CN grows super-linearly in one W-run. If both are provably O(n) per W-run, give the
 exact reason; that is a proof-side lemma.» Written 2026-10-30 from 20:50Z (date -u).
@@ -20,9 +20,9 @@ exact reason; that is a proof-side lemma.» Written 2026-10-30 from 20:50Z (date
 - Read the heads at the SOURCES instead: the deviating Odd vertices D_k and the W-cycle nodes C.
   - Every vertex before the first source on a play follows τ or σ, so the play argument (PLAY-CAUSE) goes through unchanged.
   - The induction of RUN-SETTLE goes through without any σ̄ event and without the CN event. A C-only transition with no source event
-    freezes Ξ, W and σ off C (§2.4). So the C-only transitions form a tail of the block, in which each c climbs strictly in a frozen Ξ.
+    freezes Ξ, W and σ off C (§2.3). So the C-only transitions form a tail of the block, in which each c climbs strictly in a frozen Ξ.
 - That is §2's Theorem SRC-SETTLE.
-- XCN and CN are NOT O(1) per W-run (§3: 3 and 2 at one vertex). Whether they can be super-linear is not settled. After §2 it no longer
+- XCN and CN are NOT O(1) per W-run (§3: 4 and 3 at one vertex). Whether they can be super-linear is not settled. After §2 it no longer
   matters for G-N5-TIME.
 
 ## 1. Definitions (a W-run F, τ and C fixed)
@@ -132,20 +132,39 @@ exact reason; that is a proof-side lemma.» Written 2026-10-30 from 20:50Z (date
   - 30,855 W-runs;
   - Σ CN = 115 and Σ XCN = 50;
   - never more than 1 of either in one W-run.
-- Hill climb (xclimb, 25 min each; KEY = one-vertex count in one W-run):
-  - XCN at ONE own node: 3 in a W-run of length 3 (xcn/instances/xcn3_n12). The flips go 5 → 6 → 5 → 4 at Odd vertex 2 (succ 1, 4, 5, 6).
-    - The S1 DFS pushes all four successors and pops the highest index first. Each flip is the popped successor leaving the low region:
-      σ(6) = 10 → 1 (an already-marked sibling), then σ(5) = 2 → 11 (priority 21 > 17).
-    - σ(5) returns to 11 after Ξ(11) rose: its path set gained vertex 0, of priority 24.
-  - CN at ONE W-cycle node: 2 (xcn/instances/cn2_n9). Both switches are cosmetic: λ_Ξ(c) = c, Ξ(c) unchanged (CNO 2 of 2).
-  - FINAL VALUES: see §3.1, filled in from the logs when the climbs end.
-- Corpus (box 50b: sbcg 719 + alt 413 = 1,132 games, 300 s each; xcn/src_corpus.txt):
-  - VIOL 0, VIOL2 0, TAILV 0, BLKV 0, CNOX 0;
-  - FINAL COUNTS in §3.1.
-- Random check (srcrand.py): §3.1.
+- Hill climb (xclimb.py, 4 runs of 25 min, n 9 and 12, 400 steps per restart; KEY = the one-vertex count in one W-run).
+  - XCN at ONE own node: 4 in a W-run of length 4 (pin xcn/instances/xcn4_n12, Odd vertex 0, succ 3, 6, 10, 11).
+    - An earlier climb state (n 12, XCN 3 at Odd vertex 2, succ 1, 4, 5, 6) shows the mechanism: flips 5 → 6 → 5 → 4.
+    - The S1 DFS pushes all of o's successors and pops the highest index first, so σ̄(o) is the popped successor whose push-subtree
+      first meets a predecessor of o.
+    - Each flip is the popped successor leaving that subtree: σ(6) = 10 → 1, an already-marked sibling; then σ(5) = 2 → 11, priority
+      21 > 17. σ(5) returns to 11 after Ξ(11) rose: its path set gained vertex 0, of priority 24.
+  - CN at ONE W-cycle node: 3 in a W-run of length 3 (pin xcn/instances/cn3_n9, Even vertex 1).
+    - All 3 switches are cosmetic: λ_Ξ(1) = 1, so CNO 3 of 3.
+    - The W-run has NO source event (Es2 0). Its single source block of length 3 ends in a C-only tail of length 2. This is §2.3's
+      tail; the bound there is n − 1 + m_C = 8 + 9.
+  - Both pins: xeng state sequences identical; Oink --zlk winners equal and verify passes (rel2/oinkcmp.sh: OINK OK).
+  - So XCN and CN are NOT O(1) per W-run. Nothing here shows them super-linear. Climb values 3-4 at n ≤ 12 are what a linear bound
+    would also allow.
+- Random games, 12,000 (xsearch.py seeds 1-4, n 5-12, random starts): 30,855 W-runs, Σ CN 115, Σ XCN 50, never more than 1 of either in
+  one W-run.
+- Corpus (box 50b: sbcg 719 + alt 413 = 1,132 games, 300 s each; xcn/runsrc.sh → xcn/src_corpus.txt).
+  - 1,130 games analysed. 2 RUN-ERROR: n3cov_phi and n3cov_lean, the known invalid starts of R99.
+  - VIOL 0, VIOL2 0, TAILV 0, BLKV 0, CNOX 0.
+  - Events summed over all W-runs: E (R143 / P-N5-SETTLE events) 4,724; Esrc (source events plus CN) 4,554; Es2 (source events only,
+    §2) 4,546.
+  - FLIPONLY 513: transitions that are R143 events only through a σ̄-flip. §2 does not count them (most of them start a new source
+    block anyway).
+  - CN 37, of which cosmetic (CNO) 11.
+  - Longest source block (maxblk2) 67 (gate_K64_n581, n 581). Longest C-only tail 1. Max HXS at one vertex 61 (gate_K64_n581).
+- Random check (srcrand.py, seeds 11-14, 2,500 games each, n 6-14): see §3.1.
 
 ### 3.1 Final numbers
-(filled in below at the end of the box)
+- srcrand.py, seeds 11-14, 2,500 games each, n 6-14 (xcn/srcrand_out.txt):
+  - VIOL 0, VIOL2 0, TAILV 0, BLKV 0, CNOX 0;
+  - CN 96, of which cosmetic 94.
+- This is WEAK evidence. Random games have short W-runs (max |F| 3 here). The corpus above, with |F| up to 159, is the real test.
+- check.sh «R147» pins: xcn4_n12, cn3_n9 (sha1, xcn.py / srcsettle.py outputs, xeng, Oink), and srcrand seed 1 (300 games).
 
 ## 4. What is open, exactly
 - G-N5-TIME: OPEN. Theorem SRC-SETTLE is a REDUCTION. Its residual is HXS-POLY: Ξ-changes at the deviating Odd vertices and at the W-cycle
@@ -153,7 +172,7 @@ exact reason; that is a proof-side lemma.» Written 2026-10-30 from 20:50Z (date
 - Relation to L-SI's residual HX′-POLY (Ξ-changes at U ∪ τ(Odd)), READING:
   - At a non-own g ∈ D_k with σ̄(g) unchanged, Ξ(g) = g ⊕ Ξ(σ̄(g)), so a Ξ-change at g IS a Ξ-change at its target.
   - A Ξ-change at a target that Odd answers with a tie re-order does not change Ξ(g). §2 does not count it; HEAD-RED′ does.
-  - On the corpus E^S ≈ E (§3.1), so the gain is in the proof (no ROOT-FLIP, no flip or CN terms), not in the counts.
+  - On the corpus E^S ≈ E (§3), so the gain is in the proof (no ROOT-FLIP, no flip or CN terms), not in the counts.
 - The kill target is unchanged, but now stated on sources:
   - make Ξ(g) rise super-polynomially often at one deviating Odd vertex g (or at a W-cycle node) inside one W-run;
   - Ξ(g) is Odd's optimal value at g, so each rise is a rise of the minimum over succ(g).

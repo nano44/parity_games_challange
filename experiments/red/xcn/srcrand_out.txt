@@ -1,0 +1,4 @@
+SRCRAND seed 11 games 2500 n 6-14 VIOL 0 E 71 Esrc 45 CN 19 CNO 18 CNOX 0 FLIPONLY 2 maxblk 2 maxL 2 maxEsrc 2 maxE 2 maxHXS 1 VIOL2 0 TAILV 0 BLKV 0 maxblk2 2 maxtail 1 Es2 28 firstbad None
+SRCRAND seed 12 games 2500 n 6-14 VIOL 0 E 113 Esrc 67 CN 28 CNO 27 CNOX 0 FLIPONLY 8 maxblk 2 maxL 2 maxEsrc 1 maxE 1 maxHXS 1 VIOL2 0 TAILV 0 BLKV 0 maxblk2 2 maxtail 1 Es2 42 firstbad None
+SRCRAND seed 13 games 2500 n 6-14 VIOL 0 E 98 Esrc 68 CN 25 CNO 25 CNOX 0 FLIPONLY 11 maxblk 2 maxL 2 maxEsrc 2 maxE 2 maxHXS 1 VIOL2 0 TAILV 0 BLKV 0 maxblk2 2 maxtail 1 Es2 44 firstbad None
+SRCRAND seed 14 games 2500 n 6-14 VIOL 0 E 98 Esrc 68 CN 24 CNO 24 CNOX 0 FLIPONLY 9 maxblk 3 maxL 3 maxEsrc 2 maxE 2 maxHXS 2 VIOL2 0 TAILV 0 BLKV 0 maxblk2 3 maxtail 1 Es2 46 firstbad None
