@@ -1,0 +1,21 @@
+MODE files /tmp/claude-0/-home-user-parity-games-challange/c5131569-13ae-5464-8cfa-fc746dffc9b4/scratchpad/alst.lst 0 experiments/ MAXT 5000 LZC True
+LEXK_checks: 944
+X_KSTALL: 35
+X_OWNC: 8
+Xi_flat_tr: 8
+n_CH: 3013
+n_FLATTR: 1371
+n_Krise: 1642
+phases: 406
+runs: 93
+starts_valid: 93
+transitions: 3334
+max max_FLATSW_x: (10, 'n5-epoch/instances/nep76_n40.pg#start')
+max max_FLATTR: (82, 'red/n3/instances/long121_n40.pg#start')
+max max_FLAT_over_n: (1.65, 'n5-epoch/instances/nep92_n40.pg#start')
+max max_FLAT_v: (69, 'n5-epoch/instances/nep94_n48.pg#start')
+max max_FLATin_v: (59, 'n5-epoch/instances/nep94_n48.pg#start')
+max max_Kstall: (48, 'n5-epoch/instances/nep56_n32.pg#start')
+max max_Xi_unchanged_run: (1, 'red/n5inj/instances/frz24.pg#start')
+max max_phase_len: (121, 'red/n3/instances/long121_n40.pg#start')
+RESULT PASS violations 0
