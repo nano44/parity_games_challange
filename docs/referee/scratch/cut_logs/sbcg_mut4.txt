@@ -1,0 +1,62 @@
+NOTE start file /tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/red/n3/instances/n3cov_phi.start invalid for its game (move not an edge, or missing); given start skipped
+CC_chk 7257
+CCmut_V 77
+CLS_C 4
+CLS_F 454
+CLS_FR 2491
+CLS_P 1520
+CLS_S 42
+CLS_first 5716
+FS_LATE 301
+GAMES 375
+LS3_chk 1
+LS_chk 11
+LS_late 776
+LS_rep 11
+LS_sil 0
+OPT1_chk 34541
+OPT2_chk 189299
+RUNS 437
+THM_chk 437
+TRANS 6829
+WMONX_chk 663
+WMON_chk 189834
+WV_chk 22988
+WV_max_ratio_x1000 400
+max_Bstar 25
+max_Ostar 19
+max_REPstar 2
+max_SCstar 31
+max_T 122
+skip_big 344
+VIOLATIONS 77
+EX ('CCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/n5-epoch/instances/ffin12_n32.pg', 1, 29, 28, {'first': 1, 'FR': 1}, 0)
+EX ('CCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/n5-epoch/instances/nep56_n32.pg', 1, 4, 0, {'first': 1, 'FR': 1}, 0)
+EX ('CCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/n5-epoch/instances/nep56_n32.pg', 1, 21, 0, {'first': 1, 'FR': 1}, 0)
+EX ('CCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/n5-epoch/instances/nep76_n40.pg', 9, 17, 0, {'first': 1, 'FR': 3}, 0)
+EX ('CCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/n5-epoch/instances/nep76_n40.pg', 9, 23, 0, {'FR': 4}, 0)
+EX ('CCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/n5-epoch/instances/nep76_n40.pg', 9, 28, 1, {'first': 1, 'FR': 1}, 0)
+EX ('CCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/n5-epoch/instances/nep76_n40.pg', 9, 35, 1, {'first': 1, 'FR': 1}, 0)
+EX ('CCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/n5-epoch/instances/nep76_n40.pg', 9, 36, 0, {'first': 1, 'FR': 1}, 0)
+EX ('CCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/n5-epoch/instances/nep92_n40.pg', 6, 21, 0, {'first': 1, 'FR': 1}, 0)
+EX ('CCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/n5-epoch/instances/nep92_n40.pg', 6, 23, 0, {'first': 1, 'FR': 4}, 0)
+EX ('CCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/n5-epoch/instances/nep92_n40.pg', 6, 28, 1, {'first': 1, 'FR': 1}, 0)
+EX ('CCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/n5-epoch/instances/nep92_n40.pg', 6, 36, 0, {'first': 1, 'FR': 4}, 0)
+EX ('CCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/n5-epoch/instances/nep92_n40.pg', 6, 39, 1, {'first': 1, 'FR': 1}, 0)
+EX ('CCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/n5-epoch/instances/ret12_n40.pg', 4, 6, 25, {'first': 1, 'FR': 1}, 0)
+EX ('CCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/n5-epoch/instances/ret12_n40.pg', 4, 23, 0, {'FR': 2}, 0)
+EX ('CCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/n5-epoch/instances/ret12_n40.pg', 4, 28, 1, {'first': 1, 'FR': 1}, 0)
+EX ('CCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/n5-epoch/instances/ret12_n40.pg', 4, 36, 0, {'first': 1, 'FR': 2}, 0)
+EX ('CCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/n5-epoch/instances/ret12_n40.pg', 4, 39, 1, {'first': 1, 'FR': 1}, 0)
+EX ('CCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/n5-exhaustive/instances/b5_os_n28.pg', 0, 11, 7, {'first': 1, 'FR': 1}, 0)
+EX ('CCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/n5-exhaustive/instances/b6_xl2_n32.pg', 4, 6, 0, {'FR': 4}, 0)
+EX ('CCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/n5-exhaustive/instances/b6_xl_n32.pg', 4, 6, 0, {'FR': 4}, 0)
+EX ('CCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/n5-exhaustive/instances/b6_xl_n40.pg', 2, 5, 0, {'first': 1, 'FR': 2}, 0)
+EX ('CCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/n5-exhaustive/instances/b6_xl_n40.pg', 2, 6, 0, {'FR': 4}, 0)
+EX ('CCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/n5-exhaustive/instances/b6_xl_n40.pg', 2, 15, 0, {'first': 1, 'FR': 1}, 0)
+EX ('CCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/n5-exhaustive/instances/b6_xw_n32.pg', 4, 5, 0, {'first': 1, 'FR': 3}, 0)
+EX ('CCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/n5-exhaustive/instances/b6_xw_n32.pg', 4, 6, 0, {'FR': 4}, 0)
+EX ('CCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/n5-exhaustive/instances/b6_xw_n40.pg', 4, 1, 0, {'first': 1, 'FR': 1}, 0)
+EX ('CCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/n5-exhaustive/instances/b6_xw_n40.pg', 4, 5, 0, {'FR': 3}, 0)
+EX ('CCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/n5-exhaustive/instances/b6_xw_n40.pg', 4, 6, 0, {'FR': 4}, 0)
+EX ('CCmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_cut/experiments/new/box48/instances/long121_n40.pg', 1, 21, 0, {'first': 1, 'FR': 1}, 0)
