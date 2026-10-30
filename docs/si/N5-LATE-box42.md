@@ -34,6 +34,10 @@ G-N5-TIME OPEN. Labels: PROVED (lane) / CONJECTURE / DATA / DEAD / READING.
   why a W-wave started by one late adoption does not re-block edges already adopted in the same W-run, or does so only O(1) times per
   edge.
 
+- Both charges at once (PROVED, lane: §1 (ii) with R89's R*-RISE, which charges each late adoption of (y, z) to a change of Ξ(z) in
+  its own interval): #REPEAT_F(y, z) ≤ min(WCH_F(z) + CYC_F(y, z), RISE_F(z)). A REP-LIN proof attempt along wave disjointness found no
+  contraction (READING): a repeat needs a W-rise and a Ξ-rise of z, and neither count is bounded independently of the repeats.
+
 ## 3. DATA (corpus, 719 games)
 - 1,141 late adoptions (the same total as L-NEW's late_all.txt): FIRST 1,100, REPEAT 41. REPEAT without a W-rise of z since y's leave
   of z (off-cycle): 0. CYC: 0. Every late adoption has a Ξ-rise of z (1,141, as in late_all.txt); W(z) rose since blocking in 254.
