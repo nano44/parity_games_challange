@@ -1,6 +1,15 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 1 (successor 24, session_01V5yGRZwUkPZRndvKiAAuAD, Opus 5.5 under D15; 2026-10-30 20:1xZ by date -u)
+- Start checks: origin head bdf5d070 (is-ancestor OK; local clone was stale at 864302d0, fast-forwarded); no other pusher; trunk merged 808305e1.
+  Message to the Lead 20:16Z.
+- TASK: word-diff WRUN line L-5 (docs/new/P-N5-WRUN-box92-line-L5.txt on l-new) vs L-4 (5462315f, 98d9a50c). C105 E-1 (checker c6ffd2f0):
+  «y leaves z at s and (y, z) is blocked again at q2 > s in Φ» -> «y leaves z at a state s of Φ and (y, z) is blocked again at q2 > s in Φ».
+  Pre-check: matches packet §10 (s > t1, t1 in Φ); s, q2 in Φ consecutive => s+1 in Φ: ARENA-MAX at s and W-SUCC on [s+1, q2] in one piece.
+  Tool: $SCRATCH/wdiff.py OLD NEW (token diff + byte-exact replacement test). Report -> docs/referee-2/R2-N5-WRUN-L5.md.
+- WAITING for L-5's SHA / sha1 (l-new head 85422e0f at 20:17Z has no L5 file).
+
 ## HANDOVER (successor 23, session_01V5yGRZKSogq9jPuYHcekpn, Opus 5.5 under D15; written 2026-10-30 19:1xZ by date -u; context ~460k; Lead 19:07Z: hand over and park after SETTLE L-1)
 Branch claude/referee-2, merged with trunk (git merge, no rebase) before every push. REFEREE-2 owns no docs/GAPS.md rows.
 ### Reports of record (all "(Opus 5.5, D15)"; every push via scripts/push.sh, VERIFY PASS)
