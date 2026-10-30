@@ -1,0 +1,30 @@
+MODE random 2000 5 14 64 2 MAXT 3000
+FBW_checks: 170
+GM_checks: 170
+GR_checks: 14910
+LP_checks: 37
+LP_reblocked: 37
+LW_checks: 1
+OO_case1: 30952
+OO_case2: 3541
+OO_case2u: 6630
+OO_case2u_S0_ueven: 5234
+OO_checks: 41123
+RW_checks: 183
+SI_checks: 4
+WM_checks: 6504
+WS_checks: 12400
+XW_checks: 15745
+X_GM_s4a: 959
+X_LP_nore: 0
+X_OO_own: 201
+X_SI_own: 168
+ZF_checks: 168
+ZF_total: 168
+inphase_fallbacks: 169
+runs: 6000
+transitions: 9745
+max max_RO: 12
+max max_ZF: 1
+max max_fP: 1
+RESULT PASS violations 0

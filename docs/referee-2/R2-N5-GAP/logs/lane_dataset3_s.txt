@@ -1,0 +1,28 @@
+MODE files dataset3.lst 1 experiments/ MAXT 3000
+FBW_checks: 57
+GM_checks: 57
+GR_checks: 12
+LP_checks: 160
+LP_reblocked: 160
+LW_checks: 541
+OO_case1: 11885
+OO_case2: 15
+OO_case2u: 77
+OO_case2u_S0_ueven: 77
+OO_checks: 11977
+RW_checks: 270
+SI_checks: 173
+WM_checks: 260
+WS_checks: 9331
+XW_checks: 322
+X_GM_s4a: 77
+X_LP_nore: 1
+ZF_total: 0
+inphase_fallbacks: 57
+runs: 3
+starts_valid: 3
+transitions: 319
+max max_RO: 111
+max max_ZF: 0
+max max_fP: 38
+RESULT PASS violations 0

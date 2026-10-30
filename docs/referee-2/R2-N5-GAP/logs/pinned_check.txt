@@ -1,0 +1,7 @@
+box 66 LATE: b6_xl2_n32 one edge late-adopted 4 times in one lambda-run, 1 per piece (boundary obstruction): PASS
+box 67 FBENERGY: lend9_n8 3 in-phase fallbacks, gap set never grows (GAP-MON), never shrinks (E3 strict DEAD): PASS
+box 68 ZFLAT: nep22f_n64 10 Z-flat fallbacks in a saturated gap, SW-IN and REOPEN-W hold: PASS
+
+real	0m0.324s
+user	0m0.298s
+sys	0m0.016s
