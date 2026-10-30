@@ -481,4 +481,16 @@ if grep -q "SWALL sae_4.pg n 63 mE 117 iterations 150 bmon_viol 0 elim_viol 0 xi
 else
   echo "box 93 ELIM check: FAILED"; exit 1
 fi
+w44=$(cd .. && python3 -I new/box94/kcount.py red/usplit/instances/gate_K64_n581.pg; python3 -I new/box90/sbv.py red/usplit/instances/gate_K64_n581.pg red/usplit/instances/gate_K64_n581.start)
+if grep -q "KCOUNT red/usplit/instances/gate_K64_n581.pg n 581 k 5" <<<"$w44" && grep -q "SBV n 581 runs 1 maxima {'sb': 64, 'sbv': 62, 'ret': 61, 'F': 71}" <<<"$w44"; then
+  echo "box 94 KO: gate_K64_n581 is in C^5O (prod deg 32) with 64 sbar-changes in one W-run (NO-REPEAT-kO DEAD): PASS"
+else
+  echo "box 94 KO check: FAILED"; exit 1
+fi
+w45=$(cd .. && python3 -I hard-families/pgsolver_port.py switchbestexp 3 > "$tmp/sbe_3.pg" && python3 -I new/box95/firstdiv.py "$tmp/sbe_3.pg")
+if grep -q "FIRSTDIV sbe_3.pg n 85 N5_iter 41 first_div_GLO 14 first_div_V1 14 N5_tau_changes 3 first_tau_change 13" <<<"$w45"; then
+  echo "box 95 HN: N5 = I^glo on switchbestexp_3 until its first tau-change (12 -> 13), split at state 14: PASS"
+else
+  echo "box 95 HN check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

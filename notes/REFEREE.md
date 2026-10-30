@@ -10,7 +10,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 - P-N5-WRUN (l-new 7668bc9b; packet fae68aa0, line 0faa5b80): report docs/referee/R-N5-WRUN.md. All items SIGNED; [SUB] signed independently
   (verdict saved before SUB-check.md was opened; §2.4 quote identical). G-WRUN-1: the line's block definition makes WAIT-CYCLE′ FALSE
   (scratch/wrun_logs/wc_line_cex.pg, n 4). WRUN-L1 (k free), L2 (term order). Notes N1-N4 (N2: REL2-WRISE = landed R91 LATE-W).
-  Control scratch/wrun_probe.py (MUT 4, 5 bite; 1, 2, 3 never). Next: §C for FIXD and WRUN on the Lead's word.
+  Control scratch/wrun_probe.py (MUT 4, 5 bite; 1, 2, 3 never). §C done: R-N5-FIXD-C (L-2, L-3 MATCH), R-N5-WRUN-C (L-3 MATCHES).
+- P-N5-SETTLE (l-si 6a70a520; packet aef403c3, line 6aa094e3): report docs/referee/R-N5-SETTLE.md. All SIGNED (incl. T54 LEX-BFS / IDX-MONO
+  as used, re-derived from SPEC S1 (iv)). Line REQUIRED: L1 (F), L2 (T), L3 (k in RG′). Control scratch/settle_probe.py. Next: SETTLE §C.
 - Controls: scratch/fixd_probe.py (MUT 1/3/4 bite, 2 never), scratch/fsw_strong.py, scratch/fixd_logs/ (run.sh, strong.sh).
   Lesson: xargs -P with a shared stdout interleaves lines even through printf; write one file per run.
 

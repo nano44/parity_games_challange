@@ -16,6 +16,15 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - PROVED (lane) ELIM-EQ: HW_F <= |F|, |F| <= (m_E - n_E) HW_F, so ELIM-WIN <=> WRUN-POLY <=> XI-CH-POLY. REVISIT: windows force every digit back.
 - DEAD route: BETA-MON + ELIM-ORD-beta + Xi-rise-every-step + XI-RUN hold for VJ switch-all on switchallexp_N with HW = 5*2^(N-1) - 5.
 - DATA: max HW 45 runfam_K40 (n 79); 494 retired edges not ELIM-ORD-beta-certified at their W-run's end.
+### Box 94 N5-KO (Lead 18:14Z: 𝒞^kO via RUN-SETTLE / HEAD-RED + R61): docs/new/N5-KO-box94.md. NOT closed, no packet.
+- PROVED (lane, composition R54 (e), R61 (d), R89, FIX 3) kO-RED: O(n^{2k+3}) W-runs per run on 𝒞^kO; N5 poly there iff W-runs poly.
+- DEAD NO-REPEAT-kO: gate_K64_n581 in 𝒞^5O (P 32) has SB_F 64 in one W-run. Corpus: longest W-runs per n are on 𝒞^1O (runfam_K40).
+- WRUN fixes entry 4 / line L-3 (fb976deb) done before box 94.
+### WRUN fixes entry 5 / line L-4 (5462315f; no heading marker per Lead reading L41; Lemma SUB stated, BIP-RED unconditional). R94 = FIXD LANDED.
+### Box 95 N5-HN (Lead 18:43Z: why H_n dies in N5): docs/new/N5-HN-box95.md. DATA only; mechanism OPEN.
+- I^glo (box95/hn.py GLO) doubles on switchbestexp (134, 286, 590, 1198); N5 = I^glo for 13 iterations, splits after N5's first tau-change
+  (12 -> 13, h2 -> m2); V1 (vs frozen sbar = N5-SF step) splits at 71 (N 3), not exponential on N <= 8. First killer: the tau frame.
+- Things only I know: switchbestexp games for hn.py live in the scratchpad (sbe/); GLO at N = 6 takes ~35 s, N = 7 not run.
 - Things only I know: switchallexp games for swall_hw.py were generated into the scratchpad (pgsolver_port.py switchallexp N); check.sh
   regenerates N = 4 in its tmp dir.
 
