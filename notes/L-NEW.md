@@ -2,6 +2,15 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point (successor 38, Opus 5.5, started 2026-10-30 12:02Z by date -u; handover check: origin head 1169bb3d, trunk merged)
+### Box 86 N5-RSTAR (Lead 13:06Z: R*-POLY; D18 screen of >= 2 outside approaches): docs/new/N5-RSTAR-box86.md
+- R137 line: fx_K8_m32 one W-run, FREE 836 all LAT (64 at one edge), R*_F 16, FL_F 0, |F| 280.
+- PROVED (lane): GAP-DEV (blocked target => Xi < W, Odd deviation sigmabar != tau on its play); RSTAR-PCH (R*_F <= m_E n (n + 1 + P*_F);
+  composition of R89 R*-RISE + per-vertex LEN-MONO; adds nothing beyond R86's P*). DEAD: DEV-CAP (gate_K16_n197: R* 16 > 5 deviation edges).
+- D18 screen: WQO/Dickson DEAD for poly ([FFSS] arXiv 1007.2989 Prop. 5.2 / 6.3, tight even lexicographic); exchange/simplex READING
+  ([Fr09] arXiv 0901.2731 abstract only); GP* potential chosen, it ends at P*. R*-POLY OPEN; gate_K: R*_F = K, n ~ 9K (linear).
+- READING: boxes 84-86 close a loop: R3-POLY <= R*-POLY and FL-POLY <= P*-POLY = R86's target (carries NM* under MATCH-Phi).
+- Things only I know: R137's pin is not on trunk in this clone; I read it from origin/claude/l-red into the scratchpad (sha1 e995709e).
+  pch.py tests the sharper XICH <= n(n + PCH) (proved: n(n + 1 + PCH)).
 ### Box 85 N5-FREE (Lead 12:34Z: FREE-POLY, classify FREE exactly, bound per class or obstruction): docs/new/N5-FREE-box85.md
 - DATA: FREE = LAT 4911 / NT 231 / GAP 115 / IMM 3; per (F, X, g) LAT <= 17 (topfix, 2N - 3), NT / GAP / IMM <= 1 (CONJECTURES NT-1 etc.).
 - PROVED (lane): Lemma RET-XIRISE (RET_F(X, g) <= XICH_F(g), no TT term); Theorem FREE-RED (every return count <= |F| <= (n-1)(R*_F+1)
@@ -1570,6 +1579,8 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
   notes/L-RED.md "Successor 32 PARK" (TWO-SOURCE / PREFIX / GAP-IN-PREFIX, quoted in N5-FLATSRC-box79 §3).
 - (succ. 38, box 84) l-red fc450c7d docs/red/R135-desync-gate.md §3-§5 + Addendum 1, experiments/red/desync/wcrand.py; RESULTS R89
   (SUCC-MON, LATE-RISE); R93 / P-N5-WCH-box79.md §4.1 NEW-BOUND, §4.2 RET-WCH; SPEC N5-ssi-global.md S1, S2, S4, Termination.
+- (succ. 38, box 86) [FFSS] D. Figueira, S. Figueira, S. Schmitz, Ph. Schnoebelen, arXiv 1007.2989 (LICS 2011): introduction, Prop. 5.2,
+  Prop. 6.3, Remark 6.4 (full PDF text read). [Fr09] O. Friedmann arXiv 0901.2731: abstract only. RESULTS R86 (LEN-MONO, COMPOSE-RUN, COMPOSE-NM).
 ## Dead ends
 - (box 47, successor 26, 11:13Z) CONJECTURE XD-1 (≤ 1 X_dir per {u, u′}-run): FALSE on experiments/new/box47/instances/pp2_n19.pg (sha1 97b5b132…),
   𝒞^2O, S3, phase [1, 3], D = {1}, {0}, {1}; length-only values (cycle node 9). Obstruction: each X_dir needs only an Even switch on each
@@ -1749,6 +1760,10 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
   Obstruction for all: trust routing (docs/new/N5-1Ocyc-box25.md §5).
 - (succ. 38, box 84) Distinct route patterns per (X, g) as the R3-POLY potential: over-counts (pftheta34_n32, n 32: 25 patterns of one
   edge in one W-run, 3 REG returns). Replaced by REG returns (TRIPLE-RED). Not a kill of R3-POLY.
+- (succ. 38, box 86) CONJECTURE DEV-CAP (R*_F <= distinct Odd deviation edges in the W-run): FALSE on red/usplit/instances/gate_K16_n197.pg
+  + .start (R*_F 16, 5 deviation edges); 60 corpus W-runs. Obstruction: one deviation edge poisons a lateral fan released one per step.
+- (succ. 38, box 86) WQO / Dickson route to R*-POLY: dead for polynomial bounds ([FFSS] Prop. 6.3: F_{gamma+k-1} lower bounds, tight even
+  for the lexicographic order; Xi's order is lexicographic with dimension ~ n).
 ## Things only I know (earlier successors)
 - (succ. 8) Pitfalls in box 21:
   - `pkill -f "climb_fix.py ..."` killed my own shell (exit 144). Kill by `ps -eo pid,args | awk '$2=="python3" && $3==...'`.

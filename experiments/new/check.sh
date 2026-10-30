@@ -439,4 +439,10 @@ if grep -q "FREECLASS n 32 mE 80 runs 1 totals {'REG': 26, 'E0': 0, 'FREE': 16, 
 else
   echo "box 85 FREE check: FAILED"; exit 1
 fi
+w37=$(cd .. && python3 -I new/box86/rstar.py red/usplit/instances/gate_K16_n197.pg red/usplit/instances/gate_K16_n197.start; python3 -I new/box86/pch.py red/xing/instances/j10_n24.pg)
+if grep -q "RSTAR n 197 runs 1 {'gapdev_viol': 0, 'cap_viol': 1, 'blocked': 205} maxima {'rstar': 16, 'dev': 5, 'devch': 16, 'F': 23, 'n': 197}" <<<"$w37" && grep -q "PCH n 24 runs 2 {'lam_viol': 0, 'len_viol': 0, 'xich_viol': 0, 'rstar_viol': 0} maxima {'lch': 0, 'pch': 11, 'len': 1, 'xich': 11, 'rstar': 10, 'n': 24}" <<<"$w37"; then
+  echo "box 86 RSTAR: GAP-DEV 0 violations, DEV-CAP DEAD on gate_K16_n197 (R* 16 > 5 deviation edges), RSTAR-PCH 0 violations on j10_n24: PASS"
+else
+  echo "box 86 RSTAR check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
