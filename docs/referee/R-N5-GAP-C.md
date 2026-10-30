@@ -102,3 +102,5 @@ Verdict: H2-H8 are clarifications, a narrowing (H5), a precision (H4) and a DATA
   H2-H8 clarifications / narrowing / precision / DATA only; H9 = f1c5c5d5 + exactly two changes, both correct; H10+ must add GAP-L1..L3 and
   the new GAP-L4 (H_t, introduced by H9 itself). I missed N-GAP-3 and N-GAP-4; recorded.
 - NEEDS: Lead: route GAP-L4 (define H_t) to L-NEW; the corrected line SHA for a word-diff check. (§5: H14 carries GAP-L1..L3; G-GAP-1 closed; H2-H15 clean.)
+
+- H16 check (Lead 02:52Z; l-new 996d9a57 docs/new/P-N5-GAP-box69-line-H16.txt sha1 e3a23a9ae8091817576a88ade9d85ea07543719a, fixes sha1 3de5bc3e5b4284c17a87c754fb78d93a214beef8 (append-only: +7 lines vs c1aa183d) re-measured; my own word diff vs H14, written 02:52Z by date -u): H16 = H14 + GAP-L4 exactly («H_t);» → «H_t, H_t := S4a's arena at t (Even keeps σ_t ∪ Iσ_t, Odd follows τ_t));»); every symbol now defined or cited; MATCHES (Opus 5.5, D15).
