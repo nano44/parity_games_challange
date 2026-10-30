@@ -379,4 +379,10 @@ if grep -q "n 7 |Q| 1 sum(deg-1) 1 iters 3 phases 1 .* revisits 1 vec-returns 1 
 else
   echo "box 75 SBAR check: FAILED"; exit 1
 fi
+w27=$(cd .. && python3 -I new/box76/sbqrun.py new/box76/inst/cs_n32.pg new/box76/inst/cs_n32.start)
+if grep -q "n 32 mO 108 mE 39 wruns 1 max-len 9 max-sbq 173 max-new 57 max-ret 116 " <<<"$w27"; then
+  echo "box 76 SBQ: cs_n32 173 = 5.4n sbar-changes in a 9-step W-run, 116 returns (SBQ-2 DEAD): PASS"
+else
+  echo "box 76 SBQ check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
