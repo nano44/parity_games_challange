@@ -8,7 +8,7 @@ Gusfield's induction (thesis 1980 Thm 4.4) needs every sub-pair to be optimal on
 one-parameter linear embedding of the joint plays (T48 §1).
 PIECES = least number of consecutive index windows with no segment return inside any window (greedy cut at the first return
 relative to the window start; greedy is optimal); a lower bound on the straight pieces of any piecewise one-parameter linear path
-through the run (T49 §4). Read-only use of experiments/new/box54/n5sf.py (L-NEW, sha1 1ea3bdc7) and box21/n5x.py.
+through the run (T49 §4). PLAIN=1 runs plain N5 (box21/n5x.py) instead of N5-SF (T51). Read-only use of experiments/new/box54/n5sf.py (L-NEW, sha1 1ea3bdc7) and box21/n5x.py.
 Usage (from the repo root): python3 -I docs/lit/T48-sbc-embed-check.py GAME [START]"""
 import sys, os
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
@@ -25,10 +25,16 @@ def play(g, s, sb, v):
 
 def main():
     g = load(sys.argv[1]); st = readstart(sys.argv[2]) if len(sys.argv) > 2 else None
-    E, T = n5sf.trace(g, st); T = [x for x in T if "lam" in x]; n = g.n
-    seq = []
-    for x in T:
-        if not seq or seq[-1][0] != x["s"]: seq.append((x["s"], x["sb"]))
+    n = g.n; seq = []
+    if os.environ.get("PLAIN"):   # T51: plain N5 (box21/n5x.py trace), sigma's distinct sequence with Odd's best reply sbar(sigma)
+        import n5x
+        states, _ = n5x.trace(g, st, check=False); E = n5x.Engine(g)
+        for s_, _t in states:
+            if not seq or seq[-1][0] != list(s_): seq.append((list(s_), list(E.evaluate(tuple(s_))[1])))
+    else:
+        E, T = n5sf.trace(g, st); T = [x for x in T if "lam" in x]
+        for x in T:
+            if not seq or seq[-1][0] != x["s"]: seq.append((x["s"], x["sb"]))
     ch = Counter(); ret = Counter(); used = defaultdict(set); sbc = 0
     plays = [None] * n; pused = defaultdict(set); pret = 0
     seglast = {}; segleft = defaultdict(set); segret = 0; segpairs = set(); segfirst = {}; wit = None

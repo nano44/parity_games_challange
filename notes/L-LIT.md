@@ -1,7 +1,7 @@
 # L-LIT notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point (HANDOVER, 2026-10-29 ~17:12Z by date -u; successor 4, Opus 5.5, D15/D18; session_01V5yGRVtbkGazm2j23LvZp8; parked on Lead's word)
+## Resume point (HANDOVER, 2026-10-30 ~07:30Z by date -u; woken for T51, then parked again; successor 4, Opus 5.5, D15/D18; session_01V5yGRVtbkGazm2j23LvZp8; parked on Lead's word)
 DONE this session (claude/l-lit; every push via scripts/push.sh, exit 0, VERIFY PASS; Oink smoke NOT RUN, Oink not built here):
 - 6c065788 handover check (container 4014 behind; fast-forwarded). 0703a463 trunk merge 55d45567 + T48 script v1.
 - ca194a96 T48 docs/lit/T48-sbc-neighbours.md + T48-sbc-embed-check.py: parametric shortest paths vs SBC (leapfrog = Carstensen mechanism,
@@ -11,6 +11,9 @@ DONE this session (claude/l-lit; every push via scripts/push.sh, exit 0, VERIFY 
   smoothed results do not reach parity; PIECES ≈ SBC/2; Loff-Skomra one- vs two-player single-parameter breakpoints).
 - 6722627d T50 docs/lit/T50-quasipoly-si.md (Koh-Loho potential height; coherent = parametric dimension 1, Black-Xue 2026; DLM locks cannot
   act on F; no all-rules bound for one-sided SI, Friedmann Lemma 4.2).
+- 2026-10-30 T51 (this push): docs/lit/T51-parametric-best-reply.md (exact models of Gusfield / Carstensen / Mulmuley-Shah; monotone
+  non-linear costs give no bound (elementary); no source counts distinct best replies; Carstensen count does not transfer; plain-N5
+  SEGRET data; thetaA_n7 one-parameter-consistent). PLAIN=1 mode added to T48-sbc-embed-check.py. Trunk merged 8bb9799d.
 IN FLIGHT: none.
 OPEN LEADS for a successor (only on a concrete Lead question):
 - KL-SF (T50 §1): F's step with Koh-Loho tree labels; for L-NEW to define/measure. Literature side: Koh-Loho Prop. 2.5 with roles swapped.
@@ -422,6 +425,10 @@ NEEDS: none from the owner.
 | arXiv 2201.05134 v1 (Black-De Loera-Lütjeharms-Sanyal) sha256 aa1e5e36f30e5572… | p.1 coherent paths = vertices of monotone path polytopes; p.3-4 shadow vertex = coherent path | 2026-10-29 | Billera-Sturmfels 1992 NOT OPENED |
 | arXiv 2309.02223 v1 (van Dijk-Loho-Maat) sha256 10e6794d82aba465… (re-open) | Thm 1 p.2; p.2 contrast with [15, Lemma 4.2]; p.3 key insight + self-similar recursion; Algorithm 2 p.8; Thm 13 | 2026-10-29 | |
 | Friedmann thesis sha256 68748f5388a94151… (re-open) | Lemma 4.2 printed p.74 (SWITCH-LIN, ≤ |V| iterations) | 2026-10-29 | |
+| T51 (2026-10-30) sources | | | |
+| arXiv 2002.10888 v2 (Pellissier-Seiller, Lower bounds for algebraic machines, semantically) sha256 30c2f8f25f8030fd… | §III Mulmuley's PRAM-without-bit-operations assumptions (numeric / non-numeric data, indirect references not numeric-dependent, quoting Mulmuley 1999); §VII Def. 35 parametric complexity = breakpoints of an affine parametrization | 2026-10-30 | |
+| arXiv 1811.05115 v3 (Gajjar-Radhakrishnan) (re-grep) | p.2 ϕ(n,β) definitions, Carstensen ϕ(n,∞), Mulmuley-Shah ϕ(n,O((log n)^3)); §1 Consequences: Claim 4 (PRAM without bit operations, n^α processors, ǫ log n steps), the preceding sentence says «with» (typo); Thm 2 (polynomial weights), Thm 3 | 2026-10-30 | |
+| NOT opened (T51) | Mulmuley-Shah JCSS 2001 (re-tried: no copy found); Shah PhD dissertation (Chicago 2001) abstract page mailman.cs.uchicago.edu: curl TLS fail, WebFetch 503 | 2026-10-30 | |
 
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).
