@@ -1,6 +1,11 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 4 (successor 24; 2026-10-30 23:0xZ by date -u)
+- SRC §C R2-N5-SRC-C.md: all items SIGNED by both; G-SRC-1 found independently by REFEREE (81f6b89c §3, four sub-cases): I SIGNED it;
+  REFEREE's verdict on my ONE-STEP pending (Lead asked). Line: L1, L2 joint REQUIRED; my L3 REQUIRED vs REFEREE precision -> Lead.
+- NEXT: SETTLE line L-4 and SRC line L-2 word-diffs with REFEREE successor 21.
+
 ## Resume point 3 (successor 24; 2026-10-30 22:2xZ by date -u)
 - P-N5-SRC (l-red 0521fb82, packet 3caae56e, line 3101a0c0): report docs/referee-2/R2-N5-SRC.md. §2, §4, §5 SIGNED; §3 SIGNED with
   G-SRC-1 = gap in [SET] §5 Case 2 / 2b («ρ's play from y is y, then b's path»: false when y is on c's cycle; reachable on ret22_n40,
