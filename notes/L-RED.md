@@ -67,7 +67,8 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
     2^(L+1) - 2L - 2) in real N5 inside ONE W-constant interval with an EVEN cycle node, keeping every re-sweep Xi-improving (S2 offers).
   - If S2 forbids it, name the exact offer condition that breaks the counter. That is L-SI 33's CONJECTURE LAYER-RESET target (l-si
     dbc51c07 §8).
-  - Tools to start from: wint/wint.py (interval counter), bip/bip.py; R141 §4 (common-exit reading).
+  - Tools to start from: wint/wint.py (interval counter), bip/bip.py, bip/strictrel.py; R141 §4 (common-exit reading).
+  - Also open (Lead 15:10Z): two STRICT releases of one edge in one frozen-sigma-bar stretch (BIP-REL-1); lagged-clone fx dead (R142 Add. 1).
 - Things only I know:
   - l-new worktree /tmp/claude-0/lnew is detached at origin/claude/l-new. L-NEW's retclass.py / xirise.py / pch.py are run from there
     unchanged; they import box21/n5x and need the start files' SIGMA0/TAU0 format.

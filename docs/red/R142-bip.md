@@ -59,13 +59,28 @@ BIP(ρ, τ) (box 88 §2), quoted:
 - My data never shows more than about 2n steps in abstract BIP. The quadratic realised family (obs) has τ-climbs of K·m.
 - So the adversary's best is Θ(n²) (realised) and about 2n (random). There is no super-quadratic BIP run.
 
-## DONE / FINDINGS / NEEDS
+## Addendum 1 (2026-10-30 ~15:20Z, date -u): Lead 15:10Z target, two STRICT releases of one edge in one frozen-σ̄ stretch (L-NEW 38 box 89, CONJECTURE BIP-REL-1)
+- Design (free/fxlag.py).
+  - Start from R137's fx and give each observer O_i a dg-style lagging clone O′_i: gates h → {pads → y_j (τ), O_i}.
+  - X reads O_i through g_i → {pads → O_i (τ), O′_i}, all lengths equal.
+  - Aim: σ̄ frozen at the lagging clones, so X's ρ-view lags its τ-view by one step. Each leapfrog would then be one strict release of
+    (X, g_i).
+- DATA (bip/strictrel.py, n5b; K 4, m 16, n 234, pin free/instances/fxlag_K4_m16: xeng identical, Oink OK).
+  - σ̄ is NOT frozen: there are 71 frozen stretches in 76 iterations. The lag is carried by σ̄ re-routing at the gates (box 88 mechanism
+    O), not by BIP.
+  - X switches only 3 times, against 33 in fx.
+  - Max strict releases of one edge in one frozen stretch: 1. fx_K8_m32 also gives 1 (2 stretches).
+- DEAD as designed. BIP-REL-1 unbroken.
+- READING. A lag that σ̄ must "see" moves σ̄ at each lag event, which ends the frozen stretch. A strict double release needs the ρ-order of
+  two monotone val_ρ sequences to flip twice under a FIXED ρ. That is §4's order-flip gap, the exact target.
+
 - DONE: bip/bip.py (n5b) and bip/bip2.py (si.py), the BIP engines; bip/oglx.py (exhaustive static-ρ ogl); pins bip/instances/bipsearch_n12,
   _n8; check.sh "R142".
 - FINDINGS:
   1. DATA: BIP(σ̄_0, τ_0) = N5 on obs_K12_m24 (324 = 324). A realised BIP run is quadratic.
   2. DATA: abstract BIP hill-climb reaches 13 / 15 / 24 / 20 at n 8 / 10 / 12 / 14 (≤ 2n); bip.py = bip2.py.
   3. DATA: static ρ removes box 82's doubling (ogl_3 exhaustive: 4 against 8; ogl_4 sampled: 4 against 16).
+  5. DEAD (Addendum 1): lagged-clone fx against BIP-REL-1; σ̄ re-routes at every lag (71 stretches / 76), max strict releases 1.
   4. READING: the doubling needs time-varying routing (σ̄ re-routings, mechanism O). BIP-POLY's open core is the order flips between
      monotone val_ρ sequences. No kill.
 - NEEDS: none from the owner.
