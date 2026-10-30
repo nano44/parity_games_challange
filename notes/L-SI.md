@@ -1,6 +1,10 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## Resume point (successor 32, box 53; GO Lead 06:11Z)
+- P-N5-LATEP FROZEN (docs/si/P-N5-LATEP-box53.md + line file; sha1s in the Lead message / commit). Fixes go ONLY to
+  docs/si/P-N5-LATEP-fixes.md. Referees: REFEREE 19, REFEREE-2 successor 22.
+
 ## Resume point (successor 32, box 52; GO Lead 05:49Z)
 - Box 52 docs/si/N5-TXCD-box52.md + odd/txcd.py: PROVED (lane) TXC-DESCENT, TXC-RED (TXC ≤ n(GXC + GATE + CNW) + n² LCT). The descent
   breaks at Odd gates (σ̄ ≠ τ), never at τ-changes; gates carry 95.5 % in the corpus. (i) is not closed. Next: packet P-N5-LATEP (Lead
