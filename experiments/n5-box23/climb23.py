@@ -7,7 +7,8 @@ Fitness = (max over the run's W-runs of R*_F, sum over W-runs of R*_F, |F| of th
 A FREE-RED violation (|F| > (n-1)(R*_F+1) + FL_F) or an incl != strict W-run stops the climb and is written to OUT_viol.
 Start: random game (out-degree 1..3, owners and priorities 0..n uniform) with S3 start, or --seed-pg FILE.pg[:START] padded with
 Even self-loop vertices to n. Budget --secs and/or --steps. Output: OUT.pg + OUT.start of the best; log 'BEST step fit', 'END ...'.
-Usage: climb23.py N SEED --secs S [--steps K] [--seed-pg FILE.pg[:START]] --out OUTPREFIX"""
+--s3: the start is always S3 of the current game (plain N5 from its own start).
+Usage: climb23.py N SEED --secs S [--steps K] [--seed-pg FILE.pg[:START]] [--s3] --out OUTPREFIX"""
 import argparse
 import os
 import random
@@ -90,6 +91,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("n", type=int); ap.add_argument("seed", type=int); ap.add_argument("--secs", type=float, default=600)
     ap.add_argument("--steps", type=int, default=10 ** 9); ap.add_argument("--seed-pg"); ap.add_argument("--out", required=True)
+    ap.add_argument("--s3", action="store_true", help="start pair is always SPEC S3 of the current game (never mutated)")
     a = ap.parse_args(); rng = random.Random(a.seed)
     if a.seed_pg:
         path, _, st = a.seed_pg.partition(":")
@@ -104,11 +106,15 @@ def main():
         g = pg.Game([rng.randrange(n + 1) for _ in range(n)], [rng.randrange(2) for _ in range(n)],
                     [sorted(set(rng.randrange(n) for _ in range(rng.randint(1, 3)))) for _ in range(n)])
         s, t = map(list, rstar.Eng(g).start())
+    if a.s3:
+        s, t = map(list, rstar.Eng(g).start())
     cur, _ = score(g, s, t); best = (cur, g, s, t); t0 = time.time(); step = 0
     print(f"START fit {cur} n {g.n}", flush=True)
     while step < a.steps and time.time() - t0 < a.secs:
         step += 1
         h, hs, ht = mutate(g, s, t, rng)
+        if a.s3:
+            hs, ht = map(list, rstar.Eng(h).start())
         f, info = score(h, hs, ht)
         if f[0] >= 10 ** 9:
             print("VIOLATION during climb:", info[:3], flush=True); write(h, hs, ht, a.out + "_viol"); best = (f, h, hs, ht); break
