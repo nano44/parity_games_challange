@@ -614,3 +614,15 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
 - CONJECTURE WD-BOUNDED (docs/si/N5-WDEPTH-box48.md §4; window depth D_F ≤ a constant per W-run): DEAD. Instance family wdepth_K4_m{16,32,64}
   (L-RED, l-red 448a1bf9, docs/red/R130-window-depth.md; span/mkrw.py LATE=2): D_F = (m − 1)/2 = 7 / 15 / 31 at n 146 / 234 / 410 in one W-run,
   two counters (repchain.py, latec.py). REP linear there. P-N5-REPD frozen, not refereed (docs/si/P-N5-REPD-status.md).
+
+## box 51b (L-SI successor 33; docs/si/N5-GATE-box51b.md)
+- Gate potential for ZFL (Lead box 51 (2): a monotone order on gates within one W-run), and any potential that is a function of (D_k, the
+  full gate map, λ_Ξ, λ_W, Z_k, LEV_k): DEAD. Instance experiments/red/xing/instances/u23sw64_n32.pg (no start): the W-constant interval
+  [2, 10] has 8 flat transitions, all ZFL, and every one of these data is constant on it (si/gate/const.py). Obstruction: the gap sits
+  at the cycle-node level (λ_Ξ = 20 ≠ λ_W = 13 at all 32 vertices); the climbs are path-set changes to node 20 that W does not see.
+- Level potential Φ = (LEV, coordinate at LEV) for ZFL: DEAD. Same instance: SUB 8 (no Φ rises at any ZFL transition).
+- Bellman-Ford / Lemma P inside the W-tight subgame G_I: DEAD. It needs Ξ-optimal steps. Instance experiments/red/xing/instances/
+  u2flat73_n32.pg: 11 flat switches take a tight arena edge that is not Ξ_t-best; u23sw64_n32: 23 vertices stay put with a tight Ξ-improving
+  arena edge (LAZY).
+- Box 50b's pure form «a flat climb needs a gate change or a non-same-pair gate»: not what the prefix argument proves. Lemma GATE adds case
+  (c), the gate climbs. No instance with (c) at a flat transition (SPD 0 in 1,132 runs), so the pure form is OPEN, not dead.
