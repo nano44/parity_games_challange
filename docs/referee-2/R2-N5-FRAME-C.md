@@ -149,3 +149,4 @@ why the definition is needed. H0 states the true reading.
 - H0 discharges E1 and E2.
 - H1-H15 are clarifications, readings or sharpenings, as labelled. None widens a signed statement; H10 is a conjecture, correctly unsigned.
 - H16 needs one correction (append), which comes from my own N-FR-10 error.
+- H17 checked, verbatim (l-new 9631bbc5, fixes sha1 eb5bd5e1…, +4/−0 over d3d98d1c; whitespace-normalised equal to the §C.7 corrected N-FR-10 sentence); P-N5-FRAME closed at REFEREE-2 (2026-10-30 00:1xZ by date -u).

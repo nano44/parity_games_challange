@@ -1,0 +1,3 @@
+ENERGY fb38_n48.pg n 48 inphase-fb 38 fmax 38 FBUP [34, 18, 0, 37, 0, 17] SAUP [3, 7, 3, 0, 3, 2] worst-phase {'f': 38, 'e3s': 34, 'up3': 55, 'drop3': 86} ZGROW 0
+ENERGY pl130_n40.pg n 40 inphase-fb 11 fmax 11 FBUP [7, 7, 0, 11, 0, 0] SAUP [36, 49, 41, 9, 41, 25] worst-phase {'f': 11, 'e3s': 17, 'up3': 75, 'drop3': 82} ZGROW 0
+ENERGY long121_n40.pg n 40 inphase-fb 8 fmax 8 FBUP [3, 5, 0, 8, 0, 2] SAUP [32, 51, 29, 4, 29, 23] worst-phase {'f': 8, 'e3s': 21, 'up3': 73, 'drop3': 61} ZGROW 0

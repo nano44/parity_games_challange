@@ -1,0 +1,45 @@
+RUN si/odd/inst/red/carryobs_K12_m48.pg#start n 346 mE 223 T 612 B* 0 REP* 0 SC* 0 O* 0 E* 1752
+RUN si/odd/inst/red/carryobs_K12_m48.pg#0 n 346 mE 223 T 3 B* 1 REP* 0 SC* 0 O* 0 E* 0
+RUN si/odd/inst/red/d_wobs_K8_m32.pg#start n 231 mE 242 T 280 B* 280 REP* 0 SC* 0 O* 279 E* 0
+RUN si/odd/inst/red/d_wobs_K8_m32.pg#0 n 231 mE 242 T 3 B* 1 REP* 0 SC* 0 O* 0 E* 0
+RUN si/odd/inst/red/spanobs_K12_m48.pg#start n 346 mE 175 T 612 B* 0 REP* 0 SC* 0 O* 0 E* 1173
+RUN si/odd/inst/red/spanobs_K12_m48.pg#0 n 346 mE 175 T 3 B* 0 REP* 0 SC* 0 O* 0 E* 0
+RUN si/odd/inst/red/tobs_K8_m32.pg#start n 233 mE 119 T 280 B* 0 REP* 0 SC* 0 O* 0 E* 512
+RUN si/odd/inst/red/tobs_K8_m32.pg#0 n 233 mE 119 T 3 B* 1 REP* 0 SC* 0 O* 0 E* 0
+RUN si/odd/inst/red/wobs_K16_m64.pg#start n 455 mE 229 T 1072 B* 0 REP* 0 SC* 0 O* 0 E* 2047
+RUN si/odd/inst/red/wobs_K16_m64.pg#0 n 455 mE 229 T 3 B* 1 REP* 0 SC* 0 O* 0 E* 0
+RUN si/odd/inst/red/wobs_K8_m32.pg#start n 231 mE 117 T 280 B* 0 REP* 0 SC* 0 O* 0 E* 511
+RUN si/odd/inst/red/wobs_K8_m32.pg#0 n 231 mE 117 T 3 B* 1 REP* 0 SC* 0 O* 0 E* 0
+MODE files red.lst 1 experiments/ OO1N 60 OO1S 30 RANDH 2 MAXT 3000
+CC3_checks: 720
+CL_C: 0
+CL_F: 0
+CL_FR: 0
+CL_P: 5502
+CL_S: 0
+CR_checks: 12
+CR_pair_checks: 720
+FB_checks: 3154
+OO1_checks: 46671
+OO1_sampled_steps: 130
+OO2_checks: 272572
+RREP_checks: 3166
+WM_checks: 2869
+WS_checks: 229116
+WV_checks: 72048
+late_adoptions: 0
+late_first: 0
+late_repeat: 0
+reentries: 5502
+runs: 12
+starts_valid: 6
+transitions: 3154
+wruns: 3166
+max max_Bstar: 280
+max max_ENT: 16
+max max_Ostar: 279
+max max_REPstar: 0
+max max_SCstar: 0
+max max_T: 1072
+max max_WCHstar: 542
+RESULT PASS violations 0

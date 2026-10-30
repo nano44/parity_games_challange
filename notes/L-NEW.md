@@ -1,6 +1,40 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Box 71 log (successor 35; Lead 01:50Z: <= 1 S re-entry per (piece, edge): proof or adversary)
+- docs/new/N5-S2-box71.md. No tie-order lemma (SPEC S1's tie-break depends on the whole arena). DEAD: instance
+  experiments/new/box71/inst/s2piece_n32.pg + .start (sha1 aec03e16...): v 15 cycles 8 -> 2 -> 10 -> 8 through three W*-tied options, two
+  S re-entries of (15, 8) in one piece (silent.py and L-SI's cutsx.py agree). SIL-Z/SC-GXC stand; SC* not killed; C untouched.
+
+## Box 70 log (successor 35; Lead 01:23Z: premise SC* of L-SI's P-N5-CUT)
+- docs/new/N5-SC-box70.md. silent.py re-implements P-N5-CUT §4 classes (matches cutsx: S 42, C 4 on 719). SC* record 31 (u23sw64_n32, one S
+  per edge, all on W-flat transitions). PROVED (lane) SIL-Z: an S re-entry is a strict Xi-climb at a gap vertex with W(v) fixed (old successor
+  also in the gap). Corollary SC-GXC: sum SIL <= GXC + NC + NT and FB-LIN's ZF <= GXC + NZ: one premise GXC. OPEN: GXC (Xi-route), C class,
+  CONJECTURE <= 1 S per (piece, edge) (0/1132).
+
+## Box 69 log (successor 35; Lead 00:52Z: freeze P-N5-GAP)
+- docs/new/P-N5-GAP-box69.md FROZEN at l-new 28ceeadc (sha1 d67f8e04b54d5621ebecf27e7fe7151ce57793cd): 13 items (XW, W-MON, FB-W,
+  OPT-OFF, W-SUCC carried with proofs; LATE-W, LATE-PIECE, GAP-MON, SW-IN, Z-FLAT, REOPEN-W/CHARGE, Theorem GAP-RED). RESULTS line
+  PROPOSAL docs/new/P-N5-GAP-box69-line.txt (not yet approved). No L-SI box 37/40/42 file used as a proof (OPT-OFF, W-SUCC re-proved).
+
+## Box 68 log (successor 35; Lead 00:43Z: FB-LIN from GAP-MON, no new import)
+- docs/new/N5-ZFLAT-box68.md. PROVED (lane): SW-IN (fallback switches only gap vertices, strict Xi-rise; 0/788), Z-flat characterisation
+  (Xi climbs inside a gap that stays open; 56/788), REOPEN-W + REOPEN-CHARGE (an S4a re-opening needs a strict W-rise of v; 8532/8532).
+  nep22f_n64: |Z| 59/64 saturated, 1 Xi cycle node: Z-flat count = Xi-route, not priorities/SCCs. READING: FB-LIN <= WCH per vertex per
+  phase (L-SI's WCH<->R* circle, unifies with (c')) + Xi-climbs in a saturated gap.
+
+## Box 67 log (successor 35; Lead 00:23Z: FB-LIN / rho-POLY by a cross-area import)
+- docs/new/N5-FBENERGY-box67.md. Lyapunov import: 6 energies (incl. Lead's E1 = #Xi-suboptimal sigma-edges) all DEAD as energies (none
+  drops at every in-phase fallback; best E3 = |{Xi != W}| fails 56/731; smallest kill lend9_n8). PROVED (lane) GAP-MON: at an Even fallback
+  with tau fixed the gap set Z = {Xi != W} never grows and Xi, W are frozen outside it (0/731). READING: Monderer-Shapley potential is
+  lambda_Xi-blind in a phase; no-regret needs laziness. Sources: imports used as templates only, no theorem cited, none opened.
+
+## Box 66 log (successor 35, woken 00:09Z Oct 30; Lead: bound FRESH-SPLIT's LATE per edge by an imported argument)
+- docs/new/N5-LATE-box66.md. PROVED (lane) LATE-W / LATE-PIECE: inside a piece, repeat re-blocked late adoptions of an edge are W-paid
+  (rise of W(c) between leave and block; 182 checks, 0 viol). Import = list-update inversion potential (blocked edge = W/Xi inversion):
+  DEAD as independent bound, inversions re-created free at piece boundaries; instance b6_xl2_n32 (sha1 909c7371...): one edge late-adopted
+  4x in one lambda-run, 1 per piece, 10 Even-fallback cuts. READING: FRESH-SPLIT's LATE <= PL <= 1 + B_vc; lever = rho-POLY + Odd half.
+
 ## Box 64 log (successor 35, Opus 5.5, D14/D18; Lead brief 19:29Z; STEP 0 answers sent 19:30:27Z, started without waiting as told)
 - STEP 0 (measured): local clone STALE at d4bcdd21 (fetch with ref `main` aborted again); refetched, ff-only to d6fd1979, merge --no-ff
   trunk -> 194ac11a (2 ahead / 0 behind; was 1 / 71). GAPS G-N5-TIME l.11 open, G-N1-LB l.10 open, G-N5-TERM l.16 closed; D1 l.5,
@@ -707,23 +741,20 @@ Every answer measured from the repository; commands named.
    fetched ref, so the pin cannot be checked yet; I checked the packet by sha1 (cbea0739…) against my own commit 1afccb51 instead.
    (iii) The container clock is slow vs the Lead's stamp (07:50 vs 07:53): stamp only from date -u, never ahead of it.
 
-## Resume point (successor 35, session_01V5yGRZhJhpJcRZhDSWTwuE; FINAL, PARKED 2026-10-29 ~20:50Z by date -u)
+## Resume point (successor 35, session_01V5yGRZhJhpJcRZhDSWTwuE; FINAL, PARKED 2026-10-30 ~02:01Z by date -u)
 ### DONE (all pushed via scripts/push.sh, VERIFY PASS; reported to the Lead)
-- Box 64: docs/new/N5-STRETCH-box64.md §1-§4 (472c6136, 8a0a27ff, ea46d750). FRAME-STRETCH (n+m) DEAD (mkr, reproduced);
-  STRETCH-CUT, ENT-FREEZE, COMPOSE-FREEZE, GP*-RUN, STRETCH-RED lane-PROVED; fallbacks lower W (603/607).
-- Box 65: same note §5 (0cf72543, 9905dac3): rho = (2K-1)^2 on mkr; SUCC-MON, LATE-RISE, R*-RISE lane-PROVED; W-charge DEAD;
-  FO route subsumed by R86 route (READING).
-- Packet docs/new/P-N5-FRAME-box65.md FROZEN at l-new 938d8796 (sha1 ce8c4803ee18dc90ee761863d006d0aca0476542; header-only change
-  from the approved draft 22c6a165). RESULTS line docs/new/P-N5-FRAME-box65-line.txt (sha1 acf3234f840cb682d71444501e89cfd61247dcd6),
-  APPROVED by the Lead 20:47Z «as worded». Lead routes it to REFEREE 18 and a REFEREE-2 successor.
-### IN FLIGHT: nothing running. Parked.
+- Boxes 64-65: N5-STRETCH-box64.md; P-N5-FRAME (frozen 938d8796) LANDED as RESULTS R89 (fixes H0-H17).
+- Box 66 N5-LATE (78e1fd24); box 67 N5-FBENERGY (0163720e); box 68 N5-ZFLAT (b24ee55d).
+- Box 69: P-N5-GAP FROZEN 28ceeadc (sha1 d67f8e04...), line proposal P-N5-GAP-box69-line.txt (f1c5c5d5...); with REFEREE 19 / REFEREE-2 21.
+- Box 70 N5-SC (c90503a9): SIL-Z, SC-GXC (S part of [P-SC] and FB-LIN's ZF fold into GXC). Box 71 N5-S2: "<= 1 S per (piece, edge)" DEAD.
+### IN FLIGHT: P-N5-GAP under review (fixes, if any, go to P-N5-GAP-fixes-box69.md, append-only). Nothing running.
 ### NEXT (the Lead decides)
 1. Referee fixes for P-N5-FRAME go in a fixes file P-N5-FRAME-fixes-box65.md (never into the frozen packet).
 2. Remaining target per §5.5: Even's P* (NM* via MATCH-Phi) and NM^U on unprotected Odd targets (COMPOSE-FREEZE (e)).
    Lead's referee note: COMPOSE-FREEZE (e) rests on [R86e], the per-vertex premise signed as HOLDING in the §6 cells, not a displayed
    RESULTS statement; keep the wording, referees / CHECKER judge it.
 3. SB1' (one-player switch-best O(n)); byte-compare box59/dw.py with L-RED's R116 generator (not done).
-### Owned conjectures: FRAME-STRETCH_P = (FO) (n+m form DEAD), LOOP, GROUP, EXIT-without-NT (OPEN).
+### Owned conjectures: FRAME-STRETCH_P = (FO) (n+m form DEAD); FB-LIN reduced by P-N5-GAP (open: per-vertex WCH^S4a, ZF); LOOP, GROUP, EXIT-without-NT (OPEN).
 ### Things only I know (successor 35)
 - box64/frozen.py counts R per TRANSITION; box64/late.py counts late adoptions per (vertex, transition) event (1141 events).
 - box64/rho.py counts rho as (Odd choice vertex, in-phase transition) pairs; R56's "Xi-changes at Odd choice vertices" read that way.

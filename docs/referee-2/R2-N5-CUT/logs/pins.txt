@@ -1,0 +1,46 @@
+MODE files pins.lst 1 experiments/ OO1N 60 OO1S 30 RANDH 2 MAXT 3000
+CC3_checks: 528
+CL_C: 1
+CL_F: 14
+CL_FR: 189
+CL_P: 326
+CL_S: 0
+CR_checks: 6
+CR_pair_checks: 528
+FB_checks: 246
+FS_G0: 47
+FS_LATE: 17
+FS_WC: 125
+FS_late_checks: 17
+LS2_checks: 3
+LS3_checks: 3
+OO1_checks: 2316
+OO1_sampled_steps: 3
+OO2_checks: 10909
+RREP_checks: 58
+WM_checks: 238
+WS_checks: 8854
+WV_checks: 954
+X_OO2_own: 15
+X_REP_rise: 3
+X_WRG_cut: 18
+late_adoptions: 42
+late_first: 39
+late_repeat: 3
+reentries: 530
+runs: 6
+starts_valid: 1
+transitions: 246
+wruns: 58
+max max_Bstar: 6
+max max_ENT: 13
+max max_Ostar: 1
+max max_REPstar: 2
+max max_SCstar: 1
+max max_T: 78
+max max_WCHstar: 28
+RESULT PASS violations 0
+
+real	0m1.619s
+user	0m1.567s
+sys	0m0.018s

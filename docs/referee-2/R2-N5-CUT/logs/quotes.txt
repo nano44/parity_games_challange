@@ -1,0 +1,14 @@
+OK   docs/new/N5-ssi-global.md@7039eb524:28-29 | valuation of v under (σ, σ̄): (c, P, ℓ), c = the most relevant (max p') vertex of the cycl
+OK   docs/new/N5-ssi-global.md@7039eb524:30-31 | order (better for Even): compare reward of c (p'(c) if even, −p'(c) if odd); then P by the
+OK   docs/new/N5-ssi-global.md@7039eb524:32-32 | Ξσ = valuation of every vertex under σ and Odd's OPTIMAL counterstrategy σ̄ (minimising th
+OK   docs/new/N5-ssi-global.md@7039eb524:45-46 | Odd's side: everything on the DUAL game G^d (owner swapped, Ω + 1); τ is an "Even" strateg
+OK   docs/new/N5-ssi-global.md@7039eb524:47-47 | Improving edges: Iσ = {(v, w) : owner(v) = Even, w ≠ σ(v), Ξσ(w) strictly better than Ξσ(σ
+OK   docs/new/N5-ssi-global.md@7039eb524:51-53 | a. If Iσ ≠ ∅: A(v) = {σ(v)} ∪ {w : (v, w) ∈ Iσ} for Even v. Arena H: Even v keeps only edg
+OK   docs/new/N5-ssi-global.md@7039eb524:54-55 | b. If Iτ ≠ ∅: A(v) = {τ(v)} ∪ {w : (v, w) ∈ Iτ} for Odd v. Arena H': Odd v keeps only edge
+OK   docs/new/N5-ssi-global.md@7039eb524:56-57 | c. FALLBACK, if σ_new = σ and τ_new = τ: if Iσ ≠ ∅, for every Even v with an improving edg
+OK   docs/new/P-N5-FRAME-box65.md@938d87967:70-71 | W-RUN: a maximal run of consecutive states of one τ-stretch such that no transition t → t 
+OK   docs/new/P-N5-FRAME-box65.md@938d87967:145-146 | and F has at most (n − 1)(R*_T + 1) W-changing transitions, R*_T := the transitions of F c
+MISS docs/new/P-N5-FRAME-box65.md@938d87967:170-172 | λ_W: inside a fallback-free piece of S, W_{t+1} ⊵ W_t pointwise (R88 W-MON as in GP*-RUN),
+MISS experiments/new/box64/late.py@9905dac36:2-3 | late adoptions in W-runs (box 64 §1.8; fallback-free, tau and lambda_W constant) of plain 
+MISS experiments/new/box64/late.py@9905dac36:21-22 | bl = {(v, x) for v in range(n) if g.owner[v] == 0 for x in g.succ[v] … if x != s[v] and Ew
+tags 13 ok 10 miss 3 SHIFT 0

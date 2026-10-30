@@ -1,0 +1,54 @@
+NOTE start file /tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/red/n3/instances/comp54_n80.start gives forced vertex 11 -> 51; using 11
+NOTE start file /tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/red/n3/instances/n3cov_lean.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file /tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/red/n3/instances/n3cov_phi.start invalid for its game (move not an edge, or missing); given start skipped
+FB 948
+GAMES 394
+LP_chk 1918
+LP_max 2
+LP_rb 1920
+LW_chk 1075
+OPT_2b 11948
+OPT_2b_S0 11781
+OPT_chk 436677
+RED_chk 2624
+REDmut_V 33
+REOP_chk 9050
+RUNS 481
+SWIN_chk 2945
+TRANS 11064
+XW_chk 493493
+ZFLAT 74
+ZF_max 10
+f_max 38
+skip_big 22
+VIOLATIONS 33
+EX ('REDmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-epoch/instances/ffin12_n32.pg', 25, 1, 0, 0, 1)
+EX ('REDmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-epoch/instances/ffin12_n32.pg', 8, 1, 0, 0, 1)
+EX ('REDmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-epoch/instances/ffin5_n32.pg', 14, 1, 0, 0, 1)
+EX ('REDmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-epoch/instances/ffin5_n32.pg', 4, 1, 0, 0, 1)
+EX ('REDmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-exhaustive/instances/b4_n5_other_0.pg', 0, 1, 0, 0, 1)
+EX ('REDmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-exhaustive/instances/b4_nohlen5_0.pg', 1, 1, 0, 0, 1)
+EX ('REDmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-exhaustive/instances/n3all_maxph_0.pg', 2, 1, 0, 0, 1)
+EX ('REDmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-exhaustive/instances/n3all_maxph_1.pg', 2, 1, 0, 0, 1)
+EX ('REDmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-exhaustive/instances/n3all_maxph_2.pg', 2, 1, 0, 0, 1)
+EX ('REDmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-exhaustive/instances/n4all_maxph_0.pg', 1, 1, 0, 0, 1)
+EX ('REDmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-exhaustive/instances/n4all_maxph_0.pg', 1, 1, 0, 0, 1)
+EX ('REDmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-exhaustive/instances/n4all_maxph_1.pg', 1, 1, 0, 0, 1)
+EX ('REDmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-exhaustive/instances/n4all_maxph_1.pg', 1, 1, 0, 0, 1)
+EX ('REDmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-exhaustive/instances/n5s_maxph_0.pg', 2, 1, 0, 0, 1)
+EX ('REDmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-exhaustive/instances/nh_n8.pg', 0, 1, 0, 0, 1)
+EX ('REDmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/red/carry/instances/absmono_viol_n44.pg', 6, 1, 0, 0, 1)
+EX ('REDmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/red/carry/instances/fired10_n20.pg', 4, 1, 0, 0, 1)
+EX ('REDmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/red/carry/instances/firedlong667_n43.pg', 2, 1, 0, 0, 1)
+EX ('REDmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/red/ctxp/instances/margin1_mc1.pg', 9, 1, 0, 0, 1)
+EX ('REDmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/red/fbx/instances/kt6_n58.pg', 31, 1, 0, 0, 1)
+EX ('REDmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/red/n3/instances/lag11_n40.pg', 21, 1, 0, 0, 1)
+EX ('REDmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/red/n3/instances/lag11_n40.pg', 16, 1, 0, 0, 1)
+EX ('REDmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/red/n5/instances/sym_h12_s1.pg', 32, 1, 0, 0, 1)
+EX ('REDmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/red/n5inj/instances/frz24.pg', 31, 1, 0, 0, 1)
+EX ('REDmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/red/n5inj/instances/frz24.pg', 31, 1, 0, 0, 1)
+EX ('REDmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/red/so/instances/tog6a_n32.pg', 4, 1, 0, 0, 1)
+EX ('REDmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/red/so/instances/xsnf42_n48.pg', 1, 1, 0, 0, 1)
+EX ('REDmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/red/so/instances/xsnf52_n64.pg', 2, 1, 0, 0, 1)
+EX ('REDmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/red/xing/instances/obr_n32.pg', 20, 1, 0, 0, 1)
+EX ('REDmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/red/xing/instances/x31_nh_r20.pg', 1, 1, 0, 0, 1)

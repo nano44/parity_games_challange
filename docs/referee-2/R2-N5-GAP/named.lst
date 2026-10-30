@@ -1,0 +1,6 @@
+n5-epoch/instances/lend9_n8.pg n5-epoch/instances/lend9_n8.start
+n5-epoch/instances/nep22f_n64.pg n5-epoch/instances/nep22f_n64.start
+n5-exhaustive/instances/b6_xl2_n32.pg
+red/fb/instances/fb38_n48.pg red/fb/instances/fb38_n48.start
+red/sel/instances/pl130_n40.pg red/sel/instances/pl130_n40.start
+red/n3/instances/long121_n40.pg red/n3/instances/long121_n40.start

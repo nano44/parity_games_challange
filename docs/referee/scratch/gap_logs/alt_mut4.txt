@@ -1,0 +1,34 @@
+NOTE start file /tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/red/n3/instances/comp54_n80.start gives forced vertex 11 -> 51; using 11
+NOTE start file /tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/red/n3/instances/n3cov_lean.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file /tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/red/n3/instances/n3cov_phi.start invalid for its game (move not an edge, or missing); given start skipped
+FB 948
+GAMES 394
+LP_chk 1918
+LP_max 2
+LP_rb 1920
+LW_chk 1093
+LWmut_V 10
+OPT_2b 11948
+OPT_2b_S0 11781
+OPT_chk 436677
+RED_chk 2624
+REOP_chk 9050
+RUNS 481
+SWIN_chk 2945
+TRANS 11064
+XW_chk 493493
+ZFLAT 74
+ZF_max 10
+f_max 38
+skip_big 22
+VIOLATIONS 10
+EX ('LWmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/red/kw/instances/cw11_n24.pg', 0, 1, 7, 0)
+EX ('LWmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/red/kw/instances/cw11_n24.pg', 1, 2, 7, 10)
+EX ('LWmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/red/kw/instances/cw11_n24.pg', 2, 3, 7, 14)
+EX ('LWmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/red/kw/instances/cw11_n24.pg', 5, 7, 7, 10)
+EX ('LWmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/red/kw/instances/cw11_n24.pg', 6, 7, 7, 14)
+EX ('LWmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/red/kw/instances/cw11_n24.pg', 9, 10, 7, 0)
+EX ('LWmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/red/kw/instances/cw11_n24.pg', 10, 11, 7, 14)
+EX ('LWmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/red/kw/instances/cw11_n24.pg', 12, 13, 7, 10)
+EX ('LWmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/red/kw/instances/cw11_n24.pg', 13, 14, 7, 14)
+EX ('LWmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/red/n5/instances/sym_h12_s1.pg', 2, 3, 23, 2)

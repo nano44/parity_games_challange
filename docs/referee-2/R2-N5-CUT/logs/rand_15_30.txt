@@ -1,0 +1,35 @@
+MODE random 300 15 30 42 2 OO1N 60 OO1S 30 RANDH 2 MAXT 3000
+CC3_checks: 1019
+CL_C: 0
+CL_F: 0
+CL_FR: 20
+CL_P: 0
+CL_S: 0
+CR_checks: 900
+CR_pair_checks: 1019
+FB_checks: 2394
+FS_G0: 17
+FS_WC: 3
+OO1_checks: 10100
+OO2_checks: 24527
+RREP_checks: 3137
+WM_checks: 1824
+WS_checks: 4892
+WV_checks: 63658
+X_OO2_own: 35
+X_WRG_cut: 15
+late_adoptions: 1
+late_first: 1
+late_repeat: 0
+reentries: 20
+runs: 900
+transitions: 2394
+wruns: 3137
+max max_Bstar: 4
+max max_ENT: 2
+max max_Ostar: 4
+max max_REPstar: 0
+max max_SCstar: 0
+max max_T: 9
+max max_WCHstar: 3
+RESULT PASS violations 0

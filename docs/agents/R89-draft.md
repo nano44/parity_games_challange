@@ -1,4 +1,4 @@
-# Draft RESULTS R89 (Lead, 2026-10-29 22:31Z by date -u; both reports, both §Cs and the fixes file filled) — to CHECKER C99 (subagent draft, sha1 5d8e48ec before review; Lead reviewed 22:39Z by date -u: unsure points (1) title date kept once as in the H0 line, (2) GP*-RUN stays in the entry as item (h): it is now signed by BOTH referees, so R88's one-referee G2 READING is superseded for W-runs, (3) [OPT-H] kept as a cross-reference name for the step both referees quote (S4a's one-player optimum of H_t) — CHECKER to judge; no text changed; Lead decisions for CHECKER
+# Draft RESULTS R89 (Lead, 2026-10-29 22:31Z by date -u; both reports, both §Cs and the fixes file filled) — to CHECKER C99 (REVISED 23:11Z by date -u for C99 E-1: moves (1)-(2) applied verbatim (cee834e5 §3); optional N-2, N-3 applied (REFEREE H17 line d6aebf78 / 4f3f75d0 recorded); N-1, N-4 no change. Earlier: subagent draft, sha1 5d8e48ec before review; Lead reviewed 22:39Z by date -u: unsure points (1) title date kept once as in the H0 line, (2) GP*-RUN stays in the entry as item (h): it is now signed by BOTH referees, so R88's one-referee G2 READING is superseded for W-runs, (3) [OPT-H] kept as a cross-reference name for the step both referees quote (S4a's one-player optimum of H_t) — CHECKER to judge; no text changed; Lead decisions for CHECKER — LANDED in RESULTS Results 2026-10-29 23:27Z (CHECKER C99 Add. 1 3d9ce0ef PASS), after R88
 to check: (1) the title is the H0 line file docs/new/P-N5-FRAME-box65-line-H0.txt (l-new d3d98d1c, sha1 ab1ee38a…, = the approved line acf3234f… with
 H0's two insertions) verbatim, nothing dropped (the file has no outer quotes and no final period); the line ALREADY carries " (2026-10-29)" right
 before " — a REDUCTION" (L-NEW wrote the date in; R88's G12 line had none), so no second date is inserted; the checker fill ", CHECKER PASS
@@ -29,8 +29,7 @@ l. 8 writes the line sha1 with 39 hex digits; fixes H0 l. 18's "bytes" are chara
   The RESULTS line, history. (1) The approved line: docs/new/P-N5-FRAME-box65-line.txt, sha1 acf3234f840cb682d71444501e89cfd61247dcd6 (at
   22c6a165 and 938d8796), approved by the Lead (packet l. 5: «freeze. Your RESULTS line (P-N5-FRAME-box65-line.txt, sha1 acf3234f…) is
   APPROVED as worded.»). (2) E-items on it. E1 (REFEREE-2 N-FR-7, §5 l. 243-252, REQUIRED): Q is not defined in the line; «with Q free, reads
-  as a claim for any Q under the bound. Q = 0 then claims |S| ≤ (n − 1)(R*_S + 1) + FL_S, which is FALSE» (mk_6_24 n 149: |S| 162 > 148;
-  mk_8_32 280 > 196; mk_16_100 1648 > 497; in each Q = |S|). REFEREE first wrote "MATCHES" (l. 29) and withdrew it (§C §2 l. 26-27: «My
+  as a claim for any Q under the bound. Q = 0 then claims |S| ≤ (n − 1)(R*_S + 1) + FL_S, which is FALSE» (mk_6_24 n 150: |S| 162 > 149; mk_8_32 n 198: 280 > 197; mk_16_100 n 498: 1648 > 497; in each Q = |S|; REFEREE-2 l. 248-249 writes «(n 149)» … «162 > 148» and «(n 197): |S| 280 > 196», n − 1 for n (the file headers' largest index; CHECKER C99 §3), conclusion unchanged). REFEREE first wrote "MATCHES" (l. 29) and withdrew it (§C §2 l. 26-27: «My
   report's §6 listed "every symbol (fb_S, R*_S, FL_S, ρ_S) ✓" and missed Q: my "MATCHES" was WRONG on this point. Withdrawn: the line as worded
   does NOT match.»), reproducing mk_6_24 on its own engine (l. 29-32: 162 ≤ 149 demanded; its parser counts n = 150). E2 (both): NM^U_R(e)
   undefined in the line (REFEREE FR-N4, «optional», l. 141; REFEREE-2 N-FR-7 second half, «precision»); REFEREE-2 §C C.3 l. 51 classes it
@@ -233,22 +232,20 @@ l. 8 writes the line sha1 with 39 hex digits; fixes H0 l. 18's "bytes" are chara
   stopped chunks with counters lost and 0 VIOLATION lines; the remaining files re-run) 576 / 9,897 (260,674 / 30,033 / 27,439), GP* paths
   10,185,914 (7,612,664 in W-runs that are not frozen W-phases), late adoptions 991, max R*_T 17; mkr 11 / 2,191; dual family 21 / 881
   (max NM^U 163); every log RESULT PASS, 0 violations of FT2, FT3, FT4, DORD, UPLAY, OF, OF_play, OF_mid, OF_opt, OFBF, EF, CFa-CFe, SM, LR,
-  WM, GPS, FWR, RR, RRsum, SR0-SR3, SRpc, FB56, CONS; controls noH3e and noH3r bite in every corpus except mkr (e.g. sbcg 3,871 / 2,167), GPall 790,359
+  WM, GPS, FWR, RR, RRsum, SR0-SR3, SRpc, FB56, CONS; control noH3e bites in every corpus, noH3r in every corpus except mkr (e.g. sbcg 3,871 / 2,167), GPall 790,359
   (sbcg), FW0 5 (sbcg), SR_Q0 11 (sbcg) and 3 (mkr: mk_6_24, mk_8_32, mk_16_100); X_OF_noH2 = 0 and SR1_sharp_fails = 0 in every log; max over sbcg PCH^U 13 and NM^U 10 on
   unprotected targets. Caps counted (l. 210-216): ODD-FREEZE's search stops at OFNODE nodes and an unfinished search counts as UNPROTECTED
   (OF_truncated_unknown 48,110 sbcg, 51,243 mkr); GP* enumeration PCAP 200, NODECAP 20,000, only on W-runs of ≤ GPMAX states
   (GPS_dfs_truncated 31,989 on sbcg); «FW-R*, R*-RISE, CONS and STRETCH-RED are exhaustive». Its own code reproduces dw_3's W-run [15, 41]
   (26 transitions, WCH 26, R*_T 4) and mk_4_16's τ-stretch of 76 (REFEREE too: §C l. 54). Q = 0 counter-check under H0's reading (REFEREE-2
-  §C.7 l. 101-109, logs/mkr_H0_recheck.txt): mk_6_24 n 149, |S| = Q = 162, R*_S = FL_S = 0, H0's bound 24,286, Q's bound 22,052, old Q = 0
-  reading 148 ✗; mk_8_32 n 197, 280, 55,356, 38,612, 196 ✗; mk_16_100 n 498, 1,648, 821,201, 247,506, 497 ✗; «SR1/SR2/SR3 hold with 0
+  §C.7 l. 101-109, logs/mkr_H0_recheck.txt): mk_6_24 n 150, |S| = Q = 162, R*_S = FL_S = 0, H0's bound 24,449, Q's bound 22,350, old Q = 0 reading 149 ✗; mk_8_32 n 198, 280, 55,637, 39,006, 197 ✗ (§C.7's table uses n − 1 for these two games: 149, 24,286, 22,052, 148; 197, 55,356, 38,612, 196; CHECKER C99 §3); mk_16_100 n 498, 1,648, 821,201, 247,506, 497 ✗; «SR1/SR2/SR3 hold with 0
   violations in the re-run». No signed statement uses any count.
 - Signatures: REFEREE docs/referee/R-N5-FRAME.md (report e9b32f727399aedb72a13782cc287d21dd0caa75, 2026-10-29T21:06:28Z, sha1
   90c2ca4db3f837bc5b922b5dcff870deb8b1b2eb, 152 lines, = trunk; successor 18); §C docs/referee/R-N5-FRAME-C.md (c908a865,
   2026-10-29T21:49:18Z, sha1 d1e73380e71ebccbc304edbce96e4c2056769d4b there, 63 lines; d869c05a, 21:58:30Z, stamp fix, the "Written" line
   «21:52Z» → «21:49Z» (1 added, 1 removed), sha1 8ec0f3884b00cbd8be1c8777651543d92579c8df, 63 lines; §4 addendum 0b080b2c,
   2026-10-29T22:08:37Z (`git diff --numstat d869c05a 0b080b2c`: 35 added, 3 removed: the old "## 4. Fixes file and H0" heading, its
-  "PENDING" line and the old NEEDS line, replaced; no verdict line changed), sha1 9a00c9b2c6bb226be77f6ffa73f193d0cc33163a, 95 lines, = trunk
-  = referee head 6406192e): §1 CHECKED; FRAME-τ, DUAL-ORDER, ODD-FREEZE, ENT-FREEZE, COMPOSE-FREEZE (a)-(e), SUCC-MON, LATE-RISE, GP*-RUN,
+  "PENDING" line and the old NEEDS line, replaced; no verdict line changed), sha1 9a00c9b2c6bb226be77f6ffa73f193d0cc33163a, 95 lines; H17 line d6aebf78, 2026-10-29T22:47:44Z, +3 lines, and stamp fix 4f3f75d0, 22:57:17Z, «22:48Z» → «22:47Z» (1 added, 1 removed): sha1 459d95876095fab3aa284fd2413d75e017ef66f8, 98 lines, = trunk = referee head 4f3f75d0): §1 CHECKED; FRAME-τ, DUAL-ORDER, ODD-FREEZE, ENT-FREEZE, COMPOSE-FREEZE (a)-(e), SUCC-MON, LATE-RISE, GP*-RUN,
   R*-RISE, STRETCH-RED and the Consequence SIGNED; «No gap. Nothing FALSE. Notes FR-N1..N6.» (l. 31). REFEREE-2
   docs/referee-2/R2-N5-FRAME.md (report a1142a46a41df7a81543c6746269c43b0db3cb7e, 2026-10-29T21:36:29Z, merged on claude/referee-2 as
   7571febeecc01348d35cae7166d72c4ea732c31e, 21:36:30Z, the SHA REFEREE, the Lead and REFEREE-2's §C cite; sha1
@@ -273,7 +270,7 @@ l. 8 writes the line sha1 with 39 hex digits; fixes H0 l. 18's "bytes" are chara
   signed statement. H12 and H14 are strengthenings recorded as READINGs (both true); H9 is an equivalence.»; the fixes file's header claim
   «is CONFIRMED»; «Nothing open on P-N5-FRAME.» REFEREE-2 §C.7 l. 148-151: «The fixes file is accepted.»; «H1-H15 are clarifications,
   readings or sharpenings, as labelled. None widens a signed statement; H10 is a conjecture, correctly unsigned.»; «H16 needs one correction
-  (append), which comes from my own N-FR-10 error.» (applied as H17). REFEREE §C §4 was written before H17 and does not mention it; H17 is DATA only.
+  (append), which comes from my own N-FR-10 error.» (applied as H17). REFEREE §C H17 line (d6aebf78, 2026-10-29T22:47:44Z; stamp fix 4f3f75d0, 22:57:17Z): «DATA only, no statement or pinned check touched (CHECKER 15's h1count re-run agrees, per the Lead). I did not re-count dw_3 myself. ACCEPTED.»; H17 is DATA only.
 - TARGET.md diff: not a claim of TARGET.md section 1 or §2 (structural lemmas on N5's Odd side and inside a fixed-τ stretch, and two
   REDUCTIONS: of a τ-stretch's length to R*_S, FL_S and ρ_S, and of the τ-changing transitions to PCH^U / NM^U on unprotected targets, none
   of which is bounded; no bound on a run, no running-time bound, no algorithm claim). GAPS G-N5-TIME: open.

@@ -312,4 +312,34 @@ if grep -q "^WRUN dw_3.pg .* worst-frozen-phase {'len': 26, 'wch': 26, 'flat': 0
 else
   echo "box 64 wrun check: FAILED"; exit 1
 fi
+w16=$(python3 -I box66/latepair.py ../n5-exhaustive/instances/b6_xl2_n32.pg)
+if grep -q "max-per-lambda-run-edge 4 max-per-piece-edge 1 .* viol 0$" <<<"$w16"; then
+  echo "box 66 LATE: b6_xl2_n32 one edge late-adopted 4 times in one lambda-run, 1 per piece (boundary obstruction): PASS"
+else
+  echo "box 66 LATE check: FAILED"; exit 1
+fi
+w17=$(cd .. && python3 -I new/box67/energy.py n5-epoch/instances/lend9_n8.pg n5-epoch/instances/lend9_n8.start)
+if grep -q "inphase-fb 3 fmax 3 FBUP \[3, 2, 3, 3, 3, 1\] .* ZGROW 0$" <<<"$w17"; then
+  echo "box 67 FBENERGY: lend9_n8 3 in-phase fallbacks, gap set never grows (GAP-MON), never shrinks (E3 strict DEAD): PASS"
+else
+  echo "box 67 FBENERGY check: FAILED"; exit 1
+fi
+w18=$(cd .. && python3 -I new/box68/zflat.py n5-epoch/instances/nep22f_n64.pg n5-epoch/instances/nep22f_n64.start)
+if grep -q "'fb': 10, 'zflat': 10, 'zflat_wch': 10, 'swout': 0, 'reop': 0, 'reopnw': 0" <<<"$w18"; then
+  echo "box 68 ZFLAT: nep22f_n64 10 Z-flat fallbacks in a saturated gap, SW-IN and REOPEN-W hold: PASS"
+else
+  echo "box 68 ZFLAT check: FAILED"; exit 1
+fi
+w19=$(cd .. && python3 -I new/box70/silent.py red/xing/instances/u23sw64_n32.pg)
+if grep -q "classes {'S': 31} .* SCrun 31 max-S-per-piece-edge 1 S-at-Wflat 31/31 GXCrun 64 S-not-GXC 0$" <<<"$w19"; then
+  echo "box 70 SC: u23sw64_n32 31 W-silent re-entries in one lambda-run, all GXC events (SIL-Z): PASS"
+else
+  echo "box 70 SC check: FAILED"; exit 1
+fi
+w20=$(cd .. && python3 -I new/box70/silent.py new/box71/inst/s2piece_n32.pg new/box71/inst/s2piece_n32.start)
+if grep -q "classes {'S': 26} max-S-per-edge 2 .* max-S-per-piece-edge 2 S-at-Wflat 26/26" <<<"$w20"; then
+  echo "box 71 S2: s2piece_n32 two S re-entries of (15, 8) in one piece (<= 1 per (piece, edge) DEAD): PASS"
+else
+  echo "box 71 S2 check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
