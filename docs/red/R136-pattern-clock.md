@@ -93,10 +93,16 @@ vertices seen on the routes), and prints "PAT-BOUND VIOLATION" if that fails. No
 - If the routes of different vertices could share switching vertices freely, the recursion of §2 would allow 2^depth. The open question is
   exactly whether one switching vertex can feed fresh patterns to the routes of many waiting gates at once, each gate with a different
   entry point.
-- Not tried: escapes entering one shared chain at DIFFERENT depths (π_0 a proper suffix of π_1). ALT-ESCAPE assumes the same continuation;
+- Tried once (Addendum 1, dead): escapes entering one shared chain at DIFFERENT depths (π_0 a proper suffix of π_1). ALT-ESCAPE assumes the same continuation;
   with nested entries the maxima A_t^(0) ⪰ A_t^(1) can differ.
 
-## DONE / FINDINGS / NEEDS
+## Addendum 1 (2026-10-30 12:25Z, date -u): nested entries tried once
+- pclock/mkte.py NEST=1: the copy-1 escape enters T's chain one level lower (→ A_k), so the routes are nested, not shared.
+- k = 4, 6, 8: 4, 6, 8 iterations, 0 served waits. Ξ cycle nodes are the escapes again (e2_0, e3_1, …, e7_1). τ changes once.
+- It dies before ALT-ESCAPE is even needed. While X's current gate's own escape route reaches X with an odd-dominant maximum, Odd closes
+  that low cycle (R135 §4, the t2 < t1 branch: one wait at most).
+- So §5's "not tried" item is now tried in this one form. Nested entries with the current gate's route avoiding X remain open.
+
 - DONE:
   - experiments/red/pclock/patcount.py (PAT / SERVED / clock vertex, with an online PAT-SW check).
   - pclock/mkte.py (shared T clock), pin pclock/instances/te_8 (xeng identical, Oink OK).
