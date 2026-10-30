@@ -651,3 +651,9 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
   - Cause: Odd 14 enters D (8 → 11) because Ξ(τ(14) = 8) rose; 11 is tied, so the BFS keys above re-order.
   - n5x and n5b agree (heads52/flipx.py; xeng states identical). Found by a tie-biased random search (top odd priority at vertex 0).
   - Obstruction: τ-targets of non-deviating Odd vertices also drive σ̄; they are not upward heads.
+
+## box 53 SBF (L-SI successor 35; docs/si/N5-SBF-box53.md)
+- Odd's reply σ̄ monotone in a FIXED partial order on Odd strategies while Ξ rises (D18 Topkis / monotone comparative statics angle):
+  DEAD. Obstruction: a profile revisit inside one W-run contradicts antisymmetry. Instance experiments/n5-exhaustive/instances/
+  thetaA_n7.pg + .start (n = 7, one W-run, σ̄(6) 5 → 1 → 5; n5b agrees). Corpus: 242 W-runs revisit a profile; per-vertex returns up to
+  61 (gate_K64_n581). Pins: experiments/si/check.sh «box 53 SBF».

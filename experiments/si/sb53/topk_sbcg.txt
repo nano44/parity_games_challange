@@ -1,0 +1,719 @@
+GAME new/box59/out/fc_3.pg TOPKIS fc_3.pg n 85 RUNS 2 PROFREV 1 PVREV 2 FLIPT 3 ROOTX 0 EVX2 0 TXR 6 FIRST 19 25 F 15 41
+GAME new/box59/out/fc_4.pg TOPKIS fc_4.pg n 110 RUNS 2 PROFREV 1 PVREV 2 FLIPT 3 ROOTX 0 EVX2 0 TXR 6 FIRST 19 25 F 16 47
+GAME new/box59/out/fc_5.pg TOPKIS fc_5.pg n 135 RUNS 2 PROFREV 1 PVREV 2 FLIPT 3 ROOTX 0 EVX2 0 TXR 6 FIRST 21 27 F 17 55
+GAME new/box59/out/fcobsR_3.pg TOPKIS fcobsR_3.pg n 90 RUNS 2 PROFREV 2 PVREV 24 FLIPT 34 ROOTX 0 EVX2 0 TXR 15 FIRST 1 3 F 1 9
+GAME new/box59/out/fc_6.pg TOPKIS fc_6.pg n 160 RUNS 2 PROFREV 1 PVREV 2 FLIPT 3 ROOTX 0 EVX2 0 TXR 6 FIRST 22 28 F 18 62
+GAME new/box59/out/fcobs_3.pg TOPKIS fcobs_3.pg n 88 RUNS 2 PROFREV 2 PVREV 24 FLIPT 34 ROOTX 0 EVX2 0 TXR 15 FIRST 1 3 F 1 9
+GAME new/box59/out/fcobsR_4.pg TOPKIS fcobsR_4.pg n 115 RUNS 2 PROFREV 2 PVREV 29 FLIPT 39 ROOTX 0 EVX2 0 TXR 18 FIRST 1 3 F 1 9
+GAME n5-epoch/instances/ffin12_n32.pg TOPKIS ffin12_n32.pg n 32 RUNS 2 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 1
+GAME n5-epoch/instances/ffin4_n24.pg TOPKIS ffin4_n24.pg n 24 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME n5-epoch/instances/ffin5_n32.pg TOPKIS ffin5_n32.pg n 32 RUNS 2 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 1
+GAME n5-epoch/instances/gci2_n12.pg TOPKIS gci2_n12.pg n 12 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME n5-epoch/instances/immfail_n14.pg TOPKIS immfail_n14.pg n 14 RUNS 2 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 1
+GAME n5-epoch/instances/immp_cex_n11.pg TOPKIS immp_cex_n11.pg n 11 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME n5-epoch/instances/gci3_n24.pg TOPKIS gci3_n24.pg n 24 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME n5-epoch/instances/lcount_n23.pg TOPKIS lcount_n23.pg n 23 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME n5-epoch/instances/lend13_n16.pg TOPKIS lend13_n16.pg n 16 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME n5-epoch/instances/lend27_n24.pg TOPKIS lend27_n24.pg n 24 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME n5-epoch/instances/lend107_n32.pg TOPKIS lend107_n32.pg n 32 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME n5-epoch/instances/lend15_n48.pg TOPKIS lend15_n48.pg n 48 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME new/box59/out/fcobs_4.pg TOPKIS fcobs_4.pg n 113 RUNS 2 PROFREV 2 PVREV 29 FLIPT 39 ROOTX 0 EVX2 0 TXR 18 FIRST 1 3 F 1 9
+GAME n5-epoch/instances/lend39f_n32.pg TOPKIS lend39f_n32.pg n 32 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME n5-epoch/instances/lend47_n32.pg TOPKIS lend47_n32.pg n 32 RUNS 2 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME n5-epoch/instances/lend9_n8.pg TOPKIS lend9_n8.pg n 8 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME n5-epoch/instances/lend55_n32.pg TOPKIS lend55_n32.pg n 32 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME n5-epoch/instances/lend82_n32.pg TOPKIS lend82_n32.pg n 32 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME n5-epoch/instances/lend72_n48.pg TOPKIS lend72_n48.pg n 48 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME n5-epoch/instances/nep13_n24.pg TOPKIS nep13_n24.pg n 24 RUNS 1 PROFREV 0 PVREV 0 FLIPT 5 ROOTX 0 EVX2 0 TXR 2
+GAME n5-epoch/instances/nep56_n32.pg TOPKIS nep56_n32.pg n 32 RUNS 1 PROFREV 0 PVREV 3 FLIPT 9 ROOTX 0 EVX2 0 TXR 1
+GAME new/box59/out/fc_7.pg TOPKIS fc_7.pg n 185 RUNS 2 PROFREV 1 PVREV 2 FLIPT 3 ROOTX 0 EVX2 0 TXR 6 FIRST 22 28 F 19 68
+GAME n5-epoch/instances/nep76_n40.pg TOPKIS nep76_n40.pg n 40 RUNS 2 PROFREV 0 PVREV 5 FLIPT 11 ROOTX 0 EVX2 0 TXR 7
+GAME n5-epoch/instances/nconf61_n48.pg TOPKIS nconf61_n48.pg n 48 RUNS 6 PROFREV 1 PVREV 2 FLIPT 33 ROOTX 0 EVX2 0 TXR 9 FIRST 17 19 F 16 26
+GAME n5-epoch/instances/nep22f_n64.pg TOPKIS nep22f_n64.pg n 64 RUNS 7 PROFREV 0 PVREV 1 FLIPT 9 ROOTX 0 EVX2 0 TXR 2
+GAME n5-epoch/instances/nep94_n48.pg TOPKIS nep94_n48.pg n 48 RUNS 1 PROFREV 0 PVREV 2 FLIPT 9 ROOTX 0 EVX2 0 TXR 10
+GAME n5-epoch/instances/nep92_n40.pg TOPKIS nep92_n40.pg n 40 RUNS 1 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 1
+GAME n5-exhaustive/instances/b4_cyc6_0.pg TOPKIS b4_cyc6_0.pg n 11 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME n5-epoch/instances/ret12_n40.pg TOPKIS ret12_n40.pg n 40 RUNS 2 PROFREV 1 PVREV 1 FLIPT 5 ROOTX 0 EVX2 0 TXR 3 FIRST 7 10 F 7 10
+GAME n5-exhaustive/instances/b4_cyc6_1.pg TOPKIS b4_cyc6_1.pg n 12 RUNS 1 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 3
+GAME n5-exhaustive/instances/b4_n4all_cyc3_0.pg TOPKIS b4_n4all_cyc3_0.pg n 4 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME n5-exhaustive/instances/b4_n5_other_0.pg TOPKIS b4_n5_other_0.pg n 5 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME n5-exhaustive/instances/b4_nohlen5_0.pg TOPKIS b4_nohlen5_0.pg n 11 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME n5-exhaustive/instances/b4_theta_n7.pg TOPKIS b4_theta_n7.pg n 7 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME n5-epoch/instances/ret14_n48.pg TOPKIS ret14_n48.pg n 48 RUNS 3 PROFREV 1 PVREV 2 FLIPT 9 ROOTX 0 EVX2 0 TXR 5 FIRST 8 11 F 7 14
+GAME n5-epoch/instances/ret14_n64.pg TOPKIS ret14_n64.pg n 64 RUNS 2 PROFREV 0 PVREV 0 FLIPT 3 ROOTX 0 EVX2 0 TXR 1
+GAME n5-exhaustive/instances/b5_n5_cyc4_0.pg TOPKIS b5_n5_cyc4_0.pg n 5 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME n5-exhaustive/instances/b5_o11.pg TOPKIS b5_o11.pg n 10 RUNS 4 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME n5-exhaustive/instances/b5_os_n14.pg TOPKIS b5_os_n14.pg n 14 RUNS 6 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME n5-exhaustive/instances/b5_os_n12.pg TOPKIS b5_os_n12.pg n 12 RUNS 4 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME n5-exhaustive/instances/b5_os_n16.pg TOPKIS b5_os_n16.pg n 16 RUNS 6 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME n5-exhaustive/instances/b5_os_n20.pg TOPKIS b5_os_n20.pg n 20 RUNS 9 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME n5-exhaustive/instances/b5_os_n24.pg TOPKIS b5_os_n24.pg n 24 RUNS 9 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME n5-exhaustive/instances/b5_os_n28.pg TOPKIS b5_os_n28.pg n 28 RUNS 11 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME n5-exhaustive/instances/b5_os_n32.pg TOPKIS b5_os_n32.pg n 32 RUNS 10 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME n5-exhaustive/instances/b6_xl2_n32.pg TOPKIS b6_xl2_n32.pg n 32 RUNS 6 PROFREV 2 PVREV 2 FLIPT 11 ROOTX 0 EVX2 0 TXR 4 FIRST 21 25 F 19 41
+GAME n5-exhaustive/instances/b5_os_n40.pg TOPKIS b5_os_n40.pg n 40 RUNS 13 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 2
+GAME n5-exhaustive/instances/b6_xl_n32.pg TOPKIS b6_xl_n32.pg n 32 RUNS 6 PROFREV 3 PVREV 2 FLIPT 12 ROOTX 0 EVX2 0 TXR 0 FIRST 20 24 F 18 40
+GAME n5-exhaustive/instances/b6_xs_n24.pg TOPKIS b6_xs_n24.pg n 24 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME n5-exhaustive/instances/b6_xs_n32.pg TOPKIS b6_xs_n32.pg n 32 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME n5-exhaustive/instances/b6_xs_n40.pg TOPKIS b6_xs_n40.pg n 40 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME n5-exhaustive/instances/b6_xl_n40.pg TOPKIS b6_xl_n40.pg n 40 RUNS 6 PROFREV 3 PVREV 1 FLIPT 14 ROOTX 0 EVX2 0 TXR 5 FIRST 2 20 F 2 20
+GAME new/box59/out/fc_8.pg TOPKIS fc_8.pg n 210 RUNS 2 PROFREV 1 PVREV 2 FLIPT 3 ROOTX 0 EVX2 0 TXR 6 FIRST 25 31 F 20 77
+GAME n5-exhaustive/instances/b6_xw_n32.pg TOPKIS b6_xw_n32.pg n 32 RUNS 7 PROFREV 2 PVREV 1 FLIPT 11 ROOTX 0 EVX2 0 TXR 5 FIRST 17 33 F 17 38
+GAME n5-exhaustive/instances/b6_xs_n48.pg TOPKIS b6_xs_n48.pg n 48 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME n5-exhaustive/instances/b6_xl_n48.pg TOPKIS b6_xl_n48.pg n 48 RUNS 10 PROFREV 3 PVREV 1 FLIPT 13 ROOTX 0 EVX2 0 TXR 4 FIRST 20 38 F 20 44
+GAME n5-exhaustive/instances/canonA_0.pg TOPKIS canonA_0.pg n 15 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME n5-exhaustive/instances/canonA_1.pg TOPKIS canonA_1.pg n 15 RUNS 1 PROFREV 1 PVREV 1 FLIPT 2 ROOTX 0 EVX2 0 TXR 2 FIRST 1 4 F 1 4
+GAME n5-exhaustive/instances/b6_xw_n40.pg TOPKIS b6_xw_n40.pg n 40 RUNS 7 PROFREV 2 PVREV 1 FLIPT 11 ROOTX 0 EVX2 0 TXR 5 FIRST 17 33 F 17 39
+GAME n5-exhaustive/instances/frz1_n24.pg TOPKIS frz1_n24.pg n 24 RUNS 2 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 4
+GAME n5-exhaustive/instances/frz2_n24.pg TOPKIS frz2_n24.pg n 24 RUNS 1 PROFREV 1 PVREV 2 FLIPT 7 ROOTX 0 EVX2 0 TXR 4 FIRST 2 8 F 2 25
+GAME n5-exhaustive/instances/n3all_maxph_0.pg TOPKIS n3all_maxph_0.pg n 3 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME n5-exhaustive/instances/b6_xw_n48.pg TOPKIS b6_xw_n48.pg n 48 RUNS 7 PROFREV 2 PVREV 1 FLIPT 11 ROOTX 0 EVX2 0 TXR 5 FIRST 20 37 F 20 42
+GAME n5-exhaustive/instances/n3all_maxph_1.pg TOPKIS n3all_maxph_1.pg n 3 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME n5-exhaustive/instances/n3all_maxph_2.pg TOPKIS n3all_maxph_2.pg n 3 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME n5-exhaustive/instances/frz3_n24.pg TOPKIS frz3_n24.pg n 24 RUNS 2 PROFREV 1 PVREV 2 FLIPT 5 ROOTX 0 EVX2 0 TXR 4 FIRST 3 17 F 3 26
+GAME n5-exhaustive/instances/n4_maxph_1.pg TOPKIS n4_maxph_1.pg n 4 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME n5-exhaustive/instances/n4_maxph_0.pg TOPKIS n4_maxph_0.pg n 4 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME n5-exhaustive/instances/b6_xw_n56.pg TOPKIS b6_xw_n56.pg n 56 RUNS 7 PROFREV 2 PVREV 1 FLIPT 11 ROOTX 0 EVX2 0 TXR 5 FIRST 19 36 F 19 42
+GAME n5-exhaustive/instances/n4_thch_0.pg TOPKIS n4_thch_0.pg n 4 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME n5-exhaustive/instances/n4all_maxph_0.pg TOPKIS n4all_maxph_0.pg n 4 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME n5-exhaustive/instances/n4all_maxph_1.pg TOPKIS n4all_maxph_1.pg n 4 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME n5-exhaustive/instances/n4all_tgbad_0.pg TOPKIS n4all_tgbad_0.pg n 4 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME n5-exhaustive/instances/n5s_maxph_0.pg TOPKIS n5s_maxph_0.pg n 5 RUNS 1 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 1
+GAME n5-exhaustive/instances/n4all_thch_0.pg TOPKIS n4all_thch_0.pg n 4 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME n5-exhaustive/instances/thetaA_canon_n8.pg TOPKIS thetaA_canon_n8.pg n 8 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME n5-exhaustive/instances/nh_n8.pg TOPKIS nh_n8.pg n 8 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME n5-exhaustive/instances/thetaA_canon_n12.pg TOPKIS thetaA_canon_n12.pg n 12 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME n5-exhaustive/instances/thetaA_n17.pg TOPKIS thetaA_n17.pg n 17 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME n5-exhaustive/instances/thetaA_n9.pg TOPKIS thetaA_n9.pg n 9 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME n5-exhaustive/instances/thetaA_n6.pg TOPKIS thetaA_n6.pg n 6 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME n5-exhaustive/instances/thetaA_n7.pg TOPKIS thetaA_n7.pg n 7 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME n5-exhaustive/instances/wk1_n32.pg TOPKIS wk1_n32.pg n 32 RUNS 1 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 1
+GAME n5-exhaustive/instances/wk2_n32.pg TOPKIS wk2_n32.pg n 32 RUNS 2 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 1
+GAME new/box48/instances/long121_n40.pg TOPKIS long121_n40.pg n 40 RUNS 1 PROFREV 1 PVREV 2 FLIPT 6 ROOTX 0 EVX2 0 TXR 5 FIRST 4 6 F 2 19
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.pg TOPKIS best_qpc_nep76_n40_s63.pg n 64 RUNS 1 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 1
+GAME red/carry/instances/carry3_2_2.pg TOPKIS carry3_2_2.pg n 47 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/carry/instances/absmono_viol_n44.pg TOPKIS absmono_viol_n44.pg n 44 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.pg TOPKIS best_qpc_nep90_n40_s61.pg n 64 RUNS 4 PROFREV 0 PVREV 2 FLIPT 8 ROOTX 0 EVX2 0 TXR 3
+GAME red/carry/instances/cm_mdrop_both_n28.pg TOPKIS cm_mdrop_both_n28.pg n 28 RUNS 1 PROFREV 0 PVREV 0 FLIPT 2 ROOTX 0 EVX2 0 TXR 2
+GAME red/carry/instances/cm_mdrop_oink_n28.pg TOPKIS cm_mdrop_oink_n28.pg n 28 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME red/carry/instances/ctx6_n20.pg TOPKIS ctx6_n20.pg n 20 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/carry/instances/ctx11_n40.pg TOPKIS ctx11_n40.pg n 40 RUNS 1 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 1
+GAME red/carry/instances/ctx12_n40.pg TOPKIS ctx12_n40.pg n 40 RUNS 1 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 1
+GAME new/box48/out/qpcclimb/scale/snap_n80_s62.pg TOPKIS snap_n80_s62.pg n 80 RUNS 2 PROFREV 0 PVREV 2 FLIPT 9 ROOTX 0 EVX2 0 TXR 6
+GAME red/carry/instances/ctx13_n40.pg TOPKIS ctx13_n40.pg n 40 RUNS 2 PROFREV 0 PVREV 0 FLIPT 3 ROOTX 0 EVX2 0 TXR 2
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.pg TOPKIS best_qpc_nep90_n40_s62.pg n 80 RUNS 2 PROFREV 0 PVREV 2 FLIPT 9 ROOTX 0 EVX2 0 TXR 6
+GAME red/carry/instances/ctx7_n30.pg TOPKIS ctx7_n30.pg n 30 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/carry/instances/f1_twofall_n48.pg TOPKIS f1_twofall_n48.pg n 48 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/carry/instances/f1_twodef_n48.pg TOPKIS f1_twodef_n48.pg n 48 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/carry/instances/fallv_viol_n28.pg TOPKIS fallv_viol_n28.pg n 28 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/carry/instances/ctx6_n56.pg TOPKIS ctx6_n56.pg n 56 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME red/carry/instances/firedlong667_n20.pg TOPKIS firedlong667_n20.pg n 20 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/carry/instances/fired10_n20.pg TOPKIS fired10_n20.pg n 20 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/carry/instances/firedlong667_n43.pg TOPKIS firedlong667_n43.pg n 43 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/carry/instances/fall3_n76.pg TOPKIS fall3_n76.pg n 76 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/carry/instances/gapb_dup_n20.pg TOPKIS gapb_dup_n20.pg n 20 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/carry/instances/gapbW_dup_n20.pg TOPKIS gapbW_dup_n20.pg n 20 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME red/carry/instances/firedstep13_n76.pg TOPKIS firedstep13_n76.pg n 76 RUNS 1 PROFREV 0 PVREV 1 FLIPT 2 ROOTX 0 EVX2 0 TXR 1
+GAME red/carry/instances/h4_def2ctx_n20.pg TOPKIS h4_def2ctx_n20.pg n 20 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/carry/instances/h4_compound_n44.pg TOPKIS h4_compound_n44.pg n 44 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/carry/instances/h4_compound2x2_n44.pg TOPKIS h4_compound2x2_n44.pg n 44 RUNS 1 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 2
+GAME red/carry/instances/h4_def7_n28.pg TOPKIS h4_def7_n28.pg n 28 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/carry/instances/fall4_n116.pg TOPKIS fall4_n116.pg n 116 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/carry/instances/h4_disjoint_n20.pg TOPKIS h4_disjoint_n20.pg n 20 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/carry/instances/kfirst_viol_n13.pg TOPKIS kfirst_viol_n13.pg n 13 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/carry/instances/h4_notweaker_n20.pg TOPKIS h4_notweaker_n20.pg n 20 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/carry/instances/kin_viol_n29.pg TOPKIS kin_viol_n29.pg n 29 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/carry/instances/lemmaS_Mdrop_n20.pg TOPKIS lemmaS_Mdrop_n20.pg n 20 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/carry/instances/lemmaS_viol_n20.pg TOPKIS lemmaS_viol_n20.pg n 20 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/carry/instances/lalg_dtl_mviol_n20.pg TOPKIS lalg_dtl_mviol_n20.pg n 20 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/carry/instances/lex_viol_inj_n28.pg TOPKIS lex_viol_inj_n28.pg n 28 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/carry/instances/meet_viol_n17.pg TOPKIS meet_viol_n17.pg n 17 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/carry/instances/lex_viol_tie_n28.pg TOPKIS lex_viol_tie_n28.pg n 28 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/carry/instances/nosig_2_3.pg TOPKIS nosig_2_3.pg n 24 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/carry/instances/pk_viol_n20.pg TOPKIS pk_viol_n20.pg n 20 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/carry/instances/replay4_n32.pg TOPKIS replay4_n32.pg n 32 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/carry/instances/meet_viol_n29.pg TOPKIS meet_viol_n29.pg n 29 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/carry/instances/phi_flat_alive_n32.pg TOPKIS phi_flat_alive_n32.pg n 32 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/carry/instances/spp19_oink_n30.pg TOPKIS spp19_oink_n30.pg n 30 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/carry/instances/spp19_stable_n30.pg TOPKIS spp19_stable_n30.pg n 30 RUNS 1 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 1
+GAME red/carry/instances/spp25_oink_n40.pg TOPKIS spp25_oink_n40.pg n 40 RUNS 1 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 1
+GAME red/carry/instances/spp22_oink_n40.pg TOPKIS spp22_oink_n40.pg n 40 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/carry/instances/stealonce_both_n45.pg TOPKIS stealonce_both_n45.pg n 45 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME red/carry/instances/tstep_near_n20.pg TOPKIS tstep_near_n20.pg n 20 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/carry/instances/stealonce_core_n76.pg TOPKIS stealonce_core_n76.pg n 76 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME red/ctxp/instances/deep1_n13.pg TOPKIS deep1_n13.pg n 13 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/ctxp/instances/deep1_n21.pg TOPKIS deep1_n21.pg n 21 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/carry/instances/stealer_viol_n76.pg TOPKIS stealer_viol_n76.pg n 76 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME red/ctxp/instances/margin1_n20.pg TOPKIS margin1_n20.pg n 20 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/ctxp/instances/margin1_mc5.pg TOPKIS margin1_mc5.pg n 50 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/ctxp/instances/margin1_mc1.pg TOPKIS margin1_mc1.pg n 80 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/dtl/instances/lalg_dtl_pertop31_n18.pg TOPKIS lalg_dtl_pertop31_n18.pg n 18 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME red/fbr/instances/bghm_k1_gap6_A.pg TOPKIS bghm_k1_gap6_A.pg n 21 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/fbr/instances/bghm_k3_gap4_A.pg TOPKIS bghm_k3_gap4_A.pg n 45 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/dtl/instances/lalg_dtl_restart8_n20.pg TOPKIS lalg_dtl_restart8_n20.pg n 20 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/carry/instances/stealonce_viol_n76.pg TOPKIS stealonce_viol_n76.pg n 76 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME red/fbr/instances/rho144_n32.pg TOPKIS rho144_n32.pg n 32 RUNS 1 PROFREV 0 PVREV 0 FLIPT 2 ROOTX 0 EVX2 0 TXR 2
+GAME red/fbr/instances/lev74_n40.pg TOPKIS lev74_n40.pg n 40 RUNS 3 PROFREV 0 PVREV 0 FLIPT 4 ROOTX 0 EVX2 0 TXR 2
+GAME red/fbr/instances/fr39_q4_n48.pg TOPKIS fr39_q4_n48.pg n 48 RUNS 1 PROFREV 0 PVREV 0 FLIPT 2 ROOTX 0 EVX2 0 TXR 4
+GAME red/fbr/instances/rho84_n16.pg TOPKIS rho84_n16.pg n 16 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/fbr/instances/sat4_n20.pg TOPKIS sat4_n20.pg n 20 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/fbr/instances/rho3_253_n32.pg TOPKIS rho3_253_n32.pg n 32 RUNS 1 PROFREV 0 PVREV 1 FLIPT 3 ROOTX 0 EVX2 0 TXR 3
+GAME red/fbr/instances/sat68_n20.pg TOPKIS sat68_n20.pg n 20 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME red/fbr/instances/rho666_n48.pg TOPKIS rho666_n48.pg n 48 RUNS 2 PROFREV 1 PVREV 1 FLIPT 6 ROOTX 0 EVX2 0 TXR 5 FIRST 4 6 F 3 10
+GAME red/fbx/instances/exsw_loop_n15.pg TOPKIS exsw_loop_n15.pg n 15 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/fbr/instances/nep80_n40.pg TOPKIS nep80_n40.pg n 40 RUNS 4 PROFREV 0 PVREV 0 FLIPT 8 ROOTX 0 EVX2 0 TXR 4
+GAME red/fbr/instances/lev56_n48.pg TOPKIS lev56_n48.pg n 48 RUNS 10 PROFREV 5 PVREV 3 FLIPT 32 ROOTX 0 EVX2 0 TXR 7 FIRST 13 20 F 10 25
+GAME red/fbr/instances/twowave_L16.pg TOPKIS twowave_L16.pg n 22 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/frz/instances/fbcap_eq_u4_n11.pg TOPKIS fbcap_eq_u4_n11.pg n 11 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/frz/instances/fx2_n11.pg TOPKIS fx2_n11.pg n 11 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/h3/instances/frzgap0_n4.pg TOPKIS frzgap0_n4.pg n 4 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/h3/instances/frzgap0_n6.pg TOPKIS frzgap0_n6.pg n 6 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/fbx/instances/kt6_n58.pg TOPKIS kt6_n58.pg n 58 RUNS 3 PROFREV 0 PVREV 0 FLIPT 2 ROOTX 0 EVX2 0 TXR 2
+GAME red/h3/instances/lcount2_n23.pg TOPKIS lcount2_n23.pg n 23 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/h3/instances/lcount_n23.pg TOPKIS lcount_n23.pg n 23 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/h3/instances/offret_l19_n24.pg TOPKIS offret_l19_n24.pg n 24 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/kl/instances/klcount_n16.pg TOPKIS klcount_n16.pg n 16 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/kl/instances/klcount_n18_base.pg TOPKIS klcount_n18_base.pg n 18 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/kl/instances/klcount_n18_lvl.pg TOPKIS klcount_n18_lvl.pg n 18 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/kl/instances/klglobal_n16.pg TOPKIS klglobal_n16.pg n 16 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/kl/instances/klglobal_n18_lvl.pg TOPKIS klglobal_n18_lvl.pg n 18 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/h3/instances/xsnpre36_n48.pg TOPKIS xsnpre36_n48.pg n 48 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/kl/instances/klmin_n13.pg TOPKIS klmin_n13.pg n 13 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME red/kl/instances/klglobal_n20_lvl2.pg TOPKIS klglobal_n20_lvl2.pg n 20 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/kl/instances/r2climb_h13.pg TOPKIS r2climb_h13.pg n 13 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/kl/instances/r2join_h0E_n14.pg TOPKIS r2join_h0E_n14.pg n 14 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/kl/instances/r2crawl_n14.pg TOPKIS r2crawl_n14.pg n 14 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/kl24/instances/HL88_0.pg TOPKIS HL88_0.pg n 41 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME red/kl/instances/r2lap_best_n22.pg TOPKIS r2lap_best_n22.pg n 22 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/kl24/instances/HL88_1.pg TOPKIS HL88_1.pg n 43 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME red/kl24/instances/HL88_2.pg TOPKIS HL88_2.pg n 45 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME red/kl24/instances/HLg_0.pg TOPKIS HLg_0.pg n 29 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME red/kl24/instances/HL88_3.pg TOPKIS HL88_3.pg n 47 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME red/kl24/instances/HLg_1.pg TOPKIS HLg_1.pg n 35 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME red/kl24/instances/HLg_3.pg TOPKIS HLg_3.pg n 55 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME red/kl24/instances/HLg_2.pg TOPKIS HLg_2.pg n 45 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME red/kw/instances/cw11_n24.pg TOPKIS cw11_n24.pg n 24 RUNS 5 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 4
+GAME red/lag/instances/depth2_n39.pg TOPKIS depth2_n39.pg n 39 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME red/kw/instances/frzu_tight_n14.pg TOPKIS frzu_tight_n14.pg n 14 RUNS 2 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/kw/instances/kc18_n24.pg TOPKIS kc18_n24.pg n 24 RUNS 2 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME red/lag/instances/depth3_n46.pg TOPKIS depth3_n46.pg n 46 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/lag/instances/fam_D4_n50.pg TOPKIS fam_D4_n50.pg n 50 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/lag/instances/depth4_n53.pg TOPKIS depth4_n53.pg n 53 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME red/lag/instances/fam_D12_n106.pg TOPKIS fam_D12_n106.pg n 106 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/mei/instances/mei_h3.pg TOPKIS mei_h3.pg n 27 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/lag/instances/fam_D8_n78.pg TOPKIS fam_D8_n78.pg n 78 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/mei/instances/mei_h2.pg TOPKIS mei_h2.pg n 19 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/mei/instances/mei_h4.pg TOPKIS mei_h4.pg n 35 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/mei/instances/mei_h5.pg TOPKIS mei_h5.pg n 43 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/mei/instances/mei_h6.pg TOPKIS mei_h6.pg n 51 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/mei/instances/mei_h8.pg TOPKIS mei_h8.pg n 67 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/n3/instances/core41_n40.pg TOPKIS core41_n40.pg n 40 RUNS 2 PROFREV 0 PVREV 0 FLIPT 2 ROOTX 0 EVX2 0 TXR 4
+GAME red/n3/instances/lag11_n40.pg TOPKIS lag11_n40.pg n 40 RUNS 2 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 3
+GAME red/n3/instances/lagx10_n40.pg TOPKIS lagx10_n40.pg n 40 RUNS 1 PROFREV 0 PVREV 0 FLIPT 3 ROOTX 0 EVX2 0 TXR 10
+GAME red/n3/instances/long90_k2_n40.pg TOPKIS long90_k2_n40.pg n 40 RUNS 1 PROFREV 1 PVREV 1 FLIPT 3 ROOTX 0 EVX2 0 TXR 7 FIRST 1 12 F 1 15
+GAME red/n3/instances/comp54_n80.pg TOPKIS comp54_n80.pg n 80 RUNS 2 PROFREV 0 PVREV 2 FLIPT 4 ROOTX 0 EVX2 0 TXR 4
+GAME red/n3/instances/n3cov_lean.pg TOPKIS n3cov_lean.pg n 48 RUNS 1 PROFREV 1 PVREV 1 FLIPT 4 ROOTX 0 EVX2 0 TXR 1 FIRST 8 10 F 7 18
+GAME red/n3/instances/long121_n40.pg TOPKIS long121_n40.pg n 40 RUNS 1 PROFREV 1 PVREV 2 FLIPT 6 ROOTX 0 EVX2 0 TXR 5 FIRST 4 6 F 2 19
+GAME red/n3/instances/run49_n32.pg TOPKIS run49_n32.pg n 32 RUNS 4 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 0
+GAME red/n3/instances/n3cov_phi.pg TOPKIS n3cov_phi.pg n 32 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/n3/instances/ret22_n40.pg TOPKIS ret22_n40.pg n 40 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/n5/instances/dl_4_4.pg TOPKIS dl_4_4.pg n 42 RUNS 2 PROFREV 0 PVREV 0 FLIPT 3 ROOTX 0 EVX2 0 TXR 2
+GAME red/n3/instances/run34_n40.pg TOPKIS run34_n40.pg n 40 RUNS 4 PROFREV 0 PVREV 1 FLIPT 11 ROOTX 0 EVX2 0 TXR 6
+GAME red/n5/instances/dlm2_4.pg TOPKIS dlm2_4.pg n 42 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/n5/instances/sym_h8_s1.pg TOPKIS sym_h8_s1.pg n 16 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/n5/instances/sym_h12_s1.pg TOPKIS sym_h12_s1.pg n 24 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/n5inj/instances/block_bk20.pg TOPKIS block_bk20.pg n 24 RUNS 3 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/n5inj/instances/blockph_bp20.pg TOPKIS blockph_bp20.pg n 24 RUNS 2 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/n5inj/instances/bribe_cex_n15.pg TOPKIS bribe_cex_n15.pg n 15 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/n5inj/instances/block_bk32.pg TOPKIS block_bk32.pg n 36 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/n5inj/instances/blockph_bp32.pg TOPKIS blockph_bp32.pg n 36 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/n5/instances/sym_h16_s1.pg TOPKIS sym_h16_s1.pg n 32 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME red/n5inj/instances/frz24.pg TOPKIS frz24.pg n 24 RUNS 5 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/n5inj/instances/frz32.pg TOPKIS frz32.pg n 32 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME red/n5/instances/dl_6_8.pg TOPKIS dl_6_8.pg n 110 RUNS 2 PROFREV 0 PVREV 1 FLIPT 3 ROOTX 0 EVX2 0 TXR 2
+GAME red/n5inj/instances/phase2_pk32.pg TOPKIS phase2_pk32.pg n 32 RUNS 7 PROFREV 0 PVREV 0 FLIPT 2 ROOTX 0 EVX2 0 TXR 1
+GAME red/n5inj/instances/frz40.pg TOPKIS frz40.pg n 40 RUNS 9 PROFREV 0 PVREV 0 FLIPT 9 ROOTX 0 EVX2 0 TXR 5
+GAME red/n5inj/instances/elimn_cex_n48.pg TOPKIS elimn_cex_n48.pg n 48 RUNS 12 PROFREV 0 PVREV 0 FLIPT 5 ROOTX 0 EVX2 0 TXR 2
+GAME red/n5inj/instances/returns_rt32.pg TOPKIS returns_rt32.pg n 32 RUNS 8 PROFREV 0 PVREV 0 FLIPT 3 ROOTX 0 EVX2 0 TXR 1
+GAME red/n5inj/instances/theta_thc24.pg TOPKIS theta_thc24.pg n 24 RUNS 2 PROFREV 1 PVREV 3 FLIPT 9 ROOTX 0 EVX2 0 TXR 5 FIRST 11 15 F 6 18
+GAME red/n5inj/instances/phase2_pk48.pg TOPKIS phase2_pk48.pg n 48 RUNS 12 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 2
+GAME red/n5inj/instances/theta_thf16.pg TOPKIS theta_thf16.pg n 16 RUNS 2 PROFREV 1 PVREV 3 FLIPT 10 ROOTX 0 EVX2 0 TXR 0 FIRST 11 14 F 8 20
+GAME red/n5inj/instances/returns_rt48.pg TOPKIS returns_rt48.pg n 48 RUNS 14 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 2
+GAME red/n5inj/instances/theta_tp32.pg TOPKIS theta_tp32.pg n 32 RUNS 2 PROFREV 2 PVREV 5 FLIPT 14 ROOTX 0 EVX2 0 TXR 8 FIRST 4 7 F 4 19
+GAME red/n5inj/instances/returns_ph64.pg TOPKIS returns_ph64.pg n 64 RUNS 16 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 2
+GAME red/nest16/instances/k4L72_n101.pg TOPKIS k4L72_n101.pg n 101 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/n5inj/instances/theta_tp40.pg TOPKIS theta_tp40.pg n 40 RUNS 3 PROFREV 1 PVREV 3 FLIPT 9 ROOTX 0 EVX2 0 TXR 5 FIRST 12 16 F 7 19
+GAME red/n5inj/instances/wide_h16.pg TOPKIS wide_h16.pg n 32 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/nest16/instances/k4L72r_n101.pg TOPKIS k4L72r_n101.pg n 101 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/nest16/instances/k4seed_c1_n82.pg TOPKIS k4seed_c1_n82.pg n 82 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/nest16/instances/k4g50_n101.pg TOPKIS k4g50_n101.pg n 101 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/nest16/instances/k4seed_vr_n87.pg TOPKIS k4seed_vr_n87.pg n 87 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/nest16/instances/k4u_n101.pg TOPKIS k4u_n101.pg n 101 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/nest16/instances/k4y1_n82.pg TOPKIS k4y1_n82.pg n 82 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/nest16/instances/k4y2_n87.pg TOPKIS k4y2_n87.pg n 87 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/nest16/instances/near4_n26.pg TOPKIS near4_n26.pg n 26 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/nest16/instances/nest4u_n46.pg TOPKIS nest4u_n46.pg n 46 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/nest16/instances/nest4uu_n51.pg TOPKIS nest4uu_n51.pg n 51 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/nest16/instances/nest5_n49.pg TOPKIS nest5_n49.pg n 49 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/n5inj/instances/returns_rt64.pg TOPKIS returns_rt64.pg n 64 RUNS 15 PROFREV 0 PVREV 0 FLIPT 2 ROOTX 0 EVX2 0 TXR 2
+GAME red/nest16/instances/nest6_n75.pg TOPKIS nest6_n75.pg n 75 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/nest16/instances/oseg_n26.pg TOPKIS oseg_n26.pg n 26 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/nest16/instances/nest6min_n75.pg TOPKIS nest6min_n75.pg n 75 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/nest16/instances/w1_n27.pg TOPKIS w1_n27.pg n 27 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/nest16/instances/win3_n27.pg TOPKIS win3_n27.pg n 27 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/nest16/instances/nest6x_n75.pg TOPKIS nest6x_n75.pg n 75 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/nopre/instances/nopre_viol_n20.pg TOPKIS nopre_viol_n20.pg n 20 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/o1/instances/ph45_n32.pg TOPKIS ph45_n32.pg n 32 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/o1/instances/ph50_n32.pg TOPKIS ph50_n32.pg n 32 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/o1/instances/tau18_n24.pg TOPKIS tau18_n24.pg n 24 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/rec0/instances/fbd0_n4.pg TOPKIS fbd0_n4.pg n 4 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/o1/instances/iter118_n48.pg TOPKIS iter118_n48.pg n 48 RUNS 2 PROFREV 0 PVREV 0 FLIPT 3 ROOTX 0 EVX2 0 TXR 2
+GAME red/o1/instances/f39_n48.pg TOPKIS f39_n48.pg n 48 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME red/rec0/instances/n0_6_n24.pg TOPKIS n0_6_n24.pg n 24 RUNS 1 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 1
+GAME red/rec0/instances/nep24_n20.pg TOPKIS nep24_n20.pg n 20 RUNS 1 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 1
+GAME red/sgrow/instances/s20_n20.pg TOPKIS s20_n20.pg n 20 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/sgrow/instances/s21_oink_n20.pg TOPKIS s21_oink_n20.pg n 20 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/rec0/instances/lend2_30_n48.pg TOPKIS lend2_30_n48.pg n 48 RUNS 1 PROFREV 0 PVREV 0 FLIPT 2 ROOTX 0 EVX2 0 TXR 3
+GAME red/rec0/instances/nep87_n40.pg TOPKIS nep87_n40.pg n 40 RUNS 3 PROFREV 0 PVREV 1 FLIPT 12 ROOTX 0 EVX2 0 TXR 6
+GAME red/sgrow/instances/s29_n30.pg TOPKIS s29_n30.pg n 30 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/sgrow/instances/s34_oink_n40.pg TOPKIS s34_oink_n40.pg n 40 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME red/rec0/instances/nep90_n40.pg TOPKIS nep90_n40.pg n 40 RUNS 3 PROFREV 0 PVREV 1 FLIPT 13 ROOTX 0 EVX2 0 TXR 7
+GAME red/sgrow/instances/s36_oink_n60.pg TOPKIS s36_oink_n60.pg n 60 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/sgrow/instances/s32_n60.pg TOPKIS s32_n60.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/sgrow/instances/s35_oink_n80.pg TOPKIS s35_oink_n80.pg n 80 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/so/instances/beta2_n11.pg TOPKIS beta2_n11.pg n 11 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME red/so/instances/epsseg_cex_n16.pg TOPKIS epsseg_cex_n16.pg n 16 RUNS 1 PROFREV 1 PVREV 2 FLIPT 4 ROOTX 0 EVX2 0 TXR 1 FIRST 1 5 F 1 7
+GAME red/so/instances/exitr_cex_n16.pg TOPKIS exitr_cex_n16.pg n 16 RUNS 1 PROFREV 1 PVREV 2 FLIPT 5 ROOTX 0 EVX2 0 TXR 4 FIRST 1 6 F 1 8
+GAME red/sgrow/instances/s34_oink_n80.pg TOPKIS s34_oink_n80.pg n 80 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME red/so/instances/mn_abs74_n48.pg TOPKIS mn_abs74_n48.pg n 48 RUNS 4 PROFREV 0 PVREV 0 FLIPT 5 ROOTX 0 EVX2 0 TXR 3
+GAME red/so/instances/epsseg_cex_n48.pg TOPKIS epsseg_cex_n48.pg n 48 RUNS 3 PROFREV 0 PVREV 0 FLIPT 4 ROOTX 0 EVX2 0 TXR 1
+GAME red/so/instances/exitr_cex_n48.pg TOPKIS exitr_cex_n48.pg n 48 RUNS 2 PROFREV 0 PVREV 0 FLIPT 3 ROOTX 0 EVX2 0 TXR 1
+GAME red/so/instances/farrise25_n32.pg TOPKIS farrise25_n32.pg n 32 RUNS 2 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 2
+GAME red/so/instances/njb_reabs54_n32.pg TOPKIS njb_reabs54_n32.pg n 32 RUNS 4 PROFREV 2 PVREV 2 FLIPT 9 ROOTX 0 EVX2 0 TXR 3 FIRST 7 11 F 7 11
+GAME red/so/instances/nleq_cex_n48.pg TOPKIS nleq_cex_n48.pg n 48 RUNS 3 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME red/so/instances/njb_reabs65_n48.pg TOPKIS njb_reabs65_n48.pg n 48 RUNS 5 PROFREV 0 PVREV 0 FLIPT 5 ROOTX 0 EVX2 0 TXR 3
+GAME red/so/instances/nleq33_n48.pg TOPKIS nleq33_n48.pg n 48 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 2
+GAME red/so/instances/pftheta34_n32.pg TOPKIS pftheta34_n32.pg n 32 RUNS 1 PROFREV 1 PVREV 18 FLIPT 34 ROOTX 0 EVX2 0 TXR 10 FIRST 7 9 F 5 39
+GAME red/so/instances/pft35_n48.pg TOPKIS pft35_n48.pg n 48 RUNS 2 PROFREV 1 PVREV 14 FLIPT 38 ROOTX 0 EVX2 0 TXR 18 FIRST 13 17 F 6 41
+GAME red/so/instances/pftheta_cex_n32.pg TOPKIS pftheta_cex_n32.pg n 32 RUNS 1 PROFREV 1 PVREV 17 FLIPT 33 ROOTX 0 EVX2 0 TXR 9 FIRST 6 8 F 4 38
+GAME red/so/instances/pft40_n40.pg TOPKIS pft40_n40.pg n 40 RUNS 4 PROFREV 4 PVREV 12 FLIPT 39 ROOTX 0 EVX2 0 TXR 10 FIRST 8 12 F 8 13
+GAME red/so/instances/s4c8_n13.pg TOPKIS s4c8_n13.pg n 13 RUNS 2 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/so/instances/post31_n48.pg TOPKIS post31_n48.pg n 48 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/so/instances/so_k2_n32.pg TOPKIS so_k2_n32.pg n 32 RUNS 3 PROFREV 0 PVREV 0 FLIPT 6 ROOTX 0 EVX2 0 TXR 1
+GAME red/so/instances/so_sor5_n24.pg TOPKIS so_sor5_n24.pg n 24 RUNS 1 PROFREV 1 PVREV 5 FLIPT 21 ROOTX 0 EVX2 0 TXR 1 FIRST 2 4 F 0 21
+GAME red/so/instances/rise_fb38_n48.pg TOPKIS rise_fb38_n48.pg n 48 RUNS 3 PROFREV 1 PVREV 1 FLIPT 2 ROOTX 0 EVX2 0 TXR 2 FIRST 12 14 F 12 15
+GAME red/so/instances/so_sorl_n32.pg TOPKIS so_sorl_n32.pg n 32 RUNS 1 PROFREV 1 PVREV 2 FLIPT 22 ROOTX 0 EVX2 0 TXR 1 FIRST 1 3 F 0 22
+GAME red/so/instances/rise_thin51_n40.pg TOPKIS rise_thin51_n40.pg n 40 RUNS 8 PROFREV 3 PVREV 2 FLIPT 52 ROOTX 0 EVX2 0 TXR 12 FIRST 28 36 F 24 37
+GAME red/so/instances/so_tie13_n24.pg TOPKIS so_tie13_n24.pg n 24 RUNS 1 PROFREV 1 PVREV 2 FLIPT 15 ROOTX 0 EVX2 0 TXR 1 FIRST 0 10 F 0 16
+GAME red/so/instances/so_j19_n48.pg TOPKIS so_j19_n48.pg n 48 RUNS 2 PROFREV 0 PVREV 0 FLIPT 19 ROOTX 0 EVX2 0 TXR 19
+GAME red/so/instances/so_tie15_n32.pg TOPKIS so_tie15_n32.pg n 32 RUNS 1 PROFREV 0 PVREV 0 FLIPT 18 ROOTX 0 EVX2 0 TXR 1
+GAME red/so/instances/so_th_n32.pg TOPKIS so_th_n32.pg n 32 RUNS 2 PROFREV 1 PVREV 10 FLIPT 18 ROOTX 0 EVX2 0 TXR 5 FIRST 2 4 F 1 22
+GAME red/so/instances/tevlast7_n32.pg TOPKIS tevlast7_n32.pg n 32 RUNS 2 PROFREV 0 PVREV 0 FLIPT 4 ROOTX 0 EVX2 0 TXR 0
+GAME red/so/instances/tog6a_n32.pg TOPKIS tog6a_n32.pg n 32 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 2
+GAME red/so/instances/tev_cex_n40.pg TOPKIS tev_cex_n40.pg n 40 RUNS 3 PROFREV 0 PVREV 0 FLIPT 3 ROOTX 0 EVX2 0 TXR 4
+GAME red/so/instances/tevlast11_n40.pg TOPKIS tevlast11_n40.pg n 40 RUNS 2 PROFREV 0 PVREV 0 FLIPT 3 ROOTX 0 EVX2 0 TXR 4
+GAME red/so/instances/tevlast_cex_n40.pg TOPKIS tevlast_cex_n40.pg n 40 RUNS 2 PROFREV 0 PVREV 0 FLIPT 3 ROOTX 0 EVX2 0 TXR 4
+GAME red/so/instances/xrun8_n10.pg TOPKIS xrun8_n10.pg n 10 RUNS 1 PROFREV 0 PVREV 0 FLIPT 2 ROOTX 0 EVX2 0 TXR 0
+GAME red/so/instances/tog6b_n32.pg TOPKIS tog6b_n32.pg n 32 RUNS 1 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 2
+GAME red/so/instances/xrun21_n24.pg TOPKIS xrun21_n24.pg n 24 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/so/instances/xsnf42_n48.pg TOPKIS xsnf42_n48.pg n 48 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME red/so/instances/xsn29_n32.pg TOPKIS xsn29_n32.pg n 32 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/so/instances/xsn43_n48.pg TOPKIS xsn43_n48.pg n 48 RUNS 1 PROFREV 0 PVREV 0 FLIPT 3 ROOTX 0 EVX2 0 TXR 0
+GAME red/so/instances/xsnf52_n64.pg TOPKIS xsnf52_n64.pg n 64 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 2
+GAME red/tcpert/instances/leanT_N6.pg TOPKIS leanT_N6.pg n 48 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/tcpert/instances/leanT_N12.pg TOPKIS leanT_N12.pg n 96 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/tcpert/instances/leanT_N8.pg TOPKIS leanT_N8.pg n 64 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/so/instances/xsn91_n48.pg TOPKIS xsn91_n48.pg n 48 RUNS 9 PROFREV 3 PVREV 2 FLIPT 14 ROOTX 0 EVX2 0 TXR 0 FIRST 4 6 F 3 21
+GAME red/tcpert/instances/tcL_N3.pg TOPKIS tcL_N3.pg n 42 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/tcpert/instances/leanT_N16.pg TOPKIS leanT_N16.pg n 128 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/tcpert/instances/tcL_N4.pg TOPKIS tcL_N4.pg n 68 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/tcpert/instances/tcL_N5.pg TOPKIS tcL_N5.pg n 100 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/tcpert/instances/tcL_N6.pg TOPKIS tcL_N6.pg n 138 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/tcpert/instances/tcR4_N4.pg TOPKIS tcR4_N4.pg n 68 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/tcpert/instances/tcR4_N5.pg TOPKIS tcR4_N5.pg n 100 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/tcpert/instances/leanT_N24.pg TOPKIS leanT_N24.pg n 192 RUNS 1 PROFREV 0 PVREV 0 FLIPT 3 ROOTX 0 EVX2 0 TXR 3
+GAME red/tcpert/instances/tcL_N10.pg TOPKIS tcL_N10.pg n 350 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/tcpert/instances/tcR4_N6.pg TOPKIS tcR4_N6.pg n 138 RUNS 1 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 1
+GAME red/tcpert/instances/tcL_N8.pg TOPKIS tcL_N8.pg n 232 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/tcpert/instances/tcR4_N7.pg TOPKIS tcR4_N7.pg n 182 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/tcpert/instances/tcR4_N8.pg TOPKIS tcR4_N8.pg n 232 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/tcpert/instances/tcS8_N6.pg TOPKIS tcS8_N6.pg n 138 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/tcpert/instances/leanT_N32.pg TOPKIS leanT_N32.pg n 256 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/tcpert/instances/tcS8_N7.pg TOPKIS tcS8_N7.pg n 182 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/tcpert/instances/tcS8_N10.pg TOPKIS tcS8_N10.pg n 350 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/tcpert/instances/tcS8_N8.pg TOPKIS tcS8_N8.pg n 232 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/tpp/instances/tpp_viol_n22.pg TOPKIS tpp_viol_n22.pg n 22 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/tpp/instances/tpp_viol_n63.pg TOPKIS tpp_viol_n63.pg n 63 RUNS 1 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 1
+GAME red/ul/instances/cxmig_k4_n54.pg TOPKIS cxmig_k4_n54.pg n 54 RUNS 1 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 2
+GAME red/ul/instances/cxmig_k8_n82.pg TOPKIS cxmig_k8_n82.pg n 82 RUNS 1 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 2
+GAME red/ul/instances/ladderd0_k12_n48.pg TOPKIS ladderd0_k12_n48.pg n 48 RUNS 1 PROFREV 0 PVREV 1 FLIPT 12 ROOTX 0 EVX2 0 TXR 1
+GAME red/tcpert/instances/tcS8_N11.pg TOPKIS tcS8_N11.pg n 418 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/ul/instances/cxmig_k16_n138.pg TOPKIS cxmig_k16_n138.pg n 138 RUNS 1 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 2
+GAME red/ul/instances/ladderd0_k24_n84.pg TOPKIS ladderd0_k24_n84.pg n 84 RUNS 1 PROFREV 0 PVREV 1 FLIPT 24 ROOTX 0 EVX2 0 TXR 1
+GAME red/ul/instances/ladderent_k12_n48.pg TOPKIS ladderent_k12_n48.pg n 48 RUNS 1 PROFREV 0 PVREV 1 FLIPT 12 ROOTX 0 EVX2 0 TXR 1
+GAME red/ul/instances/reader_L10_n36.pg TOPKIS reader_L10_n36.pg n 36 RUNS 2 PROFREV 0 PVREV 1 FLIPT 2 ROOTX 0 EVX2 0 TXR 1
+GAME red/ul/instances/reader_L20_n56.pg TOPKIS reader_L20_n56.pg n 56 RUNS 2 PROFREV 0 PVREV 1 FLIPT 2 ROOTX 0 EVX2 0 TXR 1
+GAME red/ul/instances/ladderent_k24_n84.pg TOPKIS ladderent_k24_n84.pg n 84 RUNS 1 PROFREV 0 PVREV 1 FLIPT 24 ROOTX 0 EVX2 0 TXR 1
+GAME red/tcpert/instances/tcL_N12.pg TOPKIS tcL_N12.pg n 492 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME red/tcpert/instances/tcS8_N9.pg TOPKIS tcS8_N9.pg n 288 RUNS 1 PROFREV 0 PVREV 0 FLIPT 2 ROOTX 0 EVX2 0 TXR 2
+GAME red/ul/instances/reader_L40_n96.pg TOPKIS reader_L40_n96.pg n 96 RUNS 2 PROFREV 0 PVREV 1 FLIPT 2 ROOTX 0 EVX2 0 TXR 1
+GAME red/usplit/instances/gate_K16_n197.pg TOPKIS gate_K16_n197.pg n 197 RUNS 2 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 2
+GAME red/usplit/instances/grow_K12_n149.pg TOPKIS grow_K12_n149.pg n 149 RUNS 1 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 1
+GAME red/usplit/instances/pairoc_n58.pg TOPKIS pairoc_n58.pg n 58 RUNS 1 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 1
+GAME red/usplit/instances/pp_K12_n161_dual.pg TOPKIS pp_K12_n161_dual.pg n 161 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME red/usplit/instances/pp_K12_n161.pg TOPKIS pp_K12_n161.pg n 161 RUNS 2 PROFREV 0 PVREV 0 FLIPT 3 ROOTX 0 EVX2 0 TXR 2
+GAME red/ul/instances/ladderd0_k48_n156.pg TOPKIS ladderd0_k48_n156.pg n 156 RUNS 1 PROFREV 0 PVREV 1 FLIPT 48 ROOTX 0 EVX2 0 TXR 1
+GAME red/usplit/instances/usplit_n14.pg TOPKIS usplit_n14.pg n 14 RUNS 1 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 1
+GAME red/usplit/instances/usplit_n23.pg TOPKIS usplit_n23.pg n 23 RUNS 1 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 1
+GAME red/usplit/instances/usplit_rd_n24.pg TOPKIS usplit_rd_n24.pg n 24 RUNS 1 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 1
+GAME red/usplit/instances/usplit_rd_s3_n27.pg TOPKIS usplit_rd_s3_n27.pg n 27 RUNS 1 PROFREV 0 PVREV 0 FLIPT 2 ROOTX 0 EVX2 0 TXR 0
+GAME red/usplit/instances/usplit_s3_n16.pg TOPKIS usplit_s3_n16.pg n 16 RUNS 1 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 0
+GAME red/xctx/instances/nest3_n20.pg TOPKIS nest3_n20.pg n 20 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/xctx/instances/nest3_n24.pg TOPKIS nest3_n24.pg n 24 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/xctx/instances/vrall_viol_n20.pg TOPKIS vrall_viol_n20.pg n 20 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/ul/instances/ladderent_k48_n156.pg TOPKIS ladderent_k48_n156.pg n 156 RUNS 1 PROFREV 0 PVREV 1 FLIPT 48 ROOTX 0 EVX2 0 TXR 1
+GAME red/xctx/instances/xcov11_n20.pg TOPKIS xcov11_n20.pg n 20 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/xctx/instances/xctx_viol_n20.pg TOPKIS xctx_viol_n20.pg n 20 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/xing/instances/j10_n24.pg TOPKIS j10_n24.pg n 24 RUNS 2 PROFREV 1 PVREV 1 FLIPT 17 ROOTX 0 EVX2 0 TXR 1 FIRST 10 18 F 10 25
+GAME red/xing/instances/fbref_cex_n32.pg TOPKIS fbref_cex_n32.pg n 32 RUNS 7 PROFREV 1 PVREV 1 FLIPT 6 ROOTX 0 EVX2 0 TXR 4 FIRST 9 21 F 9 25
+GAME red/xing/instances/j5_n16.pg TOPKIS j5_n16.pg n 16 RUNS 5 PROFREV 1 PVREV 1 FLIPT 7 ROOTX 0 EVX2 0 TXR 0 FIRST 17 22 F 17 28
+GAME red/xing/instances/j4_n40.pg TOPKIS j4_n40.pg n 40 RUNS 5 PROFREV 3 PVREV 5 FLIPT 32 ROOTX 0 EVX2 0 TXR 12 FIRST 18 20 F 13 31
+GAME red/xing/instances/j7_n32.pg TOPKIS j7_n32.pg n 32 RUNS 3 PROFREV 2 PVREV 1 FLIPT 12 ROOTX 0 EVX2 0 TXR 3 FIRST 2 6 F 1 22
+GAME red/xing/instances/j8_n32.pg TOPKIS j8_n32.pg n 32 RUNS 4 PROFREV 1 PVREV 2 FLIPT 15 ROOTX 0 EVX2 0 TXR 3 FIRST 30 38 F 30 50
+GAME red/xing/instances/j7_n48.pg TOPKIS j7_n48.pg n 48 RUNS 8 PROFREV 2 PVREV 2 FLIPT 14 ROOTX 0 EVX2 0 TXR 6 FIRST 21 23 F 13 33
+GAME red/xing/instances/kw25_n32.pg TOPKIS kw25_n32.pg n 32 RUNS 3 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 4
+GAME red/xing/instances/j8_n48.pg TOPKIS j8_n48.pg n 48 RUNS 9 PROFREV 2 PVREV 1 FLIPT 14 ROOTX 0 EVX2 0 TXR 0 FIRST 13 28 F 13 33
+GAME red/xing/instances/kw_n16.pg TOPKIS kw_n16.pg n 16 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/xing/instances/kw_n24.pg TOPKIS kw_n24.pg n 24 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/xing/instances/obr_eq_n24.pg TOPKIS obr_eq_n24.pg n 24 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/xing/instances/kw_n48.pg TOPKIS kw_n48.pg n 48 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME red/usplit/instances/grow_K40_n373.pg TOPKIS grow_K40_n373.pg n 373 RUNS 1 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 1
+GAME red/xing/instances/obr_n32.pg TOPKIS obr_n32.pg n 32 RUNS 2 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 3
+GAME red/xing/instances/u1t_cex_n32.pg TOPKIS u1t_cex_n32.pg n 32 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 7
+GAME red/xing/instances/u1t_own6_n32.pg TOPKIS u1t_own6_n32.pg n 32 RUNS 2 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 1
+GAME red/xing/instances/u23sw64_n32.pg TOPKIS u23sw64_n32.pg n 32 RUNS 3 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 3
+GAME red/xing/instances/u2flat73_n32.pg TOPKIS u2flat73_n32.pg n 32 RUNS 5 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/xing/instances/u2flat_n32.pg TOPKIS u2flat_n32.pg n 32 RUNS 6 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME red/xing/instances/x31_cu16.pg TOPKIS x31_cu16.pg n 16 RUNS 2 PROFREV 1 PVREV 2 FLIPT 18 ROOTX 0 EVX2 0 TXR 0 FIRST 12 14 F 10 23
+GAME red/xing/instances/x31_cu24.pg TOPKIS x31_cu24.pg n 24 RUNS 3 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 8
+GAME red/xing/instances/x31_cu32.pg TOPKIS x31_cu32.pg n 32 RUNS 2 PROFREV 2 PVREV 8 FLIPT 39 ROOTX 0 EVX2 0 TXR 12 FIRST 8 16 F 6 25
+GAME red/xing/instances/x31_cu32i.pg TOPKIS x31_cu32i.pg n 32 RUNS 2 PROFREV 2 PVREV 8 FLIPT 37 ROOTX 0 EVX2 0 TXR 7 FIRST 6 9 F 3 24
+GAME red/xing/instances/x31_lem_e24.pg TOPKIS x31_lem_e24.pg n 24 RUNS 5 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/xing/instances/x31_lem_t32.pg TOPKIS x31_lem_t32.pg n 32 RUNS 7 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 2
+GAME red/xing/instances/x31_nh_r20.pg TOPKIS x31_nh_r20.pg n 20 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/xing/instances/x31_cu48.pg TOPKIS x31_cu48.pg n 48 RUNS 2 PROFREV 2 PVREV 7 FLIPT 40 ROOTX 0 EVX2 0 TXR 20 FIRST 6 12 F 4 23
+GAME red/xing/instances/x31_nh_e24.pg TOPKIS x31_nh_e24.pg n 24 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/xing/instances/x31_ru24.pg TOPKIS x31_ru24.pg n 24 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/xing/instances/x31_re24.pg TOPKIS x31_re24.pg n 24 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/xing/instances/x31_rx32.pg TOPKIS x31_rx32.pg n 32 RUNS 4 PROFREV 2 PVREV 11 FLIPT 46 ROOTX 0 EVX2 0 TXR 0 FIRST 9 11 F 2 24
+GAME red/xing/instances/x32_rand16.pg TOPKIS x32_rand16.pg n 16 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/xing/instances/x31_rx48.pg TOPKIS x31_rx48.pg n 48 RUNS 4 PROFREV 1 PVREV 12 FLIPT 42 ROOTX 0 EVX2 0 TXR 22 FIRST 4 11 F 2 24
+GAME red/xing/instances/x32_nest40.pg TOPKIS x32_nest40.pg n 40 RUNS 3 PROFREV 2 PVREV 5 FLIPT 17 ROOTX 0 EVX2 0 TXR 10 FIRST 9 12 F 5 31
+GAME red/xing/instances/x32_rand24.pg TOPKIS x32_rand24.pg n 24 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/xing/instances/x32_rand32.pg TOPKIS x32_rand32.pg n 32 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/xing/instances/x32_rand48.pg TOPKIS x32_rand48.pg n 48 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/usplit/instances/pp_K48_n449.pg TOPKIS pp_K48_n449.pg n 449 RUNS 2 PROFREV 0 PVREV 0 FLIPT 3 ROOTX 0 EVX2 0 TXR 2
+GAME si/root/instances/cone_n65.pg TOPKIS cone_n65.pg n 65 RUNS 2 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 1
+GAME red/xing/instances/x32_waves32.pg TOPKIS x32_waves32.pg n 32 RUNS 9 PROFREV 2 PVREV 1 FLIPT 11 ROOTX 0 EVX2 0 TXR 0 FIRST 17 34 F 17 39
+GAME red/xing/instances/x32_rand64.pg TOPKIS x32_rand64.pg n 64 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME si/root/instances/ueonce_n27.pg TOPKIS ueonce_n27.pg n 27 RUNS 1 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 0
+GAME red/xing/instances/x32_waves48.pg TOPKIS x32_waves48.pg n 48 RUNS 7 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 1
+GAME si/root/instances/cone_n69.pg TOPKIS cone_n69.pg n 69 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/switchbestexp_1.pg TOPKIS switchbestexp_1.pg n 35 RUNS 2 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 4
+GAME new/box54/out/switchbestexp_2.pg TOPKIS switchbestexp_2.pg n 60 RUNS 2 PROFREV 1 PVREV 1 FLIPT 3 ROOTX 0 EVX2 0 TXR 5 FIRST 16 24 F 14 32
+GAME new/box54/out/switchbestexp_3.pg TOPKIS switchbestexp_3.pg n 85 RUNS 2 PROFREV 1 PVREV 2 FLIPT 3 ROOTX 0 EVX2 0 TXR 6 FIRST 19 27 F 15 41
+GAME red/usplit/instances/pp_K48_n449_dual.pg TOPKIS pp_K48_n449_dual.pg n 449 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME new/box54/out/switchbestexp_4.pg TOPKIS switchbestexp_4.pg n 110 RUNS 2 PROFREV 1 PVREV 2 FLIPT 3 ROOTX 0 EVX2 0 TXR 6 FIRST 19 27 F 16 47
+GAME new/box54/out/switchbestexp_5.pg TOPKIS switchbestexp_5.pg n 135 RUNS 2 PROFREV 1 PVREV 2 FLIPT 3 ROOTX 0 EVX2 0 TXR 7 FIRST 21 29 F 17 55
+GAME new/box54/out/switchbestexp_6.pg TOPKIS switchbestexp_6.pg n 160 RUNS 2 PROFREV 1 PVREV 2 FLIPT 3 ROOTX 0 EVX2 0 TXR 7 FIRST 22 30 F 18 62
+GAME new/box54/out/switchallexp_1.pg TOPKIS switchallexp_1.pg n 21 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 2
+GAME new/box54/out/switchallexp_2.pg TOPKIS switchallexp_2.pg n 35 RUNS 1 PROFREV 1 PVREV 1 FLIPT 2 ROOTX 0 EVX2 0 TXR 2 FIRST 3 6 F 3 8
+GAME new/box54/out/switchallexp_3.pg TOPKIS switchallexp_3.pg n 49 RUNS 1 PROFREV 1 PVREV 1 FLIPT 2 ROOTX 0 EVX2 0 TXR 2 FIRST 4 6 F 4 7
+GAME new/box54/out/switchallexp_4.pg TOPKIS switchallexp_4.pg n 63 RUNS 1 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 2
+GAME new/box54/out/switchallexp_5.pg TOPKIS switchallexp_5.pg n 77 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 2
+GAME new/box54/out/switchallexp_6.pg TOPKIS switchallexp_6.pg n 91 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 2
+GAME new/box54/out/hf/counter_core_2.pg TOPKIS counter_core_2.pg n 15 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_core_3.pg TOPKIS counter_core_3.pg n 21 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_core_4.pg TOPKIS counter_core_4.pg n 27 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_core_5.pg TOPKIS counter_core_5.pg n 33 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_core_6.pg TOPKIS counter_core_6.pg n 39 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_core_8.pg TOPKIS counter_core_8.pg n 51 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_dp_2.pg TOPKIS counter_dp_2.pg n 12 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_dp_3.pg TOPKIS counter_dp_3.pg n 16 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_dp_4.pg TOPKIS counter_dp_4.pg n 20 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_dp_5.pg TOPKIS counter_dp_5.pg n 24 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_dp_6.pg TOPKIS counter_dp_6.pg n 28 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_dp_8.pg TOPKIS counter_dp_8.pg n 36 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_m_2.pg TOPKIS counter_m_2.pg n 9 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_m_3.pg TOPKIS counter_m_3.pg n 12 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/switchbestexp_7.pg TOPKIS switchbestexp_7.pg n 185 RUNS 2 PROFREV 1 PVREV 2 FLIPT 3 ROOTX 0 EVX2 0 TXR 6 FIRST 22 30 F 19 68
+GAME new/box54/out/hf/counter_m_4.pg TOPKIS counter_m_4.pg n 15 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_m_5.pg TOPKIS counter_m_5.pg n 18 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_m_6.pg TOPKIS counter_m_6.pg n 21 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_m_8.pg TOPKIS counter_m_8.pg n 27 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_ortl_2.pg TOPKIS counter_ortl_2.pg n 11 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_ortl_3.pg TOPKIS counter_ortl_3.pg n 16 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_ortl_4.pg TOPKIS counter_ortl_4.pg n 21 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_ortl_5.pg TOPKIS counter_ortl_5.pg n 26 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_ortl_6.pg TOPKIS counter_ortl_6.pg n 31 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_ortl_8.pg TOPKIS counter_ortl_8.pg n 41 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_qpt_2.pg TOPKIS counter_qpt_2.pg n 4 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_qpt_3.pg TOPKIS counter_qpt_3.pg n 6 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_qpt_4.pg TOPKIS counter_qpt_4.pg n 8 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_qpt_5.pg TOPKIS counter_qpt_5.pg n 10 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_qpt_6.pg TOPKIS counter_qpt_6.pg n 12 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_qpt_8.pg TOPKIS counter_qpt_8.pg n 16 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_rob_2.pg TOPKIS counter_rob_2.pg n 31 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_rob_3.pg TOPKIS counter_rob_3.pg n 54 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_rob_4.pg TOPKIS counter_rob_4.pg n 83 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_rob_5.pg TOPKIS counter_rob_5.pg n 118 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_rob_6.pg TOPKIS counter_rob_6.pg n 159 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_rr_2.pg TOPKIS counter_rr_2.pg n 8 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_rr_3.pg TOPKIS counter_rr_3.pg n 12 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_rr_4.pg TOPKIS counter_rr_4.pg n 16 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_rob_8.pg TOPKIS counter_rob_8.pg n 259 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_rr_5.pg TOPKIS counter_rr_5.pg n 20 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_rr_6.pg TOPKIS counter_rr_6.pg n 24 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_rr_8.pg TOPKIS counter_rr_8.pg n 32 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/usplit/instances/gate_K64_n581.pg TOPKIS gate_K64_n581.pg n 581 RUNS 2 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 2
+GAME new/box54/out/hf/counter_symsi_2.pg TOPKIS counter_symsi_2.pg n 22 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_symsi_3.pg TOPKIS counter_symsi_3.pg n 32 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_symsi_4.pg TOPKIS counter_symsi_4.pg n 42 RUNS 1 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 1
+GAME new/box54/out/hf/counter_symsi_5.pg TOPKIS counter_symsi_5.pg n 52 RUNS 3 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 1
+GAME new/box54/out/hf/recursiveladder_2.pg TOPKIS recursiveladder_2.pg n 10 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/recursiveladder_3.pg TOPKIS recursiveladder_3.pg n 15 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/recursiveladder_4.pg TOPKIS recursiveladder_4.pg n 20 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_symsi_6.pg TOPKIS counter_symsi_6.pg n 62 RUNS 4 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 1
+GAME new/box54/out/hf/recursiveladder_5.pg TOPKIS recursiveladder_5.pg n 25 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/recursiveladder_6.pg TOPKIS recursiveladder_6.pg n 30 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/counter_symsi_8.pg TOPKIS counter_symsi_8.pg n 82 RUNS 6 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 1
+GAME new/box54/out/hf/tc_2.pg TOPKIS tc_2.pg n 22 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/tc_3.pg TOPKIS tc_3.pg n 42 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/tc_4.pg TOPKIS tc_4.pg n 68 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/tc_5.pg TOPKIS tc_5.pg n 100 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/hf/tc_6.pg TOPKIS tc_6.pg n 138 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/ctl/pivot_demo.pg TOPKIS pivot_demo.pg n 11 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/switchbestexp_8.pg TOPKIS switchbestexp_8.pg n 210 RUNS 2 PROFREV 1 PVREV 2 FLIPT 3 ROOTX 0 EVX2 0 TXR 7 FIRST 25 33 F 20 77
+GAME new/box54/out/d_pivot_demo.pg TOPKIS d_pivot_demo.pg n 11 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/seg/instances/runquad_K3_m4_n54.pg TOPKIS runquad_K3_m4_n54.pg n 54 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/seg/instances/runquad_K8_m30_n192.pg TOPKIS runquad_K8_m30_n192.pg n 192 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME red/seg/instances/s3quad_K3_m4.pg TOPKIS s3quad_K3_m4.pg n 137 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/d_runquad_K3.pg TOPKIS d_runquad_K3.pg n 54 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box52/out/topfix_n3.pg TOPKIS topfix_n3.pg n 63 RUNS 2 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 8
+GAME new/box52/out/topfix_n4.pg TOPKIS topfix_n4.pg n 84 RUNS 2 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 12
+GAME new/box54/out/hf/tc_8.pg TOPKIS tc_8.pg n 232 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box52/out/topfix_n6.pg TOPKIS topfix_n6.pg n 126 RUNS 2 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 20
+GAME new/box54/out/d_hntop_n3.pg TOPKIS d_hntop_n3.pg n 63 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box52/out/topfix_n8.pg TOPKIS topfix_n8.pg n 168 RUNS 2 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 28
+GAME new/box51/out/dlc_d2.pg TOPKIS dlc_d2.pg n 27 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box51/out/dlc_d3.pg TOPKIS dlc_d3.pg n 109 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box52/out/topfix_n8_cmp.pg TOPKIS topfix_n8_cmp.pg n 171 RUNS 2 PROFREV 0 PVREV 1 FLIPT 2 ROOTX 0 EVX2 0 TXR 28
+GAME new/box51/out/dlc_d4.pg TOPKIS dlc_d4.pg n 455 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box54/out/d_dlc_d3.pg TOPKIS d_dlc_d3.pg n 109 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME si/runlin/instances/runfam_K10.pg TOPKIS runfam_K10.pg n 49 RUNS 1 PROFREV 1 PVREV 3 FLIPT 7 ROOTX 0 EVX2 0 TXR 0 FIRST 4 28 F 4 97
+GAME new/box59/out/rnd/r100_n40.pg TOPKIS r100_n40.pg n 40 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r101_n50.pg TOPKIS r101_n50.pg n 50 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME new/box59/out/rnd/r102_n60.pg TOPKIS r102_n60.pg n 60 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME new/box59/out/rnd/r103_n70.pg TOPKIS r103_n70.pg n 70 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box52/out/topfix_n10.pg TOPKIS topfix_n10.pg n 210 RUNS 2 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 36
+GAME si/runlin/instances/runfam_K40.pg TOPKIS runfam_K40.pg n 79 RUNS 1 PROFREV 1 PVREV 3 FLIPT 7 ROOTX 0 EVX2 0 TXR 0 FIRST 4 34 F 4 163
+GAME new/box59/out/rnd/r104_n80.pg TOPKIS r104_n80.pg n 80 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r105_n20.pg TOPKIS r105_n20.pg n 20 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r108_n50.pg TOPKIS r108_n50.pg n 50 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r106_n30.pg TOPKIS r106_n30.pg n 30 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r107_n40.pg TOPKIS r107_n40.pg n 40 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r10_n50.pg TOPKIS r10_n50.pg n 50 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r109_n60.pg TOPKIS r109_n60.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r110_n70.pg TOPKIS r110_n70.pg n 70 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME new/box59/out/rnd/r112_n20.pg TOPKIS r112_n20.pg n 20 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r111_n80.pg TOPKIS r111_n80.pg n 80 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r113_n30.pg TOPKIS r113_n30.pg n 30 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r114_n40.pg TOPKIS r114_n40.pg n 40 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r115_n50.pg TOPKIS r115_n50.pg n 50 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r116_n60.pg TOPKIS r116_n60.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r117_n70.pg TOPKIS r117_n70.pg n 70 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r119_n20.pg TOPKIS r119_n20.pg n 20 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r11_n60.pg TOPKIS r11_n60.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r118_n80.pg TOPKIS r118_n80.pg n 80 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r122_n50.pg TOPKIS r122_n50.pg n 50 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r121_n40.pg TOPKIS r121_n40.pg n 40 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r120_n30.pg TOPKIS r120_n30.pg n 30 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r123_n60.pg TOPKIS r123_n60.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r124_n70.pg TOPKIS r124_n70.pg n 70 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r125_n80.pg TOPKIS r125_n80.pg n 80 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r126_n20.pg TOPKIS r126_n20.pg n 20 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r127_n30.pg TOPKIS r127_n30.pg n 30 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r128_n40.pg TOPKIS r128_n40.pg n 40 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r12_n70.pg TOPKIS r12_n70.pg n 70 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r129_n50.pg TOPKIS r129_n50.pg n 50 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r130_n60.pg TOPKIS r130_n60.pg n 60 RUNS 1 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 1
+GAME new/box59/out/rnd/r131_n70.pg TOPKIS r131_n70.pg n 70 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r132_n80.pg TOPKIS r132_n80.pg n 80 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r134_n30.pg TOPKIS r134_n30.pg n 30 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r133_n20.pg TOPKIS r133_n20.pg n 20 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r135_n40.pg TOPKIS r135_n40.pg n 40 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r137_n60.pg TOPKIS r137_n60.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r138_n70.pg TOPKIS r138_n70.pg n 70 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r136_n50.pg TOPKIS r136_n50.pg n 50 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r140_n20.pg TOPKIS r140_n20.pg n 20 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r13_n80.pg TOPKIS r13_n80.pg n 80 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r139_n80.pg TOPKIS r139_n80.pg n 80 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r143_n50.pg TOPKIS r143_n50.pg n 50 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r141_n30.pg TOPKIS r141_n30.pg n 30 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME new/box59/out/rnd/r142_n40.pg TOPKIS r142_n40.pg n 40 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r144_n60.pg TOPKIS r144_n60.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r145_n70.pg TOPKIS r145_n70.pg n 70 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r146_n80.pg TOPKIS r146_n80.pg n 80 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r147_n20.pg TOPKIS r147_n20.pg n 20 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r148_n30.pg TOPKIS r148_n30.pg n 30 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r149_n40.pg TOPKIS r149_n40.pg n 40 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r14_n20.pg TOPKIS r14_n20.pg n 20 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r151_n60d2.pg TOPKIS r151_n60d2.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r150_n50.pg TOPKIS r150_n50.pg n 50 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r152_n60d2.pg TOPKIS r152_n60d2.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r154_n60d2.pg TOPKIS r154_n60d2.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r153_n60d2.pg TOPKIS r153_n60d2.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r155_n60d2.pg TOPKIS r155_n60d2.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r156_n60d2.pg TOPKIS r156_n60d2.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r157_n60d2.pg TOPKIS r157_n60d2.pg n 60 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME new/box59/out/rnd/r158_n60d2.pg TOPKIS r158_n60d2.pg n 60 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME new/box59/out/rnd/r159_n60d2.pg TOPKIS r159_n60d2.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r15_n30.pg TOPKIS r15_n30.pg n 30 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r160_n60d2.pg TOPKIS r160_n60d2.pg n 60 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r162_n60d2.pg TOPKIS r162_n60d2.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r161_n60d2.pg TOPKIS r161_n60d2.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r164_n60d2.pg TOPKIS r164_n60d2.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r163_n60d2.pg TOPKIS r163_n60d2.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r165_n60d2.pg TOPKIS r165_n60d2.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r166_n60d2.pg TOPKIS r166_n60d2.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r168_n60d2.pg TOPKIS r168_n60d2.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r167_n60d2.pg TOPKIS r167_n60d2.pg n 60 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r16_n40.pg TOPKIS r16_n40.pg n 40 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r169_n60d2.pg TOPKIS r169_n60d2.pg n 60 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r170_n60d2.pg TOPKIS r170_n60d2.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r172_n60d2.pg TOPKIS r172_n60d2.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r171_n60d2.pg TOPKIS r171_n60d2.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r174_n60d2.pg TOPKIS r174_n60d2.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r173_n60d2.pg TOPKIS r173_n60d2.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r175_n60d2.pg TOPKIS r175_n60d2.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r177_n60d2.pg TOPKIS r177_n60d2.pg n 60 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME new/box59/out/rnd/r176_n60d2.pg TOPKIS r176_n60d2.pg n 60 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r179_n60d2.pg TOPKIS r179_n60d2.pg n 60 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME new/box59/out/rnd/r178_n60d2.pg TOPKIS r178_n60d2.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r17_n50.pg TOPKIS r17_n50.pg n 50 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r180_n60d2.pg TOPKIS r180_n60d2.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r182_n60d2.pg TOPKIS r182_n60d2.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r181_n60d2.pg TOPKIS r181_n60d2.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r183_n60d2.pg TOPKIS r183_n60d2.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r184_n60d2.pg TOPKIS r184_n60d2.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r187_n60d2.pg TOPKIS r187_n60d2.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r185_n60d2.pg TOPKIS r185_n60d2.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r186_n60d2.pg TOPKIS r186_n60d2.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r188_n60d2.pg TOPKIS r188_n60d2.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r189_n60d2.pg TOPKIS r189_n60d2.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r18_n60.pg TOPKIS r18_n60.pg n 60 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r190_n60d2.pg TOPKIS r190_n60d2.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r191_n60d2.pg TOPKIS r191_n60d2.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r192_n60d2.pg TOPKIS r192_n60d2.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r193_n60d2.pg TOPKIS r193_n60d2.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r194_n60d2.pg TOPKIS r194_n60d2.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r195_n60d2.pg TOPKIS r195_n60d2.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r196_n60d2.pg TOPKIS r196_n60d2.pg n 60 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME new/box59/out/rnd/r197_n60d2.pg TOPKIS r197_n60d2.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r198_n60d2.pg TOPKIS r198_n60d2.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r199_n60d2.pg TOPKIS r199_n60d2.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r19_n70.pg TOPKIS r19_n70.pg n 70 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r1_n30.pg TOPKIS r1_n30.pg n 30 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r200_n60d2.pg TOPKIS r200_n60d2.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r20_n80.pg TOPKIS r20_n80.pg n 80 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r21_n20.pg TOPKIS r21_n20.pg n 20 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r22_n30.pg TOPKIS r22_n30.pg n 30 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r24_n50.pg TOPKIS r24_n50.pg n 50 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r23_n40.pg TOPKIS r23_n40.pg n 40 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r25_n60.pg TOPKIS r25_n60.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r26_n70.pg TOPKIS r26_n70.pg n 70 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r27_n80.pg TOPKIS r27_n80.pg n 80 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r28_n20.pg TOPKIS r28_n20.pg n 20 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r29_n30.pg TOPKIS r29_n30.pg n 30 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r2_n40.pg TOPKIS r2_n40.pg n 40 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r30_n40.pg TOPKIS r30_n40.pg n 40 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r31_n50.pg TOPKIS r31_n50.pg n 50 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r32_n60.pg TOPKIS r32_n60.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r34_n80.pg TOPKIS r34_n80.pg n 80 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r33_n70.pg TOPKIS r33_n70.pg n 70 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r35_n20.pg TOPKIS r35_n20.pg n 20 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r36_n30.pg TOPKIS r36_n30.pg n 30 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r37_n40.pg TOPKIS r37_n40.pg n 40 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r38_n50.pg TOPKIS r38_n50.pg n 50 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME new/box59/out/rnd/r39_n60.pg TOPKIS r39_n60.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r3_n50.pg TOPKIS r3_n50.pg n 50 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME new/box59/out/rnd/r40_n70.pg TOPKIS r40_n70.pg n 70 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r42_n20.pg TOPKIS r42_n20.pg n 20 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r43_n30.pg TOPKIS r43_n30.pg n 30 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r41_n80.pg TOPKIS r41_n80.pg n 80 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r44_n40.pg TOPKIS r44_n40.pg n 40 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r45_n50.pg TOPKIS r45_n50.pg n 50 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r46_n60.pg TOPKIS r46_n60.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r49_n20.pg TOPKIS r49_n20.pg n 20 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r47_n70.pg TOPKIS r47_n70.pg n 70 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r48_n80.pg TOPKIS r48_n80.pg n 80 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r50_n30.pg TOPKIS r50_n30.pg n 30 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r4_n60.pg TOPKIS r4_n60.pg n 60 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 1
+GAME new/box59/out/rnd/r51_n40.pg TOPKIS r51_n40.pg n 40 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r52_n50.pg TOPKIS r52_n50.pg n 50 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r53_n60.pg TOPKIS r53_n60.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r54_n70.pg TOPKIS r54_n70.pg n 70 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r56_n20.pg TOPKIS r56_n20.pg n 20 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r55_n80.pg TOPKIS r55_n80.pg n 80 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r57_n30.pg TOPKIS r57_n30.pg n 30 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r58_n40.pg TOPKIS r58_n40.pg n 40 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r59_n50.pg TOPKIS r59_n50.pg n 50 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r60_n60.pg TOPKIS r60_n60.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r5_n70.pg TOPKIS r5_n70.pg n 70 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r61_n70.pg TOPKIS r61_n70.pg n 70 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r63_n20.pg TOPKIS r63_n20.pg n 20 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r62_n80.pg TOPKIS r62_n80.pg n 80 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r64_n30.pg TOPKIS r64_n30.pg n 30 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r65_n40.pg TOPKIS r65_n40.pg n 40 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r66_n50.pg TOPKIS r66_n50.pg n 50 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r67_n60.pg TOPKIS r67_n60.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r68_n70.pg TOPKIS r68_n70.pg n 70 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r6_n80.pg TOPKIS r6_n80.pg n 80 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r69_n80.pg TOPKIS r69_n80.pg n 80 RUNS 1 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 1
+GAME new/box59/out/rnd/r70_n20.pg TOPKIS r70_n20.pg n 20 RUNS 1 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 1
+GAME new/box59/out/rnd/r72_n40.pg TOPKIS r72_n40.pg n 40 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r71_n30.pg TOPKIS r71_n30.pg n 30 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r73_n50.pg TOPKIS r73_n50.pg n 50 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r75_n70.pg TOPKIS r75_n70.pg n 70 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r74_n60.pg TOPKIS r74_n60.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r77_n20.pg TOPKIS r77_n20.pg n 20 RUNS 1 PROFREV 0 PVREV 0 FLIPT 1 ROOTX 0 EVX2 0 TXR 1
+GAME new/box59/out/rnd/r76_n80.pg TOPKIS r76_n80.pg n 80 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r79_n40.pg TOPKIS r79_n40.pg n 40 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r78_n30.pg TOPKIS r78_n30.pg n 30 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r7_n20.pg TOPKIS r7_n20.pg n 20 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r80_n50.pg TOPKIS r80_n50.pg n 50 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r82_n70.pg TOPKIS r82_n70.pg n 70 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r81_n60.pg TOPKIS r81_n60.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r84_n20.pg TOPKIS r84_n20.pg n 20 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r83_n80.pg TOPKIS r83_n80.pg n 80 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r85_n30.pg TOPKIS r85_n30.pg n 30 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r87_n50.pg TOPKIS r87_n50.pg n 50 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r86_n40.pg TOPKIS r86_n40.pg n 40 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r88_n60.pg TOPKIS r88_n60.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r89_n70.pg TOPKIS r89_n70.pg n 70 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r8_n30.pg TOPKIS r8_n30.pg n 30 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r91_n20.pg TOPKIS r91_n20.pg n 20 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r90_n80.pg TOPKIS r90_n80.pg n 80 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r92_n30.pg TOPKIS r92_n30.pg n 30 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r93_n40.pg TOPKIS r93_n40.pg n 40 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r94_n50.pg TOPKIS r94_n50.pg n 50 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r95_n60.pg TOPKIS r95_n60.pg n 60 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r96_n70.pg TOPKIS r96_n70.pg n 70 RUNS 1 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r98_n20.pg TOPKIS r98_n20.pg n 20 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r97_n80.pg TOPKIS r97_n80.pg n 80 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r99_n30.pg TOPKIS r99_n30.pg n 30 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/rnd/r9_n40.pg TOPKIS r9_n40.pg n 40 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0
+GAME new/box59/out/fcobsP_3.pg TOPKIS fcobsP_3.pg n 90 RUNS 2 PROFREV 2 PVREV 24 FLIPT 34 ROOTX 0 EVX2 0 TXR 15 FIRST 1 3 F 1 9
+GAME new/box59/out/fcobsP_4.pg TOPKIS fcobsP_4.pg n 115 RUNS 2 PROFREV 2 PVREV 29 FLIPT 39 ROOTX 0 EVX2 0 TXR 18 FIRST 1 3 F 1 9
+GAME new/box59/out/fcobs_6.pg TOPKIS fcobs_6.pg n 163 RUNS 2 PROFREV 2 PVREV 41 FLIPT 51 ROOTX 0 EVX2 0 TXR 25 FIRST 1 3 F 1 9
+GAME red/seg/instances/s3quad_K8_m30.pg TOPKIS s3quad_K8_m30.pg n 479 RUNS 0 PROFREV 0 PVREV 0 FLIPT 0 ROOTX 0 EVX2 0 TXR 0

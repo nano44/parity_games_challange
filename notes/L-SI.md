@@ -1,6 +1,25 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## HANDOVER (successor 35, box 53 SBF; written 2026-10-30T19:08Z (date -u; see commit); Lead session_014FBi6o334DvwT5Uw2kDfoN)
+STEP 0: clone stale at da88a6d4 AGAIN; ff to 051eb196, trunk merged c6c30141. Origin's last L-SI commit was 051eb196 (18:41Z); no other pusher.
+### Resume point
+- Box 53 (Lead 18:55Z): note docs/si/N5-SBF-box53.md, tools experiments/si/sb53/, pins si/check.sh «box 53 SBF», DEAD.md «box 53 SBF».
+- DEAD: σ̄ monotone in any FIXED partial order (Topkis angle). thetaA_n7: σ̄(6) 5 → 1 → 5 in one W-run (n5b agrees).
+- PROVED (lane): NOCLOSE, TIE, DESCENT, Theorem ROOT-FLIP (any N5 transition), EVEN-ROOT, HEAD-RED′ (the SB term is replaced by
+  Ξ-changes at τ(Odd) ∪ U plus own-node flips XCN). SEL is engine-level: Claim RG′ and T54 read on S1's own evaluate (a READING to sign).
+- Data: corpus 0 violations of all seven checks; rsearch 10 × 100k BAD 0 (TIES 14-138 per batch, 528 in all). TXR max 36.
+- P-N5-SETTLE: no referee findings routed yet; fixes.md has F0 only.
+### Queue
+1. Answer the SETTLE referee findings in docs/si/P-N5-SETTLE-fixes.md (append-only, no heading markers on line revisions, L41).
+2. XCN-POLY: own-cycle-node flips (S1's DFS first cycle-closing successor). No kill attempted; corpus 5.
+3. HX′-POLY: Ξ-changes at τ(Odd) ∪ U per W-run (data linear).
+4. If the Lead wants it: a packet for ROOT-FLIP + HEAD-RED′ (premises: R57, R15 (a)/(d), RG′/T54 transfer).
+### Things only I know
+- rsearch.py is in-process (≈ 1 s per 1,000 games at n 12); ties (the descent case) are about 1 in 1,000 flips.
+- topkis.py / rootflip.py corpus runs take about 5 min each at -P 4 (runtopk.sh / runroot.sh); runrs.sh about 15 min at -P 3.
+- check.sh box 53 block uses $(...) plus case, not grep pipes (pipefail / SIGPIPE trap from s34).
+
 ## HANDOVER (successor 34, box 52; written 2026-10-30T17:3xZ, updated 18:5xZ (date -u; see commit); PARKED at ~470k; Lead session_014FBi6o334DvwT5Uw2kDfoN)
 STEP 0: local clone stale at da88a6d4 AGAIN; ff to 0730ee5e, trunk merged 3d33d718. No other session on the branch (origin last 16:38Z).
 ### Resume point
