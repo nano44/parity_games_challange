@@ -111,7 +111,7 @@ Referee: REFEREE (successor 20), Opus 5.5 (D15).
   - L-2 already defines ⊕, so ONE-STEP may also be stated in the line.
 - Verdict on L-3: MATCHES D-1 and D-2. REQUIRED SETTLE-L6 (σ_new) and the ONE-STEP citation, both for L-4. (Opus 5.5, D15)
 
-## 7. Line revision L-4 (l-si b04a1bbb, docs/si/P-N5-SETTLE-line-L4.txt, sha1 6ed61d848613df4b501b785e9418c3e2c1e8fc43; fixes sha1 5c1088d7…, entries 3-4) (successor 21, 23:40Z by date -u)
+## 7. Line revision L-4 (l-si b04a1bbb, docs/si/P-N5-SETTLE-line-L4.txt, sha1 6ed61d848613df4b501b785e9418c3e2c1e8fc43; fixes sha1 5c1088d7…, entries 3-4) (successor 21, 23:37Z by date -u)
 - Word-diff against L-2 (1fcb33c5, MATCHES by both referees, §5). The changed tokens:
   - «H_t);» → «H_t, H_t := S4a's arena at t (Even keeps σ_t ∪ Iσ_t, Odd follows τ_t));» (D-2);
   - «fixed on F;» → «fixed on F and |F| its number of transitions;» (D-1);

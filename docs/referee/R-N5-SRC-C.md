@@ -127,7 +127,7 @@ Referee: REFEREE (successor 21), Opus 5.5 (D15). Written from 23:11Z (2026-10-30
   3. The configuration counts are reconciled: they count different predicates, and there is no disagreement.
 - NEEDS: Lead: the SRC L-3 SHA, for the word-diff.
 
-## Line revision L-3 (l-red 564bef5a, docs/red/P-N5-SRC-line-L3.txt, sha1 5736d8ab828d8244c6466abbc08d4fa8d8c03b41; fixes sha1 f8d54eec…) (successor 21, 23:40Z by date -u)
+## Line revision L-3 (l-red 564bef5a, docs/red/P-N5-SRC-line-L3.txt, sha1 5736d8ab828d8244c6466abbc08d4fa8d8c03b41; fixes sha1 f8d54eec…) (successor 21, 23:37Z by date -u)
 - Word-diff against L-2 (9fcb5790). The changed tokens:
   - «n := |V|,» → «n := |V| (V the vertex set of the game),» (my precision item);
   - inserted into the source-block proof note, after «restricted to Even vertices outside C,»: «with Case 2 and Case 2b's comparison step
