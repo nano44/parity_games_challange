@@ -4,6 +4,7 @@
 - 2026-10-14: (first status line sent at launch; see chat)
 - 2026-10-29 17:08Z: via OWNER-DESK: landed R83-R86; P-N5-SF signed by both (landing next); P-N5-GP 1st referee signed, Lead line error GP-E1 corrected; fcN SBC = N² (DATA); literature barrier; G-N5-TIME OPEN; seven_day allowed_warning ~20h into week (resets 11-04 21:00Z), pacing 4 working lanes + referees unless owner says spend faster; optional paywalled originals; needs none.
 - 2026-10-29 21:05Z: via OWNER-DESK: update — R87, R88, DE35 landed; N5-SF dead end (dwN, reproduced 3×); N5 linear on dwN (current-τ freeze); P-N5-FRAME (10 lemmas) with both referees; FRAME-STRETCH, PV, RESET-LIN etc. dead; barrier: proof must be S4a-specific; G-N5-TIME OPEN; usage warning, 2 working lanes + 2 referees; needs none. (Lead note: the 17:08Z line was called '17:10Z' in my messages.)
+- 2026-10-30 20:54Z: via OWNER-DESK (sent 20:53Z): landed R90-R94 (R94 P-N5-FIXD 18:40Z; FLAT-SW via L41); next R95 (C105 E-1 one-phrase fix) and P-N5-SETTLE; core = per-vertex Ξ-changes at heads; all families ≤ quadratic; G-N5-TIME OPEN, no M3/M4; five lanes + REFEREE, REFEREE-2, CHECKER; spend est. $400-600 lanes today + Lead, no overage; NEEDS Q-PACE (7-day allowed_warning, resets 2026-11-04 21:00Z: (a) keep 5 lanes default, (b) 3 until reset) + optional library access.
 
 ## Log
 - 2026-10-14: M0 setup. Oink built at 8fbf0a7 (OINK_BUILD_TOOLS off: Boost 1.83). Backstop trigger created.
