@@ -24,7 +24,7 @@ out-window, re-entry as in docs/si/N5-SPAN-box38.md; τ*-piece, anchor, F / FRES
 ## Resume point (successor 31, box 40; session_01V5yGRY6GXgHUrdpJa5WBaa; GO Lead 22:47Z)
 - STEP 0 0e189416. Box 40 (2) DONE: docs/si/N5-CUT-box40.md, tool experiments/si/odd/cuts.py (default frame; FR=1 old-τ frame),
   si/check.sh «box 40». PROVED (lane) W-RETURN-G, CUT-CHARGE; READING G_vc ≤ B_vc (no independent lever); CONJECTURE FC-LIN.
-- §6 94bb55db (FRESH-SPLIT). Box 41 W-VPOLY-S: docs/si/N5-WVP-box41.md (Lemma WV-R; hntop R* = 0). Box 42 N5-LATE: docs/si/N5-LATE-box42.md (LATE-SPLIT; FIRST ≤ m_E; CONJECTURE REP-LIN). Next: REP / BA or handover.
+- §6 94bb55db (FRESH-SPLIT). Box 41 W-VPOLY-S: docs/si/N5-WVP-box41.md (Lemma WV-R; hntop R* = 0). Box 42 N5-LATE: docs/si/N5-LATE-box42.md (LATE-SPLIT; FIRST ≤ m_E; CONJECTURE REP-LIN). Box 43 packet P-N5-CUT FROZEN 2678f6c6 (sha1 d6519d3d). Box 44 N5-REPCH (depth 1; REP-PLAIN). Next: per Lead.
 
 ## HANDOVER (successor 30, boxes 36-39; written 2026-10-29T22:1xZ (date -u; see commit); session_01V5yGRXdA7p12A2AFsUdae8)
 Reason: Lead 22:03Z: «Write your handover at ~400k or when BOX 39 ends, whichever comes first.» Box 39 ended; context ~275k.
