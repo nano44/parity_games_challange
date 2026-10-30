@@ -806,3 +806,8 @@ echo "si (box 40: W-RETURN-G and cut-attached re-entries): PASS"
 o=$(python3 -I odd/laterep.py ../red/so/instances/so_th_n32.pg); grep -q "'late': 6, .*'first': 4, 'repeat': 2, 'RV': 0, 'cyc': 0, 'MAXE': 3" <<<"$o"
 o=$(python3 -I odd/laterep.py ../red/so/instances/rise_thin51_n40.pg); grep -q "'late': 23, .*'first': 23, 'repeat': 0, 'RV': 0" <<<"$o"
 echo "si (box 42: late adoptions FIRST / REPEAT): PASS"
+# box 43 (docs/si/P-N5-CUT-box43.md, FROZEN packet): quotes verbatim (shifted control must fail); hntop_n3 W-runs have R* = 0 (L-NEW frozen.py --wrun).
+python3 -I rund/quotecheck.py ../../docs/si/P-N5-CUT-box43.md | grep -q "quotes=13 bad=0"
+python3 -I rund/quotecheck.py ../../docs/si/P-N5-CUT-box43.md --mut | grep -q "QUOTES FAIL"
+o=$(cd ../new && python3 -I box64/frozen.py ../si/odd/inst/hn/hntop_n3.pg --start --wrun | tail -1); grep -q "its-phases 13 .*'lw': 12.*'R': 0} FWR-viol 0" <<<"$o"
+echo "si (box 43: P-N5-CUT quotes, hntop_n3 R* 0): PASS"

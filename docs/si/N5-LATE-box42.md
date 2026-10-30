@@ -34,6 +34,10 @@ G-N5-TIME OPEN. Labels: PROVED (lane) / CONJECTURE / DATA / DEAD / READING.
   why a W-wave started by one late adoption does not re-block edges already adopted in the same W-run, or does so only O(1) times per
   edge.
 
+- Both charges at once (PROVED, lane: §1 (ii) with R89's R*-RISE, which charges each late adoption of (y, z) to a change of Ξ(z) in
+  its own interval): #REPEAT_F(y, z) ≤ min(WCH_F(z) + CYC_F(y, z), RISE_F(z)). A REP-LIN proof attempt along wave disjointness found no
+  contraction (READING): a repeat needs a W-rise and a Ξ-rise of z, and neither count is bounded independently of the repeats.
+
 ## 3. DATA (corpus, 719 games)
 - 1,141 late adoptions (the same total as L-NEW's late_all.txt): FIRST 1,100, REPEAT 41. REPEAT without a W-rise of z since y's leave
   of z (off-cycle): 0. CYC: 0. Every late adoption has a Ξ-rise of z (1,141, as in late_all.txt); W(z) rose since blocking in 254.
@@ -55,3 +59,9 @@ G-N5-TIME OPEN. Labels: PROVED (lane) / CONJECTURE / DATA / DEAD / READING.
   3. DATA: 1,100 of 1,141 late adoptions are FIRST; REPEAT ≤ 6 per game; LATE-SPLIT (ii) 0 failures.
   4. CONJECTURE REP-LIN.
 - NEEDS: none from the owner.
+
+## Correction (box 43, while freezing P-N5-CUT)
+- §1 (ii) as written assumed a blocked state t after the leave k. The late-adoption definition (late.py's `last` set, R89 GP*-RUN) needs only
+  SOME earlier blocked state of the W-run, possibly before the previous adoption. Correct form (P-N5-CUT §6 (ii)-(iii)): a REPEAT has a change
+  of W(z) on [k + 1, u₂ + 1], or is W-silent, or y is its own W-cycle node; the strict rise before t holds when (y, z) is re-blocked after k.
+  So #REPEAT_F(y, z) ≤ WCH_F(z) + SIL + CYC. The data (RV 0: no W-silent repeat) and every other statement of this note are unchanged.

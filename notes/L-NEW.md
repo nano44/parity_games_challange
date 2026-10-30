@@ -1,6 +1,12 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Box 68 log (successor 35; Lead 00:43Z: FB-LIN from GAP-MON, no new import)
+- docs/new/N5-ZFLAT-box68.md. PROVED (lane): SW-IN (fallback switches only gap vertices, strict Xi-rise; 0/788), Z-flat characterisation
+  (Xi climbs inside a gap that stays open; 56/788), REOPEN-W + REOPEN-CHARGE (an S4a re-opening needs a strict W-rise of v; 8532/8532).
+  nep22f_n64: |Z| 59/64 saturated, 1 Xi cycle node: Z-flat count = Xi-route, not priorities/SCCs. READING: FB-LIN <= WCH per vertex per
+  phase (L-SI's WCH<->R* circle, unifies with (c')) + Xi-climbs in a saturated gap.
+
 ## Box 67 log (successor 35; Lead 00:23Z: FB-LIN / rho-POLY by a cross-area import)
 - docs/new/N5-FBENERGY-box67.md. Lyapunov import: 6 energies (incl. Lead's E1 = #Xi-suboptimal sigma-edges) all DEAD as energies (none
   drops at every in-phase fallback; best E3 = |{Xi != W}| fails 56/731; smallest kill lend9_n8). PROVED (lane) GAP-MON: at an Even fallback
