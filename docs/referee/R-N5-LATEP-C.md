@@ -44,8 +44,39 @@ REQUIRED before landing: L-1 (t < u in the no-previous-adoption case) and LATEP-
 Precisions: L-3 / LATEP-N3 (CIRCLE′ label); L-4 / LATEP-L2 ("some t"); LATEP-L3 (landed premises named). I will word-diff the corrected line
 against 4a68934d and re-run my strict symbol test when the Lead sends the SHA.
 
+## 4. Addendum (Lead 07:00Z): fixes F0-F15 + F-SYM (l-si 17a3ecec, sha1 a690dc2504ed8c11c554d83bc0dc45a3051973de) and line F1 (sha1 a85759a26b38b8bb6e3958bb19745d2aa9fd397c); written 07:01Z by date -u
+- Hashes re-measured: both match. The frozen packet at 17a3ecec still has sha1 b15223e5.
+- (1) My own word diff (`--word-diff=porcelain`) of the frozen line 4a68934d against F1 shows exactly F0's five changes:
+  - «F = [a, b]»;
+  - the premises «with RESULTS R15, R17 (a), R47 (a), R88 (…), R89 (…) and R90 (…)»;
+  - «(a ≤ t < u if there is none)»;
+  - «t the earliest blocked state»;
+  - GXC_F inlined;
+  - «(Lemma LATE-SPLIT′, Corollary CIRCLE′)».
+  Nothing else changes.
+  - GXC is inlined as I gave it. It stays inside the scope «over the transitions s → s + 1 of F (s, s + 1 in F)», so «s, s + 1 in F» is kept;
+    the τ-clause of box 70 is automatic on F. ✓
+- Strict symbol test of the whole F1 line (mine): a and b are now bound; t is bound in both cases of LATE′ (t < u always, which closes L-1);
+  X′_F's t is fixed (the earliest; [k + 1, t] is non-empty by F10); GXC_F is self-contained; every other symbol is as in my §9 of
+  R-N5-LATEP. No free symbol, and no unlanded source. The F-SYM table agrees.
+- (2) F0-F15 are corrections or clarifications only; nothing widens. In detail:
+  - F1-F4 are the line changes;
+  - F5 and F6 are DATA;
+  - F7 and F14 correct the §8 READING (not signed);
+  - F8-F13 and F15 are clarifications.
+  - F3 omits SUCC-MON because no proof of §3-§7 uses it. I checked this: W-SUCC (R90) carries the W chains, and SUCC-MON is Ξ-based.
+  - F4 (earliest t) changes no signed statement (CIRCLE′ holds for every fixed choice).
+- (3) F5 / F6 against my D1 / D2:
+  - The fixed txcd.py gives so_th_n32 TXC 73 / gates 16 and tiedmut_so_th_n32_11 TXC 77. These equal my engine (73; 77) and REFEREE-2's.
+  - The re-derived «box 52» block at 17a3ecec, run alone in a clean worktree, PASSES (so_th TXC 73 / T4 0 / GATE 16 / CNW 0; wdepth unchanged;
+    b5_o11 CNW 1). Exit 0.
+  - F6's corpus figures (T4 5, CNW 71) are REFEREE-2's S3-on-719 set. My 36 / 110 come from a different set (n ≤ 120, given starts plus S3),
+    as F6 says. D1 and D2 are closed.
+- Verdict (Opus 5.5, D15): F1 MATCHES §3-§7 with F0-F15, has no free symbol, and claims nothing more. P-N5-LATEP is landable as far as REFEREE
+  is concerned, with F1 as the line.
+
 ## DONE / FINDINGS / NEEDS
 - DONE: this §C.
 - FINDINGS: verdicts identical, gap map EMPTY, every PROVED item SIGNED by both; D1 = N-7 and D2 = N-8 confirmed by two engines (so_th TXC 73);
   REFEREE-2's L-1 (line drops t < u) is a REQUIRED fix that I missed, and I confirm it; GXC source REQUIRED (my L1 = R2's L-2).
-- NEEDS: Lead: the corrected line and fixes SHA; ask L-SI to carry L-1, LATEP-L1, L-3, L-4, LATEP-L3 and the notes (N-4, N-6, LATEP-N4).
+- NEEDS: none (§4: F1 MATCHES, no free symbol; F0-F15 clean; D1/D2 closed).
