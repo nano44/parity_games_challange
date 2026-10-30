@@ -127,7 +127,7 @@ first).
   (b) Lemma W-MON (§2.2, l. 71-74): "If t → t + 1 is an S4a step, then W^{τ_t}_{t+1} ⊵ W^{τ_t}_t pointwise, where W^τ_s := val(σ_s, τ) on
       G_τ. In particular W_{t+1} ⊵ W_t when τ_{t+1} = τ_t." (σ_{t+1} optimal in H_t, σ_t ⊆ H_t, plays of H_t and G_{τ_t} coincide, [F1].)
       Cells: REFEREE «SIGNED» (l. 19); REFEREE-2 «SIGNED (standing SPEC premise of R57: S4a's σ_new is the optimum of H_t; N-GAP-1)» (l. 25).
-  (c) Lemma FB-W (§2.3, l. 75-78; box 21 §2.5 Lemma W, fallback half, not landed): "If k → k + 1 is a τ-fixed Even fallback, then W_{k+1} ⊴
+  (c) Lemma FB-W (§2.3, l. 75-78; box 21 §2.5 Lemma W, fallback half, not landed; not RESULTS R21 (h)'s Lemma FB-W, a different statement (CHECKER C101 N-2)): "If k → k + 1 is a τ-fixed Even fallback, then W_{k+1} ⊴
       W_k pointwise." (S4c fires only if σ_new = σ_k, so σ_k is optimal in H_k; σ_{k+1} is a strategy of H_k; τ kept; [F1].) Cells: REFEREE
       «SIGNED» (l. 20); REFEREE-2 «SIGNED (same premise)» (l. 26).
   (d) Lemma OPT-OFF (§2.4, l. 79-93; statement unchanged, proof as repaired by H1, with H3 and H10): "Let H be a one-player game of Even (Odd
@@ -147,7 +147,9 @@ first).
         contains).»; §5 l. 82: «G-GAP-1: CLOSED via H1, and H10 correctly maps my GAP-R1 onto it.»; FINDINGS l. 101: «H1 CLOSES it (OPT-OFF
         now SIGNED outright)». REFEREE-2 §C C.2 l. 51: «The three cases are exhaustive and correct. The statement is unchanged. G-GAP-1
         CLOSED.» (bold in the source); C.6 l. 102: «H1 closes G-GAP-1: YES (C.2).»; l. 125: «Final: P-N5-GAP's only gap G-GAP-1 is CLOSED by
-        H1, and H14 is the line to land.»
+        H1, and H14 is the line to land.»; explicit signature, R2-N5-GAP-C.md l. 127 (1f5a9fbe, merged as 8a0f0ed6): «Lemma OPT-OFF (§2.4):
+        SIGNED (Opus 5.5, D15) — statement as in the packet, with the proof of fixes H1 (l-new 15044625 / c1aa183d), which closes G-GAP-1
+        (§C.2)» (CHECKER C101 N-4).
       So OPT-OFF was SIGNED WITH GAP G-GAP-1 in both reports (REFEREE: with its repair GAP-R1), H1 closes the gap in both §Cs, and OPT-OFF is
       SIGNED. Both referees' data: 0 violations of the statement (REFEREE 436,677 (v, c) pairs, 11,948 in (2b); REFEREE-2 65,486 one-player +
       647,486 run checks).
@@ -292,15 +294,13 @@ first).
   WITH MY REPAIR GAP-R1»; «One gap (G-GAP-1), in a proof, with a repair; the statement is true and nothing FALSE is claimed.» (l. 32). §C
   docs/referee/R-N5-GAP-C.md (0f3caaabda5efb42eb759d931e122b6042c7e04e, 2026-10-30T02:23:14Z, sha1 1ed56613d890a567403d5273dc1b38ab66fd0ce9
   there, 85 lines; §5 addendum d21723b5056b4deae38bfbb9c2a8f5e09e79ea59, 02:32:32Z, `git diff --numstat 0f3caaab d21723b5`: 20 added, 1
-  removed (the old NEEDS line, replaced), sha1 dcbd5d3dca69f063d900c7be6abbfd5ec2516e24, 104 lines, = referee head 40fd25a3 = trunk); H16
-  line: MATCHES (ab32b618). REFEREE-2 docs/referee-2/R2-N5-GAP.md (report 6e645c5acacabfb2f27078d94b083cd4e776bd65, 2026-10-30T01:48:04Z,
+  removed (the old NEEDS line, replaced), sha1 dcbd5d3dca69f063d900c7be6abbfd5ec2516e24 there, 104 lines; H16 line ab32b618, 02:52:56Z, 2 added, 0 removed, sha1 27419e3075c02ad39f056656d66ef79e343eec51, 106 lines, = trunk, unchanged at referee head a455907e); H16 line: MATCHES (ab32b618). REFEREE-2 docs/referee-2/R2-N5-GAP.md (report 6e645c5acacabfb2f27078d94b083cd4e776bd65, 2026-10-30T01:48:04Z,
   merged on claude/referee-2 as aee8971e0f304c119f2e8b12d77fc17d2bf6e6bc, 01:48:05Z, the SHA the Lead, REFEREE §C and REFEREE-2 §C cite; sha1
   84a495d7270a825f350718d1d7dcde5e5ef1a667, 163 lines, = trunk; successor 21): §1 well formed; twelve items SIGNED, OPT-OFF «SIGNED with gap
   G-GAP-1»; «One gap, G-GAP-1: a proof step of OPT-OFF, repaired here; the statement is not in doubt. Nothing FALSE. Notes N-GAP-1..N-GAP-7.»
   (l. 39). §C docs/referee-2/R2-N5-GAP-C.md (949be74e73c6eaa763e1c396de40ceebd6b06fa5, 02:22:46Z, merged as 1b29329d, sha1
   1554be21abdb3ca948f0774f91aa034d4e65b59c there, 95 lines; §C.6 899d98384342681a90aebed82e6e46c7bbe2c23e, 02:32:51Z, merged as ffb1eb3d,
-  02:32:52Z, `git diff --numstat 1b29329d ffb1eb3d`: 30 added, 0 removed; sha1 f6898956e35c4d84878448370349daea7b5290d0, 125 lines, = trunk;
-  unchanged at referee-2 head 0140da67); H16 line: MATCHES (2c77907c); OPT-OFF explicit signature l. 127 (8a0f0ed6). INDEPENDENCE: REFEREE l. 7: «Independence: no docs/referee-2/ file opened.»;
+  02:32:52Z, `git diff --numstat 1b29329d ffb1eb3d`: 30 added, 0 removed; sha1 f6898956e35c4d84878448370349daea7b5290d0 there, 125 lines; H16 line e9aaaa6e, 02:53:15Z, merged as 2c77907c, 1 added, 0 removed, sha1 f10479f7e04c632527cb1cf568146a5b5140860e, 126 lines; OPT-OFF explicit signature 1f5a9fbe, 03:03:41Z, merged as 8a0f0ed6, 1 added, 0 removed (l. 127), sha1 6ae1c91e8863b725d226ab9517c14f1373ebe3c7, 127 lines, = trunk = referee-2 head 8a0f0ed6); H16 line: MATCHES (2c77907c); OPT-OFF explicit signature l. 127 (8a0f0ed6). INDEPENDENCE: REFEREE l. 7: «Independence: no docs/referee-2/ file opened.»;
   REFEREE §C l. 3-4: its report «pushed BEFORE I opened any REFEREE-2 GAP file», REFEREE-2's «opened 02:21Z after the Lead's word». REFEREE-2
   l. 12-13: «`git ls-tree --name-only -r origin/claude/referee docs/referee/ | grep -ic gap`: 0 at 01:41Z and at push time (see commit). Names
   only; nothing opened; no `git log` on origin/claude/referee.»; REFEREE-2 §C l. 4: REFEREE's report «opened only after the word». No review

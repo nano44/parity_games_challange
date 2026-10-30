@@ -140,3 +140,17 @@ refuse non-edge starts).
   arena H_t)» → «the one-player arena H_t, H_t := S4a's arena at t (Even keeps σ_t ∪ Iσ_t, Odd follows τ_t))».
 - `git diff --no-index --word-diff=porcelain` of H14 vs H16 shows only this change. It matches the packet's §1 definition (H_t := σ_t ∪ Iσ_t,
   S4a's arena for Even at t, Odd following τ_t). The H16 line supersedes H14's.
+
+## H17 (REFEREE-2 21 R2-N5-GAP-C.md whole-line symbol test; CHECKER C101 N-1; Lead 2026-10-30 03:55Z), appended ~03:57Z (date -u)
+- k is unbound in H16's line: «Z_{k+1} ⊆ Z_k», «outside Z_k», «lies in Z_k», «Z_{k+1} = Z_k» and «|Z_{k+1} ∖ Z_k|» use it, and no clause
+  introduces it.
+- New line file docs/new/P-N5-GAP-box69-line-H17.txt = H16's line plus exactly one insertion in the setting parenthetical, right after «… the
+  gap set; »: «a transition is written k → k + 1 (states k, k + 1); n = |V|; ». That is REFEREE-2's minimal edit plus the optional «n = |V|»
+  the Lead asked for. It also binds the step behind «(read with τ_t)».
+- `git diff --no-index --word-diff=porcelain` of H16 vs H17 shows only this insertion. Packet §1 defines a transition as t → t + 1 and
+  n = |V|, and the line's k is the same notion. The H17 line supersedes H16's.
+
+## H18 (REFEREE 19's strict test of H17, claude/referee fe9d0cf1; Lead 2026-10-30 04:16Z), appended ~04:18Z (date -u)
+- «V» in H17's «n = |V|» is free: SPEC's input line defines V, but S1-S5 do not (the point fixed in P-N5-CUT's K15).
+- New line file docs/new/P-N5-GAP-box69-line-H18.txt = H17's line with exactly one replacement: «n = |V|;» → «n the number of vertices of the
+  game;». `git diff --no-index --word-diff=porcelain` of H17 vs H18 shows only this. The H18 line supersedes H17's.

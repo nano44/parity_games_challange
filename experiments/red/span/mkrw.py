@@ -4,6 +4,8 @@ an edge to a marker vertex MW_x (Odd, single successor z) carrying an EVEN prior
 T'_1 < T_1 < ...). Every W-play then ends at z, so lambda_W is constant and the whole run is one W-run (if the dynamics survive).
 Env LATE=1 adds, per reactor J >= 2, a re-blockable late adopter: v_J (Even) -> {d_J -> th_J -> hp, c_J}, c_J (Odd) -> {r_J honest,
 yh_J tau}, yh_J (Odd, bad marker om above the a-markers) -> h; start sigma(v_J) = d_J.
+Env LATE=2 (R130): CHAINED adopters J = 1..(m-1)//2: c_J's honest option is r_(2J+1), and yh_J -> v_(J-1) (yh_1 -> h), so the late
+adoption of v_(J-1) is the W-rise that re-blocks (v_J, c_J): window depth ~ J.
 Usage: mkrw.py K M OUT.pg OUT.start
 Original docstring (R106 draft): two coupled pivots h, h' and a reactor chain r_1..r_m, aimed at a REL segment longer than n - 1.
 h climbs C_1..C_K (honest values H_i = {eta_i, M}), h' climbs C'_1..C'_K (V_i = {nu_i, M}), H_1 < V_1 < H_2 < V_2 < ... (bad odd
@@ -35,7 +37,7 @@ MPp = {i: nxt(0) for i in range(1, K + 1)}; MPh = {i: nxt(0) for i in range(2, K
 M = nxt(0)
 WL = iter([nxt(0) for _ in range(2 * K + 2)])   # W-ladder (even, above M), goodness order
 import os
-LATE = os.environ.get("LATE") == "1"
+LATE = os.environ.get("LATE") == "1"; LATE2 = os.environ.get("LATE") == "2"
 loops = iter(range(2 * (2 * K) + 3, 0, -2))     # L'_0, L_1, T'_1, T_1, T'_2, T_2, ... descending odd
 add("z", 0, Z, ["z"]); add("M", 1, M, ["z"]); add("O", 1, succ=["M"])
 add("h", 0, HP, ["z", "C1"] + [f"C{i}" for i in range(2, K + 1)]); sig["h"] = "z"
@@ -73,6 +75,11 @@ if LATE:
         add(f"v{J}", 0, succ=[f"d{J}", f"c{J}"]); sig[f"v{J}"] = f"d{J}"
         add(f"d{J}", 1, succ=[f"th{J}"]); add(f"th{J}", 1, TH[J], ["hp"])
         add(f"c{J}", 1, succ=[f"r{J}", f"yh{J}"]); tau[f"c{J}"] = f"yh{J}"; add(f"yh{J}", 1, OM, ["h"])
+if LATE2:                                       # R130: CHAINED adopters, device J reads r_(2J+1), W-route through v_(J-1)
+    for J in range(1, (m - 1) // 2 + 1):
+        add(f"v{J}", 0, succ=[f"d{J}", f"c{J}"]); sig[f"v{J}"] = f"d{J}"
+        add(f"d{J}", 1, succ=[f"th{J}"]); add(f"th{J}", 1, TH[J + 1], ["hp"])
+        add(f"c{J}", 1, succ=[f"r{2 * J + 1}", f"yh{J}"]); tau[f"c{J}"] = f"yh{J}"; add(f"yh{J}", 1, OM, ["h" if J == 1 else f"v{J - 1}"])
 ix = {v: i for i, v in enumerate(V)}
 with open(sys.argv[3], "w") as f:
     f.write(f"parity {len(V) - 1};\n")

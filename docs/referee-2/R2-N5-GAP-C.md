@@ -125,3 +125,20 @@ The fixes file is append-only: `git diff 15044625 c1aa183d` adds 38 lines (H10-H
 - Final: P-N5-GAP's only gap G-GAP-1 is CLOSED by H1, and H14 is the line to land.
 - H16 line (l-new 996d9a57, sha1 e3a23a9a…): = H14 + GAP-L4 exactly (difflib: «H_t);» → «H_t, H_t := S4a's arena at t (Even keeps σ_t ∪ Iσ_t, Odd follows τ_t));», nothing else; = §1's PIECE / H_t definition); MATCHES. (2026-10-30 02:5xZ by date -u)
 - **Lemma OPT-OFF (§2.4): SIGNED (Opus 5.5, D15)** — statement as in the packet, with the proof of fixes H1 (l-new 15044625 / c1aa183d), which closes G-GAP-1 (§C.2). REFEREE-2's signature table for P-N5-GAP is now: all 13 items SIGNED (XW, W-MON, FB-W, OPT-OFF with H1, W-SUCC, LATE-W, LATE-PIECE, GAP-MON, SW-IN, Z-FLAT, REOPEN-W + REOPEN-CHARGE, Theorem GAP-RED). Line H16 (sha1 e3a23a9a): MATCHES (see above).
+- Strict symbol test of the WHOLE H16 line (l-new 996d9a57, sha1 e3a23a9a…; Lead 03:45Z; 2026-10-30 03:4xZ by date -u).
+  - Bound: Ξ_t, W_t, Z_t, H_t (t a generic state); phase / in-phase; τ-fixed Even fallback; piece; blocked (R88); ρ, Ω_ρ, (v, c); [p, q];
+    s, t′ («v leaves c at s → s + 1», «a later state t′»); Q, u, CL's window; WCH_Q(c); P, a («every phase P with first state a»); f_P, RO_P,
+    WCH^S4a_P(v), ZF_P; Σ_v.
+  - **DEFECT (k):** «Z_{k+1} ⊆ Z_k», «outside Z_k», «lies in Z_k», «Z_{k+1} = Z_k» (Z-FLAT and ZF_P) and «|Z_{k+1} ∖ Z_k|» (RO_P) use k, and
+    no clause introduces it. This is the same kind of defect as CUT's F and j. The intended reading (k → k + 1 the transition in question) is
+    unambiguous, but under the standing rule it must be bound.
+    - Minimal edit, one insertion in the setting parenthetical, after «Z_t := … the gap set;»: «a transition is written k → k + 1 (states k,
+      k + 1);».
+    - Alternative: three local insertions: «at a τ-fixed Even fallback k → k + 1», «Σ over its in-phase S4a transitions k → k + 1», «its
+      in-phase fallbacks k → k + 1 with».
+    - The same global clause also binds the step index in «W does not fall at an S4a step (read with τ_t)» (step t → t + 1), a softer
+      instance of the same kind.
+  - **n: acceptable as is.** TARGET.md §1 l. 8 fixes «n = |V|, m = |E|» for the whole fleet, and R88 / R89 leave it implicit. Binding it
+    («n = |V|») costs three words and may ride the same H17 edit, but it is not required.
+  - Verdict: H16 MATCHES §1-§5 except for the unbound k. With H17 = H16 + the k clause, MATCHES.
+- H17 line (l-new f997177d, sha1 fa565370…; Lead 04:06Z): = H16 + exactly «a transition is written k → k + 1 (states k, k + 1); n = |V|;» inserted after «… the gap set;» (difflib, nothing else). k and n now bound; strict symbol test of the whole line: no unbound symbol. MATCHES. (04:06Z by date -u)
