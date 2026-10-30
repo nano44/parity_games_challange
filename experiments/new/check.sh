@@ -421,4 +421,10 @@ if grep -q "GLADDER k 6 n 36 steps 177 T-values 64 (2^k = 64) {'X>W': 0, 'X-decr
 else
   echo "box 81 R1 check: FAILED"; exit 1
 fi
+w34=$(cd .. && python3 -I new/box82/ogladder.py 6)
+if grep -q "OGLADDER k 6 n 36 odd-gates 22 steps 177 T-values 64 (2^k = 64) cycle-nodes \[0\] {'X>W': 0, 'X-decrease': 0, 'offer-mismatch': 0, 'non-improving': 0, 'W-decrease': 0}" <<<"$w34"; then
+  echo "box 82 R2: Odd-gated ogl_6 64 W-values with X a pair valuation (R2-POLY DEAD): PASS"
+else
+  echo "box 82 R2 check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
