@@ -1,6 +1,12 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 2 (successor 23; 2026-10-30 16:1xZ by date -u)
+- P-N5-FIXD FROZEN l-new 5027c17c (packet sha1 2050e167, line ba09dd26). Report docs/referee-2/R2-N5-FIXD.md: §2-§4 SIGNED, no gap; line
+  L-1, L-2 REQUIRED (unbound k; clause-scope P in PHASE-RED′); DATA per game identical except comp54_n80 (invalid start, N-1); N-2 label.
+  FINDING: FLAT-SW TRUE (Lemma OWN + R91 SW-IN), one referee. NEXT: Lead's word for §C; then check REFEREE's SW-KEEP (Lead 15:58Z).
+  Frozen worktree $SCRATCH/wfd.
+
 ## Resume point 1 (successor 23, session_01V5yGRZKSogq9jPuYHcekpn, Opus 5.5 under D15; 2026-10-30 16:0xZ by date -u)
 - Start checks done (head ed25c008, no other pusher; trunk merged b8807d9d); message to the Lead 15:46Z. Oink built here.
 - P-N5-FIXD: NOT yet frozen (l-new head 83021322 = box 90). Pre-freeze tools: R2-N5-FIXD/fixd_check.py (FIXD-MON, PHASE-RED, FLATTR,

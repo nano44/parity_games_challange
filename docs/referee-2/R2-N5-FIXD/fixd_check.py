@@ -6,6 +6,9 @@ N5 loop: my R2-N5-DUAL/dual_check.Runner (SPEC S1-S5 on si.py's Engine, read-onl
 experiments/new/box77/*.py and box79/*.py are NOT imported.
 Phase := maximal run of consecutive states with (lambda_Xi, tau) constant (RESULTS R38 (a) KEY). fin := Xi_b for the phase [a, b].
 DEPTH_t(v) := length of the common prefix of CS(Xi_t(v)) and CS(fin(v)) (n + 2 if equal). K_t := sum_v DEPTH_t(v).
+FLAT_P(v) := in-phase transitions at which Xi(v) changes and DEPTH(v) does not (box 77 definition; any transition); FLATin: the same,
+counted only inside FLATTR transitions. PERRUN=1 prints per-run totals (iters, K-rise, FLATTR) for the per-game comparison with the lane's
+box79/flatsrc_*.txt (report §4). Frozen object: docs/new/P-N5-FIXD-box91.md @ l-new 5027c17c, sha1 2050e167.
 Checks (each must be 0):
   XMON   Xi_t(v) ⊴ Xi_{t+1}(v) at every in-phase transition and every v (the R15 (a) premise, read on the run)
   LEXK   SPEC key order = lexicographic order of CS on all pairs (Xi_t(v), fin(v)) met (sampled)
@@ -54,7 +57,7 @@ def run_game(g, s, t, st, name, rng):
         b = a
         while b + 1 < T and lam[b + 1] == lam[a] and tau[b + 1] == tau[a]: b += 1
         phases.append((a, b)); a = b + 1
-    L4 = 4 * n * (n - 1); NN = n * (n + 2)
+    L4 = 4 * n * (n - 1); NN = n * (n + 2); RS = {"KR": 0, "FT": 0}
     for pi, (a, b) in enumerate(phases):
         st.inc("phases")
         fin = CSx[b]
@@ -103,6 +106,7 @@ def run_game(g, s, t, st, name, rng):
         if Lp > (L4 + 1) * (CH + 1) or Lp > (L4 + 1) * (NN + sum(FLAT) + 1): st.bad("PR", f"{name} P[{a},{b}]")
         if Lp > (L4 + 1) * (NN + sum(FSW) + 1): st.bad("PR2", f"{name} P[{a},{b}]")
         if mkst > 1: st.inc("X_KSTALL")
+        RS["KR"] += KR; RS["FT"] += FLATTR
         st.inc("n_Krise", KR); st.inc("n_FLATTR", FLATTR); st.inc("n_CH", CH); st.inc("Xi_flat_tr", Lp - CH)
         st.mxu("max_phase_len", (Lp, name)); st.mxu("max_FLAT_v", (max(FLAT), name)); st.mxu("max_FLATTR", (FLATTR, name))
         st.mxu("max_FLATSW_x", (max(FSW), name)); st.mxu("max_Kstall", (mkst, name)); st.mxu("max_Xi_unchanged_run", (mstall, name))
@@ -113,6 +117,7 @@ def run_game(g, s, t, st, name, rng):
         if pi + 1 < len(phases):   # control: monotonicity across the boundary fails somewhere
             a2, b2 = phases[pi + 1]
             if any(depth(CSx[b][v], CSx[b2][v]) > depth(CSx[a2][v], CSx[b2][v]) for v in range(n)): st.inc("X_MON_cross")
+    if os.environ.get("PERRUN"): print("RUN", name, "iters", T - 1, "Krise", RS["KR"], "FLATTR", RS["FT"], flush=True)
 
 
 def main():
