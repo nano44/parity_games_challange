@@ -415,4 +415,10 @@ if grep -q "LADDER k 8 n 18 switches 749 T-rises 255 (2^k-1 = 255) distinct-T 25
 else
   echo "box 80 LADDER check: FAILED"; exit 1
 fi
+w33=$(cd .. && python3 -I new/box81/gladder.py 6; python3 -I new/box81/ladder_r1.py 4)
+if grep -q "GLADDER k 6 n 36 steps 177 T-values 64 (2^k = 64) {'X>W': 0, 'X-decrease': 0, 'offer-mismatch': 0, 'non-improving': 0, 'W-decrease': 0}" <<<"$w33" && grep -q "LADDER-R1 k 4 n 10 max-T-rises from all-0 start 4 from any start 4 " <<<"$w33"; then
+  echo "box 81 R1: ungated ladder_4 only 4 rises under ranking offers; gated gl_6 64 W-values under R1 (R1-POLY DEAD): PASS"
+else
+  echo "box 81 R1 check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
