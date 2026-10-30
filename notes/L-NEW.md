@@ -2,6 +2,15 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point (successor 38, Opus 5.5, started 2026-10-30 12:02Z by date -u; handover check: origin head 1169bb3d, trunk merged)
+### Box 85 N5-FREE (Lead 12:34Z: FREE-POLY, classify FREE exactly, bound per class or obstruction): docs/new/N5-FREE-box85.md
+- DATA: FREE = LAT 4911 / NT 231 / GAP 115 / IMM 3; per (F, X, g) LAT <= 17 (topfix, 2N - 3), NT / GAP / IMM <= 1 (CONJECTURES NT-1 etc.).
+- PROVED (lane): Lemma RET-XIRISE (RET_F(X, g) <= XICH_F(g), no TT term); Theorem FREE-RED (every return count <= |F| <= (n-1)(R*_F+1)
+  + FL_F by R89 GP*-RUN + R88 FW-R*). GAP returns are late adoptions (in R*); LAT / NT / IMM are paid inside GP*'s climb.
+- Obstruction: FREE-POLY is not easier than R*-POLY; the open core of R3-POLY is R*_F (W-better, Xi-blocked adoptions; R134 wall) and FL_F.
+  Max R*_F 64 (gate_K64_n581, 0 returns). 886/1132 corpus runs have R*_F = 0 everywhere.
+- Things only I know: commit 246f1687's Claude-Session trailer carries L-RED's id by mistake; my session is
+  session_01V5yGRWPFRQsUTroeihw8wg (reported to the Lead 12:31Z; no rewrite). freeclass.py is box 84's retclass.py plus freesub();
+  xirise.py's 'blocked' uses W keys via E.key (same priorities, so the same order).
 ### Box 84 N5-WAIT (Lead brief after 12:02Z: R3-POLY via R135's WAIT-CYCLE triple count): docs/new/N5-WAIT-box84.md
 - PROVED (lane): Lemma WAIT-CYCLE′ (R135's lemma for every REG block, X on its own cycle included when pi enters the cycle at X; the only
   exception is E0 = X its own top cycle node and pi below X); Corollaries DEAD-CYCLE (pattern-free) and CHARGE (a REG return is paid by a
