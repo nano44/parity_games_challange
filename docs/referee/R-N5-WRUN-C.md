@@ -92,11 +92,34 @@ Referee: REFEREE (successor 20), Opus 5.5 (D15).
 - Content: unchanged against the packet's §3-§11. The ⇔ chain is E1-E8, the one-direction list is E9 and E13, and BIP-REL-1 is DEAD.
 - Verdict on L-2: REQUIRED CHANGES, WRUN-L3 and WRUN-L4 (Opus 5.5, D15). Everything else MATCHES.
 
+## 5. Line revision L-3 (l-new fb976deb, docs/new/P-N5-WRUN-box92-line-L3.txt, sha1 cbba7a1b67340aebda613dcf8a71dc0b445f5e5a; fixes sha1 d8956c9ee2ccefbcfe788ab7f78ae9f5fa2333b3)
+- Word-diff against L-2 (8ab101e5). The changed tokens:
+  - the global binder «for every N5 run on every game, every W-run F = [a, b] of it, every Even edge (X, g) and every vertex v:» (WRUN-L3);
+  - GAP-DEV «the target z of every Even edge blocked at a state q of F» and ΞCH-PCH «every vertex z has ΞCH_F(z) ≤ …» (WRUN-L3: the
+    blocked-target restriction is gone);
+  - PREFIX-MON «Ξ_t(v) … fixed over states t of F» (WRUN-L3);
+  - BIP-RED «with [SUB]» (optional item);
+  - (A2) «the (σ_{s+1}[y → z], τ_s)-play from z avoiding y, σ_{s+1}[y → z] being σ_{s+1} changed at y to z» (WRUN-L4).
+  Nothing else changed.
+- Strict symbol test after L-3:
+  - F, X, g and v are bound globally. z is bound per clause (GAP-DEV, ΞCH-PCH). t in PREFIX-MON is bound by «over states t of F». τ_s and
+    s are bound in REL2-WRISE. y, q2, h and Φ are bound in REL2-WRISE's clause.
+  - No free symbol.
+- REFEREE-2's caution (1), the rebinding sums Σ_{(X, g)}, Σ_{(y, z)} and XI-RUN's Σ_v, is not a defect. A summation binds its index
+  locally (standard shadowing). The free occurrences in the same clauses (E0_F(X, g) ≤ n; RET_F(X, g) ≤ ΞCH_F(g)) are the global ones, and
+  the sums mean «over all Even edges» exactly as in the packet (§4.4, §6.3). Optional: write Σ_{(X′, g′)} and give «Σ RET_F» its index,
+  «Σ_{(X′, g′)} RET_F(X′, g′)».
+- REFEREE-2's caution (2), PREFIX-MON's range of t: packet §7.2 states it «while λ(Ξ_t(v)) is constant» with no restriction to F. Its proof
+  uses only MON, which holds on the whole run. L-3's «over states t of F» is therefore a NARROWING. That is true, it claims less than the
+  packet, and it is all that LEVEL-RED (stated per W-run) uses. It does not widen anything, so it is acceptable. Optional: «over any
+  interval of states of the run» would match §7.2 exactly.
+- Content: unchanged against the packet's §3-§11 apart from that narrowing.
+- Verdict on L-3: MATCHES (Opus 5.5, D15). No required change. The two cautions are optional precision.
+
 ## DONE / FINDINGS / NEEDS
 - DONE: this §C.
 - FINDINGS:
   1. WRUN: both referees SIGN every packet item; the joint gap map for the packet is empty.
   2. Line: my items are closed by L-1. REFEREE-2's «strict release» unbound and τ unbound are required for L-2; I missed both.
   3. Fact EXT: one finding, two forms (N1 / N-1).
-- NEEDS: Lead: L-3 with WRUN-L3 (global W-run / vertex binder) and WRUN-L4 (τ in (A2)); I word-diff it. REFEREE-2 should
-  re-check WRUN-L3, which both of us passed earlier.
+- NEEDS: none on the line: L-3 MATCHES (§5).
