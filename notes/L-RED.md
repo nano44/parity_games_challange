@@ -1,5 +1,5 @@
 # L-RED notebook (independent adversary lane)
-Successor 32 (session_01V5yGRXGW9KqMY5gaypMTs2, Opus 5.5) started 2026-10-30 05:28Z (date -u); R131 TIED-RB DEAD; see "Successor 32".
+Successor 32 (session_01V5yGRXGW9KqMY5gaypMTs2, Opus 5.5) started 2026-10-30 05:28Z (date -u); R131 TIED-RB DEAD (011213ef); R132 (A) not built, obstruction TWO-SOURCE / PREFIX; see "Successor 32".
 Successor 31 (session_01V5yGRZfrtk7CRqezo1wAzp, Opus 5.5) woken 2026-10-30 00:09Z; R126-R129; PARKED 01:40Z; woken 03:13Z for R130 (WD-BOUNDED DEAD), PARKED again ~03:30Z; see "Successor 31 PARK".
 Successor 31 (session_01V5yGRZfrtk7CRqezo1wAzp, Opus 5.5) HANDOVER written 2026-10-29 ~23:50Z (date -u), PARKED; see "Successor 31 HANDOVER".
 Successor 31 (session_01V5yGRZfrtk7CRqezo1wAzp, Opus 5.5) started 2026-10-29 22:19Z (date -u); handover check d6ae7cda; STEP 1 = R123, R124, R125; see "Successor 31".
@@ -37,6 +37,10 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - (B) DONE: R131 docs/red/R131-tied-rb.md. TIED-RB DEAD: tree/mktied.py (mkrw LATE=1 + y_J -> {v_J, z_J}, z_J Even -> {a_(J+1), c_(J+1)})
   gives (K-1)(m-2) untied re-blocked REPEATs per W-run (210 at n 382); tied.py = tiedc.py; xeng identical; Oink OK. TARGET=odd (target
   never switches) fails the same way. Release climb is on the SHARED PREFIX of z's W-play and Xi-play -> paid by a W-change (CIRCLE (c)).
+- (A) DONE as obstruction: R132 docs/red/R132-reader-tree.md. No kill. Device tree (tree/scratch/mkrt.py TREE=D): REP = (K-1)(2^D-1),
+  additive. Lemma TWO-SOURCE (S(y) <= 2 + 2 min(WCH z, WCH a)), Lemma PREFIX (order flips need private-prefix switches), Lemma DAG-tau*
+  (acyclic + tau optimal: <= height + 1 iterations). Ladders: plain flat (12/12/13/13/13); random gated ones lose tau-stability. The wall is
+  R108 §4's reused waiting gate, needed per pair per event. RESUME POINT: a designed desynchronising gate (R108 §6 A/B/C).
 - Tools (experiments/red/tree/): gb.py (named builder GB, from_pg, trace(G, watch) prints sigma/tau changes and W / Xi as
   cycle|top priorities|length), tiedlib.py (stats(g, start) = tied.py counts + REPEAT list, importable), tiedc.py (second counter, n5b).
 - Things only I know: scratch /tmp/claude-0/r131 (gsearch.py = random gadget search on mkrw bases: `python3 gsearch.py SEED SECS K m`,
