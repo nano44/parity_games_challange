@@ -1,7 +1,7 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 40, Opus 5.5, started 2026-10-30 20:00Z by date -u; handover: local clone was STALE at d4bcdd21, fast-forwarded to origin 185422e0, trunk 5e4f1301 merged)
+## Resume point (successor 40, Opus 5.5, session_01V5yGRaRG5NjEeJEbjinuUs, started 2026-10-30 20:00Z by date -u; commit 508a8711 trailer wrongly names succ. 39 session (not amended); handover: local clone was STALE at d4bcdd21, fast-forwarded to origin 185422e0, trunk 5e4f1301 merged)
 ### Box 97 N5-ORD (Lead brief after 20:00Z: L-LIT T60 order template, ORDER-DET + NO-REPEAT): docs/new/N5-ORD-box97.md
 - ORDER-DET literal: TRUE but empty (sbar_k = S1(sigma_k)). U-form (order of Xi on U_k alone): DEAD, n5s_maxph_0 (n 5): flip out of tau(o),
   tau(o) not a head. PROVED (lane, given L-SI SEL + NOCLOSE + [R57]): ORDER-DET-R, sbar_k(o) = refined-least of succ(o) n X for any X containing
@@ -11,6 +11,7 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - Any SBT_F <= f(max|U_k|) or f(|A_F|): DEAD, gate_K16 -> gate_K64 (SBT 16 -> 64, max|U| 6, |A_F| 11, 6 distinct orders). (3): no FPT, no
   subclass; even both lemmas bound only the SB term, which HEAD-RED' already removed (residual = Xi-changes at heads, not order changes).
 - DATA: box97/orderdet.py on 1,132 corpus runs + 3 pins: REFMINX 0, REFMINUX 0, ODR 0, ODA 0; ODU 20 runs. Pins check.sh «box 97 ORD».
+### Box 97 pushed 508a8711 (VERIFY PASS), reported to the Lead 20:23Z.
 ### Things only I know (successor 40): sb53 tools (rootflip.py etc.) and T60 are only on origin/claude/l-si / l-lit; I read them via git show.
   orderdet.py on latew_K16_m32 takes ~50 s; runod.sh ~6 min on 4 cores.
 
