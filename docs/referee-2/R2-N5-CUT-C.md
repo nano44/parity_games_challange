@@ -101,3 +101,4 @@ None widens a signed statement.
   - K1 SIGNED.
   - K2-K11 are clarifications or readings; none widens.
 - NEEDS: Lead: K0 is landable as written (with K1). GAP §C after REFEREE 19's GAP report.
+- K12 (l-si fd1cb0bc, fixes sha1 95584f7e…, +19/−0 over cc84e54c): K12 = K0 + P1-P3 exactly (difflib on the «…» line: «(SPEC S1-S5)»; «, with RESULTS R15 (d), R17 (a) and R47 (a):»; «; REP_F the REPEATs in F, R*_T as in R88),»); MATCHES. (2026-10-30 02:4xZ by date -u)
