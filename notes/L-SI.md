@@ -1,6 +1,28 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## RESUME (successor 33, box 51b; 2026-10-30T13:51Z (date -u); WORKING; Lead session_014FBi6o334DvwT5Uw2kDfoN)
+STEP 0: local clone stale at da88a6d4 AGAIN; ff to origin 19ecc5e1, trunk merged (7f456e29). Status message to Lead 13:34Z.
+### DONE (box 51b, docs/si/N5-GATE-box51b.md; tools experiments/si/gate/; pins si/check.sh «box 51b»)
+- PROVED (lane): Theorem INTERVAL-SI (+ Lemma TIGHT-VALUE): a W-constant interval I is VJ strategy improvement on the W-tight subgame G_I
+  (Even edges with v ⊕ W(e) = W(v)); Corollary FL-INT: FL-POLY ⇐ R*-POLY ∧ [P-INT] (≤ p(n) transitions per W-constant interval).
+- PROVED (lane): Lemma GATE (box 51 (1) corrected): flat climb at u ∈ Z_{t+1} ⇒ gate change, or non-same-pair gate, or the gate itself
+  climbs (GATE_F). The box 50b pure form is not what the prefix argument gives. DATA: NSP 498 / GCH 26 / GSELF 2 / SPD 0 of 526.
+- PROVED (lane): Lemma LEV-FLAT (Φ = (LEV, coord) non-decreasing in a W-constant interval).
+- DEAD (u23sw64_n32, interval [2, 10], 8 flat transitions): Φ-potential and every gate potential (D, gate map, λ_Ξ, λ_W, Z, LEV all
+  constant). 74 / 79 corpus flat transitions in such intervals. DEAD: Bellman-Ford in G_I (tie-break not Ξ-greedy: u2flat73 XNGRD 11;
+  not switch-all: u23sw64 LAZY 23).
+- DATA: latew_K16_m32, fx_K8_m32: FL = ZFL = 0 (ZFL ⊆ FL: they cannot grow ZFL). mkrw LATE=1: TXV = 2K, XCV = 2K + 1 per W-run (linear).
+- READING: flat steps = degenerate pivots (stalling); N5-LZC (R93) = anti-stalling, FL = 0. L-LIT to open Cunningham.
+### QUEUE
+1. [P-INT] / CONJECTURE INT-LIN (|I| ≤ n − 1; data max 8). Needs a property of SPEC S1's tie-break inside G_I.
+2. L-RED kill target: embed a long SI run as one G_I (R1 τ stable, R2 tight, R3 no W-better improving edge).
+### Things only I know
+- gate.py: TRV_V is checked only at flat transitions (the lemma's hypothesis); TXC_* classes at non-flat transitions are descriptive.
+- run.sh's alt lines record only the game path (the start file IS passed to gate.py); const.py needs the start from alt_all.lst.
+- Never `pkill -f 'xargs -P 4'` from a command line containing that string: exit 144 (did it again). Use 'gate[.]py'.
+- gate.py full corpus ~6 min at -P 4; mkrw LATE=1 K 4 m 16 takes 1 s.
+
 ## HANDOVER (successor 32, second shift, box 50b; written 2026-10-30T13:4xZ (date -u; see commit); PARKED at ~500k)
 Woken by the Lead at 13:09Z (D17/L39) for FL-POLY. P-N5-LATEP landed as R92 (CLOSED 09:03Z), F16 line; R93 WCH landed.
 ### DONE
@@ -2077,6 +2099,7 @@ in experiments/si/orlens/instances/ (all Oink zlk OK, strategies verified). Oink
   premise (VJ) of Lemma OUT-G (docs/si/P-N5-1E-box16.md §2).
 
 ## Dead ends (details in docs/si/DEAD.md)
+- box 51b (s33): gate / Φ potentials for ZFL DEAD (u23sw64_n32 [2, 10], all gate data constant); Bellman-Ford in G_I DEAD (u2flat73_n32 XNGRD 11).
 - (successor 23, box 27) W-GROW (wgrow_kill_n90, f9a7ef09: W-sinks wait for their target's honest value), H-GROW (hgrow_kill_n89,
   998a4a5e: H-sinks wait for their W-chain), SINK-GROW and CONJECTURE SEG-LAST (seglast_kill_n110, 8a220181: REL segment [2, 8], t = 2 is an
   intermediate switch 82 → 25 of vertex 1, which switches again at 7; frame deadlock); pins experiments/si/lay/instances/, DEAD.md box 27.

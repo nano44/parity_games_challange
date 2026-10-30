@@ -863,3 +863,15 @@ echo "si (box 53: P-N5-LATEP quotes): PASS"
 o=$(python3 -I fl/flat.py ../red/xing/instances/u23sw64_n32.pg); grep -q "ZFL 8 ZA 32 ZSHR_V 0 ZIN_V 0 FLGAP_V 0 FL 8 FLI 8 FLV 6 LCTFL 0 SW 64 NOTZ_V 0 NOCL_V 0 WCH_V 0 GXC 64" <<<"$o"
 o=$(python3 -I fl/flat.py ../red/kw/instances/cw11_n24.pg); grep -q "ZSHR_V 0 ZIN_V 0 FLGAP_V 0" <<<"$o"
 echo "si (box 50b: FL, FLAT-Z): PASS"
+# box 51b (docs/si/N5-GATE-box51b.md): Lemma GATE classes (no SPD climb without a gate climb, TRV_V 0), INTERVAL-SI checks (TIGHT_V, IMP_V 0),
+# LEV-FLAT (MONO_V 0); u23sw64: 8 ZFL all SUB (Phi constant), gate data constant on [2, 10]; mkrw LATE=1: TXV 2K, XCV 2K + 1; L-RED copies.
+o=$(python3 -I gate/gate.py ../red/xing/instances/u23sw64_n32.pg); grep -q "ZFL 8 SUB 8 PR 0 WCI 4 FLAT 8 TRV_V 0 ZZ_V 0 MONO_V 0 XFL 0 TIGHT_V 0 IMP_V 0 FLI 8 DMAX 1 TXC 72 TXV 8 XCV 8 NSPW 72 XGRD 60 XNGRD 4 LAZY 23" <<<"$o"
+grep -q "ALL_GSELF 0 ALL_NOG 0 ALL_GCH 0 ALL_NDEC 0 ALL_NSP 72 ALL_SPD 0" <<<"$o"
+python3 -I gate/const.py ../red/xing/instances/u23sw64_n32.pg | grep -q "interval \[2, 10\] flat 8 changes none"
+o=$(python3 -I gate/gate.py ../red/xing/instances/u2flat73_n32.pg); grep -q "TRV_V 0 .* XGRD 62 XNGRD 11 LAZY 0" <<<"$o"
+t=$(mktemp -d); LATE=1 python3 -I ../red/span/mkrw.py 4 16 $t/w.pg $t/w.start >/dev/null; LATE=1 python3 -I ../red/span/mkrw.py 8 16 $t/v.pg $t/v.start >/dev/null
+python3 -I gate/gate.py $t/w.pg $t/w.start | grep -q "FLAT 0 .* TXV 8 XCV 9 "
+python3 -I gate/gate.py $t/v.pg $t/v.start | grep -q "FLAT 0 .* TXV 16 XCV 17 "
+echo "6d34c1617bb410ce78c392eb360ca28b6afea90f  gate/inst/latew_K16_m32.pg" | sha1sum -c --quiet
+echo "e995709e256b55aa40cb94896a7dcb52446baf57  gate/inst/fx_K8_m32.pg" | sha1sum -c --quiet
+echo "si (box 51b: GATE, INTERVAL-SI, potentials dead): PASS"
