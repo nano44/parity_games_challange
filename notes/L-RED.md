@@ -51,6 +51,8 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - R137 (Lead 12:34Z, box 84 input) docs/red/R137-free-returns.md: mkrw FREE per edge = K; fx_K_m (free/obsx.py BLK=2) FREE = K*m/4 at one
   edge in one W-run (128 at n 362); BLK=1 dies by arena lookahead. Ceiling |F|. Tools: free/xret.py; l-new retclass.py run from
   /tmp/claude-0/lnew (detached at origin/claude/l-new 246f1687).
+- R138 (Lead 13:06Z) docs/red/R138-rstar-quadratic.md: R*_F = K*m in one W-run on mkrw LATE=1 (box 85 xirise.py; latec agrees), 640 = 1.19n
+  at n 538; gate_K64's 64 = K (R84 mkgate). R*_F <= |F|: R*-POLY + FL-POLY is EQUIVALENT to polynomial W-runs. FL target not built.
 - Things only I know: mkdg.py writes names into the .pg; dgstat.py reads them (TOPNAME arg). noup.py is exponential in the number of
   choosers (k 6 in 3 s; k 7 not tried).
 
