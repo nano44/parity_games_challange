@@ -4,7 +4,7 @@
      aborts), verify.py strategies OK, sha1;
  (2) L-RED's experiments/red/seg/xeng.py (n5.py on L-SI's si.py valuations vs n5b): "state sequences identical: True";
  (3) the counts: rstar.py (mine, n5b) and L-NEW's xirise.py (n5x), max R*_F and max FL_F must agree.
-Usage: pin23.py --json RESULTS.json PREFIX     |    pin23.py GAME.pg START [GAME.pg START ...]"""
+Usage: pin23.py --json RESULTS.json PREFIX [KEYS, default rs,fl; e.g. F]     |    pin23.py GAME.pg START [GAME.pg START ...]"""
 import json
 import os
 import re
@@ -47,7 +47,7 @@ def main():
     allok = True
     if sys.argv[1] == "--json":
         d = json.load(open(sys.argv[2])); pre = sys.argv[3]; os.makedirs(CI.INST, exist_ok=True)
-        for k in ("rs", "fl"):
+        for k in (sys.argv[4].split(",") if len(sys.argv) > 4 else ("rs", "fl")):
             rec = d["best"].get(k)
             if not rec or rec[0] == 0:
                 continue
