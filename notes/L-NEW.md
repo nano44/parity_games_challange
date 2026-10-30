@@ -1,13 +1,14 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 36, Opus 5.5, D14/D18; updated 2026-10-30 ~06:20Z by date -u; boxes 72, 73 DONE, pushed)
+## Resume point (successor 36, Opus 5.5, D14/D18; updated 2026-10-30 ~06:52Z by date -u; boxes 72, 73, 74 DONE, pushed)
 ### DONE: box 72 docs/new/N5-LZ-box72.md + experiments/new/box72 (check.sh "box 72"). START report to the Lead sent (stamped 05:00Z in the
   message; date -u read 04:58:00Z just before: slip, the message time is wrong by ~2 min).
 ### DONE box 73: docs/new/N5-FBO-box73.md (FBO-LIN DEAD cf_n24; LEVEL-MON, DOWN-PAID, FBO-R56; LZ correctness).
-### NEXT (the Lead decides): rho (R56 rho-POLY per phase; per W-run for REP); TIE for plain N5; LZ-NOC. (old: FBO (fallback climbs with the gap open; CONJECTURE FBO-LIN, max 46/phase nep22f_n64); LZ-NOC (no C in N5-LZC);
+### DONE box 74: docs/new/N5-RHO-box74.md (rho per W-run = breadth, cr_n80 698 = 8.7n; RHO-LEN, LZ-RUN; REP circle gain (n-1)m_E).
+### NEXT (the Lead decides): SBQ-2 (sbar-changes at Q per W-run <= 2n; climb first); TIE for plain N5; LZ-NOC; FBO. (old: FBO (fallback climbs with the gap open; CONJECTURE FBO-LIN, max 46/phase nep22f_n64); LZ-NOC (no C in N5-LZC);
   OPT-ONLY check of W-RETURN-G for N5-LZC; whether N5-LZC may replace N5 as the object.
-### Owned conjectures: LZ-NOC (new; FBO-LIN DEAD box 73); FRAME-STRETCH_P, LOOP, GROUP, EXIT-without-NT (inherited).
+### Owned conjectures: LZ-NOC, SBQ-2 (new; FBO-LIN DEAD box 73, rho-lin per W-run and SBQ<=n DEAD box 74); FRAME-STRETCH_P, LOOP, GROUP, EXIT-without-NT (inherited).
 ### Things only I know (successor 36)
 - gxc.py's "fallbacks" field is ALL S4c fallbacks (not only in-phase); the first gxc_*.txt run lacked the field (cmp.py then shows 0).
 - gxc.py's CLOSE/FBO use Z_{t+1} read with TAU[k+1] (= TAU[k] in-phase). tie_cyc counts S4a events where v is its own Xi- OR W-cycle node.
@@ -17,6 +18,12 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - Sources opened (box 72): l-si 4fb0bfba docs/si/N5-ADD-box50.md §6 (TXC, TIED-RB) and experiments/si/odd/tied.py (copied verbatim).
 - n5lz.py reads --lzc from sys.argv at import; silentlz.py / wincmp.py append it. The lazy rule uses Engine.extend (no avoidance check);
   LZ-OPT shows value-consistency suffices, and the assert val(sigma') = W* guards it.
+
+## Box 74 log (successor 36; Lead 06:08Z brief, crossed box 73: rho per W-run, REP route)
+- docs/new/N5-RHO-box74.md. Landed: R56 FB-RED (rho per phase unbounded in data, 218), R89 (h)/(i); red R76/R126 (no rho-POLY kill).
+  Opened l-si 7dd85b02 N5-LATEP-box51 (FW-R*', GAP-CLIMB, ZXC = TXC + WZ). DATA corpus max rho_F 301 (snap_n80); climbs: cr_n80 698 = 8.7n
+  in a 15-step W-run (99% of |Q||F|) => rho is breadth. PROVED (lane): RHO-LEN, LZ-RUN (N5-LZC, under OPT-ONLY: |F| <= (n-1)(R*+1)).
+  READING: |F| -> R*' -> ZXC -> TXC -> |F| circle, gain (n-1)m_E. sbar-changes at Q (SBQ) << rho; SBQ <= n DEAD (n3cov_phi 42 > 32).
 
 ## Box 73 log (successor 36; Lead 05:40Z: FBO, FBO-LIN or obstruction; LZC correctness)
 - docs/new/N5-FBO-box73.md. DATA: FBO events never move the gap level UP; 182/239 SAME at level C. climb_fbo.py (15 min): cf_n24 96 = 4n
@@ -209,6 +216,10 @@ Stop (S5) when Iσ = Iτ = ∅: Even wins v iff the cycle node of Ξσ(v) has ev
 - CONJECTURE FBO-LIN (FBO_P <= n per phase): DEAD, experiments/new/box73/inst/cf_n24.pg + .start (sha1 68c2b49d...): 96 = 4n FBO events in
   one phase (rho 0, 9 in-phase fallbacks, all at gap level C); N5-LZC cfz_n64 313 > 64. Obstruction: one S4c fallback switches up to n_E
   gap vertices; the W ceiling is a cycle-level coordinate above the climb.
+- rho linear per W-run: DEAD, experiments/new/box74/inst/cr_n80.pg + .start (sha1 66d6d8a9...): rho_F 698 = 8.7n in one 15-transition
+  W-run (|Q| 47, |Q||F| 705). Obstruction: breadth (every Odd choice vertex changes Xi at almost every step).
+- SBQ <= n (sbar-changes at Odd choice vertices per W-run): DEAD, experiments/red/n3/instances/n3cov_phi.pg (sha1 50d416db..., S3 start):
+  42 > 32.
 
 ## Dead ends (successor 35; also in docs/new/N5-STRETCH-box64.md §1.5)
 - FRAME-STRETCH (< n+m sigma-changes per tau-stretch): DEAD, experiments/new/box64/mkr/mk_16_100.pg (sha1 49ba9a59…, start in .start;
@@ -1429,6 +1440,8 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
 
 - (succ. 36, box 72) l-si 4fb0bfba docs/si/N5-ADD-box50.md §6 (TXC, TIED-RB, tied Ξ-climb definition quoted in N5-LZ-box72 §6);
   experiments/si/odd/tied.py (copied as experiments/new/box72/tied_lsi_4fb0bfba.py). Fleet-internal; no external theorem imported in box 72.
+- (succ. 36, box 74) l-si 7dd85b02 docs/si/N5-LATEP-box51.md §2 (FW-R*'), §3 (GAP-CLIMB), §4 (GXC ⊆ TXC ⊆ ZXC; ZXC = TXC + WZ); RESULTS R56 (f) and
+  honest limit (i), R89 (h), (i); docs/red/R76-late-fallbacks.md, docs/red/R126-cut-premises.md (rho-POLY kill attempts).
 ## Dead ends
 - (box 47, successor 26, 11:13Z) CONJECTURE XD-1 (≤ 1 X_dir per {u, u′}-run): FALSE on experiments/new/box47/instances/pp2_n19.pg (sha1 97b5b132…),
   𝒞^2O, S3, phase [1, 3], D = {1}, {0}, {1}; length-only values (cycle node 9). Obstruction: each X_dir needs only an Even switch on each

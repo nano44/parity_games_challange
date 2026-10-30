@@ -367,4 +367,10 @@ if grep -q "fbo 96 per-phase 96 per-v-phase 9 rel {'SAME-C-fixed': 96} .* fb 9 r
 else
   echo "box 73 FBO check: FAILED"; exit 1
 fi
+w25=$(cd .. && python3 -I new/box74/rho.py new/box74/inst/cr_n24.pg new/box74/inst/cr_n24.start)
+if grep -q "n 24 |Q| 10 .* max-len 17 .* max-rho 162 max-rho-per-q 17 max-sbq 32 " <<<"$w25"; then
+  echo "box 74 RHO: cr_n24 rho 162 = 6.75n in one 17-step W-run (|Q| 10), sbar-changes 32: PASS"
+else
+  echo "box 74 RHO check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
