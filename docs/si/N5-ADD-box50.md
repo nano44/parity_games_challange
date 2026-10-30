@@ -87,8 +87,32 @@ unrefereed, not a TARGET.md claim. G-N5-TIME OPEN. Labels: PROVED (lane) / CONJE
   L-NEW box 70's GXC count (Ξ-climbs at gap vertices with W fixed) read inside one W-run. So [P-WT]* would follow from GXC per W-run
   polynomial if every re-arm's Ξ-climb happens with W(z′) fixed. Not checked; next box.
 
+## 6. DATA: re-blocked REPEATs are paid by TIED Ξ-climbs of their target (odd/tied.py; probe of §5's positive route)
+- Split a REPEAT ρ of (y, z) at u (y's last leave of z at k) into two kinds:
+  - RE-BLOCKED: (y, z) is BLOCKED at some state of [k + 1, u];
+  - STALE: otherwise. It counts as late only because (y, z) was blocked before its previous adoption: late.py's `last` set never forgets.
+- A TIED Ξ-CLIMB of z at s ∈ [k, u − 1] is a transition with Ξ_{s+1}(z) ▷ Ξ_s(z) and W_{s+1}(z) = W_s(z).
+  - Then z ∈ Z_s automatically: Ξ_s(z) ◁ Ξ_{s+1}(z) ⊴ W_{s+1}(z) = W_s(z), by XW (Ξσ ⊴ val(σ, τ)).
+  - It is L-NEW box 70's GXC event read at the TARGET z, with no switch of z required.
+
+| set | REPEATs | re-blocked | stale | tied | untied | untied AND re-blocked | most REPEATs per (z, last tied s) |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| latew_K20_m32 | 570 | 570 | 0 | 570 | 0 | 0 | 1 |
+| wdepth_K4_m16 | 21 | 21 | 0 | 21 | 0 | 0 | 1 |
+| corpus (719) | 41 | 4 | 37 | 9 | 32 | 0 | 1 |
+
+- CONJECTURE TIED-RB: every re-blocked REPEAT of (y, z) has a tied Ξ-climb of z on [k, u − 1].
+  - What is proved toward it: from the last blocked state t_b ≤ u − 1, R89's LATE-RISE gives Ξ_u(z) ▷ Ξ_{t_b}(z). It does not give that
+    the climb happens with W(z) fixed.
+  - With TOK1-style injectivity (DATA: 1 per token), TIED-RB would give re-blocked REP_F ≤ Σ_z d_E(z)·TXC_F(z), TXC = tied Ξ-climbs. That
+    charges the families that drive REP (R127 breadth, R130 depth) to GXC-type events instead of to W-changes, and so leaves the circle.
+- Stale REPEATs (37 of 41 in the corpus; all of fc_N / switchbestexp_N, ≤ 6 per game) are re-adoptions on a plain wave. They need a
+  separate count: W(z) rises past W(σ y) while (y, z) ∈ Iσ, which is the plain-wave mechanism of GP*. Not bounded here.
+- Next box (proposed): prove TIED-RB, or kill it with an instance; then bound stale REPEATs per W-run (or drop them by changing the
+  late-adoption definition to forget a block at each adoption, and re-check R89 GP*-RUN under that definition).
+
 ## DONE / FINDINGS / NEEDS
-- DONE: odd/windag.py; corpus, latew, wdepth m16 / m32, so_th; si/check.sh «box 50»; this note.
+- DONE: odd/windag.py, odd/tied.py (out/tied_corpus.txt); corpus, latew, wdepth m16 / m32, so_th; si/check.sh «box 50»; this note.
 - FINDINGS:
   1. PROVED (lane): Lemma ONE-PER-WINDOW (≤ 1 chained REPEAT per edge per window); REP_F ≤ X_F + m_E(1 + R*_T); REP-DEPTH with ratio m_E.
   2. PROVED (lane): Theorem CIRCLE, [P-REP] ⟺ [P-RT] ⟺ [P-WT] ∧ [P-X]. The additive charge REP ≤ X + Σ_z d_E(z)·WCH_F(z) has
@@ -97,4 +121,6 @@ unrefereed, not a TARGET.md claim. G-N5-TIME OPEN. Labels: PROVED (lane) / CONJE
   4. DATA: the window DAG is a forest of paths and stars; TOKSH 1 (CONJECTURE TOK1); X 0.
   5. READING: charging alone cannot break the circle (gain m_E(n − 1)). The kill target is a binary causal reader tree; the positive
      route is GXC inside a W-run.
+  6. DATA (§6): every re-blocked REPEAT has a tied Ξ-climb of its target (574 / 574; latew 570 / 570). CONJECTURE TIED-RB.
+     The 32 untied REPEATs are all stale.
 - NEEDS: none from the owner.

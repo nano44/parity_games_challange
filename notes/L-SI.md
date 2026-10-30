@@ -10,7 +10,7 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane bri
   - PROVED (lane, arithmetic): REP* in CUT-RED can be replaced by the single premise [P-WT]* ∧ [P-X]*.
   - DATA: the window DAG is a forest; TOKSH 1 (CONJECTURE TOK1).
   - KILL TARGET for L-RED: a binary causal reader tree.
-- Next: GXC inside a W-run (the §5 positive route); read L-NEW box 70 first.
+- §6 (tied.py): re-blocked REPEATs all have a tied Ξ-climb of z (CONJECTURE TIED-RB); the 32 untied corpus REPEATs are stale. Next: prove or kill TIED-RB; count stale REPEATs.
 - Things only I know (successor 32):
   - windag.py's window and t* definitions are repchain.py's (box 48).
   - The DAG attributes a REPEAT to a window by time, not by cause, so BETA / LONG are timing artefacts.
