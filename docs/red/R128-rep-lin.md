@@ -22,7 +22,7 @@ Labels: DEAD / DATA / READING / OPEN. Not a TARGET.md claim; G-N5-TIME OPEN.
 | 4 | 16 | 186 | 76 | 65 | 23 | 42 | 42 | 0.23 | 4 |
 | 8 | 32 | 370 | 280 | 257 | 47 | 210 | 210 | 0.57 | 8 |
 | 20 | 32 | 538 | 700 | 641 | 71 | 570 | 570 | 1.06 | 20 |
-| 24 | 40 | 658 | 1032 | 961 | see addendum | see addendum | 874 | 1.33 | 24 |
+| 24 | 40 | 658 | 1032 | 961 | 87 | 874 | 874 | 1.33 | 24 |
 - Fits: FIRST = m + 2K − 1, REPEAT = (K − 1)(m − 2); laterep RV 0, cyc 0, neither 0 on every row.
 - REP-LIN fails from (K, m) = (20, 32) on. Balanced (14K ≈ 8m), REP ≈ n²/450.
 - The engines and counters:
@@ -53,4 +53,5 @@ Labels: DEAD / DATA / READING / OPEN. Not a TARGET.md claim; G-N5-TIME OPEN.
 - NEEDS: none from the owner.
 
 ## Addendum
-- laterep.py on (K, m) = (24, 40) was still running at the first push (scratch /tmp/claude-0/span/lr24.txt); its numbers follow in the next push.
+- laterep.py on (K, m) = (24, 40) finished after the first push (0e91e875): late 961, FIRST 87, REPEAT 874, RV 0, cyc 0, MAXE 24, which
+  equals latec.py's REP 874. The table row is filled in.
