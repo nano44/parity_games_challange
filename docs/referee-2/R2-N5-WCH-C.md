@@ -67,6 +67,18 @@ Object: P-N5-WCH-box79.md @ l-new 2ad78f51 (sha1 31caa72e…) and the line 9ac6f
     exact at every S4a computation.
 - My TT 88 and TIE 397 equal the lane's §8.4 exactly.
 
+## C.6 Line W1 (l-new c930e26f, docs/new/P-N5-WCH-box79-line-W1.txt sha1 00f9e375…, fixes sha1 8377a1b8…; both re-hashed: match)
+- MATCHES (Opus 5.5, D15).
+- Word-diff 9ac6fdba → W1 (my own, difflib over tokens, 1247 → 1294) shows exactly four changes, and nothing else changes:
+  - «+ R84 (a) (Fact DELTA)» in the premise list (L-4);
+  - «Z-flat in-phase fallbacks k → k + 1 of P» in NZ_P (L-1);
+  - «if, for a function w : ℕ → ℕ, every τ-stretch» (L-2);
+  - σ′ stated directly (L-3): keep σ_t(v) where ℓ(W*(v)) ≥ 1 and v ⊕ W*(σ_t v) = W*(v), or where W*(v) = (v, ∅, 0) and W*(σ_t v) has cycle
+    node v and empty path set, and take σ*(v) at every other Even v. These are §7.1's two keep rules verbatim.
+- «under ASSUMPTION OPT-ONLY» is unchanged, per option (a). Every inequality is token-identical.
+- My strict symbol test: the new tokens k, w, ℕ, ℓ / «length», ∅ are each bound in their clause. No free symbol remains.
+- «box 79» at c930e26f: PASS, exit 0. It includes the SPEC quote check (W1-1 fixes the four tags) and «line W1 strict symbol test PASS».
+
 ## DONE / FINDINGS / NEEDS
 - DONE: this §C.
 - FINDINGS:
