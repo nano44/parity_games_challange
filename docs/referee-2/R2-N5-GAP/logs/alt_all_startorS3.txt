@@ -1,0 +1,32 @@
+MODE files ../../../experiments/si/root/logs/alt_all.lst 1 experiments/ MAXT 3000
+FBW_checks: 811
+GM_checks: 811
+GR_checks: 2551
+LP_checks: 1805
+LP_reblocked: 1807
+LW_checks: 4784
+OO_case1: 477102
+OO_case2: 4380
+OO_case2u: 10355
+OO_case2u_S0_ueven: 9370
+OO_checks: 491837
+RW_checks: 8172
+SI_checks: 2585
+WM_checks: 8922
+WS_checks: 365121
+XW_checks: 10581
+X_GM_s4a: 3172
+X_LP_nore: 9
+X_OO_own: 356
+X_SI_own: 30
+ZF_checks: 58
+ZF_total: 56
+inphase_fallbacks: 725
+runs: 412
+starts_INVALID_skipped: 1
+starts_valid: 93
+transitions: 10169
+max max_RO: 234
+max max_ZF: 10
+max max_fP: 37
+RESULT PASS violations 0

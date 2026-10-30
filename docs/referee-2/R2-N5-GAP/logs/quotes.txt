@@ -1,0 +1,12 @@
+OK   SPEC:28-29 valuation of v under (σ, σ̄): (c, P, ℓ), c = the most releva
+OK   SPEC:30-31 order (better for Even): compare reward of c (p'(c) if even,
+OK   SPEC:32-32 Ξσ = valuation of every vertex under σ and Odd's OPTIMAL cou
+OK   SPEC:47-47 Improving edges: Iσ = {(v, w) : owner(v) = Even, w ≠ σ(v), Ξ
+OK   SPEC:51-53 a. If Iσ ≠ ∅: A(v) = {σ(v)} ∪ {w : (v, w) ∈ Iσ} for Even v. 
+OK   SPEC:56-57 c. FALLBACK, if σ_new = σ and τ_new = τ: if Iσ ≠ ∅, for ever
+OK   R15 Lemma A: for any non-empty unambiguous set I of improvements
+OK   R15 N5: every iteration applies Switch_I with ∅ ≠ I ⊆ Iσ to Even
+OK   F1 the optimum of a one-player game dominates every strategy of
+OK   box10 Prefix: x ⊕ (c, P, ℓ) := (c, P ∪ {x if x more relevant than 
+OK   box10 (V1) if x is not its own cycle node then Ω_ρ(x) = x ⊕ Ω_ρ(ρ(
+quotes=11 ok=11 SHIFT=0

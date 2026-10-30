@@ -1,0 +1,10 @@
+MODE onep 500 10 25 63 MAXT 3000
+OO_F1_checks: 4500
+OO_case1: 18132
+OO_case2: 3239
+OO_case2u: 2855
+OO_case2u_S0_ueven: 2409
+OO_checks: 24226
+X_OO_own: 112
+onep_games: 1500
+RESULT PASS violations 0

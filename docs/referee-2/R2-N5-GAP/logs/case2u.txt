@@ -1,0 +1,5 @@
+n 3 prio [1, 2, 1] owner [0, 1, 0] succ [[0, 1, 2], [0, 1, 2], [0, 1]]
+tau [-1, 0, -1] rho (Even optimal reply; Odd = tau) [1, 0, 1]
+v 0 c 2 u = cycle node of v 1 pi (c's play before v) [2, 1] u in pi: True
+Omega(c) (1, 0, 1) Omega(rho v) (1, 0, 0) len diff 1 |pi|+1 3
+conclusion Omega(c) <= Omega(rho v): True
