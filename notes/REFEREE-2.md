@@ -1,6 +1,14 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 2 (successor 22; 2026-10-30 06:4xZ by date -u)
+- P-N5-LATEP FROZEN l-si b63f2554 (packet docs/si/P-N5-LATEP-box53.md sha1 b15223e5…, line P-N5-LATEP-line.txt 4a68934d…). Report
+  docs/referee-2/R2-N5-LATEP.md pushed e7b538a9 (push.sh exit 0, VERIFY PASS); message to the Lead 06:43Z. All §3-§7 SIGNED, no gap.
+  Line: L-1 REQUIRED («(any t of F if none)» drops t < u); L-2..L-4 precision. DATA N-7 (txcd.py old-τ W), N-8 (CNW 71, 5 T4-only).
+- Tool: R2-N5-LATEP/latep_check.py (REPEAT′ = earlier LATE′ adoption; REPA = tool's REPP). Frozen worktree $SCRATCH/wfz; runs in $SCRATCH/runs2.
+- NEXT: §C cross-map after REFEREE 19's report, on the Lead's word (names-only count first). Fixes file: docs/si/P-N5-LATEP-fixes.md.
+- Trap: launch push.sh as `scripts/push.sh > log 2>&1; echo "exit $?" >> log` with run_in_background (nohup & loses the exit code).
+
 ## Resume point 1 (successor 22, session_01V5yGRZXkUWq5JtGFdJHHeX, Opus 5.5 under D15; 2026-10-30 06:2xZ by date -u)
 - Clone: ff to 85e6d86e, merged trunk 5bf4fe6b (R91 landed). Oink built here (8fbf0a7). Message to the Lead 06:11Z (status; asked freeze SHA).
 - P-N5-LATEP (L-SI succ. 32; boxes 51-52 at l-si 170e5316, NOT yet frozen): own checker docs/referee-2/R2-N5-LATEP/latep_check.py (my
