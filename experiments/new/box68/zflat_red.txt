@@ -1,0 +1,3 @@
+ZFLAT fb38_n48.pg n 48 {'fb': 38, 'zflat': 0, 'zflat_wch': 0, 'swout': 0, 'reop': 55, 'reopnw': 0, 'sa': 21} worst-phase {'zf': 0, 'reop': 55, 'wch': 102} max-cyclenodes-of-Z-at-zflat (0, 0)
+ZFLAT pl130_n40.pg n 40 {'fb': 11, 'zflat': 0, 'zflat_wch': 0, 'swout': 0, 'reop': 111, 'reopnw': 0, 'sa': 119} worst-phase {'zf': 0, 'reop': 111, 'wch': 365} max-cyclenodes-of-Z-at-zflat (0, 0)
+ZFLAT long121_n40.pg n 40 {'fb': 8, 'zflat': 0, 'zflat_wch': 0, 'swout': 0, 'reop': 104, 'reopnw': 0, 'sa': 113} worst-phase {'zf': 0, 'reop': 104, 'wch': 381} max-cyclenodes-of-Z-at-zflat (0, 0)

@@ -324,4 +324,10 @@ if grep -q "inphase-fb 3 fmax 3 FBUP \[3, 2, 3, 3, 3, 1\] .* ZGROW 0$" <<<"$w17"
 else
   echo "box 67 FBENERGY check: FAILED"; exit 1
 fi
+w18=$(cd .. && python3 -I new/box68/zflat.py n5-epoch/instances/nep22f_n64.pg n5-epoch/instances/nep22f_n64.start)
+if grep -q "'fb': 10, 'zflat': 10, 'zflat_wch': 10, 'swout': 0, 'reop': 0, 'reopnw': 0" <<<"$w18"; then
+  echo "box 68 ZFLAT: nep22f_n64 10 Z-flat fallbacks in a saturated gap, SW-IN and REOPEN-W hold: PASS"
+else
+  echo "box 68 ZFLAT check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
