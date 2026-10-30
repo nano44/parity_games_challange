@@ -1,6 +1,25 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Resume point (successor 36, Opus 5.5, D14/D18; written 2026-10-30 ~05:17Z by date -u; box 72 DONE, pushed)
+### DONE: box 72 docs/new/N5-LZ-box72.md + experiments/new/box72 (check.sh "box 72"). START report to the Lead sent (stamped 05:00Z in the
+  message; date -u read 04:58:00Z just before: slip, the message time is wrong by ~2 min).
+### NEXT (the Lead decides): FBO (fallback climbs with the gap open; CONJECTURE FBO-LIN, max 46/phase nep22f_n64); LZ-NOC (no C in N5-LZC);
+  OPT-ONLY check of W-RETURN-G for N5-LZC; whether N5-LZC may replace N5 as the object.
+### Owned conjectures: FBO-LIN, LZ-NOC (new); FRAME-STRETCH_P, LOOP, GROUP, EXIT-without-NT (inherited).
+### Things only I know (successor 36)
+- gxc.py's "fallbacks" field is ALL S4c fallbacks (not only in-phase); the first gxc_*.txt run lacked the field (cmp.py then shows 0).
+- gxc.py's CLOSE/FBO use Z_{t+1} read with TAU[k+1] (= TAU[k] in-phase). tie_cyc counts S4a events where v is its own Xi- OR W-cycle node.
+- n5lz.py reads --lzc from sys.argv at import; silentlz.py / wincmp.py append it. The lazy rule uses Engine.extend (no avoidance check);
+  LZ-OPT shows value-consistency suffices, and the assert val(sigma') = W* guards it.
+
+## Box 72 log (successor 36; Lead brief after 04:56Z Oct 30: GXC per lambda-run / phase, new angle)
+- docs/new/N5-LZ-box72.md. DATA (1132 runs): GXC 3636 = 385 S4a (all W-tied) + 3251 fallback (3012 close the gap). u23sw64_n32's 64 are
+  S4a ties at gap level C (W-ceiling sandwich useless there). PROVED (lane): Lemma TIE (S4a switch w/o W-rise keeps the old successor
+  W-consistent); N5-LZC (lazy S4a tie-break) with LZ-OPT, Theorem LZ-STRICT (every S4a switch strictly raises W(v)), LZ-NOGXC, LZ-NOSIL
+  (under OPT-ONLY); Lemma GXC-CLOSE (closings per phase <= |Z_a| + WCH^S4a). N5-LZC: S = C = 0, 21542 vs 21845 iterations, fallbacks
+  1445 vs 1486, winners SAME 1132/1132. OPEN: FBO (max 46/phase).
+
 ## Box 71 log (successor 35; Lead 01:50Z: <= 1 S re-entry per (piece, edge): proof or adversary)
 - docs/new/N5-S2-box71.md. No tie-order lemma (SPEC S1's tie-break depends on the whole arena). DEAD: instance
   experiments/new/box71/inst/s2piece_n32.pg + .start (sha1 aec03e16...): v 15 cycles 8 -> 2 -> 10 -> 8 through three W*-tied options, two
@@ -168,6 +187,11 @@ Stop (S5) when Iσ = Iτ = ∅: Even wins v iff the cycle node of Ξσ(v) has ev
   (b), (c); length < 2(n + m)(n² − n + 1 + SBC)). DEAD: NOFB (n3all_maxph_0), W-frame twin N5-SFW cycles (theta_thf16, period 10; 49/413).
   DATA: correct on 1,038 library + families + hard families; SF ≈ ½ N5; runquad 264 → 2, topfix 7N + 43; switchbestexp N=10 619 vs 89, SBC 97.
   Open count SBC (CONJECTURE SF-POLY OPEN).
+
+## Dead ends (successor 36; also in docs/new/N5-LZ-box72.md §1)
+- W-ceiling sandwich (Xi <= W, W fixed, bounds the strict Xi-rises): DEAD as a bound, experiments/red/xing/instances/u23sw64_n32.pg: all 64
+  GXC events of one lambda-run sit at gap level C (Xi and W have different cycle nodes, W flat = (13, ., .)), so the ceiling constrains
+  nothing; the gap-level lex-monotonicity (0 violations) is only a counter.
 
 ## Dead ends (successor 35; also in docs/new/N5-STRETCH-box64.md §1.5)
 - FRAME-STRETCH (< n+m sigma-changes per tau-stretch): DEAD, experiments/new/box64/mkr/mk_16_100.pg (sha1 49ba9a59…, start in .start;
@@ -741,7 +765,7 @@ Every answer measured from the repository; commands named.
    fetched ref, so the pin cannot be checked yet; I checked the packet by sha1 (cbea0739…) against my own commit 1afccb51 instead.
    (iii) The container clock is slow vs the Lead's stamp (07:50 vs 07:53): stamp only from date -u, never ahead of it.
 
-## Resume point (successor 35, session_01V5yGRZhJhpJcRZhDSWTwuE; FINAL, PARKED 2026-10-30 ~02:01Z by date -u)
+## Resume point (HISTORY; successor 35, session_01V5yGRZhJhpJcRZhDSWTwuE; FINAL, PARKED 2026-10-30 ~02:01Z by date -u)
 ### DONE (all pushed via scripts/push.sh, VERIFY PASS; reported to the Lead)
 - Boxes 64-65: N5-STRETCH-box64.md; P-N5-FRAME (frozen 938d8796) LANDED as RESULTS R89 (fixes H0-H17).
 - Box 66 N5-LATE (78e1fd24); box 67 N5-FBENERGY (0163720e); box 68 N5-ZFLAT (b24ee55d).

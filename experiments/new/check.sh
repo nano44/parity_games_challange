@@ -342,4 +342,17 @@ if grep -q "classes {'S': 26} max-S-per-edge 2 .* max-S-per-piece-edge 2 S-at-Wf
 else
   echo "box 71 S2 check: FAILED"; exit 1
 fi
+w21=$(cd .. && python3 -I new/box72/gxc.py red/xing/instances/u23sw64_n32.pg; python3 -I new/box72/gxc.py red/xing/instances/u23sw64_n32.pg --lz --lzc)
+if grep -q "iters 16 fallbacks 1 events 64 .*cat {('s4a', 'Wsame', 'open'): 64}" <<<"$w21" && grep -q "CHK u23sw64_n32.pg tie_ok 64 tie_bad 0" <<<"$w21" \
+   && grep -q "iters 6 fallbacks 1 events 0 " <<<"$w21"; then
+  echo "box 72 LZ: u23sw64_n32 64 GXC events all S4a W-ties (TIE 64/64); N5-LZC 6 iterations, 0 GXC: PASS"
+else
+  echo "box 72 LZ check: FAILED"; exit 1
+fi
+w22=$(cd .. && python3 -I new/box72/silentlz.py red/kw/instances/cw11_n24.pg; python3 -I new/box72/wincmp.py red/kw/instances/cw11_n24.pg)
+if grep -q "iters 10 classes {'F': 12} max-S-per-edge 0 max-C-per-edge 0" <<<"$w22" && grep -q "WIN cw11_n24.pg SAME n5 17 lzc 10" <<<"$w22"; then
+  echo "box 72 LZ: cw11_n24 N5-LZC no C / S re-entries (N5: C 3), same winners: PASS"
+else
+  echo "box 72 LZ cw11 check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
