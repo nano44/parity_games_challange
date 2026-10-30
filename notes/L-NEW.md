@@ -2,6 +2,14 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point (successor 38, Opus 5.5, started 2026-10-30 12:02Z by date -u; handover check: origin head 1169bb3d, trunk merged)
+### Box 88 N5-ONEP (Lead 13:57Z re-aim of box 87: |F| of one W-run vs the one-player tau-arena): docs/new/N5-ONEP-box88.md
+- PROVED (lane): NO-DEV (Xi = W along F => R* = FL = 0, |F| <= n-1); BIP-MON; definition BIP(rho, tau) (N5 on frozen-sigmabar stretches).
+- DATA: two mechanisms. (O) latew_K16_m32: sigmabar changes 513/560 transitions, 480/513 releases Odd re-routings. (B) obs_K12_m24:
+  sigmabar changes once, 25/25 releases Even-side, poison kept, |F| 324 > n-1. Corpus ODD 1704 / EVEN 903.
+- CONJECTURE BIP-POLY OPEN (two fixed Odd strategies: offers by rho, steps by tau). Label-correcting lower bounds (Johnson 1973) NOT opened.
+- R140 (Friedmann port) not yet pushed at 14:40Z: (ii) unchecked.
+- Things only I know: obs_K12_m24 read from origin/claude/l-red into the scratchpad (sha1 7df541fb). release.py 'kept' counts every
+  release whose deviations on the old play are unchanged (ODD releases included).
 ### Box 87 N5-ARV (Lead 13:34Z: XI-CH-POLY via the ARV rank trick): docs/new/N5-ARV-box87.md
 - ARV (ECCC TR06-067) Thm 3 / Lemma 4 opened: rank a fixed list of <= n m delays; 1-1 exchange keeps improvements strict.
 - PROVED (lane): LEX-SIGN (path-set order = lex on signed vector), PREFIX-MON (k-term signed prefix monotone, <= (2n+1)^k values),
