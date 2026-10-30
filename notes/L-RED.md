@@ -48,6 +48,9 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - R136 (Lead 12:02Z) docs/red/R136-pattern-clock.md: Lemma PAT-SW (fresh patterns <= 1 + route switches: a cheap pattern clock IS a long
   W-run); mkrb PAT = SERVED = K (clock hp); Lemma ALT-ESCAPE (two gates cannot share a clock entry), te_k (pclock/mkte.py) dies.
   Untried: nested-depth entries into one chain (pi_0 a proper suffix of pi_1).
+- R137 (Lead 12:34Z, box 84 input) docs/red/R137-free-returns.md: mkrw FREE per edge = K; fx_K_m (free/obsx.py BLK=2) FREE = K*m/4 at one
+  edge in one W-run (128 at n 362); BLK=1 dies by arena lookahead. Ceiling |F|. Tools: free/xret.py; l-new retclass.py run from
+  /tmp/claude-0/lnew (detached at origin/claude/l-new 246f1687).
 - Things only I know: mkdg.py writes names into the .pg; dgstat.py reads them (TOPNAME arg). noup.py is exponential in the number of
   choosers (k 6 in 3 s; k 7 not tried).
 
