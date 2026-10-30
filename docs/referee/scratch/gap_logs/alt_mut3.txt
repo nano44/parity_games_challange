@@ -1,0 +1,54 @@
+NOTE start file /tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/red/n3/instances/comp54_n80.start gives forced vertex 11 -> 51; using 11
+NOTE start file /tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/red/n3/instances/n3cov_lean.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file /tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/red/n3/instances/n3cov_phi.start invalid for its game (move not an edge, or missing); given start skipped
+FB 948
+GAMES 394
+GMONmut_V 3375
+LP_chk 1918
+LP_max 2
+LP_rb 1920
+LW_chk 1075
+OPT_2b 11948
+OPT_2b_S0 11781
+OPT_chk 436677
+RED_chk 2624
+REOP_chk 9050
+RUNS 481
+SWIN_chk 2945
+TRANS 11064
+XW_chk 493493
+ZFLAT 74
+ZF_max 10
+f_max 38
+skip_big 22
+VIOLATIONS 3375
+EX ('GMONmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-epoch/instances/ffin12_n32.pg', 6)
+EX ('GMONmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-epoch/instances/ffin12_n32.pg', 7)
+EX ('GMONmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-epoch/instances/ffin12_n32.pg', 9)
+EX ('GMONmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-epoch/instances/ffin12_n32.pg', 11)
+EX ('GMONmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-epoch/instances/ffin12_n32.pg', 23)
+EX ('GMONmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-epoch/instances/ffin12_n32.pg', 2)
+EX ('GMONmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-epoch/instances/ffin12_n32.pg', 3)
+EX ('GMONmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-epoch/instances/ffin12_n32.pg', 4)
+EX ('GMONmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-epoch/instances/ffin12_n32.pg', 5)
+EX ('GMONmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-epoch/instances/ffin12_n32.pg', 6)
+EX ('GMONmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-epoch/instances/ffin4_n24.pg', 5)
+EX ('GMONmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-epoch/instances/ffin4_n24.pg', 6)
+EX ('GMONmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-epoch/instances/ffin5_n32.pg', 3)
+EX ('GMONmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-epoch/instances/ffin5_n32.pg', 4)
+EX ('GMONmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-epoch/instances/ffin5_n32.pg', 1)
+EX ('GMONmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-epoch/instances/gci2_n12.pg', 0)
+EX ('GMONmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-epoch/instances/gci2_n12.pg', 1)
+EX ('GMONmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-epoch/instances/gci2_n12.pg', 2)
+EX ('GMONmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-epoch/instances/gci2_n12.pg', 3)
+EX ('GMONmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-epoch/instances/gci2_n12.pg', 4)
+EX ('GMONmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-epoch/instances/gci2_n12.pg', 5)
+EX ('GMONmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-epoch/instances/gci2_n12.pg', 6)
+EX ('GMONmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-epoch/instances/gci2_n12.pg', 7)
+EX ('GMONmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-epoch/instances/gci2_n12.pg', 8)
+EX ('GMONmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-epoch/instances/gci2_n12.pg', 5)
+EX ('GMONmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-epoch/instances/gci3_n24.pg', 0)
+EX ('GMONmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-epoch/instances/immfail_n14.pg', 0)
+EX ('GMONmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-epoch/instances/immfail_n14.pg', 2)
+EX ('GMONmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-epoch/instances/immp_cex_n11.pg', 0)
+EX ('GMONmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_gap/experiments/n5-epoch/instances/lcount_n23.pg', 0)
