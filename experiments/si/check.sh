@@ -859,3 +859,7 @@ echo "si (box 52: TXC descent): PASS"
 python3 -I rund/quotecheck.py ../../docs/si/P-N5-LATEP-box53.md | grep -q "quotes=6 bad=0"
 python3 -I rund/quotecheck.py ../../docs/si/P-N5-LATEP-box53.md --mut | grep -q "QUOTES FAIL"
 echo "si (box 53: P-N5-LATEP quotes): PASS"
+# box 50b (docs/si/N5-FL-box50b.md): FL_F on W-runs; FLAT-Z (Z only shrinks at W-flat transitions); FL-GAP; u23sw64 FL = ZFL = 8.
+o=$(python3 -I fl/flat.py ../red/xing/instances/u23sw64_n32.pg); grep -q "ZFL 8 ZA 32 ZSHR_V 0 ZIN_V 0 FLGAP_V 0 FL 8 FLI 8 FLV 6 LCTFL 0 SW 64 NOTZ_V 0 NOCL_V 0 WCH_V 0 GXC 64" <<<"$o"
+o=$(python3 -I fl/flat.py ../red/kw/instances/cw11_n24.pg); grep -q "ZSHR_V 0 ZIN_V 0 FLGAP_V 0" <<<"$o"
+echo "si (box 50b: FL, FLAT-Z): PASS"
