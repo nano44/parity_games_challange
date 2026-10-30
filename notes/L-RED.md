@@ -1,5 +1,5 @@
 # L-RED notebook (independent adversary lane)
-Successor 34 (Opus 5.5) started 2026-10-30 15:33Z (date -u); R143 Lemma SETTLE (no kill; INT-LIN on event-free intervals); see "Successor 34".
+Successor 34 (session_01V5yGRYH6tnU7RvjZqXw32g, Opus 5.5) started 2026-10-30 15:33Z (date -u); R143-R146; PARKED ~20:30Z; see "Successor 34 PARK".
 Successor 33 (session id: see docs/NOW.md roster, Opus 5.5) started 2026-10-30 11:13Z (date -u); R135-R142 (no kill; WAIT-CYCLE, PAT-SW, ALT-ESCAPE, ARENA-MAX; quadratic one-W-run families); PARKED ~15:00Z; see "Successor 33 PARK".
 Successor 32 (session_01V5yGRXGW9KqMY5gaypMTs2, Opus 5.5) started 2026-10-30 05:28Z (date -u); R131 TIED-RB DEAD (011213ef); R132 (A) not built, obstruction TWO-SOURCE / PREFIX; R133 N5-LZC bench (no kill); R134 ZXC observer (ZXC = |F| - 2K + 1, no amplification); PARKED ~08:50Z (Lead 08:06Z); see "Successor 32 PARK".
 Successor 31 (session_01V5yGRZfrtk7CRqezo1wAzp, Opus 5.5) woken 2026-10-30 00:09Z; R126-R129; PARKED 01:40Z; woken 03:13Z for R130 (WD-BOUNDED DEAD), PARKED again ~03:30Z; see "Successor 31 PARK".
@@ -32,6 +32,29 @@ Successor 15 PARKED ~09:40Z 2026-10-25 after box 38; RESUME POINT for successor 
 context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older notebook: `git show b0884407:notes/L-RED.md`.
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
+
+## Successor 34 PARK (2026-10-30 ~20:30Z, date -u; large context; Lead 20:00Z: "If your context passes ~550k, write the handover and park")
+- DONE (claude/l-red, push.sh VERIFY PASS each): R143 717f407a; R144 86383b27; R145 b0e19520 + 4bab6f29; R146 + this PARK in the final push.
+- RESULTS (all lane-level; no super-quadratic W-run; G-N5-TIME OPEN):
+  - PROVED (lane): Lemma SETTLE (R143; L-SI extended it to RUN-SETTLE, now P-N5-SETTLE with both referees); Lemma ADD (R144);
+    Lemma SAME-HEAD (R145).
+  - DEAD: BIP-REL-1 (rel2_R2_n82; rel3 gives R° = Θ(n)); FLIP-EV (flipev_n10, flipevr_n10; L-SI flipev_n20 too).
+  - Quadratic at one vertex: SB at a degree-2 Odd vertex = K·m in one W-run (sbq2_K8_m16).
+  - No kill: ROOT-FLIP (R146; the proof checks out, n5b data 0 violations).
+- Pins (sha1 files in check.sh): lexc/winseed_u23_n32; rel2/instances/rel2_R2_n82, rel2_R4_n322, rel3_R4_n196;
+  flipev/instances/flipev_n10, flipevr_n10, sbq2_K8_m16.
+- Tools: lexc/ (settle, ftmodel, lexsearch, winsearch); rel2/ (mkrel2, mkrel3, trace, oinkcmp.sh, swcount); flipev/ (flipev with
+  --search / SCORE2, sbv, obs3, rootflip).
+- RESUME POINT (first box for successor 35):
+  - R146 §2: one blocked closure released K·m-ish times in ONE W-run. Use sbq2's flip-flop root as the Ξ-side exit, plus a second exit
+    flipping in anti-phase on the W side (rel2's three-signal pattern fed by waves). Expected at best quadratic.
+  - The real target is still a counter whose carries S4a's W-optimum cannot shortcut (R140 §3, R145 §2).
+- Things only I know:
+  - L-SI's and L-NEW's tools run unchanged from git archives in /tmp/claude-0/lsi2 and /tmp/claude-0/lnew2, with
+    PYTHONPATH=experiments/new:experiments/harness:experiments/new/box21. Recreate with git archive origin/claude/l-si
+    experiments/si/heads52 | tar -x -C DIR.
+  - Never `pkill -f` a pattern that occurs in the same command line: it kills the calling shell (exit 144).
+  - n5b is slow beyond n ≈ 800 (rel3 R = 32 did not finish in 900 s).
 
 ## Successor 34 (Opus 5.5, D1/D18; started 2026-10-30 15:33Z, date -u)
 - Start: origin/claude/l-red = 81a6ffac (only successor 33 and the Lead pushed); trunk c618baeb merged, then 81a6ffac (7e538fff). Oink
