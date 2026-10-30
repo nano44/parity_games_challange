@@ -7,7 +7,13 @@ G-N5-TIME stays OPEN. Labels: PROVED (lane) / CONJECTURE / DATA / DEAD / READING
 - Setting and symbols as in docs/si/N5-FL-box50b.md and RESULTS R92: a W-run F (τ and λ_W constant, no S4c fallback); W_k, Ξ_k, σ̄_k, Z_k,
   D_k := {Odd o : σ̄_k(o) ≠ τ(o)}; ⊴ / ▷ the SPEC S1 order; ⊕ the prefix operation (R93 Lemma TIE; si.Engine.extend). A W-constant
   interval I of F is a maximal run of consecutive states of F with equal W; its transitions are exactly the W-flat transitions in it.
-- Gate (Lead reading confirmed in my 13:34Z message): g_k(u) := the first vertex of D_k on the (σ_k, τ)-play from u (u itself if u ∈ D_k;
+- R92 verbatim (docs/RESULTS.md l. 6656): «D_s := {Odd o : σ̄_s(o) ≠ τ(o)}» and «GATE_F the pairs (o, s) with o Odd in D_s ∪ D_{s+1}
+  and s in TXC_F(o)». R92 defines no "first gate". The first gate below is an L-SI reading built on R92's D_s (Lead 13:57Z: «proceed on your
+  reading, labelled "L-SI reading"»).
+  - L-RED R139 (l-red 9326f166, via the Lead) and L-LIT T53 (l-lit 60bb9a56, via the Lead; not opened by me): Friedmann's exponential runs
+    lie inside one fixed-cycle-node phase, so a ZFL bound must use N5's structure (τ fixed, S4a's arena optimum, W frozen), not
+    Ξ-monotonicity alone. This agrees with §3: the W-frozen intervals here have fixed cycle nodes, and only S1's tie-break is left.
+- Gate (L-SI reading): g_k(u) := the first vertex of D_k on the (σ_k, τ)-play from u (u itself if u ∈ D_k;
   undefined if the play avoids D_k); pre_k(u) := the vertices of that play before g_k(u). Same-pair at k: λ_Ξ_k(g) = λ_W(g).
 - Tools (mine): experiments/si/gate/gate.py (classes, potential, interval checks, TXC counts), const.py (constancy of gate data per
   interval), agg.py, run.sh; L-RED instances copied read-only to gate/inst/ (sha1 equal to l-red 5374e0a5's pins). Outputs gate_sbcg.txt
