@@ -445,4 +445,10 @@ if grep -q "RSTAR n 197 runs 1 {'gapdev_viol': 0, 'cap_viol': 1, 'blocked': 205}
 else
   echo "box 86 RSTAR check: FAILED"; exit 1
 fi
+w38=$(cd .. && python3 -I new/box87/depth.py red/usplit/instances/gate_K16_n197.pg red/usplit/instances/gate_K16_n197.start; python3 -I new/box87/depth.py new/box54/out/switchbestexp_4.pg)
+if grep -q "DEPTH n 197 runs 1 {'prefix_viol': 0} maxima {'depth': 2, 'd1': 1, 'd2': 1, 'd4': 0, 'xich': 15, 'flip': 1}" <<<"$w38" && grep -q "DEPTH n 110 runs 2 {'prefix_viol': 0} maxima {'depth': 15, 'd1': 14, 'd2': 14, 'd4': 13, 'xich': 15, 'flip': 2}" <<<"$w38"; then
+  echo "box 87 ARV: PREFIX-MON 0 violations; SHALLOW-k DEAD on switchbestexp_4 (depth 15, DEEP_4 13): PASS"
+else
+  echo "box 87 ARV check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

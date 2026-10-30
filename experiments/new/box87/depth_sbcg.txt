@@ -1,0 +1,719 @@
+GAME new/box59/out/fc_3.pg DEPTH n 85 runs 2 {'prefix_viol': 0} maxima {'depth': 13, 'd1': 13, 'd2': 13, 'd4': 12, 'xich': 14} hist {0: 88, 2: 26, 3: 134, 4: 106, 5: 37, 6: 33, 7: 57, 8: 2, 9: 6, 10: 2, 11: 28, 12: 25, 13: 2}
+GAME new/box59/out/fc_4.pg DEPTH n 110 runs 2 {'prefix_viol': 0} maxima {'depth': 15, 'd1': 14, 'd2': 14, 'd4': 13, 'xich': 15} hist {0: 113, 1: 7, 2: 28, 3: 180, 4: 147, 5: 42, 6: 35, 7: 6, 9: 9, 10: 69, 11: 3, 12: 3, 13: 3, 14: 38, 15: 43}
+GAME new/box59/out/fc_5.pg DEPTH n 135 runs 2 {'prefix_viol': 0} maxima {'depth': 18, 'd1': 17, 'd2': 17, 'd4': 16, 'xich': 18} hist {0: 145, 1: 7, 2: 30, 3: 233, 4: 181, 5: 51, 6: 63, 7: 12, 9: 12, 10: 4, 11: 4, 12: 4, 13: 85, 17: 50, 18: 69}
+GAME new/box59/out/fcobsR_3.pg DEPTH n 90 runs 2 {'prefix_viol': 0} maxima {'depth': 13, 'd1': 25, 'd2': 25, 'd4': 24, 'xich': 26} hist {0: 91, 2: 19, 3: 146, 4: 85, 5: 17, 6: 41, 7: 60, 8: 2, 9: 6, 10: 2, 11: 28, 12: 53, 13: 2}
+GAME new/box59/out/fc_6.pg DEPTH n 160 runs 2 {'prefix_viol': 0} maxima {'depth': 21, 'd1': 19, 'd2': 19, 'd4': 18, 'xich': 20} hist {0: 170, 1: 14, 2: 32, 3: 279, 4: 221, 5: 58, 6: 66, 7: 15, 9: 15, 10: 5, 11: 5, 12: 5, 13: 5, 16: 96, 20: 62, 21: 101}
+GAME new/box59/out/fcobs_3.pg DEPTH n 88 runs 2 {'prefix_viol': 0} maxima {'depth': 13, 'd1': 25, 'd2': 25, 'd4': 24, 'xich': 26} hist {0: 91, 2: 19, 3: 146, 4: 85, 5: 17, 6: 41, 7: 60, 8: 2, 9: 6, 10: 2, 11: 28, 12: 53, 13: 2}
+GAME new/box59/out/fcobsR_4.pg DEPTH n 115 runs 2 {'prefix_viol': 0} maxima {'depth': 15, 'd1': 30, 'd2': 30, 'd4': 29, 'xich': 31} hist {0: 116, 1: 7, 2: 19, 3: 191, 4: 116, 5: 15, 6: 40, 7: 6, 9: 9, 10: 72, 11: 3, 12: 3, 13: 3, 14: 38, 15: 83}
+GAME n5-epoch/instances/ffin12_n32.pg DEPTH n 32 runs 2 {'prefix_viol': 0} maxima {'depth': 2, 'd1': 1, 'd2': 1, 'd4': 0, 'xich': 1} hist {0: 26, 1: 2, 2: 1}
+GAME n5-epoch/instances/ffin4_n24.pg DEPTH n 24 runs 1 {'prefix_viol': 0} maxima {'depth': 3, 'd1': 1, 'd2': 1, 'd4': 0, 'xich': 1} hist {1: 1, 3: 2}
+GAME n5-epoch/instances/ffin5_n32.pg DEPTH n 32 runs 2 {'prefix_viol': 0} maxima {'depth': 1, 'd1': 1, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 4, 1: 1}
+GAME n5-epoch/instances/gci2_n12.pg DEPTH n 12 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 8}
+GAME n5-epoch/instances/immfail_n14.pg DEPTH n 14 runs 2 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 5}
+GAME n5-epoch/instances/immp_cex_n11.pg DEPTH n 11 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 1}
+GAME n5-epoch/instances/gci3_n24.pg DEPTH n 24 runs 1 {'prefix_viol': 0} maxima {'depth': 4, 'd1': 2, 'd2': 1, 'd4': 1, 'xich': 2} hist {0: 11, 1: 1, 4: 1}
+GAME n5-epoch/instances/lcount_n23.pg DEPTH n 23 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME n5-epoch/instances/lend13_n16.pg DEPTH n 16 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 8}
+GAME new/box59/out/fcobs_4.pg DEPTH n 113 runs 2 {'prefix_viol': 0} maxima {'depth': 15, 'd1': 30, 'd2': 30, 'd4': 29, 'xich': 31} hist {0: 116, 1: 7, 2: 19, 3: 191, 4: 116, 5: 15, 6: 40, 7: 6, 9: 9, 10: 72, 11: 3, 12: 3, 13: 3, 14: 38, 15: 83}
+GAME n5-epoch/instances/lend27_n24.pg DEPTH n 24 runs 1 {'prefix_viol': 0} maxima {'depth': 2, 'd1': 1, 'd2': 1, 'd4': 0, 'xich': 1} hist {2: 1}
+GAME n5-epoch/instances/lend15_n48.pg DEPTH n 48 runs 1 {'prefix_viol': 0} maxima {'depth': 2, 'd1': 1, 'd2': 1, 'd4': 0, 'xich': 1} hist {0: 3, 1: 4, 2: 10}
+GAME new/box59/out/fc_7.pg DEPTH n 185 runs 2 {'prefix_viol': 0} maxima {'depth': 24, 'd1': 20, 'd2': 20, 'd4': 19, 'xich': 21} hist {0: 202, 1: 14, 2: 34, 3: 332, 4: 255, 5: 63, 6: 59, 7: 12, 9: 18, 10: 6, 11: 6, 12: 6, 13: 6, 19: 111, 23: 74, 24: 139}
+GAME n5-epoch/instances/lend107_n32.pg DEPTH n 32 runs 1 {'prefix_viol': 0} maxima {'depth': 3, 'd1': 2, 'd2': 1, 'd4': 0, 'xich': 6} hist {0: 62, 1: 9, 2: 2, 3: 4}
+GAME n5-epoch/instances/lend47_n32.pg DEPTH n 32 runs 2 {'prefix_viol': 0} maxima {'depth': 1, 'd1': 1, 'd2': 0, 'd4': 0, 'xich': 3} hist {0: 34, 1: 1}
+GAME n5-epoch/instances/lend39f_n32.pg DEPTH n 32 runs 1 {'prefix_viol': 0} maxima {'depth': 2, 'd1': 1, 'd2': 1, 'd4': 0, 'xich': 1} hist {1: 4, 2: 1}
+GAME n5-epoch/instances/lend55_n32.pg DEPTH n 32 runs 1 {'prefix_viol': 0} maxima {'depth': 2, 'd1': 1, 'd2': 1, 'd4': 0, 'xich': 2} hist {0: 24, 1: 1, 2: 1}
+GAME n5-epoch/instances/lend9_n8.pg DEPTH n 8 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME n5-epoch/instances/lend82_n32.pg DEPTH n 32 runs 1 {'prefix_viol': 0} maxima {'depth': 2, 'd1': 2, 'd2': 1, 'd4': 0, 'xich': 5} hist {0: 46, 1: 7, 2: 1}
+GAME n5-epoch/instances/lend72_n48.pg DEPTH n 48 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 2} hist {0: 14}
+GAME n5-epoch/instances/nep13_n24.pg DEPTH n 24 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 4} hist {0: 6}
+GAME n5-epoch/instances/nep56_n32.pg DEPTH n 32 runs 1 {'prefix_viol': 0} maxima {'depth': 4, 'd1': 5, 'd2': 4, 'd4': 1, 'xich': 9} hist {1: 17, 2: 4, 3: 5, 4: 2}
+GAME n5-epoch/instances/nep22f_n64.pg DEPTH n 64 runs 7 {'prefix_viol': 0} maxima {'depth': 2, 'd1': 2, 'd2': 1, 'd4': 0, 'xich': 2} hist {0: 5, 1: 23, 2: 34}
+GAME n5-epoch/instances/nep76_n40.pg DEPTH n 40 runs 2 {'prefix_viol': 0} maxima {'depth': 6, 'd1': 8, 'd2': 5, 'd4': 2, 'xich': 9} hist {0: 36, 1: 74, 2: 5, 3: 4, 4: 4, 6: 1}
+GAME n5-epoch/instances/nep94_n48.pg DEPTH n 48 runs 1 {'prefix_viol': 0} maxima {'depth': 7, 'd1': 7, 'd2': 6, 'd4': 3, 'xich': 10} hist {0: 50, 1: 25, 2: 18, 3: 8, 4: 4, 5: 3, 6: 1, 7: 4}
+GAME n5-epoch/instances/nep92_n40.pg DEPTH n 40 runs 1 {'prefix_viol': 0} maxima {'depth': 9, 'd1': 1, 'd2': 1, 'd4': 1, 'xich': 1} hist {0: 2, 1: 6, 9: 1}
+GAME n5-epoch/instances/nconf61_n48.pg DEPTH n 48 runs 6 {'prefix_viol': 0} maxima {'depth': 14, 'd1': 10, 'd2': 10, 'd4': 10, 'xich': 10} hist {0: 32, 1: 65, 2: 50, 3: 20, 4: 30, 5: 31, 6: 23, 7: 15, 8: 13, 9: 8, 10: 7, 11: 6, 12: 2, 13: 2, 14: 2}
+GAME n5-exhaustive/instances/b4_cyc6_0.pg DEPTH n 11 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME n5-epoch/instances/ret12_n40.pg DEPTH n 40 runs 2 {'prefix_viol': 0} maxima {'depth': 5, 'd1': 3, 'd2': 2, 'd4': 1, 'xich': 3} hist {0: 26, 1: 21, 2: 6, 3: 1, 4: 5, 5: 4}
+GAME n5-exhaustive/instances/b4_cyc6_1.pg DEPTH n 12 runs 1 {'prefix_viol': 0} maxima {'depth': 2, 'd1': 2, 'd2': 1, 'd4': 0, 'xich': 3} hist {0: 7, 1: 4, 2: 1}
+GAME n5-exhaustive/instances/b4_n4all_cyc3_0.pg DEPTH n 4 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME n5-exhaustive/instances/b4_n5_other_0.pg DEPTH n 5 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {}
+GAME n5-exhaustive/instances/b4_nohlen5_0.pg DEPTH n 11 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME n5-exhaustive/instances/b4_theta_n7.pg DEPTH n 7 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME n5-exhaustive/instances/b5_n5_cyc4_0.pg DEPTH n 5 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 2}
+GAME n5-epoch/instances/ret14_n64.pg DEPTH n 64 runs 2 {'prefix_viol': 0} maxima {'depth': 7, 'd1': 2, 'd2': 2, 'd4': 1, 'xich': 2} hist {0: 8, 1: 8, 3: 1, 6: 1, 7: 2}
+GAME n5-epoch/instances/ret14_n48.pg DEPTH n 48 runs 3 {'prefix_viol': 0} maxima {'depth': 6, 'd1': 5, 'd2': 4, 'd4': 2, 'xich': 5} hist {0: 36, 1: 26, 2: 54, 3: 5, 5: 10, 6: 4}
+GAME n5-exhaustive/instances/b5_o11.pg DEPTH n 10 runs 4 {'prefix_viol': 0} maxima {'depth': 2, 'd1': 1, 'd2': 1, 'd4': 0, 'xich': 1} hist {0: 6, 1: 1, 2: 1}
+GAME n5-exhaustive/instances/b5_os_n12.pg DEPTH n 12 runs 4 {'prefix_viol': 0} maxima {'depth': 5, 'd1': 1, 'd2': 1, 'd4': 1, 'xich': 1} hist {0: 7, 2: 4, 3: 2, 4: 1, 5: 1}
+GAME n5-exhaustive/instances/b5_os_n16.pg DEPTH n 16 runs 6 {'prefix_viol': 0} maxima {'depth': 5, 'd1': 1, 'd2': 1, 'd4': 1, 'xich': 1} hist {0: 13, 1: 5, 2: 1, 3: 3, 4: 2, 5: 1}
+GAME n5-exhaustive/instances/b5_os_n14.pg DEPTH n 14 runs 6 {'prefix_viol': 0} maxima {'depth': 7, 'd1': 1, 'd2': 1, 'd4': 1, 'xich': 1} hist {0: 11, 1: 2, 2: 2, 3: 1, 4: 2, 5: 2, 7: 1}
+GAME n5-exhaustive/instances/b5_os_n20.pg DEPTH n 20 runs 9 {'prefix_viol': 0} maxima {'depth': 5, 'd1': 1, 'd2': 1, 'd4': 1, 'xich': 1} hist {0: 14, 1: 12, 2: 2, 3: 2, 4: 4, 5: 1}
+GAME n5-exhaustive/instances/b5_os_n24.pg DEPTH n 24 runs 9 {'prefix_viol': 0} maxima {'depth': 10, 'd1': 2, 'd2': 1, 'd4': 1, 'xich': 3} hist {0: 25, 1: 24, 2: 18, 3: 2, 5: 3, 6: 3, 10: 1}
+GAME n5-exhaustive/instances/b5_os_n32.pg DEPTH n 32 runs 10 {'prefix_viol': 0} maxima {'depth': 9, 'd1': 3, 'd2': 3, 'd4': 2, 'xich': 3} hist {0: 38, 1: 20, 2: 38, 3: 25, 4: 11, 5: 5, 6: 2, 7: 1, 9: 1}
+GAME n5-exhaustive/instances/b5_os_n28.pg DEPTH n 28 runs 11 {'prefix_viol': 0} maxima {'depth': 6, 'd1': 2, 'd2': 2, 'd4': 1, 'xich': 2} hist {0: 31, 1: 3, 2: 37, 3: 16, 4: 4, 5: 3, 6: 3}
+GAME n5-exhaustive/instances/b5_os_n40.pg DEPTH n 40 runs 13 {'prefix_viol': 0} maxima {'depth': 10, 'd1': 3, 'd2': 3, 'd4': 2, 'xich': 3} hist {0: 51, 1: 17, 2: 8, 3: 24, 4: 26, 5: 16, 6: 18, 7: 9, 8: 7, 9: 3, 10: 1}
+GAME n5-exhaustive/instances/b6_xl_n32.pg DEPTH n 32 runs 6 {'prefix_viol': 0} maxima {'depth': 4, 'd1': 4, 'd2': 3, 'd4': 1, 'xich': 6} hist {0: 109, 1: 61, 2: 99, 3: 29, 4: 5}
+GAME n5-exhaustive/instances/b6_xl2_n32.pg DEPTH n 32 runs 6 {'prefix_viol': 0} maxima {'depth': 6, 'd1': 3, 'd2': 3, 'd4': 2, 'xich': 6} hist {0: 101, 1: 70, 2: 72, 3: 33, 4: 18, 5: 4, 6: 6}
+GAME n5-exhaustive/instances/b6_xs_n24.pg DEPTH n 24 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 2} hist {0: 21}
+GAME n5-exhaustive/instances/b6_xs_n32.pg DEPTH n 32 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 2} hist {0: 29}
+GAME n5-exhaustive/instances/b6_xl_n40.pg DEPTH n 40 runs 6 {'prefix_viol': 0} maxima {'depth': 11, 'd1': 5, 'd2': 3, 'd4': 1, 'xich': 7} hist {0: 187, 1: 94, 2: 92, 3: 31, 4: 7, 5: 2, 6: 7, 7: 2, 8: 5, 9: 4, 10: 14, 11: 9}
+GAME n5-exhaustive/instances/b6_xs_n40.pg DEPTH n 40 runs 1 {'prefix_viol': 0} maxima {'depth': 1, 'd1': 1, 'd2': 0, 'd4': 0, 'xich': 2} hist {0: 36, 1: 1}
+GAME n5-exhaustive/instances/b6_xs_n48.pg DEPTH n 48 runs 1 {'prefix_viol': 0} maxima {'depth': 2, 'd1': 2, 'd2': 1, 'd4': 0, 'xich': 2} hist {0: 39, 1: 12, 2: 1}
+GAME n5-exhaustive/instances/b6_xw_n32.pg DEPTH n 32 runs 7 {'prefix_viol': 0} maxima {'depth': 7, 'd1': 5, 'd2': 5, 'd4': 3, 'xich': 6} hist {0: 82, 1: 98, 2: 96, 3: 42, 4: 29, 5: 14, 6: 21, 7: 4}
+GAME n5-exhaustive/instances/b6_xl_n48.pg DEPTH n 48 runs 10 {'prefix_viol': 0} maxima {'depth': 15, 'd1': 6, 'd2': 6, 'd4': 3, 'xich': 7} hist {0: 165, 1: 139, 2: 114, 3: 65, 4: 33, 5: 12, 6: 7, 7: 5, 8: 4, 9: 6, 10: 7, 11: 6, 12: 7, 13: 4, 14: 4, 15: 3}
+GAME n5-exhaustive/instances/canonA_0.pg DEPTH n 15 runs 1 {'prefix_viol': 0} maxima {'depth': 2, 'd1': 1, 'd2': 1, 'd4': 0, 'xich': 2} hist {0: 9, 2: 1}
+GAME new/box59/out/fc_8.pg DEPTH n 210 runs 2 {'prefix_viol': 0} maxima {'depth': 27, 'd1': 23, 'd2': 23, 'd4': 22, 'xich': 24} hist {0: 227, 1: 21, 2: 36, 3: 378, 4: 294, 5: 74, 6: 102, 7: 21, 9: 21, 10: 7, 11: 7, 12: 7, 13: 7, 22: 126, 26: 86, 27: 183}
+GAME n5-exhaustive/instances/canonA_1.pg DEPTH n 15 runs 1 {'prefix_viol': 0} maxima {'depth': 2, 'd1': 1, 'd2': 1, 'd4': 0, 'xich': 2} hist {0: 9, 1: 6, 2: 1}
+GAME n5-exhaustive/instances/b6_xw_n40.pg DEPTH n 40 runs 7 {'prefix_viol': 0} maxima {'depth': 7, 'd1': 5, 'd2': 5, 'd4': 4, 'xich': 6} hist {0: 70, 1: 145, 2: 111, 3: 67, 4: 33, 5: 29, 6: 12, 7: 2}
+GAME n5-exhaustive/instances/frz1_n24.pg DEPTH n 24 runs 2 {'prefix_viol': 0} maxima {'depth': 12, 'd1': 4, 'd2': 3, 'd4': 2, 'xich': 5} hist {0: 40, 1: 13, 2: 9, 3: 4, 4: 2, 5: 1, 6: 2, 11: 1, 12: 1}
+GAME n5-exhaustive/instances/frz2_n24.pg DEPTH n 24 runs 1 {'prefix_viol': 0} maxima {'depth': 9, 'd1': 4, 'd2': 3, 'd4': 2, 'xich': 6} hist {0: 47, 1: 16, 2: 10, 3: 8, 5: 1, 6: 1, 7: 1, 8: 1, 9: 1}
+GAME n5-exhaustive/instances/n3all_maxph_0.pg DEPTH n 3 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME n5-exhaustive/instances/n3all_maxph_1.pg DEPTH n 3 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME n5-exhaustive/instances/b6_xw_n48.pg DEPTH n 48 runs 7 {'prefix_viol': 0} maxima {'depth': 7, 'd1': 5, 'd2': 5, 'd4': 4, 'xich': 6} hist {0: 78, 1: 161, 2: 145, 3: 100, 4: 51, 5: 35, 6: 22, 7: 8}
+GAME n5-exhaustive/instances/frz3_n24.pg DEPTH n 24 runs 2 {'prefix_viol': 0} maxima {'depth': 13, 'd1': 4, 'd2': 3, 'd4': 1, 'xich': 6} hist {0: 40, 1: 15, 2: 3, 3: 3, 4: 3, 8: 1, 11: 1, 12: 1, 13: 1}
+GAME n5-exhaustive/instances/n3all_maxph_2.pg DEPTH n 3 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME n5-exhaustive/instances/n4_maxph_0.pg DEPTH n 4 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {}
+GAME n5-exhaustive/instances/n4_thch_0.pg DEPTH n 4 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME n5-exhaustive/instances/n4_maxph_1.pg DEPTH n 4 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {}
+GAME n5-exhaustive/instances/b6_xw_n56.pg DEPTH n 56 runs 7 {'prefix_viol': 0} maxima {'depth': 8, 'd1': 6, 'd2': 6, 'd4': 4, 'xich': 7} hist {0: 89, 1: 172, 2: 175, 3: 104, 4: 53, 5: 28, 6: 10, 7: 10, 8: 2}
+GAME n5-exhaustive/instances/n4all_maxph_0.pg DEPTH n 4 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME n5-exhaustive/instances/n4all_maxph_1.pg DEPTH n 4 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME n5-exhaustive/instances/n4all_tgbad_0.pg DEPTH n 4 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME n5-exhaustive/instances/n4all_thch_0.pg DEPTH n 4 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME n5-exhaustive/instances/n5s_maxph_0.pg DEPTH n 5 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {}
+GAME n5-exhaustive/instances/thetaA_canon_n8.pg DEPTH n 8 runs 1 {'prefix_viol': 0} maxima {'depth': 3, 'd1': 1, 'd2': 1, 'd4': 0, 'xich': 2} hist {0: 4, 3: 1}
+GAME n5-exhaustive/instances/nh_n8.pg DEPTH n 8 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {}
+GAME n5-exhaustive/instances/thetaA_canon_n12.pg DEPTH n 12 runs 1 {'prefix_viol': 0} maxima {'depth': 1, 'd1': 1, 'd2': 0, 'd4': 0, 'xich': 2} hist {0: 6, 1: 1}
+GAME n5-exhaustive/instances/thetaA_n17.pg DEPTH n 17 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME n5-exhaustive/instances/thetaA_n6.pg DEPTH n 6 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME n5-exhaustive/instances/thetaA_n9.pg DEPTH n 9 runs 1 {'prefix_viol': 0} maxima {'depth': 1, 'd1': 1, 'd2': 0, 'd4': 0, 'xich': 1} hist {1: 1}
+GAME n5-exhaustive/instances/thetaA_n7.pg DEPTH n 7 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME n5-exhaustive/instances/wk1_n32.pg DEPTH n 32 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {}
+GAME n5-exhaustive/instances/wk2_n32.pg DEPTH n 32 runs 2 {'prefix_viol': 0} maxima {'depth': 3, 'd1': 1, 'd2': 1, 'd4': 0, 'xich': 1} hist {0: 1, 1: 7, 2: 2, 3: 2}
+GAME new/box48/instances/long121_n40.pg DEPTH n 40 runs 1 {'prefix_viol': 0} maxima {'depth': 8, 'd1': 4, 'd2': 2, 'd4': 2, 'xich': 7} hist {0: 66, 1: 40, 4: 2, 5: 2, 7: 1, 8: 1}
+GAME red/carry/instances/absmono_viol_n44.pg DEPTH n 44 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.pg DEPTH n 64 runs 1 {'prefix_viol': 0} maxima {'depth': 11, 'd1': 1, 'd2': 1, 'd4': 1, 'xich': 1} hist {3: 3, 4: 1, 5: 1, 11: 1}
+GAME red/carry/instances/carry3_2_2.pg DEPTH n 47 runs 1 {'prefix_viol': 0} maxima {'depth': 6, 'd1': 1, 'd2': 1, 'd4': 1, 'xich': 1} hist {4: 1, 5: 1, 6: 1}
+GAME red/carry/instances/cm_mdrop_both_n28.pg DEPTH n 28 runs 1 {'prefix_viol': 0} maxima {'depth': 2, 'd1': 1, 'd2': 1, 'd4': 0, 'xich': 2} hist {0: 8, 2: 1}
+GAME red/carry/instances/cm_mdrop_oink_n28.pg DEPTH n 28 runs 1 {'prefix_viol': 0} maxima {'depth': 4, 'd1': 1, 'd2': 1, 'd4': 1, 'xich': 1} hist {2: 6, 3: 1, 4: 1}
+GAME red/carry/instances/ctx11_n40.pg DEPTH n 40 runs 1 {'prefix_viol': 0} maxima {'depth': 4, 'd1': 1, 'd2': 1, 'd4': 1, 'xich': 1} hist {0: 9, 2: 8, 3: 2, 4: 2}
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.pg DEPTH n 64 runs 4 {'prefix_viol': 0} maxima {'depth': 6, 'd1': 2, 'd2': 2, 'd4': 1, 'xich': 3} hist {0: 94, 1: 54, 2: 22, 3: 10, 4: 7, 5: 21, 6: 7}
+GAME red/carry/instances/ctx6_n20.pg DEPTH n 20 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.pg DEPTH n 80 runs 2 {'prefix_viol': 0} maxima {'depth': 8, 'd1': 6, 'd2': 6, 'd4': 5, 'xich': 8} hist {0: 81, 1: 46, 2: 29, 3: 22, 4: 9, 6: 13, 7: 17, 8: 7}
+GAME red/carry/instances/ctx12_n40.pg DEPTH n 40 runs 1 {'prefix_viol': 0} maxima {'depth': 5, 'd1': 1, 'd2': 1, 'd4': 1, 'xich': 1} hist {0: 3, 1: 3, 2: 1, 5: 1}
+GAME red/carry/instances/ctx7_n30.pg DEPTH n 30 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/carry/instances/ctx13_n40.pg DEPTH n 40 runs 2 {'prefix_viol': 0} maxima {'depth': 1, 'd1': 2, 'd2': 0, 'd4': 0, 'xich': 2} hist {0: 22, 1: 6}
+GAME red/carry/instances/f1_twofall_n48.pg DEPTH n 48 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/carry/instances/f1_twodef_n48.pg DEPTH n 48 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/carry/instances/ctx6_n56.pg DEPTH n 56 runs 1 {'prefix_viol': 0} maxima {'depth': 4, 'd1': 1, 'd2': 1, 'd4': 1, 'xich': 1} hist {4: 2}
+GAME new/box48/out/qpcclimb/scale/snap_n80_s62.pg DEPTH n 80 runs 2 {'prefix_viol': 0} maxima {'depth': 8, 'd1': 6, 'd2': 6, 'd4': 5, 'xich': 8} hist {0: 81, 1: 46, 2: 29, 3: 22, 4: 9, 6: 13, 7: 17, 8: 7}
+GAME red/carry/instances/fallv_viol_n28.pg DEPTH n 28 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/carry/instances/fired10_n20.pg DEPTH n 20 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 4}
+GAME red/carry/instances/firedlong667_n20.pg DEPTH n 20 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/carry/instances/firedlong667_n43.pg DEPTH n 43 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/carry/instances/gapb_dup_n20.pg DEPTH n 20 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/carry/instances/gapbW_dup_n20.pg DEPTH n 20 runs 1 {'prefix_viol': 0} maxima {'depth': 3, 'd1': 2, 'd2': 2, 'd4': 0, 'xich': 2} hist {1: 1, 2: 5, 3: 3}
+GAME red/carry/instances/fall3_n76.pg DEPTH n 76 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/carry/instances/firedstep13_n76.pg DEPTH n 76 runs 1 {'prefix_viol': 0} maxima {'depth': 5, 'd1': 1, 'd2': 1, 'd4': 1, 'xich': 2} hist {0: 10, 1: 11, 2: 5, 3: 1, 4: 1, 5: 1}
+GAME red/carry/instances/h4_def2ctx_n20.pg DEPTH n 20 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 1}
+GAME red/carry/instances/h4_compound2x2_n44.pg DEPTH n 44 runs 1 {'prefix_viol': 0} maxima {'depth': 10, 'd1': 1, 'd2': 1, 'd4': 1, 'xich': 2} hist {0: 10, 7: 1, 8: 2, 9: 1, 10: 1}
+GAME red/carry/instances/h4_compound_n44.pg DEPTH n 44 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/carry/instances/h4_def7_n28.pg DEPTH n 28 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/carry/instances/h4_disjoint_n20.pg DEPTH n 20 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/carry/instances/kfirst_viol_n13.pg DEPTH n 13 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/carry/instances/h4_notweaker_n20.pg DEPTH n 20 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/carry/instances/fall4_n116.pg DEPTH n 116 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/carry/instances/kin_viol_n29.pg DEPTH n 29 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/carry/instances/lalg_dtl_mviol_n20.pg DEPTH n 20 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/carry/instances/lemmaS_viol_n20.pg DEPTH n 20 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/carry/instances/lemmaS_Mdrop_n20.pg DEPTH n 20 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 1}
+GAME red/carry/instances/lex_viol_inj_n28.pg DEPTH n 28 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/carry/instances/meet_viol_n17.pg DEPTH n 17 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/carry/instances/nosig_2_3.pg DEPTH n 24 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 4}
+GAME red/carry/instances/lex_viol_tie_n28.pg DEPTH n 28 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/carry/instances/phi_flat_alive_n32.pg DEPTH n 32 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/carry/instances/pk_viol_n20.pg DEPTH n 20 runs 1 {'prefix_viol': 0} maxima {'depth': 2, 'd1': 1, 'd2': 1, 'd4': 0, 'xich': 1} hist {2: 1}
+GAME red/carry/instances/meet_viol_n29.pg DEPTH n 29 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/carry/instances/replay4_n32.pg DEPTH n 32 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/carry/instances/spp19_stable_n30.pg DEPTH n 30 runs 1 {'prefix_viol': 0} maxima {'depth': 2, 'd1': 1, 'd2': 1, 'd4': 0, 'xich': 1} hist {0: 15, 1: 7, 2: 2}
+GAME red/carry/instances/spp19_oink_n30.pg DEPTH n 30 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/carry/instances/spp25_oink_n40.pg DEPTH n 40 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 9}
+GAME red/carry/instances/spp22_oink_n40.pg DEPTH n 40 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/carry/instances/stealonce_both_n45.pg DEPTH n 45 runs 1 {'prefix_viol': 0} maxima {'depth': 1, 'd1': 1, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 5, 1: 2}
+GAME red/carry/instances/tstep_near_n20.pg DEPTH n 20 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/ctxp/instances/deep1_n13.pg DEPTH n 13 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/carry/instances/stealonce_core_n76.pg DEPTH n 76 runs 1 {'prefix_viol': 0} maxima {'depth': 1, 'd1': 1, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 7, 1: 2}
+GAME red/ctxp/instances/deep1_n21.pg DEPTH n 21 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/ctxp/instances/margin1_mc5.pg DEPTH n 50 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/ctxp/instances/margin1_mc1.pg DEPTH n 80 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/ctxp/instances/margin1_n20.pg DEPTH n 20 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/dtl/instances/lalg_dtl_pertop31_n18.pg DEPTH n 18 runs 1 {'prefix_viol': 0} maxima {'depth': 1, 'd1': 1, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 4, 1: 2}
+GAME red/carry/instances/stealer_viol_n76.pg DEPTH n 76 runs 1 {'prefix_viol': 0} maxima {'depth': 4, 'd1': 1, 'd2': 1, 'd4': 1, 'xich': 1} hist {0: 1, 1: 1, 2: 1, 3: 2, 4: 1}
+GAME red/fbr/instances/bghm_k1_gap6_A.pg DEPTH n 21 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/fbr/instances/bghm_k3_gap4_A.pg DEPTH n 45 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/dtl/instances/lalg_dtl_restart8_n20.pg DEPTH n 20 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/fbr/instances/lev74_n40.pg DEPTH n 40 runs 3 {'prefix_viol': 0} maxima {'depth': 10, 'd1': 2, 'd2': 2, 'd4': 1, 'xich': 2} hist {1: 17, 2: 4, 3: 2, 4: 1, 5: 2, 9: 2, 10: 2}
+GAME red/carry/instances/stealonce_viol_n76.pg DEPTH n 76 runs 1 {'prefix_viol': 0} maxima {'depth': 4, 'd1': 1, 'd2': 1, 'd4': 1, 'xich': 1} hist {0: 1, 1: 1, 2: 1, 3: 2, 4: 2}
+GAME red/fbr/instances/rho144_n32.pg DEPTH n 32 runs 1 {'prefix_viol': 0} maxima {'depth': 19, 'd1': 2, 'd2': 2, 'd4': 2, 'xich': 2} hist {0: 2, 2: 5, 3: 6, 4: 5, 5: 3, 6: 2, 7: 3, 8: 4, 9: 3, 10: 2, 11: 2, 12: 2, 13: 2, 14: 2, 15: 3, 16: 2, 17: 3, 18: 1, 19: 1}
+GAME red/fbr/instances/fr39_q4_n48.pg DEPTH n 48 runs 1 {'prefix_viol': 0} maxima {'depth': 3, 'd1': 1, 'd2': 1, 'd4': 0, 'xich': 4} hist {0: 35, 2: 2, 3: 1}
+GAME red/fbr/instances/rho3_253_n32.pg DEPTH n 32 runs 1 {'prefix_viol': 0} maxima {'depth': 10, 'd1': 3, 'd2': 3, 'd4': 3, 'xich': 3} hist {1: 22, 2: 4, 3: 7, 4: 23, 5: 2, 6: 2, 7: 10, 8: 1, 9: 1, 10: 2}
+GAME red/fbr/instances/rho84_n16.pg DEPTH n 16 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/fbr/instances/sat4_n20.pg DEPTH n 20 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 1}
+GAME red/fbr/instances/rho666_n48.pg DEPTH n 48 runs 2 {'prefix_viol': 0} maxima {'depth': 8, 'd1': 4, 'd2': 4, 'd4': 3, 'xich': 5} hist {0: 30, 1: 29, 2: 17, 3: 16, 4: 10, 5: 6, 6: 5, 7: 2, 8: 1}
+GAME red/fbr/instances/lev56_n48.pg DEPTH n 48 runs 10 {'prefix_viol': 0} maxima {'depth': 5, 'd1': 6, 'd2': 4, 'd4': 2, 'xich': 8} hist {0: 84, 1: 252, 2: 116, 3: 41, 4: 18, 5: 9}
+GAME red/fbr/instances/sat68_n20.pg DEPTH n 20 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 2}
+GAME red/fbx/instances/exsw_loop_n15.pg DEPTH n 15 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/fbr/instances/nep80_n40.pg DEPTH n 40 runs 4 {'prefix_viol': 0} maxima {'depth': 20, 'd1': 4, 'd2': 3, 'd4': 1, 'xich': 4} hist {0: 34, 1: 28, 2: 8, 3: 9, 4: 10, 5: 8, 6: 1, 18: 2, 19: 2, 20: 1}
+GAME red/fbr/instances/twowave_L16.pg DEPTH n 22 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 15}
+GAME red/frz/instances/fbcap_eq_u4_n11.pg DEPTH n 11 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/frz/instances/fx2_n11.pg DEPTH n 11 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/fbx/instances/kt6_n58.pg DEPTH n 58 runs 3 {'prefix_viol': 0} maxima {'depth': 4, 'd1': 2, 'd2': 2, 'd4': 1, 'xich': 4} hist {0: 28, 1: 14, 2: 11, 3: 2, 4: 1}
+GAME red/h3/instances/frzgap0_n4.pg DEPTH n 4 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/h3/instances/frzgap0_n6.pg DEPTH n 6 runs 1 {'prefix_viol': 0} maxima {'depth': 1, 'd1': 1, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 1, 1: 1}
+GAME red/h3/instances/lcount2_n23.pg DEPTH n 23 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/h3/instances/lcount_n23.pg DEPTH n 23 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/kl/instances/klcount_n18_base.pg DEPTH n 18 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/kl/instances/klcount_n16.pg DEPTH n 16 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/h3/instances/offret_l19_n24.pg DEPTH n 24 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/kl/instances/klcount_n18_lvl.pg DEPTH n 18 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/kl/instances/klglobal_n16.pg DEPTH n 16 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/kl/instances/klglobal_n20_lvl2.pg DEPTH n 20 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/kl/instances/klglobal_n18_lvl.pg DEPTH n 18 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/kl/instances/klmin_n13.pg DEPTH n 13 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 3}
+GAME red/kl/instances/r2climb_h13.pg DEPTH n 13 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/h3/instances/xsnpre36_n48.pg DEPTH n 48 runs 1 {'prefix_viol': 0} maxima {'depth': 1, 'd1': 1, 'd2': 0, 'd4': 0, 'xich': 2} hist {0: 34, 1: 3}
+GAME red/kl/instances/r2join_h0E_n14.pg DEPTH n 14 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/kl/instances/r2crawl_n14.pg DEPTH n 14 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/kl/instances/r2lap_best_n22.pg DEPTH n 22 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/kl24/instances/HL88_0.pg DEPTH n 41 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 3}
+GAME red/kl24/instances/HL88_1.pg DEPTH n 43 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 3}
+GAME red/kl24/instances/HL88_2.pg DEPTH n 45 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 3}
+GAME red/kl24/instances/HLg_0.pg DEPTH n 29 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 3}
+GAME red/kl24/instances/HL88_3.pg DEPTH n 47 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 3}
+GAME red/kl24/instances/HLg_1.pg DEPTH n 35 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 3}
+GAME red/kl24/instances/HLg_2.pg DEPTH n 45 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 3}
+GAME red/kw/instances/frzu_tight_n14.pg DEPTH n 14 runs 2 {'prefix_viol': 0} maxima {'depth': 3, 'd1': 1, 'd2': 1, 'd4': 0, 'xich': 1} hist {0: 2, 1: 1, 3: 1}
+GAME red/kl24/instances/HLg_3.pg DEPTH n 55 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 3}
+GAME red/lag/instances/depth2_n39.pg DEPTH n 39 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 6}
+GAME red/kw/instances/cw11_n24.pg DEPTH n 24 runs 5 {'prefix_viol': 0} maxima {'depth': 4, 'd1': 3, 'd2': 3, 'd4': 1, 'xich': 4} hist {1: 7, 2: 8, 3: 7, 4: 2}
+GAME red/lag/instances/depth3_n46.pg DEPTH n 46 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/lag/instances/fam_D4_n50.pg DEPTH n 50 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/lag/instances/fam_D12_n106.pg DEPTH n 106 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/mei/instances/mei_h2.pg DEPTH n 19 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/kw/instances/kc18_n24.pg DEPTH n 24 runs 2 {'prefix_viol': 0} maxima {'depth': 2, 'd1': 2, 'd2': 1, 'd4': 0, 'xich': 2} hist {0: 17, 1: 18, 2: 4}
+GAME red/lag/instances/depth4_n53.pg DEPTH n 53 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 3}
+GAME red/lag/instances/fam_D8_n78.pg DEPTH n 78 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/mei/instances/mei_h3.pg DEPTH n 27 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/mei/instances/mei_h4.pg DEPTH n 35 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/mei/instances/mei_h5.pg DEPTH n 43 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/mei/instances/mei_h8.pg DEPTH n 67 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/mei/instances/mei_h6.pg DEPTH n 51 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/n3/instances/core41_n40.pg DEPTH n 40 runs 2 {'prefix_viol': 0} maxima {'depth': 9, 'd1': 3, 'd2': 2, 'd4': 2, 'xich': 4} hist {0: 31, 1: 23, 3: 2, 4: 1, 8: 2, 9: 1}
+GAME red/n3/instances/lagx10_n40.pg DEPTH n 40 runs 1 {'prefix_viol': 0} maxima {'depth': 8, 'd1': 9, 'd2': 7, 'd4': 4, 'xich': 10} hist {0: 21, 1: 17, 2: 2, 3: 8, 4: 4, 5: 2, 6: 4, 7: 1, 8: 1}
+GAME red/n3/instances/lag11_n40.pg DEPTH n 40 runs 2 {'prefix_viol': 0} maxima {'depth': 15, 'd1': 3, 'd2': 3, 'd4': 3, 'xich': 3} hist {0: 4, 1: 10, 2: 8, 5: 2, 6: 2, 7: 6, 8: 2, 9: 1, 11: 1, 12: 1, 13: 2, 14: 2, 15: 1}
+GAME red/n3/instances/long90_k2_n40.pg DEPTH n 40 runs 1 {'prefix_viol': 0} maxima {'depth': 10, 'd1': 5, 'd2': 3, 'd4': 2, 'xich': 7} hist {0: 67, 1: 36, 2: 2, 3: 5, 4: 1, 6: 2, 7: 1, 10: 1}
+GAME red/n3/instances/comp54_n80.pg DEPTH n 80 runs 2 {'prefix_viol': 0} maxima {'depth': 14, 'd1': 4, 'd2': 3, 'd4': 3, 'xich': 4} hist {0: 13, 1: 56, 2: 5, 3: 5, 4: 1, 8: 23, 9: 1, 10: 3, 11: 2, 12: 2, 14: 3}
+GAME red/n3/instances/n3cov_phi.pg DEPTH n 32 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/n3/instances/n3cov_lean.pg DEPTH n 48 runs 1 {'prefix_viol': 0} maxima {'depth': 4, 'd1': 2, 'd2': 2, 'd4': 2, 'xich': 4} hist {0: 12, 2: 7, 3: 8, 4: 15}
+GAME red/n3/instances/long121_n40.pg DEPTH n 40 runs 1 {'prefix_viol': 0} maxima {'depth': 8, 'd1': 4, 'd2': 2, 'd4': 2, 'xich': 7} hist {0: 66, 1: 40, 4: 2, 5: 2, 7: 1, 8: 1}
+GAME red/n3/instances/run49_n32.pg DEPTH n 32 runs 4 {'prefix_viol': 0} maxima {'depth': 2, 'd1': 2, 'd2': 1, 'd4': 0, 'xich': 2} hist {0: 24, 1: 34, 2: 7}
+GAME red/n3/instances/ret22_n40.pg DEPTH n 40 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/n3/instances/run34_n40.pg DEPTH n 40 runs 4 {'prefix_viol': 0} maxima {'depth': 7, 'd1': 4, 'd2': 4, 'd4': 3, 'xich': 7} hist {0: 80, 1: 45, 2: 34, 3: 14, 4: 5, 5: 2, 6: 1, 7: 10}
+GAME red/n5/instances/dlm2_4.pg DEPTH n 42 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/n5/instances/dl_4_4.pg DEPTH n 42 runs 2 {'prefix_viol': 0} maxima {'depth': 4, 'd1': 2, 'd2': 1, 'd4': 1, 'xich': 2} hist {0: 30, 1: 10, 2: 6, 3: 16, 4: 1}
+GAME red/n5/instances/sym_h8_s1.pg DEPTH n 16 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/n5/instances/sym_h12_s1.pg DEPTH n 24 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/n5inj/instances/block_bk20.pg DEPTH n 24 runs 3 {'prefix_viol': 0} maxima {'depth': 4, 'd1': 2, 'd2': 1, 'd4': 1, 'xich': 3} hist {0: 20, 1: 3, 2: 2, 4: 1}
+GAME red/n5inj/instances/blockph_bp20.pg DEPTH n 24 runs 2 {'prefix_viol': 0} maxima {'depth': 2, 'd1': 2, 'd2': 1, 'd4': 0, 'xich': 5} hist {0: 32, 1: 1, 2: 1}
+GAME red/n5inj/instances/block_bk32.pg DEPTH n 36 runs 1 {'prefix_viol': 0} maxima {'depth': 2, 'd1': 3, 'd2': 2, 'd4': 0, 'xich': 4} hist {1: 23, 2: 19}
+GAME red/n5/instances/sym_h16_s1.pg DEPTH n 32 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 4}
+GAME red/n5inj/instances/bribe_cex_n15.pg DEPTH n 15 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/n5inj/instances/blockph_bp32.pg DEPTH n 36 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 4} hist {0: 51}
+GAME red/n5inj/instances/frz32.pg DEPTH n 32 runs 1 {'prefix_viol': 0} maxima {'depth': 4, 'd1': 2, 'd2': 2, 'd4': 1, 'xich': 2} hist {0: 5, 1: 6, 2: 12, 3: 6, 4: 3}
+GAME red/n5inj/instances/frz24.pg DEPTH n 24 runs 5 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 21}
+GAME red/n5inj/instances/phase2_pk32.pg DEPTH n 32 runs 7 {'prefix_viol': 0} maxima {'depth': 3, 'd1': 2, 'd2': 1, 'd4': 0, 'xich': 2} hist {0: 44, 1: 4, 2: 6, 3: 1}
+GAME red/n5inj/instances/elimn_cex_n48.pg DEPTH n 48 runs 12 {'prefix_viol': 0} maxima {'depth': 7, 'd1': 3, 'd2': 2, 'd4': 1, 'xich': 3} hist {0: 43, 1: 96, 2: 45, 3: 31, 4: 5, 5: 1, 6: 1, 7: 1}
+GAME red/n5inj/instances/frz40.pg DEPTH n 40 runs 9 {'prefix_viol': 0} maxima {'depth': 8, 'd1': 5, 'd2': 4, 'd4': 2, 'xich': 6} hist {0: 78, 1: 65, 2: 29, 3: 17, 4: 18, 5: 7, 6: 1, 7: 4, 8: 2}
+GAME red/n5/instances/dl_6_8.pg DEPTH n 110 runs 2 {'prefix_viol': 0} maxima {'depth': 5, 'd1': 2, 'd2': 1, 'd4': 1, 'xich': 2} hist {0: 90, 1: 19, 2: 45, 3: 19, 4: 1, 5: 9}
+GAME red/n5inj/instances/returns_rt32.pg DEPTH n 32 runs 8 {'prefix_viol': 0} maxima {'depth': 1, 'd1': 1, 'd2': 0, 'd4': 0, 'xich': 2} hist {0: 43, 1: 1}
+GAME red/n5inj/instances/theta_thc24.pg DEPTH n 24 runs 2 {'prefix_viol': 0} maxima {'depth': 2, 'd1': 2, 'd2': 2, 'd4': 0, 'xich': 11} hist {0: 35, 1: 4, 2: 11}
+GAME red/n5inj/instances/phase2_pk48.pg DEPTH n 48 runs 12 {'prefix_viol': 0} maxima {'depth': 3, 'd1': 2, 'd2': 1, 'd4': 0, 'xich': 2} hist {0: 25, 1: 29, 2: 4, 3: 5}
+GAME red/n5inj/instances/theta_thf16.pg DEPTH n 16 runs 2 {'prefix_viol': 0} maxima {'depth': 8, 'd1': 8, 'd2': 7, 'd4': 3, 'xich': 9} hist {0: 12, 1: 27, 2: 11, 3: 12, 4: 9, 5: 9, 6: 1, 7: 1, 8: 1}
+GAME red/n5inj/instances/returns_rt48.pg DEPTH n 48 runs 14 {'prefix_viol': 0} maxima {'depth': 5, 'd1': 2, 'd2': 2, 'd4': 1, 'xich': 3} hist {0: 44, 1: 22, 2: 52, 3: 44, 4: 9, 5: 1}
+GAME red/n5inj/instances/theta_tp32.pg DEPTH n 32 runs 2 {'prefix_viol': 0} maxima {'depth': 8, 'd1': 5, 'd2': 4, 'd4': 1, 'xich': 12} hist {0: 96, 1: 54, 2: 26, 3: 14, 4: 2, 8: 1}
+GAME red/n5inj/instances/returns_ph64.pg DEPTH n 64 runs 16 {'prefix_viol': 0} maxima {'depth': 4, 'd1': 3, 'd2': 3, 'd4': 1, 'xich': 3} hist {0: 61, 1: 122, 2: 73, 3: 25, 4: 3}
+GAME red/n5inj/instances/wide_h16.pg DEPTH n 32 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/n5inj/instances/theta_tp40.pg DEPTH n 40 runs 3 {'prefix_viol': 0} maxima {'depth': 8, 'd1': 5, 'd2': 4, 'd4': 4, 'xich': 11} hist {0: 49, 1: 14, 2: 17, 3: 6, 4: 4, 5: 3, 6: 5, 7: 1, 8: 1}
+GAME red/nest16/instances/k4L72_n101.pg DEPTH n 101 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/nest16/instances/k4seed_c1_n82.pg DEPTH n 82 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/nest16/instances/k4L72r_n101.pg DEPTH n 101 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/nest16/instances/k4g50_n101.pg DEPTH n 101 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/nest16/instances/k4u_n101.pg DEPTH n 101 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/nest16/instances/k4seed_vr_n87.pg DEPTH n 87 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/nest16/instances/k4y2_n87.pg DEPTH n 87 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/nest16/instances/k4y1_n82.pg DEPTH n 82 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/nest16/instances/nest4u_n46.pg DEPTH n 46 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/nest16/instances/near4_n26.pg DEPTH n 26 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/nest16/instances/nest4uu_n51.pg DEPTH n 51 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/nest16/instances/nest6_n75.pg DEPTH n 75 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/nest16/instances/nest5_n49.pg DEPTH n 49 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/nest16/instances/nest6min_n75.pg DEPTH n 75 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/nest16/instances/oseg_n26.pg DEPTH n 26 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/n5inj/instances/returns_rt64.pg DEPTH n 64 runs 15 {'prefix_viol': 0} maxima {'depth': 5, 'd1': 2, 'd2': 2, 'd4': 1, 'xich': 3} hist {0: 112, 1: 32, 2: 35, 3: 20, 4: 5, 5: 1}
+GAME red/nest16/instances/win3_n27.pg DEPTH n 27 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/nest16/instances/w1_n27.pg DEPTH n 27 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/nest16/instances/nest6x_n75.pg DEPTH n 75 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/nopre/instances/nopre_viol_n20.pg DEPTH n 20 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/o1/instances/tau18_n24.pg DEPTH n 24 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/o1/instances/ph45_n32.pg DEPTH n 32 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/o1/instances/ph50_n32.pg DEPTH n 32 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/rec0/instances/fbd0_n4.pg DEPTH n 4 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/rec0/instances/n0_6_n24.pg DEPTH n 24 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {}
+GAME red/rec0/instances/nep24_n20.pg DEPTH n 20 runs 1 {'prefix_viol': 0} maxima {'depth': 1, 'd1': 1, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 2, 1: 2}
+GAME red/o1/instances/f39_n48.pg DEPTH n 48 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 37}
+GAME red/o1/instances/iter118_n48.pg DEPTH n 48 runs 2 {'prefix_viol': 0} maxima {'depth': 6, 'd1': 3, 'd2': 2, 'd4': 1, 'xich': 5} hist {0: 45, 1: 45, 2: 20, 3: 4, 4: 8, 5: 4, 6: 1}
+GAME red/sgrow/instances/s20_n20.pg DEPTH n 20 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {}
+GAME red/sgrow/instances/s21_oink_n20.pg DEPTH n 20 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/rec0/instances/lend2_30_n48.pg DEPTH n 48 runs 1 {'prefix_viol': 0} maxima {'depth': 7, 'd1': 4, 'd2': 3, 'd4': 2, 'xich': 5} hist {0: 3, 1: 40, 2: 13, 3: 9, 4: 6, 5: 8, 6: 5, 7: 1}
+GAME red/sgrow/instances/s29_n30.pg DEPTH n 30 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/rec0/instances/nep87_n40.pg DEPTH n 40 runs 3 {'prefix_viol': 0} maxima {'depth': 19, 'd1': 5, 'd2': 5, 'd4': 5, 'xich': 6} hist {0: 50, 1: 33, 2: 24, 3: 5, 4: 6, 5: 2, 6: 4, 7: 5, 8: 1, 18: 1, 19: 1}
+GAME red/rec0/instances/nep90_n40.pg DEPTH n 40 runs 3 {'prefix_viol': 0} maxima {'depth': 14, 'd1': 6, 'd2': 6, 'd4': 4, 'xich': 7} hist {0: 68, 1: 31, 2: 26, 3: 4, 4: 3, 5: 12, 6: 14, 7: 4, 8: 1, 13: 2, 14: 3}
+GAME red/sgrow/instances/s34_oink_n40.pg DEPTH n 40 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 10}
+GAME red/sgrow/instances/s32_n60.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/sgrow/instances/s35_oink_n80.pg DEPTH n 80 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 2}
+GAME red/sgrow/instances/s36_oink_n60.pg DEPTH n 60 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 2}
+GAME red/so/instances/beta2_n11.pg DEPTH n 11 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {}
+GAME red/so/instances/epsseg_cex_n16.pg DEPTH n 16 runs 1 {'prefix_viol': 0} maxima {'depth': 2, 'd1': 2, 'd2': 1, 'd4': 0, 'xich': 4} hist {0: 16, 1: 1, 2: 3}
+GAME red/so/instances/exitr_cex_n16.pg DEPTH n 16 runs 1 {'prefix_viol': 0} maxima {'depth': 1, 'd1': 3, 'd2': 0, 'd4': 0, 'xich': 5} hist {0: 14, 1: 10}
+GAME red/sgrow/instances/s34_oink_n80.pg DEPTH n 80 runs 1 {'prefix_viol': 0} maxima {'depth': 8, 'd1': 1, 'd2': 1, 'd4': 1, 'xich': 1} hist {1: 1, 2: 5, 3: 6, 4: 4, 5: 3, 6: 6, 7: 4, 8: 2}
+GAME red/so/instances/mn_abs74_n48.pg DEPTH n 48 runs 4 {'prefix_viol': 0} maxima {'depth': 3, 'd1': 2, 'd2': 2, 'd4': 0, 'xich': 3} hist {0: 34, 1: 2, 2: 117, 3: 9}
+GAME red/so/instances/epsseg_cex_n48.pg DEPTH n 48 runs 3 {'prefix_viol': 0} maxima {'depth': 6, 'd1': 3, 'd2': 2, 'd4': 2, 'xich': 4} hist {0: 16, 1: 4, 2: 1, 5: 5, 6: 1}
+GAME red/so/instances/exitr_cex_n48.pg DEPTH n 48 runs 2 {'prefix_viol': 0} maxima {'depth': 1, 'd1': 1, 'd2': 0, 'd4': 0, 'xich': 3} hist {0: 23, 1: 3}
+GAME red/so/instances/farrise25_n32.pg DEPTH n 32 runs 2 {'prefix_viol': 0} maxima {'depth': 1, 'd1': 1, 'd2': 0, 'd4': 0, 'xich': 2} hist {0: 32, 1: 4}
+GAME red/so/instances/nleq_cex_n48.pg DEPTH n 48 runs 3 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 2} hist {0: 30}
+GAME red/so/instances/njb_reabs54_n32.pg DEPTH n 32 runs 4 {'prefix_viol': 0} maxima {'depth': 3, 'd1': 4, 'd2': 3, 'd4': 0, 'xich': 4} hist {1: 66, 2: 41, 3: 25}
+GAME red/so/instances/pftheta34_n32.pg DEPTH n 32 runs 1 {'prefix_viol': 0} maxima {'depth': 6, 'd1': 9, 'd2': 6, 'd4': 3, 'xich': 34} hist {0: 28, 1: 45, 2: 28, 3: 37, 4: 12, 5: 6, 6: 1}
+GAME red/so/instances/njb_reabs65_n48.pg DEPTH n 48 runs 5 {'prefix_viol': 0} maxima {'depth': 3, 'd1': 2, 'd2': 2, 'd4': 0, 'xich': 3} hist {0: 14, 1: 79, 2: 18, 3: 29}
+GAME red/so/instances/nleq33_n48.pg DEPTH n 48 runs 1 {'prefix_viol': 0} maxima {'depth': 1, 'd1': 1, 'd2': 0, 'd4': 0, 'xich': 2} hist {0: 39, 1: 42}
+GAME red/so/instances/pft35_n48.pg DEPTH n 48 runs 2 {'prefix_viol': 0} maxima {'depth': 7, 'd1': 13, 'd2': 7, 'd4': 3, 'xich': 35} hist {0: 195, 1: 88, 2: 75, 3: 44, 4: 16, 5: 5, 6: 1, 7: 1}
+GAME red/so/instances/pftheta_cex_n32.pg DEPTH n 32 runs 1 {'prefix_viol': 0} maxima {'depth': 5, 'd1': 6, 'd2': 4, 'd4': 2, 'xich': 33} hist {0: 78, 1: 19, 2: 1, 3: 38, 4: 8, 5: 1}
+GAME red/so/instances/post31_n48.pg DEPTH n 48 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/so/instances/s4c8_n13.pg DEPTH n 13 runs 2 {'prefix_viol': 0} maxima {'depth': 6, 'd1': 1, 'd2': 1, 'd4': 1, 'xich': 1} hist {1: 1, 2: 1, 3: 5, 6: 1}
+GAME red/so/instances/pft40_n40.pg DEPTH n 40 runs 4 {'prefix_viol': 0} maxima {'depth': 10, 'd1': 13, 'd2': 11, 'd4': 6, 'xich': 24} hist {0: 73, 1: 78, 2: 121, 3: 65, 4: 29, 5: 16, 6: 9, 7: 7, 8: 7, 9: 4, 10: 3}
+GAME red/so/instances/so_k2_n32.pg DEPTH n 32 runs 3 {'prefix_viol': 0} maxima {'depth': 2, 'd1': 2, 'd2': 1, 'd4': 0, 'xich': 5} hist {0: 22, 1: 13, 2: 12}
+GAME red/so/instances/rise_fb38_n48.pg DEPTH n 48 runs 3 {'prefix_viol': 0} maxima {'depth': 3, 'd1': 2, 'd2': 1, 'd4': 0, 'xich': 2} hist {1: 40, 2: 12, 3: 8}
+GAME red/so/instances/so_sor5_n24.pg DEPTH n 24 runs 1 {'prefix_viol': 0} maxima {'depth': 1, 'd1': 2, 'd2': 0, 'd4': 0, 'xich': 7} hist {0: 38, 1: 21}
+GAME red/so/instances/so_tie13_n24.pg DEPTH n 24 runs 1 {'prefix_viol': 0} maxima {'depth': 1, 'd1': 1, 'd2': 0, 'd4': 0, 'xich': 3} hist {0: 26, 1: 2}
+GAME red/so/instances/so_sorl_n32.pg DEPTH n 32 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 4} hist {0: 26}
+GAME red/so/instances/rise_thin51_n40.pg DEPTH n 40 runs 8 {'prefix_viol': 0} maxima {'depth': 13, 'd1': 12, 'd2': 12, 'd4': 10, 'xich': 12} hist {0: 71, 1: 120, 2: 80, 3: 109, 4: 97, 5: 69, 6: 52, 7: 31, 8: 34, 9: 24, 10: 20, 11: 17, 12: 10, 13: 5}
+GAME red/so/instances/so_j19_n48.pg DEPTH n 48 runs 2 {'prefix_viol': 0} maxima {'depth': 6, 'd1': 11, 'd2': 8, 'd4': 2, 'xich': 19} hist {0: 117, 1: 156, 2: 46, 3: 20, 4: 15, 5: 10, 6: 1}
+GAME red/so/instances/so_tie15_n32.pg DEPTH n 32 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 24}
+GAME red/so/instances/tevlast7_n32.pg DEPTH n 32 runs 2 {'prefix_viol': 0} maxima {'depth': 5, 'd1': 6, 'd2': 4, 'd4': 1, 'xich': 6} hist {1: 54, 2: 28, 3: 44, 4: 1, 5: 2}
+GAME red/so/instances/so_th_n32.pg DEPTH n 32 runs 2 {'prefix_viol': 0} maxima {'depth': 7, 'd1': 12, 'd2': 7, 'd4': 3, 'xich': 21} hist {0: 57, 1: 44, 2: 7, 3: 20, 4: 6, 5: 3, 7: 2}
+GAME red/so/instances/tev_cex_n40.pg DEPTH n 40 runs 3 {'prefix_viol': 0} maxima {'depth': 3, 'd1': 3, 'd2': 3, 'd4': 0, 'xich': 4} hist {0: 35, 1: 30, 2: 38, 3: 4}
+GAME red/so/instances/tevlast11_n40.pg DEPTH n 40 runs 2 {'prefix_viol': 0} maxima {'depth': 3, 'd1': 3, 'd2': 3, 'd4': 0, 'xich': 5} hist {0: 50, 1: 19, 2: 55, 3: 1}
+GAME red/so/instances/tog6a_n32.pg DEPTH n 32 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 2} hist {}
+GAME red/so/instances/tevlast_cex_n40.pg DEPTH n 40 runs 2 {'prefix_viol': 0} maxima {'depth': 3, 'd1': 3, 'd2': 3, 'd4': 0, 'xich': 4} hist {0: 35, 1: 30, 2: 44, 3: 4}
+GAME red/so/instances/tog6b_n32.pg DEPTH n 32 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 3} hist {}
+GAME red/so/instances/xrun8_n10.pg DEPTH n 10 runs 1 {'prefix_viol': 0} maxima {'depth': 3, 'd1': 2, 'd2': 2, 'd4': 0, 'xich': 4} hist {0: 9, 1: 2, 2: 5, 3: 3}
+GAME red/so/instances/xrun21_n24.pg DEPTH n 24 runs 1 {'prefix_viol': 0} maxima {'depth': 1, 'd1': 2, 'd2': 0, 'd4': 0, 'xich': 3} hist {0: 20, 1: 8}
+GAME red/so/instances/xsn43_n48.pg DEPTH n 48 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 4} hist {0: 43}
+GAME red/so/instances/xsn29_n32.pg DEPTH n 32 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 2} hist {0: 29}
+GAME red/so/instances/xsnf42_n48.pg DEPTH n 48 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 2} hist {0: 42}
+GAME red/so/instances/xsnf52_n64.pg DEPTH n 64 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 2} hist {0: 54}
+GAME red/tcpert/instances/leanT_N6.pg DEPTH n 48 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/tcpert/instances/leanT_N12.pg DEPTH n 96 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/tcpert/instances/leanT_N8.pg DEPTH n 64 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/so/instances/xsn91_n48.pg DEPTH n 48 runs 9 {'prefix_viol': 0} maxima {'depth': 18, 'd1': 6, 'd2': 5, 'd4': 3, 'xich': 7} hist {0: 199, 1: 160, 2: 130, 3: 67, 4: 40, 5: 12, 6: 6, 7: 4, 8: 6, 9: 6, 10: 3, 11: 3, 12: 5, 13: 6, 14: 5, 15: 3, 16: 3, 17: 2, 18: 2}
+GAME red/tcpert/instances/leanT_N16.pg DEPTH n 128 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/tcpert/instances/tcL_N3.pg DEPTH n 42 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/tcpert/instances/tcL_N4.pg DEPTH n 68 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/tcpert/instances/tcL_N5.pg DEPTH n 100 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/tcpert/instances/tcL_N6.pg DEPTH n 138 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/tcpert/instances/tcR4_N4.pg DEPTH n 68 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/tcpert/instances/tcR4_N5.pg DEPTH n 100 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/tcpert/instances/tcL_N10.pg DEPTH n 350 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/tcpert/instances/leanT_N24.pg DEPTH n 192 runs 1 {'prefix_viol': 0} maxima {'depth': 6, 'd1': 3, 'd2': 3, 'd4': 3, 'xich': 3} hist {0: 240, 1: 9, 2: 9, 3: 8, 4: 6, 5: 3, 6: 1}
+GAME red/tcpert/instances/tcR4_N6.pg DEPTH n 138 runs 1 {'prefix_viol': 0} maxima {'depth': 6, 'd1': 1, 'd2': 1, 'd4': 1, 'xich': 1} hist {1: 72, 2: 10, 3: 16, 4: 13, 5: 5, 6: 1}
+GAME red/tcpert/instances/tcL_N8.pg DEPTH n 232 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/tcpert/instances/tcR4_N7.pg DEPTH n 182 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/tcpert/instances/tcS8_N6.pg DEPTH n 138 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/tcpert/instances/tcR4_N8.pg DEPTH n 232 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/tcpert/instances/leanT_N32.pg DEPTH n 256 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/tcpert/instances/tcS8_N7.pg DEPTH n 182 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/tcpert/instances/tcS8_N10.pg DEPTH n 350 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/tpp/instances/tpp_viol_n22.pg DEPTH n 22 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/tcpert/instances/tcS8_N8.pg DEPTH n 232 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/tpp/instances/tpp_viol_n63.pg DEPTH n 63 runs 1 {'prefix_viol': 0} maxima {'depth': 1, 'd1': 1, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 5, 1: 1}
+GAME red/ul/instances/cxmig_k4_n54.pg DEPTH n 54 runs 1 {'prefix_viol': 0} maxima {'depth': 2, 'd1': 4, 'd2': 1, 'd4': 0, 'xich': 5} hist {0: 30, 1: 4, 2: 5}
+GAME red/ul/instances/cxmig_k8_n82.pg DEPTH n 82 runs 1 {'prefix_viol': 0} maxima {'depth': 2, 'd1': 8, 'd2': 1, 'd4': 0, 'xich': 9} hist {0: 54, 1: 8, 2: 9}
+GAME red/ul/instances/ladderd0_k12_n48.pg DEPTH n 48 runs 1 {'prefix_viol': 0} maxima {'depth': 1, 'd1': 1, 'd2': 0, 'd4': 0, 'xich': 2} hist {0: 28, 1: 12}
+GAME red/ul/instances/ladderd0_k24_n84.pg DEPTH n 84 runs 1 {'prefix_viol': 0} maxima {'depth': 1, 'd1': 1, 'd2': 0, 'd4': 0, 'xich': 2} hist {0: 52, 1: 24}
+GAME red/tcpert/instances/tcS8_N11.pg DEPTH n 418 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/ul/instances/cxmig_k16_n138.pg DEPTH n 138 runs 1 {'prefix_viol': 0} maxima {'depth': 2, 'd1': 16, 'd2': 1, 'd4': 0, 'xich': 17} hist {0: 102, 1: 16, 2: 17}
+GAME red/ul/instances/ladderent_k12_n48.pg DEPTH n 48 runs 1 {'prefix_viol': 0} maxima {'depth': 1, 'd1': 1, 'd2': 0, 'd4': 0, 'xich': 2} hist {0: 28, 1: 12}
+GAME red/ul/instances/reader_L10_n36.pg DEPTH n 36 runs 2 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 2} hist {0: 23}
+GAME red/ul/instances/reader_L20_n56.pg DEPTH n 56 runs 2 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 2} hist {0: 33}
+GAME red/ul/instances/ladderent_k24_n84.pg DEPTH n 84 runs 1 {'prefix_viol': 0} maxima {'depth': 1, 'd1': 1, 'd2': 0, 'd4': 0, 'xich': 2} hist {0: 52, 1: 24}
+GAME red/tcpert/instances/tcL_N12.pg DEPTH n 492 runs 1 {'prefix_viol': 0} maxima {'depth': 12, 'd1': 1, 'd2': 1, 'd4': 1, 'xich': 1} hist {1: 25, 2: 3, 3: 16, 4: 18, 5: 19, 6: 20, 7: 21, 8: 22, 9: 23, 10: 24, 11: 5, 12: 1}
+GAME red/tcpert/instances/tcS8_N9.pg DEPTH n 288 runs 1 {'prefix_viol': 0} maxima {'depth': 3, 'd1': 2, 'd2': 2, 'd4': 0, 'xich': 2} hist {2: 92, 3: 8}
+GAME red/usplit/instances/gate_K16_n197.pg DEPTH n 197 runs 2 {'prefix_viol': 0} maxima {'depth': 2, 'd1': 1, 'd2': 1, 'd4': 0, 'xich': 2} hist {0: 115, 1: 52, 2: 27}
+GAME red/ul/instances/reader_L40_n96.pg DEPTH n 96 runs 2 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 2} hist {0: 53}
+GAME red/usplit/instances/pairoc_n58.pg DEPTH n 58 runs 1 {'prefix_viol': 0} maxima {'depth': 3, 'd1': 1, 'd2': 1, 'd4': 0, 'xich': 2} hist {0: 33, 1: 4, 2: 1, 3: 2}
+GAME red/usplit/instances/grow_K12_n149.pg DEPTH n 149 runs 1 {'prefix_viol': 0} maxima {'depth': 2, 'd1': 1, 'd2': 1, 'd4': 0, 'xich': 2} hist {0: 102, 1: 40, 2: 13}
+GAME red/usplit/instances/pp_K12_n161_dual.pg DEPTH n 161 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 4}
+GAME red/usplit/instances/pp_K12_n161.pg DEPTH n 161 runs 2 {'prefix_viol': 0} maxima {'depth': 2, 'd1': 1, 'd2': 1, 'd4': 0, 'xich': 2} hist {0: 89, 1: 40, 2: 18}
+GAME red/ul/instances/ladderd0_k48_n156.pg DEPTH n 156 runs 1 {'prefix_viol': 0} maxima {'depth': 1, 'd1': 1, 'd2': 0, 'd4': 0, 'xich': 2} hist {0: 100, 1: 48}
+GAME red/usplit/instances/usplit_n14.pg DEPTH n 14 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 7}
+GAME red/usplit/instances/usplit_n23.pg DEPTH n 23 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 2} hist {0: 17}
+GAME red/usplit/instances/usplit_rd_n24.pg DEPTH n 24 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 9}
+GAME red/usplit/instances/usplit_rd_s3_n27.pg DEPTH n 27 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 2} hist {0: 14}
+GAME red/usplit/instances/usplit_s3_n16.pg DEPTH n 16 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 8}
+GAME red/xctx/instances/nest3_n20.pg DEPTH n 20 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/ul/instances/ladderent_k48_n156.pg DEPTH n 156 runs 1 {'prefix_viol': 0} maxima {'depth': 1, 'd1': 1, 'd2': 0, 'd4': 0, 'xich': 2} hist {0: 100, 1: 48}
+GAME red/xctx/instances/nest3_n24.pg DEPTH n 24 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/xctx/instances/vrall_viol_n20.pg DEPTH n 20 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/xctx/instances/xcov11_n20.pg DEPTH n 20 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/xctx/instances/xctx_viol_n20.pg DEPTH n 20 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/xing/instances/j10_n24.pg DEPTH n 24 runs 2 {'prefix_viol': 0} maxima {'depth': 7, 'd1': 9, 'd2': 8, 'd4': 5, 'xich': 11} hist {0: 31, 1: 14, 2: 25, 3: 42, 4: 25, 5: 5, 6: 3, 7: 1}
+GAME red/xing/instances/fbref_cex_n32.pg DEPTH n 32 runs 7 {'prefix_viol': 0} maxima {'depth': 14, 'd1': 5, 'd2': 4, 'd4': 2, 'xich': 5} hist {1: 114, 2: 40, 3: 30, 4: 8, 5: 9, 6: 3, 7: 4, 8: 7, 9: 7, 10: 9, 11: 3, 12: 2, 13: 4, 14: 1}
+GAME red/xing/instances/j5_n16.pg DEPTH n 16 runs 5 {'prefix_viol': 0} maxima {'depth': 5, 'd1': 4, 'd2': 1, 'd4': 1, 'xich': 7} hist {0: 28, 1: 26, 2: 5, 4: 3, 5: 1}
+GAME red/xing/instances/j7_n32.pg DEPTH n 32 runs 3 {'prefix_viol': 0} maxima {'depth': 8, 'd1': 6, 'd2': 3, 'd4': 2, 'xich': 9} hist {0: 92, 1: 45, 2: 14, 3: 12, 4: 8, 7: 3, 8: 1}
+GAME red/xing/instances/j4_n40.pg DEPTH n 40 runs 5 {'prefix_viol': 0} maxima {'depth': 10, 'd1': 8, 'd2': 7, 'd4': 6, 'xich': 13} hist {0: 157, 1: 139, 2: 74, 3: 72, 4: 68, 5: 35, 6: 25, 7: 15, 8: 18, 9: 11, 10: 2}
+GAME red/xing/instances/j8_n32.pg DEPTH n 32 runs 4 {'prefix_viol': 0} maxima {'depth': 4, 'd1': 8, 'd2': 6, 'd4': 3, 'xich': 11} hist {0: 70, 1: 50, 2: 5, 3: 29, 4: 25}
+GAME red/xing/instances/j7_n48.pg DEPTH n 48 runs 8 {'prefix_viol': 0} maxima {'depth': 8, 'd1': 7, 'd2': 5, 'd4': 2, 'xich': 9} hist {0: 113, 1: 96, 2: 78, 3: 43, 4: 8, 5: 18, 6: 17, 7: 1, 8: 1}
+GAME red/xing/instances/kw25_n32.pg DEPTH n 32 runs 3 {'prefix_viol': 0} maxima {'depth': 5, 'd1': 4, 'd2': 4, 'd4': 2, 'xich': 4} hist {0: 51, 1: 4, 2: 8, 3: 1, 4: 2, 5: 1}
+GAME red/xing/instances/kw_n16.pg DEPTH n 16 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 2} hist {0: 12}
+GAME red/xing/instances/kw_n24.pg DEPTH n 24 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 2} hist {0: 20}
+GAME red/xing/instances/j8_n48.pg DEPTH n 48 runs 9 {'prefix_viol': 0} maxima {'depth': 7, 'd1': 8, 'd2': 7, 'd4': 4, 'xich': 9} hist {0: 112, 1: 42, 2: 52, 3: 69, 4: 41, 5: 31, 6: 16, 7: 4}
+GAME red/xing/instances/obr_eq_n24.pg DEPTH n 24 runs 1 {'prefix_viol': 0} maxima {'depth': 3, 'd1': 1, 'd2': 1, 'd4': 0, 'xich': 2} hist {3: 2}
+GAME red/xing/instances/kw_n48.pg DEPTH n 48 runs 1 {'prefix_viol': 0} maxima {'depth': 1, 'd1': 1, 'd2': 0, 'd4': 0, 'xich': 4} hist {0: 43, 1: 5}
+GAME red/xing/instances/u1t_cex_n32.pg DEPTH n 32 runs 1 {'prefix_viol': 0} maxima {'depth': 6, 'd1': 7, 'd2': 6, 'd4': 3, 'xich': 7} hist {1: 22, 2: 29, 3: 19, 4: 10, 5: 6, 6: 2}
+GAME red/xing/instances/obr_n32.pg DEPTH n 32 runs 2 {'prefix_viol': 0} maxima {'depth': 4, 'd1': 3, 'd2': 1, 'd4': 1, 'xich': 4} hist {0: 22, 1: 5, 3: 4, 4: 2}
+GAME red/xing/instances/u23sw64_n32.pg DEPTH n 32 runs 3 {'prefix_viol': 0} maxima {'depth': 7, 'd1': 8, 'd2': 7, 'd4': 5, 'xich': 8} hist {0: 8, 1: 20, 2: 17, 3: 5, 4: 9, 5: 13, 6: 7, 7: 1}
+GAME red/xing/instances/u1t_own6_n32.pg DEPTH n 32 runs 2 {'prefix_viol': 0} maxima {'depth': 7, 'd1': 6, 'd2': 6, 'd4': 3, 'xich': 6} hist {0: 21, 1: 17, 2: 3, 3: 4, 4: 2, 7: 1}
+GAME red/xing/instances/u2flat73_n32.pg DEPTH n 32 runs 5 {'prefix_viol': 0} maxima {'depth': 3, 'd1': 2, 'd2': 2, 'd4': 0, 'xich': 2} hist {0: 35, 1: 24, 2: 20, 3: 4}
+GAME red/xing/instances/u2flat_n32.pg DEPTH n 32 runs 6 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 2} hist {0: 5}
+GAME red/usplit/instances/grow_K40_n373.pg DEPTH n 373 runs 1 {'prefix_viol': 0} maxima {'depth': 2, 'd1': 1, 'd2': 1, 'd4': 0, 'xich': 2} hist {0: 270, 1: 124, 2: 41}
+GAME red/xing/instances/x31_cu16.pg DEPTH n 16 runs 2 {'prefix_viol': 0} maxima {'depth': 7, 'd1': 9, 'd2': 6, 'd4': 3, 'xich': 13} hist {0: 12, 1: 21, 2: 31, 3: 18, 4: 7, 5: 4, 6: 3, 7: 1}
+GAME red/xing/instances/x31_cu24.pg DEPTH n 24 runs 3 {'prefix_viol': 0} maxima {'depth': 8, 'd1': 8, 'd2': 8, 'd4': 7, 'xich': 8} hist {0: 1, 1: 39, 2: 24, 3: 27, 4: 28, 5: 14, 6: 9, 7: 7, 8: 2}
+GAME red/xing/instances/x31_cu32.pg DEPTH n 32 runs 2 {'prefix_viol': 0} maxima {'depth': 13, 'd1': 13, 'd2': 11, 'd4': 6, 'xich': 21} hist {0: 76, 1: 89, 2: 54, 3: 44, 4: 38, 5: 20, 6: 8, 7: 7, 8: 11, 9: 9, 10: 6, 11: 6, 12: 3, 13: 3}
+GAME red/xing/instances/x31_cu32i.pg DEPTH n 32 runs 2 {'prefix_viol': 0} maxima {'depth': 13, 'd1': 16, 'd2': 12, 'd4': 9, 'xich': 21} hist {0: 86, 1: 83, 2: 59, 3: 45, 4: 29, 5: 25, 6: 29, 7: 19, 8: 18, 9: 9, 10: 5, 11: 2, 12: 2, 13: 1}
+GAME red/xing/instances/x31_lem_e24.pg DEPTH n 24 runs 5 {'prefix_viol': 0} maxima {'depth': 4, 'd1': 2, 'd2': 2, 'd4': 1, 'xich': 3} hist {0: 14, 2: 49, 3: 12, 4: 2}
+GAME red/xing/instances/x31_lem_t32.pg DEPTH n 32 runs 7 {'prefix_viol': 0} maxima {'depth': 7, 'd1': 3, 'd2': 3, 'd4': 2, 'xich': 3} hist {0: 32, 1: 2, 2: 3, 3: 50, 4: 20, 5: 35, 6: 23, 7: 4}
+GAME red/xing/instances/x31_nh_r20.pg DEPTH n 20 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 2} hist {0: 13}
+GAME red/xing/instances/x31_cu48.pg DEPTH n 48 runs 2 {'prefix_viol': 0} maxima {'depth': 8, 'd1': 11, 'd2': 11, 'd4': 10, 'xich': 22} hist {0: 85, 1: 140, 2: 88, 3: 67, 4: 58, 5: 50, 6: 44, 7: 23, 8: 3}
+GAME red/xing/instances/x31_nh_e24.pg DEPTH n 24 runs 1 {'prefix_viol': 0} maxima {'depth': 2, 'd1': 1, 'd2': 1, 'd4': 0, 'xich': 3} hist {0: 20, 1: 1, 2: 1}
+GAME red/xing/instances/x31_ru24.pg DEPTH n 24 runs 1 {'prefix_viol': 0} maxima {'depth': 6, 'd1': 2, 'd2': 2, 'd4': 1, 'xich': 4} hist {0: 37, 1: 4, 2: 2, 3: 2, 4: 2, 5: 7, 6: 2}
+GAME red/xing/instances/x31_re24.pg DEPTH n 24 runs 1 {'prefix_viol': 0} maxima {'depth': 3, 'd1': 3, 'd2': 2, 'd4': 0, 'xich': 4} hist {0: 23, 1: 19, 2: 6, 3: 1}
+GAME red/xing/instances/x31_rx32.pg DEPTH n 32 runs 4 {'prefix_viol': 0} maxima {'depth': 7, 'd1': 9, 'd2': 8, 'd4': 5, 'xich': 22} hist {1: 134, 2: 51, 3: 34, 4: 18, 5: 10, 6: 7, 7: 4}
+GAME red/xing/instances/x32_rand16.pg DEPTH n 16 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 13}
+GAME red/xing/instances/x31_rx48.pg DEPTH n 48 runs 4 {'prefix_viol': 0} maxima {'depth': 14, 'd1': 10, 'd2': 10, 'd4': 8, 'xich': 22} hist {1: 197, 2: 72, 3: 49, 4: 38, 5: 27, 6: 13, 7: 18, 8: 9, 9: 4, 10: 16, 11: 8, 12: 8, 13: 2, 14: 1}
+GAME red/xing/instances/x32_nest40.pg DEPTH n 40 runs 3 {'prefix_viol': 0} maxima {'depth': 7, 'd1': 7, 'd2': 4, 'd4': 3, 'xich': 10} hist {0: 135, 1: 72, 2: 36, 3: 41, 4: 23, 5: 13, 6: 13, 7: 6}
+GAME red/xing/instances/x32_rand24.pg DEPTH n 24 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 3} hist {0: 20}
+GAME red/xing/instances/x32_rand32.pg DEPTH n 32 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 2} hist {0: 29}
+GAME red/xing/instances/x32_rand48.pg DEPTH n 48 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 3} hist {0: 44}
+GAME red/xing/instances/x32_waves32.pg DEPTH n 32 runs 9 {'prefix_viol': 0} maxima {'depth': 6, 'd1': 5, 'd2': 4, 'd4': 2, 'xich': 6} hist {0: 82, 1: 100, 2: 83, 3: 57, 4: 23, 5: 28, 6: 6}
+GAME si/root/instances/cone_n65.pg DEPTH n 65 runs 2 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 2} hist {0: 9}
+GAME red/xing/instances/x32_rand64.pg DEPTH n 64 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 3} hist {0: 57}
+GAME red/xing/instances/x32_waves48.pg DEPTH n 48 runs 7 {'prefix_viol': 0} maxima {'depth': 3, 'd1': 2, 'd2': 2, 'd4': 0, 'xich': 2} hist {0: 45, 1: 43, 2: 33, 3: 1}
+GAME si/root/instances/ueonce_n27.pg DEPTH n 27 runs 1 {'prefix_viol': 0} maxima {'depth': 1, 'd1': 1, 'd2': 0, 'd4': 0, 'xich': 3} hist {0: 33, 1: 4}
+GAME si/root/instances/cone_n69.pg DEPTH n 69 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {}
+GAME new/box54/out/switchbestexp_1.pg DEPTH n 35 runs 2 {'prefix_viol': 0} maxima {'depth': 6, 'd1': 4, 'd2': 4, 'd4': 4, 'xich': 4} hist {0: 23, 2: 16, 3: 20, 4: 31, 5: 19, 6: 6}
+GAME red/usplit/instances/pp_K48_n449.pg DEPTH n 449 runs 2 {'prefix_viol': 0} maxima {'depth': 2, 'd1': 1, 'd2': 1, 'd4': 0, 'xich': 2} hist {0: 233, 1: 148, 2: 54}
+GAME new/box54/out/switchbestexp_2.pg DEPTH n 60 runs 2 {'prefix_viol': 0} maxima {'depth': 10, 'd1': 10, 'd2': 10, 'd4': 10, 'xich': 11} hist {0: 56, 2: 24, 3: 42, 4: 115, 5: 32, 6: 26, 7: 4, 8: 12, 9: 9, 10: 1}
+GAME new/box54/out/switchbestexp_3.pg DEPTH n 85 runs 2 {'prefix_viol': 0} maxima {'depth': 14, 'd1': 13, 'd2': 13, 'd4': 12, 'xich': 14} hist {0: 88, 2: 26, 3: 134, 4: 110, 5: 41, 6: 49, 7: 61, 8: 2, 9: 4, 10: 1, 11: 23, 12: 18, 13: 1, 14: 1}
+GAME red/usplit/instances/pp_K48_n449_dual.pg DEPTH n 449 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 4}
+GAME new/box54/out/switchbestexp_4.pg DEPTH n 110 runs 2 {'prefix_viol': 0} maxima {'depth': 15, 'd1': 14, 'd2': 14, 'd4': 13, 'xich': 15} hist {0: 113, 1: 7, 2: 28, 3: 180, 4: 153, 5: 46, 6: 58, 7: 12, 9: 6, 10: 68, 11: 2, 12: 2, 13: 2, 14: 36, 15: 35}
+GAME new/box54/out/switchbestexp_5.pg DEPTH n 135 runs 2 {'prefix_viol': 0} maxima {'depth': 18, 'd1': 16, 'd2': 16, 'd4': 15, 'xich': 17} hist {0: 145, 1: 7, 2: 30, 3: 233, 4: 189, 5: 55, 6: 93, 7: 20, 9: 8, 10: 3, 11: 3, 12: 3, 13: 84, 14: 3, 17: 46, 18: 59}
+GAME new/box54/out/switchbestexp_6.pg DEPTH n 160 runs 2 {'prefix_viol': 0} maxima {'depth': 21, 'd1': 18, 'd2': 18, 'd4': 17, 'xich': 19} hist {0: 170, 1: 14, 2: 32, 3: 279, 4: 231, 5: 62, 6: 103, 7: 25, 9: 10, 10: 4, 11: 4, 12: 4, 13: 4, 14: 4, 16: 96, 20: 58, 21: 89}
+GAME new/box54/out/switchallexp_1.pg DEPTH n 21 runs 1 {'prefix_viol': 0} maxima {'depth': 4, 'd1': 2, 'd2': 1, 'd4': 1, 'xich': 2} hist {1: 12, 4: 7}
+GAME new/box54/out/switchallexp_2.pg DEPTH n 35 runs 1 {'prefix_viol': 0} maxima {'depth': 6, 'd1': 2, 'd2': 2, 'd4': 2, 'xich': 2} hist {1: 9, 4: 23, 6: 1}
+GAME new/box54/out/switchallexp_3.pg DEPTH n 49 runs 1 {'prefix_viol': 0} maxima {'depth': 6, 'd1': 2, 'd2': 2, 'd4': 2, 'xich': 2} hist {1: 13, 4: 40, 5: 2, 6: 2}
+GAME new/box54/out/switchallexp_4.pg DEPTH n 63 runs 1 {'prefix_viol': 0} maxima {'depth': 15, 'd1': 3, 'd2': 3, 'd4': 3, 'xich': 3} hist {4: 81, 15: 1}
+GAME new/box54/out/switchallexp_5.pg DEPTH n 77 runs 1 {'prefix_viol': 0} maxima {'depth': 18, 'd1': 3, 'd2': 3, 'd4': 3, 'xich': 3} hist {4: 60, 17: 4, 18: 4}
+GAME new/box54/out/switchallexp_6.pg DEPTH n 91 runs 1 {'prefix_viol': 0} maxima {'depth': 21, 'd1': 3, 'd2': 3, 'd4': 3, 'xich': 3} hist {4: 74, 20: 6, 21: 6}
+GAME new/box54/out/hf/counter_core_2.pg DEPTH n 15 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_core_3.pg DEPTH n 21 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_core_4.pg DEPTH n 27 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_core_5.pg DEPTH n 33 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_core_6.pg DEPTH n 39 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_core_8.pg DEPTH n 51 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_dp_2.pg DEPTH n 12 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_dp_3.pg DEPTH n 16 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_dp_4.pg DEPTH n 20 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_dp_5.pg DEPTH n 24 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_dp_6.pg DEPTH n 28 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_dp_8.pg DEPTH n 36 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_m_2.pg DEPTH n 9 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_m_3.pg DEPTH n 12 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_m_4.pg DEPTH n 15 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_m_5.pg DEPTH n 18 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_m_6.pg DEPTH n 21 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_m_8.pg DEPTH n 27 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_ortl_2.pg DEPTH n 11 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_ortl_3.pg DEPTH n 16 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_ortl_4.pg DEPTH n 21 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/switchbestexp_7.pg DEPTH n 185 runs 2 {'prefix_viol': 0} maxima {'depth': 24, 'd1': 20, 'd2': 20, 'd4': 19, 'xich': 21} hist {0: 202, 1: 14, 2: 34, 3: 332, 4: 267, 5: 67, 6: 103, 7: 24, 9: 12, 10: 5, 11: 5, 12: 5, 13: 5, 14: 5, 19: 111, 23: 70, 24: 125}
+GAME new/box54/out/hf/counter_ortl_5.pg DEPTH n 26 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_ortl_6.pg DEPTH n 31 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_ortl_8.pg DEPTH n 41 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_qpt_2.pg DEPTH n 4 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_qpt_3.pg DEPTH n 6 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_qpt_4.pg DEPTH n 8 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_qpt_5.pg DEPTH n 10 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_qpt_6.pg DEPTH n 12 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_qpt_8.pg DEPTH n 16 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_rob_2.pg DEPTH n 31 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_rob_3.pg DEPTH n 54 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_rob_4.pg DEPTH n 83 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_rob_5.pg DEPTH n 118 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_rob_6.pg DEPTH n 159 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_rr_2.pg DEPTH n 8 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_rr_3.pg DEPTH n 12 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_rob_8.pg DEPTH n 259 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_rr_4.pg DEPTH n 16 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_rr_5.pg DEPTH n 20 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_rr_6.pg DEPTH n 24 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_rr_8.pg DEPTH n 32 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/usplit/instances/gate_K64_n581.pg DEPTH n 581 runs 2 {'prefix_viol': 0} maxima {'depth': 2, 'd1': 1, 'd2': 1, 'd4': 0, 'xich': 2} hist {0: 307, 1: 196, 2: 75}
+GAME new/box54/out/hf/counter_symsi_2.pg DEPTH n 22 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_symsi_3.pg DEPTH n 32 runs 1 {'prefix_viol': 0} maxima {'depth': 9, 'd1': 1, 'd2': 1, 'd4': 1, 'xich': 1} hist {8: 1, 9: 1}
+GAME new/box54/out/hf/counter_symsi_4.pg DEPTH n 42 runs 1 {'prefix_viol': 0} maxima {'depth': 3, 'd1': 1, 'd2': 1, 'd4': 0, 'xich': 1} hist {2: 7, 3: 2}
+GAME new/box54/out/hf/counter_symsi_5.pg DEPTH n 52 runs 3 {'prefix_viol': 0} maxima {'depth': 24, 'd1': 1, 'd2': 1, 'd4': 1, 'xich': 1} hist {2: 6, 8: 1, 9: 5, 10: 8, 11: 4, 12: 12, 13: 9, 14: 8, 15: 5, 16: 3, 17: 3, 18: 2, 19: 2, 20: 1, 21: 2, 22: 1, 23: 2, 24: 1}
+GAME new/box54/out/hf/counter_symsi_6.pg DEPTH n 62 runs 4 {'prefix_viol': 0} maxima {'depth': 25, 'd1': 1, 'd2': 1, 'd4': 1, 'xich': 1} hist {2: 6, 4: 2, 8: 1, 9: 5, 10: 5, 11: 6, 12: 7, 13: 10, 14: 6, 15: 13, 16: 11, 17: 7, 18: 5, 19: 2, 20: 2, 21: 2, 22: 3, 23: 1, 24: 2, 25: 1}
+GAME new/box54/out/hf/recursiveladder_2.pg DEPTH n 10 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/recursiveladder_3.pg DEPTH n 15 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/recursiveladder_4.pg DEPTH n 20 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/recursiveladder_5.pg DEPTH n 25 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/recursiveladder_6.pg DEPTH n 30 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/tc_2.pg DEPTH n 22 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/tc_3.pg DEPTH n 42 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/tc_4.pg DEPTH n 68 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/counter_symsi_8.pg DEPTH n 82 runs 6 {'prefix_viol': 0} maxima {'depth': 42, 'd1': 1, 'd2': 1, 'd4': 1, 'xich': 1} hist {2: 6, 8: 1, 9: 5, 10: 6, 11: 6, 12: 11, 13: 10, 14: 9, 15: 10, 16: 9, 17: 9, 18: 11, 19: 10, 20: 11, 21: 14, 22: 11, 23: 13, 24: 8, 25: 6, 26: 4, 27: 5, 28: 4, 29: 4, 30: 4, 31: 2, 32: 4, 33: 3, 34: 3, 35: 4, 36: 3, 37: 3, 38: 4, 39: 3, 40: 3, 41: 3, 42: 1}
+GAME new/box54/out/hf/tc_5.pg DEPTH n 100 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/hf/tc_6.pg DEPTH n 138 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/ctl/pivot_demo.pg DEPTH n 11 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/d_pivot_demo.pg DEPTH n 11 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/seg/instances/runquad_K3_m4_n54.pg DEPTH n 54 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/seg/instances/runquad_K8_m30_n192.pg DEPTH n 192 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME red/seg/instances/s3quad_K3_m4.pg DEPTH n 137 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/d_runquad_K3.pg DEPTH n 54 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box52/out/topfix_n3.pg DEPTH n 63 runs 2 {'prefix_viol': 0} maxima {'depth': 4, 'd1': 8, 'd2': 8, 'd4': 7, 'xich': 8} hist {0: 58, 1: 55, 2: 37, 3: 36, 4: 10}
+GAME new/box54/out/hf/tc_8.pg DEPTH n 232 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box54/out/switchbestexp_8.pg DEPTH n 210 runs 2 {'prefix_viol': 0} maxima {'depth': 27, 'd1': 22, 'd2': 22, 'd4': 21, 'xich': 23} hist {0: 227, 1: 21, 2: 36, 3: 378, 4: 308, 5: 78, 6: 153, 7: 35, 9: 14, 10: 6, 11: 6, 12: 6, 13: 6, 14: 6, 22: 126, 26: 82, 27: 167}
+GAME new/box52/out/topfix_n4.pg DEPTH n 84 runs 2 {'prefix_viol': 0} maxima {'depth': 4, 'd1': 12, 'd2': 12, 'd4': 11, 'xich': 12} hist {0: 80, 1: 76, 2: 52, 3: 78, 4: 21}
+GAME new/box52/out/topfix_n6.pg DEPTH n 126 runs 2 {'prefix_viol': 0} maxima {'depth': 4, 'd1': 20, 'd2': 20, 'd4': 19, 'xich': 20} hist {0: 124, 1: 118, 2: 82, 3: 210, 4: 55}
+GAME new/box54/out/d_hntop_n3.pg DEPTH n 63 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box52/out/topfix_n8.pg DEPTH n 168 runs 2 {'prefix_viol': 0} maxima {'depth': 4, 'd1': 28, 'd2': 28, 'd4': 27, 'xich': 28} hist {0: 168, 1: 160, 2: 112, 3: 406, 4: 105}
+GAME new/box51/out/dlc_d2.pg DEPTH n 27 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 3} hist {0: 20}
+GAME new/box51/out/dlc_d3.pg DEPTH n 109 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 7} hist {0: 99}
+GAME new/box52/out/topfix_n8_cmp.pg DEPTH n 171 runs 2 {'prefix_viol': 0} maxima {'depth': 4, 'd1': 28, 'd2': 28, 'd4': 27, 'xich': 28} hist {0: 173, 1: 160, 2: 112, 3: 406, 4: 105}
+GAME new/box54/out/d_dlc_d3.pg DEPTH n 109 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME si/runlin/instances/runfam_K10.pg DEPTH n 49 runs 1 {'prefix_viol': 0} maxima {'depth': 5, 'd1': 7, 'd2': 5, 'd4': 1, 'xich': 10} hist {0: 42, 1: 48, 2: 79, 3: 57, 4: 2, 5: 4}
+GAME new/box51/out/dlc_d4.pg DEPTH n 455 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 15} hist {0: 442}
+GAME new/box59/out/rnd/r100_n40.pg DEPTH n 40 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r101_n50.pg DEPTH n 50 runs 1 {'prefix_viol': 0} maxima {'depth': 3, 'd1': 1, 'd2': 1, 'd4': 0, 'xich': 1} hist {1: 5, 2: 9, 3: 12}
+GAME new/box52/out/topfix_n10.pg DEPTH n 210 runs 2 {'prefix_viol': 0} maxima {'depth': 4, 'd1': 36, 'd2': 36, 'd4': 35, 'xich': 36} hist {0: 212, 1: 202, 2: 142, 3: 666, 4: 171}
+GAME si/runlin/instances/runfam_K40.pg DEPTH n 79 runs 1 {'prefix_viol': 0} maxima {'depth': 5, 'd1': 7, 'd2': 5, 'd4': 1, 'xich': 10} hist {0: 72, 1: 78, 2: 139, 3: 117, 4: 2, 5: 4}
+GAME new/box59/out/rnd/r102_n60.pg DEPTH n 60 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {}
+GAME new/box59/out/rnd/r104_n80.pg DEPTH n 80 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r103_n70.pg DEPTH n 70 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r105_n20.pg DEPTH n 20 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r106_n30.pg DEPTH n 30 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r107_n40.pg DEPTH n 40 runs 1 {'prefix_viol': 0} maxima {'depth': 1, 'd1': 1, 'd2': 0, 'd4': 0, 'xich': 1} hist {1: 1}
+GAME new/box59/out/rnd/r108_n50.pg DEPTH n 50 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r109_n60.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r10_n50.pg DEPTH n 50 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r110_n70.pg DEPTH n 70 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 1}
+GAME new/box59/out/rnd/r113_n30.pg DEPTH n 30 runs 1 {'prefix_viol': 0} maxima {'depth': 3, 'd1': 1, 'd2': 1, 'd4': 0, 'xich': 1} hist {2: 1, 3: 1}
+GAME new/box59/out/rnd/r111_n80.pg DEPTH n 80 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r112_n20.pg DEPTH n 20 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r115_n50.pg DEPTH n 50 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r114_n40.pg DEPTH n 40 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r116_n60.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r117_n70.pg DEPTH n 70 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r119_n20.pg DEPTH n 20 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r11_n60.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r118_n80.pg DEPTH n 80 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r120_n30.pg DEPTH n 30 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r121_n40.pg DEPTH n 40 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r122_n50.pg DEPTH n 50 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r123_n60.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r124_n70.pg DEPTH n 70 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r126_n20.pg DEPTH n 20 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r125_n80.pg DEPTH n 80 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r128_n40.pg DEPTH n 40 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 1}
+GAME new/box59/out/rnd/r127_n30.pg DEPTH n 30 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r129_n50.pg DEPTH n 50 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r12_n70.pg DEPTH n 70 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r130_n60.pg DEPTH n 60 runs 1 {'prefix_viol': 0} maxima {'depth': 1, 'd1': 1, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 4, 1: 1}
+GAME new/box59/out/rnd/r131_n70.pg DEPTH n 70 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r132_n80.pg DEPTH n 80 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r133_n20.pg DEPTH n 20 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r134_n30.pg DEPTH n 30 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 3}
+GAME new/box59/out/rnd/r135_n40.pg DEPTH n 40 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 1}
+GAME new/box59/out/rnd/r137_n60.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r136_n50.pg DEPTH n 50 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r138_n70.pg DEPTH n 70 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r13_n80.pg DEPTH n 80 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r139_n80.pg DEPTH n 80 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 1}
+GAME new/box59/out/rnd/r140_n20.pg DEPTH n 20 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r143_n50.pg DEPTH n 50 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r142_n40.pg DEPTH n 40 runs 1 {'prefix_viol': 0} maxima {'depth': 2, 'd1': 1, 'd2': 1, 'd4': 0, 'xich': 1} hist {2: 1}
+GAME new/box59/out/rnd/r141_n30.pg DEPTH n 30 runs 1 {'prefix_viol': 0} maxima {'depth': 11, 'd1': 1, 'd2': 1, 'd4': 1, 'xich': 1} hist {10: 1, 11: 2}
+GAME new/box59/out/rnd/r144_n60.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r145_n70.pg DEPTH n 70 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r147_n20.pg DEPTH n 20 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r146_n80.pg DEPTH n 80 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r148_n30.pg DEPTH n 30 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r149_n40.pg DEPTH n 40 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r14_n20.pg DEPTH n 20 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r150_n50.pg DEPTH n 50 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r151_n60d2.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r152_n60d2.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r153_n60d2.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r154_n60d2.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r155_n60d2.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r156_n60d2.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r157_n60d2.pg DEPTH n 60 runs 1 {'prefix_viol': 0} maxima {'depth': 3, 'd1': 1, 'd2': 1, 'd4': 0, 'xich': 1} hist {3: 5}
+GAME new/box59/out/rnd/r158_n60d2.pg DEPTH n 60 runs 1 {'prefix_viol': 0} maxima {'depth': 7, 'd1': 1, 'd2': 1, 'd4': 1, 'xich': 1} hist {0: 6, 1: 6, 2: 1, 5: 9, 6: 6, 7: 2}
+GAME new/box59/out/rnd/r159_n60d2.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r15_n30.pg DEPTH n 30 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r160_n60d2.pg DEPTH n 60 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {}
+GAME new/box59/out/rnd/r162_n60d2.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r161_n60d2.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r163_n60d2.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r164_n60d2.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r165_n60d2.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r166_n60d2.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r168_n60d2.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r167_n60d2.pg DEPTH n 60 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 3}
+GAME new/box59/out/rnd/r169_n60d2.pg DEPTH n 60 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {}
+GAME new/box59/out/rnd/r16_n40.pg DEPTH n 40 runs 1 {'prefix_viol': 0} maxima {'depth': 1, 'd1': 1, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 1, 1: 1}
+GAME new/box59/out/rnd/r171_n60d2.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r170_n60d2.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r172_n60d2.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r173_n60d2.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r174_n60d2.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r176_n60d2.pg DEPTH n 60 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {}
+GAME new/box59/out/rnd/r175_n60d2.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r177_n60d2.pg DEPTH n 60 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {}
+GAME new/box59/out/rnd/r179_n60d2.pg DEPTH n 60 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 3}
+GAME new/box59/out/rnd/r178_n60d2.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r17_n50.pg DEPTH n 50 runs 1 {'prefix_viol': 0} maxima {'depth': 1, 'd1': 1, 'd2': 0, 'd4': 0, 'xich': 1} hist {1: 1}
+GAME new/box59/out/rnd/r181_n60d2.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r180_n60d2.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r182_n60d2.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r183_n60d2.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r184_n60d2.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r186_n60d2.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r185_n60d2.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r188_n60d2.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r187_n60d2.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r189_n60d2.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r18_n60.pg DEPTH n 60 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 1}
+GAME new/box59/out/rnd/r190_n60d2.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r191_n60d2.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r192_n60d2.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r193_n60d2.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r194_n60d2.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r195_n60d2.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r196_n60d2.pg DEPTH n 60 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 6}
+GAME new/box59/out/rnd/r197_n60d2.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r199_n60d2.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r198_n60d2.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r19_n70.pg DEPTH n 70 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r1_n30.pg DEPTH n 30 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r200_n60d2.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r20_n80.pg DEPTH n 80 runs 1 {'prefix_viol': 0} maxima {'depth': 1, 'd1': 1, 'd2': 0, 'd4': 0, 'xich': 1} hist {1: 2}
+GAME new/box59/out/rnd/r21_n20.pg DEPTH n 20 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r23_n40.pg DEPTH n 40 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r22_n30.pg DEPTH n 30 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 1}
+GAME new/box59/out/rnd/r24_n50.pg DEPTH n 50 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r25_n60.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r26_n70.pg DEPTH n 70 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r27_n80.pg DEPTH n 80 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r28_n20.pg DEPTH n 20 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r29_n30.pg DEPTH n 30 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r2_n40.pg DEPTH n 40 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r30_n40.pg DEPTH n 40 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r31_n50.pg DEPTH n 50 runs 1 {'prefix_viol': 0} maxima {'depth': 3, 'd1': 1, 'd2': 1, 'd4': 0, 'xich': 1} hist {3: 1}
+GAME new/box59/out/rnd/r32_n60.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r33_n70.pg DEPTH n 70 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r34_n80.pg DEPTH n 80 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r35_n20.pg DEPTH n 20 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r36_n30.pg DEPTH n 30 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r37_n40.pg DEPTH n 40 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r38_n50.pg DEPTH n 50 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {}
+GAME new/box59/out/rnd/r3_n50.pg DEPTH n 50 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {}
+GAME new/box59/out/rnd/r39_n60.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r40_n70.pg DEPTH n 70 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r41_n80.pg DEPTH n 80 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r42_n20.pg DEPTH n 20 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r43_n30.pg DEPTH n 30 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 2}
+GAME new/box59/out/rnd/r44_n40.pg DEPTH n 40 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r45_n50.pg DEPTH n 50 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r46_n60.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r47_n70.pg DEPTH n 70 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r49_n20.pg DEPTH n 20 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r48_n80.pg DEPTH n 80 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {}
+GAME new/box59/out/rnd/r4_n60.pg DEPTH n 60 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {}
+GAME new/box59/out/rnd/r50_n30.pg DEPTH n 30 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r51_n40.pg DEPTH n 40 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r53_n60.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r54_n70.pg DEPTH n 70 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r52_n50.pg DEPTH n 50 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r55_n80.pg DEPTH n 80 runs 1 {'prefix_viol': 0} maxima {'depth': 3, 'd1': 1, 'd2': 1, 'd4': 0, 'xich': 1} hist {3: 2}
+GAME new/box59/out/rnd/r56_n20.pg DEPTH n 20 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r57_n30.pg DEPTH n 30 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r58_n40.pg DEPTH n 40 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r59_n50.pg DEPTH n 50 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r5_n70.pg DEPTH n 70 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r60_n60.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r61_n70.pg DEPTH n 70 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r63_n20.pg DEPTH n 20 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 1}
+GAME new/box59/out/rnd/r64_n30.pg DEPTH n 30 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r62_n80.pg DEPTH n 80 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r65_n40.pg DEPTH n 40 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r67_n60.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r66_n50.pg DEPTH n 50 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r68_n70.pg DEPTH n 70 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r69_n80.pg DEPTH n 80 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {}
+GAME new/box59/out/rnd/r6_n80.pg DEPTH n 80 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r70_n20.pg DEPTH n 20 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 2} hist {0: 1}
+GAME new/box59/out/rnd/r71_n30.pg DEPTH n 30 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r72_n40.pg DEPTH n 40 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r73_n50.pg DEPTH n 50 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r75_n70.pg DEPTH n 70 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r74_n60.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r76_n80.pg DEPTH n 80 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r78_n30.pg DEPTH n 30 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r77_n20.pg DEPTH n 20 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {}
+GAME new/box59/out/rnd/r79_n40.pg DEPTH n 40 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 2}
+GAME new/box59/out/rnd/r7_n20.pg DEPTH n 20 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r80_n50.pg DEPTH n 50 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r81_n60.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r84_n20.pg DEPTH n 20 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r82_n70.pg DEPTH n 70 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r83_n80.pg DEPTH n 80 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r85_n30.pg DEPTH n 30 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r86_n40.pg DEPTH n 40 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r87_n50.pg DEPTH n 50 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r88_n60.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r89_n70.pg DEPTH n 70 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r8_n30.pg DEPTH n 30 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {0: 1}
+GAME new/box59/out/rnd/r90_n80.pg DEPTH n 80 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r93_n40.pg DEPTH n 40 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r92_n30.pg DEPTH n 30 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r91_n20.pg DEPTH n 20 runs 1 {'prefix_viol': 0} maxima {'depth': 1, 'd1': 1, 'd2': 0, 'd4': 0, 'xich': 1} hist {1: 1}
+GAME new/box59/out/rnd/r96_n70.pg DEPTH n 70 runs 1 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 1} hist {}
+GAME new/box59/out/rnd/r94_n50.pg DEPTH n 50 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r95_n60.pg DEPTH n 60 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r97_n80.pg DEPTH n 80 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r98_n20.pg DEPTH n 20 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r99_n30.pg DEPTH n 30 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/rnd/r9_n40.pg DEPTH n 40 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
+GAME new/box59/out/fcobsP_3.pg DEPTH n 90 runs 2 {'prefix_viol': 0} maxima {'depth': 13, 'd1': 25, 'd2': 25, 'd4': 24, 'xich': 26} hist {0: 92, 2: 20, 3: 154, 4: 87, 5: 18, 6: 47, 7: 61, 8: 2, 9: 6, 10: 2, 11: 28, 12: 67, 13: 2}
+GAME new/box59/out/fcobsP_4.pg DEPTH n 115 runs 2 {'prefix_viol': 0} maxima {'depth': 15, 'd1': 30, 'd2': 30, 'd4': 29, 'xich': 31} hist {0: 117, 1: 7, 2: 20, 3: 199, 4: 118, 5: 16, 6: 45, 7: 6, 9: 9, 10: 73, 11: 3, 12: 3, 13: 3, 14: 38, 15: 103}
+GAME new/box59/out/fcobs_6.pg DEPTH n 163 runs 2 {'prefix_viol': 0} maxima {'depth': 21, 'd1': 43, 'd2': 43, 'd4': 42, 'xich': 44} hist {0: 173, 1: 14, 2: 19, 3: 288, 4: 170, 5: 17, 6: 71, 7: 15, 9: 15, 10: 5, 11: 5, 12: 5, 13: 5, 16: 99, 20: 62, 21: 165}
+GAME red/seg/instances/s3quad_K8_m30.pg DEPTH n 479 runs 0 {'prefix_viol': 0} maxima {'depth': 0, 'd1': 0, 'd2': 0, 'd4': 0, 'xich': 0} hist {}
