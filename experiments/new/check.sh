@@ -385,4 +385,10 @@ if grep -q "n 32 mO 108 mE 39 wruns 1 max-len 9 max-sbq 173 max-new 57 max-ret 1
 else
   echo "box 76 SBQ check: FAILED"; exit 1
 fi
+w28=$(cd .. && python3 -I new/box77/fixdepth.py n5-epoch/instances/nep92_n40.pg n5-epoch/instances/nep92_n40.start)
+if grep -q "mono-viol 0 trans 93 strict 20 flat 73 max-stall 34 .* max-flat-changes-per-(v,phase) (66, 0, 5, 92)" <<<"$w28"; then
+  echo "box 77 FIXD: nep92_n40 FIX-DEPTH monotone, 66 = 1.65n dead-branch climbs at v 0 in one phase (FLAT-LIN DEAD): PASS"
+else
+  echo "box 77 FIXD check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

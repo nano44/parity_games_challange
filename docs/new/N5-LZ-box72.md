@@ -225,3 +225,10 @@ Written ~05:43Z (date -u). Tools:
      TIED-RB would charge REP to ρ.
 - NEEDS: none from the owner. From the Lead: a ruling on whether N5-LZC (a different S4a tie-break) may replace N5 as the lane's object
   for the SC* / GXC premises, and a referee check of OPT-ONLY.
+
+## Addendum (2026-10-30 ~08:15Z, date -u): code hazard fixed (L-RED R133, l-red 5d78e948, via the Lead 07:34Z)
+- box72/n5lz.py cached its W-engine in a module-level dict `_wc` keyed by τ alone. Two games run in ONE process could reuse another game's
+  engine and give wrong N5-LZC runs.
+- Fixed (box 77 push): the cache is now per game (g.__dict__["_n5lz_wc"], keyed by τ).
+- Every tool of boxes 72-77 runs one game per process (wincmp.py runs two ENGINES on the SAME game), so no number in this note is affected.
+  check.sh's box 72-76 pins pass unchanged.

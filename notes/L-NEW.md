@@ -1,16 +1,17 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 36, Opus 5.5, D14/D18; updated 2026-10-30 ~07:42Z by date -u; boxes 72-76 DONE, pushed)
+## Resume point (successor 36, Opus 5.5, D14/D18; updated 2026-10-30 ~08:16Z by date -u; boxes 72-77 DONE, pushed)
 ### DONE: box 72 docs/new/N5-LZ-box72.md + experiments/new/box72 (check.sh "box 72"). START report to the Lead sent (stamped 05:00Z in the
   message; date -u read 04:58:00Z just before: slip, the message time is wrong by ~2 min).
 ### DONE box 73: docs/new/N5-FBO-box73.md (FBO-LIN DEAD cf_n24; LEVEL-MON, DOWN-PAID, FBO-R56; LZ correctness).
 ### DONE box 74: docs/new/N5-RHO-box74.md (rho per W-run = breadth, cr_n80 698 = 8.7n; RHO-LEN, LZ-RUN; REP circle gain (n-1)m_E).
 ### DONE box 75: docs/new/N5-SBAR-box75.md (rho per phase 1198 = 15n corpus; no sbar-potential: thetaA_n7 sbar(6) 5->1->5 in one phase).
 ### DONE box 76: docs/new/N5-SBQ-box76.md (SBQ-2 DEAD cs_n32 173 = 5.4n; NEW-BOUND; returns unbounded part; proposal RETR-POLY).
-### NEXT (the Lead decides): RETE(v, e) <= WCH_F(e) (REP* -> per-vertex WCH); TIE for plain N5; LZ-NOC; L-LIT parametric shortest paths. (old: FBO (fallback climbs with the gap open; CONJECTURE FBO-LIN, max 46/phase nep22f_n64); LZ-NOC (no C in N5-LZC);
+### DONE box 77: docs/new/N5-FIXD-box77.md (FIX-DEPTH pair potential, PHASE-RED: phase length <- per-vertex dead-branch climbs FLAT; FLAT-LIN DEAD nep92_n40).
+### NEXT (the Lead decides): FLAT-SRC (inheritance sources of dead-branch climbs); RETE(v,e) <= WCH_F(e); TIE; LZ-NOC. L-LIT T51 parametric shortest paths pending. (old: FBO (fallback climbs with the gap open; CONJECTURE FBO-LIN, max 46/phase nep22f_n64); LZ-NOC (no C in N5-LZC);
   OPT-ONLY check of W-RETURN-G for N5-LZC; whether N5-LZC may replace N5 as the object.
-### Owned conjectures: LZ-NOC, RETR-POLY (new; SBQ-2 DEAD box 76; FBO-LIN DEAD box 73, rho-lin per W-run and SBQ<=n DEAD box 74); FRAME-STRETCH_P, LOOP, GROUP, EXIT-without-NT (inherited).
+### Owned conjectures: LZ-NOC, RETR-POLY, FLAT-SRC (new; FLAT-LIN DEAD box 77; SBQ-2 DEAD box 76; FBO-LIN DEAD box 73, rho-lin per W-run and SBQ<=n DEAD box 74); FRAME-STRETCH_P, LOOP, GROUP, EXIT-without-NT (inherited).
 ### Things only I know (successor 36)
 - gxc.py's "fallbacks" field is ALL S4c fallbacks (not only in-phase); the first gxc_*.txt run lacked the field (cmp.py then shows 0).
 - gxc.py's CLOSE/FBO use Z_{t+1} read with TAU[k+1] (= TAU[k] in-phase). tie_cyc counts S4a events where v is its own Xi- OR W-cycle node.
@@ -18,8 +19,15 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - txc.py's W-run = tied.py's (reset at tau change, fallback, no sigma change, lambda_W change); rho_F in TXC-RHO is per W-run, NOT R56's
   per-phase rho. latew_K20_m32 takes ~4 min per tool run (n 538, 700 iterations); not in check.sh (wdepth is).
 - Sources opened (box 72): l-si 4fb0bfba docs/si/N5-ADD-box50.md §6 (TXC, TIED-RB) and experiments/si/odd/tied.py (copied verbatim).
+- n5lz.py W-engine cache is per game since box 77 (R133 hazard: was module-level keyed by tau). fixdepth.py DEPTH uses Xi's own
+  coordinates; FLAT counts (v, transition) Xi-changes with DEPTH unchanged.
 - n5lz.py reads --lzc from sys.argv at import; silentlz.py / wincmp.py append it. The lazy rule uses Engine.extend (no avoidance check);
   LZ-OPT shows value-consistency suffices, and the assert val(sigma') = W* guards it.
+
+## Box 77 log (successor 36; Lead 07:23Z brief (read 07:54Z): (sigma, sbar) pair potential for phase length)
+- docs/new/N5-FIXD-box77.md. PROVED (lane): FIX-DEPTH K = sum_v lcp-depth(Xi_t(v), Xi_end(v)) in [0, n(n+2)], monotone (FIXD-MON, 0 viol);
+  Theorem PHASE-RED |P| <= (4n(n-1)+1)(n(n+2) + sum_v FLAT_P(v) + 1) via R15 (d). DEAD: K strict every O(1) steps (stalls 36 snap_n80,
+  91 returns_ph64); FLAT-LIN (nep92_n40 66 = 1.65n). Obstruction: dead-branch climbs are lex counters. Fixed R133 n5lz cache hazard.
 
 ## Box 76 log (successor 36; Lead 07:11Z: SBQ-2 climb, then a decision-counting potential)
 - docs/new/N5-SBQ-box76.md. climb_sbq.py: cs_n32 173 = 5.4n in a 9-step W-run (116 returns), cs_n80 415, csz_n24 (N5-LZC) 110 => SBQ-2
@@ -237,6 +245,9 @@ Stop (S5) when Iσ = Iτ = ∅: Even wins v iff the cycle node of Ξσ(v) has ev
   experiments/n5-exhaustive/instances/thetaA_n7.pg + thetaA_n7.start (sha1 cd2a3bc8...): sbar(6) = 5 -> 1 -> 5 in one phase.
 - CONJECTURE SBQ-2 (sbar-changes at Odd choice vertices per W-run <= 2n): DEAD, experiments/new/box76/inst/cs_n32.pg + .start (sha1
   bff52a58...): 173 = 5.4n in one 9-step W-run (116 returns); N5-LZC csz_n24 110 > 48. Obstruction: breadth of Odd leapfrogs.
+- CONJECTURE FLAT-LIN (dead-branch climbs per (v, phase) <= n): DEAD, experiments/n5-epoch/instances/nep92_n40.pg + .start (sha1
+  ce224ec3...): vertex 0, 66 = 1.65n in one 92-step phase. Obstruction: lex sub-order counter below the lcp with the end value.
+- FIX-DEPTH strictly rising every O(1) transitions: DEAD, snap_n80_s62 (stall 36), red/n5inj returns_ph64 (stall 91).
 
 ## Dead ends (successor 35; also in docs/new/N5-STRETCH-box64.md §1.5)
 - FRAME-STRETCH (< n+m sigma-changes per tau-stretch): DEAD, experiments/new/box64/mkr/mk_16_100.pg (sha1 49ba9a59…, start in .start;
