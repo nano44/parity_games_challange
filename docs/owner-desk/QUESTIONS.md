@@ -233,3 +233,10 @@ verbatim to the Lead; the Lead records rulings (D-numbers) in docs/DECISIONS.md 
 - Interim (Lead reading L36): sessions cut off by the cap (L-RED on NEST*-BOUNDED, CHECKER on R16) finish on Opus; L-NEW resumes on its
   existing session; any NEW session starts on Fable 5.1; no Opus referee signs unless D12 is extended. Working sessions 3 of 5.
 - Status: closed, D15 / L37: lanes and referees on Opus 5.5, labelled "(Opus 5.5, D15)"; R17's Fable signatures stand.
+
+## Q-PACE: pace until the weekly reset (2026-11-04 21:00Z)
+- id: Q-PACE (Lead, 2026-10-30 20:53Z; added by OWNER-DESK 2026-10-30T20:53Z)
+- Background: every session record shows the 7-day limit at "allowed_warning"; hitting the cap would stall the fleet until the reset,
+  as on 2026-10-26 to 10-28. No overage.
+- Options: (a) keep five working lanes (D17), Lead default; (b) drop to three until the reset.
+- Status: OPEN as information under D15/L37: default (a) is in force unless the owner says otherwise; no answer needed.

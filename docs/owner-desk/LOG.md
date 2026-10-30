@@ -437,3 +437,25 @@ Barrier found: no argument that works for every improving-switch rule can finish
 G-N5-TIME, i.e. whether N5 is polynomial, is OPEN. Nothing about N5 itself is proved polynomial or refuted.
 Usage: the seven-day limit is still at warning, no overage. Running 2 working lanes plus 2 referees.
 Needs: none."
+
+## 2026-10-30T20:53Z Lead daily owner line (2026-10-30 20:53Z, verbatim)
+- LANDED: RESULTS R90-R94, all REDUCTIONS, all with two referees + CHECKER, CI green.
+  - R94 (P-N5-FIXD, 18:40Z) bounds each phase by its Ξ-changing transitions.
+  - FLAT-SW is proved by a referee-originated proof that both referees signed (Lead reading L41).
+- NEXT TO LAND:
+  - R95 (P-N5-WRUN): both referees signed it. CHECKER C105 failed one unbound variable; a one-phrase fix is in word-diff.
+  - P-N5-SETTLE (L-SI: RUN-SETTLE, HEAD-RED): both referees signed it; the line is in revision.
+- STATE OF THE PROOF:
+  - Inside one W-run, every open count reduces (lane-level) to one thing: per-vertex Ξ-changes, sharpened to Ξ-changes at the heads plus a few rare events.
+  - All known families top out at quadratic W-runs; none is super-quadratic.
+  - Conjectures killed today with instances: BIP-REL-1, FLIP-EV, NO-REPEAT, the Topkis order, and several more.
+  - G-N5-TIME stays OPEN. Nothing is M3/M4.
+- RUNNING: five lanes (L-NEW 40, L-RED 35, L-SI 35, L-LIT T59, L-COMP 8) plus REFEREE 20, REFEREE-2 24, CHECKER 15.
+- SPEND (estimate from session records): roughly $400-600 across lane sessions today, plus the Lead. No overage.
+- NEEDS (owner):
+  - Q-PACE: every session record now shows the 7-day limit at "allowed_warning" (resets 2026-11-04 21:00Z). Hitting the cap would stall the fleet until then, as on Oct 26-28.
+    - (a) Keep five working lanes (D17), my default.
+    - (b) Drop to three until the reset.
+    I keep (a) unless you say otherwise.
+  - Optional: library access for paywalled primaries (Cunningham 1979, Hansen-Zwick 2010, Topkis 1978, Milgrom-Shannon 1994, Gondran-Minoux ch. 4, others listed in docs/lit/T54-T60). Your call; nobody contacts anyone.
+(Q-PACE added to QUESTIONS.md as information under D15/L37, default (a).)
