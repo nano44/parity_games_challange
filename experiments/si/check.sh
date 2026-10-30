@@ -951,6 +951,16 @@ if grep -q "NOTT [1-9]\|SELX [1-9]\|NCX [1-9]\|TIEX [1-9]\|EVENX [1-9]\|DESCX [1
 if grep -q "ROOTX [1-9]\|EVX2 [1-9]" sb53/topk_*.txt; then echo "box 53: topkis corpus violation"; exit 1; fi
 [ "$(grep -c "BAD 0$" sb53/rs_out.txt)" = 10 ] || { echo "box 53: random search not 10 x BAD 0"; exit 1; }
 echo "si (box 53 SBF: fixed-order DEAD, ROOT-FLIP checks): PASS"
+# box 53 SBF §5 (Lead 20:00Z, T60 §3.3): ORDER-CHG' data (ORDX 0, PAIRTIE 0), NO-REPEAT on a fixed head set DEAD (exitr_cex_n16),
+# max |U_k| = 4K + 16 on mkrw (K = 4: 32).
+o=$(python3 -I sb53/orderchg.py ../red/so/instances/exitr_cex_n16.pg)
+case "$o" in *"FT 5 ORDX 0 ORDX0 3 PAIRTIE 0 UMAX 2 UPMAX 4 NORD 3 RREP 1"*) ;; *) echo "box 53 §5: exitr_cex_n16: $o"; exit 1;; esac
+t=$(mktemp -d); LATE=1 python3 -I ../red/span/mkrw.py 4 16 $t/w.pg $t/w.start >/dev/null
+o=$(python3 -I sb53/orderchg.py $t/w.pg $t/w.start)
+case "$o" in *"FT 65 ORDX 0 ORDX0 5 PAIRTIE 0 UMAX 32 UPMAX 90 NORD 77 RREP 0"*) ;; *) echo "box 53 §5: mkrw K4: $o"; exit 1;; esac
+[ "$(cat sb53/ord_*.txt | grep -c ORDCHG)" = 1134 ] || { echo "box 53 §5: orderchg outputs incomplete"; exit 1; }
+if grep -q "ORDX [1-9]\|PAIRTIE [1-9]" sb53/ord_*.txt; then echo "box 53 §5: ORDER-CHG' corpus violation"; exit 1; fi
+echo "si (box 53 SBF §5: ORDER-CHG' data, fixed-set NO-REPEAT DEAD, |U| linear): PASS"
 # P-N5-SETTLE line revision L-1 (fixes entry 1; both referees word-diff it): must not change.
 echo "997e39eee8d72ae94be4764bb1e3841914ffc78e  ../../docs/si/P-N5-SETTLE-line-L1.txt" | sha1sum -c --quiet
 echo "si (P-N5-SETTLE L-1 pinned): PASS"
