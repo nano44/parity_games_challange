@@ -133,3 +133,10 @@ condition ([V1] at k for σ_k v, at k + 1 for w) supplies "v ∉ P" and "v not t
 = H8. Corrected counts 782 in-phase fallbacks and 8,442 re-openings (box 68 / packet §6; matches REFEREE-2), box 67 725 fallbacks.
 comp54_n80.start (L-RED's file, τ(11) = 51 a non-edge) is NOT edited. It is quarantined in L-NEW's tools (box67/energy.py, box68/zflat.py
 refuse non-edge starts).
+
+## H16 (GAP-L4, REFEREE 19 §C; Lead 2026-10-30 02:41Z), appended ~02:43Z (date -u)
+- H_t is used in H14's premise clause («the one-player arena H_t») but is defined nowhere in the line.
+- New line file docs/new/P-N5-GAP-box69-line-H16.txt = H14's line plus exactly one insertion at H_t's first (and only) use: «the one-player
+  arena H_t)» → «the one-player arena H_t, H_t := S4a's arena at t (Even keeps σ_t ∪ Iσ_t, Odd follows τ_t))».
+- `git diff --no-index --word-diff=porcelain` of H14 vs H16 shows only this change. It matches the packet's §1 definition (H_t := σ_t ∪ Iσ_t,
+  S4a's arena for Even at t, Odd following τ_t). The H16 line supersedes H14's.
