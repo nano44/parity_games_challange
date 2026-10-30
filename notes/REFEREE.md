@@ -8,9 +8,11 @@ in the handover vs B*/REP*/SC*/O* in the frozen packet; packet omits the R57 (b)
 | item | my report | §C | outcome |
 | --- | --- | --- | --- |
 | P-N5-CUT (l-si 2678f6c6, sha1 d6519d3d), first | R-N5-CUT.md ff5a6f81; §10b line check 8a7818a0 | R-N5-CUT-C.md vs R2 335814dc: identical, map empty; K0 MATCHES, K1 SIGNED, K2-K11 clarifications | all SIGNED, no gap; CUT-N1..N7; line (09d6f0c4) NOT YET: CUT-E1 (SC* classes), CUT-E2 (iff, converse supplied) |
+| P-N5-WCH (l-new 2ad78f51, sha1 31caa72e; line 9ac6fdba), first | R-N5-WCH.md d71d6e55 | R-N5-WCH-C.md vs R2 24f32388: identical, map empty; OPT-ONLY joint finding | all SIGNED, no gap; OPT-ONLY true; SPEC quote tags off by one; line MATCHES |
 | P-N5-LATEP (l-si b63f2554, sha1 b15223e5; line 4a68934d), first | R-N5-LATEP.md 5bdd5d6d | R-N5-LATEP-C.md vs R2 e7b538a9: identical, map empty; I missed R2 L-1 (line drops t < u) | all SIGNED, no gap; line needs LATEP-L1 (GXC unlanded); txcd.py frame bug D1 + no-T4 D2 |
 | P-N5-GAP (l-new 28ceeadc, sha1 d67f8e04; line 901f242d sha1 f1c5c5d5), first | R-N5-GAP.md cd1c29d6 | R-N5-GAP-C.md vs R2 aee8971e: map {G-GAP-1} both; H1 closes it; H9 OK + needs GAP-L1..L4 (H10+) | 12/13 SIGNED; OPT-OFF proof hole G-GAP-1 (Case 2 with u ∈ π), repair GAP-R1; GAP-RED independent; line MATCHES after GAP-L1..L3 |
 ### STATE (04:3xZ): CUT §C done (final line K15 MATCHES, no free symbol; R90 = C100); GAP §C done (final line H18 MATCHES; R91 = C101 Add. 1). REFEREE-2 21 parked (85e6d86e): I may be the only active referee for CHECKER. HOLD for CHECKER questions on R90 / R91; park at ~600k.
+- scratch/wch_probe.py (N5 and --lzc via a one-line patch of rl_engine.run); MUT 1-4 bite, 5 never (NC 0). wch_logs/.
 - scratch/latep_probe.py (LATE′, CIRCLE′, GAP-CLIMB, CHAIN, TXC descent); MUT 1/2/3/5 bite, MUT 4 (T4) never. latep_logs/.
 - scratch/gap_probe.py (OPT_2b counts the hole's configuration: 11,948 on alt_all); MUT 1/3/4/5 bite, MUT 2 never. Inputs gap_logs/alt_abs.lst (worktree paths).
 ### Things only I know

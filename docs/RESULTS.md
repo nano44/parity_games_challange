@@ -6653,6 +6653,622 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   in-phase fallbacks of one phase to Σ_v WCH^S4a_P(v) and ZF_P, neither of which is bounded; no bound on a run, no running-time bound, no
   algorithm claim). GAPS G-N5-TIME: open; CONJECTURE FB-LIN: open.
 
+### R92 [refereed-only] In every W-run F = [a, b] of N5 (SPEC S1-S5) on any game, under the standing SPEC premise of RESULTS R57, with RESULTS R15 (a), (d), R17 (a), R47 (a), R57 (a) (premise (VJ)), R88 (Lemmas XW, GP*, Corollary FW-R*), R89 (Lemmas GP*-RUN, LATE-RISE) and R90 (Lemmas OPT-OFF (ii), W-MON′, W-SUCC) (W-run, W_t, λ_W as in RESULTS R89: τ and λ_W constant on F, no S4c fallback; Ξ_t, σ̄_t, Iσ_t and the order ⊴ (▷ strict) as in SPEC S1-S2, λ_Ξ the cycle-node map of Ξ_t; BLOCKED as in RESULTS R88; n the number of vertices, n_E of Even vertices, m_E of Even edges, d_E(z) of Even edges into z; an adoption of (y, z) at u: σ_{u+1}(y) = z ≠ σ_u(y)), call an adoption of the Even edge (y, z) at u LATE′ if (y, z) is blocked at some state t of F with p + 1 ≤ t < u, p its previous adoption in F (a ≤ t < u if there is none), a REPEAT′ if it is LATE′ and (y, z) has an earlier LATE′ adoption in F, and let R*′_T be the transitions of F containing a LATE′ adoption, REP′_F the REPEAT′s of F, X′_F those REPEAT′s of (y, z) at u for which y is not off-cycle for τ (P-N5-CUT §2) at some state of [k + 1, t], k the last k < u with σ_k(y) = z ≠ σ_{k+1}(y) and t the earliest blocked state as in the definition of LATE′, WCH_F the W-changing transitions of F and WCH_F(z) those changing W(z), Z_s := {v : Ξ_s(v) ≠ W_s(v)}, D_s := {Odd o : σ̄_s(o) ≠ τ(o)}, and, over the transitions s → s + 1 of F (s, s + 1 in F): ZXC_F(z) those with z ∈ Z_s and Ξ_{s+1}(z) ▷ Ξ_s(z), TXC_F(z) those with Ξ_{s+1}(z) ▷ Ξ_s(z) and W_{s+1}(z) = W_s(z), WZ_F(z) those of ZXC_F(z) with W_{s+1}(z) ≠ W_s(z), GXC_F the pairs (v, s) with v Even, σ_{s+1}(v) ≠ σ_s(v), λ_Ξ unchanged at s → s + 1, v ∈ Z_s, Ξ_{s+1}(v) ▷ Ξ_s(v) and W_{s+1}(v) ⊴ W_s(v), GATE_F the pairs (o, s) with o Odd in D_s ∪ D_{s+1} and s in TXC_F(o), CNW_F the pairs (x, s) with λ_W(x) = x and s in TXC_F(x), LCT_F the transitions at which λ_Ξ changes, TXC_F and ZXC_F the sets of pairs (z, s) with s in TXC_F(z), resp. ZXC_F(z), and in every inequality a set stands for its number of elements: (Corollary FW-R*′) WCH_F ≤ (n − 1)(R*′_T + 1); (Lemma LATE-SPLIT′, Corollary CIRCLE′) R*′_T ≤ m_E + REP′_F, REP′_F ≤ n_E·R*′_T and REP′_F ≤ X′_F + Σ_z d_E(z)·WCH_F(z); (Lemma GAP-CLIMB) the LATE′ adoptions of each Even edge (y, z) in F number at most ZXC_F(z); (Proposition CHAIN) GXC_F ⊆ TXC_F ⊆ ZXC_F as sets of pairs (vertex, transition), and ZXC_F(z) is the disjoint union of TXC_F(z) and WZ_F(z); (Lemma TXC-DESCENT, Corollary TXC-RED) TXC_F ≤ n·(GXC_F + GATE_F + CNW_F) + n²·LCT_F, with the sum of LCT_F over the W-runs of a run at most n(n − 1) (2026-10-30) — a REDUCTION (GATE_F, CNW_F, GXC_F, WZ_F(z) and REP′_F are not bounded here; G-N5-TIME stays open; not M3, not a step-4 pass, not a TARGET.md claim), CHECKER PASS (docs/checker/C102.md, checker c13477c2)
+- Object (L-SI successor 32, Opus 5.5, D15 / D18, Lead reading L40; frozen, unchanged during review): packet P-N5-LATEP,
+  docs/si/P-N5-LATEP-box53.md, sha1 b15223e53157d7d0a14767bb3c71dae07066a4da, 204 lines (l-si freeze b63f2554e63072c4d8b491fc4c34bb30ef6e7b5c,
+  2026-10-30T06:16:38Z, the file's last commit (first commit fd8c2231, 06:04:49Z, the unfrozen draft); identical at l-si head 17a3ecec, at
+  origin trunk 8bb9799d and at the local trunk head (`git diff --stat b63f2554 17a3ecec` on the packet and the old line file: empty); merged
+  into trunk by 84614aee, 06:26:58Z). Both referees measured the sha1 at b63f2554 (REFEREE l. 3-5; REFEREE-2 l. 2-3). The Lead's freeze word
+  is quoted at l. 2-4 («Lead 2026-10-30 06:11Z: «P-N5-LATEP: GO, with your item list §1-§6 as proposed, plus two edits: (a) Add a §7
+  READING, explicitly NOT TO SIGN: R90's REP* and LATE term may be read with LATE′ … (b) The line file must bind every symbol in the line
+  …»»; the Lead's §7 is the packet's §8). Quote base: six [Q path@170e5316:lines] quotes (SPEC S4a l. 51, P-N5-GP l. 85-86 and l. 144-145,
+  box10 l. 20-22, P-N5-CUT l. 111-112, box 70 l. 48-49), checked by experiments/si/rund/quotecheck.py (pinned «box 53», with a shifted
+  control that must fail), by REFEREE (l. 11: «my script scratch/cut_quotes.py finds 6/6 verbatim») and by REFEREE-2 (l. 68: «tags 6, ok 6,
+  miss 0; control SHIFT=1: ok 0, miss 6»); re-run for this draft: «quotes=6 bad=0», --mut «quotes=6 bad=6», «QUOTES FAIL». Sections: §0
+  what to sign (l. 12-23), §1 setting, symbols, premises (l. 25-49), §2 Definition LATE′ (l. 51-58), §3 FW-R*′, §4 LATE-SPLIT′ and CIRCLE′,
+  §5 GAP-CLIMB, §6 CHAIN, §7 TXC-DESCENT and TXC-RED, §8 READING on R90 («NOT TO SIGN», l. 147-159), §9 the lane's strict symbol test of the
+  line (l. 161-187), §10 DATA and pins («NOT to sign», l. 189-199). Scope (l. 8-9): «lemmas about one W-run of N5 on every game. Each one is a
+  REDUCTION or a structural fact. No count is bounded here; G-N5-TIME stays OPEN. Not a TARGET.md claim, not an algorithm claim.» Working
+  notes docs/si/N5-ADD-box50.md, N5-LATEP-box51.md, N5-TXCD-box52.md (l. 7): not refereed here.
+  The RESULTS line, history. (1) The frozen line docs/si/P-N5-LATEP-line.txt (l-si b63f2554; first version fd8c2231), sha1
+  4a68934d832c483c5b28c552fd26526f7de4abea, the line both referees reviewed (REFEREE l. 4-5; REFEREE-2 l. 2-3). Verdicts on it: REFEREE
+  «MATCHES §3-§7 and claims nothing more, after LATEP-L1 (required by the every-symbol rule) and two precisions (LATEP-L2, L3)» (l. 31),
+  «Verdict on the line (Opus 5.5, D15): MATCHES; NOT YET landable by the every-symbol rule until LATEP-L1; L2, L3 are precisions.» (l. 107);
+  REFEREE-2 «DISAGREE in one row: «LATE′, p, t» is not correctly bound (L-1); three precision points (L-2, L-3, L-4)» (l. 25), «With L-1
+  fixed, the line MATCHES the packet's §3-§7 statements» (l. 103). §Cs: the union of the two REQUIRED fixes, J-1 = REFEREE-2's L-1 (the
+  parenthetical «(any t of F if none)» drops t < u) and J-2 = REFEREE's LATEP-L1 = REFEREE-2's L-2 (GXC_F cites the unlanded, unpinned L-NEW
+  box 70): REFEREE §C §3 l. 43 «REQUIRED before landing: L-1 (t < u in the no-previous-adoption case) and LATEP-L1 = L-2 (GXC inlined or
+  pinned; I hold REQUIRED).»; REFEREE-2 §C C.2 l. 23-29 («I accept REQUIRED», l. 29). (2) F1 (fixes F0, l. 15-27): docs/si/P-N5-LATEP-line-F1.txt,
+  sha1 a85759a26b38b8bb6e3958bb19745d2aa9fd397c = 4a68934d + exactly five changes: «F = [a, b]» and the landed premises named (F3); «(a ≤ t
+  < u if there is none)» (F1 = J-1); «t the earliest blocked state» (F4 = J-4); GXC_F inlined (F2 = J-2); «(Lemma LATE-SPLIT′, Corollary
+  CIRCLE′)» (F3 = J-3). Word diff re-measured for this draft: those changes, nothing else (to check (1)). REFEREE §C §4 l. 75 «F1 MATCHES §3-§7
+  with F0-F15, has no free symbol, and claims nothing more.»; REFEREE-2 §C.5.2 l. 82-83 «no free symbol, no unlanded binder. The new line
+  MATCHES the packet's §3-§7». F1 supersedes 4a68934d. (3) F16 (fixes F16, l. 150-187): docs/si/P-N5-LATEP-line-F16.txt (l-si baa8a48a),
+  sha1 65277addc8be558922dcdcc7d035426ba3062b8e = F1 + exactly five changes: «R15» → «R15 (a), (d)» and «R57 (a) (premise (VJ))» added
+  (F16 (3), precisions); «W-MON» removed from R88's list and «W-MON′» added to R90's list (F16 (2), LINE-REQ); «a REPEAT′ if it is LATE′
+  and …» (F16 (1), LINE-REQ). Word diff re-measured for this revision: those changes, nothing else (to check (1)). REFEREE §C l. 83
+  «MATCHES (Opus 5.5, D15)»; REFEREE-2 §C.6 l. 126 «line F16 MATCHES §3-§7». F16 supersedes F1; the title is F16 verbatim, with its own
+  date. No E-item was raised on any version by either referee; the two REQUIRED items on 4a68934d are line fixes (every-symbol rule and
+  t < u), and F16's two LINE-REQ items are line fixes (REPEAT′ ⊆ LATE′; W-MON's scope), not proof gaps (REFEREE-2 §C.6 l. 122: «The
+  packet's proofs remain correct with R90 (b) W-MON′ in its place, so no verdict changes.»).
+  Setting (one W-run, every game; packet §1 l. 25-49): N5 = SPEC S1-S5 with FIX 1-4; G = (V, E, Ω, owner), n := |V|, n_E the Even vertices,
+  m_E the Even edges, d_E(z) the Even edges into z; a run is the sequence of states (σ_t, τ_t), a TRANSITION is t → t + 1; Ξ_t := Ξ_{σ_t}
+  with σ̄_t ([S1-Xi]), Iσ_t ([S2]), W_t := the valuation of the (σ_t, τ_t)-plays, λ_W, λ_Ξ their cycle-node maps; D_t := {Odd u : σ̄_t(u) ≠
+  τ_t(u)}, Z_t := {v : Ξ_t(v) ≠ W_t(v)}; W-RUN (RESULTS R89) F = [a, b]: τ and λ_W constant, every transition an S4a step; BLOCKED (RESULTS
+  R88, P-N5-GP §3, quoted); ADOPTION of (y, z) at u: σ_{u+1}(y) = z ≠ σ_u(y); LEAVE of z by y at k: σ_k(y) = z ≠ σ_{k+1}(y). Standing
+  premise (l. 48-49): «RESULTS R57's SPEC premise (S1's procedure realises the optimal counterstrategy; S4a's σ_{u+1} is Even's pointwise
+  optimum in its arena), as R88 / R89 / R90 use it.» §1 cells: REFEREE «CHECKED; standing premise named (R57) ✓» (l. 18); REFEREE-2 has no
+  §1 row (its §2 l. 31-32 re-derives the setting's uses).
+  DEFINITION (not a claim). §2 (l. 51-58): R88 §4's late adoption (quoted verbatim: «… blocked at some state t ∈ [a, τ).») with «t ∈ [a, τ)»
+  replaced by «t ∈ [max(a, p + 1), τ), p the previous adoption transition of (y, z) in F (no constraint if there is none)» (LATE′);
+  R*′_T(F) := the transitions of F containing at least one LATE′ adoption; FIRST′ / REPEAT′ (a LATE′ adoption with no / with an earlier
+  LATE′ adoption of the same edge in F); REP′_F := the REPEAT′ adoptions of F; «Every LATE′ adoption is late in R88's sense, so R*′_T ≤
+  R*_T»; «every REPEAT′ is a REPEAT of P-N5-CUT §6 and REP′_F ≤ REP_F». Cells: REFEREE «CHECKED: the diff is exactly «t ∈ [a, τ)» → «t ∈
+  [max(a, p + 1), τ)»; LATE′ ⊆ late, R*′_T ≤ R*_T, REP′_F ≤ REP_F ✓» (l. 19); REFEREE-2 «CHECKED: the diff is exactly the stated replacement
+  of «t ∈ [a, τ)» by «t ∈ [max(a, p + 1), τ)» (quote verbatim, §3 below); LATE′ ⊆ R88-late, so R*′_T ≤ R*_T; REPEAT′ ⊆ P-N5-CUT §6 REPEAT,
+  so REP′_F ≤ REP_F» (l. 15). §Cs: «CHECKED, exact | CHECKED, exact | agreed» (REFEREE §C l. 10); «… | agree» (REFEREE-2 §C l. 9). Neither
+  referee signs a definition; both check its diff and its two inclusions, which items (a)-(h) use.
+- Claims signed (both referees "(Opus 5.5, D15)": REFEREE successor 19, REFEREE-2 successor 22). Each item (a)-(h) is SIGNED in both
+  verdict tables (REFEREE "## Verdicts" l. 15-31 of R-N5-LATEP.md; REFEREE-2 "## 1. Verdict table" l. 12-26 of R2-N5-LATEP.md) and «SIGNED
+  by both» / «agree» in both §Cs (REFEREE §C table l. 8-19; REFEREE-2 §C C.1 l. 6-19), in the frozen wording, read with F4, F8-F13 and F15
+  (clarifications; no statement text changes). One W-run of plain N5 on every game. Premises LANDED (as line F16 names them: F3 l. 40-41
+  with F16 (2), (3)): SPEC S1 ([S1-val], [S1-ord], [S1-Xi]), S2, S4a ([Q] l. 37), S4c; RESULTS R15 (a), (d) (Ξ non-decreasing); RESULTS
+  R17 (a) [V1], [V2] (quoted l. 41-43, read for the plays of a fixed positional pair); RESULTS R47 (a) (Σ LCT ≤ n(n − 1)); RESULTS R57 (a)
+  premise (VJ) (XW's first part); RESULTS R88 (XW, GP*, FW-R* and its proof); RESULTS R89 (GP*-RUN, LATE-RISE; the W-run); RESULTS R90
+  (OPT-OFF (ii), W-MON′ (W monotone at every transition of F: F16 (2)), W-SUCC; off-cycle). The packet's §1 list (l. 38) still names R88's
+  W-MON; F16 (2) (fixes l. 170-171): «The packet's §1 premise list (l. 38) should read «R88: Lemma XW, Lemma GP*, Corollary FW-R*; R90 (b):
+  Lemma W-MON′»; the frozen packet is not edited.» Standing premise: RESULTS
+  R57's SPEC premise as quoted under Object; REFEREE LATEP-N1 (l. 76): «named (R57) ✓; OPT-OFF (i)'s R17 (a) (F1) + R57 (a) chain is
+  inherited from R90 (P-N5-CUT K2)». The code's match to SPEC is DATA (R15 G-N5T-1). No item uses a count.
+  (a) Corollary FW-R*′ (§3, l. 60-68), with F9: "Every W-run F has WCH_F ≤ (n − 1)(R*′_T(F) + 1), WCH_F := the transitions t → t + 1 of F
+      with W_{t+1} ≠ W_t." (R88's proof of FW-R* on F by GP*-RUN, with τ := the first adoption of (y_i, y_{i+1}) after t; its previous
+      adoption p satisfies p + 1 ≤ t, so the block at t is in LATE′'s window.) F9 (l. 89-91): «Read «verbatim up to the choice of τ»». Cells:
+      REFEREE «SIGNED (§3)» (l. 20); REFEREE-2 «SIGNED», «none. «verbatim» is accurate up to one added choice (τ := the first adoption after
+      t), which is valid: N-1» (l. 16).
+  (b) Lemma LATE-SPLIT′ (i), (ii) (§4, l. 70-80), with F10: "(i) FIRST′ adoptions of F number at most m_E (one per edge). (ii) Let ρ be a
+      REPEAT′ of (y, z) at u, with previous adoption p < u and y's last leave of z at k (p < k < u). Then (y, z) is blocked at some t_b with
+      k + 1 ≤ t_b ≤ u − 1. If y is off-cycle for τ (P-N5-CUT §2) at every state of [k + 1, t_b], then W(z) changes at some transition of
+      [k + 1, t_b − 1]: W_{t_b}(z) ▷ W_{k+1}(z)." (OPT-OFF (ii) at k → k + 1, W-SUCC on [k + 1, t_b], blocked at t_b.) F10 (l. 93-95): «y
+      leaves z exactly once in (p, u), at k. Hence every LATE′ block t ∈ [p + 1, u) has t ≥ k + 1». Cells: REFEREE «SIGNED (§4)» (l. 21);
+      REFEREE-2 «SIGNED», «none; N-2 (uniqueness of the leave is implicit)» (l. 17).
+  (c) Corollary CIRCLE′ (§4, l. 83-89), with F4 and F15: per W-run, "REP′_F ≤ n_E·R*′_T(F); R*′_T(F) ≤ m_E + REP′_F; REP′_F ≤ X′_F + Σ_z
+      d_E(z)·WCH_F(z), where WCH_F(z) := the transitions of F changing W(z) …; WCH_F ≤ (n − 1)(R*′_T + 1) (§3). Hence REP′ polynomial ⟺
+      R*′_T polynomial ⟺ (WCH_F polynomial ∧ X′_F polynomial), up to polynomial factors.", X′_F := the REPEAT′s «where y is not off-cycle
+      for τ at some state of [k + 1, t_b] (own-cycle)» (l. 81-82). F4 (l. 44-49): t := «the EARLIEST blocked state of [max(a, p + 1), u)»;
+      «CIRCLE′'s inequality … holds for every fixed choice»; «Reading the packet's §4 with this choice changes no signed statement.» F15 (l.
+      113-115): on F the own-cycle condition «is the same as «λ_W(y) = y»». Cells: REFEREE «SIGNED; X′_F depends on the choice of the
+      blocked state t (any fixed choice works): LATEP-N2» (l. 22); REFEREE-2 «SIGNED», «none; the line files them under «Lemma LATE-SPLIT′»
+      (L-3)» (l. 18). Both sign the four inequalities and the ⟺ (REFEREE l. 22 «(four inequalities and the ⟺)»; REFEREE-2 l. 18 «(four
+      inequalities and the equivalence)»). On LATEP-N2 the referees differ in substance and agree on the fix (Referee strengthening (0)).
+  (d) Lemma GAP-CLIMB (§5, l. 91-101), with F11: ZXC_F(z) := the transitions s → s + 1 of F with z ∈ Z_s and Ξ_{s+1}(z) ▷ Ξ_s(z). "Let the
+      LATE′ adoption of (y, z) at u have last blocked state t_b (max(a, p + 1) ≤ t_b < u). Let s be the first transition of [t_b, u − 1] at
+      which Ξ(z) changes. Then s exists, z ∈ Z_s, and Ξ_{s+1}(z) ▷ Ξ_s(z). Distinct LATE′ adoptions of one edge give distinct s. Hence, per
+      W-run, #LATE′(y, z) ≤ ZXC_F(z) and Σ_{(y, z)} #LATE′(y, z) ≤ Σ_z d_E(z)·ZXC_F(z)." (LATE-RISE, R15, [S2], XW, blocked, W-MON on F;
+      disjoint windows by LATE′; «W-MON on F» = R90 (b) W-MON′ at each transition of [t_b, s]: F16 (2), fixes l. 165.) Cells: REFEREE «SIGNED (§5)» (l. 23); REFEREE-2 «SIGNED», «none; it sharpens R89 R*-RISE (N-3)» (l. 19).
+  (e) Proposition CHAIN (§6, l. 103-111), with F2 and F12: TXC_F(z) := the transitions s of F with Ξ_{s+1}(z) ▷ Ξ_s(z) and W_{s+1}(z) =
+      W_s(z); WZ_F(z) := those of ZXC_F(z) with W_{s+1}(z) ≠ W_s(z); GXC_F := the GXC events (v, t) with t, t + 1 ∈ F, GXC as quoted from L-NEW
+      box 70 §3 @170e5316 l. 48-49 (l. 106-107; the line inlines it without the τ-clause, automatic on F: F2). "As sets of pairs (vertex,
+      transition of F): GXC_F ⊆ TXC_F ⊆ ZXC_F, and ZXC_F(z) = TXC_F(z) ⊔ WZ_F(z) with WZ_F(z) ≤ WCH_F(z)." (W-MON on F, = R90 (b) W-MON′ at t → t + 1: F16 (2), fixes l. 166; XW.) F12 (l. 101-102):
+      «(§8 DATA)» reads «(§10 DATA)». Cells: REFEREE «SIGNED» (l. 24); REFEREE-2 «SIGNED», «none; cross-reference «(§8 DATA)» in l. 111
+      should be §10 (N-4)» (l. 20).
+  (f) Lemma TXC-DESCENT (§7, l. 114-133), with F8 and F13: "Let (z, s) be a TXC event of F, and x_0 = z, x_1, … z's (σ_{s+1},
+      σ̄_{s+1})-play. Call x TERMINAL if one of: (T1) λ_Ξ(x) changes at s; (T2) x Even and σ_{s+1}(x) ≠ σ_s(x); (T3) x Odd and x ∈ D_s ∪
+      D_{s+1}; (T4) λ_W(x) = x. Let j be the least index with x_j terminal. Then j exists, x_0, …, x_j are distinct, and every (x_i, s), i ≤
+      j, is a TXC event. If x_j is T2 and λ_Ξ is unchanged at s, then (x_j, s) is a GXC event." ([V1], strict [V2] both ways; termination on
+      the simple prefix to the lasso's cycle node.) F13 (l. 104-106): «before any repetition» holds because c lies on the play's cycle. F8
+      (l. 84-87): T4 «is necessary for the proof as written»; no instance shows it necessary for the conclusion. Cells: REFEREE «SIGNED (§7)»
+      (l. 25); REFEREE-2 «SIGNED», «none; N-5 (termination argument spelled out)» (l. 21; its row: «(termination included)»).
+  (g) Corollary TXC-RED (§7, l. 134-144): with GATE_F := the TXC events (o, s) of F with o Odd, o ∈ D_s ∪ D_{s+1}; CNW_F := the TXC events
+      (x, s) of F with λ_W(x) = x; LCT_F := the transitions of F at which λ_Ξ changes: "TXC_F ≤ n·(GXC_F + GATE_F + CNW_F) + n²·LCT_F, and
+      over a whole run Σ_F LCT_F ≤ n(n − 1)." (Fibres of the terminal map have size ≤ n; ≤ n TXC events at a λ_Ξ-changing transition; R15
+      and injective rewards.) Cells: REFEREE «SIGNED» (l. 26; row «Corollary TXC-RED (and Σ_F LCT_F ≤ n(n − 1))»); REFEREE-2 «SIGNED», «none»
+      (l. 22; row «Corollary TXC-RED (and Σ_F LCT_F ≤ n(n − 1) per run)»).
+  (h) The composed bound (§7, l. 145): "Σ LATE′_F ≤ n_E·TXC_F + Σ_z d_E(z)·WZ_F(z) ≤ n_E·[n(GXC_F + GATE_F + CNW_F) + n² LCT_F] + Σ_z
+      d_E(z)·WZ_F(z)." Cells: REFEREE «SIGNED (d_E(z) ≤ n_E)» (l. 27; row «closing sentence»); REFEREE-2 «SIGNED (arithmetic from §5, §6,
+      TXC-RED)» (l. 23; row «composed bound l. 145»). Both §Cs: «SIGNED by both» (REFEREE §C l. 17, with TXC-RED) / «agree» (REFEREE-2 §C l.
+      17).
+  Gap maps: REFEREE §C l. 20: «Verdicts identical. The gap map is EMPTY: neither referee lists a gap in any proof, and nothing in §2-§7 is
+  false.»; REFEREE-2 §C C.2 l. 22: «Proof gaps: NONE in either report. Joint gap map for §2-§7: EMPTY.» REFEREE l. 32: «No gap. Nothing
+  FALSE in §2-§7.»; REFEREE-2 l. 28: «No gap in any proof. One REQUIRED fix in the line file (L-1). Everything else is a note.»
+  The RESULTS line (F16) claims less than the packet: it states FW-R*′, CIRCLE′'s three inequalities (not FW-R*′'s repeat in CIRCLE′ nor
+  the ⟺), GAP-CLIMB's per-edge form (not its sum form nor «z ∈ Z_s»; REFEREE-2 l. 104: «a weakening, allowed»), CHAIN without «WZ_F(z) ≤
+  WCH_F(z)», and TXC-RED with the LCT sum; LATE-SPLIT′ (ii), TXC-DESCENT itself and the composed bound (h) are signed items behind it, not
+  stated in it. Every clause it states is one of (a)-(g). F16 changes no clause: its REPEAT′ edit narrows the defined set back to
+  packet §2 (REFEREE-2 §C.6 l. 126: «the REPEAT′ change narrows the line»), and its label edits change premises named, not statements.
+- Fixes (docs/si/P-N5-LATEP-fixes.md, L-SI successor 32, APPEND-ONLY, written «from 2026-10-30 06:50Z (date -u)» (l. 2); two commits:
+  (1) l-si 17a3ecec6deaecc26090f0ccf313f8314623f2ec, 2026-10-30T06:51:07Z, F0-F15 and F-SYM, sha1 a690dc2504ed8c11c554d83bc0dc45a3051973de,
+  148 lines, merged into trunk by c3c20012; (2) l-si baa8a48ad2d98f5cb67aee47e6468d80465edcd8, 2026-10-30T07:45:41Z, F16 appended
+  (`git diff --numstat 17a3ecec baa8a48a`: +39/−0; the first 148 lines hash to a690dc25… unchanged), sha1
+  66c85a168022bf08af630ddcd0df494b09a5733c, 187 lines, = l-si head = origin trunk 978d5a8e, merged into trunk by a98e0f3b (08:06:51Z); the
+  last commit touching the file. Commit (1) adds the F1 line file, fixes txcd.py
+  (`git diff --numstat b63f2554 17a3ecec -- experiments/si/odd/txcd.py`: +7/−3), adds odd/out/txcd_corpus_f1.txt (719 lines) and re-derives
+  si/check.sh «box 52» (+3/−2). Classes (l. 8-13): LINE-REQ, LINE-PREC, DATA, NOTE-ACC («accepted as a clarification of the packet's text,
+  with no change to any signed statement»), NOTE-READ («concerns the §8 READING, not signed»). Each item, with its class and the referees'
+  words (REFEREE §C §4 (2) l. 62-68; REFEREE-2 §C C.5.3 l. 85-93):
+  - F0 (l. 15-27): the corrected line F1 (sha1 a85759a2…), F0's five word changes «and nothing else»; the title until F16. Both: MATCHES
+    (Object (2)); superseded by F16.
+  - F1 (l. 29-31) LINE-REQ: «(a ≤ t < u if there is none)» (REFEREE-2 L-1 = J-1). REFEREE-2: «F1 NARROWS the literal frozen line back to
+    §2» (l. 87).
+  - F2 (l. 33-36) LINE-REQ: GXC_F inlined (REFEREE LATEP-L1 = REFEREE-2 L-2 = J-2); «The packet's §9 row «GXC_F … landed» was wrong». REFEREE-2:
+    «F2 is equivalent on F» (l. 87).
+  - F3 (l. 38-42) LINE-PREC: «F = [a, b]», the landed premises named, CIRCLE′ labelled (LATEP-L3 / LATEP-N3 = L-3 = J-3); SUCC-MON not named
+    (used by no proof; both referees checked, to check (4)).
+  - F4 (l. 44-49) LINE-PREC: X′_F's t := the earliest blocked state (LATEP-N2 / LATEP-L2 = L-4 = J-4). REFEREE: «F4 (earliest t) changes no
+    signed statement (CIRCLE′ holds for every fixed choice).» (l. 68); REFEREE-2: «F4 fixes a choice that does not affect X′ on F» (l. 88).
+  - F5 (l. 51-67) DATA: txcd.py read W with the old τ after a τ-change (LATEP-D1 = N-7); fix «if nt != t: w1, wk1 = W(ns, nt)»; corrected
+    counts (Data). REFEREE: «D1 and D2 are closed.» (l. 74); REFEREE-2: «N-7 and N-8: CLOSED.» (l. 104).
+  - F6 (l. 69-78) DATA: T4 test and CNW counter added (LATEP-D2 = N-8); «§10's «0 T4» is corrected to «5 T4 terminals, CNW 71»»; box 52's
+    «a T4 vertex … would appear as a failure» «Withdrawn».
+  - F7 (l. 80-82) NOTE-READ: §8 «REP′* ≤ REP* ≤ T» reads «REP′* ≤ REP* ≤ n·T» (LATEP-N4). Not signed (§8).
+  - F8 (l. 84-87) NOTE-ACC: T4 used by the proof, not exhibited (LATEP-N5; REFEREE MUT 4, REFEREE-2 X_noT4 0 / 5).
+  - F9 (l. 89-91) NOTE-ACC: «verbatim up to the choice of τ» (N-1).
+  - F10 (l. 93-95) NOTE-ACC: the leave in (p, u) is unique; every LATE′ block has t ≥ k + 1 (N-2; REFEREE §4).
+  - F11 (l. 97-99) NOTE-ACC: GAP-CLIMB refines R89's R*-RISE (N-3; REFEREE MUT 5).
+  - F12 (l. 101-102) NOTE-ACC: «(§8 DATA)» → «(§10 DATA)» (N-4).
+  - F13 (l. 104-106) NOTE-ACC: termination in §7 (N-5).
+  - F14 (l. 108-111) NOTE-READ: NOT LANDED (unchecked READING). Its first sentence restates REFEREE-2 N-6's hypothesis for §8's box-40
+    remark («holds when j − 2, j − 1, j lie in one W-run»); its new claim «Box 41 §4 already charges the other case to the λ_W-change (≤ Λ)»
+    was checked by neither referee. REFEREE-2 §C l. 90-91: «F14 adds a new claim, «Box 41 §4 already charges the other case to the
+    λ_W-change (≤ Λ)». I did not check that claim. It is READING only and not to land.»; REFEREE §C l. 65 classes it with F7 («correct the
+    §8 READING (not signed)») without checking the new claim. This entry carries neither.
+  - F15 (l. 113-115) NOTE-ACC: on F, own-cycle = «λ_W(y) = y» (N-9); the line keeps P-N5-CUT's wording.
+  - F-SYM (l. 117-141): the lane's strict symbol test of F1: «no free symbol … No unlanded source remains (box 70 is gone from the line).»
+    REFEREE §C l. 61: «The F-SYM table agrees.»; REFEREE-2 §C.5.2 (own test): «no free symbol, no unlanded binder». (This draft's own test
+    found the two defects of F1 that F16 resolves: to check (5b).)
+  - F16 (l. 150-187), classes LINE-REQ ((1) REPEAT′, «the same class as F1», l. 153; (2) the W-MON label, l. 158) and (3) «Precisions
+    (the Lead's optional items, both included)» (l. 172; no class word; LINE-PREC by content): the line F16 (sha1 65277add…) = F1 + the five
+    changes (l. 176-181); THE TITLE. Heading (l. 150): «Lead 07:46Z (the R92 drafter's strict symbol test of line F1, a85759a2)». (1) «a
+    REPEAT′ if it is LATE′ and (y, z) has an earlier LATE′ adoption in F» (l. 157); (2) W-MON dropped from R88's list, W-MON′ added to R90's,
+    with a use-by-use check of §3-§7 (l. 164-171); (3) «R15 (a), (d)» and «R57 (a) (premise (VJ))» (l. 173-175). Its own strict symbol test
+    (l. 182-185): «Result: no free symbol, no unlanded source.» DONE l. 186: «FINDINGS: two LINE-REQ items accepted; no signed statement
+    changes.» REFEREE §C l. 83: «MATCHES (Opus 5.5, D15).»; REFEREE-2 §C.6 l. 126: «F16's two items are corrections, with no widening; the
+    REPEAT′ change narrows the line.» Both referees re-measured the fixes sha1 66c85a16… (REFEREE l. 83; REFEREE-2 l. 106).
+  Header (l. 5): «Both referees SIGNED every PROVED item (§3-§7) with no gap.»; DONE l. 146-147: «No signed statement changes.» Neither
+  referee finds a widening: REFEREE §C l. 62: «F0-F15 are corrections or clarifications only; nothing widens.»; REFEREE-2 §C l. 93: «No
+  statement of §3-§7 is widened. No new hypothesis is dropped. The new line claims nothing the frozen line did not.» No quote check is pinned
+  for the fixes file. F16 (written after both referees' §C on F0-F15) is covered by their F16 checks (REFEREE §C l. 83; REFEREE-2 §C.6).
+- Not signed: §2 Definition LATE′ (a definition, CHECKED by both: Object); §8 READING (R1)-(R3) on landed R90 read with LATE′ and the box-40
+  remark (l. 147-159; «NOT TO SIGN»), with F7 and F14's first sentence (Referee strengthening (ii), (iii)); §9 the lane's symbol test of the
+  frozen line (superseded by F-SYM; its row «GXC_F … landed» was wrong, F2); §10 READING and DATA (Data below); the frozen line 4a68934d
+  (history); the line F1 a85759a2 (history, superseded by F16); F14's new claim (not landed); the working notes N5-ADD-box50, N5-LATEP-box51, N5-TXCD-box52 (l. 7). Lane work after the freeze,
+  other than the fixes commits 17a3ecec and baa8a48a (F16), is not part of this entry (L-SI's handover 1f678c1c and later work; L-NEW boxes 72-75; L-RED
+  R131-R133, except R131's addendum 7e85ead2, cited under Data for the Oink check of the TIED-RB instance).
+- Referee strengthening (NOT part of this entry; remarks of one referee, remarks of both outside the verdict cells, readings):
+  (0) X′_F and the choice of t: REFEREE LATEP-N2 (l. 50-52): «If several blocked states exist, X′ depends on the choice (existential and
+  universal readings differ); the inequality holds under every fixed choice»; REFEREE-2 N-9 (l. 163-164) and §C C.3 l. 38: «DISAGREE in
+  substance, agree on the fix. On a W-run λ_W is constant (R89), and P-N5-CUT §2's off-cycle is «v is not the cycle node of its
+  W^τ-value», so it does not depend on the state, hence not on t: X′_F is choice-free.»; REFEREE §C l. 34: «I accept that: it makes L-4 /
+  my L2 a wording point only». F4 fixes the earliest t; F15 records λ_W(y) = y. No signed statement depends on the choice.
+  (i) TXC-RED's n²: REFEREE l. 71 «at λ_Ξ-changing s at most n TXC events (the packet's n² is a weaker valid bound)»; REFEREE-2 §C l. 44
+  «agreed (both sign; n·LCT_F suffices)». Outside the verdict cells; the entry signs the packet's n²·LCT_F.
+  (ii) §8 READING (R1)-(R3), NOT signed: with LATE′, R90's R*-REP, WV-R and CUT-RED would read with R*′_T, REP′_F and REP′* := max_F REP′_F ≤
+  REP* (l. 151-157). REFEREE-2 l. 24: «not signed (READING); checked for consistency: (R1)-(R3) follow from §3-§4 and REP′* ≤ REP*»;
+  REFEREE l. 28: «not signed; one slip: «REP′* ≤ REP* ≤ T» should read «≤ n·T» (K1 gives REP* ≤ n·T)» (LATEP-N4; F7; REFEREE-2 §C l. 40
+  «REFEREE right; I MISSED it.»). Landed R90 is unchanged; nothing here restates it.
+  (iii) §8's box-40 remark («box 40's LATE re-entries ([C1]) are LATE′», l. 158-159), NOT signed: REFEREE-2 N-6 (l. 149-151) «j − 2 and j − 1
+  are in the same W-run only if the transition j − 2 → j − 1 keeps λ_W. Not signed»; F14's first sentence accepts that hypothesis; F14's
+  second sentence is unchecked and not landed (Fixes).
+  (iv) T4's necessity not exhibited: REFEREE MUT 4 «never bites» (l. 73, l. 119); REFEREE-2 «X_noT4 never bit (0 of the T4-only
+  terminals)» (l. 136); F8. The T4 case stays in the signed lemma.
+  (v) Controls that bite: REFEREE (l. 118-119) MUT 1 (LATE-SPLIT′ (ii) on R88-late REPEATs) 20, MUT 2 (GAP-CLIMB's s searched from a) 490
+  (+2 token collisions), MUT 3 (no T3) 22,586, MUT 5 (GAP-CLIMB on R88-late adoptions) 20 token collisions; REFEREE-2 X_noT3, X_noT2 «bite
+  often» (l. 135). DATA.
+  (vi) «So W-silent and SELF repeats (P-N5-CUT §6 (iii)) do not occur under LATE′» (packet l. 81): REFEREE l. 46 «W-silent and SELF repeats
+  are excluded ✓ (the block lies after the leave)»; REFEREE-2 XSIL 0 on every set (l. 115). Not a row of either table.
+  (vii) §10 READING (l. 190-191): «the descent of §7 breaks only at Odd gates (σ̄ ≠ τ) and own W-cycle nodes, never at τ-changes … The live
+  terms are GATE (tied Ξ-climbs at gates) and WZ (the W-change circle at gap climbs).» F5 l. 67: «The READING «gates carry the descent»
+  stands: 14,136 / 14,739 = 95.9 %.» Not signed.
+  (viii) Self-corrections: REFEREE §C l. 39: «I MISSED this in my symbol test» (L-1); REFEREE-2 §C C.4 l. 53-54: «I MISSED: that box 70 is
+  not landed (J-2 is REQUIRED, not precision); §8's «≤ T» slip (LATEP-N4); naming the landed premises in the line (part of J-3).»
+  At F16: REFEREE §C l. 83 «I MISSED both defects in my F1 test; the drafter caught them.»; REFEREE-2 §C.6 l. 119 «BOTH referees
+  MISSED» (REPEAT′) and l. 121 «BOTH referees MISSED it too» (W-MON scope).
+- Honest limits: (i) A REDUCTION, per W-run. The line bounds W-changes by R*′_T, R*′_T and REP′_F by each other, REP′_F by X′_F and the
+  W(z)-changes, LATE′ adoptions by gap climbs, and tied climbs TXC_F by GXC_F, GATE_F, CNW_F and LCT_F; GATE_F, CNW_F, GXC_F, WZ_F(z) and
+  REP′_F are not bounded here (nor X′_F); only Σ_F LCT_F is bounded on a run. Packet l. 8-9: «No count is bounded here; G-N5-TIME stays OPEN.
+  Not a TARGET.md claim, not an algorithm claim.»; REFEREE l. 12-13 and REFEREE-2 l. 9-10 say the same. (ii) LATE′ is a new, narrower
+  notion of late adoption (R*′_T ≤ R*_T, REP′_F ≤ REP_F); the landed R88, R89 and R90 bounds are unchanged; reading R90 with LATE′ is §8's
+  unsigned READING. (iii) CIRCLE′'s ⟺ is «up to polynomial factors». (iv) TIED-RB is DEAD (Data): tied climbs alone do not pay every repeat;
+  the live terms named by the lane are GATE_F and WZ_F (unsigned READING). (v) Standing premise: R57's SPEC premise (1E-N3; for S4a, R67's
+  P2 / R88's [OPT-H] form), through R88's XW (with R57 (a) (VJ)) and R90's OPT-OFF and W-MON′; the code's match to SPEC is DATA (R15 G-N5T-1). (vi) Counts are
+  transitions and events, not bit operations; no running-time bound. (vii) Not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME
+  stays open.
+- Data (DATA, not proof): pinned (packet §10 l. 199: «Pinned checks: si/check.sh «box 51», «box 52», «box 53».»). experiments/si/check.sh at
+  b63f2554: sha1 18525efc0719c0878fbda9d78fb41e162da9c7e1, 860 lines, blocks l. 845-860; at 17a3ecec: sha1
+  3bc97c247d301002e53c615495e0391531c03b9c, 861 lines, blocks l. 845-861 (`git diff b63f2554 17a3ecec -- experiments/si/check.sh`: +3/−2,
+  only «box 52»: the two txcd.py pins re-derived (F5, F6) and the new b5_o11 pin). Files at 17a3ecec: odd/txcd.py
+  1a991675bdd9d16a2f65eaf6cc4ac78ae8dcc3aa (83b3d18cd98c6fa7c0e393f14084216190258879 at b63f2554), odd/latep.py
+  6e7652a91336bc94cc2f995bda94e3a1558c4646 and odd/tied.py daf3951683a571c1d55b64fbcd08f894cc562d96 (both unchanged since b63f2554),
+  rund/quotecheck.py 29bb4a971680c9278f5f8c6f40eac17c0134db72, odd/inst/si51/tiedmut_so_th_n32_11.pg
+  4ce2df5704937437f9f8617ab580b85053c35aba (.start c3430f635c928e59a84e75423d9bf75867164f02), red/so/instances/so_th_n32.pg
+  ae9126ad1bf963114bdd56b6e50c8c1cc571779e, n5-exhaustive/instances/b5_o11.pg db4fe55a650236dfe1bc5030f0ca123c75754764,
+  odd/out/txcd_corpus_f1.txt 6d9fd80dcd75486c2cf16792845fc5c471e16bd2. Re-run for this draft from a `git archive` of 17a3ecec (experiments/
+  and docs/si/; `python3 -I`; GIT_DIR set to this repository for the quote check; outputs to scratch files; exit codes read): l. 845-861
+  under `set -euo pipefail`, 07:30:47Z-07:30:50Z by date -u: «si (box 51: LATE', GAP-CLIMB, TIED-RB dead): PASS», «si (box 52: TXC descent):
+  PASS», «si (box 53: P-N5-LATEP quotes): PASS», rc 0. Single outputs from the same archive (same session, not separately stamped): txcd.py
+  so_th_n32 «TXC 73 T1 0 T2G 0 T2L 0 T3 73 T4 0 DESC_V 0 CYC_V 0 TERM_V 0 GXC 0 GATE 16 CNW 0 MULT 13»; tiedmut_so_th_n32_11 «TXC 77 … T3 77
+  T4 0 … GATE 10 CNW 0 MULT 14»; wdepth_K4_m16 «TXC 184 … T3 184 T4 0 … GATE 93 CNW 0 MULT 32»; b5_o11 «TXC 1 … T3 1 T4 0 … GATE 1 CNW 1 MULT
+  1»; tied.py tiedmut «rep 1 tied 0 untied 1 reblk 1 untied_reblk 1 tsh 0»; latep.py tiedmut «WCH 19 RT 4 RTP 4 REPP 1 XP 0 FWV 0 RSUB_V 0 LP
+  6 GAPV 0 GTOKV 0 TIEDG 4»; quotecheck «quotes=6 bad=0», «QUOTES PASS»; --mut «quotes=6 bad=6», «QUOTES FAIL». Every run rc 0.
+  DATA OF RECORD (F5 / F6, l. 56-62 and l. 71-74; corpus odd/sbcg.lst, 719 games, S3 start; file odd/out/txcd_corpus_f1.txt, summed for
+  this draft by script: equal): TXC 14,739; terminals T1 292, T2 (GXC) 306, T2L 0, T3 14,136, T4 5 (all in tcR4_N6: «TXC 71 … T3 66 T4 5 …
+  CNW 1 MULT 40»); GXC events 191; CNW 71; descent failures (DESC_V, CYC_V, TERM_V) 0; txcd.py's distinct gate terminals 2,416; largest MULT
+  83. Pins: so_th_n32 TXC 73 / gate terminals 16; tiedmut_so_th_n32_11 TXC 77 / 10; wdepth_K4_m16 TXC 184 / 93 (unchanged); b5_o11 CNW 1,
+  terminal T3 (REFEREE-2's N-8 instance: «Odd 7 has τ(7) = 7 (own W-cycle node …) and σ̄(7) = 2 (a gate)», l. 159-161). REFEREE-2 §C C.5.4
+  l. 98-100: «TXC 14,739; T1 292; T2 (GXC) 306; T2L 0; T3 14,136; T4 5; GXC events 191; gate terminals 2,416; CNW 71; MULT 83; DESC_V / CYC_V
+  / TERM_V 0. These equal my engine's corpus figures in every field»; REFEREE §C l. 70: «so_th_n32 TXC 73 / gates 16 and
+  tiedmut_so_th_n32_11 TXC 77. These equal my engine (73; 77) and REFEREE-2's.» SUPERSEDED, not data of record (F5 l. 63-65, F6 l. 77):
+  box 52 §4 / packet §10 (l. 197) corpus TXC 14,526, T1 356, T2 292, T3 13,878, GXC events 227 (the old file odd/out/txcd_corpus.txt, kept
+  as the record; summed for this draft: TXC 14,526, T1 356, T2G 292, T3 13,878, GXC 227), «0 T4»; the old «box 52» pin so_th «TXC 63 … GATE
+  15» and tiedmut 66 / 9; box 52's «CNW is 0 in all data».
+  Other packet DATA (§10 l. 192-198, not revised by F5 / F6): «FW-R*′ violations 0; LATE′ adoptions that are not R88-late 0»; latep.py's
+  REPP «≥ REP′_F», its W-silent count 0; «GAP-CLIMB violations 0, repeated tokens 0»; «TXC descent failures 0». REP′ of record (REFEREE-2 l.
+  128-130): corpus REP′ 4 (max 3 per W-run) = the re-blocked REPEATs; «box 51 §5's «max REP′ 9» is the tool's REPP; the frozen REP′ maximum
+  is 3».
+  KILL recorded with this packet (packet §10 l. 198): «TIED-RB (TXC alone pays every REPEAT′) is DEAD: odd/inst/si51/tiedmut_so_th_n32_11
+  (two engines identical; Oink NOT RUN).» CONJECTURE TIED-RB (L-SI box 50 §6; statement killed, box 51 §1 (l-si 7dd85b02): «every re-blocked
+  REPEAT of (y, z) has a tied Ξ-climb of z on [k, u − 1]», tied meaning Ξ_{s+1}(z) ▷ Ξ_s(z) and W_{s+1}(z) = W_s(z)) is DEAD. Instance:
+  L-SI box 51, odd/inst/si51/tiedmut_so_th_n32_11.pg / .start (sha1 4ce2df57… / c3430f63…), n 32, 34 iterations, 0 fallbacks: one
+  re-blocked REPEAT with no tied climb (tied.py «rep 1 tied 0 untied 1 reblk 1 untied_reblk 1», re-run above); two engines identical
+  (red/seg/xeng.py «state sequences identical: True», «box 51»). Oink-verified by L-RED 7e85ead2 (docs/red/R131-tied-rb.md addendum l.
+  76-83): «zielonka(oink zlk) OK strategies verified»; «So L-SI's kill and R131's family are two independent TIED-RB kills: box 51 is one
+  REPEAT at n 32; R131 is Θ(n²) per W-run.» (L-RED R131, 011213ef: (K − 1)(m − 2) untied re-blocked REPEATs in one W-run.) Both referees
+  re-ran «box 51» (PASS; REFEREE l. 110-111, REFEREE-2 l. 64); REFEREE-2 reproduces tiedmut's latep.py figures («tiedmut RTP 4, REPP 1, LP 6,
+  TIEDG 4», l. 133-134). DATA; no signed item uses it.
+  REFEREE (successor 19; own docs/referee/scratch/latep_probe.py on rl_engine, no lane code; pinned l. 845-860 run in a clean `git worktree add
+  --detach` at b63f2554: three PASS lines, exit 0, l. 110-111): corpus sbcg.lst + wdepth_K4_m16 and tiedmut_so_th_n32_11 with their starts,
+  given start and S3, n ≤ 120: 672 games (49 with n > 120 skipped), 767 runs, 13,205 transitions, 1,089 W-runs of length ≥ 1; 0 violations
+  of SUB (LATE′ ⊆ late), FW-R*′, LATE-SPLIT′ (ii), CIRCLE′ (all four), GAP-CLIMB (1,500 LATE′ adoptions), CHAIN (ZXC 28,114 = TXC 23,975 ⊔
+  WZ 4,139; GXC 198 ⊆ TXC), TXC-DESCENT (23,975 descents: T1 497, T2 319, T3 23,123, T4 36), TXC-RED, Σ LCT ≤ n(n − 1); REPEAT′ 2 (X′ 0)
+  against 1,520 R88-late adoptions; MUTs as in Referee strengthening (v) (l. 112-119). Its T4 36 / CNW 110 are on that run set, not the
+  data of record (F6 l. 77-78; REFEREE §C l. 73-74).
+  REFEREE-2 (successor 22; own docs/referee-2/R2-N5-LATEP/latep_check.py on its lane's R2-N5-DUAL/dual_check.Runner («SPEC N5 written from
+  S1-S5 + FIX 1-4 on si.py's Engine, read-only»), own play value; «The lane's odd/latep.py, txcd.py, tied.py and new/box21/n5x.py are NOT
+  imported», l. 108-109; pinned «box 51»-«box 53» re-run from its own extraction in a detached worktree at b63f2554, set -euo pipefail, exit 0,
+  l. 63-67; at 17a3ecec, §C l. 59-60): brute-force Ξ control on 1,600 runs / 400 random games n 5-9 (3,819 states, 0 mismatches, l.
+  112-113); corpus sbcg 719 runs, 5,419 W-runs, max WCH 159, max R*_T 17, max R*′_T 17, max REP′ 3 (sum 4), REPA 9 (sum 40), LATE′ 1,104,
+  GAP-CLIMB tied / WZ 1,003 / 101, TXC 14,739, GXC 191, GATE 2,464, CNW 71, violations 0; latew_K20_m32 (n 538) REP′ 570, TXC 3,941;
+  wdepth_K4_m32 (n 234); pins; random n 5-80, 3,800 runs (l. 118-125); every check 0 on every set (l. 114-116); its counts equal latep.py's
+  printed figures (l. 131-134). No signed statement uses any count.
+- Signatures: REFEREE docs/referee/R-N5-LATEP.md (report 5bdd5d6d0caf2c5895c803aab0e6360d2d0d250e, 2026-10-30T06:32:36Z, committed
+  directly on claude/referee (file commit = branch commit), merged into trunk by 9a7a5af1 (06:48:53Z); sha1
+  477ff68d4c510bb12b50acfa8167012a1ad23e0c, 125 lines, unchanged since, = local trunk head; successor 19): §1 CHECKED; §2 CHECKED; FW-R*′,
+  LATE-SPLIT′, CIRCLE′, GAP-CLIMB, CHAIN, TXC-DESCENT, TXC-RED, the closing sentence SIGNED; «No gap. Nothing FALSE in §2-§7. Two DATA
+  defects in the lane's txcd.py (LATEP-D1 frame bug, LATEP-D2 no T4 test), affecting no proof.» (l. 32). §C docs/referee/R-N5-LATEP-C.md
+  (ce923e20f29467a1c62e3111914131199812ced4, 2026-10-30T06:49:48Z, sha1 0e0dd5881eb44ed5c1a1513d28c31adef0be4112 there, 51 lines; merged into
+  trunk by ac4fae23, 07:11:26Z); §4 addendum 9d47dcbbe9e2c5ed08269da0c6d1fd41090c2ba5 (2026-10-30T07:01:49Z, `git diff --numstat ce923e20
+  9d47dcbb`: 32 added, 1 removed (the old NEEDS line, replaced); sha1 1d1fd20045378566954795f4fcbd0217dff9c676, 82 lines there; merged
+  into trunk by 04705e43 (07:23:16Z), now on origin trunk 978d5a8e): «F1 MATCHES» (l. 75); F16 line
+  11259154c8efaeb3eb34181e921df0116d0ed61a (2026-10-30T08:07:56Z, `git diff --numstat 9d47dcbb 11259154`: 1 added, 0 removed; re-measured
+  at the origin head for this revision: sha1 c597afbd630a51bdecf3c9c3c93c5ea56c84a2cd, 83 lines, = referee head = the last commit touching
+  the file; merged into the local trunk by 809941a6 (08:19:19Z), not on origin trunk 978d5a8e at this revision's fetch): «MATCHES (Opus
+  5.5, D15)» (l. 83), with «I MISSED both defects in my F1 test; the drafter caught them.» REFEREE-2 docs/referee-2/R2-N5-LATEP.md (report e7b538a9f0f97cbb37b55ef0ff76e398a66ee082, 2026-10-30T06:32:02Z, committed
+  directly on claude/referee-2 (file commit = branch commit; its parent 282f241f is a merge of trunk into the branch), merged into trunk by
+  a44f3b30 (06:48:53Z); sha1 00ca428a58c50e23e534229819000d67fd2e3636, 178 lines (= REFEREE §C l. 4's «sha1 00ca428a…, 178 lines»),
+  unchanged since; successor 22): §2 CHECKED; every PROVED item SIGNED; «No gap in any proof. One REQUIRED fix in the line file (L-1).
+  Everything else is a note.» (l. 28). §C docs/referee-2/R2-N5-LATEP-C.md (917b32d4c43914a6f7671e2299f1cb6f98706010, 2026-10-30T06:55:27Z,
+  sha1 9217d1b1e586210332d014b3fff020d8368c7326 there, 64 lines; merged into trunk by 134ecf4e, 07:11:27Z); §C.5
+  42ab528b77d9cef9a4920879cf171eddab580edd (2026-10-30T07:07:34Z, `git diff --numstat 917b32d4 42ab528b`: 53 added, 2 removed (the old NEEDS
+  lines, replaced); sha1 3ffc286befd6386b83990958f9f537b520536f27, 115 lines there; merged into trunk by 0396db78 (07:23:16Z), now on
+  origin trunk 978d5a8e): «line MATCHES» (§C.5.2 l. 82-83; FINDINGS l. 111-113 there, l. 133-135 now); §C.6
+  aa3661494a734e5ca10d2a7f7976ba0b09f72168 (2026-10-30T08:07:48Z, `git diff --numstat 42ab528b aa366149`: 22 added, 0 removed, l. 106-127;
+  its parent a3b42e1e is a Lead trunk commit; re-measured at the origin head for this revision: sha1
+  83283e5836ccabc2b71eb33efeaa5a197b18d6bc, 137 lines, = referee-2 head = the last commit touching the file; merged into the local trunk
+  by 30be80e0 (08:19:20Z), not on origin trunk 978d5a8e at this revision's fetch): «Verdict (Opus 5.5, D15): line F16 MATCHES §3-§7.»
+  (l. 126); it confirms the use-by-use claim (l. 110-118) and records that both referees missed both defects (l. 119, l. 121). Its DONE /
+  FINDINGS / NEEDS (l. 128-137) were not revised for F16 (to check (2)). INDEPENDENCE: REFEREE l. 7: «Independence: no docs/referee-2/ file opened for this packet.»; REFEREE §C l. 3-4: its report
+  «pushed BEFORE I opened REFEREE-2's», REFEREE-2's report «opened 06:49Z after the Lead's word». REFEREE-2 l. 4: «Independence: written
+  before opening any docs/referee/ file (names-only count of «latep» in docs/referee/ at the start: 0).»; REFEREE-2 §C l. 2-3: its report
+  «pushed before any docs/referee/ file was opened», REFEREE's «opened after the Lead's word at 06:49Z». No review imported lane code
+  (REFEREE l. 112 «no lane code»; REFEREE-2 l. 108-109); the lane's scripts ran only as the pinned blocks.
+  §C (both): verdicts identical (REFEREE §C l. 20, quoted under Claims signed; REFEREE-2 §C C.2 l. 22); one disagreement in substance, on
+  a note, not a verdict (LATEP-N2 vs N-9; Referee strengthening (0)). Fixes: REFEREE §C l. 62 «F0-F15 are corrections or clarifications
+  only; nothing widens.»; REFEREE-2 §C l. 86-93 «YES. … No statement of §3-§7 is widened.» Notes map (REFEREE §C §2 l. 28-40; REFEREE-2 §C
+  C.3 l. 34-50): LATEP-D1 = N-7, LATEP-D2 / LATEP-N5 = N-8, LATEP-L1 = L-2, LATEP-L2 / LATEP-N2 = L-4 / N-9, LATEP-L3 / LATEP-N3 = L-3;
+  REFEREE only LATEP-N1, LATEP-N4 (and LATEP-L3's premise names); REFEREE-2 only L-1, N-1..N-6.
+- TARGET.md diff: «n the number of vertices» is TARGET.md §1 l. 8's n («n = |V|, m = |E|»); m_E ≤ m. Not a claim of TARGET.md section 1
+  or §2 (structural lemmas and inequalities on one W-run of N5, a REDUCTION of W-changes, late adoptions and tied climbs to counts that are
+  not bounded; no bound on a run, no running-time bound, no algorithm claim). GAPS G-N5-TIME: open.
+
+### R93 [refereed-only] N5 on EVERY game (SPEC S1-S5, under the standing SPEC premise of RESULTS R57 (1E-N3: S1's procedure realises the pointwise optimum; for S4a, σ_new is the pointwise optimum of the one-player arena H_t, H_t := S4a's arena at t (Even keeps σ_t ∪ Iσ_t, Odd follows τ_t)); premises RESULTS R15 (a), (d), R17 (a) (F1), R56, R84 (a) (Fact DELTA), R86, R88 (f), R89, R90 (a)-(e), (g) and R91 (a)-(c), (h), (i), (k), (m); a run is the sequence of states (σ_t, τ_t); ⊴, ◁, ⊵, ▷ the SPEC S1 order (better for Even) and its strict and reverse forms; Iσ_t the improving edges of σ_t (SPEC S2); n the number of vertices of the game, n_E the number of its Even vertices, m_E the number of edges leaving Even vertices, d_E(e) the number of Even vertices with an edge to the vertex e; a transition is written t → t + 1 (states t, t + 1), and v is switched at t if σ_{t+1}(v) ≠ σ_t(v); Ξ_t := Ξ_{σ_t} (SPEC S1), λ_Ξ its cycle-node map; for a valuation Ω (Ξ_t, W_t, or W′ below), v is its own Ω-cycle node if the cycle node of Ω(v) is v; W_t := the [S1-val] valuation of the (σ_t, τ_t)-plays (W(v) := W_t(v) at the state in question), λ_W its cycle-node map; Z_t := {v : Ξ_t(v) ≠ W_t(v)} the gap set; a τ-stretch, a W-run and, for a W-run F, |F| (its transitions) as in RESULTS R89; a phase as in RESULTS R38 (a), an in-phase transition one with both states in one phase, f_P, ZF_P and WCH^S4a_P(v) as in RESULTS R91 (the in-phase Even S4c fallbacks of the phase P, those k → k + 1 with Z_{k+1} = Z_k, and the in-phase S4a transitions of P changing W(v)); a λ-run as in RESULTS R86; S4a steps, boundaries, B_R (the boundaries inside the λ-run R), class-S re-entries and SIL_R as in RESULTS R90 (e); late adoptions, REPEATs, REP_F and REP* := max_F REP_F as in RESULTS R88 (f) and R90 (g); ρ_P := RESULTS R56's ρ of the phase P): (Lemma TIE) at an S4a step t → t + 1, for any pointwise-optimal Even strategy σ⁺ of H_t with W′ the [S1-val] valuation of the (σ⁺, τ_t)-plays, an Even v with d := σ_t(v) ≠ σ⁺(v) and W′(v) = W_t(v) has v ⊕ W′(d) = W′(v) (the prefix operation x ⊕ (c, Q, ℓ) := (c, Q ∪ {x if x is more relevant than c}, ℓ + 1) for a value (c, Q, ℓ) (cycle node c, path set Q, length ℓ)) if v is not its own W′-cycle node, and W′(d) with cycle node v and empty path set otherwise; (Theorem RET-WCH) in every W-run F, for every Even v and successor e, the returns of v to e (transitions u → u + 1 of F with σ_{u+1}(v) = e ≠ σ_u(v) at which v held e at some earlier state of F) number at most WCH_F(e) + TT_F(v, e), WCH_F(e) the transitions of F at which W(e) changes and TT_F(v, e) the transitions k → k + 1 of F at which v leaves e (σ_k(v) = e ≠ σ_{k+1}(v)) with W_{k+1}(v) = W_k(v); so, with TIE_F the pairs (v, t), t → t + 1 a transition of F and v switched at t with W_{t+1}(v) = W_t(v), (Lemma NEW-BOUND, Corollaries RUN-WCH and REP-WCH) |F| ≤ m_E + Σ_e d_E(e)·WCH_F(e) + TIE_F and REP_F ≤ Σ_e d_E(e)·WCH_F(e) + TIE_F; (Lemma SIL-Z, Corollary SC-GXC) on every λ-run R, SIL_R ≤ GXC_R + NC_R + NT_R ≤ (B_R + 1)·max_P GXC_P + NC_R + NT_R (P over the phases inside R), where a GXC event is a pair (v, t) with v Even switched at t, τ_{t+1} = τ_t, λ_Ξ the same at t and t + 1, v ∈ Z_t, Ξ_{t+1}(v) ▷ Ξ_t(v) and W_{t+1}(v) ⊴ W_t(v), GXC_X the GXC events with t, t + 1 in X, and NC_R (NT_R) the class-S re-entries j − 1 → j of R at which the re-entering vertex is its own Ξ-cycle node at j − 1 or j (at which τ_j ≠ τ_{j−1}); (Lemma GXC-CLOSE, Theorem GXC-SPLIT) every phase P with first state a has GXC_P ≤ TIE_P + |Z_a| + Σ_v WCH^S4a_P(v) + FBO_P, TIE_P the pairs (v, t) with t → t + 1 an in-phase S4a transition of P, v switched at t and W_{t+1}(v) = W_t(v), FBO_P the GXC events of P at in-phase fallbacks with v ∈ Z_{t+1}; (Lemma LEVEL-MON, Corollaries DROP-PAID, FBO-R56, FBO-SPLIT, ZF-SPLIT) with LEV_t(v), for v ∈ Z_t, the position of the first coordinate at which Ξ_t(v) and W_t(v) differ in the coordinate sequence (reward of the cycle node; for each rank r from n − 1 down to 0, +1, −1 or 0 as the vertex of rank r is in the path set with even priority, with odd priority, or not; length, negated when the cycle node has even priority) in which the SPEC S1 order is lexicographic, LEV_{t′}(v) ≥ LEV_t(v) for states t < t′ of a phase P with v ∈ Z_t ∩ Z_{t′} and no S4a transition between them changing W(v), the transitions k → k + 1 of P that are not S4a transitions changing W(v) and have v ∈ Z_k ∩ Z_{k+1} and LEV_{k+1}(v) > LEV_k(v) number at most (n + 1)(1 + WCH^S4a_P(v)) (DROP_P(v)), FBO_P ≤ n_E(1 + (n − 1)(2 + ρ_P)) and FBO_P ≤ Σ_v DROP_P(v) + FBOS_P, and ZF_P ≤ NZ_P + Σ_v DROP_P(v) + ZFS_P, FBOS_P the FBO events of P with LEV_{t+1}(v) = LEV_t(v), NZ_P the Z-flat in-phase fallbacks k → k + 1 of P all of whose switched Even vertices are their own Ξ-cycle node at k or k + 1, and ZFS_P the other Z-flat in-phase fallbacks of P at which every switched Even vertex that is its own Ξ-cycle node at neither state keeps LEV; and (Theorem WCH-RED, Corollary WCH-ONE) if, for a function w : ℕ → ℕ, every τ-stretch S of every run on games with n vertices has, for every vertex e, at most w(n) S4a steps inside S changing W(e) (premise [P-WCHτ](w), not proved here), then REP* ≤ m_E·w(n) + TIE* (TIE* := max_F TIE_F), every W-run F has |F| ≤ m_E(1 + w(n)) + TIE_F, every phase P has f_P ≤ n(1 + w(n)) + ZF_P and ZF_P ≤ NZ_P + n(n + 1)(1 + w(n)) + ZFS_P, GXC_P ≤ TIE_P + n(1 + w(n)) + FBO_P and FBO_P ≤ n(n + 1)(1 + w(n)) + FBOS_P; for the labelled VARIANT N5-LZC (N5 with S4a's output σ* replaced by σ′, which, with W* the [S1-val] valuation of the (σ*, τ_t)-plays, keeps σ_t(v) at every Even v whose W*(v) has length at least 1 and satisfies v ⊕ W*(σ_t v) = W*(v), and at every Even v with W*(v) = (v, ∅, 0) for which W*(σ_t v) has cycle node v and empty path set, and takes σ*(v) at every other Even v; nothing transfers to N5), (Lemma LZ-OPT, Theorem LZ-STRICT, Corollaries RUN-WCH_LZ, REP-WCH_LZ) the (σ′, τ_t)-plays have valuation W*, every Even vertex switched at an S4a step strictly raises its W-value read with τ_t, so TIE_F = TT_F = 0, |F| ≤ m_E + Σ_e d_E(e)·WCH_F(e) and REP_F ≤ Σ_e d_E(e)·WCH_F(e) for every W-run F of N5-LZC, and (Corollary LZ-NOSIL, under ASSUMPTION OPT-ONLY that RESULTS R90 Fact B and (a) (ii), (b), (c), (d) hold verbatim for N5-LZC runs) N5-LZC has no class-S re-entry (2026-10-30) — a REDUCTION (per-vertex W-changes per τ-stretch ([P-WCHτ]), TIE*, NZ_P, ZFS_P, FBOS_P, NC_R, NT_R, ρ_P and B_R are not bounded here; G-N5-TIME stays open; not M3, not a step-4 pass, not a TARGET.md claim), CHECKER PASS (docs/checker/C103.md, checker cdef102a)
+- Object (L-NEW successor 37, Opus 5.5, D14 / D18, Lead reading L40; frozen, unchanged during review): packet P-N5-WCH,
+  docs/new/P-N5-WCH-box79.md, sha1 31caa72e5265b7373218ce64e38d253112189506, 550 lines (l-new freeze 2ad78f51646684a82e18b02f7ccf7f0d382a7984,
+  2026-10-30T09:10:32Z, the file's only commit; identical at l-new c930e26f and head 163342eb, at origin trunk 200a9e2e and at the local
+  trunk head 19f0d2f5; first on trunk by bf6985bf, 09:57:42Z). Both referees measured the sha1 at 2ad78f51 (REFEREE l. 3-5; REFEREE-2 l.
+  2-3). The Lead's freeze word is quoted at l. 2-5 («Lead 2026-10-30 (after 08:52Z): «TASK 1, PACKET: freeze ONE packet, P-N5-WCH, for
+  both referees … Mark ASSUMPTION OPT-ONLY wherever it is used … Keep N5 and N5-LZC statements separate. Every symbol must be bound in the
+  line file … Cite only landed RESULTS or the packet's own sections.»»). Status (l. 8-9): «REDUCTION only. No count named below as a
+  residual is bounded here. G-N5-TIME stays OPEN. Not M3, not a step-4 pass, not a TARGET.md claim.» Two objects (l. 10-11): «N5 (SPEC
+  S1-S5, §1-§6) and the labelled VARIANT N5-LZC (§7). Nothing in §7 transfers to N5, and nothing proved for N5 in §2-§6 is claimed for
+  N5-LZC unless §7 proves it.» Sources (l. 6-7): working notes N5-SC-box70, N5-LZ-box72, N5-FBO-box73, N5-SBQ-box76, N5-RETWCH-box78,
+  «unrefereed; THIS packet governs where they differ; none is cited as a proof»; not refereed here. Quote base l-new aefb71a3 (l. 9): the
+  seven SPEC quotes are verbatim; four S1 tags are one line low (REFEREE WCH-N1, l. 11-13; REFEREE-2 N-2, l. 155-156; REFEREE-2 checked
+  all «35 «» quotes» verbatim, l. 152-153), corrected by W1-1 and checked by experiments/new/box79/quotecheck.py (pinned «box 79»; re-run
+  for this draft: 7 OK, «QUOTECHECK PASS»; with the original tags: 4 «NOT FOUND», «QUOTECHECK FAIL»). Sections: §0 what to sign (l.
+  13-28), §1 setting, premises, definitions (l. 30-116), §2 Facts REW, LEX (l. 118-128), §3 Lemma TIE (l. 130-161), §4 NEW-BOUND, RET-WCH,
+  RUN-WCH, REP-WCH (l. 163-213), §5 SIL-Z, SC-GXC, GXC-CLOSE, GXC-SPLIT, LEVEL-MON, DROP-PAID, FBO-R56, FBO-SPLIT, ZF-SPLIT (l. 215-271),
+  §6 WCH-RED, WCH-ONE (l. 273-287), §7 N5-LZC (l. 289-330), §8 NOT to sign: trimmed items, DATA, READING, the lane's symbol test (l.
+  332-550).
+  The RESULTS line, history. (1) The frozen line docs/new/P-N5-WCH-box79-line.txt (l-new 2ad78f51), sha1
+  9ac6fdba5ca5910a4585babff5938a0d8d107a78, the line both referees reviewed (REFEREE l. 4; REFEREE-2 l. 2-3). Verdicts on it: REFEREE
+  «MATCHES §2-§7 and claims nothing more; my strict symbol test finds no free symbol (§10)» (l. 35), with one precision (l. 127-128: «NZ_P
+  uses «at k or k + 1» with k bound only through ZF_P's gloss … it reads correctly»); REFEREE-2 «MATCHES §2-§7 | no REQUIRED fix;
+  precision L-1 to L-4 (§3)» (l. 31). §Cs: REFEREE §C l. 55-56 «Joint position on the line: MATCHES, no REQUIRED fix. Precisions for W1:
+  L-1 (bind k inside NZ_P's clause), L-2 (declare w : ℕ → ℕ), L-3 (optional), L-4 (cite R84 (a)).»; REFEREE-2 §C l. 23 «agree on MATCHES;
+  precisions C.4». (2) W1 (fixes W1-3, l. 19-38): docs/new/P-N5-WCH-box79-line-W1.txt (l-new c930e26f), sha1
+  00f9e375c448153f19b7620037a2723f6d10a0b1 = 9ac6fdba + exactly four changes: «R84 (a) (Fact DELTA)» added to the premises (L-4); «k → k
+  + 1» bound inside NZ_P's clause (L-1); «for a function w : ℕ → ℕ» (L-2); σ′ defined directly (L-3). Word diff re-measured for this draft
+  three ways: those changes, nothing else (to check (2)). REFEREE §C l. 64 «MATCHES (Opus 5.5, D15).»; REFEREE-2 §C.6 l. 71 «MATCHES (Opus
+  5.5, D15).» W1 supersedes 9ac6fdba; the title is W1 verbatim, with its own date. No E-item and no REQUIRED fix was raised on either
+  version by either referee; L-1..L-4 are precisions (REFEREE-2 l. 145-146: «None is required: k's clause-local meaning is unambiguous, w is
+  fixed by «[P-WCHτ](w)», σ′ is pinned by «in the sense of Lemma TIE's two forms», and Fact DELTA is landed.»).
+  Setting (packet §1, l. 30-116): N5 = SPEC S1-S5 (FIX 1-4); G = (V, E, Ω, owner), n = |V|; m_E the edges leaving Even vertices, n_E the
+  Even vertices, d_E(e) := |{v Even : (v, e) ∈ E}|, Σ_e d_E(e) = m_E; a run is the sequence of states (σ_t, τ_t), a TRANSITION is t → t +
+  1; [S1-rank], [S1-val], [S1-ord], [S1-Xi], [S2], [S4a], [S4c] quoted (tags corrected by W1-1); [R15], [F1], [V1], [V2], [⊕] quoted; the
+  symbols of RESULTS R90 (W^τ_t, W_t, λ_W, H_t, S4a STEP, BOUNDARY, Fact B, τ*-PIECE, B_R, the classes of R90 (e), SIL_R), of R89
+  (τ-STRETCH, W-RUN; |F| := its transitions), of R88 (f) / R90 (g) (late adoption, FIRST, REPEAT, REP_F, REP*), of R91 (PHASE, in-phase,
+  τ-fixed Even fallback, Z_t, WCH^S4a_P(v), f_P, ZF_P and its lemmas (a), (b), (c), (h), (i), (k), (m), quoted), of R90 (a) (ii), (b), (c),
+  (d) (quoted) and R56 (FB-RED, ρ_P). Packet definitions (l. 94-116): TIE EVENT, TIE_X, TIE*; RETURN, its LEAVE, RET_F(v, e), WCH_F(e),
+  TT_F(v, e); GXC EVENT (box 70), GXC_P, GXC_R; CL_P, FBO_P; NC_R, NT_R; GAP LEVEL LEV_t(v); DROP_P(v); FBOS_P; NZ_P, ZFS_P; WCH_S(e);
+  PREMISE [P-WCHτ](w) («A premise; not proved here.»). Standing premise (l. 50-51): «the standing SPEC premise of RESULTS R57 (1E-N3: S1's
+  procedure realises the pointwise optimum); for S4a, σ_new is the POINTWISE OPTIMUM of the one-player arena H_t (RESULTS R90 (a) (i),
+  OPT-OFF (i)).» §1 cells: REFEREE «CHECKED; standing premise named (R57 1E-N3, R90 (a) (i))» (l. 20); REFEREE-2 has no §1 row (its l. 5-9
+  list the landed sources it re-read).
+  DEFINITION (not a claim): §7.1 (l. 290-298), N5-LZC := N5 except in S4a: with σ* := [S4a]'s σ_new and W* := val(σ*, τ_t), σ′(v) :=
+  σ_t(v) «if ℓ(W*(v)) ≥ 1 and v ⊕ W*(σ_t v) = W*(v)», σ′(v) := σ_t(v) «if W*(v) = (v, ∅, 0), and W*(σ_t v) has cycle node v and empty
+  path set», σ′(v) := σ*(v) otherwise; σ_new := σ′; S4b, S4c (on σ′), S4d, S5 unchanged; «the §1 definitions … are read verbatim on
+  N5-LZC's states»; premise «the standing SPEC premise for σ* (R57 1E-N3: σ* is the pointwise optimum of H_t)». REFEREE-2's row 7.1-7.4
+  names «definition» among its SIGNED items (l. 28); REFEREE's row (l. 31) names the lemmas only. Recorded here as a definition. W1's L-3
+  inlines it; both W1 lines check that the inlined rule equals §7.1 (REFEREE §C l. 64: «equals §7.1's three cases verbatim in content»;
+  REFEREE-2 §C l. 77: «These are §7.1's two keep rules verbatim.»).
+- Claims signed (both referees "(Opus 5.5, D15)": REFEREE successor 19, REFEREE-2 successor 22). Each item (a)-(l) is SIGNED in both
+  verdict tables (REFEREE "## Verdicts" l. 18-35 of R-N5-WCH.md; REFEREE-2 "## 1. Verdict table" l. 16-32 of R2-N5-WCH.md) and «SIGNED by
+  both» / «agree» in both §Cs (REFEREE §C table l. 8-20; REFEREE-2 §C C.1 l. 8-23), in the frozen wording, read with W1-1 (tags) and W1-2
+  (case-split wording; «the proofs are unchanged», fixes l. 15, l. 17). Items (a)-(j) are about N5 on every game; (k), (l) are about the
+  labelled VARIANT N5-LZC only. Premises LANDED (as line W1 names them): SPEC S1 ([S1-rank], [S1-val], [S1-ord], [S1-Xi]), S2, S4a, S4c;
+  RESULTS R15 (a), (d); R17 (a) (F1); R56 (FB-RED); R84 (a) Fact DELTA; R86 (λ-run); R88 (f) and R90 (g) (late adoption, REPEAT, REP_F);
+  R89 (τ-stretch, W-run); R90 (a)-(e), (g) and Fact B; R91 (a)-(c), (h), (i), (k), (m); R38 (a) (phase). Standing premise: RESULTS R57's
+  SPEC premise as quoted under Object. The code's match to SPEC is DATA (R15 G-N5T-1). No item uses a count.
+  (a) Fact REW (R1, R2), Fact LEX and its Consequence COMMON PREFIX (§2.1, l. 119-128; game-general): "rew is injective. (R1) If u is even
+      (Ω) and more relevant than x, then rew(u) > rew(x). (R2) If x is odd, every u less relevant than x has rew(u) > rew(x)."; for x = (c,
+      P, ℓ), CS(x) := (rew(c); s_{n−1}, …, s_0; ℓ̂) (s_r ∈ {0, +1, −1} by membership and parity of the vertex of rank r; ℓ̂ := ℓ if Ω(c) is
+      odd, −ℓ if even): "x ◁ y iff CS(x) < CS(y) lexicographically"; COMMON PREFIX: "if x ⊴ z ⊴ y and CS(x), CS(y) agree on their first L
+      coordinates, so does CS(z) with both." Cells: REFEREE «SIGNED» (l. 21); REFEREE-2 «SIGNED», «none» (l. 18; l. 40: «Checked mechanically:
+      CS order = SPEC key order on 0 of the sampled pairs failing (§4).»).
+  (b) Lemma TIE (§3, l. 130-161), with W1-2: at an S4a step t → t + 1, τ := τ_t, σ⁺ ANY pointwise-optimal Even strategy of H_t against τ,
+      W′ := val(σ⁺, τ), v Even with d := σ_t(v) ≠ σ⁺(v) and W′(v) = W_t(v): "(a) if v is not its own W′-cycle node: v ⊕ W′(d) = W′(v), and
+      d's σ⁺-path to its cycle node avoids v; (b) if v is its own W′-cycle node: W′(d) has cycle node v and empty path set." W1-2 (l.
+      14-15): read (a2) as «π reaches its cycle node c* before v» and (a3) as «π reaches v before its cycle node c*». Cells: REFEREE
+      «SIGNED (cases (a1)-(a3), (b) re-derived; wording note WCH-N2)» (l. 22); REFEREE-2 «SIGNED», «none; N-1: the case split (a2) / (a3)
+      must be read as «v reached after / before c* on π» (wording)» (l. 19).
+  (c) Lemma NEW-BOUND (§4.1, l. 164-169): "For every W-run F: |F| ≤ m_E + Σ_{(v, e) ∈ E, v Even} RET_F(v, e)." Cells: REFEREE «SIGNED» (l.
+      23); REFEREE-2 «SIGNED», «none» (l. 20).
+  (d) Theorem RET-WCH (§4.2, l. 171-203), with W1-2: "For every W-run F, Even v and successor e: RET_F(v, e) ≤ WCH_F(e) + TT_F(v, e). More
+      precisely, every return u of v to e whose leave k has W_{k+1}(v) ≠ W_k(v) has a transition s ∈ [k, u] at which W(e) changes; the
+      others are charged to their leave k, a TT_F(v, e) transition." (Premises [F1], [V1], [V2], W-MON (R91 (b)), λ_W constant on F; Step
+      1 tie-leave, Step 2 (i)-(iii), distinctness.) W1-2 (l. 16-17): Step 2 (ii) «π reaches the cycle node c before v», (iii) «π reaches v
+      before the cycle node c». Cells: REFEREE «SIGNED (Steps 1-2, (i)-(iii), the cycle-node exclusion, distinctness re-derived; WCH-N2)»
+      (l. 24); REFEREE-2 «SIGNED», «none; N-1 again for Step 2 (ii) / (iii)» (l. 21).
+  (e) Corollaries RUN-WCH and REP-WCH (§4.3, l. 205-213): "For every W-run F: (RUN-WCH) |F| ≤ m_E + Σ_e d_E(e)·WCH_F(e) + TIE_F; (REP-WCH)
+      REP_F ≤ Σ_e d_E(e)·WCH_F(e) + TIE_F; hence REP* ≤ max_F Σ_e d_E(e)·WCH_F(e) + TIE*." Cells: REFEREE «SIGNED; REP-WCH needs only
+      RET-WCH and R90 (g)'s definitions, NOT FW-R*′ (§4)» (l. 25); REFEREE-2 «SIGNED», «none; REP-WCH uses only R90 (g)'s definitions and
+      RET-WCH, not FW-R*′ (N-3)» (l. 22).
+  (f) Lemma SIL-Z (a)-(c) and Corollary SC-GXC (§5.1, l. 216-239): for a class-S re-entry j − 1 → j of v into c in the λ-run R (R90 (e)),
+      q its smallest anchor, τ* := τ_{j−1}, W* := W^{τ*}, d := σ_{j−1}(v): "(a) W*_{j−1}(d) = W*_j(d) = W*_j(c) = W*_{j−1}(c), and W*_j(v) =
+      W*_{j−1}(v); (b) if v is not its own Ξ-cycle node at j − 1: d ∈ Z_{j−1} and v ∈ Z_{j−1}; (c) if v is its own Ξ-cycle node neither at
+      j − 1 nor at j: Ξ_j(v) ▷ Ξ_{j−1}(v)."; SC-GXC: "For every λ-run R: SIL_R ≤ GXC_R + NC_R + NT_R, and GXC_R ≤ Σ_{phases P ⊆ R} GXC_P,
+      with at most B_R + 1 phases inside R." Cells: REFEREE «SIGNED; uses only landed R90 (a) (ii), (b), (c), (d), Fact B, R91 (a), R15,
+      [S2], [S4a], [V1], [V2] (§5)» (l. 26); REFEREE-2 «SIGNED», «none; every premise is landed (R90 (a) (ii), (b)-(e), R91 (a), R15, SPEC
+      S2, S4a, [V1], [V2])» (l. 23).
+  (g) Lemma GXC-CLOSE and Theorem GXC-SPLIT (§5.2, l. 241-250): "For every phase P with first state a: CL_P ≤ |Z_a| + Σ_x WCH^S4a_P(x)."
+      and "For every phase P: GXC_P ≤ TIE_P + CL_P + FBO_P ≤ TIE_P + |Z_a| + Σ_x WCH^S4a_P(x) + FBO_P." Cells: REFEREE «SIGNED» (l. 27);
+      REFEREE-2 «SIGNED», «none» (l. 24).
+  (h) Lemma LEVEL-MON and Corollary DROP-PAID (§5.3, l. 252-262): "Let P be a phase, v a vertex, t < t′ states of P with v ∈ Z_t ∩ Z_{t′},
+      and suppose no transition s → s + 1 with t ≤ s < t′ is an S4a step changing W(v). Then LEV_{t′}(v) ≥ LEV_t(v)."; "For every phase P
+      and vertex v: DROP_P(v) ≤ (n + 1)(1 + WCH^S4a_P(v))." Cells: REFEREE «SIGNED» (l. 28); REFEREE-2 «SIGNED», «none» (l. 25).
+  (i) Corollaries FBO-R56, FBO-SPLIT, ZF-SPLIT (§5.4, l. 264-271): "FBO_P ≤ n_E·f_P ≤ n_E·(1 + (n − 1)(2 + ρ_P))"; "FBO_P ≤ Σ_v DROP_P(v)
+      + FBOS_P"; "ZF_P ≤ NZ_P + Σ_v DROP_P(v) + ZFS_P." Cells: REFEREE «SIGNED» (l. 29); REFEREE-2 «SIGNED», «none» (l. 26).
+  (j) Theorem WCH-RED (W), (G), (X), (S) and Corollary WCH-ONE (§6, l. 273-287): (W) the bounds of (e); (G) "f_P ≤ n + Σ_v WCH^S4a_P(v) +
+      ZF_P (R91 GAP-RED) and ZF_P ≤ NZ_P + (n + 1)·Σ_v (1 + WCH^S4a_P(v)) + ZFS_P"; (X) "GXC_P ≤ TIE_P + |Z_a| + Σ_v WCH^S4a_P(v) + FBO_P
+      …, with FBO_P ≤ n_E(1 + (n − 1)(2 + ρ_P)) and FBO_P ≤ (n + 1)·Σ_v (1 + WCH^S4a_P(v)) + FBOS_P"; (S) "SIL_R ≤ (B_R + 1)·max_{P ⊆ R}
+      GXC_P + NC_R + NT_R". WCH-ONE: "under [P-WCHτ](w), with w := w(n): REP* ≤ m_E·w + TIE*, and |F| ≤ m_E·(1 + w) + TIE_F for every
+      W-run F; f_P ≤ n(1 + w) + ZF_P and ZF_P ≤ NZ_P + n(n + 1)(1 + w) + ZFS_P for every phase P; GXC_P ≤ TIE_P + n(1 + w) + FBO_P and FBO_P
+      ≤ n(n + 1)(1 + w) + FBOS_P." Cells: REFEREE «SIGNED (each displayed inequality re-derived)» (l. 30); REFEREE-2 «SIGNED (composition
+      and arithmetic checked)», «none» (l. 27).
+  (k) N5-LZC (VARIANT; §7.2-§7.4, l. 299-320): Lemma LZ-OPT "val(σ′, τ_t) = W*. Hence σ′ is a pointwise optimum of H_t"; Lemma W-MON_LZ
+      "At an S4a step t → t + 1 of N5-LZC, W^{τ_t}_{t+1} ⊵ W^{τ_t}_t pointwise"; Theorem LZ-STRICT "At an S4a step t → t + 1 of N5-LZC,
+      every switched Even v has W^{τ_t}_{t+1}(v) ▷ W^{τ_t}_t(v)" («Hence in N5-LZC: TIE_X ≡ 0 and TT_F ≡ 0», l. 315); Corollaries
+      RUN-WCH_LZ / REP-WCH_LZ "For every W-run F of N5-LZC: |F| ≤ m_E + Σ_e d_E(e)·WCH_F(e) ≤ m_E·(1 + max_e WCH_F(e)), and REP_F ≤ Σ_e
+      d_E(e)·WCH_F(e)." («No fleet lemma is transferred: every premise is re-proved for N5-LZC here», l. 320.) Cells: REFEREE «SIGNED, for
+      the VARIANT only» (l. 31); REFEREE-2 «SIGNED (VARIANT; nothing transfers to N5)», «none» (l. 28).
+  (l) Corollary LZ-NOSIL AS THE IMPLICATION (§7.5, l. 321-330): "Under OPT-ONLY, N5-LZC has no class-S re-entry (R90 (e) classes read on
+      N5-LZC)", ASSUMPTION OPT-ONLY := «RESULTS R90 Fact B and (a) (ii), (b), (c) and (d) hold verbatim for N5-LZC runs». Cells: REFEREE
+      «SIGNED; and ASSUMPTION OPT-ONLY CHECKED TRUE (§7) …» (l. 32); REFEREE-2 «SIGNED as the implication; OPT-ONLY CHECKED: it holds (§2.7
+      below)», «N-4» (l. 29). The entry signs the implication only; the check of OPT-ONLY is the joint finding below.
+  N5-LZC IS A LABELLED VARIANT, NOT N5. Nothing in (k) or (l) transfers to N5 without proof, and nothing in (a)-(j) is claimed for N5-LZC
+  except what (k) and (l) prove (packet l. 10-11; §7.5 l. 330 «Not claimed: anything about class C, phases, GXC, ZF, fallbacks or T for
+  N5-LZC»; REFEREE-2 l. 13 «N5 (§2-§6) and the VARIANT N5-LZC (§7) are separate objects; I checked them separately.»). The N5 part never
+  uses OPT-ONLY or any §7 statement (REFEREE l. 33, l. 92; REFEREE-2 l. 113; REFEREE §C l. 19 and REFEREE-2 §C l. 22: «not used»).
+  Gap maps: REFEREE §C l. 21: «The verdicts are identical and the gap map is EMPTY: neither referee lists a gap, and nothing is false.»;
+  REFEREE-2 §C C.2 l. 26-27: «Proof gaps: NONE in either report. Joint gap map: EMPTY.» «Required fixes: NONE in either report.» REFEREE
+  l. 36: «No gap. Nothing FALSE. Notes WCH-N1..N4.»; REFEREE-2 l. 34: «No gap. Nothing FALSE. No REQUIRED fix.»
+  The RESULTS line (W1) claims less than the packet: it states Lemma TIE without «d's σ⁺-path … avoids v» (REFEREE-2 l. 141: «a weakening
+  that is allowed»); RET-WCH without its «more precisely» form; NEW-BOUND only through RUN-WCH; REP-WCH without «REP* ≤ max_F …»; SIL-Z
+  only through SC-GXC's chain; GXC-CLOSE only through GXC-SPLIT; Fact LEX only as «the coordinate sequence … in which the SPEC S1 order is
+  lexicographic» inside LEV's definition (Fact REW and COMMON PREFIX are signed items behind it); WCH-RED's (G) first half (landed R91
+  GAP-RED) not restated; W-MON_LZ and «σ′ is a pointwise optimum of H_t» not stated; RUN-WCH_LZ without «≤ m_E·(1 + max_e WCH_F(e))».
+  Every clause it states is one of (a)-(l). W1 changes no clause's claim: L-1, L-2 bind symbols, L-3 inlines §7.1, L-4 adds a premise
+  label (REFEREE-2 §C l. 78: «Every inequality is token-identical.»).
+- Fixes (docs/new/P-N5-WCH-fixes-box79.md, L-NEW successor 37, APPEND-ONLY, «Written 2026-10-30 from 10:35Z (date -u)» (l. 4); one
+  commit: l-new c930e26fcdd66ffaf19e3c6d081b52d08a9037f3, 2026-10-30T10:34:06Z, sha1 8377a1b8baa0e53cb4df509d1aa91f427628983d, 46 lines,
+  = l-new head 163342eb = origin trunk 200a9e2e; first on trunk by 05f6c315 (10:54:07Z); the last commit touching the file). The same
+  commit adds the W1 line file, experiments/new/box79/quotecheck.py (19 lines, sha1 59bdfca06a7f0ee96dd79d9a3bf75426cdc8aba5),
+  symtest.py's W1 table (+6/−5) and symtest_W1.out (191 lines, sha1 676b0273291319ba0dc17a719a43c8fbfb8ada70), and points check.sh «box
+  79» at W1 with the quote check. Header (l. 2-4): «The frozen packet … is NOT edited; where this file and the packet differ, this file
+  governs. Both referees: every item SIGNED, no gap, nothing false (Lead 10:32Z).» Classes (l. 4): «WORDING / TAGS / LINE PRECISION /
+  FINDING / DATA». Each item, with its class and the referees' words:
+  - W1-1 (TAGS) (l. 6-11) = REFEREE WCH-N1 = REFEREE-2 N-2: «[S1-rank] [Q SPEC:27] (packet says 26); [S1-val] [Q SPEC:28-29] (27-28);
+    [S1-ord] [Q SPEC:30-31] (29-30); [S1-Xi] [Q SPEC:32] (31).» Quote check added and pinned: «7 / 7 OK, QUOTECHECK PASS; with the
+    packet's original tags it reports 4 NOT FOUND (the check bites).» Re-run for this draft: both (Object). REFEREE l. 95-96: «Fix the tags,
+    or quote at 7039eb524 … Add a quote check to «box 79».»; REFEREE-2 §C.6 l. 80: «It includes the SPEC quote check (W1-1 fixes the four
+    tags)».
+  - W1-2 (WORDING) (l. 13-17) = WCH-N2 = N-1: the case split by the position of v on π in Lemma TIE (a1)-(a3) and RET-WCH Step 2
+    (i)-(iii): «The three cases are exhaustive and the proofs are unchanged.» (l. 15); «Proofs unchanged.» (l. 17). REFEREE l. 50: «so it is
+    wording, not a gap»; REFEREE-2 l. 191: «One clause each in a fixes file.» Joint: REFEREE §C l. 46; REFEREE-2 §C l. 49 («the same
+    configuration has now been mis-split twice»). Not re-read by either referee after c930e26f (to check (10) (vii)).
+  - W1-3 (LINE PRECISION) (l. 19-38) = REFEREE-2 L-1..L-4 (L-1 = REFEREE's §10 precision): the line W1, «Nothing else changed.» (l. 35);
+    symtest re-run «W1 186 symbols, 0 failures, SYMTEST PASS»; «Under the updated table the OLD line 9ac6fdba fails 4 (NZ_P, W*, σ′: their
+    binding phrases were reworded in W1; w: undeclared, = L-2).» (l. 37-38). Both W1 lines: MATCHES (to check (3)). THE TITLE.
+  - W1-4 (FINDING) (l. 40-42) = WCH-N3 = N-4: «Both referees checked ASSUMPTION OPT-ONLY against R90's proofs and find it TRUE, so
+    Corollary LZ-NOSIL holds (REFEREE 19 WCH-N3: «OPT-ONLY is true (§7); LZ-NOSIL can be stated without the assumption»). Recorded only;
+    the signed text is not changed.» (the quote of WCH-N3 is REFEREE l. 98, verbatim). See «Joint referee finding».
+  - W1-5 (DATA) (l. 44-46) = WCH-N4: «NC_R = NT_R = 0 on the referee's whole corpus; SIL-Z (b)'s own-Ξ-cycle exclusion and the NT term are
+    never exercised by data. Recorded: NC_R and NT_R are residuals with no instance; the statements are unaffected.» REFEREE l. 99-100;
+    REFEREE-2 §C l. 51: «my data also has NC 0, NT 0 on 1,131 runs, but I did not record it as a note … I MISSED it as a note; accepted».
+  No fix changes a signed statement: W1-1 tags only (text verbatim), W1-2 wording («proofs unchanged»), W1-3 the line only, W1-4 «the
+  signed text is not changed», W1-5 «the statements are unaffected». REFEREE-2 §C.6 l. 78: «Every inequality is token-identical.»
+- Not signed: §1 (setting and definitions; REFEREE «CHECKED»); the §7.1 Definition of N5-LZC (a definition: Object); ASSUMPTION OPT-ONLY
+  (checked TRUE by both: the joint finding below, not a claim of the line and not a landed lemma); §8.1 the trimmed items (TXC-SRC /
+  TXC-RHO, FIX-DEPTH / FIXD-MON / PHASE-RED, LZ-RUN, N5-LZC output correctness, GXC-CLOSE / FBO for N5-LZC: l. 333-344); §8.2 and §8.4
+  DATA (Data below); §8.3 READING (l. 350-352); §8.5 the lane's symbol test of the frozen line (l. 360-550; superseded by W1-3's re-run);
+  the frozen line 9ac6fdba (history); the working notes box70, box72, box73, box76, box78 (l. 6-7). Lane work after the freeze, other than
+  the fixes commit c930e26f, is not part of this entry: L-NEW boxes 80-83 (3aac0638, ab2a15b7, 163342eb and later), the FLAT-SRC box 79 of
+  L-NEW successor 36 (c50a4985, 9555501d) and L-RED R131-R134.
+- Joint referee finding (not a claim of the line): ASSUMPTION OPT-ONLY is TRUE for N5-LZC, so Corollary LZ-NOSIL holds outright for
+  N5-LZC: N5-LZC has no class-S re-entry. Both referees checked it independently against the landed proofs of R90's object, before the
+  §C. REFEREE d71d6e55, R-N5-WCH.md l. 32 (cell): «SIGNED; and ASSUMPTION OPT-ONLY CHECKED TRUE (§7): R90's proofs of Fact B, (a) (ii), (b),
+  (c), (d) use S4a's σ_new only through OPT-OFF (i) (pointwise optimality), never through S1's tie-break»; l. 88-91: «… No step uses S1's
+  tie-break or the identity σ_new = S1's output. So OPT-ONLY HOLDS for N5-LZC (given LZ-OPT), and LZ-NOSIL holds outright, not only under
+  the assumption.»; WCH-N3, l. 98: «OPT-ONLY is true (§7); LZ-NOSIL can be stated without the assumption.» REFEREE §C 938537ed, §2 l. 30:
+  «JOINT FINDING, signed by both.»; l. 33: «LZ-OPT supplies (i) for σ′, so OPT-ONLY holds, and LZ-NOSIL holds for N5-LZC without the
+  assumption.»; l. 39-40: «Joint position: the line may keep «under ASSUMPTION OPT-ONLY …». The RESULTS entry should record that both
+  referees checked OPT-ONLY and found it TRUE for N5-LZC, a referee finding about a VARIANT. It transfers nothing to N5.» REFEREE-2
+  24f32388, R2-N5-WCH.md l. 29 (cell): «SIGNED as the implication; OPT-ONLY CHECKED: it holds (§2.7 below)»; l. 106-107: «OPT-OFF (ii)
+  (Cases 1-3), W-MON′, W-SUCC and W-RETURN-G use (i) … Nowhere do they use the S1 procedure or its tie-break; only (i)'s own proof does.»;
+  l. 111-112: «So OPT-ONLY holds for N5-LZC, and LZ-NOSIL holds without the assumption. I recommend the line keep the label as is: the
+  assumption is discharged by this report, not by a landed proof.» REFEREE-2 §C 6ff5d18a, C.3 l. 35-36: «Joint status (Opus 5.5, D15):
+  OPT-ONLY is DOUBLE-REFEREED TRUE, and LZ-NOSIL holds for N5-LZC without the assumption. This is a referee finding about a landed proof,
+  not a new landed lemma.»; l. 42-43: «My recommendation is (a) unless the lane wants (b), because (a) changes nothing that was signed.
+  Either way, nothing in N5 (§2-§6) depends on it.» Lead decision (a) (docs/agents/LEAD-STATE.md l. 2066, entry «10:54Z»: «the line keeps
+  «under ASSUMPTION OPT-ONLY», the RESULTS body records the joint check»); both W1 lines confirm the label is unchanged (REFEREE §C l. 64;
+  REFEREE-2 §C l. 78); the lane records it (W1-4). Status: a joint finding of both referees about a VARIANT, recorded in this body; the
+  line still states LZ-NOSIL under the assumption, and this entry does not claim the unconditional form. It transfers nothing to N5.
+- Referee strengthening (NOT part of this entry; remarks of one referee, remarks of both outside the verdict cells, readings):
+  (i) The case split (WCH-N2 = N-1, W1-2): with the literal tail / cycle reading, the configuration «v on the cycle between π's entry and
+  c*» would fall into (a2) / (ii), «whose argument then uses «π's path to c* avoids v», which is false there. This is the configuration of
+  P-N5-GAP's G-GAP-1. The proofs of (a3) / (iii) cover it verbatim» (REFEREE l. 46-50); REFEREE-2 l. 189-191 the same; REFEREE-2 §C l. 49:
+  «REFEREE's link to G-GAP-1 (R91) is right and worth recording: the same configuration has now been mis-split twice».
+  (ii) REFEREE-2 l. 51 (TIE (a3)): «In (a3) the top u may be v itself (v ∈ X); the argument «u ∉ P(W(d))» covers that, since d's σ_t-path
+  avoids v.» REFEREE-2 only.
+  (iii) NC_R and NT_R are never exhibited (WCH-N4, W1-5): REFEREE MUT 5 (SIL-Z (b) at own-Ξ-cycle v) «never (NC = 0: WCH-N4)» (l. 116);
+  REFEREE-2's data NC 0 / NT 0 (l. 173). The premises are used by the proofs, not exhibited by data (REFEREE l. 99-100).
+  (iv) The lane's symbol test cannot see clause scope (REFEREE-2 N-5, l. 196-197; REFEREE §C l. 50 «agreed»; REFEREE-2 §C l. 56: «both
+  found L-1 by hand; the tool did not»).
+  (v) Self-corrections: REFEREE §C l. 54 (L-4): «Agreed, and I MISSED it.»; REFEREE-2 §C l. 51 (WCH-N4): «I MISSED it as a note».
+  (vi) Controls that bite: REFEREE MUT 1 (RET-WCH without TT) 43, MUT 2 (GXC-SPLIT without TIE) 17, MUT 3 (LEVEL-MON across W(v)-changing
+  S4a steps) 1,176, MUT 4 (ZF-SPLIT without DROP) 3; MUT 5 never (l. 115-116). REFEREE-2: «dropping the hypothesis, (a)'s conclusion fails
+  at 56,743 of 57,628 switched vertices (X_TIE_noeq)» (l. 182); «read across an S4a W(v)-change, LEV decreases 26,107 times (X_LM_s4a)» (l.
+  183). REFEREE-2 §C l. 58: «REFEREE's MUT 3 = my X_LM_s4a». DATA.
+  (vii) [P-WCHτ]'s w in the data: «max WCH_S(e) = 48 on both engines (DATA only)» (REFEREE-2 l. 186). Not a bound; [P-WCHτ] is not proved.
+  (viii) §8.3 READING (l. 351-352): «Every residual of §6 for N5 except NZ, ZFS, FBOS, NC, NT is a TIE count or a per-vertex W-change count;
+  N5-LZC removes TIE outright. The one shared premise is [P-WCHτ]». Not signed.
+- Honest limits: (i) A REDUCTION. The line bounds Even returns by W(e)-changes and tie-leaves, W-run lengths and REPEATs by per-vertex
+  W-changes and TIE events, silent re-entries by GXC events, GXC events by TIE, gap exits and FBO events, and FBO events and Z-flat
+  fallbacks by gap-level drops; no residual is bounded: per-vertex W-changes per τ-stretch ([P-WCHτ]), TIE*, NZ_P, ZFS_P, FBOS_P, NC_R,
+  NT_R, ρ_P and B_R are not bounded here. [P-WCHτ] is a premise, «not proved here». Packet l. 8: «No count named below as a residual is
+  bounded here. G-N5-TIME stays OPEN.»; REFEREE l. 14-15 and REFEREE-2 l. 12-13 say the same. (ii) N5-LZC is a labelled VARIANT: (k) and
+  (l) are about N5-LZC only; nothing transfers to N5 without proof; N5-LZC's output correctness is not claimed here (§8.1 l. 340); LZ-NOSIL
+  is the only §5-type statement made for it (§7.5 l. 330). (iii) LZ-NOSIL is signed as an implication under ASSUMPTION OPT-ONLY; both
+  referees find OPT-ONLY TRUE (joint finding above), which is not a landed lemma and not a claim of the line. (iv) Standing premise: R57's
+  SPEC premise (1E-N3; for S4a, the pointwise optimum of H_t, R90 (a) (i)), through [F1] in H_t, XW and W-MON; the code's match to SPEC is
+  DATA (R15 G-N5T-1). (v) NC_R and NT_R are residuals with no instance in any data (W1-5). (vi) Counts are transitions and events, not bit
+  operations; no running-time bound. (vii) Not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open.
+- Data (DATA, not proof): pinned (packet §8.5 l. 366: «pinned in experiments/new/check.sh, "box 79"»; W1-1 and W1-3 re-point it).
+  experiments/new/check.sh at 2ad78f51: sha1 06bef37c4ea802e0bb5f862e8e941d5f281af5b8, 406 lines, «box 79» WCH block l. 400-405 (symtest on
+  the frozen line); at c930e26f: sha1 ca6a90473ae952c320c3cd9b88698e56a414b5b8, 424 lines, WCH block l. 400-405 (symtest on W1 and
+  quotecheck.py; identical at l-new head 163342eb); l. 406-411 there are succ. 36's FLAT-SRC block (excluded). Files at c930e26f:
+  box79/wchpk.py 69aec39906e4508de8fc6133c0d3e44272bd16de, box79/sumpk.py 84352914ecf6077d53e3433dc68b76a80f7b1849 (both unchanged since
+  2ad78f51), box79/symtest.py 66cf16deb4820e15298dfceb8a51bf57dde5bf4b (7e952aaa… at 2ad78f51), box79/quotecheck.py
+  59bdfca06a7f0ee96dd79d9a3bf75426cdc8aba5, box79/symtest_W1.out 676b0273291319ba0dc17a719a43c8fbfb8ada70, box79/symtest.out
+  1005d72b0c0d9e3cf84debda9fbb4a11ca614dce, box79/wchpk_sbcg.txt c21025d135554bcd3d1168055e722ceed4db5759 (719 lines),
+  box79/wchpk_alt.txt cd78ba4889f9650208d9faca50d13d61ac5130a7 (413 lines) (both unchanged since 2ad78f51), red/so/instances/tog6b_n32.pg
+  705695a6cef3e0e4a6f168527c28362ce4db4000, docs/new/N5-ssi-global.md 66fde9ef1726602fc0a52ca8d6d6fe8cbbcf110e. Re-run for this draft from
+  a `git archive` of each commit (experiments/ and docs/new/; `python3 -I`; outputs to scratch files; exit codes read): c930e26f l. 400-405
+  under `set -euo pipefail`, 11:11:42Z by date -u (read before and after, same second): «WCHPK tog6b_n32.pg n 32 wruns 1 {'returns': 4,
+  'paid-W': 3, 'TT': 1, 'TIE': 2} …», «WCHPK tog6b_n32.pg n 32 wruns 1 {'returns': 3, 'paid-W': 3, 'TIE': 0} …», «SYMTEST PASS»,
+  «QUOTECHECK PASS», «box 79 WCH: … PASS», rc 0; 2ad78f51 l. 400-405 (frozen line), rc 0, «box 79 WCH: P-N5-WCH RET-WCH (TT form) on
+  tog6b_n32 (N5 TT 1, N5-LZC TIE 0); line-file strict symbol test PASS», 11:12:02Z by date -u (read after). Single runs from the c930e26f
+  archive (same session, not separately stamped): symtest on W1 «symbols 186, failures 0: []», «SYMTEST PASS», rc 0, output byte-identical
+  to symtest_W1.out; symtest (W1 table) on 9ac6fdba «symbols 182, failures 4: ['NZ_P', 'W*', 'w', 'σ′']», «SYMTEST FAIL», rc 1 (= fixes
+  l. 37-38); quotecheck 7 «OK», «QUOTECHECK PASS», rc 0; quotecheck with the tag map emptied (the packet's original tags) 4 «NOT FOUND»,
+  «QUOTECHECK FAIL», rc 1 (= fixes l. 10-11).
+  DATA OF RECORD (packet §8.2 l. 345-349 and the §8.4 table l. 353-359; corpus box59/sbcg.lst (719) + alt_all (413), N5 and N5-LZC; run
+  «2026-10-30 09:00Z-09:02Z by date -u», l. 346): N5: games 1132, W-runs (holding a return) 1692, returns 6265, paid by a W(e)-change in
+  [k, u] 6177, TT 88, UNPAID 0, RET-WCH violations 0, RUN-WCH violations 0, TIE events in W-runs 397, max returns per (F, edge) 17, max |F|
+  / RUN-WCH bound 0.30; N5-LZC: 1132, 1658, 6100, 6100, 0, 0, 0, 0, 0, 17, 0.30. «TIE = 0 and TT = 0 on N5-LZC everywhere (LZ-STRICT).»
+  (l. 358). Pins (l. 358-359): tog6b_n32 N5 returns 4, paid-W 3, TT 1, TIE 2; N5-LZC returns 3, paid-W 3, TIE 0. Re-summed for this draft
+  (sumpk.py over the two files from the 2ad78f51 archive, 11:12:13Z by date -u, read after, rc 0): «games 1132 unparsed halves 0», «N5
+  {'TIE': 397, 'returns': 6265, 'paid-W': 6177, 'wruns': 1692, 'TT': 88} max-ret-per-edge 17 max |F|/bound 0.3», «LZC {'TIE': 0,
+  'returns': 6100, 'paid-W': 6100, 'wruns': 1658} max-ret-per-edge 17 max |F|/bound 0.3»: equal; UNPAID = returns − paid-W − TT = 0 on
+  both (arithmetic). sumpk.py prints no violation columns, so «violations 0» is the packet's figure, not re-derived here. Fixes W1-5
+  (l. 44-46): «NC_R = NT_R = 0 on the referee's whole corpus»; NC 0 / NT 0 also on REFEREE-2's 1,131 runs (l. 173; §C l. 51). Earlier
+  figures from the working notes (§8.2 l. 347-349: «RET-WCH (TL form) 12365 returns, 0 unpaid (box 78)» etc.) are history, not data of
+  record (RET-WCH's TL form is replaced by TT, §8.1 l. 342-343).
+  REFEREE (successor 19; own docs/referee/scratch/wch_probe.py on rl_engine, «no lane code»; N5-LZC by replacing S4a's σ_new with the
+  §7.1 keep rule; pinned l. 400-405 run in a clean `git worktree add --detach` at 2ad78f51: PASS, exit 0, l. 103-104): the lane's sbcg.lst
+  ∪ alt_all, 719 distinct games, given start and S3, n ≤ 80 (84 larger skipped): 722 runs, 12,087 transitions (l. 108). N5: 0 violations of
+  TIE (260 W-flat switches), NEW-BOUND, RET-WCH (2,656 returns: 2,612 W-paid in [k, u], 44 TT), RUN-WCH, REP-WCH (15 REPEATs), SIL-Z
+  (a)-(c) and SC-GXC (42 class-S re-entries, all GXC events; NC 0, NT 0), GXC-CLOSE (CL 1,813), GXC-SPLIT (GXC 2,222), LEVEL-MON (190,139
+  segment checks), DROP-PAID (3,303 drops), FBO-R56, FBO-SPLIT (FBO 211, FBOS 178), ZF-SPLIT (ZF 90 = NZ 42 + ZFS 39 + drops), GAP-RED
+  (783 in-phase fallbacks) (l. 109-112). N5-LZC: «LZ-OPT exact at all 11,456 S4a computations, LZ-STRICT 0 violations, TIE = TT = 0,
+  RET-WCH 2,552 returns all W-paid, class-S re-entries 0 (LZ-NOSIL), 0 violations» (l. 113-114). Pins reproduced independently (l.
+  105-107).
+  REFEREE-2 (successor 22; own docs/referee-2/R2-N5-WCH/wch_check.py: N5 on its lane's R2-N5-DUAL/dual_check.Runner, N5-LZC its own
+  subclass with the keep rule coded from §7.1; «The lane's box79 / box78 scripts are NOT imported», l. 157-160; pinned «box 79» from its
+  own extraction, set -euo pipefail, detached worktree at 2ad78f51, exit 0, l. 149-150; at c930e26f, §C l. 80): corpus = the lane's,
+  «1,131 runs per engine» (l. 167-169; 319 start-less alt_all lines from S3; one invalid start file skipped). N5: 21,790 transitions,
+  8,941 W-runs, returns 6,246, paid 6,158, TT 88, TIE (W-runs) 397, max returns per (F, edge) 17, class S 84, S not GXC 0, NC / NT 0 / 0,
+  GXC 3,602, CL / FBO / FBOS 2,985 / 232 / 196, DROP 4,690, ZF / NZ / ZFS 112 / 59 / 44, REP* max 6, max WCH_S(e) 48; N5-LZC: 21,487
+  transitions, 8,892 W-runs, returns 6,081, all paid, TT 0, TIE 0, class S 0, REP* max 6, max WCH_S(e) 48 (table l. 171-174); 0
+  violations on every check, both engines (l. 169). «TT, TIE and the maximum equal mine exactly» (l. 178); LZ-OPT «at all 20,845 N5-LZC
+  S4a steps» (l. 184). Run sets (REFEREE §C l. 22-27; REFEREE-2 §C C.5 l. 60-68): the absolute counts differ by run set only («class S is
+  42 for me and 84 for REFEREE-2, which runs both starts on all games», REFEREE §C l. 27); «Both find 0 violations, NC = NT = 0, every
+  class-S re-entry a GXC event, N5-LZC with TIE = TT = 0 and no class-S re-entry, and LZ-OPT exact at every S4a computation.» (REFEREE-2 §C
+  l. 66-67). No signed statement uses any count.
+- Signatures: REFEREE docs/referee/R-N5-WCH.md (report d71d6e55df04f1beb345a055ca026dc162ec9b5b, 2026-10-30T10:06:43Z, committed directly
+  on claude/referee (file commit = branch commit), first on trunk by fb210b9e (10:21:07Z); sha1 ce349a4ecd3e180ab2f45ff128ba2513ba2c072a,
+  135 lines, unchanged since (= referee head b7b0d54f = local trunk head); successor 19): §1 CHECKED; every PROVED item of §2-§7 SIGNED,
+  LZ-NOSIL as the implication; «No gap. Nothing FALSE. Notes WCH-N1..N4.» (l. 36). §C docs/referee/R-N5-WCH-C.md
+  (938537edabf19f127939682982f1747173b82276, 2026-10-30T10:33:03Z, `git diff --numstat d71d6e55 938537ed`: +62/−0; sha1
+  d2431cfa96075aa68eadca0eba8d3b4883262354 there, 62 lines; first on trunk by 5c8b11e2, 10:54:08Z): verdicts identical, gap map EMPTY
+  (l. 21), OPT-ONLY a joint finding (§2 l. 29-40); W1 line b7b0d54f6eb1caa57c1e6af660f479ec234e53f0 (2026-10-30T10:55:21Z, +2/−0; sha1
+  7418be9f5ac66bc7bc824bf32e9830773ad1d429, 64 lines, = origin referee head = the last commit touching the file; merged into the LOCAL
+  trunk by e707d3df (11:13:52Z), not on origin trunk 200a9e2e at the 11:14:11Z fetch): «MATCHES (Opus 5.5, D15).» (l. 64). REFEREE-2
+  docs/referee-2/R2-N5-WCH.md (report 24f32388969e1119dcb7f33ebd56705346b665f0, 2026-10-30T10:09:09Z, committed directly on
+  claude/referee-2 (its parent 9f4d5821 is a Lead trunk commit), first on trunk by 7a003a9b (10:32:21Z); sha1
+  185416fe118bfbc27c2f6916b0095abdb29a363e, 207 lines (= REFEREE §C l. 4's «sha1 185416fe…, 207 lines»), unchanged since; successor 22):
+  every item of §2-§7 SIGNED; «No gap. Nothing FALSE. No REQUIRED fix.» (l. 34). §C docs/referee-2/R2-N5-WCH-C.md
+  (6ff5d18afae42784f7fa904f9adaf1a1143431cd, 2026-10-30T10:33:04Z, +78/−0; its parent e4eaaa99 is a merge of trunk into the branch; sha1
+  7cba08f4a44ba6b10c467c2314bd376b57f332aa there, 78 lines; first on trunk by 51f1bdbf, 10:54:09Z): C.1 «agree» on every row, C.2 «Joint
+  gap map: EMPTY.», C.3 OPT-ONLY «DOUBLE-REFEREED TRUE»; §C.6 14bfa3cc12f3c35fd6c8a613b988cc740692cee7 (2026-10-30T10:54:44Z, +12/−0, l.
+  70-81; its parent 0f2ca021 is a merge of trunk into the branch; sha1 7d43753186127b4bd409f388fe7ee0363ce80310, 90 lines, = origin
+  referee-2 head = the last commit touching the file; merged into the LOCAL trunk by a7ed06f2 (11:13:53Z), not on origin trunk 200a9e2e at
+  the 11:14:11Z fetch): «MATCHES (Opus 5.5, D15).» (l. 71). Its DONE / FINDINGS / NEEDS (l. 82-90) were not revised for W1 (to check (3)).
+  INDEPENDENCE: REFEREE l. 7: «Independence: no docs/referee-2/ file for this packet opened.»; REFEREE §C l. 3-4: its report «pushed BEFORE
+  I opened REFEREE-2's», REFEREE-2's report «opened 10:32Z after the Lead's word». REFEREE-2 l. 3-5: «Independence: written before opening
+  any docs/referee/ file for this packet; the names-only count of «wch» in docs/referee/ was 0 at the start (10:0xZ).»; REFEREE-2 §C l.
+  3-4: its report «pushed before any docs/referee/ file for this packet was opened», REFEREE's «opened after the Lead's word at 10:32Z».
+  No review imported lane code (REFEREE l. 105 «no lane code»; REFEREE-2 l. 160); the lane's scripts ran only as the pinned block.
+  §C (both): verdicts identical (REFEREE §C l. 21; REFEREE-2 §C C.2 l. 26); no disagreement in substance; one difference of presentation on
+  OPT-ONLY (REFEREE §C l. 35-37: REFEREE-2 «recommends that the line keep the label, discharged by the reports»; REFEREE «wrote that the
+  label "can be discharged"»), resolved by Lead decision (a). Notes map (REFEREE §C §3 l. 42-56; REFEREE-2 §C C.4 l. 45-58): WCH-N1 = N-2,
+  WCH-N2 = N-1, WCH-N3 = N-4, REFEREE's §10 precision = L-1, REFEREE's §3-4 watch item = N-3; REFEREE only WCH-N4; REFEREE-2 only N-5,
+  L-2, L-3, L-4.
+- TARGET.md diff: «n the number of vertices of the game» is TARGET.md §1 l. 8's n («n = |V|, m = |E|»); m_E ≤ m; n_E ≤ n. «w : ℕ → ℕ» and
+  [P-WCHτ](w) are a premise of this entry, not a TARGET.md notion. Not a claim of TARGET.md section 1 or §2 (lemmas and inequalities about
+  N5 runs on every game and about a labelled VARIANT N5-LZC; a REDUCTION of returns, W-run lengths, REPEATs, silent re-entries, GXC events,
+  FBO events and Z-flat fallbacks to residual counts and the premise [P-WCHτ], none bounded; no bound on a run, no running-time bound, no
+  algorithm claim). GAPS G-N5-TIME: open.
+
 ## Dead ends (kept; each with the exact obstruction or counterexample and the instance that killed it)
 - DE1 (2026-10-14): arXiv 2511.03752 v1 (van der Heijden), claimed O(n²(n+m)) algorithm. BROKEN: wrong regions on 4-vertex games
   CE1 (l-comp 19b5ce2, experiments/m2/counterexamples/ce1_4v.pg) and cex1 (referee 936d47c, docs/referee/scratch/cex1-*.pg).
