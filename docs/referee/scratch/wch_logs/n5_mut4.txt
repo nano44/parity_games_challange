@@ -1,0 +1,31 @@
+NOTE start file /tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_wch/experiments/red/n3/instances/comp54_n80.start gives forced vertex 11 -> 51; using 11
+NOTE start file /tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_wch/experiments/red/n3/instances/n3cov_lean.start invalid for its game (move not an edge, or missing); given start skipped
+NOTE start file /tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_wch/experiments/red/n3/instances/n3cov_phi.start invalid for its game (move not an edge, or missing); given start skipped
+CL 1813
+DROP 3303
+FBO 211
+FBOS 178
+GAMES 635
+GXC 2222
+LM_chk 190139
+NC 0
+NT 0
+NZ 42
+REP 15
+RET 2656
+RUNS 722
+RW_chk 2612
+SIL 42
+SZ_chk 42
+TIE_chk 260
+TRANS 12087
+TT 44
+ZF 90
+ZFS 39
+ZSmut_V 3
+f 783
+skip_big 84
+VIOLATIONS 3
+EX ('ZSmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_wch/experiments/n5-epoch/instances/lend27_n24.pg', 1)
+EX ('ZSmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_wch/experiments/n5-epoch/instances/lend9_n8.pg', 0)
+EX ('ZSmut', '../../../../../../tmp/claude-0/-home-user-parity-games-challange/58944139-768b-5e2a-9427-0bd17c2bd6fc/scratchpad/wt_wch/experiments/red/n3/instances/run34_n40.pg', 10)
