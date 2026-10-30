@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """L-RED R149 COPY of L-NEW retcause.py (l-new 2311683e, box 100 corrected version), changed only to add one output line «BRCHAIN»: the
-longest chain of consecutive RETURN nodes (parent to child) that each have >= 2 children, in L-NEW's root forest (node (x, q); a return of
+longest chain of consecutive RETURN nodes (parent to child) that each have >= 2 children, and «XDEG»: max over (Even X, EROOT e) of
+RET(X; e) - deg(X) (L-NEW box 101 CASC-EDGE: RET(X; e) <= deg(X)); returns of X counted to any target, in L-NEW's root forest (node (x, q); a return of
 y at k -> k + 1 is the node (y, k), and its parent is (firstev(q0, z), q0)). Run with LNEW_BOX21 pointing at L-NEW's box21. Original docstring:
 L-NEW box 99 (docs/new/N5-QRET-box99.md): the cause of each Even-edge RETURN in a W-run. W-runs as box92/xirun.py.
 A return: Even X re-enters g at k -> k + 1, its last leave of g in F at j -> j + 1 (X held g at j). By RET-XIRISE (P-N5-WRUN) Xi(g) rises
@@ -117,14 +118,14 @@ for a, b in runs:
                     sub, d = causeE(rr[0], w); res = (sub, d + 1)
                 else: res = (('NORISE', x, w, q), 0)
         memoE[(q, z)] = res; return res
-    rootsE = Counter(); kindE = Counter(); depE = Counter(); kids = Counter(); par = {}
+    rootsE = Counter(); kindE = Counter(); depE = Counter(); kids = Counter(); par = {}; xre = Counter()
     for y, z, j, k in rets:
         rr = [q for q in range(j, k) if EV(q)[0][z] != EV(q + 1)[0][z]]
         if not rr: continue
         x = firstev(rr[0], z)
         if x is not None: kids[(x, rr[0])] += 1; par[(y, k)] = (x, rr[0])
         rt, d = causeE(rr[0], z); kindE[rt[0]] += 1; depE[d] += 1
-        rootsE[rt] += 1
+        rootsE[rt] += 1; xre[(y, rt)] += 1
     roots = Counter(); rkind = Counter(); dep = Counter()
     for y, z, j, k in rets:
         rr = [q for q in range(j, k) if EV(q)[0][z] != EV(q + 1)[0][z]]
@@ -163,4 +164,6 @@ for a, b in runs:
         brm[nd] = r; return r
     print(f"  BRCHAIN longest chain of consecutive return nodes with >=2 children {max([brc(nd) for nd in kids] or [0])} "
           f"return nodes with >=2 children {sum(1 for nd, v in kids.items() if v >= 2 and isret(nd))} of {sum(1 for nd in kids if isret(nd))}")
+    xd = sorted(((c - len(set(g.succ[y])), c, len(set(g.succ[y])), y, rt) for (y, rt), c in xre.items()), reverse=True)[:3]
+    print(f"  XDEG max RET(X;e) - deg(X) {xd[0][0] if xd else 'none'} top (diff, RET, deg, X, root) {xd}")
     if os.environ.get("DBG"): print("  DBG", rootsE.most_common(3), kids.most_common(3))

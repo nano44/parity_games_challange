@@ -60,3 +60,24 @@ kills both NARROW and per-(X, root). … topfix_N already has depth 6N − 11 wi
 - casc/instances/narrow_n10: regenerated from new/box52/out/topfix_n10 with clone.py and defstart.py and compared (cmp); retx.py 504
   returns; xeng; Oink.
 - L-NEW's tool is not on claude/l-red, so check.sh does not run retcause_br.py. Its output is kept as data in casc/narrow_out.txt.
+
+## 5. Addendum (Lead 22:42Z): which per-(X, root) form is dead, and CASC-EDGE
+- Lead: «In the report, state exactly which form you killed. Does any instance have RET(X; e) > deg(X), i.e. kill CASC-EDGE itself? That
+  is the decisive question.» Source opened: none beyond the Lead's statement of L-NEW box 101's CASC-EDGE: «RET(X; e) ≤ deg(X), i.e. the
+  returns of Even X to ANY target with root e». l-new 6e725d15 was not opened.
+- The forms killed in R148-R149, exactly:
+  - (K1) «X returns at most once per root»: dead on mkrw K4 m8, Even 66 (deg 2), RET = 2 at root ('FRESH', 4, 38, 9). L-NEW's obs kill
+    is the same.
+  - (K2) «X returns O(1) times per root»: dead on topfix_N, Even 193 at N = 10 (deg 18), RET = 17 at root ('FRESH', 194, 195, 9); Even
+    235 at N = 12 (deg 22), RET = 21.
+  - Neither kills CASC-EDGE. In both, RET(X; e) ≤ deg(X): 2 ≤ 2 and 17 ≤ 18.
+- CASC-EDGE on the corpus: casc/retcause_br.py adds the line XDEG := max over (Even X, EROOT root e) of RET(X; e) − deg(X), counting
+  returns to any target. It was run with L-NEW's 2311683e Even root map over box 50b's corpus (casc/runxd.sh → casc/xd_corpus.txt, 599
+  W-runs with returns, 0 errors).
+  - max XDEG = 0, in 33 W-runs: tight, as L-NEW reports for obs. Distribution: 0: 33, −1: 359, −2: 137, −3: 39, below: 31.
+  - So NO instance has RET(X; e) > deg(X). CASC-EDGE is unrefuted.
+  - The clone instances inherit their base's XDEG (a clone has X's degree and X's returns): topfix_n10 −1, casctf −1, narrow_n10 −1.
+- A hill-climb (casc/xdclimb.py, XDEG objective, n 12 and 14) is running at this addendum's commit. Its result is reported separately.
+- Reading: a CASC-EDGE kill needs X to re-enter ONE target twice inside one root's subtree, i.e. an oscillation p → q → p of X driven by
+  descendants of one fresh entry. topfix's per-root walk visits each successor once, in order. That is exactly the sweep CASC-EDGE
+  allows.
