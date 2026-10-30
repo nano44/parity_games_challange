@@ -1,4 +1,5 @@
 # L-RED notebook (independent adversary lane)
+Successor 31 (session_01V5yGRZfrtk7CRqezo1wAzp, Opus 5.5) woken 2026-10-30 00:09Z; R126-R129; see "Successor 31 HANDOVER, update 2".
 Successor 31 (session_01V5yGRZfrtk7CRqezo1wAzp, Opus 5.5) HANDOVER written 2026-10-29 ~23:50Z (date -u), PARKED; see "Successor 31 HANDOVER".
 Successor 31 (session_01V5yGRZfrtk7CRqezo1wAzp, Opus 5.5) started 2026-10-29 22:19Z (date -u); handover check d6ae7cda; STEP 1 = R123, R124, R125; see "Successor 31".
 Successor 30 (session_01V5yGRZ2y7KsHSMJMvdKBmF, Opus 5.5) HANDOVER written 2026-10-29 ~21:35Z (date -u); see "Successor 30 HANDOVER".
@@ -28,6 +29,19 @@ Successor 15 PARKED ~09:40Z 2026-10-25 after box 38; RESUME POINT for successor 
 context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older notebook: `git show b0884407:notes/L-RED.md`.
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
+
+## Successor 31 HANDOVER, update 2 (2026-10-30 ~01:30Z, date -u; ~410k context; woken from park 00:09Z)
+- DONE since 0393967a (push.sh VERIFY PASS each): 694bcda2 R126 (box-40 premises: LATE + BA <= FC <= boundaries in span <= ENT <= |R|;
+  no kill; cut/cutsl.py = cutsx.py + per-pair counters); caad61ce R127 (mkrw.py: mkr in one W-world, the whole Theta(n^2) run is one W-run;
+  LATE=1 late adopters give R* = K*m; latec.py second counter; pin latew_K8_m32); 25c5ff67 + 0e91e875 + e55592d9 R128 (REP-LIN DEAD:
+  REP = (K-1)(m-2), 570 > 538 at K 20, 874 = 1.33n at K 24; pin latew_K20_m32); f090ce57 + efd79f5a R129 (Odd half: dual bidir
+  O* = 2K(m-1), TB* = 2K(m+1), 1128/1176 at n 294; O* >= n^2 is RUN-QUAD mirrored; span/ostar.py; pin dbidir_K12_m48).
+- IN FLIGHT: nothing.
+- RESUME POINT: every P-N5-CUT premise (B*, REP*, SC*, O*) is <= T, and every known family is quadratic. The open problem is a
+  super-quadratic lambda-run (a third factor): R124 §2/§3, R125 §3 (reused gate never U-stable), R127 §3 (depth adds), R129 §3 (mirror).
+  Untried: R125 §4 (A'), (B) length thresholds, (C) digit-parity worlds; SC* not attacked.
+- Things only I know: worktrees /tmp/claude-0/lsi (l-si, checked out at 7079843d) and /tmp/claude-0/lnew (l-new 78e1fd24); frozen.py and
+  latepair.py take GAME.start beside GAME.pg with --start. mkrw LATE=1: n = 14K + 8m + 2. latec.py REP=1 prints REP.
 
 ## Successor 31 HANDOVER (written 2026-10-29 ~23:50Z, date -u; ~270k context; lane PARKS on the Lead's 23:35Z word)
 - DONE (claude/l-red, push.sh VERIFY PASS each push): d6ae7cda handover check; 11ccc5e4 + 02d84cc1 R123 (RESET-LIN-S DEAD, CARRY-SEG-S
