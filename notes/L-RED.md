@@ -53,6 +53,8 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   /tmp/claude-0/lnew (detached at origin/claude/l-new 246f1687).
 - R138 (Lead 13:06Z) docs/red/R138-rstar-quadratic.md: R*_F = K*m in one W-run on mkrw LATE=1 (box 85 xirise.py; latec agrees), 640 = 1.19n
   at n 538; gate_K64's 64 = K (R84 mkgate). R*_F <= |F|: R*-POLY + FL-POLY is EQUIVALENT to polynomial W-runs. FL target not built.
+- R139 (Lead 13:34Z) docs/red/R139-xich-funnel.md: XICH(obs) = Km + K + 1 at ONE vertex (R120 observer = funnel), 529 = 1.47n at n 360;
+  XICH <= |F| makes XI-CH-POLY equivalent to polynomial W-runs. Tool xich/xichc.py; pin xich/instances/obs_K12_m24.
 - Things only I know: mkdg.py writes names into the .pg; dgstat.py reads them (TOPNAME arg). noup.py is exponential in the number of
   choosers (k 6 in 3 s; k 7 not tried).
 
