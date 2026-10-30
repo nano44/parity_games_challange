@@ -1,0 +1,16 @@
+# Box 23 (d): rstar.py on L-RED's latew family, regenerated with LATE=1 red/span/mkrw.py K m (game sha1 in col 2). K20_m32 run separately (= L-RED pin).
+K4_m16 7224b42dab5c06bfcde029f7a237250239441776 RSTAR it 76 {'n': 186, 'runs': 1, 'viol_freered': 0, 'incl_ne_strict': 0, 'rs': 64, 'ri': 64, 'fl': 0, 'F': 76, 'la': 4, 'sig0': 0}
+K8_m32 3498a23df6a22fc1abb694f9af296d71eb6c1c7b RSTAR it 280 {'n': 370, 'runs': 1, 'viol_freered': 0, 'incl_ne_strict': 0, 'rs': 256, 'ri': 256, 'fl': 0, 'F': 280, 'la': 8, 'sig0': 0}
+K12_m24 865289bc5078811fd06780e12b14632ac20b50f2 RSTAR it 324 {'n': 362, 'runs': 1, 'viol_freered': 0, 'incl_ne_strict': 0, 'rs': 288, 'ri': 288, 'fl': 0, 'F': 324, 'la': 12, 'sig0': 0}
+K16_m28 5cc2d4a52eb27c2674b90ac2a60ea2d96d1ae648 RSTAR it 496 {'n': 450, 'runs': 1, 'viol_freered': 0, 'incl_ne_strict': 0, 'rs': 448, 'ri': 448, 'fl': 0, 'F': 496, 'la': 16, 'sig0': 0}
+K20_m32 063d173c2de77902278cf3fd934c454a53a57e44 RSTAR it 700 {'n': 538, 'runs': 1, 'viol_freered': 0, 'incl_ne_strict': 0, 'rs': 640, 'ri': 640, 'fl': 0, 'F': 700, 'la': 20, 'sig0': 0}
+K24_m40 afaf4a540e6cd68397bdbd87a4a9eeac52fd2ed5 RSTAR it 1032 {'n': 658, 'runs': 1, 'viol_freered': 0, 'incl_ne_strict': 0, 'rs': 960, 'ri': 960, 'fl': 0, 'F': 1032, 'la': 24, 'sig0': 0}
+K28_m48 01808bcbdce2bad8dc9b968570af13774e7bb1dc RSTAR it 1428 {'n': 778, 'runs': 1, 'viol_freered': 0, 'incl_ne_strict': 0, 'rs': 1344, 'ri': 1344, 'fl': 0, 'F': 1428, 'la': 28, 'sig0': 0}
+xirise.py latew_K20_m32: XIRISE n 538 runs 1 {'ret': 2418, 'viol_edge': 0, 'viol_rise': 0, 'viol_fr': 0} maxima {'ret': 20, 'xich': 41, 'wch': 40, 'rstar': 640, 'fl': 0, 'F': 700}
+pin23.py:
+latew_K8_m32 sha1 3498a23df6a22fc1abb694f9af296d71eb6c1c7b n 370 it 280 fb 0 | n5b states equal True (280,0) | regions = oink zlk: True | verify: OK | OK
+   xeng OK | R*_F, FL_F mine (256, 0) xirise (256, 0) OK
+latew_K20_m32 sha1 063d173c2de77902278cf3fd934c454a53a57e44 n 538 it 700 fb 0 | n5b states equal True (700,0) | regions = oink zlk: True | verify: OK | OK
+   xeng OK | R*_F, FL_F mine (640, 0) xirise (640, 0) OK
+PIN ALL OK
+EXIT 0
