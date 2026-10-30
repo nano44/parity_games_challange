@@ -2,6 +2,12 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point (successor 38, Opus 5.5, started 2026-10-30 12:02Z by date -u; handover check: origin head 1169bb3d, trunk merged)
+### Box 90 N5-REL (Lead 15:10Z: prove BIP-REL-1 strict, else obstruction + SB-POLY): docs/new/N5-REL-box90.md
+- PROVED (lane, under (A1) y not its own W-cycle node, (A2) z's tau-play under the arena strategy avoids y) Lemma REL2-WRISE: a second
+  strict release forces a strict W(z)-rise after y leaves z (ARENA-MAX + W-succ monotonicity + Fact EXT).
+- BIP-REL-1 NOT proved. Obstruction: tau-branch and rho-branch of a deviation climb independently under frozen rho. Random search n <= 12: 0.
+- DEAD SB-LIN: pftheta34_n32 SB_F 34 > 32; latew 513 > 482 (quadratic family). Per-Odd-vertex flips <= 62 (gate_K64), mostly returns.
+- READING: non-tie sigmabar flips <= successors' Xi-changes; SB-POLY is the Odd-side face of XI-CH-POLY.
 ### Box 89 N5-BIP (Lead 14:34Z: BIP-POLY under a frozen sigmabar): docs/new/N5-BIP-box89.md
 - DATA: Even releases lifted by plain climbs below the first deviation (obs/fx all after; corpus 386 after / 199 before); depth <= 2;
   Xi(z) rises once between block and release.
@@ -1796,6 +1802,8 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
   switchbestexp_N depth 3N+3 (N 2..8), counter_symsi_8 depth 42. CONJECTURE FLIP-c: FALSE, fx_K_m (BLK 2) FLIP = K+1. Neither kills XI-CH-POLY.
 - (succ. 38, box 89) Non-strict BIP-REL-1 (<= 1 release per edge per frozen stretch, blocks counted anywhere in F): FALSE on
   si/root/instances/ueonce_n27 (edge (10, 23) twice) and new/box48/instances/long121_n40 (S3 start); blocks inherited from an earlier sigmabar.
+- (succ. 38, box 90) CONJECTURE SB-LIN (sigmabar changes per W-run <= n): FALSE on red/so/instances/pftheta34_n32.pg (S3 start; 34 > 32)
+  and L-RED latew_K16_m32 (513 > 482).
 ## Things only I know (earlier successors)
 - (succ. 8) Pitfalls in box 21:
   - `pkill -f "climb_fix.py ..."` killed my own shell (exit 144). Kill by `ps -eo pid,args | awk '$2=="python3" && $3==...'`.

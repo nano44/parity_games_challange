@@ -230,6 +230,78 @@ G-N5-TIME stays OPEN. Labels: PROVED (lane) / CONJECTURE / DATA / DEAD / READING
 - Cross-check, L-RED R141 (l-red 505ac980, commit subject only, not opened in detail): a search at n 8-16 finds W-constant intervals ≤ 3,
   and the static-order tie-break lemma is DEAD (u23sw64_n32, 26 / 64 upward switches). Both are independent of §7 and agree with it. No kill.
 
+## 9. Lead 14:46Z queue item: deep path-set changes per W-change (DATA, and a remark on the form of the question)
+- Per transition, Ξ(v) changes at most once for each v. So the depth ≥ k changes at ONE W-changing transition are trivially ≤ n.
+  - deepint.py PERBD4: max 153 (tcL_N12, n 492); largest ratio 0.82 n (counter_symsi_8). Outputs deep2_*.txt.
+  - The non-trivial form is a CHARGE: per (F, v), are v's deep changes ≤ poly(n)·X for a count X polynomially smaller than |F|? R139
+    makes «X = |F|» an equivalence with polynomial W-runs.
+  - Candidates for X: WCH_F(v), or the W-changes on v's Ξ-path. QUEUE, next box; not measured here.
+
+## 10. Lead 14:58Z box: (1) Claim RG, (2) CN branch, (3) the exchange argument. [P-INT] ⇐ XI-CH-POLY inside intervals
+Source read: L-LIT T54 (l-lit 96cfda95, docs/lit/T54-stalling.md §4; T54-lexarena.py). Lemmas IDX-MONO and LEX-BFS / LEX-MONO there are
+PROVED (L-LIT) modulo Claim RG, quoted from §4: «In c's round, the successors y of x that remain after the deletions of (iii) and satisfy
+dist(y) = dist(x) − 1 are exactly the W-tight arena edges of x».
+
+### 10.1 Claim RG (PROVED, lane; under the standing SPEC premise of RESULTS R57)
+- Setting. A W-flat transition k → k + 1 of a W-run. S4a evaluates the dual of H_k with dual-Even fixed to τ (si.py Engine.evaluate),
+  so the round of cycle node c is a one-player problem for (original) Even on the alive vertices R reaching c.
+  - The deletions (si.py l. 133-149) process each u ∈ R with rank(u) > rank(c), in decreasing rank.
+    - u bad for original Even (dual par 0): M := reach(c avoiding u); every q ∉ M gets bit u; u's and every M-vertex's edges are
+      restricted to M.
+    - u good for original Even: M := reach(u avoiding c); every q ∈ M gets bit u; the edges of M ∖ {u} are restricted to M.
+  - By R57's premise the computed values (c, path[x], dist[x]) are W_{k+1} = W.
+- (A) Every remaining edge (x, y), x ≠ c, has path[x] = path[y] ∪ ({x} if rank(x) > rank(c)).
+  - Invariant per processed u: membership of bit u agrees on every remaining edge, except edges leaving u itself.
+  - Bad u: an edge x → y with y ∈ M and x ∉ M ∪ {u} would put x in M. Good u: an edge x → y with y ∈ M and x ∉ M, x ≠ c would put x
+    in M. So remaining edges cross M only out of u.
+  - Every processed u carries its own bit: bad u ∉ M gets it, good u ∈ M gets it. Hence the exception at u is exactly «{x} if rank(x) >
+    rank(c)».
+  - Later deletions only remove edges.
+- (B) Every W-tight arena edge (x, y) survives.
+  - y has cycle node c, so y ∈ R is alive in c's round.
+  - A deleted edge is non-tight. Bad u, deleted q → y with q ∈ M, y ∉ M: y has bit u and q lacks it. Bad u, deleted u → y with y ∉ M:
+    every path from y to c passes through u, so ℓ(y) > ℓ(u) and the edge is not length-tight. Good u, deleted q → y with q ∈ M ∖ {u},
+    y ∉ M: q has bit u and y lacks it.
+- (A) with dist(y) = dist(x) − 1 is exactly x ⊕ W(y) = W(x), i.e. tight; (B) is the converse. □
+- So T54's IDX-MONO and LEX-BFS / LEX-MONO hold with no open premise beyond R57 (lane level; they are L-LIT's lemmas, and RG is mine).
+
+### 10.2 CN branch (READING; CN-POLY OPEN)
+- At its own W-cycle node c, S1 (v) is a stack DFS over the dual's graph: alive vertices of rank < rank(c), successor lists in increasing
+  index, LIFO (si.py l. 177-189).
+- It returns c's child on the first-found path back to c. This is not "largest index": a vertex already pushed as a sibling is not
+  re-pushed inside another child's subtree. So the winner depends on which children were pushed, i.e. on the whole arena. That explains
+  T54's DOWN 3 / UP 8.
+- RETURN-CHARGE below covers CN returns too if c is not its own Ξ-cycle node; RCX 0 in the data.
+
+### 10.3 Lemma RETURN-CHARGE (PROVED, lane): the exchange argument
+- Statement. In a W-run, let Even v leave d at k1 (σ_{k1}(v) = d ≠ σ_{k1+1}(v) = e1) and return to d at k2 > k1 (σ_{k2}(v) = e2 ≠ d =
+  σ_{k2+1}(v)). Assume λ_Ξ is constant on [k1, k2 + 1] and v is not its own Ξ-cycle node there. Then Ξ_{k2}(d) ▷ Ξ_{k1}(d).
+- Proof.
+  - S2 / the arena: e1 ∈ Iσ_{k1}(v), so Ξ_{k1}(e1) ▷ Ξ_{k1}(d). Likewise d ∈ Iσ_{k2}(v), so Ξ_{k2}(d) ▷ Ξ_{k2}(e2).
+  - Ξ(v) = v ⊕ Ξ(σ(v)) at every state of [k1, k2 + 1] (v not its own Ξ-cycle node). With λ_Ξ fixed, v ⊕ · adds the same bit and length
+    to values of one cycle node, so it preserves and reflects ⊴.
+  - Ξ is pointwise non-decreasing (R15 (a), (d)). So Ξ_{k2}(e2) ⊵ Ξ_{k1+1}(e1) ⊵ Ξ_{k1}(e1), by reflection through v ⊕ ·, using
+    Ξ_{k2}(v) ⊵ Ξ_{k1+1}(v).
+  - Chain: Ξ_{k2}(d) ▷ Ξ_{k2}(e2) ⊵ Ξ_{k1}(e1) ▷ Ξ_{k1}(d). □
+- Corollary INT-XCH (PROVED, lane). For a W-constant interval I, let XCH_I(d) be the transitions of I at which Ξ(d) changes, and RX_I the
+  returns outside the hypothesis.
+  - The windows (k1, k2] of successive returns of one v to one d are disjoint. A switch of v that is not a return adopts an edge v has
+    not held in I (≤ |OPT(v)| − 1 of them).
+  - Hence SW_I(v) ≤ |OPT(v)| − 1 + Σ_{d ∈ OPT(v)} XCH_I(d) + RX_I(v), and
+    |I| ≤ Σ_v SW_I(v) ≤ m_E + Σ_d d_E(d)·XCH_I(d) + RX_I.
+  - So [P-INT] ⇐ «XI-CH-POLY inside W-constant intervals» ∧ RX polynomial. With FL-INT and R139: FL-POLY ⇐ R*-POLY ∧ XI-CH-POLY ∧ RX-POLY.
+    FL stops being an independent residual. It is the in-interval case of the per-vertex Ξ-change count that L-LIT T52 and L-NEW
+    already target.
+- DATA (layer.py, 21 runs): 78 returns, RCV 0 (no failure of the lemma), RX 0 (all within the hypothesis). XCI, the most Ξ-changes of
+  one vertex in one interval, is 8 (u23sw64_n32).
+- (3) answered (READING). T54's width-2 counter, realised in N5, needs at every carry at layer j a strict Ξ-rise of the returned-to
+  layer-(j − 1) vertex (RETURN-CHARGE).
+  - So it needs exponentially many Ξ-changes of single vertices inside ONE interval: exactly a violation of in-interval XI-CH-POLY.
+  - The Ξ-offer condition the abstract model drops is S2's «the offered edge is Ξ-better than the current one», at both the leave and
+    the return.
+  - In N5 a switch of x from p to q needs BOTH key(q) < key(p) (LEX-BFS) AND Ξ(q) ▷ Ξ(p) (S2). The adversarial model keeps only the
+    first.
+
 ## DONE / FINDINGS / NEEDS
 - DONE: experiments/si/gate/ (gate.py, const.py, agg.py, run.sh, inst/ copies, outputs); si/check.sh «box 51b»; this note.
 - FINDINGS:
@@ -253,6 +325,12 @@ G-N5-TIME stays OPEN. Labels: PROVED (lane) / CONJECTURE / DATA / DEAD / READING
   11. CONJECTURE LAYER-RESET (§8): a return at layer d needs a switch at layer d − 1 in between. DATA RET 78, UNX 0; the control bites.
       READING: it gives only a counter bound Π_d(1 + m_d). INT-LIN needs the Ξ-improvement condition to forbid carries. That is the
       L-RED R141 target.
+  12. PROVED (lane, §10.1): Claim RG (T54's premise for IDX-MONO / LEX-BFS), under R57's premise.
+  13. PROVED (lane, §10.3): Lemma RETURN-CHARGE. A return of v to d needs a strict Ξ-rise of d in between. Corollary INT-XCH:
+      |I| ≤ m_E + Σ_d d_E(d)·XCH_I(d) + RX_I, so [P-INT] ⇐ in-interval XI-CH-POLY. FL-POLY ⇐ R*-POLY ∧ XI-CH-POLY ∧ RX-POLY. DATA: RCV 0,
+      RX 0 over 78 returns.
+  14. READING (§10.3): T54's counter in N5 needs exponential in-interval Ξ-changes. The dropped condition is S2's Ξ-offer. CN-POLY OPEN
+      (§10.2).
 - NEEDS: none from the owner. Lead:
   - L-LIT: open a source on network-simplex stalling and anti-stalling rules (Cunningham), and on SI with arbitrary improving-subset
     rules on games with fixed cycle nodes.
