@@ -1,0 +1,719 @@
+GAME new/box59/out/fc_3.pg FLIPEV fc_3.pg n 85 iterations 41 candidates 4 VIOL 0 MINHC 2 witness (k, o, old, new) (18, 71, 66, 73) VIOL2 0
+GAME new/box59/out/fc_4.pg FLIPEV fc_4.pg n 110 iterations 47 candidates 6 VIOL 0 MINHC 3 witness (k, o, old, new) (18, 85, 80, 87) VIOL2 0
+GAME new/box59/out/fc_5.pg FLIPEV fc_5.pg n 135 iterations 55 candidates 8 VIOL 0 MINHC 4 witness (k, o, old, new) (20, 99, 94, 101) VIOL2 0
+GAME new/box59/out/fc_6.pg FLIPEV fc_6.pg n 160 iterations 62 candidates 10 VIOL 0 MINHC 5 witness (k, o, old, new) (21, 113, 108, 115) VIOL2 0
+GAME new/box59/out/fcobsR_3.pg FLIPEV fcobsR_3.pg n 90 iterations 41 candidates 21 VIOL 0 MINHC 1 witness (k, o, old, new) (2, 87, 85, 86) VIOL2 0
+GAME new/box59/out/fc_7.pg FLIPEV fc_7.pg n 185 iterations 68 candidates 12 VIOL 0 MINHC 6 witness (k, o, old, new) (21, 127, 122, 129) VIOL2 0
+GAME new/box59/out/fcobsR_4.pg FLIPEV fcobsR_4.pg n 115 iterations 47 candidates 25 VIOL 0 MINHC 1 witness (k, o, old, new) (2, 112, 110, 111) VIOL2 0
+GAME new/box59/out/fcobs_3.pg FLIPEV fcobs_3.pg n 88 iterations 41 candidates 21 VIOL 0 MINHC 1 witness (k, o, old, new) (2, 87, 85, 86) VIOL2 0
+GAME n5-epoch/instances/ffin12_n32.pg FLIPEV ffin12_n32.pg n 32 iterations 16 candidates 2 VIOL 0 MINHC 2 witness (k, o, old, new) (5, 18, 25, 16) VIOL2 0
+GAME n5-epoch/instances/ffin4_n24.pg FLIPEV ffin4_n24.pg n 24 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-epoch/instances/ffin5_n32.pg FLIPEV ffin5_n32.pg n 32 iterations 10 candidates 1 VIOL 0 MINHC 2 witness (k, o, old, new) (2, 0, 16, 11) VIOL2 0
+GAME n5-epoch/instances/gci2_n12.pg FLIPEV gci2_n12.pg n 12 iterations 7 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-epoch/instances/immfail_n14.pg FLIPEV immfail_n14.pg n 14 iterations 6 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-epoch/instances/immp_cex_n11.pg FLIPEV immp_cex_n11.pg n 11 iterations 1 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-epoch/instances/gci3_n24.pg FLIPEV gci3_n24.pg n 24 iterations 16 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-epoch/instances/lcount_n23.pg FLIPEV lcount_n23.pg n 23 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-epoch/instances/lend13_n16.pg FLIPEV lend13_n16.pg n 16 iterations 11 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-epoch/instances/lend27_n24.pg FLIPEV lend27_n24.pg n 24 iterations 7 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-epoch/instances/lend107_n32.pg FLIPEV lend107_n32.pg n 32 iterations 26 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-epoch/instances/lend15_n48.pg FLIPEV lend15_n48.pg n 48 iterations 11 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-epoch/instances/lend39f_n32.pg FLIPEV lend39f_n32.pg n 32 iterations 13 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-epoch/instances/lend47_n32.pg FLIPEV lend47_n32.pg n 32 iterations 22 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-epoch/instances/lend55_n32.pg FLIPEV lend55_n32.pg n 32 iterations 18 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-epoch/instances/lend9_n8.pg FLIPEV lend9_n8.pg n 8 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-epoch/instances/lend82_n32.pg FLIPEV lend82_n32.pg n 32 iterations 24 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-epoch/instances/lend72_n48.pg FLIPEV lend72_n48.pg n 48 iterations 13 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-epoch/instances/nep13_n24.pg FLIPEV nep13_n24.pg n 24 iterations 12 candidates 5 VIOL 0 MINHC 1 witness (k, o, old, new) (3, 8, 16, 20) VIOL2 0
+GAME new/box59/out/fcobs_4.pg FLIPEV fcobs_4.pg n 113 iterations 47 candidates 25 VIOL 0 MINHC 1 witness (k, o, old, new) (2, 112, 110, 111) VIOL2 0
+GAME n5-epoch/instances/nep56_n32.pg FLIPEV nep56_n32.pg n 32 iterations 18 candidates 9 VIOL 0 MINHC 1 witness (k, o, old, new) (6, 0, 17, 26) VIOL2 0
+GAME n5-epoch/instances/nconf61_n48.pg FLIPEV nconf61_n48.pg n 48 iterations 47 candidates 47 VIOL 0 MINHC 1 witness (k, o, old, new) (7, 6, 38, 25) VIOL2 0
+GAME n5-epoch/instances/nep76_n40.pg FLIPEV nep76_n40.pg n 40 iterations 18 candidates 18 VIOL 0 MINHC 1 witness (k, o, old, new) (7, 1, 14, 0) VIOL2 0
+GAME n5-epoch/instances/nep22f_n64.pg FLIPEV nep22f_n64.pg n 64 iterations 51 candidates 12 VIOL 0 MINHC 1 witness (k, o, old, new) (12, 0, 22, 45) VIOL2 0
+GAME n5-epoch/instances/nep94_n48.pg FLIPEV nep94_n48.pg n 48 iterations 18 candidates 22 VIOL 0 MINHC 2 witness (k, o, old, new) (4, 0, 13, 7) VIOL2 0
+GAME n5-epoch/instances/ret12_n40.pg FLIPEV ret12_n40.pg n 40 iterations 13 candidates 7 VIOL 0 MINHC 1 witness (k, o, old, new) (8, 0, 38, 22) VIOL2 0
+GAME n5-exhaustive/instances/b4_cyc6_0.pg FLIPEV b4_cyc6_0.pg n 11 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-exhaustive/instances/b4_cyc6_1.pg FLIPEV b4_cyc6_1.pg n 12 iterations 4 candidates 1 VIOL 0 MINHC 1 witness (k, o, old, new) (0, 1, 2, 6) VIOL2 0
+GAME n5-exhaustive/instances/b4_n4all_cyc3_0.pg FLIPEV b4_n4all_cyc3_0.pg n 4 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-exhaustive/instances/b4_n5_other_0.pg FLIPEV b4_n5_other_0.pg n 5 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-epoch/instances/nep92_n40.pg FLIPEV nep92_n40.pg n 40 iterations 13 candidates 1 VIOL 0 MINHC 1 witness (k, o, old, new) (6, 17, 33, 0) VIOL2 0
+GAME n5-exhaustive/instances/b4_nohlen5_0.pg FLIPEV b4_nohlen5_0.pg n 11 iterations 1 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-epoch/instances/ret14_n64.pg FLIPEV ret14_n64.pg n 64 iterations 14 candidates 4 VIOL 0 MINHC 1 witness (k, o, old, new) (5, 1, 32, 0) VIOL2 0
+GAME n5-exhaustive/instances/b4_theta_n7.pg FLIPEV b4_theta_n7.pg n 7 iterations 1 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-epoch/instances/ret14_n48.pg FLIPEV ret14_n48.pg n 48 iterations 17 candidates 12 VIOL 0 MINHC 2 witness (k, o, old, new) (10, 0, 27, 9) VIOL2 0
+GAME n5-exhaustive/instances/b5_n5_cyc4_0.pg FLIPEV b5_n5_cyc4_0.pg n 5 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-exhaustive/instances/b5_o11.pg FLIPEV b5_o11.pg n 10 iterations 12 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-exhaustive/instances/b5_os_n12.pg FLIPEV b5_os_n12.pg n 12 iterations 18 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-exhaustive/instances/b5_os_n14.pg FLIPEV b5_os_n14.pg n 14 iterations 22 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-exhaustive/instances/b5_os_n16.pg FLIPEV b5_os_n16.pg n 16 iterations 26 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-exhaustive/instances/b5_os_n20.pg FLIPEV b5_os_n20.pg n 20 iterations 34 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-exhaustive/instances/b5_os_n24.pg FLIPEV b5_os_n24.pg n 24 iterations 53 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-exhaustive/instances/b5_os_n28.pg FLIPEV b5_os_n28.pg n 28 iterations 65 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-exhaustive/instances/b5_os_n32.pg FLIPEV b5_os_n32.pg n 32 iterations 71 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-exhaustive/instances/b6_xl2_n32.pg FLIPEV b6_xl2_n32.pg n 32 iterations 87 candidates 11 VIOL 0 MINHC 1 witness (k, o, old, new) (15, 0, 21, 2) VIOL2 0
+GAME n5-exhaustive/instances/b5_os_n40.pg FLIPEV b5_os_n40.pg n 40 iterations 81 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-exhaustive/instances/b6_xl_n32.pg FLIPEV b6_xl_n32.pg n 32 iterations 85 candidates 12 VIOL 0 MINHC 1 witness (k, o, old, new) (15, 0, 21, 2) VIOL2 0
+GAME n5-exhaustive/instances/b6_xs_n24.pg FLIPEV b6_xs_n24.pg n 24 iterations 21 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-exhaustive/instances/b6_xs_n32.pg FLIPEV b6_xs_n32.pg n 32 iterations 29 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-exhaustive/instances/b6_xl_n40.pg FLIPEV b6_xl_n40.pg n 40 iterations 89 candidates 14 VIOL 0 MINHC 1 witness (k, o, old, new) (2, 0, 2, 21) VIOL2 0
+GAME n5-exhaustive/instances/b6_xs_n40.pg FLIPEV b6_xs_n40.pg n 40 iterations 36 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/fc_8.pg FLIPEV fc_8.pg n 210 iterations 77 candidates 14 VIOL 0 MINHC 7 witness (k, o, old, new) (24, 141, 136, 143) VIOL2 0
+GAME n5-exhaustive/instances/b6_xw_n32.pg FLIPEV b6_xw_n32.pg n 32 iterations 79 candidates 11 VIOL 0 MINHC 1 witness (k, o, old, new) (14, 0, 21, 2) VIOL2 0
+GAME n5-exhaustive/instances/b6_xs_n48.pg FLIPEV b6_xs_n48.pg n 48 iterations 37 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-exhaustive/instances/canonA_0.pg FLIPEV canonA_0.pg n 15 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-exhaustive/instances/b6_xl_n48.pg FLIPEV b6_xl_n48.pg n 48 iterations 97 candidates 13 VIOL 0 MINHC 1 witness (k, o, old, new) (15, 0, 21, 2) VIOL2 0
+GAME n5-exhaustive/instances/canonA_1.pg FLIPEV canonA_1.pg n 15 iterations 4 candidates 1 VIOL 0 MINHC 1 witness (k, o, old, new) (3, 13, 8, 14) VIOL2 0
+GAME n5-exhaustive/instances/b6_xw_n40.pg FLIPEV b6_xw_n40.pg n 40 iterations 80 candidates 11 VIOL 0 MINHC 1 witness (k, o, old, new) (14, 0, 21, 2) VIOL2 0
+GAME n5-exhaustive/instances/frz1_n24.pg FLIPEV frz1_n24.pg n 24 iterations 31 candidates 1 VIOL 0 MINHC 1 witness (k, o, old, new) (22, 12, 18, 19) VIOL2 0
+GAME n5-exhaustive/instances/frz2_n24.pg FLIPEV frz2_n24.pg n 24 iterations 25 candidates 6 VIOL 0 MINHC 1 witness (k, o, old, new) (3, 4, 22, 8) VIOL2 0
+GAME n5-exhaustive/instances/n3all_maxph_0.pg FLIPEV n3all_maxph_0.pg n 3 iterations 0 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-exhaustive/instances/n3all_maxph_1.pg FLIPEV n3all_maxph_1.pg n 3 iterations 0 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-exhaustive/instances/frz3_n24.pg FLIPEV frz3_n24.pg n 24 iterations 26 candidates 4 VIOL 0 MINHC 1 witness (k, o, old, new) (15, 23, 17, 6) VIOL2 0
+GAME n5-exhaustive/instances/n3all_maxph_2.pg FLIPEV n3all_maxph_2.pg n 3 iterations 0 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-exhaustive/instances/n4_maxph_1.pg FLIPEV n4_maxph_1.pg n 4 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-exhaustive/instances/b6_xw_n48.pg FLIPEV b6_xw_n48.pg n 48 iterations 85 candidates 11 VIOL 0 MINHC 1 witness (k, o, old, new) (16, 0, 21, 2) VIOL2 0
+GAME n5-exhaustive/instances/n4_thch_0.pg FLIPEV n4_thch_0.pg n 4 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-exhaustive/instances/n4_maxph_0.pg FLIPEV n4_maxph_0.pg n 4 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-exhaustive/instances/n4all_maxph_0.pg FLIPEV n4all_maxph_0.pg n 4 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-exhaustive/instances/n4all_tgbad_0.pg FLIPEV n4all_tgbad_0.pg n 4 iterations 1 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-exhaustive/instances/n4all_maxph_1.pg FLIPEV n4all_maxph_1.pg n 4 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-exhaustive/instances/n4all_thch_0.pg FLIPEV n4all_thch_0.pg n 4 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-exhaustive/instances/n5s_maxph_0.pg FLIPEV n5s_maxph_0.pg n 5 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-exhaustive/instances/nh_n8.pg FLIPEV nh_n8.pg n 8 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-exhaustive/instances/thetaA_canon_n8.pg FLIPEV thetaA_canon_n8.pg n 8 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-exhaustive/instances/thetaA_n17.pg FLIPEV thetaA_n17.pg n 17 iterations 1 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-exhaustive/instances/thetaA_n6.pg FLIPEV thetaA_n6.pg n 6 iterations 1 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-exhaustive/instances/thetaA_canon_n12.pg FLIPEV thetaA_canon_n12.pg n 12 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-exhaustive/instances/thetaA_n9.pg FLIPEV thetaA_n9.pg n 9 iterations 1 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-exhaustive/instances/thetaA_n7.pg FLIPEV thetaA_n7.pg n 7 iterations 1 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-exhaustive/instances/wk1_n32.pg FLIPEV wk1_n32.pg n 32 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME n5-exhaustive/instances/wk2_n32.pg FLIPEV wk2_n32.pg n 32 iterations 7 candidates 1 VIOL 0 MINHC 2 witness (k, o, old, new) (6, 27, 22, 16) VIOL2 0
+GAME n5-exhaustive/instances/b6_xw_n56.pg FLIPEV b6_xw_n56.pg n 56 iterations 85 candidates 11 VIOL 0 MINHC 1 witness (k, o, old, new) (15, 0, 21, 2) VIOL2 0
+GAME new/box48/instances/long121_n40.pg FLIPEV long121_n40.pg n 40 iterations 23 candidates 6 VIOL 0 MINHC 1 witness (k, o, old, new) (3, 1, 17, 23) VIOL2 0
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.pg FLIPEV best_qpc_nep76_n40_s63.pg n 64 iterations 9 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/carry/instances/absmono_viol_n44.pg FLIPEV absmono_viol_n44.pg n 44 iterations 7 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/carry/instances/carry3_2_2.pg FLIPEV carry3_2_2.pg n 47 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/carry/instances/cm_mdrop_both_n28.pg FLIPEV cm_mdrop_both_n28.pg n 28 iterations 10 candidates 5 VIOL 0 MINHC 2 witness (k, o, old, new) (3, 2, 11, 17) VIOL2 0
+GAME red/carry/instances/cm_mdrop_oink_n28.pg FLIPEV cm_mdrop_oink_n28.pg n 28 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.pg FLIPEV best_qpc_nep90_n40_s61.pg n 64 iterations 23 candidates 17 VIOL 0 MINHC 1 witness (k, o, old, new) (20, 0, 26, 5) VIOL2 0
+GAME red/carry/instances/ctx11_n40.pg FLIPEV ctx11_n40.pg n 40 iterations 9 candidates 1 VIOL 0 MINHC 1 witness (k, o, old, new) (7, 9, 5, 12) VIOL2 0
+GAME red/carry/instances/ctx6_n20.pg FLIPEV ctx6_n20.pg n 20 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box48/out/qpcclimb/scale/snap_n80_s62.pg FLIPEV snap_n80_s62.pg n 80 iterations 20 candidates 35 VIOL 0 MINHC 2 witness (k, o, old, new) (11, 0, 22, 31) VIOL2 0
+GAME red/carry/instances/ctx12_n40.pg FLIPEV ctx12_n40.pg n 40 iterations 8 candidates 3 VIOL 0 MINHC 3 witness (k, o, old, new) (6, 3, 14, 15) VIOL2 0
+GAME red/carry/instances/ctx7_n30.pg FLIPEV ctx7_n30.pg n 30 iterations 11 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/carry/instances/f1_twodef_n48.pg FLIPEV f1_twodef_n48.pg n 48 iterations 6 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.pg FLIPEV best_qpc_nep90_n40_s62.pg n 80 iterations 20 candidates 35 VIOL 0 MINHC 2 witness (k, o, old, new) (11, 0, 22, 31) VIOL2 0
+GAME red/carry/instances/ctx13_n40.pg FLIPEV ctx13_n40.pg n 40 iterations 17 candidates 3 VIOL 0 MINHC 1 witness (k, o, old, new) (10, 14, 20, 26) VIOL2 0
+GAME red/carry/instances/ctx6_n56.pg FLIPEV ctx6_n56.pg n 56 iterations 12 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/carry/instances/f1_twofall_n48.pg FLIPEV f1_twofall_n48.pg n 48 iterations 6 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/carry/instances/fallv_viol_n28.pg FLIPEV fallv_viol_n28.pg n 28 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/carry/instances/firedlong667_n20.pg FLIPEV firedlong667_n20.pg n 20 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/carry/instances/fired10_n20.pg FLIPEV fired10_n20.pg n 20 iterations 6 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/carry/instances/firedlong667_n43.pg FLIPEV firedlong667_n43.pg n 43 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/carry/instances/gapbW_dup_n20.pg FLIPEV gapbW_dup_n20.pg n 20 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/carry/instances/fall3_n76.pg FLIPEV fall3_n76.pg n 76 iterations 8 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/carry/instances/gapb_dup_n20.pg FLIPEV gapb_dup_n20.pg n 20 iterations 8 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/carry/instances/firedstep13_n76.pg FLIPEV firedstep13_n76.pg n 76 iterations 8 candidates 3 VIOL 0 MINHC 1 witness (k, o, old, new) (6, 46, 45, 71) VIOL2 0
+GAME red/carry/instances/h4_compound2x2_n44.pg FLIPEV h4_compound2x2_n44.pg n 44 iterations 10 candidates 1 VIOL 0 MINHC 1 witness (k, o, old, new) (8, 10, 25, 0) VIOL2 0
+GAME red/carry/instances/h4_compound_n44.pg FLIPEV h4_compound_n44.pg n 44 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/carry/instances/h4_def2ctx_n20.pg FLIPEV h4_def2ctx_n20.pg n 20 iterations 6 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/carry/instances/h4_def7_n28.pg FLIPEV h4_def7_n28.pg n 28 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/carry/instances/h4_disjoint_n20.pg FLIPEV h4_disjoint_n20.pg n 20 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/carry/instances/h4_notweaker_n20.pg FLIPEV h4_notweaker_n20.pg n 20 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/carry/instances/kfirst_viol_n13.pg FLIPEV kfirst_viol_n13.pg n 13 iterations 0 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/carry/instances/fall4_n116.pg FLIPEV fall4_n116.pg n 116 iterations 6 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/carry/instances/kin_viol_n29.pg FLIPEV kin_viol_n29.pg n 29 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/carry/instances/lemmaS_Mdrop_n20.pg FLIPEV lemmaS_Mdrop_n20.pg n 20 iterations 6 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/carry/instances/lalg_dtl_mviol_n20.pg FLIPEV lalg_dtl_mviol_n20.pg n 20 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/carry/instances/meet_viol_n17.pg FLIPEV meet_viol_n17.pg n 17 iterations 0 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/carry/instances/lemmaS_viol_n20.pg FLIPEV lemmaS_viol_n20.pg n 20 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/carry/instances/nosig_2_3.pg FLIPEV nosig_2_3.pg n 24 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/carry/instances/lex_viol_inj_n28.pg FLIPEV lex_viol_inj_n28.pg n 28 iterations 6 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/carry/instances/lex_viol_tie_n28.pg FLIPEV lex_viol_tie_n28.pg n 28 iterations 7 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/carry/instances/pk_viol_n20.pg FLIPEV pk_viol_n20.pg n 20 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/carry/instances/phi_flat_alive_n32.pg FLIPEV phi_flat_alive_n32.pg n 32 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/carry/instances/meet_viol_n29.pg FLIPEV meet_viol_n29.pg n 29 iterations 11 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/carry/instances/replay4_n32.pg FLIPEV replay4_n32.pg n 32 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/carry/instances/spp19_stable_n30.pg FLIPEV spp19_stable_n30.pg n 30 iterations 7 candidates 6 VIOL 0 MINHC 4 witness (k, o, old, new) (5, 12, 7, 28) VIOL2 0
+GAME red/carry/instances/spp22_oink_n40.pg FLIPEV spp22_oink_n40.pg n 40 iterations 8 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/carry/instances/spp19_oink_n30.pg FLIPEV spp19_oink_n30.pg n 30 iterations 10 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/carry/instances/spp25_oink_n40.pg FLIPEV spp25_oink_n40.pg n 40 iterations 10 candidates 1 VIOL 0 MINHC 1 witness (k, o, old, new) (8, 9, 5, 12) VIOL2 0
+GAME red/carry/instances/stealonce_both_n45.pg FLIPEV stealonce_both_n45.pg n 45 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/carry/instances/tstep_near_n20.pg FLIPEV tstep_near_n20.pg n 20 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/ctxp/instances/deep1_n13.pg FLIPEV deep1_n13.pg n 13 iterations 1 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/carry/instances/stealonce_core_n76.pg FLIPEV stealonce_core_n76.pg n 76 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/ctxp/instances/deep1_n21.pg FLIPEV deep1_n21.pg n 21 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/ctxp/instances/margin1_mc5.pg FLIPEV margin1_mc5.pg n 50 iterations 12 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/ctxp/instances/margin1_n20.pg FLIPEV margin1_n20.pg n 20 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/carry/instances/stealer_viol_n76.pg FLIPEV stealer_viol_n76.pg n 76 iterations 12 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/ctxp/instances/margin1_mc1.pg FLIPEV margin1_mc1.pg n 80 iterations 10 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/dtl/instances/lalg_dtl_pertop31_n18.pg FLIPEV lalg_dtl_pertop31_n18.pg n 18 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/fbr/instances/bghm_k1_gap6_A.pg FLIPEV bghm_k1_gap6_A.pg n 21 iterations 1 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/fbr/instances/bghm_k3_gap4_A.pg FLIPEV bghm_k3_gap4_A.pg n 45 iterations 1 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/dtl/instances/lalg_dtl_restart8_n20.pg FLIPEV lalg_dtl_restart8_n20.pg n 20 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/fbr/instances/lev74_n40.pg FLIPEV lev74_n40.pg n 40 iterations 18 candidates 4 VIOL 0 MINHC 1 witness (k, o, old, new) (12, 0, 13, 2) VIOL2 0
+GAME red/carry/instances/stealonce_viol_n76.pg FLIPEV stealonce_viol_n76.pg n 76 iterations 12 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/fbr/instances/fr39_q4_n48.pg FLIPEV fr39_q4_n48.pg n 48 iterations 36 candidates 2 VIOL 0 MINHC 1 witness (k, o, old, new) (5, 20, 38, 19) VIOL2 0
+GAME red/fbr/instances/rho144_n32.pg FLIPEV rho144_n32.pg n 32 iterations 9 candidates 2 VIOL 0 MINHC 1 witness (k, o, old, new) (4, 23, 22, 19) VIOL2 0
+GAME red/fbr/instances/rho3_253_n32.pg FLIPEV rho3_253_n32.pg n 32 iterations 11 candidates 5 VIOL 0 MINHC 2 witness (k, o, old, new) (4, 18, 5, 17) VIOL2 0
+GAME red/fbr/instances/rho84_n16.pg FLIPEV rho84_n16.pg n 16 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/fbr/instances/nep80_n40.pg FLIPEV nep80_n40.pg n 40 iterations 22 candidates 6 VIOL 0 MINHC 1 witness (k, o, old, new) (18, 0, 2, 26) VIOL2 0
+GAME red/fbr/instances/sat4_n20.pg FLIPEV sat4_n20.pg n 20 iterations 6 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/fbr/instances/sat68_n20.pg FLIPEV sat68_n20.pg n 20 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/fbr/instances/rho666_n48.pg FLIPEV rho666_n48.pg n 48 iterations 16 candidates 5 VIOL 0 MINHC 1 witness (k, o, old, new) (5, 36, 8, 30) VIOL2 0
+GAME red/fbx/instances/exsw_loop_n15.pg FLIPEV exsw_loop_n15.pg n 15 iterations 1 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/fbr/instances/twowave_L16.pg FLIPEV twowave_L16.pg n 22 iterations 15 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/frz/instances/fbcap_eq_u4_n11.pg FLIPEV fbcap_eq_u4_n11.pg n 11 iterations 6 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/frz/instances/fx2_n11.pg FLIPEV fx2_n11.pg n 11 iterations 9 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/h3/instances/frzgap0_n4.pg FLIPEV frzgap0_n4.pg n 4 iterations 1 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/fbx/instances/kt6_n58.pg FLIPEV kt6_n58.pg n 58 iterations 38 candidates 1 VIOL 0 MINHC 3 witness (k, o, old, new) (2, 18, 36, 24) VIOL2 0
+GAME red/h3/instances/frzgap0_n6.pg FLIPEV frzgap0_n6.pg n 6 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/h3/instances/lcount_n23.pg FLIPEV lcount_n23.pg n 23 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/h3/instances/lcount2_n23.pg FLIPEV lcount2_n23.pg n 23 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/fbr/instances/lev56_n48.pg FLIPEV lev56_n48.pg n 48 iterations 86 candidates 26 VIOL 0 MINHC 1 witness (k, o, old, new) (10, 43, 20, 36) VIOL2 0
+GAME red/h3/instances/offret_l19_n24.pg FLIPEV offret_l19_n24.pg n 24 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/kl/instances/klcount_n18_base.pg FLIPEV klcount_n18_base.pg n 18 iterations 6 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/kl/instances/klcount_n16.pg FLIPEV klcount_n16.pg n 16 iterations 6 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/kl/instances/klglobal_n16.pg FLIPEV klglobal_n16.pg n 16 iterations 6 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/kl/instances/klglobal_n18_lvl.pg FLIPEV klglobal_n18_lvl.pg n 18 iterations 6 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/kl/instances/klcount_n18_lvl.pg FLIPEV klcount_n18_lvl.pg n 18 iterations 6 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/kl/instances/klmin_n13.pg FLIPEV klmin_n13.pg n 13 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/h3/instances/xsnpre36_n48.pg FLIPEV xsnpre36_n48.pg n 48 iterations 33 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/kl/instances/r2join_h0E_n14.pg FLIPEV r2join_h0E_n14.pg n 14 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/kl/instances/r2climb_h13.pg FLIPEV r2climb_h13.pg n 13 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/kl/instances/klglobal_n20_lvl2.pg FLIPEV klglobal_n20_lvl2.pg n 20 iterations 6 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/kl/instances/r2crawl_n14.pg FLIPEV r2crawl_n14.pg n 14 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/kl24/instances/HL88_1.pg FLIPEV HL88_1.pg n 43 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/kl/instances/r2lap_best_n22.pg FLIPEV r2lap_best_n22.pg n 22 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/kl24/instances/HL88_0.pg FLIPEV HL88_0.pg n 41 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/kl24/instances/HL88_2.pg FLIPEV HL88_2.pg n 45 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/kl24/instances/HL88_3.pg FLIPEV HL88_3.pg n 47 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/kl24/instances/HLg_0.pg FLIPEV HLg_0.pg n 29 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/kl24/instances/HLg_1.pg FLIPEV HLg_1.pg n 35 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/kl24/instances/HLg_2.pg FLIPEV HLg_2.pg n 45 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/kl24/instances/HLg_3.pg FLIPEV HLg_3.pg n 55 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/kw/instances/frzu_tight_n14.pg FLIPEV frzu_tight_n14.pg n 14 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/lag/instances/depth2_n39.pg FLIPEV depth2_n39.pg n 39 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/kw/instances/cw11_n24.pg FLIPEV cw11_n24.pg n 24 iterations 17 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/kw/instances/kc18_n24.pg FLIPEV kc18_n24.pg n 24 iterations 23 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/lag/instances/depth3_n46.pg FLIPEV depth3_n46.pg n 46 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/lag/instances/fam_D4_n50.pg FLIPEV fam_D4_n50.pg n 50 iterations 1 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/lag/instances/depth4_n53.pg FLIPEV depth4_n53.pg n 53 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/mei/instances/mei_h2.pg FLIPEV mei_h2.pg n 19 iterations 1 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/lag/instances/fam_D12_n106.pg FLIPEV fam_D12_n106.pg n 106 iterations 1 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/lag/instances/fam_D8_n78.pg FLIPEV fam_D8_n78.pg n 78 iterations 1 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/mei/instances/mei_h3.pg FLIPEV mei_h3.pg n 27 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/mei/instances/mei_h4.pg FLIPEV mei_h4.pg n 35 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/mei/instances/mei_h6.pg FLIPEV mei_h6.pg n 51 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/mei/instances/mei_h5.pg FLIPEV mei_h5.pg n 43 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/mei/instances/mei_h8.pg FLIPEV mei_h8.pg n 67 iterations 7 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/n3/instances/core41_n40.pg FLIPEV core41_n40.pg n 40 iterations 11 candidates 2 VIOL 0 MINHC 1 witness (k, o, old, new) (5, 0, 19, 31) VIOL2 0
+GAME red/n3/instances/lag11_n40.pg FLIPEV lag11_n40.pg n 40 iterations 17 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/n3/instances/lagx10_n40.pg FLIPEV lagx10_n40.pg n 40 iterations 17 candidates 1 VIOL 0 MINHC 1 witness (k, o, old, new) (4, 1, 0, 28) VIOL2 0
+GAME red/n3/instances/long90_k2_n40.pg FLIPEV long90_k2_n40.pg n 40 iterations 18 candidates 2 VIOL 0 MINHC 1 witness (k, o, old, new) (7, 0, 19, 31) VIOL2 0
+GAME red/n3/instances/comp54_n80.pg FLIPEV comp54_n80.pg n 80 iterations 11 candidates 4 VIOL 0 MINHC 1 witness (k, o, old, new) (3, 0, 13, 19) VIOL2 0
+GAME red/n3/instances/n3cov_lean.pg FLIPEV n3cov_lean.pg n 48 iterations 18 candidates 4 VIOL 0 MINHC 1 witness (k, o, old, new) (8, 15, 14, 46) VIOL2 0
+GAME red/n3/instances/n3cov_phi.pg FLIPEV n3cov_phi.pg n 32 iterations 10 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/n3/instances/run49_n32.pg FLIPEV run49_n32.pg n 32 iterations 20 candidates 1 VIOL 0 MINHC 1 witness (k, o, old, new) (19, 5, 14, 7) VIOL2 0
+GAME red/n3/instances/ret22_n40.pg FLIPEV ret22_n40.pg n 40 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/n3/instances/long121_n40.pg FLIPEV long121_n40.pg n 40 iterations 23 candidates 6 VIOL 0 MINHC 1 witness (k, o, old, new) (3, 1, 17, 23) VIOL2 0
+GAME red/n5/instances/dl_4_4.pg FLIPEV dl_4_4.pg n 42 iterations 8 candidates 7 VIOL 0 MINHC 1 witness (k, o, old, new) (0, 3, 1, 5) VIOL2 0
+GAME red/n3/instances/run34_n40.pg FLIPEV run34_n40.pg n 40 iterations 40 candidates 12 VIOL 0 MINHC 1 witness (k, o, old, new) (18, 1, 7, 2) VIOL2 0
+GAME red/n5/instances/sym_h8_s1.pg FLIPEV sym_h8_s1.pg n 16 iterations 25 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/n5/instances/dlm2_4.pg FLIPEV dlm2_4.pg n 42 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/n5/instances/sym_h12_s1.pg FLIPEV sym_h12_s1.pg n 24 iterations 34 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/n5/instances/sym_h16_s1.pg FLIPEV sym_h16_s1.pg n 32 iterations 55 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/n5inj/instances/blockph_bp20.pg FLIPEV blockph_bp20.pg n 24 iterations 25 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/n5inj/instances/block_bk20.pg FLIPEV block_bk20.pg n 24 iterations 27 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/n5inj/instances/bribe_cex_n15.pg FLIPEV bribe_cex_n15.pg n 15 iterations 1 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/n5inj/instances/block_bk32.pg FLIPEV block_bk32.pg n 36 iterations 49 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/n5inj/instances/blockph_bp32.pg FLIPEV blockph_bp32.pg n 36 iterations 39 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/n5inj/instances/frz24.pg FLIPEV frz24.pg n 24 iterations 39 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/n5inj/instances/frz32.pg FLIPEV frz32.pg n 32 iterations 8 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/n5inj/instances/frz40.pg FLIPEV frz40.pg n 40 iterations 90 candidates 8 VIOL 0 MINHC 1 witness (k, o, old, new) (4, 27, 33, 11) VIOL2 0
+GAME red/n5/instances/dl_6_8.pg FLIPEV dl_6_8.pg n 110 iterations 14 candidates 29 VIOL 0 MINHC 3 witness (k, o, old, new) (0, 3, 1, 45) VIOL2 0
+GAME red/n5inj/instances/elimn_cex_n48.pg FLIPEV elimn_cex_n48.pg n 48 iterations 92 candidates 4 VIOL 0 MINHC 1 witness (k, o, old, new) (9, 14, 30, 3) VIOL2 0
+GAME red/n5inj/instances/returns_rt32.pg FLIPEV returns_rt32.pg n 32 iterations 57 candidates 2 VIOL 0 MINHC 1 witness (k, o, old, new) (21, 28, 24, 27) VIOL2 0
+GAME red/n5inj/instances/phase2_pk32.pg FLIPEV phase2_pk32.pg n 32 iterations 56 candidates 2 VIOL 0 MINHC 1 witness (k, o, old, new) (21, 28, 24, 27) VIOL2 0
+GAME red/n5inj/instances/phase2_pk48.pg FLIPEV phase2_pk48.pg n 48 iterations 72 candidates 1 VIOL 0 MINHC 3 witness (k, o, old, new) (8, 14, 3, 41) VIOL2 0
+GAME red/n5inj/instances/theta_thc24.pg FLIPEV theta_thc24.pg n 24 iterations 29 candidates 7 VIOL 0 MINHC 1 witness (k, o, old, new) (2, 0, 12, 19) VIOL2 0
+GAME red/n5inj/instances/theta_thf16.pg FLIPEV theta_thf16.pg n 16 iterations 20 candidates 10 VIOL 0 MINHC 1 witness (k, o, old, new) (3, 0, 15, 1) VIOL2 0
+GAME red/n5inj/instances/returns_rt48.pg FLIPEV returns_rt48.pg n 48 iterations 80 candidates 1 VIOL 0 MINHC 1 witness (k, o, old, new) (68, 14, 3, 34) VIOL2 0
+GAME red/n5inj/instances/theta_tp32.pg FLIPEV theta_tp32.pg n 32 iterations 45 candidates 14 VIOL 0 MINHC 1 witness (k, o, old, new) (4, 0, 5, 15) VIOL2 0
+GAME red/n5inj/instances/wide_h16.pg FLIPEV wide_h16.pg n 32 iterations 44 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/n5inj/instances/theta_tp40.pg FLIPEV theta_tp40.pg n 40 iterations 41 candidates 7 VIOL 0 MINHC 1 witness (k, o, old, new) (3, 0, 12, 19) VIOL2 0
+GAME red/nest16/instances/k4L72_n101.pg FLIPEV k4L72_n101.pg n 101 iterations 6 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/nest16/instances/k4L72r_n101.pg FLIPEV k4L72r_n101.pg n 101 iterations 6 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/n5inj/instances/returns_ph64.pg FLIPEV returns_ph64.pg n 64 iterations 105 candidates 1 VIOL 0 MINHC 1 witness (k, o, old, new) (93, 14, 3, 34) VIOL2 0
+GAME red/nest16/instances/k4seed_c1_n82.pg FLIPEV k4seed_c1_n82.pg n 82 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/n5inj/instances/returns_rt64.pg FLIPEV returns_rt64.pg n 64 iterations 90 candidates 1 VIOL 0 MINHC 1 witness (k, o, old, new) (76, 14, 3, 34) VIOL2 0
+GAME red/nest16/instances/k4g50_n101.pg FLIPEV k4g50_n101.pg n 101 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/nest16/instances/k4u_n101.pg FLIPEV k4u_n101.pg n 101 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/nest16/instances/k4seed_vr_n87.pg FLIPEV k4seed_vr_n87.pg n 87 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/nest16/instances/k4y1_n82.pg FLIPEV k4y1_n82.pg n 82 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/nest16/instances/near4_n26.pg FLIPEV near4_n26.pg n 26 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/nest16/instances/k4y2_n87.pg FLIPEV k4y2_n87.pg n 87 iterations 6 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/nest16/instances/nest4u_n46.pg FLIPEV nest4u_n46.pg n 46 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/nest16/instances/nest5_n49.pg FLIPEV nest5_n49.pg n 49 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/nest16/instances/nest6_n75.pg FLIPEV nest6_n75.pg n 75 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/nest16/instances/oseg_n26.pg FLIPEV oseg_n26.pg n 26 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/nest16/instances/nest4uu_n51.pg FLIPEV nest4uu_n51.pg n 51 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/nest16/instances/nest6min_n75.pg FLIPEV nest6min_n75.pg n 75 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/nest16/instances/nest6x_n75.pg FLIPEV nest6x_n75.pg n 75 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/nest16/instances/w1_n27.pg FLIPEV w1_n27.pg n 27 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/nest16/instances/win3_n27.pg FLIPEV win3_n27.pg n 27 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/nopre/instances/nopre_viol_n20.pg FLIPEV nopre_viol_n20.pg n 20 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/o1/instances/ph45_n32.pg FLIPEV ph45_n32.pg n 32 iterations 21 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/o1/instances/ph50_n32.pg FLIPEV ph50_n32.pg n 32 iterations 32 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/o1/instances/tau18_n24.pg FLIPEV tau18_n24.pg n 24 iterations 12 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/o1/instances/f39_n48.pg FLIPEV f39_n48.pg n 48 iterations 38 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/rec0/instances/n0_6_n24.pg FLIPEV n0_6_n24.pg n 24 iterations 3 candidates 1 VIOL 0 MINHC 3 witness (k, o, old, new) (1, 21, 18, 7) VIOL2 0
+GAME red/rec0/instances/fbd0_n4.pg FLIPEV fbd0_n4.pg n 4 iterations 0 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/rec0/instances/nep24_n20.pg FLIPEV nep24_n20.pg n 20 iterations 15 candidates 1 VIOL 0 MINHC 1 witness (k, o, old, new) (1, 14, 8, 11) VIOL2 0
+GAME red/sgrow/instances/s20_n20.pg FLIPEV s20_n20.pg n 20 iterations 8 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/o1/instances/iter118_n48.pg FLIPEV iter118_n48.pg n 48 iterations 18 candidates 3 VIOL 0 MINHC 1 witness (k, o, old, new) (7, 0, 28, 21) VIOL2 0
+GAME red/sgrow/instances/s21_oink_n20.pg FLIPEV s21_oink_n20.pg n 20 iterations 8 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/rec0/instances/lend2_30_n48.pg FLIPEV lend2_30_n48.pg n 48 iterations 25 candidates 8 VIOL 0 MINHC 1 witness (k, o, old, new) (17, 0, 21, 2) VIOL2 0
+GAME red/sgrow/instances/s29_n30.pg FLIPEV s29_n30.pg n 30 iterations 7 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/rec0/instances/nep87_n40.pg FLIPEV nep87_n40.pg n 40 iterations 25 candidates 12 VIOL 0 MINHC 1 witness (k, o, old, new) (9, 6, 38, 25) VIOL2 0
+GAME red/sgrow/instances/s34_oink_n40.pg FLIPEV s34_oink_n40.pg n 40 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/sgrow/instances/s35_oink_n80.pg FLIPEV s35_oink_n80.pg n 80 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/rec0/instances/nep90_n40.pg FLIPEV nep90_n40.pg n 40 iterations 23 candidates 15 VIOL 0 MINHC 1 witness (k, o, old, new) (9, 8, 14, 30) VIOL2 0
+GAME red/sgrow/instances/s32_n60.pg FLIPEV s32_n60.pg n 60 iterations 8 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/so/instances/beta2_n11.pg FLIPEV beta2_n11.pg n 11 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/so/instances/epsseg_cex_n16.pg FLIPEV epsseg_cex_n16.pg n 16 iterations 11 candidates 3 VIOL 0 MINHC 1 witness (k, o, old, new) (1, 9, 3, 8) VIOL2 0
+GAME red/so/instances/exitr_cex_n16.pg FLIPEV exitr_cex_n16.pg n 16 iterations 10 candidates 4 VIOL 0 MINHC 1 witness (k, o, old, new) (1, 9, 3, 8) VIOL2 0
+GAME red/sgrow/instances/s36_oink_n60.pg FLIPEV s36_oink_n60.pg n 60 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/sgrow/instances/s34_oink_n80.pg FLIPEV s34_oink_n80.pg n 80 iterations 8 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/so/instances/mn_abs74_n48.pg FLIPEV mn_abs74_n48.pg n 48 iterations 22 candidates 5 VIOL 0 MINHC 1 witness (k, o, old, new) (9, 0, 7, 2) VIOL2 0
+GAME red/so/instances/exitr_cex_n48.pg FLIPEV exitr_cex_n48.pg n 48 iterations 22 candidates 3 VIOL 0 MINHC 1 witness (k, o, old, new) (4, 0, 13, 28) VIOL2 0
+GAME red/so/instances/epsseg_cex_n48.pg FLIPEV epsseg_cex_n48.pg n 48 iterations 26 candidates 4 VIOL 0 MINHC 1 witness (k, o, old, new) (2, 0, 42, 13) VIOL2 0
+GAME red/so/instances/nleq_cex_n48.pg FLIPEV nleq_cex_n48.pg n 48 iterations 10 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/so/instances/farrise25_n32.pg FLIPEV farrise25_n32.pg n 32 iterations 35 candidates 1 VIOL 0 MINHC 1 witness (k, o, old, new) (33, 0, 4, 11) VIOL2 0
+GAME red/so/instances/njb_reabs54_n32.pg FLIPEV njb_reabs54_n32.pg n 32 iterations 40 candidates 9 VIOL 0 MINHC 1 witness (k, o, old, new) (8, 0, 13, 8) VIOL2 0
+GAME red/so/instances/nleq33_n48.pg FLIPEV nleq33_n48.pg n 48 iterations 40 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/so/instances/pftheta34_n32.pg FLIPEV pftheta34_n32.pg n 32 iterations 39 candidates 34 VIOL 0 MINHC 1 witness (k, o, old, new) (5, 0, 2, 18) VIOL2 0
+GAME red/so/instances/njb_reabs65_n48.pg FLIPEV njb_reabs65_n48.pg n 48 iterations 70 candidates 5 VIOL 0 MINHC 1 witness (k, o, old, new) (23, 0, 8, 2) VIOL2 0
+GAME red/so/instances/pftheta_cex_n32.pg FLIPEV pftheta_cex_n32.pg n 32 iterations 38 candidates 33 VIOL 0 MINHC 1 witness (k, o, old, new) (4, 0, 2, 18) VIOL2 0
+GAME red/so/instances/pft40_n40.pg FLIPEV pft40_n40.pg n 40 iterations 54 candidates 39 VIOL 0 MINHC 1 witness (k, o, old, new) (8, 0, 7, 19) VIOL2 0
+GAME red/so/instances/pft35_n48.pg FLIPEV pft35_n48.pg n 48 iterations 41 candidates 38 VIOL 0 MINHC 1 witness (k, o, old, new) (2, 0, 25, 43) VIOL2 0
+GAME red/so/instances/s4c8_n13.pg FLIPEV s4c8_n13.pg n 13 iterations 12 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/so/instances/rise_fb38_n48.pg FLIPEV rise_fb38_n48.pg n 48 iterations 53 candidates 2 VIOL 0 MINHC 1 witness (k, o, old, new) (12, 0, 2, 20) VIOL2 0
+GAME red/so/instances/so_k2_n32.pg FLIPEV so_k2_n32.pg n 32 iterations 20 candidates 6 VIOL 0 MINHC 1 witness (k, o, old, new) (8, 27, 8, 6) VIOL2 0
+GAME red/so/instances/so_sor5_n24.pg FLIPEV so_sor5_n24.pg n 24 iterations 23 candidates 21 VIOL 0 MINHC 1 witness (k, o, old, new) (0, 2, 9, 13) VIOL2 0
+GAME red/so/instances/post31_n48.pg FLIPEV post31_n48.pg n 48 iterations 36 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/so/instances/so_sorl_n32.pg FLIPEV so_sorl_n32.pg n 32 iterations 22 candidates 22 VIOL 0 MINHC 1 witness (k, o, old, new) (0, 13, 0, 2) VIOL2 0
+GAME red/so/instances/so_tie13_n24.pg FLIPEV so_tie13_n24.pg n 24 iterations 16 candidates 15 VIOL 0 MINHC 1 witness (k, o, old, new) (0, 0, 12, 18) VIOL2 0
+GAME red/so/instances/so_j19_n48.pg FLIPEV so_j19_n48.pg n 48 iterations 25 candidates 19 VIOL 0 MINHC 1 witness (k, o, old, new) (5, 0, 41, 23) VIOL2 0
+GAME red/so/instances/so_tie15_n32.pg FLIPEV so_tie15_n32.pg n 32 iterations 20 candidates 18 VIOL 0 MINHC 1 witness (k, o, old, new) (1, 13, 0, 2) VIOL2 0
+GAME red/so/instances/tevlast7_n32.pg FLIPEV tevlast7_n32.pg n 32 iterations 41 candidates 4 VIOL 0 MINHC 1 witness (k, o, old, new) (17, 0, 15, 13) VIOL2 0
+GAME red/so/instances/so_th_n32.pg FLIPEV so_th_n32.pg n 32 iterations 36 candidates 14 VIOL 0 MINHC 1 witness (k, o, old, new) (1, 3, 10, 7) VIOL2 0
+GAME red/so/instances/tev_cex_n40.pg FLIPEV tev_cex_n40.pg n 40 iterations 27 candidates 3 VIOL 0 MINHC 1 witness (k, o, old, new) (22, 0, 2, 5) VIOL2 0
+GAME red/so/instances/tog6a_n32.pg FLIPEV tog6a_n32.pg n 32 iterations 10 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/so/instances/tevlast11_n40.pg FLIPEV tevlast11_n40.pg n 40 iterations 36 candidates 3 VIOL 0 MINHC 1 witness (k, o, old, new) (8, 0, 7, 15) VIOL2 0
+GAME red/so/instances/rise_thin51_n40.pg FLIPEV rise_thin51_n40.pg n 40 iterations 78 candidates 52 VIOL 0 MINHC 1 witness (k, o, old, new) (10, 0, 24, 19) VIOL2 0
+GAME red/so/instances/tevlast_cex_n40.pg FLIPEV tevlast_cex_n40.pg n 40 iterations 11 candidates 3 VIOL 0 MINHC 1 witness (k, o, old, new) (6, 0, 2, 5) VIOL2 0
+GAME red/so/instances/xrun8_n10.pg FLIPEV xrun8_n10.pg n 10 iterations 11 candidates 2 VIOL 0 MINHC 1 witness (k, o, old, new) (4, 5, 1, 2) VIOL2 0
+GAME red/so/instances/tog6b_n32.pg FLIPEV tog6b_n32.pg n 32 iterations 8 candidates 1 VIOL 0 MINHC 2 witness (k, o, old, new) (2, 27, 20, 11) VIOL2 0
+GAME red/so/instances/xrun21_n24.pg FLIPEV xrun21_n24.pg n 24 iterations 24 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/so/instances/xsn29_n32.pg FLIPEV xsn29_n32.pg n 32 iterations 29 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/so/instances/xsn43_n48.pg FLIPEV xsn43_n48.pg n 48 iterations 45 candidates 3 VIOL 0 MINHC 1 witness (k, o, old, new) (14, 34, 3, 32) VIOL2 0
+GAME red/so/instances/xsnf42_n48.pg FLIPEV xsnf42_n48.pg n 48 iterations 44 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/so/instances/xsnf52_n64.pg FLIPEV xsnf52_n64.pg n 64 iterations 55 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/tcpert/instances/leanT_N12.pg FLIPEV leanT_N12.pg n 96 iterations 13 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/tcpert/instances/leanT_N6.pg FLIPEV leanT_N6.pg n 48 iterations 6 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/tcpert/instances/leanT_N8.pg FLIPEV leanT_N8.pg n 64 iterations 8 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/tcpert/instances/leanT_N16.pg FLIPEV leanT_N16.pg n 128 iterations 16 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/so/instances/xsn91_n48.pg FLIPEV xsn91_n48.pg n 48 iterations 115 candidates 14 VIOL 0 MINHC 1 witness (k, o, old, new) (3, 0, 2, 21) VIOL2 0
+GAME red/tcpert/instances/tcL_N3.pg FLIPEV tcL_N3.pg n 42 iterations 7 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/tcpert/instances/tcL_N4.pg FLIPEV tcL_N4.pg n 68 iterations 16 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/tcpert/instances/tcL_N5.pg FLIPEV tcL_N5.pg n 100 iterations 19 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/tcpert/instances/tcL_N6.pg FLIPEV tcL_N6.pg n 138 iterations 18 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/tcpert/instances/leanT_N24.pg FLIPEV leanT_N24.pg n 192 iterations 25 candidates 6 VIOL 0 MINHC 2 witness (k, o, old, new) (20, 74, 136, 38) VIOL2 0
+GAME red/tcpert/instances/tcR4_N4.pg FLIPEV tcR4_N4.pg n 68 iterations 12 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/tcpert/instances/tcL_N10.pg FLIPEV tcL_N10.pg n 350 iterations 27 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/tcpert/instances/tcR4_N5.pg FLIPEV tcR4_N5.pg n 100 iterations 14 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/tcpert/instances/tcR4_N6.pg FLIPEV tcR4_N6.pg n 138 iterations 22 candidates 6 VIOL 0 MINHC 10 witness (k, o, old, new) (13, 52, 70, 123) VIOL2 0
+GAME red/tcpert/instances/tcL_N8.pg FLIPEV tcL_N8.pg n 232 iterations 30 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/tcpert/instances/tcR4_N7.pg FLIPEV tcR4_N7.pg n 182 iterations 41 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/tcpert/instances/tcR4_N8.pg FLIPEV tcR4_N8.pg n 232 iterations 33 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/tcpert/instances/tcS8_N6.pg FLIPEV tcS8_N6.pg n 138 iterations 17 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/tcpert/instances/leanT_N32.pg FLIPEV leanT_N32.pg n 256 iterations 33 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/tcpert/instances/tcS8_N10.pg FLIPEV tcS8_N10.pg n 350 iterations 16 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/tcpert/instances/tcS8_N7.pg FLIPEV tcS8_N7.pg n 182 iterations 14 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/tpp/instances/tpp_viol_n22.pg FLIPEV tpp_viol_n22.pg n 22 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/tpp/instances/tpp_viol_n63.pg FLIPEV tpp_viol_n63.pg n 63 iterations 8 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/tcpert/instances/tcS8_N8.pg FLIPEV tcS8_N8.pg n 232 iterations 10 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/ul/instances/cxmig_k4_n54.pg FLIPEV cxmig_k4_n54.pg n 54 iterations 12 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/tcpert/instances/tcS8_N11.pg FLIPEV tcS8_N11.pg n 418 iterations 20 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/ul/instances/cxmig_k16_n138.pg FLIPEV cxmig_k16_n138.pg n 138 iterations 24 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/ul/instances/cxmig_k8_n82.pg FLIPEV cxmig_k8_n82.pg n 82 iterations 16 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/tcpert/instances/tcL_N12.pg FLIPEV tcL_N12.pg n 492 iterations 37 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/ul/instances/ladderd0_k12_n48.pg FLIPEV ladderd0_k12_n48.pg n 48 iterations 14 candidates 12 VIOL 0 MINHC 1 witness (k, o, old, new) (12, 35, 17, 12) VIOL2 0
+GAME red/ul/instances/ladderent_k12_n48.pg FLIPEV ladderent_k12_n48.pg n 48 iterations 14 candidates 12 VIOL 0 MINHC 1 witness (k, o, old, new) (12, 35, 33, 12) VIOL2 0
+GAME red/ul/instances/ladderd0_k24_n84.pg FLIPEV ladderd0_k24_n84.pg n 84 iterations 26 candidates 24 VIOL 0 MINHC 1 witness (k, o, old, new) (24, 59, 29, 24) VIOL2 0
+GAME red/ul/instances/reader_L10_n36.pg FLIPEV reader_L10_n36.pg n 36 iterations 13 candidates 1 VIOL 0 MINHC 1 witness (k, o, old, new) (10, 13, 16, 1) VIOL2 0
+GAME red/ul/instances/reader_L20_n56.pg FLIPEV reader_L20_n56.pg n 56 iterations 23 candidates 1 VIOL 0 MINHC 1 witness (k, o, old, new) (20, 23, 26, 1) VIOL2 0
+GAME red/ul/instances/ladderent_k24_n84.pg FLIPEV ladderent_k24_n84.pg n 84 iterations 26 candidates 24 VIOL 0 MINHC 1 witness (k, o, old, new) (24, 59, 57, 24) VIOL2 0
+GAME red/tcpert/instances/tcS8_N9.pg FLIPEV tcS8_N9.pg n 288 iterations 36 candidates 6 VIOL 0 MINHC 8 witness (k, o, old, new) (22, 123, 157, 260) VIOL2 0
+GAME red/ul/instances/reader_L40_n96.pg FLIPEV reader_L40_n96.pg n 96 iterations 43 candidates 1 VIOL 0 MINHC 1 witness (k, o, old, new) (40, 43, 46, 1) VIOL2 0
+GAME red/usplit/instances/gate_K16_n197.pg FLIPEV gate_K16_n197.pg n 197 iterations 23 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/usplit/instances/grow_K12_n149.pg FLIPEV grow_K12_n149.pg n 149 iterations 18 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/usplit/instances/pairoc_n58.pg FLIPEV pairoc_n58.pg n 58 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/usplit/instances/pp_K12_n161.pg FLIPEV pp_K12_n161.pg n 161 iterations 20 candidates 1 VIOL 0 MINHC 1 witness (k, o, old, new) (1, 160, 156, 158) VIOL2 0
+GAME red/usplit/instances/pp_K12_n161_dual.pg FLIPEV pp_K12_n161_dual.pg n 161 iterations 20 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/ul/instances/ladderd0_k48_n156.pg FLIPEV ladderd0_k48_n156.pg n 156 iterations 50 candidates 48 VIOL 0 MINHC 1 witness (k, o, old, new) (48, 107, 53, 48) VIOL2 0
+GAME red/ul/instances/ladderent_k48_n156.pg FLIPEV ladderent_k48_n156.pg n 156 iterations 50 candidates 48 VIOL 0 MINHC 1 witness (k, o, old, new) (48, 107, 105, 48) VIOL2 0
+GAME red/usplit/instances/usplit_n14.pg FLIPEV usplit_n14.pg n 14 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/usplit/instances/usplit_n23.pg FLIPEV usplit_n23.pg n 23 iterations 9 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/usplit/instances/usplit_rd_n24.pg FLIPEV usplit_rd_n24.pg n 24 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/usplit/instances/usplit_rd_s3_n27.pg FLIPEV usplit_rd_s3_n27.pg n 27 iterations 4 candidates 2 VIOL 0 MINHC 1 witness (k, o, old, new) (2, 5, 4, 3) VIOL2 0
+GAME red/usplit/instances/usplit_s3_n16.pg FLIPEV usplit_s3_n16.pg n 16 iterations 3 candidates 1 VIOL 0 MINHC 1 witness (k, o, old, new) (2, 5, 4, 3) VIOL2 0
+GAME red/xctx/instances/nest3_n20.pg FLIPEV nest3_n20.pg n 20 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/xctx/instances/nest3_n24.pg FLIPEV nest3_n24.pg n 24 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/xctx/instances/vrall_viol_n20.pg FLIPEV vrall_viol_n20.pg n 20 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/xctx/instances/xcov11_n20.pg FLIPEV xcov11_n20.pg n 20 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/xctx/instances/xctx_viol_n20.pg FLIPEV xctx_viol_n20.pg n 20 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/xing/instances/fbref_cex_n32.pg FLIPEV fbref_cex_n32.pg n 32 iterations 56 candidates 6 VIOL 0 MINHC 1 witness (k, o, old, new) (11, 0, 24, 2) VIOL2 0
+GAME red/xing/instances/j10_n24.pg FLIPEV j10_n24.pg n 24 iterations 25 candidates 16 VIOL 0 MINHC 1 witness (k, o, old, new) (2, 18, 3, 11) VIOL2 0
+GAME red/xing/instances/j4_n40.pg FLIPEV j4_n40.pg n 40 iterations 106 candidates 32 VIOL 0 MINHC 1 witness (k, o, old, new) (4, 0, 19, 22) VIOL2 0
+GAME red/xing/instances/j5_n16.pg FLIPEV j5_n16.pg n 16 iterations 30 candidates 7 VIOL 0 MINHC 1 witness (k, o, old, new) (17, 0, 4, 6) VIOL2 0
+GAME red/xing/instances/j7_n32.pg FLIPEV j7_n32.pg n 32 iterations 50 candidates 11 VIOL 0 MINHC 1 witness (k, o, old, new) (5, 0, 12, 26) VIOL2 0
+GAME red/xing/instances/j7_n48.pg FLIPEV j7_n48.pg n 48 iterations 78 candidates 14 VIOL 0 MINHC 1 witness (k, o, old, new) (18, 0, 44, 8) VIOL2 0
+GAME red/xing/instances/j8_n32.pg FLIPEV j8_n32.pg n 32 iterations 54 candidates 14 VIOL 0 MINHC 1 witness (k, o, old, new) (5, 0, 12, 26) VIOL2 0
+GAME red/xing/instances/j8_n48.pg FLIPEV j8_n48.pg n 48 iterations 86 candidates 14 VIOL 0 MINHC 1 witness (k, o, old, new) (21, 0, 44, 8) VIOL2 0
+GAME red/usplit/instances/grow_K40_n373.pg FLIPEV grow_K40_n373.pg n 373 iterations 46 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/xing/instances/kw_n16.pg FLIPEV kw_n16.pg n 16 iterations 12 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/xing/instances/kw_n24.pg FLIPEV kw_n24.pg n 24 iterations 20 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/xing/instances/kw25_n32.pg FLIPEV kw25_n32.pg n 32 iterations 29 candidates 1 VIOL 0 MINHC 1 witness (k, o, old, new) (26, 27, 8, 7) VIOL2 0
+GAME red/xing/instances/obr_eq_n24.pg FLIPEV obr_eq_n24.pg n 24 iterations 7 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/xing/instances/obr_n32.pg FLIPEV obr_n32.pg n 32 iterations 22 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/xing/instances/kw_n48.pg FLIPEV kw_n48.pg n 48 iterations 40 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/xing/instances/u1t_cex_n32.pg FLIPEV u1t_cex_n32.pg n 32 iterations 12 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/xing/instances/u1t_own6_n32.pg FLIPEV u1t_own6_n32.pg n 32 iterations 9 candidates 1 VIOL 0 MINHC 1 witness (k, o, old, new) (7, 27, 12, 20) VIOL2 0
+GAME red/xing/instances/u2flat73_n32.pg FLIPEV u2flat73_n32.pg n 32 iterations 16 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/xing/instances/u23sw64_n32.pg FLIPEV u23sw64_n32.pg n 32 iterations 16 candidates 1 VIOL 0 MINHC 1 witness (k, o, old, new) (14, 27, 8, 3) VIOL2 0
+GAME red/xing/instances/u2flat_n32.pg FLIPEV u2flat_n32.pg n 32 iterations 13 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/xing/instances/x31_cu16.pg FLIPEV x31_cu16.pg n 16 iterations 23 candidates 18 VIOL 0 MINHC 1 witness (k, o, old, new) (3, 0, 5, 15) VIOL2 0
+GAME red/xing/instances/x31_cu24.pg FLIPEV x31_cu24.pg n 24 iterations 22 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/xing/instances/x31_cu32.pg FLIPEV x31_cu32.pg n 32 iterations 49 candidates 39 VIOL 0 MINHC 1 witness (k, o, old, new) (6, 0, 29, 16) VIOL2 0
+GAME red/xing/instances/x31_cu32i.pg FLIPEV x31_cu32i.pg n 32 iterations 42 candidates 37 VIOL 0 MINHC 1 witness (k, o, old, new) (3, 0, 8, 26) VIOL2 0
+GAME red/usplit/instances/pp_K48_n449.pg FLIPEV pp_K48_n449.pg n 449 iterations 56 candidates 1 VIOL 0 MINHC 1 witness (k, o, old, new) (1, 448, 444, 446) VIOL2 0
+GAME red/xing/instances/x31_lem_e24.pg FLIPEV x31_lem_e24.pg n 24 iterations 54 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/xing/instances/x31_lem_t32.pg FLIPEV x31_lem_t32.pg n 32 iterations 65 candidates 1 VIOL 0 MINHC 1 witness (k, o, old, new) (58, 0, 24, 11) VIOL2 0
+GAME red/xing/instances/x31_nh_r20.pg FLIPEV x31_nh_r20.pg n 20 iterations 15 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/xing/instances/x31_cu48.pg FLIPEV x31_cu48.pg n 48 iterations 46 candidates 40 VIOL 0 MINHC 1 witness (k, o, old, new) (5, 0, 5, 28) VIOL2 0
+GAME red/xing/instances/x31_nh_e24.pg FLIPEV x31_nh_e24.pg n 24 iterations 20 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/xing/instances/x31_ru24.pg FLIPEV x31_ru24.pg n 24 iterations 7 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/xing/instances/x31_re24.pg FLIPEV x31_re24.pg n 24 iterations 6 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/xing/instances/x31_rx32.pg FLIPEV x31_rx32.pg n 32 iterations 55 candidates 46 VIOL 0 MINHC 1 witness (k, o, old, new) (3, 0, 29, 16) VIOL2 0
+GAME red/xing/instances/x32_rand16.pg FLIPEV x32_rand16.pg n 16 iterations 15 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/xing/instances/x31_rx48.pg FLIPEV x31_rx48.pg n 48 iterations 53 candidates 42 VIOL 0 MINHC 1 witness (k, o, old, new) (2, 0, 3, 5) VIOL2 0
+GAME red/usplit/instances/pp_K48_n449_dual.pg FLIPEV pp_K48_n449_dual.pg n 449 iterations 56 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/xing/instances/x32_rand24.pg FLIPEV x32_rand24.pg n 24 iterations 20 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/xing/instances/x32_nest40.pg FLIPEV x32_nest40.pg n 40 iterations 58 candidates 17 VIOL 0 MINHC 1 witness (k, o, old, new) (8, 0, 2, 21) VIOL2 0
+GAME red/xing/instances/x32_rand32.pg FLIPEV x32_rand32.pg n 32 iterations 29 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/xing/instances/x32_rand48.pg FLIPEV x32_rand48.pg n 48 iterations 44 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME si/root/instances/cone_n65.pg FLIPEV cone_n65.pg n 65 iterations 12 candidates 1 VIOL 0 MINHC 1 witness (k, o, old, new) (10, 64, 40, 7) VIOL2 0
+GAME red/xing/instances/x32_waves32.pg FLIPEV x32_waves32.pg n 32 iterations 81 candidates 11 VIOL 0 MINHC 1 witness (k, o, old, new) (4, 0, 28, 21) VIOL2 0
+GAME red/xing/instances/x32_rand64.pg FLIPEV x32_rand64.pg n 64 iterations 56 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME si/root/instances/ueonce_n27.pg FLIPEV ueonce_n27.pg n 27 iterations 12 candidates 2 VIOL 0 MINHC 2 witness (k, o, old, new) (1, 5, 4, 3) VIOL2 0
+GAME si/root/instances/cone_n69.pg FLIPEV cone_n69.pg n 69 iterations 25 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/xing/instances/x32_waves48.pg FLIPEV x32_waves48.pg n 48 iterations 89 candidates 1 VIOL 0 MINHC 1 witness (k, o, old, new) (80, 14, 3, 34) VIOL2 0
+GAME new/box54/out/switchbestexp_1.pg FLIPEV switchbestexp_1.pg n 35 iterations 20 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/switchbestexp_2.pg FLIPEV switchbestexp_2.pg n 60 iterations 32 candidates 2 VIOL 0 MINHC 1 witness (k, o, old, new) (15, 56, 51, 58) VIOL2 0
+GAME new/box54/out/switchbestexp_3.pg FLIPEV switchbestexp_3.pg n 85 iterations 41 candidates 4 VIOL 0 MINHC 2 witness (k, o, old, new) (18, 71, 66, 73) VIOL2 0
+GAME new/box54/out/switchbestexp_4.pg FLIPEV switchbestexp_4.pg n 110 iterations 47 candidates 6 VIOL 0 MINHC 3 witness (k, o, old, new) (18, 85, 80, 87) VIOL2 0
+GAME new/box54/out/switchbestexp_5.pg FLIPEV switchbestexp_5.pg n 135 iterations 55 candidates 8 VIOL 0 MINHC 4 witness (k, o, old, new) (20, 99, 94, 101) VIOL2 0
+GAME new/box54/out/switchbestexp_6.pg FLIPEV switchbestexp_6.pg n 160 iterations 62 candidates 10 VIOL 0 MINHC 5 witness (k, o, old, new) (21, 113, 108, 115) VIOL2 0
+GAME red/usplit/instances/gate_K64_n581.pg FLIPEV gate_K64_n581.pg n 581 iterations 71 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/switchallexp_1.pg FLIPEV switchallexp_1.pg n 21 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/switchallexp_2.pg FLIPEV switchallexp_2.pg n 35 iterations 8 candidates 1 VIOL 0 MINHC 1 witness (k, o, old, new) (5, 21, 20, 24) VIOL2 0
+GAME new/box54/out/switchallexp_3.pg FLIPEV switchallexp_3.pg n 49 iterations 7 candidates 1 VIOL 0 MINHC 1 witness (k, o, old, new) (5, 37, 36, 40) VIOL2 0
+GAME new/box54/out/switchallexp_4.pg FLIPEV switchallexp_4.pg n 63 iterations 8 candidates 1 VIOL 0 MINHC 1 witness (k, o, old, new) (5, 51, 50, 54) VIOL2 0
+GAME new/box54/out/switchallexp_5.pg FLIPEV switchallexp_5.pg n 77 iterations 10 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/switchallexp_6.pg FLIPEV switchallexp_6.pg n 91 iterations 12 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_core_2.pg FLIPEV counter_core_2.pg n 15 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_core_3.pg FLIPEV counter_core_3.pg n 21 iterations 6 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_core_4.pg FLIPEV counter_core_4.pg n 27 iterations 8 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_core_5.pg FLIPEV counter_core_5.pg n 33 iterations 10 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_core_6.pg FLIPEV counter_core_6.pg n 39 iterations 12 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_core_8.pg FLIPEV counter_core_8.pg n 51 iterations 16 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_dp_2.pg FLIPEV counter_dp_2.pg n 12 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_dp_3.pg FLIPEV counter_dp_3.pg n 16 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_dp_4.pg FLIPEV counter_dp_4.pg n 20 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_dp_5.pg FLIPEV counter_dp_5.pg n 24 iterations 6 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_dp_6.pg FLIPEV counter_dp_6.pg n 28 iterations 6 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_dp_8.pg FLIPEV counter_dp_8.pg n 36 iterations 8 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_m_2.pg FLIPEV counter_m_2.pg n 9 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_m_3.pg FLIPEV counter_m_3.pg n 12 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_m_4.pg FLIPEV counter_m_4.pg n 15 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_m_5.pg FLIPEV counter_m_5.pg n 18 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_m_6.pg FLIPEV counter_m_6.pg n 21 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_m_8.pg FLIPEV counter_m_8.pg n 27 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_ortl_2.pg FLIPEV counter_ortl_2.pg n 11 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_ortl_3.pg FLIPEV counter_ortl_3.pg n 16 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_ortl_4.pg FLIPEV counter_ortl_4.pg n 21 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_ortl_5.pg FLIPEV counter_ortl_5.pg n 26 iterations 6 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_ortl_6.pg FLIPEV counter_ortl_6.pg n 31 iterations 7 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_ortl_8.pg FLIPEV counter_ortl_8.pg n 41 iterations 9 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_qpt_2.pg FLIPEV counter_qpt_2.pg n 4 iterations 1 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_qpt_3.pg FLIPEV counter_qpt_3.pg n 6 iterations 1 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_qpt_4.pg FLIPEV counter_qpt_4.pg n 8 iterations 1 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_qpt_5.pg FLIPEV counter_qpt_5.pg n 10 iterations 1 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_qpt_6.pg FLIPEV counter_qpt_6.pg n 12 iterations 1 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_qpt_8.pg FLIPEV counter_qpt_8.pg n 16 iterations 1 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_rob_2.pg FLIPEV counter_rob_2.pg n 31 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_rob_3.pg FLIPEV counter_rob_3.pg n 54 iterations 7 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_rob_4.pg FLIPEV counter_rob_4.pg n 83 iterations 10 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_rob_5.pg FLIPEV counter_rob_5.pg n 118 iterations 13 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/switchbestexp_7.pg FLIPEV switchbestexp_7.pg n 185 iterations 68 candidates 12 VIOL 0 MINHC 6 witness (k, o, old, new) (21, 127, 122, 129) VIOL2 0
+GAME new/box54/out/hf/counter_rob_6.pg FLIPEV counter_rob_6.pg n 159 iterations 16 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_rr_2.pg FLIPEV counter_rr_2.pg n 8 iterations 1 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_rr_3.pg FLIPEV counter_rr_3.pg n 12 iterations 1 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_rr_4.pg FLIPEV counter_rr_4.pg n 16 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_rr_5.pg FLIPEV counter_rr_5.pg n 20 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_rr_6.pg FLIPEV counter_rr_6.pg n 24 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_rr_8.pg FLIPEV counter_rr_8.pg n 32 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_rob_8.pg FLIPEV counter_rob_8.pg n 259 iterations 22 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_symsi_2.pg FLIPEV counter_symsi_2.pg n 22 iterations 13 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_symsi_3.pg FLIPEV counter_symsi_3.pg n 32 iterations 25 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_symsi_4.pg FLIPEV counter_symsi_4.pg n 42 iterations 22 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_symsi_5.pg FLIPEV counter_symsi_5.pg n 52 iterations 31 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_symsi_6.pg FLIPEV counter_symsi_6.pg n 62 iterations 37 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/recursiveladder_2.pg FLIPEV recursiveladder_2.pg n 10 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/recursiveladder_3.pg FLIPEV recursiveladder_3.pg n 15 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/recursiveladder_4.pg FLIPEV recursiveladder_4.pg n 20 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/recursiveladder_5.pg FLIPEV recursiveladder_5.pg n 25 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/recursiveladder_6.pg FLIPEV recursiveladder_6.pg n 30 iterations 6 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/tc_2.pg FLIPEV tc_2.pg n 22 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/tc_3.pg FLIPEV tc_3.pg n 42 iterations 7 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/counter_symsi_8.pg FLIPEV counter_symsi_8.pg n 82 iterations 48 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/tc_4.pg FLIPEV tc_4.pg n 68 iterations 16 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/tc_5.pg FLIPEV tc_5.pg n 100 iterations 19 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/tc_6.pg FLIPEV tc_6.pg n 138 iterations 18 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/ctl/pivot_demo.pg FLIPEV pivot_demo.pg n 11 iterations 0 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/d_pivot_demo.pg FLIPEV d_pivot_demo.pg n 11 iterations 0 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/seg/instances/runquad_K3_m4_n54.pg FLIPEV runquad_K3_m4_n54.pg n 54 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/seg/instances/runquad_K8_m30_n192.pg FLIPEV runquad_K8_m30_n192.pg n 192 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME red/seg/instances/s3quad_K3_m4.pg FLIPEV s3quad_K3_m4.pg n 137 iterations 21 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/hf/tc_8.pg FLIPEV tc_8.pg n 232 iterations 30 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box54/out/d_runquad_K3.pg FLIPEV d_runquad_K3.pg n 54 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box52/out/topfix_n3.pg FLIPEV topfix_n3.pg n 63 iterations 22 candidates 2 VIOL 0 MINHC 2 witness (k, o, old, new) (0, 39, 41, 36) VIOL2 0
+GAME new/box52/out/topfix_n4.pg FLIPEV topfix_n4.pg n 84 iterations 28 candidates 3 VIOL 0 MINHC 3 witness (k, o, old, new) (0, 51, 53, 48) VIOL2 0
+GAME new/box52/out/topfix_n6.pg FLIPEV topfix_n6.pg n 126 iterations 40 candidates 5 VIOL 0 MINHC 5 witness (k, o, old, new) (0, 75, 77, 72) VIOL2 0
+GAME new/box54/out/switchbestexp_8.pg FLIPEV switchbestexp_8.pg n 210 iterations 77 candidates 14 VIOL 0 MINHC 7 witness (k, o, old, new) (24, 141, 136, 143) VIOL2 0
+GAME new/box52/out/topfix_n8.pg FLIPEV topfix_n8.pg n 168 iterations 52 candidates 7 VIOL 0 MINHC 7 witness (k, o, old, new) (0, 99, 101, 96) VIOL2 0
+GAME new/box54/out/d_hntop_n3.pg FLIPEV d_hntop_n3.pg n 63 iterations 22 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box52/out/topfix_n8_cmp.pg FLIPEV topfix_n8_cmp.pg n 171 iterations 52 candidates 8 VIOL 0 MINHC 1 witness (k, o, old, new) (1, 168, 162, 161) VIOL2 0
+GAME new/box51/out/dlc_d2.pg FLIPEV dlc_d2.pg n 27 iterations 7 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box51/out/dlc_d3.pg FLIPEV dlc_d3.pg n 109 iterations 15 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box52/out/topfix_n10.pg FLIPEV topfix_n10.pg n 210 iterations 64 candidates 9 VIOL 0 MINHC 9 witness (k, o, old, new) (0, 123, 125, 120) VIOL2 0
+GAME new/box54/out/d_dlc_d3.pg FLIPEV d_dlc_d3.pg n 109 iterations 15 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME si/runlin/instances/runfam_K10.pg FLIPEV runfam_K10.pg n 49 iterations 97 candidates 7 VIOL 0 MINHC 1 witness (k, o, old, new) (4, 5, 18, 14) VIOL2 0
+GAME new/box51/out/dlc_d4.pg FLIPEV dlc_d4.pg n 455 iterations 31 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r100_n40.pg FLIPEV r100_n40.pg n 40 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r101_n50.pg FLIPEV r101_n50.pg n 50 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r102_n60.pg FLIPEV r102_n60.pg n 60 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r103_n70.pg FLIPEV r103_n70.pg n 70 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r104_n80.pg FLIPEV r104_n80.pg n 80 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r105_n20.pg FLIPEV r105_n20.pg n 20 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r106_n30.pg FLIPEV r106_n30.pg n 30 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r107_n40.pg FLIPEV r107_n40.pg n 40 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r108_n50.pg FLIPEV r108_n50.pg n 50 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r109_n60.pg FLIPEV r109_n60.pg n 60 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r10_n50.pg FLIPEV r10_n50.pg n 50 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r110_n70.pg FLIPEV r110_n70.pg n 70 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r111_n80.pg FLIPEV r111_n80.pg n 80 iterations 7 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME si/runlin/instances/runfam_K40.pg FLIPEV runfam_K40.pg n 79 iterations 163 candidates 7 VIOL 0 MINHC 1 witness (k, o, old, new) (4, 5, 18, 14) VIOL2 0
+GAME new/box59/out/rnd/r112_n20.pg FLIPEV r112_n20.pg n 20 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r113_n30.pg FLIPEV r113_n30.pg n 30 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r114_n40.pg FLIPEV r114_n40.pg n 40 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r115_n50.pg FLIPEV r115_n50.pg n 50 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r116_n60.pg FLIPEV r116_n60.pg n 60 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r117_n70.pg FLIPEV r117_n70.pg n 70 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r119_n20.pg FLIPEV r119_n20.pg n 20 iterations 1 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r118_n80.pg FLIPEV r118_n80.pg n 80 iterations 6 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r11_n60.pg FLIPEV r11_n60.pg n 60 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r120_n30.pg FLIPEV r120_n30.pg n 30 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r122_n50.pg FLIPEV r122_n50.pg n 50 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r121_n40.pg FLIPEV r121_n40.pg n 40 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r123_n60.pg FLIPEV r123_n60.pg n 60 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r124_n70.pg FLIPEV r124_n70.pg n 70 iterations 7 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r125_n80.pg FLIPEV r125_n80.pg n 80 iterations 6 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r126_n20.pg FLIPEV r126_n20.pg n 20 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r127_n30.pg FLIPEV r127_n30.pg n 30 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r128_n40.pg FLIPEV r128_n40.pg n 40 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r129_n50.pg FLIPEV r129_n50.pg n 50 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r130_n60.pg FLIPEV r130_n60.pg n 60 iterations 3 candidates 1 VIOL 0 MINHC 1 witness (k, o, old, new) (2, 43, 9, 48) VIOL2 0
+GAME new/box59/out/rnd/r12_n70.pg FLIPEV r12_n70.pg n 70 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r131_n70.pg FLIPEV r131_n70.pg n 70 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r132_n80.pg FLIPEV r132_n80.pg n 80 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r133_n20.pg FLIPEV r133_n20.pg n 20 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r135_n40.pg FLIPEV r135_n40.pg n 40 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r134_n30.pg FLIPEV r134_n30.pg n 30 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r137_n60.pg FLIPEV r137_n60.pg n 60 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r136_n50.pg FLIPEV r136_n50.pg n 50 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r138_n70.pg FLIPEV r138_n70.pg n 70 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r139_n80.pg FLIPEV r139_n80.pg n 80 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r140_n20.pg FLIPEV r140_n20.pg n 20 iterations 1 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r13_n80.pg FLIPEV r13_n80.pg n 80 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r141_n30.pg FLIPEV r141_n30.pg n 30 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r143_n50.pg FLIPEV r143_n50.pg n 50 iterations 1 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r142_n40.pg FLIPEV r142_n40.pg n 40 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r144_n60.pg FLIPEV r144_n60.pg n 60 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r145_n70.pg FLIPEV r145_n70.pg n 70 iterations 7 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r147_n20.pg FLIPEV r147_n20.pg n 20 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r146_n80.pg FLIPEV r146_n80.pg n 80 iterations 7 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r148_n30.pg FLIPEV r148_n30.pg n 30 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r149_n40.pg FLIPEV r149_n40.pg n 40 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r14_n20.pg FLIPEV r14_n20.pg n 20 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r151_n60d2.pg FLIPEV r151_n60d2.pg n 60 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r150_n50.pg FLIPEV r150_n50.pg n 50 iterations 6 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r152_n60d2.pg FLIPEV r152_n60d2.pg n 60 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r154_n60d2.pg FLIPEV r154_n60d2.pg n 60 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r153_n60d2.pg FLIPEV r153_n60d2.pg n 60 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r156_n60d2.pg FLIPEV r156_n60d2.pg n 60 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r155_n60d2.pg FLIPEV r155_n60d2.pg n 60 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r158_n60d2.pg FLIPEV r158_n60d2.pg n 60 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r157_n60d2.pg FLIPEV r157_n60d2.pg n 60 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r159_n60d2.pg FLIPEV r159_n60d2.pg n 60 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r15_n30.pg FLIPEV r15_n30.pg n 30 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r160_n60d2.pg FLIPEV r160_n60d2.pg n 60 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r161_n60d2.pg FLIPEV r161_n60d2.pg n 60 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r162_n60d2.pg FLIPEV r162_n60d2.pg n 60 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r163_n60d2.pg FLIPEV r163_n60d2.pg n 60 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r165_n60d2.pg FLIPEV r165_n60d2.pg n 60 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r164_n60d2.pg FLIPEV r164_n60d2.pg n 60 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r166_n60d2.pg FLIPEV r166_n60d2.pg n 60 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r167_n60d2.pg FLIPEV r167_n60d2.pg n 60 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r169_n60d2.pg FLIPEV r169_n60d2.pg n 60 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r168_n60d2.pg FLIPEV r168_n60d2.pg n 60 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r16_n40.pg FLIPEV r16_n40.pg n 40 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r170_n60d2.pg FLIPEV r170_n60d2.pg n 60 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r171_n60d2.pg FLIPEV r171_n60d2.pg n 60 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r172_n60d2.pg FLIPEV r172_n60d2.pg n 60 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r173_n60d2.pg FLIPEV r173_n60d2.pg n 60 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r174_n60d2.pg FLIPEV r174_n60d2.pg n 60 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r175_n60d2.pg FLIPEV r175_n60d2.pg n 60 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r176_n60d2.pg FLIPEV r176_n60d2.pg n 60 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r177_n60d2.pg FLIPEV r177_n60d2.pg n 60 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r178_n60d2.pg FLIPEV r178_n60d2.pg n 60 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r17_n50.pg FLIPEV r17_n50.pg n 50 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r179_n60d2.pg FLIPEV r179_n60d2.pg n 60 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r180_n60d2.pg FLIPEV r180_n60d2.pg n 60 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r181_n60d2.pg FLIPEV r181_n60d2.pg n 60 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r183_n60d2.pg FLIPEV r183_n60d2.pg n 60 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r182_n60d2.pg FLIPEV r182_n60d2.pg n 60 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r184_n60d2.pg FLIPEV r184_n60d2.pg n 60 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r185_n60d2.pg FLIPEV r185_n60d2.pg n 60 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r187_n60d2.pg FLIPEV r187_n60d2.pg n 60 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r186_n60d2.pg FLIPEV r186_n60d2.pg n 60 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r188_n60d2.pg FLIPEV r188_n60d2.pg n 60 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r189_n60d2.pg FLIPEV r189_n60d2.pg n 60 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r18_n60.pg FLIPEV r18_n60.pg n 60 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r190_n60d2.pg FLIPEV r190_n60d2.pg n 60 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r191_n60d2.pg FLIPEV r191_n60d2.pg n 60 iterations 6 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r192_n60d2.pg FLIPEV r192_n60d2.pg n 60 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r193_n60d2.pg FLIPEV r193_n60d2.pg n 60 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r194_n60d2.pg FLIPEV r194_n60d2.pg n 60 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r195_n60d2.pg FLIPEV r195_n60d2.pg n 60 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r196_n60d2.pg FLIPEV r196_n60d2.pg n 60 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r197_n60d2.pg FLIPEV r197_n60d2.pg n 60 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r198_n60d2.pg FLIPEV r198_n60d2.pg n 60 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r199_n60d2.pg FLIPEV r199_n60d2.pg n 60 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r19_n70.pg FLIPEV r19_n70.pg n 70 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r1_n30.pg FLIPEV r1_n30.pg n 30 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r200_n60d2.pg FLIPEV r200_n60d2.pg n 60 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r21_n20.pg FLIPEV r21_n20.pg n 20 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r20_n80.pg FLIPEV r20_n80.pg n 80 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r22_n30.pg FLIPEV r22_n30.pg n 30 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r23_n40.pg FLIPEV r23_n40.pg n 40 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r24_n50.pg FLIPEV r24_n50.pg n 50 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r25_n60.pg FLIPEV r25_n60.pg n 60 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r26_n70.pg FLIPEV r26_n70.pg n 70 iterations 6 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r27_n80.pg FLIPEV r27_n80.pg n 80 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r28_n20.pg FLIPEV r28_n20.pg n 20 iterations 1 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r29_n30.pg FLIPEV r29_n30.pg n 30 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r2_n40.pg FLIPEV r2_n40.pg n 40 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r30_n40.pg FLIPEV r30_n40.pg n 40 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r31_n50.pg FLIPEV r31_n50.pg n 50 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r32_n60.pg FLIPEV r32_n60.pg n 60 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r33_n70.pg FLIPEV r33_n70.pg n 70 iterations 6 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r34_n80.pg FLIPEV r34_n80.pg n 80 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r36_n30.pg FLIPEV r36_n30.pg n 30 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r35_n20.pg FLIPEV r35_n20.pg n 20 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r37_n40.pg FLIPEV r37_n40.pg n 40 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r38_n50.pg FLIPEV r38_n50.pg n 50 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r39_n60.pg FLIPEV r39_n60.pg n 60 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r3_n50.pg FLIPEV r3_n50.pg n 50 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r40_n70.pg FLIPEV r40_n70.pg n 70 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r41_n80.pg FLIPEV r41_n80.pg n 80 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r42_n20.pg FLIPEV r42_n20.pg n 20 iterations 0 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r43_n30.pg FLIPEV r43_n30.pg n 30 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r44_n40.pg FLIPEV r44_n40.pg n 40 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r45_n50.pg FLIPEV r45_n50.pg n 50 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r46_n60.pg FLIPEV r46_n60.pg n 60 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r47_n70.pg FLIPEV r47_n70.pg n 70 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r48_n80.pg FLIPEV r48_n80.pg n 80 iterations 6 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r4_n60.pg FLIPEV r4_n60.pg n 60 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r49_n20.pg FLIPEV r49_n20.pg n 20 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r50_n30.pg FLIPEV r50_n30.pg n 30 iterations 1 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r51_n40.pg FLIPEV r51_n40.pg n 40 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r52_n50.pg FLIPEV r52_n50.pg n 50 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r53_n60.pg FLIPEV r53_n60.pg n 60 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r54_n70.pg FLIPEV r54_n70.pg n 70 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r55_n80.pg FLIPEV r55_n80.pg n 80 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r56_n20.pg FLIPEV r56_n20.pg n 20 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r57_n30.pg FLIPEV r57_n30.pg n 30 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r58_n40.pg FLIPEV r58_n40.pg n 40 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r59_n50.pg FLIPEV r59_n50.pg n 50 iterations 7 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r5_n70.pg FLIPEV r5_n70.pg n 70 iterations 8 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r60_n60.pg FLIPEV r60_n60.pg n 60 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r61_n70.pg FLIPEV r61_n70.pg n 70 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r62_n80.pg FLIPEV r62_n80.pg n 80 iterations 10 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r63_n20.pg FLIPEV r63_n20.pg n 20 iterations 1 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r64_n30.pg FLIPEV r64_n30.pg n 30 iterations 1 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r65_n40.pg FLIPEV r65_n40.pg n 40 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r66_n50.pg FLIPEV r66_n50.pg n 50 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r67_n60.pg FLIPEV r67_n60.pg n 60 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r68_n70.pg FLIPEV r68_n70.pg n 70 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r69_n80.pg FLIPEV r69_n80.pg n 80 iterations 4 candidates 1 VIOL 0 MINHC 1 witness (k, o, old, new) (2, 71, 30, 8) VIOL2 0
+GAME new/box59/out/rnd/r6_n80.pg FLIPEV r6_n80.pg n 80 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r71_n30.pg FLIPEV r71_n30.pg n 30 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r70_n20.pg FLIPEV r70_n20.pg n 20 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r73_n50.pg FLIPEV r73_n50.pg n 50 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r72_n40.pg FLIPEV r72_n40.pg n 40 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r75_n70.pg FLIPEV r75_n70.pg n 70 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r74_n60.pg FLIPEV r74_n60.pg n 60 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r77_n20.pg FLIPEV r77_n20.pg n 20 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r76_n80.pg FLIPEV r76_n80.pg n 80 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r78_n30.pg FLIPEV r78_n30.pg n 30 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r7_n20.pg FLIPEV r7_n20.pg n 20 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r79_n40.pg FLIPEV r79_n40.pg n 40 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r80_n50.pg FLIPEV r80_n50.pg n 50 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r81_n60.pg FLIPEV r81_n60.pg n 60 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r82_n70.pg FLIPEV r82_n70.pg n 70 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r84_n20.pg FLIPEV r84_n20.pg n 20 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r83_n80.pg FLIPEV r83_n80.pg n 80 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r85_n30.pg FLIPEV r85_n30.pg n 30 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r86_n40.pg FLIPEV r86_n40.pg n 40 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r87_n50.pg FLIPEV r87_n50.pg n 50 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r88_n60.pg FLIPEV r88_n60.pg n 60 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r8_n30.pg FLIPEV r8_n30.pg n 30 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r89_n70.pg FLIPEV r89_n70.pg n 70 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r90_n80.pg FLIPEV r90_n80.pg n 80 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r91_n20.pg FLIPEV r91_n20.pg n 20 iterations 3 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r92_n30.pg FLIPEV r92_n30.pg n 30 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r94_n50.pg FLIPEV r94_n50.pg n 50 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r93_n40.pg FLIPEV r93_n40.pg n 40 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r96_n70.pg FLIPEV r96_n70.pg n 70 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r95_n60.pg FLIPEV r95_n60.pg n 60 iterations 6 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r98_n20.pg FLIPEV r98_n20.pg n 20 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r97_n80.pg FLIPEV r97_n80.pg n 80 iterations 4 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r99_n30.pg FLIPEV r99_n30.pg n 30 iterations 2 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/rnd/r9_n40.pg FLIPEV r9_n40.pg n 40 iterations 5 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0
+GAME new/box59/out/fcobsP_3.pg FLIPEV fcobsP_3.pg n 90 iterations 41 candidates 21 VIOL 0 MINHC 1 witness (k, o, old, new) (2, 87, 85, 86) VIOL2 0
+GAME new/box59/out/fcobsP_4.pg FLIPEV fcobsP_4.pg n 115 iterations 47 candidates 25 VIOL 0 MINHC 1 witness (k, o, old, new) (2, 112, 110, 111) VIOL2 0
+GAME new/box59/out/fcobs_6.pg FLIPEV fcobs_6.pg n 163 iterations 62 candidates 35 VIOL 0 MINHC 1 witness (k, o, old, new) (2, 162, 160, 161) VIOL2 0
+GAME red/seg/instances/s3quad_K8_m30.pg FLIPEV s3quad_K8_m30.pg n 479 iterations 264 candidates 0 VIOL 0 MINHC None witness (k, o, old, new) None VIOL2 0

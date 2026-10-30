@@ -48,6 +48,11 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - R144 (Lead 16:36Z) docs/red/R144-compose.md: rel3 (rel2/mkrel3.py, chains in sequence) R strict releases at n = 54R - 20 (R <= 16;
   pin rel3_R4_n196, all checks); latew stretches <= 2 long, 0 strict releases; Lemma ADD (sum R°_Phi <= |F| - SB). Costs add. swcount.py.
   R = 32 not finished (n5b > 900 s).
+- R145 (Lead 18:14Z) docs/red/R145-flipev.md: L-SI box 52 CONJECTURE FLIP-EV DEAD (flipev/instances/flipev_n10 hand start from flipnonex_a,
+  flipevr_n10 random S3; n5b flipev.py VIOL 1 = L-SI flipc EVX 1, xeng, Oink). Mechanism: ENT flip from a non-head rise, tie, BFS
+  re-order, EXI elsewhere. FLIP-EV' (or an ENT flip elsewhere) open: corpus 4,962 candidates 0. (b) SAME-HEAD lemma; clock = nested
+  leapfrog counter vs ARENA-MAX, not built. L-SI's flipc.py runs from /tmp/claude-0/lsi (git archive of l-si 71d1d0ac) with PYTHONPATH
+  experiments/new:harness:new/box21. Never pkill -f a pattern that occurs in the same command line (it kills the shell).
 - RESUME POINT: a super-quadratic kill needs (a) exponentially many upward events (Xi-changes at deviation targets) in one interval, or
   (b) a clock whose rises are not paid by fresh vertices. Untried: reuse ONE delay chain for many rises (a ladder whose top reads several
   depths); feed an upward head from the mkrel2 clocks inside a W-constant interval.
