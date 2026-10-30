@@ -77,9 +77,28 @@ Verdict: H2-H8 are clarifications, a narrowing (H5), a precision (H4) and a DATA
   GAP-L1, GAP-L2, GAP-L3 and GAP-L4. None is an E-item (no symbol's absence makes a clause false under its natural reading); all are
   definitions or citations.
 
+## 5. Addendum (Lead 02:32Z): fixes H1-H15 (l-new c1aa183d, sha1 955bcea2c5dae4c6016d5f9cfeaa8bae004587e0) and line H14 (sha1 a9e8bcae1d6caec7cded179ead78f1cfedf756f9); written 02:32Z by date -u
+- Hashes re-measured: both match. The fixes file is append-only: `git diff 15044625 c1aa183d` adds H10-H15 and changes nothing in H1-H9.
+- G-GAP-1: CLOSED via H1, and H10 correctly maps my GAP-R1 onto it. (2b) u ∈ π = H1 (1b), (2a) = H1 Case 2, (2b)(i)/(ii) = (1b) with S ≠ ∅ / S = ∅.
+  "|π| + 1 longer" survives only in Case 2 = (2a), where it is true. ✓
+- H10-H15 widen nothing. H10 is a mapping. H11 = H2 plus R57 (a). H12 is the triple statement of [V2], which is exactly my GAP-N2: correct, and
+  "which plays produced a and b does not matter" is right for the formal ⊕. H13 = H6. H14 is the line. H15 = H8 (DATA).
+  With §3: H2-H15 are clarifications, one narrowing (H5), one precision (H4) and DATA (H8 / H15). No signed statement widens.
+- H14 against H9, `git diff --no-index --word-diff=porcelain` (mine): exactly two insertions and one replacement.
+  - «premises RESULTS R15 (a), (d), R17 (a) (F1) with R57 (a) (VJ), R21 (a), R38 (a), R88; Ξ_t := Ξ_{σ_t} (SPEC S1); »: GAP-L3 ✓ and GAP-L1 ✓.
+  - «an optimal strategy ρ of a one-player game has» → «for a one-player game of Even (Odd fixed), a pointwise-optimal Even strategy ρ (R17 (a)
+    (F1)) with Ω_ρ its [S1-val] valuation has»: GAP-L2 ✓. The clause reads grammatically in context, which I checked by printing it.
+  - CL keeps «other than the first» (the packet's own wording, the one I signed). The Lead's decision is fine; my note was only that the
+    00:56Z proposal's omission gave a superset.
+- STILL OPEN, one symbol: GAP-L4. H9's standing-premise clause «σ_new is the pointwise optimum of the one-player arena H_t» uses H_t, and no
+  clause of H14 defines it. Precision, not an E-item: "for S4a" makes the reading natural. Under the every-symbol rule, add «H_t := S4a's
+  arena at t (Even keeps σ_t ∪ Iσ_t, Odd follows τ_t)», or replace «the one-player arena H_t» by «S4a's one-player arena».
+- Verdict on H14 (Opus 5.5, D15): it MATCHES §1-§5 with H1-H15 and claims nothing more. GAP-L1, L2 and L3 are present. It is complete once
+  GAP-L4 is added: a five-word edit, which I will word-diff check.
+
 ## DONE / FINDINGS / NEEDS
 - DONE: this §C (R-N5-GAP-C.md).
 - FINDINGS: verdicts identical; gap map {G-GAP-1}, found by both with the same configuration; H1 CLOSES it (OPT-OFF now SIGNED outright);
   H2-H8 clarifications / narrowing / precision / DATA only; H9 = f1c5c5d5 + exactly two changes, both correct; H10+ must add GAP-L1..L3 and
   the new GAP-L4 (H_t, introduced by H9 itself). I missed N-GAP-3 and N-GAP-4; recorded.
-- NEEDS: Lead: the H10+ line SHA for a word-diff check; route GAP-L4 to L-NEW with GAP-L1..L3.
+- NEEDS: Lead: route GAP-L4 (define H_t) to L-NEW; the corrected line SHA for a word-diff check. (§5: H14 carries GAP-L1..L3; G-GAP-1 closed; H2-H15 clean.)
