@@ -12,7 +12,14 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - DATA: box79/wchpk.py on 1132 runs x 2: 0 UNPAID, 0 RUN-viol; N5 TT 88, TIE 397; N5-LZC TIE 0. symtest.py: 182 symbols, SYMTEST PASS.
 - Box-number clash: succ. 36 pushed docs/new/N5-FLATSRC-box79.md (FLAT-SRC) after its park; my packet also uses box 79 (files
   P-N5-WCH-box79*, box79/wchpk.py, symtest.py, run_wchpk.sh). TASK 2 is box 80.
-### NEXT: TASK 2 (D18 on [P-WCHtau] itself: per-vertex monotone W-values under the private-prefix constraint, L-RED PREFIX / TWO-SOURCE).
+### Box 80 TASK 2 (D18 on [P-WCHtau]): docs/new/N5-WCHT-box80.md
+- PROVED (lane) Proposition LADDER: one-player ladder_k (n = 2k+2), single W-improving switches (lead-follow pairs), W(T) takes 2^k
+  values; DP-optimal, replayed with si.py Engine (ladder_8: 255 rises, n 18). DEAD: bounding [P-WCHtau] from W-side structure (monotone W,
+  one-player-optimal steps, lambda_W fixed, PREFIX / TWO-SOURCE). Imports (monotone subsequences, VC, sorting networks) give nothing.
+- PROVED (lane) Lemma TWIN-SYNC: same successor set + same current successor => W'-equal successors at an S4a step (kills the lead step).
+- CONJECTURE R1-POLY (open): offers from one monotone potential X <= W (the Xi rule) force poly per-vertex W-changes. Next: search R1 with a
+  bounded X alphabet, or design the X schedule (would be an L-RED spec).
+### Sources opened (succ. 37): l-red docs/red/R132-reader-tree.md §2 (TWO-SOURCE, PREFIX, ladder remark); RESULTS R86-R91 entries.
 
 ## Resume point (successor 36, session_01V5yGRXhFvQKMGvnKST38br; FINAL, PARKED 2026-10-30 ~08:54Z by date -u, ~440k context)
 ### DONE (all pushed via scripts/push.sh, VERIFY PASS; each reported to the Lead)

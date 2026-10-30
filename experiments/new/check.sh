@@ -409,4 +409,10 @@ if grep -q "{'K-rise': 20, 'FLATTR': 73, 'FSW': 73} max-FLATTR-phase 73 max-FLAT
 else
   echo "box 79 FLATSRC check: FAILED"; exit 1
 fi
+w32=$(cd .. && python3 -I new/box80/ladder.py 8)
+if grep -q "LADDER k 8 n 18 switches 749 T-rises 255 (2^k-1 = 255) distinct-T 256 strict True non-improving-switches 0 monotonicity-violations 0 cycle-nodes \[0\]" <<<"$w32"; then
+  echo "box 80 LADDER: ladder_8 (n 18) one vertex takes 256 W-values under single improving switches (relaxation R0): PASS"
+else
+  echo "box 80 LADDER check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
