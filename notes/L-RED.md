@@ -42,6 +42,7 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   - Box 80's schedule rests on UPWARD waits (upwait.py). Without them the max is k + 2 T-rises (noup.py, exhaustive k ≤ 6).
   - Lemma WAIT-CYCLE (lane): a block by a Ξ-play through X itself can never recur with the same Even pattern on the route (σ̄ closes a
     lower-reward cycle; Ξ is monotone). Branch pins dgu_4 / dga_4.
+- Addendum 1: wcrand.py (WAIT-CYCLE 0 violations), mkpar.py parity opener dead (par_4, parc_4).
 - RESUME POINT: a kill needs one FRESH route pattern per upward wait (a private clock). The proof side counts (X, g, pattern) triples.
   Untried: a parity device for the opener (R108 §6 (C)) so that the opener skips every other value of X.
 - Things only I know: mkdg.py writes names into the .pg; dgstat.py reads them (TOPNAME arg). noup.py is exponential in the number of

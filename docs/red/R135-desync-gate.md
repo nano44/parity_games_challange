@@ -120,6 +120,26 @@ experiments/new/n5.py on L-SI's si.py; state-by-state comparison experiments/red
   blocks every reader of that child at once, so it is not a per-reader desync. It is R134's GAP-IN-PREFIX / TWO-SOURCE wall, which is
   unchanged.
 
+## Addendum 1 (2026-10-30 ~11:45Z, date -u): falsification test of WAIT-CYCLE; the parity opener (route avoiding X) also dies
+- Test (desync/wcrand.py, n5b SPEC). Every not-offered successor g of an Even X whose σ̄-play passes X is recorded with its Even pattern on
+  π. A VIOLATION is a later state with σ(X) = g and the same pattern.
+  - Random games: 0 violations in 23,000 runs (seed 2: 20,000 games, n 4-12, 22,035 self-routed blocks; seed 3: 3,000 games, n 10-20,
+    5,858 blocks).
+  - Fleet pins: 0 violations on latew_K8_m32 (279 blocks), bidir_K8_m32 (16,399), tiedrb_K8_m16 (151), dg_16 (0) and dga_4 (1).
+- Parity opener (desync/mkpar.py). Outside the lemma's hypothesis: X's gate G(X, c) escapes to an opener R(X, c) (Even, prio 0). The opener
+  reads X's OTHER gate G(X, 1 − c), not X, or an Odd gate H → {sibling, B_(j+1)}.
+  - parc_4 (both openers start on the other gate). Odd closes the two-opener cycle G0 → R0 → G1 → R1 → G0 (Ξ cycle node R_A2_1), all
+    priorities irrelevant. 3 iterations.
+  - par_4 (OPEN0=1, the current gate's opener starts open). The openers leave at once, because B_(j+1)'s marker makes H's Ξ positive.
+    τ changes 3 times. Iterations 3, 4, 5, 6 for k 3, 4, 5, 6: linear.
+  - Both pins: xeng identical, Oink zlk OK with strategies verified.
+- READING (the general form of the obstruction). Take X on g_c with a reader on X. Consider g_c's escape route.
+  - If R_c sits on the other gate and that gate's opener is in its blocked position, the route closes the two-opener cycle.
+  - If R_c is open, the route reaches X through the reader.
+  - Every such state therefore carries a closable cycle of low reward through g_c's escape, unless the route's Even pattern is fresh,
+    which brings back Lemma WAIT-CYCLE's (X, g, pattern) count. A witness of "X is still read" is a play through X or through X's gates,
+    and σ̄ turns it into a low cycle as soon as X's current gate can reach it.
+
 ## DONE / FINDINGS / NEEDS
 - DONE:
   - Tools in experiments/red/desync/: mkdg.py (dg_k; GATE=0 control; UP=1 / UPTO=A upward variants), dgstat.py, upwait.py, noup.py.
@@ -133,5 +153,7 @@ experiments/new/n5.py on L-SI's si.py; state-by-state comparison experiments/red
      T-rises.
   3. PROVED (lane) Lemma WAIT-CYCLE: a gate blocked by a Ξ-play through X itself can never be taken later with the same Even pattern on that
      play. σ̄ would close a cycle of lower reward, and Ξ cannot fall.
-  4. READING: box 82's spec needs one fresh signal pattern per upward wait, i.e. a private clock. No kill of G-N5-TIME or of N5.
+  4. DATA (Addendum 1): WAIT-CYCLE 0 violations in 23,000 random runs and on 5 fleet pins; the parity opener (route avoiding X) dies by a
+     two-opener cycle or by τ-instability (par_4 / parc_4, linear).
+  5. READING: box 82's spec needs one fresh signal pattern per upward wait, i.e. a private clock. No kill of G-N5-TIME or of N5.
 - NEEDS: none from the owner. Lead: route Lemma WAIT-CYCLE and §5's (X, g, pattern) count to L-NEW box 83 (R3-POLY) if useful.
