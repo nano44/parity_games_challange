@@ -134,3 +134,26 @@
 - O-ARENA needs [S4b-OPT], which R57's premise does not cover (L42). It is withdrawn from the signed claims and from the line (L-1 has neither).
 - Both referees checked that §3-§7 use neither O-ARENA nor [S4b-OPT].
 - The packet's §1 premise list should be read without [S4b-OPT].
+
+
+## Entry 6 (2026-10-31 16:1xZ by date -u): STAIR-L9 (REFEREE §C on L-1, claude/referee ad4e7ebc) = STAIR-L1-1 (REFEREE-2, claude/referee-2 6f45b443) — line L-2
+### REFEREE (verbatim, docs/referee/R-N5-STAIR.md l. 186-190)
+>   - REMAINING free symbols: STAIR-L9 (REQUIRED). v (in BIT-ALT, FIRST-GOOD, COPY's «if v ∉ C», RESET-ROOT's «every reset of W(v)»,
+>     DESC-COPY's «if v ∉ C» and ASC-RUN's «WCH_F(v) ≤ …») and b (in BIT-ALT) are not in the quantifier «for every N5 run on every game,
+>     every W-run F = [p, q] of it and every transition k → k + 1 of F». No clause binds them, apart from the Σ_v sums.
+>     - This is the same kind of item as REFEREE-2's ODD-L1 (x, u, k unquantified), which P-N5-ODD L-1 fixed (E3.5).
+>     - Fix: «… every transition k → k + 1 of F, every vertex v and every bit position b:».
+### REFEREE-2 (verbatim, docs/referee-2/R2-N5-STAIR-L1.md l. 42-47, claude/referee-2 6f45b443)
+> - **STAIR-L1-1 (REQUIRED; the ODD-L1 class).** The vertex v and the bit b are unquantified in the lemma clauses: BIT-ALT («GOOD_F(v, b) ≤
+>   1 + BAD_F(v, b)»), FIRST-GOOD («every change of W(v)»), COPY («if v ∉ C has the same successor z …»), RESET-ROOT («every reset of W(v)»),
+>   DESC-COPY («if v ∉ C has a descent …») and ASC-RUN («WCH_F(v) ≤ …»).
+>   - The global binder quantifies only the run, F and k.
+>   - The same pattern («if Ξ_(k+1)(x) ≠ Ξ_k(x)») was REQUIRED in ODD (my ODD-L1), and L-SI applied it.
+>   - Fix (one phrase): «… every W-run F = [p, q] of it, every transition k → k + 1 of F, every vertex v and every bit position b:».
+### Repair: line L-2 = L-1 with the quantifier extended
+- docs/new/P-N5-STAIR-line-L2.txt (one line, no heading marker). Its only changes against L-1 (word-diff):
+  - «every W-run F = [p, q] of [-it and-]{+it,+} every transition k → k + 1 of [-F:-]{+F, every vertex v and every bit position b:+}»;
+  - «fixes … entries [-1-5)-]{+1-6)+}».
+- Both referees found every other item of L-1 matching: REFEREE STAIR-L1..L8; REFEREE-2 STAIR-L1..L6, P-1, P-2 and F-1, with entry 1's
+  repair SIGNED by REFEREE-2.
+- The two required items are one change, and the fix phrase is identical in both reports. L-2 makes exactly that change.
