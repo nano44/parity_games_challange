@@ -154,8 +154,9 @@ Odd re-optimisation, inside one N5 τ-stretch»)
 | --- | --- | --- | --- | --- | --- |
 | 32 | w_re3_1 (21) | 1, 3 | 36, 42 | 1.31 | 0.041 |
 | 32 | hit_b6a_1 (23) | 2, 4 | 31, 44 | 1.38 | 0.043 |
-| 17 | hd_H5 (5) | 11, 12 | (running) | | |
-| 47 | hd_H15 (15) | 13, 14 | (running) | | |
+| 17 | hd_H5 (5) | 11, 12 | 14, 17 | 1.00 | 0.059 |
+| 47 | hd_H15 (15) | 13, 14 | 20, 25 (fewer evaluations: about 20k vs 50-70k at n 17) | 0.53 | 0.011 |
+- |F|/n² FALLS with n across the climbs (0.059 → 0.043 → 0.011), as for any linear |F|.
 - READING: at n ≤ 47, climbing finds |F| of order n (1.3n–1.4n at n 32). This is no evidence of super-quadratic growth: the designed
   quadratic families have |F|/n² ≈ 0.004 only at n ≥ 200, below what a climb at n 32 can separate.
 - The climbed games are NOT pinned and were not checked with xeng / Oink (the climb timed out before writing its best). They are data,

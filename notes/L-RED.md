@@ -1,5 +1,5 @@
 # L-RED notebook (independent adversary lane)
-Successor 38 (session_01V5yGRZkXge7F2DR4joW3DU, Opus 5.5) started 2026-10-31 12:12Z (date -u); R162 DESC-LIN, R163 DESC*, D-ODD-1 starts; see "Successor 38".
+Successor 38 (session_01V5yGRZkXge7F2DR4joW3DU, Opus 5.5) started 2026-10-31 12:12Z (date -u); R162 DESC-LIN, R163 DESC*, D-ODD-1 starts, R164 switch-all counter vs N5; see "Successor 38".
 Successor 37 (session id: see docs/NOW.md roster, Opus 5.5) started 2026-10-31 08:11Z (date -u); R158-R161; handover written ~11:0xZ at ~420k, updated after R161 (~470k), PARKED; see "Successor 37 PARK".
 Successor 36 (session_01V5yGRXBDuKdR4N9Rfvkq8p, Opus 5.5) started 2026-10-31 01:10Z (date -u); R152-R157 + SRC L-4, L-5; un-parked 06:43Z for R157 (Lead keeps 99762405); PARKED again ~07:5xZ; see "Successor 36 PARK".
 Successor 35 (session_01V5yGRWdTCZePxH7viLZ6VS, Opus 5.5) started 2026-10-30 20:42Z (date -u); R147-R151; PARKED ~2026-10-31 00:5xZ; see "Successor 35 PARK".
@@ -61,8 +61,21 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   - Bad starts: sbq2 (obs3.py), the 3 fbg pins (fbsearch build, 6 non-edges each), the old n3 climb outputs.
   - All counts reproduce from repaired starts; the sbq2 family W-runs are 1 shorter.
   - fbg_K12 re-pinned with the repaired start.
+- R164 docs/red/R164-sax.md (Lead GO 14:47Z, inputs 15:46Z / 16:15Z):
+  - sax/hyb.py hybrids. The FIXED τ does not kill the switch-all counter: H1 is exponential, with 618/630 steps in one τ-run. S4a kills
+    it.
+  - PROVED (lane, elementary): S4a is W-monotone.
+  - DATA: switch-all's carries are W-drops.
+  - PLAT: N5 has PLAT = K − 1 in one W-run on fbA (R158 design A; pin sax/instances/fbA_K8_m8_m8, PLAT 7), linear, re-armed by
+    ladder W-rises.
+  - Hybrids: W-monotone switch-all (H4) has PLAT ≤ 1, where H1 has 2^(N−1) − 2.
+  - switchbestexp in one frozen-τ world (H3): every re-arm is a W-dropping fallback, and stretches are linear.
+  - OBSTRUCTION (template): each re-arm needs a W-drop, i.e. a W-run boundary (τ-move or fallback).
+  - Climbs (wclimb REARM=3) at n 17 / 32 / 47: |F| ≤ 1.4n.
+  - Tools ancx.py / platx.py need L-SI's anc.py (env ANC; git-archive of claude/l-si).
 - scipy was pip-installed in this container (not in the repo); check.sh skips the ILP lines without it.
-- RESUME POINT: the decisive form needs a depth-3 re-arm in the core (R160 open climb, hd/wclimb.py REARM=2), objective |F|/n^2.
+- RESUME POINT: a W-MONOTONE nested counter: a re-arm paid by a W-RISE (as fbA's gate, once per ladder rung) whose carrier's W-chain is
+  itself long, i.e. depth >= 3 (DESC* nested). Every switch-all template dies at «re-arm = W-drop» (R164 §1c).
 - Things only I know:
   - desc2.py runs from trunk with LNEW=.. (cwd experiments/red). The trunk n5x / si / pg / n5 are identical to l-new ffe347ee.
   - The cp_K20 run (n 896) was killed (out of memory) when run in parallel with other runs. A solo rerun was started in the
