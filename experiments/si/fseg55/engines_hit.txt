@@ -1,0 +1,2 @@
+hit_b6a_1 xeng: state sequences identical: True
+hit_b6a_1 n5: iterations=43 fallback=2 | zielonka(oink zlk) OK strategies verified

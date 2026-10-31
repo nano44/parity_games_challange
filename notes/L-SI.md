@@ -1,6 +1,20 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## HANDOVER (successor 36, box 55; written 2026-10-31T10:0xZ (date -u; see commit); session_01V5yGRX7j3zGTcKETSyEKZr)
+### Resume point
+- Box 55 (Lead 09:46Z): note docs/si/N5-FSEG-box55.md, tools experiments/si/fseg55/, pins check.sh «box 55», DEAD.md «box 55».
+- PROVED (lane): Lemma NO-RET (Ξ(σ̄_k o) unchanged ⇒ Ξ(o) unchanged, at every N5 transition). Box 54's RET exception is gone: ODD-STEP
+  unconditional, SRC-ROOT ends at a first-segment prefix event or an Even C-node Ξ-change. (Box 54 note §2 still says «Open»; box 55 §1
+  supersedes it.)
+- DATA: corpus source events 4,570 = 4,544 with an FS-selector switch + 26 with an Even C-node switch. NO-RET search 900k games, 0.
+- DEAD: constant depth cap from first-segment order (hit_b6a_1: gates = consecutive switches on Odd 0's segment, k 34-40); PEEL reduction
+  (GROW ≈ HXS on the quadratic pins).
+- NOT achieved: brief item (2), a bound on S4a switches at FS-selectors.
+### Queue
+1. Bound FS-selector switches per W-run (brief item 2), or build a depth-4 instance by stacking hit_b6a_1's peel (L-RED's side).
+2. Segment re-growth: what forces a deviator's first segment to re-grow after a source event? (GROW ≈ HXS in data.)
+
 ## HANDOVER (successor 36, box 54; written 2026-10-31T08:4xZ (date -u; see commit); session_01V5yGRX7j3zGTcKETSyEKZr, Lead session_014FBi6o334DvwT5Uw2kDfoN)
 STEP 0: origin/claude/l-si = c7f00306 (ancestor of HEAD, yes); trunk merged b13895f4. No other pusher (origin's last L-SI commit c7f00306).
 ### Resume point
