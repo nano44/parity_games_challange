@@ -109,8 +109,12 @@ climbs_end.txt). The exhaustive C(2)-C(4) and R5 / R6 (seed 23) JSONs are box 23
 
 ### Exhaustive C(n) (exh24.py: every game, every start pair, EVERY suffix of every maximal W-run chain)
 - C(3): 21,952 games, no W-run with a return at all.
-- C(4): IN PROGRESS (8 parts, 2 cores). Parts 0-1 (3.24M games, 67.7M start pairs): only 22 W-run suffixes contain a return.
-  Max returns 1, CASC 1, PXR 1, RETURN-node children 0, depth 0. C4_ROW
+- C(4): PARTIAL, stopped on the Lead's order (02:50Z: «small-n return counts no longer decide anything»). Parts 0-3 of 8 are done
+  (results/C4_parts0-3_casc.json; 6,480,128 games = half of C(4), 135,376,640 start pairs, 6,687,848 W-run suffixes).
+  - Only 60 suffixes contain a return.
+  - Max returns 1, CASC 1, PXR 1, RETURN-node children 0, FRESH-node children 1, depth 0. bad 0.
+  - |F| histogram {1: 6,396,986, 2: 145,074, 3: 238}.
+  - Parts 4-7 NOT RUN.
 - C(5): not exhaustive (2.9·10^10 games).
 
 ### Climbs (climb24.py; fitness (quantity, secondary, returns); the third key gives a gradient where the first two are 0)

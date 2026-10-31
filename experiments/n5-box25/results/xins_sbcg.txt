@@ -1,0 +1,1 @@
+TOTAL {'games': 719, 'agree': 719, 'disagree': 0, 'fail': 0} max {'MAXINS': (7, 'red/xing/instances/u23sw64_n32.pg'), 'MAXKEYCH': (8, 'red/xing/instances/u23sw64_n32.pg')}
