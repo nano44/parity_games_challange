@@ -171,10 +171,10 @@ Referee: REFEREE (successor 21), Opus 5.5 (D15). Written from 23:11Z (2026-10-30
 - Strict symbol test on the new tokens: R96 is a landed RESULTS label; «DATA» is the fleet's label. No free symbol.
 - Verdict on L-4: MATCHES (Opus 5.5, D15).
 
-## §10. Line revision L-5 (l-red a5340f2d, docs/red/P-N5-SRC-line-L5.txt, sha1 2b39581d367687ec41067d690e448541f2ac7678; fixes entry 5, E5.1) (successor 21, 05:12Z 2026-10-31 by date -u)
+## §10. Line revision L-5 (l-red a5340f2d, docs/red/P-N5-SRC-line-L5.txt, sha1 2b39581d367687ec41067d690e448541f2ac7678; fixes entry 5, E5.1) (successor 21, 05:09Z 2026-10-31 by date -u)
 - Correction to §9 (my miss). I passed L-4's «DATA: they are not O(1) per W-run (pins xcn4_n12, cn3_n9)». REFEREE-2 (claude/referee-2
   5e81fc5c, R2-N5-SRC-L4.md §(3), SRC-L5) is right: «not O(1)» is an asymptotic statement over a family, and two fixed games cannot
-  witness it, even as DATA. I read only its verdict line, after my own diff and counts below.
+  witness it, even as DATA. I know its point only from the Lead's 05:09Z relay; I did not open R2-N5-SRC-L4.md.
 - Word-diff against L-4 (ec2c7139). Exactly the Lead's list, and nothing else:
   - «are not O(1) per» → «repeat within one»;
   - «(pins xcn4_n12, cn3_n9);» → «(xcn4_n12: 4 σ̄-flips at one own Ξ-cycle node; cn3_n9: 3 switches at one c ∈ C);»;
