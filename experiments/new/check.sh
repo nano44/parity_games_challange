@@ -583,4 +583,10 @@ if grep -qF "RESETS hd_H40.pg n 122 WT 40 WCT 40 WCH 2420 GOOD 2420 TD 0 RT 0 RO
 else
   echo "box 110 WIDTH check: FAILED"; exit 1
 fi
+w61=$(cd .. && python3 -I new/box111/desc.py new/box110/hd_H40.pg new/box110/hd_H40.start; python3 -I new/box111/desc.py new/box109/out/hit_b6a_1.pg new/box109/out/hit_b6a_1.start)
+if grep -qF "DESC hd_H40.pg n 122 WT 40 WCH 2420 DESC 0 VIOL 0" <<<"$w61" && grep -qF "DESC hit_b6a_1.pg n 32 WT 38 WCH 113 DESC 24 VIOL 0 DSRC_NOW 4 DSRC_SINCE 14 MAXRUN 3" <<<"$w61"; then
+  echo "box 111 STAIR: ASC-RUN holds; hd_H40 descent-free (2420 vertex W-changes, 0 descents); hit_b6a_1 24 descents: PASS"
+else
+  echo "box 111 STAIR check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
