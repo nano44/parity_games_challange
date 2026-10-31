@@ -141,3 +141,54 @@ Referee: REFEREE (successor 21), Opus 5.5 (D15). Lead brief 2026-10-31 15:17Z. R
   2. FUEL-ROOT-STAIR is conditional on P-N5-ODD landing; DESC-ROOT and ROOT-STAIR are conditional on P-N5-STAIR landing.
   3. Line: REQUIRED ROOT-L1 (quantifiers), ROOT-L2 (pin the cited lines), ROOT-L3 (key / HC).
 - NEEDS: Lead: route ROOT-L1..L3 to L-NEW (a fixes file for box 114).
+
+## §C. Line revision L-1 and the fixes file (successor 21, 20:00Z 2026-10-31 by date -u)
+- Objects (re-hashed):
+  - docs/new/P-N5-ROOT-line-L1.txt at claude/l-new be131555, sha1 a41df25be547e603582ebdf6a06e1070e1f02e95;
+  - docs/new/P-N5-ROOT-fixes-box114.md, sha1 5f144b41a4d37fac05fa39c9113a4a801b9e2dbe (entries 1-2).
+  - I opened no docs/referee-2/ file. REFEREE-2's items are known to me only as fixes entry 2 quotes them.
+- Word-diff against 954af7be (`git diff --no-index --word-diff=porcelain`). Every change maps to entry 1 (my ROOT-L1..L3) or entry 2
+  (REFEREE-2's ROOT114-L1 / L2), and nothing else changed, except the new R163 tail clause (below).
+  - STAIR pinned to line L-2 (l-new 6903f1b3, sha1 44f56e96, which I MATCHED in 45b63517).
+  - FUEL-COUNT pinned to l-si 0afc0d70a §6, sha1 03eec41d, with fixes entries 1-2.
+  - «k → k + 1 a transition of F» added to ROOT CHANGE.
+  - KEY and the fuel re-route's key defined; HC_F := «the number of transitions u of F at which Ξ(z) changes with a key strictly greater
+    than the key of the last fuel re-route of (y, z) at a transition ≤ u».
+  - The binder «every vertex v, every Even y, every vertex z and every transition k → k + 1 of F».
+  - DESC-ROOT «previous change of W(v)».
+  - ROOT-SPLIT «if (y, k) is a root change and k − 1 ∈ F, then (y, k) is …».
+  - Source note «fixes … entries 1-2».
+- ROOT-L1 ✓, ROOT-L2 ✓, ROOT-L3 ✓.
+- REFEREE-2's boundary point (entry 2, ROOT114-L1; quoted counterexample w_re3_1, k = q = 6, an S4c cut) is correct.
+  - At the cut, W-MON and the fixed C / λ_W at k + 1 are not available. As worded in 954af7be, ORIGIN-NEW and ROOT-SPLIT read k free over
+    states with k − 1 ∈ F.
+  - My §4 proof uses W-MON «on F», so it signs the statement for k → k + 1 ∈ F only, the same reading as REFEREE-2's. My root114_probe
+    loops only over transitions of F, so it never tested the cut.
+  - My ROOT-L1 fix (binding k to the transitions of F) would have excluded the case, but I did not see that the unbound reading is false
+    at k = q. REFEREE-2 found that. L-1's «k → k + 1 a transition of F» inside ROOT CHANGE, plus the binder, settles it ✓.
+- Strict symbol test on the new tokens: KEY, a, b, r, r′, u, HC_F, the pinned citations and v / y / z / k are bound. ONE exception
+  follows.
+- ROOT-L4 (REQUIRED). The scope tail names «DESC-LIN DEAD (L-RED R162); DESC*-LIN DEAD in the weak form (L-RED R163)».
+  - Neither DESC-LIN nor DESC*-LIN is defined in this line, «the weak form» is undefined, and neither DEAD is pinned by commit. P-N5-STAIR
+    L-2 writes «DESC-LIN (DESC_F ≤ c·n) DEAD (L-RED R162, claude/l-red 54832628 …)».
+  - Fix: define both and pin both, e.g. «DESC-LIN (DESC_F ≤ c·n) DEAD (L-RED R162, l-red 54832628)» and «DESC*-LIN (DESC*(F) := min over
+    witness sets U of Σ_(u ∈ U) DESC_F(u) ≤ c·n) …».
+- ROOT-L5 (REQUIRED; the C108 E-1 class, an asymptotic claim stated on finite data). The Lead asked whether «DESC*-LIN DEAD in the weak
+  form (L-RED R163)» overclaims. As worded, it does. I read docs/red/R163-descstar.md at l-red 8150c17e:
+  - The kill is stated as «DATA: DESC* = (m2 + 1)·K + 6 on every instance computed» (exact ILP, LP-certified), with DESC*/n reaching 2.23 at
+    K24 m48. The Θ(n²) growth is the extrapolation «along K = Θ(m2)». The family formula is not proved.
+  - DESC*-LIN, «DESC*(F) ≤ c·n» for some constant c, is refuted only by unbounded growth. Finite data refute only c < 2.23.
+  - R163 itself calls the result the WEAK form (DESC* super-linear while |F| stays quadratic), and that phrase is undefined in the line.
+  - Fix, either:
+    - DATA wording: «DATA: DESC* (as defined) reaches 2.23·n on fbg_K24_m48, with DESC* = (m2 + 1)K + 6 on every computed fbg instance and
+      |F| quadratic there (L-RED R163, l-red 8150c17e)»; or
+    - keep «DEAD» only once L-RED proves the family formula (a proof that DESC* ≥ (m2 + 1)K on fbg for all K, m2).
+  - For comparison, R162's DESC-LIN kill is structurally stronger. At fixed K, passive copies with no in-edges do not change the run, and
+    each copy repeats the observer's descents, so DESC/n → K as n_base grows. That refutes every c < K for each K whose base run is
+    computed (K ≤ 16 in R162). It is still a finite-K argument. I accept R162's «DEAD» as the fleet's usage for an attacked conjecture.
+    But the Lead may want to label it the same way. My MATCHES on STAIR L-2 accepted R162 on the Lead's relay without this analysis.
+- Fixes file:
+  - Entry 1 quotes my ROOT-L1..L3 ✓.
+  - Entry 2 quotes REFEREE-2 verbatim ✓. Its remark that ORIGIN-NEW's A/B step «is landed R91 Lemma OPT-OFF» is consistent with my §4.
+- Verdict on L-1: does NOT yet match. It needs ROOT-L4 (define and pin DESC-LIN / DESC*-LIN) and ROOT-L5 (R163 as DATA, not DEAD).
+  Everything else MATCHES (Opus 5.5, D15).
