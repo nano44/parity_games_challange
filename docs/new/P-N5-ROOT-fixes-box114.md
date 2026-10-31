@@ -44,3 +44,45 @@
     difference, else (0, 0) (only the length changes).
   - The order is (0, 0) < (1, r) < (1, r′) < (2, 0) for r < r′.
   - This is P-N5-ODD §6's definition, verbatim in content.
+
+
+## Entry 2 (2026-10-31 19:3xZ by date -u): REFEREE-2 successor 25 (docs/referee-2/R2-N5-ROOT114.md, claude/referee-2 d1c493fb)
+- REFEREE-2 SIGNS every item, with no packet gap. ORIGIN-NEW's R15 A / B step is sound (it is landed R91 Lemma OPT-OFF).
+- Line REQUIRED: ROOT114-L1 (bind k) and ROOT114-L2 (cite STAIR line L-2). Optional: P-1, P-2, P-3.
+### ROOT114-L1 (verbatim, l. 41-61), with the boundary counterexample
+> ### ROOT114-L1 (REQUIRED): bind k
+> - Line text: «a ROOT CHANGE is a pair (y, k) with y switching at k and W(y) changing at k …; (Lemma ORIGIN-NEW) if (y, k) is an origin root change
+>   and k − 1 ∈ F, then (y, σ_(k+1)(y)) ∉ H_(k−1); … (Corollary ROOT-SPLIT) every root change (y, k) with k − 1 ∈ F is a fuel re-route or a
+>   relay entering by an edge of H_(k−1)».
+> - Here F = [p, q] is a set of states. With k = q, the state k − 1 = q − 1 lies in F, but the transition q → q + 1 is not a transition of F.
+>   It is the cut: an S4c fallback, a λ_W change, or a τ change.
+> - The proof needs k → k + 1 in F three times: W-MON (W_(k+1) ⊵ W_k), C fixed at k + 1, and λ_W(y) fixed at k + 1.
+> - Counterexample: experiments/new/box113/inst/w_re3_1.pg (sha1 c59735b4…) with its start w_re3_1.start (3614ad94…), at l-new ed2fdaf2.
+>   - The W-run is F = [2, 6]. Transition 6 → 7 is an S4c fallback (τ unchanged, λ_W unchanged).
+>   - k = 6, y = 12, z = 29: σ_5(12) = σ_6(12) = 22 and σ_7(12) = 29.
+>   - W(12): (11, 201465856, 4) → (11, 218234880, 4), a change. W(29) = (11, 218103808, 3) at states 5, 6 and 7, so the root change is an origin.
+>   - k − 1 = 5 ∈ F, and (12, 29) ∈ H_5.
+>   - So ORIGIN-NEW as worded fails. ROOT-SPLIT as worded fails too: the change is not a fuel re-route (the edge is old) and not a relay.
+>   - Evidence: docs/referee-2/R2-N5-ROOT114/bnd.py, logs/bnd_w_re3_1.txt, and pins.txt (lines «EX BND_ONEW_FAILS_fb … w_re3_1 …@6»).
+> - Size of the problem: there are 2,977 such boundary origins with an old edge on the corpus (logs/corpus_totals.txt: BND_ONEW_FAILS_fb
+>   2,394, BND_ONEW_FAILS_lamW 583) and 42 on the pins.
+> - Fix (wording only; the packet's proofs are unchanged): define a root change as a pair (y, k) with k → k + 1 a transition of F, y switching at k
+>   and W(y) changing at k. Equivalently, write «if k → k + 1 is a transition of F, k − 1 ∈ F and (y, k) is an origin root change» in
+>   ORIGIN-NEW, and «every root change (y, k) at a transition k → k + 1 of F with k − 1 ∈ F» in ROOT-SPLIT.
+> - The packet itself should say the same in §4. Its §1 («every transition is an S4a step») is the reading under which I sign.
+> 
+### Repairs in line L-1 (docs/new/P-N5-ROOT-line-L1.txt)
+- ROOT114-L1 (= REFEREE ROOT-L1):
+  - the binder quantifies «every transition k → k + 1 of F»;
+  - a ROOT CHANGE is defined as a pair (y, k) «with k → k + 1 a transition of F»;
+  - ROOT-SPLIT reads «if (y, k) is a root change and k − 1 ∈ F, then …», so k is not re-quantified.
+  - The boundary case k = q (w_re3_1, F = [2, 6], 6 → 7 an S4c fallback; 2,977 corpus cases) is outside the line.
+  - The packet's proofs are unchanged. Its §1 («every transition is an S4a step», k → k + 1 a transition of F) is the reading both
+    referees signed. Packet §4 should be read with «k → k + 1 a transition of F», as REFEREE-2 asks.
+- ROOT114-L2: the line cites «P-N5-STAIR … as in its line L-2: l-new 6903f1b3, docs/new/P-N5-STAIR-line-L2.txt, sha1 44f56e96…» and
+  «… DESC_F as in P-N5-STAIR's line L-2». Neither STAIR nor ODD has landed, so the pins stay commit + sha1. ODD is cited as the packet
+  (l-si 0afc0d70a, sha1 03eec41d) with its fixes entries 1-2.
+- P-3 (= REFEREE ROOT-L3): «the last fuel re-route of (y, z) at a transition ≤ u» is restored, and the key is defined (entry 1).
+- P-1: no change needed. NEW-FUEL is true even with k unbound, and the binder covers it either way.
+- P-2 (cite R91 OPT-OFF for ORIGIN-NEW's first step): recorded here. The line's premise list cites R15 (a), (b) and [1E-N3], which give
+  OPT-OFF's content.
