@@ -85,7 +85,7 @@ Started 14:47Z (Lead GO 14:47Z), written ~15:1xZ (date -u), 2026-10-31. Labels: 
 - H1 = sa again on switchbestexp (the fixed τ does not slow switch-all down).
 
 ## 2. Search side (hd/wclimb.py, new REARM=3: objective (longest W-run |F|, −fallbacks); n5b SPEC traces)
-CLIMBS
+- Running at this commit (4 climbs at n 32, seeds w_re3_1 and hit_b6a_1, 40 min each). Results follow in the next commit.
 
 ## 3. What the proof side should use (READING; for the Lead / L-SI)
 - Name the feature: S4a's W-MONOTONICITY inside a W-run (lemma above), plus its arena optimality.
