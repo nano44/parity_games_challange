@@ -223,3 +223,10 @@ Referee: REFEREE (successor 21), Opus 5.5 (D15). Lead brief 2026-10-31 12:40Z (r
     The new start validation (startcheck.py) is the remedy I asked for.
 - Verdict on L-1: does NOT yet match, only because of ODD-L5 ((y, z) in FUEL-COUNT), a one-phrase insertion. Everything else MATCHES
   (Opus 5.5, D15).
+
+### §C addendum: line revision L-2 (l-si 6370a35f0, docs/si/P-N5-ODD-line-L2.txt, sha1 ee114e2fe704a8ebf278910e6097a126afe94780; fixes entry 5) (15:52Z 2026-10-31 by date -u)
+- Word-diff against L-1 (3e25138b): exactly one insertion, «(Corollary FUEL-COUNT) {+for every pair (y, z),+} the number N …». Nothing else
+  changed. The sha1 is re-hashed and matches.
+- ODD-L5 is met: (y, z) is now bound in FUEL-COUNT's own clause. No new symbol is introduced.
+- Fixes entry 5 quotes my ODD-L5 and my G-ODD-2 signature verbatim ✓.
+- Verdict on L-2: MATCHES (Opus 5.5, D15). No REQUIRED change remains on the P-N5-ODD line.
