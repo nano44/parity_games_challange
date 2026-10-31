@@ -65,8 +65,10 @@ Fix a τ-stretch (in particular a W-run F) and an interval I of it. XICH_I(w) :=
 - red/lex/swxi.py checks SW-XI and its strict chain at every Even vertex of every W-run. Pins: u23sw64_n32 94 switches, tie_n32 102,
   cedge_n32 98, sbq2_K8_m16 513; violations 0, chain failures 0. Corpus (red/lex/runswxi.sh, 812 distinct games): 37,718 switches,
   violations 0, chain failures 0.
-- Climbs (red/lex/kclimb.py = red/tie/tclimb.py with score (max KEYCH, longest W-run), seeded from tie_n32, 60 min, PAD 0 / 16). INTERIM at
-  ~6 min (final in a follow-up commit): best KEYCH 9, longest W-run 15 (PAD 0, n 32); KEYCH 9, W-run 14 (PAD 16, n 48).
+- Climbs (red/lex/kclimb.py = red/tie/tclimb.py with score (max KEYCH, longest W-run), seeded from tie_n32, 60 min, PAD 0 / 16). Final (170,401 / 95,442
+  steps): best KEYCH 10 with longest W-run 19 (PAD 0, n 32; kept as lex/instances/keych10_n32, sha1 586f57c4…, «KEYCH keych10_n32.pg n 32
+  iters 22 maxL 19 maxKEYCH 10 (v 15 from 0 to 12) keyrises_at_fixed_W 0», xeng identical, Oink OK); KEYCH 9, W-run 15 (PAD 16, n 48;
+  xeng identical, Oink OK). KEYCH stays below |F| < n. No growth.
 
 ## 4. READING
 - The tie face is real (O1 is dead, the abstract model is exponential), but in N5 it is not a separate source of length. Every key
