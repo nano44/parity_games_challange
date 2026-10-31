@@ -4,6 +4,8 @@
   ARSB  S4a's step with sigma-bar for tau: sigma <- pointwise optimum of the arena {sigma(v)} u Isigma(v) with Odd fixed to sigma-bar_k.
   SAT   symmetric loop with Even switch-all and Odd's S4b (tau <- Odd's pointwise optimum of {tau(o)} u Itau(o) against the OLD sigma);
         S4c-style fallback for tau when sigma is optimal and tau unchanged.
+  TBR   S4a against tau_k as in N5, but Odd's update is its full best reply: tau_(k+1) := sigma-bar_k (Odd's optimal counterstrategy to
+        the OLD sigma_k), instead of S4b's arena-restricted optimum. Stops when Isigma and Itau are empty.
   N5    n5x.step (SPEC S1-S5).
 Prints iterations, Even switches, max entries of one Even pair (y, z), max fuel re-routes of one pair (as box115/swx.py), and for
 loops with tau the W-runs. Usage: abl.py G.pg VARIANT [cap]"""
@@ -46,6 +48,13 @@ while len(S) <= cap:
             nt = list(tau)
             for v in {v for v, _ in It}: nt[v] = max((w for x, w in It if x == v), key=lambda w: (Ed.key(vt[w]), w))
             nt = tuple(nt)
+        S.append(ns); T.append(nt)
+    elif VAR == "TBR":
+        vt, tb = Ed.evaluate(tau); It = Ed.improving(tau, vt)
+        if not Is and not It: break
+        ns = even_opt(sig, tau, Is) if Is else sig
+        nt = tuple(sb[v] if own[v] == 1 else tau[v] for v in range(n))
+        if ns == sig and nt == tau: break
         S.append(ns); T.append(nt)
     elif VAR == "N5":
         r = step(g, E, Ed, list(sig), list(tau))

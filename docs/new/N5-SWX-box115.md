@@ -119,6 +119,22 @@ Labels: PROVED (lane), DATA, READING, OPEN. No count is bounded here. G-N5-TIME 
 - READING: ARSB grows superlinearly at N ≤ 5 but not as a clean doubling (412 at N = 6). Whether a faithful Schewe rule doubles here
   is for L-LIT / L-COMP (Friedmann's Thm 8.4 counts are not re-checked here). N5's W-runs grow linearly (≈ 6N + 8).
 
+## 5b. Addendum (box 115b, after 15:45Z): which part of τ separates N5 on switchbestexp (DATA; box115/abl.py variant TBR)
+- TBR: S4a against τ_k exactly as in N5, but Odd's update is its FULL best reply τ_(k+1) := σ̄_k, in place of S4b's arena-restricted
+  optimum.
+- switchbestexp_N, N = 2..6:
+  - iterations 53 / 97 / 155 / 209 / 217;
+  - τ-moves 4 / 11 / 21 / 35 / 36;
+  - max pair fuel 4 / 6 / 8 / 12 / 12.
+- TBR therefore sits between ARSB (58 … 412) and N5 (32 … 62, τ-moves exactly N).
+- switchallexp under TBR: 9 / 10 / 14 iterations at N = 3 / 5 / 7, so it collapses like N5 (the arena optimum is enough there).
+- READING: on switchbestexp the separating ingredient is not «against τ» alone. It is that τ moves only by S4b's arena-restricted
+  optimum, and so rarely (N times; one W-run per τ-stretch, 2 W-runs in all).
+  - Each time Odd re-optimises fully (ARSB, TBR), it re-arms Even's carry.
+  - N5's S4b moves Odd only along Odd's improving edges, against the old σ.
+- CONJECTURE-shaped target (not stated as a conjecture here): a lemma bounding the S4b moves (τ-stretches) of N5, or the carries
+  re-armed per τ-stretch. The fleet's stretch / phase counts (RESULTS R47 phases, R48 / R56 fallbacks) are the existing handles.
+
 ## 6. What this means for the proof side (READING)
 - Two separations, each on a published family:
   - switch-all → arena optimum: STALE-FREE, PROVED (lane);
