@@ -1037,6 +1037,16 @@ case "$o" in *"LEXV 0 ASC 0 EQHI 6 REP 0 "*) ;; *) echo "box 57: so_th: $o"; exi
 [ "$(cat grow56/fuel_*.txt | grep -c ' LEXV ')" = 1132 ] || { echo "box 57: srcfuel outputs incomplete"; exit 1; }
 if grep -q "LEXV [1-9]" grow56/fuel_*.txt; then echo "box 57: FUEL-LEX violation"; exit 1; fi
 echo "si (box 57: FUEL-LEX): PASS"
+# box 58 (docs/si/N5-ANC-box58.md, Lead 13:06Z): key ancestry. Lemma checks 0 on sbq2 and on classical switch-all SI (switchallexp_6:
+# one pair re-routed 64 = 2^6 times, no self-feeding); corpus outputs complete and violation-free.
+o=$(python3 -I anc58/anc.py src54/inst/sbq2_K8_m16.pg src54/inst/sbq2_K8_m16.start)
+case "$o" in *"PREFV 0 OLDV 0 EVENV 0 ODDV 0 ODD2 475 ODD2V 0 ARM 513 ARMV 0 INIT 16 EROOT 2642 OROOT 239 LOOP 0 "*"GAINV 0 HC 77 SELF1 0 CHAINV 0 "*"SELFESC 2 SELFESC0 1 MAXHC 1 MAXSELF 1 MAXFUEL 8 WESC 1 "*) ;; *) echo "box 58: sbq2: $o"; exit 1;; esac
+(cd anc58/inst && sha1sum -c --quiet pins.sha1) || { echo "box 58: switchallexp pins changed"; exit 1; }
+o=$(python3 -I anc58/anc.py --si anc58/inst/switchallexp_6.pg)
+case "$o" in *"iters 630 "*"PREFV 0 OLDV 0 EVENV 0 ODDV 0 "*"ODD2V 0 "*"ARMV 0 "*"GAINV 0 "*"SELF1 0 CHAINV 0 "*"SELFESC 0 "*"MAXFUEL 64 "*) ;; *) echo "box 58: switchallexp_6: $o"; exit 1;; esac
+[ "$(cat anc58/anc_*.txt | grep -c ' ANC ')" = 1132 ] || { echo "box 58: anc outputs incomplete"; exit 1; }
+if grep -qE "(PREFV|OLDV|EVENV|ODDV|ODD2V|ARMV|GAINV|CHAINV|LOOPLOW0) [1-9]" anc58/anc_*.txt; then echo "box 58: ancestry violation"; exit 1; fi
+echo "si (box 58: ANCESTRY): PASS"
 # P-N5-ODD (FROZEN packet, boxes 54/55/57; line docs/si/P-N5-ODD-line.txt): must not change. Data pins: «box 54», «box 55», «box 57».
 echo "03eec41d3bfc63a6945d0f30d831a46f14e46b84  ../../docs/si/P-N5-ODD-box57.md" | sha1sum -c --quiet
 echo "cd121dffd06dbc794f3154e34aa238d8df81f837  ../../docs/si/P-N5-ODD-line.txt" | sha1sum -c --quiet

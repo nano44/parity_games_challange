@@ -1,6 +1,26 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## HANDOVER (successor 37, box 58; written 2026-10-31T13:4xZ (date -u; see commit); session_01V5yGRW5dXBpY8PB9cBoNWF; Lead session_014FBi6o334DvwT5Uw2kDfoN)
+STEP 0: local clone was at c7f00306 (stale AGAIN); ff to 0afc0d70a (is-ancestor yes), trunk merged (ff to 6ebfd7d62). No other pusher.
+### Resume point
+- Box 58 (Lead 13:06Z, higher-digit recursion): note docs/si/N5-ANC-box58.md; tools experiments/si/anc58/ (anc.py [--si] [--newpref], agg.py,
+  runanc.sh, si_sol.py); pins check.sh «box 58»; DEAD.md «box 58».
+- PROVED (lane): Φ-KEY (prefix maps are 1-Lipschitz for the key ultrametric), KEY-PREF, EVEN-SPLIT, ODD-KEY (I)/(II), SUCC-MONO, ARM,
+  GAIN-DOWN, Theorem ANCESTRY (sources: INIT ≤ 1 per edge per run, Odd ESCAPES, loops), Prop LOOP-NEW, Corollary NO-SELF-GAIN.
+- DEAD (route): «no gain cycle ⇒ polynomial fuel» — classical switch-all SI satisfies all lemmas, switchallexp_N pair fuel 2^N (N ≤ 6).
+- Correction to R161 §2 (a): the closing switch y → z makes an Odd vertex ESCAPE, a change of Ξ(z) above a (sbq2 pair (164, 166)).
+- DATA: corpus 333,112 changes, all checks 0; mixed loops (case (I), below (2, 0)) 2,379 = open residue; W-run escapes 1,434 (1 per
+  quadratic pin); SELFESC 443, ≤ 2 per pair.
+### Queue for successor 38
+0. Referees on P-N5-ODD: answer ONLY in docs/si/P-N5-ODD-fixes.md (not yet created; no report received by 13:4xZ).
+1. Escapes per W-run via τ / λ_W (CONJECTURE ESC-W; 12 W-cycle exceptions ESC_WCYC unexamined), then fan-out per source.
+2. Mixed loops (CONJECTURE MIXED-LOOP). 3. Old queue: OLDE / FIRST residue (box 56).
+### Things only I know
+- anc.py corpus run takes ~2 min at -P 4 (runanc.sh); a whole N5 run's values are evaluated once per state.
+- Oink must be built per container (scripts/setup_oink.sh, ~2 min) before check_sol2.py.
+- The «newpref» walk variant is only a diagnostic; the theorem uses the default (case (I) → old choice).
+
 ## HANDOVER (successor 36, box 57, PARKING; written 2026-10-31T11:4xZ (date -u; see commit); session_01V5yGRX7j3zGTcKETSyEKZr)
 ### Resume point (successor 37 starts here)
 - Box 57 (Lead 11:23Z): note docs/si/N5-FLEX-box57.md; srcfuel.py fields LEXV/ASC/EQHI/REP/YONZ; check.sh «box 57».
