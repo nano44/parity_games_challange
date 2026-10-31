@@ -297,3 +297,29 @@ Written 2026-10-31 from 20:0xZ (date -u; see commit).
   escapes twice, each time through a cycle with an Even vertex, with W(x) and W(x₂) both constant in between. Hints from the data: the
   W-SEP failures are returns to τ with W tied (frz2_n24), and the Odd-only 2-cycles of §8 already break the unrestricted form. So the
   attack is to place one Even vertex on such a 2-cycle without breaking the tie.
+
+## 11. W-changes per vertex per W-run, against |F| and source events (Lead 20:30Z) (DATA, DEAD, READING)
+Written 2026-10-31 from 20:3xZ (date -u; see commit). Tool experiments/si/anc58/wch.py. For each W-run F it computes LEN = |F|,
+SRC (R97 source-event transitions, as srcfuel.py), WCH_F(v) (transitions of F at which W(v) changes), its max and sum. Corpus output
+anc58/wch_corpus.txt (anc58/corpus_fixed.lst).
+- Quadratic pins (one W-run each):
+  | pin | |F| | SRC | max_v WCH_F(v) | Σ_v WCH_F(v) |
+  | --- | --- | --- | --- | --- |
+  | obs_K12_m24 | 324 | 24 | 301 | 2,976 |
+  | src2_K3 | 324 | 24 | 301 | 4,973 |
+  | rcl_K24 | 324 | 24 | 301 | 4,429 |
+  | sbq2_K8_m16 (fixed start) | 151 | 143 | 16 | 1,935 |
+  | latew_K16_m32 | 560 | 528 | 32 | 6,655 |
+- DEAD: «max_v WCH_F(v) ≤ c·(1 + SRC_F)» for a constant c.
+  - obs / src2 / rcl give a ratio of 12.04 (= K + 0.04); the corpus maximum is 36.
+  - experiments/new/box52/out/topfix_n10.pg (sha1 4b65d3dc…, default start) has a W-run of 58 transitions with NO source event, in which
+    one vertex's W changes 36 times.
+  - red/ul/instances/ladderd0_k48_n156 (+ .start, valid): one vertex's W changes 48 times against 1 source event (|F| = 50).
+  - Both runs: n5b identical (xeng); Oink zlk OK, strategies verified.
+  - Source events therefore do not pay for W-changes one by one, even up to a factor n: topfix_n10 has none.
+- The |F| side: max_v WCH_F(v) / |F| reaches 1.000 in the corpus and 0.929 on obs / src2 / rcl. The only bound consistent with the data
+  is the trivial WCH_F(v) ≤ |F|.
+- READING (consequence for PLAT-POLY). W-REOPEN (§8) bounds the Even-cycle repeat escapes of (s, x) by W-changes at x and x₂, and
+  W-changes per vertex are as large as |F|. So the route «PLAT ≤ W-changes» gives PLAT ≤ |F|, which is circular: it bounds the
+  repeat escapes by the W-run length we are trying to bound. Via STAIR / ASC-RUN (R99), WCH ≤ (3n + 1)(1 + DESC), so the open quantity
+  stays DESC per vertex, as the Lead said. A useful bound must come from DESC (R162 / R163), not from W-changes.

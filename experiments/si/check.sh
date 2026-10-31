@@ -1084,6 +1084,13 @@ case "$o" in *"ESCNOSEP o 12 17 18 19 19"*"ESCE 3 ESCED 3 ESCESEP 2 ESCENOSEP 1 
 o=$(awk '{for(i=1;i<=NF;i++){if($i=="ESCE")a+=$(i+1); if($i=="ESCENOSEP")b+=$(i+1)}} END{print a, b}' anc58/wsep_corpus.txt)
 [ "$o" = "1514 136" ] || { echo "box 58 s10: wsep corpus totals: $o"; exit 1; }
 echo "si (box 58 s10: Odd W-SEP DEAD): PASS"
+# box 58 §11 (Lead 20:30Z): W-changes per vertex are not paid by source events (topfix_n10: 36 in a source-free W-run; obs ratio 12.04).
+o=$(python3 -I anc58/wch.py ../new/box52/out/topfix_n10.pg)
+case "$o" in *"LEN 58 SRC 0 WCHMAX 36 "*) ;; *) echo "box 58 s11: topfix_n10: $o"; exit 1;; esac
+o=$(python3 -I anc58/wch.py src54/inst/obs_K12_m24.pg src54/inst/obs_K12_m24.start)
+case "$o" in *"LEN 324 SRC 24 WCHMAX 301 WCHSUM 2976 "*) ;; *) echo "box 58 s11: obs: $o"; exit 1;; esac
+[ "$(grep -c 'WCH ' anc58/wch_corpus.txt)" = 1132 ] || { echo "box 58 s11: wch corpus incomplete"; exit 1; }
+echo "si (box 58 s11: WCH vs source events): PASS"
 # P-N5-ODD (FROZEN packet, boxes 54/55/57; line docs/si/P-N5-ODD-line.txt): must not change. Data pins: «box 54», «box 55», «box 57».
 echo "03eec41d3bfc63a6945d0f30d831a46f14e46b84  ../../docs/si/P-N5-ODD-box57.md" | sha1sum -c --quiet
 echo "cd121dffd06dbc794f3154e34aa238d8df81f837  ../../docs/si/P-N5-ODD-line.txt" | sha1sum -c --quiet
