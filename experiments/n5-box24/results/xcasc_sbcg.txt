@@ -1,0 +1,2 @@
+TOTAL {'games': 168, 'runs': 273, 'agree': 273, 'disagree': 0, 'fail': 0, 'bad': 0}
+EXIT

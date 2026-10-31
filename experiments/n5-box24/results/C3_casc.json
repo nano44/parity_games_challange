@@ -1,0 +1,79 @@
+{
+ "model": "C",
+ "n": 3,
+ "maxdeg": 99,
+ "random": 0,
+ "seed": null,
+ "maxstates": 0,
+ "every": 1,
+ "offset": 0,
+ "counts": {
+  "games": 21952,
+  "states": 110592,
+  "heads": 6242,
+  "suffixes": 6282,
+  "with_return": 0,
+  "bad": 0
+ },
+ "best": {
+  "F": [
+   2,
+   {
+    "prio": [
+     0,
+     2,
+     3
+    ],
+    "owner": [
+     0,
+     0,
+     0
+    ],
+    "succ": [
+     [
+      0
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "start": [
+     [
+      0,
+      2,
+      0
+     ],
+     [
+      -1,
+      -1,
+      -1
+     ]
+    ]
+   }
+  ],
+  "returns": null,
+  "casc": null,
+  "pxr": null,
+  "kids_ret": null,
+  "kids_fresh": null,
+  "maxdepth": null
+ },
+ "hist": {
+  "F": {
+   "1": 6202,
+   "2": 40
+  },
+  "returns": {},
+  "casc": {},
+  "pxr": {},
+  "kids_ret": {},
+  "kids_fresh": {},
+  "maxdepth": {}
+ },
+ "seconds": 9
+}
