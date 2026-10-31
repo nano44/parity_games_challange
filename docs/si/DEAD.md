@@ -689,3 +689,17 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
   - CONJECTURE FUEL-DESC (keys strictly descend unless a reset of Ξ(z) at a key ≥ the last one intervenes): DEAD,
     experiments/n5-epoch/instances/nep56_n32 (+ .start), pair (28, 2): keys (1, 22) at k 9 then (1, 25) at k 13, Ξ(2) unchanged at
     k 9-11. n5b agrees (xeng), Oink OK. Pins: check.sh «box 56».
+- (box 58, Lead 13:06Z; note docs/si/N5-ANC-box58.md §5) «No gain cycle in the FUEL-COUNT recursion (strict key-level climbing) bounds pair
+  fuel polynomially»: DEAD as a route. The no-gain-cycle statement itself is PROVED (lane, NO-SELF-GAIN; Even links and relays never raise a
+  key). But every lemma used (Φ-KEY, KEY-PREF, EVEN-SPLIT, ODD-KEY, ARM, GAIN-DOWN, ANCESTRY, FUEL-LEX, FUEL-COUNT) also holds for
+  classical switch-all SI. experiments/si/anc58/inst/switchallexp_N (PGSolver generator port, N = 1..6, n = 14N + 7), switch-all SI on
+  si.py: all checks 0, no self-feeding (SELF1 = SELFESC = 0), ancestry depth ≤ 7, yet one pair is re-routed 2, 4, …, 64 = 2^N times
+  (iterations 10(2^N − 1); Oink zlk OK, strategies verified; PGSolver-port engine 10(2^N − 1) + 1). The growth is fan-out fed by Odd
+  escapes (3(2^N − 1)), not cycling. Pins: check.sh «box 58».
+- (box 58) Guess «every same-transition loop of the ancestry walk is at key (2, 0)»: false in the corpus (2,379 of 89,800 loops are below
+  (2, 0); every one takes a case (I) Odd step, LOOPLOW0 0). The case without case (I) steps is PROVED (Prop LOOP-NEW).
+- (P-N5-ODD fixes entry 4, L-SI successor 37, 2026-10-31) WITHDRAWN: the box-54 DEAD «W-rank potential» (sbq2: W(242) = W(259) at all
+  153 states). Its witness used experiments/si/src54/inst/sbq2_K8_m16.start, whose TAU0 entry 242:243 is a NON-EDGE (succ(242) = 244, …,
+  258; REFEREE 21 D-ODD-1, REFEREE-2 24 F-1). With τ(242) on any of its 8 real successors: W(242) = W(259) at 0 of 153 states, while σ̄(260)
+  still flips 128 times. No valid instance is known, so the W-rank potential is OPEN, not dead. ASC-W and TURN-W stay DEAD (src2_K3, valid
+  start; the sbq2 rows survive the repair: BAD 525, TURNBAD 58). Repaired start: src54/inst/sbq2_K8_m16_fix.start.

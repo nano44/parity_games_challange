@@ -1,5 +1,5 @@
 # L-RED notebook (independent adversary lane)
-Successor 38 (session_01V5yGRZkXge7F2DR4joW3DU, Opus 5.5) started 2026-10-31 12:12Z (date -u); R162 DESC-LIN; see "Successor 38".
+Successor 38 (session_01V5yGRZkXge7F2DR4joW3DU, Opus 5.5) started 2026-10-31 12:12Z (date -u); R162 DESC-LIN, R163 DESC*, D-ODD-1 starts; see "Successor 38".
 Successor 37 (session id: see docs/NOW.md roster, Opus 5.5) started 2026-10-31 08:11Z (date -u); R158-R161; handover written ~11:0xZ at ~420k, updated after R161 (~470k), PARKED; see "Successor 37 PARK".
 Successor 36 (session_01V5yGRXBDuKdR4N9Rfvkq8p, Opus 5.5) started 2026-10-31 01:10Z (date -u); R152-R157 + SRC L-4, L-5; un-parked 06:43Z for R157 (Lead keeps 99762405); PARKED again ~07:5xZ; see "Successor 36 PARK".
 Successor 35 (session_01V5yGRWdTCZePxH7viLZ6VS, Opus 5.5) started 2026-10-30 20:42Z (date -u); R147-R151; PARKED ~2026-10-31 00:5xZ; see "Successor 35 PARK".
@@ -51,6 +51,18 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   - CONJECTURE: DESC*-LIN.
   - Corpus extremes (runfam_K40 etc.) are active descents (DESC_U = DESC with U = in-edge vertices), in short runs.
   - Nested carries NOT built: they reduce to core re-arming, with R158 (A)/(B) on record.
+- R163 docs/red/R163-descstar.md (Lead GO 13:04Z):
+  - descstar.py computes DESC* exactly (0/1 ILP, scipy HiGHS, LP-certified).
+  - DEAD: DESC*-LIN on fbg. DESC* = (m2+1)K + 6, up to 2.23n (K24 m48, n 530). |F| stays quadratic; DESC* ≈ 0.76-0.86 |F|.
+  - This is the WEAK form only; the decisive form (|F| super-quadratic) is not reached.
+  - DESC* = 0 on src2, rcl, fbA and suf.
+- D-ODD-1 docs/red/D-ODD-1-starts.md (Lead 13:32Z):
+  - startck.py; validation in xeng / oinkcmp / desc tools (ALLOW_BAD_START=1 to override).
+  - Bad starts: sbq2 (obs3.py), the 3 fbg pins (fbsearch build, 6 non-edges each), the old n3 climb outputs.
+  - All counts reproduce from repaired starts; the sbq2 family W-runs are 1 shorter.
+  - fbg_K12 re-pinned with the repaired start.
+- scipy was pip-installed in this container (not in the repo); check.sh skips the ILP lines without it.
+- RESUME POINT: the decisive form needs a depth-3 re-arm in the core (R160 open climb, hd/wclimb.py REARM=2), objective |F|/n^2.
 - Things only I know:
   - desc2.py runs from trunk with LNEW=.. (cwd experiments/red). The trunk n5x / si / pg / n5 are identical to l-new ffe347ee.
   - The cp_K20 run (n 896) was killed (out of memory) when run in parallel with other runs. A solo rerun was started in the
