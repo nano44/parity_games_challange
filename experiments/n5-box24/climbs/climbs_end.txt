@@ -17,4 +17,8 @@ climbs/F_n7_r3.log END steps 228664 best (6, 4, 0) n 7 secs 600 -> /home/user/pa
 climbs/F_n7_r4.log END steps 224673 best (6, 4, 0) n 7 secs 600 -> /home/user/parity_games_challange/experiments/n5-box24/climbs/F_n7_r4.pg
 climbs/F_n7_r5.log END steps 232581 best (6, 4, 0) n 7 secs 600 -> /home/user/parity_games_challange/experiments/n5-box24/climbs/F_n7_r5.pg
 climbs/F_n8_r1.log END steps 117051 best (8, 4, 0) n 8 secs 600 -> /home/user/parity_games_challange/experiments/n5-box24/climbs/F_n8_r1.pg
+climbs/F_n8_r2.log END steps 235469 best (7, 6, 0) n 8 secs 900 -> /home/user/parity_games_challange/experiments/n5-box24/climbs/F_n8_r2.pg
+climbs/F_n8_r3.log END steps 245691 best (7, 5, 0) n 8 secs 900 -> /home/user/parity_games_challange/experiments/n5-box24/climbs/F_n8_r3.pg
 climbs/F_n9_r1.log END steps 152770 best (7, 4, 0) n 9 secs 600 -> /home/user/parity_games_challange/experiments/n5-box24/climbs/F_n9_r1.pg
+climbs/F_n9_r2.log END steps 181615 best (10, 1, 0) n 9 secs 900 -> /home/user/parity_games_challange/experiments/n5-box24/climbs/F_n9_r2.pg
+climbs/F_n9_r3.log END steps 167447 best (9, 5, 0) n 9 secs 900 -> /home/user/parity_games_challange/experiments/n5-box24/climbs/F_n9_r3.pg

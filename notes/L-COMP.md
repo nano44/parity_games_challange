@@ -7,7 +7,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
   improving edges.) Do not retry the PGSolver OCaml build (box 21 diff stays unrouted).
 - BOX 23 DONE (README has every table): (a) rstar.py = xirise.py on 1,132/1,132; (b) C(4) exhaustive all starts: R*_F <= 1, FL_F <= 1,
   random n 5 / 6: R*_F 1, FL_F 1 / 2; (c) climbs R*_F ~0.7-1.0n (42 at n 60); (d) latew: R*_F = K·m = Theta(n^2) per W-run, 1,344 at n 778.
-  15 witnesses pinned (pin23.py ALL OK). IN FLIGHT: nothing. NEEDS: next box from the Lead.
+  15 witnesses pinned (pin23.py ALL OK). Lead 21:21Z: latew is an independent reproduction of L-RED R138 (labelled).
+- BOX 24 DONE (experiments/n5-box24/README.md): max |F| = n - 1 exhaustively for n <= 4 (C(4) all 268M pairs); climbs reach only n - 1
+  at n 5-7 (5 seeds each); first |F| > n - 1 found at n 8 (F8_n8, 8) and n 9 (F10_n9, 10 with ONE late adoption = two GP* climbs);
+  random C(5) 220k games max 3. 8 pins. IN FLIGHT: nothing. NEEDS: next box from the Lead.
 ### Things only I know (successor 8)
 - red/n3/instances/n3cov_lean.start is invalid (R99); start files must be overlaid on S3 dropping invalid entries (rstar.overlay).
 - pkill -f / pgrep -f with a pattern that occurs in your own command line kills / matches your own shell (bit me 14:45Z).

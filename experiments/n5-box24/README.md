@@ -1,7 +1,7 @@
 # Box 24: the true maximum W-run length |F| of plain N5 at small n (L-COMP successor 8)
 Lead 2026-10-30 21:21Z (D18), "a measurement beats an inference": the true maximum W-run length |F| as a function of n, over the
 smallest classes that can be made exhaustive. Report max |F| and max |F|/n, say whether any small game has |F| > n − 1, and pin the
-extremal witnesses. Work 2026-10-30 21:45Z-(see git log) (date -u). Every number is DATA unless labelled. Not a TARGET.md claim;
+extremal witnesses. Work 2026-10-30 21:45Z to 2026-10-31 00:1xZ (date -u). Every number is DATA unless labelled. Not a TARGET.md claim;
 G-N5-TIME open.
 Why n − 1 is the reference: by box 85's FREE-RED, |F| ≤ (n − 1)(R*_F + 1) + FL_F. So a W-run with R*_F = FL_F = 0 has |F| ≤ n − 1,
 and |F| > n − 1 needs R*_F ≥ 1 or FL_F ≥ 1. (From R88 / R89 GP*-RUN, landed.)
@@ -22,7 +22,7 @@ and |F| > n − 1 needs R*_F ≥ 1 or FL_F ≥ 1. (From R88 / R89 GP*-RUN, lande
 | 3 | C(3) EXHAUSTIVE | 21,952 | 110,592 | 6,242 | 2 | 2 | 0.67 | 40 | no |
 | 4 | C(4) EXHAUSTIVE | 12,960,000 | 268,435,456 | 13,131,476 | 3 | 3 | 0.75 | 480 | no |
 | 5 | random C(5), seed 23, all starts | 20,000 | 4,866,523 | 110,270 | 3 | 4 | 0.60 | 37 | no |
-R5_ROW
+| 5 | random C(5), seed 24, all starts | 200,000 | 48,695,594 | 1,073,314 | 3 | 4 | 0.60 | 422 | no |
 | 6 | random C(6), seed 23, ≤ 4,096 starts, all starts | 20,000 | 19,320,173 | 274,550 | 4 | 5 | 0.67 | 2 | no |
 
 - Histograms of |F| over chains (exhaustive): C(3) {1: 6,202, 2: 40}; C(4) {1: 12,837,836, 2: 293,160, 3: 480}.
@@ -35,7 +35,8 @@ R5_ROW
 | 5 | 5 × 600 s (≈ 2.1M steps) | 4, 4, 4, 4, 4 | 4 | 4 | 1, 0 | F4_n5 |
 | 6 | 5 × 600 s | 5, 4, 5, 5, 5 | 5 | 5 | 2, 0 | F5_n6 |
 | 7 | 5 × 600 s | 6, 5, 6, 6, 6 | 6 | 6 | 4, 1 | F6_n7 |
-CLIMB_8_9
+| 8 | 1 × 600 s + 2 × 900 s | 8, 7, 7 | 8 | 7 | 4, 0 | F8_n8 |
+| 9 | 1 × 600 s + 2 × 900 s | 7, 10, 9 | 10 | 8 | 1, 0 | F10_n9 |
 | 10 | 1 × 600 s | 10 | 10 | 9 | 6, 0 | (climbs/F_n10_r1) |
 | 11 | 1 × 600 s | 13 | 13 | 10 | 9, 0 | F13_n11 |
 | 12 | 1 × 600 s | 8 | 8 | 11 | 7, 3 | (budget-limited) |
@@ -48,7 +49,8 @@ CLIMB_8_9
 2. DATA (search, not exhaustive): at n = 5, 6, 7 the max found is n − 1 (5 independent climbs each, about 2M steps at n 5; random
    samples stay below). The least n where a W-run longer than n − 1 was found is n = 8: F8_n8, |F| 8, with R*_F 4 and FL_F 0. So the
    least such n is in [5, 8]. n ≤ 4 is ruled out exhaustively; 5-7 only by search.
-3. CONJECTURE (data only, n ≤ 7): max |F| = n − 1 for n ≤ 7.
+3. CONJECTURE (data only, n ≤ 7): max |F| = n − 1 for n ≤ 7. Note that 220,000 random C(5) games never reach even n − 1 = 4 (max 3);
+   only the climbs do. Uniform sampling misses the extremes at n 5.
 4. DATA: max |F| / n found: 0.75 (n ≤ 4, exhaustive); 1.0 at n 8 and 10; 1.18 at n 11 (F13_n11); 1.33 at n 15 (box 23). The
    constructions are quadratic (latew).
 5. Mechanism at the extremes (READING from the traces):
@@ -58,7 +60,10 @@ CLIMB_8_9
      (R*_F 1). The single late adoption lets the wave continue after vertex 3's switch, but the total is still n − 1.
    - F8_n8 (n 8): every transition switches one or two vertices. Four vertices switch twice (3: 6 → 4 → 6, 0: 5 → 3 → 2, 2: 1 → 7 → 1,
      6: 1 → 3 → 0), and 4 of the 8 transitions adopt an edge blocked earlier. Each re-switch is fed by a late adoption: this is the
-     latew mechanism (R138 / R128: re-adoption of a re-blocked edge, once per wave) in its smallest form.
+     latew mechanism (R138 / R128: re-adoption of a re-blocked edge, once per wave) in its smallest form. Only 1 of 3 climbs at n 8 found it.
+   - F10_n9 (n 9, two Odd sinks): |F| 10 > n − 1 = 8 with R*_F = 1. The single late adoption (3 → 8 at transition 3, BLOCKED since state 0)
+     splits the W-run into two GP* climbs of 4 and 6 transitions (vertex 6 switches 1 → 0 → 1 → 0). Each climb stays within n − 1,
+     and the sum exceeds it, exactly the (n − 1)(R*_F + 1) shape of FW-R*.
 
 ## Pinned witnesses (pin23.py ALL OK on every one: n5 = n5b, Oink zlk, verify, xeng, rstar = xirise)
 | name | sha1 | n | iterations | |F| | R*_F | FL_F | from |
@@ -69,8 +74,8 @@ CLIMB_8_9
 | F5_n6 | 4c1f8b3b51cd… | 6 | 5 | 5 | 2 | 0 | climb |
 | F6_n7 | 467bd866999b… | 7 | 7 | 6 | 4 | 1 | climb |
 | F8_n8 | 69af462bf78c… | 8 | 8 | 8 | 4 | 0 | climb (least n with |F| > n − 1 found) |
+| F10_n9 | ddd4d99b5a50… | 9 | 10 | 10 | 1 | 0 | climb (|F| > n − 1 with ONE late adoption) |
 | F13_n11 | 737563877254… | 11 | 14 | 13 | 9 | 0 | climb |
-R5_PIN
 
 ## Files
 climbs24.sh, check.sh (in verify), instances/ (pins), climbs/ (every climb's best .pg/.start), results/ (R5 sample JSON,
