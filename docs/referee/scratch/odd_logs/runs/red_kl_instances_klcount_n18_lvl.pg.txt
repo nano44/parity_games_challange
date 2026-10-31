@@ -1,0 +1,7 @@
+GAME red/kl/instances/klcount_n18_lvl.pg
+GAMES 1
+OLD_chk 40
+STEP_caseII 25
+STEP_chk 42
+VIOLATIONS 0
+RC 0

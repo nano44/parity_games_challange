@@ -1,0 +1,15 @@
+GAME red/so/instances/so_sorl_n32.pg
+CNT_chk 26
+FR 26
+FR_maxpair 1
+GAMES 1
+OLD_chk 40
+ROOT_chk 6
+ROOT_endPE 6
+ROOT_maxlen 1
+STEP_caseII 44
+STEP_chk 132
+trans 22
+wruns 1
+VIOLATIONS 0
+RC 0

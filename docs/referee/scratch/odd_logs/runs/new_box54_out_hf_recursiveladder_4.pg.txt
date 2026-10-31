@@ -1,0 +1,6 @@
+GAME new/box54/out/hf/recursiveladder_4.pg
+GAMES 1
+STEP_caseII 16
+STEP_chk 40
+VIOLATIONS 0
+RC 0

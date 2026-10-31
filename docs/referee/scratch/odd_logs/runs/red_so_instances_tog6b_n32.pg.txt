@@ -1,0 +1,15 @@
+GAME red/so/instances/tog6b_n32.pg
+CNT_chk 13
+FR 13
+FR_maxpair 1
+GAMES 1
+OLD_chk 69
+ROOT_chk 3
+ROOT_endPE 3
+ROOT_maxlen 1
+STEP_caseII 19
+STEP_chk 48
+trans 6
+wruns 1
+VIOLATIONS 0
+RC 0

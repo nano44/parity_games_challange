@@ -1,0 +1,15 @@
+GAME red/so/instances/njb_reabs65_n48.pg
+CNT_chk 69
+FR 69
+FR_maxpair 1
+GAMES 1
+OLD_chk 433
+ROOT_chk 13
+ROOT_endPE 13
+ROOT_maxlen 2
+STEP_caseII 5
+STEP_chk 280
+trans 37
+wruns 5
+VIOLATIONS 0
+RC 0

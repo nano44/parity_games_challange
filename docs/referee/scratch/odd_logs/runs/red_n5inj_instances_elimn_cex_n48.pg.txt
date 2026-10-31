@@ -1,0 +1,15 @@
+GAME red/n5inj/instances/elimn_cex_n48.pg
+CNT_chk 96
+FR 96
+FR_maxpair 1
+GAMES 1
+OLD_chk 354
+ROOT_chk 16
+ROOT_endPE 16
+ROOT_maxlen 2
+STEP_caseII 93
+STEP_chk 736
+trans 79
+wruns 12
+VIOLATIONS 0
+RC 0

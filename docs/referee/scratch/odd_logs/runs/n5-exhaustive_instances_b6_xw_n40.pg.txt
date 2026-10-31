@@ -1,0 +1,15 @@
+GAME n5-exhaustive/instances/b6_xw_n40.pg
+CNT_chk 122
+FR 123
+FR_maxpair 2
+GAMES 1
+OLD_chk 649
+ROOT_chk 39
+ROOT_endPE 39
+ROOT_maxlen 2
+STEP_caseII 8
+STEP_chk 320
+trans 66
+wruns 7
+VIOLATIONS 0
+RC 0

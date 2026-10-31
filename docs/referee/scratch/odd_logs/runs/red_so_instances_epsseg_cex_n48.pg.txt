@@ -1,0 +1,15 @@
+GAME red/so/instances/epsseg_cex_n48.pg
+CNT_chk 6
+FR 6
+FR_maxpair 1
+GAMES 1
+OLD_chk 554
+ROOT_chk 8
+ROOT_endPE 8
+ROOT_maxlen 2
+STEP_caseII 28
+STEP_chk 156
+trans 6
+wruns 3
+VIOLATIONS 0
+RC 0

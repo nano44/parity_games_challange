@@ -1,0 +1,12 @@
+GAME red/lag/instances/depth2_n39.pg
+GAMES 1
+OLD_chk 39
+ROOT_chk 2
+ROOT_endPE 2
+ROOT_maxlen 1
+STEP_caseII 31
+STEP_chk 84
+trans 1
+wruns 1
+VIOLATIONS 0
+RC 0

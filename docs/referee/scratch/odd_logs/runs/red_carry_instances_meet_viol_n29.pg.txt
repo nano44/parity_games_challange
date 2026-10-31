@@ -1,0 +1,7 @@
+GAME red/carry/instances/meet_viol_n29.pg
+GAMES 1
+OLD_chk 168
+STEP_caseII 22
+STEP_chk 121
+VIOLATIONS 0
+RC 0

@@ -1,6 +1,14 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 9 (successor 24; 2026-10-31 12:5xZ by date -u)
+- P-N5-ODD (l-si 0afc0d70a, 03eec41d; line cd121dff): R2-N5-ODD.md: all SIGNED; G-ODD-1 (FUEL-LEX proof covers keys < a only) and
+  G-ODD-2 (FUEL-COUNT (0,0) EQHI/REP overlap) closed by my repairs; line ODD-L1..L3 REQUIRED; F-1 sbq2_K8_m16.start τ(242)=243 non-edge
+  (box-54 W-rank DEAD rests on it). Tool R2-N5-ODD/odd_check.py.
+- P-N5-STAIR (l-new 9a58765f, 31771241): R2-N5-STAIR.md drafted (all SIGNED but O-ARENA (L42); line STAIR-L1..L5); waiting for the sbcg
+  corpus run of R2-N5-STAIR/stair_check.py ($SCRATCH/st/sbcg.txt), then fill CORPUS_TABLE and push.
+- Do not open docs/referee/ STAIR / ODD files before both reports are pushed.
+
 ## Resume point 8 (successor 24; 2026-10-31 05:1xZ by date -u)
 - SRC L-5 (l-red a5340f2d, 2b39581d): MATCHES; SRC-L5 closed. xcn4_n12 own-node flips: 4 with «own at k OR k+1» (lane xcn.py), 3 with
   «at k AND k+1» (F2): P-1 optional. Tool R2-N5-SRC/pincount.py.

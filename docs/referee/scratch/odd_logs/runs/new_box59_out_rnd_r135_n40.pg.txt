@@ -1,0 +1,9 @@
+GAME new/box59/out/rnd/r135_n40.pg
+GAMES 1
+OLD_chk 23
+STEP_caseII 2
+STEP_chk 40
+trans 1
+wruns 1
+VIOLATIONS 0
+RC 0

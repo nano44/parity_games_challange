@@ -1,0 +1,16 @@
+GAME red/xing/instances/x31_rx32.pg
+ASC 1
+CNT_chk 76
+FR 85
+FR_maxpair 2
+GAMES 1
+OLD_chk 511
+ROOT_chk 49
+ROOT_endPE 49
+ROOT_maxlen 1
+STEP_caseII 12
+STEP_chk 55
+trans 50
+wruns 4
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,15 @@
+GAME n5-epoch/instances/ffin12_n32.pg
+CNT_chk 18
+FR 18
+FR_maxpair 1
+GAMES 1
+OLD_chk 201
+ROOT_chk 21
+ROOT_endPE 21
+ROOT_maxlen 2
+STEP_caseII 21
+STEP_chk 198
+trans 17
+wruns 5
+VIOLATIONS 0
+RC 0

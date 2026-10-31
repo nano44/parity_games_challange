@@ -1,0 +1,4 @@
+GAME red/n5/instances/dl_6_8.pg
+skip_big 1
+VIOLATIONS 0
+RC 0

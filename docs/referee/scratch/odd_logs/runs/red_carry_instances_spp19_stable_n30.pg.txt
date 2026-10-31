@@ -1,0 +1,15 @@
+GAME red/carry/instances/spp19_stable_n30.pg
+CNT_chk 2
+FR 2
+FR_maxpair 1
+GAMES 1
+OLD_chk 123
+ROOT_chk 13
+ROOT_endPE 13
+ROOT_maxlen 4
+STEP_caseII 21
+STEP_chk 105
+trans 2
+wruns 1
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,16 @@
+GAME n5-epoch/instances/ret12_n40.pg
+ASC 2
+CNT_chk 115
+FR 119
+FR_maxpair 2
+GAMES 1
+OLD_chk 682
+ROOT_chk 166
+ROOT_endPE 166
+ROOT_maxlen 2
+STEP_caseII 10
+STEP_chk 300
+trans 51
+wruns 5
+VIOLATIONS 0
+RC 0

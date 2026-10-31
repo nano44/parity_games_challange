@@ -1,0 +1,4 @@
+GAME red/nest16/instances/k4u_n101.pg
+skip_big 1
+VIOLATIONS 0
+RC 0

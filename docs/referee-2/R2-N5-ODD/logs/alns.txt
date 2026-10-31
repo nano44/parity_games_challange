@@ -1,0 +1,16 @@
+MODE files /tmp/claude-0/-home-user-parity-games-challange/6818e6dd-24e8-54a7-b5bf-dc0c0a4d1c69/scratchpad/alns.lst 1 experiments/ MAXT 5000 BF 0
+ASC: 25
+EQHI: 54
+FUEL: 6133
+OLD_checks: 109902
+RELAY_checks: 435800
+ROOT_a: 3115
+ROOT_b: 10
+ROOT_checks: 3125
+STEP_case2: 8337
+STEP_checks: 120194
+XIPLAY_checks: 397189
+runs: 319
+transitions: 6813
+max max_LCT_run: 30
+RESULT PASS violations 0

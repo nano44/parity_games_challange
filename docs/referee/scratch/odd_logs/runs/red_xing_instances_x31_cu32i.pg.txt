@@ -1,0 +1,16 @@
+GAME red/xing/instances/x31_cu32i.pg
+CNT_chk 60
+EQHI 4
+FR 70
+FR_maxpair 2
+GAMES 1
+OLD_chk 626
+ROOT_chk 51
+ROOT_endPE 51
+ROOT_maxlen 2
+STEP_caseII 26
+STEP_chk 84
+trans 38
+wruns 2
+VIOLATIONS 0
+RC 0

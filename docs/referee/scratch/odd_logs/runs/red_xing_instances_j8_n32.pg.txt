@@ -1,0 +1,15 @@
+GAME red/xing/instances/j8_n32.pg
+CNT_chk 66
+FR 66
+FR_maxpair 1
+GAMES 1
+OLD_chk 332
+ROOT_chk 18
+ROOT_endPE 18
+ROOT_maxlen 1
+STEP_caseII 13
+STEP_chk 54
+trans 49
+wruns 4
+VIOLATIONS 0
+RC 0

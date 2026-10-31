@@ -1,0 +1,14 @@
+CNT_chk 15
+FR 15
+FR_maxpair 1
+GAMES 2000
+OLD_chk 9193
+ROOT_chk 103
+ROOT_endPE 103
+ROOT_maxlen 3
+STEP_caseII 3900
+STEP_chk 11352
+trans 295
+wruns 280
+VIOLATIONS 0
+RC 0

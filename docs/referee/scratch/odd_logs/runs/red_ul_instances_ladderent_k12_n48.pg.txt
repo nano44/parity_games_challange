@@ -1,0 +1,15 @@
+GAME red/ul/instances/ladderent_k12_n48.pg
+CNT_chk 13
+FR 13
+FR_maxpair 1
+GAMES 1
+OLD_chk 54
+ROOT_chk 26
+ROOT_endPE 26
+ROOT_maxlen 1
+STEP_caseII 13
+STEP_chk 196
+trans 14
+wruns 1
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,16 @@
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.pg
+CNT_chk 156
+FR 156
+FR_maxpair 1
+GAMES 1
+OLD_chk 1658
+ROOT_chk 676
+ROOT_endPE 676
+ROOT_endPE_oddonly 10
+ROOT_maxlen 4
+STEP_caseII 126
+STEP_chk 2652
+trans 90
+wruns 8
+VIOLATIONS 0
+RC 0

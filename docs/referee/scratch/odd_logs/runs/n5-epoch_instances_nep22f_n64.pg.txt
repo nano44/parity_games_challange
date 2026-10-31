@@ -1,0 +1,17 @@
+GAME n5-epoch/instances/nep22f_n64.pg
+CNT_chk 6
+FR 6
+FR_maxpair 1
+GAMES 1
+OLD_chk 501
+ROOT_chk 38
+ROOT_endC 4
+ROOT_endPE 34
+ROOT_endPE_oddonly 6
+ROOT_maxlen 3
+STEP_caseII 216
+STEP_chk 1612
+trans 11
+wruns 7
+VIOLATIONS 0
+RC 0

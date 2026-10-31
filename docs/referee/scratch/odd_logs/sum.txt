@@ -1,0 +1,21 @@
+ASC 217
+CNT_chk 11213
+EQHI 106
+FR 11884
+FR_maxpair 8
+GAMES 656
+OLD_chk 107213
+RC 0
+RC0 719
+ROOT_chk 11513
+ROOT_endC 17
+ROOT_endPE 11496
+ROOT_endPE_oddonly 79
+ROOT_maxlen 8
+STEP_caseII 14299
+STEP_chk 115522
+VIOLATIONS 0
+skip_big 63
+trans 7401
+wruns 950
+DONE

@@ -1,0 +1,15 @@
+GAME red/carry/instances/spp25_oink_n40.pg
+CNT_chk 2
+FR 2
+FR_maxpair 1
+GAMES 1
+OLD_chk 214
+ROOT_chk 4
+ROOT_endPE 4
+ROOT_maxlen 1
+STEP_caseII 11
+STEP_chk 170
+trans 3
+wruns 1
+VIOLATIONS 0
+RC 0

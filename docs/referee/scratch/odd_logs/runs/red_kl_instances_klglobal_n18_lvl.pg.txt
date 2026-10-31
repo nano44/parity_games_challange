@@ -1,0 +1,7 @@
+GAME red/kl/instances/klglobal_n18_lvl.pg
+GAMES 1
+OLD_chk 41
+STEP_caseII 15
+STEP_chk 54
+VIOLATIONS 0
+RC 0

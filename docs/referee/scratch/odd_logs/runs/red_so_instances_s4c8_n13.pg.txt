@@ -1,0 +1,11 @@
+GAME red/so/instances/s4c8_n13.pg
+GAMES 1
+OLD_chk 34
+ROOT_chk 1
+ROOT_endPE 1
+ROOT_maxlen 1
+STEP_chk 12
+trans 2
+wruns 2
+VIOLATIONS 0
+RC 0

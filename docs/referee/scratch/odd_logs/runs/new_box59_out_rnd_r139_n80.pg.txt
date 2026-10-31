@@ -1,0 +1,9 @@
+GAME new/box59/out/rnd/r139_n80.pg
+GAMES 1
+OLD_chk 91
+STEP_caseII 14
+STEP_chk 81
+trans 1
+wruns 1
+VIOLATIONS 0
+RC 0

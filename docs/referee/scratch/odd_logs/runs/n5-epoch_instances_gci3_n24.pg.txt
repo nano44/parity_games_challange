@@ -1,0 +1,12 @@
+GAME n5-epoch/instances/gci3_n24.pg
+CNT_chk 23
+FR 24
+FR_maxpair 2
+GAMES 1
+OLD_chk 77
+STEP_caseII 40
+STEP_chk 63
+trans 20
+wruns 1
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,6 @@
+GAME red/xctx/instances/nest3_n24.pg
+GAMES 1
+STEP_caseII 8
+STEP_chk 44
+VIOLATIONS 0
+RC 0

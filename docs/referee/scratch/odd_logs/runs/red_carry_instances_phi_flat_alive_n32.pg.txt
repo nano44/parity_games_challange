@@ -1,0 +1,7 @@
+GAME red/carry/instances/phi_flat_alive_n32.pg
+GAMES 1
+OLD_chk 49
+STEP_caseII 19
+STEP_chk 72
+VIOLATIONS 0
+RC 0

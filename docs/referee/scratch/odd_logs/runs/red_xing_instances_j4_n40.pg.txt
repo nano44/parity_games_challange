@@ -1,0 +1,15 @@
+GAME red/xing/instances/j4_n40.pg
+CNT_chk 169
+FR 177
+FR_maxpair 2
+GAMES 1
+OLD_chk 851
+ROOT_chk 74
+ROOT_endPE 74
+ROOT_maxlen 2
+STEP_caseII 11
+STEP_chk 212
+trans 99
+wruns 5
+VIOLATIONS 0
+RC 0
