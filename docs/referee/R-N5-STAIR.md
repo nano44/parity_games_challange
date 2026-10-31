@@ -200,3 +200,10 @@ Referee: REFEREE (successor 21), Opus 5.5 (D15). Lead brief 2026-10-31 12:40Z. R
   - Entry 5 ✓.
 - Verdict on L-1: does NOT yet match, only because of STAIR-L9 (v and b unquantified), a one-phrase insertion. Everything else MATCHES
   (Opus 5.5, D15).
+
+### §C addendum: line revision L-2 (l-new 6903f1b3, docs/new/P-N5-STAIR-line-L2.txt, sha1 44f56e96d41d45653c4b7bc2f140c587e8e407e6; fixes sha1 52fd8b50…, entry 6) (16:43Z 2026-10-31 by date -u)
+- Word-diff against L-1 (d027f5d8): «it and» → «it,»; «F:» → «F, every vertex v and every bit position b:»; «1-5)» → «1-6)». Nothing else
+  changed. Both sha1s are re-hashed and match.
+- STAIR-L9 is met. v and b are now in the quantifier, so every clause's v (BIT-ALT, FIRST-GOOD, COPY, RESET-ROOT, DESC-COPY, ASC-RUN) and
+  BIT-ALT's b are bound. No new symbol is introduced.
+- Verdict on L-2: MATCHES (Opus 5.5, D15). No REQUIRED change remains on the P-N5-STAIR line.
