@@ -157,3 +157,58 @@
 - Both referees found every other item of L-1 matching: REFEREE STAIR-L1..L8; REFEREE-2 STAIR-L1..L6, P-1, P-2 and F-1, with entry 1's
   repair SIGNED by REFEREE-2.
 - The two required items are one change, and the fix phrase is identical in both reports. L-2 makes exactly that change.
+
+
+## Entry 7 (2026-10-31 20:0xZ by date -u): CHECKER C109 FAIL E-1, E-2, E-3 (claude/checker 178b3e9e, docs/checker/C109.md) — line L-3
+### CHECKER (verbatim, docs/checker/C109.md l. 39-79)
+> ## 4. E-1 (required): L41's scope-tail clause is missing (the Lead's D-1)
+> - DESC-COPY needs COPY's converse. Its proof text is referee-originated: REFEREE's G-ST-1 closing argument (R-N5-STAIR.md §6), which
+>   REFEREE-2 wrote independently (R2-N5-STAIR.md §3, 8afe203a before 3c40dc18). Fixes entry 1 adopts it, and both sign it.
+> - L41 (DECISIONS.md l. 356) requires «… whose scope tail says the proof is referee-originated». L-2 contains «referee-originated» 0 times.
+> - Precedents: SETTLE-L7 (REFEREE made it REQUIRED for R96); R97 and R98 carry the clause.
+> - The counter-reading fails: L-NEW's COPY⁺ (box 113) is lane-level and unreviewed («not part of this packet»), so it cannot carry a
+>   landed claim.
+> - Move: in the scope tail, «not a TARGET.md claim)» → «not a TARGET.md claim; the proof of DESC-COPY uses COPY's converse, whose proof is
+>   referee-originated (G-ST-1 = P-1, written independently by REFEREE and REFEREE-2; docs/new/P-N5-STAIR-fixes-box112.md entry 1))». The
+>   phrase occurs once. The GAPS UPDATE takes the same clause before its source note.
+>
+> ## 5. E-2 (required): H_k is undefined (the Lead's D-3)
+> - L-2's R57 gloss reads «for S4a at a transition k → k + 1, σ_(k+1) is the pointwise optimum of the one-player arena H_k». «H_k» occurs once
+>   in L-2 and is defined nowhere in it.
+> - R96 and R97 define H_k in the title. The same miss was REQUIRED by both referees as SRC-L2 («t free in the R57 gloss «H_t»») and
+>   SETTLE-L6 (σ_new).
+> - Move (minimal; it removes the symbol): «the pointwise optimum of the one-player arena H_k)» → «the pointwise optimum of S4a's
+>   one-player arena at k)». It occurs once in L-2 and once in the UPDATE.
+>
+> ## 6. E-3 (required): the DESC-LIN «DEAD» clause (the Lead's D-2 and D-4)
+> - «DESC-LIN (DESC_F ≤ c·n) DEAD (L-RED R162, …: passive observers, cp_K)».
+> - D-4: «c» is unbound, and it is the cycle node of «(c, P, ℓ)» elsewhere in the line. That fails the strict symbol test.
+> - D-2: DESC-LIN with an unspecified constant is an asymptotic statement. No finite instance kills it.
+>   - R162's evidence is DATA on the family cp_K up to K = 16 («DESC = K·(n_base + 1) = 2.02n, 4.02n, 6.02n, 8.02n at K = 4, 8, 12, 16»),
+>     with a lane reading of why. R162's only PROVED (lane) item is STAIR-U, not the DEAD.
+>   - Only cp_K4 is committed. REFEREE did not re-run R162 (STAIR-L8 «I have not re-run R162»). REFEREE-2 re-ran cp_K4 and suf_K4 only.
+>     cp_K4 alone (DESC/n 2.02) exceeds no c·n.
+>   - The landed precedents differ in kind:
+>     - R90's «CONJECTURE REP-LIN is DEAD (L-RED R128, latew_K20_m32)» killed REP_F ≤ n, an explicit bound, with one measured instance
+>       (570 > 538).
+>     - R95's BIP-REL-1 and R96's FLIP-EV were each killed by one instance.
+>     - A «DEAD» for «≤ c·n» from finite data is the SRC-L5 class (REFEREE-2: «Two fixed instances … cannot support it»; «A DATA label
+>       does not cure an overclaim.»).
+> - Move, either of:
+>   - (i) drop «DESC-LIN (DESC_F ≤ c·n) DEAD (L-RED R162, claude/l-red 54832628: passive observers, cp_K); ». The reduction does not need it,
+>     and the body keeps R162 under Not signed / Data.
+>   - (ii) replace it with literally true DATA wording, e.g. «DATA (lane, L-RED R162, claude/l-red 54832628, not refereed): on the
+>     passive-observer family cp_K, DESC_F/n = 2.02, 4.02, 6.02, 8.02 at K = 4, 8, 12, 16 while |F| depends on K only; ». This closes D-4
+>     too.
+> - The GAPS UPDATE carries the same clause (without the «; »). It takes the same move.
+> - The body's mentions of R162 as a lane DEAD are history labelled as lane work. They need only to match the new tail wording.
+### Repair: line L-3 = L-2 with exactly three moves (Lead 20:03Z) and the entries count
+- E-1: «not a TARGET.md claim)» → «not a TARGET.md claim; the proof of DESC-COPY uses COPY's converse, whose proof is referee-originated
+  (G-ST-1 = P-1, written independently by REFEREE and REFEREE-2; docs/new/P-N5-STAIR-fixes-box112.md entry 1))».
+- E-2: «the pointwise optimum of the one-player arena H_k)» → «the pointwise optimum of S4a's one-player arena at k)».
+- E-3, CHECKER's option (i), the Lead's choice: the clause «DESC-LIN (DESC_F ≤ c·n) DEAD (L-RED R162, claude/l-red 54832628: passive
+  observers, cp_K); » is dropped.
+  - Lane DEADs stay in the lane notes and in RESULTS dead-ends.
+  - Fixes entry 4 is history: it records R162 as lane DATA / a lane DEAD and is not part of the line.
+- Bookkeeping: «entries 1-6» → «entries 1-7». No other change.
+- docs/new/P-N5-STAIR-line-L3.txt is one line with no heading marker.
