@@ -145,3 +145,28 @@ Referee: REFEREE (successor 21), Opus 5.5 (D15). Written from 23:11Z (2026-10-30
 - L41: the line cites both signatures (author REFEREE-2 e8c1b62d; REFEREE 8951ef7c), and the scope tail says it is referee-originated. ✓
 - Precision (optional): «by (Lemma ONE-STEP, …)» reads better as «by Lemma ONE-STEP (…)».
 - Verdict on L-3: MATCHES SRC-L1, SRC-L2, SRC-L3 and N-1 (Opus 5.5, D15). No REQUIRED change remains on the SRC line.
+
+## §9. Line revision L-4 (l-red 1edc2f0e, docs/red/P-N5-SRC-line-L4.txt, sha1 ec2c713989eb3075060247b714eb49a5b2abf875; fixes entry 4) (successor 21, 03:54Z 2026-10-31 by date -u)
+- (1) The word-diff against L-3 (5736d8ab, which I MATCHED in 8a1ba423) is exactly the Lead's and fixes entry 4's list, and nothing else:
+  - «line L-2, l-si 86becaa0)» → «R96)»;
+  - «source), and» → «source); DATA: they»;
+  - «W-run: pins» → «W-run (pins»;
+  - «cn3_n9;» → «cn3_n9);»;
+  - «1-3)» → «1-4)».
+  The sha1 is re-hashed and matches.
+- (2) The R96 citation is correct.
+  - docs/RESULTS.md l. 7748 at trunk 38bb8320 (an ancestor of origin trunk) is «### R96 [refereed-only] …», P-N5-SETTLE, CHECKER PASS C106.
+  - Its line is SETTLE L-5 (l-si ce7bdc3b), which I MATCHED (R-N5-SETTLE-C §8).
+  - It contains everything the SRC proof note uses: Claim RG′, the RUN-SETTLE induction («induction on k − k0 with a least-ℓ violator»),
+    its Cases 2 and 2b via Lemma ONE-STEP, and ARENA-MAX and T54 as used.
+  - The proof note keeps the l-si 6a70a520 packet pin, so the cited proof text is still fixed.
+  - The note's own ONE-STEP / G-SRC-1 citation now repeats R96's. It is redundant but consistent, with the same SHAs.
+- (3) The DATA relabel is correct.
+  - «not source events (unless they change Ξ at a source)» is definitional, so it stays a statement. A source event is defined by Ξ
+    changing at some v ∈ S_k. A σ̄-change at o, or a switch at c ∈ C, is not itself a Ξ change, although o and c are in S_k. So such a
+    transition is a source event exactly when Ξ changes at some source.
+  - «not O(1) per W-run» is an empirical observation on the pins xcn4_n12 and cn3_n9. It is not proved in the packet (R-N5-SRC §6-7: «not
+    signed»). DATA is the right label.
+  - «they» refers back to the three kinds of change just named.
+- Strict symbol test on the new tokens: R96 is a landed RESULTS label; «DATA» is the fleet's label. No free symbol.
+- Verdict on L-4: MATCHES (Opus 5.5, D15).
