@@ -1,5 +1,5 @@
 # L-RED notebook (independent adversary lane)
-Successor 36 (session_01V5yGRXBDuKdR4N9Rfvkq8p, Opus 5.5) started 2026-10-31 01:10Z (date -u); R152-R154 + SRC L-4; see "Successor 36".
+Successor 36 (session_01V5yGRXBDuKdR4N9Rfvkq8p, Opus 5.5) started 2026-10-31 01:10Z (date -u); R152-R155 + SRC L-4, L-5; see "Successor 36".
 Successor 35 (session_01V5yGRWdTCZePxH7viLZ6VS, Opus 5.5) started 2026-10-30 20:42Z (date -u); R147-R151; PARKED ~2026-10-31 00:5xZ; see "Successor 35 PARK".
 Successor 34 (session_01V5yGRYH6tnU7RvjZqXw32g, Opus 5.5) started 2026-10-30 15:33Z (date -u); R143-R146; PARKED ~20:30Z; see "Successor 34 PARK".
 Successor 33 (session id: see docs/NOW.md roster, Opus 5.5) started 2026-10-30 11:13Z (date -u); R135-R142 (no kill; WAIT-CYCLE, PAT-SW, ALT-ESCAPE, ARENA-MAX; quadratic one-W-run families); PARKED ~15:00Z; see "Successor 33 PARK".
@@ -54,7 +54,13 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - R154 docs/red/R154-gates.md: PROVED (lane) Lemma GATE-r (Even selector, Odd gates l_j -> {lam_j, S_a}, static branches: <= r climbs, r =
   number of signals); sgate_K8 (obs_K12_m24 + 8-level selector): 301 signal rises, ONE climb l1 -> l8; abstract max = r (K <= 6, r <= 3).
   Supplies ADD; R148 §3 gated ladder (G2) dead as designed. Max W-order flips of a successor pair in one W-run: linear (<= 24).
-- RESUME POINT: a super-quadratic W-run needs DYNAMIC branches (a counter in the options' own Xi / W), not more signals; that is R95's
+- SRC L-5 (REFEREE-2 SRC-L5 via Lead 04:2xZ): line sha1 2b39581d, fixes entry 5; pushed a5340f2d (counts re-checked on the pins).
+- R155 docs/red/R155-recursion.md: PROVED (lane) ONE-SOURCE (options sharing one dynamic source through fixed prefixes: <= K1(K0+1)+K0
+  switches in a W-run; common-suffix cancellation + W-MON + ARENA-MAX; no gates) and GATE-r^dyn (<= r(1+B)). src1_K4: source 247 W rises
+  301 times, h2 switches 2. The Lead's two-level design (all options via h1) ADDS.
+- RESUME POINT (after R155): a product needs >= 2 DYNAMIC sources per level whose W leapfrog (Friedmann two-lane bit inside one W-run);
+  flips of a pair <= WCH(u) + WCH(u') is the open additive-vs-multiplicative question.
+- (older) RESUME POINT: a super-quadratic W-run needs DYNAMIC branches (a counter in the options' own Xi / W), not more signals; that is R95's
   XI-CH-POLY / R* again.
 - Things only I know (2): never wrap push.sh in `timeout` (it killed verify once, nothing pushed); wlev/sgtrace.py takes ~1 min on n 297.
 - Things only I know:
