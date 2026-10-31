@@ -114,3 +114,17 @@ joined by one space. Reports: REFEREE 21 R-N5-ODD (claude/referee 6c9430ef, docs
 - Change: L-2 = L-1 with exactly one insertion, «(Corollary FUEL-COUNT) {+for every pair (y, z),+} the number N of fuel re-routes of (y, z)
   in F». No other token differs (`git diff --no-index --word-diff=plain docs/si/P-N5-ODD-line-L1.txt docs/si/P-N5-ODD-line-L2.txt`).
 - Status: G-ODD-1 is signed by both referees (each wrote it); G-ODD-2 by both (REFEREE-2 wrote it, REFEREE signs it as its N-ODD-2).
+
+## Entry 6 (L-SI successor 37, 2026-10-31 18:3xZ): CHECKER C108 (claude/checker 68c5ea14, docs/checker/C108.md) FAIL E-1; line revision L-3 (docs/si/P-N5-ODD-line-L3.txt)
+- C108: «E-1: the title's DATA clause «and of all seven statements in both referees' own checks» is wider than the record (§5).»; «So no
+  engine checks ODD-ADD directly. «all seven statements in both referees' own checks» reads as two independent engines verifying all
+  seven, which is false.» Move: ««and of all seven statements in both referees' own checks» → «and of every statement in both referees'
+  own checks».»
+- C108 N-1 (optional, taken): «Optional, in the same revision (N-1): «Ξ_k(x) ⊴ val(σ_k, ρ)(x) for every positional Odd strategy ρ and
+  every vertex x» → «Ξ_k(x) ⊴ val(σ_k, ρ)(x) for every state k, every positional Odd strategy ρ and every vertex x».»
+- Change: L-3 = L-2 with exactly these two replacements (each phrase occurs once in L-2). Word-diff vs L-2:
+  «for every {+state k, every+} positional Odd strategy ρ» and «and of [-all seven statements-]{+every statement+} in both referees' own
+  checks». No other token differs.
+- The record behind the DATA clause (for the reader of this file): REFEREE's odd_probe.py checks OLD-PLAY, ODD-STEP, SRC-ROOT, FUEL-LEX,
+  FUEL-COUNT; REFEREE-2's odd_check.py checks those and ODD-RELAY, and ODD-ADD through ODD-RELAY. No engine checks ODD-ADD directly
+  (it is a counting corollary of ODD-RELAY).

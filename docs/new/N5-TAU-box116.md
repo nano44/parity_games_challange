@@ -80,6 +80,30 @@ Labels: PROVED (lane), DATA, READING, OPEN. No count is bounded here. G-N5-TIME 
   re-entered at the same key, across τ-stretches, is ≤ poly(n) × (Odd returns + source events).
   - Test it on the corpus and on L-RED's builds before stating it.
 
+## 5. Box 116b (Lead 18:37Z, last box): the CARRY-ODD test (box116/carry.py; DATA, DEAD)
+- Tested forms. For every Even pair (y, z), RE(y, z) := its fuel re-routes in the run minus 1 (re-entries). Run-level right-hand sides:
+  - V1 := 1 + Odd returns + R97 source events (on W-run transitions);
+  - V2 := 1 + τ-changes + fallbacks + source events;
+  - V3(y, z) := V1 + WCH(z), the W-changes of the target inside W-runs (L-RED R164's suggestion «+ W-rises of the carrier chain»).
+  - CARRY-ODD at constant 1 means RE(y, z) ≤ V for every pair.
+- switchbestexp_N (N = 2..5): max RE 2, RE / V1 ≤ 0.33. Holds.
+- L-RED's builds, on valid starts (fbg starts repaired as in box 113; fbA starts are valid):
+  - fbA_K4_m8_m8 and fbA_K8_m8_m8: max RE 3 / 7 against ES 40 / 80;
+  - fbg_K4_m6_m24 / m48, fbg_K8_m6_m24, fbg_K12_m6_m24: max RE 4 / 4 / 8 / 12 against ES 28 / 28 / 56 / 84.
+  - RE / V1 ≤ 0.14 throughout. Odd returns are 0 everywhere, so the re-entries are paid by SOURCE EVENTS, not by Odd returns.
+- Corpus (1,132 runs):
+  - V1 violated in 25 runs, V2 in 14, V3 in 2.
+  - DEAD for V3 (and so for V1, V2): red/seg/instances/s3quad_K8_m30 (n 479, default start; xeng identical, Oink OK).
+    - One W-run; the pair (189, 476) is re-entered 7 = K − 1 times.
+    - 0 Odd returns, 0 τ-changes, 0 fallbacks, 0 source events, and W(476) never changes in the W-run.
+  - DEAD for V1 / V2: new/box52/out/topfix_n10 (n 210, default start; faithful). The pair (192, 193) is re-entered 18 times against
+    V1 = 2, with 1 source event; V3 holds there (0.45).
+- READING:
+  - Re-entries of a pair inside one W-run can be fed by Ξ-changes of the target that change neither W nor any source.
+  - So the coupling's right-hand side must count Ξ-side events inside W-runs: FUEL-COUNT's HC, i.e. the XI-CH core again.
+  - Both killing families give RE linear in their parameter (K − 1, 2N − 2), so no super-polynomial behaviour is seen.
+  - CARRY-ODD is not stated as a conjecture.
+
 ## DONE / FINDINGS / NEEDS
 - DONE: this note; experiments/new/box116/ (tauc.py, runtau.sh, t_* corpus outputs); box115/taumv.py; box115/abl.py now prints Odd-reply
   changes / returns (ODDREPLY line).
@@ -87,4 +111,6 @@ Labels: PROVED (lane), DATA, READING, OPEN. No count is bounded here. G-N5-TIME 
   - DATA: switchbestexp under N5 has τ moves = N, monotone, 0 returns; ARSB / TBR return 2 / 8 / 22 times.
   - PROVED (lane): TAU-EQ (the τ-stretch bound is G-N5-TIME via DUAL) and ODD-RETURN (returns are paid by dual Ξ-rises).
   - READING: what forbids re-arming is that τ moves only along Odd's improvements.
-- NEEDS: Lead: route the coupling target CARRY-ODD (test first) or another box.
+- Box 116b: CARRY-ODD DEAD at constant 1 (s3quad_K8_m30 for every variant; topfix_n10 for V1 / V2); re-entries on L-RED's builds are
+  paid by source events (ratio ≤ 0.14).
+- NEEDS: Lead: none for this box (last box of successor 42).

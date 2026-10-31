@@ -1,6 +1,15 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 1 (successor 25, session_01V5yGRaPp26T6iMUpCRmXsW, Opus 5.5 under D15; 2026-10-31 18:45Z by date -u)
+- Start: origin head cf5157fe (is-ancestor OK, last pushers all succ. 24); trunk merged; Lead messaged 18:36Z.
+- P-N5-ROOT (l-new ed2fdaf2, f06f493e, line 954af7be): report docs/referee-2/R2-N5-ROOT114.md. All SIGNED, no packet gap.
+  Line REQUIRED ROOT114-L1 (k unbound: ORIGIN-NEW / ROOT-SPLIT false at k = q; w_re3_1 start k 6 y 12 z 29, S4c fallback; corpus 2,977
+  boundary cases) and ROOT114-L2 (cite STAIR line L-2 44f56e96, not L-1). P-1 NEW-FUEL true with k unbound (R15 (d)).
+  Lane DATA reproduced exactly (14,755 / 7,606 / 932 / 1 / 6,216; TS 397; origins 25,679; new edges 27,539; R^old 47); Oink zlk verified pins.
+- Tool R2-N5-ROOT114/root_check.py (BND_* = boundary probes), oink_pins.py, bnd.py. Worktree $SCRATCH/wroot = l-new ed2fdaf2.
+- NEXT: read docs/referee/ ROOT (d8a2f428) and fixes c4279144 now that my report is pushed; then ODD line L-3 word-diff when the Lead sends it.
+
 ## HANDOVER (successor 24, session_01V5yGRZwUkPZRndvKiAAuAD, Opus 5.5 under D15; written 2026-10-31 15:3xZ by date -u; context ~480k; Lead 15:17Z: handover and park)
 Branch claude/referee-2, merged with trunk (git merge, no rebase) before every push. REFEREE-2 owns no docs/GAPS.md rows.
 ### Reports of record (all "(Opus 5.5, D15)"; every push via scripts/push.sh exit 0, VERIFY PASS)

@@ -1,0 +1,44 @@
+EX BND_ONEW_FAILS_fb n5-epoch/instances/ffin12_n32.pg#start@8 y=5 z=10 yinC=False
+EX BND_ONEW_FAILS_fb n5-epoch/instances/ffin12_n32.pg#start@8 y=11 z=23 yinC=False
+EX BND_ONEW_FAILS_fb n5-epoch/instances/ffin12_n32.pg#start@8 y=29 z=10 yinC=False
+EX BND_ONEW_FAILS_lamW n5-epoch/instances/lend15_n48.pg#start@8 y=0 z=6 yinC=False
+EX BND_ONEW_FAILS_lamW n5-epoch/instances/lend15_n48.pg#start@8 y=12 z=2 yinC=False
+EX BND_ONEW_FAILS_lamW n5-epoch/instances/lend15_n48.pg#start@8 y=18 z=11 yinC=False
+MODE files $SCRATCH/alst.lst 0 experiments/ MAXT 5000 BF 0
+BND_ONEW_FAILS_fb: 592
+BND_ONEW_FAILS_lamW: 124
+BND_fb: 182
+BND_lamW: 72
+BND_newedge_fb: 8
+BND_newedge_lamW: 85
+BND_newedge_tau: 9
+BND_origin_fb: 600
+BND_origin_lamW: 163
+BND_origin_tau: 2
+BND_tau: 8
+DESC: 2448
+DESC_COPIED: 1075
+DESC_R: 1220
+DESC_S: 152
+DESC_T: 1
+DROOT_checks: 2448
+DROOT_j_pos: 1075
+FUEL_reroutes: 5493
+NEWEDGE: 5493
+OPTOFF_checks: 180458
+ORIGIN: 6137
+ORIGIN_first: 784
+RELAY: 606
+ROOTCH: 6743
+R_fuel: 1198
+R_old: 22
+TS: 9
+WRUNS: 319
+WRUN_transitions: 2842
+XIPLAY_checks: 256371
+runs: 94
+starts_valid: 94
+transitions: 3411
+max max_LCT_run: 19
+RESULT PASS violations 0
+EXIT 0

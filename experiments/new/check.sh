@@ -607,4 +607,10 @@ if grep -qF "k 12 |Is| 17 |It| 1 fb 0 moves h2:e2->m2" <<<"$w64" && grep -qF "k 
 else
   echo "box 116 TAU check: FAILED"; exit 1
 fi
+w65=$(cd .. && python3 -I new/box116/carry.py red/seg/instances/s3quad_K8_m30.pg new/box116/inst/s3quad_K8_m30_default.start)
+if grep -qF "CARRY s3quad_K8_m30.pg n 479 iters 264 maxRE 7 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1" <<<"$w65" && grep -qF "R3 7.000 (189, 476)" <<<"$w65"; then
+  echo "box 116b CARRY-ODD: DEAD at constant 1 on s3quad_K8_m30 (7 re-entries, no Odd return, no source event, W(476) constant): PASS"
+else
+  echo "box 116b CARRY check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

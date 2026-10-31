@@ -1,0 +1,14 @@
+== new/box113/inst/w_re3_1.pg new/box113/inst/w_re3_1.start
+BND_ONEW_FAILS_fb: 3 BND_fb: 1 BND_origin_fb: 3 DESC: 20 DESC_COPIED: 7 DESC_R: 11 DESC_S: 2 DESC_T: 0 DROOT_j_pos: 7 FUEL_reroutes: 37 NEWEDGE: 37 ORIGIN: 49 ORIGIN_first: 13 RELAY: 4 ROOTCH: 53 R_fuel: 9 R_old: 2 TS: 0 WRUNS: 2 WRUN_transitions: 25 runs: 1 starts_valid: 1 transitions: 28 RESULT PASS violations 0 
+== new/box109/out/hit_b6a_1.pg new/box109/out/hit_b6a_1.start
+BND_ONEW_FAILS_fb: 13 BND_fb: 2 BND_origin_fb: 13 DESC: 24 DESC_COPIED: 6 DESC_R: 17 DESC_S: 1 DESC_T: 0 DROOT_j_pos: 6 FUEL_reroutes: 56 NEWEDGE: 56 ORIGIN: 61 ORIGIN_first: 6 RELAY: 1 ROOTCH: 62 R_fuel: 17 R_old: 0 TS: 0 WRUNS: 3 WRUN_transitions: 38 runs: 1 starts_valid: 1 transitions: 43 RESULT PASS violations 0 
+== red/n5inj/instances/frz32.pg red/n5inj/instances/frz32.start
+BND_ONEW_FAILS_lamW: 26 BND_lamW: 10 BND_newedge_lamW: 2 BND_origin_lamW: 26 DESC: 28 DESC_COPIED: 5 DESC_R: 21 DESC_S: 2 DESC_T: 0 DROOT_j_pos: 5 FUEL_reroutes: 44 NEWEDGE: 44 ORIGIN: 62 ORIGIN_first: 18 RELAY: 9 ROOTCH: 71 R_fuel: 18 R_old: 3 TS: 0 WRUNS: 11 WRUN_transitions: 43 runs: 1 starts_valid: 1 transitions: 66 RESULT PASS violations 0 
+== red/h3/instances/lcount2_n23.pg red/h3/instances/lcount2_n23.start
+BND_lamW: 1 BND_newedge_lamW: 1 DESC: 6 DESC_COPIED: 3 DESC_R: 1 DESC_S: 1 DESC_T: 1 DROOT_j_pos: 3 FUEL_reroutes: 5 NEWEDGE: 5 ORIGIN: 8 ORIGIN_first: 4 RELAY: 1 ROOTCH: 9 R_fuel: 1 R_old: 0 TS: 1 WRUNS: 1 WRUN_transitions: 3 runs: 1 starts_valid: 1 transitions: 6 RESULT PASS violations 0 
+== new/box113/inst/cp_K4.pg new/box113/inst/cp_K4.start
+DESC: 388 DESC_COPIED: 0 DESC_R: 388 DESC_S: 0 DESC_T: 0 FUEL_reroutes: 3177 NEWEDGE: 3177 ORIGIN: 3275 ORIGIN_first: 98 RELAY: 7 ROOTCH: 3282 R_fuel: 388 R_old: 0 TS: 0 WRUNS: 1 WRUN_transitions: 44 runs: 1 starts_valid: 1 transitions: 44 RESULT PASS violations 0 
+== new/box113/inst/fbg_K4_m6_m48.pg new/box113/inst/fbg_K4_m6_m48_fixed.start
+DESC: 640 DESC_COPIED: 430 DESC_R: 210 DESC_S: 0 DESC_T: 0 DROOT_j_pos: 430 FUEL_reroutes: 462 NEWEDGE: 462 ORIGIN: 272 ORIGIN_first: 2 RELAY: 199 ROOTCH: 471 R_fuel: 210 R_old: 0 TS: 0 WRUNS: 1 WRUN_transitions: 235 runs: 1 starts_valid: 1 transitions: 236 RESULT PASS violations 0 
+== new/box113/inst/fbg_K4_m6_m48.pg new/box113/inst/fbg_K4_m6_m48.start
+DESC: 640 DESC_COPIED: 430 DESC_R: 210 DESC_S: 0 DESC_T: 0 DROOT_j_pos: 430 FUEL_reroutes: 462 NEWEDGE: 462 ORIGIN: 272 ORIGIN_first: 2 RELAY: 199 ROOTCH: 471 R_fuel: 210 R_old: 0 TS: 0 WRUNS: 1 WRUN_transitions: 235 runs: 1 starts_valid: 1 transitions: 236 RESULT PASS violations 0 
