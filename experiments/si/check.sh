@@ -1005,6 +1005,19 @@ case "$o" in *"TURNBAD 67 SRCTURNBAD 23 "*"NA 3692 BAD 1012 "*) ;; *) echo "box 
 [ "$(cat src54/odd_*.txt | grep -c ODDADD)" = 1132 ] || { echo "box 54: oddadd outputs incomplete"; exit 1; }
 if grep -q "VOLD [1-9]\|VSTEP [1-9]\|VSTEPB [1-9]\|VADD [1-9]" src54/odd_*.txt; then echo "box 54: corpus violation"; exit 1; fi
 echo "si (box 54: OLD-PLAY, ODD-STEP, ODD-RELAY; W-rank / ASC-W / TURN-W dead): PASS"
+# box 55 (docs/si/N5-FSEG-box55.md, Lead 09:46Z): Lemma NO-RET search (0 RET; MUT control bites); hit_b6a_1 (h^W = 3): every source
+# event carries a first-segment switch; Odd 0's segment peeled at k 34-40; corpus outputs complete.
+( cd fseg55/inst && sha1sum -c --quiet pins.sha1 ) || { echo "box 55: pins changed"; exit 1; }
+o=$(python3 -I fseg55/retsearch.py 7 3000 10 3 1 /tmp/si_box55_ret)
+case "$o" in *" RETX 0 BAD 0"*) ;; *) echo "box 55: retsearch: $o"; exit 1;; esac
+o=$(MUT=1 python3 -I fseg55/retsearch.py 7 50 8 3 1 /tmp/si_box55_ret)
+case "$o" in *" RETX 0 "*) echo "box 55: MUT control did not bite: $o"; exit 1;; esac
+o=$(python3 -I fseg55/fseg.py fseg55/inst/hit_b6a_1.pg fseg55/inst/hit_b6a_1.start -t)
+case "$o" in *"k 34 SRC D [0, 4] sw 1:5>10N[FS[0, 4]]"*"k 40 SRC D [0] sw 6:22>0N[FS[0]]"*"SRCEV 11 SRCFS 11 SRCNOFS 0 "*) ;; *) echo "box 55: fseg hit_b6a_1: $o"; exit 1;; esac
+[ "$(cat fseg55/fseg_*.txt | grep -c SRCNOFS_CSW)" = 1132 ] || { echo "box 55: fseg outputs incomplete"; exit 1; }
+[ "$(grep -c RETSEARCH fseg55/ret_out.txt)" = 9 ] || { echo "box 55: ret_out incomplete"; exit 1; }
+if grep -q "RETX [1-9]" fseg55/ret_out.txt; then echo "box 55: RET found"; exit 1; fi
+echo "si (box 55: NO-RET search; first-segment releases on hit_b6a_1): PASS"
 # P-N5-SETTLE line revision L-1 (fixes entry 1; both referees word-diff it): must not change.
 echo "997e39eee8d72ae94be4764bb1e3841914ffc78e  ../../docs/si/P-N5-SETTLE-line-L1.txt" | sha1sum -c --quiet
 echo "si (P-N5-SETTLE L-1 pinned): PASS"

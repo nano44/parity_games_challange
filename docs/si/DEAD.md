@@ -677,3 +677,8 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
     1,012 such pairs on src2_K3, 540 on sbq2_K8_m16.
   - TURN-W (direction reversals of that rank sequence need a nearby W(v)-change): 67 bare reversals on src2_K3, 58 on sbq2_K8_m16.
   - Pins: experiments/si/check.sh «box 54».
+- (box 55, Lead 09:46Z; note docs/si/N5-FSEG-box55.md §2) «The first-segment structure caps the nesting depth of a selector at a
+  constant»: DEAD. experiments/si/fseg55/inst/hit_b6a_1 (= claude/l-new box109/out/hit_b6a_1; h^W = 3): the gates are released by
+  consecutive switches on ONE deviator's first segment (Odd 0: Even 1 at k 34, 5 at k 36, 21 at k 39, 6 at k 40 by the new edge (6, 0)),
+  all at source events. The «peel» count does not help either: on obs_K12_m24 / sbq2_K8_m16 first segments RE-GROW at almost every
+  source event (GROW 529 / 353, PEEL 0). Pins: check.sh «box 55».
