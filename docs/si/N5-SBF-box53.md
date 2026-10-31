@@ -411,6 +411,29 @@ Written 19:0xZ-19:4xZ (date -u; see commit).
   prefix shortens. A strict fall is W gaining a coordinate on Ξ. A rise is Ξ catching up, which needs Ξ's own rise at a prefix coordinate.
   Why A falls at almost every leapfrog transition is not proved.
 
+## 9. Box 53d (Lead 07:25Z): joining CEIL-ACC to R97 SRC-COUNT. DEAD: «A falls at every source-free transition» (u23sw64_n32, runfam_K40)
+- Question. Are A's rises and non-falls confined to SOURCE EVENTS? R97 (P-N5-SRC, landed, trunk 9777660f) defines a source event as a
+  Ξ-change at S_k = D_k ∪ D_(k+1) ∪ C, and proves |F| ≤ E^S_F + (E^S_F + 1)(n − 1 + m_C) (Corollary SRC-COUNT). If AUP_F and ANDN_F were
+  ≤ f(E^S_F), CEIL-ACC would join SRC-COUNT.
+- DEAD (si/sb53/ceilpot.py, SRC / AUPSF / ANDNSF / AEQ0SF / AEQMAXSF / AMIDSF).
+  - First test, u23sw64_n32 (default start): 13 W-run transitions, 1 source event. At the 12 source-free ones A never falls.
+    - 8 flats are at the FLOOR A = 0. These are states 1-9, the W-constant interval of §7: D = {27}, and Ξ has a different cycle node from
+      W at every vertex, so A is blind to everything below the first coordinate.
+    - 3 are at the CEILING A = n(n + 2) (Ξ = W).
+    - 1 lies strictly inside: 13 → 14, A = 1087 flat.
+  - Corpus (1,134 runs; 14,868 W-run transitions, 5,114 source events): at source-free transitions A rises 142 times (max 32 in a run)
+    and does not fall 7,161 times.
+    - Of those non-falls, 78 are floor flats, 3,430 ceiling flats, and 3,653 lie strictly inside (0, n(n + 2)).
+    - runfam_K40 (n 79) alone has 81 strictly-inside source-free non-falls. lend107_n32 has 3 source-free rises.
+  - So neither AUP_F nor ANDN_F is bounded by a function of E^S_F. CEIL-ACC and SRC-COUNT do not combine into a sharper reduction.
+- What survives (DATA). On the leapfrog / k-SOURCE families A falls at EVERY source-free transition (ANDNSF 0: src2_K3, obs_K12_m24).
+  There the 324-transition W-runs carry 24 source events.
+  - CEIL-ACC is the bound that applies there. It also explains R157's cap: the passive re-climbing is paid by A's descent, at most
+    n(n + 2) per rise of A.
+- Why A is the wrong potential on the other face (READING). A compares coordinate sequences from the top: it is 0 as soon as Ξ and W
+  have different cycle nodes, and saturates at Ξ = W. A finer potential would compare, per vertex, the PATH of Ξ with the path of W
+  below their first difference. Not built.
+
 ## DONE / FINDINGS / NEEDS
 - DONE: this note; experiments/si/sb53/ (topkis.py, rootflip.py, rsearch.py, runtopk.sh, runroot.sh, runrs.sh, topk_*.txt,
   root_*.txt, rs_out.txt); pins in si/check.sh «box 53 SBF». SHA: see the commit.
@@ -428,6 +451,8 @@ Written 19:0xZ-19:4xZ (date -u; see commit).
     reduction to INS-POLY (tight-sibling Ξ-overtakes per interval; open).
   - §8 (box 53c, k-SOURCE compounding): R94's K flat on src2_K3 / src1_K4 (DATA); CEIL-ACC PROVED (lane, |F| ≤ (1 + AUP)n(n + 2) + ANDN);
     the leapfrog / head-feedback families have AUP ≤ 1, ANDN ≤ 2; reduction to AUP-POLY ∧ AFLAT-POLY (open).
+  - §9 (box 53d): DEAD «A falls at every source-free transition» (u23sw64_n32: 12 source-free non-falls; corpus 7,161, 3,653 strictly
+    inside); CEIL-ACC does not join R97 SRC-COUNT; A falls at every source-free transition only on the leapfrog families (DATA).
   - §5 (Lead 20:00Z): Corollary ORDER-CHG′ PROVED (lane) up to PAIR-TIE (data 0). DEAD: NO-REPEAT / order-determination on a fixed
     head set (exitr_cex_n16). max |U_k| = 4K + 16 on mkrw, so FPT in |U| is empty.
 - NEEDS: Lead: route ROOT-FLIP (§2) and HEAD-RED′ (§3) to L-RED for a kill attempt, and, if wanted, to a packet. L-LIT T60: Topkis

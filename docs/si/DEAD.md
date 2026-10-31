@@ -666,3 +666,26 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
   - experiments/si/sb53/inst/xcnb2_n12 + .start: two kind-B transitions at the same vertex, σ̄(3) 9 → 11 → 9, with Ξ(3) = (3, ∅, 0)
     and λ_Ξ fixed.
   - n5b agrees on both. Kind A is bounded by n(n − 1) per run (from R47); kind B is open.
+- (§9, Lead 07:25Z) «The ceiling agreement A falls at every source-free W-run transition» (would join CEIL-ACC to R97 SRC-COUNT): DEAD.
+  experiments/red/xing/instances/u23sw64_n32.pg (default start): 12 source-free W-run transitions, A never falls (floor 8, ceiling 3,
+  inside 1 at 13 → 14). Corpus: 7,161 source-free non-falls, 3,653 strictly inside. Pins: check.sh «box 53d».
+- (box 54, Lead 08:13Z, HXS-POLY proof side; note docs/si/N5-SRC-box54.md §4) Potentials on Odd sources: DEAD.
+  - The rank of σ̄_k(o) in the W_k-order of o's successors (and any potential read from that order and σ̄(o)): experiments/si/src54/inst/
+    sbq2_K8_m16 (= l-red flipev/instances/sbq2_K8_m16): W(242) = W(259) at all 153 states (one W-run) while σ̄(260) changes 128 times.
+  - CONJECTURE ASC-W (consecutive Ξ(v)-changes with non-rising top-differing rank have a W(v)-change between them): src2_K3 (= l-red
+    wlev/instances/src2_K3), Odd 62: top ranks 235 (k 24 → 25), 233 (k 26 → 27), 231 with W(62) constant (a descending staircase).
+    1,012 such pairs on src2_K3, 540 on sbq2_K8_m16.
+  - TURN-W (direction reversals of that rank sequence need a nearby W(v)-change): 67 bare reversals on src2_K3, 58 on sbq2_K8_m16.
+  - Pins: experiments/si/check.sh «box 54».
+- (box 55, Lead 09:46Z; note docs/si/N5-FSEG-box55.md §2) «The first-segment structure caps the nesting depth of a selector at a
+  constant»: DEAD. experiments/si/fseg55/inst/hit_b6a_1 (= claude/l-new box109/out/hit_b6a_1; h^W = 3): the gates are released by
+  consecutive switches on ONE deviator's first segment (Odd 0: Even 1 at k 34, 5 at k 36, 21 at k 39, 6 at k 40 by the new edge (6, 0)),
+  all at source events. The «peel» count does not help either: on obs_K12_m24 / sbq2_K8_m16 first segments RE-GROW at almost every
+  source event (GROW 529 / 353, PEEL 0). Pins: check.sh «box 55».
+- (box 56, Lead 10:34Z; note docs/si/N5-GROW-box56.md §4) Width laws for fuel re-routes (an FS-selector y switching to z through a new arena
+  edge, triggered by a rise of Ξ(z) one step earlier):
+  - FUEL-MONO (strictly monotone fuel keys per pair and W-run): DEAD, experiments/red/so/instances/so_th_n32, pair (12, 6), keys (1, 29)
+    twice.
+  - CONJECTURE FUEL-DESC (keys strictly descend unless a reset of Ξ(z) at a key ≥ the last one intervenes): DEAD,
+    experiments/n5-epoch/instances/nep56_n32 (+ .start), pair (28, 2): keys (1, 22) at k 9 then (1, 25) at k 13, Ξ(2) unchanged at
+    k 9-11. n5b agrees (xeng), Oink OK. Pins: check.sh «box 56».

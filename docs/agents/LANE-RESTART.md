@@ -198,3 +198,6 @@ Five questions:
 | 2026-10-30 | L-RED | session_01V5yGRYH6tnU7RvjZqXw32g (~519k; handover f670afb9) | session_01V5yGRWdTCZePxH7viLZ6VS (Opus, D1/D18) | 2 | PENDING (successor's check) |
 | 2026-10-30 | REFEREE | session_01V5yGRZqyr3UsRKbeEJjYqM (park threshold; handover 41a736e9 + 8951ef7c) | session_01V5yGRYBU4SsUT8MviYhjjg (Opus, D1/D18) | 2 | PENDING (successor's check) |
 | 2026-10-31 | L-RED | session_01V5yGRWdTCZePxH7viLZ6VS (~503k; PARK 99601394; idle confirmed by get_session 01:09Z) | session_01V5yGRXBDuKdR4N9Rfvkq8p (Opus, D1/D18) | 2 | PENDING (successor's check) |
+| 2026-10-31 | L-NEW | session_01V5yGRaRG5NjEeJEbjinuUs (~497k; FINAL 8591166d; idle) | session_01V5yGRWWR2yCHEgsoMAQC6u (Opus, D14/D18) | 2 | PENDING (successor's check) |
+| 2026-10-31 | L-RED | session_01V5yGRXBDuKdR4N9Rfvkq8p (~447k; PARK cb6feea3; idle) | session_01V5yGRXWeD1JvGgcJXuXx3q (Opus, D1/D18) | 2 | PENDING (successor's check) |
+| 2026-10-31 | L-SI | session_01V5yGRYBdyfY9j7b9E99hwy (~510k; handover c7f00306; idle) | session_01V5yGRX7j3zGTcKETSyEKZr (Opus, D18) | 2 | PENDING (successor's check) |
