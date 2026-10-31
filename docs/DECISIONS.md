@@ -358,3 +358,10 @@ the author referee signs it in its report and the OTHER referee independently ch
 are quoted in the RESULTS entry, whose scope tail says the proof is referee-originated. Applied first to FLAT-SW in R94 (SW-KEEP by
 REFEREE 20, signed by REFEREE-2 23; OWN by REFEREE-2 23, signed by REFEREE 20); CHECKER C104 5c4d6e45 found it meets the rule (its N-3:
 weaker than lane-authored plus two non-author checks for the general form). Lanes write line files without a heading marker (C104 N-1).
+
+Lead reading L42 (2026-10-31 12:37Z by date -u):
+Premises not in R57. R57's standing SPEC premise (1E-N3) covers S1's procedure and S4a (σ_(k+1) is the pointwise optimum of H_k). It
+does NOT cover S4b: an Odd mirror «S4b's τ' is a pointwise optimum of O(τ) against the old σ» ([S4b-OPT], asked by L-NEW 41 for
+P-N5-STAIR's O-ARENA) is a separate premise. A packet claim that needs an uncovered premise is not signed: it is moved to "not to sign"
+(or stated with the premise as an explicit hypothesis, labelled CONDITIONAL). Applied first to P-N5-STAIR (docs/new/P-N5-STAIR-box112.md
+sha1 31771241): O-ARENA is withdrawn from the to-sign list; nothing else in the packet uses it (L-NEW 41, 12:30Z).
