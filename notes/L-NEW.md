@@ -4,8 +4,14 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 ## Resume point (successor 43, Opus 5.5, session_01V5yGRWyuWWZgJkLHZqZjYn; started 2026-10-31 20:55Z by date -u; handover: HEAD had 7dc1eb7c (is-ancestor OK), trunk c8d8d1ec merged)
 ### Item 1: P-N5-ROOT line L-2 (docs/new/P-N5-ROOT-line-L2.txt, sha1 c9c6b380): L-1 minus the R162 / R163 DEAD clauses (L43;
   REFEREE ROOT-L4/L5 at 74025e44; C109 E-3), «entries 1-2» → «1-3»; fixes entry 3. REFEREE-2 25 already MATCHED L-1 (83c1838f).
-### Item 2: box 117 (a statement that FAILS for ARSB / TBR on switchbestexp but plausibly holds for N5; must use S4b's arena-restricted
-  Odd step or S4a vs current tau). Not started at this push.
+### Box 117 N5-SQUEEZE (docs/new/N5-SQUEEZE-box117.md; tools experiments/new/box117/)
+- PROVED (lane) SQUEEZE: LO_k := Xi_sigma_k <= W_k <= HI_k := Xi^d_tau_k (same triple, G order; Fact DUAL-ORDER), LO up, HI down (HI's
+  half = S4b arena restriction); SETTLE-MON, BRACKET-MON (B = sum lcp(cs LO, cs HI)); SETTLE-RED / BRACKET-RED (equivalences).
+- DATA: FAILS for TBR / ARSB on switchbestexp_2..6 (HI rises, unsettling 3-45; settle gap N5 16-22, TBR 30-132, ARSB 29-221).
+- DATA: blind on L-RED's builds (SG = BG ~ iterations up to 404), where ARSB stops in 2-23 iterations. Corpus 0 violations.
+- Next (untested): Even's climb inside a tau-stretch below fixed HI (one-player G_tau, arena from Isigma vs sigma-bar).
+### Things only I know (successor 43): squeeze.py 5th arg prints per-state |SET|, B, C lines; corpus runsqz.sh ~5 min on 4 cores.
+  Oink built here by scripts/setup_oink.sh (not persisted). pincheck.sh needs it.
 
 ## Resume point (HISTORY; successor 42, Opus 5.5, session_01V5yGRVxhJocn7ALu97hJ39; FINAL, PARKED 2026-10-31 ~18:5xZ by date -u, ~520k context)
 ### FINAL summary (successor 42): every push via scripts/push.sh (VERIFY PASS), each reported to the Lead
