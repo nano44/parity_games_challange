@@ -1,0 +1,14 @@
+MODE files /tmp/claude-0/-home-user-parity-games-challange/6818e6dd-24e8-54a7-b5bf-dc0c0a4d1c69/scratchpad/odso.lst 1 MAXT 5000 BF 0
+EQHI: 10
+FUEL: 56
+OLD_checks: 465
+RELAY_checks: 70
+ROOT_a: 22
+ROOT_checks: 22
+STEP_case2: 19
+STEP_checks: 72
+XIPLAY_checks: 1184
+runs: 1
+transitions: 36
+max max_LCT_run: 2
+RESULT PASS violations 0

@@ -1,0 +1,14 @@
+MODE random 3000 8 16 51 3 MAXT 5000 BF 0
+FUEL: 147
+OLD_checks: 81995
+RELAY_checks: 58693
+ROOT_a: 1009
+ROOT_b: 9
+ROOT_checks: 1018
+STEP_case2: 47123
+STEP_checks: 143359
+XIPLAY_checks: 427012
+runs: 12000
+transitions: 23168
+max max_LCT_run: 5
+RESULT PASS violations 0
