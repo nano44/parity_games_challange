@@ -1,6 +1,11 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 7 (successor 24; 2026-10-31 04:0xZ by date -u)
+- R96 SETTLE LANDED (trunk 38bb8320, RESULTS l. 7748 = SETTLE L-5 token-identical). SRC L-4 (l-red 1edc2f0e, ec2c7139): Entry 4 applied
+  exactly, R96 citation right; REQUIRED SRC-L5: «not O(1) per W-run (pins …)» overclaims (two constant pins; lane note: no growing family).
+- Lesson: check DATA/scope-tail clauses for asymptotic words (O(1), unbounded, linear) backed only by fixed instances.
+
 ## Resume point 6 (successor 24; 2026-10-31 00:1xZ by date -u)
 - SETTLE L-5 (l-si ce7bdc3b, 39e44fe2): MATCHES (R2-N5-SETTLE-L5.md); SET-L4-1 closed. Nothing open on my side.
 
