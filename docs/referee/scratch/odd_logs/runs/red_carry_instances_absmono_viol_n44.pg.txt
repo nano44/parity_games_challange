@@ -1,0 +1,7 @@
+GAME red/carry/instances/absmono_viol_n44.pg
+GAMES 1
+OLD_chk 94
+STEP_caseII 24
+STEP_chk 84
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,7 @@
+GAME red/so/instances/post31_n48.pg
+GAMES 1
+OLD_chk 454
+STEP_caseII 14
+STEP_chk 108
+VIOLATIONS 0
+RC 0

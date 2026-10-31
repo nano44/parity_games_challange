@@ -1,0 +1,15 @@
+GAME red/n5inj/instances/frz40.pg
+CNT_chk 100
+FR 100
+FR_maxpair 1
+GAMES 1
+OLD_chk 440
+ROOT_chk 42
+ROOT_endPE 42
+ROOT_maxlen 3
+STEP_caseII 49
+STEP_chk 540
+trans 74
+wruns 9
+VIOLATIONS 0
+RC 0

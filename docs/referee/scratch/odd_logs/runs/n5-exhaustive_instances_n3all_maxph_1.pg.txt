@@ -1,0 +1,6 @@
+GAME n5-exhaustive/instances/n3all_maxph_1.pg
+GAMES 1
+OLD_chk 2
+STEP_chk 3
+VIOLATIONS 0
+RC 0

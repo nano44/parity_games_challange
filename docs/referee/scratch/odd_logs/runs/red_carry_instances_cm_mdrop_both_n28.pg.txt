@@ -1,0 +1,15 @@
+GAME red/carry/instances/cm_mdrop_both_n28.pg
+CNT_chk 2
+FR 2
+FR_maxpair 1
+GAMES 1
+OLD_chk 123
+ROOT_chk 11
+ROOT_endPE 11
+ROOT_maxlen 2
+STEP_caseII 9
+STEP_chk 100
+trans 3
+wruns 1
+VIOLATIONS 0
+RC 0

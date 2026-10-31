@@ -1,0 +1,7 @@
+GAME new/box59/out/rnd/r92_n30.pg
+GAMES 1
+OLD_chk 4
+STEP_caseII 20
+STEP_chk 56
+VIOLATIONS 0
+RC 0

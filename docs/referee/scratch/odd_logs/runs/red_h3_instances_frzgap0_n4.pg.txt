@@ -1,0 +1,7 @@
+GAME red/h3/instances/frzgap0_n4.pg
+GAMES 1
+OLD_chk 1
+STEP_caseII 1
+STEP_chk 1
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,17 @@
+GAME red/so/instances/pftheta34_n32.pg
+ASC 5
+CNT_chk 51
+EQHI 8
+FR 69
+FR_maxpair 3
+GAMES 1
+OLD_chk 443
+ROOT_chk 44
+ROOT_endPE 44
+ROOT_maxlen 2
+STEP_caseII 18
+STEP_chk 78
+trans 34
+wruns 1
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,7 @@
+GAME red/carry/instances/f1_twodef_n48.pg
+GAMES 1
+OLD_chk 167
+STEP_caseII 11
+STEP_chk 126
+VIOLATIONS 0
+RC 0

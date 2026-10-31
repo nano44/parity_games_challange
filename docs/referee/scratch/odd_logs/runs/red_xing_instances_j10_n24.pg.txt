@@ -1,0 +1,15 @@
+GAME red/xing/instances/j10_n24.pg
+CNT_chk 31
+FR 31
+FR_maxpair 1
+GAMES 1
+OLD_chk 183
+ROOT_chk 17
+ROOT_endPE 17
+ROOT_maxlen 1
+STEP_caseII 14
+STEP_chk 25
+trans 23
+wruns 2
+VIOLATIONS 0
+RC 0

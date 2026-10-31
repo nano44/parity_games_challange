@@ -1,0 +1,7 @@
+GAME red/ctxp/instances/margin1_mc1.pg
+GAMES 1
+OLD_chk 319
+STEP_caseII 45
+STEP_chk 390
+VIOLATIONS 0
+RC 0

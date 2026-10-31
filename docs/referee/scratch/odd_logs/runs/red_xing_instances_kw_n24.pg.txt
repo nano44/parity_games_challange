@@ -1,0 +1,12 @@
+GAME red/xing/instances/kw_n24.pg
+CNT_chk 19
+FR 19
+FR_maxpair 1
+GAMES 1
+OLD_chk 25
+STEP_caseII 40
+STEP_chk 40
+trans 20
+wruns 1
+VIOLATIONS 0
+RC 0

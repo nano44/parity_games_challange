@@ -1,0 +1,6 @@
+GAME red/nest16/instances/nest6min_n75.pg
+GAMES 1
+STEP_caseII 12
+STEP_chk 189
+VIOLATIONS 0
+RC 0

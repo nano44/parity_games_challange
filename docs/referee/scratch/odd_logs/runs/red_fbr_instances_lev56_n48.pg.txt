@@ -1,0 +1,16 @@
+GAME red/fbr/instances/lev56_n48.pg
+ASC 1
+CNT_chk 123
+FR 126
+FR_maxpair 2
+GAMES 1
+OLD_chk 738
+ROOT_chk 94
+ROOT_endPE 94
+ROOT_maxlen 3
+STEP_caseII 15
+STEP_chk 344
+trans 70
+wruns 10
+VIOLATIONS 0
+RC 0

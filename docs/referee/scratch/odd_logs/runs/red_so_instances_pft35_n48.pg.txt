@@ -1,0 +1,17 @@
+GAME red/so/instances/pft35_n48.pg
+ASC 7
+CNT_chk 78
+EQHI 7
+FR 96
+FR_maxpair 3
+GAMES 1
+OLD_chk 777
+ROOT_chk 67
+ROOT_endPE 67
+ROOT_maxlen 2
+STEP_caseII 25
+STEP_chk 123
+trans 38
+wruns 2
+VIOLATIONS 0
+RC 0

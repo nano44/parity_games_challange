@@ -1,0 +1,14 @@
+GAME n5-exhaustive/instances/n4all_maxph_1.pg
+CNT_chk 1
+FR 1
+FR_maxpair 1
+GAMES 1
+OLD_chk 3
+ROOT_chk 1
+ROOT_endPE 1
+ROOT_maxlen 1
+STEP_chk 4
+trans 2
+wruns 1
+VIOLATIONS 0
+RC 0

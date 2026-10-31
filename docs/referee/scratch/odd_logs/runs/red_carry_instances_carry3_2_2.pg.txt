@@ -1,0 +1,9 @@
+GAME red/carry/instances/carry3_2_2.pg
+GAMES 1
+OLD_chk 3
+STEP_caseII 2
+STEP_chk 48
+trans 1
+wruns 1
+VIOLATIONS 0
+RC 0

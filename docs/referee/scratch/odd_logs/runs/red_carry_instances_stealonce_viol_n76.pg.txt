@@ -1,0 +1,12 @@
+GAME red/carry/instances/stealonce_viol_n76.pg
+GAMES 1
+OLD_chk 511
+ROOT_chk 4
+ROOT_endPE 4
+ROOT_maxlen 1
+STEP_caseII 29
+STEP_chk 396
+trans 1
+wruns 1
+VIOLATIONS 0
+RC 0

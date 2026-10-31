@@ -1,0 +1,12 @@
+GAME red/n5/instances/sym_h16_s1.pg
+GAMES 1
+OLD_chk 426
+ROOT_chk 2
+ROOT_endPE 2
+ROOT_maxlen 2
+STEP_caseII 120
+STEP_chk 880
+trans 1
+wruns 1
+VIOLATIONS 0
+RC 0

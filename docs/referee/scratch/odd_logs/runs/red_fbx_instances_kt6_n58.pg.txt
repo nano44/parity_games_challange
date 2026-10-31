@@ -1,0 +1,16 @@
+GAME red/fbx/instances/kt6_n58.pg
+CNT_chk 45
+FR 45
+FR_maxpair 1
+GAMES 1
+OLD_chk 501
+ROOT_chk 13
+ROOT_endC 8
+ROOT_endPE 5
+ROOT_maxlen 2
+STEP_caseII 46
+STEP_chk 190
+trans 29
+wruns 3
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,6 @@
+GAME red/nopre/instances/nopre_viol_n20.pg
+GAMES 1
+OLD_chk 34
+STEP_chk 18
+VIOLATIONS 0
+RC 0

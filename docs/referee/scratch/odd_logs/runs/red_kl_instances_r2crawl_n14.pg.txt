@@ -1,0 +1,7 @@
+GAME red/kl/instances/r2crawl_n14.pg
+GAMES 1
+OLD_chk 19
+STEP_caseII 8
+STEP_chk 55
+VIOLATIONS 0
+RC 0

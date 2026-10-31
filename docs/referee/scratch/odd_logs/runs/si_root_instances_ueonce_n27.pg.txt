@@ -1,0 +1,15 @@
+GAME si/root/instances/ueonce_n27.pg
+ASC 1
+CNT_chk 27
+FR 28
+FR_maxpair 2
+GAMES 1
+OLD_chk 62
+ROOT_chk 2
+ROOT_endPE 2
+ROOT_maxlen 2
+STEP_chk 24
+trans 10
+wruns 1
+VIOLATIONS 0
+RC 0

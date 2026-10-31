@@ -1,0 +1,9 @@
+GAME red/fbr/instances/sat68_n20.pg
+GAMES 1
+OLD_chk 25
+STEP_caseII 11
+STEP_chk 35
+trans 1
+wruns 1
+VIOLATIONS 0
+RC 0

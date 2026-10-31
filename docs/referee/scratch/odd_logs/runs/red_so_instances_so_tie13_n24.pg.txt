@@ -1,0 +1,15 @@
+GAME red/so/instances/so_tie13_n24.pg
+CNT_chk 20
+FR 20
+FR_maxpair 1
+GAMES 1
+OLD_chk 32
+ROOT_chk 2
+ROOT_endPE 2
+ROOT_maxlen 1
+STEP_caseII 13
+STEP_chk 48
+trans 16
+wruns 1
+VIOLATIONS 0
+RC 0

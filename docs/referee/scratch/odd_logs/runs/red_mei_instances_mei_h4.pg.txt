@@ -1,0 +1,7 @@
+GAME red/mei/instances/mei_h4.pg
+GAMES 1
+OLD_chk 29
+STEP_caseII 5
+STEP_chk 90
+VIOLATIONS 0
+RC 0

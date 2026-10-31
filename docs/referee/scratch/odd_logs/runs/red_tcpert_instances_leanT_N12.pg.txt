@@ -1,0 +1,7 @@
+GAME red/tcpert/instances/leanT_N12.pg
+GAMES 1
+OLD_chk 676
+STEP_caseII 57
+STEP_chk 624
+VIOLATIONS 0
+RC 0

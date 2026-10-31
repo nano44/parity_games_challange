@@ -1,0 +1,15 @@
+GAME red/fbr/instances/lev74_n40.pg
+CNT_chk 5
+FR 5
+FR_maxpair 1
+GAMES 1
+OLD_chk 264
+ROOT_chk 11
+ROOT_endPE 11
+ROOT_maxlen 2
+STEP_caseII 4
+STEP_chk 72
+trans 6
+wruns 3
+VIOLATIONS 0
+RC 0

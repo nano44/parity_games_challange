@@ -1,0 +1,15 @@
+GAME red/n5inj/instances/returns_rt32.pg
+CNT_chk 37
+FR 37
+FR_maxpair 1
+GAMES 1
+OLD_chk 213
+ROOT_chk 6
+ROOT_endPE 6
+ROOT_maxlen 2
+STEP_caseII 3
+STEP_chk 171
+trans 44
+wruns 8
+VIOLATIONS 0
+RC 0

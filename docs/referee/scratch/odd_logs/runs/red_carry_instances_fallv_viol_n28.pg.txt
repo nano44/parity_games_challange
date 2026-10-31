@@ -1,0 +1,7 @@
+GAME red/carry/instances/fallv_viol_n28.pg
+GAMES 1
+OLD_chk 89
+STEP_caseII 7
+STEP_chk 70
+VIOLATIONS 0
+RC 0

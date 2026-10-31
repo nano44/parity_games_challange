@@ -1,0 +1,15 @@
+GAME n5-exhaustive/instances/frz1_n24.pg
+CNT_chk 30
+FR 38
+FR_maxpair 2
+GAMES 1
+OLD_chk 109
+ROOT_chk 9
+ROOT_endPE 9
+ROOT_maxlen 2
+STEP_caseII 32
+STEP_chk 124
+trans 28
+wruns 2
+VIOLATIONS 0
+RC 0

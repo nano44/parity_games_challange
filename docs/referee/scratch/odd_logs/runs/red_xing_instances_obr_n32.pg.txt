@@ -1,0 +1,16 @@
+GAME red/xing/instances/obr_n32.pg
+CNT_chk 19
+EQHI 3
+FR 22
+FR_maxpair 2
+GAMES 1
+OLD_chk 157
+ROOT_chk 4
+ROOT_endPE 4
+ROOT_maxlen 1
+STEP_caseII 42
+STEP_chk 110
+trans 16
+wruns 2
+VIOLATIONS 0
+RC 0

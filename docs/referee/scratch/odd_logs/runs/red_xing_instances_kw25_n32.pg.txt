@@ -1,0 +1,16 @@
+GAME red/xing/instances/kw25_n32.pg
+CNT_chk 31
+EQHI 1
+FR 32
+FR_maxpair 2
+GAMES 1
+OLD_chk 133
+ROOT_chk 6
+ROOT_endPE 6
+ROOT_maxlen 2
+STEP_caseII 30
+STEP_chk 87
+trans 27
+wruns 3
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,7 @@
+GAME red/carry/instances/fall3_n76.pg
+GAMES 1
+OLD_chk 288
+STEP_caseII 20
+STEP_chk 280
+VIOLATIONS 0
+RC 0

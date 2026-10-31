@@ -1,0 +1,7 @@
+GAME red/carry/instances/ctx7_n30.pg
+GAMES 1
+OLD_chk 172
+STEP_caseII 34
+STEP_chk 176
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,15 @@
+GAME n5-exhaustive/instances/b5_os_n32.pg
+CNT_chk 78
+FR 79
+FR_maxpair 2
+GAMES 1
+OLD_chk 234
+ROOT_chk 4
+ROOT_endPE 4
+ROOT_maxlen 1
+STEP_caseII 3
+STEP_chk 213
+trans 60
+wruns 10
+VIOLATIONS 0
+RC 0

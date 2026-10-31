@@ -1,0 +1,15 @@
+GAME red/so/instances/xsn91_n48.pg
+CNT_chk 200
+FR 205
+FR_maxpair 2
+GAMES 1
+OLD_chk 871
+ROOT_chk 22
+ROOT_endPE 22
+ROOT_maxlen 1
+STEP_caseII 8
+STEP_chk 115
+trans 103
+wruns 9
+VIOLATIONS 0
+RC 0
