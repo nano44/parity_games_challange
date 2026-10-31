@@ -1037,6 +1037,10 @@ case "$o" in *"LEXV 0 ASC 0 EQHI 6 REP 0 "*) ;; *) echo "box 57: so_th: $o"; exi
 [ "$(cat grow56/fuel_*.txt | grep -c ' LEXV ')" = 1132 ] || { echo "box 57: srcfuel outputs incomplete"; exit 1; }
 if grep -q "LEXV [1-9]" grow56/fuel_*.txt; then echo "box 57: FUEL-LEX violation"; exit 1; fi
 echo "si (box 57: FUEL-LEX): PASS"
+# P-N5-ODD (FROZEN packet, boxes 54/55/57; line docs/si/P-N5-ODD-line.txt): must not change. Data pins: «box 54», «box 55», «box 57».
+echo "03eec41d3bfc63a6945d0f30d831a46f14e46b84  ../../docs/si/P-N5-ODD-box57.md" | sha1sum -c --quiet
+echo "cd121dffd06dbc794f3154e34aa238d8df81f837  ../../docs/si/P-N5-ODD-line.txt" | sha1sum -c --quiet
+echo "si (P-N5-ODD pinned): PASS"
 # P-N5-SETTLE line revision L-1 (fixes entry 1; both referees word-diff it): must not change.
 echo "997e39eee8d72ae94be4764bb1e3841914ffc78e  ../../docs/si/P-N5-SETTLE-line-L1.txt" | sha1sum -c --quiet
 echo "si (P-N5-SETTLE L-1 pinned): PASS"
