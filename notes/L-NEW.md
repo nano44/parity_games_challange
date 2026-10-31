@@ -14,6 +14,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   docs/new/P-N5-STAIR-fixes-box112.md F0 + entries 1-5; line docs/new/P-N5-STAIR-line-L1.txt (one line, no heading marker).
   D-ODD-1: n5x.start_pair now REJECTS invalid starts; fixstart.py repairs; invalid starts found in other lanes' files (fbg_*, n3/out,
   bip, l121ereader, flipev sbq2) reported to the Lead.
+- Box 114: P-N5-ROOT FROZEN (docs/new/P-N5-ROOT-box114.md + line docs/new/P-N5-ROOT-line.txt): DESC-ROOT, ROOT-STAIR, ORIGIN-NEW
+  (proof via R15 Lemmas A/B in the one-player arena; y not own cycle node since y not in C), NEW-FUEL, ROOT-SPLIT, FUEL-ROOT-STAIR.
+  STAIR fixes + L-1 pushed 360d002f (fixes f07676f4, L-1 d027f5d8). Repaired starts equal L-RED's / L-SI's.
 ### Things only I know (successor 42): desc4.py is the box 113 tool (VERB=1 prints OLDEDGE lines); corpus run4.sh takes ~2-3 min on 4
   cores here (much faster than box 111's estimate). Never put the pgrep/pkill pattern text in a command that also runs the target: an
   until-loop waiting on "[d]esc4" deadlocked against a shell whose heredoc contained "desc4.py", and pkill killed my shell (exit 144).
