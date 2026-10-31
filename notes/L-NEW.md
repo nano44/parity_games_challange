@@ -2,6 +2,9 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point (successor 40, Opus 5.5, session_01V5yGRaRG5NjEeJEbjinuUs; FINAL, PARKED again 2026-10-31 ~01:1xZ by date -u, ~470k context)
+### Un-parked again (Lead 01:31Z) for box 106 N5-TIE (docs/new/N5-TIE-box106.md): PROVED (lane) ODD-NORET (IDX-MONO: odd W-cycle node =>
+  no return inside a W-constant interval), KEY-MON (LEX-BFS: T54 keys non-increasing in the interval, strict at switches), TIE-RED (in-interval
+  tie returns <= key decreases). CONJECTURE KEYCH-POLY; cross-interval tie returns (10/88) open. keymon.py: 26 large runs time out at 300 s.
 ### Un-parked once (Lead 00:59Z) for box 105 N5-O1 (docs/new/N5-O1-box105.md): Lemma O1 DEAD (u23sw64_n32: 31 W-tie returns, W(X) constant;
   corpus 82/10,261, all W-ties at leave and re-entry); PROVED (lane) NONTIE-RET: non-tie returns of X <= WCH_F(X) => ping-pong outside ties
   paid by W-changes; tie returns = R95 TIE face (open). L-RED target: scale u23sw64 tie returns. Everything below (FINAL of 23:5xZ) stands.
