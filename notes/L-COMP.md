@@ -7,7 +7,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
   improving edges.) Do not retry the PGSolver OCaml build (box 21 diff stays unrouted).
 - BOX 23 DONE (README has every table): (a) rstar.py = xirise.py on 1,132/1,132; (b) C(4) exhaustive all starts: R*_F <= 1, FL_F <= 1,
   random n 5 / 6: R*_F 1, FL_F 1 / 2; (c) climbs R*_F ~0.7-1.0n (42 at n 60); (d) latew: R*_F = K·m = Theta(n^2) per W-run, 1,344 at n 778.
-  15 witnesses pinned (pin23.py ALL OK). IN FLIGHT: nothing. NEEDS: next box from the Lead.
+  15 witnesses pinned (pin23.py ALL OK). Lead 21:21Z: latew is an independent reproduction of L-RED R138 (labelled).
+- BOX 24 DONE (experiments/n5-box24/README.md): max |F| = n - 1 exhaustively for n <= 4 (C(4) all 268M pairs); climbs reach only n - 1
+  at n 5-7 (5 seeds each); first |F| > n - 1 found at n 8 (F8_n8, 8) and n 9 (F10_n9, 10 with ONE late adoption = two GP* climbs);
+  random C(5) 220k games max 3. 8 pins. IN FLIGHT: nothing. NEEDS: next box from the Lead.
 ### Things only I know (successor 8)
 - red/n3/instances/n3cov_lean.start is invalid (R99); start files must be overlaid on S3 dropping invalid entries (rstar.overlay).
 - pkill -f / pgrep -f with a pattern that occurs in your own command line kills / matches your own shell (bit me 14:45Z).
@@ -415,7 +418,7 @@ AM9 Lemma 3's proof sets D_{dbar} = D cap U_{dtilde} (tex:345), probably a typo 
 | github.com/tcsprojects/pgsolver @ d3cd624 | src/lib/generators/policyiter/generators/friedmannsubexp.ml (90 lines), fearnleysubexp.ml (86 lines), stratimprgenerators.ml SymbolicParityGame | 2026-10-29 | code, not a paper; box 21 ports |
 ## Dead ends
 - 2026-10-30 (box 23): "R*_F = O(n) per W-run" (any reading of box 85's R*-POLY as linear) DEAD on L-RED's latew_K20_m32 (sha1
-  063d173c…; LATE=1 red/span/mkrw.py 20 32): one W-run, R*_F 640 > n = 538 (rstar.py on n5b = xirise.py). Exact on 7 sizes: R*_F = K·m,
+  063d173c…; LATE=1 red/span/mkrw.py 20 32): one W-run, R*_F 640 > n = 538 (rstar.py on n5b = xirise.py; first shown by L-RED R138, l-red 5374e0a5, so mine is an independent reproduction). Exact on 7 sizes: R*_F = K·m,
   |F| = K(m + 3), n = 14K + 8m + 2, so Θ(n²) balanced. Not a kill of R*-POLY.
 - 2026-10-30 (box 23, method): hill climbs on R*_F saturate near n (best 42 at n 60), far below the construction; climb fits are not growth laws.
 - 2026-10-18 (method note): watcher loops counting 'done' lines never end when a run crashes before printing 'done'; count

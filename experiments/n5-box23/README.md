@@ -6,10 +6,12 @@ Not a TARGET.md claim. G-N5-TIME stays open.
 
 ## Summary
 - (a) My counter = L-NEW's xirise.py on the whole box-83 corpus (1,132 / 1,132 games).
-- HEADLINE (DATA): R*_F is Θ(n²) per W-run on L-RED's latew family (R127/R128, mkrw.py LATE=1). Exactly R*_F = K·m and |F| = K(m + 3)
+- HEADLINE (DATA; an INDEPENDENT REPRODUCTION of L-RED R138, l-red 5374e0a5, docs/red/R138-rstar-quadratic.md, which found R*_F = K·m
+  on L-NEW's counter, 640 at n 538): R*_F is Θ(n²) per W-run on L-RED's latew family (R127/R128, mkrw.py LATE=1), here on my own counter and engine. Exactly R*_F = K·m and |F| = K(m + 3)
   in ONE W-run, with n = 14K + 8m + 2 (7 sizes, n 186-778; K28_m48 was predicted 1,344 before it ran and gave 1,344). Balanced K, m give R*_F ≈ n²/448.
-  At latew_K20_m32: R*_F 640 > n = 538, confirmed by xirise.py. The brief's "corpus max 64" (gate_K64_n581) is 10× below this.
-- PROVED (mine, trivial): R*_F ≤ |F| and FL_F ≤ |F|. With FREE-RED this gives R*-POLY ∧ FL-POLY ⟺ "every W-run has polynomial length".
+  At latew_K20_m32: R*_F 640 > n = 538, = xirise.py and = R138. New here: my own counter, sizes n 186-778 and the exact fit n = 14K + 8m + 2.
+  Box 85's 64 was a corpus maximum, not a frontier value (Lead 21:21Z).
+- PROVED (trivial; found independently, also in L-RED R138's title): R*_F ≤ |F| and FL_F ≤ |F|. With FREE-RED this gives R*-POLY ∧ FL-POLY ⟺ "every W-run has polynomial length".
   The reduction restates the open core; it does not narrow it. In the latew family that length is Θ(n²): polynomial.
 - (b) Exhaustive, all start pairs:
   - n ≤ 3: max R*_F 0.
@@ -105,7 +107,7 @@ Not a TARGET.md claim. G-N5-TIME stays open.
   - F24_n20 (4c4fab7e…, |F| 24 with R*_F 11; it 28, 1 fallback)
   - fl6_n20 (fb8b1397…, FL_F 6, R*_F 9)
 
-## (d) The construction: R*_F on L-RED's latew family (mkrw.py LATE=1, R127/R128; regenerated, read only)
+## (d) The construction: R*_F on L-RED's latew family (mkrw.py LATE=1, R127/R128; regenerated, read only). INDEPENDENT REPRODUCTION of L-RED R138 (l-red 5374e0a5)
 - Regenerated with `LATE=1 python3 red/span/mkrw.py K m OUT.pg OUT.start`. K8_m32 and K20_m32 are byte-identical to L-RED's pins
   (sha1 3498a23d…, 063d173c…). Counted with rstar.py (results/latew_rstar.txt); K20_m32 also with xirise.py:
   R*_F 640, |F| 700, FL 0, one W-run, returns 2,418.
@@ -123,7 +125,7 @@ Not a TARGET.md claim. G-N5-TIME stays open.
 - DATA: R*_F = K·m and |F| = K(m + 3) exactly on every row. The whole run is one W-run; each of the K pivot cycles has m transitions
   with a late adoption (R128 §1: every late-adopter edge is re-adopted once per pivot cycle) plus 3 without.
 - Hence with K = ⌊n/28⌋, m = ⌊n/16⌋ (balanced): R*_F ≈ n²/448 = Θ(n²) per W-run, and the W-run length is Θ(n²) too.
-- DEAD (any reading "R*_F = O(n)" or "R*_F ≤ n per W-run"): latew_K20_m32, R*_F 640 > n = 538 (xirise.py agrees).
+- DEAD (any reading "R*_F = O(n)" or "R*_F ≤ n per W-run"): latew_K20_m32, R*_F 640 > n = 538 (xirise.py agrees; first shown by L-RED R138).
   Not a kill of R*-POLY: n² is polynomial.
 - Pins: latew_K8_m32, latew_K20_m32 through pin23.py: both ALL OK (n5.py = n5b over 280 / 700 iterations, Oink zlk, verify.py, xeng.py state by state, rstar = xirise (256, 0) / (640, 0)).
 
