@@ -1,7 +1,22 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 40, Opus 5.5, session_01V5yGRaRG5NjEeJEbjinuUs; FINAL, PARKED again 2026-10-31 ~01:1xZ by date -u, ~470k context)
+## Resume point (successor 41, Opus 5.5, session_01V5yGRWWR2yCHEgsoMAQC6u; started 2026-10-31 07:47Z by date -u; handover: HEAD = origin 8591166d, trunk 87be2541 merged)
+### Box 107 N5-FINPOT (Lead brief after 07:47Z: finer potential below the first difference): docs/new/N5-FINPOT-box107.md
+- PROVED (lane): W-MON (W non-decreasing at every non-fallback tau-constant transition: sigma' is Even-optimal in H_k(tau), sigma in H_k),
+  O-ARENA (on a W-run W = best-response value in the Odd arena O(tau) = tau u I_tau; G_O subset G), SANDWICH (x<=y<=z => lcp(x,z) =
+  min), FROZEN (BW = sum lcp(W_k, W_q), AF, LS monotone, range n(n+2)), BW-ACC (|F| <= (M+1)n(n+2) + M N_F, N_F = BW-flat A-non-falls =
+  T1 + T4), HIER-RED (|F| <= T1_F + (n(n+2)+1)^(h^W_F); joint V = (W, Xi): NOV_F + (2n(n+2)+1)^(h^V_F)).
+- DATA: corpus 1,132 runs / 14,028 W-run transitions: BW rises at 13,633; T1 79, T3 25, T4 291; h^W <= 2 (111 runs at 2), h^V <= 3.
+  runfam_K40 A-flat regime paid at level 1 (171/171); u23sw64 floor paid by the joint (Xi_end) level; leapfrog families depth 2.
+- DEAD: BW alone (x31_rx48, 13 T4 in W-run 36..50, W moves at position 17 below b = 4); W-referenced potentials on u23sw64's floor;
+  NOV = 0 (tog6a_n32 k 8: Even cycle node 13 switches, no value moves); RKW/RKX/PAG/|D|/NG not monotone.
+- CONJECTURE HDEPTH (h^W_F <= 2); L-RED target: a W-run with h^W >= 3 (FEEDBACK must nest W-digits).
+### Things only I know (successor 41): finpot.py is slow on n ~ 300 (obs/src2/rcl ~5-10 min each); runfin.sh / runhier.sh ~10 min on 4
+  cores; n5bcmp.py needs an explicit START file (an empty SIGMA0/TAU0 file makes n5b start from nothing: 0 iterations) -> box107/inst/
+  x31_rx48.start = n5x default. Oink built by scripts/setup_oink.sh in this container (not persisted).
+
+## Resume point (HISTORY; successor 40, Opus 5.5, session_01V5yGRaRG5NjEeJEbjinuUs; FINAL, PARKED again 2026-10-31 ~01:1xZ by date -u, ~470k context)
 ### Un-parked again (Lead 01:31Z) for box 106 N5-TIE (docs/new/N5-TIE-box106.md): PROVED (lane) ODD-NORET (IDX-MONO: odd W-cycle node =>
   no return inside a W-constant interval), KEY-MON (LEX-BFS: T54 keys non-increasing in the interval, strict at switches), TIE-RED (in-interval
   tie returns <= key decreases). CONJECTURE KEYCH-POLY; cross-interval tie returns (10/88) open. keymon.py: 26 large runs time out at 300 s.
@@ -508,6 +523,12 @@ Stop (S5) when Iσ = Iτ = ∅: Even wins v iff the cycle node of Ξσ(v) has ev
   (b), (c); length < 2(n + m)(n² − n + 1 + SBC)). DEAD: NOFB (n3all_maxph_0), W-frame twin N5-SFW cycles (theta_thf16, period 10; 49/413).
   DATA: correct on 1,038 library + families + hard families; SF ≈ ½ N5; runquad 264 → 2, topfix 7N + 43; switchbestexp N=10 619 vs 89, SBC 97.
   Open count SBC (CONJECTURE SF-POLY OPEN).
+
+## Dead ends (successor 41; also in docs/new/N5-FINPOT-box107.md §3)
+- BW alone pays all W-changing transitions: DEAD, x31_rx48 (13 consecutive T4 in W-run 36..50; W changes at CS position 17, b = 4).
+- W-referenced potentials (A, AF, BW, RKW, LCM) on the W-constant floor interval: DEAD, u23sw64_n32 states 1-9 (all flat 8 times).
+- NOV = 0 (every sigma-move raises Xi or W): DEAD, tog6a_n32 k 8 (Even vertex 13 = its own Xi-cycle node switches 30 -> 27).
+- RKW, RKX, PAG, |D|, NG as monotone potentials: DEAD (two-sided on runfam_K40).
 
 ## Dead ends (successor 36; also in docs/new/N5-LZ-box72.md §1)
 - W-ceiling sandwich (Xi <= W, W fixed, bounds the strict Xi-rises): DEAD as a bound, experiments/red/xing/instances/u23sw64_n32.pg: all 64
