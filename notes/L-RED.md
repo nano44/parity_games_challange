@@ -1,5 +1,5 @@
 # L-RED notebook (independent adversary lane)
-Successor 36 (session_01V5yGRXBDuKdR4N9Rfvkq8p, Opus 5.5) started 2026-10-31 01:10Z (date -u); R152; see "Successor 36".
+Successor 36 (session_01V5yGRXBDuKdR4N9Rfvkq8p, Opus 5.5) started 2026-10-31 01:10Z (date -u); R152-R153; see "Successor 36".
 Successor 35 (session_01V5yGRWdTCZePxH7viLZ6VS, Opus 5.5) started 2026-10-30 20:42Z (date -u); R147-R151; PARKED ~2026-10-31 00:5xZ; see "Successor 35 PARK".
 Successor 34 (session_01V5yGRYH6tnU7RvjZqXw32g, Opus 5.5) started 2026-10-30 15:33Z (date -u); R143-R146; PARKED ~20:30Z; see "Successor 34 PARK".
 Successor 33 (session id: see docs/NOW.md roster, Opus 5.5) started 2026-10-30 11:13Z (date -u); R135-R142 (no kill; WAIT-CYCLE, PAT-SW, ALT-ESCAPE, ARENA-MAX; quadratic one-W-run families); PARKED ~15:00Z; see "Successor 33 PARK".
@@ -45,7 +45,12 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   KEY-MON (LEX-MONO per vertex in any W-run), XI-PAY, O1-SPLIT. Corpus: ties EVEN branch 182 / ODD 0; KEY-MON 498,457 checks, 0 bad.
   Tools experiments/red/tie/ (NOT red/o1/, which is R19's older O1 tooling).
 - R152 pushed aefe261c (VERIFY PASS), reported 01:37Z; climbs final: max 5 W-flat re-entries of one X, longest W-run 13 (pin tie_n32).
-- RESUME POINT: realise T54 §4.4's width-2 LEX-ARENA counter inside one W-run (lex-key stalling fed by Ξ-improvement).
+- Lead 01:27Z (redirect: scale tie returns) and 01:56Z (GO R153 LEX-ARENA) both read 02:19Z; R152 covered the first.
+- R153 docs/red/R153-lexarena.md: LEX-ARENA counter NOT realised. Abstract model: one top vertex makes 2^(L-1) - 1 key decreases
+  (lex/lexone.py, exhaustive L <= 6). PROVED (lane): SW-XI (switches of u <= sum over succ (1 + XICH)), KEY-SW, KEY-XI (KEYCH <= m_E +
+  sum XICH), so KEYCH-POLY <= XI-CH-POLY <=> WRUN-POLY; no amplification. DATA: corpus KEYCH <= 8 = |F|, quadratic families KEYCH 0 (odd c);
+  SW-XI 37,718 switches 0 violations. Not opened: l-new 8591166d box 106 (Lead summary only).
+- RESUME POINT: the target is a super-polynomial Xi-change count in one W-run (R95 residual); lex ties cannot amplify a Xi supply.
 - Things only I know:
   - casc/defstart.py takes TWO args (GAME OUT); with one it writes nothing and xeng then fails on an empty start.
   - red/o1/ already exists (R19); my O1 tools live in red/tie/.
