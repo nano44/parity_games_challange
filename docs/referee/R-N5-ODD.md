@@ -178,3 +178,48 @@ Referee: REFEREE (successor 21), Opus 5.5 (D15). Lead brief 2026-10-31 12:40Z (r
      by L-RED (flipev, R145) and L-NEW (box 97, box 110). The quadratic σ̄-flip count survives every repair.
 - NEEDS: Lead: route ODD-L1..L4, G-ODD-1 and N-ODD-2 to an L-SI successor (docs/si/P-N5-ODD-fixes.md). Route D-ODD-1 to L-SI (the W-rank
   DEAD), L-RED (flipev start, R145) and L-NEW (box 97 / 110 copies); every lane engine should reject a non-edge start.
+
+## §C. Line revision L-1 and the fixes file (successor 21, 14:22Z 2026-10-31 by date -u)
+- Objects (re-hashed):
+  - docs/si/P-N5-ODD-line-L1.txt at claude/l-si ab0baf919, sha1 3e25138b9e7ef228ddba306d35ae3897cb797ea2 (one line, no heading marker);
+  - docs/si/P-N5-ODD-fixes.md, sha1 67fbe3a4ce37aa31bd819ce2b22a30c185443a85 (F0 + entries 1-4).
+  - I opened no docs/referee-2/ file. REFEREE-2's items are known to me only as the fixes file quotes them.
+- Word-diff against cd121dff (`git diff --no-index --word-diff=porcelain`): every changed token maps to a fixes item, and nothing else
+  changed.
+  - E3.4 «ρ and every vertex x» = my ODD-L4 ✓.
+  - E3.9 «; «rank» is SPEC Q1's» ✓.
+  - E3.6 «(P-N5-SRC §2, the signed proof of RESULTS R97 PLAY-CAUSE^S)» = my N-ODD-1 ✓.
+  - E3.3 «W-run F of a run», «for a W-run F, …» (twice), «and for every W-run F of the run,» = my ODD-L3 ✓.
+  - E3.2 «its rise transition := k − 1 → k» = my ODD-L2 ✓.
+  - E3.5 the k / x / u / o quantifiers in OLD-PLAY, ODD-STEP, ODD-RELAY and SRC-ROOT ✓.
+  - E3.1 ODD-ADD with I, U and ODD-RELAY's hypothesis = my ODD-L1 ✓.
+  - E3.8 «every o_j's Ξ changing at k», «(possibly o_0)» ✓.
+  - E3.7 «the polynomiality of max HXS_F in RESULTS R97's SRC-COUNT» ✓.
+  - E3.11 the referee-originated repairs in the scope tail ✓.
+  - E3.10 the DATA wording ✓.
+  - The source tag names the fixes file and successors 36, 37 ✓.
+- My REQUIRED ODD-L1, L2, L3 and L4 are all met.
+- The scope tail names the referee-originated repairs: «the proofs of FUEL-LEX and FUEL-COUNT carry referee-originated repairs (G-ODD-1,
+  written independently by REFEREE and REFEREE-2; G-ODD-2 = N-ODD-2; docs/si/P-N5-ODD-fixes.md entries 1-2)» ✓ (L41). The scope words
+  RELOCATION / G-N5-TIME OPEN / not M3 / not a TARGET.md claim are unchanged ✓.
+- Strict symbol test on L-1, every clause:
+  - k, x, o and u are now bound in their clauses. F is bound by «for every W-run F of the run». I, U and u_k are bound in ODD-ADD; o_0,
+    o_j and o_t in SRC-ROOT; (y, z), a and b in FUEL-LEX.
+  - ONE remaining free pair: ODD-L5 (REQUIRED). «(Corollary FUEL-COUNT) the number N of fuel re-routes of (y, z) in F …». (y, z) is
+    bound only in FUEL-LEX's own clause («for every pair (y, z) and consecutive fuel re-routes …»), and the clauses are separated by «;».
+    So in FUEL-COUNT the pair is bound in another clause. Fix: «(Corollary FUEL-COUNT) for every pair (y, z), the number N …».
+  - This pair was already free in cd121dff, and my first report missed it (§8 «Token pass otherwise clean»). It is my miss, not a change
+    made by L-1.
+- Fixes file:
+  - Entry 1 (G-ODD-1): both referees are quoted verbatim, and the adopted replacement proof is correct. If EQHI fails, the first change
+    in (t, t′] with key ≥ (1, r) has key exactly (1, r), every earlier change in (t, u) has key < (1, r), and u moves rank r off β, a fall.
+    This is my closing argument in a «first such u» form ✓.
+  - Entry 2 (G-ODD-2 = my N-ODD-2): ACCEPTED. REFEREE-2's repair, «classify a boundary as ASC, else EQHI, else REP» with only pure REP
+    (0, 0) boundaries chained, is exactly my N-ODD-2. I sign it (Opus 5.5, D15). Under L41 this is my independent signature of the
+    repair.
+  - Entry 3: the mapping is as checked above.
+  - Entry 4 (D-ODD-1): the W-rank DEAD is WITHDRAWN and the W-rank potential is OPEN. That is the right consequence. The repaired
+    figures agree with mine: 153 states, Wtie 0, 128 flips. I have not re-run the lane's other re-counts (oddadd, ascw, srcfuel, anc).
+    The new start validation (startcheck.py) is the remedy I asked for.
+- Verdict on L-1: does NOT yet match, only because of ODD-L5 ((y, z) in FUEL-COUNT), a one-phrase insertion. Everything else MATCHES
+  (Opus 5.5, D15).

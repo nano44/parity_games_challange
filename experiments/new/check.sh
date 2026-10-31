@@ -190,7 +190,7 @@ fi
 # Box 55 (successor 33): packet P-N5-SF (docs/new/P-N5-SF-box55.md §4): pcheck on three pins (DECOUPLE orbit, SF-RED step identity, bounds), MUT bites, quotes; NO-TRANSFER on switchbestexp_2.
 w1=$(python3 -I box55/pcheck.py ../n5-exhaustive/instances/n3all_maxph_0.pg ../n5-exhaustive/instances/n3all_maxph_0.start)
 w2=$(python3 -I box55/pcheck.py box54/out/switchbestexp_2.pg)
-w3=$(python3 -I box55/pcheck.py ../red/n3/instances/n3cov_lean.pg ../red/n3/instances/n3cov_lean.start)
+w3=$(python3 -I box55/pcheck.py ../red/n3/instances/n3cov_lean.pg box113/inst/n3cov_lean_fixed.start)  # box 113: start repaired (3 wrong-player entries dropped, D-ODD-1 validation)
 w4=$(MUT=1 python3 -I box55/pcheck.py box54/out/switchbestexp_2.pg || true)
 w5=$(python3 -I box55/ntcheck.py box54/out/switchbestexp_2.pg)
 if grep -q "^CHECK PASS" <<<"$w1" && grep -q "^CHECK PASS" <<<"$w2" && grep -q "^CHECK PASS" <<<"$w3" && \
@@ -511,8 +511,8 @@ if grep -q "RUN 0-71 F 71 mE 1119 entries 542 FRESH 71 RET 0 NORET 71 ORDRET 59 
 else
   echo "box 98 RET check: FAILED"; exit 1
 fi
-w49=$(cd .. && TOP=1 python3 -I new/box99/retcause.py new/box97/inst/sbq2_K8_m16.pg new/box97/inst/sbq2_K8_m16.start)
-if grep -q "RUN 0-152 F 152 returns 450 edges 60 targets 60 max_per_target 8 norise 0 wch_in_window 450" <<<"$w49" && grep -q "ROOT kinds {'FRESH': 450} distinct roots 15 max returns per root 45" <<<"$w49" && grep -q "('FRESH', 4, 66, 17), 45" <<<"$w49"; then
+w49=$(cd .. && TOP=1 python3 -I new/box99/retcause.py new/box97/inst/sbq2_K8_m16.pg new/box113/inst/sbq2_K8_m16_fixed.start)
+if grep -q "RUN 1-152 F 151 returns 450 edges 60 targets 60 max_per_target 8 norise 0 wch_in_window 450" <<<"$w49" && grep -q "ROOT kinds {'FRESH': 450} distinct roots 15 max returns per root 45" <<<"$w49" && grep -q "('FRESH', 4, 66, 17), 45" <<<"$w49"; then
   echo "box 99 QRET: sbq2_K8_m16 returns all rooted at fresh entries, clock vertex 4's ticks root 45 = 3m - 3 each: PASS"
 else
   echo "box 99 QRET check: FAILED"; exit 1
