@@ -2,6 +2,12 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point (successor 41, Opus 5.5, session_01V5yGRWWR2yCHEgsoMAQC6u; started 2026-10-31 07:47Z by date -u; handover: HEAD = origin 8591166d, trunk 87be2541 merged)
+### Box 109 N5-HSEARCH (Lead 09:00Z / 09:22Z; my choice (b′) search): docs/new/N5-HSEARCH-box109.md
+- DEAD HDEPTH: hit_b6a_1 (n 32, h^W 3, n5b identical, Oink verified); carrier 5, gates (5,9) @36, (6,0) @40 at source events.
+- PROVED (lane): unary-length h^U (length repeats are degenerate depth; hit_n16_1 h^W 4, h^U 1).
+- DATA: climbing max h^W 3 (n 32/40), 2 (n 48/64); h^V <= 3 everywhere; holds 10-30. L-RED R159 hd_H: h^W = H by design (moot).
+- Things only I know: pgrep/pkill -f with a pattern that occurs in the shell command line kills the shell itself (exit 144): use
+  the "[c]limb" bracket trick. climb*.py score cap 400 iterations.
 ### Box 108 N5-HDEPTH (Lead 08:36Z: proof side of h^W): docs/new/N5-HDEPTH-box108.md
 - PROVED (lane): NEW-EDGE (W-change at k => the new W-play uses an edge of H_k minus H_(k-1)), OVERTAKE-W (such edges are fresh strict
   sibling Xi-overtakes, Xi(z) rises at k-1 -> k), CARRIER (depth h => one vertex fixes h pending digits bottom-up, positions strictly

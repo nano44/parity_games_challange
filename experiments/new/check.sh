@@ -571,4 +571,10 @@ if grep -qF "NEWEDGE x31_rx48.pg n 48 checked 295 viol 0 overtake_viol 0" <<<"$w
 else
   echo "box 108 HDEPTH check: FAILED"; exit 1
 fi
+w59=$(cd .. && python3 -I new/box107/hier2.py new/box109/out/hit_b6a_1.pg new/box109/out/hit_b6a_1.start; python3 -I new/box109/climb4.py new/box109/out/hit_n16_1.pg chk 1 0 4)
+if grep -qF "HIER hit_b6a_1.pg n 32 WT 38 WCH 38 DEPTH 3 MONOX 0 MAXSUB1 20 NLEV1 18 NLEV2 19 NLEV3 1 | NOV 0 DEPTHV 2" <<<"$w59" && grep -qF "START chk (1, 0, 10) 13" <<<"$w59"; then
+  echo "box 109 HSEARCH: HDEPTH DEAD (hit_b6a_1 n 32 h^W 3, joint 2); hit_n16_1 unary-length depth 1: PASS"
+else
+  echo "box 109 HSEARCH check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
