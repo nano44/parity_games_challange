@@ -613,4 +613,10 @@ if grep -qF "CARRY s3quad_K8_m30.pg n 479 iters 264 maxRE 7 ORET 0 TCH 0 FB 0 ES
 else
   echo "box 116b CARRY check: FAILED"; exit 1
 fi
+w66=$(cd .. && python3 -I new/box117/squeeze.py new/box115/inst/switchbestexp_2.pg N5; python3 -I new/box117/squeeze.py new/box115/inst/switchbestexp_2.pg TBR)
+if grep -qF "SQZ switchbestexp_2.pg N5 n 60 iters 32 SANDV 0 LODROP 0 HIRISE 0 UNSET 0 set0 4 setK 60 growths 14 maxgap 16" <<<"$w66" && grep -qF "SQZ switchbestexp_2.pg TBR n 60 iters 53 SANDV 0 LODROP 0 HIRISE 2 UNSET 3 " <<<"$w66"; then
+  echo "box 117 SQUEEZE: switchbestexp_2 N5 interval never widens (HIRISE 0, UNSET 0, settle gap 16); TBR widens (HIRISE 2, UNSET 3): PASS"
+else
+  echo "box 117 SQUEEZE check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

@@ -192,3 +192,16 @@ Referee: REFEREE (successor 21), Opus 5.5 (D15). Lead brief 2026-10-31 15:17Z. R
   - Entry 2 quotes REFEREE-2 verbatim ✓. Its remark that ORIGIN-NEW's A/B step «is landed R91 Lemma OPT-OFF» is consistent with my §4.
 - Verdict on L-1: does NOT yet match. It needs ROOT-L4 (define and pin DESC-LIN / DESC*-LIN) and ROOT-L5 (R163 as DATA, not DEAD).
   Everything else MATCHES (Opus 5.5, D15).
+
+### §C addendum: line revision L-2 (l-new 7988e2f4, docs/new/P-N5-ROOT-line-L2.txt, sha1 c9c6b3801ed9cc3cb5017f240d8e0d0f2610efba; fixes entry 3) (21:24Z 2026-10-31 by date -u)
+- Word-diff against L-1 (a41df25b): «DESC-LIN DEAD (L-RED R162); DESC*-LIN DEAD in the weak form (L-RED R163);» is dropped, and «entries 1-2)»
+  → «1-3)». Nothing else changed. The sha1 is re-hashed and matches.
+- ROOT-L4 and ROOT-L5 are met, by removal, in line with the Lead's ruling L43.
+- The remaining clause «every root descent is a fuel re-route» DEAD (frz32: old-edge relays). I AGREE with REFEREE-2 that it is allowed
+  under L43.
+  - The statement is universal, with no constant: every R-descent of every W-run is a fuel re-route.
+  - One instance refutes it, and its terms (R-descent, fuel re-route) are defined in the line.
+  - My own engine confirms the instance: root114_probe.py on red/n5inj/instances/frz32 with its start finds 3 R-descents entering by
+    edges of H_(k−1) (ROLD 3, §7). The start is valid, and Oink verifies the game.
+  - Precision (optional): name the pin as «red/n5inj/instances/frz32 with its start», with its sha1.
+- Verdict on L-2: MATCHES (Opus 5.5, D15). No REQUIRED change remains on the P-N5-ROOT line.
