@@ -577,4 +577,10 @@ if grep -qF "HIER hit_b6a_1.pg n 32 WT 38 WCH 38 DEPTH 3 MONOX 0 MAXSUB1 20 NLEV
 else
   echo "box 109 HSEARCH check: FAILED"; exit 1
 fi
+w60=$(cd .. && python3 -I new/box110/resets2.py new/box110/hd_H40.pg new/box110/hd_H40.start; python3 -I new/box110/resets2.py new/box109/out/hit_b6a_1.pg new/box109/out/hit_b6a_1.start)
+if grep -qF "RESETS hd_H40.pg n 122 WT 40 WCT 40 WCH 2420 GOOD 2420 TD 0 RT 0 ROOTRES 0 VIOL 0 VB 0 TDRANK 0 RTRANK 0" <<<"$w60" && grep -qF "RESETS hit_b6a_1.pg n 32 WT 38 WCT 38" <<<"$w60" && grep -qF "RT 34 ROOTRES 34 VIOL 0 VB 0 TDRANK 224 RTRANK 33" <<<"$w60"; then
+  echo "box 110 WIDTH: hd_H40 depth 40 with 0 resets; hit_b6a_1 resets all rooted at switches (34/34), RESET-RED and BIT-ALT hold: PASS"
+else
+  echo "box 110 WIDTH check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
