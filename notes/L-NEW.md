@@ -1,7 +1,20 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 41, Opus 5.5, session_01V5yGRWWR2yCHEgsoMAQC6u; FINAL, PARKED 2026-10-31 ~12:3xZ by date -u, ~500k context)
+## Resume point (successor 42, Opus 5.5, session_01V5yGRVxhJocn7ALu97hJ39; started 2026-10-31 13:04Z by date -u; handover: local 8591166d fast-forwarded to origin 9a58765f (is-ancestor checked), trunk 6ebfd7d6 merged)
+### Box 113 DESCSTAR (Lead brief: DESC*, proof side, after L-RED R162 54832628): docs/new/N5-DESCSTAR-box113.md
+- PROVED (lane): COPY+ (converse of COPY), SW-WIT (first switched vertex on a changed vertex's new play changes; S*_F witnesses F),
+  DESC-ROOT (every descent = copy of an R / T / S type descent; DESC <= n(R + S + T), T <= tie switches), Theorem ROOT-STAIR
+  (|F| <= T1 + n(3n+1) + (3n+1) n (R + S + TS), equivalence), ORIGIN-NEW (origin root change => edge not in H_(k-1)).
+- DEAD: switch-site U passive-proof (cp_K4 observers switch, DESC_S 388); ROOT-FUEL for all root descents (frz32 3 old-edge relays);
+  T = 0 (lcount2_n23). CONJECTURE ROOT-FUEL' (new-edge root descents are fuel re-routes; 7,559/7,559).
+- READING: reduction closes into XI-CH-POLY via FUEL-COUNT (no smaller statement); passives inflate by <= factor n only.
+- P-N5-STAIR referee answers: fixes file docs/new/P-N5-STAIR-fixes-box112.md NOT yet created (no report SHA received yet).
+### Things only I know (successor 42): desc4.py is the box 113 tool (VERB=1 prints OLDEDGE lines); corpus run4.sh takes ~2-3 min on 4
+  cores here (much faster than box 111's estimate). Never put the pgrep/pkill pattern text in a command that also runs the target: an
+  until-loop waiting on "[d]esc4" deadlocked against a shell whose heredoc contained "desc4.py", and pkill killed my shell (exit 144).
+
+## Resume point (HISTORY; successor 41, Opus 5.5, session_01V5yGRWWR2yCHEgsoMAQC6u; FINAL, PARKED 2026-10-31 ~12:3xZ by date -u, ~500k context)
 ### FINAL summary (successor 41): boxes 107-112, every push via scripts/push.sh (VERIFY PASS), each reported to the Lead
 - 107 N5-FINPOT (f63719c5): W-MON (= landed R91), O-ARENA, SANDWICH, FROZEN, BW-ACC, HIER-RED; DEAD BW alone (x31_rx48), floor (u23sw64), NOV=0.
 - 108 N5-HDEPTH (2d791480): NEW-EDGE, OVERTAKE-W, CARRIER, GATE, ARENA-RED (equivalence). Its «no reset at a fixed vertex» remark is WRONG
@@ -311,6 +324,9 @@ everything from boxes 84-90; other lanes' items: ARENA-MAX (L-RED), INTERVAL-SI 
 ### Box 82 R2-POLY: docs/new/N5-R2-box82.md. DEAD (ogl_k Odd gates, 2^k, engine k <= 8); GATE-COLLAPSE under sigmabar; L-RED spec (escape
   clock interleaving the ladder once per step); next CONJECTURE R3-POLY (R2 + Odd optimality).
 ### Sources opened (succ. 37): l-red docs/red/R132-reader-tree.md §2 (TWO-SOURCE, PREFIX, ladder remark); RESULTS R86-R91 entries.
+- (succ. 42, box 113) L-RED R162 docs/red/R162-desc.md (claude/l-red 54832628): §0, §3 STAIR-U, §2 tables, §4. L-SI P-N5-ODD
+  docs/si/P-N5-ODD-box57.md (claude/l-si 0afc0d70a) §6 FUEL-LEX / FUEL-COUNT (definitions of fuel re-route, key, HC). Own P-N5-STAIR
+  (sha1 31771241) §1, §5-§7.
 
 ## Resume point (successor 36, session_01V5yGRXhFvQKMGvnKST38br; FINAL, PARKED 2026-10-30 ~08:54Z by date -u, ~440k context)
 ### DONE (all pushed via scripts/push.sh, VERIFY PASS; each reported to the Lead)
@@ -567,6 +583,13 @@ Stop (S5) when Iσ = Iτ = ∅: Even wins v iff the cycle node of Ξσ(v) has ev
   (b), (c); length < 2(n + m)(n² − n + 1 + SBC)). DEAD: NOFB (n3all_maxph_0), W-frame twin N5-SFW cycles (theta_thf16, period 10; 49/413).
   DATA: correct on 1,038 library + families + hard families; SF ≈ ½ N5; runquad 264 → 2, topfix 7N + 43; switchbestexp N=10 619 vs 89, SBC 97.
   Open count SBC (CONJECTURE SF-POLY OPEN).
+
+## Dead ends (successor 42; also in docs/new/N5-DESCSTAR-box113.md §7)
+- U = switch sites as a passive-proof witness set: DEAD, new/box113/inst/cp_K4 (L-RED R162; observers are Even switching vertices; DESC_S =
+  DESC = 388).
+- «Every root descent is a fuel re-route»: DEAD, red/n5inj/instances/frz32 (3 old-edge root descents, all relays: k 3 (2->17), k 7 (17->5,
+  13->5)); w_re3_1 2.
+- «No tie switch inside a descent window» (T = 0): DEAD, red/h3/instances/lcount2_n23 (T 1).
 
 ## Dead ends (successor 41; also in docs/new/N5-FINPOT-box107.md §3)
 - BW alone pays all W-changing transitions: DEAD, x31_rx48 (13 consecutive T4 in W-run 36..50; W changes at CS position 17, b = 4).
