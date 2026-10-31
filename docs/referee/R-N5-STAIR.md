@@ -207,3 +207,18 @@ Referee: REFEREE (successor 21), Opus 5.5 (D15). Lead brief 2026-10-31 12:40Z. R
 - STAIR-L9 is met. v and b are now in the quantifier, so every clause's v (BIT-ALT, FIRST-GOOD, COPY, RESET-ROOT, DESC-COPY, ASC-RUN) and
   BIT-ALT's b are bound. No new symbol is introduced.
 - Verdict on L-2: MATCHES (Opus 5.5, D15). No REQUIRED change remains on the P-N5-STAIR line.
+
+### §C addendum 2: line revision L-3 (l-new 7dc1eb7c, docs/new/P-N5-STAIR-line-L3.txt, sha1 9db0b169aadcbc5f81b2c0157f124946bbf74ad9; fixes sha1 6e45b0e0…, entry 7, CHECKER C109 E-1..E-3) (20:28Z 2026-10-31 by date -u)
+- Word-diff against L-2 (44f56e96). Exactly the Lead's list, and nothing else:
+  - «the one-player arena H_k)» → «S4a's one-player arena at k)». The gloss no longer forward-references H_k. k is bound by «at a
+    transition k → k + 1».
+  - The clause «DESC-LIN (DESC_F ≤ c·n) DEAD (L-RED R162, …)» is dropped. That follows the Lead's ruling (to be L43): a lane DEAD of an
+    asymptotic statement does not enter a line as DEAD. It also answers the point I raised in R-N5-ROOT114 §C.
+  - Added after «not a TARGET.md claim»: «the proof of DESC-COPY uses COPY's converse, whose proof is referee-originated (G-ST-1 = P-1,
+    written independently by REFEREE and REFEREE-2; … entry 1)». This is correct under L41: I wrote G-ST-1, REFEREE-2 wrote P-1, and each
+    signed the other's.
+  - «entries 1-6» → «1-7».
+  Both sha1s are re-hashed and match.
+- Strict symbol test: no new symbol. The scope words REDUCTIONS / EQUIVALENCES, G-N5-TIME OPEN, not M3 and not a TARGET.md claim are
+  unchanged.
+- Verdict on L-3: MATCHES (Opus 5.5, D15).

@@ -86,3 +86,37 @@
 - P-1: no change needed. NEW-FUEL is true even with k unbound, and the binder covers it either way.
 - P-2 (cite R91 OPT-OFF for ORIGIN-NEW's first step): recorded here. The line's premise list cites R15 (a), (b) and [1E-N3], which give
   OPT-OFF's content.
+
+## Entry 3 (2026-10-31 20:56Z by date -u; L-NEW successor 43): REFEREE ROOT-L4 / ROOT-L5, CHECKER C109 E-3, Lead reading L43
+- REFEREE 21 §C (docs/referee/R-N5-ROOT114.md l. 145-194, claude/referee 74025e44): L-1 «does NOT yet match» (ROOT-L4, ROOT-L5).
+- REFEREE-2 25 (docs/referee-2/R2-N5-ROOT114-L1.md, claude/referee-2 83c1838f): «**MATCHES** (Opus 5.5, D15). All my ROOT line items
+  are closed.» No new item, so L-2 has nothing to add for REFEREE-2.
+### ROOT-L4 (verbatim, l. 171-175)
+> - ROOT-L4 (REQUIRED). The scope tail names «DESC-LIN DEAD (L-RED R162); DESC*-LIN DEAD in the weak form (L-RED R163)».
+>   - Neither DESC-LIN nor DESC*-LIN is defined in this line, «the weak form» is undefined, and neither DEAD is pinned by commit. P-N5-STAIR
+>     L-2 writes «DESC-LIN (DESC_F ≤ c·n) DEAD (L-RED R162, claude/l-red 54832628 …)».
+>   - Fix: define both and pin both, e.g. «DESC-LIN (DESC_F ≤ c·n) DEAD (L-RED R162, l-red 54832628)» and «DESC*-LIN (DESC*(F) := min over
+>     witness sets U of Σ_(u ∈ U) DESC_F(u) ≤ c·n) …».
+### ROOT-L5 (verbatim, l. 176-192, first and last bullets)
+> - ROOT-L5 (REQUIRED; the C108 E-1 class, an asymptotic claim stated on finite data). The Lead asked whether «DESC*-LIN DEAD in the weak
+>   form (L-RED R163)» overclaims. As worded, it does. I read docs/red/R163-descstar.md at l-red 8150c17e:
+[…]
+>   - Fix, either:
+>     - DATA wording: «DATA: DESC* (as defined) reaches 2.23·n on fbg_K24_m48, with DESC* = (m2 + 1)K + 6 on every computed fbg instance and
+>       |F| quadratic there (L-RED R163, l-red 8150c17e)»; or
+>     - keep «DEAD» only once L-RED proves the family formula (a proof that DESC* ≥ (m2 + 1)K on fbg for all K, m2).
+### CHECKER C109 E-3 (verbatim, docs/checker/C109.md l. 58 and 72-74, claude/checker 178b3e9e)
+> ## 6. E-3 (required): the DESC-LIN «DEAD» clause (the Lead's D-2 and D-4)
+[…]
+> - Move, either of:
+>   - (i) drop «DESC-LIN (DESC_F ≤ c·n) DEAD (L-RED R162, claude/l-red 54832628: passive observers, cp_K); ». The reduction does not need it,
+>     and the body keeps R162 under Not signed / Data.
+### Lead reading L43 (docs/DECISIONS.md l. 369-374), applied clause: «P-N5-ROOT line L-2 drops the DESC-LIN and DESC*-LIN clauses.»
+### Repair (line L-2: docs/new/P-N5-ROOT-line-L2.txt)
+- Both clauses are DROPPED (C109 E-3 move (i), applied to both; no statement of the line uses them). This closes ROOT-L4 (nothing left to
+  define or pin) and ROOT-L5 (no asymptotic DEAD remains).
+- The packet body (frozen, f06f493e) keeps R162 / R163 as lane history; it is not edited.
+- Kept: «every root descent is a fuel re-route» DEAD (frz32: old-edge relays). It is a universal statement with no constant, killed by
+  one instance (packet §1, frz32 old-edge relays), the R95 / R96 kind, not the L43 class. Neither referee flagged it.
+- Source note «entries 1-2» → «entries 1-3». Nothing else changes: word-diff vs a41df25b is exactly
+  [-DESC-LIN DEAD (L-RED R162); DESC*-LIN DEAD in the weak form (L-RED R163);-] and [-1-2)-]{+1-3)+}; 837 → 825 words.
