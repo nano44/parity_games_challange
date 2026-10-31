@@ -1,0 +1,413 @@
+GAME n5-epoch/instances/ffin12_n32.pg n5-epoch/instances/ffin12_n32.start NEWEDGE ffin12_n32.pg n 32 checked 64 viol 0 overtake_viol 0
+GAME n5-epoch/instances/ffin4_n24.pg n5-epoch/instances/ffin4_n24.start NEWEDGE ffin4_n24.pg n 24 checked 45 viol 0 overtake_viol 0
+GAME n5-epoch/instances/ffin5_n32.pg n5-epoch/instances/ffin5_n32.start NEWEDGE ffin5_n32.pg n 32 checked 53 viol 0 overtake_viol 0
+GAME n5-epoch/instances/gci2_n12.pg n5-epoch/instances/gci2_n12.start NEWEDGE gci2_n12.pg n 12 checked 10 viol 0 overtake_viol 0
+GAME n5-epoch/instances/immfail_n14.pg NEWEDGE immfail_n14.pg n 14 checked 2 viol 0 overtake_viol 0
+GAME n5-epoch/instances/gci3_n24.pg n5-epoch/instances/gci3_n24.start NEWEDGE gci3_n24.pg n 24 checked 37 viol 0 overtake_viol 0
+GAME n5-epoch/instances/immp_cex_n11.pg n5-epoch/instances/immp_cex_n11.start NEWEDGE immp_cex_n11.pg n 11 checked 1 viol 0 overtake_viol 0
+GAME n5-epoch/instances/lcount_n23.pg n5-epoch/instances/lcount_n23.start NEWEDGE lcount_n23.pg n 23 checked 9 viol 0 overtake_viol 0
+GAME n5-epoch/instances/lend13_n16.pg n5-epoch/instances/lend13_n16.start NEWEDGE lend13_n16.pg n 16 checked 13 viol 0 overtake_viol 0
+GAME n5-epoch/instances/lend15_n48.pg n5-epoch/instances/lend15_n48.start NEWEDGE lend15_n48.pg n 48 checked 43 viol 0 overtake_viol 0
+GAME n5-epoch/instances/lend27_n24.pg n5-epoch/instances/lend27_n24.start NEWEDGE lend27_n24.pg n 24 checked 31 viol 0 overtake_viol 0
+GAME n5-epoch/instances/lend107_n32.pg n5-epoch/instances/lend107_n32.start NEWEDGE lend107_n32.pg n 32 checked 177 viol 0 overtake_viol 0
+GAME n5-epoch/instances/lend39f_n32.pg n5-epoch/instances/lend39f_n32.start NEWEDGE lend39f_n32.pg n 32 checked 51 viol 0 overtake_viol 0
+GAME n5-epoch/instances/lend47_n32.pg n5-epoch/instances/lend47_n32.start NEWEDGE lend47_n32.pg n 32 checked 64 viol 0 overtake_viol 0
+GAME n5-epoch/instances/lend55_n32.pg n5-epoch/instances/lend55_n32.start NEWEDGE lend55_n32.pg n 32 checked 76 viol 0 overtake_viol 0
+GAME n5-epoch/instances/lend9_n8.pg n5-epoch/instances/lend9_n8.start NEWEDGE lend9_n8.pg n 8 checked 10 viol 0 overtake_viol 0
+GAME n5-epoch/instances/lend82_n32.pg n5-epoch/instances/lend82_n32.start NEWEDGE lend82_n32.pg n 32 checked 147 viol 0 overtake_viol 0
+GAME n5-epoch/instances/lend72_n48.pg n5-epoch/instances/lend72_n48.start NEWEDGE lend72_n48.pg n 48 checked 174 viol 0 overtake_viol 0
+GAME n5-epoch/instances/nep13_n24.pg n5-epoch/instances/nep13_n24.start NEWEDGE nep13_n24.pg n 24 checked 24 viol 0 overtake_viol 0
+GAME n5-epoch/instances/nep56_n32.pg n5-epoch/instances/nep56_n32.start NEWEDGE nep56_n32.pg n 32 checked 133 viol 0 overtake_viol 0
+GAME n5-epoch/instances/nep22f_n64.pg n5-epoch/instances/nep22f_n64.start NEWEDGE nep22f_n64.pg n 64 checked 10 viol 0 overtake_viol 0
+GAME n5-epoch/instances/nconf61_n48.pg n5-epoch/instances/nconf61_n48.start NEWEDGE nconf61_n48.pg n 48 checked 329 viol 0 overtake_viol 0
+GAME n5-epoch/instances/nep76_n40.pg n5-epoch/instances/nep76_n40.start NEWEDGE nep76_n40.pg n 40 checked 276 viol 0 overtake_viol 0
+GAME n5-epoch/instances/nep92_n40.pg n5-epoch/instances/nep92_n40.start NEWEDGE nep92_n40.pg n 40 checked 344 viol 0 overtake_viol 0
+GAME n5-epoch/instances/ret12_n40.pg n5-epoch/instances/ret12_n40.start NEWEDGE ret12_n40.pg n 40 checked 225 viol 0 overtake_viol 0
+GAME n5-epoch/instances/nep94_n48.pg n5-epoch/instances/nep94_n48.start NEWEDGE nep94_n48.pg n 48 checked 403 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/b4_cyc6_0.pg n5-exhaustive/instances/b4_cyc6_0.start NEWEDGE b4_cyc6_0.pg n 11 checked 7 viol 0 overtake_viol 0
+GAME n5-epoch/instances/ret14_n48.pg n5-epoch/instances/ret14_n48.start NEWEDGE ret14_n48.pg n 48 checked 307 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/b4_cyc6_1.pg NEWEDGE b4_cyc6_1.pg n 12 checked 8 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/b4_n4all_cyc3_0.pg n5-exhaustive/instances/b4_n4all_cyc3_0.start NEWEDGE b4_n4all_cyc3_0.pg n 4 checked 3 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/b4_n5_other_0.pg NEWEDGE b4_n5_other_0.pg n 5 checked 0 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/b4_nohlen5_0.pg n5-exhaustive/instances/b4_nohlen5_0.start NEWEDGE b4_nohlen5_0.pg n 11 checked 4 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/b4_theta_n7.pg n5-exhaustive/instances/b4_theta_n7.start NEWEDGE b4_theta_n7.pg n 7 checked 0 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/b5_n5_cyc4_0.pg NEWEDGE b5_n5_cyc4_0.pg n 5 checked 3 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/b5_o11.pg NEWEDGE b5_o11.pg n 10 checked 12 viol 0 overtake_viol 0
+GAME n5-epoch/instances/ret14_n64.pg n5-epoch/instances/ret14_n64.start NEWEDGE ret14_n64.pg n 64 checked 421 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/b5_os_n12.pg NEWEDGE b5_os_n12.pg n 12 checked 12 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/b5_os_n14.pg NEWEDGE b5_os_n14.pg n 14 checked 17 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/b5_os_n16.pg NEWEDGE b5_os_n16.pg n 16 checked 24 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/b5_os_n20.pg NEWEDGE b5_os_n20.pg n 20 checked 38 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/b5_os_n24.pg NEWEDGE b5_os_n24.pg n 24 checked 69 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/b5_os_n28.pg NEWEDGE b5_os_n28.pg n 28 checked 99 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/b5_os_n32.pg NEWEDGE b5_os_n32.pg n 32 checked 145 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/b6_xl2_n32.pg NEWEDGE b6_xl2_n32.pg n 32 checked 189 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/b5_os_n40.pg NEWEDGE b5_os_n40.pg n 40 checked 207 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/b6_xl_n32.pg NEWEDGE b6_xl_n32.pg n 32 checked 181 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/b6_xs_n24.pg NEWEDGE b6_xs_n24.pg n 24 checked 20 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/b6_xs_n32.pg NEWEDGE b6_xs_n32.pg n 32 checked 28 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/b6_xl_n40.pg NEWEDGE b6_xl_n40.pg n 40 checked 239 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/b6_xs_n40.pg NEWEDGE b6_xs_n40.pg n 40 checked 36 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/b6_xs_n48.pg NEWEDGE b6_xs_n48.pg n 48 checked 42 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/b6_xl_n48.pg NEWEDGE b6_xl_n48.pg n 48 checked 299 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/b6_xw_n32.pg NEWEDGE b6_xw_n32.pg n 32 checked 206 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/b6_xw_n40.pg NEWEDGE b6_xw_n40.pg n 40 checked 253 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/canonA_0.pg NEWEDGE canonA_0.pg n 15 checked 8 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/canonA_1.pg NEWEDGE canonA_1.pg n 15 checked 8 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/frz1_n24.pg n5-exhaustive/instances/frz1_n24.start NEWEDGE frz1_n24.pg n 24 checked 58 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/b6_xw_n48.pg NEWEDGE b6_xw_n48.pg n 48 checked 341 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/b6_xw_n56.pg NEWEDGE b6_xw_n56.pg n 56 checked 396 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/frz2_n24.pg n5-exhaustive/instances/frz2_n24.start NEWEDGE frz2_n24.pg n 24 checked 52 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/frz3_n24.pg n5-exhaustive/instances/frz3_n24.start NEWEDGE frz3_n24.pg n 24 checked 53 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/n3all_maxph_0.pg n5-exhaustive/instances/n3all_maxph_0.start NEWEDGE n3all_maxph_0.pg n 3 checked 0 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/n3all_maxph_1.pg n5-exhaustive/instances/n3all_maxph_1.start NEWEDGE n3all_maxph_1.pg n 3 checked 0 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/n3all_maxph_2.pg n5-exhaustive/instances/n3all_maxph_2.start NEWEDGE n3all_maxph_2.pg n 3 checked 0 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/n4_maxph_0.pg NEWEDGE n4_maxph_0.pg n 4 checked 1 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/n4_maxph_1.pg NEWEDGE n4_maxph_1.pg n 4 checked 1 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/n4_thch_0.pg NEWEDGE n4_thch_0.pg n 4 checked 0 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/n4all_maxph_0.pg n5-exhaustive/instances/n4all_maxph_0.start NEWEDGE n4all_maxph_0.pg n 4 checked 2 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/n4all_maxph_1.pg n5-exhaustive/instances/n4all_maxph_1.start NEWEDGE n4all_maxph_1.pg n 4 checked 2 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/n4all_tgbad_0.pg n5-exhaustive/instances/n4all_tgbad_0.start NEWEDGE n4all_tgbad_0.pg n 4 checked 0 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/n4all_thch_0.pg n5-exhaustive/instances/n4all_thch_0.start NEWEDGE n4all_thch_0.pg n 4 checked 3 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/n5s_maxph_0.pg NEWEDGE n5s_maxph_0.pg n 5 checked 0 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/nh_n8.pg n5-exhaustive/instances/nh_n8.start NEWEDGE nh_n8.pg n 8 checked 2 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/thetaA_canon_n12.pg NEWEDGE thetaA_canon_n12.pg n 12 checked 5 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/thetaA_canon_n8.pg NEWEDGE thetaA_canon_n8.pg n 8 checked 3 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/thetaA_n6.pg n5-exhaustive/instances/thetaA_n6.start NEWEDGE thetaA_n6.pg n 6 checked 3 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/thetaA_n17.pg n5-exhaustive/instances/thetaA_n17.start NEWEDGE thetaA_n17.pg n 17 checked 8 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/thetaA_n7.pg n5-exhaustive/instances/thetaA_n7.start NEWEDGE thetaA_n7.pg n 7 checked 3 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/thetaA_n9.pg n5-exhaustive/instances/thetaA_n9.start NEWEDGE thetaA_n9.pg n 9 checked 3 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/wk1_n32.pg n5-exhaustive/instances/wk1_n32.start NEWEDGE wk1_n32.pg n 32 checked 40 viol 0 overtake_viol 0
+GAME n5-exhaustive/instances/wk2_n32.pg n5-exhaustive/instances/wk2_n32.start NEWEDGE wk2_n32.pg n 32 checked 12 viol 0 overtake_viol 0
+GAME new/box48/instances/long121_n40.pg new/box48/instances/long121_n40.start NEWEDGE long121_n40.pg n 40 checked 347 viol 0 overtake_viol 0
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.pg new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.start NEWEDGE best_qpc_nep76_n40_s63.pg n 64 checked 480 viol 0 overtake_viol 0
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.pg new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.start NEWEDGE best_qpc_nep90_n40_s61.pg n 64 checked 441 viol 0 overtake_viol 0
+GAME red/carry/instances/absmono_viol_n44.pg NEWEDGE absmono_viol_n44.pg n 44 checked 0 viol 0 overtake_viol 0
+GAME red/carry/instances/carry3_2_2.pg NEWEDGE carry3_2_2.pg n 47 checked 0 viol 0 overtake_viol 0
+GAME red/carry/instances/cm_mdrop_both_n28.pg NEWEDGE cm_mdrop_both_n28.pg n 28 checked 31 viol 0 overtake_viol 0
+GAME red/carry/instances/cm_mdrop_oink_n28.pg NEWEDGE cm_mdrop_oink_n28.pg n 28 checked 0 viol 0 overtake_viol 0
+GAME red/carry/instances/ctx11_n40.pg NEWEDGE ctx11_n40.pg n 40 checked 20 viol 0 overtake_viol 0
+GAME red/carry/instances/ctx12_n40.pg NEWEDGE ctx12_n40.pg n 40 checked 0 viol 0 overtake_viol 0
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.pg new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.start NEWEDGE best_qpc_nep90_n40_s62.pg n 80 checked 648 viol 0 overtake_viol 0
+GAME red/carry/instances/ctx6_n20.pg NEWEDGE ctx6_n20.pg n 20 checked 0 viol 0 overtake_viol 0
+GAME red/carry/instances/ctx13_n40.pg NEWEDGE ctx13_n40.pg n 40 checked 21 viol 0 overtake_viol 0
+GAME red/carry/instances/ctx7_n30.pg NEWEDGE ctx7_n30.pg n 30 checked 0 viol 0 overtake_viol 0
+GAME red/carry/instances/ctx6_n56.pg NEWEDGE ctx6_n56.pg n 56 checked 0 viol 0 overtake_viol 0
+GAME red/carry/instances/f1_twodef_n48.pg NEWEDGE f1_twodef_n48.pg n 48 checked 7 viol 0 overtake_viol 0
+GAME red/carry/instances/f1_twofall_n48.pg NEWEDGE f1_twofall_n48.pg n 48 checked 8 viol 0 overtake_viol 0
+GAME new/box48/out/qpcclimb/scale/snap_n80_s62.pg new/box48/out/qpcclimb/scale/snap_n80_s62.start NEWEDGE snap_n80_s62.pg n 80 checked 648 viol 0 overtake_viol 0
+GAME red/carry/instances/fall3_n76.pg NEWEDGE fall3_n76.pg n 76 checked 14 viol 0 overtake_viol 0
+GAME red/carry/instances/fallv_viol_n28.pg NEWEDGE fallv_viol_n28.pg n 28 checked 0 viol 0 overtake_viol 0
+GAME red/carry/instances/fall4_n116.pg NEWEDGE fall4_n116.pg n 116 checked 0 viol 0 overtake_viol 0
+GAME red/carry/instances/fired10_n20.pg NEWEDGE fired10_n20.pg n 20 checked 0 viol 0 overtake_viol 0
+GAME red/carry/instances/firedlong667_n20.pg NEWEDGE firedlong667_n20.pg n 20 checked 15 viol 0 overtake_viol 0
+GAME red/carry/instances/firedlong667_n43.pg NEWEDGE firedlong667_n43.pg n 43 checked 0 viol 0 overtake_viol 0
+GAME red/carry/instances/gapbW_dup_n20.pg NEWEDGE gapbW_dup_n20.pg n 20 checked 1 viol 0 overtake_viol 0
+GAME red/carry/instances/firedstep13_n76.pg NEWEDGE firedstep13_n76.pg n 76 checked 3 viol 0 overtake_viol 0
+GAME red/carry/instances/gapb_dup_n20.pg NEWEDGE gapb_dup_n20.pg n 20 checked 17 viol 0 overtake_viol 0
+GAME red/carry/instances/h4_compound_n44.pg NEWEDGE h4_compound_n44.pg n 44 checked 0 viol 0 overtake_viol 0
+GAME red/carry/instances/h4_compound2x2_n44.pg NEWEDGE h4_compound2x2_n44.pg n 44 checked 10 viol 0 overtake_viol 0
+GAME red/carry/instances/h4_def2ctx_n20.pg NEWEDGE h4_def2ctx_n20.pg n 20 checked 0 viol 0 overtake_viol 0
+GAME red/carry/instances/h4_def7_n28.pg NEWEDGE h4_def7_n28.pg n 28 checked 0 viol 0 overtake_viol 0
+GAME red/carry/instances/h4_disjoint_n20.pg NEWEDGE h4_disjoint_n20.pg n 20 checked 3 viol 0 overtake_viol 0
+GAME red/carry/instances/h4_notweaker_n20.pg NEWEDGE h4_notweaker_n20.pg n 20 checked 0 viol 0 overtake_viol 0
+GAME red/carry/instances/kfirst_viol_n13.pg NEWEDGE kfirst_viol_n13.pg n 13 checked 0 viol 0 overtake_viol 0
+GAME red/carry/instances/kin_viol_n29.pg NEWEDGE kin_viol_n29.pg n 29 checked 0 viol 0 overtake_viol 0
+GAME red/carry/instances/lalg_dtl_mviol_n20.pg NEWEDGE lalg_dtl_mviol_n20.pg n 20 checked 0 viol 0 overtake_viol 0
+GAME red/carry/instances/lemmaS_Mdrop_n20.pg NEWEDGE lemmaS_Mdrop_n20.pg n 20 checked 0 viol 0 overtake_viol 0
+GAME red/carry/instances/lemmaS_viol_n20.pg NEWEDGE lemmaS_viol_n20.pg n 20 checked 0 viol 0 overtake_viol 0
+GAME red/carry/instances/lex_viol_inj_n28.pg NEWEDGE lex_viol_inj_n28.pg n 28 checked 8 viol 0 overtake_viol 0
+GAME red/carry/instances/meet_viol_n17.pg NEWEDGE meet_viol_n17.pg n 17 checked 0 viol 0 overtake_viol 0
+GAME red/carry/instances/lex_viol_tie_n28.pg NEWEDGE lex_viol_tie_n28.pg n 28 checked 8 viol 0 overtake_viol 0
+GAME red/carry/instances/meet_viol_n29.pg NEWEDGE meet_viol_n29.pg n 29 checked 3 viol 0 overtake_viol 0
+GAME red/carry/instances/nosig_2_3.pg NEWEDGE nosig_2_3.pg n 24 checked 0 viol 0 overtake_viol 0
+GAME red/carry/instances/phi_flat_alive_n32.pg NEWEDGE phi_flat_alive_n32.pg n 32 checked 0 viol 0 overtake_viol 0
+GAME red/carry/instances/pk_viol_n20.pg NEWEDGE pk_viol_n20.pg n 20 checked 0 viol 0 overtake_viol 0
+GAME red/carry/instances/replay4_n32.pg NEWEDGE replay4_n32.pg n 32 checked 0 viol 0 overtake_viol 0
+GAME red/carry/instances/spp19_oink_n30.pg NEWEDGE spp19_oink_n30.pg n 30 checked 0 viol 0 overtake_viol 0
+GAME red/carry/instances/spp19_stable_n30.pg NEWEDGE spp19_stable_n30.pg n 30 checked 7 viol 0 overtake_viol 0
+GAME red/carry/instances/spp22_oink_n40.pg NEWEDGE spp22_oink_n40.pg n 40 checked 7 viol 0 overtake_viol 0
+GAME red/carry/instances/spp25_oink_n40.pg NEWEDGE spp25_oink_n40.pg n 40 checked 7 viol 0 overtake_viol 0
+GAME red/carry/instances/stealonce_both_n45.pg NEWEDGE stealonce_both_n45.pg n 45 checked 18 viol 0 overtake_viol 0
+GAME red/carry/instances/stealer_viol_n76.pg NEWEDGE stealer_viol_n76.pg n 76 checked 54 viol 0 overtake_viol 0
+GAME red/carry/instances/stealonce_core_n76.pg NEWEDGE stealonce_core_n76.pg n 76 checked 29 viol 0 overtake_viol 0
+GAME red/ctxp/instances/deep1_n13.pg NEWEDGE deep1_n13.pg n 13 checked 0 viol 0 overtake_viol 0
+GAME red/carry/instances/tstep_near_n20.pg NEWEDGE tstep_near_n20.pg n 20 checked 0 viol 0 overtake_viol 0
+GAME red/carry/instances/stealonce_viol_n76.pg NEWEDGE stealonce_viol_n76.pg n 76 checked 54 viol 0 overtake_viol 0
+GAME red/ctxp/instances/deep1_n21.pg NEWEDGE deep1_n21.pg n 21 checked 0 viol 0 overtake_viol 0
+GAME red/ctxp/instances/margin1_mc1.pg NEWEDGE margin1_mc1.pg n 80 checked 0 viol 0 overtake_viol 0
+GAME red/ctxp/instances/margin1_n20.pg NEWEDGE margin1_n20.pg n 20 checked 0 viol 0 overtake_viol 0
+GAME red/ctxp/instances/margin1_mc5.pg NEWEDGE margin1_mc5.pg n 50 checked 0 viol 0 overtake_viol 0
+GAME red/dtl/instances/lalg_dtl_pertop31_n18.pg NEWEDGE lalg_dtl_pertop31_n18.pg n 18 checked 6 viol 0 overtake_viol 0
+GAME red/fbr/instances/bghm_k1_gap6_A.pg NEWEDGE bghm_k1_gap6_A.pg n 21 checked 0 viol 0 overtake_viol 0
+GAME red/dtl/instances/lalg_dtl_restart8_n20.pg NEWEDGE lalg_dtl_restart8_n20.pg n 20 checked 0 viol 0 overtake_viol 0
+GAME red/fbr/instances/bghm_k3_gap4_A.pg NEWEDGE bghm_k3_gap4_A.pg n 45 checked 0 viol 0 overtake_viol 0
+GAME red/fbr/instances/lev74_n40.pg NEWEDGE lev74_n40.pg n 40 checked 50 viol 0 overtake_viol 0
+GAME red/fbr/instances/fr39_q4_n48.pg NEWEDGE fr39_q4_n48.pg n 48 checked 82 viol 0 overtake_viol 0
+GAME red/fbr/instances/rho144_n32.pg NEWEDGE rho144_n32.pg n 32 checked 29 viol 0 overtake_viol 0
+GAME red/fbr/instances/lev56_n48.pg NEWEDGE lev56_n48.pg n 48 checked 259 viol 0 overtake_viol 0
+GAME red/fbr/instances/nep80_n40.pg NEWEDGE nep80_n40.pg n 40 checked 79 viol 0 overtake_viol 0
+GAME red/fbr/instances/rho3_253_n32.pg NEWEDGE rho3_253_n32.pg n 32 checked 34 viol 0 overtake_viol 0
+GAME red/fbr/instances/rho84_n16.pg NEWEDGE rho84_n16.pg n 16 checked 0 viol 0 overtake_viol 0
+GAME red/fbr/instances/rho666_n48.pg NEWEDGE rho666_n48.pg n 48 checked 111 viol 0 overtake_viol 0
+GAME red/fbr/instances/sat4_n20.pg NEWEDGE sat4_n20.pg n 20 checked 0 viol 0 overtake_viol 0
+GAME red/fbr/instances/sat68_n20.pg NEWEDGE sat68_n20.pg n 20 checked 0 viol 0 overtake_viol 0
+GAME red/fbx/instances/exsw_loop_n15.pg NEWEDGE exsw_loop_n15.pg n 15 checked 0 viol 0 overtake_viol 0
+GAME red/fbr/instances/twowave_L16.pg NEWEDGE twowave_L16.pg n 22 checked 14 viol 0 overtake_viol 0
+GAME red/frz/instances/fbcap_eq_u4_n11.pg NEWEDGE fbcap_eq_u4_n11.pg n 11 checked 3 viol 0 overtake_viol 0
+GAME red/frz/instances/fx2_n11.pg NEWEDGE fx2_n11.pg n 11 checked 16 viol 0 overtake_viol 0
+GAME red/fbx/instances/kt6_n58.pg NEWEDGE kt6_n58.pg n 58 checked 208 viol 0 overtake_viol 0
+GAME red/h3/instances/frzgap0_n4.pg NEWEDGE frzgap0_n4.pg n 4 checked 0 viol 0 overtake_viol 0
+GAME red/h3/instances/frzgap0_n6.pg NEWEDGE frzgap0_n6.pg n 6 checked 1 viol 0 overtake_viol 0
+GAME red/h3/instances/lcount2_n23.pg red/h3/instances/lcount2_n23.start NEWEDGE lcount2_n23.pg n 23 checked 37 viol 0 overtake_viol 0
+GAME red/h3/instances/offret_l19_n24.pg NEWEDGE offret_l19_n24.pg n 24 checked 0 viol 0 overtake_viol 0
+GAME red/h3/instances/lcount_n23.pg red/h3/instances/lcount_n23.start NEWEDGE lcount_n23.pg n 23 checked 9 viol 0 overtake_viol 0
+GAME red/kl/instances/klcount_n16.pg NEWEDGE klcount_n16.pg n 16 checked 0 viol 0 overtake_viol 0
+GAME red/kl/instances/klcount_n18_base.pg NEWEDGE klcount_n18_base.pg n 18 checked 0 viol 0 overtake_viol 0
+GAME red/h3/instances/xsnpre36_n48.pg NEWEDGE xsnpre36_n48.pg n 48 checked 94 viol 0 overtake_viol 0
+GAME red/kl/instances/klcount_n18_lvl.pg NEWEDGE klcount_n18_lvl.pg n 18 checked 0 viol 0 overtake_viol 0
+GAME red/kl/instances/klglobal_n16.pg NEWEDGE klglobal_n16.pg n 16 checked 0 viol 0 overtake_viol 0
+GAME red/kl/instances/klglobal_n18_lvl.pg NEWEDGE klglobal_n18_lvl.pg n 18 checked 0 viol 0 overtake_viol 0
+GAME red/kl/instances/klglobal_n20_lvl2.pg NEWEDGE klglobal_n20_lvl2.pg n 20 checked 0 viol 0 overtake_viol 0
+GAME red/kl/instances/klmin_n13.pg NEWEDGE klmin_n13.pg n 13 checked 16 viol 0 overtake_viol 0
+GAME red/kl/instances/r2climb_h13.pg NEWEDGE r2climb_h13.pg n 13 checked 0 viol 0 overtake_viol 0
+GAME red/kl/instances/r2crawl_n14.pg NEWEDGE r2crawl_n14.pg n 14 checked 3 viol 0 overtake_viol 0
+GAME red/kl/instances/r2join_h0E_n14.pg NEWEDGE r2join_h0E_n14.pg n 14 checked 0 viol 0 overtake_viol 0
+GAME red/kl/instances/r2lap_best_n22.pg NEWEDGE r2lap_best_n22.pg n 22 checked 21 viol 0 overtake_viol 0
+GAME red/kl24/instances/HL88_0.pg NEWEDGE HL88_0.pg n 41 checked 44 viol 0 overtake_viol 0
+GAME red/kl24/instances/HL88_1.pg NEWEDGE HL88_1.pg n 43 checked 44 viol 0 overtake_viol 0
+GAME red/kl24/instances/HL88_2.pg NEWEDGE HL88_2.pg n 45 checked 44 viol 0 overtake_viol 0
+GAME red/kl24/instances/HL88_3.pg NEWEDGE HL88_3.pg n 47 checked 44 viol 0 overtake_viol 0
+GAME red/kl24/instances/HLg_0.pg NEWEDGE HLg_0.pg n 29 checked 32 viol 0 overtake_viol 0
+GAME red/kl24/instances/HLg_1.pg NEWEDGE HLg_1.pg n 35 checked 36 viol 0 overtake_viol 0
+GAME red/kl24/instances/HLg_2.pg NEWEDGE HLg_2.pg n 45 checked 44 viol 0 overtake_viol 0
+GAME red/kl24/instances/HLg_3.pg NEWEDGE HLg_3.pg n 55 checked 52 viol 0 overtake_viol 0
+GAME red/kw/instances/frzu_tight_n14.pg NEWEDGE frzu_tight_n14.pg n 14 checked 16 viol 0 overtake_viol 0
+GAME red/kw/instances/cw11_n24.pg NEWEDGE cw11_n24.pg n 24 checked 5 viol 0 overtake_viol 0
+GAME red/kw/instances/kc18_n24.pg NEWEDGE kc18_n24.pg n 24 checked 43 viol 0 overtake_viol 0
+GAME red/lag/instances/depth3_n46.pg NEWEDGE depth3_n46.pg n 46 checked 0 viol 0 overtake_viol 0
+GAME red/lag/instances/depth2_n39.pg NEWEDGE depth2_n39.pg n 39 checked 0 viol 0 overtake_viol 0
+GAME red/lag/instances/depth4_n53.pg NEWEDGE depth4_n53.pg n 53 checked 0 viol 0 overtake_viol 0
+GAME red/lag/instances/fam_D12_n106.pg NEWEDGE fam_D12_n106.pg n 106 checked 0 viol 0 overtake_viol 0
+GAME red/lag/instances/fam_D4_n50.pg NEWEDGE fam_D4_n50.pg n 50 checked 0 viol 0 overtake_viol 0
+GAME red/lag/instances/fam_D8_n78.pg NEWEDGE fam_D8_n78.pg n 78 checked 0 viol 0 overtake_viol 0
+GAME red/mei/instances/mei_h2.pg NEWEDGE mei_h2.pg n 19 checked 0 viol 0 overtake_viol 0
+GAME red/mei/instances/mei_h3.pg NEWEDGE mei_h3.pg n 27 checked 0 viol 0 overtake_viol 0
+GAME red/mei/instances/mei_h4.pg NEWEDGE mei_h4.pg n 35 checked 0 viol 0 overtake_viol 0
+GAME red/mei/instances/mei_h5.pg NEWEDGE mei_h5.pg n 43 checked 0 viol 0 overtake_viol 0
+GAME red/mei/instances/mei_h6.pg NEWEDGE mei_h6.pg n 51 checked 0 viol 0 overtake_viol 0
+GAME red/mei/instances/mei_h8.pg NEWEDGE mei_h8.pg n 67 checked 0 viol 0 overtake_viol 0
+GAME red/n3/instances/core41_n40.pg red/n3/instances/core41_n40.start NEWEDGE core41_n40.pg n 40 checked 170 viol 0 overtake_viol 0
+GAME red/n3/instances/lag11_n40.pg red/n3/instances/lag11_n40.start NEWEDGE lag11_n40.pg n 40 checked 181 viol 0 overtake_viol 0
+GAME red/n3/instances/lagx10_n40.pg red/n3/instances/lagx10_n40.start NEWEDGE lagx10_n40.pg n 40 checked 84 viol 0 overtake_viol 0
+GAME red/n3/instances/comp54_n80.pg red/n3/instances/comp54_n80.start NEWEDGE comp54_n80.pg n 80 checked 429 viol 0 overtake_viol 0
+GAME red/n3/instances/n3cov_lean.pg red/n3/instances/n3cov_lean.start NEWEDGE n3cov_lean.pg n 48 checked 77 viol 0 overtake_viol 0
+GAME red/n3/instances/long121_n40.pg red/n3/instances/long121_n40.start NEWEDGE long121_n40.pg n 40 checked 347 viol 0 overtake_viol 0
+GAME red/n3/instances/long90_k2_n40.pg red/n3/instances/long90_k2_n40.start NEWEDGE long90_k2_n40.pg n 40 checked 304 viol 0 overtake_viol 0
+GAME red/n3/instances/n3cov_phi.pg red/n3/instances/n3cov_phi.start NEWEDGE n3cov_phi.pg n 32 checked 61 viol 0 overtake_viol 0
+GAME red/n3/instances/run34_n40.pg red/n3/instances/run34_n40.start NEWEDGE run34_n40.pg n 40 checked 178 viol 0 overtake_viol 0
+GAME red/n3/instances/run49_n32.pg red/n3/instances/run49_n32.start NEWEDGE run49_n32.pg n 32 checked 113 viol 0 overtake_viol 0
+GAME red/n5/instances/dl_4_4.pg red/n5/instances/dl_4_4.start NEWEDGE dl_4_4.pg n 42 checked 0 viol 0 overtake_viol 0
+GAME red/n3/instances/ret22_n40.pg red/n3/instances/ret22_n40.start NEWEDGE ret22_n40.pg n 40 checked 415 viol 0 overtake_viol 0
+GAME red/n5/instances/dlm2_4.pg red/n5/instances/dlm2_4.start NEWEDGE dlm2_4.pg n 42 checked 0 viol 0 overtake_viol 0
+GAME red/n5/instances/sym_h12_s1.pg NEWEDGE sym_h12_s1.pg n 24 checked 22 viol 0 overtake_viol 0
+GAME red/n5/instances/dl_6_8.pg red/n5/instances/dl_6_8.start NEWEDGE dl_6_8.pg n 110 checked 0 viol 0 overtake_viol 0
+GAME red/n5/instances/sym_h8_s1.pg NEWEDGE sym_h8_s1.pg n 16 checked 12 viol 0 overtake_viol 0
+GAME red/n5/instances/sym_h16_s1.pg NEWEDGE sym_h16_s1.pg n 32 checked 112 viol 0 overtake_viol 0
+GAME red/n5inj/instances/block_bk20.pg NEWEDGE block_bk20.pg n 24 checked 93 viol 0 overtake_viol 0
+GAME red/n5inj/instances/block_bk32.pg NEWEDGE block_bk32.pg n 36 checked 139 viol 0 overtake_viol 0
+GAME red/n5inj/instances/blockph_bp20.pg NEWEDGE blockph_bp20.pg n 24 checked 57 viol 0 overtake_viol 0
+GAME red/n5inj/instances/bribe_cex_n15.pg NEWEDGE bribe_cex_n15.pg n 15 checked 0 viol 0 overtake_viol 0
+GAME red/n5inj/instances/blockph_bp32.pg NEWEDGE blockph_bp32.pg n 36 checked 84 viol 0 overtake_viol 0
+GAME red/n5inj/instances/frz24.pg red/n5inj/instances/frz24.start NEWEDGE frz24.pg n 24 checked 85 viol 0 overtake_viol 0
+GAME red/n5inj/instances/frz32.pg red/n5inj/instances/frz32.start NEWEDGE frz32.pg n 32 checked 165 viol 0 overtake_viol 0
+GAME red/n5inj/instances/elimn_cex_n48.pg NEWEDGE elimn_cex_n48.pg n 48 checked 202 viol 0 overtake_viol 0
+GAME red/n5inj/instances/frz40.pg red/n5inj/instances/frz40.start NEWEDGE frz40.pg n 40 checked 245 viol 0 overtake_viol 0
+GAME red/n5inj/instances/phase2_pk32.pg NEWEDGE phase2_pk32.pg n 32 checked 92 viol 0 overtake_viol 0
+GAME red/n5inj/instances/phase2_pk48.pg NEWEDGE phase2_pk48.pg n 48 checked 179 viol 0 overtake_viol 0
+GAME red/n5inj/instances/returns_rt32.pg NEWEDGE returns_rt32.pg n 32 checked 112 viol 0 overtake_viol 0
+GAME red/n5inj/instances/returns_ph64.pg NEWEDGE returns_ph64.pg n 64 checked 306 viol 0 overtake_viol 0
+GAME red/n5inj/instances/returns_rt48.pg NEWEDGE returns_rt48.pg n 48 checked 185 viol 0 overtake_viol 0
+GAME red/n5inj/instances/theta_thf16.pg NEWEDGE theta_thf16.pg n 16 checked 46 viol 0 overtake_viol 0
+GAME red/n5inj/instances/theta_thc24.pg NEWEDGE theta_thc24.pg n 24 checked 83 viol 0 overtake_viol 0
+GAME red/n5inj/instances/theta_tp32.pg NEWEDGE theta_tp32.pg n 32 checked 111 viol 0 overtake_viol 0
+GAME red/n5inj/instances/theta_tp40.pg NEWEDGE theta_tp40.pg n 40 checked 142 viol 0 overtake_viol 0
+GAME red/n5inj/instances/returns_rt64.pg NEWEDGE returns_rt64.pg n 64 checked 209 viol 0 overtake_viol 0
+GAME red/nest16/instances/k4L72_n101.pg NEWEDGE k4L72_n101.pg n 101 checked 0 viol 0 overtake_viol 0
+GAME red/nest16/instances/k4L72r_n101.pg NEWEDGE k4L72r_n101.pg n 101 checked 0 viol 0 overtake_viol 0
+GAME red/n5inj/instances/wide_h16.pg NEWEDGE wide_h16.pg n 32 checked 6 viol 0 overtake_viol 0
+GAME red/nest16/instances/k4g50_n101.pg NEWEDGE k4g50_n101.pg n 101 checked 0 viol 0 overtake_viol 0
+GAME red/nest16/instances/k4seed_c1_n82.pg NEWEDGE k4seed_c1_n82.pg n 82 checked 0 viol 0 overtake_viol 0
+GAME red/nest16/instances/k4seed_vr_n87.pg NEWEDGE k4seed_vr_n87.pg n 87 checked 0 viol 0 overtake_viol 0
+GAME red/nest16/instances/k4u_n101.pg NEWEDGE k4u_n101.pg n 101 checked 0 viol 0 overtake_viol 0
+GAME red/nest16/instances/k4y1_n82.pg NEWEDGE k4y1_n82.pg n 82 checked 0 viol 0 overtake_viol 0
+GAME red/nest16/instances/k4y2_n87.pg NEWEDGE k4y2_n87.pg n 87 checked 0 viol 0 overtake_viol 0
+GAME red/nest16/instances/near4_n26.pg NEWEDGE near4_n26.pg n 26 checked 0 viol 0 overtake_viol 0
+GAME red/nest16/instances/nest4u_n46.pg NEWEDGE nest4u_n46.pg n 46 checked 0 viol 0 overtake_viol 0
+GAME red/nest16/instances/nest4uu_n51.pg NEWEDGE nest4uu_n51.pg n 51 checked 0 viol 0 overtake_viol 0
+GAME red/nest16/instances/nest5_n49.pg NEWEDGE nest5_n49.pg n 49 checked 0 viol 0 overtake_viol 0
+GAME red/nest16/instances/nest6_n75.pg NEWEDGE nest6_n75.pg n 75 checked 0 viol 0 overtake_viol 0
+GAME red/nest16/instances/nest6min_n75.pg NEWEDGE nest6min_n75.pg n 75 checked 0 viol 0 overtake_viol 0
+GAME red/nest16/instances/oseg_n26.pg NEWEDGE oseg_n26.pg n 26 checked 0 viol 0 overtake_viol 0
+GAME red/nest16/instances/nest6x_n75.pg NEWEDGE nest6x_n75.pg n 75 checked 0 viol 0 overtake_viol 0
+GAME red/nest16/instances/w1_n27.pg NEWEDGE w1_n27.pg n 27 checked 0 viol 0 overtake_viol 0
+GAME red/nest16/instances/win3_n27.pg NEWEDGE win3_n27.pg n 27 checked 0 viol 0 overtake_viol 0
+GAME red/nopre/instances/nopre_viol_n20.pg NEWEDGE nopre_viol_n20.pg n 20 checked 0 viol 0 overtake_viol 0
+GAME red/o1/instances/ph45_n32.pg NEWEDGE ph45_n32.pg n 32 checked 44 viol 0 overtake_viol 0
+GAME red/o1/instances/iter118_n48.pg NEWEDGE iter118_n48.pg n 48 checked 93 viol 0 overtake_viol 0
+GAME red/o1/instances/f39_n48.pg NEWEDGE f39_n48.pg n 48 checked 102 viol 0 overtake_viol 0
+GAME red/o1/instances/ph50_n32.pg NEWEDGE ph50_n32.pg n 32 checked 50 viol 0 overtake_viol 0
+GAME red/o1/instances/tau18_n24.pg NEWEDGE tau18_n24.pg n 24 checked 0 viol 0 overtake_viol 0
+GAME red/rec0/instances/fbd0_n4.pg NEWEDGE fbd0_n4.pg n 4 checked 0 viol 0 overtake_viol 0
+GAME red/rec0/instances/n0_6_n24.pg NEWEDGE n0_6_n24.pg n 24 checked 8 viol 0 overtake_viol 0
+GAME red/rec0/instances/nep24_n20.pg NEWEDGE nep24_n20.pg n 20 checked 5 viol 0 overtake_viol 0
+GAME red/rec0/instances/lend2_30_n48.pg NEWEDGE lend2_30_n48.pg n 48 checked 104 viol 0 overtake_viol 0
+GAME red/rec0/instances/nep87_n40.pg NEWEDGE nep87_n40.pg n 40 checked 100 viol 0 overtake_viol 0
+GAME red/sgrow/instances/s20_n20.pg NEWEDGE s20_n20.pg n 20 checked 0 viol 0 overtake_viol 0
+GAME red/rec0/instances/nep90_n40.pg NEWEDGE nep90_n40.pg n 40 checked 128 viol 0 overtake_viol 0
+GAME red/sgrow/instances/s21_oink_n20.pg NEWEDGE s21_oink_n20.pg n 20 checked 0 viol 0 overtake_viol 0
+GAME red/sgrow/instances/s29_n30.pg NEWEDGE s29_n30.pg n 30 checked 0 viol 0 overtake_viol 0
+GAME red/sgrow/instances/s32_n60.pg NEWEDGE s32_n60.pg n 60 checked 0 viol 0 overtake_viol 0
+GAME red/sgrow/instances/s34_oink_n40.pg NEWEDGE s34_oink_n40.pg n 40 checked 7 viol 0 overtake_viol 0
+GAME red/sgrow/instances/s35_oink_n80.pg NEWEDGE s35_oink_n80.pg n 80 checked 0 viol 0 overtake_viol 0
+GAME red/sgrow/instances/s34_oink_n80.pg NEWEDGE s34_oink_n80.pg n 80 checked 0 viol 0 overtake_viol 0
+GAME red/sgrow/instances/s36_oink_n60.pg NEWEDGE s36_oink_n60.pg n 60 checked 0 viol 0 overtake_viol 0
+GAME red/so/instances/beta2_n11.pg NEWEDGE beta2_n11.pg n 11 checked 8 viol 0 overtake_viol 0
+GAME red/so/instances/epsseg_cex_n16.pg NEWEDGE epsseg_cex_n16.pg n 16 checked 30 viol 0 overtake_viol 0
+GAME red/so/instances/exitr_cex_n16.pg NEWEDGE exitr_cex_n16.pg n 16 checked 32 viol 0 overtake_viol 0
+GAME red/so/instances/epsseg_cex_n48.pg NEWEDGE epsseg_cex_n48.pg n 48 checked 72 viol 0 overtake_viol 0
+GAME red/so/instances/farrise25_n32.pg NEWEDGE farrise25_n32.pg n 32 checked 41 viol 0 overtake_viol 0
+GAME red/so/instances/exitr_cex_n48.pg NEWEDGE exitr_cex_n48.pg n 48 checked 60 viol 0 overtake_viol 0
+GAME red/so/instances/mn_abs74_n48.pg NEWEDGE mn_abs74_n48.pg n 48 checked 116 viol 0 overtake_viol 0
+GAME red/so/instances/njb_reabs54_n32.pg NEWEDGE njb_reabs54_n32.pg n 32 checked 71 viol 0 overtake_viol 0
+GAME red/so/instances/njb_reabs65_n48.pg NEWEDGE njb_reabs65_n48.pg n 48 checked 121 viol 0 overtake_viol 0
+GAME red/so/instances/nleq33_n48.pg NEWEDGE nleq33_n48.pg n 48 checked 93 viol 0 overtake_viol 0
+GAME red/so/instances/nleq_cex_n48.pg NEWEDGE nleq_cex_n48.pg n 48 checked 99 viol 0 overtake_viol 0
+GAME red/so/instances/pftheta34_n32.pg NEWEDGE pftheta34_n32.pg n 32 checked 95 viol 0 overtake_viol 0
+GAME red/so/instances/pft35_n48.pg NEWEDGE pft35_n48.pg n 48 checked 153 viol 0 overtake_viol 0
+GAME red/so/instances/pft40_n40.pg NEWEDGE pft40_n40.pg n 40 checked 146 viol 0 overtake_viol 0
+GAME red/so/instances/pftheta_cex_n32.pg NEWEDGE pftheta_cex_n32.pg n 32 checked 92 viol 0 overtake_viol 0
+GAME red/so/instances/post31_n48.pg NEWEDGE post31_n48.pg n 48 checked 64 viol 0 overtake_viol 0
+GAME red/so/instances/rise_fb38_n48.pg NEWEDGE rise_fb38_n48.pg n 48 checked 77 viol 0 overtake_viol 0
+GAME red/so/instances/s4c8_n13.pg NEWEDGE s4c8_n13.pg n 13 checked 1 viol 0 overtake_viol 0
+GAME red/so/instances/so_k2_n32.pg NEWEDGE so_k2_n32.pg n 32 checked 58 viol 0 overtake_viol 0
+GAME red/so/instances/so_j19_n48.pg NEWEDGE so_j19_n48.pg n 48 checked 48 viol 0 overtake_viol 0
+GAME red/so/instances/rise_thin51_n40.pg NEWEDGE rise_thin51_n40.pg n 40 checked 241 viol 0 overtake_viol 0
+GAME red/so/instances/so_sor5_n24.pg NEWEDGE so_sor5_n24.pg n 24 checked 64 viol 0 overtake_viol 0
+GAME red/so/instances/so_sorl_n32.pg NEWEDGE so_sorl_n32.pg n 32 checked 30 viol 0 overtake_viol 0
+GAME red/so/instances/so_th_n32.pg NEWEDGE so_th_n32.pg n 32 checked 123 viol 0 overtake_viol 0
+GAME red/so/instances/so_tie13_n24.pg NEWEDGE so_tie13_n24.pg n 24 checked 23 viol 0 overtake_viol 0
+GAME red/so/instances/so_tie15_n32.pg NEWEDGE so_tie15_n32.pg n 32 checked 22 viol 0 overtake_viol 0
+GAME red/so/instances/tev_cex_n40.pg NEWEDGE tev_cex_n40.pg n 40 checked 81 viol 0 overtake_viol 0
+GAME red/so/instances/tevlast11_n40.pg NEWEDGE tevlast11_n40.pg n 40 checked 53 viol 0 overtake_viol 0
+GAME red/so/instances/tevlast7_n32.pg NEWEDGE tevlast7_n32.pg n 32 checked 80 viol 0 overtake_viol 0
+GAME red/so/instances/tevlast_cex_n40.pg NEWEDGE tevlast_cex_n40.pg n 40 checked 82 viol 0 overtake_viol 0
+GAME red/so/instances/tog6a_n32.pg NEWEDGE tog6a_n32.pg n 32 checked 69 viol 0 overtake_viol 0
+GAME red/so/instances/tog6b_n32.pg NEWEDGE tog6b_n32.pg n 32 checked 34 viol 0 overtake_viol 0
+GAME red/so/instances/xrun21_n24.pg NEWEDGE xrun21_n24.pg n 24 checked 22 viol 0 overtake_viol 0
+GAME red/so/instances/xrun8_n10.pg NEWEDGE xrun8_n10.pg n 10 checked 16 viol 0 overtake_viol 0
+GAME red/so/instances/xsn29_n32.pg NEWEDGE xsn29_n32.pg n 32 checked 28 viol 0 overtake_viol 0
+GAME red/so/instances/xsn43_n48.pg NEWEDGE xsn43_n48.pg n 48 checked 93 viol 0 overtake_viol 0
+GAME red/so/instances/xsnf42_n48.pg NEWEDGE xsnf42_n48.pg n 48 checked 85 viol 0 overtake_viol 0
+GAME red/so/instances/xsnf52_n64.pg NEWEDGE xsnf52_n64.pg n 64 checked 88 viol 0 overtake_viol 0
+GAME red/tcpert/instances/leanT_N12.pg NEWEDGE leanT_N12.pg n 96 checked 1 viol 0 overtake_viol 0
+GAME red/so/instances/xsn91_n48.pg NEWEDGE xsn91_n48.pg n 48 checked 348 viol 0 overtake_viol 0
+GAME red/tcpert/instances/leanT_N16.pg NEWEDGE leanT_N16.pg n 128 checked 0 viol 0 overtake_viol 0
+GAME red/tcpert/instances/leanT_N6.pg NEWEDGE leanT_N6.pg n 48 checked 10 viol 0 overtake_viol 0
+GAME red/tcpert/instances/leanT_N8.pg NEWEDGE leanT_N8.pg n 64 checked 1 viol 0 overtake_viol 0
+GAME red/tcpert/instances/leanT_N24.pg NEWEDGE leanT_N24.pg n 192 checked 142 viol 0 overtake_viol 0
+GAME red/tcpert/instances/tcL_N10.pg NEWEDGE tcL_N10.pg n 350 checked 0 viol 0 overtake_viol 0
+GAME red/tcpert/instances/tcL_N3.pg NEWEDGE tcL_N3.pg n 42 checked 0 viol 0 overtake_viol 0
+GAME red/tcpert/instances/tcL_N4.pg NEWEDGE tcL_N4.pg n 68 checked 0 viol 0 overtake_viol 0
+GAME red/tcpert/instances/tcL_N5.pg NEWEDGE tcL_N5.pg n 100 checked 27 viol 0 overtake_viol 0
+GAME red/tcpert/instances/leanT_N32.pg NEWEDGE leanT_N32.pg n 256 checked 5 viol 0 overtake_viol 0
+GAME red/tcpert/instances/tcL_N6.pg NEWEDGE tcL_N6.pg n 138 checked 0 viol 0 overtake_viol 0
+GAME red/tcpert/instances/tcR4_N4.pg NEWEDGE tcR4_N4.pg n 68 checked 0 viol 0 overtake_viol 0
+GAME red/tcpert/instances/tcR4_N5.pg NEWEDGE tcR4_N5.pg n 100 checked 33 viol 0 overtake_viol 0
+GAME red/tcpert/instances/tcR4_N6.pg NEWEDGE tcR4_N6.pg n 138 checked 84 viol 0 overtake_viol 0
+GAME red/tcpert/instances/tcL_N8.pg NEWEDGE tcL_N8.pg n 232 checked 0 viol 0 overtake_viol 0
+GAME red/tcpert/instances/tcR4_N7.pg NEWEDGE tcR4_N7.pg n 182 checked 141 viol 0 overtake_viol 0
+GAME red/tcpert/instances/tcL_N12.pg NEWEDGE tcL_N12.pg n 492 checked 195 viol 0 overtake_viol 0
+GAME red/tcpert/instances/tcR4_N8.pg NEWEDGE tcR4_N8.pg n 232 checked 0 viol 0 overtake_viol 0
+GAME red/tcpert/instances/tcS8_N10.pg NEWEDGE tcS8_N10.pg n 350 checked 0 viol 0 overtake_viol 0
+GAME red/tcpert/instances/tcS8_N6.pg NEWEDGE tcS8_N6.pg n 138 checked 0 viol 0 overtake_viol 0
+GAME red/tcpert/instances/tcS8_N8.pg NEWEDGE tcS8_N8.pg n 232 checked 0 viol 0 overtake_viol 0
+GAME red/tcpert/instances/tcS8_N7.pg NEWEDGE tcS8_N7.pg n 182 checked 0 viol 0 overtake_viol 0
+GAME red/tpp/instances/tpp_viol_n22.pg NEWEDGE tpp_viol_n22.pg n 22 checked 0 viol 0 overtake_viol 0
+GAME red/tpp/instances/tpp_viol_n63.pg NEWEDGE tpp_viol_n63.pg n 63 checked 0 viol 0 overtake_viol 0
+GAME red/tcpert/instances/tcS8_N11.pg NEWEDGE tcS8_N11.pg n 418 checked 0 viol 0 overtake_viol 0
+GAME red/ul/instances/cxmig_k4_n54.pg red/ul/instances/cxmig_k4_n54.start NEWEDGE cxmig_k4_n54.pg n 54 checked 32 viol 0 overtake_viol 0
+GAME red/ul/instances/cxmig_k8_n82.pg red/ul/instances/cxmig_k8_n82.start NEWEDGE cxmig_k8_n82.pg n 82 checked 60 viol 0 overtake_viol 0
+GAME red/ul/instances/ladderd0_k12_n48.pg red/ul/instances/ladderd0_k12_n48.start NEWEDGE ladderd0_k12_n48.pg n 48 checked 36 viol 0 overtake_viol 0
+GAME red/ul/instances/cxmig_k16_n138.pg red/ul/instances/cxmig_k16_n138.start NEWEDGE cxmig_k16_n138.pg n 138 checked 116 viol 0 overtake_viol 0
+GAME red/tcpert/instances/tcS8_N9.pg NEWEDGE tcS8_N9.pg n 288 checked 48 viol 0 overtake_viol 0
+GAME red/ul/instances/ladderd0_k24_n84.pg red/ul/instances/ladderd0_k24_n84.start NEWEDGE ladderd0_k24_n84.pg n 84 checked 72 viol 0 overtake_viol 0
+GAME red/ul/instances/ladderent_k12_n48.pg red/ul/instances/ladderent_k12_n48.start NEWEDGE ladderent_k12_n48.pg n 48 checked 36 viol 0 overtake_viol 0
+GAME red/ul/instances/ladderent_k24_n84.pg red/ul/instances/ladderent_k24_n84.start NEWEDGE ladderent_k24_n84.pg n 84 checked 72 viol 0 overtake_viol 0
+GAME red/ul/instances/reader_L10_n36.pg red/ul/instances/reader_L10_n36.start NEWEDGE reader_L10_n36.pg n 36 checked 18 viol 0 overtake_viol 0
+GAME red/ul/instances/reader_L20_n56.pg red/ul/instances/reader_L20_n56.start NEWEDGE reader_L20_n56.pg n 56 checked 28 viol 0 overtake_viol 0
+GAME red/ul/instances/ladderd0_k48_n156.pg red/ul/instances/ladderd0_k48_n156.start NEWEDGE ladderd0_k48_n156.pg n 156 checked 144 viol 0 overtake_viol 0
+GAME red/ul/instances/reader_L40_n96.pg red/ul/instances/reader_L40_n96.start NEWEDGE reader_L40_n96.pg n 96 checked 48 viol 0 overtake_viol 0
+GAME red/usplit/instances/gate_K16_n197.pg red/usplit/instances/gate_K16_n197.start NEWEDGE gate_K16_n197.pg n 197 checked 245 viol 0 overtake_viol 0
+GAME red/ul/instances/ladderent_k48_n156.pg red/ul/instances/ladderent_k48_n156.start NEWEDGE ladderent_k48_n156.pg n 156 checked 144 viol 0 overtake_viol 0
+GAME red/usplit/instances/grow_K12_n149.pg red/usplit/instances/grow_K12_n149.start NEWEDGE grow_K12_n149.pg n 149 checked 134 viol 0 overtake_viol 0
+GAME red/usplit/instances/pairoc_n58.pg red/usplit/instances/pairoc_n58.start NEWEDGE pairoc_n58.pg n 58 checked 30 viol 0 overtake_viol 0
+GAME red/usplit/instances/pp_K12_n161.pg red/usplit/instances/pp_K12_n161.start NEWEDGE pp_K12_n161.pg n 161 checked 136 viol 0 overtake_viol 0
+GAME red/usplit/instances/pp_K12_n161_dual.pg NEWEDGE pp_K12_n161_dual.pg n 161 checked 0 viol 0 overtake_viol 0
+GAME red/usplit/instances/grow_K40_n373.pg red/usplit/instances/grow_K40_n373.start NEWEDGE grow_K40_n373.pg n 373 checked 386 viol 0 overtake_viol 0
+GAME red/usplit/instances/pp_K48_n449.pg red/usplit/instances/pp_K48_n449.start NEWEDGE pp_K48_n449.pg n 449 checked 460 viol 0 overtake_viol 0
+GAME red/usplit/instances/usplit_n14.pg red/usplit/instances/usplit_n14.start NEWEDGE usplit_n14.pg n 14 checked 4 viol 0 overtake_viol 0
+GAME red/usplit/instances/usplit_n23.pg red/usplit/instances/usplit_n23.start NEWEDGE usplit_n23.pg n 23 checked 14 viol 0 overtake_viol 0
+GAME red/usplit/instances/usplit_rd_n24.pg red/usplit/instances/usplit_rd_n24.start NEWEDGE usplit_rd_n24.pg n 24 checked 9 viol 0 overtake_viol 0
+GAME red/usplit/instances/usplit_rd_s3_n27.pg NEWEDGE usplit_rd_s3_n27.pg n 27 checked 9 viol 0 overtake_viol 0
+GAME red/usplit/instances/usplit_s3_n16.pg NEWEDGE usplit_s3_n16.pg n 16 checked 4 viol 0 overtake_viol 0
+GAME red/xctx/instances/nest3_n20.pg NEWEDGE nest3_n20.pg n 20 checked 0 viol 0 overtake_viol 0
+GAME red/xctx/instances/nest3_n24.pg NEWEDGE nest3_n24.pg n 24 checked 0 viol 0 overtake_viol 0
+GAME red/xctx/instances/vrall_viol_n20.pg NEWEDGE vrall_viol_n20.pg n 20 checked 0 viol 0 overtake_viol 0
+GAME red/xctx/instances/xcov11_n20.pg NEWEDGE xcov11_n20.pg n 20 checked 0 viol 0 overtake_viol 0
+GAME red/xctx/instances/xctx_viol_n20.pg NEWEDGE xctx_viol_n20.pg n 20 checked 0 viol 0 overtake_viol 0
+GAME red/xing/instances/fbref_cex_n32.pg NEWEDGE fbref_cex_n32.pg n 32 checked 183 viol 0 overtake_viol 0
+GAME red/xing/instances/j10_n24.pg NEWEDGE j10_n24.pg n 24 checked 47 viol 0 overtake_viol 0
+GAME red/xing/instances/j4_n40.pg NEWEDGE j4_n40.pg n 40 checked 277 viol 0 overtake_viol 0
+GAME red/usplit/instances/pp_K48_n449_dual.pg NEWEDGE pp_K48_n449_dual.pg n 449 checked 0 viol 0 overtake_viol 0
+GAME red/xing/instances/j5_n16.pg NEWEDGE j5_n16.pg n 16 checked 45 viol 0 overtake_viol 0
+GAME red/xing/instances/j7_n32.pg NEWEDGE j7_n32.pg n 32 checked 128 viol 0 overtake_viol 0
+GAME red/xing/instances/j7_n48.pg NEWEDGE j7_n48.pg n 48 checked 148 viol 0 overtake_viol 0
+GAME red/xing/instances/j8_n32.pg NEWEDGE j8_n32.pg n 32 checked 133 viol 0 overtake_viol 0
+GAME red/xing/instances/kw25_n32.pg NEWEDGE kw25_n32.pg n 32 checked 71 viol 0 overtake_viol 0
+GAME red/xing/instances/kw_n16.pg NEWEDGE kw_n16.pg n 16 checked 11 viol 0 overtake_viol 0
+GAME red/xing/instances/j8_n48.pg NEWEDGE j8_n48.pg n 48 checked 153 viol 0 overtake_viol 0
+GAME red/xing/instances/kw_n24.pg NEWEDGE kw_n24.pg n 24 checked 19 viol 0 overtake_viol 0
+GAME red/usplit/instances/gate_K64_n581.pg red/usplit/instances/gate_K64_n581.start NEWEDGE gate_K64_n581.pg n 581 checked 893 viol 0 overtake_viol 0
+GAME red/xing/instances/kw_n48.pg NEWEDGE kw_n48.pg n 48 checked 46 viol 0 overtake_viol 0
+GAME red/xing/instances/obr_eq_n24.pg NEWEDGE obr_eq_n24.pg n 24 checked 6 viol 0 overtake_viol 0
+GAME red/xing/instances/obr_n32.pg NEWEDGE obr_n32.pg n 32 checked 65 viol 0 overtake_viol 0
+GAME red/xing/instances/u1t_own6_n32.pg NEWEDGE u1t_own6_n32.pg n 32 checked 32 viol 0 overtake_viol 0
+GAME red/xing/instances/u1t_cex_n32.pg NEWEDGE u1t_cex_n32.pg n 32 checked 17 viol 0 overtake_viol 0
+GAME red/xing/instances/u23sw64_n32.pg NEWEDGE u23sw64_n32.pg n 32 checked 61 viol 0 overtake_viol 0
+GAME red/xing/instances/u2flat73_n32.pg NEWEDGE u2flat73_n32.pg n 32 checked 35 viol 0 overtake_viol 0
+GAME red/xing/instances/u2flat_n32.pg NEWEDGE u2flat_n32.pg n 32 checked 79 viol 0 overtake_viol 0
+GAME red/xing/instances/x31_cu16.pg NEWEDGE x31_cu16.pg n 16 checked 39 viol 0 overtake_viol 0
+GAME red/xing/instances/x31_cu24.pg NEWEDGE x31_cu24.pg n 24 checked 129 viol 0 overtake_viol 0
+GAME red/xing/instances/x31_cu32.pg NEWEDGE x31_cu32.pg n 32 checked 170 viol 0 overtake_viol 0
+GAME red/xing/instances/x31_cu32i.pg NEWEDGE x31_cu32i.pg n 32 checked 123 viol 0 overtake_viol 0
+GAME red/xing/instances/x31_cu48.pg NEWEDGE x31_cu48.pg n 48 checked 226 viol 0 overtake_viol 0
+GAME red/xing/instances/x31_lem_e24.pg NEWEDGE x31_lem_e24.pg n 24 checked 91 viol 0 overtake_viol 0
+GAME red/xing/instances/x31_lem_t32.pg NEWEDGE x31_lem_t32.pg n 32 checked 184 viol 0 overtake_viol 0
+GAME red/xing/instances/x31_nh_r20.pg NEWEDGE x31_nh_r20.pg n 20 checked 24 viol 0 overtake_viol 0
+GAME red/xing/instances/x31_nh_e24.pg NEWEDGE x31_nh_e24.pg n 24 checked 25 viol 0 overtake_viol 0
+GAME red/xing/instances/x31_re24.pg NEWEDGE x31_re24.pg n 24 checked 71 viol 0 overtake_viol 0
+GAME red/xing/instances/x31_ru24.pg NEWEDGE x31_ru24.pg n 24 checked 59 viol 0 overtake_viol 0
+GAME red/xing/instances/x31_rx32.pg NEWEDGE x31_rx32.pg n 32 checked 145 viol 0 overtake_viol 0
+GAME red/xing/instances/x32_rand16.pg NEWEDGE x32_rand16.pg n 16 checked 13 viol 0 overtake_viol 0
+GAME red/xing/instances/x31_rx48.pg NEWEDGE x31_rx48.pg n 48 checked 295 viol 0 overtake_viol 0
+GAME red/xing/instances/x32_nest40.pg NEWEDGE x32_nest40.pg n 40 checked 190 viol 0 overtake_viol 0
+GAME red/xing/instances/x32_rand24.pg NEWEDGE x32_rand24.pg n 24 checked 21 viol 0 overtake_viol 0
+GAME red/xing/instances/x32_rand32.pg NEWEDGE x32_rand32.pg n 32 checked 28 viol 0 overtake_viol 0
+GAME red/xing/instances/x32_rand48.pg NEWEDGE x32_rand48.pg n 48 checked 50 viol 0 overtake_viol 0
+GAME red/xing/instances/x32_rand64.pg NEWEDGE x32_rand64.pg n 64 checked 68 viol 0 overtake_viol 0
+GAME red/xing/instances/x32_waves32.pg NEWEDGE x32_waves32.pg n 32 checked 202 viol 0 overtake_viol 0
+GAME si/root/instances/cone_n65.pg NEWEDGE cone_n65.pg n 65 checked 189 viol 0 overtake_viol 0
+GAME red/xing/instances/x32_waves48.pg NEWEDGE x32_waves48.pg n 48 checked 157 viol 0 overtake_viol 0
+GAME si/root/instances/ueonce_n27.pg NEWEDGE ueonce_n27.pg n 27 checked 51 viol 0 overtake_viol 0
+GAME si/root/instances/cone_n69.pg NEWEDGE cone_n69.pg n 69 checked 127 viol 0 overtake_viol 0

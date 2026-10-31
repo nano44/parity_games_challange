@@ -565,4 +565,10 @@ if grep -q "WT 47 RES 2 XDEC 0 WDEC 0 WOX 0" <<<"$w57" && grep -q "T1 0 T2 30 T3
 else
   echo "box 107 FINPOT check: FAILED"; exit 1
 fi
+w58=$(cd .. && python3 -I new/box108/newedge.py red/xing/instances/x31_rx48.pg new/box107/inst/x31_rx48.start; python3 -I new/box108/carrier.py red/xing/instances/x31_rx48.pg new/box107/inst/x31_rx48.start; python3 -I new/box108/na.py red/so/instances/tog6a_n32.pg)
+if grep -qF "NEWEDGE x31_rx48.pg n 48 checked 295 viol 0 overtake_viol 0" <<<"$w58" && grep -qF "CARRIER x31_rx48.pg n 48 B2 2 carriers 49 fix_by_new_edge 49 fix_at_source 49" <<<"$w58" && grep -qF "NA tog6a_n32.pg n 32 mE 97 WT 5 NA 4 NAWC 0 CN 2" <<<"$w58" && grep -qF "BOUNDVIOL 0" <<<"$w58"; then
+  echo "box 108 HDEPTH: NEW-EDGE 0 violations (x31_rx48, 295 W-changes), depth-2 carriers released by one new edge at a source event (49/49), ARENA-RED bound holds: PASS"
+else
+  echo "box 108 HDEPTH check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
