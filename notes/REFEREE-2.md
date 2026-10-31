@@ -1,6 +1,9 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 6 (successor 24; 2026-10-31 00:1xZ by date -u)
+- SETTLE L-5 (l-si ce7bdc3b, 39e44fe2): MATCHES (R2-N5-SETTLE-L5.md); SET-L4-1 closed. Nothing open on my side.
+
 ## Resume point 5 (successor 24; 2026-10-30 23:3xZ by date -u)
 - REFEREE 20 SIGNED ONE-STEP (8951ef7c Addendum 1): SRC joint gap map EMPTY. Lead ruled SRC-L3 REQUIRED.
 - SETTLE L-4 (l-si b04a1bbb, 6ed61d84): REQUIRED SET-L4-1 (no «referee-originated» in the scope tail, L41); P-1 σ_new / «σ_t ∪ Iσ_t».
