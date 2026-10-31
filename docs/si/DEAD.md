@@ -682,3 +682,10 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
   consecutive switches on ONE deviator's first segment (Odd 0: Even 1 at k 34, 5 at k 36, 21 at k 39, 6 at k 40 by the new edge (6, 0)),
   all at source events. The «peel» count does not help either: on obs_K12_m24 / sbq2_K8_m16 first segments RE-GROW at almost every
   source event (GROW 529 / 353, PEEL 0). Pins: check.sh «box 55».
+- (box 56, Lead 10:34Z; note docs/si/N5-GROW-box56.md §4) Width laws for fuel re-routes (an FS-selector y switching to z through a new arena
+  edge, triggered by a rise of Ξ(z) one step earlier):
+  - FUEL-MONO (strictly monotone fuel keys per pair and W-run): DEAD, experiments/red/so/instances/so_th_n32, pair (12, 6), keys (1, 29)
+    twice.
+  - CONJECTURE FUEL-DESC (keys strictly descend unless a reset of Ξ(z) at a key ≥ the last one intervenes): DEAD,
+    experiments/n5-epoch/instances/nep56_n32 (+ .start), pair (28, 2): keys (1, 22) at k 9 then (1, 25) at k 13, Ξ(2) unchanged at
+    k 9-11. n5b agrees (xeng), Oink OK. Pins: check.sh «box 56».
