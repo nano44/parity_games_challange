@@ -1,6 +1,10 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 8 (successor 24; 2026-10-31 05:1xZ by date -u)
+- SRC L-5 (l-red a5340f2d, 2b39581d): MATCHES; SRC-L5 closed. xcn4_n12 own-node flips: 4 with «own at k OR k+1» (lane xcn.py), 3 with
+  «at k AND k+1» (F2): P-1 optional. Tool R2-N5-SRC/pincount.py.
+
 ## Resume point 7 (successor 24; 2026-10-31 04:0xZ by date -u)
 - R96 SETTLE LANDED (trunk 38bb8320, RESULTS l. 7748 = SETTLE L-5 token-identical). SRC L-4 (l-red 1edc2f0e, ec2c7139): Entry 4 applied
   exactly, R96 citation right; REQUIRED SRC-L5: «not O(1) per W-run (pins …)» overclaims (two constant pins; lane note: no growing family).
