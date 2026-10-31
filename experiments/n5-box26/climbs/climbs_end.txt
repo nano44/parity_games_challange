@@ -1,0 +1,7 @@
+climbs/fresh_n16_r1.log END steps 64506 best (12, 13, 0) n 16 secs 900 -> climbs/fresh_n16_r1.pg
+climbs/fresh_n32_r1.log END steps 55726 best (11, 11, 0) n 32 secs 900 -> climbs/fresh_n32_r1.pg
+climbs/fresh_n48_r1.log END steps 14834 best (14, 25, 0) n 48 secs 900 -> climbs/fresh_n48_r1.pg
+climbs/seedcedge_n48_r1.log END steps 12899 best (28, 31, 0) n 48 secs 1800 -> climbs/seedcedge_n48_r1.pg
+climbs/seedkeych_n32_r1.log END steps 57916 best (14, 18, 8) n 32 secs 1800 -> climbs/seedkeych_n32_r1.pg
+climbs/seedping_n48_r1.log END steps 13607 best (31, 33, 0) n 48 secs 1800 -> climbs/seedping_n48_r1.pg
+climbs/seedtie_n32_r1.log END steps 61673 best (14, 15, 8) n 32 secs 1800 -> climbs/seedtie_n32_r1.pg

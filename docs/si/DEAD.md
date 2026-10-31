@@ -666,3 +666,6 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
   - experiments/si/sb53/inst/xcnb2_n12 + .start: two kind-B transitions at the same vertex, σ̄(3) 9 → 11 → 9, with Ξ(3) = (3, ∅, 0)
     and λ_Ξ fixed.
   - n5b agrees on both. Kind A is bounded by n(n − 1) per run (from R47); kind B is open.
+- (§9, Lead 07:25Z) «The ceiling agreement A falls at every source-free W-run transition» (would join CEIL-ACC to R97 SRC-COUNT): DEAD.
+  experiments/red/xing/instances/u23sw64_n32.pg (default start): 12 source-free W-run transitions, A never falls (floor 8, ceiling 3,
+  inside 1 at 13 → 14). Corpus: 7,161 source-free non-falls, 3,653 strictly inside. Pins: check.sh «box 53d».

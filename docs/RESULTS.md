@@ -8029,6 +8029,270 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   Not a claim of TARGET.md §1 or §2 (a claim about S1's evaluation, a bound on event-free blocks and two equivalences about N5 runs on every
   game; no bound on a W-run, on a run or on running time; no algorithm claim); not a step-4 pass. GAPS G-N5-TIME: open.
 
+### R97 [refereed-only] N5 on EVERY game (SPEC S1-S5, under the standing SPEC premise of RESULTS R57 (1E-N3: S1's procedure realises the pointwise optimum; for S4a at a transition k → k + 1, σ_(k+1) is the pointwise optimum of the one-player arena H_k); premises RESULTS R15 (a), (d)), with: a run is the sequence of states (σ_k, τ_k), a transition is written k → k + 1 (states k, k + 1), and an Even vertex y switches at k if σ_(k+1)(y) ≠ σ_k(y); n := |V| (V the vertex set of the game), m_E := the number of edges leaving Even vertices, succ(v) := the successors of v; values (c, P, ℓ) (cycle node, path set, length) as in SPEC S1, ⊴, ◁, ⊵, ▷ the SPEC S1 order (better for Even) and its strict and reverse forms; for a state k: Ξ_k := Ξ_{σ_k}, σ̄_k := S1's Odd counterstrategy to σ_k, and Iσ_k := Even's improving edges at k (SPEC S2: {(y, z) : Ξ_k(z) ▷ Ξ_k(σ_k(y))}); W-run F := RESULTS R89's (a maximal run of consecutive states of one τ-stretch none of whose transitions is an S4c fallback or changes λ_W, the cycle-node map of W), with τ and C := {v : λ_W(v) = v} fixed on F; for a state k of F: W_k := the [S1-val] valuation of the (σ_k, τ)-plays and ℓ_k(x) its length component at x, D_k := {Odd o : σ̄_k(o) ≠ τ(o)}, and H_k := S4a's arena at k (Even v keeps {σ_k(v)} ∪ Iσ_k(v), Odd follows τ); for a transition k → k + 1 of F: S_k := D_k ∪ D_(k+1) ∪ C (the SOURCES), the transition is a SOURCE EVENT iff Ξ_(k+1)(v) ≠ Ξ_k(v) for some v ∈ S_k and SOURCE-FREE otherwise, and it is C-ONLY iff every Even vertex switching at k is in C; E^S_F := the number of source events of F; |F| := the number of transitions of F; for v ∈ V: HXS_F(v) := the number of transitions k → k + 1 of F with v ∈ S_k and Ξ_(k+1)(v) ≠ Ξ_k(v); m_C := Σ_(Even c ∈ C) (|succ(c)| − 1) (≤ m_E): for every N5 run on every game and every W-run F of it: (Lemma PLAY-CAUSE^S) if k → k + 1 is a source-free transition of F and x is a vertex with Ξ_(k+1)(x) ≠ Ξ_k(x), then some Even y ∉ C switching at k lies on x's (σ_(k+1), τ)-path to λ_W(x), so ℓ_(k+1)(x) ≥ ℓ_(k+1)(y); (source blocks) if the transitions k0, …, k1 − 1 of F are all source-free, then for k0 ≤ k < k1 every Even vertex v ∉ C switching at k and every vertex v whose Ξ changes at k has ℓ_(k+1)(v) ≥ k − k0 + 1 (proof: L-SI P-N5-SETTLE's RUN-SETTLE induction (l-si 6a70a520, signed; RESULTS R96) restricted to Even vertices outside C, with Case 2 and Case 2b's comparison step by (Lemma ONE-STEP, REFEREE-2 R2-N5-SRC §3.2, claude/referee-2 e8c1b62d; signed by REFEREE, claude/referee 8951ef7c), which closes gap G-SRC-1 (REFEREE R-N5-SRC §3, claude/referee 81f6b89c), using R15 (a), Claim RG′ of that packet, ARENA-MAX (L-RED R140, l-red 47000632; the S4a half of the R57 premise above) and L-LIT T54's LEX-BFS / IDX-MONO as signed in that packet's review, read at one S4a evaluation with W_(k+1)); (Lemma TAIL) if k → k + 1 is a source-free C-only transition of F, then Ξ_(k+1) = Ξ_k, W_(k+1) = W_k, H_(k+1) ⊆ H_k arena by arena, and σ_(k+2)(x) = σ_(k+1)(x) for every Even x ∉ C whenever k + 1 → k + 2 is a transition of F; (Theorem SRC-SETTLE) every maximal run k0, …, k1 − 1 of source-free transitions of F has k1 − k0 ≤ (n − 1) + m_C; (Corollary SRC-COUNT, an EQUIVALENCE) |F| ≤ E^S_F + (E^S_F + 1)(n − 1 + m_C) with E^S_F ≤ Σ_(v ∈ V) HXS_F(v), and, as HXS_F(v) ≤ |F| for every v, for every family of games every W-run has polynomially many transitions iff max_(v ∈ V) HXS_F(v) is polynomial over all W-runs F (2026-10-30) — a REDUCTION (no count is bounded here; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim; σ̄-changes, switches at C and σ̄-changes at own Ξ-cycle nodes are not source events (unless they change Ξ at a source); DATA: they repeat within one W-run (xcn4_n12: 4 σ̄-flips at one own Ξ-cycle node; cn3_n9: 3 switches at one c ∈ C); Lemma ONE-STEP is referee-originated) (P-N5-SRC, docs/red/P-N5-SRC.md; L-RED successor 35; fixes docs/red/P-N5-SRC-fixes.md entries 1-5), CHECKER PASS (docs/checker/C107.md, checker 449cb6fc)
+- Object (L-RED successor 35, Opus 5.5, D1/D18; frozen, unchanged during review): packet P-N5-SRC, docs/red/P-N5-SRC.md, sha1
+  3caae56e3afdfaab80739c0e12e397b3d6cc7a8b, 195 lines (l-red freeze 0521fb820cdf9ecd5717a789ca0e63a9851ffd3c, 2026-10-30T21:37:27Z, the
+  file's only commit; identical at l-red head 01545f81, at origin trunk a8357c53 and at the local trunk head 55c40f99; pinned in
+  experiments/red/check.sh l. 446, unchanged at a5340f2d). Both referees measured the sha1 at 0521fb82 (REFEREE l. 3-5 «Both equal the
+  Lead's figures.»; REFEREE-2 l. 2-3 «Both re-hashed: match.»). The Lead's freeze word is quoted at l. 2-5 («FREEZE a packet P-N5-SRC for
+  the referees. It is SRC-SETTLE as a delta on P-N5-SETTLE … PLAY-CAUSE^S, the new step (T) in full, and Theorem SRC-SETTLE with its
+  corollary (polynomial W-runs ⟺ HXS-POLY, both directions). …»; a message, not on file). Status (l. 12): «Status: a REDUCTION and an
+  EQUIVALENCE. No count is bounded here. G-N5-TIME stays OPEN. Not M3, not a step-4 pass, not a TARGET.md claim.» «Object: N5 only (SPEC
+  S1-S5).» (l. 13). Source (l. 7): docs/red/R147-xcn.md (l-red 47fd9163), «Where the two differ, THIS packet governs.»; not refereed here.
+  Base (l. 8-11): [SET] = P-N5-SETTLE, l-si 6a70a520 (sha1 aef403c3…; R96's object), its line L-2 (86becaa0, sha1 1fcb33c5…) and its fixes
+  (F0, entries 1, 2; E1.12 used in §3). [SET] has LANDED as RESULTS R96 (l. 7748; its title is SETTLE line L-5, l-si ce7bdc3b, sha1
+  39e44fe2…, not L-2); L-5 cites it as «RESULTS R96» (E4.1). Sections: §0 what to sign (l. 15-24), §1 setting, [SET] quotes, NEW
+  definitions, remarks (R1), (R2) (l. 26-54), §2 PLAY-CAUSE^S (l. 56-82), §3 (S_j), (X_j) on source blocks, C1-C7 (l. 84-110), §4 Lemma
+  TAIL (l. 112-141), §5 SRC-SETTLE, SRC-COUNT, EQUIVALENCE (l. 143-165), §6 Facts F1, F2 (READING, l. 167-172), §7 DATA and pins (l.
+  174-192), proposed line (l. 194-195).
+  The RESULTS line, history: (1) the frozen line docs/red/P-N5-SRC-line.txt (0521fb82), sha1 3101a0c04f7959ccd50b86f5e6fa76789bdf6995, the
+  line both referees reviewed: REFEREE REQUIRED SRC-L1 (|F|), SRC-L2 (t free), precision SRC-L3 (l. 23, l. 102-116); REFEREE-2 REQUIRED
+  SRC-L1, SRC-L2, SRC-L3 (ONE-STEP), N-1 optional (l. 18, l. 140-160). (2) L-1 059d2733 (6e323e0a): from the Lead's relay; superseded. (3)
+  L-2 9fcb5790 (77a6d979): SRC-L1, SRC-L2, N-1 in REFEREE-2's wording; REFEREE §C P2 l. 104 MATCHES. (4) L-3 5736d8ab (564bef5a): plus
+  SRC-L3 (ONE-STEP cited, L41 tail) and V named; REFEREE §C l. 147 and REFEREE-2 L3 l. 24: MATCHES (Opus 5.5, D15). (5) L-4 ec2c7139
+  (1edc2f0e, fixes entry 4, after R96 landed): the SETTLE citation «RESULTS line L-2, l-si 86becaa0» → «RESULTS R96» (E4.1) and the
+  scope tail's «not O(1)» half relabelled DATA (E4.2); REFEREE 21 §9 (db4b0d3f) l. 172 «Verdict on L-4: MATCHES (Opus 5.5, D15).»;
+  REFEREE-2 24 R2-N5-SRC-L4.md (5e81fc5c) l. 41 «**DOES NOT MATCH as a landing line: one REQUIRED change, SRC-L5** (the «not O(1)»
+  wording, pre-existing).» (6) L-5 2b39581d (a5340f2d, fixes entry 5, E5.1 = REFEREE-2's minimal fix, R2 L4 l. 36): «DATA: they are not
+  O(1) per W-run (pins xcn4_n12, cn3_n9);» → «DATA: they repeat within one W-run (xcn4_n12: 4 σ̄-flips at one own Ξ-cycle node; cn3_n9: 3
+  switches at one c ∈ C);»; REFEREE §10 (42272e28; 3a7ff834) l. 191 «Verdict on L-5: MATCHES (Opus 5.5, D15).»; REFEREE-2
+  R2-N5-SRC-L5.md (f8178846) l. 36 «L-5 (2b39581d): **MATCHES** (Opus 5.5, D15). No required change. SRC-L5 is CLOSED. P-1 is optional.»
+  Both referees record a self-correction: each had passed the «not O(1)» clause at the L-3 object (REFEREE §10 l. 175 «Correction to §9
+  (my miss).»; REFEREE-2 R2-N5-SRC-L4.md l. 42 «Correction (my side): my L-3 MATCHES (b441f3da) and my SRC report §6 passed this clause.
+  I missed it there.»). L-5 supersedes the earlier lines; the title is L-5 verbatim with its own date (to check (1)). Neither referee found
+  a FALSE claim statement; every REQUIRED item binds a symbol (|F|; k, σ_(k+1), H_k in the R57 gloss), cites the repair of an inherited
+  proof-text gap (SRC-L3) or withdraws an overclaim in the scope tail's data clause (SRC-L5).
+  Setting (packet §1): N5 = SPEC S1-S5, any parity game; a W-run F as in R89 (quoted verbatim, l. 29-30), on which «τ_k =: τ and C := {v :
+  λ_W(v) = v} are fixed» (l. 31); «Every transition of F switches some Even vertex: with τ fixed and no S4c fallback, S4a changed σ (SPEC
+  S4).» (l. 32); D_k, H_k as in [SET] (l. 33-34); ARENA-MAX (L-RED R140 §2, l-red 47000632) = the S4a half of [R57] (l. 35-37). NEW (l.
+  42-48): SOURCES S_k := D_k ∪ D_(k+1) ∪ C; a SOURCE EVENT changes Ξ at some v ∈ S_k; E^S_F, HXS_F(v); C-ONLY transitions; m_C := Σ over the
+  Even c ∈ C of (|succ(c)| − 1) ≤ m_E. Remarks (l. 49-54): (R1) for b with λ_W(b) = c ≠ b, W_k(b) reads b's path up to c, which meets no other
+  W-cycle node, so W_k(b) does not depend on σ_k(c) and W_k(c) not on σ_k; (R2) Ξ_k is a function of σ_k. §1 cells: REFEREE «CHECKED» (l.
+  17); REFEREE-2 «checked ✓» / «none» (l. 12). Names: the line's «Lemma TAIL» is this packet's §4 lemma, NOT landed R39's TAIL (RESULTS l.
+  1862, one-Odd-choice games); D_k has the meaning of R92's D_s; the line's S_k is the source set, not SETTLE's induction statement (S_j)
+  (to check (6)).
+- Claims signed (both referees "(Opus 5.5, D15)": REFEREE successor 20 (report, Addendum 1, §C Part 1) and successor 21 (§C Part 2, lines
+  L-3, L-4, L-5); REFEREE-2 successor 24, with its L-3, L-4 and L-5 files). Items (a)-(e) are SIGNED in both verdict tables (REFEREE "##
+  Verdicts" l. 14-23 of R-N5-SRC.md; REFEREE-2 "## 1. Verdict table" l. 9-18 of R2-N5-SRC.md), in REFEREE-2's §C C.1 (l. 7-15) and in both
+  parts of REFEREE's §C (Part 1 l. 8-19; Part 2 l. 44-58); the table is to-check (4). All are about N5 on every game, inside W-runs.
+  Premises LANDED (as L-5 names them): SPEC S1-S5; RESULTS R15 (a), (d); R89's W-run; standing premise: RESULTS R57's SPEC premise (1E-N3),
+  used as ARENA-MAX by (b) (Cases 2, 2b, 2c and ONE-STEP) and (c) ((T1) both directions). Signed in [SET]'s review and quoted, not
+  re-signed here: Claim RG′ and [SET] §5's induction (landed in R96, RESULTS l. 7748), L-LIT T54 LEX-BFS / IDX-MONO, L-RED R140 ARENA-MAX.
+  The code's match to SPEC is DATA (R15 G-N5T-1). No item uses a count.
+  (a) Lemma PLAY-CAUSE^S (§2, l. 56-82): «Let k → k + 1 be a source-free transition of F. If Ξ_(k+1)(x) ≠ Ξ_k(x), then some Even y with
+      λ_W(y) ≠ y switches at k and lies on x's (σ_(k+1), τ)-path to λ_W(x). In particular ℓ_(k+1)(x) ≥ ℓ_(k+1)(y).» (l. 57-58); proof: the
+      first index i of x's play in S_k exists; Ξ(x) is a fixed function of y_0 … y_(i−1) and Ξ(y_i); with no Even switch before i every Odd
+      y_t (t < i) is outside D_k ∪ D_(k+1), so the k-play has the same prefix and source-freeness gives Ξ_k(y_i) = Ξ_(k+1)(y_i). Cells:
+      REFEREE «SIGNED» (l. 18; §2 l. 25-33: «This is a genuine strengthening of [SET]'s PLAY-CAUSE: it needs no «no σ̄-change» and no «no CN
+      switch», because S_k contains D_k ∪ D_(k+1) and C itself.»); REFEREE-2 «SIGNED», «none» (l. 13; §2 l. 25-36 «✓ SIGNED.»).
+  (b) (S_j), (X_j) on source blocks (§3, l. 84-110): «Let the transitions k0, k0 + 1, …, k1 − 1 of F all be source-free (a SOURCE BLOCK).»;
+      «(S_j) Every Even y ∉ C that switches at k has ℓ_(k+1)(y) ≥ j + 1.»; «(X_j) Every vertex x with Ξ_(k+1)(x) ≠ Ξ_k(x) has ℓ_(k+1)(x) ≥ j +
+      1.» (j := k − k0; l. 85-87). Proof: [SET] §5's induction with changes C1-C7 (l. 89-102); «Nowhere is σ_k(c) compared with σ_(k+1)(c).»
+      (l. 106). Case 2 and Case 2b's comparison step is Lemma ONE-STEP (below; gap G-SRC-1). Cells: REFEREE «SIGNED» with G-SRC-1 closed (l.
+      19; §3 l. 35-61; Addendum 1 l. 185 «Verdict: [SET] §5 (RUN-SETTLE) stays SIGNED, with Case 2 and Case 2b read through ONE-STEP. The
+      same holds for SRC §3.»); REFEREE-2 «SIGNED, with G-SRC-1 closed by my Lemma ONE-STEP (§3.2)» (l. 14; §3 l. 38-92).
+      Lemma ONE-STEP (referee-originated; proof step of (b), NOT a landed statement; L41): «Let t → t + 1 be a transition of a W-run F, y ∉ C
+      an Even vertex, c := λ_W(y), z ∈ H_t(y) with λ_W(z) = c, and z's (σ_(t+1), τ)-path to c avoiding y. Then y ⊕ W_(t+1)(z) ⊴
+      W_(t+1)(y).» (R2-N5-SRC.md l. 67-68); proof l. 69-83: ρ := σ_(t+1) with y ↦ z is a strategy of H_t, ARENA-MAX, and a split by the top
+      z* of the new cycle when y lies on c's cycle (z* = c: equality; z* even: contradicts ARENA-MAX; z* odd: strict ◁). Use (l. 85-87):
+      «Case 2 is ONE-STEP at t = k − 1 with z = b.»; «Case 2b is ONE-STEP at t = k with z = a.» Author: REFEREE-2 24, «**Lemma ONE-STEP**
+      (REFEREE-2 24, PROVED).» (l. 66). Other referee: REFEREE 20, R-N5-SETTLE.md Addendum 1 (8951ef7c) l. 163-164 «SIGNED (Opus 5.5,
+      D15)», own check l. 167-174, instantiations «(both CONFIRMED)» l. 178-184. G-SRC-1 (R-N5-SRC.md l. 42-61; R2-N5-SRC.md l. 51-65): in
+      [SET] §5 Case 2, «val(ρ, τ)(y) = y ⊕ W_k(b)» «holds only if y is NOT on c's σ_k-cycle» (REFEREE l. 45); REFEREE-2's tool finds 4
+      reachable states where the written equality is false (red/n3/instances/ret22_n40.pg with its start, t = 2-5, y 5, z 23, c 0; «In none
+      of them does y then switch to z, so no instance of Case 2 or 2b itself is wrong.», l. 64-65); the conclusion holds by ONE-STEP.
+      REFEREE's own closing argument (R-N5-SRC §3 l. 48-58, a four-way split) is SIGNED by REFEREE-2 (R2-N5-SRC-C.md l. 41) and is the same
+      split (C.2 l. 39-40). The same gap sits in [SET] §5 (R96's RUN-SETTLE): «a joint miss» of both SETTLE reports (Addendum 1 l. 161; R2
+      §C C.4 l. 64-65); SETTLE fixes entry 4 (l-si b04a1bbb) records it, and R96 LANDED with it closed: R96's title reads «Cases 2, 2b via Lemma
+      ONE-STEP (REFEREE-2 R2-N5-SRC §3.2, claude/referee-2 e8c1b62d; signed by REFEREE R-N5-SETTLE Addendum 1, claude/referee 8951ef7c),
+      which closes gap G-SRC-1 (REFEREE R-N5-SRC §3, claude/referee 81f6b89c)», the SHAs of L-5's proof note.
+  (c) Lemma TAIL (§4, l. 112-141): «Let k → k + 1 be a source-free C-only transition of F.»; «(T0) Ξ_(k+1) = Ξ_k, W_(k+1) = W_k, and H_(k+1)
+      ⊆ H_k (arena by arena).»; «(T1) If k + 1 → k + 2 is a transition of F, it is C-only: σ_(k+2)(x) = σ_(k+1)(x) for every Even x ∉ C.»
+      (l. 113-115). Proof: (T0) by PLAY-CAUSE^S, (R1) and transitivity of ▷ at a switching c (l. 116-124); (T1) W_(k+2) = W_(k+1) by
+      ARENA-MAX at k + 1 and at k (σ_(k+2) ∈ H_(k+1) ⊆ H_k), then equal candidate sets and keys, IDX branch immediate, LEX branch by induction
+      on L (l. 125-141). Cells: REFEREE «SIGNED» (l. 20; §4 l. 63-76; l. 76 «(T1) uses only that k → k + 1 is source-free and C-only.»);
+      REFEREE-2 «SIGNED», «none» (l. 15; §4 l. 94-110 «SIGNED, no gap.»).
+  (d) Theorem SRC-SETTLE (§5, l. 144-156): «For every N5 run on every game, every W-run F of it, and every source block k0, …, k1 − 1 of F:
+      k1 − k0 ≤ (n − 1) + m_C.»; proof: by (T1) a block is normal transitions then a C-only TAIL; normal positions j ≤ n − 2 by (S_j); in the
+      tail Ξ is constant (T0), so each switch of an Even c ∈ C strictly raises Ξ*(σ(c)) among |succ(c)| values: at most m_C tail
+      transitions. The line states it for every MAXIMAL run of source-free transitions (narrower). Cells: REFEREE «SIGNED» (l. 21; §5 l.
+      79-83); REFEREE-2 «SIGNED (rests on §3)», «none of its own» (l. 16; §5 l. 113-117).
+  (e) Corollary SRC-COUNT and the EQUIVALENCE (§5, l. 157-162): «For every N5 run on every game and every W-run F of it, |F| ≤ E^S_F +
+      (E^S_F + 1)(n − 1 + m_C).» («the source-free transitions form at most E^S_F + 1 maximal source blocks»); «For every family of games,
+      every W-run has polynomially many transitions iff max_(v ∈ V) HXS_F(v) is polynomial over all W-runs F.» (⇐ via E^S_F ≤ n·max_v HXS_F(v)
+      and m_C ≤ m_E; ⇒ via HXS_F(v) ≤ |F|). |F| is the number of transitions of F (L-2 to L-5, SRC-L1). Cells: REFEREE «SIGNED» (l. 21; l. 84-85
+      «Equivalence ✓: |F| ≤ (E + 1)(n + m_C) − 1 ≤ (1 + n·max HXS)(n + m_E), and HXS ≤ |F|.»); REFEREE-2 «SIGNED» (l. 16; l. 118-122).
+  Gap maps: REFEREE §C Part 1 l. 22-23 and Part 2 l. 76-82 (joint: no open gap; G-SRC-1 CLOSED by ONE-STEP, «Lemma ONE-STEP is
+  referee-originated (L41).»); REFEREE-2 §C l. 46-49 and l. 67-70 («Every SRC item to sign is SIGNED by both referees.»; «G-SRC-1 was found
+  by both and is CLOSED.»), with REFEREE's ONE-STEP signature confirmed in R2-N5-SRC-L3.md l. 17 (to check (4)). Nothing FALSE on either
+  side. Line items: SRC-L1, SRC-L2, SRC-L3 closed in L-3; SRC-L5 (REFEREE-2 on L-4, REQUIRED) closed in L-5 (R2-N5-SRC-L5.md l. 36
+  «SRC-L5 is CLOSED.»); no line item is open.
+  The RESULTS line (L-5) claims less than the reports: no (R1), (R2) as statements, no ONE-STEP statement, no «it is C-only» in (T1), and
+  SRC-SETTLE for maximal runs only. Every claim clause it states is one of (a)-(e); its scope tail's DATA clause states two pin counts,
+  not a claim (both referees recounted them: Data).
+- Fixes (docs/red/P-N5-SRC-fixes.md, L-RED successors 35 (entries 1-3) and 36 (entries 4-5), APPEND-ONLY, five entries, five commits each
+  +N/−0: 6e323e0a (+27/−0), 77a6d979 (+36/−0), 564bef5a (+22/−0; the file then sha1 f8d54eec…, 85 lines), 1edc2f0e (+15/−0; sha1
+  f9cb33e3868b887060abeee11c82de2e3b00bfcb, 100 lines), a5340f2d (+16/−0; sha1 11202c3c4f40032fbbbd9b19d7906d71d4e5d616, 116 lines; = l-red
+  head 01545f81 = origin trunk a8357c53 = local 55c40f99; the last commit touching the file)). Header (l. 2): «The frozen files are never
+  edited. Each entry names the item, says whether a TO-SIGN item is affected, and gives the change.» Each entry, with the referees' words:
+  - Entry 1 (l. 4-27; Lead's relay of REFEREE-2 at 22:29Z, e8c1b62d «NOT fetchable» at the time, l. 7-9): E1.1 SRC-L1 (|F| in the
+    quantifier), E1.2 SRC-L2 (R93's H_t gloss), E1.3 N-1; L-1 at l. 27; superseded by entry 2 (l. 60 «Entry 1's line L-1 (059d2733…) is
+    superseded by L-2. It stays filed.»).
+  - Entry 2 (l. 29-63; the report verbatim): E2.1 SRC-L1 «|F| := the number of transitions of F» (l. 38-42); E2.2 SRC-L2 «for S4a at a
+    transition k → k + 1, σ_(k+1) is the pointwise optimum of the one-player arena H_k» (l. 43-50; «That leaves σ_new unbound, which the
+    report also flags.», l. 46); E2.3 N-1 (l. 51-53); E2.4 SRC-L3 deferred to L-3 (l. 55-59); L-2 at l. 63.
+  - Entry 3 (l. 65-85; after REFEREE signed ONE-STEP): E3.1 SRC-L3, the ONE-STEP proof-note insertion and the L41 scope tail (l. 71-75);
+    E3.2 REFEREE's precision, V named (l. 76-78); REFEREE's SRC-L1 / SRC-L2 «already applied in L-2, in REFEREE-2's wording» (l. 79-81);
+    L-3 at l. 85.
+  - Entry 4 (l. 87-100; L-RED successor 36, after R96 LANDED; the Lead's relay 02:4xZ, a message): E4.1 «(l-si 6a70a520, signed; RESULTS
+    line L-2, l-si 86becaa0)» → «(l-si 6a70a520, signed; RESULTS R96)» (l. 90-91, «docs/RESULTS.md l. 7748 on trunk 38bb8320»); E4.2 the
+    scope tail's «not O(1)» half relabelled DATA (l. 92-94, «The «not source events» half is definitional and stays a statement; only the
+    «not O(1)» half is relabelled.»); source note «1-3» → «1-4» (l. 95); word-diff l. 96-97; L-4 at l. 100.
+  - Entry 5 (l. 102-116; SRC-L5, REFEREE-2's REQUIRED change on L-4, relayed by the Lead 04:2xZ): «The overclaim has been in the line
+    since the frozen version; it is withdrawn here.» (l. 104); counts checked against the pins (l. 105-107, xcn.py --all: «run 0-4 L 4 CN
+    {} XCN {0: 4}», «run 0-3 L 3 CN {1: 3} XCN {}»); E5.1 (l. 108-110); source note «1-4» → «1-5» (l. 111); word-diff l. 112-113; L-5 at l. 116.
+  No fix changes a signed statement of the packet: every entry says «No TO-SIGN item of the frozen packet changes.» (l. 10, l. 34, l. 69,
+  l. 88, l. 103); all fixes bind symbols, word the line, cite the repair or a landed entry (E4.1), or relabel and correct the scope tail's
+  data clause (E4.2, E5.1). G-SRC-1 itself is a proof-text gap of the reused [SET] §5, closed by ONE-STEP
+  (Claims (b)); it is recorded in the fixes through E2.4 / E3.1.
+- Not signed: §1 (setting, (R1), (R2), NEW definitions; «CHECKED» / «checked» by both); the [SET] pieces quoted in §1 (not re-signed; packet
+  l. 22); §6 F1 («A CN switch at Even c ∈ C (a → b) with Ξ_(k+1)(c) = Ξ_k(c) has λ_Ξ(c) = c at k or at k + 1.», l. 168; «I have not proved
+  that proviso here.», l. 170; DATA «CNOX = 0 on the corpus and on 10,000 random games») and F2 (l. 172), READING, «not used in §2-§5:
+  confirmed» (REFEREE-2 l. 17); §5's comparison with HEAD-RED / HEAD-RED′ (l. 163-165, READING); §7 DATA and pins; the scope tail's DATA
+  clause (L-5: two pin counts, recounted by both referees). OPEN, not claimed: max HXS_F polynomial over all W-runs (the residual of (e);
+  «HXS-POLY» in the Lead's freeze word) and G-N5-TIME. No CONJECTURE of the packet is killed; no dead end in this entry. Lane work after
+  the freeze other than the SRC fixes commits is not part of this entry (to check (12)).
+- Referee strengthening (NOT part of this entry; remarks of one referee, remarks of both outside the verdict cells, readings):
+  (i) REFEREE §2 l. 32-33 and REFEREE §C P2 l. 47: PLAY-CAUSE^S strengthens [SET]'s PLAY-CAUSE (no «no σ̄-change», no «no CN switch»).
+  (ii) REFEREE l. 76 / REFEREE-2 l. 109: (T1) needs only that k → k + 1 is source-free and C-only (REFEREE §C P2 l. 51 «My note … = R2's»).
+  (iii) REFEREE l. 57-58: in Case 2 sub-case (iv) the chain «W_k(y) ▷ y ⊕ W_k(b) = W_(k+1)(y) ⊵ W_k(y)» is a contradiction, so (iv) is
+      excluded there (REFEREE-2 §C l. 34 «REFEREE's extra remark is also right»).
+  (iv) REFEREE-2 §C l. 36-38: REFEREE's split needs «b's path to be disjoint from c's arc from c to y»; «It is: if b's path entered that arc,
+      it would reach y before c»; a precision, stated in ONE-STEP (β) (REFEREE §C P2 l. 117-118 «I accept it.»).
+  (v) Mutation control: REFEREE l. 96 «MUT 1 (block bound one less) never bites: the bound (n − 1) + m_C is not tight on the corpus.» So
+      the block bound has no biting control.
+  (vi) Self-corrections: REFEREE Addendum 1 l. 161 «My signature of [SET] §5 (§5 above, «Case 2 ✓», «Case 2b ✓») missed this. It was a
+      joint miss with REFEREE-2 23.»; REFEREE-2 §C C.4 l. 64 «my predecessor's SETTLE report (§2.5) and §C missed G-SRC-1»; on
+      the line (SRC-L5): REFEREE §10 l. 175 «Correction to §9 (my miss). I passed L-4's «DATA: they are not O(1) per W-run (pins
+      xcn4_n12, cn3_n9)».» and REFEREE-2 R2-N5-SRC-L4.md l. 42 (Line history).
+  (vii) READING (packet §5 l. 163-165): «the terms SB_F, CN_F and XCN_F do not occur, and ROOT-FLIP is not used»; «the heads are the
+      sources D ∪ C in place of the targets U (or U ∪ τ(Odd))». Not signed.
+- Honest limits: (i) a REDUCTION and an EQUIVALENCE: no count is bounded; max HXS_F polynomial and G-N5-TIME stay open; the equivalence
+  is a reformulation of «polynomial W-runs», not a bound. (ii) Everything is inside W-runs; W-runs are not whole runs (τ-changes, S4c
+  fallbacks and λ_W-changes cut runs into W-runs, R89). (iii) (b) rests on [SET] §5's induction (R96's RUN-SETTLE, LANDED, RESULTS l. 7748)
+  with changes C1-C7, and its Case 2 / 2b comparison step on Lemma ONE-STEP, a referee-originated proof (author REFEREE-2 24, signed by
+  REFEREE 20; L41; REFEREE's own four-way split signed by REFEREE-2 as a second repair). (iv) (b), (c) rest on L-LIT T54's LEX-BFS /
+  IDX-MONO and on Claim RG′ (landed in R96; T54 is not landed), not landed here: signed «as used» in SETTLE's review (Case 2a) and checked
+  in their (T1) use by both SRC referees (REFEREE §4; REFEREE-2 §4); the line names them in the source-block proof note only, not at TAIL
+  (to check (7), D-3).
+  (v) Claim RG′ and the choice rules are about S1's evaluation as SPEC S1 and si.py define it; standing premise R57 (1E-N3); the code's
+  match to SPEC is DATA (R15 G-N5T-1). (vi) No biting mutation control for the block bound (Referee strengthening (v)). (vii) The scope
+  tail's DATA clause states repeats on two pins only, «DATA: they repeat within one W-run (…)»; at the L-3 object it read «not O(1) per
+  W-run» (to check (7), D-1; REFEREE-2 SRC-L5; withdrawn in L-5). The pins show repeats (4 and 3 at one vertex in one W-run), not a growing
+  family; R147 l. 179 «Not done: a super-linear XCN or CN family.» Noted, NOT blocking (REFEREE-2 P-1, optional, R2-N5-SRC-L5.md l. 22-26):
+  the line does not define «own Ξ-cycle node» for a flip, and xcn4_n12's count depends on the reading: 4 under the lane's «at k OR at k +
+  1» (xcn.py l. 5 «its own Xi-cycle node at k or at k+1»), 3 under packet F2's «at k AND at k + 1» (P-N5-SRC.md l. 172 «λ_Ξ(o) = o at k and
+  at k + 1»); «repeat within one W-run» holds either way (R2 L5 l. 21 «(3 or 4 ≥ 2)»). (viii) Counts are transitions, not bit operations; no
+  running-time bound. (ix) Not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open.
+- Data (DATA, not proof): pinned (packet §7 l. 187-188: «Pins (experiments/red/check.sh «R147»; sha1 in xcn/pins.sha1; xeng state sequences
+  identical; Oink 8fbf0a7 --zlk winners equal and verify passes)»). experiments/red/check.sh at 0521fb82: sha1
+  ed5f9faa1cd80728bdb541fb19b324dfffebf257, 450 lines; at 564bef5a: sha1 21f901459271882aab35b09e0c4f0930962e8160, 483 lines; l. 1-447
+  identical (by diff). This entry's blocks: l. 437-444 («R147»: xcn/pins.sha1, xcn4_n12 by xcn.py, cn3_n9 by srcsettle.py, srcrand seed 1,
+  xeng and Oink on both pins) and l. 445-447 (packet and frozen line sha1) at both commits, and at 564bef5a l. 477-480 (L-1, L-2, L-3 sha1).
+  l. 448-476 at 564bef5a (R148, R149) are not this entry. Re-run for the 00:11Z draft from a `git archive` of each commit (experiments/ and
+  docs/red/; tools/oink/build linked to the session's Oink build so the Oink branch runs; from experiments/red), l. 5-7 (set -euo pipefail,
+  cd, temp dir) plus those blocks, 2026-10-30 23:59:06Z-23:59:07Z by date -u (read before and after), rc 0 each. Single pins (564bef5a
+  archive, 23:59:13Z, rc 0 each): «XCN xcn4_n12.pg n 12 iters 5 wruns 2 maxL 4 maxCN 0 maxCNc 0 maxXCN 4 maxXCNo 4 sumCN 0 sumXCN 4»; «SRC
+  cn3_n9.pg n 9 VIOL 0 E 3 Esrc 3 CN 3 CNO 3 CNOX 0 FLIPONLY 0 maxblk 0 maxL 3 maxEsrc 3 maxE 3 maxHXS 0 VIOL2 0 TAILV 0 BLKV 0 maxblk2 3
+  maxtail 2 Es2 0»; «OINK OK» on both pins; xcn/pins.sha1 «OK» for all four files (cn3_n9.pg 0d5eb838…, .start e65854b7…; xcn4_n12.pg
+  e43dc878…, .start 22eb4725…). Tools identical at 0521fb82 and 564bef5a: xcn/srcsettle.py 43a2ea9fe7e9b40dff1e253b86f5c79d4a8658b5, xcn.py
+  8d61d49a8d905b5319f4405032b5fb0d794a1e54, srcrand.py 81c4127c066faca535d7f9ad32913c0274e98652 (also at a5340f2d).
+  L-4 and L-5 pins (this rebuild): check.sh at 1edc2f0e (sha1 0d8e3f4fd2fb17d02b9916cda3bb57d529aa0db7, 517 lines) adds l. 481 (L-4 sha1
+  ec2c7139…); at a5340f2d (sha1 ca610181b3a28a4c74078f66250e4a8f47d5a852, 528 lines; l. 1-480 identical to 564bef5a, by diff) adds l. 482
+  (L-5 sha1 2b39581d…); l. 1-482 are unchanged at l-red head 01545f81 (c3172901…, 533 lines). Re-run from a `git archive` of each commit
+  (l. 5-7, l. 437-447 and l. 477 to the last L-pin line; tools/oink/build linked), 2026-10-31 05:45:05Z-05:45:06Z by date -u, rc 0 each;
+  single pins at a5340f2d: the XCN, SRC and «OINK OK» lines above unchanged, xcn/pins.sha1 OK for all four files.
+  DATA OF RECORD (packet §7 l. 179-186; box 50b's lists sbcg 719 + alt 413 = 1,132 games, n5b SPEC traces, xcn/runsrc.sh): 1,130 games
+  analysed, 2 RUN-ERROR (invalid starts); VIOL2 0, TAILV 0, BLKV 0, CNOX 0; source events 4,546 against [SET]'s events 4,724; longest source
+  block 67 (gate_K64_n581, n 581, default best-reward start), 63 on n ≤ 100 (runfam_K40, n 79); longest C-only tail 1 (2 on the pin cn3_n9);
+  random games (seeds 11-14, 2,500 each, n 6-14) all counters 0, W-runs ≤ 3 transitions. Re-summed for the 00:11Z draft: equal (to check (10)).
+  Second engine: seg/xeng.py state sequences identical on both pins; Oink 8fbf0a7 --zlk winners equal and verify passes on both pins (pinned
+  l. 443-444).
+  REFEREE (successor 20; own docs/referee/scratch/src_probe.py, «adapted from settle_probe.py», l. 87): «813 runs (740 games, 73 skipped), all
+  RC 0, 1,060 W-runs, 8,066 transitions.» (l. 93); «12,729 PLAY-CAUSE^S checks; 27,157 IDX and 266,486 LEX checks. VIOLATIONS 0 for every
+  check.» (l. 94); «Longest source block 63 (n ≤ 100; …)» (l. 95); CYC (G-SRC-1's configuration at actual Case-2 switches): «3 occurrences,
+  all of type (ii)» (l. 59); pins cn3_n9 and xcn4_n12, 0 violations (l. 97-100).
+  REFEREE-2 (successor 24; own docs/referee-2/R2-N5-SRC/src_check.py, «Lane xcn/*.py is not imported.», l. 124): checks PCS, S, X, ORD, T0,
+  T1, NRM, TL, BLK, SC, HXS and OS (l. 126); 0 violations on sbcg.lst (719), alt_all with start (94) and start-less (319), random seeds 21,
+  22 (5,000 games, 20,000 runs) and the pins (l. 128-134); «OS = 0 on 852,572 instances (the corpus and 20,000 random runs, §5).
+  OS_newtop_even = 0.» (l. 90); longest source block 67 (gate_K64_n581) (l. 130). Pin counts of L-5's DATA clause, each on the referee's
+  own code: REFEREE §10 l. 183-187 (docs/referee/scratch/src_l5_counts.py, rl_engine) «XCN {0: 4}, CN {} ✓» (xcn4_n12) and «CN {1: 3}, XCN
+  {} ✓» (cn3_n9); REFEREE-2 R2-N5-SRC-L5.md l. 14-21 (pincount.py, «lane xcn.py is not imported.»): cn3_n9 «CN {1: 3}», xcn4_n12 4 flips at
+  Odd 0 (or-reading) or 3 (and-reading). No signed statement uses any count.
+- Signatures: REFEREE docs/referee/R-N5-SRC.md (report 81f6b89ca179cfa0512f0e5f6d0e9789fb659a60, 2026-10-30T22:19:54Z, committed directly
+  on claude/referee, first on trunk by 0787f1d4 (22:55:17Z); sha1 de52a7f4973ae2129716b89692dac7b0d264cbcb, 125 lines, unchanged since (=
+  referee head 3a7ff834 = trunk); successor 20): §1 CHECKED; §2-§5 SIGNED; «Verdict: MATCHES the signed items once SRC-L1 and SRC-L2 are
+  applied.» (l. 116, on 3101a0c0). REFEREE docs/referee/R-N5-SETTLE.md Addendum 1 (8951ef7c98cb14326cf4b6435fc6a0ed5a4356f6,
+  2026-10-30T22:47:50Z, +33/−0, 193 lines, sha1 f93eedacfb9fbc550fc5b36f259b4e10e151c148, unchanged since (= referee head = trunk); first on
+  trunk by 5e499cb3, 23:10:24Z; successor 20): «(1) G-SRC-1 CONFIRMED, as a proof-text gap in [SET] §5 Case 2 and Case 2b.» (l. 155); «(2)
+  Lemma ONE-STEP (…): SIGNED (Opus 5.5, D15).» (l. 163-164); «Verdict: [SET] §5 (RUN-SETTLE) stays SIGNED, with Case 2 and Case 2b read
+  through ONE-STEP. The same holds for SRC §3.» (l. 185). REFEREE §C docs/referee/R-N5-SRC-C.md: Part 1 (successor 20,
+  9d67aa1ea2fce04d05c9440c0284c0a79222d0ff, 23:13:30Z, new file, 30 lines, sha1 e7687a089317f954dc4dbdb2ff73c535162f251d; first on trunk by
+  f6a77a03, 23:40:50Z): cross-map «agree» on every item (l. 8-19), joint gap map (l. 21-25); Part 2 (successor 21, 957c3e90, 23:12:50Z,
+  merged by 8a1ba423 23:37:41Z) with the L-3 section (8a1ba423; stamp fix 8197e1821997ba02eeef9bba1a08d424a076b54a, 23:37:49Z; the file at
+  8197e182: 147 lines, sha1 729e80f001d96f7b6d7721c9ef813a6be197bc6b; on trunk by merge 73feb559, 23:55:24Z, now on origin trunk):
+  «Verdict on L-2: MATCHES SRC-L1, SRC-L2 and N-1 (Opus 5.5, D15).» (l. 104); «Verdict on L-3: MATCHES SRC-L1, SRC-L2, SRC-L3 and N-1
+  (Opus 5.5, D15). No REQUIRED change remains on the SRC line.» (l. 147). §9 (db4b0d3f599e2c97f5f188efe5db170c4c5c6dd0,
+  2026-10-31T03:54:49Z, +25/−0; on origin trunk): L-4 word-diff (l. 150-156), the R96 citation checked against RESULTS l. 7748 at 38bb8320
+  (l. 157-163), the DATA relabel (l. 164-170), «Verdict on L-4: MATCHES (Opus 5.5, D15).» (l. 172). §10
+  (42272e284e22c8095fa3978ee5a2342d346de5bf, 05:09:22Z, +19/−0, with docs/referee/scratch/src_l5_counts.py +36; stamp and source line
+  3a7ff8340fa6999d4faa342a5dd600a4b1219533, 05:09:32Z, +2/−2; the file at 3a7ff834: 191 lines, sha1
+  f6bfb04808a2fba8e0a8271ba07481d1a82a2485, = referee head; on trunk by merge 0f69125d, 05:43:15Z): «Correction to §9
+  (my miss).» (l. 175), its own pin counts (l. 183-187), «Verdict on L-5: MATCHES (Opus 5.5, D15).» (l. 191). REFEREE-2
+  docs/referee-2/R2-N5-SRC.md (report e8c1b62dcb5023db58999f36c24e80f0d3492f76, 2026-10-30T22:24:08Z, committed directly on
+  claude/referee-2, first on trunk by b4002ba6 (22:41:48Z); sha1 bd04826d25e8c9f1daf91515400d6e3f287a7eb1, 169 lines, unchanged since;
+  successor 24): §1 checked; §2, §4, §5 SIGNED; §3 SIGNED with G-SRC-1 closed by its Lemma ONE-STEP (l. 162-169). §C
+  docs/referee-2/R2-N5-SRC-C.md (824651ddd7b13f90b8da353b9a9d764df2ef515f, 2026-10-30T22:56:32Z, new file, 70 lines, sha1
+  4131357d951c81118637ac6674dd3ba372a5c356, unchanged since; first on trunk by b046d169, 23:10:24Z): «**Verdict on REFEREE's G-SRC-1
+  closing argument: SIGNED (Opus 5.5, D15).**» (l. 41); «Every SRC item to sign is SIGNED by both referees.» (l. 68). Line file
+  R2-N5-SRC-L3.md (0f7f3010bb09319000abb2f6b9753a427e29d71a, 23:27:02Z; b441f3da50e96ed9aed940ad38452dc99af16865,
+  23:27:18Z, 25 lines, sha1 569fb407e84d7fa2ce00daab7921af7615eeac8b, unchanged since; on trunk by merge a1379017, 23:55:24Z, now on origin
+  trunk): «L-3 (5736d8ab): **MATCHES** (Opus 5.5, D15). No required change.» (l. 24). R2-N5-SRC-L4.md (5e81fc5c97efec85efbd947215d2323069922ed4,
+  2026-10-31T03:55:12Z, new file, 42 lines, sha1 e40adf6f35829e5f7b1e7ecd31095fd0155c1e8d, unchanged since; on origin trunk): the R96
+  citation checked (l. 17-24); «**SRC-L5 (REQUIRED; present since the frozen line, missed by me in L-3).**» (l. 29); «**DOES NOT MATCH as
+  a landing line: one REQUIRED change, SRC-L5** (the «not O(1)» wording, pre-existing).» (l. 41). R2-N5-SRC-L5.md
+  (f8178846ce564a5a5fef7a33a89f1200dd757365, 05:09:24Z, new file, 36 lines, sha1 80d419f136d170c7629bd165b973d1c9d4c928af, with
+  docs/referee-2/R2-N5-SRC/pincount.py +25; = referee-2 head; on trunk by merge 0f69125d, 05:43:15Z): «SRC-L5 is
+  CLOSED. P-1 is optional.» (l. 36).
+  INDEPENDENCE: REFEREE l. 9 «Independence: I opened no docs/referee-2/ file for this packet.»; REFEREE §C Part 1 l. 4-5 «My report
+  R-N5-SRC.md (81f6b89c) was written and pushed before I opened R2-N5-SRC.md. I opened it for the ONE-STEP check (R-N5-SETTLE Addendum 1,
+  8951ef7c) and for this §C.» REFEREE-2 l. 5 «Independence: written before opening any docs/referee/ file on SRC.»; REFEREE-2 §C l. 3-4: its
+  report «pushed before I opened REFEREE's report», REFEREE's report «opened after my push (Lead 22:56Z)». G-SRC-1 was found by each referee
+  before seeing the other's report (REFEREE 81f6b89c 22:19:54Z; REFEREE-2 e8c1b62d 22:24:08Z; Addendum 1 l. 156-157). No review imported
+  lane code (REFEREE src_probe.py; REFEREE-2 l. 124); the lane's scripts ran only as the pinned blocks. On L-4 / L-5: REFEREE-2 «Written
+  without opening REFEREE's verdict on L-4.» (L4 l. 5), «Written without opening REFEREE's verdict.» (L5 l. 3); REFEREE §10 l. 177 «I know
+  its point only from the Lead's 05:09Z relay; I did not open R2-N5-SRC-L4.md.» (to check (11) (ix)); both recounted the pins with their
+  own code (Data).
+  §C (both): verdicts on every packet item identical; no disagreement in substance. Differences of reading, resolved: SRC-L3 (REFEREE
+  precision → REQUIRED, §C P1 l. 17, P2 l. 56); REFEREE's «V» item (precision; REFEREE-2 «not raised», applied in L-3); the G-SRC-1
+  configuration counts (REFEREE CYC 3 over actual Case-2 switches vs REFEREE-2 OS over all eligible z; reconciled, REFEREE §C P2 l. 60-69,
+  REFEREE-2 §C l. 42-45); the block-length figures (63 vs 67, run set, to check (10)); SRC-L5 on L-4 (REFEREE MATCHES in §9, REFEREE-2
+  REQUIRED; REFEREE withdrew its pass in §10 l. 175; closed in L-5, both MATCH; no ruling needed).
+- TARGET.md diff: «n := |V| (V the vertex set of the game)» is TARGET.md §1 l. 8's n («n = |V|, m = |E|, d = |pr(V)| ≤ n + 1.»), V TARGET's
+  vertex set (l. 6); m_E ≤ TARGET's m; succ(v) the successors under TARGET's E; games are TARGET.md §1 games (REFEREE-2 §C l. 57, a
+  table cell with escaped bars: «precision; TARGET.md l. 8 binds n = \|V\| fleet-wide, so optional»). The line (L-5) makes no M4 claim and no
+  TARGET claim; its own scope clause reads «a REDUCTION (no count is bounded here; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a
+  TARGET.md claim; σ̄-changes, switches at C and σ̄-changes at own Ξ-cycle nodes are not source events (unless they change Ξ at a source);
+  DATA: they repeat within one W-run (xcn4_n12: 4 σ̄-flips at one own Ξ-cycle node; cn3_n9: 3 switches at one c ∈ C); Lemma ONE-STEP is
+  referee-originated)» (L-5 verbatim, by script). The DATA clause counts changes on two named games: DATA, not a TARGET.md claim (no
+  bound, no complexity). REFEREE-2 R2-N5-SRC-L5.md §3 l. 29 «no count is bounded here; G-N5-TIME stays OPEN; not M3, not a step-4 pass,
+  not a TARGET.md claim»: ✓; l. 33 «No other asymptotic or data word (O(·), unbounded, linear, «not O(1)») remains.» REFEREE l. 12
+  «Scope (D1): a REDUCTION and an EQUIVALENCE inside W-runs of N5. No count is bounded. G-N5-TIME stays OPEN. Not a TARGET.md claim.»;
+  REFEREE-2 l. 6 «Scope: a REDUCTION and an EQUIVALENCE inside W-runs. Nothing is bounded. G-N5-TIME stays OPEN.»; REFEREE-2 l. 160
+  «TARGET.md: no complexity or M-claim.» Not a claim of TARGET.md §1 or §2 (a lemma on Ξ-changes, a bound on source blocks and an
+  equivalence about W-runs of N5 runs on every game; no bound on a W-run, on a run or on running time; no algorithm claim); not a step-4
+  pass. GAPS G-N5-TIME: open.
+
 ## Dead ends (kept; each with the exact obstruction or counterexample and the instance that killed it)
 - DE1 (2026-10-14): arXiv 2511.03752 v1 (van der Heijden), claimed O(n²(n+m)) algorithm. BROKEN: wrong regions on 4-vertex games
   CE1 (l-comp 19b5ce2, experiments/m2/counterexamples/ce1_4v.pg) and cex1 (referee 936d47c, docs/referee/scratch/cex1-*.pg).

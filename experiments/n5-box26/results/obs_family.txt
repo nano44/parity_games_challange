@@ -1,0 +1,6 @@
+K4_m8 XICH n 96 it 44 runs 1 maxXICH 37 (v 87) F 44 sum 477 I 0 | max|F| 44 maxsum 477
+K8_m16 XICH n 184 it 152 runs 1 maxXICH 137 (v 167) F 152 sum 1845 I 0 | max|F| 152 maxsum 1845
+K12_m24 XICH n 272 it 324 runs 1 maxXICH 301 (v 247) F 324 sum 4109 I 0 | max|F| 324 maxsum 4109
+K16_m32 XICH n 360 it 560 runs 1 maxXICH 529 (v 327) F 560 sum 7269 I 0 | max|F| 560 maxsum 7269
+K20_m40 XICH n 448 it 860 runs 1 maxXICH 821 (v 407) F 860 sum 11325 I 0 | max|F| 860 maxsum 11325
+EXIT

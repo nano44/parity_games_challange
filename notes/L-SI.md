@@ -18,7 +18,12 @@ STEP 0: clone stale at da88a6d4 AGAIN; ff to 051eb196, trunk merged c6c30141. Or
 - §2.6 ERRATUM: ONE-STEP-O (Odd mirror of G-SRC-1; ONEX 0, OBETA 11,129). §6: XCN-ONE DEAD (xcn2_n8, xcnb2_n12); KIND-A ≤ n(n − 1) (R47); XB-POLY OPEN.
 - Box 53b (Lead 01:57Z, KEYCH-POLY): note §7. KEYCH-EQ, LEX-TREE, TREE-STABLE, INS-RED, OVERTAKE, CEILING PROVED (lane); reduced to
   INS-POLY (tight-sibling Ξ-overtakes per W-constant interval, open). Tool sb53/treestab.py; pins «box 53b». PARKED after it.
+- Box 53c (Lead 06:43Z, k-SOURCE compounding): note §8. R94's K flat on src2_K3 / src1_K4; CEIL-ACC PROVED; leapfrog families paid by A
+  (AUP ≤ 1, ANDN ≤ 2); reduction to AUP-POLY ∧ AFLAT-POLY. Tools phasek.py, ceilpot.py; pins «box 53c». PARKED after it (~490k).
+- Box 53d (Lead 07:25Z): note §9. DEAD «A falls at every source-free transition» (u23sw64_n32; corpus 7,161 source-free non-falls);
+  CEIL-ACC does not join SRC-COUNT. PARKED (~510k).
 ### Queue
+00. AUP-POLY / AFLAT-POLY (§8): why A falls on leapfrog families; bound its rises and flats, or kill it.
 0. INS-POLY (§7): bound tight-sibling Ξ-overtakes per W-constant interval (common ceiling W, gap set Z), or kill it.
 1. XB-POLY (N5-SBF-box53.md §6): bound kind-B own-node flips per W-run (S1's DFS re-orders at an own Ξ-cycle node; xcnb2_n12 shows
    σ̄(3) 9 → 11 → 9), or kill it with super-polynomial growth. Kind A is done (KIND-A, ≤ n(n − 1) per run from R47). Then polynomial

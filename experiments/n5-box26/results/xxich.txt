@@ -1,0 +1,11 @@
+TOTAL {'games': 1132, 'agree': 1132, 'disagree': 0, 'fail': 0}
+TOP maxXICH/n 1.062 maxXICH 34 n 32 |F| 34 max|F| 34 red/so/instances/pftheta34_n32.pg
+TOP maxXICH/n 1.062 maxXICH 34 n 32 |F| 34 max|F| 34 red/so/instances/pftheta34_n32.pg
+TOP maxXICH/n 1.031 maxXICH 33 n 32 |F| 34 max|F| 34 red/so/instances/pftheta_cex_n32.pg
+TOP maxXICH/n 1.031 maxXICH 33 n 32 |F| 34 max|F| 34 red/so/instances/pftheta_cex_n32.pg
+TOP maxXICH/n 0.812 maxXICH 13 n 16 |F| 13 max|F| 13 red/xing/instances/x31_cu16.pg
+TOP maxXICH/n 0.812 maxXICH 13 n 16 |F| 13 max|F| 13 red/xing/instances/x31_cu16.pg
+TOP maxXICH/n 0.729 maxXICH 35 n 48 |F| 35 max|F| 35 red/so/instances/pft35_n48.pg
+TOP maxXICH/n 0.729 maxXICH 35 n 48 |F| 35 max|F| 35 red/so/instances/pft35_n48.pg
+TOP-ABS [(0.10843373493975904, 63, 581, 71, 71, 'red/usplit/instances/gate_K64_n581.pg'), (0.111358574610245, 50, 449, 55, 55, 'red/usplit/instances/pp_K48_n449.pg'), (0.3141025641025641, 49, 156, 50, 50, 'red/ul/instances/ladderd0_k48_n156.pg'), (0.3141025641025641, 49, 156, 50, 50, 'red/ul/instances/ladderent_k48_n156.pg'), (0.26993865030674846, 44, 163, 44, 44, 'new/box59/out/fcobs_6.pg')]
+EXIT

@@ -1,0 +1,11 @@
+new/box97/inst/sbq2_K8_m16 XICH n 261 it 152 runs 1 maxXICH 136 (v 260) F 151 sum 2849 I 0 | max|F| 151 maxsum 2849
+new/box97/inst/obs_K12_m24 XICH n 272 it 324 runs 1 maxXICH 301 (v 247) F 324 sum 4109 I 0 | max|F| 324 maxsum 4109
+red/span/instances/latew_K8_m32 XICH n 370 it 280 runs 1 maxXICH 17 (v 218) F 280 sum 3961 I 0 | max|F| 280 maxsum 3961
+new/box97/inst/latew_K16_m32 XICH n 482 it 560 runs 1 maxXICH 33 (v 330) F 560 sum 9297 I 0 | max|F| 560 maxsum 9297
+red/casc/instances/cedge_n32 XICH n 32 it 31 runs 2 maxXICH 12 (v 0) F 26 sum 164 I 0 | max|F| 26 maxsum 164
+red/casc/instances/ping_n48 XICH n 48 it 37 runs 2 maxXICH 12 (v 45) F 31 sum 346 I 0 | max|F| 31 maxsum 346
+red/casc/instances/nest_n64 XICH n 64 it 68 runs 2 maxXICH 21 (v 20) F 53 sum 679 I 0 | max|F| 53 maxsum 679
+red/lex/instances/keych10_n32 XICH n 32 it 22 runs 1 maxXICH 11 (v 15) F 19 sum 126 I 7 | max|F| 19 maxsum 126
+red/tie/instances/tie_n32 XICH n 32 it 15 runs 1 maxXICH 12 (v 15) F 13 sum 194 I 7 | max|F| 13 maxsum 194
+n5-box24/instances/kr35_n30 XICH n 30 it 12 runs 2 maxXICH 9 (v 6) F 10 sum 161 I 0 | max|F| 10 maxsum 161
+EXIT

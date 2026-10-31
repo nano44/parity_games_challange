@@ -1,21 +1,31 @@
 # L-COMP notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point -- ACTIVE: successor 8 (session_01V5yGRWL1xbdLiUMMLuy7vR, Opus 5.5), started 2026-10-30 13:10Z by date -u. BOX 23.
-- Lead brief 13:09Z (D18): true maxima of R*_F and FL_F per W-run (box 85 FREE-RED). Everything in experiments/n5-box23/README.md.
-- Lead reading 13:22Z: "earlier" = strictly earlier (q < t); report incl (q <= t) too. (incl = strict PROVED, mine: S4a/S4c adopt only
-  improving edges.) Do not retry the PGSolver OCaml build (box 21 diff stays unrouted).
-- BOX 23 DONE (README has every table): (a) rstar.py = xirise.py on 1,132/1,132; (b) C(4) exhaustive all starts: R*_F <= 1, FL_F <= 1,
-  random n 5 / 6: R*_F 1, FL_F 1 / 2; (c) climbs R*_F ~0.7-1.0n (42 at n 60); (d) latew: R*_F = K·m = Theta(n^2) per W-run, 1,344 at n 778.
-  15 witnesses pinned (pin23.py ALL OK). Lead 21:21Z: latew is an independent reproduction of L-RED R138 (labelled).
-- BOX 24 DONE (experiments/n5-box24/README.md): max |F| = n - 1 exhaustively for n <= 4 (C(4) all 268M pairs); climbs reach only n - 1
-  at n 5-7 (5 seeds each); first |F| > n - 1 found at n 8 (F8_n8, 8) and n 9 (F10_n9, 10 with ONE late adoption = two GP* climbs);
-  random C(5) 220k games max 3. 8 pins. IN FLIGHT: nothing. NEEDS: next box from the Lead.
+## Resume point -- PARKED: successor 8 (session_01V5yGRWL1xbdLiUMMLuy7vR, Opus 5.5), 2026-10-31 06:4xZ by date -u. Lead 04:38Z: box 26 last, then park.
+- Boxes this session: 23-26, one directory and README each (experiments/n5-box23 .. n5-box26). Every push via scripts/push.sh, VERIFY PASS.
+### DONE (all DATA unless labelled; tables and sha1s in the READMEs)
+- BOX 23 (R*_F, FL_F per W-run): rstar.py (own, n5b) = xirise.py on 1,132/1,132; exhaustive C(4) all 268M start pairs R*_F <= 1, FL_F <= 1;
+  climbs R*_F ~0.7-1.0n (42 at n 60); latew R*_F = K·m exactly (7 sizes, n 186-778), an independent reproduction of L-RED R138.
+  PROVED (trivial): R*_F, FL_F <= |F|, so R*-POLY and FL-POLY together = W-run length POLY; incl = strict. 15 pins.
+- BOX 24 (|F| at small n; root map): max |F| = n - 1 exhaustive n <= 4; climbs n 5-7 only n - 1; first |F| > n - 1 at n 8 (F8_n8), n 9
+  (F10_n9, one late adoption); casc.py (own Even root map) = retcause.py 599/599; RETURN node with 35 > n children (kr35_n30, no clones),
+  PXR 5 at deg 2 (pxr5_n32). C(4) root-map pass PARTIAL (parts 0-3, stopped by the Lead).
+- BOX 25 (INS): ins.py (own) = treestab.py 1,132/1,132; tie_n32 and u23sw64 reproduced; climbs max INS 9 (ins9_n48), INS = |I| - 1.
+- BOX 26 (XICH): xich.py (own) = xirise 'xich' 1,132/1,132; R139's observer family reproduced (max XICH = K·m + K + 1, up to n 448: 821);
+  climbs max XICH 31 at n 48 (xich31_n48); every extreme has max XICH ~ |F|.
+### IN FLIGHT: nothing. No background jobs.
+### NEEDS: none from the owner. Open (not routed): a super-quadratic W-run (nest the observer funnel / latew pivot cycles), L-RED's side.
 ### Things only I know (successor 8)
-- red/n3/instances/n3cov_lean.start is invalid (R99); start files must be overlaid on S3 dropping invalid entries (rstar.overlay).
-- pkill -f / pgrep -f with a pattern that occurs in your own command line kills / matches your own shell (bit me 14:45Z).
-- climbs/*.log and *.out are in .git/info/exclude; results/climbs_end.txt collects the END lines for commits.
-- R*_F <= |F| and FL_F <= |F| trivially, so R*-POLY and FL-POLY together = W-run length POLY (FREE-RED makes it an equivalence).
+- Lead messages can arrive hours late (21:49Z and 22:17Z arrived at 00:13Z): call ReadNotifications between long waits.
+- red/n3/instances/n3cov_lean.start is invalid (R99): overlay start files on S3 dropping invalid entries (n5-box23/rstar.overlay).
+- pkill -f / pgrep -f with a pattern in your own command line kills or matches your own shell. A whole `cd X && ... &` chain is
+  backgrounded, cd included.
+- Climbs on rare quantities (return-node children, INS, XICH) need a gradient: (quantity, secondary, #returns or |F|); seed from the
+  corpus or construction maxima. Seeded climbs beat fresh ones by 2-3x at n 32-48.
+- L-NEW cause_*.txt / L-SI tree_*.txt are xargs -P 4 outputs with interleaved lines: parse the last record on a line.
+- pin23.py writes its instance copies into n5-box23/instances: delete them after pinning another box's witness.
+- Running another lane's tool from its branch: git archive its experiments/new/box21, new/n5.py, harness, si into /tmp, run with -I.
+- Generators: LATE=1 red/span/mkrw.py K m (latew); OWNER=0 ABOVE=a red/mix/obs2.py on mkrw K m (R139 observer).
 
 ## Resume point -- PARKED: successor 7 (session_01V5yGRZrRdwiCSQqHfS2zGE, Opus 5.5), 2026-10-29 19:2xZ by date -u. Lead 17:49Z: box 22 last, then park; no successor for now.
 - Handover check 76a57b40 (successor 7's answers in docs/agents/handover-checks/L-COMP.md). Boxes this session: 17-22, all under experiments/n5-box17..22/
@@ -416,6 +426,8 @@ AM9 Lemma 3's proof sets D_{dbar} = D cap U_{dtilde} (tex:345), probably a typo 
 | arXiv 1106.0778 (pdf sha256 46c96f44775aa2b07cad20912cb325b177e38c94cb2e40297df66b6047679611 = L-NEW's), O. Friedmann, LMCS 7(3:19) 2011 | §2 (Ω injective, l.132 of pdftotext), §3, §4 (I^glo), §5 (1-sink), §8.1 Table 5 / Fig. 7 / Lemma 8.1, §8.2 Fig. 8, §8.3 Table 6 / Fig. 9 / Lemma 8.2, §8.4 Table 7 / Fact 8.1 / start ι_{H_n} / Fig. 10 / Lemma 8.3, §8.5 Theorem 8.4, Fig. 11 | 2026-10-26 | box 16 H_n. Table 7 gate priorities collide with the lane (d2_n = t1 = 8n+3 etc.); Fig. 10/8/9 use 8i-5..8i+2: hn.py mode fig. Text says lane length 6n-3, Table 7 has i <= 6n-2 (= m of §8.1): 6n-2 used |
 
 | github.com/tcsprojects/pgsolver @ d3cd624 | src/lib/generators/policyiter/generators/friedmannsubexp.ml (90 lines), fearnleysubexp.ml (86 lines), stratimprgenerators.ml SymbolicParityGame | 2026-10-29 | code, not a paper; box 21 ports |
+| fleet docs (successor 8, 2026-10-30/31) | RESULTS R88 / R89 / R95 (W-run, BLOCKED, R*_T, FL, GP*-RUN, XI-CH); l-new 893b9346 N5-FREE-box85 §3; l-new 2311683e N5-CASC-box100 §1-2 + N5-QRET-box99 §2.1 + N5-RET-box98; l-si 481bc6c2 N5-SBF-box53 §7; L-RED R99, R128, R138, R139, R148-R150, R152 | 2026-10-30/31 | internal lane notes, not papers; every definition used is quoted in the box READMEs 23-26 |
+
 ## Dead ends
 - 2026-10-30 (box 23): "R*_F = O(n) per W-run" (any reading of box 85's R*-POLY as linear) DEAD on L-RED's latew_K20_m32 (sha1
   063d173c…; LATE=1 red/span/mkrw.py 20 32): one W-run, R*_F 640 > n = 538 (rstar.py on n5b = xirise.py; first shown by L-RED R138, l-red 5374e0a5, so mine is an independent reproduction). Exact on 7 sizes: R*_F = K·m,
