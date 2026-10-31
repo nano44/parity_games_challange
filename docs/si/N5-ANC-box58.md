@@ -227,3 +227,34 @@ W-run. If you can prove that property, escapes per W-run are bounded.» Written 
     would give PLAT ≤ (number of W-changes on those plays). That is the precise statement I would attack next.
 - check.sh «box 58 §7» pins switchallexp_6 (SI ESCEQ 57, MAXPLAT 31), switchbestexp_5 (N5 ESCEQ 3, MAXESC_SX 2, MAXPLAT 1),
   pp_K48_n449 (N5 ESCASC 45, ESCEQ 0, MAXESC_SX 24) and the corpus (MAXPLAT ≤ 1, ESCNONMONO 0).
+
+## 8. PLAT-POLY, the precise statement (Lead 18:36Z; L-RED 38 R164, claude/l-red 74bb2fec) (DATA, DEAD, CONJECTURE)
+Written 2026-10-31 from 18:4xZ (date -u; see commit).
+- Inputs from R164: Lemma W-MON (lane, L-RED: inside a W-run S4a is W-monotone, since σ_(k+1) is Even's optimum in an arena that contains
+  σ_k); DATA: switch-all's carries are W-drops against τ; fbA_K8_m8_m8 (R164 pin) has PLAT 7 in one N5 W-run (so «PLAT ≤ 1» is dead).
+  - L-SI check: WMONV 0 on all 1,132 corpus games, fbA_K8_m8_m8, pp_K48_n449 and switchbestexp_5 (W never drops inside a W-run).
+- Statement tested (the Lead's wording of my candidate (b)): «inside a W-run, every equal-key re-opening of (s, x) needs a strict W-rise on
+  x's or x₂'s W-play». Tool experiments/si/anc58/wrise.py: for consecutive escapes u1 < u2 of one (s, x) in one W-run, does W(x) or W(x₂)
+  strictly rise from u1 to u2 (x₂ ranging over s's other choices in (u1, u2])? wplay.py widens this to the W-plays of x and x₂ at u1 and u2.
+- DEAD as stated. Corpus: 121 repeats; 118 have the rise; 3 do not (2 at an equal key, 1 not). None of the 3 has a W-rise anywhere on the
+  W-plays of x or x₂:
+  - red/n3/instances/n3cov_lean.pg with n3cov_lean_fixed.start (L-RED R99's valid start): Odd s 35, x 29, escapes at 12 and 21, both with
+    swap key (1, 44); τ(35) = 44.
+  - red/n3/instances/n3cov_phi.pg with its start completed by n5x.start_pair (anc58/inst/n3cov_phi_full.start; the original is partial,
+    R99): Odd s 14, x 13, escapes at 9 and 16, both (1, 26). Also s 7, x 30 at 3 and 7, keys (1, 24) then (1, 23).
+  - Faithfulness: n5b (red/seg/xeng.py) state sequences identical on both (36 and 32 states); n5.py's solutions agree with Oink zlk, and
+    both players' strategies verify (check_sol2.py).
+  - Mechanism: in all 3, x is itself ODD and the escaped cycle is the 2-cycle s → x → s of two Odd choices (29 ↔ 35, 13 ↔ 14, 30 ↔ 7).
+    W fixes Odd to τ, so W cannot see this cycle at all. W does rise elsewhere (36, 12 and 11 vertices) and on x's Ξ-plays, but not on its
+    W-play.
+- CONJECTURE W-REOPEN (data 0 violations): inside a W-run, if the escaped cycles of two consecutive escapes of (s, x) both contain an Even
+  vertex, then W(x) or W(x₂) strictly rises between them.
+  - Data: EVEN_NOWRISE 0 on the corpus (117 such repeats) and on fbA_K8_m8_m8 (28), pp_K48_n449 (45), switchbestexp_5 (3). The only
+    exceptions to (b) are the 4 Odd-only repeats (ODDONLY 4, 3 without a rise).
+  - With W-MON, W-REOPEN bounds the Even-cycle repeat escapes of one (s, x) per W-run by the number of strict W-changes at x and its
+    alternatives. That is a W-run count, not yet a polynomial one: whether W changes per vertex per W-run are polynomial is open here.
+- Odd-only escapes (both escaped cycles purely Odd): a separate residue, 4 repeats in the corpus. They are Odd's best response
+  re-deciding between two Odd vertices that point at each other. W-REOPEN does not cover them.
+- Next: prove W-REOPEN. Planned route: at the first escape, x's new Ξ-play returns to s through an Even vertex e. By [R57] with ρ = τ,
+  Ξ ⊴ W, and W-MON keeps W(e) from falling. A re-opening at the same swap key needs Ξ(x) or Ξ(x₂) to come back across the same digit
+  (INT), and the claim is that this is only possible if the W-values bounding them from above move.

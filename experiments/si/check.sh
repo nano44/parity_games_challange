@@ -1060,6 +1060,15 @@ case "$o" in *"ESCREP 45 ESCNODESC 45 ESCEQ 0 MAXPLAT 0 ESCNONMONO 0 ESCASC 45 M
 [ "$(grep -c ' ANC ' anc58/esc_corpus.txt)" = 1132 ] || { echo "box 58 s7: esc corpus incomplete"; exit 1; }
 if grep -qE "MAXPLAT ([2-9]|[1-9][0-9])|ESCNONMONO [1-9]" anc58/esc_corpus.txt; then echo "box 58 s7: PLAT / ESC-MONO data changed"; exit 1; fi
 echo "si (box 58 s7: repeat escapes): PASS"
+# box 58 §8 (Lead 18:36Z): «re-opening needs a W-rise on x's / x2's W-play» DEAD on Odd-only 2-cycles (n3cov_lean, n3cov_phi); CONJECTURE
+# W-REOPEN (escaped cycle with an Even vertex) 0 violations in the corpus; W never drops inside a W-run (R164 W-MON).
+o=$(python3 -I anc58/wrise.py ../red/n3/instances/n3cov_lean.pg ../red/n3/instances/n3cov_lean_fixed.start)
+case "$o" in *"ODDONLY 1 ODDONLY_NOWRISE 1 EVEN_NOWRISE 0 REP 2 EQ 1 EQ_WRISE 0 EQ_NOWRISE 1 "*"WMONV 0"*) ;; *) echo "box 58 s8: n3cov_lean: $o"; exit 1;; esac
+o=$(python3 -I anc58/wrise.py ../red/n3/instances/n3cov_phi.pg anc58/inst/n3cov_phi_full.start)
+case "$o" in *"ODDONLY 3 ODDONLY_NOWRISE 2 EVEN_NOWRISE 0 REP 3 "*"WMONV 0"*) ;; *) echo "box 58 s8: n3cov_phi: $o"; exit 1;; esac
+[ "$(grep -c 'WRISE ' anc58/wrise_corpus.txt)" = 1132 ] || { echo "box 58 s8: wrise corpus incomplete"; exit 1; }
+if grep -qE "EVEN_NOWRISE [1-9]|WMONV [1-9]" anc58/wrise_corpus.txt; then echo "box 58 s8: W-REOPEN / W-MON data changed"; exit 1; fi
+echo "si (box 58 s8: W-REOPEN): PASS"
 # P-N5-ODD (FROZEN packet, boxes 54/55/57; line docs/si/P-N5-ODD-line.txt): must not change. Data pins: «box 54», «box 55», «box 57».
 echo "03eec41d3bfc63a6945d0f30d831a46f14e46b84  ../../docs/si/P-N5-ODD-box57.md" | sha1sum -c --quiet
 echo "cd121dffd06dbc794f3154e34aa238d8df81f837  ../../docs/si/P-N5-ODD-line.txt" | sha1sum -c --quiet
