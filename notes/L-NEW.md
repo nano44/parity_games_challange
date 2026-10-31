@@ -7,7 +7,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   DESC-ROOT (every descent = copy of an R / T / S type descent; DESC <= n(R + S + T), T <= tie switches), Theorem ROOT-STAIR
   (|F| <= T1 + n(3n+1) + (3n+1) n (R + S + TS), equivalence), ORIGIN-NEW (origin root change => edge not in H_(k-1)).
 - DEAD: switch-site U passive-proof (cp_K4 observers switch, DESC_S 388); ROOT-FUEL for all root descents (frz32 3 old-edge relays);
-  T = 0 (lcount2_n23). CONJECTURE ROOT-FUEL' (new-edge root descents are fuel re-routes; 7,559/7,559).
+  T = 0 (lcount2_n23). Box 113b: NEW-FUEL PROVED (lane) (every new-edge switch, k-1 in F, has Xi(z) changing at k-1:
+  fuel re-route; corpus 27,539/0) => root changes = fuel re-routes + old-edge relays; FUEL-ROOT-STAIR conditional on FUEL-COUNT.
 - READING: reduction closes into XI-CH-POLY via FUEL-COUNT (no smaller statement); passives inflate by <= factor n only.
 - P-N5-STAIR referee answers: fixes file docs/new/P-N5-STAIR-fixes-box112.md NOT yet created (no report SHA received yet).
 ### Things only I know (successor 42): desc4.py is the box 113 tool (VERB=1 prints OLDEDGE lines); corpus run4.sh takes ~2-3 min on 4

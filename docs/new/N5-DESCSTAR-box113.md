@@ -22,7 +22,10 @@ step-4 pass and not a TARGET.md claim.
 - PROVED (lane) ORIGIN-NEW. A root change whose new target's W does not change at k enters by an edge that is not in H_(k−1), so it is
   newly Ξ-improving at k. Corpus: 25,679 origin root changes, 0 violations. An old-edge root change is therefore a RELAY: its target's W
   changes at the same transition.
-- DATA / CONJECTURE ROOT-FUEL′. Every NEW-edge root descent is an L-SI fuel re-route (P-N5-ODD §6): corpus 7,559 / 7,559.
+- PROVED (lane) NEW-FUEL (box 113b, §4b). Every switch y → z at k, with k − 1 ∈ F, that enters by an edge not in H_(k−1) has
+  Ξ_(k−1)(z) ≠ Ξ_k(z). So it is an L-SI fuel re-route (P-N5-ODD §6). Corpus: 27,539 such switches, 0 violations. It was first a
+  CONJECTURE (ROOT-FUEL′, root descents only: 7,559 / 7,559).
+  - With ORIGIN-NEW, every root change, and hence every root descent, is a FUEL RE-ROUTE or an OLD-EDGE RELAY.
   - DEAD as stated for all root descents: 47 corpus root descents enter by an OLD edge. They are all relays, as ORIGIN-NEW forces
     (instance red/n5inj/instances/frz32: 3, at k = 3 (2 → 17) and k = 7 (17 → 5, 13 → 5); w_re3_1: 2).
 - Where root descents still nest (READING, §5). Per pair, FUEL-COUNT bounds the fuel re-routes by the target's higher-key Ξ-changes
@@ -96,14 +99,33 @@ step-4 pass and not a TARGET.md claim.
   position ≥ π_y(z's change position).
 - DATA: 25,679 origin root changes on the corpus, ONVIOL 0.
 
+## 4b. Lemma NEW-FUEL (box 113b) — PROVED (lane)
+- Statement. Let Even y switch at k to z := σ_(k+1)(y) ≠ z0 := σ_k(y), with k − 1 ∈ F and (y, z) ∉ H_(k−1). Then Ξ_(k−1)(z) ≠ Ξ_k(z).
+  Together with z ≠ σ_(k−1)(y), this makes (y, z) a fuel re-route at k in the sense of P-N5-ODD §6.
+- Proof.
+  - S4a chooses σ_(k+1)(y) in H_k(y) = {z0} ∪ Iσ_k(y), and z ≠ z0, so (y, z) ∈ Iσ_k: Ξ_k(z) ▷ Ξ_k(z0).
+  - Let z1 := σ_(k−1)(y). (y, z) ∉ H_(k−1) gives z ≠ z1 and not Ξ_(k−1)(z) ▷ Ξ_(k−1)(z1). The order is linear on values ([LEX]), so
+    Ξ_(k−1)(z) ⊴ Ξ_(k−1)(z1).
+  - Claim: Ξ_k(z0) ⊵ Ξ_(k−1)(z1).
+    - If z0 = z1, this is [R15a] at transition k − 1 (an S4a step of F).
+    - If z0 ≠ z1, then y switched at k − 1, so (y, z0) ∈ Iσ_(k−1): Ξ_(k−1)(z0) ▷ Ξ_(k−1)(z1). [R15a] gives Ξ_k(z0) ⊵ Ξ_(k−1)(z0).
+  - If Ξ_k(z) = Ξ_(k−1)(z), then Ξ_k(z) ⊴ Ξ_(k−1)(z1) ⊴ Ξ_k(z0), against Ξ_k(z) ▷ Ξ_k(z0). □
+- Premises: SPEC S2 / S4a (H_k, Iσ_k), [R15a], [LEX]. [1E-N3] is not used.
+- Corollary FUEL-ROOT-STAIR (conditional on P-N5-ODD's FUEL-COUNT, frozen and under review, not landed).
+  - Split R_F = R^fuel_F + R^old_F (ORIGIN-NEW + NEW-FUEL). FUEL-COUNT bounds the fuel re-routes of each pair (y, z), so
+    R^fuel_F ≤ Σ_(y,z) n(n + 2)(HC_(y,z) + n), and
+    |F| ≤ T1_F + n(3n + 1) + (3n + 1)·n·( n(n + 2)·Σ_(y,z) (HC_(y,z) + n) + R^old_F + S_F + TS_F ).
+  - Open terms: HC (higher-key Ξ-changes at fuel targets, i.e. the XI-CH core), R^old (old-edge relay root descents; 47 on the corpus),
+    S (932), TS (397).
+- DATA (desc5.py, corpus): NFSW 27,539 new-edge switches with k − 1 ∈ F, NFVIOL 0.
+
 ## 5. Root descents against FUEL-LEX / FUEL-COUNT (L-SI P-N5-ODD §6, claude/l-si 0afc0d70a) — DATA, CONJECTURE, READING
 - DATA (desc4.py, corpus).
   - Every root descent has k − 1 ∈ F (RD_K1 = RD = 7,606; a descent needs an earlier change in F).
   - 7,559 enter by a new edge ((y, z) ∉ H_(k−1)), and all 7,559 are fuel re-routes (Ξ_(k−1)(z) ≠ Ξ_k(z)): RD_NEWNOTFUEL 0.
   - 47 enter by an old edge. All are relays (ORIGIN-NEW; VERB lines on frz32 and w_re3_1 print «relay True»).
-- CONJECTURE ROOT-FUEL′: every new-edge root descent is a fuel re-route. Not proved: (y, z) ∈ Iσ_k \ H_(k−1) can also arise from a change
-  of Ξ(σ_k(y)) or of σ_k(y), with Ξ(z) fixed.
-- If ROOT-FUEL′ holds:
+- ROOT-FUEL′ (every new-edge root descent is a fuel re-route) is now PROVED (lane) as NEW-FUEL (§4b).
+- Consequently:
   - FUEL-COUNT gives R^new_F(y, z) ≤ n(n + 2)(HC_(y,z) + n) per pair. With the trivial remark (distinct re-routes have distinct rise
     transitions), R^new_F(y, z) ≤ XCH_F(z).
   - So R^new_F ≤ Σ_(y,z) XCH_F(z) ≤ d_E·Σ_z XCH_F(z). That is R95 XI-RUN's shape again.
@@ -145,16 +167,17 @@ step-4 pass and not a TARGET.md claim.
 ## 7. Dead ends (this box)
 - «U = switch sites is a passive-proof witness set»: DEAD, cp_K4 (DESC_S = 388 = DESC; the observers switch).
 - «Every root descent is a fuel re-route»: DEAD, frz32 (3 old-edge relay root descents) and w_re3_1 (2). Repaired to ROOT-FUEL′ (new-edge
-  ones only; DATA 7,559 / 7,559).
+  ones only), PROVED as NEW-FUEL (§4b).
 - «No tie switch occurs inside a descent window» (which would make T = 0): DEAD, lcount2_n23 (T = 1; TS 397 on the corpus).
 
 ## DONE / FINDINGS / NEEDS
-- DONE: this note; experiments/new/box113/ (desc3.py, desc4.py, run3.sh, run4.sh, sum3.py, d3_* / d4_* corpus outputs, inst/ = read-only
+- DONE: this note; experiments/new/box113/ (desc3.py, desc4.py, desc5.py (NEW-FUEL check), run5.sh, d5_*, run3.sh, run4.sh, sum3.py, d3_* / d4_* corpus outputs, inst/ = read-only
   copies of L-RED's fbg_K4_m6_m48, w_re3_1, cp_K4, suf_K4, suf_K8 from claude/l-red 54832628); check.sh pin «box 113 DESCSTAR».
 - FINDINGS:
-  - PROVED (lane): COPY⁺, SW-WIT, DESC-ROOT, ROOT-STAIR (equivalence), ORIGIN-NEW.
+  - PROVED (lane): COPY⁺, SW-WIT, DESC-ROOT, ROOT-STAIR (equivalence), ORIGIN-NEW; NEW-FUEL (box 113b); Corollary FUEL-ROOT-STAIR
+    (conditional on FUEL-COUNT).
   - DEAD: switch-site U as passive-proof (cp_K4); ROOT-FUEL for all root descents (frz32); T = 0 (lcount2_n23).
-  - CONJECTURE ROOT-FUEL′ (7,559 / 7,559). READING: the reduction closes into XI-CH-POLY (XI-RUN), with no smaller named statement; DESC*
+  - ROOT-FUEL′ PROVED as NEW-FUEL (27,539 / 27,539 new-edge switches). READING: the reduction closes into XI-CH-POLY (XI-RUN), with no smaller named statement; DESC*
     has no canonical witness set; polynomiality is insensitive to passives (factor ≤ n).
-- NEEDS: Lead: routing. Options: (a) proof attempt of ROOT-FUEL′; (b) L-RED: a core whose root descents per pair grow (recursive leapfrog,
+- NEEDS: Lead: routing. Options: (a) bound R^old / S by a copy-map fold; (b) L-RED: a core whose root descents per pair grow (recursive leapfrog,
   depth 3); (c) fold the S / relay terms into the copy map.
