@@ -27,6 +27,7 @@ for k in range(T):
     if not ok: cur = None; continue
     if cur is None: cur = [k, k]; runs.append(cur)
     cur[1] = k + 1
+tcls = {}
 c = dict(returns=0, O1W=0, O1IN=0, LEAVE_TIE=0, RET_TIE=0, BOTH_TIE=0); wit = None
 for a, b in runs:
     tau = TAU[a]; W = [Wv(k, tau) for k in range(a, b + 1)]
@@ -40,10 +41,16 @@ for a, b in runs:
                 ch = [q for q in range(j, k + 1) if W[q + 1 - a][y] != W[q - a][y]]
                 lt = W[j + 1 - a][y] == W[j - a][y]; rt = W[k + 1 - a][y] == W[k - a][y]
                 c['LEAVE_TIE'] += lt; c['RET_TIE'] += rt; c['BOTH_TIE'] += lt and rt
+                if lt:
+                    cn = W[j - a][y][0]; par = E.par[cn]
+                    inI = all(W[q + 1 - a] == W[q - a] for q in range(j, k + 1))
+                    key = ('TIE', 'odd' if par == 1 else 'even', 'oneInterval' if inI else 'Wchanges', 'own' if cn == y else 'nonown')
+                    tcls[key] = tcls.get(key, 0) + 1
                 if not ch:
                     c['O1W'] += 1
                     if wit is None: wit = (a, b, j, k, y, z, [W[q - a][y] for q in range(j, k + 2)])
                 if not [q for q in ch if j + 1 <= q <= k - 1]: c['O1IN'] += 1
             lastleave[(y, S[k][y])] = k
 print(f"O1 {os.path.basename(sys.argv[1])} n {n} W-runs {len(runs)} " + " ".join(f"{k} {v}" for k, v in c.items()))
+if tcls: print("  TIECLASS", sorted(tcls.items()))
 if wit: print(f"  first O1W violation: W-run {wit[0]}-{wit[1]} X {wit[4]} leaves {wit[5]} at {wit[2]}, re-enters at {wit[3]}; W(X) on [j, k+1]: {wit[6]}")
