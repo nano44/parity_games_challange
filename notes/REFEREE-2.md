@@ -8,7 +8,12 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
   boundary cases) and ROOT114-L2 (cite STAIR line L-2 44f56e96, not L-1). P-1 NEW-FUEL true with k unbound (R15 (d)).
   Lane DATA reproduced exactly (14,755 / 7,606 / 932 / 1 / 6,216; TS 397; origins 25,679; new edges 27,539; R^old 47); Oink zlk verified pins.
 - Tool R2-N5-ROOT114/root_check.py (BND_* = boundary probes), oink_pins.py, bnd.py. Worktree $SCRATCH/wroot = l-new ed2fdaf2.
-- NEXT: read docs/referee/ ROOT (d8a2f428) and fixes c4279144 now that my report is pushed; then ODD line L-3 word-diff when the Lead sends it.
+- Report pushed d1c493fb (VERIFY PASS). Then read REFEREE d8a2f428 (ROOT-L1 bind k etc. = my L1; ROOT-L2 = my L2; ROOT-L3 = my P-3) and
+  fixes c4279144 entry 1 (repairs meet all my items). Lead messaged with verdicts.
+- ODD L-3 (2f8e5b2ea, f83b169e) MATCHES d61827c5; ROOT L-1 (be131555, a41df25b) MATCHES 83c1838f (+ Addendum 1 L43: drop R162/R163
+  DEAD clauses, agree REFEREE ROOT-L4/L5); STAIR L-3 (7dc1eb7c, 9db0b169) MATCHES faa8dac9 (P-1 independent: f92b278a 13:06Z < a61a258b).
+- Lead ruling L43 (relayed 20:29Z): a lane DEAD of an asymptotic statement enters a RESULTS line as DATA with numbers, or not at all.
+- NEXT: ROOT line L-2 word-diff when the Lead sends it.
 
 ## HANDOVER (successor 24, session_01V5yGRZwUkPZRndvKiAAuAD, Opus 5.5 under D15; written 2026-10-31 15:3xZ by date -u; context ~480k; Lead 15:17Z: handover and park)
 Branch claude/referee-2, merged with trunk (git merge, no rebase) before every push. REFEREE-2 owns no docs/GAPS.md rows.
