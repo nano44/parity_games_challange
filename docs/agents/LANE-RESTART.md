@@ -197,3 +197,4 @@ Five questions:
 | 2026-10-30 | REFEREE-2 | session_01V5yGRZKSogq9jPuYHcekpn (~470k; handover bdf5d070) | session_01V5yGRZwUkPZRndvKiAAuAD (Opus, D1/D18) | 2 | PENDING (successor's check) |
 | 2026-10-30 | L-RED | session_01V5yGRYH6tnU7RvjZqXw32g (~519k; handover f670afb9) | session_01V5yGRWdTCZePxH7viLZ6VS (Opus, D1/D18) | 2 | PENDING (successor's check) |
 | 2026-10-30 | REFEREE | session_01V5yGRZqyr3UsRKbeEJjYqM (park threshold; handover 41a736e9 + 8951ef7c) | session_01V5yGRYBU4SsUT8MviYhjjg (Opus, D1/D18) | 2 | PENDING (successor's check) |
+| 2026-10-31 | L-RED | session_01V5yGRWdTCZePxH7viLZ6VS (~503k; PARK 99601394; idle confirmed by get_session 01:09Z) | session_01V5yGRXBDuKdR4N9Rfvkq8p (Opus, D1/D18) | 2 | PENDING (successor's check) |

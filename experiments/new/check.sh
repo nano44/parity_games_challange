@@ -547,4 +547,16 @@ if grep -q "XTRACE return k 22: 7 20 -> 26 (window from 20, first rise 21) root 
 else
   echo "box 104 PING check: FAILED"; exit 1
 fi
+w55=$(cd .. && python3 -I new/box105/o1.py red/xing/instances/u23sw64_n32.pg; python3 -I new/box105/o1.py new/box104/inst/cedge_n32.pg new/box104/inst/cedge_n32.start)
+if grep -q "O1 u23sw64_n32.pg n 32 W-runs 3 returns 31 O1W 31 O1IN 31 LEAVE_TIE 31 RET_TIE 31 BOTH_TIE 31" <<<"$w55" && grep -q "X 2 leaves 6 at 1, re-enters at 4" <<<"$w55" && grep -q "O1 cedge_n32.pg n 32 W-runs 2 returns 60 O1W 0 O1IN 39 LEAVE_TIE 0" <<<"$w55"; then
+  echo "box 105 O1: O1 DEAD on u23sw64_n32 (31 W-tie returns), cedge_n32's ping-pong is non-tie (0 violations): PASS"
+else
+  echo "box 105 O1 check: FAILED"; exit 1
+fi
+w56=$(cd .. && python3 -I new/box105/keymon.py red/xing/instances/u23sw64_n32.pg; python3 -I new/box105/o1.py red/xing/instances/u23sw64_n32.pg)
+if grep -q "KEYMON u23sw64_n32.pg n 32 intervals 1 KEYUP 0 SWNOTDOWN 0 ODDUP 0 KEYCH 8 SWI 6 TRETI 31 LEN 8" <<<"$w56" && grep -q "TIECLASS \[(('TIE', 'even', 'oneInterval', 'nonown'), 31)\]" <<<"$w56"; then
+  echo "box 106 TIE: u23sw64_n32 tie returns all even-cycle-node, inside one W-constant interval; keys never rise, every switch lowers the key: PASS"
+else
+  echo "box 106 TIE check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

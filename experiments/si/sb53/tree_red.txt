@@ -1,0 +1,2 @@
+GAME si/gate/inst/latew_K16_m32.pg si/gate/inst/latew_K16_m32.start TREESTAB latew_K16_m32.pg n 482 intervals 0 LTX 0 TSX 0 NOVT 0 KB 0 MAXKEYCH 0 MAXINS 0
+GAME si/gate/inst/fx_K8_m32.pg si/gate/inst/fx_K8_m32.start TREESTAB fx_K8_m32.pg n 250 intervals 0 LTX 0 TSX 0 NOVT 0 KB 0 MAXKEYCH 0 MAXINS 0

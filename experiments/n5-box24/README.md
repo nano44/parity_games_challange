@@ -80,3 +80,69 @@ and |F| > n − 1 needs R*_F ≥ 1 or FL_F ≥ 1. (From R88 / R89 GP*-RUN, lande
 ## Files
 climbs24.sh, check.sh (in verify), instances/ (pins), climbs/ (every climb's best .pg/.start), results/ (R5 sample JSON,
 climbs_end.txt). The exhaustive C(2)-C(4) and R5 / R6 (seed 23) JSONs are box 23's (experiments/n5-box23/results/).
+
+## Part 2 (Lead 21:49Z / 22:17Z, received 00:13Z): the Even root map of returns: per-(X, root) returns, RETURN-node branching, depth
+### Tool and cross-check
+- casc.py: my own implementation on n5b from the TEXT of l-new docs/new/N5-RET-box98.md (FRESH / RETURN entries), N5-QRET-box99.md §2.1
+  (window, first Ξ-rise) and N5-CASC-box100.md §1.3 / §2.1 at 2311683e (EVEN root map, nodes, children, depth). Quantities per W-run:
+  - returns;
+  - CASC = max returns per root;
+  - PXR = max returns of ONE Even X per root (Lead (1), L-NEW's CASC-EDGE);
+  - max children of a RETURN node / of a FRESH node (Lead (2), NARROW);
+  - max root-chain depth.
+- xcasc.py vs L-NEW's retcause.py (committed corpus outputs experiments/new/box99/cause_{alt,sbcg}.txt at l-new 95d52c5c, read with
+  git show): per W-run, (a, b), returns, EROOT max returns per root, EROOT depth histogram, max children per node, max children per return
+  node, PERROOT max returns of one Even X per root.
+  - 599 / 599 W-runs agree over 322 games (results/xcasc_alt.txt 326 / 326, xcasc_sbcg.txt 273 / 273).
+  - 0 EVEN-ON-PLAY or WINDOW-RISE failures ("bad 0").
+  - L-NEW's files contain interleaved xargs lines; parsed with the last record per line; 0 games dropped.
+- The six new climb pins below were also run through retcause.py (l-new head, git archive, unchanged): the same values.
+
+### Constructions (independent reproductions, my tool on n5b; L-RED R148 / R149 / R150 first)
+| instance | n | |F| | returns | CASC | PXR | max children, RETURN node | max depth |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| latew K4_m16 / K8_m32 / K12_m24 / K16_m28 | 186-450 | 76-496 | 210-1,674 | 45 / 93 / 69 / 81 | 2 | 1 | 1 |
+| cascl_K4_m8_N100 (R148) | 222 | 44 | 798 | 121 | 2 | 1 | 1 |
+| cascl66_K4_m8_N150 (R148) | 272 | 44 | 1,148 | 321 | 2 | 151 | 1 |
+| narrow_n10 (R149) | 237 | 58 | 504 | 100 | 17 | 2 | 49 |
+| cedge_n32 (R150) | 32 | 26 | 60 | 13 | 4 | 3 | 3 |
+
+### Exhaustive C(n) (exh24.py: every game, every start pair, EVERY suffix of every maximal W-run chain)
+- C(3): 21,952 games, no W-run with a return at all.
+- C(4): IN PROGRESS (8 parts, 2 cores). Parts 0-1 (3.24M games, 67.7M start pairs): only 22 W-run suffixes contain a return.
+  Max returns 1, CASC 1, PXR 1, RETURN-node children 0, depth 0. C4_ROW
+- C(5): not exhaustive (2.9·10^10 games).
+
+### Climbs (climb24.py; fitness (quantity, secondary, returns); the third key gives a gradient where the first two are 0)
+| fitness | n 6 | n 10 | n 15 | n 20 | n 30 | seeded n 32 |
+| --- | --- | --- | --- | --- | --- | --- |
+| PXR, 2-key (r1) | 1 | 1 | 2 | 3 | 1 | |
+| PXR, 3-key (r2) | | | 4 | 6 | | 5 (from cedge_n32's 4) |
+| RETURN-node children, 2-key (r1) | 0 | 0 | 0 | 0 | 0 | |
+| RETURN-node children, 3-key (r2) | | | 8 | 19 | | 15 (from u23sw64_n32's 6) |
+- The 2-key RETURN-node climbs found nothing: a return node with any child is too rare for a blind walk. The returns gradient fixes that.
+
+### Pinned witnesses (pin23.py ALL OK; retcause.py gives the same numbers)
+| name | sha1 | n | |F| | returns | CASC | PXR (deg X) | max children, RETURN node | depth |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| kr19_n20 | 58b7f92ed55e… | 20 | 8 | 41 | 30 | 4 (deg 9) | 19 | 2 |
+| kr15_n32 | 2980bc242551… | 32 | 8 | 63 | 32 | 2 | 15 | 3 |
+| pxr6_n20 | 8fb69ff55de9… | 20 | 19 | 51 | 25 | 6 (deg 5) | 3 | 2 |
+| pxr5_n32 | 207715264b10… | 32 | 35 | 83 | 33 | 5 (deg 2) | 5 | 4 |
+
+### Findings (part 2)
+1. DATA: casc.py = retcause.py on 599 / 599 corpus W-runs.
+2. DATA: NARROW (clause 1, O(1) children of a RETURN node) is already DEAD by L-RED R149's casctf_n10_N210 (211), a passive-clone
+   construction. Here, independent of clones:
+   - kr19_n20: one RETURN node with 19 = n − 1 children in an 8-transition W-run at n 20, a dense game with no passive clone (every
+     vertex has an in-edge);
+   - kr15_n32: 15.
+   So the width at return nodes is not a clone artefact. It is ≈ n in a small natural-looking game.
+3. DATA: CASC-EDGE (RET(X; e) ≤ deg X, DEAD by R150 at 4 = 2·deg) is beaten more strongly: pxr5_n32 has 5 returns of one X of out-degree 2
+   under one root (2.5·deg).
+   - pxr6_n20 has 6 (deg 5).
+   - PXR grows with budget: 1, 2, 3 (2-key) to 4, 6 (3-key) at n 15, 20.
+   - No climb or construction exceeds PXR 17 (narrow_n10 = topfix's 2N − 3, linear in n).
+4. DATA: max root-chain depth in climbs 2-4; constructions 49 (narrow_n10 / topfix, R149).
+5. READING: the small extremes show that one RETURN node can feed ≈ n children within a single short W-run (kr19_n20, |F| 8). Neither
+   width nor per-(X, root) count is the obstruction-free quantity. They only redistribute returns, whose total stays ≤ n_E·|F|.

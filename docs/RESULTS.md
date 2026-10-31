@@ -7745,6 +7745,290 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   TARGET.md claim.» Not a claim of TARGET.md §1 or §2 (lemmas, inequalities and equivalences about W-runs of N5 runs on every game; no bound
   on a W-run, on a run or on running time; no algorithm claim). GAPS G-N5-TIME: open.
 
+### R96 [refereed-only] N5 on EVERY game (SPEC S1-S5, under the standing SPEC premise of RESULTS R57 (1E-N3: S1's procedure realises the pointwise optimum; for S4a at a transition t → t + 1, σ_(t+1) is the pointwise optimum of the one-player arena H_t, H_t := S4a's arena at t (Even keeps σ_t ∪ Iσ_t, Odd follows τ_t)); premises RESULTS R15 (a), (d) and R86 (a)), with: a run is the sequence of states (σ_k, τ_k), a transition is written k → k + 1 (states k, k + 1), and an Even vertex y switches at k if σ_(k+1)(y) ≠ σ_k(y); n := |V|, m_E (m_O) := the number of edges leaving Even (Odd) vertices; values (c, P, ℓ) (cycle node, path set, length) as in SPEC S1, ⊴, ◁, ⊵, ▷ the SPEC S1 order (better for Even) and its strict and reverse forms, and x ⊕ (c, Q, ℓ) := (c, Q ∪ {x if x is more relevant than c}, ℓ + 1) (as in RESULTS R93 TIE); for a state k: Ξ_k := Ξ_{σ_k}, σ̄_k := S1's Odd counterstrategy to σ_k, and Iσ_k := Even's improving edges at k (SPEC S2: {(y, z) : Ξ_k(z) ▷ Ξ_k(σ_k(y))}); W-run F := RESULTS R89's (a maximal run of consecutive states of one τ-stretch none of whose transitions is an S4c fallback or changes λ_W, the cycle-node map of W), with τ and C := {v : λ_W(v) = v} fixed on F and |F| its number of transitions; for a state k of F: W_k := the [S1-val] valuation of the (σ_k, τ)-plays and ℓ_k(x) its length component at x; D_k := {Odd o : σ̄_k(o) ≠ τ(o)}; U_k := {σ̄_k(g) : g ∈ D_k} ∪ {the Ξ-successor of c (σ_k(c), or σ̄_k(c) if c is Odd) : c ∈ C} (L-RED R143's upward heads); H_k := S4a's arena at k (Even v keeps {σ_k(v)} ∪ Iσ_k(v), Odd follows τ); dist and the remaining edges at k := those of S4a's evaluation of H_k (si.py Engine.evaluate on the dual of H_k with dual-Even fixed to τ); for a transition k → k + 1 of F: (y, z) is W_(k+1)-tight at Even y ∉ C iff y ⊕ W_(k+1)(z) = W_(k+1)(y); an EVENT := a transition k → k + 1 of F at which (i) σ̄ changes, (ii) σ changes at some Even c ∈ C, or (iii) Ξ changes at some vertex of U_k ∪ U_(k+1), and a transition is EVENT-FREE iff it is not an EVENT; E_F := the number of events of F; for Odd o, c ∈ C and u ∈ V: SB_F(o), CN_F(c), HXU_F(u) := the numbers of transitions of F at which σ̄(o) changes, at which the Even vertex c switches, and at which u ∈ U_k ∪ U_(k+1) and Ξ(u) changes; Ξ^d_k := Odd's valuation of τ_k on G^d at state k (RESULTS R86's U): for every N5 run on every game and every W-run F of it: (Claim RG′) at every S4a step k → k + 1 of F, in the round of cycle node c, the remaining edges (x, y), x ≠ c, with dist(y) = dist(x) − 1 are exactly the W_(k+1)-tight arena edges of x with W_(k+1)-cycle node c; (Theorem RUN-SETTLE) if the transitions k0, …, k1 − 1 of F are all event-free, then for k0 ≤ k < k1 every Even vertex v switching at k and every vertex v whose Ξ changes at k has ℓ_(k+1)(v) ≥ k − k0 + 1, so k1 − k0 ≤ n − 1 (proof: induction on k − k0 with a least-ℓ violator, using R15 (a), Claim RG′, ARENA-MAX (L-RED R140, l-red 47000632; the S4a half of the R57 premise above) and L-LIT T54's LEX-BFS / IDX-MONO as signed in this packet's review, read at one S4a evaluation with W_(k+1); Cases 2, 2b via Lemma ONE-STEP (REFEREE-2 R2-N5-SRC §3.2, claude/referee-2 e8c1b62d; signed by REFEREE R-N5-SETTLE Addendum 1, claude/referee 8951ef7c), which closes gap G-SRC-1 (REFEREE R-N5-SRC §3, claude/referee 81f6b89c)); (Corollary RUN-COUNT) |F| ≤ n(E_F + 1) − 1; (Theorem HEAD-RED, an EQUIVALENCE) E_F ≤ Σ_(Odd o) SB_F(o) + Σ_(c ∈ C) CN_F(c) + Σ_(u ∈ V) HXU_F(u), so |F| ≤ n(1 + n·max_(Odd o) SB_F(o) + n·max_(c ∈ C) CN_F(c) + n·max_(u ∈ V) HXU_F(u)) − 1, and, as each count is ≤ |F|, for every family of games every W-run has polynomially many transitions iff max SB_F, max CN_F and max HXU_F are polynomial over all W-runs F; and (Corollary T-XCH, an EQUIVALENCE from RESULTS R86 (a) SW-RETURN on both sides and R15 (d)) every N5 run, with T its number of transitions (N5 iterations), has T ≤ m_E(1 + XE) + m_O(1 + XO), XE (XO) the most changes of one vertex's Ξ_k (Ξ^d_k) over the whole run, and, for every family of games, T is polynomial over all runs iff XE and XO are (2026-10-30) — a REDUCTION (no count is bounded here; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim; not to sign: CONJECTURES FLIP-EV (DEAD, fixes F0), HX-POLY, CN-POLY, XCN-POLY; Lemma ONE-STEP (Cases 2, 2b) is referee-originated) (P-N5-SETTLE, docs/si/P-N5-SETTLE-box52.md; L-SI successor 34; fixes docs/si/P-N5-SETTLE-fixes.md entries 1-5), CHECKER PASS (docs/checker/C106.md, checker 82c9265c)
+- Object (L-SI successor 34, Opus 5.5, D18; frozen, unchanged during review): packet P-N5-SETTLE, docs/si/P-N5-SETTLE-box52.md, sha1
+  aef403c3d8a003bcfc6742c4d1da084a1e21669f, 248 lines (l-si freeze 6a70a5207f3cb6b1613a0a2f5ec9c328af2b4f33, 2026-10-30T18:18:30Z, the
+  file's only commit; identical at l-si 86becaa0, at origin trunk a93c4b78, at f7e070b7, at l-si head ce7bdc3b and at trunk 5314536f; first
+  on trunk by c5301e37, 18:54:18Z; pinned in experiments/si/check.sh l. 927). Both referees measured the sha1 at 6a70a520 (REFEREE l. 3-5
+  «Both equal the Lead's figures.»; REFEREE-2 l. 2-4 «Both re-hashed in a detached worktree at 6a70a520: match»). The Lead's freeze word is
+  quoted at l. 2-4 («FREEZE a small packet P-N5-SETTLE for the referees … Theorem RUN-SETTLE, Theorem HEAD-RED and Claim RG′, quoting L-RED
+  R143's Lemma SETTLE verbatim (l-red 717f407a) with your proof's dependence on it explicit. …»; a message, not on file). Status (l. 7-9):
+  «Status: REDUCTIONS and one EQUIVALENCE. No residual is bounded here. G-N5-TIME stays OPEN. This is not M3, not a step-4 pass, and not a
+  TARGET.md claim.» «Object: N5 only (SPEC S1-S5).» Source (l. 6): docs/si/N5-HEADS-box52.md (l-si 71d1d0ac), «Where the two differ, THIS
+  packet governs.»; not refereed here. Sections: §0 what to sign (l. 11-21), §1 setting and landed premises (l. 23-56: N5, priorities, run,
+  values, ⊕, Ξ_k, W_k, val, ℓ_k, Iσ_k, H_k, W_k-tightness, W-run (R89 verbatim), STEP-SW, D_k, [R57], [R15] (a), (d), MON), §2 other lanes'
+  lemmas and the packet's dependence on R143 (l. 58-92), §3 Claim RG′ (l. 94-120), §4 PLAY-CAUSE, W-MON, PATH (l. 122-140), §5 RUN-SETTLE
+  and RUN-COUNT (l. 142-199), §6 HEAD-RED (l. 201-214), §7 T-XCH (l. 216-228), §8 CONJECTURES (l. 230-234), §9 DATA, DEAD, READING (l.
+  236-245), proposed line (l. 247-248). Other lanes' texts inside the packet: verbatim at their SHAs (to check (5)).
+  The RESULTS line, history: (1) the frozen line docs/si/P-N5-SETTLE-line.txt (6a70a520), sha1 6aa094e32b03317797a551ac2fc719749cf59ca7,
+  the line both referees reviewed: REFEREE «does NOT match yet» (l. 34) with SETTLE-L1 (F), L2 (T), L3 (k) REQUIRED; REFEREE-2 «content
+  MATCHES §3, §5-§7» with L-1 (F), L-2 (Iσ_k), L-3 (T) REQUIRED (l. 24). (2) L-1 997e39eee8d72ae94be4764bb1e3841914ffc78e (a0970d36): all
+  joint items applied; REFEREE §C l. 77 REQUIRED SETTLE-L5; REFEREE-2 23 L1 l. 25 MATCHES, corrected by REFEREE-2 24 (L2 l. 14). (3) L-2
+  1fcb33c5d96a20eb70abe06c29154ef343b33ae0 (86becaa0): REFEREE §C l. 88 and REFEREE-2 L2 l. 37: MATCHES (Opus 5.5, D15); the title at the
+  L-2 object (to check (1)). (4) L-3 ae695c9eeaf9d40bdba2ed8574c238a107c68d52 (a79d33db, fixes entry 3, the Lead's D-1 / D-2): «fixed on F
+  and |F| its number of transitions»; «H_t, H_t := S4a's arena at t (Even keeps σ_t ∪ Iσ_t, Odd follows τ_t)»; REFEREE §C §6 l. 112
+  (957c3e90, preliminary): «Verdict on L-3: MATCHES D-1 and D-2. REQUIRED SETTLE-L6 (σ_new) and the ONE-STEP citation, both for L-4.» (5)
+  L-4 6ed61d848613df4b501b785e9418c3e2c1e8fc43 (b04a1bbb, fixes entry 4): the RUN-SETTLE proof note cites Lemma ONE-STEP for Cases 2, 2b;
+  REFEREE §C §7 l. 135 (8a1ba423): REQUIRED SETTLE-L6 and SETTLE-L7; REFEREE-2 R2-N5-SETTLE-L4.md l. 43 (0f7f3010, b441f3da): «L-4
+  (6ed61d84): **REQUIRED CHANGE SET-L4-1** (the L41 «referee-originated» scope-tail clause) (Opus 5.5, D15).» (6) L-5
+  39e44fe2b8b4cced9133270de0896e7652cc859c (ce7bdc3b, fixes entry 5): «for S4a at a transition t → t + 1, σ_(t+1)» (SETTLE-L6, = REFEREE-2
+  P-1); «, which closes gap G-SRC-1 (REFEREE R-N5-SRC §3, claude/referee 81f6b89c)» (optional item); «; Lemma ONE-STEP (Cases 2, 2b) is
+  referee-originated» (SETTLE-L7 = SET-L4-1, L41); «entries 1-5». REFEREE §C §8 l. 153 (5f2fbba5): «Verdict on L-5: MATCHES (Opus 5.5, D15).
+  No REQUIRED change remains on the SETTLE line.»; REFEREE-2 R2-N5-SETTLE-L5.md l. 21 (0f864f7a): «L-5 (39e44fe2): **MATCHES** (Opus 5.5,
+  D15). No required change.» L-5 supersedes the earlier lines; the title is L-5 verbatim with its own date (C106 §3). From L-2 to L-5 no
+  claim statement changed: RG′, RUN-SETTLE, RUN-COUNT, HEAD-RED and T-XCH are token-identical (C106 §3). Neither referee found a FALSE
+  statement; every REQUIRED item binds a symbol (F, T, k, Iσ_k; σ_(t+1)), fixes the scope of τ in Odd's valuation (SETTLE-L5) or states
+  ONE-STEP's L41 status (SETTLE-L7); the Lead's D-1, D-2 bind |F| and H_t.
+  Setting (packet §1): N5 = SPEC S1-S5, any parity game, V = {0, …, n − 1}; priorities injective after SPEC's re-ranking; a run from any
+  start pair; Ξ_k := the [S1-val] valuation of the (σ_k, σ̄_k)-plays; W_k := the valuation of the (σ_k, τ_k)-plays; a W-run as in R89 («a
+  τ-stretch := a maximal run of consecutive states with τ constant; a W-run := a maximal run of consecutive states of one τ-stretch none of
+  whose transitions is an S4c fallback or changes λ_W»), on which τ and C := {v : λ_W(v) = v} are fixed; «Every transition of F switches
+  some Even vertex: with τ fixed and no S4c fallback, S4a changed σ (SPEC S4).» (l. 48); MON «Hence Ξ_(k+1) ⊵ Ξ_k pointwise at every
+  transition.» (l. 56). §1 cells: REFEREE «CHECKED» (l. 24); REFEREE-2 «CHECKED» with N-1 (l. 15). Names: the line's U_k is R143's upward
+  heads, not landed R38's U_k (Odd's valuation, RESULTS l. 1822); Odd's valuation is Ξ^d_k in the line (to check (6)). The R57 gloss's «Even
+  keeps σ_t ∪ Iσ_t» is R93's wording for «{σ_t(v)} ∪ Iσ_t(v)» (REFEREE §C l. 106); REFEREE-2 left it optional (R2-N5-SETTLE-L5.md l. 17-18:
+  «It is a precision only, and the reading is unambiguous.»).
+- Claims signed (both referees "(Opus 5.5, D15)": REFEREE successor 20, Addendum 1 too, lines L-3 to L-5 successor 21; REFEREE-2 successor
+  23, lines L-2, L-4, L-5 and ONE-STEP successor 24). Items (a)-(e) are SIGNED in both verdict tables (REFEREE "## Verdicts" l. 21-35 of
+  R-N5-SETTLE.md; REFEREE-2 "## 1. Verdict table" l. 12-26 of R2-N5-SETTLE.md) and in both §C cross-maps (REFEREE §C l. 6-24; REFEREE-2 §C
+  C.1 l. 6-19); the table is to-check (4). All are about N5 on every game, inside W-runs, except (e), about whole runs. Premises LANDED (as
+  L-5 names them): SPEC S1-S5; RESULTS R15 (a), (d); R86 (a) SW-RETURN and its dual; R89's W-run; R93's ⊕; standing premise: RESULTS R57's
+  SPEC premise (1E-N3), used by RG′ (the computed values are W_(k+1)) and, as ARENA-MAX, by W-MON and RUN-SETTLE Cases 2, 2b, 2c. Unlanded,
+  signed as used here and named in the proof note only: L-LIT T54 LEX-BFS / IDX-MONO (Case 2a), L-RED R140 ARENA-MAX (= [R57] for S4a), and
+  REFEREE-2's Lemma ONE-STEP (Cases 2, 2b; referee-originated; bullet «G-SRC-1 and Lemma ONE-STEP» below). The code's match to SPEC is DATA
+  (R15 G-N5T-1). No item uses a count.
+  (a) Claim RG′ (§3, l. 94-120): «Statement. In c's round, the remaining edges (x, y), x ≠ c, with dist(y) = dist(x) − 1 are exactly the
+      W_(k+1)-tight arena edges of x whose W_(k+1)-cycle node is c.» (l. 103-104), at ANY transition k → k + 1 of a W-run; proof (A) bit
+      invariant per processed u, (B) tight edges survive, «No step of the proof uses W_(k+1) = W_k.» (l. 119-120). Cells: REFEREE «SIGNED»
+      (l. 28; §3 l. 37-51, «Nothing uses W_(k+1) = W_k ✓»); REFEREE-2 «SIGNED», «none» (l. 18; §2.2 l. 36-47, against si.py Engine.evaluate
+      l. 112-149).
+  (b) Theorem RUN-SETTLE (§5, l. 142-147): «Let F be a W-run, and let the transitions k0, k0 + 1, …, k1 − 1 of F all be event-free.»;
+      «(S_j) Every Even y that switches at k has ℓ_(k+1)(y) ≥ j + 1.»; «(X_j) Every vertex x with Ξ_(k+1)(x) ≠ Ξ_k(x) has ℓ_(k+1)(x) ≥ j + 1.»;
+      «Consequently k1 − k0 ≤ max_x ℓ(x) ≤ n − 1.» (j := k − k0). L-5 states S_j, X_j and «k1 − k0 ≤ n − 1» (as L-2). Proof: S_j ⇒ X_j by
+      PLAY-CAUSE; S_j by induction with a least-ℓ violator, (MIN), PATH; Cases 1 (b ∉ H_(k−1)(y): R15, X_(j−1)), 2 (b ∈ H_(k−1)(y); its
+      ARENA-MAX step at k − 1 → k by Lemma ONE-STEP at t = k − 1, z = b), 2a (LEX-BFS / IDX-MONO at k − 1 → k and k → k + 1 give opposite
+      strict orders), 2b (its ARENA-MAX step by ONE-STEP at t = k, z = a) and 2c (ARENA-MAX at k → k + 1). Cells at the L-2 object: REFEREE
+      «SIGNED» (l. 30; §5 l. 64-90, «The cases exhaust ✓»); REFEREE-2 «SIGNED», «none» (l. 20; §2.5 l. 67-83, «The four cases exhaust»).
+      After G-SRC-1: REFEREE Addendum 1 l. 185 (8951ef7c) «Verdict: [SET] §5 (RUN-SETTLE) stays SIGNED, with Case 2 and Case 2b read through
+      ONE-STEP.»; REFEREE-2 signed ONE-STEP as its author (e8c1b62d). See the bullet «G-SRC-1 and Lemma ONE-STEP».
+  (c) Corollary RUN-COUNT (§5, l. 148-149): «For every W-run F with E_F event transitions, |F| ≤ E_F + (E_F + 1)(n − 1) = n(E_F + 1) − 1.»,
+      |F| its number of transitions, bound in the line since L-3 (D-1, fixes E3.1). Cells: REFEREE l. 30, l. 91 «RUN-COUNT ✓»; REFEREE-2 l.
+      20, l. 84 «(event-free transitions form ≤ E_F + 1 blocks of ≤ n − 1)».
+  (d) Theorem HEAD-RED (§6, l. 201-212): «(⇐) E_F ≤ Σ_(Odd o) SB_F(o) + Σ_(c ∈ C) CN_F(c) + Σ_u HXU_F(u).», hence by RUN-COUNT «|F| ≤
+      n·(1 + n·max_o SB_F(o) + n·max_c CN_F(c) + n·max_u HXU_F(u)) − 1.»; «(⇒) Each of SB_F(o), CN_F(c), HXU_F(u) is ≤ |F|.»; so, for every
+      family of games, polynomial W-runs ⇔ polynomial max SB_F, max CN_F, max HXU_F. Cells: REFEREE «SIGNED» (l. 31; l. 94-97); REFEREE-2
+      «SIGNED», «none» (l. 21; l. 86).
+  (e) Corollary T-XCH (§7, l. 216-228): «T ≤ Σ_v SW(v) (R15 (d): every iteration changes σ or τ)»; «Σ_v SW(v) = Σ_(edges (v, c)) ENT(v, c)
+      ≤ Σ_(edges) (1 + RISE(c)) (R86 (a), both sides, R = the whole run)»; «hence T ≤ m_E(1 + XE) + m_O(1 + XO).»; «Conversely XE, XO ≤ T.»
+      «an EQUIVALENCE and a reformulation of G-N5-TIME, not a bound» (l. 226-227). Only the composition is new; RISE^U(c) counts changes of
+      Odd's valuation at each state (from L-2 on: Ξ^d_k, SETTLE-L5). Cells: REFEREE «SIGNED (composition of landed R86 (a), both sides, with
+      R15 (d))» (l. 32; l. 98-101); REFEREE-2 «SIGNED», «none» (l. 22; l. 87-88, «R86 (a) on both sides (the landed text has «Dually for Odd
+      v with U.»), R = the whole run»).
+  Signed by both as PROOF STEPS, not stated by the line (to check (4)): Lemma PLAY-CAUSE (§4 l. 124-125: «If k → k + 1 is event-free and
+  Ξ_(k+1)(x) ≠ Ξ_k(x), then some Even y with λ_W(y) ≠ y switches at k and lies on x's (σ_(k+1), τ)-path to λ_W(x).»), W-MON (l. 138: «In a
+  W-run, W_(k+1) ⊵ W_k pointwise: ARENA-MAX with ρ = σ_k, a strategy of H_k.»), PATH (l. 139-140), T54 IDX-MONO / LEX-BFS as used (one S4a
+  evaluation, W_(k+1)-tight, keys on (σ_(k+1), τ)-paths), and, after both reports, Lemma ONE-STEP (Cases 2, 2b; bullet «G-SRC-1 and Lemma
+  ONE-STEP» below). Cells: REFEREE l. 26, l. 29, §4 l. 53-62; REFEREE-2 l. 17, l. 19, §2.3-§2.4 l. 48-66; REFEREE §C l. 10-11 «agree. Two
+  sources, the same derivation» / «agree. Both: Ξ(x) is a function of (y_0 … y_i, Ξ(y_(i+1))) even if the play re-enters the prefix»;
+  REFEREE-2 §C l. 11, l. 14 «SIGNED by both».
+  Gap maps at the L-2 object (before G-SRC-1): REFEREE l. 35 «No gap in the packet. Nothing FALSE.»; REFEREE-2 l. 26 «No gap in the packet.
+  Nothing FALSE among the items to sign.»; REFEREE §C l. 44 «Packet items to sign: EMPTY on both sides. Nothing FALSE.»; REFEREE-2 §C l. 19
+  «Joint gap map for the packet: EMPTY. Nothing FALSE on either side.» After both reports, both referees found G-SRC-1 and closed it by
+  ONE-STEP (next bullet): joint gap map: G-SRC-1, CLOSED.
+  The RESULTS line (L-5) claims less than the reports: no PLAY-CAUSE, W-MON, PATH, LEX-BFS / IDX-MONO or ONE-STEP as statements, no «≤ max_x
+  ℓ(x)». Every clause it states is one of (a)-(e).
+- G-SRC-1 and Lemma ONE-STEP (after both reports; Lead reading L41):
+  - G-SRC-1: a proof-text gap in packet §5 Case 2 and Case 2b, missed by both SETTLE reports (REFEREE Addendum 1 l. 161 «It was a joint miss
+    with REFEREE-2 23.»). If y ∉ C lies on c's cycle, the comparison strategy's play from y closes a different cycle, so the written «val(ρ,
+    τ)(y) = y ⊕ W_k(b)» can fail (R2-N5-SRC §3.2 l. 52-59). Reachable (l. 61-62: ret22_n40 with its start file, 4 states); l. 64-65 «The
+    sentence is false on reachable states; the conclusion it feeds is true, by the lemma below.» No signed statement is FALSE.
+  - Found independently by both: REFEREE R-N5-SRC §3 (claude/referee 81f6b89c, 22:19:54Z, before e8c1b62d), closed there by a four-sub-case
+    argument; REFEREE Addendum 1 l. 156-157 «I found it independently in R-N5-SRC §3 (claude/referee 81f6b89c, written before I saw
+    REFEREE-2's R2-N5-SRC or the Lead's 22:29Z message).»; REFEREE-2 R2-N5-SRC §3.2 (claude/referee-2 e8c1b62d, 22:24:08Z).
+  - Lemma ONE-STEP, verbatim (R2-N5-SRC.md §3.2 l. 67-68): «Let t → t + 1 be a transition of a W-run F, y ∉ C an Even vertex, c := λ_W(y), z
+    ∈ H_t(y) with λ_W(z) = c, and z's (σ_(t+1), τ)-path to c avoiding y. Then y ⊕ W_(t+1)(z) ⊴ W_(t+1)(y).»
+  - Author: REFEREE-2 24 (e8c1b62d), l. 66 «**Lemma ONE-STEP** (REFEREE-2 24, PROVED).»; proof by ARENA-MAX for ρ := σ_(t+1) with y ↦ z,
+    cases (α) y ∉ Z_c and (β) y ∈ Z_c, split by the top z* of the new cycle (l. 69-83); l. 90 «Mechanical: OS = 0 on 852,572 instances (the
+    corpus and 20,000 random runs, §5).»
+  - Independent signature: REFEREE 20, R-N5-SETTLE.md Addendum 1 (claude/referee 8951ef7c, 22:47:50Z, +33/−0), l. 163-164 «(2) Lemma
+    ONE-STEP (REFEREE-2 24, docs/referee-2/R2-N5-SRC.md §3.2, claude/referee-2 e8c1b62d, confirmed an ancestor of origin): SIGNED (Opus 5.5,
+    D15).», with its own check (l. 167-175) and both instantiations CONFIRMED: «Case 2 = ONE-STEP at t = k − 1 with z = b.» (l. 179); «Case
+    2b = ONE-STEP at t = k with z = a.» (l. 182); «Case 2c is unaffected: there the ρ′-play is analysed explicitly (it closes Z).» (l. 184);
+    l. 185 «Verdict: [SET] §5 (RUN-SETTLE) stays SIGNED, with Case 2 and Case 2b read through ONE-STEP.»
+  - REFEREE's own closing argument, signed by REFEREE-2: R2-N5-SRC-C.md (claude/referee-2 824651dd, 22:56:32Z) l. 39 «Equivalence with
+    ONE-STEP. (ii) is my z* = c; (iii) is my z* even; (iv) is my z* odd.»; l. 41 «**Verdict on REFEREE's G-SRC-1 closing argument: SIGNED
+    (Opus 5.5, D15).** No gap. No FALSE step.»
+  - The line cites ONE-STEP in RUN-SETTLE's proof note («Cases 2, 2b via Lemma ONE-STEP (REFEREE-2 R2-N5-SRC §3.2, claude/referee-2
+    e8c1b62d; signed by REFEREE R-N5-SETTLE Addendum 1, claude/referee 8951ef7c), which closes gap G-SRC-1 (REFEREE R-N5-SRC §3,
+    claude/referee 81f6b89c)») and its scope tail says «Lemma ONE-STEP (Cases 2, 2b) is referee-originated» (L41). ONE-STEP is cited, not
+    stated: a proof step, not a landed claim.
+  - Joint gap map: G-SRC-1, CLOSED.
+- Fixes (docs/si/P-N5-SETTLE-fixes.md, L-SI successors 34-35, APPEND-ONLY, F0 and entries 1-5, six commits each +N/−0: 051eb196 (+9/−0,
+  b0adbcff…, F0), a0970d36 (+59/−0, 87f48e2c…, entry 1), 86becaa0 (+14/−0, 42d9a381…, 82 lines, entry 2; the L-2 object), a79d33db (+14/−0,
+  cf1b8c70…, 96 lines, entry 3), b04a1bbb (+96/−0, 5c1088d7…, 192 lines, entry 4), ce7bdc3b (+41/−0, sha1
+  0c593d03b3a06c6970236d367cdfdc3e727db79d, 233 lines, entry 5; = l-si head = trunk 5314536f; the last commit touching the file)). Header
+  (l. 1-2): «The frozen file is never edited. Each entry names the section, says whether a TO-SIGN item is affected, and gives the
+  evidence.» Each item, with the referees' words:
+  - F0 (l. 4-9; 18:5xZ): CONJECTURE FLIP-EV DEAD, instance experiments/si/heads52/inst/flipev_n20.pg (sha1
+    3ebc110b630e5ca3de12bd5e13b751f9e20b2a1c, n 20) + .start (5065f1888fc936d5736f18019de351d5b0965bd5), «transition 2 → 3: Odd 10, not its
+    own Ξ-cycle node, leaves D with both targets' Ξ fixed, in a W-run with no event (iii). The cause is Odd 14 entering D (Ξ(τ(14)) rose;
+    its new target is tied).» (l. 6-7); «§§3-7 (the items to sign) do not use FLIP-EV.» (l. 9).
+  - Entry 1 (l. 11-68; REFEREE 1df722e9, REFEREE-2 301042bb): E1.1-E1.4 REQUIRED (F; T; k; Iσ_k), E1.5-E1.8 precision (event-free, ⊕, Iσ_k,
+    ranges, «for every family of games»; ℓ_(k+1)(v); proof-note status; scope tail), applied in L-1; packet errata E1.9-E1.13 (to check
+    (8)); L-1 at l. 68.
+  - Entry 2 (l. 70-82; REFEREE aa5adfd4): E2.1 SETTLE-L5 (REQUIRED; «U := Odd's valuation of τ on G^d (RESULTS R86)» → «Ξ^d_k := Odd's
+    valuation of τ_k on G^d at state k (RESULTS R86's U)» and T-XCH «Ξ_k (Ξ^d_k)»), E2.2 (optional) «and, for every family of games, T is
+    polynomial over all runs iff XE and XO are», E2.3 «entries 1-2)»; L-2 at l. 82.
+  - Entry 3 (l. 84-96; a79d33db; the Lead's drafting check of L-2, «two binding soft spots not raised by either referee»): E3.1 (D-1) «fixed
+    on F» → «fixed on F and |F| its number of transitions»; E3.2 (D-2) the H_t gloss «H_t, H_t := S4a's arena at t (Even keeps σ_t ∪ Iσ_t,
+    Odd follows τ_t)» (R93's title wording); L-3 at l. 96.
+  - Entry 4 (l. 98-192; b04a1bbb): G-SRC-1 and Lemma ONE-STEP; E4.1 R2-N5-SRC §3.2 (e8c1b62d) and E4.2 REFEREE Addendum 1 (8951ef7c), each
+    quoted line for line; E4.3 L-4 = L-3 + the ONE-STEP citation in RUN-SETTLE's proof note + «entries 1-4»; l. 99 «No theorem statement of
+    the frozen packet changes.»; l. 100 «The packet's §5 text is read through ONE-STEP at those two steps (frozen file unchanged).»; L-4 at
+    l. 192.
+  - Entry 5 (l. 194-233; ce7bdc3b): E5.1 REFEREE 21's §C §7 quoted line for line (SETTLE-L6 and SETTLE-L7 REQUIRED; the G-SRC-1 naming
+    optional); E5.2 L-5 = L-4 + exactly these + «entries 1-5»; L-5 at l. 233. The entry's heading cites §7 at 8197e182, the stamp commit
+    (23:37:49Z, +1/−1, «23:40Z» → «23:37Z»); the §7 text is from 8a1ba423 (C106 N-3).
+  No fix changes a signed statement of the packet: E1.1-E1.8, E2.1-E2.3, E3.1-E3.2, E4.3 and E5.2 bind symbols, cite ONE-STEP or word the
+  line; E1.9-E1.13 are packet-text errata outside the signed statements (each «No signed item changes.»); entry 4 reads the proof of Cases
+  2, 2b through ONE-STEP; F0 touches only a CONJECTURE.
+- Not signed: §1 (setting; «CHECKED» by both); §2 other lanes' texts: R143 U_k / EVENT used as definitions only, SETTLE (B), (C) not used;
+  R140 ARENA-MAX «quoted verbatim. Used as [R57]» (REFEREE l. 25); T54 IDX-MONO / LEX-BFS signed only as used (proof steps, above); the
+  packet errata; §8 CONJECTURES, «NOT to sign»: FLIP-EV (l. 231-233), HX-POLY («max HXU_F polynomial»), CN-POLY, XCN-POLY («σ̄-changes at own
+  Ξ-cycle nodes») (l. 234), all open except FLIP-EV; §8's FLIP-RED sentence void (F0); §6's «Comparison (READING, not to sign)» (l.
+  213-214); §9 DATA, DEAD, READING.
+  DEAD, each with the instance that killed it: CONJECTURE FLIP-EV («every σ̄(o)-change at k → k + 1 of a W-run that moves o out of D or
+  within D (old target ≠ τ(o)) happens at a transition with an event (iii), whenever o is not its own Ξ-cycle node at k or at k + 1», l.
+  231-232): flipev_n20, transition 2 → 3, Odd 10 leaves D with no event (iii) in the W-run; obstruction (F0 l. 7): «The cause is Odd 14
+  entering D (Ξ(τ(14)) rose; its new target is tied).»; pins check.sh l. 930-935 (re-run, Data); lane-DEAD (L-SI; n5x and n5b agree), not
+  refereed here. Lane DEAD item of the packet (§9 l. 242-243), not a refereed dead end of this entry: the front «measured by the distance
+  along the Ξ-play to D ∪ C» (red/ul/instances/ladderd0_k12_n48 + start, 11 violations; pinned «BAD1 11»). Lane and referee work after the
+  freeze other than the SETTLE fixes commits, the SETTLE line word-diffs and the G-SRC-1 / ONE-STEP items above is not part of this entry
+  (to check (12)); the rest of R-N5-SRC, R2-N5-SRC and R2-N5-SRC-C is about L-RED's packet P-N5-SRC.
+- Referee strengthening (NOT part of this entry; remarks of one referee, remarks of both outside the verdict cells, readings):
+  (i) REFEREE l. 45-46 and REFEREE-2 l. 44: a good-u edge u → y with y ∈ M is never length-tight, so RG′'s «exactly … with dist(y) =
+      dist(x) − 1» is unaffected (REFEREE §C l. 9 «Both note …»).
+  (ii) PLAY-CAUSE when the play re-enters its prefix (path sets are sets): REFEREE-2 l. 62, REFEREE l. 57-58; §C l. 11.
+  (iii) REFEREE-2 l. 76: «(c is the same cycle node at both transitions: λ_W is fixed on F.)»; l. 77-78 (Case 2b) N-1's condition holds.
+  (iv) Mutation controls (REFEREE l. 113-117): MUT 4 (LEX with argmax) and MUT 2 (IDX with the largest index) bite; MUT 5 (fronts j + 2)
+      bites on gci2_n12 + start, «so the front is attained, as the packet says»; «MUT 1 (block bound n − 2) and MUT 3 (event (iii) dropped)
+      never bit on the pins», so the n − 1 block bound and event (iii) have no biting control on the pins.
+  (v) Self-corrections: REFEREE §C l. 14 «I missed it here.» (R2 N-1); l. 23 «MISSED» (R2 L-6); REFEREE-2 §C l. 24 «I missed it.» (SETTLE-L3),
+      l. 28 «I missed ⊕ and «event-free»»; REFEREE-2 24 L2 l. 14 (successor 23 missed SETTLE-L5 on L-1).
+  (vi) READING (packet §6 l. 213-214): «XI-RUN (P-N5-WRUN §3) needs Ξ-changes at EVERY vertex. Here only upward heads are counted, plus
+      σ̄-changes and W-cycle-node switches.»; packet l. 91-92: on a W-constant interval RUN-SETTLE gives |I| ≤ n(E_I + 1) − 1, «weaker than
+      SETTLE's (D + 1)(E_I + 1) − 1». Not signed.
+- Honest limits: (i) REDUCTIONS and two EQUIVALENCES: no count is bounded; HX-POLY, CN-POLY, XCN-POLY and G-N5-TIME stay open; T-XCH is a
+  reformulation of G-N5-TIME, not a bound (packet l. 226-227). (ii) RUN-SETTLE, RUN-COUNT and HEAD-RED are inside W-runs; W-runs are not
+  whole runs (τ-changes, S4c fallbacks and λ_W-changes cut runs into W-runs, R89). (iii) Case 2a rests on L-LIT T54's LEX-BFS / IDX-MONO,
+  which are not landed: both referees signed them as used, at one S4a evaluation with W_(k+1)-tightness and RG′, re-derived from SPEC S1
+  (iv) (REFEREE) and from si.py (REFEREE-2); the line names them in a proof note only. (iv) Claim RG′ and the tightness rules are about S1's
+  evaluation procedure as SPEC S1 (iii)-(iv) and si.py Engine.evaluate define it (si.py named without a SHA in the line; e688b963 at
+  6a70a520 = 86becaa0 = ce7bdc3b = trunk 5314536f); standing premise R57 (1E-N3); the code's match to SPEC is DATA (R15 G-N5T-1). (v) R143's
+  Lemma SETTLE is NOT landed and NOT used beyond its definitions. (vi) No biting mutation control for the n − 1 block bound or for event
+  (iii) on the pins (Referee strengthening (iv)). (vii) CONJECTURE FLIP-EV is DEAD (lane). (viii) Counts are transitions, not bit
+  operations; no running-time bound. (ix) Not M3, not a step-4 pass, not a TARGET.md claim; G-N5-TIME stays open. (x) Cases 2 and 2b of
+  RUN-SETTLE rest on Lemma ONE-STEP, referee-originated (author REFEREE-2 24, e8c1b62d), signed by both (REFEREE 20, 8951ef7c); the packet's
+  own Case 2 / 2b sentence is false on reachable states (G-SRC-1). Lead reading L41: «A proof written by one referee counts toward "two
+  referees signed it with its gaps listed" (CLAUDE.md) when the author referee signs it in its report and the OTHER referee independently
+  checks and signs it; both signatures and the joint gap map are quoted in the RESULTS entry, whose scope tail says the proof is
+  referee-originated.» L41 records CHECKER C104's N-3 on this rule: «weaker than lane-authored plus two non-author checks for the general
+  form».
+- Data (DATA, not proof): pinned (packet §9 l. 236: «pins in experiments/si/check.sh «box 52», tools experiments/si/heads52/ at l-si
+  71d1d0ac»). experiments/si/check.sh at 6a70a520: sha1 7b7a61b921272fb9c00dae385b725ff377e28ad8, 929 lines; at 86becaa0: sha1
+  117fdee6faa687a08464d1eda46b2778183c8717, 969 lines (= trunk at the L-2 object); l. 1-929 identical (the diff only appends l. 930-969).
+  The «box 52» label is shared: l. 853-857 is box 52 TXC-DESCENT (docs/si/N5-TXCD-box52.md, not this entry); this entry's blocks are l.
+  901-918 (RUN-SETTLE front, Ξ-front DEAD, proof cases, corpus outputs), l. 919-925 (§3 FLIP-EV data), l. 926-929 (packet and line 6aa094e3
+  frozen), and at 86becaa0 l. 930-935 (FLIP-EV DEAD, flipev_n20), l. 964-966 (L-1 pinned), l. 967-969 (L-2 pinned). At ce7bdc3b (sha1
+  1b823bf7bca3cddab26e5322a8c53144a0e3c3dd, 991 lines, = l-si head = trunk 5314536f): l. 1-963 as at 86becaa0; l. 964-976 are box 53
+  (11e9a371, not this entry); the L-1 and L-2 pins move to l. 977-979 and l. 980-982; l. 983-985, l. 986-988 and l. 989-991 pin L-3
+  (ae695c9e…), L-4 (6ed61d84…) and L-5 (39e44fe2…). Re-run for this draft from a `git archive` of each commit (experiments/ and docs/si/;
+  from experiments/si; `python3 -I`; outputs to scratch files; exit codes read): l. 901-929 at 6a70a520 and l. 901-935 + l. 964-969 at
+  86becaa0, each under `set -euo pipefail`, 21:38:19Z-21:38:21Z by date -u (read before and after), rc 0 each: «si (box 52: RUN-SETTLE
+  front, Xi-front DEAD, proof cases, defect set, flips): PASS», «si (box 52 §3: FLIP-CAUSE'' DEAD, FLIP-EV data): PASS», «si (box 52:
+  P-N5-SETTLE frozen): PASS», and at 86becaa0 also «si (box 52 §3: FLIP-EV DEAD, flipev_n20): PASS», «si (P-N5-SETTLE L-1 pinned): PASS»,
+  «si (P-N5-SETTLE L-2 pinned): PASS». At ce7bdc3b: l. 977-991 from a `git archive` of ce7bdc3b (experiments/si and docs/si; from
+  experiments/si) under `set -euo pipefail`, 2026-10-31 01:29:12Z by date -u, rc 0: «si (P-N5-SETTLE L-1 pinned): PASS» to «si (P-N5-SETTLE
+  L-5 pinned): PASS», five lines; CHECKER C106 §7 re-ran l. 901-935 and l. 977-991 at ce7bdc3b, rc 0. Single pins (86becaa0 archive): «RWIN
+  x32_rand48.pg n 48 LMAX 44 E 0 WMAX 44 WN 0.917 EI 0 EII 0 EIII 0 WALL 44»; «BFF gci2_n12.pg n 12 CH 14 MINF0 -6 MINF1 1 NOD 0 BAD1 0 BAD0
+  7 MINW1 1 BADW 0 SWB 0», with MUT=1 «… BADW 2 SWB 0»; «SWC u23sw64_n32.pg n 32 J0 19 NE 44 WR 0 TT 5 RR 0 OT 0 VNE 0 VWR 0 VTT 0 VRR 0 VOT
+  0 MINJ 3»; rc 0.
+  Files (identical at 6a70a520 and 86becaa0): heads52/rwin.py 737335bbaadf30a9b959f1ee006c5e8f24bab966, bffront.py
+  825fb253af0956c83595aa5c5c59d2033ea6011c, swcase.py 3617078eae4f3876cc67e1afa7e1cc608360ddec, rwin_sbcg.txt
+  39d3275bf5aa49ed5fb8f799c91ee51418d220db, rwin_alt.txt f544a5dbe9e23ce7f5318e30784531596be592eb, rwin_red.txt
+  a87f4c51639ab730949201cedaba2f12b1b31341; instances red/usplit/instances/gate_K64_n581.pg a93c7c8be2c39e333cd61755f7ae4cd8ebc0ff98,
+  si/runlin/instances/runfam_K40.pg 287a185d6b82f3ed196abb65726152c982c71f60, red/xing/instances/x32_rand48.pg
+  865321803e5b9bc67ccf67fc9b151789c2dbd82a, n5-epoch/instances/gci2_n12.pg 67b6e166049f3316b10c7c655c1082a334b281a0 (.start
+  d60e70ee9efe210882dd2700ff556cbaaa23210f).
+  DATA OF RECORD (packet §9 l. 237-241 with fixes E1.11; corpus box 50b's lists (719 + 413) plus latew_K16_m32 and fx_K8_m32, 1,134 runs,
+  n5x): bffront 36,834 in-block Ξ-changes, 0 with ℓ_(k+1)(x) ≤ j; front attained on gci2_n12 + start (MUT=1 control BADW 2); swcase Case 1
+  13,998, WR 186, Case 2a 13, Case 2b 0, Case 2c 0, violations 0; event-free blocks: longest 67 (gate_K64_n581, n 581, default best-reward
+  start), 63 on n ≤ 100 (runfam_K40, n 79), largest ratio 44 / 48 (x32_rand48); every block ≤ n − 1. Re-summed for this draft: equal (to
+  check (10)). Second engine: red/seg/xeng.py (n5b SPEC) agrees on the four instances in heads52/inst/ (packet l. 244-245); corpus tools n5x
+  only.
+  REFEREE (successor 20; own docs/referee/scratch/settle_probe.py, `python3 -I`; no lane code): run set box 83 / 50b lists, n ≤ 100: «813
+  runs (740 games, 73 skipped for n > 100), all RC 0; 1,060 W-runs with transitions, 8,066 W-run transitions.» (l. 109); «VIOLATIONS 0 for
+  every check.» (l. 111); «Longest event-free block: 63 (si/runlin/instances/runfam_K40, n 79, best-reward start).» (l. 112); mutations (l.
+  113-117); §C §2: gate_K64_n581 67 from the best-reward start, 3 from its .start (l. 28).
+  REFEREE-2 (successor 23; own docs/referee-2/R2-N5-SETTLE/settle_check.py, «lane heads52 code NOT imported», l. 109): the lane's 1,134
+  runs; «**0 violations** of S, X, BLK, RC, PC, HR, WM, IDX, LEX, TX on every run» (l. 111); 175,533 IDX and 651,871 LEX checks, 0 failures
+  (l. 112); case split «These equal the packet's §9 figures exactly.» (l. 113); events (i) 4,625, (ii) 37, (iii) 4,741, max E_F 528
+  (latew_K16_m32) (l. 114); longest block 67 (gate_K64_n581, default start: L1 l. 20-22). No signed statement uses any count.
+- Signatures: REFEREE docs/referee/R-N5-SETTLE.md (report 1df722e9b65bbb3ae6457b416d267ce594651cf4, 2026-10-30T18:49:06Z, committed
+  directly on claude/referee (parent ac78fb08), first on trunk by ca0c1880 (19:07:41Z); sha1 f534ef331f20defa2586bbda69c0c0244266f523, 160
+  lines at 1df722e9; Addendum 1 appended by 8951ef7c (22:47:50Z, +33/−0: G-SRC-1 and ONE-STEP, bullet above), now 193 lines, sha1
+  f93eedacfb9fbc550fc5b36f259b4e10e151c148 (= referee head = trunk 5314536f); successor 20): §1 CHECKED; §3-§7 SIGNED; T54 IDX-MONO /
+  LEX-BFS «SIGNED as used in Case 2a» (l. 26); «No gap in the packet. Nothing FALSE.» (l. 35). §C docs/referee/R-N5-SETTLE-C.md
+  (ea05b574a9645d7764e7f1bbc35f7e1fd64a7abd, 2026-10-30T19:18:33Z, new file, 64 lines, sha1 e7a0020b2fbbfd9d2590a40fac0188afe32ba764; trunk
+  8bb1c024, 20:00:31Z): cross-map «agree» on every item (l. 6-24), joint gap map EMPTY (l. 44), block reconciliation (§2); §4
+  aa5adfd46c7cff9a618c56475cf6b312930c4e54 (20:01:17Z, +22/−1, 85 lines, b58e19b0…; trunk fb6c8e63, 20:42:26Z): «Verdict on L-1: REQUIRED
+  CHANGE, SETTLE-L5 (Opus 5.5, D15). Everything else MATCHES.» (l. 77); §5 d6a33b10923bb93d4b0b46aca810ba5fe59e8c69 (21:08:23Z, +11/−0, 96
+  lines, sha1 8ab33803ae7ae8ecdcf7fd1abb852d73f7570da3; on trunk by the merge 78dc15f8, 21:33:54Z): «Verdict on L-2: MATCHES (Opus 5.5,
+  D15).» (l. 88); §6 957c3e90 (23:12:50Z, +24/−0; L-3, preliminary): l. 112 «Verdict on L-3: MATCHES D-1 and D-2.»; §7 8a1ba423 (23:37:41Z,
+  +24/−0; L-4; stamp re-set by 8197e182, 23:37:49Z, +1/−1): l. 135 «Verdict on L-4: does NOT yet match. REQUIRED SETTLE-L6 and SETTLE-L7;
+  everything else MATCHES (Opus 5.5, D15).»; §8 5f2fbba5 (2026-10-31T00:10:58Z, +17/−0; L-5): l. 153 «Verdict on L-5: MATCHES (Opus 5.5,
+  D15). No REQUIRED change remains on the SETTLE line.»; the file is now 161 lines, sha1 d39c5768214259e0fe2ae45c6fea126f1d8fd0ab, last
+  touched by 5f2fbba5 (= referee head = trunk 5314536f). REFEREE-2 docs/referee-2/R2-N5-SETTLE.md (report
+  301042bba58f59ea7bf0ecb97dd5764878483aac, 2026-10-30T18:46:26Z, committed directly on claude/referee-2 (parent 284014ad), first on trunk
+  by 71e41ff7 (19:07:41Z); sha1 a8b4f4813eb4a8eda9af3e51ae0c127f72a33bd9, 125 lines, unchanged since; successor 23): §1 CHECKED; §3-§7
+  SIGNED; «No gap in the packet. Nothing FALSE among the items to sign.» (l. 26). §C docs/referee-2/R2-N5-SETTLE-C.md
+  (3fd4aaf09e00e2b24336b5a6f9c025b47a7dd4d5, 2026-10-30T19:14:21Z, new file, 53 lines, sha1 a5b3e53c9ec430e853b654d5a8e32d9d03a7b89c,
+  unchanged since; first on trunk by d7a3cb02, 20:00:32Z): «Joint gap map for the packet: EMPTY. Nothing FALSE on either side.» (l. 19).
+  Line files: R2-N5-SETTLE-L1.md (b521c191464c3dfb87f93ef1b2258008ced12ab2, 20:00:44Z, successor 23, 25 lines, a75eb308…; L-1 MATCHES,
+  corrected by successor 24); R2-N5-SETTLE-L2.md (dd2333a2ea6ae9d7e5983a909dcd44d06da4db5e, 21:08:40Z, successor 24, 37 lines, sha1
+  677b1486f216f35145567cf2ed51de82784f0373, unchanged since; on trunk by the merge 38556650, 21:33:54Z): «(a) SETTLE-L5 is REQUIRED: I
+  agree.» (l. 36); «L-2 (1fcb33c5): **MATCHES** (Opus 5.5, D15). No required change.» (l. 37); R2-N5-SETTLE-L4.md (0f7f3010, 23:27:02Z, new
+  file; b441f3da, 23:27:18Z, table-escape fix; successor 24, 44 lines, sha1 89f96be6ea77726f9518406e30d87101cb2e33fe):
+  REQUIRED SET-L4-1 (l. 43); R2-N5-SETTLE-L5.md (0f864f7a, 2026-10-31T00:10:56Z, new file, successor 24, 21 lines, sha1
+  39ac0abd28b255652a6a9d6d72b131d5af5b4b57): «L-5 (39e44fe2): **MATCHES** (Opus 5.5, D15). No required change.» (l. 21). G-SRC-1 / ONE-STEP
+  files (bullet above), each unchanged since its commit: REFEREE docs/referee/R-N5-SRC.md (81f6b89ca179cfa0512f0e5f6d0e9789fb659a60,
+  22:19:54Z, new file, 125 lines, sha1 de52a7f4973ae2129716b89692dac7b0d264cbcb; successor 20), §3 G-SRC-1 and its four-sub-case closing
+  argument; REFEREE R-N5-SETTLE.md Addendum 1 (8951ef7c98cb14326cf4b6435fc6a0ed5a4356f6), ONE-STEP SIGNED; REFEREE-2
+  docs/referee-2/R2-N5-SRC.md (e8c1b62dcb5023db58999f36c24e80f0d3492f76, 22:24:08Z, new file, 169 lines, sha1
+  bd04826d25e8c9f1daf91515400d6e3f287a7eb1; successor 24), §3.2 G-SRC-1 and Lemma ONE-STEP (author); REFEREE-2 docs/referee-2/R2-N5-SRC-C.md
+  (824651ddd7b13f90b8da353b9a9d764df2ef515f, 22:56:32Z, new file, 70 lines, sha1 4131357d951c81118637ac6674dd3ba372a5c356; successor 24), l.
+  41 REFEREE's argument SIGNED. Every SHA in this bullet is an ancestor of trunk 5314536f (git merge-base --is-ancestor).
+  INDEPENDENCE: REFEREE l. 7 «Independence: I opened no docs/referee-2/ file for this packet.»; REFEREE §C l. 3-4 «I opened
+  docs/referee-2/R2-N5-SETTLE.md @ 301042bb (125 lines) only after that word, and after my report R-N5-SETTLE.md (1df722e9) was pushed.»
+  REFEREE-2 l. 4 «Independence: written before opening any docs/referee/ file for SETTLE.»; REFEREE-2 §C l. 2-3: its report «pushed before I
+  opened any docs/referee/ SETTLE file», REFEREE's report «opened 19:07Z on the Lead's word». No review imported lane code (REFEREE
+  settle_probe.py; REFEREE-2 l. 109); the lane's scripts ran only as the pinned blocks.
+  §C (both): verdicts on every packet item identical; no disagreement in substance. Differences of reading, resolved: Iσ_k (REFEREE
+  precision → REQUIRED, §C l. 19); SETTLE-L3 (REFEREE only; agreed REQUIRED by REFEREE-2 §C l. 24); the block-length figures (63 vs 67,
+  reconciled: REFEREE's n ≤ 100 cap; REFEREE §C §2, REFEREE-2 §C C.4). Notes map (REFEREE §C l. 14-24; REFEREE-2 §C C.2-C.3): R2 N-1 (⊕) =
+  packet erratum, agreed; R2 N-2 = REFEREE SETTLE-N2 (same observation); REFEREE SETTLE-N1 accepted by REFEREE-2 as a note (§C l. 37-38).
+  Later: SETTLE-L5 (REFEREE §4; agreed REQUIRED by REFEREE-2 24, L2 l. 6-14). Then SETTLE-L6 / SETTLE-L7 (REFEREE §6-§7) and REFEREE-2's P-1
+  / SET-L4-1 (R2-N5-SETTLE-L4.md), the same two points; closed in L-5 by both (R2-N5-SETTLE-L5.md table l. 8, l. 10).
+- TARGET.md diff: «n := |V|» is TARGET.md §1 l. 8's n («n = |V|, m = |E|, d = |pr(V)| ≤ n + 1.»), V TARGET's vertex set (l. 6); m_E + m_O
+  = TARGET's m; games are TARGET.md §1 games (REFEREE-2 l. 105 «No M4 claim. TARGET.md's n.»). The line (L-5) makes no M4 claim and no
+  TARGET claim; its own scope clause reads «a REDUCTION (no count is bounded here; G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a
+  TARGET.md claim; not to sign: CONJECTURES FLIP-EV (DEAD, fixes F0), HX-POLY, CN-POLY, XCN-POLY; Lemma ONE-STEP (Cases 2, 2b) is
+  referee-originated)». REFEREE l. 19 «Scope (D1): REDUCTIONS and two EQUIVALENCES (HEAD-RED, T-XCH), N5 only. No count is bounded.
+  G-N5-TIME stays OPEN. Not a TARGET.md claim.»; REFEREE-2 l. 10 «Scope: REDUCTIONS and one EQUIVALENCE inside W-runs of N5, plus a
+  whole-run reformulation (T-XCH). Nothing is bounded. G-N5-TIME stays OPEN.»
+  Not a claim of TARGET.md §1 or §2 (a claim about S1's evaluation, a bound on event-free blocks and two equivalences about N5 runs on every
+  game; no bound on a W-run, on a run or on running time; no algorithm claim); not a step-4 pass. GAPS G-N5-TIME: open.
+
 ## Dead ends (kept; each with the exact obstruction or counterexample and the instance that killed it)
 - DE1 (2026-10-14): arXiv 2511.03752 v1 (van der Heijden), claimed O(n²(n+m)) algorithm. BROKEN: wrong regions on 4-vertex games
   CE1 (l-comp 19b5ce2, experiments/m2/counterexamples/ce1_4v.pg) and cex1 (referee 936d47c, docs/referee/scratch/cex1-*.pg).

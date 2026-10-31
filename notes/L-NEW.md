@@ -1,7 +1,14 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 40, Opus 5.5, session_01V5yGRaRG5NjEeJEbjinuUs; FINAL, PARKED 2026-10-30 ~23:5xZ by date -u, ~330k context)
+## Resume point (successor 40, Opus 5.5, session_01V5yGRaRG5NjEeJEbjinuUs; FINAL, PARKED again 2026-10-31 ~01:1xZ by date -u, ~470k context)
+### Un-parked again (Lead 01:31Z) for box 106 N5-TIE (docs/new/N5-TIE-box106.md): PROVED (lane) ODD-NORET (IDX-MONO: odd W-cycle node =>
+  no return inside a W-constant interval), KEY-MON (LEX-BFS: T54 keys non-increasing in the interval, strict at switches), TIE-RED (in-interval
+  tie returns <= key decreases). CONJECTURE KEYCH-POLY; cross-interval tie returns (10/88) open. keymon.py: 26 large runs time out at 300 s.
+### Un-parked once (Lead 00:59Z) for box 105 N5-O1 (docs/new/N5-O1-box105.md): Lemma O1 DEAD (u23sw64_n32: 31 W-tie returns, W(X) constant;
+  corpus 82/10,261, all W-ties at leave and re-entry); PROVED (lane) NONTIE-RET: non-tie returns of X <= WCH_F(X) => ping-pong outside ties
+  paid by W-changes; tie returns = R95 TIE face (open). L-RED target: scale u23sw64 tie returns. Everything below (FINAL of 23:5xZ) stands.
+### (previous FINAL header) FINAL, PARKED 2026-10-30 ~23:5xZ by date -u, ~330k context
 ### FINAL summary (successor 40): boxes 97-104 + WRUN fixes entry 6 / L-5; every push via scripts/push.sh (VERIFY PASS), each reported to the Lead
 - 97 N5-ORD (508a8711): ORDER-DET-U DEAD (n5s_maxph_0), ORDER-DET-R PROVED (lane), NO-REPEAT DEAD (thetaA_n7), SB <= f(|U|) DEAD (gate_K).
 - WRUN entry 6 / line L-5 (57dff7b2): C105 E-1; R95 LANDED 22:14Z.
@@ -1948,6 +1955,7 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
 - (box 102) successor overtakes X's target at most once per root / distinct (left, entered) pairs per root: pftheta34_n32 vertex 3, k 11 and 26 under root (7->20 @6).
 - (box 103) depth <= f(distinct chain vertices): topfix_n10 chain (193,58),(194,57),(192,56),... 50 nodes / 3 vertices; chain nodes always W-changing: u23sw64_n32 (11 W-flat).
 - (box 104) CASC-EDGE on non-self-fed returns: cedge_n32 vertex 7, 4 returns under root (20->7 @9); self-fed => W(X) change: tog6b_n32.
+- (box 105) Lemma O1 (W(X) changes between leave and re-entry): u23sw64_n32 X 2 leaves 6 at 1, re-enters at 4, W(2) = (13,0,9) constant (31 such returns); strict form: 7,814/10,261.
 - Root-chain depth O(1) (box 100): topfix_N (new/box52/out, default start), depth 6N - 11 (49 at N = 10), width 1.
 - SB_F <= f(order-set size) (the [GH] r! count): gate_K16_n197 / gate_K64_n581 (.start), SBT 16 / 64 at max|U_k| 6, |A_F| 11, 6 distinct orders.
 
