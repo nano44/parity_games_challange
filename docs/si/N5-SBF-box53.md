@@ -304,6 +304,73 @@ Written 19:0xZ-19:4xZ (date -u; see commit).
     Even choices below. Even switches below can make it alternate (9, 11, 9).
   - No bound is known. This is the Odd analogue of the CN term (Even cycle-node switches).
 
+## 7. Box 53b (Lead 01:57Z, KEYCH-POLY, proof side): KEYCH-POLY ⟺ INT-POLY; Lemmas LEX-TREE and TREE-STABLE (PROVED, lane); KEYCH_I(x) ≤ 1 + INS_I(c), insertions = tight-sibling Ξ-overtakes
+- Source read (not edited): L-NEW 40 box 106, docs/new/N5-TIE-box106.md at claude/l-new 8591166d (ODD-NORET, KEY-MON, TIE-RED,
+  CONJECTURE KEYCH-POLY), and its experiments/new/box105/keymon.py. Premise: T54 LEX-BFS as P-N5-SETTLE reads it (signed there as used).
+- Setting.
+  - I = [p, q] is a W-constant interval of a W-run F (W, λ_W, the lengths ℓ and the W-tight edge set are fixed on I).
+  - c is an EVEN W-cycle node, X_c := {x ≠ c : λ_W(x) = c}, and T(y) := the W-tight successors of an Even y ∈ X_c (all with cycle
+    node c).
+  - For a state k of I: A_k(y) := ({σ_k(y)} ∪ Iσ_k(y)) ∩ T(y), the tight arena of y.
+  - LexTree(A) := the strategy on X_c in which every Even y takes the element of A(y) of least key. Keys are T54's, built layer by
+    layer from c (key(c) := (), key(x) := key(next x)·x); Odd vertices follow τ.
+- Proposition KEYCH-EQ (PROVED, lane, from L-NEW's KEY-MON and ODD-NORET). For every W-constant interval I:
+  |I| ≤ m_E + CN_I + n·max_x KEYCH_I(x), and KEYCH_I(x) ≤ |I|, where CN_I := the transitions of I switching an Even vertex of C.
+  - Proof.
+    - Every transition of a W-run switches some Even vertex (P-N5-SETTLE §1).
+    - A switch at y ∈ X_c with c even strictly lowers key(y) (KEY-MON), so such y switches ≤ KEYCH_I(y) times.
+    - With c odd, y switches ≤ deg(y) − 1 times (ODD-NORET); summed, ≤ m_E.
+    - The rest are CN switches.
+    - The converse holds since a key changes at most once per transition. □
+  - So KEYCH-POLY is EQUIVALENT to polynomial W-constant intervals (modulo CN_I). It is not a smaller statement than INT-POLY
+    (box 51b's INT-LIN family).
+- Lemma LEX-TREE (PROVED, lane; premise LEX-BFS). For p ≤ k < q, σ_(k+1) restricted to X_c equals LexTree(A_k).
+  - Proof. Induction on ℓ.
+    - LEX-BFS: σ_(k+1)(y) minimises key_(σ_(k+1))(z) over the W_(k+1)-tight arena edges of H_k at y. Since W_(k+1) = W, those are
+      exactly A_k(y).
+    - Keys of the lower layers are those of LexTree by induction (Odd vertices follow τ in both).
+    - The minimiser is unique, since distinct z give keys with distinct last entries. □
+- Lemma TREE-STABLE (PROVED, lane). For p ≤ k and k + 2 ≤ q: if A_(k+1)(y) ⊆ A_k(y) for every Even y ∈ X_c (no INSERTION), then
+  σ_(k+2) = σ_(k+1) on X_c.
+  - Proof. By LEX-TREE, σ_(k+2) = LexTree(A_(k+1)) and σ_(k+1) = LexTree(A_k). Induction on layers:
+    - Lower keys agree.
+    - m := σ_(k+1)(y) is the key-least element of A_k(y), and m ∈ A_(k+1)(y). (It is the current target at k + 1, and W-tight because
+      W(y) = y ⊕ W(σ_(k+1) y) on y's own play, y ∉ C.)
+    - A_(k+1)(y) ⊆ A_k(y), so m is also the key-least element of A_(k+1)(y). □
+  - In words: a lex-min path tree is unchanged by deletions of non-tree arena edges. The current edge is never deleted, because the
+    arena always contains σ.
+- Corollary INS-RED (PROVED, lane). Let INS_I(c) := the k with p ≤ k ≤ q − 2 at which some A_(k+1)(y) ⊄ A_k(y), y ∈ X_c Even.
+  - The transitions of I switching a vertex of X_c number ≤ 1 + INS_I(c), and KEYCH_I(x) ≤ 1 + INS_I(c) for every x ∈ X_c.
+  - So |I| ≤ m_E + CN_I + Σ_(c even) (1 + INS_I(c)), with no factor n or ℓ (compare RUN-SETTLE's n(E + 1)).
+- Lemma OVERTAKE (PROVED, lane). Every insertion z ∈ A_(k+1)(y) ∖ A_k(y) is a strict Ξ-overtake of y's target:
+  - Ξ_k(z) ⊴ Ξ_k(σ_k y) ⊴ Ξ_k(σ_(k+1) y) and Ξ_(k+1)(z) ▷ Ξ_(k+1)(σ_(k+1) y). So Ξ(z) strictly rises at k → k + 1.
+  - Proof. z is tight and z ∉ A_k(y), so z ≠ σ_k(y) and not Ξ_k(z) ▷ Ξ_k(σ_k y).
+    - z ≠ σ_(k+1)(y), because σ_(k+1)(y) ∈ A_k(y) by LEX-TREE.
+    - So z ∈ Iσ_(k+1)(y), i.e. Ξ_(k+1)(z) ▷ Ξ_(k+1)(σ_(k+1) y).
+    - σ_(k+1)(y) ∈ {σ_k y} ∪ Iσ_k(y) gives the middle inequality, and R15 (a) the rest. □
+- Fact CEILING (PROVED, lane; with [R57]).
+  - Tight siblings share their W-value: y ⊕ W(z) = W(y) = y ⊕ W(a) gives W(z) = W(a), by injectivity of y ⊕ · on paths avoiding y.
+  - Ξ_k ⊴ W_k pointwise (σ̄_k is Odd's optimum against σ_k, and τ is one Odd strategy).
+  - So all tight siblings' Ξ-values rise under ONE common ceiling W(a), fixed on I. An overtaken target a satisfies Ξ_k(a) ◁ W(a): it
+    is in the gap set Z_k = {Ξ_k ≠ W_k}.
+- Reduction (the named smaller statement). KEYCH-POLY ⟺ INT-POLY (mod CN_I) ⟸ INS-POLY, where INS-POLY := «per W-constant interval and
+  even cycle node c, the transitions with a strict Ξ-overtake among W-tight siblings below the common ceiling are polynomial».
+  - INS ≤ |I|, so the three are equivalent (mod CN_I, m_E). The gain is that the count is now:
+    - of transitions, not of keys;
+    - per class, with no factor n;
+    - charged to sibling ORDER reversals of Ξ under a fixed ceiling, i.e. T60's PAIR-CROSS on the Even side, restricted to tight
+      siblings in the gap set.
+  - INS-POLY is NOT proved. A value space with exponentially many points below the ceiling allows many reversals a priori.
+- DATA (experiments/si/sb53/treestab.py, corpus 1,134 runs, 35 W-constant intervals with switches):
+  - LTX 0 (LEX-TREE), TSX 0 (TREE-STABLE), NOVT 0 (OVERTAKE), KB 0 (KEYCH ≤ 1 + INS).
+  - MAXKEYCH 8 and MAXINS 7, both on u23sw64_n32, where the bound is attained (8 = 1 + 7).
+  - MUT=1 control (LexTree with max) bites: u23sw64_n32 LTX 8.
+- READING (D18; no source opened). LEX-TREE / TREE-STABLE are the dynamic lex-min path-tree facts:
+  - the tree is a function of the current arena;
+  - deletions of non-tree edges never change it;
+  - only insertions can.
+  - So the interval is an incremental lex-min tree driven by Ξ-overtakes. Bounding the insertions is the remaining, Ξ-side, question.
+
 ## DONE / FINDINGS / NEEDS
 - DONE: this note; experiments/si/sb53/ (topkis.py, rootflip.py, rsearch.py, runtopk.sh, runroot.sh, runrs.sh, topk_*.txt,
   root_*.txt, rs_out.txt); pins in si/check.sh «box 53 SBF». SHA: see the commit.
@@ -317,6 +384,8 @@ Written 19:0xZ-19:4xZ (date -u; see commit).
   - §6: XCN-ONE DEAD (xcn2_n8 kind A; xcnb2_n12 kind B, σ̄(3) 9 → 11 → 9); Corollary KIND-A PROVED (≤ n(n − 1) per run, from R47);
     XB-POLY (DFS re-orders at own nodes) OPEN.
   - §2.6 ERRATUM: the Odd mirror of G-SRC-1; repaired by Lemma ONE-STEP-O (PROVED, lane; ONEX 0).
+  - §7 (box 53b, KEYCH-POLY): KEYCH-EQ (KEYCH-POLY ⟺ INT-POLY mod CN), LEX-TREE, TREE-STABLE, INS-RED, OVERTAKE, CEILING PROVED (lane);
+    reduction to INS-POLY (tight-sibling Ξ-overtakes per interval; open).
   - §5 (Lead 20:00Z): Corollary ORDER-CHG′ PROVED (lane) up to PAIR-TIE (data 0). DEAD: NO-REPEAT / order-determination on a fixed
     head set (exitr_cex_n16). max |U_k| = 4K + 16 on mkrw, so FPT in |U| is empty.
 - NEEDS: Lead: route ROOT-FLIP (§2) and HEAD-RED′ (§3) to L-RED for a kill attempt, and, if wanted, to a packet. L-LIT T60: Topkis

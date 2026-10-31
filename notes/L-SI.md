@@ -16,7 +16,10 @@ STEP 0: clone stale at da88a6d4 AGAIN; ff to 051eb196, trunk merged c6c30141. Or
 - §6 XCN data: XCN-ONE (≤ 1 per W-run; 0 on mkrw / latew / gate / fx; 70k random games max 1). CONJECTURE.
 - SETTLE fixes entry 4 + L-4 (6ed61d84; G-SRC-1 closed by ONE-STEP, signed by REFEREE 8951ef7c); entry 5 + L-5 (39e44fe2; SETTLE-L6, L7, G-SRC-1 named). PARKED (Lead 23:41Z).
 - §2.6 ERRATUM: ONE-STEP-O (Odd mirror of G-SRC-1; ONEX 0, OBETA 11,129). §6: XCN-ONE DEAD (xcn2_n8, xcnb2_n12); KIND-A ≤ n(n − 1) (R47); XB-POLY OPEN.
+- Box 53b (Lead 01:57Z, KEYCH-POLY): note §7. KEYCH-EQ, LEX-TREE, TREE-STABLE, INS-RED, OVERTAKE, CEILING PROVED (lane); reduced to
+  INS-POLY (tight-sibling Ξ-overtakes per W-constant interval, open). Tool sb53/treestab.py; pins «box 53b». PARKED after it.
 ### Queue
+0. INS-POLY (§7): bound tight-sibling Ξ-overtakes per W-constant interval (common ceiling W, gap set Z), or kill it.
 1. XB-POLY (N5-SBF-box53.md §6): bound kind-B own-node flips per W-run (S1's DFS re-orders at an own Ξ-cycle node; xcnb2_n12 shows
    σ̄(3) 9 → 11 → 9), or kill it with super-polynomial growth. Kind A is done (KIND-A, ≤ n(n − 1) per run from R47). Then polynomial
    W-runs ⟺ CN-POLY ∧ HX′-POLY ∧ XB-POLY.
