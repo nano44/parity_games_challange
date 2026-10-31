@@ -16,6 +16,8 @@ STEP 0: local clone was at c7f00306 (stale AGAIN); ff to 0afc0d70a (is-ancestor 
 0. P-N5-ODD: both referees SIGNED all (REFEREE 21 6c9430ef, REFEREE-2 24 5753ef03). Fixes F0 + entries 1-4 written (G-ODD-1, G-ODD-2,
    line L-1 docs/si/P-N5-ODD-line-L1.txt sha1 3e25138b, D-ODD-1 sbq2 non-edge start; W-rank DEAD withdrawn; startcheck.py). Next: the
    referees' word-diff of L-1; answer them in entry 5+ only.
+1b. Box 58 §9: Lemma ESC-XCH PROVED (escapes of (s, x) per W-run ≤ XCH_F(x), via ODD-STEP); W-REOPEN NOT proved, obstruction in note §9
+   (needs an Odd W-SEP link at D-vertices). Not started: WCH per vertex vs |F| / source events (STAIR, R163).
 1a. Box 58 §8 (Lead 18:36Z): (b) as worded DEAD (n3cov_lean / n3cov_phi, Odd-only 2-cycles); CONJECTURE W-REOPEN (Even vertex on the
    escaped cycle) 0 violations; next: prove W-REOPEN (route in note §8), then W-changes per vertex per W-run. P-N5-ODD at L-3 (f83b169e).
 1. Box 58 §7 (Lead 14:47Z): the switch-all engine = equal-swap-key repeat escapes of one (s, x) (PLAT 2^(N−1) − 1); N5 corpus PLAT ≤ 1,

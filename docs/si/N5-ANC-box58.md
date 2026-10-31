@@ -258,3 +258,25 @@ Written 2026-10-31 from 18:4xZ (date -u; see commit).
 - Next: prove W-REOPEN. Planned route: at the first escape, x's new Ξ-play returns to s through an Even vertex e. By [R57] with ρ = τ,
   Ξ ⊴ W, and W-MON keeps W(e) from falling. A re-opening at the same swap key needs Ξ(x) or Ξ(x₂) to come back across the same digit
   (INT), and the claim is that this is only possible if the W-values bounding them from above move.
+
+## 9. The Odd-only residue is paid by Ξ(x) (Lemma ESC-XCH, PROVED, lane); W-REOPEN not proved (obstruction stated) (Lead 19:33Z)
+Written 2026-10-31 from 19:3xZ (date -u; see commit).
+- Lemma ESC-XCH. At every escape (s, u) of §3 (Odd s leaves x := σ̄_u(s) at u), both Ξ(s) and Ξ(x) change at u. Hence, for every W-run F
+  and every Odd s and vertex x, the escapes of s from x in F number at most XCH_F(x), the transitions of F at which Ξ(x) changes.
+  - Proof. The walk reaches s as a first changed vertex on the old play of a changing vertex v, so κ_u(s) ≥ κ_u(v) by KEY-PREF; in
+    particular Ξ(s) changes at u. ODD-STEP (P-N5-ODD §3, signed by both referees) says: if Ξ_(u+1)(x) = Ξ_u(x) with x = σ̄_u(s), then
+    Ξ_(u+1)(s) = Ξ_u(s). Contrapositive: Ξ(x) changes at u. Distinct escapes of (s, x) are at distinct u. □
+  - So the answer to the Lead's question is yes, through ODD-STEP itself (ODD-RELAY is not needed): the repeat escapes of an Odd-only
+    2-cycle s ↔ x are bounded by the Ξ-changes of x. This holds for every escape, not only Odd-only ones. It is a relocation, not a bound,
+    because XCH_F(x) is itself what is being counted.
+  - DATA (experiments/si/anc58/oddonly.py on anc58/corpus_fixed.lst; output oddonly_corpus.txt): every one of the 1,434 W-run escapes has
+    Ξ(s) and Ξ(x) changing (ALLSCH = ALLXCHX = 1,434). There are 38 Odd-only escapes, at most 2 per (s, x) per W-run, and 0 exceed
+    XCH_F(x).
+- W-REOPEN: NOT proved in this box. The obstruction, so that the next attempt starts from it:
+  - W-MON (R164) and Ξ ⊴ W ([R57] with ρ = τ) control W along W-plays, which use τ at every Odd vertex.
+  - An escape is a fact about x's Ξ-play, which uses σ̄ and leaves τ exactly at the vertices of D. The escaped cycle Z passes through D
+    whenever s ∈ D, which is 1,403 of the 1,434 W-run escapes (§4 data: ESC_LEAVE_TAU 31). So Z and x's W-play are different plays.
+  - A proof therefore needs a statement linking Ξ(x) to W at a D-vertex on Z. One candidate: whenever an Odd o ∈ D on Z re-decides,
+    W(σ̄(o)) or W(τ(o)) moves (an «Odd W-SEP»). That is the same kind of link as R97's source events. I have no proof of it.
+- The second question (W-changes per vertex per W-run): by L-NEW's STAIR / ASC-RUN (R99), WCH_F(v) ≤ (3n + 1)(1 + DESC_F(v)), and R163
+  shows DESC* = Θ(n²) with |F| quadratic. Not started in this box. The target, per the Lead, is a bound in terms of |F| or source events.
