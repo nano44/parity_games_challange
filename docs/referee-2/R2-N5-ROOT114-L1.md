@@ -54,3 +54,11 @@
 - DONE: this file; the token diff; sha1 checks of L-1, the packet, STAIR L-2 and the ODD packet.
 - FINDINGS: ROOT L-1 MATCHES. The binder excludes ROOT114-L1's k = q case. No new overclaim.
 - NEEDS: none.
+
+## Addendum 1 (2026-10-31 20:28Z by date -u): Lead ruling L43 (relayed 20:29Z)
+- My verdict above was written before the ruling reached me. Under L43 a lane DEAD of an asymptotic statement does not enter a RESULTS line
+  as «DEAD». The ROOT L-1 tail clauses «DESC-LIN DEAD (L-RED R162)» and «DESC*-LIN DEAD in the weak form (L-RED R163)» are such.
+- So I agree with REFEREE's ROOT-L4 / L5 (74025e44): drop both, or restate them as DATA with numbers.
+- The clause «every root descent is a fuel re-route» DEAD (frz32) is a universal statement refuted by one instance, not an asymptotic one.
+  I read it as allowed under L43 as worded (Lead decides).
+- The rest of L-1 MATCHES as stated above. I will word-diff L-2.
