@@ -48,6 +48,11 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   <= 41, AUP 2 / ANDN 9. Obstruction (READING): (A) later gates open early, because E2 carries the new root while b_j carries hp's old
   level (fbA_K4_m8_m8, |F| 44 = ungated); (B) clamping E2 to b_j's level is tau-improvable for Odd (S4b at step 0) or loops back into E2
   (fbB_K2_m6_m6, |F| 6).
+- Lead 09:22Z GO R159 (depth-3 build; seed l-new box 109 hit_b6a_1, fetched at l-new 04696022). R159 docs/red/R159-depth.md:
+  hit_b6a_1 reproduced (xeng, Oink); its y_1 alternative (Odd 0) has back-edges into the carrier's own play (self-reference = level
+  match, which R158's design A lacked). Designed hd_H (hd/mkhd.py): one W-run, h^W = |F| = (n-2)/3 (hd_H40 n 122 depth 40), so HDEPTH is dead
+  with linear depth, and HIER-RED's exponent is vacuous. Open: width per level (re-fixing a digit = re-entry, R152/R155-R157). A rises at every
+  transition of hd_H (AUP = |F|).
 - RESUME POINT: the unexcluded case is a gate whose comparison side b_j carries the CURRENT root, with E1's reset done another way than
   hp's flip; or several delay lines, one per gate class.
 - Things only I know:
