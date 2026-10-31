@@ -1,0 +1,15 @@
+GAME red/n5inj/instances/theta_thc24.pg
+DCOPIED 13
+DR 7
+DR_chk 20
+DS 0
+DT 0
+GAMES 1
+NF_chk 24
+ON_chk 24
+ROLD 0
+TS 0
+trans 16
+wruns 2
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,15 @@
+GAME red/xing/instances/x31_rx32.pg
+DCOPIED 4
+DR 26
+DR_chk 31
+DS 1
+DT 0
+GAMES 1
+NF_chk 85
+ON_chk 82
+ROLD 0
+TS 0
+trans 50
+wruns 4
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,15 @@
+GAME red/ul/instances/ladderd0_k12_n48.pg
+DCOPIED 0
+DR 1
+DR_chk 1
+DS 0
+DT 0
+GAMES 1
+NF_chk 13
+ON_chk 13
+ROLD 1
+TS 0
+trans 14
+wruns 1
+VIOLATIONS 0
+RC 0

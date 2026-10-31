@@ -1,0 +1,15 @@
+GAME red/n5inj/instances/elimn_cex_n48.pg
+DCOPIED 7
+DR 7
+DR_chk 15
+DS 1
+DT 0
+GAMES 1
+NF_chk 96
+ON_chk 94
+ROLD 0
+TS 0
+trans 79
+wruns 12
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,15 @@
+GAME red/n5inj/instances/returns_rt48.pg
+DCOPIED 0
+DR 11
+DR_chk 13
+DS 2
+DT 0
+GAMES 1
+NF_chk 79
+ON_chk 78
+ROLD 0
+TS 0
+trans 64
+wruns 14
+VIOLATIONS 0
+RC 0

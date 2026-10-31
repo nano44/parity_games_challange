@@ -1,0 +1,14 @@
+DCOPIED 0
+DR 388
+DR_chk 388
+DS 0
+DT 0
+GAMES 1
+NF_chk 3177
+ON_chk 3177
+ROLD 0
+TS 0
+trans 44
+wruns 1
+VIOLATIONS 0
+RC 0

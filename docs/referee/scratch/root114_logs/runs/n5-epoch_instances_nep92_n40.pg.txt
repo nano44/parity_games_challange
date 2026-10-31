@@ -1,0 +1,15 @@
+GAME n5-epoch/instances/nep92_n40.pg
+DCOPIED 50
+DR 60
+DR_chk 121
+DS 11
+DT 0
+GAMES 1
+NF_chk 150
+ON_chk 143
+ROLD 0
+TS 0
+trans 87
+wruns 9
+VIOLATIONS 0
+RC 0

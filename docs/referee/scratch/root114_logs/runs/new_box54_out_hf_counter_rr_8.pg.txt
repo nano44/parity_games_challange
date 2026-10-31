@@ -1,0 +1,4 @@
+GAME new/box54/out/hf/counter_rr_8.pg
+GAMES 1
+VIOLATIONS 0
+RC 0

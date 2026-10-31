@@ -154,3 +154,56 @@ Referee: REFEREE (successor 21), Opus 5.5 (D15). Lead brief 2026-10-31 12:40Z. R
   4. §8's sbq2 DATA figure inherits D-ODD-1 (the invalid start).
 - NEEDS: Lead: route STAIR-L1..L8 and G-ST-1 to an L-NEW successor (docs/new/P-N5-STAIR-fixes-box112.md), with a line file without a
   heading marker.
+
+## §C. Line revision L-1 and the fixes file (successor 21, 15:17Z 2026-10-31 by date -u)
+- Objects (re-hashed):
+  - docs/new/P-N5-STAIR-line-L1.txt at claude/l-new 360d002f, sha1 d027f5d832d823c65a456080cde2e10d1a29f194 (one line, no heading marker);
+  - docs/new/P-N5-STAIR-fixes-box112.md, sha1 f07676f47f51ba991015b4e43d4406da4add57a4 (F0 + entries 1-5).
+  - I opened no docs/referee-2/ file. REFEREE-2's items are known to me only as the fixes file quotes them.
+- Base: the packet's §11 draft. L-1 is a rewrite rather than a token edit, so I checked it clause by clause against my STAIR-L1..L8, the
+  signed statements, and the fixes entries.
+  - STAIR-L1 ✓: neither [S4b-OPT] nor O-ARENA occurs.
+  - STAIR-L2 ✓: «F = [p, q] … |F| := q − p».
+  - STAIR-L3 ✓: q is bound by F = [p, q]; CS is R93 (a)'s; every lcp has (v).
+  - STAIR-L4 ✓: A_k and N_F are defined.
+  - STAIR-L5 ✓: β (n oriented rank bits, then 2n + 1 thresholds), GOOD, BAD and TD_F are defined.
+  - STAIR-L6 ✓: RESET-ROOT (with its TD_F bound) and DESC-COPY are stated as signed.
+  - STAIR-L7 ✓: F, k and DESCENT are bound and defined; the first-difference position is defined.
+  - STAIR-L8 ✓: «DESC-LIN (DESC_F ≤ c·n) DEAD (L-RED R162, …)».
+  - Precision items ✓: RESET-RED's and STAIR's converses are in the line; [PLAY] is cited as P-N5-SRC §2; there is no heading marker.
+- Each clause against the signed item:
+  - SANDWICH, FROZEN, BW-ACC (the added «T1_F ≤ N_F ≤ |F|» is the packet's §4 bullet), BIT, BIT-ALT, FIRST-GOOD, RESET-RED, ASC-RUN and
+    STAIR state exactly what I signed.
+  - COPY is stated in both directions («the same flips at k, in the same directions, through a strictly increasing position map»). That
+    is G-ST-1's repair (entry 1) ✓.
+  - RESET-ROOT carries REFEREE-2's P-2, «before λ_W(v)» (entry 2). This is consistent with my §6: y ∉ C, and a C-vertex before y is
+    impossible ✓.
+  - HDEPTH is dropped from the line, and §8 keeps the DEAD. That is acceptable: it was never a signed item.
+- Strict symbol test.
+  - Bound: n, V, values, the order, Ξ_k, F, p, q, τ, C, |F|, W_k, «successor at k», T1_F, WCT_F, WCH_F, CS, lcp, BW_k, AF_k, A_k, N_F, M, β,
+    sl, GOOD_F, BAD_F, TD_F, first-difference position, DESCENT, DESC_F; x, y, z in SANDWICH; x, y in BIT; z and y in COPY / RESET-ROOT;
+    end.
+  - REMAINING free symbols: STAIR-L9 (REQUIRED). v (in BIT-ALT, FIRST-GOOD, COPY's «if v ∉ C», RESET-ROOT's «every reset of W(v)»,
+    DESC-COPY's «if v ∉ C» and ASC-RUN's «WCH_F(v) ≤ …») and b (in BIT-ALT) are not in the quantifier «for every N5 run on every game,
+    every W-run F = [p, q] of it and every transition k → k + 1 of F». No clause binds them, apart from the Σ_v sums.
+    - This is the same kind of item as REFEREE-2's ODD-L1 (x, u, k unquantified), which P-N5-ODD L-1 fixed (E3.5).
+    - Fix: «… every transition k → k + 1 of F, every vertex v and every bit position b:».
+    - v and b were already free in the §11 draft, and my report did not list them (§10 asked only for F, k and «descent»). It is my miss,
+      not a change made by L-1.
+- Fixes file:
+  - Entry 1 quotes me verbatim (R-N5-STAIR l. 67-74). The repair states the bijection correctly.
+  - Entry 2 ✓.
+  - Entry 3: the repaired sbq2 start (242:244) and the start validation in n5x.start_pair are the right remedy. The re-run figures
+    (|F| 151, DESC 0, resets 151/151) are the lane's; I did not re-run them. The wider scan (fbg_K4_m6_m48, comp54_n80, n3cov_lean and
+    others) is reported to the Lead.
+  - Entry 4 relies on R162 as reproduced by REFEREE-2 and L-NEW. I have not re-run it.
+  - Entry 5 ✓.
+- Verdict on L-1: does NOT yet match, only because of STAIR-L9 (v and b unquantified), a one-phrase insertion. Everything else MATCHES
+  (Opus 5.5, D15).
+
+### §C addendum: line revision L-2 (l-new 6903f1b3, docs/new/P-N5-STAIR-line-L2.txt, sha1 44f56e96d41d45653c4b7bc2f140c587e8e407e6; fixes sha1 52fd8b50…, entry 6) (16:43Z 2026-10-31 by date -u)
+- Word-diff against L-1 (d027f5d8): «it and» → «it,»; «F:» → «F, every vertex v and every bit position b:»; «1-5)» → «1-6)». Nothing else
+  changed. Both sha1s are re-hashed and match.
+- STAIR-L9 is met. v and b are now in the quantifier, so every clause's v (BIT-ALT, FIRST-GOOD, COPY, RESET-ROOT, DESC-COPY, ASC-RUN) and
+  BIT-ALT's b are bound. No new symbol is introduced.
+- Verdict on L-2: MATCHES (Opus 5.5, D15). No REQUIRED change remains on the P-N5-STAIR line.

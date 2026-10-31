@@ -190,7 +190,7 @@ fi
 # Box 55 (successor 33): packet P-N5-SF (docs/new/P-N5-SF-box55.md §4): pcheck on three pins (DECOUPLE orbit, SF-RED step identity, bounds), MUT bites, quotes; NO-TRANSFER on switchbestexp_2.
 w1=$(python3 -I box55/pcheck.py ../n5-exhaustive/instances/n3all_maxph_0.pg ../n5-exhaustive/instances/n3all_maxph_0.start)
 w2=$(python3 -I box55/pcheck.py box54/out/switchbestexp_2.pg)
-w3=$(python3 -I box55/pcheck.py ../red/n3/instances/n3cov_lean.pg ../red/n3/instances/n3cov_lean.start)
+w3=$(python3 -I box55/pcheck.py ../red/n3/instances/n3cov_lean.pg box113/inst/n3cov_lean_fixed.start)  # box 113: start repaired (3 wrong-player entries dropped, D-ODD-1 validation)
 w4=$(MUT=1 python3 -I box55/pcheck.py box54/out/switchbestexp_2.pg || true)
 w5=$(python3 -I box55/ntcheck.py box54/out/switchbestexp_2.pg)
 if grep -q "^CHECK PASS" <<<"$w1" && grep -q "^CHECK PASS" <<<"$w2" && grep -q "^CHECK PASS" <<<"$w3" && \
@@ -511,8 +511,8 @@ if grep -q "RUN 0-71 F 71 mE 1119 entries 542 FRESH 71 RET 0 NORET 71 ORDRET 59 
 else
   echo "box 98 RET check: FAILED"; exit 1
 fi
-w49=$(cd .. && TOP=1 python3 -I new/box99/retcause.py new/box97/inst/sbq2_K8_m16.pg new/box97/inst/sbq2_K8_m16.start)
-if grep -q "RUN 0-152 F 152 returns 450 edges 60 targets 60 max_per_target 8 norise 0 wch_in_window 450" <<<"$w49" && grep -q "ROOT kinds {'FRESH': 450} distinct roots 15 max returns per root 45" <<<"$w49" && grep -q "('FRESH', 4, 66, 17), 45" <<<"$w49"; then
+w49=$(cd .. && TOP=1 python3 -I new/box99/retcause.py new/box97/inst/sbq2_K8_m16.pg new/box113/inst/sbq2_K8_m16_fixed.start)
+if grep -q "RUN 1-152 F 151 returns 450 edges 60 targets 60 max_per_target 8 norise 0 wch_in_window 450" <<<"$w49" && grep -q "ROOT kinds {'FRESH': 450} distinct roots 15 max returns per root 45" <<<"$w49" && grep -q "('FRESH', 4, 66, 17), 45" <<<"$w49"; then
   echo "box 99 QRET: sbq2_K8_m16 returns all rooted at fresh entries, clock vertex 4's ticks root 45 = 3m - 3 each: PASS"
 else
   echo "box 99 QRET check: FAILED"; exit 1
@@ -594,5 +594,17 @@ if [[ $(grep -c "ONVIOL 0 " <<<"$w62") == 5 && $(grep -c "NFVIOL 0 " <<<"$w62") 
   echo "box 113 DESCSTAR: SW-WIT, DESC-ROOT, ORIGIN-NEW, NEW-FUEL hold on 5 pins; frz32 3 old-edge relay root descents; lcount2 T-type 1; cp_K4 switch-site U not passive-proof (388): PASS"
 else
   echo "box 113 DESCSTAR check: FAILED"; exit 1
+fi
+w63=$(cd .. && python3 -I new/box115/abl.py new/box115/inst/switchallexp_3.pg SI 3000; python3 -I new/box115/abl.py new/box115/inst/switchallexp_3.pg ARSB 3000; python3 -I new/box115/abl.py new/box115/inst/switchallexp_3.pg SAT 3000; python3 -I new/box115/swx.py new/box115/inst/switchallexp_3.pg new/box115/inst/switchallexp_3.start; python3 -I new/box115/stale.py new/box115/inst/switchallexp_2.pg)
+if grep -qF "ABL switchallexp_3.pg SI n 49 iters 70 evenswitches 433 taumoves 0 MAXENT 17 (43, 46) MAXFR 8 (19, 17)" <<<"$w63" && grep -qF "ABL switchallexp_3.pg ARSB n 49 iters 8 " <<<"$w63" && grep -qF "MAXFR 1 (1, 5)" <<<"$w63" && grep -qF "ABL switchallexp_3.pg SAT n 49 iters 70 evenswitches 433 taumoves 3" <<<"$w63" && grep -qF "SWX switchallexp_3.pg N5 n 49 iters 7 fallbacks 0 tauchg 3 wruns 1 wlongest 3" <<<"$w63" && grep -qF "steps 30 moves 138 stale 37 stale_at_s 0" <<<"$w63" && [ "$(sha1sum box115/inst/switchallexp_3.pg | cut -d' ' -f1)" = "3ad1b30a06c0ab02c0dbdd9949866aed96d87cca" ]; then
+  echo "box 115 SWX: switchallexp_3 SI 70 iters / pair fuel 8, ARSB 8 / 1, SAT 70 / 8, N5 7 iters one W-run; SI stale moves 37 (N 2): PASS"
+else
+  echo "box 115 SWX check: FAILED"; exit 1
+fi
+w64=$(cd .. && python3 -I new/box115/taumv.py new/box115/inst/switchbestexp_3.pg; python3 -I new/box116/tauc.py new/box115/inst/switchbestexp_3.pg new/box115/inst/switchbestexp_3.start; python3 -I new/box115/abl.py new/box115/inst/switchbestexp_3.pg TBR 5000)
+if grep -qF "k 12 |Is| 17 |It| 1 fb 0 moves h2:e2->m2" <<<"$w64" && grep -qF "k 14 |Is| 16 |It| 1 fb 0 moves h0:e0->m0" <<<"$w64" && grep -qF "TAUC switchbestexp_3.pg n 85 ITERS 41 TCH 3 OSW 3 ORET 0" <<<"$w64" && grep -qF "ODDREPLY TBR tau changes 11 returns 8" <<<"$w64" && [ "$(sha1sum box115/inst/switchbestexp_3.pg | cut -d' ' -f1)" = "e1cd8f136e0583a1b679b477b9120163ba7b27c8" ]; then
+  echo "box 116 TAU: switchbestexp_3 N5 tau moves 3 (h2, h1, h0 escape once, 0 returns); TBR's Odd reply returns 8 times: PASS"
+else
+  echo "box 116 TAU check: FAILED"; exit 1
 fi
 rm -rf "$tmp"

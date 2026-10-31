@@ -10,7 +10,23 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   T = 0 (lcount2_n23). Box 113b: NEW-FUEL PROVED (lane) (every new-edge switch, k-1 in F, has Xi(z) changing at k-1:
   fuel re-route; corpus 27,539/0) => root changes = fuel re-routes + old-edge relays; FUEL-ROOT-STAIR conditional on FUEL-COUNT.
 - READING: reduction closes into XI-CH-POLY via FUEL-COUNT (no smaller statement); passives inflate by <= factor n only.
-- P-N5-STAIR referee answers: fixes file docs/new/P-N5-STAIR-fixes-box112.md NOT yet created (no report SHA received yet).
+- P-N5-STAIR referee answers (Lead 13:32Z / 13:57Z): REFEREE a61a258b, REFEREE-2 f92b278a sign everything but O-ARENA. Fixes file
+  docs/new/P-N5-STAIR-fixes-box112.md F0 + entries 1-5; line docs/new/P-N5-STAIR-line-L1.txt (one line, no heading marker).
+  D-ODD-1: n5x.start_pair now REJECTS invalid starts; fixstart.py repairs; invalid starts found in other lanes' files (fbg_*, n3/out,
+  bip, l121ereader, flipev sbq2) reported to the Lead.
+- Box 114: P-N5-ROOT FROZEN (docs/new/P-N5-ROOT-box114.md + line docs/new/P-N5-ROOT-line.txt): DESC-ROOT, ROOT-STAIR, ORIGIN-NEW
+  (proof via R15 Lemmas A/B in the one-player arena; y not own cycle node since y not in C), NEW-FUEL, ROOT-SPLIT, FUEL-ROOT-STAIR.
+  STAIR fixes + L-1 pushed 360d002f (fixes f07676f4, L-1 d027f5d8). Repaired starts equal L-RED's / L-SI's.
+- Box 115 N5-SWX (Lead 15:18Z): docs/new/N5-SWX-box115.md. N5 on switchallexp_N (N 2..8): 2N iters, 1 W-run, pair fuel <= 1
+  (faithful). Breaking step = S4a arena optimum (ARSB = S4a vs sigma-bar collapses it; SAT = switch-all + S4b keeps 2^N). PROVED
+  (lane) STALE-FREE. switchbestexp: ARSB grows (58..412), N5 linear (32..62): tau separates there (DATA/READING).
+- STAIR line L-2 pushed 6903f1b3 (sha1 44f56e96; STAIR-L9 = STAIR-L1-1; fixes entry 6). P-N5-ROOT: REFEREE signs all (d8a2f428);
+  fixes file docs/new/P-N5-ROOT-fixes-box114.md entry 1 (ROOT-L1..L3); ROOT line L-1 DRAFTED in the scratchpad
+  (HELD-P-N5-ROOT-line-L1.txt), HELD until REFEREE-2 succ. 25's report; ROOT-L2 must then cite RESULTS labels if ODD / STAIR landed.
+- Box 116 (Lead 16:15Z): tau-stretch target (S4b moves per run; carries re-armed per tau-stretch); start from switchbestexp traces.
+- Box 116 N5-TAU: docs/new/N5-TAU-box116.md. PROVED (lane) TAU-EQ (tau-stretch poly for N5 & N5^OF <=> G-N5-TIME, via R54 DUAL),
+  ODD-RETURN (Odd return to x needs a dual Xi-tau(x) rise). DATA switchbestexp: N5 tau moves = N, 0 returns; ARSB/TBR returns 2/8/22.
+  Corpus: TCH max 55 (pp_K48_n449_dual), ORET 2,963 in 281 runs. Next target (untested): CARRY-ODD coupling.
 ### Things only I know (successor 42): desc4.py is the box 113 tool (VERB=1 prints OLDEDGE lines); corpus run4.sh takes ~2-3 min on 4
   cores here (much faster than box 111's estimate). Never put the pgrep/pkill pattern text in a command that also runs the target: an
   until-loop waiting on "[d]esc4" deadlocked against a shell whose heredoc contained "desc4.py", and pkill killed my shell (exit 144).
@@ -584,6 +600,10 @@ Stop (S5) when Iσ = Iτ = ∅: Even wins v iff the cycle node of Ξσ(v) has ev
   (b), (c); length < 2(n + m)(n² − n + 1 + SBC)). DEAD: NOFB (n3all_maxph_0), W-frame twin N5-SFW cycles (theta_thf16, period 10; 49/413).
   DATA: correct on 1,038 library + families + hard families; SF ≈ ½ N5; runquad 264 → 2, topfix 7N + 43; switchbestexp N=10 619 vs 89, SBC 97.
   Open count SBC (CONJECTURE SF-POLY OPEN).
+
+## Dead ends (successor 42, box 115; docs/new/N5-SWX-box115.md)
+- «fixed tau / W-run is what kills switchallexp's 2^N»: DEAD on switchallexp_N (ARSB, no tau, collapses it; SAT with tau keeps it).
+- «stale move = cycle-closing move»: only 19/37 (N 2), 72/121, 218/335.
 
 ## Dead ends (successor 42; also in docs/new/N5-DESCSTAR-box113.md §7)
 - U = switch sites as a passive-proof witness set: DEAD, new/box113/inst/cp_K4 (L-RED R162; observers are Even switching vertices; DESC_S =

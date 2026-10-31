@@ -1,0 +1,4 @@
+GAME red/carry/instances/replay4_n32.pg
+GAMES 1
+VIOLATIONS 0
+RC 0

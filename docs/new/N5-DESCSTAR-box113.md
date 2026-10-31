@@ -160,6 +160,15 @@ step-4 pass and not a TARGET.md claim.
 | obs_K12_m24 | 272 | 324 | 12 | 12 | 0 | 0 | 0 | 0 | 12 | 12 / 12 (passive) |
 | sbq2_K8_m16, hd_H40 | 261, 122 | 152, 40 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 
+- Start validation (added after the referees' D-ODD-1 / F-1; P-N5-STAIR fixes entry 3): the fbg_K4_m6_m48 start (L-RED's) sets τ := 4
+  at six single-successor Odd vertices (65, …, 80), and sbq2_K8_m16's sets τ(242) := 243. Both are non-edges.
+  - On the repaired starts (box113/inst/*_fixed.start, fixstart.py; faithful: xeng identical, Oink OK), fbg gives the same row except
+    ROOTCH 471 (was 472). sbq2 has DESC 0 on a W-run of 151 transitions (was 152).
+  - The corpus games comp54_n80 and n3cov_lean (invalid starts) give identical desc5 lines on repaired starts, so the corpus totals stand.
+  - ERRATUM / cross-check (Lead 14:47Z, L-RED claude/l-red 8150c17e, docs/red/D-ODD-1-starts.md):
+    - my fbg_K4_m6_m48_fixed.start equals L-RED's `startck.py --repair` output entry for entry;
+    - my sbq2_K8_m16_fixed.start is byte-identical to L-SI's src54/inst/sbq2_K8_m16_fix.start (242:244).
+    - So every box 113 fbg / sbq2 figure above holds on the fleet's repaired starts.
 - fbg: the 430 «delay-line» descents (R162) are PURE copies of 210 root descents at 14 transitions. Every root descent there is a fuel
   re-route, and 192 of the 210 are relays through new edges.
 - Pin «box 113 DESCSTAR» in experiments/new/check.sh: desc4 on w_re3_1, hit_b6a_1, frz32, lcount2_n23, cp_K4.
