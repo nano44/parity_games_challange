@@ -1,0 +1,33 @@
+# R151: L-NEW retcause.py @ l-new 457e41fe, UNCHANGED, on red/casc/instances/ping_n48 (date -u ~00:2xZ)
+RUN 6-37 F 31 returns 157 edges 88 targets 33 max_per_target 16 norise 0 wch_in_window 157 rises_per_return {1: 19, 2: 72, 3: 33, 4: 20, 5: 3, 6: 4, 7: 4, 9: 1, 10: 1} classes {'EVS': 425, 'ODF': 3}
+  top roots (kind, x, w, q) [(('FRESH', 7, 20, 7), 37), (('FRESH', 6, 25, 7), 14), (('FRESH', 10, 33, 12), 8)]
+  EROOT kinds {'FRESH': 157} distinct roots 31 max returns per root 37 chain depth {0: 63, 1: 58, 2: 25, 3: 5, 4: 5, 5: 1} max children per node 6 max children per return node 6 mE 134
+  PERROOT max returns of one Even X per root 8 (X 39 deg 3) max returns of one edge per root 3 max (returns of X per root)/deg X 3.0 max returns of X per root leaving one target 3 max returns of X per root with one (left, entered) pair 3 max returns of one edge per (root, depth) 2
+## XTRACE=39
+  XTRACE return k 10: 39 20 -> 7 (window from 7, first rise 7) root ('FRESH', 7, 20, 7) depth 0
+  XTRACE return k 15: 39 40 -> 20 (window from 10, first rise 10) root ('FRESH', 7, 20, 7) depth 1
+  XTRACE return k 19: 39 20 -> 7 (window from 12, first rise 15) root ('FRESH', 7, 20, 7) depth 2
+  XTRACE return k 20: 39 7 -> 40 (window from 15, first rise 15) root ('FRESH', 7, 20, 7) depth 2
+  XTRACE return k 21: 39 40 -> 20 (window from 19, first rise 19) root ('FRESH', 7, 20, 7) depth 3
+  XTRACE return k 23: 39 20 -> 40 (window from 21, first rise 21) root ('FRESH', 7, 20, 7) depth 2
+  XTRACE return k 24: 39 40 -> 7 (window from 20, first rise 21) root ('FRESH', 7, 20, 7) depth 4
+  XTRACE return k 26: 39 7 -> 40 (window from 24, first rise 24) root ('FRESH', 7, 20, 7) depth 3
+## W(X) at every switch of X (n5b; /tmp wx.py logic): ping_n48 X 39 and cedge_n32 X 7
+7 7 -> 20 W(X) (1, [7, 10, 24], 6) -> (1, [24], 8)
+10 20 -> 7 W(X) (1, [24], 8) -> (1, [7, 8, 24], 7)
+12 7 -> 40 W(X) (1, [7, 8, 24], 7) -> (1, [8, 24], 9)
+15 40 -> 20 W(X) (1, [8, 24], 9) -> (1, [3, 12, 28], 11)
+19 20 -> 7 W(X) (1, [3, 12, 28], 11) -> (1, [7, 10, 12, 28], 15)
+20 7 -> 40 W(X) (1, [7, 10, 12, 28], 15) -> (1, [10, 12, 28], 17)
+21 40 -> 20 W(X) (1, [10, 12, 28], 17) -> (1, [12, 28], 17)
+23 20 -> 40 W(X) (1, [35], 11) -> (1, [8, 35, 46], 10)
+24 40 -> 7 W(X) (1, [8, 35, 46], 10) -> (1, [7, 8, 35], 9)
+26 7 -> 40 W(X) (1, [7, 8, 35], 9) -> (1, [8, 35], 11)
+switches 10 with W(X) unchanged 0
+5 26 -> 20 W(X) (1, [7, 10, 24], 5) -> (1, [7, 24], 8)
+8 20 -> 26 W(X) (1, [7, 24], 8) -> (1, [7, 8, 24], 7)
+14 26 -> 20 W(X) (1, [7, 8, 24], 7) -> (1, [3, 7, 12, 23, 28], 11)
+17 20 -> 26 W(X) (1, [3, 7, 12, 23, 28], 11) -> (1, [7, 10, 12, 13, 23, 28], 14)
+20 26 -> 20 W(X) (1, [7, 10, 12, 13, 23, 28], 14) -> (1, [7, 12, 13, 23, 28], 17)
+22 20 -> 26 W(X) (1, [7, 12, 13, 23, 28], 17) -> (1, [7, 8], 8)
+switches 6 with W(X) unchanged 0
