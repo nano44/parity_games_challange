@@ -54,6 +54,18 @@ obstruction (which premise of which lemma blocks it) with the instance.» Writte
 ## 4. Pins (experiments/red/check.sh «R157»)
 - wlev/pins.sha1 (adds rcl_K8, rcl_K24); src2trace on rcl_K8 (97 switches; ~1 min); xeng and Oink on rcl_K8 and rcl_K24.
 
+## Addendum 1 (2026-10-31, date -u in the commit): the CEIL-ACC score (Lead 07:04Z, from l-si 6ca54248 docs/si/N5-SBF-box53.md §8, Lemma CEIL-ACC; NOT opened, Lead summary only)
+- L-SI's experiments/si/sb53/ceilpot.py @ l-si 6ca54248, run unchanged from a git archive (PYTHONPATH new/box21:harness:new:si):
+  | game | n | W-run transitions | AUP | ANDN | ADN | AINC | AMAX |
+  | --- | --- | --- | --- | --- | --- | --- | --- |
+  | obs_K12_m24 (base) | 272 | 324 | 1 | 1 | 323 | 57,812 | 74,528 |
+  | rcl_K8 | 289 | 324 | 1 | 1 | 323 | 66,397 | 84,099 |
+  | rcl_K24 | 321 | 324 | 1 | 1 | 323 | 84,125 | 103,683 |
+- A falls at 323 of 324 transitions in all three. The re-climbing selector does not change A's behaviour (AUP and ANDN stay 1). It only
+  raises A's scale (AMAX grows with the added vertices).
+- So R157's degree factor lives entirely inside the A-descent. It is consistent with CEIL-ACC's |F| ≤ (1 + AUP)·n(n + 2) + ANDN and gives
+  no evidence of AUP or ANDN growth. A multiplying counter would need A to rise or stay flat often. Neither happens in any build here.
+
 ## DONE / FINDINGS / NEEDS
 - DONE: this note; wlev/mksrc2.py EVEN=1; wlev/instances/rcl_K8, rcl_K24; check.sh «R157». SHA: see the commit.
 - FINDINGS:

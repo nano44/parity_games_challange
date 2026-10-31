@@ -79,6 +79,8 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   - sgtrace / srctrace take ~1 min on n ~ 300; push.sh verify now takes ~20-25 min.
   - Never wrap push.sh in `timeout` (it killed verify once; nothing was pushed). casc/defstart.py needs two args.
   - red/o1/ is R19's older tooling; my O1 tools are in red/tie/.
+  - L-SI's sb53/ceilpot.py runs from a git archive of l-si (experiments/si/sb53, si/si.py, new, harness, n5-second, hard-families)
+    with PYTHONPATH=new/box21:harness:new:si. R157 Addendum 1: AUP 1, ANDN 1 on obs, rcl_K8, rcl_K24.
 
 ## Successor 36 (Opus 5.5, D1/D18; started 2026-10-31 01:10Z, date -u)
 - Start: origin/claude/l-red = 99601394 (is-ancestor OK; last push succ. 35 at 00:45Z, no other pusher). Trunk merged (2b85c023). Oink
