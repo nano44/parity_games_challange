@@ -12,9 +12,8 @@ Branch claude/referee-2, merged with trunk (git merge, no rebase) before every p
 | P-N5-ODD | 03eec41d (l-si 0afc0d70a) | R2-N5-ODD.md 5753ef03 | L-1 MATCHES 301198b4 (E1/E2 SIGNED, E4 reproduced) | G-ODD-1/2 closed; F-1 sbq2 start non-edge (W-rank DEAD withdrawn) |
 | P-N5-STAIR | 31771241 (l-new 9a58765f) | R2-N5-STAIR.md f92b278a | L-1 REQUIRED STAIR-L1-1 (bind v, b) 6f45b443 | all SIGNED but O-ARENA (L42); DESC-LIN DEAD (R162, reproduced) |
 ### IN FLIGHT / open
-- ODD line L-2 (L-SI: only REFEREE's ODD-L5, (y, z) bound in FUEL-COUNT): a one-token word-diff against L-1 (3e25138b). If successor 25
-  gets it: diff, symbol test, short R2-N5-ODD-L2.md.
-- STAIR line L-2 (STAIR-L1-1): word-diff against L-1 (d027f5d8) when L-NEW sends it.
+- ODD line L-2 (l-si 6370a35f0, ee114e2f): MATCHES (R2-N5-ODD-L2.md). Closed. (My miss: (y, z) unbound in FUEL-COUNT at L-1.)
+- STAIR line L-2 (STAIR-L1-1 = REFEREE's STAIR-L9, v and b unquantified): L-NEW 42 folds both into one L-2; word-diff against L-1 (d027f5d8). For successor 25.
 - Next packet P-N5-ROOT goes to successor 25 (Lead 15:17Z). Do not open docs/referee/ ROOT files before your own report is pushed.
 ### Things only I know
 - Tools (own code; lane code never imported), all on my LATEP state loop + WRUN start reader:
