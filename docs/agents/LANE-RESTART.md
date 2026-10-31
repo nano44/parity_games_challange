@@ -202,3 +202,5 @@ Five questions:
 | 2026-10-31 | L-RED | session_01V5yGRXBDuKdR4N9Rfvkq8p (~447k; PARK cb6feea3; idle) | session_01V5yGRXWeD1JvGgcJXuXx3q (Opus, D1/D18) | 2 | PENDING (successor's check) |
 | 2026-10-31 | L-SI | session_01V5yGRYBdyfY9j7b9E99hwy (~510k; handover c7f00306; idle) | session_01V5yGRX7j3zGTcKETSyEKZr (Opus, D18) | 2 | PENDING (successor's check) |
 | 2026-10-31 | L-RED | session_01V5yGRXWeD1JvGgcJXuXx3q (~470k; PARK 871610eb; idle) | session_01V5yGRZkXge7F2DR4joW3DU (Opus, D1/D18) | 2 | PENDING (successor's check) |
+| 2026-10-31 | L-NEW | session_01V5yGRWWR2yCHEgsoMAQC6u (~500k; FINAL 9a58765f; idle) | session_01V5yGRVxhJocn7ALu97hJ39 (Opus, D14/D18) | 2 | PENDING (successor's check) |
+| 2026-10-31 | L-SI | session_01V5yGRX7j3zGTcKETSyEKZr (~500k; handover 0afc0d70a; idle) | session_01V5yGRW5dXBpY8PB9cBoNWF (Opus, D18) | 2 | PENDING (successor's check) |
