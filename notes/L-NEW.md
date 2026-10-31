@@ -1,7 +1,25 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 41, Opus 5.5, session_01V5yGRWWR2yCHEgsoMAQC6u; started 2026-10-31 07:47Z by date -u; handover: HEAD = origin 8591166d, trunk 87be2541 merged)
+## Resume point (successor 41, Opus 5.5, session_01V5yGRWWR2yCHEgsoMAQC6u; FINAL, PARKED 2026-10-31 ~12:3xZ by date -u, ~500k context)
+### FINAL summary (successor 41): boxes 107-112, every push via scripts/push.sh (VERIFY PASS), each reported to the Lead
+- 107 N5-FINPOT (f63719c5): W-MON (= landed R91), O-ARENA, SANDWICH, FROZEN, BW-ACC, HIER-RED; DEAD BW alone (x31_rx48), floor (u23sw64), NOV=0.
+- 108 N5-HDEPTH (2d791480): NEW-EDGE, OVERTAKE-W, CARRIER, GATE, ARENA-RED (equivalence). Its «no reset at a fixed vertex» remark is WRONG
+  (erratum in boxes 110 / 112).
+- 109 N5-HSEARCH (f765893a): HDEPTH DEAD hit_b6a_1 (n 32, h^W 3); unary-length h^U; climb data. L-RED R159 hd_H: depth H by design.
+- 110 N5-WIDTH (23770680): BIT-ALT, FIRST-GOOD, RESET-RED (width = resets), COPY, RESET-ROOT, NO-LAG.
+- 111 N5-STAIR (ffe347ee): ASC-RUN, Theorem STAIR (|F| <= T1 + n(3n+1) + (3n+1) DESC), DESC-COPY; obs 12 descents, sbq2/hd_H40 0;
+  DEAD descents at source events; CONJECTURE DESC-LIN (routed to L-RED 38).
+- 112 P-N5-STAIR packet FROZEN (docs/new/P-N5-STAIR-box112.md; sha1 / lines in the commit message and the message to the Lead): O-ARENA,
+  SANDWICH, FROZEN, BW-ACC, BIT, BIT-ALT, FIRST-GOOD, RESET-RED, COPY, RESET-ROOT, DESC-COPY, ASC-RUN, STAIR. Open question to the
+  Lead: is [S4b-OPT] (Odd mirror of R57's 1E-N3) covered? Used only in O-ARENA.
+### NEXT for successor 42 (Lead decides): referee fixes for P-N5-STAIR (fixes file docs/new/P-N5-STAIR-fixes-box112.md, entries
+  verbatim); DESC-LIN proof side; read L-SI box 56 (cecbf177a) when it lands (staircase from the FS side).
+### Things only I know (successor 41): pgrep/pkill -f patterns that occur in your own command line kill your shell (exit 144): use
+  "[c]limb"-style brackets. n5bcmp.py needs an explicit START file (n5x default written by a 4-line snippet, see box 107-111 .start
+  files). desc.py / resets.py corpus runs take ~10-25 min on 4 cores; finpot.py is slow on n ~ 300. push.sh verify ~12-15 min.
+
+## Resume point (HISTORY; successor 41, Opus 5.5, session_01V5yGRWWR2yCHEgsoMAQC6u; started 2026-10-31 07:47Z by date -u; handover: HEAD = origin 8591166d, trunk 87be2541 merged)
 ### Box 111 N5-STAIR (Lead 10:58Z: TD-POLY proof side): docs/new/N5-STAIR-box111.md
 - PROVED (lane): ASC-RUN, Theorem STAIR (Psi = sum of last change positions; |F| <= T1 + n(3n+2) + (3n+2) DESC; equivalence),
   RESET-STAIR (resets not re-fixed by a descent are free), DESC-COPY.

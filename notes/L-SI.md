@@ -1,6 +1,31 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## HANDOVER (successor 36, box 57, PARKING; written 2026-10-31T11:4xZ (date -u; see commit); session_01V5yGRX7j3zGTcKETSyEKZr)
+### Resume point (successor 37 starts here)
+- Box 57 (Lead 11:23Z): note docs/si/N5-FLEX-box57.md; srcfuel.py fields LEXV/ASC/EQHI/REP/YONZ; check.sh «box 57».
+- PROVED (lane): Lemma FUEL-LEX (from R15 (a) only) and Corollary FUEL-COUNT: fuel re-routes of a pair (y, z) per W-run
+  ≤ (n + 2)(n + 1)(HC + n + 1), HC = Ξ(z)-changes more significant than the pending fuel key. Pair width = recursion on z's higher digits.
+- DATA: corpus LEXV 0 (ASC 31, EQHI 82, REP 0); feedback YONZ (y on z's Ξ-play) 1,375 of 5,146 fuel re-routes.
+- My boxes this shift: 54 (OLD-PLAY, ODD-STEP, ODD-RELAY, ODD-ADD, SRC-ROOT), 55 (NO-RET), 56 (re-growth; FUEL-MONO/DESC DEAD), 57 (FUEL-LEX).
+- PACKET P-N5-ODD FROZEN (Lead 11:48Z): docs/si/P-N5-ODD-box57.md sha1 03eec41d3bfc63a6945d0f30d831a46f14e46b84; line
+  docs/si/P-N5-ODD-line.txt sha1 cd121dffd06dbc794f3154e34aa238d8df81f837 (pinned in check.sh). To sign: OLD-PLAY, ODD-STEP (with NO-RET),
+  ODD-RELAY, ODD-ADD, SRC-ROOT, FUEL-LEX, FUEL-COUNT (packet bound N ≤ n(n + 2)(HC + n), sharper than the box 57 note's; the packet governs).
+  Repairs go ONLY to docs/si/P-N5-ODD-fixes.md (append-only), never into the frozen file.
+- NOT done: L-RED R161's NO-SELF-FUEL (Lead 11:48Z, «if you can»). Only the trivial bound is recorded (packet §6 Remark): fuel(y, z) ≤ XCH_F(z),
+  since distinct fuel re-routes have distinct rise transitions; this already implies R161's 2 + XICH(z) + XICH(w). The real content («a pair
+  cannot feed its own target's higher digits») needs a definition of feeding; corpus YONZ 1,375 of 5,146 says y IS often on z's Ξ-play.
+### Queue for successor 37
+0. Answer the referees on P-N5-ODD in docs/si/P-N5-ODD-fixes.md only.
+1. The open core, per pair: can the higher-digit recursion of FUEL-COUNT cycle (y feeding z's higher digits, YONZ) or have polynomial
+   depth? Start from OLD-PLAY: a higher-digit change of Ξ(z) needs a switch on z's old Ξ-play; follow it.
+2. OLDE source events (old-edge FS switches; corpus 6) and FIRST (686, one per W-run) are the non-fuel residue of box 56.
+3. Box 54 §2 says RET «Open»: superseded by box 55 NO-RET.
+### Things only I know
+- pgrep -f / pkill -f patterns match their own command line here: test liveness with `ps aux | grep "[x]yz"`.
+- srcfuel / grow corpus runs: ~10 min each at -P 4 (runfuel.sh, rungrow.sh). retsearch 100k games at n 16: ~20 min.
+- Every push.sh verify takes ~25 min; run it in the background with a waiter.
+
 ## HANDOVER (successor 36, box 56; written 2026-10-31T10:5xZ (date -u; see commit); session_01V5yGRX7j3zGTcKETSyEKZr)
 ### Resume point
 - Box 56 (Lead 10:34Z, width from the first-segment side): note docs/si/N5-GROW-box56.md, tools experiments/si/grow56/, pins check.sh
