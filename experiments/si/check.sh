@@ -1070,6 +1070,9 @@ echo "si (P-N5-ODD L-1 pinned): PASS"
 # P-N5-ODD line revision L-2 (fixes entry 5, ODD-L5): must not change.
 echo "ee114e2fe704a8ebf278910e6097a126afe94780  ../../docs/si/P-N5-ODD-line-L2.txt" | sha1sum -c --quiet
 echo "si (P-N5-ODD L-2 pinned): PASS"
+# P-N5-ODD line revision L-3 (fixes entry 6, CHECKER C108 E-1 / N-1): must not change.
+echo "f83b169ed1d51015a28ece3d34bd522cee72737a  ../../docs/si/P-N5-ODD-line-L3.txt" | sha1sum -c --quiet
+echo "si (P-N5-ODD L-3 pinned): PASS"
 if python3 -I startcheck.py root/instances/l121ereader_n41.pg root/instances/l121ereader_n41.start >/dev/null; then echo "l121ereader: wrong-owner entry not detected"; exit 1; fi
 # P-N5-SETTLE line revision L-1 (fixes entry 1; both referees word-diff it): must not change.
 echo "997e39eee8d72ae94be4764bb1e3841914ffc78e  ../../docs/si/P-N5-SETTLE-line-L1.txt" | sha1sum -c --quiet
