@@ -709,3 +709,8 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
   rises); W(36) unchanged. Obstruction: x's W-play leaves Z at Odd 11 ∈ D (σ̄(11) = 4, τ(11) = 31), so the switch is invisible to W(x).
   Corpus: 20 of 1,301 closing escapes. n5b identical, Oink zlk OK, strategies verified. Not a kill of W-REOPEN′ (this escape does not
   repeat); it is the kill shape handed on.
+- (box 60, Lead 22:19Z; note docs/si/N5-RET-box60.md §3) Route «the Ξ-side return charge (Lemma KEY-RETURN: a return of Even y to a needs
+  Ξ(a) to cross b's value at the leave, at a key ≥ the leave's gain) bounds switches polynomially»: DEAD as a route. KEY-RETURN uses only
+  [IMP] and [R15a], so classical switch-all SI satisfies it: experiments/si/anc58/inst/switchallexp_6.pg under --si has 6,589 returns,
+  all charged, 0 violations, exponential run. Under N5 the per-option charge keeps the degree factor: one Ξ-change pays 5N + 2 returns
+  (switchbestexp_N, fc_N; corpus max 42). The lemma itself is PROVED (lane); its counting form is RESULTS R95 RET-ΞRISE.

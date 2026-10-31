@@ -1140,3 +1140,15 @@ b59sum() { awk -v k="$2" '{for(i=1;i<=NF;i++) if($i==k) a+=$(i+1)} END{print a+0
 [ "$(b59sum tight SW_TIGHT) $(b59sum tight TIGHTV)" = "63 0" ] || { echo "box 59: tight totals"; exit 1; }
 [ "$(b59sum escw ESC) $(b59sum escw CLOSE) $(b59sum escw CLOSE_NOWX) $(b59sum escw CLOSE_EFLAT)" = "1434 1301 20 0" ] || { echo "box 59: escw totals"; exit 1; }
 echo "si (box 59: W-REOPEN' repaired, WIT, CLOSE-W DEAD): PASS"
+# box 60 (Lead 22:19Z): Lemma KEY-RETURN (Xi-side return charge) holds, also under switch-all SI (barrier); fan-out SHARE 5N + 2.
+(cd anc58/inst && sha1sum -c --quiet pins.sha1) || { echo "box 60: pins changed"; exit 1; }
+o=$(python3 -I anc58/retxi.py anc58/inst/sr_K2_m6_m4.pg anc58/inst/sr_K2_m6_m4.start)
+case "$o" in *"RET 24 PASSV 0 CURV 0 KEYV 0 CHARGEV 0 MAXRET 2 "*) ;; *) echo "box 60: sr_K2: $o"; exit 1;; esac
+o=$(python3 -I anc58/retxi.py --si anc58/inst/switchallexp_5.pg)
+case "$o" in *"RET 2745 PASSV 0 CURV 0 KEYV 0 CHARGEV 0 MAXRET 76 SHARE 17"*) ;; *) echo "box 60: switchallexp_5 SI: $o"; exit 1;; esac
+o=$(python3 -I anc58/retxi.py ../new/box54/out/switchbestexp_5.pg)
+case "$o" in *"PASSV 0 CURV 0 KEYV 0 CHARGEV 0 "*"SHARE 27"*) ;; *) echo "box 60: switchbestexp_5: $o"; exit 1;; esac
+[ "$(grep -c ' RETXI ' anc58/retxi_corpus.txt)" = 1132 ] || { echo "box 60: retxi corpus incomplete"; exit 1; }
+o=$(awk '{for(i=1;i<=NF;i++){if($i=="RET")a+=$(i+1); if($i ~ /^(PASSV|CURV|KEYV|CHARGEV)$/)b+=$(i+1)}} END{print a, b}' anc58/retxi_corpus.txt)
+[ "$o" = "6265 0" ] || { echo "box 60: retxi corpus totals: $o"; exit 1; }
+echo "si (box 60: KEY-RETURN): PASS"

@@ -10,6 +10,14 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - DATA: FAILS for TBR / ARSB on switchbestexp_2..6 (HI rises, unsettling 3-45; settle gap N5 16-22, TBR 30-132, ARSB 29-221).
 - DATA: blind on L-RED's builds (SG = BG ~ iterations up to 404), where ARSB stops in 2-23 iterations. Corpus 0 violations.
 - Next (untested): Even's climb inside a tau-stretch below fixed HI (one-player G_tau, arena from Isigma vs sigma-bar).
+### Box 117 ERRATUM: SQUEEZE = landed RESULTS R18 (d) Lemma S (b) (box 21 §2.2; Lemma R = DUAL-ORDER). Reported to the Lead.
+### Box 118 N5-GATE (Lead 22:19Z; docs/new/N5-GATE-box118.md; tools experiments/new/box118/)
+- PROVED (lane) CONSISTENT-RED: consistent windows (Is = IW, no fallback) inside a tau-stretch are R17 switch-best runs on G_tau,
+  so stretch <= (INC+1)(B-1)+INC; equivalence.
+- DATA: ungated one-player climb 2-7 steps on L-RED builds vs N5 44-403; INC ~ stretch; switchbestexp INC 6-8.
+- DEAD (explicit n-1): R17 per-lambda-phase bound inside a tau-stretch: fbg_K12_m6_m24 403 > 289 (Oink OK, n5b identical).
+- DATA: gap set {W != Xi} grows, A = sum lcp(Xi, W) drops: not potentials.
+- Next (untested): charge INC to distinct blocked edges later used x unblock events (FUEL-COUNT form).
 ### Things only I know (successor 43): squeeze.py 5th arg prints per-state |SET|, B, C lines; corpus runsqz.sh ~5 min on 4 cores.
   Oink built here by scripts/setup_oink.sh (not persisted). pincheck.sh needs it.
 
