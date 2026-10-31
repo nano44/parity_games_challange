@@ -23,7 +23,7 @@
 | 7 | Lemma ASC-RUN | SIGNED | none |
 | 7 | Theorem STAIR (both directions) | SIGNED | none |
 | 8-10 | DEAD ends, DATA, erratum, DESC-LIN | not signed | DATA note F-1 (sbq2 start) |
-| 11 | RESULTS line draft | REQUIRED changes STAIR-L1 to L5 (§5) | — |
+| 11 | RESULTS line draft | REQUIRED changes STAIR-L1 to L6 (§5) | — |
 - Gap map: EMPTY.
 
 ## 2. Premises against the landed text (trunk at this report's merge)
@@ -130,6 +130,14 @@
 - RESET-ROOT holds at every reset: ROOT checks 59,285, 0 violations; the lane's 12,985 / 12,985 counts transitions.
 - Random 300 games (seed 31, n 5-12, 4 starts): 0 violations.
 
+## 4b. R162 (DESC-LIN DEAD): pins re-run with my tool
+- Pins from claude/l-red 54832628, experiments/red/desc/instances, with their start files:
+  - cp_K4: one W-run [0, 44], n 192, |F| 44, WCH 3904, DESC 388. That is R162's «| 4 | 192 | 44 | … | 388 |» (DESC/n 2.02).
+  - suf_K4: one W-run [0, 44], n 103, |F| 44, DESC 28. That is R162's DESC column, 28.
+  - 0 violations of every STAIR check. DESC grows past any c·n while |F| stays at 44: DESC-LIN is DEAD as R162 says.
+  - STAIR's bound |F| ≤ T1 + n(3n + 1) + (3n + 1)·DESC holds (WCT 44).
+- R162's STAIR-U (lane-proved) is not reviewed here.
+
 ## 5. RESULTS line draft (§11): strict symbol test, TARGET.md scope words
 - **STAIR-L1 (REQUIRED, L42).** Remove «and its S4b mirror [S4b-OPT]» from the premises and the clause «(Lemma O-ARENA) W_k is σ_k's
   best-response value with Odd restricted to O(τ) = τ ∪ Iτ;». O-ARENA is withdrawn, and nothing else in the line needs [S4b-OPT].
@@ -151,6 +159,11 @@
 - **STAIR-L5 (REQUIRED, DATA scope).** «HDEPTH is DEAD (hit_b6a_1)» is a DEAD label for a statement the line never defines. Name it
   («h^W ≤ 2 (box 107)») or drop it. TARGET.md scope words: «REDUCTIONS and EQUIVALENCES (no count is bounded here; … G-N5-TIME stays OPEN;
   not M3, not a step-4 pass, not a TARGET.md claim)» ✓.
+- **STAIR-L6 (REQUIRED, scope tail; Lead 13:04Z).** «DESC-LIN is a CONJECTURE» → «DESC-LIN DEAD (L-RED R162, claude/l-red 54832628)».
+  - R162: passive observer copies of obs (family cp_K) give DESC ≈ n²/88 with |F| unchanged.
+  - My stair_check.py on R162's pin cp_K4 is in R2-N5-STAIR §4b.
+  - The signed claims are unaffected, since Theorem STAIR is an EQUIVALENCE (DESC is not bounded).
+  - The packet's §10 is likewise superseded.
 - Precision: n is bound fleet-wide by TARGET.md l. 8.
 
 ## 6. Findings
@@ -166,5 +179,5 @@
 - SIGNED: SANDWICH, FROZEN, BW-ACC, BIT, BIT-ALT, FIRST-GOOD, RESET-RED, COPY, RESET-ROOT, DESC-COPY, ASC-RUN and Theorem STAIR.
 - NOT SIGNED: O-ARENA (L42). Nothing else uses it.
 - Gap map: EMPTY. Precisions P-1 (COPY's two directions) and P-2 (RESET-ROOT «before λ_W(v)»).
-- Line draft: REQUIRED STAIR-L1 to STAIR-L5.
+- Line draft: REQUIRED STAIR-L1 to STAIR-L6.
 - DATA finding F-1.
