@@ -44,6 +44,7 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   u1t_cex_n32 with W changing elsewhere. tog6b_n32 is only an X ∈ C triviality. PROVED (lane): TIE-W (from RUN-SETTLE 2b / 2c), O1-ODD,
   KEY-MON (LEX-MONO per vertex in any W-run), XI-PAY, O1-SPLIT. Corpus: ties EVEN branch 182 / ODD 0; KEY-MON 498,457 checks, 0 bad.
   Tools experiments/red/tie/ (NOT red/o1/, which is R19's older O1 tooling).
+- R152 pushed aefe261c (VERIFY PASS), reported 01:37Z; climbs final: max 5 W-flat re-entries of one X, longest W-run 13 (pin tie_n32).
 - RESUME POINT: realise T54 §4.4's width-2 LEX-ARENA counter inside one W-run (lex-key stalling fed by Ξ-improvement).
 - Things only I know:
   - casc/defstart.py takes TWO args (GAME OUT); with one it writes nothing and xeng then fails on an empty start.
