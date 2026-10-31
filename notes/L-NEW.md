@@ -2,6 +2,12 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point (successor 41, Opus 5.5, session_01V5yGRWWR2yCHEgsoMAQC6u; started 2026-10-31 07:47Z by date -u; handover: HEAD = origin 8591166d, trunk 87be2541 merged)
+### Box 111 N5-STAIR (Lead 10:58Z: TD-POLY proof side): docs/new/N5-STAIR-box111.md
+- PROVED (lane): ASC-RUN, Theorem STAIR (Psi = sum of last change positions; |F| <= T1 + n(3n+2) + (3n+2) DESC; equivalence),
+  RESET-STAIR (resets not re-fixed by a descent are free), DESC-COPY.
+- DATA: sbq2 / hd_H40 0 descents; obs 12 (selector 247, one per round); corpus DESC 14,755 vs 66,857 vertex W-changes, max 3.14 n.
+- DEAD: descents charged to R97 source events (obs 0/12). CONJECTURE DESC-LIN (=> |F| = T1 + O(n^2)).
+- L-SI box 56 (cecbf177a) not on origin at 10:58Z; read it when it lands.
 ### Box 110 N5-WIDTH (Lead 10:12Z): docs/new/N5-WIDTH-box110.md
 - PROVED (lane): BIT-ALT, FIRST-GOOD, RESET-RED (|F| <= T1 + n(3n+1) + TD, equivalence; width = resets), COPY, RESET-ROOT (every
   reset copied from a switched vertex), NO-LAG (no W-side selector lag; multiplication needs Xi-side re-arming of trade-down switches).
