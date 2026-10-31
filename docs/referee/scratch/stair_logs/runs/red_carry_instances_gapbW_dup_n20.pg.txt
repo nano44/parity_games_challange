@@ -1,0 +1,13 @@
+GAME red/carry/instances/gapbW_dup_n20.pg
+BIT_chk 18
+DESC 1
+FROZEN_chk 2
+GAMES 1
+ROOT_chk 2
+TD 3
+WCH 9
+WCT 2
+trans 2
+wruns 1
+VIOLATIONS 0
+RC 0

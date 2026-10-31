@@ -1,0 +1,14 @@
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.pg
+BIT_chk 1667
+DCOPY_chk 96
+DESC 191
+FROZEN_chk 80
+GAMES 1
+ROOT_chk 538
+TD 3015
+WCH 564
+WCT 80
+trans 80
+wruns 7
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,4 @@
+GAME red/usplit/instances/grow_K12_n149.pg
+skip_big 1
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,4 @@
+GAME red/nest16/instances/w1_n27.pg
+GAMES 1
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,14 @@
+GAME si/runlin/instances/runfam_K10.pg
+BIT_chk 541
+DCOPY_chk 10
+DESC 133
+FROZEN_chk 99
+GAMES 1
+ROOT_chk 141
+TD 1792
+WCH 216
+WCT 99
+trans 99
+wruns 1
+VIOLATIONS 0
+RC 0

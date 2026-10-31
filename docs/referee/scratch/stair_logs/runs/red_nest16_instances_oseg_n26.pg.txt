@@ -1,0 +1,4 @@
+GAME red/nest16/instances/oseg_n26.pg
+GAMES 1
+VIOLATIONS 0
+RC 0

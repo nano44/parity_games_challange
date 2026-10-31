@@ -1,0 +1,13 @@
+GAME red/fbr/instances/twowave_L16.pg
+BIT_chk 30
+DESC 0
+FROZEN_chk 15
+GAMES 1
+ROOT_chk 15
+TD 207
+WCH 15
+WCT 15
+trans 15
+wruns 1
+VIOLATIONS 0
+RC 0

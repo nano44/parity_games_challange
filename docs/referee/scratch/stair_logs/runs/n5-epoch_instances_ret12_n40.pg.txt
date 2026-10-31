@@ -1,0 +1,14 @@
+GAME n5-epoch/instances/ret12_n40.pg
+BIT_chk 803
+DCOPY_chk 17
+DESC 70
+FROZEN_chk 51
+GAMES 1
+ROOT_chk 251
+TD 1287
+WCH 251
+WCT 51
+trans 51
+wruns 5
+VIOLATIONS 0
+RC 0

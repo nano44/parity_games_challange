@@ -1,0 +1,14 @@
+GAME red/xing/instances/j10_n24.pg
+BIT_chk 203
+DCOPY_chk 1
+DESC 5
+FROZEN_chk 23
+GAMES 1
+ROOT_chk 47
+TD 179
+WCH 51
+WCT 23
+trans 23
+wruns 2
+VIOLATIONS 0
+RC 0

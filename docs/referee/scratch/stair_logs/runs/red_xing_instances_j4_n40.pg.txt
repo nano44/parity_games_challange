@@ -1,0 +1,14 @@
+GAME red/xing/instances/j4_n40.pg
+BIT_chk 990
+DCOPY_chk 21
+DESC 108
+FROZEN_chk 99
+GAMES 1
+ROOT_chk 230
+TD 1224
+WCH 267
+WCT 99
+trans 99
+wruns 5
+VIOLATIONS 0
+RC 0

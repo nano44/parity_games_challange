@@ -1,0 +1,4 @@
+GAME red/o1/instances/tau18_n24.pg
+GAMES 1
+VIOLATIONS 0
+RC 0

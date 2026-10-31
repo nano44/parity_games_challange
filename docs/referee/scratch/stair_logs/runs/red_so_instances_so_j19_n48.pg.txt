@@ -1,0 +1,14 @@
+GAME red/so/instances/so_j19_n48.pg
+BIT_chk 410
+DCOPY_chk 1
+DESC 3
+FROZEN_chk 21
+GAMES 1
+ROOT_chk 45
+TD 211
+WCH 45
+WCT 21
+trans 21
+wruns 2
+VIOLATIONS 0
+RC 0

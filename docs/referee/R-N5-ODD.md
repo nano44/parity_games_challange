@@ -120,6 +120,8 @@ Referee: REFEREE (successor 21), Opus 5.5 (D15). Lead brief 2026-10-31 12:40Z (r
   - MUT 3 (SRC-ROOT without the Odd-choice prefix event): never bites, on the pins or on the 5 corpus games with Odd-only endings. So in
     data a later Even switch or C-node always catches the chain. The proof still needs the clause, because ODD-RELAY needs π free of
     Odd choice changes.
+- latew_K16_m32 (n 482, start, MAXN 600; odd_logs/pin_latew.txt): 1 W-run of 560 transitions, OLD 9,297, STEP 214,480, ROOT 6,733,
+  FR 2,017 (max 16 per pair, = the packet's «latew 16»); VIOLATIONS 0.
 - Lane reconciliation (FSONLY=1 restricts y to box 56's first-segment selectors, as srcfuel.py does):
   - so_th_n32: FUELEV 21, EQHI 6 = lane;
   - nep56_n32: ASC 2 = lane; re-routes 57 against the lane's FUELEV 56. One re-route is unreconciled. It does not affect LEXV 0 on

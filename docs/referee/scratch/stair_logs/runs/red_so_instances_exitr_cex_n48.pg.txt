@@ -1,0 +1,13 @@
+GAME red/so/instances/exitr_cex_n48.pg
+BIT_chk 49
+DESC 1
+FROZEN_chk 4
+GAMES 1
+ROOT_chk 21
+TD 202
+WCH 22
+WCT 4
+trans 4
+wruns 2
+VIOLATIONS 0
+RC 0

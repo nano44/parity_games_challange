@@ -1,0 +1,13 @@
+GAME n5-epoch/instances/lend9_n8.pg
+BIT_chk 20
+DESC 0
+FROZEN_chk 5
+GAMES 1
+ROOT_chk 3
+TD 5
+WCH 5
+WCT 5
+trans 5
+wruns 4
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,12 @@
+GAME n5-exhaustive/instances/wk2_n32.pg
+BIT_chk 30
+DESC 0
+FROZEN_chk 4
+GAMES 1
+TD 0
+WCH 12
+WCT 4
+trans 4
+wruns 2
+VIOLATIONS 0
+RC 0

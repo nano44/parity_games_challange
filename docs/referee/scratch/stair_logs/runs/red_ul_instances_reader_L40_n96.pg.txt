@@ -1,0 +1,13 @@
+GAME red/ul/instances/reader_L40_n96.pg
+BIT_chk 94
+DESC 1
+FROZEN_chk 43
+GAMES 1
+ROOT_chk 49
+TD 1151
+WCH 49
+WCT 43
+trans 43
+wruns 1
+VIOLATIONS 0
+RC 0

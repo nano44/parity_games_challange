@@ -1,0 +1,13 @@
+GAME red/xing/instances/x32_rand64.pg
+BIT_chk 194
+DESC 5
+FROZEN_chk 55
+GAMES 1
+ROOT_chk 56
+TD 1434
+WCH 97
+WCT 55
+trans 55
+wruns 1
+VIOLATIONS 0
+RC 0

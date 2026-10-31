@@ -1,0 +1,15 @@
+GAME red/n3/instances/n3cov_lean.pg
+NOTE start file red/n3/instances/n3cov_lean.start invalid for its game (move not an edge, or missing); given start skipped
+BIT_chk 82
+DCOPY_chk 1
+DESC 8
+FROZEN_chk 11
+GAMES 1
+ROOT_chk 20
+TD 271
+WCH 22
+WCT 11
+trans 11
+wruns 1
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,13 @@
+GAME n5-exhaustive/instances/b4_cyc6_0.pg
+BIT_chk 22
+DESC 0
+FROZEN_chk 2
+GAMES 1
+ROOT_chk 5
+TD 7
+WCH 11
+WCT 2
+trans 2
+wruns 1
+VIOLATIONS 0
+RC 0

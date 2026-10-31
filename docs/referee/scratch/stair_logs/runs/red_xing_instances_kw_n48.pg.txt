@@ -1,0 +1,13 @@
+GAME red/xing/instances/kw_n48.pg
+BIT_chk 124
+DESC 3
+FROZEN_chk 40
+GAMES 1
+ROOT_chk 47
+TD 981
+WCH 62
+WCT 40
+trans 40
+wruns 1
+VIOLATIONS 0
+RC 0

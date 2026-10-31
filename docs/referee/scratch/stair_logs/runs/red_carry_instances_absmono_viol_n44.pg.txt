@@ -1,0 +1,4 @@
+GAME red/carry/instances/absmono_viol_n44.pg
+GAMES 1
+VIOLATIONS 0
+RC 0

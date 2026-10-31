@@ -1,0 +1,14 @@
+GAME red/xing/instances/x31_lem_t32.pg
+BIT_chk 342
+DCOPY_chk 7
+DESC 45
+FROZEN_chk 56
+GAMES 1
+ROOT_chk 135
+TD 561
+WCH 172
+WCT 56
+trans 56
+wruns 7
+VIOLATIONS 0
+RC 0

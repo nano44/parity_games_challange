@@ -1,0 +1,14 @@
+GAME red/xing/instances/fbref_cex_n32.pg
+BIT_chk 402
+DCOPY_chk 8
+DESC 16
+FROZEN_chk 42
+GAMES 1
+ROOT_chk 156
+TD 740
+WCH 161
+WCT 42
+trans 42
+wruns 7
+VIOLATIONS 0
+RC 0
