@@ -1,4 +1,4 @@
-# R151: the ping-pong GROWS a little, and CONJECTURE LEVEL-ONCE (L-NEW box 102) is DEAD. On ping_n48 (n 48) one Even X (39, deg 3) returns 8 times under ONE fresh root (7 → 20 at q 7), ratio 3.0, depths 0-4, and the edge (39, 40) returns TWICE at depth 2. But |F| stays linear (31 at n 48; cedge_n32 26 at n 32), every switch of X changes W(X) (10 / 10 and 6 / 6), and two coupled copies of cedge_n32 reach a longest W-run of 41 at n 64. No nesting was found. The data point to the obstruction: each ping-pong round costs one W-change at X, i.e. the R* / FL core. Not proved
+# R151: the ping-pong GROWS a little, and CONJECTURE LEVEL-ONCE (L-NEW box 102) is DEAD. On ping_n48 (n 48) one Even X (39, deg 3) returns 8 times under ONE fresh root (7 → 20 at q 7), ratio 3.0, depths 0-4, and the edge (39, 40) returns TWICE at depth 2. But |F| stays linear (31 at n 48; cedge_n32 26 at n 32), every switch of X changes W(X) (10 / 10 and 6 / 6), and two coupled copies of cedge_n32 reach a longest W-run of 53 at n 64 (≈ 2 × 26 + 1: the loops run in sequence, not nested). No nesting was found. The data point to the obstruction: each ping-pong round costs one W-change at X, i.e. the R* / FL core. Not proved
 L-RED successor 35 (Opus 5.5; D1/D18). Lead 2026-10-30 23:41Z, R151: «Can the ping-pong GROW? Find a family where RET(X; e)/deg X → ∞,
 with depth growing … measure its |F| against n … If growth is impossible, state the exact obstruction: the self-fed loop through X must change
 W at X each round?» Lead 2026-10-31 00:10Z: «NEST cedge_n32's loop into a counter … If nesting fails, state the precise obstruction with the
@@ -43,8 +43,10 @@ instance where the nested copy collapses.» Written 2026-10-31 from 00:15Z (date
 - casc/nestclimb.py: the disjoint union of two copies A, B of cedge_n32 (n 64, both starts). Mutations ONLY add, drop or redirect cross
   edges between the copies. Score = longest W-run, then total iterations. 4 climbs, 30 min.
 - Union without cross edges: longest W-run 26 (the copies run in parallel), 31 iterations.
-- Best found: longest W-run 41 at n 64, with 8 cross edges (rng 1). The others reached 34, 37 and 35.
-- So the coupled copies add at most +15 transitions to one W-run. That is linear, nowhere near 26 × (rounds), which nesting would need.
+- Final (4 climbs, about 6,300-8,400 steps each): longest W-runs 50, 53, 40 and 40, with 15, 19, 9 and 26 cross edges.
+- Pin casc/instances/nest_n64 (the rng 2 climb): xcn.py «iters 68 wruns 8 maxL 53»; xeng identical; Oink OK.
+- 53 ≈ 2 × 26 + 1. The cross edges SEQUENCE the two copies' loops (one runs after the other in one W-run). They do not nest them, which
+  would need about 26 × (rounds) transitions. |F|/n is 0.83, against 0.81 for one copy.
 - Precise obstruction, as far as the data go (READING, not proved):
   - (O1) every X-switch in the loop changes W(X) (§2). A nested copy B can re-run its loop only if each B-round finds a new W-level at
     B's X.
@@ -54,9 +56,10 @@ instance where the nested copy collapses.» Written 2026-10-31 from 00:15Z (date
   - Hence a nested copy re-runs only as often as fresh W-levels at its X allow. That is the R* / FL core: ARENA-MAX's W-optimality
     (S4a picks W-tight edges) is what forces (O1).
   - (O1) is DATA on 2 instances (16 / 16 switches). It is not proved: Case 2a of RUN-SETTLE allows tie switches with W(X) fixed, and
-    I have no proof that a ping-pong can't use them. The instance where the nested copy collapses is the union itself: nestclimb's best
-    41-transition W-run (not pinned; the climbs' best files are in /tmp and will be lost).
+    I have no proof that a ping-pong can't use them. The instance where the nested copy collapses is casc/instances/nest_n64: the second copy's
+    loop runs once, after the first, and is not re-run.
 
 ## 4. Pins (experiments/red/check.sh «R151»)
+- casc/instances/nest_n64: sha1, xcn.py maxL 53, xeng, Oink.
 - casc/instances/ping_n48: sha1; casc/retx.py; casc/wx.py «switches 10 with W(X) unchanged 0»; xeng; Oink. L-NEW's tool output is kept as
   data in casc/ping_out.txt.

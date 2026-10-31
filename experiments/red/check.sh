@@ -486,6 +486,9 @@ if [[ -x ../../tools/oink/build/oink ]]; then out=$(bash rel2/oinkcmp.sh casc/in
 # R151 (successor 35): LEVEL-ONCE (L-NEW box 102) DEAD and ping-pong growth: ping_n48, Even 39 (deg 3) returns 8 times under ONE fresh root, edge (39, 40)
 # twice at depth 2 (L-NEW retcause.py @ 457e41fe, data in casc/ping_out.txt); every switch of 39 changes W(39) (casc/wx.py); here: sha1, retx, wx, xeng, Oink
 sha1sum -c --quiet casc/pins.sha1 || { echo "casc pins changed"; exit 1; }
+out=$(python3 -I xcn/xcn.py casc/instances/nest_n64.pg casc/instances/nest_n64.start); [[ "$out" == "XCN nest_n64.pg n 64 iters 68 wruns 8 maxL 53 maxCN 0 maxCNc 0 maxXCN 0 maxXCNo 0 sumCN 0 sumXCN 0" ]] || { echo "nest_n64 drifted: $out"; exit 1; }
+out=$(python3 -I seg/xeng.py casc/instances/nest_n64.pg casc/instances/nest_n64.start | tail -1); [[ "$out" == "state sequences identical: True" ]] || { echo "xeng nest: $out"; exit 1; }
+if [[ -x ../../tools/oink/build/oink ]]; then out=$(bash rel2/oinkcmp.sh casc/instances/nest_n64.pg casc/instances/nest_n64.start); [[ "$out" == "OINK OK" ]] || { echo "oink nest: $out"; exit 1; }; fi
 out=$(python3 -I casc/retx.py casc/instances/ping_n48.pg casc/instances/ping_n48.start); [[ "$out" == "RETX ping_n48.pg n 48 F 31 returns 157 topX [(39, 8), (3, 6), (21, 6), (36, 6), (41, 6), (7, 5)]" ]] || { echo "retx ping drifted: $out"; exit 1; }
 out=$(cd .. && python3 -I red/casc/wx.py red/casc/instances/ping_n48.pg red/casc/instances/ping_n48.start 39 | tail -1); [[ "$out" == "switches 10 with W(X) unchanged 0" ]] || { echo "wx ping drifted: $out"; exit 1; }
 out=$(python3 -I seg/xeng.py casc/instances/ping_n48.pg casc/instances/ping_n48.start | tail -1); [[ "$out" == "state sequences identical: True" ]] || { echo "xeng ping: $out"; exit 1; }

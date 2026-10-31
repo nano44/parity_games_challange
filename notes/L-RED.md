@@ -49,8 +49,8 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
     (topfix_N); CASC-EDGE (cedge_n32, RET 4 > deg 2); LEVEL-ONCE (ping_n48, edge (39, 40) twice at depth 2).
   - DATA: HXS at one source quadratic (observer); the SRC dichotomy (event-rich vs block-rich).
   - DATA: the ping-pong grows by search (ratio 2 → 3 at n 32 → 48), but |F| stays < n, and every switch of X changes W(X) (16 / 16).
-  - DATA: two coupled cedge copies reach a longest W-run of 46 at n 64 (no nesting).
-- Pins (casc/pins.sha1): cascl_K4_m8_N100, cascl66_K4_m8_N150, casctf_n10_N210, narrow_n10, cedge_n32, ping_n48; xcn/pins.sha1:
+  - DATA: two coupled cedge copies reach a longest W-run of 53 at n 64, the loops in sequence (nest_n64; no nesting).
+- Pins (casc/pins.sha1): cascl_K4_m8_N100, cascl66_K4_m8_N150, casctf_n10_N210, narrow_n10, cedge_n32, ping_n48, nest_n64; xcn/pins.sha1:
   xcn4_n12, cn3_n9.
 - Tools: xcn/ (xcn, srcsettle, srcrand, xsearch, xclimb, hxs); casc/ (retx, clone, defstart, wx, ovclimb, nestclimb, xdclimb, and the copies of
   L-NEW's retcause: retcause_xr = b376575c + XROOT, which keeps the old depth bug; retcause_br = 2311683e + BRCHAIN + XDEG).
