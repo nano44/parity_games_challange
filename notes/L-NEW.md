@@ -20,6 +20,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - DEAD (explicit n-1): R17 per-lambda-phase bound inside a tau-stretch: fbg_K12_m6_m24 403 > 289 (Oink OK, n5b identical).
 - DATA: gap set {W != Xi} grows, A = sum lcp(Xi, W) drops: not potentials.
 - Next (untested): charge INC to distinct blocked edges later used x unblock events (FUEL-COUNT form).
+### Box 119 N5-UNBLOCK (Lead 23:15Z; docs/new/N5-UNBLOCK-box119.md; experiments/new/box119/): DEAD at constant 1: INC <= released
+  blocked-edge switches (cp_K4 43 vs 9; ratio to 15.5 on s3quad). Builds: every inconsistent step fresh-fed (NEW-FUEL); unblocks always
+  target-caused, fan <= 2. READING: relocation onto XI-CH-POLY (degree factor avoided only trivially).
 ### Things only I know (successor 43): squeeze.py 5th arg prints per-state |SET|, B, C lines; corpus runsqz.sh ~5 min on 4 cores.
   Oink built here by scripts/setup_oink.sh (not persisted). pincheck.sh needs it.
 
