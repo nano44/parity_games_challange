@@ -37,6 +37,34 @@ context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older note
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
 
+## Successor 38 PARK (2026-10-31 ~19:4xZ, date -u; context ~420k, written before the ~550k park point)
+- DONE (claude/l-red, push.sh VERIFY PASS each):
+  - 54832628 (R162);
+  - 8d466f43 / 8150c17e (R163 + D-ODD-1);
+  - 8e3ec6f2, 81a754cc (D-ODD-1 addendum), cd5ec3ba, ed782cb4, cb4f4bba, 74bb2fec (R164);
+  - R165 + this section in the final push.
+- RESULTS (lane level; G-N5-TIME OPEN):
+  - R162 (docs/red/R162-desc.md): DESC-LIN DEAD by passive observers (cp_K, suf_K); |F| unchanged; obs core descent-free.
+    STAIR-U PROVED (lane).
+  - R163 (R163-descstar.md): DESC* exact ILP; DESC*-LIN DEAD (weak form) on fbg, DESC* = (m2+1)K + 6 = Θ(n²), |F| quadratic.
+  - D-ODD-1 (D-ODD-1-starts.md): startck.py and start validation in xeng / oinkcmp / desc tools. Bad starts: sbq2 (obs3.py), the fbg pins
+    (fbsearch build: b_j's τ not moved to be_j), the old n3 outputs. All counts reproduce.
+  - R164 (R164-sax.md): the fixed τ does not kill the switch-all counter; S4a does.
+    - S4a W-monotone PROVED (lane).
+    - Carries = W-drops; re-arm = W-drop = W-run boundary (H3 on switchbestexp).
+    - fbA PLAT = K − 1 in one W-run.
+    - W-monotone switch-all PLAT ≤ 1.
+  - R165 (R165-nest.md): see that note.
+- RESUME POINT: R165's outcome (see its §0). If R165 did not multiply, the open object is unchanged: a W-monotone counter whose re-arms
+  are W-rises and whose carrier's W-chain is itself re-armed (depth ≥ 3).
+- Things only I know:
+  - L-SI's anc.py runs only from a git-archive of claude/l-si (experiments/si/anc58). sax/ancx.py and platx.py take it via env ANC.
+  - scipy is pip-installed in this container only. check.sh skips the ILP lines without it.
+  - pkill -f with a pattern that occurs in your own command line kills the shell (exit 144). Use ps / grep / kill by pid.
+  - A `while pgrep -f X` wait loop matches itself; use `ps aux | grep -c '[x]...'`.
+  - fbsearch.py's build leaves τ(b_j) = hp after b_j's successor becomes be_j: that is the fbg non-edge. fbsearch3.py repairs it.
+  - desc2.py / descstar.py hold all W-vectors in memory: n ≈ 600 with 1,300 states runs out of memory (cp_K20, fbg_K32_m32 not run).
+
 ## Successor 38 (Opus 5.5, D1/D18; started 2026-10-31 12:12Z, date -u)
 - Start: origin/claude/l-red = 871610eb (is-ancestor OK; last push succ. 37 11:25Z, no other pusher); trunk 797717ca merged (ff);
   l-new ffe347ee, l-si fetched. Start message to the Lead 12:13Z. Oink 8fbf0a7 rebuilt (setup_oink.sh).
