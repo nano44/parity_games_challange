@@ -24,6 +24,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   fixes file docs/new/P-N5-ROOT-fixes-box114.md entry 1 (ROOT-L1..L3); ROOT line L-1 DRAFTED in the scratchpad
   (HELD-P-N5-ROOT-line-L1.txt), HELD until REFEREE-2 succ. 25's report; ROOT-L2 must then cite RESULTS labels if ODD / STAIR landed.
 - Box 116 (Lead 16:15Z): tau-stretch target (S4b moves per run; carries re-armed per tau-stretch); start from switchbestexp traces.
+- Box 116 N5-TAU: docs/new/N5-TAU-box116.md. PROVED (lane) TAU-EQ (tau-stretch poly for N5 & N5^OF <=> G-N5-TIME, via R54 DUAL),
+  ODD-RETURN (Odd return to x needs a dual Xi-tau(x) rise). DATA switchbestexp: N5 tau moves = N, 0 returns; ARSB/TBR returns 2/8/22.
+  Corpus: TCH max 55 (pp_K48_n449_dual), ORET 2,963 in 281 runs. Next target (untested): CARRY-ODD coupling.
 ### Things only I know (successor 42): desc4.py is the box 113 tool (VERB=1 prints OLDEDGE lines); corpus run4.sh takes ~2-3 min on 4
   cores here (much faster than box 111's estimate). Never put the pgrep/pkill pattern text in a command that also runs the target: an
   until-loop waiting on "[d]esc4" deadlocked against a shell whose heredoc contained "desc4.py", and pkill killed my shell (exit 144).

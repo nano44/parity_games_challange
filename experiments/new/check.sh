@@ -601,4 +601,10 @@ if grep -qF "ABL switchallexp_3.pg SI n 49 iters 70 evenswitches 433 taumoves 0 
 else
   echo "box 115 SWX check: FAILED"; exit 1
 fi
+w64=$(cd .. && python3 -I new/box115/taumv.py new/box115/inst/switchbestexp_3.pg; python3 -I new/box116/tauc.py new/box115/inst/switchbestexp_3.pg new/box115/inst/switchbestexp_3.start; python3 -I new/box115/abl.py new/box115/inst/switchbestexp_3.pg TBR 5000)
+if grep -qF "k 12 |Is| 17 |It| 1 fb 0 moves h2:e2->m2" <<<"$w64" && grep -qF "k 14 |Is| 16 |It| 1 fb 0 moves h0:e0->m0" <<<"$w64" && grep -qF "TAUC switchbestexp_3.pg n 85 ITERS 41 TCH 3 OSW 3 ORET 0" <<<"$w64" && grep -qF "ODDREPLY TBR tau changes 11 returns 8" <<<"$w64" && [ "$(sha1sum box115/inst/switchbestexp_3.pg | cut -d' ' -f1)" = "e1cd8f136e0583a1b679b477b9120163ba7b27c8" ]; then
+  echo "box 116 TAU: switchbestexp_3 N5 tau moves 3 (h2, h1, h0 escape once, 0 returns); TBR's Odd reply returns 8 times: PASS"
+else
+  echo "box 116 TAU check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

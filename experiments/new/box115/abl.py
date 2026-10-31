@@ -29,10 +29,10 @@ def odd_opt(tau, sig, It):
     Er = Engine(pg.Game(list(g.prio), list(own), succ))
     _, best = Er.evaluate(tuple(sig[v] if own[v] == 0 else -1 for v in range(n)))
     return tuple(best[v] if own[v] == 1 else tau[v] for v in range(n))
-s0, t0 = start_pair(g, E, Ed, None); S, T = [tuple(s0)], [tuple(t0)]
+s0, t0 = start_pair(g, E, Ed, None); S, T = [tuple(s0)], [tuple(t0)]; SBS = []
 while len(S) <= cap:
     sig, tau = S[-1], T[-1]
-    vs, sb = E.evaluate(sig); Is = E.improving(sig, vs)
+    vs, sb = E.evaluate(sig); Is = E.improving(sig, vs); SBS.append(tuple(sb))
     if VAR == "SI":
         if not Is: break
         S.append(E.rule_switch_all(sig, vs, Is, None)); T.append(tau)
@@ -73,4 +73,14 @@ for k in range(K):
         if k >= 1 and z != S[k - 1][y] and (y, z) not in xi(k - 1)[1] and xi(k - 1)[0][z] != xi(k)[0][z]: FR[(y, z)] = FR.get((y, z), 0) + 1
 mx = lambda d: max(d.items(), key=lambda a: a[1]) if d else (None, 0)
 win = E.regions(S[-1]) if VAR in ("SI", "ARSB") else None
+def oret(seq):
+    held = {}; ch = rt = 0
+    for a, b in zip(seq, seq[1:]):
+        for o in range(n):
+            if own[o] != 1: continue
+            held.setdefault(o, {a[o]})
+            if b[o] != a[o]: ch += 1; rt += b[o] in held[o]; held[o].add(b[o])
+    return ch, rt
+oc = oret(T if VAR in ("SAT", "TBR", "N5") else SBS)
+print(f"ODDREPLY {VAR} {'tau' if VAR in ('SAT', 'TBR', 'N5') else 'sigma-bar'} changes {oc[0]} returns {oc[1]}")
 print(f"ABL {os.path.basename(sys.argv[1])} {VAR} n {n} iters {K}{' CAPPED' if K >= cap else ''} evenswitches {SW} taumoves {sum(1 for k in range(K) if T[k] != T[k+1])} MAXENT {mx(ENT)[1]} {mx(ENT)[0]} MAXFR {mx(FR)[1]} {mx(FR)[0]}")
