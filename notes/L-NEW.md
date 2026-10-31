@@ -2,6 +2,14 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point (successor 41, Opus 5.5, session_01V5yGRWWR2yCHEgsoMAQC6u; started 2026-10-31 07:47Z by date -u; handover: HEAD = origin 8591166d, trunk 87be2541 merged)
+### Box 108 N5-HDEPTH (Lead 08:36Z: proof side of h^W): docs/new/N5-HDEPTH-box108.md
+- PROVED (lane): NEW-EDGE (W-change at k => the new W-play uses an edge of H_k minus H_(k-1)), OVERTAKE-W (such edges are fresh strict
+  sibling Xi-overtakes, Xi(z) rises at k-1 -> k), CARRIER (depth h => one vertex fixes h pending digits bottom-up, positions strictly
+  more significant except at the length coordinate), GATE, ARENA-RED (|F| <= CN + (m_E + 2n + 1)(2 + NA), equivalence; NA ~ |F|).
+- NOT proved: HDEPTH or any O(1) / O(log n) depth bound. Trivial h <= 2n + 1 only.
+- DATA: 20,000 random games h <= 1; corpus NEW-EDGE 76,790 / 0 viol.; NA 14,014/14,028; depth 2 = one held gate released by a new edge at
+  a source event (x31_rx48 49/49 at k 49 via (12,23); obs 2,185/2,187, top digit u173 held over 23 stretches).
+- Construction hint for L-RED: depth 3 = two nested held gates, bottom-up release via two feedback levels (§4).
 ### Box 107 N5-FINPOT (Lead brief after 07:47Z: finer potential below the first difference): docs/new/N5-FINPOT-box107.md
 - PROVED (lane): W-MON (W non-decreasing at every non-fallback tau-constant transition: sigma' is Even-optimal in H_k(tau), sigma in H_k),
   O-ARENA (on a W-run W = best-response value in the Odd arena O(tau) = tau u I_tau; G_O subset G), SANDWICH (x<=y<=z => lcp(x,z) =
