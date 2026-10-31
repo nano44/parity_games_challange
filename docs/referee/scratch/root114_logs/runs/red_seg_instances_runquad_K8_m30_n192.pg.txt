@@ -1,0 +1,4 @@
+GAME red/seg/instances/runquad_K8_m30_n192.pg
+skip_big 1
+VIOLATIONS 0
+RC 0

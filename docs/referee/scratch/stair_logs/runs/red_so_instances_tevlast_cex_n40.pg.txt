@@ -1,0 +1,13 @@
+GAME red/so/instances/tevlast_cex_n40.pg
+BIT_chk 159
+DESC 2
+FROZEN_chk 6
+GAMES 1
+ROOT_chk 35
+TD 185
+WCH 41
+WCT 6
+trans 6
+wruns 2
+VIOLATIONS 0
+RC 0

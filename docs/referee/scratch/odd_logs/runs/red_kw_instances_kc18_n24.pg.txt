@@ -1,0 +1,15 @@
+GAME red/kw/instances/kc18_n24.pg
+CNT_chk 17
+FR 17
+FR_maxpair 1
+GAMES 1
+OLD_chk 113
+ROOT_chk 4
+ROOT_endPE 4
+ROOT_maxlen 1
+STEP_caseII 1
+STEP_chk 92
+trans 19
+wruns 2
+VIOLATIONS 0
+RC 0

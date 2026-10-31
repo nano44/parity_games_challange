@@ -1,0 +1,13 @@
+GAME red/n5inj/instances/block_bk20.pg
+BIT_chk 56
+DESC 1
+FROZEN_chk 17
+GAMES 1
+ROOT_chk 19
+TD 193
+WCH 28
+WCT 17
+trans 17
+wruns 3
+VIOLATIONS 0
+RC 0

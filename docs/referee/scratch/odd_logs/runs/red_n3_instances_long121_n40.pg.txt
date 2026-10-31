@@ -1,0 +1,15 @@
+GAME red/n3/instances/long121_n40.pg
+CNT_chk 180
+FR 181
+FR_maxpair 2
+GAMES 1
+OLD_chk 800
+ROOT_chk 106
+ROOT_endPE 106
+ROOT_maxlen 3
+STEP_caseII 126
+STEP_chk 488
+trans 113
+wruns 9
+VIOLATIONS 0
+RC 0

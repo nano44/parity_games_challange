@@ -1,0 +1,4 @@
+GAME red/dtl/instances/lalg_dtl_restart8_n20.pg
+GAMES 1
+VIOLATIONS 0
+RC 0

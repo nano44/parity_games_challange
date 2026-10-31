@@ -1,0 +1,11 @@
+GAME red/h3/instances/xsnpre36_n48.pg
+CNT_chk 32
+FR 32
+FR_maxpair 1
+GAMES 1
+OLD_chk 144
+STEP_chk 99
+trans 30
+wruns 1
+VIOLATIONS 0
+RC 0

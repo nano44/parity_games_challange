@@ -1,0 +1,14 @@
+GAME n5-epoch/instances/ffin12_n32.pg
+DCOPIED 0
+DR 0
+DS 0
+DT 0
+GAMES 1
+NF_chk 18
+ON_chk 18
+ROLD 0
+TS 0
+trans 17
+wruns 5
+VIOLATIONS 0
+RC 0

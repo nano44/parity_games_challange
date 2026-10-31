@@ -1,0 +1,5 @@
+GAME new/box54/out/hf/counter_dp_3.pg
+GAMES 1
+STEP_chk 32
+VIOLATIONS 0
+RC 0

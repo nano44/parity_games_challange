@@ -1,0 +1,13 @@
+GAME red/so/instances/njb_reabs54_n32.pg
+BIT_chk 202
+DESC 2
+FROZEN_chk 12
+GAMES 1
+ROOT_chk 61
+TD 72
+WCH 66
+WCT 12
+trans 12
+wruns 4
+VIOLATIONS 0
+RC 0

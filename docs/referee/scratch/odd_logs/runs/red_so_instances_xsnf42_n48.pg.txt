@@ -1,0 +1,14 @@
+GAME red/so/instances/xsnf42_n48.pg
+CNT_chk 41
+FR 41
+FR_maxpair 1
+GAMES 1
+OLD_chk 133
+ROOT_chk 1
+ROOT_endPE 1
+ROOT_maxlen 1
+STEP_chk 44
+trans 42
+wruns 1
+VIOLATIONS 0
+RC 0

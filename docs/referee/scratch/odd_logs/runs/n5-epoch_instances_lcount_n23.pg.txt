@@ -1,0 +1,15 @@
+GAME n5-epoch/instances/lcount_n23.pg
+CNT_chk 6
+FR 6
+FR_maxpair 1
+GAMES 1
+OLD_chk 55
+ROOT_chk 5
+ROOT_endPE 5
+ROOT_maxlen 2
+STEP_caseII 7
+STEP_chk 25
+trans 4
+wruns 1
+VIOLATIONS 0
+RC 0

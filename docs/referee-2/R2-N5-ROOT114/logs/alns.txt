@@ -1,0 +1,43 @@
+EX BND_ONEW_FAILS_lamW n5-exhaustive/instances/b5_o11.pg#0@4 y=8 z=5 yinC=False
+EX BND_ONEW_FAILS_lamW n5-exhaustive/instances/b5_o11.pg#0@9 y=9 z=0 yinC=False
+EX BND_ONEW_FAILS_lamW n5-exhaustive/instances/b5_os_n12.pg#0@5 y=8 z=5 yinC=False
+EX BND_ONEW_FAILS_fb n5-exhaustive/instances/b6_xl2_n32.pg#0@18 y=5 z=9 yinC=False
+EX BND_ONEW_FAILS_fb n5-exhaustive/instances/b6_xl2_n32.pg#0@18 y=6 z=25 yinC=False
+EX BND_ONEW_FAILS_fb n5-exhaustive/instances/b6_xl2_n32.pg#0@18 y=16 z=29 yinC=False
+MODE files $SCRATCH/alns.lst 1 experiments/ MAXT 5000 BF 0
+BND_ONEW_FAILS_fb: 864
+BND_ONEW_FAILS_lamW: 222
+BND_fb: 256
+BND_lamW: 168
+BND_newedge_fb: 1
+BND_newedge_lamW: 205
+BND_newedge_tau: 18
+BND_origin_fb: 865
+BND_origin_lamW: 268
+BND_origin_tau: 17
+BND_tau: 14
+DESC: 2422
+DESC_COPIED: 659
+DESC_R: 1620
+DESC_S: 143
+DESC_T: 0
+DROOT_checks: 2422
+DROOT_j_pos: 659
+FUEL_reroutes: 6133
+NEWEDGE: 6133
+OPTOFF_checks: 130592
+ORIGIN: 7359
+ORIGIN_first: 1459
+RELAY: 276
+ROOTCH: 7635
+R_fuel: 1609
+R_old: 11
+TS: 192
+WRUNS: 561
+WRUN_transitions: 4265
+XIPLAY_checks: 397189
+runs: 319
+transitions: 6813
+max max_LCT_run: 30
+RESULT PASS violations 0
+EXIT 0

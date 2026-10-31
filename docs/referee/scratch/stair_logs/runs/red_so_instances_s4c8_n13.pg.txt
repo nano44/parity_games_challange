@@ -1,0 +1,13 @@
+GAME red/so/instances/s4c8_n13.pg
+BIT_chk 11
+DESC 0
+FROZEN_chk 2
+GAMES 1
+ROOT_chk 2
+TD 18
+WCH 3
+WCT 2
+trans 2
+wruns 2
+VIOLATIONS 0
+RC 0

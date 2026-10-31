@@ -1,0 +1,14 @@
+GAME n5-epoch/instances/lend15_n48.pg
+BIT_chk 96
+DCOPY_chk 5
+DESC 6
+FROZEN_chk 11
+GAMES 1
+ROOT_chk 23
+TD 48
+WCH 43
+WCT 11
+trans 11
+wruns 5
+VIOLATIONS 0
+RC 0

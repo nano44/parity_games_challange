@@ -1,0 +1,7 @@
+GAME red/frz/instances/fx2_n11.pg
+GAMES 1
+OLD_chk 28
+STEP_caseII 11
+STEP_chk 18
+VIOLATIONS 0
+RC 0

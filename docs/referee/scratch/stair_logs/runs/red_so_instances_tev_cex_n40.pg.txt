@@ -1,0 +1,13 @@
+GAME red/so/instances/tev_cex_n40.pg
+BIT_chk 153
+DESC 0
+FROZEN_chk 7
+GAMES 1
+ROOT_chk 32
+TD 165
+WCH 39
+WCT 7
+trans 7
+wruns 3
+VIOLATIONS 0
+RC 0

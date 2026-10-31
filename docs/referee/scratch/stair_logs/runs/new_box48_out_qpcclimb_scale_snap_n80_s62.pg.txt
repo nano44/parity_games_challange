@@ -1,0 +1,14 @@
+GAME new/box48/out/qpcclimb/scale/snap_n80_s62.pg
+BIT_chk 2686
+DCOPY_chk 122
+DESC 191
+FROZEN_chk 93
+GAMES 1
+ROOT_chk 635
+TD 3971
+WCH 746
+WCT 93
+trans 93
+wruns 8
+VIOLATIONS 0
+RC 0

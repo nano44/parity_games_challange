@@ -1,0 +1,7 @@
+GAME new/box54/out/hf/counter_rob_2.pg
+GAMES 1
+OLD_chk 59
+STEP_caseII 19
+STEP_chk 70
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,719 @@
+GAME new/box59/out/fc_3.pg  CARRY fc_3.pg n 85 iters 41 maxRE 2 ORET 0 TCH 3 FB 0 ES 5 V1 6 V2 9 R1 0.333 (82, 51) R2 0.222 (82, 51) R3 0.182 (69, 71) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/fc_4.pg  CARRY fc_4.pg n 110 iters 47 maxRE 2 ORET 0 TCH 4 FB 0 ES 4 V1 5 V2 9 R1 0.400 (107, 65) R2 0.222 (107, 65) R3 0.200 (94, 96) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/fc_5.pg  CARRY fc_5.pg n 135 iters 55 maxRE 2 ORET 0 TCH 5 FB 0 ES 5 V1 6 V2 11 R1 0.333 (132, 79) R2 0.182 (132, 79) R3 0.182 (85, 21) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/fcobsR_3.pg  CARRY fcobsR_3.pg n 90 iters 41 maxRE 2 ORET 0 TCH 4 FB 0 ES 34 V1 35 V2 39 R1 0.057 (86, 49) R2 0.051 (86, 49) R3 0.051 (86, 17) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/fc_6.pg  CARRY fc_6.pg n 160 iters 62 maxRE 3 ORET 0 TCH 6 FB 0 ES 5 V1 6 V2 12 R1 0.500 (111, 113) R2 0.250 (111, 113) R3 0.250 (111, 113) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/fcobs_3.pg  CARRY fcobs_3.pg n 88 iters 41 maxRE 2 ORET 0 TCH 4 FB 0 ES 34 V1 35 V2 39 R1 0.057 (86, 49) R2 0.051 (86, 49) R3 0.051 (86, 17) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/fcobsR_4.pg  CARRY fcobsR_4.pg n 115 iters 47 maxRE 2 ORET 0 TCH 5 FB 0 ES 39 V1 40 V2 45 R1 0.050 (111, 63) R2 0.044 (111, 63) R3 0.045 (111, 19) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-epoch/instances/ffin12_n32.pg  CARRY ffin12_n32.pg n 32 iters 16 maxRE 1 ORET 0 TCH 3 FB 1 ES 1 V1 2 V2 6 R1 0.500 (13, 8) R2 0.167 (13, 8) R3 0.333 (13, 8) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-epoch/instances/ffin4_n24.pg  CARRY ffin4_n24.pg n 24 iters 3 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-epoch/instances/ffin5_n32.pg  CARRY ffin5_n32.pg n 32 iters 10 maxRE 0 ORET 0 TCH 2 FB 1 ES 1 V1 2 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-epoch/instances/gci2_n12.pg  CARRY gci2_n12.pg n 12 iters 7 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-epoch/instances/immfail_n14.pg  CARRY immfail_n14.pg n 14 iters 6 maxRE 0 ORET 0 TCH 2 FB 0 ES 1 V1 2 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-epoch/instances/immp_cex_n11.pg  CARRY immp_cex_n11.pg n 11 iters 1 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-epoch/instances/gci3_n24.pg  CARRY gci3_n24.pg n 24 iters 16 maxRE 0 ORET 1 TCH 4 FB 1 ES 0 V1 2 V2 6 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/fc_7.pg  CARRY fc_7.pg n 185 iters 68 maxRE 3 ORET 0 TCH 7 FB 0 ES 4 V1 5 V2 12 R1 0.600 (136, 138) R2 0.250 (136, 138) R3 0.273 (136, 138) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-epoch/instances/lcount_n23.pg  CARRY lcount_n23.pg n 23 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-epoch/instances/lend13_n16.pg  CARRY lend13_n16.pg n 16 iters 11 maxRE 0 ORET 0 TCH 3 FB 1 ES 0 V1 1 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/fcobs_4.pg  CARRY fcobs_4.pg n 113 iters 47 maxRE 2 ORET 0 TCH 5 FB 0 ES 39 V1 40 V2 45 R1 0.050 (111, 63) R2 0.044 (111, 63) R3 0.045 (111, 19) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-epoch/instances/lend27_n24.pg  CARRY lend27_n24.pg n 24 iters 7 maxRE 0 ORET 0 TCH 4 FB 0 ES 0 V1 1 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-epoch/instances/lend39f_n32.pg  CARRY lend39f_n32.pg n 32 iters 13 maxRE 0 ORET 0 TCH 6 FB 1 ES 0 V1 1 V2 8 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-epoch/instances/lend15_n48.pg  CARRY lend15_n48.pg n 48 iters 11 maxRE 0 ORET 2 TCH 8 FB 0 ES 0 V1 3 V2 9 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-epoch/instances/lend107_n32.pg  CARRY lend107_n32.pg n 32 iters 26 maxRE 1 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 1.000 (26, 0) R2 0.333 (26, 0) R3 0.333 (1, 18) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-epoch/instances/lend9_n8.pg  CARRY lend9_n8.pg n 8 iters 4 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-epoch/instances/lend47_n32.pg  CARRY lend47_n32.pg n 32 iters 22 maxRE 1 ORET 1 TCH 4 FB 0 ES 0 V1 2 V2 5 R1 0.500 (12, 13) R2 0.200 (12, 13) R3 0.250 (12, 13) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-epoch/instances/lend55_n32.pg  CARRY lend55_n32.pg n 32 iters 18 maxRE 1 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 1.000 (16, 1) R2 0.333 (16, 1) R3 0.500 (16, 1) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-epoch/instances/lend72_n48.pg  CARRY lend72_n48.pg n 48 iters 13 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-epoch/instances/lend82_n32.pg  CARRY lend82_n32.pg n 32 iters 24 maxRE 1 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 1.000 (28, 21) R2 0.333 (28, 21) R3 0.500 (25, 15) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-epoch/instances/nep13_n24.pg  CARRY nep13_n24.pg n 24 iters 12 maxRE 0 ORET 0 TCH 7 FB 0 ES 5 V1 6 V2 13 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-epoch/instances/nep56_n32.pg  CARRY nep56_n32.pg n 32 iters 18 maxRE 0 ORET 0 TCH 9 FB 0 ES 9 V1 10 V2 19 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-epoch/instances/nconf61_n48.pg  CARRY nconf61_n48.pg n 48 iters 47 maxRE 2 ORET 0 TCH 8 FB 3 ES 33 V1 34 V2 45 R1 0.059 (23, 0) R2 0.044 (23, 0) R3 0.059 (23, 0) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-epoch/instances/nep22f_n64.pg  CARRY nep22f_n64.pg n 64 iters 51 maxRE 1 ORET 36 TCH 30 FB 14 ES 9 V1 46 V2 54 R1 0.022 (48, 28) R2 0.019 (48, 28) R3 0.022 (48, 28) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-epoch/instances/nep76_n40.pg  CARRY nep76_n40.pg n 40 iters 18 maxRE 1 ORET 0 TCH 3 FB 0 ES 11 V1 12 V2 15 R1 0.083 (27, 38) R2 0.067 (27, 38) R3 0.071 (4, 16) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-epoch/instances/ret12_n40.pg  CARRY ret12_n40.pg n 40 iters 13 maxRE 1 ORET 1 TCH 7 FB 0 ES 5 V1 7 V2 13 R1 0.143 (27, 38) R2 0.077 (27, 38) R3 0.125 (9, 30) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-epoch/instances/nep92_n40.pg  CARRY nep92_n40.pg n 40 iters 13 maxRE 0 ORET 2 TCH 10 FB 0 ES 1 V1 4 V2 12 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-epoch/instances/nep94_n48.pg  CARRY nep94_n48.pg n 48 iters 18 maxRE 1 ORET 0 TCH 6 FB 0 ES 10 V1 11 V2 17 R1 0.091 (13, 33) R2 0.059 (13, 33) R3 0.067 (13, 33) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/b4_cyc6_0.pg  CARRY b4_cyc6_0.pg n 11 iters 2 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/b4_cyc6_1.pg  CARRY b4_cyc6_1.pg n 12 iters 4 maxRE 0 ORET 0 TCH 0 FB 0 ES 1 V1 2 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/b4_n4all_cyc3_0.pg  CARRY b4_n4all_cyc3_0.pg n 4 iters 2 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/b4_n5_other_0.pg  CARRY b4_n5_other_0.pg n 5 iters 2 maxRE 0 ORET 0 TCH 0 FB 1 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/b4_nohlen5_0.pg  CARRY b4_nohlen5_0.pg n 11 iters 1 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-epoch/instances/ret14_n48.pg  CARRY ret14_n48.pg n 48 iters 17 maxRE 1 ORET 0 TCH 4 FB 0 ES 9 V1 10 V2 14 R1 0.100 (38, 10) R2 0.071 (38, 10) R3 0.091 (38, 10) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/b4_theta_n7.pg  CARRY b4_theta_n7.pg n 7 iters 1 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-epoch/instances/ret14_n64.pg  CARRY ret14_n64.pg n 64 iters 14 maxRE 0 ORET 3 TCH 9 FB 0 ES 3 V1 7 V2 13 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/b5_n5_cyc4_0.pg  CARRY b5_n5_cyc4_0.pg n 5 iters 3 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/b5_o11.pg  CARRY b5_o11.pg n 10 iters 12 maxRE 0 ORET 0 TCH 0 FB 3 ES 1 V1 2 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/b5_os_n12.pg  CARRY b5_os_n12.pg n 12 iters 18 maxRE 1 ORET 0 TCH 0 FB 4 ES 1 V1 2 V2 6 R1 0.500 (10, 3) R2 0.167 (10, 3) R3 0.250 (10, 0) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/b5_os_n14.pg  CARRY b5_os_n14.pg n 14 iters 22 maxRE 1 ORET 0 TCH 0 FB 6 ES 2 V1 3 V2 9 R1 0.333 (10, 3) R2 0.111 (10, 3) R3 0.200 (10, 0) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/b5_os_n16.pg  CARRY b5_os_n16.pg n 16 iters 26 maxRE 1 ORET 0 TCH 0 FB 7 ES 2 V1 3 V2 10 R1 0.333 (14, 9) R2 0.100 (14, 9) R3 0.333 (11, 15) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/b5_os_n20.pg  CARRY b5_os_n20.pg n 20 iters 34 maxRE 1 ORET 0 TCH 0 FB 7 ES 1 V1 2 V2 9 R1 0.500 (19, 17) R2 0.111 (19, 17) R3 0.500 (18, 15) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/b5_os_n24.pg  CARRY b5_os_n24.pg n 24 iters 53 maxRE 4 ORET 0 TCH 0 FB 7 ES 2 V1 3 V2 10 R1 1.333 (23, 10) R2 0.400 (23, 10) R3 0.364 (23, 10) V1VIOL 1 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/b5_os_n32.pg  CARRY b5_os_n32.pg n 32 iters 71 maxRE 4 ORET 0 TCH 0 FB 8 ES 2 V1 3 V2 11 R1 1.333 (23, 10) R2 0.364 (23, 10) R3 0.500 (24, 14) V1VIOL 1 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/b5_os_n28.pg  CARRY b5_os_n28.pg n 28 iters 65 maxRE 4 ORET 0 TCH 0 FB 8 ES 2 V1 3 V2 11 R1 1.333 (23, 10) R2 0.364 (23, 10) R3 0.400 (24, 14) V1VIOL 1 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/b6_xl_n32.pg  CARRY b6_xl_n32.pg n 32 iters 85 maxRE 4 ORET 0 TCH 1 FB 10 ES 17 V1 18 V2 29 R1 0.222 (28, 16) R2 0.138 (28, 16) R3 0.167 (6, 0) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/b6_xl2_n32.pg  CARRY b6_xl2_n32.pg n 32 iters 87 maxRE 4 ORET 0 TCH 1 FB 10 ES 18 V1 19 V2 30 R1 0.211 (28, 16) R2 0.133 (28, 16) R3 0.158 (6, 0) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/b5_os_n40.pg  CARRY b5_os_n40.pg n 40 iters 81 maxRE 4 ORET 0 TCH 0 FB 9 ES 2 V1 3 V2 12 R1 1.333 (23, 10) R2 0.333 (23, 10) R3 0.444 (10, 29) V1VIOL 1 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/b6_xs_n24.pg  CARRY b6_xs_n24.pg n 24 iters 21 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/fc_8.pg  CARRY fc_8.pg n 210 iters 77 maxRE 3 ORET 0 TCH 8 FB 0 ES 5 V1 6 V2 14 R1 0.500 (161, 163) R2 0.214 (161, 163) R3 0.250 (161, 163) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/b6_xs_n32.pg  CARRY b6_xs_n32.pg n 32 iters 29 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/b6_xs_n40.pg  CARRY b6_xs_n40.pg n 40 iters 36 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/b6_xl_n40.pg  CARRY b6_xl_n40.pg n 40 iters 89 maxRE 4 ORET 0 TCH 1 FB 10 ES 20 V1 21 V2 32 R1 0.190 (28, 16) R2 0.125 (28, 16) R3 0.143 (28, 16) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/b6_xw_n32.pg  CARRY b6_xw_n32.pg n 32 iters 79 maxRE 3 ORET 0 TCH 1 FB 10 ES 18 V1 19 V2 30 R1 0.158 (28, 16) R2 0.100 (28, 16) R3 0.158 (6, 0) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/b6_xs_n48.pg  CARRY b6_xs_n48.pg n 48 iters 37 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/canonA_0.pg  CARRY canonA_0.pg n 15 iters 3 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/canonA_1.pg  CARRY canonA_1.pg n 15 iters 4 maxRE 0 ORET 0 TCH 1 FB 0 ES 2 V1 3 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/b6_xl_n48.pg  CARRY b6_xl_n48.pg n 48 iters 97 maxRE 4 ORET 0 TCH 1 FB 9 ES 18 V1 19 V2 29 R1 0.211 (45, 35) R2 0.138 (45, 35) R3 0.160 (28, 16) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/b6_xw_n40.pg  CARRY b6_xw_n40.pg n 40 iters 80 maxRE 3 ORET 0 TCH 1 FB 10 ES 18 V1 19 V2 30 R1 0.158 (31, 15) R2 0.100 (31, 15) R3 0.158 (6, 0) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/frz1_n24.pg  CARRY frz1_n24.pg n 24 iters 31 maxRE 2 ORET 0 TCH 0 FB 1 ES 2 V1 3 V2 4 R1 0.667 (20, 15) R2 0.500 (20, 15) R3 0.333 (15, 1) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/n3all_maxph_0.pg  CARRY n3all_maxph_0.pg n 3 iters 0 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/frz2_n24.pg  CARRY frz2_n24.pg n 24 iters 25 maxRE 1 ORET 0 TCH 1 FB 1 ES 7 V1 8 V2 10 R1 0.125 (20, 15) R2 0.100 (20, 15) R3 0.100 (1, 9) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/b6_xw_n48.pg  CARRY b6_xw_n48.pg n 48 iters 85 maxRE 4 ORET 0 TCH 1 FB 9 ES 16 V1 17 V2 27 R1 0.235 (38, 7) R2 0.148 (38, 7) R3 0.176 (6, 0) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/n3all_maxph_1.pg  CARRY n3all_maxph_1.pg n 3 iters 0 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/n3all_maxph_2.pg  CARRY n3all_maxph_2.pg n 3 iters 0 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/frz3_n24.pg  CARRY frz3_n24.pg n 24 iters 26 maxRE 1 ORET 0 TCH 0 FB 1 ES 6 V1 7 V2 8 R1 0.143 (20, 14) R2 0.125 (20, 14) R3 0.111 (1, 9) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/n4_maxph_1.pg  CARRY n4_maxph_1.pg n 4 iters 2 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/n4_maxph_0.pg  CARRY n4_maxph_0.pg n 4 iters 2 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/n4_thch_0.pg  CARRY n4_thch_0.pg n 4 iters 2 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/b6_xw_n56.pg  CARRY b6_xw_n56.pg n 56 iters 85 maxRE 4 ORET 0 TCH 1 FB 9 ES 16 V1 17 V2 27 R1 0.235 (21, 1) R2 0.148 (21, 1) R3 0.176 (6, 0) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/n4all_maxph_0.pg  CARRY n4all_maxph_0.pg n 4 iters 2 maxRE 0 ORET 0 TCH 0 FB 1 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/n4all_tgbad_0.pg  CARRY n4all_tgbad_0.pg n 4 iters 1 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/n4all_maxph_1.pg  CARRY n4all_maxph_1.pg n 4 iters 2 maxRE 0 ORET 0 TCH 0 FB 1 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/n4all_thch_0.pg  CARRY n4all_thch_0.pg n 4 iters 2 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/n5s_maxph_0.pg  CARRY n5s_maxph_0.pg n 5 iters 3 maxRE 0 ORET 0 TCH 1 FB 1 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/nh_n8.pg  CARRY nh_n8.pg n 8 iters 3 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/thetaA_canon_n8.pg  CARRY thetaA_canon_n8.pg n 8 iters 3 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/thetaA_canon_n12.pg  CARRY thetaA_canon_n12.pg n 12 iters 3 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/thetaA_n17.pg  CARRY thetaA_n17.pg n 17 iters 1 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/thetaA_n6.pg  CARRY thetaA_n6.pg n 6 iters 1 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/thetaA_n9.pg  CARRY thetaA_n9.pg n 9 iters 1 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/thetaA_n7.pg  CARRY thetaA_n7.pg n 7 iters 1 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/wk1_n32.pg  CARRY wk1_n32.pg n 32 iters 3 maxRE 0 ORET 0 TCH 0 FB 0 ES 1 V1 2 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME n5-exhaustive/instances/wk2_n32.pg  CARRY wk2_n32.pg n 32 iters 7 maxRE 0 ORET 0 TCH 0 FB 1 ES 1 V1 2 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box48/instances/long121_n40.pg  CARRY long121_n40.pg n 40 iters 23 maxRE 1 ORET 0 TCH 5 FB 0 ES 6 V1 7 V2 12 R1 0.143 (23, 0) R2 0.083 (23, 0) R3 0.125 (21, 12) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.pg  CARRY best_qpc_nep76_n40_s63.pg n 64 iters 9 maxRE 0 ORET 1 TCH 7 FB 0 ES 1 V1 3 V2 9 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/absmono_viol_n44.pg  CARRY absmono_viol_n44.pg n 44 iters 7 maxRE 0 ORET 1 TCH 5 FB 1 ES 0 V1 2 V2 7 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.pg  CARRY best_qpc_nep90_n40_s61.pg n 64 iters 23 maxRE 1 ORET 0 TCH 9 FB 1 ES 9 V1 10 V2 20 R1 0.100 (62, 20) R2 0.050 (62, 20) R3 0.091 (21, 12) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/carry3_2_2.pg  CARRY carry3_2_2.pg n 47 iters 2 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/cm_mdrop_both_n28.pg  CARRY cm_mdrop_both_n28.pg n 28 iters 10 maxRE 0 ORET 1 TCH 4 FB 0 ES 2 V1 4 V2 7 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/cm_mdrop_oink_n28.pg  CARRY cm_mdrop_oink_n28.pg n 28 iters 3 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/ctx11_n40.pg  CARRY ctx11_n40.pg n 40 iters 9 maxRE 1 ORET 7 TCH 6 FB 0 ES 1 V1 9 V2 8 R1 0.111 (2, 6) R2 0.125 (2, 6) R3 0.100 (2, 6) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/ctx6_n20.pg  CARRY ctx6_n20.pg n 20 iters 3 maxRE 0 ORET 1 TCH 3 FB 0 ES 0 V1 2 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.pg  CARRY best_qpc_nep90_n40_s62.pg n 80 iters 20 maxRE 1 ORET 0 TCH 9 FB 0 ES 9 V1 10 V2 19 R1 0.100 (31, 9) R2 0.053 (31, 9) R3 0.077 (27, 38) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/ctx12_n40.pg  CARRY ctx12_n40.pg n 40 iters 8 maxRE 1 ORET 6 TCH 7 FB 0 ES 1 V1 8 V2 9 R1 0.125 (35, 2) R2 0.111 (35, 2) R3 0.125 (35, 2) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box48/out/qpcclimb/scale/snap_n80_s62.pg  CARRY snap_n80_s62.pg n 80 iters 20 maxRE 1 ORET 0 TCH 9 FB 0 ES 9 V1 10 V2 19 R1 0.100 (31, 9) R2 0.053 (31, 9) R3 0.077 (27, 38) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/ctx7_n30.pg  CARRY ctx7_n30.pg n 30 iters 11 maxRE 0 ORET 9 TCH 9 FB 0 ES 0 V1 10 V2 10 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/ctx13_n40.pg  CARRY ctx13_n40.pg n 40 iters 17 maxRE 1 ORET 6 TCH 8 FB 0 ES 3 V1 10 V2 12 R1 0.100 (35, 2) R2 0.083 (35, 2) R3 0.083 (35, 2) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/f1_twodef_n48.pg  CARRY f1_twodef_n48.pg n 48 iters 6 maxRE 0 ORET 1 TCH 4 FB 0 ES 0 V1 2 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/ctx6_n56.pg  CARRY ctx6_n56.pg n 56 iters 12 maxRE 1 ORET 8 TCH 11 FB 0 ES 0 V1 9 V2 12 R1 0.111 (33, 16) R2 0.083 (33, 16) R3 0.111 (33, 16) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/f1_twofall_n48.pg  CARRY f1_twofall_n48.pg n 48 iters 6 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/fallv_viol_n28.pg  CARRY fallv_viol_n28.pg n 28 iters 5 maxRE 0 ORET 1 TCH 4 FB 0 ES 0 V1 2 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/fired10_n20.pg  CARRY fired10_n20.pg n 20 iters 6 maxRE 0 ORET 2 TCH 4 FB 1 ES 0 V1 3 V2 6 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/firedlong667_n20.pg  CARRY firedlong667_n20.pg n 20 iters 4 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/fall3_n76.pg  CARRY fall3_n76.pg n 76 iters 8 maxRE 0 ORET 1 TCH 5 FB 0 ES 0 V1 2 V2 6 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/firedlong667_n43.pg  CARRY firedlong667_n43.pg n 43 iters 3 maxRE 0 ORET 0 TCH 2 FB 1 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/gapbW_dup_n20.pg  CARRY gapbW_dup_n20.pg n 20 iters 5 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/gapb_dup_n20.pg  CARRY gapb_dup_n20.pg n 20 iters 8 maxRE 0 ORET 1 TCH 5 FB 0 ES 0 V1 2 V2 6 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/firedstep13_n76.pg  CARRY firedstep13_n76.pg n 76 iters 8 maxRE 1 ORET 5 TCH 6 FB 0 ES 2 V1 8 V2 9 R1 0.125 (32, 36) R2 0.111 (32, 36) R3 0.111 (32, 36) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/h4_compound2x2_n44.pg  CARRY h4_compound2x2_n44.pg n 44 iters 10 maxRE 0 ORET 5 TCH 6 FB 0 ES 1 V1 7 V2 8 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/fall4_n116.pg  CARRY fall4_n116.pg n 116 iters 6 maxRE 0 ORET 0 TCH 5 FB 0 ES 0 V1 1 V2 6 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/h4_def2ctx_n20.pg  CARRY h4_def2ctx_n20.pg n 20 iters 6 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/h4_compound_n44.pg  CARRY h4_compound_n44.pg n 44 iters 4 maxRE 0 ORET 2 TCH 4 FB 0 ES 0 V1 3 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/h4_def7_n28.pg  CARRY h4_def7_n28.pg n 28 iters 3 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/kfirst_viol_n13.pg  CARRY kfirst_viol_n13.pg n 13 iters 0 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/h4_disjoint_n20.pg  CARRY h4_disjoint_n20.pg n 20 iters 3 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/h4_notweaker_n20.pg  CARRY h4_notweaker_n20.pg n 20 iters 5 maxRE 0 ORET 0 TCH 4 FB 0 ES 0 V1 1 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/lemmaS_Mdrop_n20.pg  CARRY lemmaS_Mdrop_n20.pg n 20 iters 6 maxRE 0 ORET 0 TCH 4 FB 0 ES 0 V1 1 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/lalg_dtl_mviol_n20.pg  CARRY lalg_dtl_mviol_n20.pg n 20 iters 5 maxRE 0 ORET 1 TCH 5 FB 0 ES 0 V1 2 V2 6 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/kin_viol_n29.pg  CARRY kin_viol_n29.pg n 29 iters 5 maxRE 0 ORET 0 TCH 5 FB 0 ES 0 V1 1 V2 6 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/lemmaS_viol_n20.pg  CARRY lemmaS_viol_n20.pg n 20 iters 4 maxRE 0 ORET 0 TCH 4 FB 0 ES 0 V1 1 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/lex_viol_inj_n28.pg  CARRY lex_viol_inj_n28.pg n 28 iters 6 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/meet_viol_n17.pg  CARRY meet_viol_n17.pg n 17 iters 0 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/lex_viol_tie_n28.pg  CARRY lex_viol_tie_n28.pg n 28 iters 7 maxRE 0 ORET 1 TCH 4 FB 0 ES 0 V1 2 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/nosig_2_3.pg  CARRY nosig_2_3.pg n 24 iters 2 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/pk_viol_n20.pg  CARRY pk_viol_n20.pg n 20 iters 3 maxRE 0 ORET 0 TCH 2 FB 1 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/phi_flat_alive_n32.pg  CARRY phi_flat_alive_n32.pg n 32 iters 4 maxRE 0 ORET 0 TCH 4 FB 0 ES 0 V1 1 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/meet_viol_n29.pg  CARRY meet_viol_n29.pg n 29 iters 11 maxRE 0 ORET 1 TCH 8 FB 0 ES 0 V1 2 V2 9 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/replay4_n32.pg  CARRY replay4_n32.pg n 32 iters 4 maxRE 0 ORET 1 TCH 4 FB 0 ES 0 V1 2 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/spp19_oink_n30.pg  CARRY spp19_oink_n30.pg n 30 iters 10 maxRE 0 ORET 8 TCH 10 FB 0 ES 0 V1 9 V2 11 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/spp22_oink_n40.pg  CARRY spp22_oink_n40.pg n 40 iters 8 maxRE 0 ORET 4 TCH 6 FB 0 ES 0 V1 5 V2 7 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/spp19_stable_n30.pg  CARRY spp19_stable_n30.pg n 30 iters 7 maxRE 0 ORET 3 TCH 5 FB 0 ES 1 V1 5 V2 7 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/stealonce_both_n45.pg  CARRY stealonce_both_n45.pg n 45 iters 4 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/spp25_oink_n40.pg  CARRY spp25_oink_n40.pg n 40 iters 10 maxRE 0 ORET 4 TCH 7 FB 0 ES 1 V1 6 V2 9 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/tstep_near_n20.pg  CARRY tstep_near_n20.pg n 20 iters 5 maxRE 0 ORET 1 TCH 4 FB 0 ES 0 V1 2 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/stealonce_core_n76.pg  CARRY stealonce_core_n76.pg n 76 iters 4 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/ctxp/instances/deep1_n13.pg  CARRY deep1_n13.pg n 13 iters 1 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/ctxp/instances/deep1_n21.pg  CARRY deep1_n21.pg n 21 iters 3 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/stealer_viol_n76.pg  CARRY stealer_viol_n76.pg n 76 iters 12 maxRE 1 ORET 7 TCH 8 FB 0 ES 0 V1 8 V2 9 R1 0.125 (66, 61) R2 0.111 (66, 61) R3 0.125 (66, 61) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/ctxp/instances/margin1_mc5.pg  CARRY margin1_mc5.pg n 50 iters 12 maxRE 0 ORET 9 TCH 10 FB 3 ES 0 V1 10 V2 14 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/ctxp/instances/margin1_mc1.pg  CARRY margin1_mc1.pg n 80 iters 10 maxRE 0 ORET 4 TCH 9 FB 1 ES 0 V1 5 V2 11 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/dtl/instances/lalg_dtl_pertop31_n18.pg  CARRY lalg_dtl_pertop31_n18.pg n 18 iters 2 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/ctxp/instances/margin1_n20.pg  CARRY margin1_n20.pg n 20 iters 5 maxRE 0 ORET 0 TCH 4 FB 0 ES 0 V1 1 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/fbr/instances/bghm_k1_gap6_A.pg  CARRY bghm_k1_gap6_A.pg n 21 iters 1 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/dtl/instances/lalg_dtl_restart8_n20.pg  CARRY lalg_dtl_restart8_n20.pg n 20 iters 5 maxRE 0 ORET 0 TCH 5 FB 0 ES 0 V1 1 V2 6 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/fbr/instances/bghm_k3_gap4_A.pg  CARRY bghm_k3_gap4_A.pg n 45 iters 1 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/carry/instances/stealonce_viol_n76.pg  CARRY stealonce_viol_n76.pg n 76 iters 12 maxRE 1 ORET 7 TCH 9 FB 0 ES 0 V1 8 V2 10 R1 0.125 (66, 61) R2 0.100 (66, 61) R3 0.125 (66, 61) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/fbr/instances/lev74_n40.pg  CARRY lev74_n40.pg n 40 iters 18 maxRE 1 ORET 1 TCH 8 FB 0 ES 4 V1 6 V2 13 R1 0.167 (2, 13) R2 0.077 (2, 13) R3 0.125 (2, 13) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/fbr/instances/rho144_n32.pg  CARRY rho144_n32.pg n 32 iters 9 maxRE 0 ORET 0 TCH 5 FB 0 ES 2 V1 3 V2 8 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/fbr/instances/fr39_q4_n48.pg  CARRY fr39_q4_n48.pg n 48 iters 36 maxRE 0 ORET 0 TCH 3 FB 0 ES 3 V1 4 V2 7 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/fbr/instances/rho84_n16.pg  CARRY rho84_n16.pg n 16 iters 5 maxRE 0 ORET 0 TCH 5 FB 0 ES 0 V1 1 V2 6 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/fbr/instances/rho3_253_n32.pg  CARRY rho3_253_n32.pg n 32 iters 11 maxRE 0 ORET 0 TCH 5 FB 0 ES 3 V1 4 V2 9 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/fbr/instances/sat4_n20.pg  CARRY sat4_n20.pg n 20 iters 6 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/fbr/instances/lev56_n48.pg  CARRY lev56_n48.pg n 48 iters 86 maxRE 4 ORET 1 TCH 3 FB 9 ES 38 V1 40 V2 51 R1 0.100 (9, 35) R2 0.078 (9, 35) R3 0.077 (9, 35) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/fbr/instances/sat68_n20.pg  CARRY sat68_n20.pg n 20 iters 5 maxRE 0 ORET 0 TCH 2 FB 1 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/fbr/instances/rho666_n48.pg  CARRY rho666_n48.pg n 48 iters 16 maxRE 1 ORET 0 TCH 5 FB 0 ES 6 V1 7 V2 12 R1 0.143 (4, 28) R2 0.083 (4, 28) R3 0.125 (4, 28) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/fbr/instances/nep80_n40.pg  CARRY nep80_n40.pg n 40 iters 22 maxRE 0 ORET 0 TCH 10 FB 1 ES 9 V1 10 V2 21 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/fbx/instances/exsw_loop_n15.pg  CARRY exsw_loop_n15.pg n 15 iters 1 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/fbr/instances/twowave_L16.pg  CARRY twowave_L16.pg n 22 iters 15 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/frz/instances/fbcap_eq_u4_n11.pg  CARRY fbcap_eq_u4_n11.pg n 11 iters 6 maxRE 0 ORET 0 TCH 1 FB 2 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/fbx/instances/kt6_n58.pg  CARRY kt6_n58.pg n 58 iters 38 maxRE 1 ORET 0 TCH 1 FB 2 ES 3 V1 4 V2 7 R1 0.250 (57, 40) R2 0.143 (57, 40) R3 0.250 (52, 32) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/frz/instances/fx2_n11.pg  CARRY fx2_n11.pg n 11 iters 9 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/h3/instances/frzgap0_n4.pg  CARRY frzgap0_n4.pg n 4 iters 1 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/h3/instances/frzgap0_n6.pg  CARRY frzgap0_n6.pg n 6 iters 3 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/h3/instances/lcount_n23.pg  CARRY lcount_n23.pg n 23 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/h3/instances/offret_l19_n24.pg  CARRY offret_l19_n24.pg n 24 iters 3 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/h3/instances/lcount2_n23.pg  CARRY lcount2_n23.pg n 23 iters 4 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/kl/instances/klcount_n16.pg  CARRY klcount_n16.pg n 16 iters 6 maxRE 0 ORET 0 TCH 5 FB 0 ES 0 V1 1 V2 6 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/kl/instances/klcount_n18_base.pg  CARRY klcount_n18_base.pg n 18 iters 6 maxRE 0 ORET 0 TCH 5 FB 0 ES 0 V1 1 V2 6 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/kl/instances/klcount_n18_lvl.pg  CARRY klcount_n18_lvl.pg n 18 iters 6 maxRE 0 ORET 0 TCH 5 FB 0 ES 0 V1 1 V2 6 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/kl/instances/klglobal_n16.pg  CARRY klglobal_n16.pg n 16 iters 6 maxRE 0 ORET 2 TCH 5 FB 1 ES 0 V1 3 V2 7 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/kl/instances/klglobal_n20_lvl2.pg  CARRY klglobal_n20_lvl2.pg n 20 iters 6 maxRE 0 ORET 2 TCH 5 FB 1 ES 0 V1 3 V2 7 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/h3/instances/xsnpre36_n48.pg  CARRY xsnpre36_n48.pg n 48 iters 33 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/kl/instances/klglobal_n18_lvl.pg  CARRY klglobal_n18_lvl.pg n 18 iters 6 maxRE 0 ORET 2 TCH 5 FB 1 ES 0 V1 3 V2 7 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/kl/instances/klmin_n13.pg  CARRY klmin_n13.pg n 13 iters 3 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/kl/instances/r2climb_h13.pg  CARRY r2climb_h13.pg n 13 iters 4 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/kl/instances/r2join_h0E_n14.pg  CARRY r2join_h0E_n14.pg n 14 iters 3 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/kl/instances/r2crawl_n14.pg  CARRY r2crawl_n14.pg n 14 iters 5 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/kl/instances/r2lap_best_n22.pg  CARRY r2lap_best_n22.pg n 22 iters 5 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/kl24/instances/HL88_0.pg  CARRY HL88_0.pg n 41 iters 3 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/kl24/instances/HL88_1.pg  CARRY HL88_1.pg n 43 iters 3 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/kl24/instances/HLg_0.pg  CARRY HLg_0.pg n 29 iters 3 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/kl24/instances/HL88_2.pg  CARRY HL88_2.pg n 45 iters 3 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/kl24/instances/HL88_3.pg  CARRY HL88_3.pg n 47 iters 3 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/kl24/instances/HLg_1.pg  CARRY HLg_1.pg n 35 iters 3 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/kl24/instances/HLg_2.pg  CARRY HLg_2.pg n 45 iters 3 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/kl24/instances/HLg_3.pg  CARRY HLg_3.pg n 55 iters 3 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/kw/instances/cw11_n24.pg  CARRY cw11_n24.pg n 24 iters 17 maxRE 2 ORET 0 TCH 0 FB 4 ES 11 V1 12 V2 16 R1 0.167 (7, 14) R2 0.125 (7, 14) R3 0.154 (7, 14) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/kw/instances/frzu_tight_n14.pg  CARRY frzu_tight_n14.pg n 14 iters 4 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/lag/instances/depth2_n39.pg  CARRY depth2_n39.pg n 39 iters 3 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/kw/instances/kc18_n24.pg  CARRY kc18_n24.pg n 24 iters 23 maxRE 0 ORET 0 TCH 1 FB 1 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/lag/instances/depth3_n46.pg  CARRY depth3_n46.pg n 46 iters 3 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/lag/instances/fam_D4_n50.pg  CARRY fam_D4_n50.pg n 50 iters 1 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/lag/instances/fam_D12_n106.pg  CARRY fam_D12_n106.pg n 106 iters 1 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/lag/instances/depth4_n53.pg  CARRY depth4_n53.pg n 53 iters 4 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/mei/instances/mei_h2.pg  CARRY mei_h2.pg n 19 iters 1 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/lag/instances/fam_D8_n78.pg  CARRY fam_D8_n78.pg n 78 iters 1 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/mei/instances/mei_h3.pg  CARRY mei_h3.pg n 27 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/mei/instances/mei_h4.pg  CARRY mei_h4.pg n 35 iters 3 maxRE 0 ORET 2 TCH 3 FB 0 ES 0 V1 3 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/mei/instances/mei_h5.pg  CARRY mei_h5.pg n 43 iters 4 maxRE 0 ORET 2 TCH 4 FB 0 ES 0 V1 3 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/mei/instances/mei_h6.pg  CARRY mei_h6.pg n 51 iters 5 maxRE 0 ORET 4 TCH 5 FB 0 ES 0 V1 5 V2 6 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/mei/instances/mei_h8.pg  CARRY mei_h8.pg n 67 iters 7 maxRE 1 ORET 12 TCH 7 FB 0 ES 0 V1 13 V2 8 R1 0.077 (2, 24) R2 0.125 (2, 24) R3 0.077 (2, 24) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/n3/instances/core41_n40.pg  CARRY core41_n40.pg n 40 iters 11 maxRE 0 ORET 0 TCH 2 FB 0 ES 3 V1 4 V2 6 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/n3/instances/lagx10_n40.pg  CARRY lagx10_n40.pg n 40 iters 17 maxRE 2 ORET 0 TCH 2 FB 1 ES 3 V1 4 V2 7 R1 0.500 (39, 15) R2 0.286 (39, 15) R3 0.250 (20, 26) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/n3/instances/lag11_n40.pg  CARRY lag11_n40.pg n 40 iters 17 maxRE 1 ORET 3 TCH 8 FB 2 ES 3 V1 7 V2 14 R1 0.143 (21, 33) R2 0.071 (21, 33) R3 0.143 (21, 33) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/n3/instances/long90_k2_n40.pg  CARRY long90_k2_n40.pg n 40 iters 18 maxRE 1 ORET 0 TCH 3 FB 0 ES 5 V1 6 V2 9 R1 0.167 (13, 33) R2 0.111 (13, 33) R3 0.111 (13, 33) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/n3/instances/comp54_n80.pg  CARRY comp54_n80.pg n 80 iters 11 maxRE 1 ORET 0 TCH 2 FB 0 ES 4 V1 5 V2 7 R1 0.200 (2, 59) R2 0.143 (2, 59) R3 0.167 (2, 59) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/n3/instances/n3cov_lean.pg  CARRY n3cov_lean.pg n 48 iters 18 maxRE 1 ORET 0 TCH 4 FB 0 ES 4 V1 5 V2 9 R1 0.200 (5, 46) R2 0.111 (5, 46) R3 0.143 (5, 46) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/n3/instances/long121_n40.pg  CARRY long121_n40.pg n 40 iters 23 maxRE 1 ORET 0 TCH 5 FB 0 ES 6 V1 7 V2 12 R1 0.143 (23, 0) R2 0.083 (23, 0) R3 0.125 (21, 12) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/n3/instances/n3cov_phi.pg  CARRY n3cov_phi.pg n 32 iters 10 maxRE 0 ORET 10 TCH 10 FB 0 ES 0 V1 11 V2 11 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/n3/instances/run49_n32.pg  CARRY run49_n32.pg n 32 iters 20 maxRE 1 ORET 0 TCH 0 FB 6 ES 3 V1 4 V2 10 R1 0.250 (19, 30) R2 0.100 (19, 30) R3 0.167 (19, 30) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/n3/instances/ret22_n40.pg  CARRY ret22_n40.pg n 40 iters 4 maxRE 0 ORET 0 TCH 4 FB 0 ES 0 V1 1 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/n5/instances/dl_4_4.pg  CARRY dl_4_4.pg n 42 iters 8 maxRE 0 ORET 0 TCH 3 FB 0 ES 3 V1 4 V2 7 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/n5/instances/dlm2_4.pg  CARRY dlm2_4.pg n 42 iters 5 maxRE 0 ORET 3 TCH 5 FB 0 ES 0 V1 4 V2 6 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/n3/instances/run34_n40.pg  CARRY run34_n40.pg n 40 iters 40 maxRE 1 ORET 0 TCH 6 FB 2 ES 12 V1 13 V2 21 R1 0.077 (36, 31) R2 0.048 (36, 31) R3 0.077 (25, 0) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/n5/instances/sym_h12_s1.pg  CARRY sym_h12_s1.pg n 24 iters 34 maxRE 1 ORET 18 TCH 21 FB 2 ES 0 V1 19 V2 24 R1 0.053 (21, 20) R2 0.042 (21, 20) R3 0.053 (21, 20) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/n5/instances/sym_h8_s1.pg  CARRY sym_h8_s1.pg n 16 iters 25 maxRE 1 ORET 5 TCH 16 FB 1 ES 0 V1 6 V2 18 R1 0.167 (1, 13) R2 0.056 (1, 13) R3 0.167 (1, 13) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/n5inj/instances/block_bk20.pg  CARRY block_bk20.pg n 24 iters 27 maxRE 2 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 2.000 (14, 5) R2 2.000 (14, 5) R3 0.667 (12, 7) V1VIOL 1 V2VIOL 1 V3VIOL 0
+GAME red/n5inj/instances/blockph_bp20.pg  CARRY blockph_bp20.pg n 24 iters 25 maxRE 1 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 1.000 (20, 8) R2 1.000 (20, 8) R3 0.500 (5, 14) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/n5inj/instances/bribe_cex_n15.pg  CARRY bribe_cex_n15.pg n 15 iters 1 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/n5/instances/sym_h16_s1.pg  CARRY sym_h16_s1.pg n 32 iters 55 maxRE 1 ORET 23 TCH 33 FB 0 ES 1 V1 25 V2 35 R1 0.040 (23, 27) R2 0.029 (23, 27) R3 0.040 (23, 27) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/n5inj/instances/block_bk32.pg  CARRY block_bk32.pg n 36 iters 49 maxRE 2 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 2.000 (30, 18) R2 2.000 (30, 18) R3 1.000 (29, 24) V1VIOL 1 V2VIOL 1 V3VIOL 0
+GAME red/n5inj/instances/blockph_bp32.pg  CARRY blockph_bp32.pg n 36 iters 39 maxRE 1 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 1.000 (30, 18) R2 1.000 (30, 18) R3 0.333 (13, 26) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/n5inj/instances/frz24.pg  CARRY frz24.pg n 24 iters 39 maxRE 1 ORET 0 TCH 0 FB 4 ES 0 V1 1 V2 5 R1 1.000 (23, 5) R2 0.200 (23, 5) R3 1.000 (13, 6) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/n5inj/instances/frz32.pg  CARRY frz32.pg n 32 iters 8 maxRE 0 ORET 0 TCH 3 FB 0 ES 2 V1 3 V2 6 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/n5inj/instances/phase2_pk32.pg  CARRY phase2_pk32.pg n 32 iters 56 maxRE 1 ORET 0 TCH 2 FB 6 ES 4 V1 5 V2 13 R1 0.200 (24, 12) R2 0.077 (24, 12) R3 0.143 (16, 23) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/n5inj/instances/elimn_cex_n48.pg  CARRY elimn_cex_n48.pg n 48 iters 92 maxRE 4 ORET 0 TCH 2 FB 10 ES 8 V1 9 V2 21 R1 0.444 (40, 43) R2 0.190 (40, 43) R3 0.231 (38, 32) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/n5inj/instances/frz40.pg  CARRY frz40.pg n 40 iters 90 maxRE 3 ORET 0 TCH 1 FB 7 ES 17 V1 18 V2 26 R1 0.167 (24, 25) R2 0.115 (24, 25) R3 0.115 (24, 25) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/n5/instances/dl_6_8.pg  CARRY dl_6_8.pg n 110 iters 14 maxRE 0 ORET 0 TCH 5 FB 0 ES 3 V1 4 V2 9 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/n5inj/instances/returns_rt32.pg  CARRY returns_rt32.pg n 32 iters 57 maxRE 1 ORET 0 TCH 3 FB 6 ES 5 V1 6 V2 15 R1 0.167 (24, 12) R2 0.067 (24, 12) R3 0.125 (18, 0) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/n5inj/instances/phase2_pk48.pg  CARRY phase2_pk48.pg n 48 iters 72 maxRE 2 ORET 0 TCH 1 FB 8 ES 2 V1 3 V2 12 R1 0.667 (47, 12) R2 0.167 (47, 12) R3 0.333 (47, 9) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/n5inj/instances/theta_thc24.pg  CARRY theta_thc24.pg n 24 iters 29 maxRE 1 ORET 0 TCH 1 FB 0 ES 11 V1 12 V2 13 R1 0.083 (23, 1) R2 0.077 (23, 1) R3 0.067 (13, 18) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/n5inj/instances/theta_thf16.pg  CARRY theta_thf16.pg n 16 iters 20 maxRE 1 ORET 0 TCH 0 FB 1 ES 13 V1 14 V2 15 R1 0.071 (15, 14) R2 0.067 (15, 14) R3 0.067 (14, 8) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/n5inj/instances/returns_rt48.pg  CARRY returns_rt48.pg n 48 iters 80 maxRE 3 ORET 0 TCH 0 FB 14 ES 3 V1 4 V2 18 R1 0.750 (46, 40) R2 0.167 (46, 40) R3 0.333 (8, 31) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/n5inj/instances/returns_ph64.pg  CARRY returns_ph64.pg n 64 iters 105 maxRE 4 ORET 0 TCH 0 FB 15 ES 3 V1 4 V2 19 R1 1.000 (26, 38) R2 0.211 (26, 38) R3 0.333 (8, 31) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/n5inj/instances/theta_tp32.pg  CARRY theta_tp32.pg n 32 iters 45 maxRE 2 ORET 0 TCH 2 FB 1 ES 16 V1 17 V2 20 R1 0.118 (26, 5) R2 0.100 (26, 5) R3 0.087 (26, 5) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/nest16/instances/k4L72_n101.pg  CARRY k4L72_n101.pg n 101 iters 6 maxRE 0 ORET 7 TCH 6 FB 0 ES 0 V1 8 V2 7 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/n5inj/instances/wide_h16.pg  CARRY wide_h16.pg n 32 iters 44 maxRE 1 ORET 24 TCH 37 FB 0 ES 0 V1 25 V2 38 R1 0.040 (23, 4) R2 0.026 (23, 4) R3 0.040 (23, 4) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/n5inj/instances/theta_tp40.pg  CARRY theta_tp40.pg n 40 iters 41 maxRE 1 ORET 0 TCH 2 FB 0 ES 11 V1 12 V2 14 R1 0.083 (37, 30) R2 0.071 (37, 30) R3 0.083 (16, 11) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/nest16/instances/k4L72r_n101.pg  CARRY k4L72r_n101.pg n 101 iters 6 maxRE 0 ORET 7 TCH 6 FB 0 ES 0 V1 8 V2 7 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/nest16/instances/k4seed_c1_n82.pg  CARRY k4seed_c1_n82.pg n 82 iters 3 maxRE 0 ORET 2 TCH 3 FB 0 ES 0 V1 3 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/nest16/instances/k4seed_vr_n87.pg  CARRY k4seed_vr_n87.pg n 87 iters 3 maxRE 0 ORET 2 TCH 3 FB 0 ES 0 V1 3 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/nest16/instances/k4g50_n101.pg  CARRY k4g50_n101.pg n 101 iters 5 maxRE 0 ORET 4 TCH 5 FB 0 ES 0 V1 5 V2 6 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/nest16/instances/k4u_n101.pg  CARRY k4u_n101.pg n 101 iters 3 maxRE 0 ORET 2 TCH 3 FB 0 ES 0 V1 3 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/nest16/instances/k4y2_n87.pg  CARRY k4y2_n87.pg n 87 iters 6 maxRE 0 ORET 12 TCH 6 FB 0 ES 0 V1 13 V2 7 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/nest16/instances/k4y1_n82.pg  CARRY k4y1_n82.pg n 82 iters 5 maxRE 0 ORET 3 TCH 5 FB 0 ES 0 V1 4 V2 6 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/n5inj/instances/returns_rt64.pg  CARRY returns_rt64.pg n 64 iters 90 maxRE 3 ORET 0 TCH 1 FB 14 ES 4 V1 5 V2 20 R1 0.600 (46, 40) R2 0.150 (46, 40) R3 0.286 (8, 31) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/nest16/instances/near4_n26.pg  CARRY near4_n26.pg n 26 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/nest16/instances/nest4u_n46.pg  CARRY nest4u_n46.pg n 46 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/nest16/instances/nest6_n75.pg  CARRY nest6_n75.pg n 75 iters 3 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/nest16/instances/nest4uu_n51.pg  CARRY nest4uu_n51.pg n 51 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/nest16/instances/nest5_n49.pg  CARRY nest5_n49.pg n 49 iters 3 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/nest16/instances/nest6min_n75.pg  CARRY nest6min_n75.pg n 75 iters 3 maxRE 0 ORET 2 TCH 3 FB 0 ES 0 V1 3 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/nest16/instances/oseg_n26.pg  CARRY oseg_n26.pg n 26 iters 3 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/nest16/instances/w1_n27.pg  CARRY w1_n27.pg n 27 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/nest16/instances/nest6x_n75.pg  CARRY nest6x_n75.pg n 75 iters 5 maxRE 0 ORET 4 TCH 5 FB 0 ES 0 V1 5 V2 6 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/nest16/instances/win3_n27.pg  CARRY win3_n27.pg n 27 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/nopre/instances/nopre_viol_n20.pg  CARRY nopre_viol_n20.pg n 20 iters 3 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/o1/instances/ph45_n32.pg  CARRY ph45_n32.pg n 32 iters 21 maxRE 0 ORET 0 TCH 7 FB 0 ES 0 V1 1 V2 8 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/o1/instances/ph50_n32.pg  CARRY ph50_n32.pg n 32 iters 32 maxRE 1 ORET 0 TCH 1 FB 18 ES 0 V1 1 V2 20 R1 1.000 (18, 23) R2 0.050 (18, 23) R3 1.000 (18, 23) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/o1/instances/tau18_n24.pg  CARRY tau18_n24.pg n 24 iters 12 maxRE 0 ORET 0 TCH 11 FB 0 ES 0 V1 1 V2 12 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/rec0/instances/fbd0_n4.pg  CARRY fbd0_n4.pg n 4 iters 0 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/o1/instances/f39_n48.pg  CARRY f39_n48.pg n 48 iters 38 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/rec0/instances/n0_6_n24.pg  CARRY n0_6_n24.pg n 24 iters 3 maxRE 0 ORET 0 TCH 1 FB 0 ES 1 V1 2 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/o1/instances/iter118_n48.pg  CARRY iter118_n48.pg n 48 iters 18 maxRE 1 ORET 0 TCH 1 FB 1 ES 3 V1 4 V2 6 R1 0.250 (45, 35) R2 0.167 (45, 35) R3 0.200 (9, 7) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/rec0/instances/nep24_n20.pg  CARRY nep24_n20.pg n 20 iters 15 maxRE 0 ORET 0 TCH 13 FB 0 ES 1 V1 2 V2 15 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/sgrow/instances/s21_oink_n20.pg  CARRY s21_oink_n20.pg n 20 iters 8 maxRE 0 ORET 4 TCH 8 FB 0 ES 0 V1 5 V2 9 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/sgrow/instances/s20_n20.pg  CARRY s20_n20.pg n 20 iters 8 maxRE 0 ORET 3 TCH 7 FB 0 ES 0 V1 4 V2 8 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/rec0/instances/nep87_n40.pg  CARRY nep87_n40.pg n 40 iters 25 maxRE 1 ORET 2 TCH 9 FB 1 ES 12 V1 15 V2 23 R1 0.067 (27, 38) R2 0.043 (27, 38) R3 0.067 (23, 0) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/sgrow/instances/s29_n30.pg  CARRY s29_n30.pg n 30 iters 7 maxRE 0 ORET 3 TCH 7 FB 0 ES 0 V1 4 V2 8 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/rec0/instances/lend2_30_n48.pg  CARRY lend2_30_n48.pg n 48 iters 25 maxRE 1 ORET 4 TCH 8 FB 0 ES 2 V1 7 V2 11 R1 0.143 (46, 10) R2 0.091 (46, 10) R3 0.111 (31, 15) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/sgrow/instances/s34_oink_n40.pg  CARRY s34_oink_n40.pg n 40 iters 5 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/rec0/instances/nep90_n40.pg  CARRY nep90_n40.pg n 40 iters 23 maxRE 1 ORET 1 TCH 7 FB 1 ES 13 V1 15 V2 22 R1 0.067 (31, 9) R2 0.045 (31, 9) R3 0.059 (23, 0) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/sgrow/instances/s35_oink_n80.pg  CARRY s35_oink_n80.pg n 80 iters 5 maxRE 0 ORET 2 TCH 4 FB 0 ES 0 V1 3 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/sgrow/instances/s36_oink_n60.pg  CARRY s36_oink_n60.pg n 60 iters 5 maxRE 0 ORET 2 TCH 4 FB 0 ES 0 V1 3 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/sgrow/instances/s32_n60.pg  CARRY s32_n60.pg n 60 iters 8 maxRE 0 ORET 5 TCH 8 FB 0 ES 0 V1 6 V2 9 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/so/instances/beta2_n11.pg  CARRY beta2_n11.pg n 11 iters 4 maxRE 0 ORET 0 TCH 0 FB 2 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/so/instances/epsseg_cex_n16.pg  CARRY epsseg_cex_n16.pg n 16 iters 11 maxRE 1 ORET 0 TCH 1 FB 0 ES 4 V1 5 V2 6 R1 0.200 (13, 3) R2 0.167 (13, 3) R3 0.167 (3, 9) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/sgrow/instances/s34_oink_n80.pg  CARRY s34_oink_n80.pg n 80 iters 8 maxRE 0 ORET 11 TCH 7 FB 0 ES 0 V1 12 V2 8 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/so/instances/exitr_cex_n16.pg  CARRY exitr_cex_n16.pg n 16 iters 10 maxRE 1 ORET 0 TCH 0 FB 0 ES 5 V1 6 V2 6 R1 0.167 (4, 9) R2 0.167 (4, 9) R3 0.143 (4, 9) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/so/instances/epsseg_cex_n48.pg  CARRY epsseg_cex_n48.pg n 48 iters 26 maxRE 1 ORET 0 TCH 2 FB 1 ES 4 V1 5 V2 8 R1 0.200 (47, 0) R2 0.125 (47, 0) R3 0.200 (47, 0) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/so/instances/mn_abs74_n48.pg  CARRY mn_abs74_n48.pg n 48 iters 22 maxRE 1 ORET 0 TCH 0 FB 4 ES 6 V1 7 V2 11 R1 0.143 (47, 37) R2 0.091 (47, 37) R3 0.143 (45, 0) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/so/instances/exitr_cex_n48.pg  CARRY exitr_cex_n48.pg n 48 iters 22 maxRE 0 ORET 0 TCH 2 FB 1 ES 3 V1 4 V2 7 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/so/instances/farrise25_n32.pg  CARRY farrise25_n32.pg n 32 iters 35 maxRE 1 ORET 0 TCH 0 FB 28 ES 2 V1 3 V2 31 R1 0.333 (29, 25) R2 0.032 (29, 25) R3 0.250 (29, 25) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/so/instances/njb_reabs54_n32.pg  CARRY njb_reabs54_n32.pg n 32 iters 40 maxRE 2 ORET 0 TCH 0 FB 22 ES 9 V1 10 V2 32 R1 0.200 (28, 0) R2 0.062 (28, 0) R3 0.200 (28, 0) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/so/instances/nleq_cex_n48.pg  CARRY nleq_cex_n48.pg n 48 iters 10 maxRE 1 ORET 0 TCH 1 FB 1 ES 0 V1 1 V2 3 R1 1.000 (28, 3) R2 0.333 (28, 3) R3 1.000 (5, 31) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/so/instances/nleq33_n48.pg  CARRY nleq33_n48.pg n 48 iters 40 maxRE 0 ORET 0 TCH 1 FB 1 ES 1 V1 2 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/so/instances/njb_reabs65_n48.pg  CARRY njb_reabs65_n48.pg n 48 iters 70 maxRE 2 ORET 0 TCH 2 FB 29 ES 6 V1 7 V2 38 R1 0.286 (36, 14) R2 0.053 (36, 14) R3 0.286 (8, 40) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/so/instances/pftheta34_n32.pg  CARRY pftheta34_n32.pg n 32 iters 39 maxRE 3 ORET 0 TCH 0 FB 1 ES 34 V1 35 V2 36 R1 0.086 (21, 26) R2 0.083 (21, 26) R3 0.077 (21, 26) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/so/instances/pftheta_cex_n32.pg  CARRY pftheta_cex_n32.pg n 32 iters 38 maxRE 3 ORET 0 TCH 0 FB 1 ES 33 V1 34 V2 35 R1 0.088 (21, 26) R2 0.086 (21, 26) R3 0.079 (21, 26) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/so/instances/pft35_n48.pg  CARRY pft35_n48.pg n 48 iters 41 maxRE 3 ORET 0 TCH 1 FB 1 ES 38 V1 39 V2 41 R1 0.077 (43, 5) R2 0.073 (43, 5) R3 0.068 (43, 5) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/so/instances/post31_n48.pg  CARRY post31_n48.pg n 48 iters 36 maxRE 1 ORET 0 TCH 2 FB 1 ES 0 V1 1 V2 4 R1 1.000 (45, 37) R2 0.250 (45, 37) R3 1.000 (45, 37) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/so/instances/s4c8_n13.pg  CARRY s4c8_n13.pg n 13 iters 12 maxRE 0 ORET 0 TCH 0 FB 8 ES 1 V1 2 V2 10 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/so/instances/pft40_n40.pg  CARRY pft40_n40.pg n 40 iters 54 maxRE 4 ORET 0 TCH 2 FB 4 ES 40 V1 41 V2 47 R1 0.098 (19, 24) R2 0.085 (19, 24) R3 0.082 (19, 24) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/so/instances/so_k2_n32.pg  CARRY so_k2_n32.pg n 32 iters 20 maxRE 1 ORET 0 TCH 0 FB 2 ES 6 V1 7 V2 9 R1 0.143 (16, 6) R2 0.111 (16, 6) R3 0.125 (16, 6) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/so/instances/rise_fb38_n48.pg  CARRY rise_fb38_n48.pg n 48 iters 53 maxRE 1 ORET 0 TCH 2 FB 38 ES 2 V1 3 V2 43 R1 0.333 (47, 3) R2 0.023 (47, 3) R3 0.333 (44, 16) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/so/instances/so_sor5_n24.pg  CARRY so_sor5_n24.pg n 24 iters 23 maxRE 1 ORET 0 TCH 1 FB 0 ES 5 V1 6 V2 7 R1 0.167 (14, 13) R2 0.143 (14, 13) R3 0.111 (14, 13) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/so/instances/rise_thin51_n40.pg  CARRY rise_thin51_n40.pg n 40 iters 78 maxRE 5 ORET 0 TCH 1 FB 7 ES 60 V1 61 V2 69 R1 0.082 (10, 24) R2 0.072 (10, 24) R3 0.066 (17, 0) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/so/instances/so_sorl_n32.pg  CARRY so_sorl_n32.pg n 32 iters 22 maxRE 0 ORET 0 TCH 0 FB 0 ES 4 V1 5 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/so/instances/so_tie13_n24.pg  CARRY so_tie13_n24.pg n 24 iters 16 maxRE 0 ORET 0 TCH 0 FB 0 ES 1 V1 2 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/so/instances/so_th_n32.pg  CARRY so_th_n32.pg n 32 iters 36 maxRE 2 ORET 0 TCH 1 FB 0 ES 20 V1 21 V2 22 R1 0.095 (24, 21) R2 0.091 (24, 21) R3 0.071 (24, 21) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/so/instances/so_j19_n48.pg  CARRY so_j19_n48.pg n 48 iters 25 maxRE 0 ORET 0 TCH 0 FB 1 ES 19 V1 20 V2 21 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/so/instances/so_tie15_n32.pg  CARRY so_tie15_n32.pg n 32 iters 20 maxRE 0 ORET 0 TCH 1 FB 0 ES 1 V1 2 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/so/instances/tog6a_n32.pg  CARRY tog6a_n32.pg n 32 iters 10 maxRE 0 ORET 0 TCH 1 FB 1 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/so/instances/tevlast11_n40.pg  CARRY tevlast11_n40.pg n 40 iters 36 maxRE 1 ORET 0 TCH 0 FB 2 ES 6 V1 7 V2 9 R1 0.143 (30, 34) R2 0.111 (30, 34) R3 0.125 (30, 34) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/so/instances/tev_cex_n40.pg  CARRY tev_cex_n40.pg n 40 iters 27 maxRE 0 ORET 0 TCH 1 FB 16 ES 4 V1 5 V2 22 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/so/instances/tevlast7_n32.pg  CARRY tevlast7_n32.pg n 32 iters 41 maxRE 2 ORET 0 TCH 0 FB 2 ES 5 V1 6 V2 8 R1 0.333 (13, 2) R2 0.250 (13, 2) R3 0.222 (13, 2) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/so/instances/tevlast_cex_n40.pg  CARRY tevlast_cex_n40.pg n 40 iters 11 maxRE 1 ORET 0 TCH 1 FB 1 ES 4 V1 5 V2 7 R1 0.200 (15, 21) R2 0.143 (15, 21) R3 0.167 (15, 21) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/so/instances/xrun8_n10.pg  CARRY xrun8_n10.pg n 10 iters 11 maxRE 0 ORET 0 TCH 1 FB 1 ES 3 V1 4 V2 6 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/so/instances/tog6b_n32.pg  CARRY tog6b_n32.pg n 32 iters 8 maxRE 0 ORET 0 TCH 0 FB 1 ES 1 V1 2 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/so/instances/xrun21_n24.pg  CARRY xrun21_n24.pg n 24 iters 24 maxRE 1 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 1.000 (14, 10) R2 0.333 (14, 10) R3 0.500 (14, 10) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/so/instances/xsn29_n32.pg  CARRY xsn29_n32.pg n 32 iters 29 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/so/instances/xsn43_n48.pg  CARRY xsn43_n48.pg n 48 iters 45 maxRE 0 ORET 0 TCH 0 FB 0 ES 2 V1 3 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/so/instances/xsnf42_n48.pg  CARRY xsnf42_n48.pg n 48 iters 44 maxRE 0 ORET 0 TCH 0 FB 1 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/so/instances/xsnf52_n64.pg  CARRY xsnf52_n64.pg n 64 iters 55 maxRE 0 ORET 0 TCH 1 FB 1 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/tcpert/instances/leanT_N12.pg  CARRY leanT_N12.pg n 96 iters 13 maxRE 0 ORET 0 TCH 11 FB 0 ES 0 V1 1 V2 12 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/tcpert/instances/leanT_N6.pg  CARRY leanT_N6.pg n 48 iters 6 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/so/instances/xsn91_n48.pg  CARRY xsn91_n48.pg n 48 iters 115 maxRE 4 ORET 0 TCH 1 FB 9 ES 22 V1 23 V2 33 R1 0.174 (45, 35) R2 0.121 (45, 35) R3 0.130 (6, 0) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/tcpert/instances/leanT_N16.pg  CARRY leanT_N16.pg n 128 iters 16 maxRE 0 ORET 3 TCH 15 FB 0 ES 0 V1 4 V2 16 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/tcpert/instances/leanT_N8.pg  CARRY leanT_N8.pg n 64 iters 8 maxRE 0 ORET 0 TCH 6 FB 0 ES 0 V1 1 V2 7 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/tcpert/instances/tcL_N3.pg  CARRY tcL_N3.pg n 42 iters 7 maxRE 0 ORET 1 TCH 5 FB 0 ES 0 V1 2 V2 6 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/tcpert/instances/tcL_N4.pg  CARRY tcL_N4.pg n 68 iters 16 maxRE 1 ORET 22 TCH 15 FB 0 ES 0 V1 23 V2 16 R1 0.043 (17, 56) R2 0.062 (17, 56) R3 0.043 (17, 56) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/tcpert/instances/tcL_N5.pg  CARRY tcL_N5.pg n 100 iters 19 maxRE 0 ORET 21 TCH 17 FB 0 ES 0 V1 22 V2 18 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/tcpert/instances/tcL_N6.pg  CARRY tcL_N6.pg n 138 iters 18 maxRE 1 ORET 35 TCH 18 FB 0 ES 0 V1 36 V2 19 R1 0.028 (103, 102) R2 0.053 (103, 102) R3 0.028 (103, 102) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/tcpert/instances/tcR4_N4.pg  CARRY tcR4_N4.pg n 68 iters 12 maxRE 0 ORET 5 TCH 10 FB 0 ES 0 V1 6 V2 11 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/tcpert/instances/tcR4_N5.pg  CARRY tcR4_N5.pg n 100 iters 14 maxRE 0 ORET 6 TCH 11 FB 0 ES 0 V1 7 V2 12 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/tcpert/instances/leanT_N24.pg  CARRY leanT_N24.pg n 192 iters 25 maxRE 0 ORET 2 TCH 19 FB 0 ES 3 V1 6 V2 23 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/tcpert/instances/tcL_N10.pg  CARRY tcL_N10.pg n 350 iters 27 maxRE 1 ORET 130 TCH 26 FB 0 ES 0 V1 131 V2 27 R1 0.008 (250, 247) R2 0.037 (250, 247) R3 0.008 (250, 247) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/tcpert/instances/tcR4_N6.pg  CARRY tcR4_N6.pg n 138 iters 22 maxRE 1 ORET 20 TCH 18 FB 0 ES 1 V1 22 V2 20 R1 0.045 (74, 107) R2 0.050 (74, 107) R3 0.043 (74, 107) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/tcpert/instances/tcL_N8.pg  CARRY tcL_N8.pg n 232 iters 30 maxRE 2 ORET 124 TCH 29 FB 0 ES 0 V1 125 V2 30 R1 0.016 (151, 199) R2 0.067 (151, 199) R3 0.016 (151, 199) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/tcpert/instances/tcR4_N7.pg  CARRY tcR4_N7.pg n 182 iters 41 maxRE 1 ORET 8 TCH 25 FB 0 ES 0 V1 9 V2 26 R1 0.111 (140, 86) R2 0.038 (140, 86) R3 0.111 (140, 86) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/tcpert/instances/tcR4_N8.pg  CARRY tcR4_N8.pg n 232 iters 33 maxRE 1 ORET 32 TCH 26 FB 0 ES 0 V1 33 V2 27 R1 0.030 (36, 34) R2 0.037 (36, 34) R3 0.030 (36, 34) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/tcpert/instances/tcS8_N6.pg  CARRY tcS8_N6.pg n 138 iters 17 maxRE 1 ORET 35 TCH 16 FB 0 ES 0 V1 36 V2 17 R1 0.028 (65, 17) R2 0.059 (65, 17) R3 0.028 (65, 17) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/tcpert/instances/tcS8_N7.pg  CARRY tcS8_N7.pg n 182 iters 14 maxRE 1 ORET 37 TCH 14 FB 0 ES 0 V1 38 V2 15 R1 0.026 (63, 94) R2 0.067 (63, 94) R3 0.026 (63, 94) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/tcpert/instances/leanT_N32.pg  CARRY leanT_N32.pg n 256 iters 33 maxRE 0 ORET 2 TCH 27 FB 0 ES 0 V1 3 V2 28 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/tpp/instances/tpp_viol_n22.pg  CARRY tpp_viol_n22.pg n 22 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/tpp/instances/tpp_viol_n63.pg  CARRY tpp_viol_n63.pg n 63 iters 8 maxRE 0 ORET 1 TCH 7 FB 0 ES 1 V1 3 V2 9 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/tcpert/instances/tcS8_N10.pg  CARRY tcS8_N10.pg n 350 iters 16 maxRE 1 ORET 49 TCH 16 FB 0 ES 0 V1 50 V2 17 R1 0.020 (99, 273) R2 0.059 (99, 273) R3 0.020 (99, 273) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/tcpert/instances/tcS8_N8.pg  CARRY tcS8_N8.pg n 232 iters 10 maxRE 1 ORET 33 TCH 9 FB 0 ES 0 V1 34 V2 10 R1 0.029 (38, 191) R2 0.100 (38, 191) R3 0.029 (38, 191) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/ul/instances/cxmig_k4_n54.pg  CARRY cxmig_k4_n54.pg n 54 iters 12 maxRE 0 ORET 0 TCH 1 FB 0 ES 1 V1 2 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/ul/instances/cxmig_k8_n82.pg  CARRY cxmig_k8_n82.pg n 82 iters 16 maxRE 0 ORET 0 TCH 1 FB 0 ES 1 V1 2 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/ul/instances/ladderd0_k12_n48.pg  CARRY ladderd0_k12_n48.pg n 48 iters 14 maxRE 0 ORET 0 TCH 1 FB 0 ES 12 V1 13 V2 14 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/ul/instances/cxmig_k16_n138.pg  CARRY cxmig_k16_n138.pg n 138 iters 24 maxRE 0 ORET 0 TCH 1 FB 0 ES 1 V1 2 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/ul/instances/ladderd0_k24_n84.pg  CARRY ladderd0_k24_n84.pg n 84 iters 26 maxRE 0 ORET 0 TCH 1 FB 0 ES 24 V1 25 V2 26 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/tcpert/instances/tcS8_N11.pg  CARRY tcS8_N11.pg n 418 iters 20 maxRE 0 ORET 76 TCH 19 FB 0 ES 0 V1 77 V2 20 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/ul/instances/ladderent_k12_n48.pg  CARRY ladderent_k12_n48.pg n 48 iters 14 maxRE 0 ORET 0 TCH 1 FB 0 ES 12 V1 13 V2 14 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/ul/instances/reader_L10_n36.pg  CARRY reader_L10_n36.pg n 36 iters 13 maxRE 0 ORET 0 TCH 1 FB 0 ES 2 V1 3 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/ul/instances/ladderent_k24_n84.pg  CARRY ladderent_k24_n84.pg n 84 iters 26 maxRE 0 ORET 0 TCH 1 FB 0 ES 24 V1 25 V2 26 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/ul/instances/reader_L20_n56.pg  CARRY reader_L20_n56.pg n 56 iters 23 maxRE 0 ORET 0 TCH 1 FB 0 ES 2 V1 3 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/tcpert/instances/tcL_N12.pg  CARRY tcL_N12.pg n 492 iters 37 maxRE 3 ORET 145 TCH 35 FB 0 ES 0 V1 146 V2 36 R1 0.021 (18, 17) R2 0.083 (18, 17) R3 0.021 (18, 17) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/tcpert/instances/tcS8_N9.pg  CARRY tcS8_N9.pg n 288 iters 36 maxRE 1 ORET 77 TCH 29 FB 3 ES 2 V1 80 V2 35 R1 0.013 (213, 55) R2 0.029 (213, 55) R3 0.013 (213, 55) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/ul/instances/reader_L40_n96.pg  CARRY reader_L40_n96.pg n 96 iters 43 maxRE 0 ORET 0 TCH 1 FB 0 ES 2 V1 3 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/usplit/instances/gate_K16_n197.pg  CARRY gate_K16_n197.pg n 197 iters 23 maxRE 0 ORET 0 TCH 2 FB 0 ES 1 V1 2 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/usplit/instances/grow_K12_n149.pg  CARRY grow_K12_n149.pg n 149 iters 18 maxRE 0 ORET 0 TCH 1 FB 0 ES 1 V1 2 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/usplit/instances/pairoc_n58.pg  CARRY pairoc_n58.pg n 58 iters 4 maxRE 0 ORET 0 TCH 1 FB 0 ES 1 V1 2 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/usplit/instances/pp_K12_n161_dual.pg  CARRY pp_K12_n161_dual.pg n 161 iters 20 maxRE 0 ORET 2 TCH 19 FB 0 ES 0 V1 3 V2 20 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/usplit/instances/pp_K12_n161.pg  CARRY pp_K12_n161.pg n 161 iters 20 maxRE 0 ORET 0 TCH 3 FB 0 ES 3 V1 4 V2 7 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/ul/instances/ladderd0_k48_n156.pg  CARRY ladderd0_k48_n156.pg n 156 iters 50 maxRE 0 ORET 0 TCH 1 FB 0 ES 48 V1 49 V2 50 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/usplit/instances/usplit_n14.pg  CARRY usplit_n14.pg n 14 iters 3 maxRE 0 ORET 0 TCH 1 FB 0 ES 1 V1 2 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/usplit/instances/usplit_n23.pg  CARRY usplit_n23.pg n 23 iters 9 maxRE 0 ORET 0 TCH 1 FB 0 ES 1 V1 2 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/usplit/instances/usplit_rd_n24.pg  CARRY usplit_rd_n24.pg n 24 iters 3 maxRE 0 ORET 0 TCH 1 FB 0 ES 1 V1 2 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/usplit/instances/usplit_rd_s3_n27.pg  CARRY usplit_rd_s3_n27.pg n 27 iters 4 maxRE 0 ORET 0 TCH 0 FB 0 ES 2 V1 3 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/usplit/instances/usplit_s3_n16.pg  CARRY usplit_s3_n16.pg n 16 iters 3 maxRE 0 ORET 0 TCH 0 FB 0 ES 1 V1 2 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xctx/instances/nest3_n20.pg  CARRY nest3_n20.pg n 20 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xctx/instances/nest3_n24.pg  CARRY nest3_n24.pg n 24 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xctx/instances/vrall_viol_n20.pg  CARRY vrall_viol_n20.pg n 20 iters 4 maxRE 0 ORET 3 TCH 4 FB 0 ES 0 V1 4 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/ul/instances/ladderent_k48_n156.pg  CARRY ladderent_k48_n156.pg n 156 iters 50 maxRE 0 ORET 0 TCH 1 FB 0 ES 48 V1 49 V2 50 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xctx/instances/xcov11_n20.pg  CARRY xcov11_n20.pg n 20 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xctx/instances/xctx_viol_n20.pg  CARRY xctx_viol_n20.pg n 20 iters 5 maxRE 0 ORET 1 TCH 5 FB 0 ES 0 V1 2 V2 6 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xing/instances/j10_n24.pg  CARRY j10_n24.pg n 24 iters 25 maxRE 1 ORET 0 TCH 0 FB 1 ES 17 V1 18 V2 19 R1 0.056 (21, 3) R2 0.053 (21, 3) R3 0.053 (3, 18) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xing/instances/fbref_cex_n32.pg  CARRY fbref_cex_n32.pg n 32 iters 56 maxRE 3 ORET 0 TCH 1 FB 8 ES 9 V1 10 V2 19 R1 0.300 (28, 0) R2 0.158 (28, 0) R3 0.300 (28, 0) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xing/instances/j5_n16.pg  CARRY j5_n16.pg n 16 iters 30 maxRE 1 ORET 0 TCH 1 FB 4 ES 7 V1 8 V2 13 R1 0.125 (15, 11) R2 0.077 (15, 11) R3 0.111 (13, 12) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xing/instances/j4_n40.pg  CARRY j4_n40.pg n 40 iters 106 maxRE 6 ORET 0 TCH 1 FB 4 ES 37 V1 38 V2 43 R1 0.158 (31, 19) R2 0.140 (31, 19) R3 0.118 (31, 19) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xing/instances/j7_n32.pg  CARRY j7_n32.pg n 32 iters 50 maxRE 2 ORET 0 TCH 1 FB 1 ES 14 V1 15 V2 17 R1 0.133 (1, 5) R2 0.118 (1, 5) R3 0.111 (1, 5) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xing/instances/j8_n32.pg  CARRY j8_n32.pg n 32 iters 54 maxRE 2 ORET 0 TCH 1 FB 2 ES 16 V1 17 V2 20 R1 0.118 (15, 25) R2 0.100 (15, 25) R3 0.091 (15, 25) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xing/instances/j7_n48.pg  CARRY j7_n48.pg n 48 iters 78 maxRE 2 ORET 0 TCH 0 FB 7 ES 16 V1 17 V2 24 R1 0.118 (38, 20) R2 0.083 (38, 20) R3 0.083 (28, 38) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xing/instances/kw25_n32.pg  CARRY kw25_n32.pg n 32 iters 29 maxRE 1 ORET 0 TCH 0 FB 1 ES 1 V1 2 V2 3 R1 0.500 (31, 5) R2 0.333 (31, 5) R3 0.250 (31, 5) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xing/instances/kw_n16.pg  CARRY kw_n16.pg n 16 iters 12 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xing/instances/j8_n48.pg  CARRY j8_n48.pg n 48 iters 86 maxRE 2 ORET 0 TCH 0 FB 8 ES 16 V1 17 V2 25 R1 0.118 (38, 27) R2 0.080 (38, 27) R3 0.105 (2, 10) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xing/instances/kw_n24.pg  CARRY kw_n24.pg n 24 iters 20 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xing/instances/kw_n48.pg  CARRY kw_n48.pg n 48 iters 40 maxRE 1 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 1.000 (34, 4) R2 1.000 (34, 4) R3 0.250 (34, 4) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xing/instances/obr_eq_n24.pg  CARRY obr_eq_n24.pg n 24 iters 7 maxRE 0 ORET 0 TCH 0 FB 1 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/usplit/instances/grow_K40_n373.pg  CARRY grow_K40_n373.pg n 373 iters 46 maxRE 0 ORET 0 TCH 1 FB 0 ES 1 V1 2 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xing/instances/obr_n32.pg  CARRY obr_n32.pg n 32 iters 22 maxRE 1 ORET 0 TCH 0 FB 2 ES 0 V1 1 V2 3 R1 1.000 (21, 30) R2 0.333 (21, 30) R3 0.500 (21, 30) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xing/instances/u1t_cex_n32.pg  CARRY u1t_cex_n32.pg n 32 iters 12 maxRE 1 ORET 0 TCH 2 FB 1 ES 0 V1 1 V2 4 R1 1.000 (31, 4) R2 0.250 (31, 4) R3 1.000 (14, 28) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xing/instances/u1t_own6_n32.pg  CARRY u1t_own6_n32.pg n 32 iters 9 maxRE 1 ORET 0 TCH 0 FB 1 ES 1 V1 2 V2 3 R1 0.500 (10, 11) R2 0.333 (10, 11) R3 0.333 (6, 10) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xing/instances/u23sw64_n32.pg  CARRY u23sw64_n32.pg n 32 iters 16 maxRE 2 ORET 0 TCH 0 FB 1 ES 1 V1 2 V2 3 R1 1.000 (14, 17) R2 0.667 (14, 17) R3 0.500 (14, 17) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xing/instances/u2flat73_n32.pg  CARRY u2flat73_n32.pg n 32 iters 16 maxRE 1 ORET 0 TCH 0 FB 5 ES 0 V1 1 V2 6 R1 1.000 (14, 13) R2 0.167 (14, 13) R3 1.000 (14, 13) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xing/instances/u2flat_n32.pg  CARRY u2flat_n32.pg n 32 iters 13 maxRE 0 ORET 0 TCH 0 FB 3 ES 1 V1 2 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xing/instances/x31_cu16.pg  CARRY x31_cu16.pg n 16 iters 23 maxRE 1 ORET 0 TCH 0 FB 1 ES 20 V1 21 V2 22 R1 0.048 (15, 5) R2 0.045 (15, 5) R3 0.045 (14, 8) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xing/instances/x31_cu24.pg  CARRY x31_cu24.pg n 24 iters 22 maxRE 3 ORET 0 TCH 0 FB 1 ES 16 V1 17 V2 18 R1 0.176 (2, 6) R2 0.167 (2, 6) R3 0.120 (2, 6) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xing/instances/x31_cu32.pg  CARRY x31_cu32.pg n 32 iters 49 maxRE 3 ORET 0 TCH 1 FB 1 ES 40 V1 41 V2 43 R1 0.073 (28, 5) R2 0.070 (28, 5) R3 0.064 (28, 5) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xing/instances/x31_cu32i.pg  CARRY x31_cu32i.pg n 32 iters 42 maxRE 2 ORET 0 TCH 2 FB 1 ES 38 V1 39 V2 42 R1 0.051 (28, 5) R2 0.048 (28, 5) R3 0.048 (20, 8) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xing/instances/x31_lem_e24.pg  CARRY x31_lem_e24.pg n 24 iters 54 maxRE 3 ORET 0 TCH 0 FB 4 ES 0 V1 1 V2 5 R1 3.000 (22, 2) R2 0.600 (22, 2) R3 1.000 (10, 8) V1VIOL 1 V2VIOL 0 V3VIOL 0
+GAME red/xing/instances/x31_lem_t32.pg  CARRY x31_lem_t32.pg n 32 iters 65 maxRE 3 ORET 0 TCH 0 FB 6 ES 2 V1 3 V2 9 R1 1.000 (30, 20) R2 0.333 (30, 20) R3 0.250 (30, 20) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xing/instances/x31_nh_r20.pg  CARRY x31_nh_r20.pg n 20 iters 15 maxRE 0 ORET 0 TCH 0 FB 1 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xing/instances/x31_cu48.pg  CARRY x31_cu48.pg n 48 iters 46 maxRE 3 ORET 0 TCH 2 FB 1 ES 41 V1 42 V2 45 R1 0.071 (39, 40) R2 0.067 (39, 40) R3 0.067 (39, 40) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xing/instances/x31_nh_e24.pg  CARRY x31_nh_e24.pg n 24 iters 20 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xing/instances/x31_ru24.pg  CARRY x31_ru24.pg n 24 iters 7 maxRE 0 ORET 0 TCH 1 FB 1 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xing/instances/x31_re24.pg  CARRY x31_re24.pg n 24 iters 6 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xing/instances/x31_rx32.pg  CARRY x31_rx32.pg n 32 iters 55 maxRE 2 ORET 0 TCH 1 FB 3 ES 49 V1 50 V2 54 R1 0.040 (29, 26) R2 0.037 (29, 26) R3 0.036 (6, 8) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xing/instances/x32_rand16.pg  CARRY x32_rand16.pg n 16 iters 15 maxRE 0 ORET 0 TCH 0 FB 1 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/usplit/instances/pp_K48_n449.pg  CARRY pp_K48_n449.pg n 449 iters 56 maxRE 0 ORET 0 TCH 3 FB 0 ES 3 V1 4 V2 7 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xing/instances/x31_rx48.pg  CARRY x31_rx48.pg n 48 iters 53 maxRE 3 ORET 0 TCH 0 FB 2 ES 45 V1 46 V2 48 R1 0.065 (27, 2) R2 0.062 (27, 2) R3 0.056 (27, 2) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xing/instances/x32_rand24.pg  CARRY x32_rand24.pg n 24 iters 20 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xing/instances/x32_nest40.pg  CARRY x32_nest40.pg n 40 iters 58 maxRE 4 ORET 0 TCH 1 FB 2 ES 19 V1 20 V2 23 R1 0.200 (27, 12) R2 0.174 (27, 12) R3 0.154 (27, 12) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xing/instances/x32_rand32.pg  CARRY x32_rand32.pg n 32 iters 29 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xing/instances/x32_rand48.pg  CARRY x32_rand48.pg n 48 iters 44 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xing/instances/x32_waves32.pg  CARRY x32_waves32.pg n 32 iters 81 maxRE 3 ORET 0 TCH 1 FB 9 ES 16 V1 17 V2 27 R1 0.176 (28, 16) R2 0.111 (28, 16) R3 0.176 (6, 0) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME si/root/instances/cone_n65.pg  CARRY cone_n65.pg n 65 iters 12 maxRE 1 ORET 0 TCH 1 FB 1 ES 1 V1 2 V2 4 R1 0.500 (43, 33) R2 0.250 (43, 33) R3 0.500 (43, 33) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xing/instances/x32_rand64.pg  CARRY x32_rand64.pg n 64 iters 56 maxRE 0 ORET 0 TCH 0 FB 1 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME si/root/instances/ueonce_n27.pg  CARRY ueonce_n27.pg n 27 iters 12 maxRE 1 ORET 0 TCH 1 FB 0 ES 1 V1 2 V2 3 R1 0.500 (10, 23) R2 0.333 (10, 23) R3 0.333 (10, 23) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/xing/instances/x32_waves48.pg  CARRY x32_waves48.pg n 48 iters 89 maxRE 2 ORET 0 TCH 0 FB 19 ES 3 V1 4 V2 23 R1 0.500 (40, 24) R2 0.087 (40, 24) R3 0.286 (40, 24) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME si/root/instances/cone_n69.pg  CARRY cone_n69.pg n 69 iters 25 maxRE 1 ORET 0 TCH 4 FB 0 ES 0 V1 1 V2 5 R1 1.000 (26, 9) R2 0.200 (26, 9) R3 1.000 (26, 9) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/switchbestexp_1.pg  CARRY switchbestexp_1.pg n 35 iters 20 maxRE 1 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 1.000 (31, 23) R2 0.500 (31, 23) R3 0.250 (16, 14) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/switchbestexp_2.pg  CARRY switchbestexp_2.pg n 60 iters 32 maxRE 2 ORET 0 TCH 2 FB 0 ES 5 V1 6 V2 8 R1 0.333 (57, 37) R2 0.250 (57, 37) R3 0.200 (43, 15) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/switchbestexp_3.pg  CARRY switchbestexp_3.pg n 85 iters 41 maxRE 2 ORET 0 TCH 3 FB 0 ES 6 V1 7 V2 10 R1 0.286 (82, 51) R2 0.200 (82, 51) R3 0.167 (69, 71) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/usplit/instances/pp_K48_n449_dual.pg  CARRY pp_K48_n449_dual.pg n 449 iters 56 maxRE 0 ORET 2 TCH 55 FB 0 ES 0 V1 3 V2 56 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/switchbestexp_4.pg  CARRY switchbestexp_4.pg n 110 iters 47 maxRE 2 ORET 0 TCH 4 FB 0 ES 5 V1 6 V2 10 R1 0.333 (107, 65) R2 0.200 (107, 65) R3 0.182 (94, 96) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/switchbestexp_5.pg  CARRY switchbestexp_5.pg n 135 iters 55 maxRE 2 ORET 0 TCH 5 FB 0 ES 6 V1 7 V2 12 R1 0.286 (132, 79) R2 0.167 (132, 79) R3 0.167 (85, 21) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/switchbestexp_6.pg  CARRY switchbestexp_6.pg n 160 iters 62 maxRE 3 ORET 0 TCH 6 FB 0 ES 6 V1 7 V2 13 R1 0.429 (111, 113) R2 0.231 (111, 113) R3 0.231 (111, 113) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/switchallexp_1.pg  CARRY switchallexp_1.pg n 21 iters 5 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/switchallexp_2.pg  CARRY switchallexp_2.pg n 35 iters 8 maxRE 1 ORET 0 TCH 2 FB 0 ES 2 V1 3 V2 5 R1 0.333 (7, 9) R2 0.200 (7, 9) R3 0.250 (7, 9) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/switchallexp_3.pg  CARRY switchallexp_3.pg n 49 iters 7 maxRE 0 ORET 0 TCH 3 FB 0 ES 2 V1 3 V2 6 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/switchallexp_4.pg  CARRY switchallexp_4.pg n 63 iters 8 maxRE 0 ORET 0 TCH 4 FB 0 ES 1 V1 2 V2 6 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/switchallexp_5.pg  CARRY switchallexp_5.pg n 77 iters 10 maxRE 0 ORET 0 TCH 5 FB 0 ES 0 V1 1 V2 6 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/switchallexp_6.pg  CARRY switchallexp_6.pg n 91 iters 12 maxRE 0 ORET 0 TCH 6 FB 0 ES 0 V1 1 V2 7 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_core_2.pg  CARRY counter_core_2.pg n 15 iters 4 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_core_3.pg  CARRY counter_core_3.pg n 21 iters 6 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_core_4.pg  CARRY counter_core_4.pg n 27 iters 8 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_core_5.pg  CARRY counter_core_5.pg n 33 iters 10 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_core_6.pg  CARRY counter_core_6.pg n 39 iters 12 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/switchbestexp_7.pg  CARRY switchbestexp_7.pg n 185 iters 68 maxRE 3 ORET 0 TCH 7 FB 0 ES 5 V1 6 V2 13 R1 0.500 (136, 138) R2 0.231 (136, 138) R3 0.250 (136, 138) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_core_8.pg  CARRY counter_core_8.pg n 51 iters 16 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_dp_2.pg  CARRY counter_dp_2.pg n 12 iters 2 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_dp_3.pg  CARRY counter_dp_3.pg n 16 iters 4 maxRE 0 ORET 0 TCH 4 FB 0 ES 0 V1 1 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_dp_5.pg  CARRY counter_dp_5.pg n 24 iters 6 maxRE 0 ORET 0 TCH 6 FB 0 ES 0 V1 1 V2 7 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_dp_4.pg  CARRY counter_dp_4.pg n 20 iters 4 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_dp_8.pg  CARRY counter_dp_8.pg n 36 iters 8 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_dp_6.pg  CARRY counter_dp_6.pg n 28 iters 6 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_m_2.pg  CARRY counter_m_2.pg n 9 iters 2 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_m_3.pg  CARRY counter_m_3.pg n 12 iters 2 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_m_4.pg  CARRY counter_m_4.pg n 15 iters 3 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_m_5.pg  CARRY counter_m_5.pg n 18 iters 3 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_m_6.pg  CARRY counter_m_6.pg n 21 iters 4 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_m_8.pg  CARRY counter_m_8.pg n 27 iters 5 maxRE 0 ORET 0 TCH 4 FB 0 ES 0 V1 1 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_ortl_2.pg  CARRY counter_ortl_2.pg n 11 iters 3 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_ortl_3.pg  CARRY counter_ortl_3.pg n 16 iters 4 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_ortl_4.pg  CARRY counter_ortl_4.pg n 21 iters 5 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_ortl_5.pg  CARRY counter_ortl_5.pg n 26 iters 6 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_ortl_6.pg  CARRY counter_ortl_6.pg n 31 iters 7 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_ortl_8.pg  CARRY counter_ortl_8.pg n 41 iters 9 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_qpt_2.pg  CARRY counter_qpt_2.pg n 4 iters 1 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_qpt_3.pg  CARRY counter_qpt_3.pg n 6 iters 1 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_qpt_4.pg  CARRY counter_qpt_4.pg n 8 iters 1 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_qpt_5.pg  CARRY counter_qpt_5.pg n 10 iters 1 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_qpt_6.pg  CARRY counter_qpt_6.pg n 12 iters 1 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_qpt_8.pg  CARRY counter_qpt_8.pg n 16 iters 1 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_rob_2.pg  CARRY counter_rob_2.pg n 31 iters 5 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_rob_3.pg  CARRY counter_rob_3.pg n 54 iters 7 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_rob_4.pg  CARRY counter_rob_4.pg n 83 iters 10 maxRE 0 ORET 0 TCH 4 FB 0 ES 0 V1 1 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_rob_5.pg  CARRY counter_rob_5.pg n 118 iters 13 maxRE 1 ORET 0 TCH 5 FB 0 ES 0 V1 1 V2 6 R1 1.000 (85, 14) R2 0.167 (85, 14) R3 1.000 (85, 14) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/usplit/instances/gate_K64_n581.pg  CARRY gate_K64_n581.pg n 581 iters 71 maxRE 0 ORET 0 TCH 2 FB 0 ES 1 V1 2 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_rob_6.pg  CARRY counter_rob_6.pg n 159 iters 16 maxRE 1 ORET 0 TCH 6 FB 0 ES 0 V1 1 V2 7 R1 1.000 (126, 20) R2 0.143 (126, 20) R3 1.000 (126, 20) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_rr_2.pg  CARRY counter_rr_2.pg n 8 iters 1 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_rr_3.pg  CARRY counter_rr_3.pg n 12 iters 1 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_rr_4.pg  CARRY counter_rr_4.pg n 16 iters 2 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_rr_5.pg  CARRY counter_rr_5.pg n 20 iters 2 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_rr_6.pg  CARRY counter_rr_6.pg n 24 iters 2 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_rr_8.pg  CARRY counter_rr_8.pg n 32 iters 2 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_symsi_2.pg  CARRY counter_symsi_2.pg n 22 iters 13 maxRE 0 ORET 2 TCH 7 FB 4 ES 0 V1 3 V2 12 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_rob_8.pg  CARRY counter_rob_8.pg n 259 iters 22 maxRE 1 ORET 0 TCH 8 FB 0 ES 0 V1 1 V2 9 R1 1.000 (226, 32) R2 0.111 (226, 32) R3 1.000 (226, 32) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_symsi_3.pg  CARRY counter_symsi_3.pg n 32 iters 25 maxRE 1 ORET 7 TCH 14 FB 5 ES 0 V1 8 V2 20 R1 0.125 (14, 15) R2 0.050 (14, 15) R3 0.125 (14, 15) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_symsi_4.pg  CARRY counter_symsi_4.pg n 42 iters 22 maxRE 0 ORET 10 TCH 16 FB 2 ES 1 V1 12 V2 20 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_symsi_5.pg  CARRY counter_symsi_5.pg n 52 iters 31 maxRE 1 ORET 13 TCH 18 FB 4 ES 3 V1 17 V2 26 R1 0.059 (24, 22) R2 0.038 (24, 22) R3 0.059 (12, 13) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/recursiveladder_2.pg  CARRY recursiveladder_2.pg n 10 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_symsi_6.pg  CARRY counter_symsi_6.pg n 62 iters 37 maxRE 1 ORET 16 TCH 21 FB 4 ES 3 V1 20 V2 29 R1 0.050 (34, 32) R2 0.034 (34, 32) R3 0.050 (22, 23) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/recursiveladder_3.pg  CARRY recursiveladder_3.pg n 15 iters 2 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/switchbestexp_8.pg  CARRY switchbestexp_8.pg n 210 iters 77 maxRE 3 ORET 0 TCH 8 FB 0 ES 6 V1 7 V2 15 R1 0.429 (161, 163) R2 0.200 (161, 163) R3 0.231 (161, 163) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/recursiveladder_4.pg  CARRY recursiveladder_4.pg n 20 iters 4 maxRE 0 ORET 0 TCH 4 FB 0 ES 0 V1 1 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/recursiveladder_5.pg  CARRY recursiveladder_5.pg n 25 iters 4 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/recursiveladder_6.pg  CARRY recursiveladder_6.pg n 30 iters 6 maxRE 0 ORET 0 TCH 6 FB 0 ES 0 V1 1 V2 7 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/tc_2.pg  CARRY tc_2.pg n 22 iters 4 maxRE 0 ORET 0 TCH 4 FB 0 ES 0 V1 1 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/tc_3.pg  CARRY tc_3.pg n 42 iters 7 maxRE 0 ORET 1 TCH 5 FB 0 ES 0 V1 2 V2 6 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/tc_4.pg  CARRY tc_4.pg n 68 iters 16 maxRE 1 ORET 22 TCH 15 FB 0 ES 0 V1 23 V2 16 R1 0.043 (17, 56) R2 0.062 (17, 56) R3 0.043 (17, 56) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/counter_symsi_8.pg  CARRY counter_symsi_8.pg n 82 iters 48 maxRE 1 ORET 22 TCH 27 FB 4 ES 5 V1 28 V2 37 R1 0.036 (54, 52) R2 0.027 (54, 52) R3 0.036 (42, 43) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/ctl/pivot_demo.pg  CARRY pivot_demo.pg n 11 iters 0 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/tc_5.pg  CARRY tc_5.pg n 100 iters 19 maxRE 0 ORET 21 TCH 17 FB 0 ES 0 V1 22 V2 18 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/hf/tc_6.pg  CARRY tc_6.pg n 138 iters 18 maxRE 1 ORET 35 TCH 18 FB 0 ES 0 V1 36 V2 19 R1 0.028 (103, 102) R2 0.053 (103, 102) R3 0.028 (103, 102) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box54/out/d_pivot_demo.pg  CARRY d_pivot_demo.pg n 11 iters 0 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/seg/instances/runquad_K3_m4_n54.pg  CARRY runquad_K3_m4_n54.pg n 54 iters 3 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/seg/instances/runquad_K8_m30_n192.pg  CARRY runquad_K8_m30_n192.pg n 192 iters 3 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/seg/instances/s3quad_K3_m4.pg  CARRY s3quad_K3_m4.pg n 137 iters 21 maxRE 2 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 2.000 (51, 134) R2 2.000 (51, 134) R3 2.000 (51, 134) V1VIOL 1 V2VIOL 1 V3VIOL 1
+GAME new/box54/out/d_runquad_K3.pg  CARRY d_runquad_K3.pg n 54 iters 3 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box52/out/topfix_n3.pg  CARRY topfix_n3.pg n 63 iters 22 maxRE 4 ORET 0 TCH 0 FB 0 ES 1 V1 2 V2 2 R1 2.000 (45, 46) R2 2.000 (45, 46) R3 0.333 (45, 46) V1VIOL 1 V2VIOL 1 V3VIOL 0
+GAME new/box54/out/hf/tc_8.pg  CARRY tc_8.pg n 232 iters 30 maxRE 2 ORET 124 TCH 29 FB 0 ES 0 V1 125 V2 30 R1 0.016 (151, 199) R2 0.067 (151, 199) R3 0.016 (151, 199) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box52/out/topfix_n4.pg  CARRY topfix_n4.pg n 84 iters 28 maxRE 6 ORET 0 TCH 0 FB 0 ES 1 V1 2 V2 2 R1 3.000 (66, 67) R2 3.000 (66, 67) R3 0.375 (66, 67) V1VIOL 1 V2VIOL 1 V3VIOL 0
+GAME new/box52/out/topfix_n6.pg  CARRY topfix_n6.pg n 126 iters 40 maxRE 10 ORET 0 TCH 0 FB 0 ES 1 V1 2 V2 2 R1 5.000 (108, 109) R2 5.000 (108, 109) R3 0.417 (108, 109) V1VIOL 1 V2VIOL 1 V3VIOL 0
+GAME new/box54/out/d_hntop_n3.pg  CARRY d_hntop_n3.pg n 63 iters 22 maxRE 0 ORET 55 TCH 22 FB 0 ES 0 V1 56 V2 23 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box52/out/topfix_n8.pg  CARRY topfix_n8.pg n 168 iters 52 maxRE 14 ORET 0 TCH 0 FB 0 ES 1 V1 2 V2 2 R1 7.000 (150, 151) R2 7.000 (150, 151) R3 0.438 (150, 151) V1VIOL 1 V2VIOL 1 V3VIOL 0
+GAME new/box51/out/dlc_d2.pg  CARRY dlc_d2.pg n 27 iters 7 maxRE 1 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 1.000 (1, 2) R2 1.000 (1, 2) R3 0.333 (1, 2) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box51/out/dlc_d3.pg  CARRY dlc_d3.pg n 109 iters 15 maxRE 3 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 3.000 (1, 2) R2 3.000 (1, 2) R3 0.600 (1, 2) V1VIOL 1 V2VIOL 1 V3VIOL 0
+GAME new/box52/out/topfix_n8_cmp.pg  CARRY topfix_n8_cmp.pg n 171 iters 52 maxRE 14 ORET 0 TCH 0 FB 0 ES 2 V1 3 V2 3 R1 4.667 (150, 151) R2 4.667 (150, 151) R3 0.424 (150, 151) V1VIOL 1 V2VIOL 1 V3VIOL 0
+GAME new/box54/out/d_dlc_d3.pg  CARRY d_dlc_d3.pg n 109 iters 15 maxRE 0 ORET 8 TCH 15 FB 0 ES 0 V1 9 V2 16 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME si/runlin/instances/runfam_K10.pg  CARRY runfam_K10.pg n 49 iters 97 maxRE 1 ORET 0 TCH 0 FB 1 ES 7 V1 8 V2 9 R1 0.125 (48, 25) R2 0.111 (48, 25) R3 0.111 (27, 10) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box51/out/dlc_d4.pg  CARRY dlc_d4.pg n 455 iters 31 maxRE 7 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 7.000 (1, 2) R2 7.000 (1, 2) R3 0.778 (1, 2) V1VIOL 1 V2VIOL 1 V3VIOL 0
+GAME new/box52/out/topfix_n10.pg  CARRY topfix_n10.pg n 210 iters 64 maxRE 18 ORET 0 TCH 0 FB 0 ES 1 V1 2 V2 2 R1 9.000 (192, 193) R2 9.000 (192, 193) R3 0.450 (192, 193) V1VIOL 1 V2VIOL 1 V3VIOL 0
+GAME new/box59/out/rnd/r100_n40.pg  CARRY r100_n40.pg n 40 iters 3 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r101_n50.pg  CARRY r101_n50.pg n 50 iters 4 maxRE 0 ORET 3 TCH 3 FB 0 ES 0 V1 4 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r102_n60.pg  CARRY r102_n60.pg n 60 iters 4 maxRE 0 ORET 1 TCH 3 FB 0 ES 0 V1 2 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r103_n70.pg  CARRY r103_n70.pg n 70 iters 5 maxRE 0 ORET 2 TCH 5 FB 0 ES 0 V1 3 V2 6 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r104_n80.pg  CARRY r104_n80.pg n 80 iters 3 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r105_n20.pg  CARRY r105_n20.pg n 20 iters 5 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r106_n30.pg  CARRY r106_n30.pg n 30 iters 3 maxRE 0 ORET 0 TCH 2 FB 1 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME si/runlin/instances/runfam_K40.pg  CARRY runfam_K40.pg n 79 iters 163 maxRE 1 ORET 0 TCH 0 FB 1 ES 7 V1 8 V2 9 R1 0.125 (78, 25) R2 0.111 (78, 25) R3 0.111 (27, 10) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r107_n40.pg  CARRY r107_n40.pg n 40 iters 3 maxRE 0 ORET 1 TCH 2 FB 0 ES 0 V1 2 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r108_n50.pg  CARRY r108_n50.pg n 50 iters 3 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r109_n60.pg  CARRY r109_n60.pg n 60 iters 4 maxRE 0 ORET 2 TCH 4 FB 0 ES 0 V1 3 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r10_n50.pg  CARRY r10_n50.pg n 50 iters 4 maxRE 0 ORET 0 TCH 4 FB 0 ES 0 V1 1 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r111_n80.pg  CARRY r111_n80.pg n 80 iters 7 maxRE 0 ORET 4 TCH 7 FB 0 ES 0 V1 5 V2 8 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r110_n70.pg  CARRY r110_n70.pg n 70 iters 5 maxRE 0 ORET 1 TCH 4 FB 0 ES 0 V1 2 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r112_n20.pg  CARRY r112_n20.pg n 20 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r114_n40.pg  CARRY r114_n40.pg n 40 iters 3 maxRE 0 ORET 1 TCH 2 FB 0 ES 0 V1 2 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r113_n30.pg  CARRY r113_n30.pg n 30 iters 3 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r115_n50.pg  CARRY r115_n50.pg n 50 iters 5 maxRE 0 ORET 0 TCH 4 FB 0 ES 0 V1 1 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r117_n70.pg  CARRY r117_n70.pg n 70 iters 3 maxRE 0 ORET 1 TCH 3 FB 0 ES 0 V1 2 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r116_n60.pg  CARRY r116_n60.pg n 60 iters 4 maxRE 0 ORET 0 TCH 4 FB 0 ES 0 V1 1 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r118_n80.pg  CARRY r118_n80.pg n 80 iters 6 maxRE 0 ORET 1 TCH 6 FB 0 ES 0 V1 2 V2 7 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r119_n20.pg  CARRY r119_n20.pg n 20 iters 1 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r11_n60.pg  CARRY r11_n60.pg n 60 iters 5 maxRE 0 ORET 0 TCH 5 FB 0 ES 0 V1 1 V2 6 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r120_n30.pg  CARRY r120_n30.pg n 30 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r121_n40.pg  CARRY r121_n40.pg n 40 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r122_n50.pg  CARRY r122_n50.pg n 50 iters 5 maxRE 0 ORET 0 TCH 3 FB 1 ES 0 V1 1 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r123_n60.pg  CARRY r123_n60.pg n 60 iters 3 maxRE 0 ORET 1 TCH 3 FB 0 ES 0 V1 2 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r124_n70.pg  CARRY r124_n70.pg n 70 iters 7 maxRE 0 ORET 3 TCH 6 FB 1 ES 0 V1 4 V2 8 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r125_n80.pg  CARRY r125_n80.pg n 80 iters 6 maxRE 0 ORET 2 TCH 6 FB 0 ES 0 V1 3 V2 7 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r126_n20.pg  CARRY r126_n20.pg n 20 iters 5 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r127_n30.pg  CARRY r127_n30.pg n 30 iters 3 maxRE 0 ORET 1 TCH 2 FB 0 ES 0 V1 2 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r129_n50.pg  CARRY r129_n50.pg n 50 iters 3 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r128_n40.pg  CARRY r128_n40.pg n 40 iters 3 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r12_n70.pg  CARRY r12_n70.pg n 70 iters 4 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r131_n70.pg  CARRY r131_n70.pg n 70 iters 3 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r130_n60.pg  CARRY r130_n60.pg n 60 iters 3 maxRE 0 ORET 1 TCH 2 FB 0 ES 1 V1 3 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r132_n80.pg  CARRY r132_n80.pg n 80 iters 5 maxRE 0 ORET 2 TCH 4 FB 0 ES 0 V1 3 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r133_n20.pg  CARRY r133_n20.pg n 20 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r134_n30.pg  CARRY r134_n30.pg n 30 iters 2 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r135_n40.pg  CARRY r135_n40.pg n 40 iters 2 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r136_n50.pg  CARRY r136_n50.pg n 50 iters 3 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r137_n60.pg  CARRY r137_n60.pg n 60 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r138_n70.pg  CARRY r138_n70.pg n 70 iters 4 maxRE 0 ORET 0 TCH 4 FB 0 ES 0 V1 1 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r139_n80.pg  CARRY r139_n80.pg n 80 iters 3 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r13_n80.pg  CARRY r13_n80.pg n 80 iters 3 maxRE 0 ORET 1 TCH 3 FB 0 ES 0 V1 2 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r140_n20.pg  CARRY r140_n20.pg n 20 iters 1 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r141_n30.pg  CARRY r141_n30.pg n 30 iters 4 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r142_n40.pg  CARRY r142_n40.pg n 40 iters 5 maxRE 0 ORET 1 TCH 3 FB 0 ES 0 V1 2 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r143_n50.pg  CARRY r143_n50.pg n 50 iters 1 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r144_n60.pg  CARRY r144_n60.pg n 60 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r147_n20.pg  CARRY r147_n20.pg n 20 iters 2 maxRE 0 ORET 1 TCH 2 FB 0 ES 0 V1 2 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r145_n70.pg  CARRY r145_n70.pg n 70 iters 7 maxRE 0 ORET 6 TCH 7 FB 0 ES 0 V1 7 V2 8 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r146_n80.pg  CARRY r146_n80.pg n 80 iters 7 maxRE 0 ORET 2 TCH 6 FB 1 ES 0 V1 3 V2 8 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r148_n30.pg  CARRY r148_n30.pg n 30 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r149_n40.pg  CARRY r149_n40.pg n 40 iters 2 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r14_n20.pg  CARRY r14_n20.pg n 20 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r151_n60d2.pg  CARRY r151_n60d2.pg n 60 iters 4 maxRE 0 ORET 0 TCH 4 FB 0 ES 0 V1 1 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r150_n50.pg  CARRY r150_n50.pg n 50 iters 6 maxRE 0 ORET 2 TCH 4 FB 0 ES 0 V1 3 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r152_n60d2.pg  CARRY r152_n60d2.pg n 60 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r153_n60d2.pg  CARRY r153_n60d2.pg n 60 iters 4 maxRE 0 ORET 1 TCH 3 FB 0 ES 0 V1 2 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r154_n60d2.pg  CARRY r154_n60d2.pg n 60 iters 3 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r155_n60d2.pg  CARRY r155_n60d2.pg n 60 iters 5 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r156_n60d2.pg  CARRY r156_n60d2.pg n 60 iters 4 maxRE 0 ORET 2 TCH 4 FB 0 ES 0 V1 3 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r157_n60d2.pg  CARRY r157_n60d2.pg n 60 iters 5 maxRE 0 ORET 0 TCH 4 FB 0 ES 0 V1 1 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r158_n60d2.pg  CARRY r158_n60d2.pg n 60 iters 2 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r15_n30.pg  CARRY r15_n30.pg n 30 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r159_n60d2.pg  CARRY r159_n60d2.pg n 60 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r160_n60d2.pg  CARRY r160_n60d2.pg n 60 iters 3 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r161_n60d2.pg  CARRY r161_n60d2.pg n 60 iters 4 maxRE 0 ORET 0 TCH 4 FB 0 ES 0 V1 1 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r162_n60d2.pg  CARRY r162_n60d2.pg n 60 iters 5 maxRE 0 ORET 3 TCH 5 FB 0 ES 0 V1 4 V2 6 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r163_n60d2.pg  CARRY r163_n60d2.pg n 60 iters 3 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r164_n60d2.pg  CARRY r164_n60d2.pg n 60 iters 3 maxRE 0 ORET 1 TCH 3 FB 0 ES 0 V1 2 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r165_n60d2.pg  CARRY r165_n60d2.pg n 60 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r167_n60d2.pg  CARRY r167_n60d2.pg n 60 iters 3 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r166_n60d2.pg  CARRY r166_n60d2.pg n 60 iters 3 maxRE 0 ORET 2 TCH 3 FB 0 ES 0 V1 3 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r168_n60d2.pg  CARRY r168_n60d2.pg n 60 iters 3 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r169_n60d2.pg  CARRY r169_n60d2.pg n 60 iters 3 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r16_n40.pg  CARRY r16_n40.pg n 40 iters 3 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r170_n60d2.pg  CARRY r170_n60d2.pg n 60 iters 5 maxRE 0 ORET 2 TCH 4 FB 0 ES 0 V1 3 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r171_n60d2.pg  CARRY r171_n60d2.pg n 60 iters 4 maxRE 0 ORET 1 TCH 4 FB 1 ES 0 V1 2 V2 6 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r172_n60d2.pg  CARRY r172_n60d2.pg n 60 iters 3 maxRE 0 ORET 1 TCH 3 FB 0 ES 0 V1 2 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r173_n60d2.pg  CARRY r173_n60d2.pg n 60 iters 4 maxRE 0 ORET 2 TCH 4 FB 0 ES 0 V1 3 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r174_n60d2.pg  CARRY r174_n60d2.pg n 60 iters 4 maxRE 0 ORET 1 TCH 4 FB 0 ES 0 V1 2 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r175_n60d2.pg  CARRY r175_n60d2.pg n 60 iters 3 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r176_n60d2.pg  CARRY r176_n60d2.pg n 60 iters 3 maxRE 0 ORET 0 TCH 1 FB 1 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r177_n60d2.pg  CARRY r177_n60d2.pg n 60 iters 2 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r178_n60d2.pg  CARRY r178_n60d2.pg n 60 iters 3 maxRE 0 ORET 2 TCH 3 FB 0 ES 0 V1 3 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r179_n60d2.pg  CARRY r179_n60d2.pg n 60 iters 4 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r17_n50.pg  CARRY r17_n50.pg n 50 iters 5 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r180_n60d2.pg  CARRY r180_n60d2.pg n 60 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r181_n60d2.pg  CARRY r181_n60d2.pg n 60 iters 4 maxRE 0 ORET 1 TCH 4 FB 0 ES 0 V1 2 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r182_n60d2.pg  CARRY r182_n60d2.pg n 60 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r183_n60d2.pg  CARRY r183_n60d2.pg n 60 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r185_n60d2.pg  CARRY r185_n60d2.pg n 60 iters 3 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r184_n60d2.pg  CARRY r184_n60d2.pg n 60 iters 4 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r186_n60d2.pg  CARRY r186_n60d2.pg n 60 iters 4 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r187_n60d2.pg  CARRY r187_n60d2.pg n 60 iters 4 maxRE 0 ORET 1 TCH 4 FB 1 ES 0 V1 2 V2 6 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r188_n60d2.pg  CARRY r188_n60d2.pg n 60 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r18_n60.pg  CARRY r18_n60.pg n 60 iters 3 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r189_n60d2.pg  CARRY r189_n60d2.pg n 60 iters 3 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r190_n60d2.pg  CARRY r190_n60d2.pg n 60 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r192_n60d2.pg  CARRY r192_n60d2.pg n 60 iters 5 maxRE 0 ORET 0 TCH 4 FB 0 ES 0 V1 1 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r191_n60d2.pg  CARRY r191_n60d2.pg n 60 iters 6 maxRE 0 ORET 2 TCH 5 FB 0 ES 0 V1 3 V2 6 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r193_n60d2.pg  CARRY r193_n60d2.pg n 60 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r194_n60d2.pg  CARRY r194_n60d2.pg n 60 iters 5 maxRE 0 ORET 0 TCH 4 FB 0 ES 0 V1 1 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r195_n60d2.pg  CARRY r195_n60d2.pg n 60 iters 4 maxRE 0 ORET 0 TCH 4 FB 0 ES 0 V1 1 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r196_n60d2.pg  CARRY r196_n60d2.pg n 60 iters 2 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r197_n60d2.pg  CARRY r197_n60d2.pg n 60 iters 5 maxRE 0 ORET 0 TCH 4 FB 0 ES 0 V1 1 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r198_n60d2.pg  CARRY r198_n60d2.pg n 60 iters 5 maxRE 0 ORET 2 TCH 4 FB 0 ES 0 V1 3 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r19_n70.pg  CARRY r19_n70.pg n 70 iters 5 maxRE 0 ORET 0 TCH 5 FB 0 ES 0 V1 1 V2 6 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r199_n60d2.pg  CARRY r199_n60d2.pg n 60 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r1_n30.pg  CARRY r1_n30.pg n 30 iters 3 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r21_n20.pg  CARRY r21_n20.pg n 20 iters 3 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r200_n60d2.pg  CARRY r200_n60d2.pg n 60 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r20_n80.pg  CARRY r20_n80.pg n 80 iters 3 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r22_n30.pg  CARRY r22_n30.pg n 30 iters 2 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r24_n50.pg  CARRY r24_n50.pg n 50 iters 3 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r23_n40.pg  CARRY r23_n40.pg n 40 iters 5 maxRE 0 ORET 2 TCH 5 FB 0 ES 0 V1 3 V2 6 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r25_n60.pg  CARRY r25_n60.pg n 60 iters 3 maxRE 0 ORET 2 TCH 2 FB 0 ES 0 V1 3 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r27_n80.pg  CARRY r27_n80.pg n 80 iters 5 maxRE 0 ORET 2 TCH 5 FB 0 ES 0 V1 3 V2 6 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r26_n70.pg  CARRY r26_n70.pg n 70 iters 6 maxRE 0 ORET 1 TCH 5 FB 0 ES 0 V1 2 V2 6 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r28_n20.pg  CARRY r28_n20.pg n 20 iters 1 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r29_n30.pg  CARRY r29_n30.pg n 30 iters 3 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r2_n40.pg  CARRY r2_n40.pg n 40 iters 3 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r30_n40.pg  CARRY r30_n40.pg n 40 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r31_n50.pg  CARRY r31_n50.pg n 50 iters 3 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r32_n60.pg  CARRY r32_n60.pg n 60 iters 3 maxRE 0 ORET 2 TCH 3 FB 0 ES 0 V1 3 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r34_n80.pg  CARRY r34_n80.pg n 80 iters 4 maxRE 0 ORET 1 TCH 4 FB 0 ES 0 V1 2 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r33_n70.pg  CARRY r33_n70.pg n 70 iters 6 maxRE 0 ORET 1 TCH 3 FB 0 ES 0 V1 2 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r36_n30.pg  CARRY r36_n30.pg n 30 iters 3 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r35_n20.pg  CARRY r35_n20.pg n 20 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r37_n40.pg  CARRY r37_n40.pg n 40 iters 3 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r39_n60.pg  CARRY r39_n60.pg n 60 iters 5 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r38_n50.pg  CARRY r38_n50.pg n 50 iters 3 maxRE 0 ORET 1 TCH 2 FB 0 ES 0 V1 2 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r3_n50.pg  CARRY r3_n50.pg n 50 iters 4 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r41_n80.pg  CARRY r41_n80.pg n 80 iters 4 maxRE 0 ORET 1 TCH 4 FB 0 ES 0 V1 2 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r40_n70.pg  CARRY r40_n70.pg n 70 iters 5 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r42_n20.pg  CARRY r42_n20.pg n 20 iters 0 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r43_n30.pg  CARRY r43_n30.pg n 30 iters 4 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r44_n40.pg  CARRY r44_n40.pg n 40 iters 3 maxRE 0 ORET 1 TCH 3 FB 0 ES 0 V1 2 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r46_n60.pg  CARRY r46_n60.pg n 60 iters 3 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r45_n50.pg  CARRY r45_n50.pg n 50 iters 3 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r48_n80.pg  CARRY r48_n80.pg n 80 iters 6 maxRE 0 ORET 1 TCH 4 FB 1 ES 0 V1 2 V2 6 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r47_n70.pg  CARRY r47_n70.pg n 70 iters 5 maxRE 0 ORET 2 TCH 5 FB 0 ES 0 V1 3 V2 6 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r49_n20.pg  CARRY r49_n20.pg n 20 iters 4 maxRE 0 ORET 0 TCH 4 FB 0 ES 0 V1 1 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r50_n30.pg  CARRY r50_n30.pg n 30 iters 1 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r4_n60.pg  CARRY r4_n60.pg n 60 iters 4 maxRE 0 ORET 0 TCH 2 FB 1 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r51_n40.pg  CARRY r51_n40.pg n 40 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r52_n50.pg  CARRY r52_n50.pg n 50 iters 4 maxRE 0 ORET 0 TCH 4 FB 0 ES 0 V1 1 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r53_n60.pg  CARRY r53_n60.pg n 60 iters 3 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r54_n70.pg  CARRY r54_n70.pg n 70 iters 5 maxRE 0 ORET 9 TCH 5 FB 0 ES 0 V1 10 V2 6 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r55_n80.pg  CARRY r55_n80.pg n 80 iters 5 maxRE 0 ORET 2 TCH 3 FB 0 ES 0 V1 3 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r56_n20.pg  CARRY r56_n20.pg n 20 iters 3 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r57_n30.pg  CARRY r57_n30.pg n 30 iters 3 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r5_n70.pg  CARRY r5_n70.pg n 70 iters 8 maxRE 0 ORET 1 TCH 6 FB 0 ES 0 V1 2 V2 7 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r58_n40.pg  CARRY r58_n40.pg n 40 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r59_n50.pg  CARRY r59_n50.pg n 50 iters 7 maxRE 0 ORET 0 TCH 4 FB 3 ES 0 V1 1 V2 8 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r60_n60.pg  CARRY r60_n60.pg n 60 iters 4 maxRE 0 ORET 0 TCH 4 FB 0 ES 0 V1 1 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r61_n70.pg  CARRY r61_n70.pg n 70 iters 4 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r62_n80.pg  CARRY r62_n80.pg n 80 iters 10 maxRE 0 ORET 10 TCH 9 FB 2 ES 0 V1 11 V2 12 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r63_n20.pg  CARRY r63_n20.pg n 20 iters 1 maxRE 0 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r64_n30.pg  CARRY r64_n30.pg n 30 iters 1 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r66_n50.pg  CARRY r66_n50.pg n 50 iters 4 maxRE 0 ORET 0 TCH 4 FB 0 ES 0 V1 1 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r65_n40.pg  CARRY r65_n40.pg n 40 iters 3 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r67_n60.pg  CARRY r67_n60.pg n 60 iters 5 maxRE 0 ORET 0 TCH 4 FB 0 ES 0 V1 1 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r68_n70.pg  CARRY r68_n70.pg n 70 iters 3 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r69_n80.pg  CARRY r69_n80.pg n 80 iters 4 maxRE 0 ORET 0 TCH 2 FB 0 ES 1 V1 2 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r6_n80.pg  CARRY r6_n80.pg n 80 iters 4 maxRE 0 ORET 3 TCH 4 FB 0 ES 0 V1 4 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r70_n20.pg  CARRY r70_n20.pg n 20 iters 2 maxRE 0 ORET 0 TCH 0 FB 0 ES 1 V1 2 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r71_n30.pg  CARRY r71_n30.pg n 30 iters 4 maxRE 0 ORET 1 TCH 4 FB 0 ES 0 V1 2 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r72_n40.pg  CARRY r72_n40.pg n 40 iters 4 maxRE 0 ORET 1 TCH 4 FB 0 ES 0 V1 2 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r73_n50.pg  CARRY r73_n50.pg n 50 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r75_n70.pg  CARRY r75_n70.pg n 70 iters 5 maxRE 0 ORET 0 TCH 4 FB 0 ES 0 V1 1 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r74_n60.pg  CARRY r74_n60.pg n 60 iters 3 maxRE 0 ORET 1 TCH 3 FB 0 ES 0 V1 2 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r78_n30.pg  CARRY r78_n30.pg n 30 iters 3 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r76_n80.pg  CARRY r76_n80.pg n 80 iters 5 maxRE 0 ORET 1 TCH 4 FB 0 ES 0 V1 2 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r77_n20.pg  CARRY r77_n20.pg n 20 iters 4 maxRE 0 ORET 0 TCH 1 FB 1 ES 1 V1 2 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r79_n40.pg  CARRY r79_n40.pg n 40 iters 4 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r7_n20.pg  CARRY r7_n20.pg n 20 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r80_n50.pg  CARRY r80_n50.pg n 50 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r81_n60.pg  CARRY r81_n60.pg n 60 iters 5 maxRE 0 ORET 1 TCH 4 FB 0 ES 0 V1 2 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r82_n70.pg  CARRY r82_n70.pg n 70 iters 3 maxRE 0 ORET 0 TCH 3 FB 0 ES 0 V1 1 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r83_n80.pg  CARRY r83_n80.pg n 80 iters 4 maxRE 0 ORET 2 TCH 4 FB 0 ES 0 V1 3 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r84_n20.pg  CARRY r84_n20.pg n 20 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r85_n30.pg  CARRY r85_n30.pg n 30 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r86_n40.pg  CARRY r86_n40.pg n 40 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r87_n50.pg  CARRY r87_n50.pg n 50 iters 2 maxRE 0 ORET 1 TCH 2 FB 0 ES 0 V1 2 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r88_n60.pg  CARRY r88_n60.pg n 60 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r89_n70.pg  CARRY r89_n70.pg n 70 iters 4 maxRE 0 ORET 5 TCH 3 FB 0 ES 0 V1 6 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r8_n30.pg  CARRY r8_n30.pg n 30 iters 5 maxRE 0 ORET 0 TCH 4 FB 0 ES 0 V1 1 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r90_n80.pg  CARRY r90_n80.pg n 80 iters 5 maxRE 0 ORET 1 TCH 5 FB 0 ES 0 V1 2 V2 6 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r92_n30.pg  CARRY r92_n30.pg n 30 iters 4 maxRE 0 ORET 1 TCH 4 FB 0 ES 0 V1 2 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r91_n20.pg  CARRY r91_n20.pg n 20 iters 3 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r93_n40.pg  CARRY r93_n40.pg n 40 iters 4 maxRE 0 ORET 0 TCH 4 FB 0 ES 0 V1 1 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r94_n50.pg  CARRY r94_n50.pg n 50 iters 5 maxRE 0 ORET 2 TCH 5 FB 0 ES 0 V1 3 V2 6 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r96_n70.pg  CARRY r96_n70.pg n 70 iters 4 maxRE 0 ORET 1 TCH 3 FB 0 ES 0 V1 2 V2 4 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r95_n60.pg  CARRY r95_n60.pg n 60 iters 6 maxRE 0 ORET 1 TCH 6 FB 0 ES 0 V1 2 V2 7 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r97_n80.pg  CARRY r97_n80.pg n 80 iters 4 maxRE 0 ORET 0 TCH 4 FB 0 ES 0 V1 1 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r99_n30.pg  CARRY r99_n30.pg n 30 iters 2 maxRE 0 ORET 0 TCH 1 FB 0 ES 0 V1 1 V2 2 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r98_n20.pg  CARRY r98_n20.pg n 20 iters 2 maxRE 0 ORET 0 TCH 2 FB 0 ES 0 V1 1 V2 3 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/rnd/r9_n40.pg  CARRY r9_n40.pg n 40 iters 5 maxRE 0 ORET 0 TCH 3 FB 1 ES 0 V1 1 V2 5 R1 0.000 None R2 0.000 None R3 0.000 None V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/fcobsP_3.pg  CARRY fcobsP_3.pg n 90 iters 41 maxRE 2 ORET 0 TCH 4 FB 0 ES 34 V1 35 V2 39 R1 0.057 (86, 49) R2 0.051 (86, 49) R3 0.051 (86, 17) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME new/box59/out/fcobsP_4.pg  CARRY fcobsP_4.pg n 115 iters 47 maxRE 2 ORET 0 TCH 5 FB 0 ES 39 V1 40 V2 45 R1 0.050 (111, 63) R2 0.044 (111, 63) R3 0.045 (111, 19) V1VIOL 0 V2VIOL 0 V3VIOL 0
+GAME red/seg/instances/s3quad_K8_m30.pg  CARRY s3quad_K8_m30.pg n 479 iters 264 maxRE 7 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1 R1 7.000 (189, 476) R2 7.000 (189, 476) R3 7.000 (189, 476) V1VIOL 1 V2VIOL 1 V3VIOL 1
+GAME new/box59/out/fcobs_6.pg  CARRY fcobs_6.pg n 163 iters 62 maxRE 3 ORET 0 TCH 7 FB 0 ES 51 V1 52 V2 59 R1 0.058 (111, 113) R2 0.051 (111, 113) R3 0.053 (111, 113) V1VIOL 0 V2VIOL 0 V3VIOL 0

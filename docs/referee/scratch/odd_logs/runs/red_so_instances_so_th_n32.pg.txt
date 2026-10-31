@@ -1,0 +1,16 @@
+GAME red/so/instances/so_th_n32.pg
+CNT_chk 39
+EQHI 10
+FR 56
+FR_maxpair 3
+GAMES 1
+OLD_chk 465
+ROOT_chk 22
+ROOT_endPE 22
+ROOT_maxlen 1
+STEP_caseII 19
+STEP_chk 72
+trans 22
+wruns 2
+VIOLATIONS 0
+RC 0

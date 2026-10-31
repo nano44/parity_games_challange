@@ -1,0 +1,7 @@
+GAME red/lag/instances/depth3_n46.pg
+GAMES 1
+OLD_chk 41
+STEP_caseII 34
+STEP_chk 99
+VIOLATIONS 0
+RC 0

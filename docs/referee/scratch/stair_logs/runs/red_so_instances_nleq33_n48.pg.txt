@@ -1,0 +1,13 @@
+GAME red/so/instances/nleq33_n48.pg
+BIT_chk 124
+DESC 0
+FROZEN_chk 33
+GAMES 1
+ROOT_chk 39
+TD 655
+WCH 43
+WCT 33
+trans 33
+wruns 1
+VIOLATIONS 0
+RC 0

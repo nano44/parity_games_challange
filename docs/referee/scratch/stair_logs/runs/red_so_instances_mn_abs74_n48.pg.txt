@@ -1,0 +1,14 @@
+GAME red/so/instances/mn_abs74_n48.pg
+BIT_chk 333
+DCOPY_chk 2
+DESC 6
+FROZEN_chk 10
+GAMES 1
+ROOT_chk 22
+TD 32
+WCH 139
+WCT 10
+trans 10
+wruns 4
+VIOLATIONS 0
+RC 0

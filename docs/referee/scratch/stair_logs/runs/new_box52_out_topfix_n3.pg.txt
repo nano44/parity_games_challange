@@ -1,0 +1,14 @@
+GAME new/box52/out/topfix_n3.pg
+BIT_chk 876
+DCOPY_chk 56
+DESC 124
+FROZEN_chk 49
+GAMES 1
+ROOT_chk 438
+TD 2827
+WCH 438
+WCT 49
+trans 49
+wruns 4
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,16 @@
+GAME new/box52/out/topfix_n3.pg
+ASC 30
+CNT_chk 127
+FR 163
+FR_maxpair 6
+GAMES 1
+OLD_chk 649
+ROOT_chk 192
+ROOT_endPE 192
+ROOT_maxlen 1
+STEP_caseII 83
+STEP_chk 1647
+trans 49
+wruns 4
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,12 @@
+GAME red/n5inj/instances/block_bk32.pg
+CNT_chk 30
+EQHI 2
+FR 37
+FR_maxpair 2
+GAMES 1
+OLD_chk 158
+STEP_chk 49
+trans 21
+wruns 1
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,15 @@
+GAME red/fbr/instances/nep80_n40.pg
+CNT_chk 10
+FR 10
+FR_maxpair 1
+GAMES 1
+OLD_chk 286
+ROOT_chk 32
+ROOT_endPE 32
+ROOT_maxlen 3
+STEP_caseII 29
+STEP_chk 176
+trans 9
+wruns 4
+VIOLATIONS 0
+RC 0

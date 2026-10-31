@@ -1,0 +1,14 @@
+GAME red/so/instances/pft35_n48.pg
+BIT_chk 854
+DCOPY_chk 12
+DESC 64
+FROZEN_chk 38
+GAMES 1
+ROOT_chk 126
+TD 544
+WCH 161
+WCT 38
+trans 38
+wruns 2
+VIOLATIONS 0
+RC 0

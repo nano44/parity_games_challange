@@ -1,0 +1,15 @@
+GAME n5-exhaustive/instances/b6_xw_n40.pg
+DCOPIED 30
+DR 40
+DR_chk 73
+DS 3
+DT 0
+GAMES 1
+NF_chk 123
+ON_chk 117
+ROLD 0
+TS 0
+trans 66
+wruns 7
+VIOLATIONS 0
+RC 0

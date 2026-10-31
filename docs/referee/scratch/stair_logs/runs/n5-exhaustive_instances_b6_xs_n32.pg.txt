@@ -1,0 +1,13 @@
+GAME n5-exhaustive/instances/b6_xs_n32.pg
+BIT_chk 72
+DESC 0
+FROZEN_chk 29
+GAMES 1
+ROOT_chk 29
+TD 354
+WCH 36
+WCT 29
+trans 29
+wruns 1
+VIOLATIONS 0
+RC 0

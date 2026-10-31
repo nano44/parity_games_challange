@@ -1,0 +1,44 @@
+BIT_V 6448
+BIT_chk 7206
+DCOPY_chk 35
+DESC 119
+FG_V 2650
+FROZEN_chk 143
+GAMES 5
+ROOT_chk 2784
+TD 4270
+WCH 2869
+WCT 134
+trans 143
+wruns 12
+VIOLATIONS 9098
+EX ('BIT', 'x31_rx48.pg', 2, 0)
+EX ('BIT', 'x31_rx48.pg', 2, 3)
+EX ('BIT', 'x31_rx48.pg', 2, 3)
+EX ('BIT', 'x31_rx48.pg', 2, 4)
+EX ('BIT', 'x31_rx48.pg', 2, 4)
+EX ('BIT', 'x31_rx48.pg', 2, 6)
+EX ('BIT', 'x31_rx48.pg', 2, 6)
+EX ('BIT', 'x31_rx48.pg', 2, 11)
+EX ('BIT', 'x31_rx48.pg', 2, 11)
+EX ('BIT', 'x31_rx48.pg', 2, 12)
+EX ('BIT', 'x31_rx48.pg', 2, 13)
+EX ('BIT', 'x31_rx48.pg', 2, 13)
+EX ('BIT', 'x31_rx48.pg', 2, 16)
+EX ('BIT', 'x31_rx48.pg', 2, 16)
+EX ('BIT', 'x31_rx48.pg', 2, 17)
+EX ('BIT', 'x31_rx48.pg', 2, 17)
+EX ('BIT', 'x31_rx48.pg', 2, 18)
+EX ('BIT', 'x31_rx48.pg', 2, 19)
+EX ('BIT', 'x31_rx48.pg', 2, 19)
+EX ('BIT', 'x31_rx48.pg', 2, 21)
+EX ('BIT', 'x31_rx48.pg', 2, 23)
+EX ('BIT', 'x31_rx48.pg', 2, 24)
+EX ('BIT', 'x31_rx48.pg', 2, 24)
+EX ('BIT', 'x31_rx48.pg', 2, 26)
+EX ('BIT', 'x31_rx48.pg', 2, 26)
+EX ('BIT', 'x31_rx48.pg', 2, 29)
+EX ('BIT', 'x31_rx48.pg', 2, 29)
+EX ('BIT', 'x31_rx48.pg', 2, 31)
+EX ('BIT', 'x31_rx48.pg', 2, 31)
+EX ('BIT', 'x31_rx48.pg', 2, 32)

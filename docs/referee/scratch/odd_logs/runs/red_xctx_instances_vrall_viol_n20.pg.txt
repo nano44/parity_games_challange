@@ -1,0 +1,6 @@
+GAME red/xctx/instances/vrall_viol_n20.pg
+GAMES 1
+STEP_caseII 20
+STEP_chk 68
+VIOLATIONS 0
+RC 0

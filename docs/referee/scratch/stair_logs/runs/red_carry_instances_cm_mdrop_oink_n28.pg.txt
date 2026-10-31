@@ -1,0 +1,13 @@
+GAME red/carry/instances/cm_mdrop_oink_n28.pg
+BIT_chk 16
+DESC 0
+FROZEN_chk 1
+GAMES 1
+ROOT_chk 8
+TD 9
+WCH 8
+WCT 1
+trans 1
+wruns 1
+VIOLATIONS 0
+RC 0

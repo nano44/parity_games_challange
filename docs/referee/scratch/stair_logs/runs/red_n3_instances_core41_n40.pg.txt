@@ -1,0 +1,14 @@
+GAME red/n3/instances/core41_n40.pg
+BIT_chk 588
+DCOPY_chk 15
+DESC 23
+FROZEN_chk 35
+GAMES 1
+ROOT_chk 183
+TD 1804
+WCH 252
+WCT 35
+trans 35
+wruns 7
+VIOLATIONS 0
+RC 0

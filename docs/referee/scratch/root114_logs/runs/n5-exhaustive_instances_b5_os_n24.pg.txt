@@ -1,0 +1,15 @@
+GAME n5-exhaustive/instances/b5_os_n24.pg
+DCOPIED 0
+DR 1
+DR_chk 1
+DS 0
+DT 0
+GAMES 1
+NF_chk 42
+ON_chk 42
+ROLD 0
+TS 0
+trans 43
+wruns 9
+VIOLATIONS 0
+RC 0

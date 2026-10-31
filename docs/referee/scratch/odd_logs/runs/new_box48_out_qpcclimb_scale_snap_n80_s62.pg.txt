@@ -1,0 +1,17 @@
+GAME new/box48/out/qpcclimb/scale/snap_n80_s62.pg
+ASC 1
+CNT_chk 177
+FR 179
+FR_maxpair 2
+GAMES 1
+OLD_chk 2274
+ROOT_chk 1138
+ROOT_endPE 1138
+ROOT_endPE_oddonly 5
+ROOT_maxlen 5
+STEP_caseII 25
+STEP_chk 3780
+trans 93
+wruns 8
+VIOLATIONS 0
+RC 0

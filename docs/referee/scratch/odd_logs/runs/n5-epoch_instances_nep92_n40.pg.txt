@@ -1,0 +1,16 @@
+GAME n5-epoch/instances/nep92_n40.pg
+ASC 1
+CNT_chk 149
+FR 150
+FR_maxpair 2
+GAMES 1
+OLD_chk 1149
+ROOT_chk 313
+ROOT_endPE 313
+ROOT_maxlen 3
+STEP_caseII 117
+STEP_chk 686
+trans 87
+wruns 9
+VIOLATIONS 0
+RC 0

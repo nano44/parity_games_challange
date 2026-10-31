@@ -1,0 +1,15 @@
+GAME red/xing/instances/u2flat_n32.pg
+DCOPIED 1
+DR 0
+DR_chk 4
+DS 3
+DT 0
+GAMES 1
+NF_chk 1
+ON_chk 1
+ROLD 0
+TS 2
+trans 7
+wruns 6
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,7 @@
+GAME red/ctxp/instances/deep1_n13.pg
+GAMES 1
+OLD_chk 1
+STEP_caseII 3
+STEP_chk 7
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,16 @@
+GAME n5-epoch/instances/ret14_n48.pg
+CNT_chk 64
+FR 64
+FR_maxpair 1
+GAMES 1
+OLD_chk 995
+ROOT_chk 185
+ROOT_endPE 185
+ROOT_endPE_oddonly 2
+ROOT_maxlen 3
+STEP_caseII 11
+STEP_chk 427
+trans 41
+wruns 13
+VIOLATIONS 0
+RC 0

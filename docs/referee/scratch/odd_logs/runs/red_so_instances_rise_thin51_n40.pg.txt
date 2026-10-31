@@ -1,0 +1,15 @@
+GAME red/so/instances/rise_thin51_n40.pg
+CNT_chk 125
+FR 127
+FR_maxpair 2
+GAMES 1
+OLD_chk 901
+ROOT_chk 120
+ROOT_endPE 120
+ROOT_maxlen 2
+STEP_caseII 14
+STEP_chk 156
+trans 64
+wruns 8
+VIOLATIONS 0
+RC 0

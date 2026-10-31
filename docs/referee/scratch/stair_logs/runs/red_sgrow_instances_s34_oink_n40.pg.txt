@@ -1,0 +1,13 @@
+GAME red/sgrow/instances/s34_oink_n40.pg
+BIT_chk 20
+DESC 0
+FROZEN_chk 2
+GAMES 1
+ROOT_chk 10
+TD 88
+WCH 10
+WCT 2
+trans 2
+wruns 1
+VIOLATIONS 0
+RC 0

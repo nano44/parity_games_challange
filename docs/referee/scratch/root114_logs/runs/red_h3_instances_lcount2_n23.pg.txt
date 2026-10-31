@@ -1,0 +1,15 @@
+GAME red/h3/instances/lcount2_n23.pg
+DCOPIED 3
+DR 1
+DR_chk 6
+DS 1
+DT 1
+GAMES 1
+NF_chk 5
+ON_chk 4
+ROLD 0
+TS 1
+trans 3
+wruns 1
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,14 @@
+GAME red/fbr/instances/nep80_n40.pg
+DCOPIED 0
+DR 0
+DS 0
+DT 0
+GAMES 1
+NF_chk 10
+ON_chk 10
+ROLD 0
+TS 0
+trans 9
+wruns 4
+VIOLATIONS 0
+RC 0

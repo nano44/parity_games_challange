@@ -1,0 +1,11 @@
+GAME red/n5inj/instances/blockph_bp20.pg
+CNT_chk 27
+FR 30
+FR_maxpair 2
+GAMES 1
+OLD_chk 77
+STEP_chk 25
+trans 22
+wruns 2
+VIOLATIONS 0
+RC 0

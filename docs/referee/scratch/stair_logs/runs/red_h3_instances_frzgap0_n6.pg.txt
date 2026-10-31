@@ -1,0 +1,13 @@
+GAME red/h3/instances/frzgap0_n6.pg
+BIT_chk 4
+DESC 0
+FROZEN_chk 2
+GAMES 1
+ROOT_chk 2
+TD 7
+WCH 2
+WCT 2
+trans 2
+wruns 1
+VIOLATIONS 0
+RC 0

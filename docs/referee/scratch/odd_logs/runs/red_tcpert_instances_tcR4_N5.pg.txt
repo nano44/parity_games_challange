@@ -1,0 +1,7 @@
+GAME red/tcpert/instances/tcR4_N5.pg
+GAMES 1
+OLD_chk 712
+STEP_caseII 81
+STEP_chk 700
+VIOLATIONS 0
+RC 0

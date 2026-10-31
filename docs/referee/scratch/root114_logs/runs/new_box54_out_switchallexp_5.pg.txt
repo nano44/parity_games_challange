@@ -1,0 +1,15 @@
+GAME new/box54/out/switchallexp_5.pg
+DCOPIED 3
+DR 4
+DR_chk 7
+DS 0
+DT 0
+GAMES 1
+NF_chk 5
+ON_chk 5
+ROLD 0
+TS 0
+trans 4
+wruns 1
+VIOLATIONS 0
+RC 0

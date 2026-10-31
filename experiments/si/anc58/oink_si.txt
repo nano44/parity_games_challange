@@ -1,0 +1,6 @@
+switchallexp_1.pg iterations 10 | zielonka(oink zlk) OK strategies verified
+switchallexp_2.pg iterations 30 | zielonka(oink zlk) OK strategies verified
+switchallexp_3.pg iterations 70 | zielonka(oink zlk) OK strategies verified
+switchallexp_4.pg iterations 150 | zielonka(oink zlk) OK strategies verified
+switchallexp_5.pg iterations 310 | zielonka(oink zlk) OK strategies verified
+switchallexp_6.pg iterations 630 | zielonka(oink zlk) OK strategies verified

@@ -1,0 +1,17 @@
+GAME red/so/instances/pftheta_cex_n32.pg
+ASC 4
+CNT_chk 45
+EQHI 6
+FR 62
+FR_maxpair 3
+GAMES 1
+OLD_chk 399
+ROOT_chk 48
+ROOT_endPE 48
+ROOT_maxlen 2
+STEP_caseII 17
+STEP_chk 152
+trans 34
+wruns 1
+VIOLATIONS 0
+RC 0

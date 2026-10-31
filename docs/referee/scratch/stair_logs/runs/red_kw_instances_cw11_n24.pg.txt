@@ -1,0 +1,12 @@
+GAME red/kw/instances/cw11_n24.pg
+BIT_chk 48
+DESC 1
+FROZEN_chk 12
+GAMES 1
+TD 0
+WCH 12
+WCT 5
+trans 12
+wruns 5
+VIOLATIONS 0
+RC 0

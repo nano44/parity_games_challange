@@ -994,12 +994,15 @@ echo "si (box 53d: source-free A-flats): PASS"
 # box 54 (docs/si/N5-SRC-box54.md, Lead 08:13Z): OLD-PLAY / ODD-STEP / ODD-RELAY checks (0 violations, MUT control bites); W-rank,
 # ASC-W and TURN-W DEAD (sbq2_K8_m16, src2_K3); corpus outputs complete and violation-free.
 ( cd src54/inst && sha1sum -c --quiet pins.sha1 ) || { echo "box 54: pins changed"; exit 1; }
-o=$(python3 -I src54/oddadd.py src54/inst/sbq2_K8_m16.pg src54/inst/sbq2_K8_m16.start)
-case "$o" in *"VOLD 0 ODDCH 2237 VSTEP 0 VSTEPB 0 OSRC 769 PROP 120 PFX 649 PFXSW 649 PFXDIN 0 PFXNOU 0 VADD 0 MAXHXS 128 MAXPFX 72"*) ;; *) echo "box 54: oddadd sbq2: $o"; exit 1;; esac
-o=$(MUT=1 python3 -I src54/oddadd.py src54/inst/sbq2_K8_m16.pg src54/inst/sbq2_K8_m16.start)
-case "$o" in *"VOLD 2881 "*) ;; *) echo "box 54: MUT control did not bite: $o"; exit 1;; esac
-o=$(python3 -I src54/wtie.py src54/inst/sbq2_K8_m16.pg src54/inst/sbq2_K8_m16.start 260)
-case "$o" in *"states 153 Wtie 153 sbflips 128"*) ;; *) echo "box 54: wtie sbq2: $o"; exit 1;; esac
+# P-N5-ODD fixes entry 4 (D-ODD-1 / F-1): sbq2_K8_m16.start has the non-edge 242:243; rows below use sbq2_K8_m16_fix.start (242:244).
+if python3 -I src54/wtie.py src54/inst/sbq2_K8_m16.pg src54/inst/sbq2_K8_m16.start 260 >/dev/null 2>&1; then echo "box 54: invalid sbq2 start accepted"; exit 1; fi
+[ "$(sha1sum < src54/inst/sbq2_K8_m16_fix.start)" = "83a57866574c36b85646864b06349196d2b8d312  -" ] || { echo "box 54: sbq2 fix start changed"; exit 1; }
+o=$(python3 -I src54/oddadd.py src54/inst/sbq2_K8_m16.pg src54/inst/sbq2_K8_m16_fix.start)
+case "$o" in *"VOLD 0 ODDCH 2206 VSTEP 0 VSTEPB 0 OSRC 762 PROP 120 PFX 642 PFXSW 642 PFXDIN 0 PFXNOU 0 VADD 0 MAXHXS 136 MAXPFX 72"*) ;; *) echo "box 54: oddadd sbq2: $o"; exit 1;; esac
+o=$(MUT=1 python3 -I src54/oddadd.py src54/inst/sbq2_K8_m16.pg src54/inst/sbq2_K8_m16_fix.start)
+case "$o" in *"VOLD 2849 "*) ;; *) echo "box 54: MUT control did not bite: $o"; exit 1;; esac
+o=$(python3 -I src54/wtie.py src54/inst/sbq2_K8_m16.pg src54/inst/sbq2_K8_m16_fix.start 260)
+case "$o" in *"taus 2 states 153 Wtie 0 sbflips 128"*) ;; *) echo "box 54: wtie sbq2: $o"; exit 1;; esac
 o=$(python3 -I src54/ascw.py src54/inst/src2_K3.pg src54/inst/src2_K3.start)
 case "$o" in *"TURNBAD 67 SRCTURNBAD 23 "*"NA 3692 BAD 1012 "*) ;; *) echo "box 54: ascw src2: $o"; exit 1;; esac
 [ "$(cat src54/odd_*.txt | grep -c ODDADD)" = 1132 ] || { echo "box 54: oddadd outputs incomplete"; exit 1; }
@@ -1029,6 +1032,72 @@ case "$o" in *"DESCV nep56_n32.pg 28 2 ((1, 22), 9) ((1, 25), 13)"*"DESCV 1 "*) 
 [ "$(cat grow56/grow_*.txt | grep -c ' GROW ')" = 1132 ] || { echo "box 56: grow outputs incomplete"; exit 1; }
 [ "$(cat grow56/fuel_*.txt | grep -c ' SRCFUEL ')" = 1132 ] || { echo "box 56: srcfuel outputs incomplete"; exit 1; }
 echo "si (box 56: first-segment re-growth; FUEL-MONO / FUEL-DESC dead): PASS"
+# box 57 (docs/si/N5-FLEX-box57.md, Lead 11:23Z): FUEL-LEX (LEXV 0) on nep56_n32 (ASC 2) and so_th_n32 (EQHI 6); corpus LEXV 0.
+o=$(python3 -I grow56/srcfuel.py ../n5-epoch/instances/nep56_n32.pg ../n5-epoch/instances/nep56_n32.start)
+case "$o" in *"LEXV 0 ASC 2 EQHI 0 REP 0 MAXRUNS 2 YONZ 11 FUELEV 56"*) ;; *) echo "box 57: nep56: $o"; exit 1;; esac
+o=$(python3 -I grow56/srcfuel.py ../red/so/instances/so_th_n32.pg)
+case "$o" in *"LEXV 0 ASC 0 EQHI 6 REP 0 "*) ;; *) echo "box 57: so_th: $o"; exit 1;; esac
+[ "$(cat grow56/fuel_*.txt | grep -c ' LEXV ')" = 1132 ] || { echo "box 57: srcfuel outputs incomplete"; exit 1; }
+if grep -q "LEXV [1-9]" grow56/fuel_*.txt; then echo "box 57: FUEL-LEX violation"; exit 1; fi
+echo "si (box 57: FUEL-LEX): PASS"
+# box 58 (docs/si/N5-ANC-box58.md, Lead 13:06Z): key ancestry. Lemma checks 0 on sbq2 and on classical switch-all SI (switchallexp_6:
+# one pair re-routed 64 = 2^6 times, no self-feeding); corpus outputs complete and violation-free.
+o=$(python3 -I anc58/anc.py src54/inst/sbq2_K8_m16.pg src54/inst/sbq2_K8_m16_fix.start)
+case "$o" in *"PREFV 0 OLDV 0 EVENV 0 ODDV 0 ODD2 475 ODD2V 0 ARM 513 ARMV 0 INIT 16 EROOT 2642 OROOT 239 LOOP 0 "*"FUELEV 496 GAINV 0 HC 77 SELF1 0 CHAINV 0 "*"SELFESC 2 SELFESC0 1 MAXHC 1 MAXSELF 1 MAXFUEL 8 WESC 1 "*) ;; *) echo "box 58: sbq2: $o"; exit 1;; esac
+(cd anc58/inst && sha1sum -c --quiet pins.sha1) || { echo "box 58: switchallexp pins changed"; exit 1; }
+o=$(python3 -I anc58/anc.py --si anc58/inst/switchallexp_6.pg)
+case "$o" in *"iters 630 "*"PREFV 0 OLDV 0 EVENV 0 ODDV 0 "*"ODD2V 0 "*"ARMV 0 "*"GAINV 0 "*"SELF1 0 CHAINV 0 "*"SELFESC 0 "*"MAXFUEL 64 "*) ;; *) echo "box 58: switchallexp_6: $o"; exit 1;; esac
+[ "$(cat anc58/anc_*.txt | grep -c ' ANC ')" = 1132 ] || { echo "box 58: anc outputs incomplete"; exit 1; }
+if grep -qE "(PREFV|OLDV|EVENV|ODDV|ODD2V|ARMV|GAINV|CHAINV|LOOPLOW0) [1-9]" anc58/anc_*.txt; then echo "box 58: ancestry violation"; exit 1; fi
+echo "si (box 58: ANCESTRY): PASS"
+# box 58 §7 (Lead 14:47Z): repeat escapes. Switch-all SI repeats one (s, x) at an equal swap key 2^(N-1) - 1 times; N5 PLAT <= 1.
+o=$(python3 -I anc58/anc.py --si anc58/inst/switchallexp_6.pg)
+case "$o" in *"ESCREP 57 ESCNODESC 57 ESCEQ 57 MAXPLAT 31 ESCNONMONO 0 "*) ;; *) echo "box 58 s7: switchallexp_6: $o"; exit 1;; esac
+o=$(python3 -I anc58/anc.py ../new/box54/out/switchbestexp_5.pg)
+case "$o" in *"ESCEQ 3 MAXPLAT 1 ESCNONMONO 0 "*"MAXESC_SX 2 "*) ;; *) echo "box 58 s7: switchbestexp_5: $o"; exit 1;; esac
+o=$(python3 -I anc58/anc.py ../red/usplit/instances/pp_K48_n449.pg ../red/usplit/instances/pp_K48_n449.start)
+case "$o" in *"ESCREP 45 ESCNODESC 45 ESCEQ 0 MAXPLAT 0 ESCNONMONO 0 ESCASC 45 MAXESC_SX 24 "*) ;; *) echo "box 58 s7: pp_K48: $o"; exit 1;; esac
+[ "$(grep -c ' ANC ' anc58/esc_corpus.txt)" = 1132 ] || { echo "box 58 s7: esc corpus incomplete"; exit 1; }
+if grep -qE "MAXPLAT ([2-9]|[1-9][0-9])|ESCNONMONO [1-9]" anc58/esc_corpus.txt; then echo "box 58 s7: PLAT / ESC-MONO data changed"; exit 1; fi
+echo "si (box 58 s7: repeat escapes): PASS"
+# box 58 §8 (Lead 18:36Z): «re-opening needs a W-rise on x's / x2's W-play» DEAD on Odd-only 2-cycles (n3cov_lean, n3cov_phi); CONJECTURE
+# W-REOPEN (escaped cycle with an Even vertex) 0 violations in the corpus; W never drops inside a W-run (R164 W-MON).
+o=$(python3 -I anc58/wrise.py ../red/n3/instances/n3cov_lean.pg ../red/n3/instances/n3cov_lean_fixed.start)
+case "$o" in *"ODDONLY 1 ODDONLY_NOWRISE 1 EVEN_NOWRISE 0 REP 2 EQ 1 EQ_WRISE 0 EQ_NOWRISE 1 "*"WMONV 0"*) ;; *) echo "box 58 s8: n3cov_lean: $o"; exit 1;; esac
+o=$(python3 -I anc58/wrise.py ../red/n3/instances/n3cov_phi.pg anc58/inst/n3cov_phi_full.start)
+case "$o" in *"ODDONLY 3 ODDONLY_NOWRISE 2 EVEN_NOWRISE 0 REP 3 "*"WMONV 0"*) ;; *) echo "box 58 s8: n3cov_phi: $o"; exit 1;; esac
+[ "$(grep -c 'WRISE ' anc58/wrise_corpus.txt)" = 1132 ] || { echo "box 58 s8: wrise corpus incomplete"; exit 1; }
+if grep -qE "EVEN_NOWRISE [1-9]|WMONV [1-9]" anc58/wrise_corpus.txt; then echo "box 58 s8: W-REOPEN / W-MON data changed"; exit 1; fi
+echo "si (box 58 s8: W-REOPEN): PASS"
+# box 58 §9 (Lead 19:33Z): Lemma ESC-XCH data: every W-run escape has Xi(s) and Xi(x) changing; Odd-only escapes never exceed XCH_F(x).
+[ "$(grep -c 'ODDONLY ' anc58/oddonly_corpus.txt)" = 1132 ] || { echo "box 58 s9: oddonly corpus incomplete"; exit 1; }
+if grep -qE "OOEXCESS [1-9]" anc58/oddonly_corpus.txt; then echo "box 58 s9: ESC-XCH violated"; exit 1; fi
+o=$(awk '{for(i=1;i<=NF;i++){if($i=="ALLESC")a+=$(i+1); if($i=="ALLXCHX")b+=$(i+1); if($i=="ALLSCH")c+=$(i+1)}} END{print a, b, c}' anc58/oddonly_corpus.txt)
+[ "$o" = "1434 1434 1434" ] || { echo "box 58 s9: ESC-XCH data: $o"; exit 1; }
+o=$(python3 -I anc58/oddonly.py ../red/n3/instances/n3cov_phi.pg anc58/inst/n3cov_phi_full.start)
+case "$o" in *"OOEXCESS 0"*) ;; *) echo "box 58 s9: n3cov_phi: $o"; exit 1;; esac
+echo "si (box 58 s9: ESC-XCH): PASS"
+# box 58 §10 (Lead 20:00Z): «Odd W-SEP» DEAD (frz2_n24 u 17: Odd 12 18 -> 19 = tau(12) on an escaped cycle with an Even vertex, no W-rise).
+o=$(python3 -I anc58/wsep.py ../n5-exhaustive/instances/frz2_n24.pg)
+case "$o" in *"ESCNOSEP o 12 17 18 19 19"*"ESCE 3 ESCED 3 ESCESEP 2 ESCENOSEP 1 "*) ;; *) echo "box 58 s10: frz2_n24: $o"; exit 1;; esac
+[ "$(grep -c 'WSEP ' anc58/wsep_corpus.txt)" = 1132 ] || { echo "box 58 s10: wsep corpus incomplete"; exit 1; }
+o=$(awk '{for(i=1;i<=NF;i++){if($i=="ESCE")a+=$(i+1); if($i=="ESCENOSEP")b+=$(i+1)}} END{print a, b}' anc58/wsep_corpus.txt)
+[ "$o" = "1514 136" ] || { echo "box 58 s10: wsep corpus totals: $o"; exit 1; }
+echo "si (box 58 s10: Odd W-SEP DEAD): PASS"
+# P-N5-ODD (FROZEN packet, boxes 54/55/57; line docs/si/P-N5-ODD-line.txt): must not change. Data pins: «box 54», «box 55», «box 57».
+echo "03eec41d3bfc63a6945d0f30d831a46f14e46b84  ../../docs/si/P-N5-ODD-box57.md" | sha1sum -c --quiet
+echo "cd121dffd06dbc794f3154e34aa238d8df81f837  ../../docs/si/P-N5-ODD-line.txt" | sha1sum -c --quiet
+echo "si (P-N5-ODD pinned): PASS"
+# P-N5-ODD line revision L-1 (fixes entry 3; both referees word-diff it): must not change.
+echo "3e25138b9e7ef228ddba306d35ae3897cb797ea2  ../../docs/si/P-N5-ODD-line-L1.txt" | sha1sum -c --quiet
+echo "si (P-N5-ODD L-1 pinned): PASS"
+# P-N5-ODD line revision L-2 (fixes entry 5, ODD-L5): must not change.
+echo "ee114e2fe704a8ebf278910e6097a126afe94780  ../../docs/si/P-N5-ODD-line-L2.txt" | sha1sum -c --quiet
+echo "si (P-N5-ODD L-2 pinned): PASS"
+# P-N5-ODD line revision L-3 (fixes entry 6, CHECKER C108 E-1 / N-1): must not change.
+echo "f83b169ed1d51015a28ece3d34bd522cee72737a  ../../docs/si/P-N5-ODD-line-L3.txt" | sha1sum -c --quiet
+echo "si (P-N5-ODD L-3 pinned): PASS"
+if python3 -I startcheck.py root/instances/l121ereader_n41.pg root/instances/l121ereader_n41.start >/dev/null; then echo "l121ereader: wrong-owner entry not detected"; exit 1; fi
 # P-N5-SETTLE line revision L-1 (fixes entry 1; both referees word-diff it): must not change.
 echo "997e39eee8d72ae94be4764bb1e3841914ffc78e  ../../docs/si/P-N5-SETTLE-line-L1.txt" | sha1sum -c --quiet
 echo "si (P-N5-SETTLE L-1 pinned): PASS"

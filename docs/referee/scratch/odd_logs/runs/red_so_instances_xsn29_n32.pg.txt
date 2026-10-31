@@ -1,0 +1,11 @@
+GAME red/so/instances/xsn29_n32.pg
+CNT_chk 28
+FR 28
+FR_maxpair 1
+GAMES 1
+OLD_chk 42
+STEP_chk 29
+trans 29
+wruns 1
+VIOLATIONS 0
+RC 0

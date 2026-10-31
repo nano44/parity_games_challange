@@ -1,0 +1,21 @@
+MODE files /tmp/claude-0/-home-user-parity-games-challange/6818e6dd-24e8-54a7-b5bf-dc0c0a4d1c69/scratchpad/alns.lst 1 experiments/ MAXT 5000 BF 0
+BITK_checks: 12815
+BWRISE: 4113
+COPY_checks: 5180
+DCOPY_checks: 659
+DESC: 2422
+LEXK_checks: 384826
+RESET_T: 3896
+ROOT_checks: 10492
+SWCH: 12815
+T4: 115
+TD: 74293
+WCT: 4228
+WRUNS: 2867
+WRUN_transitions: 4265
+XIPLAY_checks: 397189
+runs: 319
+transitions: 6813
+max max_LCT_run: 30
+max max_T4_run: (13, 'red/xing/instances/x31_rx48.pg#0')
+RESULT PASS violations 0

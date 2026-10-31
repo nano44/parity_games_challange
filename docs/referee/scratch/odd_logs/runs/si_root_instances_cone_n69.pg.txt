@@ -1,0 +1,9 @@
+GAME si/root/instances/cone_n69.pg
+GAMES 1
+OLD_chk 212
+STEP_caseII 123
+STEP_chk 150
+trans 1
+wruns 1
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,13 @@
+GAME red/fbr/instances/lev74_n40.pg
+BIT_chk 47
+DESC 0
+FROZEN_chk 6
+GAMES 1
+ROOT_chk 17
+TD 104
+WCH 17
+WCT 6
+trans 6
+wruns 3
+VIOLATIONS 0
+RC 0

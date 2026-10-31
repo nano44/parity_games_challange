@@ -1,0 +1,13 @@
+GAME red/ul/instances/reader_L20_n56.pg
+BIT_chk 54
+DESC 1
+FROZEN_chk 23
+GAMES 1
+ROOT_chk 29
+TD 381
+WCH 29
+WCT 23
+trans 23
+wruns 1
+VIOLATIONS 0
+RC 0

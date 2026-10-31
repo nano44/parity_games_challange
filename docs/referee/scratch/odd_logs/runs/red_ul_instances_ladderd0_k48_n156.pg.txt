@@ -1,0 +1,4 @@
+GAME red/ul/instances/ladderd0_k48_n156.pg
+skip_big 1
+VIOLATIONS 0
+RC 0

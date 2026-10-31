@@ -1,0 +1,13 @@
+GAME red/kl24/instances/HL88_0.pg
+BIT_chk 6
+DESC 0
+FROZEN_chk 1
+GAMES 1
+ROOT_chk 3
+TD 24
+WCH 3
+WCT 1
+trans 1
+wruns 1
+VIOLATIONS 0
+RC 0

@@ -358,3 +358,12 @@ What these do NOT give: a bound on SW, XR, NOFRESH or the flip-flops. §8 and §
    ret14_n48 and nep92_n40, for each re-entry of an odd vertex h into z's path set below the top change, record whether h's region contains a
    gate whose τ-option is strictly better for Odd at that state.
 4. Lead's DATA step on [F]'s H_n (routed elsewhere): if N5 runs H_n in one phase, XR there is the counter, and this note's reductions price it.
+
+## ERRATUM (L-SI successor 37, 2026-10-31; after L-NEW 42's start scan, Lead 15:17Z)
+- experiments/si/root/instances/l121ereader_n41.start has one INVALID entry, «TAU0 … 40:30»: vertex 40 is Even, so a τ entry there is
+  wrong-owner (experiments/si/startcheck.py: «START BAD … 40:30 (TAU0 wrong owner)»; 30 is one of 40's successors).
+- The entry is INERT: n5x.trace with and without it gives the same 123 states (σ and τ on Odd vertices identical at every state); only
+  the meaningless τ(40) differs. N5 reads τ only at Odd vertices (SPEC S4).
+- So every claim that used the instance is unchanged: §12's table row (16 switches of the appended Even reader, run SAME, phase [1, 122]),
+  P-N5-CORE fixes N-CORE-6 (NOFRESH 90 over whole phases on long121_n40 / l121ereader_n41), and the two RESULTS lines that cite it
+  (docs/RESULTS.md l. 4475, l. 4487; Lead-owned, no change needed). The file is not edited (sha1 4cec1a16…, as listed in §12).

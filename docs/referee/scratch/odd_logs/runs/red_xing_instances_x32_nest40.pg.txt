@@ -1,0 +1,16 @@
+GAME red/xing/instances/x32_nest40.pg
+ASC 2
+CNT_chk 112
+FR 120
+FR_maxpair 3
+GAMES 1
+OLD_chk 476
+ROOT_chk 44
+ROOT_endPE 44
+ROOT_maxlen 2
+STEP_caseII 13
+STEP_chk 174
+trans 53
+wruns 3
+VIOLATIONS 0
+RC 0

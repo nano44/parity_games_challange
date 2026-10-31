@@ -1,0 +1,13 @@
+GAME red/so/instances/tevlast7_n32.pg
+BIT_chk 195
+DESC 15
+FROZEN_chk 36
+GAMES 1
+ROOT_chk 56
+TD 661
+WCH 65
+WCT 36
+trans 36
+wruns 2
+VIOLATIONS 0
+RC 0

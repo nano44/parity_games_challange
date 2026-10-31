@@ -1,0 +1,15 @@
+GAME n5-epoch/instances/nep56_n32.pg
+DCOPIED 5
+DR 28
+DR_chk 33
+DS 0
+DT 0
+GAMES 1
+NF_chk 84
+ON_chk 83
+ROLD 0
+TS 0
+trans 53
+wruns 4
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,16 @@
+GAME red/xing/instances/u1t_cex_n32.pg
+ASC 1
+CNT_chk 15
+FR 16
+FR_maxpair 2
+GAMES 1
+OLD_chk 190
+ROOT_chk 15
+ROOT_endPE 15
+ROOT_maxlen 1
+STEP_caseII 18
+STEP_chk 72
+trans 7
+wruns 1
+VIOLATIONS 0
+RC 0

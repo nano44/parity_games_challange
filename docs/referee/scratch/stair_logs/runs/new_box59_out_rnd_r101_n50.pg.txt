@@ -1,0 +1,13 @@
+GAME new/box59/out/rnd/r101_n50.pg
+BIT_chk 52
+DESC 0
+FROZEN_chk 1
+GAMES 1
+ROOT_chk 26
+TD 26
+WCH 26
+WCT 1
+trans 1
+wruns 1
+VIOLATIONS 0
+RC 0

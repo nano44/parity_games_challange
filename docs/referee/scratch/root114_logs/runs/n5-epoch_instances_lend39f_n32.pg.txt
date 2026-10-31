@@ -1,0 +1,15 @@
+GAME n5-epoch/instances/lend39f_n32.pg
+DCOPIED 0
+DR 1
+DR_chk 2
+DS 1
+DT 0
+GAMES 1
+NF_chk 32
+ON_chk 32
+ROLD 0
+TS 0
+trans 36
+wruns 9
+VIOLATIONS 0
+RC 0

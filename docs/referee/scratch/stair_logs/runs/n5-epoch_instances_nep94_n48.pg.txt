@@ -1,0 +1,14 @@
+GAME n5-epoch/instances/nep94_n48.pg
+BIT_chk 1610
+DCOPY_chk 47
+DESC 107
+FROZEN_chk 86
+GAMES 1
+ROOT_chk 289
+TD 1672
+WCH 396
+WCT 86
+trans 86
+wruns 8
+VIOLATIONS 0
+RC 0

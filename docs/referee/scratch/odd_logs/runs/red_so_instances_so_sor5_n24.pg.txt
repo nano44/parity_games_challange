@@ -1,0 +1,16 @@
+GAME red/so/instances/so_sor5_n24.pg
+CNT_chk 31
+EQHI 3
+FR 34
+FR_maxpair 2
+GAMES 1
+OLD_chk 109
+ROOT_chk 6
+ROOT_endPE 6
+ROOT_maxlen 1
+STEP_caseII 17
+STEP_chk 46
+trans 21
+wruns 1
+VIOLATIONS 0
+RC 0

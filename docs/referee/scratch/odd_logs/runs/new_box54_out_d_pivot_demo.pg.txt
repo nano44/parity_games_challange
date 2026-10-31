@@ -1,0 +1,7 @@
+GAME new/box54/out/d_pivot_demo.pg
+GAMES 1
+OLD_chk 2
+STEP_caseII 6
+STEP_chk 10
+VIOLATIONS 0
+RC 0

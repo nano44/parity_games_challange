@@ -1,0 +1,14 @@
+GAME n5-epoch/instances/lend13_n16.pg
+DCOPIED 0
+DR 0
+DS 0
+DT 0
+GAMES 1
+NF_chk 12
+ON_chk 12
+ROLD 0
+TS 0
+trans 13
+wruns 1
+VIOLATIONS 0
+RC 0

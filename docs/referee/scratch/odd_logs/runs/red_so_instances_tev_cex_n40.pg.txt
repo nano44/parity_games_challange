@@ -1,0 +1,15 @@
+GAME red/so/instances/tev_cex_n40.pg
+CNT_chk 6
+FR 6
+FR_maxpair 1
+GAMES 1
+OLD_chk 268
+ROOT_chk 12
+ROOT_endPE 12
+ROOT_maxlen 2
+STEP_caseII 35
+STEP_chk 108
+trans 7
+wruns 3
+VIOLATIONS 0
+RC 0

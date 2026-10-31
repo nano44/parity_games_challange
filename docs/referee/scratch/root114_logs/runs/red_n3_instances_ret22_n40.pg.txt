@@ -1,0 +1,15 @@
+GAME red/n3/instances/ret22_n40.pg
+DCOPIED 46
+DR 58
+DR_chk 111
+DS 7
+DT 0
+GAMES 1
+NF_chk 143
+ON_chk 136
+ROLD 0
+TS 0
+trans 82
+wruns 10
+VIOLATIONS 0
+RC 0

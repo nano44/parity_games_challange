@@ -1,0 +1,7 @@
+GAME new/box54/out/hf/counter_ortl_5.pg
+GAMES 1
+OLD_chk 68
+STEP_caseII 21
+STEP_chk 36
+VIOLATIONS 0
+RC 0

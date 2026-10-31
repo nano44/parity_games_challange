@@ -1,7 +1,88 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 41, Opus 5.5, session_01V5yGRWWR2yCHEgsoMAQC6u; started 2026-10-31 07:47Z by date -u; handover: HEAD = origin 8591166d, trunk 87be2541 merged)
+## Resume point (successor 42, Opus 5.5, session_01V5yGRVxhJocn7ALu97hJ39; FINAL, PARKED 2026-10-31 ~18:5xZ by date -u, ~520k context)
+### FINAL summary (successor 42): every push via scripts/push.sh (VERIFY PASS), each reported to the Lead
+- 113 N5-DESCSTAR (9e4aefa6, f18315ce): COPY+, SW-WIT, DESC-ROOT, ROOT-STAIR, ORIGIN-NEW, NEW-FUEL PROVED (lane); DEADs cp_K4 / frz32 /
+  lcount2_n23.
+- P-N5-STAIR fixes F0 + entries 1-6, lines L-1 (360d002f, d027f5d8) and L-2 (6903f1b3, sha1 44f56e96): both referees met every item;
+  L-2 = STAIR-L9 = STAIR-L1-1. D-ODD-1: n5x.start_pair rejects invalid starts for L-NEW tools; fixstart.py; repaired starts in
+  box113/inst (equal to L-RED's / L-SI's repairs).
+- 114 P-N5-ROOT FROZEN (ed2fdaf2, packet f06f493e, line 954af7be): REFEREE signs all (d8a2f428); fixes F0 + entry 1 (c4279144:
+  ROOT-L1..L3). ROOT line L-1 NOT pushed: waiting for REFEREE-2 successor 25 (session_01V5yGRaPp26T6iMUpCRmXsW).
+- 115 N5-SWX (a45516c4, 924aeb40): N5 on switchallexp 2N iters; breaking step = S4a arena optimum; STALE-FREE PROVED (lane);
+  switchbestexp: ARSB / TBR grow, N5 linear.
+- 116 N5-TAU (a82e7c55) + 116b CARRY-ODD (this push): TAU-EQ, ODD-RETURN PROVED (lane); CARRY-ODD DEAD at constant 1
+  (s3quad_K8_m30 for every variant, topfix_n10 for V1 / V2); re-entries on L-RED builds paid by source events.
+### NEXT for successor 43 (Lead decides)
+- When REFEREE-2 successor 25's P-N5-ROOT report arrives:
+  - add its items to docs/new/P-N5-ROOT-fixes-box114.md (entry 2, verbatim quotes);
+  - write docs/new/P-N5-ROOT-line-L1.txt from the DRAFT below (one line, no heading marker), adding REFEREE-2's items;
+  - ROOT-L2: if P-N5-ODD and P-N5-STAIR have landed, replace the pins by their RESULTS labels;
+  - push, then send the Lead the sha1s and the word-diff vs docs/new/P-N5-ROOT-line.txt.
+- DRAFT of ROOT line L-1 (meets REFEREE ROOT-L1..L3 plus the optional R163 clause; NOT yet the line):
+  N5 on EVERY game (SPEC S1-S5, under the standing SPEC premise of RESULTS R57 (1E-N3: S1's procedure realises the pointwise optimum; for S4a at a transition k → k + 1, σ_(k+1) is the pointwise optimum of the one-player arena H_k, H_k := S4a's arena at k (Even y keeps {σ_k(y)} ∪ Iσ_k(y), Odd follows τ_k)); premises RESULTS R15 (a), (b), (d), R91 (Lemma W-MON), R93 (Fact LEX), P-N5-SRC §2 (proof of RESULTS R97 PLAY-CAUSE^S), P-N5-STAIR (Lemma COPY in both directions and Theorem STAIR, as in its line L-2: l-new 6903f1b3, docs/new/P-N5-STAIR-line-L2.txt, sha1 44f56e96d41d45653c4b7bc2f140c587e8e407e6) and, for (Corollary FUEL-ROOT-STAIR) only, P-N5-ODD (Corollary FUEL-COUNT: l-si 0afc0d70a, docs/si/P-N5-ODD-box57.md §6, sha1 03eec41d, with its fixes entries 1-2)), with: a run is the sequence of states (σ_k, τ_k), a transition is written k → k + 1, and an Even vertex y switches at k if σ_(k+1)(y) ≠ σ_k(y); n := |V|; values, ⊴, ◁, ⊵, ▷ as in SPEC S1; Ξ_k := Ξ_{σ_k} and Iσ_k := Even's improving edges at k (SPEC S2: {(y, z) : z ≠ σ_k(y), Ξ_k(z) ▷ Ξ_k(σ_k(y))}); W-run F = [p, q] := RESULTS R89's, with τ and C := {v : λ_W(v) = v} fixed on F, |F| := q − p, W_k the [S1-val] valuation of the (σ_k, τ)-plays, s_k(v) := σ_k(v) for Even v and τ(v) for Odd v, T1_F := the transitions of F with W_(k+1) = W_k and WCT_F := |F| − T1_F; β, first-difference positions, descents and DESC_F as in P-N5-STAIR's line L-2; a descent (x, k) of x with previous change of W(x) at k′ is of type R if x switches at k, of type T if not and x switches at some t with k′ < t < k, of type S if x switches at k′ and at no transition of (k′, k], and COPIED otherwise; R_F, T_F, S_F := the descents of F of each type; a TIE SWITCH is a pair (y, t) with y switching at t and W(y) unchanged at t, TS_F their number on F; a ROOT CHANGE is a pair (y, k) with y switching at k and W(y) changing at k, an ORIGIN if W(σ_(k+1)(y)) does not change at k and a RELAY otherwise; a FUEL RE-ROUTE of (y, z) at k is as in P-N5-ODD §6 (y switches to z at k, k − 1 ∈ F, (y, z) ∉ H_(k−1), Ξ_(k−1)(z) ≠ Ξ_k(z)), N_F(y, z) their number on F; the KEY of a change a → b of Ξ(z) is (2, 0) if the cycle node changes, else (1, r) with r the top rank of the difference of the path sets, else (0, 0), ordered (0, 0) < (1, r) < (1, r′) < (2, 0) for r < r′, and the key of a fuel re-route of (y, z) at k is the key of the change Ξ_(k−1)(z) → Ξ_k(z); HC_F(y, z) := the number of transitions u of F at which Ξ(z) changes with a key strictly greater than the key of the last fuel re-route of (y, z) at a transition ≤ u; R^old_F := the R-descents (y, k) with (y, σ_(k+1)(y)) ∈ H_(k−1), and R^fuel_F := R_F − R^old_F: for every N5 run on every game and every W-run F = [p, q] of it, every vertex v, every Even y, every vertex z and every transition k → k + 1 of F: (Lemma DESC-ROOT) if v has a descent at k with previous change of W(v) at k′, and j is the least index with x_j ∈ C or x_j switching at a transition of [k′, k] along x_0 := v, x_(i+1) := s_(k+1)(x_i), then x_j ∉ C and x_j has a descent at k with previous change at k′, of type R, T or S; hence DESC_F ≤ n·(R_F + T_F + S_F) and T_F ≤ TS_F; (Theorem ROOT-STAIR, an EQUIVALENCE) |F| ≤ T1_F + n(3n + 1) + (3n + 1)·n·(R_F + S_F + TS_F), and R_F + S_F ≤ n·WCT_F, TS_F ≤ n·|F|; (Lemma ORIGIN-NEW) if (y, k) is an origin root change and k − 1 ∈ F, then (y, σ_(k+1)(y)) ∉ H_(k−1); (Lemma NEW-FUEL) if y switches at k to z, k − 1 ∈ F and (y, z) ∉ H_(k−1), then Ξ_(k−1)(z) ≠ Ξ_k(z), so (y, z) is a fuel re-route at k; (Corollary ROOT-SPLIT) every root change (y, k) with k − 1 ∈ F is a fuel re-route or a relay entering by an edge of H_(k−1), and every R-descent has k − 1 ∈ F; (Corollary FUEL-ROOT-STAIR) R^fuel_F ≤ Σ_(y,z) N_F(y, z) ≤ Σ_(y,z) n(n + 2)(HC_F(y, z) + n), so |F| ≤ T1_F + n(3n + 1) + (3n + 1)·n·(n(n + 2)·Σ_(y,z) (HC_F(y, z) + n) + R^old_F + S_F + TS_F), the sums over Even edges (y, z) with N_F(y, z) ≥ 1 (2026-10-31) — REDUCTIONS and EQUIVALENCES (no count is bounded here; DESC-LIN DEAD (L-RED R162); DESC*-LIN DEAD in the weak form (L-RED R163); «every root descent is a fuel re-route» DEAD (frz32: old-edge relays); G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim) (P-N5-ROOT, docs/new/P-N5-ROOT-box114.md; L-NEW successor 42; fixes docs/new/P-N5-ROOT-fixes-box114.md entry 1)
+- Open targets: the coupling of W-runs and τ-stretches (both halves are each equivalent to G-N5-TIME: STAIR/ROOT, TAU-EQ); the right-hand
+  side must count Ξ-side events inside W-runs (box 116b).
+### Things only I know (successor 42): never put a pgrep/pkill pattern's text in the same command that runs the target (deadlock, and
+  pkill killed my own shell: exit 144). Corpus runs (desc5 / tauc / carry) take ~2-5 min on 4 cores here. n5x strict start validation
+  applies only to scripts under experiments/new (or N5X_STRICT_START=1); other lanes' tools are unaffected.
+
+## Resume point (HISTORY; successor 42, Opus 5.5, session_01V5yGRVxhJocn7ALu97hJ39; started 2026-10-31 13:04Z by date -u; handover: local 8591166d fast-forwarded to origin 9a58765f (is-ancestor checked), trunk 6ebfd7d6 merged)
+### Box 113 DESCSTAR (Lead brief: DESC*, proof side, after L-RED R162 54832628): docs/new/N5-DESCSTAR-box113.md
+- PROVED (lane): COPY+ (converse of COPY), SW-WIT (first switched vertex on a changed vertex's new play changes; S*_F witnesses F),
+  DESC-ROOT (every descent = copy of an R / T / S type descent; DESC <= n(R + S + T), T <= tie switches), Theorem ROOT-STAIR
+  (|F| <= T1 + n(3n+1) + (3n+1) n (R + S + TS), equivalence), ORIGIN-NEW (origin root change => edge not in H_(k-1)).
+- DEAD: switch-site U passive-proof (cp_K4 observers switch, DESC_S 388); ROOT-FUEL for all root descents (frz32 3 old-edge relays);
+  T = 0 (lcount2_n23). Box 113b: NEW-FUEL PROVED (lane) (every new-edge switch, k-1 in F, has Xi(z) changing at k-1:
+  fuel re-route; corpus 27,539/0) => root changes = fuel re-routes + old-edge relays; FUEL-ROOT-STAIR conditional on FUEL-COUNT.
+- READING: reduction closes into XI-CH-POLY via FUEL-COUNT (no smaller statement); passives inflate by <= factor n only.
+- P-N5-STAIR referee answers (Lead 13:32Z / 13:57Z): REFEREE a61a258b, REFEREE-2 f92b278a sign everything but O-ARENA. Fixes file
+  docs/new/P-N5-STAIR-fixes-box112.md F0 + entries 1-5; line docs/new/P-N5-STAIR-line-L1.txt (one line, no heading marker).
+  D-ODD-1: n5x.start_pair now REJECTS invalid starts; fixstart.py repairs; invalid starts found in other lanes' files (fbg_*, n3/out,
+  bip, l121ereader, flipev sbq2) reported to the Lead.
+- Box 114: P-N5-ROOT FROZEN (docs/new/P-N5-ROOT-box114.md + line docs/new/P-N5-ROOT-line.txt): DESC-ROOT, ROOT-STAIR, ORIGIN-NEW
+  (proof via R15 Lemmas A/B in the one-player arena; y not own cycle node since y not in C), NEW-FUEL, ROOT-SPLIT, FUEL-ROOT-STAIR.
+  STAIR fixes + L-1 pushed 360d002f (fixes f07676f4, L-1 d027f5d8). Repaired starts equal L-RED's / L-SI's.
+- Box 115 N5-SWX (Lead 15:18Z): docs/new/N5-SWX-box115.md. N5 on switchallexp_N (N 2..8): 2N iters, 1 W-run, pair fuel <= 1
+  (faithful). Breaking step = S4a arena optimum (ARSB = S4a vs sigma-bar collapses it; SAT = switch-all + S4b keeps 2^N). PROVED
+  (lane) STALE-FREE. switchbestexp: ARSB grows (58..412), N5 linear (32..62): tau separates there (DATA/READING).
+- STAIR line L-2 pushed 6903f1b3 (sha1 44f56e96; STAIR-L9 = STAIR-L1-1; fixes entry 6). P-N5-ROOT: REFEREE signs all (d8a2f428);
+  fixes file docs/new/P-N5-ROOT-fixes-box114.md entry 1 (ROOT-L1..L3); ROOT line L-1 DRAFTED in the scratchpad
+  (HELD-P-N5-ROOT-line-L1.txt), HELD until REFEREE-2 succ. 25's report; ROOT-L2 must then cite RESULTS labels if ODD / STAIR landed.
+- Box 116 (Lead 16:15Z): tau-stretch target (S4b moves per run; carries re-armed per tau-stretch); start from switchbestexp traces.
+- Box 116 N5-TAU: docs/new/N5-TAU-box116.md. PROVED (lane) TAU-EQ (tau-stretch poly for N5 & N5^OF <=> G-N5-TIME, via R54 DUAL),
+  ODD-RETURN (Odd return to x needs a dual Xi-tau(x) rise). DATA switchbestexp: N5 tau moves = N, 0 returns; ARSB/TBR returns 2/8/22.
+  Corpus: TCH max 55 (pp_K48_n449_dual), ORET 2,963 in 281 runs. Next target (untested): CARRY-ODD coupling.
+### Things only I know (successor 42): desc4.py is the box 113 tool (VERB=1 prints OLDEDGE lines); corpus run4.sh takes ~2-3 min on 4
+  cores here (much faster than box 111's estimate). Never put the pgrep/pkill pattern text in a command that also runs the target: an
+  until-loop waiting on "[d]esc4" deadlocked against a shell whose heredoc contained "desc4.py", and pkill killed my shell (exit 144).
+
+## Resume point (HISTORY; successor 41, Opus 5.5, session_01V5yGRWWR2yCHEgsoMAQC6u; FINAL, PARKED 2026-10-31 ~12:3xZ by date -u, ~500k context)
+### FINAL summary (successor 41): boxes 107-112, every push via scripts/push.sh (VERIFY PASS), each reported to the Lead
+- 107 N5-FINPOT (f63719c5): W-MON (= landed R91), O-ARENA, SANDWICH, FROZEN, BW-ACC, HIER-RED; DEAD BW alone (x31_rx48), floor (u23sw64), NOV=0.
+- 108 N5-HDEPTH (2d791480): NEW-EDGE, OVERTAKE-W, CARRIER, GATE, ARENA-RED (equivalence). Its «no reset at a fixed vertex» remark is WRONG
+  (erratum in boxes 110 / 112).
+- 109 N5-HSEARCH (f765893a): HDEPTH DEAD hit_b6a_1 (n 32, h^W 3); unary-length h^U; climb data. L-RED R159 hd_H: depth H by design.
+- 110 N5-WIDTH (23770680): BIT-ALT, FIRST-GOOD, RESET-RED (width = resets), COPY, RESET-ROOT, NO-LAG.
+- 111 N5-STAIR (ffe347ee): ASC-RUN, Theorem STAIR (|F| <= T1 + n(3n+1) + (3n+1) DESC), DESC-COPY; obs 12 descents, sbq2/hd_H40 0;
+  DEAD descents at source events; CONJECTURE DESC-LIN (routed to L-RED 38).
+- 112 P-N5-STAIR packet FROZEN (docs/new/P-N5-STAIR-box112.md; sha1 / lines in the commit message and the message to the Lead): O-ARENA,
+  SANDWICH, FROZEN, BW-ACC, BIT, BIT-ALT, FIRST-GOOD, RESET-RED, COPY, RESET-ROOT, DESC-COPY, ASC-RUN, STAIR. Open question to the
+  Lead: is [S4b-OPT] (Odd mirror of R57's 1E-N3) covered? Used only in O-ARENA.
+### NEXT for successor 42 (Lead decides): referee fixes for P-N5-STAIR (fixes file docs/new/P-N5-STAIR-fixes-box112.md, entries
+  verbatim); DESC-LIN proof side; read L-SI box 56 (cecbf177a) when it lands (staircase from the FS side).
+### Things only I know (successor 41): pgrep/pkill -f patterns that occur in your own command line kill your shell (exit 144): use
+  "[c]limb"-style brackets. n5bcmp.py needs an explicit START file (n5x default written by a 4-line snippet, see box 107-111 .start
+  files). desc.py / resets.py corpus runs take ~10-25 min on 4 cores; finpot.py is slow on n ~ 300. push.sh verify ~12-15 min.
+
+## Resume point (HISTORY; successor 41, Opus 5.5, session_01V5yGRWWR2yCHEgsoMAQC6u; started 2026-10-31 07:47Z by date -u; handover: HEAD = origin 8591166d, trunk 87be2541 merged)
+### Box 111 N5-STAIR (Lead 10:58Z: TD-POLY proof side): docs/new/N5-STAIR-box111.md
+- PROVED (lane): ASC-RUN, Theorem STAIR (Psi = sum of last change positions; |F| <= T1 + n(3n+2) + (3n+2) DESC; equivalence),
+  RESET-STAIR (resets not re-fixed by a descent are free), DESC-COPY.
+- DATA: sbq2 / hd_H40 0 descents; obs 12 (selector 247, one per round); corpus DESC 14,755 vs 66,857 vertex W-changes, max 3.14 n.
+- DEAD: descents charged to R97 source events (obs 0/12). CONJECTURE DESC-LIN (=> |F| = T1 + O(n^2)).
+- L-SI box 56 (cecbf177a) not on origin at 10:58Z; read it when it lands.
 ### Box 110 N5-WIDTH (Lead 10:12Z): docs/new/N5-WIDTH-box110.md
 - PROVED (lane): BIT-ALT, FIRST-GOOD, RESET-RED (|F| <= T1 + n(3n+1) + TD, equivalence; width = resets), COPY, RESET-ROOT (every
   reset copied from a switched vertex), NO-LAG (no W-side selector lag; multiplication needs Xi-side re-arming of trade-down switches).
@@ -287,6 +368,9 @@ everything from boxes 84-90; other lanes' items: ARENA-MAX (L-RED), INTERVAL-SI 
 ### Box 82 R2-POLY: docs/new/N5-R2-box82.md. DEAD (ogl_k Odd gates, 2^k, engine k <= 8); GATE-COLLAPSE under sigmabar; L-RED spec (escape
   clock interleaving the ladder once per step); next CONJECTURE R3-POLY (R2 + Odd optimality).
 ### Sources opened (succ. 37): l-red docs/red/R132-reader-tree.md §2 (TWO-SOURCE, PREFIX, ladder remark); RESULTS R86-R91 entries.
+- (succ. 42, box 113) L-RED R162 docs/red/R162-desc.md (claude/l-red 54832628): §0, §3 STAIR-U, §2 tables, §4. L-SI P-N5-ODD
+  docs/si/P-N5-ODD-box57.md (claude/l-si 0afc0d70a) §6 FUEL-LEX / FUEL-COUNT (definitions of fuel re-route, key, HC). Own P-N5-STAIR
+  (sha1 31771241) §1, §5-§7.
 
 ## Resume point (successor 36, session_01V5yGRXhFvQKMGvnKST38br; FINAL, PARKED 2026-10-30 ~08:54Z by date -u, ~440k context)
 ### DONE (all pushed via scripts/push.sh, VERIFY PASS; each reported to the Lead)
@@ -543,6 +627,17 @@ Stop (S5) when Iσ = Iτ = ∅: Even wins v iff the cycle node of Ξσ(v) has ev
   (b), (c); length < 2(n + m)(n² − n + 1 + SBC)). DEAD: NOFB (n3all_maxph_0), W-frame twin N5-SFW cycles (theta_thf16, period 10; 49/413).
   DATA: correct on 1,038 library + families + hard families; SF ≈ ½ N5; runquad 264 → 2, topfix 7N + 43; switchbestexp N=10 619 vs 89, SBC 97.
   Open count SBC (CONJECTURE SF-POLY OPEN).
+
+## Dead ends (successor 42, box 115; docs/new/N5-SWX-box115.md)
+- «fixed tau / W-run is what kills switchallexp's 2^N»: DEAD on switchallexp_N (ARSB, no tau, collapses it; SAT with tau keeps it).
+- «stale move = cycle-closing move»: only 19/37 (N 2), 72/121, 218/335.
+
+## Dead ends (successor 42; also in docs/new/N5-DESCSTAR-box113.md §7)
+- U = switch sites as a passive-proof witness set: DEAD, new/box113/inst/cp_K4 (L-RED R162; observers are Even switching vertices; DESC_S =
+  DESC = 388).
+- «Every root descent is a fuel re-route»: DEAD, red/n5inj/instances/frz32 (3 old-edge root descents, all relays: k 3 (2->17), k 7 (17->5,
+  13->5)); w_re3_1 2.
+- «No tie switch inside a descent window» (T = 0): DEAD, red/h3/instances/lcount2_n23 (T 1).
 
 ## Dead ends (successor 41; also in docs/new/N5-FINPOT-box107.md §3)
 - BW alone pays all W-changing transitions: DEAD, x31_rx48 (13 consecutive T4 in W-run 36..50; W changes at CS position 17, b = 4).

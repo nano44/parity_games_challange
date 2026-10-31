@@ -1,0 +1,13 @@
+GAME red/so/instances/xsnf52_n64.pg
+BIT_chk 176
+DESC 0
+FROZEN_chk 52
+GAMES 1
+ROOT_chk 49
+TD 1293
+WCH 88
+WCT 52
+trans 52
+wruns 1
+VIOLATIONS 0
+RC 0

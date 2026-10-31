@@ -1,0 +1,15 @@
+GAME red/so/instances/nleq_cex_n48.pg
+CNT_chk 1
+FR 1
+FR_maxpair 1
+GAMES 1
+OLD_chk 182
+ROOT_chk 1
+ROOT_endPE 1
+ROOT_maxlen 1
+STEP_caseII 3
+STEP_chk 40
+trans 4
+wruns 3
+VIOLATIONS 0
+RC 0

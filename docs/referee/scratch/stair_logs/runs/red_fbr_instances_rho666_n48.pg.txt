@@ -1,0 +1,14 @@
+GAME red/fbr/instances/rho666_n48.pg
+BIT_chk 183
+DCOPY_chk 16
+DESC 19
+FROZEN_chk 9
+GAMES 1
+ROOT_chk 65
+TD 1024
+WCH 66
+WCT 9
+trans 9
+wruns 2
+VIOLATIONS 0
+RC 0

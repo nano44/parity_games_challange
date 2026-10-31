@@ -1,0 +1,15 @@
+GAME red/so/instances/tevlast7_n32.pg
+CNT_chk 51
+FR 51
+FR_maxpair 1
+GAMES 1
+OLD_chk 232
+ROOT_chk 5
+ROOT_endPE 5
+ROOT_maxlen 1
+STEP_caseII 46
+STEP_chk 82
+trans 36
+wruns 2
+VIOLATIONS 0
+RC 0

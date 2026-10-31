@@ -1,0 +1,15 @@
+GAME red/xing/instances/x31_re24.pg
+DCOPIED 11
+DR 0
+DR_chk 15
+DS 4
+DT 0
+GAMES 1
+NF_chk 8
+ON_chk 8
+ROLD 0
+TS 1
+trans 4
+wruns 1
+VIOLATIONS 0
+RC 0

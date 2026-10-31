@@ -1,0 +1,14 @@
+GAME red/so/instances/njb_reabs65_n48.pg
+BIT_chk 356
+DCOPY_chk 5
+DESC 23
+FROZEN_chk 37
+GAMES 1
+ROOT_chk 75
+TD 821
+WCH 160
+WCT 37
+trans 37
+wruns 5
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,15 @@
+GAME red/so/instances/rise_thin51_n40.pg
+DCOPIED 11
+DR 50
+DR_chk 63
+DS 2
+DT 0
+GAMES 1
+NF_chk 127
+ON_chk 125
+ROLD 0
+TS 0
+trans 64
+wruns 8
+VIOLATIONS 0
+RC 0

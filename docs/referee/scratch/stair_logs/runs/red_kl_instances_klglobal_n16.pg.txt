@@ -1,0 +1,4 @@
+GAME red/kl/instances/klglobal_n16.pg
+GAMES 1
+VIOLATIONS 0
+RC 0

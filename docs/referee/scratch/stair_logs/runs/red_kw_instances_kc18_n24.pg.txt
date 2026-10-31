@@ -1,0 +1,13 @@
+GAME red/kw/instances/kc18_n24.pg
+BIT_chk 86
+DESC 0
+FROZEN_chk 19
+GAMES 1
+ROOT_chk 38
+TD 194
+WCH 43
+WCT 19
+trans 19
+wruns 2
+VIOLATIONS 0
+RC 0

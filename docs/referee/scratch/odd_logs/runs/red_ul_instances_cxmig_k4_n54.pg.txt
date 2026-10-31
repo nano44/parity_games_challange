@@ -1,0 +1,14 @@
+GAME red/ul/instances/cxmig_k4_n54.pg
+CNT_chk 23
+FR 23
+FR_maxpair 1
+GAMES 1
+OLD_chk 44
+ROOT_chk 9
+ROOT_endPE 9
+ROOT_maxlen 1
+STEP_chk 60
+trans 12
+wruns 1
+VIOLATIONS 0
+RC 0

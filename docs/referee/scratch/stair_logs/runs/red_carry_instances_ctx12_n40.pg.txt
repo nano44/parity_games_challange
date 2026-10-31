@@ -1,0 +1,13 @@
+GAME red/carry/instances/ctx12_n40.pg
+BIT_chk 10
+DESC 0
+FROZEN_chk 1
+GAMES 1
+ROOT_chk 2
+TD 22
+WCH 2
+WCT 1
+trans 1
+wruns 1
+VIOLATIONS 0
+RC 0
