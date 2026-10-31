@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """L-COMP box 24: hill climbs on the root-map quantities of casc.py (engine n5b SPEC). Mutations and start handling as n5-box23/climb23.py
 (start pair mutated; --s3 keeps the S3 start). Fitness over the run's W-runs, by --fit:
+  (third key of every fitness: the W-run's number of returns, a gradient when the first two are 0)
   pxr     (max returns of one Even X per root, its W-run's |F|)          [Lead 22:17Z (1), CASC-EDGE]
   kidsret (max children of a RETURN node, max depth)                     [Lead 22:17Z (2), CONJECTURE NARROW]
   depth   (max root-chain depth, max children of a return node)          [Lead 22:17Z (2)]
@@ -20,20 +21,20 @@ import n5b  # noqa: E402
 import pg  # noqa: E402
 import rstar  # noqa: E402
 
-KEY = {"pxr": ("pxr", "F"), "kidsret": ("kids_ret", "maxdepth"), "depth": ("maxdepth", "kids_ret"), "casc": ("casc", "F")}
+KEY = {"pxr": ("pxr", "F", "returns"), "kidsret": ("kids_ret", "maxdepth", "returns"), "depth": ("maxdepth", "kids_ret", "returns"),
+       "casc": ("casc", "F", "returns")}
 
 
 def score(g, s, t, fit):
     try:
         states, runs = casc.analyse(g, (tuple(s), tuple(t)))
     except (n5b.RepeatedState, RecursionError, KeyError):
-        return (-1, 0), None
+        return (-1, 0, 0), None
     if len(states) > C.CAP:
-        return (-1, 0), None
+        return (-1, 0, 0), None
     if any(r["bad"] for r in runs):
-        return (10 ** 9, 0), [r for r in runs if r["bad"]]
-    k1, k2 = KEY[fit]
-    return max([(r[k1], r[k2]) for r in runs], default=(0, 0)), runs
+        return (10 ** 9, 0, 0), [r for r in runs if r["bad"]]
+    return max([tuple(r[k] for k in KEY[fit]) for r in runs], default=(0, 0, 0)), runs
 
 
 def main():
