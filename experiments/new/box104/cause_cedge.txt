@@ -1,0 +1,7 @@
+GAME cedge_n32 RUN 5-31 F 26 returns 60 edges 48 targets 22 max_per_target 8 norise 0 wch_in_window 60 rises_per_return {1: 9, 2: 31, 3: 12, 4: 4, 6: 1, 7: 3} classes {'EVS': 139, 'ODF': 11}
+GAME cedge_n32   ROOT kinds {'FRESH': 60} distinct roots 22 max returns per root 13 chain depth {0: 38, 1: 16, 2: 3, 3: 3}
+GAME cedge_n32   EROOT kinds {'FRESH': 60} distinct roots 22 max returns per root 13 chain depth {0: 38, 1: 16, 2: 3, 3: 3} max children per node 3 max children per return node 3 mE 86
+GAME cedge_n32   PERROOT max returns of one Even X per root 4 (X 7 deg 2) max returns of one edge per root 2 max (returns of X per root)/deg X 2.0 max returns of X per root leaving one target 2 max returns of X per root with one (left, entered) pair 2 max returns of one edge per (root, depth) 1
+GAME cedge_n32   SELFFED (X on g's play at state k) returns 3 of 60: first switching Even vertex is X 0, X on its own Xi-cycle after 0, X own cycle node after 0, lambda(Xi(X)) changes 0, W(X) changes 3, lambda_W(X) changes 0; max self-fed returns of X per root 1; NONSELF max (returns of X per root)/deg X 2.0
+GAME cedge_n32   CHAINSTEP distinct chain nodes 38 with a W-change at q 38 late adoptions (blocked at an earlier state of F) 1
+GAME cedge_n32   CHAIN chains 60 with a repeated Even vertex 2 max repeats 2 longest 4 distinct 4

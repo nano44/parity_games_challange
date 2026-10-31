@@ -541,4 +541,10 @@ if grep -q "CHAIN chains 252 with a repeated Even vertex 208 max repeats 47 long
 else
   echo "box 103 DEPTH check: FAILED"; exit 1
 fi
+w54=$(cd .. && XTRACE=7 python3 -I new/box99/retcause.py new/box104/inst/cedge_n32.pg new/box104/inst/cedge_n32.start)
+if grep -q "XTRACE return k 22: 7 20 -> 26 (window from 20, first rise 21) root ('FRESH', 20, 7, 9) depth 3" <<<"$w54" && grep -q "SELFFED (X on g's play at state k) returns 3 of 60" <<<"$w54" && grep -q "NONSELF max (returns of X per root)/deg X 2.0" <<<"$w54"; then
+  echo "box 104 PING: cedge_n32 vertex 7 returns 4 times (non-self-fed) under root (20 -> 7 @ 9): self-fed split DEAD: PASS"
+else
+  echo "box 104 PING check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
