@@ -1029,6 +1029,14 @@ case "$o" in *"DESCV nep56_n32.pg 28 2 ((1, 22), 9) ((1, 25), 13)"*"DESCV 1 "*) 
 [ "$(cat grow56/grow_*.txt | grep -c ' GROW ')" = 1132 ] || { echo "box 56: grow outputs incomplete"; exit 1; }
 [ "$(cat grow56/fuel_*.txt | grep -c ' SRCFUEL ')" = 1132 ] || { echo "box 56: srcfuel outputs incomplete"; exit 1; }
 echo "si (box 56: first-segment re-growth; FUEL-MONO / FUEL-DESC dead): PASS"
+# box 57 (docs/si/N5-FLEX-box57.md, Lead 11:23Z): FUEL-LEX (LEXV 0) on nep56_n32 (ASC 2) and so_th_n32 (EQHI 6); corpus LEXV 0.
+o=$(python3 -I grow56/srcfuel.py ../n5-epoch/instances/nep56_n32.pg ../n5-epoch/instances/nep56_n32.start)
+case "$o" in *"LEXV 0 ASC 2 EQHI 0 REP 0 MAXRUNS 2 YONZ 11 FUELEV 56"*) ;; *) echo "box 57: nep56: $o"; exit 1;; esac
+o=$(python3 -I grow56/srcfuel.py ../red/so/instances/so_th_n32.pg)
+case "$o" in *"LEXV 0 ASC 0 EQHI 6 REP 0 "*) ;; *) echo "box 57: so_th: $o"; exit 1;; esac
+[ "$(cat grow56/fuel_*.txt | grep -c ' LEXV ')" = 1132 ] || { echo "box 57: srcfuel outputs incomplete"; exit 1; }
+if grep -q "LEXV [1-9]" grow56/fuel_*.txt; then echo "box 57: FUEL-LEX violation"; exit 1; fi
+echo "si (box 57: FUEL-LEX): PASS"
 # P-N5-SETTLE line revision L-1 (fixes entry 1; both referees word-diff it): must not change.
 echo "997e39eee8d72ae94be4764bb1e3841914ffc78e  ../../docs/si/P-N5-SETTLE-line-L1.txt" | sha1sum -c --quiet
 echo "si (P-N5-SETTLE L-1 pinned): PASS"

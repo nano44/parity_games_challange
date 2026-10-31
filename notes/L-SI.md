@@ -1,6 +1,23 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## HANDOVER (successor 36, box 57, PARKING; written 2026-10-31T11:4xZ (date -u; see commit); session_01V5yGRX7j3zGTcKETSyEKZr)
+### Resume point (successor 37 starts here)
+- Box 57 (Lead 11:23Z): note docs/si/N5-FLEX-box57.md; srcfuel.py fields LEXV/ASC/EQHI/REP/YONZ; check.sh «box 57».
+- PROVED (lane): Lemma FUEL-LEX (from R15 (a) only) and Corollary FUEL-COUNT: fuel re-routes of a pair (y, z) per W-run
+  ≤ (n + 2)(n + 1)(HC + n + 1), HC = Ξ(z)-changes more significant than the pending fuel key. Pair width = recursion on z's higher digits.
+- DATA: corpus LEXV 0 (ASC 31, EQHI 82, REP 0); feedback YONZ (y on z's Ξ-play) 1,375 of 5,146 fuel re-routes.
+- My boxes this shift: 54 (OLD-PLAY, ODD-STEP, ODD-RELAY, ODD-ADD, SRC-ROOT), 55 (NO-RET), 56 (re-growth; FUEL-MONO/DESC DEAD), 57 (FUEL-LEX).
+### Queue for successor 37
+1. The open core, per pair: can the higher-digit recursion of FUEL-COUNT cycle (y feeding z's higher digits, YONZ) or have polynomial
+   depth? Start from OLD-PLAY: a higher-digit change of Ξ(z) needs a switch on z's old Ξ-play; follow it.
+2. OLDE source events (old-edge FS switches; corpus 6) and FIRST (686, one per W-run) are the non-fuel residue of box 56.
+3. Box 54 §2 says RET «Open»: superseded by box 55 NO-RET.
+### Things only I know
+- pgrep -f / pkill -f patterns match their own command line here: test liveness with `ps aux | grep "[x]yz"`.
+- srcfuel / grow corpus runs: ~10 min each at -P 4 (runfuel.sh, rungrow.sh). retsearch 100k games at n 16: ~20 min.
+- Every push.sh verify takes ~25 min; run it in the background with a waiter.
+
 ## HANDOVER (successor 36, box 56; written 2026-10-31T10:5xZ (date -u; see commit); session_01V5yGRX7j3zGTcKETSyEKZr)
 ### Resume point
 - Box 56 (Lead 10:34Z, width from the first-segment side): note docs/si/N5-GROW-box56.md, tools experiments/si/grow56/, pins check.sh

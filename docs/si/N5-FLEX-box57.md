@@ -56,7 +56,9 @@ Written 2026-10-31 from 11:2xZ (date -u; see commit).
   - latew_K16_m32: LEXV 0, one run per pair (max 16); YONZ 1 of 1,010.
   - nep56_n32 (FUEL-DESC's kill): LEXV 0, ASC 2 (the re-arms by a more significant rise), max 2 runs per pair; YONZ 11 of 56.
   - so_th_n32 (FUEL-MONO's kill): LEXV 0, EQHI 6 (every repeat has a more significant change between), max 2 runs; YONZ 5 of 21.
-- Corpus: see «Corpus» below.
+- Corpus (fuel_sbcg.txt, fuel_alt.txt; 1,132 games, 1,692 W-runs): 5,146 fuel re-routes in 4,875 pairs; LEXV 0; non-descents 113 =
+  ASC 31 + EQHI 82 + REP 0; max 3 re-routes and max 2 descending runs per pair; YONZ 1,375 of 5,146 (27%). Source-event classes unchanged
+  from box 56 (FUEL 3,862, FIRST 686, CSW 16, OLDE 6, OTHER 0).
 
 ## DONE / FINDINGS / NEEDS
 - DONE: this note; srcfuel.py fields LEXV / ASC / EQHI / REP / MAXRUNS / YONZ / FUELEV; corpus outputs fuel_*.txt rerun; check.sh «box 57».
@@ -65,7 +67,7 @@ Written 2026-10-31 from 11:2xZ (date -u; see commit).
      repeats). It needs only [R15a].
   2. PROVED (lane): FUEL-COUNT: N ≤ (n + 2)(n + 1)(HC + n + 1) per pair and W-run. Pair width is a recursion on Ξ(z)'s higher digits.
   3. DATA: LEXV 0 everywhere; on the quadratic pins every pair is one descending run (HC plays no role); feedback (y on z's Ξ-play)
-     is rare on the pins (1 per run) and common on small corpus games (§3).
+     is rare on the pins (1 per run) and common on small corpus games (27% of fuel re-routes, §3).
   4. READING: the recursion can cycle only through YONZ re-routes (y upstream of z); bounding the depth of the higher-digit recursion is
      the open core, now stated per pair.
 - NEEDS: none from the owner.
