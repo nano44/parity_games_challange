@@ -499,7 +499,8 @@ sha1sum -c --quiet tie/pins.sha1 || { echo "tie pins changed"; exit 1; }
 out=$(cd .. && python3 -I red/tie/o1.py red/tie/instances/u23sw64_n32.pg red/tie/instances/u23sw64_n32.start --quiet); [[ "$out" == "O1 u23sw64_n32.pg n 32 iters 16 maxL 8 reentries 31 violations 31 offC 31 maxX 3 (X 2) nonflat 0" ]] || { echo "o1 u23sw64 drifted: $out"; exit 1; }
 out=$(cd .. && python3 -I red/tie/o1.py red/tie/instances/u1t_cex_n32.pg red/tie/instances/u1t_cex_n32.start --quiet); [[ "$out" == "O1 u1t_cex_n32.pg n 32 iters 12 maxL 7 reentries 5 violations 4 offC 4 maxX 1 (X 3) nonflat 2" ]] || { echo "o1 u1t_cex drifted: $out"; exit 1; }
 out=$(cd .. && python3 -I red/tie/o1key.py red/tie/instances/u23sw64_n32.pg red/tie/instances/u23sw64_n32.start); [[ "$out" == "O1KEY u23sw64_n32.pg n 32 ties_even_c 64 ties_odd_c 0 keymon_checks 328 bad 0" ]] || { echo "o1key u23sw64 drifted: $out"; exit 1; }
-for f in u23sw64_n32 u1t_cex_n32; do
+out=$(cd .. && python3 -I red/tie/o1.py red/tie/instances/tie_n32.pg red/tie/instances/tie_n32.start --quiet); [[ "$out" == "O1 tie_n32.pg n 32 iters 15 maxL 13 reentries 57 violations 50 offC 50 maxX 5 (X 15) nonflat 32" ]] || { echo "o1 tie_n32 drifted: $out"; exit 1; }
+for f in u23sw64_n32 u1t_cex_n32 tie_n32; do
   out=$(python3 -I seg/xeng.py tie/instances/$f.pg tie/instances/$f.start | tail -1); [[ "$out" == "state sequences identical: True" ]] || { echo "xeng $f: $out"; exit 1; }
   if [[ -x ../../tools/oink/build/oink ]]; then out=$(bash rel2/oinkcmp.sh tie/instances/$f.pg tie/instances/$f.start); [[ "$out" == "OINK OK" ]] || { echo "oink $f: $out"; exit 1; }; fi
 done
