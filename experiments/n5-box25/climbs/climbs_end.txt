@@ -1,0 +1,5 @@
+climbs/fresh_n16_r1.log END steps 106134 best (2, 3, 12) n 16 secs 900 -> /home/user/parity_games_challange/experiments/n5-box25/climbs/fresh_n16_r1.pg
+climbs/fresh_n24_r1.log END steps 96150 best (0, 4, 4) n 24 secs 900 -> /home/user/parity_games_challange/experiments/n5-box25/climbs/fresh_n24_r1.pg
+climbs/seqtie_n32_r1.log END steps 54269 best (8, 9, 15) n 32 secs 1800 -> /home/user/parity_games_challange/experiments/n5-box25/climbs/seqtie_n32_r1.pg
+climbs/sequ23_n32_r1.log END steps 57130 best (7, 8, 11) n 32 secs 1800 -> /home/user/parity_games_challange/experiments/n5-box25/climbs/sequ23_n32_r1.pg
+climbs/sequ23_n48_r1.log END steps 33171 best (9, 10, 11) n 48 secs 1800 -> /home/user/parity_games_challange/experiments/n5-box25/climbs/sequ23_n48_r1.pg
