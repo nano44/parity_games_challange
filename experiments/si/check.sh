@@ -1050,6 +1050,16 @@ case "$o" in *"iters 630 "*"PREFV 0 OLDV 0 EVENV 0 ODDV 0 "*"ODD2V 0 "*"ARMV 0 "
 [ "$(cat anc58/anc_*.txt | grep -c ' ANC ')" = 1132 ] || { echo "box 58: anc outputs incomplete"; exit 1; }
 if grep -qE "(PREFV|OLDV|EVENV|ODDV|ODD2V|ARMV|GAINV|CHAINV|LOOPLOW0) [1-9]" anc58/anc_*.txt; then echo "box 58: ancestry violation"; exit 1; fi
 echo "si (box 58: ANCESTRY): PASS"
+# box 58 §7 (Lead 14:47Z): repeat escapes. Switch-all SI repeats one (s, x) at an equal swap key 2^(N-1) - 1 times; N5 PLAT <= 1.
+o=$(python3 -I anc58/anc.py --si anc58/inst/switchallexp_6.pg)
+case "$o" in *"ESCREP 57 ESCNODESC 57 ESCEQ 57 MAXPLAT 31 ESCNONMONO 0 "*) ;; *) echo "box 58 s7: switchallexp_6: $o"; exit 1;; esac
+o=$(python3 -I anc58/anc.py ../new/box54/out/switchbestexp_5.pg)
+case "$o" in *"ESCEQ 3 MAXPLAT 1 ESCNONMONO 0 "*"MAXESC_SX 2 "*) ;; *) echo "box 58 s7: switchbestexp_5: $o"; exit 1;; esac
+o=$(python3 -I anc58/anc.py ../red/usplit/instances/pp_K48_n449.pg ../red/usplit/instances/pp_K48_n449.start)
+case "$o" in *"ESCREP 45 ESCNODESC 45 ESCEQ 0 MAXPLAT 0 ESCNONMONO 0 ESCASC 45 MAXESC_SX 24 "*) ;; *) echo "box 58 s7: pp_K48: $o"; exit 1;; esac
+[ "$(grep -c ' ANC ' anc58/esc_corpus.txt)" = 1132 ] || { echo "box 58 s7: esc corpus incomplete"; exit 1; }
+if grep -qE "MAXPLAT ([2-9]|[1-9][0-9])|ESCNONMONO [1-9]" anc58/esc_corpus.txt; then echo "box 58 s7: PLAT / ESC-MONO data changed"; exit 1; fi
+echo "si (box 58 s7: repeat escapes): PASS"
 # P-N5-ODD (FROZEN packet, boxes 54/55/57; line docs/si/P-N5-ODD-line.txt): must not change. Data pins: «box 54», «box 55», «box 57».
 echo "03eec41d3bfc63a6945d0f30d831a46f14e46b84  ../../docs/si/P-N5-ODD-box57.md" | sha1sum -c --quiet
 echo "cd121dffd06dbc794f3154e34aa238d8df81f837  ../../docs/si/P-N5-ODD-line.txt" | sha1sum -c --quiet

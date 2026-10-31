@@ -16,7 +16,9 @@ STEP 0: local clone was at c7f00306 (stale AGAIN); ff to 0afc0d70a (is-ancestor 
 0. P-N5-ODD: both referees SIGNED all (REFEREE 21 6c9430ef, REFEREE-2 24 5753ef03). Fixes F0 + entries 1-4 written (G-ODD-1, G-ODD-2,
    line L-1 docs/si/P-N5-ODD-line-L1.txt sha1 3e25138b, D-ODD-1 sbq2 non-edge start; W-rank DEAD withdrawn; startcheck.py). Next: the
    referees' word-diff of L-1; answer them in entry 5+ only.
-1. Escapes per W-run via τ / λ_W (CONJECTURE ESC-W; 12 W-cycle exceptions ESC_WCYC unexamined), then fan-out per source.
+1. Box 58 §7 (Lead 14:47Z): the switch-all engine = equal-swap-key repeat escapes of one (s, x) (PLAT 2^(N−1) − 1); N5 corpus PLAT ≤ 1,
+   ESC-MONO 0 violations. Property to prove: PLAT-POLY, via (b) «every equal-key re-opening of (s, x) in a W-run needs a strict W-rise on
+   x's or x₂'s W-play». Then fan-out per source. (ESC-W: 12 W-cycle exceptions unexamined.)
 2. Mixed loops (CONJECTURE MIXED-LOOP). 3. Old queue: OLDE / FIRST residue (box 56).
 ### Things only I know
 - anc.py corpus run takes ~2 min at -P 4 (runanc.sh); a whole N5 run's values are evaluated once per state.

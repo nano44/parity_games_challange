@@ -184,3 +184,46 @@ Fix a transition u. A vertex s is CHANGED at u if it is Even with σ_(u+1)(s) �
   same except FUELEV 497 → 496; the pair (164, 166) self-feeding example is unchanged (SELFESC 2). check.sh «box 58» now pins the repaired
   start. The corpus lists name two other known-invalid starts (red/n3 comp54_n80, n3cov_lean; L-RED R99 erratum): with their *_fixed
   starts anc.py's counts are identical. A rerun of runanc.sh now prints START BAD for those two lines until the lists are switched.
+
+## 7. Box 58 continued (Lead 14:47Z): which N5 property would exclude the switch-all escape engine inside one W-run (DATA, CONJECTURE)
+Lead 14:47Z: «name the N5 property that your ANCESTRY chain would need to exclude the escape loop that powers switchallexp_N inside one
+W-run. If you can prove that property, escapes per W-run are bounded.» Written 2026-10-31 from 14:5xZ (date -u; see commit).
+- New anc.py fields (escapes = §3's escape roots, grouped by (W-run, Odd s, old choice x); SI: the whole run):
+  - MAXESC_SX: max escapes of one (s, x).
+  - ESCREP: repeat escapes.
+  - ESCEQ / ESCASC: repeats whose swap key og equals / strictly exceeds the previous one's.
+  - ESCNONMONO: sequences that mix strict ascents with non-ascents.
+  - MAXPLAT: the longest run of consecutive equal swap keys (PLAT).
+- The engine (DATA). Under classical switch-all SI, ONE Odd vertex escapes from ONE choice again and again at the SAME swap key:
+  - switchallexp_N: MAXESC_SX 2, 8, 32 at N = 2, 4, 6, with ESCEQ = ESCREP = 1, 11, 57. For example, one (s, x) escapes at transitions
+    3, 21, 41, 59, 81, … always with og (1, 74) (N = 6).
+  - switchbestexp_N (new/box54/out), same SI: MAXESC_SX 8, 16, 32 at N = 4, 5, 6, ESCEQ = ESCREP.
+  - MAXPLAT under SI: 1, 7, 31 (switchallexp, N = 2, 4, 6) and 7, 15, 31 (switchbestexp, N = 4, 5, 6), i.e. 2^(N−1) − 1.
+  - These equal-key repeats are the carries of the counter.
+- N5 on the SAME games: switchallexp_N has at most 1 W-run escape and 8-12 iterations. switchbestexp_N has MAXESC_SX 2 and ESCEQ N − 2
+  (summed over all (s, x)) at N = 4, 5, 6 (47, 55, 62 iterations).
+- N5 corpus (1,132 games; red/n3's two invalid starts replaced by their *_fixed files, list anc58/corpus_fixed.lst; output
+  anc58/esc_corpus.txt):
+  - 1,434 W-run escapes; 121 repeats = 58 equal-key + 54 strict ascents + 9 strict descents; ESCNONMONO 0.
+  - MAXPLAT ≤ 1 on every game (21 games have 1).
+  - MAXESC_SX is 24, on red/usplit pp_K48_n449: Odd 447 ping-pongs 441 ↔ 445 at every transition of a 55-transition W-run. τ(447) = 437
+    is never used, the escaped 3-cycle has no Even vertex switching, and the swap keys strictly ASCEND (1, 393), (1, 395), …
+    (ESCASC 45, ESCEQ 0). On
+    pp_K12_n161 the figure is 6. Both are linear in K.
+- CONJECTURE ESC-MONO (data 0 violations): inside one W-run, the swap keys of the successive escapes of one (s, x) are either strictly
+  ascending throughout, or never ascend.
+  - With ESC-MONO, the escapes of one (s, x) per W-run are at most (n + 2)(1 + PLAT), where PLAT is the longest run of equal swap keys.
+    So escapes per W-run would be ≤ m(n + 2)(1 + PLAT).
+- THE PROPERTY TO PROVE (named for the Lead): PLAT-POLY. Inside one W-run, an Odd s escapes from the same choice x at the same swap key
+  only polynomially often (DATA: PLAT ≤ 1 under N5 on every corpus game, against 2^(N−1) − 1 under switch-all SI on switchallexp_N and switchbestexp_N).
+  - Between two equal-key escapes of (s, x), s must RETURN to x: Odd's comparison of x and x₂ at the level og must be re-opened. By
+    INT / FUEL-LEX's argument, that needs a change of Ξ(x) or Ξ(x₂) at a key > og between them, so the re-opening is itself a
+    higher-digit event. This much is generic SI (it holds in switch-all too) and is not where N5 differs.
+  - The N5-specific candidates (READING, unproved), which L-RED 38 is testing on the gadget:
+    - (a) τ fixed and λ_W constant on the W-run, so the higher-digit event that re-opens x versus x₂ cannot be a W-cycle change.
+    - (b) σ_(k+1) is Even's optimum in S4a's arena against τ. A carry that resets lower Even choices to a W-worse edge is then impossible
+      inside a W-run, because it would lower W.
+  - Proving (b) as «W_k is ⊴-monotone on a W-run and every equal-key re-opening of (s, x) needs a strict W-rise on x's or x₂'s W-play»
+    would give PLAT ≤ (number of W-changes on those plays). That is the precise statement I would attack next.
+- check.sh «box 58 §7» pins switchallexp_6 (SI ESCEQ 57, MAXPLAT 31), switchbestexp_5 (N5 ESCEQ 3, MAXESC_SX 2, MAXPLAT 1),
+  pp_K48_n449 (N5 ESCASC 45, ESCEQ 0, MAXESC_SX 24) and the corpus (MAXPLAT ≤ 1, ESCNONMONO 0).

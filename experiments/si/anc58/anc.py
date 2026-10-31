@@ -22,6 +22,11 @@ Pairs (inside W-runs, as srcfuel.py box 56/57 but every Even switch, not only FS
   SELFESC HC changes rooted at an Odd escape (OROOT) whose escaped cycle contains y and y switches at that transition (SELFESC0: at k).
   AMP    Odd escape roots whose swap key exceeds the gain of every Even switch on the escaped cycle (ONOCL: no Even switch on it).
   MAXFUEL / MAXHC / MAXSELF per pair and W-run.
+  ESCREP repeat escapes of one (s, x) in one W-run (SI: the run); ESCNODESC those whose swap key og does not strictly descend from the
+         previous one (CONJECTURE ESC-DESC: 0 under N5); ESCEQ equal swap keys; ESCASC
+         strict ascents; ESCNONMONO (s, x, W-run) sequences that both ascend and descend; MAXPLAT the longest
+         run of consecutive equal swap keys (PLAT). --exdesc prints the longest sequence.
+  MAXESC_SX / MAXESC_S / MAXESC_RUN  per W-run (SI: the whole run): max escapes of one Odd s from one old choice x / of one s / in all.
   WESC   distinct escapes (Odd s, transition u) with u in a W-run: ESC_LEAVE_TAU old choice = tau(s); ESC_TO_TAU new choice = tau(s);
          ESC_ZD the escaped cycle Z (s, x, ..., back to s, under the NEW strategies) has an Odd vertex off tau; ESC_WCYC old choice
          tau(s) and every other Odd vertex of Z on tau at u + 1 (Z is then a W-cycle at u + 1). LOOPC1: loops whose walk took a case I (old-choice) Odd step;
@@ -34,6 +39,8 @@ import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, os.path.join(HERE, "..", "..", "new", "box21"))
 from n5x import load, step, start_pair, readstart, Engine, dual
 import pg
+EXDESC = "--exdesc" in sys.argv
+if EXDESC: sys.argv.remove("--exdesc")
 NEWPREF = "--newpref" in sys.argv
 if NEWPREF: sys.argv.remove("--newpref")
 SI = sys.argv[1] == "--si"
@@ -166,6 +173,27 @@ for k in (range(0) if SI else range(K)):
     cur.append(k)
 inrun = {k for r_ in runs for k in r_}
 ESCS = {(r_[1], u_) for (u_, z_), r_ in ROOT.items() if r_[0] == 'O' and r_[2] is not None}
+from collections import Counter as _C
+runof = {k: i for i, r_ in enumerate(runs) for k in r_}
+ESX = _C((runof[u_], s_, B[u_][s_]) for s_, u_ in ESCS if u_ in runof); ESS = _C((runof[u_], s_) for s_, u_ in ESCS if u_ in runof)
+ESR = _C(runof[u_] for s_, u_ in ESCS if u_ in runof)
+OGK = {}
+for (u_, z_), r_ in ROOT.items():
+    if r_[0] == 'O' and r_[2] is not None and u_ in runof: OGK[(r_[1], u_)] = r_[2]
+seqs = {}
+for (s_, u_), og in sorted(OGK.items(), key=lambda t: t[0][1]): seqs.setdefault((runof[u_], s_, B[u_][s_]), []).append((u_, og))
+T['ESCREP'] = sum(len(v) - 1 for v in seqs.values()); T['ESCNODESC'] = sum(1 for v in seqs.values() for i in range(len(v) - 1) if not v[i + 1][1] < v[i][1])
+T['ESCEQ'] = sum(1 for v in seqs.values() for i in range(len(v) - 1) if v[i + 1][1] == v[i][1])
+def _plat(v):
+    best = cur = 0
+    for i in range(len(v) - 1):
+        cur = cur + 1 if v[i + 1][1] == v[i][1] else 0; best = max(best, cur)
+    return best
+T['MAXPLAT'] = max((_plat(v) for v in seqs.values()), default=0)
+T['ESCNONMONO'] = sum(1 for v in seqs.values() if len({(v[i + 1][1] > v[i][1]) for i in range(len(v) - 1)}) > 1)
+T['ESCASC'] = sum(1 for v in seqs.values() for i in range(len(v) - 1) if v[i + 1][1] > v[i][1])
+if EXDESC and T['ESCNODESC']: print("ESCSEQ", max(seqs.values(), key=len)[:8])
+T['MAXESC_SX'] = max(ESX.values(), default=0); T['MAXESC_S'] = max(ESS.values(), default=0); T['MAXESC_RUN'] = max(ESR.values(), default=0)
 for s_, u_ in ESCS:
     if SI or u_ not in inrun: continue
     tau = TAU[u_]; xo, x2 = B[u_][s_], B[u_ + 1][s_]; T['WESC'] += 1
