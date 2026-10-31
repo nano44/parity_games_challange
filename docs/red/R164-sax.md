@@ -85,7 +85,18 @@ Started 14:47Z (Lead GO 14:47Z), written ~15:1xZ (date -u), 2026-10-31. Labels: 
 - H1 = sa again on switchbestexp (the fixed τ does not slow switch-all down).
 
 ## 2. Search side (hd/wclimb.py, new REARM=3: objective (longest W-run |F|, −fallbacks); n5b SPEC traces)
-- Running at this commit (4 climbs at n 32, seeds w_re3_1 and hit_b6a_1, 40 min each). Results follow in the next commit.
+- Objective (|F|, −fallbacks), with |F| = the longest fallback-free W-run of the n5b SPEC trace. Mutations as in R160: retarget, add or
+  drop an edge, change a priority, change a start choice; the start stays valid. 40 min per climb, timed out (best kept in the log only).
+| n | seed (seed \|F\|) | climb seeds | best \|F\| | \|F\|/n | \|F\|/n² |
+| --- | --- | --- | --- | --- | --- |
+| 32 | w_re3_1 (21) | 1, 3 | 36, 42 | 1.31 | 0.041 |
+| 32 | hit_b6a_1 (23) | 2, 4 | 31, 44 | 1.38 | 0.043 |
+| 17 | hd_H5 (5) | 11, 12 | (running) | | |
+| 47 | hd_H15 (15) | 13, 14 | (running) | | |
+- READING: at n ≤ 47, climbing finds |F| of order n (1.3n–1.4n at n 32). This is no evidence of super-quadratic growth: the designed
+  quadratic families have |F|/n² ≈ 0.004 only at n ≥ 200, below what a climb at n 32 can separate.
+- The climbed games are NOT pinned and were not checked with xeng / Oink (the climb timed out before writing its best). They are data,
+  not counterexamples, and claim nothing.
 
 ## 3. What the proof side should use (READING; for the Lead / L-SI)
 - Name the feature: S4a's W-MONOTONICITY inside a W-run (lemma above), plus its arena optimality.
