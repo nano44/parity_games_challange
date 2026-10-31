@@ -1,0 +1,5 @@
+GAME red/tie/instances/u23sw64_n32.pg red/tie/instances/u23sw64_n32.start HIER u23sw64_n32.pg n 32 WT 13 WCH 5 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 5
+GAME si/runlin/instances/runfam_K40.pg si/runlin/instances/runfam_K40.start HIER runfam_K40.pg n 79 WT 171 WCH 171 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 171
+GAME red/xich/instances/obs_K12_m24.pg red/xich/instances/obs_K12_m24.start HIER obs_K12_m24.pg n 272 WT 324 WCH 324 DEPTH 2 MONOX 0 MAXSUB1 25 NLEV1 24 NLEV2 300
+GAME red/wlev/instances/src2_K3.pg red/wlev/instances/src2_K3.start HIER src2_K3.pg n 285 WT 324 WCH 324 DEPTH 2 MONOX 0 MAXSUB1 25 NLEV1 24 NLEV2 300
+GAME red/wlev/instances/rcl_K24.pg red/wlev/instances/rcl_K24.start HIER rcl_K24.pg n 321 WT 324 WCH 324 DEPTH 2 MONOX 0 MAXSUB1 25 NLEV1 24 NLEV2 300

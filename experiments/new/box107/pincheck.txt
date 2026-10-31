@@ -1,0 +1,35 @@
+OINK u23sw64_n32 --zlk verified
+OINK u23sw64_n32 --tl verified
+PINWIN u23sw64_n32.pg n 32 states 17 fallbacks 1 W0 32 AGREE True
+OINK u23sw64_n32 zlk = tl regions
+n5b iterations 16 fallbacks 1 states 17 | n5x states 17 | identical state sequences: True
+OINK runfam_K40 --zlk verified
+OINK runfam_K40 --tl verified
+PINWIN runfam_K40.pg n 79 states 173 fallbacks 0 W0 79 AGREE True
+OINK runfam_K40 zlk = tl regions
+n5b iterations 172 fallbacks 0 states 173 | n5x states 173 | identical state sequences: True
+OINK obs_K12_m24 --zlk verified
+OINK obs_K12_m24 --tl verified
+PINWIN obs_K12_m24.pg n 272 states 325 fallbacks 0 W0 0 AGREE True
+OINK obs_K12_m24 zlk = tl regions
+n5b iterations 324 fallbacks 0 states 325 | n5x states 325 | identical state sequences: True
+OINK src2_K3 --zlk verified
+OINK src2_K3 --tl verified
+PINWIN src2_K3.pg n 285 states 325 fallbacks 0 W0 0 AGREE True
+OINK src2_K3 zlk = tl regions
+n5b iterations 324 fallbacks 0 states 325 | n5x states 325 | identical state sequences: True
+OINK rcl_K24 --zlk verified
+OINK rcl_K24 --tl verified
+PINWIN rcl_K24.pg n 321 states 325 fallbacks 0 W0 0 AGREE True
+OINK rcl_K24 zlk = tl regions
+n5b iterations 324 fallbacks 0 states 325 | n5x states 325 | identical state sequences: True
+OINK x31_rx48 --zlk verified
+OINK x31_rx48 --tl verified
+PINWIN x31_rx48.pg n 48 states 54 fallbacks 2 W0 48 AGREE True
+OINK x31_rx48 zlk = tl regions
+n5b iterations 0 fallbacks 0 states 1 | n5x states 54 | identical state sequences: False
+Traceback (most recent call last):
+  File "/home/user/parity_games_challange/experiments/si/root/n5bcmp.py", line 27, in <module>
+    if A[k][0][x] != A[k + 1][0][x]: sw[w] += 1
+       ~^^^
+IndexError: list index out of range

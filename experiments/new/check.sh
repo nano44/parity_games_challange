@@ -559,4 +559,10 @@ if grep -q "KEYMON u23sw64_n32.pg n 32 intervals 1 KEYUP 0 SWNOTDOWN 0 ODDUP 0 K
 else
   echo "box 106 TIE check: FAILED"; exit 1
 fi
+w57=$(cd .. && python3 -I new/box107/finpot.py red/xing/instances/x31_rx48.pg new/box107/inst/x31_rx48.start; python3 -I new/box107/hier2.py red/xing/instances/x31_rx48.pg new/box107/inst/x31_rx48.start; python3 -I new/box107/hier2.py red/tie/instances/u23sw64_n32.pg red/tie/instances/u23sw64_n32.start; python3 -I new/box107/hier2.py red/so/instances/tog6a_n32.pg)
+if grep -q "WT 47 RES 2 XDEC 0 WDEC 0 WOX 0" <<<"$w57" && grep -q "T1 0 T2 30 T3 0 T4 17" <<<"$w57" && grep -qF "HIER x31_rx48.pg n 48 WT 47 WCH 47 DEPTH 2 MONOX 0 MAXSUB1 13 NLEV1 30 NLEV2 17 | NOV 0 DEPTHV 2" <<<"$w57" && grep -qF "HIER u23sw64_n32.pg n 32 WT 13 WCH 5 DEPTH 1 MONOX 0 MAXSUB1 0 NLEV1 5 | NOV 0 DEPTHV 1 NLV1 13" <<<"$w57" && grep -qF "| NOV 1 DEPTHV 1" <<<"$w57"; then
+  echo "box 107 FINPOT: W-MON / O-ARENA hold (x31_rx48), BW-alone DEAD (17 T4), hierarchy depth 2 pays them; u23sw64 floor paid by the joint level; NOV 1 on tog6a: PASS"
+else
+  echo "box 107 FINPOT check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
