@@ -714,3 +714,8 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
   [IMP] and [R15a], so classical switch-all SI satisfies it: experiments/si/anc58/inst/switchallexp_6.pg under --si has 6,589 returns,
   all charged, 0 violations, exponential run. Under N5 the per-option charge keeps the degree factor: one Ξ-change pays 5N + 2 returns
   (switchbestexp_N, fc_N; corpus max 42). The lemma itself is PROVED (lane); its counting form is RESULTS R95 RET-ΞRISE.
+- (box 61, Lead 23:15Z; note docs/si/N5-UNB-box61.md §3) «Inside one τ-stretch each (edge, key) pair is unblocked at most once» (the
+  Lead's ideal distinct-(edge, key) charge for INC): false. Instance experiments/new/box116/inst/fbg_K4_m6_m24.pg + fbg_K4_m6_m24_fixed.start:
+  edge (124, 126) unblocks 4 times at key (1, 145) in stretch 1-139; fbg_K8 / K12: 8 / 12 (linear in K). Obstruction: each unblock is a
+  fresh Ξ-rise of the target (UNBLOCK-KEY), and the edge is re-blocked in between, so the per-edge count is the target's Ξ-rise count
+  (composition). Also one-to-one INC → unblocks fails (corpus 12,433 vs 6,889). n5b identical, Oink zlk OK.

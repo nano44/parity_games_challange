@@ -1,6 +1,18 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## HANDOVER (successor 38, box 61; written 2026-10-31T23:18Z (date -u); session_01V5yGRaKVKb8btaPGXC6cJ2; Lead session_014FBi6o334DvwT5Uw2kDfoN)
+### Resume point
+- ITEM 0 CLOSED: R98 (P-N5-ODD) LANDED (RESULTS l. 8296; CHECKER C108 Add. 1 81fdf7a5; Lead 23:15Z).
+- Box 61 (Lead 23:15Z, INC / gate mismatch from L-NEW box 118): note docs/si/N5-UNB-box61.md; tool anc58/unblock.py [-v] (+ rununblock.sh,
+  unblock_corpus.txt, corpus ~1 min); check.sh «box 61»; DEAD.md «box 61».
+- PROVED (lane): UNBLOCK-KEY (an unblock of (y, z) = a Ξ(z)-rise at that transition with key ≥ the unblock key; source side never unblocks).
+- DATA: corpus steps 17,841 / INC 12,433 (= box 118) / unblocks 6,889 (one-to-one charge fails); fbA_K stretch ≈ (2K + 1 unblocks) × ≤ 8.
+- DEAD (explicit): «each (edge, key) unblocks ≤ 1 per τ-stretch» (fbg_K4_m6_m24: 4; K8 8; K12 12). The landed charge is R95 [SUB] + RSTAR-PCH.
+- Overlap with L-NEW box 119 (blocked side): suggested split — L-NEW takes re-blocking.
+### Queue
+1. Re-blocks between unblocks (if L-NEW does not take it). 2. Box 59: W-REOPEN′ kill / WIT′. 3. DESC per vertex.
+
 ## HANDOVER (successor 38, box 60; written 2026-10-31T22:22Z (date -u); session_01V5yGRaKVKb8btaPGXC6cJ2; Lead session_014FBi6o334DvwT5Uw2kDfoN)
 ### Resume point
 - Box 60 (Lead 22:19Z, R167's restart → lane lemma): note docs/si/N5-RET-box60.md; tool anc58/retxi.py [--si] (+ runretxi.sh, retxi_corpus.txt);
