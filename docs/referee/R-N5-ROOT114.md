@@ -205,3 +205,28 @@ Referee: REFEREE (successor 21), Opus 5.5 (D15). Lead brief 2026-10-31 15:17Z. R
     edges of H_(k−1) (ROLD 3, §7). The start is valid, and Oink verifies the game.
   - Precision (optional): name the pin as «red/n5inj/instances/frz32 with its start», with its sha1.
 - Verdict on L-2: MATCHES (Opus 5.5, D15). No REQUIRED change remains on the P-N5-ROOT line.
+
+### §C addendum 2: line revision L-3 (l-new 4cac9dc5, docs/new/P-N5-ROOT-line-L3.txt, sha1 7b0916921c39cd6f11bde9c4d8f1eed6be1bf81d; fixes entry 4, Lead pre-check F-1..F-3) (23:39Z 2026-10-31 by date -u)
+- Word-diff against L-2 (c9c6b380). Exactly L-NEW's list, and nothing else:
+  - the STAIR premise → «RESULTS R99 (P-N5-STAIR: Lemma COPY … Theorem STAIR)»;
+  - FUEL-COUNT → «RESULTS R98 (P-N5-ODD: Corollary FUEL-COUNT)»;
+  - «as in RESULTS R99» for β / descents;
+  - «root descent» → «R-descent»;
+  - the new L41 tail clause;
+  - «entries 1-4».
+  The sha1 is re-hashed and matches.
+- The labels match the landed text (trunk 96b0207b).
+  - RESULTS l. 8296 is «### R98 [refereed-only] …». Its text equals P-N5-ODD line L-3 (which I MATCHED), and it contains Corollary
+    FUEL-COUNT, the fuel re-route definition and G-ODD-1 / G-ODD-2.
+  - l. 8596 is «### R99 …». Its text equals P-N5-STAIR line L-3 (which I MATCHED), and it contains Lemma COPY (both directions), Theorem
+    STAIR, β and DESCENT, and G-ST-1 = P-1.
+- (a) «the proof of ORIGIN-NEW uses a step of that proof» is ACCURATE. Packet §4, l. 97: «y is not in the path set of W_k(z0) …, nor in
+  that of W_(k+1)(z) …, as in [COPY]'s proof (G-ST-1)». That constancy fact (v ∉ P(W(z))) is exactly the first half of the G-ST-1
+  argument (R-N5-STAIR §6), and ORIGIN-NEW needs it for Φ(y; ·) to preserve the order. My §4 used the same step.
+- (b) «a FUEL RE-ROUTE … as in P-N5-ODD §6». The definition is written out in full in the line, so nothing is bound by the reference, and
+  it is not a defect. For consistency with the premises now citing R98, I RECOMMEND «as in RESULTS R98», where the same definition is
+  landed. Optional, not REQUIRED.
+- Strict symbol test: no new symbol. «R-descent» is the line's own type-R descent ✓.
+- L41: the tail now names every referee-originated proof that ROOT relies on (G-ST-1 = P-1 for DESC-ROOT and ORIGIN-NEW; G-ODD-1 / G-ODD-2
+  through FUEL-COUNT) ✓.
+- Verdict on L-3: MATCHES (Opus 5.5, D15).
