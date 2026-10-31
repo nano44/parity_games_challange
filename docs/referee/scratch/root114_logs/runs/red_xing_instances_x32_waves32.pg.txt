@@ -1,0 +1,15 @@
+GAME red/xing/instances/x32_waves32.pg
+DCOPIED 20
+DR 40
+DR_chk 62
+DS 2
+DT 0
+GAMES 1
+NF_chk 114
+ON_chk 110
+ROLD 1
+TS 0
+trans 68
+wruns 9
+VIOLATIONS 0
+RC 0

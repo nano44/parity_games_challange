@@ -1,0 +1,5 @@
+GAME red/n3/instances/n3cov_phi.pg
+NOTE start file red/n3/instances/n3cov_phi.start invalid for its game (move not an edge, or missing); given start skipped
+GAMES 1
+VIOLATIONS 0
+RC 0

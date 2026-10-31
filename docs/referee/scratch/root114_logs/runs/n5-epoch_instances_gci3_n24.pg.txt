@@ -1,0 +1,15 @@
+GAME n5-epoch/instances/gci3_n24.pg
+DCOPIED 0
+DR 4
+DR_chk 4
+DS 0
+DT 0
+GAMES 1
+NF_chk 24
+ON_chk 24
+ROLD 0
+TS 0
+trans 20
+wruns 1
+VIOLATIONS 0
+RC 0

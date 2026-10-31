@@ -1,0 +1,15 @@
+GAME red/kw/instances/cw11_n24.pg
+DCOPIED 0
+DR 1
+DR_chk 1
+DS 0
+DT 0
+GAMES 1
+NF_chk 4
+ON_chk 3
+ROLD 0
+TS 12
+trans 12
+wruns 5
+VIOLATIONS 0
+RC 0

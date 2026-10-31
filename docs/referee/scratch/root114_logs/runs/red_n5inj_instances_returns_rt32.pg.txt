@@ -1,0 +1,15 @@
+GAME red/n5inj/instances/returns_rt32.pg
+DCOPIED 0
+DR 2
+DR_chk 5
+DS 3
+DT 0
+GAMES 1
+NF_chk 37
+ON_chk 37
+ROLD 0
+TS 0
+trans 44
+wruns 8
+VIOLATIONS 0
+RC 0
