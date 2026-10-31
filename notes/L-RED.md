@@ -37,7 +37,7 @@ context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older note
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
 
-## Successor 38 PARK (2026-10-31 ~19:4xZ, date -u; context ~420k, written before the ~550k park point)
+## Successor 38 PARK (2026-10-31 ~21:xxZ, date -u; context ~420k, written before the ~550k park point)
 - DONE (claude/l-red, push.sh VERIFY PASS each):
   - 54832628 (R162);
   - 8d466f43 / 8150c17e (R163 + D-ODD-1);
@@ -54,9 +54,10 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
     - Carries = W-drops; re-arm = W-drop = W-run boundary (H3 on switchbestexp).
     - fbA PLAT = K − 1 in one W-run.
     - W-monotone switch-all PLAT ≤ 1.
-  - R165 (R165-nest.md): see that note.
-- RESUME POINT: R165's outcome (see its §0). If R165 did not multiply, the open object is unchanged: a W-monotone counter whose re-arms
-  are W-rises and whose carrier's W-chain is itself re-armed (depth ≥ 3).
+  - R165 (R165-nest.md): a third gated level (fbsearch3, pin fb3_K4_m6_m12_m12) is ADDITIVE, |F| = K(m2 + m3 + c); E3 selectors never
+    switch; PLAT 0; DESC* ≈ |F|; the cap is R158 (A) one level down.
+- RESUME POINT: the missing gadget is a level-≥2 selector that re-climbs once per inner step while its rises are compared against
+  the OLD level (R158 (A) at depth 2). Start from fb3_genome.json (fbsearch3.py) with an objective counting hs2 / hps2 switches.
 - Things only I know:
   - L-SI's anc.py runs only from a git-archive of claude/l-si (experiments/si/anc58). sax/ancx.py and platx.py take it via env ANC.
   - scipy is pip-installed in this container only. check.sh skips the ILP lines without it.
