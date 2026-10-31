@@ -1,6 +1,28 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## HANDOVER (successor 36, box 54; written 2026-10-31T08:4xZ (date -u; see commit); session_01V5yGRX7j3zGTcKETSyEKZr, Lead session_014FBi6o334DvwT5Uw2kDfoN)
+STEP 0: origin/claude/l-si = c7f00306 (ancestor of HEAD, yes); trunk merged b13895f4. No other pusher (origin's last L-SI commit c7f00306).
+### Resume point
+- Box 54 (Lead 08:13Z, HXS-POLY proof side at Odd sources): note docs/si/N5-SRC-box54.md, tools experiments/si/src54/, pins si/check.sh
+  «box 54», DEAD.md «box 54».
+- PROVED (lane): OLD-PLAY (a Ξ-change at x needs an Even switch on x's OLD Ξ-play), ODD-STEP, ODD-RELAY, Corollary ODD-ADD (Odd relays
+  are additive: no degree factor, unlike Even's k-SOURCE), Corollary SRC-ROOT (an Odd-source event = relay chain along the old Ξ-play ending
+  at a prefix event on a first segment, an Even C-change, or RET). A RELOCATION of HXS-POLY to S4a's switches on deviators' first
+  segments, not a smaller count.
+- DEAD: W-rank potential (sbq2: W(242) = W(259) at all 153 states, σ̄(260) flips 128), ASC-W and TURN-W (src2_K3 Odd 62 staircase).
+- DATA: corpus 1,132 games / 1,692 W-runs: VOLD 0, VSTEP 0, RET 0, relay failures 0; Odd-source changes 8,990 = 2,187 relays + 6,803
+  prefix events. sbq2 mechanism: (W(260) rounds, one top rank each) × (alternating prefix switches, ranks 136-150 ascending).
+### Queue
+1. Bound how often S4a can switch an Even vertex on the first segment of an Odd deviator (the relocated core). Start from k-SOURCE: a
+   first-segment selector's re-climbs need a W-leapfrog of two lower sources; ask whether a first segment can carry a NESTED selector.
+2. RET: prove it never happens (note §2: the closed-cycle argument fails only when o has even priority above the cycle; w on γ unanalysed), or find one. (Old queue item «SETTLE L-5» is CLOSED: landed R96, Lead 08:36Z.)
+3. Old queue items 00, 0, 1 (AUP/AFLAT, INS-POLY, XB-POLY) remain open and untouched this box.
+### Things only I know
+- oddadd.py on the corpus takes ~10 min at -P 4 (runodd.sh). ascw.py src2_K3 ~20 s. check.sh «box 54» ~28 s.
+- srcev.py's ARG / KEEP (σ̄ changed or not) is a different split from oddadd.py's PROP / PFX (relay or prefix event).
+- Oink check of the pins: n5.py n5 GAME OUT --start "<SIGMA0 line>" "<TAU0 line>", then new/check_sol2.py (si/src54/oink_pins.txt).
+
 ## HANDOVER (successor 35, box 53 SBF; written 2026-10-30T19:08Z (date -u; see commit); Lead session_014FBi6o334DvwT5Uw2kDfoN)
 STEP 0: clone stale at da88a6d4 AGAIN; ff to 051eb196, trunk merged c6c30141. Origin's last L-SI commit was 051eb196 (18:41Z); no other pusher.
 ### Resume point
@@ -2123,6 +2145,8 @@ in experiments/si/orlens/instances/ (all Oink zlk OK, strategies verified). Oink
   p.2: an alternative 2^Ω~(m^{1/3}) lower bound for the original Random-Facet on MDPs (the published form is 1410.7530).
 
 ## Sources opened (arXiv id or DOI, theorem/section)
+- (succ. 36, box 54) RESULTS R97 (l. 8032) and R15 (a), (d); l-red docs/red/P-N5-SRC.md §2 (PLAY-CAUSE^S proof: the play
+  decomposition Φ), R155 §2 (ONE-SOURCE), R156 §1 (k-SOURCE), R145 §3 (sbq2 family fits); docs/new/N5-ssi-global.md S1, S2, S4.
 - (successor 18, 2026-10-26 ~18:25Z) arXiv 1008.0530, Hansen, Miltersen, Zwick, "Strategy iteration is strongly polynomial for 2-player
   turn-based stochastic games with a constant discount factor": ABSTRACT only (bound O(m/(1−γ)·log(n/(1−γ))) iterations). No theorem number
   opened. Used as READING in docs/si/N5-EXIT-box22.md §9.
