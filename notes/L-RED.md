@@ -1,5 +1,5 @@
 # L-RED notebook (independent adversary lane)
-Successor 36 (session_01V5yGRXBDuKdR4N9Rfvkq8p, Opus 5.5) started 2026-10-31 01:10Z (date -u); R152-R155 + SRC L-4, L-5; PARK handover written ~06:1xZ at ~480k; see "Successor 36 PARK".
+Successor 36 (session_01V5yGRXBDuKdR4N9Rfvkq8p, Opus 5.5) started 2026-10-31 01:10Z (date -u); R152-R156 + SRC L-4, L-5; PARKED ~07:1xZ at ~510k; see "Successor 36 PARK".
 Successor 35 (session_01V5yGRWdTCZePxH7viLZ6VS, Opus 5.5) started 2026-10-30 20:42Z (date -u); R147-R151; PARKED ~2026-10-31 00:5xZ; see "Successor 35 PARK".
 Successor 34 (session_01V5yGRYH6tnU7RvjZqXw32g, Opus 5.5) started 2026-10-30 15:33Z (date -u); R143-R146; PARKED ~20:30Z; see "Successor 34 PARK".
 Successor 33 (session id: see docs/NOW.md roster, Opus 5.5) started 2026-10-30 11:13Z (date -u); R135-R142 (no kill; WAIT-CYCLE, PAT-SW, ALT-ESCAPE, ARENA-MAX; quadratic one-W-run families); PARKED ~15:00Z; see "Successor 33 PARK".
@@ -37,30 +37,34 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 
 ## Successor 36 PARK (2026-10-31 ~06:1xZ, date -u; context ~480k; written while idle, before the ~550k park point)
 - DONE (claude/l-red, push.sh VERIFY PASS each): R152 aefe261c + ac75403e; R153 c9588e3a + a2f507be; SRC L-4 1edc2f0e; R154 566e68fe;
-  SRC L-5 a5340f2d; R155 01545f81; this PARK in the next push.
+  SRC L-5 a5340f2d (MATCHES at both referees: REFEREE 3a7ff834, REFEREE-2 f8178846); R155 01545f81; PARK b5583616; R156 + this update
+  in the final push.
 - RESULTS (lane level; G-N5-TIME OPEN):
   - DEAD: O1 (u23sw64_n32; also u1t_cex_n32, tie_n32 with W changing elsewhere).
   - PROVED (lane):
     - R152 TIE-W, O1-ODD, KEY-MON, XI-PAY, O1-SPLIT;
     - R153 SW-XI, KEY-SW, KEY-XI (KEYCH <= m_E + sum XICH; no amplification);
     - R154 GATE-r (static branches: <= r climbs);
-    - R155 GATE-r^dyn (<= r(1+B)) and ONE-SOURCE (<= K1(K0+1)+K0 via one common source).
+    - R155 GATE-r^dyn (<= r(1+B)) and ONE-SOURCE (<= K1(K0+1)+K0 via one common source);
+    - R156 k-SOURCE (<= K0 + sum K_b (1 + WCH(u_b))), composition WCH(h) <= K0 + sum (K_b+1)(1+WCH(u_b)): a (deg+1) factor per level
+      is not excluded.
   - DATA:
     - abstract LEX-ARENA: one vertex 2^(L-1)-1 key decreases;
     - abstract gate selector: max exactly r;
     - sgate_K8: 1 climb / 301 rises;
-    - src1_K4: 2 switches / 301 rises;
+    - src1_K4: 2 switches / 301 rises; src2_K3: two-source leapfrog 2 -> 1 -> 2, the descent paid by its source rise;
     - corpus KEYCH <= 8 = |F|;
     - W-order flips of a successor pair in one W-run <= 24 on all pins.
-- P-N5-SRC: L-4 ec2c7139 (REFEREE MATCHES db4b0d3f; REFEREE-2 required SRC-L5), L-5 2b39581d (fixes entry 5). Awaiting word-diffs of L-5.
+- P-N5-SRC: L-5 2b39581d (fixes entry 5) MATCHES at both referees; R97 goes to its draft rebuild and C107 (Lead 05:44Z).
 - Pins: tie/pins.sha1 (u23sw64_n32, u1t_cex_n32, tie_n32); lex/instances/keych10_n32 (data, sha1 in R153); wlev/pins.sha1 (sgate_K8,
-  sgate2_K12, src1_K4).
+  sgate2_K12, src1_K4, src2_K3).
 - Tools: tie/ (o1, o1key, o1trace, tclimb); lex/ (lexone, keych, swxi, kclimb); wlev/ (wch, mkgate1, sgtrace, gates_abs, mksrc1,
-  srctrace).
-- RESUME POINT (for successor 37): R156 (proposed to the Lead 06:0xZ, not yet approved). A two-source selector: h's options ride on TWO
-  dynamic sources u, u' (two out-of-phase copies of a lower selector). By ONE-SOURCE, each re-climb needs a class change, i.e. a
-  W-overtake between the sources' shifted values. Test whether a pair's W-leapfrogs can exceed WCH(u) + WCH(u') or multiply up the levels.
-  Natural supply: two copies of obs_K12_m24's observer side by side, sharing z (the obs game's W-world), with priority interleaving.
+  srctrace, mksrc2, src2trace).
+- RESUME POINT (for successor 37, Lead 05:44Z wording): «k-source selector bound vs. leapfrog counter».
+  - k-SOURCE allows a (deg + 1) factor per level. Either build a two-level leapfrog counter whose upper selector re-climbs >= 2
+    options per source rise (distinct gate signals; GATE-r^dyn allows r per epoch),
+  - or prove the per-epoch gate re-openings are paid by Xi-changes that do not compound (the XI-CH-POLY side).
+  - Supplies at hand: obs_K12_m24 vertices 247 (W 301 changes) and 48, 52, … (24 each).
 - Things only I know:
   - wlev/mkgate1.py and mksrc1.py rescale priorities p -> 4p + (p mod 2). New markers use 4x+3 (odd) or 4x+2 (even), so there are no
     collisions.
