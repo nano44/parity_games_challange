@@ -1,5 +1,5 @@
 # L-RED notebook (independent adversary lane)
-Successor 36 (session_01V5yGRXBDuKdR4N9Rfvkq8p, Opus 5.5) started 2026-10-31 01:10Z (date -u); R152-R156 + SRC L-4, L-5; PARKED ~07:1xZ at ~510k; see "Successor 36 PARK".
+Successor 36 (session_01V5yGRXBDuKdR4N9Rfvkq8p, Opus 5.5) started 2026-10-31 01:10Z (date -u); R152-R157 + SRC L-4, L-5; un-parked 06:43Z for R157 (Lead keeps 99762405); PARKED again ~07:5xZ; see "Successor 36 PARK".
 Successor 35 (session_01V5yGRWdTCZePxH7viLZ6VS, Opus 5.5) started 2026-10-30 20:42Z (date -u); R147-R151; PARKED ~2026-10-31 00:5xZ; see "Successor 35 PARK".
 Successor 34 (session_01V5yGRYH6tnU7RvjZqXw32g, Opus 5.5) started 2026-10-30 15:33Z (date -u); R143-R146; PARKED ~20:30Z; see "Successor 34 PARK".
 Successor 33 (session id: see docs/NOW.md roster, Opus 5.5) started 2026-10-30 11:13Z (date -u); R135-R142 (no kill; WAIT-CYCLE, PAT-SW, ALT-ESCAPE, ARENA-MAX; quadratic one-W-run families); PARKED ~15:00Z; see "Successor 33 PARK".
@@ -38,7 +38,7 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 ## Successor 36 PARK (2026-10-31 ~06:1xZ, date -u; context ~480k; written while idle, before the ~550k park point)
 - DONE (claude/l-red, push.sh VERIFY PASS each): R152 aefe261c + ac75403e; R153 c9588e3a + a2f507be; SRC L-4 1edc2f0e; R154 566e68fe;
   SRC L-5 a5340f2d (MATCHES at both referees: REFEREE 3a7ff834, REFEREE-2 f8178846); R155 01545f81; PARK b5583616; R156 + this update
-  in the final push.
+  in 99762405 (kept, Lead 06:43Z); R157 + this update in the final push.
 - RESULTS (lane level; G-N5-TIME OPEN):
   - DEAD: O1 (u23sw64_n32; also u1t_cex_n32, tie_n32 with W changing elsewhere).
   - PROVED (lane):
@@ -48,6 +48,8 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
     - R155 GATE-r^dyn (<= r(1+B)) and ONE-SOURCE (<= K1(K0+1)+K0 via one common source);
     - R156 k-SOURCE (<= K0 + sum K_b (1 + WCH(u_b))), composition WCH(h) <= K0 + sum (K_b+1)(1+WCH(u_b)): a (deg+1) factor per level
       is not excluded.
+  - DATA (R157, new): one level realises the degree factor. rcl_K24: an Even selector riding 24 reactors re-climbs all 24 options per
+    root rise, 289 = 24 * WCH(h) + 1 switches in one W-run; capped by |F| (0.89 |F|) because it is passive.
   - DATA:
     - abstract LEX-ARENA: one vertex 2^(L-1)-1 key decreases;
     - abstract gate selector: max exactly r;
@@ -57,14 +59,18 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
     - W-order flips of a successor pair in one W-run <= 24 on all pins.
 - P-N5-SRC: L-5 2b39581d (fixes entry 5) MATCHES at both referees; R97 goes to its draft rebuild and C107 (Lead 05:44Z).
 - Pins: tie/pins.sha1 (u23sw64_n32, u1t_cex_n32, tie_n32); lex/instances/keych10_n32 (data, sha1 in R153); wlev/pins.sha1 (sgate_K8,
-  sgate2_K12, src1_K4, src2_K3).
+  sgate2_K12, src1_K4, src2_K3, rcl_K8, rcl_K24).
 - Tools: tie/ (o1, o1key, o1trace, tclimb); lex/ (lexone, keych, swxi, kclimb); wlev/ (wch, mkgate1, sgtrace, gates_abs, mksrc1,
   srctrace, mksrc2, src2trace).
 - RESUME POINT (for successor 37, Lead 05:44Z wording): «k-source selector bound vs. leapfrog counter».
   - k-SOURCE allows a (deg + 1) factor per level. Either build a two-level leapfrog counter whose upper selector re-climbs >= 2
     options per source rise (distinct gate signals; GATE-r^dyn allows r per epoch),
   - or prove the per-epoch gate re-openings are paid by Xi-changes that do not compound (the XI-CH-POLY side).
-  - Supplies at hand: obs_K12_m24 vertices 247 (W 301 changes) and 48, 52, … (24 each).
+  - Supplies at hand: obs_K12_m24 vertices 247 (W 301 changes) and 48, 52, … (24 each); reactors r_1..r_24 (175, 178, …, 244) rise in
+    order once per wave (12 waves, period 27); pivots h = 3, h' = 4 (W 12 changes each, 24 order swaps).
+  - R157 settled the one-level question: the factor is realised (rcl_K24), but passive selectors are capped by |F|. The remaining attack
+    is FEEDBACK: route a re-climbing selector's rises into an Odd deviator so that they become source events (P-N5-SRC SRC-COUNT) and
+    lengthen F. The proof side (L-SI 35): are the per-epoch gate re-openings paid by non-compounding Xi-changes?
 - Things only I know:
   - wlev/mkgate1.py and mksrc1.py rescale priorities p -> 4p + (p mod 2). New markers use 4x+3 (odd) or 4x+2 (even), so there are no
     collisions.
