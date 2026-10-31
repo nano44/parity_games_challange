@@ -703,3 +703,9 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
   258; REFEREE 21 D-ODD-1, REFEREE-2 24 F-1). With τ(242) on any of its 8 real successors: W(242) = W(259) at 0 of 153 states, while σ̄(260)
   still flips 128 times. No valid instance is known, so the W-rank potential is OPEN, not dead. ASC-W and TURN-W stay DEAD (src2_K3, valid
   start; the sbq2 rows survive the repair: BAD 525, TURNBAD 58). Repaired start: src54/inst/sbq2_K8_m16_fix.start.
+- (box 59, successor-38 brief; note docs/si/N5-WRE-box59.md §4) CLOSE-W «at every W-run escape (s, u) whose escaped cycle Z has an Even
+  vertex switching at u, W(x) strictly rises at u» (x = σ̄_u(s)): false. Instance experiments/red/n5inj/instances/frz40.pg, default start
+  (written out: experiments/si/anc58/inst/frz40_default.start): u = 44, Odd s 0 leaves x 36 for τ(0) = 22; closing switch Even 9 (W(9)
+  rises); W(36) unchanged. Obstruction: x's W-play leaves Z at Odd 11 ∈ D (σ̄(11) = 4, τ(11) = 31), so the switch is invisible to W(x).
+  Corpus: 20 of 1,301 closing escapes. n5b identical, Oink zlk OK, strategies verified. Not a kill of W-REOPEN′ (this escape does not
+  repeat); it is the kill shape handed on.
