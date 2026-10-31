@@ -280,3 +280,20 @@ Written 2026-10-31 from 19:3xZ (date -u; see commit).
     W(σ̄(o)) or W(τ(o)) moves (an «Odd W-SEP»). That is the same kind of link as R97's source events. I have no proof of it.
 - The second question (W-changes per vertex per W-run): by L-NEW's STAIR / ASC-RUN (R99), WCH_F(v) ≤ (3n + 1)(1 + DESC_F(v)), and R163
   shows DESC* = Θ(n²) with |F| quadratic. Not started in this box. The target, per the Lead, is a bound in terms of |F| or source events.
+
+## 10. «Odd W-SEP» on data: DEAD; W-REOPEN handed to L-RED as a kill target (Lead 20:00Z)
+Written 2026-10-31 from 20:0xZ (date -u; see commit).
+- Statement tested (CONJECTURE Odd W-SEP, §9): inside a W-run, when an Odd o changes its choice at u (σ̄_u(o) = a → σ̄_(u+1)(o) = b), W
+  strictly rises at u at a, b or τ(o). Tool experiments/si/anc58/wsep.py; corpus output anc58/wsep_corpus.txt (anc58/corpus_fixed.lst).
+- DEAD. Corpus: 6,437 Odd re-decisions in W-runs (all with o ∈ D_u ∪ D_(u+1)), 758 without such a W-rise. On escaped cycles: 1,586, of
+  which 184 have none. On escaped cycles that contain an Even vertex (W-REOPEN's scope): 1,514, of which 136 have none, in 30 games. The
+  wider form (a W-rise anywhere on the W-plays of a, b, τ(o)) gives the same counts.
+  - Smallest instance: experiments/n5-exhaustive/instances/frz2_n24.pg (sha1 25db3330…), default start (S3). At u = 17, Odd 12 changes
+    18 → 19 = τ(12) on an escaped cycle that contains an Even vertex, and W(18) = W(19) are unchanged at 17. n5b (red/seg/xeng.py, with
+    the default start written out) gives an identical state sequence; n5.py's solution matches Oink zlk, and strategies verify.
+  - So the per-transition link «an Odd re-decision moves W» is false, and W-REOPEN cannot be proved through it.
+- W-REOPEN itself still has 0 violations (§8: EVEN_NOWRISE 0 on 1,132 games; frz2_n24 has no repeat escapes). Its rise happens between
+  the two escapes, not at the re-decision. CONJECTURE, handed to L-RED (via the Lead) as a KILL TARGET: build a W-run in which one (s, x)
+  escapes twice, each time through a cycle with an Even vertex, with W(x) and W(x₂) both constant in between. Hints from the data: the
+  W-SEP failures are returns to τ with W tied (frz2_n24), and the Odd-only 2-cycles of §8 already break the unrestricted form. So the
+  attack is to place one Even vertex on such a 2-cycle without breaking the tie.

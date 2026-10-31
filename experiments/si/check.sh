@@ -1077,6 +1077,13 @@ o=$(awk '{for(i=1;i<=NF;i++){if($i=="ALLESC")a+=$(i+1); if($i=="ALLXCHX")b+=$(i+
 o=$(python3 -I anc58/oddonly.py ../red/n3/instances/n3cov_phi.pg anc58/inst/n3cov_phi_full.start)
 case "$o" in *"OOEXCESS 0"*) ;; *) echo "box 58 s9: n3cov_phi: $o"; exit 1;; esac
 echo "si (box 58 s9: ESC-XCH): PASS"
+# box 58 §10 (Lead 20:00Z): «Odd W-SEP» DEAD (frz2_n24 u 17: Odd 12 18 -> 19 = tau(12) on an escaped cycle with an Even vertex, no W-rise).
+o=$(python3 -I anc58/wsep.py ../n5-exhaustive/instances/frz2_n24.pg)
+case "$o" in *"ESCNOSEP o 12 17 18 19 19"*"ESCE 3 ESCED 3 ESCESEP 2 ESCENOSEP 1 "*) ;; *) echo "box 58 s10: frz2_n24: $o"; exit 1;; esac
+[ "$(grep -c 'WSEP ' anc58/wsep_corpus.txt)" = 1132 ] || { echo "box 58 s10: wsep corpus incomplete"; exit 1; }
+o=$(awk '{for(i=1;i<=NF;i++){if($i=="ESCE")a+=$(i+1); if($i=="ESCENOSEP")b+=$(i+1)}} END{print a, b}' anc58/wsep_corpus.txt)
+[ "$o" = "1514 136" ] || { echo "box 58 s10: wsep corpus totals: $o"; exit 1; }
+echo "si (box 58 s10: Odd W-SEP DEAD): PASS"
 # P-N5-ODD (FROZEN packet, boxes 54/55/57; line docs/si/P-N5-ODD-line.txt): must not change. Data pins: «box 54», «box 55», «box 57».
 echo "03eec41d3bfc63a6945d0f30d831a46f14e46b84  ../../docs/si/P-N5-ODD-box57.md" | sha1sum -c --quiet
 echo "cd121dffd06dbc794f3154e34aa238d8df81f837  ../../docs/si/P-N5-ODD-line.txt" | sha1sum -c --quiet
