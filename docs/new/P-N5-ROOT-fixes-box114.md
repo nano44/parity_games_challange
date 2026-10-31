@@ -120,3 +120,55 @@
   one instance (packet §1, frz32 old-edge relays), the R95 / R96 kind, not the L43 class. Neither referee flagged it.
 - Source note «entries 1-2» → «entries 1-3». Nothing else changes: word-diff vs a41df25b is exactly
   [-DESC-LIN DEAD (L-RED R162); DESC*-LIN DEAD in the weak form (L-RED R163);-] and [-1-2)-]{+1-3)+}; 837 → 825 words.
+
+## Entry 4 (2026-10-31 23:14Z by date -u; L-NEW successor 43): Lead pre-check flags F-1, F-2, F-3 (docs/agents/R100-draft.md, trunk 634c823a)
+- R98 (P-N5-ODD) and R99 (P-N5-STAIR) have LANDED (Lead 23:15Z: trunk 96b0207b, RESULTS l. 8296 and l. 8596). The Lead asked for
+  L-3 = L-2 + exactly F-1, F-2 and F-3.
+### F-1 (verbatim, R100-draft l. 8-20)
+> - FLAG F-1, STALE PINS INSIDE THE LINE (the C106 E-1 class, a superseded revision cited as current; in the line, not in the body). L-2 cites
+>   «P-N5-STAIR (Lemma COPY in both directions and Theorem STAIR, as in its line L-2: l-new 6903f1b3, docs/new/P-N5-STAIR-line-L2.txt, sha1
+>   44f56e96d41d45653c4b7bc2f140c587e8e407e6)» and «β, first-difference positions, descents and DESC_F as in P-N5-STAIR's line L-2». STAIR
+>   L-2 is the line CHECKER C109 FAILED (178b3e9e); R99 lands STAIR line L-3 (9db0b169, l-new 7dc1eb7c; both referees MATCH). L-2 also cites
+>   «P-N5-ODD (Corollary FUEL-COUNT: l-si 0afc0d70a, docs/si/P-N5-ODD-box57.md §6, sha1 03eec41d, with its fixes entries 1-2)»; R98 lands
+>   ODD line L-3 (f83b169e, l-si 2f8e5b2e) with fixes F0 + entries 1-6. The CONTENT ROOT imports is unchanged: STAIR L-2 → L-3 touches only
+>   the R57 gloss, the DESC-LIN clause, the L41 clause and the entries count (R99-draft (R)); ODD fixes entries 3-6 are line revisions, the
+>   D-ODD-1 DATA defect, the (y, z) binder of FUEL-COUNT (ODD-L5) and the DATA clause. But the fix both referees wrote says what to cite once
+>   the premises land: REFEREE ROOT-L2 «Fix: cite each by its landed RESULTS label once it lands; until then, by commit and sha1»; REFEREE-2
+>   ROOT114-L2 «cite line L-2 (l-new 6903f1b3, sha1 44f56e96), or R-number once landed» and P-4 «cite P-N5-ODD by its landed R-number (R98
+>   draft at C108) or its current line, once landed», «optional; Lead decides». R100 lands after R98 and R99, so at landing the line cites by
+>   commit what RESULTS then holds as R98 / R99. CHECKER decides: accept the commit pins (content-identical; checked in (5)), or a line L-3
+>   citing RESULTS R99 (Lemma COPY, Theorem STAIR; β and descents) and RESULTS R98 (Corollary FUEL-COUNT).
+### F-2 (verbatim, R100-draft l. 21-30)
+> - FLAG F-2, L41 (the C109 E-1 class; contested). L-2 has 0 «referee-originated». REFEREE-2 says none is needed: R2-N5-ROOT114.md l. 177
+>   «There is no referee-originated proof (L41), so no «referee-originated» tag is needed.», L1 l. 45 «no referee-originated proof (L41 tag
+>   not needed)»; REFEREE is silent. That is true of THIS packet's own proof text: F0 and both reports record no gap and no repair of a proof.
+>   But three proofs rest on referee-originated text of the premise packets: DESC-ROOT applies «[COPY] (both directions)» (packet l. 63),
+>   i.e. COPY's converse, whose proof is G-ST-1 = P-1 (the clause R99's line L-3 adds for DESC-COPY under C109 E-1); ORIGIN-NEW's Φ step is
+>   «as in [COPY]'s proof (G-ST-1)» (packet l. 97; REFEREE §4 l. 63 «as in G-ST-1»); FUEL-ROOT-STAIR uses FUEL-COUNT, whose proof carries
+>   the referee-originated repair G-ODD-2 (R98's title: «the proofs of FUEL-LEX and FUEL-COUNT carry referee-originated repairs»). C109 E-1
+>   was a same-packet use («DESC-COPY needs COPY's converse»); here the use is through a cited premise whose own landing line carries the
+>   clause, while the pin in L-2 is STAIR L-2, which does not (C109 l. 42 «L-2 contains «referee-originated» 0 times.»). CHECKER decides
+>   whether L41 reaches through a premise; if yes, a line L-3 adds a tail clause naming G-ST-1 = P-1 and G-ODD-2.
+### F-3 (verbatim, R100-draft l. 31-34)
+> - FLAG F-3, «root descent» UNDEFINED (the C109 E-2 class). The tail's DEAD clause reads «every root descent is a fuel re-route»; «root
+>   descent» occurs once in L-2 and is defined nowhere in it. L-2 defines descents «of type R» and uses «R-descent» (twice). REFEREE's L-2
+>   addendum reads the clause as R-descents (l. 202 «every R-descent of every W-run is a fuel re-route»; l. 203 «its terms (R-descent, fuel
+>   re-route) are defined in the line»), REFEREE-2 L2 l. 12 «No free symbol». A one-token move «root descent» → «R-descent» would close it.
+### Repairs (line L-3: docs/new/P-N5-ROOT-line-L3.txt)
+- F-1. Both commit pins are replaced by the landed labels: «P-N5-STAIR (Lemma COPY … as in its line L-2: l-new 6903f1b3, …, sha1 44f56e96…)»
+  becomes «RESULTS R99 (P-N5-STAIR: Lemma COPY in both directions and Theorem STAIR)», and «β, first-difference positions, descents and
+  DESC_F as in P-N5-STAIR's line L-2» becomes «… as in RESULTS R99». «P-N5-ODD (Corollary FUEL-COUNT: l-si 0afc0d70a, …, with its fixes
+  entries 1-2)» becomes «RESULTS R98 (P-N5-ODD: Corollary FUEL-COUNT)».
+  - Not changed: «a FUEL RE-ROUTE of (y, z) at k is as in P-N5-ODD §6 (…)». The definition is written out in full in the line, and the
+    section reference is not a commit pin. The Lead decides if it should read «RESULTS R98».
+- F-2 (L41, through the premises). New tail clause: «the proof of DESC-ROOT uses COPY's converse, whose proof is referee-originated
+  (RESULTS R99: G-ST-1 = P-1), the proof of ORIGIN-NEW uses a step of that proof, and the proof of FUEL-ROOT-STAIR uses FUEL-COUNT,
+  whose proof carries referee-originated repairs (RESULTS R98: G-ODD-1, G-ODD-2);».
+  - Grounds: packet l. 63 («Apply [COPY] (both directions)», DESC-ROOT) and l. 97 («as in [COPY]'s proof (G-ST-1)», ORIGIN-NEW). The
+    wording follows R99's own clause («the proof of DESC-COPY uses COPY's converse, whose proof is referee-originated (G-ST-1 = P-1 …)»)
+    and R98's («the proofs of FUEL-LEX and FUEL-COUNT carry referee-originated repairs (G-ODD-1 …; G-ODD-2 = N-ODD-2 …)»).
+  - Precision against the Lead's wording («DESC-ROOT and ORIGIN-NEW use COPY's converse»): ORIGIN-NEW does not apply the converse; it
+    reuses one step of its proof (y lies in neither path set), so the clause says «uses a step of that proof».
+- F-3. «every root descent is a fuel re-route» → «every R-descent is a fuel re-route» (the line defines R-descents; REFEREE's L-2
+  addendum already read it so).
+- Source note «entries 1-3» → «entries 1-4». Nothing else changes.
