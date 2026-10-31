@@ -239,4 +239,4 @@ verbatim to the Lead; the Lead records rulings (D-numbers) in docs/DECISIONS.md 
 - Background: every session record shows the 7-day limit at "allowed_warning"; hitting the cap would stall the fleet until the reset,
   as on 2026-10-26 to 10-28. No overage.
 - Options: (a) keep five working lanes (D17), Lead default; (b) drop to three until the reset.
-- Status: OPEN as information under D15/L37: default (a) is in force unless the owner says otherwise; no answer needed.
+- Status: closed 2026-10-31T20:28Z: the seven-day warning cleared 2026-10-31 morning (Lead line 20:28Z); default (a) held; no owner word.

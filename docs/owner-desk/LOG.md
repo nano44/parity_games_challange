@@ -459,3 +459,17 @@ Needs: none."
     I keep (a) unless you say otherwise.
   - Optional: library access for paywalled primaries (Cunningham 1979, Hansen-Zwick 2010, Topkis 1978, Milgrom-Shannon 1994, Gondran-Minoux ch. 4, others listed in docs/lit/T54-T60). Your call; nobody contacts anyone.
 (Q-PACE added to QUESTIONS.md as information under D15/L37, default (a).)
+
+## 2026-10-31T20:28Z Lead daily owner line (2026-10-31 20:28Z, verbatim)
+«Fleet status 2026-10-31 20:28Z.
+- LANDED today: RESULTS R96 (P-N5-SETTLE) 02:23Z and R97 (P-N5-SRC: W-runs are polynomial iff the source Ξ-changes are) 07:02Z; both CHECKER-closed, CI green.
+- In the landing pipeline:
+  - three new packets, each SIGNED by both referees: P-N5-ODD (Odd relays add; source events relocate to first-segment switches), P-N5-STAIR (Theorem STAIR: run length ≤ T1 + O(n²) + O(n)·descents, an equivalence) and P-N5-ROOT (descents root at switches; new-edge switches are fuel re-routes).
+  - R98 (ODD) and R99 (STAIR) are at CHECKER after one-phrase line fixes; ROOT is in line word-diff.
+- Research (lane level, not refereed):
+  - Many candidate bounds died, each with an instance: O1, HDEPTH, DESC-LIN, DESC*-LIN, CARRY-ODD, Odd W-SEP.
+  - The key separation is now clear: on the classical exponential examples for strategy iteration (switch-all and switch-best), N5 stays linear. S4a's arena optimum kills the switch-all counter, and τ moving only by S4b kills the switch-best one. Every lane lemma so far also holds for a variant that grows, so the missing proof must use these N5-specific steps.
+- G-N5-TIME stays OPEN; nothing is M3/M4.
+- Spend: four to five working lanes plus two referees since 08:10Z. The seven-day warning cleared this morning; no overage.
+- Needs: none.»
+(Q-PACE marked closed in QUESTIONS.md: warning cleared, default (a) held, no owner word.)
