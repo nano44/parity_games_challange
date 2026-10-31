@@ -19,7 +19,7 @@ History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50
   Lead (a) |F| and (b) R90 (e) labels = notes, no W2). R93 LANDED 31f8c8a7 (11:51:50Z): Add. 1 PASS (068bf0ec) + CI 5353 green: C103 CLOSED.
 - C104 = R94 (P-N5-FIXD, L-NEW 38/39), draft 7936b4bd @ ef1599d0: PASS 5c4d6e45 (title L-3 minus lane marker; FLAT-SW two-referee rule met,
   N-3 → Lead reading L41). R94 LANDED 5fc792c8 (18:40:32Z): Add. 1 PASS (c34d98a2) + CI 5469 green: C104 CLOSED.
-  C105 CLOSED (R95 LANDED 2a136552; CI 5528 green). C106 CLOSED (R96 LANDED 38bb8320; CI 5582 green). C107 CLOSED (R97 LANDED 9777660f; C107 PASS 449cb6fc; Add. 1 landed check PASS, CI 5616 green). Nothing open, nothing queued (Lead 07:2xZ). Oink built locally (tools/oink/build, gitignored). Counter: next new check is C108. Prep (kept):
+  C105 CLOSED (R95 LANDED 2a136552; CI 5528 green). C106 CLOSED (R96 LANDED 38bb8320; CI 5582 green). C107 CLOSED (R97 LANDED 9777660f; CI 5616 green). OPEN: C108 (R98 P-N5-ODD draft 78a79562 @ 753ae44e) FAIL E-1 (DATA «all seven statements in both referees' own checks»: REFEREE checked 5, ODD-ADD directly by none; L-3 one replacement; N-1 k-gloss optional). NEXT: C108 Add. 1 on L-3. Counter: next new check is C109. Prep (kept):
   - Pins measured: packet 938d8796 ce8c4803 (= l-new head content); fixes 9631bbc5 eb5bd5e1 (H0-H16 at d3d98d1c b1127e57, H17 appended
     9631bbc5); line-H0 ab1ee38a (a file sha1, not a commit); old line acf3234f. Reports: REFEREE e9b32f72 (R-N5-FRAME.md 90c2ca4d), §C
     0b080b2c (9a00c9b2; its §4 reviews fixes at d3d98d1c: H17 NOT reviewed by REFEREE); REFEREE-2 a1142a46 / 7571febe (report), §C 1008d66e,

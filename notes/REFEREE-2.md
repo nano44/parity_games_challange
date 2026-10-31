@@ -13,7 +13,7 @@ Branch claude/referee-2, merged with trunk (git merge, no rebase) before every p
 | P-N5-STAIR | 31771241 (l-new 9a58765f) | R2-N5-STAIR.md f92b278a | L-1 REQUIRED STAIR-L1-1 (bind v, b) 6f45b443 | all SIGNED but O-ARENA (L42); DESC-LIN DEAD (R162, reproduced) |
 ### IN FLIGHT / open
 - ODD line L-2 (l-si 6370a35f0, ee114e2f): MATCHES (R2-N5-ODD-L2.md). Closed. (My miss: (y, z) unbound in FUEL-COUNT at L-1.)
-- STAIR line L-2 (STAIR-L1-1 = REFEREE's STAIR-L9, v and b unquantified): L-NEW 42 folds both into one L-2; word-diff against L-1 (d027f5d8). For successor 25.
+- STAIR line L-2 (l-new 6903f1b3, 44f56e96): MATCHES (R2-N5-L2-confirm.md); STAIR-L1-1 closed. Nothing open on my side.
 - Next packet P-N5-ROOT goes to successor 25 (Lead 15:17Z). Do not open docs/referee/ ROOT files before your own report is pushed.
 ### Things only I know
 - Tools (own code; lane code never imported), all on my LATEP state loop + WRUN start reader:
