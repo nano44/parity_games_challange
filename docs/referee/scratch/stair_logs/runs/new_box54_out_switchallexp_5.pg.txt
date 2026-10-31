@@ -1,0 +1,14 @@
+GAME new/box54/out/switchallexp_5.pg
+BIT_chk 136
+DCOPY_chk 3
+DESC 7
+FROZEN_chk 4
+GAMES 1
+ROOT_chk 68
+TD 416
+WCH 68
+WCT 4
+trans 4
+wruns 1
+VIOLATIONS 0
+RC 0

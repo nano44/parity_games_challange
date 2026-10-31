@@ -1,0 +1,15 @@
+GAME red/rec0/instances/nep90_n40.pg
+DCOPIED 2
+DR 7
+DR_chk 9
+DS 0
+DT 0
+GAMES 1
+NF_chk 24
+ON_chk 21
+ROLD 0
+TS 0
+trans 13
+wruns 3
+VIOLATIONS 0
+RC 0

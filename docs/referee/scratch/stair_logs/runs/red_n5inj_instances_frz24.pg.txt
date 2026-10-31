@@ -1,0 +1,13 @@
+GAME red/n5inj/instances/frz24.pg
+BIT_chk 60
+DESC 0
+FROZEN_chk 22
+GAMES 1
+ROOT_chk 2
+TD 4
+WCH 30
+WCT 22
+trans 22
+wruns 5
+VIOLATIONS 0
+RC 0

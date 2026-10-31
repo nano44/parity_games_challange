@@ -1,0 +1,14 @@
+GAME red/n5inj/instances/theta_thc24.pg
+CNT_chk 24
+FR 24
+FR_maxpair 1
+GAMES 1
+OLD_chk 124
+ROOT_chk 15
+ROOT_endPE 15
+ROOT_maxlen 1
+STEP_chk 29
+trans 16
+wruns 2
+VIOLATIONS 0
+RC 0

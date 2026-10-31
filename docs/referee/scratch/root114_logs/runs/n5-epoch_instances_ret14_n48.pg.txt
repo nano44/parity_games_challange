@@ -1,0 +1,15 @@
+GAME n5-epoch/instances/ret14_n48.pg
+DCOPIED 11
+DR 15
+DR_chk 26
+DS 0
+DT 0
+GAMES 1
+NF_chk 64
+ON_chk 64
+ROLD 0
+TS 0
+trans 41
+wruns 13
+VIOLATIONS 0
+RC 0

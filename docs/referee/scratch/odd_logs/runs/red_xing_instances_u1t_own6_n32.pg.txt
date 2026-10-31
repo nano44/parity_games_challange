@@ -1,0 +1,17 @@
+GAME red/xing/instances/u1t_own6_n32.pg
+ASC 1
+CNT_chk 10
+EQHI 1
+FR 13
+FR_maxpair 2
+GAMES 1
+OLD_chk 111
+ROOT_chk 7
+ROOT_endPE 7
+ROOT_maxlen 2
+STEP_caseII 10
+STEP_chk 54
+trans 7
+wruns 2
+VIOLATIONS 0
+RC 0

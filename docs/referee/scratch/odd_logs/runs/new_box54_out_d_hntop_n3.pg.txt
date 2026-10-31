@@ -1,0 +1,6 @@
+GAME new/box54/out/d_hntop_n3.pg
+GAMES 1
+STEP_caseII 183
+STEP_chk 2196
+VIOLATIONS 0
+RC 0

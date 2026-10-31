@@ -1,0 +1,12 @@
+GAME red/rec0/instances/n0_6_n24.pg
+GAMES 1
+OLD_chk 41
+ROOT_chk 7
+ROOT_endPE 7
+ROOT_maxlen 3
+STEP_caseII 3
+STEP_chk 21
+trans 1
+wruns 1
+VIOLATIONS 0
+RC 0

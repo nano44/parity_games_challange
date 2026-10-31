@@ -1,0 +1,13 @@
+GAME red/xing/instances/u23sw64_n32.pg
+BIT_chk 174
+DESC 2
+FROZEN_chk 13
+GAMES 1
+ROOT_chk 7
+TD 31
+WCH 51
+WCT 5
+trans 13
+wruns 3
+VIOLATIONS 0
+RC 0

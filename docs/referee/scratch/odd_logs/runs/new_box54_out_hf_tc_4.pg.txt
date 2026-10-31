@@ -1,0 +1,7 @@
+GAME new/box54/out/hf/tc_4.pg
+GAMES 1
+OLD_chk 571
+STEP_caseII 71
+STEP_chk 544
+VIOLATIONS 0
+RC 0

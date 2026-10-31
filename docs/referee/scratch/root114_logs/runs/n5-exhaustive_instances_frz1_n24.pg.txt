@@ -1,0 +1,15 @@
+GAME n5-exhaustive/instances/frz1_n24.pg
+DCOPIED 5
+DR 16
+DR_chk 25
+DS 4
+DT 0
+GAMES 1
+NF_chk 38
+ON_chk 38
+ROLD 0
+TS 0
+trans 28
+wruns 2
+VIOLATIONS 0
+RC 0

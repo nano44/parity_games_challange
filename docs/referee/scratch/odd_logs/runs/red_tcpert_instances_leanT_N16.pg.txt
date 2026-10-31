@@ -1,0 +1,4 @@
+GAME red/tcpert/instances/leanT_N16.pg
+skip_big 1
+VIOLATIONS 0
+RC 0

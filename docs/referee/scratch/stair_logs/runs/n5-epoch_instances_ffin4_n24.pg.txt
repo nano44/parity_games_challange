@@ -1,0 +1,13 @@
+GAME n5-epoch/instances/ffin4_n24.pg
+BIT_chk 135
+DESC 13
+FROZEN_chk 15
+GAMES 1
+ROOT_chk 64
+TD 284
+WCH 64
+WCT 15
+trans 15
+wruns 3
+VIOLATIONS 0
+RC 0

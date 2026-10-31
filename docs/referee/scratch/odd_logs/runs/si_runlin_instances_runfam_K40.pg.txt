@@ -1,0 +1,17 @@
+GAME si/runlin/instances/runfam_K40.pg
+ASC 22
+CNT_chk 156
+EQHI 2
+FR 220
+FR_maxpair 2
+GAMES 1
+OLD_chk 626
+ROOT_chk 8
+ROOT_endPE 8
+ROOT_maxlen 1
+STEP_caseII 4
+STEP_chk 172
+trans 171
+wruns 1
+VIOLATIONS 0
+RC 0

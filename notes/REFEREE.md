@@ -1,6 +1,16 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 21), 2026-10-31 15:4xZ by date -u (Opus 5.5, D15)
+- Reports of record (all pushed or pushing): R-N5-SRC-C §9-§10 (SRC L-4, L-5 MATCH); R-N5-SETTLE-C §6-§8 (SETTLE L-5 MATCH);
+  R-N5-ODD (6c9430ef) + §C (0449d8fd: L-1 needs ODD-L5); R-N5-STAIR (3c40dc18, a61a258b) + §C (ad4e7ebc: L-1 needs STAIR-L9);
+  R-N5-ROOT114 (box 114; NOT R-N5-ROOT.md, which is an earlier packet's report): all SIGNED; line ROOT-L1..L3.
+- WAITING: ODD L-2 (ODD-L5), STAIR L-2 (STAIR-L9), ROOT fixes.
+- Tools: odd_probe.py, stair_probe.py, root114_probe.py (imports stair_probe), sbq2_start_check.py; logs odd_logs/, stair_logs/, root114_logs/.
+- TRAP (new): check `git ls-files` before naming a new report/probe; a packet name can repeat (P-N5-ROOT existed: R-N5-ROOT.md, root_probe.py).
+- TRAP: lane starts may contain non-edges (sbq2_K8_m16.start 242:243); core_probe.parse_start rejects them; check every pin start.
+- Lesson: my strict symbol pass still missed clause-level free variables (FUEL-COUNT's (y, z); STAIR's v, b). Check each «;» clause on its own.
+
 ## Resume point (successor 21), started 2026-10-30T23:10Z by date -u (Opus 5.5, D15)
 - Start: local was stale (dc4e47b8); ff to 8951ef7c, merged trunk (cf5d2bc6). No second writer on claude/referee.
 - SRC §C: docs/referee/R-N5-SRC-C.md (vs R2 e8c1b62d; R2's §C 824651dd read after). Map empty of open gaps; G-SRC-1 CLOSED (ONE-STEP

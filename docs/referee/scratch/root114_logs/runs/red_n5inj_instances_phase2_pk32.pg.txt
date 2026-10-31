@@ -1,0 +1,15 @@
+GAME red/n5inj/instances/phase2_pk32.pg
+DCOPIED 0
+DR 0
+DR_chk 3
+DS 3
+DT 0
+GAMES 1
+NF_chk 39
+ON_chk 39
+ROLD 0
+TS 0
+trans 44
+wruns 7
+VIOLATIONS 0
+RC 0

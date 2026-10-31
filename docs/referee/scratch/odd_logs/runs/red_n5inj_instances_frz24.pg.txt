@@ -1,0 +1,12 @@
+GAME red/n5inj/instances/frz24.pg
+CNT_chk 19
+FR 19
+FR_maxpair 1
+GAMES 1
+OLD_chk 144
+STEP_caseII 57
+STEP_chk 117
+trans 22
+wruns 5
+VIOLATIONS 0
+RC 0

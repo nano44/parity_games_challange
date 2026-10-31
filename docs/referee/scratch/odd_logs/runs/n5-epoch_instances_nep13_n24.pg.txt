@@ -1,0 +1,15 @@
+GAME n5-epoch/instances/nep13_n24.pg
+CNT_chk 14
+FR 14
+FR_maxpair 1
+GAMES 1
+OLD_chk 163
+ROOT_chk 32
+ROOT_endPE 32
+ROOT_maxlen 3
+STEP_caseII 119
+STEP_chk 350
+trans 15
+wruns 3
+VIOLATIONS 0
+RC 0

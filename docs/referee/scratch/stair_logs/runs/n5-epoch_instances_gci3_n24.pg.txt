@@ -1,0 +1,13 @@
+GAME n5-epoch/instances/gci3_n24.pg
+BIT_chk 106
+DESC 4
+FROZEN_chk 20
+GAMES 1
+ROOT_chk 36
+TD 226
+WCH 53
+WCT 20
+trans 20
+wruns 1
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,13 @@
+GAME red/carry/instances/fired10_n20.pg
+BIT_chk 8
+DESC 0
+FROZEN_chk 1
+GAMES 1
+ROOT_chk 4
+TD 44
+WCH 4
+WCT 1
+trans 1
+wruns 1
+VIOLATIONS 0
+RC 0

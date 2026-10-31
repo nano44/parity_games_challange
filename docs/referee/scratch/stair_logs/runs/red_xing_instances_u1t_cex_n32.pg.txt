@@ -1,0 +1,12 @@
+GAME red/xing/instances/u1t_cex_n32.pg
+BIT_chk 104
+DESC 1
+FROZEN_chk 7
+GAMES 1
+TD 0
+WCH 16
+WCT 2
+trans 7
+wruns 1
+VIOLATIONS 0
+RC 0

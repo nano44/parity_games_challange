@@ -1,0 +1,15 @@
+GAME n5-epoch/instances/gci2_n12.pg
+CNT_chk 10
+FR 10
+FR_maxpair 1
+GAMES 1
+OLD_chk 25
+ROOT_chk 1
+ROOT_endPE 1
+ROOT_maxlen 1
+STEP_caseII 11
+STEP_chk 20
+trans 10
+wruns 1
+VIOLATIONS 0
+RC 0

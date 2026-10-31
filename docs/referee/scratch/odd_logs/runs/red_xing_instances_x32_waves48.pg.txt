@@ -1,0 +1,15 @@
+GAME red/xing/instances/x32_waves48.pg
+CNT_chk 69
+FR 69
+FR_maxpair 1
+GAMES 1
+OLD_chk 288
+ROOT_chk 6
+ROOT_endPE 6
+ROOT_maxlen 1
+STEP_caseII 1
+STEP_chk 356
+trans 66
+wruns 7
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,4 @@
+GAME n5-exhaustive/instances/n4_thch_0.pg
+GAMES 1
+VIOLATIONS 0
+RC 0

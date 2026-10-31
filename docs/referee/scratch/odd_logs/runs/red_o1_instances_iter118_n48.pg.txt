@@ -1,0 +1,15 @@
+GAME red/o1/instances/iter118_n48.pg
+CNT_chk 25
+FR 25
+FR_maxpair 1
+GAMES 1
+OLD_chk 266
+ROOT_chk 7
+ROOT_endPE 7
+ROOT_maxlen 2
+STEP_caseII 6
+STEP_chk 90
+trans 13
+wruns 2
+VIOLATIONS 0
+RC 0

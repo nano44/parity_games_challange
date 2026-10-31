@@ -1,0 +1,7 @@
+GAME red/h3/instances/offret_l19_n24.pg
+GAMES 1
+OLD_chk 41
+STEP_caseII 5
+STEP_chk 33
+VIOLATIONS 0
+RC 0

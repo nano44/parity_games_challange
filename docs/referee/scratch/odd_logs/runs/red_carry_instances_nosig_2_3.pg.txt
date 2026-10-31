@@ -1,0 +1,9 @@
+GAME red/carry/instances/nosig_2_3.pg
+GAMES 1
+OLD_chk 6
+STEP_caseII 8
+STEP_chk 14
+trans 1
+wruns 1
+VIOLATIONS 0
+RC 0

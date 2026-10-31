@@ -1,0 +1,15 @@
+GAME red/so/instances/njb_reabs65_n48.pg
+DCOPIED 5
+DR 18
+DR_chk 23
+DS 0
+DT 0
+GAMES 1
+NF_chk 69
+ON_chk 67
+ROLD 0
+TS 0
+trans 37
+wruns 5
+VIOLATIONS 0
+RC 0

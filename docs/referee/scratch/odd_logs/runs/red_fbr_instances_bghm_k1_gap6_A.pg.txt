@@ -1,0 +1,7 @@
+GAME red/fbr/instances/bghm_k1_gap6_A.pg
+GAMES 1
+OLD_chk 3
+STEP_caseII 8
+STEP_chk 9
+VIOLATIONS 0
+RC 0

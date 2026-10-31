@@ -1,0 +1,15 @@
+GAME red/so/instances/tog6b_n32.pg
+DCOPIED 7
+DR 8
+DR_chk 16
+DS 1
+DT 0
+GAMES 1
+NF_chk 13
+ON_chk 12
+ROLD 0
+TS 2
+trans 6
+wruns 1
+VIOLATIONS 0
+RC 0

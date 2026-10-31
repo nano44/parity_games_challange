@@ -1,0 +1,13 @@
+GAME red/carry/instances/firedstep13_n76.pg
+BIT_chk 55
+DESC 0
+FROZEN_chk 2
+GAMES 1
+ROOT_chk 26
+TD 94
+WCH 26
+WCT 2
+trans 2
+wruns 1
+VIOLATIONS 0
+RC 0

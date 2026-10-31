@@ -1,0 +1,15 @@
+GAME new/box54/out/switchallexp_4.pg
+CNT_chk 6
+FR 6
+FR_maxpair 1
+GAMES 1
+OLD_chk 235
+ROOT_chk 24
+ROOT_endPE 24
+ROOT_maxlen 2
+STEP_caseII 13
+STEP_chk 176
+trans 3
+wruns 1
+VIOLATIONS 0
+RC 0

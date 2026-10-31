@@ -1,0 +1,7 @@
+new/box113/inst/w_re3_1.pg n 32 start_ok True N5_iters 28 oink_exit 0 oink_verified True regions_equal True evenwins 32
+new/box109/out/hit_b6a_1.pg n 32 start_ok True N5_iters 43 oink_exit 0 oink_verified True regions_equal True evenwins 32
+red/n5inj/instances/frz32.pg n 32 start_ok True N5_iters 66 oink_exit 0 oink_verified True regions_equal True evenwins 32
+red/h3/instances/lcount2_n23.pg n 23 start_ok True N5_iters 6 oink_exit 0 oink_verified True regions_equal True evenwins 23
+new/box113/inst/cp_K4.pg n 192 start_ok True N5_iters 44 oink_exit 0 oink_verified True regions_equal True evenwins 0
+new/box113/inst/fbg_K4_m6_m48.pg n 250 start_ok True N5_iters 236 oink_exit 0 oink_verified True regions_equal True evenwins 0
+new/box113/inst/fbg_K4_m6_m48.pg n 250 start_ok True N5_iters 236 oink_exit 0 oink_verified True regions_equal True evenwins 0

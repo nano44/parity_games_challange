@@ -1,0 +1,7 @@
+GAME new/box54/out/hf/counter_symsi_2.pg
+GAMES 1
+OLD_chk 101
+STEP_caseII 20
+STEP_chk 143
+VIOLATIONS 0
+RC 0

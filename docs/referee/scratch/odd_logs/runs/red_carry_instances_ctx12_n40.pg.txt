@@ -1,0 +1,12 @@
+GAME red/carry/instances/ctx12_n40.pg
+GAMES 1
+OLD_chk 204
+ROOT_chk 7
+ROOT_endPE 7
+ROOT_maxlen 4
+STEP_caseII 20
+STEP_chk 128
+trans 1
+wruns 1
+VIOLATIONS 0
+RC 0

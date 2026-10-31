@@ -1,0 +1,4 @@
+GAME red/kl/instances/klcount_n18_lvl.pg
+GAMES 1
+VIOLATIONS 0
+RC 0

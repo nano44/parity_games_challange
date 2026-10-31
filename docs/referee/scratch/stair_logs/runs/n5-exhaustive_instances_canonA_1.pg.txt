@@ -1,0 +1,13 @@
+GAME n5-exhaustive/instances/canonA_1.pg
+BIT_chk 30
+DESC 0
+FROZEN_chk 3
+GAMES 1
+ROOT_chk 9
+TD 23
+WCH 14
+WCT 3
+trans 3
+wruns 1
+VIOLATIONS 0
+RC 0

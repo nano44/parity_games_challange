@@ -1,0 +1,15 @@
+GAME red/n5inj/instances/returns_ph64.pg
+CNT_chk 115
+FR 115
+FR_maxpair 1
+GAMES 1
+OLD_chk 446
+ROOT_chk 28
+ROOT_endPE 28
+ROOT_maxlen 1
+STEP_caseII 106
+STEP_chk 1050
+trans 88
+wruns 16
+VIOLATIONS 0
+RC 0

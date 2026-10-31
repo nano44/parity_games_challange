@@ -1,0 +1,14 @@
+GAME red/n3/instances/long90_k2_n40.pg
+BIT_chk 757
+DCOPY_chk 21
+DESC 59
+FROZEN_chk 82
+GAMES 1
+ROOT_chk 250
+TD 1735
+WCH 306
+WCT 82
+trans 82
+wruns 9
+VIOLATIONS 0
+RC 0

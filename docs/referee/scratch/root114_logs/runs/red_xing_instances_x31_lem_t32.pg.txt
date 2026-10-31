@@ -1,0 +1,15 @@
+GAME red/xing/instances/x31_lem_t32.pg
+DCOPIED 7
+DR 32
+DR_chk 45
+DS 6
+DT 0
+GAMES 1
+NF_chk 90
+ON_chk 86
+ROLD 0
+TS 0
+trans 56
+wruns 7
+VIOLATIONS 0
+RC 0

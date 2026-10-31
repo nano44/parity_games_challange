@@ -1,0 +1,14 @@
+GAME red/xing/instances/x31_rx32.pg
+BIT_chk 608
+DCOPY_chk 4
+DESC 31
+FROZEN_chk 50
+GAMES 1
+ROOT_chk 132
+TD 617
+WCH 163
+WCT 50
+trans 50
+wruns 4
+VIOLATIONS 0
+RC 0

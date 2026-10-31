@@ -1,0 +1,13 @@
+GAME red/ul/instances/cxmig_k4_n54.pg
+BIT_chk 82
+DESC 1
+FROZEN_chk 12
+GAMES 1
+ROOT_chk 38
+TD 180
+WCH 38
+WCT 12
+trans 12
+wruns 1
+VIOLATIONS 0
+RC 0

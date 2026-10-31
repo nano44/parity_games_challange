@@ -1,0 +1,13 @@
+GAME red/so/instances/epsseg_cex_n16.pg
+BIT_chk 36
+DESC 4
+FROZEN_chk 6
+GAMES 1
+ROOT_chk 16
+TD 55
+WCH 16
+WCT 6
+trans 6
+wruns 1
+VIOLATIONS 0
+RC 0

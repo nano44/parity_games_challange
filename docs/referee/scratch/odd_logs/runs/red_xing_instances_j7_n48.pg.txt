@@ -1,0 +1,15 @@
+GAME red/xing/instances/j7_n48.pg
+CNT_chk 96
+FR 96
+FR_maxpair 1
+GAMES 1
+OLD_chk 505
+ROOT_chk 26
+ROOT_endPE 26
+ROOT_maxlen 2
+STEP_caseII 11
+STEP_chk 156
+trans 70
+wruns 8
+VIOLATIONS 0
+RC 0

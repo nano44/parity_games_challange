@@ -1,0 +1,14 @@
+GAME red/fbr/instances/lev56_n48.pg
+BIT_chk 866
+DCOPY_chk 29
+DESC 71
+FROZEN_chk 70
+GAMES 1
+ROOT_chk 270
+TD 1536
+WCH 327
+WCT 70
+trans 70
+wruns 10
+VIOLATIONS 0
+RC 0

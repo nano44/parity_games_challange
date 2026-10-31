@@ -1,0 +1,14 @@
+GAME red/xing/instances/u2flat_n32.pg
+BIT_chk 47
+DCOPY_chk 1
+DESC 4
+FROZEN_chk 7
+GAMES 1
+ROOT_chk 5
+TD 31
+WCH 21
+WCT 6
+trans 7
+wruns 6
+VIOLATIONS 0
+RC 0

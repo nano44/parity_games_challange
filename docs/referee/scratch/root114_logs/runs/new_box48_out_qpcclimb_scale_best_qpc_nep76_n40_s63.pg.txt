@@ -1,0 +1,15 @@
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.pg
+DCOPIED 96
+DR 91
+DR_chk 191
+DS 4
+DT 0
+GAMES 1
+NF_chk 167
+ON_chk 148
+ROLD 1
+TS 0
+trans 80
+wruns 7
+VIOLATIONS 0
+RC 0

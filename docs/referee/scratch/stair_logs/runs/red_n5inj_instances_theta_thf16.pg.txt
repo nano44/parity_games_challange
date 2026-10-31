@@ -1,0 +1,14 @@
+GAME red/n5inj/instances/theta_thf16.pg
+BIT_chk 117
+DCOPY_chk 1
+DESC 8
+FROZEN_chk 17
+GAMES 1
+ROOT_chk 33
+TD 116
+WCH 34
+WCT 17
+trans 17
+wruns 2
+VIOLATIONS 0
+RC 0

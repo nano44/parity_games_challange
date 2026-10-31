@@ -1,0 +1,15 @@
+GAME red/xing/instances/x31_rx48.pg
+DCOPIED 21
+DR 48
+DR_chk 80
+DS 11
+DT 0
+GAMES 1
+NF_chk 96
+ON_chk 87
+ROLD 0
+TS 0
+trans 47
+wruns 4
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,7 @@
+GAME red/carry/instances/f1_twofall_n48.pg
+GAMES 1
+OLD_chk 110
+STEP_caseII 8
+STEP_chk 132
+VIOLATIONS 0
+RC 0

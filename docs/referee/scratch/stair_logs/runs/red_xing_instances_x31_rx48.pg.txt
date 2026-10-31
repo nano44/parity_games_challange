@@ -1,0 +1,14 @@
+GAME red/xing/instances/x31_rx48.pg
+BIT_chk 986
+DCOPY_chk 21
+DESC 80
+FROZEN_chk 47
+GAMES 1
+ROOT_chk 214
+TD 1532
+WCH 247
+WCT 47
+trans 47
+wruns 4
+VIOLATIONS 0
+RC 0

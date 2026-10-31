@@ -1,0 +1,13 @@
+GAME red/carry/instances/stealonce_core_n76.pg
+BIT_chk 18
+DESC 0
+FROZEN_chk 1
+GAMES 1
+ROOT_chk 9
+TD 150
+WCH 9
+WCT 1
+trans 1
+wruns 1
+VIOLATIONS 0
+RC 0

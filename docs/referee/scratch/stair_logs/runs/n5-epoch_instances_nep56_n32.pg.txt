@@ -1,0 +1,14 @@
+GAME n5-epoch/instances/nep56_n32.pg
+BIT_chk 638
+DCOPY_chk 5
+DESC 33
+FROZEN_chk 53
+GAMES 1
+ROOT_chk 128
+TD 598
+WCH 166
+WCT 53
+trans 53
+wruns 4
+VIOLATIONS 0
+RC 0

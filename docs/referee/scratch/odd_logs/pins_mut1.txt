@@ -1,0 +1,49 @@
+NOTE start file /tmp/claude-0/-home-user-parity-games-challange/1fd072a7-fcd3-5f36-a504-fa02c7011caa/scratchpad/wt_odd/experiments/si/src54/inst/sbq2_K8_m16.start invalid for its game (move not an edge, or missing); given start skipped
+ASC 2
+CNT_chk 488
+EQHI 10
+FR 3153
+FR_maxpair 12
+GAMES 7
+OLD_V 342
+OLD_chk 17506
+ROOT_chk 11968
+ROOT_endPE 11968
+ROOT_maxlen 2
+STEP_caseII 61
+STEP_chk 233310
+skip_big 1
+trans 1085
+wruns 12
+VIOLATIONS 342
+EX ('OLD', 'sbq2_K8_m16.pg', 0, 3)
+EX ('OLD', 'sbq2_K8_m16.pg', 0, 4)
+EX ('OLD', 'sbq2_K8_m16.pg', 0, 5)
+EX ('OLD', 'sbq2_K8_m16.pg', 0, 7)
+EX ('OLD', 'sbq2_K8_m16.pg', 0, 9)
+EX ('OLD', 'sbq2_K8_m16.pg', 0, 11)
+EX ('OLD', 'sbq2_K8_m16.pg', 0, 12)
+EX ('OLD', 'sbq2_K8_m16.pg', 0, 13)
+EX ('OLD', 'sbq2_K8_m16.pg', 0, 14)
+EX ('OLD', 'sbq2_K8_m16.pg', 0, 15)
+EX ('OLD', 'sbq2_K8_m16.pg', 0, 16)
+EX ('OLD', 'sbq2_K8_m16.pg', 0, 17)
+EX ('OLD', 'sbq2_K8_m16.pg', 0, 18)
+EX ('OLD', 'sbq2_K8_m16.pg', 0, 19)
+EX ('OLD', 'sbq2_K8_m16.pg', 0, 20)
+EX ('OLD', 'sbq2_K8_m16.pg', 0, 21)
+EX ('OLD', 'sbq2_K8_m16.pg', 0, 22)
+EX ('OLD', 'sbq2_K8_m16.pg', 0, 23)
+EX ('OLD', 'sbq2_K8_m16.pg', 0, 24)
+EX ('OLD', 'sbq2_K8_m16.pg', 0, 25)
+EX ('OLD', 'sbq2_K8_m16.pg', 0, 26)
+EX ('OLD', 'sbq2_K8_m16.pg', 0, 27)
+EX ('OLD', 'sbq2_K8_m16.pg', 0, 28)
+EX ('OLD', 'sbq2_K8_m16.pg', 0, 29)
+EX ('OLD', 'sbq2_K8_m16.pg', 0, 30)
+EX ('OLD', 'sbq2_K8_m16.pg', 0, 31)
+EX ('OLD', 'sbq2_K8_m16.pg', 0, 32)
+EX ('OLD', 'sbq2_K8_m16.pg', 0, 33)
+EX ('OLD', 'sbq2_K8_m16.pg', 0, 34)
+EX ('OLD', 'sbq2_K8_m16.pg', 0, 36)
+RC 0

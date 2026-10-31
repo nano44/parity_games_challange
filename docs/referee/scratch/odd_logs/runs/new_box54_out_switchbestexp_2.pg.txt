@@ -1,0 +1,16 @@
+GAME new/box54/out/switchbestexp_2.pg
+CNT_chk 101
+EQHI 5
+FR 111
+FR_maxpair 2
+GAMES 1
+OLD_chk 419
+ROOT_chk 100
+ROOT_endPE 100
+ROOT_maxlen 2
+STEP_caseII 35
+STEP_chk 672
+trans 27
+wruns 2
+VIOLATIONS 0
+RC 0

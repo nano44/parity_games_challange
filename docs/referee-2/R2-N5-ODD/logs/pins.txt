@@ -1,0 +1,16 @@
+MODE files /tmp/claude-0/-home-user-parity-games-challange/6818e6dd-24e8-54a7-b5bf-dc0c0a4d1c69/scratchpad/odpins.lst 0 MAXT 5000 BF 0
+ASC: 2
+FUEL: 5114
+OLD_checks: 25868
+RELAY_checks: 28497
+ROOT_a: 18679
+ROOT_checks: 18679
+STEP_case2: 42
+STEP_checks: 447088
+XIPLAY_checks: 559016
+runs: 6
+starts_INVALID_skipped: 1
+starts_valid: 6
+transitions: 1632
+max max_LCT_run: 5
+RESULT PASS violations 0

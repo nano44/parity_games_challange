@@ -1,0 +1,7 @@
+GAME red/n5/instances/sym_h8_s1.pg
+GAMES 1
+OLD_chk 36
+STEP_caseII 82
+STEP_chk 200
+VIOLATIONS 0
+RC 0

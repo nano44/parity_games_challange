@@ -1,0 +1,15 @@
+GAME red/xing/instances/x31_rx48.pg
+CNT_chk 86
+FR 96
+FR_maxpair 2
+GAMES 1
+OLD_chk 926
+ROOT_chk 152
+ROOT_endPE 152
+ROOT_maxlen 2
+STEP_caseII 14
+STEP_chk 318
+trans 47
+wruns 4
+VIOLATIONS 0
+RC 0

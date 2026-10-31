@@ -1,0 +1,13 @@
+GAME red/n5inj/instances/block_bk32.pg
+BIT_chk 86
+DESC 11
+FROZEN_chk 21
+GAMES 1
+ROOT_chk 38
+TD 237
+WCH 43
+WCT 21
+trans 21
+wruns 1
+VIOLATIONS 0
+RC 0

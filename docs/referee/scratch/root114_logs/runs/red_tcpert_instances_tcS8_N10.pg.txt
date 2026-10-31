@@ -1,0 +1,4 @@
+GAME red/tcpert/instances/tcS8_N10.pg
+skip_big 1
+VIOLATIONS 0
+RC 0

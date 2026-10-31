@@ -1,0 +1,13 @@
+GAME red/usplit/instances/usplit_rd_n24.pg
+BIT_chk 35
+DESC 0
+FROZEN_chk 4
+GAMES 1
+ROOT_chk 12
+TD 32
+WCH 13
+WCT 4
+trans 4
+wruns 1
+VIOLATIONS 0
+RC 0

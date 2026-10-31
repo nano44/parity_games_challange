@@ -1,0 +1,14 @@
+GAME red/so/instances/so_k2_n32.pg
+BIT_chk 92
+DCOPY_chk 1
+DESC 4
+FROZEN_chk 10
+GAMES 1
+ROOT_chk 21
+TD 58
+WCH 38
+WCT 10
+trans 10
+wruns 3
+VIOLATIONS 0
+RC 0

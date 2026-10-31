@@ -1,0 +1,15 @@
+GAME red/xing/instances/u23sw64_n32.pg
+DCOPIED 0
+DR 1
+DR_chk 2
+DS 1
+DT 0
+GAMES 1
+NF_chk 57
+ON_chk 13
+ROLD 0
+TS 64
+trans 13
+wruns 3
+VIOLATIONS 0
+RC 0

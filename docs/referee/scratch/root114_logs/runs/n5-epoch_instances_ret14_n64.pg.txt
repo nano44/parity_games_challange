@@ -1,0 +1,15 @@
+GAME n5-epoch/instances/ret14_n64.pg
+DCOPIED 85
+DR 83
+DR_chk 171
+DS 3
+DT 0
+GAMES 1
+NF_chk 152
+ON_chk 147
+ROLD 1
+TS 0
+trans 56
+wruns 6
+VIOLATIONS 0
+RC 0

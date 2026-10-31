@@ -1,0 +1,4 @@
+GAME red/kl/instances/r2lap_best_n22.pg
+GAMES 1
+VIOLATIONS 0
+RC 0

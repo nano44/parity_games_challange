@@ -1,0 +1,12 @@
+GAME n5-exhaustive/instances/b4_n5_other_0.pg
+BIT_chk 4
+DESC 0
+FROZEN_chk 1
+GAMES 1
+TD 0
+WCH 2
+WCT 1
+trans 1
+wruns 1
+VIOLATIONS 0
+RC 0

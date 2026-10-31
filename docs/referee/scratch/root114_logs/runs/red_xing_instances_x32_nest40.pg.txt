@@ -1,0 +1,15 @@
+GAME red/xing/instances/x32_nest40.pg
+DCOPIED 11
+DR 68
+DR_chk 81
+DS 2
+DT 0
+GAMES 1
+NF_chk 120
+ON_chk 117
+ROLD 0
+TS 0
+trans 53
+wruns 3
+VIOLATIONS 0
+RC 0

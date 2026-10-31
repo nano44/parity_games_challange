@@ -1,0 +1,13 @@
+GAME red/xing/instances/x31_lem_e24.pg
+BIT_chk 154
+DESC 4
+FROZEN_chk 46
+GAMES 1
+ROOT_chk 60
+TD 405
+WCH 77
+WCT 46
+trans 46
+wruns 5
+VIOLATIONS 0
+RC 0

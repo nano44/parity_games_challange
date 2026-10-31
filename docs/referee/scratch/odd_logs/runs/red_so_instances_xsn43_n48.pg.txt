@@ -1,0 +1,15 @@
+GAME red/so/instances/xsn43_n48.pg
+CNT_chk 42
+FR 42
+FR_maxpair 1
+GAMES 1
+OLD_chk 209
+ROOT_chk 2
+ROOT_endPE 2
+ROOT_maxlen 1
+STEP_caseII 4
+STEP_chk 90
+trans 43
+wruns 1
+VIOLATIONS 0
+RC 0

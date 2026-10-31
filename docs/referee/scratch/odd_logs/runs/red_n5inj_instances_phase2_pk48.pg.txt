@@ -1,0 +1,15 @@
+GAME red/n5inj/instances/phase2_pk48.pg
+CNT_chk 38
+FR 38
+FR_maxpair 1
+GAMES 1
+OLD_chk 319
+ROOT_chk 8
+ROOT_endPE 8
+ROOT_maxlen 3
+STEP_caseII 168
+STEP_chk 648
+trans 40
+wruns 12
+VIOLATIONS 0
+RC 0

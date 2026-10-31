@@ -1,0 +1,14 @@
+GAME n5-epoch/instances/nep76_n40.pg
+BIT_chk 995
+DCOPY_chk 17
+DESC 88
+FROZEN_chk 72
+GAMES 1
+ROOT_chk 229
+TD 1417
+WCH 325
+WCT 72
+trans 72
+wruns 7
+VIOLATIONS 0
+RC 0

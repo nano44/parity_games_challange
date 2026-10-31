@@ -1,0 +1,13 @@
+GAME new/box51/out/dlc_d2.pg
+BIT_chk 40
+DESC 0
+FROZEN_chk 7
+GAMES 1
+ROOT_chk 20
+TD 72
+WCH 20
+WCT 7
+trans 7
+wruns 1
+VIOLATIONS 0
+RC 0

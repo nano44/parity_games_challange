@@ -1,0 +1,5 @@
+start ok True fallback at K 1 tau same True fb at K-1 0
+5 sigma(y) 22 W(y) (11, 201465856, 4) W(z) (11, 218103808, 3) lamW same as K-1 True
+6 sigma(y) 22 W(y) (11, 201465856, 4) W(z) (11, 218103808, 3) lamW same as K-1 True
+7 sigma(y) 29 W(y) (11, 218234880, 4) W(z) (11, 218103808, 3) lamW same as K-1 True
+in H_(K-1): True

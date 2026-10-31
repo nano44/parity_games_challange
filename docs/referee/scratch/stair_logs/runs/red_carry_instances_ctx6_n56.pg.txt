@@ -1,0 +1,13 @@
+GAME red/carry/instances/ctx6_n56.pg
+BIT_chk 4
+DESC 0
+FROZEN_chk 1
+GAMES 1
+ROOT_chk 2
+TD 2
+WCH 2
+WCT 1
+trans 1
+wruns 1
+VIOLATIONS 0
+RC 0

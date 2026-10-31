@@ -1,0 +1,4 @@
+GAME red/lag/instances/fam_D8_n78.pg
+GAMES 1
+VIOLATIONS 0
+RC 0

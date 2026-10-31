@@ -1,0 +1,15 @@
+GAME red/so/instances/mn_abs74_n48.pg
+CNT_chk 27
+FR 27
+FR_maxpair 1
+GAMES 1
+OLD_chk 453
+ROOT_chk 42
+ROOT_endPE 42
+ROOT_maxlen 2
+STEP_caseII 5
+STEP_chk 176
+trans 10
+wruns 4
+VIOLATIONS 0
+RC 0

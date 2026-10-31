@@ -1,0 +1,13 @@
+GAME red/so/instances/xsn43_n48.pg
+BIT_chk 169
+DESC 0
+FROZEN_chk 43
+GAMES 1
+ROOT_chk 42
+TD 992
+WCH 45
+WCT 43
+trans 43
+wruns 1
+VIOLATIONS 0
+RC 0

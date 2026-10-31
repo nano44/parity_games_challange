@@ -1,0 +1,14 @@
+GAME new/box59/out/fcobsP_3.pg
+BIT_chk 1110
+DCOPY_chk 103
+DESC 187
+FROZEN_chk 34
+GAMES 1
+ROOT_chk 516
+TD 2770
+WCH 524
+WCT 34
+trans 34
+wruns 2
+VIOLATIONS 0
+RC 0

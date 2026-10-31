@@ -1,0 +1,12 @@
+GAME red/so/instances/beta2_n11.pg
+GAMES 1
+OLD_chk 21
+ROOT_chk 5
+ROOT_endPE 5
+ROOT_maxlen 1
+STEP_caseII 6
+STEP_chk 20
+trans 1
+wruns 1
+VIOLATIONS 0
+RC 0

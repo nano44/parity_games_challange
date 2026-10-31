@@ -1,0 +1,15 @@
+GAME red/ul/instances/cxmig_k4_n54.pg
+DCOPIED 0
+DR 1
+DR_chk 1
+DS 0
+DT 0
+GAMES 1
+NF_chk 23
+ON_chk 23
+ROLD 0
+TS 0
+trans 12
+wruns 1
+VIOLATIONS 0
+RC 0

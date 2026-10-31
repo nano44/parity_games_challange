@@ -1,0 +1,13 @@
+GAME red/n5inj/instances/phase2_pk48.pg
+BIT_chk 126
+DESC 3
+FROZEN_chk 40
+GAMES 1
+ROOT_chk 54
+TD 592
+WCH 63
+WCT 40
+trans 40
+wruns 12
+VIOLATIONS 0
+RC 0

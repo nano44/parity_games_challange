@@ -1,0 +1,12 @@
+GAME new/box59/out/rnd/r130_n60.pg
+GAMES 1
+OLD_chk 80
+ROOT_chk 2
+ROOT_endPE 2
+ROOT_maxlen 1
+STEP_caseII 21
+STEP_chk 111
+trans 1
+wruns 1
+VIOLATIONS 0
+RC 0

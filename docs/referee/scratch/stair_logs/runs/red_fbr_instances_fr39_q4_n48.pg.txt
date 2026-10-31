@@ -1,0 +1,13 @@
+GAME red/fbr/instances/fr39_q4_n48.pg
+BIT_chk 88
+DESC 0
+FROZEN_chk 32
+GAMES 1
+ROOT_chk 38
+TD 1143
+WCH 40
+WCT 32
+trans 32
+wruns 1
+VIOLATIONS 0
+RC 0

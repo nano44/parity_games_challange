@@ -1,0 +1,14 @@
+GAME n5-exhaustive/instances/frz2_n24.pg
+BIT_chk 141
+DCOPY_chk 7
+DESC 26
+FROZEN_chk 23
+GAMES 1
+ROOT_chk 51
+TD 337
+WCH 55
+WCT 23
+trans 23
+wruns 1
+VIOLATIONS 0
+RC 0

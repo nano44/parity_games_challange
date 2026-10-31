@@ -1,0 +1,14 @@
+GAME red/usplit/instances/usplit_n23.pg
+CNT_chk 12
+FR 12
+FR_maxpair 1
+GAMES 1
+OLD_chk 18
+ROOT_chk 1
+ROOT_endPE 1
+ROOT_maxlen 1
+STEP_chk 9
+trans 9
+wruns 1
+VIOLATIONS 0
+RC 0

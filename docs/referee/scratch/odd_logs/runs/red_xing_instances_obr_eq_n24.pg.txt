@@ -1,0 +1,12 @@
+GAME red/xing/instances/obr_eq_n24.pg
+CNT_chk 3
+FR 3
+FR_maxpair 1
+GAMES 1
+OLD_chk 58
+STEP_caseII 7
+STEP_chk 35
+trans 4
+wruns 1
+VIOLATIONS 0
+RC 0

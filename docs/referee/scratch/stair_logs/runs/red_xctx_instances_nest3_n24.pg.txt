@@ -1,0 +1,4 @@
+GAME red/xctx/instances/nest3_n24.pg
+GAMES 1
+VIOLATIONS 0
+RC 0

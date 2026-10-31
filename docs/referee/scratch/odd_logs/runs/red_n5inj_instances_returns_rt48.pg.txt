@@ -1,0 +1,15 @@
+GAME red/n5inj/instances/returns_rt48.pg
+CNT_chk 79
+FR 79
+FR_maxpair 1
+GAMES 1
+OLD_chk 285
+ROOT_chk 6
+ROOT_endPE 6
+ROOT_maxlen 1
+STEP_caseII 81
+STEP_chk 400
+trans 64
+wruns 14
+VIOLATIONS 0
+RC 0

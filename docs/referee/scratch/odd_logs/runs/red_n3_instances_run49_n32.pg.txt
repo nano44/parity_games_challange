@@ -1,0 +1,15 @@
+GAME red/n3/instances/run49_n32.pg
+CNT_chk 55
+FR 63
+FR_maxpair 2
+GAMES 1
+OLD_chk 178
+ROOT_chk 4
+ROOT_endPE 4
+ROOT_maxlen 1
+STEP_caseII 2
+STEP_chk 51
+trans 49
+wruns 1
+VIOLATIONS 0
+RC 0

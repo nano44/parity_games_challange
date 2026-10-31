@@ -1,0 +1,15 @@
+GAME red/n5inj/instances/returns_ph64.pg
+DCOPIED 4
+DR 21
+DR_chk 30
+DS 5
+DT 0
+GAMES 1
+NF_chk 115
+ON_chk 115
+ROLD 0
+TS 0
+trans 88
+wruns 16
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,12 @@
+GAME red/xing/instances/x31_lem_e24.pg
+CNT_chk 48
+FR 48
+FR_maxpair 1
+GAMES 1
+OLD_chk 144
+STEP_caseII 55
+STEP_chk 216
+trans 46
+wruns 5
+VIOLATIONS 0
+RC 0

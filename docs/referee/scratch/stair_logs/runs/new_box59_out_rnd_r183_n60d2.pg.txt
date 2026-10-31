@@ -1,0 +1,4 @@
+GAME new/box59/out/rnd/r183_n60d2.pg
+GAMES 1
+VIOLATIONS 0
+RC 0

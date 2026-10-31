@@ -1,0 +1,14 @@
+GAME n5-epoch/instances/lend27_n24.pg
+BIT_chk 128
+DCOPY_chk 1
+DESC 13
+FROZEN_chk 23
+GAMES 1
+ROOT_chk 14
+TD 19
+WCH 61
+WCT 23
+trans 23
+wruns 6
+VIOLATIONS 0
+RC 0

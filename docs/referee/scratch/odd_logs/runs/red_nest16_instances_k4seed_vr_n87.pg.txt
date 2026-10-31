@@ -1,0 +1,6 @@
+GAME red/nest16/instances/k4seed_vr_n87.pg
+GAMES 1
+STEP_caseII 15
+STEP_chk 216
+VIOLATIONS 0
+RC 0
