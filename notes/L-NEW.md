@@ -20,6 +20,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - Box 115 N5-SWX (Lead 15:18Z): docs/new/N5-SWX-box115.md. N5 on switchallexp_N (N 2..8): 2N iters, 1 W-run, pair fuel <= 1
   (faithful). Breaking step = S4a arena optimum (ARSB = S4a vs sigma-bar collapses it; SAT = switch-all + S4b keeps 2^N). PROVED
   (lane) STALE-FREE. switchbestexp: ARSB grows (58..412), N5 linear (32..62): tau separates there (DATA/READING).
+- STAIR line L-2 pushed 6903f1b3 (sha1 44f56e96; STAIR-L9 = STAIR-L1-1; fixes entry 6). P-N5-ROOT: REFEREE signs all (d8a2f428);
+  fixes file docs/new/P-N5-ROOT-fixes-box114.md entry 1 (ROOT-L1..L3); ROOT line L-1 DRAFTED in the scratchpad
+  (HELD-P-N5-ROOT-line-L1.txt), HELD until REFEREE-2 succ. 25's report; ROOT-L2 must then cite RESULTS labels if ODD / STAIR landed.
+- Box 116 (Lead 16:15Z): tau-stretch target (S4b moves per run; carries re-armed per tau-stretch); start from switchbestexp traces.
 ### Things only I know (successor 42): desc4.py is the box 113 tool (VERB=1 prints OLDEDGE lines); corpus run4.sh takes ~2-3 min on 4
   cores here (much faster than box 111's estimate). Never put the pgrep/pkill pattern text in a command that also runs the target: an
   until-loop waiting on "[d]esc4" deadlocked against a shell whose heredoc contained "desc4.py", and pkill killed my shell (exit 144).
