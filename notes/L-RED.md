@@ -1,5 +1,5 @@
 # L-RED notebook (independent adversary lane)
-Successor 36 (session_01V5yGRXBDuKdR4N9Rfvkq8p, Opus 5.5) started 2026-10-31 01:10Z (date -u); R152-R153; see "Successor 36".
+Successor 36 (session_01V5yGRXBDuKdR4N9Rfvkq8p, Opus 5.5) started 2026-10-31 01:10Z (date -u); R152-R154 + SRC L-4; see "Successor 36".
 Successor 35 (session_01V5yGRWdTCZePxH7viLZ6VS, Opus 5.5) started 2026-10-30 20:42Z (date -u); R147-R151; PARKED ~2026-10-31 00:5xZ; see "Successor 35 PARK".
 Successor 34 (session_01V5yGRYH6tnU7RvjZqXw32g, Opus 5.5) started 2026-10-30 15:33Z (date -u); R143-R146; PARKED ~20:30Z; see "Successor 34 PARK".
 Successor 33 (session id: see docs/NOW.md roster, Opus 5.5) started 2026-10-30 11:13Z (date -u); R135-R142 (no kill; WAIT-CYCLE, PAT-SW, ALT-ESCAPE, ARENA-MAX; quadratic one-W-run families); PARKED ~15:00Z; see "Successor 33 PARK".
@@ -50,7 +50,13 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   (lex/lexone.py, exhaustive L <= 6). PROVED (lane): SW-XI (switches of u <= sum over succ (1 + XICH)), KEY-SW, KEY-XI (KEYCH <= m_E +
   sum XICH), so KEYCH-POLY <= XI-CH-POLY <=> WRUN-POLY; no amplification. DATA: corpus KEYCH <= 8 = |F|, quadratic families KEYCH 0 (odd c);
   SW-XI 37,718 switches 0 violations. Not opened: l-new 8591166d box 106 (Lead summary only).
-- RESUME POINT: the target is a super-polynomial Xi-change count in one W-run (R95 residual); lex ties cannot amplify a Xi supply.
+- SRC L-4 (Lead 02:4xZ, after R96 LANDED 38bb8320): docs/red/P-N5-SRC-line-L4.txt sha1 ec2c7139, fixes entry 4; pushed 1edc2f0e.
+- R154 docs/red/R154-gates.md: PROVED (lane) Lemma GATE-r (Even selector, Odd gates l_j -> {lam_j, S_a}, static branches: <= r climbs, r =
+  number of signals); sgate_K8 (obs_K12_m24 + 8-level selector): 301 signal rises, ONE climb l1 -> l8; abstract max = r (K <= 6, r <= 3).
+  Supplies ADD; R148 §3 gated ladder (G2) dead as designed. Max W-order flips of a successor pair in one W-run: linear (<= 24).
+- RESUME POINT: a super-quadratic W-run needs DYNAMIC branches (a counter in the options' own Xi / W), not more signals; that is R95's
+  XI-CH-POLY / R* again.
+- Things only I know (2): never wrap push.sh in `timeout` (it killed verify once, nothing pushed); wlev/sgtrace.py takes ~1 min on n 297.
 - Things only I know:
   - casc/defstart.py takes TWO args (GAME OUT); with one it writes nothing and xeng then fails on an empty start.
   - red/o1/ already exists (R19); my O1 tools live in red/tie/.
