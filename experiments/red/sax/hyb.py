@@ -35,13 +35,13 @@ def sa(E, sigma, Is, vs):
     return ns
 def run(g, mode, cap=10 ** 5):
     n = g.n; E, Ed = Engine(g), Engine(dual(g)); sigma, tau = list(E.initial("best")), list(Ed.initial("best"))
-    it = fb = 0; taus = [tuple(tau)]; WD = [0, 0]
+    it = fb = 0; taus = [tuple(tau)]; WD = [0, 0]; run.TR = [(tuple(sigma), tuple(tau))]; run.FB = []; run.IS = []
     while it < cap:
         vs, sbar = E.evaluate(tuple(sigma)); Is = E.improving(tuple(sigma), vs)
         vt, tbar = Ed.evaluate(tuple(tau)); It = Ed.improving(tuple(tau), vt)
         if mode in ("sa", "H2", "H3"): It = []
         if not Is and not It: break
-        it += 1; ns, nt = list(sigma), list(tau)
+        it += 1; ns, nt = list(sigma), list(tau); run.IS.append(set(Is)); fb0 = fb
         if mode == "sa": ns = sa(E, sigma, Is, vs)
         elif mode in ("n5", "H3"):
             if Is: ns = s4a(g, sigma, Is, tau)
@@ -67,7 +67,7 @@ def run(g, mode, cap=10 ** 5):
             Wg = Engine(pg.Game(list(g.prio), list(g.owner), [[tau[v]] if g.owner[v] == 1 else g.succ[v] for v in range(n)]))
             a, _ = Wg.evaluate(tuple(sigma)); b, _ = Wg.evaluate(tuple(ns))
             d = sum(1 for v in range(n) if Wg.key(b[v]) < Wg.key(a[v])); WD[0] += d; WD[1] += d > 0
-        sigma, tau = ns, nt; taus.append(tuple(tau))
+        sigma, tau = ns, nt; taus.append(tuple(tau)); run.TR.append((tuple(sigma), tuple(tau))); run.FB.append(int(fb > fb0))
     runs, cur = [], 1
     for a, b in zip(taus, taus[1:]):
         if a == b: cur += 1

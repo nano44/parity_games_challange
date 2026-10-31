@@ -84,6 +84,43 @@ Started 14:47Z (Lead GO 14:47Z), written ~15:1xZ (date -u), 2026-10-31. Labels: 
 | 8 | | 77 | | 489 | 487 (28) | | 57 |
 - H1 = sa again on switchbestexp (the fixed τ does not slow switch-all down).
 
+## 1b. PLAT (Lead 15:46Z, L-SI box 58 §7: equal-swap-key repeat escapes of one (Odd s, old choice x) inside one W-run)
+- Tools:
+  - L-SI's anc.py (l-si 6370a35f, read-only, run from a git-archive) on N5 runs.
+  - sax/ancx.py: anc.py's text with its trace replaced by a hyb.py hybrid run. Its n5 mode reproduces anc.py's own N5 numbers on
+    switchallexp_4 (8 iterations, ESCEQ 0, MAXESC_SX 1).
+  - sax/platx.py prints the longest plateau with labels.
+  - sax/wrise.py checks L-SI's candidate (b), a strict W-rise between re-openings.
+- DATA, N5 itself: PLAT ≥ 2, growing with n, in ONE W-run. On fbA_K_m_m2 (R158 design A, fb/mkfb.py; the gates never bind, E2 never
+  switches):
+  | instance | n | \|F\| (= whole run, one W-run) | MAXESC_SX | MAXPLAT | ESCEQ |
+  | --- | --- | --- | --- | --- | --- |
+  | fbA_K4_m8_m8 (R158 pin) | 136 | 44 | 4 | 3 | 9 |
+  | fbA_K4_m16_m16 | 208 | 76 | 4 | 3 | 21 |
+  | fbA_K8_m8_m8 (R164 pin) | 192 | 88 | 8 | 7 | 21 |
+  | fbA_K8_m16_m16 | 264 | 152 | 8 | 7 | 49 |
+  | fbA_K16_m8_m8 | 304 | 176 | 16 | 15 | 45 |
+  - PLAT = K − 1 and MAXESC_SX = K, independent of m and m2.
+  - The plateau is the Odd gate a_j (j even): it escapes from its old choice g_j once per pivot round (period m + 3), always at the
+    same swap key. On fbA_K8_m8_m8: s = a4, x = g4, escapes at 5, 16, 27, …, 82, all with og (1, 117).
+  - PLAT is therefore LINEAR in n: one escape per rung of h's ladder. This kills the data bound «PLAT ≤ 1» (L-SI corpus), but not
+    PLAT-POLY.
+  - Candidate (b) holds here: on fbA_K4_m8_m8 (s = a4, escapes 5, 16, 27, 38), W(x) and W(x₂) both strictly rise between
+    consecutive escapes, and τ is unchanged (wrise.py). The re-openings are paid by the pivot's ladder rises.
+  - Faithfulness: xeng identical and Oink OK on fbA_K8_m8_m8, and fbA_K4_m8_m8 is already checked in check.sh (R158).
+- DATA, hybrids (anc.py fields inside W-runs; W-runs = τ constant and no fallback):
+  | instance | H1 (switch-all, N5 Odd) MAXPLAT / MAXESC_SX | H4 (W-monotone switch-all) | n5 |
+  | --- | --- | --- | --- |
+  | switchallexp_3 / 5 / 6 | 2 / 3, 14 / 15, 30 / 31 | 1 / 2, 1 / 2, 1 / 2 | 0 / 1, 0 / 0, 0 / 0 |
+  | switchbestexp_3 / 4 / 5 / 6 | 2 / 3, 6 / 7, 14 / 15, 30 / 31 | 1 / 2 (all) | 1 / 2 (all) |
+  - The escape engine runs INSIDE a fixed-τ run when Even uses switch-all: PLAT 2^(N−1) − 2.
+  - Restricting switch-all to W-improving edges (H4) brings PLAT to ≤ 1 on both families, and so does N5.
+  - READING: W-monotonicity is the property that kills the exponential plateau on both templates. What it cannot stop is a plateau
+    paid by W-rises: fbA's K − 1, one per ladder rung.
+- The precise remaining question for a super-polynomial PLAT: a single Odd (s, x) must be re-opened at an equal key once per W-rise of
+  x's play, and x's play must take super-polynomially many W-rises. That is again a W-monotone counter (§3): the per-vertex W-chain of
+  x must be long. That needs DESC* at depth ≥ 3 (R163).
+
 ## 2. Search side (hd/wclimb.py, new REARM=3: objective (longest W-run |F|, −fallbacks); n5b SPEC traces)
 - Objective (|F|, −fallbacks), with |F| = the longest fallback-free W-run of the n5b SPEC trace. Mutations as in R160: retarget, add or
   drop an edge, change a priority, change a start choice; the start stays valid. 40 min per climb, timed out (best kept in the log only).
@@ -119,5 +156,7 @@ Started 14:47Z (Lead GO 14:47Z), written ~15:1xZ (date -u), 2026-10-31. Labels: 
   - DATA: switchbestexp is linear for N5 (|F| = 6.5N + 5); H3 (frozen τ) is quadratic.
   - READING: the template cannot be rebuilt in one W-run as is; the open object is a W-monotone nested counter (depth-3 re-arm).
   - |F|/n² growth: NOT found.
+  - DATA (PLAT): N5 has PLAT = K − 1 in one W-run on fbA (linear; pin fbA_K8_m8_m8, PLAT 7); the hybrids show that W-monotone switch-all
+    (H4) has PLAT ≤ 1 where switch-all (H1) has 2^(N−1) − 2.
 - NEEDS: Lead: route «S4a W-monotonicity» to L-SI as the N5-specific property for the proof side. If wanted: L-LIT to open the source
   for Friedmann's lower bounds for switch-all / switch-best (I cite none here).
