@@ -56,6 +56,8 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
     - W-monotone switch-all PLAT ≤ 1.
   - R165 (R165-nest.md): a third gated level (fbsearch3, pin fb3_K4_m6_m12_m12) is ADDITIVE, |F| = K(m2 + m3 + c); E3 selectors never
     switch; PLAT 0; DESC* ≈ |F|; the cap is R158 (A) one level down.
+  - R166 (R166-wreopen.md): W-REOPEN (L-SI box 58 §10) DEAD. n3cov_lean's Odd 2-cycle is subdivided by a forced Even vertex (or one with
+    a never-taken sink choice): EVEN_NOWRISE 1, pins wre/instances. Suggested repair: an Even vertex that SWITCHES between the escapes.
 - RESUME POINT: the missing gadget is a level-≥2 selector that re-climbs once per inner step while its rises are compared against
   the OLD level (R158 (A) at depth 2). Start from fb3_genome.json (fbsearch3.py) with an objective counting hs2 / hps2 switches.
 - Things only I know:
