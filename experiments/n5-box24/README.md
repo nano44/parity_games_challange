@@ -96,7 +96,7 @@ climbs_end.txt). The exhaustive C(2)-C(4) and R5 / R6 (seed 23) JSONs are box 23
   - 599 / 599 W-runs agree over 322 games (results/xcasc_alt.txt 326 / 326, xcasc_sbcg.txt 273 / 273).
   - 0 EVEN-ON-PLAY or WINDOW-RISE failures ("bad 0").
   - L-NEW's files contain interleaved xargs lines; parsed with the last record per line; 0 games dropped.
-- The six new climb pins below were also run through retcause.py (l-new head, git archive, unchanged): the same values.
+- The five new climb pins below were also run through retcause.py (l-new head, git archive, unchanged): the same values.
 
 ### Constructions (independent reproductions, my tool on n5b; L-RED R148 / R149 / R150 first)
 | instance | n | |F| | returns | CASC | PXR | max children, RETURN node | max depth |
@@ -114,17 +114,18 @@ climbs_end.txt). The exhaustive C(2)-C(4) and R5 / R6 (seed 23) JSONs are box 23
 - C(5): not exhaustive (2.9·10^10 games).
 
 ### Climbs (climb24.py; fitness (quantity, secondary, returns); the third key gives a gradient where the first two are 0)
-| fitness | n 6 | n 10 | n 15 | n 20 | n 30 | seeded n 32 |
-| --- | --- | --- | --- | --- | --- | --- |
-| PXR, 2-key (r1) | 1 | 1 | 2 | 3 | 1 | |
-| PXR, 3-key (r2) | | | 4 | 6 | | 5 (from cedge_n32's 4) |
-| RETURN-node children, 2-key (r1) | 0 | 0 | 0 | 0 | 0 | |
-| RETURN-node children, 3-key (r2) | | | 8 | 19 | | 15 (from u23sw64_n32's 6) |
+| fitness | n 6 | n 10 | n 15 | n 20 | n 30 | n 40 | seeded n 32 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| PXR, 2-key (r1) | 1 | 1 | 2 | 3 | 1 | | |
+| PXR, 3-key (r2) | | | 4 | 6 | 3 | 5 | 5 (from cedge_n32's 4) |
+| RETURN-node children, 2-key (r1) | 0 | 0 | 0 | 0 | 0 | | |
+| RETURN-node children, 3-key (r2) | | | 8 | 19 | 35 | 14 | 15 (from u23sw64_n32's 6) |
 - The 2-key RETURN-node climbs found nothing: a return node with any child is too rare for a blind walk. The returns gradient fixes that.
 
 ### Pinned witnesses (pin23.py ALL OK; retcause.py gives the same numbers)
 | name | sha1 | n | |F| | returns | CASC | PXR (deg X) | max children, RETURN node | depth |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| kr35_n30 | 54210372f956… | 30 | 10 | 81 | 53 | 4 | 35 | 3 |
 | kr19_n20 | 58b7f92ed55e… | 20 | 8 | 41 | 30 | 4 (deg 9) | 19 | 2 |
 | kr15_n32 | 2980bc242551… | 32 | 8 | 63 | 32 | 2 | 15 | 3 |
 | pxr6_n20 | 8fb69ff55de9… | 20 | 19 | 51 | 25 | 6 (deg 5) | 3 | 2 |
@@ -136,7 +137,9 @@ climbs_end.txt). The exhaustive C(2)-C(4) and R5 / R6 (seed 23) JSONs are box 23
    construction. Here, independent of clones:
    - kr19_n20: one RETURN node with 19 = n − 1 children in an 8-transition W-run at n 20, a dense game with no passive clone (every
      vertex has an in-edge);
-   - kr15_n32: 15.
+   - kr15_n32: 15;
+   - kr35_n30: 35 > n = 30 (10-transition W-run, m_E 149; one vertex, 5, has no in-edge).
+   Lemma CHILD (box 100, lane) bounds children by m_E, and 35 ≤ 149 is consistent with it.
    So the width at return nodes is not a clone artefact. It is ≈ n in a small natural-looking game.
 3. DATA: CASC-EDGE (RET(X; e) ≤ deg X, DEAD by R150 at 4 = 2·deg) is beaten more strongly: pxr5_n32 has 5 returns of one X of out-degree 2
    under one root (2.5·deg).

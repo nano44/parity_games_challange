@@ -22,3 +22,23 @@ climbs/F_n8_r3.log END steps 245691 best (7, 5, 0) n 8 secs 900 -> /home/user/pa
 climbs/F_n9_r1.log END steps 152770 best (7, 4, 0) n 9 secs 600 -> /home/user/parity_games_challange/experiments/n5-box24/climbs/F_n9_r1.pg
 climbs/F_n9_r2.log END steps 181615 best (10, 1, 0) n 9 secs 900 -> /home/user/parity_games_challange/experiments/n5-box24/climbs/F_n9_r2.pg
 climbs/F_n9_r3.log END steps 167447 best (9, 5, 0) n 9 secs 900 -> /home/user/parity_games_challange/experiments/n5-box24/climbs/F_n9_r3.pg
+climbs/kidsret2_n15_r2.log END steps 112673 best (8, 3, 20) n 15 secs 900 -> /home/user/parity_games_challange/experiments/n5-box24/climbs/kidsret2_n15_r2.pg
+climbs/kidsret2_n20_r2.log END steps 66692 best (19, 2, 41) n 20 secs 900 -> /home/user/parity_games_challange/experiments/n5-box24/climbs/kidsret2_n20_r2.pg
+climbs/kidsret2_n30_r2.log END steps 25104 best (35, 3, 81) n 30 secs 900 -> /home/user/parity_games_challange/experiments/n5-box24/climbs/kidsret2_n30_r2.pg
+climbs/kidsret2_n40_r2.log END steps 56812 best (14, 1, 21) n 40 secs 900 -> /home/user/parity_games_challange/experiments/n5-box24/climbs/kidsret2_n40_r2.pg
+climbs/kidsret_n10_r1.log END steps 516878 best (0, 0) n 10 secs 900 -> /home/user/parity_games_challange/experiments/n5-box24/climbs/kidsret_n10_r1.pg
+climbs/kidsret_n15_r1.log END steps 278759 best (0, 0) n 15 secs 900 -> /home/user/parity_games_challange/experiments/n5-box24/climbs/kidsret_n15_r1.pg
+climbs/kidsret_n20_r1.log END steps 170642 best (0, 0) n 20 secs 900 -> /home/user/parity_games_challange/experiments/n5-box24/climbs/kidsret_n20_r1.pg
+climbs/kidsret_n30_r1.log END steps 96279 best (0, 0) n 30 secs 900 -> /home/user/parity_games_challange/experiments/n5-box24/climbs/kidsret_n30_r1.pg
+climbs/kidsret_n6_r1.log END steps 818903 best (0, 0) n 6 secs 900 -> /home/user/parity_games_challange/experiments/n5-box24/climbs/kidsret_n6_r1.pg
+climbs/kidsret_seedu23_n32_r1.log END steps 96045 best (15, 3, 63) n 32 secs 1800 -> /home/user/parity_games_challange/experiments/n5-box24/climbs/kidsret_seedu23_n32_r1.pg
+climbs/pxr2_n15_r2.log END steps 73344 best (4, 12, 27) n 15 secs 900 -> /home/user/parity_games_challange/experiments/n5-box24/climbs/pxr2_n15_r2.pg
+climbs/pxr2_n20_r2.log END steps 39174 best (6, 19, 51) n 20 secs 900 -> /home/user/parity_games_challange/experiments/n5-box24/climbs/pxr2_n20_r2.pg
+climbs/pxr2_n30_r2.log END steps 25416 best (3, 18, 37) n 30 secs 900 -> /home/user/parity_games_challange/experiments/n5-box24/climbs/pxr2_n30_r2.pg
+climbs/pxr2_n40_r2.log END steps 22216 best (5, 10, 46) n 40 secs 900 -> /home/user/parity_games_challange/experiments/n5-box24/climbs/pxr2_n40_r2.pg
+climbs/pxr_n10_r1.log END steps 254913 best (1, 7) n 10 secs 900 -> /home/user/parity_games_challange/experiments/n5-box24/climbs/pxr_n10_r1.pg
+climbs/pxr_n15_r1.log END steps 79959 best (2, 14) n 15 secs 900 -> /home/user/parity_games_challange/experiments/n5-box24/climbs/pxr_n15_r1.pg
+climbs/pxr_n20_r1.log END steps 37702 best (3, 19) n 20 secs 900 -> /home/user/parity_games_challange/experiments/n5-box24/climbs/pxr_n20_r1.pg
+climbs/pxr_n30_r1.log END steps 43592 best (1, 11) n 30 secs 900 -> /home/user/parity_games_challange/experiments/n5-box24/climbs/pxr_n30_r1.pg
+climbs/pxr_n6_r1.log END steps 325608 best (1, 5) n 6 secs 900 -> /home/user/parity_games_challange/experiments/n5-box24/climbs/pxr_n6_r1.pg
+climbs/pxr_seedcedge_n32_r1.log END steps 24202 best (5, 35, 83) n 32 secs 1800 -> /home/user/parity_games_challange/experiments/n5-box24/climbs/pxr_seedcedge_n32_r1.pg
