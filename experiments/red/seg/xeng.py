@@ -6,6 +6,9 @@ import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
 sys.path.insert(0, os.path.join(ROOT, "experiments", "new")); sys.path.insert(0, os.path.join(ROOT, "experiments", "n5-second"))
 import n5, n5b, si
+sys.path.insert(0, os.path.join(HERE, "..", "startck")); import startck   # D-ODD-1 (succ. 38): reject non-edges in the start
+if startck.check(sys.argv[1], sys.argv[2]) and os.environ.get("ALLOW_BAD_START") != "1":
+    sys.exit(f"BAD START {sys.argv[2]}: {startck.check(sys.argv[1], sys.argv[2])[:3]} (set ALLOW_BAD_START=1 to run anyway)")
 g5 = n5b.pg.read(sys.argv[1]); s0, t0 = n5b.read_start(sys.argv[2], g5)
 N = n5b.N5(g5); N.mode = "spec"; tr, fb = [], []; N.run(s0, t0, trace=tr, fbtrace=fb)
 g = n5.pg.parse("".join(l for l in open(sys.argv[1]) if not l.lstrip().startswith("%")))
