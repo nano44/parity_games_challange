@@ -669,3 +669,11 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
 - (§9, Lead 07:25Z) «The ceiling agreement A falls at every source-free W-run transition» (would join CEIL-ACC to R97 SRC-COUNT): DEAD.
   experiments/red/xing/instances/u23sw64_n32.pg (default start): 12 source-free W-run transitions, A never falls (floor 8, ceiling 3,
   inside 1 at 13 → 14). Corpus: 7,161 source-free non-falls, 3,653 strictly inside. Pins: check.sh «box 53d».
+- (box 54, Lead 08:13Z, HXS-POLY proof side; note docs/si/N5-SRC-box54.md §4) Potentials on Odd sources: DEAD.
+  - The rank of σ̄_k(o) in the W_k-order of o's successors (and any potential read from that order and σ̄(o)): experiments/si/src54/inst/
+    sbq2_K8_m16 (= l-red flipev/instances/sbq2_K8_m16): W(242) = W(259) at all 153 states (one W-run) while σ̄(260) changes 128 times.
+  - CONJECTURE ASC-W (consecutive Ξ(v)-changes with non-rising top-differing rank have a W(v)-change between them): src2_K3 (= l-red
+    wlev/instances/src2_K3), Odd 62: top ranks 235 (k 24 → 25), 233 (k 26 → 27), 231 with W(62) constant (a descending staircase).
+    1,012 such pairs on src2_K3, 540 on sbq2_K8_m16.
+  - TURN-W (direction reversals of that rank sequence need a nearby W(v)-change): 67 bare reversals on src2_K3, 58 on sbq2_K8_m16.
+  - Pins: experiments/si/check.sh «box 54».

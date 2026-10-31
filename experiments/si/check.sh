@@ -991,6 +991,20 @@ echo "si (box 53c: CEIL-ACC data): PASS"
 o=$(python3 -I sb53/ceilpot.py ../red/xing/instances/u23sw64_n32.pg)
 case "$o" in *"SRC 1 AUPSF 0 ANDNSF 12 AEQSF 12 AEQ0SF 8 AEQMAXSF 3 AMIDSF 1"*) ;; *) echo "box 53d: u23sw64: $o"; exit 1;; esac
 echo "si (box 53d: source-free A-flats): PASS"
+# box 54 (docs/si/N5-SRC-box54.md, Lead 08:13Z): OLD-PLAY / ODD-STEP / ODD-RELAY checks (0 violations, MUT control bites); W-rank,
+# ASC-W and TURN-W DEAD (sbq2_K8_m16, src2_K3); corpus outputs complete and violation-free.
+( cd src54/inst && sha1sum -c --quiet pins.sha1 ) || { echo "box 54: pins changed"; exit 1; }
+o=$(python3 -I src54/oddadd.py src54/inst/sbq2_K8_m16.pg src54/inst/sbq2_K8_m16.start)
+case "$o" in *"VOLD 0 ODDCH 2237 VSTEP 0 VSTEPB 0 OSRC 769 PROP 120 PFX 649 PFXSW 649 PFXDIN 0 PFXNOU 0 VADD 0 MAXHXS 128 MAXPFX 72"*) ;; *) echo "box 54: oddadd sbq2: $o"; exit 1;; esac
+o=$(MUT=1 python3 -I src54/oddadd.py src54/inst/sbq2_K8_m16.pg src54/inst/sbq2_K8_m16.start)
+case "$o" in *"VOLD 2881 "*) ;; *) echo "box 54: MUT control did not bite: $o"; exit 1;; esac
+o=$(python3 -I src54/wtie.py src54/inst/sbq2_K8_m16.pg src54/inst/sbq2_K8_m16.start 260)
+case "$o" in *"states 153 Wtie 153 sbflips 128"*) ;; *) echo "box 54: wtie sbq2: $o"; exit 1;; esac
+o=$(python3 -I src54/ascw.py src54/inst/src2_K3.pg src54/inst/src2_K3.start)
+case "$o" in *"TURNBAD 67 SRCTURNBAD 23 "*"NA 3692 BAD 1012 "*) ;; *) echo "box 54: ascw src2: $o"; exit 1;; esac
+[ "$(cat src54/odd_*.txt | grep -c ODDADD)" = 1132 ] || { echo "box 54: oddadd outputs incomplete"; exit 1; }
+if grep -q "VOLD [1-9]\|VSTEP [1-9]\|VSTEPB [1-9]\|VADD [1-9]" src54/odd_*.txt; then echo "box 54: corpus violation"; exit 1; fi
+echo "si (box 54: OLD-PLAY, ODD-STEP, ODD-RELAY; W-rank / ASC-W / TURN-W dead): PASS"
 # P-N5-SETTLE line revision L-1 (fixes entry 1; both referees word-diff it): must not change.
 echo "997e39eee8d72ae94be4764bb1e3841914ffc78e  ../../docs/si/P-N5-SETTLE-line-L1.txt" | sha1sum -c --quiet
 echo "si (P-N5-SETTLE L-1 pinned): PASS"
