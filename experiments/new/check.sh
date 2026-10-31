@@ -595,4 +595,10 @@ if [[ $(grep -c "ONVIOL 0 " <<<"$w62") == 5 && $(grep -c "NFVIOL 0 " <<<"$w62") 
 else
   echo "box 113 DESCSTAR check: FAILED"; exit 1
 fi
+w63=$(cd .. && python3 -I new/box115/abl.py new/box115/inst/switchallexp_3.pg SI 3000; python3 -I new/box115/abl.py new/box115/inst/switchallexp_3.pg ARSB 3000; python3 -I new/box115/abl.py new/box115/inst/switchallexp_3.pg SAT 3000; python3 -I new/box115/swx.py new/box115/inst/switchallexp_3.pg new/box115/inst/switchallexp_3.start; python3 -I new/box115/stale.py new/box115/inst/switchallexp_2.pg)
+if grep -qF "ABL switchallexp_3.pg SI n 49 iters 70 evenswitches 433 taumoves 0 MAXENT 17 (43, 46) MAXFR 8 (19, 17)" <<<"$w63" && grep -qF "ABL switchallexp_3.pg ARSB n 49 iters 8 " <<<"$w63" && grep -qF "MAXFR 1 (1, 5)" <<<"$w63" && grep -qF "ABL switchallexp_3.pg SAT n 49 iters 70 evenswitches 433 taumoves 3" <<<"$w63" && grep -qF "SWX switchallexp_3.pg N5 n 49 iters 7 fallbacks 0 tauchg 3 wruns 1 wlongest 3" <<<"$w63" && grep -qF "steps 30 moves 138 stale 37 stale_at_s 0" <<<"$w63" && [ "$(sha1sum box115/inst/switchallexp_3.pg | cut -d' ' -f1)" = "3ad1b30a06c0ab02c0dbdd9949866aed96d87cca" ]; then
+  echo "box 115 SWX: switchallexp_3 SI 70 iters / pair fuel 8, ARSB 8 / 1, SAT 70 / 8, N5 7 iters one W-run; SI stale moves 37 (N 2): PASS"
+else
+  echo "box 115 SWX check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
