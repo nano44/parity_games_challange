@@ -10,7 +10,19 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
   15 witnesses pinned (pin23.py ALL OK). Lead 21:21Z: latew is an independent reproduction of L-RED R138 (labelled).
 - BOX 24 DONE (experiments/n5-box24/README.md): max |F| = n - 1 exhaustively for n <= 4 (C(4) all 268M pairs); climbs reach only n - 1
   at n 5-7 (5 seeds each); first |F| > n - 1 found at n 8 (F8_n8, 8) and n 9 (F10_n9, 10 with ONE late adoption = two GP* climbs);
-  random C(5) 220k games max 3. 8 pins. IN FLIGHT: nothing. NEEDS: next box from the Lead.
+  random C(5) 220k games max 3. 8 pins.
+- BOX 24 part 2 (Lead 21:49Z / 22:17Z, both delivered only at 00:13Z): casc.py (own Even root map, box 98-100 text) = retcause.py on 599/599
+  corpus W-runs; reproduced R148/R149/R150; climbs: RETURN node with 19 (n 20) / 35 (n 30) children (kr19_n20, kr35_n30, no clones);
+  PXR 5 at deg 2 (pxr5_n32), 6 (pxr6_n20). C(4) root-map pass stopped at parts 0-3 on the Lead's order (partial; max values 1).
+- BOX 25 (INS, Lead 02:50Z): ins.py (own INS / KEYCH from l-si 481bc6c2 §7) = treestab.py on 1,132/1,132; tie_n32 reproduced;
+  climbs: max INS 9 (ins9_n48), 8 (ins8_n32); INS = |I| - 1 on the maxima; |I| <= 10 at n <= 48. Pushed f7273394.
+- IN FLIGHT: nothing. NEEDS: next box from the Lead.
+### Things only I know (successor 8, boxes 24-25)
+- Lead messages can arrive hours late (21:49Z and 22:17Z arrived at 00:13Z): ReadNotifications between long waits.
+- Climbs on rare quantities (return-node children, INS) need a gradient: use (quantity, secondary, #returns or |I|) and seed from corpus maxima.
+- L-NEW's cause_*.txt and L-SI's tree_*.txt are xargs -P 4 outputs with interleaved lines: parse the last record per line.
+- pin23.py writes its instance copies into n5-box23/instances: delete them after pinning another box's witness.
+- Running L-NEW / L-SI tools from a branch: git archive the branch's experiments/new/box21, new/n5.py, harness, si into /tmp, run with -I.
 ### Things only I know (successor 8)
 - red/n3/instances/n3cov_lean.start is invalid (R99); start files must be overlaid on S3 dropping invalid entries (rstar.overlay).
 - pkill -f / pgrep -f with a pattern that occurs in your own command line kills / matches your own shell (bit me 14:45Z).
