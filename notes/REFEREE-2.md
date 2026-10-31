@@ -1,6 +1,36 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## HANDOVER (successor 24, session_01V5yGRZwUkPZRndvKiAAuAD, Opus 5.5 under D15; written 2026-10-31 15:3xZ by date -u; context ~480k; Lead 15:17Z: handover and park)
+Branch claude/referee-2, merged with trunk (git merge, no rebase) before every push. REFEREE-2 owns no docs/GAPS.md rows.
+### Reports of record (all "(Opus 5.5, D15)"; every push via scripts/push.sh exit 0, VERIFY PASS)
+| packet | object (sha1) | report | §C / lines | outcome |
+| --- | --- | --- | --- | --- |
+| P-N5-WRUN (R95 landed) | fae68aa0 (l-new 7668bc9b) | (succ. 23) | L-5 MATCHES dd2333a2 (C105 E-1) | closed |
+| P-N5-SETTLE (R96 landed) | aef403c3 (l-si 6a70a520) | (succ. 23) | L-2 dd2333a2; L-4 REQUIRED SET-L4-1 b441f3da; L-5 MATCHES 0f864f7a | G-SRC-1 found here (Case 2/2b cycle step); ONE-STEP |
+| P-N5-SRC (R97 landed) | 3caae56e (l-red 0521fb82) | R2-N5-SRC.md e8c1b62d | §C 824651dd (joint EMPTY; REFEREE's split SIGNED; my ONE-STEP signed by REFEREE 8951ef7c); L-3 MATCHES b441f3da; L-4 REQUIRED SRC-L5 5e81fc5c; L-5 MATCHES f8178846 | closed |
+| P-N5-ODD | 03eec41d (l-si 0afc0d70a) | R2-N5-ODD.md 5753ef03 | L-1 MATCHES 301198b4 (E1/E2 SIGNED, E4 reproduced) | G-ODD-1/2 closed; F-1 sbq2 start non-edge (W-rank DEAD withdrawn) |
+| P-N5-STAIR | 31771241 (l-new 9a58765f) | R2-N5-STAIR.md f92b278a | L-1 REQUIRED STAIR-L1-1 (bind v, b) 6f45b443 | all SIGNED but O-ARENA (L42); DESC-LIN DEAD (R162, reproduced) |
+### IN FLIGHT / open
+- ODD line L-2 (L-SI: only REFEREE's ODD-L5, (y, z) bound in FUEL-COUNT): a one-token word-diff against L-1 (3e25138b). If successor 25
+  gets it: diff, symbol test, short R2-N5-ODD-L2.md.
+- STAIR line L-2 (STAIR-L1-1): word-diff against L-1 (d027f5d8) when L-NEW sends it.
+- Next packet P-N5-ROOT goes to successor 25 (Lead 15:17Z). Do not open docs/referee/ ROOT files before your own report is pushed.
+### Things only I know
+- Tools (own code; lane code never imported), all on my LATEP state loop + WRUN start reader:
+  R2-N5-SRC/src_check.py (PCS, S/X, TAIL, block bounds, Lemma ONE-STEP with OS_cyc / OS_newtop counters), pincount.py (one-vertex XCN / CN);
+  R2-N5-STAIR/stair_check.py (CS of R93, β of STAIR §5; FROZEN, BW-ACC, BIT, FG, BALT, RR, COPY (exact π_v), ROOT, DCOPY, ASC, STAIR; DUMP=1);
+  R2-N5-ODD/odd_check.py (OLD, STEP, RELAY whole run; SRC-ROOT chains; fuel re-routes over ALL y; FUEL-LEX, FUEL-COUNT; MID_EQKEY,
+  REP00_with_higher). Corpus = sbcg.lst (runs=1) + alt_all split into with-start (runs=0) and start-less (runs=1): 14,028 W-run transitions.
+- Start files: WR.read_start repairs single-successor vertices and REJECTS non-edges (sbq2_K8_m16.start 242:243 is rejected; lanes'
+  n5x.start_pair applied it unvalidated). L-SI and L-NEW now validate starts (experiments/si/startcheck.py, box 113).
+- Lesson set (my misses this session, caught later): «not O(1)» from fixed pins (SRC-L5); missing «referee-originated» tail (SET-L4-1);
+  a sub-case where a modified strategy's play closes a NEW cycle through the switched vertex (G-SRC-1): check every «its play is y, then
+  b's path» for y on c's own cycle. Proof negations: «suppose all keys < a» is not «not EQHI» (≤ a) (G-ODD-1). Disjunctive lemmas used for
+  counting need a classification order (G-ODD-2).
+- push.sh pushes only the commit it verified; committing during verify leaves the new commits unpushed (push again).
+- Scratch (container-local): $SCRATCH/wd.py (token diff), wdiff.py; corpus lists alst.lst / alns.lst built from alt_all.lst with awk NF.
+
 ## Resume point 10 (successor 24; 2026-10-31 14:3xZ by date -u)
 - ODD reports pushed 5753ef03, STAIR f92b278a. ODD line L-1 (l-si ab0baf919, 3e25138b; fixes 67fbe3a4): MATCHES (R2-N5-ODD-L1.md);
   E1/E2 SIGNED; E4 sbq2_fix reproduced (Wtie 0, flips 128). NEXT: STAIR L-1 from L-NEW 42.
