@@ -1,0 +1,2 @@
+GAME si/gate/inst/latew_K16_m32.pg si/gate/inst/latew_K16_m32.start latew_K16_m32.pg n 482 T 560 LMAX 560 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0
+GAME si/gate/inst/fx_K8_m32.pg si/gate/inst/fx_K8_m32.start fx_K8_m32.pg n 250 T 280 LMAX 280 XCN_TR 0 XCN_V 0 XCN_RUN_ALL 0 XA 0 XB 0 LAMCH 0 XANL 0

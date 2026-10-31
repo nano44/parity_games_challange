@@ -1,0 +1,25 @@
+MODE files /tmp/claude-0/-home-user-parity-games-challange/c5131569-13ae-5464-8cfa-fc746dffc9b4/scratchpad/wr/alns.lst 1 experiments/ MAXT 5000 BF 0
+WRUNS: 2867
+WRUN_transitions: 4265
+XIPLAY_checks: 397189
+X_DEEP1: 13887
+X_DEEP2: 9008
+X_DEEP3: 5450
+X_E0: 0
+X_EXT_GLOBAL: 842
+X_FREE: 1083
+X_NODEV_runs: 496
+X_REG: 341
+X_REG_blocks_checked: 104060
+X_blocked_records: 66155
+runs: 319
+transitions: 6813
+max max_F: (55, 'red/xing/instances/x32_rand64.pg#0')
+max max_LCT_run: 30
+max max_NODEV_F: (55, 'red/xing/instances/x32_rand64.pg#0')
+max max_Rstar: (17, 'red/so/instances/so_j19_n48.pg#0')
+max max_SB: (35, 'red/so/instances/pft35_n48.pg#0')
+max max_Wconst_interval: (8, 'red/xing/instances/u23sw64_n32.pg#0')
+max max_XiCH: (35, 'red/so/instances/pft35_n48.pg#0')
+max max_ratio_F_bound_x1000: (230, 'n5-exhaustive/instances/thetaA_canon_n8.pg#0')
+RESULT PASS violations 0

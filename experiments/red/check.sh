@@ -369,6 +369,149 @@ python3 -I span/mkrw.py 4 16 "$t/fw4.pg" "$t/fw4.start" > /dev/null; BLK=2 OWNER
 out=$(python3 -I free/xret.py "$t/f4.pg" "$t/f4.start"); [[ "$out" == "XRET f4.pg n 130 iterations 76 fallbacks 0 tau-changes 0 X-switches 33 returns-per-edge [16, 16]" ]] || { echo "xret f4 drifted: $out"; exit 1; }
 python3 -I span/mkrw.py 8 32 "$t/fw8.pg" "$t/fw8.start" > /dev/null; BLK=2 OWNER=0 ABOVE=a python3 -I free/obsx.py "$t/fw8.pg" "$t/fw8.start" "$t/f8.pg" "$t/f8.start" > /dev/null
 cmp -s "$t/f8.pg" free/instances/fx_K8_m32.pg && cmp -s "$t/f8.start" free/instances/fx_K8_m32.start || { echo "obsx drifted from fx_K8_m32"; exit 1; }
+# R138 (successor 33): R*_F = K*m in one W-run on mkrw LATE=1 (L-NEW box 85 xirise.py; latec.py second counter): K 4 m 8: R* 32; pin
+# rstar/instances/latew_K16_m32 (R* 512 > n 482; regenerated and sha1-checked)
+LATE=1 python3 -I span/mkrw.py 4 8 "$t/l48.pg" "$t/l48.start" > /dev/null; out=$(python3 -I span/latec.py "$t/l48.pg" "$t/l48.start"); [[ "$out" == "LATEC l48.pg n 122 iter 44 cuts 0 fallbacks 0 R* 32 late 33 max-per-edge-Wrun 4" ]] || { echo "latec l48 drifted: $out"; exit 1; }
+sha1sum -c --quiet rstar/latew_K16_m32.sha1 || { echo "latew_K16_m32 pin changed"; exit 1; }
+LATE=1 python3 -I span/mkrw.py 16 32 "$t/l1632.pg" "$t/l1632.start" > /dev/null; cmp -s "$t/l1632.pg" rstar/instances/latew_K16_m32.pg && cmp -s "$t/l1632.start" rstar/instances/latew_K16_m32.start || { echo "mkrw drifted from latew_K16_m32"; exit 1; }
+# R139 (successor 33): XICH at ONE vertex quadratic: R120 Even wave observer on mkrw (mix/obs2.py OWNER=0 ABOVE=a): XICH(obs) = Km + K + 1
+# (xich/xichc.py, n5b); K 4 m 8: 37; pin xich/instances/obs_K12_m24 (301 at n 272)
+python3 -I span/mkrw.py 4 8 "$t/xw4.pg" "$t/xw4.start" > /dev/null; OWNER=0 ABOVE=a python3 -I mix/obs2.py "$t/xw4.pg" "$t/xw4.start" "$t/xo4.pg" "$t/xo4.start" > /dev/null
+out=$(python3 -I xich/xichc.py "$t/xo4.pg" "$t/xo4.start"); [[ "$out" == "XICHC xo4.pg n 96 iterations 44 max-XICH 37 at obs (W-run length so far 44)" ]] || { echo "xichc drifted: $out"; exit 1; }
+sha1sum -c --quiet xich/obs_K12_m24.sha1 || { echo "obs_K12_m24 pin changed"; exit 1; }
+python3 -I span/mkrw.py 12 24 "$t/xw12.pg" "$t/xw12.start" > /dev/null; OWNER=0 ABOVE=a python3 -I mix/obs2.py "$t/xw12.pg" "$t/xw12.start" "$t/xo12.pg" "$t/xo12.start" > /dev/null
+cmp -s "$t/xo12.pg" xich/instances/obs_K12_m24.pg && cmp -s "$t/xo12.start" xich/instances/obs_K12_m24.start || { echo "obs2 drifted from obs_K12_m24"; exit 1; }
+# R140 (successor 33): Friedmann 0901.2731 / PGSolver switchallexp: switch-all V0 70 iterations at N 3, S4a arena optimum vs sigma-bar V1 8
+# (fried/hybrid.py, Lemma ARENA-MAX); pins fried/instances/switchallexp_4/_6 (N5 8 / 12 iterations, xeng identical)
+python3 ../hard-families/pgsolver_port.py switchallexp 3 > "$t/sa3.pg"
+out=$(python3 -I fried/hybrid.py "$t/sa3.pg" V0); [[ "$out" == "HYBRID sa3.pg V0 iterations 70" ]] || { echo "hybrid V0 drifted: $out"; exit 1; }
+out=$(python3 -I fried/hybrid.py "$t/sa3.pg" V1); [[ "$out" == "HYBRID sa3.pg V1 iterations 8" ]] || { echo "hybrid V1 drifted: $out"; exit 1; }
+sha1sum -c --quiet fried/pins.sha1 || { echo "fried pins changed"; exit 1; }
+python3 ../hard-families/pgsolver_port.py switchallexp 4 | cmp -s - fried/instances/switchallexp_4.pg || { echo "switchallexp 4 drifted"; exit 1; }
+out=$(python3 -I seg/xeng.py fried/instances/switchallexp_4.pg fried/instances/switchallexp_4.start | tr '\n' ' '); [[ "$out" == "n5b: states 9 iterations 8 "*"identical: True " ]] || { echo "xeng switchallexp_4: $out"; exit 1; }
+# R141 (successor 33): W-constant intervals (L-SI box 51b [P-INT]): wint/wint.py gives 8 on u23sw64_n32 (L-SI's max); idxmono: 26 of 64 upward
+out=$(python3 -I wint/wint.py xing/instances/u23sw64_n32.pg); [[ "$out" == "WINT u23sw64_n32.pg n 32 longest-W-constant-interval 8 iterations 16" ]] || { echo "wint drifted: $out"; exit 1; }
+out=$(python3 -I wint/idxmono.py xing/instances/u23sw64_n32.pg | cut -d' ' -f1-6); [[ "$out" == "IDXMONO u23sw64_n32.pg interval-switches 64 upward 26" ]] || { echo "idxmono drifted: $out"; exit 1; }
+# R142 (successor 33): BIP(rho, tau) (L-NEW box 88). bip/bip.py (n5b) = bip/bip2.py (si.py) on the search pins: 24 steps at n 12, 13 at n 8
+sha1sum -c --quiet bip/pins.sha1 || { echo "bip pins changed"; exit 1; }
+for p in "bipsearch_n12 24" "bipsearch_n8 13"; do set -- $p
+  a=$(python3 -I bip/bip.py bip/instances/$1.pg bip/instances/$1.start); b=$(python3 -I bip/bip2.py bip/instances/$1.pg bip/instances/$1.start)
+  [[ "$a" == "BIP $1.pg n "*" steps $2" && "$b" == "BIP2 $1.pg n "*" steps $2" ]] || { echo "bip $1 drifted: $a / $b"; exit 1; }
+done
+# R142b (successor 33): lagged-clone fx (free/fxlag.py) against BIP-REL-1: sigma-bar re-routes (71 frozen stretches in 76 iterations), max strict
+# releases of one edge in one frozen stretch 1 (bip/strictrel.py); pin free/instances/fxlag_K4_m16 (xeng identical, Oink OK)
+sha1sum -c --quiet free/fxlag.sha1 || { echo "fxlag pin changed"; exit 1; }
+python3 -I span/mkrw.py 4 16 "$t/fl.pg" "$t/fl.start" > /dev/null; python3 -I free/fxlag.py "$t/fl.pg" "$t/fl.start" "$t/flx.pg" "$t/flx.start" > /dev/null
+cmp -s "$t/flx.pg" free/instances/fxlag_K4_m16.pg && cmp -s "$t/flx.start" free/instances/fxlag_K4_m16.start || { echo "fxlag drifted"; exit 1; }
+out=$(python3 -I bip/strictrel.py free/instances/fxlag_K4_m16.pg free/instances/fxlag_K4_m16.start); [[ "$out" == "STRICTREL fxlag_K4_m16.pg n 234 iterations 76 frozen-stretches 71 max-strict-releases-one-edge-one-stretch 1 at ('w1', 'T1')" ]] || { echo "strictrel drifted: $out"; exit 1; }
+# R143 (successor 34): Lemma SETTLE (lexc/settle.py: 0 violations; u23sw64 event-free 8 <= D 10; winseed_u23_n32 4 windows), model FT L - 1
+# (lexc/ftmodel.py exhaustive L 3 = 2), and BIP-REL-1 DEAD (rel2/mkrel2.py: 2 strict releases of (y, oz) in one frozen stretch at n 82)
+out=$(python3 -I lexc/settle.py xing/instances/u23sw64_n32.pg); [[ "$out" == "SETTLE u23sw64_n32.pg n 32 it 16 intervals 1 maxLEN 8 maxE 0 VIOL 0 OVERBOUND 0 maxNW 1 [8,0,10,1]" ]] || { echo "settle u23sw64 drifted: $out"; exit 1; }
+sha1sum -c --quiet lexc/pins.sha1 || { echo "lexc pins changed"; exit 1; }
+out=$(python3 -I lexc/settle.py lexc/winseed_u23_n32.pg lexc/winseed_u23_n32.start); [[ "$out" == "SETTLE winseed_u23_n32.pg n 32 it 12 intervals 1 maxLEN 7 maxE 3 VIOL 0 OVERBOUND 0 maxNW 4 [7,3,9,4]" ]] || { echo "settle winseed drifted: $out"; exit 1; }
+out=$(python3 -I lexc/ftmodel.py exh 3 | cut -d" " -f1-10); [[ "$out" == "FT exh L 3 W 2 n_DAG 6 longest 2" ]] || { echo "ftmodel drifted: $out"; exit 1; }
+sha1sum -c --quiet rel2/pins.sha1 || { echo "rel2 pins changed"; exit 1; }
+python3 -I rel2/mkrel2.py "$t/r2.pg" "$t/r2.start" 2; cmp -s "$t/r2.pg" rel2/instances/rel2_R2_n82.pg && cmp -s "$t/r2.start" rel2/instances/rel2_R2_n82.start || { echo "mkrel2 drifted"; exit 1; }
+out=$(python3 -I bip/strictrel.py rel2/instances/rel2_R2_n82.pg rel2/instances/rel2_R2_n82.start); [[ "$out" == "STRICTREL rel2_R2_n82.pg n 82 iterations 10 frozen-stretches 2 max-strict-releases-one-edge-one-stretch 2 at ('y', 'oz')" ]] || { echo "rel2 strictrel drifted: $out"; exit 1; }
+out=$(python3 -I seg/xeng.py rel2/instances/rel2_R2_n82.pg rel2/instances/rel2_R2_n82.start | tail -1); [[ "$out" == "state sequences identical: True" ]] || { echo "xeng rel2: $out"; exit 1; }
+if [[ -x ../../tools/oink/build/oink ]]; then out=$(bash rel2/oinkcmp.sh rel2/instances/rel2_R2_n82.pg rel2/instances/rel2_R2_n82.start); [[ "$out" == "OINK OK" ]] || { echo "rel2 oink: $out"; exit 1; }; fi
+# R144 (successor 34): shared delay (rel2/mkrel3.py): R strict releases of (y, oz) in one frozen stretch at n = 54R - 20 (pin rel3_R4_n196:
+# 4 at n 196, |F| 26); rel2/swcount.py time accounting (every chain vertex switches once)
+python3 -I rel2/mkrel3.py 4 "$t/r3.pg" "$t/r3.start"; cmp -s "$t/r3.pg" rel2/instances/rel3_R4_n196.pg && cmp -s "$t/r3.start" rel2/instances/rel3_R4_n196.start || { echo "mkrel3 drifted"; exit 1; }
+out=$(python3 -I bip/strictrel.py rel2/instances/rel3_R4_n196.pg rel2/instances/rel3_R4_n196.start); [[ "$out" == "STRICTREL rel3_R4_n196.pg n 196 iterations 26 frozen-stretches 2 max-strict-releases-one-edge-one-stretch 4 at ('y', 'oz')" ]] || { echo "rel3 strictrel drifted: $out"; exit 1; }
+out=$(python3 -I rel2/swcount.py rel2/instances/rel3_R4_n196.pg rel2/instances/rel3_R4_n196.start); [[ "$out" == "SWCOUNT rel3_R4_n196.pg n 196 F 26 SW 79 sw1 61 sw2 0 sw3+ 4 maxSW 7 stretches 2 maxlen 25 meanlen 12.50" ]] || { echo "swcount rel3 drifted: $out"; exit 1; }
+# R145 (successor 34): CONJECTURE FLIP-EV (L-SI box 52) DEAD: flipev_n10 (hand start) and flipevr_n10 (S3 start) each have an EXI sigma-bar flip
+# at a non-cycle-node Odd vertex with no Xi-change at any head (flipev/flipev.py VIOL 1; FLIP-EV' VIOL2 0); xeng identical, Oink OK
+sha1sum -c --quiet flipev/pins.sha1 || { echo "flipev pins changed"; exit 1; }
+out=$(python3 -I flipev/flipev.py flipev/instances/flipev_n10.pg flipev/instances/flipev_n10.start); [[ "$out" == "FLIPEV flipev_n10.pg n 10 iterations 3 candidates 1 VIOL 1 MINHC 0 witness (k, o, old, new) (0, 8, 9, 4) VIOL2 0" ]] || { echo "flipev_n10 drifted: $out"; exit 1; }
+out=$(python3 -I flipev/flipev.py flipev/instances/flipevr_n10.pg flipev/instances/flipevr_n10.start); [[ "$out" == "FLIPEV flipevr_n10.pg n 10 iterations 3 candidates 1 VIOL 1 MINHC 0 witness (k, o, old, new) (1, 9, 3, 0) VIOL2 0" ]] || { echo "flipevr_n10 drifted: $out"; exit 1; }
+for f in flipev_n10 flipevr_n10; do out=$(python3 -I seg/xeng.py flipev/instances/$f.pg flipev/instances/$f.start | tail -1); [[ "$out" == "state sequences identical: True" ]] || { echo "xeng $f: $out"; exit 1; }
+  if [[ -x ../../tools/oink/build/oink ]]; then out=$(bash rel2/oinkcmp.sh flipev/instances/$f.pg flipev/instances/$f.start); [[ "$out" == "OINK OK" ]] || { echo "oink $f: $out"; exit 1; }; fi; done
+# R145c: sigma-bar flips K*m at ONE Odd vertex of out-degree 2 in one W-run (mkrw LATE=1 + mix/obs2.py + flipev/obs3.py; flipev/sbv.py 32 at K4 m8)
+LATE=1 python3 -I span/mkrw.py 4 8 "$t/q1.pg" "$t/q1.start" > /dev/null; python3 -I mix/obs2.py "$t/q1.pg" "$t/q1.start" "$t/q2.pg" "$t/q2.start" > /dev/null
+python3 -I flipev/obs3.py "$t/q2.pg" "$t/q2.start" "$t/q3.pg" "$t/q3.start" > /dev/null
+out=$(python3 -I flipev/sbv.py "$t/q3.pg" "$t/q3.start"); [[ "$out" == "SBV q3.pg n 133 iterations 44 W-runs 1 longest 44 maxSB 32 at root (out-degree 2, returns 31, its W-run length 44)" ]] || { echo "sbv obs3 drifted: $out"; exit 1; }
+# R146 (successor 34): ROOT-FLIP (L-SI 35) independent n5b check: tie instances BAD 0, 2000 tie-biased random games BAD 0
+out=$(python3 -I flipev/rootflip.py flipev/instances/flipev_n10.pg flipev/instances/flipev_n10.start); [[ "$out" == "ROOTFLIP flipev_n10.pg TR 1 FL 2 TIE 1 BAD 0 witness None" ]] || { echo "rootflip drifted: $out"; exit 1; }
+out=$(python3 -I flipev/rootflip.py --rand 1 2000 10 16 1); [[ "$out" == "ROOTFLIP-RAND seed 1 games 2000 n 10-16 bias 1 TR 500 FL 711 TIE 0 BAD 0 witness None" ]] || { echo "rootflip rand drifted: $out"; exit 1; }
+# R147 (successor 35): Theorem SRC-SETTLE (source heads D u C): xcn/srcsettle.py VIOL/VIOL2/TAILV/BLKV/CNOX 0; one-vertex repeats in one
+# W-run: XCN 4 at own node 0 (xcn4_n12), CN 3 at W-cycle node 1, all cosmetic, C-only tail 2, no source event (cn3_n9); xeng identical, Oink OK
+sha1sum -c --quiet xcn/pins.sha1 || { echo "xcn pins changed"; exit 1; }
+out=$(python3 -I xcn/xcn.py xcn/instances/xcn4_n12.pg xcn/instances/xcn4_n12.start); [[ "$out" == "XCN xcn4_n12.pg n 12 iters 5 wruns 2 maxL 4 maxCN 0 maxCNc 0 maxXCN 4 maxXCNo 4 sumCN 0 sumXCN 4" ]] || { echo "xcn4 drifted: $out"; exit 1; }
+out=$(python3 -I xcn/srcsettle.py xcn/instances/cn3_n9.pg xcn/instances/cn3_n9.start); [[ "$out" == "SRC cn3_n9.pg n 9 VIOL 0 E 3 Esrc 3 CN 3 CNO 3 CNOX 0 FLIPONLY 0 maxblk 0 maxL 3 maxEsrc 3 maxE 3 maxHXS 0 VIOL2 0 TAILV 0 BLKV 0 maxblk2 3 maxtail 2 Es2 0" ]] || { echo "cn3 drifted: $out"; exit 1; }
+out=$(python3 -I xcn/srcrand.py 1 300 5 10); [[ "$out" == "SRCRAND seed 1 games 300 n 5-10 VIOL 0 E 13 Esrc 8 CN 5 CNO 5 CNOX 0 FLIPONLY 0 maxblk 1 maxL 1 maxEsrc 1 maxE 1 maxHXS 1 VIOL2 0 TAILV 0 BLKV 0 maxblk2 1 maxtail 1 Es2 4 firstbad None" ]] || { echo "srcrand drifted: $out"; exit 1; }
+for f in xcn4_n12 cn3_n9; do out=$(python3 -I seg/xeng.py xcn/instances/$f.pg xcn/instances/$f.start | tail -1); [[ "$out" == "state sequences identical: True" ]] || { echo "xeng $f: $out"; exit 1; }
+  if [[ -x ../../tools/oink/build/oink ]]; then out=$(bash rel2/oinkcmp.sh xcn/instances/$f.pg xcn/instances/$f.start); [[ "$out" == "OINK OK" ]] || { echo "oink $f: $out"; exit 1; }; fi; done
+# P-N5-SRC (FROZEN packet + line, successor 35): sha1 pinned; the frozen files are never edited (fixes go in a separate file)
+echo "3caae56e3afdfaab80739c0e12e397b3d6cc7a8b  ../../docs/red/P-N5-SRC.md" | sha1sum -c --quiet || { echo "P-N5-SRC packet changed"; exit 1; }
+echo "3101a0c04f7959ccd50b86f5e6fa76789bdf6995  ../../docs/red/P-N5-SRC-line.txt" | sha1sum -c --quiet || { echo "P-N5-SRC line changed"; exit 1; }
+# R148 (successor 35): CONJECTURE CASCADE-LIN (L-NEW box 99) DEAD: cascl_K4_m8_N100 (mkrw LATE=1 K4 m8 + 100 passive clones of Even 63, n 222):
+# one FRESH tick of clock 4 roots 121 > n/2 returns (L-NEW retcause.py, data in casc/retcause_out.txt); here: regeneration, return count, xeng, Oink.
+# R148-hxs: HXS at ONE source (Odd observer, obs2) = K(m + 1) = 36 at K4 m8 (xcn/hxs.py)
+sha1sum -c --quiet casc/pins.sha1 || { echo "casc pins changed"; exit 1; }
+LATE=1 python3 -I span/mkrw.py 4 8 "$t/cb.pg" "$t/cb.start" > /dev/null; python3 -I casc/clone.py "$t/cb.pg" "$t/cb.start" 63 100 "$t/cc.pg" "$t/cc.start"
+cmp -s "$t/cc.pg" casc/instances/cascl_K4_m8_N100.pg && cmp -s "$t/cc.start" casc/instances/cascl_K4_m8_N100.start || { echo "clone drifted from cascl_K4_m8_N100"; exit 1; }
+out=$(python3 -I casc/retx.py casc/instances/cascl_K4_m8_N100.pg casc/instances/cascl_K4_m8_N100.start); [[ "$out" == "RETX cascl_K4_m8_N100.pg n 222 F 44 returns 798 topX [(63, 7), (66, 7), (69, 7), (72, 7), (75, 7), (78, 7)]" ]] || { echo "retx drifted: $out"; exit 1; }
+out=$(python3 -I seg/xeng.py casc/instances/cascl_K4_m8_N100.pg casc/instances/cascl_K4_m8_N100.start | tail -1); [[ "$out" == "state sequences identical: True" ]] || { echo "xeng cascl: $out"; exit 1; }
+if [[ -x ../../tools/oink/build/oink ]]; then out=$(bash rel2/oinkcmp.sh casc/instances/cascl_K4_m8_N100.pg casc/instances/cascl_K4_m8_N100.start); [[ "$out" == "OINK OK" ]] || { echo "oink cascl: $out"; exit 1; }; fi
+# R148 cont.: cascl66_K4_m8_N150 (n 272, clones of 66, 2 returns per root: one FRESH root 321 > n); casctf_n10_N210 (L-NEW topfix_n10 + 210 clones
+# of 193, 17 returns per root each: one FRESH root 3620 = 8.6n; CASC grows ~n^2 along topfix_N)
+python3 -I casc/clone.py "$t/cb.pg" "$t/cb.start" 66 150 "$t/c6.pg" "$t/c6.start"
+cmp -s "$t/c6.pg" casc/instances/cascl66_K4_m8_N150.pg && cmp -s "$t/c6.start" casc/instances/cascl66_K4_m8_N150.start || { echo "clone drifted from cascl66"; exit 1; }
+python3 -I casc/clone.py ../new/box52/out/topfix_n10.pg - 193 210 "$t/tf.pg" -; python3 -I casc/defstart.py "$t/tf.pg" "$t/tf.start"
+cmp -s "$t/tf.pg" casc/instances/casctf_n10_N210.pg && cmp -s "$t/tf.start" casc/instances/casctf_n10_N210.start || { echo "clone drifted from casctf"; exit 1; }
+out=$(python3 -I casc/retx.py casc/instances/casctf_n10_N210.pg casc/instances/casctf_n10_N210.start); [[ "$out" == "RETX casctf_n10_N210.pg n 420 F 58 returns 3822 topX [(192, 18), (193, 17), (210, 17), (211, 17), (212, 17), (213, 17)]" ]] || { echo "retx casctf drifted: $out"; exit 1; }
+for f in cascl66_K4_m8_N150 casctf_n10_N210; do out=$(python3 -I seg/xeng.py casc/instances/$f.pg casc/instances/$f.start | tail -1); [[ "$out" == "state sequences identical: True" ]] || { echo "xeng $f: $out"; exit 1; }
+  if [[ -x ../../tools/oink/build/oink ]]; then out=$(bash rel2/oinkcmp.sh casc/instances/$f.pg casc/instances/$f.start); [[ "$out" == "OINK OK" ]] || { echo "oink $f: $out"; exit 1; }; fi; done
+# R149 (successor 35): CONJECTURE NARROW (L-NEW box 100) DEAD: narrow_n10 = topfix_n10 + one clone of each of its 27 returners (n 237): every return
+# node with a child has 2, along a chain of 49 = 6N - 11 (L-NEW retcause.py + BRCHAIN, data in casc/narrow_out.txt); here: regeneration, returns, xeng, Oink
+L=$(ALL=1 python3 -I casc/retx.py ../new/box52/out/topfix_n10.pg | grep ALLX | cut -d' ' -f2- | tr ' ' ',')
+[[ "$L" == "120,121,122,129,130,131,138,139,140,147,148,149,156,157,158,165,166,167,174,175,176,183,184,185,192,193,194" ]] || { echo "topfix returners drifted: $L"; exit 1; }
+python3 -I casc/clone.py ../new/box52/out/topfix_n10.pg - "$L" 1 "$t/nw.pg" -; python3 -I casc/defstart.py "$t/nw.pg" "$t/nw.start"
+cmp -s "$t/nw.pg" casc/instances/narrow_n10.pg && cmp -s "$t/nw.start" casc/instances/narrow_n10.start || { echo "clone drifted from narrow_n10"; exit 1; }
+out=$(python3 -I casc/retx.py casc/instances/narrow_n10.pg casc/instances/narrow_n10.start); [[ "$out" == "RETX narrow_n10.pg n 237 F 58 returns 504 topX [(192, 18), (234, 18), (193, 17), (235, 17), (194, 17), (236, 17)]" ]] || { echo "retx narrow drifted: $out"; exit 1; }
+out=$(python3 -I seg/xeng.py casc/instances/narrow_n10.pg casc/instances/narrow_n10.start | tail -1); [[ "$out" == "state sequences identical: True" ]] || { echo "xeng narrow: $out"; exit 1; }
+if [[ -x ../../tools/oink/build/oink ]]; then out=$(bash rel2/oinkcmp.sh casc/instances/narrow_n10.pg casc/instances/narrow_n10.start); [[ "$out" == "OINK OK" ]] || { echo "oink narrow: $out"; exit 1; }; fi
+python3 -I mix/obs2.py "$t/cb.pg" "$t/cb.start" "$t/cbo.pg" "$t/cbo.start" > /dev/null
+out=$(python3 -I xcn/hxs.py "$t/cbo.pg" "$t/cbo.start"); [[ "$out" == "HXS cbo.pg n 131 iters 44 F 44 ES 40 maxHXS 36 top 122(D,O,deg8):36 90(D,O,deg2):8 95(D,O,deg2):8" ]] || { echo "hxs obs drifted: $out"; exit 1; }
+# P-N5-SRC line revisions (fixes file docs/red/P-N5-SRC-fixes.md, append-only): L-1 (entry 1), L-2 (entry 2) sha1 pinned
+echo "059d2733861190063e9c3fe0270077c2a54ebc18  ../../docs/red/P-N5-SRC-line-L1.txt" | sha1sum -c --quiet || { echo "P-N5-SRC L-1 changed"; exit 1; }
+echo "9fcb57903ad64a0ab7f56acb2f651f354b3616fc  ../../docs/red/P-N5-SRC-line-L2.txt" | sha1sum -c --quiet || { echo "P-N5-SRC L-2 changed"; exit 1; }
+echo "5736d8ab828d8244c6466abbc08d4fa8d8c03b41  ../../docs/red/P-N5-SRC-line-L3.txt" | sha1sum -c --quiet || { echo "P-N5-SRC L-3 changed"; exit 1; }
+echo "ec2c713989eb3075060247b714eb49a5b2abf875  ../../docs/red/P-N5-SRC-line-L4.txt" | sha1sum -c --quiet || { echo "P-N5-SRC L-4 changed"; exit 1; }
+# R150 (successor 35): CONJECTURE CASC-EDGE (L-NEW box 101, RET(X; e) <= deg X) DEAD: cedge_n32, Even 7 (deg 2) returns 4 times under ONE fresh root
+# (20 -> 7 at q 9), depths 0-3 (L-NEW retcause.py @ 457e41fe, data in casc/cedge_out.txt); here: sha1, n5b return count, xeng, Oink
+out=$(python3 -I casc/retx.py casc/instances/cedge_n32.pg casc/instances/cedge_n32.start); [[ "$out" == "RETX cedge_n32.pg n 32 F 26 returns 60 topX [(7, 5), (21, 5), (6, 4), (27, 3), (3, 3), (15, 3)]" ]] || { echo "retx cedge drifted: $out"; exit 1; }
+out=$(python3 -I seg/xeng.py casc/instances/cedge_n32.pg casc/instances/cedge_n32.start | tail -1); [[ "$out" == "state sequences identical: True" ]] || { echo "xeng cedge: $out"; exit 1; }
+if [[ -x ../../tools/oink/build/oink ]]; then out=$(bash rel2/oinkcmp.sh casc/instances/cedge_n32.pg casc/instances/cedge_n32.start); [[ "$out" == "OINK OK" ]] || { echo "oink cedge: $out"; exit 1; }; fi
+# R151 (successor 35): LEVEL-ONCE (L-NEW box 102) DEAD and ping-pong growth: ping_n48, Even 39 (deg 3) returns 8 times under ONE fresh root, edge (39, 40)
+# twice at depth 2 (L-NEW retcause.py @ 457e41fe, data in casc/ping_out.txt); every switch of 39 changes W(39) (casc/wx.py); here: sha1, retx, wx, xeng, Oink
+sha1sum -c --quiet casc/pins.sha1 || { echo "casc pins changed"; exit 1; }
+out=$(python3 -I xcn/xcn.py casc/instances/nest_n64.pg casc/instances/nest_n64.start); [[ "$out" == "XCN nest_n64.pg n 64 iters 68 wruns 8 maxL 53 maxCN 0 maxCNc 0 maxXCN 0 maxXCNo 0 sumCN 0 sumXCN 0" ]] || { echo "nest_n64 drifted: $out"; exit 1; }
+out=$(python3 -I seg/xeng.py casc/instances/nest_n64.pg casc/instances/nest_n64.start | tail -1); [[ "$out" == "state sequences identical: True" ]] || { echo "xeng nest: $out"; exit 1; }
+if [[ -x ../../tools/oink/build/oink ]]; then out=$(bash rel2/oinkcmp.sh casc/instances/nest_n64.pg casc/instances/nest_n64.start); [[ "$out" == "OINK OK" ]] || { echo "oink nest: $out"; exit 1; }; fi
+out=$(python3 -I casc/retx.py casc/instances/ping_n48.pg casc/instances/ping_n48.start); [[ "$out" == "RETX ping_n48.pg n 48 F 31 returns 157 topX [(39, 8), (3, 6), (21, 6), (36, 6), (41, 6), (7, 5)]" ]] || { echo "retx ping drifted: $out"; exit 1; }
+out=$(cd .. && python3 -I red/casc/wx.py red/casc/instances/ping_n48.pg red/casc/instances/ping_n48.start 39 | tail -1); [[ "$out" == "switches 10 with W(X) unchanged 0" ]] || { echo "wx ping drifted: $out"; exit 1; }
+out=$(python3 -I seg/xeng.py casc/instances/ping_n48.pg casc/instances/ping_n48.start | tail -1); [[ "$out" == "state sequences identical: True" ]] || { echo "xeng ping: $out"; exit 1; }
+if [[ -x ../../tools/oink/build/oink ]]; then out=$(bash rel2/oinkcmp.sh casc/instances/ping_n48.pg casc/instances/ping_n48.start); [[ "$out" == "OINK OK" ]] || { echo "oink ping: $out"; exit 1; }; fi
+# R152 (successor 36): O1 (in one W-run an Even X re-entering a target it left changes W(X)) DEAD: u23sw64_n32, 31 / 31 re-entries off C W-flat,
+# Even 2 re-enters 6, 31, 21 with W(2) = (13, {}, 9); u1t_cex_n32 with W changing elsewhere; o1key.py: ties EVEN branch only, KEY-MON 0 bad; here: sha1, o1, o1key, xeng, Oink
+sha1sum -c --quiet tie/pins.sha1 || { echo "tie pins changed"; exit 1; }
+out=$(cd .. && python3 -I red/tie/o1.py red/tie/instances/u23sw64_n32.pg red/tie/instances/u23sw64_n32.start --quiet); [[ "$out" == "O1 u23sw64_n32.pg n 32 iters 16 maxL 8 reentries 31 violations 31 offC 31 maxX 3 (X 2) nonflat 0" ]] || { echo "o1 u23sw64 drifted: $out"; exit 1; }
+out=$(cd .. && python3 -I red/tie/o1.py red/tie/instances/u1t_cex_n32.pg red/tie/instances/u1t_cex_n32.start --quiet); [[ "$out" == "O1 u1t_cex_n32.pg n 32 iters 12 maxL 7 reentries 5 violations 4 offC 4 maxX 1 (X 3) nonflat 2" ]] || { echo "o1 u1t_cex drifted: $out"; exit 1; }
+out=$(cd .. && python3 -I red/tie/o1key.py red/tie/instances/u23sw64_n32.pg red/tie/instances/u23sw64_n32.start); [[ "$out" == "O1KEY u23sw64_n32.pg n 32 ties_even_c 64 ties_odd_c 0 keymon_checks 328 bad 0" ]] || { echo "o1key u23sw64 drifted: $out"; exit 1; }
+out=$(cd .. && python3 -I red/tie/o1.py red/tie/instances/tie_n32.pg red/tie/instances/tie_n32.start --quiet); [[ "$out" == "O1 tie_n32.pg n 32 iters 15 maxL 13 reentries 57 violations 50 offC 50 maxX 5 (X 15) nonflat 32" ]] || { echo "o1 tie_n32 drifted: $out"; exit 1; }
+for f in u23sw64_n32 u1t_cex_n32 tie_n32; do
+  out=$(python3 -I seg/xeng.py tie/instances/$f.pg tie/instances/$f.start | tail -1); [[ "$out" == "state sequences identical: True" ]] || { echo "xeng $f: $out"; exit 1; }
+  if [[ -x ../../tools/oink/build/oink ]]; then out=$(bash rel2/oinkcmp.sh tie/instances/$f.pg tie/instances/$f.start); [[ "$out" == "OINK OK" ]] || { echo "oink $f: $out"; exit 1; }; fi
+done
+# R153 (successor 36): LEX-ARENA counter not realised; abstract model: one top vertex makes 2^(L-1) - 1 key decreases (lex/lexone.py, T54 rule);
+# N5: KEYCH <= m_E + sum XICH (SW-XI, KEY-XI); here: lexone L 4 / 5, keych on u23sw64_n32 (8) and sbq2 (0), swxi on tie_n32 (0 violations)
+out=$(python3 -I lex/lexone.py 4); [[ "$out" == "L 4 W 2 n 9 max key decreases of one top vertex 7 distinct keys 8" ]] || { echo "lexone 4 drifted: $out"; exit 1; }
+out=$(python3 -I lex/lexone.py 5); [[ "$out" == "L 5 W 2 n 11 max key decreases of one top vertex 15 distinct keys 16" ]] || { echo "lexone 5 drifted: $out"; exit 1; }
+out=$(cd .. && python3 -I red/lex/keych.py red/tie/instances/u23sw64_n32.pg red/tie/instances/u23sw64_n32.start); [[ "$out" == "KEYCH u23sw64_n32.pg n 32 iters 16 maxL 8 maxKEYCH 8 (v 15 from 1 to 9) keyrises_at_fixed_W 0" ]] || { echo "keych u23sw64 drifted: $out"; exit 1; }
+out=$(cd .. && python3 -I red/lex/keych.py red/flipev/instances/sbq2_K8_m16.pg red/flipev/instances/sbq2_K8_m16.start); [[ "$out" == "KEYCH sbq2_K8_m16.pg n 261 iters 152 maxL 152 maxKEYCH 0 (v None from None to None) keyrises_at_fixed_W 0" ]] || { echo "keych sbq2 drifted: $out"; exit 1; }
+out=$(cd .. && python3 -I red/lex/swxi.py red/tie/instances/tie_n32.pg red/tie/instances/tie_n32.start); [[ "$out" == "SWXI tie_n32.pg n 32 maxL 13 switches 102 violations 0 chainbad 0 max_s 8 (bound 44, u 15)" ]] || { echo "swxi tie_n32 drifted: $out"; exit 1; }
 TMPDIR="$t" python3 correspond.py 2 3 4 5 6 > "$t/corr.log" || { cat "$t/corr.log"; exit 1; }
 python3 xcheck.py --games 150 --nmax 7 --seed 7 > "$t/x.log" || { cat "$t/x.log"; exit 1; }
-echo "red check: R137 FREE 16/edge at K4 m16; R136 rb48 PAT 4, te_8 0 served; R135 dg_16 4 iterations, noup k5 7 vs 31; R134 ZXC(obs) 69/76; R133 lazyhurt_n9 3 vs 6; R132 mkrt REP 21, DAG-tau* 200/200; R131 tiedrb_K8_m16 pin, untied re-blocked 18 at K 4 m 8; R130 wdepth_K4_m64 pin, depth 7 at m 16; R127 latew_K8_m32 pin, R* 64 at K 4; R124 mkrb K3 30, bidir_K8_m32 pin; R123 spanobs_K12_m48 pin, span(e, o) MAT 34 at K 4; carryobs_K12_m48 pin, SEG 53 at K 4; R122 FG 119/28; R121 tobs_K8_m32 pin, target #MAT 60; R120 wobs_K8_m32 pin, observer #MAT 60 at K 4; R119 mgcheck dw_3 0/1145, mixgate 3 300 1 = 2; R118 mk_20_80 pin, tstretch 21; R116 dw_3 134/11, dw_4 286/26; R114 sf2/fsubexp OK; R115 fc3 121/9; r2_check PASS (R11), bsolo 4 = 4 tangles/7 iterations (R10); dtl_flipflop F8 = 36/1/5 (R9), Claim P/Q 0 violations; zadeh_lb N2 = 43 (no fixed order, R7); fhz_padded 2 S7 = 16 (R5 kill);  friedmann_Gn 2 S7 = 15; fhz lockstep3/relation/export OK; gated_bland 6 = 63 MSF iterations (regions = Zielonka, strategies verified); Claim F instances; MSF == Bland N<=6; $(tail -1 "$t/x.log")"
+echo "red check: R153 lexone 15 at L 5, KEYCH 8 / 0, SW-XI 0 viol; R152 O1 dead (u23sw64_n32 31/31 W-flat re-entries), KEY-MON 0 bad; R151 LEVEL-ONCE dead (ping_n48), W(X) changes 10/10; R150 CASC-EDGE dead (RET 4 > deg 2); R149 NARROW dead (branching chain 49); R148 CASCADE-LIN dead (121 > 111; 321 > n 272; 3620 = 8.6n), HXS(obs) 36; R147 SRC-SETTLE 0 viol, XCN 4 / CN 3 at one vertex; R146 rootflip BAD 0; R145 SB 32 at root (K4 m8), FLIP-EV dead (flipev_n10, flipevr_n10); R144 rel3 4 at n 196; R143 SETTLE 8 <= 10, FT 2, rel2 strict releases 2; R142 bip 24 at n 12; R141 wint 8 / up 26; R140 switchallexp 3 V0 70 / V1 8; R139 XICH(obs) 37 at K4 m8; R138 R* 32 at K4 m8; R137 FREE 16/edge at K4 m16; R136 rb48 PAT 4, te_8 0 served; R135 dg_16 4 iterations, noup k5 7 vs 31; R134 ZXC(obs) 69/76; R133 lazyhurt_n9 3 vs 6; R132 mkrt REP 21, DAG-tau* 200/200; R131 tiedrb_K8_m16 pin, untied re-blocked 18 at K 4 m 8; R130 wdepth_K4_m64 pin, depth 7 at m 16; R127 latew_K8_m32 pin, R* 64 at K 4; R124 mkrb K3 30, bidir_K8_m32 pin; R123 spanobs_K12_m48 pin, span(e, o) MAT 34 at K 4; carryobs_K12_m48 pin, SEG 53 at K 4; R122 FG 119/28; R121 tobs_K8_m32 pin, target #MAT 60; R120 wobs_K8_m32 pin, observer #MAT 60 at K 4; R119 mgcheck dw_3 0/1145, mixgate 3 300 1 = 2; R118 mk_20_80 pin, tstretch 21; R116 dw_3 134/11, dw_4 286/26; R114 sf2/fsubexp OK; R115 fc3 121/9; r2_check PASS (R11), bsolo 4 = 4 tangles/7 iterations (R10); dtl_flipflop F8 = 36/1/5 (R9), Claim P/Q 0 violations; zadeh_lb N2 = 43 (no fixed order, R7); fhz_padded 2 S7 = 16 (R5 kill);  friedmann_Gn 2 S7 = 15; fhz lockstep3/relation/export OK; gated_bland 6 = 63 MSF iterations (regions = Zielonka, strategies verified); Claim F instances; MSF == Bland N<=6; $(tail -1 "$t/x.log")"

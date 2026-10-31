@@ -1,0 +1,413 @@
+GAME n5-epoch/instances/ffin12_n32.pg ELIMWIN n 32 mE 108 runs 5 {'viol_count': 0, 'viol_eq': 0, 'cert': 30, 'ncert': 0} maxima {'F': 7, 'HW': 1, 'revisit': 1, 'xiw': 1} argmax (1, 8, 1)
+GAME n5-epoch/instances/ffin5_n32.pg ELIMWIN n 32 mE 95 runs 3 {'viol_count': 0, 'viol_eq': 0, 'cert': 16, 'ncert': 0} maxima {'F': 7, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (2, 5, 2)
+GAME n5-epoch/instances/ffin4_n24.pg ELIMWIN n 24 mE 77 runs 3 {'viol_count': 0, 'viol_eq': 0, 'cert': 32, 'ncert': 1} maxima {'F': 8, 'HW': 1, 'revisit': 4, 'xiw': 1} argmax (1, 7, 1)
+GAME n5-epoch/instances/gci2_n12.pg ELIMWIN n 12 mE 25 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 11, 'ncert': 0} maxima {'F': 10, 'HW': 1, 'revisit': 3, 'xiw': 1} argmax (0, 10, 0)
+GAME n5-epoch/instances/gci3_n24.pg ELIMWIN n 24 mE 72 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 23, 'ncert': 0} maxima {'F': 20, 'HW': 1, 'revisit': 8, 'xiw': 1} argmax (1, 21, 1)
+GAME n5-epoch/instances/immp_cex_n11.pg ELIMWIN n 11 mE 14 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 3, 'ncert': 0} maxima {'F': 2, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (0, 2, 0)
+GAME n5-epoch/instances/immfail_n14.pg ELIMWIN n 14 mE 25 runs 2 {'viol_count': 0, 'viol_eq': 0, 'cert': 3, 'ncert': 0} maxima {'F': 2, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (2, 3, 2)
+GAME n5-epoch/instances/lcount_n23.pg ELIMWIN n 23 mE 41 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 8, 'ncert': 0} maxima {'F': 4, 'HW': 1, 'revisit': 2, 'xiw': 1} argmax (0, 4, 0)
+GAME n5-epoch/instances/lend13_n16.pg ELIMWIN n 16 mE 37 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 13, 'ncert': 0} maxima {'F': 13, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (1, 14, 1)
+GAME n5-epoch/instances/lend27_n24.pg ELIMWIN n 24 mE 64 runs 6 {'viol_count': 0, 'viol_eq': 0, 'cert': 35, 'ncert': 0} maxima {'F': 8, 'HW': 1, 'revisit': 3, 'xiw': 1} argmax (1, 9, 1)
+GAME n5-epoch/instances/lend107_n32.pg ELIMWIN n 32 mE 99 runs 10 {'viol_count': 0, 'viol_eq': 0, 'cert': 121, 'ncert': 0} maxima {'F': 15, 'HW': 1, 'revisit': 0, 'xiw': 1} argmax (2, 12, 2)
+GAME n5-epoch/instances/lend39f_n32.pg ELIMWIN n 32 mE 74 runs 9 {'viol_count': 0, 'viol_eq': 0, 'cert': 45, 'ncert': 0} maxima {'F': 8, 'HW': 1, 'revisit': 0, 'xiw': 1} argmax (1, 2, 1)
+GAME n5-epoch/instances/lend15_n48.pg ELIMWIN n 48 mE 117 runs 5 {'viol_count': 0, 'viol_eq': 0, 'cert': 18, 'ncert': 0} maxima {'F': 3, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (6, 8, 6)
+GAME n5-epoch/instances/lend47_n32.pg ELIMWIN n 32 mE 95 runs 6 {'viol_count': 0, 'viol_eq': 0, 'cert': 54, 'ncert': 0} maxima {'F': 19, 'HW': 1, 'revisit': 2, 'xiw': 1} argmax (1, 6, 1)
+GAME n5-epoch/instances/lend9_n8.pg ELIMWIN n 8 mE 18 runs 4 {'viol_count': 0, 'viol_eq': 0, 'cert': 5, 'ncert': 0} maxima {'F': 2, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (0, 1, 0)
+GAME n5-epoch/instances/lend55_n32.pg ELIMWIN n 32 mE 103 runs 10 {'viol_count': 0, 'viol_eq': 0, 'cert': 60, 'ncert': 0} maxima {'F': 11, 'HW': 1, 'revisit': 0, 'xiw': 1} argmax (0, 3, 0)
+GAME n5-epoch/instances/lend82_n32.pg ELIMWIN n 32 mE 108 runs 10 {'viol_count': 0, 'viol_eq': 0, 'cert': 95, 'ncert': 0} maxima {'F': 14, 'HW': 1, 'revisit': 3, 'xiw': 1} argmax (2, 11, 2)
+GAME n5-epoch/instances/nep13_n24.pg ELIMWIN n 24 mE 58 runs 3 {'viol_count': 0, 'viol_eq': 0, 'cert': 16, 'ncert': 0} maxima {'F': 12, 'HW': 1, 'revisit': 1, 'xiw': 0} argmax (11, 12, 11)
+GAME n5-epoch/instances/lend72_n48.pg ELIMWIN n 48 mE 132 runs 11 {'viol_count': 0, 'viol_eq': 0, 'cert': 100, 'ncert': 0} maxima {'F': 14, 'HW': 1, 'revisit': 2, 'xiw': 1} argmax (0, 9, 0)
+GAME n5-epoch/instances/nep56_n32.pg ELIMWIN n 32 mE 102 runs 4 {'viol_count': 0, 'viol_eq': 0, 'cert': 69, 'ncert': 4} maxima {'F': 25, 'HW': 3, 'revisit': 6, 'xiw': 1} argmax (1, 26, 8)
+GAME n5-epoch/instances/nep22f_n64.pg ELIMWIN n 64 mE 145 runs 7 {'viol_count': 0, 'viol_eq': 0, 'cert': 21, 'ncert': 0} maxima {'F': 3, 'HW': 1, 'revisit': 0, 'xiw': 1} argmax (9, 11, 9)
+GAME n5-epoch/instances/nconf61_n48.pg ELIMWIN n 48 mE 136 runs 7 {'viol_count': 0, 'viol_eq': 0, 'cert': 133, 'ncert': 12} maxima {'F': 13, 'HW': 1, 'revisit': 1, 'xiw': 1} argmax (3, 6, 3)
+GAME n5-epoch/instances/nep76_n40.pg ELIMWIN n 40 mE 139 runs 7 {'viol_count': 0, 'viol_eq': 0, 'cert': 139, 'ncert': 9} maxima {'F': 15, 'HW': 1, 'revisit': 1, 'xiw': 1} argmax (9, 19, 9)
+GAME n5-epoch/instances/nep92_n40.pg ELIMWIN n 40 mE 129 runs 9 {'viol_count': 0, 'viol_eq': 0, 'cert': 161, 'ncert': 9} maxima {'F': 14, 'HW': 1, 'revisit': 4, 'xiw': 1} argmax (3, 5, 3)
+GAME n5-epoch/instances/ret12_n40.pg ELIMWIN n 40 mE 133 runs 5 {'viol_count': 0, 'viol_eq': 0, 'cert': 107, 'ncert': 4} maxima {'F': 14, 'HW': 1, 'revisit': 1, 'xiw': 1} argmax (5, 11, 5)
+GAME n5-epoch/instances/nep94_n48.pg ELIMWIN n 48 mE 145 runs 8 {'viol_count': 0, 'viol_eq': 0, 'cert': 173, 'ncert': 4} maxima {'F': 14, 'HW': 1, 'revisit': 5, 'xiw': 1} argmax (4, 18, 4)
+GAME n5-exhaustive/instances/b4_cyc6_0.pg ELIMWIN n 11 mE 20 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 3, 'ncert': 0} maxima {'F': 2, 'HW': 1, 'revisit': 0, 'xiw': 1} argmax (0, 2, 0)
+GAME n5-exhaustive/instances/b4_cyc6_1.pg ELIMWIN n 12 mE 24 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 5, 'ncert': 0} maxima {'F': 4, 'HW': 1, 'revisit': 1, 'xiw': 0} argmax (0, 4, 0)
+GAME n5-epoch/instances/ret14_n48.pg ELIMWIN n 48 mE 145 runs 13 {'viol_count': 0, 'viol_eq': 0, 'cert': 106, 'ncert': 4} maxima {'F': 6, 'HW': 1, 'revisit': 0, 'xiw': 1} argmax (1, 2, 1)
+GAME n5-exhaustive/instances/b4_n5_other_0.pg ELIMWIN n 5 mE 6 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 1, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (0, 1, 0)
+GAME n5-exhaustive/instances/b4_n4all_cyc3_0.pg ELIMWIN n 4 mE 5 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 1, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (0, 1, 0)
+GAME n5-exhaustive/instances/b4_nohlen5_0.pg ELIMWIN n 11 mE 20 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 4, 'ncert': 0} maxima {'F': 4, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (1, 5, 1)
+GAME n5-exhaustive/instances/b5_n5_cyc4_0.pg ELIMWIN n 5 mE 6 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 1, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (0, 1, 0)
+GAME n5-exhaustive/instances/b4_theta_n7.pg ELIMWIN n 7 mE 10 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 1, 'ncert': 1} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 1} argmax (0, 1, 0)
+GAME n5-exhaustive/instances/b5_o11.pg ELIMWIN n 10 mE 16 runs 4 {'viol_count': 0, 'viol_eq': 0, 'cert': 7, 'ncert': 0} maxima {'F': 4, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (0, 4, 0)
+GAME n5-epoch/instances/ret14_n64.pg ELIMWIN n 64 mE 151 runs 6 {'viol_count': 0, 'viol_eq': 0, 'cert': 120, 'ncert': 7} maxima {'F': 14, 'HW': 1, 'revisit': 2, 'xiw': 1} argmax (3, 4, 3)
+GAME n5-exhaustive/instances/b5_os_n12.pg ELIMWIN n 12 mE 34 runs 4 {'viol_count': 0, 'viol_eq': 0, 'cert': 12, 'ncert': 0} maxima {'F': 5, 'HW': 1, 'revisit': 0, 'xiw': 1} argmax (0, 5, 0)
+GAME n5-exhaustive/instances/b5_os_n14.pg ELIMWIN n 14 mE 34 runs 6 {'viol_count': 0, 'viol_eq': 0, 'cert': 16, 'ncert': 0} maxima {'F': 7, 'HW': 1, 'revisit': 0, 'xiw': 1} argmax (0, 7, 0)
+GAME n5-exhaustive/instances/b5_os_n16.pg ELIMWIN n 16 mE 32 runs 6 {'viol_count': 0, 'viol_eq': 0, 'cert': 18, 'ncert': 0} maxima {'F': 8, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (0, 8, 0)
+GAME n5-exhaustive/instances/b5_os_n24.pg ELIMWIN n 24 mE 68 runs 9 {'viol_count': 0, 'viol_eq': 0, 'cert': 51, 'ncert': 0} maxima {'F': 14, 'HW': 1, 'revisit': 3, 'xiw': 1} argmax (0, 14, 0)
+GAME n5-exhaustive/instances/b5_os_n20.pg ELIMWIN n 20 mE 41 runs 9 {'viol_count': 0, 'viol_eq': 0, 'cert': 28, 'ncert': 0} maxima {'F': 10, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (0, 10, 0)
+GAME n5-exhaustive/instances/b5_os_n32.pg ELIMWIN n 32 mE 98 runs 10 {'viol_count': 0, 'viol_eq': 0, 'cert': 91, 'ncert': 0} maxima {'F': 14, 'HW': 1, 'revisit': 2, 'xiw': 1} argmax (0, 8, 0)
+GAME n5-exhaustive/instances/b5_os_n28.pg ELIMWIN n 28 mE 88 runs 11 {'viol_count': 0, 'viol_eq': 0, 'cert': 69, 'ncert': 0} maxima {'F': 13, 'HW': 1, 'revisit': 1, 'xiw': 1} argmax (1, 7, 1)
+GAME n5-exhaustive/instances/b6_xl_n32.pg ELIMWIN n 32 mE 109 runs 6 {'viol_count': 0, 'viol_eq': 0, 'cert': 103, 'ncert': 2} maxima {'F': 22, 'HW': 1, 'revisit': 8, 'xiw': 1} argmax (4, 17, 4)
+GAME n5-exhaustive/instances/b6_xl2_n32.pg ELIMWIN n 32 mE 105 runs 6 {'viol_count': 0, 'viol_eq': 0, 'cert': 108, 'ncert': 3} maxima {'F': 22, 'HW': 1, 'revisit': 9, 'xiw': 1} argmax (4, 18, 4)
+GAME n5-exhaustive/instances/b5_os_n40.pg ELIMWIN n 40 mE 147 runs 13 {'viol_count': 0, 'viol_eq': 0, 'cert': 104, 'ncert': 0} maxima {'F': 17, 'HW': 1, 'revisit': 1, 'xiw': 1} argmax (1, 2, 1)
+GAME n5-exhaustive/instances/b6_xs_n24.pg ELIMWIN n 24 mE 86 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 23, 'ncert': 0} maxima {'F': 21, 'HW': 1, 'revisit': 2, 'xiw': 0} argmax (0, 21, 0)
+GAME n5-exhaustive/instances/b6_xs_n32.pg ELIMWIN n 32 mE 112 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 32, 'ncert': 0} maxima {'F': 29, 'HW': 1, 'revisit': 3, 'xiw': 1} argmax (0, 29, 0)
+GAME n5-exhaustive/instances/b6_xl_n40.pg ELIMWIN n 40 mE 127 runs 6 {'viol_count': 0, 'viol_eq': 0, 'cert': 122, 'ncert': 3} maxima {'F': 25, 'HW': 1, 'revisit': 3, 'xiw': 1} argmax (2, 20, 2)
+GAME n5-exhaustive/instances/b6_xs_n40.pg ELIMWIN n 40 mE 163 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 40, 'ncert': 0} maxima {'F': 36, 'HW': 1, 'revisit': 5, 'xiw': 1} argmax (0, 36, 0)
+GAME n5-exhaustive/instances/b6_xs_n48.pg ELIMWIN n 48 mE 181 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 47, 'ncert': 0} maxima {'F': 37, 'HW': 1, 'revisit': 6, 'xiw': 1} argmax (0, 37, 0)
+GAME n5-exhaustive/instances/b6_xl_n48.pg ELIMWIN n 48 mE 178 runs 10 {'viol_count': 0, 'viol_eq': 0, 'cert': 150, 'ncert': 2} maxima {'F': 24, 'HW': 1, 'revisit': 5, 'xiw': 1} argmax (3, 19, 3)
+GAME n5-exhaustive/instances/b6_xw_n32.pg ELIMWIN n 32 mE 114 runs 7 {'viol_count': 0, 'viol_eq': 0, 'cert': 108, 'ncert': 2} maxima {'F': 21, 'HW': 1, 'revisit': 5, 'xiw': 1} argmax (4, 16, 4)
+GAME n5-exhaustive/instances/b6_xw_n40.pg ELIMWIN n 40 mE 158 runs 7 {'viol_count': 0, 'viol_eq': 0, 'cert': 118, 'ncert': 2} maxima {'F': 22, 'HW': 1, 'revisit': 5, 'xiw': 1} argmax (4, 16, 4)
+GAME n5-exhaustive/instances/canonA_0.pg ELIMWIN n 15 mE 24 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 3, 'ncert': 0} maxima {'F': 3, 'HW': 1, 'revisit': 1, 'xiw': 0} argmax (0, 3, 0)
+GAME n5-exhaustive/instances/canonA_1.pg ELIMWIN n 15 mE 24 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 4, 'ncert': 0} maxima {'F': 3, 'HW': 1, 'revisit': 2, 'xiw': 1} argmax (1, 4, 1)
+GAME n5-exhaustive/instances/b6_xw_n48.pg ELIMWIN n 48 mE 191 runs 7 {'viol_count': 0, 'viol_eq': 0, 'cert': 137, 'ncert': 2} maxima {'F': 22, 'HW': 1, 'revisit': 8, 'xiw': 1} argmax (5, 19, 5)
+GAME n5-exhaustive/instances/b6_xw_n56.pg ELIMWIN n 56 mE 200 runs 7 {'viol_count': 0, 'viol_eq': 0, 'cert': 126, 'ncert': 2} maxima {'F': 23, 'HW': 1, 'revisit': 7, 'xiw': 1} argmax (4, 18, 4)
+GAME n5-exhaustive/instances/frz1_n24.pg ELIMWIN n 24 mE 56 runs 2 {'viol_count': 0, 'viol_eq': 0, 'cert': 30, 'ncert': 0} maxima {'F': 24, 'HW': 1, 'revisit': 2, 'xiw': 1} argmax (2, 6, 2)
+GAME n5-exhaustive/instances/frz2_n24.pg ELIMWIN n 24 mE 51 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 22, 'ncert': 0} maxima {'F': 23, 'HW': 3, 'revisit': 5, 'xiw': 1} argmax (2, 25, 4)
+GAME n5-exhaustive/instances/n3all_maxph_0.pg ELIMWIN n 3 mE 4 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME n5-exhaustive/instances/frz3_n24.pg ELIMWIN n 24 mE 56 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 26, 'ncert': 0} maxima {'F': 24, 'HW': 2, 'revisit': 2, 'xiw': 0} argmax (2, 26, 5)
+GAME n5-exhaustive/instances/n3all_maxph_1.pg ELIMWIN n 3 mE 4 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME n5-exhaustive/instances/n3all_maxph_2.pg ELIMWIN n 3 mE 5 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME n5-exhaustive/instances/n4_maxph_0.pg ELIMWIN n 4 mE 5 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 1, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (1, 2, 1)
+GAME n5-exhaustive/instances/n4_maxph_1.pg ELIMWIN n 4 mE 5 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 1, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (1, 2, 1)
+GAME n5-exhaustive/instances/n4_thch_0.pg ELIMWIN n 4 mE 4 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME n5-exhaustive/instances/n4all_maxph_0.pg ELIMWIN n 4 mE 6 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 2, 'ncert': 0} maxima {'F': 2, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (1, 3, 1)
+GAME n5-exhaustive/instances/n4all_tgbad_0.pg ELIMWIN n 4 mE 5 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 1, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (2, 3, 2)
+GAME n5-exhaustive/instances/n4all_maxph_1.pg ELIMWIN n 4 mE 6 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 2, 'ncert': 0} maxima {'F': 2, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (1, 3, 1)
+GAME n5-exhaustive/instances/n5s_maxph_0.pg ELIMWIN n 5 mE 6 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 1, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (0, 1, 0)
+GAME n5-exhaustive/instances/n4all_thch_0.pg ELIMWIN n 4 mE 5 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 1, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (0, 1, 0)
+GAME n5-exhaustive/instances/thetaA_canon_n12.pg ELIMWIN n 12 mE 12 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 3, 'ncert': 0} maxima {'F': 3, 'HW': 1, 'revisit': 1, 'xiw': 0} argmax (0, 3, 0)
+GAME n5-exhaustive/instances/nh_n8.pg ELIMWIN n 8 mE 11 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 3, 'ncert': 0} maxima {'F': 3, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (0, 3, 0)
+GAME n5-exhaustive/instances/thetaA_canon_n8.pg ELIMWIN n 8 mE 9 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 3, 'ncert': 0} maxima {'F': 3, 'HW': 1, 'revisit': 1, 'xiw': 1} argmax (0, 3, 0)
+GAME n5-exhaustive/instances/thetaA_n17.pg ELIMWIN n 17 mE 30 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 6, 'ncert': 0} maxima {'F': 3, 'HW': 1, 'revisit': 2, 'xiw': 1} argmax (2, 5, 2)
+GAME n5-exhaustive/instances/thetaA_n6.pg ELIMWIN n 6 mE 8 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 3, 'ncert': 0} maxima {'F': 3, 'HW': 1, 'revisit': 1, 'xiw': 1} argmax (0, 3, 0)
+GAME n5-exhaustive/instances/thetaA_n9.pg ELIMWIN n 9 mE 11 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 3, 'ncert': 0} maxima {'F': 3, 'HW': 1, 'revisit': 1, 'xiw': 1} argmax (1, 4, 1)
+GAME n5-exhaustive/instances/thetaA_n7.pg ELIMWIN n 7 mE 9 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 3, 'ncert': 0} maxima {'F': 3, 'HW': 1, 'revisit': 1, 'xiw': 0} argmax (0, 3, 0)
+GAME n5-exhaustive/instances/wk1_n32.pg ELIMWIN n 32 mE 74 runs 3 {'viol_count': 0, 'viol_eq': 0, 'cert': 11, 'ncert': 0} maxima {'F': 2, 'HW': 1, 'revisit': 0, 'xiw': 1} argmax (1, 2, 1)
+GAME n5-exhaustive/instances/wk2_n32.pg ELIMWIN n 32 mE 72 runs 2 {'viol_count': 0, 'viol_eq': 0, 'cert': 11, 'ncert': 0} maxima {'F': 3, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (1, 4, 1)
+GAME new/box48/instances/long121_n40.pg ELIMWIN n 40 mE 103 runs 9 {'viol_count': 0, 'viol_eq': 0, 'cert': 189, 'ncert': 7} maxima {'F': 17, 'HW': 1, 'revisit': 3, 'xiw': 1} argmax (1, 5, 1)
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.pg ELIMWIN n 64 mE 172 runs 7 {'viol_count': 0, 'viol_eq': 0, 'cert': 155, 'ncert': 10} maxima {'F': 16, 'HW': 1, 'revisit': 1, 'xiw': 1} argmax (7, 18, 7)
+GAME red/carry/instances/absmono_viol_n44.pg ELIMWIN n 44 mE 633 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.pg ELIMWIN n 64 mE 142 runs 8 {'viol_count': 0, 'viol_eq': 0, 'cert': 176, 'ncert': 5} maxima {'F': 15, 'HW': 1, 'revisit': 5, 'xiw': 1} argmax (5, 20, 5)
+GAME red/carry/instances/carry3_2_2.pg ELIMWIN n 47 mE 31 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 1, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (1, 2, 1)
+GAME red/carry/instances/cm_mdrop_both_n28.pg ELIMWIN n 28 mE 60 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 7, 'ncert': 0} maxima {'F': 3, 'HW': 1, 'revisit': 1, 'xiw': 1} argmax (2, 5, 2)
+GAME red/carry/instances/cm_mdrop_oink_n28.pg ELIMWIN n 28 mE 63 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 2, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 1} argmax (2, 3, 2)
+GAME red/carry/instances/ctx11_n40.pg ELIMWIN n 40 mE 158 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 4, 'ncert': 0} maxima {'F': 2, 'HW': 1, 'revisit': 0, 'xiw': 1} argmax (7, 9, 7)
+GAME red/carry/instances/ctx12_n40.pg ELIMWIN n 40 mE 178 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 1, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (6, 7, 6)
+GAME red/carry/instances/ctx6_n20.pg ELIMWIN n 20 mE 39 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/carry/instances/ctx13_n40.pg ELIMWIN n 40 mE 193 runs 2 {'viol_count': 0, 'viol_eq': 0, 'cert': 13, 'ncert': 0} maxima {'F': 5, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (8, 13, 8)
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.pg ELIMWIN n 80 mE 178 runs 8 {'viol_count': 0, 'viol_eq': 0, 'cert': 190, 'ncert': 6} maxima {'F': 15, 'HW': 1, 'revisit': 3, 'xiw': 1} argmax (5, 19, 5)
+GAME red/carry/instances/ctx7_n30.pg ELIMWIN n 30 mE 134 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/carry/instances/f1_twodef_n48.pg ELIMWIN n 48 mE 147 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/carry/instances/f1_twofall_n48.pg ELIMWIN n 48 mE 137 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/carry/instances/ctx6_n56.pg ELIMWIN n 56 mE 261 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 1, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (11, 12, 11)
+GAME red/carry/instances/fallv_viol_n28.pg ELIMWIN n 28 mE 158 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/carry/instances/fall3_n76.pg ELIMWIN n 76 mE 247 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/carry/instances/fired10_n20.pg ELIMWIN n 20 mE 66 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 2, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (4, 5, 4)
+GAME new/box48/out/qpcclimb/scale/snap_n80_s62.pg ELIMWIN n 80 mE 178 runs 8 {'viol_count': 0, 'viol_eq': 0, 'cert': 190, 'ncert': 6} maxima {'F': 15, 'HW': 1, 'revisit': 3, 'xiw': 1} argmax (5, 19, 5)
+GAME red/carry/instances/firedlong667_n20.pg ELIMWIN n 20 mE 53 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/carry/instances/fall4_n116.pg ELIMWIN n 116 mE 269 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/carry/instances/firedlong667_n43.pg ELIMWIN n 43 mE 141 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/carry/instances/firedstep13_n76.pg ELIMWIN n 76 mE 311 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 10, 'ncert': 0} maxima {'F': 2, 'HW': 1, 'revisit': 0, 'xiw': 1} argmax (6, 8, 6)
+GAME red/carry/instances/gapbW_dup_n20.pg ELIMWIN n 20 mE 79 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 4, 'ncert': 0} maxima {'F': 2, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (3, 5, 3)
+GAME red/carry/instances/gapb_dup_n20.pg ELIMWIN n 20 mE 51 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/carry/instances/h4_compound2x2_n44.pg ELIMWIN n 44 mE 80 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 3, 'ncert': 0} maxima {'F': 3, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (7, 10, 7)
+GAME red/carry/instances/h4_def2ctx_n20.pg ELIMWIN n 20 mE 39 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 1, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (5, 6, 5)
+GAME red/carry/instances/h4_disjoint_n20.pg ELIMWIN n 20 mE 44 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/carry/instances/h4_compound_n44.pg ELIMWIN n 44 mE 75 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/carry/instances/h4_def7_n28.pg ELIMWIN n 28 mE 53 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/carry/instances/h4_notweaker_n20.pg ELIMWIN n 20 mE 36 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/carry/instances/kfirst_viol_n13.pg ELIMWIN n 13 mE 8 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/carry/instances/kin_viol_n29.pg ELIMWIN n 29 mE 42 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/carry/instances/lalg_dtl_mviol_n20.pg ELIMWIN n 20 mE 33 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/carry/instances/lemmaS_Mdrop_n20.pg ELIMWIN n 20 mE 40 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 1, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (5, 6, 5)
+GAME red/carry/instances/lemmaS_viol_n20.pg ELIMWIN n 20 mE 35 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/carry/instances/lex_viol_inj_n28.pg ELIMWIN n 28 mE 108 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/carry/instances/lex_viol_tie_n28.pg ELIMWIN n 28 mE 108 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/carry/instances/meet_viol_n17.pg ELIMWIN n 17 mE 14 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/carry/instances/meet_viol_n29.pg ELIMWIN n 29 mE 103 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/carry/instances/nosig_2_3.pg ELIMWIN n 24 mE 23 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 4, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (1, 2, 1)
+GAME red/carry/instances/phi_flat_alive_n32.pg ELIMWIN n 32 mE 59 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/carry/instances/pk_viol_n20.pg ELIMWIN n 20 mE 108 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 1, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (1, 2, 1)
+GAME red/carry/instances/replay4_n32.pg ELIMWIN n 32 mE 67 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/carry/instances/spp19_oink_n30.pg ELIMWIN n 30 mE 138 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/carry/instances/spp19_stable_n30.pg ELIMWIN n 30 mE 118 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 4, 'ncert': 0} maxima {'F': 2, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (5, 7, 5)
+GAME red/carry/instances/spp22_oink_n40.pg ELIMWIN n 40 mE 118 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/carry/instances/spp25_oink_n40.pg ELIMWIN n 40 mE 128 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 3, 'ncert': 0} maxima {'F': 3, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (7, 10, 7)
+GAME red/carry/instances/stealonce_both_n45.pg ELIMWIN n 45 mE 51 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 2, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (3, 4, 3)
+GAME red/carry/instances/stealonce_core_n76.pg ELIMWIN n 76 mE 62 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 2, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (3, 4, 3)
+GAME red/carry/instances/stealer_viol_n76.pg ELIMWIN n 76 mE 265 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 2, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (11, 12, 11)
+GAME red/ctxp/instances/deep1_n13.pg ELIMWIN n 13 mE 9 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/carry/instances/tstep_near_n20.pg ELIMWIN n 20 mE 104 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/ctxp/instances/deep1_n21.pg ELIMWIN n 21 mE 13 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/ctxp/instances/margin1_mc1.pg ELIMWIN n 80 mE 203 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/ctxp/instances/margin1_n20.pg ELIMWIN n 20 mE 47 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/ctxp/instances/margin1_mc5.pg ELIMWIN n 50 mE 73 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/carry/instances/stealonce_viol_n76.pg ELIMWIN n 76 mE 266 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 2, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (11, 12, 11)
+GAME red/dtl/instances/lalg_dtl_pertop31_n18.pg ELIMWIN n 18 mE 104 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 4, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 1} argmax (1, 2, 1)
+GAME red/fbr/instances/bghm_k1_gap6_A.pg ELIMWIN n 21 mE 13 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/dtl/instances/lalg_dtl_restart8_n20.pg ELIMWIN n 20 mE 31 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/fbr/instances/bghm_k3_gap4_A.pg ELIMWIN n 45 mE 29 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/fbr/instances/lev74_n40.pg ELIMWIN n 40 mE 117 runs 3 {'viol_count': 0, 'viol_eq': 0, 'cert': 11, 'ncert': 0} maxima {'F': 3, 'HW': 1, 'revisit': 0, 'xiw': 1} argmax (5, 8, 5)
+GAME red/fbr/instances/fr39_q4_n48.pg ELIMWIN n 48 mE 107 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 32, 'ncert': 0} maxima {'F': 32, 'HW': 1, 'revisit': 5, 'xiw': 1} argmax (2, 34, 2)
+GAME red/fbr/instances/nep80_n40.pg ELIMWIN n 40 mE 110 runs 4 {'viol_count': 0, 'viol_eq': 0, 'cert': 14, 'ncert': 1} maxima {'F': 4, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (5, 8, 5)
+GAME red/fbr/instances/rho144_n32.pg ELIMWIN n 32 mE 49 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 2, 'ncert': 0} maxima {'F': 2, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (4, 6, 4)
+GAME red/fbr/instances/rho3_253_n32.pg ELIMWIN n 32 mE 42 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 4, 'ncert': 0} maxima {'F': 4, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (4, 8, 4)
+GAME red/fbr/instances/rho84_n16.pg ELIMWIN n 16 mE 17 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/fbr/instances/sat68_n20.pg ELIMWIN n 20 mE 30 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 1, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (1, 2, 1)
+GAME red/fbr/instances/sat4_n20.pg ELIMWIN n 20 mE 39 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 1, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (5, 6, 5)
+GAME red/fbr/instances/rho666_n48.pg ELIMWIN n 48 mE 113 runs 2 {'viol_count': 0, 'viol_eq': 0, 'cert': 13, 'ncert': 0} maxima {'F': 7, 'HW': 1, 'revisit': 1, 'xiw': 1} argmax (3, 10, 3)
+GAME red/fbr/instances/lev56_n48.pg ELIMWIN n 48 mE 159 runs 10 {'viol_count': 0, 'viol_eq': 0, 'cert': 130, 'ncert': 2} maxima {'F': 15, 'HW': 1, 'revisit': 3, 'xiw': 1} argmax (7, 9, 7)
+GAME red/fbx/instances/exsw_loop_n15.pg ELIMWIN n 15 mE 21 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/fbr/instances/twowave_L16.pg ELIMWIN n 22 mE 53 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 15, 'ncert': 0} maxima {'F': 15, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (0, 15, 0)
+GAME red/frz/instances/fbcap_eq_u4_n11.pg ELIMWIN n 11 mE 26 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/fbx/instances/kt6_n58.pg ELIMWIN n 58 mE 188 runs 3 {'viol_count': 0, 'viol_eq': 0, 'cert': 48, 'ncert': 9} maxima {'F': 18, 'HW': 1, 'revisit': 4, 'xiw': 1} argmax (2, 20, 2)
+GAME red/frz/instances/fx2_n11.pg ELIMWIN n 11 mE 27 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/h3/instances/frzgap0_n4.pg ELIMWIN n 4 mE 7 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/h3/instances/frzgap0_n6.pg ELIMWIN n 6 mE 11 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 2, 'ncert': 0} maxima {'F': 2, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (1, 3, 1)
+GAME red/h3/instances/lcount2_n23.pg ELIMWIN n 23 mE 34 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 10, 'ncert': 0} maxima {'F': 3, 'HW': 1, 'revisit': 0, 'xiw': 1} argmax (1, 4, 1)
+GAME red/h3/instances/lcount_n23.pg ELIMWIN n 23 mE 41 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 8, 'ncert': 0} maxima {'F': 4, 'HW': 1, 'revisit': 2, 'xiw': 1} argmax (0, 4, 0)
+GAME red/h3/instances/offret_l19_n24.pg ELIMWIN n 24 mE 30 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/kl/instances/klcount_n16.pg ELIMWIN n 16 mE 48 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/kl/instances/klcount_n18_base.pg ELIMWIN n 18 mE 50 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/h3/instances/xsnpre36_n48.pg ELIMWIN n 48 mE 121 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 36, 'ncert': 0} maxima {'F': 30, 'HW': 1, 'revisit': 5, 'xiw': 1} argmax (1, 31, 1)
+GAME red/kl/instances/klcount_n18_lvl.pg ELIMWIN n 18 mE 50 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/kl/instances/klglobal_n16.pg ELIMWIN n 16 mE 43 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/kl/instances/klglobal_n18_lvl.pg ELIMWIN n 18 mE 45 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/kl/instances/klglobal_n20_lvl2.pg ELIMWIN n 20 mE 47 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/kl/instances/r2crawl_n14.pg ELIMWIN n 14 mE 18 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/kl/instances/klmin_n13.pg ELIMWIN n 13 mE 11 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 1, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (1, 2, 1)
+GAME red/kl/instances/r2climb_h13.pg ELIMWIN n 13 mE 31 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/kl/instances/r2join_h0E_n14.pg ELIMWIN n 14 mE 11 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/kl24/instances/HL88_0.pg ELIMWIN n 41 mE 39 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 1, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (1, 2, 1)
+GAME red/kl/instances/r2lap_best_n22.pg ELIMWIN n 22 mE 78 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/kl24/instances/HL88_1.pg ELIMWIN n 43 mE 41 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 1, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (1, 2, 1)
+GAME red/kl24/instances/HL88_2.pg ELIMWIN n 45 mE 43 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 1, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (1, 2, 1)
+GAME red/kl24/instances/HL88_3.pg ELIMWIN n 47 mE 45 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 1, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (1, 2, 1)
+GAME red/kl24/instances/HLg_0.pg ELIMWIN n 29 mE 27 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 1, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (1, 2, 1)
+GAME red/kl24/instances/HLg_1.pg ELIMWIN n 35 mE 33 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 1, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (1, 2, 1)
+GAME red/kl24/instances/HLg_2.pg ELIMWIN n 45 mE 43 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 1, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (1, 2, 1)
+GAME red/kl24/instances/HLg_3.pg ELIMWIN n 55 mE 53 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 1, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (1, 2, 1)
+GAME red/kw/instances/cw11_n24.pg ELIMWIN n 24 mE 65 runs 5 {'viol_count': 0, 'viol_eq': 0, 'cert': 19, 'ncert': 3} maxima {'F': 4, 'HW': 1, 'revisit': 1, 'xiw': 1} argmax (0, 3, 0)
+GAME red/kw/instances/frzu_tight_n14.pg ELIMWIN n 14 mE 29 runs 2 {'viol_count': 0, 'viol_eq': 0, 'cert': 4, 'ncert': 0} maxima {'F': 2, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (0, 1, 0)
+GAME red/lag/instances/depth2_n39.pg ELIMWIN n 39 mE 20 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 2, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (2, 3, 2)
+GAME red/kw/instances/kc18_n24.pg ELIMWIN n 24 mE 60 runs 2 {'viol_count': 0, 'viol_eq': 0, 'cert': 23, 'ncert': 0} maxima {'F': 18, 'HW': 1, 'revisit': 1, 'xiw': 1} argmax (1, 19, 1)
+GAME red/lag/instances/depth4_n53.pg ELIMWIN n 53 mE 29 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 1, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (3, 4, 3)
+GAME red/lag/instances/depth3_n46.pg ELIMWIN n 46 mE 25 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/lag/instances/fam_D8_n78.pg ELIMWIN n 78 mE 42 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/lag/instances/fam_D12_n106.pg ELIMWIN n 106 mE 58 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/lag/instances/fam_D4_n50.pg ELIMWIN n 50 mE 26 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/mei/instances/mei_h2.pg ELIMWIN n 19 mE 5 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/mei/instances/mei_h3.pg ELIMWIN n 27 mE 7 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/mei/instances/mei_h4.pg ELIMWIN n 35 mE 9 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/mei/instances/mei_h5.pg ELIMWIN n 43 mE 11 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/mei/instances/mei_h6.pg ELIMWIN n 51 mE 13 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/mei/instances/mei_h8.pg ELIMWIN n 67 mE 17 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/n3/instances/lagx10_n40.pg ELIMWIN n 40 mE 64 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 18, 'ncert': 0} maxima {'F': 11, 'HW': 1, 'revisit': 3, 'xiw': 0} argmax (1, 12, 1)
+GAME red/n3/instances/core41_n40.pg ELIMWIN n 40 mE 59 runs 7 {'viol_count': 0, 'viol_eq': 0, 'cert': 47, 'ncert': 5} maxima {'F': 7, 'HW': 1, 'revisit': 1, 'xiw': 1} argmax (1, 4, 1)
+GAME red/n3/instances/lag11_n40.pg ELIMWIN n 40 mE 59 runs 2 {'viol_count': 0, 'viol_eq': 0, 'cert': 18, 'ncert': 1} maxima {'F': 14, 'HW': 3, 'revisit': 7, 'xiw': 2} argmax (6, 20, 7)
+GAME red/n3/instances/n3cov_lean.pg ELIMWIN n 48 mE 93 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 35, 'ncert': 0} maxima {'F': 30, 'HW': 1, 'revisit': 1, 'xiw': 0} argmax (5, 35, 5)
+GAME red/n3/instances/n3cov_phi.pg ELIMWIN n 32 mE 41 runs 3 {'viol_count': 0, 'viol_eq': 0, 'cert': 25, 'ncert': 4} maxima {'F': 9, 'HW': 1, 'revisit': 0, 'xiw': 1} argmax (3, 8, 3)
+GAME red/n3/instances/long121_n40.pg ELIMWIN n 40 mE 103 runs 9 {'viol_count': 0, 'viol_eq': 0, 'cert': 189, 'ncert': 7} maxima {'F': 17, 'HW': 1, 'revisit': 3, 'xiw': 1} argmax (1, 5, 1)
+GAME red/n3/instances/comp54_n80.pg ELIMWIN n 80 mE 118 runs 7 {'viol_count': 0, 'viol_eq': 0, 'cert': 93, 'ncert': 12} maxima {'F': 12, 'HW': 1, 'revisit': 2, 'xiw': 1} argmax (1, 6, 1)
+GAME red/n3/instances/long90_k2_n40.pg ELIMWIN n 40 mE 78 runs 9 {'viol_count': 0, 'viol_eq': 0, 'cert': 133, 'ncert': 7} maxima {'F': 13, 'HW': 1, 'revisit': 1, 'xiw': 1} argmax (1, 4, 1)
+GAME red/n3/instances/run49_n32.pg ELIMWIN n 32 mE 78 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 35, 'ncert': 0} maxima {'F': 49, 'HW': 14, 'revisit': 15, 'xiw': 1} argmax (2, 51, 6)
+GAME red/n3/instances/run34_n40.pg ELIMWIN n 40 mE 93 runs 2 {'viol_count': 0, 'viol_eq': 0, 'cert': 52, 'ncert': 1} maxima {'F': 32, 'HW': 1, 'revisit': 5, 'xiw': 1} argmax (3, 14, 3)
+GAME red/n5/instances/dl_4_4.pg ELIMWIN n 42 mE 44 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/n5/instances/dlm2_4.pg ELIMWIN n 42 mE 43 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/n5/instances/sym_h12_s1.pg ELIMWIN n 24 mE 29 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/n3/instances/ret22_n40.pg ELIMWIN n 40 mE 105 runs 10 {'viol_count': 0, 'viol_eq': 0, 'cert': 147, 'ncert': 3} maxima {'F': 19, 'HW': 1, 'revisit': 5, 'xiw': 1} argmax (2, 6, 2)
+GAME red/n5inj/instances/block_bk20.pg ELIMWIN n 24 mE 44 runs 3 {'viol_count': 0, 'viol_eq': 0, 'cert': 18, 'ncert': 1} maxima {'F': 9, 'HW': 1, 'revisit': 4, 'xiw': 1} argmax (5, 14, 5)
+GAME red/n5/instances/sym_h8_s1.pg ELIMWIN n 16 mE 20 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/n5/instances/sym_h16_s1.pg ELIMWIN n 32 mE 40 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 1, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (19, 20, 19)
+GAME red/n5/instances/dl_6_8.pg ELIMWIN n 110 mE 114 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/n5inj/instances/blockph_bp20.pg ELIMWIN n 24 mE 44 runs 2 {'viol_count': 0, 'viol_eq': 0, 'cert': 21, 'ncert': 1} maxima {'F': 19, 'HW': 1, 'revisit': 2, 'xiw': 1} argmax (1, 20, 1)
+GAME red/n5inj/instances/block_bk32.pg ELIMWIN n 36 mE 67 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 22, 'ncert': 0} maxima {'F': 21, 'HW': 1, 'revisit': 1, 'xiw': 0} argmax (8, 29, 8)
+GAME red/n5inj/instances/blockph_bp32.pg ELIMWIN n 36 mE 67 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 29, 'ncert': 1} maxima {'F': 30, 'HW': 1, 'revisit': 1, 'xiw': 0} argmax (1, 31, 1)
+GAME red/n5inj/instances/bribe_cex_n15.pg ELIMWIN n 15 mE 30 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/n5inj/instances/frz24.pg ELIMWIN n 24 mE 49 runs 5 {'viol_count': 0, 'viol_eq': 0, 'cert': 26, 'ncert': 0} maxima {'F': 7, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (1, 3, 1)
+GAME red/n5inj/instances/frz32.pg ELIMWIN n 32 mE 66 runs 11 {'viol_count': 0, 'viol_eq': 0, 'cert': 54, 'ncert': 5} maxima {'F': 12, 'HW': 1, 'revisit': 2, 'xiw': 1} argmax (0, 8, 0)
+GAME red/n5inj/instances/phase2_pk32.pg ELIMWIN n 32 mE 64 runs 7 {'viol_count': 0, 'viol_eq': 0, 'cert': 47, 'ncert': 0} maxima {'F': 19, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (3, 7, 3)
+GAME red/n5inj/instances/frz40.pg ELIMWIN n 40 mE 85 runs 9 {'viol_count': 0, 'viol_eq': 0, 'cert': 106, 'ncert': 1} maxima {'F': 18, 'HW': 4, 'revisit': 8, 'xiw': 2} argmax (40, 58, 41)
+GAME red/n5inj/instances/elimn_cex_n48.pg ELIMWIN n 48 mE 81 runs 12 {'viol_count': 0, 'viol_eq': 0, 'cert': 113, 'ncert': 1} maxima {'F': 14, 'HW': 1, 'revisit': 0, 'xiw': 1} argmax (2, 5, 2)
+GAME red/n5inj/instances/phase2_pk48.pg ELIMWIN n 48 mE 80 runs 12 {'viol_count': 0, 'viol_eq': 0, 'cert': 44, 'ncert': 0} maxima {'F': 12, 'HW': 1, 'revisit': 1, 'xiw': 0} argmax (5, 9, 5)
+GAME red/n5inj/instances/returns_rt32.pg ELIMWIN n 32 mE 63 runs 8 {'viol_count': 0, 'viol_eq': 0, 'cert': 47, 'ncert': 0} maxima {'F': 18, 'HW': 1, 'revisit': 0, 'xiw': 1} argmax (3, 7, 3)
+GAME red/n5inj/instances/returns_rt48.pg ELIMWIN n 48 mE 95 runs 14 {'viol_count': 0, 'viol_eq': 0, 'cert': 97, 'ncert': 1} maxima {'F': 15, 'HW': 1, 'revisit': 1, 'xiw': 1} argmax (2, 7, 2)
+GAME red/n5inj/instances/theta_thc24.pg ELIMWIN n 24 mE 47 runs 2 {'viol_count': 0, 'viol_eq': 0, 'cert': 22, 'ncert': 0} maxima {'F': 12, 'HW': 1, 'revisit': 1, 'xiw': 0} argmax (1, 5, 1)
+GAME red/n5inj/instances/returns_ph64.pg ELIMWIN n 64 mE 116 runs 16 {'viol_count': 0, 'viol_eq': 0, 'cert': 135, 'ncert': 1} maxima {'F': 16, 'HW': 1, 'revisit': 1, 'xiw': 1} argmax (2, 7, 2)
+GAME red/n5inj/instances/theta_thf16.pg ELIMWIN n 16 mE 30 runs 2 {'viol_count': 0, 'viol_eq': 0, 'cert': 19, 'ncert': 1} maxima {'F': 12, 'HW': 1, 'revisit': 1, 'xiw': 0} argmax (2, 7, 2)
+GAME red/n5inj/instances/theta_tp32.pg ELIMWIN n 32 mE 58 runs 2 {'viol_count': 0, 'viol_eq': 0, 'cert': 46, 'ncert': 1} maxima {'F': 25, 'HW': 2, 'revisit': 12, 'xiw': 1} argmax (20, 45, 22)
+GAME red/n5inj/instances/wide_h16.pg ELIMWIN n 32 mE 52 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/n5inj/instances/returns_rt64.pg ELIMWIN n 64 mE 112 runs 15 {'viol_count': 0, 'viol_eq': 0, 'cert': 107, 'ncert': 1} maxima {'F': 17, 'HW': 1, 'revisit': 1, 'xiw': 1} argmax (2, 8, 2)
+GAME red/nest16/instances/k4L72_n101.pg ELIMWIN n 101 mE 14 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/n5inj/instances/theta_tp40.pg ELIMWIN n 40 mE 72 runs 3 {'viol_count': 0, 'viol_eq': 0, 'cert': 45, 'ncert': 0} maxima {'F': 20, 'HW': 1, 'revisit': 2, 'xiw': 1} argmax (2, 6, 2)
+GAME red/nest16/instances/k4L72r_n101.pg ELIMWIN n 101 mE 14 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/nest16/instances/k4g50_n101.pg ELIMWIN n 101 mE 14 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/nest16/instances/k4seed_c1_n82.pg ELIMWIN n 82 mE 17 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/nest16/instances/k4seed_vr_n87.pg ELIMWIN n 87 mE 15 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/nest16/instances/k4u_n101.pg ELIMWIN n 101 mE 14 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/nest16/instances/k4y1_n82.pg ELIMWIN n 82 mE 17 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/nest16/instances/near4_n26.pg ELIMWIN n 26 mE 2 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/nest16/instances/k4y2_n87.pg ELIMWIN n 87 mE 15 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/nest16/instances/nest4u_n46.pg ELIMWIN n 46 mE 6 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/nest16/instances/nest5_n49.pg ELIMWIN n 49 mE 10 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/nest16/instances/nest4uu_n51.pg ELIMWIN n 51 mE 5 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/nest16/instances/nest6_n75.pg ELIMWIN n 75 mE 11 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/nest16/instances/nest6min_n75.pg ELIMWIN n 75 mE 12 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/nest16/instances/oseg_n26.pg ELIMWIN n 26 mE 2 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/nest16/instances/nest6x_n75.pg ELIMWIN n 75 mE 12 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/nest16/instances/w1_n27.pg ELIMWIN n 27 mE 3 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/nest16/instances/win3_n27.pg ELIMWIN n 27 mE 3 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/nopre/instances/nopre_viol_n20.pg ELIMWIN n 20 mE 38 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/o1/instances/iter118_n48.pg ELIMWIN n 48 mE 170 runs 2 {'viol_count': 0, 'viol_eq': 0, 'cert': 27, 'ncert': 0} maxima {'F': 12, 'HW': 1, 'revisit': 1, 'xiw': 1} argmax (2, 3, 2)
+GAME red/o1/instances/ph45_n32.pg ELIMWIN n 32 mE 66 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/o1/instances/ph50_n32.pg ELIMWIN n 32 mE 63 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/o1/instances/tau18_n24.pg ELIMWIN n 24 mE 39 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/o1/instances/f39_n48.pg ELIMWIN n 48 mE 115 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 33, 'ncert': 0} maxima {'F': 33, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (3, 36, 3)
+GAME red/rec0/instances/fbd0_n4.pg ELIMWIN n 4 mE 5 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/rec0/instances/n0_6_n24.pg ELIMWIN n 24 mE 41 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 2, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 1} argmax (1, 2, 1)
+GAME red/rec0/instances/nep24_n20.pg ELIMWIN n 20 mE 39 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 2, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (1, 2, 1)
+GAME red/rec0/instances/nep87_n40.pg ELIMWIN n 40 mE 112 runs 3 {'viol_count': 0, 'viol_eq': 0, 'cert': 24, 'ncert': 0} maxima {'F': 8, 'HW': 1, 'revisit': 2, 'xiw': 1} argmax (6, 14, 6)
+GAME red/sgrow/instances/s20_n20.pg ELIMWIN n 20 mE 24 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 1, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (7, 8, 7)
+GAME red/rec0/instances/nep90_n40.pg ELIMWIN n 40 mE 111 runs 3 {'viol_count': 0, 'viol_eq': 0, 'cert': 24, 'ncert': 2} maxima {'F': 8, 'HW': 1, 'revisit': 1, 'xiw': 1} argmax (3, 11, 3)
+GAME red/rec0/instances/lend2_30_n48.pg ELIMWIN n 48 mE 97 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 22, 'ncert': 0} maxima {'F': 13, 'HW': 1, 'revisit': 3, 'xiw': 1} argmax (5, 18, 5)
+GAME red/sgrow/instances/s21_oink_n20.pg ELIMWIN n 20 mE 23 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/sgrow/instances/s29_n30.pg ELIMWIN n 30 mE 72 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/sgrow/instances/s34_oink_n40.pg ELIMWIN n 40 mE 161 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 3, 'ncert': 0} maxima {'F': 2, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (3, 5, 3)
+GAME red/sgrow/instances/s32_n60.pg ELIMWIN n 60 mE 230 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/sgrow/instances/s36_oink_n60.pg ELIMWIN n 60 mE 194 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 2, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (4, 5, 4)
+GAME red/sgrow/instances/s35_oink_n80.pg ELIMWIN n 80 mE 198 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 2, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (4, 5, 4)
+GAME red/so/instances/beta2_n11.pg ELIMWIN n 11 mE 16 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 1, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (3, 4, 3)
+GAME red/so/instances/epsseg_cex_n16.pg ELIMWIN n 16 mE 41 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 9, 'ncert': 0} maxima {'F': 6, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (1, 7, 1)
+GAME red/sgrow/instances/s34_oink_n80.pg ELIMWIN n 80 mE 263 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 1, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (7, 8, 7)
+GAME red/so/instances/epsseg_cex_n48.pg ELIMWIN n 48 mE 180 runs 3 {'viol_count': 0, 'viol_eq': 0, 'cert': 16, 'ncert': 1} maxima {'F': 4, 'HW': 1, 'revisit': 0, 'xiw': 1} argmax (2, 3, 2)
+GAME red/so/instances/exitr_cex_n16.pg ELIMWIN n 16 mE 44 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 9, 'ncert': 2} maxima {'F': 7, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (1, 8, 1)
+GAME red/so/instances/farrise25_n32.pg ELIMWIN n 32 mE 104 runs 2 {'viol_count': 0, 'viol_eq': 0, 'cert': 6, 'ncert': 0} maxima {'F': 3, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (0, 1, 0)
+GAME red/so/instances/exitr_cex_n48.pg ELIMWIN n 48 mE 168 runs 2 {'viol_count': 0, 'viol_eq': 0, 'cert': 15, 'ncert': 0} maxima {'F': 3, 'HW': 1, 'revisit': 0, 'xiw': 1} argmax (1, 2, 1)
+GAME red/so/instances/njb_reabs54_n32.pg ELIMWIN n 32 mE 96 runs 4 {'viol_count': 0, 'viol_eq': 0, 'cert': 23, 'ncert': 0} maxima {'F': 4, 'HW': 1, 'revisit': 0, 'xiw': 1} argmax (5, 6, 5)
+GAME red/so/instances/mn_abs74_n48.pg ELIMWIN n 48 mE 155 runs 4 {'viol_count': 0, 'viol_eq': 0, 'cert': 49, 'ncert': 0} maxima {'F': 4, 'HW': 1, 'revisit': 0, 'xiw': 1} argmax (6, 7, 6)
+GAME red/so/instances/nleq_cex_n48.pg ELIMWIN n 48 mE 178 runs 3 {'viol_count': 0, 'viol_eq': 0, 'cert': 9, 'ncert': 6} maxima {'F': 2, 'HW': 1, 'revisit': 0, 'xiw': 1} argmax (3, 4, 3)
+GAME red/so/instances/njb_reabs65_n48.pg ELIMWIN n 48 mE 164 runs 5 {'viol_count': 0, 'viol_eq': 0, 'cert': 85, 'ncert': 4} maxima {'F': 19, 'HW': 1, 'revisit': 4, 'xiw': 1} argmax (2, 21, 2)
+GAME red/so/instances/nleq33_n48.pg ELIMWIN n 48 mE 182 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 38, 'ncert': 0} maxima {'F': 33, 'HW': 1, 'revisit': 0, 'xiw': 1} argmax (5, 38, 5)
+GAME red/so/instances/pft35_n48.pg ELIMWIN n 48 mE 157 runs 2 {'viol_count': 0, 'viol_eq': 0, 'cert': 64, 'ncert': 4} maxima {'F': 35, 'HW': 2, 'revisit': 4, 'xiw': 1} argmax (6, 41, 10)
+GAME red/so/instances/pftheta_cex_n32.pg ELIMWIN n 32 mE 92 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 30, 'ncert': 0} maxima {'F': 34, 'HW': 6, 'revisit': 14, 'xiw': 2} argmax (4, 38, 8)
+GAME red/so/instances/pftheta34_n32.pg ELIMWIN n 32 mE 80 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 32, 'ncert': 0} maxima {'F': 34, 'HW': 7, 'revisit': 18, 'xiw': 2} argmax (5, 39, 9)
+GAME red/so/instances/pft40_n40.pg ELIMWIN n 40 mE 126 runs 4 {'viol_count': 0, 'viol_eq': 0, 'cert': 64, 'ncert': 1} maxima {'F': 27, 'HW': 5, 'revisit': 5, 'xiw': 1} argmax (27, 54, 35)
+GAME red/so/instances/s4c8_n13.pg ELIMWIN n 13 mE 33 runs 2 {'viol_count': 0, 'viol_eq': 0, 'cert': 2, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (1, 2, 1)
+GAME red/so/instances/post31_n48.pg ELIMWIN n 48 mE 164 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/so/instances/rise_fb38_n48.pg ELIMWIN n 48 mE 161 runs 3 {'viol_count': 0, 'viol_eq': 0, 'cert': 32, 'ncert': 0} maxima {'F': 4, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (4, 8, 4)
+GAME red/so/instances/so_j19_n48.pg ELIMWIN n 48 mE 150 runs 2 {'viol_count': 0, 'viol_eq': 0, 'cert': 29, 'ncert': 0} maxima {'F': 20, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (2, 3, 2)
+GAME red/so/instances/so_k2_n32.pg ELIMWIN n 32 mE 98 runs 3 {'viol_count': 0, 'viol_eq': 0, 'cert': 26, 'ncert': 0} maxima {'F': 5, 'HW': 1, 'revisit': 0, 'xiw': 1} argmax (0, 4, 0)
+GAME red/so/instances/so_sor5_n24.pg ELIMWIN n 24 mE 61 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 23, 'ncert': 0} maxima {'F': 21, 'HW': 1, 'revisit': 2, 'xiw': 0} argmax (0, 21, 0)
+GAME red/so/instances/so_sorl_n32.pg ELIMWIN n 32 mE 86 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 26, 'ncert': 0} maxima {'F': 22, 'HW': 1, 'revisit': 2, 'xiw': 1} argmax (0, 22, 0)
+GAME red/so/instances/rise_thin51_n40.pg ELIMWIN n 40 mE 146 runs 8 {'viol_count': 0, 'viol_eq': 0, 'cert': 129, 'ncert': 8} maxima {'F': 13, 'HW': 1, 'revisit': 2, 'xiw': 1} argmax (3, 4, 3)
+GAME red/so/instances/so_tie13_n24.pg ELIMWIN n 24 mE 75 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 22, 'ncert': 0} maxima {'F': 16, 'HW': 1, 'revisit': 4, 'xiw': 1} argmax (0, 16, 0)
+GAME red/so/instances/so_tie15_n32.pg ELIMWIN n 32 mE 104 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 19, 'ncert': 0} maxima {'F': 19, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (1, 20, 1)
+GAME red/so/instances/so_th_n32.pg ELIMWIN n 32 mE 105 runs 2 {'viol_count': 0, 'viol_eq': 0, 'cert': 30, 'ncert': 2} maxima {'F': 21, 'HW': 1, 'revisit': 1, 'xiw': 1} argmax (1, 22, 1)
+GAME red/so/instances/tev_cex_n40.pg ELIMWIN n 40 mE 148 runs 3 {'viol_count': 0, 'viol_eq': 0, 'cert': 9, 'ncert': 0} maxima {'F': 5, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (3, 4, 3)
+GAME red/so/instances/tevlast_cex_n40.pg ELIMWIN n 40 mE 140 runs 2 {'viol_count': 0, 'viol_eq': 0, 'cert': 16, 'ncert': 0} maxima {'F': 5, 'HW': 1, 'revisit': 1, 'xiw': 0} argmax (4, 9, 4)
+GAME red/so/instances/tevlast11_n40.pg ELIMWIN n 40 mE 155 runs 2 {'viol_count': 0, 'viol_eq': 0, 'cert': 37, 'ncert': 0} maxima {'F': 30, 'HW': 1, 'revisit': 4, 'xiw': 1} argmax (4, 5, 4)
+GAME red/so/instances/tevlast7_n32.pg ELIMWIN n 32 mE 94 runs 2 {'viol_count': 0, 'viol_eq': 0, 'cert': 42, 'ncert': 0} maxima {'F': 29, 'HW': 1, 'revisit': 2, 'xiw': 1} argmax (4, 11, 4)
+GAME red/so/instances/tog6b_n32.pg ELIMWIN n 32 mE 87 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 16, 'ncert': 0} maxima {'F': 6, 'HW': 1, 'revisit': 2, 'xiw': 1} argmax (1, 7, 1)
+GAME red/so/instances/tog6a_n32.pg ELIMWIN n 32 mE 97 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 17, 'ncert': 0} maxima {'F': 5, 'HW': 1, 'revisit': 1, 'xiw': 1} argmax (4, 9, 4)
+GAME red/so/instances/xrun21_n24.pg ELIMWIN n 24 mE 85 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 23, 'ncert': 0} maxima {'F': 21, 'HW': 1, 'revisit': 2, 'xiw': 0} argmax (3, 24, 3)
+GAME red/so/instances/xrun8_n10.pg ELIMWIN n 10 mE 24 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 8, 'ncert': 0} maxima {'F': 7, 'HW': 1, 'revisit': 1, 'xiw': 1} argmax (2, 9, 2)
+GAME red/so/instances/xsn29_n32.pg ELIMWIN n 32 mE 120 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 35, 'ncert': 0} maxima {'F': 29, 'HW': 1, 'revisit': 3, 'xiw': 1} argmax (0, 29, 0)
+GAME red/so/instances/xsn43_n48.pg ELIMWIN n 48 mE 164 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 43, 'ncert': 0} maxima {'F': 43, 'HW': 1, 'revisit': 2, 'xiw': 0} argmax (1, 44, 1)
+GAME red/so/instances/xsnf42_n48.pg ELIMWIN n 48 mE 180 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 50, 'ncert': 0} maxima {'F': 42, 'HW': 1, 'revisit': 9, 'xiw': 1} argmax (1, 43, 1)
+GAME red/so/instances/xsnf52_n64.pg ELIMWIN n 64 mE 249 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 63, 'ncert': 0} maxima {'F': 52, 'HW': 1, 'revisit': 14, 'xiw': 1} argmax (2, 54, 2)
+GAME red/tcpert/instances/leanT_N12.pg ELIMWIN n 96 mE 126 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/so/instances/xsn91_n48.pg ELIMWIN n 48 mE 192 runs 9 {'viol_count': 0, 'viol_eq': 0, 'cert': 178, 'ncert': 2} maxima {'F': 25, 'HW': 1, 'revisit': 4, 'xiw': 1} argmax (3, 21, 3)
+GAME red/tcpert/instances/leanT_N6.pg ELIMWIN n 48 mE 45 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/tcpert/instances/leanT_N16.pg ELIMWIN n 128 mE 200 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/tcpert/instances/leanT_N8.pg ELIMWIN n 64 mE 68 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/tcpert/instances/leanT_N24.pg ELIMWIN n 192 mE 396 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 3, 'ncert': 0} maxima {'F': 3, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (18, 21, 18)
+GAME red/tcpert/instances/tcL_N3.pg ELIMWIN n 42 mE 36 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/tcpert/instances/tcL_N4.pg ELIMWIN n 68 mE 62 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/tcpert/instances/tcL_N10.pg ELIMWIN n 350 mE 365 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/tcpert/instances/tcL_N5.pg ELIMWIN n 100 mE 95 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/tcpert/instances/tcL_N6.pg ELIMWIN n 138 mE 135 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/tcpert/instances/tcR4_N4.pg ELIMWIN n 68 mE 62 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/tcpert/instances/tcR4_N5.pg ELIMWIN n 100 mE 95 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/tcpert/instances/tcL_N8.pg ELIMWIN n 232 mE 236 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/tcpert/instances/tcR4_N6.pg ELIMWIN n 138 mE 135 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 4, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (13, 14, 13)
+GAME red/tcpert/instances/leanT_N32.pg ELIMWIN n 256 mE 656 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/tcpert/instances/tcR4_N8.pg ELIMWIN n 232 mE 236 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/tcpert/instances/tcR4_N7.pg ELIMWIN n 182 mE 182 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/tcpert/instances/tcL_N12.pg ELIMWIN n 492 mE 522 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 2, 'ncert': 0} maxima {'F': 2, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (35, 37, 35)
+GAME red/tcpert/instances/tcS8_N6.pg ELIMWIN n 138 mE 159 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/tcpert/instances/tcS8_N10.pg ELIMWIN n 350 mE 445 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/tcpert/instances/tcS8_N7.pg ELIMWIN n 182 mE 217 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/tcpert/instances/tcS8_N8.pg ELIMWIN n 232 mE 284 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/tpp/instances/tpp_viol_n22.pg ELIMWIN n 22 mE 12 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/tpp/instances/tpp_viol_n63.pg ELIMWIN n 63 mE 123 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 2, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (6, 7, 6)
+GAME red/ul/instances/cxmig_k4_n54.pg ELIMWIN n 54 mE 75 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 26, 'ncert': 0} maxima {'F': 12, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (0, 12, 0)
+GAME red/ul/instances/cxmig_k8_n82.pg ELIMWIN n 82 mE 115 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 42, 'ncert': 0} maxima {'F': 16, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (0, 16, 0)
+GAME red/ul/instances/ladderd0_k12_n48.pg ELIMWIN n 48 mE 61 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 27, 'ncert': 0} maxima {'F': 14, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (0, 14, 0)
+GAME red/tcpert/instances/tcS8_N11.pg ELIMWIN n 418 mE 539 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/ul/instances/cxmig_k16_n138.pg ELIMWIN n 138 mE 195 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 74, 'ncert': 0} maxima {'F': 24, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (0, 24, 0)
+GAME red/ul/instances/ladderent_k12_n48.pg ELIMWIN n 48 mE 61 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 27, 'ncert': 0} maxima {'F': 14, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (0, 14, 0)
+GAME red/ul/instances/ladderd0_k24_n84.pg ELIMWIN n 84 mE 109 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 51, 'ncert': 0} maxima {'F': 26, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (0, 26, 0)
+GAME red/tcpert/instances/tcS8_N9.pg ELIMWIN n 288 mE 360 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 3, 'ncert': 0} maxima {'F': 2, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (21, 23, 21)
+GAME red/ul/instances/reader_L10_n36.pg ELIMWIN n 36 mE 48 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 15, 'ncert': 0} maxima {'F': 13, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (0, 13, 0)
+GAME red/ul/instances/ladderent_k24_n84.pg ELIMWIN n 84 mE 109 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 51, 'ncert': 0} maxima {'F': 26, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (0, 26, 0)
+GAME red/ul/instances/reader_L20_n56.pg ELIMWIN n 56 mE 78 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 25, 'ncert': 0} maxima {'F': 23, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (0, 23, 0)
+GAME red/usplit/instances/gate_K16_n197.pg ELIMWIN n 197 mE 351 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 158, 'ncert': 0} maxima {'F': 23, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (0, 23, 0)
+GAME red/ul/instances/reader_L40_n96.pg ELIMWIN n 96 mE 138 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 45, 'ncert': 0} maxima {'F': 43, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (0, 43, 0)
+GAME red/usplit/instances/grow_K12_n149.pg ELIMWIN n 149 mE 267 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 123, 'ncert': 0} maxima {'F': 19, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (0, 19, 0)
+GAME red/ul/instances/ladderd0_k48_n156.pg ELIMWIN n 156 mE 205 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 99, 'ncert': 0} maxima {'F': 50, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (0, 50, 0)
+GAME red/usplit/instances/pairoc_n58.pg ELIMWIN n 58 mE 80 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 29, 'ncert': 0} maxima {'F': 5, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (0, 5, 0)
+GAME red/usplit/instances/pp_K12_n161.pg ELIMWIN n 161 mE 279 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 125, 'ncert': 0} maxima {'F': 19, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (0, 19, 0)
+GAME red/ul/instances/ladderent_k48_n156.pg ELIMWIN n 156 mE 205 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 99, 'ncert': 0} maxima {'F': 50, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (0, 50, 0)
+GAME red/usplit/instances/pp_K12_n161_dual.pg ELIMWIN n 161 mE 15 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 2, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 1} argmax (19, 20, 19)
+GAME red/usplit/instances/grow_K40_n373.pg ELIMWIN n 373 mE 715 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 347, 'ncert': 0} maxima {'F': 47, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (0, 47, 0)
+GAME red/usplit/instances/usplit_n14.pg ELIMWIN n 14 mE 19 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 6, 'ncert': 0} maxima {'F': 3, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (0, 3, 0)
+GAME red/usplit/instances/usplit_n23.pg ELIMWIN n 23 mE 37 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 15, 'ncert': 0} maxima {'F': 9, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (0, 9, 0)
+GAME red/usplit/instances/usplit_rd_n24.pg ELIMWIN n 24 mE 32 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 10, 'ncert': 0} maxima {'F': 4, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (0, 4, 0)
+GAME red/usplit/instances/usplit_rd_s3_n27.pg ELIMWIN n 27 mE 37 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 9, 'ncert': 0} maxima {'F': 4, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (0, 4, 0)
+GAME red/usplit/instances/usplit_s3_n16.pg ELIMWIN n 16 mE 22 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 5, 'ncert': 0} maxima {'F': 3, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (0, 3, 0)
+GAME red/xctx/instances/nest3_n20.pg ELIMWIN n 20 mE 2 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/xctx/instances/nest3_n24.pg ELIMWIN n 24 mE 2 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/xctx/instances/vrall_viol_n20.pg ELIMWIN n 20 mE 3 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/xctx/instances/xcov11_n20.pg ELIMWIN n 20 mE 4 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/xctx/instances/xctx_viol_n20.pg ELIMWIN n 20 mE 6 runs 0 {'viol_count': 0, 'viol_eq': 0, 'cert': 0, 'ncert': 0} maxima {'F': 0, 'HW': 0, 'revisit': 0, 'xiw': 0} argmax None
+GAME red/xing/instances/fbref_cex_n32.pg ELIMWIN n 32 mE 99 runs 7 {'viol_count': 0, 'viol_eq': 0, 'cert': 65, 'ncert': 3} maxima {'F': 16, 'HW': 2, 'revisit': 3, 'xiw': 1} argmax (9, 25, 13)
+GAME red/xing/instances/j10_n24.pg ELIMWIN n 24 mE 75 runs 2 {'viol_count': 0, 'viol_eq': 0, 'cert': 30, 'ncert': 5} maxima {'F': 15, 'HW': 1, 'revisit': 3, 'xiw': 1} argmax (1, 9, 1)
+GAME red/xing/instances/j4_n40.pg ELIMWIN n 40 mE 135 runs 5 {'viol_count': 0, 'viol_eq': 0, 'cert': 132, 'ncert': 2} maxima {'F': 31, 'HW': 5, 'revisit': 5, 'xiw': 1} argmax (44, 74, 52)
+GAME red/xing/instances/j5_n16.pg ELIMWIN n 16 mE 48 runs 5 {'viol_count': 0, 'viol_eq': 0, 'cert': 25, 'ncert': 0} maxima {'F': 11, 'HW': 1, 'revisit': 0, 'xiw': 1} argmax (6, 10, 6)
+GAME red/xing/instances/j7_n32.pg ELIMWIN n 32 mE 120 runs 3 {'viol_count': 0, 'viol_eq': 0, 'cert': 63, 'ncert': 0} maxima {'F': 23, 'HW': 2, 'revisit': 4, 'xiw': 1} argmax (23, 46, 25)
+GAME red/xing/instances/j7_n48.pg ELIMWIN n 48 mE 166 runs 8 {'viol_count': 0, 'viol_eq': 0, 'cert': 97, 'ncert': 0} maxima {'F': 20, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (1, 12, 1)
+GAME red/xing/instances/j8_n32.pg ELIMWIN n 32 mE 100 runs 4 {'viol_count': 0, 'viol_eq': 0, 'cert': 65, 'ncert': 1} maxima {'F': 21, 'HW': 2, 'revisit': 3, 'xiw': 1} argmax (30, 50, 30)
+GAME red/usplit/instances/pp_K48_n449_dual.pg ELIMWIN n 449 mE 15 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 2, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 1} argmax (55, 56, 55)
+GAME red/usplit/instances/pp_K48_n449.pg ELIMWIN n 449 mE 855 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 413, 'ncert': 0} maxima {'F': 55, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (0, 55, 0)
+GAME red/xing/instances/j8_n48.pg ELIMWIN n 48 mE 188 runs 9 {'viol_count': 0, 'viol_eq': 0, 'cert': 113, 'ncert': 0} maxima {'F': 20, 'HW': 1, 'revisit': 0, 'xiw': 1} argmax (1, 12, 1)
+GAME red/xing/instances/kw_n16.pg ELIMWIN n 16 mE 44 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 12, 'ncert': 0} maxima {'F': 12, 'HW': 1, 'revisit': 2, 'xiw': 0} argmax (0, 12, 0)
+GAME red/xing/instances/kw25_n32.pg ELIMWIN n 32 mE 96 runs 3 {'viol_count': 0, 'viol_eq': 0, 'cert': 39, 'ncert': 0} maxima {'F': 25, 'HW': 1, 'revisit': 3, 'xiw': 1} argmax (0, 25, 0)
+GAME red/xing/instances/kw_n24.pg ELIMWIN n 24 mE 60 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 23, 'ncert': 0} maxima {'F': 20, 'HW': 1, 'revisit': 1, 'xiw': 0} argmax (0, 20, 0)
+GAME red/xing/instances/obr_eq_n24.pg ELIMWIN n 24 mE 53 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 4, 'ncert': 0} maxima {'F': 4, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (1, 5, 1)
+GAME red/xing/instances/obr_n32.pg ELIMWIN n 32 mE 112 runs 2 {'viol_count': 0, 'viol_eq': 0, 'cert': 24, 'ncert': 0} maxima {'F': 15, 'HW': 1, 'revisit': 3, 'xiw': 1} argmax (0, 15, 0)
+GAME red/xing/instances/kw_n48.pg ELIMWIN n 48 mE 164 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 50, 'ncert': 0} maxima {'F': 40, 'HW': 1, 'revisit': 4, 'xiw': 1} argmax (0, 40, 0)
+GAME red/xing/instances/u1t_cex_n32.pg ELIMWIN n 32 mE 105 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 15, 'ncert': 7} maxima {'F': 7, 'HW': 1, 'revisit': 1, 'xiw': 1} argmax (0, 7, 0)
+GAME red/xing/instances/u1t_own6_n32.pg ELIMWIN n 32 mE 87 runs 2 {'viol_count': 0, 'viol_eq': 0, 'cert': 18, 'ncert': 1} maxima {'F': 6, 'HW': 1, 'revisit': 1, 'xiw': 1} argmax (0, 6, 0)
+GAME red/xing/instances/u23sw64_n32.pg ELIMWIN n 32 mE 140 runs 3 {'viol_count': 0, 'viol_eq': 0, 'cert': 61, 'ncert': 2} maxima {'F': 8, 'HW': 1, 'revisit': 14, 'xiw': 1} argmax (1, 9, 1)
+GAME red/xing/instances/u2flat73_n32.pg ELIMWIN n 32 mE 163 runs 5 {'viol_count': 0, 'viol_eq': 0, 'cert': 63, 'ncert': 11} maxima {'F': 3, 'HW': 1, 'revisit': 1, 'xiw': 1} argmax (0, 2, 0)
+GAME red/xing/instances/u2flat_n32.pg ELIMWIN n 32 mE 80 runs 6 {'viol_count': 0, 'viol_eq': 0, 'cert': 12, 'ncert': 0} maxima {'F': 2, 'HW': 1, 'revisit': 0, 'xiw': 1} argmax (1, 2, 1)
+GAME red/xing/instances/x31_cu16.pg ELIMWIN n 16 mE 40 runs 2 {'viol_count': 0, 'viol_eq': 0, 'cert': 22, 'ncert': 0} maxima {'F': 13, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (2, 9, 2)
+GAME red/xing/instances/x31_cu24.pg ELIMWIN n 24 mE 86 runs 3 {'viol_count': 0, 'viol_eq': 0, 'cert': 35, 'ncert': 0} maxima {'F': 8, 'HW': 1, 'revisit': 2, 'xiw': 1} argmax (2, 10, 2)
+GAME red/xing/instances/x31_cu32i.pg ELIMWIN n 32 mE 92 runs 2 {'viol_count': 0, 'viol_eq': 0, 'cert': 41, 'ncert': 0} maxima {'F': 21, 'HW': 4, 'revisit': 10, 'xiw': 2} argmax (3, 24, 7)
+GAME red/xing/instances/x31_cu32.pg ELIMWIN n 32 mE 101 runs 2 {'viol_count': 0, 'viol_eq': 0, 'cert': 43, 'ncert': 0} maxima {'F': 21, 'HW': 4, 'revisit': 10, 'xiw': 1} argmax (6, 25, 8)
+GAME red/xing/instances/x31_cu48.pg ELIMWIN n 48 mE 159 runs 2 {'viol_count': 0, 'viol_eq': 0, 'cert': 74, 'ncert': 0} maxima {'F': 22, 'HW': 4, 'revisit': 12, 'xiw': 2} argmax (4, 23, 6)
+GAME red/xing/instances/x31_lem_e24.pg ELIMWIN n 24 mE 71 runs 5 {'viol_count': 0, 'viol_eq': 0, 'cert': 55, 'ncert': 0} maxima {'F': 14, 'HW': 1, 'revisit': 3, 'xiw': 1} argmax (2, 8, 2)
+GAME red/xing/instances/x31_lem_t32.pg ELIMWIN n 32 mE 97 runs 7 {'viol_count': 0, 'viol_eq': 0, 'cert': 91, 'ncert': 0} maxima {'F': 12, 'HW': 1, 'revisit': 0, 'xiw': 1} argmax (1, 3, 1)
+GAME red/xing/instances/x31_nh_e24.pg ELIMWIN n 24 mE 61 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 22, 'ncert': 0} maxima {'F': 20, 'HW': 1, 'revisit': 7, 'xiw': 1} argmax (0, 20, 0)
+GAME red/xing/instances/x31_nh_r20.pg ELIMWIN n 20 mE 62 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 14, 'ncert': 0} maxima {'F': 13, 'HW': 1, 'revisit': 5, 'xiw': 1} argmax (1, 14, 1)
+GAME red/xing/instances/x31_re24.pg ELIMWIN n 24 mE 78 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 12, 'ncert': 0} maxima {'F': 4, 'HW': 1, 'revisit': 0, 'xiw': 1} argmax (1, 5, 1)
+GAME red/xing/instances/x31_ru24.pg ELIMWIN n 24 mE 80 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 9, 'ncert': 1} maxima {'F': 4, 'HW': 1, 'revisit': 0, 'xiw': 1} argmax (1, 5, 1)
+GAME red/xing/instances/x31_rx32.pg ELIMWIN n 32 mE 86 runs 4 {'viol_count': 0, 'viol_eq': 0, 'cert': 71, 'ncert': 3} maxima {'F': 22, 'HW': 2, 'revisit': 5, 'xiw': 1} argmax (2, 24, 7)
+GAME red/xing/instances/x32_rand16.pg ELIMWIN n 16 mE 47 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 13, 'ncert': 0} maxima {'F': 13, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (1, 14, 1)
+GAME red/xing/instances/x32_nest40.pg ELIMWIN n 40 mE 136 runs 3 {'viol_count': 0, 'viol_eq': 0, 'cert': 83, 'ncert': 2} maxima {'F': 26, 'HW': 1, 'revisit': 1, 'xiw': 0} argmax (3, 4, 3)
+GAME red/xing/instances/x31_rx48.pg ELIMWIN n 48 mE 182 runs 4 {'viol_count': 0, 'viol_eq': 0, 'cert': 88, 'ncert': 2} maxima {'F': 22, 'HW': 2, 'revisit': 4, 'xiw': 1} argmax (2, 24, 8)
+GAME red/xing/instances/x32_rand24.pg ELIMWIN n 24 mE 80 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 23, 'ncert': 0} maxima {'F': 20, 'HW': 1, 'revisit': 4, 'xiw': 1} argmax (0, 20, 0)
+GAME red/xing/instances/x32_rand32.pg ELIMWIN n 32 mE 125 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 34, 'ncert': 0} maxima {'F': 29, 'HW': 1, 'revisit': 4, 'xiw': 1} argmax (0, 29, 0)
+GAME red/xing/instances/x32_rand48.pg ELIMWIN n 48 mE 152 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 52, 'ncert': 0} maxima {'F': 44, 'HW': 1, 'revisit': 18, 'xiw': 1} argmax (0, 44, 0)
+GAME red/xing/instances/x32_rand64.pg ELIMWIN n 64 mE 233 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 72, 'ncert': 0} maxima {'F': 55, 'HW': 1, 'revisit': 11, 'xiw': 1} argmax (0, 55, 0)
+GAME si/root/instances/cone_n65.pg ELIMWIN n 65 mE 182 runs 2 {'viol_count': 0, 'viol_eq': 0, 'cert': 15, 'ncert': 0} maxima {'F': 2, 'HW': 1, 'revisit': 0, 'xiw': 1} argmax (8, 9, 8)
+GAME red/xing/instances/x32_waves32.pg ELIMWIN n 32 mE 118 runs 9 {'viol_count': 0, 'viol_eq': 0, 'cert': 110, 'ncert': 2} maxima {'F': 22, 'HW': 1, 'revisit': 5, 'xiw': 1} argmax (4, 16, 4)
+GAME si/root/instances/ueonce_n27.pg ELIMWIN n 27 mE 80 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 26, 'ncert': 1} maxima {'F': 10, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (1, 11, 1)
+GAME si/root/instances/cone_n69.pg ELIMWIN n 69 mE 194 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 2, 'ncert': 0} maxima {'F': 1, 'HW': 1, 'revisit': 0, 'xiw': 1} argmax (24, 25, 24)
+GAME red/xing/instances/x32_waves48.pg ELIMWIN n 48 mE 151 runs 7 {'viol_count': 0, 'viol_eq': 0, 'cert': 78, 'ncert': 0} maxima {'F': 26, 'HW': 1, 'revisit': 1, 'xiw': 1} argmax (4, 29, 4)
+GAME red/usplit/instances/gate_K64_n581.pg ELIMWIN n 581 mE 1119 runs 1 {'viol_count': 0, 'viol_eq': 0, 'cert': 542, 'ncert': 0} maxima {'F': 71, 'HW': 1, 'revisit': 0, 'xiw': 0} argmax (0, 71, 0)

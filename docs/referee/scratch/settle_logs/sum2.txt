@@ -1,0 +1,18 @@
+LEX_chk 266486
+multi_tight 470
+trans 8066
+IDX_chk 27157
+PC_chk 12448
+wruns 1060
+GAMES 740
+skip_big 73
+IDX_V 6
+RC0 813
+maxblock 63
+EX ('IDX', 'n5-epoch/instances/lend27_n24.pg', 12, 23, 10, [10, 11])
+EX ('IDX', 'n5-epoch/instances/lend27_n24.pg', 22, 16, 7, [7, 8])
+EX ('IDX', 'n5-epoch/instances/nep22f_n64.pg', 9, 21, 16, [16, 28])
+EX ('IDX', 'n5-epoch/instances/nep22f_n64.pg', 10, 21, 16, [16, 28])
+EX ('IDX', 'n5-exhaustive/instances/nh_n8.pg', 0, 1, 3, [3, 4])
+EX ('IDX', 'red/xing/instances/obr_eq_n24.pg', 2, 4, 3, [3, 13])
+DONE 2

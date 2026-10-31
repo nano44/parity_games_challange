@@ -1,0 +1,32 @@
+GAME sbq2_K8_m16 RUN 0-152 F 152 returns 450 edges 60 targets 60 max_per_target 8 norise 0 wch_in_window 450 rises_per_return {1: 247, 2: 203} classes {'EVS': 457, 'ODF': 196}
+GAME sbq2_K8_m16   top targets [(121, 8), (124, 8), (127, 8), (130, 8), (133, 8), (136, 8), (139, 8), (142, 8)]
+GAME sbq2_K8_m16   top divergence vertices (v, owner, Odd-head) [((4, 'E', '-'), 240), ((119, 'E', '-'), 14), ((122, 'E', '-'), 14), ((125, 'E', '-'), 14), ((128, 'E', '-'), 14), ((131, 'E', '-'), 14), ((134, 'E', '-'), 14), ((137, 'E', '-'), 14)]
+GAME sbq2_K8_m16   top Odd flips (o, old, new) [((170, 171, 122), 7), ((170, 122, 171), 7), ((175, 176, 125), 7), ((175, 125, 176), 7), ((180, 181, 128), 7), ((180, 128, 181), 7), ((185, 186, 131), 7), ((185, 131, 186), 7)]
+GAME sbq2_K8_m16   ROOT kinds {'FRESH': 450} distinct roots 15 max returns per root 45 chain depth {0: 247, 1: 203}
+GAME sbq2_K8_m16   top roots (kind, x, w, q) [(('FRESH', 4, 66, 17), 45), (('FRESH', 4, 73, 36), 45), (('FRESH', 4, 80, 55), 45), (('FRESH', 4, 87, 74), 45), (('FRESH', 4, 94, 93), 45), (('FRESH', 4, 101, 112), 45), (('FRESH', 4, 108, 131), 45), (('FRESH', 4, 114, 150), 30)]
+GAME sbq2_K8_m16   EROOT kinds {'FRESH': 450} distinct roots 15 max returns per root 45 chain depth {0: 345, 1: 105} max children per node 30 max children per return node 1 mE 115
+GAME sbq2_K8_m16   PERROOT max returns of one Even X per root 2 (X 122 deg 2) max returns of one edge per root 1 max (returns of X per root)/deg X 1.0 max returns of X per root leaving one target 1 max returns of X per root with one (left, entered) pair 1 max returns of one edge per (root, depth) 1
+GAME sbq2_K8_m16   SELFFED (X on g's play at state k) returns 0 of 450: first switching Even vertex is X 0, X on its own Xi-cycle after 0, X own cycle node after 0, lambda(Xi(X)) changes 0, W(X) changes 0, lambda_W(X) changes 0; max self-fed returns of X per root 0; NONSELF max (returns of X per root)/deg X 1.0
+GAME sbq2_K8_m16   CHAINSTEP distinct chain nodes 120 with a W-change at q 120 late adoptions (blocked at an earlier state of F) 0
+GAME sbq2_K8_m16   CHAIN chains 450 with a repeated Even vertex 0 max repeats 0 longest 2 distinct 2
+GAME obs_K12_m24 RUN 0-324 F 324 returns 818 edges 72 targets 72 max_per_target 12 norise 0 wch_in_window 818 rises_per_return {1: 312, 2: 506} classes {'EVS': 1324}
+GAME obs_K12_m24   top targets [(248, 12), (271, 12), (177, 12), (180, 12), (183, 12), (186, 12), (189, 12), (192, 12)]
+GAME obs_K12_m24   top divergence vertices (v, owner, Odd-head) [((4, 'E', '-'), 288), ((175, 'E', '-'), 45), ((178, 'E', '-'), 44), ((181, 'E', '-'), 44), ((184, 'E', '-'), 44), ((187, 'E', '-'), 44), ((190, 'E', '-'), 44), ((193, 'E', '-'), 44)]
+GAME obs_K12_m24   ROOT kinds {'FRESH': 818} distinct roots 25 max returns per root 71 chain depth {0: 301, 1: 506, 2: 11}
+GAME obs_K12_m24   top roots (kind, x, w, q) [(('FRESH', 4, 94, 25), 71), (('FRESH', 4, 101, 52), 71), (('FRESH', 4, 108, 79), 71), (('FRESH', 4, 115, 106), 71), (('FRESH', 4, 122, 133), 71), (('FRESH', 4, 129, 160), 71), (('FRESH', 4, 136, 187), 71), (('FRESH', 4, 143, 214), 71)]
+GAME obs_K12_m24   EROOT kinds {'FRESH': 818} distinct roots 25 max returns per root 71 chain depth {0: 301, 1: 506, 2: 11} max children per node 24 max children per return node 2 mE 149
+GAME obs_K12_m24   PERROOT max returns of one Even X per root 24 (X 247 deg 24) max returns of one edge per root 1 max (returns of X per root)/deg X 1.0 max returns of X per root leaving one target 1 max returns of X per root with one (left, entered) pair 1 max returns of one edge per (root, depth) 1
+GAME obs_K12_m24   SELFFED (X on g's play at state k) returns 0 of 818: first switching Even vertex is X 0, X on its own Xi-cycle after 0, X own cycle node after 0, lambda(Xi(X)) changes 0, W(X) changes 0, lambda_W(X) changes 0; max self-fed returns of X per root 0; NONSELF max (returns of X per root)/deg X 1.0
+GAME obs_K12_m24   CHAINSTEP distinct chain nodes 289 with a W-change at q 289 late adoptions (blocked at an earlier state of F) 0
+GAME obs_K12_m24   CHAIN chains 818 with a repeated Even vertex 0 max repeats 0 longest 3 distinct 3
+GAME latew_K16_m32 RUN 0-560 F 560 returns 1922 edges 124 targets 124 max_per_target 16 norise 0 wch_in_window 1922 rises_per_return {1: 1007, 2: 915} classes {'EVS': 1937, 'ODF': 900}
+GAME latew_K16_m32   top targets [(233, 16), (236, 16), (239, 16), (242, 16), (245, 16), (248, 16), (251, 16), (254, 16)]
+GAME latew_K16_m32   top divergence vertices (v, owner, Odd-head) [((4, 'E', '-'), 992), ((231, 'E', '-'), 30), ((234, 'E', '-'), 30), ((237, 'E', '-'), 30), ((240, 'E', '-'), 30), ((243, 'E', '-'), 30), ((246, 'E', '-'), 30), ((249, 'E', '-'), 30)]
+GAME latew_K16_m32   top Odd flips (o, old, new) [((330, 331, 234), 15), ((330, 234, 331), 15), ((335, 336, 237), 15), ((335, 237, 336), 15), ((340, 341, 240), 15), ((340, 240, 341), 15), ((345, 346, 243), 15), ((345, 243, 346), 15)]
+GAME latew_K16_m32   ROOT kinds {'FRESH': 1922} distinct roots 31 max returns per root 93 chain depth {0: 1007, 1: 915}
+GAME latew_K16_m32   top roots (kind, x, w, q) [(('FRESH', 4, 122, 33), 93), (('FRESH', 4, 129, 68), 93), (('FRESH', 4, 136, 103), 93), (('FRESH', 4, 143, 138), 93), (('FRESH', 4, 150, 173), 93), (('FRESH', 4, 157, 208), 93), (('FRESH', 4, 164, 243), 93), (('FRESH', 4, 171, 278), 93)]
+GAME latew_K16_m32   EROOT kinds {'FRESH': 1922} distinct roots 31 max returns per root 93 chain depth {0: 1457, 1: 465} max children per node 62 max children per return node 1 mE 227
+GAME latew_K16_m32   PERROOT max returns of one Even X per root 2 (X 234 deg 2) max returns of one edge per root 1 max (returns of X per root)/deg X 1.0 max returns of X per root leaving one target 1 max returns of X per root with one (left, entered) pair 1 max returns of one edge per (root, depth) 1
+GAME latew_K16_m32   SELFFED (X on g's play at state k) returns 0 of 1922: first switching Even vertex is X 0, X on its own Xi-cycle after 0, X own cycle node after 0, lambda(Xi(X)) changes 0, W(X) changes 0, lambda_W(X) changes 0; max self-fed returns of X per root 0; NONSELF max (returns of X per root)/deg X 1.0
+GAME latew_K16_m32   CHAINSTEP distinct chain nodes 496 with a W-change at q 496 late adoptions (blocked at an earlier state of F) 0
+GAME latew_K16_m32   CHAIN chains 1922 with a repeated Even vertex 0 max repeats 0 longest 2 distinct 2

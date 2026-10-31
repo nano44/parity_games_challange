@@ -1,0 +1,413 @@
+GAME n5-epoch/instances/gci2_n12.pg RELPE n 12 mE 25 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 10, 'frozen_edge': 0} argmax-edge None
+GAME n5-epoch/instances/ffin5_n32.pg RELPE n 32 mE 95 runs 3 maxima {'late_edge': 1, 'rstar': 1, 'F': 7, 'frozen_edge': 0} argmax-edge (25, 7)
+GAME n5-epoch/instances/ffin4_n24.pg RELPE n 24 mE 77 runs 3 maxima {'late_edge': 0, 'rstar': 0, 'F': 8, 'frozen_edge': 0} argmax-edge None
+GAME n5-epoch/instances/ffin12_n32.pg RELPE n 32 mE 108 runs 5 maxima {'late_edge': 0, 'rstar': 0, 'F': 7, 'frozen_edge': 0} argmax-edge None
+GAME n5-epoch/instances/immp_cex_n11.pg RELPE n 11 mE 14 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 2, 'frozen_edge': 0} argmax-edge None
+GAME n5-epoch/instances/immfail_n14.pg RELPE n 14 mE 25 runs 2 maxima {'late_edge': 0, 'rstar': 0, 'F': 2, 'frozen_edge': 0} argmax-edge None
+GAME n5-epoch/instances/gci3_n24.pg RELPE n 24 mE 72 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 20, 'frozen_edge': 0} argmax-edge None
+GAME n5-epoch/instances/lcount_n23.pg RELPE n 23 mE 41 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 4, 'frozen_edge': 0} argmax-edge None
+GAME n5-epoch/instances/lend13_n16.pg RELPE n 16 mE 37 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 13, 'frozen_edge': 0} argmax-edge None
+GAME n5-epoch/instances/lend27_n24.pg RELPE n 24 mE 64 runs 6 maxima {'late_edge': 0, 'rstar': 0, 'F': 8, 'frozen_edge': 0} argmax-edge None
+GAME n5-epoch/instances/lend15_n48.pg RELPE n 48 mE 117 runs 5 maxima {'late_edge': 1, 'rstar': 1, 'F': 3, 'frozen_edge': 0} argmax-edge (8, 26)
+GAME n5-epoch/instances/lend47_n32.pg RELPE n 32 mE 95 runs 6 maxima {'late_edge': 1, 'rstar': 2, 'F': 19, 'frozen_edge': 1} argmax-edge (19, 9)
+GAME n5-epoch/instances/lend107_n32.pg RELPE n 32 mE 99 runs 10 maxima {'late_edge': 0, 'rstar': 0, 'F': 15, 'frozen_edge': 0} argmax-edge None
+GAME n5-epoch/instances/lend39f_n32.pg RELPE n 32 mE 74 runs 9 maxima {'late_edge': 0, 'rstar': 0, 'F': 8, 'frozen_edge': 0} argmax-edge None
+GAME n5-epoch/instances/lend9_n8.pg RELPE n 8 mE 18 runs 4 maxima {'late_edge': 0, 'rstar': 0, 'F': 2, 'frozen_edge': 0} argmax-edge None
+GAME n5-epoch/instances/lend55_n32.pg RELPE n 32 mE 103 runs 10 maxima {'late_edge': 0, 'rstar': 0, 'F': 11, 'frozen_edge': 0} argmax-edge None
+GAME n5-epoch/instances/lend82_n32.pg RELPE n 32 mE 108 runs 10 maxima {'late_edge': 0, 'rstar': 0, 'F': 14, 'frozen_edge': 0} argmax-edge None
+GAME n5-epoch/instances/nep13_n24.pg RELPE n 24 mE 58 runs 3 maxima {'late_edge': 0, 'rstar': 0, 'F': 12, 'frozen_edge': 0} argmax-edge None
+GAME n5-epoch/instances/lend72_n48.pg RELPE n 48 mE 132 runs 11 maxima {'late_edge': 1, 'rstar': 1, 'F': 14, 'frozen_edge': 1} argmax-edge (44, 28)
+GAME n5-epoch/instances/nep56_n32.pg RELPE n 32 mE 102 runs 4 maxima {'late_edge': 0, 'rstar': 0, 'F': 25, 'frozen_edge': 0} argmax-edge None
+GAME n5-epoch/instances/nep22f_n64.pg RELPE n 64 mE 145 runs 7 maxima {'late_edge': 0, 'rstar': 0, 'F': 3, 'frozen_edge': 0} argmax-edge None
+GAME n5-epoch/instances/nep76_n40.pg RELPE n 40 mE 139 runs 7 maxima {'late_edge': 0, 'rstar': 0, 'F': 15, 'frozen_edge': 0} argmax-edge None
+GAME n5-epoch/instances/nconf61_n48.pg RELPE n 48 mE 136 runs 7 maxima {'late_edge': 0, 'rstar': 0, 'F': 13, 'frozen_edge': 0} argmax-edge None
+GAME n5-epoch/instances/nep92_n40.pg RELPE n 40 mE 129 runs 9 maxima {'late_edge': 1, 'rstar': 1, 'F': 14, 'frozen_edge': 1} argmax-edge (2, 13)
+GAME n5-epoch/instances/ret12_n40.pg RELPE n 40 mE 133 runs 5 maxima {'late_edge': 0, 'rstar': 0, 'F': 14, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/b4_cyc6_0.pg RELPE n 11 mE 20 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 2, 'frozen_edge': 0} argmax-edge None
+GAME n5-epoch/instances/ret14_n48.pg RELPE n 48 mE 145 runs 13 maxima {'late_edge': 0, 'rstar': 0, 'F': 6, 'frozen_edge': 0} argmax-edge None
+GAME n5-epoch/instances/nep94_n48.pg RELPE n 48 mE 145 runs 8 maxima {'late_edge': 0, 'rstar': 0, 'F': 14, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/b4_n4all_cyc3_0.pg RELPE n 4 mE 5 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/b4_cyc6_1.pg RELPE n 12 mE 24 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 4, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/b4_n5_other_0.pg RELPE n 5 mE 6 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/b4_nohlen5_0.pg RELPE n 11 mE 20 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 4, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/b4_theta_n7.pg RELPE n 7 mE 10 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/b5_n5_cyc4_0.pg RELPE n 5 mE 6 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/b5_o11.pg RELPE n 10 mE 16 runs 4 maxima {'late_edge': 0, 'rstar': 0, 'F': 4, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/b5_os_n12.pg RELPE n 12 mE 34 runs 4 maxima {'late_edge': 0, 'rstar': 0, 'F': 5, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/b5_os_n14.pg RELPE n 14 mE 34 runs 6 maxima {'late_edge': 0, 'rstar': 0, 'F': 7, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/b5_os_n16.pg RELPE n 16 mE 32 runs 6 maxima {'late_edge': 0, 'rstar': 0, 'F': 8, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/b5_os_n20.pg RELPE n 20 mE 41 runs 9 maxima {'late_edge': 0, 'rstar': 0, 'F': 10, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/b5_os_n24.pg RELPE n 24 mE 68 runs 9 maxima {'late_edge': 0, 'rstar': 0, 'F': 14, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/b5_os_n28.pg RELPE n 28 mE 88 runs 11 maxima {'late_edge': 0, 'rstar': 0, 'F': 13, 'frozen_edge': 0} argmax-edge None
+GAME n5-epoch/instances/ret14_n64.pg RELPE n 64 mE 151 runs 6 maxima {'late_edge': 0, 'rstar': 0, 'F': 14, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/b5_os_n32.pg RELPE n 32 mE 98 runs 10 maxima {'late_edge': 0, 'rstar': 0, 'F': 14, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/b6_xl_n32.pg RELPE n 32 mE 109 runs 6 maxima {'late_edge': 1, 'rstar': 3, 'F': 22, 'frozen_edge': 1} argmax-edge (5, 6)
+GAME n5-exhaustive/instances/b6_xl2_n32.pg RELPE n 32 mE 105 runs 6 maxima {'late_edge': 1, 'rstar': 3, 'F': 22, 'frozen_edge': 1} argmax-edge (5, 6)
+GAME n5-exhaustive/instances/b5_os_n40.pg RELPE n 40 mE 147 runs 13 maxima {'late_edge': 0, 'rstar': 0, 'F': 17, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/b6_xs_n24.pg RELPE n 24 mE 86 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 21, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/b6_xl_n40.pg RELPE n 40 mE 127 runs 6 maxima {'late_edge': 1, 'rstar': 3, 'F': 25, 'frozen_edge': 1} argmax-edge (28, 16)
+GAME n5-exhaustive/instances/b6_xs_n32.pg RELPE n 32 mE 112 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 29, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/b6_xs_n48.pg RELPE n 48 mE 181 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 37, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/b6_xs_n40.pg RELPE n 40 mE 163 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 36, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/b6_xw_n32.pg RELPE n 32 mE 114 runs 7 maxima {'late_edge': 1, 'rstar': 2, 'F': 21, 'frozen_edge': 1} argmax-edge (1, 0)
+GAME n5-exhaustive/instances/b6_xl_n48.pg RELPE n 48 mE 178 runs 10 maxima {'late_edge': 1, 'rstar': 2, 'F': 24, 'frozen_edge': 1} argmax-edge (5, 0)
+GAME n5-exhaustive/instances/canonA_0.pg RELPE n 15 mE 24 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 3, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/b6_xw_n40.pg RELPE n 40 mE 158 runs 7 maxima {'late_edge': 1, 'rstar': 2, 'F': 22, 'frozen_edge': 1} argmax-edge (1, 0)
+GAME n5-exhaustive/instances/canonA_1.pg RELPE n 15 mE 24 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 3, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/frz2_n24.pg RELPE n 24 mE 51 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 23, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/frz1_n24.pg RELPE n 24 mE 56 runs 2 maxima {'late_edge': 1, 'rstar': 2, 'F': 24, 'frozen_edge': 1} argmax-edge (0, 12)
+GAME n5-exhaustive/instances/b6_xw_n48.pg RELPE n 48 mE 191 runs 7 maxima {'late_edge': 1, 'rstar': 2, 'F': 22, 'frozen_edge': 1} argmax-edge (1, 0)
+GAME n5-exhaustive/instances/frz3_n24.pg RELPE n 24 mE 56 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 24, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/n3all_maxph_0.pg RELPE n 3 mE 4 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/n3all_maxph_1.pg RELPE n 3 mE 4 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/n3all_maxph_2.pg RELPE n 3 mE 5 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/n4_maxph_0.pg RELPE n 4 mE 5 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/n4_maxph_1.pg RELPE n 4 mE 5 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/n4_thch_0.pg RELPE n 4 mE 4 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/n4all_maxph_0.pg RELPE n 4 mE 6 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 2, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/b6_xw_n56.pg RELPE n 56 mE 200 runs 7 maxima {'late_edge': 1, 'rstar': 2, 'F': 23, 'frozen_edge': 1} argmax-edge (1, 0)
+GAME n5-exhaustive/instances/n4all_maxph_1.pg RELPE n 4 mE 6 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 2, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/n4all_tgbad_0.pg RELPE n 4 mE 5 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/n4all_thch_0.pg RELPE n 4 mE 5 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/n5s_maxph_0.pg RELPE n 5 mE 6 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/nh_n8.pg RELPE n 8 mE 11 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 3, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/thetaA_canon_n12.pg RELPE n 12 mE 12 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 3, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/thetaA_canon_n8.pg RELPE n 8 mE 9 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 3, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/thetaA_n6.pg RELPE n 6 mE 8 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 3, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/thetaA_n17.pg RELPE n 17 mE 30 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 3, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/thetaA_n7.pg RELPE n 7 mE 9 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 3, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/thetaA_n9.pg RELPE n 9 mE 11 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 3, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/wk1_n32.pg RELPE n 32 mE 74 runs 3 maxima {'late_edge': 0, 'rstar': 0, 'F': 2, 'frozen_edge': 0} argmax-edge None
+GAME n5-exhaustive/instances/wk2_n32.pg RELPE n 32 mE 72 runs 2 maxima {'late_edge': 1, 'rstar': 1, 'F': 3, 'frozen_edge': 1} argmax-edge (12, 13)
+GAME new/box48/instances/long121_n40.pg RELPE n 40 mE 103 runs 9 maxima {'late_edge': 1, 'rstar': 2, 'F': 17, 'frozen_edge': 1} argmax-edge (33, 6)
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.pg RELPE n 64 mE 172 runs 7 maxima {'late_edge': 0, 'rstar': 0, 'F': 16, 'frozen_edge': 0} argmax-edge None
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.pg RELPE n 64 mE 142 runs 8 maxima {'late_edge': 1, 'rstar': 1, 'F': 15, 'frozen_edge': 0} argmax-edge (39, 1)
+GAME red/carry/instances/absmono_viol_n44.pg RELPE n 44 mE 633 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/carry3_2_2.pg RELPE n 47 mE 31 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/cm_mdrop_both_n28.pg RELPE n 28 mE 60 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 3, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/cm_mdrop_oink_n28.pg RELPE n 28 mE 63 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/ctx11_n40.pg RELPE n 40 mE 158 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 2, 'frozen_edge': 0} argmax-edge None
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.pg RELPE n 80 mE 178 runs 8 maxima {'late_edge': 0, 'rstar': 0, 'F': 15, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/ctx6_n20.pg RELPE n 20 mE 39 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/ctx12_n40.pg RELPE n 40 mE 178 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/ctx13_n40.pg RELPE n 40 mE 193 runs 2 maxima {'late_edge': 0, 'rstar': 0, 'F': 5, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/ctx6_n56.pg RELPE n 56 mE 261 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/ctx7_n30.pg RELPE n 30 mE 134 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/f1_twodef_n48.pg RELPE n 48 mE 147 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/f1_twofall_n48.pg RELPE n 48 mE 137 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/fallv_viol_n28.pg RELPE n 28 mE 158 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/fall3_n76.pg RELPE n 76 mE 247 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/fired10_n20.pg RELPE n 20 mE 66 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/firedlong667_n20.pg RELPE n 20 mE 53 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/firedlong667_n43.pg RELPE n 43 mE 141 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/fall4_n116.pg RELPE n 116 mE 269 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/gapbW_dup_n20.pg RELPE n 20 mE 79 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 2, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/gapb_dup_n20.pg RELPE n 20 mE 51 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/h4_compound2x2_n44.pg RELPE n 44 mE 80 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 3, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/firedstep13_n76.pg RELPE n 76 mE 311 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 2, 'frozen_edge': 0} argmax-edge None
+GAME new/box48/out/qpcclimb/scale/snap_n80_s62.pg RELPE n 80 mE 178 runs 8 maxima {'late_edge': 0, 'rstar': 0, 'F': 15, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/h4_def2ctx_n20.pg RELPE n 20 mE 39 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/h4_compound_n44.pg RELPE n 44 mE 75 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/h4_def7_n28.pg RELPE n 28 mE 53 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/h4_disjoint_n20.pg RELPE n 20 mE 44 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/h4_notweaker_n20.pg RELPE n 20 mE 36 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/kfirst_viol_n13.pg RELPE n 13 mE 8 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/kin_viol_n29.pg RELPE n 29 mE 42 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/lalg_dtl_mviol_n20.pg RELPE n 20 mE 33 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/lemmaS_Mdrop_n20.pg RELPE n 20 mE 40 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/lemmaS_viol_n20.pg RELPE n 20 mE 35 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/lex_viol_tie_n28.pg RELPE n 28 mE 108 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/lex_viol_inj_n28.pg RELPE n 28 mE 108 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/meet_viol_n17.pg RELPE n 17 mE 14 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/nosig_2_3.pg RELPE n 24 mE 23 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/phi_flat_alive_n32.pg RELPE n 32 mE 59 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/pk_viol_n20.pg RELPE n 20 mE 108 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/meet_viol_n29.pg RELPE n 29 mE 103 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/replay4_n32.pg RELPE n 32 mE 67 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/spp22_oink_n40.pg RELPE n 40 mE 118 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/spp19_oink_n30.pg RELPE n 30 mE 138 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/spp19_stable_n30.pg RELPE n 30 mE 118 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 2, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/stealonce_core_n76.pg RELPE n 76 mE 62 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/stealonce_both_n45.pg RELPE n 45 mE 51 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/spp25_oink_n40.pg RELPE n 40 mE 128 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 3, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/stealer_viol_n76.pg RELPE n 76 mE 265 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/tstep_near_n20.pg RELPE n 20 mE 104 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/ctxp/instances/deep1_n13.pg RELPE n 13 mE 9 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/ctxp/instances/deep1_n21.pg RELPE n 21 mE 13 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/ctxp/instances/margin1_mc1.pg RELPE n 80 mE 203 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/ctxp/instances/margin1_mc5.pg RELPE n 50 mE 73 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/ctxp/instances/margin1_n20.pg RELPE n 20 mE 47 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/carry/instances/stealonce_viol_n76.pg RELPE n 76 mE 266 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME red/fbr/instances/bghm_k1_gap6_A.pg RELPE n 21 mE 13 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/dtl/instances/lalg_dtl_pertop31_n18.pg RELPE n 18 mE 104 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME red/dtl/instances/lalg_dtl_restart8_n20.pg RELPE n 20 mE 31 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/fbr/instances/bghm_k3_gap4_A.pg RELPE n 45 mE 29 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/fbr/instances/lev74_n40.pg RELPE n 40 mE 117 runs 3 maxima {'late_edge': 0, 'rstar': 0, 'F': 3, 'frozen_edge': 0} argmax-edge None
+GAME red/fbr/instances/fr39_q4_n48.pg RELPE n 48 mE 107 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 32, 'frozen_edge': 0} argmax-edge None
+GAME red/fbr/instances/rho144_n32.pg RELPE n 32 mE 49 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 2, 'frozen_edge': 0} argmax-edge None
+GAME red/fbr/instances/rho3_253_n32.pg RELPE n 32 mE 42 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 4, 'frozen_edge': 0} argmax-edge None
+GAME red/fbr/instances/nep80_n40.pg RELPE n 40 mE 110 runs 4 maxima {'late_edge': 0, 'rstar': 0, 'F': 4, 'frozen_edge': 0} argmax-edge None
+GAME red/fbr/instances/rho84_n16.pg RELPE n 16 mE 17 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/fbr/instances/sat4_n20.pg RELPE n 20 mE 39 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME red/fbr/instances/rho666_n48.pg RELPE n 48 mE 113 runs 2 maxima {'late_edge': 0, 'rstar': 0, 'F': 7, 'frozen_edge': 0} argmax-edge None
+GAME red/fbr/instances/sat68_n20.pg RELPE n 20 mE 30 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME red/fbr/instances/lev56_n48.pg RELPE n 48 mE 159 runs 10 maxima {'late_edge': 1, 'rstar': 1, 'F': 15, 'frozen_edge': 1} argmax-edge (35, 45)
+GAME red/fbr/instances/twowave_L16.pg RELPE n 22 mE 53 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 15, 'frozen_edge': 0} argmax-edge None
+GAME red/fbx/instances/exsw_loop_n15.pg RELPE n 15 mE 21 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/frz/instances/fx2_n11.pg RELPE n 11 mE 27 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/frz/instances/fbcap_eq_u4_n11.pg RELPE n 11 mE 26 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/h3/instances/frzgap0_n4.pg RELPE n 4 mE 7 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/fbx/instances/kt6_n58.pg RELPE n 58 mE 188 runs 3 maxima {'late_edge': 1, 'rstar': 6, 'F': 18, 'frozen_edge': 1} argmax-edge (3, 28)
+GAME red/h3/instances/lcount2_n23.pg RELPE n 23 mE 34 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 3, 'frozen_edge': 0} argmax-edge None
+GAME red/h3/instances/lcount_n23.pg RELPE n 23 mE 41 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 4, 'frozen_edge': 0} argmax-edge None
+GAME red/h3/instances/frzgap0_n6.pg RELPE n 6 mE 11 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 2, 'frozen_edge': 0} argmax-edge None
+GAME red/h3/instances/offret_l19_n24.pg RELPE n 24 mE 30 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/kl/instances/klcount_n16.pg RELPE n 16 mE 48 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/kl/instances/klcount_n18_base.pg RELPE n 18 mE 50 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/kl/instances/klcount_n18_lvl.pg RELPE n 18 mE 50 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/kl/instances/klglobal_n16.pg RELPE n 16 mE 43 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/h3/instances/xsnpre36_n48.pg RELPE n 48 mE 121 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 30, 'frozen_edge': 0} argmax-edge None
+GAME red/kl/instances/klglobal_n18_lvl.pg RELPE n 18 mE 45 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/kl/instances/klmin_n13.pg RELPE n 13 mE 11 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME red/kl/instances/klglobal_n20_lvl2.pg RELPE n 20 mE 47 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/kl/instances/r2climb_h13.pg RELPE n 13 mE 31 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/kl/instances/r2join_h0E_n14.pg RELPE n 14 mE 11 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/kl/instances/r2crawl_n14.pg RELPE n 14 mE 18 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/kl/instances/r2lap_best_n22.pg RELPE n 22 mE 78 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/kl24/instances/HL88_0.pg RELPE n 41 mE 39 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME red/kl24/instances/HL88_1.pg RELPE n 43 mE 41 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME red/kl24/instances/HL88_2.pg RELPE n 45 mE 43 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME red/kl24/instances/HL88_3.pg RELPE n 47 mE 45 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME red/kl24/instances/HLg_2.pg RELPE n 45 mE 43 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME red/kl24/instances/HLg_0.pg RELPE n 29 mE 27 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME red/kl24/instances/HLg_1.pg RELPE n 35 mE 33 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME red/kl24/instances/HLg_3.pg RELPE n 55 mE 53 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME red/kw/instances/cw11_n24.pg RELPE n 24 mE 65 runs 5 maxima {'late_edge': 0, 'rstar': 0, 'F': 4, 'frozen_edge': 0} argmax-edge None
+GAME red/kw/instances/frzu_tight_n14.pg RELPE n 14 mE 29 runs 2 maxima {'late_edge': 0, 'rstar': 0, 'F': 2, 'frozen_edge': 0} argmax-edge None
+GAME red/lag/instances/depth2_n39.pg RELPE n 39 mE 20 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME red/kw/instances/kc18_n24.pg RELPE n 24 mE 60 runs 2 maxima {'late_edge': 0, 'rstar': 0, 'F': 18, 'frozen_edge': 0} argmax-edge None
+GAME red/lag/instances/fam_D12_n106.pg RELPE n 106 mE 58 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/lag/instances/depth3_n46.pg RELPE n 46 mE 25 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/lag/instances/depth4_n53.pg RELPE n 53 mE 29 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME red/lag/instances/fam_D4_n50.pg RELPE n 50 mE 26 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/lag/instances/fam_D8_n78.pg RELPE n 78 mE 42 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/mei/instances/mei_h3.pg RELPE n 27 mE 7 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/mei/instances/mei_h2.pg RELPE n 19 mE 5 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/mei/instances/mei_h4.pg RELPE n 35 mE 9 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/mei/instances/mei_h5.pg RELPE n 43 mE 11 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/mei/instances/mei_h6.pg RELPE n 51 mE 13 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/mei/instances/mei_h8.pg RELPE n 67 mE 17 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/n3/instances/lag11_n40.pg RELPE n 40 mE 59 runs 2 maxima {'late_edge': 0, 'rstar': 0, 'F': 14, 'frozen_edge': 0} argmax-edge None
+GAME red/n3/instances/core41_n40.pg RELPE n 40 mE 59 runs 7 maxima {'late_edge': 1, 'rstar': 2, 'F': 7, 'frozen_edge': 1} argmax-edge (23, 0)
+GAME red/n3/instances/lagx10_n40.pg RELPE n 40 mE 64 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 11, 'frozen_edge': 0} argmax-edge None
+GAME red/n3/instances/n3cov_lean.pg RELPE n 48 mE 93 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 30, 'frozen_edge': 0} argmax-edge None
+GAME red/n3/instances/n3cov_phi.pg RELPE n 32 mE 41 runs 3 maxima {'late_edge': 1, 'rstar': 1, 'F': 9, 'frozen_edge': 0} argmax-edge (2, 19)
+GAME red/n3/instances/long121_n40.pg RELPE n 40 mE 103 runs 9 maxima {'late_edge': 1, 'rstar': 2, 'F': 17, 'frozen_edge': 1} argmax-edge (33, 6)
+GAME red/n3/instances/long90_k2_n40.pg RELPE n 40 mE 78 runs 9 maxima {'late_edge': 1, 'rstar': 2, 'F': 13, 'frozen_edge': 1} argmax-edge (12, 0)
+GAME red/n3/instances/comp54_n80.pg RELPE n 80 mE 118 runs 7 maxima {'late_edge': 1, 'rstar': 1, 'F': 12, 'frozen_edge': 1} argmax-edge (63, 40)
+GAME red/n3/instances/run49_n32.pg RELPE n 32 mE 78 runs 1 maxima {'late_edge': 1, 'rstar': 5, 'F': 49, 'frozen_edge': 1} argmax-edge (10, 5)
+GAME red/n5/instances/dl_4_4.pg RELPE n 42 mE 44 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/n3/instances/run34_n40.pg RELPE n 40 mE 93 runs 2 maxima {'late_edge': 1, 'rstar': 2, 'F': 32, 'frozen_edge': 1} argmax-edge (6, 4)
+GAME red/n5/instances/sym_h12_s1.pg RELPE n 24 mE 29 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/n5/instances/dlm2_4.pg RELPE n 42 mE 43 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/n3/instances/ret22_n40.pg RELPE n 40 mE 105 runs 10 maxima {'late_edge': 0, 'rstar': 0, 'F': 19, 'frozen_edge': 0} argmax-edge None
+GAME red/n5/instances/sym_h8_s1.pg RELPE n 16 mE 20 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/n5/instances/dl_6_8.pg RELPE n 110 mE 114 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/n5/instances/sym_h16_s1.pg RELPE n 32 mE 40 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME red/n5inj/instances/block_bk20.pg RELPE n 24 mE 44 runs 3 maxima {'late_edge': 0, 'rstar': 0, 'F': 9, 'frozen_edge': 0} argmax-edge None
+GAME red/n5inj/instances/blockph_bp20.pg RELPE n 24 mE 44 runs 2 maxima {'late_edge': 0, 'rstar': 0, 'F': 19, 'frozen_edge': 0} argmax-edge None
+GAME red/n5inj/instances/bribe_cex_n15.pg RELPE n 15 mE 30 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/n5inj/instances/blockph_bp32.pg RELPE n 36 mE 67 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 30, 'frozen_edge': 0} argmax-edge None
+GAME red/n5inj/instances/block_bk32.pg RELPE n 36 mE 67 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 21, 'frozen_edge': 0} argmax-edge None
+GAME red/n5inj/instances/frz24.pg RELPE n 24 mE 49 runs 5 maxima {'late_edge': 1, 'rstar': 1, 'F': 7, 'frozen_edge': 1} argmax-edge (22, 4)
+GAME red/n5inj/instances/phase2_pk32.pg RELPE n 32 mE 64 runs 7 maxima {'late_edge': 1, 'rstar': 1, 'F': 19, 'frozen_edge': 1} argmax-edge (31, 28)
+GAME red/n5inj/instances/frz40.pg RELPE n 40 mE 85 runs 9 maxima {'late_edge': 1, 'rstar': 2, 'F': 18, 'frozen_edge': 1} argmax-edge (5, 27)
+GAME red/n5inj/instances/frz32.pg RELPE n 32 mE 66 runs 11 maxima {'late_edge': 1, 'rstar': 1, 'F': 12, 'frozen_edge': 1} argmax-edge (11, 24)
+GAME red/n5inj/instances/elimn_cex_n48.pg RELPE n 48 mE 81 runs 12 maxima {'late_edge': 1, 'rstar': 1, 'F': 14, 'frozen_edge': 1} argmax-edge (1, 14)
+GAME red/n5inj/instances/phase2_pk48.pg RELPE n 48 mE 80 runs 12 maxima {'late_edge': 1, 'rstar': 3, 'F': 12, 'frozen_edge': 1} argmax-edge (1, 30)
+GAME red/n5inj/instances/returns_rt32.pg RELPE n 32 mE 63 runs 8 maxima {'late_edge': 1, 'rstar': 1, 'F': 18, 'frozen_edge': 1} argmax-edge (31, 28)
+GAME red/n5inj/instances/returns_rt48.pg RELPE n 48 mE 95 runs 14 maxima {'late_edge': 1, 'rstar': 1, 'F': 15, 'frozen_edge': 1} argmax-edge (1, 14)
+GAME red/n5inj/instances/theta_thc24.pg RELPE n 24 mE 47 runs 2 maxima {'late_edge': 0, 'rstar': 0, 'F': 12, 'frozen_edge': 0} argmax-edge None
+GAME red/n5inj/instances/returns_ph64.pg RELPE n 64 mE 116 runs 16 maxima {'late_edge': 1, 'rstar': 1, 'F': 16, 'frozen_edge': 1} argmax-edge (1, 14)
+GAME red/n5inj/instances/theta_thf16.pg RELPE n 16 mE 30 runs 2 maxima {'late_edge': 0, 'rstar': 0, 'F': 12, 'frozen_edge': 0} argmax-edge None
+GAME red/n5inj/instances/theta_tp32.pg RELPE n 32 mE 58 runs 2 maxima {'late_edge': 1, 'rstar': 2, 'F': 25, 'frozen_edge': 0} argmax-edge (6, 0)
+GAME red/n5inj/instances/wide_h16.pg RELPE n 32 mE 52 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/n5inj/instances/theta_tp40.pg RELPE n 40 mE 72 runs 3 maxima {'late_edge': 0, 'rstar': 0, 'F': 20, 'frozen_edge': 0} argmax-edge None
+GAME red/nest16/instances/k4L72_n101.pg RELPE n 101 mE 14 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/nest16/instances/k4L72r_n101.pg RELPE n 101 mE 14 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/nest16/instances/k4g50_n101.pg RELPE n 101 mE 14 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/nest16/instances/k4seed_c1_n82.pg RELPE n 82 mE 17 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/nest16/instances/k4seed_vr_n87.pg RELPE n 87 mE 15 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/nest16/instances/k4u_n101.pg RELPE n 101 mE 14 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/n5inj/instances/returns_rt64.pg RELPE n 64 mE 112 runs 15 maxima {'late_edge': 1, 'rstar': 2, 'F': 17, 'frozen_edge': 1} argmax-edge (1, 14)
+GAME red/nest16/instances/k4y1_n82.pg RELPE n 82 mE 17 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/nest16/instances/near4_n26.pg RELPE n 26 mE 2 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/nest16/instances/nest4uu_n51.pg RELPE n 51 mE 5 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/nest16/instances/nest4u_n46.pg RELPE n 46 mE 6 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/nest16/instances/k4y2_n87.pg RELPE n 87 mE 15 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/nest16/instances/nest6_n75.pg RELPE n 75 mE 11 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/nest16/instances/nest5_n49.pg RELPE n 49 mE 10 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/nest16/instances/nest6min_n75.pg RELPE n 75 mE 12 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/nest16/instances/w1_n27.pg RELPE n 27 mE 3 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/nest16/instances/oseg_n26.pg RELPE n 26 mE 2 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/nest16/instances/nest6x_n75.pg RELPE n 75 mE 12 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/nest16/instances/win3_n27.pg RELPE n 27 mE 3 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/nopre/instances/nopre_viol_n20.pg RELPE n 20 mE 38 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/o1/instances/ph45_n32.pg RELPE n 32 mE 66 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/o1/instances/iter118_n48.pg RELPE n 48 mE 170 runs 2 maxima {'late_edge': 1, 'rstar': 2, 'F': 12, 'frozen_edge': 1} argmax-edge (25, 9)
+GAME red/o1/instances/f39_n48.pg RELPE n 48 mE 115 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 33, 'frozen_edge': 0} argmax-edge None
+GAME red/o1/instances/tau18_n24.pg RELPE n 24 mE 39 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/rec0/instances/fbd0_n4.pg RELPE n 4 mE 5 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/o1/instances/ph50_n32.pg RELPE n 32 mE 63 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/rec0/instances/n0_6_n24.pg RELPE n 24 mE 41 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME red/rec0/instances/nep24_n20.pg RELPE n 20 mE 39 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME red/rec0/instances/lend2_30_n48.pg RELPE n 48 mE 97 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 13, 'frozen_edge': 0} argmax-edge None
+GAME red/rec0/instances/nep90_n40.pg RELPE n 40 mE 111 runs 3 maxima {'late_edge': 0, 'rstar': 0, 'F': 8, 'frozen_edge': 0} argmax-edge None
+GAME red/rec0/instances/nep87_n40.pg RELPE n 40 mE 112 runs 3 maxima {'late_edge': 0, 'rstar': 0, 'F': 8, 'frozen_edge': 0} argmax-edge None
+GAME red/sgrow/instances/s20_n20.pg RELPE n 20 mE 24 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME red/sgrow/instances/s21_oink_n20.pg RELPE n 20 mE 23 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/sgrow/instances/s29_n30.pg RELPE n 30 mE 72 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/sgrow/instances/s34_oink_n40.pg RELPE n 40 mE 161 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 2, 'frozen_edge': 0} argmax-edge None
+GAME red/sgrow/instances/s32_n60.pg RELPE n 60 mE 230 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/sgrow/instances/s35_oink_n80.pg RELPE n 80 mE 198 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME red/sgrow/instances/s34_oink_n80.pg RELPE n 80 mE 263 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME red/so/instances/beta2_n11.pg RELPE n 11 mE 16 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME red/sgrow/instances/s36_oink_n60.pg RELPE n 60 mE 194 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME red/so/instances/epsseg_cex_n16.pg RELPE n 16 mE 41 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 6, 'frozen_edge': 0} argmax-edge None
+GAME red/so/instances/farrise25_n32.pg RELPE n 32 mE 104 runs 2 maxima {'late_edge': 1, 'rstar': 1, 'F': 3, 'frozen_edge': 0} argmax-edge (8, 0)
+GAME red/so/instances/exitr_cex_n16.pg RELPE n 16 mE 44 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 7, 'frozen_edge': 0} argmax-edge None
+GAME red/so/instances/epsseg_cex_n48.pg RELPE n 48 mE 180 runs 3 maxima {'late_edge': 0, 'rstar': 0, 'F': 4, 'frozen_edge': 0} argmax-edge None
+GAME red/so/instances/exitr_cex_n48.pg RELPE n 48 mE 168 runs 2 maxima {'late_edge': 0, 'rstar': 0, 'F': 3, 'frozen_edge': 0} argmax-edge None
+GAME red/so/instances/mn_abs74_n48.pg RELPE n 48 mE 155 runs 4 maxima {'late_edge': 0, 'rstar': 0, 'F': 4, 'frozen_edge': 0} argmax-edge None
+GAME red/so/instances/njb_reabs54_n32.pg RELPE n 32 mE 96 runs 4 maxima {'late_edge': 0, 'rstar': 0, 'F': 4, 'frozen_edge': 0} argmax-edge None
+GAME red/so/instances/nleq_cex_n48.pg RELPE n 48 mE 178 runs 3 maxima {'late_edge': 0, 'rstar': 0, 'F': 2, 'frozen_edge': 0} argmax-edge None
+GAME red/so/instances/njb_reabs65_n48.pg RELPE n 48 mE 164 runs 5 maxima {'late_edge': 0, 'rstar': 0, 'F': 19, 'frozen_edge': 0} argmax-edge None
+GAME red/so/instances/nleq33_n48.pg RELPE n 48 mE 182 runs 1 maxima {'late_edge': 1, 'rstar': 2, 'F': 33, 'frozen_edge': 1} argmax-edge (14, 39)
+GAME red/so/instances/pftheta34_n32.pg RELPE n 32 mE 80 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 34, 'frozen_edge': 0} argmax-edge None
+GAME red/so/instances/pft35_n48.pg RELPE n 48 mE 157 runs 2 maxima {'late_edge': 0, 'rstar': 0, 'F': 35, 'frozen_edge': 0} argmax-edge None
+GAME red/so/instances/pftheta_cex_n32.pg RELPE n 32 mE 92 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 34, 'frozen_edge': 0} argmax-edge None
+GAME red/so/instances/pft40_n40.pg RELPE n 40 mE 126 runs 4 maxima {'late_edge': 1, 'rstar': 1, 'F': 27, 'frozen_edge': 0} argmax-edge (7, 21)
+GAME red/so/instances/post31_n48.pg RELPE n 48 mE 164 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/so/instances/s4c8_n13.pg RELPE n 13 mE 33 runs 2 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME red/so/instances/rise_fb38_n48.pg RELPE n 48 mE 161 runs 3 maxima {'late_edge': 0, 'rstar': 0, 'F': 4, 'frozen_edge': 0} argmax-edge None
+GAME red/so/instances/so_k2_n32.pg RELPE n 32 mE 98 runs 3 maxima {'late_edge': 1, 'rstar': 1, 'F': 5, 'frozen_edge': 1} argmax-edge (12, 13)
+GAME red/so/instances/so_sor5_n24.pg RELPE n 24 mE 61 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 21, 'frozen_edge': 0} argmax-edge None
+GAME red/so/instances/so_j19_n48.pg RELPE n 48 mE 150 runs 2 maxima {'late_edge': 0, 'rstar': 0, 'F': 20, 'frozen_edge': 0} argmax-edge None
+GAME red/so/instances/so_sorl_n32.pg RELPE n 32 mE 86 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 22, 'frozen_edge': 0} argmax-edge None
+GAME red/so/instances/rise_thin51_n40.pg RELPE n 40 mE 146 runs 8 maxima {'late_edge': 0, 'rstar': 0, 'F': 13, 'frozen_edge': 0} argmax-edge None
+GAME red/so/instances/so_tie13_n24.pg RELPE n 24 mE 75 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 16, 'frozen_edge': 0} argmax-edge None
+GAME red/so/instances/so_th_n32.pg RELPE n 32 mE 105 runs 2 maxima {'late_edge': 0, 'rstar': 0, 'F': 21, 'frozen_edge': 0} argmax-edge None
+GAME red/so/instances/so_tie15_n32.pg RELPE n 32 mE 104 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 19, 'frozen_edge': 0} argmax-edge None
+GAME red/so/instances/tevlast_cex_n40.pg RELPE n 40 mE 140 runs 2 maxima {'late_edge': 1, 'rstar': 1, 'F': 5, 'frozen_edge': 1} argmax-edge (39, 1)
+GAME red/so/instances/tev_cex_n40.pg RELPE n 40 mE 148 runs 3 maxima {'late_edge': 1, 'rstar': 1, 'F': 5, 'frozen_edge': 1} argmax-edge (13, 17)
+GAME red/so/instances/tevlast7_n32.pg RELPE n 32 mE 94 runs 2 maxima {'late_edge': 1, 'rstar': 3, 'F': 29, 'frozen_edge': 1} argmax-edge (2, 29)
+GAME red/so/instances/tevlast11_n40.pg RELPE n 40 mE 155 runs 2 maxima {'late_edge': 1, 'rstar': 5, 'F': 30, 'frozen_edge': 1} argmax-edge (18, 0)
+GAME red/so/instances/tog6a_n32.pg RELPE n 32 mE 97 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 5, 'frozen_edge': 0} argmax-edge None
+GAME red/so/instances/tog6b_n32.pg RELPE n 32 mE 87 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 6, 'frozen_edge': 0} argmax-edge None
+GAME red/so/instances/xrun8_n10.pg RELPE n 10 mE 24 runs 1 maxima {'late_edge': 1, 'rstar': 1, 'F': 7, 'frozen_edge': 1} argmax-edge (8, 5)
+GAME red/so/instances/xrun21_n24.pg RELPE n 24 mE 85 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 21, 'frozen_edge': 0} argmax-edge None
+GAME red/so/instances/xsn29_n32.pg RELPE n 32 mE 120 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 29, 'frozen_edge': 0} argmax-edge None
+GAME red/so/instances/xsn43_n48.pg RELPE n 48 mE 164 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 43, 'frozen_edge': 0} argmax-edge None
+GAME red/so/instances/xsnf42_n48.pg RELPE n 48 mE 180 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 42, 'frozen_edge': 0} argmax-edge None
+GAME red/so/instances/xsnf52_n64.pg RELPE n 64 mE 249 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 52, 'frozen_edge': 0} argmax-edge None
+GAME red/tcpert/instances/leanT_N12.pg RELPE n 96 mE 126 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/so/instances/xsn91_n48.pg RELPE n 48 mE 192 runs 9 maxima {'late_edge': 1, 'rstar': 2, 'F': 25, 'frozen_edge': 1} argmax-edge (8, 6)
+GAME red/tcpert/instances/leanT_N6.pg RELPE n 48 mE 45 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/tcpert/instances/leanT_N16.pg RELPE n 128 mE 200 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/tcpert/instances/leanT_N8.pg RELPE n 64 mE 68 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/tcpert/instances/leanT_N24.pg RELPE n 192 mE 396 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 3, 'frozen_edge': 0} argmax-edge None
+GAME red/tcpert/instances/tcL_N3.pg RELPE n 42 mE 36 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/tcpert/instances/tcL_N4.pg RELPE n 68 mE 62 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/tcpert/instances/tcL_N5.pg RELPE n 100 mE 95 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/tcpert/instances/tcL_N10.pg RELPE n 350 mE 365 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/tcpert/instances/tcL_N6.pg RELPE n 138 mE 135 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/tcpert/instances/tcR4_N4.pg RELPE n 68 mE 62 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/tcpert/instances/tcR4_N5.pg RELPE n 100 mE 95 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/tcpert/instances/leanT_N32.pg RELPE n 256 mE 656 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/tcpert/instances/tcL_N8.pg RELPE n 232 mE 236 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/tcpert/instances/tcR4_N6.pg RELPE n 138 mE 135 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME red/tcpert/instances/tcS8_N10.pg RELPE n 350 mE 445 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/tcpert/instances/tcR4_N7.pg RELPE n 182 mE 182 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/tcpert/instances/tcL_N12.pg RELPE n 492 mE 522 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 2, 'frozen_edge': 0} argmax-edge None
+GAME red/tcpert/instances/tcR4_N8.pg RELPE n 232 mE 236 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/tcpert/instances/tcS8_N7.pg RELPE n 182 mE 217 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/tcpert/instances/tcS8_N6.pg RELPE n 138 mE 159 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/tcpert/instances/tcS8_N8.pg RELPE n 232 mE 284 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/tpp/instances/tpp_viol_n22.pg RELPE n 22 mE 12 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/tpp/instances/tpp_viol_n63.pg RELPE n 63 mE 123 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME red/ul/instances/cxmig_k4_n54.pg RELPE n 54 mE 75 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 12, 'frozen_edge': 0} argmax-edge None
+GAME red/ul/instances/cxmig_k8_n82.pg RELPE n 82 mE 115 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 16, 'frozen_edge': 0} argmax-edge None
+GAME red/ul/instances/ladderd0_k12_n48.pg RELPE n 48 mE 61 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 14, 'frozen_edge': 0} argmax-edge None
+GAME red/tcpert/instances/tcS8_N11.pg RELPE n 418 mE 539 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/ul/instances/ladderd0_k24_n84.pg RELPE n 84 mE 109 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 26, 'frozen_edge': 0} argmax-edge None
+GAME red/ul/instances/cxmig_k16_n138.pg RELPE n 138 mE 195 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 24, 'frozen_edge': 0} argmax-edge None
+GAME red/ul/instances/ladderent_k12_n48.pg RELPE n 48 mE 61 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 14, 'frozen_edge': 0} argmax-edge None
+GAME red/tcpert/instances/tcS8_N9.pg RELPE n 288 mE 360 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 2, 'frozen_edge': 0} argmax-edge None
+GAME red/ul/instances/reader_L10_n36.pg RELPE n 36 mE 48 runs 1 maxima {'late_edge': 1, 'rstar': 1, 'F': 13, 'frozen_edge': 1} argmax-edge (15, 14)
+GAME red/ul/instances/ladderent_k24_n84.pg RELPE n 84 mE 109 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 26, 'frozen_edge': 0} argmax-edge None
+GAME red/ul/instances/reader_L20_n56.pg RELPE n 56 mE 78 runs 1 maxima {'late_edge': 1, 'rstar': 1, 'F': 23, 'frozen_edge': 1} argmax-edge (25, 24)
+GAME red/ul/instances/reader_L40_n96.pg RELPE n 96 mE 138 runs 1 maxima {'late_edge': 1, 'rstar': 1, 'F': 43, 'frozen_edge': 1} argmax-edge (45, 44)
+GAME red/usplit/instances/gate_K16_n197.pg RELPE n 197 mE 351 runs 1 maxima {'late_edge': 1, 'rstar': 3, 'F': 23, 'frozen_edge': 1} argmax-edge (183, 149)
+GAME red/ul/instances/ladderd0_k48_n156.pg RELPE n 156 mE 205 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 50, 'frozen_edge': 0} argmax-edge None
+GAME red/usplit/instances/grow_K12_n149.pg RELPE n 149 mE 267 runs 1 maxima {'late_edge': 1, 'rstar': 12, 'F': 19, 'frozen_edge': 1} argmax-edge (148, 125)
+GAME red/usplit/instances/pairoc_n58.pg RELPE n 58 mE 80 runs 1 maxima {'late_edge': 1, 'rstar': 1, 'F': 5, 'frozen_edge': 1} argmax-edge (56, 55)
+GAME red/usplit/instances/pp_K12_n161.pg RELPE n 161 mE 279 runs 1 maxima {'late_edge': 1, 'rstar': 1, 'F': 19, 'frozen_edge': 0} argmax-edge (153, 125)
+GAME red/ul/instances/ladderent_k48_n156.pg RELPE n 156 mE 205 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 50, 'frozen_edge': 0} argmax-edge None
+GAME red/usplit/instances/pp_K12_n161_dual.pg RELPE n 161 mE 15 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME red/usplit/instances/grow_K40_n373.pg RELPE n 373 mE 715 runs 1 maxima {'late_edge': 1, 'rstar': 40, 'F': 47, 'frozen_edge': 1} argmax-edge (372, 293)
+GAME red/usplit/instances/usplit_n14.pg RELPE n 14 mE 19 runs 1 maxima {'late_edge': 1, 'rstar': 1, 'F': 3, 'frozen_edge': 1} argmax-edge (13, 12)
+GAME red/usplit/instances/usplit_n23.pg RELPE n 23 mE 37 runs 1 maxima {'late_edge': 1, 'rstar': 1, 'F': 9, 'frozen_edge': 1} argmax-edge (22, 21)
+GAME red/usplit/instances/usplit_rd_n24.pg RELPE n 24 mE 32 runs 1 maxima {'late_edge': 1, 'rstar': 1, 'F': 4, 'frozen_edge': 1} argmax-edge (23, 22)
+GAME red/usplit/instances/usplit_rd_s3_n27.pg RELPE n 27 mE 37 runs 1 maxima {'late_edge': 1, 'rstar': 1, 'F': 4, 'frozen_edge': 1} argmax-edge (26, 25)
+GAME red/usplit/instances/usplit_s3_n16.pg RELPE n 16 mE 22 runs 1 maxima {'late_edge': 1, 'rstar': 1, 'F': 3, 'frozen_edge': 1} argmax-edge (15, 14)
+GAME red/xctx/instances/nest3_n20.pg RELPE n 20 mE 2 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/xctx/instances/nest3_n24.pg RELPE n 24 mE 2 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/xctx/instances/vrall_viol_n20.pg RELPE n 20 mE 3 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/xctx/instances/xcov11_n20.pg RELPE n 20 mE 4 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/xctx/instances/xctx_viol_n20.pg RELPE n 20 mE 6 runs 0 maxima {'late_edge': 0, 'rstar': 0, 'F': 0, 'frozen_edge': 0} argmax-edge None
+GAME red/xing/instances/fbref_cex_n32.pg RELPE n 32 mE 99 runs 7 maxima {'late_edge': 1, 'rstar': 2, 'F': 16, 'frozen_edge': 1} argmax-edge (8, 1)
+GAME red/xing/instances/j10_n24.pg RELPE n 24 mE 75 runs 2 maxima {'late_edge': 1, 'rstar': 1, 'F': 15, 'frozen_edge': 0} argmax-edge (12, 17)
+GAME red/xing/instances/j4_n40.pg RELPE n 40 mE 135 runs 5 maxima {'late_edge': 1, 'rstar': 2, 'F': 31, 'frozen_edge': 1} argmax-edge (13, 6)
+GAME red/xing/instances/j5_n16.pg RELPE n 16 mE 48 runs 5 maxima {'late_edge': 1, 'rstar': 1, 'F': 11, 'frozen_edge': 0} argmax-edge (9, 13)
+GAME red/xing/instances/j7_n32.pg RELPE n 32 mE 120 runs 3 maxima {'late_edge': 1, 'rstar': 1, 'F': 23, 'frozen_edge': 1} argmax-edge (1, 5)
+GAME red/usplit/instances/pp_K48_n449.pg RELPE n 449 mE 855 runs 1 maxima {'late_edge': 1, 'rstar': 1, 'F': 55, 'frozen_edge': 0} argmax-edge (441, 341)
+GAME red/xing/instances/j7_n48.pg RELPE n 48 mE 166 runs 8 maxima {'late_edge': 1, 'rstar': 1, 'F': 20, 'frozen_edge': 1} argmax-edge (1, 24)
+GAME red/xing/instances/j8_n32.pg RELPE n 32 mE 100 runs 4 maxima {'late_edge': 1, 'rstar': 1, 'F': 21, 'frozen_edge': 1} argmax-edge (1, 0)
+GAME red/xing/instances/kw25_n32.pg RELPE n 32 mE 96 runs 3 maxima {'late_edge': 1, 'rstar': 1, 'F': 25, 'frozen_edge': 1} argmax-edge (21, 22)
+GAME red/xing/instances/kw_n16.pg RELPE n 16 mE 44 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 12, 'frozen_edge': 0} argmax-edge None
+GAME red/xing/instances/j8_n48.pg RELPE n 48 mE 188 runs 9 maxima {'late_edge': 1, 'rstar': 1, 'F': 20, 'frozen_edge': 1} argmax-edge (1, 24)
+GAME red/usplit/instances/pp_K48_n449_dual.pg RELPE n 449 mE 15 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME red/xing/instances/kw_n24.pg RELPE n 24 mE 60 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 20, 'frozen_edge': 0} argmax-edge None
+GAME red/xing/instances/obr_eq_n24.pg RELPE n 24 mE 53 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 4, 'frozen_edge': 0} argmax-edge None
+GAME red/xing/instances/kw_n48.pg RELPE n 48 mE 164 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 40, 'frozen_edge': 0} argmax-edge None
+GAME red/xing/instances/obr_n32.pg RELPE n 32 mE 112 runs 2 maxima {'late_edge': 0, 'rstar': 0, 'F': 15, 'frozen_edge': 0} argmax-edge None
+GAME red/xing/instances/u1t_cex_n32.pg RELPE n 32 mE 105 runs 1 maxima {'late_edge': 1, 'rstar': 2, 'F': 7, 'frozen_edge': 1} argmax-edge (0, 7)
+GAME red/xing/instances/u1t_own6_n32.pg RELPE n 32 mE 87 runs 2 maxima {'late_edge': 0, 'rstar': 0, 'F': 6, 'frozen_edge': 0} argmax-edge None
+GAME red/xing/instances/u23sw64_n32.pg RELPE n 32 mE 140 runs 3 maxima {'late_edge': 0, 'rstar': 0, 'F': 8, 'frozen_edge': 0} argmax-edge None
+GAME red/xing/instances/u2flat73_n32.pg RELPE n 32 mE 163 runs 5 maxima {'late_edge': 0, 'rstar': 0, 'F': 3, 'frozen_edge': 0} argmax-edge None
+GAME red/xing/instances/u2flat_n32.pg RELPE n 32 mE 80 runs 6 maxima {'late_edge': 0, 'rstar': 0, 'F': 2, 'frozen_edge': 0} argmax-edge None
+GAME red/xing/instances/x31_cu16.pg RELPE n 16 mE 40 runs 2 maxima {'late_edge': 0, 'rstar': 0, 'F': 13, 'frozen_edge': 0} argmax-edge None
+GAME red/xing/instances/x31_cu24.pg RELPE n 24 mE 86 runs 3 maxima {'late_edge': 0, 'rstar': 0, 'F': 8, 'frozen_edge': 0} argmax-edge None
+GAME red/xing/instances/x31_cu32.pg RELPE n 32 mE 101 runs 2 maxima {'late_edge': 0, 'rstar': 0, 'F': 21, 'frozen_edge': 0} argmax-edge None
+GAME red/xing/instances/x31_cu32i.pg RELPE n 32 mE 92 runs 2 maxima {'late_edge': 0, 'rstar': 0, 'F': 21, 'frozen_edge': 0} argmax-edge None
+GAME red/xing/instances/x31_lem_e24.pg RELPE n 24 mE 71 runs 5 maxima {'late_edge': 0, 'rstar': 0, 'F': 14, 'frozen_edge': 0} argmax-edge None
+GAME red/xing/instances/x31_cu48.pg RELPE n 48 mE 159 runs 2 maxima {'late_edge': 0, 'rstar': 0, 'F': 22, 'frozen_edge': 0} argmax-edge None
+GAME red/xing/instances/x31_lem_t32.pg RELPE n 32 mE 97 runs 7 maxima {'late_edge': 1, 'rstar': 1, 'F': 12, 'frozen_edge': 0} argmax-edge (8, 0)
+GAME red/xing/instances/x31_nh_r20.pg RELPE n 20 mE 62 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 13, 'frozen_edge': 0} argmax-edge None
+GAME red/xing/instances/x31_nh_e24.pg RELPE n 24 mE 61 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 20, 'frozen_edge': 0} argmax-edge None
+GAME red/xing/instances/x31_re24.pg RELPE n 24 mE 78 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 4, 'frozen_edge': 0} argmax-edge None
+GAME red/xing/instances/x31_ru24.pg RELPE n 24 mE 80 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 4, 'frozen_edge': 0} argmax-edge None
+GAME red/xing/instances/x31_rx32.pg RELPE n 32 mE 86 runs 4 maxima {'late_edge': 1, 'rstar': 1, 'F': 22, 'frozen_edge': 0} argmax-edge (21, 0)
+GAME red/xing/instances/x32_rand16.pg RELPE n 16 mE 47 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 13, 'frozen_edge': 0} argmax-edge None
+GAME red/xing/instances/x32_rand24.pg RELPE n 24 mE 80 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 20, 'frozen_edge': 0} argmax-edge None
+GAME red/xing/instances/x31_rx48.pg RELPE n 48 mE 182 runs 4 maxima {'late_edge': 1, 'rstar': 1, 'F': 22, 'frozen_edge': 0} argmax-edge (31, 23)
+GAME red/xing/instances/x32_nest40.pg RELPE n 40 mE 136 runs 3 maxima {'late_edge': 1, 'rstar': 1, 'F': 26, 'frozen_edge': 1} argmax-edge (6, 0)
+GAME red/xing/instances/x32_rand32.pg RELPE n 32 mE 125 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 29, 'frozen_edge': 0} argmax-edge None
+GAME red/xing/instances/x32_rand48.pg RELPE n 48 mE 152 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 44, 'frozen_edge': 0} argmax-edge None
+GAME red/xing/instances/x32_rand64.pg RELPE n 64 mE 233 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 55, 'frozen_edge': 0} argmax-edge None
+GAME red/xing/instances/x32_waves48.pg RELPE n 48 mE 151 runs 7 maxima {'late_edge': 1, 'rstar': 2, 'F': 26, 'frozen_edge': 1} argmax-edge (44, 32)
+GAME si/root/instances/cone_n65.pg RELPE n 65 mE 182 runs 2 maxima {'late_edge': 0, 'rstar': 0, 'F': 2, 'frozen_edge': 0} argmax-edge None
+GAME red/xing/instances/x32_waves32.pg RELPE n 32 mE 118 runs 9 maxima {'late_edge': 1, 'rstar': 1, 'F': 22, 'frozen_edge': 1} argmax-edge (8, 6)
+GAME si/root/instances/ueonce_n27.pg RELPE n 27 mE 80 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 10, 'frozen_edge': 0} argmax-edge None
+GAME si/root/instances/cone_n69.pg RELPE n 69 mE 194 runs 1 maxima {'late_edge': 0, 'rstar': 0, 'F': 1, 'frozen_edge': 0} argmax-edge None
+GAME red/usplit/instances/gate_K64_n581.pg RELPE n 581 mE 1119 runs 1 maxima {'late_edge': 1, 'rstar': 3, 'F': 71, 'frozen_edge': 1} argmax-edge (567, 437)

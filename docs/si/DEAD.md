@@ -614,3 +614,55 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
 - CONJECTURE WD-BOUNDED (docs/si/N5-WDEPTH-box48.md §4; window depth D_F ≤ a constant per W-run): DEAD. Instance family wdepth_K4_m{16,32,64}
   (L-RED, l-red 448a1bf9, docs/red/R130-window-depth.md; span/mkrw.py LATE=2): D_F = (m − 1)/2 = 7 / 15 / 31 at n 146 / 234 / 410 in one W-run,
   two counters (repchain.py, latec.py). REP linear there. P-N5-REPD frozen, not refereed (docs/si/P-N5-REPD-status.md).
+
+## box 51b (L-SI successor 33; docs/si/N5-GATE-box51b.md)
+- Gate potential for ZFL (Lead box 51 (2): a monotone order on gates within one W-run), and any potential that is a function of (D_k, the
+  full gate map, λ_Ξ, λ_W, Z_k, LEV_k): DEAD. Instance experiments/red/xing/instances/u23sw64_n32.pg (no start): the W-constant interval
+  [2, 10] has 8 flat transitions, all ZFL, and every one of these data is constant on it (si/gate/const.py). Obstruction: the gap sits
+  at the cycle-node level (λ_Ξ = 20 ≠ λ_W = 13 at all 32 vertices); the climbs are path-set changes to node 20 that W does not see.
+- Level potential Φ = (LEV, coordinate at LEV) for ZFL: DEAD. Same instance: SUB 8 (no Φ rises at any ZFL transition).
+- Bellman-Ford / Lemma P inside the W-tight subgame G_I: DEAD. It needs Ξ-optimal steps. Instance experiments/red/xing/instances/
+  u2flat73_n32.pg: 11 flat switches take a tight arena edge that is not Ξ_t-best; u23sw64_n32: 23 vertices stay put with a tight Ξ-improving
+  arena edge (LAZY).
+- Box 50b's pure form «a flat climb needs a gate change or a non-same-pair gate»: not what the prefix argument proves. Lemma GATE adds case
+  (c), the gate climbs. No instance with (c) at a flat transition (SPD 0 in 1,132 runs), so the pure form is OPEN, not dead.
+
+## box 52 (L-SI successor 34; docs/si/N5-HEADS-box52.md)
+- Bellman–Ford front along the Ξ-play: «a Ξ-change at window offset j sits at Ξ-distance ≥ j + 1 from D ∪ C», where Ξ-distance counts the
+  steps of x's Ξ-play before its first vertex of D ∪ C (the W-length form is Theorem RUN-SETTLE, PROVED). DEAD. Instance
+  experiments/red/ul/instances/ladderd0_k12_n48.pg + .start: 11 violations, MINF1 −10 (si/heads52/bffront.py). The family is linear:
+  k24_n84 has 23, k48_n156 has 47. Obstruction: a W-rise beyond a gate g, in τ(g)'s continuation, pulls an Even vertex onto g. Ξ does not
+  read that continuation.
+- «σ̄ never uses an edge of I_τ inside a W-run» (equivalently, every deviation is W*-non-improving for Odd): DEAD. Instance
+  experiments/n5-epoch/instances/lend107_n32.pg + .start: 106 deviation-state pairs use an I_τ edge (si/heads52/dset.py INIT 106).
+- «D_k only shrinks inside a W-run» (no re-entry after an exit): DEAD. Instance experiments/si/gate/inst/latew_K16_m32.pg + .start: one
+  vertex re-enters D 15 times in one W-run (dset.py REN 15). Corpus max 30.
+- «a σ̄(o)-flip needs a Ξ-change at the old target σ̄_k(o)»: DEAD. Instance experiments/n5-epoch/instances/nep13_n24.pg + .start, transition
+  11 → 12, o = 15 (its own Ξ-cycle node). o re-picks its cycle edge 0 → 12 because Ξ(12)'s length falls 4 → 1, and Ξ(0) is unchanged
+  (si/heads52/flipc.py NOX 1). The weaker CONJECTURE FLIP-CAUSE″ (old or new target) has 0 violations in 7,525 flips.
+- CONJECTURE FLIP-CAUSE″ (a σ̄-flip needs a Ξ-change at the old target (EXI), at the old or new target (MOV), or at τ(o) (ENT)): DEAD.
+  Instances experiments/si/heads52/inst/flipnone_n14.pg + .start (Odd 12, its own Ξ-cycle node, 6 → 1 at 1 → 2, no event (iii)) and
+  flipnonex_a_n10.pg + .start (Odd 8 in S1's BFS branch, 9 → 4 at 1 → 2, tied targets re-ordered by 9's own flip). Engines n5x and n5b
+  agree (heads52/flipx.py; red/seg/xeng.py states identical). Obstruction: S1's tie-breaks (DFS at own cycle nodes, BFS discovery
+  order) depend on the strategy below, not on the targets' values. Weaker CONJECTURE FLIP-EV stands (0 violations).
+- CONJECTURE FLIP-EV (every EXI / MOV σ̄-flip at an Odd vertex that is not its own Ξ-cycle node happens at a transition with an event
+  (iii), i.e. a Ξ-change at an upward head): DEAD. Instance experiments/si/heads52/inst/flipev_n20.pg + .start, transition 2 → 3.
+  - Odd 10 leaves D (1 → τ(10) = 4, both values fixed) in a W-run with no event (iii).
+  - Cause: Odd 14 enters D (8 → 11) because Ξ(τ(14) = 8) rose; 11 is tied, so the BFS keys above re-order.
+  - n5x and n5b agree (heads52/flipx.py; xeng states identical). Found by a tie-biased random search (top odd priority at vertex 0).
+  - Obstruction: τ-targets of non-deviating Odd vertices also drive σ̄; they are not upward heads.
+
+## box 53 SBF (L-SI successor 35; docs/si/N5-SBF-box53.md)
+- Odd's reply σ̄ monotone in a FIXED partial order on Odd strategies while Ξ rises (D18 Topkis / monotone comparative statics angle):
+  DEAD. Obstruction: a profile revisit inside one W-run contradicts antisymmetry. Instance experiments/n5-exhaustive/instances/
+  thetaA_n7.pg + .start (n = 7, one W-run, σ̄(6) 5 → 1 → 5; n5b agrees). Corpus: 242 W-runs revisit a profile; per-vertex returns up to
+  61 (gate_K64_n581). Pins: experiments/si/check.sh «box 53 SBF».
+- (§5, Lead 20:00Z) NO-REPEAT / order-determination on a fixed head set ([ABS] Thm 29 / [GH] template via L-LIT T60 §3.3): DEAD.
+  experiments/red/so/instances/exitr_cex_n16.pg (default start): one W-run; the weak Ξ-order on H_1 = U′_1 = {3, 4, 8, 11} is the same
+  at states 1, 5, 6, 7 while σ̄ of the second Odd vertex is 3, 7, 3, 13. Corpus RREP 128 W-runs. Also max |U_k| = 4K + 16 on mkrw
+  (LATE=1, m 16), so FPT in |U| is empty. Pins: check.sh «box 53 SBF §5».
+- (§6) CONJECTURE XCN-ONE (≤ 1 own-cycle-node σ̄-flip transition per W-run): DEAD.
+  - experiments/si/sb53/inst/xcn2_n8 + .start: two kind-A transitions in one W-run (Odd 0 stops, Odd 5 starts being its own cycle node).
+  - experiments/si/sb53/inst/xcnb2_n12 + .start: two kind-B transitions at the same vertex, σ̄(3) 9 → 11 → 9, with Ξ(3) = (3, ∅, 0)
+    and λ_Ξ fixed.
+  - n5b agrees on both. Kind A is bounded by n(n − 1) per run (from R47); kind B is open.

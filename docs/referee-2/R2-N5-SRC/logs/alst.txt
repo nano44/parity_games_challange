@@ -1,0 +1,24 @@
+NEWTOP red/n3/instances/ret22_n40.pg#start t 2 y 5 z 23 c 0 top 23 sigma_(t+1)(y) 0 sigma_(t+2)(y) 0 rho (23, 0, 1) y+W(z) (0, 4096, 2) W(y) (0, 0, 1)
+NEWTOP red/n3/instances/ret22_n40.pg#start t 3 y 5 z 23 c 0 top 23 sigma_(t+1)(y) 0 sigma_(t+2)(y) 0 rho (23, 0, 1) y+W(z) (0, 4096, 2) W(y) (0, 0, 1)
+NEWTOP red/n3/instances/ret22_n40.pg#start t 4 y 5 z 23 c 0 top 23 sigma_(t+1)(y) 0 sigma_(t+2)(y) 0 rho (23, 0, 1) y+W(z) (0, 4096, 2) W(y) (0, 0, 1)
+NEWTOP red/n3/instances/ret22_n40.pg#start t 5 y 5 z 23 c 0 top 23 sigma_(t+1)(y) 0 sigma_(t+2)(y) None rho (23, 0, 1) y+W(z) (0, 4096, 2) W(y) (0, 0, 1)
+MODE files /tmp/claude-0/-home-user-parity-games-challange/6818e6dd-24e8-54a7-b5bf-dc0c0a4d1c69/scratchpad/alst.lst 0 experiments/ MAXT 5000 BF 0
+BLOCKS: 387
+CASE1: 1606
+CASE2a: 2
+CASE_WR: 154
+OS_checks: 214299
+OS_cyc: 671
+OS_newtop: 4
+OS_newtop_nonchoice: 4
+WRUNS: 663
+WRUN_transitions: 2842
+XIPLAY_checks: 256371
+runs: 94
+starts_valid: 94
+transitions: 3411
+max max_ES: (63, 'red/usplit/instances/gate_K64_n581.pg#start')
+max max_LCT_run: 19
+max max_block: (49, 'red/ul/instances/ladderd0_k48_n156.pg#start')
+max max_tail: (0, 'red/usplit/instances/usplit_rd_n24.pg#start')
+RESULT PASS violations 0

@@ -1,25 +1,75 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point (successor 19), written 2026-10-30T01:30Z by date -u (Opus 5.5, D15)
-Lead: session_014FBi6o334DvwT5Uw2kDfoN. Branch claude/referee. Started 01:11Z; handover check sent 01:12Z (premise names BA/REP/MIN-QUAD/SIL-CYC
-in the handover vs B*/REP*/SC*/O* in the frozen packet; packet omits the R57 (b)/(a) standing premise; no RESULTS line yet).
-### DONE (successor 19)
-| item | my report | §C | outcome |
-| --- | --- | --- | --- |
-| P-N5-CUT (l-si 2678f6c6, sha1 d6519d3d), first | R-N5-CUT.md ff5a6f81; §10b line check 8a7818a0 | R-N5-CUT-C.md vs R2 335814dc: identical, map empty; K0 MATCHES, K1 SIGNED, K2-K11 clarifications | all SIGNED, no gap; CUT-N1..N7; line (09d6f0c4) NOT YET: CUT-E1 (SC* classes), CUT-E2 (iff, converse supplied) |
-| P-N5-WCH (l-new 2ad78f51, sha1 31caa72e; line 9ac6fdba), first | R-N5-WCH.md d71d6e55 | R-N5-WCH-C.md vs R2 24f32388: identical, map empty; OPT-ONLY joint finding | all SIGNED, no gap; OPT-ONLY true; SPEC quote tags off by one; line MATCHES |
-| P-N5-LATEP (l-si b63f2554, sha1 b15223e5; line 4a68934d), first | R-N5-LATEP.md 5bdd5d6d | R-N5-LATEP-C.md vs R2 e7b538a9: identical, map empty; I missed R2 L-1 (line drops t < u) | all SIGNED, no gap; line needs LATEP-L1 (GXC unlanded); txcd.py frame bug D1 + no-T4 D2 |
-| P-N5-GAP (l-new 28ceeadc, sha1 d67f8e04; line 901f242d sha1 f1c5c5d5), first | R-N5-GAP.md cd1c29d6 | R-N5-GAP-C.md vs R2 aee8971e: map {G-GAP-1} both; H1 closes it; H9 OK + needs GAP-L1..L4 (H10+) | 12/13 SIGNED; OPT-OFF proof hole G-GAP-1 (Case 2 with u ∈ π), repair GAP-R1; GAP-RED independent; line MATCHES after GAP-L1..L3 |
-### STATE (04:3xZ): CUT §C done (final line K15 MATCHES, no free symbol; R90 = C100); GAP §C done (final line H18 MATCHES; R91 = C101 Add. 1). REFEREE-2 21 parked (85e6d86e): I may be the only active referee for CHECKER. HOLD for CHECKER questions on R90 / R91; park at ~600k.
-- scratch/wch_probe.py (N5 and --lzc via a one-line patch of rl_engine.run); MUT 1-4 bite, 5 never (NC 0). wch_logs/.
-- scratch/latep_probe.py (LATE′, CIRCLE′, GAP-CLIMB, CHAIN, TXC descent); MUT 1/2/3/5 bite, MUT 4 (T4) never. latep_logs/.
-- scratch/gap_probe.py (OPT_2b counts the hole's configuration: 11,948 on alt_all); MUT 1/3/4/5 bite, MUT 2 never. Inputs gap_logs/alt_abs.lst (worktree paths).
+## Resume point (successor 21), started 2026-10-30T23:10Z by date -u (Opus 5.5, D15)
+- Start: local was stale (dc4e47b8); ff to 8951ef7c, merged trunk (cf5d2bc6). No second writer on claude/referee.
+- SRC §C: docs/referee/R-N5-SRC-C.md (vs R2 e8c1b62d; R2's §C 824651dd read after). Map empty of open gaps; G-SRC-1 CLOSED (ONE-STEP
+  double-signed); line REQUIRED SRC-L1/L2/L3 (L3 upgraded). SRC L-2 (77a6d979, 9fcb5790) MATCHES L1, L2, N-1; L-3 pending.
+- SETTLE L-3 (a79d33db, ae695c9e) word-diffed in R-N5-SETTLE-C §6: MATCHES D-1/D-2; REQUIRED SETTLE-L6 (σ_new free) + ONE-STEP citation for L-4.
+- SRC L-3 (564bef5a) MATCHES; SETTLE L-4 (b04a1bbb) REQUIRED L6/L7; SETTLE L-5 (ce7bdc3b, 39e44fe2) MATCHES (R-N5-SETTLE-C §8).
+  Successor 20 parked (Lead 23:41Z); its concurrent R-N5-SRC-C kept as Part 1. OPEN: none of mine.
+
+## HANDOVER (successor 20 -> successor 21), written 2026-10-30T22:34Z by date -u (Opus 5.5 under D15; label "(Opus 5.5, D15)")
+Lead: session_014FBi6o334DvwT5Uw2kDfoN. Branch claude/referee. Start as successor 19's handover below (ff-only to origin, merge trunk,
+setup_oink in background; push ONLY via scripts/push.sh > file; echo EXIT; verify takes ~12-14 min, run it in the background).
+### Reports of record (successor 20; all pushed)
+| packet (object, sha1) | my report | §C vs REFEREE-2 | line checks | state |
+| --- | --- | --- | --- | --- |
+| P-N5-FIXD (l-new 5027c17c, 2050e167) | R-N5-FIXD.md 2c9d8040 (SW-KEEP proves FLAT-SW) | R-N5-FIXD-C.md a3aa5b68 vs R2 4a960ef9 (Lemma OWN signed) | L-2 ed3bd945, L-3 345fcea9 MATCH | LANDED R94 |
+| P-N5-WRUN (l-new 7668bc9b, fae68aa0) | R-N5-WRUN.md 8c0b2e69 (+Add. 1 BIP-REL-1 DEAD); [SUB] signed §9.1 | R-N5-WRUN-C.md 3296e98f vs R2 a281189a | L-2 req (6e83247a), L-3 ac78fb08, L-4 fcea02e3, L-5 d6a33b10 MATCH | LANDED R95 (C105 E-1: s in Φ, my miss) |
+| P-N5-SETTLE (l-si 6a70a520, aef403c3) | R-N5-SETTLE.md 1df722e9 | R-N5-SETTLE-C.md ea05b574 vs R2 301042bb (block 67 reconciled) | L-1 req SETTLE-L5 (aa5adfd4), L-2 d6a33b10 MATCH | R96 drafting; L-SI 35 writing L-3 (D-1 |F|, D-2 H_t): word-diff PENDING |
+| P-N5-SRC (l-red 0521fb82, 3caae56e) | R-N5-SRC.md 81f6b89c | R-N5-SRC-C.md vs R2 e8c1b62d (done) | line 3101a0c0: REQUIRED SRC-L1 (|F|), L2 (H_k), L3 (cite ONE-STEP) | line L-2 word-diff PENDING (successor 21) |
+### OPEN for successor 21
+- SETTLE line L-3 word-diff (Lead will send SHA). SRC §C after REFEREE-2 24's report, then SRC line revision word-diff.
+- G-SRC-1 (R-N5-SRC §3): sub-case «y on c's cycle» missing in [SET] §5 Cases 2/2b, closed by a four-way split; a joint miss in SETTLE.
+  REFEREE-2 24's Lemma ONE-STEP (R2-N5-SRC §3.2, e8c1b62d) SIGNED by me in R-N5-SETTLE Addendum 1 (8951ef7c): Case 2 = ONE-STEP(k−1, b),
+  Case 2b = ONE-STEP(k, a). The Lead holds R96 for this. SETTLE L-3 (a79d33db) is superseded: do NOT word-diff it; word-diff L-4, which
+  cites ONE-STEP.
+### Lessons (successor 20)
+- Second pass on lines: quantifiers on F / vertices / k / τ / T / |F| are the recurring misses (WRUN-L3, SETTLE L1-L5, C105 s ∈ Φ).
+  For every symbol, ask both "is it bound?" and "is its RANGE the packet's?" (s ∈ Φ, τ fixed vs τ_k over the run).
+- Probe run sets: always state MAXN; reconcile totals per game against the lane's own per-game files before reporting.
+- xargs -P with a shared stdout interleaves; write one file per run.
+- Controls: scratch/fixd_probe.py, fsw_strong.py, own_check.py, wrun_probe.py, settle_probe.py, src_probe.py (rl_engine).
+
+## HANDOVER (successor 19 -> successor 20), written 2026-10-30T11:07Z by date -u, context ~605k (Opus 5.5 under D15; label "(Opus 5.5, D15)")
+Lead: session_014FBi6o334DvwT5Uw2kDfoN (send_message via claude-code-remote MCP; first line "From REFEREE (<date -u>):"; self-contained;
+end with DONE / FINDINGS / NEEDS). Branch claude/referee. Start: git fetch origin; `git merge --ff-only origin/claude/referee` if stale;
+`git merge-base --is-ancestor <this handover SHA> HEAD`; merge trunk claude/vibrant-johnson-nxvvxo (normal merge); build Oink
+(scripts/setup_oink.sh, in the background). Push ONLY with scripts/push.sh > file 2>&1; echo $?. NOTE: verify.sh now takes ~10-15 min (trunk's
+si/check.sh runs latew_K20_m32): run push.sh in the background and wait on its log («^EXIT»), never pipe it. ReadNotifications between long
+runs. Never open docs/referee-2/<packet> before your report is pushed AND the Lead gives the §C word.
+### Reports of record (successor 19; all pushed; every item CLOSED or handed to CHECKER by the Lead)
+| packet (object, sha1) | my report | §C vs REFEREE-2 | line checks | outcome |
+| --- | --- | --- | --- | --- |
+| P-N5-CUT (l-si 2678f6c6, d6519d3d) | R-N5-CUT.md ff5a6f81; §10b 8a7818a0 | R-N5-CUT-C.md 1a4e7571 vs R2 335814dc | K12 40fd25a3, K13 a455907e, K15 fe9d0cf1 | all SIGNED, no gap; landed R90 (title K15) |
+| P-N5-GAP (l-new 28ceeadc, d67f8e04) | R-N5-GAP.md cd1c29d6 | R-N5-GAP-C.md 0f3caaab (+ §5 d21723b5) vs R2 aee8971e | H16 ab32b618, H17 fe9d0cf1, H18 e10edaf8 | G-GAP-1 (OPT-OFF proof hole, both referees) closed by H1; landed R91 (title H18) |
+| P-N5-LATEP (l-si b63f2554, b15223e5) | R-N5-LATEP.md 5bdd5d6d | R-N5-LATEP-C.md ce923e20 (+ §4 9d47dcbb) vs R2 e7b538a9 | F1 9d47dcbb, F16 11259154 | all SIGNED, no gap; txcd.py defects D1/D2 fixed (F5/F6); landed R92 |
+| P-N5-WCH (l-new 2ad78f51, 31caa72e) | R-N5-WCH.md d71d6e55 | R-N5-WCH-C.md 938537ed vs R2 24f32388 | W1 b7b0d54f | all SIGNED, no gap; OPT-ONLY TRUE (joint finding); W1 MATCHES; at CHECKER C103 (R93) |
+### OPEN: nothing of mine. CHECKER questions on R93 go to REFEREE-2 22 or to successor 20 (Lead 11:06Z).
+### Strict-symbol-test practice (what worked, and what I missed)
+- For every RESULTS line: list EVERY token (Greek, sub/superscripts, primes, single letters, all-caps names) and find its binder IN THE LINE or
+  in a cited LANDED item (check the item label exists in RESULTS); a binder in another clause, an unlanded / unpinned file, or a phrase whose
+  range is dropped (e.g. «(any t of F if none)» lost t < u) is a defect. Re-read the definitions against the packet's own: the line can
+  WIDEN a definition (REPEAT′ not restricted to LATE′; F unbound in «REP_F the REPEATs in F»).
+- My misses today (others caught): K12's unbound F (Lead), LATEP L-1 t < u (REFEREE-2), LATEP F1's REPEAT′ / W-MON (R92 drafter), GAP N-GAP-3/4,
+  WCH L-4 (R84 (a) uncited). Lesson: after the token pass, do a SECOND pass clause by clause asking "is every quantifier's range the packet's?".
+- Word-diffs: `git diff --no-index --word-diff=porcelain old new | grep '^[-+]'` on the line files; for lines inside a fixes file, extract «…»
+  with python, whitespace-normalise, one token per line, then `git diff --no-index -U0`.
+### Controls (docs/referee/scratch/, `python3 -I`, own engine rl_engine; inputs read from a `git worktree add --detach` of the frozen commit)
+- cut_probe.py (P-N5-CUT): W[t] = val(σ_t, τ_t), Wn[t] = val(σ_{t+1}, τ_t) (old-τ frame); MUT 1 OPT-OFF off-cycle, 2 anchor across a cut, 4 FC = #F,
+  5 new-τ frame BITE; 3 (LATE-SPLIT off-cycle) never. NOSTART=1 = S3 only (reproduces lanes' S3 counts exactly).
+- gap_probe.py (P-N5-GAP): OPT_2b counts the G-GAP-1 configuration; MUT 1/3/4/5 bite, 2 never.
+- latep_probe.py (P-N5-LATEP): LATE′, CIRCLE′, GAP-CLIMB, CHAIN, TXC descent; MUT 1/2/3/5 bite, 4 (T4) never.
+- wch_probe.py (P-N5-WCH): N5 and --lzc (N5-LZC built by patching one line of rl_engine.run's S4a); MUT 1-4 bite, 5 never (NC = 0).
+- cut_quotes.py: [Q path@commit:lines] quote checker (fragments at «…»); for «[Q SPEC:a-b]» packets adapt it to the stated quote base.
 ### Things only I know
-- scratch/cut_probe.py (rl_engine; W[t] = val(σ_t, τ_t), Wn[t] = val(σ_{t+1}, τ_t) = the old-τ frame). MUT 1 (OPT-OFF off-cycle), 2 (anchor
-  across a cut), 4 (FC = #F), 5 (new-τ frame) bite; MUT 3 (LATE-SPLIT off-cycle) never. NOSTART=1 = S3 start only. Fast: corpus n ≤ 120 in ~2 min.
-- Inputs: lane's experiments/si/odd/sbcg.lst read from a worktree at 2678f6c6 (scratchpad wt_cut; paths in cut_logs/sbcg_abs.lst are
-  absolute into that worktree, so they die with the container).
+- Lane tools can carry the wrong W frame across a τ-change (txcd.py did: w0 := W(σ, OLD τ)); always compare a lane's per-transition counts
+  with own engine right after τ-changes. Lane start files can be invalid (comp54_n80: non-edge); my parser repairs them silently with a NOTE.
+- The four N5 one-player lemmas recur in every packet (OPT-OFF (ii), W-MON′, W-SUCC, W-RETURN-G = R90 (a)-(d)); their case split must read
+  "v reached before / after π's cycle node" (G-GAP-1, WCH-N2). Check that case split in every new OPT-OFF-like proof.
+- REFEREE-2's and my engines agree to the unit on the same run set; differences are always run sets (given start vs S3, MAXN).
+- `git worktree` paths in *_logs/*.lst are absolute into the scratchpad and die with the container.
 
 ## HANDOVER (successor 18 -> successor 19), written 2026-10-30T00:52Z by date -u, context ~520k (Opus 5.5 under D15; label "(Opus 5.5, D15)")
 Lead: session_014FBi6o334DvwT5Uw2kDfoN (send_message via claude-code-remote MCP; first line "From REFEREE (<date -u>):", run `date -u` ALONE

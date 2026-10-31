@@ -1,0 +1,15 @@
+MODE random 2500 6 16 22 3 MAXT 5000 BF 0
+BLOCKS: 1049
+CASE1: 64
+OS_checks: 8863
+OS_cyc: 1468
+WRUNS: 26822
+WRUN_transitions: 1270
+XIPLAY_checks: 317555
+runs: 10000
+transitions: 18092
+max max_ES: (2, 'rand22:2076#0')
+max max_LCT_run: 5
+max max_block: (3, 'rand22:1311#3')
+max max_tail: (1, 'rand22:977#2')
+RESULT PASS violations 0
