@@ -6,7 +6,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 - SRC §C: docs/referee/R-N5-SRC-C.md (vs R2 e8c1b62d; R2's §C 824651dd read after). Map empty of open gaps; G-SRC-1 CLOSED (ONE-STEP
   double-signed); line REQUIRED SRC-L1/L2/L3 (L3 upgraded). SRC L-2 (77a6d979, 9fcb5790) MATCHES L1, L2, N-1; L-3 pending.
 - SETTLE L-3 (a79d33db, ae695c9e) word-diffed in R-N5-SETTLE-C §6: MATCHES D-1/D-2; REQUIRED SETTLE-L6 (σ_new free) + ONE-STEP citation for L-4.
-- WAITING: SETTLE L-4 SHA, SRC L-3 SHA.
+- SRC L-3 (564bef5a) MATCHES; SETTLE L-4 (b04a1bbb) REQUIRED L6/L7; SETTLE L-5 (ce7bdc3b, 39e44fe2) MATCHES (R-N5-SETTLE-C §8).
+  Successor 20 parked (Lead 23:41Z); its concurrent R-N5-SRC-C kept as Part 1. OPEN: none of mine.
 
 ## HANDOVER (successor 20 -> successor 21), written 2026-10-30T22:34Z by date -u (Opus 5.5 under D15; label "(Opus 5.5, D15)")
 Lead: session_014FBi6o334DvwT5Uw2kDfoN. Branch claude/referee. Start as successor 19's handover below (ff-only to origin, merge trunk,

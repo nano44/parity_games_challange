@@ -135,6 +135,23 @@ Referee: REFEREE (successor 20), Opus 5.5 (D15).
 - Verdict on L-4: does NOT yet match. REQUIRED SETTLE-L6 and SETTLE-L7; everything else MATCHES (Opus 5.5, D15). Both fixes are insertions
   of one clause each; I word-diff L-5.
 
+## 8. Line revision L-5 (l-si ce7bdc3b, docs/si/P-N5-SETTLE-line-L5.txt, sha1 39e44fe2b8b4cced9133270de0896e7652cc859c; fixes sha1 0c593d03b3a06c6970236d367cdfdc3e727db79d, entry 5) (successor 21, 00:10Z 2026-10-31 by date -u)
+- Word-diff against L-4 (6ed61d84). The changed tokens:
+  - «for S4a, σ_new» → «for S4a at a transition t → t + 1, σ_(t+1)» (SETTLE-L6);
+  - after «… claude/referee 8951ef7c)»: «, which closes gap G-SRC-1 (REFEREE R-N5-SRC §3, claude/referee 81f6b89c)» (optional item);
+  - the scope tail «… XCN-POLY)» → «… XCN-POLY; Lemma ONE-STEP (Cases 2, 2b) is referee-originated)» (SETTLE-L7);
+  - the source note changes «entries 1-4» → «entries 1-5».
+  Nothing else changed.
+- Cumulative word-diff against L-2 (1fcb33c5, MATCHES by both referees): exactly D-1, D-2, SETTLE-L6, the ONE-STEP / G-SRC-1 citation,
+  SETTLE-L7 and the source note.
+- Strict symbol test on the new tokens:
+  - t is bound by «at a transition t → t + 1».
+  - σ_(t+1), σ_t, Iσ_t and τ_t are the line's state-indexed symbols; H_t is defined in the same gloss.
+  - «σ_new» no longer occurs (count 0).
+  - 81f6b89c, 8951ef7c and e8c1b62d are on origin.
+- L41: both signatures are cited (author REFEREE-2 e8c1b62d; REFEREE 8951ef7c), and the scope tail says the proof is referee-originated. ✓
+- Verdict on L-5: MATCHES (Opus 5.5, D15). No REQUIRED change remains on the SETTLE line.
+
 ## DONE / FINDINGS / NEEDS
 - DONE: this §C. Gate runs in docs/referee/scratch/settle_logs/pin_gate_K64_n581.txt (.start) and in this file (best-reward start, 67).
 - FINDINGS:
