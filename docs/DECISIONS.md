@@ -365,3 +365,10 @@ does NOT cover S4b: an Odd mirror «S4b's τ' is a pointwise optimum of O(τ) ag
 P-N5-STAIR's O-ARENA) is a separate premise. A packet claim that needs an uncovered premise is not signed: it is moved to "not to sign"
 (or stated with the premise as an explicit hypothesis, labelled CONDITIONAL). Applied first to P-N5-STAIR (docs/new/P-N5-STAIR-box112.md
 sha1 31771241): O-ARENA is withdrawn from the to-sign list; nothing else in the packet uses it (L-NEW 41, 12:30Z).
+
+Lead reading L43 (2026-10-31 20:27Z by date -u):
+Lane DEADs in RESULTS lines. A lane DEAD of an ASYMPTOTIC statement (one with an unspecified constant, e.g. «DESC_F ≤ c·n») does not
+enter a RESULTS line as «DEAD»: it enters as DATA with its numbers and source commit, or not at all. «DEAD» in a landing line needs a
+refereed proof, or one instance exceeding an EXPLICIT bound (as R90's REP-LIN, 570 > 538). Grounds: CHECKER C108 E-1 and C109 E-3
+(«A DATA label does not cure an overclaim»), REFEREE ROOT-L4 / ROOT-L5 (claude/referee 74025e44). Applied: P-N5-STAIR line L-3 drops
+the DESC-LIN clause; P-N5-ROOT line L-2 drops the DESC-LIN and DESC*-LIN clauses.
