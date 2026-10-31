@@ -1120,3 +1120,23 @@ echo "si (P-N5-SETTLE L-4 pinned): PASS"
 # P-N5-SETTLE line revision L-5 (fixes entry 5, SETTLE-L6 / L7): must not change.
 echo "39e44fe2b8b4cced9133270de0896e7652cc859c  ../../docs/si/P-N5-SETTLE-line-L5.txt" | sha1sum -c --quiet
 echo "si (P-N5-SETTLE L-5 pinned): PASS"
+# box 59 (Lead, successor-38 brief): repaired W-REOPEN' (Even vertex of the escaped cycles switching in [u1, u2]) 0 violations; R166 pins
+# fall outside its scope; WIT witness on every in-scope repeat; per-escape CLOSE-W DEAD (frz40 u 44). Note docs/si/N5-WRE-box59.md.
+(cd anc58/inst && sha1sum -c --quiet pins.sha1) || { echo "box 59: pins changed"; exit 1; }
+o=$(python3 -I anc58/wrise2.py anc58/inst/lean_29_35.pg anc58/inst/lean_29_35.start)
+case "$o" in *"REP 2 EQ 1 "*"SW_CLOSED 1 SW_CLOSED_NOWRISE 0 "*"EVEN_NOSW 1 EVEN_NOSW_NOWRISE 1 "*) ;; *) echo "box 59: lean_29_35: $o"; exit 1;; esac
+o=$(python3 -I anc58/wrise2.py anc58/inst/leanc_29_35.pg anc58/inst/leanc_29_35.start)
+case "$o" in *"SW_CLOSED 1 SW_CLOSED_NOWRISE 0 "*"EVEN_NOSW 1 EVEN_NOSW_NOWRISE 1 "*) ;; *) echo "box 59: leanc_29_35: $o"; exit 1;; esac
+o=$(python3 -I anc58/wsw.py ../red/sax/instances/fbA_K8_m8_m8.pg ../red/sax/instances/fbA_K8_m8_m8.start)
+case "$o" in *"SCOPE 28 "*"CH_NONE 0 "*"CH_PFXC 28 "*) ;; *) echo "box 59: fbA wsw: $o"; exit 1;; esac
+o=$(python3 -I anc58/tight.py ../red/sax/instances/fbA_K8_m8_m8.pg ../red/sax/instances/fbA_K8_m8_m8.start)
+case "$o" in *"TIGHTV 0 SW 28 SW_TIGHT 0 SW_NOTIGHT 28 "*) ;; *) echo "box 59: fbA tight: $o"; exit 1;; esac
+o=$(python3 -I anc58/escw.py ../red/n5inj/instances/frz40.pg anc58/inst/frz40_default.start)
+case "$o" in *"CLOSE 3 NOCLOSE 0 CLOSE_WX 2 CLOSE_NOWX 1 "*) ;; *) echo "box 59: frz40: $o"; exit 1;; esac
+for f in wrise2:WRISE2 wsw:WSW tight:TIGHT escw:ESCW; do [ "$(grep -c " ${f#*:} " anc58/${f%:*}_corpus.txt)" = 1132 ] || { echo "box 59: ${f%:*} corpus incomplete"; exit 1; }; done
+b59sum() { awk -v k="$2" '{for(i=1;i<=NF;i++) if($i==k) a+=$(i+1)} END{print a+0}' "anc58/$1_corpus.txt"; }
+[ "$(b59sum wrise2 SW_CLOSED) $(b59sum wrise2 SW_CLOSED_NOWRISE) $(b59sum wrise2 EVEN_NOSW) $(b59sum wrise2 REP)" = "63 0 54 121" ] || { echo "box 59: wrise2 totals"; exit 1; }
+[ "$(b59sum wsw SCOPE) $(b59sum wsw CH_PFXC) $(b59sum wsw WSW_FLAT)" = "63 63 397" ] || { echo "box 59: wsw totals"; exit 1; }
+[ "$(b59sum tight SW_TIGHT) $(b59sum tight TIGHTV)" = "63 0" ] || { echo "box 59: tight totals"; exit 1; }
+[ "$(b59sum escw ESC) $(b59sum escw CLOSE) $(b59sum escw CLOSE_NOWX) $(b59sum escw CLOSE_EFLAT)" = "1434 1301 20 0" ] || { echo "box 59: escw totals"; exit 1; }
+echo "si (box 59: W-REOPEN' repaired, WIT, CLOSE-W DEAD): PASS"
