@@ -18,7 +18,7 @@ def analyse(g, tr, fb):
         i = 0
         while i < len(a) and a[i] == b[i]: i += 1
         return i
-    NL, WID = {}, {}; st = {"D": 0, "WT": 0}
+    NL, WID = {}, {}; st = {"D": 0, "WT": 0}; ST = {}
     for F in runs:
         if len(F) < 2: continue
         t = tr[F[0]][1]; Ws = {k: W(tr[k][0], t) for k in F}; CS = {k: [cs(x) for x in Ws[k]] for k in F}
@@ -34,11 +34,12 @@ def analyse(g, tr, fb):
                     if sub: subs.append(sub); sub = []
                 else: sub.append(k)
             if sub: subs.append(sub)
-            WID[lev] = max(WID.get(lev, 0), paid)
+            WID[lev] = max(WID.get(lev, 0), paid); ST.setdefault(lev, []).append(paid)
             for sb in subs: block(sb, lev + 1)
         block(ks, 1)
+    analyse.stretches = {d: sorted(v, reverse=True) for d, v in ST.items()}
     return st["WT"], st["D"], NL, WID
 if __name__ == "__main__":
     g = xcn.pg.read(sys.argv[1]); s = n5b.read_start(sys.argv[2], g) if len(sys.argv) > 2 else (None, None)
     tr, fb = xcn.trace(g, *s); WT, D, NL, WID = analyse(g, tr, fb)
-    print(f"HIERX {os.path.basename(sys.argv[1])} n {g.n} WT {WT} DEPTH {D} " + " ".join(f"NLEV{d} {NL[d]}" for d in sorted(NL)) + " | width " + " ".join(f"W{d} {WID[d]}" for d in sorted(WID)))
+    print(f"HIERX {os.path.basename(sys.argv[1])} n {g.n} WT {WT} DEPTH {D} " + " ".join(f"NLEV{d} {NL[d]}" for d in sorted(NL)) + " | width " + " ".join(f"W{d} {WID[d]}" for d in sorted(WID)) + " | top stretch widths " + " ".join(f"L{d} {analyse.stretches[d][:4]}" for d in sorted(analyse.stretches)))
