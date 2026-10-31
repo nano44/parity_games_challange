@@ -230,3 +230,15 @@ Referee: REFEREE (successor 21), Opus 5.5 (D15). Lead brief 2026-10-31 12:40Z (r
 - ODD-L5 is met: (y, z) is now bound in FUEL-COUNT's own clause. No new symbol is introduced.
 - Fixes entry 5 quotes my ODD-L5 and my G-ODD-2 signature verbatim ✓.
 - Verdict on L-2: MATCHES (Opus 5.5, D15). No REQUIRED change remains on the P-N5-ODD line.
+
+### §C addendum 2: line revision L-3 (l-si 2f8e5b2ea, docs/si/P-N5-ODD-line-L3.txt, sha1 f83b169ed1d51015a28ece3d34bd522cee72737a; fixes entry 6, CHECKER C108 E-1 / N-1) (19:31Z 2026-10-31 by date -u)
+- Word-diff against L-2 (ee114e2f): exactly two changes, and nothing else:
+  - «for every {+state k, every+} positional Odd strategy ρ and every vertex x»;
+  - «and of [-all seven statements-]{+every statement+} in both referees' own checks».
+  The sha1 is re-hashed and matches.
+- Strict symbol test: k in the R57 gloss is now bound («for every state k»). No new symbol is introduced.
+- DATA wording, for my side. My odd_probe.py (§7) checks five of the seven statements directly: OLD-PLAY; ODD-STEP, including Case II
+  (NO-RET); SRC-ROOT, whose chain exercises ODD-RELAY at every step; FUEL-LEX; and FUEL-COUNT. ODD-ADD is a counting corollary of
+  ODD-RELAY and is not checked separately. Every statement I checked has 0 violations. So «0 violations … of every statement in both
+  referees' own checks» is accurate for my side, and the old «all seven» was not.
+- Verdict on L-3: MATCHES (Opus 5.5, D15).
