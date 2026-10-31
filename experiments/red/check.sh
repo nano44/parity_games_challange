@@ -479,6 +479,7 @@ echo "059d2733861190063e9c3fe0270077c2a54ebc18  ../../docs/red/P-N5-SRC-line-L1.
 echo "9fcb57903ad64a0ab7f56acb2f651f354b3616fc  ../../docs/red/P-N5-SRC-line-L2.txt" | sha1sum -c --quiet || { echo "P-N5-SRC L-2 changed"; exit 1; }
 echo "5736d8ab828d8244c6466abbc08d4fa8d8c03b41  ../../docs/red/P-N5-SRC-line-L3.txt" | sha1sum -c --quiet || { echo "P-N5-SRC L-3 changed"; exit 1; }
 echo "ec2c713989eb3075060247b714eb49a5b2abf875  ../../docs/red/P-N5-SRC-line-L4.txt" | sha1sum -c --quiet || { echo "P-N5-SRC L-4 changed"; exit 1; }
+echo "2b39581d367687ec41067d690e448541f2ac7678  ../../docs/red/P-N5-SRC-line-L5.txt" | sha1sum -c --quiet || { echo "P-N5-SRC L-5 changed"; exit 1; }
 # R150 (successor 35): CONJECTURE CASC-EDGE (L-NEW box 101, RET(X; e) <= deg X) DEAD: cedge_n32, Even 7 (deg 2) returns 4 times under ONE fresh root
 # (20 -> 7 at q 9), depths 0-3 (L-NEW retcause.py @ 457e41fe, data in casc/cedge_out.txt); here: sha1, n5b return count, xeng, Oink
 out=$(python3 -I casc/retx.py casc/instances/cedge_n32.pg casc/instances/cedge_n32.start); [[ "$out" == "RETX cedge_n32.pg n 32 F 26 returns 60 topX [(7, 5), (21, 5), (6, 4), (27, 3), (3, 3), (15, 3)]" ]] || { echo "retx cedge drifted: $out"; exit 1; }
