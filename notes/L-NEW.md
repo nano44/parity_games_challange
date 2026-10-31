@@ -10,6 +10,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - DATA: FAILS for TBR / ARSB on switchbestexp_2..6 (HI rises, unsettling 3-45; settle gap N5 16-22, TBR 30-132, ARSB 29-221).
 - DATA: blind on L-RED's builds (SG = BG ~ iterations up to 404), where ARSB stops in 2-23 iterations. Corpus 0 violations.
 - Next (untested): Even's climb inside a tau-stretch below fixed HI (one-player G_tau, arena from Isigma vs sigma-bar).
+### ROOT line L-3 (Lead 23:15Z; R98/R99 landed): docs/new/P-N5-ROOT-line-L3.txt, sha1 7b091692; fixes entry 4 (Lead pre-check
+  F-1 R98/R99 labels, F-2 L41 tail clause through premises, F-3 «R-descent»).
 ### Box 117 ERRATUM: SQUEEZE = landed RESULTS R18 (d) Lemma S (b) (box 21 §2.2; Lemma R = DUAL-ORDER). Reported to the Lead.
 ### Box 118 N5-GATE (Lead 22:19Z; docs/new/N5-GATE-box118.md; tools experiments/new/box118/)
 - PROVED (lane) CONSISTENT-RED: consistent windows (Is = IW, no fallback) inside a tau-stretch are R17 switch-best runs on G_tau,
