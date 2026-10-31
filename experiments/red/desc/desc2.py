@@ -14,6 +14,9 @@ import pg, re
 EXCL = os.environ.get("EXCL")
 LAB = [l.split('"')[1] if '"' in l else "" for l in open(sys.argv[1]) if re.match(r"\s*\d", l)]
 INU = [not (EXCL and re.fullmatch(EXCL, LAB[v])) for v in range(len(LAB))]
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "startck")); import startck   # D-ODD-1: reject non-edges
+if len(sys.argv) > 2 and startck.check(sys.argv[1], sys.argv[2]) and os.environ.get("ALLOW_BAD_START") != "1":
+    sys.exit(f"BAD START {sys.argv[2]}: {startck.check(sys.argv[1], sys.argv[2])[:3]} (set ALLOW_BAD_START=1 to run anyway)")
 g = load(sys.argv[1]); st = readstart(sys.argv[2]) if len(sys.argv) > 2 else None; n = g.n; own = g.owner
 E, Ed = Engine(g), Engine(dual(g)); s, t = start_pair(g, E, Ed, st); S, TAU, FB = [tuple(s)], [tuple(t)], []
 while True:
