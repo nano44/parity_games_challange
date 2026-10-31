@@ -17,6 +17,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - Box 114: P-N5-ROOT FROZEN (docs/new/P-N5-ROOT-box114.md + line docs/new/P-N5-ROOT-line.txt): DESC-ROOT, ROOT-STAIR, ORIGIN-NEW
   (proof via R15 Lemmas A/B in the one-player arena; y not own cycle node since y not in C), NEW-FUEL, ROOT-SPLIT, FUEL-ROOT-STAIR.
   STAIR fixes + L-1 pushed 360d002f (fixes f07676f4, L-1 d027f5d8). Repaired starts equal L-RED's / L-SI's.
+- Box 115 N5-SWX (Lead 15:18Z): docs/new/N5-SWX-box115.md. N5 on switchallexp_N (N 2..8): 2N iters, 1 W-run, pair fuel <= 1
+  (faithful). Breaking step = S4a arena optimum (ARSB = S4a vs sigma-bar collapses it; SAT = switch-all + S4b keeps 2^N). PROVED
+  (lane) STALE-FREE. switchbestexp: ARSB grows (58..412), N5 linear (32..62): tau separates there (DATA/READING).
 ### Things only I know (successor 42): desc4.py is the box 113 tool (VERB=1 prints OLDEDGE lines); corpus run4.sh takes ~2-3 min on 4
   cores here (much faster than box 111's estimate). Never put the pgrep/pkill pattern text in a command that also runs the target: an
   until-loop waiting on "[d]esc4" deadlocked against a shell whose heredoc contained "desc4.py", and pkill killed my shell (exit 144).
@@ -590,6 +593,10 @@ Stop (S5) when Iσ = Iτ = ∅: Even wins v iff the cycle node of Ξσ(v) has ev
   (b), (c); length < 2(n + m)(n² − n + 1 + SBC)). DEAD: NOFB (n3all_maxph_0), W-frame twin N5-SFW cycles (theta_thf16, period 10; 49/413).
   DATA: correct on 1,038 library + families + hard families; SF ≈ ½ N5; runquad 264 → 2, topfix 7N + 43; switchbestexp N=10 619 vs 89, SBC 97.
   Open count SBC (CONJECTURE SF-POLY OPEN).
+
+## Dead ends (successor 42, box 115; docs/new/N5-SWX-box115.md)
+- «fixed tau / W-run is what kills switchallexp's 2^N»: DEAD on switchallexp_N (ARSB, no tau, collapses it; SAT with tau keeps it).
+- «stale move = cycle-closing move»: only 19/37 (N 2), 72/121, 218/335.
 
 ## Dead ends (successor 42; also in docs/new/N5-DESCSTAR-box113.md §7)
 - U = switch sites as a passive-proof witness set: DEAD, new/box113/inst/cp_K4 (L-RED R162; observers are Even switching vertices; DESC_S =

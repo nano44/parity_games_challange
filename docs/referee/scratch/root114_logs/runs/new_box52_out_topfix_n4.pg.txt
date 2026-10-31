@@ -1,0 +1,15 @@
+GAME new/box52/out/topfix_n4.pg
+DCOPIED 100
+DR 116
+DR_chk 222
+DS 6
+DT 0
+GAMES 1
+NF_chk 350
+ON_chk 223
+ROLD 1
+TS 0
+trans 79
+wruns 5
+VIOLATIONS 0
+RC 0

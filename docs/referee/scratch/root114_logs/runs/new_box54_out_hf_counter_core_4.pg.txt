@@ -1,0 +1,4 @@
+GAME new/box54/out/hf/counter_core_4.pg
+GAMES 1
+VIOLATIONS 0
+RC 0

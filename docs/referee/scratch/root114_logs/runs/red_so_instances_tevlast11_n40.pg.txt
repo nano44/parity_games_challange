@@ -1,0 +1,15 @@
+GAME red/so/instances/tevlast11_n40.pg
+DCOPIED 0
+DR 7
+DR_chk 7
+DS 0
+DT 0
+GAMES 1
+NF_chk 38
+ON_chk 38
+ROLD 0
+TS 0
+trans 31
+wruns 2
+VIOLATIONS 0
+RC 0

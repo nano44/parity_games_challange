@@ -1,0 +1,4 @@
+GAME red/n5/instances/sym_h12_s1.pg
+GAMES 1
+VIOLATIONS 0
+RC 0

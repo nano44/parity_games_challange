@@ -1,0 +1,15 @@
+GAME red/fbx/instances/kt6_n58.pg
+DCOPIED 2
+DR 15
+DR_chk 18
+DS 1
+DT 0
+GAMES 1
+NF_chk 45
+ON_chk 41
+ROLD 0
+TS 4
+trans 29
+wruns 3
+VIOLATIONS 0
+RC 0

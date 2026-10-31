@@ -1,0 +1,4 @@
+GAME new/box59/out/rnd/r103_n70.pg
+GAMES 1
+VIOLATIONS 0
+RC 0

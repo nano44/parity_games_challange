@@ -1,0 +1,15 @@
+GAME new/box54/out/switchbestexp_1.pg
+DCOPIED 13
+DR 18
+DR_chk 32
+DS 1
+DT 0
+GAMES 1
+NF_chk 36
+ON_chk 36
+ROLD 0
+TS 0
+trans 18
+wruns 2
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,15 @@
+GAME red/n5inj/instances/block_bk32.pg
+DCOPIED 0
+DR 11
+DR_chk 11
+DS 0
+DT 0
+GAMES 1
+NF_chk 37
+ON_chk 37
+ROLD 0
+TS 0
+trans 21
+wruns 1
+VIOLATIONS 0
+RC 0

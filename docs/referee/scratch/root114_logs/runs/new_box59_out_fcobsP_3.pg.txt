@@ -1,0 +1,15 @@
+GAME new/box59/out/fcobsP_3.pg
+DCOPIED 103
+DR 77
+DR_chk 187
+DS 7
+DT 0
+GAMES 1
+NF_chk 192
+ON_chk 176
+ROLD 0
+TS 0
+trans 34
+wruns 2
+VIOLATIONS 0
+RC 0

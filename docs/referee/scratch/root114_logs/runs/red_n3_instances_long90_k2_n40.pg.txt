@@ -1,0 +1,15 @@
+GAME red/n3/instances/long90_k2_n40.pg
+DCOPIED 21
+DR 38
+DR_chk 59
+DS 0
+DT 0
+GAMES 1
+NF_chk 120
+ON_chk 118
+ROLD 0
+TS 0
+trans 82
+wruns 9
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,15 @@
+GAME red/xing/instances/kw_n48.pg
+DCOPIED 0
+DR 3
+DR_chk 3
+DS 0
+DT 0
+GAMES 1
+NF_chk 44
+ON_chk 44
+ROLD 0
+TS 0
+trans 40
+wruns 1
+VIOLATIONS 0
+RC 0

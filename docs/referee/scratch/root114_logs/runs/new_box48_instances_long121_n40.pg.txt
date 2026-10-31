@@ -1,0 +1,15 @@
+GAME new/box48/instances/long121_n40.pg
+DCOPIED 48
+DR 54
+DR_chk 109
+DS 7
+DT 0
+GAMES 1
+NF_chk 181
+ON_chk 178
+ROLD 1
+TS 0
+trans 113
+wruns 9
+VIOLATIONS 0
+RC 0

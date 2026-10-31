@@ -1,0 +1,15 @@
+GAME red/so/instances/pftheta34_n32.pg
+DCOPIED 1
+DR 26
+DR_chk 28
+DS 1
+DT 0
+GAMES 1
+NF_chk 69
+ON_chk 67
+ROLD 0
+TS 0
+trans 34
+wruns 1
+VIOLATIONS 0
+RC 0

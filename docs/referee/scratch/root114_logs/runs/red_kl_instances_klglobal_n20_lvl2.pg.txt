@@ -1,0 +1,4 @@
+GAME red/kl/instances/klglobal_n20_lvl2.pg
+GAMES 1
+VIOLATIONS 0
+RC 0
