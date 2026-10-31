@@ -19,7 +19,7 @@ History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50
   Lead (a) |F| and (b) R90 (e) labels = notes, no W2). R93 LANDED 31f8c8a7 (11:51:50Z): Add. 1 PASS (068bf0ec) + CI 5353 green: C103 CLOSED.
 - C104 = R94 (P-N5-FIXD, L-NEW 38/39), draft 7936b4bd @ ef1599d0: PASS 5c4d6e45 (title L-3 minus lane marker; FLAT-SW two-referee rule met,
   N-3 → Lead reading L41). R94 LANDED 5fc792c8 (18:40:32Z): Add. 1 PASS (c34d98a2) + CI 5469 green: C104 CLOSED.
-  C105 CLOSED (R95 LANDED 2a136552; Add. 2 landed check PASS, CI 5528 green). Nothing open. HOLD: C106 = R96 P-N5-SETTLE after line L-3 matches at both referees (draft 5e79f732 held). Counter: next new check is C106. Prep (kept):
+  C105 CLOSED (R95 LANDED 2a136552; CI 5528 green). OPEN: C106 (R96 P-N5-SETTLE draft f6dce96b @ 5314536f) FAIL E-1 (entry l. 277-475 stale: L-2 as title, no G-SRC-1 / ONE-STEP / L41, fixes 1-2) + E-2 (UPDATE stamp date), 30097a14, Lead told 01:10Z. NEXT: C106 Add. 1 (word-diff the revised entry; re-check stamp), landed check + CI. Then R97 SRC. Counter: next new check is C107. Prep (kept):
   - Pins measured: packet 938d8796 ce8c4803 (= l-new head content); fixes 9631bbc5 eb5bd5e1 (H0-H16 at d3d98d1c b1127e57, H17 appended
     9631bbc5); line-H0 ab1ee38a (a file sha1, not a commit); old line acf3234f. Reports: REFEREE e9b32f72 (R-N5-FRAME.md 90c2ca4d), §C
     0b080b2c (9a00c9b2; its §4 reviews fixes at d3d98d1c: H17 NOT reviewed by REFEREE); REFEREE-2 a1142a46 / 7571febe (report), §C 1008d66e,
