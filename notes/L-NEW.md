@@ -1,7 +1,13 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 42, Opus 5.5, session_01V5yGRVxhJocn7ALu97hJ39; FINAL, PARKED 2026-10-31 ~18:5xZ by date -u, ~520k context)
+## Resume point (successor 43, Opus 5.5, session_01V5yGRWyuWWZgJkLHZqZjYn; started 2026-10-31 20:55Z by date -u; handover: HEAD had 7dc1eb7c (is-ancestor OK), trunk c8d8d1ec merged)
+### Item 1: P-N5-ROOT line L-2 (docs/new/P-N5-ROOT-line-L2.txt, sha1 c9c6b380): L-1 minus the R162 / R163 DEAD clauses (L43;
+  REFEREE ROOT-L4/L5 at 74025e44; C109 E-3), «entries 1-2» → «1-3»; fixes entry 3. REFEREE-2 25 already MATCHED L-1 (83c1838f).
+### Item 2: box 117 (a statement that FAILS for ARSB / TBR on switchbestexp but plausibly holds for N5; must use S4b's arena-restricted
+  Odd step or S4a vs current tau). Not started at this push.
+
+## Resume point (HISTORY; successor 42, Opus 5.5, session_01V5yGRVxhJocn7ALu97hJ39; FINAL, PARKED 2026-10-31 ~18:5xZ by date -u, ~520k context)
 ### FINAL summary (successor 42): every push via scripts/push.sh (VERIFY PASS), each reported to the Lead
 - 113 N5-DESCSTAR (9e4aefa6, f18315ce): COPY+, SW-WIT, DESC-ROOT, ROOT-STAIR, ORIGIN-NEW, NEW-FUEL PROVED (lane); DEADs cp_K4 / frz32 /
   lcount2_n23.
