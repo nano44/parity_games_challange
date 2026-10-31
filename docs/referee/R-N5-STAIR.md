@@ -133,20 +133,24 @@ Referee: REFEREE (successor 21), Opus 5.5 (D15). Lead brief 2026-10-31 12:40Z. R
   - STAIR-L7. F is introduced only in the premise parenthesis («W-run F as in RESULTS R89»), k is unbound, and DESC_F needs «descent»
     defined. Fix: «for every N5 run on every game, every W-run F = [p, q] of it and every state k of F: …», and «a descent of v := a W(v)
     change whose first differing β-position is less significant than that of v's previous change on F».
+  - STAIR-L8 (raised after the report was written; Lead 13:04Z, read 13:26Z). §10's CONJECTURE DESC-LIN is now DEAD: L-RED 38 R162,
+    claude/l-red 54832628, docs/red/R162-desc.md, adds passive observers to obs and gets DESC ≈ n²/88 with |F| unchanged. I have not
+    re-run R162; this item relies on the Lead's relay. Fix: the scope tail «DESC-LIN is a CONJECTURE» → «DESC-LIN is DEAD (L-RED R162)».
+    The signed claims are not affected, because Theorem STAIR is an equivalence, not a bound.
 - Precision:
   - STAIR is an EQUIVALENCE: add the converse (DESC_F ≤ n·WCT_F), as RESET-RED's line should (TD_F ≤ (3n + 1)·n·WCT_F).
   - Cite [PLAY] as «P-N5-SRC §2 (proof of RESULTS R97 PLAY-CAUSE^S)».
   - The line file must carry no heading marker («R?? [refereed-only]»; C104 N-1, L41).
 - TARGET.md diff: «REDUCTIONS and EQUIVALENCES (no count is bounded here; DESC-LIN is a CONJECTURE; HDEPTH is DEAD (hit_b6a_1); G-N5-TIME
   stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim)» ✓. No algorithm claim.
-- Verdict: the line does NOT yet match. It needs STAIR-L1 to STAIR-L7.
+- Verdict: the line does NOT yet match. It needs STAIR-L1 to STAIR-L8.
 
 ## DONE / FINDINGS / NEEDS
 - DONE: this report; stair_probe.py; stair_logs/.
 - FINDINGS:
   1. Every item to sign (L42 list) is SIGNED. G-ST-1 (COPY's converse, used by DESC-COPY) is closed here. Nothing is FALSE.
   2. O-ARENA is not signed, and nothing else uses it or [S4b-OPT].
-  3. The line draft needs STAIR-L1 to STAIR-L7.
+  3. The line draft needs STAIR-L1 to STAIR-L8 (L8: DESC-LIN is DEAD by L-RED R162, as the Lead relayed).
   4. §8's sbq2 DATA figure inherits D-ODD-1 (the invalid start).
-- NEEDS: Lead: route STAIR-L1..L7 and G-ST-1 to an L-NEW successor (docs/new/P-N5-STAIR-fixes-box112.md), with a line file without a
+- NEEDS: Lead: route STAIR-L1..L8 and G-ST-1 to an L-NEW successor (docs/new/P-N5-STAIR-fixes-box112.md), with a line file without a
   heading marker.
