@@ -20,6 +20,8 @@ STEP 0: clone stale at da88a6d4 AGAIN; ff to 051eb196, trunk merged c6c30141. Or
   INS-POLY (tight-sibling Ξ-overtakes per W-constant interval, open). Tool sb53/treestab.py; pins «box 53b». PARKED after it.
 - Box 53c (Lead 06:43Z, k-SOURCE compounding): note §8. R94's K flat on src2_K3 / src1_K4; CEIL-ACC PROVED; leapfrog families paid by A
   (AUP ≤ 1, ANDN ≤ 2); reduction to AUP-POLY ∧ AFLAT-POLY. Tools phasek.py, ceilpot.py; pins «box 53c». PARKED after it (~490k).
+- Box 53d (Lead 07:25Z): note §9. DEAD «A falls at every source-free transition» (u23sw64_n32; corpus 7,161 source-free non-falls);
+  CEIL-ACC does not join SRC-COUNT. PARKED (~510k).
 ### Queue
 00. AUP-POLY / AFLAT-POLY (§8): why A falls on leapfrog families; bound its rises and flats, or kill it.
 0. INS-POLY (§7): bound tight-sibling Ξ-overtakes per W-constant interval (common ceiling W, gap set Z), or kill it.
