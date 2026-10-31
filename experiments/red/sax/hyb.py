@@ -66,7 +66,7 @@ def run(g, mode, cap=10 ** 5):
         if os.environ.get("WMON") == "1" and nt == tau and mode != "sa":
             Wg = Engine(pg.Game(list(g.prio), list(g.owner), [[tau[v]] if g.owner[v] == 1 else g.succ[v] for v in range(n)]))
             a, _ = Wg.evaluate(tuple(sigma)); b, _ = Wg.evaluate(tuple(ns))
-            d = sum(1 for v in range(n) if Wg.key(b[v]) < Wg.key(a[v])); WD[0] += d; WD[1] += d > 0
+            d = sum(1 for v in range(n) if Wg.key(b[v]) < Wg.key(a[v])); WD[0] += d; WD[1] += d > 0; WD.append((d > 0, fb > fb0))
         sigma, tau = ns, nt; taus.append(tuple(tau)); run.TR.append((tuple(sigma), tuple(tau))); run.FB.append(int(fb > fb0))
     runs, cur = [], 1
     for a, b in zip(taus, taus[1:]):
@@ -80,4 +80,4 @@ if __name__ == "__main__":
     mode, path = sys.argv[1], sys.argv[2]; cap = int(sys.argv[sys.argv.index("--cap") + 1]) if "--cap" in sys.argv else 10 ** 5
     g = pg.parse("".join(l for l in open(path) if not l.lstrip().startswith("%")))
     it, fb, L, R, win = run(g, mode, cap)
-    print(f"HYB {mode} {os.path.basename(path)} n {g.n} iterations {it} fallbacks {fb} tau-runs {R} longest-tau-run {L} win_even {sum(1 for x in win if x == 0)}" + (f" WDROP {run.WD[0]} WDROPIT {run.WD[1]}" if os.environ.get("WMON") == "1" else ""))
+    print(f"HYB {mode} {os.path.basename(path)} n {g.n} iterations {it} fallbacks {fb} tau-runs {R} longest-tau-run {L} win_even {sum(1 for x in win if x == 0)}" + (f" WDROP {run.WD[0]} WDROPIT {run.WD[1]} WDROP_AT_FALLBACK {sum(1 for x in run.WD[2:] if x[0] and x[1])} FALLBACK_NO_DROP {sum(1 for x in run.WD[2:] if x[1] and not x[0])} MAXSTRETCH {max(len(t) for t in "".join("F" if x[1] else "." for x in run.WD[2:]).split("F"))}" if os.environ.get("WMON") == "1" else ""))

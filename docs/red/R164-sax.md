@@ -121,6 +121,32 @@ Started 14:47Z (Lead GO 14:47Z), written ~15:1xZ (date -u), 2026-10-31. Labels: 
   x's play, and x's play must take super-polynomially many W-rises. That is again a W-monotone counter (§3): the per-vertex W-chain of
   x must be long. That needs DESC* at depth ≥ 3 (R163).
 
+## 1c. switchbestexp's carry inside one τ-world (Lead 16:15Z, L-NEW 42 box 115: «rebuild the carry so that it is re-armed WITHOUT an
+Odd re-optimisation, inside one N5 τ-stretch»)
+- Experiment: H3 = S4a against the FROZEN start τ, with N5's switch-all fallback when S4a is stuck. This is exactly «re-arm the carry
+  from the Even side only, with τ never moving». WMON=1 records per iteration whether some vertex's W (against that τ) drops, and
+  whether the iteration is a fallback.
+  | N | n | iterations | fallbacks | iterations with a W-drop | of them at a fallback | fallbacks without a drop | longest fallback-free stretch |
+  | --- | --- | --- | --- | --- | --- | --- | --- |
+  | 3 | 85 | 107 | 8 | 8 | 8 | 0 | 59 |
+  | 4 | 110 | 157 | 12 | 12 | 12 | 0 | 65 |
+  | 5 | 135 | 220 | 16 | 16 | 16 | 0 | 71 |
+  | 6 | 160 | 296 | 20 | 20 | 20 | 0 | 77 |
+  | 7 | 185 | 385 | 24 | 24 | 24 | 0 | 83 |
+  | 8 | 210 | 487 | 28 | 28 | 28 | 0 | 89 |
+  - switchallexp_5: 16 fallbacks = 16 W-drop iterations; 0 fallbacks without a drop.
+- DATA: in one τ-world, the Even-side re-arms of the carry are EXACTLY the switch-all fallbacks (S4c), and each one is a W-DROP. Between
+  them, S4a's W-monotone stretches are linear (6N + 41).
+  - The quadratic total (≈ 6.5N²) is (4(N − 1) re-arms) × (a linear stretch).
+- With S4a W-monotone (§0, PROVED lane), an N5 W-run (τ constant, NO fallback) cannot contain such a re-arm. Every re-arm of
+  switchbestexp's carry ends the W-run: a τ-move in N5 itself (exactly N of them), or a fallback in H3.
+- OBSTRUCTION (DATA + the lemma, for this template): «each re-arm of the switchbestexp / switchallexp carry needs a W-drop against τ, i.e.
+  a τ-move or a fallback, so it is a W-run boundary».
+  - Instance: switchbestexp_N under H3 (above) and under N5 (τ-moves = N, W-runs ≤ 2, |F| = 6.5N + 5).
+  - What escapes it: a re-arm paid by a W-RISE instead of a drop, as on fbA (§1b: the gate re-opens once per ladder rung, all inside one
+    W-run, PLAT = K − 1). Such re-arms are bounded by the W-chain length of the carrier, so super-polynomially many need a W-monotone
+    nested counter (§3, R163's DESC* at depth ≥ 3). Not built.
+
 ## 2. Search side (hd/wclimb.py, new REARM=3: objective (longest W-run |F|, −fallbacks); n5b SPEC traces)
 - Objective (|F|, −fallbacks), with |F| = the longest fallback-free W-run of the n5b SPEC trace. Mutations as in R160: retarget, add or
   drop an edge, change a priority, change a start choice; the start stays valid. 40 min per climb, timed out (best kept in the log only).

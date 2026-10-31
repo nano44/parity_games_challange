@@ -596,7 +596,9 @@ out=$(python3 -I seg/xeng.py flipev/instances/sbq2_K8_m16.pg desc/instances/sbq2
 # R164 (successor 38): switch-all counter (switchallexp, L-SI box 58) vs N5 features (sax/hyb.py): H1 (switch-all Even, N5 Odd, tau fixed
 # 61/70 steps) = classical 70 with 3 W-drop iterations; n5 mode = n5.py (7); H3 (S4a vs frozen tau) 28
 python3 -I ../hard-families/pgsolver_port.py switchallexp 3 > "$t/sx3.pg"
-out=$(WMON=1 python3 -I sax/hyb.py H1 "$t/sx3.pg"); [[ "$out" == "HYB H1 sx3.pg n 49 iterations 70 fallbacks 0 tau-runs 4 longest-tau-run 61 win_even 0 WDROP 8 WDROPIT 3" ]] || { echo "R164 H1 drifted: $out"; exit 1; }
+out=$(WMON=1 python3 -I sax/hyb.py H1 "$t/sx3.pg"); [[ "$out" == "HYB H1 sx3.pg n 49 iterations 70 fallbacks 0 tau-runs 4 longest-tau-run 61 win_even 0 WDROP 8 WDROPIT 3 WDROP_AT_FALLBACK 0 FALLBACK_NO_DROP 0 MAXSTRETCH 67" ]] || { echo "R164 H1 drifted: $out"; exit 1; }
+python3 -I ../hard-families/pgsolver_port.py switchbestexp 3 > "$t/sb3.pg"   # R164 §1c: in one frozen-tau world every re-arm is a W-dropping fallback
+out=$(WMON=1 python3 -I sax/hyb.py H3 "$t/sb3.pg"); [[ "$out" == "HYB H3 sb3.pg n 85 iterations 107 fallbacks 8 tau-runs 1 longest-tau-run 107 win_even 0 WDROP 132 WDROPIT 8 WDROP_AT_FALLBACK 8 FALLBACK_NO_DROP 0 MAXSTRETCH 59" ]] || { echo "R164 H3 sb3 drifted: $out"; exit 1; }
 out=$(python3 -I sax/hyb.py n5 "$t/sx3.pg"); [[ "$out" == "HYB n5 sx3.pg n 49 iterations 7 fallbacks 0 tau-runs 4 longest-tau-run 3 win_even 0" ]] || { echo "R164 n5 drifted: $out"; exit 1; }
 out=$(python3 -I ../new/n5.py n5 "$t/sx3.pg" "$t/sx3.sol" | tail -1); [[ "$out" == "RESULT mode=n5 n=49 iterations=7 fallback=0 "* ]] || { echo "R164 n5.py drifted: $out"; exit 1; }
 # R164 (successor 38) PLAT: N5 equal-swap-key escape plateau = K - 1 in ONE W-run on fbA (R158 design A; Odd gate a_j escapes g_j once per
