@@ -18,7 +18,7 @@ def analyse(g, tr, fb):
         i = 0
         while i < len(a) and a[i] == b[i]: i += 1
         return i
-    NL, WID = {}, {}; st = {"D": 0, "WT": 0}; ST = {}
+    NL, WID = {}, {}; st = {"D": 0, "WT": 0}; ST = {}; RU = {}
     for F in runs:
         if len(F) < 2: continue
         t = tr[F[0]][1]; Ws = {k: W(tr[k][0], t) for k in F}; CS = {k: [cs(x) for x in Ws[k]] for k in F}
@@ -35,11 +35,16 @@ def analyse(g, tr, fb):
                 else: sub.append(k)
             if sub: subs.append(sub)
             WID[lev] = max(WID.get(lev, 0), paid); ST.setdefault(lev, []).append(paid)
+            # REUSE: Even vertices that switch inside >= 2 distinct child stretches of this stretch (a re-armed inner wave)
+            cnt = {}
+            for sb in subs:
+                for v in {v for k in sb for v in range(g.n) if g.owner[v] == 0 and tr[k][0][v] != tr[k + 1][0][v]}: cnt[v] = cnt.get(v, 0) + 1
+            RU[lev + 1] = max(RU.get(lev + 1, 0), sum(1 for c in cnt.values() if c >= 2))
             for sb in subs: block(sb, lev + 1)
         block(ks, 1)
-    analyse.stretches = {d: sorted(v, reverse=True) for d, v in ST.items()}
+    analyse.stretches = {d: sorted(v, reverse=True) for d, v in ST.items()}; analyse.reuse = RU
     return st["WT"], st["D"], NL, WID
 if __name__ == "__main__":
     g = xcn.pg.read(sys.argv[1]); s = n5b.read_start(sys.argv[2], g) if len(sys.argv) > 2 else (None, None)
     tr, fb = xcn.trace(g, *s); WT, D, NL, WID = analyse(g, tr, fb)
-    print(f"HIERX {os.path.basename(sys.argv[1])} n {g.n} WT {WT} DEPTH {D} " + " ".join(f"NLEV{d} {NL[d]}" for d in sorted(NL)) + " | width " + " ".join(f"W{d} {WID[d]}" for d in sorted(WID)) + " | top stretch widths " + " ".join(f"L{d} {analyse.stretches[d][:4]}" for d in sorted(analyse.stretches)))
+    print(f"HIERX {os.path.basename(sys.argv[1])} n {g.n} WT {WT} DEPTH {D} " + " ".join(f"NLEV{d} {NL[d]}" for d in sorted(NL)) + " | width " + " ".join(f"W{d} {WID[d]}" for d in sorted(WID)) + " | reuse " + " ".join(f"R{d} {analyse.reuse[d]}" for d in sorted(analyse.reuse)) + " | top stretch widths " + " ".join(f"L{d} {analyse.stretches[d][:4]}" for d in sorted(analyse.stretches)))
