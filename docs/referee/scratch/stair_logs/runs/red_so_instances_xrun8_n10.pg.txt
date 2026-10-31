@@ -1,0 +1,13 @@
+GAME red/so/instances/xrun8_n10.pg
+BIT_chk 28
+DESC 2
+FROZEN_chk 7
+GAMES 1
+ROOT_chk 9
+TD 38
+WCH 9
+WCT 7
+trans 7
+wruns 1
+VIOLATIONS 0
+RC 0

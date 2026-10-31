@@ -1,0 +1,13 @@
+GAME new/box59/out/rnd/r157_n60d2.pg
+BIT_chk 10
+DESC 0
+FROZEN_chk 1
+GAMES 1
+ROOT_chk 5
+TD 15
+WCH 5
+WCT 1
+trans 1
+wruns 1
+VIOLATIONS 0
+RC 0

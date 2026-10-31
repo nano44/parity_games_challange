@@ -1,0 +1,13 @@
+GAME red/ul/instances/cxmig_k8_n82.pg
+BIT_chk 142
+DESC 1
+FROZEN_chk 16
+GAMES 1
+ROOT_chk 66
+TD 416
+WCH 66
+WCT 16
+trans 16
+wruns 1
+VIOLATIONS 0
+RC 0

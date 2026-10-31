@@ -1,0 +1,13 @@
+GAME red/xing/instances/obr_eq_n24.pg
+BIT_chk 12
+DESC 2
+FROZEN_chk 4
+GAMES 1
+ROOT_chk 2
+TD 4
+WCH 6
+WCT 4
+trans 4
+wruns 1
+VIOLATIONS 0
+RC 0

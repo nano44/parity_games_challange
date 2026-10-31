@@ -1,0 +1,4 @@
+GAME red/rec0/instances/fbd0_n4.pg
+GAMES 1
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,13 @@
+GAME new/box54/out/hf/counter_symsi_8.pg
+BIT_chk 254
+DESC 0
+FROZEN_chk 6
+GAMES 1
+ROOT_chk 17
+TD 23
+WCH 31
+WCT 6
+trans 6
+wruns 6
+VIOLATIONS 0
+RC 0

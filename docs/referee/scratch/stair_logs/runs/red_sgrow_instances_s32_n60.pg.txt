@@ -1,0 +1,4 @@
+GAME red/sgrow/instances/s32_n60.pg
+GAMES 1
+VIOLATIONS 0
+RC 0

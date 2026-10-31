@@ -1,0 +1,13 @@
+GAME red/n5/instances/sym_h16_s1.pg
+BIT_chk 5
+DESC 0
+FROZEN_chk 1
+GAMES 1
+ROOT_chk 1
+TD 2
+WCH 1
+WCT 1
+trans 1
+wruns 1
+VIOLATIONS 0
+RC 0

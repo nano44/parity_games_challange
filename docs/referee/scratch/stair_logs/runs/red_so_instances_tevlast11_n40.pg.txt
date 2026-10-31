@@ -1,0 +1,13 @@
+GAME red/so/instances/tevlast11_n40.pg
+BIT_chk 182
+DESC 7
+FROZEN_chk 31
+GAMES 1
+ROOT_chk 55
+TD 553
+WCH 57
+WCT 31
+trans 31
+wruns 2
+VIOLATIONS 0
+RC 0

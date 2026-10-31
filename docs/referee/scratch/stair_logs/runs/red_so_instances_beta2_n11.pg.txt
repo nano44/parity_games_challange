@@ -1,0 +1,12 @@
+GAME red/so/instances/beta2_n11.pg
+BIT_chk 16
+DESC 0
+FROZEN_chk 1
+GAMES 1
+TD 0
+WCH 8
+WCT 1
+trans 1
+wruns 1
+VIOLATIONS 0
+RC 0

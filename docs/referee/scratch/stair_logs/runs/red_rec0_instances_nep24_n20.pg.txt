@@ -1,0 +1,13 @@
+GAME red/rec0/instances/nep24_n20.pg
+BIT_chk 12
+DESC 0
+FROZEN_chk 1
+GAMES 1
+ROOT_chk 2
+TD 16
+WCH 6
+WCT 1
+trans 1
+wruns 1
+VIOLATIONS 0
+RC 0

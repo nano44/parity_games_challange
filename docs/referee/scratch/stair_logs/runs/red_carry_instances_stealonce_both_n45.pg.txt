@@ -1,0 +1,13 @@
+GAME red/carry/instances/stealonce_both_n45.pg
+BIT_chk 14
+DESC 0
+FROZEN_chk 1
+GAMES 1
+ROOT_chk 7
+TD 122
+WCH 7
+WCT 1
+trans 1
+wruns 1
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,13 @@
+GAME n5-exhaustive/instances/b6_xs_n40.pg
+BIT_chk 96
+DESC 0
+FROZEN_chk 36
+GAMES 1
+ROOT_chk 37
+TD 805
+WCH 48
+WCT 36
+trans 36
+wruns 1
+VIOLATIONS 0
+RC 0

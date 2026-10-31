@@ -1,0 +1,4 @@
+GAME red/frz/instances/fx2_n11.pg
+GAMES 1
+VIOLATIONS 0
+RC 0

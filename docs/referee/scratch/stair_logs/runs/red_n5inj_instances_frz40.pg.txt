@@ -1,0 +1,14 @@
+GAME red/n5inj/instances/frz40.pg
+BIT_chk 375
+DCOPY_chk 4
+DESC 20
+FROZEN_chk 74
+GAMES 1
+ROOT_chk 140
+TD 776
+WCH 154
+WCT 74
+trans 74
+wruns 9
+VIOLATIONS 0
+RC 0

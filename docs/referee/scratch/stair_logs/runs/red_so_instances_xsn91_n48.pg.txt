@@ -1,0 +1,14 @@
+GAME red/so/instances/xsn91_n48.pg
+BIT_chk 1046
+DCOPY_chk 26
+DESC 90
+FROZEN_chk 103
+GAMES 1
+ROOT_chk 354
+TD 2666
+WCH 384
+WCT 103
+trans 103
+wruns 9
+VIOLATIONS 0
+RC 0

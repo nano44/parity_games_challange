@@ -1,0 +1,4 @@
+GAME red/nopre/instances/nopre_viol_n20.pg
+GAMES 1
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,4 @@
+GAME new/box59/out/fcobs_4.pg
+skip_big 1
+VIOLATIONS 0
+RC 0

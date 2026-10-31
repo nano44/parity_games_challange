@@ -1,0 +1,14 @@
+GAME red/xing/instances/j7_n32.pg
+BIT_chk 319
+DCOPY_chk 2
+DESC 35
+FROZEN_chk 46
+GAMES 1
+ROOT_chk 102
+TD 572
+WCH 116
+WCT 46
+trans 46
+wruns 3
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,14 @@
+GAME red/o1/instances/iter118_n48.pg
+BIT_chk 188
+DCOPY_chk 1
+DESC 13
+FROZEN_chk 13
+GAMES 1
+ROOT_chk 61
+TD 741
+WCH 61
+WCT 13
+trans 13
+wruns 2
+VIOLATIONS 0
+RC 0

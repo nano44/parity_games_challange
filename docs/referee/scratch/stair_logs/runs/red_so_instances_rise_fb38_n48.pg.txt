@@ -1,0 +1,13 @@
+GAME red/so/instances/rise_fb38_n48.pg
+BIT_chk 108
+DESC 5
+FROZEN_chk 8
+GAMES 1
+ROOT_chk 20
+TD 59
+WCH 42
+WCT 8
+trans 8
+wruns 3
+VIOLATIONS 0
+RC 0

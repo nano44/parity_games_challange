@@ -1,0 +1,13 @@
+GAME n5-epoch/instances/nep13_n24.pg
+BIT_chk 122
+DESC 0
+FROZEN_chk 15
+GAMES 1
+ROOT_chk 18
+TD 130
+WCH 23
+WCT 14
+trans 15
+wruns 3
+VIOLATIONS 0
+RC 0

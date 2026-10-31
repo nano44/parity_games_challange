@@ -1,0 +1,13 @@
+GAME n5-exhaustive/instances/b5_os_n24.pg
+BIT_chk 152
+DESC 1
+FROZEN_chk 43
+GAMES 1
+ROOT_chk 70
+TD 415
+WCH 73
+WCT 43
+trans 43
+wruns 9
+VIOLATIONS 0
+RC 0

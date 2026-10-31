@@ -1,0 +1,14 @@
+GAME red/fbx/instances/kt6_n58.pg
+BIT_chk 176
+DCOPY_chk 2
+DESC 18
+FROZEN_chk 29
+GAMES 1
+ROOT_chk 28
+TD 180
+WCH 88
+WCT 27
+trans 29
+wruns 3
+VIOLATIONS 0
+RC 0
