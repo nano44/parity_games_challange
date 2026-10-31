@@ -11,7 +11,11 @@ Also FUELPAIRS: per W-run and (y, z), the number of distinct transitions with a 
 KEYEQ the direction reversals / repeats of the rise keys of z along those transitions (FUEL-MONO, strict: DEAD on so_th_n32).
 CONJECTURE FUEL-DESC: for consecutive fuel re-routes y -> z at k_i < k_(i+1) with keys a, b: b < a (strictly less significant), or Xi(z)
 changes at some u in [k_i, k_(i+1) - 2] with key >= a (a RESET). DESCV counts violations; RESET the resets; MAXSTRETCH the longest
-strictly descending run of fuel keys between resets (<= n + 2 when DESCV = 0).
+strictly descending run of fuel keys between resets (<= n + 2 when DESCV = 0). FUEL-DESC is DEAD (nep56_n32).
+Lemma FUEL-LEX (box 57; PROVED from R15 (a)): a non-descent b >= a of consecutive fuel keys of a pair is an ascent (ASC: b > a, paid by
+the fuel rise itself, a change of Xi(z) at a key > a), or b = a with an intervening change of Xi(z) at a key > a (EQHI), or a repeat of a
+cycle-node / length key (REP). LEXV counts violations (0 by the lemma). MAXRUNS: max number of maximal strictly descending runs of one
+pair. FUELEV: fuel re-routes; YONZ: those where y lies on z's (sigma_k, sigmabar_k)-play (z's value can depend on y's own choice).
 Usage: srcfuel.py GAME.pg [START]"""
 import sys, os
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, os.path.join(HERE, "..", "..", "new", "box21"))
@@ -39,7 +43,7 @@ for k in range(len(S) - 1):
     if cur is None: cur = []; runs.append(cur)
     cur.append(k)
 def key(a, b): return (2, 0) if a[0] != b[0] else (1, (a[1] ^ b[1]).bit_length() - 1) if a[1] != b[1] else (0, 0)
-T = dict(WRUNS=len(runs), SRCEV=0, FUEL=0, OLDE=0, FIRST=0, CSW=0, OTHER=0, FUELPAIRS=0, MAXPAIR=0, KEYTURN=0, KEYEQ=0, RESET=0, DESCV=0, MAXSTRETCH=0)
+T = dict(WRUNS=len(runs), SRCEV=0, FUEL=0, OLDE=0, FIRST=0, CSW=0, OTHER=0, FUELPAIRS=0, MAXPAIR=0, KEYTURN=0, KEYEQ=0, RESET=0, DESCV=0, MAXSTRETCH=0, LEXV=0, ASC=0, EQHI=0, REP=0, MAXRUNS=0, YONZ=0, FUELEV=0)
 EX = []
 for run in runs:
     tau = TAU[run[0]]; C = {v for v in range(n) if Wv(run[0], tau)[v][0] == v}; fuel = {}
@@ -61,13 +65,28 @@ for run in runs:
         if Hp is not None:
             Xp = Xv(k - 1)[0]
             fu = [y for y in sw if (y, s1[y]) not in Hp and Xp[s1[y]] != X0[s1[y]]]
-            for y in fu: fuel.setdefault((y, s1[y]), []).append((key(Xp[s1[y]], X0[s1[y]]), k))
+            for y in fu:
+                fuel.setdefault((y, s1[y]), []).append((key(Xp[s1[y]], X0[s1[y]]), k)); T['FUELEV'] += 1
+                u, seen = s1[y], set()
+                while u not in seen and u != y: seen.add(u); u = s0[u] if own[u] == 0 else b0[u]
+                T['YONZ'] += u == y
         if fu: T['FUEL'] += 1
         elif sw and Hp is not None: T['OLDE'] += 1
         elif k == run[0]: T['FIRST'] += 1
         elif any(own[c] == 0 and s0[c] != s1[c] for c in C): T['CSW'] += 1
         else: T['OTHER'] += 1
     for (y, z), ev in fuel.items():
+        runs_ = 1
+        for i in range(len(ev) - 1):
+            (ka, ta), (kb, tb) = ev[i], ev[i + 1]
+            if kb < ka: continue
+            runs_ += 1
+            if kb > ka: T['ASC'] += 1; continue
+            hi = [key(Xv(u)[0][z], Xv(u + 1)[0][z]) for u in range(ta, tb - 1) if Xv(u)[0][z] != Xv(u + 1)[0][z]]
+            if any(h > ka for h in hi): T['EQHI'] += 1
+            elif ka in ((2, 0), (0, 0)): T['REP'] += 1
+            else: T['LEXV'] += 1
+        T['MAXRUNS'] = max(T['MAXRUNS'], runs_)
         fl = [e[0] for e in ev]; stretch = 1
         for i in range(len(ev) - 1):
             (ka, ta), (kb, tb) = ev[i], ev[i + 1]
