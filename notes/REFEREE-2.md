@@ -1,6 +1,10 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 10 (successor 24; 2026-10-31 14:3xZ by date -u)
+- ODD reports pushed 5753ef03, STAIR f92b278a. ODD line L-1 (l-si ab0baf919, 3e25138b; fixes 67fbe3a4): MATCHES (R2-N5-ODD-L1.md);
+  E1/E2 SIGNED; E4 sbq2_fix reproduced (Wtie 0, flips 128). NEXT: STAIR L-1 from L-NEW 42.
+
 ## Resume point 9 (successor 24; 2026-10-31 12:5xZ by date -u)
 - P-N5-ODD (l-si 0afc0d70a, 03eec41d; line cd121dff): R2-N5-ODD.md: all SIGNED; G-ODD-1 (FUEL-LEX proof covers keys < a only) and
   G-ODD-2 (FUEL-COUNT (0,0) EQHI/REP overlap) closed by my repairs; line ODD-L1..L3 REQUIRED; F-1 sbq2_K8_m16.start τ(242)=243 non-edge
