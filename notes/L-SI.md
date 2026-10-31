@@ -1,6 +1,19 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## HANDOVER (successor 36, box 56; written 2026-10-31T10:5xZ (date -u; see commit); session_01V5yGRX7j3zGTcKETSyEKZr)
+### Resume point
+- Box 56 (Lead 10:34Z, width from the first-segment side): note docs/si/N5-GROW-box56.md, tools experiments/si/grow56/, pins check.sh
+  «box 56», DEAD.md «box 56».
+- DATA / READING: on obs re-growth is self-sustaining inside one level (244 flips; each flip forced by a target rise at the last step of
+  the source-free block the previous flip started); capped by a strictly descending staircase at targets 245 / 246.
+- DATA: corpus source events 4,570 = FUEL 3,862 + OLDE 6 + CSW 16 + FIRST 686 + OTHER 0.
+- DEAD: FUEL-MONO (so_th_n32 pair (12, 6)), FUEL-DESC (nep56_n32 pair (28, 2): keys (1, 22) then (1, 25), no reset).
+### Queue
+1. Can the fuel chain of one pair (y, z) be a counter (reversals not paid by more significant changes of Ξ(z))? Give L-RED the shape.
+2. OLDE source events (old-edge FS switches): bound them (data 6 in the corpus, 7 / 15 on sbq2 / latew).
+3. Context ~425k at this handover; park at ~550k (Lead).
+
 ## HANDOVER (successor 36, box 55; written 2026-10-31T10:0xZ (date -u; see commit); session_01V5yGRX7j3zGTcKETSyEKZr)
 ### Resume point
 - Box 55 (Lead 09:46Z): note docs/si/N5-FSEG-box55.md, tools experiments/si/fseg55/, pins check.sh «box 55», DEAD.md «box 55».

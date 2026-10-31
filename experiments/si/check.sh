@@ -1018,6 +1018,17 @@ case "$o" in *"k 34 SRC D [0, 4] sw 1:5>10N[FS[0, 4]]"*"k 40 SRC D [0] sw 6:22>0
 [ "$(grep -c RETSEARCH fseg55/ret_out.txt)" = 9 ] || { echo "box 55: ret_out incomplete"; exit 1; }
 if grep -q "RETX [1-9]" fseg55/ret_out.txt; then echo "box 55: RET found"; exit 1; fi
 echo "si (box 55: NO-RET search; first-segment releases on hit_b6a_1): PASS"
+# box 56 (docs/si/N5-GROW-box56.md, Lead 10:34Z): obs re-growth = fuel re-routes at 244 after source-free steps; FUEL-MONO / FUEL-DESC
+# DEAD (so_th_n32, nep56_n32); corpus outputs complete.
+o=$(python3 -I grow56/grow.py src54/inst/obs_K12_m24.pg src54/inst/obs_K12_m24.start)
+case "$o" in *"ESW 529 "*"ESW_NEWEDGE 529 ESW_PREVFREE 529 "*"ESW_ZROSE 529 "*) ;; *) echo "box 56: grow obs: $o"; exit 1;; esac
+o=$(python3 -I grow56/srcfuel.py ../red/so/instances/so_th_n32.pg)
+case "$o" in *"KEYEQ 6 RESET 6 DESCV 0 "*) ;; *) echo "box 56: srcfuel so_th: $o"; exit 1;; esac
+o=$(python3 -I grow56/srcfuel.py ../n5-epoch/instances/nep56_n32.pg ../n5-epoch/instances/nep56_n32.start)
+case "$o" in *"DESCV nep56_n32.pg 28 2 ((1, 22), 9) ((1, 25), 13)"*"DESCV 1 "*) ;; *) echo "box 56: srcfuel nep56: $o"; exit 1;; esac
+[ "$(cat grow56/grow_*.txt | grep -c ' GROW ')" = 1132 ] || { echo "box 56: grow outputs incomplete"; exit 1; }
+[ "$(cat grow56/fuel_*.txt | grep -c ' SRCFUEL ')" = 1132 ] || { echo "box 56: srcfuel outputs incomplete"; exit 1; }
+echo "si (box 56: first-segment re-growth; FUEL-MONO / FUEL-DESC dead): PASS"
 # P-N5-SETTLE line revision L-1 (fixes entry 1; both referees word-diff it): must not change.
 echo "997e39eee8d72ae94be4764bb1e3841914ffc78e  ../../docs/si/P-N5-SETTLE-line-L1.txt" | sha1sum -c --quiet
 echo "si (P-N5-SETTLE L-1 pinned): PASS"
