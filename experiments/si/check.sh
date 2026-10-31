@@ -987,6 +987,10 @@ o=$(python3 -I sb53/ceilpot.py ../red/xich/instances/obs_K12_m24.pg ../red/xich/
 case "$o" in *"WT 324 "*"AUP 1 ADN 323 AEQ 0 "*"ANDN 1 "*"MAXWR 324 MAXAUP 1 MAXANDN 1"*) ;; *) echo "box 53c: obs_K12_m24: $o"; exit 1;; esac
 [ "$(cat sb53/ceil_*.txt | grep -c CEILPOT)" = 1134 ] || { echo "box 53c: ceilpot outputs incomplete"; exit 1; }
 echo "si (box 53c: CEIL-ACC data): PASS"
+# box 53d (§9): «A falls at every source-free transition» DEAD on u23sw64_n32 (12 source-free non-falls: floor 8, ceiling 3, inside 1).
+o=$(python3 -I sb53/ceilpot.py ../red/xing/instances/u23sw64_n32.pg)
+case "$o" in *"SRC 1 AUPSF 0 ANDNSF 12 AEQSF 12 AEQ0SF 8 AEQMAXSF 3 AMIDSF 1"*) ;; *) echo "box 53d: u23sw64: $o"; exit 1;; esac
+echo "si (box 53d: source-free A-flats): PASS"
 # P-N5-SETTLE line revision L-1 (fixes entry 1; both referees word-diff it): must not change.
 echo "997e39eee8d72ae94be4764bb1e3841914ffc78e  ../../docs/si/P-N5-SETTLE-line-L1.txt" | sha1sum -c --quiet
 echo "si (P-N5-SETTLE L-1 pinned): PASS"
