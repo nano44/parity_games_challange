@@ -178,3 +178,9 @@ Fix a transition u. A vertex s is CHANGED at u if it is Even with σ_(u+1)(s) �
      switchallexp_N (N ≤ 6, Oink OK). Polynomiality must come from N5-specific structure (τ, W-runs, S4a).
   4. DATA: W-run escapes are rare on the quadratic pins (1 each). The open core is escapes per W-run plus fan-out per source.
 - NEEDS: none from the owner. (L-LIT, via the Lead, if wanted: the source for Friedmann's switch-all lower bound, theorem number.)
+
+## ERRATUM (same day; P-N5-ODD fixes entry 4)
+- The sbq2_K8_m16 rows above used the invalid start (non-edge 242:243). On the repaired start sbq2_K8_m16_fix.start every count is the
+  same except FUELEV 497 → 496; the pair (164, 166) self-feeding example is unchanged (SELFESC 2). check.sh «box 58» now pins the repaired
+  start. The corpus lists name two other known-invalid starts (red/n3 comp54_n80, n3cov_lean; L-RED R99 erratum): with their *_fixed
+  starts anc.py's counts are identical. A rerun of runanc.sh now prints START BAD for those two lines until the lists are switched.

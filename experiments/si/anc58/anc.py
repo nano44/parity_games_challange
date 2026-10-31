@@ -39,6 +39,7 @@ if NEWPREF: sys.argv.remove("--newpref")
 SI = sys.argv[1] == "--si"
 if SI: sys.argv.pop(1)
 g = load(sys.argv[1]); st = readstart(sys.argv[2]) if len(sys.argv) > 2 else None; n = g.n; own = g.owner
+sys.path.insert(0, os.path.join(HERE, "..")); from startcheck import check_start; check_start(g, st, sys.argv[2] if len(sys.argv) > 2 else "")  # P-N5-ODD fixes entry 4
 E, Ed = Engine(g), Engine(dual(g))
 if SI:   # classical switch-all SI (si.py rule_switch_all, best-reward start): sigma only, Odd's optimal counterstrategy; ONE run
     S, IS = [tuple(E.initial("best"))], []

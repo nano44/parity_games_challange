@@ -698,3 +698,8 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
   escapes (3(2^N − 1)), not cycling. Pins: check.sh «box 58».
 - (box 58) Guess «every same-transition loop of the ancestry walk is at key (2, 0)»: false in the corpus (2,379 of 89,800 loops are below
   (2, 0); every one takes a case (I) Odd step, LOOPLOW0 0). The case without case (I) steps is PROVED (Prop LOOP-NEW).
+- (P-N5-ODD fixes entry 4, L-SI successor 37, 2026-10-31) WITHDRAWN: the box-54 DEAD «W-rank potential» (sbq2: W(242) = W(259) at all
+  153 states). Its witness used experiments/si/src54/inst/sbq2_K8_m16.start, whose TAU0 entry 242:243 is a NON-EDGE (succ(242) = 244, …,
+  258; REFEREE 21 D-ODD-1, REFEREE-2 24 F-1). With τ(242) on any of its 8 real successors: W(242) = W(259) at 0 of 153 states, while σ̄(260)
+  still flips 128 times. No valid instance is known, so the W-rank potential is OPEN, not dead. ASC-W and TURN-W stay DEAD (src2_K3, valid
+  start; the sbq2 rows survive the repair: BAD 525, TURNBAD 58). Repaired start: src54/inst/sbq2_K8_m16_fix.start.

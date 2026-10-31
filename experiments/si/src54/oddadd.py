@@ -18,6 +18,7 @@ from n5x import load, step, start_pair, readstart, Engine, dual
 import pg
 MUT = os.environ.get('MUT') == '1'   # control: ignore switches in the OLD-PLAY test, so VOLD must bite
 g = load(sys.argv[1]); st = readstart(sys.argv[2]) if len(sys.argv) > 2 else None; n = g.n; own = g.owner
+sys.path.insert(0, os.path.join(HERE, "..")); from startcheck import check_start; check_start(g, st, sys.argv[2] if len(sys.argv) > 2 else "")  # P-N5-ODD fixes entry 4
 E, Ed = Engine(g), Engine(dual(g)); s, t = start_pair(g, E, Ed, st); S, TAU, FB = [tuple(s)], [tuple(t)], []
 while True:
     r = step(g, E, Ed, list(S[-1]), list(TAU[-1]))

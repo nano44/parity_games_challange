@@ -175,3 +175,8 @@ Written 2026-10-31 from 08:1xZ (date -u; see commit).
   5. READING: sbq2's quadratic is (W-rounds) × (prefix events per round); a third level needs a nested Even selector on a first
      segment (k-SOURCE's per-level factor), which is where a proof must bound the depth or L-RED 37 must build it.
 - NEEDS: none from the owner.
+
+## ERRATUM (L-SI successor 37, 2026-10-31; P-N5-ODD fixes entry 4)
+- sbq2_K8_m16.start sets τ(242) := 243, a non-edge (REFEREE 21 D-ODD-1, REFEREE-2 24 F-1). The W-rank DEAD of §4 is WITHDRAWN (W(242) =
+  W(259) at 0 states on the repaired start sbq2_K8_m16_fix.start). The sbq2 rows of this note change to: oddadd ODDCH 2206, OSRC 762,
+  PFX 642, MAXHXS 136 (VOLD 0, VADD 0); MUT VOLD 2849; ASC-W BAD 525, TURNBAD 58; σ̄(260) flips 128. Details in docs/si/P-N5-ODD-fixes.md.

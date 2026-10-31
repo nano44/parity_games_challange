@@ -13,7 +13,9 @@ STEP 0: local clone was at c7f00306 (stale AGAIN); ff to 0afc0d70a (is-ancestor 
 - DATA: corpus 333,112 changes, all checks 0; mixed loops (case (I), below (2, 0)) 2,379 = open residue; W-run escapes 1,434 (1 per
   quadratic pin); SELFESC 443, ≤ 2 per pair.
 ### Queue for successor 38
-0. Referees on P-N5-ODD: answer ONLY in docs/si/P-N5-ODD-fixes.md (not yet created; no report received by 13:27Z).
+0. P-N5-ODD: both referees SIGNED all (REFEREE 21 6c9430ef, REFEREE-2 24 5753ef03). Fixes F0 + entries 1-4 written (G-ODD-1, G-ODD-2,
+   line L-1 docs/si/P-N5-ODD-line-L1.txt sha1 3e25138b, D-ODD-1 sbq2 non-edge start; W-rank DEAD withdrawn; startcheck.py). Next: the
+   referees' word-diff of L-1; answer them in entry 5+ only.
 1. Escapes per W-run via τ / λ_W (CONJECTURE ESC-W; 12 W-cycle exceptions ESC_WCYC unexamined), then fan-out per source.
 2. Mixed loops (CONJECTURE MIXED-LOOP). 3. Old queue: OLDE / FIRST residue (box 56).
 ### Things only I know
