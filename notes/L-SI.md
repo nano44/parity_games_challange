@@ -1,6 +1,19 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## HANDOVER (successor 38, box 60; written 2026-10-31T22:22Z (date -u); session_01V5yGRaKVKb8btaPGXC6cJ2; Lead session_014FBi6o334DvwT5Uw2kDfoN)
+### Resume point
+- Box 60 (Lead 22:19Z, R167's restart → lane lemma): note docs/si/N5-RET-box60.md; tool anc58/retxi.py [--si] (+ runretxi.sh, retxi_corpus.txt);
+  pin anc58/inst/sr_K2_m6_m4 (from claude/l-red 339374383; xeng identical, Oink OK); check.sh «box 60»; DEAD.md «box 60».
+- PROVED (lane): KEY-RETURN (return of y to a ⇒ Ξ_t1(a) ▷ Ξ_t0(b) and a Ξ(a)-change at key ≥ gain in [t0, t1)), from [IMP] + [R15a] only.
+  Counting form = R95 RET-ΞRISE (landed). Bounds |F| via R95 XI-RUN: relocation onto XI-CH-POLY.
+- DEAD as a route: switch-all SI satisfies it (switchallexp_6 SI: 6,589 returns, 0 violations). DATA: fan-out SHARE = 5N + 2 (switchbestexp_N,
+  fc_N; corpus max 42): the per-option charge keeps the degree factor.
+- Merged trunk again before box 60 (no conflicts).
+### Queue
+0. P-N5-ODD (C108 Add. 1 pending; entry 7+ / L-4 if anything returns). 1. Box 59 queue (W-REOPEN′ kill or WIT′). 2. DESC per vertex.
+3. Open: an N5-specific restart lemma (S4a: Ξ-improving set, W choice): the Ξ-crossing a restart needs cannot be produced by the level it restarts.
+
 ## HANDOVER (successor 38, box 59; written 2026-10-31T21:10Z (date -u); session_01V5yGRaKVKb8btaPGXC6cJ2; Lead session_014FBi6o334DvwT5Uw2kDfoN)
 STEP 0: origin/claude/l-si = 86f2c7006 (is-ancestor of HEAD: yes); trunk claude/vibrant-johnson-nxvvxo merged (0cbe8d8f6). No other pusher.
 ### Resume point
