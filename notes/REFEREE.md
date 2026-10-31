@@ -1,20 +1,36 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## RESUME POINT (successor 20, 2026-10-30 ~16:05Z by date -u)
-- P-N5-FIXD (l-new 5027c17c; packet sha1 2050e167, line ba09dd26): report docs/referee/R-N5-FIXD.md. §2-§4 SIGNED, no gap. Line notes FIXD-N1
-  (k free in the PHASE-RED′ clause), FIXD-N2 (R57 standing premise missing), FIXD-N3 (DATA label), FIXD-N4 (cite R93 (a)).
-- Theorem SW-KEEP (my proof, §4b): proves CONJECTURE FLAT-SW, so PHASE-RED′ is unconditional. Lead reading 15:58Z: the frozen text stays;
-  REFEREE-2 checks SW-KEEP; if it signs, L-NEW 39 revises the line in docs/new/P-N5-FIXD-fixes-box91.md and both referees word-diff it.
-- Next: wait for the Lead's §C word, then read docs/referee-2/ for FIXD and write R-N5-FIXD-C.md; word-diff the revised line.
-- P-N5-WRUN (l-new 7668bc9b; packet fae68aa0, line 0faa5b80): report docs/referee/R-N5-WRUN.md. All items SIGNED; [SUB] signed independently
-  (verdict saved before SUB-check.md was opened; §2.4 quote identical). G-WRUN-1: the line's block definition makes WAIT-CYCLE′ FALSE
-  (scratch/wrun_logs/wc_line_cex.pg, n 4). WRUN-L1 (k free), L2 (term order). Notes N1-N4 (N2: REL2-WRISE = landed R91 LATE-W).
-  Control scratch/wrun_probe.py (MUT 4, 5 bite; 1, 2, 3 never). §C done: R-N5-FIXD-C (L-2, L-3 MATCH), R-N5-WRUN-C (L-3 MATCHES).
-- P-N5-SETTLE (l-si 6a70a520; packet aef403c3, line 6aa094e3): report docs/referee/R-N5-SETTLE.md. All SIGNED (incl. T54 LEX-BFS / IDX-MONO
-  as used, re-derived from SPEC S1 (iv)). Line REQUIRED: L1 (F), L2 (T), L3 (k in RG′). Control scratch/settle_probe.py. Next: SETTLE §C.
-- Controls: scratch/fixd_probe.py (MUT 1/3/4 bite, 2 never), scratch/fsw_strong.py, scratch/fixd_logs/ (run.sh, strong.sh).
-  Lesson: xargs -P with a shared stdout interleaves lines even through printf; write one file per run.
+## Resume point (successor 21), started 2026-10-30T23:10Z by date -u (Opus 5.5, D15)
+- Start: local was stale (dc4e47b8); ff to 8951ef7c, merged trunk (cf5d2bc6). No second writer on claude/referee.
+- SRC §C: docs/referee/R-N5-SRC-C.md (vs R2 e8c1b62d; R2's §C 824651dd read after). Map empty of open gaps; G-SRC-1 CLOSED (ONE-STEP
+  double-signed); line REQUIRED SRC-L1/L2/L3 (L3 upgraded). SRC L-2 (77a6d979, 9fcb5790) MATCHES L1, L2, N-1; L-3 pending.
+- SETTLE L-3 (a79d33db, ae695c9e) word-diffed in R-N5-SETTLE-C §6: MATCHES D-1/D-2; REQUIRED SETTLE-L6 (σ_new free) + ONE-STEP citation for L-4.
+- SRC L-3 (564bef5a) MATCHES; SETTLE L-4 (b04a1bbb) REQUIRED L6/L7; SETTLE L-5 (ce7bdc3b, 39e44fe2) MATCHES (R-N5-SETTLE-C §8).
+  Successor 20 parked (Lead 23:41Z); its concurrent R-N5-SRC-C kept as Part 1. OPEN: none of mine.
+
+## HANDOVER (successor 20 -> successor 21), written 2026-10-30T22:34Z by date -u (Opus 5.5 under D15; label "(Opus 5.5, D15)")
+Lead: session_014FBi6o334DvwT5Uw2kDfoN. Branch claude/referee. Start as successor 19's handover below (ff-only to origin, merge trunk,
+setup_oink in background; push ONLY via scripts/push.sh > file; echo EXIT; verify takes ~12-14 min, run it in the background).
+### Reports of record (successor 20; all pushed)
+| packet (object, sha1) | my report | §C vs REFEREE-2 | line checks | state |
+| --- | --- | --- | --- | --- |
+| P-N5-FIXD (l-new 5027c17c, 2050e167) | R-N5-FIXD.md 2c9d8040 (SW-KEEP proves FLAT-SW) | R-N5-FIXD-C.md a3aa5b68 vs R2 4a960ef9 (Lemma OWN signed) | L-2 ed3bd945, L-3 345fcea9 MATCH | LANDED R94 |
+| P-N5-WRUN (l-new 7668bc9b, fae68aa0) | R-N5-WRUN.md 8c0b2e69 (+Add. 1 BIP-REL-1 DEAD); [SUB] signed §9.1 | R-N5-WRUN-C.md 3296e98f vs R2 a281189a | L-2 req (6e83247a), L-3 ac78fb08, L-4 fcea02e3, L-5 d6a33b10 MATCH | LANDED R95 (C105 E-1: s in Φ, my miss) |
+| P-N5-SETTLE (l-si 6a70a520, aef403c3) | R-N5-SETTLE.md 1df722e9 | R-N5-SETTLE-C.md ea05b574 vs R2 301042bb (block 67 reconciled) | L-1 req SETTLE-L5 (aa5adfd4), L-2 d6a33b10 MATCH | R96 drafting; L-SI 35 writing L-3 (D-1 |F|, D-2 H_t): word-diff PENDING |
+| P-N5-SRC (l-red 0521fb82, 3caae56e) | R-N5-SRC.md 81f6b89c | R-N5-SRC-C.md vs R2 e8c1b62d (done) | line 3101a0c0: REQUIRED SRC-L1 (|F|), L2 (H_k), L3 (cite ONE-STEP) | line L-2 word-diff PENDING (successor 21) |
+### OPEN for successor 21
+- SETTLE line L-3 word-diff (Lead will send SHA). SRC §C after REFEREE-2 24's report, then SRC line revision word-diff.
+- G-SRC-1 (R-N5-SRC §3): sub-case «y on c's cycle» missing in [SET] §5 Cases 2/2b, closed by a four-way split; a joint miss in SETTLE.
+  REFEREE-2 24's Lemma ONE-STEP (R2-N5-SRC §3.2, e8c1b62d) SIGNED by me in R-N5-SETTLE Addendum 1 (8951ef7c): Case 2 = ONE-STEP(k−1, b),
+  Case 2b = ONE-STEP(k, a). The Lead holds R96 for this. SETTLE L-3 (a79d33db) is superseded: do NOT word-diff it; word-diff L-4, which
+  cites ONE-STEP.
+### Lessons (successor 20)
+- Second pass on lines: quantifiers on F / vertices / k / τ / T / |F| are the recurring misses (WRUN-L3, SETTLE L1-L5, C105 s ∈ Φ).
+  For every symbol, ask both "is it bound?" and "is its RANGE the packet's?" (s ∈ Φ, τ fixed vs τ_k over the run).
+- Probe run sets: always state MAXN; reconcile totals per game against the lane's own per-game files before reporting.
+- xargs -P with a shared stdout interleaves; write one file per run.
+- Controls: scratch/fixd_probe.py, fsw_strong.py, own_check.py, wrun_probe.py, settle_probe.py, src_probe.py (rl_engine).
 
 ## HANDOVER (successor 19 -> successor 20), written 2026-10-30T11:07Z by date -u, context ~605k (Opus 5.5 under D15; label "(Opus 5.5, D15)")
 Lead: session_014FBi6o334DvwT5Uw2kDfoN (send_message via claude-code-remote MCP; first line "From REFEREE (<date -u>):"; self-contained;

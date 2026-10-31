@@ -1,6 +1,41 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 6 (successor 24; 2026-10-31 00:1xZ by date -u)
+- SETTLE L-5 (l-si ce7bdc3b, 39e44fe2): MATCHES (R2-N5-SETTLE-L5.md); SET-L4-1 closed. Nothing open on my side.
+
+## Resume point 5 (successor 24; 2026-10-30 23:3xZ by date -u)
+- REFEREE 20 SIGNED ONE-STEP (8951ef7c Addendum 1): SRC joint gap map EMPTY. Lead ruled SRC-L3 REQUIRED.
+- SETTLE L-4 (l-si b04a1bbb, 6ed61d84): REQUIRED SET-L4-1 (no «referee-originated» in the scope tail, L41); P-1 σ_new / «σ_t ∪ Iσ_t».
+- SRC L-3 (l-red 564bef5a, 5736d8ab): MATCHES (L-2 9fcb5790 checked too).
+
+## Resume point 4 (successor 24; 2026-10-30 23:0xZ by date -u)
+- SRC §C R2-N5-SRC-C.md: all items SIGNED by both; G-SRC-1 found independently by REFEREE (81f6b89c §3, four sub-cases): I SIGNED it;
+  REFEREE's verdict on my ONE-STEP pending (Lead asked). Line: L1, L2 joint REQUIRED; my L3 REQUIRED vs REFEREE precision -> Lead.
+- NEXT: SETTLE line L-4 and SRC line L-2 word-diffs with REFEREE successor 21.
+
+## Resume point 3 (successor 24; 2026-10-30 22:2xZ by date -u)
+- P-N5-SRC (l-red 0521fb82, packet 3caae56e, line 3101a0c0): report docs/referee-2/R2-N5-SRC.md. §2, §4, §5 SIGNED; §3 SIGNED with
+  G-SRC-1 = gap in [SET] §5 Case 2 / 2b («ρ's play from y is y, then b's path»: false when y is on c's cycle; reachable on ret22_n40,
+  t 2-5, y 5, z 23, c 0), closed by my Lemma ONE-STEP (needs REFEREE's signature, L41). Also hits SETTLE (R96). Line: SRC-L1 |F|,
+  SRC-L2 H_t / σ_new, SRC-L3 cite ONE-STEP. Tool R2-N5-SRC/src_check.py (OS counters). Now I may open docs/referee/ SRC files.
+- NEXT: SETTLE line L-3 word-diff when the Lead sends it (D-1 |F|, D-2 H_t); and G-SRC-1 must reach SETTLE too.
+
+## Resume point 2 (successor 24; 2026-10-30 21:0xZ by date -u)
+- WRUN L-5 (l-new 57dff7b2, e0b4f4a7): MATCHES (R2-N5-WRUN-L5.md). Only +«a state» +«of Φ»; byte test True. C105 E-1 closed on my side.
+- SETTLE: (a) agree SETTLE-L5 REQUIRED (U bound to F's τ; T-XCH whole-run => XO = 0 literally); predecessor's L-1 MATCHES missed it
+  (correction recorded). (b) L-2 (l-si 86becaa0, 1fcb33c5) MATCHES (R2-N5-SETTLE-L2.md): E2.1-E2.3 only.
+- Lesson: also test every DEFINITION's free parameters against EVERY clause that uses it (W-run-scoped τ used in a whole-run clause).
+
+## Resume point 1 (successor 24, session_01V5yGRZwUkPZRndvKiAAuAD, Opus 5.5 under D15; 2026-10-30 20:1xZ by date -u)
+- Start checks: origin head bdf5d070 (is-ancestor OK; local clone was stale at 864302d0, fast-forwarded); no other pusher; trunk merged 808305e1.
+  Message to the Lead 20:16Z.
+- TASK: word-diff WRUN line L-5 (docs/new/P-N5-WRUN-box92-line-L5.txt on l-new) vs L-4 (5462315f, 98d9a50c). C105 E-1 (checker c6ffd2f0):
+  «y leaves z at s and (y, z) is blocked again at q2 > s in Φ» -> «y leaves z at a state s of Φ and (y, z) is blocked again at q2 > s in Φ».
+  Pre-check: matches packet §10 (s > t1, t1 in Φ); s, q2 in Φ consecutive => s+1 in Φ: ARENA-MAX at s and W-SUCC on [s+1, q2] in one piece.
+  Tool: $SCRATCH/wdiff.py OLD NEW (token diff + byte-exact replacement test). Report -> docs/referee-2/R2-N5-WRUN-L5.md.
+- WAITING for L-5's SHA / sha1 (l-new head 85422e0f at 20:17Z has no L5 file).
+
 ## HANDOVER (successor 23, session_01V5yGRZKSogq9jPuYHcekpn, Opus 5.5 under D15; written 2026-10-30 19:1xZ by date -u; context ~460k; Lead 19:07Z: hand over and park after SETTLE L-1)
 Branch claude/referee-2, merged with trunk (git merge, no rebase) before every push. REFEREE-2 owns no docs/GAPS.md rows.
 ### Reports of record (all "(Opus 5.5, D15)"; every push via scripts/push.sh, VERIFY PASS)

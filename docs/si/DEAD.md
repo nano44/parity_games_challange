@@ -657,3 +657,12 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
   DEAD. Obstruction: a profile revisit inside one W-run contradicts antisymmetry. Instance experiments/n5-exhaustive/instances/
   thetaA_n7.pg + .start (n = 7, one W-run, σ̄(6) 5 → 1 → 5; n5b agrees). Corpus: 242 W-runs revisit a profile; per-vertex returns up to
   61 (gate_K64_n581). Pins: experiments/si/check.sh «box 53 SBF».
+- (§5, Lead 20:00Z) NO-REPEAT / order-determination on a fixed head set ([ABS] Thm 29 / [GH] template via L-LIT T60 §3.3): DEAD.
+  experiments/red/so/instances/exitr_cex_n16.pg (default start): one W-run; the weak Ξ-order on H_1 = U′_1 = {3, 4, 8, 11} is the same
+  at states 1, 5, 6, 7 while σ̄ of the second Odd vertex is 3, 7, 3, 13. Corpus RREP 128 W-runs. Also max |U_k| = 4K + 16 on mkrw
+  (LATE=1, m 16), so FPT in |U| is empty. Pins: check.sh «box 53 SBF §5».
+- (§6) CONJECTURE XCN-ONE (≤ 1 own-cycle-node σ̄-flip transition per W-run): DEAD.
+  - experiments/si/sb53/inst/xcn2_n8 + .start: two kind-A transitions in one W-run (Odd 0 stops, Odd 5 starts being its own cycle node).
+  - experiments/si/sb53/inst/xcnb2_n12 + .start: two kind-B transitions at the same vertex, σ̄(3) 9 → 11 → 9, with Ξ(3) = (3, ∅, 0)
+    and λ_Ξ fixed.
+  - n5b agrees on both. Kind A is bounded by n(n − 1) per run (from R47); kind B is open.

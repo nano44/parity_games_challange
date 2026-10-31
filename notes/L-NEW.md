@@ -1,7 +1,66 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 39, Opus 5.5, session_01V5yGRWZiUTdfQjnywZGM8z; FINAL, PARKED 2026-10-30 ~19:3xZ by date -u, ~65% context)
+## Resume point (successor 40, Opus 5.5, session_01V5yGRaRG5NjEeJEbjinuUs; FINAL, PARKED 2026-10-30 ~23:5xZ by date -u, ~330k context)
+### FINAL summary (successor 40): boxes 97-104 + WRUN fixes entry 6 / L-5; every push via scripts/push.sh (VERIFY PASS), each reported to the Lead
+- 97 N5-ORD (508a8711): ORDER-DET-U DEAD (n5s_maxph_0), ORDER-DET-R PROVED (lane), NO-REPEAT DEAD (thetaA_n7), SB <= f(|U|) DEAD (gate_K).
+- WRUN entry 6 / line L-5 (57dff7b2): C105 E-1; R95 LANDED 22:14Z.
+- 98 N5-RET (a4c1cbb8): Lemma PAY; type returns not the bottleneck (gate/pp RET 0; quadratic pins 0 order returns).
+- 99 N5-QRET (b376575c): one clock vertex x observer re-opens; CASCADE-EQ. (Its depth <= 2 claim was a memo bug, corrected in box 100.)
+- 100 N5-CASC (2311683e): EVEN-ON-PLAY, WINDOW-RISE, FRESH-ROOT (full), CHILD, TREE; depth O(1) DEAD (topfix_N).
+- 101 N5-CEDGE (6e725d15): CASC-EDGE (later DEAD, L-RED R150 cedge_n32); CEDGE => WRUN proved; three alternatives DEAD.
+- 102 N5-OVT (457e41fe): overtake-once and pair injection DEAD (pftheta34_n32); LEVEL-ONCE conjecture.
+- 103 N5-DEPTH (bb2a0f65): depth <= f(distinct vertices) DEAD (topfix rotating triple); DEPTH-SUB redundant with R95.
+- 104 N5-PING + N5-CORE-SYNTH (this push): self-fed split DEAD (cedge_n32 loop {7,20,26} time-varying); synthesis: W-run residual = XI-CH-POLY.
+### NEXT for successor 41 (Lead decides): the decisive test is L-RED nesting cedge_n32's play loop (counter) -- if it nests, W-runs are
+  super-polynomial; if not, the obstruction (likely ARENA-MAX) is the lemma. Owned open: XI-CH-POLY and faces, LEVEL-ONCE (conjecture).
+### Things only I know (successor 40): retcause.py (box99) is the cascade tool: EROOT (Even map), PERROOT, CHAIN, CHAINSTEP, SELFFED lines;
+  XTRACE=v traces one vertex; runcause.sh (~2-3 min, 4 cores) rewrites box99/cause_*.txt. L-RED instances copied read-only into box101/inst
+  (cascl) and box104/inst (cedge); topfix_N lives in new/box52/out. orderdet.py on latew takes ~50 s. push.sh verify takes ~12 min.
+
+## Resume point (HISTORY; successor 40, Opus 5.5, session_01V5yGRaRG5NjEeJEbjinuUs, started 2026-10-30 20:00Z by date -u; commit 508a8711 trailer wrongly names succ. 39 session (not amended); handover: local clone was STALE at d4bcdd21, fast-forwarded to origin 185422e0, trunk 5e4f1301 merged)
+### Box 97 N5-ORD (Lead brief after 20:00Z: L-LIT T60 order template, ORDER-DET + NO-REPEAT): docs/new/N5-ORD-box97.md
+- ORDER-DET literal: TRUE but empty (sbar_k = S1(sigma_k)). U-form (order of Xi on U_k alone): DEAD, n5s_maxph_0 (n 5): flip out of tau(o),
+  tau(o) not a head. PROVED (lane, given L-SI SEL + NOCLOSE + [R57]): ORDER-DET-R, sbar_k(o) = refined-least of succ(o) n X for any X containing
+  sbar_k(o) (X = A_F := U_F u tau(O_F), or U'_k); Corollary FLIP-ORD: SBT_F <= ORDCH_F + XCN_F.
+- NO-REPEAT: DEAD, thetaA_n7 (n 7; refined A_F-order at state 0 recurs at 3, sbar(6) 5,5,1,5); corpus NRRS 89 runs. Holds on sbq2 / obs / latew,
+  but there |A_F| ~ 0.4n.
+- Any SBT_F <= f(max|U_k|) or f(|A_F|): DEAD, gate_K16 -> gate_K64 (SBT 16 -> 64, max|U| 6, |A_F| 11, 6 distinct orders). (3): no FPT, no
+  subclass; even both lemmas bound only the SB term, which HEAD-RED' already removed (residual = Xi-changes at heads, not order changes).
+- DATA: box97/orderdet.py on 1,132 corpus runs + 3 pins: REFMINX 0, REFMINUX 0, ODR 0, ODA 0; ODU 20 runs. Pins check.sh «box 97 ORD».
+### Box 97 pushed 508a8711 (VERIFY PASS), reported to the Lead 20:23Z.
+### WRUN fixes entry 6 / line L-5 (57dff7b2; CHECKER C105 E-1 verbatim; L-5 = L-4 + «a state s of Φ»; fixes 94f6133f, L-5 e0b4f4a7). Referees word-diff L-5.
+### Box 98 N5-RET (Lead 20:42Z: what pays for a head-type return, T61): docs/new/N5-RET-box98.md
+- PROVED (lane) Lemma PAY: every W-run transition has a fresh Even entry or an Even-edge return; head-type returns <= |F| <= (m_E - n_E) + RETT_F.
+- DATA: gate_K / pp_K: RET 0, all order returns paid by fresh entries; sbq2 / obs / latew: 0 order returns, RETT ~0.8-0.9|F|. Corpus 1,695
+  W-runs, 0 violations. READING: the missing charge is for Even-edge returns (XI-CH-POLY via RET-XIRISE), not type returns.
+### Box 98 pushed a4c1cbb8 (VERIFY PASS), reported 21:06Z.
+### Box 99 N5-QRET (Lead 21:21Z: one mechanism behind quadratic Even-edge returns): docs/new/N5-QRET-box99.md
+- DATA: sbq2 / obs / latew returns all FREE (box84 retclass); rooted at the K fresh ticks of ONE clock vertex 4 (deg K+1, period m+3), ~3m
+  returns per tick. PROVED (lane): FRESH-ROOT (cases c, d-off-cycle; DATA 9,455/9,455 FRESH), CASCADE-EQ (WRUN-POLY <=> CASC-POLY).
+  CONJECTURE CASCADE-LIN: CASC <= n/2 (max 0.483n); chain depth <= 2 on the corpus. L-RED target: deep root chains / one fresh entry > n returns.
+### Box 99 pushed b376575c, reported 21:43Z. Its depth claim (<= 2) was a memo bug: CORRECTED in box 100.
+### Box 100 N5-CASC (Lead 21:49Z: close FRESH-ROOT, attack CASCADE-LIN): docs/new/N5-CASC-box100.md
+- PROVED (lane): EVEN-ON-PLAY ([R57] + R15), WINDOW-RISE, FRESH-ROOT in full (Even root map), CHILD (node (x,q) <= one child per edge with
+  x on g's old play), TREE. DEAD: depth O(1) (topfix_N depth 6N-11, width 1). CONJECTURE NARROW (return nodes O(1) children; corpus <= 6).
+  CASCADE-LIN still CONJECTURE (0.483n).
+### Box 100 pushed 2311683e, reported 22:10Z. R95 LANDED 22:14Z (C105 Add. 1 3c59333c). L-RED R148 killed CASCADE-LIN (clones).
+### Box 101 N5-CEDGE (Lead 22:17Z): docs/new/N5-CEDGE-box101.md. CONJECTURE CASC-EDGE RET(X; e) <= deg X (0 viol., tight 1.0 on obs);
+  PROVED (lane) CASC-EDGE => |F| <= (m_E - n_E)(1 + m_E). DEAD: once-per-root (obs 24), edge O(1) per root (topfix 17), left-target injection
+  (pftheta34_n32). cascl66 not on l-red yet (not run).
+### Box 101 pushed 6e725d15, reported 22:33Z.
+### Box 102 N5-OVT (Lead 22:42Z): docs/new/N5-OVT-box102.md. DEAD overtake-once-per-root and (left, entered)-pair injection (pftheta34_n32,
+  vertex 3 re-enters 7 from 13 under root (7->20 @6) at depths 0 and 2). CONJECTURE LEVEL-ONCE (604/604); LEVEL-ONCE => RET <= deg X (D_e+1).
+### Box 102 pushed 457e41fe, reported 22:59Z. L-RED R149 (77a6d979): NARROW DEAD; CASC-EDGE unrefuted (599 W-runs, climb -1).
+### Box 103 N5-DEPTH (Lead 23:10Z, option b): docs/new/N5-DEPTH-box103.md. DEAD depth <= f(distinct chain vertices) (topfix_N: 3 rotating
+  vertices, depth 6N-11); DEAD chain nodes always W-changing (u23sw64_n32). PROVED DEPTH-SUB D <= (n-1)(R*+1)+FL (SUB) -- redundant with R95
+  WRUN-EQ: route (b) collapses into the R*/FL core. CASC-EDGE remains the only cascade statement closing W-runs alone.
+### Box 103 pushed bb2a0f65, reported 23:28Z. L-RED R150 (916dac49): CASC-EDGE DEAD (cedge_n32).
+### Box 104 (Lead 23:41Z): N5-PING-box104.md (self-fed split DEAD: cedge_n32; self-fed => W(X) change DEAD: tog6b_n32) + N5-CORE-SYNTH-box104.md.
+### Things only I know (successor 40): sb53 tools (rootflip.py etc.) and T60 are only on origin/claude/l-si / l-lit; I read them via git show.
+  orderdet.py on latew_K16_m32 takes ~50 s; runod.sh ~6 min on 4 cores.
+
+## Resume point (HISTORY; successor 39, Opus 5.5, session_01V5yGRWZiUTdfQjnywZGM8z; FINAL, PARKED 2026-10-30 ~19:3xZ by date -u, ~65% context)
 ### FINAL summary (successor 39): boxes 92-96 + all FIXD / WRUN fixes, every push via scripts/push.sh (VERIFY PASS), each reported to the Lead
 - 92 P-N5-WRUN frozen (7668bc9b; packet fae68aa0, line 0faa5b80): XI-RUN (|F| <= m_E + sum d_E XICH_F, from R86 SW-RETURN), WRUN-EQ table.
   Both referees signed every item; fixes entries 1-5, lines L-1..L-4 (L-4 98d9a50c, 5462315f, MATCHES at both referees); goes to CHECKER as R95.
@@ -1692,6 +1751,7 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
 - (succ. 38, box 87) [ARV] H. Ackermann, H. Röglin, B. Vöcking, ECCC TR06-067: Def. 2, Thm 3 + proof, Lemma 4 + proof, Thm 7 and the
   1-1-exchange paragraph (full PDF text read).
 - (succ. 38, box 89) T. Ralphs, IE411 Lecture 11 (Lehigh, coral.ise.lehigh.edu/~ted/files/ie411/lectures-python/Lecture11.pdf), slide 3 (PDF text read).
+- (succ. 40) L-LIT T61 (l-lit 1ad851ee, docs/lit/T61-order-charging.md §2.6, S5a data). L-LIT T60 (l-lit 54584c0c, docs/lit/T60-best-reply-flips.md §3.3, ORDER-DET / NO-REPEAT statements); L-SI box 53 (l-si aeb8c311, docs/si/N5-SBF-box53.md §2.1-§2.5, §3); P-N5-SETTLE §1-§2 (l-si a0970d36). [ABS] 2102.04922 and [GH] NOT opened (only T60's quotes; no theorem of theirs used).
 ## Dead ends
 - (box 47, successor 26, 11:13Z) CONJECTURE XD-1 (≤ 1 X_dir per {u, u′}-run): FALSE on experiments/new/box47/instances/pp2_n19.pg (sha1 97b5b132…),
   𝒞^2O, S3, phase [1, 3], D = {1}, {0}, {1}; length-only values (cycle node 9). Obstruction: each X_dir needs only an Even switch on each
@@ -1881,6 +1941,16 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
   si/root/instances/ueonce_n27 (edge (10, 23) twice) and new/box48/instances/long121_n40 (S3 start); blocks inherited from an earlier sigmabar.
 - (succ. 38, box 90) CONJECTURE SB-LIN (sigmabar changes per W-run <= n): FALSE on red/so/instances/pftheta34_n32.pg (S3 start; 34 > 32)
   and L-RED latew_K16_m32 (513 > 482).
+## Dead ends (successor 40, box 97; also in docs/new/N5-ORD-box97.md)
+- ORDER-DET-U (sbar a function of the Xi-order on R143's U_k): n5s_maxph_0 (n 5), states 0-1, U = {2} both, sbar(0) 1 -> 2 (tau(0) = 1 is not a head).
+- NO-REPEAT (head / A_F orders never recur in a W-run): thetaA_n7 (n 7), refined order of A_F = {1,2,5} at state 0 recurs at state 3, sbar(6) 5,5,1,5.
+- (box 101) X returns once per root: obs_K12_m24 X 247, 24 returns; edge O(1) per root: topfix_n10 edge of 193, 17; distinct left targets per root: pftheta34_n32 X 3.
+- (box 102) successor overtakes X's target at most once per root / distinct (left, entered) pairs per root: pftheta34_n32 vertex 3, k 11 and 26 under root (7->20 @6).
+- (box 103) depth <= f(distinct chain vertices): topfix_n10 chain (193,58),(194,57),(192,56),... 50 nodes / 3 vertices; chain nodes always W-changing: u23sw64_n32 (11 W-flat).
+- (box 104) CASC-EDGE on non-self-fed returns: cedge_n32 vertex 7, 4 returns under root (20->7 @9); self-fed => W(X) change: tog6b_n32.
+- Root-chain depth O(1) (box 100): topfix_N (new/box52/out, default start), depth 6N - 11 (49 at N = 10), width 1.
+- SB_F <= f(order-set size) (the [GH] r! count): gate_K16_n197 / gate_K64_n581 (.start), SBT 16 / 64 at max|U_k| 6, |A_F| 11, 6 distinct orders.
+
 ## Things only I know (earlier successors)
 - (succ. 8) Pitfalls in box 21:
   - `pkill -f "climb_fix.py ..."` killed my own shell (exit 144). Kill by `ps -eo pid,args | awk '$2=="python3" && $3==...'`.

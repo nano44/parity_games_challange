@@ -151,6 +151,39 @@ No gap in the packet. Nothing FALSE.
   the statement needs, but the note does not declare it.
 - SETTLE-N2. §2 cites R140 «on claude/l-red» without a SHA. The quote is verbatim at l-red 47000632 (the SHA the WRUN packet cites).
 
+## Addendum 1 (2026-10-30 ~22:50Z by date -u): G-SRC-1 and Lemma ONE-STEP
+- (1) G-SRC-1 CONFIRMED, as a proof-text gap in [SET] §5 Case 2 and Case 2b.
+  - I found it independently in R-N5-SRC §3 (claude/referee 81f6b89c, written before I saw REFEREE-2's R2-N5-SRC or the Lead's 22:29Z
+    message).
+  - Case 2 writes val(ρ, τ)(y) = y ⊕ W_k(b) for ρ = σ_k[y ↦ b]. That holds only if y is not on c's σ_k-cycle. If y ≠ c lies on that cycle,
+    the ρ-play closes a new cycle y → b's path → c → c's old arc → y, whose top can be above c. Case 2b has the same pattern with σ_(k+1),
+    a and ρ′.
+  - My signature of [SET] §5 (§5 above, «Case 2 ✓», «Case 2b ✓») missed this. It was a joint miss with REFEREE-2 23. The theorem is not
+    affected (below).
+- (2) Lemma ONE-STEP (REFEREE-2 24, docs/referee-2/R2-N5-SRC.md §3.2, claude/referee-2 e8c1b62d, confirmed an ancestor of origin): SIGNED
+  (Opus 5.5, D15).
+  - Statement: for a transition t → t + 1 of a W-run F, an Even y ∉ C, and z ∈ H_t(y) with λ_W(z) = λ_W(y) = c whose (σ_(t+1), τ)-path
+    avoids y: y ⊕ W_(t+1)(z) ⊴ W_(t+1)(y).
+  - My check. ρ′ := σ_(t+1)[y ↦ z] ∈ H_t, and ARENA-MAX gives W_(t+1)(y) ⊵ val(ρ′, τ)(y). The ρ′-play from y is y, then z's path to c
+    (avoiding y), then c's σ_(t+1)-cycle.
+    - y not on that cycle: val(ρ′, τ)(y) = y ⊕ W_(t+1)(z). Done.
+    - y on it, so W_(t+1)(y) = (c, ∅, ℓ_y). The new cycle's top is the top of {c} ∪ P(W_(t+1)(z)); y and the old arc rank below c.
+      - Top c (P = ∅): val = (c, ∅, 1 + ℓ(z)) = y ⊕ W_(t+1)(z). ARENA-MAX gives the claim.
+      - Top m even: val(ρ′, τ)(y) has cycle node m with reward(m) > reward(c), against ARENA-MAX. Impossible.
+      - Top m odd: P(W(z)) has top m odd. y is not added (it is below c), so y ⊕ W_(t+1)(z) = (c, P(W(z)), ·) ◁ (c, ∅, ℓ_y) = W_(t+1)(y).
+    - ⊕ is applied to W(z) with y ∉ P(W(z)), because z's path avoids y (E1.12's proviso holds).
+  - This is the same four-way split as my R-N5-SRC §3, organised by the top of the new cycle.
+  - Own DATA: R-N5-SRC §7 counted the configuration «switched y ∉ C, b ∈ H_(k−1)(y), y on c's σ_k-cycle» 3 times on the n ≤ 100 run set,
+    all with top c. REFEREE-2's OS = 0 on 852,572 instances is consistent with this.
+- Instantiations (both CONFIRMED):
+  - Case 2 = ONE-STEP at t = k − 1 with z = b. Its hypotheses: b ∈ H_(k−1)(y) (Case 2), λ_W(b) = c (y → b on y's W_(k+1)-path, and λ_W is
+    fixed), and b's σ_k-path avoids y (shown before Case 1). The conclusion y ⊕ W_k(b) ⊴ W_k(y) is exactly the first inequality of
+    Case 2's chain.
+  - Case 2b = ONE-STEP at t = k with z = a. Its hypotheses: a = σ_k(y) ∈ H_k(y), λ_W(a) = c, and a's σ_(k+1)-path avoids y (the Case 2b
+    hypothesis). The conclusion y ⊕ W_(k+1)(a) ⊴ W_(k+1)(y) is exactly Case 2b's first inequality.
+  - Case 2c is unaffected: there the ρ′-play is analysed explicitly (it closes Z).
+- Verdict: [SET] §5 (RUN-SETTLE) stays SIGNED, with Case 2 and Case 2b read through ONE-STEP. The same holds for SRC §3.
+
 ## DONE / FINDINGS / NEEDS
 - DONE: this report; settle_probe.py; settle_logs/.
 - FINDINGS:

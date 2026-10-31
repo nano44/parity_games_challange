@@ -951,6 +951,41 @@ if grep -q "NOTT [1-9]\|SELX [1-9]\|NCX [1-9]\|TIEX [1-9]\|EVENX [1-9]\|DESCX [1
 if grep -q "ROOTX [1-9]\|EVX2 [1-9]" sb53/topk_*.txt; then echo "box 53: topkis corpus violation"; exit 1; fi
 [ "$(grep -c "BAD 0$" sb53/rs_out.txt)" = 10 ] || { echo "box 53: random search not 10 x BAD 0"; exit 1; }
 echo "si (box 53 SBF: fixed-order DEAD, ROOT-FLIP checks): PASS"
+# box 53 SBF §5 (Lead 20:00Z, T60 §3.3): ORDER-CHG' data (ORDX 0, PAIRTIE 0), NO-REPEAT on a fixed head set DEAD (exitr_cex_n16),
+# max |U_k| = 4K + 16 on mkrw (K = 4: 32).
+o=$(python3 -I sb53/orderchg.py ../red/so/instances/exitr_cex_n16.pg)
+case "$o" in *"FT 5 ORDX 0 ORDX0 3 PAIRTIE 0 UMAX 2 UPMAX 4 NORD 3 RREP 1"*) ;; *) echo "box 53 §5: exitr_cex_n16: $o"; exit 1;; esac
+t=$(mktemp -d); LATE=1 python3 -I ../red/span/mkrw.py 4 16 $t/w.pg $t/w.start >/dev/null
+o=$(python3 -I sb53/orderchg.py $t/w.pg $t/w.start)
+case "$o" in *"FT 65 ORDX 0 ORDX0 5 PAIRTIE 0 UMAX 32 UPMAX 90 NORD 77 RREP 0"*) ;; *) echo "box 53 §5: mkrw K4: $o"; exit 1;; esac
+[ "$(cat sb53/ord_*.txt | grep -c ORDCHG)" = 1134 ] || { echo "box 53 §5: orderchg outputs incomplete"; exit 1; }
+if grep -q "ORDX [1-9]\|PAIRTIE [1-9]" sb53/ord_*.txt; then echo "box 53 §5: ORDER-CHG' corpus violation"; exit 1; fi
+echo "si (box 53 SBF §5: ORDER-CHG' data, fixed-set NO-REPEAT DEAD, |U| linear): PASS"
+# box 53 SBF §2.6 / §6: ONE-STEP-O (ONEX 0, case beta occurs), XCN-ONE DEAD (xcn2_n8 kind A, xcnb2_n12 kind B; n5b agrees), KIND-A control.
+o=$(python3 -I sb53/rootflip.py ../red/n3/instances/ret22_n40.pg ../red/n3/instances/ret22_n40.start)
+case "$o" in *"ROOTX2 0 ONEX 0 OBETA 18"*) ;; *) echo "box 53 §2.6: ret22_n40: $o"; exit 1;; esac
+if grep -q "ONEX [1-9]" sb53/root_*.txt; then echo "box 53 §2.6: ONE-STEP-O corpus violation"; exit 1; fi
+o=$(python3 -I sb53/xcn.py sb53/inst/xcn2_n8.pg sb53/inst/xcn2_n8.start)
+case "$o" in *"LMAX 3 XCN_TR 2 XCN_V 1 XCN_RUN_ALL 2 XA 2 XB 0 LAMCH 2 XANL 0"*) ;; *) echo "box 53 §6: xcn2_n8: $o"; exit 1;; esac
+o=$(python3 -I sb53/xcn.py sb53/inst/xcnb2_n12.pg sb53/inst/xcnb2_n12.start)
+case "$o" in *"LMAX 3 XCN_TR 2 XCN_V 2 XCN_RUN_ALL 2 XA 0 XB 2 LAMCH 0 XANL 0"*) ;; *) echo "box 53 §6: xcnb2_n12: $o"; exit 1;; esac
+o=$(python3 -I heads52/flipx.py sb53/inst/xcnb2_n12.pg sb53/inst/xcnb2_n12.start)
+case "$o" in *"FLIP k 0 o 3 tau 9 old 9 new 11 "*"FLIP k 2 o 3 tau 9 old 11 new 9 "*) ;; *) echo "box 53 §6: xcnb2_n12 n5b: $o"; exit 1;; esac
+[ "$(cat sb53/xcn_*.txt | grep -c XCN_TR)" = 1134 ] || { echo "box 53 §6: xcn outputs incomplete"; exit 1; }
+if grep -q "XANL [1-9]" sb53/xcn_*.txt; then echo "box 53 §6: kind A without a lambda change"; exit 1; fi
+echo "si (box 53 SBF §2.6 / §6: ONE-STEP-O, XCN-ONE DEAD, KIND-A): PASS"
 # P-N5-SETTLE line revision L-1 (fixes entry 1; both referees word-diff it): must not change.
 echo "997e39eee8d72ae94be4764bb1e3841914ffc78e  ../../docs/si/P-N5-SETTLE-line-L1.txt" | sha1sum -c --quiet
 echo "si (P-N5-SETTLE L-1 pinned): PASS"
+# P-N5-SETTLE line revision L-2 (fixes entry 2, SETTLE-L5): must not change.
+echo "1fcb33c5d96a20eb70abe06c29154ef343b33ae0  ../../docs/si/P-N5-SETTLE-line-L2.txt" | sha1sum -c --quiet
+echo "si (P-N5-SETTLE L-2 pinned): PASS"
+# P-N5-SETTLE line revision L-3 (fixes entry 3, D-1 / D-2): must not change.
+echo "ae695c9eeaf9d40bdba2ed8574c238a107c68d52  ../../docs/si/P-N5-SETTLE-line-L3.txt" | sha1sum -c --quiet
+echo "si (P-N5-SETTLE L-3 pinned): PASS"
+# P-N5-SETTLE line revision L-4 (fixes entry 4, G-SRC-1 / ONE-STEP): must not change.
+echo "6ed61d848613df4b501b785e9418c3e2c1e8fc43  ../../docs/si/P-N5-SETTLE-line-L4.txt" | sha1sum -c --quiet
+echo "si (P-N5-SETTLE L-4 pinned): PASS"
+# P-N5-SETTLE line revision L-5 (fixes entry 5, SETTLE-L6 / L7): must not change.
+echo "39e44fe2b8b4cced9133270de0896e7652cc859c  ../../docs/si/P-N5-SETTLE-line-L5.txt" | sha1sum -c --quiet
+echo "si (P-N5-SETTLE L-5 pinned): PASS"

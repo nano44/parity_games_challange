@@ -161,6 +161,37 @@ Written 19:0xZ-19:4xZ (date -u; see commit).
 - What it corrects. box 52's FLIP-EV asked for an event (iii) at the old target. The flipev_n20 kill is the case o* ∉ D_k: o*'s old
   target is τ(o*), which is not in U_k. ROOT-FLIP says that is the ONLY way FLIP-EV fails, apart from own-node flips.
 
+### 2.6 ERRATUM (the Odd mirror of REFEREE-2's G-SRC-1; written after R2-N5-SRC §3.2, claude/referee-2 e8c1b62d)
+- The gap. §2.3 (TIE: «deviating to t1 gives Ξ_(k+1)(o) … ⊴ o ⊕ Ξ_(k+1)(t1)», and «[R57] gives Ξ_k(t1) ⊴ Ξ_k(t2)») and §5
+  (ORDER-CHG′: «[R57] if t2's path avoids o*») read a one-vertex Odd deviation o ↦ t as having value o ⊕ Ξ(t).
+  - That holds only up to c. After c the play follows c's (σ_k, σ̄_k)-cycle Z_c. If o lies on Z_c (o non-own but on c's cycle), the
+    deviation closes a different cycle.
+  - This is REFEREE-2's G-SRC-1 for Odd. NOCLOSE is not affected (its cycle closes at o), and neither are SEL, DESCENT or the
+    Even-switch step (they use actual plays only).
+- Lemma ONE-STEP-O (PROVED, lane; the Odd mirror of REFEREE-2 24's Lemma ONE-STEP, R2-N5-SRC §3.2).
+  - Statement. Let o be Odd and non-own at state k, with c := the cycle node of Ξ_k(o), and t ∈ succ(o) with cycle node c and
+    path_k(t) avoiding o. Then Ξ_k(o) ⊴ o ⊕ Ξ_k(t).
+  - Proof.
+    - ρ := σ̄_k with o ↦ t. The (σ_k, ρ)-play from o is o, then path_k(t) to c, then c's cycle Z_c.
+    - (α) o ∉ Z_c. Then val(σ_k, ρ)(o) = o ⊕ Ξ_k(t), and [R57] gives Ξ_k(o) ⊴ val(σ_k, ρ)(o).
+    - (β) o ∈ Z_c. Write Z_c = c → … → o → σ̄_k(o) → … → c.
+      - path_k(t) meets Z_c only after o: entering the segment from c to o would reach o before c.
+      - So Z′ := (the segment of Z_c from c to o) ∪ (o → t) ∪ path_k(t) is a simple cycle. Its top z* is c or the most relevant vertex of
+        path_k(t), because c is the top of Z_c.
+      - z* = c: the value is o ⊕ Ξ_k(t), as in (α).
+      - z* ≠ c, odd: reward(z*) = −p′(z*) < −p′(c) ≤ reward(c). So val(σ_k, ρ)(o) ◁ Ξ_k(o), contrary to [R57]. This case does not occur.
+      - z* ≠ c, even:
+        - Ξ_k(o)'s path is the segment of Z_c from o to c, whose vertices are less relevant than c, so P(Ξ_k(o)) = ∅.
+        - z* ∈ P(Ξ_k(t)) is its most relevant vertex, and it is even. So o ⊕ Ξ_k(t) ▷ Ξ_k(o).
+    - □
+- Repair. Read every «by [R57], deviating o ↦ t» step of §2.3 and §5 as ONE-STEP-O, at k + 1 and at k respectively.
+  - The hypotheses hold there: o is non-own at both states, and the target's path avoids o in the case used.
+  - If the target t has cycle node c1 different from o's cycle node, then o is not on c1's cycle (every vertex of that cycle has cycle
+    node c1). So case (α) applies and the deviation's value is o ⊕ Ξ(t). ONE-STEP-O is needed only when the cycle nodes agree.
+  - No statement of §2-§5 changes. Data: TIEX 0 and ORDX 0 already cover the configurations.
+- DATA (rootflip.py ONEX / OBETA, 1,134-run corpus): ONEX 0. The case (β) configuration (o on c's cycle, a vertex above c on t's path)
+  occurs 11,129 times (ret22_n40: 18, nep13_n24: 24). All other checks stay 0.
+
 ## 3. Corollary HEAD-RED′ (REDUCTION, PROVED, lane, from ROOT-FLIP + RUN-COUNT)
 - Definitions. Fix a W-run F (τ fixed).
   - U′_k := U_k ∪ τ(Odd), where τ(Odd) := {τ(o) : o Odd}, a vertex set fixed on F.
@@ -202,6 +233,77 @@ Written 19:0xZ-19:4xZ (date -u; see commit).
     parent's label rises, or a re-parenting below re-orders its ties.
   - The dynamic-SSSP literature (incremental shortest paths) has this as a folklore invariant. NOT opened; no claim is imported.
 
+## 5. The [ABS] / [GH] order-charging route (Lead 20:00Z; L-LIT T60 §3.3, l-lit 54584c0c): ROOT-FLIP gives the one-step order change; NO-REPEAT on a fixed head set is DEAD; |U| is linear
+- T60's ORDER-DET as written («σ̄_k is determined by σ_k and the ⊴-ORDER of Ξ_k on U_k») is vacuous: S1 computes σ̄_k from σ_k alone.
+  The form that the [ABS] Thm 29 charging needs is ORDER-CHG: «σ̄ changes only at transitions where the weak ⊴-order of Ξ on the heads
+  changes». (T60's NO-REPEAT of (σ-pattern, order) pairs is vacuous too: σ never repeats in an N5 run, since Ξ strictly rises at each
+  improving switch, R15 (a).) The order-only forms are the ones tested below.
+- Corollary ORDER-CHG′ (PROVED, lane, from ROOT-FLIP, NOCLOSE and [R57]).
+  - Setting: a transition k → k + 1 of a W-run with a σ̄-flip at a non-own Odd vertex, and o* the root flip given by ROOT-FLIP
+    (non-own at k and k + 1, old target t1 with Ξ(t1) changed, new target t2).
+  - Statement: unless Ξ_k(t1) = Ξ_k(t2) AND Ξ_(k+1)(t1) = Ξ_(k+1)(t2) (a PAIR-TIE), the weak ⊴-order of Ξ on {t1, t2} ⊆ U′_k ∪ U′_(k+1)
+    changes at k → k + 1.
+  - Proof.
+    - t1 ∈ U_k if o* ∈ D_k, and t1 = τ(o*) otherwise. Likewise t2 ∈ U_(k+1) or t2 = τ(o*). So {t1, t2} ⊆ U′_k ∪ U′_(k+1).
+    - At k: Ξ_k(t1) ⊴ Ξ_k(t2). This is [R57] if t2's path avoids o*, and NOCLOSE (strict) otherwise.
+    - At k + 1: Ξ_(k+1)(t2) ⊴ Ξ_(k+1)(t1), in the same way.
+    - So the sign of the comparison of t1 with t2 goes from ≤ 0 to ≥ 0. It is unchanged only if it is 0 at both times. □
+  - The PAIR-TIE case (both targets tied before and after, both rising together) is NOT excluded by the proof.
+  - DATA (orderchg.py, 1,134 runs):
+    - PAIRTIE 0.
+    - ORDX 0: every flip transition with no own-node flip and no CN switch changes the weak order on U′_k ∪ U′_(k+1). 4,613
+      transitions.
+    - With U alone in place of U′ the order is unchanged at 917 of them (ORDX0; thetaA_n7: both flips). So τ(Odd) must be among the
+      heads, as in HEAD-RED′.
+- DEAD: NO-REPEAT for orders on a fixed head set.
+  - Statement killed: «inside a W-run, the weak order of Ξ on a fixed head set never recurs after a different one, and σ̄ is a function
+    of it».
+  - Instance: experiments/red/so/instances/exitr_cex_n16.pg (L-RED; read, not edited; default start). It has one W-run, states 1-8,
+    with fixed head set H_1 := U′_1 = {3, 4, 8, 11}.
+    - The weak order on H_1 is the same at states 1, 5, 6 and 7, with a different order at states 2-4 in between.
+    - σ̄ of the second Odd vertex is 3, 7, 3, 13 at those four states.
+  - So the order on a fixed set neither avoids repeats nor determines σ̄. The heads that decide (7, 13) enter U′ later.
+  - Corpus: RREP in 128 W-runs (orderchg.py).
+- The parameter is not small. max_k |U_k| is linear in n on L-RED's mkrw family (LATE=1, m = 16): K = 4 / 8 / 12 / 16 gives UMAX
+  32 / 48 / 64 / 80 = 4K + 16 at n = 14K + 130.
+  - It is also 96 on latew_K16_m32 (n 482). |U′| is up to 385 on the corpus.
+  - Distinct head orders per W-run ≈ the W-run length (NORD 19K + 1 on mkrw; 561 on latew).
+  - So «FPT in max |U_k|» gives 2^Θ(n) or Θ(n)! on these families: nothing.
+- Answer to the Lead's question. ROOT-FLIP IS the one-step part of ORDER-CHG: every non-own σ̄-flip comes with an order change on
+  U′_k ∪ U′_(k+1), up to the PAIR-TIE case. This is PROVED (lane) except for PAIR-TIE (data 0).
+  - It does NOT give a count: the counting half of [ABS] / [GH] (no repeat, or a value quantum, over a SMALL fixed set) fails on two
+    counts:
+    - the set is not small (Θ(n));
+    - the order on a fixed set does recur (exitr_cex_n16).
+  - A quantum is XI-CH-POLY again, as T60 says.
+
+## 6. Own-cycle-node σ̄-flips (XCN): XCN-ONE DEAD; kind A PROVED ≤ n(n − 1) per run (from R47); kind B (DFS re-orders) OPEN
+- Split an own-node flip at o, k → k + 1 (o its own Ξ-cycle node at k or at k + 1), into two kinds:
+  - KIND A: o is its own Ξ-cycle node at exactly one of k, k + 1;
+  - KIND B: at both (S1's DFS re-picks o's cycle edge while Ξ(o) = (o, ∅, 0) stays fixed).
+- DEAD: CONJECTURE XCN-ONE (at most one XCN transition per W-run), with instances in experiments/si/sb53/inst/. n5b agrees on each.
+  - xcn2_n8 + .start (n 8), one W-run of 3 transitions with two kind-A transitions:
+    - at 0 → 1, Odd 0 stops being its own cycle node (cycle node 0 → 7; σ̄(0) 2 → 7);
+    - at 1 → 2, Odd 5 becomes its own cycle node (σ̄(5) 4 → 5).
+  - xcnb2_n12 + .start (n 12), one W-run of 3 transitions with two kind-B transitions at the SAME vertex: σ̄(3) = 9 → 11 (0 → 1) and
+    11 → 9 (2 → 3). Ξ(3) = (3, ∅, 0) throughout, and λ_Ξ never changes (LAMCH 0).
+  - Found by xcnrs.py (BIAS 1 / 2) and a kind-B variant of it, after 70k + 360k games. The corpus never shows two in one W-run
+    (XCN_TR max 1).
+- Corollary KIND-A (PROVED, lane, from RESULTS R47 Lemma Φ).
+  - Statement: every N5 run has at most n(n − 1) transitions carrying a kind-A flip. In particular so has every W-run.
+  - Proof.
+    - A kind-A flip at o changes λ_Ξ(o): it is o at one state and not at the other.
+    - By R47 Lemma Φ («cycle nodes only rise … along a run»), each change of λ_Ξ(v) moves to a cycle node of strictly larger reward.
+    - Rewards are injective, so each vertex's λ_Ξ changes at most n − 1 times. Hence at most n(n − 1) transitions change λ_Ξ at all. □
+  - DATA (xcn.py, corpus): XANL 0 (no kind-A transition without a λ_Ξ change); whole-run kind A 472, LAMCH 3,179 (max 30).
+- So HEAD-RED′'s XCN term splits as XCN_F ≤ n(n − 1) + XB_F, where XB_F := the kind-B transitions of F.
+  - Polynomial W-runs ⟺ CN-POLY ∧ HX′-POLY ∧ XB-POLY (per W-run).
+- OPEN: XB-POLY.
+  - Corpus: 17 kind-B transitions over whole runs, at most 2 per run.
+  - Mechanism (xcnb2_n12): S1's DFS at an own node takes the first cycle-closing successor; the stack order makes it depend on the
+    Even choices below. Even switches below can make it alternate (9, 11, 9).
+  - No bound is known. This is the Odd analogue of the CN term (Even cycle-node switches).
+
 ## DONE / FINDINGS / NEEDS
 - DONE: this note; experiments/si/sb53/ (topkis.py, rootflip.py, rsearch.py, runtopk.sh, runroot.sh, runrs.sh, topk_*.txt,
   root_*.txt, rs_out.txt); pins in si/check.sh «box 53 SBF». SHA: see the commit.
@@ -211,6 +313,11 @@ Written 19:0xZ-19:4xZ (date -u; see commit).
   - PROVED (lane): Lemmas NOCLOSE, TIE, DESCENT; Theorem ROOT-FLIP (any N5 transition); Corollary EVEN-ROOT; Corollary HEAD-RED′
     (REDUCTION: SB term → τ(Odd)-head Ξ-changes + own-node flips). SEL is proved modulo the reading «RG′ and T54 apply to S1's own
     evaluation».
-  - CONJECTURE (data only): HX′-POLY, XCN-POLY.
+  - CONJECTURE (data only): HX′-POLY.
+  - §6: XCN-ONE DEAD (xcn2_n8 kind A; xcnb2_n12 kind B, σ̄(3) 9 → 11 → 9); Corollary KIND-A PROVED (≤ n(n − 1) per run, from R47);
+    XB-POLY (DFS re-orders at own nodes) OPEN.
+  - §2.6 ERRATUM: the Odd mirror of G-SRC-1; repaired by Lemma ONE-STEP-O (PROVED, lane; ONEX 0).
+  - §5 (Lead 20:00Z): Corollary ORDER-CHG′ PROVED (lane) up to PAIR-TIE (data 0). DEAD: NO-REPEAT / order-determination on a fixed
+    head set (exitr_cex_n16). max |U_k| = 4K + 16 on mkrw, so FPT in |U| is empty.
 - NEEDS: Lead: route ROOT-FLIP (§2) and HEAD-RED′ (§3) to L-RED for a kill attempt, and, if wanted, to a packet. L-LIT T60: Topkis
   sources are now only needed for §1's framing; the kill does not depend on them.
