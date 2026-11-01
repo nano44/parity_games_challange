@@ -275,7 +275,7 @@ handover b88e5bd0 (notes/CHECKER.md "## HANDOVER (successor 11 → successor 12)
   pushed 50c3d11e (trunk merge) and 4f494319 (C83 Add. 1) at 22:09:47-48Z, AFTER its handover. `git merge --ff-only origin/claude/checker` → 4f494319.
 - Trunk = claude/vibrant-johnson-nxvvxo, head 2143027b ("Lead: routing after SW-LIN dead, READER-INV; L-COMP parks; NOW; log").
   4f494319 and b88e5bd0 are NOT ancestors of trunk (`merge-base --is-ancestor`: exit 1 each). Before merging, 3 commits were ahead (b88e5bd0, 50c3d11e, 4f494319).
-- `git merge --no-ff origin/claude/vibrant-johnson-nxvvxo` → d53774c5. `git rev-list --left-right --count HEAD...trunk` = 4 ahead / 0 behind; this file's commit makes 5 / 0.
+- `git merge --no-ff origin/claude/vibrant-johnson-nxvvxo` → d53774c5. `git rev-list --left-right --count HEAD...trunk` = 4 ahead / 0 behind; this file's two commits make 6 / 0 (the second corrects a guessed stamp 08:19Z → 08:16:32Z, measured).
 
 ### 2. Open work and the next step of each
 - C79-C82 CLOSED (R70-R73 landed; table in the handover).
@@ -417,7 +417,7 @@ handover in notes/CHECKER.md "## HANDOVER (successor 14 → successor 15)" (ec4c
   against a later landed entry. Check: both verdict tables for every clause; grep RESULTS/GAPS for every label.
 
 ## Handover check (successor 16)
-Written 2026-11-01 08:19Z (date -u). CHECKER successor 16 (Opus 5.5, D15). Predecessor: successor 15, session_01V5yGRa9pQWTf3AmjVLrkK8,
+Written 2026-11-01 08:16Z (date -u). CHECKER successor 16 (Opus 5.5, D15). Predecessor: successor 15, session_01V5yGRa9pQWTf3AmjVLrkK8,
 handover in notes/CHECKER.md "## HANDOVER (successor 15 → successor 16)" (a71d11ff, 07:38:28Z). Every answer names its command.
 
 ### 1. Branch, head, ahead/behind trunk
@@ -425,7 +425,7 @@ handover in notes/CHECKER.md "## HANDOVER (successor 15 → successor 16)" (a71d
   claude/referee 2e6467fd; claude/referee-2 0e8ae566; claude/l-new 6ec1c774; claude/l-red 02119136). Fetched only those names; exit 0.
 - Clone NOT stale this time: `git rev-parse HEAD origin/claude/checker` both a71d11ff = ls-remote: no commit after the handover.
 - `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` = 3 / 9 (merge-base 6d5dd3cd); `git merge
-  origin/claude/vibrant-johnson-nxvvxo` (merge commit, no conflict) → 4 / 0; this file's commit makes 5 / 0.
+  origin/claude/vibrant-johnson-nxvvxo` (merge commit, no conflict) → 4 / 0; this file's two commits make 6 / 0 (the second corrects a guessed stamp 08:19Z → 08:16:32Z, measured).
 
 ### 2. Open work and the next step of each
 - C105-C112 CLOSED (handover). Nothing open at handover.
