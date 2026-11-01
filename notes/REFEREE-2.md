@@ -18,7 +18,11 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
   needs no C^1O (box 21 §2.2: VJ00 (11) on G, G^d + Lemma R + R15 (a)(d)). Line REQUIRED GATE-L1: lend107 is 106 in-phase W-changes, not
   107 (lane gate.py groups by first state, counting the closing transition); fbg_K12 403 exact. Corpus DATA reproduced (INC 12,433 /
   17,841; 575 INC-0; 116 vs 118 exceeding). Tool R2-N5-GATE/gate_check.py, phases.py. Worktree $SCRATCH/wgate = l-new 516717da.
-- NEXT: GATE line revision word-diff when the Lead sends it. Context ~300k at GATE report.
+- GATE L-1 (afb8b99e, d677161c) MATCHES 9b30c652.
+- P-N5-S4B (l-si 68fa36619, f1b65da5, line f8559b5e): report docs/referee-2/R2-N5-S4B.md. S4B-OPT, S4B-KEEP SIGNED; line MATCHES (P-1
+  optional: N-1E-1 + arena-input confirmation). S4b = S1 procedure on H' (its G_sigma). DATA exact (7,772 / 6,719 / 290,345 / 1,053 / 36).
+  Tool R2-N5-S4B/s4b_check.py. Worktree $SCRATCH/ws4b = l-si 68fa36619.
+- NEXT: whatever the Lead sends. Context ~330k.
 
 ## HANDOVER (successor 24, session_01V5yGRZwUkPZRndvKiAAuAD, Opus 5.5 under D15; written 2026-10-31 15:3xZ by date -u; context ~480k; Lead 15:17Z: handover and park)
 Branch claude/referee-2, merged with trunk (git merge, no rebase) before every push. REFEREE-2 owns no docs/GAPS.md rows.
