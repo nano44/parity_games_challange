@@ -9,7 +9,7 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   Xi-play path parts in a W-run => XI-CH <= (2n)^ceil(log2(n+1)) per vertex (quasi-poly).
 - DEAD: the premise (expiration inside W-runs): nep92_n40 W-run [6,20] src 0 at (0,19); corpus 16,500 violations in 158 / 1,132 games,
   every one an Even-edge availability change (NEITHER 0); RET 0 (no path part returns).
-- READING: no parametric cast with known theory (availability toggles; lex order fine for fixed c; circular). Lower-bound template
+- READING: no parametric cast with known theory (availability toggles; lex weights superincreasing (LEX-SIGN): L-RED 41 claim (2) CHECKED correct, note §5(d); circular).
   only gives the order of plays, not the S4a dynamics; super-poly XI-CH = super-poly W-run.
 - Not done: proof that every alternation needs an availability change (DATA 16,500 / 16,500); cycle-node moves of Xi inside W-runs.
 ### Things only I know (successor 45): Oink was NOT built in this container at start (tools/oink/build missing): ran scripts/setup_oink.sh.

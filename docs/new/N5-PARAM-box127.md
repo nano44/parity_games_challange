@@ -64,6 +64,21 @@ through this fact. So the bridge to test is not «is the family affine» but «i
       lexicographic issue; within a W-run λ_W is constant but the cycle nodes of Ξ may move (not measured here).
   (c) circularity: a breakpoint count bounds Ξ-changes by the number of parameter pieces; here the «parameter» is σ itself, whose
       changes are the W-run length. Any transfer must bound availability toggles independently, which is XI-CH again (relocation).
+  (d) L-RED 41's claim (2), via the Lead 06:26Z: «N5's (c, P, ℓ) values cannot carry numeric weights (distinct-rank vertices)».
+      CHECKED: CORRECT, and it sharpens (b). (b) is only about bit cost: for fixed c the order IS one O(n)-bit scalar. But the weights
+      of that scalar are SUPERINCREASING (vertex u has ±2^rank(u), ranks distinct, and 2^r > Σ_{r'<r} 2^r'). By Lemma LEX-SIGN
+      (PROVED, lane, docs/new/N5-ARV-box87.md l. 35), two path parts with the same c are ordered by the TOP vertex of P Δ P′ alone,
+      with ℓ (unit weights, ≤ n + 1 values) breaking ties when P = P′. This is where the cast breaks. A Carstensen / Mulmuley-Shah /
+      Gusfield instance needs edge costs whose SUMS trade off: a path wins by being cheaper in total over many comparable terms
+      (a_e + λ b_e, with a_e, b_e > 0 in [CFLY] §1). With superincreasing weights no sum of lower terms can outweigh one higher term, so
+      the comparison is a lexicographic-bottleneck test, not an additive one. A priority encoding of general weights would need
+      several vertices per weight value; with one rank per vertex, a weight w ≠ ±2^r costs a chain of distinct-rank vertices (one per
+      bit of w), and two edges cannot share a rank. So general weights cannot be supplied at any bit cost; only the top-element order
+      plus path length can. The (−n)^Ω mean-payoff reading of the order is the same superincreasing structure, so it supplies nothing
+      more. (READING. The structural fact LEX-SIGN is PROVED (lane). «No cast exists» in full generality is not proved.)
+      Consequence for the template direction: the trade-off inside a Carstensen comparison (line crossings) has to come from somewhere
+      else, i.e. from changes in availability (σ) or the cycle node c. That is again the W-run dynamics; it agrees with L-RED's (1)
+      (XI-CH and run length are polynomially equivalent).
 - What survives: AF-QP is a clean sufficient condition. A weaker, availability-aware version (alternations of a segment pair (q, q')
   at (u, v) charged to switches of Even vertices on q') gives a Davenport-Schinzel order equal to the switch count: useless.
 
