@@ -1,7 +1,13 @@
 # L-LIT notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
-## Resume point (HANDOVER, T63, 2026-10-31 ~08:40Z by date -u; same session; PARKED again after T63 on the Lead's word)
+## Resume point (HANDOVER, T64, 2026-11-01 ~03:15Z by date -u; same session; PARKED after T64)
+T64 (Lead 02:52Z, one box): docs/lit/T64-one-player-pivots.md.
+- Post-Ye Thm 3.7 / 4.8; HKZ abstract only; Zhong-Ye Thm 2.1, 6.1, 7.1; MC94 via Christ-Yannakakis p.3.
+- TWO-FIX = one-player switch-best (R17) iff D = empty; otherwise a stale-model arena optimum, with no opened bound.
+IN FLIGHT: none. NEEDS: none.
+
+## Previous resume point (HANDOVER, T63, 2026-10-31 ~08:40Z by date -u; same session; PARKED again after T63 on the Lead's word)
 T63 (un-parked by the Lead 08:12Z for one box): docs/lit/T63-potentials.md.
 - (a) The ES / incremental BFS level bound (HKN 1308.0776 Lemma 2.10; Nanongkai ADFOCS'18 slide 42). Lex-min path changes: NOT FOUND.
   LEXINS PROVED (n + INS).
@@ -593,6 +599,11 @@ NEEDS: none from the owner.
   charging, Lemma 2.10 (King)); Nanongkai ADFOCS 2018 slides "4 Deeper Discussions" conferences.mpi-inf.mpg.de/adfocs18/danupon/
   4-Deeper_Discussions.pdf (376ce8ed945a1fa5; slides 41-48, Thm [Even-Shiloach JACM'81, Dinitz'71] slide 42). Re-used: T58/T59/T60
   sources. NOT OPENED: Even-Shiloach JACM 1981; King FOCS 1999. NOT FOUND: dynamic lexicographic BFS / lex-min path trees (one search).
+
+- T64 (2026-11-01). OPENED: Christ-Yannakakis arXiv 2212.00083 (ab6b525118aadbb3; p.3 MC94 remark, p.8 PI variants, Def. 1); re-used
+  Post-Ye 1208.5083v2 (Thm 3.7 p.9, Thm 4.8 p.12, abstract), Zhong-Ye 2609.40147v2, ABS 2102.04922, Friedmann 1106.0778 p.7. ABSTRACT ONLY:
+  Hansen-Kaplan-Zwick SODA 2014, CRIS record cris.iucc.ac.il (DOI 10.1137/1.9781611973402.63, pp.847-860). NOT OPENED: Melekopoglou-Condon
+  1994; Orlin 1997.
 
 ## Dead ends
 - T17 (2026-10-16): counter_dtl is not online. Obstruction: never committed upstream, absent from 24 SWH snapshots, 13 forks, Wayback, author pages and code search; only README text. Remaining route: ask the author (owner's decision, D1).

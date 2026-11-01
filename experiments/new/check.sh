@@ -637,4 +637,10 @@ if grep -qF "XIN_OLD 4029/4029 (path only 4029) FF 43 IN_OLD 43 IN_NEW 43 PHL up
 else
   echo "box 121 BRTREE check: FAILED"; exit 1
 fi
+w70=$(cd .. && python3 -I new/box122/windows.py n5-exhaustive/instances/b5_os_n40.pg new/box121/inst/b5_os_n40_default.start 4)
+if grep -qF "WIN b5_os_n40.pg n 40 K 81 [0, 77] L 77 ODIFF 1 FB 9 SB 7 SBSTEP 9 MAXSEG 17 MAXPH 17 PHNF 17 FLATNF 0 LAMNF 7 O [(7, 2, 7)]" <<<"$w70"; then
+  echo "box 122 TWOFIX: b5_os_n40 ODIFF 1 window 77 = 9 fallbacks + runs <= 17, PHNF 17 <= n - 1 (TF-PH): PASS"
+else
+  echo "box 122 TWOFIX check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
