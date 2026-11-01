@@ -685,4 +685,10 @@ if grep -qF "GATECHG topfix_n10.pg n 210 ODIFF0 WIN 2 STRICT 667 CHARGED 543 PAY
 else
   echo "box 129 GATECHG check: FAILED"; exit 1
 fi
+w78=$(cd .. && python3 -I new/box130/flatcnt.py red/xing/instances/u2flat73_n32.pg new/box130/u2flat73_n32_default.start; python3 -I new/box130/flatcnt.py red/so/instances/tog6a_n32.pg -)
+if grep -qxF "FLATCNT u2flat73_n32.pg n 32 ODIFF1+ WIN 1 MOVES 75 STRICT 2 FLAT 73 WEAK 0 CORNER 0 FLATTRANS 0 FL 7 ONLYFLAT_VIOL 0 FLOPT_VIOL 0 FLTIGHT_VIOL 0 XIRISE_VIOL 0 MAXFLRUN 3 MAXFLWIN 73 FLATFIRST 49 ODIFF0FLAT 0 XIRISE_CYC 0 FLTIGHT_CYC 0 FL0_NONCORNER 0" <<<"$w78" && grep -qxF "FLATCNT tog6a_n32.pg n 32 ODIFF0 WIN 1 MOVES 25 STRICT 23 FLAT 1 WEAK 1 CORNER 6 FLATTRANS 0 FL 1 ONLYFLAT_VIOL 0 FLOPT_VIOL 0 FLTIGHT_VIOL 0 XIRISE_VIOL 0 MAXFLRUN 1 MAXFLWIN 1 FLATFIRST 1 ODIFF0FLAT 1 XIRISE_CYC 2 FLTIGHT_CYC 0 FL0_NONCORNER 0" <<<"$w78"; then
+  echo "box 130 FLATCNT: u2flat73_n32 73 flat moves, 7 FL transitions (ODIFF >= 1); tog6a ODIFF-0 FL transition only at corner movers: PASS"
+else
+  echo "box 130 FLATCNT check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
