@@ -739,4 +739,10 @@ if grep -qxF "REL ret2_n37.pg n 37 K 12 RUNS 1 FL 7 CEILVIOL 0 SATDEC 0 SATGAIN 
 else
   echo "box 137 REL check: FAILED"; exit 1
 fi
+w87=$(cd .. && python3 -I new/box138/dmerge3.py new/box138/sbmany_n57.pg new/box138/sbmany_n57_default.start; python3 -I new/box138/dmerge3.py new/box133/odxi_n37.pg new/box133/odxi_n37.start)
+if grep -qxF "DMERGE3 sbmany_n57.pg n 57 SSTRETCHES 1 FL 3 ACYC 1 CYC 0 EHEIGHT 9 CASCVIOL 0 EDGES 99 MAXL 3 CNMOV 1 SBIN 95 TIES 0 ODDNODES 8 SBSTR 1 SBACYC 1 SBFL 3" <<<"$w87" && grep -qxF "DMERGE3 odxi_n37.pg n 37 SSTRETCHES 1 FL 8 ACYC 1 CYC 0 EHEIGHT 9 CASCVIOL 0 EDGES 372 MAXL 8 CNMOV 0 SBIN 0 TIES 0 ODDNODES 54 SBSTR 0 SBACYC 0 SBFL 0" <<<"$w87"; then
+  echo "box 138 GATE: sbmany_n57 95 sbar changes inside one acyclic S-stretch of 3 transitions (CASC-M3); odxi_n37 one S-stretch, Even-height 9: PASS"
+else
+  echo "box 138 GATE check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

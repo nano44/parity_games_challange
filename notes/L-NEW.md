@@ -20,10 +20,23 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - DATA (813 distinct pairs + 11 L-RED/L-NEW pins + 2 new pins): every check 0 violations; SATGAIN 0 on all corpus FL runs; c-world FL
   moves 0 on corpus, 2 on cwmov2_n57 (so no C-OFF conjecture). Pins ret2_n37, cwmov2_n57: Oink zlk/tl verified, n5b identical.
 - READING: sigma-bar enters only via gating changes; the open object is GCH (circular); recipe for L-RED §6 (carry as gating event, nest).
+### Box 137 pushes: 2e1322eb (VERIFY PASS), follow-up a5c5b594 (VERIFY PASS, climb 4 final log). Lead 22:06Z recorded box 137; REFEREE
+  e002db99 and REFEREE-2 dc7db0e7 both MATCH L-2 -> P-N5-ANCHOR goes to landing as R103 (optional REFEREE note ANC-P4: «x» unbound in
+  «x's W'-cycle node»; act only if CHECKER makes it REQUIRED).
+### Box 138 N5-GATE (Lead GO 22:06Z; docs/new/N5-GATE-box138.md; experiments/new/box138/)
+- PROVED (lane): GATE-LEX ((|SAT|, CYC) monotone, poly range, strict at cycle-node changes); Theorem CASC-M''' (S-stretches cut only at
+  cycle-node changes and CN moves; D''' = D' minus self-edges + Odd edges; Odd adds no delay; under (NT) unique Odd minimum, (NC) no
+  corner) and Corollary FL run <= n_E (1 + n(n-1) + CNMOV) for D'''-acyclic S-stretches (SBCH dropped).
+- odxi_n37's 5 gate changes: one D''/D'''-acyclic stretch, Even-height 9; paid by the cascade, no potential.
+- READING: c-world = one-player static-weight total-cost SI under [RULE]; Fearnley 1705.02313 Lemma 3 covers greedy all-switch only;
+  hard cases (CDAG_n, Friedmann 1106.0778) use other rules -> no reduction.
+- DATA: corpus 10/10 S-stretches D'''-acyclic, 0 viol, 0 ties; sbmany_n57 pin (125 sbar changes, FL 4; Oink/n5b verified).
+- OPEN: D'''' = D''' with box 136 z-world/DOM cuts (observed D'''-cycles are Even-Odd 2-cycles x <-> o: cwmov2_n57 6 <-> 11); CNMOV.
 ### Things only I know (successor 47)
 - rel.py's analyse() is importable (climb137.py uses it); rel.LAST holds S, T, E, runs after a call (anat.py). A game without FL runs
   used to crash analyse (retc unbound) - fixed; the first corpus rerun after the refactor showed 801 errors, rerun clean.
 - DEFVIOL's first version had the length sign reversed (false alarm on the cwmov2 mutant); fixed before any claim.
+- dmerge3.py SHOWCYC=1 prints a D''' cycle. pkill -f with a pattern that occurs in your own command line kills your own shell: kill by pid.
 - Climbs: 4 x 40 min, ~10,000-40,000 mutations each; RETMAX 2, MOVMAX 7 best; climbs 1-3 stopped on the old DEFVIOL false alarm (mutants re-checked clean). L-RED pins copied read-only into box137/inst (18/18 sha1 OK).
 
 ## Resume point (HISTORY; successor 46, Opus 5.5, session_01V5yGRaCabVm2TBMRgehQJx; FINAL, PARKED 2026-11-01 ~19:2xZ by date -u, ~460k context)
