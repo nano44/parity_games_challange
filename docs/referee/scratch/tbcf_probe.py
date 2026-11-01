@@ -8,13 +8,13 @@ Own engine rl_engine (written from SPEC only); no lane code. At every fallback-f
     ODD   c odd:  sigma_(k+1)(h) = min FO(h)                                 (TB's choice rule, longest-path mode in the dual)
     EVEN  c even: sigma_(k+1)(h) = the y in FO(h) with lex-least root-first key kappa(y) (indices of y's play, c excluded, read from c)
     BRIDGE at a FLAT non-corner move (o := sigma_k(h) != w := sigma_(k+1)(h), W'(o) = W'(w), h on neither play): o in FO(h)
-MUT 1: ODD/EVEN rules swapped (must bite). Usage: tbcf_probe.py N seed   (random games, n 4-14, 2-5 Odd choice vertices, random start)"""
+MUT 1: ODD/EVEN rules swapped (must bite). CORNER=pre: a corner is h on y's play before y's cycle node (h on its own W'-cycle tested). Usage: tbcf_probe.py N seed   (random games, n 4-14, 2-5 Odd choice vertices, random start)"""
 import sys, os, random
 from collections import Counter
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import rl_engine as RE
 import dual_probe as D
-MUT = int(os.environ.get("MUT", "0"))
+MUT = int(os.environ.get("MUT", "0")); PRE = os.environ.get("CORNER") == "pre"
 EX = []
 
 
@@ -39,9 +39,16 @@ def analyse(cnt, g, start, name):
             c = Wp[h][0]
             if h == c: continue
             w = s1[h]
-            if h in play(nx, w): cnt["corner_own_cycle"] += 1; continue   # h on its own W'-cycle: a corner, outside the choice form
-            FO = [y for y in sorted(A[h]) if h not in play(nx, y) and g.ext(h, Wp[y]) == Wp[h]]
-            cnt["movers"] += 1
+            if PRE:   # corner = h occurs on y's play BEFORE y's cycle node (s22, R-N5-ANCHOR ANC-1); h on its own W'-cycle is tested
+                def passes(y):
+                    p = play(nx, y); return h in p[:p.index(c)] if c in p else h in p
+                if h in play(nx, w): cnt["on_own_cycle_tested"] += 1
+            else:
+                def passes(y): return h in play(nx, y)
+                if h in play(nx, w): cnt["corner_own_cycle"] += 1; continue   # h on its own W'-cycle: skipped (first reading)
+            FO = [y for y in sorted(A[h]) if not passes(y) and g.ext(h, Wp[y]) == Wp[h]]
+            cnt["movers"] += 1   # every checked Even h with >= 2 options («movers» is a misnomer: non-movers included, counted below)
+            if w == s[h]: cnt["nonmovers"] += 1
             if w not in FO: fail(cnt, "SEL", name, k, h); continue
             def kappa(y):
                 p = play(nx, y); return list(reversed(p[:p.index(c)]))
