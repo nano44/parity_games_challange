@@ -208,3 +208,5 @@ Five questions:
 | 2026-10-31 | L-NEW | session_01V5yGRVxhJocn7ALu97hJ39 (~525k; FINAL 4d4c26b0) | session_01V5yGRWyuWWZgJkLHZqZjYn (Opus, D14/D18) | 2 | PENDING (successor's check) |
 | 2026-10-31 | L-RED | session_01V5yGRZkXge7F2DR4joW3DU (PARK b31f9477) | session_01V5yGRYVy3wZ2ZDHF5VpFiB (Opus, D1/D18) | 2 | PENDING (successor's check) |
 | 2026-10-31 | L-SI | session_01V5yGRW5dXBpY8PB9cBoNWF (handover 86f2c700) | session_01V5yGRaKVKb8btaPGXC6cJ2 (Opus, D18) | 2 | PENDING (successor's check) |
+| 2026-11-01 | REFEREE | session_01V5yGRYBU4SsUT8MviYhjjg (park threshold; handover 65b74579) | session_01V5yGRW3K7nSRJ5pwy8KPGu (Opus, D1/D18) | 2 | PENDING (successor's check) |
+| 2026-11-01 | L-NEW | session_01V5yGRWyuWWZgJkLHZqZjYn (FINAL 516717da) | session_01V5yGRW6BGT1zSiwSKRv1qy (Opus, D14/D18) | 2 | PENDING (successor's check) |

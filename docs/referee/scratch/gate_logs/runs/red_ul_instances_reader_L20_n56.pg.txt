@@ -1,0 +1,12 @@
+GAME red/ul/instances/reader_L20_n56.pg
+BGmax 0
+GAMES 1
+INC 22
+K 23
+MAXPH 23
+SGmax 0
+SQZ_chk 1344
+steps 23
+stretches 1
+VIOLATIONS 0
+RC 0

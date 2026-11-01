@@ -1,0 +1,14 @@
+GAME red/xing/instances/x31_cu32i.pg
+BGmax 19
+GAMES 1
+INC 37
+K 42
+MAXPH 39
+PH_over 1
+SGmax 39
+SQZ_chk 1376
+steps 40
+stretches 1
+VIOLATIONS 0
+EX ('PH_over', 'x31_cu32i.pg', 2, 40, 39, 31)
+RC 0

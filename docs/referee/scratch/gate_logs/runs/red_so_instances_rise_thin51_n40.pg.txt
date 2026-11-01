@@ -1,0 +1,14 @@
+GAME red/so/instances/rise_thin51_n40.pg
+BGmax 36
+GAMES 1
+INC 76
+K 78
+MAXPH 69
+PH_over 1
+SGmax 75
+SQZ_chk 3160
+steps 77
+stretches 1
+VIOLATIONS 0
+EX ('PH_over', 'rise_thin51_n40.pg', 1, 77, 69, 39)
+RC 0

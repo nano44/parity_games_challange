@@ -1,0 +1,8 @@
+GAME new/box59/out/rnd/r66_n50.pg
+BGmax 1
+GAMES 1
+K 4
+SGmax 1
+SQZ_chk 250
+VIOLATIONS 0
+RC 0

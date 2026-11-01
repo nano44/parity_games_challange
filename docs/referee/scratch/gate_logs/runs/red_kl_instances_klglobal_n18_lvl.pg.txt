@@ -1,0 +1,12 @@
+GAME red/kl/instances/klglobal_n18_lvl.pg
+BGmax 3
+GAMES 1
+INC 0
+K 6
+MAXPH 1
+SGmax 3
+SQZ_chk 126
+steps 1
+stretches 1
+VIOLATIONS 0
+RC 0

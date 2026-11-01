@@ -1,0 +1,14 @@
+GAME red/xing/instances/j8_n48.pg
+BGmax 44
+GAMES 1
+INC 85
+K 86
+MAXPH 85
+PH_over 1
+SGmax 83
+SQZ_chk 4176
+steps 86
+stretches 1
+VIOLATIONS 0
+EX ('PH_over', 'j8_n48.pg', 0, 86, 85, 47)
+RC 0

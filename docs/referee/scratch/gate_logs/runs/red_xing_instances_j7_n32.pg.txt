@@ -1,0 +1,14 @@
+GAME red/xing/instances/j7_n32.pg
+BGmax 47
+GAMES 1
+INC 44
+K 50
+MAXPH 46
+PH_over 1
+SGmax 47
+SQZ_chk 1632
+steps 49
+stretches 1
+VIOLATIONS 0
+EX ('PH_over', 'j7_n32.pg', 1, 49, 46, 31)
+RC 0

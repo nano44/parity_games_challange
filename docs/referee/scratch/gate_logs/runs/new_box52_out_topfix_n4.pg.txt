@@ -1,0 +1,12 @@
+GAME new/box52/out/topfix_n4.pg
+BGmax 69
+GAMES 1
+INC 66
+K 95
+MAXPH 25
+SGmax 69
+SQZ_chk 8064
+steps 95
+stretches 1
+VIOLATIONS 0
+RC 0

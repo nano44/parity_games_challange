@@ -64,7 +64,10 @@ def build(K, m2, m3, gen):
     for i in range(1, m2 + 1):
         add(f"rr{i}", 0, nxt(), [f"aa{i}", f"bb{i}"]); sig[f"rr{i}"] = f"bb{i}"
         if i == 1: add("aa1", 1, p("BA2_1"), ["hs"])
-        else: add(f"aa{i}", 1, p(f"BA2_{i}"), [f"rr{i - 1}", f"gg{i}"]); tau[f"aa{i}"] = f"rr{i - 1}"; add(f"gg{i}", 1, p(f"GM2_{i}"), [f"rrr{m3}"])
+        else:
+            add(f"aa{i}", 1, p(f"BA2_{i}"), [f"rr{i - 1}", f"gg{i}"] + ([f"hh{i}"] if gen.get("STATIC") else [])); tau[f"aa{i}"] = f"rr{i - 1}"
+            add(f"gg{i}", 1, p(f"GM2_{i}"), [f"rrr{m3}"])
+            if gen.get("STATIC"): add(f"hh{i}", 1, p(f"H_{i}"), ["hps"])   # R168: static escape of gate i (srz3b STATICESC)
         add(f"bb{i}", 1, p(f"BB_{i}"), ["hps"])
     add("dd0", 1, p("MU0"), ["hps"])
     for i in range(1, m2 + 1):
@@ -78,6 +81,7 @@ def build(K, m2, m3, gen):
     o2 = [f"dd{i}" for i in range(1, m2 + 1, 2)]; e2 = ["dd0"] + [f"dd{i}" for i in range(2, m2 + 1, 2)]
     add("hs2", 0, nxt(), o2); add("hps2", 0, nxt(), e2)
     sig["hs2"] = o2[0] if gen.get("LOW") else o2[-1]; sig["hps2"] = e2[0] if gen.get("LOW") else e2[-1]
+    if gen.get("HPS0") == 2: sig["hps2"] = "dd2"            # R168: hps2 starts on dd_2 (srz3b HPS0=2)
     if gen.get("MID"):                                       # start mid-phase: r_1, rr_1, rr_2 risen, hs2 on dd_1, hps2 on dd_2
         sig["r1"] = "a1"; sig["rr1"] = "aa1"; sig["rr2"] = "aa2"; sig["hs2"] = "dd1"; sig["hps2"] = "dd2"
     for t in range(1, m3 + 1):

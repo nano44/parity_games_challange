@@ -1,0 +1,12 @@
+GAME n5-exhaustive/instances/b5_os_n20.pg
+BGmax 32
+GAMES 1
+INC 32
+K 34
+MAXPH 11
+SGmax 32
+SQZ_chk 700
+steps 34
+stretches 1
+VIOLATIONS 0
+RC 0

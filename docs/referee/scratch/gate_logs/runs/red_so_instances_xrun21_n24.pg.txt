@@ -1,0 +1,12 @@
+GAME red/so/instances/xrun21_n24.pg
+BGmax 2
+GAMES 1
+INC 0
+K 24
+MAXPH 21
+SGmax 2
+SQZ_chk 600
+steps 22
+stretches 2
+VIOLATIONS 0
+RC 0

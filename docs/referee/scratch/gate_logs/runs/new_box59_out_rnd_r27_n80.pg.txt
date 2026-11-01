@@ -1,0 +1,8 @@
+GAME new/box59/out/rnd/r27_n80.pg
+BGmax 1
+GAMES 1
+K 5
+SGmax 1
+SQZ_chk 480
+VIOLATIONS 0
+RC 0

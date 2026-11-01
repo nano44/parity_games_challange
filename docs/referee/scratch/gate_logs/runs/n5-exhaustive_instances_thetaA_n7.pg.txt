@@ -1,0 +1,12 @@
+GAME n5-exhaustive/instances/thetaA_n7.pg
+BGmax 0
+GAMES 1
+INC 0
+K 3
+MAXPH 3
+SGmax 0
+SQZ_chk 28
+steps 3
+stretches 1
+VIOLATIONS 0
+RC 0
