@@ -137,3 +137,31 @@ No gap in the mathematics.
   5. All four DEAD pins are reproduced exactly by my engine (5 at gate 33; 43 ODIFF changes, GCH 4).
 - NEEDS: Lead: ANC-1, ANC-L1, ANC-L2 to L-NEW 46 (fixes file + line L-1); consider amending L46's «passes h» to «… before its cycle
   node».
+
+## §C (2026-11-01T18:36Z by date -u, successor 22; Opus 5.5, D15): word-diff of fixes entry 1 and line L-1
+- Revision: claude/l-new 6bcf5529. The fixes file is docs/new/P-N5-ANCHOR-fixes-box134.md (sha1 4cff05c1…), entry 1.1-1.5. Line L-1 is
+  docs/new/P-N5-ANCHOR-line-L1.txt (sha1 baad574d…). The frozen packet (ad97ad88) and line (7f140d0c) are unchanged at 6bcf5529 (sha1s
+  re-taken). Diff: `git diff --no-index --word-diff` against 7f140d0c.
+- REFEREE-2's report (R2-N5-ANCHOR.md, referee-2 b431ec81) was read only now, after mine (732198a9).
+- Changes, all listed by the Lead:
+  1. «RESULTS R57 / R102» → «RESULTS R57». ANC-P1 ✓.
+  2. «not its own W-cycle node» → «… W′-cycle node,». Optional ✓.
+  3. «(item (R1), referees to rule)» → «((R1) holds as a consequence of R24 (a) and (b)'s choice rule (both referees)); …». **ANC-L1
+     met.** «both referees» is accurate: my §1 «RULED covered», and REFEREE-2 §2 «(R1) HOLDS as a consequence of the cited items».
+  4. Added in the same parenthesis: «a tie-break chooses the κ-least FULLY W′-optimal option, W′ := the arena optimum, where an option is
+     a corner when x occurs on its play before its cycle node (vacuous for fully W′-optimal options)». This is REFEREE-2's ANCHOR-L2.
+     The corner clause is in my ANC-1 form, and «vacuous» is correct: x preceding c on y's play gives the wrong length (my §1).
+     **But κ is now a FREE symbol.** It occurs once in L-1 and is defined nowhere in the line. REFEREE-2's suggested text had «with κ as
+     in packet §1». L-1 dropped that. → **ANC-L3 (REQUIRED)**: add «κ := the index at an odd W′-cycle node, the root-first key of the
+     σ_j/τ play path from the cycle node at an even one (packet §1)», or at least «κ as in packet §1».
+  5. «ℓ* := the largest level of an Even vertex not in CN;» → «… not in CN (1 if none);». Optional ✓ (packet §1).
+  6. «afterwards each Even c ∈ CN moves at most #T_c − 1 times,» → «at transitions j ≥ s0 + ℓ* each Even c ∈ CN moves at most #T_c − 1
+     times in the epoch,». **ANC-L2 met.** It matches §4 (ii): moves at transitions j with j − 1 ≥ s0 + ℓ* − 1.
+  7. Source: «… with its fixes entry 1, docs/new/P-N5-ANCHOR-fixes-box134.md; …». ✓
+- Nothing else changed. Parentheses balance (58/58, depth never negative); «» 1/1.
+- Fixes entry 1:
+  - 1.1 states ANC-1 in the before-cycle-node form and repairs bridge B («h occurs on neither play before its cycle node (V1)») ✓.
+  - 1.2-1.4 match the line changes.
+  - 1.5 (optional items) is consistent: ANC-P2's j-range is in the packet text only, and the §6 heading drops «(or O(1))» (ANC-P3) ✓.
+- Verdict: line L-1 **does NOT yet match**. One REQUIRED item, **ANC-L3** (define κ). ANC-L1 and ANC-L2 are met. ANC-1 is met in the
+  fixes file. With ANC-L3 the line MATCHES; I will word-diff L-2 when sent.

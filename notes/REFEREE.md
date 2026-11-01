@@ -8,7 +8,7 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 - P-N5-ANCHOR (l-new f009a9a1, ad97ad88; Lead 16:36Z): R-N5-ANCHOR.md. All to-sign items SIGNED, no gap; (R1) ruled covered;
   ANC-1 REQUIRED wording («corner» = x on y's play BEFORE its cycle node; my CF-1 / L46 wording was ambiguous; R-R24-L44 Addendum 1);
   line REQUIRED ANC-L1 ((R1) «referees to rule») and ANC-L2 («afterwards» unanchored). anchor_probe.py, anchor_logs/: 4 pins exact.
-  WAITING: ANCHOR fixes + line L-1.
+  ANCHOR L-1 (l-new 6bcf5529, baad574d): §C, NOT YET: ANC-L1/L2 met, ANC-1 in fixes; REQUIRED ANC-L3 (κ free in the line). WAITING: L-2.
 - L44 check on R24 (Lead 12:35Z): R-R24-L44.md. (a) Lemma R CLASS-FREE; (b) TB CLASS-FREE ((F1) on the one-player H_k); choice form
   class-free but NOT R24 (b)'s statement: cite Lemma R + TB steps 1, 3-5 + bridge B (CF-1). Own DATA tbcf_probe.py (6,000 games with
   2-5 Odd choice vertices, 0 violations; 37 even ties with kappa-min != index-min). Trap: corners (h on its own W-cycle) are outside the rule.
