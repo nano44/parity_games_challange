@@ -481,3 +481,13 @@ Needs: none."
 
 ## 2026-11-01T09:12Z Lead report (09:16Z, summary)
 NOW header fixed (trunk 416c6351). CHECKER 15 closed C111 (R101 landed, CI green) and C112 (Erratum E-1 accurate). CHECKER 16: R102 (P-N5-S4B) C113 FAIL on two stale body sentences (no claim affected), rest PASS incl. re-run of 813 corpus lines; fixed, C113 Add. 1 next; R102 not landed. Lane-level (not refereed): L-NEW 45 box 127 parametric-shortest-path cast (Gusfield/Carstensen) fails (premise false at nep92_n40; edges appear/disappear; lexicographic superincreasing order); box 128 STATIC-TIE, STRICT-PAY proved, per-pivot count dead (topfix_n10). L-RED 41 R173 PORTAL, R174 PHASE-PORTAL proved. Next: L-NEW box 129, L-RED R175. G-N5-TIME OPEN. Pacing: seven-day warning showing again (reset 2026-11-04 21:00Z); 2 research lanes plus gate roles.
+
+## 2026-11-01T20:35Z Lead daily owner line (2026-11-01 20:35Z, verbatim)
+«Daily line 2026-11-01:
+- Landed: RESULTS R98-R102. R102 (P-N5-S4B) landed 10:09Z: S4b's Odd step is the pointwise optimum under the SPEC premise. Plus Erratum E-1 (corpus counts).
+- Lead reading L46: both referees confirmed R24 (a) Lemma R and (b) Lemma TB hold on every game.
+- In review: P-N5-ANCHOR, an equivalence and not a bound. Within N5 runs, the length of flat stretches (W unchanged) is polynomial iff the changes of a small gating set are. Both referees signed every item with no gap; only a one-phrase definition in the result line is left, then CHECKER.
+- Lane-level, not refereed: the flat-run term is now reduced to two pieces, mutual-feeding cycles between movers and W-cycle-node moves. In all data, flat runs are ≤ 8 long up to n = 64. The parametric-shortest-path idea (Gusfield / Carstensen) was tested and does not transfer. Every super-polynomial construction attempted collapses in the real algorithm.
+- G-N5-TIME stays OPEN: no polynomial bound for N5 on general games is proved.
+- Running: 2 research lanes (L-NEW, L-RED) plus 2 referees on short checks; CHECKER idle. Pacing hold, because the seven-day usage warning is back (reset 2026-11-04 21:00Z); no overage.
+- Needs: none.»
