@@ -1,0 +1,9 @@
+GAME red/ul/instances/cxmig_k8_n82.pg
+GAMES 1
+enum_states 16
+keep_chk 15
+loc_chk 144
+rhos 8192
+states 16
+VIOLATIONS 0
+RC 0

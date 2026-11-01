@@ -1,0 +1,9 @@
+GAME red/carry/instances/gapbW_dup_n20.pg 
+GAMES 1
+enum_skip 1
+enum_states 2
+loc_chk 54
+rhos 5376
+states 3
+VIOLATIONS 0
+RC 0

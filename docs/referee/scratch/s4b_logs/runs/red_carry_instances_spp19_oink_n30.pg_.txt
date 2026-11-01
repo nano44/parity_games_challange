@@ -1,0 +1,9 @@
+GAME red/carry/instances/spp19_oink_n30.pg 
+GAMES 1
+enum_skip 5
+enum_states 5
+loc_chk 172
+rhos 3598
+states 10
+VIOLATIONS 0
+RC 0

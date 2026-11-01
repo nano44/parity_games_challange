@@ -1,0 +1,4 @@
+GAME red/so/instances/tevlast11_n40.pg 
+GAMES 1
+VIOLATIONS 0
+RC 0

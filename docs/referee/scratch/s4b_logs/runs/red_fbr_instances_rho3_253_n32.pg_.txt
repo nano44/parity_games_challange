@@ -1,0 +1,9 @@
+GAME red/fbr/instances/rho3_253_n32.pg 
+GAMES 1
+enum_states 11
+keep_chk 6
+loc_chk 64
+rhos 2834
+states 11
+VIOLATIONS 0
+RC 0

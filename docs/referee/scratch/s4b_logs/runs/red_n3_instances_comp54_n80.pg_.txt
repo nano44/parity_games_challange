@@ -1,0 +1,9 @@
+GAME red/n3/instances/comp54_n80.pg 
+NOTE start file red/n3/instances/comp54_n80.start gives forced vertex 11 -> 51; using 11
+GAMES 1
+enum_states 1
+loc_chk 2
+rhos 4
+states 1
+VIOLATIONS 0
+RC 0

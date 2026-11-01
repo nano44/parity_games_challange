@@ -1,0 +1,9 @@
+GAME red/carry/instances/ctx6_n20.pg 
+GAMES 1
+enum_skip 2
+enum_states 1
+loc_chk 41
+rhos 4
+states 3
+VIOLATIONS 0
+RC 0

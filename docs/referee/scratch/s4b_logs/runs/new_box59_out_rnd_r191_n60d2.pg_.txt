@@ -1,0 +1,9 @@
+GAME new/box59/out/rnd/r191_n60d2.pg 
+GAMES 1
+enum_states 6
+keep_chk 1
+loc_chk 28
+rhos 392
+states 6
+VIOLATIONS 0
+RC 0

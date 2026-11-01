@@ -1,0 +1,8 @@
+GAME red/ul/instances/cxmig_k16_n138.pg
+GAMES 1
+enum_skip 24
+keep_chk 23
+loc_chk 408
+states 24
+VIOLATIONS 0
+RC 0

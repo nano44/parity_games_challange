@@ -1,0 +1,9 @@
+GAME red/ul/instances/cxmig_k4_n54.pg
+GAMES 1
+enum_states 12
+keep_chk 11
+loc_chk 60
+rhos 384
+states 12
+VIOLATIONS 0
+RC 0

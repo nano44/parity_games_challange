@@ -1,0 +1,8 @@
+GAME n5-exhaustive/instances/thetaA_n9.pg n5-exhaustive/instances/thetaA_n9.start
+GAMES 1
+enum_states 1
+loc_chk 1
+rhos 2
+states 1
+VIOLATIONS 0
+RC 0

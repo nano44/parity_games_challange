@@ -1,0 +1,9 @@
+GAME new/box54/out/switchallexp_5.pg 
+GAMES 1
+enum_states 6
+keep_chk 1
+loc_chk 6
+rhos 12
+states 6
+VIOLATIONS 0
+RC 0

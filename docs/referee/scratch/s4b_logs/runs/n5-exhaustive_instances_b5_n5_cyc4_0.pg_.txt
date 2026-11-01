@@ -1,0 +1,9 @@
+GAME n5-exhaustive/instances/b5_n5_cyc4_0.pg 
+GAMES 1
+enum_states 3
+keep_chk 2
+loc_chk 3
+rhos 6
+states 3
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,9 @@
+GAME red/n3/instances/lagx10_n40.pg red/n3/instances/lagx10_n40.start
+GAMES 1
+enum_states 15
+keep_chk 13
+loc_chk 31
+rhos 64
+states 15
+VIOLATIONS 0
+RC 0

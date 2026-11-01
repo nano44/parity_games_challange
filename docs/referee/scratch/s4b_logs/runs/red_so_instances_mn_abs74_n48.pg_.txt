@@ -1,0 +1,4 @@
+GAME red/so/instances/mn_abs74_n48.pg 
+GAMES 1
+VIOLATIONS 0
+RC 0
