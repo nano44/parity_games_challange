@@ -32,6 +32,14 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   hard cases (CDAG_n, Friedmann 1106.0778) use other rules -> no reduction.
 - DATA: corpus 10/10 S-stretches D'''-acyclic, 0 viol, 0 ties; sbmany_n57 pin (125 sbar changes, FL 4; Oink/n5b verified).
 - OPEN: D'''' = D''' with box 136 z-world/DOM cuts (observed D'''-cycles are Even-Odd 2-cycles x <-> o: cwmov2_n57 6 <-> 11); CNMOV.
+### Box 138 push a0ce806b (VERIFY PASS). Lead 23:32Z recorded box 138; L-RED R187 (417d7fa6): Theorem REALIZE (IDEAL-ACYC genome ->
+  one real FL run), so IDEAL-ACYC-POLY is necessary for N5-POLY; real pins stab_d4_n126 (L_FL 32), stab_g24_n246 (64); D'' cyclic.
+### Box 139 N5-IDEAL (Lead GO 23:32Z; docs/new/N5-IDEAL-box139.md; experiments/new/box139/)
+- D''' cyclic on stab_d4_n126 (0 -> 2 -> 9 -> 0): CASC-M''' does not apply.
+- PROVED (lane): VAL-MONO, KEY-MONO, Proposition PATHS (moves(x) <= min(VX, VW) - 1; VX = Xi-path values, VW = W-path keys), Corollary
+  LOG-DEPTH (IDEAL-ACYC-POLY when every mover has log Xi-depth or log W-level); real-FL W-side corollary (moves <= #tight W-paths - 1).
+- DATA: 4 champions, 0 violations, bound tight only at level 0. OPEN: both depths super-logarithmic at one mover (double counter);
+  recipe = LADDERBF 2-wide ladder with Xi-targets pointing up the ladder.
 ### Things only I know (successor 47)
 - rel.py's analyse() is importable (climb137.py uses it); rel.LAST holds S, T, E, runs after a call (anat.py). A game without FL runs
   used to crash analyse (retc unbound) - fixed; the first corpus rerun after the refactor showed 801 errors, rerun clean.

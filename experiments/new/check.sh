@@ -745,4 +745,10 @@ if grep -qxF "DMERGE3 sbmany_n57.pg n 57 SSTRETCHES 1 FL 3 ACYC 1 CYC 0 EHEIGHT 
 else
   echo "box 138 GATE check: FAILED"; exit 1
 fi
+w88=$(cd .. && python3 -I new/box139/paths.py new/box139/genomes/big_d4_k3_W3.json new/box139/genomes/grow_top_N24.json)
+if grep -qxF "PATHS big_d4_k3_W3.json N 12 STEPS 32 STOP stuck MOVES 57 MOVMAX 10 VXMAX 833 VWMAX 81 CURVIOL 0 KEYVIOL 0 BOUNDVIOL 0 SLACK 1.0000" <<<"$w88" && grep -qxF "PATHS grow_top_N24.json N 24 STEPS 64 STOP stuck MOVES 119 MOVMAX 10 VXMAX 8799 VWMAX 6561 CURVIOL 0 KEYVIOL 0 BOUNDVIOL 0 SLACK 1.0000" <<<"$w88"; then
+  echo "box 139 PATHS: IDEAL-ACYC champions big_d4 / grow_top_N24: value and key monotone at every step, moves <= min(VX, VW) - 1: PASS"
+else
+  echo "box 139 PATHS check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
