@@ -1,5 +1,5 @@
 # L-RED notebook (independent adversary lane)
-Successor 39 (session id: see docs/NOW.md roster, Opus 5.5) started 2026-10-31 20:56Z (date -u); R167; see "Successor 39".
+Successor 39 (session id: see docs/NOW.md roster, Opus 5.5) started 2026-10-31 20:56Z (date -u); R167, R168; see "Successor 39".
 Successor 38 (session_01V5yGRZkXge7F2DR4joW3DU, Opus 5.5) started 2026-10-31 12:12Z (date -u); R162 DESC-LIN, R163 DESC*, D-ODD-1 starts, R164 switch-all counter vs N5; see "Successor 38".
 Successor 37 (session id: see docs/NOW.md roster, Opus 5.5) started 2026-10-31 08:11Z (date -u); R158-R161; handover written ~11:0xZ at ~420k, updated after R161 (~470k), PARKED; see "Successor 37 PARK".
 Successor 36 (session_01V5yGRXBDuKdR4N9Rfvkq8p, Opus 5.5) started 2026-10-31 01:10Z (date -u); R152-R157 + SRC L-4, L-5; un-parked 06:43Z for R157 (Lead keeps 99762405); PARKED again ~07:5xZ; see "Successor 36 PARK".
@@ -47,8 +47,12 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   - srz3.py (z3 order model of the family): restart + binding gate UNSAT in every variant; one phase SAT; no self-reference: CLOSED
     alone UNSAT (R158 (A)). Not modelled: I_tau = {} and the E1 coupling (so UNSAT stands, SAT is a candidate only).
   - The SAT one-phase model is not realised: mk167m.py MID=1 moves tau at the riders (I_tau != {}).
-- RESUME POINT: escape the model's assumptions (gates reading E3 below its head; reactors with 3 options; two E3 lines alternating
-  per phase so that no driver restarts), or add I_tau = {} to srz3 and realise the one-phase product.
+- R168 docs/red/R168-twolines.md (Lead GO 22:19Z): srz3b.py. Two lines on one E2: UNSAT (J 5). Two full copies restarting while
+  fully reset: UNSAT (J 5, 7; core has IDLE-RESTART). One phase with I_tau = {} and no restart: UNSAT (J 5, 7; core ITAU at riders).
+  One phase, no restart, no I_tau: SAT. The pre-E2STAY SAT candidates were spurious (mk168 real build: rr4, rr6 rise at transition 1).
+- RESUME POINT: outside the model only: gates reading E3 below its head; reactors with 3 options; escapes to targets other than
+  q / T / a static q-escape; the E1 coupling. Inside the model everything per-step-re-armed is UNSAT once I_tau = {} is required.
+- Commit erratum: 339374383's Claude-Session trailer names succ. 38's session; this session is session_01V5yGRYVy3wZ2ZDHF5VpFiB.
 - Things only I know:
   - srz3.py runs in ~7 s for J 7; with STAY at J 9 it takes 10-25 min. UNIFORM=1 + MODEL_OUT dumps a period-2 model for mk167m.py.
   - pkill -f "Monitor" killed my shell (exit 144) again: never pkill -f with a word in your own command line.
