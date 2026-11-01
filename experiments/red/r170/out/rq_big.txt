@@ -1,0 +1,6 @@
+FREEZE rq_K10.pg n 246 K 430 fallbacks 0 windows 1
+  window [0, 429] L 429 ODIFF 40 oddchoice(G_F) 40 fb_in_window 0 FFSEG 429 REPLAY True FRUN 430
+FREEZE rq_K10.pg longest 429 all_replay True
+FREEZE rq_K12.pg n 294 K 612 fallbacks 0 windows 1
+  window [0, 611] L 611 ODIFF 48 oddchoice(G_F) 48 fb_in_window 0 FFSEG 611 REPLAY True FRUN 612
+FREEZE rq_K12.pg longest 611 all_replay True
