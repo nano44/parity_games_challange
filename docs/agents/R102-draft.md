@@ -305,7 +305,7 @@ firsttrunk.py): 9521f2e7 → 83d99f04 (02:21:17Z); 68fa3661 → d734f419 (02:50:
   else changed:», l. 157 «Verdict: line L-1 **MATCHES**. S4B-L1 and S4B-L2 are met.» REFEREE-2 25 L-1: R2-N5-S4B-L1.md (0e8ae566) l. 18
   «Nothing else changed. The Lemma and Corollary statements, the binder and the scope tail are token-identical.», l. 34 «**MATCHES** (Opus
   5.5, D15). Nothing REQUIRED.»
-  L-1 supersedes the frozen line; the title is L-1 verbatim (to check (1)). Neither referee found a FALSE claim statement in the packet;
+  L-1 supersedes the frozen line; the title is L-1 verbatim with the date « (2026-11-01)» inserted before « — a premise result» (Lead decision G-1; to check (1)). Neither referee found a FALSE claim statement in the packet;
   every line item re-attributes the premise, adds a citation or a word, or corrects the DATA counts.
   Setting (packet §1, l. 16-30): N5 = SPEC S1-S5 (l. 7 «Object: N5 only (SPEC S1-S5, docs/new/N5-ssi-global.md, with Q1-Q4 and FIX
   1-4).»); [1E-N3] (l. 17-22) in the form «for every finite game graph G* (the priorities of G, a successor at every vertex) and every
@@ -423,7 +423,7 @@ firsttrunk.py): 9521f2e7 → 83d99f04 (02:21:17Z); 68fa3661 → d734f419 (02:50:
   merge 2c497bba, 04:10:15Z): S4B-OPT and S4B-KEEP SIGNED, no gap, line REQUIRED S4B-L1 and S4B-L2; §C
   2e6467fd281e2ff898b733dfa506effeed75b29f (05:03:24Z, +28/−0, l. 130-157; the file now 157 lines, sha1
   285d860f9df68b82d7ae0cd9ca539b15ae182334, = referee head): «Verdict: line L-1 **MATCHES**. S4B-L1 and S4B-L2 are met.» (l. 157).
-  2e6467fd is on origin claude/referee only, NOT on trunk at this fill. REFEREE-2 (successor 25): docs/referee-2/R2-N5-S4B.md
+  2e6467fd is first on trunk by merge 3ad52bc6 (06:52:33Z). REFEREE-2 (successor 25): docs/referee-2/R2-N5-S4B.md
   1b9ef2e1017d9cf4aad53492a1dd259694ff265a (02:53:38Z, new file, 107 lines, sha1 b0c42cc8beb12782822d2d2d2aff053c11ca0dd3, unchanged since;
   with R2-N5-S4B/ tool and logs; on trunk by e7c0e191, 03:44:26Z): both SIGNED (l. 17-18, l. 100), line MATCHES (l. 95);
   R2-N5-S4B-L1.md 0e8ae566deb15706a581b29970fd5fb0297b2f97 (05:04:43Z, new file, 42 lines, sha1 2252e92e78dca736cf52844718b24bb05dd29754,
