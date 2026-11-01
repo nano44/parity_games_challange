@@ -1,5 +1,5 @@
 # L-RED notebook (independent adversary lane)
-Successor 41 (session_01V5yGRa8VX4VrSzMTZfKctP, Opus 5.5) started 2026-11-01 06:24Z (date -u); R173 (a): Lemma PORTAL; R174 (Z): PHASE-PORTAL, SELF; see "Successor 41".
+Successor 41 (session_01V5yGRa8VX4VrSzMTZfKctP, Opus 5.5) started 2026-11-01 06:24Z (date -u); R173 (a): Lemma PORTAL; R174 (Z): PHASE-PORTAL, SELF; R175: ODD-GATE; see "Successor 41".
 Successor 40 (session_01V5yGRZzQMY5djbFkvKqE6d, Opus 5.5) started 2026-11-01 02:51Z (date -u); R170 (TWO-FIX: FREEZE), R171 (FB per window: no FB >> n), R172 (TF-PH DEAD); PARKED ~06:1xZ; see "Successor 40 PARK".
 Successor 39 (session id: see docs/NOW.md roster, Opus 5.5) started 2026-10-31 20:56Z (date -u); R167, R168, R169; PARKED; see "Successor 39".
 Successor 38 (session_01V5yGRZkXge7F2DR4joW3DU, Opus 5.5) started 2026-10-31 12:12Z (date -u); R162 DESC-LIN, R163 DESC*, D-ODD-1 starts, R164 switch-all counter vs N5; see "Successor 38".
@@ -70,6 +70,14 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - RESUME POINT (after R174): Ξ-gating by an external source (a third structure whose Ξ-cycle rises once per wave, not a pivot's own
   cycle), or route (C) (moves while h is on X's play). Level-specific vertices on a pivot's cycle outside its prefix: a selector that is
   itself a climber (PHASE-PORTAL applies to it).
+- R175 docs/red/R175-extgate.md (Lead GO 09:15Z, external Ξ-gating):
+  - PROVED (lane) ODD-GATE: inside a λ_W-phase, at most 2 consecutive W-strict same-portal moves while the portal's Ξ-node is odd.
+    R15 makes Ξ non-decreasing, so odd nodes refine, and refinement keeps set-wins (d)-(g).
+  - READING: a single climber under an external EVEN rising gate works (odd blockers, decreasing lengths, W blind).
+  - READING: the closing ODIFF vertex of an Even-winning Ξ-cycle can't be stabilised in any detour I built (delay chain propagates and
+    changes λ_W; through d: m_d visible; through d₂: longer; new d₃: regress).
+  - Recursion cost per level: one fresh branching vertex (base), or Θ(m) for a clock.
+- RESUME POINT (after R175): (C), or a bounded-ODIFF stabiliser for an Even-winning Ξ-cycle (R175 §3 (ii)).
 - My design dead ends (all on paper, this box; recorded so nobody repeats them):
   - (i) Shared portal X for h's options plus a cumulative marker chain {u_1..u_x} with padding, so that h climbs one level per step of
     θ = node(W(X)). It dies by PORTAL (Ξ and W count the same prefix markers above the higher of Z, θ; the length rules conflict).
