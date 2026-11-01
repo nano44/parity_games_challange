@@ -1,7 +1,37 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 44, Opus 5.5, session_01V5yGRW6BGT1zSiwSKRv1qy; FINAL, PARKED 2026-11-01 ~05:4xZ by date -u, ~420k context)
+## Resume point (successor 45, Opus 5.5, session_01V5yGRWZgucRQvPGKYZujK; started 2026-11-01 06:24Z by date -u; handover: HEAD had dcb80dfc (is-ancestor OK), trunk claude/vibrant-johnson-nxvvxo merged 2228f7df)
+### Box 129 N5-GATEREC (Lead GO 09:15Z; docs/new/N5-GATEREC-box129.md; experiments/new/box129/)
+- Reviewed L-RED 41 PHASE-PORTAL / SELF (R174 @ claude/l-red 5d27d366): correct; PHASE-PORTAL = STATIC-TIE for one class; SELF silent
+  when the prefix difference above Z is empty.
+- PROVED (lane) ORIGIN (a value change has a switched vertex on the old play) and GATE-REC: charged <= roots (F + ... + F^D).
+- Obstruction (DATA): D is time depth (52, topfix ODIFF 0), vertex charge graph cyclic (SCC <= 18 / <= 5), fan-in <= 30; ODIFF >= 1
+  corpus D <= 4 only (not conjectured: ODIFF >= 1 not structural).
+- Next (Lead decides): a flat-move count (F term) or L-RED family with growing D at ODIFF >= 1.
+
+### Box 128 N5-PCOUNT (Lead GO 07:48Z; docs/new/N5-PCOUNT-box128.md; experiments/new/box128/)
+- Read L-RED 41 Lemma PORTAL (docs/red/R173-portal.md @ claude/l-red 02119133). Proof checks; weak points W1 (PORTAL-1 «once» = once per
+  ENTRY), W2 ({h} in NR needed: VJ comparison corner, WORSE 13 corpus moves all there), W3 (end points suffice), W4 NR-CYC, W5.
+- PROVED (lane) STATIC-TIE: repeat move of h with Xi and W of both options constant (and plays avoiding h) is not W-strict; no class /
+  TWO-FIX / ZC needed. Corollary STRICT-PAY: STRICT_h <= 1 + CORNER_h + sum_{succ x} (XCH(x) + WCH(x)) (relocation onto XI-CH).
+- DEAD: per-h count (#X)(#ZC): topfix_n10 h 192 stretch [6,64] 36 > 20, hub 193 re-entered 18 times, ODIFF 0 (polynomial regime).
+- DATA (813 distinct pairs): SAME pairs 0, DIFF strict 3,860, RET 1,964, STATVIOL 0, LEADVIOL 15 pairs, 2deg bound fails 9 pairs.
+- Next (Lead decides): recursive charging through Even gates (each class is an Even pivot); ODIFF > 0 open.
+
+### Box 127 N5-PARAM (Lead box; docs/new/N5-PARAM-box127.md; experiments/new/box127/)
+- Sources opened: arXiv 1811.05115 (Gajjar-Radhakrishnan; Prop. 5 alternation-free, Thm 6, Thm 2 proof, p. 5-6 recursion), arXiv
+  1001.3749 (Chakraborty et al. §1). Carstensen 1983 / Mulmuley-Shah 2001 / Gusfield 1980 NOT opened (paywalled): cited through these.
+- PROVED (lane) AF-QP: alternation-free sequences of simple s-t paths have <= (2n)^ceil(log2 l) blocks; Corollary AF-XI: alternation-free
+  Xi-play path parts in a W-run => XI-CH <= (2n)^ceil(log2(n+1)) per vertex (quasi-poly).
+- DEAD: the premise (expiration inside W-runs): nep92_n40 W-run [6,20] src 0 at (0,19); corpus 16,500 violations in 158 / 1,132 games,
+  every one an Even-edge availability change (NEITHER 0); RET 0 (no path part returns).
+- READING: no parametric cast with known theory (availability toggles; lex weights superincreasing (LEX-SIGN): L-RED 41 claim (2) CHECKED correct, note §5(d); circular).
+  only gives the order of plays, not the S4a dynamics; super-poly XI-CH = super-poly W-run.
+- Not done: proof that every alternation needs an availability change (DATA 16,500 / 16,500); cycle-node moves of Xi inside W-runs.
+### Things only I know (successor 45): Oink was NOT built in this container at start (tools/oink/build missing): ran scripts/setup_oink.sh.
+
+## Resume point (HISTORY; successor 44, Opus 5.5, session_01V5yGRW6BGT1zSiwSKRv1qy; FINAL, PARKED 2026-11-01 ~05:4xZ by date -u, ~420k context)
 ### FINAL summary (successor 44): every push via scripts/push.sh (VERIFY PASS), each reported to the Lead
 - Item 1: P-N5-GATE fixes F0 + entry 1 and line L-1 (afb8b99e; line sha1 d677161c). GATE-L1: lend107 106 (in-phase), not 107; corpus
   116, not 118. Both referees MATCHED L-1; R101 LANDED (RESULTS l. 9251, Lead 05:32Z).
@@ -1876,6 +1906,9 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
   packet rule (corrections only in new dated sections).
 
 ## Sources opened
+- (succ. 45, box 129) docs/red/R174-zroute.md at claude/l-red 5d27d366 (L-RED 41, PHASE-PORTAL, SELF; read, not edited).
+- (succ. 45, box 128) docs/red/R173-portal.md and experiments/red/r173/portalck.py at claude/l-red 02119133 (L-RED 41, Lemma PORTAL; read, not edited). RESULTS Erratum E-1 (claude/l-red docs/RESULTS.md l. 9478). RESULTS R101 statement (l. 9251).
+- (succ. 45, box 127) arXiv 1811.05115 Gajjar-Radhakrishnan, pdf sha256 79208b4f5fe9aa5676a3fd96514bae1be82ec3080545c0483e0d2a0c7c28172f: §1 Thm 1, Prop. 5, Thm 6, p. 5-6 recursion, §4 Thm 2 proof. arXiv 1001.3749 Chakraborty-Fischer-Lachish-Yuster, pdf sha256 45398534db333c8b2a695f4da722e0c9953960b851cb605d581f46ff8800e092: §1. NOT opened: doi 10.1007/BF02591893, doi 10.1006/jcss.2001.1766.
 - (succ. 26, box 47, 2026-10-26 11:00-11:13Z) Fleet sources opened and read for docs/new/N5-XDIR-box47.md: docs/si/N5-RUND-box17.md §22 (L-SI 14:
   ROOT, ROUTE-RELAY, SELF-FREE, (O1)/(O2)); docs/RESULTS.md R64 ((a)-(e)) with docs/new/P-N5-EPR-box45.md §1 (RESTRICT_E proof: "σ̄_E is an Odd
   strategy of G′_E and σ̄_k = σ̄_E"), R58 ((c) ROUTE-2, (d) DIR, Corollary FB-2O), R61 ((e) ALT, (f) N_ep), R65 (GAPS 09:56Z); docs/new/N5-ssi-global.md
@@ -2015,6 +2048,13 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
 - (succ. 38, box 89) T. Ralphs, IE411 Lecture 11 (Lehigh, coral.ise.lehigh.edu/~ted/files/ie411/lectures-python/Lecture11.pdf), slide 3 (PDF text read).
 - (succ. 40) L-LIT T61 (l-lit 1ad851ee, docs/lit/T61-order-charging.md §2.6, S5a data). L-LIT T60 (l-lit 54584c0c, docs/lit/T60-best-reply-flips.md §3.3, ORDER-DET / NO-REPEAT statements); L-SI box 53 (l-si aeb8c311, docs/si/N5-SBF-box53.md §2.1-§2.5, §3); P-N5-SETTLE §1-§2 (l-si a0970d36). [ABS] 2102.04922 and [GH] NOT opened (only T60's quotes; no theorem of theirs used).
 ## Dead ends
+- (succ. 45, box 129) Recursion over gate depth for W-strict moves: no base. Vertex charge graph cyclic (topfix_n10 window [6,64]: eleven 3-vertex mutual-payment SCCs, e.g. {120,121,122}); move-level chain depth 52 (time depth).
+- (succ. 45, box 128) Per-pivot count «W-strict moves of h <= sum over its classes X of (1 + lambda_Xi(X) changes)»: DEAD, topfix_n10
+  (sha1 4b65d3dc2735) h 192 stretch [6,64]: 36 > 20 by hub re-entries (class 193 re-entered 18 times), no Xi-cycle-node change at any class.
+- (succ. 45, box 127; Lead 07:48Z: DROPPED, not routed) Carstensen / Mulmuley-Shah template for a super-polynomial XI-CH family:
+  obstruction: it fixes the order of the plays (envelope monotone in a fixed cost order), not the S4a dynamics that would delete the
+  current optimum each step; each Xi-change costs a W-run transition, so the template would have to supply a super-polynomial W-run.
+- (succ. 45, box 127) Expiration / alternation-free route to quasi-poly XI-CH (Gusfield via 1811.05115 Prop. 5): DEAD, nep92_n40 W-run [6,20] src 0, (u,v) = (0,19): segment 0->19 used, left for 0->24->19 (Even edge 24->19 present only then), used again. Corpus 16,500 violations, all availability.
 - (box 47, successor 26, 11:13Z) CONJECTURE XD-1 (≤ 1 X_dir per {u, u′}-run): FALSE on experiments/new/box47/instances/pp2_n19.pg (sha1 97b5b132…),
   𝒞^2O, S3, phase [1, 3], D = {1}, {0}, {1}; length-only values (cycle node 9). Obstruction: each X_dir needs only an Even switch on each
   terminal's own play (XD-CAUSE). Also FALSE: "no X_dir after the phase's first W-honest state" (xdhon_n13, sha1 9d2d9ca2…, S3, state 0 W-honest, D = {12}).

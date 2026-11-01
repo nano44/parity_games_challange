@@ -415,3 +415,39 @@ handover in notes/CHECKER.md "## HANDOVER (successor 14 → successor 15)" (ec4c
   the ls-remote SHA.
 - Carried method trap (C94 E-1, C96 E-1): a clause in "Claims signed" that sits in only one referee's verdict table, or a status label stale
   against a later landed entry. Check: both verdict tables for every clause; grep RESULTS/GAPS for every label.
+
+## Handover check (successor 16)
+Written 2026-11-01 08:16Z (date -u). CHECKER successor 16 (Opus 5.5, D15). Predecessor: successor 15, session_01V5yGRa9pQWTf3AmjVLrkK8,
+handover in notes/CHECKER.md "## HANDOVER (successor 15 → successor 16)" (a71d11ff, 07:38:28Z). Every answer names its command.
+
+### 1. Branch, head, ahead/behind trunk
+- `git ls-remote origin` (08:16:06Z): 16 refs (HEAD = claude/vibrant-johnson-nxvvxo 3d31fee9; claude/checker a71d11ff; claude/l-si 96fb62cb;
+  claude/referee 2e6467fd; claude/referee-2 0e8ae566; claude/l-new 6ec1c774; claude/l-red 02119136). Fetched only those names; exit 0.
+- Clone NOT stale this time: `git rev-parse HEAD origin/claude/checker` both a71d11ff = ls-remote: no commit after the handover.
+- `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` = 3 / 9 (merge-base 6d5dd3cd); `git merge
+  origin/claude/vibrant-johnson-nxvvxo` (merge commit, no conflict) → 4 / 0; this file's two commits make 6 / 0 (the second corrects a guessed stamp 08:19Z → 08:16:32Z, measured).
+- Slip, disclosed: that second commit's sed also changed successor 12's l. 278 in this file (same phrase); a third commit restores it
+  byte for byte from d3307318 (git diff d3307318 shows only successor 16's lines).
+
+### 2. Open work and the next step of each
+- C105-C112 CLOSED (handover). Nothing open at handover.
+- C113 = RESULTS R102 for P-N5-S4B (L-SI 38; Lead brief 08:10Z): draft docs/agents/R102-draft.md @ trunk 76aadd11 (= 3d31fee9 content). Next:
+  re-hash draft and L-1 (95373010), read both referees' verdicts on L-1, title byte test, claims vs both tables, L41/L43/L45, stale labels,
+  DATA vs Erratum E-1 (813 / 1,132), placement, GAPS UPDATE; then docs/checker/C113.md.
+
+### 3. docs/GAPS.md rows I own
+- `awk -F'|' '$4 ~ /CHECKER/' docs/GAPS.md | wc -l` = 0. Landing side: the R102 GAPS UPDATE must be a pure insertion.
+
+### 4. Three owner rulings, verbatim (docs/DECISIONS.md `grep -n -F`), index status (docs/DECISIONS-INDEX.md `grep -nE '^\| *D(1|15|18) '`)
+- D1 (DECISIONS l. 7; index l. 5 "active"): "A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim,
+  including the fleet's own, as wrong until it passes the gauntlet below."
+- D15 (l. 278; index l. 26 "active"): "q18 b. , q16 b,c. BUt I dont want it to ask these questions from me. Be autonomous, reason about it"
+- D18 (l. 333; index l. 32 "active"): "Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of
+  mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and
+  proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems."
+
+### 5. One trap, and the check that prevents it
+- Trap: stale clone with a misleading `git status` (successors 14 and 15 both started stale). Check: `git ls-remote origin` first, fetch only listed
+  names, compare HEAD with the ls-remote SHA (equal this time: a71d11ff).
+- Carried method trap (C94 E-1, C96 E-1): a "claims signed" clause found in only one referee's verdict table, or a status label stale against a later
+  landed entry. Check: both verdict tables for every clause; grep RESULTS/GAPS for every label.
