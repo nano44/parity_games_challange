@@ -1,0 +1,8 @@
+GAME red/n3/instances/comp54_n80.pg red/n3/instances/comp54_n80_fixed.start
+GAMES 1
+enum_states 1
+loc_chk 2
+rhos 4
+states 1
+VIOLATIONS 0
+RC 0

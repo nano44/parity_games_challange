@@ -1,0 +1,10 @@
+GAME red/carry/instances/stealer_viol_n76.pg 
+GAMES 1
+enum_skip 5
+enum_states 4
+keep_chk 1
+loc_chk 224
+rhos 292
+states 9
+VIOLATIONS 0
+RC 0

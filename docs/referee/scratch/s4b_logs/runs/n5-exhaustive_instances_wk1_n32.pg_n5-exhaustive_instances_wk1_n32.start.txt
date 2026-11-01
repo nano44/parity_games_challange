@@ -1,0 +1,8 @@
+GAME n5-exhaustive/instances/wk1_n32.pg n5-exhaustive/instances/wk1_n32.start
+GAMES 1
+enum_states 1
+loc_chk 4
+rhos 5
+states 1
+VIOLATIONS 0
+RC 0

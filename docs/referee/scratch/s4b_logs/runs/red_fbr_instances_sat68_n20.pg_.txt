@@ -1,0 +1,9 @@
+GAME red/fbr/instances/sat68_n20.pg 
+GAMES 1
+enum_states 5
+keep_chk 3
+loc_chk 6
+rhos 12
+states 5
+VIOLATIONS 0
+RC 0

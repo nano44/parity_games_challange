@@ -1,0 +1,8 @@
+GAME red/xing/instances/x32_nest40.pg 
+GAMES 1
+enum_states 1
+loc_chk 3
+rhos 4
+states 1
+VIOLATIONS 0
+RC 0

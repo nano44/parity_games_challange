@@ -1,0 +1,4 @@
+GAME red/ul/instances/cxmig_k16_n138.pg red/ul/instances/cxmig_k16_n138.start
+GAMES 1
+VIOLATIONS 0
+RC 0

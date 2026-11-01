@@ -1,0 +1,8 @@
+GAME red/carry/instances/h4_notweaker_n20.pg 
+GAMES 1
+enum_states 4
+loc_chk 12
+rhos 32
+states 4
+VIOLATIONS 0
+RC 0

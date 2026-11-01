@@ -1,0 +1,9 @@
+GAME red/rec0/instances/nep87_n40.pg 
+GAMES 1
+enum_states 25
+keep_chk 16
+loc_chk 135
+rhos 414
+states 25
+VIOLATIONS 0
+RC 0

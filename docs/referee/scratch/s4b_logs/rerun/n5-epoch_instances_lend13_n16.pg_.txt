@@ -1,0 +1,10 @@
+GAME n5-epoch/instances/lend13_n16.pg
+GAMES 1
+enum_states 11
+keep_chk 8
+loc_chk 14
+oddfb 1
+rhos 28
+states 11
+VIOLATIONS 0
+RC 0

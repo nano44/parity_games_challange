@@ -1,0 +1,10 @@
+GAME red/so/instances/rise_fb38_n48.pg 
+GAMES 1
+enum_states 53
+keep_chk 51
+loc_chk 105
+oddfb 1
+rhos 158
+states 53
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,9 @@
+GAME n5-exhaustive/instances/n3all_maxph_2.pg n5-exhaustive/instances/n3all_maxph_2.start
+GAMES 1
+enum_states 2
+keep_chk 1
+loc_chk 2
+rhos 4
+states 2
+VIOLATIONS 0
+RC 0

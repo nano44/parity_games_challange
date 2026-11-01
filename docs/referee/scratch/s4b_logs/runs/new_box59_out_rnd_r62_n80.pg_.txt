@@ -1,0 +1,11 @@
+GAME new/box59/out/rnd/r62_n80.pg 
+GAMES 1
+enum_skip 2
+enum_states 8
+keep_chk 1
+loc_chk 100
+oddfb 1
+rhos 10274
+states 10
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,35 @@
+GAMES 718
+LOC_V 119
+MISSING 0
+RC 0
+RC0 719
+VIOLATIONS 119
+enum_skip 452
+enum_states 4052
+keep_chk 1976
+loc_chk 193505
+oddfb 23
+rhos 507389
+skip_big 1
+states 4504
+EX ('LOC', 'ffin5_n32.pg', 0, 28, 12)
+EX ('LOC', 'ffin5_n32.pg', 1, 28, 12)
+EX ('LOC', 'ffin5_n32.pg', 2, 28, 12)
+EX ('LOC', 'ffin5_n32.pg', 3, 28, 12)
+EX ('LOC', 'ffin5_n32.pg', 4, 28, 12)
+EX ('LOC', 'ffin5_n32.pg', 5, 28, 12)
+EX ('LOC', 'ffin5_n32.pg', 6, 28, 12)
+EX ('LOC', 'ffin5_n32.pg', 7, 28, 12)
+EX ('LOC', 'ffin5_n32.pg', 8, 28, 12)
+EX ('LOC', 'ffin5_n32.pg', 9, 28, 12)
+EX ('LOC', 'ffin5_n32.pg', 10, 28, 12)
+EX ('LOC', 'ffin5_n32.pg', 11, 28, 12)
+EX ('LOC', 'ffin5_n32.pg', 12, 28, 12)
+EX ('LOC', 'ffin5_n32.pg', 13, 28, 12)
+EX ('LOC', 'ffin5_n32.pg', 14, 28, 12)
+EX ('LOC', 'ffin5_n32.pg', 15, 28, 12)
+EX ('LOC', 'ffin5_n32.pg', 16, 28, 12)
+EX ('LOC', 'ffin5_n32.pg', 17, 28, 12)
+EX ('LOC', 'ffin5_n32.pg', 18, 28, 12)
+EX ('LOC', 'ffin5_n32.pg', 19, 28, 12)
+DONE

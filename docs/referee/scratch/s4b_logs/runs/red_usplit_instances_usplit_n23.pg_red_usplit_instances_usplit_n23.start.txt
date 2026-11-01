@@ -1,0 +1,4 @@
+GAME red/usplit/instances/usplit_n23.pg red/usplit/instances/usplit_n23.start
+GAMES 1
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,9 @@
+GAME new/box54/out/hf/counter_rob_3.pg 
+GAMES 1
+enum_states 7
+keep_chk 4
+loc_chk 45
+rhos 6212
+states 7
+VIOLATIONS 0
+RC 0
