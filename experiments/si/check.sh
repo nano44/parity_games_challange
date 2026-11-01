@@ -1178,3 +1178,12 @@ case "$o" in *"DEVIT 10 DEVIT_ST 9 "*) ;; *) echo "box 62: sym_h8_s1: $o"; exit 
 o=$(awk '{for(i=1;i<=NF;i++){if($i=="STEPS")a+=$(i+1); if($i=="ITNE")b+=$(i+1); if($i=="ITNE_W")c+=$(i+1); if($i=="DEVIT_W")d+=$(i+1); if($i=="SQV")e+=$(i+1); if($i=="DEV")f+=$(i+1)}} END{print a, b, c, d, e, f}' anc58/itau_corpus.txt)
 [ "$o" = "17841 3768 2647 585 0 32179" ] || { echo "box 62: itau corpus totals: $o"; exit 1; }
 echo "si (box 62: I_tau in tau-stretches, ESC-SQUEEZE): PASS"
+# box 63 (Lead 01:30Z): [S4b-OPT] brute force (S4b's tau_new is Odd's pointwise optimum of H' against sigma); mutation control must fail.
+o=$(python3 -I anc58/s4bopt.py ../red/h3/instances/lcount2_n23.pg ../red/h3/instances/lcount2_n23.start)
+case "$o" in *"STATES 6 CHECKED 6 SKIPPED 0 RHOS 46 OPTV 0 TAUNEW_EQ_RUN 6 "*"S4AV 0"*) ;; *) echo "box 63: lcount2: $o"; exit 1;; esac
+o=$(MUT=1 python3 -I anc58/s4bopt.py ../red/h3/instances/lcount2_n23.pg ../red/h3/instances/lcount2_n23.start)
+case "$o" in *"OPTV 215 "*) ;; *) echo "box 63: mutation control: $o"; exit 1;; esac
+[ "$(grep -c ' S4BOPT ' anc58/s4bopt_corpus.txt)" = 1132 ] || { echo "box 63: s4bopt corpus incomplete"; exit 1; }
+o=$(awk '{for(i=1;i<=NF;i++){if($i=="STATES")a+=$(i+1); if($i=="CHECKED")b+=$(i+1); if($i=="OPTV"||$i=="S4AV")c+=$(i+1); if($i=="ODDFB")d+=$(i+1); if($i=="TAUNEW_EQ_RUN")e+=$(i+1)}} END{print a, b, c, d, e}' anc58/s4bopt_corpus.txt)
+[ "$o" = "7772 6719 0 36 7736" ] || { echo "box 63: s4bopt corpus totals: $o"; exit 1; }
+echo "si (box 63: S4B-OPT): PASS"

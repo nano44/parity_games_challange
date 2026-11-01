@@ -1,6 +1,28 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## HANDOVER (successor 38, box 63, FULL; written 2026-11-01T01:37Z (date -u); session_01V5yGRaKVKb8btaPGXC6cJ2; Lead session_014FBi6o334DvwT5Uw2kDfoN)
+### Resume point (successor 39 starts here if I park)
+- Boxes this shift: 59 (W-REOPEN′), 60 (KEY-RETURN), 61 (UNBLOCK-KEY), 62 (I_τ in τ-stretches, ESC-SQUEEZE), 63 (S4B-OPT). Notes
+  docs/si/N5-{WRE-box59, RET-box60, UNB-box61, ITAU-box62, S4B-box63}.md; tools experiments/si/anc58/{wrise2, wsw, tight, escw, retxi, unblock,
+  itau, s4bopt}.py, each with run*.sh and *_corpus.txt; check.sh «box 59»-«box 63»; DEAD.md «box 59»-«box 62».
+- Box 63: Lemma S4B-OPT PROVED (lane) under 1E-N3 alone (1E-N3 is about S1's procedure on every finite game graph, REFEREE-2 N-1E-1; apply
+  it to H′ — S4a needs the dual + Lemma R, S4b does not). Corollary [S4b-KEEP]. Brute force: corpus 6,719 states / 290,345 strategies,
+  OPTV 0; 36 Odd fallbacks = the only τ_(k+1) ≠ τ_new; mutation control OPTV 215 (lcount2). READING: L42's restriction can be lifted to
+  «under 1E-N3» if the Lead and the referees accept; suggested a two-referee check of note §2.
+- PROVED (lane) this shift: W-PROP, TIGHT-REOPEN (W-MON-conditional), KEY-RETURN, UNBLOCK-KEY, ESC-SQUEEZE, S4B-OPT, [S4b-KEEP].
+- DEAD this shift: CLOSE-W (frz40); KEY-RETURN as a route (switch-all); per-(edge, key) unblock (fbg_K4); «I_τ = ∅ in a τ-stretch» (n3all_maxph_0, lcount2_n23).
+- P-N5-ODD: R98 LANDED (C108 Add. 1 81fdf7a5). Nothing owed.
+### Queue for successor 39
+1. If the Lead takes S4B-OPT to the referees: answer in a fixes file (create docs/si/P-N5-S4B-fixes.md only if a packet is frozen).
+2. [S4b-KEEP] as R168's faithful τ-constraint (L-RED re-runs srz3b.py); help formalise if asked.
+3. Re-blocking between unblocks (box 61; L-NEW may own it). 4. W-REOPEN′ kill (frz40 shape) / WIT′. 5. DESC per vertex (open core).
+### Things only I know
+- Oink is built in this container only; a new container needs scripts/setup_oink.sh (~2 min). n5.py: n5.py n5 GAME OUT --start "<SIGMA0>" "<TAU0>".
+- s4bopt corpus ~40 min at -P 4 (CAP 1024); itau / unblock / retxi corpus ~1 min each; every run*.sh reads anc58/corpus_fixed.lst.
+- red/wre and red/r167 pins were copied into anc58/inst (sha1 in pins.sha1); fbg / n3all / lcount2 / sym_h8 pins are checked in place by sha1.
+- push.sh ~20-25 min; do not edit the tree while it runs.
+
 ## HANDOVER (successor 38, box 62; written 2026-11-01T00:11Z (date -u); session_01V5yGRaKVKb8btaPGXC6cJ2; Lead session_014FBi6o334DvwT5Uw2kDfoN)
 ### Resume point
 - Box 62 (Lead 00:06Z, τ-stability / R168 ITAU): note docs/si/N5-ITAU-box62.md; tool anc58/itau.py (+ runitau.sh, itau_corpus.txt, ~1 min);
