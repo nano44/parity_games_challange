@@ -1,5 +1,5 @@
 # L-RED notebook (independent adversary lane)
-Successor 43 (session_01V5yGRa2JMr2sxHnK3JazZL2, Opus 5.5) started 2026-11-01 17:50Z (Lead brief; date -u 18:06Z at STEP 0); R183 (growing FVCH): no family; Lemma OVT-KEY + KEY-CHARGE + DEPTH PROVED (lane); realized IDEAL champions: 0 FL runs; see "Successor 43".
+Successor 43 (session_01V5yGRa2JMr2sxHnK3JazZL2, Opus 5.5) started 2026-11-01 17:50Z (Lead brief; date -u 18:06Z at STEP 0); R183 (growing FVCH): no family; Lemma OVT-KEY + KEY-CHARGE + DEPTH PROVED (lane); realized IDEAL champions: 0 FL runs; R184 (Lead retarget 18:37Z: D′-cyclic stretches, CNMOV): no family, Lemma SELF-FREE; see "Successor 43".
 Successor 42 (session_01V5yGRZmYx9sPoeaSsLDoAg, Opus 5.5) started 2026-11-01 10:39Z (date -u); R177 (CDAG order as an FL run): TB canonical (R24), FL-IDX, CASC-G, LADDERBF, idealised two-face model; see "Successor 42"; R178-R182; PARKED ~17:0xZ, see "Successor 42 PARK".
 Successor 41 (session_01V5yGRa8VX4VrSzMTZfKctP, Opus 5.5) started 2026-11-01 06:24Z (date -u); R173 (a): Lemma PORTAL; R174 (Z): PHASE-PORTAL, SELF; R175: ODD-GATE; R176: topfix ODIFF-1 depth; PARKED; see "Successor 41 PARK".
 Successor 40 (session_01V5yGRZzQMY5djbFkvKqE6d, Opus 5.5) started 2026-11-01 02:51Z (date -u); R170 (TWO-FIX: FREEZE), R171 (FB per window: no FB >> n), R172 (TF-PH DEAD); PARKED ~06:1xZ; see "Successor 40 PARK".
@@ -56,7 +56,16 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
     ≤ 1 per FL run), DEPTH (non-CN moves per FL run ≤ n(Δn)^(ℓ*−1); CNONLY transitions not covered).
   - DATA: 0 violations on the 813 corpus pairs (39 returns, all across stretches; CNONLY 13 of 42 FL transitions), 14 pins, 2
     adversarial climbs (ovk_n37: 37 returns), 3,000 random games. fvch.py reproduces box 134 (168 moves, 94 flips, CROSS 0).
+- R184 docs/red/R184-dcyc.md (Lead retarget 18:37Z after L-NEW box 135 CASC-M / MERGE):
+  - (1) longest D′-cyclic stretch stays 3 (climbs from odxi_many_n32, n 32 / 48). PROVED (lane) Lemma SELF-FREE: x reads only pairs
+    (y, σ(x)); a self-option's comparison is static in its segment P (Z′ = ∅). So D″ (no self-edges) suffices for CASC-M; a move to
+    a self-option ends the stretch. odxi_many stays D″-cyclic via mover 2-cycles 13 ↔ 30, 1 ↔ 11.
+  - (2) CN gadgets (c with gates τ → c): CNMAX 1/2/4/6 at k 1/2/4/8, L_FL 7, each c ≤ 2 FL moves (returns exist at CN). Self-referential
+    gate margin = c's own bit (R167).
+  - Pins r184/instances cnmov_k8_n57, dcyc3_n48 (startck, Oink zlk/tl, xeng OK).
 - Things only I know:
+  - dcyc.py REFINE=1 = D″, SHOWCYC=1 prints a cycle to stderr. dmerge's T_x is "level − 1 and same W cycle node", not the packet's
+    path-set T_x. I kept it so the counts match box 135.
   - ovtkey's KBOUND counts a vertex whose total moves exceed (|T_x| − 1)(1 + #stretches − 1). Moves belong to the stretch of their
     NEW state (κ_j uses σ_j), so the entry transition of a stretch counts in it.
   - climbs.py writes its .pg at every accepted (≥) mutation. I stopped the k 4-32 climbs by pid and re-parsed the outputs (intact).
