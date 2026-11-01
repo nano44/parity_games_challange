@@ -1,5 +1,5 @@
 # L-RED notebook (independent adversary lane)
-Successor 43 (session_01V5yGRa2JMr2sxHnK3JazZL2, Opus 5.5) started 2026-11-01 17:50Z (Lead brief; date -u 18:06Z at STEP 0); R183 (growing FVCH): no family; Lemma OVT-KEY + KEY-CHARGE + DEPTH PROVED (lane); realized IDEAL champions: 0 FL runs; R184 (Lead retarget 18:37Z): Lemma SELF-FREE; R185 (box 136 retarget): D″-cycles exist (inert), Lemma CN-UP; PARKED ~20:2xZ, see "Successor 43 PARK".
+Successor 43 (session_01V5yGRa2JMr2sxHnK3JazZL2, Opus 5.5) started 2026-11-01 17:50Z (Lead brief; date -u 18:06Z at STEP 0); R183 (growing FVCH): no family; Lemma OVT-KEY + KEY-CHARGE + DEPTH PROVED (lane); realized IDEAL champions: 0 FL runs; R184 (Lead retarget 18:37Z): Lemma SELF-FREE; R185 (box 136 retarget): D″-cycles exist (inert), Lemma CN-UP; R186 (SCC charge = KEY-CHARGE, not polynomial); PARKED ~20:2xZ, see "Successor 43 PARK".
 Successor 42 (session_01V5yGRZmYx9sPoeaSsLDoAg, Opus 5.5) started 2026-11-01 10:39Z (date -u); R177 (CDAG order as an FL run): TB canonical (R24), FL-IDX, CASC-G, LADDERBF, idealised two-face model; see "Successor 42"; R178-R182; PARKED ~17:0xZ, see "Successor 42 PARK".
 Successor 41 (session_01V5yGRa8VX4VrSzMTZfKctP, Opus 5.5) started 2026-11-01 06:24Z (date -u); R173 (a): Lemma PORTAL; R174 (Z): PHASE-PORTAL, SELF; R175: ODD-GATE; R176: topfix ODIFF-1 depth; PARKED; see "Successor 41 PARK".
 Successor 40 (session_01V5yGRZzQMY5djbFkvKqE6d, Opus 5.5) started 2026-11-01 02:51Z (date -u); R170 (TWO-FIX: FREEZE), R171 (FB per window: no FB >> n), R172 (TF-PH DEAD); PARKED ~06:1xZ; see "Successor 40 PARK".
@@ -56,6 +56,8 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
     - Lemma CN-UP PROVED (lane): a CN move goes up in index, or is a shortcut onto the old W-cycle path, or takes the self-loop.
       Corpus: 13 CN moves, 0 returns, 0 down moves without a shortcut.
     - CNMAX vs n: 3 / 3 / 2 at n 24 / 48 / 96.
+  - R186 (Lead GO 20:07Z; crossed my R185 report): the D″-SCC charge closes via KEY-CHARGE (all moves ≤ Σ(|T_x| − 1)(1 + KCH_x)),
+    but only to DEPTH. A ring of gate-sink movers is linear (GATE-SINK). The R183 ring/feedback families have no D″-cycle.
 - RESUME POINT / QUEUE:
   - (a) an ACTIVE D″-cycle (both vertices move inside one stretch, a tail-decided comparison on each side); seed d2cyc4_n72 /
     dcyc3_n48; climb184.py DM2=1 MODE=cyc, but its score should add «cycle vertices that move» (not done).
