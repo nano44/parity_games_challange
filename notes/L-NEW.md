@@ -20,6 +20,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   tau-stretches (fbg 403). ODIFF 1 slowness = fallbacks (471 / 2,986), W falls exactly at fallbacks (b5_os_n40).
 - Not proposed: «fallback-free run < n» (ODIFF 0 has 49 at n 36). Pitfall: `pkill -f box122/...` killed my own shell (pattern in argv).
 - Next: (a) TF-PH proof via R17 Lemma P + GAP-D, or (b) a TWO-FIX fallback count. L-LIT is opening pivot-rule sources: cite none yet.
+### Box 123 N5-FBCOUNT (Lead GO 03:45Z; docs/new/N5-FBCOUNT-box123.md; experiments/new/box123/)
+- PROVED (lane): FB-DISJ (at a TWO-FIX fallback Is cap IW = empty), FB-D (switched edges touch D), DROP-D (W drops only in D).
+- DATA: post-fallback W never repeats (not a potential). DEAD: gap descent between fallbacks unless Xi(O) changes (frz24 18 -> 18).
+  CONJECTURE FB-XO: FB <= (XO + 1) n (250 / 250; max FB/(XO+1) 34 at n 48, rise_fb38_n48). Only b5_os is a family (FB 4 -> 9).
+- Next: (a) TF-PH proof (R17 (b) Lemma P + GAP-D; R17 applies when D empty, per T64 via the Lead).
 ### Things only I know (successor 44): the awk recount in fixes entry 1 (a) keys runs by (game, start); 1,132 lines, 813 distinct keys.
 
 ## Resume point (HISTORY; successor 43, Opus 5.5, session_01V5yGRWyuWWZgJkLHZqZjYn; FINAL, PARKED 2026-11-01 ~00:3xZ by date -u, ~360k context)
