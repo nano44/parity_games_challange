@@ -667,4 +667,10 @@ if grep -qF "ODDXI cp_K4.pg n 192 K 44 XCHodd 329 MINRISE 329 SBMOVE 16 MOVES 16
 else
   echo "box 126 ODDXI check: FAILED"; exit 1
 fi
+w75=$(cd .. && python3 -I new/box127/expir.py n5-epoch/instances/nep92_n40.pg n5-epoch/instances/nep92_n40.start)
+if grep -qF "EXP nep92_n40.pg n 40 K 98 WRUNS 9 MAXRUN 14 SRCS 360 XCH 964 BLK 964 MAXXCH 11 MAXBLK 11 RET 0 AF 50 AFREV 0 SRCVIOL 27 QOFF 2 Q2OFF 50 NEITHER 0" <<<"$w75"; then
+  echo "box 127 PARAM: nep92_n40 expiration (alternation-free) property fails inside W-runs (50 violations, all availability), no path-part returns: PASS"
+else
+  echo "box 127 PARAM check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
