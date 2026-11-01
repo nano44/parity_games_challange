@@ -4,7 +4,8 @@ dcyc2.py, runcorp.sh, rundcyc2.sh, a_corpus.txt, d2_corpus.txt, pincheck.sh, pin
 «box 132 ANCHOR». Labels: PROVED (lane), CONJECTURE, READING, DATA, DEAD, OPEN.
 
 ## 0. Answer
-- (b) done in the asked form, CONDITIONAL on [RULE] (below; on every game a READING, signed only on 𝒞^1O as RESULTS R24 (a)+(b)).
+- (b) done in the asked form. Label (updated 13:4xZ, §6): PROVED (lane), on R24 (a) + (b) choice rule + bridge B (Lead reading L46).
+  The original label was CONDITIONAL on [RULE].
   Theorem FL-ANCHOR (§2): in one FL run, between two changes of the gating data
   G_j := (σ̄_j, Ξ_j on ODIFF_j, Ξ_j on the W-cycle nodes),
   the run has at most CAP := (ℓ* − 1) + Σ_c (|T_c| − 1) ≤ n + m transitions. So
@@ -12,7 +13,7 @@ dcyc2.py, runcorp.sh, rundcyc2.sh, a_corpus.txt, d2_corpus.txt, pincheck.sh, pin
   In a TWO-FIX window (σ̄ fixed), GCH ≤ Σ_{v ∈ ODIFF ∪ CN} XCH_run(v), and over the window
   FL ≤ CAP · (1 + WCH + Σ_{v ∈ ODIFF ∪ CN} XCH(v)).
   This moves FL onto Ξ-changes at a FIXED small vertex set (the ODIFF Odd vertices and the W-cycle nodes), like the rest of the frontier.
-- Between gating changes the dynamics is CASC exactly (R24 (c), lifted): a non-cycle-node Even vertex of level ℓ moves only in the
+- Between gating changes the dynamics has CASC's shape (R24 (c) is NOT cited; §2 (i) is proved here): a non-cycle-node Even vertex of level ℓ moves only in the
   first ℓ − 1 transitions of the epoch, and then never again. The CDAG-type blow-up (box 130) can therefore come only from gating
   changes. Consequence for L-RED R177: an exponential FL run needs exponentially many Ξ-changes at ODIFF vertices or W-cycle nodes
   while W stays constant (READING, from the theorem).
@@ -63,8 +64,8 @@ dcyc2.py, runcorp.sh, rundcyc2.sh, a_corpus.txt, d2_corpus.txt, pincheck.sh, pin
 - Theorem FL-ANCHOR (under the §1 premises and [RULE]). Take an epoch whose first gating state is s0 and last state is s1, and let
   ℓ* := the largest level of an Even vertex ∉ CN.
   - (i) For every ℓ ≥ 1, σ_j restricted to the Even vertices ∉ CN of level ≤ ℓ is constant for j ∈ [s0 + ℓ − 1, s1].
-  - (ii) Hence a vertex x ∉ CN moves only at transitions j with j − s0 ≤ ℓ(x) − 1, and always to an option of level ℓ(x) − 1. (On 𝒞^1O
-    this is R24 (c) CASC's «level ℓ switches only at run steps ≤ ℓ − 2», 0-based.)
+  - (ii) Hence a vertex x ∉ CN moves only at transitions j with j − s0 ≤ ℓ(x) − 1, and always to an option of level ℓ(x) − 1. (It has the
+    same shape as R24 (c) CASC's «level ℓ switches only at run steps ≤ ℓ − 2», 0-based. CASC is not cited: the proof of (i) is self-contained.)
   - (iii) For j ∈ [s0 + ℓ*, s1], only cycle nodes move. Each move of c strictly raises ξ(σ(c)) in a fixed map ξ on T_c, so c makes
     ≤ |T_c| − 1 such moves.
   - (iv) The epoch has ≤ CAP = (ℓ* − 1) + Σ_{c ∈ CN Even} (|T_c| − 1) transitions, and the run has ≤ CAP · (1 + GCH).
@@ -125,3 +126,23 @@ dcyc2.py, runcorp.sh, rundcyc2.sh, a_corpus.txt, d2_corpus.txt, pincheck.sh, pin
 - L-NEW: try to bound Ξ-changes at ODIFF vertices inside an FL run. Ξ(o) = o·Ξ(σ̄(o)), so a change needs an FL mover on o's Ξ-play; FL
   movers are value-dirty: their current option's Ξ is strictly below W (since Ξ ⊴ W pointwise and the released
   option is W-tied; a one-line remark, not used in §2).
+
+## 6. Citing line and bridge B (after L46: the L44 lift, REFEREE 472f0dcd CF-1, REFEREE-2 d96d2f9e; Lead relay 13:37Z)
+- Citing line for [RULE]: «RESULTS R24 (a) Lemma R and R24 (b)'s choice rule (TB proof steps 1, 3-5; fixes §2.3) with bridge B; its
+  proof uses no 𝒞^1O hypothesis» (Lead reading L46). The choice rule is class-free but is not R24 (b)'s literal statement. R24 (c)-(e)
+  are not covered and not used: §2 (i) has its own proof (induction on the level, §2).
+- «Tied options» := the fully W′-optimal arena options, W′ = W*_H = the arena optimum's valuation (REFEREE-2's precision note). An
+  option whose play passes the vertex is a corner and lies outside the rule. At an FL transition, W′ = W_j = W_(j−1), so TIE_j(x) as
+  written in §1 is exactly the fully W′-optimal set (box 133 §4).
+- Lemma (bridge B). At an FL transition j, let h be an Even vertex that is not its own W-cycle node, and let o = σ_(j−1)(h) and w = σ_j(h)
+  (w = o allowed). Then o is fully W′-optimal at h.
+  - Proof. h is not a corner, so h lies on neither the σ_j-play from w nor the one from o (V1). Hence W_j(h) = h ⊕ W_j(w), and
+    W_(j−1)(h) = h ⊕ W_(j−1)(o). FL gives W_(j−1) = W_j everywhere, so h ⊕ W_j(o) = W_(j−1)(h) = W_j(h) = W*_H(h). So o attains h's arena
+    optimum, i.e. it is fully W′-optimal. ∎
+  - Use: FL-OPT / σ_(j−1)(x) ∈ TIE_j(x) in §2 (the idempotence step) is bridge B. Hypotheses beyond REFEREE-2's «Even, switched, not its
+    own W′-cycle node, W′(h) = W_k(h), no fallback»:
+    - (R1) [RULE] is applied at non-switched vertices too (σ_j(x) is the rule's choice for every Even x ∉ CN). REFEREE's choice rule is
+      the S1 output form, so it covers this. If either referee reads it as movers-only, (R1) is a named premise.
+    - FL itself (W_j = W_(j−1) everywhere), which implies W′(h) = W_k(h).
+- New label: Theorem FL-ANCHOR and Lemma PREFIX are PROVED (lane), on R24 (a) + (b) choice rule + bridge B (L46). The standing SPEC
+  premise (1E-N3, R102 / R57) and the lane-level items FL-TIGHT and FL-OPT (box 130) remain.
