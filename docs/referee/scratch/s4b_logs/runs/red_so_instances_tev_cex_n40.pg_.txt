@@ -1,0 +1,8 @@
+GAME red/so/instances/tev_cex_n40.pg 
+GAMES 1
+enum_states 1
+loc_chk 3
+rhos 4
+states 1
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,9 @@
+GAME red/sgrow/instances/s35_oink_n80.pg 
+GAMES 1
+enum_skip 3
+enum_states 1
+loc_chk 78
+rhos 4
+states 4
+VIOLATIONS 0
+RC 0

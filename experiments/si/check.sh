@@ -1187,3 +1187,20 @@ case "$o" in *"OPTV 215 "*) ;; *) echo "box 63: mutation control: $o"; exit 1;; 
 o=$(awk '{for(i=1;i<=NF;i++){if($i=="STATES")a+=$(i+1); if($i=="CHECKED")b+=$(i+1); if($i=="OPTV"||$i=="S4AV")c+=$(i+1); if($i=="ODDFB")d+=$(i+1); if($i=="TAUNEW_EQ_RUN")e+=$(i+1)}} END{print a, b, c, d, e}' anc58/s4bopt_corpus.txt)
 [ "$o" = "7772 6719 0 36 7736" ] || { echo "box 63: s4bopt corpus totals: $o"; exit 1; }
 echo "si (box 63: S4B-OPT): PASS"
+# P-N5-S4B (FROZEN packet, box 63; line docs/si/P-N5-S4B-line.txt): must not change. Data pins: «box 63».
+echo "f1b65da522d927406a403ae5d023bb48ac73d022  ../../docs/si/P-N5-S4B-box63.md" | sha1sum -c --quiet
+echo "f8559b5e539a461a0fac89a5a9bf6f4432721c74  ../../docs/si/P-N5-S4B-line.txt" | sha1sum -c --quiet
+echo "si (P-N5-S4B pinned): PASS"
+# P-N5-S4B line revision L-1 (fixes entries 1-2: REFEREE S4B-L1 / S4B-L2): must not change; de-duplicated DATA counts (813 distinct lines).
+echo "95373010d54c69907308d224fa1111127055b8f5  ../../docs/si/P-N5-S4B-line-L1.txt" | sha1sum -c --quiet
+o=$(python3 -I -c "
+seen={}
+for l in open('anc58/s4bopt_corpus.txt'):
+    pre,_,post=l.partition(' S4BOPT ')
+    a=pre[5:].strip()
+    if a in seen: continue
+    t=post.split(); seen[a]={t[i]:int(t[i+1]) for i in range(1,len(t)-1,2)}
+s=lambda k: sum(d[k] for d in seen.values())
+print(len(seen), s('STATES'), s('CHECKED'), s('SKIPPED'), s('RHOS'), s('OPTV'), s('ODDFB'), s('S4AV'))")
+[ "$o" = "813 5726 5058 668 213311 0 29 0" ] || { echo "P-N5-S4B L-1: distinct counts: $o"; exit 1; }
+echo "si (P-N5-S4B L-1 pinned, distinct counts): PASS"

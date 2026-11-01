@@ -631,4 +631,34 @@ if grep -qF "INPHASE lend107_n32.pg n 32 K 112 maxFirst 107 maxInPhase 106 at (2
 else
   echo "box 120 GATE-L1 check: FAILED"; exit 1
 fi
+w69=$(cd .. && python3 -I new/box121/brtree.py new/box113/inst/cp_K4.pg new/box113/inst/cp_K4.start; python3 -I new/box121/twofix.py new/box113/inst/cp_K4.pg new/box113/inst/cp_K4.start)
+if grep -qF "XIN_OLD 4029/4029 (path only 4029) FF 43 IN_OLD 43 IN_NEW 43 PHL up/dn 39/5 PDEP up/dn 36/4" <<<"$w69" && grep -qF "TWOFIX cp_K4.pg n 192 K 44 windows 1 inwin 43 | longest [0, 43] L 43 ODIFF 16 SB 2 SBSTEP 1" <<<"$w69"; then
+  echo "box 121 BRTREE: cp_K4 PLAY-CONTAIN 4029/4029, PHL falls 5 times (potential DEAD); one TWO-FIX window of 43 vs switch-best 2: PASS"
+else
+  echo "box 121 BRTREE check: FAILED"; exit 1
+fi
+w70=$(cd .. && python3 -I new/box122/windows.py n5-exhaustive/instances/b5_os_n40.pg new/box121/inst/b5_os_n40_default.start 4)
+if grep -qF "WIN b5_os_n40.pg n 40 K 81 [0, 77] L 77 ODIFF 1 FB 9 SB 7 SBSTEP 9 MAXSEG 17 MAXPH 17 PHNF 17 FLATNF 0 LAMNF 7 O [(7, 2, 7)]" <<<"$w70"; then
+  echo "box 122 TWOFIX: b5_os_n40 ODIFF 1 window 77 = 9 fallbacks + runs <= 17, PHNF 17 <= n - 1 (TF-PH): PASS"
+else
+  echo "box 122 TWOFIX check: FAILED"; exit 1
+fi
+w71=$(cd .. && python3 -I new/box123/fbcount.py red/n5inj/instances/frz24.pg red/n5inj/instances/frz24.start)
+if grep -qF "FBW frz24.pg n 24 [13, 30] L 17 ODIFF 1 FB 2 REPW 0 REPWF 0 PEAKMON 1 TROUGHMON 1 SW 9 SWD 9 WDROP 6 WDROPD 6 GAPF [18, 18] NOTDESC 1 NOTDESC_NOXO 1 XOBETWEEN 0 XOALL 1" <<<"$w71"; then
+  echo "box 123 FBCOUNT: frz24 gap 18 -> 18 between fallbacks with no Xi(o) change (GAP-DESC DEAD); W-drops all in D: PASS"
+else
+  echo "box 123 FBCOUNT check: FAILED"; exit 1
+fi
+w72=$(cd .. && python3 -I new/box124/lemmap.py red/n5inj/instances/frz24.pg red/n5inj/instances/frz24.start; python3 -I new/box124/lemmap.py red/n5inj/instances/block_bk20.pg -)
+if grep -qF "LEMMAP frz24.pg n 24 K 39 pieces 5 longest 7 checks 335 viol 12 BLK 8 NOTBLK 4 INX 4 INZ 8" <<<"$w72" && grep -qF "LEMMAP block_bk20.pg n 24 K 27 pieces 3 longest 9 checks 303 viol 0 " <<<"$w72"; then
+  echo "box 124 LEMMAP: Lemma P invariant fails in TWO-FIX pieces with D nonempty (frz24 12 / 335), holds with D empty (block_bk20 0 / 303): PASS"
+else
+  echo "box 124 LEMMAP check: FAILED"; exit 1
+fi
+w73=$(cd .. && python3 -I new/box125/chain.py new/box116/inst/fbA_K4_m8_m8.pg new/box116/inst/fbA_K4_m8_m8_fixed.start)
+if grep -qF "CHAIN fbA_K4_m8_m8.pg n 136 K 44 stretches 1 T 44 WIN 34 SBC 33 FBX 0 VMOVES 72 VAL 72 TIE 0 TOW 44 AWAY 28 SIDE 0 DSW 72 MOVERS 23 MAXFLIP 8 " <<<"$w73"; then
+  echo "box 125 CHAIN: fbA_K4 one tau-stretch of 44 = 34 TWO-FIX windows, 33 sbar-changes all Xi-changes at Odd vertices (SBC-XI): PASS"
+else
+  echo "box 125 CHAIN check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

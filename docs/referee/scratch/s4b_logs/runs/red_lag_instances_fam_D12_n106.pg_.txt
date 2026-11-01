@@ -1,0 +1,7 @@
+GAME red/lag/instances/fam_D12_n106.pg 
+GAMES 1
+enum_skip 1
+loc_chk 60
+states 1
+VIOLATIONS 0
+RC 0

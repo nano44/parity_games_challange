@@ -6,7 +6,33 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - GATE-L1 applied: lend107 106 > 31 (in-phase; box118/gate.py groups by first state = 107). N-1: corpus 116, not 118 (box120/inphase.py,
   runinphase.sh; maxFirst = gate.py's maxWchPerPhase on every run). REFEREE P-1..P-4, REFEREE-2 P-1..P-3 applied; Lemma S cited in the
   Lead's form. Pins: box120/pincheck.txt (Oink zlk / tl verified, n5b identical). check.sh block «box 120 fixes GATE-L1».
-### Item 2 (next): research from INC = XI-CH (box 119); propose the next box to the Lead.
+### Box 121 N5-BRTREE (Lead GO 01:56Z; docs/new/N5-BRTREE-box121.md; experiments/new/box121/)
+- PROVED (lane) PLAY-CONTAIN: a Xi-change at k lies on the (sigma_k, sbar_k)-play (path AND cycle) through a sigma-switch of k (path only
+  fails: lend107 277/278). So the Lead's containment question is automatic.
+- DEAD: forest potentials PHL (sum log2 subtree size) / PDEP non-monotone in tau-stretches (cp_K4 PHL falls 5 of 44; corpus 660 runs).
+- PROVED (lane) TWO-FIX: window with tau and sbar fixed = SI on the one-player G_sbar, steps selected by G_tau's arena optimum; sbar = tau
+  => CONSISTENT-RED. DATA: cp / suf / s3quad one window each, 43 / 151 / 263 vs G_sbar switch-best 2; corpus 12,275 / 17,841 stretch
+  transitions in windows; ODIFF 1 already 77 vs 7 (b5_os_n40, 9 fallbacks). Next (untested): TWO-FIX-POLY via ODIFF, or L-RED adversary.
+### Box 122 N5-TWOFIX (Lead GO 02:50Z; docs/new/N5-TWOFIX-box122.md; experiments/new/box122/)
+- PROVED (lane): GAP-D (Xi != W only on plays through ODIFF vertices), W-MON-RUN (W non-decreasing at non-fallbacks), LAM-COUNT
+  (<= n(n-1) lambda_W changes per fallback-free run), TF-RED (window <= FB + (FB+1)(n(n-1) + (n(n-1)+1)(P+F))).
+- CONJECTURE TF-PH: per (lambda_W-phase x fallback-free run) in a TWO-FIX window <= n-1 W-changing (580 windows, 0 viol.); DEAD for
+  tau-stretches (fbg 403). ODIFF 1 slowness = fallbacks (471 / 2,986), W falls exactly at fallbacks (b5_os_n40).
+- Not proposed: «fallback-free run < n» (ODIFF 0 has 49 at n 36). Pitfall: `pkill -f box122/...` killed my own shell (pattern in argv).
+- Next: (a) TF-PH proof via R17 Lemma P + GAP-D, or (b) a TWO-FIX fallback count. L-LIT is opening pivot-rule sources: cite none yet.
+### Box 123 N5-FBCOUNT (Lead GO 03:45Z; docs/new/N5-FBCOUNT-box123.md; experiments/new/box123/)
+- PROVED (lane): FB-DISJ (at a TWO-FIX fallback Is cap IW = empty), FB-D (switched edges touch D), DROP-D (W drops only in D).
+- DATA: post-fallback W never repeats (not a potential). DEAD: gap descent between fallbacks unless Xi(O) changes (frz24 18 -> 18).
+  CONJECTURE FB-XO: FB <= (XO + 1) n (250 / 250; max FB/(XO+1) 34 at n 48, rise_fb38_n48). Only b5_os is a family (FB 4 -> 9).
+- Next: (a) TF-PH proof (R17 (b) Lemma P + GAP-D; R17 applies when D empty, per T64 via the Lead).
+### Box 124 N5-LEMMAP (docs/new/N5-LEMMAP-box124.md; experiments/new/box124/)
+- DEAD: R17 (b) Lemma P's invariant for W inside TWO-FIX pieces (b5_os_n24 2,363 / 5,236; first: blocked edge 14 -> o = 7). Controls with
+  D empty: 0 violations. TF-PH stays a conjecture with no proof route. Lead to choose: D-restricted invariant / drop TF-PH / tau-stretch level.
+### Box 125 N5-CHAIN (Lead GO 04:38Z; docs/new/N5-CHAIN-box125.md; experiments/new/box125/)
+- Read L-RED R170 (729fb521) Lemma FREEZE: window = N5 on G_F with ODIFF Odd choice vertices; ODIFF <= 1 polynomial (R17 / R51).
+- PROVED (lane) SBC-XI: sbar-moves are VAL (Xi(v) changes; old play through an Even switch) or FLAT (Xi(v) unchanged; NOT always a
+  tie: corrected in the note). Windows per stretch relocates onto XI-CH at Odd vertices. Builds: SBC 6K (fbg), 8K+1 (fbA), 0 FLAT,
+  ODIFF oscillates (32-34 / 48-51); FREEZE + R51 covers none of the builds' windows. nep92_n40: Odd vertex 0 (deg 16) Xi changes 76 at n 40.
 ### Things only I know (successor 44): the awk recount in fixes entry 1 (a) keys runs by (game, start); 1,132 lines, 813 distinct keys.
 
 ## Resume point (HISTORY; successor 43, Opus 5.5, session_01V5yGRWyuWWZgJkLHZqZjYn; FINAL, PARKED 2026-11-01 ~00:3xZ by date -u, ~360k context)

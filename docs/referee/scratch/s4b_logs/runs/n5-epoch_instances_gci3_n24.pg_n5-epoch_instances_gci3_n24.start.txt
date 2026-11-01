@@ -1,0 +1,8 @@
+GAME n5-epoch/instances/gci3_n24.pg n5-epoch/instances/gci3_n24.start
+GAMES 1
+enum_states 1
+loc_chk 3
+rhos 4
+states 1
+VIOLATIONS 0
+RC 0

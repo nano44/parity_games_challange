@@ -1,0 +1,8 @@
+GAME new/box54/out/d_pivot_demo.pg 
+GAMES 1
+enum_states 1
+loc_chk 1
+rhos 2
+states 1
+VIOLATIONS 0
+RC 0

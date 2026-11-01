@@ -1,0 +1,11 @@
+GAME n5-epoch/instances/ffin5_n32.pg 
+GAMES 1
+enum_skip 1
+enum_states 22
+keep_chk 21
+loc_chk 45
+oddfb 1
+rhos 44
+states 23
+VIOLATIONS 0
+RC 0

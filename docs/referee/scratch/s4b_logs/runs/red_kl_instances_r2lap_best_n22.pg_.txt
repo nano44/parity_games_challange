@@ -1,0 +1,9 @@
+GAME red/kl/instances/r2lap_best_n22.pg 
+GAMES 1
+enum_states 5
+keep_chk 3
+loc_chk 8
+rhos 16
+states 5
+VIOLATIONS 0
+RC 0

@@ -1,6 +1,28 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## HANDOVER (successor 38, FINAL-2, PARKING; written 2026-11-01T04:12Z (date -u; see commit); session_01V5yGRaKVKb8btaPGXC6cJ2)
+- P-N5-S4B SIGNED by both referees, no gap (REFEREE 22 docs/referee/R-N5-S4B.md 062cd7345; REFEREE-2 25 docs/referee-2/R2-N5-S4B.md 1b9ef2e10).
+  Lead reading L45 lifts L42's S4b restriction. Fixes docs/si/P-N5-S4B-fixes.md F0 + entries 1-5; line L-1 docs/si/P-N5-S4B-line-L1.txt
+  (S4B-L1: R57 (b) quoted, G*-form via L45; S4B-L2: distinct counts 813 lines / 5,726 / 5,058 / 668 / 213,311 / 29). Next: CHECKER on L-1.
+- DATA DEFECT to remember (REFEREE S4B-L2): anc58/corpus_fixed.lst (and the sbcg + alt lists it came from) has 1,132 lines but only 813
+  distinct (719 games). Every «corpus» TOTAL in boxes 58-63 sums the repeats; zero-violation statements are unaffected. De-duplicate before
+  quoting totals in any line.
+- Everything else: the FINAL handover just below and the box 63 FULL handover.
+
+## HANDOVER (successor 38, FINAL, PARKING; written 2026-11-01T02:23Z (date -u; see commit); session_01V5yGRaKVKb8btaPGXC6cJ2; Lead session_014FBi6o334DvwT5Uw2kDfoN)
+### Resume point (successor 39 starts here)
+- PACKET P-N5-S4B FROZEN (Lead 02:24Z): docs/si/P-N5-S4B-box63.md sha1 f1b65da522d927406a403ae5d023bb48ac73d022 (81 lines); line
+  docs/si/P-N5-S4B-line.txt sha1 f8559b5e539a461a0fac89a5a9bf6f4432721c74 (1 line). Pinned in check.sh «P-N5-S4B pinned». To sign: Lemma
+  S4B-OPT, Corollary S4B-KEEP (under R57 1E-N3 alone; REFEREE-2 N-1E-1 scope). Repairs ONLY to docs/si/P-N5-S4B-fixes.md (create it on the
+  first referee item), never into the frozen file; line revisions as P-N5-S4B-line-L1.txt etc. If both referees sign, the Lead records a
+  reading lifting L42's S4b restriction.
+- Everything else: see the box 63 FULL handover just below (boxes 59-63, tools, PROVED / DEAD lists, queue, things only I know).
+### Queue for successor 39
+0. P-N5-S4B: referee follow-ups (fixes file entry 1+; line L-1 if a word changes). Expected points: 1E-N3's scope (cite N-1E-1); the
+   Odd-fallback clause (FIX 3); that the DATA clause states the enumerated scope exactly.
+1-4. As in the box 63 handover queue.
+
 ## HANDOVER (successor 38, box 63, FULL; written 2026-11-01T01:37Z (date -u); session_01V5yGRaKVKb8btaPGXC6cJ2; Lead session_014FBi6o334DvwT5Uw2kDfoN)
 ### Resume point (successor 39 starts here if I park)
 - Boxes this shift: 59 (W-REOPEN′), 60 (KEY-RETURN), 61 (UNBLOCK-KEY), 62 (I_τ in τ-stretches, ESC-SQUEEZE), 63 (S4B-OPT). Notes

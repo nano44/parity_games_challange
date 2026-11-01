@@ -1,0 +1,9 @@
+GAME n5-epoch/instances/ret14_n64.pg
+GAMES 1
+enum_states 14
+keep_chk 5
+loc_chk 173
+rhos 3008
+states 14
+VIOLATIONS 0
+RC 0

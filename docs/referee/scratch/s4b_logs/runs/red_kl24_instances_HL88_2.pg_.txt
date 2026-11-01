@@ -1,0 +1,4 @@
+GAME red/kl24/instances/HL88_2.pg 
+GAMES 1
+VIOLATIONS 0
+RC 0

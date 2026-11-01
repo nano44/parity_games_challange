@@ -1,0 +1,9 @@
+GAME red/h3/instances/xsnpre36_n48.pg 
+GAMES 1
+enum_states 33
+keep_chk 32
+loc_chk 33
+rhos 66
+states 33
+VIOLATIONS 0
+RC 0

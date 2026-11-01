@@ -1,0 +1,9 @@
+GAME red/carry/instances/firedlong667_n43.pg 
+GAMES 1
+enum_skip 1
+enum_states 1
+loc_chk 71
+rhos 4
+states 2
+VIOLATIONS 0
+RC 0

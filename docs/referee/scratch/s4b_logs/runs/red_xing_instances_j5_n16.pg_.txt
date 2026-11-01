@@ -1,0 +1,9 @@
+GAME red/xing/instances/j5_n16.pg 
+GAMES 1
+enum_states 2
+keep_chk 1
+loc_chk 6
+rhos 8
+states 2
+VIOLATIONS 0
+RC 0

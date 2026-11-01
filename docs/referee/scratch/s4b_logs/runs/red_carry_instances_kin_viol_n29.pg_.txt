@@ -1,0 +1,8 @@
+GAME red/carry/instances/kin_viol_n29.pg 
+GAMES 1
+enum_states 5
+loc_chk 19
+rhos 104
+states 5
+VIOLATIONS 0
+RC 0

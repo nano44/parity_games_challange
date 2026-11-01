@@ -1,0 +1,9 @@
+GAME red/n5inj/instances/elimn_cex_n48.pg 
+GAMES 1
+enum_states 57
+keep_chk 55
+loc_chk 59
+rhos 118
+states 57
+VIOLATIONS 0
+RC 0

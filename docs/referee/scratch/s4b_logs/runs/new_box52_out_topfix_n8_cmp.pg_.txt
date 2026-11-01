@@ -1,0 +1,5 @@
+GAME new/box52/out/topfix_n8_cmp.pg 
+NOTE start file new/box52/out/topfix_n8_cmp.start invalid for its game (move not an edge, or missing); given start skipped
+GAMES 1
+VIOLATIONS 0
+RC 0

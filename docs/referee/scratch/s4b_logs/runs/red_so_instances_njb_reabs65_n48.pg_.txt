@@ -1,0 +1,8 @@
+GAME red/so/instances/njb_reabs65_n48.pg 
+GAMES 1
+enum_states 2
+loc_chk 14
+rhos 16
+states 2
+VIOLATIONS 0
+RC 0

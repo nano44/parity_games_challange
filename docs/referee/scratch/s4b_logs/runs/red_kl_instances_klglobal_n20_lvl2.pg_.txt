@@ -1,0 +1,11 @@
+GAME red/kl/instances/klglobal_n20_lvl2.pg 
+GAMES 1
+enum_skip 2
+enum_states 4
+keep_chk 1
+loc_chk 78
+oddfb 1
+rhos 2886
+states 6
+VIOLATIONS 0
+RC 0

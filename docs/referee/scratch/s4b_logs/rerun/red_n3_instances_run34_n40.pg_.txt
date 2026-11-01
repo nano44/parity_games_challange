@@ -1,0 +1,9 @@
+GAME red/n3/instances/run34_n40.pg
+GAMES 1
+enum_states 40
+keep_chk 34
+loc_chk 72
+rhos 358
+states 40
+VIOLATIONS 0
+RC 0

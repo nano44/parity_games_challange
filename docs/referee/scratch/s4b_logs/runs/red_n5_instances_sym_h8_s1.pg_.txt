@@ -1,0 +1,9 @@
+GAME red/n5/instances/sym_h8_s1.pg 
+GAMES 1
+enum_states 25
+keep_chk 9
+loc_chk 68
+rhos 302
+states 25
+VIOLATIONS 0
+RC 0

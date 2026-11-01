@@ -1,0 +1,16 @@
+RUN n5-exhaustive/instances/b5_os_n24.pg -
+VIOL {'q': 1, 'piece': (0, 14), 'x': 14, 'u': 7, 'L': 1, 'path': [14, 7], 'W': (21, 337936, 5), 'val': (7, 65536, 1), 'wimp': True, 'ximp': False}
+LEMMAP b5_os_n24.pg n 24 K 53 pieces 9 longest 14 checks 5236 viol 2363 BLK 379 NOTBLK 1984 INX 42 INZ 402
+RUN red/n5inj/instances/frz24.pg red/n5inj/instances/frz24.start
+VIOL {'q': 9, 'piece': (4, 11), 'x': 11, 'u': 21, 'L': 5, 'path': [11, 6, 22, 4, 16, 21], 'W': (18, 16384, 1), 'val': (21, 0, 5), 'wimp': True, 'ximp': False}
+LEMMAP frz24.pg n 24 K 39 pieces 5 longest 7 checks 335 viol 12 BLK 8 NOTBLK 4 INX 4 INZ 8
+RUN n5-epoch/instances/gci3_n24.pg n5-epoch/instances/gci3_n24.start
+LEMMAP gci3_n24.pg n 24 K 21 pieces 1 longest 20 checks 11098 viol 0 BLK 0 NOTBLK 0 INX 0 INZ 0
+RUN n5-epoch/instances/gci3_n24.pg -
+LEMMAP gci3_n24.pg n 24 K 16 pieces 1 longest 12 checks 3763 viol 0 BLK 0 NOTBLK 0 INX 0 INZ 0
+RUN n5-exhaustive/instances/b6_xs_n24.pg -
+LEMMAP b6_xs_n24.pg n 24 K 21 pieces 1 longest 21 checks 4011 viol 0 BLK 0 NOTBLK 0 INX 0 INZ 0
+RUN red/n5inj/instances/block_bk20.pg -
+LEMMAP block_bk20.pg n 24 K 27 pieces 3 longest 9 checks 303 viol 0 BLK 0 NOTBLK 0 INX 0 INZ 0
+RUN red/fbr/instances/twowave_L16.pg -
+LEMMAP twowave_L16.pg n 22 K 15 pieces 1 longest 15 checks 1775 viol 0 BLK 0 NOTBLK 0 INX 0 INZ 0
