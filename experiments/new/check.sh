@@ -733,4 +733,10 @@ if grep -qxF "DMERGE2SD odxi_many_n32.pg n 32 RUNS 3 FL 8 ACYC 3 CYC 0 HMAX 8 CA
 else
   echo "box 136 DMERGE2 check: FAILED"; exit 1
 fi
+w86=$(cd .. && python3 -I new/box137/rel.py new/box137/ret2_n37.pg new/box137/ret2_n37_default.start; python3 -I new/box137/rel.py new/box137/cwmov2_n57.pg new/box137/cwmov2_n57_default.start; python3 -I new/box132/anchor.py new/box137/ret2_n37.pg new/box137/ret2_n37_default.start)
+if grep -qxF "REL ret2_n37.pg n 37 K 12 RUNS 1 FL 7 CEILVIOL 0 SATDEC 0 SATGAIN 0 MOVERS 74 FROZVIOL 0 SYNC 98 SYNCVIOL 0 CW 0 CWVIOL 0 RET 44 RETMAX 2 MOVMAX 6 CHAINVIOL 0 CNMOV 0 CWMOV 0 WWMOV 74 DEFVIOL 0" <<<"$w86" && grep -qxF "ANCHOR ret2_n37.pg n 37 RUNS 1 FL 7 EPOCHS 1 GCH 0 VIOL 0 LVLVIOL 0 CMOVES 0 CMNORISE 0 CMLATE 0 MAXEP 7 EPVIOL 0 BOUNDVIOL 0 XIB 0 SBB 0 CYB 0 MAXLEN 7 CMXICH 0" <<<"$w86" && grep -qxF "REL cwmov2_n57.pg n 57 K 15 RUNS 2 FL 6 CEILVIOL 0 SATDEC 0 SATGAIN 2 MOVERS 32 FROZVIOL 0 SYNC 113 SYNCVIOL 0 CW 102 CWVIOL 0 RET 14 RETMAX 1 MOVMAX 4 CHAINVIOL 0 CNMOV 0 CWMOV 2 WWMOV 30 DEFVIOL 0" <<<"$w86"; then
+  echo "box 137 REL: ret2_n37 one FL run = one epoch (GCH 0), an option re-entered twice (RET-1 DEAD), box 137 lemma checks 0; cwmov2_n57 2 c-world FL moves, DEFICIT holds: PASS"
+else
+  echo "box 137 REL check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

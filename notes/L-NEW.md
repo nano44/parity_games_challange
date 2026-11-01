@@ -1,7 +1,32 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 46, Opus 5.5, session_01V5yGRaCabVm2TBMRgehQJx; FINAL, PARKED 2026-11-01 ~19:2xZ by date -u, ~460k context)
+## Resume point (successor 47, Opus 5.5; started 2026-11-01 21:06Z by date -u; WORKING)
+### Handover check (STEP 0, sent to the Lead 21:06Z; docs/agents/ is Lead-only, so the answers live here)
+1. claude/l-new: local clone STALE at 8591166d (status said «up to date»); ls-remote origin 709798f3; fetched, ff-only, HEAD = 709798f3.
+   Vs trunk 8884f8de: 15 ahead / 19 behind, merge-base 65568e9c (trunk not merged; lane files only).
+2. Open: (a) STANDING P-N5-ANCHOR L-2 word-diff with both referees (any item -> fixes entry 3 + line L-3; frozen files untouched;
+   sha1 checked on disk: packet ad97ad88, line 7f140d0c, L-1 baad574d, fixes 3895b1dd, L-2 1371f900). (b) box 137.
+3. GAPS (trunk): G-N5-TIME major open; G-N1-LB minor open (optional, not routed); G-N5-TERM closed.
+4. D18, D14, D1 verbatim (all active in DECISIONS-INDEX); see the Lead message.
+5. Trap: stale local clone again; check = ls-remote + fetch + ff-only + HEAD vs ls-remote + frozen sha1s. Oink rebuilt (setup_oink.sh).
+### Box 137 N5-REL (Lead brief 21:08Z; docs/new/N5-REL-box137.md; experiments/new/box137/)
+- DEAD: the briefed «release once per key change» lemma form: ret2_n37 (one FL run = ONE epoch, GCH 0, sbar/tau/Xi on ODIFF/CN constant):
+  vertex 36 makes 33 -> 31 at j 2 and j 6; chooser 15 (level 10) moves 2 -> 36 -> 8 -> 2 -> 36 -> 8 -> 2. Also DEAD: RET-1 (option 2 of
+  15 re-entered twice; corpus/pins RETMAX 1 before).
+- PROVED (lane): Proposition KCH-GCH (moves_run(x) <= min{(|T_x|-1)(1+KCH_x), (l(x)-1)(1+GCH)}; KCH-POLY <=> GCH-POLY <=> FL-POLY;
+  per-x O(1) releases insufficient), CEIL (on [PW] = VJ00 §5 pointwise optimal counter-strategy), SAT-MONO, SAT-FREEZE, BAND, SYNC
+  (coalescence of choosers with equal option sets), C-WORLD + DEFICIT (+ closure), DOUBLE-PULL (under (NC)).
+- DATA (813 distinct pairs + 11 L-RED/L-NEW pins + 2 new pins): every check 0 violations; SATGAIN 0 on all corpus FL runs; c-world FL
+  moves 0 on corpus, 2 on cwmov2_n57 (so no C-OFF conjecture). Pins ret2_n37, cwmov2_n57: Oink zlk/tl verified, n5b identical.
+- READING: sigma-bar enters only via gating changes; the open object is GCH (circular); recipe for L-RED §6 (carry as gating event, nest).
+### Things only I know (successor 47)
+- rel.py's analyse() is importable (climb137.py uses it); rel.LAST holds S, T, E, runs after a call (anat.py). A game without FL runs
+  used to crash analyse (retc unbound) - fixed; the first corpus rerun after the refactor showed 801 errors, rerun clean.
+- DEFVIOL's first version had the length sign reversed (false alarm on the cwmov2 mutant); fixed before any claim.
+- Climbs: 4 x 40 min, ~10,000-40,000 mutations each; RETMAX 2, MOVMAX 7 best; climbs 1-3 stopped on the old DEFVIOL false alarm (mutants re-checked clean). L-RED pins copied read-only into box137/inst (18/18 sha1 OK).
+
+## Resume point (HISTORY; successor 46, Opus 5.5, session_01V5yGRaCabVm2TBMRgehQJx; FINAL, PARKED 2026-11-01 ~19:2xZ by date -u, ~460k context)
 ### FINAL summary (successor 46): boxes 132-136 + P-N5-ANCHOR (frozen, signed by both referees, fixes entry 1 + line L-1); every push
   via scripts/push.sh (VERIFY PASS), each reported to the Lead. Handover at start: local clone STALE (8591166d), ff to 4cab309e, trunk merged.
 - 132 ANCHOR (46ddf9ce; §6 7d5d5f9f): FL-ANCHOR (epoch <= CAP <= n+m; FL run <= CAP (1+GCH)), Lemma PREFIX, bridge B; label PROVED
@@ -859,6 +884,13 @@ Stop (S5) when Iσ = Iτ = ∅: Even wins v iff the cycle node of Ξσ(v) has ev
   (b), (c); length < 2(n + m)(n² − n + 1 + SBC)). DEAD: NOFB (n3all_maxph_0), W-frame twin N5-SFW cycles (theta_thf16, period 10; 49/413).
   DATA: correct on 1,038 library + families + hard families; SF ≈ ½ N5; runquad 264 → 2, topfix 7N + 43; switchbestexp N=10 619 vs 89, SBC 97.
   Open count SBC (CONJECTURE SF-POLY OPEN).
+
+## Dead ends (successor 47, box 137; docs/new/N5-REL-box137.md §0, §4)
+- «Between two consecutive moves of x in one FL run some vertex below x changes W-tight key in a way that cannot recur without a sbar-
+  or tau-change or a CN shortcut»: DEAD, ret2_n37 (experiments/new/box137/ret2_n37.pg sha1 7058d2c222ee, default start 23efa9d2e29c):
+  one epoch (GCH 0), vertex 36 makes the move 33 -> 31 at transitions 2 and 6. Obstruction: in-epoch settling (FL-ANCHOR) repeats
+  key-change events; only key VALUES are non-recurring (exponential range).
+- RET-1 («each option re-entered at most once per FL run»): DEAD, same instance (x = 15 re-enters option 2 at j 4 and j 8).
 
 ## Dead ends (successor 46, box 136; docs/new/N5-SELF-box136.md §3)
 - «every W-cycle-node move in an FL run changes the cycle node of Xi(c), so CYC-MONO bounds CNMOV»: DEAD, red/kw/instances/cw11_n24.pg
