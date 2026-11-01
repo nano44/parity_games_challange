@@ -372,3 +372,10 @@ enter a RESULTS line as «DEAD»: it enters as DATA with its numbers and source 
 refereed proof, or one instance exceeding an EXPLICIT bound (as R90's REP-LIN, 570 > 538). Grounds: CHECKER C108 E-1 and C109 E-3
 («A DATA label does not cure an overclaim»), REFEREE ROOT-L4 / ROOT-L5 (claude/referee 74025e44). Applied: P-N5-STAIR line L-3 drops
 the DESC-LIN clause; P-N5-ROOT line L-2 drops the DESC-LIN and DESC*-LIN clauses.
+
+Lead reading L44 (2026-11-01 03:17Z by date -u):
+Class-free items inside class-scoped RESULTS entries. An item of a landed RESULTS entry whose heading or Setting names a subclass (e.g.
+R18, 𝒞^1O) may be cited «on every game» in a later line when (i) the item's own statement carries no class hypothesis and (ii) both
+referees of the citing packet confirm that its signed proof uses none; the citing line says so («its proof uses no 𝒞^1O hypothesis»)
+and the entry quotes both confirmations. Applied first to R18 (d) Lemma R / Lemma S (a)-(b) in P-N5-GATE (REFEREE c9bc161c §1;
+REFEREE-2 e35e8280 §2). Landed precedents in entry bodies: R47, R55, R56.
