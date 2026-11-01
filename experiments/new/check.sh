@@ -679,4 +679,10 @@ if grep -qF "PCOUNT topfix_n10.pg n 210 K 64 WIN 3 STRETCHES 3 MOVES 756 STRICT 
 else
   echo "box 128 PCOUNT check: FAILED"; exit 1
 fi
+w77=$(cd .. && python3 -I new/box129/gatechg.py new/box52/out/topfix_n10.pg new/box128/topfix_n10_default.start)
+if grep -qF "GATECHG topfix_n10.pg n 210 ODIFF0 WIN 2 STRICT 667 CHARGED 543 PAYXI 300 PAYW 243 CYC 0 P_FIRST 66 P_STRICT 477 P_FLAT 0 P_WEAK 0 SELFPAY 0 DEPTH 52 FANIN 9 MAXSTRICT_H 36 MAXSCC 3 REVISIT 225" <<<"$w77"; then
+  echo "box 129 GATECHG: topfix_n10 ODIFF-0 charge chains depth 52, fan-in 9, mutual-payment SCC 3 (gate depth undefined): PASS"
+else
+  echo "box 129 GATECHG check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

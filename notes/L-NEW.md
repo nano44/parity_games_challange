@@ -2,6 +2,14 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point (successor 45, Opus 5.5, session_01V5yGRWZgucRQvPGKYZujK; started 2026-11-01 06:24Z by date -u; handover: HEAD had dcb80dfc (is-ancestor OK), trunk claude/vibrant-johnson-nxvvxo merged 2228f7df)
+### Box 129 N5-GATEREC (Lead GO 09:15Z; docs/new/N5-GATEREC-box129.md; experiments/new/box129/)
+- Reviewed L-RED 41 PHASE-PORTAL / SELF (R174 @ claude/l-red 5d27d366): correct; PHASE-PORTAL = STATIC-TIE for one class; SELF silent
+  when the prefix difference above Z is empty.
+- PROVED (lane) ORIGIN (a value change has a switched vertex on the old play) and GATE-REC: charged <= roots (F + ... + F^D).
+- Obstruction (DATA): D is time depth (52, topfix ODIFF 0), vertex charge graph cyclic (SCC <= 18 / <= 5), fan-in <= 30; ODIFF >= 1
+  corpus D <= 4 only (not conjectured: ODIFF >= 1 not structural).
+- Next (Lead decides): a flat-move count (F term) or L-RED family with growing D at ODIFF >= 1.
+
 ### Box 128 N5-PCOUNT (Lead GO 07:48Z; docs/new/N5-PCOUNT-box128.md; experiments/new/box128/)
 - Read L-RED 41 Lemma PORTAL (docs/red/R173-portal.md @ claude/l-red 02119133). Proof checks; weak points W1 (PORTAL-1 «once» = once per
   ENTRY), W2 ({h} in NR needed: VJ comparison corner, WORSE 13 corpus moves all there), W3 (end points suffice), W4 NR-CYC, W5.
@@ -1898,6 +1906,7 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
   packet rule (corrections only in new dated sections).
 
 ## Sources opened
+- (succ. 45, box 129) docs/red/R174-zroute.md at claude/l-red 5d27d366 (L-RED 41, PHASE-PORTAL, SELF; read, not edited).
 - (succ. 45, box 128) docs/red/R173-portal.md and experiments/red/r173/portalck.py at claude/l-red 02119133 (L-RED 41, Lemma PORTAL; read, not edited). RESULTS Erratum E-1 (claude/l-red docs/RESULTS.md l. 9478). RESULTS R101 statement (l. 9251).
 - (succ. 45, box 127) arXiv 1811.05115 Gajjar-Radhakrishnan, pdf sha256 79208b4f5fe9aa5676a3fd96514bae1be82ec3080545c0483e0d2a0c7c28172f: §1 Thm 1, Prop. 5, Thm 6, p. 5-6 recursion, §4 Thm 2 proof. arXiv 1001.3749 Chakraborty-Fischer-Lachish-Yuster, pdf sha256 45398534db333c8b2a695f4da722e0c9953960b851cb605d581f46ff8800e092: §1. NOT opened: doi 10.1007/BF02591893, doi 10.1006/jcss.2001.1766.
 - (succ. 26, box 47, 2026-10-26 11:00-11:13Z) Fleet sources opened and read for docs/new/N5-XDIR-box47.md: docs/si/N5-RUND-box17.md §22 (L-SI 14:
@@ -2039,6 +2048,7 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
 - (succ. 38, box 89) T. Ralphs, IE411 Lecture 11 (Lehigh, coral.ise.lehigh.edu/~ted/files/ie411/lectures-python/Lecture11.pdf), slide 3 (PDF text read).
 - (succ. 40) L-LIT T61 (l-lit 1ad851ee, docs/lit/T61-order-charging.md §2.6, S5a data). L-LIT T60 (l-lit 54584c0c, docs/lit/T60-best-reply-flips.md §3.3, ORDER-DET / NO-REPEAT statements); L-SI box 53 (l-si aeb8c311, docs/si/N5-SBF-box53.md §2.1-§2.5, §3); P-N5-SETTLE §1-§2 (l-si a0970d36). [ABS] 2102.04922 and [GH] NOT opened (only T60's quotes; no theorem of theirs used).
 ## Dead ends
+- (succ. 45, box 129) Recursion over gate depth for W-strict moves: no base. Vertex charge graph cyclic (topfix_n10 window [6,64]: eleven 3-vertex mutual-payment SCCs, e.g. {120,121,122}); move-level chain depth 52 (time depth).
 - (succ. 45, box 128) Per-pivot count «W-strict moves of h <= sum over its classes X of (1 + lambda_Xi(X) changes)»: DEAD, topfix_n10
   (sha1 4b65d3dc2735) h 192 stretch [6,64]: 36 > 20 by hub re-entries (class 193 re-entered 18 times), no Xi-cycle-node change at any class.
 - (succ. 45, box 127; Lead 07:48Z: DROPPED, not routed) Carstensen / Mulmuley-Shah template for a super-polynomial XI-CH family:
