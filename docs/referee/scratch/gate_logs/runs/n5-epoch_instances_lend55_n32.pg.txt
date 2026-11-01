@@ -1,0 +1,14 @@
+GAME n5-epoch/instances/lend55_n32.pg
+BGmax 21
+GAMES 1
+INC 55
+K 58
+MAXPH 55
+PH_over 1
+SGmax 54
+SQZ_chk 1888
+steps 56
+stretches 1
+VIOLATIONS 0
+EX ('PH_over', 'lend55_n32.pg', 0, 56, 55, 31)
+RC 0

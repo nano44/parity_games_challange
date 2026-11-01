@@ -1,0 +1,8 @@
+GAME red/n5/instances/dl_4_4.pg
+BGmax 0
+GAMES 1
+K 8
+SGmax 0
+SQZ_chk 378
+VIOLATIONS 0
+RC 0

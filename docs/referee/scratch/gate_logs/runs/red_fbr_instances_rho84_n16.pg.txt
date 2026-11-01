@@ -1,0 +1,8 @@
+GAME red/fbr/instances/rho84_n16.pg
+BGmax 4
+GAMES 1
+K 5
+SGmax 4
+SQZ_chk 96
+VIOLATIONS 0
+RC 0

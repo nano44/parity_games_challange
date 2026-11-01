@@ -1,0 +1,12 @@
+GAME n5-exhaustive/instances/b6_xs_n48.pg
+BGmax 0
+GAMES 1
+INC 0
+K 37
+MAXPH 37
+SGmax 0
+SQZ_chk 1824
+steps 37
+stretches 1
+VIOLATIONS 0
+RC 0

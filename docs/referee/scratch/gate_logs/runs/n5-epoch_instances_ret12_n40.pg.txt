@@ -1,0 +1,14 @@
+GAME n5-epoch/instances/ret12_n40.pg
+BGmax 21
+GAMES 1
+INC 55
+K 60
+MAXPH 55
+PH_over 1
+SGmax 56
+SQZ_chk 2440
+steps 57
+stretches 2
+VIOLATIONS 0
+EX ('PH_over', 'ret12_n40.pg', 5, 55, 55, 39)
+RC 0

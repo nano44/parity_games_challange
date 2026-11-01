@@ -1,0 +1,12 @@
+GAME red/o1/instances/ph50_n32.pg
+BGmax 29
+GAMES 1
+INC 30
+K 32
+MAXPH 14
+SGmax 29
+SQZ_chk 1056
+steps 31
+stretches 1
+VIOLATIONS 0
+RC 0

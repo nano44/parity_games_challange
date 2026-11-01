@@ -1,0 +1,8 @@
+GAME red/carry/instances/h4_compound_n44.pg
+BGmax 0
+GAMES 1
+K 4
+SGmax 0
+SQZ_chk 220
+VIOLATIONS 0
+RC 0

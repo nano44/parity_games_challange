@@ -1,0 +1,12 @@
+GAME new/box59/out/rnd/r191_n60d2.pg
+BGmax 3
+GAMES 1
+INC 1
+K 6
+MAXPH 1
+SGmax 3
+SQZ_chk 420
+steps 1
+stretches 1
+VIOLATIONS 0
+RC 0

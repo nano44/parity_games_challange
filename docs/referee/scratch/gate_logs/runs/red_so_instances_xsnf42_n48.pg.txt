@@ -1,0 +1,12 @@
+GAME red/so/instances/xsnf42_n48.pg
+BGmax 1
+GAMES 1
+INC 1
+K 44
+MAXPH 42
+SGmax 1
+SQZ_chk 2160
+steps 44
+stretches 1
+VIOLATIONS 0
+RC 0

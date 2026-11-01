@@ -1,0 +1,14 @@
+GAME n5-epoch/instances/nep94_n48.pg
+BGmax 98
+GAMES 1
+INC 93
+K 100
+MAXPH 95
+PH_over 1
+SGmax 98
+SQZ_chk 4848
+steps 95
+stretches 1
+VIOLATIONS 0
+EX ('PH_over', 'nep94_n48.pg', 3, 95, 95, 47)
+RC 0

@@ -1,0 +1,12 @@
+GAME red/so/instances/so_tie15_n32.pg
+BGmax 0
+GAMES 1
+INC 0
+K 20
+MAXPH 19
+SGmax 0
+SQZ_chk 672
+steps 19
+stretches 1
+VIOLATIONS 0
+RC 0

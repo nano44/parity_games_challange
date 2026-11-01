@@ -1,0 +1,8 @@
+GAME red/carry/instances/lalg_dtl_mviol_n20.pg
+BGmax 1
+GAMES 1
+K 5
+SGmax 1
+SQZ_chk 120
+VIOLATIONS 0
+RC 0

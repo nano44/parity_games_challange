@@ -1,0 +1,8 @@
+GAME red/nest16/instances/oseg_n26.pg
+BGmax 0
+GAMES 1
+K 3
+SGmax 0
+SQZ_chk 104
+VIOLATIONS 0
+RC 0

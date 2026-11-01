@@ -1,0 +1,12 @@
+GAME red/tcpert/instances/leanT_N12.pg
+BGmax 5
+GAMES 1
+INC 1
+K 13
+MAXPH 1
+SGmax 5
+SQZ_chk 1344
+steps 2
+stretches 1
+VIOLATIONS 0
+RC 0

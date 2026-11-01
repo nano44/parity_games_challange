@@ -1,0 +1,12 @@
+GAME si/root/instances/cone_n69.pg
+BGmax 22
+GAMES 1
+INC 19
+K 25
+MAXPH 1
+SGmax 22
+SQZ_chk 1794
+steps 21
+stretches 2
+VIOLATIONS 0
+RC 0

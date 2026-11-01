@@ -1,0 +1,12 @@
+GAME red/so/instances/nleq_cex_n48.pg
+BGmax 7
+GAMES 1
+INC 7
+K 10
+MAXPH 5
+SGmax 7
+SQZ_chk 528
+steps 9
+stretches 1
+VIOLATIONS 0
+RC 0

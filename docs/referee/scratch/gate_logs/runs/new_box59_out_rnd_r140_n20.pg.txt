@@ -1,0 +1,8 @@
+GAME new/box59/out/rnd/r140_n20.pg
+BGmax 0
+GAMES 1
+K 1
+SGmax 0
+SQZ_chk 40
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,12 @@
+GAME red/n5inj/instances/theta_tp40.pg
+BGmax 19
+GAMES 1
+INC 0
+K 41
+MAXPH 20
+SGmax 19
+SQZ_chk 1680
+steps 39
+stretches 2
+VIOLATIONS 0
+RC 0
