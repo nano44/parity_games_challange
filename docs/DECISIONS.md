@@ -388,3 +388,19 @@ Grounds: P-N5-S4B (l-si 68fa36619) Lemma S4B-OPT and Corollary S4B-KEEP, SIGNED 
 stating that 1E-N3 covers S4b and that the lift is consistent with their signatures. Effect: lemmas that used [S4b-OPT] / [S4b-KEEP]
 (e.g. O-ARENA, withdrawn from P-N5-STAIR under L42) are as conditional as every landed N5 result, i.e. on R57's SPEC premise only; they
 still need their own referee review to land. L42 stays in force for any premise other than S1's procedure on a valid input.
+
+Lead reading L46 (2026-11-01 13:32Z by date -u):
+RESULTS R24 (a) Lemma R and R24 (b) Lemma TB are class-free under L44 (i)-(ii): both referees confirmed, independently and before any
+citing packet, that the statements carry no class hypothesis and that the signed proofs use none; 𝒞^1O enters R24 only in (c) CASC,
+(d) U1 and (e) WC (REFEREE docs/referee/R-R24-L44.md 472f0dcd; REFEREE-2 docs/referee-2/R2-R24-L44.md d96d2f9e). A citing packet may
+quote both confirmations as L44's (ii); its own referees still check how the items are used. The CHOICE FORM («a flat non-corner Even
+mover picks the smallest index at an odd W′-cycle node, the lex-min root-first key at an even one, among its tied options») is NOT
+R24 (b)'s literal statement: a citing line states it as «R24 (a) Lemma R and R24 (b)'s choice rule (TB proof steps 1, 3-5) with
+bridge B; its proof uses no 𝒞^1O hypothesis» (REFEREE CF-1), and bridge B (flat + non-corner ⇒ the old option is fully optimal) is
+signed in the citing packet. «Tied» means fully optimal under W′ = H_k's arena optimum (W′(z) ⊕ h = W′(h)), not under W_k; an option
+whose play passes h is a corner, outside the rule (REFEREE-2 precision note). Not covered: R24 (c)-(e).
+Amendment to L46 (2026-11-01 17:35Z by date -u, Lead): (1) attribution: «tied under W′» is REFEREE-2's precision note (d96d2f9e); the corner
+clause is REFEREE's CF-1 (472f0dcd), not REFEREE-2's. (2) wording: «corner» means that h occurs on the option's play BEFORE that play's
+cycle node (REFEREE R-R24-L44.md Addendum 1; ANC-1 on P-N5-ANCHOR); read with the full lasso the clause would wrongly exclude σ_j(h)
+when h lies on its own W-cycle. REFEREE-2 (R2-N5-ANCHOR G-ANC-1) shows the clause is vacuous on fully W′-optimal options. Verdicts of
+both L44 checks unchanged.
