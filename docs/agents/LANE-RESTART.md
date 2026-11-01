@@ -211,3 +211,5 @@ Five questions:
 | 2026-11-01 | REFEREE | session_01V5yGRYBU4SsUT8MviYhjjg (park threshold; handover 65b74579) | session_01V5yGRW3K7nSRJ5pwy8KPGu (Opus, D1/D18) | 2 | PENDING (successor's check) |
 | 2026-11-01 | L-NEW | session_01V5yGRWyuWWZgJkLHZqZjYn (FINAL 516717da) | session_01V5yGRW6BGT1zSiwSKRv1qy (Opus, D14/D18) | 2 | PENDING (successor's check) |
 | 2026-11-01 | L-RED | session_01V5yGRYVy3wZ2ZDHF5VpFiB (PARK b5328e02) | session_01V5yGRZzQMY5djbFkvKqE6d (Opus, D1/D18) | 2 | PENDING (successor's check) |
+| 2026-11-01 | L-NEW | session_01V5yGRW6BGT1zSiwSKRv1qy (FINAL dcb80dfc) | session_01V5yGRWAZgucRQvPGKYZujK (Opus, D14/D18) | 2 | PENDING (successor's check) |
+| 2026-11-01 | L-RED | session_01V5yGRZzQMY5djbFkvKqE6d (PARK after R172 0c889e61) | session_01V5yGRa8VX4VrSzMTZfKctP (Opus, D1/D18) | 2 | PENDING (successor's check) |
