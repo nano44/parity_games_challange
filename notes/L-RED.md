@@ -61,7 +61,9 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - R179 docs/red/R179-odxi.md (Lead queued 12:35Z): Ξ-changes at ODIFF vertices inside real FL runs EXIST: odxi_min_n12 (𝒞^1O, ODIFF 1,
   o's Ξ-cycle broken by a W-flat move), odxi_lasso_n13, odxi_many_n32 (43 in 8 FL transitions); corpus 0 (37 FL transitions). Climb +
   shrink find them fast; lassock re-checks without si.py.
-- RESUME POINT: hand-design a two-level replay in the IDEAL model (replayed segment containing its own bottom-triggered replay); then
+- R180 docs/red/R180-bmc.md: z3 BMC (r180/bmc.py, z3-solver 5.3.3 pip): IDEAL model on the d 2 ladder max run 4 over ALL structures
+  (L 5 unsat; TB ceiling 8); LADDERBF chain realisable 3 steps; d 3 L 7-10 undecided after 35 CPU-min (runs left going).
+- RESUME POINT: faster exact d 3 (bit-vectors, symmetry breaking); unsat-core for the IDEAL-LIN invariant; hand-design a two-level replay in the IDEAL model (replayed segment containing its own bottom-triggered replay); then
   stabilisers (R175 §3 (ii)). Old routes: (C); D super-linear at ODIFF ≥ 1.
 - Things only I know:
   - fastabs requires the Ξ-graph acyclic (xorder); abs177 does not. The real-game gate analysis (§5): (τ) is σ-independent (Ξτ is τ vs
