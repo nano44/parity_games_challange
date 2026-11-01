@@ -135,7 +135,7 @@ pins.sha1 files, also copied; 18 / 18 OK).
   positions 8-9, the carry at position 2 (7 → 1) at j 4, lap 2 at positions 8-9 again). anat.py prints the full table.
 - Climbs (4 cores, ≤ 40 min each; every climb process imported rel.py at its start, i.e. BEFORE the DEFVIOL sign fix): from ovk_n37
   (seed 1): RETMAX 2, MOVMAX 6, RET 45; from odxi_n37 (seed 2): RETMAX 2, MOVMAX 7, RET 49; from cnmov_k8_n57 (seed 3): RETMAX 1,
-  MOVMAX 5; from odxi_many_n32 (seed 4, ended by the 40-min timeout): RETMAX 1, MOVMAX 4. Climbs 1-3 stopped at a mutant flagged only by the old DEFVIOL
+  MOVMAX 5; from odxi_many_n32 (seed 4, all 100,000 mutations): RETMAX 1, MOVMAX 4. Climbs 1-3 stopped at a mutant flagged only by the old DEFVIOL
   sign (c-world moves 3 / 2 / 2). Re-run with the fixed rel.py, each of the three mutants (out/*.viol) passes every check, DEFVIOL 0.
   cwmov2_n57 is the seed-3 mutant. Logs: box137/out/c1-c4.log.
 
