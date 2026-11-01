@@ -78,3 +78,22 @@ Ingredients, all realised in odxi_n37 (vertex numbers there):
   mover has a fresh option. With FL-ANCHOR this reads: inside an epoch, freshness comes only from Ξ-rises caused within the run.
   odxi_n37's release of 35 at 5 → 6 is one such event: its fresh option 33 became available because of the Ξ-rise of 2, a mover of the
   same run.
+
+## 5. L-RED R179 and the revised target (Lead relay 14:04Z; claude/l-red a612b0a5, docs/red/R179-odxi.md, read through the relay)
+- R179 kills the «constant» target on a real N5 run inside 𝒞^1O, with no gadget. DEAD instance: odxi_min_n12 (sha1 51661a75a4ec…;
+  n 12, ODIFF 1). At FL transition 1, Even 7 switches 10 → 2 on an exact W-tie at even cycle node 5, which breaks Odd's cheap cycle
+  10 → 7 → 10: Ξ(10) goes (7, ∅, 1) → (5, ∅, 7). R179 also has a lasso type (odxi_lasso_n13) and odxi_many_n32 (8 FL transitions,
+  43 ODIFF Ξ-changes). My odxi_n37 (§0) is a gadget instance of the same DEAD and of the release step.
+- Is «charge each ODIFF Ξ-change to the FL move that caused it» circular with FL-ANCHOR? YES (PROVED (lane), two lines):
+  - By Lemma PREFIX's value formula, Ξ_j(o) ≠ Ξ_(j−1)(o) needs some Even vertex on o's Ξ-play (from σ̄(o), cycle included) to change
+    strategy at j. τ and σ̄ are fixed, so in an FL run every such change is an FL move of transition j.
+  - Hence GCH ≤ Σ_j |{o ∈ ODIFF : a mover of j lies on o's Ξ-play}| + (changes at cycle nodes) ≤ (|ODIFF| + |CN|) · FL. Substituted
+    into FL ≤ CAP (1 + GCH), this gives FL ≤ CAP (1 + (|ODIFF| + |CN|) FL), which is vacuous.
+- So (READING) the right object is the FL run length itself. FL-ANCHOR together with R178's XI-NEW is the relocation:
+  - within an epoch, FL is at most CAP;
+  - every new epoch is opened by a Ξ-rise at a gate or a cycle node, caused by a move of the same run;
+  - a long FL run is therefore a self-sustaining feedback loop of gate overtakes.
+  What is missing is a NON-CIRCULAR potential for that loop, i.e. one that does not count moves. Bounding the number of ODIFF
+  Ξ-changes is equivalent to bounding FL, up to the factor CAP and the factor (|ODIFF| + |CN|).
+- Revised targets O(1) / poly(n) for ODIFF Ξ-changes per FL run are therefore the same open problem as FL-POLY. I do not pursue them
+  separately. R180 (L-RED) measures both against n.
