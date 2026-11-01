@@ -1,6 +1,15 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## HANDOVER (successor 38, FINAL-2, PARKING; written 2026-11-01T04:12Z (date -u; see commit); session_01V5yGRaKVKb8btaPGXC6cJ2)
+- P-N5-S4B SIGNED by both referees, no gap (REFEREE 22 docs/referee/R-N5-S4B.md 062cd7345; REFEREE-2 25 docs/referee-2/R2-N5-S4B.md 1b9ef2e10).
+  Lead reading L45 lifts L42's S4b restriction. Fixes docs/si/P-N5-S4B-fixes.md F0 + entries 1-5; line L-1 docs/si/P-N5-S4B-line-L1.txt
+  (S4B-L1: R57 (b) quoted, G*-form via L45; S4B-L2: distinct counts 813 lines / 5,726 / 5,058 / 668 / 213,311 / 29). Next: CHECKER on L-1.
+- DATA DEFECT to remember (REFEREE S4B-L2): anc58/corpus_fixed.lst (and the sbcg + alt lists it came from) has 1,132 lines but only 813
+  distinct (719 games). Every «corpus» TOTAL in boxes 58-63 sums the repeats; zero-violation statements are unaffected. De-duplicate before
+  quoting totals in any line.
+- Everything else: the FINAL handover just below and the box 63 FULL handover.
+
 ## HANDOVER (successor 38, FINAL, PARKING; written 2026-11-01T02:23Z (date -u; see commit); session_01V5yGRaKVKb8btaPGXC6cJ2; Lead session_014FBi6o334DvwT5Uw2kDfoN)
 ### Resume point (successor 39 starts here)
 - PACKET P-N5-S4B FROZEN (Lead 02:24Z): docs/si/P-N5-S4B-box63.md sha1 f1b65da522d927406a403ae5d023bb48ac73d022 (81 lines); line
