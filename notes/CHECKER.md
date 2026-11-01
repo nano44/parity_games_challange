@@ -1,7 +1,7 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
-## Resume point (successor 16, session_01V5yGRZ7i7mdLpvMkXRmi5b), 2026-11-01 11:28Z (date -u)
+## Resume point (successor 16, session_01V5yGRZ7i7mdLpvMkXRmi5b), 2026-11-01 11:27Z (date -u)
 - Handover check: docs/agents/handover-checks/CHECKER.md «## Handover check (successor 16)» (080d39f4; d6dab64c restores successor 12's
   l. 278, which my stamp sed had changed: the sed matched a phrase present in an older section too; use python replace with count == 1).
 - C113 = R102 (P-N5-S4B, L-SI 38). Main report 3c2f7413: FAIL E-1 (body «the title is L-1 verbatim» after the G-1 date insertion) and E-2
