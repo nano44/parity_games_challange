@@ -625,4 +625,10 @@ if grep -qF "GATE cp_K4.pg n 192 iters 44 stretches 1 climbsteps 44 fb 0 flat 0 
 else
   echo "box 118 GATE check: FAILED"; exit 1
 fi
+w68=$(cd .. && python3 -I new/box120/inphase.py n5-epoch/instances/lend107_n32.pg n5-epoch/instances/lend107_n32.start)
+if grep -qF "INPHASE lend107_n32.pg n 32 K 112 maxFirst 107 maxInPhase 106 at (2, 107)" <<<"$w68"; then
+  echo "box 120 fixes GATE-L1: lend107_n32 one lambda_W-phase of 106 W-changing in-phase transitions (107 by first state): PASS"
+else
+  echo "box 120 GATE-L1 check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

@@ -1,0 +1,413 @@
+GAME n5-epoch/instances/gci2_n12.pg n5-epoch/instances/gci2_n12.start INPHASE gci2_n12.pg n 12 K 10 maxFirst 10 maxInPhase 10 at (0, 9)
+GAME n5-epoch/instances/ffin4_n24.pg n5-epoch/instances/ffin4_n24.start INPHASE ffin4_n24.pg n 24 K 20 maxFirst 19 maxInPhase 19 at (1, 19)
+GAME n5-epoch/instances/ffin5_n32.pg n5-epoch/instances/ffin5_n32.start INPHASE ffin5_n32.pg n 32 K 23 maxFirst 11 maxInPhase 10 at (2, 11)
+GAME n5-epoch/instances/ffin12_n32.pg n5-epoch/instances/ffin12_n32.start INPHASE ffin12_n32.pg n 32 K 33 maxFirst 23 maxInPhase 22 at (1, 22)
+GAME n5-epoch/instances/immfail_n14.pg  INPHASE immfail_n14.pg n 14 K 6 maxFirst 2 maxInPhase 2 at (4, 5)
+GAME n5-epoch/instances/gci3_n24.pg n5-epoch/instances/gci3_n24.start INPHASE gci3_n24.pg n 24 K 21 maxFirst 20 maxInPhase 20 at (1, 20)
+GAME n5-epoch/instances/immp_cex_n11.pg n5-epoch/instances/immp_cex_n11.start INPHASE immp_cex_n11.pg n 11 K 2 maxFirst 2 maxInPhase 2 at (0, 1)
+GAME n5-epoch/instances/lcount_n23.pg n5-epoch/instances/lcount_n23.start INPHASE lcount_n23.pg n 23 K 5 maxFirst 4 maxInPhase 4 at (0, 3)
+GAME n5-epoch/instances/lend13_n16.pg n5-epoch/instances/lend13_n16.start INPHASE lend13_n16.pg n 16 K 14 maxFirst 13 maxInPhase 13 at (1, 13)
+GAME n5-epoch/instances/lend15_n48.pg n5-epoch/instances/lend15_n48.start INPHASE lend15_n48.pg n 48 K 27 maxFirst 4 maxInPhase 3 at (9, 11)
+GAME n5-epoch/instances/lend27_n24.pg n5-epoch/instances/lend27_n24.start INPHASE lend27_n24.pg n 24 K 32 maxFirst 9 maxInPhase 8 at (1, 8)
+GAME n5-epoch/instances/lend107_n32.pg n5-epoch/instances/lend107_n32.start INPHASE lend107_n32.pg n 32 K 112 maxFirst 107 maxInPhase 106 at (2, 107)
+GAME n5-epoch/instances/lend39f_n32.pg n5-epoch/instances/lend39f_n32.start INPHASE lend39f_n32.pg n 32 K 47 maxFirst 9 maxInPhase 8 at (12, 19)
+GAME n5-epoch/instances/lend47_n32.pg n5-epoch/instances/lend47_n32.start INPHASE lend47_n32.pg n 32 K 50 maxFirst 49 maxInPhase 49 at (1, 49)
+GAME n5-epoch/instances/lend55_n32.pg n5-epoch/instances/lend55_n32.start INPHASE lend55_n32.pg n 32 K 58 maxFirst 55 maxInPhase 54 at (0, 53)
+GAME n5-epoch/instances/lend9_n8.pg n5-epoch/instances/lend9_n8.start INPHASE lend9_n8.pg n 8 K 10 maxFirst 3 maxInPhase 2 at (2, 3)
+GAME n5-epoch/instances/lend72_n48.pg n5-epoch/instances/lend72_n48.start INPHASE lend72_n48.pg n 48 K 76 maxFirst 73 maxInPhase 72 at (0, 71)
+GAME n5-epoch/instances/lend82_n32.pg n5-epoch/instances/lend82_n32.start INPHASE lend82_n32.pg n 32 K 87 maxFirst 82 maxInPhase 81 at (2, 82)
+GAME n5-epoch/instances/nep13_n24.pg n5-epoch/instances/nep13_n24.start INPHASE nep13_n24.pg n 24 K 35 maxFirst 15 maxInPhase 15 at (14, 29)
+GAME n5-epoch/instances/nep56_n32.pg n5-epoch/instances/nep56_n32.start INPHASE nep56_n32.pg n 32 K 57 maxFirst 56 maxInPhase 56 at (1, 56)
+GAME n5-epoch/instances/nep22f_n64.pg n5-epoch/instances/nep22f_n64.start INPHASE nep22f_n64.pg n 64 K 52 maxFirst 18 maxInPhase 18 at (9, 28)
+GAME n5-epoch/instances/nconf61_n48.pg n5-epoch/instances/nconf61_n48.start INPHASE nconf61_n48.pg n 48 K 73 maxFirst 68 maxInPhase 67 at (3, 69)
+GAME n5-epoch/instances/nep76_n40.pg n5-epoch/instances/nep76_n40.start INPHASE nep76_n40.pg n 40 K 87 maxFirst 79 maxInPhase 79 at (8, 86)
+GAME n5-epoch/instances/nep92_n40.pg n5-epoch/instances/nep92_n40.start INPHASE nep92_n40.pg n 40 K 98 maxFirst 95 maxInPhase 95 at (3, 97)
+GAME n5-epoch/instances/ret12_n40.pg n5-epoch/instances/ret12_n40.start INPHASE ret12_n40.pg n 40 K 60 maxFirst 55 maxInPhase 55 at (5, 59)
+GAME n5-exhaustive/instances/b4_cyc6_0.pg n5-exhaustive/instances/b4_cyc6_0.start INPHASE b4_cyc6_0.pg n 11 K 5 maxFirst 3 maxInPhase 2 at (0, 1)
+GAME n5-epoch/instances/ret14_n48.pg n5-epoch/instances/ret14_n48.start INPHASE ret14_n48.pg n 48 K 61 maxFirst 7 maxInPhase 6 at (42, 47)
+GAME n5-exhaustive/instances/b4_cyc6_1.pg  INPHASE b4_cyc6_1.pg n 12 K 4 maxFirst 4 maxInPhase 4 at (0, 3)
+GAME n5-exhaustive/instances/b4_n4all_cyc3_0.pg n5-exhaustive/instances/b4_n4all_cyc3_0.start INPHASE b4_n4all_cyc3_0.pg n 4 K 3 maxFirst 2 maxInPhase 1 at (0, 0)
+GAME n5-epoch/instances/nep94_n48.pg n5-epoch/instances/nep94_n48.start INPHASE nep94_n48.pg n 48 K 100 maxFirst 95 maxInPhase 94 at (3, 96)
+GAME n5-exhaustive/instances/b4_n5_other_0.pg  INPHASE b4_n5_other_0.pg n 5 K 2 maxFirst 1 maxInPhase 1 at (0, 0)
+GAME n5-exhaustive/instances/b4_theta_n7.pg n5-exhaustive/instances/b4_theta_n7.start INPHASE b4_theta_n7.pg n 7 K 2 maxFirst 1 maxInPhase 1 at (0, 0)
+GAME n5-epoch/instances/ret14_n64.pg n5-epoch/instances/ret14_n64.start INPHASE ret14_n64.pg n 64 K 65 maxFirst 59 maxInPhase 59 at (6, 64)
+GAME n5-exhaustive/instances/b4_nohlen5_0.pg n5-exhaustive/instances/b4_nohlen5_0.start INPHASE b4_nohlen5_0.pg n 11 K 6 maxFirst 4 maxInPhase 4 at (1, 4)
+GAME n5-exhaustive/instances/b5_n5_cyc4_0.pg  INPHASE b5_n5_cyc4_0.pg n 5 K 3 maxFirst 2 maxInPhase 1 at (0, 0)
+GAME n5-exhaustive/instances/b5_o11.pg  INPHASE b5_o11.pg n 10 K 12 maxFirst 5 maxInPhase 4 at (0, 3)
+GAME n5-exhaustive/instances/b5_os_n12.pg  INPHASE b5_os_n12.pg n 12 K 18 maxFirst 6 maxInPhase 5 at (0, 4)
+GAME n5-exhaustive/instances/b5_os_n14.pg  INPHASE b5_os_n14.pg n 14 K 22 maxFirst 8 maxInPhase 7 at (0, 6)
+GAME n5-exhaustive/instances/b5_os_n16.pg  INPHASE b5_os_n16.pg n 16 K 26 maxFirst 9 maxInPhase 8 at (0, 7)
+GAME n5-exhaustive/instances/b5_os_n20.pg  INPHASE b5_os_n20.pg n 20 K 34 maxFirst 11 maxInPhase 10 at (0, 9)
+GAME n5-exhaustive/instances/b5_os_n24.pg  INPHASE b5_os_n24.pg n 24 K 53 maxFirst 15 maxInPhase 14 at (0, 13)
+GAME n5-exhaustive/instances/b5_os_n28.pg  INPHASE b5_os_n28.pg n 28 K 65 maxFirst 14 maxInPhase 13 at (8, 20)
+GAME n5-exhaustive/instances/b5_os_n32.pg  INPHASE b5_os_n32.pg n 32 K 71 maxFirst 15 maxInPhase 14 at (9, 22)
+GAME n5-exhaustive/instances/b6_xl2_n32.pg  INPHASE b6_xl2_n32.pg n 32 K 87 maxFirst 83 maxInPhase 83 at (4, 86)
+GAME n5-exhaustive/instances/b5_os_n40.pg  INPHASE b5_os_n40.pg n 40 K 81 maxFirst 18 maxInPhase 17 at (13, 29)
+GAME n5-exhaustive/instances/b6_xl_n32.pg  INPHASE b6_xl_n32.pg n 32 K 85 maxFirst 81 maxInPhase 81 at (4, 84)
+GAME n5-exhaustive/instances/b6_xs_n24.pg  INPHASE b6_xs_n24.pg n 24 K 21 maxFirst 21 maxInPhase 21 at (0, 20)
+GAME n5-exhaustive/instances/b6_xs_n32.pg  INPHASE b6_xs_n32.pg n 32 K 29 maxFirst 29 maxInPhase 29 at (0, 28)
+GAME n5-exhaustive/instances/b6_xl_n40.pg  INPHASE b6_xl_n40.pg n 40 K 89 maxFirst 87 maxInPhase 87 at (2, 88)
+GAME n5-exhaustive/instances/b6_xs_n40.pg  INPHASE b6_xs_n40.pg n 40 K 36 maxFirst 36 maxInPhase 36 at (0, 35)
+GAME n5-exhaustive/instances/b6_xs_n48.pg  INPHASE b6_xs_n48.pg n 48 K 37 maxFirst 37 maxInPhase 37 at (0, 36)
+GAME n5-exhaustive/instances/b6_xw_n32.pg  INPHASE b6_xw_n32.pg n 32 K 79 maxFirst 75 maxInPhase 75 at (4, 78)
+GAME n5-exhaustive/instances/b6_xl_n48.pg  INPHASE b6_xl_n48.pg n 48 K 97 maxFirst 94 maxInPhase 94 at (3, 96)
+GAME n5-exhaustive/instances/canonA_0.pg  INPHASE canonA_0.pg n 15 K 3 maxFirst 3 maxInPhase 3 at (0, 2)
+GAME n5-exhaustive/instances/b6_xw_n40.pg  INPHASE b6_xw_n40.pg n 40 K 80 maxFirst 76 maxInPhase 76 at (4, 79)
+GAME n5-exhaustive/instances/canonA_1.pg  INPHASE canonA_1.pg n 15 K 4 maxFirst 3 maxInPhase 3 at (1, 3)
+GAME n5-exhaustive/instances/b6_xw_n48.pg  INPHASE b6_xw_n48.pg n 48 K 85 maxFirst 80 maxInPhase 80 at (5, 84)
+GAME n5-exhaustive/instances/frz1_n24.pg n5-exhaustive/instances/frz1_n24.start INPHASE frz1_n24.pg n 24 K 31 maxFirst 29 maxInPhase 29 at (2, 30)
+GAME n5-exhaustive/instances/frz2_n24.pg n5-exhaustive/instances/frz2_n24.start INPHASE frz2_n24.pg n 24 K 25 maxFirst 24 maxInPhase 24 at (1, 24)
+GAME n5-exhaustive/instances/n3all_maxph_0.pg n5-exhaustive/instances/n3all_maxph_0.start INPHASE n3all_maxph_0.pg n 3 K 3 maxFirst 1 maxInPhase 0 at None
+GAME n5-exhaustive/instances/n3all_maxph_2.pg n5-exhaustive/instances/n3all_maxph_2.start INPHASE n3all_maxph_2.pg n 3 K 3 maxFirst 1 maxInPhase 0 at None
+GAME n5-exhaustive/instances/frz3_n24.pg n5-exhaustive/instances/frz3_n24.start INPHASE frz3_n24.pg n 24 K 26 maxFirst 24 maxInPhase 24 at (2, 25)
+GAME n5-exhaustive/instances/b6_xw_n56.pg  INPHASE b6_xw_n56.pg n 56 K 85 maxFirst 81 maxInPhase 81 at (4, 84)
+GAME n5-exhaustive/instances/n3all_maxph_1.pg n5-exhaustive/instances/n3all_maxph_1.start INPHASE n3all_maxph_1.pg n 3 K 3 maxFirst 1 maxInPhase 0 at None
+GAME n5-exhaustive/instances/n4_maxph_1.pg  INPHASE n4_maxph_1.pg n 4 K 2 maxFirst 1 maxInPhase 1 at (1, 1)
+GAME n5-exhaustive/instances/n4_maxph_0.pg  INPHASE n4_maxph_0.pg n 4 K 2 maxFirst 1 maxInPhase 1 at (1, 1)
+GAME n5-exhaustive/instances/n4_thch_0.pg  INPHASE n4_thch_0.pg n 4 K 2 maxFirst 1 maxInPhase 0 at None
+GAME n5-exhaustive/instances/n4all_maxph_0.pg n5-exhaustive/instances/n4all_maxph_0.start INPHASE n4all_maxph_0.pg n 4 K 4 maxFirst 2 maxInPhase 2 at (1, 2)
+GAME n5-exhaustive/instances/n4all_maxph_1.pg n5-exhaustive/instances/n4all_maxph_1.start INPHASE n4all_maxph_1.pg n 4 K 4 maxFirst 2 maxInPhase 2 at (1, 2)
+GAME n5-exhaustive/instances/n4all_tgbad_0.pg n5-exhaustive/instances/n4all_tgbad_0.start INPHASE n4all_tgbad_0.pg n 4 K 3 maxFirst 1 maxInPhase 1 at (2, 2)
+GAME n5-exhaustive/instances/n4all_thch_0.pg n5-exhaustive/instances/n4all_thch_0.start INPHASE n4all_thch_0.pg n 4 K 3 maxFirst 2 maxInPhase 1 at (0, 0)
+GAME n5-exhaustive/instances/n5s_maxph_0.pg  INPHASE n5s_maxph_0.pg n 5 K 3 maxFirst 1 maxInPhase 1 at (0, 0)
+GAME n5-exhaustive/instances/nh_n8.pg n5-exhaustive/instances/nh_n8.start INPHASE nh_n8.pg n 8 K 4 maxFirst 3 maxInPhase 3 at (0, 2)
+GAME n5-exhaustive/instances/thetaA_canon_n12.pg  INPHASE thetaA_canon_n12.pg n 12 K 3 maxFirst 3 maxInPhase 3 at (0, 2)
+GAME n5-exhaustive/instances/thetaA_n17.pg n5-exhaustive/instances/thetaA_n17.start INPHASE thetaA_n17.pg n 17 K 5 maxFirst 3 maxInPhase 3 at (2, 4)
+GAME n5-exhaustive/instances/thetaA_canon_n8.pg  INPHASE thetaA_canon_n8.pg n 8 K 3 maxFirst 3 maxInPhase 3 at (0, 2)
+GAME n5-exhaustive/instances/thetaA_n6.pg n5-exhaustive/instances/thetaA_n6.start INPHASE thetaA_n6.pg n 6 K 3 maxFirst 3 maxInPhase 3 at (0, 2)
+GAME n5-exhaustive/instances/thetaA_n7.pg n5-exhaustive/instances/thetaA_n7.start INPHASE thetaA_n7.pg n 7 K 3 maxFirst 3 maxInPhase 3 at (0, 2)
+GAME n5-exhaustive/instances/thetaA_n9.pg n5-exhaustive/instances/thetaA_n9.start INPHASE thetaA_n9.pg n 9 K 4 maxFirst 3 maxInPhase 3 at (1, 3)
+GAME n5-exhaustive/instances/wk1_n32.pg n5-exhaustive/instances/wk1_n32.start INPHASE wk1_n32.pg n 32 K 7 maxFirst 4 maxInPhase 4 at (3, 6)
+GAME n5-exhaustive/instances/wk2_n32.pg n5-exhaustive/instances/wk2_n32.start INPHASE wk2_n32.pg n 32 K 7 maxFirst 4 maxInPhase 3 at (1, 3)
+GAME new/box48/instances/long121_n40.pg new/box48/instances/long121_n40.start INPHASE long121_n40.pg n 40 K 122 maxFirst 121 maxInPhase 121 at (1, 121)
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.pg new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.start INPHASE best_qpc_nep76_n40_s63.pg n 64 K 93 maxFirst 87 maxInPhase 87 at (6, 92)
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.pg new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s61.start INPHASE best_qpc_nep90_n40_s61.pg n 64 K 102 maxFirst 98 maxInPhase 98 at (4, 101)
+GAME red/carry/instances/absmono_viol_n44.pg  INPHASE absmono_viol_n44.pg n 44 K 7 maxFirst 1 maxInPhase 0 at None
+GAME red/carry/instances/carry3_2_2.pg  INPHASE carry3_2_2.pg n 47 K 2 maxFirst 1 maxInPhase 1 at (1, 1)
+GAME red/carry/instances/cm_mdrop_both_n28.pg  INPHASE cm_mdrop_both_n28.pg n 28 K 10 maxFirst 4 maxInPhase 3 at (2, 4)
+GAME red/carry/instances/cm_mdrop_oink_n28.pg  INPHASE cm_mdrop_oink_n28.pg n 28 K 3 maxFirst 1 maxInPhase 1 at (2, 2)
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.pg new/box48/out/qpcclimb/scale/best_qpc_nep90_n40_s62.start INPHASE best_qpc_nep90_n40_s62.pg n 80 K 105 maxFirst 101 maxInPhase 101 at (4, 104)
+GAME red/carry/instances/ctx11_n40.pg  INPHASE ctx11_n40.pg n 40 K 9 maxFirst 2 maxInPhase 2 at (7, 8)
+GAME red/carry/instances/ctx12_n40.pg  INPHASE ctx12_n40.pg n 40 K 8 maxFirst 1 maxInPhase 1 at (6, 6)
+GAME red/carry/instances/ctx6_n20.pg  INPHASE ctx6_n20.pg n 20 K 3 maxFirst 0 maxInPhase 0 at None
+GAME red/carry/instances/ctx13_n40.pg  INPHASE ctx13_n40.pg n 40 K 17 maxFirst 5 maxInPhase 5 at (8, 12)
+GAME red/carry/instances/ctx6_n56.pg  INPHASE ctx6_n56.pg n 56 K 12 maxFirst 1 maxInPhase 1 at (11, 11)
+GAME red/carry/instances/ctx7_n30.pg  INPHASE ctx7_n30.pg n 30 K 11 maxFirst 1 maxInPhase 0 at None
+GAME red/carry/instances/f1_twofall_n48.pg  INPHASE f1_twofall_n48.pg n 48 K 6 maxFirst 1 maxInPhase 0 at None
+GAME new/box48/out/qpcclimb/scale/snap_n80_s62.pg new/box48/out/qpcclimb/scale/snap_n80_s62.start INPHASE snap_n80_s62.pg n 80 K 105 maxFirst 101 maxInPhase 101 at (4, 104)
+GAME red/carry/instances/f1_twodef_n48.pg  INPHASE f1_twodef_n48.pg n 48 K 6 maxFirst 1 maxInPhase 0 at None
+GAME red/carry/instances/fired10_n20.pg  INPHASE fired10_n20.pg n 20 K 6 maxFirst 1 maxInPhase 1 at (4, 4)
+GAME red/carry/instances/fallv_viol_n28.pg  INPHASE fallv_viol_n28.pg n 28 K 5 maxFirst 1 maxInPhase 0 at None
+GAME red/carry/instances/fall3_n76.pg  INPHASE fall3_n76.pg n 76 K 8 maxFirst 1 maxInPhase 0 at None
+GAME red/carry/instances/firedlong667_n20.pg  INPHASE firedlong667_n20.pg n 20 K 4 maxFirst 1 maxInPhase 0 at None
+GAME red/carry/instances/fall4_n116.pg  INPHASE fall4_n116.pg n 116 K 6 maxFirst 1 maxInPhase 0 at None
+GAME red/carry/instances/firedlong667_n43.pg  INPHASE firedlong667_n43.pg n 43 K 3 maxFirst 0 maxInPhase 0 at None
+GAME red/carry/instances/firedstep13_n76.pg  INPHASE firedstep13_n76.pg n 76 K 8 maxFirst 2 maxInPhase 2 at (6, 7)
+GAME red/carry/instances/gapb_dup_n20.pg  INPHASE gapb_dup_n20.pg n 20 K 8 maxFirst 1 maxInPhase 0 at None
+GAME red/carry/instances/gapbW_dup_n20.pg  INPHASE gapbW_dup_n20.pg n 20 K 5 maxFirst 2 maxInPhase 2 at (3, 4)
+GAME red/carry/instances/h4_compound_n44.pg  INPHASE h4_compound_n44.pg n 44 K 4 maxFirst 0 maxInPhase 0 at None
+GAME red/carry/instances/h4_compound2x2_n44.pg  INPHASE h4_compound2x2_n44.pg n 44 K 10 maxFirst 3 maxInPhase 3 at (7, 9)
+GAME red/carry/instances/h4_def2ctx_n20.pg  INPHASE h4_def2ctx_n20.pg n 20 K 6 maxFirst 1 maxInPhase 1 at (5, 5)
+GAME red/carry/instances/h4_def7_n28.pg  INPHASE h4_def7_n28.pg n 28 K 3 maxFirst 1 maxInPhase 0 at None
+GAME red/carry/instances/h4_disjoint_n20.pg  INPHASE h4_disjoint_n20.pg n 20 K 3 maxFirst 1 maxInPhase 0 at None
+GAME red/carry/instances/h4_notweaker_n20.pg  INPHASE h4_notweaker_n20.pg n 20 K 5 maxFirst 1 maxInPhase 0 at None
+GAME red/carry/instances/kfirst_viol_n13.pg  INPHASE kfirst_viol_n13.pg n 13 K 0 maxFirst 0 maxInPhase 0 at None
+GAME red/carry/instances/lalg_dtl_mviol_n20.pg  INPHASE lalg_dtl_mviol_n20.pg n 20 K 5 maxFirst 0 maxInPhase 0 at None
+GAME red/carry/instances/lemmaS_Mdrop_n20.pg  INPHASE lemmaS_Mdrop_n20.pg n 20 K 6 maxFirst 1 maxInPhase 1 at (5, 5)
+GAME red/carry/instances/kin_viol_n29.pg  INPHASE kin_viol_n29.pg n 29 K 5 maxFirst 0 maxInPhase 0 at None
+GAME red/carry/instances/lemmaS_viol_n20.pg  INPHASE lemmaS_viol_n20.pg n 20 K 4 maxFirst 0 maxInPhase 0 at None
+GAME red/carry/instances/lex_viol_inj_n28.pg  INPHASE lex_viol_inj_n28.pg n 28 K 6 maxFirst 1 maxInPhase 0 at None
+GAME red/carry/instances/lex_viol_tie_n28.pg  INPHASE lex_viol_tie_n28.pg n 28 K 7 maxFirst 1 maxInPhase 0 at None
+GAME red/carry/instances/meet_viol_n17.pg  INPHASE meet_viol_n17.pg n 17 K 0 maxFirst 0 maxInPhase 0 at None
+GAME red/carry/instances/nosig_2_3.pg  INPHASE nosig_2_3.pg n 24 K 2 maxFirst 1 maxInPhase 1 at (1, 1)
+GAME red/carry/instances/meet_viol_n29.pg  INPHASE meet_viol_n29.pg n 29 K 11 maxFirst 1 maxInPhase 0 at None
+GAME red/carry/instances/pk_viol_n20.pg  INPHASE pk_viol_n20.pg n 20 K 3 maxFirst 1 maxInPhase 1 at (1, 1)
+GAME red/carry/instances/phi_flat_alive_n32.pg  INPHASE phi_flat_alive_n32.pg n 32 K 4 maxFirst 0 maxInPhase 0 at None
+GAME red/carry/instances/replay4_n32.pg  INPHASE replay4_n32.pg n 32 K 4 maxFirst 0 maxInPhase 0 at None
+GAME red/carry/instances/spp19_stable_n30.pg  INPHASE spp19_stable_n30.pg n 30 K 7 maxFirst 2 maxInPhase 2 at (5, 6)
+GAME red/carry/instances/spp19_oink_n30.pg  INPHASE spp19_oink_n30.pg n 30 K 10 maxFirst 0 maxInPhase 0 at None
+GAME red/carry/instances/spp22_oink_n40.pg  INPHASE spp22_oink_n40.pg n 40 K 8 maxFirst 1 maxInPhase 0 at None
+GAME red/carry/instances/spp25_oink_n40.pg  INPHASE spp25_oink_n40.pg n 40 K 10 maxFirst 3 maxInPhase 3 at (7, 9)
+GAME red/carry/instances/stealonce_both_n45.pg  INPHASE stealonce_both_n45.pg n 45 K 4 maxFirst 1 maxInPhase 1 at (3, 3)
+GAME red/carry/instances/stealonce_core_n76.pg  INPHASE stealonce_core_n76.pg n 76 K 4 maxFirst 1 maxInPhase 1 at (3, 3)
+GAME red/carry/instances/tstep_near_n20.pg  INPHASE tstep_near_n20.pg n 20 K 5 maxFirst 1 maxInPhase 0 at None
+GAME red/carry/instances/stealer_viol_n76.pg  INPHASE stealer_viol_n76.pg n 76 K 12 maxFirst 1 maxInPhase 1 at (11, 11)
+GAME red/ctxp/instances/deep1_n13.pg  INPHASE deep1_n13.pg n 13 K 1 maxFirst 0 maxInPhase 0 at None
+GAME red/carry/instances/stealonce_viol_n76.pg  INPHASE stealonce_viol_n76.pg n 76 K 12 maxFirst 1 maxInPhase 1 at (11, 11)
+GAME red/ctxp/instances/deep1_n21.pg  INPHASE deep1_n21.pg n 21 K 3 maxFirst 0 maxInPhase 0 at None
+GAME red/ctxp/instances/margin1_mc5.pg  INPHASE margin1_mc5.pg n 50 K 12 maxFirst 1 maxInPhase 0 at None
+GAME red/ctxp/instances/margin1_n20.pg  INPHASE margin1_n20.pg n 20 K 5 maxFirst 1 maxInPhase 0 at None
+GAME red/ctxp/instances/margin1_mc1.pg  INPHASE margin1_mc1.pg n 80 K 10 maxFirst 0 maxInPhase 0 at None
+GAME red/dtl/instances/lalg_dtl_pertop31_n18.pg  INPHASE lalg_dtl_pertop31_n18.pg n 18 K 2 maxFirst 1 maxInPhase 1 at (1, 1)
+GAME red/fbr/instances/bghm_k1_gap6_A.pg  INPHASE bghm_k1_gap6_A.pg n 21 K 1 maxFirst 1 maxInPhase 0 at None
+GAME red/dtl/instances/lalg_dtl_restart8_n20.pg  INPHASE lalg_dtl_restart8_n20.pg n 20 K 5 maxFirst 0 maxInPhase 0 at None
+GAME red/fbr/instances/bghm_k3_gap4_A.pg  INPHASE bghm_k3_gap4_A.pg n 45 K 1 maxFirst 1 maxInPhase 0 at None
+GAME red/fbr/instances/fr39_q4_n48.pg  INPHASE fr39_q4_n48.pg n 48 K 36 maxFirst 33 maxInPhase 32 at (2, 33)
+GAME red/fbr/instances/lev74_n40.pg  INPHASE lev74_n40.pg n 40 K 18 maxFirst 4 maxInPhase 3 at (5, 7)
+GAME red/fbr/instances/nep80_n40.pg  INPHASE nep80_n40.pg n 40 K 22 maxFirst 7 maxInPhase 6 at (14, 19)
+GAME red/fbr/instances/rho144_n32.pg  INPHASE rho144_n32.pg n 32 K 9 maxFirst 3 maxInPhase 2 at (4, 5)
+GAME red/fbr/instances/rho3_253_n32.pg  INPHASE rho3_253_n32.pg n 32 K 11 maxFirst 5 maxInPhase 4 at (4, 7)
+GAME red/fbr/instances/lev56_n48.pg  INPHASE lev56_n48.pg n 48 K 86 maxFirst 79 maxInPhase 79 at (7, 85)
+GAME red/fbr/instances/rho84_n16.pg  INPHASE rho84_n16.pg n 16 K 5 maxFirst 0 maxInPhase 0 at None
+GAME red/fbr/instances/rho666_n48.pg  INPHASE rho666_n48.pg n 48 K 16 maxFirst 8 maxInPhase 7 at (3, 9)
+GAME red/fbr/instances/sat4_n20.pg  INPHASE sat4_n20.pg n 20 K 6 maxFirst 1 maxInPhase 1 at (5, 5)
+GAME red/fbr/instances/sat68_n20.pg  INPHASE sat68_n20.pg n 20 K 5 maxFirst 3 maxInPhase 2 at (1, 2)
+GAME red/fbr/instances/twowave_L16.pg  INPHASE twowave_L16.pg n 22 K 15 maxFirst 15 maxInPhase 15 at (0, 14)
+GAME red/fbx/instances/exsw_loop_n15.pg  INPHASE exsw_loop_n15.pg n 15 K 1 maxFirst 0 maxInPhase 0 at None
+GAME red/frz/instances/fbcap_eq_u4_n11.pg  INPHASE fbcap_eq_u4_n11.pg n 11 K 6 maxFirst 1 maxInPhase 0 at None
+GAME red/fbx/instances/kt6_n58.pg  INPHASE kt6_n58.pg n 58 K 38 maxFirst 17 maxInPhase 16 at (2, 17)
+GAME red/h3/instances/frzgap0_n4.pg  INPHASE frzgap0_n4.pg n 4 K 1 maxFirst 0 maxInPhase 0 at None
+GAME red/h3/instances/frzgap0_n6.pg  INPHASE frzgap0_n6.pg n 6 K 3 maxFirst 2 maxInPhase 2 at (1, 2)
+GAME red/frz/instances/fx2_n11.pg  INPHASE fx2_n11.pg n 11 K 9 maxFirst 1 maxInPhase 0 at None
+GAME red/h3/instances/lcount2_n23.pg red/h3/instances/lcount2_n23.start INPHASE lcount2_n23.pg n 23 K 6 maxFirst 4 maxInPhase 3 at (1, 3)
+GAME red/h3/instances/lcount_n23.pg red/h3/instances/lcount_n23.start INPHASE lcount_n23.pg n 23 K 5 maxFirst 4 maxInPhase 4 at (0, 3)
+GAME red/h3/instances/offret_l19_n24.pg  INPHASE offret_l19_n24.pg n 24 K 3 maxFirst 1 maxInPhase 0 at None
+GAME red/kl/instances/klcount_n16.pg  INPHASE klcount_n16.pg n 16 K 6 maxFirst 1 maxInPhase 0 at None
+GAME red/kl/instances/klcount_n18_base.pg  INPHASE klcount_n18_base.pg n 18 K 6 maxFirst 1 maxInPhase 0 at None
+GAME red/h3/instances/xsnpre36_n48.pg  INPHASE xsnpre36_n48.pg n 48 K 33 maxFirst 31 maxInPhase 30 at (1, 30)
+GAME red/kl/instances/klcount_n18_lvl.pg  INPHASE klcount_n18_lvl.pg n 18 K 6 maxFirst 1 maxInPhase 0 at None
+GAME red/kl/instances/klglobal_n16.pg  INPHASE klglobal_n16.pg n 16 K 6 maxFirst 1 maxInPhase 0 at None
+GAME red/kl/instances/klglobal_n18_lvl.pg  INPHASE klglobal_n18_lvl.pg n 18 K 6 maxFirst 1 maxInPhase 0 at None
+GAME red/kl/instances/klglobal_n20_lvl2.pg  INPHASE klglobal_n20_lvl2.pg n 20 K 6 maxFirst 1 maxInPhase 0 at None
+GAME red/kl/instances/klmin_n13.pg  INPHASE klmin_n13.pg n 13 K 3 maxFirst 2 maxInPhase 1 at (1, 1)
+GAME red/kl/instances/r2climb_h13.pg  INPHASE r2climb_h13.pg n 13 K 4 maxFirst 1 maxInPhase 0 at None
+GAME red/kl/instances/r2join_h0E_n14.pg  INPHASE r2join_h0E_n14.pg n 14 K 3 maxFirst 1 maxInPhase 0 at None
+GAME red/kl/instances/r2crawl_n14.pg  INPHASE r2crawl_n14.pg n 14 K 5 maxFirst 1 maxInPhase 0 at None
+GAME red/kl/instances/r2lap_best_n22.pg  INPHASE r2lap_best_n22.pg n 22 K 5 maxFirst 1 maxInPhase 0 at None
+GAME red/kl24/instances/HL88_0.pg  INPHASE HL88_0.pg n 41 K 3 maxFirst 2 maxInPhase 1 at (1, 1)
+GAME red/kl24/instances/HL88_1.pg  INPHASE HL88_1.pg n 43 K 3 maxFirst 2 maxInPhase 1 at (1, 1)
+GAME red/kl24/instances/HL88_2.pg  INPHASE HL88_2.pg n 45 K 3 maxFirst 2 maxInPhase 1 at (1, 1)
+GAME red/kl24/instances/HL88_3.pg  INPHASE HL88_3.pg n 47 K 3 maxFirst 2 maxInPhase 1 at (1, 1)
+GAME red/kl24/instances/HLg_0.pg  INPHASE HLg_0.pg n 29 K 3 maxFirst 2 maxInPhase 1 at (1, 1)
+GAME red/kl24/instances/HLg_1.pg  INPHASE HLg_1.pg n 35 K 3 maxFirst 2 maxInPhase 1 at (1, 1)
+GAME red/kw/instances/cw11_n24.pg  INPHASE cw11_n24.pg n 24 K 17 maxFirst 4 maxInPhase 3 at (4, 6)
+GAME red/kl24/instances/HLg_3.pg  INPHASE HLg_3.pg n 55 K 3 maxFirst 2 maxInPhase 1 at (1, 1)
+GAME red/kl24/instances/HLg_2.pg  INPHASE HLg_2.pg n 45 K 3 maxFirst 2 maxInPhase 1 at (1, 1)
+GAME red/kw/instances/frzu_tight_n14.pg  INPHASE frzu_tight_n14.pg n 14 K 4 maxFirst 2 maxInPhase 2 at (2, 3)
+GAME red/kw/instances/kc18_n24.pg  INPHASE kc18_n24.pg n 24 K 23 maxFirst 19 maxInPhase 18 at (1, 18)
+GAME red/lag/instances/depth3_n46.pg  INPHASE depth3_n46.pg n 46 K 3 maxFirst 0 maxInPhase 0 at None
+GAME red/lag/instances/depth2_n39.pg  INPHASE depth2_n39.pg n 39 K 3 maxFirst 1 maxInPhase 1 at (2, 2)
+GAME red/lag/instances/depth4_n53.pg  INPHASE depth4_n53.pg n 53 K 4 maxFirst 1 maxInPhase 1 at (3, 3)
+GAME red/lag/instances/fam_D12_n106.pg  INPHASE fam_D12_n106.pg n 106 K 1 maxFirst 0 maxInPhase 0 at None
+GAME red/lag/instances/fam_D4_n50.pg  INPHASE fam_D4_n50.pg n 50 K 1 maxFirst 0 maxInPhase 0 at None
+GAME red/lag/instances/fam_D8_n78.pg  INPHASE fam_D8_n78.pg n 78 K 1 maxFirst 0 maxInPhase 0 at None
+GAME red/mei/instances/mei_h2.pg  INPHASE mei_h2.pg n 19 K 1 maxFirst 0 maxInPhase 0 at None
+GAME red/mei/instances/mei_h3.pg  INPHASE mei_h3.pg n 27 K 2 maxFirst 0 maxInPhase 0 at None
+GAME red/mei/instances/mei_h4.pg  INPHASE mei_h4.pg n 35 K 3 maxFirst 0 maxInPhase 0 at None
+GAME red/mei/instances/mei_h5.pg  INPHASE mei_h5.pg n 43 K 4 maxFirst 0 maxInPhase 0 at None
+GAME red/mei/instances/mei_h6.pg  INPHASE mei_h6.pg n 51 K 5 maxFirst 0 maxInPhase 0 at None
+GAME red/mei/instances/mei_h8.pg  INPHASE mei_h8.pg n 67 K 7 maxFirst 0 maxInPhase 0 at None
+GAME red/n3/instances/lag11_n40.pg red/n3/instances/lag11_n40.start INPHASE lag11_n40.pg n 40 K 23 maxFirst 16 maxInPhase 15 at (5, 19)
+GAME red/n3/instances/core41_n40.pg red/n3/instances/core41_n40.start INPHASE core41_n40.pg n 40 K 42 maxFirst 41 maxInPhase 41 at (1, 41)
+GAME red/n3/instances/lagx10_n40.pg red/n3/instances/lagx10_n40.start INPHASE lagx10_n40.pg n 40 K 17 maxFirst 13 maxInPhase 12 at (1, 12)
+GAME red/n3/instances/n3cov_lean.pg new/box113/inst/n3cov_lean_fixed.start INPHASE n3cov_lean.pg n 48 K 35 maxFirst 31 maxInPhase 31 at (4, 34)
+GAME red/n3/instances/comp54_n80.pg new/box113/inst/comp54_n80_fixed.start INPHASE comp54_n80.pg n 80 K 55 maxFirst 54 maxInPhase 54 at (1, 54)
+GAME red/n3/instances/long90_k2_n40.pg red/n3/instances/long90_k2_n40.start INPHASE long90_k2_n40.pg n 40 K 92 maxFirst 87 maxInPhase 86 at (5, 90)
+GAME red/n3/instances/n3cov_phi.pg red/n3/instances/n3cov_phi.start INPHASE n3cov_phi.pg n 32 K 31 maxFirst 26 maxInPhase 26 at (2, 27)
+GAME red/n3/instances/long121_n40.pg red/n3/instances/long121_n40.start INPHASE long121_n40.pg n 40 K 122 maxFirst 121 maxInPhase 121 at (1, 121)
+GAME red/n3/instances/run34_n40.pg red/n3/instances/run34_n40.start INPHASE run34_n40.pg n 40 K 51 maxFirst 45 maxInPhase 44 at (3, 46)
+GAME red/n3/instances/run49_n32.pg red/n3/instances/run49_n32.start INPHASE run49_n32.pg n 32 K 51 maxFirst 49 maxInPhase 49 at (2, 50)
+GAME red/n5/instances/dl_4_4.pg red/n5/instances/dl_4_4.start INPHASE dl_4_4.pg n 42 K 8 maxFirst 0 maxInPhase 0 at None
+GAME red/n3/instances/ret22_n40.pg red/n3/instances/ret22_n40.start INPHASE ret22_n40.pg n 40 K 94 maxFirst 83 maxInPhase 82 at (7, 88)
+GAME red/n5/instances/sym_h12_s1.pg  INPHASE sym_h12_s1.pg n 24 K 34 maxFirst 1 maxInPhase 0 at None
+GAME red/n5/instances/dlm2_4.pg red/n5/instances/dlm2_4.start INPHASE dlm2_4.pg n 42 K 8 maxFirst 0 maxInPhase 0 at None
+GAME red/n5/instances/sym_h8_s1.pg  INPHASE sym_h8_s1.pg n 16 K 25 maxFirst 2 maxInPhase 1 at (14, 14)
+GAME red/n5inj/instances/block_bk20.pg  INPHASE block_bk20.pg n 24 K 27 maxFirst 10 maxInPhase 9 at (5, 13)
+GAME red/n5/instances/dl_6_8.pg red/n5/instances/dl_6_8.start INPHASE dl_6_8.pg n 110 K 14 maxFirst 0 maxInPhase 0 at None
+GAME red/n5/instances/sym_h16_s1.pg  INPHASE sym_h16_s1.pg n 32 K 55 maxFirst 2 maxInPhase 1 at (19, 19)
+GAME red/n5inj/instances/bribe_cex_n15.pg  INPHASE bribe_cex_n15.pg n 15 K 1 maxFirst 1 maxInPhase 0 at None
+GAME red/n5inj/instances/blockph_bp20.pg  INPHASE blockph_bp20.pg n 24 K 25 maxFirst 20 maxInPhase 19 at (1, 19)
+GAME red/n5inj/instances/block_bk32.pg  INPHASE block_bk32.pg n 36 K 49 maxFirst 22 maxInPhase 21 at (8, 28)
+GAME red/n5inj/instances/blockph_bp32.pg  INPHASE blockph_bp32.pg n 36 K 39 maxFirst 31 maxInPhase 30 at (1, 30)
+GAME red/n5inj/instances/frz24.pg red/n5inj/instances/frz24.start INPHASE frz24.pg n 24 K 39 maxFirst 8 maxInPhase 7 at (4, 10)
+GAME red/n5inj/instances/frz32.pg red/n5inj/instances/frz32.start INPHASE frz32.pg n 32 K 66 maxFirst 13 maxInPhase 12 at (34, 45)
+GAME red/n5inj/instances/frz40.pg red/n5inj/instances/frz40.start INPHASE frz40.pg n 40 K 90 maxFirst 40 maxInPhase 39 at (40, 78)
+GAME red/n5inj/instances/elimn_cex_n48.pg  INPHASE elimn_cex_n48.pg n 48 K 92 maxFirst 54 maxInPhase 54 at (2, 55)
+GAME red/n5inj/instances/phase2_pk32.pg  INPHASE phase2_pk32.pg n 32 K 56 maxFirst 51 maxInPhase 50 at (3, 52)
+GAME red/n5inj/instances/phase2_pk48.pg  INPHASE phase2_pk48.pg n 48 K 72 maxFirst 13 maxInPhase 12 at (39, 50)
+GAME red/n5inj/instances/returns_rt32.pg  INPHASE returns_rt32.pg n 32 K 57 maxFirst 50 maxInPhase 49 at (3, 51)
+GAME red/n5inj/instances/returns_rt48.pg  INPHASE returns_rt48.pg n 48 K 80 maxFirst 78 maxInPhase 78 at (2, 79)
+GAME red/n5inj/instances/theta_thc24.pg  INPHASE theta_thc24.pg n 24 K 29 maxFirst 13 maxInPhase 12 at (6, 17)
+GAME red/n5inj/instances/returns_ph64.pg  INPHASE returns_ph64.pg n 64 K 105 maxFirst 103 maxInPhase 103 at (2, 104)
+GAME red/n5inj/instances/theta_thf16.pg  INPHASE theta_thf16.pg n 16 K 20 maxFirst 18 maxInPhase 18 at (2, 19)
+GAME red/n5inj/instances/theta_tp32.pg  INPHASE theta_tp32.pg n 32 K 45 maxFirst 41 maxInPhase 41 at (4, 44)
+GAME red/n5inj/instances/theta_tp40.pg  INPHASE theta_tp40.pg n 40 K 41 maxFirst 20 maxInPhase 20 at (21, 40)
+GAME red/nest16/instances/k4L72_n101.pg  INPHASE k4L72_n101.pg n 101 K 6 maxFirst 0 maxInPhase 0 at None
+GAME red/n5inj/instances/wide_h16.pg  INPHASE wide_h16.pg n 32 K 44 maxFirst 1 maxInPhase 0 at None
+GAME red/nest16/instances/k4L72r_n101.pg  INPHASE k4L72r_n101.pg n 101 K 6 maxFirst 0 maxInPhase 0 at None
+GAME red/nest16/instances/k4seed_c1_n82.pg  INPHASE k4seed_c1_n82.pg n 82 K 3 maxFirst 0 maxInPhase 0 at None
+GAME red/nest16/instances/k4g50_n101.pg  INPHASE k4g50_n101.pg n 101 K 5 maxFirst 0 maxInPhase 0 at None
+GAME red/n5inj/instances/returns_rt64.pg  INPHASE returns_rt64.pg n 64 K 90 maxFirst 87 maxInPhase 87 at (2, 88)
+GAME red/nest16/instances/k4seed_vr_n87.pg  INPHASE k4seed_vr_n87.pg n 87 K 3 maxFirst 0 maxInPhase 0 at None
+GAME red/nest16/instances/k4y1_n82.pg  INPHASE k4y1_n82.pg n 82 K 5 maxFirst 0 maxInPhase 0 at None
+GAME red/nest16/instances/k4u_n101.pg  INPHASE k4u_n101.pg n 101 K 3 maxFirst 0 maxInPhase 0 at None
+GAME red/nest16/instances/near4_n26.pg  INPHASE near4_n26.pg n 26 K 2 maxFirst 0 maxInPhase 0 at None
+GAME red/nest16/instances/k4y2_n87.pg  INPHASE k4y2_n87.pg n 87 K 6 maxFirst 0 maxInPhase 0 at None
+GAME red/nest16/instances/nest4uu_n51.pg  INPHASE nest4uu_n51.pg n 51 K 2 maxFirst 0 maxInPhase 0 at None
+GAME red/nest16/instances/nest6_n75.pg  INPHASE nest6_n75.pg n 75 K 3 maxFirst 0 maxInPhase 0 at None
+GAME red/nest16/instances/nest4u_n46.pg  INPHASE nest4u_n46.pg n 46 K 2 maxFirst 0 maxInPhase 0 at None
+GAME red/nest16/instances/nest6min_n75.pg  INPHASE nest6min_n75.pg n 75 K 3 maxFirst 0 maxInPhase 0 at None
+GAME red/nest16/instances/nest5_n49.pg  INPHASE nest5_n49.pg n 49 K 3 maxFirst 0 maxInPhase 0 at None
+GAME red/nest16/instances/oseg_n26.pg  INPHASE oseg_n26.pg n 26 K 3 maxFirst 0 maxInPhase 0 at None
+GAME red/nest16/instances/nest6x_n75.pg  INPHASE nest6x_n75.pg n 75 K 5 maxFirst 0 maxInPhase 0 at None
+GAME red/nest16/instances/w1_n27.pg  INPHASE w1_n27.pg n 27 K 2 maxFirst 0 maxInPhase 0 at None
+GAME red/nest16/instances/win3_n27.pg  INPHASE win3_n27.pg n 27 K 2 maxFirst 0 maxInPhase 0 at None
+GAME red/o1/instances/ph45_n32.pg  INPHASE ph45_n32.pg n 32 K 21 maxFirst 1 maxInPhase 0 at None
+GAME red/nopre/instances/nopre_viol_n20.pg  INPHASE nopre_viol_n20.pg n 20 K 3 maxFirst 0 maxInPhase 0 at None
+GAME red/o1/instances/f39_n48.pg  INPHASE f39_n48.pg n 48 K 38 maxFirst 34 maxInPhase 33 at (3, 35)
+GAME red/o1/instances/iter118_n48.pg  INPHASE iter118_n48.pg n 48 K 18 maxFirst 12 maxInPhase 12 at (6, 17)
+GAME red/o1/instances/ph50_n32.pg  INPHASE ph50_n32.pg n 32 K 32 maxFirst 14 maxInPhase 13 at (15, 27)
+GAME red/rec0/instances/fbd0_n4.pg  INPHASE fbd0_n4.pg n 4 K 0 maxFirst 0 maxInPhase 0 at None
+GAME red/o1/instances/tau18_n24.pg  INPHASE tau18_n24.pg n 24 K 12 maxFirst 1 maxInPhase 0 at None
+GAME red/rec0/instances/n0_6_n24.pg  INPHASE n0_6_n24.pg n 24 K 3 maxFirst 2 maxInPhase 1 at (1, 1)
+GAME red/rec0/instances/lend2_30_n48.pg  INPHASE lend2_30_n48.pg n 48 K 25 maxFirst 14 maxInPhase 13 at (5, 17)
+GAME red/rec0/instances/nep24_n20.pg  INPHASE nep24_n20.pg n 20 K 15 maxFirst 2 maxInPhase 1 at (1, 1)
+GAME red/sgrow/instances/s20_n20.pg  INPHASE s20_n20.pg n 20 K 8 maxFirst 1 maxInPhase 1 at (7, 7)
+GAME red/rec0/instances/nep90_n40.pg  INPHASE nep90_n40.pg n 40 K 23 maxFirst 9 maxInPhase 8 at (3, 10)
+GAME red/rec0/instances/nep87_n40.pg  INPHASE nep87_n40.pg n 40 K 25 maxFirst 9 maxInPhase 8 at (6, 13)
+GAME red/sgrow/instances/s21_oink_n20.pg  INPHASE s21_oink_n20.pg n 20 K 8 maxFirst 0 maxInPhase 0 at None
+GAME red/sgrow/instances/s29_n30.pg  INPHASE s29_n30.pg n 30 K 7 maxFirst 0 maxInPhase 0 at None
+GAME red/sgrow/instances/s34_oink_n40.pg  INPHASE s34_oink_n40.pg n 40 K 5 maxFirst 2 maxInPhase 2 at (3, 4)
+GAME red/sgrow/instances/s32_n60.pg  INPHASE s32_n60.pg n 60 K 8 maxFirst 0 maxInPhase 0 at None
+GAME red/sgrow/instances/s35_oink_n80.pg  INPHASE s35_oink_n80.pg n 80 K 5 maxFirst 1 maxInPhase 1 at (4, 4)
+GAME red/so/instances/beta2_n11.pg  INPHASE beta2_n11.pg n 11 K 4 maxFirst 3 maxInPhase 2 at (0, 1)
+GAME red/sgrow/instances/s36_oink_n60.pg  INPHASE s36_oink_n60.pg n 60 K 5 maxFirst 1 maxInPhase 1 at (4, 4)
+GAME red/sgrow/instances/s34_oink_n80.pg  INPHASE s34_oink_n80.pg n 80 K 8 maxFirst 1 maxInPhase 1 at (7, 7)
+GAME red/so/instances/epsseg_cex_n16.pg  INPHASE epsseg_cex_n16.pg n 16 K 11 maxFirst 7 maxInPhase 6 at (1, 6)
+GAME red/so/instances/exitr_cex_n16.pg  INPHASE exitr_cex_n16.pg n 16 K 10 maxFirst 8 maxInPhase 7 at (1, 7)
+GAME red/so/instances/epsseg_cex_n48.pg  INPHASE epsseg_cex_n48.pg n 48 K 26 maxFirst 5 maxInPhase 4 at (7, 10)
+GAME red/so/instances/farrise25_n32.pg  INPHASE farrise25_n32.pg n 32 K 35 maxFirst 28 maxInPhase 28 at (7, 34)
+GAME red/so/instances/exitr_cex_n48.pg  INPHASE exitr_cex_n48.pg n 48 K 22 maxFirst 4 maxInPhase 3 at (4, 6)
+GAME red/so/instances/mn_abs74_n48.pg  INPHASE mn_abs74_n48.pg n 48 K 22 maxFirst 15 maxInPhase 14 at (6, 19)
+GAME red/so/instances/nleq_cex_n48.pg  INPHASE nleq_cex_n48.pg n 48 K 10 maxFirst 5 maxInPhase 4 at (3, 6)
+GAME red/so/instances/njb_reabs54_n32.pg  INPHASE njb_reabs54_n32.pg n 32 K 40 maxFirst 34 maxInPhase 33 at (5, 37)
+GAME red/so/instances/nleq33_n48.pg  INPHASE nleq33_n48.pg n 48 K 40 maxFirst 35 maxInPhase 34 at (4, 37)
+GAME red/so/instances/njb_reabs65_n48.pg  INPHASE njb_reabs65_n48.pg n 48 K 70 maxFirst 67 maxInPhase 66 at (2, 67)
+GAME red/so/instances/pftheta34_n32.pg  INPHASE pftheta34_n32.pg n 32 K 39 maxFirst 35 maxInPhase 35 at (4, 38)
+GAME red/so/instances/pft35_n48.pg  INPHASE pft35_n48.pg n 48 K 41 maxFirst 39 maxInPhase 39 at (2, 40)
+GAME red/so/instances/pft40_n40.pg  INPHASE pft40_n40.pg n 40 K 54 maxFirst 47 maxInPhase 47 at (7, 53)
+GAME red/so/instances/pftheta_cex_n32.pg  INPHASE pftheta_cex_n32.pg n 32 K 38 maxFirst 35 maxInPhase 35 at (3, 37)
+GAME red/so/instances/rise_fb38_n48.pg  INPHASE rise_fb38_n48.pg n 48 K 53 maxFirst 46 maxInPhase 45 at (4, 48)
+GAME red/so/instances/post31_n48.pg  INPHASE post31_n48.pg n 48 K 36 maxFirst 1 maxInPhase 0 at None
+GAME red/so/instances/s4c8_n13.pg  INPHASE s4c8_n13.pg n 13 K 12 maxFirst 11 maxInPhase 10 at (1, 10)
+GAME red/so/instances/so_k2_n32.pg  INPHASE so_k2_n32.pg n 32 K 20 maxFirst 6 maxInPhase 5 at (8, 12)
+GAME red/so/instances/so_sor5_n24.pg  INPHASE so_sor5_n24.pg n 24 K 23 maxFirst 22 maxInPhase 21 at (0, 20)
+GAME red/so/instances/so_j19_n48.pg  INPHASE so_j19_n48.pg n 48 K 25 maxFirst 20 maxInPhase 20 at (5, 24)
+GAME red/so/instances/rise_thin51_n40.pg  INPHASE rise_thin51_n40.pg n 40 K 78 maxFirst 69 maxInPhase 69 at (9, 77)
+GAME red/so/instances/so_sorl_n32.pg  INPHASE so_sorl_n32.pg n 32 K 22 maxFirst 22 maxInPhase 22 at (0, 21)
+GAME red/so/instances/so_tie13_n24.pg  INPHASE so_tie13_n24.pg n 24 K 16 maxFirst 16 maxInPhase 16 at (0, 15)
+GAME red/so/instances/so_th_n32.pg  INPHASE so_th_n32.pg n 32 K 36 maxFirst 22 maxInPhase 21 at (1, 21)
+GAME red/so/instances/so_tie15_n32.pg  INPHASE so_tie15_n32.pg n 32 K 20 maxFirst 19 maxInPhase 19 at (1, 19)
+GAME red/so/instances/tevlast7_n32.pg  INPHASE tevlast7_n32.pg n 32 K 41 maxFirst 37 maxInPhase 37 at (4, 40)
+GAME red/so/instances/tev_cex_n40.pg  INPHASE tev_cex_n40.pg n 40 K 27 maxFirst 23 maxInPhase 22 at (3, 24)
+GAME red/so/instances/tevlast_cex_n40.pg  INPHASE tevlast_cex_n40.pg n 40 K 11 maxFirst 7 maxInPhase 6 at (3, 8)
+GAME red/so/instances/tevlast11_n40.pg  INPHASE tevlast11_n40.pg n 40 K 36 maxFirst 32 maxInPhase 32 at (4, 35)
+GAME red/so/instances/tog6b_n32.pg  INPHASE tog6b_n32.pg n 32 K 8 maxFirst 5 maxInPhase 5 at (1, 5)
+GAME red/so/instances/xrun21_n24.pg  INPHASE xrun21_n24.pg n 24 K 24 maxFirst 21 maxInPhase 21 at (3, 23)
+GAME red/so/instances/tog6a_n32.pg  INPHASE tog6a_n32.pg n 32 K 10 maxFirst 4 maxInPhase 4 at (4, 7)
+GAME red/so/instances/xrun8_n10.pg  INPHASE xrun8_n10.pg n 10 K 11 maxFirst 9 maxInPhase 8 at (1, 8)
+GAME red/so/instances/xsn29_n32.pg  INPHASE xsn29_n32.pg n 32 K 29 maxFirst 29 maxInPhase 29 at (0, 28)
+GAME red/so/instances/xsn43_n48.pg  INPHASE xsn43_n48.pg n 48 K 45 maxFirst 44 maxInPhase 43 at (1, 43)
+GAME red/so/instances/xsnf42_n48.pg  INPHASE xsnf42_n48.pg n 48 K 44 maxFirst 42 maxInPhase 42 at (1, 42)
+GAME red/so/instances/xsnf52_n64.pg  INPHASE xsnf52_n64.pg n 64 K 55 maxFirst 52 maxInPhase 52 at (2, 53)
+GAME red/tcpert/instances/leanT_N12.pg  INPHASE leanT_N12.pg n 96 K 13 maxFirst 1 maxInPhase 0 at None
+GAME red/so/instances/xsn91_n48.pg  INPHASE xsn91_n48.pg n 48 K 115 maxFirst 112 maxInPhase 112 at (3, 114)
+GAME red/tcpert/instances/leanT_N16.pg  INPHASE leanT_N16.pg n 128 K 16 maxFirst 1 maxInPhase 0 at None
+GAME red/tcpert/instances/leanT_N6.pg  INPHASE leanT_N6.pg n 48 K 6 maxFirst 1 maxInPhase 0 at None
+GAME red/tcpert/instances/leanT_N8.pg  INPHASE leanT_N8.pg n 64 K 8 maxFirst 1 maxInPhase 0 at None
+GAME red/tcpert/instances/leanT_N24.pg  INPHASE leanT_N24.pg n 192 K 25 maxFirst 4 maxInPhase 3 at (18, 20)
+GAME red/tcpert/instances/tcL_N3.pg  INPHASE tcL_N3.pg n 42 K 7 maxFirst 1 maxInPhase 0 at None
+GAME red/tcpert/instances/tcL_N4.pg  INPHASE tcL_N4.pg n 68 K 16 maxFirst 1 maxInPhase 0 at None
+GAME red/tcpert/instances/tcL_N5.pg  INPHASE tcL_N5.pg n 100 K 19 maxFirst 1 maxInPhase 0 at None
+GAME red/tcpert/instances/tcL_N10.pg  INPHASE tcL_N10.pg n 350 K 27 maxFirst 1 maxInPhase 0 at None
+GAME red/tcpert/instances/tcL_N6.pg  INPHASE tcL_N6.pg n 138 K 18 maxFirst 0 maxInPhase 0 at None
+GAME red/tcpert/instances/tcR4_N4.pg  INPHASE tcR4_N4.pg n 68 K 12 maxFirst 1 maxInPhase 0 at None
+GAME red/tcpert/instances/tcR4_N5.pg  INPHASE tcR4_N5.pg n 100 K 14 maxFirst 1 maxInPhase 0 at None
+GAME red/tcpert/instances/tcL_N8.pg  INPHASE tcL_N8.pg n 232 K 30 maxFirst 1 maxInPhase 0 at None
+GAME red/tcpert/instances/tcR4_N6.pg  INPHASE tcR4_N6.pg n 138 K 22 maxFirst 2 maxInPhase 1 at (13, 13)
+GAME red/tcpert/instances/leanT_N32.pg  INPHASE leanT_N32.pg n 256 K 33 maxFirst 1 maxInPhase 0 at None
+GAME red/tcpert/instances/tcR4_N7.pg  INPHASE tcR4_N7.pg n 182 K 41 maxFirst 1 maxInPhase 0 at None
+GAME red/tcpert/instances/tcS8_N10.pg  INPHASE tcS8_N10.pg n 350 K 16 maxFirst 0 maxInPhase 0 at None
+GAME red/tcpert/instances/tcR4_N8.pg  INPHASE tcR4_N8.pg n 232 K 33 maxFirst 1 maxInPhase 0 at None
+GAME red/tcpert/instances/tcS8_N6.pg  INPHASE tcS8_N6.pg n 138 K 17 maxFirst 1 maxInPhase 0 at None
+GAME red/tcpert/instances/tcS8_N7.pg  INPHASE tcS8_N7.pg n 182 K 14 maxFirst 0 maxInPhase 0 at None
+GAME red/tcpert/instances/tcL_N12.pg  INPHASE tcL_N12.pg n 492 K 37 maxFirst 2 maxInPhase 2 at (35, 36)
+GAME red/tpp/instances/tpp_viol_n22.pg  INPHASE tpp_viol_n22.pg n 22 K 2 maxFirst 0 maxInPhase 0 at None
+GAME red/tcpert/instances/tcS8_N8.pg  INPHASE tcS8_N8.pg n 232 K 10 maxFirst 1 maxInPhase 0 at None
+GAME red/tpp/instances/tpp_viol_n63.pg  INPHASE tpp_viol_n63.pg n 63 K 8 maxFirst 1 maxInPhase 1 at (6, 6)
+GAME red/ul/instances/cxmig_k4_n54.pg red/ul/instances/cxmig_k4_n54.start INPHASE cxmig_k4_n54.pg n 54 K 12 maxFirst 12 maxInPhase 12 at (0, 11)
+GAME red/tcpert/instances/tcS8_N11.pg  INPHASE tcS8_N11.pg n 418 K 20 maxFirst 1 maxInPhase 0 at None
+GAME red/ul/instances/ladderd0_k12_n48.pg red/ul/instances/ladderd0_k12_n48.start INPHASE ladderd0_k12_n48.pg n 48 K 14 maxFirst 14 maxInPhase 14 at (0, 13)
+GAME red/ul/instances/cxmig_k8_n82.pg red/ul/instances/cxmig_k8_n82.start INPHASE cxmig_k8_n82.pg n 82 K 16 maxFirst 16 maxInPhase 16 at (0, 15)
+GAME red/tcpert/instances/tcS8_N9.pg  INPHASE tcS8_N9.pg n 288 K 36 maxFirst 3 maxInPhase 3 at (20, 22)
+GAME red/ul/instances/ladderd0_k24_n84.pg red/ul/instances/ladderd0_k24_n84.start INPHASE ladderd0_k24_n84.pg n 84 K 26 maxFirst 26 maxInPhase 26 at (0, 25)
+GAME red/ul/instances/cxmig_k16_n138.pg red/ul/instances/cxmig_k16_n138.start INPHASE cxmig_k16_n138.pg n 138 K 24 maxFirst 24 maxInPhase 24 at (0, 23)
+GAME red/ul/instances/ladderent_k12_n48.pg red/ul/instances/ladderent_k12_n48.start INPHASE ladderent_k12_n48.pg n 48 K 14 maxFirst 14 maxInPhase 14 at (0, 13)
+GAME red/ul/instances/reader_L10_n36.pg red/ul/instances/reader_L10_n36.start INPHASE reader_L10_n36.pg n 36 K 13 maxFirst 13 maxInPhase 13 at (0, 12)
+GAME red/ul/instances/ladderent_k24_n84.pg red/ul/instances/ladderent_k24_n84.start INPHASE ladderent_k24_n84.pg n 84 K 26 maxFirst 26 maxInPhase 26 at (0, 25)
+GAME red/ul/instances/reader_L20_n56.pg red/ul/instances/reader_L20_n56.start INPHASE reader_L20_n56.pg n 56 K 23 maxFirst 23 maxInPhase 23 at (0, 22)
+GAME red/ul/instances/reader_L40_n96.pg red/ul/instances/reader_L40_n96.start INPHASE reader_L40_n96.pg n 96 K 43 maxFirst 43 maxInPhase 43 at (0, 42)
+GAME red/usplit/instances/gate_K16_n197.pg red/usplit/instances/gate_K16_n197.start INPHASE gate_K16_n197.pg n 197 K 23 maxFirst 23 maxInPhase 23 at (0, 22)
+GAME red/ul/instances/ladderd0_k48_n156.pg red/ul/instances/ladderd0_k48_n156.start INPHASE ladderd0_k48_n156.pg n 156 K 50 maxFirst 50 maxInPhase 50 at (0, 49)
+GAME red/usplit/instances/grow_K12_n149.pg red/usplit/instances/grow_K12_n149.start INPHASE grow_K12_n149.pg n 149 K 19 maxFirst 19 maxInPhase 19 at (0, 18)
+GAME red/usplit/instances/pairoc_n58.pg red/usplit/instances/pairoc_n58.start INPHASE pairoc_n58.pg n 58 K 5 maxFirst 5 maxInPhase 5 at (0, 4)
+GAME red/usplit/instances/pp_K12_n161.pg red/usplit/instances/pp_K12_n161.start INPHASE pp_K12_n161.pg n 161 K 19 maxFirst 19 maxInPhase 19 at (0, 18)
+GAME red/ul/instances/ladderent_k48_n156.pg red/ul/instances/ladderent_k48_n156.start INPHASE ladderent_k48_n156.pg n 156 K 50 maxFirst 50 maxInPhase 50 at (0, 49)
+GAME red/usplit/instances/pp_K12_n161_dual.pg  INPHASE pp_K12_n161_dual.pg n 161 K 20 maxFirst 1 maxInPhase 1 at (19, 19)
+GAME red/usplit/instances/grow_K40_n373.pg red/usplit/instances/grow_K40_n373.start INPHASE grow_K40_n373.pg n 373 K 47 maxFirst 47 maxInPhase 47 at (0, 46)
+GAME red/usplit/instances/usplit_n14.pg red/usplit/instances/usplit_n14.start INPHASE usplit_n14.pg n 14 K 3 maxFirst 3 maxInPhase 3 at (0, 2)
+GAME red/usplit/instances/usplit_n23.pg red/usplit/instances/usplit_n23.start INPHASE usplit_n23.pg n 23 K 9 maxFirst 9 maxInPhase 9 at (0, 8)
+GAME red/usplit/instances/usplit_rd_n24.pg red/usplit/instances/usplit_rd_n24.start INPHASE usplit_rd_n24.pg n 24 K 4 maxFirst 4 maxInPhase 4 at (0, 3)
+GAME red/usplit/instances/usplit_rd_s3_n27.pg  INPHASE usplit_rd_s3_n27.pg n 27 K 4 maxFirst 4 maxInPhase 4 at (0, 3)
+GAME red/usplit/instances/usplit_s3_n16.pg  INPHASE usplit_s3_n16.pg n 16 K 3 maxFirst 3 maxInPhase 3 at (0, 2)
+GAME red/xctx/instances/nest3_n20.pg  INPHASE nest3_n20.pg n 20 K 2 maxFirst 0 maxInPhase 0 at None
+GAME red/xctx/instances/nest3_n24.pg  INPHASE nest3_n24.pg n 24 K 2 maxFirst 0 maxInPhase 0 at None
+GAME red/xctx/instances/vrall_viol_n20.pg  INPHASE vrall_viol_n20.pg n 20 K 4 maxFirst 0 maxInPhase 0 at None
+GAME red/xctx/instances/xcov11_n20.pg  INPHASE xcov11_n20.pg n 20 K 2 maxFirst 0 maxInPhase 0 at None
+GAME red/xctx/instances/xctx_viol_n20.pg  INPHASE xctx_viol_n20.pg n 20 K 5 maxFirst 0 maxInPhase 0 at None
+GAME red/xing/instances/fbref_cex_n32.pg  INPHASE fbref_cex_n32.pg n 32 K 56 maxFirst 51 maxInPhase 50 at (4, 53)
+GAME red/xing/instances/j10_n24.pg  INPHASE j10_n24.pg n 24 K 25 maxFirst 24 maxInPhase 24 at (1, 24)
+GAME red/xing/instances/j4_n40.pg  INPHASE j4_n40.pg n 40 K 106 maxFirst 103 maxInPhase 103 at (3, 105)
+GAME red/xing/instances/j5_n16.pg  INPHASE j5_n16.pg n 16 K 30 maxFirst 23 maxInPhase 22 at (6, 27)
+GAME red/xing/instances/j7_n32.pg  INPHASE j7_n32.pg n 32 K 50 maxFirst 46 maxInPhase 45 at (1, 45)
+GAME red/xing/instances/j7_n48.pg  INPHASE j7_n48.pg n 48 K 78 maxFirst 77 maxInPhase 77 at (1, 77)
+GAME red/xing/instances/j8_n32.pg  INPHASE j8_n32.pg n 32 K 54 maxFirst 50 maxInPhase 49 at (1, 49)
+GAME red/usplit/instances/pp_K48_n449.pg red/usplit/instances/pp_K48_n449.start INPHASE pp_K48_n449.pg n 449 K 55 maxFirst 55 maxInPhase 55 at (0, 54)
+GAME red/xing/instances/kw25_n32.pg  INPHASE kw25_n32.pg n 32 K 29 maxFirst 28 maxInPhase 27 at (0, 26)
+GAME red/xing/instances/kw_n16.pg  INPHASE kw_n16.pg n 16 K 12 maxFirst 12 maxInPhase 12 at (0, 11)
+GAME red/xing/instances/j8_n48.pg  INPHASE j8_n48.pg n 48 K 86 maxFirst 85 maxInPhase 85 at (1, 85)
+GAME red/xing/instances/kw_n24.pg  INPHASE kw_n24.pg n 24 K 20 maxFirst 20 maxInPhase 20 at (0, 19)
+GAME red/xing/instances/kw_n48.pg  INPHASE kw_n48.pg n 48 K 40 maxFirst 40 maxInPhase 40 at (0, 39)
+GAME red/xing/instances/obr_eq_n24.pg  INPHASE obr_eq_n24.pg n 24 K 7 maxFirst 5 maxInPhase 4 at (1, 4)
+GAME red/usplit/instances/pp_K48_n449_dual.pg  INPHASE pp_K48_n449_dual.pg n 449 K 56 maxFirst 1 maxInPhase 1 at (55, 55)
+GAME red/xing/instances/u1t_cex_n32.pg  INPHASE u1t_cex_n32.pg n 32 K 12 maxFirst 3 maxInPhase 3 at (0, 7)
+GAME red/xing/instances/obr_n32.pg  INPHASE obr_n32.pg n 32 K 22 maxFirst 17 maxInPhase 16 at (0, 15)
+GAME red/xing/instances/u1t_own6_n32.pg  INPHASE u1t_own6_n32.pg n 32 K 9 maxFirst 4 maxInPhase 3 at (0, 7)
+GAME red/xing/instances/u23sw64_n32.pg  INPHASE u23sw64_n32.pg n 32 K 16 maxFirst 3 maxInPhase 3 at (13, 15)
+GAME red/xing/instances/u2flat_n32.pg  INPHASE u2flat_n32.pg n 32 K 13 maxFirst 6 maxInPhase 5 at (5, 9)
+GAME red/xing/instances/u2flat73_n32.pg  INPHASE u2flat73_n32.pg n 32 K 16 maxFirst 8 maxInPhase 7 at (0, 13)
+GAME red/xing/instances/x31_cu24.pg  INPHASE x31_cu24.pg n 24 K 22 maxFirst 18 maxInPhase 17 at (2, 18)
+GAME red/xing/instances/x31_cu16.pg  INPHASE x31_cu16.pg n 16 K 23 maxFirst 21 maxInPhase 21 at (2, 22)
+GAME red/xing/instances/x31_cu32.pg  INPHASE x31_cu32.pg n 32 K 49 maxFirst 42 maxInPhase 41 at (6, 46)
+GAME red/xing/instances/x31_cu32i.pg  INPHASE x31_cu32i.pg n 32 K 42 maxFirst 39 maxInPhase 39 at (3, 41)
+GAME red/xing/instances/x31_lem_e24.pg  INPHASE x31_lem_e24.pg n 24 K 54 maxFirst 51 maxInPhase 50 at (2, 51)
+GAME red/xing/instances/x31_cu48.pg  INPHASE x31_cu48.pg n 48 K 46 maxFirst 42 maxInPhase 42 at (4, 45)
+GAME red/xing/instances/x31_lem_t32.pg  INPHASE x31_lem_t32.pg n 32 K 65 maxFirst 59 maxInPhase 59 at (6, 64)
+GAME red/xing/instances/x31_nh_e24.pg  INPHASE x31_nh_e24.pg n 24 K 20 maxFirst 20 maxInPhase 20 at (0, 19)
+GAME red/xing/instances/x31_nh_r20.pg  INPHASE x31_nh_r20.pg n 20 K 15 maxFirst 13 maxInPhase 13 at (1, 13)
+GAME red/xing/instances/x31_re24.pg  INPHASE x31_re24.pg n 24 K 6 maxFirst 5 maxInPhase 4 at (1, 4)
+GAME red/xing/instances/x31_ru24.pg  INPHASE x31_ru24.pg n 24 K 7 maxFirst 5 maxInPhase 4 at (1, 4)
+GAME red/xing/instances/x31_rx32.pg  INPHASE x31_rx32.pg n 32 K 55 maxFirst 53 maxInPhase 53 at (2, 54)
+GAME red/xing/instances/x32_rand16.pg  INPHASE x32_rand16.pg n 16 K 15 maxFirst 13 maxInPhase 13 at (1, 13)
+GAME red/xing/instances/x31_rx48.pg  INPHASE x31_rx48.pg n 48 K 53 maxFirst 49 maxInPhase 48 at (2, 49)
+GAME red/xing/instances/x32_rand24.pg  INPHASE x32_rand24.pg n 24 K 20 maxFirst 20 maxInPhase 20 at (0, 19)
+GAME red/xing/instances/x32_nest40.pg  INPHASE x32_nest40.pg n 40 K 58 maxFirst 55 maxInPhase 55 at (3, 57)
+GAME red/xing/instances/x32_rand32.pg  INPHASE x32_rand32.pg n 32 K 29 maxFirst 29 maxInPhase 29 at (0, 28)
+GAME red/xing/instances/x32_rand48.pg  INPHASE x32_rand48.pg n 48 K 44 maxFirst 44 maxInPhase 44 at (0, 43)
+GAME red/xing/instances/x32_rand64.pg  INPHASE x32_rand64.pg n 64 K 56 maxFirst 55 maxInPhase 55 at (0, 54)
+GAME red/xing/instances/x32_waves32.pg  INPHASE x32_waves32.pg n 32 K 81 maxFirst 77 maxInPhase 77 at (4, 80)
+GAME red/usplit/instances/gate_K64_n581.pg red/usplit/instances/gate_K64_n581.start INPHASE gate_K64_n581.pg n 581 K 71 maxFirst 71 maxInPhase 71 at (0, 70)
+GAME si/root/instances/cone_n65.pg  INPHASE cone_n65.pg n 65 K 12 maxFirst 2 maxInPhase 2 at (10, 11)
+GAME si/root/instances/ueonce_n27.pg  INPHASE ueonce_n27.pg n 27 K 12 maxFirst 11 maxInPhase 10 at (1, 10)
+GAME si/root/instances/cone_n69.pg  INPHASE cone_n69.pg n 69 K 25 maxFirst 1 maxInPhase 1 at (24, 24)
+GAME red/xing/instances/x32_waves48.pg  INPHASE x32_waves48.pg n 48 K 89 maxFirst 85 maxInPhase 85 at (4, 88)
