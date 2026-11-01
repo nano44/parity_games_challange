@@ -213,3 +213,9 @@ Five questions:
 | 2026-11-01 | L-RED | session_01V5yGRYVy3wZ2ZDHF5VpFiB (PARK b5328e02) | session_01V5yGRZzQMY5djbFkvKqE6d (Opus, D1/D18) | 2 | PENDING (successor's check) |
 | 2026-11-01 | L-NEW | session_01V5yGRW6BGT1zSiwSKRv1qy (FINAL dcb80dfc) | session_01V5yGRWAZgucRQvPGKYZujK (Opus, D14/D18) | 2 | PENDING (successor's check) |
 | 2026-11-01 | L-RED | session_01V5yGRZzQMY5djbFkvKqE6d (PARK after R172 0c889e61) | session_01V5yGRa8VX4VrSzMTZfKctP (Opus, D1/D18) | 2 | PENDING (successor's check) |
+| 2026-11-01 | CHECKER | session_01V5yGRa9pQWTf3AmjVLrkK8 (~636k; handover a71d11ff) | session_01V5yGRZ7i7mdLpvMkXRmi5b (Opus, D1/D15/D18) | 2 | PENDING (successor's check) |
+| 2026-11-01 | L-RED | session_01V5yGRa8VX4VrSzMTZfKctP (PARK 76601782; idle confirmed) | session_01V5yGRZmYx9sPoeaSsLDoAg (Opus, D1/D18) | 2 | PENDING (successor's check) |
+| 2026-11-01 | L-NEW | session_01V5yGRWAZgucRQvPGKYZujK (FINAL 4cab309e; idle confirmed) | session_01V5yGRaCabVm2TBMRgehQJx (Opus, D14/D18) | 2 | PENDING (successor's check) |
+| 2026-11-01 | L-RED | session_01V5yGRZmYx9sPoeaSsLDoAg (PARK 3d8783a6; idle confirmed) | session_01V5yGRaJMr2sxHnK3JazZL2 (Opus, D1/D18) | 2 | PENDING (successor's check) |
+| 2026-11-01 | L-NEW | session_01V5yGRaCabVm2TBMRgehQJx (FINAL 15d35408 + L-2 709798f3; idle confirmed) | session_01V5yGRZScf7eMZRT15JJRqy (Opus, D14/D18) | 2 | PENDING (successor's check) |
+| 2026-11-01 | L-RED | session_01V5yGRaJMr2sxHnK3JazZL2 (PARK 2799b309; idle confirmed) | session_01V5yGRY3bJBq4636PcLuYgi (Opus, D1/D18) | 2 | PENDING (successor's check) |

@@ -1,0 +1,18 @@
+== topfix_n3 64
+  WIN [4, 19] ODIFF 1 stretch charged 80 depth 12 fanin 18
+K 61 best (18, 20, 1, 0, None)
+== topfix_n4 85
+  WIN [4, 19] ODIFF 1 stretch charged 113 depth 12 fanin 25
+K 95 best (24, 26, 1, 0, None)
+== topfix_n6 127
+  WIN [107, 145] ODIFF 1 stretch charged 200 depth 35 fanin 4
+K 181 best (36, 38, 1, 0, None)
+== topfix_n8 169
+  WIN [193, 243] ODIFF 1 stretch charged 358 depth 47 fanin 6
+K 291 best (48, 50, 1, 0, None)
+== topfix_n10 211
+  WIN [303, 365] ODIFF 1 stretch charged 564 depth 59 fanin 8
+K 425 best (60, 62, 1, 0, None)
+== topfix_n12 253
+  WIN [437, 511] ODIFF 1 stretch charged 818 depth 71 fanin 10
+K 583 best (72, 74, 1, 0, None)

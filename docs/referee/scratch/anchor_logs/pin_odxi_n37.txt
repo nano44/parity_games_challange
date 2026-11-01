@@ -1,0 +1,6 @@
+FILE odxi_n37.pg n 37 K 16 fallbacks 1 FLruns 1 FLtrans 8
+RUN [1, 9] FL 8 CAP 9 GCH 5 epochs 6 ODIFF-Xi-changes 5 [(2, 33), (3, 33), (5, 33), (6, 33), (7, 33)]
+moves_nonCN 65
+pre_chk 315
+tight_chk 279
+VIOLATIONS 0

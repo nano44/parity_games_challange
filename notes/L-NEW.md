@@ -1,7 +1,158 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 44, Opus 5.5, session_01V5yGRW6BGT1zSiwSKRv1qy; FINAL, PARKED 2026-11-01 ~05:4xZ by date -u, ~420k context)
+## Resume point (successor 47, Opus 5.5; started 2026-11-01 21:06Z by date -u; WORKING)
+### Handover check (STEP 0, sent to the Lead 21:06Z; docs/agents/ is Lead-only, so the answers live here)
+1. claude/l-new: local clone STALE at 8591166d (status said «up to date»); ls-remote origin 709798f3; fetched, ff-only, HEAD = 709798f3.
+   Vs trunk 8884f8de: 15 ahead / 19 behind, merge-base 65568e9c (trunk not merged; lane files only).
+2. Open: (a) STANDING P-N5-ANCHOR L-2 word-diff with both referees (any item -> fixes entry 3 + line L-3; frozen files untouched;
+   sha1 checked on disk: packet ad97ad88, line 7f140d0c, L-1 baad574d, fixes 3895b1dd, L-2 1371f900). (b) box 137.
+3. GAPS (trunk): G-N5-TIME major open; G-N1-LB minor open (optional, not routed); G-N5-TERM closed.
+4. D18, D14, D1 verbatim (all active in DECISIONS-INDEX); see the Lead message.
+5. Trap: stale local clone again; check = ls-remote + fetch + ff-only + HEAD vs ls-remote + frozen sha1s. Oink rebuilt (setup_oink.sh).
+### Box 137 N5-REL (Lead brief 21:08Z; docs/new/N5-REL-box137.md; experiments/new/box137/)
+- DEAD: the briefed «release once per key change» lemma form: ret2_n37 (one FL run = ONE epoch, GCH 0, sbar/tau/Xi on ODIFF/CN constant):
+  vertex 36 makes 33 -> 31 at j 2 and j 6; chooser 15 (level 10) moves 2 -> 36 -> 8 -> 2 -> 36 -> 8 -> 2. Also DEAD: RET-1 (option 2 of
+  15 re-entered twice; corpus/pins RETMAX 1 before).
+- PROVED (lane): Proposition KCH-GCH (moves_run(x) <= min{(|T_x|-1)(1+KCH_x), (l(x)-1)(1+GCH)}; KCH-POLY <=> GCH-POLY <=> FL-POLY;
+  per-x O(1) releases insufficient), CEIL (on [PW] = VJ00 §5 pointwise optimal counter-strategy), SAT-MONO, SAT-FREEZE, BAND, SYNC
+  (coalescence of choosers with equal option sets), C-WORLD + DEFICIT (+ closure), DOUBLE-PULL (under (NC)).
+- DATA (813 distinct pairs + 11 L-RED/L-NEW pins + 2 new pins): every check 0 violations; SATGAIN 0 on all corpus FL runs; c-world FL
+  moves 0 on corpus, 2 on cwmov2_n57 (so no C-OFF conjecture). Pins ret2_n37, cwmov2_n57: Oink zlk/tl verified, n5b identical.
+- READING: sigma-bar enters only via gating changes; the open object is GCH (circular); recipe for L-RED §6 (carry as gating event, nest).
+### Things only I know (successor 47)
+- rel.py's analyse() is importable (climb137.py uses it); rel.LAST holds S, T, E, runs after a call (anat.py). A game without FL runs
+  used to crash analyse (retc unbound) - fixed; the first corpus rerun after the refactor showed 801 errors, rerun clean.
+- DEFVIOL's first version had the length sign reversed (false alarm on the cwmov2 mutant); fixed before any claim.
+- Climbs: 4 x 40 min, ~10,000-40,000 mutations each; RETMAX 2, MOVMAX 7 best; climbs 1-3 stopped on the old DEFVIOL false alarm (mutants re-checked clean). L-RED pins copied read-only into box137/inst (18/18 sha1 OK).
+
+## Resume point (HISTORY; successor 46, Opus 5.5, session_01V5yGRaCabVm2TBMRgehQJx; FINAL, PARKED 2026-11-01 ~19:2xZ by date -u, ~460k context)
+### FINAL summary (successor 46): boxes 132-136 + P-N5-ANCHOR (frozen, signed by both referees, fixes entry 1 + line L-1); every push
+  via scripts/push.sh (VERIFY PASS), each reported to the Lead. Handover at start: local clone STALE (8591166d), ff to 4cab309e, trunk merged.
+- 132 ANCHOR (46ddf9ce; §6 7d5d5f9f): FL-ANCHOR (epoch <= CAP <= n+m; FL run <= CAP (1+GCH)), Lemma PREFIX, bridge B; label PROVED
+  (lane) on R24 (a) + (b) choice rule + bridge B (L46). (a): W-cycle source closes 13/16 cyclic D runs.
+- 133 ODXI (14bd8d23, 260f5201, 9fe4689a): «Xi at ODIFF constant in an FL run» DEAD (odxi_n37 gadget; R179 odxi_min_n12); charging
+  ODIFF Xi-changes to moves is circular (CIRC); [RULE] form checked vs REFEREE-2 (W'-ties = W-ties at FL).
+- P-N5-ANCHOR (f009a9a1; packet ad97ad88, line 7f140d0c): REDUCTIONS / EQUIVALENCE (FL-POLY <=> GCH-POLY). Both referees SIGNED all
+  items, (R1) ruled covered. Fixes entry 1 + line L-1 (6bcf5529; fixes 4cff05c1, L-1 baad574d): corner = x before the option's cycle
+  node (kept, vacuous on fully W'-optimal), (R1) ruling, ties, anchor j >= s0 + l*, R57 only, §6 heading. L-1 is with both referees for
+  word-diff: ANY FURTHER NOTE goes into a NEW entry 2 of docs/new/P-N5-ANCHOR-fixes-box134.md and a new line L-2 file; never edit frozen files.
+- 134 OVT2 (6f630331): COMPARE-W, CYC-MONO (cycle node of Xi changes <= n-1 per vertex per run, R18 (d) Lemma S (a)), FL-ANCHOR'.
+- 135 MERGE (2ee388a7): Lemma MERGE (order = pre-merge segments + w), Theorem CASC-M (stretch with acyclic merge digraph D' is
+  <= height + 1); corpus 10/10 stretches acyclic; D' cycles only in R179 odxi_many_n32.
+- 136 SELF (this push): C-STATIC-Xi (z-world: self-feeding is a static prefix predicate), DOM (head-dominated comparisons are static),
+  CASC-M''. D'' acyclic on EVERY observed stretch (corpus 10/10, odxi_many 3/3, all pins). Hence FL run <= n_E (1 + SBCH + n(n-1) +
+  CNMOV) whenever stretches are D''-acyclic. DEAD route: CNMOV via CYC-MONO (cycle node of Xi(c) changes at 0 / 11 CN moves; cw11_n24).
+### NEXT for successor 47 (Lead decides): the two remaining circular items of the FL face: (1) D''-cycles (none seen; recipe: a
+  non-head-dominated mutual dependency through a gate, box 136 §0) - L-RED R183 retargeted; (2) CNMOV (W-cycle-node moves in FL runs;
+  per-epoch bound only). Answer referee word-diff notes on L-1 (entry 2 if any).
+### Things only I know (successor 46):
+- Tools: box132/anchor.py (epochs, gating), box133/odxi.py, box134/cmpw.py (flip classes), box135/dmerge.py (STRETCH=1), box136/dmerge2.py
+  (DOM=1 STRETCH=1; SHOWCYC=1 prints a cycle). All corpus runs take < 2 min on 4 cores; push.sh ~20-25 min.
+- Scratch scripts in other tools import anchor.py's header via exec with HERE replaced (see odxi.py top) - copy that pattern.
+- R179's instances live read-only in experiments/new/box134/inst (sha1 = l-red a612b0a5 pins.sha1).
+- The harness keeps reporting «file changed on disk» for docs/new files I did not touch; git status was clean each time and the frozen
+  packet sha1 stayed ad97ad88 (checked).
+- Oink must be built in a fresh container (scripts/setup_oink.sh, ~2 min).
+
+## Resume point (HISTORY; successor 46 work log, Opus 5.5, session_01V5yGRaCabVm2TBMRgehQJx; started 2026-11-01 11:36Z by date -u; handover: local clone STALE at 8591166d, ff to origin 4cab309e, trunk 65568e9c merged --no-ff 5235c663)
+### Box 132 N5-ANCHOR (Lead brief 11:37Z, STEP 1; docs/new/N5-ANCHOR-box132.md; experiments/new/box132/)
+- PROVED (lane, on R24 (a) + (b) choice rule + bridge B, L46; box 132 §6) Theorem FL-ANCHOR:
+  epoch = FL transitions with constant gating G = (sbar, Xi on ODIFF, Xi on W-cycle nodes); non-cycle-node level l moves only in the
+  epoch's first l - 1 transitions (CASC lifted); cycle nodes then <= |T_c| - 1 moves each (rule-free); epoch <= CAP = (l* - 1) +
+  sum_c (|T_c| - 1) <= n + m; FL run <= CAP (1 + GCH); window FL <= CAP (1 + WCH + XCH(ODIFF u CN)). Lemma PREFIX: upward D-edges out of
+  non-cycle-node vertices are anchor-carried.
+- DATA (813 pairs): 20 FL runs, 42 transitions, 23 epochs, 0 violations; gating changes 3 (all Xi at a cycle node, cw11_n24), 0 at ODIFF.
+  (a): with the W-cycle source 13/16 cyclic-D runs fully anchor-carried; tog6a/tog6b/u2flat close via cycle-node edges; UPNOANCH 0.
+- Pins u23sw64_n32 + cw11_n24 (Oink zlk/tl verified, n5b identical). check.sh «box 132 ANCHOR».
+- NEEDS: lift of R24 (a)+(b) choice form to every game (L44). OPEN: can Xi change at an ODIFF vertex inside one FL run?
+### Box 133 N5-ODXI (Lead GO 12:35Z; docs/new/N5-ODXI-box133.md; experiments/new/box133/)
+- DEAD: Xi at ODIFF vertices constant / O(1) inside an FL run: odxi_n37 (u23sw64_n32 + 5-vertex gadget: band t 32, gates 33 -> {2,32},
+  34 -> {32,36}, chooser 35, pad 36): Xi at gate 33 changes 5 times in FL run [1,9]; it releases the FL move 35: 34 -> 33 at 5 -> 6.
+  Oink zlk/tl verified, n5b identical. Recipe for L-RED (band Xi(x) < val(t) <= W(x); W-tied chooser; key order = overtake order).
+- READING: FL-ANCHOR's budget can be generated by the FL run itself (gates reading FL movers); the open object is gate OVERTAKES.
+- Corpus: 2 Xi-changes at ODIFF vertices over all run states (nep22f last state, corner cycle node 48), 0 on gating states, 0 releases.
+### P-N5-ANCHOR FROZEN (Lead GO 15:36Z; docs/new/P-N5-ANCHOR-box134.md + P-N5-ANCHOR-line.txt; sha1s in the Lead report)
+- REDUCTIONS / EQUIVALENCE: FL-TIGHT, FL-OPT, bridge B, PREFIX, FL-ANCHOR (epoch <= CAP), CIRC (GCH <= FL - 1), Corollary FL-GCH
+  (FL-POLY <=> GCH-POLY). (R1) rule at non-movers left for the referees to rule on. DEAD section: odxi_n37 + R179's three instances
+  (copied read-only into experiments/new/box134/inst/, pins box134/pincheck.txt). Referee notes go to a NEW fixes file
+  docs/new/P-N5-ANCHOR-fixes-box134.md (append-only); the packet is frozen.
+- NEXT: box 134 research = a non-circular potential for the gate-overtake loop (await L-RED R180 unsat-core relay).
+### Box 134 N5-OVT2 (docs/new/N5-OVT-box134.md; experiments/new/box134/cmpw.py)
+- PROVED (lane): COMPARE-W (same anchor, cycle node off both prefixes => order depends only on prefixes + w), CYC-MONO (cycle node of
+  Xi at any vertex changes <= n-1 times per run, from R18 (d) Lemma S (a)), FL-ANCHOR' (FL run <= CAP (1 + SBCH + n^2 + FVCH); circular
+  only through full-value = cross-anchor / in-prefix anchors). DATA: 94/94 corpus flips PREFIX; CROSS only in odxi_n37 (1).
+### Box 135 N5-MERGE (Lead GO 17:06Z; docs/new/N5-MERGE-box135.md; experiments/new/box135/dmerge.py, STRETCH=1 for stretches)
+- PROVED (lane): Lemma MERGE (order of two options with the same Xi cycle node w = order of their pre-merge segments + w; flips need a
+  move on those segments), Theorem CASC-M (stretch with acyclic merge digraph D' has <= height + 1 transitions), Corollary FL run <=
+  n_E (1 + SBCH + n(n-1) + CNMOV) when every stretch has acyclic D'. DATA: corpus 10/10 stretches acyclic, CASC-M 0 viol.; CNMOV 13.
+  Only D'-cycles: R179 odxi_many_n32 (self-edges 7). Open: D'-cycles (self-feeding through a gate) and CNMOV.
+### Things only I know (successor 46): anchor.py's corpus run takes ~40 s on 4 cores; dcyc2.py keeps box 131's D edge set (path part
+  of the Xi-play only) and adds the anchor-carried classification. Oink had to be rebuilt here (setup_oink.sh, ~2 min).
+
+## Resume point (successor 45, Opus 5.5, session_01V5yGRWZgucRQvPGKYZujK; FINAL, PARKED 2026-11-01 ~11:2xZ by date -u, ~470k context)
+### FINAL summary (successor 45): boxes 127-131, every push via scripts/push.sh (VERIFY PASS), each reported to the Lead
+- 127 PARAM (656fb3eb, 6ec1c774): AF-QP PROVED (lane); expiration in W-runs DEAD (nep92_n40); no parametric cast (availability; LEX-SIGN
+  superincreasing weights; L-RED claim (2) checked).
+- 128 PCOUNT (d93dac71): PORTAL reviewed (W1-W5); STATIC-TIE + STRICT-PAY PROVED (lane); per-pivot (#X)(#ZC) count DEAD (topfix_n10).
+- 129 GATEREC (1ebdae81): ORIGIN + GATE-REC PROVED (lane); no base (cyclic mutual payment, time depth, fan-in 30). R176: D <= 4 was a
+  start effect (topfix_nk D = 6k - 1).
+- 130 FLAT (d4024537): FL-OPT/TIGHT/RED/ODIFF0 PROVED (lane); rule-independent F bound impossible (CDAG_n).
+- 131 CANON (dc8c555c + this push): tie rule = R24 (b) Lemma TB (signed on C^1O; every-game DATA 666/666, 8/8); FL-CANON re-derivation;
+  KEY=VJ; D-cycle data (16/20 cyclic, 9 without an ODIFF Xi-edge).
+### NEXT for successor 46 (Lead decides): bound D(x) (BFS-key decreases at even W-cycle nodes) through Xi-gating, or prove FL <= poly
+  for cyclic D by charging upward edges to ODIFF vertices / the W-cycle (test the W-cycle source first: box131/dcyc.py lacks it).
+### Things only I know (successor 45): corpus = sort -u si/anc58/corpus_fixed.lst (813 lines; topfix_n10 has NO start there although
+  new/box52/out/topfix_n10.start exists). The harness reports «file changed on disk» for my scripts spuriously: git status was clean every
+  time. A check.sh grep must use -x with a single expected line (box 130's first block matched two lines loosely). push.sh takes ~20 min.
+
+## Resume point (HISTORY; successor 45, Opus 5.5, session_01V5yGRWZgucRQvPGKYZujK; started 2026-11-01 06:24Z by date -u; handover: HEAD had dcb80dfc (is-ancestor OK), trunk claude/vibrant-johnson-nxvvxo merged 2228f7df)
+### Box 131 N5-CANON (Lead GO 10:41Z; docs/new/N5-CANON-box131.md; experiments/new/box131/)
+- Rule (READING from SPEC S1 (iv) on the dual arena + DATA 666/666, 8/8): c odd -> smallest index among W-tied arena options; c even ->
+  lex-smallest BFS key (c-side play path).
+- PROVED (lane) FL-CANON: (a) c odd: index strictly decreases per FL move (<= deg - 1 moves per FL run); (b) c even: BFS keys
+  non-increasing, strict at movers (range exponential); KEY=VJ (equal-length increasing keys = all-even CDAG order).
+- Recorded L-RED 41 R176 (76601782): box 129 D <= 4 was a start effect (topfix_n10.start: D 59; topfix_nk D = 6k - 1).
+- Corrected box 130 §0: u2flat73's 73 flat moves are all inside its 7 FL transitions.
+- Next: bound D(x) via the Xi-gating (two-order problem again), or R177's embedding.
+
+### Box 130 N5-FLAT (Lead GO 09:43Z; docs/new/N5-FLAT-box130.md; experiments/new/box130/)
+- PROVED (lane): FL-OPT (at an FL transition sigma_(j-1) is already an arena optimum), FL-TIGHT, FL-RED (FL run = SI on one-player
+  G_sbar restricted to W-tight edges, rule = S1 tie-break in G_tau), FL-ODIFF0 (FL needs ODIFF >= 1; corner aside).
+- Obstruction: CDAG_n (box 8, R17 (f)): one-player single-switch SI 2^n - n - 1 (re-checked n 6/8/10); any poly F must use the rule.
+- DATA: FL 35 (ODIFF >= 1), longest run 8 (u23sw64_n32); flat moves 214, max 73 in one window (u2flat73_n32, pinned).
+- My two wrong predictions recorded in the note §1 (ODIFF-0 flat moves exist; Xi-rise fails at the cycle corner).
+
+### Box 129 N5-GATEREC (Lead GO 09:15Z; docs/new/N5-GATEREC-box129.md; experiments/new/box129/)
+- Reviewed L-RED 41 PHASE-PORTAL / SELF (R174 @ claude/l-red 5d27d366): correct; PHASE-PORTAL = STATIC-TIE for one class; SELF silent
+  when the prefix difference above Z is empty.
+- PROVED (lane) ORIGIN (a value change has a switched vertex on the old play) and GATE-REC: charged <= roots (F + ... + F^D).
+- Obstruction (DATA): D is time depth (52, topfix ODIFF 0), vertex charge graph cyclic (SCC <= 18 / <= 5), fan-in <= 30; ODIFF >= 1
+  corpus D <= 4 only (not conjectured: ODIFF >= 1 not structural).
+- Next (Lead decides): a flat-move count (F term) or L-RED family with growing D at ODIFF >= 1.
+
+### Box 128 N5-PCOUNT (Lead GO 07:48Z; docs/new/N5-PCOUNT-box128.md; experiments/new/box128/)
+- Read L-RED 41 Lemma PORTAL (docs/red/R173-portal.md @ claude/l-red 02119133). Proof checks; weak points W1 (PORTAL-1 «once» = once per
+  ENTRY), W2 ({h} in NR needed: VJ comparison corner, WORSE 13 corpus moves all there), W3 (end points suffice), W4 NR-CYC, W5.
+- PROVED (lane) STATIC-TIE: repeat move of h with Xi and W of both options constant (and plays avoiding h) is not W-strict; no class /
+  TWO-FIX / ZC needed. Corollary STRICT-PAY: STRICT_h <= 1 + CORNER_h + sum_{succ x} (XCH(x) + WCH(x)) (relocation onto XI-CH).
+- DEAD: per-h count (#X)(#ZC): topfix_n10 h 192 stretch [6,64] 36 > 20, hub 193 re-entered 18 times, ODIFF 0 (polynomial regime).
+- DATA (813 distinct pairs): SAME pairs 0, DIFF strict 3,860, RET 1,964, STATVIOL 0, LEADVIOL 15 pairs, 2deg bound fails 9 pairs.
+- Next (Lead decides): recursive charging through Even gates (each class is an Even pivot); ODIFF > 0 open.
+
+### Box 127 N5-PARAM (Lead box; docs/new/N5-PARAM-box127.md; experiments/new/box127/)
+- Sources opened: arXiv 1811.05115 (Gajjar-Radhakrishnan; Prop. 5 alternation-free, Thm 6, Thm 2 proof, p. 5-6 recursion), arXiv
+  1001.3749 (Chakraborty et al. §1). Carstensen 1983 / Mulmuley-Shah 2001 / Gusfield 1980 NOT opened (paywalled): cited through these.
+- PROVED (lane) AF-QP: alternation-free sequences of simple s-t paths have <= (2n)^ceil(log2 l) blocks; Corollary AF-XI: alternation-free
+  Xi-play path parts in a W-run => XI-CH <= (2n)^ceil(log2(n+1)) per vertex (quasi-poly).
+- DEAD: the premise (expiration inside W-runs): nep92_n40 W-run [6,20] src 0 at (0,19); corpus 16,500 violations in 158 / 1,132 games,
+  every one an Even-edge availability change (NEITHER 0); RET 0 (no path part returns).
+- READING: no parametric cast with known theory (availability toggles; lex weights superincreasing (LEX-SIGN): L-RED 41 claim (2) CHECKED correct, note §5(d); circular).
+  only gives the order of plays, not the S4a dynamics; super-poly XI-CH = super-poly W-run.
+- Not done: proof that every alternation needs an availability change (DATA 16,500 / 16,500); cycle-node moves of Xi inside W-runs.
+### Things only I know (successor 45): Oink was NOT built in this container at start (tools/oink/build missing): ran scripts/setup_oink.sh.
+
+## Resume point (HISTORY; successor 44, Opus 5.5, session_01V5yGRW6BGT1zSiwSKRv1qy; FINAL, PARKED 2026-11-01 ~05:4xZ by date -u, ~420k context)
 ### FINAL summary (successor 44): every push via scripts/push.sh (VERIFY PASS), each reported to the Lead
 - Item 1: P-N5-GATE fixes F0 + entry 1 and line L-1 (afb8b99e; line sha1 d677161c). GATE-L1: lend107 106 (in-phase), not 107; corpus
   116, not 118. Both referees MATCHED L-1; R101 LANDED (RESULTS l. 9251, Lead 05:32Z).
@@ -733,6 +884,22 @@ Stop (S5) when Iσ = Iτ = ∅: Even wins v iff the cycle node of Ξσ(v) has ev
   (b), (c); length < 2(n + m)(n² − n + 1 + SBC)). DEAD: NOFB (n3all_maxph_0), W-frame twin N5-SFW cycles (theta_thf16, period 10; 49/413).
   DATA: correct on 1,038 library + families + hard families; SF ≈ ½ N5; runquad 264 → 2, topfix 7N + 43; switchbestexp N=10 619 vs 89, SBC 97.
   Open count SBC (CONJECTURE SF-POLY OPEN).
+
+## Dead ends (successor 47, box 137; docs/new/N5-REL-box137.md §0, §4)
+- «Between two consecutive moves of x in one FL run some vertex below x changes W-tight key in a way that cannot recur without a sbar-
+  or tau-change or a CN shortcut»: DEAD, ret2_n37 (experiments/new/box137/ret2_n37.pg sha1 7058d2c222ee, default start 23efa9d2e29c):
+  one epoch (GCH 0), vertex 36 makes the move 33 -> 31 at transitions 2 and 6. Obstruction: in-epoch settling (FL-ANCHOR) repeats
+  key-change events; only key VALUES are non-recurring (exponential range).
+- RET-1 («each option re-entered at most once per FL run»): DEAD, same instance (x = 15 re-enters option 2 at j 4 and j 8).
+
+## Dead ends (successor 46, box 136; docs/new/N5-SELF-box136.md §3)
+- «every W-cycle-node move in an FL run changes the cycle node of Xi(c), so CYC-MONO bounds CNMOV»: DEAD, red/kw/instances/cw11_n24.pg
+  (default start, box132/cw11_n24_default.start): 7 CN moves, Xi(c) changes at 7, its cycle node at 0; also nep22f_n64 0/2, tog6a/b 0/1.
+
+## Dead ends (successor 46, box 133; docs/new/N5-ODXI-box133.md)
+- «Xi at ODIFF vertices is constant (or O(1)) inside one FL run»: DEAD, experiments/new/box133/odxi_n37.pg + .start (sha1 83f263c1a4d0 /
+  e2ed671588c7): obstruction = a gate whose sbar-side reads an FL mover (Xi(2) rises 5 times in run [1,9]); the change releases an FL
+  move (35: 34 -> 33 at 5 -> 6).
 
 ## Dead ends (successor 44; also in docs/new/N5-BRTREE-box121.md §2, N5-FBCOUNT-box123.md §2, N5-LEMMAP-box124.md §0)
 - Forest potentials PHL (sum log2 subtree size) / PDEP (sum depth) of Odd's best-response forest monotone inside tau-stretches: DEAD,
@@ -1876,6 +2043,10 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
   packet rule (corrections only in new dated sections).
 
 ## Sources opened
+- (succ. 45, box 131) docs/red/R176-depth.md at claude/l-red 76601782 (L-RED 41; read via the Lead's relay summary only, file not opened by me).
+- (succ. 45, box 129) docs/red/R174-zroute.md at claude/l-red 5d27d366 (L-RED 41, PHASE-PORTAL, SELF; read, not edited).
+- (succ. 45, box 128) docs/red/R173-portal.md and experiments/red/r173/portalck.py at claude/l-red 02119133 (L-RED 41, Lemma PORTAL; read, not edited). RESULTS Erratum E-1 (claude/l-red docs/RESULTS.md l. 9478). RESULTS R101 statement (l. 9251).
+- (succ. 45, box 127) arXiv 1811.05115 Gajjar-Radhakrishnan, pdf sha256 79208b4f5fe9aa5676a3fd96514bae1be82ec3080545c0483e0d2a0c7c28172f: §1 Thm 1, Prop. 5, Thm 6, p. 5-6 recursion, §4 Thm 2 proof. arXiv 1001.3749 Chakraborty-Fischer-Lachish-Yuster, pdf sha256 45398534db333c8b2a695f4da722e0c9953960b851cb605d581f46ff8800e092: §1. NOT opened: doi 10.1007/BF02591893, doi 10.1006/jcss.2001.1766.
 - (succ. 26, box 47, 2026-10-26 11:00-11:13Z) Fleet sources opened and read for docs/new/N5-XDIR-box47.md: docs/si/N5-RUND-box17.md §22 (L-SI 14:
   ROOT, ROUTE-RELAY, SELF-FREE, (O1)/(O2)); docs/RESULTS.md R64 ((a)-(e)) with docs/new/P-N5-EPR-box45.md §1 (RESTRICT_E proof: "σ̄_E is an Odd
   strategy of G′_E and σ̄_k = σ̄_E"), R58 ((c) ROUTE-2, (d) DIR, Corollary FB-2O), R61 ((e) ALT, (f) N_ep), R65 (GAPS 09:56Z); docs/new/N5-ssi-global.md
@@ -2015,6 +2186,15 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
 - (succ. 38, box 89) T. Ralphs, IE411 Lecture 11 (Lehigh, coral.ise.lehigh.edu/~ted/files/ie411/lectures-python/Lecture11.pdf), slide 3 (PDF text read).
 - (succ. 40) L-LIT T61 (l-lit 1ad851ee, docs/lit/T61-order-charging.md §2.6, S5a data). L-LIT T60 (l-lit 54584c0c, docs/lit/T60-best-reply-flips.md §3.3, ORDER-DET / NO-REPEAT statements); L-SI box 53 (l-si aeb8c311, docs/si/N5-SBF-box53.md §2.1-§2.5, §3); P-N5-SETTLE §1-§2 (l-si a0970d36). [ABS] 2102.04922 and [GH] NOT opened (only T60's quotes; no theorem of theirs used).
 ## Dead ends
+- (succ. 45, box 131) «Smallest index» as S4a's tie rule: false at even W-cycle nodes (483 / 666 ties; the rule there is the BFS key); index potential works only at odd cycle nodes.
+- (succ. 45, box 130) Rule-independent potential for FL runs (Xi, or (Xi, length) at tied W): exponential range, CDAG_n one-player single-switch chain 2^n - n - 1 (CDAG_6: 57 steps). A bound must use the S1 tie-break.
+- (succ. 45, box 129) Recursion over gate depth for W-strict moves: no base. Vertex charge graph cyclic (topfix_n10 window [6,64]: eleven 3-vertex mutual-payment SCCs, e.g. {120,121,122}); move-level chain depth 52 (time depth).
+- (succ. 45, box 128) Per-pivot count «W-strict moves of h <= sum over its classes X of (1 + lambda_Xi(X) changes)»: DEAD, topfix_n10
+  (sha1 4b65d3dc2735) h 192 stretch [6,64]: 36 > 20 by hub re-entries (class 193 re-entered 18 times), no Xi-cycle-node change at any class.
+- (succ. 45, box 127; Lead 07:48Z: DROPPED, not routed) Carstensen / Mulmuley-Shah template for a super-polynomial XI-CH family:
+  obstruction: it fixes the order of the plays (envelope monotone in a fixed cost order), not the S4a dynamics that would delete the
+  current optimum each step; each Xi-change costs a W-run transition, so the template would have to supply a super-polynomial W-run.
+- (succ. 45, box 127) Expiration / alternation-free route to quasi-poly XI-CH (Gusfield via 1811.05115 Prop. 5): DEAD, nep92_n40 W-run [6,20] src 0, (u,v) = (0,19): segment 0->19 used, left for 0->24->19 (Even edge 24->19 present only then), used again. Corpus 16,500 violations, all availability.
 - (box 47, successor 26, 11:13Z) CONJECTURE XD-1 (≤ 1 X_dir per {u, u′}-run): FALSE on experiments/new/box47/instances/pp2_n19.pg (sha1 97b5b132…),
   𝒞^2O, S3, phase [1, 3], D = {1}, {0}, {1}; length-only values (cycle node 9). Obstruction: each X_dir needs only an Even switch on each
   terminal's own play (XD-CAUSE). Also FALSE: "no X_dir after the phase's first W-honest state" (xdhon_n13, sha1 9d2d9ca2…, S3, state 0 W-honest, D = {12}).

@@ -1,0 +1,14 @@
+== tie_k6
+red/r173/instances/tie_k6.start: OK
+OINK OK
+n5b: states 9 iterations 8 fallbacks 0 | n5.py (si.py engine): iterations 8 fallbacks 0 states logged 9
+state sequences identical: True
+PORTAL tie_k6.pg n 26 K 8 pairs 0 premised 0 odd_even 0 tie 0 VIOLATIONS 0
+[    0.00] solution verified (10 strategies).
+== pair_d20
+red/r173/instances/pair_d20.start: OK
+OINK OK
+n5b: states 26 iterations 25 fallbacks 4 | n5.py (si.py engine): iterations 25 fallbacks 4 states logged 26
+state sequences identical: True
+PORTAL pair_d20.pg n 20 K 25 pairs 11 premised 0 odd_even 0 tie 0 VIOLATIONS 0
+[    0.00] solution verified (14 strategies).
