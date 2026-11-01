@@ -1,0 +1,2 @@
+new/box116/inst/fbg_K12_m6_m24.pg n 290 start_ok True N5_iters 404 oink_exit 0 oink_verified True regions_equal True evenwins 0
+n5-epoch/instances/lend107_n32.pg n 32 start_ok True N5_iters 112 oink_exit 0 oink_verified True regions_equal True evenwins 32

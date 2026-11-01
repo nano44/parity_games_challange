@@ -1,0 +1,16 @@
+MODE files $SCRATCH/alst.lst 0 experiments/ MAXT 5000 BF 0
+INC: 2895
+OPT_checks: 14662
+SQZ_checks: 256371
+climb: 3216
+fallbacks: 266
+runs: 94
+runs_INC0: 16
+runs_exceed_n-1: 25
+starts_valid: 94
+transitions: 3411
+max BG_over_n: 2.875
+max SG_over_n: 3.375
+max maxWchPerPhase: 121
+RESULT PASS violations 0
+EXIT 0

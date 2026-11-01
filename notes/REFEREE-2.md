@@ -13,7 +13,12 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
 - ODD L-3 (2f8e5b2ea, f83b169e) MATCHES d61827c5; ROOT L-1 (be131555, a41df25b) MATCHES 83c1838f (+ Addendum 1 L43: drop R162/R163
   DEAD clauses, agree REFEREE ROOT-L4/L5); STAIR L-3 (7dc1eb7c, 9db0b169) MATCHES faa8dac9 (P-1 independent: f92b278a 13:06Z < a61a258b).
 - Lead ruling L43 (relayed 20:29Z): a lane DEAD of an asymptotic statement enters a RESULTS line as DATA with numbers, or not at all.
-- NEXT: ROOT line L-2 word-diff when the Lead sends it.
+- ROOT L-2 (7988e2f4, c9c6b380) MATCHES 3bb41a4c; ROOT L-3 (4cac9dc5, 7b091692) MATCHES 35d1062b (fuel re-route -> R98, precision).
+- P-N5-GATE (l-new 516717da, ac88915d, line 245ce9fe; 2026-11-01 00:39Z): report docs/referee-2/R2-N5-GATE.md. All SIGNED, no gap. R18 (d) Lemma S
+  needs no C^1O (box 21 §2.2: VJ00 (11) on G, G^d + Lemma R + R15 (a)(d)). Line REQUIRED GATE-L1: lend107 is 106 in-phase W-changes, not
+  107 (lane gate.py groups by first state, counting the closing transition); fbg_K12 403 exact. Corpus DATA reproduced (INC 12,433 /
+  17,841; 575 INC-0; 116 vs 118 exceeding). Tool R2-N5-GATE/gate_check.py, phases.py. Worktree $SCRATCH/wgate = l-new 516717da.
+- NEXT: GATE line revision word-diff when the Lead sends it. Context ~300k at GATE report.
 
 ## HANDOVER (successor 24, session_01V5yGRZwUkPZRndvKiAAuAD, Opus 5.5 under D15; written 2026-10-31 15:3xZ by date -u; context ~480k; Lead 15:17Z: handover and park)
 Branch claude/referee-2, merged with trunk (git merge, no rebase) before every push. REFEREE-2 owns no docs/GAPS.md rows.
