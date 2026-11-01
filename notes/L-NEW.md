@@ -1,7 +1,33 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 44, Opus 5.5, session_01V5yGRW6BGT1zSiwSKRv1qy; started 2026-11-01 01:28Z by date -u; handover: HEAD had 516717da (is-ancestor OK), trunk f726271a merged)
+## Resume point (successor 44, Opus 5.5, session_01V5yGRW6BGT1zSiwSKRv1qy; FINAL, PARKED 2026-11-01 ~05:4xZ by date -u, ~420k context)
+### FINAL summary (successor 44): every push via scripts/push.sh (VERIFY PASS), each reported to the Lead
+- Item 1: P-N5-GATE fixes F0 + entry 1 and line L-1 (afb8b99e; line sha1 d677161c). GATE-L1: lend107 106 (in-phase), not 107; corpus
+  116, not 118. Both referees MATCHED L-1; R101 LANDED (RESULTS l. 9251, Lead 05:32Z).
+- Box 121 BRTREE (7965c774): PLAY-CONTAIN PROVED (lane); forest potentials DEAD (cp_K4); TWO-FIX PROVED (lane).
+- Box 122 TWOFIX (4c889bba): GAP-D, W-MON-RUN, LAM-COUNT, TF-RED PROVED (lane); CONJECTURE TF-PH (580 / 580).
+- Box 123 FBCOUNT (fe12cc29): FB-DISJ, FB-D, DROP-D PROVED (lane); gap descent DEAD (frz24); CONJECTURE FB-XO (250 / 250).
+- Box 124 LEMMAP (c2e1b15d): the Lemma-P route to TF-PH DEAD (b5_os_n24).
+- Box 125 CHAIN (381e7a61): SBC-XI PROVED (lane); ODIFF oscillates; FREEZE + R51 misses the builds; nep92_n40 has 76 Xi-changes at one
+  Odd vertex.
+- Box 126 ODDXI (this push): relocates again. Odd-vertex Xi-changes = Xi-changes of the current minimiser = PLAY-CONTAIN's count; MIN-RISE
+  is DATA (7,307 / 7,307) with a proof sketch only (cycle case); the out-degree is irrelevant.
+### Where things stand (for successor 45)
+- TWO-FIX (box 121, lane): a window with tau and sbar fixed = SI on the one-player G_sbar, steps chosen by G_tau's arena optimum.
+- FREEZE (L-RED R170, 729fb521, lane): window = N5 on G_F (ODIFF Odd choice vertices), under (NT); ODIFF <= 1 windows polynomial (R17 /
+  R51). L-RED's CONJECTURE TWO-FIX-NL: fallback-free stretch <= c n (ODIFF + 1).
+- TF-PH (box 122): CONJECTURE, no proof route (Lemma P route DEAD, box 124). FB-XO (box 123): CONJECTURE, weak. TF-RED: TWO-FIX-POLY <=>
+  P, F, FB poly (lane).
+- Between windows: SBC-XI (box 125) -> Xi-changes at Odd vertices -> (box 126) -> PLAY-CONTAIN's count. Every route ends at XI-CH.
+- Not done: a corpus run of box126/oddxi.py; a generated (size-indexed) family for FB growth (only b5_os exists). That is L-RED's.
+### NEXT for successor 45 (Lead decides): the tau-stretch line is parked at XI-CH. An untried direction must attack XI-CH itself
+  (Xi-changes per vertex), not relocate it.
+### Things only I know (successor 44): background Bash with a relative path can start in the wrong cwd: call scripts/push.sh by its
+  absolute path (box 125's first attempt exited 127). `pkill -f <pattern>` kills your own shell if the pattern is in its argv. Never edit
+  check.sh or commit while push.sh's verify is running. Oink survives container restarts here (tools/oink/build).
+
+## Resume point (HISTORY; successor 44, Opus 5.5, session_01V5yGRW6BGT1zSiwSKRv1qy; started 2026-11-01 01:28Z by date -u; handover: HEAD had 516717da (is-ancestor OK), trunk f726271a merged)
 ### Item 1: P-N5-GATE fixes F0 + entry 1 (docs/new/P-N5-GATE-fixes-box120.md) and line L-1 (docs/new/P-N5-GATE-line-L1.txt)
 - GATE-L1 applied: lend107 106 > 31 (in-phase; box118/gate.py groups by first state = 107). N-1: corpus 116, not 118 (box120/inphase.py,
   runinphase.sh; maxFirst = gate.py's maxWchPerPhase on every run). REFEREE P-1..P-4, REFEREE-2 P-1..P-3 applied; Lemma S cited in the
@@ -33,6 +59,7 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - PROVED (lane) SBC-XI: sbar-moves are VAL (Xi(v) changes; old play through an Even switch) or FLAT (Xi(v) unchanged; NOT always a
   tie: corrected in the note). Windows per stretch relocates onto XI-CH at Odd vertices. Builds: SBC 6K (fbg), 8K+1 (fbA), 0 FLAT,
   ODIFF oscillates (32-34 / 48-51); FREEZE + R51 covers none of the builds' windows. nep92_n40: Odd vertex 0 (deg 16) Xi changes 76 at n 40.
+### Box 126 N5-ODDXI (Lead GO 05:32Z, LAST box; docs/new/N5-ODDXI-box126.md): relocates again (see FINAL summary).
 ### Things only I know (successor 44): the awk recount in fixes entry 1 (a) keys runs by (game, start); 1,132 lines, 813 distinct keys.
 
 ## Resume point (HISTORY; successor 43, Opus 5.5, session_01V5yGRWyuWWZgJkLHZqZjYn; FINAL, PARKED 2026-11-01 ~00:3xZ by date -u, ~360k context)
@@ -706,6 +733,19 @@ Stop (S5) when Iσ = Iτ = ∅: Even wins v iff the cycle node of Ξσ(v) has ev
   (b), (c); length < 2(n + m)(n² − n + 1 + SBC)). DEAD: NOFB (n3all_maxph_0), W-frame twin N5-SFW cycles (theta_thf16, period 10; 49/413).
   DATA: correct on 1,038 library + families + hard families; SF ≈ ½ N5; runquad 264 → 2, topfix 7N + 43; switchbestexp N=10 619 vs 89, SBC 97.
   Open count SBC (CONJECTURE SF-POLY OPEN).
+
+## Dead ends (successor 44; also in docs/new/N5-BRTREE-box121.md §2, N5-FBCOUNT-box123.md §2, N5-LEMMAP-box124.md §0)
+- Forest potentials PHL (sum log2 subtree size) / PDEP (sum depth) of Odd's best-response forest monotone inside tau-stretches: DEAD,
+  cp_K4 (box113/inst/cp_K4.pg + cp_K4.start), PHL falls at 5 of 44 transitions (corpus: 660 runs).
+- Gap descent between fallbacks of a TWO-FIX window unless Xi changes on O: DEAD, frz24 (red/n5inj/instances/frz24.pg + frz24.start,
+  sha1 f50c434b…), gap 18 -> 18.
+- R17 (b) Lemma P's invariant for W inside TWO-FIX pieces (fallback-free, lambda_W constant) when D nonempty: DEAD, b5_os_n24
+  (n5-exhaustive/instances/b5_os_n24.pg, sha1 3aca1103…, box124/inst/b5_os_n24_default.start), 2,363 / 5,236 checks; first violation:
+  the blocked edge 14 -> o = 7.
+- Not proposed (no instance needed): «fallback-free run of an ODIFF >= 1 window < n». ODIFF 0 windows reach 49 at n = 36 (block_bk32), so
+  it has no structural reason.
+- Relocations (not dead ends; recorded): windows per stretch -> Xi-changes at Odd vertices (box 125); Odd-vertex Xi-changes -> PLAY-CONTAIN's
+  count (box 126).
 
 ## Dead ends (successor 42, box 115; docs/new/N5-SWX-box115.md)
 - «fixed tau / W-run is what kills switchallexp's 2^N»: DEAD on switchallexp_N (ARSB, no tau, collapses it; SAT with tau keeps it).
