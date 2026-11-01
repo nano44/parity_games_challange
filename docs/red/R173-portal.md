@@ -19,7 +19,7 @@ Not a TARGET.md claim. G-N5-TIME stays OPEN. Nothing here is a counterexample.
   - a play from X that runs back through h or the prefixes (h on its own cycle).
   These four are the only routes left for a bounded-ODIFF quadratic window. §4 says why the first two do not help directly.
 - DATA (§3):
-  - Corpus: 1,132 runs, 0 same-portal move pairs.
+  - Corpus: 1,132 runs (= 813 distinct game/start pairs on 719 games, RESULTS Erratum E-1; 319 repeats), 0 same-portal move pairs.
   - Climbs (climb173, 16 runs, n 16-36, ≤ 40,000 mutations each) find same-portal pairs in 3 runs, at most 11 per run. In every one of them ZC fails:
     X's Ξ-cycle node moves between the two moves. Most of them also fail NR.
   - VIOLATIONS 0 everywhere.
@@ -114,7 +114,7 @@ Not a TARGET.md claim. G-N5-TIME stays OPEN. Nothing here is a counterexample.
 ## 3. DATA
 | set | runs | same-portal pairs | ZC | NR | premised | violations |
 | --- | --- | --- | --- | --- | --- | --- |
-| box 53 corpus (as red/r170/runcorp.sh) | 1,132 | 0 | — | — | 0 | 0 |
+| box 53 corpus (as red/r170/runcorp.sh) | 1,132 runs (813 distinct, E-1) | 0 | — | — | 0 | 0 |
 | runquad_K3_m4_n54 (h's options are ODIFF vertices C_i: distinct classes) | 1 | 0 | — | — | 0 | 0 |
 | climbs c_* (12; score K + pairs; the first 4 had a flat score) and d_* (4; + ZC / NR credit), n 16-36 | 16 | ≤ 11 per run (3 runs with pairs) | 0 | ≤ 9 | 0 | 0 |
 | tie_k6 (mktie.py 6 0; 8 index permutations) | 8 | 0 (h keeps c1: exact tie) | — | — | 0 | 0 |

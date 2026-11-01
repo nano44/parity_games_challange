@@ -68,7 +68,10 @@ def analyze(g, st, verb=False, cap=10 ** 6):
                      all(not (pre & play(s1(j, "W"), X, n)) for j in range(j1, j2 + 1))
                 zc += len(zs) == 1; nrc += nr
                 if len(zs) != 1 or not nr:
-                    if verb: print(f"  pair h {h} j {j1},{j2} X {X} premise ZC {len(zs) == 1} NR {nr}")
+                    if verb:
+                        th1, th2 = wv(j1)[X][0], wv(j2)[X][0]; w2 = wv(j2)
+                        zl = [pr[xv(j)[X][0]] for j in range(j1 - 1, j2)]
+                        print(f"  pair h {h} moves {i0}->{i1}@{j1} {i1}->{i2}@{j2} X {X} premise ZC {len(zs) == 1} NR {nr} theta {pr[th1]}->{pr[th2]} Z {zl} Wtie {EW.key(w2[i1]) == EW.key(w2[i2])} Wstrict {EW.key(w2[i2]) > EW.key(w2[i1])}")
                     continue
                 ok += 1
                 th1, th2 = wv(j1)[X][0], wv(j2)[X][0]

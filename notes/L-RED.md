@@ -1,5 +1,5 @@
 # L-RED notebook (independent adversary lane)
-Successor 41 (session_01V5yGRa8VX4VrSzMTZfKctP, Opus 5.5) started 2026-11-01 06:24Z (date -u); R173 (a): Lemma PORTAL; see "Successor 41".
+Successor 41 (session_01V5yGRa8VX4VrSzMTZfKctP, Opus 5.5) started 2026-11-01 06:24Z (date -u); R173 (a): Lemma PORTAL; R174 (Z): PHASE-PORTAL, SELF; see "Successor 41".
 Successor 40 (session_01V5yGRZzQMY5djbFkvKqE6d, Opus 5.5) started 2026-11-01 02:51Z (date -u); R170 (TWO-FIX: FREEZE), R171 (FB per window: no FB >> n), R172 (TF-PH DEAD); PARKED ~06:1xZ; see "Successor 40 PARK".
 Successor 39 (session id: see docs/NOW.md roster, Opus 5.5) started 2026-10-31 20:56Z (date -u); R167, R168, R169; PARKED; see "Successor 39".
 Successor 38 (session_01V5yGRZkXge7F2DR4joW3DU, Opus 5.5) started 2026-10-31 12:12Z (date -u); R162 DESC-LIN, R163 DESC*, D-ODD-1 starts, R164 switch-all counter vs N5; see "Successor 38".
@@ -55,6 +55,21 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
     λ_Ξ(X) changes (Z), or self-cycles (C).
   - DATA: corpus 0 same-portal pairs; 16 climbs found pairs in 3 runs, all with ZC failing; 0 violations; tie_k6: N5 keeps σ(h) on the
     exact τ-tie.
+- R174 docs/red/R174-zroute.md (Lead GO 07:48Z, route (Z)):
+  - R88 check: λ_Ξ is constant on a frozen W-phase by definition only. TWO-FIX fallback-free stretches do change λ_Ξ(X) (pair_d20:
+    33 → 31 → 19 → 4).
+  - PROVED (lane) PHASE-PORTAL: under TH (same W-node θ at X at both moves) + NRW, if i_2 was Ξ-improving at the first move, the second
+    move is an exact tie. Inside a λ_W-phase, W-strict climbs are Ξ-gated, and with ZC that needs a λ_Ξ(X) change.
+  - PROVED (lane) SELF: if the top counted vertex (above Z) of prefix(i_0) Δ prefix(i_2) favours i_2, the gate is open, so the climb is
+    flat.
+  - READING: the two-pivot Ξ-cycle ping-pong (pivot's level node = top of its own prefix) meets SELF's hypothesis in both parities. The
+    waves themselves work (P-set relay above the partner's node).
+  - DATA: de-duplicated corpus 813 runs (E-1): 0 same-portal pairs, max W-strict same-portal run 1; 4 zcl climbs ≤ 2 moves, always
+    with WCH = moves − 1.
+  - R173 note's corpus line de-duplicated per E-1.
+- RESUME POINT (after R174): Ξ-gating by an external source (a third structure whose Ξ-cycle rises once per wave, not a pivot's own
+  cycle), or route (C) (moves while h is on X's play). Level-specific vertices on a pivot's cycle outside its prefix: a selector that is
+  itself a climber (PHASE-PORTAL applies to it).
 - My design dead ends (all on paper, this box; recorded so nobody repeats them):
   - (i) Shared portal X for h's options plus a cumulative marker chain {u_1..u_x} with padding, so that h climbs one level per step of
     θ = node(W(X)). It dies by PORTAL (Ξ and W count the same prefix markers above the higher of Z, θ; the length rules conflict).

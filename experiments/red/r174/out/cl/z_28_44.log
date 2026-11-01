@@ -1,0 +1,18 @@
+it 19 score 1004 {'moves': 1, 'span': 0, 'odiff': 0, 'zch': 0, 'wch': 0, 'h': 4, 'X': 7, 'K': 4}
+it 33 score 1005 {'moves': 1, 'span': 0, 'odiff': 0, 'zch': 0, 'wch': 0, 'h': 4, 'X': 7, 'K': 5}
+it 102 score 1006 {'moves': 1, 'span': 0, 'odiff': 0, 'zch': 0, 'wch': 0, 'h': 4, 'X': 7, 'K': 6}
+it 118 score 1007 {'moves': 1, 'span': 0, 'odiff': 0, 'zch': 0, 'wch': 0, 'h': 4, 'X': 7, 'K': 7}
+it 146 score 1008 {'moves': 1, 'span': 0, 'odiff': 0, 'zch': 0, 'wch': 0, 'h': 4, 'X': 7, 'K': 8}
+it 365 score 1009 {'moves': 1, 'span': 0, 'odiff': 0, 'zch': 0, 'wch': 0, 'h': 4, 'X': 7, 'K': 9}
+it 16628 score 2019 {'moves': 2, 'span': 1, 'odiff': 0, 'zch': 1, 'wch': 0, 'h': 25, 'X': 24, 'K': 10}
+it 17502 score 2029 {'moves': 2, 'span': 2, 'odiff': 1, 'zch': 1, 'wch': 1, 'h': 25, 'X': 24, 'K': 10}
+it 18337 score 2039 {'moves': 2, 'span': 3, 'odiff': 0, 'zch': 1, 'wch': 1, 'h': 25, 'X': 24, 'K': 10}
+it 18892 score 2049 {'moves': 2, 'span': 4, 'odiff': 0, 'zch': 1, 'wch': 1, 'h': 25, 'X': 24, 'K': 11}
+it 19571 score 2059 {'moves': 2, 'span': 5, 'odiff': 0, 'zch': 1, 'wch': 1, 'h': 25, 'X': 24, 'K': 12}
+it 22792 score 2069 {'moves': 2, 'span': 6, 'odiff': 0, 'zch': 1, 'wch': 1, 'h': 25, 'X': 24, 'K': 10}
+it 25725 score 2079 {'moves': 2, 'span': 7, 'odiff': 1, 'zch': 1, 'wch': 1, 'h': 11, 'X': 24, 'K': 12}
+it 25748 score 2089 {'moves': 2, 'span': 8, 'odiff': 0, 'zch': 1, 'wch': 1, 'h': 11, 'X': 24, 'K': 13}
+it 27299 score 2099 {'moves': 2, 'span': 9, 'odiff': 0, 'zch': 1, 'wch': 1, 'h': 0, 'X': 24, 'K': 12}
+it 28209 score 2109 {'moves': 2, 'span': 10, 'odiff': 0, 'zch': 1, 'wch': 1, 'h': 0, 'X': 24, 'K': 14}
+it 28330 score 2119 {'moves': 2, 'span': 11, 'odiff': 1, 'zch': 1, 'wch': 1, 'h': 0, 'X': 24, 'K': 14}
+FINAL score 2119 {'moves': 2, 'span': 11, 'odiff': 0, 'zch': 1, 'wch': 1, 'h': 0, 'X': 24, 'K': 14}
