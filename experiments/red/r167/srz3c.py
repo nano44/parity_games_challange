@@ -35,7 +35,14 @@ rk = {x: z3.Int(f"rk_{x}") for x in SY}; ev = {x: z3.Bool(f"ev_{x}") for x in SY
 s.add(z3.Distinct(*rk.values())); s.add(ev["T"], pr["T"])
 for x in SY:
     s.add(rk[x] >= 0, rk[x] < 10000)
-    if x not in ("T", "QS", "T2", "T2S"): s.add(rk[x] < rk["T"])        # QS (hps's tau-bar value vs the root's) is free: under tau-bar hps
+    if x not in ("T", "QS", "T2", "T2S"): s.add(rk[x] < rk["T"])
+QFIX = os.environ.get("QFIX", "1") == "1"                   # R169: tau-bar values tied to the ladder (see paths()):
+t2hi = z3.Bool("t2hi")
+if os.environ.get("T2HI") == "1": s.add(t2hi)              # T2 realised as a direct edge to hp: tau-bar value V_K, an even rung above T
+if QFIX:                                                   # in-phase T2 (a rung's CURRENT level) is below the root; q's tau-bar
+    s.add(rk["T2"] < rk["T"], rk["QS"] < rk["T"], pr["QS"])  # value is T + QS (QS a band symbol); T2's tau-bar value is a higher even
+    s.add(z3.Implies(t2hi, z3.And(rk["T2S"] > rk["T"], ev["T2S"], pr["T2S"])), z3.Implies(z3.Not(t2hi), rk["T2S"] < rk["T"]))
+                                                           # rung T2S > T, or T + T2S with T2S < T        # QS (hps's tau-bar value vs the root's) is free: under tau-bar hps
                                                           # can reach the top ladder too
 esc = {(L, j): z3.Int(f"esc_{L}{j}") for L in LINES for j in range(1, J + 1)}
 for e in esc.values(): s.add(e >= 0, e <= (4 if EXT else 2))
@@ -52,6 +59,9 @@ if os.environ.get("UNIFORM") == "1":                       # period-2 shift-inva
             x, y = f"{c}{j}", f"{c}{j + 2}"
             s.add(rk[y] - rk[x] == Dz, pr[y] == pr[x], ev[y] == ev[x])
         for L in LINES: s.add(esc[L, j + 2] == esc[L, j])
+        if j >= 3 and j + 2 <= J: pass
+    for j in range(3, J - 1):
+        if j + 2 <= J: s.add(z3.Bool(f"hq_{j + 2}") == z3.Bool(f"hq_{j}"))
 TRUE = z3.BoolVal(True)
 def better(S1, S2):
     D = sorted(set(S1) ^ set(S2))
@@ -93,9 +103,14 @@ def graph(risen, pos, L3, mode="xi", armed=None):
 def paths(G, v, qsym):
     out = []
     def go(x, conds, syms, stack):
-        if x == "q": out.append((conds, syms + qsym)); return
+        tb = "QS" in qsym
+        if x == "q": out.append((conds, syms + ((["T"] + list(qsym)) if (tb and QFIX) else list(qsym)))); return
         if x == "T": out.append((conds, syms + ["T"])); return
-        if x == "T2": out.append((conds, syms + (["T2S"] if "QS" in qsym else ["T2"]))); return
+        if x == "T2":
+            if not tb: out.append((conds, syms + ["T2"]))
+            elif not QFIX: out.append((conds, syms + ["T2S"]))
+            else: out.append((conds + [t2hi], syms + ["T2S"])); out.append((conds + [z3.Not(t2hi)], syms + ["T", "T2S"]))
+            return
         if x in stack: return                                       # cycles: handled by cycles_ok (Odd never closes Even-won ones)
         for c, sy, nx in G[x][1]: go(nx, conds + [c], syms + sy, stack + [x])
     go(v, [], [], []); return out
@@ -209,6 +224,8 @@ for P, O in ((("A", "B"),) if ONE else (("A", "B"), ("B", "A"))):
                 track(z3.Implies(cfg, z3.And(*cons) if cons else TRUE), f"{tag}")
 if ITAU:   # I_tau = {}: at every Odd vertex with options, the alternative is not worse for Even than tau's edge, under tau-bar
     G = graph(set(), {"A": (1, H0), "B": (1, H0)}, {"A": "a", "B": "a"}, "tb"); q = ["QS"]
+    TBV = {"q": [(TRUE, ["T", "QS"] if QFIX else ["QS"])], "T": [(TRUE, ["T"])],      # tau-bar values of the sinks
+           "T2": [(t2hi, ["T2S"]), (z3.Not(t2hi), ["T", "T2S"])] if QFIX else [(TRUE, ["T2S"])]}
     for j in range(2, J + 1):
         for L in LINES:
             alt = paths({**G, "_x": ("O", [(TRUE, [f"A{j}", f"G{L}{j}"], f"L3m{L}" if MID else f"L3{L}")])}, "_x", q) if not MID else []
@@ -224,18 +241,19 @@ if ITAU:   # I_tau = {}: at every Odd vertex with options, the alternative is no
                 track(z3.Or(*[z3.And(cond(pa), *[z3.Implies(cond(pt), z3.Not(better(pt[1] + [f"A{j}"], pa[1]))) for pt in tau]) for pa in alt]), f"ITAU@aa{j}{L}")
         if STATIC:
             tau = paths(G, f"u{j - 1}", q)
-            for cnd, tg in ((hq[j], ["QS"]), (z3.Not(hq[j]), ["T2S"])):
-                track(z3.Implies(cnd, z3.And(*[z3.Not(better(pt[1] + [f"A{j}"], [f"A{j}", f"H{j}"] + tg)) for pt in tau])), f"ITAU@hh{j}")
+            for cnd0, tgk in ((hq[j], "q"), (z3.Not(hq[j]), "T2")):
+                for c2, tg in TBV[tgk]:
+                    track(z3.Implies(z3.And(cnd0, c2), z3.And(*[z3.Implies(cond(pt), z3.Not(better(pt[1] + [f"A{j}"], [f"A{j}", f"H{j}"] + tg))) for pt in tau])), f"ITAU@hh{j}")
     for L in LINES:
         for j in range(1, J + 1):
             tau = paths(G, f"u{j}", q)
-            for e, tgt in ((1, ["QS"]), (2, ["T"]), (3, ["T2S"])):
-                track(z3.Implies(esc[L, j] == e, z3.Or(*[z3.Not(better(pt[1] + [f"M{L}{j}"], [f"X{L}{j}"] + tgt)) for pt in tau]) if False else
-                      z3.And(*[z3.Not(better(pt[1] + [f"M{L}{j}"], [f"X{L}{j}"] + tgt)) for pt in tau])), f"ITAU@rho{L}{j}")
+            for e, tgk in ((1, "q"), (2, "T"), (3, "T2")):
+                for c2, tgt in TBV[tgk]:
+                    track(z3.Implies(z3.And(esc[L, j] == e, c2), z3.And(*[z3.Implies(cond(pt), z3.Not(better(pt[1] + [f"M{L}{j}"], [f"X{L}{j}"] + tgt))) for pt in tau])), f"ITAU@rho{L}{j}")
             al4 = paths(G, f"L3{L}", q)                     # escape into the line's own E3 head: max over Even's choices there
             track(z3.Implies(esc[L, j] == 4, z3.Or(*[z3.And(cond(pa), *[z3.Not(better(pt[1] + [f"M{L}{j}"], [f"X{L}{j}"] + pa[1])) for pt in tau]) for pa in al4])), f"ITAU@rho{L}{j}")
 r = s.check()
-print("J", J, "MID", int(MID), "THIRD", int(THIRD), "EXTTGT", int(EXT), "SKIP1", int(SKIP1), "STATIC", int(STATIC), "COPIES", int(COPIES), "ONEPHASE", int(ONE), "HPS0", H0, "ITAU", int(ITAU), "STAY", int(STAY), "->", r)
+print("J", J, "QFIX", int(QFIX), "MID", int(MID), "THIRD", int(THIRD), "EXTTGT", int(EXT), "SKIP1", int(SKIP1), "STATIC", int(STATIC), "COPIES", int(COPIES), "ONEPHASE", int(ONE), "HPS0", H0, "ITAU", int(ITAU), "STAY", int(STAY), "->", r)
 if r == z3.unsat:
     core = sorted(set(TRACK[b] for b in s.unsat_core())); print("unsat core:", core)
 else:
@@ -246,4 +264,5 @@ else:
         import json
         json.dump({"rank": {x: m.eval(rk[x]).as_long() for x in SY}, "even": {x: z3.is_true(m.eval(ev[x])) for x in SY},
                    "present": {x: z3.is_true(m.eval(pr[x])) for x in SY}, "esc": {f"{L}{j}": m.eval(esc[L, j]).as_long() for (L, j) in esc},
-                   "D": m.eval(z3.Int("D")).as_long() if os.environ.get("UNIFORM") == "1" else None, "J": J}, open(os.environ["MODEL_OUT"], "w"))
+                   "D": m.eval(z3.Int("D")).as_long() if os.environ.get("UNIFORM") == "1" else None, "J": J,
+                   "hq": {j: z3.is_true(m.eval(hq[j], model_completion=True)) for j in hq}}, open(os.environ["MODEL_OUT"], "w"))
