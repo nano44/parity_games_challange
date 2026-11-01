@@ -1,5 +1,5 @@
 # L-RED notebook (independent adversary lane)
-Successor 42 (session_01V5yGRZmYx9sPoeaSsLDoAg, Opus 5.5) started 2026-11-01 10:39Z (date -u); R177 (CDAG order as an FL run): TB canonical (R24), FL-IDX, CASC-G, LADDERBF, idealised two-face model; see "Successor 42".
+Successor 42 (session_01V5yGRZmYx9sPoeaSsLDoAg, Opus 5.5) started 2026-11-01 10:39Z (date -u); R177 (CDAG order as an FL run): TB canonical (R24), FL-IDX, CASC-G, LADDERBF, idealised two-face model; see "Successor 42"; R178 IDEAL model, XI-NEW.
 Successor 41 (session_01V5yGRa8VX4VrSzMTZfKctP, Opus 5.5) started 2026-11-01 06:24Z (date -u); R173 (a): Lemma PORTAL; R174 (Z): PHASE-PORTAL, SELF; R175: ODD-GATE; R176: topfix ODIFF-1 depth; PARKED; see "Successor 41 PARK".
 Successor 40 (session_01V5yGRZzQMY5djbFkvKqE6d, Opus 5.5) started 2026-11-01 02:51Z (date -u); R170 (TWO-FIX: FREEZE), R171 (FB per window: no FB >> n), R172 (TF-PH DEAD); PARKED ~06:1xZ; see "Successor 40 PARK".
 Successor 39 (session id: see docs/NOW.md roster, Opus 5.5) started 2026-10-31 20:56Z (date -u); R167, R168, R169; PARKED; see "Successor 39".
@@ -55,8 +55,11 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   - LADDERBF (exact): adversarial availability, 2-wide ladder, 8 / 22 / 52 = 2(2^(d+1) − d − 2) at d = 2..4. TB alone is exponential.
   - Idealised two-face model (τ, σ̄ fixed by fiat; abs177 = engine, fastabs = fast, fastver 0 mismatches): best FL 4 / 7 / 10 at d = 2..4;
     whole runs with S4c ≤ 3.6 n_E. CONJECTURE IDEAL-LIN (DATA).
-- RESUME POINT: beat ~3d FL in the idealised model (d = 3-4); then stabilisers (R175 §3 (ii)). Old routes: (C); D super-linear at
-  ODIFF ≥ 1.
+- R178 docs/red/R178-ideal.md (Lead GO 12:06Z, (a)): no super-linear family; best 2.7 FL/n_E (d 4: 32 at 12; d 8: 54 at 24); "3d" was
+  under-search; grow-by-level additive (top 32 → 64 at 12 → 24). Lemma XI-NEW PROVED (lane): the least-level mover of every FL step after
+  the first has a newly Ξ-available option (model 3,017 genomes 0 viol; corpus 19 checked 0 viol). IDEAL model stated precisely (§1).
+- RESUME POINT: hand-design a two-level replay in the IDEAL model (replayed segment containing its own bottom-triggered replay); then
+  stabilisers (R175 §3 (ii)). Old routes: (C); D super-linear at ODIFF ≥ 1.
 - Things only I know:
   - fastabs requires the Ξ-graph acyclic (xorder); abs177 does not. The real-game gate analysis (§5): (τ) is σ-independent (Ξτ is τ vs
     τ̄); top-of-Ξ-order gates are forced single-faced.
