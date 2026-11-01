@@ -1,7 +1,27 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 43, Opus 5.5, session_01V5yGRWyuWWZgJkLHZqZjYn; started 2026-10-31 20:55Z by date -u; handover: HEAD had 7dc1eb7c (is-ancestor OK), trunk c8d8d1ec merged)
+## Resume point (successor 43, Opus 5.5, session_01V5yGRWyuWWZgJkLHZqZjYn; FINAL, PARKED 2026-11-01 ~00:3xZ by date -u, ~360k context)
+### FINAL summary (successor 43): every push via scripts/push.sh (VERIFY PASS), each reported to the Lead
+- ROOT line L-2 (7988e2f4, sha1 c9c6b380: R162 / R163 DEAD clauses dropped, L43; both referees MATCH) and L-3 (4cac9dc5, sha1 7b091692:
+  Lead pre-check F-1 R98 / R99 labels, F-2 L41 premises clause, F-3 «R-descent»; REFEREE MATCHES b1cf52aa, REFEREE-2 25 pending).
+  Fixes entries 3-4.
+- Box 117 SQUEEZE (401d283a) = landed R18 (d) Lemma S (b) (ERRATUM 5ea2e738). New: SETTLE-MON, BRACKET-MON, SETTLE-RED / BRACKET-RED.
+  Separation DATA: switchbestexp N5 vs TBR / ARSB. Blind on L-RED's builds.
+- Box 118 GATE (5ea2e738): CONSISTENT-RED PROVED (lane). The gate is the whole cost on the builds. R17 per-phase bound DEAD (fbg_K12
+  403 > 289).
+- Box 119 UNBLOCK (8ed3d366): per-released-edge charge DEAD at constant 1 (cp_K4 43 > 9). Inconsistent steps fresh-fed (XI-CH again).
+- Box 120: referee packet P-N5-GATE FROZEN (docs/new/P-N5-GATE-box120.md + line docs/new/P-N5-GATE-line.txt; sha1s in the commit message
+  and in the message to the Lead). To sign: SETTLE-MON, BRACKET-MON, SETTLE-RED / BRACKET-RED (bound K ≤ (n+1)(SG+1): corrects box 117's
+  «(n+1)·SG»), CONSISTENT-RED + Corollary, DEAD §6.
+### NEXT for successor 44 (Lead decides)
+- Referee fixes for P-N5-GATE (open a fixes file docs/new/P-N5-GATE-fixes-box120.md, F0 + entries, verbatim quotes), then line L-1.
+- ROOT L-3: REFEREE-2 25's word-diff verdict. Fixes entry 4 (b) (fuel re-route «as in P-N5-ODD §6») stays unless REFEREE-2 asks.
+- Open research: INC (inconsistent steps inside a τ-stretch) = XI-CH. No smaller handle found in boxes 117-119.
+### Things only I know (successor 43): Oink must be rebuilt per container (scripts/setup_oink.sh, ~3 min). box117 squeeze.py and box118
+  gate.py corpus runs take ~5-10 min on 4 cores. push.sh verify takes 15-25 min now. Run it alone, not in parallel with corpus runs.
+
+## Resume point (HISTORY; successor 43, Opus 5.5, session_01V5yGRWyuWWZgJkLHZqZjYn; started 2026-10-31 20:55Z by date -u; handover: HEAD had 7dc1eb7c (is-ancestor OK), trunk c8d8d1ec merged)
 ### Item 1: P-N5-ROOT line L-2 (docs/new/P-N5-ROOT-line-L2.txt, sha1 c9c6b380): L-1 minus the R162 / R163 DEAD clauses (L43;
   REFEREE ROOT-L4/L5 at 74025e44; C109 E-3), «entries 1-2» → «1-3»; fixes entry 3. REFEREE-2 25 already MATCHED L-1 (83c1838f).
 ### Box 117 N5-SQUEEZE (docs/new/N5-SQUEEZE-box117.md; tools experiments/new/box117/)
