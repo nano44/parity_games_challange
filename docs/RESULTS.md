@@ -9475,7 +9475,7 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   reduction of τ-stretch lengths to inconsistent steps; no bound on a run or on running time; no algorithm claim); not a step-4 pass.
   GAPS G-N5-TIME: open.
 
-### Erratum E-1 (2026-11-01 05:28Z by date -u; Lead; corpus counts in RESULTS R97-R100)
+**Erratum E-1** (not a result; 2026-11-01 05:28Z by date -u; Lead; corpus counts in RESULTS R97-R100):
 - What is wrong: the DATA-of-record sentences that say «1,132 games» for the L-SI box 50b / box 53 corpus (sbcg.lst 719 lines + alt_all.lst
   413 lines) count RUNS, not games. Measured by CHECKER (C111 N-7, claude/checker d53e1d4f) at trunk 68d50c8f: experiments/si/anc58/
   corpus_fixed.lst has 1,132 lines = 813 distinct (game, start) pairs on 719 distinct games; the 319 start-less lines of alt_all.lst are
