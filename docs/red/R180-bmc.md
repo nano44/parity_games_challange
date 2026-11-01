@@ -39,3 +39,22 @@ READING. Not a TARGET.md claim. G-N5-TIME stays OPEN.
 ## 3. Next
 - Faster exact search at d = 3: a bit-vector encoding, or symmetry breaking (ladder automorphisms, gate-order normal form).
 - Proof side: the d = 2 UNSAT is a finite certificate. Its unsat core could suggest the invariant behind IDEAL-LIN (not extracted here).
+
+## 4. Addendum 15:25Z: the unsat core of d = 2, L = 5 (Lead item 1, time-boxed at 30 minutes)
+- red/r180/bmc_core.py (CORE=1) tracks one constraint per (step, vertex) of the dynamics, plus one «something moves» constraint per
+  step. The core z3 returns is ALL of them: 20 dynamics constraints + 5 move constraints, with the structure constraints untracked.
+  So no step and no vertex can be dropped, and the core is not a readable invariant.
+- Per-vertex questions instead (red/r180/bmcq.py, horizon 8 steps, no «every step moves» requirement):
+
+| query | z3 |
+| --- | --- |
+| a top vertex (2 or 3) moves 3 times | sat |
+| a bottom vertex (0) moves twice | unsat |
+| a bottom vertex moves at step ≥ 3 | sat |
+| a top vertex moves at step ≥ 4 | sat |
+
+  - So each vertex can reach its own ceiling (top 3 moves; a bottom move can be late), but not all at once: the run is capped at 4.
+  - The obstruction is joint (timing between the vertices), not a per-vertex count.
+  - The «bottom moves twice» UNSAT is trivial: two options with static keys allow only one key-decreasing move.
+- Verdict: unreadable as an invariant; no input for L-NEW beyond «the cap is joint». The total-moves queries were stopped
+  unfinished (not decided).

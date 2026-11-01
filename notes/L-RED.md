@@ -63,6 +63,9 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   shrink find them fast; lassock re-checks without si.py.
 - R180 docs/red/R180-bmc.md: z3 BMC (r180/bmc.py, z3-solver 5.3.3 pip): IDEAL model on the d 2 ladder max run 4 over ALL structures
   (L 5 unsat; TB ceiling 8); LADDERBF chain realisable 3 steps; d 3 L 7-10 undecided after 35 CPU-min (runs left going).
+- R180 addendum: unsat core = the whole run (unreadable); per-vertex ceilings each reachable, cap is joint.
+- R181 docs/red/R181-flrun.md (Lead 15:06Z item 2): real L_FL does not grow (8 at n 32/48, 7 at 64) while gating changes per run grow
+  (to 294 at n 64, bulk changes at one transition); pins fl_s48, fl_s64. FL-ANCHOR loose here.
 - RESUME POINT: faster exact d 3 (bit-vectors, symmetry breaking); unsat-core for the IDEAL-LIN invariant; hand-design a two-level replay in the IDEAL model (replayed segment containing its own bottom-triggered replay); then
   stabilisers (R175 §3 (ii)). Old routes: (C); D super-linear at ODIFF ≥ 1.
 - Things only I know:
