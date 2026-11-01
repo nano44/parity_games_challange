@@ -74,6 +74,31 @@ abstract model only), DATA, READING, OPEN.
     - ITAU at the riders ρ_1–ρ_4 and at the static escapes hh_j (the self-referential escapes to q are τ-improving against τ̄).
   - Within that, MID adds CLOSEDm, and THIRD trades the restart core for the ITAU core.
 
+## 2b. [S4b-KEEP] instead of I_τ = ∅ (Lead 01:30Z, from L-SI box 62, claude/l-si d87527ecf, docs/si/N5-ITAU-box62.md: not opened by me)
+- L-SI's point: I_τ = ∅ is sufficient for τ to stay, but N5's S4b keeps τ whenever τ is Odd's optimum in H′ against σ. So R168's
+  «I_τ = ∅ alone UNSAT» did not exclude real runs.
+- srz3c KEEP=1 replaces ITAU by [S4b-KEEP]:
+  - For every Odd edge e other than τ's, a Bool inI_e ⇔ e ∈ I_τ, i.e. strictly worse for Even than τ's edge under τ̄ (max semantics, the
+    QFIX τ̄ values).
+  - In every state of the phase, in H′ (Odd keeps τ plus its I_τ edges, Even keeps σ), Odd must not strictly prefer an I_τ edge to τ's
+    edge.
+  - Ties are ignored, so KEEP as encoded is a RELAXATION of S4b: UNSAT stands, SAT is a candidate. It rests on S4b's optimality, which
+    L42 marks as not covered by R57.
+- Results (J 5; base = COPIES STATICESC SKIP1 HPS0 2 STAY E2STAY QFIX):
+
+  | options | restart | result | core |
+  | --- | --- | --- | --- |
+  | base | – | UNSAT | the wave groups (START, CLIMB, CLIMB2, CLOSED, OPEN, FLIP, NEXT), which carry the KEEP constraints |
+  | MID | – | UNSAT | waves incl. CLOSEDm@1/3 |
+  | MID | yes | UNSAT | waves incl. CLOSEDm@3 + IDLE-RESTART |
+  | THIRD | – | UNSAT | waves |
+  | THIRD | yes | UNSAT | waves |
+  | EXTTGT | yes | SAT (implied: the I_τ = ∅ model satisfies KEEP vacuously) | – |
+
+- So R168's result 3 survives with the correct S4b semantics, for this model:
+  - one phase without a restart is UNSAT under [S4b-KEEP];
+  - the only SAT family member is still the second-rung escape (EXTTGT).
+
 ## 3. Real-engine attempt (DATA)
 - mk169.py builds a game from a srz3c model:
   - mk167g graph, with static escapes per gate (target hps or t2);
@@ -88,12 +113,14 @@ abstract model only), DATA, READING, OPEN.
 - Not done: a redesign of E1 for the t2 edge; Oink / xeng on these builds (nothing to pin: no run of interest).
 
 ## DONE / FINDINGS / NEEDS
-- DONE: this note; r167/srz3c.py (MID, THIRD, EXTTGT, QFIX, T2HI, static-escape ITAU, uniform hq); r167/mk169.py; r167/e1search.py;
+- DONE: this note; r167/srz3c.py (MID, THIRD, EXTTGT, QFIX, T2HI, KEEP, static-escape ITAU, uniform hq); r167/mk169.py; r167/e1search.py;
   mk167g.py (t2, per-gate static target, escapes to t2 / E3 head); models/ext_J7_uniform.json, models/ext_J5_t2hi.json. WIP push 1534987a.
 - FINDINGS:
   - PROVED (solver, model only): mid-line gates are UNSAT with the restart and UNSAT with I_τ.
   - PROVED (solver, model only): a third, armed reactor option is UNSAT with I_τ.
   - PROVED (solver, model only): escapes to a second ladder rung make restart + I_τ SAT (J 5 and 7, uniform at J 7).
+  - PROVED (solver, model only, ties ignored): under [S4b-KEEP] the base, MID and THIRD are UNSAT. The one-phase core stands without
+    I_τ = ∅.
   - DATA: the SAT pattern is not realised in mkrw's E1 (5 iterations; E1-marker search |F| ≤ 11, E3 ≤ 1).
   - READING: the family's reading is NOT «all UNSAT». The open obstruction is the level-1 coupling. The proof side's lemma must use it
     or exclude second-rung escapes.

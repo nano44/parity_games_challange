@@ -136,6 +136,35 @@ def cycles_ok(G):
     for v in G: go(v, [], [], [])
     return cons
 TRACK = {}
+KEEP = os.environ.get("KEEP") == "1"                      # [S4b-KEEP] (L-SI box 62): tau stays iff it is Odd's optimum in H' (Odd: tau
+INI = {}                                                   # + I_tau edges; Even: sigma) at every state; I_tau against tau-bar
+def _ext(G, conds0, syms0, tgt, qsym):
+    return [(conds0 + pc, syms0 + ps) for pc, ps in paths(G, tgt, qsym)]
+def _strict_min(P1, P2):   # min P1 > min P2 (for Even): every available p1 beats some available p2
+    return z3.And(*[z3.Implies(cond(p1), z3.Or(*[z3.And(cond(p2), better(p1[1], p2[1])) for p2 in P2])) for p1 in P1])
+def ini(v, idx, G0):
+    """z3 Bool: Odd's edge idx (>= 1) at v is in I_tau (strictly worse for Even than tau's edge under tau-bar: max-semantics)."""
+    if (v, idx) in INI: return INI[(v, idx)]
+    TB = graph(set(), {"A": (1, H0), "B": (1, H0)}, {"A": "a", "B": "a"}, "tb"); q = ["QS"]
+    c0, sy0, t0 = G0[v][1][0]; c1, sy1, t1 = G0[v][1][idx]
+    Pt = _ext(TB, [c0], list(sy0), t0, q); Pa = _ext(TB, [c1], list(sy1), t1, q)
+    b = z3.Bool(f"inI_{v}_{idx}"); INI[(v, idx)] = b
+    s.add(b == z3.Or(*[z3.And(cond(pt), *[z3.Implies(cond(pa), better(pt[1], pa[1])) for pa in Pa]) for pt in Pt]))
+    return b
+def keep_cons(G):
+    H = {}
+    for v, (o, lst) in G.items():
+        if o == "O" and len(lst) > 1:
+            H[v] = (o, [lst[0]] + [(z3.And(c, ini(v, i, G)), sy, nx) for i, (c, sy, nx) in enumerate(lst) if i >= 1])
+        else: H[v] = (o, lst)
+    out = []
+    for v, (o, lst) in H.items():
+        if o != "O" or len(lst) < 2: continue
+        c0, sy0, t0 = lst[0]; Pt = _ext(H, [c0], list(sy0), t0, [])
+        for i in range(1, len(lst)):
+            c1, sy1, t1 = lst[i]; Pa = _ext(H, [c1], list(sy1), t1, [])
+            out.append(z3.Not(_strict_min(Pt, Pa)))              # Odd does not strictly prefer the I_tau edge in H'
+    return out
 SKIP1 = os.environ.get("SKIP1") == "1"
 E2STAY = os.environ.get("E2STAY", "1") == "1"
 def track(f, tag):
@@ -188,6 +217,7 @@ for P, O in ((("A", "B"),) if ONE else (("A", "B"), ("B", "A"))):
                 pos = {P: pp, O: opos}; L3 = {P: l3, O: ol3}
                 G = graph(risen, pos, L3); GW = graph(risen, pos, L3, "w")
                 cons = cycles_ok(G)
+                if KEEP: cons += keep_cons(G)
                 # O's restart at this transition (high now, low next)
                 flip = z3.And(z3.Not(lo[i]), lo[i + 1]) if not olo else z3.BoolVal(False)
                 otg = (1, H0) if (not olo) else opos
@@ -253,7 +283,7 @@ if ITAU:   # I_tau = {}: at every Odd vertex with options, the alternative is no
             al4 = paths(G, f"L3{L}", q)                     # escape into the line's own E3 head: max over Even's choices there
             track(z3.Implies(esc[L, j] == 4, z3.Or(*[z3.And(cond(pa), *[z3.Not(better(pt[1] + [f"M{L}{j}"], [f"X{L}{j}"] + pa[1])) for pt in tau]) for pa in al4])), f"ITAU@rho{L}{j}")
 r = s.check()
-print("J", J, "QFIX", int(QFIX), "MID", int(MID), "THIRD", int(THIRD), "EXTTGT", int(EXT), "SKIP1", int(SKIP1), "STATIC", int(STATIC), "COPIES", int(COPIES), "ONEPHASE", int(ONE), "HPS0", H0, "ITAU", int(ITAU), "STAY", int(STAY), "->", r)
+print("J", J, "KEEP", int(KEEP), "QFIX", int(QFIX), "MID", int(MID), "THIRD", int(THIRD), "EXTTGT", int(EXT), "SKIP1", int(SKIP1), "STATIC", int(STATIC), "COPIES", int(COPIES), "ONEPHASE", int(ONE), "HPS0", H0, "ITAU", int(ITAU), "STAY", int(STAY), "->", r)
 if r == z3.unsat:
     core = sorted(set(TRACK[b] for b in s.unsat_core())); print("unsat core:", core)
 else:

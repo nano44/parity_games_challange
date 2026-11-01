@@ -65,6 +65,7 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - R169 docs/red/R169-openlist.md (Lead GO 00:06Z, last box): srz3c.py. MID, THIRD: no rescue (UNSAT with I_tau). EXTTGT (escapes to a
   second ladder rung t2, e.g. t2 -> hp): restart + I_tau SAT at J 5 and J 7 (uniform). NOT realised: mk169 builds solve in 5
   iterations; e1search (400 E1 placements) |F| <= 11, E3 <= 1. The open obstruction is the level-1 coupling (not modelled).
+  [S4b-KEEP] (L-SI box 62) in place of I_tau = {}: base / MID / THIRD still UNSAT at J 5 (ties ignored); EXTTGT stays SAT.
 - RESUME POINT (successor 40): model the E1 / ladder side in srz3c (q's rise per phase, h / hp / t2 as real vertices with their own
   choices and the w_i / u_i waits), or redesign E1 for the t2 edge and realise models/ext_J7_uniform.json. Old items: gates reading E3 below its head; reactors with 3 options; escapes to targets other than
   q / T / a static q-escape; the E1 coupling. Inside the model everything per-step-re-armed is UNSAT once I_tau = {} is required.
