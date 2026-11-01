@@ -1,5 +1,5 @@
 # L-RED notebook (independent adversary lane)
-Successor 42 (session_01V5yGRZmYx9sPoeaSsLDoAg, Opus 5.5) started 2026-11-01 10:39Z (date -u); R177 (CDAG order as an FL run): TB canonical (R24), FL-IDX, CASC-G, LADDERBF, idealised two-face model; see "Successor 42"; R178 IDEAL model, XI-NEW; R179 ODIFF Ξ-changes exist.
+Successor 42 (session_01V5yGRZmYx9sPoeaSsLDoAg, Opus 5.5) started 2026-11-01 10:39Z (date -u); R177 (CDAG order as an FL run): TB canonical (R24), FL-IDX, CASC-G, LADDERBF, idealised two-face model; see "Successor 42"; R178-R182; PARKED ~17:0xZ, see "Successor 42 PARK".
 Successor 41 (session_01V5yGRa8VX4VrSzMTZfKctP, Opus 5.5) started 2026-11-01 06:24Z (date -u); R173 (a): Lemma PORTAL; R174 (Z): PHASE-PORTAL, SELF; R175: ODD-GATE; R176: topfix ODIFF-1 depth; PARKED; see "Successor 41 PARK".
 Successor 40 (session_01V5yGRZzQMY5djbFkvKqE6d, Opus 5.5) started 2026-11-01 02:51Z (date -u); R170 (TWO-FIX: FREEZE), R171 (FB per window: no FB >> n), R172 (TF-PH DEAD); PARKED ~06:1xZ; see "Successor 40 PARK".
 Successor 39 (session id: see docs/NOW.md roster, Opus 5.5) started 2026-10-31 20:56Z (date -u); R167, R168, R169; PARKED; see "Successor 39".
@@ -40,6 +40,32 @@ Successor 15 PARKED ~09:40Z 2026-10-25 after box 38; RESUME POINT for successor 
 context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older notebook: `git show b0884407:notes/L-RED.md`.
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
+
+## Successor 42 PARK (2026-11-01 ~17:00Z, date -u; context ~470k)
+- DONE (claude/l-red, push.sh VERIFY PASS each): 95ff289b (R177), e03b15a6 (R178), a612b0a5 (R179), 86ee0e5a + ef430d72 (R180),
+  a2bb9bb6 (R180 §4, R181), final push (R182 + this section).
+- RESULTS (lane level; G-N5-TIME OPEN):
+  - R177: S1's tie-break = RESULTS R24 (b) TB (odd W-cycle index-min, even root-first lex-min), DATA on every game. FL-IDX, κ-MON, CASC-G,
+    UP PROVED (lane). LADDERBF exact ceiling 2(2^(d+1) − d − 2). IDEAL two-face model.
+  - R178: IDEAL model stated (§1); best 2.7 FL / mover; growth additive; Lemma XI-NEW PROVED (lane); CONJECTURE IDEAL-LIN.
+  - R179: Ξ-changes at ODIFF vertices inside real FL runs exist (odxi_min_n12 on 𝒞^1O, odxi_lasso_n13, odxi_many_n32).
+  - R180: z3 BMC, d = 2 ladder max IDEAL run 4 (L 5 UNSAT) vs ceiling 8; unsat core = whole run; d = 3 undecided.
+  - R181: real L_FL ≤ 8 at n 16-64 (falls / n), gating per run rises in bulk; pins fl_s48, fl_s64.
+  - R182: route (C): Lemma C-STATIC PROVED (lane): ≤ deg − 1 W-strict same-portal moves per λ_W-phase without NR / ZC, given NOPRE. Open
+    escape: NR-CYC with θ on the cycle-sitting option's prefix tail.
+- RESUME POINT / QUEUE (Lead 16:36Z):
+  - faster exact d = 3 in the IDEAL model (bit-vectors, symmetry breaking; bmc.py is the int encoding and stalls at d = 3);
+  - the two-level replay (IDEAL model; R178 §3 champion shows a one-level replay);
+  - super-linear D at ODIFF ≥ 1 (R176 topfix is linear);
+  - (new, R182 §2) the NR-CYC sub-case: θ in the private prefix of an option on X's W-cycle, flips driven by X's path to u.
+- Things only I know:
+  - fastabs (acyclic Ξ) and fastcyc (Ξ-cycles) equal the si.py engine on random genomes and every champion (fastver / fastver2); use them,
+    not abs177, for search speed. Climbs under-search badly: 10× budget moved d 4 from 22 to 32.
+  - z3-solver 5.3.3 is pip-installed in this container only; check.sh skips R180 without it.
+  - The «2-move route-(C)» c2 instance was a fallback-flag bug (F[j − 1] vs F[j]); cscore.py is fixed. freeze.run's F[j] is transition j.
+  - Killing by «ps | grep pattern» also kills a parent shell whose command line contains the pattern (exit 144 on bmcq). Grep for the
+    exact python argv.
+  - Corpus pins without a start file use the default S3 start; written out in r177/r179/r181/r182 instances.
 
 ## Successor 42 (Opus 5.5, D1/D18; started 2026-11-01 10:39Z, date -u)
 - Start: local clone stale at 99601394; ls-remote, fetched l-red / l-new / trunk only; ff-only to 76601782 (is-ancestor OK); trunk
