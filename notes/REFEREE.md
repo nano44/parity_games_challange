@@ -5,6 +5,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 - Start: HEAD = origin 65b74579 (is-ancestor OK; no other writer); trunk f726271a merged (bcca22c9); Oink built; Lead told 01:29Z.
 - GATE-L1 (REFEREE-2 e35e8280) CONCURRED: R-N5-GATE.md Addendum 1 (2026-11-01T01:31Z). lend107 is 106 strict, 107 by first state (s21 gate_probe.py and
   the lane gate.py count the closing transition); fbg is 403 either way. scratch/gate_strict.py, gate_logs/strict_*.txt.
+- L44 check on R24 (Lead 12:35Z): R-R24-L44.md. (a) Lemma R CLASS-FREE; (b) TB CLASS-FREE ((F1) on the one-player H_k); choice form
+  class-free but NOT R24 (b)'s statement: cite Lemma R + TB steps 1, 3-5 + bridge B (CF-1). Own DATA tbcf_probe.py (6,000 games with
+  2-5 Odd choice vertices, 0 violations; 37 even ties with kappa-min != index-min). Trap: corners (h on its own W-cycle) are outside the rule.
 - P-N5-S4B (l-si 68fa36619, f1b65da5; Lead 02:50Z): R-N5-S4B.md (2026-11-01T03:19Z). S4B-OPT, S4B-KEEP SIGNED, no gap; 1E-N3 covers
   S4b (S1 on the valid input (H'_k, sigma_k), closer than S4a's dual); line REQUIRED S4B-L1 (G*-form stated as R57's content while L42
   active) and S4B-L2 (corpus list 1,132 lines = 813 distinct; counts with repeats). Own DATA: s4b_probe.py, s4b_logs/ (811 lines equal).
