@@ -40,3 +40,13 @@ Sources: REFEREE claude/referee 732198a9, docs/referee/R-N5-ANCHOR.md; REFEREE-2
 - §6 heading (both referees, L43): «DEAD: «Ξ at ODIFF vertices is constant (or O(1)) inside an FL run»» is replaced by «DEAD: «Ξ at ODIFF
   vertices is constant inside an FL run»». An O(1) bound is not a statement an instance can kill. The instances refute constancy, and
   odxi_many_n32's 43 changes are DATA only. The line already says «constant».
+
+## Entry 2 (2026-11-01, after both referees' word-diffs of L-1)
+Sources: REFEREE-2 claude/referee-2 f6b60cfc, docs/referee-2/R2-N5-ANCHOR-L1.md (relayed 19:07Z) and REFEREE claude/referee 0647ff33 §C
+(relayed 19:37Z). Both: L-1 NOT YET MATCHING for one REQUIRED item, the same on both sides; every entry-1 item otherwise met.
+### 2.1 ANCHOR-L1-1 (REFEREE-2) = ANC-L3 (REFEREE): κ is a free symbol in the line (REQUIRED)
+- R24 (b) uses indices and pk(v), not κ. The line now defines it at its first use, with REFEREE-2's phrase: «(κ := the vertex index if
+  x's W′-cycle node c is odd, and the root-first key, i.e. the indices of the play path from c to the option, c excluded, compared
+  lexicographically, if c is even; packet §1)» («; packet §1» appended per the Lead 19:37Z, meeting both wordings). The packet's §1 [RULE] already defines κ_j the same way; no packet change.
+- Line L-2: docs/new/P-N5-ANCHOR-line-L2.txt = L-1 with this parenthesis inserted after «the κ-least FULLY W′-optimal option»; nothing
+  else changes.
