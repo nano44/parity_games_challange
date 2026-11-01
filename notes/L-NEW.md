@@ -24,6 +24,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   (copied read-only into experiments/new/box134/inst/, pins box134/pincheck.txt). Referee notes go to a NEW fixes file
   docs/new/P-N5-ANCHOR-fixes-box134.md (append-only); the packet is frozen.
 - NEXT: box 134 research = a non-circular potential for the gate-overtake loop (await L-RED R180 unsat-core relay).
+### Box 134 N5-OVT2 (docs/new/N5-OVT-box134.md; experiments/new/box134/cmpw.py)
+- PROVED (lane): COMPARE-W (same anchor, cycle node off both prefixes => order depends only on prefixes + w), CYC-MONO (cycle node of
+  Xi at any vertex changes <= n-1 times per run, from R18 (d) Lemma S (a)), FL-ANCHOR' (FL run <= CAP (1 + SBCH + n^2 + FVCH); circular
+  only through full-value = cross-anchor / in-prefix anchors). DATA: 94/94 corpus flips PREFIX; CROSS only in odxi_n37 (1).
 ### Things only I know (successor 46): anchor.py's corpus run takes ~40 s on 4 cores; dcyc2.py keeps box 131's D edge set (path part
   of the Xi-play only) and adds the anchor-carried classification. Oink had to be rebuilt here (setup_oink.sh, ~2 min).
 

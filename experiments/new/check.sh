@@ -715,4 +715,10 @@ if grep -qxF "ANCHOR odxi_many_n32.pg n 32 RUNS 3 FL 8 EPOCHS 7 GCH 4 VIOL 0 LVL
 else
   echo "box 134 P-N5-ANCHOR pins check: FAILED"; exit 1
 fi
+w83=$(cd .. && python3 -I new/box134/cmpw.py new/box133/odxi_n37.pg new/box133/odxi_n37.start)
+if grep -qxF "CMPW odxi_n37.pg n 37 MOVES 65 FLIPS 45 PREFIX 44 CROSS 1 INPREF 0 CYCNODE 0 SAMEW 0 NONFLIP 5" <<<"$w83"; then
+  echo "box 134 CMPW: odxi_n37 order flips behind FL moves 44 PREFIX + 1 CROSS, SAMEW 0 (Lemma COMPARE-W): PASS"
+else
+  echo "box 134 CMPW check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
