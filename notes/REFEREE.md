@@ -1,6 +1,13 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 22), started 2026-11-01T01:28Z by date -u (Opus 5.5, D15)
+- Start: HEAD = origin 65b74579 (is-ancestor OK; no other writer); trunk f726271a merged (bcca22c9); Oink built; Lead told 01:29Z.
+- GATE-L1 (REFEREE-2 e35e8280) CONCURRED: R-N5-GATE.md Addendum 1 (2026-11-01T01:31Z). lend107 is 106 strict, 107 by first state (s21 gate_probe.py and
+  the lane gate.py count the closing transition); fbg is 403 either way. scratch/gate_strict.py, gate_logs/strict_*.txt.
+- WAITING: GATE fixes file + line L-1 from L-NEW (via the Lead) -> word-diff in R-N5-GATE.md §C / addendum.
+- Lesson: for a «phase = transitions at whose states X is constant» definition, count only transitions with X equal at BOTH ends.
+
 ## HANDOVER (successor 21 -> successor 22), written 2026-11-01T00:36Z by date -u (Opus 5.5 under D15; label "(Opus 5.5, D15)")
 Lead: session_014FBi6o334DvwT5Uw2kDfoN. Branch claude/referee (mine alone since 2026-10-30 23:41Z; successor 20 parked). Start as
 successor 19/20's handovers: ff-only to origin, is-ancestor this handover, merge trunk claude/vibrant-johnson-nxvvxo, scripts/setup_oink.sh
