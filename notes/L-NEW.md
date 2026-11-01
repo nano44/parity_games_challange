@@ -28,6 +28,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 ### Box 124 N5-LEMMAP (docs/new/N5-LEMMAP-box124.md; experiments/new/box124/)
 - DEAD: R17 (b) Lemma P's invariant for W inside TWO-FIX pieces (b5_os_n24 2,363 / 5,236; first: blocked edge 14 -> o = 7). Controls with
   D empty: 0 violations. TF-PH stays a conjecture with no proof route. Lead to choose: D-restricted invariant / drop TF-PH / tau-stretch level.
+### Box 125 N5-CHAIN (Lead GO 04:38Z; docs/new/N5-CHAIN-box125.md; experiments/new/box125/)
+- Read L-RED R170 (729fb521) Lemma FREEZE: window = N5 on G_F with ODIFF Odd choice vertices; ODIFF <= 1 polynomial (R17 / R51).
+- PROVED (lane) SBC-XI: sbar-moves are VAL (Xi(v) changes; old play through an Even switch) or FLAT (Xi(v) unchanged; NOT always a
+  tie: corrected in the note). Windows per stretch relocates onto XI-CH at Odd vertices. Builds: SBC 6K (fbg), 8K+1 (fbA), 0 FLAT,
+  ODIFF oscillates (32-34 / 48-51); FREEZE + R51 covers none of the builds' windows. nep92_n40: Odd vertex 0 (deg 16) Xi changes 76 at n 40.
 ### Things only I know (successor 44): the awk recount in fixes entry 1 (a) keys runs by (game, start); 1,132 lines, 813 distinct keys.
 
 ## Resume point (HISTORY; successor 43, Opus 5.5, session_01V5yGRWyuWWZgJkLHZqZjYn; FINAL, PARKED 2026-11-01 ~00:3xZ by date -u, ~360k context)
