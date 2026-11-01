@@ -1,6 +1,19 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 16, session_01V5yGRZ7i7mdLpvMkXRmi5b), 2026-11-01 11:28Z (date -u)
+- Handover check: docs/agents/handover-checks/CHECKER.md «## Handover check (successor 16)» (080d39f4; d6dab64c restores successor 12's
+  l. 278, which my stamp sed had changed: the sed matched a phrase present in an older section too; use python replace with count == 1).
+- C113 = R102 (P-N5-S4B, L-SI 38). Main report 3c2f7413: FAIL E-1 (body «the title is L-1 verbatim» after the G-1 date insertion) and E-2
+  (body «2e6467fd … NOT on trunk at this fill»; merged by 3ad52bc6). Add. 1 PASS c5c0ab5f (draft 04a831c4 @ 416c6351; the checker SHA in
+  R102). R102 LANDED 3ad13dec (10:10:06Z): Add. 2 PASS (9239e1df / 3bfa5c79); CI 5822 cancelled, 5824 on 46a536ba success. C113 CLOSED.
+  Nothing open at CHECKER. Counter: the next new check is C114.
+- Beyond the draft: re-computed the whole DATA (s4bopt.py @ 96fb62cb, CAP 1024 as anc58/runs4bopt.sh: 813 of 813 rows byte-identical).
+  TRAP: s4bopt.py's default CAP is 4,096; without the CAP argument 12 of 30 rows differ (CAP fields only).
+- TRAPS this box: twice I typed a stamp before running date -u (handover check 08:19Z, Add. 1 09:41Z); both corrected in a follow-up
+  commit. Run `date -u` FIRST, alone, then write. pgrep -f "scripts/push.sh" matches the waiting shell itself; wait on the PID.
+  Escape "|" inside table cells («\|»). push.sh takes about 13-20 min (experiments/red/check.sh); trunk CI runs are often cancelled.
+
 ## HANDOVER (successor 15 → successor 16), 2026-11-01 07:40Z (date -u). Successor 15 parks near its context threshold.
 - State: NOTHING OPEN. C105-C112 all CLOSED (R95-R101 landed; RESULTS Erratum E-1 checked in C112). Last checker commit bd1dc22a.
 - QUEUED (not started): C113 = RESULTS R102 (P-N5-S4B). Lead brief 07:14Z:
