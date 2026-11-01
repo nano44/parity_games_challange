@@ -1,4 +1,4 @@
-# Draft RESULTS R102 (Lead; first fill 2026-11-01T06:35:47Z by date -u, read in the same command as the fill of this file (subagent); on S4B line L-1,
+# Draft RESULTS R102 (Lead; first fill 2026-11-01T06:35:47Z by date -u, read in the same command as the fill of this file (subagent); on S4B line L-1, — LANDED in RESULTS 2026-11-01 10:09Z (CHECKER C113 c5c0ab5f PASS), after R101, before Erratum E-1
 docs/si/P-N5-S4B-line-L1.txt (l-si 96fb62cb3, sha1 95373010d54c69907308d224fa1111127055b8f5); packet, frozen line f8559b5e, L-1, fixes F0
 + entries 1-5, REFEREE's R-N5-S4B (successor 22's report 062cd734 and §C 2e6467fd) and REFEREE-2's R2-N5-S4B (1b9ef2e1) and
 R2-N5-S4B-L1 (0e8ae566) read at the origin heads fetched at the start of the fill, 2026-11-01 before 06:24Z (l-si 96fb62cb, referee
