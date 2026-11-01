@@ -1187,3 +1187,7 @@ case "$o" in *"OPTV 215 "*) ;; *) echo "box 63: mutation control: $o"; exit 1;; 
 o=$(awk '{for(i=1;i<=NF;i++){if($i=="STATES")a+=$(i+1); if($i=="CHECKED")b+=$(i+1); if($i=="OPTV"||$i=="S4AV")c+=$(i+1); if($i=="ODDFB")d+=$(i+1); if($i=="TAUNEW_EQ_RUN")e+=$(i+1)}} END{print a, b, c, d, e}' anc58/s4bopt_corpus.txt)
 [ "$o" = "7772 6719 0 36 7736" ] || { echo "box 63: s4bopt corpus totals: $o"; exit 1; }
 echo "si (box 63: S4B-OPT): PASS"
+# P-N5-S4B (FROZEN packet, box 63; line docs/si/P-N5-S4B-line.txt): must not change. Data pins: «box 63».
+echo "f1b65da522d927406a403ae5d023bb48ac73d022  ../../docs/si/P-N5-S4B-box63.md" | sha1sum -c --quiet
+echo "f8559b5e539a461a0fac89a5a9bf6f4432721c74  ../../docs/si/P-N5-S4B-line.txt" | sha1sum -c --quiet
+echo "si (P-N5-S4B pinned): PASS"
