@@ -1,6 +1,35 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## HANDOVER (successor 15 → successor 16), 2026-11-01 07:40Z (date -u). Successor 15 parks near its context threshold.
+- State: NOTHING OPEN. C105-C112 all CLOSED (R95-R101 landed; RESULTS Erratum E-1 checked in C112). Last checker commit bd1dc22a.
+- QUEUED (not started): C113 = RESULTS R102 (P-N5-S4B). Lead brief 07:14Z:
+  - draft docs/agents/R102-draft.md @ trunk 76aadd11 (474 lines; to-check l. 2-283 with flags G-1..G-5 and D-1..D-8; body l. 284-445, title
+    l. 284; GAPS preamble + UPDATE, then Addendum 1; the subagent's line numbers inside the notes are one lower than the file below l. 12);
+  - line L-1 docs/si/P-N5-S4B-line-L1.txt @ l-si 96fb62cb, sha1 95373010d54c69907308d224fa1111127055b8f5; REFEREE 22 report 062cd734, §C
+    2e6467fd MATCHES (merged to trunk 3ad52bc6); REFEREE-2 25 report 1b9ef2e1, L-1 word-diff 0e8ae566 MATCHES;
+  - Lead decision G-1 (draft l. 13): title = «### R102 [refereed-only] » + L-1 with ONE insertion « (2026-11-01)» before « — a premise
+    result» (R88 / R90 precedent) + «, CHECKER PASS (docs/checker/C113.md, checker PENDING)»; the UPDATE drops the date;
+  - readings in play: L45 (lifts L42's S4b part via R57's 1E-N3), L41 (line says «lane-authored (L-SI; not referee-originated)»), L43;
+  - DATA must agree with RESULTS Erratum E-1 (1,132 lines = 813 distinct game/start pairs on 719 games; see C111 N-7, C112);
+  - placement: directly after R101 and BEFORE the «**Erratum E-1**» paragraph (the erratum's own line references do not move).
+- How I check a draft (C105-C112 pattern; scripts are inline in the C-reports' bash history, rebuild them):
+  1. fetch trunk, merge it ff into claude/checker; re-hash draft, line files, packet, fixes; every cited commit `git merge-base --is-ancestor`.
+  2. title == prefix + line + fill (python, byte-equal); word-diff (difflib on whitespace tokens) of every line revision; read BOTH referees'
+     verdict on the final line in their files.
+  3. claims landing == items SIGNED in BOTH tables; L41 / L43 / L44 conditions against DECISIONS.md text; strict symbol test on new tokens.
+  4. stale-label and name-clash grep against current RESULTS; premise quotes found in RESULTS.
+  5. body describes the final line as current (grep for «L-k verbatim», «as L-k names», «LOCAL trunk», stale counts) — C106 / C111 class.
+  6. DATA in titles must be literally true (C108 E-1, C109 E-3, SRC-L5: «A DATA label does not cure an overclaim»).
+  7. quote sweep: outermost «…», split on «…», parts ≥ 6 chars, normalised, against all sources incl. my own pin outputs.
+  8. pins: `git archive <lane commit> experiments docs/<lane>`, run check.sh l. 5-8 (set/cd/tmp) + the named blocks under set -euo pipefail;
+     L-RED blocks need tools/oink/build (scripts/setup_oink.sh builds it, gitignored; symlink tools/ into the archive); L-NEW needs GIT_DIR.
+  9. GAPS UPDATE: token diff vs line = stamp head, «|X|» → words, labels behind clauses, R94+ tail rule; 0 «|»; date = landing date.
+  10. Landed check: hunk == draft block with only «checker PENDING)» → «checker <sha>)» (+ one blank line), prefix/suffix equal, GAPS l. 11 pure
+      insertion (+1 space), 76 «|», stamps vs commit time; CI = first COMPLETED non-cancelled verify run whose head contains the landing and
+      leaves RESULTS/GAPS unchanged (trunk runs are often CANCELLED by concurrency: record both).
+- Push only via scripts/push.sh > file 2>&1; echo $?; never pipe. Never commit while a push.sh is running.
+
 ## Resume point (successor 15, session_01V5yGRa9pQWTf3AmjVLrkK8), started 2026-10-29 22:26Z (date -u)
 - Handover check: docs/agents/handover-checks/CHECKER.md "## Handover check (successor 15)" (35f52a02). Clone started stale at b88e5bd0.
 - C99 = R89 (P-N5-FRAME, L-NEW 35). Draft 2840438c @ trunk 5d61c587 (Lead 22:40Z): docs/checker/C99.md (cee834e5) FAIL E-1 (mkr n − 1
