@@ -673,4 +673,10 @@ if grep -qF "EXP nep92_n40.pg n 40 K 98 WRUNS 9 MAXRUN 14 SRCS 360 XCH 964 BLK 9
 else
   echo "box 127 PARAM check: FAILED"; exit 1
 fi
+w76=$(cd .. && python3 -I new/box128/pcount.py new/box52/out/topfix_n10.pg new/box128/topfix_n10_default.start; python3 -I new/box128/witness.py new/box52/out/topfix_n10.pg new/box128/topfix_n10_default.start | head -1; python3 -I new/box128/pcount.py n5-exhaustive/instances/n4all_maxph_0.pg -)
+if grep -qF "PCOUNT topfix_n10.pg n 210 K 64 WIN 3 STRETCHES 3 MOVES 756 STRICT 756 FLAT 0 WORSE 0 FIRST 212 SAME 0 SAMEZCNR 0 PVIOL 0 DIFF 544 RET 252 STRICTDIFF 544 STRICTRET 252 STRICTSAME_NOZC 0 STRICTSAME_NONR 0 BVIOL 0 MAXSTRICT 36 MAXDIFF 35 MAXRET 18 LAMXI 70 NBSUM 366 MAXWINSTRICT 646 CORNER 9 WORSE_NOCORNER 0 STATVIOL 0 STATCORNER 0 PAID_XI 544 PAID_WONLY 0 LEADVIOL 24 MAXEXCESS 16 MAXMULTI 1 MULTI2 0 DEGVIOL 0 MAXRATIO 1.89" <<<"$w76" && grep -qF "WITNESS topfix_n10.pg n 210 window [6,64] stretch [6,64] h 192 (prio 67) STRICT 36 LC 20 EXCESS 16" <<<"$w76" && grep -qF "WORSE 1 " <<<"$w76" && grep -qF "CORNER 2 WORSE_NOCORNER 0 STATVIOL 0" <<<"$w76"; then
+  echo "box 128 PCOUNT: topfix_n10 h 192 36 W-strict moves > per-h (#X)(#ZC) bound 20 (hub re-entries); STATIC-TIE 0 violations; WORSE only at the comparison corner: PASS"
+else
+  echo "box 128 PCOUNT check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

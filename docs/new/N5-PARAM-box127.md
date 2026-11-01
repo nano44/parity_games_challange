@@ -49,7 +49,10 @@ through this fact. So the bridge to test is not «is the family affine» but «i
 - Obstruction (exact): the middle segment uses the Even edge 24→19. σ_k(24) = 20 at states 6-9, 19 at 10-16, 20 at 17-20: Even's
   vertex 24 switches 20 → 19 and back 19 → 20 inside ONE W-run, and the alternation is paid by that edge appearing and disappearing. In a fixed-graph parametric family edge availability does not change; here it
   is the whole dynamics. Pin: 50 violations, 27 of 360 (W-run, source) pairs, all Q2OFF (middle segment not followable at i or k).
-- Corpus DATA (box 125's corpus: box59 sbcg.lst 719 + si/root alt_all.lst 413 = 1,132 runs; c_sbcg.txt, c_alt.txt): 1,692 W-runs,
+- Corpus DATA, DE-DUPLICATED per Erratum E-1 (813 distinct (game, start) pairs on 719 games; added 2026-11-01 ~07:5xZ by date -u):
+  1,131 W-runs, 57,826 (W-run, source) pairs, ΣXCH 80,557, Σ(blocks − 1) 80,909; RET 0; 12,244 alternation violations in 114 pairs
+  (99 games; 1,493 (W-run, source) pairs); QOFF 8,255, Q2OFF 10,654, NEITHER 0. The run-level totals below count the 319 repeats twice.
+- Corpus DATA as first recorded (RUN totals, 1,132 runs; box 125's corpus: box59 sbcg.lst 719 + si/root alt_all.lst 413 = 1,132 runs; c_sbcg.txt, c_alt.txt): 1,692 W-runs,
   80,401 (W-run, source) pairs, ΣXCH 104,383, Σ(blocks − 1) 105,060; RET 0; alternation violations 16,500 in 158 games (1,802 pairs);
   every violation has q unfollowable at j (QOFF 9,913) or the middle segment unfollowable at i or k (Q2OFF 13,980); NEITHER 0.
   Max ΞCH_F(x) 63 (gate_K64_n581, n = 581).
