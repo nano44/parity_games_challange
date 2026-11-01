@@ -1162,3 +1162,19 @@ case "$o" in *"edge (124, 126) key (1, 145) count 4"*"STEPS 139 INC 131 "*"UNB 1
 o=$(awk '{for(i=1;i<=NF;i++){if($i=="STEPS")a+=$(i+1); if($i=="INC")b+=$(i+1); if($i=="UNB")c+=$(i+1); if($i=="SRCDN"||$i=="UNBKCH")d+=$(i+1)}} END{print a, b, c, d}' anc58/unblock_corpus.txt)
 [ "$o" = "17841 12433 6889 0" ] || { echo "box 61: unblock corpus totals: $o"; exit 1; }
 echo "si (box 61: UNBLOCK-KEY): PASS"
+# box 62 (Lead 00:06Z): I_tau != {} inside tau-stretches and W-runs (S4b keeps tau); Lemma ESC-SQUEEZE data at tau-stable states.
+echo "77f592fe0117b0dbc7e03f0771112342b5d320c2  ../n5-exhaustive/instances/n3all_maxph_0.pg
+ed221977791e59ceddefe2e3e95ee63cf389343b  ../n5-exhaustive/instances/n3all_maxph_0.start
+dd9847c6b19cb9f44af73bcc23de7ca2aca9a14c  ../red/h3/instances/lcount2_n23.pg
+7d3626aa4a6a80d59878fa442886473505390c17  ../red/h3/instances/lcount2_n23.start
+f87fee647f1c8b57f3466c0b68e7e284e3d559d3  ../red/n5/instances/sym_h8_s1.pg" | sha1sum -c --quiet || { echo "box 62: pins changed"; exit 1; }
+o=$(python3 -I anc58/itau.py ../n5-exhaustive/instances/n3all_maxph_0.pg ../n5-exhaustive/instances/n3all_maxph_0.start)
+case "$o" in *"STEPS 2 ITNE 1 ITNE_NOFB 1 "*) ;; *) echo "box 62: n3all: $o"; exit 1;; esac
+o=$(python3 -I anc58/itau.py ../red/h3/instances/lcount2_n23.pg ../red/h3/instances/lcount2_n23.start)
+case "$o" in *"DEVIT_ST 4 ITNE_W 3 DEVIT_W 3"*) ;; *) echo "box 62: lcount2: $o"; exit 1;; esac
+o=$(python3 -I anc58/itau.py ../red/n5/instances/sym_h8_s1.pg anc58/inst/sym_h8_s1_default.start)
+case "$o" in *"DEVIT 10 DEVIT_ST 9 "*) ;; *) echo "box 62: sym_h8_s1: $o"; exit 1;; esac
+[ "$(grep -c ' ITAU ' anc58/itau_corpus.txt)" = 1132 ] || { echo "box 62: itau corpus incomplete"; exit 1; }
+o=$(awk '{for(i=1;i<=NF;i++){if($i=="STEPS")a+=$(i+1); if($i=="ITNE")b+=$(i+1); if($i=="ITNE_W")c+=$(i+1); if($i=="DEVIT_W")d+=$(i+1); if($i=="SQV")e+=$(i+1); if($i=="DEV")f+=$(i+1)}} END{print a, b, c, d, e, f}' anc58/itau_corpus.txt)
+[ "$o" = "17841 3768 2647 585 0 32179" ] || { echo "box 62: itau corpus totals: $o"; exit 1; }
+echo "si (box 62: I_tau in tau-stretches, ESC-SQUEEZE): PASS"
