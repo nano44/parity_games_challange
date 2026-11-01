@@ -649,4 +649,10 @@ if grep -qF "FBW frz24.pg n 24 [13, 30] L 17 ODIFF 1 FB 2 REPW 0 REPWF 0 PEAKMON
 else
   echo "box 123 FBCOUNT check: FAILED"; exit 1
 fi
+w72=$(cd .. && python3 -I new/box124/lemmap.py red/n5inj/instances/frz24.pg red/n5inj/instances/frz24.start; python3 -I new/box124/lemmap.py red/n5inj/instances/block_bk20.pg -)
+if grep -qF "LEMMAP frz24.pg n 24 K 39 pieces 5 longest 7 checks 335 viol 12 BLK 8 NOTBLK 4 INX 4 INZ 8" <<<"$w72" && grep -qF "LEMMAP block_bk20.pg n 24 K 27 pieces 3 longest 9 checks 303 viol 0 " <<<"$w72"; then
+  echo "box 124 LEMMAP: Lemma P invariant fails in TWO-FIX pieces with D nonempty (frz24 12 / 335), holds with D empty (block_bk20 0 / 303): PASS"
+else
+  echo "box 124 LEMMAP check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

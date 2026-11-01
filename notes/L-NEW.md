@@ -25,6 +25,9 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - DATA: post-fallback W never repeats (not a potential). DEAD: gap descent between fallbacks unless Xi(O) changes (frz24 18 -> 18).
   CONJECTURE FB-XO: FB <= (XO + 1) n (250 / 250; max FB/(XO+1) 34 at n 48, rise_fb38_n48). Only b5_os is a family (FB 4 -> 9).
 - Next: (a) TF-PH proof (R17 (b) Lemma P + GAP-D; R17 applies when D empty, per T64 via the Lead).
+### Box 124 N5-LEMMAP (docs/new/N5-LEMMAP-box124.md; experiments/new/box124/)
+- DEAD: R17 (b) Lemma P's invariant for W inside TWO-FIX pieces (b5_os_n24 2,363 / 5,236; first: blocked edge 14 -> o = 7). Controls with
+  D empty: 0 violations. TF-PH stays a conjecture with no proof route. Lead to choose: D-restricted invariant / drop TF-PH / tau-stretch level.
 ### Things only I know (successor 44): the awk recount in fixes entry 1 (a) keys runs by (game, start); 1,132 lines, 813 distinct keys.
 
 ## Resume point (HISTORY; successor 43, Opus 5.5, session_01V5yGRWyuWWZgJkLHZqZjYn; FINAL, PARKED 2026-11-01 ~00:3xZ by date -u, ~360k context)
