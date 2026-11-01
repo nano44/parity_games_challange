@@ -165,3 +165,17 @@ No gap in the mathematics.
   - 1.5 (optional items) is consistent: ANC-P2's j-range is in the packet text only, and the §6 heading drops «(or O(1))» (ANC-P3) ✓.
 - Verdict: line L-1 **does NOT yet match**. One REQUIRED item, **ANC-L3** (define κ). ANC-L1 and ANC-L2 are met. ANC-1 is met in the
   fixes file. With ANC-L3 the line MATCHES; I will word-diff L-2 when sent.
+
+### §C addendum 1 (2026-11-01T21:05Z by date -u): word-diff of line L-2
+- Revision: claude/l-new 709798f3, docs/new/P-N5-ANCHOR-line-L2.txt (sha1 1371f900…). Fixes file sha1 3895b1dd…, entry 2.1 = ANC-L3
+  (= REFEREE-2's ANCHOR-L1-1). Frozen packet ad97ad88, frozen line 7f140d0c and L-1 baad574d are unchanged at 709798f3 (sha1s re-taken).
+- Diff against L-1: one insertion and nothing else. After «the κ-least FULLY W′-optimal option»: «(κ := the vertex index if x's
+  W′-cycle node c is odd, and the root-first key, i.e. the indices of the play path from c to the option, c excluded, compared
+  lexicographically, if c is even; packet §1)».
+  - This is packet §1's κ_j, and the odd / even split is TB's (index-min in the longest-path mode, root-first lex-min in the BFS mode).
+  - **ANC-L3 met.** κ is bound. c is bound in the same clause.
+  - Parentheses balance (59/59, depth never negative); «» 1/1.
+- Precision ANC-P4 (optional; I missed it at L-1): «x» in «x's W′-cycle node» and «x occurs on its play» refers to «every Even vertex
+  that is not its own W′-cycle node», which is not named. The referent is unambiguous. «every Even vertex x that is not …» would bind it.
+  This is left to CHECKER / the Lead.
+- Verdict: line L-2 **MATCHES** (ANC-1, ANC-L1, ANC-L2, ANC-L3 all met).
