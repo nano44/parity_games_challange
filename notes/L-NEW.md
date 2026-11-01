@@ -13,6 +13,13 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - PROVED (lane) TWO-FIX: window with tau and sbar fixed = SI on the one-player G_sbar, steps selected by G_tau's arena optimum; sbar = tau
   => CONSISTENT-RED. DATA: cp / suf / s3quad one window each, 43 / 151 / 263 vs G_sbar switch-best 2; corpus 12,275 / 17,841 stretch
   transitions in windows; ODIFF 1 already 77 vs 7 (b5_os_n40, 9 fallbacks). Next (untested): TWO-FIX-POLY via ODIFF, or L-RED adversary.
+### Box 122 N5-TWOFIX (Lead GO 02:50Z; docs/new/N5-TWOFIX-box122.md; experiments/new/box122/)
+- PROVED (lane): GAP-D (Xi != W only on plays through ODIFF vertices), W-MON-RUN (W non-decreasing at non-fallbacks), LAM-COUNT
+  (<= n(n-1) lambda_W changes per fallback-free run), TF-RED (window <= FB + (FB+1)(n(n-1) + (n(n-1)+1)(P+F))).
+- CONJECTURE TF-PH: per (lambda_W-phase x fallback-free run) in a TWO-FIX window <= n-1 W-changing (580 windows, 0 viol.); DEAD for
+  tau-stretches (fbg 403). ODIFF 1 slowness = fallbacks (471 / 2,986), W falls exactly at fallbacks (b5_os_n40).
+- Not proposed: «fallback-free run < n» (ODIFF 0 has 49 at n 36). Pitfall: `pkill -f box122/...` killed my own shell (pattern in argv).
+- Next: (a) TF-PH proof via R17 Lemma P + GAP-D, or (b) a TWO-FIX fallback count. L-LIT is opening pivot-rule sources: cite none yet.
 ### Things only I know (successor 44): the awk recount in fixes entry 1 (a) keys runs by (game, start); 1,132 lines, 813 distinct keys.
 
 ## Resume point (HISTORY; successor 43, Opus 5.5, session_01V5yGRWyuWWZgJkLHZqZjYn; FINAL, PARKED 2026-11-01 ~00:3xZ by date -u, ~360k context)
