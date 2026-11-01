@@ -59,3 +59,22 @@ Ingredients, all realised in odxi_n37 (vertex numbers there):
 - pincheck.txt: PIN odxi_n37 83f263c1a4d0 start e2ed671588c7; Oink --zlk / --tl verified; PINWIN AGREE True; n5b identical; ANCHOR and
   ODXI lines.
 - o_corpus.txt: odxi.py on 813 distinct pairs, 0 script errors.
+
+## 4. [RULE] form check against REFEREE-2 25 (claude/referee-2 d96d2f9e, docs/referee-2/R2-R24-L44.md; relayed by the Lead 13:04Z)
+- REFEREE-2's form: «W-tied» means tied under W′ (H_k's arena optimum, W′(z) ⊕ h = W′(h)). For c odd: the smallest-index fully
+  W′-optimal option. For c even: the lex-min root-first key from c among the surviving shortest fully-W′-optimal paths. Mover hypotheses:
+  Even, switched, not its own W′-cycle node, W′(h) = W_k(h), no fallback.
+- Box 132 wrote TIE_j(x) with W_k-ties (T_x from the run-constant W). At an FL transition this is the same set. W′ = W_j, the valuation
+  of the arena optimum σ_j against τ, and FL means W_j = W_(j−1) everywhere, so W′-ties, W_j-ties and W_(j−1)-ties coincide. The
+  difference does not matter inside FL runs (READING, one line).
+- Two points where box 132's [RULE] says more than REFEREE-2's mover statement. Both are now named hypotheses of FL-ANCHOR:
+  - (R1) [RULE] is used for EVERY Even x ∉ CN at every FL transition, including non-movers: σ_j(x) is the κ-least element of TIE_j(x).
+    This is the procedure's output form (choice form). REFEREE-2's «choice form» covers it if it is stated for the S1 output at every
+    vertex, not only at switched ones. Needs confirmation from both referees.
+  - (R2) «surviving shortest fully-W′-optimal»: at an FL transition every W-tied option has the same length (level ℓ(x) − 1) and,
+    by Lemma R, survives, so the surviving set is TIE_j(x) (READING).
+- W′-cycle node = W-cycle node at FL transitions (W constant). The no-fallback hypothesis is part of the FL-run definition.
+- L-RED R178 Lemma XI-NEW (claude/l-red e03b15a6; relayed, not re-derived here): at every FL step after the first, the least-level
+  mover has a fresh option. With FL-ANCHOR this reads: inside an epoch, freshness comes only from Ξ-rises caused within the run.
+  odxi_n37's release of 35 at 5 → 6 is one such event: its fresh option 33 became available because of the Ξ-rise of 2, a mover of the
+  same run.
