@@ -2,6 +2,11 @@
 L-NEW successor 43, 2026-10-31 (date -u: after 21:00Z). Lead brief (start of successor 43), BOX 117: find ONE statement that FAILS for
 ARSB or TBR on switchbestexp_N but plausibly holds for N5, using S4b's arena-restricted Odd step (or S4a against the current τ), not just
 S4a; test it on the corpus, on L-RED's builds and on switchbestexp; prove it (lane) if possible; label PROVED / CONJECTURE / DATA.
+ERRATUM (successor 43, box 118 start, reported to the Lead 22:2xZ): Lemma SQUEEZE below is NOT new. It is landed RESULTS R18 (d):
+Lemma R (box 21 §2.1, G^d's order is the exact reverse of G's = Fact DUAL-ORDER) and Lemma S (b) (box 21 §2.2: L_σk ⊴ V_σk,τk ⊴ U_τk,
+L non-decreasing, U non-increasing), SIGNED WITH GAPS (S1, S2, G-1OA-6) by both referees. Read «PROVED (lane)» on SQUEEZE as «= landed
+R18 (d) Lemma S (b), re-derived». New in this box: its role as the N5 / TBR / ARSB separator (DATA), SETTLE-MON, BRACKET-MON and
+SETTLE-RED / BRACKET-RED (lane), and all the DATA.
 Labels: PROVED (lane), DATA, READING, OPEN. No count is bounded here. G-N5-TIME stays OPEN. This is not M3 and not a TARGET.md claim.
 
 ## 0. Answer

@@ -619,4 +619,10 @@ if grep -qF "SQZ switchbestexp_2.pg N5 n 60 iters 32 SANDV 0 LODROP 0 HIRISE 0 U
 else
   echo "box 117 SQUEEZE check: FAILED"; exit 1
 fi
+w67=$(cd .. && python3 -I new/box118/gate.py new/box113/inst/cp_K4.pg new/box113/inst/cp_K4.start; python3 -I new/box118/gate.py new/box115/inst/switchbestexp_2.pg -)
+if grep -qF "GATE cp_K4.pg n 192 iters 44 stretches 1 climbsteps 44 fb 0 flat 0 gated 43 " <<<"$w67" && grep -qF "onep 2 maxratio 22.0 INC 43 maxConsistentWindow 1" <<<"$w67" && grep -qF "onep 16 maxratio 1.1 INC 6 maxConsistentWindow 12" <<<"$w67"; then
+  echo "box 118 GATE: cp_K4 one tau-stretch of 44, ungated one-player climb 2, INC 43; switchbestexp_2 INC 6, stretch 18 vs one-player 16: PASS"
+else
+  echo "box 118 GATE check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
