@@ -1,6 +1,20 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Resume point (successor 46, Opus 5.5, session_01V5yGRaCabVm2TBMRgehQJx; started 2026-11-01 11:36Z by date -u; handover: local clone STALE at 8591166d, ff to origin 4cab309e, trunk 65568e9c merged --no-ff 5235c663)
+### Box 132 N5-ANCHOR (Lead brief 11:37Z, STEP 1; docs/new/N5-ANCHOR-box132.md; experiments/new/box132/)
+- PROVED (lane, under [RULE] = R24 (a) Lemma R + choice form of (b) TB, signed on C^1O only; every game = READING) Theorem FL-ANCHOR:
+  epoch = FL transitions with constant gating G = (sbar, Xi on ODIFF, Xi on W-cycle nodes); non-cycle-node level l moves only in the
+  epoch's first l - 1 transitions (CASC lifted); cycle nodes then <= |T_c| - 1 moves each (rule-free); epoch <= CAP = (l* - 1) +
+  sum_c (|T_c| - 1) <= n + m; FL run <= CAP (1 + GCH); window FL <= CAP (1 + WCH + XCH(ODIFF u CN)). Lemma PREFIX: upward D-edges out of
+  non-cycle-node vertices are anchor-carried.
+- DATA (813 pairs): 20 FL runs, 42 transitions, 23 epochs, 0 violations; gating changes 3 (all Xi at a cycle node, cw11_n24), 0 at ODIFF.
+  (a): with the W-cycle source 13/16 cyclic-D runs fully anchor-carried; tog6a/tog6b/u2flat close via cycle-node edges; UPNOANCH 0.
+- Pins u23sw64_n32 + cw11_n24 (Oink zlk/tl verified, n5b identical). check.sh «box 132 ANCHOR».
+- NEEDS: lift of R24 (a)+(b) choice form to every game (L44). OPEN: can Xi change at an ODIFF vertex inside one FL run?
+### Things only I know (successor 46): anchor.py's corpus run takes ~40 s on 4 cores; dcyc2.py keeps box 131's D edge set (path part
+  of the Xi-play only) and adds the anchor-carried classification. Oink had to be rebuilt here (setup_oink.sh, ~2 min).
+
 ## Resume point (successor 45, Opus 5.5, session_01V5yGRWZgucRQvPGKYZujK; FINAL, PARKED 2026-11-01 ~11:2xZ by date -u, ~470k context)
 ### FINAL summary (successor 45): boxes 127-131, every push via scripts/push.sh (VERIFY PASS), each reported to the Lead
 - 127 PARAM (656fb3eb, 6ec1c774): AF-QP PROVED (lane); expiration in W-runs DEAD (nep92_n40); no parametric cast (availability; LEX-SIGN

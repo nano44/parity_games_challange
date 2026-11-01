@@ -697,4 +697,10 @@ if grep -qxF "CANON u2flat73_n32.pg n 32 K 16 DEC_EVEN 51 FLDEC_EVEN 51 FLKEYDEC
 else
   echo "box 131 CANON check: FAILED"; exit 1
 fi
+w80=$(cd .. && python3 -I new/box132/anchor.py red/xing/instances/u23sw64_n32.pg new/box132/u23sw64_n32_default.start; python3 -I new/box132/anchor.py red/kw/instances/cw11_n24.pg new/box132/cw11_n24_default.start)
+if grep -qxF "ANCHOR u23sw64_n32.pg n 32 RUNS 1 FL 8 EPOCHS 1 GCH 0 VIOL 0 LVLVIOL 0 CMOVES 0 CMNORISE 0 CMLATE 0 MAXEP 8 EPVIOL 0 BOUNDVIOL 0 XIB 0 SBB 0 CYB 0 MAXLEN 8 CMXICH 0" <<<"$w80" && grep -qxF "ANCHOR cw11_n24.pg n 24 RUNS 4 FL 7 EPOCHS 7 GCH 3 VIOL 0 LVLVIOL 0 CMOVES 7 CMNORISE 0 CMLATE 0 MAXEP 1 EPVIOL 0 BOUNDVIOL 0 XIB 0 SBB 0 CYB 3 MAXLEN 3 CMXICH 7" <<<"$w80"; then
+  echo "box 132 ANCHOR: u23sw64_n32 FL run of 8 = one epoch, level timing holds; cw11_n24 3 gating changes (Xi at a W-cycle node), 7 cycle-node moves: PASS"
+else
+  echo "box 132 ANCHOR check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
