@@ -655,4 +655,10 @@ if grep -qF "LEMMAP frz24.pg n 24 K 39 pieces 5 longest 7 checks 335 viol 12 BLK
 else
   echo "box 124 LEMMAP check: FAILED"; exit 1
 fi
+w73=$(cd .. && python3 -I new/box125/chain.py new/box116/inst/fbA_K4_m8_m8.pg new/box116/inst/fbA_K4_m8_m8_fixed.start)
+if grep -qF "CHAIN fbA_K4_m8_m8.pg n 136 K 44 stretches 1 T 44 WIN 34 SBC 33 FBX 0 VMOVES 72 VAL 72 TIE 0 TOW 44 AWAY 28 SIDE 0 DSW 72 MOVERS 23 MAXFLIP 8 " <<<"$w73"; then
+  echo "box 125 CHAIN: fbA_K4 one tau-stretch of 44 = 34 TWO-FIX windows, 33 sbar-changes all Xi-changes at Odd vertices (SBC-XI): PASS"
+else
+  echo "box 125 CHAIN check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

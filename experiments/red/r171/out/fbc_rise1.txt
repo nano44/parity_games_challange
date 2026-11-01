@@ -1,0 +1,3 @@
+start FB 34 L 35 {'a': 14, 'b': 49, 'L': 35, 'FB': 34, 'XO': 0, 'ODIFF': 1, 'FFSEG': 1}
+it 140 FB 34 L 36 {'a': 12, 'b': 48, 'L': 36, 'FB': 34, 'XO': 0, 'ODIFF': 1, 'FFSEG': 2}
+it 1993 FB 34 L 37 {'a': 11, 'b': 48, 'L': 37, 'FB': 34, 'XO': 0, 'ODIFF': 1, 'FFSEG': 2}

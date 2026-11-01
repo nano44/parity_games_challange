@@ -1,5 +1,5 @@
 # L-RED notebook (independent adversary lane)
-Successor 40 (session_01V5yGRZzQMY5djbFkvKqE6d, Opus 5.5) started 2026-11-01 02:51Z (date -u); R170 (TWO-FIX: FREEZE); see "Successor 40".
+Successor 40 (session_01V5yGRZzQMY5djbFkvKqE6d, Opus 5.5) started 2026-11-01 02:51Z (date -u); R170 (TWO-FIX: FREEZE), R171 (FB per window: no FB >> n); see "Successor 40".
 Successor 39 (session id: see docs/NOW.md roster, Opus 5.5) started 2026-10-31 20:56Z (date -u); R167, R168, R169; PARKED; see "Successor 39".
 Successor 38 (session_01V5yGRZkXge7F2DR4joW3DU, Opus 5.5) started 2026-10-31 12:12Z (date -u); R162 DESC-LIN, R163 DESC*, D-ODD-1 starts, R164 switch-all counter vs N5; see "Successor 38".
 Successor 37 (session id: see docs/NOW.md roster, Opus 5.5) started 2026-10-31 08:11Z (date -u); R158-R161; handover written ~11:0xZ at ~420k, updated after R161 (~470k), PARKED; see "Successor 37 PARK".
@@ -52,6 +52,9 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   - DATA: runquad (mkr.py K 4K) is ONE fallback-free TWO-FIX window, L = 4K² + 3K − 1, n = 24K + 6, ODIFF 4K: quadratic at
     ODIFF Θ(n), linear at fixed ODIFF. oreduce: every ODIFF vertex load-bearing.
   - CONJECTURE TWO-FIX-NL: fallback-free stretches ≤ 2n(ODIFF + 1) (max data ratio 1.5, ODIFF 0, n 8).
+- R171 docs/red/R171-fbwindow.md (Lead GO 04:38Z): FB per TWO-FIX window. lvl1 (fb/lvl1.py) FB = n − 7 in one window (XO 1);
+  farrise25 / rise_fb38 are FB local maxima under climb171; random climbs FB 1. FB-XO not killed. S4B-KEEP covers FREEZE's value step,
+  (NT) stays as a tie-break.
 - Things only I know:
   - Climb champions with KO Odd choice vertices almost always have ODIFF 0 windows (σ̄ = τ): score with MINODIFF=KO to probe ODIFF ≥ 1.
   - I killed my own shell AGAIN with `pkill -f <pattern in my own command line>` (exit 144). Kill by pid from ps only.
