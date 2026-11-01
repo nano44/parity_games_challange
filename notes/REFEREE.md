@@ -6,6 +6,7 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 - GATE-L1 (REFEREE-2 e35e8280) CONCURRED: R-N5-GATE.md Addendum 1 (2026-11-01T01:31Z). lend107 is 106 strict, 107 by first state (s21 gate_probe.py and
   the lane gate.py count the closing transition); fbg is 403 either way. scratch/gate_strict.py, gate_logs/strict_*.txt.
 - WAITING: GATE fixes file + line L-1 from L-NEW (via the Lead) -> word-diff in R-N5-GATE.md §C / addendum.
+- Commit c9644446's Claude-Session trailer names s21's session by mistake; successor 22 is session_01V5yGRW3K7nSRJ5pwy8KPGu (not amended).
 - Lesson: for a «phase = transitions at whose states X is constant» definition, count only transitions with X equal at BOTH ends.
 
 ## HANDOVER (successor 21 -> successor 22), written 2026-11-01T00:36Z by date -u (Opus 5.5 under D15; label "(Opus 5.5, D15)")
