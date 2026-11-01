@@ -46,8 +46,8 @@ super-linear.» Labels: DATA, READING. Not a TARGET.md claim. G-N5-TIME stays OP
   it. So «gating changes per run» can be Θ(n) per transition without any extra FL length. A sharper anchor quantity would count
   transitions with a gating change, not (transition, vertex) pairs. In these data it is ≤ L_FL by definition and ≤ 8.
 - What a long real FL run needs (R177-R180): even W-cycles, D-cycles through ODIFF gates, Ξ-availability that the idealised model
-  already cannot supply beyond about 2.7 per mover, and stabilisers. The real climbs hit the stabiliser wall first: L_FL stays at the
-  seed's 8.
+  already cannot supply beyond about 2.7 per mover, and stabilisers. Why the real
+  climbs never move L_FL past the seed's 8 is not diagnosed here; my guess (unchecked) is the stabiliser requirement.
 
 ## 5. Files
 - red/r181/flrun.py, climb181.py (score with FL_total), climb181p.py (pure), out/ (logs, champions), instances/ (2 pins, starts,
