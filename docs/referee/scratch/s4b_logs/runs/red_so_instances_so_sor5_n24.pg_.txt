@@ -1,0 +1,9 @@
+GAME red/so/instances/so_sor5_n24.pg 
+GAMES 1
+enum_states 23
+keep_chk 22
+loc_chk 23
+rhos 46
+states 23
+VIOLATIONS 0
+RC 0

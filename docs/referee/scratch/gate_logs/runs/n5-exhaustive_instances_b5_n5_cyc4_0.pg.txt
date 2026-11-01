@@ -1,0 +1,12 @@
+GAME n5-exhaustive/instances/b5_n5_cyc4_0.pg
+BGmax 2
+GAMES 1
+INC 0
+K 3
+MAXPH 2
+SGmax 2
+SQZ_chk 20
+steps 2
+stretches 1
+VIOLATIONS 0
+RC 0

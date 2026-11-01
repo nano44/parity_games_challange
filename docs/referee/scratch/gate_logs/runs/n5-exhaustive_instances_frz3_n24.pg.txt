@@ -1,0 +1,14 @@
+GAME n5-exhaustive/instances/frz3_n24.pg
+BGmax 1
+GAMES 1
+INC 17
+K 26
+MAXPH 24
+PH_over 1
+SGmax 16
+SQZ_chk 648
+steps 24
+stretches 1
+VIOLATIONS 0
+EX ('PH_over', 'frz3_n24.pg', 2, 24, 24, 23)
+RC 0

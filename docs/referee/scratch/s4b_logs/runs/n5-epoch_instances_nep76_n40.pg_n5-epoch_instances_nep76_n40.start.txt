@@ -1,0 +1,8 @@
+GAME n5-epoch/instances/nep76_n40.pg n5-epoch/instances/nep76_n40.start
+GAMES 1
+enum_states 2
+loc_chk 10
+rhos 62
+states 2
+VIOLATIONS 0
+RC 0

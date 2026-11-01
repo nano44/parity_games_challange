@@ -1,0 +1,14 @@
+GAME red/n5inj/instances/returns_rt64.pg
+BGmax 74
+GAMES 1
+INC 76
+K 90
+MAXPH 87
+PH_over 1
+SGmax 76
+SQZ_chk 5824
+steps 89
+stretches 1
+VIOLATIONS 0
+EX ('PH_over', 'returns_rt64.pg', 0, 89, 87, 63)
+RC 0

@@ -372,3 +372,19 @@ enter a RESULTS line as «DEAD»: it enters as DATA with its numbers and source 
 refereed proof, or one instance exceeding an EXPLICIT bound (as R90's REP-LIN, 570 > 538). Grounds: CHECKER C108 E-1 and C109 E-3
 («A DATA label does not cure an overclaim»), REFEREE ROOT-L4 / ROOT-L5 (claude/referee 74025e44). Applied: P-N5-STAIR line L-3 drops
 the DESC-LIN clause; P-N5-ROOT line L-2 drops the DESC-LIN and DESC*-LIN clauses.
+
+Lead reading L44 (2026-11-01 03:17Z by date -u):
+Class-free items inside class-scoped RESULTS entries. An item of a landed RESULTS entry whose heading or Setting names a subclass (e.g.
+R18, 𝒞^1O) may be cited «on every game» in a later line when (i) the item's own statement carries no class hypothesis and (ii) both
+referees of the citing packet confirm that its signed proof uses none; the citing line says so («its proof uses no 𝒞^1O hypothesis»)
+and the entry quotes both confirmations. Applied first to R18 (d) Lemma R / Lemma S (a)-(b) in P-N5-GATE (REFEREE c9bc161c §1;
+REFEREE-2 e35e8280 §2). Landed precedents in entry bodies: R47, R55, R56.
+
+Lead reading L45 (2026-11-01 04:10Z by date -u):
+S4b is covered by R57's 1E-N3. L42's restriction («R57 covers S1 and S4a only; [S4b-OPT] not covered») is LIFTED for S4b: S4b runs S1's
+procedure on the restricted game H′_k (same V, Ω, owners; E′ ⊆ E; a successor at every vertex; «S1 procedure on H', not dual»), which is an
+input of the kind 1E-N3 / N-1E-1 speaks of (R57 (b): «that S1's procedure realises an optimal σ̄ is VJ00 §6 plus SPEC conformance»).
+Grounds: P-N5-S4B (l-si 68fa36619) Lemma S4B-OPT and Corollary S4B-KEEP, SIGNED by REFEREE (062cd734) and REFEREE-2 (1b9ef2e1), both
+stating that 1E-N3 covers S4b and that the lift is consistent with their signatures. Effect: lemmas that used [S4b-OPT] / [S4b-KEEP]
+(e.g. O-ARENA, withdrawn from P-N5-STAIR under L42) are as conditional as every landed N5 result, i.e. on R57's SPEC premise only; they
+still need their own referee review to land. L42 stays in force for any premise other than S1's procedure on a valid input.

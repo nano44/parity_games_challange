@@ -1,0 +1,9 @@
+GAME red/fbr/instances/lev74_n40.pg 
+GAMES 1
+enum_states 18
+keep_chk 10
+loc_chk 133
+rhos 265
+states 18
+VIOLATIONS 0
+RC 0

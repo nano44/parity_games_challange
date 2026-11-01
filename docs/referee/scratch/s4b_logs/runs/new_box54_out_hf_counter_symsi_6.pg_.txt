@@ -1,0 +1,11 @@
+GAME new/box54/out/hf/counter_symsi_6.pg 
+GAMES 1
+enum_skip 2
+enum_states 35
+keep_chk 16
+loc_chk 163
+oddfb 1
+rhos 13802
+states 37
+VIOLATIONS 0
+RC 0

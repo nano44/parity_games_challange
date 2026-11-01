@@ -1,0 +1,14 @@
+GAME n5-epoch/instances/nconf61_n48.pg
+BGmax 70
+GAMES 1
+INC 67
+K 73
+MAXPH 68
+PH_over 1
+SGmax 70
+SQZ_chk 3552
+steps 68
+stretches 1
+VIOLATIONS 0
+EX ('PH_over', 'nconf61_n48.pg', 3, 68, 68, 47)
+RC 0

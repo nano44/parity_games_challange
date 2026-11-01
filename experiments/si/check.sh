@@ -1162,3 +1162,45 @@ case "$o" in *"edge (124, 126) key (1, 145) count 4"*"STEPS 139 INC 131 "*"UNB 1
 o=$(awk '{for(i=1;i<=NF;i++){if($i=="STEPS")a+=$(i+1); if($i=="INC")b+=$(i+1); if($i=="UNB")c+=$(i+1); if($i=="SRCDN"||$i=="UNBKCH")d+=$(i+1)}} END{print a, b, c, d}' anc58/unblock_corpus.txt)
 [ "$o" = "17841 12433 6889 0" ] || { echo "box 61: unblock corpus totals: $o"; exit 1; }
 echo "si (box 61: UNBLOCK-KEY): PASS"
+# box 62 (Lead 00:06Z): I_tau != {} inside tau-stretches and W-runs (S4b keeps tau); Lemma ESC-SQUEEZE data at tau-stable states.
+echo "77f592fe0117b0dbc7e03f0771112342b5d320c2  ../n5-exhaustive/instances/n3all_maxph_0.pg
+ed221977791e59ceddefe2e3e95ee63cf389343b  ../n5-exhaustive/instances/n3all_maxph_0.start
+dd9847c6b19cb9f44af73bcc23de7ca2aca9a14c  ../red/h3/instances/lcount2_n23.pg
+7d3626aa4a6a80d59878fa442886473505390c17  ../red/h3/instances/lcount2_n23.start
+f87fee647f1c8b57f3466c0b68e7e284e3d559d3  ../red/n5/instances/sym_h8_s1.pg" | sha1sum -c --quiet || { echo "box 62: pins changed"; exit 1; }
+o=$(python3 -I anc58/itau.py ../n5-exhaustive/instances/n3all_maxph_0.pg ../n5-exhaustive/instances/n3all_maxph_0.start)
+case "$o" in *"STEPS 2 ITNE 1 ITNE_NOFB 1 "*) ;; *) echo "box 62: n3all: $o"; exit 1;; esac
+o=$(python3 -I anc58/itau.py ../red/h3/instances/lcount2_n23.pg ../red/h3/instances/lcount2_n23.start)
+case "$o" in *"DEVIT_ST 4 ITNE_W 3 DEVIT_W 3"*) ;; *) echo "box 62: lcount2: $o"; exit 1;; esac
+o=$(python3 -I anc58/itau.py ../red/n5/instances/sym_h8_s1.pg anc58/inst/sym_h8_s1_default.start)
+case "$o" in *"DEVIT 10 DEVIT_ST 9 "*) ;; *) echo "box 62: sym_h8_s1: $o"; exit 1;; esac
+[ "$(grep -c ' ITAU ' anc58/itau_corpus.txt)" = 1132 ] || { echo "box 62: itau corpus incomplete"; exit 1; }
+o=$(awk '{for(i=1;i<=NF;i++){if($i=="STEPS")a+=$(i+1); if($i=="ITNE")b+=$(i+1); if($i=="ITNE_W")c+=$(i+1); if($i=="DEVIT_W")d+=$(i+1); if($i=="SQV")e+=$(i+1); if($i=="DEV")f+=$(i+1)}} END{print a, b, c, d, e, f}' anc58/itau_corpus.txt)
+[ "$o" = "17841 3768 2647 585 0 32179" ] || { echo "box 62: itau corpus totals: $o"; exit 1; }
+echo "si (box 62: I_tau in tau-stretches, ESC-SQUEEZE): PASS"
+# box 63 (Lead 01:30Z): [S4b-OPT] brute force (S4b's tau_new is Odd's pointwise optimum of H' against sigma); mutation control must fail.
+o=$(python3 -I anc58/s4bopt.py ../red/h3/instances/lcount2_n23.pg ../red/h3/instances/lcount2_n23.start)
+case "$o" in *"STATES 6 CHECKED 6 SKIPPED 0 RHOS 46 OPTV 0 TAUNEW_EQ_RUN 6 "*"S4AV 0"*) ;; *) echo "box 63: lcount2: $o"; exit 1;; esac
+o=$(MUT=1 python3 -I anc58/s4bopt.py ../red/h3/instances/lcount2_n23.pg ../red/h3/instances/lcount2_n23.start)
+case "$o" in *"OPTV 215 "*) ;; *) echo "box 63: mutation control: $o"; exit 1;; esac
+[ "$(grep -c ' S4BOPT ' anc58/s4bopt_corpus.txt)" = 1132 ] || { echo "box 63: s4bopt corpus incomplete"; exit 1; }
+o=$(awk '{for(i=1;i<=NF;i++){if($i=="STATES")a+=$(i+1); if($i=="CHECKED")b+=$(i+1); if($i=="OPTV"||$i=="S4AV")c+=$(i+1); if($i=="ODDFB")d+=$(i+1); if($i=="TAUNEW_EQ_RUN")e+=$(i+1)}} END{print a, b, c, d, e}' anc58/s4bopt_corpus.txt)
+[ "$o" = "7772 6719 0 36 7736" ] || { echo "box 63: s4bopt corpus totals: $o"; exit 1; }
+echo "si (box 63: S4B-OPT): PASS"
+# P-N5-S4B (FROZEN packet, box 63; line docs/si/P-N5-S4B-line.txt): must not change. Data pins: «box 63».
+echo "f1b65da522d927406a403ae5d023bb48ac73d022  ../../docs/si/P-N5-S4B-box63.md" | sha1sum -c --quiet
+echo "f8559b5e539a461a0fac89a5a9bf6f4432721c74  ../../docs/si/P-N5-S4B-line.txt" | sha1sum -c --quiet
+echo "si (P-N5-S4B pinned): PASS"
+# P-N5-S4B line revision L-1 (fixes entries 1-2: REFEREE S4B-L1 / S4B-L2): must not change; de-duplicated DATA counts (813 distinct lines).
+echo "95373010d54c69907308d224fa1111127055b8f5  ../../docs/si/P-N5-S4B-line-L1.txt" | sha1sum -c --quiet
+o=$(python3 -I -c "
+seen={}
+for l in open('anc58/s4bopt_corpus.txt'):
+    pre,_,post=l.partition(' S4BOPT ')
+    a=pre[5:].strip()
+    if a in seen: continue
+    t=post.split(); seen[a]={t[i]:int(t[i+1]) for i in range(1,len(t)-1,2)}
+s=lambda k: sum(d[k] for d in seen.values())
+print(len(seen), s('STATES'), s('CHECKED'), s('SKIPPED'), s('RHOS'), s('OPTV'), s('ODDFB'), s('S4AV'))")
+[ "$o" = "813 5726 5058 668 213311 0 29 0" ] || { echo "P-N5-S4B L-1: distinct counts: $o"; exit 1; }
+echo "si (P-N5-S4B L-1 pinned, distinct counts): PASS"

@@ -1,0 +1,12 @@
+GAME n5-exhaustive/instances/n4all_tgbad_0.pg
+BGmax 1
+GAMES 1
+INC 0
+K 3
+MAXPH 1
+SGmax 1
+SQZ_chk 16
+steps 2
+stretches 2
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,8 @@
+GAME new/box54/out/d_runquad_K3.pg
+BGmax 20
+GAMES 1
+K 21
+SGmax 20
+SQZ_chk 1188
+VIOLATIONS 0
+RC 0

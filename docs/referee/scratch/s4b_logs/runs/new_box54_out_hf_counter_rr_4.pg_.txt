@@ -1,0 +1,8 @@
+GAME new/box54/out/hf/counter_rr_4.pg 
+GAMES 1
+enum_states 1
+loc_chk 2
+rhos 4
+states 1
+VIOLATIONS 0
+RC 0

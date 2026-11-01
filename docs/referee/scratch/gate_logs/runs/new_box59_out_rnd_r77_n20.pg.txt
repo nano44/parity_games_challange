@@ -1,0 +1,12 @@
+GAME new/box59/out/rnd/r77_n20.pg
+BGmax 1
+GAMES 1
+INC 1
+K 4
+MAXPH 1
+SGmax 1
+SQZ_chk 100
+steps 3
+stretches 2
+VIOLATIONS 0
+RC 0

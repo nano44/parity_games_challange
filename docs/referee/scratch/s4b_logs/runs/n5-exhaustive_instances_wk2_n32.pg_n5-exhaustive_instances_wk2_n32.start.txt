@@ -1,0 +1,4 @@
+GAME n5-exhaustive/instances/wk2_n32.pg n5-exhaustive/instances/wk2_n32.start
+GAMES 1
+VIOLATIONS 0
+RC 0

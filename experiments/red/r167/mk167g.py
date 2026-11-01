@@ -61,13 +61,14 @@ def build(K, m2, m3, gen):
         add(f"be{j}", 1, p(f"BE_{j}"), ["hp"]); succ[f"b{j}"] = [f"be{j}"]; tau[f"b{j}"] = f"be{j}"
     succ["a2"] = ["r1", "g2"]; tau["a2"] = "r1"; add("g2", 1, p("GM_2"), [f"rr{m2}"])
     add("hs", 0, nxt(), ["d1"]); add("hps", 0, nxt(), ["d2"])
+    if gen.get("T2"): add("t2", 1, p("T2"), ["hp"])           # R169: second-rung sink (srz3c EXTTGT, T2HI): t2 -> hp directly
     for i in range(1, m2 + 1):
         add(f"rr{i}", 0, nxt(), [f"aa{i}", f"bb{i}"]); sig[f"rr{i}"] = f"bb{i}"
         if i == 1: add("aa1", 1, p("BA2_1"), ["hs"])
         else:
             add(f"aa{i}", 1, p(f"BA2_{i}"), [f"rr{i - 1}", f"gg{i}"] + ([f"hh{i}"] if gen.get("STATIC") else [])); tau[f"aa{i}"] = f"rr{i - 1}"
             add(f"gg{i}", 1, p(f"GM2_{i}"), [f"rrr{m3}"])
-            if gen.get("STATIC"): add(f"hh{i}", 1, p(f"H_{i}"), ["hps"])   # R168: static escape of gate i (srz3b STATICESC)
+            if gen.get("STATIC"): add(f"hh{i}", 1, p(f"H_{i}"), ["t2" if not gen.get("hq", {}).get(str(i), True) else "hps"])   # R168 / R169
         add(f"bb{i}", 1, p(f"BB_{i}"), ["hps"])
     add("dd0", 1, p("MU0"), ["hps"])
     for i in range(1, m2 + 1):
@@ -75,7 +76,7 @@ def build(K, m2, m3, gen):
         tgt = "hs" if (ESC == 3 and i <= 2) else "hps"
         ss = [f"mdd{i}"] + ([f"x{i}"] if esc or (ESC == 3 and i <= 2) else [])
         if "escj" in gen:                                    # per-index escape: 0 none, 1 -> hps (self-referential), 2 -> hs (root)
-            e = gen["escj"][str(i)]; tgt = "hps" if e == 1 else "hs"; ss = [f"mdd{i}"] + ([f"x{i}"] if e else [])
+            e = gen["escj"][str(i)]; tgt = {1: "hps", 2: "hs", 3: "t2", 4: f"rrr{m3}"}.get(e, "hps"); ss = [f"mdd{i}"] + ([f"x{i}"] if e else [])
         add(f"dd{i}", 1, p(f"MU2_{i}"), ss); tau[f"dd{i}"] = f"mdd{i}"; add(f"mdd{i}", 1, p(f"M2_{i}"), [f"rr{i}"])
         if len(ss) > 1: add(f"x{i}", 1, p(f"X_{i}"), [tgt])
     o2 = [f"dd{i}" for i in range(1, m2 + 1, 2)]; e2 = ["dd0"] + [f"dd{i}" for i in range(2, m2 + 1, 2)]

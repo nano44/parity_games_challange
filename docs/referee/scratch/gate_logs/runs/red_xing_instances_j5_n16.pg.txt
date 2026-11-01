@@ -1,0 +1,14 @@
+GAME red/xing/instances/j5_n16.pg
+BGmax 28
+GAMES 1
+INC 26
+K 30
+MAXPH 23
+PH_over 1
+SGmax 28
+SQZ_chk 496
+steps 29
+stretches 2
+VIOLATIONS 0
+EX ('PH_over', 'j5_n16.pg', 2, 28, 23, 15)
+RC 0

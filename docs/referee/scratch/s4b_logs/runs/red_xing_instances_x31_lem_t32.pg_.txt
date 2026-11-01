@@ -1,0 +1,4 @@
+GAME red/xing/instances/x31_lem_t32.pg 
+GAMES 1
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,10 @@
+GAME red/tcpert/instances/leanT_N24.pg 
+GAMES 1
+enum_skip 1
+enum_states 24
+keep_chk 6
+loc_chk 105
+rhos 866
+states 25
+VIOLATIONS 0
+RC 0

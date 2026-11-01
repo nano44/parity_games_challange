@@ -1,0 +1,12 @@
+GAME n5-epoch/instances/ret14_n64.pg
+BGmax 16
+GAMES 1
+INC 59
+K 65
+MAXPH 59
+SGmax 57
+SQZ_chk 4224
+steps 61
+stretches 2
+VIOLATIONS 0
+RC 0

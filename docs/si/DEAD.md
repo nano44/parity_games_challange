@@ -719,3 +719,8 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
   edge (124, 126) unblocks 4 times at key (1, 145) in stretch 1-139; fbg_K8 / K12: 8 / 12 (linear in K). Obstruction: each unblock is a
   fresh Ξ-rise of the target (UNBLOCK-KEY), and the edge is re-blocked in between, so the per-edge count is the target's Ξ-rise count
   (composition). Also one-to-one INC → unblocks fails (corpus 12,433 vs 6,889). n5b identical, Oink zlk OK.
+- (box 62, Lead 00:06Z; note docs/si/N5-ITAU-box62.md §1) «Inside a τ-stretch I_τ = ∅ (S4b's stop rule)», the premise of the Lead's box-62
+  lemma and of R168's ITAU constraint: false, also inside W-runs. S4b's τ_new is Odd's optimum in H′ AGAINST σ, so τ can stay with
+  I_τ ≠ ∅. Instances: experiments/n5-exhaustive/instances/n3all_maxph_0 (n 3, state 0, I_τ = {(2, 1)}, τ kept, σ moves);
+  experiments/red/h3/instances/lcount2_n23 (+ start; W-run transition 1: deviation 22 → 3 with (22, 3) ∈ I_τ, τ kept). Corpus: 3,768 of
+  17,841 stretch transitions, 2,647 W-run transitions. n5b identical, Oink zlk OK, strategies verified.

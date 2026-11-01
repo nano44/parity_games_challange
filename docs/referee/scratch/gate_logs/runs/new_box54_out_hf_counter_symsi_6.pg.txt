@@ -1,0 +1,12 @@
+GAME new/box54/out/hf/counter_symsi_6.pg
+BGmax 24
+GAMES 1
+INC 16
+K 37
+MAXPH 3
+SGmax 24
+SQZ_chk 2356
+steps 16
+stretches 3
+VIOLATIONS 0
+RC 0

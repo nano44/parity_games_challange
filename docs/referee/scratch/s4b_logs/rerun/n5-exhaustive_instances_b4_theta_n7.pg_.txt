@@ -1,0 +1,8 @@
+GAME n5-exhaustive/instances/b4_theta_n7.pg
+GAMES 1
+enum_states 1
+loc_chk 2
+rhos 3
+states 1
+VIOLATIONS 0
+RC 0

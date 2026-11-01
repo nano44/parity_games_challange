@@ -1,0 +1,12 @@
+GAME red/tcpert/instances/tcR4_N5.pg
+BGmax 11
+GAMES 1
+INC 2
+K 14
+MAXPH 1
+SGmax 11
+SQZ_chk 1500
+steps 3
+stretches 2
+VIOLATIONS 0
+RC 0

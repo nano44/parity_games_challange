@@ -13,7 +13,18 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
 - ODD L-3 (2f8e5b2ea, f83b169e) MATCHES d61827c5; ROOT L-1 (be131555, a41df25b) MATCHES 83c1838f (+ Addendum 1 L43: drop R162/R163
   DEAD clauses, agree REFEREE ROOT-L4/L5); STAIR L-3 (7dc1eb7c, 9db0b169) MATCHES faa8dac9 (P-1 independent: f92b278a 13:06Z < a61a258b).
 - Lead ruling L43 (relayed 20:29Z): a lane DEAD of an asymptotic statement enters a RESULTS line as DATA with numbers, or not at all.
-- NEXT: ROOT line L-2 word-diff when the Lead sends it.
+- ROOT L-2 (7988e2f4, c9c6b380) MATCHES 3bb41a4c; ROOT L-3 (4cac9dc5, 7b091692) MATCHES 35d1062b (fuel re-route -> R98, precision).
+- P-N5-GATE (l-new 516717da, ac88915d, line 245ce9fe; 2026-11-01 00:39Z): report docs/referee-2/R2-N5-GATE.md. All SIGNED, no gap. R18 (d) Lemma S
+  needs no C^1O (box 21 §2.2: VJ00 (11) on G, G^d + Lemma R + R15 (a)(d)). Line REQUIRED GATE-L1: lend107 is 106 in-phase W-changes, not
+  107 (lane gate.py groups by first state, counting the closing transition); fbg_K12 403 exact. Corpus DATA reproduced (INC 12,433 /
+  17,841; 575 INC-0; 116 vs 118 exceeding). Tool R2-N5-GATE/gate_check.py, phases.py. Worktree $SCRATCH/wgate = l-new 516717da.
+- GATE L-1 (afb8b99e, d677161c) MATCHES 9b30c652.
+- P-N5-S4B (l-si 68fa36619, f1b65da5, line f8559b5e): report docs/referee-2/R2-N5-S4B.md. S4B-OPT, S4B-KEEP SIGNED; line MATCHES (P-1
+  optional: N-1E-1 + arena-input confirmation). S4b = S1 procedure on H' (its G_sigma). DATA exact (7,772 / 6,719 / 290,345 / 1,053 / 36).
+  Tool R2-N5-S4B/s4b_check.py. Worktree $SCRATCH/ws4b = l-si 68fa36619.
+- S4B L-1 (96fb62cb3, 95373010) MATCHES; dedup counts 5,726 / 5,058 / 668 reproduced on 813 distinct lines. FINDING: box 53 corpus
+  (1,132) = 813 distinct + 319 start-less alt_all lines repeating sbcg lines: corpus DATA in STAIR / ODD / ROOT / GATE double-counts them.
+- NEXT: whatever the Lead sends. Context ~345k.
 
 ## HANDOVER (successor 24, session_01V5yGRZwUkPZRndvKiAAuAD, Opus 5.5 under D15; written 2026-10-31 15:3xZ by date -u; context ~480k; Lead 15:17Z: handover and park)
 Branch claude/referee-2, merged with trunk (git merge, no rebase) before every push. REFEREE-2 owns no docs/GAPS.md rows.

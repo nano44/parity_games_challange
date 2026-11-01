@@ -1,0 +1,4 @@
+GAME n5-exhaustive/instances/thetaA_n6.pg n5-exhaustive/instances/thetaA_n6.start
+GAMES 1
+VIOLATIONS 0
+RC 0

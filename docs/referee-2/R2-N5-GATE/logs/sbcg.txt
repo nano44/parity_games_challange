@@ -1,0 +1,15 @@
+MODE files experiments/new/box59/sbcg.lst 1 experiments/ MAXT 5000 BF 0
+INC: 5494
+OPT_checks: 281938
+SQZ_checks: 1025751
+climb: 9066
+fallbacks: 656
+runs: 719
+runs_INC0: 414
+runs_exceed_n-1: 48
+transitions: 11621
+max BG_over_n: 2.143
+max SG_over_n: 2.625
+max maxWchPerPhase: 160
+RESULT PASS violations 0
+EXIT 0

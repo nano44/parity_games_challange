@@ -1,0 +1,12 @@
+GAME red/n5inj/instances/phase2_pk48.pg
+BGmax 50
+GAMES 1
+INC 62
+K 72
+MAXPH 13
+SGmax 50
+SQZ_chk 3504
+steps 71
+stretches 2
+VIOLATIONS 0
+RC 0

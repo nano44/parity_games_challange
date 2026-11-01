@@ -1,4 +1,4 @@
-# Draft RESULTS R100 (Lead; first fill 2026-10-31 22:37:35Z by date -u on ROOT line L-2 (sha1 f75c0f0a174515d701d879922bd1c18bd7a2ef3f, 592
+# Draft RESULTS R100 (Lead; first fill 2026-10-31 22:37:35Z by date -u on ROOT line L-2 (sha1 f75c0f0a174515d701d879922bd1c18bd7a2ef3f, 592 — LANDED in RESULTS Results 2026-11-01 02:21Z (CHECKER C110 d293d5be PASS), after R99
 lines; kept as scratch R100-draft.L2.md); REBUILT ON ROOT LINE L-3 2026-11-01 00:50:23Z by date -u, read in the same command as the fill of this file
 (subagent; Addendum 2); packet, its frozen line 954af7be, line files L-1 / L-2 / L-3, fixes F0 + entries 1-4, REFEREE's R-N5-ROOT114
 (report, §C, L-2 addendum, §C addendum 2) and REFEREE-2's R2-N5-ROOT114, R2-N5-ROOT114-L1 (with Addendum 1), R2-N5-ROOT114-L2,

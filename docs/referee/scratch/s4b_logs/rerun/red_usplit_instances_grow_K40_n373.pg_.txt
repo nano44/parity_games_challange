@@ -1,0 +1,9 @@
+GAME red/usplit/instances/grow_K40_n373.pg
+GAMES 1
+enum_states 46
+keep_chk 45
+loc_chk 138
+rhos 368
+states 46
+VIOLATIONS 0
+RC 0

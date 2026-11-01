@@ -1,0 +1,12 @@
+GAME new/box54/out/hf/tc_3.pg
+BGmax 5
+GAMES 1
+INC 1
+K 7
+MAXPH 1
+SGmax 5
+SQZ_chk 336
+steps 2
+stretches 2
+VIOLATIONS 0
+RC 0

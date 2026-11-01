@@ -1,0 +1,12 @@
+GAME red/n3/instances/lagx10_n40.pg
+BGmax 14
+GAMES 1
+INC 14
+K 17
+MAXPH 13
+SGmax 14
+SQZ_chk 720
+steps 15
+stretches 2
+VIOLATIONS 0
+RC 0

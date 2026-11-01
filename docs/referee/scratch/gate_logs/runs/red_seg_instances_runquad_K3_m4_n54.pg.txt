@@ -1,0 +1,12 @@
+GAME red/seg/instances/runquad_K3_m4_n54.pg
+BGmax 20
+GAMES 1
+INC 20
+K 21
+MAXPH 1
+SGmax 20
+SQZ_chk 1188
+steps 21
+stretches 1
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,8 @@
+GAME red/lag/instances/depth3_n46.pg
+BGmax 0
+GAMES 1
+K 3
+SGmax 0
+SQZ_chk 184
+VIOLATIONS 0
+RC 0

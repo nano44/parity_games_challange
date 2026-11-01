@@ -1,0 +1,4 @@
+GAME red/kw/instances/frzu_tight_n14.pg 
+GAMES 1
+VIOLATIONS 0
+RC 0

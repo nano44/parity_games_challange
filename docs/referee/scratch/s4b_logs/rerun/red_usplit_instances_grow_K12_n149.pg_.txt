@@ -1,0 +1,9 @@
+GAME red/usplit/instances/grow_K12_n149.pg
+GAMES 1
+enum_states 18
+keep_chk 17
+loc_chk 54
+rhos 144
+states 18
+VIOLATIONS 0
+RC 0

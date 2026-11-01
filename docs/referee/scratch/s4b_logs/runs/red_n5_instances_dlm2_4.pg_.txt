@@ -1,0 +1,8 @@
+GAME red/n5/instances/dlm2_4.pg 
+GAMES 1
+enum_states 8
+loc_chk 17
+rhos 50
+states 8
+VIOLATIONS 0
+RC 0

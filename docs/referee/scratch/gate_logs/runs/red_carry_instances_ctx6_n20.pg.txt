@@ -1,0 +1,8 @@
+GAME red/carry/instances/ctx6_n20.pg
+BGmax 1
+GAMES 1
+K 3
+SGmax 1
+SQZ_chk 80
+VIOLATIONS 0
+RC 0

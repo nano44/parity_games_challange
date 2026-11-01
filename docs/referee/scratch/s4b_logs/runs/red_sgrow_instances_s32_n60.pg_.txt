@@ -1,0 +1,9 @@
+GAME red/sgrow/instances/s32_n60.pg 
+GAMES 1
+enum_skip 5
+enum_states 3
+loc_chk 241
+rhos 27
+states 8
+VIOLATIONS 0
+RC 0

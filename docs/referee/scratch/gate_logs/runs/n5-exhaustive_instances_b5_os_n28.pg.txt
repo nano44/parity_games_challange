@@ -1,0 +1,12 @@
+GAME n5-exhaustive/instances/b5_os_n28.pg
+BGmax 60
+GAMES 1
+INC 59
+K 65
+MAXPH 14
+SGmax 60
+SQZ_chk 1848
+steps 65
+stretches 1
+VIOLATIONS 0
+RC 0

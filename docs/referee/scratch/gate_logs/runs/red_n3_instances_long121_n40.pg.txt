@@ -1,0 +1,14 @@
+GAME red/n3/instances/long121_n40.pg
+BGmax 31
+GAMES 1
+INC 119
+K 122
+MAXPH 121
+PH_over 1
+SGmax 120
+SQZ_chk 4920
+steps 121
+stretches 1
+VIOLATIONS 0
+EX ('PH_over', 'long121_n40.pg', 1, 121, 121, 39)
+RC 0

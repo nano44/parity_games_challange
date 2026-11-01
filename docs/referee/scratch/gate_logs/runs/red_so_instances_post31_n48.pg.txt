@@ -1,0 +1,12 @@
+GAME red/so/instances/post31_n48.pg
+BGmax 35
+GAMES 1
+INC 34
+K 36
+MAXPH 1
+SGmax 35
+SQZ_chk 1776
+steps 34
+stretches 1
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,12 @@
+GAME red/n5inj/instances/wide_h16.pg
+BGmax 39
+GAMES 1
+INC 6
+K 44
+MAXPH 1
+SGmax 39
+SQZ_chk 1440
+steps 7
+stretches 6
+VIOLATIONS 0
+RC 0

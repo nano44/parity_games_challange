@@ -1,0 +1,4 @@
+GAME red/lag/instances/fam_D12_n106.pg
+skip_big 1
+VIOLATIONS 0
+RC 0

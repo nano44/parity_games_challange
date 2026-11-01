@@ -1,0 +1,9 @@
+GAME red/fbr/instances/rho144_n32.pg 
+GAMES 1
+enum_states 9
+keep_chk 4
+loc_chk 51
+rhos 2242
+states 9
+VIOLATIONS 0
+RC 0

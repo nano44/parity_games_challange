@@ -1,0 +1,12 @@
+GAME red/ul/instances/cxmig_k8_n82.pg
+BGmax 0
+GAMES 1
+INC 0
+K 16
+MAXPH 16
+SGmax 0
+SQZ_chk 1394
+steps 16
+stretches 1
+VIOLATIONS 0
+RC 0

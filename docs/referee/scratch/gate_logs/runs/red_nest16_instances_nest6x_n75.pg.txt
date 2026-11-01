@@ -1,0 +1,8 @@
+GAME red/nest16/instances/nest6x_n75.pg
+BGmax 1
+GAMES 1
+K 5
+SGmax 1
+SQZ_chk 450
+VIOLATIONS 0
+RC 0
