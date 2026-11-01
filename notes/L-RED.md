@@ -1,5 +1,5 @@
 # L-RED notebook (independent adversary lane)
-Successor 43 (session_01V5yGRa2JMr2sxHnK3JazZL2, Opus 5.5) started 2026-11-01 17:50Z (Lead brief; date -u 18:06Z at STEP 0); R183 (growing FVCH): no family; Lemma OVT-KEY + KEY-CHARGE + DEPTH PROVED (lane); see "Successor 43".
+Successor 43 (session_01V5yGRa2JMr2sxHnK3JazZL2, Opus 5.5) started 2026-11-01 17:50Z (Lead brief; date -u 18:06Z at STEP 0); R183 (growing FVCH): no family; Lemma OVT-KEY + KEY-CHARGE + DEPTH PROVED (lane); realized IDEAL champions: 0 FL runs; see "Successor 43".
 Successor 42 (session_01V5yGRZmYx9sPoeaSsLDoAg, Opus 5.5) started 2026-11-01 10:39Z (date -u); R177 (CDAG order as an FL run): TB canonical (R24), FL-IDX, CASC-G, LADDERBF, idealised two-face model; see "Successor 42"; R178-R182; PARKED ~17:0xZ, see "Successor 42 PARK".
 Successor 41 (session_01V5yGRa8VX4VrSzMTZfKctP, Opus 5.5) started 2026-11-01 06:24Z (date -u); R173 (a): Lemma PORTAL; R174 (Z): PHASE-PORTAL, SELF; R175: ODD-GATE; R176: topfix ODIFF-1 depth; PARKED; see "Successor 41 PARK".
 Successor 40 (session_01V5yGRZzQMY5djbFkvKqE6d, Opus 5.5) started 2026-11-01 02:51Z (date -u); R170 (TWO-FIX: FREEZE), R171 (FB per window: no FB >> n), R172 (TF-PH DEAD); PARKED ~06:1xZ; see "Successor 40 PARK".

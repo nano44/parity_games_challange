@@ -89,6 +89,17 @@ Corollary DEPTH. Let μ_ℓ be the maximum of moves_run(x) over Even x ∉ CN wi
   - Such a gate's W-face then reads lower movers. That is the graded two-face gate of R178's IDEAL model, together with R177 §5's
     stabiliser problem: σ̄ must stay the Ξ-face against every σ of the run, and τ must stay the W-face.
 - Chains and rings of gadgets (§3) add anchor-value changes but no FL transitions. The core's run (L 7-8) is the run.
+- DATA, the graded shape in a real game (realize.py, realdiag.py).
+  - Method: R178's IDEAL champions are written as real games: each gate gets both faces as edges, gate → {W-target, β}, β → Ξ-target.
+    The start is the genome's σ, with τ = the W-faces.
+  - Real N5 then has no FL run at all:
+    - big_d4_k3_W3, n 86 (IDEAL 32 FL steps): K 6, 0 FL runs;
+    - big_d3, n 65 (IDEAL 17): K 7, 0 FL runs;
+    - cyc_d2, n 22 (IDEAL 5): K 3, 0 FL runs.
+  - On big_d4: σ̄ already equals the W-face at 17 of 36 gates in the start state. At step 1, τ leaves the W-face at 18 gates.
+    - Reason: Odd at a gate compares Ξ(W-target) with β ⊕ Ξ(Ξ-target). The W-face does not lead to c_W in Ξ, because the gates
+      below it are Odd's too. This is R177 §5's (σ̄) condition failing on most gates.
+  - Pin r183/ideal/big_d4_k3_W3 passes startck, Oink --zlk + verify (OINK OK), --tl verify and xeng.
 
 ## 3. DATA
 Tools (experiments/red/r183/):
@@ -138,6 +149,6 @@ own): chain_k16_n81, ovk_n37, odxi_n37 (copy of L-NEW box 133's, sha1 83f263c1a4
   key change can re-release level ℓ + 1: a Ξ-side «release once per key change» statement.
 - Attack side (me): the only route left for a super-linear FL run at unbounded ℓ* is a graded structure. Gates' W-faces read lower
   choice vertices whose moves re-order the keys above, AND gates whose Ξ-faces re-release above. That is LADDERBF's TB ladder driven
-  by real (stabilised) gates. Concretely: realise R178's best IDEAL genome (d 4, 32 FL) as a real game with R177 §5's (τ)/(σ̄)
-  checks, and measure how much of the run survives.
+  by real (stabilised) gates. The naive realisation of R178's champions is done (§2 DATA): nothing survives, 0 FL runs. The
+  next attack is a gate whose (σ̄) condition holds without making the mover's preference static, i.e. R175 §3 (ii)'s stabiliser.
 - Queue unchanged after that: NR-CYC (R182 §2), faster exact IDEAL d = 3, two-level replay, super-linear D at ODIFF ≥ 1.
