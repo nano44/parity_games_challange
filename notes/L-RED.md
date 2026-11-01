@@ -61,7 +61,8 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   - Item 2 (§6): c = Even cycle node with mover options (croot.py): shortcut / up alternation, 18 moves of c in one FL run (cn_d4_n126),
     22 (cn_g24_n246), returns 11 / 14, CN-UP holds. Pushes: 436fe6e9 (R187), then the addendum.
 - RESUME POINT / QUEUE: (a) a Ξ-counter inside IDEAL-ACYC (R187 §3 shape): anything found is a real family; (b) exact d 3 search in
-  ACYC (bmc.py restricted); (c) CNONLY per FL run in CROOT games; (d) old queue (NR-CYC, two-level replay, D at ODIFF ≥ 1).
+  ACYC (bmc.py restricted); (c) CNONLY per FL run in CROOT games; (a′) Lead 22:06Z input: L-NEW box 137 (l-new 2e1322eb,
+  N5-REL-box137.md §6) lap-nesting recipe on ret2_n37 (KCH-GCH: super-poly FL needs super-poly GCH in one run; score GCH); (d) old queue (NR-CYC, two-level replay, D at ODIFF ≥ 1).
 - Things only I know:
   - findk.py 4 3000 1 gives the stuck core K in seconds; other cores exist (n 5). K must keep its σ-world cycle node BELOW every ladder
     β and its τ-world node ABOVE c_W; stab.py maps K's priorities into those two bands.
