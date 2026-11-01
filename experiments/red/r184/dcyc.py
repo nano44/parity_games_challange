@@ -11,6 +11,7 @@ sys.path.insert(0, os.path.join(HERE, "..", "..", "new", "box21")); sys.path.ins
 from n5x import load, start_pair, readstart, Engine, dual
 import pg
 from freeze import run
+DM2 = os.environ.get("DM2") == "1"   # L-NEW box 136 dmerge2 z-world D'' with DOM cuts (C-STATIC-Xi + DOM); selfl = x on own segment
 REFINE = os.environ.get("REFINE") == "1"   # D'': pairs (y, sigma_s(x)) only, x dropped from its own segments (R184 Lemma SELF-FREE)
 def play(succ1, v):
     seq = []; pos = set()
@@ -56,7 +57,34 @@ def analyse(g, st=None, cap=10 ** 5):
             adj = {x: set() for x in range(n) if own[x] == 0}; selfl = 0
             for s_ in range(a2, b2 + 1):
                 vs, sb = ev(s_); succ1 = [S[s_][v] if own[v] == 0 else sb[v] for v in range(n)]
-                for x, opts in Tx.items():
+                if DM2:
+                    for x, opts in Tx.items():
+                        os_ = sorted(set(opts) | {S[s_][x]})
+                        for z in os_:
+                            sz = list(succ1); sz[x] = z
+                            def cn(v):
+                                seq = play(sz, v); nxt = sz[seq[-1]]; cyc_ = seq[seq.index(nxt):]
+                                return max(cyc_, key=lambda u: E.rank[u]), seq
+                            wz, pz = cn(z)
+                            for y in os_:
+                                if y == z: continue
+                                wy, py = cn(y)
+                                if wy != wz: continue
+                                w = wz; yw = py[:py.index(w) + 1]; zw = pz[:pz.index(w) + 1]; c = 0
+                                while c < min(len(yw), len(zw)) and yw[-1 - c] == zw[-1 - c]: c += 1
+                                Yp, Zp = yw[:len(yw) - c], zw[:len(zw) - c]
+                                def head(P):
+                                    for i, v in enumerate(P):
+                                        if own[v] == 0 and v != x: return P[:i + 1], P[i + 1:]
+                                    return P, []
+                                hy, ty = head(Yp); hz, tz = head(Zp); rw = E.rank[w]
+                                Dh = [v for v in set(hy) ^ set(hz) if E.rank[v] > rw]
+                                tails = [v for v in ty + tz if E.rank[v] > rw]
+                                if Dh and (not tails or max(E.rank[v] for v in Dh) > max(E.rank[v] for v in tails)): continue
+                                for v in Yp + Zp:
+                                    if own[v] == 0 and v != x: adj[x].add(v)
+                                    selfl += v == x
+                for x, opts in ([] if DM2 else Tx.items()):
                     os_ = sorted(set(opts) | {S[s_][x]})
                     pairs = [(os_[i], os_[k]) for i in range(len(os_)) for k in range(i + 1, len(os_))]
                     if REFINE: pairs = [(y, S[s_][x]) for y in os_ if y != S[s_][x]]

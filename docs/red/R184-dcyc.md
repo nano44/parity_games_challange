@@ -1,4 +1,4 @@
-# R184 Retargeted R183 (after L-NEW 46 box 135 CASC-M): no long D′-cyclic stretch and no super-linear CNMOV. Lemma SELF-FREE (PROVED, lane): D′'s self-edges are not needed for CASC-M, but the D′-cycles in the data survive without them (a 2-cycle of two movers). A W-cycle node can follow gate overtakes (no κ at CN), but in data each moves ≤ 2 times per run and CNMAX tracks the number of gadgets (L-RED successor 43)
+# R184 Retargeted R183 (after L-NEW 46 box 135 CASC-M): no long D′-cyclic stretch and no super-linear CNMOV. Lemma SELF-FREE (PROVED, lane): D′'s self-edges are not needed for CASC-M, but the D′-cycles in the data survive without them (a 2-cycle of two movers). A W-cycle node has no κ rule, but in data each moves once per FL run (erratum: first written «≤ 2») and CNMAX tracks the number of gadgets (L-RED successor 43)
 Started 2026-11-01 18:58Z (Lead retarget 18:37Z, read at 18:58Z; date -u). Brief: «(1) Lengthen a D′-cyclic stretch, starting from
 odxi_many_n32's self-edge pattern. Score = transitions inside a D′-cyclic stretch, measured against n. (2) Find a family with growing
 CNMOV inside FL runs.»
@@ -11,8 +11,8 @@ Labels: PROVED (lane), DATA, READING. Premises: the packet P-N5-ANCHOR (f009a9a1
     stretch. They raise the self-edge count (7 → 17), not the length.
   - Pin dcyc3_n48.
 - (2) CNMOV per FL run grows with the number k of cycle-node gadgets (1 / 2 / 4 / 6 at k = 1 / 2 / 4 / 8). L_FL does not grow (7-8).
-  Each gadget's cycle node moves ≤ 2 times inside FL runs (≤ 3 over the whole N5 run, out-degree 2), so this is linear: one or two
-  moves per gadget.
+  Each gadget's cycle node moves exactly once inside an FL run (erratum: first written «≤ 2»; ≤ 3 over the whole N5 run), so this
+  is linear: one move per gadget.
   - Pin cnmov_k8_n57: its FL run of 7 transitions contains 6 CN moves.
 - Lemma SELF-FREE (PROVED, lane, §1):
   - At a transition, x's choice reads only the comparisons of its options with its CURRENT option z = σ(x).
@@ -25,11 +25,12 @@ Labels: PROVED (lane), DATA, READING. Premises: the packet P-N5-ANCHOR (f009a9a1
   - 30's option IS the mover 13. 13's option 9 runs 9 → 30 → σ(30).
   - So the remaining mechanism is two movers each sitting on the other's option play: mutual feeding, not self-feeding.
 - Cycle-node gadget (READING + DATA, §3). OVT-KEY (R183) does not apply at a W-cycle node c: c has no κ rule. So a cycle node c whose
-  two options are gates with τ → c CAN return to an option it left, following the gates' Ξ-overtakes.
+  two options are gates with τ → c could in principle return to an option it left. ERRATUM (same day, R185 cnidx): in every
+  instance measured, no cycle node returns inside one FL run. The gadgets' cycle nodes move exactly once each, upward in index.
   - But such a gate is self-referential: Odd may route it back through c, so Ξ(A) ⊴ A ⊕ c ⊕ Ξ(σ(c)).
   - In the single gadget, the only «improvement» of c that appears runs through c itself (a corner). S4a's cycle-node choice does not
     take it.
-  - With k gadgets reading each other and the core, c moves at most twice per run.
+  - With k gadgets reading each other and the core, each c moves once per FL run (erratum: first written «at most twice per run»).
 
 ## 1. Lemma SELF-FREE (PROVED, lane)
 Setting: a stretch of an FL run (box 135: gating states with the same σ̄ and the same cycle node of Ξ at every vertex; no W-cycle-node
@@ -86,9 +87,11 @@ move). Even x ∉ CN, a transition j of the stretch (gating state j − 1), z :=
 | --- | --- | --- | --- | --- |
 | 1 | 36 | 1 | 8 | ≤ 1 |
 | 2 | 39 | 2 | 7 | ≤ 1 |
-| 4 | 45 | 4 | 7 | ≤ 2 (c 33: moves at 2 and 5, a return) |
-| 8 | 57 | 6 | 7 | ≤ 2 |
-- Returns at a cycle node happen (k 4: c = 33 moves to an option and back inside one FL run). OVT-KEY does not forbid them.
+| 4 | 45 | 4 | 7 | 1 each (erratum: «2 and 5, a return» was over the whole N5 run, not one FL run) |
+| 8 | 57 | 6 | 7 | 1 each |
+- ERRATUM: the line first written here («returns at a cycle node happen inside one FL run») is FALSE on the data. c = 33 moves at 2, 5
+  and 10 of the whole N5 run, and 2 and 5 lie in different FL runs. r184/cnidx.py: 0 returns inside FL runs (gadgets, cw11_n24, corpus;
+  docs/red/R185-dprime.md §2).
 - Self-referential gates (READING, the k = 1 trace):
   - The gate A that should overtake has σ̄(A) = c, so Ξ(A) = A ⊕ c ⊕ Ξ(σ(c)). This is improving only through c itself.
   - For an honest overtake, A's other face must beat B's value while Odd prefers it to returning to c. Then Ξ(A) ⊴ A ⊕ c ⊕ Ξ(B), and
@@ -102,7 +105,6 @@ move). Even x ∉ CN, a transition j of the stretch (gating state j − 1), z :=
   - Use D″ instead of D′. Self-edges are gone.
   - The remaining D″-cycles are 2-cycles of movers where one mover's option is the other mover itself. An SCC argument may charge each
     stretch-internal move on such a 2-cycle to OVT-KEY's key changes (W-depth), since both movers are non-CN.
-  - For CNMOV: FL-ANCHOR (ii) bounds CN moves per epoch, but returns across epochs are real (data). A per-run bound needs the
-    self-referential margin above.
+  - For CNMOV: see R185 §2. Inside FL runs, CN moves are UP in index or shortcuts onto the current W-cycle, with 0 returns on the data.
 - Attack side: a cycle node with a high out-degree, d gates, each re-overtaken: CNMAX ≤ (d − 1) per epoch, so a run needs many
   epochs. Next build is one cycle node with d gates fed by d independent core regions, measuring CN moves against d and n.

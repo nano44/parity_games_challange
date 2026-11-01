@@ -1,0 +1,2 @@
+START n 48 3503 {'FL': 3, 'STRETCHES': 1, 'CYCST': 1, 'LCYC': 3, 'LACYC': 0, 'HMAX': 0, 'CASCVIOL': 0, 'SELFL': 15, 'CNMOV': 0, 'CNMAX': 0, 'LFL': 3}
+BEST n 48 {'FL': 3, 'STRETCHES': 1, 'CYCST': 1, 'LCYC': 3, 'LACYC': 0, 'HMAX': 0, 'CASCVIOL': 0, 'SELFL': 11, 'CNMOV': 0, 'CNMAX': 0, 'LFL': 3}
