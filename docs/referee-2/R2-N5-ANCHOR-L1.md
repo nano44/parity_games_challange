@@ -44,3 +44,16 @@ I will word-diff L-2.
   - REFEREE's ANC-L2 anchor is correct.
   - One new REQUIRED item: κ is a free symbol (ANCHOR-L1-1).
 - NEEDS: Lead: ANCHOR-L1-1 to L-NEW for line L-2.
+
+## Addendum 1 (2026-11-01 21:05Z by date -u): line L-2
+- Object: claude/l-new 709798f3, docs/new/P-N5-ANCHOR-line-L2.txt, sha1 1371f900c5d6eb89b4c0b947cf811185a69966e2 (re-hashed: match).
+  - At 709798f3, L-1 (baad574d), the frozen line (7f140d0c) and the packet (ad97ad88) are unchanged. Fixes file sha1 3895b1dd.
+- Token diff L-1 → L-2: exactly one insertion after «the κ-least FULLY W′-optimal option»: «(κ := the vertex index if x's W′-cycle node c
+  is odd, and the root-first key, i.e. the indices of the play path from c to the option, c excluded, compared lexicographically, if c is
+  even; packet §1)».
+  - Byte test True: L-1 with exactly this insertion equals L-2. Nothing else changed.
+- **ANCHOR-L1-1 is closed.**
+  - κ is defined. c is bound inside the parenthesis, and x is the rule's vertex.
+  - The definition equals packet §1 [RULE]'s κ_j and TB steps 4-5 (smallest index at odd c; lex-least root-first key at even c).
+  - «; packet §1» meets REFEREE's ANC-L3 wording too. No new free symbol.
+- Verdict: **MATCHES** (Opus 5.5, D15). All my ANCHOR line items are closed.
