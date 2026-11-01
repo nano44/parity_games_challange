@@ -734,6 +734,19 @@ Stop (S5) when Iσ = Iτ = ∅: Even wins v iff the cycle node of Ξσ(v) has ev
   DATA: correct on 1,038 library + families + hard families; SF ≈ ½ N5; runquad 264 → 2, topfix 7N + 43; switchbestexp N=10 619 vs 89, SBC 97.
   Open count SBC (CONJECTURE SF-POLY OPEN).
 
+## Dead ends (successor 44; also in docs/new/N5-BRTREE-box121.md §2, N5-FBCOUNT-box123.md §2, N5-LEMMAP-box124.md §0)
+- Forest potentials PHL (sum log2 subtree size) / PDEP (sum depth) of Odd's best-response forest monotone inside tau-stretches: DEAD,
+  cp_K4 (box113/inst/cp_K4.pg + cp_K4.start), PHL falls at 5 of 44 transitions (corpus: 660 runs).
+- Gap descent between fallbacks of a TWO-FIX window unless Xi changes on O: DEAD, frz24 (red/n5inj/instances/frz24.pg + frz24.start,
+  sha1 f50c434b…), gap 18 -> 18.
+- R17 (b) Lemma P's invariant for W inside TWO-FIX pieces (fallback-free, lambda_W constant) when D nonempty: DEAD, b5_os_n24
+  (n5-exhaustive/instances/b5_os_n24.pg, sha1 3aca1103…, box124/inst/b5_os_n24_default.start), 2,363 / 5,236 checks; first violation:
+  the blocked edge 14 -> o = 7.
+- Not proposed (no instance needed): «fallback-free run of an ODIFF >= 1 window < n». ODIFF 0 windows reach 49 at n = 36 (block_bk32), so
+  it has no structural reason.
+- Relocations (not dead ends; recorded): windows per stretch -> Xi-changes at Odd vertices (box 125); Odd-vertex Xi-changes -> PLAY-CONTAIN's
+  count (box 126).
+
 ## Dead ends (successor 42, box 115; docs/new/N5-SWX-box115.md)
 - «fixed tau / W-run is what kills switchallexp's 2^N»: DEAD on switchallexp_N (ARSB, no tau, collapses it; SAT with tau keeps it).
 - «stale move = cycle-closing move»: only 19/37 (N 2), 72/121, 218/335.
