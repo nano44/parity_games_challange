@@ -1,7 +1,36 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 46, Opus 5.5, session_01V5yGRaCabVm2TBMRgehQJx; started 2026-11-01 11:36Z by date -u; handover: local clone STALE at 8591166d, ff to origin 4cab309e, trunk 65568e9c merged --no-ff 5235c663)
+## Resume point (successor 46, Opus 5.5, session_01V5yGRaCabVm2TBMRgehQJx; FINAL, PARKED 2026-11-01 ~19:2xZ by date -u, ~460k context)
+### FINAL summary (successor 46): boxes 132-136 + P-N5-ANCHOR (frozen, signed by both referees, fixes entry 1 + line L-1); every push
+  via scripts/push.sh (VERIFY PASS), each reported to the Lead. Handover at start: local clone STALE (8591166d), ff to 4cab309e, trunk merged.
+- 132 ANCHOR (46ddf9ce; §6 7d5d5f9f): FL-ANCHOR (epoch <= CAP <= n+m; FL run <= CAP (1+GCH)), Lemma PREFIX, bridge B; label PROVED
+  (lane) on R24 (a) + (b) choice rule + bridge B (L46). (a): W-cycle source closes 13/16 cyclic D runs.
+- 133 ODXI (14bd8d23, 260f5201, 9fe4689a): «Xi at ODIFF constant in an FL run» DEAD (odxi_n37 gadget; R179 odxi_min_n12); charging
+  ODIFF Xi-changes to moves is circular (CIRC); [RULE] form checked vs REFEREE-2 (W'-ties = W-ties at FL).
+- P-N5-ANCHOR (f009a9a1; packet ad97ad88, line 7f140d0c): REDUCTIONS / EQUIVALENCE (FL-POLY <=> GCH-POLY). Both referees SIGNED all
+  items, (R1) ruled covered. Fixes entry 1 + line L-1 (6bcf5529; fixes 4cff05c1, L-1 baad574d): corner = x before the option's cycle
+  node (kept, vacuous on fully W'-optimal), (R1) ruling, ties, anchor j >= s0 + l*, R57 only, §6 heading. L-1 is with both referees for
+  word-diff: ANY FURTHER NOTE goes into a NEW entry 2 of docs/new/P-N5-ANCHOR-fixes-box134.md and a new line L-2 file; never edit frozen files.
+- 134 OVT2 (6f630331): COMPARE-W, CYC-MONO (cycle node of Xi changes <= n-1 per vertex per run, R18 (d) Lemma S (a)), FL-ANCHOR'.
+- 135 MERGE (2ee388a7): Lemma MERGE (order = pre-merge segments + w), Theorem CASC-M (stretch with acyclic merge digraph D' is
+  <= height + 1); corpus 10/10 stretches acyclic; D' cycles only in R179 odxi_many_n32.
+- 136 SELF (this push): C-STATIC-Xi (z-world: self-feeding is a static prefix predicate), DOM (head-dominated comparisons are static),
+  CASC-M''. D'' acyclic on EVERY observed stretch (corpus 10/10, odxi_many 3/3, all pins). Hence FL run <= n_E (1 + SBCH + n(n-1) +
+  CNMOV) whenever stretches are D''-acyclic. DEAD route: CNMOV via CYC-MONO (cycle node of Xi(c) changes at 0 / 11 CN moves; cw11_n24).
+### NEXT for successor 47 (Lead decides): the two remaining circular items of the FL face: (1) D''-cycles (none seen; recipe: a
+  non-head-dominated mutual dependency through a gate, box 136 §0) - L-RED R183 retargeted; (2) CNMOV (W-cycle-node moves in FL runs;
+  per-epoch bound only). Answer referee word-diff notes on L-1 (entry 2 if any).
+### Things only I know (successor 46):
+- Tools: box132/anchor.py (epochs, gating), box133/odxi.py, box134/cmpw.py (flip classes), box135/dmerge.py (STRETCH=1), box136/dmerge2.py
+  (DOM=1 STRETCH=1; SHOWCYC=1 prints a cycle). All corpus runs take < 2 min on 4 cores; push.sh ~20-25 min.
+- Scratch scripts in other tools import anchor.py's header via exec with HERE replaced (see odxi.py top) - copy that pattern.
+- R179's instances live read-only in experiments/new/box134/inst (sha1 = l-red a612b0a5 pins.sha1).
+- The harness keeps reporting «file changed on disk» for docs/new files I did not touch; git status was clean each time and the frozen
+  packet sha1 stayed ad97ad88 (checked).
+- Oink must be built in a fresh container (scripts/setup_oink.sh, ~2 min).
+
+## Resume point (HISTORY; successor 46 work log, Opus 5.5, session_01V5yGRaCabVm2TBMRgehQJx; started 2026-11-01 11:36Z by date -u; handover: local clone STALE at 8591166d, ff to origin 4cab309e, trunk 65568e9c merged --no-ff 5235c663)
 ### Box 132 N5-ANCHOR (Lead brief 11:37Z, STEP 1; docs/new/N5-ANCHOR-box132.md; experiments/new/box132/)
 - PROVED (lane, on R24 (a) + (b) choice rule + bridge B, L46; box 132 §6) Theorem FL-ANCHOR:
   epoch = FL transitions with constant gating G = (sbar, Xi on ODIFF, Xi on W-cycle nodes); non-cycle-node level l moves only in the
@@ -830,6 +859,10 @@ Stop (S5) when Iσ = Iτ = ∅: Even wins v iff the cycle node of Ξσ(v) has ev
   (b), (c); length < 2(n + m)(n² − n + 1 + SBC)). DEAD: NOFB (n3all_maxph_0), W-frame twin N5-SFW cycles (theta_thf16, period 10; 49/413).
   DATA: correct on 1,038 library + families + hard families; SF ≈ ½ N5; runquad 264 → 2, topfix 7N + 43; switchbestexp N=10 619 vs 89, SBC 97.
   Open count SBC (CONJECTURE SF-POLY OPEN).
+
+## Dead ends (successor 46, box 136; docs/new/N5-SELF-box136.md §3)
+- «every W-cycle-node move in an FL run changes the cycle node of Xi(c), so CYC-MONO bounds CNMOV»: DEAD, red/kw/instances/cw11_n24.pg
+  (default start, box132/cw11_n24_default.start): 7 CN moves, Xi(c) changes at 7, its cycle node at 0; also nep22f_n64 0/2, tog6a/b 0/1.
 
 ## Dead ends (successor 46, box 133; docs/new/N5-ODXI-box133.md)
 - «Xi at ODIFF vertices is constant (or O(1)) inside one FL run»: DEAD, experiments/new/box133/odxi_n37.pg + .start (sha1 83f263c1a4d0 /

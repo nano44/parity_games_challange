@@ -727,4 +727,10 @@ if grep -qxF "DMERGES odxi_many_n32.pg n 32 RUNS 3 FL 8 ACYC 1 CYC 2 HMAX 8 CASC
 else
   echo "box 135 DMERGE check: FAILED"; exit 1
 fi
+w85=$(cd .. && DOM=1 STRETCH=1 python3 -I new/box136/dmerge2.py new/box134/inst/odxi_many_n32.pg new/box134/inst/odxi_many_n32.start)
+if grep -qxF "DMERGE2SD odxi_many_n32.pg n 32 RUNS 3 FL 8 ACYC 3 CYC 0 HMAX 8 CASCVIOL 0 SEGEDGES 255 MAXL 3 SELFL 0 CNMOV 0 DOMCUT 117" <<<"$w85"; then
+  echo "box 136 DMERGE2: odxi_many_n32 all 3 stretches D''-acyclic under z-world + DOM (D' had 2 cyclic), CASC-M'' holds: PASS"
+else
+  echo "box 136 DMERGE2 check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
