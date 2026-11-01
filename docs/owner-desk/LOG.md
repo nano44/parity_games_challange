@@ -478,3 +478,6 @@ Needs: none."
 > Give me a status update about
 
 (Message ends after "about"; OWNER-DESK assumption, stated to the owner: N5, as in the owner's earlier requests.) Answered from trunk 2f9a0f0a2 (2026-11-01 07:18Z), RESULTS R95-R101, Lead log. Relayed to the Lead.
+
+## 2026-11-01T09:12Z Lead report (09:16Z, summary)
+NOW header fixed (trunk 416c6351). CHECKER 15 closed C111 (R101 landed, CI green) and C112 (Erratum E-1 accurate). CHECKER 16: R102 (P-N5-S4B) C113 FAIL on two stale body sentences (no claim affected), rest PASS incl. re-run of 813 corpus lines; fixed, C113 Add. 1 next; R102 not landed. Lane-level (not refereed): L-NEW 45 box 127 parametric-shortest-path cast (Gusfield/Carstensen) fails (premise false at nep92_n40; edges appear/disappear; lexicographic superincreasing order); box 128 STATIC-TIE, STRICT-PAY proved, per-pivot count dead (topfix_n10). L-RED 41 R173 PORTAL, R174 PHASE-PORTAL proved. Next: L-NEW box 129, L-RED R175. G-N5-TIME OPEN. Pacing: seven-day warning showing again (reset 2026-11-04 21:00Z); 2 research lanes plus gate roles.
