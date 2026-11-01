@@ -703,4 +703,10 @@ if grep -qxF "ANCHOR u23sw64_n32.pg n 32 RUNS 1 FL 8 EPOCHS 1 GCH 0 VIOL 0 LVLVI
 else
   echo "box 132 ANCHOR check: FAILED"; exit 1
 fi
+w81=$(cd .. && python3 -I new/box133/odxi.py new/box133/odxi_n37.pg new/box133/odxi_n37.start)
+if grep -qxF "ODXI odxi_n37.pg n 37 RUNS 1 FL 8 XICH_ODIFF 5 GATEREL 1 EX [(1, 6, 35, 34, 33, 33)]" <<<"$w81"; then
+  echo "box 133 ODXI: odxi_n37 Xi at ODIFF gate 33 changes 5 times inside the FL run [1, 9] and releases the FL move 35: 34 -> 33 at 5 -> 6: PASS"
+else
+  echo "box 133 ODXI check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
