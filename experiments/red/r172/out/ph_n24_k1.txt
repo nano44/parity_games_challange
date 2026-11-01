@@ -1,0 +1,12 @@
+start PHNF 0 None
+it 81 PHNF 0 L 1 {'a': 0, 'b': 1, 'L': 1, 'ODIFF': 1, 'FB': 0, 'PHNF': 0}
+it 87 PHNF 0 L 2 {'a': 0, 'b': 2, 'L': 2, 'ODIFF': 1, 'FB': 0, 'PHNF': 0}
+it 228 PHNF 2 L 4 {'a': 0, 'b': 4, 'L': 4, 'ODIFF': 1, 'FB': 1, 'PHNF': 2}
+it 251 PHNF 3 L 5 {'a': 0, 'b': 5, 'L': 5, 'ODIFF': 1, 'FB': 1, 'PHNF': 3}
+it 922 PHNF 4 L 6 {'a': 0, 'b': 6, 'L': 6, 'ODIFF': 1, 'FB': 1, 'PHNF': 4}
+it 2415 PHNF 5 L 6 {'a': 0, 'b': 6, 'L': 6, 'ODIFF': 1, 'FB': 0, 'PHNF': 5}
+it 2766 PHNF 5 L 7 {'a': 0, 'b': 7, 'L': 7, 'ODIFF': 1, 'FB': 1, 'PHNF': 5}
+it 3125 PHNF 5 L 8 {'a': 0, 'b': 8, 'L': 8, 'ODIFF': 1, 'FB': 1, 'PHNF': 5}
+it 5455 PHNF 6 L 8 {'a': 0, 'b': 8, 'L': 8, 'ODIFF': 1, 'FB': 1, 'PHNF': 6}
+it 6263 PHNF 7 L 9 {'a': 0, 'b': 9, 'L': 9, 'ODIFF': 1, 'FB': 1, 'PHNF': 7}
+BEST n 24 KO 1 PHNF 7 (n-1 = 23) {'a': 0, 'b': 9, 'L': 9, 'ODIFF': 1, 'FB': 1, 'PHNF': 7}

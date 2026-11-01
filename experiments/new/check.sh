@@ -661,4 +661,10 @@ if grep -qF "CHAIN fbA_K4_m8_m8.pg n 136 K 44 stretches 1 T 44 WIN 34 SBC 33 FBX
 else
   echo "box 125 CHAIN check: FAILED"; exit 1
 fi
+w74=$(cd .. && python3 -I new/box126/oddxi.py new/box113/inst/cp_K4.pg new/box113/inst/cp_K4.start 1)
+if grep -qF "ODDXI cp_K4.pg n 192 K 44 XCHodd 329 MINRISE 329 SBMOVE 16 MOVES 16 OLDROSE 16 FLATMOVES 0 END sw 329 cyc 0 stop 0 MAXCHAIN 4" <<<"$w74"; then
+  echo "box 126 ODDXI: cp_K4 every Odd Xi-change is a minimiser rise charged down the play to an Even switch (329 / 329): PASS"
+else
+  echo "box 126 ODDXI check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
