@@ -709,4 +709,10 @@ if grep -qxF "ODXI odxi_n37.pg n 37 RUNS 1 FL 8 XICH_ODIFF 5 GATEREL 1 EX [(1, 6
 else
   echo "box 133 ODXI check: FAILED"; exit 1
 fi
+w82=$(cd .. && python3 -I new/box132/anchor.py new/box134/inst/odxi_many_n32.pg new/box134/inst/odxi_many_n32.start; python3 -I new/box133/odxi.py new/box134/inst/odxi_min_n12.pg new/box134/inst/odxi_min_n12.start)
+if grep -qxF "ANCHOR odxi_many_n32.pg n 32 RUNS 3 FL 8 EPOCHS 7 GCH 4 VIOL 0 LVLVIOL 0 CMOVES 0 CMNORISE 0 CMLATE 0 MAXEP 2 EPVIOL 0 BOUNDVIOL 0 XIB 4 SBB 0 CYB 0 MAXLEN 3 CMXICH 0" <<<"$w82" && grep -qxF "ODXI odxi_min_n12.pg n 12 RUNS 1 FL 1 XICH_ODIFF 1 GATEREL 0" <<<"$w82"; then
+  echo "box 134 P-N5-ANCHOR pins: odxi_many_n32 (R179) 8 FL transitions, 4 gating changes, FL-ANCHOR items hold; odxi_min_n12 one ODIFF Xi-change in its FL run: PASS"
+else
+  echo "box 134 P-N5-ANCHOR pins check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
