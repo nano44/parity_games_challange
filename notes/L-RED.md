@@ -1,4 +1,5 @@
 # L-RED notebook (independent adversary lane)
+Successor 43 (session_01V5yGRa2JMr2sxHnK3JazZL2, Opus 5.5) started 2026-11-01 17:50Z (Lead brief; date -u 18:06Z at STEP 0); R183 (growing FVCH): no family; Lemma OVT-KEY + KEY-CHARGE + DEPTH PROVED (lane); see "Successor 43".
 Successor 42 (session_01V5yGRZmYx9sPoeaSsLDoAg, Opus 5.5) started 2026-11-01 10:39Z (date -u); R177 (CDAG order as an FL run): TB canonical (R24), FL-IDX, CASC-G, LADDERBF, idealised two-face model; see "Successor 42"; R178-R182; PARKED ~17:0xZ, see "Successor 42 PARK".
 Successor 41 (session_01V5yGRa8VX4VrSzMTZfKctP, Opus 5.5) started 2026-11-01 06:24Z (date -u); R173 (a): Lemma PORTAL; R174 (Z): PHASE-PORTAL, SELF; R175: ODD-GATE; R176: topfix ODIFF-1 depth; PARKED; see "Successor 41 PARK".
 Successor 40 (session_01V5yGRZzQMY5djbFkvKqE6d, Opus 5.5) started 2026-11-01 02:51Z (date -u); R170 (TWO-FIX: FREEZE), R171 (FB per window: no FB >> n), R172 (TF-PH DEAD); PARKED ~06:1xZ; see "Successor 40 PARK".
@@ -40,6 +41,29 @@ Successor 15 PARKED ~09:40Z 2026-10-25 after box 38; RESUME POINT for successor 
 context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older notebook: `git show b0884407:notes/L-RED.md`.
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
+
+## Successor 43 (Opus 5.5, D1/D18; started 2026-11-01 17:50Z, date -u)
+- Start: the local clone was stale at 996013948 (successor 35). I ran ls-remote (l-red 3d8783a6, l-new 2ee388a7, trunk 165dda1e),
+  fetched those three, did ff-only to 3d8783a6 (is-ancestor OK) and merged trunk no-ff. STEP 0 message to the Lead 18:06Z. Oink 8fbf0a7
+  rebuilt.
+- Sources opened: N5-OVT-box134.md (l-new 6f630331 / 2ee388a7), P-N5-ANCHOR-box134.md §1-§5 (T_x, CAP, [RULE] κ_j, FL-TIGHT, bridge B),
+  box 132 anchor.py, box 134 cmpw.py, box 133 odxi_n37 (+ start), SPEC S1-S4, R177 §5, R178 §1-§2, R181 flrun/climb181.
+- R183 docs/red/R183-fvch.md:
+  - no growing-FVCH family. Iterated odxi gadgets (chains, rings, feedback, free targets and priorities) at k 1-32 (n 36-129) give
+    L_FL 7-8 and FVCH 7-8, flat in k; CROSS grows (14 at k 16). The core's own run is the run.
+  - PROVED (lane) Lemma OVT-KEY: on a key-stretch (σ constant on B_x, the Even vertices below x on its options' W-tight plays) x's
+    moves strictly lower a frozen κ*. Corollaries: KEY-CHARGE (moves ≤ (|T_x| − 1)(1 + KCH_x)), GATE-SINK (odxi_n37: B_35 = ∅, x moves
+    ≤ 1 per FL run), DEPTH (non-CN moves per FL run ≤ n(Δn)^(ℓ*−1); CNONLY transitions not covered).
+  - DATA: 0 violations on the 813 corpus pairs (39 returns, all across stretches; CNONLY 13 of 42 FL transitions), 14 pins, 2
+    adversarial climbs (ovk_n37: 37 returns), 3,000 random games. fvch.py reproduces box 134 (168 moves, 94 flips, CROSS 0).
+- Things only I know:
+  - ovtkey's KBOUND counts a vertex whose total moves exceed (|T_x| − 1)(1 + #stretches − 1). Moves belong to the stretch of their
+    NEW state (κ_j uses σ_j), so the entry transition of a stretch counts in it.
+  - climbs.py writes its .pg at every accepted (≥) mutation. I stopped the k 4-32 climbs by pid and re-parsed the outputs (intact).
+  - Killing with pgrep -f "<pattern>" inside a shell whose own command line contains the pattern kills that shell (exit 144). Use
+    plain pids from ps.
+  - fvch.py's FL runs are box 132's (σ̄ may change inside; SBCH counts it). flrun.py (R181) also requires σ̄ constant, so its runs can
+    be shorter.
 
 ## Successor 42 PARK (2026-11-01 ~17:00Z, date -u; context ~470k)
 - DONE (claude/l-red, push.sh VERIFY PASS each): 95ff289b (R177), e03b15a6 (R178), a612b0a5 (R179), 86ee0e5a + ef430d72 (R180),
