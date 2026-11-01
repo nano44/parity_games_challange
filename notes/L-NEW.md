@@ -28,6 +28,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - PROVED (lane): COMPARE-W (same anchor, cycle node off both prefixes => order depends only on prefixes + w), CYC-MONO (cycle node of
   Xi at any vertex changes <= n-1 times per run, from R18 (d) Lemma S (a)), FL-ANCHOR' (FL run <= CAP (1 + SBCH + n^2 + FVCH); circular
   only through full-value = cross-anchor / in-prefix anchors). DATA: 94/94 corpus flips PREFIX; CROSS only in odxi_n37 (1).
+### Box 135 N5-MERGE (Lead GO 17:06Z; docs/new/N5-MERGE-box135.md; experiments/new/box135/dmerge.py, STRETCH=1 for stretches)
+- PROVED (lane): Lemma MERGE (order of two options with the same Xi cycle node w = order of their pre-merge segments + w; flips need a
+  move on those segments), Theorem CASC-M (stretch with acyclic merge digraph D' has <= height + 1 transitions), Corollary FL run <=
+  n_E (1 + SBCH + n(n-1) + CNMOV) when every stretch has acyclic D'. DATA: corpus 10/10 stretches acyclic, CASC-M 0 viol.; CNMOV 13.
+  Only D'-cycles: R179 odxi_many_n32 (self-edges 7). Open: D'-cycles (self-feeding through a gate) and CNMOV.
 ### Things only I know (successor 46): anchor.py's corpus run takes ~40 s on 4 cores; dcyc2.py keeps box 131's D edge set (path part
   of the Xi-play only) and adds the anchor-carried classification. Oink had to be rebuilt here (setup_oink.sh, ~2 min).
 

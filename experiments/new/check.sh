@@ -721,4 +721,10 @@ if grep -qxF "CMPW odxi_n37.pg n 37 MOVES 65 FLIPS 45 PREFIX 44 CROSS 1 INPREF 0
 else
   echo "box 134 CMPW check: FAILED"; exit 1
 fi
+w84=$(cd .. && STRETCH=1 python3 -I new/box135/dmerge.py new/box134/inst/odxi_many_n32.pg new/box134/inst/odxi_many_n32.start; STRETCH=1 python3 -I new/box135/dmerge.py red/xing/instances/u23sw64_n32.pg new/box132/u23sw64_n32_default.start)
+if grep -qxF "DMERGES odxi_many_n32.pg n 32 RUNS 3 FL 8 ACYC 1 CYC 2 HMAX 8 CASCVIOL 0 SEGEDGES 274 MAXL 3 SELFL 7 CNMOV 0" <<<"$w84" && grep -qxF "DMERGES u23sw64_n32.pg n 32 RUNS 1 FL 8 ACYC 1 CYC 0 HMAX 9 CASCVIOL 0 SEGEDGES 305 MAXL 8 SELFL 0 CNMOV 0" <<<"$w84"; then
+  echo "box 135 DMERGE: u23sw64_n32 stretch D' acyclic, height 9, FL 8 (CASC-M); odxi_many_n32 2 cyclic stretches via 7 self-edges: PASS"
+else
+  echo "box 135 DMERGE check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
