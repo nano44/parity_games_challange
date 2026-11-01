@@ -691,4 +691,10 @@ if grep -qxF "FLATCNT u2flat73_n32.pg n 32 ODIFF1+ WIN 1 MOVES 75 STRICT 2 FLAT 
 else
   echo "box 130 FLATCNT check: FAILED"; exit 1
 fi
+w79=$(cd .. && python3 -I new/box131/canon.py red/xing/instances/u2flat73_n32.pg -)
+if grep -qxF "CANON u2flat73_n32.pg n 32 K 16 DEC_EVEN 51 FLDEC_EVEN 51 FLKEYDEC 73 FLKEYEQ 0 FLKEYEQ_CYCNODE 0 FLMOVES_EVEN 73 KEYMIN_EVEN 74 KEYTIES_EVEN 74 MAXFLMV_EVEN 2 MINIDX_EVEN 51 MOVETIE_EVEN 73 TIES_EVEN 74" <<<"$w79"; then
+  echo "box 131 CANON: u2flat73_n32 every even-cycle-node tie broken by the lex-smallest BFS key (74 / 74), every FL move lowers the mover's key (73 / 73), index not monotone (51 / 73): PASS"
+else
+  echo "box 131 CANON check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

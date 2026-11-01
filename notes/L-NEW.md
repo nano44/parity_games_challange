@@ -2,6 +2,15 @@
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
 ## Resume point (successor 45, Opus 5.5, session_01V5yGRWZgucRQvPGKYZujK; started 2026-11-01 06:24Z by date -u; handover: HEAD had dcb80dfc (is-ancestor OK), trunk claude/vibrant-johnson-nxvvxo merged 2228f7df)
+### Box 131 N5-CANON (Lead GO 10:41Z; docs/new/N5-CANON-box131.md; experiments/new/box131/)
+- Rule (READING from SPEC S1 (iv) on the dual arena + DATA 666/666, 8/8): c odd -> smallest index among W-tied arena options; c even ->
+  lex-smallest BFS key (c-side play path).
+- PROVED (lane) FL-CANON: (a) c odd: index strictly decreases per FL move (<= deg - 1 moves per FL run); (b) c even: BFS keys
+  non-increasing, strict at movers (range exponential); KEY=VJ (equal-length increasing keys = all-even CDAG order).
+- Recorded L-RED 41 R176 (76601782): box 129 D <= 4 was a start effect (topfix_n10.start: D 59; topfix_nk D = 6k - 1).
+- Corrected box 130 §0: u2flat73's 73 flat moves are all inside its 7 FL transitions.
+- Next: bound D(x) via the Xi-gating (two-order problem again), or R177's embedding.
+
 ### Box 130 N5-FLAT (Lead GO 09:43Z; docs/new/N5-FLAT-box130.md; experiments/new/box130/)
 - PROVED (lane): FL-OPT (at an FL transition sigma_(j-1) is already an arena optimum), FL-TIGHT, FL-RED (FL run = SI on one-player
   G_sbar restricted to W-tight edges, rule = S1 tie-break in G_tau), FL-ODIFF0 (FL needs ODIFF >= 1; corner aside).
@@ -1913,6 +1922,7 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
   packet rule (corrections only in new dated sections).
 
 ## Sources opened
+- (succ. 45, box 131) docs/red/R176-depth.md at claude/l-red 76601782 (L-RED 41; read via the Lead's relay summary only, file not opened by me).
 - (succ. 45, box 129) docs/red/R174-zroute.md at claude/l-red 5d27d366 (L-RED 41, PHASE-PORTAL, SELF; read, not edited).
 - (succ. 45, box 128) docs/red/R173-portal.md and experiments/red/r173/portalck.py at claude/l-red 02119133 (L-RED 41, Lemma PORTAL; read, not edited). RESULTS Erratum E-1 (claude/l-red docs/RESULTS.md l. 9478). RESULTS R101 statement (l. 9251).
 - (succ. 45, box 127) arXiv 1811.05115 Gajjar-Radhakrishnan, pdf sha256 79208b4f5fe9aa5676a3fd96514bae1be82ec3080545c0483e0d2a0c7c28172f: §1 Thm 1, Prop. 5, Thm 6, p. 5-6 recursion, §4 Thm 2 proof. arXiv 1001.3749 Chakraborty-Fischer-Lachish-Yuster, pdf sha256 45398534db333c8b2a695f4da722e0c9953960b851cb605d581f46ff8800e092: §1. NOT opened: doi 10.1007/BF02591893, doi 10.1006/jcss.2001.1766.
@@ -2055,6 +2065,7 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
 - (succ. 38, box 89) T. Ralphs, IE411 Lecture 11 (Lehigh, coral.ise.lehigh.edu/~ted/files/ie411/lectures-python/Lecture11.pdf), slide 3 (PDF text read).
 - (succ. 40) L-LIT T61 (l-lit 1ad851ee, docs/lit/T61-order-charging.md §2.6, S5a data). L-LIT T60 (l-lit 54584c0c, docs/lit/T60-best-reply-flips.md §3.3, ORDER-DET / NO-REPEAT statements); L-SI box 53 (l-si aeb8c311, docs/si/N5-SBF-box53.md §2.1-§2.5, §3); P-N5-SETTLE §1-§2 (l-si a0970d36). [ABS] 2102.04922 and [GH] NOT opened (only T60's quotes; no theorem of theirs used).
 ## Dead ends
+- (succ. 45, box 131) «Smallest index» as S4a's tie rule: false at even W-cycle nodes (483 / 666 ties; the rule there is the BFS key); index potential works only at odd cycle nodes.
 - (succ. 45, box 130) Rule-independent potential for FL runs (Xi, or (Xi, length) at tied W): exponential range, CDAG_n one-player single-switch chain 2^n - n - 1 (CDAG_6: 57 steps). A bound must use the S1 tie-break.
 - (succ. 45, box 129) Recursion over gate depth for W-strict moves: no base. Vertex charge graph cyclic (topfix_n10 window [6,64]: eleven 3-vertex mutual-payment SCCs, e.g. {120,121,122}); move-level chain depth 52 (time depth).
 - (succ. 45, box 128) Per-pivot count «W-strict moves of h <= sum over its classes X of (1 + lambda_Xi(X) changes)»: DEAD, topfix_n10
