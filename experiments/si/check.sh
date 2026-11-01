@@ -1152,3 +1152,13 @@ case "$o" in *"PASSV 0 CURV 0 KEYV 0 CHARGEV 0 "*"SHARE 27"*) ;; *) echo "box 60
 o=$(awk '{for(i=1;i<=NF;i++){if($i=="RET")a+=$(i+1); if($i ~ /^(PASSV|CURV|KEYV|CHARGEV)$/)b+=$(i+1)}} END{print a, b}' anc58/retxi_corpus.txt)
 [ "$o" = "6265 0" ] || { echo "box 60: retxi corpus totals: $o"; exit 1; }
 echo "si (box 60: KEY-RETURN): PASS"
+# box 61 (Lead 23:15Z): Lemma UNBLOCK-KEY data (every unblock = simultaneous Xi-rise of the target, key >= unblock key); per-(edge, key)
+# repeat DEAD on fbg_K4_m6_m24 (4 unblocks of (124, 126) at (1, 145) in one tau-stretch).
+echo "456d12b06750be507a570a340a7d683c2208cb02  ../new/box116/inst/fbg_K4_m6_m24.pg
+463fb03b187623c071fd0198d7b6f72bb7fabe93  ../new/box116/inst/fbg_K4_m6_m24_fixed.start" | sha1sum -c --quiet || { echo "box 61: fbg pin changed"; exit 1; }
+o=$(python3 -I anc58/unblock.py -v ../new/box116/inst/fbg_K4_m6_m24.pg ../new/box116/inst/fbg_K4_m6_m24_fixed.start)
+case "$o" in *"edge (124, 126) key (1, 145) count 4"*"STEPS 139 INC 131 "*"UNB 109 UNBK 43 MAXREP 4 "*"SRCDN 0 UNBKCH 0"*) ;; *) echo "box 61: fbg_K4: $o"; exit 1;; esac
+[ "$(grep -c ' UNBLOCK ' anc58/unblock_corpus.txt)" = 1132 ] || { echo "box 61: unblock corpus incomplete"; exit 1; }
+o=$(awk '{for(i=1;i<=NF;i++){if($i=="STEPS")a+=$(i+1); if($i=="INC")b+=$(i+1); if($i=="UNB")c+=$(i+1); if($i=="SRCDN"||$i=="UNBKCH")d+=$(i+1)}} END{print a, b, c, d}' anc58/unblock_corpus.txt)
+[ "$o" = "17841 12433 6889 0" ] || { echo "box 61: unblock corpus totals: $o"; exit 1; }
+echo "si (box 61: UNBLOCK-KEY): PASS"
