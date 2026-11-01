@@ -1,0 +1,21 @@
+PIN cp_K4 db621f0ab3a8 start 4c8694a84f79
+OINK cp_K4 --zlk verified
+OINK cp_K4 --tl verified
+PINWIN cp_K4.pg n 192 states 45 fallbacks 0 W0 0 AGREE True
+n5b iterations 44 fallbacks 0 states 45 | n5x states 45 | identical state sequences: True
+BRT cp_K4.pg n 192 K 44 ROOTOK 1 stretchT 44 LINKE 3282 LINKO 16 maxLINKO 16 OCH 1 SBCH 1 maxOW 43 XCH 4029 XIN_OLD 4029/4029 (path only 4029) FF 43 IN_OLD 43 IN_NEW 43 PHL up/dn 39/5 PDEP up/dn 36/4 PROOT up/dn 0/0
+TWOFIX cp_K4.pg n 192 K 44 windows 1 inwin 43 | longest [0, 43] L 43 ODIFF 16 SB 2 SBSTEP 1
+PIN b5_os_n40 00fc4562fea7 start 3301f31e2e0a
+OINK b5_os_n40 --zlk verified
+OINK b5_os_n40 --tl verified
+PINWIN b5_os_n40.pg n 40 states 82 fallbacks 9 W0 40 AGREE True
+n5b iterations 81 fallbacks 9 states 82 | n5x states 82 | identical state sequences: True
+BRT b5_os_n40.pg n 40 K 81 ROOTOK 1 stretchT 81 LINKE 184 LINKO 1 maxLINKO 1 OCH 1 SBCH 1 maxOW 77 XCH 347 XIN_OLD 347/347 (path only 347) FF 71 IN_OLD 71 IN_NEW 71 PHL up/dn 53/28 PDEP up/dn 57/22 PROOT up/dn 1/0
+TWOFIX b5_os_n40.pg n 40 K 81 windows 2 inwin 80 | longest [0, 77] L 77 ODIFF 1 SB 7 SBSTEP 9
+PIN s3quad_K8_m30 9576333116f7 start 3a0f39323865
+OINK s3quad_K8_m30 --zlk verified
+OINK s3quad_K8_m30 --tl verified
+PINWIN s3quad_K8_m30.pg n 479 states 265 fallbacks 0 W0 0 AGREE True
+n5b iterations 264 fallbacks 0 states 265 | n5x states 265 | identical state sequences: True
+BRT s3quad_K8_m30.pg n 479 K 264 ROOTOK 1 stretchT 264 LINKE 513 LINKO 32 maxLINKO 32 OCH 1 SBCH 1 maxOW 263 XCH 4812 XIN_OLD 4812/4812 (path only 4812) FF 263 IN_OLD 263 IN_NEW 263 PHL up/dn 255/9 PDEP up/dn 248/8 PROOT up/dn 1/0
+TWOFIX s3quad_K8_m30.pg n 479 K 264 windows 1 inwin 263 | longest [0, 263] L 263 ODIFF 32 SB 2 SBSTEP 1

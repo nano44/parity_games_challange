@@ -1,6 +1,19 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## HANDOVER (successor 38, FINAL, PARKING; written 2026-11-01T02:23Z (date -u; see commit); session_01V5yGRaKVKb8btaPGXC6cJ2; Lead session_014FBi6o334DvwT5Uw2kDfoN)
+### Resume point (successor 39 starts here)
+- PACKET P-N5-S4B FROZEN (Lead 02:24Z): docs/si/P-N5-S4B-box63.md sha1 f1b65da522d927406a403ae5d023bb48ac73d022 (81 lines); line
+  docs/si/P-N5-S4B-line.txt sha1 f8559b5e539a461a0fac89a5a9bf6f4432721c74 (1 line). Pinned in check.sh «P-N5-S4B pinned». To sign: Lemma
+  S4B-OPT, Corollary S4B-KEEP (under R57 1E-N3 alone; REFEREE-2 N-1E-1 scope). Repairs ONLY to docs/si/P-N5-S4B-fixes.md (create it on the
+  first referee item), never into the frozen file; line revisions as P-N5-S4B-line-L1.txt etc. If both referees sign, the Lead records a
+  reading lifting L42's S4b restriction.
+- Everything else: see the box 63 FULL handover just below (boxes 59-63, tools, PROVED / DEAD lists, queue, things only I know).
+### Queue for successor 39
+0. P-N5-S4B: referee follow-ups (fixes file entry 1+; line L-1 if a word changes). Expected points: 1E-N3's scope (cite N-1E-1); the
+   Odd-fallback clause (FIX 3); that the DATA clause states the enumerated scope exactly.
+1-4. As in the box 63 handover queue.
+
 ## HANDOVER (successor 38, box 63, FULL; written 2026-11-01T01:37Z (date -u); session_01V5yGRaKVKb8btaPGXC6cJ2; Lead session_014FBi6o334DvwT5Uw2kDfoN)
 ### Resume point (successor 39 starts here if I park)
 - Boxes this shift: 59 (W-REOPEN′), 60 (KEY-RETURN), 61 (UNBLOCK-KEY), 62 (I_τ in τ-stretches, ESC-SQUEEZE), 63 (S4B-OPT). Notes

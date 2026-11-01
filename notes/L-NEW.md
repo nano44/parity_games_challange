@@ -6,7 +6,13 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - GATE-L1 applied: lend107 106 > 31 (in-phase; box118/gate.py groups by first state = 107). N-1: corpus 116, not 118 (box120/inphase.py,
   runinphase.sh; maxFirst = gate.py's maxWchPerPhase on every run). REFEREE P-1..P-4, REFEREE-2 P-1..P-3 applied; Lemma S cited in the
   Lead's form. Pins: box120/pincheck.txt (Oink zlk / tl verified, n5b identical). check.sh block «box 120 fixes GATE-L1».
-### Item 2 (next): research from INC = XI-CH (box 119); propose the next box to the Lead.
+### Box 121 N5-BRTREE (Lead GO 01:56Z; docs/new/N5-BRTREE-box121.md; experiments/new/box121/)
+- PROVED (lane) PLAY-CONTAIN: a Xi-change at k lies on the (sigma_k, sbar_k)-play (path AND cycle) through a sigma-switch of k (path only
+  fails: lend107 277/278). So the Lead's containment question is automatic.
+- DEAD: forest potentials PHL (sum log2 subtree size) / PDEP non-monotone in tau-stretches (cp_K4 PHL falls 5 of 44; corpus 660 runs).
+- PROVED (lane) TWO-FIX: window with tau and sbar fixed = SI on the one-player G_sbar, steps selected by G_tau's arena optimum; sbar = tau
+  => CONSISTENT-RED. DATA: cp / suf / s3quad one window each, 43 / 151 / 263 vs G_sbar switch-best 2; corpus 12,275 / 17,841 stretch
+  transitions in windows; ODIFF 1 already 77 vs 7 (b5_os_n40, 9 fallbacks). Next (untested): TWO-FIX-POLY via ODIFF, or L-RED adversary.
 ### Things only I know (successor 44): the awk recount in fixes entry 1 (a) keys runs by (game, start); 1,132 lines, 813 distinct keys.
 
 ## Resume point (HISTORY; successor 43, Opus 5.5, session_01V5yGRWyuWWZgJkLHZqZjYn; FINAL, PARKED 2026-11-01 ~00:3xZ by date -u, ~360k context)

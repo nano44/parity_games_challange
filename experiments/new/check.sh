@@ -631,4 +631,10 @@ if grep -qF "INPHASE lend107_n32.pg n 32 K 112 maxFirst 107 maxInPhase 106 at (2
 else
   echo "box 120 GATE-L1 check: FAILED"; exit 1
 fi
+w69=$(cd .. && python3 -I new/box121/brtree.py new/box113/inst/cp_K4.pg new/box113/inst/cp_K4.start; python3 -I new/box121/twofix.py new/box113/inst/cp_K4.pg new/box113/inst/cp_K4.start)
+if grep -qF "XIN_OLD 4029/4029 (path only 4029) FF 43 IN_OLD 43 IN_NEW 43 PHL up/dn 39/5 PDEP up/dn 36/4" <<<"$w69" && grep -qF "TWOFIX cp_K4.pg n 192 K 44 windows 1 inwin 43 | longest [0, 43] L 43 ODIFF 16 SB 2 SBSTEP 1" <<<"$w69"; then
+  echo "box 121 BRTREE: cp_K4 PLAY-CONTAIN 4029/4029, PHL falls 5 times (potential DEAD); one TWO-FIX window of 43 vs switch-best 2: PASS"
+else
+  echo "box 121 BRTREE check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
