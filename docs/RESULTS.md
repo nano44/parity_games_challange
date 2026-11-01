@@ -9475,6 +9475,169 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   reduction of τ-stretch lengths to inconsistent steps; no bound on a run or on running time; no algorithm claim); not a step-4 pass.
   GAPS G-N5-TIME: open.
 
+### R102 [refereed-only] N5 on EVERY game (SPEC S1-S5, under the standing SPEC premise of RESULTS R57 (1E-N3: «that S1's procedure realises an optimal σ̄ is VJ00 §6 plus SPEC conformance», RESULTS R57 (b)), read on every game input of S1's procedure (Lead reading L45, lifting L42's S4b restriction): for every finite game graph G* with G's priorities and a successor at every vertex and every Even strategy σ* of G*, the Odd strategy that S1's procedure outputs for σ* on G* is a pointwise optimum against σ* in G* (the setting of VJ00 and of S1 as in docs/referee-2/R2-N5-1E.md §2, note N-1E-1: «every finite game graph with a successor at each vertex … no class hypothesis», confirmed for arena inputs in docs/referee-2/R2-N5-S4B.md §2)), with: a run is the sequence of states (σ_k, τ_k); Iσ_k and I_τ_k are N5's Even and Odd improving edges at state k (SPEC S2, the latter on G^d); for a state k with I_τ_k ≠ ∅, H′_k is SPEC S4b's arena at k (Odd v keeps the edges to {τ_k(v)} ∪ {w : (v, w) ∈ I_τ_k}, Even v keeps the edge to σ_k(v), priorities of G) and τ_new,k is SPEC S4b's output at k; val(σ, ρ)(x) is the SPEC S1 value of the (σ, ρ)-play from x and ⊴ is SPEC S1's order (better for Even); an Odd fallback is a SPEC S4c iteration with Iσ_k = ∅; a τ-stretch transition is a transition k → k + 1 with τ_(k+1) = τ_k: (Lemma S4B-OPT) for every state k of every N5 run with I_τ_k ≠ ∅, every positional Odd strategy ρ of H′_k and every vertex x, val(σ_k, τ_new,k)(x) ⊴ val(σ_k, ρ)(x), and τ_(k+1) = τ_new,k unless k → k + 1 is an Odd fallback (SPEC text S4c, S4d, FIX 3); (Corollary S4B-KEEP) at every τ-stretch transition k → k + 1 with I_τ_k ≠ ∅, τ_k = τ_new,k, so τ_k is a pointwise-optimal Odd strategy of H′_k against σ_k (2026-11-01) — a premise result under 1E-N3 only, lane-authored (L-SI; not referee-originated): the correctness of S1's procedure (VJ00 §6) stays SPEC's requirement and the code's conformance stays DATA (R15 G-N5T-1); it bounds no count; G-N5-TIME stays open; not M3, not a step-4 pass, not a TARGET.md claim; DATA, not part of the claim: an enumeration of every positional Odd strategy of H′_k found no violation at the 5,058 states with at most 1,024 such strategies among the 5,726 states with I_τ_k ≠ ∅ of the 813 distinct game/start lines of experiments/si/anc58/corpus_fixed.lst (a list of 1,132 lines with 319 exact repeats; counts de-duplicated; 668 states not enumerated), and a mutation control (τ_k in place of τ_new,k) is detected on experiments/red/h3/instances/lcount2_n23 and experiments/red/n5/instances/sym_h8_s1 (experiments/si/anc58/s4bopt.py, l-si 9521f2e72bf049e71de7eadec7853d99227b9dc7), CHECKER PASS (docs/checker/C113.md, checker c5c0ab5f)
+- Object (L-SI successor 38, Opus 5.5, D18; frozen, unchanged during review): packet P-N5-S4B (L-SI box 63), docs/si/P-N5-S4B-box63.md,
+  sha1 f1b65da522d927406a403ae5d023bb48ac73d022, 81 lines (l-si freeze 68fa3661, 2026-11-01T02:23:22Z, the file's only commit; identical
+  at 96fb62cb, at the l-si head and at trunk; first on trunk by merge d734f419, 02:50:19Z). Both referees measured the sha1 at 68fa3661
+  (REFEREE l. 2 «docs/si/P-N5-S4B-box63.md (sha1 f1b65da5…, 81»; REFEREE-2 §0 l. 6 «Re-hashed: match.»). Title (l. 1): «S4b's new τ is
+  Odd's pointwise optimum against σ in S4b's arena, under R57's standing premise 1E-N3 alone. So a τ kept at a τ-stretch transition is
+  that optimum. A premise result: it bounds no count». Status (l. 5-6): «Status: lane-authored (L-SI), not referee-originated (L41 does
+  not apply). No count is bounded. G-N5-TIME stays OPEN. Not M3, not a», «step-4 pass, not a TARGET.md claim.» To sign (l. 9-14): §2
+  Lemma S4B-OPT and §3 Corollary S4B-KEEP «PROVED (to sign)»; §4 «DATA, NOT to sign». Sections: §1 setting and premises (l. 16-30), §2
+  Lemma S4B-OPT with its proof (i)-(iv) and a Remark (l. 32-46), §3 Corollary S4B-KEEP (l. 48-53), §4 DATA (l. 55-71), §5 the RESULTS line
+  draft and the drafter's pre-check (l. 73-81).
+  The RESULTS line, history: (1) the frozen line docs/si/P-N5-S4B-line.txt (sha1 f8559b5e…, committed with the packet), the line both
+  reports reviewed: REFEREE 22 REQUIRED S4B-L1 and S4B-L2 (table l. 14, §5 l. 97-109); REFEREE-2 25 MATCHES with optional P-1 (§5 l.
+  95). At the frozen line the premise read «under the standing SPEC premise of RESULTS R57 (1E-N3: for every finite game graph G* …;
+  scope as signed by REFEREE-2, docs/referee-2/R2-N5-1E.md §2, note N-1E-1: …)», which REFEREE found states «a quantified form R57 does
+  not state» while L42 was active (§5 l. 98-101), and the DATA clause counted the 1,132-line list with its 319 repeats (§5 l. 105-107).
+  (2) L-1 95373010d54c69907308d224fa1111127055b8f5 (docs/si/P-N5-S4B-line-L1.txt, l-si 96fb62cb, 2026-11-01T04:12:28Z, the file's only
+  commit; first on trunk by merge cfde8a92, 05:02:35Z; fixes F0 + entries 1-5) = the frozen line with exactly five changes (word diff by
+  script; to check (2)): R57 (b)'s words quoted and the G*-form introduced by Lead reading L45 (S4B-L1); N-1E-1 cited as «the setting of
+  VJ00 and of S1» (S4B-L1); «confirmed for arena inputs in docs/referee-2/R2-N5-S4B.md §2» (REFEREE-2 P-1); «SPEC text S4c, S4d, FIX 3»
+  (S4B-P1); the DATA counts de-duplicated (S4B-L2). REFEREE 22 L-1: §C (2e6467fd) l. 134 «Five changes, the ones the Lead listed. Nothing
+  else changed:», l. 157 «Verdict: line L-1 **MATCHES**. S4B-L1 and S4B-L2 are met.» REFEREE-2 25 L-1: R2-N5-S4B-L1.md (0e8ae566) l. 18
+  «Nothing else changed. The Lemma and Corollary statements, the binder and the scope tail are token-identical.», l. 34 «**MATCHES** (Opus
+  5.5, D15). Nothing REQUIRED.»
+  L-1 supersedes the frozen line; the title is L-1 verbatim with the date « (2026-11-01)» inserted before « — a premise result» (Lead decision G-1; to check (1)). Neither referee found a FALSE claim statement in the packet;
+  every line item re-attributes the premise, adds a citation or a word, or corrects the DATA counts.
+  Setting (packet §1, l. 16-30): N5 = SPEC S1-S5 (l. 7 «Object: N5 only (SPEC S1-S5, docs/new/N5-ssi-global.md, with Q1-Q4 and FIX
+  1-4).»); [1E-N3] (l. 17-22) in the form «for every finite game graph G* (the priorities of G, a successor at every vertex) and every
+  Even strategy σ* of G*, the Odd strategy ρ* that S1's procedure outputs for σ* on G* satisfies val(σ*, ρ*)(x) ⊴ val(σ*, ρ)(x) for
+  every positional Odd strategy ρ of G* and every vertex x.»; [S4b] (l. 23-24); [S4c / S4d / FIX 3] (l. 25-26); notation (l. 27-30):
+  runs, Iσ_k and I_τ_k, H′_k and τ_new,k «For a state k with I_τ_k ≠ ∅», val, ⊴, «An Odd fallback is an S4c iteration with Iσ_k = ∅.»,
+  «A τ-stretch transition is a transition k → k + 1 with τ_(k+1) = τ_k.» L-1's notation is the packet's, with H′_k written out.
+- Claims signed (both referees "(Opus 5.5, D15)": REFEREE successor 22 (report 062cd734, §C on L-1 2e6467fd); REFEREE-2 successor 25
+  (report 1b9ef2e1, R2-N5-S4B-L1.md 0e8ae566)). Items (a)-(b) are SIGNED in both verdict tables (REFEREE "## 0. Verdicts" l. 7-14 of
+  R-N5-S4B.md; REFEREE-2 "## 1. Claims table" l. 14-18 of R2-N5-S4B.md); the table is to-check (4). Both hold for every N5 run on every
+  game. Premise: RESULTS R57 (b)'s standing SPEC premise 1E-N3, read on every game input of S1's procedure by Lead reading L45 (below);
+  SPEC S1, S2, S4b, S4c, S4d and FIX 3 are SPEC text, not premises (S4B-P1). The code's match to SPEC is DATA (R15 G-N5T-1). No item
+  bounds a count.
+  (a) Lemma S4B-OPT (§2, l. 32-46): statement (l. 33-34) «For every state k of every N5 run with I_τ_k ≠ ∅, every positional Odd strategy
+      ρ of H′_k and every vertex x:», «val(σ_k, τ_new,k)(x) ⊴ val(σ_k, ρ)(x). Moreover τ_(k+1) = τ_new,k unless k → k + 1 is an Odd
+      fallback.»; proof (l. 36-43): (i) H′_k is a finite game graph with G's priorities and a successor at every vertex; (ii) «[1E-N3] with
+      G* := H′_k and σ* := σ_k»; (iii) «A value depends only on the play and the priorities (SPEC S1).»; (iv) S4d, S4c and FIX 3. Cells:
+      REFEREE «**SIGNED** (precision S4B-P1)» (l. 10; §2 l. 45-57; l. 47 «(ii) ✓. By §1 this is 1E-N3 on (H′_k, σ_k).»); REFEREE-2
+      «**SIGNED**» (l. 17; §3 l. 51-57; l. 52 «§2 (ii) is 1E-N3 with G* := H′_k, σ* := σ_k. ✓»).
+  (b) Corollary S4B-KEEP (§3, l. 48-53): statement (l. 49-50) «At every τ-stretch transition k → k + 1 with I_τ_k ≠ ∅: τ_k = τ_new,k.
+      Hence τ_k is a pointwise-optimal Odd strategy of», «H′_k against σ_k.»; proof (l. 51-52): an Odd fallback changes τ (S4c, with
+      SPEC S2's «w ≠ σ(v)» read on G^d, S4B-P2), so it is not a τ-stretch transition, and (a) applies; l. 53 «(If I_τ_k = ∅, S4b does
+      not run and H′_k is not defined; the statement is about I_τ_k ≠ ∅ only.)» Cells: REFEREE «**SIGNED** (precision S4B-P2)» (l. 11;
+      §3 l. 59-62, l. 61 «So τ_(k+1) ≠ τ_k, and an Odd fallback is never a τ-stretch transition. §2 then gives τ_k = τ_(k+1) =
+      τ_new,k.»); REFEREE-2 «**SIGNED**» (l. 18; §3 l. 58-60).
+  The RESULTS line (L-1) states both claims as signed and nothing more; its tail states the premise status, L41's «not
+  referee-originated», the scope words and a DATA clause «not part of the claim» (to check (4), (7)).
+- Premise 1E-N3 on S4b's arena, and Lead reading L45. R57 (b) (RESULTS l. 2915-2916): «that S1's procedure realises an optimal σ̄ is
+  VJ00 §6 plus SPEC conformance, and the code's match to SPEC is DATA (R15 G-N5T-1) (1E-N3 = N-1E-1).» REFEREE §1 (l. 18-39, «The key
+  check»): l. 31-32 «H′_k is a valid input: the same V, Ω and owners as G, E′ ⊆ E, and every vertex has a successor (σ_k(v) for Even v,
+  τ_k(v) ∈ A(v) for Odd v). It is a parity game in SPEC's sense.», l. 33 «So S4b's call is an instance of 1E-N3, the premise about S1's
+  procedure on a game input. It is no further from G than S4a's call.», l. 37-39 «Conclusion: the restriction in L42 («covers S1's
+  procedure and S4a … does NOT cover S4b») cannot be derived from 1E-N3's wording or SPEC. It recorded which instances had been named.»,
+  «Recording this as a Lead reading is the Lead's decision. My finding supports it.» REFEREE-2 §2 (l. 22-48): l. 23 «**(a) Does SPEC S4b
+  run exactly S1's procedure on H′?** Yes.», l. 37-38 «The second item, 1E-N3, is a requirement on the procedure for its input graph.
+  VJ00 §6's algorithm is stated in that same setting, so it covers any finite game graph with a successor at each vertex.», l. 47-48 «So
+  lifting L42's S4b restriction by a Lead reading is consistent with my signature. The premise used is 1E-N3 applied to H′_k, exactly as
+  it is applied to S4a's dual arena.» The Lead then recorded Lead reading L45 (docs/DECISIONS.md l. 383-390, 2026-11-01 04:10Z):
+  «S4b is covered by R57's 1E-N3. L42's restriction («R57 covers S1 and S4a only; [S4b-OPT] not covered») is LIFTED for S4b: S4b runs
+  S1's procedure on the restricted game H′_k (same V, Ω, owners; E′ ⊆ E; a successor at every vertex; «S1 procedure on H', not dual»),
+  which is an input of the kind 1E-N3 / N-1E-1 speaks of (R57 (b): «that S1's procedure realises an optimal σ̄ is VJ00 §6 plus SPEC
+  conformance»).», with its grounds «P-N5-S4B (l-si 68fa36619) Lemma S4B-OPT and Corollary S4B-KEEP, SIGNED by REFEREE (062cd734) and
+  REFEREE-2 (1b9ef2e1), both stating that 1E-N3 covers S4b and that the lift is consistent with their signatures.» and «L42 stays in
+  force for any premise other than S1's procedure on a valid input.» L42 (l. 362-367) is now indexed «active (S4b part lifted by L45)»
+  (docs/DECISIONS-INDEX.md l. 35). L-1 cites both as on file (draft G-2). The lift is a Lead reading, not a signed statement; the
+  signatures are of S4B-OPT and S4B-KEEP under 1E-N3, and each referee's report states that the lift is consistent with it (above).
+  Effect recorded in L45 (not part of this entry): «lemmas that used [S4b-OPT] / [S4b-KEEP] (e.g. O-ARENA, withdrawn from P-N5-STAIR under
+  L42) are as conditional as every landed N5 result, i.e. on R57's SPEC premise only; they still need their own referee review to land.»
+  R99's body (l. 8649, l. 8751-8758) records [S4b-OPT] as «NOT covered» under L42 at R99's landing; R102 does not edit it (draft G-2).
+- L41: not applicable. The proofs are the packet's own (L-SI successor 38); packet l. 5 «Status: lane-authored (L-SI), not
+  referee-originated (L41 does not apply).»; L-1 «lane-authored (L-SI; not referee-originated)». REFEREE §5 l. 115 «L41:
+  «lane-authored (L-SI; not referee-originated)». L43: no DEAD.»; REFEREE-2 §5 l. 91 «No DEAD (L43). No referee-originated proof
+  (L41).» The coverage reading of 1E-N3 for arena inputs is confirmed by both referees (above) and recorded by the Lead as L45; L-1 names
+  REFEREE-2's confirmation by file and section.
+- Fixes (docs/si/P-N5-S4B-fixes.md, L-SI successor 38, append-only, F0 and entries 1-5, one commit 96fb62cb (2026-11-01T04:12:28Z, new
+  file, 60 lines, sha1 833ccf57d9d246b07e6d11a99257a32ae2c86412; = l-si head = trunk)). Header (l. 1): «the frozen packet
+  docs/si/P-N5-S4B-box63.md, sha1 f1b65da522d927406a403ae5d023bb48ac73d022, is never edited». Each entry:
+  - F0 (l. 4-13): both referees' signatures quoted (l. 6-10); L45 (l. 11); «Changes: the RESULTS line only (line L-1, entries 1-2).
+    Entries 3-5 record the optional precisions. The packet's §4 counts are» «superseded by entry 2.» (l. 12-13).
+  - Entry 1 (l. 15-23), S4B-L1 (REQUIRED): R57 (b) quoted verbatim, «read on every game input of S1's procedure (Lead reading L45,
+    lifting L42's S4b restriction)», N-1E-1 «now as the setting of VJ00 and of S1 rather than as REFEREE-2's signed scope of R57» (l.
+    23).
+  - Entry 2 (l. 25-39), S4B-L2 (REQUIRED): the distinct counts re-derived from the lane's own output (l. 29-36), «These agree with
+    REFEREE's figures.» (l. 36); the packet's §4 counts superseded (l. 38-39); «The mutation-control figures (lcount2_n23 215, sym_h8_s1
+    677) are per instance and unaffected.» (l. 39).
+  - Entry 3 (l. 41-45), S4B-P1: «Accepted.»; «The only premise is 1E-N3.» (l. 44-45); L-1 «SPEC text S4c, S4d, FIX 3».
+  - Entry 4 (l. 47-50), S4B-P2: «Accepted.»; no line change.
+  - Entry 5 (l. 52-56), REFEREE-2 P-1: «Accepted. Line L-1 adds «confirmed for arena inputs in docs/referee-2/R2-N5-S4B.md §2».» (l. 56).
+  No fix changes a signed statement: entries 1, 3, 5 re-word the premise citation, entry 2 corrects DATA counts, entry 4 is a proof-text
+  citation (REFEREE §C l. 134-147; REFEREE-2 L1 l. 6-18).
+- Not signed: §1 (premises and notation); §4 DATA (packet l. 14 «DATA, NOT to sign»); the Remark (no dual) (REFEREE-2 l. 61). L-1's
+  DATA clause is marked «DATA, not part of the claim». OPEN, not claimed: any bound on N5's iteration count; G-N5-TIME.
+- Referee strengthening (NOT part of this entry; remarks of one referee):
+  (i) REFEREE §2 l. 47-48 «Note that 1E-N3 gives pointwise optimality against positional Odd strategies by SPEC S1's definition of
+       «optimal» alone; (VJ) (R57 (a)) is not needed for the form the packet uses.»
+  (ii) REFEREE §1 l. 33-36: S4b's call is closer to 1E-N3 than S4a's, which calls S1 on the DUAL of a restricted arena («S4b's call needs
+       neither the dual nor the read-back to G.»); REFEREE-2 §2 l. 40-41 the same comparison.
+  (iii) Own-engine checks beyond the lane's: REFEREE's LOC one-switch deviation test at every state, uncapped («LOC (32,469
+       deviations)», §4 l. 76), and ENUM at CAP = 4,096; REFEREE-2's KEEP checks («KEEP 2,976», L1 l. 29).
+- Honest limits: (i) A premise result: it bounds no count; G-N5-TIME stays open; not M3, not a step-4 pass, not a TARGET.md claim. (ii)
+  It rests on R57 (b)'s standing premise 1E-N3 (S1's procedure realises an optimal counterstrategy, VJ00 §6 plus SPEC conformance), read
+  on S4b's arena inputs by Lead reading L45; the correctness of S1's procedure stays SPEC's requirement, as for every landed N5 result.
+  (iii) The code's conformance to SPEC is DATA (R15 G-N5T-1); the corpus check tests the code (n5x / si.py), not SPEC (packet §4 l. 71).
+  (iv) The DATA enumeration covers only states whose arena has at most 1,024 Odd strategies (5,058 of 5,726; 668 not enumerated). (v)
+  L45 lifts L42 only for S1's procedure on a valid input; every other premise stays under L42, and lemmas that used [S4b-OPT] /
+  [S4b-KEEP] elsewhere (e.g. O-ARENA) still need their own referee review. (vi) The title's date « (2026-11-01)» is Lead-inserted (G-1 decision); the title has no source note.
+- Data (DATA, not proof): pinned. experiments/si/check.sh at 96fb62cb (the L-1 commit): sha1 e49cf25efed32a5042efeff796ec9634f0aa5ef2, 1,206
+  lines (= trunk); the box 63 block is l. 1181-1189 (added by 9521f2e7), the «P-N5-S4B pinned» block l. 1190-1193 (added by 68fa3661: the
+  packet's and the frozen line's sha1), the L-1 block l. 1194-1206 (added by 96fb62cb: L-1's sha1 and the distinct-line counts). Re-run
+  for this draft from a `git archive` of 96fb62cb3 (experiments/ and docs/si/; from experiments/si; GIT_DIR set to the repository), l.
+  1-6 (shebang, set -euo pipefail, cd) plus l. 1181-1206, 2026-11-01 06:24:49Z by date -u (start and end in the same second), rc 0;
+  output: «si (box 63: S4B-OPT): PASS»; «si (P-N5-S4B pinned): PASS»; «si (P-N5-S4B L-1 pinned, distinct counts): PASS». The box 63 block
+  greps «STATES 6 CHECKED 6 SKIPPED 0 RHOS 46 OPTV 0 TAUNEW_EQ_RUN 6 » and «S4AV 0» on lcount2_n23 with its start, «OPTV 215 » under
+  MUT=1, 1,132 corpus rows and the with-repeats totals «7772 6719 0 36 7736»; the L-1 block requires «813 5726 5058 668 213311 0 29 0».
+  Supporting run (the DATA clause's second mutation instance; no check.sh block, D-3), same archive, 06:26:26Z, rc 0: MUT=1 «S4BOPT
+  sym_h8_s1.pg STATES 25 CHECKED 25 SKIPPED 0 RHOS 302 OPTV 677 TAUNEW_EQ_RUN 9 ODDFB 0 S4ACHK 19 S4AV 0»; unmutated «OPTV 0
+  TAUNEW_EQ_RUN 25». Pin files (sha1 at 96fb62cb = trunk): lcount2_n23.pg dd9847c6b19cb9f44af73bcc23de7ca2aca9a14c, lcount2_n23.start
+  7d3626aa4a6a80d59878fa442886473505390c17, sym_h8_s1.pg f87fee647f1c8b57f3466c0b68e7e284e3d559d3 (box 62's pin list, l. 1166-1170);
+  sym_h8_s1_default.start c71d5a46b8e73b8219be41bca1e67d15eb042006 (not pinned, D-3); corpus_fixed.lst
+  d6ed7557a39952563858a8fd402c55b431cd68e2 (1,132 lines, 813 distinct, 719 distinct .pg, 319 repeated lines; by sort / uniq).
+  DATA OF RECORD (L-1; fixes entry 2 l. 31-35): 813 distinct game/start lines; 5,726 states with I_τ ≠ ∅; 5,058 enumerated, 668 not
+  enumerated; 213,311 strategies compared, OPTV 0; τ_(k+1) = τ_new at 5,697 states, 29 Odd fallbacks; S4a control 11,326 states, S4AV 0.
+  Re-summed: equal (to check (10)). With repeats (the packet's §4, superseded): 7,772 / 6,719 / 1,053 / 290,345 / 36 / 16,430.
+  REFEREE (successor 22; own docs/referee/scratch/s4b_probe.py, «own engine rl_engine; no lane code», l. 65): «The list has 1,132 lines,
+  but only **813 distinct** «pg [start]» lines (319 exact repeats; 719 distinct .pg files).» (l. 75); «I found **0 violations**: NEXT,
+  ODDFB, KEEP, LOC (32,469 deviations) and ENUM (5,166» «states, 576,663 strategies; 490 states over CAP).» (l. 76-77); «Per line, my
+  counts equal the lane's» (l. 78); own run errors corrected before comparison (l. 82-87, 92-95).
+  REFEREE-2 (successor 25; own docs/referee-2/R2-N5-S4B/s4b_check.py, «The lane's anc58/s4bopt.py is not imported.», l. 67): report §4
+  (with repeats; l. 72-79) «RESULT PASS, 0 violations, in all four.» (l. 70); L1 (de-duplicated; l. 20-31) «My s4b_check.py on the 813
+  distinct lines» (l. 23), table l. 25-29 («5,726 | 5,726», «5,058 / 668 | 5,058 / 668», «0 (213,311 strategies; 29 Odd fallbacks; KEEP
+  2,976)»).
+  No signed statement uses any count.
+- Signatures: REFEREE docs/referee/R-N5-S4B.md: successor 22's report 062cd7345f29e6f6ab031934b11ec8b1b057665c (2026-11-01T03:19:48Z, new
+  file, 129 lines, sha1 43fe325df2a0abeeaa6e3f2923dd7ac4b402fb9c, with docs/referee/scratch/s4b_probe.py and s4b_logs/; first on trunk by
+  merge 2c497bba, 04:10:15Z): S4B-OPT and S4B-KEEP SIGNED, no gap, line REQUIRED S4B-L1 and S4B-L2; §C
+  2e6467fd281e2ff898b733dfa506effeed75b29f (05:03:24Z, +28/−0, l. 130-157; the file now 157 lines, sha1
+  285d860f9df68b82d7ae0cd9ca539b15ae182334, = referee head): «Verdict: line L-1 **MATCHES**. S4B-L1 and S4B-L2 are met.» (l. 157).
+  2e6467fd is first on trunk by merge 3ad52bc6 (06:52:33Z). REFEREE-2 (successor 25): docs/referee-2/R2-N5-S4B.md
+  1b9ef2e1017d9cf4aad53492a1dd259694ff265a (02:53:38Z, new file, 107 lines, sha1 b0c42cc8beb12782822d2d2d2aff053c11ca0dd3, unchanged since;
+  with R2-N5-S4B/ tool and logs; on trunk by e7c0e191, 03:44:26Z): both SIGNED (l. 17-18, l. 100), line MATCHES (l. 95);
+  R2-N5-S4B-L1.md 0e8ae566deb15706a581b29970fd5fb0297b2f97 (05:04:43Z, new file, 42 lines, sha1 2252e92e78dca736cf52844718b24bb05dd29754,
+  = referee-2 head for this file; on trunk by d9906071, 05:28:33Z): «**MATCHES** (Opus 5.5, D15). Nothing REQUIRED.» (l. 34). Lane: freeze
+  68fa366198cffba1329228fd74b4e857ea140501, L-1 and fixes 96fb62cb37200773fe1b5211843af7986c82337e.
+  INDEPENDENCE: REFEREE l. 3 «Written before reading any REFEREE-2 report on this packet (none in my tree).»; §C l. 141 «Read now, after
+  my report: R2-N5-S4B §2 (b) says this (its P-1), at referee-2 1b9ef2e1.» REFEREE-2 l. 3 «Independence: written without opening
+  docs/referee/ for this packet.» REFEREE-2's report (02:53:38Z) precedes REFEREE's (03:19:48Z) by 26 minutes. Neither review imported lane
+  code (REFEREE l. 65; REFEREE-2 l. 67).
+  Differences, resolved: S4B-L1 and S4B-L2 found by REFEREE only (REFEREE-2 had MATCHED the frozen line); REFEREE-2 measured the repeats
+  itself in L1 (l. 21-22) and reproduced L-1's counts. Both SIGN the same two items with no gap and both MATCH L-1. No disagreement in
+  substance.
+- TARGET.md diff: «N5 on EVERY game» = every TARGET.md §1 game («A parity game is G = (V, V_E, V_O, E, pr) with V finite»; «every vertex
+  has at least one successor (self-loops allowed)»); G* and H′_k are such games on G's vertices (REFEREE §1 l. 31-32). The line (L-1)
+  makes no M4 claim and no TARGET claim; its tail reads «it bounds no count; G-N5-TIME stays open; not M3, not a step-4 pass, not a
+  TARGET.md claim» (L-1, by script). REFEREE §5 l. 117 «TARGET.md diff: no claim against §2 or §4. The result is a premise lemma, no
+  polynomial bound, no unit-cost arithmetic.»; §C l. 154 «No DEAD (L43). TARGET.md diff ✓.»; REFEREE-2 §5 l. 88-89 «This is consistent
+  with TARGET §2 and §4.» Not a claim of TARGET.md §1 or §2 (optimality of S4b's Odd step against σ in its arena, and its consequence at
+  τ-stretch transitions; no bound on a run or on running time; no algorithm claim); not a step-4 pass. GAPS G-N5-TIME: open.
+
 **Erratum E-1** (not a result; 2026-11-01 05:28Z by date -u; Lead; corpus counts in RESULTS R97-R100):
 - What is wrong: the DATA-of-record sentences that say «1,132 games» for the L-SI box 50b / box 53 corpus (sbcg.lst 719 lines + alt_all.lst
   413 lines) count RUNS, not games. Measured by CHECKER (C111 N-7, claude/checker d53e1d4f) at trunk 68d50c8f: experiments/si/anc58/

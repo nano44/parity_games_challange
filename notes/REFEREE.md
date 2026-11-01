@@ -8,7 +8,7 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 - P-N5-S4B (l-si 68fa36619, f1b65da5; Lead 02:50Z): R-N5-S4B.md (2026-11-01T03:19Z). S4B-OPT, S4B-KEEP SIGNED, no gap; 1E-N3 covers
   S4b (S1 on the valid input (H'_k, sigma_k), closer than S4a's dual); line REQUIRED S4B-L1 (G*-form stated as R57's content while L42
   active) and S4B-L2 (corpus list 1,132 lines = 813 distinct; counts with repeats). Own DATA: s4b_probe.py, s4b_logs/ (811 lines equal).
-  WAITING: S4B fixes + line L-1.
+  S4B line L-1 (l-si 96fb62cb3, sha1 95373010) MATCHES: R-N5-S4B §C. L45 (trunk 68d50c8f) lifts L42 for S4b. OPEN: none.
 - TRAPS (s22): corpus lists can repeat lines (anc58/corpus_fixed.lst 319 repeats): name logs per LINE and de-duplicate. A «pg» line
   with no start means SPEC S3's start: do not let the probe pick up a sibling .start (STARTF=/nonexistent). Lane starts can be PARTIAL
   (n5x start_pair fills from S3): PARTIAL=1 in s4b_probe.py. A local «val(w) vs val(tau(v))» test is invalid at cycle nodes: use the

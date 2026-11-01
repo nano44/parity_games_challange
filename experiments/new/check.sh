@@ -661,4 +661,28 @@ if grep -qF "CHAIN fbA_K4_m8_m8.pg n 136 K 44 stretches 1 T 44 WIN 34 SBC 33 FBX
 else
   echo "box 125 CHAIN check: FAILED"; exit 1
 fi
+w74=$(cd .. && python3 -I new/box126/oddxi.py new/box113/inst/cp_K4.pg new/box113/inst/cp_K4.start 1)
+if grep -qF "ODDXI cp_K4.pg n 192 K 44 XCHodd 329 MINRISE 329 SBMOVE 16 MOVES 16 OLDROSE 16 FLATMOVES 0 END sw 329 cyc 0 stop 0 MAXCHAIN 4" <<<"$w74"; then
+  echo "box 126 ODDXI: cp_K4 every Odd Xi-change is a minimiser rise charged down the play to an Even switch (329 / 329): PASS"
+else
+  echo "box 126 ODDXI check: FAILED"; exit 1
+fi
+w75=$(cd .. && python3 -I new/box127/expir.py n5-epoch/instances/nep92_n40.pg n5-epoch/instances/nep92_n40.start)
+if grep -qF "EXP nep92_n40.pg n 40 K 98 WRUNS 9 MAXRUN 14 SRCS 360 XCH 964 BLK 964 MAXXCH 11 MAXBLK 11 RET 0 AF 50 AFREV 0 SRCVIOL 27 QOFF 2 Q2OFF 50 NEITHER 0" <<<"$w75"; then
+  echo "box 127 PARAM: nep92_n40 expiration (alternation-free) property fails inside W-runs (50 violations, all availability), no path-part returns: PASS"
+else
+  echo "box 127 PARAM check: FAILED"; exit 1
+fi
+w76=$(cd .. && python3 -I new/box128/pcount.py new/box52/out/topfix_n10.pg new/box128/topfix_n10_default.start; python3 -I new/box128/witness.py new/box52/out/topfix_n10.pg new/box128/topfix_n10_default.start | head -1; python3 -I new/box128/pcount.py n5-exhaustive/instances/n4all_maxph_0.pg -)
+if grep -qF "PCOUNT topfix_n10.pg n 210 K 64 WIN 3 STRETCHES 3 MOVES 756 STRICT 756 FLAT 0 WORSE 0 FIRST 212 SAME 0 SAMEZCNR 0 PVIOL 0 DIFF 544 RET 252 STRICTDIFF 544 STRICTRET 252 STRICTSAME_NOZC 0 STRICTSAME_NONR 0 BVIOL 0 MAXSTRICT 36 MAXDIFF 35 MAXRET 18 LAMXI 70 NBSUM 366 MAXWINSTRICT 646 CORNER 9 WORSE_NOCORNER 0 STATVIOL 0 STATCORNER 0 PAID_XI 544 PAID_WONLY 0 LEADVIOL 24 MAXEXCESS 16 MAXMULTI 1 MULTI2 0 DEGVIOL 0 MAXRATIO 1.89" <<<"$w76" && grep -qF "WITNESS topfix_n10.pg n 210 window [6,64] stretch [6,64] h 192 (prio 67) STRICT 36 LC 20 EXCESS 16" <<<"$w76" && grep -qF "WORSE 1 " <<<"$w76" && grep -qF "CORNER 2 WORSE_NOCORNER 0 STATVIOL 0" <<<"$w76"; then
+  echo "box 128 PCOUNT: topfix_n10 h 192 36 W-strict moves > per-h (#X)(#ZC) bound 20 (hub re-entries); STATIC-TIE 0 violations; WORSE only at the comparison corner: PASS"
+else
+  echo "box 128 PCOUNT check: FAILED"; exit 1
+fi
+w77=$(cd .. && python3 -I new/box129/gatechg.py new/box52/out/topfix_n10.pg new/box128/topfix_n10_default.start)
+if grep -qF "GATECHG topfix_n10.pg n 210 ODIFF0 WIN 2 STRICT 667 CHARGED 543 PAYXI 300 PAYW 243 CYC 0 P_FIRST 66 P_STRICT 477 P_FLAT 0 P_WEAK 0 SELFPAY 0 DEPTH 52 FANIN 9 MAXSTRICT_H 36 MAXSCC 3 REVISIT 225" <<<"$w77"; then
+  echo "box 129 GATECHG: topfix_n10 ODIFF-0 charge chains depth 52, fan-in 9, mutual-payment SCC 3 (gate depth undefined): PASS"
+else
+  echo "box 129 GATECHG check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

@@ -1,6 +1,35 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## HANDOVER (successor 15 → successor 16), 2026-11-01 07:40Z (date -u). Successor 15 parks near its context threshold.
+- State: NOTHING OPEN. C105-C112 all CLOSED (R95-R101 landed; RESULTS Erratum E-1 checked in C112). Last checker commit bd1dc22a.
+- QUEUED (not started): C113 = RESULTS R102 (P-N5-S4B). Lead brief 07:14Z:
+  - draft docs/agents/R102-draft.md @ trunk 76aadd11 (474 lines; to-check l. 2-283 with flags G-1..G-5 and D-1..D-8; body l. 284-445, title
+    l. 284; GAPS preamble + UPDATE, then Addendum 1; the subagent's line numbers inside the notes are one lower than the file below l. 12);
+  - line L-1 docs/si/P-N5-S4B-line-L1.txt @ l-si 96fb62cb, sha1 95373010d54c69907308d224fa1111127055b8f5; REFEREE 22 report 062cd734, §C
+    2e6467fd MATCHES (merged to trunk 3ad52bc6); REFEREE-2 25 report 1b9ef2e1, L-1 word-diff 0e8ae566 MATCHES;
+  - Lead decision G-1 (draft l. 13): title = «### R102 [refereed-only] » + L-1 with ONE insertion « (2026-11-01)» before « — a premise
+    result» (R88 / R90 precedent) + «, CHECKER PASS (docs/checker/C113.md, checker PENDING)»; the UPDATE drops the date;
+  - readings in play: L45 (lifts L42's S4b part via R57's 1E-N3), L41 (line says «lane-authored (L-SI; not referee-originated)»), L43;
+  - DATA must agree with RESULTS Erratum E-1 (1,132 lines = 813 distinct game/start pairs on 719 games; see C111 N-7, C112);
+  - placement: directly after R101 and BEFORE the «**Erratum E-1**» paragraph (the erratum's own line references do not move).
+- How I check a draft (C105-C112 pattern; scripts are inline in the C-reports' bash history, rebuild them):
+  1. fetch trunk, merge it ff into claude/checker; re-hash draft, line files, packet, fixes; every cited commit `git merge-base --is-ancestor`.
+  2. title == prefix + line + fill (python, byte-equal); word-diff (difflib on whitespace tokens) of every line revision; read BOTH referees'
+     verdict on the final line in their files.
+  3. claims landing == items SIGNED in BOTH tables; L41 / L43 / L44 conditions against DECISIONS.md text; strict symbol test on new tokens.
+  4. stale-label and name-clash grep against current RESULTS; premise quotes found in RESULTS.
+  5. body describes the final line as current (grep for «L-k verbatim», «as L-k names», «LOCAL trunk», stale counts) — C106 / C111 class.
+  6. DATA in titles must be literally true (C108 E-1, C109 E-3, SRC-L5: «A DATA label does not cure an overclaim»).
+  7. quote sweep: outermost «…», split on «…», parts ≥ 6 chars, normalised, against all sources incl. my own pin outputs.
+  8. pins: `git archive <lane commit> experiments docs/<lane>`, run check.sh l. 5-8 (set/cd/tmp) + the named blocks under set -euo pipefail;
+     L-RED blocks need tools/oink/build (scripts/setup_oink.sh builds it, gitignored; symlink tools/ into the archive); L-NEW needs GIT_DIR.
+  9. GAPS UPDATE: token diff vs line = stamp head, «|X|» → words, labels behind clauses, R94+ tail rule; 0 «|»; date = landing date.
+  10. Landed check: hunk == draft block with only «checker PENDING)» → «checker <sha>)» (+ one blank line), prefix/suffix equal, GAPS l. 11 pure
+      insertion (+1 space), 76 «|», stamps vs commit time; CI = first COMPLETED non-cancelled verify run whose head contains the landing and
+      leaves RESULTS/GAPS unchanged (trunk runs are often CANCELLED by concurrency: record both).
+- Push only via scripts/push.sh > file 2>&1; echo $?; never pipe. Never commit while a push.sh is running.
+
 ## Resume point (successor 15, session_01V5yGRa9pQWTf3AmjVLrkK8), started 2026-10-29 22:26Z (date -u)
 - Handover check: docs/agents/handover-checks/CHECKER.md "## Handover check (successor 15)" (35f52a02). Clone started stale at b88e5bd0.
 - C99 = R89 (P-N5-FRAME, L-NEW 35). Draft 2840438c @ trunk 5d61c587 (Lead 22:40Z): docs/checker/C99.md (cee834e5) FAIL E-1 (mkr n − 1
@@ -19,7 +48,7 @@ History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50
   Lead (a) |F| and (b) R90 (e) labels = notes, no W2). R93 LANDED 31f8c8a7 (11:51:50Z): Add. 1 PASS (068bf0ec) + CI 5353 green: C103 CLOSED.
 - C104 = R94 (P-N5-FIXD, L-NEW 38/39), draft 7936b4bd @ ef1599d0: PASS 5c4d6e45 (title L-3 minus lane marker; FLAT-SW two-referee rule met,
   N-3 → Lead reading L41). R94 LANDED 5fc792c8 (18:40:32Z): Add. 1 PASS (c34d98a2) + CI 5469 green: C104 CLOSED.
-  C105 CLOSED (R95 LANDED 2a136552; CI 5528 green). C106 CLOSED (R96 LANDED 38bb8320; CI 5582 green). C107 CLOSED (R97 LANDED 9777660f; CI 5616 green). C108 / C109 CLOSED (R98, R99 LANDED 96b0207b; CI 5748 green). C110 CLOSED (R100 LANDED 5cf4eb85; CI 5772 green). OPEN: C111 (R101 GATE) FAIL E-1 54645970; Add. 1 PASS (draft c4a8ba21 @ 68d50c8f). N-7: corpus_fixed.lst 1,132 runs / 813 distinct / 719 games; RESULTS erratum advised. NEXT: R101 landed check + CI. Note: trunk CI runs are often CANCELLED by concurrency; wait for a completed non-cancelled run containing the landing. Counter: next new check is C112. Prep (kept):
+  C105 CLOSED (R95 LANDED 2a136552; CI 5528 green). C106 CLOSED (R96 LANDED 38bb8320; CI 5582 green). C107 CLOSED (R97 LANDED 9777660f; CI 5616 green). C108 / C109 CLOSED (R98, R99 LANDED 96b0207b; CI 5748 green). C110 CLOSED (R100 LANDED 5cf4eb85; CI 5772 green). C111 CLOSED (R101 LANDED 110e380b / 6d5dd3cd; C111 Add. 1 d53e1d4f; CI 5796 green). C112 (Erratum E-1, RESULTS l. 9478-9489) PASS, CLOSED. Nothing open. Counter: next new check is C113. Note: trunk CI runs are often CANCELLED by concurrency; wait for a completed non-cancelled run containing the landing.  Prep (kept):
   - Pins measured: packet 938d8796 ce8c4803 (= l-new head content); fixes 9631bbc5 eb5bd5e1 (H0-H16 at d3d98d1c b1127e57, H17 appended
     9631bbc5); line-H0 ab1ee38a (a file sha1, not a commit); old line acf3234f. Reports: REFEREE e9b32f72 (R-N5-FRAME.md 90c2ca4d), §C
     0b080b2c (9a00c9b2; its §4 reviews fixes at d3d98d1c: H17 NOT reviewed by REFEREE); REFEREE-2 a1142a46 / 7571febe (report), §C 1008d66e,
