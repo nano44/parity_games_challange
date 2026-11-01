@@ -57,6 +57,11 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
     up to 6. No compounding: μ_ℓ 2, 5, 10, 8; L_FL / n ≈ 0.25 (linear, DATA).
   - Bottleneck = AVN (fresh Ξ-overtakes per mover, ≤ 13), not KCH (to 63).
   - D″ CYCLIC on the 32-transition stretch (dmerge2, also DOM=1): first active D″-cycle; CASC-M″ hypothesis fails, no violation.
+    Per-state D″ cyclic at every state (also pruned to |T_x| ≥ 2) here and in R185's dcyc3 / d2cyc4: ERRATUM added to R185 §1.
+  - Item 2 (§6): c = Even cycle node with mover options (croot.py): shortcut / up alternation, 18 moves of c in one FL run (cn_d4_n126),
+    22 (cn_g24_n246), returns 11 / 14, CN-UP holds. Pushes: 436fe6e9 (R187), then the addendum.
+- RESUME POINT / QUEUE: (a) a Ξ-counter inside IDEAL-ACYC (R187 §3 shape): anything found is a real family; (b) exact d 3 search in
+  ACYC (bmc.py restricted); (c) CNONLY per FL run in CROOT games; (d) old queue (NR-CYC, two-level replay, D at ODIFF ≥ 1).
 - Things only I know:
   - findk.py 4 3000 1 gives the stuck core K in seconds; other cores exist (n 5). K must keep its σ-world cycle node BELOW every ladder
     β and its τ-world node ABOVE c_W; stab.py maps K's priorities into those two bands.
@@ -67,6 +72,9 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   - dmerge2 needs the l-new tree: scratchpad ws = git archive origin/claude/l-new experiments/new experiments/si experiments/harness +
     cp -r experiments/red/r170.
   - The engine is fast here: the whole R187 check.sh block takes ~10 s with Oink.
+  - TRAP hit again: «until ! pgrep -f scripts/push.sh» never ends (it matches its own shell; exit 144 when killed). Read the push log /
+    git ls-remote instead. push.sh took ~30 min (VERIFY PASS 436fe6e9).
+  - dm2state.py: r187/mkdm2state.py <ws>/experiments/new/box136/dmerge2.py, then run in that dir; PRUNE=1 restricts to |T_x| ≥ 2.
 
 ## Successor 43 PARK (2026-11-01 ~20:2xZ, date -u; context ~430k)
 - DONE (claude/l-red, push.sh VERIFY PASS each): 246d5ecb (R183), 0969b409 (R183 addendum), 89b9939d (R184), final push (R185, the

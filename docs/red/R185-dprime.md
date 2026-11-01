@@ -48,6 +48,9 @@ l. 182-195. Not a TARGET.md claim. G-N5-TIME stays OPEN. No kill.
   - From state 7 on, Y′ = 47, 24, 17, 26, 20, 11, 31, 4, 6, which ends at 6 itself: C-STATIC-Ξ, static.
 - So a time-resolved D″ (edges taken per state, cycles counted only among edges present at one state) would be acyclic here. Whether
   CASC-M″'s induction can use the per-state digraph is a question for the proof side.
+- ERRATUM (L-RED successor 44, R187 §2): the bullet above is wrong. Both edges 11 → 6 and 6 → 11 are present at state 6 (as the
+  detail above lists). The per-state D″ (r187/mkdm2state.py: dmerge2's edges of one state, STRETCH=1 DOM=1) is cyclic at 4 / 4
+  states of dcyc3's stretch, and still at 4 / 4 when D″ is restricted to vertices with |T_x| ≥ 2 (cycle 11 ↔ 20).
 
 ## 2. Lemma CN-UP (PROVED, lane)
 Setting: an FL transition j (gating state j − 1); c an Even W-cycle node (W-length 0) with o := σ_(j−1)(c) and y := σ_j(c).
