@@ -1,5 +1,5 @@
 # L-RED notebook (independent adversary lane)
-Successor 42 (session_01V5yGRZmYx9sPoeaSsLDoAg, Opus 5.5) started 2026-11-01 10:39Z (date -u); R177 (CDAG order as an FL run): TB canonical (R24), FL-IDX, CASC-G, LADDERBF, idealised two-face model; see "Successor 42"; R178 IDEAL model, XI-NEW.
+Successor 42 (session_01V5yGRZmYx9sPoeaSsLDoAg, Opus 5.5) started 2026-11-01 10:39Z (date -u); R177 (CDAG order as an FL run): TB canonical (R24), FL-IDX, CASC-G, LADDERBF, idealised two-face model; see "Successor 42"; R178 IDEAL model, XI-NEW; R179 ODIFF Ξ-changes exist.
 Successor 41 (session_01V5yGRa8VX4VrSzMTZfKctP, Opus 5.5) started 2026-11-01 06:24Z (date -u); R173 (a): Lemma PORTAL; R174 (Z): PHASE-PORTAL, SELF; R175: ODD-GATE; R176: topfix ODIFF-1 depth; PARKED; see "Successor 41 PARK".
 Successor 40 (session_01V5yGRZzQMY5djbFkvKqE6d, Opus 5.5) started 2026-11-01 02:51Z (date -u); R170 (TWO-FIX: FREEZE), R171 (FB per window: no FB >> n), R172 (TF-PH DEAD); PARKED ~06:1xZ; see "Successor 40 PARK".
 Successor 39 (session id: see docs/NOW.md roster, Opus 5.5) started 2026-10-31 20:56Z (date -u); R167, R168, R169; PARKED; see "Successor 39".
@@ -58,6 +58,9 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - R178 docs/red/R178-ideal.md (Lead GO 12:06Z, (a)): no super-linear family; best 2.7 FL/n_E (d 4: 32 at 12; d 8: 54 at 24); "3d" was
   under-search; grow-by-level additive (top 32 → 64 at 12 → 24). Lemma XI-NEW PROVED (lane): the least-level mover of every FL step after
   the first has a newly Ξ-available option (model 3,017 genomes 0 viol; corpus 19 checked 0 viol). IDEAL model stated precisely (§1).
+- R179 docs/red/R179-odxi.md (Lead queued 12:35Z): Ξ-changes at ODIFF vertices inside real FL runs EXIST: odxi_min_n12 (𝒞^1O, ODIFF 1,
+  o's Ξ-cycle broken by a W-flat move), odxi_lasso_n13, odxi_many_n32 (43 in 8 FL transitions); corpus 0 (37 FL transitions). Climb +
+  shrink find them fast; lassock re-checks without si.py.
 - RESUME POINT: hand-design a two-level replay in the IDEAL model (replayed segment containing its own bottom-triggered replay); then
   stabilisers (R175 §3 (ii)). Old routes: (C); D super-linear at ODIFF ≥ 1.
 - Things only I know:
