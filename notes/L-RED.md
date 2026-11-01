@@ -53,7 +53,11 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   - R181: real L_FL ≤ 8 at n 16-64 (falls / n), gating per run rises in bulk; pins fl_s48, fl_s64.
   - R182: route (C): Lemma C-STATIC PROVED (lane): ≤ deg − 1 W-strict same-portal moves per λ_W-phase without NR / ZC, given NOPRE. Open
     escape: NR-CYC with θ on the cycle-sitting option's prefix tail.
-- RESUME POINT / QUEUE (Lead 16:36Z):
+- RESUME POINT / QUEUE (Lead 16:36Z; top item added by Lead 17:06Z):
+  - TOP: a family with growing FVCH (L-NEW 46 box 134, claude/l-new 6f630331, docs/new/N5-OVT-box134.md, FL-ANCHOR′: FL run ≤
+    CAP(1 + SBCH + n² + FVCH)). Iterate odxi_n37's cross-anchor overtake (L-NEW experiments/new/box133/134, sha1 83f263c1a4d0): two
+    gates read by W-tied siblings whose Ξ-values rise past each other repeatedly inside one FL run / λ_W-phase. Measure FVCH and L_FL
+    against n. Tools to reuse: r181/flrun.py, r179/odxi.py + lassock.py, climb181 (score = FVCH instead of gate).
   - faster exact d = 3 in the IDEAL model (bit-vectors, symmetry breaking; bmc.py is the int encoding and stalls at d = 3);
   - the two-level replay (IDEAL model; R178 §3 champion shows a one-level replay);
   - super-linear D at ODIFF ≥ 1 (R176 topfix is linear);
