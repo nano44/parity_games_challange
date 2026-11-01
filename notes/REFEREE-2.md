@@ -22,7 +22,9 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
 - P-N5-S4B (l-si 68fa36619, f1b65da5, line f8559b5e): report docs/referee-2/R2-N5-S4B.md. S4B-OPT, S4B-KEEP SIGNED; line MATCHES (P-1
   optional: N-1E-1 + arena-input confirmation). S4b = S1 procedure on H' (its G_sigma). DATA exact (7,772 / 6,719 / 290,345 / 1,053 / 36).
   Tool R2-N5-S4B/s4b_check.py. Worktree $SCRATCH/ws4b = l-si 68fa36619.
-- NEXT: whatever the Lead sends. Context ~330k.
+- S4B L-1 (96fb62cb3, 95373010) MATCHES; dedup counts 5,726 / 5,058 / 668 reproduced on 813 distinct lines. FINDING: box 53 corpus
+  (1,132) = 813 distinct + 319 start-less alt_all lines repeating sbcg lines: corpus DATA in STAIR / ODD / ROOT / GATE double-counts them.
+- NEXT: whatever the Lead sends. Context ~345k.
 
 ## HANDOVER (successor 24, session_01V5yGRZwUkPZRndvKiAAuAD, Opus 5.5 under D15; written 2026-10-31 15:3xZ by date -u; context ~480k; Lead 15:17Z: handover and park)
 Branch claude/referee-2, merged with trunk (git merge, no rebase) before every push. REFEREE-2 owns no docs/GAPS.md rows.
