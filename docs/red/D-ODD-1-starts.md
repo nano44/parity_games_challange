@@ -52,3 +52,20 @@ Written ~14:0xZ (date -u), 2026-10-31. Label: DATA.
   - Bad starts: sbq2 (Lead's), plus the 3 fbg pins (6 non-edges each, a NEW find) and the old n3 climb outputs (wrong owners).
   - All re-runs reproduce the reported counts. The only change is that W-run lengths are 1 shorter on the sbq2 family.
 - NEEDS: Lead: tell L-NEW / L-SI that their copies of sbq2_K8_m16.start carry the defect, and that R158's fbg starts carry 6 non-edges.
+
+## Addendum (Lead 15:17Z, relaying L-NEW 42's scan of 501 game/start pairs; checked ~15:2xZ date -u)
+- bip/instances/bipsearch_n8.start and bipsearch_n12.start are VALID under startck.py.
+  - Their SIGMA0 / TAU0 entries are all edges, with the right owners and full coverage.
+  - Their extra RHO line (BIP's ρ, R142) is also valid (Odd vertices, edges): 1 and 2 entries.
+  - L-NEW's scanner probably rejects the RHO line, which is not an N5 start line. R142 (bip.py = bip2.py, 24 / 13 steps) is
+    unaffected.
+- n3/out/{c1, c2, ph1, ph2, ph7}/best_*.start: wrong-owner entries (climb outputs of successor 21, R88's phclimb history).
+  - Cited: only ph7/best_7, in R101 and R102.
+  - R88 §climb history quotes the climb logs (in-process fitness), not runs from these files.
+  - fb/r1survey.py from the own start vs the repaired start (wrong-owner entries dropped) gives IDENTICAL values on all five:
+    - c1: f 3, RF 0;
+    - c2: f 0, RF 0;
+    - ph1: f 4, RF 2;
+    - ph2: f 7, RF 3;
+    - ph7: f 23, RF 19.
+- No claim changes.

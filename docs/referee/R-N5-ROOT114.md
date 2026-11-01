@@ -141,3 +141,92 @@ Referee: REFEREE (successor 21), Opus 5.5 (D15). Lead brief 2026-10-31 15:17Z. R
   2. FUEL-ROOT-STAIR is conditional on P-N5-ODD landing; DESC-ROOT and ROOT-STAIR are conditional on P-N5-STAIR landing.
   3. Line: REQUIRED ROOT-L1 (quantifiers), ROOT-L2 (pin the cited lines), ROOT-L3 (key / HC).
 - NEEDS: Lead: route ROOT-L1..L3 to L-NEW (a fixes file for box 114).
+
+## §C. Line revision L-1 and the fixes file (successor 21, 20:00Z 2026-10-31 by date -u)
+- Objects (re-hashed):
+  - docs/new/P-N5-ROOT-line-L1.txt at claude/l-new be131555, sha1 a41df25be547e603582ebdf6a06e1070e1f02e95;
+  - docs/new/P-N5-ROOT-fixes-box114.md, sha1 5f144b41a4d37fac05fa39c9113a4a801b9e2dbe (entries 1-2).
+  - I opened no docs/referee-2/ file. REFEREE-2's items are known to me only as fixes entry 2 quotes them.
+- Word-diff against 954af7be (`git diff --no-index --word-diff=porcelain`). Every change maps to entry 1 (my ROOT-L1..L3) or entry 2
+  (REFEREE-2's ROOT114-L1 / L2), and nothing else changed, except the new R163 tail clause (below).
+  - STAIR pinned to line L-2 (l-new 6903f1b3, sha1 44f56e96, which I MATCHED in 45b63517).
+  - FUEL-COUNT pinned to l-si 0afc0d70a §6, sha1 03eec41d, with fixes entries 1-2.
+  - «k → k + 1 a transition of F» added to ROOT CHANGE.
+  - KEY and the fuel re-route's key defined; HC_F := «the number of transitions u of F at which Ξ(z) changes with a key strictly greater
+    than the key of the last fuel re-route of (y, z) at a transition ≤ u».
+  - The binder «every vertex v, every Even y, every vertex z and every transition k → k + 1 of F».
+  - DESC-ROOT «previous change of W(v)».
+  - ROOT-SPLIT «if (y, k) is a root change and k − 1 ∈ F, then (y, k) is …».
+  - Source note «fixes … entries 1-2».
+- ROOT-L1 ✓, ROOT-L2 ✓, ROOT-L3 ✓.
+- REFEREE-2's boundary point (entry 2, ROOT114-L1; quoted counterexample w_re3_1, k = q = 6, an S4c cut) is correct.
+  - At the cut, W-MON and the fixed C / λ_W at k + 1 are not available. As worded in 954af7be, ORIGIN-NEW and ROOT-SPLIT read k free over
+    states with k − 1 ∈ F.
+  - My §4 proof uses W-MON «on F», so it signs the statement for k → k + 1 ∈ F only, the same reading as REFEREE-2's. My root114_probe
+    loops only over transitions of F, so it never tested the cut.
+  - My ROOT-L1 fix (binding k to the transitions of F) would have excluded the case, but I did not see that the unbound reading is false
+    at k = q. REFEREE-2 found that. L-1's «k → k + 1 a transition of F» inside ROOT CHANGE, plus the binder, settles it ✓.
+- Strict symbol test on the new tokens: KEY, a, b, r, r′, u, HC_F, the pinned citations and v / y / z / k are bound. ONE exception
+  follows.
+- ROOT-L4 (REQUIRED). The scope tail names «DESC-LIN DEAD (L-RED R162); DESC*-LIN DEAD in the weak form (L-RED R163)».
+  - Neither DESC-LIN nor DESC*-LIN is defined in this line, «the weak form» is undefined, and neither DEAD is pinned by commit. P-N5-STAIR
+    L-2 writes «DESC-LIN (DESC_F ≤ c·n) DEAD (L-RED R162, claude/l-red 54832628 …)».
+  - Fix: define both and pin both, e.g. «DESC-LIN (DESC_F ≤ c·n) DEAD (L-RED R162, l-red 54832628)» and «DESC*-LIN (DESC*(F) := min over
+    witness sets U of Σ_(u ∈ U) DESC_F(u) ≤ c·n) …».
+- ROOT-L5 (REQUIRED; the C108 E-1 class, an asymptotic claim stated on finite data). The Lead asked whether «DESC*-LIN DEAD in the weak
+  form (L-RED R163)» overclaims. As worded, it does. I read docs/red/R163-descstar.md at l-red 8150c17e:
+  - The kill is stated as «DATA: DESC* = (m2 + 1)·K + 6 on every instance computed» (exact ILP, LP-certified), with DESC*/n reaching 2.23 at
+    K24 m48. The Θ(n²) growth is the extrapolation «along K = Θ(m2)». The family formula is not proved.
+  - DESC*-LIN, «DESC*(F) ≤ c·n» for some constant c, is refuted only by unbounded growth. Finite data refute only c < 2.23.
+  - R163 itself calls the result the WEAK form (DESC* super-linear while |F| stays quadratic), and that phrase is undefined in the line.
+  - Fix, either:
+    - DATA wording: «DATA: DESC* (as defined) reaches 2.23·n on fbg_K24_m48, with DESC* = (m2 + 1)K + 6 on every computed fbg instance and
+      |F| quadratic there (L-RED R163, l-red 8150c17e)»; or
+    - keep «DEAD» only once L-RED proves the family formula (a proof that DESC* ≥ (m2 + 1)K on fbg for all K, m2).
+  - For comparison, R162's DESC-LIN kill is structurally stronger. At fixed K, passive copies with no in-edges do not change the run, and
+    each copy repeats the observer's descents, so DESC/n → K as n_base grows. That refutes every c < K for each K whose base run is
+    computed (K ≤ 16 in R162). It is still a finite-K argument. I accept R162's «DEAD» as the fleet's usage for an attacked conjecture.
+    But the Lead may want to label it the same way. My MATCHES on STAIR L-2 accepted R162 on the Lead's relay without this analysis.
+- Fixes file:
+  - Entry 1 quotes my ROOT-L1..L3 ✓.
+  - Entry 2 quotes REFEREE-2 verbatim ✓. Its remark that ORIGIN-NEW's A/B step «is landed R91 Lemma OPT-OFF» is consistent with my §4.
+- Verdict on L-1: does NOT yet match. It needs ROOT-L4 (define and pin DESC-LIN / DESC*-LIN) and ROOT-L5 (R163 as DATA, not DEAD).
+  Everything else MATCHES (Opus 5.5, D15).
+
+### §C addendum: line revision L-2 (l-new 7988e2f4, docs/new/P-N5-ROOT-line-L2.txt, sha1 c9c6b3801ed9cc3cb5017f240d8e0d0f2610efba; fixes entry 3) (21:24Z 2026-10-31 by date -u)
+- Word-diff against L-1 (a41df25b): «DESC-LIN DEAD (L-RED R162); DESC*-LIN DEAD in the weak form (L-RED R163);» is dropped, and «entries 1-2)»
+  → «1-3)». Nothing else changed. The sha1 is re-hashed and matches.
+- ROOT-L4 and ROOT-L5 are met, by removal, in line with the Lead's ruling L43.
+- The remaining clause «every root descent is a fuel re-route» DEAD (frz32: old-edge relays). I AGREE with REFEREE-2 that it is allowed
+  under L43.
+  - The statement is universal, with no constant: every R-descent of every W-run is a fuel re-route.
+  - One instance refutes it, and its terms (R-descent, fuel re-route) are defined in the line.
+  - My own engine confirms the instance: root114_probe.py on red/n5inj/instances/frz32 with its start finds 3 R-descents entering by
+    edges of H_(k−1) (ROLD 3, §7). The start is valid, and Oink verifies the game.
+  - Precision (optional): name the pin as «red/n5inj/instances/frz32 with its start», with its sha1.
+- Verdict on L-2: MATCHES (Opus 5.5, D15). No REQUIRED change remains on the P-N5-ROOT line.
+
+### §C addendum 2: line revision L-3 (l-new 4cac9dc5, docs/new/P-N5-ROOT-line-L3.txt, sha1 7b0916921c39cd6f11bde9c4d8f1eed6be1bf81d; fixes entry 4, Lead pre-check F-1..F-3) (23:39Z 2026-10-31 by date -u)
+- Word-diff against L-2 (c9c6b380). Exactly L-NEW's list, and nothing else:
+  - the STAIR premise → «RESULTS R99 (P-N5-STAIR: Lemma COPY … Theorem STAIR)»;
+  - FUEL-COUNT → «RESULTS R98 (P-N5-ODD: Corollary FUEL-COUNT)»;
+  - «as in RESULTS R99» for β / descents;
+  - «root descent» → «R-descent»;
+  - the new L41 tail clause;
+  - «entries 1-4».
+  The sha1 is re-hashed and matches.
+- The labels match the landed text (trunk 96b0207b).
+  - RESULTS l. 8296 is «### R98 [refereed-only] …». Its text equals P-N5-ODD line L-3 (which I MATCHED), and it contains Corollary
+    FUEL-COUNT, the fuel re-route definition and G-ODD-1 / G-ODD-2.
+  - l. 8596 is «### R99 …». Its text equals P-N5-STAIR line L-3 (which I MATCHED), and it contains Lemma COPY (both directions), Theorem
+    STAIR, β and DESCENT, and G-ST-1 = P-1.
+- (a) «the proof of ORIGIN-NEW uses a step of that proof» is ACCURATE. Packet §4, l. 97: «y is not in the path set of W_k(z0) …, nor in
+  that of W_(k+1)(z) …, as in [COPY]'s proof (G-ST-1)». That constancy fact (v ∉ P(W(z))) is exactly the first half of the G-ST-1
+  argument (R-N5-STAIR §6), and ORIGIN-NEW needs it for Φ(y; ·) to preserve the order. My §4 used the same step.
+- (b) «a FUEL RE-ROUTE … as in P-N5-ODD §6». The definition is written out in full in the line, so nothing is bound by the reference, and
+  it is not a defect. For consistency with the premises now citing R98, I RECOMMEND «as in RESULTS R98», where the same definition is
+  landed. Optional, not REQUIRED.
+- Strict symbol test: no new symbol. «R-descent» is the line's own type-R descent ✓.
+- L41: the tail now names every referee-originated proof that ROOT relies on (G-ST-1 = P-1 for DESC-ROOT and ORIGIN-NEW; G-ODD-1 / G-ODD-2
+  through FUEL-COUNT) ✓.
+- Verdict on L-3: MATCHES (Opus 5.5, D15).

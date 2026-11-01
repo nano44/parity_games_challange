@@ -607,4 +607,22 @@ if grep -qF "k 12 |Is| 17 |It| 1 fb 0 moves h2:e2->m2" <<<"$w64" && grep -qF "k 
 else
   echo "box 116 TAU check: FAILED"; exit 1
 fi
+w65=$(cd .. && python3 -I new/box116/carry.py red/seg/instances/s3quad_K8_m30.pg new/box116/inst/s3quad_K8_m30_default.start)
+if grep -qF "CARRY s3quad_K8_m30.pg n 479 iters 264 maxRE 7 ORET 0 TCH 0 FB 0 ES 0 V1 1 V2 1" <<<"$w65" && grep -qF "R3 7.000 (189, 476)" <<<"$w65"; then
+  echo "box 116b CARRY-ODD: DEAD at constant 1 on s3quad_K8_m30 (7 re-entries, no Odd return, no source event, W(476) constant): PASS"
+else
+  echo "box 116b CARRY check: FAILED"; exit 1
+fi
+w66=$(cd .. && python3 -I new/box117/squeeze.py new/box115/inst/switchbestexp_2.pg N5; python3 -I new/box117/squeeze.py new/box115/inst/switchbestexp_2.pg TBR)
+if grep -qF "SQZ switchbestexp_2.pg N5 n 60 iters 32 SANDV 0 LODROP 0 HIRISE 0 UNSET 0 set0 4 setK 60 growths 14 maxgap 16" <<<"$w66" && grep -qF "SQZ switchbestexp_2.pg TBR n 60 iters 53 SANDV 0 LODROP 0 HIRISE 2 UNSET 3 " <<<"$w66"; then
+  echo "box 117 SQUEEZE: switchbestexp_2 N5 interval never widens (HIRISE 0, UNSET 0, settle gap 16); TBR widens (HIRISE 2, UNSET 3): PASS"
+else
+  echo "box 117 SQUEEZE check: FAILED"; exit 1
+fi
+w67=$(cd .. && python3 -I new/box118/gate.py new/box113/inst/cp_K4.pg new/box113/inst/cp_K4.start; python3 -I new/box118/gate.py new/box115/inst/switchbestexp_2.pg -)
+if grep -qF "GATE cp_K4.pg n 192 iters 44 stretches 1 climbsteps 44 fb 0 flat 0 gated 43 " <<<"$w67" && grep -qF "onep 2 maxratio 22.0 INC 43 maxConsistentWindow 1" <<<"$w67" && grep -qF "onep 16 maxratio 1.1 INC 6 maxConsistentWindow 12" <<<"$w67"; then
+  echo "box 118 GATE: cp_K4 one tau-stretch of 44, ungated one-player climb 2, INC 43; switchbestexp_2 INC 6, stretch 18 vs one-player 16: PASS"
+else
+  echo "box 118 GATE check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

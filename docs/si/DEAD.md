@@ -703,3 +703,19 @@ ebe3da481098f568ee171b061ab70e2d0f786bbd; n 26, gap [1, 26] of 25 = n − 1 tran
   258; REFEREE 21 D-ODD-1, REFEREE-2 24 F-1). With τ(242) on any of its 8 real successors: W(242) = W(259) at 0 of 153 states, while σ̄(260)
   still flips 128 times. No valid instance is known, so the W-rank potential is OPEN, not dead. ASC-W and TURN-W stay DEAD (src2_K3, valid
   start; the sbq2 rows survive the repair: BAD 525, TURNBAD 58). Repaired start: src54/inst/sbq2_K8_m16_fix.start.
+- (box 59, successor-38 brief; note docs/si/N5-WRE-box59.md §4) CLOSE-W «at every W-run escape (s, u) whose escaped cycle Z has an Even
+  vertex switching at u, W(x) strictly rises at u» (x = σ̄_u(s)): false. Instance experiments/red/n5inj/instances/frz40.pg, default start
+  (written out: experiments/si/anc58/inst/frz40_default.start): u = 44, Odd s 0 leaves x 36 for τ(0) = 22; closing switch Even 9 (W(9)
+  rises); W(36) unchanged. Obstruction: x's W-play leaves Z at Odd 11 ∈ D (σ̄(11) = 4, τ(11) = 31), so the switch is invisible to W(x).
+  Corpus: 20 of 1,301 closing escapes. n5b identical, Oink zlk OK, strategies verified. Not a kill of W-REOPEN′ (this escape does not
+  repeat); it is the kill shape handed on.
+- (box 60, Lead 22:19Z; note docs/si/N5-RET-box60.md §3) Route «the Ξ-side return charge (Lemma KEY-RETURN: a return of Even y to a needs
+  Ξ(a) to cross b's value at the leave, at a key ≥ the leave's gain) bounds switches polynomially»: DEAD as a route. KEY-RETURN uses only
+  [IMP] and [R15a], so classical switch-all SI satisfies it: experiments/si/anc58/inst/switchallexp_6.pg under --si has 6,589 returns,
+  all charged, 0 violations, exponential run. Under N5 the per-option charge keeps the degree factor: one Ξ-change pays 5N + 2 returns
+  (switchbestexp_N, fc_N; corpus max 42). The lemma itself is PROVED (lane); its counting form is RESULTS R95 RET-ΞRISE.
+- (box 61, Lead 23:15Z; note docs/si/N5-UNB-box61.md §3) «Inside one τ-stretch each (edge, key) pair is unblocked at most once» (the
+  Lead's ideal distinct-(edge, key) charge for INC): false. Instance experiments/new/box116/inst/fbg_K4_m6_m24.pg + fbg_K4_m6_m24_fixed.start:
+  edge (124, 126) unblocks 4 times at key (1, 145) in stretch 1-139; fbg_K8 / K12: 8 / 12 (linear in K). Obstruction: each unblock is a
+  fresh Ξ-rise of the target (UNBLOCK-KEY), and the edge is re-blocked in between, so the per-edge count is the target's Ξ-rise count
+  (composition). Also one-to-one INC → unblocks fails (corpus 12,433 vs 6,889). n5b identical, Oink zlk OK.

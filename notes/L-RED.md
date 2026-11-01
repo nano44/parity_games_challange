@@ -1,5 +1,6 @@
 # L-RED notebook (independent adversary lane)
-Successor 38 (session_01V5yGRZkXge7F2DR4joW3DU, Opus 5.5) started 2026-10-31 12:12Z (date -u); R162 DESC-LIN, R163 DESC*, D-ODD-1 starts; see "Successor 38".
+Successor 39 (session id: see docs/NOW.md roster, Opus 5.5) started 2026-10-31 20:56Z (date -u); R167, R168; see "Successor 39".
+Successor 38 (session_01V5yGRZkXge7F2DR4joW3DU, Opus 5.5) started 2026-10-31 12:12Z (date -u); R162 DESC-LIN, R163 DESC*, D-ODD-1 starts, R164 switch-all counter vs N5; see "Successor 38".
 Successor 37 (session id: see docs/NOW.md roster, Opus 5.5) started 2026-10-31 08:11Z (date -u); R158-R161; handover written ~11:0xZ at ~420k, updated after R161 (~470k), PARKED; see "Successor 37 PARK".
 Successor 36 (session_01V5yGRXBDuKdR4N9Rfvkq8p, Opus 5.5) started 2026-10-31 01:10Z (date -u); R152-R157 + SRC L-4, L-5; un-parked 06:43Z for R157 (Lead keeps 99762405); PARKED again ~07:5xZ; see "Successor 36 PARK".
 Successor 35 (session_01V5yGRWdTCZePxH7viLZ6VS, Opus 5.5) started 2026-10-30 20:42Z (date -u); R147-R151; PARKED ~2026-10-31 00:5xZ; see "Successor 35 PARK".
@@ -37,6 +38,57 @@ context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older note
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
 
+## Successor 39 (Opus 5.5, D1/D18; started 2026-10-31 20:56Z, date -u)
+- Start: origin/claude/l-red = b31f9477 (is-ancestor OK; no other pusher); trunk c8d8d1ec merged (65ec435c); l-new 7dc1eb7c, l-si 86f2c700
+  fetched. Start message to the Lead 20:56Z. Oink 8fbf0a7 rebuilt; scipy and z3-solver 5.3.3 pip-installed (container only).
+- R167 docs/red/R167-restart.md: self-referential level-2 gate (rider escape x_i -> hps = the gated reactor's comparison side).
+  - DATA: pin r167/instances/sr_K2_m6_m4 idles: the E3 drivers' restart is W-better but not Xi-improving (xiprobe at state 3); |F| 22.
+  - Climbs (climb167, ESC 0-3): E3 <= 16 = 2K m3 (once per phase).
+  - srz3.py (z3 order model of the family): restart + binding gate UNSAT in every variant; one phase SAT; no self-reference: CLOSED
+    alone UNSAT (R158 (A)). Not modelled: I_tau = {} and the E1 coupling (so UNSAT stands, SAT is a candidate only).
+  - The SAT one-phase model is not realised: mk167m.py MID=1 moves tau at the riders (I_tau != {}).
+- R168 docs/red/R168-twolines.md (Lead GO 22:19Z): srz3b.py. Two lines on one E2: UNSAT (J 5). Two full copies restarting while
+  fully reset: UNSAT (J 5, 7; core has IDLE-RESTART). One phase with I_tau = {} and no restart: UNSAT (J 5, 7; core ITAU at riders).
+  One phase, no restart, no I_tau: SAT. The pre-E2STAY SAT candidates were spurious (mk168 real build: rr4, rr6 rise at transition 1).
+- RESUME POINT: outside the model only: gates reading E3 below its head; reactors with 3 options; escapes to targets other than
+  q / T / a static q-escape; the E1 coupling. Inside the model everything per-step-re-armed is UNSAT once I_tau = {} is required.
+- Commit erratum: 339374383's Claude-Session trailer names succ. 38's session; this session is session_01V5yGRYVy3wZ2ZDHF5VpFiB.
+- Things only I know:
+  - srz3.py runs in ~7 s for J 7; with STAY at J 9 it takes 10-25 min. UNIFORM=1 + MODEL_OUT dumps a period-2 model for mk167m.py.
+  - pkill -f "Monitor" killed my shell (exit 144) again: never pkill -f with a word in your own command line.
+  - anc.py runs from trunk experiments/si/anc58 directly (cd there); hier.py from experiments/new/box107; descstar needs LNEW=..
+
+## Successor 38 PARK (2026-10-31 ~21:xxZ, date -u; context ~420k, written before the ~550k park point)
+- DONE (claude/l-red, push.sh VERIFY PASS each):
+  - 54832628 (R162);
+  - 8d466f43 / 8150c17e (R163 + D-ODD-1);
+  - 8e3ec6f2, 81a754cc (D-ODD-1 addendum), cd5ec3ba, ed782cb4, cb4f4bba, 74bb2fec (R164);
+  - R165 + this section in the final push.
+- RESULTS (lane level; G-N5-TIME OPEN):
+  - R162 (docs/red/R162-desc.md): DESC-LIN DEAD by passive observers (cp_K, suf_K); |F| unchanged; obs core descent-free.
+    STAIR-U PROVED (lane).
+  - R163 (R163-descstar.md): DESC* exact ILP; DESC*-LIN DEAD (weak form) on fbg, DESC* = (m2+1)K + 6 = Θ(n²), |F| quadratic.
+  - D-ODD-1 (D-ODD-1-starts.md): startck.py and start validation in xeng / oinkcmp / desc tools. Bad starts: sbq2 (obs3.py), the fbg pins
+    (fbsearch build: b_j's τ not moved to be_j), the old n3 outputs. All counts reproduce.
+  - R164 (R164-sax.md): the fixed τ does not kill the switch-all counter; S4a does.
+    - S4a W-monotone PROVED (lane).
+    - Carries = W-drops; re-arm = W-drop = W-run boundary (H3 on switchbestexp).
+    - fbA PLAT = K − 1 in one W-run.
+    - W-monotone switch-all PLAT ≤ 1.
+  - R165 (R165-nest.md): a third gated level (fbsearch3, pin fb3_K4_m6_m12_m12) is ADDITIVE, |F| = K(m2 + m3 + c); E3 selectors never
+    switch; PLAT 0; DESC* ≈ |F|; the cap is R158 (A) one level down.
+  - R166 (R166-wreopen.md): W-REOPEN (L-SI box 58 §10) DEAD. n3cov_lean's Odd 2-cycle is subdivided by a forced Even vertex (or one with
+    a never-taken sink choice): EVEN_NOWRISE 1, pins wre/instances. Suggested repair: an Even vertex that SWITCHES between the escapes.
+- RESUME POINT: the missing gadget is a level-≥2 selector that re-climbs once per inner step while its rises are compared against
+  the OLD level (R158 (A) at depth 2). Start from fb3_genome.json (fbsearch3.py) with an objective counting hs2 / hps2 switches.
+- Things only I know:
+  - L-SI's anc.py runs only from a git-archive of claude/l-si (experiments/si/anc58). sax/ancx.py and platx.py take it via env ANC.
+  - scipy is pip-installed in this container only. check.sh skips the ILP lines without it.
+  - pkill -f with a pattern that occurs in your own command line kills the shell (exit 144). Use ps / grep / kill by pid.
+  - A `while pgrep -f X` wait loop matches itself; use `ps aux | grep -c '[x]...'`.
+  - fbsearch.py's build leaves τ(b_j) = hp after b_j's successor becomes be_j: that is the fbg non-edge. fbsearch3.py repairs it.
+  - desc2.py / descstar.py hold all W-vectors in memory: n ≈ 600 with 1,300 states runs out of memory (cp_K20, fbg_K32_m32 not run).
+
 ## Successor 38 (Opus 5.5, D1/D18; started 2026-10-31 12:12Z, date -u)
 - Start: origin/claude/l-red = 871610eb (is-ancestor OK; last push succ. 37 11:25Z, no other pusher); trunk 797717ca merged (ff);
   l-new ffe347ee, l-si fetched. Start message to the Lead 12:13Z. Oink 8fbf0a7 rebuilt (setup_oink.sh).
@@ -61,8 +113,21 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   - Bad starts: sbq2 (obs3.py), the 3 fbg pins (fbsearch build, 6 non-edges each), the old n3 climb outputs.
   - All counts reproduce from repaired starts; the sbq2 family W-runs are 1 shorter.
   - fbg_K12 re-pinned with the repaired start.
+- R164 docs/red/R164-sax.md (Lead GO 14:47Z, inputs 15:46Z / 16:15Z):
+  - sax/hyb.py hybrids. The FIXED τ does not kill the switch-all counter: H1 is exponential, with 618/630 steps in one τ-run. S4a kills
+    it.
+  - PROVED (lane, elementary): S4a is W-monotone.
+  - DATA: switch-all's carries are W-drops.
+  - PLAT: N5 has PLAT = K − 1 in one W-run on fbA (R158 design A; pin sax/instances/fbA_K8_m8_m8, PLAT 7), linear, re-armed by
+    ladder W-rises.
+  - Hybrids: W-monotone switch-all (H4) has PLAT ≤ 1, where H1 has 2^(N−1) − 2.
+  - switchbestexp in one frozen-τ world (H3): every re-arm is a W-dropping fallback, and stretches are linear.
+  - OBSTRUCTION (template): each re-arm needs a W-drop, i.e. a W-run boundary (τ-move or fallback).
+  - Climbs (wclimb REARM=3) at n 17 / 32 / 47: |F| ≤ 1.4n.
+  - Tools ancx.py / platx.py need L-SI's anc.py (env ANC; git-archive of claude/l-si).
 - scipy was pip-installed in this container (not in the repo); check.sh skips the ILP lines without it.
-- RESUME POINT: the decisive form needs a depth-3 re-arm in the core (R160 open climb, hd/wclimb.py REARM=2), objective |F|/n^2.
+- RESUME POINT: a W-MONOTONE nested counter: a re-arm paid by a W-RISE (as fbA's gate, once per ladder rung) whose carrier's W-chain is
+  itself long, i.e. depth >= 3 (DESC* nested). Every switch-all template dies at «re-arm = W-drop» (R164 §1c).
 - Things only I know:
   - desc2.py runs from trunk with LNEW=.. (cwd experiments/red). The trunk n5x / si / pg / n5 are identical to l-new ffe347ee.
   - The cp_K20 run (n 896) was killed (out of memory) when run in parallel with other runs. A solo rerun was started in the

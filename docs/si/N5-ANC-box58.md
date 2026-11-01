@@ -227,3 +227,99 @@ W-run. If you can prove that property, escapes per W-run are bounded.» Written 
     would give PLAT ≤ (number of W-changes on those plays). That is the precise statement I would attack next.
 - check.sh «box 58 §7» pins switchallexp_6 (SI ESCEQ 57, MAXPLAT 31), switchbestexp_5 (N5 ESCEQ 3, MAXESC_SX 2, MAXPLAT 1),
   pp_K48_n449 (N5 ESCASC 45, ESCEQ 0, MAXESC_SX 24) and the corpus (MAXPLAT ≤ 1, ESCNONMONO 0).
+
+## 8. PLAT-POLY, the precise statement (Lead 18:36Z; L-RED 38 R164, claude/l-red 74bb2fec) (DATA, DEAD, CONJECTURE)
+Written 2026-10-31 from 18:4xZ (date -u; see commit).
+- Inputs from R164: Lemma W-MON (lane, L-RED: inside a W-run S4a is W-monotone, since σ_(k+1) is Even's optimum in an arena that contains
+  σ_k); DATA: switch-all's carries are W-drops against τ; fbA_K8_m8_m8 (R164 pin) has PLAT 7 in one N5 W-run (so «PLAT ≤ 1» is dead).
+  - L-SI check: WMONV 0 on all 1,132 corpus games, fbA_K8_m8_m8, pp_K48_n449 and switchbestexp_5 (W never drops inside a W-run).
+- Statement tested (the Lead's wording of my candidate (b)): «inside a W-run, every equal-key re-opening of (s, x) needs a strict W-rise on
+  x's or x₂'s W-play». Tool experiments/si/anc58/wrise.py: for consecutive escapes u1 < u2 of one (s, x) in one W-run, does W(x) or W(x₂)
+  strictly rise from u1 to u2 (x₂ ranging over s's other choices in (u1, u2])? wplay.py widens this to the W-plays of x and x₂ at u1 and u2.
+- DEAD as stated. Corpus: 121 repeats; 118 have the rise; 3 do not (2 at an equal key, 1 not). None of the 3 has a W-rise anywhere on the
+  W-plays of x or x₂:
+  - red/n3/instances/n3cov_lean.pg with n3cov_lean_fixed.start (L-RED R99's valid start): Odd s 35, x 29, escapes at 12 and 21, both with
+    swap key (1, 44); τ(35) = 44.
+  - red/n3/instances/n3cov_phi.pg with its start completed by n5x.start_pair (anc58/inst/n3cov_phi_full.start; the original is partial,
+    R99): Odd s 14, x 13, escapes at 9 and 16, both (1, 26). Also s 7, x 30 at 3 and 7, keys (1, 24) then (1, 23).
+  - Faithfulness: n5b (red/seg/xeng.py) state sequences identical on both (36 and 32 states); n5.py's solutions agree with Oink zlk, and
+    both players' strategies verify (check_sol2.py).
+  - Mechanism: in all 3, x is itself ODD and the escaped cycle is the 2-cycle s → x → s of two Odd choices (29 ↔ 35, 13 ↔ 14, 30 ↔ 7).
+    W fixes Odd to τ, so W cannot see this cycle at all. W does rise elsewhere (36, 12 and 11 vertices) and on x's Ξ-plays, but not on its
+    W-play.
+- CONJECTURE W-REOPEN (data 0 violations): inside a W-run, if the escaped cycles of two consecutive escapes of (s, x) both contain an Even
+  vertex, then W(x) or W(x₂) strictly rises between them.
+  - Data: EVEN_NOWRISE 0 on the corpus (117 such repeats) and on fbA_K8_m8_m8 (28), pp_K48_n449 (45), switchbestexp_5 (3). The only
+    exceptions to (b) are the 4 Odd-only repeats (ODDONLY 4, 3 without a rise).
+  - With W-MON, W-REOPEN bounds the Even-cycle repeat escapes of one (s, x) per W-run by the number of strict W-changes at x and its
+    alternatives. That is a W-run count, not yet a polynomial one: whether W changes per vertex per W-run are polynomial is open here.
+- Odd-only escapes (both escaped cycles purely Odd): a separate residue, 4 repeats in the corpus. They are Odd's best response
+  re-deciding between two Odd vertices that point at each other. W-REOPEN does not cover them.
+- Next: prove W-REOPEN. Planned route: at the first escape, x's new Ξ-play returns to s through an Even vertex e. By [R57] with ρ = τ,
+  Ξ ⊴ W, and W-MON keeps W(e) from falling. A re-opening at the same swap key needs Ξ(x) or Ξ(x₂) to come back across the same digit
+  (INT), and the claim is that this is only possible if the W-values bounding them from above move.
+
+## 9. The Odd-only residue is paid by Ξ(x) (Lemma ESC-XCH, PROVED, lane); W-REOPEN not proved (obstruction stated) (Lead 19:33Z)
+Written 2026-10-31 from 19:3xZ (date -u; see commit).
+- Lemma ESC-XCH. At every escape (s, u) of §3 (Odd s leaves x := σ̄_u(s) at u), both Ξ(s) and Ξ(x) change at u. Hence, for every W-run F
+  and every Odd s and vertex x, the escapes of s from x in F number at most XCH_F(x), the transitions of F at which Ξ(x) changes.
+  - Proof. The walk reaches s as a first changed vertex on the old play of a changing vertex v, so κ_u(s) ≥ κ_u(v) by KEY-PREF; in
+    particular Ξ(s) changes at u. ODD-STEP (P-N5-ODD §3, signed by both referees) says: if Ξ_(u+1)(x) = Ξ_u(x) with x = σ̄_u(s), then
+    Ξ_(u+1)(s) = Ξ_u(s). Contrapositive: Ξ(x) changes at u. Distinct escapes of (s, x) are at distinct u. □
+  - So the answer to the Lead's question is yes, through ODD-STEP itself (ODD-RELAY is not needed): the repeat escapes of an Odd-only
+    2-cycle s ↔ x are bounded by the Ξ-changes of x. This holds for every escape, not only Odd-only ones. It is a relocation, not a bound,
+    because XCH_F(x) is itself what is being counted.
+  - DATA (experiments/si/anc58/oddonly.py on anc58/corpus_fixed.lst; output oddonly_corpus.txt): every one of the 1,434 W-run escapes has
+    Ξ(s) and Ξ(x) changing (ALLSCH = ALLXCHX = 1,434). There are 38 Odd-only escapes, at most 2 per (s, x) per W-run, and 0 exceed
+    XCH_F(x).
+- W-REOPEN: NOT proved in this box. The obstruction, so that the next attempt starts from it:
+  - W-MON (R164) and Ξ ⊴ W ([R57] with ρ = τ) control W along W-plays, which use τ at every Odd vertex.
+  - An escape is a fact about x's Ξ-play, which uses σ̄ and leaves τ exactly at the vertices of D. The escaped cycle Z passes through D
+    whenever s ∈ D, which is 1,403 of the 1,434 W-run escapes (§4 data: ESC_LEAVE_TAU 31). So Z and x's W-play are different plays.
+  - A proof therefore needs a statement linking Ξ(x) to W at a D-vertex on Z. One candidate: whenever an Odd o ∈ D on Z re-decides,
+    W(σ̄(o)) or W(τ(o)) moves (an «Odd W-SEP»). That is the same kind of link as R97's source events. I have no proof of it.
+- The second question (W-changes per vertex per W-run): by L-NEW's STAIR / ASC-RUN (R99), WCH_F(v) ≤ (3n + 1)(1 + DESC_F(v)), and R163
+  shows DESC* = Θ(n²) with |F| quadratic. Not started in this box. The target, per the Lead, is a bound in terms of |F| or source events.
+
+## 10. «Odd W-SEP» on data: DEAD; W-REOPEN handed to L-RED as a kill target (Lead 20:00Z)
+Written 2026-10-31 from 20:0xZ (date -u; see commit).
+- Statement tested (CONJECTURE Odd W-SEP, §9): inside a W-run, when an Odd o changes its choice at u (σ̄_u(o) = a → σ̄_(u+1)(o) = b), W
+  strictly rises at u at a, b or τ(o). Tool experiments/si/anc58/wsep.py; corpus output anc58/wsep_corpus.txt (anc58/corpus_fixed.lst).
+- DEAD. Corpus: 6,437 Odd re-decisions in W-runs (all with o ∈ D_u ∪ D_(u+1)), 758 without such a W-rise. On escaped cycles: 1,586, of
+  which 184 have none. On escaped cycles that contain an Even vertex (W-REOPEN's scope): 1,514, of which 136 have none, in 30 games. The
+  wider form (a W-rise anywhere on the W-plays of a, b, τ(o)) gives the same counts.
+  - Smallest instance: experiments/n5-exhaustive/instances/frz2_n24.pg (sha1 25db3330…), default start (S3). At u = 17, Odd 12 changes
+    18 → 19 = τ(12) on an escaped cycle that contains an Even vertex, and W(18) = W(19) are unchanged at 17. n5b (red/seg/xeng.py, with
+    the default start written out) gives an identical state sequence; n5.py's solution matches Oink zlk, and strategies verify.
+  - So the per-transition link «an Odd re-decision moves W» is false, and W-REOPEN cannot be proved through it.
+- W-REOPEN itself still has 0 violations (§8: EVEN_NOWRISE 0 on 1,132 games; frz2_n24 has no repeat escapes). Its rise happens between
+  the two escapes, not at the re-decision. CONJECTURE, handed to L-RED (via the Lead) as a KILL TARGET: build a W-run in which one (s, x)
+  escapes twice, each time through a cycle with an Even vertex, with W(x) and W(x₂) both constant in between. Hints from the data: the
+  W-SEP failures are returns to τ with W tied (frz2_n24), and the Odd-only 2-cycles of §8 already break the unrestricted form. So the
+  attack is to place one Even vertex on such a 2-cycle without breaking the tie.
+
+## 11. W-changes per vertex per W-run, against |F| and source events (Lead 20:30Z) (DATA, DEAD, READING)
+Written 2026-10-31 from 20:3xZ (date -u; see commit). Tool experiments/si/anc58/wch.py. For each W-run F it computes LEN = |F|,
+SRC (R97 source-event transitions, as srcfuel.py), WCH_F(v) (transitions of F at which W(v) changes), its max and sum. Corpus output
+anc58/wch_corpus.txt (anc58/corpus_fixed.lst).
+- Quadratic pins (one W-run each):
+  | pin | |F| | SRC | max_v WCH_F(v) | Σ_v WCH_F(v) |
+  | --- | --- | --- | --- | --- |
+  | obs_K12_m24 | 324 | 24 | 301 | 2,976 |
+  | src2_K3 | 324 | 24 | 301 | 4,973 |
+  | rcl_K24 | 324 | 24 | 301 | 4,429 |
+  | sbq2_K8_m16 (fixed start) | 151 | 143 | 16 | 1,935 |
+  | latew_K16_m32 | 560 | 528 | 32 | 6,655 |
+- DEAD: «max_v WCH_F(v) ≤ c·(1 + SRC_F)» for a constant c.
+  - obs / src2 / rcl give a ratio of 12.04 (= K + 0.04); the corpus maximum is 36.
+  - experiments/new/box52/out/topfix_n10.pg (sha1 4b65d3dc…, default start) has a W-run of 58 transitions with NO source event, in which
+    one vertex's W changes 36 times.
+  - red/ul/instances/ladderd0_k48_n156 (+ .start, valid): one vertex's W changes 48 times against 1 source event (|F| = 50).
+  - Both runs: n5b identical (xeng); Oink zlk OK, strategies verified.
+  - Source events therefore do not pay for W-changes one by one, even up to a factor n: topfix_n10 has none.
+- The |F| side: max_v WCH_F(v) / |F| reaches 1.000 in the corpus and 0.929 on obs / src2 / rcl. The only bound consistent with the data
+  is the trivial WCH_F(v) ≤ |F|.
+- READING (consequence for PLAT-POLY). W-REOPEN (§8) bounds the Even-cycle repeat escapes of (s, x) by W-changes at x and x₂, and
+  W-changes per vertex are as large as |F|. So the route «PLAT ≤ W-changes» gives PLAT ≤ |F|, which is circular: it bounds the
+  repeat escapes by the W-run length we are trying to bound. Via STAIR / ASC-RUN (R99), WCH ≤ (3n + 1)(1 + DESC), so the open quantity
+  stays DESC per vertex, as the Lead said. A useful bound must come from DESC (R162 / R163), not from W-changes.
