@@ -13,8 +13,8 @@ READING. Not a TARGET.md claim. G-N5-TIME stays OPEN.
   - TB with adversarial availability reaches 8 on the same ladder (LADDERBF). Ξ can supply at most half of it.
 - Forcing the dynamics to follow LADDERBF's own 8-step ceiling chain (fixed gates and states, red/r180/synth.py) is UNSAT already
   from its 4-step prefix; prefixes of 1-3 steps are SAT. So the exponential chain is not even locally realisable.
-- d = 3 (6 movers; climbs reach 7, TB ceiling 22): bmc.py with L = 7..10 did not finish in 35+ CPU-minutes per instance (still running
-  at write time; any result is appended below). So no exact claim at d = 3.
+- d = 3 (6 movers; climbs reach 7, TB ceiling 22): bmc.py with L = 7..10 did not finish: no answer after 50+ CPU-minutes per instance;
+  all four were stopped undecided at 14:45Z. So no exact claim at d = 3.
 - READING: together with R178 (climbs linear, growth additive) and XI-NEW, the smallest case already shows the gap between TB's
   ceiling and what Ξ-availability can drive. IDEAL-LIN stays a CONJECTURE.
 
@@ -32,7 +32,7 @@ READING. Not a TARGET.md claim. G-N5-TIME stays OPEN.
 
 ## 2. Files
 - red/r180/ladderchain.py (LADDERBF with chain output: chain_d2.json, 8 steps; chain_d3.json, 22 steps), synth.py (follow a given
-  chain), bmc.py (free search), bmc_d2_L4.json (the SAT model). The d = 3 logs are not committed (the jobs were still running).
+  chain), bmc.py (free search), bmc_d2_L4.json (the SAT model). The d = 3 runs left no output (stopped undecided).
 - check.sh block «R180»: bmc d = 2 at L = 4 (sat, replay 4) and L = 5 (unsat); synth on chain_d2 at prefix 4 (unsat).
   About 30 s in all; skipped when z3 is absent.
 
