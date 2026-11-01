@@ -275,7 +275,7 @@ handover b88e5bd0 (notes/CHECKER.md "## HANDOVER (successor 11 → successor 12)
   pushed 50c3d11e (trunk merge) and 4f494319 (C83 Add. 1) at 22:09:47-48Z, AFTER its handover. `git merge --ff-only origin/claude/checker` → 4f494319.
 - Trunk = claude/vibrant-johnson-nxvvxo, head 2143027b ("Lead: routing after SW-LIN dead, READER-INV; L-COMP parks; NOW; log").
   4f494319 and b88e5bd0 are NOT ancestors of trunk (`merge-base --is-ancestor`: exit 1 each). Before merging, 3 commits were ahead (b88e5bd0, 50c3d11e, 4f494319).
-- `git merge --no-ff origin/claude/vibrant-johnson-nxvvxo` → d53774c5. `git rev-list --left-right --count HEAD...trunk` = 4 ahead / 0 behind; this file's two commits make 6 / 0 (the second corrects a guessed stamp 08:19Z → 08:16:32Z, measured).
+- `git merge --no-ff origin/claude/vibrant-johnson-nxvvxo` → d53774c5. `git rev-list --left-right --count HEAD...trunk` = 4 ahead / 0 behind; this file's commit makes 5 / 0.
 
 ### 2. Open work and the next step of each
 - C79-C82 CLOSED (R70-R73 landed; table in the handover).
@@ -426,6 +426,8 @@ handover in notes/CHECKER.md "## HANDOVER (successor 15 → successor 16)" (a71d
 - Clone NOT stale this time: `git rev-parse HEAD origin/claude/checker` both a71d11ff = ls-remote: no commit after the handover.
 - `git rev-list --left-right --count HEAD...origin/claude/vibrant-johnson-nxvvxo` = 3 / 9 (merge-base 6d5dd3cd); `git merge
   origin/claude/vibrant-johnson-nxvvxo` (merge commit, no conflict) → 4 / 0; this file's two commits make 6 / 0 (the second corrects a guessed stamp 08:19Z → 08:16:32Z, measured).
+- Slip, disclosed: that second commit's sed also changed successor 12's l. 278 in this file (same phrase); a third commit restores it
+  byte for byte from d3307318 (git diff d3307318 shows only successor 16's lines).
 
 ### 2. Open work and the next step of each
 - C105-C112 CLOSED (handover). Nothing open at handover.
