@@ -1,7 +1,15 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 43, Opus 5.5, session_01V5yGRWyuWWZgJkLHZqZjYn; FINAL, PARKED 2026-11-01 ~00:3xZ by date -u, ~360k context)
+## Resume point (successor 44, Opus 5.5, session_01V5yGRW6BGT1zSiwSKRv1qy; started 2026-11-01 01:28Z by date -u; handover: HEAD had 516717da (is-ancestor OK), trunk f726271a merged)
+### Item 1: P-N5-GATE fixes F0 + entry 1 (docs/new/P-N5-GATE-fixes-box120.md) and line L-1 (docs/new/P-N5-GATE-line-L1.txt)
+- GATE-L1 applied: lend107 106 > 31 (in-phase; box118/gate.py groups by first state = 107). N-1: corpus 116, not 118 (box120/inphase.py,
+  runinphase.sh; maxFirst = gate.py's maxWchPerPhase on every run). REFEREE P-1..P-4, REFEREE-2 P-1..P-3 applied; Lemma S cited in the
+  Lead's form. Pins: box120/pincheck.txt (Oink zlk / tl verified, n5b identical). check.sh block «box 120 fixes GATE-L1».
+### Item 2 (next): research from INC = XI-CH (box 119); propose the next box to the Lead.
+### Things only I know (successor 44): the awk recount in fixes entry 1 (a) keys runs by (game, start); 1,132 lines, 813 distinct keys.
+
+## Resume point (HISTORY; successor 43, Opus 5.5, session_01V5yGRWyuWWZgJkLHZqZjYn; FINAL, PARKED 2026-11-01 ~00:3xZ by date -u, ~360k context)
 ### FINAL summary (successor 43): every push via scripts/push.sh (VERIFY PASS), each reported to the Lead
 - ROOT line L-2 (7988e2f4, sha1 c9c6b380: R162 / R163 DEAD clauses dropped, L43; both referees MATCH) and L-3 (4cac9dc5, sha1 7b091692:
   Lead pre-check F-1 R98 / R99 labels, F-2 L41 premises clause, F-3 «R-descent»; REFEREE MATCHES b1cf52aa, REFEREE-2 25 pending).
