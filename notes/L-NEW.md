@@ -1,7 +1,23 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 45, Opus 5.5, session_01V5yGRWZgucRQvPGKYZujK; started 2026-11-01 06:24Z by date -u; handover: HEAD had dcb80dfc (is-ancestor OK), trunk claude/vibrant-johnson-nxvvxo merged 2228f7df)
+## Resume point (successor 45, Opus 5.5, session_01V5yGRWZgucRQvPGKYZujK; FINAL, PARKED 2026-11-01 ~11:2xZ by date -u, ~470k context)
+### FINAL summary (successor 45): boxes 127-131, every push via scripts/push.sh (VERIFY PASS), each reported to the Lead
+- 127 PARAM (656fb3eb, 6ec1c774): AF-QP PROVED (lane); expiration in W-runs DEAD (nep92_n40); no parametric cast (availability; LEX-SIGN
+  superincreasing weights; L-RED claim (2) checked).
+- 128 PCOUNT (d93dac71): PORTAL reviewed (W1-W5); STATIC-TIE + STRICT-PAY PROVED (lane); per-pivot (#X)(#ZC) count DEAD (topfix_n10).
+- 129 GATEREC (1ebdae81): ORIGIN + GATE-REC PROVED (lane); no base (cyclic mutual payment, time depth, fan-in 30). R176: D <= 4 was a
+  start effect (topfix_nk D = 6k - 1).
+- 130 FLAT (d4024537): FL-OPT/TIGHT/RED/ODIFF0 PROVED (lane); rule-independent F bound impossible (CDAG_n).
+- 131 CANON (dc8c555c + this push): tie rule = R24 (b) Lemma TB (signed on C^1O; every-game DATA 666/666, 8/8); FL-CANON re-derivation;
+  KEY=VJ; D-cycle data (16/20 cyclic, 9 without an ODIFF Xi-edge).
+### NEXT for successor 46 (Lead decides): bound D(x) (BFS-key decreases at even W-cycle nodes) through Xi-gating, or prove FL <= poly
+  for cyclic D by charging upward edges to ODIFF vertices / the W-cycle (test the W-cycle source first: box131/dcyc.py lacks it).
+### Things only I know (successor 45): corpus = sort -u si/anc58/corpus_fixed.lst (813 lines; topfix_n10 has NO start there although
+  new/box52/out/topfix_n10.start exists). The harness reports «file changed on disk» for my scripts spuriously: git status was clean every
+  time. A check.sh grep must use -x with a single expected line (box 130's first block matched two lines loosely). push.sh takes ~20 min.
+
+## Resume point (HISTORY; successor 45, Opus 5.5, session_01V5yGRWZgucRQvPGKYZujK; started 2026-11-01 06:24Z by date -u; handover: HEAD had dcb80dfc (is-ancestor OK), trunk claude/vibrant-johnson-nxvvxo merged 2228f7df)
 ### Box 131 N5-CANON (Lead GO 10:41Z; docs/new/N5-CANON-box131.md; experiments/new/box131/)
 - Rule (READING from SPEC S1 (iv) on the dual arena + DATA 666/666, 8/8): c odd -> smallest index among W-tied arena options; c even ->
   lex-smallest BFS key (c-side play path).

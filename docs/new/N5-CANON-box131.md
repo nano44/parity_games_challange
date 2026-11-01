@@ -3,6 +3,23 @@ L-NEW successor 45, 2026-11-01 10:38-10:5xZ (date -u). Lead GO 10:41Z. Code: exp
 check.sh block «box 131 CANON». Pin: u2flat73_n32 (box 130 pincheck.txt: Oink --zlk / --tl verified, n5b identical). Labels: PROVED
 (lane), DATA, READING. «Corner» = an option's play runs through the mover (box 128 W2).
 
+## 0a. Attribution (added 11:1xZ after the Lead's 11:08Z relay of L-RED 42's R177 interim)
+- The rule of §0 and the per-vertex potential of FL-CANON are ALREADY SIGNED: RESULTS R24 (b) Lemma TB, with R24 (a) Lemma R (S1's
+  restriction keeps every fully optimal successor), both on 𝒞^1O. R24 (c) Lemma CASC bounds W-flat runs there.
+  - FL-CANON (a)/(b) below is my re-derivation. What is new here: the every-game DATA (813 pairs) and Lemma KEY=VJ.
+  - §1's «not proved line by line» identification is R24 (a) Lemma R on 𝒞^1O.
+  - On every game, TB / R are lane readings until both referees lift them (Lead reading L44). Nothing here cites them on every game.
+- L-RED 42 (interim, relayed): the CASC digraph D (Even v → u if u lies on v's W-play prefix or on the Ξ-play of a W-tight option of v).
+  If D is acyclic, FL ≤ height(D) + 1. The lex-min rule alone allows 2(2^(d+1) − d − 2) transitions on a 2-wide W-ladder under adversarial
+  availability. So only Ξ-availability can bound FL, which agrees with §3 (ii).
+- DATA on D (experiments/new/box131/dcyc.py, rundcyc.sh, d_corpus.txt; my reading of D at the FL run's first state; 813 distinct pairs):
+  - 20 maximal FL runs (τ-stretch level), the longest 8 transitions (u23sw64_n32).
+  - D acyclic in 4 runs (max height 14, u1t_cex_n32), with CASC's bound holding: 0 violations.
+  - D cyclic in 16 runs. In 7 of them every nontrivial SCC contains a Ξ-edge whose Ξ-play passes an ODIFF vertex; in 9 some SCC has
+    none (e.g. u23sw64_n32, cw11_n24).
+  - So «charge each D-cycle to an ODIFF vertex on a Ξ-play» fails as stated in 9 runs. Not tested: L-RED's other source of upward edges,
+    the W-cycle. My D may differ from L-RED's unpushed definition, so this is DATA only, not a DEAD.
+
 ## 0. Answer
 - The canonical optimum (SPEC S1 (iv) on S4a's dual arena; Even = the dual's Odd), for Even x whose W-cycle node is c:
   - c odd (Even prefers LONGER paths): among the W-tied arena options, the SMALLEST INDEX («first strict maximum in list order»);
