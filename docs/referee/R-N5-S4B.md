@@ -127,3 +127,31 @@ No gap in the mathematics.
   4. Line: REQUIRED S4B-L2. The DATA corpus «1,132-game» is 1,132 lines with 813 distinct; the counts include the repeats. Distinct-line
      counts equal mine exactly on 811 of 813 lines (the other 2 are not run, n 581).
 - NEEDS: Lead: decide the Lead reading lifting L42 (after REFEREE-2), then S4B-L1 and S4B-L2 to L-SI.
+
+## §C (successor 22, 2026-11-01T05:03Z by date -u; Opus 5.5, D15): word-diff of line L-1
+- Revision: claude/l-si 96fb62cb3, docs/si/P-N5-S4B-line-L1.txt (sha1 95373010…, one line), against the frozen line f8559b5e. The fixes
+  file is docs/si/P-N5-S4B-fixes.md (sha1 833ccf57…), entries 1-5. Diff: `git diff --no-index --word-diff`.
+- Five changes, the ones the Lead listed. Nothing else changed:
+  1. 1E-N3 now opens with R57 (b)'s words, verbatim («that S1's procedure realises an optimal σ̄ is VJ00 §6 plus SPEC conformance»,
+     checked against docs/RESULTS.md l. 2915-2916). The quantified G*-form follows «read on every game input of S1's procedure (Lead
+     reading L45, lifting L42's S4b restriction)». L45 is on trunk (68d50c8f, docs/DECISIONS.md l. 383-390) with that content.
+     **S4B-L1 met.**
+  2. «; scope as signed by REFEREE-2,» → «(the setting of VJ00 and of S1 as in … N-1E-1». This is accurate: N-1E-1 gives VJ00's setting,
+     and S1 is stated for any input game (my §1).
+  3. «confirmed for arena inputs in docs/referee-2/R2-N5-S4B.md §2» added. Read now, after my report: R2-N5-S4B §2 (b) says this (its
+     P-1), at referee-2 1b9ef2e1. Accurate.
+  4. «(SPEC S4c, S4d, FIX 3)» → «(SPEC text S4c, S4d, FIX 3)». My S4B-P1 met. S4B-P2 (the S2 citation) is a proof-text precision. It is
+     not needed in the line and stays with the fixes file entry 4.
+  5. DATA de-duplicated: «5,058 … among the 5,726 states … of the 813 distinct game/start lines of experiments/si/anc58/corpus_fixed.lst
+     (a list of 1,132 lines with 319 exact repeats; counts de-duplicated; 668 states not enumerated)». These equal the lane file's
+     distinct-line totals in my §4 / s4b_logs/compare.txt. **S4B-L2 met.**
+- Checks:
+  - Parentheses balance (30/30, depth never negative); «» 2/2. The R57 parenthesis now closes after «R57 (b))», and the final «))» closes
+    «(the setting …» and «(SPEC S1-S5, …». Both are correct.
+  - Binders unchanged (G*, σ*; k, ρ, x).
+  - Scope words, «lane-authored (L-SI; not referee-originated)», «it bounds no count; G-N5-TIME stays open; not M3, not a step-4 pass,
+    not a TARGET.md claim» are unchanged ✓.
+  - No DEAD (L43). TARGET.md diff ✓.
+- Note (not on this line): REFEREE-2's §2 (a) DATA «NEXT 0 violations, 7,736 states» also counts the list's repeats. It is a DATA count
+  in a report, not a signed item.
+- Verdict: line L-1 **MATCHES**. S4B-L1 and S4B-L2 are met.
