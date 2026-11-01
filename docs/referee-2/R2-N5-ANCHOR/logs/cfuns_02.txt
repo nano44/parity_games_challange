@@ -1,0 +1,9 @@
+MODE files $SCRATCH/cfuns_02 1 $SCRATCH/ws4b/experiments/ MAXT 5000 BF 0
+RULE_checks_mover: 8098
+RULE_checks_nonmover: 104392
+RULE_multi_mover: 60
+RULE_multi_nonmover: 65
+RULE_with_corner: 5106
+runs: 257
+RESULT PASS violations 0
+EXIT 0

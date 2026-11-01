@@ -1,0 +1,4 @@
+odxi_n37.pg Oink 8fbf0a7 --zlk -v: verified True | Even region mine 37 oink 37 | Odd oink 0 | AGREE True
+odxi_min_n12.pg Oink 8fbf0a7 --zlk -v: verified True | Even region mine 12 oink 12 | Odd oink 0 | AGREE True
+odxi_lasso_n13.pg Oink 8fbf0a7 --zlk -v: verified True | Even region mine 13 oink 13 | Odd oink 0 | AGREE True
+odxi_many_n32.pg Oink 8fbf0a7 --zlk -v: verified True | Even region mine 32 oink 32 | Odd oink 0 | AGREE True

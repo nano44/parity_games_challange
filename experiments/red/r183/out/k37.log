@@ -1,0 +1,8 @@
+START 17 {'runs': 1, 'moves': 50, 'returns': 17, 'ret_in': 0, 'over': 0, 'nob': 0, 'kbound': 0}
+IT 1 {'runs': 1, 'moves': 64, 'returns': 31, 'ret_in': 0, 'over': 0, 'nob': 0, 'kbound': 0}
+IT 769 {'runs': 1, 'moves': 59, 'returns': 33, 'ret_in': 0, 'over': 0, 'nob': 0, 'kbound': 0}
+IT 1200 {'runs': 1, 'moves': 62, 'returns': 34, 'ret_in': 0, 'over': 0, 'nob': 0, 'kbound': 0}
+IT 2130 {'runs': 1, 'moves': 64, 'returns': 35, 'ret_in': 0, 'over': 0, 'nob': 0, 'kbound': 0}
+IT 2546 {'runs': 1, 'moves': 64, 'returns': 36, 'ret_in': 0, 'over': 0, 'nob': 0, 'kbound': 0}
+IT 2629 {'runs': 1, 'moves': 66, 'returns': 37, 'ret_in': 0, 'over': 0, 'nob': 0, 'kbound': 0}
+BEST {'runs': 1, 'moves': 67, 'returns': 37, 'ret_in': 0, 'over': 0, 'nob': 0, 'kbound': 0}

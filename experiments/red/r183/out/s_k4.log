@@ -1,0 +1,4 @@
+START k 4 7747 {'L': 7, 'FVCH': 7, 'CROSS': 2, 'K': 16}
+IT 459 {'L': 7, 'FVCH': 7, 'CROSS': 3, 'K': 16}
+IT 1465 {'L': 7, 'FVCH': 7, 'CROSS': 4, 'K': 16}
+BEST k 4 {'L': 7, 'FVCH': 7, 'CROSS': 4, 'K': 16}

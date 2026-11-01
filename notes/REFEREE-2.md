@@ -24,7 +24,12 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
   Tool R2-N5-S4B/s4b_check.py. Worktree $SCRATCH/ws4b = l-si 68fa36619.
 - S4B L-1 (96fb62cb3, 95373010) MATCHES; dedup counts 5,726 / 5,058 / 668 reproduced on 813 distinct lines. FINDING: box 53 corpus
   (1,132) = 813 distinct + 319 start-less alt_all lines repeating sbcg lines: corpus DATA in STAIR / ODD / ROOT / GATE double-counts them.
-- NEXT: whatever the Lead sends. Context ~345k.
+- R24 L44 check d96d2f9e: Lemma R, TB choice form CLASS-FREE (L46 recorded; L46 misattributes the corner clause to me).
+- P-N5-ANCHOR (l-new f009a9a1, ad97ad88, line 7f140d0c): report docs/referee-2/R2-N5-ANCHOR.md. All SIGNED; (R1) holds (TB steps 1,
+  3-5 + Lemma R describe S1 output at every vertex); G-ANC-1 corner clause vacuous on fully optimal TIE (closed). Line REQUIRED
+  ANCHOR-L1 (state the (R1) ruling), ANCHOR-L2 (define TIE as fully W'-optimal). Pins exact; corpus 20/42/23, GCH 3; ODIFF count 2 at
+  source-state ODIFF (13 either-state). Tool R2-N5-ANCHOR/anchor_check.py. Worktree $SCRATCH/wanc.
+- NEXT: whatever the Lead sends. Context ~385k.
 
 ## HANDOVER (successor 24, session_01V5yGRZwUkPZRndvKiAAuAD, Opus 5.5 under D15; written 2026-10-31 15:3xZ by date -u; context ~480k; Lead 15:17Z: handover and park)
 Branch claude/referee-2, merged with trunk (git merge, no rebase) before every push. REFEREE-2 owns no docs/GAPS.md rows.

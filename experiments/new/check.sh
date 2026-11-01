@@ -685,4 +685,58 @@ if grep -qF "GATECHG topfix_n10.pg n 210 ODIFF0 WIN 2 STRICT 667 CHARGED 543 PAY
 else
   echo "box 129 GATECHG check: FAILED"; exit 1
 fi
+w78=$(cd .. && python3 -I new/box130/flatcnt.py red/xing/instances/u2flat73_n32.pg new/box130/u2flat73_n32_default.start; python3 -I new/box130/flatcnt.py red/so/instances/tog6a_n32.pg -)
+if grep -qxF "FLATCNT u2flat73_n32.pg n 32 ODIFF1+ WIN 1 MOVES 75 STRICT 2 FLAT 73 WEAK 0 CORNER 0 FLATTRANS 0 FL 7 ONLYFLAT_VIOL 0 FLOPT_VIOL 0 FLTIGHT_VIOL 0 XIRISE_VIOL 0 MAXFLRUN 3 MAXFLWIN 73 FLATFIRST 49 ODIFF0FLAT 0 XIRISE_CYC 0 FLTIGHT_CYC 0 FL0_NONCORNER 0" <<<"$w78" && grep -qxF "FLATCNT tog6a_n32.pg n 32 ODIFF0 WIN 1 MOVES 25 STRICT 23 FLAT 1 WEAK 1 CORNER 6 FLATTRANS 0 FL 1 ONLYFLAT_VIOL 0 FLOPT_VIOL 0 FLTIGHT_VIOL 0 XIRISE_VIOL 0 MAXFLRUN 1 MAXFLWIN 1 FLATFIRST 1 ODIFF0FLAT 1 XIRISE_CYC 2 FLTIGHT_CYC 0 FL0_NONCORNER 0" <<<"$w78"; then
+  echo "box 130 FLATCNT: u2flat73_n32 73 flat moves, 7 FL transitions (ODIFF >= 1); tog6a ODIFF-0 FL transition only at corner movers: PASS"
+else
+  echo "box 130 FLATCNT check: FAILED"; exit 1
+fi
+w79=$(cd .. && python3 -I new/box131/canon.py red/xing/instances/u2flat73_n32.pg -)
+if grep -qxF "CANON u2flat73_n32.pg n 32 K 16 DEC_EVEN 51 FLDEC_EVEN 51 FLKEYDEC 73 FLKEYEQ 0 FLKEYEQ_CYCNODE 0 FLMOVES_EVEN 73 KEYMIN_EVEN 74 KEYTIES_EVEN 74 MAXFLMV_EVEN 2 MINIDX_EVEN 51 MOVETIE_EVEN 73 TIES_EVEN 74" <<<"$w79"; then
+  echo "box 131 CANON: u2flat73_n32 every even-cycle-node tie broken by the lex-smallest BFS key (74 / 74), every FL move lowers the mover's key (73 / 73), index not monotone (51 / 73): PASS"
+else
+  echo "box 131 CANON check: FAILED"; exit 1
+fi
+w80=$(cd .. && python3 -I new/box132/anchor.py red/xing/instances/u23sw64_n32.pg new/box132/u23sw64_n32_default.start; python3 -I new/box132/anchor.py red/kw/instances/cw11_n24.pg new/box132/cw11_n24_default.start)
+if grep -qxF "ANCHOR u23sw64_n32.pg n 32 RUNS 1 FL 8 EPOCHS 1 GCH 0 VIOL 0 LVLVIOL 0 CMOVES 0 CMNORISE 0 CMLATE 0 MAXEP 8 EPVIOL 0 BOUNDVIOL 0 XIB 0 SBB 0 CYB 0 MAXLEN 8 CMXICH 0" <<<"$w80" && grep -qxF "ANCHOR cw11_n24.pg n 24 RUNS 4 FL 7 EPOCHS 7 GCH 3 VIOL 0 LVLVIOL 0 CMOVES 7 CMNORISE 0 CMLATE 0 MAXEP 1 EPVIOL 0 BOUNDVIOL 0 XIB 0 SBB 0 CYB 3 MAXLEN 3 CMXICH 7" <<<"$w80"; then
+  echo "box 132 ANCHOR: u23sw64_n32 FL run of 8 = one epoch, level timing holds; cw11_n24 3 gating changes (Xi at a W-cycle node), 7 cycle-node moves: PASS"
+else
+  echo "box 132 ANCHOR check: FAILED"; exit 1
+fi
+w81=$(cd .. && python3 -I new/box133/odxi.py new/box133/odxi_n37.pg new/box133/odxi_n37.start)
+if grep -qxF "ODXI odxi_n37.pg n 37 RUNS 1 FL 8 XICH_ODIFF 5 GATEREL 1 EX [(1, 6, 35, 34, 33, 33)]" <<<"$w81"; then
+  echo "box 133 ODXI: odxi_n37 Xi at ODIFF gate 33 changes 5 times inside the FL run [1, 9] and releases the FL move 35: 34 -> 33 at 5 -> 6: PASS"
+else
+  echo "box 133 ODXI check: FAILED"; exit 1
+fi
+w82=$(cd .. && python3 -I new/box132/anchor.py new/box134/inst/odxi_many_n32.pg new/box134/inst/odxi_many_n32.start; python3 -I new/box133/odxi.py new/box134/inst/odxi_min_n12.pg new/box134/inst/odxi_min_n12.start)
+if grep -qxF "ANCHOR odxi_many_n32.pg n 32 RUNS 3 FL 8 EPOCHS 7 GCH 4 VIOL 0 LVLVIOL 0 CMOVES 0 CMNORISE 0 CMLATE 0 MAXEP 2 EPVIOL 0 BOUNDVIOL 0 XIB 4 SBB 0 CYB 0 MAXLEN 3 CMXICH 0" <<<"$w82" && grep -qxF "ODXI odxi_min_n12.pg n 12 RUNS 1 FL 1 XICH_ODIFF 1 GATEREL 0" <<<"$w82"; then
+  echo "box 134 P-N5-ANCHOR pins: odxi_many_n32 (R179) 8 FL transitions, 4 gating changes, FL-ANCHOR items hold; odxi_min_n12 one ODIFF Xi-change in its FL run: PASS"
+else
+  echo "box 134 P-N5-ANCHOR pins check: FAILED"; exit 1
+fi
+w83=$(cd .. && python3 -I new/box134/cmpw.py new/box133/odxi_n37.pg new/box133/odxi_n37.start)
+if grep -qxF "CMPW odxi_n37.pg n 37 MOVES 65 FLIPS 45 PREFIX 44 CROSS 1 INPREF 0 CYCNODE 0 SAMEW 0 NONFLIP 5" <<<"$w83"; then
+  echo "box 134 CMPW: odxi_n37 order flips behind FL moves 44 PREFIX + 1 CROSS, SAMEW 0 (Lemma COMPARE-W): PASS"
+else
+  echo "box 134 CMPW check: FAILED"; exit 1
+fi
+w84=$(cd .. && STRETCH=1 python3 -I new/box135/dmerge.py new/box134/inst/odxi_many_n32.pg new/box134/inst/odxi_many_n32.start; STRETCH=1 python3 -I new/box135/dmerge.py red/xing/instances/u23sw64_n32.pg new/box132/u23sw64_n32_default.start)
+if grep -qxF "DMERGES odxi_many_n32.pg n 32 RUNS 3 FL 8 ACYC 1 CYC 2 HMAX 8 CASCVIOL 0 SEGEDGES 274 MAXL 3 SELFL 7 CNMOV 0" <<<"$w84" && grep -qxF "DMERGES u23sw64_n32.pg n 32 RUNS 1 FL 8 ACYC 1 CYC 0 HMAX 9 CASCVIOL 0 SEGEDGES 305 MAXL 8 SELFL 0 CNMOV 0" <<<"$w84"; then
+  echo "box 135 DMERGE: u23sw64_n32 stretch D' acyclic, height 9, FL 8 (CASC-M); odxi_many_n32 2 cyclic stretches via 7 self-edges: PASS"
+else
+  echo "box 135 DMERGE check: FAILED"; exit 1
+fi
+w85=$(cd .. && DOM=1 STRETCH=1 python3 -I new/box136/dmerge2.py new/box134/inst/odxi_many_n32.pg new/box134/inst/odxi_many_n32.start)
+if grep -qxF "DMERGE2SD odxi_many_n32.pg n 32 RUNS 3 FL 8 ACYC 3 CYC 0 HMAX 8 CASCVIOL 0 SEGEDGES 255 MAXL 3 SELFL 0 CNMOV 0 DOMCUT 117" <<<"$w85"; then
+  echo "box 136 DMERGE2: odxi_many_n32 all 3 stretches D''-acyclic under z-world + DOM (D' had 2 cyclic), CASC-M'' holds: PASS"
+else
+  echo "box 136 DMERGE2 check: FAILED"; exit 1
+fi
+w86=$(cd .. && python3 -I new/box137/rel.py new/box137/ret2_n37.pg new/box137/ret2_n37_default.start; python3 -I new/box137/rel.py new/box137/cwmov2_n57.pg new/box137/cwmov2_n57_default.start; python3 -I new/box132/anchor.py new/box137/ret2_n37.pg new/box137/ret2_n37_default.start)
+if grep -qxF "REL ret2_n37.pg n 37 K 12 RUNS 1 FL 7 CEILVIOL 0 SATDEC 0 SATGAIN 0 MOVERS 74 FROZVIOL 0 SYNC 98 SYNCVIOL 0 CW 0 CWVIOL 0 RET 44 RETMAX 2 MOVMAX 6 CHAINVIOL 0 CNMOV 0 CWMOV 0 WWMOV 74 DEFVIOL 0" <<<"$w86" && grep -qxF "ANCHOR ret2_n37.pg n 37 RUNS 1 FL 7 EPOCHS 1 GCH 0 VIOL 0 LVLVIOL 0 CMOVES 0 CMNORISE 0 CMLATE 0 MAXEP 7 EPVIOL 0 BOUNDVIOL 0 XIB 0 SBB 0 CYB 0 MAXLEN 7 CMXICH 0" <<<"$w86" && grep -qxF "REL cwmov2_n57.pg n 57 K 15 RUNS 2 FL 6 CEILVIOL 0 SATDEC 0 SATGAIN 2 MOVERS 32 FROZVIOL 0 SYNC 113 SYNCVIOL 0 CW 102 CWVIOL 0 RET 14 RETMAX 1 MOVMAX 4 CHAINVIOL 0 CNMOV 0 CWMOV 2 WWMOV 30 DEFVIOL 0" <<<"$w86"; then
+  echo "box 137 REL: ret2_n37 one FL run = one epoch (GCH 0), an option re-entered twice (RET-1 DEAD), box 137 lemma checks 0; cwmov2_n57 2 c-world FL moves, DEFICIT holds: PASS"
+else
+  echo "box 137 REL check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

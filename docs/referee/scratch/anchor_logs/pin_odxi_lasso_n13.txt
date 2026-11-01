@@ -1,0 +1,6 @@
+FILE odxi_lasso_n13.pg n 13 K 4 fallbacks 2 FLruns 1 FLtrans 1
+RUN [0, 1] FL 1 CAP 6 GCH 0 epochs 1 ODIFF-Xi-changes 1 [(1, 10)]
+moves_nonCN 1
+pre_chk 24
+tight_chk 16
+VIOLATIONS 0
