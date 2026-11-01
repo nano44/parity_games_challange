@@ -1,4 +1,4 @@
-# Draft RESULTS R101 (Lead; first fill 2026-11-01T03:08:02Z by date -u, read in the same command as the fill of this file (subagent); on GATE line
+# Draft RESULTS R101 (Lead; first fill 2026-11-01T03:08:02Z by date -u, read in the same command as the fill of this file (subagent); on GATE line — LANDED in RESULTS Results 2026-11-01 05:28Z (CHECKER C111 Add. 1 d53e1d4f PASS), after R100
 L-1, docs/new/P-N5-GATE-line-L1.txt (l-new afb8b99e, sha1 d677161c4123dd184db14c17d26630e037b51027); packet, frozen line 245ce9fe, L-1,
 fixes F0 + entry 1, REFEREE's R-N5-GATE (successor 21's report c9bc161c; successor 22's Addendum 1 c9644446 and §C ffbdc404) and
 REFEREE-2's R2-N5-GATE (e35e8280) and R2-N5-GATE-L1 (9b30c652) read at the origin heads fetched at the start of the fill, 2026-11-01

@@ -9248,6 +9248,246 @@ Nothing enters here without passing the gauntlet (TARGET.md section 5).
   descents, root changes and fuel re-routes inside W-runs, and two reductions between counts; no bound on a W-run, on a run or on running
   time; no algorithm claim); not a step-4 pass. GAPS G-N5-TIME: open.
 
+### R101 [refereed-only] N5 on EVERY game (SPEC S1-S5, under the standing SPEC premise of RESULTS R57 (1E-N3: S1's procedure realises the pointwise optimum; for S4a at a transition k → k + 1, σ_(k+1) is a pointwise optimum of the one-player arena in which Even y keeps {σ_k(y)} ∪ Iσ_k(y) and Odd follows τ_k); premises SPEC S4 with FIX 3, RESULTS R17 (b)-(d) (switch-best on a one-player game makes fewer than B := (n² − n + 1)(n + m) steps, for every pointwise-optimal choice, from any start as read in RESULTS R18 (c)), R18 (d) (Lemma R and Lemma S (a)-(b), the sandwich, used on every game: its proof uses no 𝒞^1O hypothesis: VJ00 (11), Lemma R, R15 (a), (d)), R93 (Fact LEX and the coordinate sequence CS of (a)) and R99 (Lemma SANDWICH)), with: a run is the sequence of states (σ_k, τ_k), k = 0, …, K, a transition is written k → k + 1, a FALLBACK is a transition at which S4c fires; n := |V|, m := |E|; values, ⊴, ◁, ▷ as in SPEC S1; Iσ_k := SPEC S2's improving set of σ_k; LO_k(v) := Ξ_(σ_k)(v), HI_k(v) := Ξ^d_(τ_k)(v) read as a triple of G (R18 (d) Lemma R), W_k(v) := the valuation of the (σ_k, τ_k)-play from v; SET_k := {v : LO_k(v) = HI_k(v)}; lcp := the length of the longest common prefix and B_k := Σ_v lcp(CS LO_k(v), CS HI_k(v)); SG (BG) := the largest number of consecutive transitions at none of which SET_k grows (B_k rises); G_τ := the game with Odd fixed to τ, and for a transition with τ_(k+1) = τ_k, IW_k := {(y, z) : y Even, z ≠ σ_k(y), W_k(z) ▷ W_k(σ_k(y))}; a τ-STRETCH is a maximal set of consecutive transitions k → k + 1 with τ_k = τ_(k+1) all equal, a transition of it is CONSISTENT if it is not a fallback and Iσ_k = IW_k, INC := the number of its other transitions; a λ_W-PHASE of a τ-stretch is a maximal set of its consecutive transitions at whose states the map v ↦ cycle node of W(v) is constant: for every N5 run on every game, every vertex v, every transition k → k + 1 and all states k0 < k1: (Corollary SETTLE-MON) SET_k ⊆ SET_(k+1), and v ∈ SET_k implies LO_j(v) = W_j(v) = HI_j(v) = LO_k(v) for every j ≥ k; (Corollary BRACKET-MON) lcp(CS LO_k(v), CS HI_k(v)) ≤ lcp(CS LO_(k+1)(v), CS HI_(k+1)(v)), so B_k is non-decreasing in [0, n(n + 2)]; (SETTLE-RED and BRACKET-RED, EQUIVALENCES) K ≤ (n + 1)(SG + 1) and K ≤ (n(n + 2) + 1)(BG + 1), while SG, BG ≤ K; (Lemma CONSISTENT-RED) with τ := τ_(k0), if τ_j = τ for k0 ≤ j ≤ k1 and every transition j → j + 1 with k0 ≤ j < k1 is consistent, then σ_(k0), …, σ_(k1) are k1 − k0 strategy-changing switch-best steps on G_τ and k1 − k0 < B; hence a τ-stretch has at most (INC + 1)(B − 1) + INC transitions, an EQUIVALENCE with INC (2026-11-01) — REDUCTIONS and EQUIVALENCES (no count is bounded here; the sandwich is R18 (d)'s, not claimed here; «every λ_W-phase of a τ-stretch has at most n − 1 W-changing transitions» (R17 (c)'s bound transferred) DEAD: experiments/new/box116/inst/fbg_K12_m6_m24.pg (sha1 2f035ca0…) with its repaired start fbg_K12_m6_m24_fixed.start (9f03f81f…, L-NEW box 116b), n = 290, 403 W-changing transitions in one λ_W-phase, 403 > 289, and experiments/n5-epoch/instances/lend107_n32.pg (ab4c9811…) with lend107_n32.start (9df4ea2c…), n = 32, 106 > 31, both checked against L-COMP's n5b and Oink; the premises R17 (F1) and R18 (d) Lemma S (a) rest on derivations written by REFEREE and REFEREE-2 (R17 (a)); G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim) (P-N5-GATE, docs/new/P-N5-GATE-box120.md with its fixes entry 1, docs/new/P-N5-GATE-fixes-box120.md; L-NEW successors 43-44), CHECKER PASS (docs/checker/C111.md, checker d53e1d4f)
+- Object (L-NEW successor 43, Opus 5.5, D14 / D18; frozen, unchanged during review): packet P-N5-GATE (box 120),
+  docs/new/P-N5-GATE-box120.md, sha1 ac88915dfb07fc8b5644db99762671eee8ef7312, 135 lines (l-new freeze 516717da, 2026-11-01T00:07:39Z,
+  the file's only commit; identical at afb8b99e, at l-new head 7965c774 and at trunk; first on trunk by merge e7c7fe4c, 00:33:28Z). Both
+  referees measured the sha1 at 516717da (REFEREE l. 3-5 «Both equal the Lead's figures.»; REFEREE-2 §0 l. 6 «Re-hashed: match.»). Title
+  (l. 1): «the settled set and the bracket never move back; a τ-stretch is R17's one-player climb except at inconsistent steps». Scope (l.
+  3-6): «Scope: REDUCTIONS / EQUIVALENCES and one DEAD at an explicit bound.», «No count is bounded here. G-N5-TIME stays OPEN. This is not
+  M3, not a step-4 pass and not a TARGET.md claim.», «The sandwich itself is NOT claimed here: it is landed RESULTS R18 (d) Lemma S (a)-(b)
+  (box 21 §2.2), with Lemma R. This packet uses it as a premise (§1 [SQZ]).» To sign (l. 9-10): «To sign: §2 Corollary SETTLE-MON; §3
+  Corollary BRACKET-MON; §4 SETTLE-RED and BRACKET-RED; §5 Lemma CONSISTENT-RED with its Corollary; §6 the DEAD (an instance check,
+  explicit bound n − 1).» «Not to sign: §7 (DATA), §8 (READING).» (l. 11). Source notes (l. 7-8): docs/new/N5-SQUEEZE-box117.md and
+  docs/new/N5-GATE-box118.md, «history only». Sections: §1 setting, premises (l. 14-41), §2 SETTLE-MON (l. 43-49), §3 BRACKET-MON (l.
+  51-58), §4 SETTLE-RED and BRACKET-RED (l. 60-67), §5 CONSISTENT-RED, its Corollary and a Remark (l. 69-85), §6 the DEAD (l. 87-98), §7
+  DATA (l. 100-111, not to sign), §8 READING (l. 113-116, not to sign), §9 the drafter's pre-check (l. 118-129).
+  The RESULTS line, history: (1) the frozen line docs/new/P-N5-GATE-line.txt (sha1 245ce9fe…, committed with the packet), the line both
+  referees reviewed: REFEREE 21 MATCHES with precision P-1 to P-4 (§8 l. 99-109); REFEREE-2 25 REQUIRED GATE-L1 (§5 l. 114, §6 l. 131).
+  At the frozen line the DEAD clause read «… DEAD: fbg_K12_m6_m24 with its repaired start (L-NEW box 116b), n = 290, 403 W-changing
+  transitions in one λ_W-phase, 403 > 289, and lend107_n32, 107 > 31, both checked against L-COMP's n5b and Oink»: 107 counts the
+  phase's closing transition (lane gate.py's first-state grouping), and the line's own phase definition gives 106 (REFEREE-2 §4 l. 101-107;
+  REFEREE Addendum 1 l. 125-128). REFEREE successor 22's Addendum 1 (c9644446) concurs and turns REFEREE's verdict to «REQUIRED GATE-L1»
+  (l. 131-133). (2) L-1 d677161c4123dd184db14c17d26630e037b51027 (docs/new/P-N5-GATE-line-L1.txt, l-new afb8b99e, 2026-11-01T01:33:41Z,
+  the file's only commit; first on trunk by merge b13df772, 01:55:24Z; fixes F0 + entry 1) = the frozen line with exactly five changes
+  (word diff by script; to check (2)): R18 (d)'s citation «used on every game: its proof uses no 𝒞^1O hypothesis: VJ00 (11), Lemma R, R15
+  (a), (d)» (REFEREE P-4; REFEREE-2 P-1, P-2; the Lead's citation form, fixes F0 l. 14-15); «SET_k grows (B_k rises)» (REFEREE P-1);
+  CONSISTENT-RED «with τ := τ_(k0), if τ_j = τ for k0 ≤ j ≤ k1 and every transition j → j + 1 with k0 ≤ j < k1 is consistent» (REFEREE
+  P-2, REFEREE-2 P-3); the DEAD's instances pinned by path and sha1 prefix, with «n = 32, 106 > 31» for lend107_n32 (REFEREE P-3;
+  REFEREE-2 GATE-L1); the source «… with its fixes entry 1, docs/new/P-N5-GATE-fixes-box120.md; L-NEW successors 43-44». Fixes entry 1 l.
+  108 «Nothing else changes.» REFEREE 22 L-1: §C (ffbdc404) l. 139 «The diff has exactly five changes. Nothing else in the line
+  changed:», l. 155 «Verdict: line L-1 **MATCHES** (GATE-L1 met; P-1..P-4 met). My Addendum 1 «REQUIRED GATE-L1» is discharged.»
+  REFEREE-2 25 L-1: R2-N5-GATE-L1.md (9b30c652) l. 6 «Token diff: every change, nothing else», l. 32 «**MATCHES** (Opus 5.5, D15). All my
+  GATE line items are closed.»
+  L-1 supersedes the frozen line; the title is L-1 verbatim with its own date (to check (1)). Neither referee found a FALSE claim
+  statement in the packet; every line item corrects the DEAD's count, pins its instances, binds a symbol (τ, j), disambiguates B and B_k,
+  or states why R18 (d) holds on every game.
+  Setting (packet §1, l. 14-41): N5 = SPEC S1-S5 on an arbitrary game G, n := |V|, m := |E|; a run is the sequence of states (σ_k, τ_k),
+  k = 0..K, a transition k → k + 1, a FALLBACK if S4c fired at it (l. 15-16); LO_k(v) := Ξ_k(v), «HI_k(v) := Ξ^d_(τ_k)(v)» read as a
+  triple of G (RESULTS R18 (d) Lemma R), W_k (l. 19-21); G_τ and IW_k (l. 22-23); τ-STRETCH, CONSISTENT, INC (l. 24-25); CS (R93 (a)) and
+  lcp (l. 26-27). Premises (l. 28-41): [SPEC] SPEC S4 with FIX 3; [1E-N3] (R57); [SQZ] R18 (d) Lemma S (a)-(b) with Lemma R «on every
+  game» (l. 34-36); [LEX] R93; [SAND] R99 (Lemma SANDWICH); [R17] R17 (b)-(d) «from any start (RESULTS R18 (c): «R17 Corollary 2, which
+  both referees confirmed holds from any start»)» (l. 40-41). REFEREE's premise row: «premises, incl. THE KEY CHECK: R18 (d) Lemma S
+  (a)-(b) «on every game»» → «CHECKED, holds on every game (§1)» (l. 14); REFEREE-2 §0 l. 8-12 «Premises opened:». L-1's notation is the
+  packet's, with SET_k (§2 l. 44), B_k (§3 l. 54), SG / BG (§4 l. 61), B (§1 l. 40) and the λ_W-phase (§6 l. 88-89).
+- Claims signed (both referees "(Opus 5.5, D15)": REFEREE successor 21 (report c9bc161c) and successor 22 (Addendum 1 c9644446, §C on L-1
+  ffbdc404); REFEREE-2 successor 25 (report e35e8280, R2-N5-GATE-L1.md 9b30c652)). Items (a)-(e) are SIGNED in both verdict tables
+  (REFEREE "## Verdicts" l. 11-21 of R-N5-GATE.md, the DEAD row «CONFIRMED»; REFEREE-2 "## 1. Claims table" l. 14-21 of R2-N5-GATE.md);
+  the table is to-check (4). All hold for every N5 run on every game. Premises LANDED (as L-1 names them): SPEC S1-S5, S4 with FIX 3;
+  RESULTS R17 (b)-(d) with R18 (c)'s any-start reading; R18 (d) Lemma R and Lemma S (a)-(b), class-free in their proof (Flag G-1 of the
+  draft; both referees confirm); R15 (a), (d) inside that citation; R93 (Fact LEX, CS); R99 (Lemma SANDWICH); standing premise: RESULTS
+  R57's SPEC premise in its 1E-N3 form, used at S4a steps by CONSISTENT-RED (Lead reading L42 covers S4a; no item uses S4b optimality).
+  The code's match to SPEC is DATA (R15 G-N5T-1). No item bounds a count.
+  (a) Corollary SETTLE-MON (§2, l. 43-49): «SET_k := {v : LO_k(v) = HI_k(v)}.» (l. 44); statement (l. 45-46): «For every N5 run on every
+      game and every k < K: SET_k ⊆ SET_(k+1). For v ∈ SET_k and every j with k ≤ j ≤ K: LO_j(v) = W_j(v) = HI_j(v) = LO_k(v).»; proof:
+      the monotone halves of [SQZ] (induction on j) and the sandwich at j give a ⊴ LO_j(v) ⊴ W_j(v) ⊴ HI_j(v) ⊴ a, and [LEX] gives
+      equality. Cells: REFEREE «SIGNED» (l. 15; l. 46 «SETTLE-MON ✓: a ⊴ LO_j ⊴ W_j ⊴ HI_j ⊴ a, and ⊴ is linear.»); REFEREE-2 «**SIGNED**»
+      (l. 17; §3 l. 48-51; l. 57 «SETTLE-MON is in fact the case lcp = n + 2 of BRACKET-MON (CS injective).»).
+  (b) Corollary BRACKET-MON (§3, l. 51-58): statement (l. 52-54) «lcp(CS LO_k(v), CS HI_k(v)) ≤ lcp(CS LO_(k+1)(v), CS HI_(k+1)(v)).»,
+      «Hence B_k := Σ_v lcp(CS LO_k(v), CS HI_k(v)) is non-decreasing, takes values in [0, n(n + 2)], and rises at most n(n + 2) times.»;
+      proof: a ≤ a′ ≤ b′ ≤ b lexicographically ([SQZ], R93 (a)), and [SAND] twice. Cells: REFEREE «SIGNED» (l. 16; l. 49 «SANDWICH on
+      (a, a′, b) gives lcp(a, b) ≤ lcp(a′, b). SANDWICH on (a′, b′, b) gives lcp(a′, b) ≤ lcp(a′, b′).»); REFEREE-2 «**SIGNED**» (l. 18;
+      §3 l. 52-57).
+  (c) SETTLE-RED and BRACKET-RED, EQUIVALENCES (§4, l. 60-67): «SG := the largest number of consecutive transitions of the run at none of
+      which SET grows (SET_(k+1) ≠ SET_k); BG := the same with «B rises».» (l. 61); statement (l. 62-63) «For every N5 run on every game:
+      K ≤ (n + 1)(SG + 1) and K ≤ (n(n + 2) + 1)(BG + 1); and SG ≤ K, BG ≤ K.»; proof: SET grows at r ≤ n transitions, the rest form ≤ r
+      + 1 windows of ≤ SG transitions; the same with ≤ n(n + 2) rises of B; correction (l. 67) «the bound proved is K ≤ (n + 1)(SG + 1);
+      the equivalence is unchanged.» Cells: REFEREE «SIGNED» (l. 17; l. 51-52 «The correction of box 117's «(n + 1)·SG» is right.»);
+      REFEREE-2 «**SIGNED**» (l. 19; §3 l. 58-63, l. 63 «K = SG + 1 with r = 1 is possible.»).
+  (d) Lemma CONSISTENT-RED and its Corollary (§5, l. 69-85): statement (l. 70-72) «Let k0 < k1 be states of an N5 run on any game, with τ_k
+      = τ for k0 ≤ k ≤ k1, and let every transition k → k + 1, k0 ≤ k < k1, be consistent (not a fallback, Iσ_k = IW_k). Then (σ_(k0), …,
+      σ_(k1)) is a sequence of k1 − k0 switch-best steps on G_τ, each changing the strategy; hence k1 − k0 < B.», in L-1 with τ := τ_(k0)
+      and the local index j (REFEREE P-2, REFEREE-2 P-3); proof: a consistent transition changes σ (else S4c fires, a fallback); S4a's
+      arena with Iσ_k = IW_k is R17's switch-best arena on G_τ; [1E-N3] makes σ_(k+1) a pointwise optimum of it; R17 (d) for every choice
+      from any start. Corollary (l. 81-83): «A τ-stretch with INC inconsistent transitions has at most (INC + 1)(B − 1) + INC transitions».
+      Cells: REFEREE «SIGNED» (l. 18; §5 l. 55-62, l. 57-58 «IW_k is VJ00's improving set of σ_k in G_τ, because the VJ00 valuation of
+      σ_k in the one-player game G_τ is W_k.»); REFEREE-2 «**SIGNED**» (l. 20; §3 l. 64-74; §4 l. 96 «CONS / OPT: 0 violations.»).
+  (e) the DEAD (§6, l. 87-98): «Statement killed: «in every τ-stretch of every N5 run, every λ_W-phase (maximal set of consecutive
+      transitions of the stretch at whose states the map v ↦ cycle node of W(v) is constant) contains at most n − 1 transitions at which W
+      changes» (R17 (c)'s bound for switch-best, transferred).» (l. 88-90); instance 1 (l. 91-93) fbg_K12_m6_m24 with its repaired start,
+      «n = 290, K = 404, 0 fallbacks; transitions 1 → 404 form one τ-stretch (403 transitions) and one λ_W-phase, and W changes at all 403:
+      403 > 289 = n − 1.»; instance 2 (l. 94-95) lend107_n32 «107 > 31 (the run has 10 fallbacks)», 106 under the line's definition (GATE-L1).
+      Cells: REFEREE «CONFIRMED on both instances by my own engine (lend107_n32 107 > 31; fbg_K12_m6_m24 403 > 289)» (l. 19; §6 l. 65-71),
+      106 by its own strict recount (Addendum 1 l. 127-128, scratch/gate_strict.py, gate_logs/strict_lend107.txt and strict_fbg.txt);
+      REFEREE-2 «**SIGNED** (instance check). fbg_K12 is exact (403 > 289). lend107 has **106** > 31 under the packet's own phase
+      definition, not 107 (GATE-L1)» (l. 21; §4 l. 97-107, logs/pins.txt and logs/lend107_phases.txt, tool phases.py).
+  The RESULTS line (L-1) claims less than the reports in places (no rise count in BRACKET-MON, no family sentences, no Remark) and nowhere
+  more: every claim clause L-1 states is one of (a)-(d); its scope tail states the DEAD (e), a scope note on the sandwich, an L41 note on
+  two premises, and no other claim (to check (4), (7)).
+- Premise R18 (d) on every game (the Lead's flag; draft G-1). R18's heading names o-acyclic one-Odd-choice games and its Setting line
+  𝒞^1O (RESULTS l. 785); item (d) (l. 803-807) has no class hypothesis. L-1 says why it is used on every game: «its proof uses no 𝒞^1O
+  hypothesis: VJ00 (11), Lemma R, R15 (a), (d)». Both referees confirm it: REFEREE §1 l. 24 «R18 (d) Lemma S (a)-(b), and whether it uses
+  any 𝒞^1O hypothesis. It does not.», l. 34 «So [SQZ] holds on every game, including the HI half, which uses R15 (d)'s Odd clause (τ moves
+  only by Switch_I with I ⊆ Iτ on G^d).», FINDINGS l. 115 «R18 (d) Lemma S (a)-(b) uses no 𝒞^1O hypothesis. Its proof is VJ00 (11) on G
+  and G^d, Lemma R and R15 (a)/(d), all game-general.»; REFEREE-2 §2 l. 40-41 «Formal status (NEEDS): R18's heading scopes the R-line to
+  o-acyclic 𝒞^1O, while item (d) itself is stated and proved class-free.», «Citing «R18 (d) … used on every game» is therefore correct as
+  mathematics.», FINDINGS l. 138 «R18 (d) Lemma S (a)-(b) needs no 𝒞^1O hypothesis: its proof is VJ00 (11) on G and G^d, Lemma R, and R15
+  (a)+(d).» Both ran the sandwich and both monotone halves on every state of their corpora (REFEREE §7 l. 86 «VIOLATIONS 0 for SQZ, SET,
+  BR, RED and CR.»; REFEREE-2 §2 l. 38-39 «[SQZ], all three inequalities: 1,679,311 vertex-state checks, 0 violations (§4).»). Whether a
+  class-free item of a subclass R-line is accepted as a premise «on every game» is the Lead's reading (REFEREE-2 l. 42; L1 l. 27); the
+  form applied is the Lead's brief quoted in fixes F0 l. 14-15, now recorded as Lead reading L44 (docs/DECISIONS.md, 2026-11-01 03:17Z), whose conditions (i) and (ii) hold here (above). Landed precedents carry
+  the same reading in their bodies: R56 «R18 (d) Lemma S (a) is signed under a 𝒞^1O setting line; both referees read its proof (VJ00 (11)
+  and R17 (F1) on the one-player game G_σ) and CONFIRM it holds on every game (N-FBRED-3 = REFEREE §1)»; R55 for R17 (a)-(c), R18 (c)'s
+  flat case and R18 (d) Lemma S (c); R47 (Lemma Φ, every game) uses R18 (d) Lemma S (b). For CHECKER C111 to rule on.
+- L41 (referee-written proofs): no proof text of THIS packet is referee-originated (REFEREE-2 §6 l. 125 «L41: no proof in this packet is
+  referee-originated.»; REFEREE: no gap, no repair; fixes entry 1 l. 116 «L41: no proof in this packet is referee-originated.»). Two
+  premises rest on derivations written by the referees: R17 (F1) (R17 (a): «(F1) has two independent derivations: REFEREE via the dual of
+  VJ00 Lemma 5.5's proof, REFEREE-2 via VJ00 (11) in the dual game plus the "⊵" halves of (4)/(6), which VJ00 asserts and REFEREE-2
+  derived.»), used by R17 (d) and so by CONSISTENT-RED; and R18 (d) Lemma S (a), whose «⊵» halves are those of R17 (a) (gap S1; REFEREE §1
+  l. 29; REFEREE-2 §6 l. 128 «Lemma S (a) is (11) on G and G^d with those halves (gap S1).»), used through [SQZ] by SETTLE-MON,
+  BRACKET-MON and both REDs. L-1's scope tail names them: «the premises R17 (F1) and R18 (d) Lemma S (a) rest on derivations written by
+  REFEREE and REFEREE-2 (R17 (a))» (unchanged from the frozen line). Both referees: REFEREE §8 l. 106 (✓); REFEREE-2 §6 l. 126-127 «is
+  accurate. R17 (a) records two referee derivations of (F1), one of them REFEREE-2's via VJ00 (11) plus the ⊵ halves of (4)/(6).» The
+  clause does not use the word «referee-originated» (R100's tail does): for CHECKER (draft G-3).
+- Fixes (docs/new/P-N5-GATE-fixes-box120.md, L-NEW successor 44, APPEND-ONLY, F0 and entry 1, one commit afb8b99e
+  (2026-11-01T01:33:41Z, new file, 124 lines, sha1 bd45881670fdb8feaf08b76e24e414872c6db430; = l-new head 7965c774 = trunk)). Header (l.
+  2-3): the frozen packet and line, «Neither is edited.» Each entry:
+  - F0 (l. 6-30): REFEREE 21's report c9bc161c «SIGNS SETTLE-MON, BRACKET-MON, SETTLE-RED / BRACKET-RED, CONSISTENT-RED and its
+    Corollary. Confirms the §6 DEAD on both instances.» «No gap.» (l. 8-9); REFEREE-2 25's report e35e8280 «SIGNS every item. No gap in
+    the mathematics.» (l. 12), «Line: REQUIRED GATE-L1. Optional P-1 to P-3. Note N-1.» (l. 13); the Lead's citation form (l. 14-15); the
+    item map (l. 18-28); «Not applied: none.» (l. 30).
+  - Entry 1 (l. 32-124): REFEREE's precision items and REFEREE-2's §2 / §4 / §5 text quoted verbatim (l. 33-68); repairs (a)-(f) in L-1
+    (l. 70-109): (a) GATE-L1 «taken in its first form (keep the line's λ_W-phase definition, correct the count)» (l. 71), with the cause
+    (l. 73-74), the packet's 106 / 116 recorded and «the frozen packet is not edited» (l. 75-76), box120/inphase.py, pincheck.sh,
+    runinphase.sh (l. 78-86); (b) «SET_k grows (B_k rises)»; (c) τ := τ_(k0) and the local j; (d) the instance pins with full sha1s (l.
+    96-97); (e) the Lead's citation form, and «Not taken: REFEREE-2's example form «whose proof (box 21 §2.1-§2.2) …». It cites a lane file
+    in a line; the Lead's form cites only landed labels and VJ00.» (l. 102-103); (f) the source note; the drafter's pre-check of L-1 (l.
+    111-119).
+  No fix changes a signed statement: entry 1 corrects an instance count of the DEAD (GATE-L1), pins, binds, renames, and words a premise
+  citation (REFEREE §C l. 139-150; REFEREE-2 L1 l. 6-29).
+- Not signed: §1 (premises and notation; REFEREE «CHECKED, holds on every game (§1)», l. 14); §7 DATA and §8 READING (packet l. 11; REFEREE
+  l. 20 «not to sign»; REFEREE-2 §5 l. 118 N-1 «Not to sign»). The DEAD is item (e), signed as an instance check; L-1's scope tail states
+  it: «every λ_W-phase of a τ-stretch has at most n − 1 W-changing transitions» (R17 (c)'s bound transferred) DEAD, with both instances
+  pinned (at the frozen line, unpinned and with «107 > 31»). L43's test («one instance exceeding an EXPLICIT bound»): 403 > 289 at n = 290
+  and 106 > 31 at n = 32, each above n − 1. OPEN, not claimed: whether SG, BG or INC is polynomially bounded (packet §4 l. 62-63, §5 l.
+  82-83); G-N5-TIME. The §8 READING (l. 114-116, «CONSISTENT-RED says that inside a τ-stretch only the steps where Ξ's gate and W's
+  objective disagree can be super-polynomial») is not landed.
+- Referee strengthening (NOT part of this entry; remarks of one referee, or of both outside the verdict cells):
+  (i) SETTLE-MON is the case lcp = n + 2 of BRACKET-MON (REFEREE-2 §3 l. 57).
+  (ii) SET grows at r ≤ n − |SET_0| transitions (REFEREE-2 §3 l. 59), a sharper count than the packet's r ≤ n.
+  (iii) Mutation controls (REFEREE §7 l. 81-83): «MUT 1 (HI := W): SET_V 30, BR_V 73, SQZM_V 239.», «MUT 2 (BR compared with LO_(k+1)
+       instead of HI): BR_V 3,394.»; REFEREE-2 §2 l. 39 «A wrong dual encoding would fail the sandwich at once.»
+  (iv) OPT (an OPT-OFF-form check at consistent transitions): REFEREE-2 §4 l. 96 «OPT has 347,234 checks at consistent transitions;
+       consistent windows are all < B.»
+  (v) REFEREE 22's optional form «(proof: VJ00 (11), Lemma R, R15 (a), (d); no 𝒞^1O hypothesis)» for the two colons in a row (§C l.
+       153-154): not applied by L-1; OPEN, for CHECKER C111 (draft G-2).
+- Honest limits: (i) REDUCTIONS and EQUIVALENCES: no count is bounded. SETTLE-RED / BRACKET-RED move K to the settle gap SG and the
+  bracket gap BG, and CONSISTENT-RED moves τ-stretch lengths to INC; each up to polynomial factors. G-N5-TIME stays open. (ii) The
+  sandwich and its monotone halves are R18 (d)'s, not claimed here; R101 uses them «on every game» on the strength of their class-free
+  proof, which both referees confirm; the acceptability of that citation is for CHECKER (Flag G-1 of the draft). (iii) The DEAD shows
+  only that R17 (c)'s per-phase bound n − 1 does not transfer to τ-stretches; it is not a lower bound on N5's iteration count (fbg_K12
+  has K = 404 at n = 290). (iv) INC can be close to the stretch length on L-RED's builds (packet §7 l. 107-108, DATA: «cp_K4 43 / 44,
+  s3quad_K8_m30 263 / 264, fbg_K12_m6_m24 395 / 403»), so CONSISTENT-RED alone gives no bound there. (v) Premises: R17 (d) holds for every
+  pointwise-optimal choice and, by R18 (c)'s reading, from any start; R17's setting has injective priorities (REFEREE-2 §3 l. 73). The
+  standing premise R57 (1E-N3) is used at S4a steps (Lead reading L42); no S4b optimality is used. The code's match to SPEC is DATA (R15
+  G-N5T-1). (vi) Counts are transitions and lcp lengths, not bit operations; no running-time bound. (vii) Not M3, not a step-4 pass, not a
+  TARGET.md claim; G-N5-TIME stays open. (viii) OPEN OPTIONAL PRECISION, for CHECKER C111 to rule on: REFEREE 22's two-colon note (§C l.
+  153-154; draft G-2). The title is L-1 verbatim; if CHECKER asks for the change, a line L-2 makes it and the title and UPDATE are
+  rebuilt with the same scripts.
+- Data (DATA, not proof): pinned. experiments/new/check.sh at afb8b99e (the L-1 commit): sha1 db9c2878ef7202e66fd5e232ba875eb95ca7e6e0, 634
+  lines (at 516717da and 5ea2e738: 1bac4380a290bfe02afcdfba7ddcd0065811071c, 628 lines; the 6 added lines are the box 120 block, l.
+  628-633); the box 117 block is l. 616-621 and the box 118 block l. 622-627, identical at 5ea2e738, 516717da and afb8b99e (by diff); at
+  the l-new head 7965c774 and trunk c9283fb3 a box 121 block follows (l. 634-639; sha1 e8ba10ed…, 640 lines). The packet and line files are
+  NOT sha1-pinned in L-NEW's check.sh (C109 N-1, C110 N-6). Re-run for this draft from a `git archive` of afb8b99e (experiments/ and
+  docs/new/; from experiments/new; GIT_DIR set to the repository), l. 1-8 (set -euo pipefail, cd, tmp) plus l. 616-633, 2026-11-01
+  02:52:25Z-02:52:27Z by date -u, rc 0; output:
+  «box 117 SQUEEZE: switchbestexp_2 N5 interval never widens (HIRISE 0, UNSET 0, settle gap 16); TBR widens (HIRISE 2, UNSET 3): PASS»;
+  «box 118 GATE: cp_K4 one tau-stretch of 44, ungated one-player climb 2, INC 43; switchbestexp_2 INC 6, stretch 18 vs one-player 16:
+  PASS»; «box 120 fixes GATE-L1: lend107_n32 one lambda_W-phase of 106 W-changing in-phase transitions (107 by first state): PASS». The
+  box 120 block greps «INPHASE lend107_n32.pg n 32 K 112 maxFirst 107 maxInPhase 106 at (2, 107)» (the DEAD's instance 2 under the line's
+  definition); the box 117 block greps «SQZ switchbestexp_2.pg N5 n 60 iters 32 SANDV 0 LODROP 0 HIRISE 0 UNSET 0 set0 4 setK 60 growths
+  14 maxgap 16»; the box 118 block greps «GATE cp_K4.pg n 192 iters 44 stretches 1 climbsteps 44 fb 0 flat 0 gated 43 » and «onep 2
+  maxratio 22.0 INC 43 maxConsistentWindow 1». The DEAD's instance 1 has no check.sh block: from the same archive I ran box120/inphase.py
+  on it (02:52:41Z-02:52:54Z, rc 0): «INPHASE fbg_K12_m6_m24.pg n 290 K 404 maxFirst 403 maxInPhase 403 at (1, 403)». Supporting run of
+  experiments/new/box120/pincheck.sh (fixes entry 1 (a) l. 79-82; same archive with tools/ linked to the repository's Oink build at
+  8fbf0a7), 02:54:03Z-02:55:04Z, rc 0, output byte-identical to the stored box120/pincheck.txt (by cmp): «OINK lend107_n32 --zlk
+  verified», «OINK lend107_n32 --tl verified», «PINWIN lend107_n32.pg n 32 states 113 fallbacks 10 W0 32 AGREE True», «n5b iterations 112
+  fallbacks 10 states 113 | n5x states 113 | identical state sequences: True»; «OINK fbg_K12_m6_m24 --zlk verified», «OINK fbg_K12_m6_m24
+  --tl verified», «PINWIN fbg_K12_m6_m24.pg n 290 states 405 fallbacks 0 W0 0 AGREE True», «n5b iterations 404 fallbacks 0 states 405 |
+  n5x states 405 | identical state sequences: True». Pin files (sha1 at afb8b99e = 516717da = trunk): fbg_K12_m6_m24.pg
+  2f035ca0a99946217bde6b740b87dd77bf884baf, fbg_K12_m6_m24_fixed.start 9f03f81fae5984fe92290f11c90dfaac3aecd419 (both last changed by
+  4d4c26b0); lend107_n32.pg ab4c9811b311e303e5d41a9e923766a4b3fdae33, lend107_n32.start 9df4ea2ceafe43c4a7d88ef1e1f262101d7f0c35 (both
+  dda29260); each equals fixes entry 1 (d) l. 96-97.
+  DATA OF RECORD (packet §7 l. 100-111, with N-1's 116): corpus L-SI box 53's 1,132 runs, 0 violations of [SQZ], SETTLE-MON, BRACKET-MON;
+  «SG ≤ 3.41n, BG ≤ 2.91n; INC 12,433 of 17,841 climb steps; 575 runs with INC 0» (l. 109-110); runs exceeding n − 1 in one λ_W-phase:
+  116 (in-phase; 118 by first state). Re-summed (116 / 118 only) from the stored box120 outputs: equal (to check (10)).
+  REFEREE (successor 21; own docs/referee/scratch/gate_probe.py, «no lane code», l. 73): «Corpus: 719 distinct games, MAXN 100 (656
+  analysed, 63 skipped), start file when present (gate_logs/sum.txt).» (l. 84); «K 11,289 iterations, SQZ 529,356 checks, 619 τ-stretches
+  (9,379 transitions, INC 7,083), SG ≤ 120, BG ≤ 98.» (l. 85); «VIOLATIONS 0 for SQZ, SET, BR, RED and CR.» (l. 86); pins (l. 66-71) and
+  the strict recount (Addendum 1 l. 126-130).
+  REFEREE-2 (successor 25; own docs/referee-2/R2-N5-GATE/gate_check.py, «The lane's box117 / box118 scripts are not imported.», l. 83):
+  corpus 1,132 runs (l. 85), «RESULT PASS, 0 violations, in all three.» (l. 86); table l. 88-94 («12,433 / 17,841 | 12,433 / 17,841», «575
+  | 575», «3.375, 2.875 (both within)», «116 (see GATE-L1: in-phase transitions only)»); «0 (1,679,311 SQZ vertex-state checks)» (l. 90);
+  pins (l. 97-107); Oink (l. 108-109).
+  No signed statement uses any count.
+- Signatures: REFEREE docs/referee/R-N5-GATE.md: successor 21's report c9bc161c8523ed35ee29c1c607401c53047f5087 (2026-11-01T00:36:30Z, new
+  file, 118 lines, sha1 c5fff4c540e4c70950dce2606e528d41c5640354, with docs/referee/scratch/gate_probe.py and gate_logs/; first on trunk by
+  merge c6fff8cb, 01:28:45Z): §1 CHECKED, §2-§5 SIGNED, §6 CONFIRMED, no gap, line MATCHES with precision P-1..P-4; successor 22's
+  Addendum 1 c96444460135942aa3afb25a9e0240d228fc4320 (01:31:04Z, +16/−0, l. 120-134; the file then 134 lines, sha1
+  e7beb42d5b8b21a6994c7772909df97e1a8b5836; with scratch/gate_strict.py and gate_logs/strict_*.txt): concurs with GATE-L1, line REQUIRED
+  GATE-L1; §C ffbdc404d0a580aa04a63b94accf02e0135ce8b4 (01:58:27Z, +21/−0, l. 136-155; the file now 155 lines, sha1
+  13aab8d973502e5aa35fde3f0c0d445782d22a8a, = referee head): «Verdict: line L-1 **MATCHES** (GATE-L1 met; P-1..P-4 met).» (l. 155).
+  c9644446 and ffbdc404 are on the local trunk by d734f419 (2026-11-01 02:50:19Z), NOT on origin trunk 5cf4eb85. REFEREE-2 (successor
+  25): docs/referee-2/R2-N5-GATE.md e35e8280570e34592a5eeb36b25c089afd9c1226 (00:39:34Z, new file, 144 lines, sha1
+  70484101a57a59c3cc29beb8d61b0b8fe5b8ce3f, unchanged since; with R2-N5-GATE/ tools and logs; on trunk by c6fff8cb, 01:28:45Z): every item
+  SIGNED (l. 17-21, l. 136-137), line REQUIRED GATE-L1 (l. 131); R2-N5-GATE-L1.md 9b30c652eef548e77fac010578d7f5d0fd482b63 (01:56:04Z, new
+  file, 37 lines, sha1 88bfd512c07fc853d71ea812108c06055b779295, = referee-2 head for this file; on trunk by 83d99f04, 02:21:17Z):
+  «**MATCHES** (Opus 5.5, D15). All my GATE line items are closed.» (l. 32). Lane: freeze 516717daa2547291f0c9d98e5b7e8f15885af494, L-1
+  and fixes afb8b99ec47d8630c7409e19c17a5fada4fc288e.
+  INDEPENDENCE: REFEREE l. 6 «Independence: I opened no docs/referee-2/ file for this packet.»; Addendum 1 l. 121 «Read after my report of
+  record (c9bc161c): REFEREE-2 25, docs/referee-2/R2-N5-GATE.md at e35e8280». REFEREE-2 l. 3 «Independence: written without opening
+  docs/referee/ for this packet.»; L1 l. 4 «Written without opening REFEREE's GATE files.» The two reports were committed 3 minutes apart
+  (c9bc161c 00:36:30Z, e35e8280 00:39:34Z). Neither review imported lane code (REFEREE l. 73 «no lane code»; REFEREE-2 l. 83); the lane's
+  scripts ran only as the pinned blocks (REFEREE l. 89 «Lane check.sh blocks «box 116»-«box 118» were not re-run by me.»).
+  Differences, resolved: GATE-L1 found by REFEREE-2 only, and conceded by REFEREE 22 in Addendum 1 (l. 123-124 «Cause, found in my own
+  tool: s21's gate_probe.py (§6 above) assigns transition j → j + 1 to the phase of its FIRST state j. So it also counts the transition at
+  which λ_W changes.»); line items numbered differently (to check (3)); both MATCH L-1. No disagreement in substance; the one open
+  question, the citation of R18 (d) «on every game», is the Lead's reading (draft G-1).
+- TARGET.md diff: «n := |V|, m := |E|» are TARGET.md §1 l. 8's n and m («n = |V|, m = |E|, d = |pr(V)| ≤ n + 1.»), V and E TARGET's (l.
+  6); games are TARGET.md §1 games (REFEREE-2 §6 l. 121 ««N5 on EVERY game», n := |V|, m := |E|, as in TARGET §1. No algorithm claim, no
+  polynomial bound proved, no unit-cost arithmetic.»). The line (L-1) makes no M4 claim and no TARGET claim; its own scope clause reads
+  «REDUCTIONS and EQUIVALENCES (no count is bounded here; the sandwich is R18 (d)'s, not claimed here; …; the premises R17 (F1) and R18
+  (d) Lemma S (a) rest on derivations written by REFEREE and REFEREE-2 (R17 (a)); G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a
+  TARGET.md claim)» (L-1, by script). REFEREE §8 l. 108 «TARGET.md diff: scope words ✓, no algorithm claim.»; REFEREE-2 §6 l. 122-124
+  «This is consistent with TARGET §2 and §4.», «Asymptotic words: none. The DEAD is at the explicit bound n − 1 with both counts (L43).»;
+  REFEREE §C l. 151-152 «TARGET.md diff: no algorithm claim ✓.»; REFEREE-2 L1 l. 29 «The TARGET.md scope words are unchanged.» Not a claim
+  of TARGET.md §1 or §2 (monotonicity of the settled set and of the bracket, two reductions of N5's iteration count to gaps, and a
+  reduction of τ-stretch lengths to inconsistent steps; no bound on a run or on running time; no algorithm claim); not a step-4 pass.
+  GAPS G-N5-TIME: open.
+
+### Erratum E-1 (2026-11-01 05:28Z by date -u; Lead; corpus counts in RESULTS R97-R100)
+- What is wrong: the DATA-of-record sentences that say «1,132 games» for the L-SI box 50b / box 53 corpus (sbcg.lst 719 lines + alt_all.lst
+  413 lines) count RUNS, not games. Measured by CHECKER (C111 N-7, claude/checker d53e1d4f) at trunk 68d50c8f: experiments/si/anc58/
+  corpus_fixed.lst has 1,132 lines = 813 distinct (game, start) pairs on 719 distinct games; the 319 start-less lines of alt_all.lst are
+  each an exact repeat of an sbcg.lst run (REFEREE 22, docs/referee/R-N5-S4B.md 062cd734, S4B-L2; REFEREE-2 25, docs/referee-2/
+  R2-N5-S4B-L1.md 0e8ae566).
+- Affected lines (this file): l. 8215 (R97), l. 8531 (R98), l. 8847 and l. 8857 (R99), l. 9186 and l. 9195 (R100). l. 8543 (R98) quotes
+  REFEREE-2 and stays as quoted. R96's «1,134 runs» (l. 7963) is correct.
+- Correction: read «1,132 games» there as «1,132 runs (813 distinct game/start pairs on 719 distinct games; 319 exact repeats)». Totals
+  quoted with it (W-runs, Ξ-changes, transitions, descents, source events) sum over runs and so count the 319 repeats twice.
+- Effect: every violation count in those sentences is 0, and a repeated run cannot add a violation; no signed statement of R97-R100 uses
+  a count. No claim, title or GAPS line changes. Later lines state de-duplicated counts (P-N5-S4B line L-1: 813 distinct game/start lines).
+
 ## Dead ends (kept; each with the exact obstruction or counterexample and the instance that killed it)
 - DE1 (2026-10-14): arXiv 2511.03752 v1 (van der Heijden), claimed O(n²(n+m)) algorithm. BROKEN: wrong regions on 4-vertex games
   CE1 (l-comp 19b5ce2, experiments/m2/counterexamples/ce1_4v.pg) and cex1 (referee 936d47c, docs/referee/scratch/cex1-*.pg).
