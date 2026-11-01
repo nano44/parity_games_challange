@@ -473,3 +473,8 @@ Needs: none."
 - Spend: four to five working lanes plus two referees since 08:10Z. The seven-day warning cleared this morning; no overage.
 - Needs: none.»
 (Q-PACE marked closed in QUESTIONS.md: warning cleared, default (a) held, no owner word.)
+
+## 2026-11-01T08:12Z owner message (verbatim)
+> Give me a status update about
+
+(Message ends after "about"; OWNER-DESK assumption, stated to the owner: N5, as in the owner's earlier requests.) Answered from trunk 2f9a0f0a2 (2026-11-01 07:18Z), RESULTS R95-R101, Lead log. Relayed to the Lead.
