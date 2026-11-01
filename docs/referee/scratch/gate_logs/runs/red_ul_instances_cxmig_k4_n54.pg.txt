@@ -1,0 +1,12 @@
+GAME red/ul/instances/cxmig_k4_n54.pg
+BGmax 0
+GAMES 1
+INC 0
+K 12
+MAXPH 12
+SGmax 0
+SQZ_chk 702
+steps 12
+stretches 1
+VIOLATIONS 0
+RC 0

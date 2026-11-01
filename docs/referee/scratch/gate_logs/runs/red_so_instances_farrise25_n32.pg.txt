@@ -1,0 +1,12 @@
+GAME red/so/instances/farrise25_n32.pg
+BGmax 26
+GAMES 1
+INC 34
+K 35
+MAXPH 28
+SGmax 33
+SQZ_chk 1152
+steps 35
+stretches 1
+VIOLATIONS 0
+RC 0

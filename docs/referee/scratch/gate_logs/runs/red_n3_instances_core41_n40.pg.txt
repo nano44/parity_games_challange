@@ -1,0 +1,14 @@
+GAME red/n3/instances/core41_n40.pg
+BGmax 10
+GAMES 1
+INC 40
+K 42
+MAXPH 41
+PH_over 1
+SGmax 40
+SQZ_chk 1720
+steps 41
+stretches 1
+VIOLATIONS 0
+EX ('PH_over', 'core41_n40.pg', 1, 41, 41, 39)
+RC 0

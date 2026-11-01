@@ -1,6 +1,19 @@
 # L-SI notebook (strategy-improvement design loop toward M4 / M4-R)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Lane brief: Lead 2026-10-15 10:10Z, 12 h box to 22:10Z.
 
+## HANDOVER (successor 38, box 62; written 2026-11-01T00:11Z (date -u); session_01V5yGRaKVKb8btaPGXC6cJ2; Lead session_014FBi6o334DvwT5Uw2kDfoN)
+### Resume point
+- Box 62 (Lead 00:06Z, τ-stability / R168 ITAU): note docs/si/N5-ITAU-box62.md; tool anc58/itau.py (+ runitau.sh, itau_corpus.txt, ~1 min);
+  pin anc58/inst/sym_h8_s1_default.start; check.sh «box 62»; DEAD.md «box 62».
+- DEAD: «I_τ = ∅ inside a τ-stretch» (n3all_maxph_0 n 3; lcount2_n23 W-run transition 1 with the deviation edge itself τ-improving). Corpus
+  3,768 / 17,841 stretch transitions, 2,647 W-run transitions with I_τ ≠ ∅; L-RED builds happen to be τ-stable (ITNE 0).
+- PROVED (lane): ESC-SQUEEZE at τ-stable states: U(x) ⊵ U(τ(o)) ⊵ W(τ(o)) ⊵ L(τ(o)) for every Odd o and successor x (R18 Lemma S (a)-(b),
+  Lemma R); the Lead's form is its contrapositive.
+- READING: excludes nothing inside a τ-stretch by itself; R168's ITAU is sufficient, not necessary; faithful constraint [S4b-KEEP] (needs an
+  S4b-optimality premise, L42). Suggested: L-RED re-runs srz3b.py with [S4b-KEEP].
+### Queue
+1. If asked: formalise [S4b-KEEP] for srz3b (with L-RED). 2. Re-blocking (box 61). 3. W-REOPEN′ / WIT′. 4. DESC per vertex.
+
 ## HANDOVER (successor 38, box 61; written 2026-10-31T23:18Z (date -u); session_01V5yGRaKVKb8btaPGXC6cJ2; Lead session_014FBi6o334DvwT5Uw2kDfoN)
 ### Resume point
 - ITEM 0 CLOSED: R98 (P-N5-ODD) LANDED (RESULTS l. 8296; CHECKER C108 Add. 1 81fdf7a5; Lead 23:15Z).

@@ -1,0 +1,12 @@
+GAME red/dtl/instances/lalg_dtl_pertop31_n18.pg
+BGmax 0
+GAMES 1
+INC 1
+K 2
+MAXPH 1
+SGmax 0
+SQZ_chk 54
+steps 2
+stretches 1
+VIOLATIONS 0
+RC 0

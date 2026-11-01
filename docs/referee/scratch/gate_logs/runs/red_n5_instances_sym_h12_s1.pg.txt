@@ -1,0 +1,12 @@
+GAME red/n5/instances/sym_h12_s1.pg
+BGmax 6
+GAMES 1
+INC 8
+K 34
+MAXPH 1
+SGmax 6
+SQZ_chk 840
+steps 13
+stretches 8
+VIOLATIONS 0
+RC 0

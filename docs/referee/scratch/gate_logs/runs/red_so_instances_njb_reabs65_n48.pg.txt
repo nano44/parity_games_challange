@@ -1,0 +1,14 @@
+GAME red/so/instances/njb_reabs65_n48.pg
+BGmax 36
+GAMES 1
+INC 67
+K 70
+MAXPH 67
+PH_over 1
+SGmax 67
+SQZ_chk 3408
+steps 68
+stretches 1
+VIOLATIONS 0
+EX ('PH_over', 'njb_reabs65_n48.pg', 2, 68, 67, 47)
+RC 0

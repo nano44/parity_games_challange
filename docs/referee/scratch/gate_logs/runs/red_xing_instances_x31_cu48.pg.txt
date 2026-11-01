@@ -1,0 +1,12 @@
+GAME red/xing/instances/x31_cu48.pg
+BGmax 19
+GAMES 1
+INC 43
+K 46
+MAXPH 42
+SGmax 43
+SQZ_chk 2256
+steps 44
+stretches 1
+VIOLATIONS 0
+RC 0

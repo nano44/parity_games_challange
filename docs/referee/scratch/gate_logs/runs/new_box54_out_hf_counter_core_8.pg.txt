@@ -1,0 +1,12 @@
+GAME new/box54/out/hf/counter_core_8.pg
+BGmax 0
+GAMES 1
+INC 14
+K 16
+MAXPH 1
+SGmax 0
+SQZ_chk 867
+steps 16
+stretches 1
+VIOLATIONS 0
+RC 0

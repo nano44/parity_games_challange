@@ -1,0 +1,4 @@
+GAME new/box52/out/topfix_n8.pg
+skip_big 1
+VIOLATIONS 0
+RC 0

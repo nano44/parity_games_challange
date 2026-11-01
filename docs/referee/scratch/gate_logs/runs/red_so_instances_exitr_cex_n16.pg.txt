@@ -1,0 +1,12 @@
+GAME red/so/instances/exitr_cex_n16.pg
+BGmax 9
+GAMES 1
+INC 1
+K 10
+MAXPH 8
+SGmax 9
+SQZ_chk 176
+steps 10
+stretches 1
+VIOLATIONS 0
+RC 0

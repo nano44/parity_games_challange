@@ -1,0 +1,12 @@
+GAME red/carry/instances/h4_def7_n28.pg
+BGmax 0
+GAMES 1
+INC 0
+K 3
+MAXPH 1
+SGmax 0
+SQZ_chk 112
+steps 1
+stretches 1
+VIOLATIONS 0
+RC 0

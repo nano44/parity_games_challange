@@ -1,0 +1,12 @@
+GAME n5-epoch/instances/lend27_n24.pg
+BGmax 30
+GAMES 1
+INC 30
+K 32
+MAXPH 9
+SGmax 30
+SQZ_chk 792
+steps 30
+stretches 1
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,12 @@
+GAME new/box54/out/switchallexp_6.pg
+BGmax 1
+GAMES 1
+INC 0
+K 12
+MAXPH 5
+SGmax 1
+SQZ_chk 1183
+steps 6
+stretches 2
+VIOLATIONS 0
+RC 0

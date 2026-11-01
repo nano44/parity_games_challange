@@ -1,0 +1,8 @@
+GAME new/box59/out/rnd/r145_n70.pg
+BGmax 1
+GAMES 1
+K 7
+SGmax 1
+SQZ_chk 560
+VIOLATIONS 0
+RC 0

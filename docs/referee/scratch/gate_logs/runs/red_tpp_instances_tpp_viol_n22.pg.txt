@@ -1,0 +1,8 @@
+GAME red/tpp/instances/tpp_viol_n22.pg
+BGmax 1
+GAMES 1
+K 2
+SGmax 1
+SQZ_chk 66
+VIOLATIONS 0
+RC 0

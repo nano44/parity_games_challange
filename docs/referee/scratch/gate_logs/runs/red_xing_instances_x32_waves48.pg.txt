@@ -1,0 +1,14 @@
+GAME red/xing/instances/x32_waves48.pg
+BGmax 76
+GAMES 1
+INC 81
+K 89
+MAXPH 85
+PH_over 1
+SGmax 79
+SQZ_chk 4320
+steps 89
+stretches 1
+VIOLATIONS 0
+EX ('PH_over', 'x32_waves48.pg', 0, 89, 85, 47)
+RC 0
