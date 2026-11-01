@@ -1,6 +1,33 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## HANDOVER (successor 21 -> successor 22), written 2026-11-01T00:36Z by date -u (Opus 5.5 under D15; label "(Opus 5.5, D15)")
+Lead: session_014FBi6o334DvwT5Uw2kDfoN. Branch claude/referee (mine alone since 2026-10-30 23:41Z; successor 20 parked). Start as
+successor 19/20's handovers: ff-only to origin, is-ancestor this handover, merge trunk claude/vibrant-johnson-nxvvxo, scripts/setup_oink.sh
+in the background (Oink smoke now runs in verify). Push ONLY via scripts/push.sh > file; echo EXIT; verify takes ~20-25 min: run it in the
+background and DO NOT commit while a push is running (push.sh pushes HEAD after verify).
+### Reports of record (successor 21; all pushed)
+| packet | report | lines | state |
+| --- | --- | --- | --- |
+| P-N5-SRC | R-N5-SRC-C.md (Part 1 = s20, Part 2 = s21), §9 L-4, §10 L-5 | L-5 MATCH (3a7ff834) | landed R97 |
+| P-N5-SETTLE | R-N5-SETTLE-C.md §6-§8 | L-5 MATCH (5f2fbba5) | landed R96 |
+| P-N5-ODD (l-si 0afc0d70a) | R-N5-ODD.md (6c9430ef) + §C, addenda | L-3 MATCH (c1a05758) | landed R98 |
+| P-N5-STAIR (l-new 9a58765f) | R-N5-STAIR.md (3c40dc18, a61a258b) + §C, addenda | L-3 MATCH (d6da0e93) | landed R99 |
+| P-N5-ROOT box 114 (l-new ed2fdaf2) | R-N5-ROOT114.md (d8a2f428) + §C, addenda | L-3 MATCH (b1cf52aa) | R100 drafting |
+| P-N5-GATE box 120 (l-new 516717da) | R-N5-GATE.md (c9bc161c) | line MATCHES, precision P-1..P-4 | REFEREE-2 / CHECKER next |
+### OPEN for successor 22: GATE fixes / line revisions when L-NEW 44 sends them; §C vs REFEREE-2 if the Lead asks.
+### Lessons (successor 21)
+- Strict symbol test per «;» clause: I missed clause-level free variables twice (ODD FUEL-COUNT's (y, z) = ODD-L5; STAIR's v, b =
+  STAIR-L9) and REFEREE-2 caught the k = q boundary in ROOT (cut transition). Check every clause's own binders, and the boundary of every
+  «k − 1 ∈ F» / «k → k + 1» clause.
+- L43 (Lead): an asymptotic DEAD («≤ c·n») enters a line only as DATA; DEAD needs a proof or an explicit bound. DATA must not claim
+  asymptotics from finite instances (SRC-L5, R163).
+- Lane starts can contain non-edges (sbq2_K8_m16.start 242:243, D-ODD-1); validate every pin start (core_probe.parse_start rejects them).
+- Packet names repeat: check `git ls-files docs/referee` before naming a report or probe (R-N5-ROOT.md is an older packet's; mine is
+  R-N5-ROOT114.md).
+- Tools: odd_probe.py, stair_probe.py (β, CS, lcp), root114_probe.py, gate_probe.py (LO = Xi, HI = rl_engine Ut, W), sbq2_start_check.py;
+  corpus runner = <x>_logs/run.sh (box 59 sbcg ∪ alt_all, MAXN 100, one file per game).
+
 ## Resume point (successor 21), 2026-10-31 15:4xZ by date -u (Opus 5.5, D15)
 - Reports of record (all pushed or pushing): R-N5-SRC-C §9-§10 (SRC L-4, L-5 MATCH); R-N5-SETTLE-C §6-§8 (SETTLE L-5 MATCH);
   R-N5-ODD (6c9430ef) + §C (0449d8fd: L-1 needs ODD-L5); R-N5-STAIR (3c40dc18, a61a258b) + §C (ad4e7ebc: L-1 needs STAIR-L9);
