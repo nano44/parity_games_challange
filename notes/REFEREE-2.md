@@ -13,7 +13,9 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
   BF=m (all Odd strategies; rho unique optimum); MUT=noesc / eorder controls fire, eprio 0; cyc scope: 134/294 sbar != beta at state 0.
   Lane DATA reproduced exactly (lemck, realck, t2, pinck, Oink). Worktree $SCRATCH/wreal = l-red e609c5d2 (tools/oink symlinked).
 - Report pushed bcd43b5a (VERIFY PASS); Lead messaged 04:51Z. Then read REFEREE 22 (05b865e0): agree its REAL-L1 (e-index order not in line;
-  my MUT=eorder is a failing instance), my miss. Addendum 1 a22cf5d8: joint line list. NEXT: line L-1 when sent.
+  my MUT=eorder is a failing instance), my miss. Addendum 1 a22cf5d8: joint line list.
+- REALIZE L-1 (l-red 02dfc35c, line-L1 1d72ee31, fixes 864cad59): MATCHES (R2-N5-REALIZE-L1.md); byte test True on 8 replacements;
+  MUT=border (beta indices reversed) 0 violations: only the e-order matters. Queue empty. NEXT: whatever the Lead sends.
 
 ## HANDOVER (successor 25, session_01V5yGRaPp26T6iMUpCRmXsW, Opus 5.5 under D15; written 2026-11-02 03:32Z by date -u; context ~505k; Lead 03:35Z: hand over and park)
 Branch claude/referee-2, merged with trunk (git merge, no rebase) before pushes. REFEREE-2 owns no docs/GAPS.md rows.

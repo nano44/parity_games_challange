@@ -46,7 +46,7 @@ def build(G, esc=None):
     N, lev, opts, gate, br, bp = G["N"], G["lev"], G["opts"], G["gate"], G["br"], G["bp"]
     faces = [(x, k) for x in range(N) for k in range(len(opts[x]))]; M = len(faces)
     gv = {f: N + gate[f[0]][f[1]] for f in faces}
-    bv = {f: N + M + i for i, f in enumerate(faces)}
+    bv = {f: N + M + i for i, f in enumerate(faces[::-1] if MUT == "border" else faces)}   # MUT=border: beta indices reversed (L-1 leaves the beta order to §3.1)
     byg = sorted(faces, key=lambda f: gate[f[0]][f[1]], reverse=(MUT == "eorder"))
     ev = {f: N + 2 * M + i for i, f in enumerate(byg)}
     cX, cW = N + 3 * M, N + 3 * M + 1; K = [N + 3 * M + 2 + i for i in range(4)]; n = N + 3 * M + 6
