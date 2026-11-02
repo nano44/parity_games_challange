@@ -399,3 +399,8 @@ R24 (b)'s literal statement: a citing line states it as «R24 (a) Lemma R and R2
 bridge B; its proof uses no 𝒞^1O hypothesis» (REFEREE CF-1), and bridge B (flat + non-corner ⇒ the old option is fully optimal) is
 signed in the citing packet. «Tied» means fully optimal under W′ = H_k's arena optimum (W′(z) ⊕ h = W′(h)), not under W_k; an option
 whose play passes h is a corner, outside the rule (REFEREE-2 precision note). Not covered: R24 (c)-(e).
+Amendment to L46 (2026-11-01 17:35Z by date -u, Lead): (1) attribution: «tied under W′» is REFEREE-2's precision note (d96d2f9e); the corner
+clause is REFEREE's CF-1 (472f0dcd), not REFEREE-2's. (2) wording: «corner» means that h occurs on the option's play BEFORE that play's
+cycle node (REFEREE R-R24-L44.md Addendum 1; ANC-1 on P-N5-ANCHOR); read with the full lasso the clause would wrongly exclude σ_j(h)
+when h lies on its own W-cycle. REFEREE-2 (R2-N5-ANCHOR G-ANC-1) shows the clause is vacuous on fully W′-optimal options. Verdicts of
+both L44 checks unchanged.

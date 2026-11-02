@@ -1,0 +1,15 @@
+== topfix_n10
+red/r176/instances/topfix_n10.start: OK
+OINK OK
+[    0.00] solution verified (121 strategies).
+state sequences identical: True
+  window [73, 103] L 30 ODIFF 1 oddchoice(G_F) 1 fb_in_window 0 FFSEG 30 REPLAY True FRUN 97
+== topfix_n12
+red/r176/instances/topfix_n12.start: OK
+OINK OK
+[    0.00] solution verified (145 strategies).
+state sequences identical: True
+  window [73, 103] L 30 ODIFF 1 oddchoice(G_F) 1 fb_in_window 0 FFSEG 30 REPLAY True FRUN 109
+  window [303, 365] L 62 ODIFF 1 oddchoice(G_F) 1 fb_in_window 0 FFSEG 62 REPLAY True FRUN 122
+  window [303, 363] L 60 ODIFF 1 oddchoice(G_F) 1 fb_in_window 0 FFSEG 60 REPLAY True FRUN 139
+  window [437, 511] L 74 ODIFF 1 oddchoice(G_F) 1 fb_in_window 0 FFSEG 74 REPLAY True FRUN 146
