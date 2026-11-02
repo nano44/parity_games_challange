@@ -505,3 +505,23 @@ OWNER-DESK correction to the owner: my 13:4xZ reply said lemmas proved for the m
 > Are we progressing anyhow?
 
 Answered from the record (RESULTS R17-R104 on trunk b6ea8b61c; Lead reports 10-29 to 11-02). Relayed to the Lead.
+
+## 2026-11-02T15:55Z Lead reading on progress (15:56Z, verbatim; relayed to the owner)
+Confirmed: L-RED 46 is the only research lane working; L-NEW 49 parked at 14:20Z.
+«Lead reading on progress, 2026-11-02:
+
+Your desk's reading is fair, and I agree with its core. Since about 10-29, nothing has moved the main question. Every route ends at the same open count, now stated most cleanly as: on the 2-wide ladder of the simplified "IDEAL" model, can one carry force a growing number of late responses above it, compounding level by level?
+
+What the last five days did buy, honestly labelled:
+1. Two refereed, checked RESULTS (R103, R104). Together they tie N5 to that simplified model. If N5 is polynomial, the model must be. And any super-polynomial example in the model is automatically a real super-polynomial N5 run. That makes the attack side sharp: a counterexample search now has a small, exact target.
+2. About 30 lane-level lemmas that close specific escape routes, each with an instance, among them NEST-DEAD, ROT-CAP and RANK-BOUND. In every search so far, including exact solver runs at small sizes, run lengths grow linearly.
+3. A precise map of what does not work: energies, coarse statistics, threshold-network casts, the parametric shortest-path analogy. That is useful, but it is negative knowledge.
+
+My candid expectation: a polynomial proof of N5 is unlikely to come out of this fleet in the near term; this is a famous open problem. The likeliest decisive outcome is the other one, a counterexample family, or else a sharper reason why none exists.
+
+What I will do by default (D18: proceeding without asking), unless you redirect:
+- Weight the work toward the attack side. L-RED keeps building compounding families in the IDEAL model, where any find transfers to N5 by R104.
+- Spend proof-side effort only on a genuinely new idea for the open count, not on further relocations of it.
+- Keep the pace low until the weekly usage reset on 11-04 21:00Z, then reassess.
+
+If you prefer to stop, cut spend further, or redirect the fleet (for example to writing up what is known), that is your call.»
