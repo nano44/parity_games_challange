@@ -1,4 +1,5 @@
 # L-RED notebook (independent adversary lane)
+Successor 47 (Opus 5.5, D1/D18) started 2026-11-02 20:58Z (date -u); STEP 0 message 20:58Z; R197 (R196 escape shape): fork ladders exact 3 / 5 at d 2 / 3, bottom carry doubling F = [2, 6, 7] pinned (dbl_d3_F6_n60), Lemmas DOWN / LEVEL-RISE / WAKE-CHAIN; IN PROGRESS, see «Successor 47».
 Successor 46 (Opus 5.5, D1/D18) started 2026-11-02 11:52Z (date -u); STEP 0 message 11:52Z; R191 (degree-3 rotation): ROT-CAP / KEY-ALT / NEST-PI / MERGE-1 / NEST-DEAD-3 PROVED (lane), U linear d 3-8; R192 (RANK) linear; R193 d 4 undecided; R194 (a′) → U; R195 NEST-DEAD-ALL; R196 SAME-WAKER; PARKED ~20:5xZ, see "Successor 46 PARK".
 Successor 45 (Opus 5.5) started 2026-11-02 02:33Z (date -u); P-N5-REALIZE FROZEN e609c5d2 + fixes entries 1-2 + L-1 (MATCHES at both referees); R189 LAG / NEST-DEAD; R190 clock (undecided, linear data); PARKED ~07:3xZ, see "Successor 45 PARK".
 Successor 44 (session id: see docs/NOW.md roster, Opus 5.5) started 2026-11-01 21:06Z (Lead brief; date -u); R187 (real-game W-ladder): Theorem REALIZE PROVED (lane), real L_FL 32 / 64, first active D″-cycle, no compounding; R188 (Ξ-counter): exact d 2 / 3 maxima 4 / 8, no compounding; PARKED ~02:1xZ 2026-11-02, see "Successor 44 PARK".
@@ -44,6 +45,16 @@ Successor 15 PARKED ~09:40Z 2026-10-25 after box 38; RESUME POINT for successor 
 context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older notebook: `git show b0884407:notes/L-RED.md`.
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
+
+## Successor 47 (Opus 5.5, D1/D18; started 2026-11-02 20:58Z, date -u)
+- Start: clone stale at 996013948. ls-remote (l-red bb828553, trunk d8c9ee5d, l-new 2715601a), fetched those three; ff-only to bb828553;
+  9 ahead / 13 behind trunk, merge-base 3398c652; trunk merged no-ff 67a8bc43. STEP 0 message 20:58Z (answers in the message). Oink
+  8fbf0a7 rebuilt (setup_oink.sh exit 0), z3 pip.
+- Sources opened: CLAUDE.md, LANE-RESTART, «Successor 46 PARK», R189, R191, R195, R196, docs/new/N5-IDEAL-STATE.md (l-new 2715601a;
+  NOT on trunk), RESULTS R104 (l. 9864), R178 §2 (XI-NEW proof), r187/ideal.py, r178/fastcyc.py, r190/delclimb.py, r193/bmc4.py.
+- R197 docs/red/R197-alt.md: fork ladders (r197/bmcfork.py XI=fork|down|up; r197/forkclimb.py), EXACT fork max 3 / 5 at d 2 / 3;
+  Lemma DOWN (Xi only to lower W-levels => L <= d), LEVEL-RISE, WAKE-CHAIN; z3 FMIN finds F = [2, 6, 7] at d 3 (F_1 = 2F_0 + 2, the
+  KEYFLIP ceiling) through a delay line v1 -> u2 -> u1; pin dbl_d3_F6_n60 (PIN OK, lemck 0). F_2 >= 8 at d 3 UNSAT.
 
 ## Successor 46 PARK (final 2026-11-02 ~20:5xZ, date -u; context ~500k; first park 19:3xZ, un-parked 19:47Z)
 - DONE (claude/l-red, push.sh VERIFY PASS each): 5f2eaf3f + 314dcdda (R191), 24efabd0 (R192), 86f2a4e0 (R193 draft, bmc4), e8af7ca1
