@@ -222,3 +222,27 @@ L46 and its amendment)». ✓
   - The line leaves the IDEAL order's parity direction unstated.
   - All DATA reproduces exactly.
 - NEEDS: L-RED: fixes entry for G-REAL-1 and line L-1 for REAL-L1 / REAL-L2.
+
+## Addendum 1: comparison with REFEREE 22 (docs/referee/R-N5-REALIZE.md, origin/claude/referee 05b865e0; read after my push bcd43b5a)
+- Verdicts agree: every to-sign item SIGNED by both; no gap in the mathematics.
+- **REFEREE REAL-L1 (e-index order missing from the line): I AGREE, REQUIRED. I missed it.**
+  - My MUT=eorder control (logs/run1.log) is a concrete instance. It builds Γ(G) as the line describes it, with every e-vertex
+    priority and edge as stated, but indexes the e-vertices in REVERSED gate order.
+  - The real N5 run then leaves the IDEAL run: KEYB 33, IDEAL 20 on big_d4_k3_W3 and grow_top_N24, first at state 0, mover x = 2.
+  - RULE stays 0, so N5 still picks the κ-least gate; it is the IDEAL key order that no longer matches.
+  - So the line's Γ(G), read without §3.1's index layout, makes the state-for-state claim false. REFEREE's «gap in the line's
+    construction» is confirmed by a failing instance.
+  - Repair as REFEREE says: «e-vertices indexed in the order of their gates' gate indices (packet §3.1)». My REAL-L2 (parity direction)
+    is the same kind of omission.
+- **REFEREE REAL-P1 (Lemma R + TB not redundant; bridge B redundant): agree.** My §3 adds that, at standard states, TB's conclusion can
+  also be read directly off SPEC S1's procedure, so the packet need not rely on it. That is optional.
+- **REFEREE REAL-P2 (L = 0) = my P-2; REAL-P3 (finiteness not circular) = my §4 REALIZE note:** agree.
+- **My G-REAL-1 and REAL-L1 (1E-N3 gloss) are not in REFEREE's report.**
+  - REFEREE marks «[1E-N3] ✓ for S4a (R57) and for S1's σ̄». That is the same premise in its R57 (b) form, which is what my closure
+    uses. So we agree on substance.
+  - My point is that the packet's §1 / line restatement (P2, for σ_j at non-fallback transitions only) is narrower than that use. I keep
+    REAL-L1 (gloss) REQUIRED; the Lead may rule it a precision if the gloss is read as a label for R57 (b).
+- **My REAL-L2 (parity direction of the IDEAL order) is not in REFEREE's report.** I keep it REQUIRED, for the same reason as
+  REFEREE's REAL-L1: the reversed reading makes the realisation claim false.
+- **Joint line list:** REFEREE REAL-L1 (e-index order) + my REAL-L1 (1E-N3 gloss) + my REAL-L2 (parity direction); optional: REFEREE
+  REAL-P1 to P3 and «top»; my P-1 and P-2.
