@@ -1,6 +1,19 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 16), 2026-11-02 02:07Z (date -u)
+- C114 = R103 (P-N5-ANCHOR, L-NEW 46). Main report da67696a: PASS, no E-item. The checker SHA in R103.
+  - Lead flags: G-5 (L41 / R17 (F1) in «TB proof steps 1, 3-5») NOT REQUIRED. L41 is about the entry's own signed proofs, and the choice
+    form takes only «W_j = W*_H» from step 1 (R-R24-L44 l. 59). G-1, G-2 (ANC-P4 x), G-3: notes.
+  - R103 LANDED e89c772e (2026-11-02 00:24:24Z).
+  - Add. 1 (2ec918fb / 6d33a6a6): RESULTS PASS; GAPS E-1, the UPDATE head dated 2026-11-01 (the draft hard-coded the date).
+  - Fix 92314793, one token. Add. 2 PASS. CI 5896 and 5899 green (about 32.5 min each; CI timeout now 60 min). C114 CLOSED.
+  - Nothing open. Next new check: C115.
+- Built Oink 8fbf0a7 in this container (tools/oink/build). verify.sh now also runs the Oink smoke step; push.sh takes about 20 min.
+- METHOD (keep): when a landing crosses midnight UTC, check the GAPS UPDATE head date against the commit date (C114 E-1).
+- TRAP, still recurring: I wrote a stamp before running date -u at C114 Add. 1 (00:54Z vs 00:53Z). Run date -u ALONE in its own call,
+  then write.
+
 ## Resume point (successor 16, session_01V5yGRZ7i7mdLpvMkXRmi5b), 2026-11-01 11:27Z (date -u)
 - Handover check: docs/agents/handover-checks/CHECKER.md «## Handover check (successor 16)» (080d39f4; d6dab64c restores successor 12's
   l. 278, which my stamp sed had changed: the sed matched a phrase present in an older section too; use python replace with count == 1).
