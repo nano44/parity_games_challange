@@ -1,4 +1,5 @@
 # L-RED notebook (independent adversary lane)
+Successor 45 (session_01V5yGRa…, see docs/NOW.md roster; Opus 5.5) started 2026-11-02 02:33Z (date -u); STEP 0 sent 02:33Z; STEP 1 = P-N5-REALIZE FROZEN (docs/red/P-N5-REALIZE.md sha1 067f06b6, line 53dd6e9f); see "Successor 45".
 Successor 44 (session id: see docs/NOW.md roster, Opus 5.5) started 2026-11-01 21:06Z (Lead brief; date -u); R187 (real-game W-ladder): Theorem REALIZE PROVED (lane), real L_FL 32 / 64, first active D″-cycle, no compounding; R188 (Ξ-counter): exact d 2 / 3 maxima 4 / 8, no compounding; PARKED ~02:1xZ 2026-11-02, see "Successor 44 PARK".
 Successor 43 (session_01V5yGRa2JMr2sxHnK3JazZL2, Opus 5.5) started 2026-11-01 17:50Z (Lead brief; date -u 18:06Z at STEP 0); R183 (growing FVCH): no family; Lemma OVT-KEY + KEY-CHARGE + DEPTH PROVED (lane); realized IDEAL champions: 0 FL runs; R184 (Lead retarget 18:37Z): Lemma SELF-FREE; R185 (box 136 retarget): D″-cycles exist (inert), Lemma CN-UP; R186 (SCC charge = KEY-CHARGE, not polynomial); PARKED ~20:2xZ, see "Successor 43 PARK".
 Successor 42 (session_01V5yGRZmYx9sPoeaSsLDoAg, Opus 5.5) started 2026-11-01 10:39Z (date -u); R177 (CDAG order as an FL run): TB canonical (R24), FL-IDX, CASC-G, LADDERBF, idealised two-face model; see "Successor 42"; R178-R182; PARKED ~17:0xZ, see "Successor 42 PARK".
@@ -42,6 +43,23 @@ Successor 15 PARKED ~09:40Z 2026-10-25 after box 38; RESUME POINT for successor 
 context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older notebook: `git show b0884407:notes/L-RED.md`.
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
+
+## Successor 45 (Opus 5.5, D1/D18; started 2026-11-02 02:33Z, date -u)
+- Start: clone stale at 996013948; ls-remote (l-red ce1d19e9, l-new 5dbff709, trunk 95bc159e); fetched those three; ff-only to ce1d19e9;
+  7 ahead / 37 behind trunk, merge-base 436fe6e9; trunk merged no-ff 8fc75b98. STEP 0 message 02:33Z. Oink 8fbf0a7 rebuilt, z3 pip.
+- Sources opened: CLAUDE.md, LANE-RESTART, «Successor 44 PARK», R187 (§0-§6), R188, R178 §1-§2, P-N5-ANCHOR (f009a9a1) §1-§6 + line,
+  RESULTS R103 entry, DECISIONS L46 + amendment, REFEREE R-N5-ANCHOR (ANC-1, (R1)), SPEC S1-S5 (docs/new/N5-ssi-global.md l. 24-66),
+  L-LIT T21 (VJ00 Lemma 5.8 «1 ⇒ 2» holds), r187 stab.py / stabrun / realck / t2 / ideal / findk, r178 fastcyc.values.
+- STEP 1 P-N5-REALIZE FROZEN: docs/red/P-N5-REALIZE.md (sha1 067f06b6c67969adf346621b4a92b253491ab2b9), line
+  docs/red/P-N5-REALIZE-line.txt (53dd6e9fd727a6ff2d5e49648366f28d7398e9d9). Lemmas K, PLAY, SBAR, TAU, ESC, W, KEY; Theorem REALIZE;
+  Corollary REAL-IDEAL. New: r189/lemck.py checks each lemma per state on the REAL run (KEY read off the real game, independent of
+  ideal.py): 0 violations on 7 champions + 2 R188 genomes + 60 random ACYC (short, L ≤ 2) + 60 perturbed champions (L 1-64, sum 1011).
+  check.sh block «P-N5-REALIZE». Fixes go to docs/red/P-N5-REALIZE-fixes.md (append-only), line revisions -line-L1.txt.
+- Things only I know:
+  - K-core by hand: Iσ ∩ K = {(K0, K1)} at EVERY standard state, so Iσ ≠ ∅ always and the IDEAL stop is always an S4c fallback
+    (also the «opt» stop). The fallback then changes K0 (lemck's ESC check is for j < L only).
+  - Priority bound Ω ≤ 4M + 9 is tight (stab_d4 153 = 4·36 + 9).
+  - Random ACYC genomes (downgen.randacyc) give L ≤ 2: weak tests. Use --perturb on champions for long runs.
 
 ## Successor 44 PARK (2026-11-02 ~02:1xZ, date -u; context ~430k)
 - DONE (claude/l-red, push.sh VERIFY PASS each): 436fe6e9 (R187), b21230d2 + 417d7fa6 (R187 addendum, item 2, check fix), 62767752 +
