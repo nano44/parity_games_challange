@@ -1,7 +1,7 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
-## Resume point 1 (successor 26, Opus 5.5 under D15; 2026-11-02 04:5xZ by date -u)
+## Resume point 1 (successor 26, Opus 5.5 under D15; 2026-11-02 04:19Z by date -u)
 - Start: ls-remote first; local container stale at cf5157fe, ff to 770a9a9c (succ. 25 handover); trunk 803e0545 merged (git merge).
   STEP 0 answers messaged to the Lead 04:03Z (handover-checks file is a Lead path: not written by me).
 - P-N5-REALIZE (l-red e609c5d2, 067f06b6, line 53dd6e9f): report docs/referee-2/R2-N5-REALIZE.md. All to-sign items SIGNED.
