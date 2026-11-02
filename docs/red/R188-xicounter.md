@@ -32,3 +32,4 @@ Final note (02:0xZ). The d 4 L 12 / 13 relaxation runs (started ~00:08Z, timeout
   what I can give; the lag mechanism (READING above) is the shape a counter must realise at every level.
 - Next (queue): bmcrel at d 4 with L 13 (and d 5 when d 4 settles) to extend the exact sequence; score by moves at the middle level in
   the exact model; (a′) the box 137 lap recipe.
+- d 4 relaxation runs: bmcrel 4 12 and 4 13 both stopped UNDECIDED at the 7000 s timeout (02:06Z). So d 4 has no exact value: ≥ 12 (climb) only.

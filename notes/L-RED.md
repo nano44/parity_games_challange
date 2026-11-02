@@ -52,7 +52,7 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
     moves of one cycle node in one FL run. Bottleneck AVN.
   - R188: on LADDERBF's 2-wide deg-2 ladder, IDEAL-ACYC exact max run 4 (d 2), 8 (d 3; bmcrel L 9 UNSAT) vs TB 8 / 22; climbs d 4 12,
     d 5 18; up-recipe (box 139) 1 as stated, 2d − 1 inverted; middle-level moves 7 / 9 / 9 at d 4 / 6 / 8. d 4 exact: see R188 file.
-- RESUME POINT / QUEUE: (1) exact d 4 (bmcrel 4 13; if UNSAT, d 4 max = 12) and d 5; score by middle-level moves in the exact model;
+- RESUME POINT / QUEUE: (1) exact d 4 (bmcrel 4 12 / 4 13 undecided after 7000 s each: needs a better encoding, e.g. bit-vectors or symmetry on gates) and d 5; score by middle-level moves in the exact model;
   (2) the lag mechanism by hand (R188 READING); (3) (a′) box 137 lap recipe (ret2_n37, score GCH); (4) CNONLY per FL run in CROOT games;
   (5) old queue.
 - Things only I know:
