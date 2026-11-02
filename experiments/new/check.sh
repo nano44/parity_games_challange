@@ -793,4 +793,10 @@ if grep -qxF "ENERGY small_d2.json N 4 STEPS 2 UNCH 0 CH 1 V0D 1 V0U 0 V1D 1 V1U
 else
   echo "box 146 SPLITE check: FAILED"; exit 1
 fi
+w96=$(cd .. && python3 -I new/box147/rank.py new/box143/inst/x3_L8.json new/box147/out/rk_d3.json; python3 -I new/box147/stat.py new/box144/inst/lag1.json)
+if grep -qxF "RANK x3_L8.json N 6 STEPS 8 U 3 YSTAB 0 ABOVE 0 MAXR_UNCH 2 MAXR_CH 2 MAXR_ALL 3 UNCH_RANKS [1, 1, 2]" <<<"$w96" && grep -qxF "RANK rk_d3.json N 6 STEPS 2 U 1 YSTAB 0 ABOVE 0 MAXR_UNCH 5 MAXR_CH 0 MAXR_ALL 5 UNCH_RANKS [5]" <<<"$w96" && grep -q "^STAT lag1.json N 6 STEPS 2 U 1 CH 0 .* QUOT B:BAD1 UNST:lv1 AGR:lv1 KP:lv1 MRG:BAD1 " <<<"$w96"; then
+  echo "box 147 COARSE: DECREMENT holds (YSTAB 0, ABOVE 0); unchained RANK 5 = n - 1 on rk_d3; B and MRG constant across lag1's unchained step: PASS"
+else
+  echo "box 147 COARSE check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
