@@ -1,6 +1,6 @@
-# R188 A Ξ-counter inside IDEAL-ACYC (IN PROGRESS, interim): exact z3 bounds on LADDERBF's 2-wide ladder: d 2 max 4, d 3 max 8 EXACT (relaxation L 9 UNSAT), versus TB ceilings 8 / 22; climbs d 4 ≥ 12, d 5 ≥ 18; no doubling (L-RED successor 44)
+# R188 A Ξ-counter inside IDEAL-ACYC: none found. exact z3 bounds on LADDERBF's 2-wide ladder: d 2 max 4, d 3 max 8 EXACT (relaxation L 9 UNSAT), versus TB ceilings 8 / 22; climbs d 4 ≥ 12, d 5 ≥ 18; middle-level moves flat (7 / 9 / 9 at d 4 / 6 / 8); box 139 up-recipe 2d − 1; no doubling anywhere (L-RED successor 44)
 Started 2026-11-01 23:32Z (Lead GO R188 = (a)). Labels: EXACT (z3, machine-checked, not Lean), DATA, READING. G-N5-TIME OPEN. No kill.
-Interim note; the d 4 L 12 / 13 relaxation runs are still going (started ~00:08Z, timeout 7000 s); the final note replaces this one.
+Final note (02:0xZ). The d 4 L 12 / 13 relaxation runs (started ~00:08Z, timeout 7000 s) were still going at this commit; their outcome is added below when they end.
 
 ## Status
 | d | IDEAL-ACYC max on the 2-wide deg-2 ladder | how | TB ceiling (LADDERBF) |
@@ -22,3 +22,13 @@ Interim note; the d 4 L 12 / 13 relaxation runs are still going (started ~00:08Z
     two β's, which are then the most significant vertices of the symmetric difference, so x's Ξ order is static and x moves ≤ 1 time.
   - inverted (UPDOM=1, upper level more significant, so x's own faces are least significant): T = 5 / 7 / 9 = 2d − 1, below the
     unrestricted ACYC climbs (8 / 12 / 18). Every up-class instance is an ACYC ladder instance, so at d 3 it is ≤ 8 anyway.
+- L-NEW box 140 score (Lead 01:24Z: moves at the MIDDLE level against d, the middle-out counter), midclimb.py, ACYC W 2 deg 2,
+  150k mutations, 10 restarts: middle-level moves 7 / 9 / 9 at d 4 / 6 / 8 (runs 9 / 13 / 11). Flat: no middle-out counter found by search.
+
+## Answer (for the Lead and L-NEW 47)
+- No compounding found in IDEAL-ACYC: exact maxima 4, 8 at d 2, 3 (TB ceilings 8, 22); climbs grow by about 4-6 per level; top and
+  middle levels stop near 8-9 moves.
+- No obstruction lemma proved here. The exact small-d data and the immediate own-face-dominance obstruction (up-recipe as stated) are
+  what I can give; the lag mechanism (READING above) is the shape a counter must realise at every level.
+- Next (queue): bmcrel at d 4 with L 13 (and d 5 when d 4 settles) to extend the exact sequence; score by moves at the middle level in
+  the exact model; (a′) the box 137 lap recipe.

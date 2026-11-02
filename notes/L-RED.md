@@ -1,5 +1,5 @@
 # L-RED notebook (independent adversary lane)
-Successor 44 (session id: see docs/NOW.md roster, Opus 5.5) started 2026-11-01 21:06Z (Lead brief; date -u); R187 (real-game W-ladder): Theorem REALIZE PROVED (lane), real L_FL 32 / 64, first active D″-cycle, no compounding; see "Successor 44".
+Successor 44 (session id: see docs/NOW.md roster, Opus 5.5) started 2026-11-01 21:06Z (Lead brief; date -u); R187 (real-game W-ladder): Theorem REALIZE PROVED (lane), real L_FL 32 / 64, first active D″-cycle, no compounding; R188 (Ξ-counter): exact d 2 / 3 maxima 4 / 8, no compounding; PARKED ~02:1xZ 2026-11-02, see "Successor 44 PARK".
 Successor 43 (session_01V5yGRa2JMr2sxHnK3JazZL2, Opus 5.5) started 2026-11-01 17:50Z (Lead brief; date -u 18:06Z at STEP 0); R183 (growing FVCH): no family; Lemma OVT-KEY + KEY-CHARGE + DEPTH PROVED (lane); realized IDEAL champions: 0 FL runs; R184 (Lead retarget 18:37Z): Lemma SELF-FREE; R185 (box 136 retarget): D″-cycles exist (inert), Lemma CN-UP; R186 (SCC charge = KEY-CHARGE, not polynomial); PARKED ~20:2xZ, see "Successor 43 PARK".
 Successor 42 (session_01V5yGRZmYx9sPoeaSsLDoAg, Opus 5.5) started 2026-11-01 10:39Z (date -u); R177 (CDAG order as an FL run): TB canonical (R24), FL-IDX, CASC-G, LADDERBF, idealised two-face model; see "Successor 42"; R178-R182; PARKED ~17:0xZ, see "Successor 42 PARK".
 Successor 41 (session_01V5yGRa8VX4VrSzMTZfKctP, Opus 5.5) started 2026-11-01 06:24Z (date -u); R173 (a): Lemma PORTAL; R174 (Z): PHASE-PORTAL, SELF; R175: ODD-GATE; R176: topfix ODIFF-1 depth; PARKED; see "Successor 41 PARK".
@@ -42,6 +42,26 @@ Successor 15 PARKED ~09:40Z 2026-10-25 after box 38; RESUME POINT for successor 
 context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older notebook: `git show b0884407:notes/L-RED.md`.
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
+
+## Successor 44 PARK (2026-11-02 ~02:1xZ, date -u; context ~430k)
+- DONE (claude/l-red, push.sh VERIFY PASS each): 436fe6e9 (R187), b21230d2 + 417d7fa6 (R187 addendum, item 2, check fix), 62767752 +
+  29c8f2c7 + 7b76ace2 (R188 interim), final push (R188 final + this section).
+- RESULTS (lane level; G-N5-TIME OPEN; no kill):
+  - R187: Theorem REALIZE + Corollary REAL-IDEAL PROVED (lane): acyclic IDEAL genomes = real N5 FL runs (STAB+K+ESC gadgets). Real
+    L_FL 32 / 64 (linear). First active D″-cycle; per-state D″ cyclic everywhere (R185 erratum). CN shortcut/up alternation 18 / 22
+    moves of one cycle node in one FL run. Bottleneck AVN.
+  - R188: on LADDERBF's 2-wide deg-2 ladder, IDEAL-ACYC exact max run 4 (d 2), 8 (d 3; bmcrel L 9 UNSAT) vs TB 8 / 22; climbs d 4 12,
+    d 5 18; up-recipe (box 139) 1 as stated, 2d − 1 inverted; middle-level moves 7 / 9 / 9 at d 4 / 6 / 8. d 4 exact: see R188 file.
+- RESUME POINT / QUEUE: (1) exact d 4 (bmcrel 4 13; if UNSAT, d 4 max = 12) and d 5; score by middle-level moves in the exact model;
+  (2) the lag mechanism by hand (R188 READING); (3) (a′) box 137 lap recipe (ret2_n37, score GCH); (4) CNONLY per FL run in CROOT games;
+  (5) old queue.
+- Things only I know:
+  - bmcrel.py (free integer weights) is a valid RELAXATION and is ~10× faster than bmc3; to realise a bmcrel SAT model, run bmc3 with
+    FIX=model.json (structure fixed, ranks free): seconds. bmcrel d 3 L 8 took ~10 min; L 9 UNSAT ~40 min; d 4 L 12/13 > 1 h.
+  - z3-solver is pip-only (reinstall); Oink via scripts/setup_oink.sh.
+  - grow.py stacks a top level on a genome (new movers first in pi).
+  - NEVER use pgrep -f / pkill -f with a pattern your own shell contains (bit me 3× this session: exit 144, watchers that never end).
+    Wait on push.sh by «until grep -q ^exit LOG».
 
 ## Successor 44 (Opus 5.5, D1/D18; started 2026-11-01 21:06Z, date -u)
 - Start: local clone stale at 996013948 (succ. 35). ls-remote (l-red 2799b309, l-new 709798f3, trunk 8884f8de), fetched those three,
