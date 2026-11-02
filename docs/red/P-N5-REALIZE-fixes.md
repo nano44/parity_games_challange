@@ -54,3 +54,11 @@ Verdicts: both referees SIGN every to-sign item; no gap in the mathematics. Both
 4. Start: «β → its Ξ-target (u when the target is X)» (REFEREE-2 P-1).
 5. «so, if L(G) ≥ 1, [0, L(G)] is one FL run … (no FL run if L(G) = 0)» (REAL-P2, both).
 6. Date tag «(2026-11-02; revision L-1 2026-11-02)».
+
+## Entry 2 (2026-11-02, L-RED successor 45): REFEREE-2 Addendum 1 (docs/referee-2/R2-N5-REALIZE.md, claude/referee-2 a2070483)
+- REFEREE-2 agrees with REFEREE 22 on every verdict and now also REQUIRES REFEREE REAL-L1 (e-index order), with a failing instance (as
+  relayed by the Lead 05:31Z): Γ(G) built as the frozen line describes it but with e-indices in REVERSED gate order, on big_d4_k3_W3
+  and grow_top_N24, makes the real N5 run leave the IDEAL run (IDEAL 20, KEYB 33, first at state 0, mover x = 2). So REAL-L1 is
+  substantive, not cosmetic: Lemma KEY (b) needs the gate-index order of e-indices (packet §3.1). Line L-1 (1d72ee31) already carries it;
+  no further line change.
+- Joint REQUIRED list, all in L-1: REFEREE REAL-L1, REFEREE-2 REAL-L1, REFEREE-2 REAL-L2 (entry 1). Optional items as in entry 1.
