@@ -763,4 +763,10 @@ if grep -qxF "ALT up_d8_s8.json N 16 STEPS 19 LADDER True ALTVIOL 0 TOWARDVIOL 0
 else
   echo "box 141 UPLIN check: FAILED"; exit 1
 fi
+w91=$(cd .. && python3 -I new/box142/lag.py new/box142/lag_min_d2.json new/box141/out/up_d8_s8.json)
+if grep -qxF "LAG lag_min_d2.json STEPS 2 STOP opt LAGEVENTS 1 LAGMAX 1 DOUBLE 0 DELAY [0, 1] LFLIPS [1, 1] DELVIOL 0 EX (1, 1, [2, 3], 2, 1)" <<<"$w91" && grep -qxF "LAG up_d8_s8.json STEPS 19 STOP stuck LAGEVENTS 2 LAGMAX 1 DOUBLE 8 DELAY [0, 3, 3, 4, 2, 1, 1, 0] LFLIPS [2, 6, 8, 9, 7, 6, 6, 5] DELVIOL 0 EX (1, 11, [2, 3], 11, 12)" <<<"$w91"; then
+  echo "box 142 LAG: NO-LAG dead (lag_min_d2, sibling Xi-read); DELAY-CHARGE holds on up_d8_s8: PASS"
+else
+  echo "box 142 LAG check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

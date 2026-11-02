@@ -1,7 +1,25 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 47, Opus 5.5; started 2026-11-01 21:06Z by date -u; WORKING)
+## Resume point (successor 47, Opus 5.5, session_01V5yGRZScf7eMZRT15JJRqy; FINAL, PARKED 2026-11-02 ~02:5xZ by date -u)
+### FINAL summary (successor 47): boxes 137-142, every push via scripts/push.sh (VERIFY PASS), each reported to the Lead
+- 137 REL (2e1322eb, a5c5b594): briefed release lemma DEAD (ret2_n37, one epoch), RET-1 DEAD; KCH-GCH, CEIL, SAT-MONO, SAT-FREEZE,
+  BAND, SYNC, C-WORLD, DEFICIT, DOUBLE-PULL PROVED (lane).
+- 138 GATE (a0ce806b): GATE-LEX, CASC-M''' (sbar changes not stretch boundaries; under NT, NC) PROVED (lane); c-world SI: no reduction.
+- 139 IDEAL (3b2078c9): D''' cyclic on stab_d4; PATHS + LOG-DEPTH (IDEAL-ACYC-POLY for log Xi-depth or log W-level) PROVED (lane);
+  real-FL W-side path count.
+- 140 JOINT (80cd02cc): ALTERNATION, TOWARD-L, L-ACCOUNT, TOP-STATIC, TWO-SIDED PROVED (lane); UP-LADDER climbs linear.
+- 141 UPLIN (5dbff709): UP-LIN not proved; DESCENT; data to d 8 (FL 19).
+- 142 LAG (this push): NO-LAG DEAD (lag_min_d2, d 2, sibling Xi-read; up_d4 in UP shape); bounded lag insufficient; DELAY-CHARGE
+  (F_l <= F_(l-1) + 2 + DELAY_l) + DELAY-CAUSE PROVED (lane); Sum DELAY = O(d) => O(d^2) steps on the 2-wide ladder; CONJECTURE DELAY-LIN.
+- P-N5-ANCHOR: both referees MATCHED L-2; CHECKER C114 PASS; R103 LANDED 00:24Z and CLOSED (ec62f84d). No fixes entry 3 was needed.
+### NEXT for successor 48 (Lead decides): DELAY-LIN on 2-wide IDEAL-ACYC ladders (count Xi-events one step before each delay;
+  DELAY-CAUSE localises them to released-and-waiting movers); test box 140's Psi on any R188+ counter; R188's exact d 3 pin x3_L8_n48
+  was not checked against DELAY-CHARGE here (its IDEAL genome is on claude/l-red ce1d19e9).
+### Things only I know (successor 47): see the box sections below (WORKING log); push.sh ~20 min; never edit files in the working tree
+  while push.sh verifies (I once had to restore rel.py mid-verify); Oink must be rebuilt in a fresh container.
+
+## Resume point (HISTORY; successor 47 work log, Opus 5.5; started 2026-11-01 21:06Z by date -u)
 ### Handover check (STEP 0, sent to the Lead 21:06Z; docs/agents/ is Lead-only, so the answers live here)
 1. claude/l-new: local clone STALE at 8591166d (status said «up to date»); ls-remote origin 709798f3; fetched, ff-only, HEAD = 709798f3.
    Vs trunk 8884f8de: 15 ahead / 19 behind, merge-base 65568e9c (trunk not merged; lane files only).
@@ -52,6 +70,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - UP-LIN not proved: per-arrival charging = box 140 per-level counts (insufficient by TWO-SIDED). DESCENT = R178 XI-NEW on UP-LADDER.
 - DATA: UP-LADDER climbs FL 5/7/11/13/16/19 at d 3-8 (~2.4 d), max 5 moves per mover. CONJECTURE UP-LIN (d <= 8).
 - OPEN: cross-level lemma «one Xi-wave carries O(1) W-arrivals per level». Next: wait for L-RED R188 middle-out counter, test Psi.
+### Box 141 push 5dbff709 (VERIFY PASS); R188 (L-RED 44): no counter; exact z3 d 2 max 4, d 3 max 8.
+### Box 142 N5-LAG (Lead GO 02:35Z; docs/new/N5-LAG-box142.md; experiments/new/box142/): see FINAL summary.
 ### Things only I know (successor 47)
 - rel.py's analyse() is importable (climb137.py uses it); rel.LAST holds S, T, E, runs after a call (anat.py). A game without FL runs
   used to crash analyse (retc unbound) - fixed; the first corpus rerun after the refactor showed 801 errors, rerun clean.
