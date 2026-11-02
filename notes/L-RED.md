@@ -1,5 +1,5 @@
 # L-RED notebook (independent adversary lane)
-Successor 46 (Opus 5.5, D1/D18) started 2026-11-02 11:52Z (date -u); STEP 0 message 11:52Z; R191 (degree-3 rotation): ROT-CAP / KEY-ALT / NEST-PI / MERGE-1 / NEST-DEAD-3 PROVED (lane), U linear d 3-8; R192 (RANK) linear; R193 in flight; see "Successor 46".
+Successor 46 (Opus 5.5, D1/D18) started 2026-11-02 11:52Z (date -u); STEP 0 message 11:52Z; R191 (degree-3 rotation): ROT-CAP / KEY-ALT / NEST-PI / MERGE-1 / NEST-DEAD-3 PROVED (lane), U linear d 3-8; R192 (RANK) linear; R193 d 4 undecided; R194 (a′) → U; R195 open; PARKED ~19:3xZ, see "Successor 46 PARK".
 Successor 45 (Opus 5.5) started 2026-11-02 02:33Z (date -u); P-N5-REALIZE FROZEN e609c5d2 + fixes entries 1-2 + L-1 (MATCHES at both referees); R189 LAG / NEST-DEAD; R190 clock (undecided, linear data); PARKED ~07:3xZ, see "Successor 45 PARK".
 Successor 44 (session id: see docs/NOW.md roster, Opus 5.5) started 2026-11-01 21:06Z (Lead brief; date -u); R187 (real-game W-ladder): Theorem REALIZE PROVED (lane), real L_FL 32 / 64, first active D″-cycle, no compounding; R188 (Ξ-counter): exact d 2 / 3 maxima 4 / 8, no compounding; PARKED ~02:1xZ 2026-11-02, see "Successor 44 PARK".
 Successor 43 (session_01V5yGRa2JMr2sxHnK3JazZL2, Opus 5.5) started 2026-11-01 17:50Z (Lead brief; date -u 18:06Z at STEP 0); R183 (growing FVCH): no family; Lemma OVT-KEY + KEY-CHARGE + DEPTH PROVED (lane); realized IDEAL champions: 0 FL runs; R184 (Lead retarget 18:37Z): Lemma SELF-FREE; R185 (box 136 retarget): D″-cycles exist (inert), Lemma CN-UP; R186 (SCC charge = KEY-CHARGE, not polynomial); PARKED ~20:2xZ, see "Successor 43 PARK".
@@ -44,6 +44,30 @@ Successor 15 PARKED ~09:40Z 2026-10-25 after box 38; RESUME POINT for successor 
 context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older notebook: `git show b0884407:notes/L-RED.md`.
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
+
+## Successor 46 PARK (2026-11-02 ~19:3xZ, date -u; context ~450k)
+- DONE (claude/l-red, push.sh VERIFY PASS each): 5f2eaf3f + 314dcdda (R191), 24efabd0 (R192), 86f2a4e0 (R193 draft, bmc4), e8af7ca1
+  (R194), aaafeed0 (R195 start), final push (R193 final rows, R195, this section).
+- RESULTS (lane level; G-N5-TIME OPEN; no kill, no family):
+  - R191: Lemma ROT-CAP (any width / degree: ≤ D − 2 key-alone moves per descendant-free window), ROT-BUDGET, KEY-ALT (width 2),
+    NEST-PI, MERGE-1, Proposition NEST-DEAD-3 (NEST(d) dies at step 7 for d ≥ 3, D ≤ 3) PROVED (lane). U linear at D 3, d 3-8.
+  - R192: HIGH_k (box 147 RANK > k) linear; high rank cheap (≈ U). R194: realised pins have GCH = FL − 1, (a′) reduces to U.
+  - R193: bmc4 (bmc3 + lemma clauses) decides d 3 in seconds; d 4: L 13 / 14 exact UNDECIDED at caps, relaxation L 13 SAT, its
+    structure does not lift (FIX UNSAT 10 s); bound 12 ≤ max(d 4).
+  - R195: NEST at D 4: proof breaks only in NEST4-SHAPE (a = u_(d−2) on b's chain before q); no escape found (prefix 5 forced, 6
+    unforced); U linear at D 4 (27 at d 8).
+- IN FLIGHT (container-local, may die with the container): r193/out/relfix_nolag_d4_L13 (REL L 13 without LAG, model dump; cap
+  ~20:35Z). If it is SAT, run «FIX=r193/out/relfix_nolag_d4_L13.json python3 r193/bmc4.py 4 13 out.json» (seconds) and append the
+  result to R193 §1.
+- RESUME POINT / QUEUE: (1) R195 OPEN: close or escape NEST4-SHAPE (proof from a's moves 1, 5 + b's move 7, or nestbmc LEM=1 at D 4
+  with that order); (2) d 4 exact: more lifts (several REL models: add a blocking clause per failed structure and re-solve);
+  (3) CNONLY in CROOT games (old queue).
+- Things only I know:
+  - bmc4's lemma clauses are what make d 3 fast; the same clauses do NOT rescue NEST(3) prefix 7 at D 3 (5000 s timeout).
+  - REL → FIX lift: bmc4 REL=1 writes {xt, gate, start}; FIX fixes them, ranks / parities stay free.
+  - Every realised pin: GCH = FL − 1 (r194/gch.py); box 137's native games keep long epochs.
+  - Kill processes only by PIDs read in a SEPARATE call (the pattern in the same command line matches your own shell: exit 144).
+  - Lead messages arrive up to ~10 min late; push.sh takes 25-40 min with z3 running.
 
 ## Successor 46 (Opus 5.5, D1/D18; started 2026-11-02 11:52Z, date -u)
 - Start: clone stale at 996013948. ls-remote (l-red c374be8f, trunk 3398c652), fetched those two, ff-only to c374be8f, then 0 ahead /
