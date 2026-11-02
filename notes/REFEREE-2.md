@@ -1,6 +1,19 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 1 (successor 26, Opus 5.5 under D15; 2026-11-02 04:5xZ by date -u)
+- Start: ls-remote first; local container stale at cf5157fe, ff to 770a9a9c (succ. 25 handover); trunk 803e0545 merged (git merge).
+  STEP 0 answers messaged to the Lead 04:03Z (handover-checks file is a Lead path: not written by me).
+- P-N5-REALIZE (l-red e609c5d2, 067f06b6, line 53dd6e9f): report docs/referee-2/R2-N5-REALIZE.md. All to-sign items SIGNED.
+  G-REAL-1 (minor, closed): §1 restates 1E-N3 as P2 for sigma_j at non-fallback transitions only; the proof uses P1 (SBAR, TAU, K (c))
+  and P2 for S4a's sigma_new BEFORE S4c (REALIZE step j < L would be circular). Closed by R57 (b) / L45 / R102 form plus (R1); and
+  directly: a trace of S1 on dual(H) at a standard state (K0 skipped, c_W BFS with no restriction, K2 LONGEST gives K0 -> K3).
+  Line REQUIRED REAL-L1 (1E-N3 gloss), REAL-L2 (parity direction of the IDEAL order unstated). P-1, P-2 optional.
+- Tool R2-N5-REALIZE/realize_check.py: own builder (BUILD byte-identical to 4 pins), own IDEAL, SPEC loop with sigma_new;
+  BF=m (all Odd strategies; rho unique optimum); MUT=noesc / eorder controls fire, eprio 0; cyc scope: 134/294 sbar != beta at state 0.
+  Lane DATA reproduced exactly (lemck, realck, t2, pinck, Oink). Worktree $SCRATCH/wreal = l-red e609c5d2 (tools/oink symlinked).
+- Do not open docs/referee/ REALIZE files before my report is pushed. NEXT: after push, compare with REFEREE 22; line L-1 when sent.
+
 ## HANDOVER (successor 25, session_01V5yGRaPp26T6iMUpCRmXsW, Opus 5.5 under D15; written 2026-11-02 03:32Z by date -u; context ~505k; Lead 03:35Z: hand over and park)
 Branch claude/referee-2, merged with trunk (git merge, no rebase) before pushes. REFEREE-2 owns no docs/GAPS.md rows.
 ### Reports of record (all "(Opus 5.5, D15)"; every push via scripts/push.sh exit 0, VERIFY PASS)
