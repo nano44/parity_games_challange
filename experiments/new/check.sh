@@ -793,4 +793,22 @@ if grep -qxF "ENERGY small_d2.json N 4 STEPS 2 UNCH 0 CH 1 V0D 1 V0U 0 V1D 1 V1U
 else
   echo "box 146 SPLITE check: FAILED"; exit 1
 fi
+w96=$(cd .. && python3 -I new/box147/rank.py new/box143/inst/x3_L8.json new/box147/out/rk_d3.json; python3 -I new/box147/stat.py new/box144/inst/lag1.json)
+if grep -qxF "RANK x3_L8.json N 6 STEPS 8 U 3 YSTAB 0 ABOVE 0 MAXR_UNCH 2 MAXR_CH 2 MAXR_ALL 3 UNCH_RANKS [1, 1, 2]" <<<"$w96" && grep -qxF "RANK rk_d3.json N 6 STEPS 2 U 1 YSTAB 0 ABOVE 0 MAXR_UNCH 5 MAXR_CH 0 MAXR_ALL 5 UNCH_RANKS [5]" <<<"$w96" && grep -q "^STAT lag1.json N 6 STEPS 2 U 1 CH 0 .* QUOT B:BAD1 UNST:lv1 AGR:lv1 KP:lv1 MRG:BAD1 " <<<"$w96"; then
+  echo "box 147 COARSE: DECREMENT holds (YSTAB 0, ABOVE 0); unchained RANK 5 = n - 1 on rk_d3; B and MRG constant across lag1's unchained step: PASS"
+else
+  echo "box 147 COARSE check: FAILED"; exit 1
+fi
+w97=$(cd .. && python3 -I new/box148/charge.py new/box144/out/uc_d6.json; python3 -I new/box148/restrict.py new/box143/inst/x3_L8.json new/box144/out/uc_d10.json)
+if grep -q "^CHARGE uc_d6.json N 12 STEPS 13 U 9 .* k1: H 6 NOFLIP_ABOVE 4 NOFLIP_FROZ 5 SAMETOP 6 FIRSTFAIL 3 " <<<"$w97" && grep -q "^RESTRICT x3_L8.json N 6 STEPS 8 U 3 INTERVALS 5 PREFIXVIOL 0 " <<<"$w97" && grep -q "^RESTRICT uc_d10.json N 20 STEPS 22 U 17 INTERVALS 4 PREFIXVIOL 0 MAXUNCH_IN 10 " <<<"$w97"; then
+  echo "box 148 INTERVAL: per-step key-change charge dead on uc_d6; INTERVAL-RESTRICT prefix holds on x3_L8 and uc_d10: PASS"
+else
+  echo "box 148 INTERVAL check: FAILED"; exit 1
+fi
+w98=$(cd .. && python3 -I new/box149/keyflip.py new/box143/inst/x3_L8.json new/box143/out/dc_d12.json)
+if grep -qxF "KEYFLIP x3_L8.json N 6 STEPS 8 MOVES 13 KFLIPS 10 VIOL 0" <<<"$w98" && grep -qxF "KEYFLIP dc_d12.json N 24 STEPS 26 MOVES 82 KFLIPS 86 VIOL 0" <<<"$w98"; then
+  echo "box 149 KEYFLIP: moves(x) <= 1 + key flips(x) on x3_L8 and dc_d12: PASS"
+else
+  echo "box 149 KEYFLIP check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

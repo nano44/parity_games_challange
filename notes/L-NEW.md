@@ -1,7 +1,57 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 48, Opus 5.5, session_01V5yGRYskE4dhDBS3jy5SQh; FINAL, PARKED 2026-11-02 ~06:5xZ by date -u)
+## Resume point (successor 49, Opus 5.5, session_01V5yGRVusQANCQiXcbrWdJg; FINAL, PARKED 2026-11-02 ~14:1xZ by date -u)
+### FINAL summary (successor 49): boxes 147-149, every push via scripts/push.sh (VERIFY PASS), each reported to the Lead
+- 147 COARSE (60286d8c): every coarse Xi-statistic DEAD (B and MRG constant across realised lag1's unchained step; all-start quotient
+  test kills functions of B, AGR, KP, MRG, WANT, TOP1-3, LVCNT; TOP_k const k: rk_d3; (pi+1)^p p <= 12: dc_d12); DECREMENT,
+  EXACT-ENERGY, RANK-BOUND PROVED (lane); READING: minimal info = unstable set in pi order (exponential counter).
+- 148 INTERVAL (5c93eaf8): per-step key-change charge DEAD (uc_d6 steps 3-6); INTERVAL-RESTRICT, INTERVAL-CHARGE, opening dichotomy,
+  recursion U*(n) <= sum_{p<n}(U*(p)+1) PROVED (lane); circular exactly at releases of frozen top movers (KCH-GCH), along pi-rank.
+- 149 SYNTHESIS (this push): docs/new/N5-IDEAL-STATE.md (reductions R1-R10, DEAD list, conjectures, open quantity = sum_l F_l on the
+  2-wide ladder, i.e. sum DELAY_l; packet candidate P-IDEAL-RED, NOT frozen); new Lemma KEYFLIP PROVED (lane): deg 2, moves(x) <= 1 +
+  KF_x, so IDEAL-ACYC-POLY <=> KF-POLY <=> U-POLY (box149/keyflip.py, 0 viol. on 512 movers).
+### NEXT for successor 50 (Lead decides): (a) if the Lead opens P-IDEAL-RED: minimal packet = CHAIN-BACK + KEYFLIP (needs R178 XI-NEW
+  landed or carried); (b) score L-RED R192's freeze/release family by U and KF; (c) the open object: one carry forcing omega(1) late
+  responses ABOVE it, compounding across levels (sum DELAY_l). Labels open: U-LIN, DELAY-LIN, DELSTEP-LIN, UP-LIN, IDEAL-ACYC-POLY,
+  G-N5-TIME.
+### Things only I know (successor 49): box147/stat.py analyse() is the feature engine (S, FS per state with UNST/B/KP/AGR/MRG/PL/PLAY/key,
+  lab, pos); box148/charge.py info() adds y_t, RANK, FROZ, key flips, carries; box147/allstart.py needs scipy (pip install scipy) and
+  is not in check.sh. push.sh takes ~20 min: run it in the background with timeout 7200000 (600000 kills it). exec-ing a tool needs
+  ns["__file__"] = its absolute path.
+
+## Resume point (HISTORY; successor 49 work log; started 2026-11-02 11:51Z by date -u)
+### Handover check (STEP 0, sent to the Lead 11:52Z)
+1. claude/l-new: local clone STALE at 8591166d again; ls-remote 767ed19a; fetched l-new / l-red (c374be8f) / trunk (3398c652) only;
+   ff-only -> HEAD 767ed19a. Vs trunk: 0 ahead / 123 behind, merge-base 767ed19a (trunk has merged l-new). Lane files only.
+2. Open: box 147. 3. GAPS: G-N5-TIME major open; G-N1-LB minor open (optional); G-N5-TERM closed. 4. D18, D14, D1 (active).
+5. Trap: stale clone (ls-remote + fetch + ff-only + HEAD vs ls-remote). Oink rebuilt here (setup_oink.sh EXIT 0).
+### Box 147 N5-COARSE (Lead brief 11:47Z; docs/new/N5-COARSE-box147.md; experiments/new/box147/)
+- DEAD: every coarse Xi-statistic tested. The Lead's four on realised lag1 (B = Xi-better identity and MRG = merge vertices CONSTANT
+  across the unchained step 2; LVL_AGR / NAGR rise; deepest Xi-play change 3 -> 3). 37 per-run statistics (best: LEX(maxpi unstable,
+  #unstable) 59 viol., first x3_L8 step 3; SUMPI_U 65, first x3_L8 step 4 chained rise). All-start quotient test (2^n starts): no
+  function of B, AGR, KP, MRG, WANT, NUNST, TOP1-3, LVCNT, halves works. TOP_k for constant k (unchained RANK climbs n - 1);
+  ready-only RANKW (climbs 6 at d 6, 8); (pi+1)^p weights for p <= 12 (dc_d12 needs p in (12, 16]).
+- PROVED (lane): DECREMENT (max-pi mover goes unstable -> stable, no UNST bit above it changes; any IDEAL-ACYC genome), EXACT-ENERGY
+  (sum_{unstable} 2^pi falls at EVERY step; degree D: sum c(x) D^pi), TOP-MONO / RANK-BOUND (U <= sum_{j <= R} C(n, j)).
+- READING: minimal distinguishing information = the unstable set in pi order (exponential counter); a poly statistic must also
+  control W-side freeze/release of ready movers = key-change count again (circular, box 137 KCH-GCH).
+- DATA: linear UNST potential LP-feasible on all 24 all-start graphs n <= 14 (weights grow fast along pi); option bits alone (S)
+  infeasible on 16. Pins re-run here: box143 + box144 pincheck identical (Oink zlk/tl verified, AGREE, n5b identical).
+### Box 147 push 60286d8c (VERIFY PASS; first push.sh run killed at the 10-min background limit, rerun with 2 h); Lead 12:51Z recorded it.
+### Box 148 N5-INTERVAL (Lead GO 12:51Z; docs/new/N5-INTERVAL-box148.md; experiments/new/box148/)
+- DEAD: per-step charge «high-rank unchained step consumes a key flip above y_t» (uc_d6 steps 3-6, mover 10 frozen, no flip above y_t;
+  corpus 37/113 form 1, 78/113 form 2; uc_d10 SAMETOP 10).
+- PROVED (lane): INTERVAL-RESTRICT (TOP_k-constant interval = prefix of the restricted genome's run, top part degree 1; PREFIXVIOL 0
+  on 46), INTERVAL-CHARGE (#RANK r <= (n-r+1)(1 + #RANK <= r-1)), opening dichotomy (release = key flip of y_t, or fresh Xi-wake),
+  recursion U*(n) <= sum_{p<n}(U*(p)+1).
+- READING: circular exactly at the count of releases of frozen top movers (carries below them) = KCH-GCH; the multiplication runs
+  along pi-rank (R186 DEPTH runs along W-level).
+### Things only I know (successor 49): allstart.py needs scipy (pip install scipy; not in check.sh). stat.py analyse() returns S, FS
+  (features per state), lab, pos; reuse it for any new state statistic (add a key in stats()). rclimb.py RW=1 / ALL=1 modes.
+  exec-ing a tool from stdin needs ns["__file__"] set to the tool's absolute path.
+
+## Resume point (HISTORY; successor 48, Opus 5.5, session_01V5yGRYskE4dhDBS3jy5SQh; FINAL, PARKED 2026-11-02 ~06:5xZ by date -u)
 ### FINAL summary (successor 48): boxes 143-146, every push via scripts/push.sh (VERIFY PASS), each reported to the Lead
 - 143 DELAY (33f66fca): DELAY-LIN not proved; C-ELEM (mover = C-element: A same step, B one step late), STEP-DELAY (steps <= 1 + 2d
   + DELSTEPS), ABSORB PROVED (lane); literal face re-rise charging DEAD (x3_L8); Sum DELAY ~5 per level to d 12.
@@ -2499,6 +2549,13 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
   si/root/instances/ueonce_n27 (edge (10, 23) twice) and new/box48/instances/long121_n40 (S3 start); blocks inherited from an earlier sigmabar.
 - (succ. 38, box 90) CONJECTURE SB-LIN (sigmabar changes per W-run <= n): FALSE on red/so/instances/pftheta34_n32.pg (S3 start; 34 > 32)
   and L-RED latew_K16_m32 (513 > 482).
+- (succ. 49, box 147) Coarse Xi-statistics for U: B (Xi-better identity) and MRG (merge vertices) are constant across R189 lag1's
+  unchained step 2 (realised, d 3); LVL_AGR/NAGR rise there; deepest Xi-play change 3 -> 3. All-start quotient: no function of B, AGR, KP,
+  MRG, WANT, NUNST, TOP1-3, LVCNT, UNST halves (first BAD up_d3 / up_d4 / up_d5 / g4_L12). TOP_k const k: new/box147/out/rk_d3 (RANK 5 = n - 1).
+  Ready-only TOP_k: rw_d6_s1 (RANKW 6; one level-0 carry freezes 5 ready movers). (pi+1)^p weights, p <= 12: box143/out/dc_d12.
+  Obstruction: DECREMENT makes the unstable set an exponential pi-order counter; coarsenings lose the order (docs/new/N5-COARSE-box147.md).
+- (succ. 49, box 148) Per-step key-change charge for unchained steps of RANK > k (key flip of a mover above y_t, or of a frozen one,
+  between consecutive such steps): new/box144/out/uc_d6 steps 3-6 (k 1). Obstruction: frozen movers are spectators; only per-interval charge holds.
 ## Dead ends (successor 40, box 97; also in docs/new/N5-ORD-box97.md)
 - ORDER-DET-U (sbar a function of the Xi-order on R143's U_k): n5s_maxph_0 (n 5), states 0-1, U = {2} both, sbar(0) 1 -> 2 (tau(0) = 1 is not a head).
 - NO-REPEAT (head / A_F orders never recur in a W-run): thetaA_n7 (n 7), refined order of A_F = {1,2,5} at state 0 recurs at state 3, sbar(6) 5,5,1,5.
