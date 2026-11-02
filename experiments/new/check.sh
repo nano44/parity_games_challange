@@ -751,4 +751,10 @@ if grep -qxF "PATHS big_d4_k3_W3.json N 12 STEPS 32 STOP stuck MOVES 57 MOVMAX 1
 else
   echo "box 139 PATHS check: FAILED"; exit 1
 fi
+w89=$(cd .. && python3 -I new/box140/alt.py new/box140/out/up_d5.json new/box140/out/up_d6.json)
+if grep -qxF "ALT up_d5.json N 10 STEPS 11 LADDER True ALTVIOL 0 TOWARDVIOL 0 LFVIOL 0 MOVES [2, 5, 7, 4, 2] LFLIPS [2, 5, 5, 3, 2]" <<<"$w89" && grep -qxF "ALT up_d6.json N 12 STEPS 13 LADDER True ALTVIOL 0 TOWARDVIOL 0 LFVIOL 0 MOVES [2, 4, 7, 7, 3, 2] LFLIPS [2, 3, 7, 6, 6, 5]" <<<"$w89"; then
+  echo "box 140 JOINT: UP-LADDER climb champions d 5 / 6 (FL 11 / 13): ALTERNATION, TOWARD-L, L-ACCOUNT hold; moves peak mid-ladder: PASS"
+else
+  echo "box 140 JOINT check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

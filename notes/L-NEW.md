@@ -40,6 +40,13 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   LOG-DEPTH (IDEAL-ACYC-POLY when every mover has log Xi-depth or log W-level); real-FL W-side corollary (moves <= #tight W-paths - 1).
 - DATA: 4 champions, 0 violations, bound tight only at level 0. OPEN: both depths super-logarithmic at one mover (double counter);
   recipe = LADDERBF 2-wide ladder with Xi-targets pointing up the ladder.
+### Box 139 push 3b2078c9 (VERIFY PASS). Lead 00:02Z recorded it; P-N5-ANCHOR passed CHECKER C114 (da67696a), lands as R103.
+### Box 140 N5-JOINT (Lead GO 00:02Z; docs/new/N5-JOINT-box140.md; experiments/new/box140/)
+- PROVED (lane): ALTERNATION (deg-2 mover: both orders reverse between consecutive moves), TOWARD-L and L-ACCOUNT (2-wide ladder),
+  TOP-STATIC (UP-LADDER), TWO-SIDED (pointwise bottom-up x top-down counting is exponential at the middle: a joint potential needs time
+  causality).
+- DATA: UP-LADDER climbs FL 5/7/11/13 at d 3-6 (LADDERBF 22/52/114/240); moves peak mid-ladder; CONJECTURE UP-LIN (weak).
+- OPEN: IDEAL-ACYC-POLY; §3 target statement (unproved, untested). Recipe: middle-out counter for L-RED R188.
 ### Things only I know (successor 47)
 - rel.py's analyse() is importable (climb137.py uses it); rel.LAST holds S, T, E, runs after a call (anat.py). A game without FL runs
   used to crash analyse (retc unbound) - fixed; the first corpus rerun after the refactor showed 801 errors, rerun clean.
