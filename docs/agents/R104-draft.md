@@ -1,4 +1,4 @@
-# Draft RESULTS R104 (Lead; first fill 2026-11-02T07:14:23Z by date -u (subagent) on line L-1, to CHECKER C115 (FAIL E-1); revised on L-2 2026-11-02T10:14:05Z by date -u (subagent); on REALIZE line L-2, docs/red/P-N5-REALIZE-line-L2.txt, l-red c374be8f, sha1 b44456d10b7be37732c65a88ca138a4300fbb6c3) — to CHECKER C115 Add. 1
+# Draft RESULTS R104 (Lead; first fill 2026-11-02T07:14:23Z by date -u (subagent) on line L-1, to CHECKER C115 (FAIL E-1); revised on L-2 2026-11-02T10:14:05Z by date -u (subagent); on REALIZE line L-2, docs/red/P-N5-REALIZE-line-L2.txt, l-red c374be8f, sha1 b44456d10b7be37732c65a88ca138a4300fbb6c3) — to CHECKER C115 Add. 1 — LANDED in RESULTS 2026-11-02 11:22Z (CHECKER C115 7c3c413f PASS), after R103, before Erratum E-1
 REVISION ON L-2. Read at the origin heads fetched at the start of the revision (git ls-remote, 2026-11-02 after 09:00Z: l-red c374be8f,
 referee 45f3c09f, referee-2 e173b166, checker fbca67cf; origin trunk = local trunk 4c3e9e15; RESULTS f24f7046 and GAPS 5fdcfb9e are
 unchanged since the first fill, trunk changed only NOW and LEAD-STATE since 9b4c3bd4): CHECKER C115 (docs/checker/C115.md, fbca67cf,
