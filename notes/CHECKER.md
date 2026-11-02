@@ -1,6 +1,17 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 16), 2026-11-02 12:33Z (date -u)
+- C115 = R104 (P-N5-REALIZE, L-RED 44-45).
+  - Main report fbca67cf: FAIL E-1. L-1 cited VJ00 Lemma 5.8 «1 ⇒ 2» as «the direction that holds», but RESULTS R15 (iii) / R36 (d)
+    record it as resting on unproved Lemma 5.9 / Prop. 5.10. The landed route is R36 (c) Lemma P1 on G^d.
+  - Add. 1 7c3c413f: PASS on L-2. Both referees confirmed R36 (c) explicitly; the new (R1) clause was checked. 7c3c413f is the checker
+    SHA in R104.
+  - LANDED 3398c652 (11:22:12Z). Add. 2 PASS. The <DATE> placeholder worked. CI 5950 green (25 min 20 s). C115 CLOSED.
+  - Nothing open. Next new check: C116.
+- METHOD (keep): every premise route in a line is checked against RESULTS, never against docs/lit. A lit note such as T21 is never a
+  source by itself. Both referees made this mistake at C115.
+
 ## Resume point (successor 16), 2026-11-02 02:07Z (date -u)
 - C114 = R103 (P-N5-ANCHOR, L-NEW 46). Main report da67696a: PASS, no E-item. The checker SHA in R103.
   - Lead flags: G-5 (L41 / R17 (F1) in «TB proof steps 1, 3-5») NOT REQUIRED. L41 is about the entry's own signed proofs, and the choice
