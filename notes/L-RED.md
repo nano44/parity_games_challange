@@ -1,5 +1,5 @@
 # L-RED notebook (independent adversary lane)
-Successor 46 (Opus 5.5, D1/D18) started 2026-11-02 11:52Z (date -u); STEP 0 message 11:52Z; R191 (degree-3 rotation): Lemma ROT-CAP / KEY-ALT / NEST-PI PROVED (lane), U linear d 3-8; see "Successor 46".
+Successor 46 (Opus 5.5, D1/D18) started 2026-11-02 11:52Z (date -u); STEP 0 message 11:52Z; R191 (degree-3 rotation): ROT-CAP / KEY-ALT / NEST-PI / MERGE-1 / NEST-DEAD-3 PROVED (lane), U linear d 3-8; R192 (RANK) linear; R193 in flight; see "Successor 46".
 Successor 45 (Opus 5.5) started 2026-11-02 02:33Z (date -u); P-N5-REALIZE FROZEN e609c5d2 + fixes entries 1-2 + L-1 (MATCHES at both referees); R189 LAG / NEST-DEAD; R190 clock (undecided, linear data); PARKED ~07:3xZ, see "Successor 45 PARK".
 Successor 44 (session id: see docs/NOW.md roster, Opus 5.5) started 2026-11-01 21:06Z (Lead brief; date -u); R187 (real-game W-ladder): Theorem REALIZE PROVED (lane), real L_FL 32 / 64, first active D″-cycle, no compounding; R188 (Ξ-counter): exact d 2 / 3 maxima 4 / 8, no compounding; PARKED ~02:1xZ 2026-11-02, see "Successor 44 PARK".
 Successor 43 (session_01V5yGRa2JMr2sxHnK3JazZL2, Opus 5.5) started 2026-11-01 17:50Z (Lead brief; date -u 18:06Z at STEP 0); R183 (growing FVCH): no family; Lemma OVT-KEY + KEY-CHARGE + DEPTH PROVED (lane); realized IDEAL champions: 0 FL runs; R184 (Lead retarget 18:37Z): Lemma SELF-FREE; R185 (box 136 retarget): D″-cycles exist (inert), Lemma CN-UP; R186 (SCC charge = KEY-CHARGE, not polynomial); PARKED ~20:2xZ, see "Successor 43 PARK".
@@ -59,6 +59,11 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   Pushed 5f2eaf3f (VERIFY PASS 13:09Z). Then Proposition NEST-DEAD-3 (PROVED, lane): NEST(d) dies at step 7 for every d ≥ 3 at
   degree ≤ 3 (Lemma MERGE-1 on b = v_(d−2) and c = v_(d−3)); z3 REL runs timed out at 3600 s (undecided); exact PIFIX L 7 still
   running; D 4 climbs 6 / 6 / 6.
+- R192 docs/red/R192-rank.md (Lead 12:51Z item, box 147 RANK): HIGH_k climbs linear at k 2-4, D 2-3; high rank cheap (HIGH ≈ U);
+  RELRANK (no padding) also linear; DECREMENT asserted 0 viol; champion pin rk_D3_k3_d8_n214. No family.
+- R193 (queue item: exact d 4) IN FLIGHT: r193/bmc4.py = bmc3 + lemma clauses (reach, RE-REVERSAL, XI-NEW): d 3 L 8 SAT 3 min,
+  L 9 UNSAT 11 s (R188 relaxation: ~40 min). d 4 L 12 / L 13 running (7000 s cap). Same clauses in r191/nestbmc.py LEM=1:
+  NEST(3) D 3 prefix 6 SAT 223 s, prefix 7 running.
 - Things only I know:
   - TRAP hit again: «ps aux | grep "[n]estbmc" | xargs kill» killed my own shell (exit 144): the command line contains the pattern.
     Kill by PIDs read in a SEPARATE call.

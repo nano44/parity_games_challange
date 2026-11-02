@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """L-RED R191 NESTBMC (copy of r190/clockbmc.py; PIFIX=1 adds the forced pi of R191 §3: every v_j (j <= d-2) < v_(d-1) < u_(d-1) < u_(d-2);
-sound to add for d >= 3 by R191 Lemma NEST-PI). R190 CLOCKBMC: z3 bounded model of the IDEAL-ACYC model (fastabs semantics: acyclic Xi via positions, face value = signed
+sound to add for d >= 3 by R191 Lemma NEST-PI; LEM=1 adds the redundant lemma clauses). R190 CLOCKBMC: z3 bounded model of the IDEAL-ACYC model (fastabs semantics: acyclic Xi via positions, face value = signed
 2^rank sum along the chain; REL=1: free distinct integer weights instead, a relaxation) on a W-ladder of depth d, width w, degree D:
 movers w*l + i at level l; option k of a level-l >= 1 mover has W-target w*(l-1) + (k mod w); level 0 -> c_W. Keys: TB lex-min
 (key(target) . gate); step = keep-or-improve availability (state t), key-least choice (state t+1).
@@ -68,6 +68,24 @@ for t in range(L + 1):
             S.add(z3.Implies(c[t + 1][v] == k, z3.And(av[(v, k)], *[z3.Implies(av[(v, k2)], optless(v, k, k2, less)) for k2 in range(D) if k2 != k])))
         if v in UV: S.add((c[t + 1][v] != c[t][v]) == (v in sched[t]))
     S.add(z3.Or([c[t + 1][v] != c[t][v] for v in range(N)]))
+if os.environ.get("LEM") == "1":
+    # redundant clauses from proved lane lemmas (R191): reach = Xi-reachability; ROT-CAP (D consecutive moves of x need a desc(x) move
+    # in [first, last - 1]); XI-NEW (a least-level mover of step >= 2 has a desc that moved one step earlier)
+    reach = [[z3.Bool(f"re{x}_{y}") for y in range(N)] for x in range(N)]
+    for x in range(N):
+        for y in range(N):
+            S.add(reach[x][y] == z3.Or([z3.Or(xt[(x, k)] == y, z3.Or([z3.And(xt[(x, k)] == z, reach[z][y]) for z in range(N) if z != x])) for k in range(D)]))
+        S.add(z3.Not(reach[x][x]))
+    mvd = [[c[t + 1][v] != c[t][v] for v in range(N)] for t in range(L)]
+    import itertools
+    for x in range(N):
+        for ts in itertools.combinations(range(L), D):
+            a0, b0 = ts[0], ts[-1]
+            cons = z3.And(*[mvd[q][x] for q in ts], *[z3.Not(mvd[q][x]) for q in range(a0, b0 + 1) if q not in ts])
+            S.add(z3.Implies(cons, z3.Or([z3.And(reach[x][y], z3.Or([mvd[q][y] for q in range(a0, b0)])) for y in range(N) if y != x])))
+    for t in range(1, L):
+        for x in range(N):
+            S.add(z3.Implies(z3.And(mvd[t][x], *[z3.Not(mvd[t][u]) for u in range(N) if lev[u] < lev[x]]), z3.Or([z3.And(reach[x][y], mvd[t - 1][y]) for y in range(N) if y != x])))
 r = S.check(); print(f"CLOCKBMC d {d} w {w} D {D} L {L} REL {int(REL)} -> {r}", flush=True)
 if r == z3.sat:
     m = S.model(); ev = lambda e: m.eval(e, model_completion=True).as_long()
