@@ -537,3 +537,6 @@ If you prefer to stop, cut spend further, or redirect the fleet (for example to 
 - G-N5-TIME stays OPEN; no polynomial bound on general games is proved.
 - Running: 1 research lane (L-RED), with referees and CHECKER idle; pacing low under the seven-day usage warning (reset 11-04 21:00Z); no overage.
 - Needs: none. The progress reading from 15:56Z stands; your call if you want a different course.»
+
+## 2026-11-02T20:57Z Lead confirmation (20:58Z, summary)
+Lead agrees with OWNER-DESK's clarification: R104 is one-way (N5 polynomial ⇒ IDEAL polynomial); a polynomial bound for IDEAL or its 2-wide case does NOT bound N5 (rules out counterexamples of that shape only); a super-polynomial IDEAL family would be a real N5 counterexample; "candidate proof for the simplest case of the model" means the model only.
