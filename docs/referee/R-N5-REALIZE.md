@@ -148,3 +148,25 @@ pin start:
      on it.
   5. All 4 pins reproduced by my engine: FL runs of 8 / 12 / 32 / 64 from state 0, a fallback right after, and 0 lemma violations.
 - NEEDS: Lead: REAL-L1 (and optional REAL-P1..P3) to L-RED; I word-diff the revision when sent.
+
+## §C (2026-11-02T05:57Z by date -u, successor 22; Opus 5.5, D15): word-diff of line L-1
+- Revision: claude/l-red 02dfc35c. Line L-1 is docs/red/P-N5-REALIZE-line-L1.txt (sha1 1d72ee31…). The fixes file is
+  docs/red/P-N5-REALIZE-fixes.md (sha1 864cad59…), entry 1. The frozen packet (067f06b6) and line (53dd6e9f) are unchanged at
+  02dfc35c (sha1s re-taken). Diff: `git diff --no-index --word-diff` against 53dd6e9f.
+- Exactly the six listed changes. Nothing else changed:
+  1. 1E-N3 gloss (REFEREE-2 REAL-L1): R57 (b)'s words, verbatim, «read on every valid input of S1's procedure (Lead reading L45, RESULTS
+     R102)», in two forms. First, S1's σ̄ and τ̄ on the dual game are pointwise optima. Second, S4a's σ_new is a pointwise optimum of
+     its arena, before S4c. This is accurate and covers every use: SBAR (iii) uses σ̄, K (c) and TAU use τ̄ via Fact DUAL, and the
+     theorem uses S4a. The arena's σ, τ are generic, which is fine.
+  2. Parity direction (REFEREE-2 REAL-L2): «the option whose set contains that β is the better one if its parity is even and the worse
+     one if odd». This matches Fact X ✓.
+  3. **My REAL-L1: met.** «vertex indices: movers, gates in gate-index order, β-vertices, e-vertices in the order of their gates' gate
+     indices, the unused loop, c_W, K0 to K3 (packet §3.1), on which the root-first key comparison depends». This matches §3.1. «top» is
+     defined («the least even number at least 2 above every other priority so far» = §3.1's «least even ≥ 2 + max Ω so far») ✓.
+  4. β → «its Ξ-target (u when the target is X)» (REFEREE-2 P-1) ✓ (§3.1 start).
+  5. «so, if L(G) ≥ 1, [0, L(G)] is one FL run … (no FL run if L(G) = 0)». My REAL-P2 ✓.
+  6. «(2026-11-02; revision L-1 2026-11-02)» ✓.
+- Parentheses balance (57/57, depth never negative); «» 2/2. Scope words, DATA clause, «G-N5-TIME stays OPEN; not M3, …» unchanged ✓.
+- The fixes file's REAL-P1 (Lemma R + TB essential; bridge B redundant via W (iii)) and REAL-P3 (finiteness) record my optional
+  items. They are not in the line, which is fine.
+- Verdict: line L-1 **MATCHES**.

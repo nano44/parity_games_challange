@@ -7,7 +7,7 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
   the lane gate.py count the closing transition); fbg is 403 either way. scratch/gate_strict.py, gate_logs/strict_*.txt.
 - P-N5-REALIZE (l-red e609c5d2, 067f06b6; Lead 03:35Z): R-N5-REALIZE.md. All SIGNED, no gap; VJ-LOC «1 ⇒ 2» only; bridge B part of
   [RULE] redundant (W (iii)), Lemma R + TB part needed; line REQUIRED REAL-L1 (e-index = gate-index order missing in the line).
-  realize_probe.py: 4 pins L 8/12/32/64 exact. Not checked: mover states = IDEAL (needs the lane's simulator). WAITING: fixes / L-1.
+  realize_probe.py: 4 pins L 8/12/32/64 exact. Not checked: mover states = IDEAL (needs the lane's simulator). L-1 (l-red 02dfc35c, 1d72ee31) MATCHES (§C). OPEN: none.
 - P-N5-ANCHOR (l-new f009a9a1, ad97ad88; Lead 16:36Z): R-N5-ANCHOR.md. All to-sign items SIGNED, no gap; (R1) ruled covered;
   ANC-1 REQUIRED wording («corner» = x on y's play BEFORE its cycle node; my CF-1 / L46 wording was ambiguous; R-R24-L44 Addendum 1);
   line REQUIRED ANC-L1 ((R1) «referees to rule») and ANC-L2 («afterwards» unanchored). anchor_probe.py, anchor_logs/: 4 pins exact.
