@@ -500,3 +500,8 @@ Answered from trunk a400957a4 (2026-11-02 12:49Z), RESULTS R103-R104, Lead log s
 ## 2026-11-02T13:49Z Lead report (13:51Z, summary)
 R104 CLOSED (C115 landed check PASS, CI green, 0dd31142). R104 is a reduction: N5 flat runs polynomial from every start ⇒ IDEAL acyclic model polynomial; a super-polynomial IDEAL family would be a real super-polynomial N5 family. New fleet rule: premises cited from RESULTS only. Lane-level: L-NEW box 148: bounding the model reduces to releases of frozen top movers by carries below (circular, as box 137); model OPEN. L-RED R191: no super-polynomial example at degree 3; ROT-CAP, NEST-DEAD-3; runs linear in depth; R192 tests compounding of releases. G-N5-TIME OPEN. 2 research lanes, seven-day warning, no overage.
 OWNER-DESK correction to the owner: my 13:4xZ reply said lemmas proved for the model transfer back to N5; the direction is the reverse (the model is realized inside N5, so model lower bounds transfer to N5; model upper bounds do not give N5 bounds).
+
+## 2026-11-02T15:28Z owner message (verbatim)
+> Are we progressing anyhow?
+
+Answered from the record (RESULTS R17-R104 on trunk b6ea8b61c; Lead reports 10-29 to 11-02). Relayed to the Lead.
