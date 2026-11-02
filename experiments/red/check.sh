@@ -733,6 +733,8 @@ else echo "R189 schedbmc skipped (no z3)"; fi
 # P-N5-REALIZE (FROZEN packet + line, successor 45): sha1 pinned; the frozen files are never edited (fixes: docs/red/P-N5-REALIZE-fixes.md)
 echo "067f06b6c67969adf346621b4a92b253491ab2b9  ../../docs/red/P-N5-REALIZE.md" | sha1sum -c --quiet || { echo "P-N5-REALIZE packet changed"; exit 1; }
 echo "53dd6e9fd727a6ff2d5e49648366f28d7398e9d9  ../../docs/red/P-N5-REALIZE-line.txt" | sha1sum -c --quiet || { echo "P-N5-REALIZE line changed"; exit 1; }
+# P-N5-REALIZE line revision L-1 (fixes entry 1: both referees), sha1 pinned
+echo "1d72ee310b9b4af252724e06a181221a9c2828ec  ../../docs/red/P-N5-REALIZE-line-L1.txt" | sha1sum -c --quiet || { echo "P-N5-REALIZE L-1 changed"; exit 1; }
 # r189/lemck.py: per-state lemma checks (SBAR, TAU, ESC, W, AV, KEY, FB) on the real run; packet section 7
 (cd r188/instances && echo "158ca15db07ff2080239bf4fc35af14c814e5336  x3_L8_n48.pg
 f07be77086026f975a7d245a48441f550b6a8e08  x3_L8_n48.start
