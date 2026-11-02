@@ -1,4 +1,4 @@
-# Draft RESULTS R103 (Lead; first fill 2026-11-01T22:23:49Z by date -u (subagent); on ANCHOR line L-2, docs/new/P-N5-ANCHOR-line-L2.txt, l-new 709798f3, sha1 1371f900c5d6eb89b4c0b947cf811185a69966e2) — to CHECKER C114
+# Draft RESULTS R103 (Lead; first fill 2026-11-01T22:23:49Z by date -u (subagent); on ANCHOR line L-2, docs/new/P-N5-ANCHOR-line-L2.txt, l-new 709798f3, sha1 1371f900c5d6eb89b4c0b947cf811185a69966e2) — to CHECKER C114 — LANDED in RESULTS 2026-11-02 00:24Z (CHECKER C114 da67696a PASS), after R102, before Erratum E-1
 Read at the origin heads fetched at the start of the fill, 2026-11-01 before 22:05Z (l-new 2e1322eb, referee e002db99, referee-2 dc7db0e7,
 checker a48ce78e, l-red 436fe6e9; origin trunk b899d68d; local trunk head 24f0cb56, a Lead commit not pushed at the fill, with RESULTS,
 GAPS, DECISIONS and DECISIONS-INDEX byte-equal to origin trunk): packet f009a9a1, frozen line, L-1 (6bcf5529), L-2 and fixes entries 1-2
