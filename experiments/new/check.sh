@@ -781,4 +781,10 @@ if grep -qxF "MERGE x3_L8.json d 3 STEPS 8 DELSTEPS 4 NOPRE 1 MAXX 2 MAXXK 2 MAX
 else
   echo "box 144 MERGE-CHAIN check: FAILED"; exit 1
 fi
+w94=$(cd .. && python3 -I new/box145/thr.py new/box143/inst/x3_L8.json new/box144/inst/nest_d3_L4.json)
+if grep -qxF "THR x3_L8.json N 6 STATES 64 IMAGES 30 NONUNATE 2 NONASUM2 3 WITNESS (2, 3, (1, 1, 0, 0, 1, 1), (1, 1, 1, 0, 0, 0))" <<<"$w94" && grep -qxF "THR nest_d3_L4.json N 6 STATES 64 IMAGES 18 NONUNATE 1 NONASUM2 1 WITNESS (5, 0, (0, 1, 1, 1, 0, 1), (0, 1, 0, 1, 1, 0))" <<<"$w94"; then
+  echo "box 145 ENERGY: direct threshold cast dead (one-step map not unate on x3_L8 and nest_d3_L4): PASS"
+else
+  echo "box 145 ENERGY check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

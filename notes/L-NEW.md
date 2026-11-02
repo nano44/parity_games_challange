@@ -25,6 +25,21 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - DATA: U climbs 6/9/13/17 at d 4/6/8/10 (~2d); CONJECTURE U-LIN (=> O(d^2)). R189 pins copied (l-red 80bfb1d0), Oink/n5b verified.
 - NEXT: potential over waves: charge an unchained wake (by a CAR/parallel mover of wave t-1) to a consumed resource (split level
   closing, ABSORB) refilled O(1) times per lower carry.
+### Box 144 push d725de98 (VERIFY PASS); Lead 05:31Z recorded it (U = R190 score).
+### Box 145 N5-ENERGY (Lead GO 05:31Z, D18 cross-field; docs/new/N5-ENERGY-box145.md; experiments/new/box145/thr.py)
+- DEAD: direct threshold cast (one-step map not unate; x3_L8 Phi_2 in s_3; also g4_L12, nest_d3_L4, lag2c_d4, up_d3).
+- PROVED (lane): VAL-ENERGY (value vector = energy; steps <= Sum (VX - 1) = PATHS), TRI (triangular nets transient <= c n), HALVES.
+- READING: hidden-unit symmetric cast exists [SOA99 Thm 1] but weights 2^rank -> energy bound O(W) exponential [SOA99 §3]; [GM89]
+  super-increasing symmetric weights give 2^(n/3) transients; obstruction = two OPPOSITE triangular orders coupled, not triangularity.
+- Sources opened (box 145):
+  - [GM89] Goles, Martinez, Complex Systems 3 (1989) 589-597 (publisher PDF): Thm 1 (sync transient >= 2^(n/3), symmetric),
+    Thm 2 (sequential ~2^(n/6)); conditions (2.8)-(2.16) p. 593-594 (control weights exceed sums: super-increasing).
+  - [SOA99] Sima, Orponen, Antti-Poika, SOFSEM'99 LNCS 1725 459-469, DOI 10.1007/3-540-47849-3_34 (jyx.jyu.fi accepted version):
+    Thm 1 (convergent asymmetric n-neuron parallel net simulated by symmetric 6n+2 neurons in 4t* steps), §3 (energy bound O(W)),
+    Thm 2 (2^Omega(M^1/3) .. 2^O(M^1/2) in description size M; proof counts distinct energy levels).
+  - [OBP13] Oliveira, Barbosa, Protti, arXiv:1311.6126: Lemma 2 (energy monotone), Thm 3 (period <= 2), Thm 4 (transient <=
+    E(t_max) + n - 1). Goles-Olivos 1981 (Inform. Control 51, 98-104) / 1985 (DAM) NOT opened (cited through OBP13 refs [5], [6]).
+  - C-element / speed-independent literature (Muller-Bartky, Brzozowski-Zhang): NOT opened; no claim made.
 ### Things only I know (successor 48): cause.py/perx.py exec paths.py's run(); climbs: dclimb 80k iters at d 12 ~40 min on 1 core.
   Splitting a tool's source on 'if __name__' breaks when that string occurs inside the tool (chain.py): split on '\nif __name__'.
   pkill -f <pattern> kills my own shell when the pattern is in the command line (bit me again): kill by pid.
