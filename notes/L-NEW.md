@@ -1,7 +1,7 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 49, Opus 5.5; started 2026-11-02 11:51Z by date -u; after box 147, waiting for the Lead)
+## Resume point (successor 49, Opus 5.5; started 2026-11-02 11:51Z by date -u; after box 148, waiting for the Lead)
 ### Handover check (STEP 0, sent to the Lead 11:52Z)
 1. claude/l-new: local clone STALE at 8591166d again; ls-remote 767ed19a; fetched l-new / l-red (c374be8f) / trunk (3398c652) only;
    ff-only -> HEAD 767ed19a. Vs trunk: 0 ahead / 123 behind, merge-base 767ed19a (trunk has merged l-new). Lane files only.
@@ -19,6 +19,15 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   control W-side freeze/release of ready movers = key-change count again (circular, box 137 KCH-GCH).
 - DATA: linear UNST potential LP-feasible on all 24 all-start graphs n <= 14 (weights grow fast along pi); option bits alone (S)
   infeasible on 16. Pins re-run here: box143 + box144 pincheck identical (Oink zlk/tl verified, AGREE, n5b identical).
+### Box 147 push 60286d8c (VERIFY PASS; first push.sh run killed at the 10-min background limit, rerun with 2 h); Lead 12:51Z recorded it.
+### Box 148 N5-INTERVAL (Lead GO 12:51Z; docs/new/N5-INTERVAL-box148.md; experiments/new/box148/)
+- DEAD: per-step charge «high-rank unchained step consumes a key flip above y_t» (uc_d6 steps 3-6, mover 10 frozen, no flip above y_t;
+  corpus 37/113 form 1, 78/113 form 2; uc_d10 SAMETOP 10).
+- PROVED (lane): INTERVAL-RESTRICT (TOP_k-constant interval = prefix of the restricted genome's run, top part degree 1; PREFIXVIOL 0
+  on 46), INTERVAL-CHARGE (#RANK r <= (n-r+1)(1 + #RANK <= r-1)), opening dichotomy (release = key flip of y_t, or fresh Xi-wake),
+  recursion U*(n) <= sum_{p<n}(U*(p)+1).
+- READING: circular exactly at the count of releases of frozen top movers (carries below them) = KCH-GCH; the multiplication runs
+  along pi-rank (R186 DEPTH runs along W-level).
 ### Things only I know (successor 49): allstart.py needs scipy (pip install scipy; not in check.sh). stat.py analyse() returns S, FS
   (features per state), lab, pos; reuse it for any new state statistic (add a key in stats()). rclimb.py RW=1 / ALL=1 modes.
   exec-ing a tool from stdin needs ns["__file__"] set to the tool's absolute path.
@@ -2526,6 +2535,8 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
   MRG, WANT, NUNST, TOP1-3, LVCNT, UNST halves (first BAD up_d3 / up_d4 / up_d5 / g4_L12). TOP_k const k: new/box147/out/rk_d3 (RANK 5 = n - 1).
   Ready-only TOP_k: rw_d6_s1 (RANKW 6; one level-0 carry freezes 5 ready movers). (pi+1)^p weights, p <= 12: box143/out/dc_d12.
   Obstruction: DECREMENT makes the unstable set an exponential pi-order counter; coarsenings lose the order (docs/new/N5-COARSE-box147.md).
+- (succ. 49, box 148) Per-step key-change charge for unchained steps of RANK > k (key flip of a mover above y_t, or of a frozen one,
+  between consecutive such steps): new/box144/out/uc_d6 steps 3-6 (k 1). Obstruction: frozen movers are spectators; only per-interval charge holds.
 ## Dead ends (successor 40, box 97; also in docs/new/N5-ORD-box97.md)
 - ORDER-DET-U (sbar a function of the Xi-order on R143's U_k): n5s_maxph_0 (n 5), states 0-1, U = {2} both, sbar(0) 1 -> 2 (tau(0) = 1 is not a head).
 - NO-REPEAT (head / A_F orders never recur in a W-run): thetaA_n7 (n 7), refined order of A_F = {1,2,5} at state 0 recurs at state 3, sbar(6) 5,5,1,5.

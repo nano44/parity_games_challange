@@ -799,4 +799,10 @@ if grep -qxF "RANK x3_L8.json N 6 STEPS 8 U 3 YSTAB 0 ABOVE 0 MAXR_UNCH 2 MAXR_C
 else
   echo "box 147 COARSE check: FAILED"; exit 1
 fi
+w97=$(cd .. && python3 -I new/box148/charge.py new/box144/out/uc_d6.json; python3 -I new/box148/restrict.py new/box143/inst/x3_L8.json new/box144/out/uc_d10.json)
+if grep -q "^CHARGE uc_d6.json N 12 STEPS 13 U 9 .* k1: H 6 NOFLIP_ABOVE 4 NOFLIP_FROZ 5 SAMETOP 6 FIRSTFAIL 3 " <<<"$w97" && grep -q "^RESTRICT x3_L8.json N 6 STEPS 8 U 3 INTERVALS 5 PREFIXVIOL 0 " <<<"$w97" && grep -q "^RESTRICT uc_d10.json N 20 STEPS 22 U 17 INTERVALS 4 PREFIXVIOL 0 MAXUNCH_IN 10 " <<<"$w97"; then
+  echo "box 148 INTERVAL: per-step key-change charge dead on uc_d6; INTERVAL-RESTRICT prefix holds on x3_L8 and uc_d10: PASS"
+else
+  echo "box 148 INTERVAL check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
