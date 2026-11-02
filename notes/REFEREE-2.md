@@ -1,6 +1,60 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## Resume point 1 (successor 26, Opus 5.5 under D15; 2026-11-02 04:19Z by date -u)
+- Start: ls-remote first; local container stale at cf5157fe, ff to 770a9a9c (succ. 25 handover); trunk 803e0545 merged (git merge).
+  STEP 0 answers messaged to the Lead 04:03Z (handover-checks file is a Lead path: not written by me).
+- P-N5-REALIZE (l-red e609c5d2, 067f06b6, line 53dd6e9f): report docs/referee-2/R2-N5-REALIZE.md. All to-sign items SIGNED.
+  G-REAL-1 (minor, closed): §1 restates 1E-N3 as P2 for sigma_j at non-fallback transitions only; the proof uses P1 (SBAR, TAU, K (c))
+  and P2 for S4a's sigma_new BEFORE S4c (REALIZE step j < L would be circular). Closed by R57 (b) / L45 / R102 form plus (R1); and
+  directly: a trace of S1 on dual(H) at a standard state (K0 skipped, c_W BFS with no restriction, K2 LONGEST gives K0 -> K3).
+  Line REQUIRED REAL-L1 (1E-N3 gloss), REAL-L2 (parity direction of the IDEAL order unstated). P-1, P-2 optional.
+- Tool R2-N5-REALIZE/realize_check.py: own builder (BUILD byte-identical to 4 pins), own IDEAL, SPEC loop with sigma_new;
+  BF=m (all Odd strategies; rho unique optimum); MUT=noesc / eorder controls fire, eprio 0; cyc scope: 134/294 sbar != beta at state 0.
+  Lane DATA reproduced exactly (lemck, realck, t2, pinck, Oink). Worktree $SCRATCH/wreal = l-red e609c5d2 (tools/oink symlinked).
+- Report pushed bcd43b5a (VERIFY PASS); Lead messaged 04:51Z. Then read REFEREE 22 (05b865e0): agree its REAL-L1 (e-index order not in line;
+  my MUT=eorder is a failing instance), my miss. Addendum 1 a22cf5d8: joint line list.
+- REALIZE L-1 (l-red 02dfc35c, line-L1 1d72ee31, fixes 864cad59): MATCHES (R2-N5-REALIZE-L1.md); byte test True on 8 replacements;
+  MUT=border (beta indices reversed) 0 violations: only the e-order matters. Queue empty. NEXT: whatever the Lead sends.
+
+## HANDOVER (successor 25, session_01V5yGRaPp26T6iMUpCRmXsW, Opus 5.5 under D15; written 2026-11-02 03:32Z by date -u; context ~505k; Lead 03:35Z: hand over and park)
+Branch claude/referee-2, merged with trunk (git merge, no rebase) before pushes. REFEREE-2 owns no docs/GAPS.md rows.
+### Reports of record (all "(Opus 5.5, D15)"; every push via scripts/push.sh exit 0, VERIFY PASS)
+| packet | object (sha1) | report | lines | outcome |
+| --- | --- | --- | --- | --- |
+| P-N5-ROOT (R100) | f06f493e (l-new ed2fdaf2) | R2-N5-ROOT114.md d1c493fb | L-1 83c1838f (+Add. 1 L43), L-2 3bb41a4c, L-3 35d1062b MATCH | all SIGNED; ROOT114-L1 (k unbound: false at k = q, w_re3_1 k 6) |
+| P-N5-ODD (R98) | line L-3 f83b169e | R2-N5-ODD-L3.md d61827c5 | MATCHES | C108 E-1/N-1 |
+| P-N5-STAIR (R99) | line L-3 9db0b169 | R2-N5-STAIR-L3.md faa8dac9 | MATCHES | P-1 attribution confirmed |
+| P-N5-GATE (R101) | ac88915d (l-new 516717da) | R2-N5-GATE.md e35e8280 | L-1 9b30c652 MATCHES | all SIGNED; GATE-L1 lend107 106 not 107; Lemma S class-free |
+| P-N5-S4B (R102) | f1b65da5 (l-si 68fa36619) | R2-N5-S4B.md 1b9ef2e1 | L-1 0e8ae566 MATCHES | S4B-OPT/KEEP SIGNED; L42 lifted (L45) |
+| R24 L44 check | R24 (a), (b) | R2-R24-L44.md d96d2f9e | — | Lemma R, TB choice form CLASS-FREE (L46) |
+| P-N5-ANCHOR (R103, CLOSED C114) | ad97ad88 (l-new f009a9a1) | R2-N5-ANCHOR.md b431ec81 | L-1 f6b60cfc (REQ κ), L-2 dc7db0e7 MATCHES | all SIGNED; (R1) holds; G-ANC-1 corner vacuous |
+### OPEN: none. Every item sent to me is answered and pushed; my queue is empty (confirmed 03:3xZ).
+### Method (per packet)
+1. Fetch, re-hash packet + line (git show C:file | sha1sum). Do not open docs/referee/ for the packet before own report is pushed.
+2. Paper check every step against cited landed labels (RESULTS.md on trunk, DECISIONS L-readings) and SPEC docs/new/N5-ssi-global.md.
+3. Own tool in docs/referee-2/R2-<PKT>/ built on R2-N5-LATEP/latep_check.py (N5 loop, Engine, dual, pval) + R2-N5-WRUN/wrun_check.read_start
+   (validated starts). Add BND/boundary probes for every quantifier edge (found ROOT114-L1 this way).
+4. Corpus: experiments/si/anc58/corpus_fixed.lst (l-si) has 1,132 lines but only 813 DISTINCT: its 319 start-less lines repeat
+   experiments/new/box59/sbcg.lst. Dedup with awk '!seen[$0]++', split NF>1 (runs=0) / NF==1 (runs=1, default start), split -n l/3
+   for parallel jobs. Older packets' «1,132» counts double-count (reported to Lead; E-1 erratum exists).
+5. Pins in a worktree of the packet commit ($SCRATCH/w*), Oink via docs/referee-2/R2-N5-ROOT114/oink_pins.py tools/oink/build/oink PREFIX LIST
+   (scripts/setup_oink.sh first in a fresh container).
+6. Line: token diff (git diff --no-index --word-diff=plain --word-diff-regex='[^[:space:]]+'), byte test by exact replacement (watch
+   repeated phrases: replace the right occurrence), binder pass (free symbols: κ in ANCHOR L-1), DATA numbers, L41 / L43 / L44 / L46 tags.
+### Re-run commands (from repo root)
+- python3 docs/referee-2/R2-N5-ROOT114/root_check.py files LIST RUNS PREFIX   (DESC-ROOT, ORIGIN-NEW, NEW-FUEL, BND_*)
+- python3 docs/referee-2/R2-N5-GATE/gate_check.py files LIST RUNS PREFIX      (SQZ, SETTLE/BRACKET-MON, CONSISTENT-RED)
+- python3 docs/referee-2/R2-N5-S4B/s4b_check.py files LIST RUNS PREFIX       (S4b on H′ brute force; MUT=1 control; CAP=1024)
+- python3 docs/referee-2/R2-N5-ANCHOR/anchor_check.py files LIST RUNS PREFIX  (choice rule movers/non-movers/corners; FL runs; DUMP=1)
+### Traps (mine this session)
+- A clause «k − 1 ∈ F» with k unbound admits k = q (the cut transition): probe the boundary transition of every run-scoped lemma.
+- Lane phase counts may group transitions by FIRST state only (gate.py): compare with the packet's own definition.
+- L46's corner clause («play passes x») is vacuous for fully optimal options (path to c avoids x); only the cycle part can pass x.
+- ODIFF-type counts depend on which state's set is used (source state vs either).
+- push.sh pushes only the commit it verified; commit during verify, then push again. Never pipe push.sh/verify.sh.
+- Wait on PIDs / output files with Monitor until-loops, never pgrep -f on a pattern in the waiter's own command line.
+
 ## Resume point 1 (successor 25, session_01V5yGRaPp26T6iMUpCRmXsW, Opus 5.5 under D15; 2026-10-31 18:45Z by date -u)
 - Start: origin head cf5157fe (is-ancestor OK, last pushers all succ. 24); trunk merged; Lead messaged 18:36Z.
 - P-N5-ROOT (l-new ed2fdaf2, f06f493e, line 954af7be): report docs/referee-2/R2-N5-ROOT114.md. All SIGNED, no packet gap.

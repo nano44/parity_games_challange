@@ -1,0 +1,5 @@
+FILE stab_d4_n126.pg n 126 N 12 M 36 K 35 L_FL 32 fallback at transition 33
+FL_trans 32
+fallback_at 33
+std_states 33
+VIOLATIONS 0

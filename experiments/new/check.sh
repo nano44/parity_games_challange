@@ -739,4 +739,58 @@ if grep -qxF "REL ret2_n37.pg n 37 K 12 RUNS 1 FL 7 CEILVIOL 0 SATDEC 0 SATGAIN 
 else
   echo "box 137 REL check: FAILED"; exit 1
 fi
+w87=$(cd .. && python3 -I new/box138/dmerge3.py new/box138/sbmany_n57.pg new/box138/sbmany_n57_default.start; python3 -I new/box138/dmerge3.py new/box133/odxi_n37.pg new/box133/odxi_n37.start)
+if grep -qxF "DMERGE3 sbmany_n57.pg n 57 SSTRETCHES 1 FL 3 ACYC 1 CYC 0 EHEIGHT 9 CASCVIOL 0 EDGES 99 MAXL 3 CNMOV 1 SBIN 95 TIES 0 ODDNODES 8 SBSTR 1 SBACYC 1 SBFL 3" <<<"$w87" && grep -qxF "DMERGE3 odxi_n37.pg n 37 SSTRETCHES 1 FL 8 ACYC 1 CYC 0 EHEIGHT 9 CASCVIOL 0 EDGES 372 MAXL 8 CNMOV 0 SBIN 0 TIES 0 ODDNODES 54 SBSTR 0 SBACYC 0 SBFL 0" <<<"$w87"; then
+  echo "box 138 GATE: sbmany_n57 95 sbar changes inside one acyclic S-stretch of 3 transitions (CASC-M3); odxi_n37 one S-stretch, Even-height 9: PASS"
+else
+  echo "box 138 GATE check: FAILED"; exit 1
+fi
+w88=$(cd .. && python3 -I new/box139/paths.py new/box139/genomes/big_d4_k3_W3.json new/box139/genomes/grow_top_N24.json)
+if grep -qxF "PATHS big_d4_k3_W3.json N 12 STEPS 32 STOP stuck MOVES 57 MOVMAX 10 VXMAX 833 VWMAX 81 CURVIOL 0 KEYVIOL 0 BOUNDVIOL 0 SLACK 1.0000" <<<"$w88" && grep -qxF "PATHS grow_top_N24.json N 24 STEPS 64 STOP stuck MOVES 119 MOVMAX 10 VXMAX 8799 VWMAX 6561 CURVIOL 0 KEYVIOL 0 BOUNDVIOL 0 SLACK 1.0000" <<<"$w88"; then
+  echo "box 139 PATHS: IDEAL-ACYC champions big_d4 / grow_top_N24: value and key monotone at every step, moves <= min(VX, VW) - 1: PASS"
+else
+  echo "box 139 PATHS check: FAILED"; exit 1
+fi
+w89=$(cd .. && python3 -I new/box140/alt.py new/box140/out/up_d5.json new/box140/out/up_d6.json)
+if grep -qxF "ALT up_d5.json N 10 STEPS 11 LADDER True ALTVIOL 0 TOWARDVIOL 0 LFVIOL 0 MOVES [2, 5, 7, 4, 2] LFLIPS [2, 5, 5, 3, 2]" <<<"$w89" && grep -qxF "ALT up_d6.json N 12 STEPS 13 LADDER True ALTVIOL 0 TOWARDVIOL 0 LFVIOL 0 MOVES [2, 4, 7, 7, 3, 2] LFLIPS [2, 3, 7, 6, 6, 5]" <<<"$w89"; then
+  echo "box 140 JOINT: UP-LADDER climb champions d 5 / 6 (FL 11 / 13): ALTERNATION, TOWARD-L, L-ACCOUNT hold; moves peak mid-ladder: PASS"
+else
+  echo "box 140 JOINT check: FAILED"; exit 1
+fi
+w90=$(cd .. && python3 -I new/box140/alt.py new/box141/out/up_d8_s8.json)
+if grep -qxF "ALT up_d8_s8.json N 16 STEPS 19 LADDER True ALTVIOL 0 TOWARDVIOL 0 LFVIOL 0 MOVES [2, 6, 8, 9, 8, 4, 4, 2] LFLIPS [2, 6, 8, 9, 7, 6, 6, 5]" <<<"$w90"; then
+  echo "box 141 UPLIN: UP-LADDER d 8 champion FL 19 (linear), ALTERNATION / TOWARD-L / L-ACCOUNT hold: PASS"
+else
+  echo "box 141 UPLIN check: FAILED"; exit 1
+fi
+w91=$(cd .. && python3 -I new/box142/lag.py new/box142/lag_min_d2.json new/box141/out/up_d8_s8.json)
+if grep -qxF "LAG lag_min_d2.json STEPS 2 STOP opt LAGEVENTS 1 LAGMAX 1 DOUBLE 0 DELAY [0, 1] LFLIPS [1, 1] DELVIOL 0 EX (1, 1, [2, 3], 2, 1)" <<<"$w91" && grep -qxF "LAG up_d8_s8.json STEPS 19 STOP stuck LAGEVENTS 2 LAGMAX 1 DOUBLE 8 DELAY [0, 3, 3, 4, 2, 1, 1, 0] LFLIPS [2, 6, 8, 9, 7, 6, 6, 5] DELVIOL 0 EX (1, 11, [2, 3], 11, 12)" <<<"$w91"; then
+  echo "box 142 LAG: NO-LAG dead (lag_min_d2, sibling Xi-read); DELAY-CHARGE holds on up_d8_s8: PASS"
+else
+  echo "box 142 LAG check: FAILED"; exit 1
+fi
+w92=$(cd .. && python3 -I new/box143/cause.py new/box143/inst/x3_L8.json new/box143/out/dc_d12.json; python3 -I new/box143/rerise.py new/box143/inst/x3_L8.json)
+if grep -qxF "CAUSE x3_L8.json d 3 STEPS 8 STOP stuck SUMDELAY 5 CELEMVIOL 0 LEAST {'DEL': 4, 'PRE': 3, 'OTHER': 0, 'CAR': 0} PRE 4 STEPBOUND 9 NOCAUSE 0 CAUSECLS {'DEL': 1, 'CAR': 3, 'PRE': 1} CAUSELEVDIFF {-2: 1, -1: 1, 0: 2, 1: 1} MOVES 13 BFLIPS 13" <<<"$w92" && grep -qxF "CAUSE dc_d12.json d 12 STEPS 26 STOP stuck SUMDELAY 63 CELEMVIOL 0 LEAST {'DEL': 23, 'PRE': 2, 'OTHER': 0, 'CAR': 0} PRE 7 STEPBOUND 31 NOCAUSE 0 CAUSECLS {'DEL': 42, 'CAR': 13, 'PRE': 8} CAUSELEVDIFF {-10: 4, -9: 2, -8: 2, -6: 2, -5: 1, -4: 4, -3: 3, -2: 4, -1: 6, 0: 6, 1: 3, 2: 9, 3: 5, 4: 4, 5: 3, 6: 3, 7: 2} MOVES 82 BFLIPS 89" <<<"$w92" && grep -qxF "RERISE x3_L8.json d 3 STEPS 8 PAIRS 12 RERISEVIOL 4 STRICTVIOL 5 MAXRISES 5" <<<"$w92"; then
+  echo "box 143 DELAY: C-ELEM and STEP-DELAY hold on R188 pin x3_L8 and the d 12 Sum-DELAY champion (63 delays, 26 steps); literal re-rise hint dead on x3_L8: PASS"
+else
+  echo "box 143 DELAY check: FAILED"; exit 1
+fi
+w93=$(cd .. && python3 -I new/box144/merge.py new/box143/inst/x3_L8.json; python3 -I new/box144/chain.py new/box143/inst/x3_L8.json new/box143/out/dc_d12.json)
+if grep -qxF "MERGE x3_L8.json d 3 STEPS 8 DELSTEPS 4 NOPRE 1 MAXX 2 MAXXK 2 MAXXC 2 MAXC 2 MAXXCK 2 PAIRS 2 CAUSECLS {'CAR': 2, 'DEL': 1} CLEAST 1 SEGLEN 2 KBARHIT 1 SUFHIT 1" <<<"$w93" && grep -qxF "CHAIN x3_L8.json d 3 STEPS 8 DELSTEPS 4 CHAINED 2 UNCHAINED 2 NOCAUSE 0 PIVIOL 0 MAXCHAIN 3 UNCLS {'CAR': 2} UNLEV {1: 2} | ALL: UNCH 3 NOCAUSE 0 PIVIOL 0 MAXBLOCK 3 BOUND N(1+U) 24 OK True" <<<"$w93" && grep -qxF "CHAIN dc_d12.json d 12 STEPS 26 DELSTEPS 23 CHAINED 10 UNCHAINED 13 NOCAUSE 0 PIVIOL 0 MAXCHAIN 7 UNCLS {'DEL': 10, 'CAR': 3} UNLEV {0: 1, 1: 5, 3: 1, 4: 2, 7: 3, 8: 1} | ALL: UNCH 14 NOCAUSE 0 PIVIOL 0 MAXBLOCK 7 BOUND N(1+U) 360 OK True" <<<"$w93"; then
+  echo "box 144 MERGE-CHAIN: pre-merge cause premise dead on x3_L8 (NOPRE 1); CHAIN-BACK blocks <= n_E, steps <= n_E (1 + U) on x3_L8 and dc_d12: PASS"
+else
+  echo "box 144 MERGE-CHAIN check: FAILED"; exit 1
+fi
+w94=$(cd .. && python3 -I new/box145/thr.py new/box143/inst/x3_L8.json new/box144/inst/nest_d3_L4.json)
+if grep -qxF "THR x3_L8.json N 6 STATES 64 IMAGES 30 NONUNATE 2 NONASUM2 3 WITNESS (2, 3, (1, 1, 0, 0, 1, 1), (1, 1, 1, 0, 0, 0))" <<<"$w94" && grep -qxF "THR nest_d3_L4.json N 6 STATES 64 IMAGES 18 NONUNATE 1 NONASUM2 1 WITNESS (5, 0, (0, 1, 1, 1, 0, 1), (0, 1, 0, 1, 1, 0))" <<<"$w94"; then
+  echo "box 145 ENERGY: direct threshold cast dead (one-step map not unate on x3_L8 and nest_d3_L4): PASS"
+else
+  echo "box 145 ENERGY check: FAILED"; exit 1
+fi
+w95=$(cd .. && python3 -I new/box146/energy.py new/box146/small_d2.json new/box144/inst/lag1.json)
+if grep -qxF "ENERGY small_d2.json N 4 STEPS 2 UNCH 0 CH 1 V0D 1 V0U 0 V1D 1 V1U 0 V2D 1 V2U 0 V3D 1 V3U 0 VLEXD 1 VLEXU 0" <<<"$w95" && grep -qxF "ENERGY lag1.json N 6 STEPS 2 UNCH 1 CH 0 V0D 1 V0U 1 V1D 1 V1U 0 V2D 1 V2U 0 V3D 1 V3U 0 VLEXD 0 VLEXU 1" <<<"$w95"; then
+  echo "box 146 SPLITE: split-level energy dead (small_d2 chained rise; lag1 unchained non-fall): PASS"
+else
+  echo "box 146 SPLITE check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

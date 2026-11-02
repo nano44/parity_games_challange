@@ -1,0 +1,5 @@
+FILE stab_g24_n246.pg n 246 N 24 M 72 K 67 L_FL 64 fallback at transition 65
+FL_trans 64
+fallback_at 65
+std_states 65
+VIOLATIONS 0

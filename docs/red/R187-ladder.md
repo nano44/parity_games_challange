@@ -29,7 +29,11 @@ R183 (OVT-KEY, KEY-CHARGE), box 136 (D″, CASC-M″). Not a TARGET.md claim. G-
   none observed; R185's were inert, stretches ≤ 4). CASC-M″ is not violated (its hypothesis fails). A Ξ-face reading the same or an
   upper level is what closes the cycle; if every Ξ-face read only lower levels, D″ is graded and CASC-M″ / FL-ANCHOR give
   L ≤ ℓ* + 1 (DATA: DOWN-class climbs T ≤ d exactly, §2).
-- Item 2 of the brief (CN shortcut / up alternation at one cycle node): NOT DONE in this note (skipped for room); queue.
+- Per-state D″ is cyclic at every state of this stretch (33 / 33, also restricted to vertices that can move), and of R185's two
+  stretches: the per-state route for CASC-M″ is dead on data (§2; ERRATUM to R185 §1's reading).
+- Item 2 (CN shortcut / up alternation at one cycle node, §6): it EXISTS and repeats. Pin cn_d4_n126: the W-cycle node c moves 18
+  times in one FL run of 33 (10 up, 8 shortcuts, 13 direction changes, 11 returns); cn_g24_n246: 22 moves in one FL run of 64
+  (19 direction changes, 14 returns). CN-UP holds (cnidx DOWN_NOSHORT 0) but does not bound it. Growth with n: linear so far (DATA).
 
 ## 1. Theorem REALIZE (PROVED, lane)
 Input: an IDEAL genome (R178 §1, fastcyc format: movers x with level lev(x), options k with W-target wt (a mover of level lev(x) − 1,
@@ -104,6 +108,20 @@ Real runs (realck.py: FAITHFUL = IDEAL length and mover states equal, for all ro
   IDEAL stop) for stab_d4.
 - L-NEW dmerge2.py (box 136, run in a scratch copy of claude/l-new experiments/new) on stab_d4_n126: «RUNS 1 FL 32 ACYC 0 CYC 1 …
   MAXL 32 SELFL 0 CNMOV 0», the same with STRETCH=1, and with STRETCH=1 DOM=1 (DOMCUT 1262, still CYC 1).
+- Per-state D″ (the R185 §4 proof-side suggestion «CASC-M″ with a per-state D″»): r187/mkdm2state.py patches a copy of dmerge2.py
+  (read-only source) to build D″ from the edges of ONE state, and with PRUNE=1 keeps only vertices with |T_x| ≥ 2 (a vertex with one
+  tight option is constant on the run by FL-TIGHT, so edges into it are not dependencies; dmerge2 already adds x → every Even vertex on
+  a segment, so no path is lost). STRETCH=1 DOM=1:
+
+| instance | stretch | per-state D″ cyclic | pruned per-state cyclic | a per-state cycle (pruned) | union cycle (pruned) |
+| --- | --- | --- | --- | --- | --- |
+| stab_d4_n126 | [0, 32] | 33 / 33 | 33 / 33 | movers 0 → 6 → 1 → 0 (levels 0, 2, 0) | 0 ↔ 9 (levels 0, 3) |
+| d2cyc4_n72 (R185) | [6, 10] | 5 / 5 | 5 / 5 | 1 ↔ 13 | 1 ↔ 13 |
+| dcyc3_n48 (R185) | [6, 9] | 4 / 4 | 4 / 4 | 11 ↔ 20 | 11 ↔ 20 |
+  - So the per-state route is dead on data: every D″-cyclic stretch known is cyclic at every one of its states. R185 §1's reading
+    («time-resolved D″ would be acyclic» on dcyc3) is wrong; ERRATUM added there.
+  - In stab_d4 the per-state cycle is mover 0 reading mover 6 (level 2) through a Ξ-face (an upward read), 6 reading 1 through its
+    W-key, 1 reading 0: the mutual feeding the IDEAL model has by design.
 - Random checks (realck.py --rand, t2.py): ACYC class 20 + 40, DOWN class 60: all equal, FAITHFUL = IDEAL length.
 - Climbs (climb.py, 60,000 mutations each on the IDEAL simulator, which equals the real run by REALIZE):
   - DOWN class (every Ξ-target of strictly lower level, or «X»): best T = d exactly at d 3-6 (W 2 / 3): the CASC-M″ / FL-ANCHOR
@@ -135,4 +153,23 @@ Real runs (realck.py: FAITHFUL = IDEAL length and mover states equal, for all ro
   for d = 3 in the ACYC model (R180's bmc.py restricted to acyclic Ξ, bit-vector encoding).
 - Proof side (L-NEW): box 137's lemma cannot use σ̄-optimality or τ-stability beyond what IDEAL-ACYC already has; it must bound AVN (fresh
   Ξ-overtakes per mover) in IDEAL-ACYC, or count them against something monotone. DOWN-type stretches are already covered by CASC-M″.
-- Brief item 2 (CN shortcut / up alternation at a cycle node): still open; seed cw11_n24.
+
+## 6. Item 2: shortcut / up alternation at one W-cycle node (DATA; added after the first push)
+- Construction (croot.py): the STAB+K+ESC game with the sink c_W replaced by an Even vertex c of the same top even priority whose
+  options are ladder MOVERS. Every mover's W-play now returns to c, so c is the only W-cycle node; c's moves do not change W (every
+  vertex keeps its length to c). A shortcut = an option of c below c's current option on its W-path (R185 Lemma CN-UP). c's
+  availability reads the movers' Ξ; its choice is S1's cycle-node DFS rule over the current W-tree, which the ladder keeps changing.
+- Climbs (cclimb.py: genome, c's option set and start; score = direction changes of c inside one FL run):
+
+| seed (R178) | n | best FL run | c's moves in it | up / shortcut | direction changes | returns |
+| --- | --- | --- | --- | --- | --- | --- |
+| fl_d3_k4_W4 | 162 | 6 | 6 | 4 / 2 | 4 | 1 |
+| big_d3_k3_W3 | 96 | 12 | 9 | 4 / 5 | 5 | 5 |
+| big_d4_k3_W3 (pin cn_d4_n126) | 126 | 33 | 18 | 10 / 8 | 13 | 11 |
+| big_d6_k3_W3 | 186 | 33 | 17 | 10 / 7 | 12 | 9 |
+| grow_top_N24 (pin cn_g24_n246) | 246 | 64 | 22 | 12 / 10 | 19 | 14 |
+- R185's cnidx.py on the pins (all FL runs of the N5 run): cn_d4 CNMOVES 19, UP 10, DOWN 9, RET 11, DOWN_NOSHORT 0; cn_g24 CNMOVES 23,
+  UP 12, DOWN 11, RET 14, DOWN_NOSHORT 0. ovtkey: KBOUND 0, CNONLY 3 / 2. Both pins pass startck, Oink --zlk + verify, --tl + verify,
+  xeng.
+- READING: c moves alongside ladder moves (CNONLY ≤ 3): c's moves ride on the ladder's, about L_FL / 3 here. So CN-UP's open case is
+  real and unbounded by |T_c|, but in these games it is charged to non-CN moves; a CNONLY bound per FL run is still the open item.

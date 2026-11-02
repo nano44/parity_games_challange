@@ -1,7 +1,88 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 47, Opus 5.5; started 2026-11-01 21:06Z by date -u; WORKING)
+## Resume point (successor 48, Opus 5.5, session_01V5yGRYskE4dhDBS3jy5SQh; FINAL, PARKED 2026-11-02 ~06:5xZ by date -u)
+### FINAL summary (successor 48): boxes 143-146, every push via scripts/push.sh (VERIFY PASS), each reported to the Lead
+- 143 DELAY (33f66fca): DELAY-LIN not proved; C-ELEM (mover = C-element: A same step, B one step late), STEP-DELAY (steps <= 1 + 2d
+  + DELSTEPS), ABSORB PROVED (lane); literal face re-rise charging DEAD (x3_L8); Sum DELAY ~5 per level to d 12.
+- 144 CHAIN (d725de98): pre-merge cause premise DEAD (x3_L8 step 6, re-route off merge vertex); CHAIN-BACK PROVED (lane, ANY
+  IDEAL-ACYC genome, via R178 XI-NEW): steps <= n_E (1 + U), U = steps not woken by the previous least mover; U climbs ~2d.
+- 145 ENERGY (632154d0, D18 cross-field): direct threshold cast DEAD (one-step map non-unate, x3_L8); VAL-ENERGY (= PATHS), TRI,
+  HALVES PROVED (lane); READING: symmetric hidden-unit cast [SOA99 Thm 1] carries 2^rank weights -> exponential energy [GM89 Thm 1];
+  obstruction = two OPPOSITE triangular orders coupled.
+- 146 SPLITE (this push): split-level energy (V0-V3, VLEX, both orientations) DEAD: small_d2 (d 2, chained rise), lag1 (realised,
+  unchained non-fall); SPLIT-CYCLE PROVED (lane).
+### NEXT for successor 49 (Lead decides): a COARSE Xi-statistic with polynomially many levels that falls at every unchained step
+  (U-LIN => O(d^2) runs on the 2-wide ladder via CHAIN-BACK); score any counter by U (L-RED R190 3-wide clock). W-side-only energies
+  are dead (SPLIT-CYCLE). Labels open: U-LIN, DELSTEP-LIN (<=> linear 2-wide runs), DELAY-LIN, IDEAL-ACYC-POLY, G-N5-TIME.
+### Things only I know (successor 48): see the box 143-145 sections below. Tools: box143/cause.py (C-ELEM, STEP-DELAY, causes),
+  box144/chain.py (CHAIN-BACK, ALL form), box145/thr.py (threshold cast), box146/energy.py (energy tester; reuse it for any new
+  candidate: add a variant to E()). Pins copied read-only: box143/inst (R188), box144/inst (R189), all Oink/n5b verified here.
+
+## Resume point (HISTORY; successor 48 work log; started 2026-11-02 03:03Z by date -u)
+### Handover check (STEP 0, sent to the Lead 03:03Z)
+1. claude/l-new: local clone STALE at 8591166d again; ls-remote 40708ae9; fetched l-new / trunk / l-red only; ff-only -> HEAD 40708ae9;
+   vs trunk e642a0e1: 5 ahead / 59 behind, merge-base a5c5b594 (trunk not merged; lane files only).
+2. Open: box 143 DELAY-LIN. 3. GAPS: G-N5-TIME major open; G-N1-LB minor open (optional); G-N5-TERM closed. 4. D18, D14, D1 (active).
+5. Trap: stale clone (check = ls-remote + fetch + ff-only + HEAD vs ls-remote); Oink rebuilt here (setup_oink.sh OK).
+### Box 143 N5-DELAY (Lead brief 03:07Z; docs/new/N5-DELAY-box143.md; experiments/new/box143/)
+- DELAY-LIN NOT proved. PROVED (lane): C-ELEM (mover = C-element: moves to k iff A(t) = k (toward L_(l-1), same step) and B(t-1) = k
+  (strict Xi preference, one step late)); STEP-DELAY (least mover of every step >= 2 is delayed or PRE => steps <= 1 + 2d + DELSTEPS;
+  so DELAY-LIN => LINEAR runs; 2-wide IDEAL-ACYC-POLY <=> DELSTEPS poly); ABSORB (same-target levels absorb carries).
+- DEAD: literal «face re-rises only after a carry above» on R188 exact pin x3_L8 (face (0,0) rises at 5 and 6, no carry at 6).
+- DATA: Sum DELAY climbs 5/10/15/22/24/40/38/63 at d 3-8,10,12 (~5 per level), steps ~2.2d; per option <= 3, per mover <= 5 delays;
+  max moves of ONE mover 3/5/7 at d 4/6/8 (mostly carry moves) -> no MOVE-CONST conjecture.
+- Pins x3_L8_n48, g4_L12_n62 copied read-only (l-red ce1d19e9): Oink zlk/tl verified, pinwin AGREE, n5b identical (box143/pincheck.txt).
+- NEXT: count crossings (B flips) at least movers via pre-merge segments (box 135 MERGE) per carry wave.
+### Box 143 push 33f66fca (VERIFY PASS); Lead 04:33Z recorded it; DELSTEPS = L-RED 45 R190 score.
+### Box 144 N5-CHAIN (Lead GO 04:33Z; docs/new/N5-CHAIN-box144.md; experiments/new/box144/)
+- DEAD: pre-merge cause premise (x3_L8 step 6: k-bar play re-routes off the merge vertex 1, cause on the common suffix); briefed
+  (pre-merge segment, carry wave) charge does not close (per-wave charging trivial; per pair <= 3).
+- PROVED (lane) CHAIN-BACK (any IDEAL-ACYC genome, via R178 XI-NEW): chained steps (h_(t-1) on h_t's new face play) have
+  pi(h_t) < pi(h_(t-1)); blocks <= n_E; steps <= n_E (1 + U), U = unchained steps; UP shape <= d (1 + U).
+- DATA: U climbs 6/9/13/17 at d 4/6/8/10 (~2d); CONJECTURE U-LIN (=> O(d^2)). R189 pins copied (l-red 80bfb1d0), Oink/n5b verified.
+- NEXT: potential over waves: charge an unchained wake (by a CAR/parallel mover of wave t-1) to a consumed resource (split level
+  closing, ABSORB) refilled O(1) times per lower carry.
+### Box 144 push d725de98 (VERIFY PASS); Lead 05:31Z recorded it (U = R190 score).
+### Box 145 N5-ENERGY (Lead GO 05:31Z, D18 cross-field; docs/new/N5-ENERGY-box145.md; experiments/new/box145/thr.py)
+- DEAD: direct threshold cast (one-step map not unate; x3_L8 Phi_2 in s_3; also g4_L12, nest_d3_L4, lag2c_d4, up_d3).
+- PROVED (lane): VAL-ENERGY (value vector = energy; steps <= Sum (VX - 1) = PATHS), TRI (triangular nets transient <= c n), HALVES.
+- READING: hidden-unit symmetric cast exists [SOA99 Thm 1] but weights 2^rank -> energy bound O(W) exponential [SOA99 §3]; [GM89]
+  super-increasing symmetric weights give 2^(n/3) transients; obstruction = two OPPOSITE triangular orders coupled, not triangularity.
+- Sources opened (box 145):
+  - [GM89] Goles, Martinez, Complex Systems 3 (1989) 589-597 (publisher PDF): Thm 1 (sync transient >= 2^(n/3), symmetric),
+    Thm 2 (sequential ~2^(n/6)); conditions (2.8)-(2.16) p. 593-594 (control weights exceed sums: super-increasing).
+  - [SOA99] Sima, Orponen, Antti-Poika, SOFSEM'99 LNCS 1725 459-469, DOI 10.1007/3-540-47849-3_34 (jyx.jyu.fi accepted version):
+    Thm 1 (convergent asymmetric n-neuron parallel net simulated by symmetric 6n+2 neurons in 4t* steps), §3 (energy bound O(W)),
+    Thm 2 (2^Omega(M^1/3) .. 2^O(M^1/2) in description size M; proof counts distinct energy levels).
+  - [OBP13] Oliveira, Barbosa, Protti, arXiv:1311.6126: Lemma 2 (energy monotone), Thm 3 (period <= 2), Thm 4 (transient <=
+    E(t_max) + n - 1). Goles-Olivos 1981 (Inform. Control 51, 98-104) / 1985 (DAM) NOT opened (cited through OBP13 refs [5], [6]).
+  - C-element / speed-independent literature (Muller-Bartky, Brzozowski-Zhang): NOT opened; no claim made.
+### Box 145 push 632154d0 (VERIFY PASS); Lead 06:27Z recorded it.
+### Box 146 N5-SPLITE: see FINAL summary (docs/new/N5-SPLITE-box146.md).
+### Things only I know (successor 48): cause.py/perx.py exec paths.py's run(); climbs: dclimb 80k iters at d 12 ~40 min on 1 core.
+  Splitting a tool's source on 'if __name__' breaks when that string occurs inside the tool (chain.py): split on '\nif __name__'.
+  pkill -f <pattern> kills my own shell when the pattern is in the command line (bit me again): kill by pid.
+
+## Resume point (successor 47, Opus 5.5, session_01V5yGRZScf7eMZRT15JJRqy; HISTORY; FINAL, PARKED 2026-11-02 ~02:5xZ by date -u)
+### FINAL summary (successor 47): boxes 137-142, every push via scripts/push.sh (VERIFY PASS), each reported to the Lead
+- 137 REL (2e1322eb, a5c5b594): briefed release lemma DEAD (ret2_n37, one epoch), RET-1 DEAD; KCH-GCH, CEIL, SAT-MONO, SAT-FREEZE,
+  BAND, SYNC, C-WORLD, DEFICIT, DOUBLE-PULL PROVED (lane).
+- 138 GATE (a0ce806b): GATE-LEX, CASC-M''' (sbar changes not stretch boundaries; under NT, NC) PROVED (lane); c-world SI: no reduction.
+- 139 IDEAL (3b2078c9): D''' cyclic on stab_d4; PATHS + LOG-DEPTH (IDEAL-ACYC-POLY for log Xi-depth or log W-level) PROVED (lane);
+  real-FL W-side path count.
+- 140 JOINT (80cd02cc): ALTERNATION, TOWARD-L, L-ACCOUNT, TOP-STATIC, TWO-SIDED PROVED (lane); UP-LADDER climbs linear.
+- 141 UPLIN (5dbff709): UP-LIN not proved; DESCENT; data to d 8 (FL 19).
+- 142 LAG (this push): NO-LAG DEAD (lag_min_d2, d 2, sibling Xi-read; up_d4 in UP shape); bounded lag insufficient; DELAY-CHARGE
+  (F_l <= F_(l-1) + 2 + DELAY_l) + DELAY-CAUSE PROVED (lane); Sum DELAY = O(d) => O(d^2) steps on the 2-wide ladder; CONJECTURE DELAY-LIN.
+- P-N5-ANCHOR: both referees MATCHED L-2; CHECKER C114 PASS; R103 LANDED 00:24Z and CLOSED (ec62f84d). No fixes entry 3 was needed.
+### NEXT for successor 48 (Lead decides): DELAY-LIN on 2-wide IDEAL-ACYC ladders (count Xi-events one step before each delay;
+  DELAY-CAUSE localises them to released-and-waiting movers); test box 140's Psi on any R188+ counter; R188's exact d 3 pin x3_L8_n48
+  was not checked against DELAY-CHARGE here (its IDEAL genome is on claude/l-red ce1d19e9).
+### Things only I know (successor 47): see the box sections below (WORKING log); push.sh ~20 min; never edit files in the working tree
+  while push.sh verifies (I once had to restore rel.py mid-verify); Oink must be rebuilt in a fresh container.
+
+## Resume point (HISTORY; successor 47 work log, Opus 5.5; started 2026-11-01 21:06Z by date -u)
 ### Handover check (STEP 0, sent to the Lead 21:06Z; docs/agents/ is Lead-only, so the answers live here)
 1. claude/l-new: local clone STALE at 8591166d (status said «up to date»); ls-remote origin 709798f3; fetched, ff-only, HEAD = 709798f3.
    Vs trunk 8884f8de: 15 ahead / 19 behind, merge-base 65568e9c (trunk not merged; lane files only).
@@ -20,10 +101,45 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - DATA (813 distinct pairs + 11 L-RED/L-NEW pins + 2 new pins): every check 0 violations; SATGAIN 0 on all corpus FL runs; c-world FL
   moves 0 on corpus, 2 on cwmov2_n57 (so no C-OFF conjecture). Pins ret2_n37, cwmov2_n57: Oink zlk/tl verified, n5b identical.
 - READING: sigma-bar enters only via gating changes; the open object is GCH (circular); recipe for L-RED §6 (carry as gating event, nest).
+### Box 137 pushes: 2e1322eb (VERIFY PASS), follow-up a5c5b594 (VERIFY PASS, climb 4 final log). Lead 22:06Z recorded box 137; REFEREE
+  e002db99 and REFEREE-2 dc7db0e7 both MATCH L-2 -> P-N5-ANCHOR goes to landing as R103 (optional REFEREE note ANC-P4: «x» unbound in
+  «x's W'-cycle node»; act only if CHECKER makes it REQUIRED).
+### Box 138 N5-GATE (Lead GO 22:06Z; docs/new/N5-GATE-box138.md; experiments/new/box138/)
+- PROVED (lane): GATE-LEX ((|SAT|, CYC) monotone, poly range, strict at cycle-node changes); Theorem CASC-M''' (S-stretches cut only at
+  cycle-node changes and CN moves; D''' = D' minus self-edges + Odd edges; Odd adds no delay; under (NT) unique Odd minimum, (NC) no
+  corner) and Corollary FL run <= n_E (1 + n(n-1) + CNMOV) for D'''-acyclic S-stretches (SBCH dropped).
+- odxi_n37's 5 gate changes: one D''/D'''-acyclic stretch, Even-height 9; paid by the cascade, no potential.
+- READING: c-world = one-player static-weight total-cost SI under [RULE]; Fearnley 1705.02313 Lemma 3 covers greedy all-switch only;
+  hard cases (CDAG_n, Friedmann 1106.0778) use other rules -> no reduction.
+- DATA: corpus 10/10 S-stretches D'''-acyclic, 0 viol, 0 ties; sbmany_n57 pin (125 sbar changes, FL 4; Oink/n5b verified).
+- OPEN: D'''' = D''' with box 136 z-world/DOM cuts (observed D'''-cycles are Even-Odd 2-cycles x <-> o: cwmov2_n57 6 <-> 11); CNMOV.
+### Box 138 push a0ce806b (VERIFY PASS). Lead 23:32Z recorded box 138; L-RED R187 (417d7fa6): Theorem REALIZE (IDEAL-ACYC genome ->
+  one real FL run), so IDEAL-ACYC-POLY is necessary for N5-POLY; real pins stab_d4_n126 (L_FL 32), stab_g24_n246 (64); D'' cyclic.
+### Box 139 N5-IDEAL (Lead GO 23:32Z; docs/new/N5-IDEAL-box139.md; experiments/new/box139/)
+- D''' cyclic on stab_d4_n126 (0 -> 2 -> 9 -> 0): CASC-M''' does not apply.
+- PROVED (lane): VAL-MONO, KEY-MONO, Proposition PATHS (moves(x) <= min(VX, VW) - 1; VX = Xi-path values, VW = W-path keys), Corollary
+  LOG-DEPTH (IDEAL-ACYC-POLY when every mover has log Xi-depth or log W-level); real-FL W-side corollary (moves <= #tight W-paths - 1).
+- DATA: 4 champions, 0 violations, bound tight only at level 0. OPEN: both depths super-logarithmic at one mover (double counter);
+  recipe = LADDERBF 2-wide ladder with Xi-targets pointing up the ladder.
+### Box 139 push 3b2078c9 (VERIFY PASS). Lead 00:02Z recorded it; P-N5-ANCHOR passed CHECKER C114 (da67696a), lands as R103.
+### Box 140 N5-JOINT (Lead GO 00:02Z; docs/new/N5-JOINT-box140.md; experiments/new/box140/)
+- PROVED (lane): ALTERNATION (deg-2 mover: both orders reverse between consecutive moves), TOWARD-L and L-ACCOUNT (2-wide ladder),
+  TOP-STATIC (UP-LADDER), TWO-SIDED (pointwise bottom-up x top-down counting is exponential at the middle: a joint potential needs time
+  causality).
+- DATA: UP-LADDER climbs FL 5/7/11/13 at d 3-6 (LADDERBF 22/52/114/240); moves peak mid-ladder; CONJECTURE UP-LIN (weak).
+- OPEN: IDEAL-ACYC-POLY; §3 target statement (unproved, untested). Recipe: middle-out counter for L-RED R188.
+### Box 140 push 80cd02cc (VERIFY PASS); Lead 01:24Z recorded it; R103 (P-N5-ANCHOR) LANDED 00:24Z.
+### Box 141 N5-UPLIN (Lead GO 01:24Z; docs/new/N5-UPLIN-box141.md; experiments/new/box141/)
+- UP-LIN not proved: per-arrival charging = box 140 per-level counts (insufficient by TWO-SIDED). DESCENT = R178 XI-NEW on UP-LADDER.
+- DATA: UP-LADDER climbs FL 5/7/11/13/16/19 at d 3-8 (~2.4 d), max 5 moves per mover. CONJECTURE UP-LIN (d <= 8).
+- OPEN: cross-level lemma «one Xi-wave carries O(1) W-arrivals per level». Next: wait for L-RED R188 middle-out counter, test Psi.
+### Box 141 push 5dbff709 (VERIFY PASS); R188 (L-RED 44): no counter; exact z3 d 2 max 4, d 3 max 8.
+### Box 142 N5-LAG (Lead GO 02:35Z; docs/new/N5-LAG-box142.md; experiments/new/box142/): see FINAL summary.
 ### Things only I know (successor 47)
 - rel.py's analyse() is importable (climb137.py uses it); rel.LAST holds S, T, E, runs after a call (anat.py). A game without FL runs
   used to crash analyse (retc unbound) - fixed; the first corpus rerun after the refactor showed 801 errors, rerun clean.
 - DEFVIOL's first version had the length sign reversed (false alarm on the cwmov2 mutant); fixed before any claim.
+- dmerge3.py SHOWCYC=1 prints a D''' cycle. pkill -f with a pattern that occurs in your own command line kills your own shell: kill by pid.
 - Climbs: 4 x 40 min, ~10,000-40,000 mutations each; RETMAX 2, MOVMAX 7 best; climbs 1-3 stopped on the old DEFVIOL false alarm (mutants re-checked clean). L-RED pins copied read-only into box137/inst (18/18 sha1 OK).
 
 ## Resume point (HISTORY; successor 46, Opus 5.5, session_01V5yGRaCabVm2TBMRgehQJx; FINAL, PARKED 2026-11-01 ~19:2xZ by date -u, ~460k context)
