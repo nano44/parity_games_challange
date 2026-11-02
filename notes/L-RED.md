@@ -70,6 +70,9 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   FIX=<dump> bmc4 4 13 (exact, structure fixed). lag_exact_d4_L13 cap 18:35Z.
 - R194 docs/red/R194-lapgch.md ((a′) lap recipe): realised IDEAL pins have GCH = FL − 1 (every transition its own epoch, XIB), so the
   recipe's «carry as a gating event» is automatic there and (a′) reduces to U (box 144). r194/gch.py; box 137 tools run in-tree.
+  Pushed e8af7ca1 (VERIFY PASS 18:35Z). d 4 L 13 exact+LAG: timeout 9000 s.
+- R195 (Lead GO 18:37Z: NEST(d) at degree 4) IN FLIGHT: NEST-DEAD-3 step (2) fails at D 4 only via a = u_(d-2) on b's chain
+  (pi(b) < pi(a) < pi(q) < pi(p)); c-branch still dead. Climbs: SCORE=U D 4 d 3-8 (r195/out/u4_*), nestclimb PI=nest4 (that order).
 - Things only I know:
   - TRAP hit again: «ps aux | grep "[n]estbmc" | xargs kill» killed my own shell (exit 144): the command line contains the pattern.
     Kill by PIDs read in a SEPARATE call.
