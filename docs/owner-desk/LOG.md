@@ -525,3 +525,15 @@ What I will do by default (D18: proceeding without asking), unless you redirect:
 - Keep the pace low until the weekly usage reset on 11-04 21:00Z, then reassess.
 
 If you prefer to stop, cut spend further, or redirect the fleet (for example to writing up what is known), that is your call.»
+
+## 2026-11-02T20:29Z Lead daily owner line (2026-11-02 20:3xZ, verbatim)
+«Daily line 2026-11-02:
+- Landed (refereed + checked): R103 (P-N5-ANCHOR) and R104 (P-N5-REALIZE). R104 ties N5 to a simplified model: if N5 is polynomial, the acyclic «IDEAL» model must be too, and a super-polynomial example there is a real N5 counterexample. Both are closed, with CI green. R104 first failed CHECKER on a wrongly cited premise; that was fixed, and premises are now cited from RESULTS only.
+- Lane-level, not refereed, since this morning:
+  - the remaining open question is pinned to one count, how often carries force late responses;
+  - L-RED proved that the natural «doubling» schedule a counterexample would need is impossible at EVERY degree (NEST-DEAD-ALL, confirmed by exact solver runs at small size);
+  - every search still shows linear growth;
+  - L-RED is now trying to extend that argument from one schedule to all schedules. That would be a candidate proof for the simplest case of the model.
+- G-N5-TIME stays OPEN; no polynomial bound on general games is proved.
+- Running: 1 research lane (L-RED), with referees and CHECKER idle; pacing low under the seven-day usage warning (reset 11-04 21:00Z); no overage.
+- Needs: none. The progress reading from 15:56Z stands; your call if you want a different course.»
