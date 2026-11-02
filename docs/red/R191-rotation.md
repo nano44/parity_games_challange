@@ -131,7 +131,7 @@ availability read at state t − 1, keys at state t).
 | REL, π free | SAT (fast) | timeout 3600 s | (stopped) |
 | REL, PIFIX | — | timeout 3600 s | timeout 3600 s |
 | exact, PIFIX | — | timeout 5400 s | — |
-| exact, PIFIX + LEM (lemma clauses) | SAT, 223 s | running at the commit | — |
+| exact, PIFIX + LEM (lemma clauses) | SAT, 223 s | timeout 5000 s | — |
 - So the prefix-7 question is settled by the proof, not by z3 (UNSAT expected by NEST-DEAD-3; any SAT answer would be a bug in one of
   them and is to be reported).
 - Consistent with the climbs: they reach p's 4th move at step 7 but never b's (seed 2: step 7 moves {u_0, p}); 9 seeds stop at ≤ 6.

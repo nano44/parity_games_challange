@@ -63,7 +63,8 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   RELRANK (no padding) also linear; DECREMENT asserted 0 viol; champion pin rk_D3_k3_d8_n214. No family.
 - R193 (queue item: exact d 4) IN FLIGHT: r193/bmc4.py = bmc3 + lemma clauses (reach, RE-REVERSAL, XI-NEW): d 3 L 8 SAT 3 min,
   L 9 UNSAT 11 s (R188 relaxation: ~40 min). d 4 L 12 / L 13 running (7000 s cap). Same clauses in r191/nestbmc.py LEM=1:
-  NEST(3) D 3 prefix 6 SAT 223 s, prefix 7 running.
+  NEST(3) D 3 prefix 6 SAT 223 s, prefix 7 timeout 5000 s. d 4 L 13 exact timeout 7000 s; LAG=1 / REL runs and L 14 running
+  (logs r193/out, container-local); docs/red/R193-exact4.md draft committed with «running» rows.
 - Things only I know:
   - TRAP hit again: «ps aux | grep "[n]estbmc" | xargs kill» killed my own shell (exit 144): the command line contains the pattern.
     Kill by PIDs read in a SEPARATE call.
