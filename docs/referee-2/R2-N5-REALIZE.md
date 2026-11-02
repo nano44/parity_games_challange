@@ -246,3 +246,16 @@ L46 and its amendment)». ✓
   REFEREE's REAL-L1: the reversed reading makes the realisation claim false.
 - **Joint line list:** REFEREE REAL-L1 (e-index order) + my REAL-L1 (1E-N3 gloss) + my REAL-L2 (parity direction); optional: REFEREE
   REAL-P1 to P3 and «top»; my P-1 and P-2.
+
+## Addendum 2: correction of my [VJ-LOC] row (after CHECKER C115 E-1, claude/checker fbca67cf)
+- **What I got wrong.** My §1 row «premise [VJ-LOC]: only «1 ⇒ 2» is used (SBAR (ii)) … ✓» signed a premise route the fleet's record
+  does not establish:
+  - RESULTS R15 (iii): VJ00 Lemma 5.8 «1 ⇒ 2» «uses VJ00's unproved Lemma 5.9 and Prop. 5.10; not re-derived by either referee».
+  - R36's Reading: Lemma P1 «does NOT discharge the two-player VJ00 Lemma 5.8».
+  - I took the route from L-LIT T21 (c) («Unaffected»), a lit note, which is never a source by itself.
+- **The correct carrier** is RESULTS R36 (c) Lemma P1, applied on G^d to Odd's one-player game Γ_σ. I confirm in R2-N5-REALIZE-L2.md §2
+  that it covers SBAR (ii) in class, orientation and hypothesis.
+- **The «P1» in my G-REAL-1 (a)** is 1E-N3's form (S1's σ̄ is optimal), as C115 says. It covers «φ = Ξσ», SBAR (iii), TAU and K (c),
+  not «no improving edge ⇒ optimal».
+- **Effect.** SBAR's mathematics and my signature stand, on [SPEC], R36 (c) and 1E-N3. No other item used [VJ-LOC]. Line L-2 carries the
+  re-route (fixes entry 3).
