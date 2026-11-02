@@ -18,6 +18,23 @@ def stats(G, w):
     for t in range(1, len(S)):
         mv = [v for v in range(N) if S[t][v] != S[t - 1][v]]; l = min(lev[v] for v in mv)
         if l >= 1 and R[t][l - 1] == R[t - 1][l - 1]: dels += 1; per[l] += 1
+    if os.environ.get("SCORE") == "U":
+        # L-NEW box 144 CHAIN-BACK: step t >= 2 is CHAINED if a least mover of step t-1 lies on the X-chain (under s_(t-1)) of the new
+        # option of a least mover of step t; U = unchained steps t >= 2 (per level of the least mover)
+        def chain(s, v, k):
+            out = set(); x, kk = v, k
+            while True:
+                xt = O[x][kk][1]
+                if xt < 0: return out
+                out.add(xt); x, kk = xt, s[xt]
+        least = []
+        for t in range(1, len(S)):
+            mv = [v for v in range(N) if S[t][v] != S[t - 1][v]]; l = min(lev[v] for v in mv); least.append([v for v in mv if lev[v] == l])
+        U = 0; perU = [0] * d
+        for t in range(2, len(S)):
+            prev = set(least[t - 2]); ch = any(prev & chain(S[t - 1], h, S[t][h]) for h in least[t - 1])
+            if not ch: U += 1; perU[lev[least[t - 1][0]]] += 1
+        return len(S) - 1, U, perU
     return len(S) - 1, dels, per
 def rand(d, w, D, rng):
     N = w * d; lev = [v // w for v in range(N)]; pi = list(range(N)); rng.shuffle(pi); M = N * D
@@ -45,4 +62,4 @@ if __name__ == "__main__":
         H2 = mutate(G, rng); L, ds, per = stats(H2, w)
         if (ds, L) >= sc: G, sc = H2, (ds, L)
         if sc > best[0]: best = (sc, json.loads(json.dumps(G)), per); json.dump(G, open(out, "w"))
-    print(f"DELCLIMB d {d} w {w} D {D} seed {seed} DELSTEPS {best[0][0]} L {best[0][1]} per level {best[2]}")
+    print(f"DELCLIMB {os.environ.get('SCORE', 'DELSTEPS')} d {d} w {w} D {D} seed {seed} DELSTEPS {best[0][0]} L {best[0][1]} per level {best[2]}")
