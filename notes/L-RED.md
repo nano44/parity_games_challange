@@ -60,6 +60,11 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
     (also the «opt» stop). The fallback then changes K0 (lemck's ESC check is for j < L only).
   - Priority bound Ω ≤ 4M + 9 is tight (stab_d4 153 = 4·36 + 9).
   - Random ACYC genomes (downgen.randacyc) give L ≤ 2: weak tests. Use --perturb on champions for long runs.
+- STEP 1 pushed e609c5d2 (VERIFY PASS 03:09Z); Lead messaged 03:10Z with both sha1s.
+- STEP 2 R189 docs/red/R189-lag.md: lag gadgets lag1 / lag1u (by hand), lag2c_d4 (climb), nest_d3_L4 (z3); Lemma LAG-RELEASE,
+  Corollaries LAG / RE-REVERSAL, Proposition NEST-DEAD (d ≥ 3) PROVED (lane); z3 NEST(3) prefix 4 SAT, 5 UNSAT; lag-event climbs flat.
+  - Things only I know: schedbmc.py prefix L 5 at d 3 is 11 s, L 4 SAT 90 s; d 4 L 5 > 13 min. COUNT=2:8 d 3 L 8 (top moves every
+    step) was still running at the R189 commit (r189/lag/out/cnt_d3_L8_l2_8.log). lagclimb outputs in r189/lag/out are NOT committed (container-local); lag2c_d4.json is the d 4 seed-2 best.
 
 ## Successor 44 PARK (2026-11-02 ~02:1xZ, date -u; context ~430k)
 - DONE (claude/l-red, push.sh VERIFY PASS each): 436fe6e9 (R187), b21230d2 + 417d7fa6 (R187 addendum, item 2, check fix), 62767752 +
