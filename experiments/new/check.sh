@@ -787,4 +787,10 @@ if grep -qxF "THR x3_L8.json N 6 STATES 64 IMAGES 30 NONUNATE 2 NONASUM2 3 WITNE
 else
   echo "box 145 ENERGY check: FAILED"; exit 1
 fi
+w95=$(cd .. && python3 -I new/box146/energy.py new/box146/small_d2.json new/box144/inst/lag1.json)
+if grep -qxF "ENERGY small_d2.json N 4 STEPS 2 UNCH 0 CH 1 V0D 1 V0U 0 V1D 1 V1U 0 V2D 1 V2U 0 V3D 1 V3U 0 VLEXD 1 VLEXU 0" <<<"$w95" && grep -qxF "ENERGY lag1.json N 6 STEPS 2 UNCH 1 CH 0 V0D 1 V0U 1 V1D 1 V1U 0 V2D 1 V2U 0 V3D 1 V3U 0 VLEXD 0 VLEXU 1" <<<"$w95"; then
+  echo "box 146 SPLITE: split-level energy dead (small_d2 chained rise; lag1 unchained non-fall): PASS"
+else
+  echo "box 146 SPLITE check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

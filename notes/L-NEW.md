@@ -1,7 +1,25 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 48, Opus 5.5; started 2026-11-02 03:03Z by date -u; WORKING)
+## Resume point (successor 48, Opus 5.5, session_01V5yGRYskE4dhDBS3jy5SQh; FINAL, PARKED 2026-11-02 ~06:5xZ by date -u)
+### FINAL summary (successor 48): boxes 143-146, every push via scripts/push.sh (VERIFY PASS), each reported to the Lead
+- 143 DELAY (33f66fca): DELAY-LIN not proved; C-ELEM (mover = C-element: A same step, B one step late), STEP-DELAY (steps <= 1 + 2d
+  + DELSTEPS), ABSORB PROVED (lane); literal face re-rise charging DEAD (x3_L8); Sum DELAY ~5 per level to d 12.
+- 144 CHAIN (d725de98): pre-merge cause premise DEAD (x3_L8 step 6, re-route off merge vertex); CHAIN-BACK PROVED (lane, ANY
+  IDEAL-ACYC genome, via R178 XI-NEW): steps <= n_E (1 + U), U = steps not woken by the previous least mover; U climbs ~2d.
+- 145 ENERGY (632154d0, D18 cross-field): direct threshold cast DEAD (one-step map non-unate, x3_L8); VAL-ENERGY (= PATHS), TRI,
+  HALVES PROVED (lane); READING: symmetric hidden-unit cast [SOA99 Thm 1] carries 2^rank weights -> exponential energy [GM89 Thm 1];
+  obstruction = two OPPOSITE triangular orders coupled.
+- 146 SPLITE (this push): split-level energy (V0-V3, VLEX, both orientations) DEAD: small_d2 (d 2, chained rise), lag1 (realised,
+  unchained non-fall); SPLIT-CYCLE PROVED (lane).
+### NEXT for successor 49 (Lead decides): a COARSE Xi-statistic with polynomially many levels that falls at every unchained step
+  (U-LIN => O(d^2) runs on the 2-wide ladder via CHAIN-BACK); score any counter by U (L-RED R190 3-wide clock). W-side-only energies
+  are dead (SPLIT-CYCLE). Labels open: U-LIN, DELSTEP-LIN (<=> linear 2-wide runs), DELAY-LIN, IDEAL-ACYC-POLY, G-N5-TIME.
+### Things only I know (successor 48): see the box 143-145 sections below. Tools: box143/cause.py (C-ELEM, STEP-DELAY, causes),
+  box144/chain.py (CHAIN-BACK, ALL form), box145/thr.py (threshold cast), box146/energy.py (energy tester; reuse it for any new
+  candidate: add a variant to E()). Pins copied read-only: box143/inst (R188), box144/inst (R189), all Oink/n5b verified here.
+
+## Resume point (HISTORY; successor 48 work log; started 2026-11-02 03:03Z by date -u)
 ### Handover check (STEP 0, sent to the Lead 03:03Z)
 1. claude/l-new: local clone STALE at 8591166d again; ls-remote 40708ae9; fetched l-new / trunk / l-red only; ff-only -> HEAD 40708ae9;
    vs trunk e642a0e1: 5 ahead / 59 behind, merge-base a5c5b594 (trunk not merged; lane files only).
@@ -40,6 +58,8 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   - [OBP13] Oliveira, Barbosa, Protti, arXiv:1311.6126: Lemma 2 (energy monotone), Thm 3 (period <= 2), Thm 4 (transient <=
     E(t_max) + n - 1). Goles-Olivos 1981 (Inform. Control 51, 98-104) / 1985 (DAM) NOT opened (cited through OBP13 refs [5], [6]).
   - C-element / speed-independent literature (Muller-Bartky, Brzozowski-Zhang): NOT opened; no claim made.
+### Box 145 push 632154d0 (VERIFY PASS); Lead 06:27Z recorded it.
+### Box 146 N5-SPLITE: see FINAL summary (docs/new/N5-SPLITE-box146.md).
 ### Things only I know (successor 48): cause.py/perx.py exec paths.py's run(); climbs: dclimb 80k iters at d 12 ~40 min on 1 core.
   Splitting a tool's source on 'if __name__' breaks when that string occurs inside the tool (chain.py): split on '\nif __name__'.
   pkill -f <pattern> kills my own shell when the pattern is in the command line (bit me again): kill by pid.
