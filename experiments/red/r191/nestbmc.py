@@ -35,6 +35,10 @@ else:
 for f in faces:
     S.add(gate[f] >= 0, gate[f] < M, xt[f] >= -1, xt[f] < N, xt[f] != f[0])
     for u in range(N): S.add(z3.Implies(xt[f] == u, pos[u] > pos[f[0]]))
+if os.environ.get("PIFIX") == "4":
+    # R195 Lemma NEST4-SHAPE (any degree): every v_j (j <= d-2) < q; b < a < q < p (b = v_(d-2), a = u_(d-2), q = v_(d-1), p = u_(d-1))
+    S.add(*[pos[w * l + 1] < pos[w * (d - 1) + 1] for l in range(d - 1)])
+    S.add(pos[w * (d - 2) + 1] < pos[w * (d - 2)], pos[w * (d - 2)] < pos[w * (d - 1) + 1], pos[w * (d - 1) + 1] < pos[w * (d - 1)])
 if os.environ.get("PIFIX") == "1":
     S.add(*[pos[w * l + 1] < pos[w * (d - 1) + 1] for l in range(d - 1)]); S.add(pos[w * (d - 1) + 1] < pos[w * (d - 1)])
     S.add(pos[w * (d - 1)] < pos[w * (d - 2)])

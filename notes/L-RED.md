@@ -56,11 +56,14 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
     structure does not lift (FIX UNSAT 10 s); bound 12 ≤ max(d 4).
   - R195: NEST at D 4: proof breaks only in NEST4-SHAPE (a = u_(d−2) on b's chain before q); no escape found (prefix 5 forced, 6
     unforced); U linear at D 4 (27 at d 8).
-- IN FLIGHT (container-local, may die with the container): r193/out/relfix_nolag_d4_L13 (REL L 13 without LAG, model dump; cap
+- UN-PARKED 19:47Z (Lead) for queue item (1): R195 CLOSED: Proposition NEST-DEAD-ALL (PROVED, lane; every degree): in NEST4-SHAPE q is
+  woken by p alone at steps 3 and 5, and MERGE-1* (descendant form) forces two moves INTO the p-reaching set in a row. z3: shape + 6
+  steps UNSAT (D 3 2 s, D 4 23 s), shape + 7 at D 4 UNSAT (21 s / REL 11 s). Second d 4 L 13 relaxation model does not lift (12 s).
+- (superseded) IN FLIGHT: r193/out/relfix_nolag_d4_L13 (REL L 13 without LAG, model dump; cap
   ~20:35Z). If it is SAT, run «FIX=r193/out/relfix_nolag_d4_L13.json python3 r193/bmc4.py 4 13 out.json» (seconds) and append the
   result to R193 §1.
-- RESUME POINT / QUEUE: (1) R195 OPEN: close or escape NEST4-SHAPE (proof from a's moves 1, 5 + b's move 7, or nestbmc LEM=1 at D 4
-  with that order); (2) d 4 exact: more lifts (several REL models: add a blocking clause per failed structure and re-solve);
+- RESUME POINT / QUEUE: (1) DONE (NEST-DEAD-ALL); next attack: doubling schedules other than NEST (longer lags, clocks) or a
+  potential; (2) d 4 exact: more lifts (several REL models: add a blocking clause per failed structure and re-solve);
   (3) CNONLY in CROOT games (old queue).
 - Things only I know:
   - bmc4's lemma clauses are what make d 3 fast; the same clauses do NOT rescue NEST(3) prefix 7 at D 3 (5000 s timeout).

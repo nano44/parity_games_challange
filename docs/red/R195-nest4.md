@@ -1,31 +1,57 @@
-# R195 NEST(d) at degree 4, the open point of R191: NEST-DEAD-3's proof breaks at exactly one place (a = u_(d−2) may lie on b's Ξ-chain before q), no contradiction found in that shape, no escape found either (climbs: NEST(3) prefix 6 unforced, 5 in the forced escape order); U stays LINEAR at degree 4 (best 9 / 10 / 19 / 18 / 27 at d 3 / 4 / 5 / 6 / 8) (L-RED successor 46)
-Started 2026-11-02 18:46Z (Lead GO 18:37Z, date -u). Brief: «R195 = NEST(d) at degree 4 … Either extend NEST-DEAD to degree 4 (a proof
-attempt in the NEST-DEAD-3 style, with MERGE-1), or build the escape … Score U against d at degree 4 … If degree 4 also stays linear,
-state precisely which lemma caps it.» Labels: PROVED (lane), DATA, READING, OPEN. Model and notation: R191 (width-2 ladders, degree D,
-option k → W-target 2(l − 1) + (k mod 2); NEST(d) of R189 §2; b = v_(d−2), q = v_(d−1), p = u_(d−1), a = u_(d−2), c = v_(d−3)).
-Not a TARGET.md claim. G-N5-TIME OPEN. No kill, no family.
+# R195 NEST(d) at degree 4, the open point of R191: CLOSED, and at every degree. Proposition NEST-DEAD-ALL (PROVED, lane): for every d ≥ 3 and EVERY degree D, no width-2 IDEAL-ACYC ladder realises NEST(d)'s first 7 steps. The case NEST-DEAD-3 left open (a = u_(d−2) on b's Ξ-chain before q) dies at step 6 by the descendant form of MERGE-1 applied to q; z3: that case + 6 steps UNSAT at d 3 (D 3: 2 s, D 4: 23 s); U at degree 4 stays LINEAR (L-RED successor 46)
+Started 2026-11-02 18:46Z (Lead GO 18:37Z; un-parked 19:47Z for queue item (1), date -u). Brief: «R195 = NEST(d) at degree 4 … Either
+extend NEST-DEAD to degree 4 (a proof attempt in the NEST-DEAD-3 style, with MERGE-1), or build the escape … Score U against d at
+degree 4 … If degree 4 also stays linear, state precisely which lemma caps it.» Labels: PROVED (lane), EXACT (z3), DATA, READING, OPEN.
+Model and notation: R191 (width-2 ladders, degree D, option k → W-target 2(l − 1) + (k mod 2); NEST(d) of R189 §2; b = v_(d−2),
+q = v_(d−1), p = u_(d−1), a = u_(d−2), c = v_(d−3); desc(x) = movers Ξ-reachable from x). Not a TARGET.md claim. G-N5-TIME OPEN. No
+kill, no family.
 
 ## 0. Answer
-- Not decided. NEST-DEAD-3 does not extend as it stands, and no degree-4 realisation of NEST(d)'s first 7 steps was found.
-- Where the proof breaks (PROVED, lane: everything below except the last bullet holds at every degree):
-  - NEST-PI (i), (ii) and NEST-DEAD-3 steps (1), (3) are degree-free. So for a run whose steps 1-7 are NEST(d)'s:
-    - the chain of b's middle option (b, n) contains q at state 1 and not at state 5;
-    - c = v_(d−3) is NOT on its state-1 prefix before q (NEST-DEAD-3 (2)-(3) apply verbatim to c).
-  - Hence (Lemma NEST4-SHAPE, PROVED, lane) a = u_(d−2) lies on that prefix: π(b) < π(a) < π(q) < π(p). The chain of a's old option
-    contains q at states 1-4, the chain of a's new option (step 5) does not at state 5, and a's move at 5 is not woken by q alone (c
-    moves at 5, so a's key order may change). MERGE-1 gives nothing there.
-  - At D ≤ 3 this shape is excluded by NEST-PI (iii) (ROT-CAP: p's moves at 3, 5, 7 need a desc(p) move at 5 or 6, i.e. a after p).
-    At D = 4, p's moves at 3, 5, 7 can be key-alone with p visiting all four options, and NEST-PI (iii) is not forced.
-- DATA (search):
-  - r191/nestclimb.py d 3, D 4: unforced 6 / 6 / 6 (3 seeds × 300,000, R191 §2); with the NEST4-SHAPE order forced (PI=nest4:
-    v_0 … v_(d−2) < a < q < p < other u; 2 seeds × 400,000): 5 / 5. The forced order is HARDER for the climber, not easier.
-  - U climbs at degree 4 (r190/delclimb.py SCORE=U, width 2, 80,000 mutations, seeds 1 / 2): see §1. Linear, ≈ 3.5 per level.
-- Which lemma caps the degree-4 freedom (READING, the precise statement): R191 ROT-CAP. Per Ξ-help a degree-D mover makes ≤ D − 1
-  moves (≤ D − 2 of them key-alone), so ROT-BUDGET moves(x) ≤ (D − 1)(1 + H_x) at every degree. A fixed degree multiplies by a
-  constant and cannot compound. Compounding needs H_x itself to double along the ladder (Ξ-side helps), which is what NEST-DEAD /
-  NEST-DEAD-3 kill at degree 2 / 3 for the NEST schedule. At degree 4 that last step is OPEN; the data show no escape.
+- NEST(d) is dead at every degree: Proposition NEST-DEAD-ALL (§1, PROVED, lane). With R189 NEST-DEAD (step 5 at D = 2) and R191
+  NEST-DEAD-3 (step 7 at D ≤ 3), the doubling schedule of R189 §2 is now excluded for all degrees, so the degree-4 key-alone rotation
+  (R191 ROT-CAP: k ≤ D − 2) does not rescue it. The obstruction is on the Ξ side, at q = v_(d−1): q is woken alone by p at steps 3 and
+  5, and each such wake must move q INTO the set of options whose chain reaches p; q cannot do that twice in a row.
+- New lemma: MERGE-1* (descendant form of R191 MERGE-1): if exactly one mover y of desc(x) moves at step t, a comparison of two faces
+  of x can change only if exactly one of the two chains contains y, and that face gains. Checked on 53 genomes (1830 order changes):
+  0 violations (r195/mergeck2.py).
+- EXACT (z3, r191/nestbmc.py LEM=1 PIFIX=4 = the lemma clauses of R193 + the NEST4-SHAPE order): NEST(3) prefix 6 with the shape
+  imposed is UNSAT at D 3 (2 s) and D 4 (23 s), as step (B) of the proof predicts; prefix 7 with the shape at D 4: UNSAT
+  (exact 21 s, relaxation 11 s). Every climbed 6-step NEST(3) genome (4 at D 3, 3 at
+  D 4, the pin nest3_D3_p6) has a π-after q, i.e. lies outside the shape (DATA); the climb with the shape forced stops at 5 (DATA).
+- U at degree 4 (§2, DATA): best 9 / 10 / 19 / 18 / 27 at d 3 / 4 / 5 / 6 / 8, linear (≈ 3.5 per level).
+- Which lemma caps the degree freedom (READING): R191 ROT-CAP / ROT-BUDGET, moves(x) ≤ (D − 1)(1 + H_x): a fixed degree is a constant
+  factor. Compounding needs the Ξ-helps H_x to double along the ladder; for the NEST schedule MERGE-1 / MERGE-1* show the helps cannot
+  be arranged (NEST-DEAD-ALL). Other doubling schedules are not covered.
+- d 4 exact (R193 fold-in): the second relaxation model (L 13, no LAG, 5391 s) does not lift either (FIX exact UNSAT, 12 s). Bound
+  still 12 ≤ max(d 4).
 
-## 1. DATA: U at degree 4 (width 2)
+## 1. Proofs (PROVED, lane)
+- Lemma MERGE-1*. Let exactly one mover y ∈ desc(x) move at step t (other movers may move). If the order of face(x, k), face(x, k′)
+  differs between V_(t−1) and V_t, then exactly one of their chains under s_(t−1) contains y, and that face is the one that gains.
+  - Proof. R191 MERGE-1's proof verbatim: the chains of x's faces contain only desc(x) movers, so under s_(t−1) and s_t they agree up to
+    y; a chain without y keeps its value; two chains with y keep their difference; one chain with y changes by cur_t(y) − cur_(t−1)(y)
+    ▷ 0 (Ξ monotone, R178 (ii)). ∎
+- Lemma NEST4-SHAPE (PROVED, lane; any degree). In a run whose steps 1-7 are NEST(d)'s (d ≥ 3), the chain of b's middle option (b, n)
+  under s_1 contains a = u_(d−2) before q. In particular π(b) < π(a) < π(q).
+  - Proof. R191 NEST-DEAD-3 step (1) (degree-free): (b, n)'s chain contains q under s_1 and not under s_5, so some mover π-between b
+    and q on its s_1-prefix moved during steps 2-5; the candidates are c and a (q, b are the ends, p is π-after q by NEST-PI (ii)).
+    If c were on it, NEST-DEAD-3 steps (2)-(3) (degree-free: c's move at 5 is woken by q alone at 4, MERGE-1) give a contradiction.
+    So the re-routing mover is a. ∎
+- Proposition NEST-DEAD-ALL. For every d ≥ 3 and every degree D, no width-2 IDEAL-ACYC ladder has a run whose steps 1-7 move exactly
+  NEST(d)'s sets {u_0 … u_(d−1)}, {q}, {b, p}, {q}, {c, a, p}, {q}, {b, p}.
+  - Proof. (A) By NEST4-SHAPE, π(a) < π(q); by NEST-PI (i), π(c) < π(q) and π(b) < π(q). So the only mover of desc(q) that moves at
+    step 3 (movers b, p) and at step 5 (movers c, a, p) is p.
+    (B) Let P := the options of q whose chain contains p. The prefix of such a chain (movers π-between q and p) contains no mover that
+    moves at steps 2-5 (those are q, b, p, c, a: b, c, a are π-before q, p is the end), so P is the same under s_2, s_3, s_4, s_5.
+    q moves at 4 (w_2 → w_4) and at 6 (w_4 → w_6) and not at 3, 5; only q moves at 4 and at 6, so q's key order is the same at s_3 and
+    s_4, and at s_5 and s_6. As in Corollary LAG: w_4 ∈ A_3(q) \ A_2(q) and w_6 ∈ A_5(q) \ A_4(q). By MERGE-1* (only p in desc(q)
+    moves at 3, resp. 5): w_4 ∈ P and w_2 ∉ P; and w_6 ∈ P and w_4 ∉ P. Contradiction (w_4 ∈ P and w_4 ∉ P). ∎
+  - Remarks. (i) Step 7 is used only to get the shape (A); with the shape, steps 1-6 already die (z3 above). (ii) Outside the shape
+    (a π-after q, as in every realised 6-step genome) step 5 wakes q twice (p and a), and MERGE-1* gives nothing; NEST-DEAD-3 kills that
+    case at step 7 when D ≤ 3, and NEST4-SHAPE (via c) at every degree. (iii) It kills one schedule, like R189 / R191; doubling
+    schedules with longer lags or other interleavings are not covered.
+
+## 2. DATA: U at degree 4 (width 2; r190/delclimb.py SCORE=U, 80,000 mutations, seeds 1 / 2)
 
 | d | U seed 1 / 2 | L seed 1 / 2 | best U |
 | --- | --- | --- | --- |
@@ -34,13 +60,14 @@ Not a TARGET.md claim. G-N5-TIME OPEN. No kill, no family.
 | 5 | 18 / 19 | 19 / 23 | 19 |
 | 6 | 18 / 18 | 22 / 20 | 18 |
 | 8 | 27 / 22 | 31 / 24 | 27 |
-- Against degree 3 (R191 §3: best 6 / 9 / 16 / 16 / 21 at d 3 / 4 / 5 / 6 / 8) and degree 2 (R190: 10 at d 6): larger constants, same
-  additive growth.
+- Against degree 3 (R191 §3: best 6 / 9 / 16 / 16 / 21) and degree 2 (R190: 10 at d 6): larger constants, same additive growth.
+  Champion genome r195/u4_d8.json (d 8, U 27, L 31).
+- NEST(3) prefix climbs at D 4 (r191/nestclimb.py): unforced 6 / 6 / 6 (R191 §2); with the shape forced (PI=nest4) 5 / 5.
 
-## 2. OPEN / next
-- Close or escape the NEST4-SHAPE case. A proof would need a contradiction from a's two moves (1, 5) with a's old chain through q and
-  its new chain avoiding q, combined with b's second move at 7 (whose new option's chain contains q at state 5, MERGE-1 at step 6).
-- An exact check: r191/nestbmc.py LEM=1 at D 4 with the NEST4-SHAPE order (not run; at D 3 the prefix-7 runs timed out).
+## 3. OPEN / next
+- Doubling schedules other than NEST (e.g. lags of length > 1 between u_l and v_l, or a third mover per level as a clock, R190) at
+  degree ≥ 3; a general potential instead of schedule-by-schedule kills; U-LIN (box 144) itself.
 
-## 3. Files
-r191/nestclimb.py PI=nest4 (forced NEST4-SHAPE order). Outputs in r195/out (gitignored).
+## 4. Files
+r195/mergeck2.py (MERGE-1* checker), r195/u4_d8.json (degree-4 U champion), r191/nestclimb.py PI=nest4, r191/nestbmc.py PIFIX=4.
+Outputs in r195/out (gitignored). check.sh block «R195».

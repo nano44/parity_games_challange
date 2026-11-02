@@ -20,7 +20,8 @@ N5 FL run by RESULTS R104. Not a TARGET.md claim. G-N5-TIME OPEN.
   - relaxation (free distinct integer weights + clauses) L 13: SAT (5726 s; with LAG 4185 s; rerun with model dump 3384 s). A
     relaxation SAT gives no bound.
   - lift (R188's route: the relaxation's Ξ-targets, gates and start fixed in the exact model, ranks / parities free): UNSAT in 10 s.
-    So that 13-step relaxed structure is not a real run; this rules out one structure, not L 13. (The route works at d 3: relaxation
+    So that 13-step relaxed structure is not a real run; a second relaxation model (no LAG) does not lift either (UNSAT, 12 s).
+    This rules out two structures, not L 13. (The route works at d 3: relaxation
     model → fixed exact SAT, replay 8.)
   - Bound unchanged: 12 ≤ max(d 4) (R188 pin g4_L12); no upper bound.
 
@@ -38,6 +39,8 @@ N5 FL run by RESULTS R104. Not a TARGET.md claim. G-N5-TIME OPEN.
 | d 4, L 13 | bmc4 exact + LAG | UNDECIDED (cap) | 9000 s |
 | d 4, L 14 | bmc4 exact | UNDECIDED (cap) | 9000 s |
 | d 4, L 13 | exact, FIX = the REL + LAG structure | UNSAT | 10 s |
+| d 4, L 13 | bmc4 REL (no LAG), rerun with dump | SAT | 5391 s |
+| d 4, L 13 | exact, FIX = that second structure | UNSAT | 12 s |
 
 ## 2. The same clauses on R191's NEST question
 - r191/nestbmc.py LEM=1 (reach, ROT-CAP at degree D, XI-NEW) + PIFIX: NEST(3) at degree 3, prefix 6 SAT in 223 s (exact); prefix 7
