@@ -775,4 +775,10 @@ if grep -qxF "CAUSE x3_L8.json d 3 STEPS 8 STOP stuck SUMDELAY 5 CELEMVIOL 0 LEA
 else
   echo "box 143 DELAY check: FAILED"; exit 1
 fi
+w93=$(cd .. && python3 -I new/box144/merge.py new/box143/inst/x3_L8.json; python3 -I new/box144/chain.py new/box143/inst/x3_L8.json new/box143/out/dc_d12.json)
+if grep -qxF "MERGE x3_L8.json d 3 STEPS 8 DELSTEPS 4 NOPRE 1 MAXX 2 MAXXK 2 MAXXC 2 MAXC 2 MAXXCK 2 PAIRS 2 CAUSECLS {'CAR': 2, 'DEL': 1} CLEAST 1 SEGLEN 2 KBARHIT 1 SUFHIT 1" <<<"$w93" && grep -qxF "CHAIN x3_L8.json d 3 STEPS 8 DELSTEPS 4 CHAINED 2 UNCHAINED 2 NOCAUSE 0 PIVIOL 0 MAXCHAIN 3 UNCLS {'CAR': 2} UNLEV {1: 2} | ALL: UNCH 3 NOCAUSE 0 PIVIOL 0 MAXBLOCK 3 BOUND N(1+U) 24 OK True" <<<"$w93" && grep -qxF "CHAIN dc_d12.json d 12 STEPS 26 DELSTEPS 23 CHAINED 10 UNCHAINED 13 NOCAUSE 0 PIVIOL 0 MAXCHAIN 7 UNCLS {'DEL': 10, 'CAR': 3} UNLEV {0: 1, 1: 5, 3: 1, 4: 2, 7: 3, 8: 1} | ALL: UNCH 14 NOCAUSE 0 PIVIOL 0 MAXBLOCK 7 BOUND N(1+U) 360 OK True" <<<"$w93"; then
+  echo "box 144 MERGE-CHAIN: pre-merge cause premise dead on x3_L8 (NOPRE 1); CHAIN-BACK blocks <= n_E, steps <= n_E (1 + U) on x3_L8 and dc_d12: PASS"
+else
+  echo "box 144 MERGE-CHAIN check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

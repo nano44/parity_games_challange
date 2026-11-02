@@ -16,7 +16,18 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   max moves of ONE mover 3/5/7 at d 4/6/8 (mostly carry moves) -> no MOVE-CONST conjecture.
 - Pins x3_L8_n48, g4_L12_n62 copied read-only (l-red ce1d19e9): Oink zlk/tl verified, pinwin AGREE, n5b identical (box143/pincheck.txt).
 - NEXT: count crossings (B flips) at least movers via pre-merge segments (box 135 MERGE) per carry wave.
+### Box 143 push 33f66fca (VERIFY PASS); Lead 04:33Z recorded it; DELSTEPS = L-RED 45 R190 score.
+### Box 144 N5-CHAIN (Lead GO 04:33Z; docs/new/N5-CHAIN-box144.md; experiments/new/box144/)
+- DEAD: pre-merge cause premise (x3_L8 step 6: k-bar play re-routes off the merge vertex 1, cause on the common suffix); briefed
+  (pre-merge segment, carry wave) charge does not close (per-wave charging trivial; per pair <= 3).
+- PROVED (lane) CHAIN-BACK (any IDEAL-ACYC genome, via R178 XI-NEW): chained steps (h_(t-1) on h_t's new face play) have
+  pi(h_t) < pi(h_(t-1)); blocks <= n_E; steps <= n_E (1 + U), U = unchained steps; UP shape <= d (1 + U).
+- DATA: U climbs 6/9/13/17 at d 4/6/8/10 (~2d); CONJECTURE U-LIN (=> O(d^2)). R189 pins copied (l-red 80bfb1d0), Oink/n5b verified.
+- NEXT: potential over waves: charge an unchained wake (by a CAR/parallel mover of wave t-1) to a consumed resource (split level
+  closing, ABSORB) refilled O(1) times per lower carry.
 ### Things only I know (successor 48): cause.py/perx.py exec paths.py's run(); climbs: dclimb 80k iters at d 12 ~40 min on 1 core.
+  Splitting a tool's source on 'if __name__' breaks when that string occurs inside the tool (chain.py): split on '\nif __name__'.
+  pkill -f <pattern> kills my own shell when the pattern is in the command line (bit me again): kill by pid.
 
 ## Resume point (successor 47, Opus 5.5, session_01V5yGRZScf7eMZRT15JJRqy; HISTORY; FINAL, PARKED 2026-11-02 ~02:5xZ by date -u)
 ### FINAL summary (successor 47): boxes 137-142, every push via scripts/push.sh (VERIFY PASS), each reported to the Lead
