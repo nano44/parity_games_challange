@@ -805,4 +805,10 @@ if grep -q "^CHARGE uc_d6.json N 12 STEPS 13 U 9 .* k1: H 6 NOFLIP_ABOVE 4 NOFLI
 else
   echo "box 148 INTERVAL check: FAILED"; exit 1
 fi
+w98=$(cd .. && python3 -I new/box149/keyflip.py new/box143/inst/x3_L8.json new/box143/out/dc_d12.json)
+if grep -qxF "KEYFLIP x3_L8.json N 6 STEPS 8 MOVES 13 KFLIPS 10 VIOL 0" <<<"$w98" && grep -qxF "KEYFLIP dc_d12.json N 24 STEPS 26 MOVES 82 KFLIPS 86 VIOL 0" <<<"$w98"; then
+  echo "box 149 KEYFLIP: moves(x) <= 1 + key flips(x) on x3_L8 and dc_d12: PASS"
+else
+  echo "box 149 KEYFLIP check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

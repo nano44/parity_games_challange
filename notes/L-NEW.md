@@ -1,7 +1,26 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 49, Opus 5.5; started 2026-11-02 11:51Z by date -u; after box 148, waiting for the Lead)
+## Resume point (successor 49, Opus 5.5, session_01V5yGRVusQANCQiXcbrWdJg; FINAL, PARKED 2026-11-02 ~14:1xZ by date -u)
+### FINAL summary (successor 49): boxes 147-149, every push via scripts/push.sh (VERIFY PASS), each reported to the Lead
+- 147 COARSE (60286d8c): every coarse Xi-statistic DEAD (B and MRG constant across realised lag1's unchained step; all-start quotient
+  test kills functions of B, AGR, KP, MRG, WANT, TOP1-3, LVCNT; TOP_k const k: rk_d3; (pi+1)^p p <= 12: dc_d12); DECREMENT,
+  EXACT-ENERGY, RANK-BOUND PROVED (lane); READING: minimal info = unstable set in pi order (exponential counter).
+- 148 INTERVAL (5c93eaf8): per-step key-change charge DEAD (uc_d6 steps 3-6); INTERVAL-RESTRICT, INTERVAL-CHARGE, opening dichotomy,
+  recursion U*(n) <= sum_{p<n}(U*(p)+1) PROVED (lane); circular exactly at releases of frozen top movers (KCH-GCH), along pi-rank.
+- 149 SYNTHESIS (this push): docs/new/N5-IDEAL-STATE.md (reductions R1-R10, DEAD list, conjectures, open quantity = sum_l F_l on the
+  2-wide ladder, i.e. sum DELAY_l; packet candidate P-IDEAL-RED, NOT frozen); new Lemma KEYFLIP PROVED (lane): deg 2, moves(x) <= 1 +
+  KF_x, so IDEAL-ACYC-POLY <=> KF-POLY <=> U-POLY (box149/keyflip.py, 0 viol. on 512 movers).
+### NEXT for successor 50 (Lead decides): (a) if the Lead opens P-IDEAL-RED: minimal packet = CHAIN-BACK + KEYFLIP (needs R178 XI-NEW
+  landed or carried); (b) score L-RED R192's freeze/release family by U and KF; (c) the open object: one carry forcing omega(1) late
+  responses ABOVE it, compounding across levels (sum DELAY_l). Labels open: U-LIN, DELAY-LIN, DELSTEP-LIN, UP-LIN, IDEAL-ACYC-POLY,
+  G-N5-TIME.
+### Things only I know (successor 49): box147/stat.py analyse() is the feature engine (S, FS per state with UNST/B/KP/AGR/MRG/PL/PLAY/key,
+  lab, pos); box148/charge.py info() adds y_t, RANK, FROZ, key flips, carries; box147/allstart.py needs scipy (pip install scipy) and
+  is not in check.sh. push.sh takes ~20 min: run it in the background with timeout 7200000 (600000 kills it). exec-ing a tool needs
+  ns["__file__"] = its absolute path.
+
+## Resume point (HISTORY; successor 49 work log; started 2026-11-02 11:51Z by date -u)
 ### Handover check (STEP 0, sent to the Lead 11:52Z)
 1. claude/l-new: local clone STALE at 8591166d again; ls-remote 767ed19a; fetched l-new / l-red (c374be8f) / trunk (3398c652) only;
    ff-only -> HEAD 767ed19a. Vs trunk: 0 ahead / 123 behind, merge-base 767ed19a (trunk has merged l-new). Lane files only.
