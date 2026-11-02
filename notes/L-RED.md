@@ -1,5 +1,5 @@
 # L-RED notebook (independent adversary lane)
-Successor 46 (Opus 5.5, D1/D18) started 2026-11-02 11:52Z (date -u); STEP 0 message 11:52Z; R191 (degree-3 rotation): ROT-CAP / KEY-ALT / NEST-PI / MERGE-1 / NEST-DEAD-3 PROVED (lane), U linear d 3-8; R192 (RANK) linear; R193 d 4 undecided; R194 (a′) → U; R195 open; PARKED ~19:3xZ, see "Successor 46 PARK".
+Successor 46 (Opus 5.5, D1/D18) started 2026-11-02 11:52Z (date -u); STEP 0 message 11:52Z; R191 (degree-3 rotation): ROT-CAP / KEY-ALT / NEST-PI / MERGE-1 / NEST-DEAD-3 PROVED (lane), U linear d 3-8; R192 (RANK) linear; R193 d 4 undecided; R194 (a′) → U; R195 NEST-DEAD-ALL; R196 SAME-WAKER; PARKED ~20:5xZ, see "Successor 46 PARK".
 Successor 45 (Opus 5.5) started 2026-11-02 02:33Z (date -u); P-N5-REALIZE FROZEN e609c5d2 + fixes entries 1-2 + L-1 (MATCHES at both referees); R189 LAG / NEST-DEAD; R190 clock (undecided, linear data); PARKED ~07:3xZ, see "Successor 45 PARK".
 Successor 44 (session id: see docs/NOW.md roster, Opus 5.5) started 2026-11-01 21:06Z (Lead brief; date -u); R187 (real-game W-ladder): Theorem REALIZE PROVED (lane), real L_FL 32 / 64, first active D″-cycle, no compounding; R188 (Ξ-counter): exact d 2 / 3 maxima 4 / 8, no compounding; PARKED ~02:1xZ 2026-11-02, see "Successor 44 PARK".
 Successor 43 (session_01V5yGRa2JMr2sxHnK3JazZL2, Opus 5.5) started 2026-11-01 17:50Z (Lead brief; date -u 18:06Z at STEP 0); R183 (growing FVCH): no family; Lemma OVT-KEY + KEY-CHARGE + DEPTH PROVED (lane); realized IDEAL champions: 0 FL runs; R184 (Lead retarget 18:37Z): Lemma SELF-FREE; R185 (box 136 retarget): D″-cycles exist (inert), Lemma CN-UP; R186 (SCC charge = KEY-CHARGE, not polynomial); PARKED ~20:2xZ, see "Successor 43 PARK".
@@ -45,7 +45,7 @@ context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older note
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
 
-## Successor 46 PARK (2026-11-02 ~19:3xZ, date -u; context ~450k)
+## Successor 46 PARK (final 2026-11-02 ~20:5xZ, date -u; context ~500k; first park 19:3xZ, un-parked 19:47Z)
 - DONE (claude/l-red, push.sh VERIFY PASS each): 5f2eaf3f + 314dcdda (R191), 24efabd0 (R192), 86f2a4e0 (R193 draft, bmc4), e8af7ca1
   (R194), aaafeed0 (R195 start), final push (R193 final rows, R195, this section).
 - RESULTS (lane level; G-N5-TIME OPEN; no kill, no family):
@@ -59,11 +59,15 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - UN-PARKED 19:47Z (Lead) for queue item (1): R195 CLOSED: Proposition NEST-DEAD-ALL (PROVED, lane; every degree): in NEST4-SHAPE q is
   woken by p alone at steps 3 and 5, and MERGE-1* (descendant form) forces two moves INTO the p-reaching set in a row. z3: shape + 6
   steps UNSAT (D 3 2 s, D 4 23 s), shape + 7 at D 4 UNSAT (21 s / REL 11 s). Second d 4 L 13 relaxation model does not lift (12 s).
+- R196 docs/red/R196-wakers.md (Lead GO (1) 20:31Z): Lemma SAME-WAKER (PROVED, lane, any width / degree): no two consecutive
+  single-woken LAG moves of one mover by the same waker (without re-route). Kills NEST-type schedules; NOT U-LIN: 162 / 162 observed
+  consecutive single pairs alternate wakers (80 genomes). Escape shape: wakers on the two sides of x's Ξ-fork.
+- Pushes after the first park: 6ffd5060 (R195 NEST-DEAD-ALL), final push (R196 + this update).
 - (superseded) IN FLIGHT: r193/out/relfix_nolag_d4_L13 (REL L 13 without LAG, model dump; cap
   ~20:35Z). If it is SAT, run «FIX=r193/out/relfix_nolag_d4_L13.json python3 r193/bmc4.py 4 13 out.json» (seconds) and append the
   result to R193 §1.
-- RESUME POINT / QUEUE: (1) DONE (NEST-DEAD-ALL); next attack: doubling schedules other than NEST (longer lags, clocks) or a
-  potential; (2) d 4 exact: more lifts (several REL models: add a blocking clause per failed structure and re-solve);
+- RESUME POINT / QUEUE: (1) next attack = the escape shape of R196: bound side-alternations of single wakers along Ξ-forks (lemma), or
+  build an alternating-waker doubling ladder and score U; (2) d 4 exact: more lifts (several REL models: add a blocking clause per failed structure and re-solve);
   (3) CNONLY in CROOT games (old queue).
 - Things only I know:
   - bmc4's lemma clauses are what make d 3 fast; the same clauses do NOT rescue NEST(3) prefix 7 at D 3 (5000 s timeout).
