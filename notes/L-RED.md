@@ -56,6 +56,9 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   move's old option counts), Corollary ROT-BUDGET, Lemma KEY-ALT (width 2), Lemma NEST-PI (forced π for a NEST(d) 7-step prefix at
   D 3), all PROVED (lane). DATA: max key-alone run 1 / 2 / 3 at D 3 / 4 / 5 (tight); NEST(3) prefix 6 at D 3 (pin), 4 at D 2;
   U best 6 / 9 / 16 / 16 / 22 / 21 at d 3-8 (linear). z3 step-7 runs (nestbmc PIFIX, REL and exact) were running at the commit.
+  Pushed 5f2eaf3f (VERIFY PASS 13:09Z). Then Proposition NEST-DEAD-3 (PROVED, lane): NEST(d) dies at step 7 for every d ≥ 3 at
+  degree ≤ 3 (Lemma MERGE-1 on b = v_(d−2) and c = v_(d−3)); z3 REL runs timed out at 3600 s (undecided); exact PIFIX L 7 still
+  running; D 4 climbs 6 / 6 / 6.
 - Things only I know:
   - TRAP hit again: «ps aux | grep "[n]estbmc" | xargs kill» killed my own shell (exit 144): the command line contains the pattern.
     Kill by PIDs read in a SEPARATE call.
