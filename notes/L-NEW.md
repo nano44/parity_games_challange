@@ -47,6 +47,11 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   causality).
 - DATA: UP-LADDER climbs FL 5/7/11/13 at d 3-6 (LADDERBF 22/52/114/240); moves peak mid-ladder; CONJECTURE UP-LIN (weak).
 - OPEN: IDEAL-ACYC-POLY; §3 target statement (unproved, untested). Recipe: middle-out counter for L-RED R188.
+### Box 140 push 80cd02cc (VERIFY PASS); Lead 01:24Z recorded it; R103 (P-N5-ANCHOR) LANDED 00:24Z.
+### Box 141 N5-UPLIN (Lead GO 01:24Z; docs/new/N5-UPLIN-box141.md; experiments/new/box141/)
+- UP-LIN not proved: per-arrival charging = box 140 per-level counts (insufficient by TWO-SIDED). DESCENT = R178 XI-NEW on UP-LADDER.
+- DATA: UP-LADDER climbs FL 5/7/11/13/16/19 at d 3-8 (~2.4 d), max 5 moves per mover. CONJECTURE UP-LIN (d <= 8).
+- OPEN: cross-level lemma «one Xi-wave carries O(1) W-arrivals per level». Next: wait for L-RED R188 middle-out counter, test Psi.
 ### Things only I know (successor 47)
 - rel.py's analyse() is importable (climb137.py uses it); rel.LAST holds S, T, E, runs after a call (anat.py). A game without FL runs
   used to crash analyse (retc unbound) - fixed; the first corpus rerun after the refactor showed 801 errors, rerun clean.

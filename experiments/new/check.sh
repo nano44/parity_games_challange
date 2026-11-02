@@ -757,4 +757,10 @@ if grep -qxF "ALT up_d5.json N 10 STEPS 11 LADDER True ALTVIOL 0 TOWARDVIOL 0 LF
 else
   echo "box 140 JOINT check: FAILED"; exit 1
 fi
+w90=$(cd .. && python3 -I new/box140/alt.py new/box141/out/up_d8_s8.json)
+if grep -qxF "ALT up_d8_s8.json N 16 STEPS 19 LADDER True ALTVIOL 0 TOWARDVIOL 0 LFVIOL 0 MOVES [2, 6, 8, 9, 8, 4, 4, 2] LFLIPS [2, 6, 8, 9, 7, 6, 6, 5]" <<<"$w90"; then
+  echo "box 141 UPLIN: UP-LADDER d 8 champion FL 19 (linear), ALTERNATION / TOWARD-L / L-ACCOUNT hold: PASS"
+else
+  echo "box 141 UPLIN check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
