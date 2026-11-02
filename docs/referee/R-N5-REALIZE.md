@@ -170,3 +170,45 @@ pin start:
 - The fixes file's REAL-P1 (Lemma R + TB essential; bridge B redundant via W (iii)) and REAL-P3 (finiteness) record my optional
   items. They are not in the line, which is fine.
 - Verdict: line L-1 **MATCHES**.
+
+### §C addendum 1 (2026-11-02T08:58Z by date -u): CHECKER C115 E-1, line L-2 (l-red c374be8f)
+- **My error, recorded.** My §1 accepted [VJ-LOC] as «BRICS Lemma 5.8 "1 ⇒ 2", the direction that holds», on the strength of L-LIT
+  T21 (c). RESULTS records that route as NOT established: R15 (iii), trunk RESULTS l. 649-650, «rests on VJ00 Lemma 5.8 "1 ⇒ 2",
+  which uses VJ00's unproved Lemma 5.9 and Prop. 5.10». R36's Reading says «It does NOT discharge the two-player VJ00 Lemma 5.8».
+  T21's «Unaffected» only says that the FAILING direction does not touch it. That is not a proof. CHECKER C115 E-1 is right. The
+  lesson is in my notebook.
+- (b) **Explicit confirmation: RESULTS R36 (c) Lemma P1, applied on G^d, covers SBAR (ii), in hypothesis and in orientation.**
+  - Hypothesis. P1's setting is a ONE-PLAYER game: every non-Even vertex has one successor, with SPEC S1 values and order. Take Γ_σ
+    (Γ with every Even vertex restricted to σ(v)) and pass to its dual: owners swapped, Ω + 1. Γ's Odd vertices (the gates and K2) are
+    the dual-Even players. Γ's Even vertices are dual-Odd with ONE successor. So the dual of Γ_σ is one-player in P1's sense. Every
+    vertex keeps a successor. ρ is a positional dual-Even strategy, and ρ′ ranges over all positional Odd strategies of Γ.
+  - Orientation (Fact DUAL, §1 above).
+    - A play has the same triple (c, P, ℓ) in Γ and in G^d: the same ranks, the same top vertex, the same P-membership. Only the order
+      is reversed.
+    - So P1's «no improving edge: no dual-Even (x, y) with V_ρ(y) ▷_d V_ρ(ρ(x))» is exactly SBAR (i)'s «no Odd v, w with
+      φ(w) ◁ φ(ρ(v))» in Γ.
+    - P1's conclusion V_ρ ⊵_d V_ρ′ reads φ_(σ,ρ) ⊴ φ_(σ,ρ′) in Γ, for every positional ρ′ and every vertex.
+  - Hence φ_(σ,ρ) is Γ's pointwise minimum over positional Odd strategies.
+  - With Ξσ = the value against SPEC's optimal σ̄ (1E-N3 / R57 (a): Ξσ ⊴ V_(σ,τ′) for every positional τ′, attained by σ̄), we get
+    φ ⊴ φ_(σ,σ̄) = Ξσ ⊴ φ. So φ = Ξσ at every vertex: SBAR (ii).
+  - SBAR (iii) uses (ii) and 1E-N3 only, so it is unchanged.
+- **My signature of Lemma SBAR stands** with [VJ-LOC] re-routed to R36 (c) P1, and so do REALIZE and REAL-IDEAL. The proof step is the
+  same; only its citation changes, from an unestablished premise to a landed lemma.
+- (a) **Word-diff of L-2 (sha1 b44456d1…) against L-1 (1d72ee31…).** Fixes sha1 64f062c2…, with entry 3 appended. The frozen packet,
+  the frozen line and L-1 are unchanged at c374be8f (sha1s re-taken). Exactly the six listed changes:
+  1. [VJ-LOC] → «local optimality in a one-player game (RESULTS R36 (c) Lemma P1, applied on the dual game to Odd's one-player game
+     against a fixed σ; VJ00's two-player Lemma 5.8 is not used)» ✓. This is the confirmation above.
+  2. G-1: bare date «(2026-11-02)»; the source names the fixes file with entries 1-3 ✓.
+  3. G-3: «RESULTS R103's bridge B», and the NEW clause «applied at every Even vertex that is not its own W′-cycle node, non-movers
+     included (RESULTS R103's (R1) ruling)». **Checked:**
+     - It is NEEDED. Theorem REALIZE applies [RULE] at every mover at every step, including movers whose choice does not change.
+     - It is ACCURATE. My (R1) ruling (R-N5-ANCHOR §1) rests on TB steps 3-5 and Lemma R, which describe S1's choice at every vertex that
+       is not its own cycle node. It does not depend on FL transitions, so it applies at REALIZE's transitions before they are known to
+       be FL.
+     - The tie set it needs is supplied by Lemma W (iii) (TIE = R(x)).
+     - Applying it «at every Even vertex» is true. The packet uses it only at movers; β, K and e are handled by Lemma ESC.
+  4. G-2: «a Ξ-target xt(x, k), a mover or the exit X» ✓.
+  5. G-7: «random Ξ-cyclic genomes do mismatch» moved after «DATA:» ✓.
+  6. G-10: «L-RED R178 champions», «L-RED R188 genomes» ✓.
+  - Parentheses balance (61/61). «» is 1/1, because the «1 ⇒ 2» quote is gone. Nothing else changed.
+- Verdict: line L-2 **MATCHES**.

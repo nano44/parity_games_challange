@@ -62,3 +62,25 @@ Verdicts: both referees SIGN every to-sign item; no gap in the mathematics. Both
   substantive, not cosmetic: Lemma KEY (b) needs the gate-index order of e-indices (packet §3.1). Line L-1 (1d72ee31) already carries it;
   no further line change.
 - Joint REQUIRED list, all in L-1: REFEREE REAL-L1, REFEREE-2 REAL-L1, REFEREE-2 REAL-L2 (entry 1). Optional items as in entry 1.
+
+## Entry 3 (2026-11-02, L-RED successor 45): CHECKER C115 (docs/checker/C115.md, claude/checker fbca67cf), line L-2
+- E-1 (REQUIRED). «L-1 cites VJ00 Lemma 5.8 «1 ⇒ 2» as «the direction that holds»; RESULTS records it as resting on unproved lemmas»
+  (R15 (iii): 5.8 «1 ⇒ 2» «uses VJ00's unproved Lemma 5.9 and Prop. 5.10»; R36 (d): R36 (c) «does NOT discharge the two-player VJ00
+  Lemma 5.8»; R57 routes around 5.8). ACCEPTED; my citation was wrong (the R15 side finding concerns the OTHER direction only).
+  - [VJ-LOC] (packet §1) is restated: RESULTS R36 (c) Lemma P1 («if σ is a positional Even strategy of a one-player game H with no
+    improving edge (no Even edge (x, y) with V_σ(y) ▷ V_σ(σ(x))), then V_σ(v) ⊵ V_σ′(v) for every positional Even strategy σ′ and every
+    vertex v»), applied on G^d to Odd's one-player game Γ_σ (Even's choices fixed to σ; Odd = the Even player of G^d).
+  - Orientation (Fact DUAL): G^d's order is the reverse of Γ's, so «no Odd-improving edge in Γ's order» (SBAR (i): no Odd v, w with
+    φ(w) ◁ φ(ρ(v))) is «no improving edge of the G^d-Even strategy ρ», and P1's conclusion «V_ρ ⊵_(G^d) V_ρ′» is «φ_(σ,ρ) ⊴ φ_(σ,ρ′) in
+    Γ's order for every ρ′», i.e. ρ is Odd's pointwise optimum against σ. With [1E-N3] P1 (S1's σ̄ is a pointwise optimum), φ = Ξσ
+    follows as in SBAR (ii); SBAR (iii) is unchanged.
+  - VJ00's two-player Lemma 5.8 is NOT used anywhere in the packet. No other lemma used [VJ-LOC] (K (d), ESC, TAU use only the
+    definition of a pointwise optimum / [1E-N3]; REFEREE-2 §1).
+- Notes folded into L-2 (CHECKER, all wording): G-1 bare date «(2026-11-02)» and the source note «docs/red/P-N5-REALIZE.md with its
+  fixes entries 1-3, docs/red/P-N5-REALIZE-fixes.md»; G-3 «RESULTS R103's bridge B» and «non-movers included (RESULTS R103's (R1)
+  ruling)»; G-2 «a Ξ-target xt(x, k), a mover or the exit X»; G-7 «random Ξ-cyclic genomes do mismatch» moved after «DATA:»; G-10 «L-RED
+  R178 champions», «L-RED R188 genomes».
+- Line L-2 (docs/red/P-N5-REALIZE-line-L2.txt) = L-1 (1d72ee31) with exactly these changes: (1) the [VJ-LOC] parenthesis replaced by
+  «local optimality in a one-player game (RESULTS R36 (c) Lemma P1, applied on the dual game to Odd's one-player game against a fixed σ;
+  VJ00's two-player Lemma 5.8 is not used)» (E-1); (2) G-3 (two places); (3) G-2; (4) G-1 (date, source note); (5) G-7; (6) G-10.
+  The frozen packet, the frozen line and L-1 are not edited.

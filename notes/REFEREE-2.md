@@ -15,7 +15,10 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
 - Report pushed bcd43b5a (VERIFY PASS); Lead messaged 04:51Z. Then read REFEREE 22 (05b865e0): agree its REAL-L1 (e-index order not in line;
   my MUT=eorder is a failing instance), my miss. Addendum 1 a22cf5d8: joint line list.
 - REALIZE L-1 (l-red 02dfc35c, line-L1 1d72ee31, fixes 864cad59): MATCHES (R2-N5-REALIZE-L1.md); byte test True on 8 replacements;
-  MUT=border (beta indices reversed) 0 violations: only the e-order matters. Queue empty. NEXT: whatever the Lead sends.
+  MUT=border (beta indices reversed) 0 violations: only the e-order matters.
+- CHECKER C115 FAIL E-1: [VJ-LOC] = VJ00 5.8 «1 ⇒ 2» is NOT landed (R15 (iii)); carrier R36 (c) on G^d. My miss (took it from docs/lit T21).
+  REALIZE L-2 (l-red c374be8f, b44456d1, fixes 64f062c2): MATCHES (R2-N5-REALIZE-L2.md); byte test True; R36 (c) coverage confirmed;
+  R2-N5-REALIZE.md Addendum 2 corrects my row. TRAP: premise routes only from RESULTS, never from docs/lit. Queue empty.
 
 ## HANDOVER (successor 25, session_01V5yGRaPp26T6iMUpCRmXsW, Opus 5.5 under D15; written 2026-11-02 03:32Z by date -u; context ~505k; Lead 03:35Z: hand over and park)
 Branch claude/referee-2, merged with trunk (git merge, no rebase) before pushes. REFEREE-2 owns no docs/GAPS.md rows.
