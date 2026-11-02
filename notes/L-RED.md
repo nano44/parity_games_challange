@@ -65,6 +65,11 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   L 9 UNSAT 11 s (R188 relaxation: ~40 min). d 4 L 12 / L 13 running (7000 s cap). Same clauses in r191/nestbmc.py LEM=1:
   NEST(3) D 3 prefix 6 SAT 223 s, prefix 7 timeout 5000 s. d 4 L 13 exact timeout 7000 s; LAG=1 / REL runs and L 14 running
   (logs r193/out, container-local); docs/red/R193-exact4.md draft committed with «running» rows.
+  18:05Z: d 4 L 13 REL SAT (5726 s; with LAG 4185 s; relaxation, no bound); L 14 exact timeout 9000 s; bmc4 now dumps REL models
+  (FIX route checked at d 3: REL -> FIX exact SAT, replay 8); reruns relfix_{lag,nolag}_d4_L13 started 18:05Z (9000 s cap); then
+  FIX=<dump> bmc4 4 13 (exact, structure fixed). lag_exact_d4_L13 cap 18:35Z.
+- R194 docs/red/R194-lapgch.md ((a′) lap recipe): realised IDEAL pins have GCH = FL − 1 (every transition its own epoch, XIB), so the
+  recipe's «carry as a gating event» is automatic there and (a′) reduces to U (box 144). r194/gch.py; box 137 tools run in-tree.
 - Things only I know:
   - TRAP hit again: «ps aux | grep "[n]estbmc" | xargs kill» killed my own shell (exit 144): the command line contains the pattern.
     Kill by PIDs read in a SEPARATE call.

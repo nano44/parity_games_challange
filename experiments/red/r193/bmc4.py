@@ -99,6 +99,10 @@ if os.environ.get("LAG") == "1":
             if lev[x] == 0: continue
             S.add(z3.Implies(z3.And(mvd[t][x], z3.Not(mvd[t - 1][x]), KL[t][x] == KL[t - 1][x]), z3.Or([z3.And(reach[x][y], mvd[t - 1][y]) for y in range(N) if y != x])))
 r = S.check(); print("BMC4 d", d, "L", L, "LEM", os.environ.get("LEM", "1"), "LAG", os.environ.get("LAG", "0"), "REL", os.environ.get("REL", "0"), "->", r, flush=True)
+if r == z3.sat and os.environ.get("REL") == "1":   # write the structure as a FIX file (xt, gate, start) for the exact model
+    m = S.model(); ev = lambda e: m.eval(e, model_completion=True)
+    json.dump(dict(xt={f"{v},{k}": ev(xt[(v, k)]).as_long() for v, k in faces}, gate={f"{v},{k}": ev(gate[(v, k)]).as_long() for v, k in faces},
+                   start=[1 if z3.is_true(ev(sig[0][v])) else 0 for v in range(N)]), open(out, "w")); print("REL model written", out)
 if r == z3.sat and os.environ.get("REL") != "1":
     m = S.model(); ev = lambda e: m.eval(e, model_completion=True)
     order = sorted(range(N), key=lambda v: ev(pos[v]).as_long())
