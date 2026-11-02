@@ -92,7 +92,7 @@ K1 at K2».
     state the movers satisfy this: their W′-cycle node is c_W (Lemma W (iii)).
   - With fixes entry 1, the rule is read for S4a's σ_new before S4c (G-REAL-1 (b)), as (R1)'s «output of one S1 call» says.
   - My §3 direct trace of S1 (R2-N5-REALIZE) gives the same choice at movers, kept or switched, without the rule.
-  - My checker's RULE counter covers kept movers: 0 violations. Of 76,309 mover checks, 44,000+ are single-option or kept.
+  - My checker's RULE counter runs at every mover of every state, kept or switched, and at the stop transition: 0 violations on 76,309 mover checks.
 - **Scope.** «at every Even vertex» describes the cited rule's scope, as in R103; this packet uses it at movers only. That is harmless
   and accurate.
 
