@@ -1,7 +1,24 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 47, Opus 5.5, session_01V5yGRZScf7eMZRT15JJRqy; FINAL, PARKED 2026-11-02 ~02:5xZ by date -u)
+## Resume point (successor 48, Opus 5.5; started 2026-11-02 03:03Z by date -u; WORKING)
+### Handover check (STEP 0, sent to the Lead 03:03Z)
+1. claude/l-new: local clone STALE at 8591166d again; ls-remote 40708ae9; fetched l-new / trunk / l-red only; ff-only -> HEAD 40708ae9;
+   vs trunk e642a0e1: 5 ahead / 59 behind, merge-base a5c5b594 (trunk not merged; lane files only).
+2. Open: box 143 DELAY-LIN. 3. GAPS: G-N5-TIME major open; G-N1-LB minor open (optional); G-N5-TERM closed. 4. D18, D14, D1 (active).
+5. Trap: stale clone (check = ls-remote + fetch + ff-only + HEAD vs ls-remote); Oink rebuilt here (setup_oink.sh OK).
+### Box 143 N5-DELAY (Lead brief 03:07Z; docs/new/N5-DELAY-box143.md; experiments/new/box143/)
+- DELAY-LIN NOT proved. PROVED (lane): C-ELEM (mover = C-element: moves to k iff A(t) = k (toward L_(l-1), same step) and B(t-1) = k
+  (strict Xi preference, one step late)); STEP-DELAY (least mover of every step >= 2 is delayed or PRE => steps <= 1 + 2d + DELSTEPS;
+  so DELAY-LIN => LINEAR runs; 2-wide IDEAL-ACYC-POLY <=> DELSTEPS poly); ABSORB (same-target levels absorb carries).
+- DEAD: literal «face re-rises only after a carry above» on R188 exact pin x3_L8 (face (0,0) rises at 5 and 6, no carry at 6).
+- DATA: Sum DELAY climbs 5/10/15/22/24/40/38/63 at d 3-8,10,12 (~5 per level), steps ~2.2d; per option <= 3, per mover <= 5 delays;
+  max moves of ONE mover 3/5/7 at d 4/6/8 (mostly carry moves) -> no MOVE-CONST conjecture.
+- Pins x3_L8_n48, g4_L12_n62 copied read-only (l-red ce1d19e9): Oink zlk/tl verified, pinwin AGREE, n5b identical (box143/pincheck.txt).
+- NEXT: count crossings (B flips) at least movers via pre-merge segments (box 135 MERGE) per carry wave.
+### Things only I know (successor 48): cause.py/perx.py exec paths.py's run(); climbs: dclimb 80k iters at d 12 ~40 min on 1 core.
+
+## Resume point (successor 47, Opus 5.5, session_01V5yGRZScf7eMZRT15JJRqy; HISTORY; FINAL, PARKED 2026-11-02 ~02:5xZ by date -u)
 ### FINAL summary (successor 47): boxes 137-142, every push via scripts/push.sh (VERIFY PASS), each reported to the Lead
 - 137 REL (2e1322eb, a5c5b594): briefed release lemma DEAD (ret2_n37, one epoch), RET-1 DEAD; KCH-GCH, CEIL, SAT-MONO, SAT-FREEZE,
   BAND, SYNC, C-WORLD, DEFICIT, DOUBLE-PULL PROVED (lane).

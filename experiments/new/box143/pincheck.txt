@@ -1,0 +1,10 @@
+PIN x3_L8_n48 158ca15db07f start f07be7708602
+OINK x3_L8_n48 --zlk verified
+OINK x3_L8_n48 --tl verified
+PINWIN x3_L8_n48.pg n 48 states 12 fallbacks 1 W0 47 AGREE True
+n5b iterations 11 fallbacks 1 states 12 | n5x states 12 | identical state sequences: True
+PIN g4_L12_n62 658f4e23ca3c start 9f3e1f92f899
+OINK g4_L12_n62 --zlk verified
+OINK g4_L12_n62 --tl verified
+PINWIN g4_L12_n62.pg n 62 states 16 fallbacks 1 W0 61 AGREE True
+n5b iterations 15 fallbacks 1 states 16 | n5x states 16 | identical state sequences: True

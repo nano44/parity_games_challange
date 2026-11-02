@@ -769,4 +769,10 @@ if grep -qxF "LAG lag_min_d2.json STEPS 2 STOP opt LAGEVENTS 1 LAGMAX 1 DOUBLE 0
 else
   echo "box 142 LAG check: FAILED"; exit 1
 fi
+w92=$(cd .. && python3 -I new/box143/cause.py new/box143/inst/x3_L8.json new/box143/out/dc_d12.json; python3 -I new/box143/rerise.py new/box143/inst/x3_L8.json)
+if grep -qxF "CAUSE x3_L8.json d 3 STEPS 8 STOP stuck SUMDELAY 5 CELEMVIOL 0 LEAST {'DEL': 4, 'PRE': 3, 'OTHER': 0, 'CAR': 0} PRE 4 STEPBOUND 9 NOCAUSE 0 CAUSECLS {'DEL': 1, 'CAR': 3, 'PRE': 1} CAUSELEVDIFF {-2: 1, -1: 1, 0: 2, 1: 1} MOVES 13 BFLIPS 13" <<<"$w92" && grep -qxF "CAUSE dc_d12.json d 12 STEPS 26 STOP stuck SUMDELAY 63 CELEMVIOL 0 LEAST {'DEL': 23, 'PRE': 2, 'OTHER': 0, 'CAR': 0} PRE 7 STEPBOUND 31 NOCAUSE 0 CAUSECLS {'DEL': 42, 'CAR': 13, 'PRE': 8} CAUSELEVDIFF {-10: 4, -9: 2, -8: 2, -6: 2, -5: 1, -4: 4, -3: 3, -2: 4, -1: 6, 0: 6, 1: 3, 2: 9, 3: 5, 4: 4, 5: 3, 6: 3, 7: 2} MOVES 82 BFLIPS 89" <<<"$w92" && grep -qxF "RERISE x3_L8.json d 3 STEPS 8 PAIRS 12 RERISEVIOL 4 STRICTVIOL 5 MAXRISES 5" <<<"$w92"; then
+  echo "box 143 DELAY: C-ELEM and STEP-DELAY hold on R188 pin x3_L8 and the d 12 Sum-DELAY champion (63 delays, 26 steps); literal re-rise hint dead on x3_L8: PASS"
+else
+  echo "box 143 DELAY check: FAILED"; exit 1
+fi
 rm -rf "$tmp"
