@@ -22,7 +22,7 @@ No family.
   The two-base-interval variant (L 16, F [1, 4, 8, 16], same delays) is UNSAT at d 5 (69 s). d 6 (two levels above): UNDECIDED (unhinted
   timeouts 7000 s and 14000 s; delay-chain hint 9000 s). Hints from nd2: its full Ξ map with a level inserted UNSAT (4.2 s); its top-level
   + aux wiring (levels ≥ 3) UNSAT (56 s); its aux wiring alone UNSAT (124 s): the k = 2 mechanism does not extend by inserting a level.
-  d 7 and d 6 L 16: see §3 (running / results at the final push).
+  d 7: UNKNOWN (14000 s); d 6 L 16: UNKNOWN (10000 s; portfolio §3a).
 - So: delay-2 nesting (two doubling levels) needs 2 levels above the stack (k = 2: d = k + 1 + 2); delay-4 nesting (three levels) is
   impossible with ≤ 1 level above and open with 2-3. No d(k) trend can be stated from k = 2 alone. NOT a family.
 
@@ -62,10 +62,24 @@ No family.
 | k 3, L 24 | 2 | 6 | UNKNOWN 7000 s, 14000 s; chain hint UNKNOWN 9000 s |
 | k 3, L 24 | 2, nd2 map (level inserted) / levels ≥ 3 / aux only | 6 | UNSAT 4.2 / 56 / 124 s |
 | k 3, L 16 (two base intervals) | 1 | 5 | UNSAT 69 s |
-| k 3, L 24 | 3 | 7 | running |
-| k 3, L 16 | 2 | 6 | running |
-| k 3, L 16 | 1 + 2 helpers | 5 | running |
+| k 3, L 24 | 3 | 7 | UNKNOWN 14000 s |
+| k 3, L 16 | 2 | 6 | UNKNOWN 10000 s; seeds 1-3 portfolio to 21:00Z (§3a) |
+| k 3, L 16 | 1 + 2 helpers | 5 | UNKNOWN 6000 s |
 - Sanity: dd_d5_F14 levels 0-3 fixed, level 4 free: SAT 68 s, replay matches.
+- §3a Where the d 5 refutation lives (EXACT, xbmc CORE): with the main Ξ-requirements switched off (CORE=1) both k = 3 targets stay UNSAT
+  at d 5 (57.7 s / 96.9 s): main TIMING (RE-REVERSAL / LAG over Ξ-reach) + the level-4 movers' exact IDEAL semantics suffice. With the main
+  requirements on and the level-4 IDEAL rule kept only at a set of steps (CORE=2, deletion-minimised, 600 s per check, UNKNOWN keeps a step):
+  L 16 target UNSAT with the rule at steps {4, 5, 6, 9, 10, 15} only. In the L 16 target the level-1 late moves are at t 5, 13 and the base
+  move at t 9; steps 4-6 and 9-10 bracket the first two of these (step 15 is not explained). READING: the late wakes that §2 shows must come
+  from even-step movers above the stack. The pure wake-order relaxation (xwake.py: K, RE-REVERSAL, LAG, Ξ out-degree ≤ 2, comparison bits that change only on
+  descendant moves) is SAT for every target, so the priority-value semantics of the level-4 movers is essential: no purely combinatorial
+  (wake-graph) obstruction exists at this granularity. Lemma candidate (OPEN): one level above a 3-level nested stack cannot supply the
+  even-step wakes at the delay-4 and base steps; not proved by hand.
+- cegar.py (xwake proposes level-4 schedules, xisat refutes each with all states fixed) refuted 98 schedules of the d 5 L 16 case in 2 h
+  without converging (stopped): schedule enumeration is not a route to d 6.
+- Arithmetic note (PROVED, lane): a literal delay stack 3, 2, 1 cannot fully nest: a level-1 interval split at offset 3 leaves a
+  level-2 interval of length 1 (3 = 2 + 1), in which level 3 cannot place a late move strictly inside; full nesting with delay 1 at the top
+  over k levels needs base intervals ≥ 2^k, i.e. delays 2^(k−1), …, 2, 1 (the genk targets).
 - Lost d 5 rows of successor 47 (rerun from 07:21Z): killed at the Lead's 10:20Z timebox, UNKNOWN (REL never returned; ~95 CPU-min each):
   XI=free KF=1 LAG=1 FMIN=2:13 liftloop.py 5 14 and FMIN=3:15 liftloop.py 5 18 (r197). Mine, same timebox: FMIN=1:1,2:3,3:7,4:15 at d 5 L 16.
 
