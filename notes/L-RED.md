@@ -46,6 +46,15 @@ context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older note
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
 
+## Successor 47 UN-PARK 2 (Lead 07:05Z GO (a): 3-level stacking at d 6; date -u 07:20Z)
+- bmcfork FRATIO="l1,l2,..": F_l >= 2 F_(l-1) >= 2 over transitions 2..L at each listed level (three listed = three consecutive doublings).
+- Runs launched 07:20Z (from experiments/red/r197; container-local, rerun if lost):
+  XI=free KF=1 LAG=1 FRATIO=2,3,4 python3 liftloop.py 5 12 30 out/r5_L12_2_3_4
+  XI=free KF=1 LAG=1 FRATIO=2,3,4 python3 liftloop.py 5 16 30 out/r5_L16_2_3_4
+  XI=free KF=1 LAG=1 FRATIO=3,4,5 python3 liftloop.py 6 12 30 out/r6_L12_3_4_5
+  XI=free KF=1 LAG=1 FRATIO=2,3,4 python3 liftloop.py 6 12 30 out/r6_L12_2_3_4
+- Proof-side item (b) for the handover: bound DBL_l - ZERO_l by the number of levels above l (R198 §3).
+
 ## Successor 47 UN-PARK (Lead 02:03Z: CARRY+4 at d 5 exact + proof attempt; date -u)
 - R198 docs/red/R198-carry4.md: Lemmas K0-K3, INTERVAL, FLIP-COUNT (F_l = F_(l-1) + 1 + DBL - ZERO), AUTOMATON PROVED (lane);
   CARRY+4 <=> DBL - ZERO <= 3. EXACT d 5 (liftloop FMIN 2:11 L 12, KF LAG): F = [2, 6, 12, 9, 2] -> CARRY+4 FALSE; pin c4x_d5_F12_n96.
