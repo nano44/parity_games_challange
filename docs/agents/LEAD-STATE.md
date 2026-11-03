@@ -2289,3 +2289,4 @@
 - 2026-11-03 13:03Z Lead: sweep 13:02Z: overage false; L-RED 48 pushed a1812727 (contains 47's 46c73b9b, checked by merge-base), k=3 runs pending; gates idle; no action.
 - 2026-11-03 14:04Z Lead: sweep 14:03Z: overage false; L-RED 48 pushed 539a56c0, k=3 runs pending; gates idle; no action.
 - 2026-11-03 14:48Z Lead: OWNER-DESK relayed owner "IS there any update?" (14:43Z); answered: since 13:03Z only 539a56c0 (k=3 period-16 nesting UNSAT at d 5); k=3 d 6/7 pending; candid framing, pace low until reset.
+- 2026-11-03 15:30Z Lead: sweep 15:03Z: overage false; L-RED 48 pushed 4d870d64 (CEGAR d 5, 28 patterns refuted), k=3 d 6/7 pending; gates idle; no action.
