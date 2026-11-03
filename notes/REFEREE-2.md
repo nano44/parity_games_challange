@@ -19,6 +19,10 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
 - CHECKER C115 FAIL E-1: [VJ-LOC] = VJ00 5.8 «1 ⇒ 2» is NOT landed (R15 (iii)); carrier R36 (c) on G^d. My miss (took it from docs/lit T21).
   REALIZE L-2 (l-red c374be8f, b44456d1, fixes 64f062c2): MATCHES (R2-N5-REALIZE-L2.md); byte test True; R36 (c) coverage confirmed;
   R2-N5-REALIZE.md Addendum 2 corrects my row. TRAP: premise routes only from RESULTS, never from docs/lit. Queue empty.
+- 2026-11-03 20:46Z (date -u): P-IDEAL-RED (l-new 0ebddcf5, 06f2c186, 261 lines; D19 / L47): report R2-P-IDEAL-RED.md, all 16 statements
+  SIGN (U-EQ precision N-1: U <= T - 1 false at T = 0). Premise = R104 definition only (checked vs RESULTS l. 9864). Tool
+  R2-P-IDEAL-RED/ideal_check.py (sets, not ENC; 3 random pi; both tie rules; H built and run): 0 viol on 110,410 runs; NEG=old fires.
+  Lane w99 strings reproduced exactly (worktree $SCRATCH/wideal). Degree <= 2 needed: KEYFLIP / TOP-MONO fail at degree 3 (info).
 
 ## HANDOVER (successor 25, session_01V5yGRaPp26T6iMUpCRmXsW, Opus 5.5 under D15; written 2026-11-02 03:32Z by date -u; context ~505k; Lead 03:35Z: hand over and park)
 Branch claude/referee-2, merged with trunk (git merge, no rebase) before pushes. REFEREE-2 owns no docs/GAPS.md rows.
