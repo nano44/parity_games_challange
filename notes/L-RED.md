@@ -67,6 +67,16 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - 09:13Z g2_main + E2 (d 5): SAT 4194 s -> nd2_d5_F12 (F [2, 6, 12, 8, 4], L 12, exact nested pattern: level 1 at 2F_0 + 2, level 2
   at 2F_1; v1 woken by v2, v2 by u2; base by u4 / v4). Pinned nd2_d5_F12_n96 (PIN OK, lemck 0). Launched (r199) XTFIX='{"7,1": 6,
   "5,1": 7, "3,1": 5}' TMO=9000 nohup python3 xbmc.py out/g3k_main.json E2 out/g3_e2h.json > out/g3_e2h.log 2>&1 &
+- 10:00Z g3k_main + E2 (d 6) unhinted: UNKNOWN (timeout 7000 s, 4 cores shared by 6 solvers). Launched strong hint (nd2 Xi map, a level
+  inserted at 2): XTFIX=<map in r199 notes of 10:0xZ: u0:[v5,X] v0:[u5,X] u1:[v5,u0] v1:[u4,v2] v2:[*,v3] u3:[u5,u2] v3:[u2,u3] u4:[X,v5]
+  v4:[u4,u3] u5:[u4,X] v5:[X,X]> TMO=3000 python3 xbmc.py out/g3k_main.json E2 out/g3_e2H.json > out/g3_e2H.log.
+- Growth log: k 2: d 5, N 10, M 20, n (R104 formula N + 3M + 6) 76, pin n 96 (stab pad 1), F_max 12, L 12. k 3: d 5 UNSAT; d 6 open.
+- 10:20Z TIMEBOX (Lead 09:49Z): killed, UNKNOWN (timeout, ~3 h wall-clock, ~95 CPU-min each under contention, REL call never returned):
+  XI=free KF=1 LAG=1 FMIN=2:13 python3 liftloop.py 5 14 30 out/c5_L14_f2_13 (cwd r197); XI=free KF=1 LAG=1 FMIN=3:15 python3 liftloop.py
+  5 18 30 out/c5_L18_f3_15; also mine: XI=free KF=1 LAG=1 FMIN=1:1,2:3,3:7,4:15 python3 liftloop.py 5 16 30 out/t3_d5_L16 (155 CPU-min).
+- 10:02Z strong hint g3_e2H: UNSAT 4.2 s (nd2 pattern with a level inserted does not extend). Bisection runs (TMO 900): g3_{Bnobase,
+  Cnoaux,Dtop,Elow} = hint minus base faces / minus aux faces / only levels >= 3 / only levels < 3.
+- 10:2xZ launched (r199, TMO=14000 nohup python3 xbmc.py out/g3k_main.json <E2|E3> out/<g3_e2b|g3_e3>.json > out/<name>.log 2>&1 &).
 - TRAP hit again 07:5xZ: «pkill -f <pattern>» killed my own shell (exit 144). Use PIDs read in a separate call.
 
 ## Successor 47 UN-PARK 2 (Lead 07:05Z GO (a): 3-level stacking at d 6; date -u 07:20Z)
