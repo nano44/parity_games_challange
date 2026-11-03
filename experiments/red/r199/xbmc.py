@@ -122,16 +122,18 @@ def main():
     for (s, x), bit in req.items():
         c = better1(s, x); cc = c if bit == 1 else z3.Not(c)
         Z.add(z3.Implies(pm[x], cc) if CORE else cc)
+    pa = {t: z3.Bool(f"aux_step_{t}") for t in range(1, L + 1)}   # CORE=2: group the aux C-element rule by step
     for a in range(N0, N):
         for t in range(1, L + 1):
-            c = better1(t - 1, a); kp = KPb(t, a)
-            Z.add(st[(t, a)] == z3.If(c == kp, kp, st[(t - 1, a)]))
+            c = better1(t - 1, a); kp = KPb(t, a); cc = st[(t, a)] == z3.If(c == kp, kp, st[(t - 1, a)])
+            Z.add(z3.Implies(pa[t], cc) if os.environ.get("CORE") == "2" else cc)
     for item in [x for x in os.environ.get("FX", "").split(",") if x]:
         l, k = map(int, item.split(":")); Z.add(z3.PbGe([(Rk[(t, l)] != Rk[(t - 1, l)], 1) for t in range(1, L + 1)], k))
     if os.environ.get("AUXMOVE") == "1":   # every aux mover must move at least once (avoid idle aux)
         for a in range(N0, N): Z.add(z3.Or([st[(t, a)] != st[(t - 1, a)] for t in range(1, L + 1)]))
     print("XBMC main N", N0, "aux", aux, "L", L, "requirements", len(req), "faces", M, flush=True)
-    t0 = time.time(); r = Z.check(*pm.values()) if CORE else Z.check(); print("XBMC ->", r, f"{time.time() - t0:.1f} s", flush=True)
+    t0 = time.time(); r = Z.check(*pm.values()) if CORE else (Z.check(*pa.values()) if os.environ.get("CORE") == "2" else Z.check()); print("XBMC ->", r, f"{time.time() - t0:.1f} s", flush=True)
+    if os.environ.get("CORE") == "2" and r == z3.unsat: print("CORE2 (steps whose aux rule is needed):", sorted(int(str(c).split("_")[-1]) for c in Z.unsat_core()), flush=True)
     if CORE and r == z3.unsat:
         core = Z.unsat_core(); print("CORE (movers whose C-requirements conflict):", sorted(str(c) for c in core), flush=True)
     if r == z3.sat:
