@@ -1,4 +1,4 @@
-# R198 CARRY+4 is FALSE (EXACT, d 5: F = [2, 6, 12, 9, 2], F_2 = F_1 + 6, pinned c4x_d5_F12_n96); the proof route reduces CARRY+4 exactly to DBL − ZERO ≤ 3 (Lemma INTERVAL, FLIP-COUNT, AUTOMATON: PROVED, lane) and the witness has DBL − ZERO = 5; levels ABOVE a level raise its carries (at d 4, F_2 ≤ 10 exactly) (L-RED successor 47)
+# R198 CARRY+4 is FALSE (EXACT, d 5): F = [2, 6, 12, 9, 2] (F_2 = F_1 + 6, pin c4x_d5_F12_n96) and F = [2, 3, 6, 14, 7] (two consecutive doubling levels, level 3 at the full ceiling 2F_2 + 2, pin dd_d5_F14_n96); the proof route reduces CARRY+4 exactly to DBL − ZERO ≤ 3 (Lemma INTERVAL, FLIP-COUNT, AUTOMATON: PROVED, lane), refuted by DBL − ZERO = 5 and 7; levels ABOVE a level raise its carries (L-RED successor 47)
 Started 2026-11-03 02:02Z (Lead UN-PARK 02:03Z, date -u): «CARRY+4 at d 5 (exact), plus a PROOF attempt of F_l ≤ F_(l−1) + 4 by interval
 nesting (R197 §4) … Label it carefully: it is a proof for the 2-wide degree-2 ladder model only, not N5 … Write the proof attempt so it
 could become a referee packet: every step justified by landed RESULTS or by lane lemmas named with commits.» Labels: PROVED (lane),
@@ -13,13 +13,23 @@ conversely). G-N5-TIME OPEN.
 - Against R197 §2b (d 4: F_2 ≤ 10 on EVERY run, exact): adding two levels above level 2 raises its exact maximum from 10 to ≥ 12. The
   extra levels take part in the late wakes (3 of the 5 delayed level-2 moves have a level-3 or level-4 waker, u4 or v3; trace in §4). This is
   the direction the R197 §4 reading called «delay lines through higher levels». The ceiling 2F_1 + 2 = 14 is not yet reached.
+- Second exact d 5 witness (FMIN 3:13 at L 14; REL 14063 s, FIX 18 s): r197/lag/dd_d5_F14.json, L 14, F = [2, 3, 6, 14, 7].
+  Level 2 doubles (F_2 = 6 = 2F_1; DBL 3, ZERO 1) and level 3 reaches the KEYFLIP ceiling F_3 = 2F_2 + 2 = 14 (per-interval [2, 2,
+  2, 2, 2, 2, 2]; R_3 flips at every one of the 14 steps). Mechanism: level-2 carries come every 2 steps (t3, t5, …, t13); at each,
+  v3 moves at once and u3 (Ξ-fork [v3, v2]) is woken by v3 one step later: spacing 2 below plus a partner wake of delay 1 gives a full
+  doubling. This realises the R197 §4 nesting picture for two levels (delays 2, then 1). Pinned dd_d5_F14_n96 (n 96; sha1 .pg
+  ab093e8c…, .start 9e88d7a0…): lemck L 14, 0 violations; startck, Oink zlk / tl + verify, xeng: PIN OK. Max run at d 5 ≥ 14.
+- READING (not a claim): doubling stacks over k consecutive levels only if delays shrink by ≥ 1 per level (R197 §4), so the bottom
+  delay must be ≥ k and must be carried by delay lines through levels above. If delay-δ lines exist for growing δ with O(δ) extra
+  levels, carries grow like 2^(Θ(d)) on this ladder class; if not, the excess per level stays bounded. Both witnesses have run
+  length ≤ 14: no long run yet.
 - Proved (lane, §2), self-contained apart from the model: on a 2-wide degree-2 ladder (each level-l ≥ 1 mover's two options have the
   two level-(l − 1) movers as W-targets) (i) every move goes to the key-preferred option; (ii) a mover moves at most once between two
   consecutive carries of the level below; (iii) R_l is a fixed function of the two level-l options and of R_(l−1); (iv) Lemma INTERVAL:
   every interval between consecutive carries of level l − 1 (and the initial stretch) contains at most 2 flips of R_l, and a 2-flip
   interval (a DOUBLE) contains a delayed level-l move; (v) the identity F_l = F_(l−1) + 1 + DBL_l − ZERO_l; (vi) the AUTOMATON of the
   pair state (n = 0 forces an empty interval; S-doubles have a gate-determined fixed leader).
-- So CARRY+4 ⟺ DBL_l − ZERO_l ≤ 3 at every level, and the d 5 witness has DBL − ZERO = 5. The proof route is dead as stated. What
+- So CARRY+4 ⟺ DBL_l − ZERO_l ≤ 3 at every level, and the d 5 witnesses have DBL − ZERO = 5 (level 2) and 7 (level 3). The proof route is dead as stated. What
   survives: the identity (v) makes F_l − F_(l−1) − 1 = DBL_l − ZERO_l the exact quantity to bound, and every double costs one delayed
   move of the level, woken from Ξ-descendants (R197 WAKE-CHAIN). Whether DBL − ZERO stays bounded per level (F linear, with a larger
   constant) or grows with the number of levels above (F super-linear) is OPEN; d 5 runs in flight (§4).
@@ -100,9 +110,10 @@ conversely). G-N5-TIME OPEN.
 | --- | --- | --- |
 | FMIN 2:10 at L 11 | F_2 ≥ 10 over steps 2..11 | SAT (R197 §2b; witness total F_2 = 10) |
 | FMIN 2:11 at L 12 | F_2 ≥ 11 over steps 2..12 | SAT: c4x_d5_F12, total F_2 = 12 (CARRY+4 false) |
-| FMIN 2:13 at L 14 | total F_2 ≥ 13 | RUN213 |
-| FMIN 3:13 at L 14 | F_3 ≥ 13 | RUN313 |
-| FMIN 3:15 at L 16 / L 18 | F_3 ≥ 15 (> 4·3 + 2) | RUN315 |
+| FMIN 2:13 at L 14 | total F_2 ≥ 13 | running at the push (REL > 2.5 h) |
+| FMIN 3:13 at L 14 | F_3 ≥ 13 over steps 2..14 | SAT: dd_d5_F14, F_3 = 14 = 2F_2 + 2 |
+| FMIN 3:15 at L 16 | F_3 ≥ 15 over steps 2..16 | UNSAT (REL, 11503 s) |
+| FMIN 3:15 at L 18 | F_3 ≥ 15 over steps 2..18 | running at the push |
 - Trace of the witness (r197/trace.py): level 2 moves at t1 (v2), t2 (u2 LAG<u4, v2>), t3 (v2), t4 (u2 LAG<v1, v2, v3>), t5 (v2), t6
   (u2 LAG<u4, v2>), t7 (v2), t10 (u2 LAG<v1>), t11 (v2), t12 (u2 LAG<v2>): v2 answers carries of level 1 at once, u2 one step later,
   woken by v2 and by the levels above (u4, v3).

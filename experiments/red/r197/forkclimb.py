@@ -58,6 +58,7 @@ def score(G):
     if SC == "F": return (sum(F), L)
     if SC == "TOP": return (Mv[-1], L)
     if SC == "FMAX": return (max(F), sum(F), L)
+    if SC == "F2": return (F[2], sum(F), L)
     if SC == "JUMP": return (max(F[l] - F[l - 1] for l in range(1, len(F))), sum(F), L)
 if __name__ == "__main__":
     sys.path.insert(0, H)
@@ -81,6 +82,22 @@ if __name__ == "__main__":
         pos = {u: i for i, u in enumerate(G0.get("xorder") or sorted(range(N0), key=lambda u: G0["pi"][u]))}
         H2["pi"] = [N0 + i for i in range(sh)] + [pos[v] for v in range(N0)]
         G = H2
+    if os.environ.get("SEEDT"):   # start from a given genome, adding (d - its depth) new levels on TOP, new movers at random pi positions
+        G0 = json.load(open(os.environ["SEEDT"])); d0 = max(G0["lev"]) + 1; add = d - d0; N0 = G0["N"]; D0 = len(G0["opts"][0])
+        order = list(G0.get("xorder") or sorted(range(N0), key=lambda u: G0["pi"][u])); new = list(range(N0, N0 + 2 * add))
+        for v in new: order.insert(rng.randrange(len(order) + 1), v)
+        pi = [0] * (N0 + 2 * add)
+        for i, v in enumerate(order): pi[v] = i
+        lev = list(G0["lev"]) + [d0 + j // 2 for j in range(2 * add)]; M0 = sum(len(o) for o in G0["opts"])
+        opts = [list(map(list, o)) for o in G0["opts"]]; b = M0
+        for v in new:
+            later = [u for u in range(N0 + 2 * add) if pi[u] > pi[v]]; o = []
+            for k in range(D0): o.append([2 * (lev[v] - 1) + k % 2, rng.choice(later + [-1]), b]); b += 1
+            opts.append(o)
+        M = b; gperm = list(range(M0, M)); rng.shuffle(gperm)
+        G = dict(N=N0 + 2 * add, lev=lev, deg=D0, opts=opts, pi=pi, gate=[list(g) for g in G0["gate"]] + [gperm[D0 * i:D0 * i + D0] for i in range(2 * add)],
+                 br=list(G0["br"]) + list(range(M0, M)), bp=list(G0["bp"]) + [rng.randint(0, 1) for _ in range(M - M0)],
+                 start=list(G0["start"]) + [rng.randrange(D0) for _ in range(2 * add)])
     sc = score(G); best = (sc, G)
     for i in range(it):
         if i % 20000 == 0 and i: G = json.loads(json.dumps(best[1])); sc = best[0]

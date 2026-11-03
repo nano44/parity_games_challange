@@ -50,9 +50,12 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - R198 docs/red/R198-carry4.md: Lemmas K0-K3, INTERVAL, FLIP-COUNT (F_l = F_(l-1) + 1 + DBL - ZERO), AUTOMATON PROVED (lane);
   CARRY+4 <=> DBL - ZERO <= 3. EXACT d 5 (liftloop FMIN 2:11 L 12, KF LAG): F = [2, 6, 12, 9, 2] -> CARRY+4 FALSE; pin c4x_d5_F12_n96.
   Lead messaged 03:12Z. r197/ivl.py checks; check.sh block «R198». JUMP climbs d 6 / 8 / 12 stop at 4 (did not find it).
-- Running (container-local out/): c5_L14_f2_13, c5_L14_f3_13, c5_L16_f3_15, c5_L18_f3_15, jump_d10 climb.
+- 05:57Z: c5_L14_f3_13 SAT -> dd_d5_F14 (F [2, 3, 6, 14, 7], level 3 at ceiling 2F_2 + 2; pin dd_d5_F14_n96); c5_L16_f3_15 UNSAT
+  (11503 s). Lead messaged 05:58Z. jump_d10 climb: jump 5 (out/keep_jump_d10.json, container-local). Seeded climbs (SEEDT from c4x,
+  d 7, SCORE F2 / JUMP) stay at F_2 12 / jump 6.
+- Still running at the park push (container-local, lost on restart): c5_L14_f2_13 (total F_2 >= 13), c5_L18_f3_15.
 
-## Successor 47 PARK (2026-11-03 00:54Z, date -u; context ~340k)
+## Successor 47 PARK (first 2026-11-03 00:54Z; FINAL after the un-park ~06:0xZ, date -u; context ~460k)
 - DONE (claude/l-red, push.sh VERIFY PASS each): 513e313c (trunk merge 67a8bc43 + R197 interim), final push (R197 final + this section).
 - RESULTS (lane level; G-N5-TIME OPEN; no kill, no family), docs/red/R197-alt.md:
   - Fork (alternating-waker) ladders: EXACT max run 3 / 5 at d 2 / 3 (free: 4 / 8); XI=down: L <= d (Lemma DOWN); XI=up exact 5 at d 3.
@@ -65,7 +68,11 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   - d 5: F_2 >= 10 over steps 2..11 SAT (r197/d5/f2_d5_L12.json, total F_2 = 10 = the d 4 max). Running at the final push: total
     F_2 >= 11 (out/llk_d5_L12_f2_11), F_3 >= 13 at L 14 (out/ll_d5_L14_f3_13, out/llk_d5_L14_f3_13), F_3 >= 15 at L 16 (out/ll_d5_L16_f3_15).
     LOST: two container restarts (~01:05Z, later) killed these runs before any answer; rerun them (commands in R197 §2b / liftloop.py).
-- RESUME POINT / QUEUE: (1) CARRY+4 at d 5 (liftloop FMIN 3:13 at L 14, 3:15 at L 16, 2:10 at L 11: REL calls > 2 h at d 5) and a
+- AFTER UN-PARK (R198): CARRY+4 FALSE (pins c4x_d5_F12_n96, dd_d5_F14_n96); see «Successor 47 UN-PARK».
+  NEW RESUME POINT: (1) delay lines of growing length: can doubling stack over 3 levels (d 6: F_l = 2F_(l-1) + 2 at two consecutive
+  levels above a level with carries spaced >= 3)? Exact d 6 is slow; try FIX-seeded lifts from dd_d5_F14 with a level added; (2) a
+  bound on the excess per level in terms of the levels above (proof side, R198 §3); (3) d 5 exact max run (>= 14).
+- OLD RESUME POINT (superseded): (1) CARRY+4 at d 5 (liftloop FMIN 3:13 at L 14, 3:15 at L 16, 2:10 at L 11: REL calls > 2 h at d 5) and a
   proof attempt of F_l <= F_(l-1) + 4 (KEYFLIP + DELAY-CHARGE + interval nesting, R197 §4); (2) d 5 exact max run; (3) CNONLY in CROOT.
 - Things only I know:
   - bmcfork FMIN=l:k counts flips of R_l over transitions 2..L only (states 1..L); step 1 is not counted. FMIN k > L - 1 is trivially UNSAT
