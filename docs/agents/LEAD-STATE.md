@@ -2291,3 +2291,4 @@
 - 2026-11-03 14:48Z Lead: OWNER-DESK relayed owner "IS there any update?" (14:43Z); answered: since 13:03Z only 539a56c0 (k=3 period-16 nesting UNSAT at d 5); k=3 d 6/7 pending; candid framing, pace low until reset.
 - 2026-11-03 15:30Z Lead: sweep 15:03Z: overage false; L-RED 48 pushed 4d870d64 (CEGAR d 5, 28 patterns refuted), k=3 d 6/7 pending; gates idle; no action.
 - 2026-11-03 16:09Z Lead: sweep 16:02Z: overage false; L-RED 48 unchanged since 15:23Z (solver runs in background); gates idle; no action.
+- 2026-11-03 17:04Z Lead: sweep 17:03Z: overage false; WATCHDOG flag: L-RED 48 idle since 15:23Z with nohup runs in flight -> nudged (ps report, record results, 45-min self-wake, k=3 d 6/7 timebox 21:00Z then growth table + push + park). Process note: lanes running nohup solvers must self-wake; add to next brief. Gates idle.
