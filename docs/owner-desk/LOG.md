@@ -554,3 +554,6 @@ Summary confirmed. L-RED 48 pushed 539a56c0 (~14:00Z): second k = 3 shape (perio
 
 ## 2026-11-03T20:27Z Lead daily owner line (2026-11-03 20:26Z, summary)
 D19 / L47: pacing hold lifted; spend spread to last until the reset (2026-11-04 21:00Z); stop on paid overage. L-NEW 50 started 19:14Z (box 150 freezes P-IDEAL-RED for referees; box 151 stacking-limit lemma from k = 3 UNSAT at d 5). L-RED 48 continues past its timebox (decidable d 6 test; doubling with slack). REFEREE 23 started 19:55Z (pre-check XI-NEW, then the packet). Peak 3 working sessions plus gates. Data (exact, lane level): k = 2 nesting SAT at d 5; k = 3 UNSAT at d 5 both targets; d 6/7 UNKNOWN; obstruction needs value semantics. No new landed result today. G-N5-TIME OPEN.
+
+## 2026-11-03T20:37Z Lead addendum (20:38Z, summary)
+Correction: "obstruction needs value semantics" may be wrong: L-NEW 50 (20:06Z) found a defect in L-RED's wake-order check (its reaches relation allowed 2-cycles); fixed, the order-only relaxation reproduces k = 3 UNSAT at d 4, d 5 and k = 2 SAT at d 5; L-RED 48 re-checking; if it holds the obstruction may be purely order-theoretic. New: packet P-IDEAL-RED frozen 20:06Z (l-new 0ebddcf5, 261 lines; exact IDEAL-model reductions CHAIN-BACK, KEYFLIP, DECREMENT; no polynomial bound claimed), with both referees. G-N5-TIME OPEN.
