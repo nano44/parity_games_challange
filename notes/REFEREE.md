@@ -7,7 +7,12 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 - STEP 1 pre-check: docs/referee/R-XI-NEW-precheck.md. R178 XI-NEW IDEAL half SOUND on R104; (i) SOUND; (ii) SOUND with gap XI-G1
   (monotonicity unproved in R178; proof given §3); (iii) NOT CHECKED (R177); real-N5 half XI-G2 not a proof. Tool
   scratch/xinew_probe.py (from R104's text; MUT 1/2 controls bite), xinew_logs/.
-- NEXT: STEP 2 P-IDEAL-RED when the Lead routes frozen SHA + sha1. Do not read docs/referee-2/ before my report.
+- STEP 1 pushed a4e7b4a9 (verify PASS). Lead scored the handover check 5/5; D19 + L47 on trunk 8c37ab0b.
+- STEP 2 P-IDEAL-RED (l-new 0ebddcf5, sha1 06f2c186…, 261 lines): docs/referee/R-P-IDEAL-RED.md. 15 SIGN, U-EQ SIGN WITH GAP U-1
+  («U ≤ T − 1» false at T = 0); REQUIRED IR-1 (MONO's «non-current option values not monotone» remark is FALSE: v = ε + cv(xt));
+  optional P-1..P-3. w99 re-run MATCHES; own sim (xinew_lane.py) T equal on 46 corpus genomes. NEXT: §C on fixes when routed.
+- Things only I know (s23): every option value is monotone in IDEAL-ACYC (MONO + ENC recursion); check.py tests current values only.
+  check.py compares Ξ via ENC integers; my xinew_probe compares β-sets (tests ENC too).
 - D19 and L47 not yet in docs/DECISIONS.md at trunk 6a6bd43a (told the Lead).
 
 ## Successor 23 handover check, written 2026-11-03T20:05Z by date -u (Opus 5.5, D15)
