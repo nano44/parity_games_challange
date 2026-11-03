@@ -54,6 +54,11 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   XI=free KF=1 LAG=1 FRATIO=3,4,5 python3 liftloop.py 6 12 30 out/r6_L12_3_4_5
   XI=free KF=1 LAG=1 FRATIO=2,3,4 python3 liftloop.py 6 12 30 out/r6_L12_2_3_4
 - Proof-side item (b) for the handover: bound DBL_l - ZERO_l by the number of levels above l (R198 §3).
+- STATUS at the final park (09:24Z): r5_L12_2_3_4: iter 0 REL sat (2935 s), FIX unsat (211 s), blocked 1, iter 1 REL running (>1 h);
+  r5_L16_2_3_4, r6_L12_3_4_5, r6_L12_2_3_4: first REL call still running after 2 h. NO answer yet on 3 consecutive doublings (neither
+  witness nor UNSAT). Successor 48: rerun these four commands first (they die with the container), then the delay-delta construction.
+- Note: three doublings at levels l, l+1, l+2 need F_(l+2) >= 8 F_(l-1) >= 8 within L steps (FRATIO also forces F_(l-1) >= 1), so short
+  L can only show the small-F version; the d 5 two-doubling witness dd_d5_F14 used L 14.
 
 ## Successor 47 UN-PARK (Lead 02:03Z: CARRY+4 at d 5 exact + proof attempt; date -u)
 - R198 docs/red/R198-carry4.md: Lemmas K0-K3, INTERVAL, FLIP-COUNT (F_l = F_(l-1) + 1 + DBL - ZERO), AUTOMATON PROVED (lane);
@@ -64,7 +69,7 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   d 7, SCORE F2 / JUMP) stay at F_2 12 / jump 6.
 - Still running at the park push (container-local, lost on restart): c5_L14_f2_13 (total F_2 >= 13), c5_L18_f3_15.
 
-## Successor 47 PARK (first 2026-11-03 00:54Z; FINAL after the un-park ~06:0xZ, date -u; context ~460k)
+## Successor 47 PARK (first 2026-11-03 00:54Z; second ~06:0xZ; FINAL 09:2xZ after UN-PARK 2, date -u; context ~530k)
 - DONE (claude/l-red, push.sh VERIFY PASS each): 513e313c (trunk merge 67a8bc43 + R197 interim), final push (R197 final + this section).
 - RESULTS (lane level; G-N5-TIME OPEN; no kill, no family), docs/red/R197-alt.md:
   - Fork (alternating-waker) ladders: EXACT max run 3 / 5 at d 2 / 3 (free: 4 / 8); XI=down: L <= d (Lemma DOWN); XI=up exact 5 at d 3.
