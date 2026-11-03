@@ -113,6 +113,9 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   priority-value semantics of the aux movers. cegar.py (xwake proposes aux schedules, xisat refutes): ~5 min / pattern, test on g3p2 E1
   (nohup python3 cegar.py out/g3p2_main.json 1 200 out/cg_g3p2_e1 > out/cg_g3p2_e1.log). Portfolio: SEED=1,2,3 TMO=20000 python3 xbmc.py
   out/g3p2_main.json E2 out/g3p2_e2_s<seed>.json > out/g3p2_e2_s<seed>.log.
+- 19:xxZ D19 / L47 (Lead 19:15Z): no park at 21:00Z; continue to ~600k. Slack sweep (slack.py 3 2 2): 10 W-feasible variants (level-3 late
+  deletions, F_3 14-15), all UNSAT at d 5 (18-84 s). offs.py (uniform offsets, c 1): only the exact nest qualifies. masks.py (partial
+  doubling, ratio 1.5): 20 (L 16) + 68 (L 24) targets; running at d 5: nohup bash out/runmasks.sh (summary out/masks_summary.txt).
 - TRAP hit again 07:5xZ: «pkill -f <pattern>» killed my own shell (exit 144). Use PIDs read in a separate call.
 
 ## Successor 47 UN-PARK 2 (Lead 07:05Z GO (a): 3-level stacking at d 6; date -u 07:20Z)
