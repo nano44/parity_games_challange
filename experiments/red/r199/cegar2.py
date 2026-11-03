@@ -23,7 +23,11 @@ for it in range(mx):
         cur = [S0[t][v] if v < N0 else (cur[v] ^ (1 if t in moves.get(v, ()) else 0)) for v in range(N)]; S.append(tuple(cur))
     bad, rq = RQ.requirements(lev, WT, gate, S)
     if bad: print("CEGAR2 inconsistency: xwake proposal violates the W side", bad[:5]); sys.exit(3)
-    res, dt, sol = xisat.solve(lev, WT, S, rq, tmo=int(os.environ.get("XTMO", "900")))
+    allow = {}
+    for x, y in W.get("edges", []): allow.setdefault(x, []).append(y)
+    res, dt, sol = xisat.solve(lev, WT, S, rq, tmo=int(os.environ.get("QTMO", "180")), allow={v: allow.get(v, []) for v in range(N)})
+    print(f"  quick (Xi-targets within xwake's edges) {res} {dt:.0f} s", flush=True)
+    if res != "sat": res, dt, sol = xisat.solve(lev, WT, S, rq, tmo=int(os.environ.get("XTMO", "900")))
     if res == "sat":
         G = RQ.genome(lev, WT, gate, S[0], dict(xt=sol["xt"], pos=XS.topo(N, sol["xt"]), rank=sol["rank"], par=sol["par"]))
         json.dump(G, open(pre + "_genome.json", "w")); S2, why = ideal.traj(G)

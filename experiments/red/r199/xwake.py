@@ -88,5 +88,5 @@ if r == z3.sat:
     m = Z.model(); tv = lambda e: z3.is_true(m.eval(e, model_completion=True))
     sol = dict(moves={v: [t for t in range(1, L + 1) if tv(mv[(t, v)])] for v in range(N0, N)}, reach=[[x, y] for x in range(N) for y in range(N) if tv(re[(x, y)])],
                start={v: (1 if tv(st[(0, v)]) else 0) for v in range(N0, N)}, G={f"{l},{k}": tv(Gb[(l, k)]) for (l, k) in Gb},
-               movers=[[lev[v], WT[v]] for v in range(N)])
+               movers=[[lev[v], WT[v]] for v in range(N)], edges=[[x, y] for (x, y) in ed if tv(ed[(x, y)])])
     json.dump(sol, open(out, "w")); print("aux moves", sol["moves"], flush=True)
