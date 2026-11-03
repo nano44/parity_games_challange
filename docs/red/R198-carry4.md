@@ -36,6 +36,13 @@ conversely). G-N5-TIME OPEN.
 - Scope: 2-wide degree-2 IDEAL-ACYC ladders. RESULTS R104 makes the pin a real N5 FL run; a growth result here would be a real N5
   statement only through R104 (one-way). Not a TARGET.md claim. No family yet: one instance at d 5.
 
+## 0b. Three consecutive doublings (Lead GO 07:05Z; EXACT, weak form)
+- bmcfork FRATIO=2,3,4 (F_l ≥ 2F_(l−1) ≥ 2 over transitions 2..L at l = 2, 3, 4), d 5, L 12: SAT at the second lift (REL 5215 s,
+  FIX 107 s). Witness r197/lag/tri_d5_L12.json, F (all steps) = [2, 1, 3, 5, 8]: three consecutive levels double over steps 2..L
+  starting from F_1 = 1. Counted from step 1 the ratios are 3, 1.67, 1.6, so this is the small-number form only; it shows that
+  three stacked doublings are not excluded, not that they keep the ×2 rate with large carries. Pinned tri_d5_L12_n96 (sha1 .pg
+  3759115a…, .start cb43a61e…; lemck L 12, 0 violations; PIN OK). Open: the same with F_(l−1) ≥ 3 (needs L ≳ 25 at d ≥ 6).
+
 ## 1. Model and notation (RESULTS R104 statement; R191 ladder)
 - IDEAL step (RESULTS R104, the model of L-RED R178 §1): every mover x goes to the key-least option of A_(t−1)(x) := {s_(t−1)(x)} ∪
   {options whose Ξ-face is strictly better than the current one under s_(t−1)}, keys read in the NEW state s_t; key of option (x, k) =

@@ -57,6 +57,10 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - STATUS at the final park (09:24Z): r5_L12_2_3_4: iter 0 REL sat (2935 s), FIX unsat (211 s), blocked 1, iter 1 REL running (>1 h);
   r5_L16_2_3_4, r6_L12_3_4_5, r6_L12_2_3_4: first REL call still running after 2 h. NO answer yet on 3 consecutive doublings (neither
   witness nor UNSAT). Successor 48: rerun these four commands first (they die with the container), then the delay-delta construction.
+- 09:5xZ: r5_L12_2_3_4 iter 1: REL sat (5215 s), FIX sat (107 s): EXACT witness of three consecutive doublings over steps 2..L
+  (FRATIO 2,3,4): r197/lag/tri_d5_L12.json, d 5, L 12, F (all steps) = [2, 1, 3, 5, 8]; counted from step 1 the ratios are 3, 1.67,
+  1.6, so it is a SMALL-NUMBER instance (starts from F_1 = 1), not the strong form. Pinned tri_d5_L12_n96 (lemck 0, PIN OK). Strong
+  form (doubling from F >= 3 over three levels) still open; the other three FRATIO runs were running at the park.
 - Note: three doublings at levels l, l+1, l+2 need F_(l+2) >= 8 F_(l-1) >= 8 within L steps (FRATIO also forces F_(l-1) >= 1), so short
   L can only show the small-F version; the d 5 two-doubling witness dd_d5_F14 used L 14.
 
