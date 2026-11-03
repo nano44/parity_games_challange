@@ -1,4 +1,5 @@
 # L-RED notebook (independent adversary lane)
+Successor 48 (Opus 5.5, D1/D18) started 2026-11-03 07:20Z (date -u); STEP 0 message 07:20Z; STEP 1 = R199 (delay-δ lines, 3-level doubling); see «Successor 48».
 Successor 47 (Opus 5.5, D1/D18) started 2026-11-02 20:58Z (date -u); STEP 0 message 20:58Z; R197: fork ladders exact 3 / 5 (d 2 / 3); carry maxima 2, 6, 10 EXACT (d 4); max run d 4 = 13 EXACT (R193 item closed); pins dbl_d3_F6_n60, dbl_d4_F10_n78, max_d4_L13_n78; Lemmas DOWN / LEVEL-RISE / WAKE-CHAIN; PARKED, see «Successor 47 PARK».
 Successor 46 (Opus 5.5, D1/D18) started 2026-11-02 11:52Z (date -u); STEP 0 message 11:52Z; R191 (degree-3 rotation): ROT-CAP / KEY-ALT / NEST-PI / MERGE-1 / NEST-DEAD-3 PROVED (lane), U linear d 3-8; R192 (RANK) linear; R193 d 4 undecided; R194 (a′) → U; R195 NEST-DEAD-ALL; R196 SAME-WAKER; PARKED ~20:5xZ, see "Successor 46 PARK".
 Successor 45 (Opus 5.5) started 2026-11-02 02:33Z (date -u); P-N5-REALIZE FROZEN e609c5d2 + fixes entries 1-2 + L-1 (MATCHES at both referees); R189 LAG / NEST-DEAD; R190 clock (undecided, linear data); PARKED ~07:3xZ, see "Successor 45 PARK".
@@ -45,6 +46,25 @@ Successor 15 PARKED ~09:40Z 2026-10-25 after box 38; RESUME POINT for successor 
 context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older notebook: `git show b0884407:notes/L-RED.md`.
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
+
+## Successor 48 (Opus 5.5, D1/D18; started 2026-11-03 07:20Z, date -u)
+- Start: clone stale at 996013948; ls-remote (l-red 2f3d13fb, trunk 69911543), fetched both, ff-only to 2f3d13fb; 7 ahead / 15 behind
+  trunk, merge-base bb828553. STEP 0 message 07:20Z. z3 pip; Oink setup_oink.sh.
+- RUN LOG (container-local; cwd experiments/red/r197; relaunch verbatim if lost):
+  - 07:2xZ XI=free KF=1 LAG=1 FMIN=2:13 nohup python3 liftloop.py 5 14 30 out/c5_L14_f2_13 > out/c5_L14_f2_13.log 2>&1 &
+  - 07:2xZ XI=free KF=1 LAG=1 FMIN=3:15 nohup python3 liftloop.py 5 18 30 out/c5_L18_f3_15 > out/c5_L18_f3_15.log 2>&1 &
+  - 07:3xZ (3 doublings, levels 2-4, base F_1 >= 2) XI=free KF=1 LAG=1 FMIN=1:1,2:3,3:7,4:15 nohup python3 liftloop.py 5 16 30 out/t3_d5_L16 > out/t3_d5_L16.log 2>&1 &
+  - 07:5xZ (cwd experiments/red/r199) TMO=3600 nohup python3 xbmc.py out/g3_main.json "4+,4-" out/g3_a44.json > out/g3_a44.log 2>&1 &
+- R199 tools (experiments/red/r199): req.py (C-ELEMENT form + Xi requirements of a prescribed run), xisearch.py (GREEDY exact rank/parity
+  check for fixed Xi-targets + local search + LNS), xisat.py (pure boolean exact Xi synthesis; UNSAT = exact obstruction), build.py
+  (W side: gates / starts for prescribed move times), gen3.py (period-8 three-level doubling target), xbmc.py (main run fixed, aux
+  movers free), match.py, schedof.py, synth.py (first z3 attempt, LIA, slow; superseded).
+- 07:52Z: g3_main (levels 0-3, period 8, F [2, 6, 12, 24], L 24) W side OK; Xi side on the bare d 4 ladder UNSAT (xisat 2.6 s).
+- 08:1xZ xbmc.py with LEM clauses (RE-REVERSAL, LAG over Xi-reach): g2_main (k 2, levels 0-2, F [2,6,12], L 12) + E1 (d 4) UNSAT 4.9 s
+  (agrees with exact d 4 F_2 <= 10); sanity dd_main4 + E1 SAT 68 s (replay matches). Launched (cwd r199, TMO=7000 nohup python3 xbmc.py
+  out/<main>.json <aux> out/<name>.json > out/<name>.log 2>&1 &): g2_main E2 g2_e2; g3k_main E1 g3_e1; g3k_main E2 g3_e2.
+- 08:3xZ g3k_main + E1 (d 5): UNSAT 246 s (exact: period-8 three-level target not realisable at d 5 as a width-2 ladder).
+- TRAP hit again 07:5xZ: «pkill -f <pattern>» killed my own shell (exit 144). Use PIDs read in a separate call.
 
 ## Successor 47 UN-PARK 2 (Lead 07:05Z GO (a): 3-level stacking at d 6; date -u 07:20Z)
 - bmcfork FRATIO="l1,l2,..": F_l >= 2 F_(l-1) >= 2 over transitions 2..L at each listed level (three listed = three consecutive doublings).
