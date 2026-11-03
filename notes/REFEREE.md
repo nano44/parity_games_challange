@@ -1,6 +1,53 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## HANDOVER (successor 22 -> successor 23), written 2026-11-03T19:16Z by date -u (Opus 5.5 under D15; label "(Opus 5.5, D15)")
+Lead: session_014FBi6o334DvwT5Uw2kDfoN. Branch claude/referee, mine alone since 2026-11-01 01:28Z; head at this handover = the commit
+that adds this section (previous head 45f3c09f). Start: fetch, ff-only, is-ancestor this handover, merge trunk claude/vibrant-johnson-nxvvxo,
+then run scripts/setup_oink.sh in the background. Push ONLY via `scripts/push.sh > file 2>&1; echo EXIT $? >> file`, in the background
+(verify takes ~25-30 min). Do NOT commit while a push runs. Reports never read docs/referee-2/ for a packet before my own is pushed.
+### DONE (successor 22; all pushed, verify PASS)
+| item | report | verdict | SHA |
+| --- | --- | --- | --- |
+| P-N5-GATE GATE-L1 recount | R-N5-GATE.md Add. 1 | concurred with REFEREE-2: lend107 106 in-phase (107 first-state grouping) | c9644446, c49c75eeb |
+| P-N5-GATE line L-1 | R-N5-GATE.md §C | MATCHES | ffbdc404 |
+| P-N5-S4B (R102) | R-N5-S4B.md (+ §C L-1 MATCHES) | S4B-OPT, S4B-KEEP SIGNED; 1E-N3 covers S4b; S4B-L1/L2 met | 062cd734, 2e6467fd |
+| R24 under L44 (-> L46) | R-R24-L44.md (+ Add. 1) | Lemma R, TB CLASS-FREE; choice form needs CF-1 citation + bridge B | 472f0dcd, 732198a9 |
+| P-N5-ANCHOR (R103) | R-N5-ANCHOR.md (+ §C, add. 1) | all SIGNED; (R1) covered; ANC-1, ANC-L1/L2/L3 met; L-2 MATCHES | 732198a9, 0647ff33, e002db99 |
+| P-N5-REALIZE (R104) | R-N5-REALIZE.md (+ §C, add. 1) | all SIGNED; REAL-L1 met; C115 E-1 (my error) re-routed to R36 (c) P1; L-2 MATCHES | 05b865e0, 5cc6be95, 45f3c09f |
+### IN FLIGHT: none.
+### NEEDS: none. Next: P-IDEAL-RED (L-NEW 50) under owner ruling D19, routed by the Lead to successor 23.
+### Things only I know (successor 22)
+- CORNER WORDING (L46 / CF-1, my own ambiguity). «An option whose play passes x is a corner» must mean x occurs on the option's play
+  BEFORE its cycle node. Read on the full lasso, it excludes σ_j(x) itself whenever x lies on its own W-cycle (x ≠ c, level ≥ 1), and the
+  choice rule then «fails» exactly where FL-ANCHOR §4 (i) needs it. With the formal ⊕, T_x already excludes real corners (wrong length).
+  R-N5-ANCHOR §1 ANC-1; R-R24-L44 Add. 1. My first L44 DATA silently skipped those vertices (1,371 + 1,393). tbcf_probe.py CORNER=pre
+  tests them: 0 violations.
+- C115 E-1 LESSON. Premises come from LANDED RESULTS only, never from docs/lit. I signed [VJ-LOC] = VJ00 Lemma 5.8 «1 ⇒ 2» on T21 (c)'s
+  «Unaffected». RESULTS records that route as NOT established (R15 (iii) l. 649-650; R36 Reading). The landed route for one-player local
+  optimality is R36 (c) Lemma P1. Apply it on G^d for Odd's one-player game: Fact DUAL keeps the value triples and reverses the order.
+  Before signing a premise list, grep each cited lemma in docs/RESULTS.md: is it a signed item or a recorded open premise?
+- R104's MODEL STATEMENT (REALIZE).
+  - What it says: every IDEAL genome with an ACYCLIC Ξ-graph runs, state for state, as ONE real N5 FL run of the STAB+K+ESC game, with
+    n = N + 3M + 6 and FROM THE GIVEN start pair (σ_0, τ_0). Hence FL-POLY (every start pair) ⇒ IDEAL-ACYC-POLY, with q(t) = p(3t + 6),
+    and a super-polynomial IDEAL-ACYC family transfers from that start pair only.
+  - What it does not say: it bounds nothing, says nothing about the S3 default start, and does not cover Ξ-cyclic genomes (they do
+    mismatch); the converse is not claimed; no FL run exists if L = 0.
+  - Load-bearing details: e-vertices are INDEXED in gate-index order (the root-first key compares indices; KEY (b)); Lemma W (iii) makes
+    bridge B redundant, but Lemma R + TB steps 1, 3-5 are essential (the κ-least choice); the IDEAL stop is an S4c fallback, because
+    (K0, K1) ∈ Iσ always.
+  - My own check (realize_probe.py) did NOT verify mover states = IDEAL: that needs the lane's simulator.
+- (R1) ruling (R103): the choice rule holds at non-movers. TB steps 3-5 + Lemma R describe S1's choice at every vertex that is not its own
+  cycle node. TB's mover hypothesis is used only for the strict «differ». It does not depend on FL.
+- Corpus traps:
+  - anc58/corpus_fixed.lst has 1,132 lines but 813 distinct (319 repeats, RESULTS Erratum E-1): name logs per LINE, de-duplicate.
+  - A «pg» line without a start means S3's start: force STARTF=/nonexistent, or the probe picks up a sibling .start.
+  - Lane starts can be PARTIAL (n5x start_pair fills them from S3): use s4b_probe.py PARTIAL=1 / partial_start().
+- Probe validity: «val(w) vs val(τ(v))» is not a valid local test at cycle nodes; use a one-switch deviation (s4b_probe LOC).
+- Tools added (docs/referee/scratch/): gate_strict.py, s4b_probe.py (+ partial_start), tbcf_probe.py (MUT, CORNER=pre),
+  anchor_probe.py, realize_probe.py; logs in gate_logs/, s4b_logs/, tbcf_logs/, anchor_logs/, realize_logs/.
+- Wrong session trailer on c9644446 (s21's id); recorded at c49c75eeb, not amended.
+
 ## Resume point (successor 22), started 2026-11-01T01:28Z by date -u (Opus 5.5, D15)
 - Start: HEAD = origin 65b74579 (is-ancestor OK; no other writer); trunk f726271a merged (bcca22c9); Oink built; Lead told 01:29Z.
 - GATE-L1 (REFEREE-2 e35e8280) CONCURRED: R-N5-GATE.md Addendum 1 (2026-11-01T01:31Z). lend107 is 106 strict, 107 by first state (s21 gate_probe.py and
