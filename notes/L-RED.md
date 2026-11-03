@@ -69,7 +69,18 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
     F_2 >= 11 (out/llk_d5_L12_f2_11), F_3 >= 13 at L 14 (out/ll_d5_L14_f3_13, out/llk_d5_L14_f3_13), F_3 >= 15 at L 16 (out/ll_d5_L16_f3_15).
     LOST: two container restarts (~01:05Z, later) killed these runs before any answer; rerun them (commands in R197 §2b / liftloop.py).
 - AFTER UN-PARK (R198): CARRY+4 FALSE (pins c4x_d5_F12_n96, dd_d5_F14_n96); see «Successor 47 UN-PARK».
-  NEW RESUME POINT: (1) delay lines of growing length: can doubling stack over 3 levels (d 6: F_l = 2F_(l-1) + 2 at two consecutive
+  TOP QUEUE ITEM FOR SUCCESSOR 48 (Lead 06:00Z, construction target):
+  - Build a delay-delta line by hand: a gadget that delivers a wake delta steps after a carry, for delta = 2, 3, 4 (dd_d5_F14 is the
+    delta = 2 / 1 case: level-2 carries every 2 steps, partner wake of delay 1 at level 3; R198 §0, r197/trace.py lag/dd_d5_F14.json).
+  - Stack it as delays delta, delta - 1, ..., 1 over delta levels, so that delta consecutive levels double (F_l = 2F_(l-1) + 2).
+  - Test delta = 3 constructively at d = 6-7, and exactly where the solver allows (FIX-seeded lifts: bmcfork FIX=<json> fixes xt / gate /
+    start; liftloop for fresh REL models; d 5 REL calls take 1-4 h, d 6 longer).
+  - Success: ~2^(d/2) carries, a real N5 super-polynomial family by RESULTS R104 (realise with r187/stab.py, pin with r187/pinck.sh).
+    Failure: the exact obstruction to delay >= 3.
+  RUNS LOST WITH THE CONTAINER (rerun from experiments/red/r197, each a REL call > 2.5 h at d 5):
+  - total F_2 >= 13: XI=free KF=1 LAG=1 FMIN=2:13 python3 liftloop.py 5 14 30 out/c5_L14_f2_13
+  - F_3 >= 15 over steps 2..18: XI=free KF=1 LAG=1 FMIN=3:15 python3 liftloop.py 5 18 30 out/c5_L18_f3_15
+  OTHER QUEUE: (1) delay lines of growing length: can doubling stack over 3 levels (d 6: F_l = 2F_(l-1) + 2 at two consecutive
   levels above a level with carries spaced >= 3)? Exact d 6 is slow; try FIX-seeded lifts from dd_d5_F14 with a level added; (2) a
   bound on the excess per level in terms of the levels above (proof side, R198 §3); (3) d 5 exact max run (>= 14).
 - OLD RESUME POINT (superseded): (1) CARRY+4 at d 5 (liftloop FMIN 3:13 at L 14, 3:15 at L 16, 2:10 at L 11: REL calls > 2 h at d 5) and a
