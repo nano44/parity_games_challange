@@ -1,5 +1,5 @@
 # L-RED notebook (independent adversary lane)
-Successor 47 (Opus 5.5, D1/D18) started 2026-11-02 20:58Z (date -u); STEP 0 message 20:58Z; R197 (R196 escape shape): fork ladders exact 3 / 5 at d 2 / 3, bottom carry doubling F = [2, 6, 7] pinned (dbl_d3_F6_n60), Lemmas DOWN / LEVEL-RISE / WAKE-CHAIN; IN PROGRESS, see «Successor 47».
+Successor 47 (Opus 5.5, D1/D18) started 2026-11-02 20:58Z (date -u); STEP 0 message 20:58Z; R197: fork ladders exact 3 / 5 (d 2 / 3); carry maxima 2, 6, 10 EXACT (d 4); max run d 4 = 13 EXACT (R193 item closed); pins dbl_d3_F6_n60, dbl_d4_F10_n78, max_d4_L13_n78; Lemmas DOWN / LEVEL-RISE / WAKE-CHAIN; PARKED, see «Successor 47 PARK».
 Successor 46 (Opus 5.5, D1/D18) started 2026-11-02 11:52Z (date -u); STEP 0 message 11:52Z; R191 (degree-3 rotation): ROT-CAP / KEY-ALT / NEST-PI / MERGE-1 / NEST-DEAD-3 PROVED (lane), U linear d 3-8; R192 (RANK) linear; R193 d 4 undecided; R194 (a′) → U; R195 NEST-DEAD-ALL; R196 SAME-WAKER; PARKED ~20:5xZ, see "Successor 46 PARK".
 Successor 45 (Opus 5.5) started 2026-11-02 02:33Z (date -u); P-N5-REALIZE FROZEN e609c5d2 + fixes entries 1-2 + L-1 (MATCHES at both referees); R189 LAG / NEST-DEAD; R190 clock (undecided, linear data); PARKED ~07:3xZ, see "Successor 45 PARK".
 Successor 44 (session id: see docs/NOW.md roster, Opus 5.5) started 2026-11-01 21:06Z (Lead brief; date -u); R187 (real-game W-ladder): Theorem REALIZE PROVED (lane), real L_FL 32 / 64, first active D″-cycle, no compounding; R188 (Ξ-counter): exact d 2 / 3 maxima 4 / 8, no compounding; PARKED ~02:1xZ 2026-11-02, see "Successor 44 PARK".
@@ -46,6 +46,27 @@ context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older note
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
 
+## Successor 47 PARK (2026-11-03 00:54Z, date -u; context ~340k)
+- DONE (claude/l-red, push.sh VERIFY PASS each): 513e313c (trunk merge 67a8bc43 + R197 interim), final push (R197 final + this section).
+- RESULTS (lane level; G-N5-TIME OPEN; no kill, no family), docs/red/R197-alt.md:
+  - Fork (alternating-waker) ladders: EXACT max run 3 / 5 at d 2 / 3 (free: 4 / 8); XI=down: L <= d (Lemma DOWN); XI=up exact 5 at d 3.
+  - Lemmas (PROVED, lane): DOWN, LEVEL-RISE (L <= d (1 + #UPW)), WAKE-CHAIN (deg 2: every move PROMPT or LAG; wake chains forward in pi).
+  - EXACT carries: F_1 = 6 = 2F_0 + 2 (d 3, delay line v1 -> u2 -> u1; pin dbl_d3_F6_n60); d 4: F = [2, 6, 10, 2] (pin dbl_d4_F10_n78),
+    F_2 >= 11 impossible on every d 4 run (REL UNSAT, FMIN 2:10 over steps 2..L at L 11-15). Ceiling would be 14: no doubling.
+  - EXACT max run at d 4 = 13 (L 13 lifted, pin max_d4_L13_n78; L 14 REL+LEM+LAG+KF UNSAT ~6100 s). Maxima 4 / 8 / 13.
+  - Alternating single pairs: 0 in the d 3 maxima, 5 in max_d4_L13 (top mover u3, fork [v3, v1], a 2-tick clock paid by v1 / v3 moves).
+  - CONJECTURE CARRY+4: F_l <= 4l + 2 (exact rows d <= 4 only).
+  - d 5: F_2 >= 10 over steps 2..11 SAT (r197/d5/f2_d5_L12.json, total F_2 = 10 = the d 4 max). Running at the final push: total
+    F_2 >= 11 (out/llk_d5_L12_f2_11), F_3 >= 13 at L 14 (out/ll_d5_L14_f3_13, out/llk_d5_L14_f3_13), F_3 >= 15 at L 16 (out/ll_d5_L16_f3_15).
+- RESUME POINT / QUEUE: (1) CARRY+4 at d 5 (liftloop FMIN 3:13 at L 14, 3:15 at L 16, 2:10 at L 11: REL calls > 2 h at d 5) and a
+  proof attempt of F_l <= F_(l-1) + 4 (KEYFLIP + DELAY-CHARGE + interval nesting, R197 §4); (2) d 5 exact max run; (3) CNONLY in CROOT.
+- Things only I know:
+  - bmcfork FMIN=l:k counts flips of R_l over transitions 2..L only (states 1..L); step 1 is not counted. FMIN k > L - 1 is trivially UNSAT
+    (I first reported «F_2 >= 8 at d 3 L 8 UNSAT»: trivial; erratum in «Successor 47»).
+  - REL (free integer weights) + lemma clauses is a valid relaxation; REL UNSAT is exact. d 4 REL calls: seconds to ~1 h; d 5: > 2 h.
+  - liftloop's z3 calls have NO timeout: kill by PIDs read in a separate call (ps), never by pattern.
+  - The L 13 lift at d 4 succeeded at the FIRST REL model when KF=1 LAG=1 were on (R193's REL model without them did not lift).
+
 ## Successor 47 (Opus 5.5, D1/D18; started 2026-11-02 20:58Z, date -u)
 - Start: clone stale at 996013948. ls-remote (l-red bb828553, trunk d8c9ee5d, l-new 2715601a), fetched those three; ff-only to bb828553;
   9 ahead / 13 behind trunk, merge-base 3398c652; trunk merged no-ff 67a8bc43. STEP 0 message 20:58Z (answers in the message). Oink
@@ -54,7 +75,11 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   NOT on trunk), RESULTS R104 (l. 9864), R178 §2 (XI-NEW proof), r187/ideal.py, r178/fastcyc.py, r190/delclimb.py, r193/bmc4.py.
 - R197 docs/red/R197-alt.md: fork ladders (r197/bmcfork.py XI=fork|down|up; r197/forkclimb.py), EXACT fork max 3 / 5 at d 2 / 3;
   Lemma DOWN (Xi only to lower W-levels => L <= d), LEVEL-RISE, WAKE-CHAIN; z3 FMIN finds F = [2, 6, 7] at d 3 (F_1 = 2F_0 + 2, the
-  KEYFLIP ceiling) through a delay line v1 -> u2 -> u1; pin dbl_d3_F6_n60 (PIN OK, lemck 0). F_2 >= 8 at d 3 UNSAT.
+  KEYFLIP ceiling) through a delay line v1 -> u2 -> u1; pin dbl_d3_F6_n60 (PIN OK, lemck 0). F_2 >= 8 at d 3 UNSAT (ERRATUM, same session: trivially UNSAT, FMIN counts only transitions 2..L = 7; correct: F_2 <= L <= 8).
+- Interim push 513e313c (VERIFY PASS 22:31Z); Lead messaged 22:31Z. Then: REL d 4 L 8 FMIN 2:7 SAT in seconds -> lift (FIX) SAT 34 s;
+  liftloop.py (REL -> FIX + blocking): d 4 L 10 F_2 >= 9 SAT (dbl_d4_F10, F [2, 6, 10, 2], pinned); F_2 >= 10 UNSAT at L 11-15;
+  d 4 L 13 lifted at the first REL model (KF=1 LAG=1; REL 3204 s), pinned max_d4_L13_n78; REL L 14 (LEM LAG KF) UNSAT ~6100 s.
+  Fork d 4 exact runs (L 7, L 8) stopped after 80 min, undecided. FREE=1 driver run (d 3 L 8) timed out at 900 s (not used).
 
 ## Successor 46 PARK (final 2026-11-02 ~20:5xZ, date -u; context ~500k; first park 19:3xZ, un-parked 19:47Z)
 - DONE (claude/l-red, push.sh VERIFY PASS each): 5f2eaf3f + 314dcdda (R191), 24efabd0 (R192), 86f2a4e0 (R193 draft, bmc4), e8af7ca1

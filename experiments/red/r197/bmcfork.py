@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""KF=1: add KEYFLIP clauses (redundant). FREE=k: levels < k are free drivers (each move still goes to a strictly Xi-better option, but at ANY time, ignoring keys: a relaxation used to test
+"""BLOCK=file: JSON list of (xt, gate, start) structures to exclude (REL -> FIX lift loop, r197/liftloop.py). KF=1: add KEYFLIP clauses (redundant). FREE=k: levels < k are free drivers (each move still goes to a strictly Xi-better option, but at ANY time, ignoring keys: a relaxation used to test
 composition; run with LEM=0, the lemma clauses assume the rule everywhere). FMIN="l:k,...": additionally require >= k flips of the level-l key ranking R_l among states 1..L (carries; XI=free leaves Xi
 unconstrained as in bmc4). L-RED R197 BMCFORK = r193/bmc4.py + XI=fork|down|up: the Xi-targets of each mover's two options are the two movers of ONE level
 (fork: any level, or both exit; down: level l-1, level 0 -> exit; up: level l+1, top -> exit). Everything else as bmc4. Original: L-RED R193 BMC4 = r188/bmc3.py + REDUNDANT constraints from proved lane lemmas (LEM=1, default): Xi-reachability reach[x][y]
@@ -129,6 +129,11 @@ if os.environ.get("LAG") == "1":
         for x in range(N):
             if lev[x] == 0: continue
             S.add(z3.Implies(z3.And(mvd[t][x], z3.Not(mvd[t - 1][x]), KL[t][x] == KL[t - 1][x]), z3.Or([z3.And(reach[x][y], mvd[t - 1][y]) for y in range(N) if y != x])))
+BLOCK = os.environ.get("BLOCK")
+if BLOCK and os.path.exists(BLOCK):   # list of FIX structures (xt, gate, start) already refuted by the exact lift: exclude them
+    for B in json.load(open(BLOCK)):
+        S.add(z3.Not(z3.And(*[xt[(v, k)] == B["xt"][f"{v},{k}"] for v, k in faces], *[gate[(v, k)] == B["gate"][f"{v},{k}"] for v, k in faces],
+                            *[sig[0][v] == bool(B["start"][v]) for v in range(N)])))
 r = S.check(); print("BMCFORK XI", XI, "FREE", FREE, "FMIN", FMIN, "d", d, "L", L, "LEM", os.environ.get("LEM", "1"), "LAG", os.environ.get("LAG", "0"), "REL", os.environ.get("REL", "0"), "->", r, flush=True)
 if r == z3.sat and os.environ.get("REL") == "1":   # write the structure as a FIX file (xt, gate, start) for the exact model
     m = S.model(); ev = lambda e: m.eval(e, model_completion=True)
