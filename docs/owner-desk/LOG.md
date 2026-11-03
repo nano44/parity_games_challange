@@ -548,3 +548,9 @@ Answered from trunk 1d9bf989e (2026-11-03 13:03Z) and docs/agents/LEAD-STATE.md 
 
 ## 2026-11-03T14:49Z Lead report (14:49Z, summary)
 Summary confirmed. L-RED 48 pushed 539a56c0 (~14:00Z): second k = 3 shape (period 16) also UNSAT at d 5 (exact); d 6, d 7 for k = 3 running. L-RED 47's weak three-doubling witness tri_d5_L12_n96 (F [2,1,3,5,8]) is small numbers, not evidence of 2^(d/2). Lead framing: no new result, no new obstruction; decisive measurement k = 3 at d 6/7 (SAT: stacking possible; repeated UNSAT: stacking limit, a structural lemma for the proof side). Pace low until 2026-11-04 21:00Z. Lane level; G-N5-TIME OPEN.
+
+## 2026-11-03T20:27Z owner words given directly to the Lead (D19, as recorded in docs/DECISIONS.md, trunk 8c37ab0b)
+> we have 9% usage left until tomorrow night, make use of it
+
+## 2026-11-03T20:27Z Lead daily owner line (2026-11-03 20:26Z, summary)
+D19 / L47: pacing hold lifted; spend spread to last until the reset (2026-11-04 21:00Z); stop on paid overage. L-NEW 50 started 19:14Z (box 150 freezes P-IDEAL-RED for referees; box 151 stacking-limit lemma from k = 3 UNSAT at d 5). L-RED 48 continues past its timebox (decidable d 6 test; doubling with slack). REFEREE 23 started 19:55Z (pre-check XI-NEW, then the packet). Peak 3 working sessions plus gates. Data (exact, lane level): k = 2 nesting SAT at d 5; k = 3 UNSAT at d 5 both targets; d 6/7 UNKNOWN; obstruction needs value semantics. No new landed result today. G-N5-TIME OPEN.
