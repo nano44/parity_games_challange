@@ -77,6 +77,10 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - 10:02Z strong hint g3_e2H: UNSAT 4.2 s (nd2 pattern with a level inserted does not extend). Bisection runs (TMO 900): g3_{Bnobase,
   Cnoaux,Dtop,Elow} = hint minus base faces / minus aux faces / only levels >= 3 / only levels < 3.
 - 10:2xZ launched (r199, TMO=14000 nohup python3 xbmc.py out/g3k_main.json <E2|E3> out/<g3_e2b|g3_e3>.json > out/<name>.log 2>&1 &).
+- 10:3xZ bisection: Bnobase UNSAT 32 s, Dtop (levels >= 3 fixed) UNSAT 56 s, Gaux (nd2 aux wiring, levels 4-5) UNSAT 124 s; Cnoaux, Elow,
+  Ftop3, Hv3 UNKNOWN at 900 s. Launched TMO=10000 python3 xbmc.py out/g3k_main.json "E1,4+,4-" out/g3_e1h2.json (d 5 + 2 helpers at level 4).
+- Lead 10:36Z: successor 47 pushes 5 commits to claude/l-red-47-hold (FRATIO, pin tri_d5_L12_n96, F [2,1,3,5,8], weak form); merge it
+  no-ff into claude/l-red after the Lead confirms it landed, notes resolved in my favour keeping 47's R-entry. Trend table label: weak.
 - TRAP hit again 07:5xZ: «pkill -f <pattern>» killed my own shell (exit 144). Use PIDs read in a separate call.
 
 ## Successor 47 UN-PARK (Lead 02:03Z: CARRY+4 at d 5 exact + proof attempt; date -u)
