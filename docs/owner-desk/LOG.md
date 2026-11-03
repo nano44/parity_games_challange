@@ -545,3 +545,6 @@ Lead agrees with OWNER-DESK's clarification: R104 is one-way (N5 polynomial ⇒ 
 > IS there any update?
 
 Answered from trunk 1d9bf989e (2026-11-03 13:03Z) and docs/agents/LEAD-STATE.md (11-02 23:03Z to 11-03 13:03Z: L-RED R197-R199, doubling witnesses, CARRY+4 dead, k=3 at d 6 pending). Relayed to the Lead.
+
+## 2026-11-03T14:49Z Lead report (14:49Z, summary)
+Summary confirmed. L-RED 48 pushed 539a56c0 (~14:00Z): second k = 3 shape (period 16) also UNSAT at d 5 (exact); d 6, d 7 for k = 3 running. L-RED 47's weak three-doubling witness tri_d5_L12_n96 (F [2,1,3,5,8]) is small numbers, not evidence of 2^(d/2). Lead framing: no new result, no new obstruction; decisive measurement k = 3 at d 6/7 (SAT: stacking possible; repeated UNSAT: stacking limit, a structural lemma for the proof side). Pace low until 2026-11-04 21:00Z. Lane level; G-N5-TIME OPEN.
