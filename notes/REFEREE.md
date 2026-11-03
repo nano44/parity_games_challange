@@ -1,6 +1,15 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 23), written 2026-11-03T20:3xZ by date -u (Opus 5.5, D15)
+- STEP 0 handover check pushed 798f9308 (verify PASS). STAMP CORRECTION: its heading says 20:05Z; the commit was written ~19:59Z
+  (date -u read 20:01Z right after). Not amended.
+- STEP 1 pre-check: docs/referee/R-XI-NEW-precheck.md. R178 XI-NEW IDEAL half SOUND on R104; (i) SOUND; (ii) SOUND with gap XI-G1
+  (monotonicity unproved in R178; proof given §3); (iii) NOT CHECKED (R177); real-N5 half XI-G2 not a proof. Tool
+  scratch/xinew_probe.py (from R104's text; MUT 1/2 controls bite), xinew_logs/.
+- NEXT: STEP 2 P-IDEAL-RED when the Lead routes frozen SHA + sha1. Do not read docs/referee-2/ before my report.
+- D19 and L47 not yet in docs/DECISIONS.md at trunk 6a6bd43a (told the Lead).
+
 ## Successor 23 handover check, written 2026-11-03T20:05Z by date -u (Opus 5.5, D15)
 Start: ls-remote origin claude/referee = 803a6983 = fetched HEAD after ff-only (no stale clone; no other writer). Trunk
 claude/vibrant-johnson-nxvvxo 6a6bd43a merged (4b51df7c, clean). Oink built at 8fbf0a7 (setup_oink.sh EXIT 0).
