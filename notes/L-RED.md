@@ -85,6 +85,11 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   TMO=10000 python3 xbmc.py out/g3p2_main.json E2 out/g3p2_e2.json > out/g3p2_e2.log. Merged origin 46c73b9b (47's final) no-ff f531eff69.
 - 13:2xZ g3_e1h2 (d 5 + helpers 4+,4-): UNKNOWN 10000 s. g3p2_main + E1 (d 5, L 16): UNSAT 69 s. Launched TMO=6000 python3 xbmc.py
   out/g3p2_main.json "E1,4+,4-" out/g3p2_e1h2.json > out/g3p2_e1h2.log.
+- 14:3xZ g3_e3 (d 7) UNKNOWN 14000 s; g3p2_e2 (d 6, L 16) UNKNOWN 10000 s. CORE=1 xbmc at d 5 (g3p2 / g3 + E1): UNSAT with EMPTY core
+  (no main Xi-requirement needed). xwake.py (wake-order relaxation, + degree 2, + comparison bits) is SAT: the d 5 refutation needs the
+  priority-value semantics of the aux movers. cegar.py (xwake proposes aux schedules, xisat refutes): ~5 min / pattern, test on g3p2 E1
+  (nohup python3 cegar.py out/g3p2_main.json 1 200 out/cg_g3p2_e1 > out/cg_g3p2_e1.log). Portfolio: SEED=1,2,3 TMO=20000 python3 xbmc.py
+  out/g3p2_main.json E2 out/g3p2_e2_s<seed>.json > out/g3p2_e2_s<seed>.log.
 - TRAP hit again 07:5xZ: «pkill -f <pattern>» killed my own shell (exit 144). Use PIDs read in a separate call.
 
 ## Successor 47 UN-PARK 2 (Lead 07:05Z GO (a): 3-level stacking at d 6; date -u 07:20Z)

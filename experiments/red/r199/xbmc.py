@@ -28,6 +28,7 @@ def main():
     bad, req = RQ.requirements(lev0, WT0, gate0, S0)
     if bad: print("W-side violations", bad); sys.exit(1)
     faces = [(v, k) for v in range(N) for k in (0, 1)]; M = len(faces); fi = {f: i for i, f in enumerate(faces)}
+    if os.environ.get("SEED"): z3.set_param("smt.random_seed", int(os.environ["SEED"])); z3.set_param("sat.random_seed", int(os.environ["SEED"]))
     Z = z3.Solver()
     if os.environ.get("TMO"): Z.set("timeout", int(os.environ["TMO"]) * 1000)
     Tg = range(-1, N)
@@ -117,8 +118,10 @@ def main():
                 cond = z3.simplify(z3.And(mv[(t, x)], z3.Not(mv[(t - 1, x)]), kpb(t, x) == kpb(t - 1, x)))
                 if z3.is_false(cond): continue
                 Z.add(z3.Implies(cond, z3.Or([z3.And(reach[(x, y)], mv[(t - 1, y)]) for y in range(N) if y != x])))
+    CORE = os.environ.get("CORE") == "1"; pm = {x: z3.Bool(f"req_{x}") for x in range(N0)}
     for (s, x), bit in req.items():
-        c = better1(s, x); Z.add(c if bit == 1 else z3.Not(c))
+        c = better1(s, x); cc = c if bit == 1 else z3.Not(c)
+        Z.add(z3.Implies(pm[x], cc) if CORE else cc)
     for a in range(N0, N):
         for t in range(1, L + 1):
             c = better1(t - 1, a); kp = KPb(t, a)
@@ -128,7 +131,9 @@ def main():
     if os.environ.get("AUXMOVE") == "1":   # every aux mover must move at least once (avoid idle aux)
         for a in range(N0, N): Z.add(z3.Or([st[(t, a)] != st[(t - 1, a)] for t in range(1, L + 1)]))
     print("XBMC main N", N0, "aux", aux, "L", L, "requirements", len(req), "faces", M, flush=True)
-    t0 = time.time(); r = Z.check(); print("XBMC ->", r, f"{time.time() - t0:.1f} s", flush=True)
+    t0 = time.time(); r = Z.check(*pm.values()) if CORE else Z.check(); print("XBMC ->", r, f"{time.time() - t0:.1f} s", flush=True)
+    if CORE and r == z3.unsat:
+        core = Z.unsat_core(); print("CORE (movers whose C-requirements conflict):", sorted(str(c) for c in core), flush=True)
     if r == z3.sat:
         m = Z.model(); tv = lambda e: z3.is_true(m.eval(e, model_completion=True))
         xt = {f: next(u for u in Tg if u != f[0] and tv(b[(f, u)])) for f in faces}
