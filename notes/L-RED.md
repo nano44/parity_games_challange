@@ -63,6 +63,7 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - 08:1xZ xbmc.py with LEM clauses (RE-REVERSAL, LAG over Xi-reach): g2_main (k 2, levels 0-2, F [2,6,12], L 12) + E1 (d 4) UNSAT 4.9 s
   (agrees with exact d 4 F_2 <= 10); sanity dd_main4 + E1 SAT 68 s (replay matches). Launched (cwd r199, TMO=7000 nohup python3 xbmc.py
   out/<main>.json <aux> out/<name>.json > out/<name>.log 2>&1 &): g2_main E2 g2_e2; g3k_main E1 g3_e1; g3k_main E2 g3_e2.
+- 08:3xZ g3k_main + E1 (d 5): UNSAT 246 s (exact: period-8 three-level target not realisable at d 5 as a width-2 ladder).
 - TRAP hit again 07:5xZ: «pkill -f <pattern>» killed my own shell (exit 144). Use PIDs read in a separate call.
 
 ## Successor 47 UN-PARK (Lead 02:03Z: CARRY+4 at d 5 exact + proof attempt; date -u)
