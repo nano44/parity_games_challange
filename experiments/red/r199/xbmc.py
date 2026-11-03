@@ -42,6 +42,8 @@ def main():
         Z.add(z3.PbEq([(b[(f, u)], 1) for u in Tg if u != f[0]], 1))
         for u in range(N):
             if u != f[0]: Z.add(z3.Implies(b[(f, u)], before[(f[0], u)]))
+    for key, u in (json.loads(os.environ["XTFIX"]).items() if os.environ.get("XTFIX") else []):
+        v, k = map(int, key.split(",")); Z.add(b[((v, k), u)])
     lt = {(i, j): z3.Bool(f"l{i}_{j}") for i in range(M) for j in range(M) if i != j}
     for i in range(M):
         for j in range(i + 1, M): Z.add(lt[(i, j)] != lt[(j, i)])
