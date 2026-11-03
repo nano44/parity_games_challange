@@ -110,6 +110,12 @@ No family.
   | k 2, L 12 | 1 (d 4) / 2 (d 5) / 3 / 4 | UNSAT / SAT / SAT / SAT |
   | k 3, L 24 | 0 (d 4) / 1 (d 5) / 2 (d 6) / 3 (d 7) / 4 (d 8) | UNSAT / UNSAT / SAT / SAT / SAT |
   | k 3, L 16 | 1 (d 5) / 2 (d 6) / 3 / 4 | UNSAT (2 choices) / SAT / SAT / SAT |
+  | k 4, L 48 | 1 (d 6) / 2 (d 7) / 3 (d 8) | UNSAT 0.8 s / UNSAT 16.6 s / SAT 39.1 s (1 full-F gate choice) |
+  E_min(k) (least extra levels allowed by the fixed relaxation, build.py's gates) = 2, 2, 3 for k = 2, 3, 4: reproduces L-NEW successor 50's
+  table (box 151, claude/l-new 76903103, «with build.py's gates: 2, 2, 3»; relayed by the Lead 21:16Z, not opened by me).
+- Exact checks of relaxation-SAT schedules at d 6 (r199/cegar2.py, 21:0xZ-): a single proposal's full xisat check times out at 1200 s
+  (UNKNOWN, 3 targets); the HUNT mode (Ξ-targets within xwake's edges, then within its reach order, then LNS local search; SAT-finding
+  only, labelled inexact) refutes nothing exactly; status at the final push in §3b.
 - So the d ≤ 5 refutations ARE combinatorial: they follow from the wake-order clauses alone (K: moves go to KP; RE-REVERSAL; LAG; Ξ-reach a
   strict partial order of an out-degree-≤ 2 graph; comparison bits obeying the C-element rule and changing only when a reached mover moves),
   all of which hold on every IDEAL-ACYC run at degree 2. The relaxation exactly reproduces the exact frontier for k 2 (d 4 UNSAT, d 5 SAT)
