@@ -46,6 +46,12 @@ context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older note
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
 
+## Successor 47 UN-PARK (Lead 02:03Z: CARRY+4 at d 5 exact + proof attempt; date -u)
+- R198 docs/red/R198-carry4.md: Lemmas K0-K3, INTERVAL, FLIP-COUNT (F_l = F_(l-1) + 1 + DBL - ZERO), AUTOMATON PROVED (lane);
+  CARRY+4 <=> DBL - ZERO <= 3. EXACT d 5 (liftloop FMIN 2:11 L 12, KF LAG): F = [2, 6, 12, 9, 2] -> CARRY+4 FALSE; pin c4x_d5_F12_n96.
+  Lead messaged 03:12Z. r197/ivl.py checks; check.sh block «R198». JUMP climbs d 6 / 8 / 12 stop at 4 (did not find it).
+- Running (container-local out/): c5_L14_f2_13, c5_L14_f3_13, c5_L16_f3_15, c5_L18_f3_15, jump_d10 climb.
+
 ## Successor 47 PARK (2026-11-03 00:54Z, date -u; context ~340k)
 - DONE (claude/l-red, push.sh VERIFY PASS each): 513e313c (trunk merge 67a8bc43 + R197 interim), final push (R197 final + this section).
 - RESULTS (lane level; G-N5-TIME OPEN; no kill, no family), docs/red/R197-alt.md:
@@ -55,7 +61,7 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
     F_2 >= 11 impossible on every d 4 run (REL UNSAT, FMIN 2:10 over steps 2..L at L 11-15). Ceiling would be 14: no doubling.
   - EXACT max run at d 4 = 13 (L 13 lifted, pin max_d4_L13_n78; L 14 REL+LEM+LAG+KF UNSAT ~6100 s). Maxima 4 / 8 / 13.
   - Alternating single pairs: 0 in the d 3 maxima, 5 in max_d4_L13 (top mover u3, fork [v3, v1], a 2-tick clock paid by v1 / v3 moves).
-  - CONJECTURE CARRY+4: F_l <= 4l + 2 (exact rows d <= 4 only).
+  - CONJECTURE CARRY+4: F_l <= 4l + 2 (exact rows d <= 4 only). REFUTED 03:12Z by R198 (d 5 exact, c4x_d5_F12_n96).
   - d 5: F_2 >= 10 over steps 2..11 SAT (r197/d5/f2_d5_L12.json, total F_2 = 10 = the d 4 max). Running at the final push: total
     F_2 >= 11 (out/llk_d5_L12_f2_11), F_3 >= 13 at L 14 (out/ll_d5_L14_f3_13, out/llk_d5_L14_f3_13), F_3 >= 15 at L 16 (out/ll_d5_L16_f3_15).
     LOST: two container restarts (~01:05Z, later) killed these runs before any answer; rerun them (commands in R197 §2b / liftloop.py).

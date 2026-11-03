@@ -5,7 +5,7 @@ other level (each mover's options split over both sides), so consecutive single 
 MODE=down: Xi of level l -> level l-1 (level 0 -> exit); MODE=up: Xi of level l -> level l+1 (top -> exit); MODE=mix: per mover,
 Xi-level free among levels with a pi-later pair (acyclic by pi = level order or its reverse per mode). Degree D: options k >= 2 get
 Xi-target exit or a side (mutable). Mutations: gates, beta ranks / parities, start, side bijection per mover.
-MODE=free: r190/delclimb ladders (Xi free, pi mutable). Score SCORE=L (default), FMAX (max_l F_l, sum F, L), U (box 144 CHAIN-BACK unchained steps), F (sum of carries F_l), TOP (moves of the top level).
+MODE=free: r190/delclimb ladders (Xi free, pi mutable). Score SCORE=L (default), FMAX (max_l F_l, sum F, L), JUMP (max_l F_l - F_(l-1), sum F, L), U (box 144 CHAIN-BACK unchained steps), F (sum of carries F_l), TOP (moves of the top level).
 Usage: forkclimb.py d D iters seed out.json"""
 import sys, os, json, random
 H = os.path.dirname(os.path.abspath(__file__)); sys.path[:0] = [os.path.join(H, "..", "r187"), os.path.join(H, "..", "r178"), os.path.join(H, "..", "r190")]
@@ -58,6 +58,7 @@ def score(G):
     if SC == "F": return (sum(F), L)
     if SC == "TOP": return (Mv[-1], L)
     if SC == "FMAX": return (max(F), sum(F), L)
+    if SC == "JUMP": return (max(F[l] - F[l - 1] for l in range(1, len(F))), sum(F), L)
 if __name__ == "__main__":
     sys.path.insert(0, H)
     d, D, it, seed = map(int, sys.argv[1:5]); out = sys.argv[5]; rng = random.Random(seed)

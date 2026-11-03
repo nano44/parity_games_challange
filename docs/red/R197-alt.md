@@ -109,7 +109,7 @@ pin. Not a TARGET.md claim. G-N5-TIME OPEN. No kill, no family.
   r197/d5/f2_d5_L12.json, run length 12, F = [2, 6, 10, 7, 6], level 2 carrying at every step 2..11 but not at step 1). So with a
   fifth level the step-2..L count passes the d 4 bound 9, while total F_2 stays at the d 4 maximum 10. Running at the push (REL calls
   > 1 h each at d 5): total F_2 ≥ 11 (FMIN 2:11 at L 12, KF + LAG), F_3 ≥ 13 at L 14 and F_3 ≥ 15 at L 16 (CARRY+4 predicts F_3 ≤ 14).
-- CONJECTURE CARRY+4 (DATA = the exact rows above only): on width-2 degree-2 IDEAL-ACYC ladders, F_l ≤ 4l + 2. With N5-IDEAL-STATE §5
+- REFUTED in R198 (2026-11-03, exact d 5 witness c4x_d5_F12: F_2 = 12 = F_1 + 6). Original text: CONJECTURE CARRY+4 (DATA = the exact rows above only): on width-2 degree-2 IDEAL-ACYC ladders, F_l ≤ 4l + 2. With N5-IDEAL-STATE §5
   (IDEAL-ACYC-POLY ⟺ Σ_l F_l poly on this ladder, l-new box 149, lane) it would give O(d²) carries, hence polynomial runs, on this
   ladder class only. Not proved; the d 5 / L ≥ 15 rows are the next test.
 
