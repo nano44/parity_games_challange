@@ -1,6 +1,27 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Successor 23 handover check, written 2026-11-03T20:05Z by date -u (Opus 5.5, D15)
+Start: ls-remote origin claude/referee = 803a6983 = fetched HEAD after ff-only (no stale clone; no other writer). Trunk
+claude/vibrant-johnson-nxvvxo 6a6bd43a merged (4b51df7c, clean). Oink built at 8fbf0a7 (setup_oink.sh EXIT 0).
+1. Branch claude/referee. Head at start 803a6983: 1 ahead of / 191 behind trunk 6a6bd43a. After the merge 4b51df7c: 2 ahead, 0 behind
+   (this commit makes 3 ahead).
+2. Open work: none inherited (s22 IN FLIGHT none). New, from the Lead's brief: STEP 1 independent pre-check of R178 Lemma XI-NEW
+   (l-red docs/red/R178-ideal.md §2) against R104's IDEAL-ACYC model -> docs/referee/R-XI-NEW-precheck.md (next step: read §1-§2 and
+   R104, check statement/hypotheses/proof). STEP 2 P-IDEAL-RED (L-NEW 50), waiting for the Lead to route the frozen SHA + sha1.
+3. GAPS rows owned by REFEREE: none (docs/GAPS.md open table: GAP-A, GAP-C, G-S5-6, G-NEST, G-N1-LB, G-N5-TIME; none owned by REFEREE;
+   referees appear in G-N5-TIME as «referees later»).
+4. Rulings (verbatim), status in docs/DECISIONS-INDEX.md:
+   - D1 (active): «A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the
+     fleet's own, as wrong until it passes the gauntlet below.» and «Never downgrade the referee to save money.»
+   - D18 (active): «Focus on N5 and work toward proving it. [...] Clearly distinguish proven results from conjectures and open problems.»
+   - D12 (active; carried on by D15/L37, label "(Opus 5.5, D15)"): «WE can run referees on opus too temperoraly»
+   - D19 (quoted from the Lead's brief, 2026-11-03): «we have 9% usage left until tomorrow night, make use of it». NOT YET in
+     docs/DECISIONS.md or docs/DECISIONS-INDEX.md at trunk 6a6bd43a (index ends at L46; L47 also absent).
+5. Trap: C115 E-1 (s22). A premise taken from a docs/lit note («unaffected») was signed although RESULTS records that route as NOT
+   established (VJ00 Lemma 5.8 «1 ⇒ 2»). Check now: every premise of a signed item is grepped in docs/RESULTS.md and must be a landed,
+   signed item or a proof carried in the packet; docs/lit is never a premise.
+
 ## HANDOVER (successor 22 -> successor 23), written 2026-11-03T19:16Z by date -u (Opus 5.5 under D15; label "(Opus 5.5, D15)")
 Lead: session_014FBi6o334DvwT5Uw2kDfoN. Branch claude/referee, mine alone since 2026-11-01 01:28Z; head at this handover = the commit
 that adds this section (previous head 45f3c09f). Start: fetch, ff-only, is-ancestor this handover, merge trunk claude/vibrant-johnson-nxvvxo,
