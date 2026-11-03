@@ -10,7 +10,10 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 - STEP 1 pushed a4e7b4a9 (verify PASS). Lead scored the handover check 5/5; D19 + L47 on trunk 8c37ab0b.
 - STEP 2 P-IDEAL-RED (l-new 0ebddcf5, sha1 06f2c186…, 261 lines): docs/referee/R-P-IDEAL-RED.md. 15 SIGN, U-EQ SIGN WITH GAP U-1
   («U ≤ T − 1» false at T = 0); REQUIRED IR-1 (MONO's «non-current option values not monotone» remark is FALSE: v = ε + cv(xt));
-  optional P-1..P-3. w99 re-run MATCHES; own sim (xinew_lane.py) T equal on 46 corpus genomes. NEXT: §C on fixes when routed.
+  optional P-1..P-3. w99 re-run MATCHES; own sim (xinew_lane.py) T equal on 46 corpus genomes.
+- §C (23:02Z) on l-new b115ff3a (fixes 727b6f0c, line L-1 44d0287a): U-1 and IR-1 CLOSED, P-1..P-3 correct, all 16 SIGNED;
+  F-4 deg>=3 DATA reproduced (deg3_probe.py: KEYFLIP 343, TOP-MONO 8,105 fails / 2,950 runs). Line L-1 NOT YET: REQUIRED
+  L-1a (ENC: ε undefined, X case), L-1b (A undefined), L-1d (U over t in [2,T]), L-1e (labels agree from a+2); optional L-1c, f-h.
 - Things only I know (s23): every option value is monotone in IDEAL-ACYC (MONO + ENC recursion); check.py tests current values only.
   check.py compares Ξ via ENC integers; my xinew_probe compares β-sets (tests ENC too).
 - D19 and L47 not yet in docs/DECISIONS.md at trunk 6a6bd43a (told the Lead).

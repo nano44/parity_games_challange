@@ -190,3 +190,76 @@ REFEREE successor 23 (Opus 5.5, D15), 2026-11-03T20:40Z by date -u. Independent:
   - XI-G1 closed by MONO. XI-G2 and R178 (iii) are excluded and unused.
   - Premise route: R104's definition only. The TARGET diff is agreed.
 - NEEDS: Lead: route IR-1 and U-1 (and optionally P-1 to P-3) to docs/new/P-IDEAL-RED-fixes.md; §C on the fixes/line when frozen.
+
+## §C (2026-11-03T23:02Z by date -u, successor 23; Opus 5.5, D15): fix round entry 1 and line L-1
+- Object: claude/l-new b115ff3a, an ancestor of origin/claude/l-new. I re-measured every file:
+  - docs/new/P-IDEAL-RED-fixes.md: sha1 727b6f0c…, 68 lines;
+  - docs/new/P-IDEAL-RED-line-L1.txt: sha1 44d0287a…, 1 line;
+  - docs/new/P-IDEAL-RED.md: unchanged, sha1 06f2c186…, 261 lines.
+- Every «Old» text of F-1 to F-4 is verbatim the packet's line (l. 94, 126, 169-170, 181, 223-225, 251).
+
+### (a) Fixes
+- F-1 = U-1: CLOSED.
+  - «U ≤ max(T − 1, 0)» is true: U counts unchained t ∈ [2, T].
+  - U-EQ is now SIGNED without gap.
+- F-2 = IR-1: CLOSED.
+  - The false parenthetical is gone.
+  - The new Remark is TRUE: ENC's recursion plus MONO on the Ξ-target, which is my report's §2 argument. It is labelled «not a
+    signed statement» and stays unsigned. It is not in line L-1 (see (b)).
+  - The remaining «Does NOT claim: anything on Ξ-cyclic genomes» is correct.
+- F-3: P-1, P-2 and P-3 are CORRECT.
+  - P-1: Σ_(j=0..0) C(N, j) − 1 = 0 = U.
+  - P-2: the identification is the one the induction uses.
+  - P-3: n_i are distinct counts < n, and U(H_i) ≤ U*(n_i) because U* is defined with «at most».
+- F-4 (REFEREE-2 N-2 DATA, unsigned, §9): I did not read docs/referee-2/ for it. I reproduced its claim on my own simulator
+  (scratch/deg3_probe.py, written from R104's text): on 2,950 random degree-≥3 runs, KEYFLIP with KP = the key-least option fails
+  343 times and TOP-MONO fails 8,105 times. So «degree ≤ 2 is needed where stated» is confirmed as DATA.
+  - My counts differ from REFEREE-2's because the genomes differ.
+- After entry 1, my verdicts: all 16 statements SIGNED, U-EQ included.
+
+### (b) Line L-1, word by word against packet + entry 1
+- Clauses that MATCH, each a signed statement with its hypotheses:
+  - the scope «IDEAL model of R104, acyclic Ξ-graphs, any number of movers per level, π any topological order»;
+  - the premise «R104's definition of the model only, no theorem of R104 used»;
+  - the «at any degree» group: LOCAL, MONO, XI-NEW (given L-1b), CHAIN-BACK (given L-1d), U-EQ (F-1 form), DECREMENT, EXACT-ENERGY;
+  - the «at degree ≤ 2 only» group: KEYFLIP (with KF-EQ), TOP-MONO, RANK-BOUND, INTERVAL-RESTRICT (given L-1e), INTERVAL-CHARGE,
+    RECURSION;
+  - the tail: REDUCTION / EQUIVALENCE, nothing bounded polynomially, the exclusions, G-N5-TIME OPEN, not M3 / step-4 / TARGET.
+- The degree split is exact. The packet signs DECREMENT, EXACT-ENERGY and everything before §5 at any degree, and §5, §7 and §8 at
+  degree ≤ 2.
+- The F-2 remark («every option's value is non-decreasing») is NOT in the line. MONO's clause says «the current Ξ-value of every
+  mover». Correct.
+- DATA in the line:
+  - «0 violations … 46 corpus genomes and 75,518 all-start runs» equals my w99 re-run.
+    - check.py runs the degree-≤-2 checks only on degree-≤-2 genomes, so «every inequality» means every inequality where it is stated.
+  - «degree ≤ 2 is needed for KEYFLIP and TOP-MONO (DATA, REFEREE-2 N-2)» is labelled DATA and reproduced by me.
+- Label and premise: no PROVED / signature words appear in the line; that is the Lead's heading. The premise is R104's definition
+  only.
+- REQUIRED word changes:
+  - L-1a (ENC). The line has «so the value of option (x, k) is ε(x, k) plus the current value of its Ξ-target».
+    - ε is undefined in the line, and the X case is missing: an option whose Ξ-target is X has no «current value of its Ξ-target».
+    - New: «so the value of option (x, k), as that integer, is ε(x, k) := ±2^rank(x, k) (+ for even parity) if its Ξ-target is X,
+      and ε(x, k) plus the current value of its Ξ-target otherwise».
+  - L-1b (XI-NEW). «w ∉ A_(s_(t−2))(h)»: A is undefined in the line.
+    - New: «w ∉ A_(s_(t−2))(h) (A_s(h) := h's current option under s together with its options strictly better under s)».
+  - L-1d (CHAIN-BACK / U-EQ). «with U the number of unchained steps»: chained is defined only for t ≥ 2. If step 1 counted as
+    unchained, U-EQ's «U ≤ max(T − 1, 0)» would fail (U = T).
+    - New: «with U the number of unchained steps t ∈ [2, T]».
+  - L-1e (INTERVAL-RESTRICT). «chained / unchained labels agree there»: the packet's (iii) is for t ≥ a + 2. At t = a + 1, H's step
+    1 has no label.
+    - New: «and the chained / unchained label of every step at least two after the interval's first state agrees with that of the
+      corresponding step of the restricted run».
+- OPTIONAL:
+  - L-1c (RISE): «on its chain» → «on its chain under s_(t−2)», the packet's form.
+    - The unanchored form is also true: if no mover on the chain under s_(t−1) moved at t − 1, the chains under s_(t−2) and
+      s_(t−1) coincide (induction from h), and the values would be equal. So this is not required.
+  - L-1f: «(L-RED R178 §1)» after «R104». It is an attribution, the same wording as R104's own text. It could be read as a source;
+    «(the model of L-RED R178 §1 as defined in R104)», or deleting it, avoids that.
+  - L-1g (TOP-MONO): «the k largest π of unstable movers» → add «padded with −1 to length k». Lexicographic comparison needs the
+    pad when fewer than k movers are unstable.
+  - L-1h (RANK-BOUND): «for k ≥ 1», and «R := 0 if U = 0» after «R the largest RANK over unchained steps».
+
+### (c) Verdict
+- Line L-1: NOT YET. It matches once L-1a, L-1b, L-1d and L-1e are applied. L-1c and L-1f to L-1h are optional. No other change is
+  needed.
+- The fixes: entry 1 CLOSES U-1 and IR-1, and P-1 to P-3 are correct. All 16 statements are SIGNED.
