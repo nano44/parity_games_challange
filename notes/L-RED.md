@@ -116,6 +116,11 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
 - 19:xxZ D19 / L47 (Lead 19:15Z): no park at 21:00Z; continue to ~600k. Slack sweep (slack.py 3 2 2): 10 W-feasible variants (level-3 late
   deletions, F_3 14-15), all UNSAT at d 5 (18-84 s). offs.py (uniform offsets, c 1): only the exact nest qualifies. masks.py (partial
   doubling, ratio 1.5): 20 (L 16) + 68 (L 24) targets; running at d 5: nohup bash out/runmasks.sh (summary out/masks_summary.txt).
+- 20:39Z xwake acyclicity FIX (L-NEW box 151 finding, Lead 20:37Z): relaxation now = exact frontier (k 2 d 4 UNSAT / d 5 SAT; k 3 d <= 5
+  UNSAT), SAT at d 6-8; all W-feasible gate choices (allgates.py). R199 §5b correction. 21:00Z: portfolio SEED 1-3 (g3p2 E2, d 6) all
+  UNKNOWN 20000 s; masks sweep 87 UNSAT / 1 UNKNOWN at d 5.
+- 21:0xZ launched CEGAR2 (cwd r199): XTMO=1200 nohup python3 cegar2.py out/ag_k3p2/ag_0.json 2 500 out/cg2_out_ag_k3p2_ag_0_E2 >
+  out/cg2_out_ag_k3p2_ag_0_E2.log; same for out/ag_k3p2/ag_4.json and out/ag_k3/ag_0.json (regenerate ag_* with allgates.py 3 2 / 3 3).
 - TRAP hit again 07:5xZ: «pkill -f <pattern>» killed my own shell (exit 144). Use PIDs read in a separate call.
 
 ## Successor 47 UN-PARK 2 (Lead 07:05Z GO (a): 3-level stacking at d 6; date -u 07:20Z)

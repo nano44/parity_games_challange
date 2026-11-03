@@ -79,7 +79,10 @@ if os.environ.get("CBIT", "1") == "1":
             Z.add(z3.Implies(C[(t, v)] != C[(t - 1, v)], z3.Or([z3.And(re[(v, y)], mv[(t, y)]) for y in range(N) if y != v])))
 # level-0 movers: KP constant (option 0), so a level-0 mover moves at most once (R197 §2 ceiling); main level 0 is fixed anyway
 for B in (json.load(open(os.environ["BLOCKS"])) if os.environ.get("BLOCKS") and os.path.exists(os.environ["BLOCKS"]) else []):
-    Z.add(z3.Not(z3.And([mv[(t, int(v))] == (t in set(ts)) for v, ts in B.items() for t in range(1, L + 1)])))
+    if "moves" in B:   # full proposal: moves + aux start + gate bits
+        Z.add(z3.Not(z3.And([mv[(t, int(v))] == (t in set(ts)) for v, ts in B["moves"].items() for t in range(1, L + 1)]
+                            + [st[(0, int(v))] == bool(b) for v, b in B["start"].items()] + [Gb[tuple(map(int, k.split(",")))] == g for k, g in B["G"].items()])))
+    else: Z.add(z3.Not(z3.And([mv[(t, int(v))] == (t in set(ts)) for v, ts in B.items() for t in range(1, L + 1)])))
 t0 = time.time(); r = Z.check(); print("XWAKE", sys.argv[1], "E", E, "helpers", hel, "N", N, "L", L, "->", r, f"{time.time() - t0:.1f} s", flush=True)
 if r == z3.sat:
     m = Z.model(); tv = lambda e: z3.is_true(m.eval(e, model_completion=True))
