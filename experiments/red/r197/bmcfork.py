@@ -96,6 +96,10 @@ if FMIN:
     for item in FMIN.split(","):
         l, k = map(int, item.split(":"))
         S.add(z3.Sum([z3.If(LS[t][l] != LS[t + 1][l], 1, 0) for t in range(len(LS) - 1)]) >= k)
+FRATIO = os.environ.get("FRATIO")   # "l1,l2,...": F_l >= 2 F_(l-1) >= 2 at each listed level (flips over transitions 2..L)
+if FRATIO:
+    fl = lambda l: z3.Sum([z3.If(LS[t][l] != LS[t + 1][l], 1, 0) for t in range(len(LS) - 1)])
+    for l in map(int, FRATIO.split(",")): S.add(fl(l) >= 2 * fl(l - 1), fl(l - 1) >= 1)
 if os.environ.get("LEM", "1") == "1":
     reach = [[z3.Bool(f"re{x}_{y}") for y in range(N)] for x in range(N)]
     for x in range(N):
@@ -134,7 +138,7 @@ if BLOCK and os.path.exists(BLOCK):   # list of FIX structures (xt, gate, start)
     for B in json.load(open(BLOCK)):
         S.add(z3.Not(z3.And(*[xt[(v, k)] == B["xt"][f"{v},{k}"] for v, k in faces], *[gate[(v, k)] == B["gate"][f"{v},{k}"] for v, k in faces],
                             *[sig[0][v] == bool(B["start"][v]) for v in range(N)])))
-r = S.check(); print("BMCFORK XI", XI, "FREE", FREE, "FMIN", FMIN, "d", d, "L", L, "LEM", os.environ.get("LEM", "1"), "LAG", os.environ.get("LAG", "0"), "REL", os.environ.get("REL", "0"), "->", r, flush=True)
+r = S.check(); print("BMCFORK XI", XI, "FREE", FREE, "FMIN", FMIN, "FRATIO", FRATIO, "d", d, "L", L, "LEM", os.environ.get("LEM", "1"), "LAG", os.environ.get("LAG", "0"), "REL", os.environ.get("REL", "0"), "->", r, flush=True)
 if r == z3.sat and os.environ.get("REL") == "1":   # write the structure as a FIX file (xt, gate, start) for the exact model
     m = S.model(); ev = lambda e: m.eval(e, model_completion=True)
     json.dump(dict(xt={f"{v},{k}": ev(xt[(v, k)]).as_long() for v, k in faces}, gate={f"{v},{k}": ev(gate[(v, k)]).as_long() for v, k in faces},

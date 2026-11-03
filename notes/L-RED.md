@@ -83,6 +83,24 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   no-ff into claude/l-red after the Lead confirms it landed, notes resolved in my favour keeping 47's R-entry. Trend table label: weak.
 - TRAP hit again 07:5xZ: «pkill -f <pattern>» killed my own shell (exit 144). Use PIDs read in a separate call.
 
+## Successor 47 UN-PARK 2 (Lead 07:05Z GO (a): 3-level stacking at d 6; date -u 07:20Z)
+- bmcfork FRATIO="l1,l2,..": F_l >= 2 F_(l-1) >= 2 over transitions 2..L at each listed level (three listed = three consecutive doublings).
+- Runs launched 07:20Z (from experiments/red/r197; container-local, rerun if lost):
+  XI=free KF=1 LAG=1 FRATIO=2,3,4 python3 liftloop.py 5 12 30 out/r5_L12_2_3_4
+  XI=free KF=1 LAG=1 FRATIO=2,3,4 python3 liftloop.py 5 16 30 out/r5_L16_2_3_4
+  XI=free KF=1 LAG=1 FRATIO=3,4,5 python3 liftloop.py 6 12 30 out/r6_L12_3_4_5
+  XI=free KF=1 LAG=1 FRATIO=2,3,4 python3 liftloop.py 6 12 30 out/r6_L12_2_3_4
+- Proof-side item (b) for the handover: bound DBL_l - ZERO_l by the number of levels above l (R198 §3).
+- STATUS at the final park (09:24Z): r5_L12_2_3_4: iter 0 REL sat (2935 s), FIX unsat (211 s), blocked 1, iter 1 REL running (>1 h);
+  r5_L16_2_3_4, r6_L12_3_4_5, r6_L12_2_3_4: first REL call still running after 2 h. NO answer yet on 3 consecutive doublings (neither
+  witness nor UNSAT). Successor 48: rerun these four commands first (they die with the container), then the delay-delta construction.
+- 09:5xZ: r5_L12_2_3_4 iter 1: REL sat (5215 s), FIX sat (107 s): EXACT witness of three consecutive doublings over steps 2..L
+  (FRATIO 2,3,4): r197/lag/tri_d5_L12.json, d 5, L 12, F (all steps) = [2, 1, 3, 5, 8]; counted from step 1 the ratios are 3, 1.67,
+  1.6, so it is a SMALL-NUMBER instance (starts from F_1 = 1), not the strong form. Pinned tri_d5_L12_n96 (lemck 0, PIN OK). Strong
+  form (doubling from F >= 3 over three levels) still open; the other three FRATIO runs were running at the park.
+- Note: three doublings at levels l, l+1, l+2 need F_(l+2) >= 8 F_(l-1) >= 8 within L steps (FRATIO also forces F_(l-1) >= 1), so short
+  L can only show the small-F version; the d 5 two-doubling witness dd_d5_F14 used L 14.
+
 ## Successor 47 UN-PARK (Lead 02:03Z: CARRY+4 at d 5 exact + proof attempt; date -u)
 - R198 docs/red/R198-carry4.md: Lemmas K0-K3, INTERVAL, FLIP-COUNT (F_l = F_(l-1) + 1 + DBL - ZERO), AUTOMATON PROVED (lane);
   CARRY+4 <=> DBL - ZERO <= 3. EXACT d 5 (liftloop FMIN 2:11 L 12, KF LAG): F = [2, 6, 12, 9, 2] -> CARRY+4 FALSE; pin c4x_d5_F12_n96.
@@ -92,7 +110,7 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   d 7, SCORE F2 / JUMP) stay at F_2 12 / jump 6.
 - Still running at the park push (container-local, lost on restart): c5_L14_f2_13 (total F_2 >= 13), c5_L18_f3_15.
 
-## Successor 47 PARK (first 2026-11-03 00:54Z; FINAL after the un-park ~06:0xZ, date -u; context ~460k)
+## Successor 47 PARK (first 2026-11-03 00:54Z; second ~06:0xZ; FINAL 09:2xZ after UN-PARK 2, date -u; context ~530k)
 - DONE (claude/l-red, push.sh VERIFY PASS each): 513e313c (trunk merge 67a8bc43 + R197 interim), final push (R197 final + this section).
 - RESULTS (lane level; G-N5-TIME OPEN; no kill, no family), docs/red/R197-alt.md:
   - Fork (alternating-waker) ladders: EXACT max run 3 / 5 at d 2 / 3 (free: 4 / 8); XI=down: L <= d (Lemma DOWN); XI=up exact 5 at d 3.
