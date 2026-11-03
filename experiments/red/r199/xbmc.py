@@ -127,6 +127,8 @@ def main():
         for t in range(1, L + 1):
             c = better1(t - 1, a); kp = KPb(t, a); cc = st[(t, a)] == z3.If(c == kp, kp, st[(t - 1, a)])
             Z.add(z3.Implies(pa[t], cc) if os.environ.get("CORE") == "2" else cc)
+    for item in [x for x in os.environ.get("CUBE", "").split(",") if x]:   # cube literal t:v:bit = mover v moves (1) / stays (0) at step t
+        t, v, bit = map(int, item.split(":")); Z.add((st[(t, v)] != st[(t - 1, v)]) == bool(bit))
     for item in [x for x in os.environ.get("FX", "").split(",") if x]:
         l, k = map(int, item.split(":")); Z.add(z3.PbGe([(Rk[(t, l)] != Rk[(t - 1, l)], 1) for t in range(1, L + 1)], k))
     if os.environ.get("AUXMOVE") == "1":   # every aux mover must move at least once (avoid idle aux)
