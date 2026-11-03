@@ -125,9 +125,9 @@ No family.
   corrected relaxation is now checked over ALL W-feasible gate choices (1, 1 and 2 choices with the full F for the three targets).
 
 ## 3b. Final status (2026-11-03 23:00Z, date -u) and growth table
-- CEGAR2 HUNT at d 6 (k 3; L 24 one gate choice, L 16 two choices): 80 + 130 + ~60 relaxation-SAT proposals searched (edges / reach-
+- CEGAR2 HUNT at d 6 (k 3; L 24 one gate choice, L 16 two choices): 116 + 189 + 133 = 438 relaxation-SAT proposals searched (state at 23:34Z; the runs then died with a container restart; blocks in r199/hunt/) (edges / reach-
   restricted exact xisat UNSAT in 1-3 s each; LNS best: 5 Ξ-requirements unmet); no SAT. This is NOT a refutation (the full exact check of
-  one proposal times out at 1200 s). k 3 at d 6: UNKNOWN. Runs left going at the park (container-local; out/hunt_*.log).
+  one proposal times out at 1200 s). k 3 at d 6: UNKNOWN. Nothing left running.
 | k | delays | L | target F | d | extra levels | exact result | relaxation (fixed xwake) | n (R104 / pin) |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 2 | 2, 1 | 12 | [2, 6, 12] | 4 | 1 | UNSAT | UNSAT | - |
