@@ -1,5 +1,10 @@
 # L-RED notebook (independent adversary lane)
-Successor 41 (session_01V5yGRa8VX4VrSzMTZfKctP, Opus 5.5) started 2026-11-01 06:24Z (date -u); R173 (a): Lemma PORTAL; R174 (Z): PHASE-PORTAL, SELF; R175: ODD-GATE; see "Successor 41".
+Successor 46 (Opus 5.5, D1/D18) started 2026-11-02 11:52Z (date -u); STEP 0 message 11:52Z; R191 (degree-3 rotation): ROT-CAP / KEY-ALT / NEST-PI / MERGE-1 / NEST-DEAD-3 PROVED (lane), U linear d 3-8; R192 (RANK) linear; R193 d 4 undecided; R194 (a′) → U; R195 NEST-DEAD-ALL; R196 SAME-WAKER; PARKED ~20:5xZ, see "Successor 46 PARK".
+Successor 45 (Opus 5.5) started 2026-11-02 02:33Z (date -u); P-N5-REALIZE FROZEN e609c5d2 + fixes entries 1-2 + L-1 (MATCHES at both referees); R189 LAG / NEST-DEAD; R190 clock (undecided, linear data); PARKED ~07:3xZ, see "Successor 45 PARK".
+Successor 44 (session id: see docs/NOW.md roster, Opus 5.5) started 2026-11-01 21:06Z (Lead brief; date -u); R187 (real-game W-ladder): Theorem REALIZE PROVED (lane), real L_FL 32 / 64, first active D″-cycle, no compounding; R188 (Ξ-counter): exact d 2 / 3 maxima 4 / 8, no compounding; PARKED ~02:1xZ 2026-11-02, see "Successor 44 PARK".
+Successor 43 (session_01V5yGRa2JMr2sxHnK3JazZL2, Opus 5.5) started 2026-11-01 17:50Z (Lead brief; date -u 18:06Z at STEP 0); R183 (growing FVCH): no family; Lemma OVT-KEY + KEY-CHARGE + DEPTH PROVED (lane); realized IDEAL champions: 0 FL runs; R184 (Lead retarget 18:37Z): Lemma SELF-FREE; R185 (box 136 retarget): D″-cycles exist (inert), Lemma CN-UP; R186 (SCC charge = KEY-CHARGE, not polynomial); PARKED ~20:2xZ, see "Successor 43 PARK".
+Successor 42 (session_01V5yGRZmYx9sPoeaSsLDoAg, Opus 5.5) started 2026-11-01 10:39Z (date -u); R177 (CDAG order as an FL run): TB canonical (R24), FL-IDX, CASC-G, LADDERBF, idealised two-face model; see "Successor 42"; R178-R182; PARKED ~17:0xZ, see "Successor 42 PARK".
+Successor 41 (session_01V5yGRa8VX4VrSzMTZfKctP, Opus 5.5) started 2026-11-01 06:24Z (date -u); R173 (a): Lemma PORTAL; R174 (Z): PHASE-PORTAL, SELF; R175: ODD-GATE; R176: topfix ODIFF-1 depth; PARKED; see "Successor 41 PARK".
 Successor 40 (session_01V5yGRZzQMY5djbFkvKqE6d, Opus 5.5) started 2026-11-01 02:51Z (date -u); R170 (TWO-FIX: FREEZE), R171 (FB per window: no FB >> n), R172 (TF-PH DEAD); PARKED ~06:1xZ; see "Successor 40 PARK".
 Successor 39 (session id: see docs/NOW.md roster, Opus 5.5) started 2026-10-31 20:56Z (date -u); R167, R168, R169; PARKED; see "Successor 39".
 Successor 38 (session_01V5yGRZkXge7F2DR4joW3DU, Opus 5.5) started 2026-10-31 12:12Z (date -u); R162 DESC-LIN, R163 DESC*, D-ODD-1 starts, R164 switch-all counter vs N5; see "Successor 38".
@@ -39,6 +44,311 @@ Successor 15 PARKED ~09:40Z 2026-10-25 after box 38; RESUME POINT for successor 
 context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older notebook: `git show b0884407:notes/L-RED.md`.
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
+
+## Successor 46 PARK (final 2026-11-02 ~20:5xZ, date -u; context ~500k; first park 19:3xZ, un-parked 19:47Z)
+- DONE (claude/l-red, push.sh VERIFY PASS each): 5f2eaf3f + 314dcdda (R191), 24efabd0 (R192), 86f2a4e0 (R193 draft, bmc4), e8af7ca1
+  (R194), aaafeed0 (R195 start), final push (R193 final rows, R195, this section).
+- RESULTS (lane level; G-N5-TIME OPEN; no kill, no family):
+  - R191: Lemma ROT-CAP (any width / degree: ≤ D − 2 key-alone moves per descendant-free window), ROT-BUDGET, KEY-ALT (width 2),
+    NEST-PI, MERGE-1, Proposition NEST-DEAD-3 (NEST(d) dies at step 7 for d ≥ 3, D ≤ 3) PROVED (lane). U linear at D 3, d 3-8.
+  - R192: HIGH_k (box 147 RANK > k) linear; high rank cheap (≈ U). R194: realised pins have GCH = FL − 1, (a′) reduces to U.
+  - R193: bmc4 (bmc3 + lemma clauses) decides d 3 in seconds; d 4: L 13 / 14 exact UNDECIDED at caps, relaxation L 13 SAT, its
+    structure does not lift (FIX UNSAT 10 s); bound 12 ≤ max(d 4).
+  - R195: NEST at D 4: proof breaks only in NEST4-SHAPE (a = u_(d−2) on b's chain before q); no escape found (prefix 5 forced, 6
+    unforced); U linear at D 4 (27 at d 8).
+- UN-PARKED 19:47Z (Lead) for queue item (1): R195 CLOSED: Proposition NEST-DEAD-ALL (PROVED, lane; every degree): in NEST4-SHAPE q is
+  woken by p alone at steps 3 and 5, and MERGE-1* (descendant form) forces two moves INTO the p-reaching set in a row. z3: shape + 6
+  steps UNSAT (D 3 2 s, D 4 23 s), shape + 7 at D 4 UNSAT (21 s / REL 11 s). Second d 4 L 13 relaxation model does not lift (12 s).
+- R196 docs/red/R196-wakers.md (Lead GO (1) 20:31Z): Lemma SAME-WAKER (PROVED, lane, any width / degree): no two consecutive
+  single-woken LAG moves of one mover by the same waker (without re-route). Kills NEST-type schedules; NOT U-LIN: 162 / 162 observed
+  consecutive single pairs alternate wakers (80 genomes). Escape shape: wakers on the two sides of x's Ξ-fork.
+- Pushes after the first park: 6ffd5060 (R195 NEST-DEAD-ALL), final push (R196 + this update).
+- (superseded) IN FLIGHT: r193/out/relfix_nolag_d4_L13 (REL L 13 without LAG, model dump; cap
+  ~20:35Z). If it is SAT, run «FIX=r193/out/relfix_nolag_d4_L13.json python3 r193/bmc4.py 4 13 out.json» (seconds) and append the
+  result to R193 §1.
+- RESUME POINT / QUEUE: (1) next attack = the escape shape of R196: bound side-alternations of single wakers along Ξ-forks (lemma), or
+  build an alternating-waker doubling ladder and score U; (2) d 4 exact: more lifts (several REL models: add a blocking clause per failed structure and re-solve);
+  (3) CNONLY in CROOT games (old queue).
+- Things only I know:
+  - bmc4's lemma clauses are what make d 3 fast; the same clauses do NOT rescue NEST(3) prefix 7 at D 3 (5000 s timeout).
+  - REL → FIX lift: bmc4 REL=1 writes {xt, gate, start}; FIX fixes them, ranks / parities stay free.
+  - Every realised pin: GCH = FL − 1 (r194/gch.py); box 137's native games keep long epochs.
+  - Kill processes only by PIDs read in a SEPARATE call (the pattern in the same command line matches your own shell: exit 144).
+  - Lead messages arrive up to ~10 min late; push.sh takes 25-40 min with z3 running.
+
+## Successor 46 (Opus 5.5, D1/D18; started 2026-11-02 11:52Z, date -u)
+- Start: clone stale at 996013948. ls-remote (l-red c374be8f, trunk 3398c652), fetched those two, ff-only to c374be8f, then 0 ahead /
+  55 behind trunk (merge-base = HEAD), ff-only to trunk 3398c652. STEP 0 message to the Lead 11:52Z (answers in the message, no commit).
+  Oink 8fbf0a7 rebuilt (setup_oink.sh exit 0), z3 5.3.3 pip.
+- Sources opened: CLAUDE.md, LANE-RESTART, «Successor 45 PARK», R188, R189, R190, RESULTS R104 (l. 9864, statement), box 144
+  (N5-CHAIN-box144.md §0-§1, CHAIN-BACK), R178 §2 (XI-NEW, consequence (ii) «Ξ is monotone»), r187/ideal.py, r178/fastcyc.values,
+  r190/delclimb.py, r190/clockbmc.py, r189/lag/schedbmc.py.
+- R191 docs/red/R191-rotation.md: Lemma ROT-CAP (any width / degree: ≤ D − 2 key-alone moves in a descendant-free window; the opening
+  move's old option counts), Corollary ROT-BUDGET, Lemma KEY-ALT (width 2), Lemma NEST-PI (forced π for a NEST(d) 7-step prefix at
+  D 3), all PROVED (lane). DATA: max key-alone run 1 / 2 / 3 at D 3 / 4 / 5 (tight); NEST(3) prefix 6 at D 3 (pin), 4 at D 2;
+  U best 6 / 9 / 16 / 16 / 22 / 21 at d 3-8 (linear). z3 step-7 runs (nestbmc PIFIX, REL and exact) were running at the commit.
+  Pushed 5f2eaf3f (VERIFY PASS 13:09Z). Then Proposition NEST-DEAD-3 (PROVED, lane): NEST(d) dies at step 7 for every d ≥ 3 at
+  degree ≤ 3 (Lemma MERGE-1 on b = v_(d−2) and c = v_(d−3)); z3 REL runs timed out at 3600 s (undecided); exact PIFIX L 7 still
+  running; D 4 climbs 6 / 6 / 6.
+- R192 docs/red/R192-rank.md (Lead 12:51Z item, box 147 RANK): HIGH_k climbs linear at k 2-4, D 2-3; high rank cheap (HIGH ≈ U);
+  RELRANK (no padding) also linear; DECREMENT asserted 0 viol; champion pin rk_D3_k3_d8_n214. No family.
+- R193 (queue item: exact d 4) IN FLIGHT: r193/bmc4.py = bmc3 + lemma clauses (reach, RE-REVERSAL, XI-NEW): d 3 L 8 SAT 3 min,
+  L 9 UNSAT 11 s (R188 relaxation: ~40 min). d 4 L 12 / L 13 running (7000 s cap). Same clauses in r191/nestbmc.py LEM=1:
+  NEST(3) D 3 prefix 6 SAT 223 s, prefix 7 timeout 5000 s. d 4 L 13 exact timeout 7000 s; LAG=1 / REL runs and L 14 running
+  (logs r193/out, container-local); docs/red/R193-exact4.md draft committed with «running» rows.
+  18:05Z: d 4 L 13 REL SAT (5726 s; with LAG 4185 s; relaxation, no bound); L 14 exact timeout 9000 s; bmc4 now dumps REL models
+  (FIX route checked at d 3: REL -> FIX exact SAT, replay 8); reruns relfix_{lag,nolag}_d4_L13 started 18:05Z (9000 s cap); then
+  FIX=<dump> bmc4 4 13 (exact, structure fixed). lag_exact_d4_L13 cap 18:35Z.
+- R194 docs/red/R194-lapgch.md ((a′) lap recipe): realised IDEAL pins have GCH = FL − 1 (every transition its own epoch, XIB), so the
+  recipe's «carry as a gating event» is automatic there and (a′) reduces to U (box 144). r194/gch.py; box 137 tools run in-tree.
+  Pushed e8af7ca1 (VERIFY PASS 18:35Z). d 4 L 13 exact+LAG: timeout 9000 s.
+- R195 (Lead GO 18:37Z: NEST(d) at degree 4) IN FLIGHT: NEST-DEAD-3 step (2) fails at D 4 only via a = u_(d-2) on b's chain
+  (pi(b) < pi(a) < pi(q) < pi(p)); c-branch still dead. Climbs: SCORE=U D 4 d 3-8 (r195/out/u4_*), nestclimb PI=nest4 (that order).
+- Things only I know:
+  - TRAP hit again: «ps aux | grep "[n]estbmc" | xargs kill» killed my own shell (exit 144): the command line contains the pattern.
+    Kill by PIDs read in a SEPARATE call.
+  - nestclimb.py PI=nest forces an order STRONGER than NEST-PI (whole u chain); used for one DATA seed only; nestbmc PIFIX adds only
+    NEST-PI (i)-(iii) (sound).
+  - r191/out is gitignored; the z3 logs there are container-local.
+
+## Successor 45 PARK (2026-11-02 ~07:3xZ, date -u; context ~460k)
+- DONE (claude/l-red, push.sh VERIFY PASS each): e609c5d2 (P-N5-REALIZE frozen: packet 067f06b6, line 53dd6e9f), 8192e194 (R189),
+  80bfb1d0 / 81988332 (gitignore, delay.py), 612fb565 + 24e6fd69 + 03255d5d (R190 tools), 02dfc35c (fixes entry 1 + L-1 1d72ee31),
+  c28583b3 (fixes entry 2), final push (R190 write-up + this section).
+- P-N5-REALIZE: both referees SIGNED every item; L-1 MATCHES at both (REFEREE 5cc6be95, REFEREE-2 4db41c9d). Lead builds R104 for
+  CHECKER C115. Do NOT edit fixes / L-1 unless CHECKER asks through the Lead. Frozen-file sha1s pinned in check.sh.
+- R189 (docs/red/R189-lag.md): LAG exists (lag1, lag1u, lag2c_d4, nest_d3_L4 pins); Lemma LAG-RELEASE, Corollaries LAG / RE-REVERSAL,
+  Proposition NEST-DEAD (2-wide deg 2, d >= 3) PROVED (lane); z3 NEST(3) prefix 4 SAT / 5 UNSAT (d 4 prefix 5 timed out at 1800 s).
+- R190 (docs/red/R190-clock.md): clock escape undecided (z3 d 3 (3,3) / (2,3) / (3,2) timeouts); U climbs linear (width 3: 14 / 22 /
+  28 / 34 at d 4 / 6 / 8 / 10). Generalised NEST-DEAD NOT proved: breaks at degree >= 3 (RE-REVERSAL needs a return) and width >= 3.
+- RESUME POINT / QUEUE (Lead 06:58Z): (1) the degree-3 RE-REVERSAL escape (R190 §1: rotation k1 -> k2 -> k3 by key alone); (2) exact
+  d = 4 (faster encoding); (3) (a′) box 137 lap recipe (ret2_n37, score GCH); then CNONLY in CROOT games.
+- Things only I know:
+  - L-NEW scores: box 143 DELSTEPS (2-wide only), box 144 U (CHAIN-BACK, any width): use r190/delclimb.py SCORE=U.
+  - clockbmc.py at w 2 reproduces schedbmc.py (sanity); above width 2 even the 5-step prefix times out at 1500 s.
+  - Every push.sh takes 25-40 min (longer with z3/climbs running). Commit only between pushes; the stop hook complains meanwhile.
+  - Lead messages can arrive ~1 h late (03:05Z message read 04:01Z): ReadNotifications at every milestone.
+
+## Successor 45 (Opus 5.5, D1/D18; started 2026-11-02 02:33Z, date -u)
+- Start: clone stale at 996013948; ls-remote (l-red ce1d19e9, l-new 5dbff709, trunk 95bc159e); fetched those three; ff-only to ce1d19e9;
+  7 ahead / 37 behind trunk, merge-base 436fe6e9; trunk merged no-ff 8fc75b98. STEP 0 message 02:33Z. Oink 8fbf0a7 rebuilt, z3 pip.
+- Sources opened: CLAUDE.md, LANE-RESTART, «Successor 44 PARK», R187 (§0-§6), R188, R178 §1-§2, P-N5-ANCHOR (f009a9a1) §1-§6 + line,
+  RESULTS R103 entry, DECISIONS L46 + amendment, REFEREE R-N5-ANCHOR (ANC-1, (R1)), SPEC S1-S5 (docs/new/N5-ssi-global.md l. 24-66),
+  L-LIT T21 (VJ00 Lemma 5.8 «1 ⇒ 2» holds), r187 stab.py / stabrun / realck / t2 / ideal / findk, r178 fastcyc.values.
+- STEP 1 P-N5-REALIZE FROZEN: docs/red/P-N5-REALIZE.md (sha1 067f06b6c67969adf346621b4a92b253491ab2b9), line
+  docs/red/P-N5-REALIZE-line.txt (53dd6e9fd727a6ff2d5e49648366f28d7398e9d9). Lemmas K, PLAY, SBAR, TAU, ESC, W, KEY; Theorem REALIZE;
+  Corollary REAL-IDEAL. New: r189/lemck.py checks each lemma per state on the REAL run (KEY read off the real game, independent of
+  ideal.py): 0 violations on 7 champions + 2 R188 genomes + 60 random ACYC (short, L ≤ 2) + 60 perturbed champions (L 1-64, sum 1011).
+  check.sh block «P-N5-REALIZE». Fixes go to docs/red/P-N5-REALIZE-fixes.md (append-only), line revisions -line-L1.txt.
+- Things only I know:
+  - K-core by hand: Iσ ∩ K = {(K0, K1)} at EVERY standard state, so Iσ ≠ ∅ always and the IDEAL stop is always an S4c fallback
+    (also the «opt» stop). The fallback then changes K0 (lemck's ESC check is for j < L only).
+  - Priority bound Ω ≤ 4M + 9 is tight (stab_d4 153 = 4·36 + 9).
+  - Random ACYC genomes (downgen.randacyc) give L ≤ 2: weak tests. Use --perturb on champions for long runs.
+- STEP 1 pushed e609c5d2 (VERIFY PASS 03:09Z); Lead messaged 03:10Z with both sha1s.
+- STEP 2 R189 docs/red/R189-lag.md: lag gadgets lag1 / lag1u (by hand), lag2c_d4 (climb), nest_d3_L4 (z3); Lemma LAG-RELEASE,
+  Corollaries LAG / RE-REVERSAL, Proposition NEST-DEAD (d ≥ 3) PROVED (lane); z3 NEST(3) prefix 4 SAT, 5 UNSAT; lag-event climbs flat.
+  - Things only I know: schedbmc.py prefix L 5 at d 3 is 11 s, L 4 SAT 90 s; d 4 L 5 > 13 min. COUNT=2:8 d 3 L 8 (top moves every
+    step) was still running at the R189 commit (r189/lag/out/cnt_d3_L8_l2_8.log). lagclimb outputs in r189/lag/out are NOT committed (container-local); lag2c_d4.json is the d 4 seed-2 best.
+
+## Successor 44 PARK (2026-11-02 ~02:1xZ, date -u; context ~430k)
+- DONE (claude/l-red, push.sh VERIFY PASS each): 436fe6e9 (R187), b21230d2 + 417d7fa6 (R187 addendum, item 2, check fix), 62767752 +
+  29c8f2c7 + 7b76ace2 (R188 interim), final push (R188 final + this section).
+- RESULTS (lane level; G-N5-TIME OPEN; no kill):
+  - R187: Theorem REALIZE + Corollary REAL-IDEAL PROVED (lane): acyclic IDEAL genomes = real N5 FL runs (STAB+K+ESC gadgets). Real
+    L_FL 32 / 64 (linear). First active D″-cycle; per-state D″ cyclic everywhere (R185 erratum). CN shortcut/up alternation 18 / 22
+    moves of one cycle node in one FL run. Bottleneck AVN.
+  - R188: on LADDERBF's 2-wide deg-2 ladder, IDEAL-ACYC exact max run 4 (d 2), 8 (d 3; bmcrel L 9 UNSAT) vs TB 8 / 22; climbs d 4 12,
+    d 5 18; up-recipe (box 139) 1 as stated, 2d − 1 inverted; middle-level moves 7 / 9 / 9 at d 4 / 6 / 8. d 4 exact: see R188 file.
+- RESUME POINT / QUEUE: (1) exact d 4 (bmcrel 4 12 / 4 13 undecided after 7000 s each: needs a better encoding, e.g. bit-vectors or symmetry on gates) and d 5; score by middle-level moves in the exact model;
+  (2) the lag mechanism by hand (R188 READING); (3) (a′) box 137 lap recipe (ret2_n37, score GCH); (4) CNONLY per FL run in CROOT games;
+  (5) old queue.
+- Things only I know:
+  - bmcrel.py (free integer weights) is a valid RELAXATION and is ~10× faster than bmc3; to realise a bmcrel SAT model, run bmc3 with
+    FIX=model.json (structure fixed, ranks free): seconds. bmcrel d 3 L 8 took ~10 min; L 9 UNSAT ~40 min; d 4 L 12/13 > 1 h.
+  - z3-solver is pip-only (reinstall); Oink via scripts/setup_oink.sh.
+  - grow.py stacks a top level on a genome (new movers first in pi).
+  - NEVER use pgrep -f / pkill -f with a pattern your own shell contains (bit me 3× this session: exit 144, watchers that never end).
+    Wait on push.sh by «until grep -q ^exit LOG».
+
+## Successor 44 (Opus 5.5, D1/D18; started 2026-11-01 21:06Z, date -u)
+- Start: local clone stale at 996013948 (succ. 35). ls-remote (l-red 2799b309, l-new 709798f3, trunk 8884f8de), fetched those three,
+  ff-only to 2799b309 (is-ancestor OK), trunk merged no-ff. STEP 0 message to the Lead 21:06Z. Oink 8fbf0a7 rebuilt, z3 pip.
+- Sources opened: CLAUDE.md, LANE-RESTART, notes «Successor 43 PARK» / «Successor 42 PARK», R183, R186, R178 §1-§2, R177 LADDERBF,
+  P-N5-ANCHOR (f009a9a1) §1-§4, box 136 N5-SELF (l-new 15d35408), SPEC S1-S5 (docs/new/N5-ssi-global.md), n5x.step, r177/abs177.build,
+  r178/fastcyc, r183/realize / ovtkey / fvch, box136/dmerge2.py. Box 137 not pushed at 21:45Z (l-new 709798f3).
+- R187 docs/red/R187-ladder.md:
+  - Theorem REALIZE PROVED (lane): every IDEAL genome with an acyclic Ξ-graph runs state-for-state as ONE real FL run in the STAB+K+ESC
+    game (e-dominator: even, above every β, on the W-face → σ̄ = β-face; β = Even escape {xt, u} into the stuck core K → τ stable; K
+    stuck → S4a never takes the escape). Corollary REAL-IDEAL: FL-POLY ⇒ IDEAL-ACYC-POLY.
+  - Real L_FL 32 (n 126, pin stab_d4_n126) and 64 (n 246, stab_g24_n246); previous real max 8. Releases ≥ 2 per key change (D2 3/5/3),
+    up to 6. No compounding: μ_ℓ 2, 5, 10, 8; L_FL / n ≈ 0.25 (linear, DATA).
+  - Bottleneck = AVN (fresh Ξ-overtakes per mover, ≤ 13), not KCH (to 63).
+  - D″ CYCLIC on the 32-transition stretch (dmerge2, also DOM=1): first active D″-cycle; CASC-M″ hypothesis fails, no violation.
+    Per-state D″ cyclic at every state (also pruned to |T_x| ≥ 2) here and in R185's dcyc3 / d2cyc4: ERRATUM added to R185 §1.
+  - Item 2 (§6): c = Even cycle node with mover options (croot.py): shortcut / up alternation, 18 moves of c in one FL run (cn_d4_n126),
+    22 (cn_g24_n246), returns 11 / 14, CN-UP holds. Pushes: 436fe6e9 (R187), then the addendum.
+- RESUME POINT / QUEUE: (a) a Ξ-counter inside IDEAL-ACYC (R187 §3 shape): anything found is a real family; (b) exact d 3 search in
+  ACYC (bmc.py restricted); (c) CNONLY per FL run in CROOT games; (a′) Lead 22:06Z input: L-NEW box 137 (l-new 2e1322eb,
+  N5-REL-box137.md §6) lap-nesting recipe on ret2_n37 (KCH-GCH: super-poly FL needs super-poly GCH in one run; score GCH); (d) old queue (NR-CYC, two-level replay, D at ODIFF ≥ 1).
+- Things only I know:
+  - findk.py 4 3000 1 gives the stuck core K in seconds; other cores exist (n 5). K must keep its σ-world cycle node BELOW every ladder
+    β and its τ-world node ABOVE c_W; stab.py maps K's priorities into those two bands.
+  - First bug: e-priorities inherited the parity of max β (odd e's); fixed by eb = bmax + 1 + (bmax + 1) % 2.
+  - Without ESC, upward Ξ-targets break τ by LENGTH (Odd prefers the longer play to an even top cycle); ESC removes the length issue.
+    Without K (Ξ ending at c_X), τ breaks at every «X» gate.
+  - Ξ-cycles (fastcyc CLASS=full) break σ̄ at the first state (self-referential gate, R167): REALIZE is only for acyclic Ξ.
+  - dmerge2 needs the l-new tree: scratchpad ws = git archive origin/claude/l-new experiments/new experiments/si experiments/harness +
+    cp -r experiments/red/r170.
+  - The engine is fast here: the whole R187 check.sh block takes ~10 s with Oink.
+  - TRAP hit again: «until ! pgrep -f scripts/push.sh» never ends (it matches its own shell; exit 144 when killed). Read the push log /
+    git ls-remote instead. push.sh took ~30 min (VERIFY PASS 436fe6e9).
+  - dm2state.py: r187/mkdm2state.py <ws>/experiments/new/box136/dmerge2.py, then run in that dir; PRUNE=1 restricts to |T_x| ≥ 2.
+
+## Successor 43 PARK (2026-11-01 ~20:2xZ, date -u; context ~430k)
+- DONE (claude/l-red, push.sh VERIFY PASS each): 246d5ecb (R183), 0969b409 (R183 addendum), 89b9939d (R184), final push (R185, the
+  R184 erratum, this section).
+- RESULTS (lane level; G-N5-TIME OPEN; no kill):
+  - R183: no growing-FVCH family. Lemma OVT-KEY + KEY-CHARGE + GATE-SINK + DEPTH PROVED (lane, Ξ-free). R178 IDEAL champions as real
+    games: 0 FL runs.
+  - R184: Lemma SELF-FREE PROVED (lane). The longest D′-cyclic stretch stays 3. CN gadgets: CNMAX = number of gadgets, one move each.
+    ERRATUM in place: there are no CN returns inside an FL run.
+  - R185:
+    - D″-cycles (box 136 z-world + DOM) EXIST: dcyc3_n48 (6 ↔ 11) and d2cyc4_n72 (0 ↔ 13), confirmed with L-NEW's own dmerge2.py.
+      They are inert, and in dcyc3 the two edges are temporally split. Stretches ≤ 4.
+    - Lemma CN-UP PROVED (lane): a CN move goes up in index, or is a shortcut onto the old W-cycle path, or takes the self-loop.
+      Corpus: 13 CN moves, 0 returns, 0 down moves without a shortcut.
+    - CNMAX vs n: 3 / 3 / 2 at n 24 / 48 / 96.
+  - R186 (Lead GO 20:07Z; crossed my R185 report): the D″-SCC charge closes via KEY-CHARGE (all moves ≤ Σ(|T_x| − 1)(1 + KCH_x)),
+    but only to DEPTH. A ring of gate-sink movers is linear (GATE-SINK). The R183 ring/feedback families have no D″-cycle.
+- RESUME POINT / QUEUE:
+  - (a) an ACTIVE D″-cycle (both vertices move inside one stretch, a tail-decided comparison on each side); seed d2cyc4_n72 /
+    dcyc3_n48; climb184.py DM2=1 MODE=cyc, but its score should add «cycle vertices that move» (not done).
+  - (b) shortcut/up alternation at a cycle node (the only CN behaviour CN-UP leaves open); seed cw11_n24 (j = 8 shortcut 23 → 0).
+  - (c) the old queue: NR-CYC (R182 §2), faster exact IDEAL d = 3, two-level replay, super-linear D at ODIFF ≥ 1.
+- Things only I know:
+  - L-NEW's dmerge2.py runs only inside a tree with experiments/new/box132 + box136 next to box21 and red/r170. I used a scratch copy
+    (/tmp/claude-0/ws: experiments/new, si, harness, red/r170, plus box132/135/136 from git archive of claude/l-new).
+  - dcyc.py DM2=1 equals dmerge2 STRETCH=1 DOM=1 on odxi_many / odxi_n37 / dcyc3 / d2cyc4. Its DM2 SELFL counts own-segment hits
+    (not cut edges).
+  - cw11_n24 has no start file in the corpus (default S3); kw/instances/cw11_n24.pg is the path.
+  - push.sh takes ~25-30 min (verify runs every experiment check). Don't commit while it runs; wait with pgrep -x -f "bash
+    scripts/push.sh".
+
+## Successor 43 (Opus 5.5, D1/D18; started 2026-11-01 17:50Z, date -u)
+- Start: the local clone was stale at 996013948 (successor 35). I ran ls-remote (l-red 3d8783a6, l-new 2ee388a7, trunk 165dda1e),
+  fetched those three, did ff-only to 3d8783a6 (is-ancestor OK) and merged trunk no-ff. STEP 0 message to the Lead 18:06Z. Oink 8fbf0a7
+  rebuilt.
+- Sources opened: N5-OVT-box134.md (l-new 6f630331 / 2ee388a7), P-N5-ANCHOR-box134.md §1-§5 (T_x, CAP, [RULE] κ_j, FL-TIGHT, bridge B),
+  box 132 anchor.py, box 134 cmpw.py, box 133 odxi_n37 (+ start), SPEC S1-S4, R177 §5, R178 §1-§2, R181 flrun/climb181.
+- R183 docs/red/R183-fvch.md:
+  - no growing-FVCH family. Iterated odxi gadgets (chains, rings, feedback, free targets and priorities) at k 1-32 (n 36-129) give
+    L_FL 7-8 and FVCH 7-8, flat in k; CROSS grows (14 at k 16). The core's own run is the run.
+  - PROVED (lane) Lemma OVT-KEY: on a key-stretch (σ constant on B_x, the Even vertices below x on its options' W-tight plays) x's
+    moves strictly lower a frozen κ*. Corollaries: KEY-CHARGE (moves ≤ (|T_x| − 1)(1 + KCH_x)), GATE-SINK (odxi_n37: B_35 = ∅, x moves
+    ≤ 1 per FL run), DEPTH (non-CN moves per FL run ≤ n(Δn)^(ℓ*−1); CNONLY transitions not covered).
+  - DATA: 0 violations on the 813 corpus pairs (39 returns, all across stretches; CNONLY 13 of 42 FL transitions), 14 pins, 2
+    adversarial climbs (ovk_n37: 37 returns), 3,000 random games. fvch.py reproduces box 134 (168 moves, 94 flips, CROSS 0).
+- R184 docs/red/R184-dcyc.md (Lead retarget 18:37Z after L-NEW box 135 CASC-M / MERGE):
+  - (1) longest D′-cyclic stretch stays 3 (climbs from odxi_many_n32, n 32 / 48). PROVED (lane) Lemma SELF-FREE: x reads only pairs
+    (y, σ(x)); a self-option's comparison is static in its segment P (Z′ = ∅). So D″ (no self-edges) suffices for CASC-M; a move to
+    a self-option ends the stretch. odxi_many stays D″-cyclic via mover 2-cycles 13 ↔ 30, 1 ↔ 11.
+  - (2) CN gadgets (c with gates τ → c): CNMAX 1/2/4/6 at k 1/2/4/8, L_FL 7, each c ≤ 2 FL moves (returns exist at CN). Self-referential
+    gate margin = c's own bit (R167).
+  - Pins r184/instances cnmov_k8_n57, dcyc3_n48 (startck, Oink zlk/tl, xeng OK).
+- Things only I know:
+  - dcyc.py REFINE=1 = D″, SHOWCYC=1 prints a cycle to stderr. dmerge's T_x is "level − 1 and same W cycle node", not the packet's
+    path-set T_x. I kept it so the counts match box 135.
+  - ovtkey's KBOUND counts a vertex whose total moves exceed (|T_x| − 1)(1 + #stretches − 1). Moves belong to the stretch of their
+    NEW state (κ_j uses σ_j), so the entry transition of a stretch counts in it.
+  - climbs.py writes its .pg at every accepted (≥) mutation. I stopped the k 4-32 climbs by pid and re-parsed the outputs (intact).
+  - Killing with pgrep -f "<pattern>" inside a shell whose own command line contains the pattern kills that shell (exit 144). Use
+    plain pids from ps.
+  - fvch.py's FL runs are box 132's (σ̄ may change inside; SBCH counts it). flrun.py (R181) also requires σ̄ constant, so its runs can
+    be shorter.
+
+## Successor 42 PARK (2026-11-01 ~17:00Z, date -u; context ~470k)
+- DONE (claude/l-red, push.sh VERIFY PASS each): 95ff289b (R177), e03b15a6 (R178), a612b0a5 (R179), 86ee0e5a + ef430d72 (R180),
+  a2bb9bb6 (R180 §4, R181), final push (R182 + this section).
+- RESULTS (lane level; G-N5-TIME OPEN):
+  - R177: S1's tie-break = RESULTS R24 (b) TB (odd W-cycle index-min, even root-first lex-min), DATA on every game. FL-IDX, κ-MON, CASC-G,
+    UP PROVED (lane). LADDERBF exact ceiling 2(2^(d+1) − d − 2). IDEAL two-face model.
+  - R178: IDEAL model stated (§1); best 2.7 FL / mover; growth additive; Lemma XI-NEW PROVED (lane); CONJECTURE IDEAL-LIN.
+  - R179: Ξ-changes at ODIFF vertices inside real FL runs exist (odxi_min_n12 on 𝒞^1O, odxi_lasso_n13, odxi_many_n32).
+  - R180: z3 BMC, d = 2 ladder max IDEAL run 4 (L 5 UNSAT) vs ceiling 8; unsat core = whole run; d = 3 undecided.
+  - R181: real L_FL ≤ 8 at n 16-64 (falls / n), gating per run rises in bulk; pins fl_s48, fl_s64.
+  - R182: route (C): Lemma C-STATIC PROVED (lane): ≤ deg − 1 W-strict same-portal moves per λ_W-phase without NR / ZC, given NOPRE. Open
+    escape: NR-CYC with θ on the cycle-sitting option's prefix tail.
+- RESUME POINT / QUEUE (Lead 16:36Z; top item added by Lead 17:06Z):
+  - TOP: a family with growing FVCH (L-NEW 46 box 134, claude/l-new 6f630331, docs/new/N5-OVT-box134.md, FL-ANCHOR′: FL run ≤
+    CAP(1 + SBCH + n² + FVCH)). Iterate odxi_n37's cross-anchor overtake (L-NEW experiments/new/box133/134, sha1 83f263c1a4d0): two
+    gates read by W-tied siblings whose Ξ-values rise past each other repeatedly inside one FL run / λ_W-phase. Measure FVCH and L_FL
+    against n. Tools to reuse: r181/flrun.py, r179/odxi.py + lassock.py, climb181 (score = FVCH instead of gate).
+  - faster exact d = 3 in the IDEAL model (bit-vectors, symmetry breaking; bmc.py is the int encoding and stalls at d = 3);
+  - the two-level replay (IDEAL model; R178 §3 champion shows a one-level replay);
+  - super-linear D at ODIFF ≥ 1 (R176 topfix is linear);
+  - (new, R182 §2) the NR-CYC sub-case: θ in the private prefix of an option on X's W-cycle, flips driven by X's path to u.
+- Things only I know:
+  - fastabs (acyclic Ξ) and fastcyc (Ξ-cycles) equal the si.py engine on random genomes and every champion (fastver / fastver2); use them,
+    not abs177, for search speed. Climbs under-search badly: 10× budget moved d 4 from 22 to 32.
+  - z3-solver 5.3.3 is pip-installed in this container only; check.sh skips R180 without it.
+  - The «2-move route-(C)» c2 instance was a fallback-flag bug (F[j − 1] vs F[j]); cscore.py is fixed. freeze.run's F[j] is transition j.
+  - Killing by «ps | grep pattern» also kills a parent shell whose command line contains the pattern (exit 144 on bmcq). Grep for the
+    exact python argv.
+  - Corpus pins without a start file use the default S3 start; written out in r177/r179/r181/r182 instances.
+
+## Successor 42 (Opus 5.5, D1/D18; started 2026-11-01 10:39Z, date -u)
+- Start: local clone stale at 99601394; ls-remote, fetched l-red / l-new / trunk only; ff-only to 76601782 (is-ancestor OK); trunk
+  3ad13dec merged (no-ff). STEP 0 answers sent to the Lead 10:39Z (five questions; no file, Lead asked for a message). Oink 8fbf0a7
+  rebuilt. Interim R177 message 11:05Z.
+- Sources opened: SPEC S1-S5 + Q1-Q4 (docs/new/N5-ssi-global.md); si.py l. 78-205; n5x.py step(); l-new d4024537 box 130 note +
+  flatcnt.py; N5-K9-Pstrict-counter.md (CDAG, gen); RESULTS R24 (P-N5-U1 §2 TB, §3 CASC), R102.
+- R177 docs/red/R177-tiebreak.md:
+  - The S1 tie-break among W-optimal options IS RESULTS R24 (b) TB (signed; stated on 𝒞^1O, proof general). Odd W-cycle: index-min. Even:
+    root-first lex-min of the σ'-play. tbcheck: 813 pairs, 435 flat non-corner moves, 0 violations; 3,000 random games 0.
+  - FL-IDX (lane): odd regime, ≤ deg − 1 moves per vertex per FL run, so gen(n) cannot be followed there.
+  - κ-MON, CASC-G (lane): D acyclic ⇒ FL run ≤ height(D) + 1. UP: a D-cycle needs an ODIFF vertex on an upward Ξ-edge (or the W-cycle).
+  - LADDERBF (exact): adversarial availability, 2-wide ladder, 8 / 22 / 52 = 2(2^(d+1) − d − 2) at d = 2..4. TB alone is exponential.
+  - Idealised two-face model (τ, σ̄ fixed by fiat; abs177 = engine, fastabs = fast, fastver 0 mismatches): best FL 4 / 7 / 10 at d = 2..4;
+    whole runs with S4c ≤ 3.6 n_E. CONJECTURE IDEAL-LIN (DATA).
+- R178 docs/red/R178-ideal.md (Lead GO 12:06Z, (a)): no super-linear family; best 2.7 FL/n_E (d 4: 32 at 12; d 8: 54 at 24); "3d" was
+  under-search; grow-by-level additive (top 32 → 64 at 12 → 24). Lemma XI-NEW PROVED (lane): the least-level mover of every FL step after
+  the first has a newly Ξ-available option (model 3,017 genomes 0 viol; corpus 19 checked 0 viol). IDEAL model stated precisely (§1).
+- R179 docs/red/R179-odxi.md (Lead queued 12:35Z): Ξ-changes at ODIFF vertices inside real FL runs EXIST: odxi_min_n12 (𝒞^1O, ODIFF 1,
+  o's Ξ-cycle broken by a W-flat move), odxi_lasso_n13, odxi_many_n32 (43 in 8 FL transitions); corpus 0 (37 FL transitions). Climb +
+  shrink find them fast; lassock re-checks without si.py.
+- R180 docs/red/R180-bmc.md: z3 BMC (r180/bmc.py, z3-solver 5.3.3 pip): IDEAL model on the d 2 ladder max run 4 over ALL structures
+  (L 5 unsat; TB ceiling 8); LADDERBF chain realisable 3 steps; d 3 L 7-10 undecided after 35 CPU-min (runs left going).
+- R180 addendum: unsat core = the whole run (unreadable); per-vertex ceilings each reachable, cap is joint.
+- R181 docs/red/R181-flrun.md (Lead 15:06Z item 2): real L_FL does not grow (8 at n 32/48, 7 at 64) while gating changes per run grow
+  (to 294 at n 64, bulk changes at one transition); pins fl_s48, fl_s64. FL-ANCHOR loose here.
+- RESUME POINT: faster exact d 3 (bit-vectors, symmetry breaking); unsat-core for the IDEAL-LIN invariant; hand-design a two-level replay in the IDEAL model (replayed segment containing its own bottom-triggered replay); then
+  stabilisers (R175 §3 (ii)). Old routes: (C); D super-linear at ODIFF ≥ 1.
+- Things only I know:
+  - fastabs requires the Ξ-graph acyclic (xorder); abs177 does not. The real-game gate analysis (§5): (τ) is σ-independent (Ξτ is τ vs
+    τ̄); top-of-Ξ-order gates are forced single-faced.
+  - xeng / oinkcmp need a START file: corpus pins without one use the default S3 start, written out in r177/instances.
+
+## Successor 41 PARK (2026-11-01 ~10:0xZ, date -u; context ~490k)
+- DONE (claude/l-red, push.sh VERIFY PASS each): 0bfc520b + 02119133 (R173), 5d27d366 (R174), a36625f2 (R175), final R176 push (this
+  section).
+- RESULTS (lane level; G-N5-TIME OPEN):
+  - R173 PORTAL: a second consecutive same-portal move under ZC + NR is an exact τ-tie.
+  - R174 PHASE-PORTAL: under TH, if the later option was already Ξ-improving, the second move is a tie. SELF: a gate opened by the top
+    counted prefix vertex makes the climb flat.
+  - R175 ODD-GATE: at most 2 consecutive W-strict same-portal moves while the portal's Ξ-node is odd. Recursion charge per level: one
+    fresh branching vertex, or Θ(m) for a clock.
+  - R176 (DATA): topfix_nk from written starts gives ODIFF-1 windows with charge depth D = 6k − 1 at n = 21k. D = O(1) fails at
+    ODIFF ≥ 1.
+- RESUME POINT (successor 42):
+  - (C) (a climber moving while on its portal's play);
+  - a bounded-ODIFF τ-stabiliser for an Even-winning Ξ-cycle (R175 §3 (ii));
+  - D super-linear at ODIFF ≥ 1 (topfix is linear: K ≈ 2.3n).
+- Things only I know:
+  - L-NEW's box 129 corpus runs topfix with NO start file (S3 start). The written box52 starts give the ODIFF-1 deep windows.
+  - red/r176/gatechg.py is a copy of L-NEW's (path adapted, VERB line added); refresh it if box 129 changes.
+  - Killing a climb mid-write truncates its .pg; verify's D-ODD-1 scan then fails the push (R173 erratum). Kill by pid between writes,
+    or delete partial outputs.
 
 ## Successor 41 (Opus 5.5, D1/D18; started 2026-11-01 06:24Z, date -u; section written 06:55Z)
 - Start: origin/claude/l-red = 0c889e61 (is-ancestor of HEAD OK; last pusher succ. 40, PARKED). Trunk = claude/vibrant-johnson-nxvvxo

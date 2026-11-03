@@ -685,4 +685,130 @@ if grep -qF "GATECHG topfix_n10.pg n 210 ODIFF0 WIN 2 STRICT 667 CHARGED 543 PAY
 else
   echo "box 129 GATECHG check: FAILED"; exit 1
 fi
+w78=$(cd .. && python3 -I new/box130/flatcnt.py red/xing/instances/u2flat73_n32.pg new/box130/u2flat73_n32_default.start; python3 -I new/box130/flatcnt.py red/so/instances/tog6a_n32.pg -)
+if grep -qxF "FLATCNT u2flat73_n32.pg n 32 ODIFF1+ WIN 1 MOVES 75 STRICT 2 FLAT 73 WEAK 0 CORNER 0 FLATTRANS 0 FL 7 ONLYFLAT_VIOL 0 FLOPT_VIOL 0 FLTIGHT_VIOL 0 XIRISE_VIOL 0 MAXFLRUN 3 MAXFLWIN 73 FLATFIRST 49 ODIFF0FLAT 0 XIRISE_CYC 0 FLTIGHT_CYC 0 FL0_NONCORNER 0" <<<"$w78" && grep -qxF "FLATCNT tog6a_n32.pg n 32 ODIFF0 WIN 1 MOVES 25 STRICT 23 FLAT 1 WEAK 1 CORNER 6 FLATTRANS 0 FL 1 ONLYFLAT_VIOL 0 FLOPT_VIOL 0 FLTIGHT_VIOL 0 XIRISE_VIOL 0 MAXFLRUN 1 MAXFLWIN 1 FLATFIRST 1 ODIFF0FLAT 1 XIRISE_CYC 2 FLTIGHT_CYC 0 FL0_NONCORNER 0" <<<"$w78"; then
+  echo "box 130 FLATCNT: u2flat73_n32 73 flat moves, 7 FL transitions (ODIFF >= 1); tog6a ODIFF-0 FL transition only at corner movers: PASS"
+else
+  echo "box 130 FLATCNT check: FAILED"; exit 1
+fi
+w79=$(cd .. && python3 -I new/box131/canon.py red/xing/instances/u2flat73_n32.pg -)
+if grep -qxF "CANON u2flat73_n32.pg n 32 K 16 DEC_EVEN 51 FLDEC_EVEN 51 FLKEYDEC 73 FLKEYEQ 0 FLKEYEQ_CYCNODE 0 FLMOVES_EVEN 73 KEYMIN_EVEN 74 KEYTIES_EVEN 74 MAXFLMV_EVEN 2 MINIDX_EVEN 51 MOVETIE_EVEN 73 TIES_EVEN 74" <<<"$w79"; then
+  echo "box 131 CANON: u2flat73_n32 every even-cycle-node tie broken by the lex-smallest BFS key (74 / 74), every FL move lowers the mover's key (73 / 73), index not monotone (51 / 73): PASS"
+else
+  echo "box 131 CANON check: FAILED"; exit 1
+fi
+w80=$(cd .. && python3 -I new/box132/anchor.py red/xing/instances/u23sw64_n32.pg new/box132/u23sw64_n32_default.start; python3 -I new/box132/anchor.py red/kw/instances/cw11_n24.pg new/box132/cw11_n24_default.start)
+if grep -qxF "ANCHOR u23sw64_n32.pg n 32 RUNS 1 FL 8 EPOCHS 1 GCH 0 VIOL 0 LVLVIOL 0 CMOVES 0 CMNORISE 0 CMLATE 0 MAXEP 8 EPVIOL 0 BOUNDVIOL 0 XIB 0 SBB 0 CYB 0 MAXLEN 8 CMXICH 0" <<<"$w80" && grep -qxF "ANCHOR cw11_n24.pg n 24 RUNS 4 FL 7 EPOCHS 7 GCH 3 VIOL 0 LVLVIOL 0 CMOVES 7 CMNORISE 0 CMLATE 0 MAXEP 1 EPVIOL 0 BOUNDVIOL 0 XIB 0 SBB 0 CYB 3 MAXLEN 3 CMXICH 7" <<<"$w80"; then
+  echo "box 132 ANCHOR: u23sw64_n32 FL run of 8 = one epoch, level timing holds; cw11_n24 3 gating changes (Xi at a W-cycle node), 7 cycle-node moves: PASS"
+else
+  echo "box 132 ANCHOR check: FAILED"; exit 1
+fi
+w81=$(cd .. && python3 -I new/box133/odxi.py new/box133/odxi_n37.pg new/box133/odxi_n37.start)
+if grep -qxF "ODXI odxi_n37.pg n 37 RUNS 1 FL 8 XICH_ODIFF 5 GATEREL 1 EX [(1, 6, 35, 34, 33, 33)]" <<<"$w81"; then
+  echo "box 133 ODXI: odxi_n37 Xi at ODIFF gate 33 changes 5 times inside the FL run [1, 9] and releases the FL move 35: 34 -> 33 at 5 -> 6: PASS"
+else
+  echo "box 133 ODXI check: FAILED"; exit 1
+fi
+w82=$(cd .. && python3 -I new/box132/anchor.py new/box134/inst/odxi_many_n32.pg new/box134/inst/odxi_many_n32.start; python3 -I new/box133/odxi.py new/box134/inst/odxi_min_n12.pg new/box134/inst/odxi_min_n12.start)
+if grep -qxF "ANCHOR odxi_many_n32.pg n 32 RUNS 3 FL 8 EPOCHS 7 GCH 4 VIOL 0 LVLVIOL 0 CMOVES 0 CMNORISE 0 CMLATE 0 MAXEP 2 EPVIOL 0 BOUNDVIOL 0 XIB 4 SBB 0 CYB 0 MAXLEN 3 CMXICH 0" <<<"$w82" && grep -qxF "ODXI odxi_min_n12.pg n 12 RUNS 1 FL 1 XICH_ODIFF 1 GATEREL 0" <<<"$w82"; then
+  echo "box 134 P-N5-ANCHOR pins: odxi_many_n32 (R179) 8 FL transitions, 4 gating changes, FL-ANCHOR items hold; odxi_min_n12 one ODIFF Xi-change in its FL run: PASS"
+else
+  echo "box 134 P-N5-ANCHOR pins check: FAILED"; exit 1
+fi
+w83=$(cd .. && python3 -I new/box134/cmpw.py new/box133/odxi_n37.pg new/box133/odxi_n37.start)
+if grep -qxF "CMPW odxi_n37.pg n 37 MOVES 65 FLIPS 45 PREFIX 44 CROSS 1 INPREF 0 CYCNODE 0 SAMEW 0 NONFLIP 5" <<<"$w83"; then
+  echo "box 134 CMPW: odxi_n37 order flips behind FL moves 44 PREFIX + 1 CROSS, SAMEW 0 (Lemma COMPARE-W): PASS"
+else
+  echo "box 134 CMPW check: FAILED"; exit 1
+fi
+w84=$(cd .. && STRETCH=1 python3 -I new/box135/dmerge.py new/box134/inst/odxi_many_n32.pg new/box134/inst/odxi_many_n32.start; STRETCH=1 python3 -I new/box135/dmerge.py red/xing/instances/u23sw64_n32.pg new/box132/u23sw64_n32_default.start)
+if grep -qxF "DMERGES odxi_many_n32.pg n 32 RUNS 3 FL 8 ACYC 1 CYC 2 HMAX 8 CASCVIOL 0 SEGEDGES 274 MAXL 3 SELFL 7 CNMOV 0" <<<"$w84" && grep -qxF "DMERGES u23sw64_n32.pg n 32 RUNS 1 FL 8 ACYC 1 CYC 0 HMAX 9 CASCVIOL 0 SEGEDGES 305 MAXL 8 SELFL 0 CNMOV 0" <<<"$w84"; then
+  echo "box 135 DMERGE: u23sw64_n32 stretch D' acyclic, height 9, FL 8 (CASC-M); odxi_many_n32 2 cyclic stretches via 7 self-edges: PASS"
+else
+  echo "box 135 DMERGE check: FAILED"; exit 1
+fi
+w85=$(cd .. && DOM=1 STRETCH=1 python3 -I new/box136/dmerge2.py new/box134/inst/odxi_many_n32.pg new/box134/inst/odxi_many_n32.start)
+if grep -qxF "DMERGE2SD odxi_many_n32.pg n 32 RUNS 3 FL 8 ACYC 3 CYC 0 HMAX 8 CASCVIOL 0 SEGEDGES 255 MAXL 3 SELFL 0 CNMOV 0 DOMCUT 117" <<<"$w85"; then
+  echo "box 136 DMERGE2: odxi_many_n32 all 3 stretches D''-acyclic under z-world + DOM (D' had 2 cyclic), CASC-M'' holds: PASS"
+else
+  echo "box 136 DMERGE2 check: FAILED"; exit 1
+fi
+w86=$(cd .. && python3 -I new/box137/rel.py new/box137/ret2_n37.pg new/box137/ret2_n37_default.start; python3 -I new/box137/rel.py new/box137/cwmov2_n57.pg new/box137/cwmov2_n57_default.start; python3 -I new/box132/anchor.py new/box137/ret2_n37.pg new/box137/ret2_n37_default.start)
+if grep -qxF "REL ret2_n37.pg n 37 K 12 RUNS 1 FL 7 CEILVIOL 0 SATDEC 0 SATGAIN 0 MOVERS 74 FROZVIOL 0 SYNC 98 SYNCVIOL 0 CW 0 CWVIOL 0 RET 44 RETMAX 2 MOVMAX 6 CHAINVIOL 0 CNMOV 0 CWMOV 0 WWMOV 74 DEFVIOL 0" <<<"$w86" && grep -qxF "ANCHOR ret2_n37.pg n 37 RUNS 1 FL 7 EPOCHS 1 GCH 0 VIOL 0 LVLVIOL 0 CMOVES 0 CMNORISE 0 CMLATE 0 MAXEP 7 EPVIOL 0 BOUNDVIOL 0 XIB 0 SBB 0 CYB 0 MAXLEN 7 CMXICH 0" <<<"$w86" && grep -qxF "REL cwmov2_n57.pg n 57 K 15 RUNS 2 FL 6 CEILVIOL 0 SATDEC 0 SATGAIN 2 MOVERS 32 FROZVIOL 0 SYNC 113 SYNCVIOL 0 CW 102 CWVIOL 0 RET 14 RETMAX 1 MOVMAX 4 CHAINVIOL 0 CNMOV 0 CWMOV 2 WWMOV 30 DEFVIOL 0" <<<"$w86"; then
+  echo "box 137 REL: ret2_n37 one FL run = one epoch (GCH 0), an option re-entered twice (RET-1 DEAD), box 137 lemma checks 0; cwmov2_n57 2 c-world FL moves, DEFICIT holds: PASS"
+else
+  echo "box 137 REL check: FAILED"; exit 1
+fi
+w87=$(cd .. && python3 -I new/box138/dmerge3.py new/box138/sbmany_n57.pg new/box138/sbmany_n57_default.start; python3 -I new/box138/dmerge3.py new/box133/odxi_n37.pg new/box133/odxi_n37.start)
+if grep -qxF "DMERGE3 sbmany_n57.pg n 57 SSTRETCHES 1 FL 3 ACYC 1 CYC 0 EHEIGHT 9 CASCVIOL 0 EDGES 99 MAXL 3 CNMOV 1 SBIN 95 TIES 0 ODDNODES 8 SBSTR 1 SBACYC 1 SBFL 3" <<<"$w87" && grep -qxF "DMERGE3 odxi_n37.pg n 37 SSTRETCHES 1 FL 8 ACYC 1 CYC 0 EHEIGHT 9 CASCVIOL 0 EDGES 372 MAXL 8 CNMOV 0 SBIN 0 TIES 0 ODDNODES 54 SBSTR 0 SBACYC 0 SBFL 0" <<<"$w87"; then
+  echo "box 138 GATE: sbmany_n57 95 sbar changes inside one acyclic S-stretch of 3 transitions (CASC-M3); odxi_n37 one S-stretch, Even-height 9: PASS"
+else
+  echo "box 138 GATE check: FAILED"; exit 1
+fi
+w88=$(cd .. && python3 -I new/box139/paths.py new/box139/genomes/big_d4_k3_W3.json new/box139/genomes/grow_top_N24.json)
+if grep -qxF "PATHS big_d4_k3_W3.json N 12 STEPS 32 STOP stuck MOVES 57 MOVMAX 10 VXMAX 833 VWMAX 81 CURVIOL 0 KEYVIOL 0 BOUNDVIOL 0 SLACK 1.0000" <<<"$w88" && grep -qxF "PATHS grow_top_N24.json N 24 STEPS 64 STOP stuck MOVES 119 MOVMAX 10 VXMAX 8799 VWMAX 6561 CURVIOL 0 KEYVIOL 0 BOUNDVIOL 0 SLACK 1.0000" <<<"$w88"; then
+  echo "box 139 PATHS: IDEAL-ACYC champions big_d4 / grow_top_N24: value and key monotone at every step, moves <= min(VX, VW) - 1: PASS"
+else
+  echo "box 139 PATHS check: FAILED"; exit 1
+fi
+w89=$(cd .. && python3 -I new/box140/alt.py new/box140/out/up_d5.json new/box140/out/up_d6.json)
+if grep -qxF "ALT up_d5.json N 10 STEPS 11 LADDER True ALTVIOL 0 TOWARDVIOL 0 LFVIOL 0 MOVES [2, 5, 7, 4, 2] LFLIPS [2, 5, 5, 3, 2]" <<<"$w89" && grep -qxF "ALT up_d6.json N 12 STEPS 13 LADDER True ALTVIOL 0 TOWARDVIOL 0 LFVIOL 0 MOVES [2, 4, 7, 7, 3, 2] LFLIPS [2, 3, 7, 6, 6, 5]" <<<"$w89"; then
+  echo "box 140 JOINT: UP-LADDER climb champions d 5 / 6 (FL 11 / 13): ALTERNATION, TOWARD-L, L-ACCOUNT hold; moves peak mid-ladder: PASS"
+else
+  echo "box 140 JOINT check: FAILED"; exit 1
+fi
+w90=$(cd .. && python3 -I new/box140/alt.py new/box141/out/up_d8_s8.json)
+if grep -qxF "ALT up_d8_s8.json N 16 STEPS 19 LADDER True ALTVIOL 0 TOWARDVIOL 0 LFVIOL 0 MOVES [2, 6, 8, 9, 8, 4, 4, 2] LFLIPS [2, 6, 8, 9, 7, 6, 6, 5]" <<<"$w90"; then
+  echo "box 141 UPLIN: UP-LADDER d 8 champion FL 19 (linear), ALTERNATION / TOWARD-L / L-ACCOUNT hold: PASS"
+else
+  echo "box 141 UPLIN check: FAILED"; exit 1
+fi
+w91=$(cd .. && python3 -I new/box142/lag.py new/box142/lag_min_d2.json new/box141/out/up_d8_s8.json)
+if grep -qxF "LAG lag_min_d2.json STEPS 2 STOP opt LAGEVENTS 1 LAGMAX 1 DOUBLE 0 DELAY [0, 1] LFLIPS [1, 1] DELVIOL 0 EX (1, 1, [2, 3], 2, 1)" <<<"$w91" && grep -qxF "LAG up_d8_s8.json STEPS 19 STOP stuck LAGEVENTS 2 LAGMAX 1 DOUBLE 8 DELAY [0, 3, 3, 4, 2, 1, 1, 0] LFLIPS [2, 6, 8, 9, 7, 6, 6, 5] DELVIOL 0 EX (1, 11, [2, 3], 11, 12)" <<<"$w91"; then
+  echo "box 142 LAG: NO-LAG dead (lag_min_d2, sibling Xi-read); DELAY-CHARGE holds on up_d8_s8: PASS"
+else
+  echo "box 142 LAG check: FAILED"; exit 1
+fi
+w92=$(cd .. && python3 -I new/box143/cause.py new/box143/inst/x3_L8.json new/box143/out/dc_d12.json; python3 -I new/box143/rerise.py new/box143/inst/x3_L8.json)
+if grep -qxF "CAUSE x3_L8.json d 3 STEPS 8 STOP stuck SUMDELAY 5 CELEMVIOL 0 LEAST {'DEL': 4, 'PRE': 3, 'OTHER': 0, 'CAR': 0} PRE 4 STEPBOUND 9 NOCAUSE 0 CAUSECLS {'DEL': 1, 'CAR': 3, 'PRE': 1} CAUSELEVDIFF {-2: 1, -1: 1, 0: 2, 1: 1} MOVES 13 BFLIPS 13" <<<"$w92" && grep -qxF "CAUSE dc_d12.json d 12 STEPS 26 STOP stuck SUMDELAY 63 CELEMVIOL 0 LEAST {'DEL': 23, 'PRE': 2, 'OTHER': 0, 'CAR': 0} PRE 7 STEPBOUND 31 NOCAUSE 0 CAUSECLS {'DEL': 42, 'CAR': 13, 'PRE': 8} CAUSELEVDIFF {-10: 4, -9: 2, -8: 2, -6: 2, -5: 1, -4: 4, -3: 3, -2: 4, -1: 6, 0: 6, 1: 3, 2: 9, 3: 5, 4: 4, 5: 3, 6: 3, 7: 2} MOVES 82 BFLIPS 89" <<<"$w92" && grep -qxF "RERISE x3_L8.json d 3 STEPS 8 PAIRS 12 RERISEVIOL 4 STRICTVIOL 5 MAXRISES 5" <<<"$w92"; then
+  echo "box 143 DELAY: C-ELEM and STEP-DELAY hold on R188 pin x3_L8 and the d 12 Sum-DELAY champion (63 delays, 26 steps); literal re-rise hint dead on x3_L8: PASS"
+else
+  echo "box 143 DELAY check: FAILED"; exit 1
+fi
+w93=$(cd .. && python3 -I new/box144/merge.py new/box143/inst/x3_L8.json; python3 -I new/box144/chain.py new/box143/inst/x3_L8.json new/box143/out/dc_d12.json)
+if grep -qxF "MERGE x3_L8.json d 3 STEPS 8 DELSTEPS 4 NOPRE 1 MAXX 2 MAXXK 2 MAXXC 2 MAXC 2 MAXXCK 2 PAIRS 2 CAUSECLS {'CAR': 2, 'DEL': 1} CLEAST 1 SEGLEN 2 KBARHIT 1 SUFHIT 1" <<<"$w93" && grep -qxF "CHAIN x3_L8.json d 3 STEPS 8 DELSTEPS 4 CHAINED 2 UNCHAINED 2 NOCAUSE 0 PIVIOL 0 MAXCHAIN 3 UNCLS {'CAR': 2} UNLEV {1: 2} | ALL: UNCH 3 NOCAUSE 0 PIVIOL 0 MAXBLOCK 3 BOUND N(1+U) 24 OK True" <<<"$w93" && grep -qxF "CHAIN dc_d12.json d 12 STEPS 26 DELSTEPS 23 CHAINED 10 UNCHAINED 13 NOCAUSE 0 PIVIOL 0 MAXCHAIN 7 UNCLS {'DEL': 10, 'CAR': 3} UNLEV {0: 1, 1: 5, 3: 1, 4: 2, 7: 3, 8: 1} | ALL: UNCH 14 NOCAUSE 0 PIVIOL 0 MAXBLOCK 7 BOUND N(1+U) 360 OK True" <<<"$w93"; then
+  echo "box 144 MERGE-CHAIN: pre-merge cause premise dead on x3_L8 (NOPRE 1); CHAIN-BACK blocks <= n_E, steps <= n_E (1 + U) on x3_L8 and dc_d12: PASS"
+else
+  echo "box 144 MERGE-CHAIN check: FAILED"; exit 1
+fi
+w94=$(cd .. && python3 -I new/box145/thr.py new/box143/inst/x3_L8.json new/box144/inst/nest_d3_L4.json)
+if grep -qxF "THR x3_L8.json N 6 STATES 64 IMAGES 30 NONUNATE 2 NONASUM2 3 WITNESS (2, 3, (1, 1, 0, 0, 1, 1), (1, 1, 1, 0, 0, 0))" <<<"$w94" && grep -qxF "THR nest_d3_L4.json N 6 STATES 64 IMAGES 18 NONUNATE 1 NONASUM2 1 WITNESS (5, 0, (0, 1, 1, 1, 0, 1), (0, 1, 0, 1, 1, 0))" <<<"$w94"; then
+  echo "box 145 ENERGY: direct threshold cast dead (one-step map not unate on x3_L8 and nest_d3_L4): PASS"
+else
+  echo "box 145 ENERGY check: FAILED"; exit 1
+fi
+w95=$(cd .. && python3 -I new/box146/energy.py new/box146/small_d2.json new/box144/inst/lag1.json)
+if grep -qxF "ENERGY small_d2.json N 4 STEPS 2 UNCH 0 CH 1 V0D 1 V0U 0 V1D 1 V1U 0 V2D 1 V2U 0 V3D 1 V3U 0 VLEXD 1 VLEXU 0" <<<"$w95" && grep -qxF "ENERGY lag1.json N 6 STEPS 2 UNCH 1 CH 0 V0D 1 V0U 1 V1D 1 V1U 0 V2D 1 V2U 0 V3D 1 V3U 0 VLEXD 0 VLEXU 1" <<<"$w95"; then
+  echo "box 146 SPLITE: split-level energy dead (small_d2 chained rise; lag1 unchained non-fall): PASS"
+else
+  echo "box 146 SPLITE check: FAILED"; exit 1
+fi
+w96=$(cd .. && python3 -I new/box147/rank.py new/box143/inst/x3_L8.json new/box147/out/rk_d3.json; python3 -I new/box147/stat.py new/box144/inst/lag1.json)
+if grep -qxF "RANK x3_L8.json N 6 STEPS 8 U 3 YSTAB 0 ABOVE 0 MAXR_UNCH 2 MAXR_CH 2 MAXR_ALL 3 UNCH_RANKS [1, 1, 2]" <<<"$w96" && grep -qxF "RANK rk_d3.json N 6 STEPS 2 U 1 YSTAB 0 ABOVE 0 MAXR_UNCH 5 MAXR_CH 0 MAXR_ALL 5 UNCH_RANKS [5]" <<<"$w96" && grep -q "^STAT lag1.json N 6 STEPS 2 U 1 CH 0 .* QUOT B:BAD1 UNST:lv1 AGR:lv1 KP:lv1 MRG:BAD1 " <<<"$w96"; then
+  echo "box 147 COARSE: DECREMENT holds (YSTAB 0, ABOVE 0); unchained RANK 5 = n - 1 on rk_d3; B and MRG constant across lag1's unchained step: PASS"
+else
+  echo "box 147 COARSE check: FAILED"; exit 1
+fi
+w97=$(cd .. && python3 -I new/box148/charge.py new/box144/out/uc_d6.json; python3 -I new/box148/restrict.py new/box143/inst/x3_L8.json new/box144/out/uc_d10.json)
+if grep -q "^CHARGE uc_d6.json N 12 STEPS 13 U 9 .* k1: H 6 NOFLIP_ABOVE 4 NOFLIP_FROZ 5 SAMETOP 6 FIRSTFAIL 3 " <<<"$w97" && grep -q "^RESTRICT x3_L8.json N 6 STEPS 8 U 3 INTERVALS 5 PREFIXVIOL 0 " <<<"$w97" && grep -q "^RESTRICT uc_d10.json N 20 STEPS 22 U 17 INTERVALS 4 PREFIXVIOL 0 MAXUNCH_IN 10 " <<<"$w97"; then
+  echo "box 148 INTERVAL: per-step key-change charge dead on uc_d6; INTERVAL-RESTRICT prefix holds on x3_L8 and uc_d10: PASS"
+else
+  echo "box 148 INTERVAL check: FAILED"; exit 1
+fi
+w98=$(cd .. && python3 -I new/box149/keyflip.py new/box143/inst/x3_L8.json new/box143/out/dc_d12.json)
+if grep -qxF "KEYFLIP x3_L8.json N 6 STEPS 8 MOVES 13 KFLIPS 10 VIOL 0" <<<"$w98" && grep -qxF "KEYFLIP dc_d12.json N 24 STEPS 26 MOVES 82 KFLIPS 86 VIOL 0" <<<"$w98"; then
+  echo "box 149 KEYFLIP: moves(x) <= 1 + key flips(x) on x3_L8 and dc_d12: PASS"
+else
+  echo "box 149 KEYFLIP check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

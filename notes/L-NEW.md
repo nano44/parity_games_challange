@@ -1,7 +1,294 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 45, Opus 5.5, session_01V5yGRWZgucRQvPGKYZujK; started 2026-11-01 06:24Z by date -u; handover: HEAD had dcb80dfc (is-ancestor OK), trunk claude/vibrant-johnson-nxvvxo merged 2228f7df)
+## Resume point (successor 49, Opus 5.5, session_01V5yGRVusQANCQiXcbrWdJg; FINAL, PARKED 2026-11-02 ~14:1xZ by date -u)
+### FINAL summary (successor 49): boxes 147-149, every push via scripts/push.sh (VERIFY PASS), each reported to the Lead
+- 147 COARSE (60286d8c): every coarse Xi-statistic DEAD (B and MRG constant across realised lag1's unchained step; all-start quotient
+  test kills functions of B, AGR, KP, MRG, WANT, TOP1-3, LVCNT; TOP_k const k: rk_d3; (pi+1)^p p <= 12: dc_d12); DECREMENT,
+  EXACT-ENERGY, RANK-BOUND PROVED (lane); READING: minimal info = unstable set in pi order (exponential counter).
+- 148 INTERVAL (5c93eaf8): per-step key-change charge DEAD (uc_d6 steps 3-6); INTERVAL-RESTRICT, INTERVAL-CHARGE, opening dichotomy,
+  recursion U*(n) <= sum_{p<n}(U*(p)+1) PROVED (lane); circular exactly at releases of frozen top movers (KCH-GCH), along pi-rank.
+- 149 SYNTHESIS (this push): docs/new/N5-IDEAL-STATE.md (reductions R1-R10, DEAD list, conjectures, open quantity = sum_l F_l on the
+  2-wide ladder, i.e. sum DELAY_l; packet candidate P-IDEAL-RED, NOT frozen); new Lemma KEYFLIP PROVED (lane): deg 2, moves(x) <= 1 +
+  KF_x, so IDEAL-ACYC-POLY <=> KF-POLY <=> U-POLY (box149/keyflip.py, 0 viol. on 512 movers).
+### NEXT for successor 50 (Lead decides): (a) if the Lead opens P-IDEAL-RED: minimal packet = CHAIN-BACK + KEYFLIP (needs R178 XI-NEW
+  landed or carried); (b) score L-RED R192's freeze/release family by U and KF; (c) the open object: one carry forcing omega(1) late
+  responses ABOVE it, compounding across levels (sum DELAY_l). Labels open: U-LIN, DELAY-LIN, DELSTEP-LIN, UP-LIN, IDEAL-ACYC-POLY,
+  G-N5-TIME.
+### Things only I know (successor 49): box147/stat.py analyse() is the feature engine (S, FS per state with UNST/B/KP/AGR/MRG/PL/PLAY/key,
+  lab, pos); box148/charge.py info() adds y_t, RANK, FROZ, key flips, carries; box147/allstart.py needs scipy (pip install scipy) and
+  is not in check.sh. push.sh takes ~20 min: run it in the background with timeout 7200000 (600000 kills it). exec-ing a tool needs
+  ns["__file__"] = its absolute path.
+
+## Resume point (HISTORY; successor 49 work log; started 2026-11-02 11:51Z by date -u)
+### Handover check (STEP 0, sent to the Lead 11:52Z)
+1. claude/l-new: local clone STALE at 8591166d again; ls-remote 767ed19a; fetched l-new / l-red (c374be8f) / trunk (3398c652) only;
+   ff-only -> HEAD 767ed19a. Vs trunk: 0 ahead / 123 behind, merge-base 767ed19a (trunk has merged l-new). Lane files only.
+2. Open: box 147. 3. GAPS: G-N5-TIME major open; G-N1-LB minor open (optional); G-N5-TERM closed. 4. D18, D14, D1 (active).
+5. Trap: stale clone (ls-remote + fetch + ff-only + HEAD vs ls-remote). Oink rebuilt here (setup_oink.sh EXIT 0).
+### Box 147 N5-COARSE (Lead brief 11:47Z; docs/new/N5-COARSE-box147.md; experiments/new/box147/)
+- DEAD: every coarse Xi-statistic tested. The Lead's four on realised lag1 (B = Xi-better identity and MRG = merge vertices CONSTANT
+  across the unchained step 2; LVL_AGR / NAGR rise; deepest Xi-play change 3 -> 3). 37 per-run statistics (best: LEX(maxpi unstable,
+  #unstable) 59 viol., first x3_L8 step 3; SUMPI_U 65, first x3_L8 step 4 chained rise). All-start quotient test (2^n starts): no
+  function of B, AGR, KP, MRG, WANT, NUNST, TOP1-3, LVCNT, halves works. TOP_k for constant k (unchained RANK climbs n - 1);
+  ready-only RANKW (climbs 6 at d 6, 8); (pi+1)^p weights for p <= 12 (dc_d12 needs p in (12, 16]).
+- PROVED (lane): DECREMENT (max-pi mover goes unstable -> stable, no UNST bit above it changes; any IDEAL-ACYC genome), EXACT-ENERGY
+  (sum_{unstable} 2^pi falls at EVERY step; degree D: sum c(x) D^pi), TOP-MONO / RANK-BOUND (U <= sum_{j <= R} C(n, j)).
+- READING: minimal distinguishing information = the unstable set in pi order (exponential counter); a poly statistic must also
+  control W-side freeze/release of ready movers = key-change count again (circular, box 137 KCH-GCH).
+- DATA: linear UNST potential LP-feasible on all 24 all-start graphs n <= 14 (weights grow fast along pi); option bits alone (S)
+  infeasible on 16. Pins re-run here: box143 + box144 pincheck identical (Oink zlk/tl verified, AGREE, n5b identical).
+### Box 147 push 60286d8c (VERIFY PASS; first push.sh run killed at the 10-min background limit, rerun with 2 h); Lead 12:51Z recorded it.
+### Box 148 N5-INTERVAL (Lead GO 12:51Z; docs/new/N5-INTERVAL-box148.md; experiments/new/box148/)
+- DEAD: per-step charge «high-rank unchained step consumes a key flip above y_t» (uc_d6 steps 3-6, mover 10 frozen, no flip above y_t;
+  corpus 37/113 form 1, 78/113 form 2; uc_d10 SAMETOP 10).
+- PROVED (lane): INTERVAL-RESTRICT (TOP_k-constant interval = prefix of the restricted genome's run, top part degree 1; PREFIXVIOL 0
+  on 46), INTERVAL-CHARGE (#RANK r <= (n-r+1)(1 + #RANK <= r-1)), opening dichotomy (release = key flip of y_t, or fresh Xi-wake),
+  recursion U*(n) <= sum_{p<n}(U*(p)+1).
+- READING: circular exactly at the count of releases of frozen top movers (carries below them) = KCH-GCH; the multiplication runs
+  along pi-rank (R186 DEPTH runs along W-level).
+### Things only I know (successor 49): allstart.py needs scipy (pip install scipy; not in check.sh). stat.py analyse() returns S, FS
+  (features per state), lab, pos; reuse it for any new state statistic (add a key in stats()). rclimb.py RW=1 / ALL=1 modes.
+  exec-ing a tool from stdin needs ns["__file__"] set to the tool's absolute path.
+
+## Resume point (HISTORY; successor 48, Opus 5.5, session_01V5yGRYskE4dhDBS3jy5SQh; FINAL, PARKED 2026-11-02 ~06:5xZ by date -u)
+### FINAL summary (successor 48): boxes 143-146, every push via scripts/push.sh (VERIFY PASS), each reported to the Lead
+- 143 DELAY (33f66fca): DELAY-LIN not proved; C-ELEM (mover = C-element: A same step, B one step late), STEP-DELAY (steps <= 1 + 2d
+  + DELSTEPS), ABSORB PROVED (lane); literal face re-rise charging DEAD (x3_L8); Sum DELAY ~5 per level to d 12.
+- 144 CHAIN (d725de98): pre-merge cause premise DEAD (x3_L8 step 6, re-route off merge vertex); CHAIN-BACK PROVED (lane, ANY
+  IDEAL-ACYC genome, via R178 XI-NEW): steps <= n_E (1 + U), U = steps not woken by the previous least mover; U climbs ~2d.
+- 145 ENERGY (632154d0, D18 cross-field): direct threshold cast DEAD (one-step map non-unate, x3_L8); VAL-ENERGY (= PATHS), TRI,
+  HALVES PROVED (lane); READING: symmetric hidden-unit cast [SOA99 Thm 1] carries 2^rank weights -> exponential energy [GM89 Thm 1];
+  obstruction = two OPPOSITE triangular orders coupled.
+- 146 SPLITE (this push): split-level energy (V0-V3, VLEX, both orientations) DEAD: small_d2 (d 2, chained rise), lag1 (realised,
+  unchained non-fall); SPLIT-CYCLE PROVED (lane).
+### NEXT for successor 49 (Lead decides): a COARSE Xi-statistic with polynomially many levels that falls at every unchained step
+  (U-LIN => O(d^2) runs on the 2-wide ladder via CHAIN-BACK); score any counter by U (L-RED R190 3-wide clock). W-side-only energies
+  are dead (SPLIT-CYCLE). Labels open: U-LIN, DELSTEP-LIN (<=> linear 2-wide runs), DELAY-LIN, IDEAL-ACYC-POLY, G-N5-TIME.
+### Things only I know (successor 48): see the box 143-145 sections below. Tools: box143/cause.py (C-ELEM, STEP-DELAY, causes),
+  box144/chain.py (CHAIN-BACK, ALL form), box145/thr.py (threshold cast), box146/energy.py (energy tester; reuse it for any new
+  candidate: add a variant to E()). Pins copied read-only: box143/inst (R188), box144/inst (R189), all Oink/n5b verified here.
+
+## Resume point (HISTORY; successor 48 work log; started 2026-11-02 03:03Z by date -u)
+### Handover check (STEP 0, sent to the Lead 03:03Z)
+1. claude/l-new: local clone STALE at 8591166d again; ls-remote 40708ae9; fetched l-new / trunk / l-red only; ff-only -> HEAD 40708ae9;
+   vs trunk e642a0e1: 5 ahead / 59 behind, merge-base a5c5b594 (trunk not merged; lane files only).
+2. Open: box 143 DELAY-LIN. 3. GAPS: G-N5-TIME major open; G-N1-LB minor open (optional); G-N5-TERM closed. 4. D18, D14, D1 (active).
+5. Trap: stale clone (check = ls-remote + fetch + ff-only + HEAD vs ls-remote); Oink rebuilt here (setup_oink.sh OK).
+### Box 143 N5-DELAY (Lead brief 03:07Z; docs/new/N5-DELAY-box143.md; experiments/new/box143/)
+- DELAY-LIN NOT proved. PROVED (lane): C-ELEM (mover = C-element: moves to k iff A(t) = k (toward L_(l-1), same step) and B(t-1) = k
+  (strict Xi preference, one step late)); STEP-DELAY (least mover of every step >= 2 is delayed or PRE => steps <= 1 + 2d + DELSTEPS;
+  so DELAY-LIN => LINEAR runs; 2-wide IDEAL-ACYC-POLY <=> DELSTEPS poly); ABSORB (same-target levels absorb carries).
+- DEAD: literal «face re-rises only after a carry above» on R188 exact pin x3_L8 (face (0,0) rises at 5 and 6, no carry at 6).
+- DATA: Sum DELAY climbs 5/10/15/22/24/40/38/63 at d 3-8,10,12 (~5 per level), steps ~2.2d; per option <= 3, per mover <= 5 delays;
+  max moves of ONE mover 3/5/7 at d 4/6/8 (mostly carry moves) -> no MOVE-CONST conjecture.
+- Pins x3_L8_n48, g4_L12_n62 copied read-only (l-red ce1d19e9): Oink zlk/tl verified, pinwin AGREE, n5b identical (box143/pincheck.txt).
+- NEXT: count crossings (B flips) at least movers via pre-merge segments (box 135 MERGE) per carry wave.
+### Box 143 push 33f66fca (VERIFY PASS); Lead 04:33Z recorded it; DELSTEPS = L-RED 45 R190 score.
+### Box 144 N5-CHAIN (Lead GO 04:33Z; docs/new/N5-CHAIN-box144.md; experiments/new/box144/)
+- DEAD: pre-merge cause premise (x3_L8 step 6: k-bar play re-routes off the merge vertex 1, cause on the common suffix); briefed
+  (pre-merge segment, carry wave) charge does not close (per-wave charging trivial; per pair <= 3).
+- PROVED (lane) CHAIN-BACK (any IDEAL-ACYC genome, via R178 XI-NEW): chained steps (h_(t-1) on h_t's new face play) have
+  pi(h_t) < pi(h_(t-1)); blocks <= n_E; steps <= n_E (1 + U), U = unchained steps; UP shape <= d (1 + U).
+- DATA: U climbs 6/9/13/17 at d 4/6/8/10 (~2d); CONJECTURE U-LIN (=> O(d^2)). R189 pins copied (l-red 80bfb1d0), Oink/n5b verified.
+- NEXT: potential over waves: charge an unchained wake (by a CAR/parallel mover of wave t-1) to a consumed resource (split level
+  closing, ABSORB) refilled O(1) times per lower carry.
+### Box 144 push d725de98 (VERIFY PASS); Lead 05:31Z recorded it (U = R190 score).
+### Box 145 N5-ENERGY (Lead GO 05:31Z, D18 cross-field; docs/new/N5-ENERGY-box145.md; experiments/new/box145/thr.py)
+- DEAD: direct threshold cast (one-step map not unate; x3_L8 Phi_2 in s_3; also g4_L12, nest_d3_L4, lag2c_d4, up_d3).
+- PROVED (lane): VAL-ENERGY (value vector = energy; steps <= Sum (VX - 1) = PATHS), TRI (triangular nets transient <= c n), HALVES.
+- READING: hidden-unit symmetric cast exists [SOA99 Thm 1] but weights 2^rank -> energy bound O(W) exponential [SOA99 §3]; [GM89]
+  super-increasing symmetric weights give 2^(n/3) transients; obstruction = two OPPOSITE triangular orders coupled, not triangularity.
+- Sources opened (box 145):
+  - [GM89] Goles, Martinez, Complex Systems 3 (1989) 589-597 (publisher PDF): Thm 1 (sync transient >= 2^(n/3), symmetric),
+    Thm 2 (sequential ~2^(n/6)); conditions (2.8)-(2.16) p. 593-594 (control weights exceed sums: super-increasing).
+  - [SOA99] Sima, Orponen, Antti-Poika, SOFSEM'99 LNCS 1725 459-469, DOI 10.1007/3-540-47849-3_34 (jyx.jyu.fi accepted version):
+    Thm 1 (convergent asymmetric n-neuron parallel net simulated by symmetric 6n+2 neurons in 4t* steps), §3 (energy bound O(W)),
+    Thm 2 (2^Omega(M^1/3) .. 2^O(M^1/2) in description size M; proof counts distinct energy levels).
+  - [OBP13] Oliveira, Barbosa, Protti, arXiv:1311.6126: Lemma 2 (energy monotone), Thm 3 (period <= 2), Thm 4 (transient <=
+    E(t_max) + n - 1). Goles-Olivos 1981 (Inform. Control 51, 98-104) / 1985 (DAM) NOT opened (cited through OBP13 refs [5], [6]).
+  - C-element / speed-independent literature (Muller-Bartky, Brzozowski-Zhang): NOT opened; no claim made.
+### Box 145 push 632154d0 (VERIFY PASS); Lead 06:27Z recorded it.
+### Box 146 N5-SPLITE: see FINAL summary (docs/new/N5-SPLITE-box146.md).
+### Things only I know (successor 48): cause.py/perx.py exec paths.py's run(); climbs: dclimb 80k iters at d 12 ~40 min on 1 core.
+  Splitting a tool's source on 'if __name__' breaks when that string occurs inside the tool (chain.py): split on '\nif __name__'.
+  pkill -f <pattern> kills my own shell when the pattern is in the command line (bit me again): kill by pid.
+
+## Resume point (successor 47, Opus 5.5, session_01V5yGRZScf7eMZRT15JJRqy; HISTORY; FINAL, PARKED 2026-11-02 ~02:5xZ by date -u)
+### FINAL summary (successor 47): boxes 137-142, every push via scripts/push.sh (VERIFY PASS), each reported to the Lead
+- 137 REL (2e1322eb, a5c5b594): briefed release lemma DEAD (ret2_n37, one epoch), RET-1 DEAD; KCH-GCH, CEIL, SAT-MONO, SAT-FREEZE,
+  BAND, SYNC, C-WORLD, DEFICIT, DOUBLE-PULL PROVED (lane).
+- 138 GATE (a0ce806b): GATE-LEX, CASC-M''' (sbar changes not stretch boundaries; under NT, NC) PROVED (lane); c-world SI: no reduction.
+- 139 IDEAL (3b2078c9): D''' cyclic on stab_d4; PATHS + LOG-DEPTH (IDEAL-ACYC-POLY for log Xi-depth or log W-level) PROVED (lane);
+  real-FL W-side path count.
+- 140 JOINT (80cd02cc): ALTERNATION, TOWARD-L, L-ACCOUNT, TOP-STATIC, TWO-SIDED PROVED (lane); UP-LADDER climbs linear.
+- 141 UPLIN (5dbff709): UP-LIN not proved; DESCENT; data to d 8 (FL 19).
+- 142 LAG (this push): NO-LAG DEAD (lag_min_d2, d 2, sibling Xi-read; up_d4 in UP shape); bounded lag insufficient; DELAY-CHARGE
+  (F_l <= F_(l-1) + 2 + DELAY_l) + DELAY-CAUSE PROVED (lane); Sum DELAY = O(d) => O(d^2) steps on the 2-wide ladder; CONJECTURE DELAY-LIN.
+- P-N5-ANCHOR: both referees MATCHED L-2; CHECKER C114 PASS; R103 LANDED 00:24Z and CLOSED (ec62f84d). No fixes entry 3 was needed.
+### NEXT for successor 48 (Lead decides): DELAY-LIN on 2-wide IDEAL-ACYC ladders (count Xi-events one step before each delay;
+  DELAY-CAUSE localises them to released-and-waiting movers); test box 140's Psi on any R188+ counter; R188's exact d 3 pin x3_L8_n48
+  was not checked against DELAY-CHARGE here (its IDEAL genome is on claude/l-red ce1d19e9).
+### Things only I know (successor 47): see the box sections below (WORKING log); push.sh ~20 min; never edit files in the working tree
+  while push.sh verifies (I once had to restore rel.py mid-verify); Oink must be rebuilt in a fresh container.
+
+## Resume point (HISTORY; successor 47 work log, Opus 5.5; started 2026-11-01 21:06Z by date -u)
+### Handover check (STEP 0, sent to the Lead 21:06Z; docs/agents/ is Lead-only, so the answers live here)
+1. claude/l-new: local clone STALE at 8591166d (status said «up to date»); ls-remote origin 709798f3; fetched, ff-only, HEAD = 709798f3.
+   Vs trunk 8884f8de: 15 ahead / 19 behind, merge-base 65568e9c (trunk not merged; lane files only).
+2. Open: (a) STANDING P-N5-ANCHOR L-2 word-diff with both referees (any item -> fixes entry 3 + line L-3; frozen files untouched;
+   sha1 checked on disk: packet ad97ad88, line 7f140d0c, L-1 baad574d, fixes 3895b1dd, L-2 1371f900). (b) box 137.
+3. GAPS (trunk): G-N5-TIME major open; G-N1-LB minor open (optional, not routed); G-N5-TERM closed.
+4. D18, D14, D1 verbatim (all active in DECISIONS-INDEX); see the Lead message.
+5. Trap: stale local clone again; check = ls-remote + fetch + ff-only + HEAD vs ls-remote + frozen sha1s. Oink rebuilt (setup_oink.sh).
+### Box 137 N5-REL (Lead brief 21:08Z; docs/new/N5-REL-box137.md; experiments/new/box137/)
+- DEAD: the briefed «release once per key change» lemma form: ret2_n37 (one FL run = ONE epoch, GCH 0, sbar/tau/Xi on ODIFF/CN constant):
+  vertex 36 makes 33 -> 31 at j 2 and j 6; chooser 15 (level 10) moves 2 -> 36 -> 8 -> 2 -> 36 -> 8 -> 2. Also DEAD: RET-1 (option 2 of
+  15 re-entered twice; corpus/pins RETMAX 1 before).
+- PROVED (lane): Proposition KCH-GCH (moves_run(x) <= min{(|T_x|-1)(1+KCH_x), (l(x)-1)(1+GCH)}; KCH-POLY <=> GCH-POLY <=> FL-POLY;
+  per-x O(1) releases insufficient), CEIL (on [PW] = VJ00 §5 pointwise optimal counter-strategy), SAT-MONO, SAT-FREEZE, BAND, SYNC
+  (coalescence of choosers with equal option sets), C-WORLD + DEFICIT (+ closure), DOUBLE-PULL (under (NC)).
+- DATA (813 distinct pairs + 11 L-RED/L-NEW pins + 2 new pins): every check 0 violations; SATGAIN 0 on all corpus FL runs; c-world FL
+  moves 0 on corpus, 2 on cwmov2_n57 (so no C-OFF conjecture). Pins ret2_n37, cwmov2_n57: Oink zlk/tl verified, n5b identical.
+- READING: sigma-bar enters only via gating changes; the open object is GCH (circular); recipe for L-RED §6 (carry as gating event, nest).
+### Box 137 pushes: 2e1322eb (VERIFY PASS), follow-up a5c5b594 (VERIFY PASS, climb 4 final log). Lead 22:06Z recorded box 137; REFEREE
+  e002db99 and REFEREE-2 dc7db0e7 both MATCH L-2 -> P-N5-ANCHOR goes to landing as R103 (optional REFEREE note ANC-P4: «x» unbound in
+  «x's W'-cycle node»; act only if CHECKER makes it REQUIRED).
+### Box 138 N5-GATE (Lead GO 22:06Z; docs/new/N5-GATE-box138.md; experiments/new/box138/)
+- PROVED (lane): GATE-LEX ((|SAT|, CYC) monotone, poly range, strict at cycle-node changes); Theorem CASC-M''' (S-stretches cut only at
+  cycle-node changes and CN moves; D''' = D' minus self-edges + Odd edges; Odd adds no delay; under (NT) unique Odd minimum, (NC) no
+  corner) and Corollary FL run <= n_E (1 + n(n-1) + CNMOV) for D'''-acyclic S-stretches (SBCH dropped).
+- odxi_n37's 5 gate changes: one D''/D'''-acyclic stretch, Even-height 9; paid by the cascade, no potential.
+- READING: c-world = one-player static-weight total-cost SI under [RULE]; Fearnley 1705.02313 Lemma 3 covers greedy all-switch only;
+  hard cases (CDAG_n, Friedmann 1106.0778) use other rules -> no reduction.
+- DATA: corpus 10/10 S-stretches D'''-acyclic, 0 viol, 0 ties; sbmany_n57 pin (125 sbar changes, FL 4; Oink/n5b verified).
+- OPEN: D'''' = D''' with box 136 z-world/DOM cuts (observed D'''-cycles are Even-Odd 2-cycles x <-> o: cwmov2_n57 6 <-> 11); CNMOV.
+### Box 138 push a0ce806b (VERIFY PASS). Lead 23:32Z recorded box 138; L-RED R187 (417d7fa6): Theorem REALIZE (IDEAL-ACYC genome ->
+  one real FL run), so IDEAL-ACYC-POLY is necessary for N5-POLY; real pins stab_d4_n126 (L_FL 32), stab_g24_n246 (64); D'' cyclic.
+### Box 139 N5-IDEAL (Lead GO 23:32Z; docs/new/N5-IDEAL-box139.md; experiments/new/box139/)
+- D''' cyclic on stab_d4_n126 (0 -> 2 -> 9 -> 0): CASC-M''' does not apply.
+- PROVED (lane): VAL-MONO, KEY-MONO, Proposition PATHS (moves(x) <= min(VX, VW) - 1; VX = Xi-path values, VW = W-path keys), Corollary
+  LOG-DEPTH (IDEAL-ACYC-POLY when every mover has log Xi-depth or log W-level); real-FL W-side corollary (moves <= #tight W-paths - 1).
+- DATA: 4 champions, 0 violations, bound tight only at level 0. OPEN: both depths super-logarithmic at one mover (double counter);
+  recipe = LADDERBF 2-wide ladder with Xi-targets pointing up the ladder.
+### Box 139 push 3b2078c9 (VERIFY PASS). Lead 00:02Z recorded it; P-N5-ANCHOR passed CHECKER C114 (da67696a), lands as R103.
+### Box 140 N5-JOINT (Lead GO 00:02Z; docs/new/N5-JOINT-box140.md; experiments/new/box140/)
+- PROVED (lane): ALTERNATION (deg-2 mover: both orders reverse between consecutive moves), TOWARD-L and L-ACCOUNT (2-wide ladder),
+  TOP-STATIC (UP-LADDER), TWO-SIDED (pointwise bottom-up x top-down counting is exponential at the middle: a joint potential needs time
+  causality).
+- DATA: UP-LADDER climbs FL 5/7/11/13 at d 3-6 (LADDERBF 22/52/114/240); moves peak mid-ladder; CONJECTURE UP-LIN (weak).
+- OPEN: IDEAL-ACYC-POLY; §3 target statement (unproved, untested). Recipe: middle-out counter for L-RED R188.
+### Box 140 push 80cd02cc (VERIFY PASS); Lead 01:24Z recorded it; R103 (P-N5-ANCHOR) LANDED 00:24Z.
+### Box 141 N5-UPLIN (Lead GO 01:24Z; docs/new/N5-UPLIN-box141.md; experiments/new/box141/)
+- UP-LIN not proved: per-arrival charging = box 140 per-level counts (insufficient by TWO-SIDED). DESCENT = R178 XI-NEW on UP-LADDER.
+- DATA: UP-LADDER climbs FL 5/7/11/13/16/19 at d 3-8 (~2.4 d), max 5 moves per mover. CONJECTURE UP-LIN (d <= 8).
+- OPEN: cross-level lemma «one Xi-wave carries O(1) W-arrivals per level». Next: wait for L-RED R188 middle-out counter, test Psi.
+### Box 141 push 5dbff709 (VERIFY PASS); R188 (L-RED 44): no counter; exact z3 d 2 max 4, d 3 max 8.
+### Box 142 N5-LAG (Lead GO 02:35Z; docs/new/N5-LAG-box142.md; experiments/new/box142/): see FINAL summary.
+### Things only I know (successor 47)
+- rel.py's analyse() is importable (climb137.py uses it); rel.LAST holds S, T, E, runs after a call (anat.py). A game without FL runs
+  used to crash analyse (retc unbound) - fixed; the first corpus rerun after the refactor showed 801 errors, rerun clean.
+- DEFVIOL's first version had the length sign reversed (false alarm on the cwmov2 mutant); fixed before any claim.
+- dmerge3.py SHOWCYC=1 prints a D''' cycle. pkill -f with a pattern that occurs in your own command line kills your own shell: kill by pid.
+- Climbs: 4 x 40 min, ~10,000-40,000 mutations each; RETMAX 2, MOVMAX 7 best; climbs 1-3 stopped on the old DEFVIOL false alarm (mutants re-checked clean). L-RED pins copied read-only into box137/inst (18/18 sha1 OK).
+
+## Resume point (HISTORY; successor 46, Opus 5.5, session_01V5yGRaCabVm2TBMRgehQJx; FINAL, PARKED 2026-11-01 ~19:2xZ by date -u, ~460k context)
+### FINAL summary (successor 46): boxes 132-136 + P-N5-ANCHOR (frozen, signed by both referees, fixes entry 1 + line L-1); every push
+  via scripts/push.sh (VERIFY PASS), each reported to the Lead. Handover at start: local clone STALE (8591166d), ff to 4cab309e, trunk merged.
+- 132 ANCHOR (46ddf9ce; §6 7d5d5f9f): FL-ANCHOR (epoch <= CAP <= n+m; FL run <= CAP (1+GCH)), Lemma PREFIX, bridge B; label PROVED
+  (lane) on R24 (a) + (b) choice rule + bridge B (L46). (a): W-cycle source closes 13/16 cyclic D runs.
+- 133 ODXI (14bd8d23, 260f5201, 9fe4689a): «Xi at ODIFF constant in an FL run» DEAD (odxi_n37 gadget; R179 odxi_min_n12); charging
+  ODIFF Xi-changes to moves is circular (CIRC); [RULE] form checked vs REFEREE-2 (W'-ties = W-ties at FL).
+- P-N5-ANCHOR (f009a9a1; packet ad97ad88, line 7f140d0c): REDUCTIONS / EQUIVALENCE (FL-POLY <=> GCH-POLY). Both referees SIGNED all
+  items, (R1) ruled covered. Fixes entry 1 + line L-1 (6bcf5529; fixes 4cff05c1, L-1 baad574d): corner = x before the option's cycle
+  node (kept, vacuous on fully W'-optimal), (R1) ruling, ties, anchor j >= s0 + l*, R57 only, §6 heading. L-1 is with both referees for
+  word-diff: ANY FURTHER NOTE goes into a NEW entry 2 of docs/new/P-N5-ANCHOR-fixes-box134.md and a new line L-2 file; never edit frozen files.
+- 134 OVT2 (6f630331): COMPARE-W, CYC-MONO (cycle node of Xi changes <= n-1 per vertex per run, R18 (d) Lemma S (a)), FL-ANCHOR'.
+- 135 MERGE (2ee388a7): Lemma MERGE (order = pre-merge segments + w), Theorem CASC-M (stretch with acyclic merge digraph D' is
+  <= height + 1); corpus 10/10 stretches acyclic; D' cycles only in R179 odxi_many_n32.
+- 136 SELF (this push): C-STATIC-Xi (z-world: self-feeding is a static prefix predicate), DOM (head-dominated comparisons are static),
+  CASC-M''. D'' acyclic on EVERY observed stretch (corpus 10/10, odxi_many 3/3, all pins). Hence FL run <= n_E (1 + SBCH + n(n-1) +
+  CNMOV) whenever stretches are D''-acyclic. DEAD route: CNMOV via CYC-MONO (cycle node of Xi(c) changes at 0 / 11 CN moves; cw11_n24).
+### NEXT for successor 47 (Lead decides): the two remaining circular items of the FL face: (1) D''-cycles (none seen; recipe: a
+  non-head-dominated mutual dependency through a gate, box 136 §0) - L-RED R183 retargeted; (2) CNMOV (W-cycle-node moves in FL runs;
+  per-epoch bound only). Answer referee word-diff notes on L-1 (entry 2 if any).
+### Things only I know (successor 46):
+- Tools: box132/anchor.py (epochs, gating), box133/odxi.py, box134/cmpw.py (flip classes), box135/dmerge.py (STRETCH=1), box136/dmerge2.py
+  (DOM=1 STRETCH=1; SHOWCYC=1 prints a cycle). All corpus runs take < 2 min on 4 cores; push.sh ~20-25 min.
+- Scratch scripts in other tools import anchor.py's header via exec with HERE replaced (see odxi.py top) - copy that pattern.
+- R179's instances live read-only in experiments/new/box134/inst (sha1 = l-red a612b0a5 pins.sha1).
+- The harness keeps reporting «file changed on disk» for docs/new files I did not touch; git status was clean each time and the frozen
+  packet sha1 stayed ad97ad88 (checked).
+- Oink must be built in a fresh container (scripts/setup_oink.sh, ~2 min).
+
+## Resume point (HISTORY; successor 46 work log, Opus 5.5, session_01V5yGRaCabVm2TBMRgehQJx; started 2026-11-01 11:36Z by date -u; handover: local clone STALE at 8591166d, ff to origin 4cab309e, trunk 65568e9c merged --no-ff 5235c663)
+### Box 132 N5-ANCHOR (Lead brief 11:37Z, STEP 1; docs/new/N5-ANCHOR-box132.md; experiments/new/box132/)
+- PROVED (lane, on R24 (a) + (b) choice rule + bridge B, L46; box 132 §6) Theorem FL-ANCHOR:
+  epoch = FL transitions with constant gating G = (sbar, Xi on ODIFF, Xi on W-cycle nodes); non-cycle-node level l moves only in the
+  epoch's first l - 1 transitions (CASC lifted); cycle nodes then <= |T_c| - 1 moves each (rule-free); epoch <= CAP = (l* - 1) +
+  sum_c (|T_c| - 1) <= n + m; FL run <= CAP (1 + GCH); window FL <= CAP (1 + WCH + XCH(ODIFF u CN)). Lemma PREFIX: upward D-edges out of
+  non-cycle-node vertices are anchor-carried.
+- DATA (813 pairs): 20 FL runs, 42 transitions, 23 epochs, 0 violations; gating changes 3 (all Xi at a cycle node, cw11_n24), 0 at ODIFF.
+  (a): with the W-cycle source 13/16 cyclic-D runs fully anchor-carried; tog6a/tog6b/u2flat close via cycle-node edges; UPNOANCH 0.
+- Pins u23sw64_n32 + cw11_n24 (Oink zlk/tl verified, n5b identical). check.sh «box 132 ANCHOR».
+- NEEDS: lift of R24 (a)+(b) choice form to every game (L44). OPEN: can Xi change at an ODIFF vertex inside one FL run?
+### Box 133 N5-ODXI (Lead GO 12:35Z; docs/new/N5-ODXI-box133.md; experiments/new/box133/)
+- DEAD: Xi at ODIFF vertices constant / O(1) inside an FL run: odxi_n37 (u23sw64_n32 + 5-vertex gadget: band t 32, gates 33 -> {2,32},
+  34 -> {32,36}, chooser 35, pad 36): Xi at gate 33 changes 5 times in FL run [1,9]; it releases the FL move 35: 34 -> 33 at 5 -> 6.
+  Oink zlk/tl verified, n5b identical. Recipe for L-RED (band Xi(x) < val(t) <= W(x); W-tied chooser; key order = overtake order).
+- READING: FL-ANCHOR's budget can be generated by the FL run itself (gates reading FL movers); the open object is gate OVERTAKES.
+- Corpus: 2 Xi-changes at ODIFF vertices over all run states (nep22f last state, corner cycle node 48), 0 on gating states, 0 releases.
+### P-N5-ANCHOR FROZEN (Lead GO 15:36Z; docs/new/P-N5-ANCHOR-box134.md + P-N5-ANCHOR-line.txt; sha1s in the Lead report)
+- REDUCTIONS / EQUIVALENCE: FL-TIGHT, FL-OPT, bridge B, PREFIX, FL-ANCHOR (epoch <= CAP), CIRC (GCH <= FL - 1), Corollary FL-GCH
+  (FL-POLY <=> GCH-POLY). (R1) rule at non-movers left for the referees to rule on. DEAD section: odxi_n37 + R179's three instances
+  (copied read-only into experiments/new/box134/inst/, pins box134/pincheck.txt). Referee notes go to a NEW fixes file
+  docs/new/P-N5-ANCHOR-fixes-box134.md (append-only); the packet is frozen.
+- NEXT: box 134 research = a non-circular potential for the gate-overtake loop (await L-RED R180 unsat-core relay).
+### Box 134 N5-OVT2 (docs/new/N5-OVT-box134.md; experiments/new/box134/cmpw.py)
+- PROVED (lane): COMPARE-W (same anchor, cycle node off both prefixes => order depends only on prefixes + w), CYC-MONO (cycle node of
+  Xi at any vertex changes <= n-1 times per run, from R18 (d) Lemma S (a)), FL-ANCHOR' (FL run <= CAP (1 + SBCH + n^2 + FVCH); circular
+  only through full-value = cross-anchor / in-prefix anchors). DATA: 94/94 corpus flips PREFIX; CROSS only in odxi_n37 (1).
+### Box 135 N5-MERGE (Lead GO 17:06Z; docs/new/N5-MERGE-box135.md; experiments/new/box135/dmerge.py, STRETCH=1 for stretches)
+- PROVED (lane): Lemma MERGE (order of two options with the same Xi cycle node w = order of their pre-merge segments + w; flips need a
+  move on those segments), Theorem CASC-M (stretch with acyclic merge digraph D' has <= height + 1 transitions), Corollary FL run <=
+  n_E (1 + SBCH + n(n-1) + CNMOV) when every stretch has acyclic D'. DATA: corpus 10/10 stretches acyclic, CASC-M 0 viol.; CNMOV 13.
+  Only D'-cycles: R179 odxi_many_n32 (self-edges 7). Open: D'-cycles (self-feeding through a gate) and CNMOV.
+### Things only I know (successor 46): anchor.py's corpus run takes ~40 s on 4 cores; dcyc2.py keeps box 131's D edge set (path part
+  of the Xi-play only) and adds the anchor-carried classification. Oink had to be rebuilt here (setup_oink.sh, ~2 min).
+
+## Resume point (successor 45, Opus 5.5, session_01V5yGRWZgucRQvPGKYZujK; FINAL, PARKED 2026-11-01 ~11:2xZ by date -u, ~470k context)
+### FINAL summary (successor 45): boxes 127-131, every push via scripts/push.sh (VERIFY PASS), each reported to the Lead
+- 127 PARAM (656fb3eb, 6ec1c774): AF-QP PROVED (lane); expiration in W-runs DEAD (nep92_n40); no parametric cast (availability; LEX-SIGN
+  superincreasing weights; L-RED claim (2) checked).
+- 128 PCOUNT (d93dac71): PORTAL reviewed (W1-W5); STATIC-TIE + STRICT-PAY PROVED (lane); per-pivot (#X)(#ZC) count DEAD (topfix_n10).
+- 129 GATEREC (1ebdae81): ORIGIN + GATE-REC PROVED (lane); no base (cyclic mutual payment, time depth, fan-in 30). R176: D <= 4 was a
+  start effect (topfix_nk D = 6k - 1).
+- 130 FLAT (d4024537): FL-OPT/TIGHT/RED/ODIFF0 PROVED (lane); rule-independent F bound impossible (CDAG_n).
+- 131 CANON (dc8c555c + this push): tie rule = R24 (b) Lemma TB (signed on C^1O; every-game DATA 666/666, 8/8); FL-CANON re-derivation;
+  KEY=VJ; D-cycle data (16/20 cyclic, 9 without an ODIFF Xi-edge).
+### NEXT for successor 46 (Lead decides): bound D(x) (BFS-key decreases at even W-cycle nodes) through Xi-gating, or prove FL <= poly
+  for cyclic D by charging upward edges to ODIFF vertices / the W-cycle (test the W-cycle source first: box131/dcyc.py lacks it).
+### Things only I know (successor 45): corpus = sort -u si/anc58/corpus_fixed.lst (813 lines; topfix_n10 has NO start there although
+  new/box52/out/topfix_n10.start exists). The harness reports «file changed on disk» for my scripts spuriously: git status was clean every
+  time. A check.sh grep must use -x with a single expected line (box 130's first block matched two lines loosely). push.sh takes ~20 min.
+
+## Resume point (HISTORY; successor 45, Opus 5.5, session_01V5yGRWZgucRQvPGKYZujK; started 2026-11-01 06:24Z by date -u; handover: HEAD had dcb80dfc (is-ancestor OK), trunk claude/vibrant-johnson-nxvvxo merged 2228f7df)
+### Box 131 N5-CANON (Lead GO 10:41Z; docs/new/N5-CANON-box131.md; experiments/new/box131/)
+- Rule (READING from SPEC S1 (iv) on the dual arena + DATA 666/666, 8/8): c odd -> smallest index among W-tied arena options; c even ->
+  lex-smallest BFS key (c-side play path).
+- PROVED (lane) FL-CANON: (a) c odd: index strictly decreases per FL move (<= deg - 1 moves per FL run); (b) c even: BFS keys
+  non-increasing, strict at movers (range exponential); KEY=VJ (equal-length increasing keys = all-even CDAG order).
+- Recorded L-RED 41 R176 (76601782): box 129 D <= 4 was a start effect (topfix_n10.start: D 59; topfix_nk D = 6k - 1).
+- Corrected box 130 §0: u2flat73's 73 flat moves are all inside its 7 FL transitions.
+- Next: bound D(x) via the Xi-gating (two-order problem again), or R177's embedding.
+
+### Box 130 N5-FLAT (Lead GO 09:43Z; docs/new/N5-FLAT-box130.md; experiments/new/box130/)
+- PROVED (lane): FL-OPT (at an FL transition sigma_(j-1) is already an arena optimum), FL-TIGHT, FL-RED (FL run = SI on one-player
+  G_sbar restricted to W-tight edges, rule = S1 tie-break in G_tau), FL-ODIFF0 (FL needs ODIFF >= 1; corner aside).
+- Obstruction: CDAG_n (box 8, R17 (f)): one-player single-switch SI 2^n - n - 1 (re-checked n 6/8/10); any poly F must use the rule.
+- DATA: FL 35 (ODIFF >= 1), longest run 8 (u23sw64_n32); flat moves 214, max 73 in one window (u2flat73_n32, pinned).
+- My two wrong predictions recorded in the note §1 (ODIFF-0 flat moves exist; Xi-rise fails at the cycle corner).
+
 ### Box 129 N5-GATEREC (Lead GO 09:15Z; docs/new/N5-GATEREC-box129.md; experiments/new/box129/)
 - Reviewed L-RED 41 PHASE-PORTAL / SELF (R174 @ claude/l-red 5d27d366): correct; PHASE-PORTAL = STATIC-TIE for one class; SELF silent
   when the prefix difference above Z is empty.
@@ -763,6 +1050,22 @@ Stop (S5) when Iσ = Iτ = ∅: Even wins v iff the cycle node of Ξσ(v) has ev
   (b), (c); length < 2(n + m)(n² − n + 1 + SBC)). DEAD: NOFB (n3all_maxph_0), W-frame twin N5-SFW cycles (theta_thf16, period 10; 49/413).
   DATA: correct on 1,038 library + families + hard families; SF ≈ ½ N5; runquad 264 → 2, topfix 7N + 43; switchbestexp N=10 619 vs 89, SBC 97.
   Open count SBC (CONJECTURE SF-POLY OPEN).
+
+## Dead ends (successor 47, box 137; docs/new/N5-REL-box137.md §0, §4)
+- «Between two consecutive moves of x in one FL run some vertex below x changes W-tight key in a way that cannot recur without a sbar-
+  or tau-change or a CN shortcut»: DEAD, ret2_n37 (experiments/new/box137/ret2_n37.pg sha1 7058d2c222ee, default start 23efa9d2e29c):
+  one epoch (GCH 0), vertex 36 makes the move 33 -> 31 at transitions 2 and 6. Obstruction: in-epoch settling (FL-ANCHOR) repeats
+  key-change events; only key VALUES are non-recurring (exponential range).
+- RET-1 («each option re-entered at most once per FL run»): DEAD, same instance (x = 15 re-enters option 2 at j 4 and j 8).
+
+## Dead ends (successor 46, box 136; docs/new/N5-SELF-box136.md §3)
+- «every W-cycle-node move in an FL run changes the cycle node of Xi(c), so CYC-MONO bounds CNMOV»: DEAD, red/kw/instances/cw11_n24.pg
+  (default start, box132/cw11_n24_default.start): 7 CN moves, Xi(c) changes at 7, its cycle node at 0; also nep22f_n64 0/2, tog6a/b 0/1.
+
+## Dead ends (successor 46, box 133; docs/new/N5-ODXI-box133.md)
+- «Xi at ODIFF vertices is constant (or O(1)) inside one FL run»: DEAD, experiments/new/box133/odxi_n37.pg + .start (sha1 83f263c1a4d0 /
+  e2ed671588c7): obstruction = a gate whose sbar-side reads an FL mover (Xi(2) rises 5 times in run [1,9]); the change releases an FL
+  move (35: 34 -> 33 at 5 -> 6).
 
 ## Dead ends (successor 44; also in docs/new/N5-BRTREE-box121.md §2, N5-FBCOUNT-box123.md §2, N5-LEMMAP-box124.md §0)
 - Forest potentials PHL (sum log2 subtree size) / PDEP (sum depth) of Odd's best-response forest monotone inside tau-stretches: DEAD,
@@ -1906,6 +2209,7 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
   packet rule (corrections only in new dated sections).
 
 ## Sources opened
+- (succ. 45, box 131) docs/red/R176-depth.md at claude/l-red 76601782 (L-RED 41; read via the Lead's relay summary only, file not opened by me).
 - (succ. 45, box 129) docs/red/R174-zroute.md at claude/l-red 5d27d366 (L-RED 41, PHASE-PORTAL, SELF; read, not edited).
 - (succ. 45, box 128) docs/red/R173-portal.md and experiments/red/r173/portalck.py at claude/l-red 02119133 (L-RED 41, Lemma PORTAL; read, not edited). RESULTS Erratum E-1 (claude/l-red docs/RESULTS.md l. 9478). RESULTS R101 statement (l. 9251).
 - (succ. 45, box 127) arXiv 1811.05115 Gajjar-Radhakrishnan, pdf sha256 79208b4f5fe9aa5676a3fd96514bae1be82ec3080545c0483e0d2a0c7c28172f: §1 Thm 1, Prop. 5, Thm 6, p. 5-6 recursion, §4 Thm 2 proof. arXiv 1001.3749 Chakraborty-Fischer-Lachish-Yuster, pdf sha256 45398534db333c8b2a695f4da722e0c9953960b851cb605d581f46ff8800e092: §1. NOT opened: doi 10.1007/BF02591893, doi 10.1006/jcss.2001.1766.
@@ -2048,6 +2352,8 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
 - (succ. 38, box 89) T. Ralphs, IE411 Lecture 11 (Lehigh, coral.ise.lehigh.edu/~ted/files/ie411/lectures-python/Lecture11.pdf), slide 3 (PDF text read).
 - (succ. 40) L-LIT T61 (l-lit 1ad851ee, docs/lit/T61-order-charging.md §2.6, S5a data). L-LIT T60 (l-lit 54584c0c, docs/lit/T60-best-reply-flips.md §3.3, ORDER-DET / NO-REPEAT statements); L-SI box 53 (l-si aeb8c311, docs/si/N5-SBF-box53.md §2.1-§2.5, §3); P-N5-SETTLE §1-§2 (l-si a0970d36). [ABS] 2102.04922 and [GH] NOT opened (only T60's quotes; no theorem of theirs used).
 ## Dead ends
+- (succ. 45, box 131) «Smallest index» as S4a's tie rule: false at even W-cycle nodes (483 / 666 ties; the rule there is the BFS key); index potential works only at odd cycle nodes.
+- (succ. 45, box 130) Rule-independent potential for FL runs (Xi, or (Xi, length) at tied W): exponential range, CDAG_n one-player single-switch chain 2^n - n - 1 (CDAG_6: 57 steps). A bound must use the S1 tie-break.
 - (succ. 45, box 129) Recursion over gate depth for W-strict moves: no base. Vertex charge graph cyclic (topfix_n10 window [6,64]: eleven 3-vertex mutual-payment SCCs, e.g. {120,121,122}); move-level chain depth 52 (time depth).
 - (succ. 45, box 128) Per-pivot count «W-strict moves of h <= sum over its classes X of (1 + lambda_Xi(X) changes)»: DEAD, topfix_n10
   (sha1 4b65d3dc2735) h 192 stretch [6,64]: 36 > 20 by hub re-entries (class 193 re-entered 18 times), no Xi-cycle-node change at any class.
@@ -2243,6 +2549,13 @@ Successor 33 (Opus 5.5, D14/D18, L40), session_01V5yGRaHMppivA9TeVXbHiQ. Context
   si/root/instances/ueonce_n27 (edge (10, 23) twice) and new/box48/instances/long121_n40 (S3 start); blocks inherited from an earlier sigmabar.
 - (succ. 38, box 90) CONJECTURE SB-LIN (sigmabar changes per W-run <= n): FALSE on red/so/instances/pftheta34_n32.pg (S3 start; 34 > 32)
   and L-RED latew_K16_m32 (513 > 482).
+- (succ. 49, box 147) Coarse Xi-statistics for U: B (Xi-better identity) and MRG (merge vertices) are constant across R189 lag1's
+  unchained step 2 (realised, d 3); LVL_AGR/NAGR rise there; deepest Xi-play change 3 -> 3. All-start quotient: no function of B, AGR, KP,
+  MRG, WANT, NUNST, TOP1-3, LVCNT, UNST halves (first BAD up_d3 / up_d4 / up_d5 / g4_L12). TOP_k const k: new/box147/out/rk_d3 (RANK 5 = n - 1).
+  Ready-only TOP_k: rw_d6_s1 (RANKW 6; one level-0 carry freezes 5 ready movers). (pi+1)^p weights, p <= 12: box143/out/dc_d12.
+  Obstruction: DECREMENT makes the unstable set an exponential pi-order counter; coarsenings lose the order (docs/new/N5-COARSE-box147.md).
+- (succ. 49, box 148) Per-step key-change charge for unchained steps of RANK > k (key flip of a mover above y_t, or of a frozen one,
+  between consecutive such steps): new/box144/out/uc_d6 steps 3-6 (k 1). Obstruction: frozen movers are spectators; only per-interval charge holds.
 ## Dead ends (successor 40, box 97; also in docs/new/N5-ORD-box97.md)
 - ORDER-DET-U (sbar a function of the Xi-order on R143's U_k): n5s_maxph_0 (n 5), states 0-1, U = {2} both, sbar(0) 1 -> 2 (tau(0) = 1 is not a head).
 - NO-REPEAT (head / A_F orders never recur in a W-run): thetaA_n7 (n 7), refined order of A_F = {1,2,5} at state 0 recurs at state 3, sbar(6) 5,5,1,5.

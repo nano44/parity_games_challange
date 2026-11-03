@@ -1,0 +1,51 @@
+== pins + champions + R188 (BUILD vs pin bytes)
+REALIZE-CHECK IDEAL_steps 316 IDEAL_stuck 9 games 9 mover_checks 6146 mover_checks_multi 2737 mover_checks_single 3409 pins_compared 4 states 325 stop_fallbacks 9
+VIOLATIONS 0 
+== random 300 6 3 1
+REALIZE-CHECK BND_L0_games 75 BND_N1_games 18 IDEAL_opt 67 IDEAL_steps 237 IDEAL_stuck 233 games 300 mover_checks 2241 mover_checks_multi 969 mover_checks_single 1272 states 537 stop_fallbacks 300
+VIOLATIONS 0 
+== random 300 12 4 2
+REALIZE-CHECK BND_L0_games 40 BND_N1_games 7 IDEAL_opt 34 IDEAL_steps 302 IDEAL_stuck 266 games 300 mover_checks 4575 mover_checks_multi 1963 mover_checks_single 2612 states 602 stop_fallbacks 300
+VIOLATIONS 0 
+== random 200 20 6 3
+REALIZE-CHECK BND_L0_games 10 BND_N1_games 1 IDEAL_opt 10 IDEAL_steps 246 IDEAL_stuck 190 games 200 mover_checks 5339 mover_checks_multi 2195 mover_checks_single 3144 states 446 stop_fallbacks 200
+VIOLATIONS 0 
+== random 60 40 8 4
+REALIZE-CHECK BND_L0_games 2 IDEAL_steps 92 IDEAL_stuck 60 games 60 mover_checks 3641 mover_checks_multi 1445 mover_checks_single 2196 states 152 stop_fallbacks 60
+VIOLATIONS 0 
+== random 300 1 1 8
+REALIZE-CHECK BND_L0_games 199 BND_N1_games 300 IDEAL_opt 211 IDEAL_steps 101 IDEAL_stuck 89 games 300 mover_checks 401 mover_checks_multi 190 mover_checks_single 211 states 401 stop_fallbacks 300
+VIOLATIONS 0 
+== perturb 200 26
+REALIZE-CHECK IDEAL_opt 1 IDEAL_steps 2516 IDEAL_stuck 199 games 200 mover_checks 52155 mover_checks_multi 24429 mover_checks_single 27726 perturb_tries 277 states 2716 stop_fallbacks 200
+VIOLATIONS 0 
+== BF=11 random 300 5 3 11
+REALIZE-CHECK BF_states 392 BF_strategies 490800 BND_L0_games 102 BND_N1_games 21 IDEAL_opt 96 IDEAL_steps 209 IDEAL_stuck 204 games 300 mover_checks 1811 mover_checks_multi 792 mover_checks_single 1019 states 509 stop_fallbacks 300
+VIOLATIONS 0 
+== MUT=eprio
+REALIZE-CHECK BND_L0_games 23 BND_N1_games 1 IDEAL_opt 24 IDEAL_steps 211 IDEAL_stuck 176 games 200 mover_checks 3184 mover_checks_multi 1286 mover_checks_single 1898 states 411 stop_fallbacks 200
+VIOLATIONS 0 
+REALIZE-CHECK IDEAL_steps 389 IDEAL_stuck 40 games 40 mover_checks 8172 mover_checks_multi 4219 mover_checks_single 3953 perturb_tries 58 states 429 stop_fallbacks 40
+VIOLATIONS 0 
+== CONTROL MUT=noesc (expect TAU)
+REALIZE-CHECK IDEAL_steps 96 IDEAL_stuck 2 games 2 mover_checks 36 mover_checks_multi 21 mover_checks_single 15 states 2
+VIOLATIONS 8 FB 2 STD 2 TAU 2 W1 2
+  first TAU big_d4_k3_W3.json@0 [(12, 48), (13, 64), (14, 57)]
+  first FB big_d4_k3_W3.json@1
+  first W1 big_d4_k3_W3.json@1 W changed
+  first STD big_d4_k3_W3.json@1
+REALIZE-CHECK BND_L0_games 27 BND_N1_games 5 IDEAL_opt 22 IDEAL_steps 199 IDEAL_stuck 178 games 200 mover_checks 1470 mover_checks_multi 767 mover_checks_single 703 states 206 stop_fallbacks 33
+VIOLATIONS 716 FB 191 STD 167 TAU 191 W1 167
+  first TAU rand2_0@0 [(2, 7), (3, 8)]
+  first FB rand2_0@1
+  first W1 rand2_0@1 W changed
+  first STD rand2_0@1
+== CONTROL MUT=eorder (expect KEYB/IDEAL, RULE 0)
+REALIZE-CHECK IDEAL_steps 96 IDEAL_stuck 2 games 2 mover_checks 36 mover_checks_multi 21 mover_checks_single 15 states 2
+VIOLATIONS 55 IDEAL 20 KEYB 33 STD 2
+  first KEYB big_d4_k3_W3.json@0 x=2
+  first IDEAL big_d4_k3_W3.json@0 x=2
+  first STD big_d4_k3_W3.json@1
+== SCOPE Xi-cyclic random 300 12 4 5 cyc
+REALIZE-CHECK BND_L0_games 1 IDEAL_cyclic_genomes 294 IDEAL_steps 5 IDEAL_stuck 6 SCOPE_cyclic_sbar_not_beta_at_state0 134 games 300 mover_checks 75 mover_checks_multi 29 mover_checks_single 46 states 11 stop_fallbacks 6
+VIOLATIONS 0 

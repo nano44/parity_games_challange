@@ -1,0 +1,16 @@
+MODE files $SCRATCH/cfu_st.lst 0 $SCRATCH/ws4b/experiments/ MAXT 5000 BF 0
+FL_runs: 3
+FL_transitions: 3
+GCH: 0
+ODIFF_xi_changes: 7
+RULE_checks_mover: 7701
+RULE_checks_nonmover: 191744
+RULE_multi_mover: 47
+RULE_multi_nonmover: 63
+RULE_with_corner: 1351
+epochs: 3
+runs: 94
+starts_valid: 94
+max max_ODIFF_xi_changes_one_vertex_one_run: 1
+RESULT PASS violations 0
+EXIT 0

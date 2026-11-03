@@ -1,0 +1,12 @@
+PIN u23sw64_n32 18b46837d2f0 start c69511c1064f
+OINK u23sw64_n32 --zlk verified
+OINK u23sw64_n32 --tl verified
+PINWIN u23sw64_n32.pg n 32 states 17 fallbacks 1 W0 32 AGREE True
+n5b iterations 16 fallbacks 1 states 17 | n5x states 17 | identical state sequences: True
+ANCHOR u23sw64_n32.pg n 32 RUNS 1 FL 8 EPOCHS 1 GCH 0 VIOL 0 LVLVIOL 0 CMOVES 0 CMNORISE 0 CMLATE 0 MAXEP 8 EPVIOL 0 BOUNDVIOL 0 XIB 0 SBB 0 CYB 0 MAXLEN 8 CMXICH 0
+PIN cw11_n24 5c6dcf2d9668 start 8200da23563c
+OINK cw11_n24 --zlk verified
+OINK cw11_n24 --tl verified
+PINWIN cw11_n24.pg n 24 states 18 fallbacks 4 W0 24 AGREE True
+n5b iterations 17 fallbacks 4 states 18 | n5x states 18 | identical state sequences: True
+ANCHOR cw11_n24.pg n 24 RUNS 4 FL 7 EPOCHS 7 GCH 3 VIOL 0 LVLVIOL 0 CMOVES 7 CMNORISE 0 CMLATE 0 MAXEP 1 EPVIOL 0 BOUNDVIOL 0 XIB 0 SBB 0 CYB 3 MAXLEN 3 CMXICH 7

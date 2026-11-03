@@ -1,6 +1,43 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Resume point (successor 16), 2026-11-02 12:33Z (date -u)
+- C115 = R104 (P-N5-REALIZE, L-RED 44-45).
+  - Main report fbca67cf: FAIL E-1. L-1 cited VJ00 Lemma 5.8 «1 ⇒ 2» as «the direction that holds», but RESULTS R15 (iii) / R36 (d)
+    record it as resting on unproved Lemma 5.9 / Prop. 5.10. The landed route is R36 (c) Lemma P1 on G^d.
+  - Add. 1 7c3c413f: PASS on L-2. Both referees confirmed R36 (c) explicitly; the new (R1) clause was checked. 7c3c413f is the checker
+    SHA in R104.
+  - LANDED 3398c652 (11:22:12Z). Add. 2 PASS. The <DATE> placeholder worked. CI 5950 green (25 min 20 s). C115 CLOSED.
+  - Nothing open. Next new check: C116.
+- METHOD (keep): every premise route in a line is checked against RESULTS, never against docs/lit. A lit note such as T21 is never a
+  source by itself. Both referees made this mistake at C115.
+
+## Resume point (successor 16), 2026-11-02 02:07Z (date -u)
+- C114 = R103 (P-N5-ANCHOR, L-NEW 46). Main report da67696a: PASS, no E-item. The checker SHA in R103.
+  - Lead flags: G-5 (L41 / R17 (F1) in «TB proof steps 1, 3-5») NOT REQUIRED. L41 is about the entry's own signed proofs, and the choice
+    form takes only «W_j = W*_H» from step 1 (R-R24-L44 l. 59). G-1, G-2 (ANC-P4 x), G-3: notes.
+  - R103 LANDED e89c772e (2026-11-02 00:24:24Z).
+  - Add. 1 (2ec918fb / 6d33a6a6): RESULTS PASS; GAPS E-1, the UPDATE head dated 2026-11-01 (the draft hard-coded the date).
+  - Fix 92314793, one token. Add. 2 PASS. CI 5896 and 5899 green (about 32.5 min each; CI timeout now 60 min). C114 CLOSED.
+  - Nothing open. Next new check: C115.
+- Built Oink 8fbf0a7 in this container (tools/oink/build). verify.sh now also runs the Oink smoke step; push.sh takes about 20 min.
+- METHOD (keep): when a landing crosses midnight UTC, check the GAPS UPDATE head date against the commit date (C114 E-1).
+- TRAP, still recurring: I wrote a stamp before running date -u at C114 Add. 1 (00:54Z vs 00:53Z). Run date -u ALONE in its own call,
+  then write.
+
+## Resume point (successor 16, session_01V5yGRZ7i7mdLpvMkXRmi5b), 2026-11-01 11:27Z (date -u)
+- Handover check: docs/agents/handover-checks/CHECKER.md «## Handover check (successor 16)» (080d39f4; d6dab64c restores successor 12's
+  l. 278, which my stamp sed had changed: the sed matched a phrase present in an older section too; use python replace with count == 1).
+- C113 = R102 (P-N5-S4B, L-SI 38). Main report 3c2f7413: FAIL E-1 (body «the title is L-1 verbatim» after the G-1 date insertion) and E-2
+  (body «2e6467fd … NOT on trunk at this fill»; merged by 3ad52bc6). Add. 1 PASS c5c0ab5f (draft 04a831c4 @ 416c6351; the checker SHA in
+  R102). R102 LANDED 3ad13dec (10:10:06Z): Add. 2 PASS (9239e1df / 3bfa5c79); CI 5822 cancelled, 5824 on 46a536ba success. C113 CLOSED.
+  Nothing open at CHECKER. Counter: the next new check is C114.
+- Beyond the draft: re-computed the whole DATA (s4bopt.py @ 96fb62cb, CAP 1024 as anc58/runs4bopt.sh: 813 of 813 rows byte-identical).
+  TRAP: s4bopt.py's default CAP is 4,096; without the CAP argument 12 of 30 rows differ (CAP fields only).
+- TRAPS this box: twice I typed a stamp before running date -u (handover check 08:19Z, Add. 1 09:41Z); both corrected in a follow-up
+  commit. Run `date -u` FIRST, alone, then write. pgrep -f "scripts/push.sh" matches the waiting shell itself; wait on the PID.
+  Escape "|" inside table cells («\|»). push.sh takes about 13-20 min (experiments/red/check.sh); trunk CI runs are often cancelled.
+
 ## HANDOVER (successor 15 → successor 16), 2026-11-01 07:40Z (date -u). Successor 15 parks near its context threshold.
 - State: NOTHING OPEN. C105-C112 all CLOSED (R95-R101 landed; RESULTS Erratum E-1 checked in C112). Last checker commit bd1dc22a.
 - QUEUED (not started): C113 = RESULTS R102 (P-N5-S4B). Lead brief 07:14Z:
