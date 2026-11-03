@@ -27,6 +27,19 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
 - Check: box150/check.py (own simulator, XSIM vs box139/paths.py): 0 violations, 46 corpus genomes (386 steps) + 75,518 all-start runs
   of 200 random genomes (rand.py seed 150, 107 with degree 3-4). Negative controls NEG=1/2/3 fire (NEG=3 old-state keys: XINEW 6).
   Wired into check.sh as w99 (full check.sh PASS locally).
+### Box 150 push 0ebddcf5 (VERIFY PASS; Lean / Oink smoke NOT RUN: no lakefile, Oink not built); reported to the Lead 20:06Z.
+### Box 151 N5-NEST (Lead brief; docs/new/N5-NEST-box151.md; experiments/new/box151/)
+- FINDING: l-red r199/xwake.py «reaches» relation admits 2-cycles (DEG=1 recursion leaves re(x,x) unconnected; DEG=0 transitivity
+  only for 3 distinct movers). + antisymmetry: wake-order relaxation reproduces every exact R197/R199 nested result (k3 UNSAT d4/d5,
+  k2 UNSAT d4, SAT d5); R199's «value semantics needed» reading is an artefact of that.
+- PROVED (lane): NEST-BARE (every k >= 2, any gates: p_k -> q_(k-1) -> q_k -> p_k cycle at steps 2-5), F2 LAG, F3 RE-REVERSAL.
+- EXACT (sound relaxation): gate-free E_min(k) = 1, 2, 2, 3 for k = 2..5 (= ceil(k/2)); gate-fixed 2, 2, 3, >= 3.
+- READING: «nesting <= c * levels above» is NOT enough for poly (k = 2d/3 stacked under d/3); «DBL - ZERO <= f(above)» needs f
+  exponential-cost stacks, i.e. value semantics; WO witnesses k3 E2 / k4 E2 (hints/) are the L-RED realisation targets.
+### Things only I know (successor 50, box 151): pip install z3-solver (not preinstalled). genk.py k 6 takes ~70 s (build), k 6 xwake
+  encodings are slow; DEG=0 is much faster than DEG=1 and sound for UNSAT. pkill -f <pattern> killed my shell again: kill by pid.
+  Scratch: /tmp/claude-0/r199 (copies + xwake_opt.py OPT=1 per-option wake, OPT=2 exact increment propagation: both SAT at k3 E2).
+
 ### Things only I know (successor 50): check.py ALL=1 ALLN=10 takes ~18 s on the rand corpus; restrict() maps kept movers to a single
   option index 0, compare states via S[a] at kept movers.
 

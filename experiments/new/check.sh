@@ -817,4 +817,19 @@ if grep -qxF "TOTAL genomes 46 runs 46 steps 386 XSIM 0 TOPO 0 MONO 0 XINEW 0 RI
 else
   echo "box 150 P-IDEAL-RED check: FAILED"; exit 1
 fi
+if python3 -c "import z3" 2> /dev/null; then
+  w100=$(bash box151/run.sh check 2>&1)
+  exp100="NEST k 3 E 0 DEG 1 ANTI 0 FREEKP 0 xwake -> sat
+NEST k 3 E 0 DEG 0 ANTI 1 FREEKP 0 xwake_anti -> unsat
+NEST k 3 E 1 DEG 0 ANTI 1 FREEKP 0 xwake_anti -> unsat
+NEST k 2 E 2 DEG 0 ANTI 1 FREEKP 0 xwake_anti -> sat
+NEST k 4 E 2 DEG 0 ANTI 1 FREEKP 0 xwake_anti -> unsat
+NEST k 3 E 1 DEG 0 ANTI 1 FREEKP 1 xwake_anti -> unsat
+NEST k 4 E 2 DEG 0 ANTI 1 FREEKP 1 xwake_anti -> sat"
+  if [ "$w100" == "$exp100" ]; then
+    echo "box 151 NEST: xwake.py without antisymmetry SAT on bare k 3; with it UNSAT k 3 E 0/1, k 4 E 2, SAT k 2 E 2; gate-free UNSAT k 3 E 1, SAT k 4 E 2: PASS"
+  else
+    echo "box 151 NEST check: FAILED"; echo "$w100"; exit 1
+  fi
+else echo "box 151 NEST checks skipped (no z3)"; fi
 rm -rf "$tmp"
