@@ -41,7 +41,7 @@ def build(L, d, moves, helpers=(), want_all=False):
                     if v >= N0: g[v] = [nxt, nxt + 1]; nxt += 2
         return g
     perms0 = [p for p in itertools.permutations(range(4)) if p.index(0) < p.index(1) and p.index(2) < p.index(3)]   # g(v,0) < g(v,1)
-    best = None
+    best = None; ALL = []
     for p0 in perms0:
         for bits in itertools.product([(0, 0), (0, 1), (1, 0), (1, 1)], repeat=d - 1):
             choice = [p0] + list(bits); gate = gates_for(choice)
@@ -58,9 +58,11 @@ def build(L, d, moves, helpers=(), want_all=False):
             K = [RQ.keys(lev, WT, gate, s) for s in S]
             F = [sum(1 for t in range(1, L + 1) if (K[t][2 * l] < K[t][2 * l + 1]) != (K[t - 1][2 * l] < K[t - 1][2 * l + 1])) for l in range(d)]
             sc = (len(bad), -sum(F))
+            if want_all and not bad:
+                ALL.append(dict(movers=[[lev[v], WT[v]] for v in range(N)], states=[list(s) for s in S], gate=gate, F=F, bad=bad, nreq=len(rq)))
             if best is None or sc < best[0]:
                 best = (sc, dict(movers=[[lev[v], WT[v]] for v in range(N)], states=[list(s) for s in S], gate=gate, F=F, bad=bad, nreq=len(rq)))
-    return best[1]
+    return ALL if want_all else best[1]
 if __name__ == "__main__":
     spec = json.load(open(sys.argv[1]))
     T = build(spec["L"], spec["d"], {int(k): set(v) for k, v in spec["moves"].items()}, [tuple(h) for h in spec.get("helpers", [])])

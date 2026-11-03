@@ -99,7 +99,26 @@ No family.
 - Faster exact engine for d ≥ 6: partial hints from §2's forced edges (x_3 → u3, v_low → x_3) are sound to add only when proved; §2 is
   proved for the bare ladder only.
 
+## 5b. CORRECTION (2026-11-03 20:39Z, date -u; after L-NEW successor 50, box 151, relayed by the Lead 20:37Z)
+- §3a said «the pure wake-order relaxation (xwake.py …) is SAT for every target, so the priority-value semantics … is essential: no purely
+  combinatorial (wake-graph) obstruction exists at this granularity». That was an ARTEFACT: xwake.py's «reaches» relation was not acyclic
+  (transitivity was asserted only for three distinct movers, and the degree-2 closure equation never forced reach(x, x), so 2-cycles
+  x → y → x passed). Fixed in r199/xwake.py (antisymmetry + transitivity). Reproduced with the fix (all W-feasible gate choices of each
+  target, r199/allgates.py; per choice < 3 s):
+  | target | levels above (d) | fixed relaxation |
+  | --- | --- | --- |
+  | k 2, L 12 | 1 (d 4) / 2 (d 5) / 3 / 4 | UNSAT / SAT / SAT / SAT |
+  | k 3, L 24 | 0 (d 4) / 1 (d 5) / 2 (d 6) / 3 (d 7) / 4 (d 8) | UNSAT / UNSAT / SAT / SAT / SAT |
+  | k 3, L 16 | 1 (d 5) / 2 (d 6) / 3 / 4 | UNSAT (2 choices) / SAT / SAT / SAT |
+- So the d ≤ 5 refutations ARE combinatorial: they follow from the wake-order clauses alone (K: moves go to KP; RE-REVERSAL; LAG; Ξ-reach a
+  strict partial order of an out-degree-≤ 2 graph; comparison bits obeying the C-element rule and changing only when a reached mover moves),
+  all of which hold on every IDEAL-ACYC run at degree 2. The relaxation exactly reproduces the exact frontier for k 2 (d 4 UNSAT, d 5 SAT)
+  and k 3 (d ≤ 5 UNSAT). It is SAT at d 6-8 for k 3: no refutation there; its SAT schedules are the candidates for the exact check (CEGAR).
+- The empty main core (CORE=1) and the step core {4, 5, 6, 9, 10, 15} (CORE=2) are EXACT statements about xbmc and stand; the READING drawn
+  from the old xwake runs is withdrawn. Scope note (applies to all R199 refutations): a target's gates are those build.py picks; the
+  corrected relaxation is now checked over ALL W-feasible gate choices (1, 1 and 2 choices with the full F for the three targets).
+
 ## 6. Files
-experiments/red/r199/: req.py, xisearch.py, xisat.py, xbmc.py, xbmc2.py (all-free exact BMC; slow at d 3, not used for results), build.py,
+experiments/red/r199/: xwake.py (wake-order relaxation; FIXED 20:39Z, §5b), allgates.py, cegar.py, cubes.py, slack.py, offs.py, masks.py, req.py, xisearch.py, xisat.py, xbmc.py, xbmc2.py (all-free exact BMC; slow at d 3, not used for results), build.py,
 genk.py, gen3.py, match.py, schedof.py, synth.py (first LIA attempt, superseded); lag/nd2_d5_F12.json; instances/ (pin + pins.sha1);
 out/ gitignored (logs). check.sh block «R199».

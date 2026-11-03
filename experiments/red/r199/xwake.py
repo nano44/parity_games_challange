@@ -38,6 +38,11 @@ def KP(t, v):
     return z3.Not(Rk[(t, l)] if x == 2 * l else z3.Not(Rk[(t, l)]))
 re = {(x, y): z3.Bool(f"re{x}_{y}") for x in range(N) for y in range(N)}
 ed = {(x, y): z3.Bool(f"e{x}_{y}") for x in range(N) for y in range(N) if x != y}   # Xi-edges: out-degree <= 2 (degree 2)
+for x in range(N):   # strict partial order: irreflexive, ANTISYMMETRIC, transitive (fix 2026-11-03 20:39Z after L-NEW box 151: 2-cycles passed before)
+    for y in range(N):
+        if x < y: Z.add(z3.Not(z3.And(re[(x, y)], re[(y, x)])))
+        for w in range(N):
+            if len({x, y, w}) == 3: Z.add(z3.Implies(z3.And(re[(x, y)], re[(y, w)]), re[(x, w)]))
 for x in range(N):
     Z.add(z3.Not(re[(x, x)]))
     if os.environ.get("DEG", "1") == "1":
