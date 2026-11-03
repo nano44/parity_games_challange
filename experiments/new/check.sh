@@ -811,4 +811,10 @@ if grep -qxF "KEYFLIP x3_L8.json N 6 STEPS 8 MOVES 13 KFLIPS 10 VIOL 0" <<<"$w98
 else
   echo "box 149 KEYFLIP check: FAILED"; exit 1
 fi
+w99=$(cd .. && python3 -I new/box150/check.py new/box14*/out/*.json new/box14*/inst/*.json new/box142/*.json new/box146/*.json | tail -1; ALL=1 python3 -I new/box150/check.py new/box150/out/rand/*.json | tail -1; NEG=3 python3 -I new/box150/check.py new/box150/out/rand/*.json | tail -1)
+if grep -qxF "TOTAL genomes 46 runs 46 steps 386 XSIM 0 TOPO 0 MONO 0 XINEW 0 RISE 0 CHAIN 0 KEYFLIP 0 DECR 0 TOPMONO 0 RBOUND 0 RESTR 0 ICHARGE 0 REC 0 VIOL 0 (info REC148 0)" <<<"$w99" && grep -qxF "TOTAL genomes 200 runs 75518 steps 93963 XSIM 0 TOPO 0 MONO 0 XINEW 0 RISE 0 CHAIN 0 KEYFLIP 0 DECR 0 TOPMONO 0 RBOUND 0 RESTR 0 ICHARGE 0 REC 0 VIOL 0 (info REC148 0)" <<<"$w99" && grep -q "^TOTAL genomes 200 runs 200 .* XINEW [1-9]" <<<"$w99"; then
+  echo "box 150 P-IDEAL-RED: every packet inequality, 0 violations on 46 corpus genomes and 75,518 all-start runs of 200 random genomes; negative control fires: PASS"
+else
+  echo "box 150 P-IDEAL-RED check: FAILED"; exit 1
+fi
 rm -rf "$tmp"

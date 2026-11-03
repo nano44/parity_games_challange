@@ -1,6 +1,35 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
+## Successor 50 handover check (STEP 0, Opus 5.5; written 2026-11-03 19:18Z by date -u)
+1. claude/l-new: ls-remote 2715601a; fetched; ff-only (local was 535 behind = stale clone again) -> HEAD 2715601a = ls-remote.
+   Vs trunk claude/vibrant-johnson-nxvvxo: 0 ahead / 170 behind, merge-base 2715601a (trunk has merged l-new). Lane files only.
+2. Open: BOX 150 freeze P-IDEAL-RED (scope N5-IDEAL-STATE §6; CHAIN-BACK needs R178 XI-NEW carried in full or dropped);
+   then BOX 151 (DBL/ZERO nesting lemma from l-red R199).
+3. GAPS: G-N5-TIME major open (owner L-NEW); G-N1-LB minor open (optional, not routed); G-N5-TERM closed.
+4. D18 (active): "Focus on N5 and work toward proving it. ... Clearly distinguish proven results from conjectures and open problems."
+   D14 (active): "D" / "You know it can also test prveiously not tested approaches, it can come up with it own as well".
+   D1 (active, launch brief). D19 (owner 2026-11-03, quoted from the Lead brief; NOT yet in DECISIONS.md/INDEX on trunk at fetch):
+   "we have 9% usage left until tomorrow night, make use of it".
+5. Trap: stale clone (535 behind here); check = ls-remote + fetch + ff-only + HEAD vs ls-remote. push.sh ~20-40 min: background,
+   timeout 7200000, output to file + echo exit $?.
+
+### Box 150 P-IDEAL-RED FREEZE (Lead brief 2026-11-03; docs/new/P-IDEAL-RED.md; experiments/new/box150/)
+- Packet: ENC, LOCAL, MONO, XI-NEW + RISE (re-proved in full; R178 text not a premise), CHAIN-BACK + U-EQ, KEYFLIP + KF-EQ (deg <= 2),
+  DECREMENT + EXACT-ENERGY (any degree), TOP-MONO + RANK-BOUND, INTERVAL-RESTRICT, INTERVAL-CHARGE, RECURSION (deg <= 2).
+  Premise: RESULTS R104's model DEFINITION only. Excluded: R178 real-N5 XI-NEW, ladder identity KF_x = F_(l-1), box 148 opening
+  dichotomy, box 147 degree-D TOP forms, all conjectures.
+- FINDINGS while re-proving: (1) XI-NEW (ii)'s «Xi is monotone» needs Lemma MONO (current value of every mover never falls); proved by
+  induction in reverse pi with the integer encoding ENC (sum of +-2^rank). (2) Box 148 recursion «U*(n) <= sum_(p<n)(U*(p)+1)» omits
+  the boundary steps; packet proves U*(n) <= n + sum_(p<n)(U*(p)+1); the box 148 form unviolated on data (REC148 0), not claimed.
+  (3) Box 147 / 148 «any degree» for TOP-MONO / INTERVAL-RESTRICT is wrong as stated (an unstable mover may stay unstable after a
+  move at degree >= 3); packet restricts them to degree <= 2. DECREMENT / EXACT-ENERGY hold at any degree.
+- Check: box150/check.py (own simulator, XSIM vs box139/paths.py): 0 violations, 46 corpus genomes (386 steps) + 75,518 all-start runs
+  of 200 random genomes (rand.py seed 150, 107 with degree 3-4). Negative controls NEG=1/2/3 fire (NEG=3 old-state keys: XINEW 6).
+  Wired into check.sh as w99 (full check.sh PASS locally).
+### Things only I know (successor 50): check.py ALL=1 ALLN=10 takes ~18 s on the rand corpus; restrict() maps kept movers to a single
+  option index 0, compare states via S[a] at kept movers.
+
 ## Resume point (successor 49, Opus 5.5, session_01V5yGRVusQANCQiXcbrWdJg; FINAL, PARKED 2026-11-02 ~14:1xZ by date -u)
 ### FINAL summary (successor 49): boxes 147-149, every push via scripts/push.sh (VERIFY PASS), each reported to the Lead
 - 147 COARSE (60286d8c): every coarse Xi-statistic DEAD (B and MRG constant across realised lag1's unchained step; all-start quotient
