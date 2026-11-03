@@ -540,3 +540,8 @@ If you prefer to stop, cut spend further, or redirect the fleet (for example to 
 
 ## 2026-11-02T20:57Z Lead confirmation (20:58Z, summary)
 Lead agrees with OWNER-DESK's clarification: R104 is one-way (N5 polynomial ⇒ IDEAL polynomial); a polynomial bound for IDEAL or its 2-wide case does NOT bound N5 (rules out counterexamples of that shape only); a super-polynomial IDEAL family would be a real N5 counterexample; "candidate proof for the simplest case of the model" means the model only.
+
+## 2026-11-03T14:43Z owner message (verbatim)
+> IS there any update?
+
+Answered from trunk 1d9bf989e (2026-11-03 13:03Z) and docs/agents/LEAD-STATE.md (11-02 23:03Z to 11-03 13:03Z: L-RED R197-R199, doubling witnesses, CARRY+4 dead, k=3 at d 6 pending). Relayed to the Lead.
