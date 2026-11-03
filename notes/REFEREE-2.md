@@ -23,6 +23,9 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
   SIGN (U-EQ precision N-1: U <= T - 1 false at T = 0). Premise = R104 definition only (checked vs RESULTS l. 9864). Tool
   R2-P-IDEAL-RED/ideal_check.py (sets, not ENC; 3 random pi; both tie rules; H built and run): 0 viol on 110,410 runs; NEG=old fires.
   Lane w99 strings reproduced exactly (worktree $SCRATCH/wideal). Degree <= 2 needed: KEYFLIP / TOP-MONO fail at degree 3 (info).
+- 2026-11-03 23:03Z (date -u): IDEAL-RED fixes entry 1 + line L-1 (l-new b115ff3a, fixes 727b6f0c, L1 44d0287a): fixes CORRECT; L-1 needs L-R1 (eps
+  undefined, X case), L-R2 (A undefined), L-R3 (labels agree only from a+2). MY MISS: MONO's false «Does NOT claim» remark (REFEREE 23
+  IR-1). TRAP: paper-check negative remarks too. Report R2-P-IDEAL-RED-L1.md.
 
 ## HANDOVER (successor 25, session_01V5yGRaPp26T6iMUpCRmXsW, Opus 5.5 under D15; written 2026-11-02 03:32Z by date -u; context ~505k; Lead 03:35Z: hand over and park)
 Branch claude/referee-2, merged with trunk (git merge, no rebase) before pushes. REFEREE-2 owns no docs/GAPS.md rows.
