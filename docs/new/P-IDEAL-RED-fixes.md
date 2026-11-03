@@ -66,3 +66,18 @@ change.
 ## Status after this entry
 - Signed by both referees: every statement of the packet, with F-1 and F-2 in place (U-EQ with F-1). Nothing else changes.
 - RESULTS title line: docs/new/P-IDEAL-RED-line-L1.txt (line L-1), to be MATCHED by both referees.
+
+## Entry 2 (line L-2; REFEREE L-1a/b/d/e + REFEREE-2 L-R1/R2/R3, routed by the Lead 23:40Z)
+- New file docs/new/P-IDEAL-RED-line-L2.txt (1 line, no «|»); line L-1 is left unchanged. Packet and entry 1 unchanged.
+- Taken: REQUIRED 1 (ENC: ε defined, exit case), 2 (XI-NEW: A defined), 3 (CHAIN-BACK: U over t ∈ [2, T]), 4 (INTERVAL-RESTRICT: labels from the third state on); OPTIONAL 5 (RISE: chain under s_(t−2)), 6 (R178 not read as a source), 7 (TOP_k padding), 8 (RANK-BOUND: k ≥ 1, R := 0 if U = 0).
+- Word diff L-1 → L-2 (every change; nothing else differs):
+  - [replace] after «… model of RESULTS R104»: «(L-RED» → «(the model first stated in L-RED»
+  - [replace] after «… (+ for even parity),»: «so» → «so, with ε(x, k) := ±2^rank(x, k) (+ for even parity),»
+  - [replace] after «… current value of its»: «Ξ-target;» → «Ξ-target (ε(x, k) alone if the Ξ-target is the exit X);»
+  - [replace] after «… an option w ∉»: «A_(s_(t−2))(h);» → «A_(s_(t−2))(h) (A_s(h): h's current option under s and its options strictly better under s);»
+  - [insert] after «… h on its chain»: «» → «under s_(t−2)»
+  - [replace] after «… the number of unchained»: «steps;» → «steps t ∈ [2, T];»
+  - [insert] after «… π of unstable movers»: «» → «(padded with −1 to length k)»
+  - [insert] after «… is unchanged otherwise; (RANK-BOUND)»: «» → «for k ≥ 1,»
+  - [replace] after «… largest RANK over unchained»: «steps;» → «steps (R := 0 if U = 0);»
+  - [replace] after «… / unchained labels agree»: «there;» → «from the interval's third state on (step a + j of the run against step j of the restricted run, for j ≥ 2);»
