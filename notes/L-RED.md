@@ -58,6 +58,7 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   - CONJECTURE CARRY+4: F_l <= 4l + 2 (exact rows d <= 4 only).
   - d 5: F_2 >= 10 over steps 2..11 SAT (r197/d5/f2_d5_L12.json, total F_2 = 10 = the d 4 max). Running at the final push: total
     F_2 >= 11 (out/llk_d5_L12_f2_11), F_3 >= 13 at L 14 (out/ll_d5_L14_f3_13, out/llk_d5_L14_f3_13), F_3 >= 15 at L 16 (out/ll_d5_L16_f3_15).
+    LOST: two container restarts (~01:05Z, later) killed these runs before any answer; rerun them (commands in R197 §2b / liftloop.py).
 - RESUME POINT / QUEUE: (1) CARRY+4 at d 5 (liftloop FMIN 3:13 at L 14, 3:15 at L 16, 2:10 at L 11: REL calls > 2 h at d 5) and a
   proof attempt of F_l <= F_(l-1) + 4 (KEYFLIP + DELAY-CHARGE + interval nesting, R197 §4); (2) d 5 exact max run; (3) CNONLY in CROOT.
 - Things only I know:
