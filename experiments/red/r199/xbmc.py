@@ -133,7 +133,15 @@ def main():
         for a in range(N0, N): Z.add(z3.Or([st[(t, a)] != st[(t - 1, a)] for t in range(1, L + 1)]))
     print("XBMC main N", N0, "aux", aux, "L", L, "requirements", len(req), "faces", M, flush=True)
     t0 = time.time(); r = Z.check(*pm.values()) if CORE else (Z.check(*pa.values()) if os.environ.get("CORE") == "2" else Z.check()); print("XBMC ->", r, f"{time.time() - t0:.1f} s", flush=True)
-    if os.environ.get("CORE") == "2" and r == z3.unsat: print("CORE2 (steps whose aux rule is needed):", sorted(int(str(c).split("_")[-1]) for c in Z.unsat_core()), flush=True)
+    if os.environ.get("CORE") == "2" and r == z3.unsat:
+        core = sorted(Z.unsat_core(), key=lambda c: int(str(c).split("_")[-1])); print("CORE2 (steps whose aux rule is needed):", [int(str(c).split("_")[-1]) for c in core], flush=True)
+        if os.environ.get("MINCORE") == "1":   # deletion-based minimisation: drop a step if UNSAT persists without it (UNKNOWN keeps it)
+            keep = list(core)
+            for c in list(core):
+                trial = [x for x in keep if not x.eq(c)]; rr = Z.check(*trial)
+                if rr == z3.unsat: keep = trial
+                print("  min: without step", str(c).split("_")[-1], "->", rr, "keep", [int(str(x).split("_")[-1]) for x in keep], flush=True)
+            print("MINCORE2 steps:", [int(str(x).split("_")[-1]) for x in keep], flush=True)
     if CORE and r == z3.unsat:
         core = Z.unsat_core(); print("CORE (movers whose C-requirements conflict):", sorted(str(c) for c in core), flush=True)
     if r == z3.sat:
