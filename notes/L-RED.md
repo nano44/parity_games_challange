@@ -58,10 +58,15 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
     nd2_d5_F12_n96, PIN OK, lemck 0). k 3 (L 24 and L 16): d <= 5 UNSAT (exact); d 6 / d 7 UNKNOWN (timeouts up to 14000 s; portfolio to 21:00Z).
   - d 5 refutation needs the level-4 movers' value semantics (empty main core; min step core {4, 5, 6, 9, 10, 15}); wake-order relaxation SAT.
   - Lost d 5 rows of successor 47: UNKNOWN (killed at the 10:20Z timebox).
+- UPDATE 23:00Z (after D19 / L47 continuation): xwake acyclicity bug fixed (L-NEW box 151), §5b correction; fixed relaxation = exact
+  frontier at d <= 5, E_min 2, 2, 3 for k 2, 3, 4 (matches L-NEW); slack / offsets / masks sweeps at d 5 all UNSAT (87 + 1 UNKNOWN); k 3
+  d 6 portfolio UNKNOWN (3 x 20000 s); CEGAR2 HUNT at d 6: ~270 proposals, no SAT (best 5 unmet), still running at park:
+  (cwd r199) HUNT=1 LSIT=15000 MTMO=300 nohup python3 cegar2.py out/ag_k3p2/ag_<0|4>.json 2 300 out/hunt_out_ag_k3p2_ag_<0|4>_E2 > <same>.log;
+  same for out/ag_k3/ag_0.json. Final table: docs/red/R199-nest.md §3b.
 - Growth table (k, d, n, F_max, L, status): k 2: d 4 UNSAT; d 5 SAT, N 10, M 20, n (R104 N+3M+6) 76 / pin 96, F_max 12, L 12. k 3: d 4 / 5
   UNSAT; d 6 UNKNOWN; d 7 UNKNOWN. Levels needed above a k-stack: k 2 needs 2 (1 fails); k 3 needs >= 2 (1 fails). No trend.
-- RESUME POINT / QUEUE: (1) k 3 at d 6 with a faster engine: cube-and-conquer over the even-step wakers of the late moves (the §2 forced
-  roles), or symmetry breaking between the two extra levels; (2) a hand proof of the d 5 obstruction from the step core (lemma candidate,
+- RESUME POINT / QUEUE: (1) k 3 at d 6 EXACT: the bottleneck is xisat on one fixed-state proposal (> 1200 s); options: an exact Xi
+  solver exploiting the C-element structure per mover (requirements decompose by mover chains), or proposals from L-NEW's MONO side; (2) a hand proof of the d 5 obstruction from the step core (lemma candidate,
   §3a); (3) if k 3 is SAT anywhere, k 4 to read d(k).
 - Things only I know:
   - xbmc.py is the engine that works (main fixed, aux free, LEM clauses); xbmc2.py (all free) is slower than bmc4 at d 3 — not used.

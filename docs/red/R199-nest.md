@@ -124,6 +124,22 @@ No family.
   from the old xwake runs is withdrawn. Scope note (applies to all R199 refutations): a target's gates are those build.py picks; the
   corrected relaxation is now checked over ALL W-feasible gate choices (1, 1 and 2 choices with the full F for the three targets).
 
+## 3b. Final status (2026-11-03 23:00Z, date -u) and growth table
+- CEGAR2 HUNT at d 6 (k 3; L 24 one gate choice, L 16 two choices): 80 + 130 + ~60 relaxation-SAT proposals searched (edges / reach-
+  restricted exact xisat UNSAT in 1-3 s each; LNS best: 5 Ξ-requirements unmet); no SAT. This is NOT a refutation (the full exact check of
+  one proposal times out at 1200 s). k 3 at d 6: UNKNOWN. Runs left going at the park (container-local; out/hunt_*.log).
+| k | delays | L | target F | d | extra levels | exact result | relaxation (fixed xwake) | n (R104 / pin) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2 | 2, 1 | 12 | [2, 6, 12] | 4 | 1 | UNSAT | UNSAT | - |
+| 2 | 2, 1 | 12 | [2, 6, 12] | 5 | 2 | SAT, nd2_d5_F12_n96 (F [2, 6, 12, 8, 4]) | SAT | 76 / 96 |
+| 3 | 4, 2, 1 | 24 | [2, 6, 12, 24] | 4 / 5 | 0 / 1 | UNSAT / UNSAT | UNSAT / UNSAT | - |
+| 3 | 4, 2, 1 | 24 | [2, 6, 12, 24] | 6 / 7 | 2 / 3 | UNKNOWN (14000 s each; hunt no SAT) | SAT / SAT | - |
+| 3 | 4, 2, 1 | 16 | [1, 4, 8, 16] | 5 / 6 | 1 / 2 | UNSAT / UNKNOWN (20000 s × 3 seeds) | UNSAT / SAT | - |
+| 4 | 8, 4, 2, 1 | 48 | [2, 6, 12, 24, 48] | 6 / 7 / 8 | 1 / 2 / 3 | not run | UNSAT / UNSAT / SAT | - |
+- Reading (not a claim): the wake-order relaxation allows the stack with E_min = 2, 2, 3 levels above for k = 2, 3, 4 (≈ k/2 + 1); if the
+  value semantics also allowed it, carries ~2^k with d ≈ 1.5k would follow on this target family (F_max = 3·2^k at N = 2(k + 1 + E)).
+  Only k = 2 is realised. The open exact question is k = 3 at d 6.
+
 ## 6. Files
 experiments/red/r199/: xwake.py (wake-order relaxation; FIXED 20:39Z, §5b), allgates.py, cegar.py, cubes.py, slack.py, offs.py, masks.py, req.py, xisearch.py, xisat.py, xbmc.py, xbmc2.py (all-free exact BMC; slow at d 3, not used for results), build.py,
 genk.py, gen3.py, match.py, schedof.py, synth.py (first LIA attempt, superseded); lag/nd2_d5_F12.json; instances/ (pin + pins.sha1);
