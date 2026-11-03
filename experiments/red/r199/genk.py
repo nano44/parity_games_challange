@@ -5,11 +5,12 @@ P + 1, 2P + 1; level j moves at every level-(j-1) carry (prompt mover) and P / 2
 import sys, json
 sys.path.insert(0, '.')
 import build
-k, swap, out = int(sys.argv[1]), int(sys.argv[2]), sys.argv[3]; P = 2 ** k; L = 3 * P; m = {}
+import os
+k, swap, out = int(sys.argv[1]), int(sys.argv[2]), sys.argv[3]; P = 2 ** k; NP = int(os.environ.get("NPER", "3")); L = NP * P; m = {}
 def put(l, prompt, late):
     a, b = (2 * l, 2 * l + 1) if not (swap >> l) & 1 else (2 * l + 1, 2 * l)
     m[a] = set(prompt); m[b] = set(late)
-put(0, [P + 1], [2 * P + 1])
+put(0, [P + 1], [2 * P + 1] if NP == 3 else [])
 for j in range(1, k + 1):
     per = P // 2 ** (j - 1); put(j, list(range(1, L + 1, per)), list(range(1 + per // 2, L + 1, per)))
 T = build.build(L, k + 1, m); print("GENK k", k, "L", L, "F", T["F"], "W-viol", T["bad"], "req", T["nreq"]); json.dump(T, open(out, "w"))

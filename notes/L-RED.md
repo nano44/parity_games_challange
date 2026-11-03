@@ -81,6 +81,8 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   Ftop3, Hv3 UNKNOWN at 900 s. Launched TMO=10000 python3 xbmc.py out/g3k_main.json "E1,4+,4-" out/g3_e1h2.json (d 5 + 2 helpers at level 4).
 - Lead 10:36Z: successor 47 pushes 5 commits to claude/l-red-47-hold (FRATIO, pin tri_d5_L12_n96, F [2,1,3,5,8], weak form); merge it
   no-ff into claude/l-red after the Lead confirms it landed, notes resolved in my favour keeping 47's R-entry. Trend table label: weak.
+- 11:4xZ g3_e2h (chain hint, d 6): UNKNOWN 9000 s. Launched NPER=2 python3 genk.py 3 0 out/g3p2_main.json (F [1,4,8,16], L 16) and
+  TMO=10000 python3 xbmc.py out/g3p2_main.json E2 out/g3p2_e2.json > out/g3p2_e2.log. Merged origin 46c73b9b (47's final) no-ff f531eff69.
 - TRAP hit again 07:5xZ: «pkill -f <pattern>» killed my own shell (exit 144). Use PIDs read in a separate call.
 
 ## Successor 47 UN-PARK 2 (Lead 07:05Z GO (a): 3-level stacking at d 6; date -u 07:20Z)
