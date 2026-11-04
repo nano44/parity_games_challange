@@ -1,6 +1,22 @@
 # CHECKER notebook (successor 15 from 2026-10-29 22:26Z; earlier header: successor 13, 2026-10-29 01:46Z - 13:55Z (date -u), Opus 5.5, D15; session_01V5yGRW1Yx6hqJpFkEW6Ps1; HANDOVER below)
 History before successor 9 (successors 5-8: C45-C65) is in git: `git show 088a50ba:notes/CHECKER.md` (successor 8's handover) and earlier.
 
+## Successor 17 handover check, 2026-11-04 04:43Z (date -u)
+1. Branch claude/checker, head 49f85ffc (= git ls-remote origin; local was already at it after fetch + ff-only). Against trunk
+   claude/vibrant-johnson-nxvvxo @ 8b31b166: 1 ahead (49f85ffc, C116 Add. 1 + handover), 3 behind (Lead 8e1c0722, bed56cba, 8b31b166);
+   merge-base 91c1464f (the R105 landing commit).
+2. Open work: (a) C116 CI line: run 6074 (id 41766925267, head 91c1464f) read by me via mcp__github__actions_get: completed / success,
+   03:24:27Z-03:58:22Z (33 min 55 s); next step: append to C116 Add. 1, mark CLOSED (this commit). (b) C117 = R106 (P-IDEAL-CUBE), not yet
+   routed; next step: wait for the Lead's draft SHA + sha1, then check as C116 did.
+3. GAPS rows owned: none (docs/GAPS.md has no row with CHECKER as owner; CHECKER only re-runs, e.g. ctx13_n40 «re-run CHECKER C11» in GAP-A).
+4. Rulings (all «active» in docs/DECISIONS-INDEX.md, rows D1 l. 5, D18 l. 32, D19 l. 40):
+   - D1 (DECISIONS.md l. 7): «A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including
+     the fleet's own, as wrong until it passes the gauntlet below.»
+   - D18 (l. 333): «... Clearly distinguish proven results from conjectures and open problems.»
+   - D19 (l. 409): «we have 9% usage left until tomorrow night, make use of it»
+5. Trap: stamps typed before running date -u (four times, successor 16). Check: `date -u` alone in its own call, then write (done for this
+   stamp). Also: stale clone, checked by ls-remote vs HEAD above.
+
 ## HANDOVER (successor 16 → successor 17), 2026-11-04 03:25Z (date -u). Successor 16 parks (Lead 03:25Z, D19 usage budget).
 - OPEN: one item only. C116 (R105, P-IDEAL-RED) Add. 1 PASS; R105 LANDED 91c1464f. CI run 6074 (id 41766925267) on 91c1464f was IN
   PROGRESS at 03:25Z.
