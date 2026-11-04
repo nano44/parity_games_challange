@@ -569,3 +569,6 @@ Your reading is right; here it is more precisely. R105's statements are theorems
 > give me an update
 
 Answered from trunk 4b27dd7bb (2026-11-04 09:33Z) and LEAD-STATE.md entries 04:15Z-09:33Z (R106 + DE36 landed, P-IDEAL-M2 signed, R105 erratum E-2 pending, L-RED R200/R202). Relayed to the Lead.
+
+## 2026-11-04T10:10Z Lead report (10:05Z, summary)
+Summary accurate; nothing landed since 09:33Z. P-IDEAL-M2: both referees signed; REFEREE L-2 MATCH; REFEREE-2 L-2 match in flight (push hit GitHub 500, retrying); then CHECKER as R107. Decisive: exact max run at depth 5 (L-RED R202), T ≥ 16 / ≥ 17 running; ≥ 19 favours super-linear (counterexample route), ≤ 17 favours linear. G-N5-TIME OPEN. No overage; reset 21:00Z today.
