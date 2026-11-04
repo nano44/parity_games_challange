@@ -1,5 +1,5 @@
 # L-RED notebook (independent adversary lane)
-Successor 49 (Opus 5.5, D1/D18/D19) started 2026-11-04 00:18Z (date -u); STEP 0 check below; BOX R200 (exact engine, k 3 d 6).
+Successor 49 (Opus 5.5, D1/D18/D19) started 2026-11-04 00:18Z; R200 engine xcnf (validated), R202 d 5 T >= 15 pinned, R203 d 4 C_1 = 8, R204 segments; HALTED 21:0xZ by a container restart after the D19 window; see «Successor 49 HANDOVER».
 Successor 48 (Opus 5.5, D1/D18) started 2026-11-03 07:20Z (date -u); STEP 0 message 07:20Z; R199 nested doubling: k 2 SAT d 5 (pin nd2_d5_F12_n96), k 3 UNSAT d <= 5, UNKNOWN d 6-7; PARKED FINAL 23:4xZ, see «Successor 48 PARK».
 Successor 47 (Opus 5.5, D1/D18) started 2026-11-02 20:58Z (date -u); STEP 0 message 20:58Z; R197: fork ladders exact 3 / 5 (d 2 / 3); carry maxima 2, 6, 10 EXACT (d 4); max run d 4 = 13 EXACT (R193 item closed); pins dbl_d3_F6_n60, dbl_d4_F10_n78, max_d4_L13_n78; Lemmas DOWN / LEVEL-RISE / WAKE-CHAIN; PARKED, see «Successor 47 PARK».
 Successor 46 (Opus 5.5, D1/D18) started 2026-11-02 11:52Z (date -u); STEP 0 message 11:52Z; R191 (degree-3 rotation): ROT-CAP / KEY-ALT / NEST-PI / MERGE-1 / NEST-DEAD-3 PROVED (lane), U linear d 3-8; R192 (RANK) linear; R193 d 4 undecided; R194 (a′) → U; R195 NEST-DEAD-ALL; R196 SAME-WAKER; PARKED ~20:5xZ, see "Successor 46 PARK".
@@ -47,6 +47,30 @@ Successor 15 PARKED ~09:40Z 2026-10-25 after box 38; RESUME POINT for successor 
 context. Boxes 26-30. Predecessor handover: notes/L-RED.md @ 0d0b67a. Older notebook: `git show b0884407:notes/L-RED.md`.
 Owns docs/red/, experiments/red/, this file. Messages only the Lead (session id in docs/NOW.md; first line "From L-RED (<date -u>):").
 Push only via `scripts/push.sh > file 2>&1; echo $?`.
+
+## Successor 49 HANDOVER (2026-11-04 21:1xZ, date -u; container restarted 21:03Z, every run killed; D19 window over)
+- DONE (claude/l-red, push.sh VERIFY PASS each; last pushed 9a5a5879): r200 engine + validation, R202 pin max_d5_L15_n96, R203
+  witnesses, R204 segment queries, docs/red/R200-xcnf.md (the result file for R200-R204; read it first).
+- KILLED at 21:03Z (none had answered; all UNKNOWN at their run time):
+  - R202 d 5 T>=16 Kissat (started 14:53Z, ~6 h): SOLVER=kissat404 SYMB=1 python3 xmax.py 5 16 out/max/d5_t16K.json. (CaDiCaL 6 h
+    UNKNOWN for T>=16 and T>=17 earlier.)
+  - R203 d 4 C_2 >= 12 | C_1 = 8 (started 13:1xZ, ~7.8 h): TMIN=0 CMIN=0:2,1:8,2:12 SYMB=1 python3 xmax.py 4 13 out/c/d4_c18_c2_12.json
+  - R204 d 4 seg1+tail >= 11 (started 12:5xZ, ~8 h): TMIN=0 SYMB=1 SEG=1t:11 CMIN=0:2 python3 xmax.py 4 13 out/seg/d4_1t11.json
+  - R204 d 5 seg1+tail >= 14, horizon 20 (started 13:0xZ, ~8 h): TMIN=0 SYMB=1 SEG=1t:14 CMIN=0:2 python3 xmax.py 5 20 out/seg/d5_1t14_H20.json
+  - R200 pcegar k3/ag_0: 58 no-goods (cores 3-7 literals); k3p2/ag_0 44; k3p2/ag_4 2. No-goods committed in r200/nogoods/; to resume,
+    copy them to out/ (cp nogoods/pc_*_nogoods.json out/) and rerun «nohup timeout 36000 python3 pcegar.py out/ag/<t>.json 2 10
+    out/pc_<tag>_T10 > out/pc_<tag>_T10.log 2>&1 &» (targets: python3 ../r199/allgates.py 3 3 out/ag/k3; ... 3 2 out/ag/k3p2).
+- Setup after a fresh container: pip install z3-solver python-sat; scripts/setup_oink.sh (for pins).
+- Things only I know:
+  - xcnf is 10-50x faster than z3 on the r199 models; the k 3 d 6 hardness sits in steps 15-16 of the L 16 target (14-step prefix SAT).
+  - Monolithic d 6 / d 5 T>=16 runs need > 6 h; container restarts came at 02:01Z, 02:23Z, 21:03Z; only resumable designs (pcegar
+    no-goods on disk) survive.
+  - push.sh under full CPU load takes 40-90 min; one GitHub 500 (11:17Z) needed a retry. Do not start a second push while one runs.
+  - SAT witnesses carry gates 2000+ for free levels: renumber (order-preserving) before stab.py / lemck (my 12:35Z lemck claim was
+    made before running it; corrected 12:38Z).
+  - At d 4 every segment / C query is capped by T*(4) = 13 (R197); only d >= 5 queries are informative.
+  - R201: only heuristic groundwork (r201/wclimb.py); nothing exact.
+- NEEDS: Lead: which of R200 / R202 (T>=16) / R203 / R204 d 5 to resume after the reset, and with how many cores.
 
 ## Successor 49 handover check (2026-11-04 00:2xZ, date -u)
 1. Branch claude/l-red, head 32f6e040 (= ls-remote at 00:18Z; clone was current, ff-only no-op). vs trunk claude/vibrant-johnson-nxvvxo:
