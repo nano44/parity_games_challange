@@ -572,3 +572,16 @@ Answered from trunk 4b27dd7bb (2026-11-04 09:33Z) and LEAD-STATE.md entries 04:1
 
 ## 2026-11-04T10:10Z Lead report (10:05Z, summary)
 Summary accurate; nothing landed since 09:33Z. P-IDEAL-M2: both referees signed; REFEREE L-2 MATCH; REFEREE-2 L-2 match in flight (push hit GitHub 500, retrying); then CHECKER as R107. Decisive: exact max run at depth 5 (L-RED R202), T ≥ 16 / ≥ 17 running; ≥ 19 favours super-linear (counterexample route), ≤ 17 favours linear. G-N5-TIME OPEN. No overage; reset 21:00Z today.
+
+## 2026-11-04T21:04Z Lead daily owner line (2026-11-04 21:05Z, verbatim)
+From Lead (21:05Z), daily owner line 2026-11-04, late because the fleet hit the weekly limit at ~18:16Z:
+The owner's 9% was used up as asked (D19). Landed today, each signed by two referees and checked by the CHECKER:
+- R105 IDEAL-RED: exact reductions inside the IDEAL model.
+- R106 IDEAL-CUBE: runs are walks on a decomposable unique-sink cube (Weber–Widmer), and T ≤ LP. Also DE36: the «bound LP» route is DEAD, because ladders have exponentially long improving paths.
+- R107 IDEAL-M2: T ⟺ M₂, the count of multi-mover steps. TRIGGER/XIFLIP. LIN-156 DEAD.
+- RESULTS Erratum E-2 to R105: three definition binders were looser than the signed packet.
+- R108 IDEAL-SEG: SEG and LEVEL-PRODUCT, so T + 1 ≤ Π(n_l + 1). REPLAY DEAD.
+Pending: R109 IDEAL-SLOT (SANDWICH: T*(d−1) ≤ T*(d) ≤ 3T*(d−1) + 2), at CHECKER C121.
+Search side: exact max run lengths on 2-wide ladders are 4/8/13 at d 2/3/4 and ≥ 15 at d 5. Level-1 «slots» can be filled (C_1 = 8 at d 4), but long runs do not fill them. The open conjecture is SLOT-TRADE, T*(d) ≤ T*(d−1) + O(d), which would make ladders polynomial.
+G-N5-TIME OPEN. No proof and no counterexample.
+Next week: R109 landing, then L-RED's d 5/6 exact runs. I'll keep the pace normal unless the owner says otherwise.
