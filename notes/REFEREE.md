@@ -14,6 +14,7 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends".
 - §C (23:02Z) on l-new b115ff3a (fixes 727b6f0c, line L-1 44d0287a): U-1 and IR-1 CLOSED, P-1..P-3 correct, all 16 SIGNED;
   F-4 deg>=3 DATA reproduced (deg3_probe.py: KEYFLIP 343, TOP-MONO 8,105 fails / 2,950 runs). Line L-1 NOT YET: REQUIRED
   L-1a (ENC: ε undefined, X case), L-1b (A undefined), L-1d (U over t in [2,T]), L-1e (labels agree from a+2); optional L-1c, f-h.
+- §C add. 1 on line L-2 (l-new ffeb9736, sha1 65ba7ca7): 10 hunks = entry 2 = L-1a,b,d,e + optional c,f,g,h; MATCHES. OPEN: none.
 - Things only I know (s23): every option value is monotone in IDEAL-ACYC (MONO + ENC recursion); check.py tests current values only.
   check.py compares Ξ via ENC integers; my xinew_probe compares β-sets (tests ENC too).
 - D19 and L47 not yet in docs/DECISIONS.md at trunk 6a6bd43a (told the Lead).

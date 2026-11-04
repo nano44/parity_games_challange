@@ -263,3 +263,33 @@ REFEREE successor 23 (Opus 5.5, D15), 2026-11-03T20:40Z by date -u. Independent:
 - Line L-1: NOT YET. It matches once L-1a, L-1b, L-1d and L-1e are applied. L-1c and L-1f to L-1h are optional. No other change is
   needed.
 - The fixes: entry 1 CLOSES U-1 and IR-1, and P-1 to P-3 are correct. All 16 statements are SIGNED.
+
+## §C addendum 1 (2026-11-04T00:09Z by date -u, successor 23; Opus 5.5, D15): line L-2
+- Object: claude/l-new ffeb9736, an ancestor of origin/claude/l-new. I re-measured every file:
+  - docs/new/P-IDEAL-RED-line-L2.txt: sha1 65ba7ca7…, 1 line, no «|»;
+  - docs/new/P-IDEAL-RED-fixes.md: sha1 2e8c3630…, 83 lines. Its first 68 lines have sha1 727b6f0c, the same as entry 1 at
+    b115ff3a. So entry 1 is unchanged and entry 2 is appended;
+  - line L-1: unchanged, 44d0287a;
+  - packet: unchanged, 06f2c186, 261 lines.
+- Diff L-1 → L-2: my own word diff (split on blanks, diff) gives exactly 10 hunks. They equal entry 2's list and nothing else
+  differs:
+  1. R178 attribution: «(the model first stated in L-RED R178 §1)». My optional L-1f. It is an attribution, and the premise clause
+     still reads «R104's definition of the model only».
+  2. and 3. ENC: «with ε(x, k) := ±2^rank(x, k) (+ for even parity)» and «(ε(x, k) alone if the Ξ-target is the exit X)». My L-1a
+     is MET. This is ENC's signed consequence, not the unsigned F-2 remark.
+  4. XI-NEW: «(A_s(h): h's current option under s and its options strictly better under s)». My L-1b is MET: this is R104's
+     availability set at the old state.
+  5. RISE: «under s_(t−2)». My optional L-1c, the packet's form.
+  6. CHAIN-BACK: «unchained steps t ∈ [2, T]». My L-1d is MET, and U-EQ's «U ≤ max(T − 1, 0)» is now exact.
+  7. TOP-MONO: «(padded with −1 to length k)». My optional L-1g.
+  8. and 9. RANK-BOUND: «for k ≥ 1» and «(R := 0 if U = 0)». My optional L-1h, which also matches fix F-3 P-1.
+  10. INTERVAL-RESTRICT: «agree from the interval's third state on (step a + j of the run against step j of the restricted run, for
+      j ≥ 2)». My L-1e is MET: this is the packet's (iii) for t ≥ a + 2.
+      - Optional only: «a» is not named in the line. The only reading is «a = the index of the interval's first state», and the
+        range ends with the interval, as «on an interval of states» says.
+- L-2 against packet + fixes (entries 1-2):
+  - Every clause is a signed statement with its exact hypotheses: acyclic Ξ-graphs; any degree for ENC to EXACT-ENERGY; degree ≤ 2
+    for KEYFLIP to RECURSION; any width.
+  - No unsigned text enters: the F-2 remark is absent, and the DATA is labelled DATA.
+  - The premise is R104's definition only. The tail matches the packet's exclusions and §9.
+- VERDICT: line L-2 MATCHES. All 16 statements are SIGNED with fix entry 1 in place.
