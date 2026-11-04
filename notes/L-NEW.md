@@ -1,7 +1,33 @@
 # L-NEW notebook ((c) design lane under D14; Lead reading L35)
 Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 started 2026-10-18 09:10Z (date -u).
 
-## Resume point (successor 51, Opus 5.5, session_01V5yGRYupWPCaWBqfX8Hjyk; started 2026-11-04 04:16Z by date -u)
+## Resume point (successor 51, Opus 5.5, session_01V5yGRYupWPCaWBqfX8Hjyk; started 2026-11-04 04:16Z; HANDOVER written ~13:1xZ by date -u)
+### SUMMARY (successor 51): boxes 156-159, every push via scripts/push.sh, each reported to the Lead
+- 156 M2 (docs/new/N5-M2-box156.md): exact z3 (box156/zmax.py) max T = 1,2,3,4,6 for N = 1..5, max M2 = 0,0,1,2,3; N 6: T >= 8,
+  M2 >= 5; DEAD «M2 <= N-2» (dd_d5_F14); LIN-156 DEAD (max_d4_L13 T 13 > 12). P-IDEAL-M2 FROZEN 6bcfa0de + fixes/L-2 4d244698:
+  fully signed (REFEREE 685a47de, REFEREE-2 0254976d) -> C118 / R107.
+- 157 SEG (docs/new/N5-SEG-box157.md): SEG, SEG-ONCE, LEVEL-PRODUCT (T+1 <= prod (n_l+1)); REPLAY DEAD (max_d5_L15).
+  P-IDEAL-SEG FROZEN 8291ecf7 (packet 7fa84784, L-1 a18f6f0c): REFEREE 23 signed all 4, L-1 MATCHES (19e0742f; optional SEG-L1
+  «(l >= -1)»); REFEREE-2 27 reviewing at 12:46Z.
+- 158 SLOT (docs/new/N5-SLOT-box158.md): SHIFT, SEG-CAP, LIFT, SANDWICH T*(d-1) <= T*(d) <= 3T*(d-1)+2; route «linear seg1» DEAD
+  (circular). P-IDEAL-SLOT FROZEN e46e98a4 (packet 62901b5f / 192 lines, L-1 17236fb1, instance lift_max_d4_L13 33fec48f).
+- 159 TRADE (interim, docs/new/N5-TRADE-box159.md): restricted-energy premise DEAD (max_d5_L15 t8); R-IDENTITY T = R(s_0) + sum JUMP
+  PROVED (lane); reversed lift (jump = T(G) - R0 + 1); FROZEN-SHORT = SLOT-TRADE + O(1) (no leverage). SLOT-TRADE OPEN.
+### PARKED 2026-11-04 ~13:3xZ (Lead 13:14Z: «Then PARK»). P-IDEAL-SEG SIGNED by both (REFEREE 19e0742f, REFEREE-2 9a746361); fixes
+  entry 1 (F-1, F-2) in docs/new/P-IDEAL-SEG-fixes.md (sha1 2e3dd532), pinned in check.sh pin107. P-IDEAL-SLOT: REFEREE 23 signed all
+  7 (2a09dcf8), L-1 NOT YET -> line L-2 (55e74726) + fixes entry 1 (44bf76e7, word diff; SLOT-L1/L2/L3), pinned pin109. REFEREE-2 27
+  had not reported at park: its items go to fixes entry 2 / line L-3 (successor).
+### IN FLIGHT (left alive at park): z3 box156: N 6 T >= 9 (pid 1823, experiments/new/box156/log/T_N6_m9.log, started ~04:25Z),
+  N 6 M2 >= 6 FINISHED: UNSAT in the 9-step frame (20,212 s; exact iff max T(6) <= 9). Container restarts kill runs silently. Append results
+  to docs/new/N5-M2-box156.md table (row N 6). P-IDEAL-SEG / P-IDEAL-SLOT with the referees: fixes only via *-fixes.md if routed.
+### NEXT (Lead decides): SLOT-TRADE proof side, or L-RED R203/R204 support (seg1 = T*(d-1) via LIFT + long tail).
+### Things only I know (successor 51, all boxes):
+- box156/zmax.py: Int encoding (BV slower); LADDER=2 is very slow; never pkill -f (kill by pid); logs in box156/log/.
+- check.sh blocks: w105/pin105 (P-IDEAL-M2), w106 (segcheck), w107/pin107 (P-IDEAL-SEG), w108 (LIFT), w109/pin109 (P-IDEAL-SLOT).
+- seg.py / three.py / rjump.py / liftrev.py / lift.py all exec box150/check.py; scripts run with python3 -I need the sys.path insert.
+- External copies: box156/ext/ (R197 max_d4_L13 etc.), box157/max_d5_L15.json (R202, l-red 05c48415).
+
+
 ### Box 156 N5-M2 (Lead brief; docs/new/N5-M2-box156.md; experiments/new/box156/)
 - EXACT z3 (zmax.py, symbolic genome, all starts, deg <= 2): max T = 1,2,3,4 (N 1..4), max M2 = 0,0,1,2; N 5: T >= 6, M2 <= 3 in
   a 6-frame (exact iff T >= 7 UNSAT: RUNNING pid 1726); N 6: T >= 8 (x3_L8), T >= 9 / M2 >= 5 RUNNING (pids 1823, 13185).
@@ -11,6 +37,13 @@ Overwrite the top sections; append to "Sources opened" and "Dead ends". Box 1 st
   directions / M2-EQ / SINGLE-SHORT (any degree), TRIGGER, XIFLIP, MIN-FLIP (deg <= 2), DEAD LIN-156 (max_d4_L13). check.sh block
   «P-IDEAL-M2» (w105 + pin105). Fix round -> docs/new/P-IDEAL-M2-fixes.md (append-only). LIN-156 DEAD 06:2xZ; d 5 ladder exact routed
   by the Lead to L-RED 49.
+### Box 157 SEG (Lead GO 11:24Z; docs/new/N5-SEG-box157.md; experiments/new/box157/): Lemma SEG, SEG-ONCE, Corollary LEVEL-PRODUCT
+  (T + 1 <= prod_l (n_l + 1), deg <= 2) PROVED (lane), segcheck.py 0 viol. (check.sh w106); REPLAY DEAD on R202 max_d5_L15 (seg 2 len 7
+  > seg 1 len 6). N 5 exact: max T 6 (T >= 7 UNSAT 24,984 s), max M2 3. P-IDEAL-M2 fully signed (REFEREE 685a47de, REFEREE-2 0254976d,
+  C118 / R107).
+### P-IDEAL-SEG FROZEN 8291ecf7 (packet 7fa84784, 152 lines; L-1 a18f6f0c), with REFEREE 23 / REFEREE-2 27; fixes -> P-IDEAL-SEG-fixes.md.
+### Box 158 SLOT (Lead 12:23Z; docs/new/N5-SLOT-box158.md; box158/): SHIFT, SEG-CAP, LIFT PROVED (lane); T*(d-1) <= T*(d) <= 3T*(d-1)+2;
+  route «linear first segments» DEAD (circular: max seg1 = T*(d-1); lift_max_d4_L13 d 5 seg1 13); CONJECTURE SLOT-TRADE. check.sh w108.
 ### Things only I know (successor 51): z3 Int encoding beats the BV one (N4 UNSAT 20 s vs > 10 min); LEVS split ~250 s / level
   vector at N 5 (541 vectors: too slow). Logs of running jobs are in box156/log/ (commit after they finish). Never pkill -f.
 ### Successor 51 handover check (STEP 0; written 2026-11-04 04:2xZ by date -u)
