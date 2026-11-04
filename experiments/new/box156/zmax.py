@@ -52,6 +52,10 @@ if not os.environ.get("NOSYM"):
 LEVS = os.environ.get("LEVS")   # optional split: fix the level vector, e.g. LEVS=0,1,1,0,2
 if LEVS:
     for x, l in enumerate(map(int, LEVS.split(","))): S.add(lev[x] == l)
+LADDER = os.environ.get("LADDER")   # optional class: exactly LADDER movers on every level 0 .. N/LADDER - 1 (2-wide ladder: LADDER=2)
+if LADDER:
+    w_ = int(LADDER)
+    for l in range(N // w_): S.add(Sum([If(lev[x] == l, 1, 0) for x in range(N)]) == w_)
 # levels contiguous is implied by W-targets. symmetry: level-0 exists
 S.add(Or([lev[x] == 0 for x in range(N)]))
 st = [[Bool(f"s{t}_{x}") for x in range(N)] for t in range(L + 1)]
