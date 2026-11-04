@@ -1,4 +1,4 @@
-# Draft RESULTS R105 (Lead; first fill 2026-11-04T01:08:55Z by date -u (subagent); on P-IDEAL-RED line L-2, docs/new/P-IDEAL-RED-line-L2.txt, l-new ffeb9736, sha1 65ba7ca7fd6d4cb6b0de1d1c918ec181ff78fbe5) — to CHECKER C116
+# Draft RESULTS R105 (Lead; first fill 2026-11-04T01:08:55Z by date -u (subagent); on P-IDEAL-RED line L-2, docs/new/P-IDEAL-RED-line-L2.txt, l-new ffeb9736, sha1 65ba7ca7fd6d4cb6b0de1d1c918ec181ff78fbe5) — to CHECKER C116 — LANDED in RESULTS 2026-11-04 02:59Z (CHECKER C116 e85c3bb2 PASS), after R104, before Erratum E-1
 FIRST FILL. Read at the origin heads fetched at the start of the fill (git fetch, then git ls-remote, 2026-11-04T00:47:11Z: l-new
 4f6b6d6e, referee 0d2fef9f, referee-2 f81c6e57, checker 0dd31142; origin trunk 5f27819f; local trunk c1077737, one Lead commit not
 pushed, which changes only docs/NOW.md and three docs/agents/ files, so RESULTS (3398c652), GAPS (3398c652), DECISIONS and
