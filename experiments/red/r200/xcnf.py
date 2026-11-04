@@ -198,6 +198,10 @@ def build(T, E, fixall=False, lem=True):
             for v in range(N0, N): C.add([st[(t, v)] if Sh[t][v] else neg(st[(t, v)])])
         if os.environ.get("HINTG", "1") == "1":
             for (l, k), var in Gb.items(): C.add([var if Gh["gate"][2 * l][k] < Gh["gate"][2 * l + 1][k] else -var])
+    if os.environ.get("SYMB") == "1" and m0 == 0:   # R202 symmetry break (all levels free): sigma_l swaps the two level-l movers and
+        # relabels the options of level l+1 (states flip, gates / faces move along); the sigma_l commute and sigma_l touches only levels
+        # l, l+1, so fixing levels bottom-up puts one member of every orbit into: s_0(u_l) >= s_0(v_l) for every level l
+        for l in range(dtop): C.add([st[(0, 2 * l)], neg(st[(0, 2 * l + 1)])])
     if os.environ.get("TMIN") == "1":   # R202: the run has at least L steps (deterministic run: step L nonempty => all earlier steps nonempty)
         C.add([mv[(L, v)] for v in range(N)])
     info = dict(g0=g0, N=N, N0=N0, L=L, lev=lev, WT=WT, gate0=gate0, S0=S0, m0=m0, dtop=dtop, faces=faces, b=b, lt=lt, par=par, st=st, Gb=Gb, req=req, fi=fi)

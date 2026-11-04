@@ -84,6 +84,14 @@ Push only via `scripts/push.sh > file 2>&1; echo $?`.
   262 s, first 14 steps SAT 623 s (EXACT, replay matches). Hinted extension of the t14 solution UNSAT 42 s (inexact).
 - 03:1xZ (cwd r200) for T0 in 10 14; do nohup timeout 36000 python3 pcegar.py out/ag/k3p2/ag_0.json 2 $T0 out/pc_k3p2_0_T$T0 >
   out/pc_k3p2_0_T$T0.log 2>&1 & done; 04:2xZ same for out/ag/k3p2/ag_4.json T0 10 -> out/pc_k3p2_4_T10; 05:0xZ T0 14 stopped (no proposal in 1 h), out/ag/k3/ag_0.json T0 10 -> out/pc_k3_0_T10 (resumable: no-goods in out/pc_*_nogoods.json; relaunch = same command)
+- 07:0xZ Lead: R202 (exact max T at d 5, 2-wide degree-2 ladder) = priority beside R200; R201 queued (W-side over L-NEW box 153 ladders).
+  R201 groundwork (r201/wclimb.py, free start, 6 x 6000 mutations): best L 4 / 7 / 9 for K 3 / 4 / 5 (LP 22 / 52 / 114; 2n 12 / 16 / 20);
+  with ladlp's own start (the antipode of the sink) every W side tried gives L 1. DATA only.
+- R202 (cwd r200): xmax.py d t (xcnf with no prescribed movers, free level 0, TMIN). d 2: T>=4 SAT / 5 UNSAT 0.1 s; d 3: T>=8 SAT 10.7 s
+  (replay L 8) / T>=9 UNSAT 13.5 s; with SYMB=1 (level-swap symmetry break): 8 SAT 41 s, 9 UNSAT 16 s (under load). Running (08:2xZ):
+  nohup timeout 7200 python3 xmax.py 4 14 out/max/d4_t14.json; SYMB=1 nohup timeout 14400 python3 xmax.py 4 14 out/max/d4_t14S.json;
+  SYMB=1 nohup timeout 14400 python3 xmax.py 5 15 out/max/d5_t15S.json (logs: same name .log). d4 t13 (no SYMB) stopped at 75 min.
+  pcegar k3p2/ag_4 paused at 08:2xZ (2 no-goods; one F check > 1 h); relaunch line above resumes it.
 - Cross-checks: bf.py (brute force N 4 + GREEDY) 85/85 agree with xcnf (LEM on/off), 8 UNSAT; agree.py vs xisat 30/30 + 29/30 + 29/30,
   the two non-agreements are xisat UNKNOWN (z3 timeout 600-900 s, FD too) vs xcnf UNSAT on N 8 L 3 instances (s5_15: noLEM UNSAT too).
 
